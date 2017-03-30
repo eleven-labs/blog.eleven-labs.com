@@ -42,7 +42,6 @@ theme_settings:
   google_analytics:
   disqus_shortname: eleven-labs-github-io
   muut_community_name:
-  katex: false
 
   # Localization strings
   str_follow_on: Suivez nous sur
