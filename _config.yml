@@ -18,25 +18,25 @@ theme_settings:
 
   # Icons
   rss: false
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: wilson@eleven-labs.com
   behance:
   bitbucket:
   dribbble:
-  facebook:
+  facebook: 11Labs
   flickr:
-  github: "rohanchandra/type-theme"
+  github: eleven-labs
   google_plus:
   instagram:
-  linkedin:  # Full URL
+  linkedin: https://fr.linkedin.com/company/eleven-labs
   pinterest:
   reddit:
   soundcloud:
-  stack_exchange:  # Full URL
+  stack_exchange: http://stackoverflow.com/jobs/companies/eleven-labs
   steam:
   tumblr:
-  twitter: "twitter"
+  twitter: eleven_labs
   wordpress:
-  youtube:
+  youtube: UCt_NukjmUm4whjmbMuZ0MMw
 
   # Scripts
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
