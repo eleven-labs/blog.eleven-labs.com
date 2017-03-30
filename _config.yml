@@ -5,10 +5,10 @@ url: https://eleven-labs.github.io
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type Theme
+  title: Eleven Labs
   avatar: avatar.png
-  gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  gravatar:
+  description: A website with blog posts and pages
 
   # Header and footer text
   header_text: >
