@@ -45,12 +45,12 @@ theme_settings:
   katex: false
 
   # Localization strings
-  str_follow_on: "Follow on"
-  str_rss_follow: "Follow RSS feed"
-  str_email: "Email"
-  str_next: "Next"
-  str_prev: "Prev"
-  str_continue_reading: "Continue reading"
+  str_follow_on: Suivez nous sur
+  str_rss_follow:
+  str_email: Email
+  str_next: Suivant
+  str_prev: Précédent
+  str_continue_reading: Lire l'article
 
   # Colours, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
