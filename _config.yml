@@ -11,8 +11,8 @@ theme_settings:
   description: A website with blog posts and pages
 
   # Header and footer text
-  header_text:
-  header_text_feature_image:
+  header_text: <img src="/img/fg-header.png" />
+  header_text_feature_image: img/bg-header.png
   footer_text: >
    Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
 
