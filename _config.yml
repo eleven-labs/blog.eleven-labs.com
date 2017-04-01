@@ -72,3 +72,4 @@ sass:
     style: :compressed
 gems:
     - jekyll-paginate
+    - jekyll-seo-tag
