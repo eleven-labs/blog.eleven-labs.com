@@ -1,5 +1,6 @@
 # SITE CONFIGURATION
 title: Blog Eleven Labs
+description: Blog Eleven Labs
 baseurl:
 url: https://eleven-labs.github.io
 
