@@ -2,6 +2,8 @@
 title: Blog Eleven Labs
 description: Blog Eleven Labs
 url: https://eleven-labs.github.io
+twitter:
+    username: eleven-labs
 baseurl:
 
 # THEME-SPECIFIC CONFIGURATION
