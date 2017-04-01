@@ -5,6 +5,15 @@ url: https://eleven-labs.github.io
 twitter:
     username: eleven-labs
 logo: /img/avatar.png
+social:
+    name: Eleven Labs
+    links:
+        - https://twitter.com/eleven-labs
+        - https://www.facebook.com/11Labs
+        - https://www.linkedin.com/company/eleven-labs
+        - https://www.youtube.com/channel/UCt_NukjmUm4whjmbMuZ0MMw
+        - https://github.com/eleven-labs
+        - https://stackoverflow.com/jobs/companies/eleven-labs
 baseurl:
 
 # THEME-SPECIFIC CONFIGURATION
