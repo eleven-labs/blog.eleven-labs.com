@@ -1,5 +1,8 @@
 <head>
     <meta charset="utf-8">
+
+    {% seo %}
+
     <title>{% if page.title %}{{ page.title }} |{% endif %} {{ site.theme_settings.title }}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.theme_settings.description }}{% endif %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
