@@ -4,58 +4,61 @@ url: https://eleven-labs.github.io
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
-  # Meta
-  title: Eleven Labs
-  avatar: avatar.png
-  gravatar:
-  description: A website with blog posts and pages
+    # Meta
+    title: Eleven Labs
+    avatar: avatar.png
+    gravatar:
+    description: A website with blog posts and pages
 
-  # Header and footer text
-  header_text: <img src="/img/fg-header.png" />
-  header_text_feature_image: img/bg-header.png
-  footer_text: >
-   Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+    # Header and footer text
+    header_text: <img src="/img/fg-header.png" />
+    header_text_feature_image: img/bg-header.png
+    footer_text: >
+        Powered by
+        <a href="http://jekyllrb.com">Jekyll</a>
+        with
+        <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
 
-  # Icons
-  rss: false
-  email_address: wilson@eleven-labs.com
-  behance:
-  bitbucket:
-  dribbble:
-  facebook: 11Labs
-  flickr:
-  github: eleven-labs
-  google_plus:
-  instagram:
-  linkedin: https://fr.linkedin.com/company/eleven-labs
-  pinterest:
-  reddit:
-  soundcloud:
-  stack_exchange: http://stackoverflow.com/jobs/companies/eleven-labs
-  steam:
-  tumblr:
-  twitter: eleven_labs
-  wordpress:
-  youtube: UCt_NukjmUm4whjmbMuZ0MMw
+    # Icons
+    rss: false
+    email_address: wilson@eleven-labs.com
+    behance:
+    bitbucket:
+    dribbble:
+    facebook: 11Labs
+    flickr:
+    github: eleven-labs
+    google_plus:
+    instagram:
+    linkedin: https://fr.linkedin.com/company/eleven-labs
+    pinterest:
+    reddit:
+    soundcloud:
+    stack_exchange: http://stackoverflow.com/jobs/companies/eleven-labs
+    steam:
+    tumblr:
+    twitter: eleven_labs
+    wordpress:
+    youtube: UCt_NukjmUm4whjmbMuZ0MMw
 
-  # Scripts
-  google_analytics:
-  disqus_shortname: eleven-labs-github-io
-  muut_community_name:
+    # Scripts
+    google_analytics:
+    disqus_shortname: eleven-labs-github-io
+    muut_community_name:
 
-  # Localization strings
-  str_follow_on: Suivez nous sur
-  str_rss_follow:
-  str_email: Email
-  str_next: Suivant
-  str_prev: Précédent
-  str_continue_reading: Lire l'article
+    # Localization strings
+    str_follow_on: Suivez nous sur
+    str_rss_follow:
+    str_email: Email
+    str_next: Suivant
+    str_prev: Précédent
+    str_continue_reading: Lire l'article
 
-  # Colours, typography and padding
-  google_fonts: Cabin
+    # Colours, typography and padding
+    google_fonts: Cabin
 
-  # Post navigation
-  post_navigation: false
+    # Post navigation
+    post_navigation: false
 
 # PAGINATION
 paginate: 5
@@ -65,6 +68,7 @@ paginate_path: blog/page:num
 markdown: kramdown
 highlighter: rouge
 sass:
-  sass_dir: _sass
-  style: :compressed
-gems: [jekyll-paginate]
+    sass_dir: _sass
+    style: :compressed
+gems:
+    - jekyll-paginate
