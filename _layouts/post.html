@@ -2,14 +2,14 @@
 layout: default
 ---
 <article {% if page.feature-img %}class="feature-image"{% endif %}>
-  <header style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
-    <h1 class="title">{{ page.title }}</h1>
-    <p class="meta">
-    {{ page.date | date: "%B %-d, %Y" }}
-    {% if page.author %} - {{ page.author }}{% endif %}
-    </p>
-  </header>
-  <section class="post-content">{{ content }}</section>
+    <header style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
+        <h1 class="title">{{ page.title }}</h1>
+        <p class="meta">
+            {{ page.date | date: "%B %-d, %Y" }}
+            {% if page.author %} - {{ page.author }}{% endif %}
+        </p>
+    </header>
+    <section class="post-content">{{ content }}</section>
 </article>
 
 <!-- Post navigation -->
@@ -17,19 +17,19 @@ layout: default
 <div id="post-nav">
     {% if page.previous.url %}
     <a id="prev-post" href="{{ site.baseurl }}{{ page.previous.url }}">
-      <span class="page-title">{{ page.previous.title }}</span>
-      <span class="nav-label">
-        <i class="fa fa-chevron-left"></i> {{ site.theme_settings.str_prev }}
-      </span>
+        <span class="page-title">{{ page.previous.title }}</span>
+        <span class="nav-label">
+            <i class="fa fa-chevron-left"></i> {{ site.theme_settings.str_prev }}
+        </span>
     </a>
     {% endif %}
     {% if page.next.url %}
     <a id="next-post" href="{{ site.baseurl }}{{ page.next.url }}">
-       <span class="page-title">{{ page.next.title }}</span>
-       <span class="nav-label">
-        {{ site.theme_settings.str_next }} <i class="fa fa-chevron-right"></i>
-       </span>
-     </a>
+        <span class="page-title">{{ page.next.title }}</span>
+        <span class="nav-label">
+            {{ site.theme_settings.str_next }} <i class="fa fa-chevron-right"></i>
+        </span>
+    </a>
     {% endif %}
 </div>
 {% endif %}
@@ -37,13 +37,13 @@ layout: default
 <!-- Disqus -->
 {% if site.theme_settings.disqus_shortname %}
 <div class="comments">
-  {% include disqus.html %}
+    {% include disqus.html %}
 </div>
 {% endif %}
 
 <!-- Muut -->
 {% if site.theme_settings.muut_community_name %}
 <div class="comments">
-  {% include muut.html %}
+    {% include muut.html %}
 </div>
 {% endif %}
