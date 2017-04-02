@@ -1,0 +1,175 @@
+---
+layout: post
+title: Le Best of Web 2016
+author: denis
+date: '2016-06-16 10:31:42 +0200'
+date_gmt: '2016-06-16 08:31:42 +0200'
+categories:
+- Non classé
+- Javascript
+tags:
+- Javascript
+- bestofweb2016
+---
+{% raw %}
+<p style="text-align: center"><strong>...Ou BoW 2K16 pour les intimes</strong></p>
+<p style="text-align: center"><i>En ce Vendredi 10 Juin, en guise de rayon de soleil de printemps, se tenait le Best Of Web 2016. Et nous étions là, avec notre armée de Wilson et de Schokobons,  pour assister à une intense journée de talks oufissimes, dont notamment celui de notre astronaute Carl Ogren ! *clap clap clap*</i></p>
+<p>&nbsp;</p>
+<h2>09:00</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Alsacréations-1.png"><img class="wp-image-1834 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Alsacréations-1-300x221.png" alt="Alsacréations" width="472" height="348" /></a></p>
+<p style="text-align: center"><b>Le quotidien d'une agence web du futur - Alsacreation : Raphaël Goetter / Rodolphe Rimelé</b></p>
+<p>Ils nous ont présenté leur agence web telle qu’elle était à ses débuts, avec ses limites technologiques de l’époque, pour montrer à quel point le futur auquel ils rêvaient il y a 20 ans – CSS regions, grid-layout, … - est en train de se produire aujourd’hui (sauf sur IE, bien entendu)</p>
+<p>&nbsp;</p>
+<h2>09:30</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Harris-Freddy-Render-tree-1.png"><img class=" wp-image-1833 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Harris-Freddy-Render-tree-1-300x133.png" alt="Harris Freddy Render tree" width="446" height="197" /></a></p>
+<p style="text-align: center"><b>Web Animation Performance - ParisJS : after the render tree / Freddy Harris @harrisfreddy</b></p>
+<p><span style="font-weight: 400">Une conf passionnante sur ce qui est de la performance hors chargement et bande passante. Freddy Harris nous a illustré les concepts de layout, de paint et de composite et nous a rappelé l’importance de privilégier les animations sur les propriétés de la couche composite (transform, opacity). Etat des lieux des trucs et astuces disponibles pour obtenir une interface animée qui reste fluide, avec notamment l‘avènement de la propriété will-change de mieux en mieux supportée.</span></p>
+<p>Pour revoir les slides du talk, <a href="http://freddy03h.github.io/render-presentation/#/">c'est par ici que ça se passe</a> ! L'auteur propose aussi, pour ceux qui souhaitent approfondir le sujet de son talk, <a href="http://freddy03h.github.io/flip-presentation/#/">une autre présentation sur la FLIP technique</a>.</p>
+<p>&nbsp;</p>
+<h2>10:00</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Streaming-API.png"><img class=" wp-image-1835 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Streaming-API-254x300.png" alt="Streaming API" width="306" height="361" /></a></p>
+<p style="text-align: center"><strong>Streaming API : pourquoi et comment ? - Eric Horesnyi / Audrey Neveux @Audrey_Neveu</strong></p>
+<p><span style="font-weight: 400">Comme on le sait depuis quelques années, la consommation web sur mobile a explosé au point que depuis 2 ans elle dépasse même celle sur ordinateur.</span></p>
+<p><span style="font-weight: 400">Afin d’éviter au maximum l’utilisation du bouton “refresh” qui se fait un plaisir de tuer notre SEO, les animations et le temps réel sont nos meilleurs outils. Plusieurs solutions :</span></p>
+<ul>
+<li style="font-weight: 400"><span style="font-weight: 400">bien entendu pas de long pooling, qui n’est qu’un hack</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">deux autres solutions :</span></li>
+</ul>
+<ul>
+<li style="font-weight: 400"><span style="font-weight: 400">Web Sockets ayant l’avantage d’être bi-directionnel et pouvant gérer texte et binaire</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">Server Sents Events - unidirectionnel (server -&gt; client) et ne gérant que le texte</span></li>
+</ul>
+<p><span style="font-weight: 400">La difficulté reste dans le choix à effectuer, car on n’a pas toujours besoin de bi-directionnel, et sur une multitude de domaine (performance, perte de connection) le SSE est plus puissant.</span></p>
+<p><span style="font-weight: 400">Il s’agissait ensuite essentiellement du live coding d’une application de suivi de la station ISS par</span><a href="http://www.datastream.io/"><span style="font-weight: 400"> datastream.io</span></a></p>
+<p>&nbsp;</p>
+<h2>11:00</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Redux.png"><img class=" wp-image-1837 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Redux-295x300.png" alt="Redux" width="340" height="346" /></a></p>
+<p style="text-align: center"><b>Tout ce que vous voulez savoir sur redux - Matthieu Lux @swiip</b></p>
+<p><span style="font-weight: 400">Matthieu Lux nous a expliqué les concepts généraux de Redux (le plus gros buzz ayant été, bien entendu, que le logo de redux est inspiré de celui de charmed).</span></p>
+<p><span style="font-weight: 400">Plus sérieusement les points clefs à retenir sont :</span></p>
+<ul>
+<li style="font-weight: 400"><span style="font-weight: 400">redux est agnostique au framework et est utilisable partout</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">redux facilite l’organisation des composants en centralisant tout dans un store (state), que l’on ne peut modifier via des reducers activés par des actions.</span></li>
+</ul>
+<p><span style="font-weight: 400">Pour plus d’information n’hésitez pas à suivre Dan Abramov, ou à lire la documentation de Redux. Sinon, v<a href="https://docs.google.com/presentation/d/1QBpt07SEN0lhjwuMdirfws-TRKTruXvxxu3-t6DiGk4/pub?start=false&amp;loop=false&amp;delayms=3000&amp;slide=id.g8608bf710_2_0">ous pouvez aussi revoir sa présentation</a>.</span></p>
+<p>&nbsp;</p>
+<h2>11:30</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/CSS.png"><img class="size-medium wp-image-1840 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/CSS-280x300.png" alt="CSS" width="280" height="300" /></a></p>
+<p style="text-align: center"><b>CSS, Compagnonnage et Vexillologie - Tim Carry @pixelastic</b></p>
+<p><span style="font-weight: 400">Voici un talk qui, sur le papier, ne partait pas pour être des plus enthousiasmants. « Compagnotruc, vexillolomachin … na mé oh c koi c truks c tro cheum ». Et finalement, à travers le challenge original que s’est fixé Tim Carry, à savoir refaire tous les drapeaux de pays uniquement avec du CSS et avec une seule div par drapeau, il a su nous partager ses techniques de renard à base de linear-gradients, radial-gradient, de font-icones, de clip-path, … pour réaliser des drapeaux souvent complexes, dont le pire : l’union-jack !</span></p>
+<p><a href="http://talks.pixelastic.com/css-flags-bestofweb/#/">Sa présentation est disponible si vous le souhaitez</a>.</p>
+<h2>12:00</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/meteorjs.png"><img class="size-medium wp-image-1841 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/meteorjs-300x158.png" alt="meteorjs" width="300" height="158" /></a></p>
+<p style="text-align: center"><b>Le web temps réel avec météor - Maxime Quandalle</b></p>
+<p><span style="font-weight: 400">Creation d'une app méteor en live coding</span></p>
+<p>&nbsp;</p>
+<h2>12:30</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Photo-buffet.png"><img class="size-medium wp-image-1850 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Photo-buffet-300x292.png" alt="Photo buffet" width="300" height="292" /></a></p>
+<p style="text-align: center"><b>REPAS</b></p>
+<p><span style="font-weight: 400">C'était bon, j’ai encore dû prendre 1kg, monde de merde.</span></p>
+<p>&nbsp;</p>
+<h2>13:30</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/REX.png"><img class="size-medium wp-image-1842 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/REX-300x271.png" alt="REX" width="300" height="271" /></a></p>
+<p style="text-align: center"><b>REX sur la refonte de l'espace client Bouygue télécom avec Backbone.js<br />
+Carl Ogren / Stéphane Bachelier</b></p>
+<p><span style="font-weight: 400">WHOUUUUUU !!!!</span></p>
+<p><span style="font-weight: 400">POOOOO POPOPOPOPOOOOOOOOOO POOOOOOOOOOOOOOOOOOO !!!</span></p>
+<p>[ce retour est totalement impartial]</p>
+<p><span style="font-weight: 400">C’est l’heure de la conf que nous attendions tous, le retour d’expérience de notre astronaute Backbonien Carl Ogren et de son acolyte Stéphane Bachelier sur la refonte de l’espace client Bouygues Télécom. Ils ont tout d’abord justifié l’utilisation de Backbone JS, framework stable depuis plus de 3 ans et toujours maintenu, versus des Angular2 ou React jugés respectivement trop mouvants et trop jeunes. Ils nous ont ensuite exposé leur problématique de faire cohabiter les 2 UX, ancienne et nouvelle, résolue grâce à l’inclusion de l’ancienne interface embarquée sur la nouvelle appli via une iframe.</span></p>
+<p><span style="font-weight: 400">Un grand bravo à tous les deux !</span></p>
+<p>&nbsp;</p>
+<h2>14:00</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Charrts-de-d3.png"><img class="size-medium wp-image-1844 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Charrts-de-d3-212x300.png" alt="Charrts de d3" width="212" height="300" /></a></p>
+<p style="text-align: center"><b>Reusable chart d3 : un pattern réutilisable pour créer un composant JS - Jeremy Pinhel @jeremypinhel</b></p>
+<p><span style="font-weight: 400">Une conf pour expliquer comment développer des graphes à partir de composants d3</span></p>
+<p><span style="font-weight: 400">Voir le billet du maintainer de d3js sur le sujet : https://bost.ocks.org/mike/chart/</span></p>
+<p>&nbsp;</p>
+<h2>14:30</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/RxJS5.png"><img class="size-medium wp-image-1845 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/RxJS5-288x300.png" alt="RxJS5" width="288" height="300" /></a></p>
+<p><b>RxJS 5 in depth - Gerrard Sans @gerardsans</b></p>
+<p><span style="font-weight: 400">RxJS est pour le speaker une “sorte de lodash des streams”, il</span><span style="font-weight: 400"> s'est donc livré à un live coding montrant les possibilités de cette librairie.</span></p>
+<p><span style="font-weight: 400">Son support : https://github.com/gsans/bestofweb_rxjs5_indepth/blob/master/talk.js</span></p>
+<p>&nbsp;</p>
+<h2>15:30</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Progressives-WebApp.png"><img class="size-medium wp-image-1846 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/Progressives-WebApp-294x300.png" alt="Progressives WebApp" width="294" height="300" /></a></p>
+<p style="text-align: center"><b>Progressive Web apps - Florian Orpelière @florpeliere</b></p>
+<p><span style="font-weight: 400">L’intérêt majeur des « Progressive Web Apps » est de donner à une application une instantanéité et une accessibilité en court-circuitant le passage dans le store, une étape qui engendre une perte considérable d'utilisateurs. </span></p>
+<p><span style="font-weight: 400">Une bonne web app doit également être à la fois responsive, safe (https), progressive (utilise ce que le navigateur peut faire), performante, « app-like », ré-engageante (notifications push), linkable, installable, utilisable offline et fresh (toujours à jour). Un cahier des charges assez chargé mais qui permet de garantir un produit de qualité. L’exemple est donné d’une Web App présente chez Sfeir, en angular et angular Matérial, pour gérer les collaborations.</span></p>
+<p>Vous pouvez aussi <a href="https://docs.google.com/presentation/d/1ZtyIiOLueJUZ89E0Zb0tluv7yKfQ91xqs2LqLr_ydBU/pub?start=false&amp;loop=false&amp;delayms=3000&amp;slide=id.p">retrouver son talk</a>.</p>
+<p>&nbsp;</p>
+<h2>16:00</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/GameBoyJs.png"><img class=" wp-image-1847 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/GameBoyJs-237x300.png" alt="GameBoyJs" width="268" height="339" /></a></p>
+<p style="text-align: center"><b>Emuler une gameBoy en JS - Maël Nison</b></p>
+<p>Maël nous a présenté comment il a développé en JS son émulateur <span style="font-weight: 400">(CPU, MMU, GPU, et sous systèmes : timer, input, sound…)</span></p>
+<p>Quelques notions vulgarisées :</p>
+<ul>
+<li>CPU : C<i>entral Processing Unit</i> - Fait correspondre un entier (0x80) à une action (A = A + B)</li>
+<li>MMU : M<i><i><i>emory Management Unit</i></i></i> - Prends les adresse (accès mémoire) que demande le CPU et les "route" vers les bon segments hardware.</li>
+<li>GPU :<i><i>Graphics Processing Unit</i></i> - Transforme la Video RAM en tableau de pixel</li>
+</ul>
+<p>Pour les implémentations Maël nous a présenté différentes pistes, pour bien vous spoiler le GPU est le plus horrible à reproduire.</p>
+<p>CPU :</p>
+<ul>
+<li>un switch case énorme, qui trouve assez rapidement ses limites étant donné qu'a partir d'un certains nombre de case le navigateur désoptimise.</li>
+<li>une table de fonction, une clef -&gt; une fonction, même problème le navigateur désoptimise au bout d'un moment car il le prends pour une hash table.</li>
+<li>un système de template générant des fonctions JS, ce qui a l'avantage d'être facilement testable !</li>
+</ul>
+<p>MMU :</p>
+<ul>
+<li>une table de fonction, qui dans ce cas serait juste trop lente pour être considéré</li>
+<li>une foultitude de if pour gérer les Ranges et des fallback sur un swich case pour le reste, ce qui reste relativement testable</li>
+</ul>
+<p>Pour le GPU c'est plus compliqué, c'est une machine à état (4 états) :</p>
+<ul>
+<li>il y a énormément de règles différentes</li>
+<li>beaucoup d'exceptions à ces même règles à implementer</li>
+<li>il faut même reproduire les bugs présents dans le hardware pour que ça marche (les jeux se basant parfois dessus).</li>
+<li>très difficile à tester, et encore pire à debugger</li>
+</ul>
+<p>Qui dit dev dit création d'outils tel que VirtJs qui implémente tout un tas de sous système Audio / Timer / Input interchangeable ce qui permet de se concentrer sur le dev du Core.</p>
+<p>Il a également développé <a href="http://www.start9.io">start9.io</a> pour héberger ses jeux, jouer et sauvegarder ses parties endiablées !</p>
+<p>&nbsp;</p>
+<h2>17:00</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/WebComps.png"><img class=" wp-image-1848 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/WebComps-300x277.png" alt="WebComps" width="321" height="296" /></a></p>
+<p style="text-align: center"><b>Mixité dans le monde des web components - Horacio Gonzalez @LostInBrittany</b></p>
+<p><span style="font-weight: 400">Selon Horacio Gonzalez, les web components sont la révolution de demain. Son challenge : développer une appli Angular cataloguant des marques de bières qui mélange des composants basés sur différentes librairies (Polymer, X-Tag, React). Résultat : It works !</span></p>
+<p>Pour les curieux, ses travaux <a href="https://github.com/LostInBrittany/beyond-polymer">sont accessibles sur GitHub</a>.</p>
+<p>&nbsp;</p>
+<h2>17:30</h2>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/DuWebauMobile.png"><img class="size-medium wp-image-1854 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/DuWebauMobile-300x257.png" alt="DuWebauMobile" width="300" height="257" /></a></p>
+<p style="text-align: center"><b>Du web au mobile, les techno multiplateformes qui changent les standards en 2016<br />
+Florian Rival... @florianrival / Yann Leflour @yleflour</b></p>
+<p><span style="font-weight: 400">Un large focus sur la dernière conf de Florian et Yann qui pose LA question : hybride OU mobile et choix des technos ! La présentation a démarré avec deux points de vue :</span></p>
+<ul>
+<li style="font-weight: 400"><span style="font-weight: 400">Pourquoi ne pas faire d’application : le nombre de de visiteurs uniques par mois = 3,3M contre 8,9M sur du web mobile</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">Pourquoi faire une application : le temps moyen par visiteur par mois 201,8 min pour une app contre 10,9 pour un site mobile.</span></li>
+</ul>
+<p><span style="font-weight: 400">Devant ce constat la question de la création d’application hybride est à poser, et propose un tour du marché des solutions se présentant à nous.</span><span style="font-weight: 400"><br />
+</span><span style="font-weight: 400"><br />
+</span><span style="font-weight: 400">Leurs critères de sélection des frameworks :</span></p>
+<ul>
+<li style="font-weight: 400"><span style="font-weight: 400">Open source</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">Communauté</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">Javascript</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">Structure html</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">Styling facon css</span></li>
+</ul>
+<p><span style="font-weight: 400">Les deux winners sont :</span></p>
+<ul>
+<li style="font-weight: 400"><span style="font-weight: 400">Webview : Une application ayant une webview, l’intégralité de l’app tourne dans cette WebView</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">React Native : Une application avec des composent natif, Le JS tourne sur un moteur JS (JSCore)</span></li>
+</ul>
+<p><b>BATTLE</b></p>
+<p><span style="font-weight: 400">&gt; Framework IONIC</span></p>
+<p><span style="font-weight: 400">Basé sur cordova et utilisant angular, ionic offre des composants mobiles et la structure bien connue d'angular, existant depuis maintenant quelques années. Il existe des centaines de composants.</span><span style="font-weight: 400"><br />
+</span><span style="font-weight: 400">IONIC créera pour vous 3 applications pour chaque OS, une des grandes forces de ce framework est sa capacité à démarrer très rapidement ses applications avec un look and feel adapté à chaque plateforme. Qui plus est Ionic expose des variable SaSS pour modifier le style de l’app.</span></p>
+<p><span style="font-weight: 400">&gt; React Native</span></p>
+<p><span style="font-weight: 400">Toute l’application va tourner sur le moteur JSCore. Le react gère la vue, le react Native s’occupe d’exposer des composants de base des mobiles. La base est très simple à appréhender mais peut provoquer une frustration car on ne peut pas encore obtenir un rendu natif intégral de l’application.</span></p>
+<p><span style="font-weight: 400">Conclusion :</span></p>
+<p><span style="font-weight: 400">Au niveau des performances l’expérience utilisateur est quasiment identique sur hybride. Ionic est “pur web”, ce qui engendre des pertes de performance et des besoins d’optimisation si la logique est trop complexe. React Native quant à lui est bi-threadé, un pour la page, un autre pour le JS, mais là aussi des render à tort et à travers feront “bugguer” la page. Ceci étant dit, React Native gagne quand même le concours du plus performant.</span></p>
+<p><span style="font-weight: 400">Un autre avantage de l’hybrid est sa capacité à faciliter le développement et la mise en production. Le hot reloading, et le live reload dans une moindre mesure, facilitent grandement la vie du dev. Concernant le déploiement de nouvelle version un outil comme </span><a href="https://microsoft.github.io/code-push/"><span style="font-weight: 400">CodePush</span></a><span style="font-weight: 400"> permet de mettre à jour l’application sans avoir à faire grand chose (attention aux policies des différents stores pour autant).</span><span style="font-weight: 400"><br />
+</span><span style="font-weight: 400"><br />
+</span><span style="font-weight: 400">En gros les applications hybrides, mangez-en c’est bon !</span></p>
+<p style="text-align: center"><strong>Et le mot de la fin : vivement l'édition 2017 !</strong></p>
+<p><img class="aligncenter" src="https://scontent-cdg2-1.xx.fbcdn.net/t31.0-8/13422175_488133671333587_8953374827034623534_o.jpg" width="358" height="238" /></p>
+{% endraw %}

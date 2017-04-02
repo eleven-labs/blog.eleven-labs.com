@@ -1,0 +1,344 @@
+---
+layout: post
+title: Créer un bundle Symfony autonome
+author: aveber
+date: '2016-12-16 18:10:29 +0100'
+date_gmt: '2016-12-16 17:10:29 +0100'
+categories:
+- Symfony
+- Php
+tags:
+- php
+- symfony
+- tuto
+- tutorial
+- tutoriel
+- bundle
+---
+{% raw %}
+<blockquote>Dans ce post nous allons voir step-by-step comment créer de zéro un bundle symfony autonome.<br />
+Ce bundle n'aura aucune responsabilité fonctionnelle, il servira simplement à dérouler les étapes de création d'un bundle autonome.</p></blockquote>
+<hr />
+<h2>Les étapes</h2>
+<ol>
+<li>Bootstrap du projet</li>
+<li>Bundle minimal</li>
+<li>Application embarquée</li>
+<li>Utilisation autonome
+<ul>
+<li>Application console</li>
+<li>Application web</li>
+</ul>
+</li>
+<li>Tests
+<ul>
+<li>Tests unitaires</li>
+<li>Tests fonctionnels</li>
+</ul>
+</li>
+<li>Conclusion</li>
+</ol>
+<hr />
+<h2>Bootstrap du projet</h2>
+<p>Commençons par créer un fichier composer.json pour notre projet.</p>
+<pre class="lang:json decode:true">{
+    "name": "acme/standalone-bundle",
+    "description": "acme standalone bundle",
+    "type": "bundle",
+    "require": {}
+}</pre>
+<p>Afin d'optimiser les performances en production, nous séparons les sources et les tests. Reprenons notre composer.json et ajoutons-y ces règles d'autoload.</p>
+<pre class="lang:json decode:true">{
+    "name": "acme/standalone-bundle",
+    "description": "acme standalone bundle",
+    "type": "bundle",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Acme\StandaloneBundle\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Acme\StandaloneBundle\Tests\": "tests/"
+        }
+    }
+}</pre>
+<p>Lançons un composer install afin d'initialiser le projet.</p>
+<pre class="lang:bash decode:true">composer install</pre>
+<p>Composer crée un dossier vendor que nous ne souhaitons pas versionner. Pour indiquer à git que ce dossier doit être ignoré, il faut créer le fichier .gitignore à la racine du projet et y ajouter le path vers le dossier à ignorer.</p>
+<pre># .gitingore
+
+/vendor</pre>
+<h2>Bundle minimal</h2>
+<p>Pour créer notre bundle minimal, nous devons créer la classe \Acme\StandaloneBundle\StandaloneBundle qui étend \Symfony\Component\HttpKernel\Bundle\Bundle.</p>
+<pre class="lang:php decode:true">&lt;?php
+// src/StandaloneBundle.php
+
+namespace Acme\StandaloneBundle;
+
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+class StandaloneBundle extends bundle
+{
+}</pre>
+<p>La classe parente est disponible dans le composant symfony/http-kernel, ajoutons cette dépendance à notre projet avec composer.</p>
+<pre class="lang:bash decode:true">composer require "symfony/http-kernel:3.1.*"</pre>
+<p>Notre bundle minimal est maintenant prêt, il peut être register dans une application Symfony.</p>
+<h2>Application embarquée</h2>
+<p>Afin d'être sûr que notre bundle fonctionne comme attendu au sein d'une application symfony, nous allons embarquer une application minimale dans notre projet.</p>
+<p>Dans le kernel de cette application embarquée, nous allons surcharger les méthodes</p>
+<ul>
+<li>registerBundles: pour y register notre bundle</li>
+<li>registerContainerConfiguration: pour définir l'emplacement de notre fichier de configuration</li>
+</ul>
+<pre class="lang:php decode:true">&lt;?php
+// tests/App/AppKernel.php
+
+namespace Acme\StandaloneBundle\Tests\App;
+
+use Symfony\Component\HttpKernel\Kernel;
+use Symfony\Component\Config\Loader\LoaderInterface;
+
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        return [
+            new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new \Acme\StandaloneBundle\StandaloneBundle(),
+        ];
+    }
+
+    public function registerContainerConfiguration(LoaderInterface $loader)
+    {
+        $loader-&gt;load(__DIR__.'/config/config.yml');
+    }
+}</pre>
+<p>On en profite pour ajouter en dépendance de dev le composant symfony/framework-bundle</p>
+<pre class="lang:bash decode:true">composer require --dev "symfony/framework-bundle:3.1.*"</pre>
+<p>Le composant FrameworkBundle requiert au minimum la configuration d'un secret, que nous ajoutons au fichier tests/App/config/config.yml</p>
+<pre class="lang:yaml decode:true"># tests/App/config/config.yml
+
+# FrameworkBundle Configuration
+framework:
+    secret: This is a secret, change me</pre>
+<p>Pour que ce fichier de configuration en yaml puisse être chargé par le kernel, nous devons ajouter en dépendance de dev le composant symfony/yaml.</p>
+<pre class="lang:bash decode:true">composer require --dev "symfony/yaml"</pre>
+<p>Au boot, le kernel crée un dossier de cache et un dossier de logs que l'on ne souhaite pas versionner. On ajoute alors ces dossiers au .gitignore</p>
+<pre># .gitingore
+
+/vendor
+/tests/App/cache
+/tests/App/logs</pre>
+<h2>Utilisation autonome</h2>
+<h4>Application console</h4>
+<p>Pour pouvoir créer dans notre bundle autonome des commandes symfony, nous devons dans un premier temps ajouter en dépendance de dev le composant symfony/console puis ajouter à notre application minimale le script console.</p>
+<pre class="lang:bash decode:true">composer require --dev "symfony/console:3.1.*"</pre>
+<pre class="lang:php decode:true">&lt;?php
+// tests/App/console
+
+namespace Acme\StandaloneBundle\Tests\App;
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+
+$kernel = new AppKernel('dev', true);
+$application = new Application($kernel);
+$application-&gt;run();</pre>
+<p>Nous pouvons maintenant lancer des commandes en utilisant la console.</p>
+<pre class="lang:bash decode:true">php tests/App/console</pre>
+<h4>Application web</h4>
+<p>Maintenant que nous pouvant lancer des commandes, intéressons-nous au web. Afin de pouvoir appeler un contrôleur, nous devons ajouter à notre application minimale un frontal web.</p>
+<pre class="lang:php decode:true">&lt;?php
+// tests/App/app_dev.php
+
+namespace Acme\StandaloneBundle\Tests\App;
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+use Symfony\Component\HttpFoundation\Request;
+
+$kernel = new AppKernel('dev', true);
+$request = Request::createFromGlobals();
+$response = $kernel-&gt;handle($request);
+$response-&gt;send();
+$kernel-&gt;terminate($request, $response);</pre>
+<p>Ajoutons un contrôleur et la configuration du routing afin de pouvoir tester notre frontal web.</p>
+<pre class="lang:php decode:true">&lt;?php
+// src/Controller/FooController.php
+
+namespace Acme\StandaloneBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
+class FooController extends Controller
+{
+    public function barAction()
+    {
+        return new JsonResponse(['foo' =&gt; 'bar']);
+    }
+}</pre>
+<pre class="lang:yaml decode:true"># src/Resources/config/routing.yml
+
+standalone_foobar:
+    path: /
+    defaults:
+        _controller: StandaloneBundle:Foo:bar</pre>
+<pre class="lang:yaml decode:true"># tests/App/config/routing.yml
+
+_main:
+    resource: ../../../src/Resources/config/routing.yml</pre>
+<pre class="lang:yaml decode:true"># tests/App/config/config.yml
+
+# FrameworkBundle Configuration
+framework:
+    secret: This is a secret, change me
+    router:
+        resource: '%kernel.root_dir%/config/routing.yml'
+        strict_requirements: ~</pre>
+<p>Maintenant que nous avons un frontal web disponible dans notre projet, voyons comment lancer un serveur web très simple qui dirige directement vers celui-ci.</p>
+<p>Pour commencer ajoutons le composant symfony/process.</p>
+<pre class="lang:bash decode:true">composer require --dev "symfony/process:3.1.*"</pre>
+<p>L'ajout de ce composant nous permet d'utiliser le serveur web interne de php.</p>
+<pre class="lang:bash decode:true">php tests/App/console server:run -d tests/App</pre>
+<p>Ouvrez votre navigateur vers <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>, le json {"foo": "bar"} doit s'afficher. Vous avez maintenant un bundle capable de recevoir des requêtes HTTP et d'y répondre sans avoir besoin de configurer un serveur web pour le développement.</p>
+<h2>Tests</h2>
+<h4>Tests unitaires</h4>
+<p>Pour exécuter les tests unitaires sur notre projet, nous allons utiliser la librairie phpunit.</p>
+<p>Ajoutons cette dépendance de dev</p>
+<pre class="lang:bash decode:true">composer require --dev "phpunit/phpunit"</pre>
+<p>Ajoutons le fichier de configuration phpunit dans notre projet.</p>
+<pre class="lang:xml decode:true">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!-- phpunit.xml --&gt;
+
+&lt;phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.3/phpunit.xsd"
+    backupGlobals="false"
+    colors="true"
+    bootstrap="./vendor/autoload.php"
+    &gt;
+
+    &lt;php&gt;
+        &lt;server name="KERNEL_DIR" value="./tests/App/" /&gt;
+    &lt;/php&gt;
+
+    &lt;testsuites&gt;
+        &lt;testsuite name="StandaloneBundle Suite"&gt;
+            &lt;directory suffix="Test.php"&gt;./tests/&lt;/directory&gt;
+        &lt;/testsuite&gt;
+    &lt;/testsuites&gt;
+
+    &lt;filter&gt;
+        &lt;whitelist processUncoveredFilesFromWhitelist="true"&gt;
+            &lt;directory suffix=".php"&gt;./src/&lt;/directory&gt;
+        &lt;/whitelist&gt;
+    &lt;/filter&gt;
+
+    &lt;logging&gt;
+        &lt;log type="coverage-clover" target="build/logs/clover.xml"/&gt;
+        &lt;log type="coverage-html" target="build/coverage" /&gt;
+    &lt;/logging&gt;
+&lt;/phpunit&gt;</pre>
+<p>Ajoutons un test unitaire pour tester notre configuration.</p>
+<pre class="lang:php decode:true">&lt;?php
+// tests/Unit/Controller/FooControllerTest.php
+
+namespace Acme\StandaloneBundle\Tests\Unit\Controller;
+
+use Acme\StandaloneBundle\Controller\FooController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
+class FooControllerTest extends \PHPUnit_Framework_TestCase
+{
+    private $controller = null;
+
+    protected function setUp()
+    {
+        $this-&gt;controller = new FooController();
+    }
+
+    protected function tearDown()
+    {
+        $this-&gt;controller = null;
+    }
+
+    public function testBarAction()
+    {
+        $this-&gt;assertInstanceOf(JsonResponse::class, $this-&gt;controller-&gt;barAction());
+    }
+}</pre>
+<p>On lance ensuite la suite de test, qui nous affiche qu'un test et une assertion ont été exécutés sans problèmes.</p>
+<pre class="lang:bash decode:true">./vendor/bin/phpunit</pre>
+<h4>Tests fonctionnels</h4>
+<p>Pour lancer les tests fonctionnels, nous allons encore une fois utiliser la librairie phpunit.</p>
+<p>Commençons par ajouter le composant symfony/brower-kit, puis nous étendrons le WebTestCase symfony pour override la méthode getKernelClass afin renvoyer le bon FQCN de notre Kernel embarqué, puis nous rajouterons de la configuration au framework bundle.</p>
+<pre class="lang:bash decode:true">composer require "symfony/browser-kit:3.1.*"</pre>
+<pre class="lang:php decode:true">&lt;?php
+// tests/WebTestCase.php
+
+namespace Acme\StandaloneBundle\Tests;
+
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
+
+abstract class WebTestCase extends BaseWebTestCase
+{
+    protected static function getKernelClass()
+    {
+        return 'Acme\StandaloneBundle\Tests\App\AppKernel';
+    }
+}</pre>
+<pre class="lang:yaml decode:true"># tests/App/config/config.yml
+
+# FrameworkBundle Configuration
+framework:
+    secret: This is a secret, change me
+    router:
+        resource: '%kernel.root_dir%/config/routing.yml'
+        strict_requirements: ~
+    test: ~</pre>
+<p>Nous allons maintenant utiliser ce WebTestCase pour créer un client et parcourir les pages web de notre projet.</p>
+<pre class="lang:php decode:true">&lt;?php
+// tests/Functional/Controller/FooControllerTest.php
+
+namespace Acme\StandaloneBundle\Tests\Functional\Controller;
+
+use Acme\StandaloneBundle\Tests\WebTestCase;
+
+class FooControllerTest extends WebTestCase
+{
+    private $client = null;
+
+    private $container = null;
+
+    public function setUp()
+    {
+        $this-&gt;client = static::createClient();
+        $this-&gt;container = $this-&gt;client-&gt;getContainer();
+    }
+
+    public function tearDown()
+    {
+        $this-&gt;client = null;
+        $this-&gt;container = null;
+    }
+
+    public function testBarAction()
+    {
+        $this-&gt;client-&gt;request('GET', '/');
+
+        $this-&gt;assertTrue($this-&gt;client-&gt;getResponse()-&gt;isSuccessful());
+    }
+}</pre>
+<p>Nous pouvons maintenant relancer les tests</p>
+<pre class="lang:bash decode:true">./vendor/bin/phpunit</pre>
+<p>Nous avons maintenant deux tests et deux assertions en succès.</p>
+<h2>Conclusion</h2>
+<p>En quelques étapes nous avons un bundle symfony autonome.<br />
+Un bundle qui est capable de lancer ses propres tests unitaires et fonctionnels mais également de faire tourner son propre serveur web, très utile pour le développement.</p>
+<p>J'espère que ce post vous aura donné l'envie de développer des bundles autonomes.<br />
+N'hésitez pas à poser des questions dans les commentaires, et à me dire si vous voulez que je continue sur le sujet en expliquant comment rajouter des composants (twig, web-profiler, ...), comment faire de votre bundle autonome un projet open-source distribué via packagist aux quatre coins du monde.</p>
+{% endraw %}
