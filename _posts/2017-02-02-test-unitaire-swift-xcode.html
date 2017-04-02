@@ -1,0 +1,229 @@
+---
+layout: post
+status: publish
+published: true
+title: Des tests unitaires en Swift avec Xcode
+author:
+  display_name: Ilan Benichou
+  login: ibenichou
+  email: ibenichou@eleven-labs.com
+  url: ''
+author_login: ibenichou
+author_email: ibenichou@eleven-labs.com
+wordpress_id: 3216
+wordpress_url: http://blog.eleven-labs.com/?p=3216
+date: '2017-02-02 10:29:51 +0100'
+date_gmt: '2017-02-02 09:29:51 +0100'
+categories:
+- Mobile
+tags: []
+---
+<p><span style="font-weight: 400;">Bonjour à vous les astronautes !!! :)</span></p>
+<p><span style="font-weight: 400;">Aujourd'hui, nous allons voir ensemble un nouveau tuto de l'espace sous iOS/Xcode.</span></p>
+<p><span style="font-weight: 400;">Le sujet : <strong>Les tests unitaires</strong> !</span></p>
+<p><span style="font-weight: 400;">Le but de cet article est de vous sensibiliser aux tests sous Xcode et de vous apporter les bases pour vous lancer. N’hésitez pas à écrire un commentaire si vous avez des questions ou autres...</span></p>
+<p><span style="font-weight: 400;">Vous avez sûrement entendu la phrase : "tester c'est douter", mais d</span><span style="font-weight: 400;">ans mon équipe on aime bien rajouter: "mais douter c'est bien".</span></p>
+<p><span style="font-weight: 400;">Alors un test unitaire c'est quoi ?</span></p>
+<p><span style="font-weight: 400;">Un test unitaire permet de :</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Vérifier le bon fonctionnement d'une méthode, une classe, une portion d'un programme... ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Garantir une non-régression de votre code ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Se rendre compte que son code est trop long et compliqué, ce qui entraîne une refacto.</span></li>
+</ul>
+<p><span style="font-weight: 400;">En général, un test se décompose en trois parties, suivant le schéma « </span><b>AAA</b><span style="font-weight: 400;"> », qui correspond aux mots anglais « Arrange, Act, Assert », que l’on peut traduire en français par Arranger, Agir, Auditer.</span></p>
+<ul>
+<li style="font-weight: 400;"><b>Arranger</b><span style="font-weight: 400;"> : Il s’agit dans un premier temps de définir les objets, les variables nécessaires au bon fonctionnement de son test (initialiser les variables, initialiser les objets à passer en paramètres de la méthode à tester, etc.) ;</span></li>
+<li style="font-weight: 400;"><b>Agir</b><span style="font-weight: 400;"> : Il s’agit d’exécuter l’action que l’on souhaite tester (en général, exécuter la méthode que l’on veut tester, etc.) ;</span></li>
+<li style="font-weight: 400;"><b>Auditer</b><span style="font-weight: 400;"> : Vérifier que le résultat obtenu est conforme à nos attentes.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Bon ça c'est la théorie, passons un peu à la pratique.</span></p>
+<p><span style="font-weight: 400;">Sur Xcode, pour effectuer des tests, nous utiliserons le framework fournit par Apple qui s’appel XCTest.</span></p>
+<p><span style="font-weight: 400;">Ce framework fournit pas mal de choses mais je ne vous en dis pas plus, après on va me reprocher de spoiler :)</span></p>
+<h3>Test sur un(e) Model/Classe</h3>
+<p><span style="font-weight: 400;">Tout d’abord, nous allons créer une structure Astronaute (dans un dossier Model pour faire genre on fait du MVC :p ) comme ceci :</span></p>
+<pre class="lang:swift decode:true">import Foundation
+
+struct Astronaute {
+    let name: String
+    let grade: String
+    let sex: String
+    
+    let planet: String?
+    
+    init(name: String, grade: String, sex: String, planet: String? = nil) {
+        self.name = name
+        self.grade = grade
+        self.sex = sex
+        self.planet = planet
+    }
+}</pre>
+<p><span style="font-weight: 400;">Comme vous pouvez le constater, un Astronaute a obligatoirement un nom, un grade et un sexe mais n’a pas forcément de planète (c’est pas bien ça !).</span></p>
+<p><span style="font-weight: 400;">On vient de créer cette structure donc le bon réflexe à prendre c’est de la tester tout de suite.</span></p>
+<p><span style="font-weight: 400;">Alors commentkonfé ?</span></p>
+<p><span style="font-weight: 400;">Lorsque vous créez un projet, généralement Xcode vous demande si vous désirez ajouter des units tests (checkbox). Si vous avez coché cette case alors vous avez un dossier finissant par </span><b>Tests </b><span style="font-weight: 400;">qui s'est créé à la racine. Supprimez le fichier généré dedans et créez un dossier Model afin de respecter l’architecture mise en place (c’est dans les bonnes pratiques).</span><br />
+<span style="font-weight: 400;">Une fois cette étape terminée, faites clique droit sur le dossier &gt; New File et sélectionnez Unit Test Case Class. </span></p>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-16-à-23.18.39.png"><img class="size-medium wp-image-3219 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-16-à-23.18.39-300x211.png" alt="" width="300" height="211" /></a></p>
+<p><span style="font-weight: 400;">Le nommage de la classe doit obligatoirement finir par Tests, soit dans notre cas </span><b>AstronauteTests</b><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Nous allons maintenant nous attarder sur la classe générée afin de vous expliquer la base.</span></p>
+<pre class="lang:swift decode:true">import XCTest
+
+class AstronauteTests: XCTestCase {
+    
+    override func setUp() {
+        super.setUp()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func testExample() {
+    }
+    
+    func testPerformanceExample() {
+        self.measure {
+        }
+    }
+    
+}</pre>
+<p><span style="font-weight: 400;">La première chose à noter est qu’on importe XCTest. Comme vous vous en doutez, ceci permet d’avoir accès au framework XCTest.</span></p>
+<p><span style="font-weight: 400;">Ensuite nous avons plusieurs méthodes que nous allons voir en détail :</span></p>
+<ul>
+<li style="font-weight: 400;"><b>setUp()</b><span style="font-weight: 400;">. Cette méthode est appelée avant chaque invocation de chaque méthode de test écrit dans la classe. Pour ceux ou celles qui font des tests avec phpunit vous avez sûrement reconnu cette méthode ;</span></li>
+<li style="font-weight: 400;"><b>tearDown()</b><span style="font-weight: 400;">. Cette méthode est appelée après l’invocation de chaque méthode de tests écrits dans la classe ;</span></li>
+<li style="font-weight: 400;"><b>testExample()</b><span style="font-weight: 400;">. Méthode créée par défaut par Xcode. Il est important de savoir que chaque méthode de test que vous allez créer doit absolument être préfixée par </span><b>test </b>;</li>
+<li style="font-weight: 400;"><b>testPerformanceExample()</b><span style="font-weight: 400;">. Méthode créée par défaut par Xcode. Dans celle-ci, Xcode nous montre que nous pouvons aussi faire un test de performance. Tester la perfomance de votre code permet de s’assurer que les algorithmes les plus importants qui demandent un traitement particulier restent performants avec le temps.</span></li>
+</ul>
+<pre class="lang:swift decode:true">import XCTest
+@testable import tuto_xctest
+
+class AstronauteTests: XCTestCase {
+    
+    func testInitAstronaute() {
+        let astronaute = Astronaute(name: "Pepito", grade: "Amiral", sex: "Male")
+        
+        XCTAssertEqual("Pepito", astronaute.name)
+        XCTAssertEqual("Amiral", astronaute.grade)
+        XCTAssertEqual("Male", astronaute.sex)
+    }
+}</pre>
+<p><span style="font-weight: 400;">Rien ne vous choque ? J’ai ajouté un @testable import {nomDeMonProjet}. </span></p>
+<p><span style="font-weight: 400;">En effet, sur chaque classe de test que vous allez créer, vous devrez ajouter ceci afin d’autoriser l’accès au AppDelegate notamment mais aussi à l’ensemble des classes et méthodes créées dans votre application. Cependant, @testable donne accès seulement aux méthodes dites internes et non aux méthodes privées.</span></p>
+<p><span style="font-weight: 400;">Nous allons créer notre première méthode de test. Pour ceci, nous allons tester que notre structure Astronaute initialise bien les valeurs qu'on lui passe. C'est pourquoi, nous allons créer la méthode </span><b>testInitAstronaute</b><span style="font-weight: 400;"> (bien évidemment la bonne pratique est de donner un nom qui indique ce qu’on souhaite tester et son nom doit être en camelCase).</span></p>
+<p><span style="font-weight: 400;">Dans cette méthode, nous initialisons dans une constante astronaute la structure Astronaute avec les paramètres obligatoires.</span></p>
+<p><span style="font-weight: 400;">Pour tester que nos valeurs sont bien passées à la structure, il n’y a rien de plus simple.</span></p>
+<p><span style="font-weight: 400;">Nous allons utiliser une méthode fournie par le framework XCTest. Dans notre cas, nous testerons l’égalité entre deux valeurs et nous nous servirons de la méthode </span><b>XCTAssertEqual</b><span style="font-weight: 400;"> (la notion d’assert a déjà été vue plus haut) qui prend plusieurs arguments.</span></p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">expression1 </span><b>: </b><span style="font-weight: 400;">Une expression de type scalaire C ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">expression2 </span><b>: </b><span style="font-weight: 400;">Une expression de type scalaire C ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">…: Une description optionnelle lors d’un échec. Cette description doit être typée en String.</span></li>
+</ol>
+<p><span style="font-weight: 400;">Cette méthode génère un échec lorsque expression1 != expression2.</span></p>
+<p><span style="font-weight: 400;">Bon on a écrit notre test mais comment on l’exécute ?</span></p>
+<p><span style="font-weight: 400;">Il y a 3 solutions :</span></p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Vous lancez tous les tests via CMD + U ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Vous passez votre curseur sur le carré vide à côté du nom de la classe et celui-ci se transforme en bouton play. Ce procédé va lancer tous les tests de votre classe (cf. screenshot ci-dessous) ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Même procédure que la solution 2 mais seulement sur la méthode que vous souhaitez tester.</span></li>
+</ol>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-17-à-23.46.10.png"><img class="size-medium wp-image-3232 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-17-à-23.46.10-300x70.png" alt="" width="300" height="70" /></a></p>
+<p><span style="font-weight: 400;">Pour finir notre test, nous allons rajouter la méthode </span><b>testInitAstronuateWithPlanet </b><span style="font-weight: 400;">qui va tester l’initialisation d’un astronaute avec une planète (oui j’aime bien mettre des noms en rapport avec Star Wars :) ).</span></p>
+<pre class="lang:swift decode:true">func testInitAstronuateWithPlanet() {
+  let astronaute = Astronaute(name: "Skywalker", grade: "Jedi", sex: "Male", planet: "Tatooine")
+        
+  XCTAssertEqual("Tatooine", astronaute.planet)
+}</pre>
+<p><span style="font-weight: 400;">Bon normalement nous avons testé tous les cas possibles sur notre structure. Mais comment en être sûr ?  </span></p>
+<p><span style="font-weight: 400;">La solution : le code coverage. Il permet d’écrire le taux de code source testé d'un programme. Comment faire sous Xcode ?</span><br />
+<span style="font-weight: 400;">Cliquez sur l’icone (cf. screenshot ci-dessous) et cliquez sur “Edit Schema”</span></p>
+<p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-18-à-00.19.57.png"><img class="alignnone size-medium wp-image-3235" src="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-18-à-00.19.57-300x167.png" alt="" width="300" height="167" /></a></p>
+<p><span style="font-weight: 400;">Allez dans l’onglet Test et cochez la case “Gather coverage data” (cf. screenshot ci-dessous)</span></p>
+<p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-18-à-00.21.30.png"><img class="alignnone size-medium wp-image-3236" src="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-18-à-00.21.30-300x169.png" alt="" width="300" height="169" /></a></p>
+<p style="text-align: left;"><span style="font-weight: 400;">Une fois ces étapes effectuées, relancez le processus de test sur votre classe et cliquez sur l’icône qui ressemble à un message dans votre onglet à gauche puis dans l’onglet principal sélectionnez Code Coverage. N’oubliez pas de cocher dans cette partie la checkbox “Show Test Bundles”</span></p>
+<p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-18-à-00.23.46.png"><img class="alignnone size-medium wp-image-3237" src="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-18-à-00.23.46-300x72.png" alt="" width="300" height="72" /></a></p>
+<h3 style="text-align: left;">Test sur un ViewController</h3>
+<p style="text-align: left;">Maintenant nous allons créer une méthode qui va changer le texte d'un label en fonction d'une condition. Voici le code d'exemple (rien de très compliqué).</p>
+<pre class="lang:swift decode:true">import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var uiText: UILabel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    func changeLabel(score: Int) {
+        if (score &gt; 0) {
+            self.uiText.text = "Gagner"
+            
+            return;
+        }
+
+        self.uiText.text = "Perdu"
+    }
+
+}</pre>
+<p><span style="font-weight: 400;">Nous allons voir en détails ensemble comment tester ceci :</span></p>
+<pre class="lang:swift decode:true">import XCTest
+@testable import tuto_xctest
+
+class ViewControllerTests: XCTestCase {
+    var controller:ViewController!
+    
+    override func setUp() {
+        super.setUp()
+    
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        controller = storyboard.instantiateInitialViewController() as! ViewController
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        
+        controller = nil
+    }
+    
+    func testScoreIsWinChangeLabel() {
+        let _ = controller.view
+        controller.changeLabel(score: 1)
+        
+        XCTAssertEqual("Gagner", controller.uiText.text)
+    }
+    
+    func testScoreIsLooseChangeLabel() {
+        let _ = controller.view
+        controller.changeLabel(score: 0)
+        
+        XCTAssertEqual("Perdu", controller.uiText.text)
+    }
+    
+}
+</pre>
+<p>Nous devons créer une variable de type ViewController afin d'accéder pour chaque méthode de test à celle-ci.</p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><strong>setUp()</strong>: (qui sera appelée avant chaque invocation de méthode de test)</span>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Nous créons une constante storyboard qui va récupérer le storyboard Main (qui est par défaut votre storyboard) ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Nous faisons appel à la méthode <strong>instantiateInitialViewController</strong> du storyboard afin d'instancier et renvoyer le controller de vue initial.</span></li>
+</ol>
+</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><strong>tearDown()</strong>: (qui sera appelée après chaque invocation de méthode de test). Nous mettons à nil notre controller pour plus de sécurité.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;"><strong>testScoreIsWinChangeLabel()</strong>: </span>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Nous souhaitons accéder au texte du label uiText de notre controller. Cependant sans l'instruction  <code>let _= controller.view</code> vous allez relever une erreur car le label sera égal à nil.<br />
+Comment est-ce possible ? Quand nous avons créé notre label dans notre storyboard, celui-ci s’instancie une fois que la vue est chargée. Mais dans notre classe unitaire, la méthode <strong>loadView()</strong> n’est jamais déclenchée.<br />
+Le label n’est donc pas créé et il est égal à nil. Une solution pour ce problème serait alors d'appeler <strong>controller.loadView()</strong> mais Apple ne le recommande pas car cela cause des problèmes de <strong>memory leaks</strong> quand les objets qui ont déjà été chargés sont de nouveau chargés.<br />
+L’alternative est d’utiliser la propriété <strong>view</strong> de votre controller qui déclenchera toutes les méthodes requises.</span><br />
+<em>Note: L'utilisation d'un underscore (_) comme nom de constante a pour but de réduire le nom de la constante car nous n'avons pas vraiment besoin de la vue. Cela dit au compilateur qu'on prétend avoir l'accès à la vue et qu'on déclenche toutes les méthodes.</em></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Nous appelons la méthode concernée et nous vérifions l’assertion entre notre string et notre texte du label.</span></li>
+</ol>
+</li>
+</ol>
+<h3>Conclusion</h3>
+<p><span style="font-weight: 400;">J’espère que cet article vous a plu et qu’il vous a donné envie de faire pleins de test unitaires. J’insiste sur le fait que faire des tests est vraiment important car :</span></p>
+<ul>
+<li><span style="font-weight: 400;">Cela vérifie le bon fonctionnement de votre code ;</span></li>
+<li><span style="font-weight: 400;">Cela cible plus facilement une erreur due à un changement de code ;</span></li>
+<li><span style="font-weight: 400;">Vous y gagnerez sur le long terme.</span></li>
+</ul>

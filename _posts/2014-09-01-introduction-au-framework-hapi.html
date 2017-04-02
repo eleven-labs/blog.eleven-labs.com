@@ -1,0 +1,802 @@
+---
+layout: post
+status: publish
+published: true
+title: Introduction au framework HAPI
+author:
+  display_name: Amador Rubal
+  login: arubal
+  email: arubal@eleven-labs.com
+  url: ''
+author_login: arubal
+author_email: arubal@eleven-labs.com
+wordpress_id: 995
+wordpress_url: http://blog.eleven-labs.com/?p=995
+date: '2014-09-01 10:26:18 +0200'
+date_gmt: '2014-09-01 08:26:18 +0200'
+categories:
+- Javascript
+tags:
+- Nodejs
+- hapi
+---
+<p>HAPI est un framework Node.js développé par ‘Walmart Labs’. Il gagne aujourd’hui en popularité. Ainsi, des entreprises prestigieuses dans le domaine du web telles que Paypal, Mozilla ou encore Beats Audio commencent à l’utiliser, tout un gage de confiance !</p>
+<p>Dans cet article, je vais couvrir l’initialisation d’une application,  la création d’un serveur, la déclaration des routes et enfin je me centrerai sur certains points qui m’ont particulièrement intéressé dans son utilisation.</p>
+<h2>I <b>L’initialisation de l’application</b></h2>
+<p>Commençons par créer un dossier , s’y déplacer et débuter un projet à l’aide de <i>npm init</i></p>
+<pre class="lang:js decode:true" title="init app">mkdir hapi &amp;&amp; cd $_
+npm init
+</pre>
+<p>Après cette simple initialisation, nous allons télécharger Hapi et le sauvegarder en tant que dépendance du projet.</p>
+<pre class="lang:js decode:true" title="init npm">npm install hapi@6.5 --save
+</pre>
+<h2>II <b>La création du serveur</b></h2>
+<p>La création du serveur est on ne peut plus simple. Ouvrons notre fichier point d’entrée (dans mon cas, je l’ai appelé <i>app.js</i>, libre à vous de l‘appeler comme vous le souhaitez !)</p>
+<pre class="lang:js decode:true" title="init app">var Hapi = require('hapi');
+
+var server = new Hapi.Server('localhost', 3000);
+
+server.start(function() {
+	console.log('Serveur Hapi disponible à l
+<p>Tadaaa ! Notre serveur est prêt ! La méthode <em>start</em> de l’objet Hapi.Server permet de démarrer un serveur sur le port que l’on a défini sur le <em>localhost</em>. La méthode prend en paramètre une <em>callback</em> qui sera exécutée dès que le serveur sera prêt à recevoir des requêtes.<br />
+Revenons sur la console, lançons un <em>node app.js </em> pour y voir apparaître le message que l’on a passé dans notre callback.<br />
+En revanche, si l’on se rend à l’adresse <a href="http://localhost:3000">http://localhost:3000</a> depuis un navigateur, on tombe sur une 404 … Il est temps de créer notre première route !</p>
+<h2>III Le Routing</h2>
+<p>La création de routes est, elle aussi, facile à mettre en oeuvre. Pour ce faire, nous allons recourir à la méthode <em>route</em> de notre serveur Hapi. Cette dernière prend un certain nombre de paramètres, dont 3 au minimum doivent être renseignés (method, path et handler) . Reprenons notre fichier app.js et ajoutons ces lignes :</p>
+<pre class="lang:js decode:true" title="first route">var Hapi = require('hapi');
+server.route({
+    method: 'GET',
+    path: '/',
+    handler: function (request, reply) {
+        reply('Hello, world!');
+    }
+});
+</pre>
+<p>Relançons notre serveur , rendons nous à l’adresse <a href="http://localhost:300">http://localhost:300</a>0 … Notre 404 disparaît au profit d’un (sommaire, il est bien vrai !) ‘Hello World!’ .</p>
+<p>Détaillons ces 3 paramètres requis pour faire fonctionner notre route:</p>
+<ol>
+<li><i>method</i> : la méthode HTTP ('GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'). Tous les verbes HTTP sont acceptés hormis 'HEAD'</li>
+<li>path : le chemin absolu vers la requête (attention, il doit commencer par un ‘/’). Le router d’Hapi nous permet d’extraire des segments de l’URL. Ainsi on pourra créer des routes de ce type
+<ul>
+<li>‘/hello’ : cette route répondra exclusivement à la  requête <a href="http://localhost:3000/hello">http://localhost:3000/hello</a></li>
+<li>‘/hello/{name}’ : cette route répondra ainsi sur <a href="http://localhost:3000/hello/jean">http://localhost:3000/hello/jean</a>  ou encore  <a href="http://localhost:3000/hello/isabelle">http://localhost:3000/hello/isabelle</a> . On accède au paramètre ‘name’ en ayant recours à request.params.name.</li>
+</ul>
+</li>
+<li><em>handler</em> : une fonction qui porte la signature function (request, reply) {...} qui sera appelée pour générer la réponse à la requête. L’objet <em>request</em> est l’une des forces de Hapi. Il est créé à chaque requête entrante et ses propriétés et méthodes vont changer au cours de ce que les créateurs du framework appellent le ‘r<em>equest lifecycle</em>’ (le cycle de vie de la requête). L’objet <em>request</em> permet , entre autres choses, d’accéder aux paramètres de l’URL et à la query string. L’interface <em>reply</em> nous permettra de renvoyer une réponse au client. Elle peut prendre en paramètre un <em>String</em>, un <em>JSON</em>, un <em>Buffer</em>, un  <em>ReadableStream</em>, ou encore une <em>Error</em>.</li>
+</ol>
+<p>Pour mettre en pratique toutes ces nouvelles choses que l’on vient d’apprendre, créons une nouvelle route !</p>
+<pre class="lang:js decode:true" title="new route">var Hapi = require('hapi');
+server.route({
+    path: "/hello/{firstName}/{lastName}",
+    method: "GET",
+    handler: function(request, reply) {
+        reply({
+            firstName: request.params.firstName,
+            lastName: request.params.lastName,
+            occupation: request.query.occupation || "designer"
+        });
+    }
+});
+</pre>
+<p>Relançons notre navigateur , rendons nous à l’adresse : <a href="http://localhost:3000/hello/john/doe?occupation=developper">http://localhost:3000/hello/john/doe?occupation=developper</a><br />
+La réponse du serveur :<br />
+{firstName: "john", lastName: "doe",occupation: "developper"}</p>
+<p>Un petit plus, au fur et à mesure que grandit notre projet et / ou que l’on crée des routes dans des fichiers différents, il est difficile de savoir quelles sont toutes les routes déclarées. Les créateurs du framework ont pensé à tout ! Notre objet <em>server</em> dispose d’une méthode <em>table</em> qui, une fois appelée, nous permet de voir en un clin d’oeil l’ensemble des routes disponibles sur le serveur !</p>
+<h2>IV Validation</h2>
+<p>En tant que développeurs, nous avons régulièrement besoin de valider les paramètres passés dans une URL. Spumko, l’équipe qui réalise entre autres le framework, nous met à disposition un module facilitant cette validation, Joi.</p>
+<p>Retournons sur la console, plaçons nous à la racine de l’application et téléchargeons Joi.</p>
+<pre class="lang:js decode:true" title="install joi">npm install joi@4.6 --save
+</pre>
+<p>Pour accéder au module, rien de plus simple :</p>
+<pre class="lang:js decode:true" title="require joi">var Joi = require(‘joi’);
+</pre>
+<p>Pour utiliser pleinement les possibilités du module nous allons modifier notre méthode <em>route</em> précédemment créée afin d’y ajouter une clé <em>config</em>. Editons à nouveau notre fichier app.js et changeons la route que nous avons précédemment créée :</p>
+<pre class="lang:js decode:true" title="validate with joi">server.route({
+    path: "/hello/{firstName}/{lastName}",
+    method: "GET",
+    config : {
+        handler: function(request, reply) {
+            reply({
+                firstName: request.params.firstName,
+                lastName: request.params.lastName,
+                occupation: request.query.occupation || "developper"
+            });
+        },
+        validate: {
+            params: {
+            firstName: Joi.string().min(3).max(20),
+            lastName: Joi.string().min(3).max(20)
+       },
+       query: {
+          occupation: Joi.string().valid(["developper","designer","cto"]).default("developper"),
+          age: Joi.number().integer().min(13).max(100).required()
+       }
+    }
+  }
+});
+</pre>
+<p>Le <em>handler</em> (paramètre obligatoire) est toujours présent, mais dans ce cas, il passe en clé de <em>config</em><br />
+Dans notre exemple, nous demandons à valider les paramètres <em>firstName</em> et <em>lastName</em>. Nous n’autorisons que des <em>string</em> ayant entre 3 et 20 caractères.</p>
+<p>Si nous essayons des mauvais paramètres, par exemple <a href="http://localhost:3000/hello/j/doe?occupation=developper">http://localhost:3000/hello/j/doe?occupation=developper</a> … badaboum ! Hapi nous renvoie automatiquement une 400 (Bad Request) car la longueur du paramètre {firstName} est de 1 caractère. Or, dans nos règles de validation, nous avons précisé "min(3).max(20)".<br />
+De même, nous avons ajouté des critères de validation pour la query string. Ainsi, si nous tentons d’accéder à cette route sans renseigner <em>age</em>, Hapi nous renvoie une 404 car nous avons exigé qu‘il devait être ‘required()’ .<br />
+Joi est un module complet que je ne vais pas détailler ici. Pour vous mettre l’eau à la bouche, sachez qu’il est possible d’introduire des petits algorithmes (par exemple, on pourra valider un paramètre en fonction de ce qui a été passé pour un autre paramètre, c’est très utile ! ). Pour une liste exhaustive de ses possibilités, je vous laisse lien vers la documentation : <a href="https://github.com/hapijs/joi">https://github.com/hapijs/joi</a></p>
+<h2>V Les plugins</h2>
+<p>Je vous l’accorde, si je continue à définir de nouvelles routes au sein du même fichier, ce sera bientôt illisible et difficile à maintenir… ! Là encore, Hapi possède une solution pour organiser votre projet. En effet , les plugins viennent à notre rescousse pour structurer notre application en un ensemble d’unités logiques. Avant d’entrer en détail dans la création d’un plugin, il est nécessaire de comprendre que Hapi propose une interface pour regrouper des serveurs, appelée ‘pack’. Chaque serveur Hapi fait partie d’un Pack HAPI (je reviendrai sur ce concept plus tard).<br />
+Pour créer un plugin, on peut soit le faire dans un dossier de son choix ou directement dans ‘node_modules’. Personnellement, je préfère la seconde option.</p>
+<pre class="lang:js decode:true" title="create plugin">cd node_modules &amp;&amp; mkdir plugin-example &amp;&amp; cd $_
+npm init 
+</pre>
+<p>Dans ce dossier, éditons notre fichier point d’entrée (encore une fois, j’ai choisi app.js)</p>
+<pre class="lang:js decode:true" title="register plugin">exports.register = function(plugin, options, next) {
+    plugin.route({
+        path: "/plugin-example",
+        method: "GET",
+        handler: function(request, reply) {
+            reply("Ceci est une réponse depuis un plugin");
+        }
+    });
+    next();
+};
+ 
+exports.register.attributes = {
+     ‘name’: ‘plugin-example’,
+     ‘version’: ‘1.0.0’    
+};
+</pre>
+<p>Une explication est nécessaire ! On construit un plugin avec ces éléments :</p>
+<ol>
+<li><i>name</i> : le nom donné au plugin. Les plugins publics sont à publier sur <i>npm.</i> Si le plugin est privé, faites attention à ce qu’il n’entre pas en conflit avec un autre ayant le même nom !</li>
+<li><em>register</em> : C’est la fonction décrite dans <i>exports.register</i> et qui est le noyau du plugin. Cette fonction est appelée lorsque le plugin est enregistré. Elle constitue l’unique point d’entrée du plugin.</li>
+<li><i>version</i> : un paramètre optionnel décrivant la version du plugin.</li>
+</ol>
+<p>Dans notre exemple, <i>‘name</i>’ et  ‘<i>version</i>’ sont inclus au moyen de la propriété <i>‘attributes</i>’</p>
+<p>Détaillons maintenant les paramètres que prend la fonction ‘register’ :</p>
+<ol>
+<li><i>plugin</i>: l’interface plugin que nous utiliserons pour définir des routes, des méthodes. Je ne détaillerai pas ici l’ensemble des propriétés et des méthodes que nous offre ici le framework, je vous laisse un lien vers la documentation <a href="https://github.com/hapijs/hapi/blob/master/docs/Reference.md#root-methods-and-properties">https://github.com/hapijs/hapi/blob/master/docs/Reference.md#root-methods-and-properties</a></li>
+<li><i>options</i> : un objet qui contient les options du plugin fourni par les méthodes d’enregistrement du pack.</li>
+<li><i>next</i> : la fonction de callback qui DOIT être explicitement appelée, et qui complète le process d’enregistrement du plugin. Elle prend un en paramètre une éventuelle erreur.</li>
+</ol>
+<p>Malheureusement, cette nouvelle route définie dans le plugin n’est pas encore disponible …. On doit enregistrer notre plugin ! Pour ce faire, on doit remonter, au niveau de notre dossier racine de l’application et modifier notre fichier <i>app.js</i></p>
+<pre class="lang:js decode:true" title="require plugin">var Hapi = require('hapi');
+var server = new Hapi.Server('localhost', 3000);
+server.pack.register(
+    {
+        plugin: require('./node_modules/plugin-example/app.js'),
+        options: {
+            message: 'hello from options',
+        }
+    }
+    , function(err) {
+        if (err) {
+           throw err;
+       }
+        server.start(function() {
+            console.log('Serveur Hapi disponible à l
+<p>Relançons notre application … cette fois-ci, cela fonctionne, rendez-vous l’adresse <a href="http://localhost:3000/plugin-example">http://localhost:3000/plugin-example</a> pour confirmation !</p>
+<p>Avez-vous aperçu l’objet <i>options</i> que nous avons passé en paramètre ? On va les récupérer au niveau de notre plugin dans la fonction <em>register</em> !</p>
+<h2>VI Les packs</h2>
+<p>Un objet <i>Pack</i> représente une collection de serveurs qu’on regroupe ensemble pour former une seule et unique unité logique. L’objectif principal de cet objet est d’offrir une interface lorsqu’on travaille avec les plugins. Regrouper plusieurs serveurs au sein d’un <i>pack </i>permet de les traiter comme une seule entité que l’on peut démarrer ou arrêter, et ce, de manière synchrone. Chaque instance de serveur Hapi porte une référence vers un <i>pack</i>. Ainsi, lorsque nous avons précédemment créé le serveur de notre application, un <i>pack</i> a automatiquement été créé et assigné à la propriété <em>pack</em> du serveur !</p>
+<p>Néanmoins, nous allons apprendre à en créer un explicitement, c’est très facile aussi :</p>
+<pre class="lang:js decode:true" title="init pack">var Hapi = require('hapi');
+var pack = new Hapi.Pack();
+var server1 = pack.server(8000, { labels: ['web'] });
+var server2 = pack.server(8001, { labels: ['admin'] });
+
+server2.route({
+    path: "/admin/article/{id}",
+    method: "GET",
+    handler: function(request, reply) {
+        reply(request.params.id);
+    }
+});
+
+pack.register(
+    {
+        plugin: require('./node_modules/plugin-example/app.js'),
+        options: {
+            message: 'hello from options',
+        }
+    }
+, function(err) {
+    if (err) throw err;
+    pack.start(function(server) {
+        console.log("Pack hapi disponible.");
+    });
+});
+</pre>
+<p>Ici, on a créé deux serveurs, chacun ayant un propre label, notion que l’on pourrait comparer à un <i>tag</i>. Ensuite, on a explicitement déclaré une route pour le serveur avec le label <i>admin</i>. On a ensuite démarré notre pack. On y a inscrit notre plugin-example, c’est pourquoi l’URL ‘/plugin-example’ est disponible à la fois à l’adresse <a href="http://localhost:8000/plugin-example">http://localhost:8000/plugin-example</a> mais aussi sur <a href="http://localhost:8001/plugin-example">http://localhost:8001/plugin-example</a> !</p>
+<p>En revanche, nous avons attaché explicitement la route ‘admin/article/{id}’ à la variable server2. C’est pourquoi cette route n’est disponible que sur le port 8081 !</p>
+<p>Afin de faciliter la création d’un pack, Hapi met à notre disposition une méthode <i>compose</i> à partir d’un simple fichier de configuration. On pourrait ainsi réécrire le code précédemment utilisé pour notre pack de cette façon :</p>
+<pre class="lang:js decode:true" title="manifest">var Hapi = require('hapi');
+
+var manifest = {
+    servers: [
+        {
+            port: 8000,
+            options: {
+                labels: ['web']
+            }
+        },
+        {
+            host: 'localhost',
+            port: 8001,
+            options: {
+                labels: ['admin']
+            }
+        }
+    ],
+    plugins: {
+        'plugin-example': {
+            options: {
+                message: 'hello from options',
+            }
+        }
+    }
+};
+
+Hapi.Pack.compose(manifest, function (err, pack) {
+    pack.start(function(server) {
+         console.log("Pack hapi disponible.");
+     });
+});
+</pre>
+<p>Avec cette méthode, on a créé un objet <i>manifest</i>, qui spécifie la configuration de notre pack et les plugins que l’on souhaite enregistrer. On a ainsi isolé toute notre configuration ! (que l’on pourra bien évidemment placer dans un autre fichier).</p>
+<h2>VII Conclusion</h2>
+<p>J’espère que je vous ai donné envie d’essayer cet excellent mais méconnu framework !  Je ne suis pas rentré dans tous les détails, c’est pourquoi, je vous conseille d’approfondir cette introduction en consultant la documentation officielle, qui est très bien écrite et régulièrement mise à jour: <a href="https://github.com/hapijs/hapi/blob/master/docs/Reference.md">https://github.com/hapijs/hapi/blob/master/docs/Reference.md</a></p>
+<p>Par ailleurs l’équipe est très impliquée et propose d’excellents modules (<a href="https://github.com/hapijs">https://github.com/hapijs</a>). Parmi ceux que j’apprécie le plus : <em>lout</em> qui génère automatiquement une documentation de votre serveur Hapi, <em>yar</em>, qui est un gestionnaire de sessions et de cookies ou encore <em>catbox</em> qui offre  une gestion du cache …. !</p>
+adresse', server.info.uri);
+});
+</pre>
+<p>Tadaaa ! Notre serveur est prêt ! La méthode <em>start</em> de l’objet Hapi.Server permet de démarrer un serveur sur le port que l’on a défini sur le <em>localhost</em>. La méthode prend en paramètre une <em>callback</em> qui sera exécutée dès que le serveur sera prêt à recevoir des requêtes.<br />
+Revenons sur la console, lançons un <em>node app.js </em> pour y voir apparaître le message que l’on a passé dans notre callback.<br />
+En revanche, si l’on se rend à l’adresse <a href="http://localhost:3000">http://localhost:3000</a> depuis un navigateur, on tombe sur une 404 … Il est temps de créer notre première route !</p>
+<h2>III Le Routing</h2>
+<p>La création de routes est, elle aussi, facile à mettre en oeuvre. Pour ce faire, nous allons recourir à la méthode <em>route</em> de notre serveur Hapi. Cette dernière prend un certain nombre de paramètres, dont 3 au minimum doivent être renseignés (method, path et handler) . Reprenons notre fichier app.js et ajoutons ces lignes :</p>
+<pre class="lang:js decode:true" title="first route">var Hapi = require('hapi');
+server.route({
+    method: 'GET',
+    path: '/',
+    handler: function (request, reply) {
+        reply('Hello, world!');
+    }
+});
+</pre>
+<p>Relançons notre serveur , rendons nous à l’adresse <a href="http://localhost:300">http://localhost:300</a>0 … Notre 404 disparaît au profit d’un (sommaire, il est bien vrai !) ‘Hello World!’ .</p>
+<p>Détaillons ces 3 paramètres requis pour faire fonctionner notre route:</p>
+<ol>
+<li><i>method</i> : la méthode HTTP ('GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'). Tous les verbes HTTP sont acceptés hormis 'HEAD'</li>
+<li>path : le chemin absolu vers la requête (attention, il doit commencer par un ‘/’). Le router d’Hapi nous permet d’extraire des segments de l’URL. Ainsi on pourra créer des routes de ce type
+<ul>
+<li>‘/hello’ : cette route répondra exclusivement à la  requête <a href="http://localhost:3000/hello">http://localhost:3000/hello</a></li>
+<li>‘/hello/{name}’ : cette route répondra ainsi sur <a href="http://localhost:3000/hello/jean">http://localhost:3000/hello/jean</a>  ou encore  <a href="http://localhost:3000/hello/isabelle">http://localhost:3000/hello/isabelle</a> . On accède au paramètre ‘name’ en ayant recours à request.params.name.</li>
+</ul>
+</li>
+<li><em>handler</em> : une fonction qui porte la signature function (request, reply) {...} qui sera appelée pour générer la réponse à la requête. L’objet <em>request</em> est l’une des forces de Hapi. Il est créé à chaque requête entrante et ses propriétés et méthodes vont changer au cours de ce que les créateurs du framework appellent le ‘r<em>equest lifecycle</em>’ (le cycle de vie de la requête). L’objet <em>request</em> permet , entre autres choses, d’accéder aux paramètres de l’URL et à la query string. L’interface <em>reply</em> nous permettra de renvoyer une réponse au client. Elle peut prendre en paramètre un <em>String</em>, un <em>JSON</em>, un <em>Buffer</em>, un  <em>ReadableStream</em>, ou encore une <em>Error</em>.</li>
+</ol>
+<p>Pour mettre en pratique toutes ces nouvelles choses que l’on vient d’apprendre, créons une nouvelle route !</p>
+<pre class="lang:js decode:true" title="new route">var Hapi = require('hapi');
+server.route({
+    path: "/hello/{firstName}/{lastName}",
+    method: "GET",
+    handler: function(request, reply) {
+        reply({
+            firstName: request.params.firstName,
+            lastName: request.params.lastName,
+            occupation: request.query.occupation || "designer"
+        });
+    }
+});
+</pre>
+<p>Relançons notre navigateur , rendons nous à l’adresse : <a href="http://localhost:3000/hello/john/doe?occupation=developper">http://localhost:3000/hello/john/doe?occupation=developper</a><br />
+La réponse du serveur :<br />
+{firstName: "john", lastName: "doe",occupation: "developper"}</p>
+<p>Un petit plus, au fur et à mesure que grandit notre projet et / ou que l’on crée des routes dans des fichiers différents, il est difficile de savoir quelles sont toutes les routes déclarées. Les créateurs du framework ont pensé à tout ! Notre objet <em>server</em> dispose d’une méthode <em>table</em> qui, une fois appelée, nous permet de voir en un clin d’oeil l’ensemble des routes disponibles sur le serveur !</p>
+<h2>IV Validation</h2>
+<p>En tant que développeurs, nous avons régulièrement besoin de valider les paramètres passés dans une URL. Spumko, l’équipe qui réalise entre autres le framework, nous met à disposition un module facilitant cette validation, Joi.</p>
+<p>Retournons sur la console, plaçons nous à la racine de l’application et téléchargeons Joi.</p>
+<pre class="lang:js decode:true" title="install joi">npm install joi@4.6 --save
+</pre>
+<p>Pour accéder au module, rien de plus simple :</p>
+<pre class="lang:js decode:true" title="require joi">var Joi = require(‘joi’);
+</pre>
+<p>Pour utiliser pleinement les possibilités du module nous allons modifier notre méthode <em>route</em> précédemment créée afin d’y ajouter une clé <em>config</em>. Editons à nouveau notre fichier app.js et changeons la route que nous avons précédemment créée :</p>
+<pre class="lang:js decode:true" title="validate with joi">server.route({
+    path: "/hello/{firstName}/{lastName}",
+    method: "GET",
+    config : {
+        handler: function(request, reply) {
+            reply({
+                firstName: request.params.firstName,
+                lastName: request.params.lastName,
+                occupation: request.query.occupation || "developper"
+            });
+        },
+        validate: {
+            params: {
+            firstName: Joi.string().min(3).max(20),
+            lastName: Joi.string().min(3).max(20)
+       },
+       query: {
+          occupation: Joi.string().valid(["developper","designer","cto"]).default("developper"),
+          age: Joi.number().integer().min(13).max(100).required()
+       }
+    }
+  }
+});
+</pre>
+<p>Le <em>handler</em> (paramètre obligatoire) est toujours présent, mais dans ce cas, il passe en clé de <em>config</em><br />
+Dans notre exemple, nous demandons à valider les paramètres <em>firstName</em> et <em>lastName</em>. Nous n’autorisons que des <em>string</em> ayant entre 3 et 20 caractères.</p>
+<p>Si nous essayons des mauvais paramètres, par exemple <a href="http://localhost:3000/hello/j/doe?occupation=developper">http://localhost:3000/hello/j/doe?occupation=developper</a> … badaboum ! Hapi nous renvoie automatiquement une 400 (Bad Request) car la longueur du paramètre {firstName} est de 1 caractère. Or, dans nos règles de validation, nous avons précisé "min(3).max(20)".<br />
+De même, nous avons ajouté des critères de validation pour la query string. Ainsi, si nous tentons d’accéder à cette route sans renseigner <em>age</em>, Hapi nous renvoie une 404 car nous avons exigé qu‘il devait être ‘required()’ .<br />
+Joi est un module complet que je ne vais pas détailler ici. Pour vous mettre l’eau à la bouche, sachez qu’il est possible d’introduire des petits algorithmes (par exemple, on pourra valider un paramètre en fonction de ce qui a été passé pour un autre paramètre, c’est très utile ! ). Pour une liste exhaustive de ses possibilités, je vous laisse lien vers la documentation : <a href="https://github.com/hapijs/joi">https://github.com/hapijs/joi</a></p>
+<h2>V Les plugins</h2>
+<p>Je vous l’accorde, si je continue à définir de nouvelles routes au sein du même fichier, ce sera bientôt illisible et difficile à maintenir… ! Là encore, Hapi possède une solution pour organiser votre projet. En effet , les plugins viennent à notre rescousse pour structurer notre application en un ensemble d’unités logiques. Avant d’entrer en détail dans la création d’un plugin, il est nécessaire de comprendre que Hapi propose une interface pour regrouper des serveurs, appelée ‘pack’. Chaque serveur Hapi fait partie d’un Pack HAPI (je reviendrai sur ce concept plus tard).<br />
+Pour créer un plugin, on peut soit le faire dans un dossier de son choix ou directement dans ‘node_modules’. Personnellement, je préfère la seconde option.</p>
+<pre class="lang:js decode:true" title="create plugin">cd node_modules &amp;&amp; mkdir plugin-example &amp;&amp; cd $_
+npm init 
+</pre>
+<p>Dans ce dossier, éditons notre fichier point d’entrée (encore une fois, j’ai choisi app.js)</p>
+<pre class="lang:js decode:true" title="register plugin">exports.register = function(plugin, options, next) {
+    plugin.route({
+        path: "/plugin-example",
+        method: "GET",
+        handler: function(request, reply) {
+            reply("Ceci est une réponse depuis un plugin");
+        }
+    });
+    next();
+};
+ 
+exports.register.attributes = {
+     ‘name’: ‘plugin-example’,
+     ‘version’: ‘1.0.0’    
+};
+</pre>
+<p>Une explication est nécessaire ! On construit un plugin avec ces éléments :</p>
+<ol>
+<li><i>name</i> : le nom donné au plugin. Les plugins publics sont à publier sur <i>npm.</i> Si le plugin est privé, faites attention à ce qu’il n’entre pas en conflit avec un autre ayant le même nom !</li>
+<li><em>register</em> : C’est la fonction décrite dans <i>exports.register</i> et qui est le noyau du plugin. Cette fonction est appelée lorsque le plugin est enregistré. Elle constitue l’unique point d’entrée du plugin.</li>
+<li><i>version</i> : un paramètre optionnel décrivant la version du plugin.</li>
+</ol>
+<p>Dans notre exemple, <i>‘name</i>’ et  ‘<i>version</i>’ sont inclus au moyen de la propriété <i>‘attributes</i>’</p>
+<p>Détaillons maintenant les paramètres que prend la fonction ‘register’ :</p>
+<ol>
+<li><i>plugin</i>: l’interface plugin que nous utiliserons pour définir des routes, des méthodes. Je ne détaillerai pas ici l’ensemble des propriétés et des méthodes que nous offre ici le framework, je vous laisse un lien vers la documentation <a href="https://github.com/hapijs/hapi/blob/master/docs/Reference.md#root-methods-and-properties">https://github.com/hapijs/hapi/blob/master/docs/Reference.md#root-methods-and-properties</a></li>
+<li><i>options</i> : un objet qui contient les options du plugin fourni par les méthodes d’enregistrement du pack.</li>
+<li><i>next</i> : la fonction de callback qui DOIT être explicitement appelée, et qui complète le process d’enregistrement du plugin. Elle prend un en paramètre une éventuelle erreur.</li>
+</ol>
+<p>Malheureusement, cette nouvelle route définie dans le plugin n’est pas encore disponible …. On doit enregistrer notre plugin ! Pour ce faire, on doit remonter, au niveau de notre dossier racine de l’application et modifier notre fichier <i>app.js</i></p>
+<pre wp-pre-tag-10></pre>
+<p>Relançons notre application … cette fois-ci, cela fonctionne, rendez-vous l’adresse <a href="http://localhost:3000/plugin-example">http://localhost:3000/plugin-example</a> pour confirmation !</p>
+<p>Avez-vous aperçu l’objet <i>options</i> que nous avons passé en paramètre ? On va les récupérer au niveau de notre plugin dans la fonction <em>register</em> !</p>
+<h2>VI Les packs</h2>
+<p>Un objet <i>Pack</i> représente une collection de serveurs qu’on regroupe ensemble pour former une seule et unique unité logique. L’objectif principal de cet objet est d’offrir une interface lorsqu’on travaille avec les plugins. Regrouper plusieurs serveurs au sein d’un <i>pack </i>permet de les traiter comme une seule entité que l’on peut démarrer ou arrêter, et ce, de manière synchrone. Chaque instance de serveur Hapi porte une référence vers un <i>pack</i>. Ainsi, lorsque nous avons précédemment créé le serveur de notre application, un <i>pack</i> a automatiquement été créé et assigné à la propriété <em>pack</em> du serveur !</p>
+<p>Néanmoins, nous allons apprendre à en créer un explicitement, c’est très facile aussi :</p>
+<pre class="lang:js decode:true" title="init pack">var Hapi = require('hapi');
+var pack = new Hapi.Pack();
+var server1 = pack.server(8000, { labels: ['web'] });
+var server2 = pack.server(8001, { labels: ['admin'] });
+
+server2.route({
+    path: "/admin/article/{id}",
+    method: "GET",
+    handler: function(request, reply) {
+        reply(request.params.id);
+    }
+});
+
+pack.register(
+    {
+        plugin: require('./node_modules/plugin-example/app.js'),
+        options: {
+            message: 'hello from options',
+        }
+    }
+, function(err) {
+    if (err) throw err;
+    pack.start(function(server) {
+        console.log("Pack hapi disponible.");
+    });
+});
+</pre>
+<p>Ici, on a créé deux serveurs, chacun ayant un propre label, notion que l’on pourrait comparer à un <i>tag</i>. Ensuite, on a explicitement déclaré une route pour le serveur avec le label <i>admin</i>. On a ensuite démarré notre pack. On y a inscrit notre plugin-example, c’est pourquoi l’URL ‘/plugin-example’ est disponible à la fois à l’adresse <a href="http://localhost:8000/plugin-example">http://localhost:8000/plugin-example</a> mais aussi sur <a href="http://localhost:8001/plugin-example">http://localhost:8001/plugin-example</a> !</p>
+<p>En revanche, nous avons attaché explicitement la route ‘admin/article/{id}’ à la variable server2. C’est pourquoi cette route n’est disponible que sur le port 8081 !</p>
+<p>Afin de faciliter la création d’un pack, Hapi met à notre disposition une méthode <i>compose</i> à partir d’un simple fichier de configuration. On pourrait ainsi réécrire le code précédemment utilisé pour notre pack de cette façon :</p>
+<pre class="lang:js decode:true" title="manifest">var Hapi = require('hapi');
+
+var manifest = {
+    servers: [
+        {
+            port: 8000,
+            options: {
+                labels: ['web']
+            }
+        },
+        {
+            host: 'localhost',
+            port: 8001,
+            options: {
+                labels: ['admin']
+            }
+        }
+    ],
+    plugins: {
+        'plugin-example': {
+            options: {
+                message: 'hello from options',
+            }
+        }
+    }
+};
+
+Hapi.Pack.compose(manifest, function (err, pack) {
+    pack.start(function(server) {
+         console.log("Pack hapi disponible.");
+     });
+});
+</pre>
+<p>Avec cette méthode, on a créé un objet <i>manifest</i>, qui spécifie la configuration de notre pack et les plugins que l’on souhaite enregistrer. On a ainsi isolé toute notre configuration ! (que l’on pourra bien évidemment placer dans un autre fichier).</p>
+<h2>VII Conclusion</h2>
+<p>J’espère que je vous ai donné envie d’essayer cet excellent mais méconnu framework !  Je ne suis pas rentré dans tous les détails, c’est pourquoi, je vous conseille d’approfondir cette introduction en consultant la documentation officielle, qui est très bien écrite et régulièrement mise à jour: <a href="https://github.com/hapijs/hapi/blob/master/docs/Reference.md">https://github.com/hapijs/hapi/blob/master/docs/Reference.md</a></p>
+<p>Par ailleurs l’équipe est très impliquée et propose d’excellents modules (<a href="https://github.com/hapijs">https://github.com/hapijs</a>). Parmi ceux que j’apprécie le plus : <em>lout</em> qui génère automatiquement une documentation de votre serveur Hapi, <em>yar</em>, qui est un gestionnaire de sessions et de cookies ou encore <em>catbox</em> qui offre  une gestion du cache …. !</p>
+adresse', server.info.uri);
+       });
+});
+</pre>
+<p>Relançons notre application … cette fois-ci, cela fonctionne, rendez-vous l’adresse <a href="http://localhost:3000/plugin-example">http://localhost:3000/plugin-example</a> pour confirmation !</p>
+<p>Avez-vous aperçu l’objet <i>options</i> que nous avons passé en paramètre ? On va les récupérer au niveau de notre plugin dans la fonction <em>register</em> !</p>
+<h2>VI Les packs</h2>
+<p>Un objet <i>Pack</i> représente une collection de serveurs qu’on regroupe ensemble pour former une seule et unique unité logique. L’objectif principal de cet objet est d’offrir une interface lorsqu’on travaille avec les plugins. Regrouper plusieurs serveurs au sein d’un <i>pack </i>permet de les traiter comme une seule entité que l’on peut démarrer ou arrêter, et ce, de manière synchrone. Chaque instance de serveur Hapi porte une référence vers un <i>pack</i>. Ainsi, lorsque nous avons précédemment créé le serveur de notre application, un <i>pack</i> a automatiquement été créé et assigné à la propriété <em>pack</em> du serveur !</p>
+<p>Néanmoins, nous allons apprendre à en créer un explicitement, c’est très facile aussi :</p>
+<pre class="lang:js decode:true" title="init pack">var Hapi = require('hapi');
+var pack = new Hapi.Pack();
+var server1 = pack.server(8000, { labels: ['web'] });
+var server2 = pack.server(8001, { labels: ['admin'] });
+
+server2.route({
+    path: "/admin/article/{id}",
+    method: "GET",
+    handler: function(request, reply) {
+        reply(request.params.id);
+    }
+});
+
+pack.register(
+    {
+        plugin: require('./node_modules/plugin-example/app.js'),
+        options: {
+            message: 'hello from options',
+        }
+    }
+, function(err) {
+    if (err) throw err;
+    pack.start(function(server) {
+        console.log("Pack hapi disponible.");
+    });
+});
+</pre>
+<p>Ici, on a créé deux serveurs, chacun ayant un propre label, notion que l’on pourrait comparer à un <i>tag</i>. Ensuite, on a explicitement déclaré une route pour le serveur avec le label <i>admin</i>. On a ensuite démarré notre pack. On y a inscrit notre plugin-example, c’est pourquoi l’URL ‘/plugin-example’ est disponible à la fois à l’adresse <a href="http://localhost:8000/plugin-example">http://localhost:8000/plugin-example</a> mais aussi sur <a href="http://localhost:8001/plugin-example">http://localhost:8001/plugin-example</a> !</p>
+<p>En revanche, nous avons attaché explicitement la route ‘admin/article/{id}’ à la variable server2. C’est pourquoi cette route n’est disponible que sur le port 8081 !</p>
+<p>Afin de faciliter la création d’un pack, Hapi met à notre disposition une méthode <i>compose</i> à partir d’un simple fichier de configuration. On pourrait ainsi réécrire le code précédemment utilisé pour notre pack de cette façon :</p>
+<pre class="lang:js decode:true" title="manifest">var Hapi = require('hapi');
+
+var manifest = {
+    servers: [
+        {
+            port: 8000,
+            options: {
+                labels: ['web']
+            }
+        },
+        {
+            host: 'localhost',
+            port: 8001,
+            options: {
+                labels: ['admin']
+            }
+        }
+    ],
+    plugins: {
+        'plugin-example': {
+            options: {
+                message: 'hello from options',
+            }
+        }
+    }
+};
+
+Hapi.Pack.compose(manifest, function (err, pack) {
+    pack.start(function(server) {
+         console.log("Pack hapi disponible.");
+     });
+});
+</pre>
+<p>Avec cette méthode, on a créé un objet <i>manifest</i>, qui spécifie la configuration de notre pack et les plugins que l’on souhaite enregistrer. On a ainsi isolé toute notre configuration ! (que l’on pourra bien évidemment placer dans un autre fichier).</p>
+<h2>VII Conclusion</h2>
+<p>J’espère que je vous ai donné envie d’essayer cet excellent mais méconnu framework !  Je ne suis pas rentré dans tous les détails, c’est pourquoi, je vous conseille d’approfondir cette introduction en consultant la documentation officielle, qui est très bien écrite et régulièrement mise à jour: <a href="https://github.com/hapijs/hapi/blob/master/docs/Reference.md">https://github.com/hapijs/hapi/blob/master/docs/Reference.md</a></p>
+<p>Par ailleurs l’équipe est très impliquée et propose d’excellents modules (<a href="https://github.com/hapijs">https://github.com/hapijs</a>). Parmi ceux que j’apprécie le plus : <em>lout</em> qui génère automatiquement une documentation de votre serveur Hapi, <em>yar</em>, qui est un gestionnaire de sessions et de cookies ou encore <em>catbox</em> qui offre  une gestion du cache …. !</p>
+adresse', server.info.uri);
+});
+</pre>
+<p>Tadaaa ! Notre serveur est prêt ! La méthode <em>start</em> de l’objet Hapi.Server permet de démarrer un serveur sur le port que l’on a défini sur le <em>localhost</em>. La méthode prend en paramètre une <em>callback</em> qui sera exécutée dès que le serveur sera prêt à recevoir des requêtes.<br />
+Revenons sur la console, lançons un <em>node app.js </em> pour y voir apparaître le message que l’on a passé dans notre callback.<br />
+En revanche, si l’on se rend à l’adresse <a href="http://localhost:3000">http://localhost:3000</a> depuis un navigateur, on tombe sur une 404 … Il est temps de créer notre première route !</p>
+<h2>III Le Routing</h2>
+<p>La création de routes est, elle aussi, facile à mettre en oeuvre. Pour ce faire, nous allons recourir à la méthode <em>route</em> de notre serveur Hapi. Cette dernière prend un certain nombre de paramètres, dont 3 au minimum doivent être renseignés (method, path et handler) . Reprenons notre fichier app.js et ajoutons ces lignes :</p>
+<pre class="lang:js decode:true" title="first route">var Hapi = require('hapi');
+server.route({
+    method: 'GET',
+    path: '/',
+    handler: function (request, reply) {
+        reply('Hello, world!');
+    }
+});
+</pre>
+<p>Relançons notre serveur , rendons nous à l’adresse <a href="http://localhost:300">http://localhost:300</a>0 … Notre 404 disparaît au profit d’un (sommaire, il est bien vrai !) ‘Hello World!’ .</p>
+<p>Détaillons ces 3 paramètres requis pour faire fonctionner notre route:</p>
+<ol>
+<li><i>method</i> : la méthode HTTP ('GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'). Tous les verbes HTTP sont acceptés hormis 'HEAD'</li>
+<li>path : le chemin absolu vers la requête (attention, il doit commencer par un ‘/’). Le router d’Hapi nous permet d’extraire des segments de l’URL. Ainsi on pourra créer des routes de ce type
+<ul>
+<li>‘/hello’ : cette route répondra exclusivement à la  requête <a href="http://localhost:3000/hello">http://localhost:3000/hello</a></li>
+<li>‘/hello/{name}’ : cette route répondra ainsi sur <a href="http://localhost:3000/hello/jean">http://localhost:3000/hello/jean</a>  ou encore  <a href="http://localhost:3000/hello/isabelle">http://localhost:3000/hello/isabelle</a> . On accède au paramètre ‘name’ en ayant recours à request.params.name.</li>
+</ul>
+</li>
+<li><em>handler</em> : une fonction qui porte la signature function (request, reply) {...} qui sera appelée pour générer la réponse à la requête. L’objet <em>request</em> est l’une des forces de Hapi. Il est créé à chaque requête entrante et ses propriétés et méthodes vont changer au cours de ce que les créateurs du framework appellent le ‘r<em>equest lifecycle</em>’ (le cycle de vie de la requête). L’objet <em>request</em> permet , entre autres choses, d’accéder aux paramètres de l’URL et à la query string. L’interface <em>reply</em> nous permettra de renvoyer une réponse au client. Elle peut prendre en paramètre un <em>String</em>, un <em>JSON</em>, un <em>Buffer</em>, un  <em>ReadableStream</em>, ou encore une <em>Error</em>.</li>
+</ol>
+<p>Pour mettre en pratique toutes ces nouvelles choses que l’on vient d’apprendre, créons une nouvelle route !</p>
+<pre class="lang:js decode:true" title="new route">var Hapi = require('hapi');
+server.route({
+    path: "/hello/{firstName}/{lastName}",
+    method: "GET",
+    handler: function(request, reply) {
+        reply({
+            firstName: request.params.firstName,
+            lastName: request.params.lastName,
+            occupation: request.query.occupation || "designer"
+        });
+    }
+});
+</pre>
+<p>Relançons notre navigateur , rendons nous à l’adresse : <a href="http://localhost:3000/hello/john/doe?occupation=developper">http://localhost:3000/hello/john/doe?occupation=developper</a><br />
+La réponse du serveur :<br />
+{firstName: "john", lastName: "doe",occupation: "developper"}</p>
+<p>Un petit plus, au fur et à mesure que grandit notre projet et / ou que l’on crée des routes dans des fichiers différents, il est difficile de savoir quelles sont toutes les routes déclarées. Les créateurs du framework ont pensé à tout ! Notre objet <em>server</em> dispose d’une méthode <em>table</em> qui, une fois appelée, nous permet de voir en un clin d’oeil l’ensemble des routes disponibles sur le serveur !</p>
+<h2>IV Validation</h2>
+<p>En tant que développeurs, nous avons régulièrement besoin de valider les paramètres passés dans une URL. Spumko, l’équipe qui réalise entre autres le framework, nous met à disposition un module facilitant cette validation, Joi.</p>
+<p>Retournons sur la console, plaçons nous à la racine de l’application et téléchargeons Joi.</p>
+<pre class="lang:js decode:true" title="install joi">npm install joi@4.6 --save
+</pre>
+<p>Pour accéder au module, rien de plus simple :</p>
+<pre class="lang:js decode:true" title="require joi">var Joi = require(‘joi’);
+</pre>
+<p>Pour utiliser pleinement les possibilités du module nous allons modifier notre méthode <em>route</em> précédemment créée afin d’y ajouter une clé <em>config</em>. Editons à nouveau notre fichier app.js et changeons la route que nous avons précédemment créée :</p>
+<pre class="lang:js decode:true" title="validate with joi">server.route({
+    path: "/hello/{firstName}/{lastName}",
+    method: "GET",
+    config : {
+        handler: function(request, reply) {
+            reply({
+                firstName: request.params.firstName,
+                lastName: request.params.lastName,
+                occupation: request.query.occupation || "developper"
+            });
+        },
+        validate: {
+            params: {
+            firstName: Joi.string().min(3).max(20),
+            lastName: Joi.string().min(3).max(20)
+       },
+       query: {
+          occupation: Joi.string().valid(["developper","designer","cto"]).default("developper"),
+          age: Joi.number().integer().min(13).max(100).required()
+       }
+    }
+  }
+});
+</pre>
+<p>Le <em>handler</em> (paramètre obligatoire) est toujours présent, mais dans ce cas, il passe en clé de <em>config</em><br />
+Dans notre exemple, nous demandons à valider les paramètres <em>firstName</em> et <em>lastName</em>. Nous n’autorisons que des <em>string</em> ayant entre 3 et 20 caractères.</p>
+<p>Si nous essayons des mauvais paramètres, par exemple <a href="http://localhost:3000/hello/j/doe?occupation=developper">http://localhost:3000/hello/j/doe?occupation=developper</a> … badaboum ! Hapi nous renvoie automatiquement une 400 (Bad Request) car la longueur du paramètre {firstName} est de 1 caractère. Or, dans nos règles de validation, nous avons précisé "min(3).max(20)".<br />
+De même, nous avons ajouté des critères de validation pour la query string. Ainsi, si nous tentons d’accéder à cette route sans renseigner <em>age</em>, Hapi nous renvoie une 404 car nous avons exigé qu‘il devait être ‘required()’ .<br />
+Joi est un module complet que je ne vais pas détailler ici. Pour vous mettre l’eau à la bouche, sachez qu’il est possible d’introduire des petits algorithmes (par exemple, on pourra valider un paramètre en fonction de ce qui a été passé pour un autre paramètre, c’est très utile ! ). Pour une liste exhaustive de ses possibilités, je vous laisse lien vers la documentation : <a href="https://github.com/hapijs/joi">https://github.com/hapijs/joi</a></p>
+<h2>V Les plugins</h2>
+<p>Je vous l’accorde, si je continue à définir de nouvelles routes au sein du même fichier, ce sera bientôt illisible et difficile à maintenir… ! Là encore, Hapi possède une solution pour organiser votre projet. En effet , les plugins viennent à notre rescousse pour structurer notre application en un ensemble d’unités logiques. Avant d’entrer en détail dans la création d’un plugin, il est nécessaire de comprendre que Hapi propose une interface pour regrouper des serveurs, appelée ‘pack’. Chaque serveur Hapi fait partie d’un Pack HAPI (je reviendrai sur ce concept plus tard).<br />
+Pour créer un plugin, on peut soit le faire dans un dossier de son choix ou directement dans ‘node_modules’. Personnellement, je préfère la seconde option.</p>
+<pre class="lang:js decode:true" title="create plugin">cd node_modules &amp;&amp; mkdir plugin-example &amp;&amp; cd $_
+npm init 
+</pre>
+<p>Dans ce dossier, éditons notre fichier point d’entrée (encore une fois, j’ai choisi app.js)</p>
+<pre class="lang:js decode:true" title="register plugin">exports.register = function(plugin, options, next) {
+    plugin.route({
+        path: "/plugin-example",
+        method: "GET",
+        handler: function(request, reply) {
+            reply("Ceci est une réponse depuis un plugin");
+        }
+    });
+    next();
+};
+ 
+exports.register.attributes = {
+     ‘name’: ‘plugin-example’,
+     ‘version’: ‘1.0.0’    
+};
+</pre>
+<p>Une explication est nécessaire ! On construit un plugin avec ces éléments :</p>
+<ol>
+<li><i>name</i> : le nom donné au plugin. Les plugins publics sont à publier sur <i>npm.</i> Si le plugin est privé, faites attention à ce qu’il n’entre pas en conflit avec un autre ayant le même nom !</li>
+<li><em>register</em> : C’est la fonction décrite dans <i>exports.register</i> et qui est le noyau du plugin. Cette fonction est appelée lorsque le plugin est enregistré. Elle constitue l’unique point d’entrée du plugin.</li>
+<li><i>version</i> : un paramètre optionnel décrivant la version du plugin.</li>
+</ol>
+<p>Dans notre exemple, <i>‘name</i>’ et  ‘<i>version</i>’ sont inclus au moyen de la propriété <i>‘attributes</i>’</p>
+<p>Détaillons maintenant les paramètres que prend la fonction ‘register’ :</p>
+<ol>
+<li><i>plugin</i>: l’interface plugin que nous utiliserons pour définir des routes, des méthodes. Je ne détaillerai pas ici l’ensemble des propriétés et des méthodes que nous offre ici le framework, je vous laisse un lien vers la documentation <a href="https://github.com/hapijs/hapi/blob/master/docs/Reference.md#root-methods-and-properties">https://github.com/hapijs/hapi/blob/master/docs/Reference.md#root-methods-and-properties</a></li>
+<li><i>options</i> : un objet qui contient les options du plugin fourni par les méthodes d’enregistrement du pack.</li>
+<li><i>next</i> : la fonction de callback qui DOIT être explicitement appelée, et qui complète le process d’enregistrement du plugin. Elle prend un en paramètre une éventuelle erreur.</li>
+</ol>
+<p>Malheureusement, cette nouvelle route définie dans le plugin n’est pas encore disponible …. On doit enregistrer notre plugin ! Pour ce faire, on doit remonter, au niveau de notre dossier racine de l’application et modifier notre fichier <i>app.js</i></p>
+<pre class="lang:js decode:true" title="require plugin">var Hapi = require('hapi');
+var server = new Hapi.Server('localhost', 3000);
+server.pack.register(
+    {
+        plugin: require('./node_modules/plugin-example/app.js'),
+        options: {
+            message: 'hello from options',
+        }
+    }
+    , function(err) {
+        if (err) {
+           throw err;
+       }
+        server.start(function() {
+            console.log('Serveur Hapi disponible à l
+<p>Relançons notre application … cette fois-ci, cela fonctionne, rendez-vous l’adresse <a href="http://localhost:3000/plugin-example">http://localhost:3000/plugin-example</a> pour confirmation !</p>
+<p>Avez-vous aperçu l’objet <i>options</i> que nous avons passé en paramètre ? On va les récupérer au niveau de notre plugin dans la fonction <em>register</em> !</p>
+<h2>VI Les packs</h2>
+<p>Un objet <i>Pack</i> représente une collection de serveurs qu’on regroupe ensemble pour former une seule et unique unité logique. L’objectif principal de cet objet est d’offrir une interface lorsqu’on travaille avec les plugins. Regrouper plusieurs serveurs au sein d’un <i>pack </i>permet de les traiter comme une seule entité que l’on peut démarrer ou arrêter, et ce, de manière synchrone. Chaque instance de serveur Hapi porte une référence vers un <i>pack</i>. Ainsi, lorsque nous avons précédemment créé le serveur de notre application, un <i>pack</i> a automatiquement été créé et assigné à la propriété <em>pack</em> du serveur !</p>
+<p>Néanmoins, nous allons apprendre à en créer un explicitement, c’est très facile aussi :</p>
+<pre class="lang:js decode:true" title="init pack">var Hapi = require('hapi');
+var pack = new Hapi.Pack();
+var server1 = pack.server(8000, { labels: ['web'] });
+var server2 = pack.server(8001, { labels: ['admin'] });
+
+server2.route({
+    path: "/admin/article/{id}",
+    method: "GET",
+    handler: function(request, reply) {
+        reply(request.params.id);
+    }
+});
+
+pack.register(
+    {
+        plugin: require('./node_modules/plugin-example/app.js'),
+        options: {
+            message: 'hello from options',
+        }
+    }
+, function(err) {
+    if (err) throw err;
+    pack.start(function(server) {
+        console.log("Pack hapi disponible.");
+    });
+});
+</pre>
+<p>Ici, on a créé deux serveurs, chacun ayant un propre label, notion que l’on pourrait comparer à un <i>tag</i>. Ensuite, on a explicitement déclaré une route pour le serveur avec le label <i>admin</i>. On a ensuite démarré notre pack. On y a inscrit notre plugin-example, c’est pourquoi l’URL ‘/plugin-example’ est disponible à la fois à l’adresse <a href="http://localhost:8000/plugin-example">http://localhost:8000/plugin-example</a> mais aussi sur <a href="http://localhost:8001/plugin-example">http://localhost:8001/plugin-example</a> !</p>
+<p>En revanche, nous avons attaché explicitement la route ‘admin/article/{id}’ à la variable server2. C’est pourquoi cette route n’est disponible que sur le port 8081 !</p>
+<p>Afin de faciliter la création d’un pack, Hapi met à notre disposition une méthode <i>compose</i> à partir d’un simple fichier de configuration. On pourrait ainsi réécrire le code précédemment utilisé pour notre pack de cette façon :</p>
+<pre class="lang:js decode:true" title="manifest">var Hapi = require('hapi');
+
+var manifest = {
+    servers: [
+        {
+            port: 8000,
+            options: {
+                labels: ['web']
+            }
+        },
+        {
+            host: 'localhost',
+            port: 8001,
+            options: {
+                labels: ['admin']
+            }
+        }
+    ],
+    plugins: {
+        'plugin-example': {
+            options: {
+                message: 'hello from options',
+            }
+        }
+    }
+};
+
+Hapi.Pack.compose(manifest, function (err, pack) {
+    pack.start(function(server) {
+         console.log("Pack hapi disponible.");
+     });
+});
+</pre>
+<p>Avec cette méthode, on a créé un objet <i>manifest</i>, qui spécifie la configuration de notre pack et les plugins que l’on souhaite enregistrer. On a ainsi isolé toute notre configuration ! (que l’on pourra bien évidemment placer dans un autre fichier).</p>
+<h2>VII Conclusion</h2>
+<p>J’espère que je vous ai donné envie d’essayer cet excellent mais méconnu framework !  Je ne suis pas rentré dans tous les détails, c’est pourquoi, je vous conseille d’approfondir cette introduction en consultant la documentation officielle, qui est très bien écrite et régulièrement mise à jour: <a href="https://github.com/hapijs/hapi/blob/master/docs/Reference.md">https://github.com/hapijs/hapi/blob/master/docs/Reference.md</a></p>
+<p>Par ailleurs l’équipe est très impliquée et propose d’excellents modules (<a href="https://github.com/hapijs">https://github.com/hapijs</a>). Parmi ceux que j’apprécie le plus : <em>lout</em> qui génère automatiquement une documentation de votre serveur Hapi, <em>yar</em>, qui est un gestionnaire de sessions et de cookies ou encore <em>catbox</em> qui offre  une gestion du cache …. !</p>
+adresse', server.info.uri);
+       });
+});
+</pre>
+<p>Relançons notre application … cette fois-ci, cela fonctionne, rendez-vous l’adresse <a href="http://localhost:3000/plugin-example">http://localhost:3000/plugin-example</a> pour confirmation !</p>
+<p>Avez-vous aperçu l’objet <i>options</i> que nous avons passé en paramètre ? On va les récupérer au niveau de notre plugin dans la fonction <em>register</em> !</p>
+<h2>VI Les packs</h2>
+<p>Un objet <i>Pack</i> représente une collection de serveurs qu’on regroupe ensemble pour former une seule et unique unité logique. L’objectif principal de cet objet est d’offrir une interface lorsqu’on travaille avec les plugins. Regrouper plusieurs serveurs au sein d’un <i>pack </i>permet de les traiter comme une seule entité que l’on peut démarrer ou arrêter, et ce, de manière synchrone. Chaque instance de serveur Hapi porte une référence vers un <i>pack</i>. Ainsi, lorsque nous avons précédemment créé le serveur de notre application, un <i>pack</i> a automatiquement été créé et assigné à la propriété <em>pack</em> du serveur !</p>
+<p>Néanmoins, nous allons apprendre à en créer un explicitement, c’est très facile aussi :</p>
+<pre class="lang:js decode:true" title="init pack">var Hapi = require('hapi');
+var pack = new Hapi.Pack();
+var server1 = pack.server(8000, { labels: ['web'] });
+var server2 = pack.server(8001, { labels: ['admin'] });
+
+server2.route({
+    path: "/admin/article/{id}",
+    method: "GET",
+    handler: function(request, reply) {
+        reply(request.params.id);
+    }
+});
+
+pack.register(
+    {
+        plugin: require('./node_modules/plugin-example/app.js'),
+        options: {
+            message: 'hello from options',
+        }
+    }
+, function(err) {
+    if (err) throw err;
+    pack.start(function(server) {
+        console.log("Pack hapi disponible.");
+    });
+});
+</pre>
+<p>Ici, on a créé deux serveurs, chacun ayant un propre label, notion que l’on pourrait comparer à un <i>tag</i>. Ensuite, on a explicitement déclaré une route pour le serveur avec le label <i>admin</i>. On a ensuite démarré notre pack. On y a inscrit notre plugin-example, c’est pourquoi l’URL ‘/plugin-example’ est disponible à la fois à l’adresse <a href="http://localhost:8000/plugin-example">http://localhost:8000/plugin-example</a> mais aussi sur <a href="http://localhost:8001/plugin-example">http://localhost:8001/plugin-example</a> !</p>
+<p>En revanche, nous avons attaché explicitement la route ‘admin/article/{id}’ à la variable server2. C’est pourquoi cette route n’est disponible que sur le port 8081 !</p>
+<p>Afin de faciliter la création d’un pack, Hapi met à notre disposition une méthode <i>compose</i> à partir d’un simple fichier de configuration. On pourrait ainsi réécrire le code précédemment utilisé pour notre pack de cette façon :</p>
+<pre class="lang:js decode:true" title="manifest">var Hapi = require('hapi');
+
+var manifest = {
+    servers: [
+        {
+            port: 8000,
+            options: {
+                labels: ['web']
+            }
+        },
+        {
+            host: 'localhost',
+            port: 8001,
+            options: {
+                labels: ['admin']
+            }
+        }
+    ],
+    plugins: {
+        'plugin-example': {
+            options: {
+                message: 'hello from options',
+            }
+        }
+    }
+};
+
+Hapi.Pack.compose(manifest, function (err, pack) {
+    pack.start(function(server) {
+         console.log("Pack hapi disponible.");
+     });
+});
+</pre>
+<p>Avec cette méthode, on a créé un objet <i>manifest</i>, qui spécifie la configuration de notre pack et les plugins que l’on souhaite enregistrer. On a ainsi isolé toute notre configuration ! (que l’on pourra bien évidemment placer dans un autre fichier).</p>
+<h2>VII Conclusion</h2>
+<p>J’espère que je vous ai donné envie d’essayer cet excellent mais méconnu framework !  Je ne suis pas rentré dans tous les détails, c’est pourquoi, je vous conseille d’approfondir cette introduction en consultant la documentation officielle, qui est très bien écrite et régulièrement mise à jour: <a href="https://github.com/hapijs/hapi/blob/master/docs/Reference.md">https://github.com/hapijs/hapi/blob/master/docs/Reference.md</a></p>
+<p>Par ailleurs l’équipe est très impliquée et propose d’excellents modules (<a href="https://github.com/hapijs">https://github.com/hapijs</a>). Parmi ceux que j’apprécie le plus : <em>lout</em> qui génère automatiquement une documentation de votre serveur Hapi, <em>yar</em>, qui est un gestionnaire de sessions et de cookies ou encore <em>catbox</em> qui offre  une gestion du cache …. !</p>
