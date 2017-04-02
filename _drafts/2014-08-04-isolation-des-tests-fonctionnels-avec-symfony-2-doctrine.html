@@ -10,6 +10,7 @@ tags:
 - doctrine
 - symfony2
 ---
+{% raw %}
 <p>Quand on exécute une suite de tests fonctionnels ou unitaires sur une application, le mieux est de ne pas changer l'état de la base de données. Cela permet ainsi d'exécuter ces tests plusieurs fois sur un état stable des données. Chaque test est ainsi isolé des autres.</p>
 <p><strong>Contexte : isolation grâce à un rollback de la base de données :</strong></p>
 <p>Comme indiqué dans un <a title="Test unitaire d’un bundle Symfony 2" href="http://eleven-labs.com/blog/test-unitaire-dun-bundle-symfony2/" target="_blank">article précédent</a> et <a title="Isolation of tests in Symfony2" href="http://alexandre-salome.fr/blog/Symfony2-Isolation-Of-Tests" target="_blank">décrit par Alexandre Salomé</a>, il est possible de mettre en place un système de rollback pour rétablir l'état initial des données après l’exécution de chaque test.</p>
@@ -306,7 +307,7 @@ namespace Cheric\ExampleBundle\Test;
 use Symfony\Bundle\FrameworkBundle\Client as BaseClient;
 
 class Client extends BaseClient
-{    
+{
     // ...
 
     public function startIsolation()
@@ -334,3 +335,4 @@ class Client extends BaseClient
 <p>Intergalactiquement vôtre et à bientôt !!</p>
 <p>&nbsp;</p>
 <p>NB : je me suis concentré ici sur la recherche d'une solution à mon problème d'isolation bien précis, sans pour autant pousser l'analyse du comportement de Doctrine et plus spécifiquement de son <em>Event Manager</em>. Si certains ont fait cette analyse, je suis intéressé :) !</p>
+{% endraw %}

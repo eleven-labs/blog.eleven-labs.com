@@ -13,6 +13,7 @@ tags:
 - redux
 - vuejs
 ---
+{% raw %}
 <p>L'écosystème Javascript est très riche, beaucoup de développeurs mais aussi de frameworks et d'outils sont disponibles.</p>
 <p>Lorsque vous souhaitez développer une application, quel que soit son framework de rendu, vous allez vite être amené à vouloir architecturer votre projet afin de différencier et d'organiser les données des vues. C'est particulièrement le cas lorsque vous utilisez des frameworks de rendu de composants comme <strong>React</strong> ou <strong>VueJS</strong>.</p>
 <p>Historiquement, le besoin s'est fait sentir sur <a href="https://facebook.github.io/react/">React</a> et Facebook a donc ouvert les sources de son outil <a href="http://facebook.github.io/flux/">Flux</a>.</p>
@@ -170,7 +171,7 @@ import * as CounterActions from '../actions/counter';
 
 const Counter = ({ children, value, actions }) =&gt; (
   <div>
-    
+
 
     <button>Increment</button>
     <button>Decrement</button>
@@ -208,3 +209,4 @@ export default connect(
 <h2>Conclusion</h2>
 <p>Si nous mettons en parallèle les <strong>1 303 720 téléchargements sur le mois précédent</strong> <strong>de la librairie Redux</strong> avec les <strong>2 334 221 de téléchargements pour React</strong>, nous remarquons que Redux est aujourd'hui <strong>très utilisé</strong> et semble vraiment très <strong>apprécié</strong> par les développeurs car il s'agit d'une solution <strong>simple</strong> qui permet réellement de structurer une application front.</p>
 <p>Redux apporte, selon moi, une <strong>vraie solution</strong> permettant de structurer des applications au métier complexe aux communautés comme React, VueJS mais également aux autres.</p>
+{% endraw %}

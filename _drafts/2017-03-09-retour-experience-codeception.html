@@ -15,6 +15,7 @@ tags:
 - test
 - api
 ---
+{% raw %}
 <div><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/codeception-logo.png"><img class="alignnone size-medium wp-image-3611" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/codeception-logo-300x85.png" alt="" width="300" height="85" /></a></div>
 <div></div>
 <div>Dans cet article je vous propose un retour d'expérience sur le framework de test Codeception, outil choisi par mon équipe au sein de France Télévisions lors de la refonte de notre stack !</div>
@@ -121,8 +122,8 @@ class EndpointCest
     	$I-&gt;seeHttpHeader('Content-Type', 'application/json');
     	$I-&gt;seeHttpHeader('Last-Modified');
         $I-&gt;seeHttpHeader('Etag');
-        $I-&gt;seeHttpHeader('cache-control', 'no-cache, private'); 
-        $I-&gt;seeResponseContainsJson([ 'label' =&gt; 'Label' ]); 
+        $I-&gt;seeHttpHeader('cache-control', 'no-cache, private');
+        $I-&gt;seeResponseContainsJson([ 'label' =&gt; 'Label' ]);
     }
  }
 </pre>
@@ -177,9 +178,9 @@ class EndpointCest
     	$I-&gt;seeHttpHeader('Content-Type', 'application/json');
         $I-&gt;seeHttpHeader('cache-control', 'no-cache, private');
         $I-&gt;seeHttpHeader('Location');
-     
+
         // Imagine we publish a message in RabbitMQ to tell people that a new endpoint was created
-        $I-&gt;seeMessageInQueueContainsText('my-queue', 'new endpoint'); 
+        $I-&gt;seeMessageInQueueContainsText('my-queue', 'new endpoint');
 
         // Assert that the new endpoint is present in the database
         $I-&gt;seeInRepository('Endpoint', ['label' =&gt; 'label']);
@@ -189,3 +190,4 @@ class EndpointCest
 <p>Je ne rentre pas plus dans le détail pour le moment, le but était plus de vous faire un retour d'expérience, si vous êtes intéressé pour un article plus poussé sur son utilisation n'hésitez pas à me l'indiquer.</p>
 <p>Seeya !</p>
 </div>
+{% endraw %}

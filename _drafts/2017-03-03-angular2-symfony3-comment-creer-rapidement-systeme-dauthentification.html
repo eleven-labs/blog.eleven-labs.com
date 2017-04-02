@@ -14,6 +14,7 @@ tags:
 - Javascript
 - Angular2
 ---
+{% raw %}
 <h2>Introduction</h2>
 <p>Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde version du framework : Angular2. Pour me faire la main, j'ai choisi de travailler sur un système d'authentification par token en utilisant Symfony pour la partie back-end, en incluant le bundle <strong>Lexik JWT Authentication. </strong></p>
 <p>Je vous propose de voir ensemble un exemple très simple et les différentes étapes à suivre pour la mise en place d'une API sécurisée servant une liste de publications (...très privées) à notre application Angular2.</p>
@@ -273,31 +274,31 @@ import { AuthenticationService } from './authentication.service';
   templateUrl: './authentication.component.html',
 })
 export class AuthenticationComponent {
-	loginForm: FormGroup;
-	error: string = '';
+    loginForm: FormGroup;
+    error: string = '';
 
-	constructor(
-		private formBuilder: FormBuilder, 
-		private authenticationService: AuthenticationService, 
-		private router: Router
-	) {
-		this.loginForm = formBuilder.group({
-			'username': ['', Validators.required],
-			'password': ['', Validators.required]
-		});
-	}
+    constructor(
+        private formBuilder: FormBuilder,
+        private authenticationService: AuthenticationService,
+        private router: Router
+    ) {
+        this.loginForm = formBuilder.group({
+            'username': ['', Validators.required],
+            'password': ['', Validators.required]
+        });
+    }
 
-	onSubmit() {
-		this.authenticationService
-			.authenticate(this.loginForm.value)
-			.subscribe(
-	            data =&gt; { 
-	            	localStorage.setItem('id_token', data.token);
-					this.router.navigate(['post']);	
-	            },
-	            error =&gt; this.error = error.message
-	        );
-	}
+    onSubmit() {
+        this.authenticationService
+            .authenticate(this.loginForm.value)
+            .subscribe(
+                data =&gt; {
+                    localStorage.setItem('id_token', data.token);
+                    this.router.navigate(['post']);
+                },
+                error =&gt; this.error = error.message
+            );
+    }
 }</pre>
 <ul>
 <li>authentication/authentication.component.html</li>
@@ -317,19 +318,19 @@ import { PostRepository } from './post-repository.service';
   templateUrl: './post.component.html'
 })
 export class PostComponent implements OnInit {
-	posts: any[] = [];
-	error: string = '';
+    posts: any[] = [];
+    error: string = '';
 
-	constructor(private postRepository: PostRepository) {}
+    constructor(private postRepository: PostRepository) {}
 
-	ngOnInit() {
-		this.postRepository
-			.getList()
-			.subscribe(
-	            data =&gt; this.posts = data,
-	            error =&gt; this.error = error.message
-	        );
-	}
+    ngOnInit() {
+        this.postRepository
+            .getList()
+            .subscribe(
+                data =&gt; this.posts = data,
+                error =&gt; this.error = error.message
+            );
+    }
 }</pre>
 <ul>
 <li>post/post.component.html</li>
@@ -356,16 +357,16 @@ export class AuthenticationService {
   constructor(private http: Http) {}
 
   authenticate(user: any) {
-  	let url 	= 'http://127.0.0.1:8000/api/login_check';
-        let body 	= new URLSearchParams();
+      let url     = 'http://127.0.0.1:8000/api/login_check';
+        let body     = new URLSearchParams();
         body.append('username', user.username);
         body.append('password', user.password);
-  	let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
+      let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
         let options = new RequestOptions({headers: headers});
 
-  	return this.http
-  	        .post(url, body.toString(), options)
-  		.map((data: Response) =&gt; data.json());
+      return this.http
+              .post(url, body.toString(), options)
+          .map((data: Response) =&gt; data.json());
   }
 
   logout() {
@@ -389,11 +390,11 @@ export class PostRepository {
   constructor(private authHttp: AuthHttp) {}
 
   getList() {
-  	let url = 'http://127.0.0.1:8000/api/posts';
+      let url = 'http://127.0.0.1:8000/api/posts';
 
     return this.authHttp
-      	.get(url)
-      	.map((data: Response) =&gt; data.json());
+          .get(url)
+          .map((data: Response) =&gt; data.json());
   }
 }</pre>
 <p><em>Note : Nous remarquerons que nous utilisons Http dans l'authentication service alors que nous utilisons AuthHttp dans le post-repository service. Il y a une très bonne raison à cela. En effet, comme il est écrit dans la documentation de la librairie Angular2-jwt :</em></p>
@@ -410,20 +411,20 @@ import { PostComponent } from './post/post.component';
 import { AuthGuard } from './_guards/index';
 
 const APP_ROUTES: Routes = [
-	{
-		path: '',
-		component: HomepageComponent
-	},
-	{
-		path: 'login',
-		component: AuthenticationComponent
-	},
-	{
-		path: 'post',
-		component: PostComponent,
-		canActivate: [AuthGuard]
-	},
-	{ path: '**', redirectTo: '' }
+    {
+        path: '',
+        component: HomepageComponent
+    },
+    {
+        path: 'login',
+        component: AuthenticationComponent
+    },
+    {
+        path: 'post',
+        component: PostComponent,
+        canActivate: [AuthGuard]
+    },
+    { path: '**', redirectTo: '' }
 ];
 
 export const Routing = RouterModule.forRoot(APP_ROUTES);</pre>
@@ -438,17 +439,17 @@ import { AuthenticationService } from '../authentication/authentication.service'
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-	constructor(private authentication: AuthenticationService, private router: Router) {}
+    constructor(private authentication: AuthenticationService, private router: Router) {}
 
-	canActivate() {
-		if(this.authentication.loggedIn()) {
-			return true;
-		} else {
-			this.router.navigate(['login']);
+    canActivate() {
+        if(this.authentication.loggedIn()) {
+            return true;
+        } else {
+            this.router.navigate(['login']);
 
-			return false;
-		}
-	}
+            return false;
+        }
+    }
 }</pre>
 <pre class="lang:default decode:true ">// _guard/index.ts
 export * from './auth.guard';</pre>
@@ -472,16 +473,16 @@ import { AuthenticationService } from './authentication/authentication.service';
 })
 export class AppComponent {
 
-	constructor(private authenticationService: AuthenticationService, private router: Router) {}
+    constructor(private authenticationService: AuthenticationService, private router: Router) {}
 
-	hasAuthToken() {
-	    return localStorage.getItem('id_token') !== null;
-	}
+    hasAuthToken() {
+        return localStorage.getItem('id_token') !== null;
+    }
 
-	logout() {
-	     this.authenticationService.logout();
-    	     this.router.navigate(['home']);  
-	}
+    logout() {
+         this.authenticationService.logout();
+             this.router.navigate(['home']);
+    }
 }
 </pre>
 <ul>
@@ -527,9 +528,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
          provide: AuthHttp,
          useFactory: authHttpServiceFactory,
          deps: [ Http, RequestOptions ]
-     }, 
-         AuthGuard, 
-         AuthenticationService, 
+     },
+         AuthGuard,
+         AuthenticationService,
          PostRepository
      ],
      bootstrap: [AppComponent]
@@ -544,16 +545,16 @@ export class AppModule { }</pre>
 <pre class="lang:default decode:true">// style.css
 /* You can add global styles to this file, and also import other style files */
 body {
-	padding-top: 50px;
+    padding-top: 50px;
 }
 
 .loading {
-	font-weight: bold;
-	margin-top: 150px;
+    font-weight: bold;
+    margin-top: 150px;
 }
 
 .logo {
-	margin: 5px; 
+    margin: 5px;
 }</pre>
 <p>Et voilà le travail !</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-01.58.49.png" target="_blank"><img class="alignnone wp-image-3559" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-01.58.49-300x165.png" alt="" width="924" height="508" /></a></p>
@@ -562,3 +563,4 @@ body {
 <p>Pour conclure, je dirais que cette expérience s'est avérée très enrichissante. Angular2 propose une nouvelle perception du framework front-end en comparaison à la première version. Une façon de développer qui se rapproche plus de la programmation orientée objet et rappelle étrangement les frameworks PHP au niveau de la structures des fichiers. Enfin le CLI, bien que toujours en version beta, reste un outil très pratique dans la lignée de la console de Symfony. Une très bonne première expérience. To be continued !</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+{% endraw %}

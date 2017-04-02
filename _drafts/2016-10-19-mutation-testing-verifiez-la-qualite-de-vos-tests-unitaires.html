@@ -8,6 +8,7 @@ categories:
 - Php
 tags: []
 ---
+{% raw %}
 <h3>Les tests unitaires et la confiance</h3>
 <p>Ce n'est plus à démontrer : les tests unitaires sont incontournables dans le développement d'une application. Ils permettent de mettre en évidence d'éventuelles régressions apportées lors de modifications du code, et donc au développeur d'acquérir une certaine confiance à mettre le code en production : si les tests passent, c'est que tout fonctionne correctement.</p>
 <p>Pour mesurer cette confiance, on utilise principalement comme métrique la couverture de code. Plus la couverture est grande (proche de 100%), moins il y a de chances qu'une régression passe entre les mailles du filet.<br />
@@ -20,7 +21,7 @@ Voici un exemple simple :</p>
 class Astronaut {}
 
 class SpaceShip
-{ 
+{
     private $capacity;
     public $astronauts = [];
 
@@ -168,3 +169,4 @@ Evidemment, l'exemple choisi ici est volontairement simple et n'est pas très é
 <h3>Conclusion</h3>
 <p>Les tests de mutation sont un moyen simple et efficace de détecter la fiabilité des tests unitaires. La couverture de code n'est pas une métrique très fiable, un code peut être couvert à 100% sans une seule assertion !<br />
 Nous avons vu avec Humbug que nous pouvons automatiser ces tests, il devient alors possible de les greffer dans notre workflow d'intégration continue. Attention toutefois au temps d'exécution qui grandit de manière exponentielle lorsque la base de code grandit, on utilisera en priorité les tests de mutation là où il y a un véritable enjeu : le code métier.</p>
+{% endraw %}

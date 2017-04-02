@@ -10,6 +10,7 @@ tags:
 - php
 - symfony2
 ---
+{% raw %}
 <p>La documentation de Symfony2 explique très bien ce que c'est qu'un <a href="http://symfony.com/fr/doc/current/book/service_container.html">service et le conteneur de dépendances</a>. Mais dans une application on a souvent besoin d'injecter plusieurs services ou paramètres. Vous vous êtes déjà dit que c'était plus simple d'injecter le container de service directement plutôt que d'injecter toutes les dépendances les unes après les autres ? Voici les "pour" et les "contre".</p>
 <h2>Pourquoi ne pas le faire ?</h2>
 <p>Tout d'abord, quand un service ressemble à ça,</p>
@@ -46,3 +47,4 @@ tags:
 }</pre>
 <p>Note : les extensions Twig ne bénéficient pas du lazy loading, et sont donc toujours chargées, même si vous lancez une commande. Puisqu’il n'y a pas de Request dans une commande, nous avons besoin de vérifier son existence avant d’essayer d'y accéder.</p>
 <p><strong>EDIT</strong> : Depuis symfony 2.4, un nouveau scope, "request_stack", a été introduit (cf <a href="http://symfony.com/blog/new-in-symfony-2-4-the-request-stack">l'article de Fabien Potencier</a>). Le problème décrit ci-dessus ne se pose donc plus.</p>
+{% endraw %}

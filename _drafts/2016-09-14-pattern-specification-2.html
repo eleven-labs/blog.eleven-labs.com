@@ -11,6 +11,7 @@ tags:
 - architecture
 - conception
 ---
+{% raw %}
 <p>Au cours de mes différentes expériences professionnelles, j'ai dû mettre en place de nombreuses règles métier dans diverses applications riches fonctionnellement. Un jour, j'ai été confronté à une façon de faire différente : l'utilisation du pattern specification. Cette méthode s’est avérée structurante pour les projets, et si vous ne la connaissez pas encore elle mérite qu’on s’y attarde.</p>
 <h3>Commençons</h3>
 <p>Imaginez une application bancaire par exemple. Cette dernière comprend des clients et des comptes bancaires. Un client peut avoir un ou plusieurs comptes bancaires. Vous devez mettre en place un système hyper simple de virement bancaire entre comptes d’un même client, comprenant la règle métier suivante :</p>
@@ -27,7 +28,7 @@ namespace ElevenLabs\Application;
 
 use ElevenLabs\Domain\Payment\Entity\Account;
 
-class TransferMoneyCommand 
+class TransferMoneyCommand
 {
     /**
      * @param Amount $accountToDebit
@@ -57,7 +58,7 @@ Il apparait plusieurs contraintes, suite à cette implémentation.</p>
 
 namespace ElevenLabs\Domain;
 
-interface Specification 
+interface Specification
 {
     /**
      * @param $candidate
@@ -80,7 +81,7 @@ class AccountCanTransferMoney implements Specification
     /**
      * @param \ElevenLabs\Domain\Payment\Entity\Account $account
      *
-     * @return boolean 
+     * @return boolean
      */
     public function isSatisfiedBy($account)
     {
@@ -111,7 +112,7 @@ class AccountCanTransferMoney implements Specification
 
     /**
      * @param \ElevenLabs\Domain\Payment\Entity\Account $account
-     * 
+     *
      * @return boolean
      */
     public function isSatisfiedBy($account)
@@ -128,7 +129,7 @@ namespace ElevenLabs\Application;
 use ElevenLabs\Domain\Payment\Entity\Account;
 use ElevenLabs\Domain\Payment\Specification\AccountCanTransferMoney;
 
-class TransferMoneyCommand 
+class TransferMoneyCommand
 {
     /**
      * @param Account $accountToDebit
@@ -191,7 +192,7 @@ class AndSpecification extends Composite
         $this-&gt;a = $a;
         $this-&gt;b = $b;
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -222,7 +223,7 @@ class AccountCanTransferMoney extends Composite
 
     /**
      * @param \ElevenLabs\Domain\Payment\Entity\Account $account
-     * 
+     *
      * @return boolean
      */
     public function isSatisfiedBy($account)
@@ -257,7 +258,7 @@ namespace ElevenLabs\Application;
 use ElevenLabs\Domain\Payment\Entity\Account;
 use ElevenLabs\Domain\Payment\Specification\AccountCanTransferMoney;
 
-class TransferMoneyCommand 
+class TransferMoneyCommand
 {
     /**
      * @param Account $accountToDebit
@@ -287,3 +288,4 @@ class TransferMoneyCommand
 <h2>Références</h2>
 <p><a href="http://martinfowler.com/apsupp/spec.pdf">Eric Evans &amp; Martin Fowler - Specifications</a></p>
 <p><a href="http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/">Specification pattern: C# implementation</a></p>
+{% endraw %}

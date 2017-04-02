@@ -11,6 +11,7 @@ tags:
 - Javascript
 - web
 ---
+{% raw %}
 <p>Avec l'avènement du js natif, et la multiplication des navigateurs et des environnements (mobile, desktop, tablette), on entend de plus en plus dans nos open-spaces :</p>
 <blockquote><p>«-Dis, tu connaîtrais pas un polyfill ?»</p></blockquote>
 <p>Mais c'est qui ce polyfill ?</p>
@@ -37,14 +38,14 @@ Il suffit d'abord de vérifier l'existence de la fonction :</p>
 }</pre>
 <p>Si elle n'existe pas alors on la surcharge avec notre polyfill, et en js il suffit de définir la fonction :</p>
 <pre class="lang:js decode:true " title="Polyfill assign function">if (typeof Object.assign != 'function') {
-  Object.assign = function (target, varArgs) { 
+  Object.assign = function (target, varArgs) {
     'use strict';
     // on developpe
   };
 }</pre>
 <p>Et maintenant on fait le développement :</p>
 <pre class="lang:js decode:true " title="Polyfill Object Assign">if (typeof Object.assign != 'function') {
-  Object.assign = function (target, varArgs) { 
+  Object.assign = function (target, varArgs) {
     'use strict';
     if (target == null) { // TypeError if undefined or null
       throw new TypeError('Cannot convert undefined or null to object');
@@ -70,3 +71,4 @@ Il suffit d'abord de vérifier l'existence de la fonction :</p>
 <p>Et voilà ! Vous avez un polyfill !</p>
 <p>Normalement il y a un polyfill pour tout alors avant de l'implémenter, go to <a href="https://www.google.fr/">Google</a>.</p>
 <p>&nbsp;</p>
+{% endraw %}

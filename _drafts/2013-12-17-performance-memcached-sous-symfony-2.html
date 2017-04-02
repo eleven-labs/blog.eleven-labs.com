@@ -10,6 +10,7 @@ tags:
 - symfony2
 - memcached
 ---
+{% raw %}
 <p>Dans tout (gros) projet, à un moment avancé de votre développement/exploitation, vous serez amené à rencontrer divers problèmes de performance.</p>
 <p>Certains peuvent être liés au trop grand nombre de requêtes effectuées ou encore à la quantité d'informations récupérées dans la BDD.</p>
 <p>Nous allons vous proposer dans cet article de faire un point sur les quelques techniques rapides afin d'optimiser votre solution, ainsi que sur l'installation de memcached sous Sf2.</p>
@@ -145,3 +146,4 @@ if ($data = $this-&gt;memcache-&gt;get(implode("_", $param), null)) {
   return $data;
 }</pre>
 <p>&nbsp;</p>
+{% endraw %}

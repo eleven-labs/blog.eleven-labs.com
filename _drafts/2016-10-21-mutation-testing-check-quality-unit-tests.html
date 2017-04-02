@@ -8,6 +8,7 @@ categories:
 - Non classé
 tags: []
 ---
+{% raw %}
 <h3><strong>Unit tests and trust</strong></h3>
 <p>It is well established : unit tests are mandatory when developing an application. They allow to highlight possible regressions when code is modified, so the developer gets a certain confidence when shipping his code to production : If tests do pass, everything works correctly.</p>
 <p>To measure this confidence, we use code coverage as our main metric. The more your code is covered, (close to 100%), the less chance there is that regressions would fall through the net.</p>
@@ -20,7 +21,7 @@ Here is a simple example :</p>
 class Astronaut {}
 
 class SpaceShip
-{ 
+{
     private $capacity;
     public $astronauts = [];
 
@@ -168,3 +169,4 @@ Obviously, the example chosen here is voluntarily very simple and might not be e
 <h3><strong>Conclusion</strong></h3>
 <p>Mutation testing is a simple and efficient way of measuring unit tests fiability. Code coverage is not a very reliable metric, a code can be 100% covered without any assertion !<br />
 Humbug allows to automate these tests, so it's possible to plug it in your continuous integration workflow. However, be aware that execution time increases exponentially when codebase grows, we want to use mutation testing where there is a true concern in priority : business code.</p>
+{% endraw %}

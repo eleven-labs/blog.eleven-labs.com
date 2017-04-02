@@ -12,6 +12,7 @@ tags:
 - symfony
 - mongodb
 ---
+{% raw %}
 <p>Bonjour à tous,</p>
 <p>Je vais parler du query builder (constructeur de requête) Doctrine pour faire des requêtes vers une base de données MongoDB.</p>
 <p>Si vous voulez suivre les exemples et les tester, il est nécessaire d'installer le bundle <a href="http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html" target="_blank">DoctrineMongoDBBundle.</a></p>
@@ -79,7 +80,7 @@ class ArticleRepository extends DocumentRepository
               -&gt;find()
               -&gt;field('tag')-&gt;equals($tag)
               -&gt;getQuery()
-              -&gt;execute(); 
+              -&gt;execute();
     }
 }</pre>
 <p><span class="lang:default decode:true crayon-inline">$this-&gt;createQueryBuilder()</span> va me donner une instance de <span class="lang:default decode:true crayon-inline">Doctrine\ODM\MongoDB\Query\Builder</span> . Avec cette instance, je vais avoir accès à un ensemble d'expressions pour construire ma requête. Les expressions, ce sont les différents opérateurs Mongo. Dans cet exemple, <span class="lang:php decode:true crayon-inline ">-&gt;find()</span> <span class="lang:default decode:true crayon-inline ">-&gt;field()</span> <span class="lang:default decode:true crayon-inline ">-&gt;equal()</span> sont des expressions. Chacune d'elles sont des instances de <span class="lang:default decode:true crayon-inline ">Doctrine\ODM\MongoDB\Query\Expr</span> .</p>
@@ -98,7 +99,7 @@ class ArticleRepository extends DocumentRepository
               -&gt;field('title')-&gt;equals($title)
               -&gt;field('tag')-&gt;set($tags)
               -&gt;getQuery()
-              -&gt;execute(); 
+              -&gt;execute();
     }
 }</pre>
 <p>Pour mettre à jour un article qui a pour titre "Mon article", je dois indiquer que je veux le document avec un titre égal à "Mon article" : <span class="lang:default decode:true crayon-inline">-&gt;field('title')-&gt;equals("Mon article")</span> . Ensuite, je mets <span class="lang:default decode:true crayon-inline ">-&gt;field('tags')-&gt;set($tags)</span> pour mettre à jour mon champs "tags".</p>
@@ -167,7 +168,7 @@ class ArticleRepository extends DocumentRepository
               -&gt;find()
               -&gt;isPublished(new \DateTime("2015-10-02T11:00:00+0200"))
               -&gt;getQuery()
-              -&gt;execute(); 
+              -&gt;execute();
     }
 }</pre>
 <p>Cette requête doit me retourner les articles qui sont publiés en date du 02 octobre 2015 à 11h00.</p>
@@ -204,3 +205,4 @@ $this-&gt;createQueryBuilder()
 <p>Cet article vous a montré comment utiliser le query builder de Doctrine sur une base de données MongoDB. Il facilite l'écriture de requêtes plus ou moins complexes tout en restant dans un style objet. Étendre et ajouter des expressions permet de simplifier des requêtes métier complexes.</p>
 <p>Référence : <a href="http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/reference/query-builder-api.html">http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/reference/query-builder-api.html</a></p>
 <p>&nbsp;</p>
+{% endraw %}

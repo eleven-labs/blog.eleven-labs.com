@@ -8,6 +8,7 @@ categories:
 - Dev Ops
 tags: []
 ---
+{% raw %}
 <p>Dans cet article, nous allons détailler, étape par étape, la mise en place d'une Docker Registry.</p>
 <p>Une Docker Registry est une application qui permet de distribuer des images Docker au sein de votre organisation.</p>
 <p>C'est un composant majeur dans l'écosystème Docker, car il va permettre :</p>
@@ -169,7 +170,7 @@ sudo openssl req -x509 -newkey rsa:2048 -new -nodes -keyout privkey.pem -out ful
 <p>On crée un fichier de configuration contenant nos utilisateurs et nos règles d'accès dans <strong>/opt/docker-auth/config/auth_config.yml</strong></p>
 <pre class="yml"><code>server:
   addr: ":5001"
-  
+
 token:
   issuer: "Acme auth server"  # Doit correspondre à l'émetteur (issuer) indiqué dans la configuration du registre
   expiration: 900 # Expiration en secondes du jeton d'accès
@@ -188,7 +189,7 @@ acl:
   - match: {account: "admin"}
     actions: ["*"]
     comment: "Tout est permit pour l'administrateur"
-  
+
   - match: {account: "/.+/", name: "${account}/*"}
     actions: ["*"]
     comment: "Les utilisateurs enregistrés peuvent tirer et contribuer des images dans leur espace de nom"
@@ -196,7 +197,7 @@ acl:
   - match: {account: "/.+/"}
     actions: ["pull"]
     comment: "Les utilisateurs enregistrés peuvent tirer n'importe quelle image"
-  
+
   - match: {account: ""}
     actions: ["pull"]
     comment: "Les utilisateurs anonymes peuvent tirer n'importe quelle image"</code></pre>
@@ -355,3 +356,4 @@ latest: digest: sha256:1354db23ff5478120c980eca1611a51c9f2b88b61f24283ee8200bf9a
 <h2 id="au-prochain-numero">Au prochain numéro…</h2>
 <p>Nous verrons comment utiliser <strong>docker-compose</strong> pour lancer un environnement de développement en local en tirant profit de notre registry docker et d’un outil de versionning pour fabriquer automatiquement nos images docker.</p>
 <p>À la prochaine!</p>
+{% endraw %}

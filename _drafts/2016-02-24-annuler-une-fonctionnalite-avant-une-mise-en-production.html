@@ -10,6 +10,7 @@ tags:
 - git
 - workflow
 ---
+{% raw %}
 <h2 style="text-align: left;">Git workflow</h2>
 <p style="text-align: left;">Connaissez-vous le "git workflow" ? Si ce n'est pas le cas, je vous invite à lire cet article <a href="http://nvie.com/posts/a-successful-git-branching-model">http://nvie.com/posts/a-successful-git-branching-model</a></p>
 <p style="text-align: left;">Je vais mettre ci-dessous l'image pour bien l'avoir en tête :</p>
@@ -71,7 +72,7 @@ Author: Thierry Thuon &lt;thierry.thuon.ext@francetv.fr&gt;
 Date:   Fri Feb 19 12:49:07 2016 +0100
 
     Revert "Merge branch 'feat-my-awesome-feature' into develop"
-    
+
     This reverts commit 184a372a608b632636f20a1ab7c64027cc9eecc2, reversing
     changes made to 59596dd37699742262fc5a2705e2b9396540af77.
 </pre>
@@ -96,9 +97,10 @@ Author: Thierry Thuon &lt;thierry.thuon.ext@francetv.fr&gt;
 Date:   Fri Feb 19 13:01:53 2016 +0100
 
     Revert "Revert "Merge branch 'feat-my-awesome-feature' into develop""
-    
+
     This reverts commit 15c3c27a603263d1e59f5b137e7acfc6dcad5ce0.
 </pre>
 <p>Je retrouve bien les modifications de ma branche <em>feat-my-awesome-feature</em>. Et lors de la prochaine <em>release</em>, si tout est ok, elle pourra passer en <em>master</em>. Sinon, il faudra faire de nouveau un <em>revert</em> dans <em>release</em>.</p>
 <p>Pour conclure, cette solution permet d'avoir la rigueur du <em>git workflow</em>, tout en ayant la souplesse et la possibilité d'annuler une fonctionnalité complète juste avant une mise en production. L'exemple montré ici est un cas nominal, mais la plupart du temps il peut y avoir un risque de conflit. Cette technique fonctionne bien pour des fonctionnalités isolées. De plus, il est important de bien faire les <em>merge</em> vers <em>release</em> et <em>master</em> en <em>no fast forward</em> (<em>--no-ff</em>). Enfin, il ne faut pas oublier les <em>commit</em> de <em>revert</em> lors de la mise à jour de <em>develop</em>.</p>
 <p>Je vous mets en lien la démo: <a href="https://github.com/eleven-labs/cancel-story-before-deploying-prod/network" target="_blank">https://github.com/eleven-labs/cancel-story-before-deploying-prod/network</a></p>
+{% endraw %}

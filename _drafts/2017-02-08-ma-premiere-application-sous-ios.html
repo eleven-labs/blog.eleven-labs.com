@@ -8,6 +8,7 @@ categories:
 - Mobile
 tags: []
 ---
+{% raw %}
 <p><span style="font-weight: 400;">Je voulais partager avec vous un retour d’expérience sur ma première application IOS. Personnellement, j’apprécie ce genre d’article car je peux facilement m’identifier à celui-ci.</span></p>
 <h3><b>Intro</b></h3>
 <p><span style="font-weight: 400;">En ce moment, je travaille ma montée en compétence sur Swift 3/Xcode et donc comme on le sait tous, quand on apprend un nouveau langage c’est bien beau de savoir faire une boucle et des méthodes, mais il n’y a rien de mieux qu’un vrai projet pour valider ses acquis et monter en xp.</span></p>
@@ -73,31 +74,31 @@ class Party {
     let BASE_LIFE = 3
     var score:Int = 0
     var life:Int = 3
-    
+
     func addScore() {
         self.score += 1
     }
-    
+
     func getScore() -&gt; String {
         return "x \(self.score)"
     }
-    
+
     func getLife() -&gt; String {
         return "\(self.life)"
     }
-    
+
     func killLife() {
         if isGameOver() {
             return;
         }
-        
+
         self.life -= 1
     }
-    
+
     func isGameOver() -&gt; Bool {
         return self.life &lt; 1
     }
-    
+
     func resetData() {
         self.life = BASE_LIFE
         self.score = BASE_SCORE
@@ -123,14 +124,14 @@ cell.addGestureRecognizer(click)</pre>
 // let doneToolbar: UIToolbar = UIToolbar()
 func addDoneButtonOnKeyboard() {
     doneToolbar.barStyle = UIBarStyle.default
-    
+
     let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
     let done: UIBarButtonItem = UIBarButtonItem(title: "Envoyer", style: UIBarButtonItemStyle.done, target: self, action: #selector(self.doneButtonAction))
-    
+
     var items = [UIBarButtonItem]()
     items.append(flexSpace)
     items.append(done)
-    
+
     doneToolbar.items = items
     doneToolbar.sizeToFit()
  }</pre>
@@ -146,21 +147,21 @@ func addDoneButtonOnKeyboard() {
 if self.view.frame.origin.y &lt; 0.0 {
     if UIScreen.main.bounds.size.height &lt; 600 {
         self.view.frame.origin.y += 285
-        
+
         return
     }
-    
+
     self.view.frame.origin.y += 180
 }
-// And 
+// And
 
 if self.view.frame.origin.y &gt;= 0.0 {
     if UIScreen.main.bounds.size.height &lt; 600 {
         self.view.frame.origin.y -= 285
-        
+
         return
     }
-    
+
     self.view.frame.origin.y -= 180
 }</pre>
 <p>J'ai dû rajouter un petit "hack" car sur l'Iphone 5 il me faut un plus grand scroll. C'est une des parties de mon code qui je pense demande une refacto (si vous avez des suggestions je suis bien évidemment preneur).</p>
@@ -189,3 +190,4 @@ cell.image.getUIImageViewByUrl(url: url)</pre>
 <p>Ce que je retiens de ma toute première application sous IOS, c'est que j'apprécie vraiment de faire du mobile, que je prends du plaisir à coder sous Swift et qu'il ne faut pas avoir peur de se lancer. Alors j'espère qu'en lisant cet article, ça va tenter certaines personnes à se lancer sur cette voie.</p>
 <p>&nbsp;</p>
 <p><em>P.S. : Merci aux Pandas pour les relectures</em></p>
+{% endraw %}

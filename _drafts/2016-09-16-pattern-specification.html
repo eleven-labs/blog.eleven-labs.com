@@ -8,6 +8,7 @@ categories:
 - Non classé
 tags: []
 ---
+{% raw %}
 <p>Through my different professional experiences, I had to set a lot of business rules in rich web apps. One day, I stumbled upon a different way to deal with those: using the specification pattern. This method has proven to be structuring and deserves some attention if you do not know what it is.</p>
 <h3>Let's dig in</h3>
 <p>Imagine a simple banking application for instance. This app only has clients and bank accounts. A client can have one or multiple accounts, and your job is to create a very simple system of wire transfer between accounts of a same client with this business rule:</p>
@@ -23,7 +24,7 @@ namespace ElevenLabs\Application;
 
 use ElevenLabs\Domain\Payment\Entity\Account;
 
-class TransferMoneyCommand 
+class TransferMoneyCommand
 {
     /**
      * @param Amount $accountToDebit
@@ -53,7 +54,7 @@ Many constraints arise from such implementation.</p>
 
 namespace ElevenLabs\Domain;
 
-interface Specification 
+interface Specification
 {
     /**
      * @param $candidate
@@ -76,7 +77,7 @@ class AccountCanTransferMoney implements Specification
     /**
      * @param \ElevenLabs\Domain\Payment\Entity\Account $account
      *
-     * @return boolean 
+     * @return boolean
      */
     public function isSatisfiedBy($account)
     {
@@ -107,7 +108,7 @@ class AccountCanTransferMoney implements Specification
 
     /**
      * @param \ElevenLabs\Domain\Payment\Entity\Account $account
-     * 
+     *
      * @return boolean
      */
     public function isSatisfiedBy($account)
@@ -124,7 +125,7 @@ namespace ElevenLabs\Application;
 use ElevenLabs\Domain\Payment\Entity\Account;
 use ElevenLabs\Domain\Payment\Specification\AccountCanTransferMoney;
 
-class TransferMoneyCommand 
+class TransferMoneyCommand
 {
     /**
      * @param Account $accountToDebit
@@ -187,7 +188,7 @@ class AndSpecification extends Composite
         $this-&gt;a = $a;
         $this-&gt;b = $b;
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -218,7 +219,7 @@ class AccountCanTransferMoney extends Composite
 
     /**
      * @param \ElevenLabs\Domain\Payment\Entity\Account $account
-     * 
+     *
      * @return boolean
      */
     public function isSatisfiedBy($account)
@@ -253,7 +254,7 @@ namespace ElevenLabs\Application;
 use ElevenLabs\Domain\Payment\Entity\Account;
 use ElevenLabs\Domain\Payment\Specification\AccountCanTransferMoney;
 
-class TransferMoneyCommand 
+class TransferMoneyCommand
 {
     /**
      * @param Account $accountToDebit
@@ -283,3 +284,4 @@ class TransferMoneyCommand
 <h2>References</h2>
 <p><a href="http://martinfowler.com/apsupp/spec.pdf">Eric Evans &amp; Martin Fowler - Specifications</a></p>
 <p><a href="http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/">Specification pattern: C# implementation</a></p>
+{% endraw %}

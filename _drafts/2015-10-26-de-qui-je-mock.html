@@ -10,6 +10,7 @@ tags:
 - symfony
 - phpunit
 ---
+{% raw %}
 <p><a href="https://phpunit.de/">PHPUnit</a> est un outil de test puissant. Il permet de tester de manière unitaire l'ensemble de son projet.</p>
 <p>Dans cet article, je vais me concentrer sur les mock et les stub d'objet.</p>
 <h3>Mock, stub, what else ?</h3>
@@ -22,14 +23,14 @@ tags:
 <pre class="lang:php decode:true ">&lt;?php
 
 class Bouteille
-{ 
+{
     private $bouchon;
 
     public function __construct(Bouchon $bouchon)
    {
          $this-&gt;bouchon = $bouchon;
     }
-   
+
     public function getBouchon()
     {
          return $this-&gt;bouchon;
@@ -41,7 +42,7 @@ class Bouteille
     }
 }
 
-class Bouchon 
+class Bouchon
 {
      private $type;
 
@@ -84,7 +85,7 @@ class BouteilleTest extends \PHPUnit_Framework_TestCase
     public function testOpen()
     {
         $bouchon = $this-&gt;getMock("Bouchon");
-        $bouchon-&gt;expect($this-&gt;once())-&gt;method("popIt"); 
+        $bouchon-&gt;expect($this-&gt;once())-&gt;method("popIt");
 
         $bouteille = new Bouteille($bouchon);
         $bouteille-&gt;open();
@@ -188,3 +189,4 @@ class UserServiceTest extends \PHPUnit_Framework_TestCase
 <p>Voilà !</p>
 <p>N.B. : Injecter le document manager est totalement "overkill", mais c'était pour les besoins de l'exemple ^^.</p>
 <p>Référence : <a href="https://phpunit.de/manual/current/en/test-doubles.html">https://phpunit.de/manual/current/en/test-doubles.html</a></p>
+{% endraw %}

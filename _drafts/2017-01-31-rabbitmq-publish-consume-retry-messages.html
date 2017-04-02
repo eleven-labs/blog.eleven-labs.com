@@ -12,6 +12,7 @@ tags:
 - RabbitMQ
 - symfony
 ---
+{% raw %}
 <p><img class="aligncenter" src="https://avatars2.githubusercontent.com/u/6749375?v=3&amp;s=400" alt="See original image" /></p>
 <p>RabbitMQ is a message broker, allowing to process things asynchronously. There's already an <a href="http://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/">article</a> written about it, if you're not familiar with RabbitMQ.</p>
 <p>What I'd like to talk to you about is the lifecycle of a message, with error handling. Everything in a few lines of code.</p>
@@ -178,7 +179,7 @@ Create binding between exchange default and queue send_astronaut_to_space (with 
                   extras:
                       retry_exchange: 'retry'
                       retry_attempts: 3
-                      retry_routing_key_pattern: 'send_astronaut_to_space_retry_%%attempt%%'   
+                      retry_routing_key_pattern: 'send_astronaut_to_space_retry_%%attempt%%'
 
     messages_types:
         send_astronaut_to_space_publisher:
@@ -193,11 +194,11 @@ Create binding between exchange default and queue send_astronaut_to_space (with 
 </ul>
 <p>The workflow works this way: if the message is not <em>acknowledged </em>following<em> </em>an exception the first time, it will be published in the <em>retry </em>exchange<em>, </em>with routing key<em> </em><em>send_astronaut_to_space_retry_1. </em>Then, 5 seconds later, the message is published back in our main queue <em>send_astronaut_to_space</em>. If another error is encountered, it will be republished in the retry exchange, with the routing key <em>send_astronaut_to_space_retry_2</em>, and 25 seconds later the message will be back on our main queue. Same thing one last time with 100 seconds.</p>
 <pre class="theme:sublime-text lang:sh decode:true">sf swarrot:consume:send_astronaut_to_space send_astronaut_to_space
-[2017-01-12 12:53:41] app.WARNING: [Retry] An exception occurred. Republish message for the 1 times (key: send_astronaut_to_space_retry_1) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"} 
-[2017-01-12 12:53:46] app.WARNING: [Retry] An exception occurred. Republish message for the 2 times (key: send_astronaut_to_space_retry_2) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"} 
-[2017-01-12 12:54:11] app.WARNING: [Retry] An exception occurred. Republish message for the 3 times (key: send_astronaut_to_space_retry_3) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"} 
-[2017-01-12 12:55:51] app.WARNING: [Retry] Stop attempting to process message after 4 attempts {"swarrot_processor":"retry"} 
-[2017-01-12 12:55:51] app.ERROR: [Ack] An exception occurred. Message #4 has been nack'ed. {"swarrot_processor":"ack","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"} 
+[2017-01-12 12:53:41] app.WARNING: [Retry] An exception occurred. Republish message for the 1 times (key: send_astronaut_to_space_retry_1) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
+[2017-01-12 12:53:46] app.WARNING: [Retry] An exception occurred. Republish message for the 2 times (key: send_astronaut_to_space_retry_2) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
+[2017-01-12 12:54:11] app.WARNING: [Retry] An exception occurred. Republish message for the 3 times (key: send_astronaut_to_space_retry_3) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
+[2017-01-12 12:55:51] app.WARNING: [Retry] Stop attempting to process message after 4 attempts {"swarrot_processor":"retry"}
+[2017-01-12 12:55:51] app.ERROR: [Ack] An exception occurred. Message #4 has been nack'ed. {"swarrot_processor":"ack","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
 [2017-01-12 12:55:51] app.ERROR: [ExceptionCatcher] An exception occurred. This exception has been caught. {"swarrot_processor":"exception","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}</pre>
 <p>When creating our virtual host, we saw that an exchange called <em>dl , </em>associated to a queue <em>send_astronaut_to_space_dl</em> has been created. This queue is our message's last stop if the retry mechanism is not able to successfully publish our message (an error is still encountered after each retry).<br />
 If we look closely the details of queue <em>send_astronaut_to_space</em>, we see that "<em>x-dead-letter-exchange</em>" is equal to"<em>dl</em>", and that "<em>x-dead-letter-routing-key</em>" is equal to "<em>send_astronaut_to_space</em>", corresponding to our binding explained previously.</p>
@@ -210,3 +211,4 @@ Tied to RabbitMQ Admin Toolkit to configure exchanges and queues, Swarrot will a
 <li><a href="https://github.com/odolbeau/rabbit-mq-admin-toolkit">RabbitMQ Admin Toolkit</a></li>
 <li><a href="https://github.com/swarrot/swarrot">Swarrot</a></li>
 </ul>
+{% endraw %}

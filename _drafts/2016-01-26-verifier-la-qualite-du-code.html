@@ -13,6 +13,7 @@ tags:
 - code
 - scrutinizer
 ---
+{% raw %}
 <p>Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet article, je vais l'aborder sur la partie PHP.</p>
 <h2>Qu'est ce que la qualité du code ?</h2>
 <p>En PHP, nous pouvons définir la qualité du code par certaines métriques, telles que la couverture des tests ou l'usage des normes PSR. Le but est d'avoir un code compréhensible par tous les développeurs et facilement maintenable.</p>
@@ -190,7 +191,7 @@ Found 1 exact clones with 81 duplicated lines in 2 files:
 
   -	src/MyVendor/Bundle/AppBundle/Manager/MyManager.php:13-94
  	src/MyVendor/Bundle/AppBundle/Manager/PastedManager.php:13-94
- 
+
 0.25% duplicated lines out of 32388 total lines of code.
 
 Time: 2.21 seconds, Memory: 20.00Mb</pre>
@@ -219,3 +220,4 @@ Time: 2.21 seconds, Memory: 20.00Mb</pre>
 <p>Avoir une bonne qualité de code et les mêmes conventions de code permet d'avoir un projet solide et compréhensible par tous les développeurs. C'est la base pour la réussite d'un projet. Ainsi, le projet s'adaptera plus facilement au changement de fonctionnalités.</p>
 <p>En complément, nous avons abordé l'utilisation de ces outils dans un flux d'intégration continue avec Jenkins et SonarQube.</p>
 <p>Enfin, des outils en SASS efficaces permettent de déboguer facilement et d'avoir des indicateurs enrichis.</p>
+{% endraw %}

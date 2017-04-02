@@ -12,6 +12,7 @@ tags:
 - react
 - redux
 ---
+{% raw %}
 <p>Javascript ecosystem is really rich: full of developers but also full of frameworks and libraries.</p>
 <p>When you want to develop a frontend application, whatever its rendering framework, you will have to structure things into your project in order to organize the data management with views. This case occurs particularly when you use component rendering frameworks like <strong>React</strong> or <strong>VueJS</strong>.</p>
 <p>Historically, this has been needed by <a href="https://facebook.github.io/react/">React</a> so that's why Facebook has open sourced its tool named <a href="http://facebook.github.io/flux/">Flux</a>.</p>
@@ -155,7 +156,7 @@ import * as CounterActions from '../actions/counter';
 
 const Counter = ({ children, value, actions }) =&gt; (
   <div>
-    
+
 
     <button>Increment</button>
     <button>Decrement</button>
@@ -192,3 +193,4 @@ export default connect(
 <h2>Conclusion</h2>
 <p>If we put in parallel the download numbers of Redux (<strong>1 303 720 download over the previous month)</strong> with the <strong>2 334 221 downloads of React</strong>, we can conclude that Redux is today <strong>very used</strong> and seems very much <strong>appreciated</strong> by developers because it's a <strong>simple</strong> solution that can greatly help you to structure your application.</p>
 <p>Redux brings, in my opinion, a <strong>real solution</strong> to structure complex (or large) business applications and bring that to the React and VueJS (and others) communities.</p>
+{% endraw %}

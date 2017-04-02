@@ -8,6 +8,7 @@ categories:
 - Non classé
 tags: []
 ---
+{% raw %}
 <h2>Introduction</h2>
 <p>The following article is aimed at developers who have already used the ParamConverter, and who understand its basic principles.</p>
 <p>It was written in order to explain how to solve the following issue: I needed to pass a token into a custom header, and to be able to get it back in the controllers. The goal was to avoid repeating the acquisition of the header in each one of the controllers.</p>
@@ -18,7 +19,7 @@ tags: []
 /**
  * @Route("/post/{post}")
  */
-public function getAction(Post $post) 
+public function getAction(Post $post)
 {
     return new Response($post-&gt;getTitle());
 }</pre>
@@ -69,7 +70,7 @@ class TokenConverter implements ParamConverterInterface
      */
     public function supports(ConfigurationInterface $configuration)
     {
-        
+
     }
 }</pre>
 <p>I begin with the <em>supports </em>method<em>. </em>Here, I don’t have any reference class. I will then work on the name of the variable.</p>
@@ -115,3 +116,4 @@ public function isTokenValidAction($token)
 <li><a href="http://api.symfony.com/2.8/Symfony/Component/HttpFoundation/ParameterBag.html">http://api.symfony.com/2.8/Symfony/Component/HttpFoundation/ParameterBag.html</a></li>
 </ul>
 <p>&nbsp;</p>
+{% endraw %}

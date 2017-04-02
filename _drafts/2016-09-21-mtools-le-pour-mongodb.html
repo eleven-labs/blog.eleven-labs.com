@@ -11,6 +11,7 @@ tags:
 - tools
 - devops
 ---
+{% raw %}
 <p>Maintenir une application MongoDB, notamment sur des sujets Datas avec beaucoup de volumétrie et/ou d’opérations peut vite devenir un supplice, surtout si, comme la plupart des Devs, vous n'avez pas accès aux machines de productions qui sont généralement réservées aux exploitants.</p>
 <p>Problème : comment trouver dans vos dizaines de millions de données ou requêtes quotidiennes, celles qui ont un impact négatif sur vos performances ou encore les goulots d’étranglement de votre architecture ?</p>
 <p><!--more--></p>
@@ -44,14 +45,14 @@ myCol.InactiveUser       count            {"inactiveSeg": 1}                 32 
 <p>Mlogfilter permet comme son nom l'indique de réduire la quantité d'information d'un fichier de log. Nous pouvons appliquer plusieurs filtres et combiner le résultat avec mloginfo par exemple.</p>
 <pre class="lang:default decode:true " title="mlogfilter">cat logs.mongo/mongod.log | mlogfilter --human --slow --from start +1day
 
-Fri Sep 16 08:01:58.883 I COMMAND [conn195591] command dbm_rcu_v2.Client command: 
-aggregate { aggregate: "Client", pipeline: [ { $match: { somedate: 
-{ $lte: new Date(1474005604000), $gte: new Date(1469951542000) } } }, { $sort: 
-{ somedate: -1 } },{ $unwind: "$someArray" }, { $skip: 165000 }, 
-{ $limit: 5000 } ], allowDiskUse: true } 
-ntoskip:0 keyUpdates:0 writeConflicts:0 numYields:549 reslen:862557 
-locks:{ Global: { acquireCount: { r: 1120 } }, 
-Database: { acquireCount: { r: 560 } }, Collection: { acquireCount: { r: 560 } } } 
+Fri Sep 16 08:01:58.883 I COMMAND [conn195591] command dbm_rcu_v2.Client command:
+aggregate { aggregate: "Client", pipeline: [ { $match: { somedate:
+{ $lte: new Date(1474005604000), $gte: new Date(1469951542000) } } }, { $sort:
+{ somedate: -1 } },{ $unwind: "$someArray" }, { $skip: 165000 },
+{ $limit: 5000 } ], allowDiskUse: true }
+ntoskip:0 keyUpdates:0 writeConflicts:0 numYields:549 reslen:862557
+locks:{ Global: { acquireCount: { r: 1120 } },
+Database: { acquireCount: { r: 560 } }, Collection: { acquireCount: { r: 560 } } }
 protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
 <p>Avec cette commande, mlogfilter nous permet de filtrer les logs des commandes les plus longues (--slow) dans un intervalle d'un jour à partir du début du fichier. On peut voir que cela nous donne une commande d'agrégation qui a pris plus de 3 secondes pour s’exécuter.</p>
 <p>Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mlogfilter">mlogfilter</a>.</p>
@@ -70,11 +71,11 @@ protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
         "name": {
             "first": {"$choose": ["Liam", "Noah", "Ethan", "Mason", "Logan", "Jacob", "Lucas", "Jackson", "Aiden", "Jack", "James", "Elijah", "Luke", "William", "Michael", "Alexander", "Oliver", "Owen", "Daniel", "Gabriel", "Henry", "Matthew", "Carter", "Ryan", "Wyatt", "Andrew", "Connor", "Caleb", "Jayden", "Nathan", "Dylan", "Isaac", "Hunter", "Joshua", "Landon", "Samuel", "David", "Sebastian", "Olivia", "Emma", "Sophia", "Ava", "Isabella", "Mia", "Charlotte", "Emily", "Abigail", "Avery", "Harper", "Ella", "Madison", "Amelie", "Lily", "Chloe", "Sofia", "Evelyn", "Hannah", "Addison", "Grace", "Aubrey", "Zoey", "Aria", "Ellie", "Natalie", "Zoe", "Audrey", "Elizabeth", "Scarlett", "Layla", "Victoria", "Brooklyn", "Lucy", "Lillian", "Claire", "Nora", "Riley", "Leah"] },
             "last": {"$choose": ["Smith", "Jones", "Williams", "Brown", "Taylor", "Davies", "Wilson", "Evans", "Thomas", "Johnson", "Roberts", "Walker", "Wright", "Robinson", "Thompson", "White", "Hughes", "Edwards", "Green", "Hall", "Wood", "Harris", "Lewis", "Martin", "Jackson", "Clarke", "Clark", "Turner", "Hill", "Scott", "Cooper", "Morris", "Ward", "Moore", "King", "Watson", "Baker" , "Harrison", "Morgan", "Patel", "Young", "Allen", "Mitchell", "James", "Anderson", "Phillips", "Lee", "Bell", "Parker", "Davis"] }
-        }, 
+        },
         "gender": {"$choose": ["female", "male"]},
-        "age": "$number", 
+        "age": "$number",
         "address": {
-            "street": {"$string": {"length": 10}}, 
+            "street": {"$string": {"length": 10}},
             "house_no": "$number",
             "zip_code": {"$number": [10000, 99999]},
             "city": {"$choose": ["Manhattan", "Brooklyn", "New Jersey", "Queens", "Bronx"]}
@@ -83,7 +84,7 @@ protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
         "created_at": {"$date": ["2010-01-01", "2014-07-24"] },
         "is_active": {"$choose": [true, false]}
     },
-    "tags": {"$array": {"of": {"label": "$string", "id": "$oid", "subtags": 
+    "tags": {"$array": {"of": {"label": "$string", "id": "$oid", "subtags":
         {"$missing": {"percent": 80, "ifnot": {"$array": ["$string", {"$number": [2, 5]}]}}}}, "number": {"$number": [0, 10] }}}
 }</pre>
 <p>Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mgenerate">Mgenerate</a>.</p>
@@ -99,3 +100,4 @@ protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/date-sample.png"><img class="alignnone size-medium wp-image-2254" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/date-sample-300x41.png" alt="date-sample" width="300" height="41" /></a></p>
 <p>&nbsp;</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder.png"><img class="alignnone size-medium wp-image-2255" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder-300x217.png" alt="query-builder" width="300" height="217" /></a></p>
+{% endraw %}

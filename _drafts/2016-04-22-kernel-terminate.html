@@ -9,6 +9,7 @@ categories:
 - Php
 tags: []
 ---
+{% raw %}
 <p>Symfony 2 c'est plusieurs composants -dont le domaine d'application est spécifique- qui forment les parpaings d'une maison ; pour assembler tout ça, un autre composant existe, à la fois le parpaing et le ciment : l'EventDispatcher. Son rôle est de distribuer des événements qui seront traités par les divers composants.</p>
 <p>Il ne s'agit pas dans cet article de revenir sur le fonctionnement de l'EventDispatcher, mais d'expliquer le rôle d'un événement mal connu, l'event "kernel.terminate".</p>
 <p>Sachez tout d'abord qu'aucun code n'est exposé ici, je vous laisse cette démarche. D'autre part, si l'exemple est pris avec Symfony (qui simplifie le problème), ce n'est pas Symfony qui permet ce que nous allons étudier ici, mais l'implémentation du serveur PHP.</p>
@@ -54,3 +55,4 @@ tags: []
 <h1>Conclusion</h1>
 <p>PHP n'est pas le langage le plus rapide du monde, mais il s'en sort quand même plutôt bien avec ce genre de petites optimisations, pour peu qu'on sache l'appréhender. Avec Symfony, cela rajoute un peu de complexité pour configurer l'optimisation aux petits oignons, mais c'est du devoir du développeur d'anticiper ces problèmes. J'ai pris l'exemple ici avec Symfony qui mâche le travail avec l'event kernel.terminate, mais sachez que c'est possible en PHP natif comme je le disais grâce à la fonction <a href="http://php.net/manual/en/function.fastcgi-finish-request.php">fastcgi_finish_request</a>.</p>
 <p>N'hésitez pas à faire un retour dans les commentaires, si vous constatez des inexactitudes, des améliorations à apporter, ou simplement si vous avez des questions sur des points un peu obscurs ;)</p>
+{% endraw %}

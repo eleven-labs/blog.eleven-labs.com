@@ -11,6 +11,7 @@ tags:
 - delegates
 - closure
 ---
+{% raw %}
 <h4>Introduction</h4>
 <p>Salut les Astronautes, aujourd'hui on va continuer dans notre lancée sur le mobile, toujours en NATIF.</p>
 <p>Cet article s'inscrit dans la lignée des 2 précédents, et il est impératif de les avoir lu pour comprendre ce dont il s'agit ici :</p>
@@ -35,7 +36,7 @@ tags:
 <pre class="lang:Objective-C decode:true">typedef void (^successBlock)();
 typedef void (^failureBlock)();
 
-@protocol RequestManagerObjCDelegate 
+@protocol RequestManagerObjCDelegate
 
 - (void)onRequestSuccess;
 - (void)onRequestFailure;
@@ -43,9 +44,9 @@ typedef void (^failureBlock)();
 @end
 
 
-@interface RequestManagerObjCDelegateImplementation : NSObject 
+@interface RequestManagerObjCDelegateImplementation : NSObject
 {
-    
+
 }
 
 @property (weak, nonatomic) successBlock success;
@@ -83,7 +84,7 @@ typedef void (^failureBlock)();
 - (void)get:(NSString *)url {
     //Do the call
     BOOL requestSucceed = [self isSuccess];
-    
+
     //After the call
     if (requestSucceed) {
         [self.delegate onRequestSuccess];
@@ -100,23 +101,23 @@ typedef void (^failureBlock)();
 </pre>
 <p>Puis on va faire une méthode pour appeler notre webservice</p>
 <pre class="lang:Objective-C decode:true ">- (void)callWebService {
-    
+
     RequestManagerObjC* manager = [[RequestManagerObjC alloc] init];
-    
+
     successBlock success = ^void() {
-        
+
     };
-    
+
     failureBlock failure = ^void() {
-        
+
     };
-    
+
     RequestManagerObjCDelegateImplementation* delegate = [[RequestManagerObjCDelegateImplementation alloc] init];
     delegate.success = success;
     delegate.failure = failure;
-    
+
     manager.delegate = delegate;
-    
+
     [manager get: @"http://plop.fr"];
 }
 </pre>
@@ -137,13 +138,13 @@ typedef void (^failureBlock)();
 class RequesterDelegateSwiftImplementation:  RequesterDelegateSwift {
     var requestSuccess: ((Void) -&gt; Void)?
     var requestFailure: ((Void) -&gt; Void)?
-    
+
     func onRequestSuccess() {
         if let successClosure = self.requestSuccess {
             successClosure()
         }
     }
-    
+
     func onRequestFailure() {
         if let failureClosure = self.requestFailure {
             failureClosure()
@@ -152,14 +153,14 @@ class RequesterDelegateSwiftImplementation:  RequesterDelegateSwift {
 }
 
 class RequestManagerSwift {
-    
+
     var delegate: RequesterDelegateSwift?
-    
+
     func get(url: String) {
         //Do the call
         let requestSucceed: Bool = self.isSuccess()
-        
-        
+
+
         //After the call
         if requestSucceed {
             self.delegate?.onRequestSuccess()
@@ -167,7 +168,7 @@ class RequestManagerSwift {
             self.delegate?.onRequestFailure()
         }
     }
-    
+
     private func isSuccess() -&gt; Bool {
     return true
     }
@@ -178,15 +179,15 @@ func callWebService() {
     let manager: RequestManagerSwift = RequestManagerSwift()
     let requesterDelegate: RequesterDelegateSwiftImplementation = RequesterDelegateSwiftImplementation()
     requesterDelegate.requestSuccess = {
-            
+
      }
-        
+
      requesterDelegate.requestFailure = {
-            
+
      }
-        
+
      manager.delegate = requesterDelegate
-        
+
      manager.get(url: "http://plop.fr")
  }
 
@@ -207,3 +208,4 @@ Comme je vous l'ai dit au début de l'article, cette solution vient pour un beso
 <p>Cette solution n'est pas parfaite, mais reste assez élégante et n'est pas trop lourde à mettre en place.<br />
 Après, je vous laisse tester et me dire ce que vous en pensez dans les commentaires.</p>
 <p>Allez, salut les astronautes :)</p>
+{% endraw %}

@@ -13,6 +13,7 @@ tags:
 - mobile
 - notification
 ---
+{% raw %}
 <p>Lors d'un article précédent nous avons créé <a href="http://blog.eleven-labs.com/fr/votre-premiere-pwa/">notre première PWA</a>, mais nous n'avons pas été jusqu'au bout du concept. L'intérêt du <a href="http://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/">PWA</a>, c'est d'agir comme une application mobile, d'être installé sur le téléphone, de gérer le off-line et surtout d'envoyer des push notifications. Les notifications sont un élément essentiel de l'engagement de l'utilisateur, elles permettent de faire un rappel et de communiquer avec nos utilisateurs. Nous allons donc finaliser le dernier tutoriel en mettant en place un système simple de push notification, en utilisant <a href="https://firebase.google.com/">Firebase</a> pour stocker nos tokens utilisateurs.</p>
 <p><!--more--></p>
 <p>Pour aller plus vite, nous vous invitons à récupérer le projet <a href="https://github.com/CaptainJojo/pwa-parisjs">https://github.com/CaptainJojo/pwa-parisjs</a> qui contient une PWA prête à l'emploi.</p>
@@ -359,3 +360,4 @@ app.listen(8080, function () {
 <p>Si tout est bon, quand vous relancez le serveur et que vous allez sur / puis /sender vous avez la notification. Si ce n'est pas le cas supprimez le cache de votre application dans la console chrome onglet application.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/10/Capture-d’écran-2016-10-26-à-17.46.23.png"><img class="aligncenter size-large wp-image-2381" src="http://blog.eleven-labs.com/wp-content/uploads/2016/10/Capture-d’écran-2016-10-26-à-17.46.23-1024x563.png" alt="Enfin - la push notification" width="1024" height="563" /></a></p>
 <p>Encore une fois ce code est vraiment un tutoriel, je vous invite donc à faire des issues pour la moindre question. Le code final est <a href="https://github.com/CaptainJojo/pwa-parisjs/tree/push">ici</a>.</p>
+{% endraw %}

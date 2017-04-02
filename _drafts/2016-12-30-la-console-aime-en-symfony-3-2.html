@@ -12,6 +12,7 @@ tags:
 - symfony
 - Console
 ---
+{% raw %}
 <p>La console est un composant essentiel pour beaucoup d’applications web. Nous avons pas mal de nouveautés dans cette nouvelle version de Symfony. Je vous présente dans cet article mes préférées et vous mettrai les liens de celles que je ne détaille pas ici à la fin (on est comme ça chez Eleven).</p>
 <h3>Les alias dans les commandes</h3>
 <p>On l’attendait, ils l’ont fait : nous pouvons désormais créer une liste d’alias à nos commandes. Pour cela, rien de plus simple : ajoutez “setAliases” avec en paramètre un tableau de string comportant tous les alias.</p>
@@ -42,7 +43,7 @@ class ElevenLabsAliasCommand extends ContainerAwareCommand
     {
         $output-&gt;writeln('Alias command done');
     }
-    
+
 }
 </pre>
 <p>Voici une petite vidéo pour voir ce que ça rend :</p>
@@ -105,7 +106,7 @@ class ElevenLabsTestCommandTest extends KernelTestCase
 
         $command = $application-&gt;find('eleven-labs:test-command');
         $commandTester = new CommandTester($command);
-        
+
         // Ajouter tous les inputs dans l'ordre, ici nous devons mettre un nom et un prénom
         $commandTester-&gt;setInputs(['Niel', 'Armstrong']);
 
@@ -114,7 +115,7 @@ class ElevenLabsTestCommandTest extends KernelTestCase
         ]);
 
         $output = $commandTester-&gt;getDisplay();
-        
+
         // Nous verifions ici que nous avons bien les mêmes input
         $this-&gt;assertContains('Niel Armstrong, welcome on board !', $output);
     }
@@ -174,16 +175,16 @@ use Command\EspaceCommand;
 use Command\TerreCommand;
 use Symfony\Component\Console\Application;
 
-// On initialise les deux commandes 
+// On initialise les deux commandes
 $espaceCommand = new EspaceCommand();
 $terreCommand = new TerreCommand();
 
-// On créer une nouvelle application, et on lui ajoute nos 2 commandes 
+// On créer une nouvelle application, et on lui ajoute nos 2 commandes
 $application = new Application();
 $application-&gt;add($espaceCommand);
 $application-&gt;add($terreCommand);
 
-// On met la commande EspaceCommand en par défaut et on ajout un booléen à TRUE 
+// On met la commande EspaceCommand en par défaut et on ajout un booléen à TRUE
 $application-&gt;setDefaultCommand($espaceCommand-&gt;getName(), true);
 
 $application-&gt;run();
@@ -292,16 +293,16 @@ use Command\EspaceCommand;
 use Command\TerreCommand;
 use Symfony\Component\Console\Application;
 
-// On initialise les deux commandes 
+// On initialise les deux commandes
 $espaceCommand = new EspaceCommand();
 $terreCommand = new TerreCommand();
 
-// On créer une nouvelle application, et on lui ajoute nos 2 commandes 
+// On créer une nouvelle application, et on lui ajoute nos 2 commandes
 $application = new Application();
 $application-&gt;add($espaceCommand);
 $application-&gt;add($terreCommand);
 
-// On met la commande EspaceCommand en par défaut et on ajout un booléen à TRUE 
+// On met la commande EspaceCommand en par défaut et on ajout un booléen à TRUE
 $application-&gt;setDefaultCommand($espaceCommand-&gt;getName(), true);
 
 $application-&gt;run();
@@ -407,16 +408,16 @@ use Command\EspaceCommand;
 use Command\TerreCommand;
 use Symfony\Component\Console\Application;
 
-// On initialise les deux commandes 
+// On initialise les deux commandes
 $espaceCommand = new EspaceCommand();
 $terreCommand = new TerreCommand();
 
-// On créer une nouvelle application, et on lui ajoute nos 2 commandes 
+// On créer une nouvelle application, et on lui ajoute nos 2 commandes
 $application = new Application();
 $application-&gt;add($espaceCommand);
 $application-&gt;add($terreCommand);
 
-// On met la commande EspaceCommand en par défaut et on ajout un booléen à TRUE 
+// On met la commande EspaceCommand en par défaut et on ajout un booléen à TRUE
 $application-&gt;setDefaultCommand($espaceCommand-&gt;getName(), true);
 
 $application-&gt;run();
@@ -483,3 +484,4 @@ Une fois la commande cachée, vous pourrez  toujours la lancer, mais elle n’a
 <h3>Conclusion</h3>
 <p>Voilà, je vous ai montré les nouveautés que je préfère, mais ce ne sont pas les seules, pour voir toute la liste des nouveautés pour le composant console, je vous conseille de suivre ce lien : <a href="http://symfony.com/blog/symfony-3-2-0-released">http://symfony.com/blog/symfony-3-2-0-released</a></p>
 <h3></h3>
+{% endraw %}

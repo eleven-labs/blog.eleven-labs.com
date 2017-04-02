@@ -9,6 +9,7 @@ categories:
 tags:
 - symfony2
 ---
+{% raw %}
 <p><span style="text-align: justify; font-size: 13px;">Lorsque l’on développe un site, en particulier un site à fort trafic, on est forcément amené à se poser la question des ressources consommées par ce dernier afin d’optimiser son temps de réponse. En effet, une page qui met plus de 3-4 secondes à s’afficher rend vite désagréable la navigation et découragera plus d’une personne à venir sur votre site.</span></p>
 <p><!--more--></p>
 <h1> 1)    Principe du cache HTTP</h1>
@@ -75,7 +76,7 @@ $kernel-&gt;terminate($request, $response);</pre>
     defaults: { _controller: MyBundle:Example:cache}</pre>
 <p>&nbsp;</p>
 <p>Voici pour le Controller :</p>
-<pre class="lang:php decode:true" title="MyBundle/Controller/ExampleController.php">&lt;?php 
+<pre class="lang:php decode:true" title="MyBundle/Controller/ExampleController.php">&lt;?php
 
 namespace MyBundle\Controller;
 
@@ -83,7 +84,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ExampleController extends Controller {
     public function cacheAction() {
-        return $this-&gt;renderView('MyBundle:Cache:cache.html.twig', array('hello' =&gt; 'Hello World!!!'));   
+        return $this-&gt;renderView('MyBundle:Cache:cache.html.twig', array('hello' =&gt; 'Hello World!!!'));
     }
 }</pre>
 <p>&nbsp;</p>
@@ -112,14 +113,14 @@ class ExampleController extends Controller {
 <p>&nbsp;</p>
 <p>Modifiez maintenant votre action :</p>
 <pre class="lang:php decode:true">public function cacheAction() {
-    $response = new Response(); 
+    $response = new Response();
     $response-&gt;setMaxAge(300);
 
     // Check that the Response is not modified for the given Request
     if (!$response-&gt;isNotModified($this-&gt;getRequest())) {
         $date = new \DateTime();
         $response-&gt;setLastModified($date);
-        $response-&gt;setContent($this-&gt;renderView('MyBundle:Cache:cache.html.twig', array('hello' =&gt; 'Hello World!!!')));       
+        $response-&gt;setContent($this-&gt;renderView('MyBundle:Cache:cache.html.twig', array('hello' =&gt; 'Hello World!!!')));
         }
 
         return $response;
@@ -168,7 +169,7 @@ use Symfony\Component\HttpFoundation\Request;
 class ExampleController extends Controller {
 
     public function cacheAction() {
-        return $this-&gt;render('MyBundle:Cache:cache.html.twig', 
+        return $this-&gt;render('MyBundle:Cache:cache.html.twig',
             array('hello' =&gt; 'Hello World!!!'));
     }
 
@@ -201,3 +202,4 @@ class ExampleController extends Controller {
 <p>Aahhhh, ça a l’air d’être « fresh » :)</p>
 <p>Je vous passe les explications mais vous aurez compris que le fragment en cache était valide et qu’il a pu être retourné directement.</p>
 <p>Vous avez maintenant les bases pour voler de vos propres ailes et optimiser votre application.</p>
+{% endraw %}

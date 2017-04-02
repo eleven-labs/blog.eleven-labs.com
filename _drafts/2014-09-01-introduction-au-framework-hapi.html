@@ -10,6 +10,7 @@ tags:
 - Nodejs
 - hapi
 ---
+{% raw %}
 <p>HAPI est un framework Node.js développé par ‘Walmart Labs’. Il gagne aujourd’hui en popularité. Ainsi, des entreprises prestigieuses dans le domaine du web telles que Paypal, Mozilla ou encore Beats Audio commencent à l’utiliser, tout un gage de confiance !</p>
 <p>Dans cet article, je vais couvrir l’initialisation d’une application,  la création d’un serveur, la déclaration des routes et enfin je me centrerai sur certains points qui m’ont particulièrement intéressé dans son utilisation.</p>
 <h2>I <b>L’initialisation de l’application</b></h2>
@@ -114,7 +115,7 @@ Joi est un module complet que je ne vais pas détailler ici. Pour vous mettre l�
 <p>Je vous l’accorde, si je continue à définir de nouvelles routes au sein du même fichier, ce sera bientôt illisible et difficile à maintenir… ! Là encore, Hapi possède une solution pour organiser votre projet. En effet , les plugins viennent à notre rescousse pour structurer notre application en un ensemble d’unités logiques. Avant d’entrer en détail dans la création d’un plugin, il est nécessaire de comprendre que Hapi propose une interface pour regrouper des serveurs, appelée ‘pack’. Chaque serveur Hapi fait partie d’un Pack HAPI (je reviendrai sur ce concept plus tard).<br />
 Pour créer un plugin, on peut soit le faire dans un dossier de son choix ou directement dans ‘node_modules’. Personnellement, je préfère la seconde option.</p>
 <pre class="lang:js decode:true" title="create plugin">cd node_modules &amp;&amp; mkdir plugin-example &amp;&amp; cd $_
-npm init 
+npm init
 </pre>
 <p>Dans ce dossier, éditons notre fichier point d’entrée (encore une fois, j’ai choisi app.js)</p>
 <pre class="lang:js decode:true" title="register plugin">exports.register = function(plugin, options, next) {
@@ -127,10 +128,10 @@ npm init
     });
     next();
 };
- 
+
 exports.register.attributes = {
      ‘name’: ‘plugin-example’,
-     ‘version’: ‘1.0.0’    
+     ‘version’: ‘1.0.0’
 };
 </pre>
 <p>Une explication est nécessaire ! On construit un plugin avec ces éléments :</p>
@@ -323,7 +324,7 @@ Joi est un module complet que je ne vais pas détailler ici. Pour vous mettre l�
 <p>Je vous l’accorde, si je continue à définir de nouvelles routes au sein du même fichier, ce sera bientôt illisible et difficile à maintenir… ! Là encore, Hapi possède une solution pour organiser votre projet. En effet , les plugins viennent à notre rescousse pour structurer notre application en un ensemble d’unités logiques. Avant d’entrer en détail dans la création d’un plugin, il est nécessaire de comprendre que Hapi propose une interface pour regrouper des serveurs, appelée ‘pack’. Chaque serveur Hapi fait partie d’un Pack HAPI (je reviendrai sur ce concept plus tard).<br />
 Pour créer un plugin, on peut soit le faire dans un dossier de son choix ou directement dans ‘node_modules’. Personnellement, je préfère la seconde option.</p>
 <pre class="lang:js decode:true" title="create plugin">cd node_modules &amp;&amp; mkdir plugin-example &amp;&amp; cd $_
-npm init 
+npm init
 </pre>
 <p>Dans ce dossier, éditons notre fichier point d’entrée (encore une fois, j’ai choisi app.js)</p>
 <pre class="lang:js decode:true" title="register plugin">exports.register = function(plugin, options, next) {
@@ -336,10 +337,10 @@ npm init
     });
     next();
 };
- 
+
 exports.register.attributes = {
      ‘name’: ‘plugin-example’,
-     ‘version’: ‘1.0.0’    
+     ‘version’: ‘1.0.0’
 };
 </pre>
 <p>Une explication est nécessaire ! On construit un plugin avec ces éléments :</p>
@@ -594,7 +595,7 @@ Joi est un module complet que je ne vais pas détailler ici. Pour vous mettre l�
 <p>Je vous l’accorde, si je continue à définir de nouvelles routes au sein du même fichier, ce sera bientôt illisible et difficile à maintenir… ! Là encore, Hapi possède une solution pour organiser votre projet. En effet , les plugins viennent à notre rescousse pour structurer notre application en un ensemble d’unités logiques. Avant d’entrer en détail dans la création d’un plugin, il est nécessaire de comprendre que Hapi propose une interface pour regrouper des serveurs, appelée ‘pack’. Chaque serveur Hapi fait partie d’un Pack HAPI (je reviendrai sur ce concept plus tard).<br />
 Pour créer un plugin, on peut soit le faire dans un dossier de son choix ou directement dans ‘node_modules’. Personnellement, je préfère la seconde option.</p>
 <pre class="lang:js decode:true" title="create plugin">cd node_modules &amp;&amp; mkdir plugin-example &amp;&amp; cd $_
-npm init 
+npm init
 </pre>
 <p>Dans ce dossier, éditons notre fichier point d’entrée (encore une fois, j’ai choisi app.js)</p>
 <pre class="lang:js decode:true" title="register plugin">exports.register = function(plugin, options, next) {
@@ -607,10 +608,10 @@ npm init
     });
     next();
 };
- 
+
 exports.register.attributes = {
      ‘name’: ‘plugin-example’,
-     ‘version’: ‘1.0.0’    
+     ‘version’: ‘1.0.0’
 };
 </pre>
 <p>Une explication est nécessaire ! On construit un plugin avec ces éléments :</p>
@@ -790,3 +791,4 @@ Hapi.Pack.compose(manifest, function (err, pack) {
 <h2>VII Conclusion</h2>
 <p>J’espère que je vous ai donné envie d’essayer cet excellent mais méconnu framework !  Je ne suis pas rentré dans tous les détails, c’est pourquoi, je vous conseille d’approfondir cette introduction en consultant la documentation officielle, qui est très bien écrite et régulièrement mise à jour: <a href="https://github.com/hapijs/hapi/blob/master/docs/Reference.md">https://github.com/hapijs/hapi/blob/master/docs/Reference.md</a></p>
 <p>Par ailleurs l’équipe est très impliquée et propose d’excellents modules (<a href="https://github.com/hapijs">https://github.com/hapijs</a>). Parmi ceux que j’apprécie le plus : <em>lout</em> qui génère automatiquement une documentation de votre serveur Hapi, <em>yar</em>, qui est un gestionnaire de sessions et de cookies ou encore <em>catbox</em> qui offre  une gestion du cache …. !</p>
+{% endraw %}

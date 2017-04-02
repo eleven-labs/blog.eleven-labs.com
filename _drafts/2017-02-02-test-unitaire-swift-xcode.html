@@ -8,6 +8,7 @@ categories:
 - Mobile
 tags: []
 ---
+{% raw %}
 <p><span style="font-weight: 400;">Bonjour à vous les astronautes !!! :)</span></p>
 <p><span style="font-weight: 400;">Aujourd'hui, nous allons voir ensemble un nouveau tuto de l'espace sous iOS/Xcode.</span></p>
 <p><span style="font-weight: 400;">Le sujet : <strong>Les tests unitaires</strong> !</span></p>
@@ -37,9 +38,9 @@ struct Astronaute {
     let name: String
     let grade: String
     let sex: String
-    
+
     let planet: String?
-    
+
     init(name: String, grade: String, sex: String, planet: String? = nil) {
         self.name = name
         self.grade = grade
@@ -58,23 +59,23 @@ struct Astronaute {
 <pre class="lang:swift decode:true">import XCTest
 
 class AstronauteTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    
+
     func testExample() {
     }
-    
+
     func testPerformanceExample() {
         self.measure {
         }
     }
-    
+
 }</pre>
 <p><span style="font-weight: 400;">La première chose à noter est qu’on importe XCTest. Comme vous vous en doutez, ceci permet d’avoir accès au framework XCTest.</span></p>
 <p><span style="font-weight: 400;">Ensuite nous avons plusieurs méthodes que nous allons voir en détail :</span></p>
@@ -88,10 +89,10 @@ class AstronauteTests: XCTestCase {
 @testable import tuto_xctest
 
 class AstronauteTests: XCTestCase {
-    
+
     func testInitAstronaute() {
         let astronaute = Astronaute(name: "Pepito", grade: "Amiral", sex: "Male")
-        
+
         XCTAssertEqual("Pepito", astronaute.name)
         XCTAssertEqual("Amiral", astronaute.grade)
         XCTAssertEqual("Male", astronaute.sex)
@@ -120,7 +121,7 @@ class AstronauteTests: XCTestCase {
 <p><span style="font-weight: 400;">Pour finir notre test, nous allons rajouter la méthode </span><b>testInitAstronuateWithPlanet </b><span style="font-weight: 400;">qui va tester l’initialisation d’un astronaute avec une planète (oui j’aime bien mettre des noms en rapport avec Star Wars :) ).</span></p>
 <pre class="lang:swift decode:true">func testInitAstronuateWithPlanet() {
   let astronaute = Astronaute(name: "Skywalker", grade: "Jedi", sex: "Male", planet: "Tatooine")
-        
+
   XCTAssertEqual("Tatooine", astronaute.planet)
 }</pre>
 <p><span style="font-weight: 400;">Bon normalement nous avons testé tous les cas possibles sur notre structure. Mais comment en être sûr ?  </span></p>
@@ -142,11 +143,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     func changeLabel(score: Int) {
         if (score &gt; 0) {
             self.uiText.text = "Gagner"
-            
+
             return;
         }
 
@@ -160,34 +161,34 @@ class ViewController: UIViewController {
 
 class ViewControllerTests: XCTestCase {
     var controller:ViewController!
-    
+
     override func setUp() {
         super.setUp()
-    
+
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         controller = storyboard.instantiateInitialViewController() as! ViewController
     }
 
     override func tearDown() {
         super.tearDown()
-        
+
         controller = nil
     }
-    
+
     func testScoreIsWinChangeLabel() {
         let _ = controller.view
         controller.changeLabel(score: 1)
-        
+
         XCTAssertEqual("Gagner", controller.uiText.text)
     }
-    
+
     func testScoreIsLooseChangeLabel() {
         let _ = controller.view
         controller.changeLabel(score: 0)
-        
+
         XCTAssertEqual("Perdu", controller.uiText.text)
     }
-    
+
 }
 </pre>
 <p>Nous devons créer une variable de type ViewController afin d'accéder pour chaque méthode de test à celle-ci.</p>
@@ -217,3 +218,4 @@ L’alternative est d’utiliser la propriété <strong>view</strong> de votre c
 <li><span style="font-weight: 400;">Cela cible plus facilement une erreur due à un changement de code ;</span></li>
 <li><span style="font-weight: 400;">Vous y gagnerez sur le long terme.</span></li>
 </ul>
+{% endraw %}

@@ -10,6 +10,7 @@ tags:
 - microdata
 - bdd
 ---
+{% raw %}
 <p>A l’heure où tout le monde ne parle que de Big data, je vais tenter de vous présenter les microdata.</p>
 <p>Ces derniers temps, beaucoup de nouveautés sont apparues pour les intégrateurs web du monde entier tels les microformats, microdata (ou microdonnées en français) ou encore de nouvelles balises sémantiques.</p>
 <p>Bien que les microformats existent depuis quelques années, l’avènement de la spécification HTML5 a accéléré leur utilisation.</p>
@@ -40,10 +41,10 @@ tags:
 <p>Voici ce que cela peut donner avec les microdata :</p>
 <pre class="lang:default decode:true">&lt;div itemscope itemtype=”http://schema.org/Restaurant”&gt;
     &lt;h1&gt;Restaurant Chez Clément Elysées à Paris 8ème : Arc de ...&lt;/h1&gt;
-	Note : 
+	Note :
     &lt;span itemprop=”aggregateRating” itemscope itemtype=”http://schema.org/AggregateRating”&gt;
         &lt;span itemprop=”ratingValue”&gt;7,8&lt;/span&gt;/
-        &lt;span itemprop=”bestRating”&gt;10&lt;/span&gt; - 
+        &lt;span itemprop=”bestRating”&gt;10&lt;/span&gt; -
         &lt;span itemprop=”ratingCount”&gt;171&lt;/span&gt; votes
     &lt;/span&gt;
     &lt;p itemprop=”description”&gt;Restaurant Chez Clément Elysées à Paris : Réservez gratuitement…&lt;/p&gt;
@@ -73,12 +74,12 @@ La 1ère édition aura lieu le jeudi 26 mars 2015 dans les locaux de Eleven Labs
 <pre class="lang:default decode:true">&lt;article itemscope itemtype=”http://schema.org/Event”&gt;
     &lt;h1 itemprop=”name”&gt;Wilson Coding Battlespace&lt;/h1&gt;
     &lt;p itemprop=”description”&gt;Bataille de code entre les 4 planètes.&lt;/p&gt;
-    &lt;p&gt;La 1ère édition aura lieu le jeudi 
-    &lt;time date=”2015-03-26” itemprop=”startDate”&gt;26 mars 2015&lt;/time&gt; 
+    &lt;p&gt;La 1ère édition aura lieu le jeudi
+    &lt;time date=”2015-03-26” itemprop=”startDate”&gt;26 mars 2015&lt;/time&gt;
 dans les locaux de
 	&lt;!-- Début de l’imbrication --&gt;
 	&lt;span itemscope itemtype=”http://schema.org/Corporation”&gt;
-	    &lt;span itemprop=”name”&gt;Eleven Labs&lt;/span&gt; au 
+	    &lt;span itemprop=”name”&gt;Eleven Labs&lt;/span&gt; au
 	    &lt;span itemprop=”streetAddress”&gt;81 rue de Courcelles&lt;/span&gt;,
 	    &lt;span itemprop=”postalCode”&gt;75017&lt;/span&gt;
  	    &lt;span itemprop=”adressLocality”&gt;Paris&lt;/span&gt;.
@@ -142,3 +143,4 @@ dans les locaux de
 https://developers.google.com/structured-data/testing-tool/<br />
 </a></p>
 <p>Google propose également un <a href="http://www.google.com/webmasters/tools/richsnippets">outil d'analyse</a> de vos pages à la recherche qui détecte le schéma utilisé et vous fait un rapport sur les données trouvées, leur formatage ainsi que les éventuelles erreurs rencontrées.</p>
+{% endraw %}

@@ -9,6 +9,7 @@ categories:
 - Devops
 tags: []
 ---
+{% raw %}
 <h1>Qu'est-ce que le "12 Factor app"</h1>
 <p>Le "12 Factor app" est un manifeste qui propose 12 bonnes pratiques concernant le développement d'applications web. Ce manifeste, écrit par Adam Wiggins (co-fondateur d'Heroku), est né de ses observations et de son expérience dans le développement et le déploiement d'applications web.</p>
 <p>Ce manifeste s'applique à tous les langages et toutes les plateformes, c'est pourquoi il se contente de décrire les décisions de conception de haut niveau sans donner de détail sur l'implémentation.</p>
@@ -118,3 +119,4 @@ tags: []
 </ul>
 <p>Les processus ponctuels d’administration devraient être lancés dans un environnement identique à ceux des processus standards de l’application. Ils s’exécutent sur une release, en utilisant la même base de code et configuration que tout processus qui tourne pour cette release. Le code d’administration doit être livré avec le code de l’application afin d’éviter les problèmes de synchronisation.</p>
 <p>En PHP, il est possible d'exéctuer un script ponctuel grâce à l'exécutable php suivi du chemin vers le fichier contenant le script (par ex. php scripts/fix_bad_records.php). Le composant <a href="https://github.com/symfony/console">console</a> de Symfony facilite la création et le test de tâches d'administrations.</p>
+{% endraw %}

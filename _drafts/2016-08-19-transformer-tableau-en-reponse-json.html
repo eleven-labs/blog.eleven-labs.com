@@ -15,6 +15,7 @@ tags:
 - rest
 - json
 ---
+{% raw %}
 <h2>Introduction</h2>
 <p>Dans le contexte d'une API REST, intéressons nous particulièrement à la donnée rendue par le contrôleur. Je vous emmène découvrir le mécanisme qui permet l'affichage de la donnée en format compréhensible par d'autres systèmes, JSON dans cet exemple.</p>
 <p>Concrètement, le rôle du contrôleur est de prendre un objet <em>Request</em> en entrée et de renvoyer un objet <em>Response</em> en sortie. Mais comment faire si je veux formater mes données autrement, par exemple en JSON ?</p>
@@ -42,7 +43,7 @@ namespace AppBundle\Controller;
 
 class FooController
 {
-    public function getAction() 
+    public function getAction()
     {
         (...some logics)
 
@@ -50,7 +51,7 @@ class FooController
             "id" =&gt; 42
             "foo" =&gt; "bar",
         ];
-    } 
+    }
 }</pre>
 <p>En l'état, symfony va lever une exception car il ne saura pas quoi faire du tableau. Je vais donc créer un écouteur pour transformer ce tableau. C'est une simple classe PHP.</p>
 <pre class="lang:default decode:true">&lt;?php
@@ -68,7 +69,7 @@ class JsonListener
         if (is_array($data)) {
             $event-&gt;setResponse(new JsonResponse($data));
         }
-    }    
+    }
 }</pre>
 <p>L'événement kernel.view passe en argument un objet de type <em><a href="http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html">Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent</a>. </em>J'ai accès au retour du contrôleur avec <em>getControllerResult().</em></p>
 <p>Je fais une simple vérification sur le type avant de créer la réponse: ici JsonResponse. Une fois la réponse créé, j'affecte l'objet à la méthode <em>setResponse()</em> de l'événement.</p>
@@ -97,3 +98,4 @@ class JsonListener
 <li><a href="http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html">http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html</a></li>
 <li><a href="http://symfony.com/doc/current/reference/dic_tags.html#kernel-event-listener">http://symfony.com/doc/current/reference/dic_tags.html#kernel-event-listener</a></li>
 </ul>
+{% endraw %}

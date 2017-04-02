@@ -13,6 +13,7 @@ tags:
 - block
 - closure
 ---
+{% raw %}
 <h4>Introduction</h4>
 <p>Salut les Astronautes, aujourd'hui on va parler un peu de mobile, et qui plus est de NATIF !!!</p>
 <p>Cet article se veut accessible pour les néophytes, donc on va passer un petit peu de temps pour voir quelques termes techniques ensemble avant de rentrer dans le vif du sujet.</p>
@@ -42,7 +43,7 @@ Comme cet objet hérite d'un protocol, on sait que l'on peut appeler les méthod
 onRequestFailure</p>
 <p>-Objective-C</p>
 <p>Notre protocol va ressembler à ça :</p>
-<pre class="lang:Objective-C decode:true">@protocol RequesterDelegateObjc 
+<pre class="lang:Objective-C decode:true">@protocol RequesterDelegateObjc
 
 - (void)onRequestSuccess;
 - (void)onRequestFailure;
@@ -51,7 +52,7 @@ onRequestFailure</p>
 
 </pre>
 <p>On va l'hériter dans le ficher .h</p>
-<pre class="lang:Objective-C decode:true ">@interface MyClassObjC : UIViewController &lt;RequesterDelegateObjc&gt; 
+<pre class="lang:Objective-C decode:true ">@interface MyClassObjC : UIViewController &lt;RequesterDelegateObjc&gt;
 
 
 @end
@@ -63,11 +64,11 @@ onRequestFailure</p>
 @implementation MyClassObjC
 
 - (void)onRequestFailure {
-    
+
 }
 
 - (void)onRequestSuccess {
-    
+
 }
 
 @end
@@ -84,9 +85,9 @@ onRequestFailure</p>
 <pre class="lang:Swift decode:true">class MyClassSwift: UIViewController, RequesterDelegateSwift {
 
     func onRequestFailure() {
-        
+
     }
-    
+
     func onRequestSuccess() {
     }
 }
@@ -106,18 +107,18 @@ onRequestFailure</p>
 }
 
 - (void)onRequestFailure {
-    
+
 }
 
 - (void)onRequestSuccess {
-    
+
 }
 
 @end
 </pre>
 <pre class="lang:Objective-C decode:true">@interface RequestManager : NSObject
 {
-    
+
 }
 
 @property (nonatomic, weak) id delegate;
@@ -132,7 +133,7 @@ onRequestFailure</p>
 - (void)get:(NSString *)url {
     //Do the call
     BOOL requestSucceed = [self isSuccess];
-    
+
     //After the call
     if (requestSucceed) {
         [self.delegate onRequestSuccess];
@@ -150,7 +151,7 @@ onRequestFailure</p>
 </pre>
 <p>-Swift</p>
 <pre class="lang:Swift decode:true">class MyClassSwift: UIViewController, RequesterDelegateSwift {
-    
+
     func callWebService() {
         let manager: RequestManager = RequestManager()
         manager.delegate = self
@@ -158,23 +159,23 @@ onRequestFailure</p>
     }
 
     func onRequestFailure() {
-        
+
     }
-    
+
     func onRequestSuccess() {
     }
 }
 
 </pre>
 <pre class="lang:Swift decode:true">class RequestManager {
-    
+
     var delegate: RequesterDelegateSwift?
-    
+
     func get(url: String) {
         //Do the call
         let requestSucceed: Bool = self.isSuccess()
-        
-        
+
+
         //After the call
         if requestSucceed {
             self.delegate?.onRequestSuccess()
@@ -182,7 +183,7 @@ onRequestFailure</p>
             self.delegate?.onRequestFailure()
         }
     }
-    
+
     private func isSuccess() -&gt; Bool {
         return true
     }
@@ -216,12 +217,12 @@ typedef void (^failureBlock)();
 - (void)callWebServiceWithBlocks {
     RequestManager* manager = [[RequestManager alloc] init];
     successBlock success = ^void() {
-        
+
     };
-    
+
     failure
 Block failure = ^void() {
-        
+
     };
     [manager get:@"http://plop.fr/json" success:success failure:failure];
 }
@@ -229,7 +230,7 @@ Block failure = ^void() {
 <pre class="lang:Objective-C decode:true">- (void)get:(NSString *)url success:(successBlock)successBlock failure:(failureBlock)failureBlock {
     //Do the call
     BOOL requestSucceed = [self isSuccess];
-    
+
     //After the call
     if (requestSucceed) {
         successBlock();
@@ -241,22 +242,22 @@ Block failure = ^void() {
 <p>- Swift</p>
 <pre class="lang:Swift decode:true">func callWebServiceWithClosure() {
     let manager: RequestManager = RequestManager()
-        
+
     let success: () -&gt; Void = {
-            
+
     }
-        
+
     let failure: () -&gt; Void = {
-            
+
     }
-        
+
     manager.get(url: "http://plop.fr/json", successClosure: success, failureClosure: failure)
 }
 </pre>
 <pre class="lang:Swift decode:true">func get(url: String, successClosure: () -&gt; Void, failureClosure: () -&gt; Void) {
     //Do the call
     let requestSucceed: Bool = self.isSuccess()
-        
+
     //After the call
     if requestSucceed {
        successClosure()
@@ -270,3 +271,4 @@ Block failure = ^void() {
 <p>Le but ici, c'est juste de vous présenter les deux principes, si vous faites du mobile, c'est une problématique que vous avez déjà dû rencontrer plus d'une fois.</p>
 <p>Mais du coup, ce serait pas cool de pouvoir combiner les deux, Delegates avec block ou closure ? Hum, mais ça devient intéressant. On se fait ça ensemble lors d'un prochain article ?</p>
 <p>Allez, salut les astronautes :)</p>
+{% endraw %}

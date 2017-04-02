@@ -8,6 +8,7 @@ categories:
 - Non classé
 tags: []
 ---
+{% raw %}
 <p>Maintain an application using MongoDB can be painful, especially when you either have a large amount of data, or a lot of writing operations. This is even more true if, as a developer, you don't have access to production servers, oftenly allowed to few.</p>
 <p>Here is the problem : how to find in your huge amount of data or in your daily requests, which one has a negative impact on your performances and much more, find bottlenecks.</p>
 <p>Giving the help of MongoDB Inc. on Numeric Editions subjects at FranceTV, we automated the use of tools, in order to study behaviours of our production servers without incidences on our applications.</p>
@@ -38,14 +39,14 @@ myCol.InactiveUser       count            {"inactiveSeg": 1}                 32 
 <p>Its name says all, Mlogfilter allows you to filter logs. You can easily apply multiple filters and maybe combine it with mloginfo.</p>
 <pre class="lang:default decode:true" title="mlogfilter">cat logs.mongo/mongod.log | mlogfilter --human --slow --from start +1day
 
-Fri Sep 16 08:01:58.883 I COMMAND [conn195591] command dbm_rcu_v2.Client command: 
-aggregate { aggregate: "Client", pipeline: [ { $match: { somedate: 
-{ $lte: new Date(1474005604000), $gte: new Date(1469951542000) } } }, { $sort: 
-{ somedate: -1 } },{ $unwind: "$someArray" }, { $skip: 165000 }, 
-{ $limit: 5000 } ], allowDiskUse: true } 
-ntoskip:0 keyUpdates:0 writeConflicts:0 numYields:549 reslen:862557 
-locks:{ Global: { acquireCount: { r: 1120 } }, 
-Database: { acquireCount: { r: 560 } }, Collection: { acquireCount: { r: 560 } } } 
+Fri Sep 16 08:01:58.883 I COMMAND [conn195591] command dbm_rcu_v2.Client command:
+aggregate { aggregate: "Client", pipeline: [ { $match: { somedate:
+{ $lte: new Date(1474005604000), $gte: new Date(1469951542000) } } }, { $sort:
+{ somedate: -1 } },{ $unwind: "$someArray" }, { $skip: 165000 },
+{ $limit: 5000 } ], allowDiskUse: true }
+ntoskip:0 keyUpdates:0 writeConflicts:0 numYields:549 reslen:862557
+locks:{ Global: { acquireCount: { r: 1120 } },
+Database: { acquireCount: { r: 560 } }, Collection: { acquireCount: { r: 560 } } }
 protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
 <p>This command for example show only the slower operations within a day from the beginning of the log file. As we can see, the output gives us an aggregate of commands which took more than three seconds to execute.</p>
 <p>More info <a href="https://github.com/rueckstiess/mtools/wiki/mlogfilter">here</a>.</p>
@@ -61,11 +62,11 @@ protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
         "name": {
             "first": {"$choose": ["Liam", "Noah", "Ethan", "Mason", "Logan", "Jacob", "Lucas", "Jackson", "Aiden", "Jack", "James", "Elijah", "Luke", "William", "Michael", "Alexander", "Oliver", "Owen", "Daniel", "Gabriel", "Henry", "Matthew", "Carter", "Ryan", "Wyatt", "Andrew", "Connor", "Caleb", "Jayden", "Nathan", "Dylan", "Isaac", "Hunter", "Joshua", "Landon", "Samuel", "David", "Sebastian", "Olivia", "Emma", "Sophia", "Ava", "Isabella", "Mia", "Charlotte", "Emily", "Abigail", "Avery", "Harper", "Ella", "Madison", "Amelie", "Lily", "Chloe", "Sofia", "Evelyn", "Hannah", "Addison", "Grace", "Aubrey", "Zoey", "Aria", "Ellie", "Natalie", "Zoe", "Audrey", "Elizabeth", "Scarlett", "Layla", "Victoria", "Brooklyn", "Lucy", "Lillian", "Claire", "Nora", "Riley", "Leah"] },
             "last": {"$choose": ["Smith", "Jones", "Williams", "Brown", "Taylor", "Davies", "Wilson", "Evans", "Thomas", "Johnson", "Roberts", "Walker", "Wright", "Robinson", "Thompson", "White", "Hughes", "Edwards", "Green", "Hall", "Wood", "Harris", "Lewis", "Martin", "Jackson", "Clarke", "Clark", "Turner", "Hill", "Scott", "Cooper", "Morris", "Ward", "Moore", "King", "Watson", "Baker" , "Harrison", "Morgan", "Patel", "Young", "Allen", "Mitchell", "James", "Anderson", "Phillips", "Lee", "Bell", "Parker", "Davis"] }
-        }, 
+        },
         "gender": {"$choose": ["female", "male"]},
-        "age": "$number", 
+        "age": "$number",
         "address": {
-            "street": {"$string": {"length": 10}}, 
+            "street": {"$string": {"length": 10}},
             "house_no": "$number",
             "zip_code": {"$number": [10000, 99999]},
             "city": {"$choose": ["Manhattan", "Brooklyn", "New Jersey", "Queens", "Bronx"]}
@@ -74,7 +75,7 @@ protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
         "created_at": {"$date": ["2010-01-01", "2014-07-24"] },
         "is_active": {"$choose": [true, false]}
     },
-    "tags": {"$array": {"of": {"label": "$string", "id": "$oid", "subtags": 
+    "tags": {"$array": {"of": {"label": "$string", "id": "$oid", "subtags":
         {"$missing": {"percent": 80, "ifnot": {"$array": ["$string", {"$number": [2, 5]}]}}}}, "number": {"$number": [0, 10] }}}
 }</pre>
 <p>More info on <a href="https://github.com/rueckstiess/mtools/wiki/mgenerate">Mgenerate</a>.</p>
@@ -88,3 +89,4 @@ protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
 <p>Compass is a desktop client allowing you to browse and analyze data from a MongoDB database. Its goal is to allow a person to manipulate data without real knowledges on MongoDB querying. However, it's only available on Windows and MacOS yet.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/date-sample.png"><img class="alignnone size-medium wp-image-2254" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/date-sample-300x41.png" alt="date-sample" width="300" height="41" /></a></p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder.png"><img class="alignnone size-medium wp-image-2255" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder-300x217.png" alt="query-builder" width="300" height="217" /></a></p>
+{% endraw %}

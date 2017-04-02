@@ -16,6 +16,7 @@ tags:
 - health
 - check
 ---
+{% raw %}
 <h1>Introduction</h1>
 <p>Consul est un outil développé en Go par la société HashiCorp et a vu le jour en 2013.<br />
 Consul a plusieurs composants mais son objectif principal est de regrouper la connaissance des services d'une architecture (service discovery) et permet de s'assurer que les services contactés sont toujours disponibles en s'assurant que la santé de ces services est toujours bonne (via du health check).</p>
@@ -202,3 +203,4 @@ $(docker ps -q --filter='ancestor=ekofr/http-ip')</pre>
 <p>Vous pouvez maintenant mettre en place Consul sur vos architectures afin de vous assurer que les services contactés sont bien disponibles mais surtout pouvoir identifier les éventuels problèmes qui peuvent survenir sur vos services.</p>
 <p>Il est donc important d'ajouter un maximum de checks sur les éléments pouvant rendre vos services indisponibles (vérifier que celui-ci peut bien être contacté, vérifier l'espace disque disponible sur la machine, etc ...).</p>
 <p>Consul est un outil qui s'intègre parfaitement dans vos architectures, grâce à son utilisation très simple et son API complète.</p>
+{% endraw %}

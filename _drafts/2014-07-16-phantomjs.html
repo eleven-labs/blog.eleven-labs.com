@@ -11,6 +11,7 @@ tags:
 - Javascript
 - PhantomJS
 ---
+{% raw %}
 <p>PhantomJS est un navigateur webkit en ligne de commande.</p>
 <p>Il vous permet entre autres :</p>
 <ul>
@@ -33,7 +34,7 @@ tags:
 <p style="text-align: justify;">Phantomjs supporte trois formats d'export: PNG, JPEG et PDF.</p>
 <p style="text-align: justify;">Commencez par créer un fichier javascript que j’appellerai phantomjs.js et mettez-y le code suivant :</p>
 <pre class="lang:js decode:true" title="exemple capture">var page = require('webpage').create(),
-system = require('system'), 
+system = require('system'),
 address, output, size;
 
 address = system.args[1];
@@ -131,3 +132,4 @@ Tests completed in 15 milliseconds.
 <p style="text-align: justify;">PhantomJS est un outil très puissant et bien documenté. Donc, si vous avez besoin de générer des pdfs et/ou des images et que votre site contient beaucoup de javascript, PhantomJS peut devenir votre allié.</p>
 <p style="text-align: justify;">Mais ce n'est là qu'un aperçu de ses possibilités, je vous encourage à faire un tour sur leur <span style="color: #0000ff;"><a title="documentation" href="http://phantomjs.org/examples/index.html" target="_blank"><span style="color: #0000ff;">site</span></a></span>, cela peut vous donner des idées.</p>
 <p>&nbsp;</p>
+{% endraw %}
