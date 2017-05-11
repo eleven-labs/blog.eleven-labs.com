@@ -78,4 +78,9 @@ header {
         vertical-align: middle;
     }
 }
-
+// Share button
+.share-button {
+    width:100%;
+    float: left;
+    @extend %padding-regular;
+}
