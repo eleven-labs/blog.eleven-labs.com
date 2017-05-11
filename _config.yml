@@ -56,7 +56,7 @@ theme_settings:
     youtube: UCt_NukjmUm4whjmbMuZ0MMw
 
     # Scripts
-    google_analytics:
+    google_analytics: UA-99013054-1
     disqus_shortname: eleven-labs-github-io
     muut_community_name:
 
