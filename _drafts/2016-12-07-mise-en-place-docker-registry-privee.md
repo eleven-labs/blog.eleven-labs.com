@@ -24,7 +24,7 @@ C'est un composant majeur dans l'écosystème Docker, car il va permettre :
 <h3 id="petit-rappel">Petit rappel
 Une image Docker est en quelque sorte une image disque qui contient l'arborescence d'une distribution linux, le code source d'une application et des binaires capables de la faire tourner.
 
-Une image se construit à partir d'un fichier <strong>Dockerfile</strong> que l'on retrouve généralement à la racine des sources d'une application.
+Une image se construit à partir d'un fichier **Dockerfile** que l'on retrouve généralement à la racine des sources d'une application.
 
 Docker met à disposition un registre d’images publiques : <a href="https://hub.docker.com/">DockerHub</a>.<br />
 Dans ce registre, vous allez retrouver des images, telles que :
@@ -77,7 +77,7 @@ sudo mkdir -p /opt/traefik</code>{% endraw %}
 </pre>
 
 On va maintenant créer la définition de notre service Traefik.<br />
-Créez un fichier à l'adresse <strong>$HOME/traefik.json</strong> dans lequel vous ajoutez :
+Créez un fichier à l'adresse **$HOME/traefik.json** dans lequel vous ajoutez :
 
 <pre class="json">
 {% raw %}
@@ -162,7 +162,7 @@ Créez un fichier à l'adresse <strong>$HOME/traefik.json</strong> dans lequel 
 }</code>{% endraw %}
 </pre>
 
-<blockquote><strong>Important</strong>: Remplacez <strong>[email]</strong> par une adresse mail valide sans quoi, Let's Encrypt ne vous délivrera pas de certificat.
+<blockquote>**Important**: Remplacez **[email]** par une adresse mail valide sans quoi, Let's Encrypt ne vous délivrera pas de certificat.
 </blockquote>
 Il ne nous reste plus qu'à lancer le service en utilisant l'API Docker :
 
@@ -171,12 +171,12 @@ Il ne nous reste plus qu'à lancer le service en utilisant l'API Docker :
 <code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/traefik.json</code>{% endraw %}
 </pre>
 
-Contrôlez que le service tourne en tapant <strong>docker service ls</strong>. Au bout d'un certain temps, vous allez voir <strong>1/1</strong> s'afficher en face du service <strong>traefik</strong>.
+Contrôlez que le service tourne en tapant **docker service ls**. Au bout d'un certain temps, vous allez voir **1/1** s'afficher en face du service **traefik**.
 
-<blockquote><strong>Astuce </strong>: Utilisez la commande <strong>watch</strong> pour exécuter la commande périodiquement par intervalles de 1 seconde :<br />
-<strong>watch -n1 docker service ls</strong>. <strong>Ctrl+c</strong> pour quitter.
+<blockquote>**Astuce **: Utilisez la commande **watch** pour exécuter la commande périodiquement par intervalles de 1 seconde :<br />
+**watch -n1 docker service ls**. **Ctrl+c** pour quitter.
 </blockquote>
-Sur le port <strong>8080</strong> de votre serveur vous devez trouver l'interface de contrôle de Traefik :
+Sur le port **8080** de votre serveur vous devez trouver l'interface de contrôle de Traefik :
 
 <img title="Traefik Web" src="https://lh3.googleusercontent.com/-7OVJ1TQ-U80/WEeRgAfxt_I/AAAAAAAAAaM/-CFecYhSv-AQRsQxuVBAJ-tj0MG5wyTMQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.32.37.png" alt="enter image description here" />
 
@@ -187,19 +187,19 @@ Avant de lancer la registry sur notre environnement, nous allons créer deux sou
 <li>l'un pour la registry,</li>
 <li>l'autre pour le serveur d'authentification</li>
 </ul>
-Sur le manager d'OVH, il suffit de se rendre dans <strong>Web/Domaine(s)</strong>, de choisir son domaine, puis de cliquer sur l'onglet <strong>Zone DNS</strong>
+Sur le manager d'OVH, il suffit de se rendre dans **Web/Domaine(s)**, de choisir son domaine, puis de cliquer sur l'onglet **Zone DNS**
 
 <img title="Ajout entrée DNS" src="https://lh3.googleusercontent.com/-YW_nkX8qJV8/WEeUfHNWOaI/AAAAAAAAAaY/ljqtytkTCccK3eak8Gu6Ytt15XX28cEyQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.44.40.png" alt="enter image description here" />
 
-Puis nous ajoutons un pointage DNS de type <strong>A</strong> pour les sous-domaines :
+Puis nous ajoutons un pointage DNS de type **A** pour les sous-domaines :
 
 <ul>
-<li><strong>registry.domain.tld</strong> pour la registry,</li>
-<li><strong>token.domain.tld</strong> pour le serveur d'authentification</li>
+<li>**registry.domain.tld** pour la registry,</li>
+<li>**token.domain.tld** pour le serveur d'authentification</li>
 </ul>
 <img title="Ajout pointage DNS" src="https://lh3.googleusercontent.com/-MaFb82-SY3c/WEeVhjIumFI/AAAAAAAAAag/a8dyGIA0gfEQ4MvTFwgu89tEBYWE6j9FwCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.51.24.png" alt="enter image description here" />
 
-<blockquote><strong>Important</strong>: Remplacez <strong>domain.tld</strong> par votre domaine et <strong>xxx.xxx.xxx.xxx</strong> par l'adresse IPv4 de votre serveur.
+<blockquote>**Important**: Remplacez **domain.tld** par votre domaine et **xxx.xxx.xxx.xxx** par l'adresse IPv4 de votre serveur.
 </blockquote>
 <h4 id="serveur-dauthentification">Serveur d’authentification
 Docker registry permet d'utiliser des services tiers pour gérer l'authentification et les contrôles d'accès des utilisateurs.
@@ -220,9 +220,9 @@ cd /opt/docker-auth/certs
 sudo openssl req -x509 -newkey rsa:2048 -new -nodes -keyout privkey.pem -out fullchain.pem -subj "/C=FR/ST=Paris/L=Paris/O=ACME/OU=IT Department/CN=[domain.tld]"</code>{% endraw %}
 </pre>
 
-<blockquote><strong>Note </strong>: Remplacez <strong>[domain.tld]</strong> par votre nom de domaine
+<blockquote>**Note **: Remplacez **[domain.tld]** par votre nom de domaine
 </blockquote>
-On crée un fichier de configuration contenant nos utilisateurs et nos règles d'accès dans <strong>/opt/docker-auth/config/auth_config.yml</strong>
+On crée un fichier de configuration contenant nos utilisateurs et nos règles d'accès dans **/opt/docker-auth/config/auth_config.yml**
 
 <pre class="yml">
 {% raw %}
@@ -261,7 +261,7 @@ acl:
     comment: "Les utilisateurs anonymes peuvent tirer n'importe quelle image"</code>{% endraw %}
 </pre>
 
-Créons enfin un fichier à l'adresse <strong>$HOME/docker-auth.json</strong>:
+Créons enfin un fichier à l'adresse **$HOME/docker-auth.json**:
 
 <pre class="json">
 {% raw %}
@@ -327,7 +327,7 @@ Créons enfin un fichier à l'adresse <strong>$HOME/docker-auth.json</strong>:
 }</code>{% endraw %}
 </pre>
 
-<blockquote><strong>Important </strong>: Remplacez <strong>[token.domain.tld]</strong> par le sous-domaine que vous avez créé précédemment pour le serveur d'authentification
+<blockquote>**Important **: Remplacez **[token.domain.tld]** par le sous-domaine que vous avez créé précédemment pour le serveur d'authentification
 </blockquote>
 On lance le service :
 
@@ -336,7 +336,7 @@ On lance le service :
 <code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/docker-auth.json</code>{% endraw %}
 </pre>
 
-Et on vérifie que le service <strong>docker-auth</strong> est bien lancé en utilisant la commande <strong>docker service ls</strong>.
+Et on vérifie que le service **docker-auth** est bien lancé en utilisant la commande **docker service ls**.
 
 <h4 id="mise-en-place-de-la-registry">Mise en place de la registry
 Il ne nous reste plus qu'à mettre en place la registry.
@@ -348,7 +348,7 @@ Créons des répertoires qui contiendront nos images docker :
 <code>sudo mkdir -p /opt/registry</code>{% endraw %}
 </pre>
 
-Puis on finit avec un fichier que l'on crée à l'adresse <strong>$HOME/registry.json </strong>:
+Puis on finit avec un fichier que l'on crée à l'adresse **$HOME/registry.json **:
 
 <pre class="json">
 {% raw %}
@@ -411,7 +411,7 @@ Puis on finit avec un fichier que l'on crée à l'adresse <strong>$HOME/registr
 }</code>{% endraw %}
 </pre>
 
-<blockquote><strong>Important </strong>: Remplacez <strong>[registry.domain.tld]</strong> par le sous-domaine que vous avez créé précédemment pour la registry et <strong>[token.domain.tld]</strong> par celui dédié au serveur d'authentification.
+<blockquote>**Important **: Remplacez **[registry.domain.tld]** par le sous-domaine que vous avez créé précédemment pour la registry et **[token.domain.tld]** par celui dédié au serveur d'authentification.
 </blockquote>
 On lance la registry :
 
@@ -420,20 +420,20 @@ On lance la registry :
 <code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/registry.json</code>{% endraw %}
 </pre>
 
-Et on vérifie que le service <strong>docker-registry</strong> est bien lancé en utilisant la commande <strong>docker service ls</strong>.
+Et on vérifie que le service **docker-registry** est bien lancé en utilisant la commande **docker service ls**.
 
 <h4 id="tests">Tests
-Sur le port <strong>8080</strong> de votre serveur, vous devez avoir quelque chose d'équivalent à ceci :
+Sur le port **8080** de votre serveur, vous devez avoir quelque chose d'équivalent à ceci :
 
 <img title="Traefik Services" src="https://lh3.googleusercontent.com/-CHOW4DC6pi4/WEefmOVQGpI/AAAAAAAAAbA/f7W-kRKRLaoUKMXb1BNgQHEyRLxPZHuNgCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+06.34.33.png" alt="enter image description here" />
 
 Si c'est le cas, c'est que Traefik à fait correctement son boulot, vous avez maintenant un registre docker et un serveur d'authentification associés à leur domaines respectifs.
 
-<blockquote><strong>Note </strong>: Concernant le support de l'HTTPS pour ces domaines, il faut savoir que Traefik génère les certificats TLS et les fait signer par Let's Encrypt lors du premier accès. Il est recommandé d'utiliser cURL sur chacun d'eux pour initier la procédure. (exemple: **curl -L <a class="uri" href="http://registry.guillem.me**">http://registry.guillem.me**</a>) Répéter la procédure dans le cas ou ça échoue.
+<blockquote>**Note **: Concernant le support de l'HTTPS pour ces domaines, il faut savoir que Traefik génère les certificats TLS et les fait signer par Let's Encrypt lors du premier accès. Il est recommandé d'utiliser cURL sur chacun d'eux pour initier la procédure. (exemple: **curl -L <a class="uri" href="http://registry.guillem.me**">http://registry.guillem.me**</a>) Répéter la procédure dans le cas ou ça échoue.
 </blockquote>
-Maintenant, <strong>sur votre poste local</strong> (sur lequel vous avez installé docker) nous allons nous authentifier à la registry, "tagguer" une image puis l'envoyer.
+Maintenant, **sur votre poste local** (sur lequel vous avez installé docker) nous allons nous authentifier à la registry, "tagguer" une image puis l'envoyer.
 
-<blockquote><strong>Note </strong>: Pensez toujours à remplacer <strong>[registry.domain.tld]</strong> par le sous-domaine choisi précédemment.
+<blockquote>**Note **: Pensez toujours à remplacer **[registry.domain.tld]** par le sous-domaine choisi précédemment.
 </blockquote>
 <pre class="bash">
 {% raw %}
@@ -452,7 +452,7 @@ docker tag alpine registry.domain.tld/alpine
 docker push registry.domain.tld/alpine</code>{% endraw %}
 </pre>
 
-<blockquote><strong>Note </strong>: Remplacez toujours et encore le fameux <strong>[registry.domain.tld]</strong>
+<blockquote>**Note **: Remplacez toujours et encore le fameux **[registry.domain.tld]**
 </blockquote>
 Si tout se déroule comme prévu, vous voyez alors quelque chose de proche de :
 
@@ -466,7 +466,7 @@ latest: digest: sha256:1354db23ff5478120c980eca1611a51c9f2b88b61f24283ee8200bf9a
 Si c'est le cas, félicitations, vous avez une registry docker à dispo !
 
 <h2 id="au-prochain-numero">Au prochain numéro…
-Nous verrons comment utiliser <strong>docker-compose</strong> pour lancer un environnement de développement en local en tirant profit de notre registry docker et d’un outil de versionning pour fabriquer automatiquement nos images docker.
+Nous verrons comment utiliser **docker-compose** pour lancer un environnement de développement en local en tirant profit de notre registry docker et d’un outil de versionning pour fabriquer automatiquement nos images docker.
 
 À la prochaine!
 

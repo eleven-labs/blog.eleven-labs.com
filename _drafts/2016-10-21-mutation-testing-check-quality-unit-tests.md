@@ -9,14 +9,14 @@ categories:
 tags: []
 ---
 
-### <strong>Unit tests and trust</strong>
+### **Unit tests and trust**
 It is well established : unit tests are mandatory when developing an application. They allow to highlight possible regressions when code is modified, so the developer gets a certain confidence when shipping his code to production : If tests do pass, everything works correctly.
 
 To measure this confidence, we use code coverage as our main metric. The more your code is covered, (close to 100%), the less chance there is that regressions would fall through the net.
 
 But be careful ! This affirmation is a pure theory !
 
-### <strong>Coverage vs protection</strong>
+### **Coverage vs protection**
 We are going to see that sometimes, code coverage is a false indicator of protection.<br />
 Here is a simple example :
 
@@ -70,8 +70,8 @@ The test checks that the method is actually adding an entry to the astronaut arr
 But we are not protected enough : what would happen if the <em>addAstronaut</em> method changed ?<br />
 Would our test be sufficient to detect the regression ?
 
-### <strong>Mutation Tests</strong>
-In order to detect breaches in your unit tests, one solution exist : <strong>mutation tests</strong>.<br />
+### **Mutation Tests**
+In order to detect breaches in your unit tests, one solution exist : **mutation tests**.<br />
 The principle is very simple : alter the source code to check that associated tests would fail accordingly.
 
 To get to this, here are the required steps :
@@ -87,12 +87,12 @@ Of course, we don't have to do this by hand, there are frameworks out there that
 Before we go deeper, let's see some vocabulary :
 
 <ul>
-<li><strong>Mutant</strong> : Unit modification of the code (e.g: <strong>!==</strong> replaced by <strong>===</strong>)</li>
-<li><strong>Killed/Captured</strong> : A mutant is said killed (or captured) if the unit test fails (positive outcome)</li>
-<li><strong>Escaped</strong> : A mutant escapes if the unit test dosn't fail (negative outcome)</li>
-<li><strong>Uncovered</strong> : A mutant is uncovered if no test cover the mutated code</li>
+<li>**Mutant** : Unit modification of the code (e.g: **!==** replaced by **===**)</li>
+<li>**Killed/Captured** : A mutant is said killed (or captured) if the unit test fails (positive outcome)</li>
+<li>**Escaped** : A mutant escapes if the unit test dosn't fail (negative outcome)</li>
+<li>**Uncovered** : A mutant is uncovered if no test cover the mutated code</li>
 </ul>
-### <strong>Case study : Humbug</strong>
+### **Case study : Humbug**
 We are going to see <a href="https://github.com/padraic/humbug">Humbug</a>, a framework that allows us to do mutation tests in PHP.
 
 As we execute the Humbug binary, we get the following output :
@@ -200,15 +200,15 @@ Obviously, the example chosen here is voluntarily very simple and might not be e
 Humbug is capable of generating a whole set of mutations :
 
 <ul>
-<li>Comparison operator substitution (<strong>&gt;</strong> becomes <strong>&gt;=</strong>, <strong>!==</strong> becomes <strong>===</strong>, etc...)</li>
-<li>Constant substitution (<strong>0</strong> becomes <strong>1</strong>, <strong>true</strong> becomes <strong>false</strong>, etc...)</li>
-<li>Logic operator substitution (<strong>&amp;&amp;</strong>, <strong>||</strong>, etc...)</li>
-<li>Binary operator subsctirution (<strong>&amp;</strong>, <strong>|</strong>, <strong>%</strong>, etc...)</li>
+<li>Comparison operator substitution (**&gt;** becomes **&gt;=**, **!==** becomes **===**, etc...)</li>
+<li>Constant substitution (**0** becomes **1**, **true** becomes **false**, etc...)</li>
+<li>Logic operator substitution (**&amp;&amp;**, **||**, etc...)</li>
+<li>Binary operator subsctirution (**&amp;**, **|**, **%**, etc...)</li>
 <li>Return values substitution</li>
 </ul>
 I'm not going to detail everything here, if wou want to know more about this, I invite you to check the <a href="https://github.com/padraic/humbug" target="_blank">GitHub project page</a>.
 
-### <strong>Conclusion</strong>
+### **Conclusion**
 Mutation testing is a simple and efficient way of measuring unit tests fiability. Code coverage is not a very reliable metric, a code can be 100% covered without any assertion !<br />
 Humbug allows to automate these tests, so it's possible to plug it in your continuous integration workflow. However, be aware that execution time increases exponentially when codebase grows, we want to use mutation testing where there is a true concern in priority : business code.
 

@@ -13,7 +13,7 @@ tags: []
 
 <span style="font-weight: 400;">Aujourd'hui, nous allons voir ensemble un nouveau tuto de l'espace sous iOS/Xcode.</span>
 
-<span style="font-weight: 400;">Le sujet : <strong>Les tests unitaires</strong> !</span>
+<span style="font-weight: 400;">Le sujet : **Les tests unitaires** !</span>
 
 <span style="font-weight: 400;">Le but de cet article est de vous sensibiliser aux tests sous Xcode et de vous apporter les bases pour vous lancer. N’hésitez pas à écrire un commentaire si vous avez des questions ou autres...</span>
 
@@ -259,19 +259,19 @@ class ViewControllerTests: XCTestCase {
 Nous devons créer une variable de type ViewController afin d'accéder pour chaque méthode de test à celle-ci.
 
 <ol>
-<li style="font-weight: 400;"><span style="font-weight: 400;"><strong>setUp()</strong>: (qui sera appelée avant chaque invocation de méthode de test)</span>
+<li style="font-weight: 400;"><span style="font-weight: 400;">**setUp()**: (qui sera appelée avant chaque invocation de méthode de test)</span>
 <ol>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Nous créons une constante storyboard qui va récupérer le storyboard Main (qui est par défaut votre storyboard) ;</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">Nous faisons appel à la méthode <strong>instantiateInitialViewController</strong> du storyboard afin d'instancier et renvoyer le controller de vue initial.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Nous faisons appel à la méthode **instantiateInitialViewController** du storyboard afin d'instancier et renvoyer le controller de vue initial.</span></li>
 </ol>
 </li>
-<li style="font-weight: 400;"><span style="font-weight: 400;"><strong>tearDown()</strong>: (qui sera appelée après chaque invocation de méthode de test). Nous mettons à nil notre controller pour plus de sécurité.</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;"><strong>testScoreIsWinChangeLabel()</strong>: </span>
+<li style="font-weight: 400;"><span style="font-weight: 400;">**tearDown()**: (qui sera appelée après chaque invocation de méthode de test). Nous mettons à nil notre controller pour plus de sécurité.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">**testScoreIsWinChangeLabel()**: </span>
 <ol>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Nous souhaitons accéder au texte du label uiText de notre controller. Cependant sans l'instruction  <code>let _= controller.view</code> vous allez relever une erreur car le label sera égal à nil.<br />
-Comment est-ce possible ? Quand nous avons créé notre label dans notre storyboard, celui-ci s’instancie une fois que la vue est chargée. Mais dans notre classe unitaire, la méthode <strong>loadView()</strong> n’est jamais déclenchée.<br />
-Le label n’est donc pas créé et il est égal à nil. Une solution pour ce problème serait alors d'appeler <strong>controller.loadView()</strong> mais Apple ne le recommande pas car cela cause des problèmes de <strong>memory leaks</strong> quand les objets qui ont déjà été chargés sont de nouveau chargés.<br />
-L’alternative est d’utiliser la propriété <strong>view</strong> de votre controller qui déclenchera toutes les méthodes requises.</span><br />
+Comment est-ce possible ? Quand nous avons créé notre label dans notre storyboard, celui-ci s’instancie une fois que la vue est chargée. Mais dans notre classe unitaire, la méthode **loadView()** n’est jamais déclenchée.<br />
+Le label n’est donc pas créé et il est égal à nil. Une solution pour ce problème serait alors d'appeler **controller.loadView()** mais Apple ne le recommande pas car cela cause des problèmes de **memory leaks** quand les objets qui ont déjà été chargés sont de nouveau chargés.<br />
+L’alternative est d’utiliser la propriété **view** de votre controller qui déclenchera toutes les méthodes requises.</span><br />
 <em>Note: L'utilisation d'un underscore (_) comme nom de constante a pour but de réduire le nom de la constante car nous n'avons pas vraiment besoin de la vue. Cela dit au compilateur qu'on prétend avoir l'accès à la vue et qu'on déclenche toutes les méthodes.</em></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Nous appelons la méthode concernée et nous vérifions l’assertion entre notre string et notre texte du label.</span></li>
 </ol>

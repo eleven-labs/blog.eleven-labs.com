@@ -9,7 +9,7 @@ categories:
 tags: []
 ---
 
-<strong>Introduction</strong>
+**Introduction**
 
 In order to ensure that your application is running well, it's important to write functional tests.<br />
 Behat is the most used tool with Symfony to handle your functional tests and that's great because it's really a complete suite.<br />
@@ -17,19 +17,19 @@ You should nevertheless know how to use it wisely in order to cover useful and 
 
 &nbsp;
 
-<strong>Functional testing: what's that?</strong>
+**Functional testing: what's that?**
 
 When we are talking about functional testing we often mean that we want to automatize human-testing scenarios over the application.
 
 However, it is important to write the following test types to cover the functional scope:
 
 <ul>
-<li><strong>Interface tests</strong>: Goal here is to realize interface verifications to ensure that our web application features can be used over a browser,</li>
-<li><strong>Integration tests</strong>: Goal of these tests is to ensure that sour code (already unit-tested) which makes the application running is acting as it should when all components are linked together.</li>
+<li>**Interface tests**: Goal here is to realize interface verifications to ensure that our web application features can be used over a browser,</li>
+<li>**Integration tests**: Goal of these tests is to ensure that sour code (already unit-tested) which makes the application running is acting as it should when all components are linked together.</li>
 </ul>
 Idea is to develop and run both integration tests and interface tests with Behat.
 
-Before we can go, please note that we will use a <strong>Selenium</strong> server which will receive orders by <strong>Mink</strong> (a Behat extension) and will pilot our browser (Chrome in our configuration).
+Before we can go, please note that we will use a **Selenium** server which will receive orders by **Mink** (a Behat extension) and will pilot our browser (Chrome in our configuration).
 
 To be clear on the architecture we will use, here is a scheme that will resume the role of all elements:
 
@@ -37,9 +37,9 @@ To be clear on the architecture we will use, here is a scheme that will resume t
 
 &nbsp;
 
-<strong>Behat set up</strong>
+**Behat set up**
 
-First step is to install Behat and its extensions as dependencies in our <strong>composer.json</strong> file:
+First step is to install Behat and its extensions as dependencies in our **composer.json** file:
 
 <pre class="theme:github lang:js decode:true">
 {% raw %}
@@ -53,7 +53,7 @@ First step is to install Behat and its extensions as dependencies in our <strong
 }{% endraw %}
 </pre>
 
-In order to make your future contexts autoloaded, you also have to add this little <strong>PSR-4</strong> section:
+In order to make your future contexts autoloaded, you also have to add this little **PSR-4** section:
 
 <pre class="theme:github lang:yaml decode:true ">
 {% raw %}
@@ -64,7 +64,7 @@ In order to make your future contexts autoloaded, you also have to add this litt
 }{% endraw %}
 </pre>
 
-Now, let's create our <strong>behat.yml</strong> file in our project root directory in order to define our tests execution.
+Now, let's create our **behat.yml** file in our project root directory in order to define our tests execution.
 
 Here is the configuration file we will start with:
 
@@ -93,30 +93,30 @@ default:
             output_path: %paths.base%/web/reports/behat{% endraw %}
 </pre>
 
-We will talk of all of these sections in their defined order so let's start with the <strong>suites</strong> section which is empty at this time but we will implement it later when we will have some contexts to add into it.
+We will talk of all of these sections in their defined order so let's start with the **suites** section which is empty at this time but we will implement it later when we will have some contexts to add into it.
 
 Then, we load some Behat extensions:
 
 <ul>
-<li><strong>Behat\Symfony2Extension</strong> will allow us to inject Symfony services into our contexts (useful for integrations tests mostly),</li>
-<li><strong>Behat\MinkExtension</strong> will allow us to pilot Selenium (drive itself the Chrome browser) so we fill in all the necessary information like the hostname, the Selenium server port number and the base URL we will use for testing,</li>
-<li><strong>emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension</strong> will generate a HTML report during tests execution (which is great to show to our customer for instance).</li>
+<li>**Behat\Symfony2Extension** will allow us to inject Symfony services into our contexts (useful for integrations tests mostly),</li>
+<li>**Behat\MinkExtension** will allow us to pilot Selenium (drive itself the Chrome browser) so we fill in all the necessary information like the hostname, the Selenium server port number and the base URL we will use for testing,</li>
+<li>**emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension** will generate a HTML report during tests execution (which is great to show to our customer for instance).</li>
 </ul>
-Finally, in the <strong>formatters</strong> section we keep the <strong>pretty</strong> formatter in order to keep an output in our terminal and the HTML reports will be generated at the same time in the <strong>web/reports/behat</strong> directory in order to make them available over HTTP (it should not be a problem as you should not execute functional tests in production, be careful to restrict access in this case).
+Finally, in the **formatters** section we keep the **pretty** formatter in order to keep an output in our terminal and the HTML reports will be generated at the same time in the **web/reports/behat** directory in order to make them available over HTTP (it should not be a problem as you should not execute functional tests in production, be careful to restrict access in this case).
 
-Now that Behat is ready and configured we will prepare our functional tests that we will split into two distinct Behat suites: <strong>integration</strong> and <strong>interface</strong>.
+Now that Behat is ready and configured we will prepare our functional tests that we will split into two distinct Behat suites: **integration** and **interface**.
 
 &nbsp;
 
-<strong>Writing functional tests (features)</strong>
+**Writing functional tests (features)**
 
 In our example, we will write tests in order to ensure that a new user can register over a registration page.
 
-We will have to start by writing our tests scenarios (in a <strong>.feature</strong> file) that we will put into a <strong>features/</strong> directory located at the project root directory.
+We will have to start by writing our tests scenarios (in a **.feature** file) that we will put into a **features/** directory located at the project root directory.
 
 So for instance, we will have the following scenario:
 
-<span style="text-decoration: underline;">File</span>: <strong>features/registration/register.feature</strong>:
+<span style="text-decoration: underline;">File</span>: **features/registration/register.feature**:
 
 &nbsp;
 
@@ -136,13 +136,13 @@ Scenario: I register when I fill my username and password only
 
 &nbsp;
 
-<strong>Integration tests</strong>
+**Integration tests**
 
 As said previously, these tests are here to ensure all code written for the registration page can be executed and linked without any errors.
 
-To do so, we will create a new integration context that concerns the registration part under directory <strong>features/context/registration</strong>:
+To do so, we will create a new integration context that concerns the registration part under directory **features/context/registration**:
 
-<span style="text-decoration: underline;">File</span>: <strong>features/context/registration/IntegrationRegisterContext</strong>:
+<span style="text-decoration: underline;">File</span>: **features/context/registration/IntegrationRegisterContext**:
 
 <pre class="theme:github lang:php decode:true ">
 {% raw %}
@@ -225,13 +225,13 @@ Integration test for this part is now done for our feature. Let's write the inte
 
 &nbsp;
 
-<strong>Interface tests</strong>
+**Interface tests**
 
 This test will be based on the same feature file without modifying the original written scenarios we wrote at the beginning. That's why it is important to write a generic test that can be implemented both in an integration test and in an interface test.
 
-So let's create that context that will be used for interface test (prefixed by Mink in our case, but you can prefix it by anything you want) under the directory <strong>features/context/registration</strong>.
+So let's create that context that will be used for interface test (prefixed by Mink in our case, but you can prefix it by anything you want) under the directory **features/context/registration**.
 
-<span style="text-decoration: underline;">File</span>: <strong>features/context/registration/MinkRegisterContext</strong>:
+<span style="text-decoration: underline;">File</span>: **features/context/registration/MinkRegisterContext**:
 
 &nbsp;
 
@@ -292,9 +292,9 @@ The only difference here is that in this context we ask Mink to ask to Selenium 
 
 &nbsp;
 
-<strong>Context definition</strong>
+**Context definition**
 
-One more thing now, we have to add previously created contexts in our <strong>suites</strong> section in the <strong>behat.yml</strong> configuration file.
+One more thing now, we have to add previously created contexts in our **suites** section in the **behat.yml** configuration file.
 
 <pre class="theme:github lang:yaml decode:true ">
 {% raw %}
@@ -313,31 +313,31 @@ One more thing now, we have to add previously created contexts in our <strong>su
                 - Acme\Tests\Behat\Context\Registration\MinkRegisterContext: []{% endraw %}
 </pre>
 
-It is important to see here that we can clearly split these kind of tests into two distinct parts <strong>integration</strong> and <strong>interface</strong>: each one will be executed with its own contexts.
+It is important to see here that we can clearly split these kind of tests into two distinct parts **integration** and **interface**: each one will be executed with its own contexts.
 
-Also, as we have loaded the Symfony2 extension during the Behat set up, we have the possibility to inject Symfony services in our contexts and that case occurs here with the <strong>acme.registration.registerer</strong> service.
-
-&nbsp;
-
-<strong>Tests execution</strong>
-
-In order to run all tests, simply execute in the project root directory: <strong>bin/behat -c behat.yml</strong>.
-
-If you want to run the integration tests only: <strong>bin/behat -c behat.yml --suite=integration</strong>.
-
-HTML report will be generated under the <strong>web/reports/behat/</strong> as specified in the configuration that will allow you to have a quick overview of failed tests which is cool when you have a lot of tests.
+Also, as we have loaded the Symfony2 extension during the Behat set up, we have the possibility to inject Symfony services in our contexts and that case occurs here with the **acme.registration.registerer** service.
 
 &nbsp;
 
-<strong>Link multiple contexts together</strong>
+**Tests execution**
 
-At last, sometime you could need information from another context. For instance, imagine that you have a second step just after the register step. You will have to create two new <strong>IntegrationProfileContext</strong> and <strong>MinkProfileContext</strong> contexts.<br />
+In order to run all tests, simply execute in the project root directory: **bin/behat -c behat.yml**.
+
+If you want to run the integration tests only: **bin/behat -c behat.yml --suite=integration**.
+
+HTML report will be generated under the **web/reports/behat/** as specified in the configuration that will allow you to have a quick overview of failed tests which is cool when you have a lot of tests.
+
+&nbsp;
+
+**Link multiple contexts together**
+
+At last, sometime you could need information from another context. For instance, imagine that you have a second step just after the register step. You will have to create two new **IntegrationProfileContext** and **MinkProfileContext** contexts.<br />
 We will only talk about integration context in the following to simplify understanding.<br />
-In this new step <strong>IntegrationProfileContext</strong>, you need some information obtained in the first step <strong>IntegrationRegisterContext</strong>.
+In this new step **IntegrationProfileContext**, you need some information obtained in the first step **IntegrationRegisterContext**.
 
-This can be achieved thanks to the <strong>@BeforeScenario</strong> Behat annotation.
+This can be achieved thanks to the **@BeforeScenario** Behat annotation.
 
-<span style="text-decoration: underline;">File</span>: <strong>features/context/registration/IntegrationProfileContext</strong>:
+<span style="text-decoration: underline;">File</span>: **features/context/registration/IntegrationProfileContext**:
 
 &nbsp;
 
@@ -374,11 +374,11 @@ class IntegrationProfileContext implements Context
 }{% endraw %}
 </pre>
 
-You now have an accessible property <strong>$registerContext</strong> and can access informations from this context.
+You now have an accessible property **$registerContext** and can access informations from this context.
 
 &nbsp;
 
-<strong>Conclusion</strong>
+**Conclusion**
 
 Everything starts from well-written tests which have to be thoughtful in order to allow a technical implementation on both integration tests and interface tests.<br />
 The choosen structure about classifying its tests is also important in order to quickly find tests when the application grows.

@@ -63,7 +63,7 @@ tags:
 <span style="font-weight: 400">La première étape est de lancer la discussion puis de recueillir les avis de chacun et obtenir une bonne vision de ce qui s’est bien ou moins bien passé pendant cette itération.</span>
 
 <ul>
-<li><strong>Safety Check</strong></li>
+<li>**Safety Check**</li>
 </ul>
 <span style="font-weight: 400">Avant de commencer la moindre discussion, il peut être bien d’avoir une vision globale du ressenti de chaque membre de l’équipe. Ainsi on peut demander à chacun de se donner une note de 1 à 5 : </span>
 
@@ -81,19 +81,19 @@ tags:
 <span style="font-weight: 400">Si l’équipe n’est globalement pas suffisamment à l’aise pour discuter des sujets, éventuellement durs, qui doivent être abordés, le facilitateur pourra rassurer les membres de l’équipe en ré-expliquant l’objectif de ces rétrospectives et de l’amélioration continue. Il pourra aussi être envisagé de diviser l’équipe en petits groupes pour favoriser le dialogue. Il se peut également que ce soit la présence d’un manager qui diminue la note globale de confiance de l’équipe.</span>
 
 <ul>
-<li><strong>Mood board</strong></li>
+<li>**Mood board**</li>
 </ul>
 <span style="font-weight: 400">De la même façon, les 5 notes du Safety Check précédent peuvent être représentées de manières plus ludiques à l’aide d’images, de personnages ou smileys plus ou moins confiants.</span>
 
 [caption id="attachment_3418" align="aligncenter" width="300"]<a href="http://blog.eleven-labs.com/wp-content/uploads/2017/02/mood-board.jpg"><img class="size-medium wp-image-3418" src="http://blog.eleven-labs.com/wp-content/uploads/2017/02/mood-board-300x179.jpg" alt="" width="300" height="179" /></a> Mood Board des astronautes Eleven Labs[/caption]
 
 <ul>
-<li><strong>One word</strong></li>
+<li>**One word**</li>
 </ul>
 <span style="font-weight: 400">En cas de problème majeur, il se peut qu’un seul mot suffise pour lancer la discussion. Avec l’expérience, le facilitateur sera capable de ressentir ce genre de situation avant même de débuter la rétrospective et pourra proposer aux membres de l’équipe d’inscrire un seul mot sur un post-it, pendant une durée limitée, avant que chaque membre l’exprime et l’explique devant toute l’équipe.</span>
 
 <ul>
-<li><strong>Post-it répartis entre plusieurs catégories</strong></li>
+<li>**Post-it répartis entre plusieurs catégories**</li>
 </ul>
 <span style="font-weight: 400">La manière la plus courante, et aussi souvent la plus efficace, est de demander à chacun de synthétiser ses idées sur des post-it suivant différentes catégories :</span>
 
@@ -112,7 +112,7 @@ tags:
 <span style="font-weight: 400">Pour les équipes plus nombreuses, ce genre d’exercice peut prendre trop de temps, il peut alors être bien de limiter le nombre de post-it autorisés par personne pour forcer chacun à être plus concis. De la même manière, on peut définir un temps de parole maximum par personne pour présenter ses idées.</span>
 
 <ul>
-<li><strong>Guess Who?</strong></li>
+<li>**Guess Who?**</li>
 </ul>
 <span style="font-weight: 400">De manière générale, pour redynamiser les équipes qui peuvent être habituées à une unique forme de rétrospective, il peut être intéressant de changer régulièrement la technique utilisée parmi celles décrites précédemment.</span>
 
@@ -121,7 +121,7 @@ tags:
 <span style="font-weight: 400">Toujours pour inciter chacun à se mettre à la place des autres, une autre variante consiste à demander à chacun d’écrire deux mots, décrivant son ressenti, sur deux post-it différents qu’il passera à ses deux voisins, à sa droite et à sa gauche. Ensuite chacun, à son tour, essaie d’interpréter et expliquer ces deux mots reçus.</span>
 
 <ul>
-<li><strong>Timeline</strong></li>
+<li>**Timeline**</li>
 </ul>
 <span style="font-weight: 400">Pour récolter toutes les données d’une itération, on peut aussi demander à l’équipe de retracer l’historique du Sprint, depuis le planning jusqu’à la rétrospective. Ainsi chacun vient ajouter ses faits marquants sur la ligne temporelle tracée sur le tableau, en expliquant chaque fait, positif ou négatif.</span>
 
@@ -131,7 +131,7 @@ tags:
 <span style="font-weight: 400">Les techniques précédentes permettent ainsi d’avoir une bonne vision des problèmes rencontrés par l’équipe. Avant d’établir un plan d’actions d’améliorations, il nous faut trouver des solutions pour chacun de ces points.</span>
 
 <ul>
-<li><strong>Bisounours</strong></li>
+<li>**Bisounours**</li>
 </ul>
 <span style="font-weight: 400">À l’étape précédente, nous avons vu que chacun pouvait, de différentes façons, exprimer ses différents points positifs et négatifs devant l’équipe.</span>
 
@@ -140,7 +140,7 @@ tags:
 <span style="font-weight: 400">En plus de remonter le moral des troupes, cette technique permet d’arriver plus rapidement à la recherche de solutions qui permettront d’établir notre plan d’actions.</span>
 
 <ul>
-<li><strong>ORID Focused Conversation Method</strong></li>
+<li>**ORID Focused Conversation Method**</li>
 </ul>
 <span style="font-weight: 400">Le but de cette méthode est de guider l’équipe en lui posant successivement 4 types de questions, pour qu’elle décide ensemble des actions à mener. Voici ces 4 étapes : </span>
 
@@ -153,7 +153,7 @@ tags:
 <span style="font-weight: 400">Ce framework de facilitation permet de guider la discussion, de la rendre très constructive et donc d’obtenir un plan d’actions d’améliorations rapidement.</span>
 
 <ul>
-<li><strong>Five Times Why exercise</strong></li>
+<li>**Five Times Why exercise**</li>
 </ul>
 <span style="font-weight: 400">Enfin, cette dernière technique très simple consiste à demander “Pourquoi” cinq fois de suite quand un problème a été identifié, jusqu’à en arriver à la vraie cause du problème, qui est souvent masquée. Une fois la cause “racine” connue, on peut plus facilement trouver la solution à apporter.</span>
 
@@ -165,17 +165,17 @@ tags:
 <span style="font-weight: 400">Il est préférable de privilégier la qualité à la quantité d’actions : il sera donc suffisant de s’engager sur deux ou trois actions vraiment impactantes à réaliser d’ici la prochaine rétrospective.</span>
 
 <ul>
-<li><strong>Relire le plan d’actions de la précédente rétrospective</strong></li>
+<li>**Relire le plan d’actions de la précédente rétrospective**</li>
 </ul>
 <span style="font-weight: 400">Une des première chose à faire, avant de décider du prochain plan d’actions est de vérifier que toutes les actions de la précédente rétrospective ont bien été réalisées. Si non, peut-être qu’elles ne sont plus d’actualité ou que l’équipe n’a pas pu consacrer assez de temps à ces actions d’amélioration ou que personne n’a été assigné à cette tâche. Dans tous les cas, cette relecture donnera des indications et peut-être d’autres idées avant d’établir le prochain plan d’actions.</span>
 
 <ul>
-<li><strong>Vote</strong></li>
+<li>**Vote**</li>
 </ul>
 <span style="font-weight: 400">Si beaucoup d’idées d’améliorations ont été mentionnées, il va donc falloir sélectionner les meilleures ! Pour ce faire, le plus simple est de demander à chacun de donner son vote sur ses idées préférées : chacun a le droit de voter pour au plus 3 idées par exemple, puis les 3 idées ayant obtenues le plus de votes sont ensuite sélectionnées.</span>
 
 <ul>
-<li><strong>2 second improvement (2 second lean)</strong></li>
+<li>**2 second improvement (2 second lean)**</li>
 </ul>
 <span style="font-weight: 400">Il n’existe pas de petites améliorations ! Si vous manquez d’idées ou que tous vos process et outils sont déjà bien en place, essayez de penser aux petites améliorations qui pourraient vous faire gagner 2 secondes tous les jours : raccourcis clavier, tâches automatisées...</span>
 

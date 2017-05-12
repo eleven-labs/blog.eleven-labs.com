@@ -20,10 +20,10 @@ tags:
 - application
 ---
 
-#### <strong>Faire du mobile oui, mais par où commencer ?</strong>
+#### **Faire du mobile oui, mais par où commencer ?**
 Aujourd’hui plus qu’hier les applications mobiles deviennent indispensables dans la vie de plusieurs millions de personnes. Si vous lisez cet article, c’est que le sujet vous intéresse ou que vous souhaitez vous y mettre vous aussi. Je vais essayer de faire une série d’articles afin de partager avec vous le plus possible sur ce sujet.
 
-<strong>Quelles technos ?</strong>
+**Quelles technos ?**
 
 Les bonnes questions avant de prendre parti pour une solution sont : “Quels sont les outils, plugins, fonctionnalités dont mon application a besoin ? Quel public viser ? Quel volume de personne est visé par cette appli ? ”. Une fois ces questions résolues, vous allez automatiquement répondre à la question de l’orientation de la techno.
 
@@ -35,10 +35,10 @@ Je vais parler aujourd’hui de 3 technos que j’ai choisies pour plusieurs rai
 <ul>
 <li>J’ai déjà utilisé ces technos et donc je peux vous faire un vrai retour d’expérience dessus. Concernant la partie natif, je suis parti sur de l’IOS et non sur de l’Android (j’explique plus bas pourquoi, non *spoil*)</li>
 </ul>
-### <strong>Ionic :</strong>
+### **Ionic :**
 Ionic est un framework Javascript basé sur AngularJS pour la partie application web du framework et sur Cordova pour la partie construction des applications natives.
 
-<strong>Comment ça marche ?</strong>
+**Comment ça marche ?**
 
 Ionic permet en fait de créer une application qui ouvre une « WebView » disponible nativement sur les appareils mobiles. Pour simplifier, il s’agit d’une fenêtre de  navigateur Web, exécutée dans notre application, qui va se charger d’interpréter et d’afficher le contenu de nos scripts. Cette WebView, dont les possibilités sont étendues par Cordova, permet d’accéder à un certain nombre de fonctionnalités natives à l’appareil mobile (voir schéma plus bas)
 

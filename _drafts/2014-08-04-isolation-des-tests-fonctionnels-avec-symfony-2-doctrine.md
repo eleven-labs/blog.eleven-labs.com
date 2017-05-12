@@ -13,7 +13,7 @@ tags:
 
 Quand on exécute une suite de tests fonctionnels ou unitaires sur une application, le mieux est de ne pas changer l'état de la base de données. Cela permet ainsi d'exécuter ces tests plusieurs fois sur un état stable des données. Chaque test est ainsi isolé des autres.
 
-<strong>Contexte : isolation grâce à un rollback de la base de données :</strong>
+**Contexte : isolation grâce à un rollback de la base de données :**
 
 Comme indiqué dans un <a title="Test unitaire d’un bundle Symfony 2" href="http://eleven-labs.com/blog/test-unitaire-dun-bundle-symfony2/" target="_blank">article précédent</a> et <a title="Isolation of tests in Symfony2" href="http://alexandre-salome.fr/blog/Symfony2-Isolation-Of-Tests" target="_blank">décrit par Alexandre Salomé</a>, il est possible de mettre en place un système de rollback pour rétablir l'état initial des données après l’exécution de chaque test.
 
@@ -160,7 +160,7 @@ class Client extends BaseClient
 
 Cela fonctionne très bien sauf dans les cas où vous souhaitez tester des <em>Events Listeners Doctrine</em> dans vos tests fonctionnels, dans lesquels vous effectuez plusieurs requêtes (pour connecter l'utilisateur avant votre action par exemple). Nous allons donc d'abord constater l'erreur dans ce cas là avant de voir comment l'éviter.
 
-<strong>Problème : quand on utilise des <em>Listeners</em> Doctrine :</strong>
+**Problème : quand on utilise des <em>Listeners</em> Doctrine :**
 
 Imaginons par exemple que vous ayez besoin d'exécuter une stratégie particulière pour changer un attribut de votre entité Doctrine juste après sa création, i.e. lors de l'event postPersit et/ou postUpdate. Vous mettriez alors en place ce <a title="How to Register Event Listeners and Subscribers" href="http://symfony.com/doc/current/cookbook/doctrine/event_listeners_subscribers.html" target="_blank">listener</a> :
 
@@ -308,7 +308,7 @@ Et pourtant si l'on exécute ce code, sans utiliser nos tests fonctionnels, via 
 
 Le problème vient donc de notre façon de tester, et très probablement de la façon d'isoler les tests.
 
-<strong>La solution :</strong>
+**La solution :**
 
 En analysant notre <em>IsolatedWebTestCase</em> et notre <em>Test Client</em>, on constate que la <em>DBAL Connection</em> initialisée lors de la première requête de login est ensuite réutilisée dans la requête de l'action suivante, dans la méthode <em>startIsolation</em>. Ce premier indice permet de dire que la <em>Connection</em> initialisée lors de la première requête ne sait pas gérer correctement ce qui lui est demandé lors de la deuxième requête.
 

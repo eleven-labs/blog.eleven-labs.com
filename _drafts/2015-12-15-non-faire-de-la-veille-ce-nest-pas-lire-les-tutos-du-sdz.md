@@ -14,23 +14,23 @@ tags:
 ---
 
 <ul>
-<li><strong> C'est quoi la veille?</strong></li>
+<li>** C'est quoi la veille?**</li>
 </ul>
 La veille (aussi dit "veille technique" ou encore "veille technologique") c'est tout simplement se tenir au courant des nouveautés techniques. Le plus généralement dans notre domaine professionnel (par exemple se tenir au courant des nouveautés PHP pour un dév PHP). Mais cela peut aller bien au-delà bien entendu.
 
 <ul>
-<li><strong>Pourquoi faire de la veille?</strong></li>
+<li>**Pourquoi faire de la veille?**</li>
 </ul>
 Faire de la veille est important, surtout dans le domaine de l'informatique où tout évolue très vite (parfois même, trop vite). Sans veille comment savoir, par exemple, si une nouvelle techno ne convient pas mieux au projet sur lequel vous bossez? Ou si vous devez absolument patcher le framework que vous êtes en train d'utiliser car une faille vient d'être découverte?
 
 <ul>
-<li><strong>Limiter ses centres d'intérêts</strong></li>
+<li>**Limiter ses centres d'intérêts**</li>
 </ul>
 Il est bien entendu quasiment impossible de se tenir à jour sur tout. Il est donc important de bien définir ses centres d'intérêts afin de ne pas être submergé par les news.<br />
 Prenons l'exemple d'un développeur PHP, celui-ci aurait besoin, bien entendu, d'être au courant des nouveautés concernant le PHP mais il pourrait être intéressant de suivre aussi les derniers frameworks/CMS qui sont couramment utilisés. Mais au delà de ça, les sujets traitants du web en général peuvent apporter beaucoup d'informations intéressantes (serveurs/langages/sécurité/protocoles/cache/...).
 
 <ul>
-<li><strong>Comment faire de la veille?</strong></li>
+<li>**Comment faire de la veille?**</li>
 </ul>
 Une fois ses centres d'intérêts définis, il faut savoir comment faire cette veille. Il existe plusieurs moyens:
 
@@ -45,7 +45,7 @@ Une fois ses centres d'intérêts définis, il faut savoir comment faire cette v
 - Flux RSS: signifie Really Simple Syndication. Ce format est une norme qui permet de gérer du contenu (le plus souvent au format XML). Il est beaucoup utilisé dans le monde de l'information en général car il permet de gérer la nouveauté. Ce fichier est généralement mis à jour automatiquement dès qu'un nouveau contenu est posté (article par exemple). Il existe une multitude d'outils permettant d'agréger ces flux qu'ils soient des clients lourds, web, ou des applications mobiles,...
 
 <ul>
-<li><strong>Utiliser les flux RSS pour faire sa veille</strong></li>
+<li>**Utiliser les flux RSS pour faire sa veille**</li>
 </ul>
 Quel outil utiliser pour faire sa veille du coup? Cela dépendra de votre utilisation. Il en existe de tout type:
 
@@ -71,7 +71,7 @@ Quel outil utiliser pour faire sa veille du coup? Cela dépendra de votre utilis
 Comme vous pouvez le constater le format RSS est supporté par beaucoup d'applications dans une multitude de domaines. Cela est notamment dû à sa simplicité d'utilisation. On remarque aussi que certains produits comme Feedly se sont implantés dans le maximum de domaines possible. Cela étant, il reste un service "fermé". Tout comme <a href="http://alternativeto.net/software/google-reader/">Google Reader</a>, si celui-ci est amené à fermer vous n'aurez donc plus accès à vos flux. Contrairement à un application open-souce que vous pouvez héberger n'importe où.
 
 <ul>
-<li><strong>Comment trouver des flux?</strong></li>
+<li>**Comment trouver des flux?**</li>
 </ul>
 Une fois votre application choisie il vous faut maintenant y ajouter des flux à agréger! Mais comment les sélectionner?<br />
 Une des choses à laquelle il faut faire attention est la quantité de nouveautés que vous pouvez traiter quotidiennement. Si vous ajoutez trop de flux dans votre application, vous allez vous retrouver avec possiblement plusieurs centaines de nouveautés à dépiler chaque jour. Il suffit alors que vous ne puissiez les dépiler pendant une journée, pour vous retrouver avec le double le lendemain.<br />
@@ -89,7 +89,7 @@ Si l'on garde l'exemple d'un développeur PHP, on pourrait donc imaginer vouloir
 Ce peut-être une bonne base pour commencer! Si vous souhaitez en découvrir d'autres voici mon fichier opml (export de la liste des flux que je suis actuellement): <a href="http://s000.tinyupload.com/index.php?file_id=90299532571796253751" target="_blank">http://s000.tinyupload.com/index.php?file_id=90299532571796253751</a>
 
 <ul>
-<li><strong>Outils complémentaires pour améliorer sa veille</strong></li>
+<li>**Outils complémentaires pour améliorer sa veille**</li>
 </ul>
 Maintenant que vous avez votre application et une liste de flux à suivre, vous pensez que c'est suffisant? Vraiment? Quid des liens hyper intéressants que vous trouvez et que vous voulez mettre de côté pour plus tard? Ou les articles que vous n'avez pas le temps de lire à tout de suite car il sont trop longs?
 
@@ -106,7 +106,7 @@ J'utilise également 3 autres outils supplémentaires que je vais vous présente
 Maintenant que vous connaissez ces outils, je peux vous avouer la principale raison pour laquelle j'utilise FreshRSS. Celui-ci supporte le "partage" d'un article sur différentes plateformes! Les classiques Facebook, Twitter, Google+,... Mais aussi Shaarli et Wallabag! Donc c'est ultra simple de garder un article de côté pour plus tard.
 
 <ul>
-<li><strong>Conlusion</strong></li>
+<li>**Conlusion**</li>
 </ul>
 Si vous souhaitez faire une veille efficace, limitez vos sources afin d'être sûr de pouvoir suivre l'actualité en toute circonstance. A l'inverse si vous n'avez que faire d'être en retard de plusieurs jours/semaines et que vous souhaitez aller à votre rythme, ne lésiner pas sur les sources!<br />
 J'approche personnellement la centaine de flux suivis et il m'arrive régulièrement d'être à 500+ nouveautés non-lues. Mais ça ne me dérange pas d'être en retard de quelques jours.<br />

@@ -28,7 +28,7 @@ tags:
 <span id="result_box" class="" lang="en">There are some good practices on creating exceptions. <span class="">I will focus on two in particular: naming and context.</span></span>
 
 ### <span id="result_box" class="short_text" lang="en"><span class="">Name the error, not the issuer</span></span>
-<span id="result_box" class="" lang="en">It is easier to name the exception by its location than by the problem itself. This is not a good practice because the returned message will not be able to identify the cause quickly and simply. For example, a divide by zero operation generates an exception. <span class="">Raising an exception <strong>OperationNotPossibleException</strong> gives little indication of the origin of the error.</span> <span class="">With this name: <em>DivisionByZeroException</em>, the error is clear and precise.</span></span>
+<span id="result_box" class="" lang="en">It is easier to name the exception by its location than by the problem itself. This is not a good practice because the returned message will not be able to identify the cause quickly and simply. For example, a divide by zero operation generates an exception. <span class="">Raising an exception **OperationNotPossibleException** gives little indication of the origin of the error.</span> <span class="">With this name: <em>DivisionByZeroException</em>, the error is clear and precise.</span></span>
 
 <span id="result_box" class="" lang="en"><span class="">An exception must describe as simply as possible the problem encountered.</span></span>
 

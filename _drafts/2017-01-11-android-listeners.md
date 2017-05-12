@@ -26,7 +26,7 @@ Pour ceux qui ne savent pas, pour faire de l'Android, on doit utiliser du JAVA.<
 Du coup, pour les exemples de code, ça va être plus rapide, car un seul code à couvrir, une seule syntaxe et une seule structure de fichier.<br />
 La notion importante dans cet article, c'est le principe de listener.
 
-<strong>Les Listeners </strong>
+**Les Listeners **
 
 Un listener, qu'est-ce que c'est?<br />
 Un listener est une référence vers un objet dont on ignore le type exact, mais, chose importante, il hérite d'une interface.<br />
@@ -156,13 +156,13 @@ public class MainActivity extends AppCompatActivity implements RequesterListener
 
 Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans la méthode onRequestSuccess.
 
-<strong>Mais pourquoi faire tout ça?</strong>
+**Mais pourquoi faire tout ça?**
 
 On a un couplage light entre nos différents objets. En effet, RequestManager n'a aucune idée du type de l'objet de son listener, tout ce qui l'intéresse c'est de savoir qu'il contient les deux méthodes de l'interface pour pouvoir les appeler.
 
 Donc, c'est bien, j'ai pu appeler mon Webservice, j'ai mes méthodes de retour dans lesquels je peux faire mes traitements, tout me semble bon. Oui, tout est bon, ça fonctionne bien et ça couvrira beaucoup de cas.
 
-<strong>Problème soulevé</strong>
+**Problème soulevé**
 
 Dans l'article précédent, j'avais abordé le cas où vous aviez plusieurs appels à faire dans une même classe.<br />
 Vous allez me dire : il doit bien y avoir un équivalent des closures sur Android, comme sur iOS.<br />
@@ -173,7 +173,7 @@ Vous allez me dire : il doit bien y avoir un équivalent des closures sur Androi
 
 Laissez moi vous expliquer.
 
-<strong>Solution</strong>
+**Solution**
 
 En fait, grace au Java, on peut instancier une interface si on redéfinit les méthodes au moment de l'instanciation.<br />
 Un petit bout de code pour vous montrer ça ?

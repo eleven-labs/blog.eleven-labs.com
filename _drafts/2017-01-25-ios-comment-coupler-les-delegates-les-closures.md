@@ -24,7 +24,7 @@ Si vous avez lu les 2 précédents articles, vous devez vous douter de ce dont c
 -Mais oui on sait, allez dépêche-toi là, on veut savoir comment faire un truc aussi sexy que les listeners mais sur iOS cette fois-ci.<br />
 -Ok, juste encore un petit peu de blabla technique et on se lance.
 
-<strong>Comment ça va se passer :</strong>
+**Comment ça va se passer :**
 
 Bon comme le premier article, pour que tout le monde soit heureux, je vais vous produire du DUMMY code en Objective-C comme en Swift.
 
@@ -82,7 +82,7 @@ typedef void (^failureBlock)();
 {% endraw %}
 </pre>
 
-On va maintenant implémenter la classe qui va hériter du protocole. Elle va donc contenir les 2 méthodes <strong>onRequestSuccess</strong> et <strong>onRequestFailure</strong> et chacune appellera le block/closure qui lui correspondra.
+On va maintenant implémenter la classe qui va hériter du protocole. Elle va donc contenir les 2 méthodes **onRequestSuccess** et **onRequestFailure** et chacune appellera le block/closure qui lui correspondra.
 
 <pre class="lang:Objective-C decode:true ">
 {% raw %}
@@ -101,7 +101,7 @@ On va maintenant implémenter la classe qui va hériter du protocole. Elle va do
 {% endraw %}
 </pre>
 
-Ensuite, on code la classe <strong>RequestManager</strong> que vous devez commencer à connaître
+Ensuite, on code la classe **RequestManager** que vous devez commencer à connaître
 
 <pre class="lang:Objective-C decode:true ">
 {% raw %}
@@ -155,11 +155,11 @@ Puis on va faire une méthode pour appeler notre webservice
 </pre>
 
 On va un peu regarder ensemble ce que l'on a codé.<br />
-- On a instancié notre <strong>Manager,</strong> qui va appeler le webservice<br />
-- On a définit nos deux <strong>blocks/closures</strong><br />
-- On a instancié notre <strong>Delegate</strong><br />
-- On a assigné nos deux <strong>blocks/closures</strong><br />
-- On a assigné le <strong>Delegate</strong> au Manager<br />
+- On a instancié notre **Manager,** qui va appeler le webservice<br />
+- On a définit nos deux **blocks/closures**<br />
+- On a instancié notre **Delegate**<br />
+- On a assigné nos deux **blocks/closures**<br />
+- On a assigné le **Delegate** au Manager<br />
 - On appelle le webservice
 
 Je vous donne le code Swift pour les plus impatients
@@ -235,21 +235,21 @@ func callWebService() {
 Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans le block/closure requestSuccess.
 
 #### Mais pourquoi faire tout ça ?
-En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un <strong>Delegate</strong> ou des <strong>blocks/closures</strong> comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...<br />
-Comme je vous l'ai dit au début de l'article, cette solution vient pour un besoin assez spécifique. Celui de rendre un <strong>Delegate</strong> plus flexible quand on est obligé de passer par ce pattern.
+En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un **Delegate** ou des **blocks/closures** comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...<br />
+Comme je vous l'ai dit au début de l'article, cette solution vient pour un besoin assez spécifique. Celui de rendre un **Delegate** plus flexible quand on est obligé de passer par ce pattern.
 
-<strong>Problèmes soulevés</strong>
+**Problèmes soulevés**
 
--Si le <strong>Protocol</strong> contient beaucoup de méthodes, on en a beaucoup à ré-implémenter.<br />
--On doit aussi définir tous les <strong>blocks/closures</strong> correspondants.<br />
--Il faut redéfinir les <strong>blocks/closures</strong> pour chaque appel.
+-Si le **Protocol** contient beaucoup de méthodes, on en a beaucoup à ré-implémenter.<br />
+-On doit aussi définir tous les **blocks/closures** correspondants.<br />
+-Il faut redéfinir les **blocks/closures** pour chaque appel.
 
-<strong>Gains apportés</strong>
+**Gains apportés**
 
 -Des delegates plus flexibles<br />
 -Du code localisé<br />
 -Des méthodes réduites<br />
--Une gestion plus fine des retours du <strong>Delegate</strong>
+-Une gestion plus fine des retours du **Delegate**
 
 Cette solution n'est pas parfaite, mais reste assez élégante et n'est pas trop lourde à mettre en place.<br />
 Après, je vous laisse tester et me dire ce que vous en pensez dans les commentaires.

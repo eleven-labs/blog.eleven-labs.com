@@ -71,7 +71,7 @@ Mais nous ne sommes pas protégés pour autant : que se passerait-il si la méth
 Notre test suffira-t-il à détecter une régression ?
 
 ### Tests de Mutation
-Pour détecter les failles dans vos tests unitaires, il existe une solution : les <strong>tests de mutation</strong>.
+Pour détecter les failles dans vos tests unitaires, il existe une solution : les **tests de mutation**.
 
 Le principe est simple : altérer le code source pour vérifier que les tests associés échouent en conséquence.<br />
 Afin d'y parvenir, voici les étapes nécessaires :
@@ -87,10 +87,10 @@ Afin d'y parvenir, voici les étapes nécessaires :
 Mais avant de voir ça de plus près, voici un peu de vocabulaire :
 
 <ul>
-<li><strong>Mutant</strong> : Altération unitaire du code (ex: un !== remplacé par un ===)</li>
-<li><strong>Killed/Captured</strong> : On dit qu'un mutant est tué si le test unitaire échoue (résultat positif)</li>
-<li><strong>Escaped</strong> : Un mutant s'échappe si le test unitaire n'échoue pas (résultat négatif)</li>
-<li><strong>Uncovered</strong> : Un mutant n'est pas couvert si aucun test ne couvre le code qui porte le mutant.</li>
+<li>**Mutant** : Altération unitaire du code (ex: un !== remplacé par un ===)</li>
+<li>**Killed/Captured** : On dit qu'un mutant est tué si le test unitaire échoue (résultat positif)</li>
+<li>**Escaped** : Un mutant s'échappe si le test unitaire n'échoue pas (résultat négatif)</li>
+<li>**Uncovered** : Un mutant n'est pas couvert si aucun test ne couvre le code qui porte le mutant.</li>
 </ul>
 ### Mise en pratique avec Humbug
 Ici nous utiliserons <a href="https://github.com/padraic/humbug">Humbug</a>, un framework parmi d'autres qui permet de faire des tests de mutation en PHP.
@@ -199,10 +199,10 @@ Evidemment, l'exemple choisi ici est volontairement simple et n'est pas très é
 Pour parvenir à ses fins, Humbug est capable de générer tout un éventail de mutations :
 
 <ul>
-<li>Remplacement d'opérateurs de comparaison (<strong>&gt;</strong> par <strong>&gt;=</strong>, <strong>!==</strong> par <strong>===</strong>, etc...)</li>
-<li>Remplacement de constantes (<strong>0</strong> par <strong>1</strong>, <strong>true</strong> par <strong>false</strong>, etc...)</li>
-<li>Remplacement des opérateurs logiques (<strong>&amp;&amp;</strong>, <strong>||</strong>, etc...)</li>
-<li>Remplacement des opérateurs binaires (<strong>&amp;</strong>, <strong>|</strong>, <strong>%</strong>, etc...)</li>
+<li>Remplacement d'opérateurs de comparaison (**&gt;** par **&gt;=**, **!==** par **===**, etc...)</li>
+<li>Remplacement de constantes (**0** par **1**, **true** par **false**, etc...)</li>
+<li>Remplacement des opérateurs logiques (**&amp;&amp;**, **||**, etc...)</li>
+<li>Remplacement des opérateurs binaires (**&amp;**, **|**, **%**, etc...)</li>
 <li>Remplacement des valeurs de retour d'une fonction</li>
 </ul>
 Je ne vais pas tout détailler ici, si vous voulez en savoir plus je vous invite à consulter la <a href="https://github.com/padraic/humbug" target="_blank">page GitHub du projet</a>.

@@ -25,7 +25,7 @@ L'outil, ou plutôt la boite à outils que nous utilisons le plus à ce jour es
 &nbsp;
 
 ### MTools est composé de 6 outils :
-<strong><span style="text-decoration: underline;">Mloginfo :</span></strong>
+**<span style="text-decoration: underline;">Mloginfo :</span>**
 
 Mloginfo lit les log générés par mongoDB et retourne des informations d'utilisation de la base de données. Dans notre cas, ce qui nous intéresse (entre autres) c'est le profiling des requêtes afin de voir celles qui s’exécutent le plus ou encore celles qui consomment le plus de temps.
 
@@ -58,7 +58,7 @@ Plus d'infos <a href="https://github.com/rueckstiess/mtools/wiki/mloginfo">ici</
 
 &nbsp;
 
-<strong><span style="text-decoration: underline;">Mlogfilter</span> :</strong>
+**<span style="text-decoration: underline;">Mlogfilter</span> :**
 
 Mlogfilter permet comme son nom l'indique de réduire la quantité d'information d'un fichier de log. Nous pouvons appliquer plusieurs filtres et combiner le résultat avec mloginfo par exemple.
 
@@ -83,7 +83,7 @@ Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mlogfilter"
 
 &nbsp;
 
-<strong><span style="text-decoration: underline;">Mplotqueries &amp; Mlogvis</span> :</strong>
+**<span style="text-decoration: underline;">Mplotqueries &amp; Mlogvis</span> :**
 
 Ces deux exécutables permettent de générer des graphiques afin de visualiser plus d'informations (répartition des appels, type de commandes etc...) de manière graphique.
 
@@ -93,7 +93,7 @@ Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mlogvis">Ml
 
 &nbsp;
 
-<strong><span style="text-decoration: underline;">Mgenerate</span> :</strong>
+**<span style="text-decoration: underline;">Mgenerate</span> :**
 
 Mgenerate permet, à partir d'un modèle JSON, de remplir une base de données mongoDB avec de la donnée aléatoire. C'est l'outil parfait pour tester le comportement de fonction ou de requête avec un grand set de données.
 
@@ -130,11 +130,11 @@ Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mgenerate"
 
 &nbsp;
 
-<strong><span style="text-decoration: underline;">Mlaunch</span> :</strong>
+**<span style="text-decoration: underline;">Mlaunch</span> :**
 
 Mlaunch permet de créer rapidement un environnement local de travail avec mongo. Il peut fournir un configuration MongoDB en stand-alone mais aussi en replica et/ou avec shard. Combiné avec mgenerate, cela peut permettre de mettre en place des environnements de tests très rapidement afin de tester diverses applications tournants sous mongoDB.
 
-<em><strong>Exemple :</strong></em>
+<em>**Exemple :**</em>
 
 <pre class="lang:default decode:true ">
 {% raw %}
@@ -145,7 +145,7 @@ Cette commande permet de demander la création d'une instance mongo avec 5 repli
 
 &nbsp;
 
-<strong><span style="text-decoration: underline;">Point bonus, MongoDB Compass</span> :</strong>
+**<span style="text-decoration: underline;">Point bonus, MongoDB Compass</span> :**
 
 <a href="https://docs.mongodb.com/compass/">Compass</a> est un client lourd permettant d’analyser et de parcourir les données d'une base MongoDB. Globalement l'outils permet de manipuler la data sans réellement demander des compétences en query mongo. Petit bémol, il n'est encore disponible que sous Windows ou MacOs :'(
 

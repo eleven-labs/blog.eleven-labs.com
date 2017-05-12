@@ -11,20 +11,20 @@ tags:
 - dotcss
 ---
 
-Le 14 novembre a eu lieu la première (et possiblement dernière) édition de <strong>dotCSS</strong>, une conférence par dotConferences, déjà responsables de dotJS, dotScale, dotGo, la future dotSwift et la non-renouvellée dotRB.
+Le 14 novembre a eu lieu la première (et possiblement dernière) édition de **dotCSS**, une conférence par dotConferences, déjà responsables de dotJS, dotScale, dotGo, la future dotSwift et la non-renouvellée dotRB.
 
 Version courte : dotCSS était une très bonne conférence qui a clairement trouvé son public étant donné que le théâtre des variétés, lieu où elle avait lieu, était rempli, mais n'a pas probablement pas trouvé assez de ressources pour se financer, ce qui a conduit à la réduction de sa durée (une journée annoncée, réduite à un après-midi)
 
 Résumé rapide des différentes présentations :
 
 <ul>
-<li><strong>Daniel Glazman</strong>, co-chairman du CSS Working Group au W3C, a expliqué durant sa présentation les divers problèmes, et comme il semble complexe pour le langage d'avancer tout en essayant d'atteindre des compromis qui satisfassent tous les éditeurs de navigateurs et leur priorités. Il a par exemple parlé de l'historique problème de centrage vertical des éléments en CSS, et a expliqué qu'il était très dur pour le working group d'arriver à des consensus, parfois sur des sujets comme "simplement" nommer des propriétés.</li>
+<li>**Daniel Glazman**, co-chairman du CSS Working Group au W3C, a expliqué durant sa présentation les divers problèmes, et comme il semble complexe pour le langage d'avancer tout en essayant d'atteindre des compromis qui satisfassent tous les éditeurs de navigateurs et leur priorités. Il a par exemple parlé de l'historique problème de centrage vertical des éléments en CSS, et a expliqué qu'il était très dur pour le working group d'arriver à des consensus, parfois sur des sujets comme "simplement" nommer des propriétés.</li>
 </ul>
 <ul>
-<li><strong>Kaelig Deloumeau-Prigent</strong> a parlé de son travail pour le site web de The Guardian, pour faire communiquer développeurs et designers. Sass (et particulièrement des variables bien nommées), sont particulièrement importants pour ça, car il permet de faire communiquer développeurs et designers avec un seul langage pour comprendre la manière dont les éléments du front sont formalisés. Son idée globale était d'avoir le design au centre du projet.</li>
+<li>**Kaelig Deloumeau-Prigent** a parlé de son travail pour le site web de The Guardian, pour faire communiquer développeurs et designers. Sass (et particulièrement des variables bien nommées), sont particulièrement importants pour ça, car il permet de faire communiquer développeurs et designers avec un seul langage pour comprendre la manière dont les éléments du front sont formalisés. Son idée globale était d'avoir le design au centre du projet.</li>
 </ul>
 <ul>
-<li><strong>Harry Roberts</strong> (@csswizardry) a présenté ses 10 principe pour du développement front-end efficace:</li>
+<li>**Harry Roberts** (@csswizardry) a présenté ses 10 principe pour du développement front-end efficace:</li>
 </ul>
 <ol>
 <li> L'option la plus simple est habituelement la meilleure</li>
@@ -41,16 +41,16 @@ Résumé rapide des différentes présentations :
 A suivi une série de lightning talks:
 
 <ul>
-<li><strong>Maxime Thirouin</strong> a résumé ce qui a été l'idée générale de la conférence entière : "Nous aimons le CSS, mais c'est un langage frustrant". Frustrant, car il n'y a toujours pas (sans préprocesseurs) de variables, de math, de customisation... c'est pour cela qu'il travaille sur <a href="https://github.com/cssnext/cssnext">cssnext</a>, un projet permettant de récupérer d'utiliser immédiatement les futures features CSS</li>
-<li><strong>Victor Brito</strong> a demandé à tous les développeurs web de faire des efforts pour rendre le web accessible</li>
-<li><strong>Gregor Adams</strong> a parlé de fonctionnalités en CSS pour styler des éléments de manière dynamique (http://slides.pixelass.com/dotcss2014/assets/player/KeynoteDHTMLPlayer.html)</li>
-<li><strong>Guido Boman</strong> a parlé de la manière de coder correctement le parallax scrolling en CSS, et d'une implémentation faite par Keith Clark (Détails : http://keithclark.co.uk/articles/pure-css-parallax-websites/)</li>
-<li>Enfin, <strong>Tim Pietrusky</strong> a parlé des règles CSS appliquées à un élément (http://slides.com/timpietrusky/one-element-rules#/)</li>
+<li>**Maxime Thirouin** a résumé ce qui a été l'idée générale de la conférence entière : "Nous aimons le CSS, mais c'est un langage frustrant". Frustrant, car il n'y a toujours pas (sans préprocesseurs) de variables, de math, de customisation... c'est pour cela qu'il travaille sur <a href="https://github.com/cssnext/cssnext">cssnext</a>, un projet permettant de récupérer d'utiliser immédiatement les futures features CSS</li>
+<li>**Victor Brito** a demandé à tous les développeurs web de faire des efforts pour rendre le web accessible</li>
+<li>**Gregor Adams** a parlé de fonctionnalités en CSS pour styler des éléments de manière dynamique (http://slides.pixelass.com/dotcss2014/assets/player/KeynoteDHTMLPlayer.html)</li>
+<li>**Guido Boman** a parlé de la manière de coder correctement le parallax scrolling en CSS, et d'une implémentation faite par Keith Clark (Détails : http://keithclark.co.uk/articles/pure-css-parallax-websites/)</li>
+<li>Enfin, **Tim Pietrusky** a parlé des règles CSS appliquées à un élément (http://slides.com/timpietrusky/one-element-rules#/)</li>
 </ul>
 Les présentations des invités ont ensuite repris !
 
 <ul>
-<li><strong>Hugo Giraudel</strong>, dans sa présentation <em>Keep calm and write Sass</em>, a parlé de la manière dont les préprocesseurs CSS permettent de faire plus facilement la transition entre les débuts simples de CSS, utilisé pour donner du style à des pages web, et les applications web complexes qu'il doit styler aujourd'hui.<br />
+<li>**Hugo Giraudel**, dans sa présentation <em>Keep calm and write Sass</em>, a parlé de la manière dont les préprocesseurs CSS permettent de faire plus facilement la transition entre les débuts simples de CSS, utilisé pour donner du style à des pages web, et les applications web complexes qu'il doit styler aujourd'hui.<br />
 Il a présenté des principes à suivre pour développer avec Sass:
 
 <ul>
@@ -64,16 +64,16 @@ Il a présenté des principes à suivre pour développer avec Sass:
 </li>
 </ul>
 <ul>
-<li><strong>Estelle Weyl</strong> a parlé de features moins connues de CSS, comme compter des éléments, puis a parlé des spécificités des sélectures dans sa présentation <em><a href="http://estelle.github.io/doyouknowcss/indexjs.html">CSS? WTF!</a></em>, qui s'est terminée avec son explication d'astuces en CSS pour éviter !important, ou même l'overrider avec des animations CSS.</li>
+<li>**Estelle Weyl** a parlé de features moins connues de CSS, comme compter des éléments, puis a parlé des spécificités des sélectures dans sa présentation <em><a href="http://estelle.github.io/doyouknowcss/indexjs.html">CSS? WTF!</a></em>, qui s'est terminée avec son explication d'astuces en CSS pour éviter !important, ou même l'overrider avec des animations CSS.</li>
 </ul>
 <ul>
-<li><strong>Nicolas Gallagher</strong> a parlé de CSS scalable et de comment dans une large société comme Twitter penser les différents éléments pour que le développement ne demande pas à se poser des questions, de penser directement en termes de design d'interface utilisateur.</li>
+<li>**Nicolas Gallagher** a parlé de CSS scalable et de comment dans une large société comme Twitter penser les différents éléments pour que le développement ne demande pas à se poser des questions, de penser directement en termes de design d'interface utilisateur.</li>
 </ul>
 <ul>
-<li><strong>Bert Bos</strong>, le co-createur de CSS, a parlé de typographie, donnant des examples clair au sujet des difficultés qui y sont liées, qui ne peuvent potentiellement pas toutes être réglées avec CSS. Par exemple, les guillemets sont différents en français, anglais, néerlandais. De même, la ponctuation peut être différente (un espace avant ! et ? en français mais pas en anglais), il est donc dififcile de penser à comment faire du markup logique pour ces éléments.</li>
+<li>**Bert Bos**, le co-createur de CSS, a parlé de typographie, donnant des examples clair au sujet des difficultés qui y sont liées, qui ne peuvent potentiellement pas toutes être réglées avec CSS. Par exemple, les guillemets sont différents en français, anglais, néerlandais. De même, la ponctuation peut être différente (un espace avant ! et ? en français mais pas en anglais), il est donc dififcile de penser à comment faire du markup logique pour ces éléments.</li>
 </ul>
 <ul>
-<li><strong>Ana Tudor</strong> (@thebabydino), la dernière invitée de la journée, a montré une série de démos impressionnantes ayant pour sujet la distribution. <a href="http://codepen.io/thebabydino/">Les examples sont sur Codepen</a>.</li>
+<li>**Ana Tudor** (@thebabydino), la dernière invitée de la journée, a montré une série de démos impressionnantes ayant pour sujet la distribution. <a href="http://codepen.io/thebabydino/">Les examples sont sur Codepen</a>.</li>
 </ul>
 Et voilà comment dotCSS s'est terminé. Une fort bonne conférence donc, et on regrettera que l'expérience ne semble visiblement pas avoir vocation à être renouvelée l'an prochain.
 

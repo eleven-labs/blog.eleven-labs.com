@@ -58,7 +58,7 @@ Toute la présentation est faite avec des comparaisons sur le chargement de page
 
 &nbsp;
 
-#### <strong>Mythbusting HTTPS (Emily Schechter)</strong>
+#### **Mythbusting HTTPS (Emily Schechter)**
 Les PWA obligent le site à être en HTTPS, et Emily Schechter vient pour détruire l'ensemble des idées reçues sur ce protocole.
 
 <ul>

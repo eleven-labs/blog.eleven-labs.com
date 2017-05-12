@@ -15,7 +15,7 @@ It is indeed really convenient and can simplify greatly your developments when y
 
 &nbsp;
 
-<strong>Installation</strong>
+**Installation**
 
 In all cases, you have to install the following dependency:
 
@@ -35,7 +35,7 @@ Do not forget to enable the bundle in your kernel class.
 
 &nbsp;
 
-<strong>Configuration</strong>
+**Configuration**
 
 Time has come to write our workflow configuration. We will have to define all our places (statuses / states) and available transitions.
 
@@ -121,7 +121,7 @@ Everything is now ready, we can start to use the Workflow component!
 
 &nbsp;
 
-<strong>Usage</strong>
+**Usage**
 
 First useful thing to do after you have written your workflow configuration is to generate a graph using the Symfony command. The command will generate one graph using the <a href="http://www.graphviz.org/">Graphviz</a> format.
 
@@ -199,7 +199,7 @@ Overall, the component usage is just as simple as these 3 methods. As you can se
 
 &nbsp;
 
-<strong>Tune in for events!</strong>
+**Tune in for events!**
 
 The component also dispatches multiple events, chronologically sorted as:
 
@@ -224,7 +224,7 @@ Let's do better than that: you are also able to listen to a specific transition 
 </ul>
 &nbsp;
 
-<strong>Conclusion</strong>
+**Conclusion**
 
 The Workflow component is a really useful component to manage state or status on most of web applications.
 

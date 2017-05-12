@@ -26,10 +26,10 @@ Another Consul service we'll use in this article is key/value storage because we
 In order to clarify the rest of the article, here are the ports used by Consul:
 
 <ul>
-<li><strong>8300</strong> (+ <strong>8301</strong> et <strong>8302</strong>): RPC exchanges,</li>
-<li><strong>8400</strong>: RPC exchanges by the CLI,</li>
-<li><strong>8500</strong>: Used for HTTP API and web interface,</li>
-<li><strong>8600</strong>: Used for DNS server.</li>
+<li>**8300** (+ **8301** et **8302**): RPC exchanges,</li>
+<li>**8400**: RPC exchanges by the CLI,</li>
+<li>**8500**: Used for HTTP API and web interface,</li>
+<li>**8600**: Used for DNS server.</li>
 </ul>
 &nbsp;
 
@@ -40,9 +40,9 @@ In order to clarify the rest of the article, here are the ports used by Consul:
 As you can see, we'll have 3 Docker machines:
 
 <ul>
-<li>A <strong>Consul</strong> machine (used for Swarm Discovery),</li>
-<li>A machine that will act as our "<strong>node 01</strong>" with an HTTP service that will run on it (Swarm),</li>
-<li>A machine that will act as our "<strong>node 02</strong>" with an HTTP service that will run on it (Swarm).</li>
+<li>A **Consul** machine (used for Swarm Discovery),</li>
+<li>A machine that will act as our "**node 01**" with an HTTP service that will run on it (Swarm),</li>
+<li>A machine that will act as our "**node 02**" with an HTTP service that will run on it (Swarm).</li>
 </ul>
 &nbsp;
 

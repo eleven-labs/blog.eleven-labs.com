@@ -16,7 +16,7 @@ tags:
 
 L'écosystème Javascript est très riche, beaucoup de développeurs mais aussi de frameworks et d'outils sont disponibles.
 
-Lorsque vous souhaitez développer une application, quel que soit son framework de rendu, vous allez vite être amené à vouloir architecturer votre projet afin de différencier et d'organiser les données des vues. C'est particulièrement le cas lorsque vous utilisez des frameworks de rendu de composants comme <strong>React</strong> ou <strong>VueJS</strong>.
+Lorsque vous souhaitez développer une application, quel que soit son framework de rendu, vous allez vite être amené à vouloir architecturer votre projet afin de différencier et d'organiser les données des vues. C'est particulièrement le cas lorsque vous utilisez des frameworks de rendu de composants comme **React** ou **VueJS**.
 
 Historiquement, le besoin s'est fait sentir sur <a href="https://facebook.github.io/react/">React</a> et Facebook a donc ouvert les sources de son outil <a href="http://facebook.github.io/flux/">Flux</a>.
 
@@ -30,7 +30,7 @@ L'inconvénient est que dans ce cas, vous avez un store par composant. Ce modèl
 
 Dan Abramov a donc lancé, en juin 2015, <a href="http://redux.js.org/">Redux</a>, qui permet principalement de simplifier la gestion du store car il y a en effet qu'un seul store pour toute votre application dans Redux.
 
-<strong>Tous vos composants peuvent donc accéder à vos données.</strong>
+**Tous vos composants peuvent donc accéder à vos données.**
 
 Pour plus d'informations sur les différences Redux / Flux, je vous invite à lire cette <a href="http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux/32920459#32920459">réponse de Dan</a>.
 
@@ -58,7 +58,7 @@ Comme décrit précédemment, il vous faudra initialiser un <span class="lang:de
 Pour instancier ce store, il vous faudra passer un ou plusieurs <span class="lang:default decode:true crayon-inline ">reducers</span> . Les reducers contiennent les méthodes qui effectuent le changement d'état de votre application.<br />
 Ces changements d'état sont effectués lorsqu'une <span class="lang:default decode:true crayon-inline ">action</span>  est déclenchée sur votre application.
 
-Voilà, nous avons là les 3 composantes d'une application structurée par Redux : des <strong>actions</strong>, des <strong>reducers</strong> et un <strong>store</strong>.
+Voilà, nous avons là les 3 composantes d'une application structurée par Redux : des **actions**, des **reducers** et un **store**.
 
 Nous allons prendre un cas pratique simple : un compteur que l'on peut incrémenter ou décrémenter d'une certaine valeur.
 
@@ -152,7 +152,7 @@ export default function counter(state = initialState, action) {
 Vous avez compris l'idée, nous avons nos actions dans un <span class="lang:default decode:true crayon-inline ">switch() { case ... }</span>  et mettons directement à jour les valeurs de notre store.<br />
 Vous remarquerez que nous avons créés un état initial (initialState) afin d'initialiser les valeurs de notre application.
 
-[note]<strong>Note :</strong> Il vous est possible de créer autant de reducers que nécessaire.[/note]
+[note]**Note :** Il vous est possible de créer autant de reducers que nécessaire.[/note]
 
 &nbsp;
 
@@ -294,18 +294,18 @@ De cette façon, nous récupérons donc les valeurs de nos props provenant de no
 Les principaux éléments à noter ici sont :
 
 <ul>
-<li><span class="lang:default decode:true crayon-inline ">mapStateToProps</span>  est une fonction permettant de mapper des <strong>valeurs de notre state</strong> Redux avec des <strong>propriétés React</strong>,</li>
-<li><span class="lang:default decode:true crayon-inline ">mapDispatchToProps</span>  est une fonction permettant de mapper des <strong>actions</strong> Redux avec des <strong>propriétés React</strong>.</li>
+<li><span class="lang:default decode:true crayon-inline ">mapStateToProps</span>  est une fonction permettant de mapper des **valeurs de notre state** Redux avec des **propriétés React**,</li>
+<li><span class="lang:default decode:true crayon-inline ">mapDispatchToProps</span>  est une fonction permettant de mapper des **actions** Redux avec des **propriétés React**.</li>
 </ul>
 Ces deux fonctions sont ensuite appliquées à l'aide de la fonction <span class="lang:default decode:true crayon-inline ">connect()</span>  fournie par <span class="lang:default decode:true crayon-inline">react-redux</span> .
 
-[note]<strong>Note :</strong> Nous devons ici utiliser <span class="lang:default decode:true crayon-inline ">bindActionCreators()</span>  sur nos <span class="lang:default decode:true crayon-inline ">CounterActions</span>  car il s'agit d'un objet dont les valeurs sont des actions et cette fonction va permettre d'ajouter un appel à la fonction <span class="lang:default decode:true crayon-inline ">dispatch()</span>  de Redux afin que celles-ci soient correctement déclenchées.[/note]
+[note]**Note :** Nous devons ici utiliser <span class="lang:default decode:true crayon-inline ">bindActionCreators()</span>  sur nos <span class="lang:default decode:true crayon-inline ">CounterActions</span>  car il s'agit d'un objet dont les valeurs sont des actions et cette fonction va permettre d'ajouter un appel à la fonction <span class="lang:default decode:true crayon-inline ">dispatch()</span>  de Redux afin que celles-ci soient correctement déclenchées.[/note]
 
 &nbsp;
 
 ## Conclusion
-Si nous mettons en parallèle les <strong>1 303 720 téléchargements sur le mois précédent</strong> <strong>de la librairie Redux</strong> avec les <strong>2 334 221 de téléchargements pour React</strong>, nous remarquons que Redux est aujourd'hui <strong>très utilisé</strong> et semble vraiment très <strong>apprécié</strong> par les développeurs car il s'agit d'une solution <strong>simple</strong> qui permet réellement de structurer une application front.
+Si nous mettons en parallèle les **1 303 720 téléchargements sur le mois précédent** **de la librairie Redux** avec les **2 334 221 de téléchargements pour React**, nous remarquons que Redux est aujourd'hui **très utilisé** et semble vraiment très **apprécié** par les développeurs car il s'agit d'une solution **simple** qui permet réellement de structurer une application front.
 
-Redux apporte, selon moi, une <strong>vraie solution</strong> permettant de structurer des applications au métier complexe aux communautés comme React, VueJS mais également aux autres.
+Redux apporte, selon moi, une **vraie solution** permettant de structurer des applications au métier complexe aux communautés comme React, VueJS mais également aux autres.
 
 

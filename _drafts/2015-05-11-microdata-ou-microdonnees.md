@@ -26,14 +26,14 @@ Les microdata ou microdonnées, en français dans le texte, sont un moyen d’as
 
 ## Quels sont les nouveaux attributs ?
 <ul>
-<li><strong>itemscope</strong> : il crée un élément et indique que les descendants de cette balise HTML contiennent des informations à son sujet</li>
-<li><strong>itemtype</strong> : c’est une URL pointant vers un vocabulaire qui décrit l’élément et ses propriétés</li>
-<li><strong>itemid</strong> : c’est un identifiant unique pour l’élément</li>
-<li><strong>itemprop</strong> : il est porteur d’une valeur permettant de préciser la nature d’une donnée au sein d’un schéma spécifié précédemment</li>
-<li><strong>itemref</strong> : il permet de faire le lien complémentaire entre deux données sans descendance</li>
+<li>**itemscope** : il crée un élément et indique que les descendants de cette balise HTML contiennent des informations à son sujet</li>
+<li>**itemtype** : c’est une URL pointant vers un vocabulaire qui décrit l’élément et ses propriétés</li>
+<li>**itemid** : c’est un identifiant unique pour l’élément</li>
+<li>**itemprop** : il est porteur d’une valeur permettant de préciser la nature d’une donnée au sein d’un schéma spécifié précédemment</li>
+<li>**itemref** : il permet de faire le lien complémentaire entre deux données sans descendance</li>
 </ul>
 ## Mais comment ça marche ?
-Pour renseigner ces attributs, un vocabulaire spécifique à chaque type d’identification (société, personne, événement…) est nécessaire. <strong>Schema.org</strong>, initiative commune de <strong>Google</strong>, <strong>Yahoo</strong>, <strong>Bing</strong>, et <strong>Yandex</strong> est devenu la référence sur ce sujet.
+Pour renseigner ces attributs, un vocabulaire spécifique à chaque type d’identification (société, personne, événement…) est nécessaire. **Schema.org**, initiative commune de **Google**, **Yahoo**, **Bing**, et **Yandex** est devenu la référence sur ce sujet.
 
 Les moteurs de recherche comptent sur ce balisage pour améliorer l'affichage des résultats de recherche, et pour les gens à trouver les pages web les plus pertinentes par rapport à leur recherche.
 

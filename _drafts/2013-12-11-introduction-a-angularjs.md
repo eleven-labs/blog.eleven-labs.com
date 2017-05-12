@@ -18,9 +18,9 @@ Construire une application web avec une interface utilisateur complexe devient t
 
 <!--more-->
 
-<strong>Les concepts d'<em>AngularJS</em> :</strong>
+**Les concepts d'<em>AngularJS</em> :**
 
-<strong><em>Template</em> côté client</strong>
+**<em>Template</em> côté client**
 
 Les <em>templates</em> et les données sont assemblés côté client. Le rôle du serveur se résume alors seulement à servir les données requises par ces <em>templates</em>.
 
@@ -68,11 +68,11 @@ Il y a plusieurs choses intéressantes à noter ici en comparaison avec la plupa
 </ul>
 &nbsp;
 
-<strong><em>MVC</em> (Modèle-Vue-Contrôleur)</strong>
+**<em>MVC</em> (Modèle-Vue-Contrôleur)**
 
 Dans les applications <em>AngularJS</em>, la vue est le <em>DOM</em> (<em>Document Object Model</em>), les contrôleurs sont des classes <em>JavaScript</em>, et le modèle est stocké dans les propriétés des objets.
 
-<strong><em>Data Binding</em></strong>
+**<em>Data Binding</em>**
 
 <em>AngularJS</em> permet de faire du <em>data binding</em> très simplement sans devoir écrire le moindre code <em>AJAX</em>.<br />
 Retournons dans l'exemple de code ci-dessus. Si nous remplaçons le texte <em>Hello</em> par le texte <em>Hi</em> dans le champ de saisie, voici l'affichage que nous aurons dans le navigateur :
@@ -84,11 +84,11 @@ Retournons dans l'exemple de code ci-dessus. Si nous remplaçons le texte <em>H
 L'interface utilisateur se met à jour dynamiquement, sans que nous ayons eu besoin d'attacher un <em>change listener</em> sur le champ de saisie.<br />
 Il faut également noter que le <em>data binding</em> est bidirectionnel. Dans notre contrôleur, le changement de valeur de notre variable <em>$scope.hello.text</em>, à la suite d'une requête au serveur par exemple, mettrait automatiquement à jour le champ de saisie et le texte dans les doubles accolades.
 
-<strong>Injection de dépendances</strong>
+**Injection de dépendances**
 
 Si nous reprenons le code de notre contrôleur, on note que l'objet <em>$scope</em> est passé à notre fonction automatiquement. En effet, <em>AngularJS</em> fournit un système d'injection de dépendances qui suit un modèle de conception appelé la "loi de Déméter" (Law of Demeter).
 
-<strong>Directives</strong>
+**Directives**
 
 Une des meilleures parties de <em>AngularJS</em>, c'est que vous pouvez écrire vos propres <em>templates</em> <em>HTML</em>. En effet, le cœur du <em>framework</em> inclut un puissant moteur de manipulation du <em>DOM</em> qui vous permet d'étendre la syntaxe du <em>HTML</em>.<br />
 Nous avons déjà vu plusieurs nouveaux attributs dans notre <em>template</em> qui ne font pas partie de la spécification HTML.<br />

@@ -22,7 +22,7 @@ Note : les slides n’étant pas encore disponibles, l'article sera mis à jour 
 
 Edit : <a href="https://www.mongodb.com/presentations/all?page=1&amp;search=europe%202016">les voici</a>
 
-<strong>Welcome et nouveautés</strong>
+**Welcome et nouveautés**
 
 Comme chaque année, une ouverture sur quelques chiffres :
 
@@ -35,7 +35,7 @@ Puis quelques grands acteurs sous MongoDB : Baidu (plus grand site chinois, +100
 
 &nbsp;
 
-<strong>Mongo 3.4</strong>
+**Mongo 3.4**
 
 Les nouveautés de cette version sont présentées sous forme d’amélioration, d'extension ou d'innovation.
 
@@ -69,7 +69,7 @@ Toutes les nouveautés de la 3.4 <a href="https://www.mongodb.com/mongodb-3.4">i
 
 &nbsp;
 
-<strong>Keynote du Prof Brian Cox, physicien et astronome.</strong>
+**Keynote du Prof Brian Cox, physicien et astronome.**
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/CxS5AUkWgAAgyK0.jpg"><img class=" wp-image-2598 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/CxS5AUkWgAAgyK0-300x225.jpg" alt="Brian Cox MDBE16" width="439" height="329" /></a>
 
@@ -83,7 +83,7 @@ Great keynote this morning with Professor Brian Cox, OBE at <a href="https://twi
 — Charlotte Brown (@Charlotte_Br8wn) <a href="https://twitter.com/Charlotte_Br8wn/status/798485488474669056">15 novembre 2016</a>
 </blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br />
-<strong>Advanced MongoDB Aggregation pipelines</strong>
+**Advanced MongoDB Aggregation pipelines**
 
 La présentation a commencé par un récapitulatif de l'utilité de l'aggregation framework, puis plusieurs use-cases plus ou moins compliqués d'application.
 
@@ -119,7 +119,7 @@ Un article sur les fonctionnalités de $graphLookup plus complet sera disponible
 
 &nbsp;
 
-<strong>Building WiredTiger</strong>
+**Building WiredTiger**
 
 Il s'agit d'un REX sur la conception du moteur WiredTiger et sur sa gestion de la mémoire.
 
@@ -134,7 +134,7 @@ Il s'agit d'un REX sur la conception du moteur WiredTiger et sur sa gestion de 
 
 &nbsp;
 
-<strong>The rise of Data Lake</strong>
+**The rise of Data Lake**
 
 Cette session avait pour but d'exprimer une architecture cible pour la construction d'un data lake et la place de MongoDB dans cette architecture.
 
@@ -151,7 +151,7 @@ Complète moderne EDM architecture avec <a href="https://twitter.com/hashtag/Mon
 
 &nbsp;
 
-<strong>Graph Operations with MongoDB</strong>
+**Graph Operations with MongoDB**
 
 Cette session finale avait pour but de couvrir en détail les possibilités des graphes dans MongoDB.
 
@@ -178,7 +178,7 @@ Puis sur l’étude de plusieurs cas d'utilisations des graphes sous MongoDB.
 
 &nbsp;
 
-<strong>Goodby and see you soon</strong>
+**Goodby and see you soon**
 
 On se retrouve donc l'année prochaine pour l’évent à Paris !
 

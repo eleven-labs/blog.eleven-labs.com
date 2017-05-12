@@ -42,7 +42,7 @@ angular.module('exemple', [])
 &lt;div my-directive&gt;&lt;/div&gt;{% endraw %}
 </pre>
 
-Par défaut le seul moyen d'afficher une directive est de l'utiliser via un <em>attribut</em>. Si cela ne convient pas à votre usage il faudra passer par l'option <strong>restrict</strong>.
+Par défaut le seul moyen d'afficher une directive est de l'utiliser via un <em>attribut</em>. Si cela ne convient pas à votre usage il faudra passer par l'option **restrict**.
 
 ### 
 ### restrict

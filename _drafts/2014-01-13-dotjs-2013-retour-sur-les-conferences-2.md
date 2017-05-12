@@ -47,9 +47,9 @@ Polymer est une librairie orientée objet et manipulation du DOM en version pre-
 La librairie se décompose en trois parties :
 
 <ul>
-<li><strong>Foundation</strong> : ce sont les bases qui font de Polymer une librairie pour les navigateurs modernes. On y retrouve plusieurs notions comme “Shadow DOM”, “MutationObserver”, “Web Animations”, etc</li>
-<li><strong>Core</strong> : l’identité et la nature de Polymer. Les développeurs ont fait des choix et affirmé des opinions : comment déclarer un élément, étendre un élément à partir d’un autre, capturer le changement d’un élément, lancer un événement, gérer l’asynchrone, ...</li>
-<li><strong>Elements</strong> : il y a deux catégories d'éléments prédéfini par Polymer, les éléments d’interfaces et les autres. On est libre de piocher dans une liste qui s’agrandit au fil du temps ou bien de les définir soit même.</li>
+<li>**Foundation** : ce sont les bases qui font de Polymer une librairie pour les navigateurs modernes. On y retrouve plusieurs notions comme “Shadow DOM”, “MutationObserver”, “Web Animations”, etc</li>
+<li>**Core** : l’identité et la nature de Polymer. Les développeurs ont fait des choix et affirmé des opinions : comment déclarer un élément, étendre un élément à partir d’un autre, capturer le changement d’un élément, lancer un événement, gérer l’asynchrone, ...</li>
+<li>**Elements** : il y a deux catégories d'éléments prédéfini par Polymer, les éléments d’interfaces et les autres. On est libre de piocher dans une liste qui s’agrandit au fil du temps ou bien de les définir soit même.</li>
 </ul>
 <a href="http://www.polymer-project.org/images/architecture-diagram.svg"><img class="aligncenter" alt="Polymer architecture" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Sans-titre.png" width="400" height="308" /></a>
 

@@ -16,7 +16,7 @@ tags:
 Aujourd'hui, je vous propose un article -qui s'adresse plutôt aux débutants- sur les mécaniques pour obtenir et apporter de l’aide sur Symfony. Une grande partie des informations sont applicables à n'importe quel framework ou librairie.
 
 # Recherche Google
-Toute bonne recherche d’informations commence par une recherche en anglais sur Google. Et quand je parle de ça, je ne parle pas d’une recherche en français sur Lycos, ou d’une recherche en chinois sur Bing, je parle d’une recherche <strong>en anglais sur Google</strong>. Rechercher dans une langue qui n’est pas l’anglais, sur un moteur de recherche exotique, c’est se fermer des milliers de portes quant aux opportunités de résultats.
+Toute bonne recherche d’informations commence par une recherche en anglais sur Google. Et quand je parle de ça, je ne parle pas d’une recherche en français sur Lycos, ou d’une recherche en chinois sur Bing, je parle d’une recherche **en anglais sur Google**. Rechercher dans une langue qui n’est pas l’anglais, sur un moteur de recherche exotique, c’est se fermer des milliers de portes quant aux opportunités de résultats.
 
 Aucune excuse n’est à trouver, les recherches tout comme le code se font en anglais. Symfony comme de nombreux projets Open Source regroupent de nombreuses nationalités tant dans leur développeurs, la communauté proche, que nous autres utilisateurs de Symfony 2. Le standard, c’est l’anglais. Et de surcroît, sur Google, c’est primordial, leur système d’indexation et algos ne sont plus à prouver, que ce soit à court, moyen ou long terme. En d’autres termes “Google, English, Deal with it”.
 

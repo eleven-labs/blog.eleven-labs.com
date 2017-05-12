@@ -15,7 +15,7 @@ tags:
 #### Mobile development: where to start?
 These days more than ever before mobile applications have become essential in the lives of millions of people. If you are reading this article, it means that you too are interested in this subject. I'll try to make a series of articles to share with you as much as I can on it.
 
-<strong>Which technologies?</strong>
+**Which technologies?**
 
 The questions you should ask yourself are: "What are the tools, plugins, functionalities my application needs? What is my target audience? How many people are targeted by this application?". Once these questions answered, you are going to answer automatically the question about the technology choice.
 
@@ -25,10 +25,10 @@ Today I am going to talk about 3 technologies that I chose for several reasons:
 <li>Because they are the most common in making mobile applications and their communities are most active;</li>
 <li>I have already used these technologies and I want to give real feedback on them. Regarding native mobile development, I chose iOS and not Android (I explain hereafter why, no spoilers).</li>
 </ul>
-### <strong>Ionic:</strong>
+### **Ionic:**
 Ionic is a JavaScript framework based on AngularJS for the web application part of the framework, and on Cordova for the native application development.
 
-<strong>How does it work?</strong>
+**How does it work?**
 
 Ionic actually allows to create an application that opens a "WebView" natively available on mobile devices. To simplify, it is a web browser window, executed in our application, which is responsible for interpreting and displaying the content of our scripts. The WebView, whose possibilities are extended by Cordova, allows to access a certain amount of native features of the mobile device (see schema below).
 

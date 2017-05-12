@@ -16,13 +16,13 @@ tags:
 ---
 
 ## Introduction
-Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde version du framework : Angular2. Pour me faire la main, j'ai choisi de travailler sur un système d'authentification par token en utilisant Symfony pour la partie back-end, en incluant le bundle <strong>Lexik JWT Authentication. </strong>
+Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde version du framework : Angular2. Pour me faire la main, j'ai choisi de travailler sur un système d'authentification par token en utilisant Symfony pour la partie back-end, en incluant le bundle **Lexik JWT Authentication. **
 
 Je vous propose de voir ensemble un exemple très simple et les différentes étapes à suivre pour la mise en place d'une API sécurisée servant une liste de publications (...très privées) à notre application Angular2.
 
 ## Sommaire
 <ol>
-<li><strong>Mise en place de la partie Back-end</strong>
+<li>**Mise en place de la partie Back-end**
 <ol>
 <li>Installation d'une application Symfony3</li>
 <li>Installation des bundles nécessaires</li>
@@ -30,7 +30,7 @@ Je vous propose de voir ensemble un exemple très simple et les différentes ét
 <li>Création d'un jeu de données</li>
 </ol>
 </li>
-<li><strong>Mise en place de la partie Front-end</strong>
+<li>**Mise en place de la partie Front-end**
 <ol>
 <li>Création d'une application Angular2 via Angular CLI</li>
 <li>Création des différents composants</li>
@@ -39,11 +39,11 @@ Je vous propose de voir ensemble un exemple très simple et les différentes ét
 <li>Protéger les routes authentifiées avec AuthGuard</li>
 </ol>
 </li>
-<li><strong>Conclusion</strong></li>
+<li>**Conclusion**</li>
 </ol>
 ## <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/sf-blog-2.png" target="_blank"><img class="alignnone size-full wp-image-3517" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/sf-blog-2.png" alt="" width="80" height="80" /></a>
-#### <strong>1 Mise en place de la partie Back-end</strong>
-##### <strong>1.1 </strong>Installation d'une application Symfony3
+#### **1 Mise en place de la partie Back-end**
+##### **1.1 **Installation d'une application Symfony3
 Installons tout d'abord la dernière version de Symfony3 via l'installeur prévu à cet effet sur le site officiel :
 
 <pre class="lang:default decode:true">
@@ -62,7 +62,7 @@ bin/console server:start
 ##### 1.2 Installation des bundles nécessaires
 <span class="s1">Viens ensuite l'installation et la configuration de certains bundles incontournables lorsque l'on veut créer une API. Nous sauterons volontairement l'étape du "composer require" et de la déclaration des bundles dans le Kernel de Symfony pour passer directement à la configuration.</span>
 
-###### <strong>FOSRestBundle</strong>
+###### **FOSRestBundle**
 <span class="s1">Ce bundle va nous permettre d'utiliser des routes API automatiques ainsi que de retourner des réponses au format Json à notre client Angular2 avec un minimum de configuration :</span>
 
 <pre class="lang:default decode:true">
@@ -84,9 +84,9 @@ app:
     prefix: /api{% endraw %}
 </pre>
 
-<strong><a href="http://symfony.com/doc/current/bundles/FOSRestBundle/index.html" target="_blank">+ d'information sur la documentation</a></strong>
+**<a href="http://symfony.com/doc/current/bundles/FOSRestBundle/index.html" target="_blank">+ d'information sur la documentation</a>**
 
-###### <strong>NelmioCorsBundle</strong>
+###### **NelmioCorsBundle**
 <span class="s1">Continuons ensuite avec le Bundle, qui va nous permettre de faire des requêtes Ajax sur l'API, étant donné que nos deux applications se trouvent sur deux domaines différents :</span>
 
 <pre class="lang:default decode:true">
@@ -102,11 +102,11 @@ nelmio_cors:
 
 <em>Note : Nous avons ici autorisé notre future application Angular2 ainsi que le header "authorization" qui nous servira à nous authentifier. Patience, on y est bientôt :)</em>
 
-###### <strong>JMSSerializerBundle</strong>
+###### **JMSSerializerBundle**
 Ce bundle va nous permettre de sérialiser les données renvoyées par notre API. Aucune configuration n'est nécessaire dans le cadre de cet article. Nous utiliserons JMSSerializer plus tard, directement dans notre PostController.
 
-###### <strong>LexikJWTAuthenticationBundle</strong>
-<span class="s1">Enfin,  last but not least, le bundle qui va nous servir à sécuriser l'accès à nos données Symfony via un token d'authentification. Je vous laisse lire la <strong><a href="https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#getting-started" target="_blank">documentation</a></strong> officielle qui est très claire. Il vous suffit vraiment de suivre les étapes point par point.</span>
+###### **LexikJWTAuthenticationBundle**
+<span class="s1">Enfin,  last but not least, le bundle qui va nous servir à sécuriser l'accès à nos données Symfony via un token d'authentification. Je vous laisse lire la **<a href="https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#getting-started" target="_blank">documentation</a>** officielle qui est très claire. Il vous suffit vraiment de suivre les étapes point par point.</span>
 
 <em>Note : J'ai ajouté deux petites lignes sous l'index "form_login" du security.yml de façon à pouvoir envoyer username &amp; password au lieu de _username et _password pour nous authentifier auprès de notre API. Je vous invite à en faire de même :</em>
 
@@ -217,7 +217,7 @@ class Post
 {% endraw %}
 </pre>
 
-Utilisons ensuite le <strong>DoctrineFixturesBundle </strong>(après l'avoir installé bien sûr !) pour générer deux publications en créant une classe LoadPostData :
+Utilisons ensuite le **DoctrineFixturesBundle **(après l'avoir installé bien sûr !) pour générer deux publications en créant une classe LoadPostData :
 
 <pre class="lang:php decode:true">
 {% raw %}
@@ -296,7 +296,7 @@ Si tout va bien, vous devriez recevoir un token d'authentification.
 C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)
 
 ## <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/ng-blog.png" target="_blank"><img class="alignnone size-full wp-image-3513" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/ng-blog.png" alt="" width="80" height="86" /></a>
-#### <strong>2 Mise en place de la partie Front-end</strong>
+#### **2 Mise en place de la partie Front-end**
 ##### 2.1 Création de l'application Angular2 via Angular CLI
 Installons tout d'abord Angular CLI globalement sur notre machine. Cet outil va nous servir à générer la structure de notre application via une simple commande et à recompiler à la volée nos modifications :
 

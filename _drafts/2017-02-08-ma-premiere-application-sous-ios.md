@@ -142,7 +142,7 @@ class Party {
 {% endraw %}
 </pre>
 
-<strong>ViewController </strong>**:**
+**ViewController ****:**
 
 <span style="font-weight: 400;">Au lieu de vous montrer en détail mes ViewControllers, je vais vous parler de quelques parties que je trouve intéressantes.</span>
 
@@ -231,7 +231,7 @@ if self.view.frame.origin.y &gt;= 0.0 {
 
 J'ai dû rajouter un petit "hack" car sur l'Iphone 5 il me faut un plus grand scroll. C'est une des parties de mon code qui je pense demande une refacto (si vous avez des suggestions je suis bien évidemment preneur).
 
-<strong>Extension:</strong>
+**Extension:**
 
 Une des choses qui me plait le plus en Swift, ce sont les extensions ! J'ai donc pensé à en faire une pour la partie téléchargement d'une image depuis une url.
 

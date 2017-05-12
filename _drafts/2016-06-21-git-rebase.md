@@ -22,7 +22,7 @@ Les développements commencent et chacun modifie des lignes de codes.
 
 Nous avons Jean qui a terminé le développement d'une fonctionnalité. Elle est fusionnée dans <em>master</em>. Tout se passe bien.
 
-Marc a également terminé son développement, mais il a modifié les même fichiers que Jean. Si la branche de marc est fusionnée à ce moment, il y aura des <strong>conflits</strong>.
+Marc a également terminé son développement, mais il a modifié les même fichiers que Jean. Si la branche de marc est fusionnée à ce moment, il y aura des **conflits**.
 
 ## La solution
 Il est donc nécessaire de mettre à jour sa branche avant de pousser ses modifications. Cette mise à jour va inclure toutes les modifications de Jean dans la branche de Marc. Ça s'appelle un <em>rebase</em>.

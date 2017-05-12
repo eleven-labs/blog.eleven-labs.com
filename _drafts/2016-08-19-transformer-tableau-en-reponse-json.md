@@ -41,7 +41,7 @@ Nous pouvons avoir cette liste:
 </ul>
 Pour référence, vous pouvez aller lire la description de chacun des événements : <a href="http://symfony.com/doc/current/components/http_kernel.html">http://symfony.com/doc/current/components/http_kernel.html</a>
 
-Pour mon exemple, ma fonctionnalité devra prendre en entrée le retour du contrôleur et renvoyer un objet <em>JsonResponse. </em>Pour cela, je vais me brancher sur l'événement <strong>kernel.view</strong>. Cet événement est situé juste après l'exécution du contrôleur, mais juste avant l'envoi de la réponse.
+Pour mon exemple, ma fonctionnalité devra prendre en entrée le retour du contrôleur et renvoyer un objet <em>JsonResponse. </em>Pour cela, je vais me brancher sur l'événement **kernel.view**. Cet événement est situé juste après l'exécution du contrôleur, mais juste avant l'envoi de la réponse.
 
 ## Création d'un service
 Après avoir récupéré toutes mes données depuis le contrôleur, je retourne un tableau.

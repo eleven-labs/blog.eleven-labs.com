@@ -19,21 +19,21 @@ tags: []
 <h3 style="padding-left: 30px; text-align: justify;">II. Terminologie
     Voici un peu de vocabulaire propre à Elasticsearch.
 
-    Un <strong>index</strong> peut être assimilé à une base de données sur un SGBD relationnel. Chaque index dispose d'un mapping, qui permet de définir la structure des types.
+    Un **index** peut être assimilé à une base de données sur un SGBD relationnel. Chaque index dispose d'un mapping, qui permet de définir la structure des types.
 
-    Le <strong>mapping</strong> est similaire à la définition de votre schéma de base de données. Vous pouvez le définir manuellement, sinon il sera généré automatiquement lors de la première indexation de votre document. Attention, une fois le mapping définit, il vous est impossible de le modifier. Il vous faudra le supprimer, le redéfinir et relancer une indexation de vos données.
+    Le **mapping** est similaire à la définition de votre schéma de base de données. Vous pouvez le définir manuellement, sinon il sera généré automatiquement lors de la première indexation de votre document. Attention, une fois le mapping définit, il vous est impossible de le modifier. Il vous faudra le supprimer, le redéfinir et relancer une indexation de vos données.
 
-    Les <strong>types</strong> représentent une table dans un SGBD. Chaque type contient une liste des champs équivalant aux colonnes constituant votre table.
+    Les **types** représentent une table dans un SGBD. Chaque type contient une liste des champs équivalant aux colonnes constituant votre table.
 
-    Les <strong>documents</strong> représentent une entrée dans votre type. Ces documents sont stockés au format JSON et possèdent un <strong>index</strong>, un <strong>type</strong> et un <strong>id</strong>.
+    Les **documents** représentent une entrée dans votre type. Ces documents sont stockés au format JSON et possèdent un **index**, un **type** et un **id**.
 
-    Un <strong>node</strong> est une instance d'ElasticSearch.
+    Un **node** est une instance d'ElasticSearch.
 
-   Un <strong>shard</strong> vous permet de répartir vos données sur plusieurs nodes car il y a une limite physique à la taille d'un index sur un seul node. Les shards sont gérés de manière automatique par Elasticsearch, un shard peut être primaire ou être un duplicata.
+   Un **shard** vous permet de répartir vos données sur plusieurs nodes car il y a une limite physique à la taille d'un index sur un seul node. Les shards sont gérés de manière automatique par Elasticsearch, un shard peut être primaire ou être un duplicata.
 
-   Les <strong>replicas</strong> sont des copies des shards primaires auxquels elles sont rattachées. En cas d'erreur du primaire, un replica deviendra shard primaire selon un système d'élection afin que l'application reste disponible.
+   Les **replicas** sont des copies des shards primaires auxquels elles sont rattachées. En cas d'erreur du primaire, un replica deviendra shard primaire selon un système d'élection afin que l'application reste disponible.
 
-   Un <strong>cluster</strong> est une collection de node, donc plusieurs instances d'Elasticsearch qui vont partager toutes vos données. Il est identifié par un nom ce qui permet à un node de faire partie du cluster lors de son instanciation.
+   Un **cluster** est une collection de node, donc plusieurs instances d'Elasticsearch qui vont partager toutes vos données. Il est identifié par un nom ce qui permet à un node de faire partie du cluster lors de son instanciation.
 
    Trêve de bavardage, je vous sens impatients de commencer donc en avant pour l'installation ! J'espère que vous avez 5 minutes devant vous :)
 
@@ -112,16 +112,16 @@ Vous aurez une réponse du genre :
 }{% endraw %}
 </pre>
 
-<strong>Arborescence:</strong>
+**Arborescence:**
 
 Dans votre dossier Elasticsearch vous allez trouver les dossiers suivants :
 
 <ul>
-<li><strong>bin</strong>, dans lequel se trouve l'exécutable elasticsearch.(sh|bat) pour démarrer une instance Elastic. Mais on y trouve aussi un plugin.(sh.bat), qui comme son nom l'indique, permet d'installer des plugins.</li>
-<li><strong>config</strong>, où vous pourrez configurer votre instance d'Elastic (elasticsearch.yml) ainsi que la manière de logger (logging.yml)</li>
-<li><strong>data</strong>, dans lequel seront stockées vos données indexées</li>
-<li><strong>logs</strong>, où vous trouverez vos fichiers de logs</li>
-<li><strong>plugins</strong>, où se trouveront tous les plugins que vous installerez</li>
+<li>**bin**, dans lequel se trouve l'exécutable elasticsearch.(sh|bat) pour démarrer une instance Elastic. Mais on y trouve aussi un plugin.(sh.bat), qui comme son nom l'indique, permet d'installer des plugins.</li>
+<li>**config**, où vous pourrez configurer votre instance d'Elastic (elasticsearch.yml) ainsi que la manière de logger (logging.yml)</li>
+<li>**data**, dans lequel seront stockées vos données indexées</li>
+<li>**logs**, où vous trouverez vos fichiers de logs</li>
+<li>**plugins**, où se trouveront tous les plugins que vous installerez</li>
 </ul>
 ###     IV. Utilisation
 Bon maintenant que tout est fonctionnel, il n'y a plus qu'à jouer un peu :)
@@ -280,7 +280,7 @@ Vous retournera :
 }{% endraw %}
 </pre>
 
-On constate que le mot "tennis" sera indexé en tant que "teni" pour l'analyzer "<strong>french</strong>". Donc une recherche sur le mot "tennis", "tenis", "tenni"... vous retournera tous les documents qui contiendront le mot "tennis".
+On constate que le mot "tennis" sera indexé en tant que "teni" pour l'analyzer "**french**". Donc une recherche sur le mot "tennis", "tenis", "tenni"... vous retournera tous les documents qui contiendront le mot "tennis".
 
 On pourrait passer des heures sur les requêtes car le Query DSL d'Elasticsearch est très puissant mais je vous laisse découvrir ça par vous-même.
 

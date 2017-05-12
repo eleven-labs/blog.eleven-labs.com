@@ -30,14 +30,14 @@ tags:
 #### 1) Contexte
 <div></div>
 <div>
-<strong>Un peu de FitNesse...</strong>
+**Un peu de FitNesse...**
 
 Quand je suis arrivé dans l'équipe, une refonte d'une partie de notre SI était en cours. Des tests fonctionnels (en plus des unitaires bien entendu) étaient donc une obligation (refonte oblige). Le choix de l'époque s'était porté sur FitNesse (<a href="http://fitnesse.org/" target="_blank">http://fitnesse.org/</a>) un outil qui permet d'écrire des tests de manière "human friendly". Le but était donc de laisser le PO écrire les tests fonctionnels. L'équipe technique quant à elle n'avait qu'à écrire les fixtures derrière.
 
 Ce choix aurait pu être une bonne idée si dans la réalité des choses le PO avait réellement écrit les tests techniques. En réalité, l'équipe technique se retrouvait à écrire à la fois les tests techniques et fonctionnels. On devait donc utiliser un outil peu intuitif pour un dev (pas d'autocomplétion, utilisation abusive des tableaux...) et écrire les fixtures qui permettaient à ces tests d'interagir avec notre code.<br />
 Dans le cadre de la refonte d'une autre partie de notre SI nous avons donc décidé de changer d'outil de test fonctionnel, afin de choisir un outil plus adapté aux devs (le fait que les devs aient à réaliser les tests fonctionnels étant acté).
 
-<strong>Pas de déception avec Codeception</strong>
+**Pas de déception avec Codeception**
 
 Nous avons cherché ce qui se faisait dans le domaine du test fonctionnel. Nos critères étaient d'avoir un outil qui n'est pas forcément "human friendly" mais qui ne constitue pas une difficulté pour les devs (PHP en l'occurence). On a de fait écarté tous les outils dans un langage tierce, à cause du temps d'apprentissage.
 
@@ -55,27 +55,27 @@ Codeception permet de couvrir votre application entièrement, en effet ils intè
 <li>) Unit <a href="http://codeception.com/docs/05-UnitTests" target="_blank">http://codeception.com/docs/05-UnitTests</a></li>
 </ol>
 </div>
-<strong>Les tests unitaires </strong>
+**Les tests unitaires **
 
 Concernant les tests unitaires, il se base sur Phpunit (donc pas besoin de tout réapprendre, ne vous inquiétez pas), ils ajoutent juste une couche d'abstraction qui vous fournit quelques outils supplémentaires (notamment l'accès aux modules).
 
-<strong>Les tests fonctionnels</strong>
+**Les tests fonctionnels**
 
 Ici, ce sont les tests fonctionnels qui nous intéressent le plus. Notre équipe n'a pas de front (nous ne fournissons qu'une API). Ils vont nous permettre de la tester de manière complète (nous en discuterons dans la prochaine partie).
 
-<strong>Les tests d'acceptances</strong>
+**Les tests d'acceptances**
 
 Finalement, pour les tests d'acceptances, plusieurs solutions sont proposées : PHP Browser, un simple crawler qui utilise Guzzle, ou Selenium (PhantomJS est possible aussi). Ces solutions permettent donc toutes de tester votre front.
 
-<strong>Le BDD</strong>
+**Le BDD**
 
 Vous pouvez aussi si vous le souhaitez faire du Behavior Driven Development en utilisant Gherkin. Si vous utilisez déjà Behat, vous pouvez aussi migrer vos tests vers Codeception afin d'avoir tous vos tests au même endroit.
 
-<strong>La gestion de data</strong>
+**La gestion de data**
 
 Comme indiqué plus haut, plusieurs modules sont proposés pour gérer vos data. Vous pourrez donc facilement configurer une base de données pour vos tests et l'utiliser au travers des différents modules (Doctrine2, MongoDb, Redis, Memcache, ou tout simplement Db si vous souhaitez utiliser votre base SQL directement).
 
-<strong>Et le reste</strong>
+**Et le reste**
 
 Ils proposent aussi beaucoup d'helpers permettant de tester des webservices (REST ou SOAP) donc vous pourrez facilement simuler des appels sur vos API dans vos tests fonctionnels.
 

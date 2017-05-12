@@ -32,10 +32,10 @@ Il offre également d'autres services tel que du stockage clé/valeur, nous l'ut
 Afin de clarifier la suite de cet article, voici les ports utilisés par Consul :
 
 <ul>
-<li><strong>8300</strong> (+ <strong>8301</strong> et <strong>8302</strong>) : Echanges via RPC,</li>
-<li><strong>8400</strong> : Echanges via RPC par le CLI,</li>
-<li><strong>8500</strong> : Utilisé pour l'API HTTP et l'interface web,</li>
-<li><strong>8600</strong> : Utilisé pour le serveur DNS.</li>
+<li>**8300** (+ **8301** et **8302**) : Echanges via RPC,</li>
+<li>**8400** : Echanges via RPC par le CLI,</li>
+<li>**8500** : Utilisé pour l'API HTTP et l'interface web,</li>
+<li>**8600** : Utilisé pour le serveur DNS.</li>
 </ul>
 &nbsp;
 
@@ -46,15 +46,15 @@ La suite de cet article va se concentrer sur la partie service discovery et fail
 Nous aurons donc 3 machines Docker :
 
 <ul>
-<li>Une machine avec <strong>Consul</strong> (Swarm Discovery),</li>
-<li>Une machine étant notre "<strong>node 01</strong>" avec un service HTTP (Swarm),</li>
-<li>Une machine étant notre "<strong>node 02</strong>" avec un service HTTP (Swarm).</li>
+<li>Une machine avec **Consul** (Swarm Discovery),</li>
+<li>Une machine étant notre "**node 01**" avec un service HTTP (Swarm),</li>
+<li>Une machine étant notre "**node 02**" avec un service HTTP (Swarm).</li>
 </ul>
 &nbsp;
 
 Nous mettrons également sur nos deux nodes (cluster Docker Swarm) un container Docker pour Registrator, permettant de faciliter l'enregistrement de nos services Docker sur Consul.
 
-Pour plus d'informations concernant <strong>Registrator</strong>, vous pouvez vous rendre sur : <a href="https://gliderlabs.com/registrator/">https://gliderlabs.com/registrator/</a>
+Pour plus d'informations concernant **Registrator**, vous pouvez vous rendre sur : <a href="https://gliderlabs.com/registrator/">https://gliderlabs.com/registrator/</a>
 
 Commençons à installer notre architecture !
 

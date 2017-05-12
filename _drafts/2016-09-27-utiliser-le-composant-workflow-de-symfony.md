@@ -18,7 +18,7 @@ Celui-ci est en effet très pratique et peut très largement simplifier vos dév
 
 &nbsp;
 
-<strong>Installation</strong>
+**Installation**
 
 Dans tous les cas, vous devez installer la dépendance suivante :
 
@@ -38,7 +38,7 @@ Pensez bien à activer le bundle dans votre kernel.
 
 &nbsp;
 
-<strong>Configuration</strong>
+**Configuration**
 
 Il va maintenant nous falloir définir la configuration de notre workflow et ainsi définir les statuts (appelés places) et transitions possibles.
 
@@ -122,7 +122,7 @@ Nous avons terminé, nous pouvons maintenant commencer à utiliser le composant 
 
 &nbsp;
 
-<strong>Utilisation</strong>
+**Utilisation**
 
 La première chose utile à effectuer après avoir écrit votre workflow est de générer une représentation graphique de celui-ci (sous un format <a href="http://www.graphviz.org/">Graphviz</a>).
 
@@ -198,7 +198,7 @@ Globalement, l'utilisation du composant se limite à ces 3 méthodes. Comme vous
 
 &nbsp;
 
-<strong>Branchez-vous sur les événements !</strong>
+**Branchez-vous sur les événements !**
 
 Le composant utilise également plusieurs événements, à savoir, dans l'ordre chronologique :
 
@@ -218,7 +218,7 @@ Faisons encore mieux, vous pouvez même vous brancher sur une transition particu
 </ul>
 &nbsp;
 
-<strong>Conclusion</strong>
+**Conclusion**
 
 Le composant Workflow est vraiment très utile dans la gestion d'états ou de statuts sur la plupart des projets.
 

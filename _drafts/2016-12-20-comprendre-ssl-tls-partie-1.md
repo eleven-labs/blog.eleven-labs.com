@@ -78,7 +78,7 @@ tags:
 
 <span style="font-weight: 400;">Le protocole TLS n'est pas structurellement différent de la version 3 de SSL, mais des modifications dans l'utilisation des fonctions de hachage font que les deux protocoles ne sont pas directement "interopérables". </span>
 
-<span style="font-weight: 400;">Cependant TLS, comme SSLv3, intègre un mécanisme de compatibilité ascendante avec les versions précédentes, c'est-à-dire qu'au début de la phase de <strong>négociation</strong>, le client et le serveur négocient la «meilleure » version du protocole disponible en commun. Pour des raisons de sécurité (mentionnées plus haut), la compatibilité de TLS avec la version 2 de SSL est abandonnée.</span>
+<span style="font-weight: 400;">Cependant TLS, comme SSLv3, intègre un mécanisme de compatibilité ascendante avec les versions précédentes, c'est-à-dire qu'au début de la phase de **négociation**, le client et le serveur négocient la «meilleure » version du protocole disponible en commun. Pour des raisons de sécurité (mentionnées plus haut), la compatibilité de TLS avec la version 2 de SSL est abandonnée.</span>
 
 <span style="font-weight: 400;">Ce qui différencie aussi le TLS du SSL c’est que la génération des </span>**clés symétriques**<span style="font-weight: 400;"> est un peu plus sécurisée dans TLS que dans SSLv3, dans la mesure où aucune étape de l'algorithme ne repose uniquement sur du MD5 (pour lequel sont apparues des faiblesses en </span><span style="font-weight: 400;"><a href="https://fr.wikipedia.org/wiki/Cryptanalyse">cryptanalyse</a>)</span><span style="font-weight: 400;">.</span>
 

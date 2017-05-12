@@ -62,6 +62,6 @@ class MyExtension extends \Twig_Extension
 
 Note : les extensions Twig ne bénéficient pas du lazy loading, et sont donc toujours chargées, même si vous lancez une commande. Puisqu’il n'y a pas de Request dans une commande, nous avons besoin de vérifier son existence avant d’essayer d'y accéder.
 
-<strong>EDIT</strong> : Depuis symfony 2.4, un nouveau scope, "request_stack", a été introduit (cf <a href="http://symfony.com/blog/new-in-symfony-2-4-the-request-stack">l'article de Fabien Potencier</a>). Le problème décrit ci-dessus ne se pose donc plus.
+**EDIT** : Depuis symfony 2.4, un nouveau scope, "request_stack", a été introduit (cf <a href="http://symfony.com/blog/new-in-symfony-2-4-the-request-stack">l'article de Fabien Potencier</a>). Le problème décrit ci-dessus ne se pose donc plus.
 
 

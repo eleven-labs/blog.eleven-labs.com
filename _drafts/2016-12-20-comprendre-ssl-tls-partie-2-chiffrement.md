@@ -72,6 +72,6 @@ tags:
 
 <span style="font-weight: 400;">De plus, </span><span style="font-weight: 400;">la transmission de la clé publique pose un problème dans le cas où celle-ci n'est pas sécurisée c'est à dire qu'un attaquant peut se positionner entre l'entité et son public en diffusant de fausses clés publiques (par le biais d'un faux site </span><span style="font-weight: 400;">web</span><span style="font-weight: 400;"> par exemple) puis intercepter toutes les communications, lui permettant d'usurper l'identité du diffuseur de clé publique et de créer une dite </span><a href="https://fr.wikipedia.org/wiki/Attaque_de_l'homme_du_milieu"><span style="font-weight: 400;">man in the middle</span></a><span style="font-weight: 400;">.</span>
 
-<span style="font-weight: 400;">Rassurez-vous </span><span style="font-weight: 400;">les <strong>certificats</strong> peuvent résoudre ce problème grâce à la <strong>signature</strong> de tiers de confiance.</span>
+<span style="font-weight: 400;">Rassurez-vous </span><span style="font-weight: 400;">les **certificats** peuvent résoudre ce problème grâce à la **signature** de tiers de confiance.</span>
 
 

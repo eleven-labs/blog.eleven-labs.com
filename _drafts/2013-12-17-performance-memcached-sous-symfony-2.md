@@ -148,7 +148,7 @@ Bon, jusqu'ici c'était la partie facile, celle qui est à mettre en place parto
 
 Nous allons maintenant rentrer dans les dernières phases d'optimisation côté code, même si nous allons tricher, puisque nous allons coupler Sf à une autre technologie : Memcached.
 
-<strong>/!\ Cette partie consiste à "stocker" nos données dans la RAM, cela est toujours mieux si la donnée à stocker est elle-même déjà optimisée, par exemple avec les conseils ci-dessus ;) /!\</strong>
+**/!\ Cette partie consiste à "stocker" nos données dans la RAM, cela est toujours mieux si la donnée à stocker est elle-même déjà optimisée, par exemple avec les conseils ci-dessus ;) /!\**
 
 &nbsp;
 
@@ -164,7 +164,7 @@ Et oui, qui dit données stockées, dit aussi stockées intelligemment, c'est a 
 
 &nbsp;
 
-<strong>Memcached : Késako ?</strong>
+**Memcached : Késako ?**
 
 Memcached est un binaire, tournant sur à peu près toutes les plateformes, permettant d'accéder à un espace mémoire assez simplement.
 

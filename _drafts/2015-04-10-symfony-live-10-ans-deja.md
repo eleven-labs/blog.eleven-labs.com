@@ -35,7 +35,7 @@ Je vais parler des conférences que j'ai le plus appréciées.
 </blockquote>
 La matinée commence par un discours d'ouverture par <a href="https://twitter.com/fabpot">Fabien Potencier</a>. Un peu "freestyle", il n'a pas de support de présentation. Il revient sur l'origine du framework, son historique.
 
-Il a parlé de l'origine du <strong>"f"</strong> de Symfony. Et oui, pourquoi "f" et non "ph". La raison était simple, parce que toutes ses classes commençaient par "Sf", qui est la contraction de "Sensio Framework". Pour éviter de renommer tous les namespaces, il a conservé "Sf" et cherché un nom qui pouvait correspondre à cette abréviation. Comme quoi, les développeurs sont paresseux, mais efficaces :).
+Il a parlé de l'origine du **"f"** de Symfony. Et oui, pourquoi "f" et non "ph". La raison était simple, parce que toutes ses classes commençaient par "Sf", qui est la contraction de "Sensio Framework". Pour éviter de renommer tous les namespaces, il a conservé "Sf" et cherché un nom qui pouvait correspondre à cette abréviation. Comme quoi, les développeurs sont paresseux, mais efficaces :).
 
 Et pourquoi Symfony est open-source ? Au début, le framework était encore à l'état de prototype. Pour leur premier projet, ils ont réalisé un site d'e-commerce de lingerie. À la fin du projet, ils n'ont pas été payés, ils ont mis le framework en open-source. Quitte à ne pas être payé, autant le laisser à la communauté :).
 
@@ -53,7 +53,7 @@ Selon lui, c'est une erreur et une perte de temps de travailler sur une interfac
 
 Ce point de vue est intéressant. Sachant qu'HTTP a déjà sa spécification : RFC2616.
 
-Autre annonce très intéressante, les SymfonyCon seront les <strong>3 et 4 decembre</strong>. 2 jours de conférences internationales et tout ça dans une grande salle : les Folies Bergère.
+Autre annonce très intéressante, les SymfonyCon seront les **3 et 4 decembre**. 2 jours de conférences internationales et tout ça dans une grande salle : les Folies Bergère.
 
 Cette ouverture était simple, conviviale, tout le monde pouvait poser ses questions sur Twitter. D'ailleurs, j'en ai posé une concernant la certification. Elle sera mise à jour en même temps que la publication de Symfony 3.0.
 
@@ -98,7 +98,7 @@ Lien vers la présentation: <a href="https://speakerdeck.com/odolbeau/logs-hunti
 — Bastien Picharles (@Kleinast) <a href="https://twitter.com/Kleinast/status/586103060533010432">April 9, 2015</a>
 </blockquote>
 <h2 id="mediapart-le-changement-cest-maintenant">Mediapart, le changement c'est maintenant
-Ce qui était intéressant dans la présentation, c'est leur prise de décision radicale. A un moment, quand tout par "en sucette", il faut savoir dire <strong>"stop"</strong> et faire table rase du passé pour repartir sur de nouvelles bases. Cette décision n'est pas facile. Comme lors de la transition Symfony 1 vers Symfony 2. Mais elle peut être un bon moyen pour redonner du souffle à un projet.
+Ce qui était intéressant dans la présentation, c'est leur prise de décision radicale. A un moment, quand tout par "en sucette", il faut savoir dire **"stop"** et faire table rase du passé pour repartir sur de nouvelles bases. Cette décision n'est pas facile. Comme lors de la transition Symfony 1 vers Symfony 2. Mais elle peut être un bon moyen pour redonner du souffle à un projet.
 
 <h2 id="pattern-view-model">Pattern view model
 Romain Kuzniak a déjà présenté une conférence complète sur les différentes architectures d'<span class="message_content">applicatives</span> lors d'un <a href="http://afsy.fr/blog/meetup-de-decembre-a-paris">précédent SfPot</a>.

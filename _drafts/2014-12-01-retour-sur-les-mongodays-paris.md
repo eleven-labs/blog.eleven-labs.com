@@ -15,7 +15,7 @@ Ayant eu la chance de pouvoir participer a la version Française MongoDB Days qu
 
 <!--more-->
 
-<strong>Introduction</strong>
+**Introduction**
 
 <em>9h30-10h -</em>Yann Aubr, Senior Director et Alain Hélaïli, Senior Solutions Architect.
 
@@ -35,7 +35,7 @@ Enfin, les nouveautés de la futur version 2.8(http://docs.mongodb.org/manual/re
 <hr />
 &nbsp;
 
-<strong>Socialite, the Open Source Status Feed</strong><br />
+**Socialite, the Open Source Status Feed**<br />
 10h-11h par Asya Kamsky, Principal Solutions Architect, MongoDB
 
 La présentation a tourné autour de l'étude d'un cas pratique, en l'occurrence "<a href="https://github.com/10gen-labs/socialite" target="_blank">Socialite</a>" un réseau social proposant des fonctionnalités proches de Twitter.
@@ -54,7 +54,7 @@ Par exemple, saviez vous que l'objet ObjectId contient une methode getTimestamp(
 <hr />
 &nbsp;
 
-<strong>Plus de flexibilité et de scalabilité chez Bouygues Télécom grâce à MongoDB</strong>
+**Plus de flexibilité et de scalabilité chez Bouygues Télécom grâce à MongoDB**
 
 11h-12h -  par Pierre-Alban Dewitte, Leader d'équipe, Bouygues Télécom
 
@@ -75,7 +75,7 @@ Présentation très interéssante, d'autant plus que travaillant dans un context
 <hr />
 &nbsp;
 
-<strong>Scalabilité de MongoDB</strong>
+**Scalabilité de MongoDB**
 
 13h-14h - Alain Hélaïli, Senior Solutions Architect, MongoDB
 
@@ -99,7 +99,7 @@ Ce fut la présentation qui sur le planning m'interessait le plus et ce fut la p
 &nbsp;
 
 <hr />
-<strong>MongoDB et Hadoop</strong><br />
+**MongoDB et Hadoop**<br />
 14-15h - Tugdual Grall, Partner Technical Services Solutions Architect, MongoDB
 
 Présentation detaillée sur l'utilisation d'une couche d'application supplémentaire afin de donner une vision 360 sur certains types de données. De la même manière, le speaker a présenté de nombreux cas où l'utilisation des outils comme Hadoop, Spark sont nécessaires et comment les faire interagir avec notre application mongoDB.
@@ -117,7 +117,7 @@ Speak des sponsors de l’événement par Teradata et Zenika
 <hr />
 &nbsp;
 
-<strong>Automatisez votre gestion de MongoDB avec MMS</strong>
+**Automatisez votre gestion de MongoDB avec MMS**
 
 16-17h - Alain Hélaïli, Senior Solutions Architect, MongoDB
 
@@ -130,7 +130,7 @@ Dernier speak technique de la journée. La nouvelle version de l'outil en ligne 
 <hr />
 &nbsp;
 
-<strong>Roadmap produit</strong>
+**Roadmap produit**
 
 17h-17h30 - Tugdual Grall, Partner Technical Services Solutions Architect, MongoDB
 
@@ -152,7 +152,7 @@ Tugdual a mis en avant les difficultés pour développer ces fonctionnalités a
 
 &nbsp;
 
-<strong>En conclusion</strong>
+**En conclusion**
 
 Ce fut une journée très instructive. Au-delà d'une mise au point sur les capacités et les nouveautés de MongoDB, beaucoup de petit "tips" de performance sont ressortis des différentes conférences. Le genre de petites choses qui misent bout à bout peuvent permettre de gagner pas mal de performance sur des architectures complexes ou sur des gros volumes.
 

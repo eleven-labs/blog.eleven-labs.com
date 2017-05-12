@@ -18,9 +18,9 @@ Dans cet article, je vais me concentrer sur les mock et les stub d'objet.
 ### Mock, stub, what else ?
 Lorsque l'on teste unitairement une classe, très souvent, cette classe a des dépendances avec d'autres classes (qui elles-mêmes ont des dépendances avec d'autres classes.). L'objectif du test unitaire est de tester la classe cible, et uniquement cette classe. En admettant que les classes dépendantes soient fiables et retournent ce qui est attendu, il ne reste plus que la classe cible à tester.
 
-Un "<strong>stub</strong>" est un objet qui va simuler les différentes classes utilisées par la classe cible. Cet objet va toujours retourner la même valeur, quels que soient ses paramètres.
+Un "**stub**" est un objet qui va simuler les différentes classes utilisées par la classe cible. Cet objet va toujours retourner la même valeur, quels que soient ses paramètres.
 
-Un "<strong>mock</strong>" est un "<strong>stub</strong>" dans lequel on va vérifier des attentes à des appels de méthodes. Par exemple, je vérifie qu'une méthode est appelée une fois.
+Un "**mock**" est un "**stub**" dans lequel on va vérifier des attentes à des appels de méthodes. Par exemple, je vérifie qu'une méthode est appelée une fois.
 
 ### Stub, un simple bouchon
 Je vais rentrer directement dans le cœur du sujet avec un exemple simple.
@@ -119,7 +119,7 @@ class BouteilleTest extends \PHPUnit_Framework_TestCase
 {% endraw %}
 </pre>
 
-La différence avec le test précédent est l'<strong>assertion</strong> dans la configuration du mock.
+La différence avec le test précédent est l'**assertion** dans la configuration du mock.
 
 A la ligne 7, la méthode <span class="lang:default decode:true crayon-inline ">-&gt;expect()</span>  est l'assertion. Le paramètre prend en valeur le nombre de fois que la méthode sera appelée. Ici, c'est une fois <span class="lang:default decode:true crayon-inline ">$this-&gt;once()</span>  .
 

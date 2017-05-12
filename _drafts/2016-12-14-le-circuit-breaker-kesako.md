@@ -15,7 +15,7 @@ tags:
 
 Aujourd'hui les architectures micro-services sont de plus en plus répandues. Mais quels sont les moyens de contrôler votre nouveau système d'information ?
 
-Mettons fin au mystère dès maintenant, le circuit-breaker, c'est le <strong>disjoncteur</strong> de votre architecture micro-services. Mais comment cela fonctionne et pourquoi en aurions-nous besoin ?
+Mettons fin au mystère dès maintenant, le circuit-breaker, c'est le **disjoncteur** de votre architecture micro-services. Mais comment cela fonctionne et pourquoi en aurions-nous besoin ?
 
 #### Pourquoi j'ai besoin d'un disjoncteur ?
 Pour expliquer l'utilité d'un disjoncteur, un peu d'histoire. C'est Thomas Edison qui apporte l'électricité dans nos foyers en 1879. Peu après la sortie de cette impressionnante invention, de nombreux accidents de surtension, tuent ou blessent de nombreuses personnes. C'est alors que Thomas Edison, et oui toujours lui, invente le disjoncteur : un mécanisme permettant de couper le courant lors d'un surtension avant que celui-ci détruise les éléments du circuit électrique. Aujourd'hui, le disjoncteur est un élément essentiel dans tout circuit électrique, il y a en dans les téléphones, les ordinateurs, les télévisions etc...
@@ -43,7 +43,7 @@ Ce qui permet au service A de prendre en charge la panne, et d'attendre que le s
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Untitled-drawing-5.png"><img class="aligncenter size-full wp-image-2888" src="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Untitled-drawing-5.png" alt="" width="785" height="277" /></a>
 
-<em><strong>Bonus </strong></em>: L'intérêt est encore plus présent quand votre architecture est dans le cloud et que vous avez choisi un système d'autoscalling. Quand un service tombe ou est ralenti cela peut entraîner une plus forte demande du service, ce qui par effet de levier peut faire des demandes de création de machine et ne ferrons que sur-alimenter le cloud. Cela peut vite coûter cher !
+<em>**Bonus **</em>: L'intérêt est encore plus présent quand votre architecture est dans le cloud et que vous avez choisi un système d'autoscalling. Quand un service tombe ou est ralenti cela peut entraîner une plus forte demande du service, ce qui par effet de levier peut faire des demandes de création de machine et ne ferrons que sur-alimenter le cloud. Cela peut vite coûter cher !
 
 Vous êtes désormais convaincu d'avoir besoin d'avoir un circuit-breaker, mais comment l'implémenter ? Nous allons en faire une en Symfony permettant de gérer un circuit-breaker minimum avec comme base une communication entre service utilisant Guzzle.
 

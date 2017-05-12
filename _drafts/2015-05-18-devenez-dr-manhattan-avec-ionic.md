@@ -20,7 +20,7 @@ Ionic est un framework front-end  open source qui permet de produire des applic
 
 Concrètement, Ionic est basé sur AngularJS 1.3 et offre des directives pour implementer rapidement les cas d’usage les plus récurrents : header, footer, scroll, menu, etc ...
 
-<strong>L'écosystème</strong>
+**L'écosystème**
 
 Ionic c’est un nombre impressionnant d’outils et services pour vous aider dans votre développement :
 
@@ -34,7 +34,7 @@ Ionic c’est un nombre impressionnant d’outils et services pour vous aider da
 <li>Un “playground” pour apprendre et tester les différentes parties du framework sans se soucier des difficultés de compilation et déploiement <a href="http://play.ionic.io/">http://play.ionic.io/</a></li>
 <li>Un outil de création en ligne pour livrer rapidement des prototypes <a href="https://creator.ionic.io">https://creator.ionic.io</a></li>
 </ul>
-<strong>Comment créer sa première application</strong>
+**Comment créer sa première application**
 
 1- En pré-requis il vous faut NodeJS et installer la ligne de commande Ionic :
 
@@ -95,7 +95,7 @@ $ ionic build --release ios
 
 Vous obtiendrez un fichier compressé et optimisé à déposer sur le store.
 
-<strong>Quelques liens utiles</strong>
+**Quelques liens utiles**
 
 <a href="http://devdactic.com/wp-content/uploads/2015/02/ionic-cheatsheet.png">Ionic cheatsheet</a>
 

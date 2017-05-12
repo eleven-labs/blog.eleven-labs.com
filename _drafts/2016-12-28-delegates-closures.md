@@ -21,7 +21,7 @@ Cet article se veut accessible pour les néophytes, donc on va passer un petit p
 
 On va se concentrer sur iOS pour cette fois-ci, mais ne vous en faites pas, j'ai prévu de faire l'équivalent sur Android dans très peu de temps.
 
-<strong>Le Swift et l'objective-C</strong>
+**Le Swift et l'objective-C**
 
 Pour ceux qui ne savent pas, sur iOS, on peut utiliser deux langages de programmation : l'Objective-C et le Swift.
 
@@ -32,13 +32,13 @@ Outre le fait que les deux langages n'aient pas la même syntaxe, la structure d
 -en Objective-C on va avoir un header (fichier .h) pour tout ce qui est déclaration d'éléments accessibles, puis un fichier d'implémentation (fichier .m) qui va contenir le corps des méthodes, exactement comme en C.<br />
 -en Swift, on va avoir un seul et même fichier (fichier .swift) et l'accessibilité sera définie selon "public" ou "private".
 
-<strong>Le Protocol </strong>
+**Le Protocol **
 
 Encore une petite notion et promis, on est partis.
 
 Dans cet article je vais beaucoup vous parler de Protocol : un protocol c'est une interface dans le monde Apple, quand je dis interface, je parle de classe que l'on doit hériter pour implémenter certaines méthodes. C'est un mot clef en Swift comme en Objective-C.
 
-<strong>Les Delegates et les Closures / Blocks</strong>
+**Les Delegates et les Closures / Blocks**
 
 Dans le développement iOS, vous allez souvent retrouver 2 principes :
 
@@ -263,20 +263,20 @@ class RequestManager {
 
 Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans la méthode onRequestSuccess.
 
-<strong>Mais pourquoi faire tout ça?</strong>
+**Mais pourquoi faire tout ça?**
 
 On a un couplage light entre nos différents objets. En effet, RequestManager n'a aucune idée du type de l'objet de son delegate, tout ce qui l'intéresse c'est de savoir qu'il contient les deux méthodes du protocol pour pouvoir les appeler.
 
 Donc, c'est bien, j'ai pu appeler mon Webservice, j'ai mes méthodes de retour dans lesquels je peux faire mes traitements, tout me semble bon. Oui, tout est bon, ça fonctionne bien et ça couvrira beaucoup de cas.
 
-<strong>Problème soulevé</strong>
+**Problème soulevé**
 
 - Mais maintenant, si jamais on a besoin d'appeler plusieurs Webservices dans une seule et même classe, comment on fait?<br />
 - Comment ça comment on fait? Tu viens de nous montrer tout ça.<br />
 - Le soucis c'est qu'avec cette méthode tous vos retours de Webservices vont passer dans vos méthodes onRequestSuccess et onRequestFailure.<br />
 - Ah, mais c'est problématique en fait...
 
-<strong>Solution</strong>
+**Solution**
 
 Pour palier à ce problème, il y a toujours la solution de changer un peu les méthodes, de passer un id unique quand on fait la requête et de le recevoir dans les méthodes du delegate pour identifier à quel appel sur quel Webservice ça correspond.<br />
 C'est vrai, on peut faire ça, mais ça peut vite devenir verbeux et pas évident à gérer.
