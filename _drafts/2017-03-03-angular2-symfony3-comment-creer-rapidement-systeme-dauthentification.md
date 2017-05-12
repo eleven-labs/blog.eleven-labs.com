@@ -49,7 +49,7 @@ tags:
 </pre>
 ##### 1.2 Installation des bundles nécessaires
 <p class="p1"><span class="s1">Viens ensuite l'installation et la configuration de certains bundles incontournables lorsque l'on veut créer une API. Nous sauterons volontairement l'étape du "composer require" et de la déclaration des bundles dans le Kernel de Symfony pour passer directement à la configuration.</span></p>
-<h6><strong>FOSRestBundle</strong></h6>
+###### <strong>FOSRestBundle</strong>
 <p class="p1"><span class="s1">Ce bundle va nous permettre d'utiliser des routes API automatiques ainsi que de retourner des réponses au format Json à notre client Angular2 avec un minimum de configuration :</span></p>
 <pre class="lang:default decode:true"># app/config/config.yml
 fos_rest:
@@ -63,7 +63,7 @@ app:
     type: rest
     prefix: /api</pre>
 <p><strong><a href="http://symfony.com/doc/current/bundles/FOSRestBundle/index.html" target="_blank">+ d'information sur la documentation</a></strong></p>
-<h6><strong>NelmioCorsBundle</strong></h6>
+###### <strong>NelmioCorsBundle</strong>
 <p class="p1"><span class="s1">Continuons ensuite avec le Bundle, qui va nous permettre de faire des requêtes Ajax sur l'API, étant donné que nos deux applications se trouvent sur deux domaines différents :</span></p>
 <pre class="lang:default decode:true">nelmio_cors:
     paths:
@@ -73,9 +73,9 @@ app:
             allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
             max_age: 3600</pre>
 <p><em>Note : Nous avons ici autorisé notre future application Angular2 ainsi que le header "authorization" qui nous servira à nous authentifier. Patience, on y est bientôt :)</em></p>
-<h6><strong>JMSSerializerBundle</strong></h6>
+###### <strong>JMSSerializerBundle</strong>
 <p>Ce bundle va nous permettre de sérialiser les données renvoyées par notre API. Aucune configuration n'est nécessaire dans le cadre de cet article. Nous utiliserons JMSSerializer plus tard, directement dans notre PostController.</p>
-<h6><strong>LexikJWTAuthenticationBundle</strong></h6>
+###### <strong>LexikJWTAuthenticationBundle</strong>
 <p class="p1"><span class="s1">Enfin,  last but not least, le bundle qui va nous servir à sécuriser l'accès à nos données Symfony via un token d'authentification. Je vous laisse lire la <strong><a href="https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#getting-started" target="_blank">documentation</a></strong> officielle qui est très claire. Il vous suffit vraiment de suivre les étapes point par point.</span></p>
 <p><em>Note : J'ai ajouté deux petites lignes sous l'index "form_login" du security.yml de façon à pouvoir envoyer username &amp; password au lieu de _username et _password pour nous authentifier auprès de notre API. Je vous invite à en faire de même :</em></p>
 <pre class="lang:default decode:true">username_parameter: username

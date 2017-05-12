@@ -18,7 +18,7 @@ tags:
 #### Pourquoi j'ai besoin d'un disjoncteur ?
 <p>Pour expliquer l'utilité d'un disjoncteur, un peu d'histoire. C'est Thomas Edison qui apporte l'électricité dans nos foyers en 1879. Peu après la sortie de cette impressionnante invention, de nombreux accidents de surtension, tuent ou blessent de nombreuses personnes. C'est alors que Thomas Edison, et oui toujours lui, invente le disjoncteur : un mécanisme permettant de couper le courant lors d'un surtension avant que celui-ci détruise les éléments du circuit électrique. Aujourd'hui, le disjoncteur est un élément essentiel dans tout circuit électrique, il y a en dans les téléphones, les ordinateurs, les télévisions etc...</p>
 <p>Mais quel parallèle avec notre architecture micro-services ? Il faut se représenter cette architecture comme un circuit électrique : Tous les services peuvent communiquer entre eux. conséquence, si un des services surchauffe, il risque de contaminer les autres. Il ne faut donc plus faire appel à lui. Et c'est ici que le circuit-breaker rentre en action.</p>
-<h6><em>Exemple:</em></h6>
+###### <em>Exemple:</em>
 <p>Un service A fait appel à un service B.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Untitled-drawing-1.png"><img class="aligncenter size-full wp-image-2884" src="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Untitled-drawing-1.png" alt="" width="783" height="296" /></a></p>
 <p>Si le service B tombe ou est ralenti, sans circuit breaker la communication entre le service A et le service B continue.</p>
