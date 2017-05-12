@@ -67,7 +67,7 @@ tags:
 <p>Le <em>scope enfant</em> ainsi que le <em>scope isolé</em> dispose d'un accès au <em>scope parent</em> via sa propriété <em>$parent</em>.</p>
 <p>La grosse différence entre ces deux types de <em>scope</em> est la gestion de <em>l'héritage</em>, ainsi seul un <em>scope enfant</em> hérite via son prototype des données de son <em>scope parent</em>, il est donc inutile d'aller chercher les informations via <em>$parent</em>, à l'inverse d'un <em>scope isolé</em>.</p>
 <p>&nbsp;</p>
-<h5>Céation d'un scope isolé</h5>
+##### Céation d'un scope isolé
 <p>Pour définir un <em>scope isolé</em> il est necessaire de <em>binder</em> ses propriétés :</p>
 <ul>
 <li><em>@</em> : pour un attribut texte.</li>

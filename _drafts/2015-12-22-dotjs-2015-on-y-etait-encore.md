@@ -71,10 +71,10 @@ tags:
 <p style="text-align: center;"><img class="alignnone" src="https://c2.staticflickr.com/6/5725/23359640130_8bff265e02_h.jpg" alt="" width="1600" height="1066" /> <img class="aligncenter" src="http://i.giphy.com/3GCLlNvCg61ji.gif" alt="" width="383" height="221" /></p>
 ## Lightning talks
 <p><span style="font-weight: 400;">Après la pause déjeuner, on reprend en douceur avec une série de “Lightining talks” au format court de 5-10 minutes, dont 2 qui ont particulièrement retenus mon attention :</span></p>
-<h5>**Publishing ES6 modules today** par <a href="https://twitter.com/rmurphey"><i>Laurent Voyer</i></a></h5>
+##### **Publishing ES6 modules today** par <a href="https://twitter.com/rmurphey"><i>Laurent Voyer</i></a>
 <p><span style="font-weight: 400;">Laurent Voyer partage avec nous les meilleurs moyens de publier des modules ES6.</span> <span style="font-weight: 400;">La meilleure solution étant de pusher nos modules sur npm ou sur un CDN (avec une retro-compatibilité ES5). Un peu court de résumer tout cela en 10min, mais le principe mérite cependant qu’on s’y intéresse plus longuement. </span></p>
 <p><a href="http://slides.com/vvo/authoring-and-publishing-es6-modules-today-dotjs-2015">Slides</a></p>
-<h5>**Mobile debugging with VorlonJS** par <a href="https://twitter.com/@meulta"><i>Etienne Margraff</i></a></h5>
+##### **Mobile debugging with VorlonJS** par <a href="https://twitter.com/@meulta"><i>Etienne Margraff</i></a>
 <p><span style="font-weight: 400;">Etienne Margraff nous présente son outil de debug cross browser: VorlonJS</span><br />
 <span style="font-weight: 400;">Après avoir préalablement ajouté un script à notre application, il est possible de debugger depuis une interface VorlonJS à distance. Prometteur.</span> <span style="font-weight: 400;">Prochaine étape, le debug d’application NodeJS.</span></p>
 <p><a href="http://fr.slideshare.net/emargraff/dotjs-lightning-talk-vorlonjs">Slides</a></p>
