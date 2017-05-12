@@ -52,44 +52,44 @@ tags:
 <hr />
 <p><span style="font-weight: 400;">L’événement s’étalant sur toute la journée, voici donc un tour d’horizon rapide des différents talks.</span></p>
 <p><img class="alignnone" src="https://c1.staticflickr.com/1/738/23656479935_b63777fc06_k.jpg" alt="" width="2048" height="919" /></p>
-<h2><b>Modern Async JS</b> par <a href="https://twitter.com/porteneuve"><i>Christophe Porteneuve</i></a></h2>
+<h2>**Modern Async JS** par <a href="https://twitter.com/porteneuve"><i>Christophe Porteneuve</i></a></h2>
 <p><span style="font-weight: 400;">Christophe Porteneuve nous présente ici plusieurs problématiques liées à l’utilisation de callback et du code asynchrone. Le fameux “Callbackhell”, qui comme son nom l’indique, peut vite devenir infernal, autant sur la compréhension que sur la maintenabilité du code.</span> <span style="font-weight: 400;">Celui-ci étant parfois difficile à prendre en main, les générateurs et les promises peuvent déjà nous y aider, en attendant les </span><a href="https://jakearchibald.com/2014/es7-async-functions/"><span style="font-weight: 400;">fonctionnalités await/async d’ES7</span></a>.</p>
 <p><a href="http://tdd.github.io/dotjs-async/">Slides</a></p>
-<h2><b>Hyperdrive: p2p hash sharing tool</b> par <a href="https://twitter.com/mafintosh"><i>Mathias Buus</i></a></h2>
+<h2>**Hyperdrive: p2p hash sharing tool** par <a href="https://twitter.com/mafintosh"><i>Mathias Buus</i></a></h2>
 <p><span style="font-weight: 400;">Mathias Buus, gros contributeur sur npm (Pas loin de 400 modules !), nous présente son dernier module: Hyperdrive. Un module de partage de données via navigateur avec un système de hashage comme l’utilise git.</span></p>
 <p><span style="font-weight: 400;">Dépôt Github du projet : </span><a href="https://github.com/mafintosh/hyperdrive"><span style="font-weight: 400;">https://github.com/mafintosh/hyperdrive</span></a></p>
 <p><a href="https://github.com/mafintosh/slides/blob/gh-pages/dotjs-2015/README.md">Slides</a></p>
-<h2><b>Dealing with garbage</b> par <a href="https://twitter.com/samccone"><i>Samuel Saccone</i></a></h2>
+<h2>**Dealing with garbage** par <a href="https://twitter.com/samccone"><i>Samuel Saccone</i></a></h2>
 <p><span style="font-weight: 400;">Samuel Saccone, développeur chez Google, aborde ensuite le sujet épineux des fuites mémoire et des performances (Illustré par quelques screenshots assez sympathiques).</span> <span style="font-weight: 400;">S’en suit une démonstration de l’utilisation de la console Chrome poussée, afin de détecter/fixer ces problèmes.</span> <span style="font-weight: 400;">Puis de la présentation de son outil de détection de fuite mémoire: </span><span style="font-weight: 400;"><a href="https://github.com/samccone/drool">Drool</a>.</span></p>
 <p><span style="font-weight: 400;">Présentation drôle et très bien animée pour un sujet pas super passionnant de premier abord.</span></p>
 <p><a href="https://docs.google.com/presentation/d/1uom69F6NGURHhrox1Ma50NW1nOKqdxRr0dKDNENwi6Y/edit#slide=id.gd530a4dd9_0_54">Slides</a></p>
 <p><span style="font-weight: 400;">À lire également, une présentation très intéressante d’Addy Osmani sur l’utilisation de la console Chrome </span><span style="font-weight: 400;"><a href="http://addyosmani.com/blog/chrome-devtools-deepdive/">ici</a>.</span></p>
-<h2><b>HTTP/2 is here, now let's make it easy</b> par <a href="https://twitter.com/rmurphey"><i>Rebecca Murphy</i></a></h2>
+<h2>**HTTP/2 is here, now let's make it easy** par <a href="https://twitter.com/rmurphey"><i>Rebecca Murphy</i></a></h2>
 <p><span style="font-weight: 400;">Constat sur HTTP/2 aujourd’hui: Ça à l’air cool, mais on ne s’en sert pas.</span> <span style="font-weight: 400;">Le principal problème étant la compatibilité des serveurs/hébergeurs/navigateurs, qui ne facilitent pas son utilisation pour le moment.</span>   <span style="font-weight: 400;">J’avoue ne pas avoir compris la totalité de la présentation. Si vous en savez plus, je suis preneur ;)</span></p>
 <p><a href="https://speakerdeck.com/rmurphey/2-is-here-now-lets-make-it-easy">Slides</a></p>
-<p style="text-align: center;"><b>LUNCH BREAK !</b></p>
+<p style="text-align: center;">**LUNCH BREAK !**</p>
 <p style="text-align: center;"><img class="alignnone" src="https://c2.staticflickr.com/6/5725/23359640130_8bff265e02_h.jpg" alt="" width="1600" height="1066" /> <img class="aligncenter" src="http://i.giphy.com/3GCLlNvCg61ji.gif" alt="" width="383" height="221" /></p>
 <h2>Lightning talks</h2>
 <p><span style="font-weight: 400;">Après la pause déjeuner, on reprend en douceur avec une série de “Lightining talks” au format court de 5-10 minutes, dont 2 qui ont particulièrement retenus mon attention :</span></p>
-<h5><b>Publishing ES6 modules today</b> par <a href="https://twitter.com/rmurphey"><i>Laurent Voyer</i></a></h5>
+<h5>**Publishing ES6 modules today** par <a href="https://twitter.com/rmurphey"><i>Laurent Voyer</i></a></h5>
 <p><span style="font-weight: 400;">Laurent Voyer partage avec nous les meilleurs moyens de publier des modules ES6.</span> <span style="font-weight: 400;">La meilleure solution étant de pusher nos modules sur npm ou sur un CDN (avec une retro-compatibilité ES5). Un peu court de résumer tout cela en 10min, mais le principe mérite cependant qu’on s’y intéresse plus longuement. </span></p>
 <p><a href="http://slides.com/vvo/authoring-and-publishing-es6-modules-today-dotjs-2015">Slides</a></p>
-<h5><b>Mobile debugging with VorlonJS</b> par <a href="https://twitter.com/@meulta"><i>Etienne Margraff</i></a></h5>
+<h5>**Mobile debugging with VorlonJS** par <a href="https://twitter.com/@meulta"><i>Etienne Margraff</i></a></h5>
 <p><span style="font-weight: 400;">Etienne Margraff nous présente son outil de debug cross browser: VorlonJS</span><br />
 <span style="font-weight: 400;">Après avoir préalablement ajouté un script à notre application, il est possible de debugger depuis une interface VorlonJS à distance. Prometteur.</span> <span style="font-weight: 400;">Prochaine étape, le debug d’application NodeJS.</span></p>
 <p><a href="http://fr.slideshare.net/emargraff/dotjs-lightning-talk-vorlonjs">Slides</a></p>
-<h2><b>Practical ES6</b> par <a href="https://twitter.com/nzgb"><i>Nicolas Bevacqua</i></a></h2>
+<h2>**Practical ES6** par <a href="https://twitter.com/nzgb"><i>Nicolas Bevacqua</i></a></h2>
 <p><span style="font-weight: 400;">Tour d’horizon sur les fondamentaux de ES6, avec une liste d’exemples expliqués de la nouvelle mouture d’EcmaScript.</span> <span style="font-weight: 400;">Rien de vraiment nouveau mais une piqûre de rappel nécessaire, détaillée dans </span><a href="https://ponyfoo.com/articles/es6"><span style="font-weight: 400;">son article</span></a><span style="font-weight: 400;">.</span><br />
 <span style="font-weight: 400;">Si vous souhaitez d’ores et déjà utilisez ES6 dans vos projets, des outils comme Babel vous aideront à prendre en main la nouvelle syntaxe le temps de sa mise en place progressive.</span></p>
 <p><a href="https://speakerdeck.com/bevacqua/practical-es6-for-the-modern-javascript-tinkerer">Slides</a></p>
-<h2><b>Reactive Javascript</b> par <a href="https://twitter.com/andrestaltz"><i>André Staltz</i></a></h2>
+<h2>**Reactive Javascript** par <a href="https://twitter.com/andrestaltz"><i>André Staltz</i></a></h2>
 <p><span style="font-weight: 400;">Sans doute l’une des présentations les plus intéressantes de la journée.<br />
 André Staltz y présente de manière très simple et précise la programmation reactive au travers de </span><a href="https://github.com/Reactive-Extensions/RxJS"><span style="font-weight: 400;">RxJS</span></a><span style="font-weight: 400;">. Ne connaissant pas le sujet, j’ai trouvé l’approche claire et les exemples particulièrement parlants, notamment le cycle de vie de deux variables liées et comment l’une affecterait l’autre, via la fonctionnalité “Observable”, sorte de promise améliorée.</span><br />
 <span style="font-weight: 400;">Je vous incite vivement à regarder tout cela de plus près.</span><br />
 <span style="font-weight: 400;">Une introduction est disponible </span><a href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754"><span style="font-weight: 400;">ici</span></a><span style="font-weight: 400;"> et quelques vidéos </span><a href="https://egghead.io/series/introduction-to-reactive-programming"><span style="font-weight: 400;">ici</span></a><span style="font-weight: 400;">, afin d’approfondir le sujet.</span></p>
 <p><span style="font-weight: 400;">Pendant ce temps-là, Wilson se promène un peu.</span></p>
 <blockquote class="twitter-tweet" lang="fr"><p>Just made a new friend from <a href="https://twitter.com/Eleven_Labs">@Eleven_Labs</a> <a href="https://twitter.com/hashtag/dotJS?src=hash">#dotJS</a> <a href="https://t.co/dV5PjBm0qA">pic.twitter.com/dV5PjBm0qA</a> — Adrien Trauth (@Nioufe) <a href="https://twitter.com/Nioufe/status/673788757640921088">7 Décembre 2015</a></p></blockquote>
-<h2><b>WebRTC</b> par <a href="https://twitter.com/contrahacks"><i>Eric Schoffstall</i></a></h2>
+<h2>**WebRTC** par <a href="https://twitter.com/contrahacks"><i>Eric Schoffstall</i></a></h2>
 <p><span style="font-weight: 400;">WebRTC est en passe de devenir un nouveau standard pour tout ce qui est connexion peer-to-peer entre navigateurs sans passer par un serveur, celui-ci étant assez attendu par la communauté vu les possibilités qu’il propose (Communication par voix ou vidéo par exemple). Cependant, seuls Chrome, Firefox et Opera proposent cette implémentation (</span><a href="http://caniuse.com/#search=webrtc"><span style="font-weight: 400;">Voir en détails</span></a><span style="font-weight: 400;">).</span><br />
 <span style="font-weight: 400;">Après avoir travaillé sur la compatibilité sur chaque navigateur (y compris IE9 et mobile) et en regroupant les différentes solutions apportées sur chacune des plateformes, Eric annonce la création de sa nouvelle librairie </span><a href="https://github.com/contra/rtc-everywhere"><span style="font-weight: 400;">rtc-everywhere</span></a><span style="font-weight: 400;">. Magique !</span></p>
 <blockquote class="twitter-tweet" lang="fr">
@@ -97,19 +97,19 @@ André Staltz y présente de manière très simple et précise la programmation 
 <p>— ChristophePorteneuve (@porteneuve) <a href="https://twitter.com/porteneuve/status/673876828663230465">7 Décembre 2015</a></p></blockquote>
 <p><span style="font-weight: 400;">En bonus: Eric postule également au poste de maire de San Francisco...</span></p>
 <p><img class="aligncenter" src="http://i.giphy.com/KTHFxuEtrVoGI.gif" alt="" width="453" height="243" /></p>
-<h2><b>Jade &gt; Pug</b> par <a href="https://twitter.com/forbeslindesay"><i>Forbes Lindesay</i></a></h2>
+<h2>**Jade &gt; Pug** par <a href="https://twitter.com/forbeslindesay"><i>Forbes Lindesay</i></a></h2>
 <p><span style="font-weight: 400;">Forbes Lindesay, développeur chez Facebook, nous présente le fonctionnement de son moteur de template HTML “Jade” (Renommé “Pug” pour des questions légales, il me semble). Nous utilisons aujourd’hui de plus en plus ce genre d’outils appelé “transpiler”, notamment Babel ou CoffeeScript, et il est toujours intéressant de comprendre comment ce genre de parser fonctionne. </span> <span style="font-weight: 400;">Il est également possible de créer ses propres plugins avec un système de pipe, une bonne nouvelle pour ceux qui l’utilisent.</span></p>
-<h2><b>Teaching Kids to Code</b> par <a href="https://twitter.com/creationix"><i>Tim Caswell et son fils de 9 ans</i></a></h2>
+<h2>**Teaching Kids to Code** par <a href="https://twitter.com/creationix"><i>Tim Caswell et son fils de 9 ans</i></a></h2>
 <p><span style="font-weight: 400;">Présentation amusante du développement pour plus jeunes, et sur ce qui est possible en dehors d’un navigateur web.</span></p>
 <p><a href="https://gist.github.com/creationix/507719a418be365c7631">Slides</a></p>
-<h2><b>Pocked sized JS</b> par <a href="https://twitter.com/HenrikJoreteg"><i>Henrik Joreteg</i></a></h2>
+<h2>**Pocked sized JS** par <a href="https://twitter.com/HenrikJoreteg"><i>Henrik Joreteg</i></a></h2>
 <p><span style="font-weight: 400;">Dans un contexte de plus en plus “Mobile-first”, Henrik Joreteg nous incite ici vivement à penser “Mobile everywhere”. Les performances de nos devices et la qualité de notre connexion lorsque nous développons nos applications n’étant pas forcement identiques à celles de l’utilisateur final.</span></p>
 <blockquote class="twitter-tweet" lang="fr"><p>if you want to write fast software, use a slow computer</p>
 <p>— Dominic Tarr (@dominictarr) <a href="https://twitter.com/dominictarr/status/629992939738005504">8 Août 2015</a></p></blockquote>
 <p><span style="font-weight: 400;">Une présentation plus théorique que technique mais certainement pas moins intéressante, qui remet en question notre façon de concevoir nos applications afin de rendre l’expérience utilisateur la plus agréable possible. </span><br />
 <span style="font-weight: 400;">Je vous incite vivement à voir sa présentation, une très bonne surprise !</span></p>
 <p><a href="https://slides.joreteg.com/dotjs/">Slides</a></p>
-<h2><b>No title</b> par <a href="https://twitter.com/brendaneich"><i>Brendan Eich</i></a></h2>
+<h2>**No title** par <a href="https://twitter.com/brendaneich"><i>Brendan Eich</i></a></h2>
 <p><span style="font-weight: 400;">Enfin pour terminer la journée en beauté, Brendan Eich, le créateur de Javascript. A vrai dire, il était assez compliqué de suivre, tellement les sujets étaient nombreux: FirefoxOS, Tizen, asm.js... </span><br />
 <span style="font-weight: 400;">S’en suivit une petite démonstration de jeux Facebook développés en Javascript (Notamment un avec des poulets tueurs de zombies…), le résultat est assez impressionnant par sa fluidité.<br />
 J’attendais un peu plus de cette présentation cependant.</span></p>

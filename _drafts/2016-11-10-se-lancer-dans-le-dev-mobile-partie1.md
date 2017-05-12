@@ -49,11 +49,11 @@ ionic build ios
 ionic emulate ios</pre>
 <p><span style="font-weight: 400;">En 4 lignes de commandes, vous venez de builder votre application sous iOS.</span></p>
 <p><span style="font-weight: 400;">L’un des gros avantages de Ionic est qu’il fournit des composants tout prêts, ce qui permet encore une fois de faire des applications de manière rapide.</span></p>
-<p><b>Exemple de spinner :</b></p>
+<p>**Exemple de spinner :**</p>
 <pre class="lang:default decode:true">&lt;ion-spinner&gt;&lt;/ion-spinner&gt;</pre>
 <p><span style="font-weight: 400;">J’ai eu l’occasion de développer quelques applications sous Ionic et je dois dire que cet aspect composant m’a énormément servi. <a href="http://ionicframework.com/docs/">La </a></span><span style="font-weight: 400;">documentation</span><span style="font-weight: 400;"> expose tous les composants mis à disposition par Ionic.</span></p>
 <p><span style="font-weight: 400;">Comme mentionné plus haut, Ionic se base aussi sur Cordova pour interagir sur les composants natifs de l’appareil. Il vous permet, via des plugins, d’utiliser la géolocalisation, l’appareil photo, etc…</span></p>
-<p><b>E</b><b>xemple de commande afin d’ajouter le plugin caméra :</b></p>
+<p>**E****xemple de commande afin d’ajouter le plugin caméra :**</p>
 <pre class="lang:sh decode:true">ionic plugin add cordova-plugin-camera</pre>
 <p><span style="font-weight: 400;">Mais Ionic dispose de points faibles :</span></p>
 <ul>
@@ -66,13 +66,13 @@ ionic emulate ios</pre>
 </ul>
 <p style="text-align: center;"><em><span style="font-weight: 400;">Tableau compatibilité sous Cordova :</span></em></p>
 <p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/platform-support.png"><img class="alignnone size-medium wp-image-2490" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/platform-support-300x232.png" alt="platform-support" width="300" height="232" /></a></p>
-<p><span style="text-decoration: underline;"><b>Conclusion :</b></span></p>
-<p><b>Ionic est un super moyen de faire des applications rapides et petites. Mais dès lors que vous voulez agrandir vos fonctionnalités ou avoir des performances correctes, il montre les dents. Je n’ai pas testé la version 2 mais je sais qu’ils ont améliorés quelques points.</b></p>
+<p><span style="text-decoration: underline;">**Conclusion :**</span></p>
+<p>**Ionic est un super moyen de faire des applications rapides et petites. Mais dès lors que vous voulez agrandir vos fonctionnalités ou avoir des performances correctes, il montre les dents. Je n’ai pas testé la version 2 mais je sais qu’ils ont améliorés quelques points.**</p>
 <p>&nbsp;</p>
-<h3 style="text-align: left;"> <b>React Native :</b></h3>
+<h3 style="text-align: left;"> **React Native :**</h3>
 <p><span style="font-weight: 400;">Comme son nom l’indique, React Native est une déclinaison de React (propulsée par Facebook en 2015). Le but de React Native est de pouvoir réutiliser le maximum de code entre les différentes plateformes.</span></p>
 <p style="text-align: left;"><span style="font-weight: 400;">L'écriture en Javascript permet aux développeurs web de construire une application mobile native, contrairement à Cordova qui encapsule l'application dans une WebView.</span></p>
-<p><b>Comment ça marche ?</b></p>
+<p>**Comment ça marche ?**</p>
 <p><span style="font-weight: 400;">Grâce à un moteur Javascript exécuté en asynchrone sur un thread séparé, le développeur pilote une UI native avec un code Javascript. La techno évite ainsi les compromis habituels des applications natives, tout en produisant une expérience utilisateur optimale, puisque native.</span></p>
 <p><i><span style="font-weight: 400;">Conseil </span></i><span style="font-weight: 400;">:</span></p>
 <p><span style="font-weight: 400;">Avant de vous lancer sur React Native, je vous conseille de commencer par un peu de React. Vous pouvez consulter <a href="https://www.youtube.com/watch?v=WbUO00hrjiE">la vidéo</a> d’une conférence que j’ai faite qui vous explique les bases de React avec un exemple plutôt intéressant et complet. </span></p>
@@ -93,17 +93,17 @@ ionic emulate ios</pre>
 <li><span style="font-weight: 400;">Il propose pas mal de composants mais si vous désirez avoir un comportement / une fonctionnalité qui demande de toucher à l’API native (tel que le Speech Recognition, dernière nouveauté d’IOS 10) et qui n’est pas encore développé par quelqu’un, il va falloir le développer en natif, ce qui implique d’avoir des connaissances dans les langages appropriés ;</span></li>
 <li><span style="font-weight: 400;">L’installation de l'émulateur pour Android sur Mac qui demande plus de temps et de patience.</span></li>
 </ul>
-<p><b>Conclusion :</b></p>
-<p><b>React Native semble l’approche idéale pour faire des applications de tous types. Cependant, il faudra noter que son jeune âge lui fait défaut car il ne dispose pas encore de la maturité nécessaire afin de développer de grosses applications qui nécessitent des traitements particuliers. Mais je vous conseille de suivre de près son évolution.</b></p>
+<p>**Conclusion :**</p>
+<p>**React Native semble l’approche idéale pour faire des applications de tous types. Cependant, il faudra noter que son jeune âge lui fait défaut car il ne dispose pas encore de la maturité nécessaire afin de développer de grosses applications qui nécessitent des traitements particuliers. Mais je vous conseille de suivre de près son évolution.**</p>
 <h3></h3>
-<h3><b>Natif :</b></h3>
+<h3>**Natif :**</h3>
 <p><span style="font-weight: 400;">Bien évidement pour faire une application il n’y a rien de mieux que le natif. </span></p>
 <p><span style="font-weight: 400;">Pourquoi ? Car il n’y a pas de contraintes dues à la technologie. Il n’y a pas de problèmes lors des mises à jour de l’OS. L’expérience utilisateur est forcément meilleure et les perfs sont au rendez-vous (si l’app est bien codée *troll*), bref c’est le top !</span></p>
 <p><span style="font-weight: 400;">Du coup, depuis peu je me suis dit : “Astronaute, c’est une mission pour toi !”</span></p>
 <p><span style="font-weight: 400;">Alors d’abord la première chose sur laquelle j’ai dû trancher c’est sur le langage.</span></p>
 <p><span style="font-weight: 400;">Et oui, le natif c’est super mais il faut connaître 2 langages si on souhaite faire une application multiplateformes. Mon choix s’est porté sur iOS pour des raisons pratiques. Je dispose d’un Mac et d’un iPhone (ok je suis un peu Apple boy *troll*).</span></p>
-<p><b>Objective-C /  Swift : Que choisir ?</b></p>
-<p><b>Petit point histoire :</b></p>
+<p>**Objective-C /  Swift : Que choisir ?**</p>
+<p>**Petit point histoire :**</p>
 <p><span style="font-weight: 400;">Il existe 2 langages pour développer sur iOS. Le premier est l’Objective-C.</span></p>
 <p><span style="font-weight: 400;">C'est une extension du C ANSI, comme le C++, mais qui se distingue de ce dernier par sa distribution dynamique des messages, son typage… .Il est basé sur la bibliothèque de classes Cocoa et </span><span style="font-weight: 400;">utilisé dans les systèmes d'exploitation tels que NeXTSTEP.</span></p>
 <p><span style="font-weight: 400;">En 2014, lors de la conf WWDC, Apple présente un nouveau langage nommé Swift destiné à la programmation d'applications sur les systèmes d'exploitation iOS, macOS, watchOS et tvOS.</span></p>
@@ -117,6 +117,6 @@ ionic emulate ios</pre>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Si vous souhaitez pousser un peu le swift c’est mieux d’avoir fait un peu d’Objective-c avant ;</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">La réalité prend le dessus. En effet vous allez être amené peut-être à travailler sur un projet qui dispose déjà d’une ancienne application mobile et par conséquent celle-ci est faite en Objective-C. C’est pourquoi vous pouvez constater que sur certaines offres d’emploi il est souvent mentionné Objective-C. Ne vous affolez pas, généralement, c’est pour comprendre le code existant afin de migrer vers la nouvelle appli qui elle est faite en Swift.</span></li>
 </ol>
-<p><b>Conclusion :</b></p>
-<p><b>Le natif permet d’avoir un meilleur rendu final. </b><b>Cependant, il demande plus d'investissement car il convient d’apprendre un à plusieurs langages afin de publier une app sur plusieurs plateformes.</b></p>
+<p>**Conclusion :**</p>
+<p>**Le natif permet d’avoir un meilleur rendu final. ****Cependant, il demande plus d'investissement car il convient d’apprendre un à plusieurs langages afin de publier une app sur plusieurs plateformes.**</p>
 {% endraw %}

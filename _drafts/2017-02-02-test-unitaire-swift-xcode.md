@@ -21,11 +21,11 @@ tags: []
 <li style="font-weight: 400;"><span style="font-weight: 400;">Garantir une non-régression de votre code ;</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Se rendre compte que son code est trop long et compliqué, ce qui entraîne une refacto.</span></li>
 </ul>
-<p><span style="font-weight: 400;">En général, un test se décompose en trois parties, suivant le schéma « </span><b>AAA</b><span style="font-weight: 400;"> », qui correspond aux mots anglais « Arrange, Act, Assert », que l’on peut traduire en français par Arranger, Agir, Auditer.</span></p>
+<p><span style="font-weight: 400;">En général, un test se décompose en trois parties, suivant le schéma « </span>**AAA**<span style="font-weight: 400;"> », qui correspond aux mots anglais « Arrange, Act, Assert », que l’on peut traduire en français par Arranger, Agir, Auditer.</span></p>
 <ul>
-<li style="font-weight: 400;"><b>Arranger</b><span style="font-weight: 400;"> : Il s’agit dans un premier temps de définir les objets, les variables nécessaires au bon fonctionnement de son test (initialiser les variables, initialiser les objets à passer en paramètres de la méthode à tester, etc.) ;</span></li>
-<li style="font-weight: 400;"><b>Agir</b><span style="font-weight: 400;"> : Il s’agit d’exécuter l’action que l’on souhaite tester (en général, exécuter la méthode que l’on veut tester, etc.) ;</span></li>
-<li style="font-weight: 400;"><b>Auditer</b><span style="font-weight: 400;"> : Vérifier que le résultat obtenu est conforme à nos attentes.</span></li>
+<li style="font-weight: 400;">**Arranger**<span style="font-weight: 400;"> : Il s’agit dans un premier temps de définir les objets, les variables nécessaires au bon fonctionnement de son test (initialiser les variables, initialiser les objets à passer en paramètres de la méthode à tester, etc.) ;</span></li>
+<li style="font-weight: 400;">**Agir**<span style="font-weight: 400;"> : Il s’agit d’exécuter l’action que l’on souhaite tester (en général, exécuter la méthode que l’on veut tester, etc.) ;</span></li>
+<li style="font-weight: 400;">**Auditer**<span style="font-weight: 400;"> : Vérifier que le résultat obtenu est conforme à nos attentes.</span></li>
 </ul>
 <p><span style="font-weight: 400;">Bon ça c'est la théorie, passons un peu à la pratique.</span></p>
 <p><span style="font-weight: 400;">Sur Xcode, pour effectuer des tests, nous utiliserons le framework fournit par Apple qui s’appel XCTest.</span></p>
@@ -51,10 +51,10 @@ struct Astronaute {
 <p><span style="font-weight: 400;">Comme vous pouvez le constater, un Astronaute a obligatoirement un nom, un grade et un sexe mais n’a pas forcément de planète (c’est pas bien ça !).</span></p>
 <p><span style="font-weight: 400;">On vient de créer cette structure donc le bon réflexe à prendre c’est de la tester tout de suite.</span></p>
 <p><span style="font-weight: 400;">Alors commentkonfé ?</span></p>
-<p><span style="font-weight: 400;">Lorsque vous créez un projet, généralement Xcode vous demande si vous désirez ajouter des units tests (checkbox). Si vous avez coché cette case alors vous avez un dossier finissant par </span><b>Tests </b><span style="font-weight: 400;">qui s'est créé à la racine. Supprimez le fichier généré dedans et créez un dossier Model afin de respecter l’architecture mise en place (c’est dans les bonnes pratiques).</span><br />
+<p><span style="font-weight: 400;">Lorsque vous créez un projet, généralement Xcode vous demande si vous désirez ajouter des units tests (checkbox). Si vous avez coché cette case alors vous avez un dossier finissant par </span>**Tests **<span style="font-weight: 400;">qui s'est créé à la racine. Supprimez le fichier généré dedans et créez un dossier Model afin de respecter l’architecture mise en place (c’est dans les bonnes pratiques).</span><br />
 <span style="font-weight: 400;">Une fois cette étape terminée, faites clique droit sur le dossier &gt; New File et sélectionnez Unit Test Case Class. </span></p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-16-à-23.18.39.png"><img class="size-medium wp-image-3219 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-16-à-23.18.39-300x211.png" alt="" width="300" height="211" /></a></p>
-<p><span style="font-weight: 400;">Le nommage de la classe doit obligatoirement finir par Tests, soit dans notre cas </span><b>AstronauteTests</b><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Le nommage de la classe doit obligatoirement finir par Tests, soit dans notre cas </span>**AstronauteTests**<span style="font-weight: 400;">.</span></p>
 <p><span style="font-weight: 400;">Nous allons maintenant nous attarder sur la classe générée afin de vous expliquer la base.</span></p>
 <pre class="lang:swift decode:true">import XCTest
 
@@ -80,10 +80,10 @@ class AstronauteTests: XCTestCase {
 <p><span style="font-weight: 400;">La première chose à noter est qu’on importe XCTest. Comme vous vous en doutez, ceci permet d’avoir accès au framework XCTest.</span></p>
 <p><span style="font-weight: 400;">Ensuite nous avons plusieurs méthodes que nous allons voir en détail :</span></p>
 <ul>
-<li style="font-weight: 400;"><b>setUp()</b><span style="font-weight: 400;">. Cette méthode est appelée avant chaque invocation de chaque méthode de test écrit dans la classe. Pour ceux ou celles qui font des tests avec phpunit vous avez sûrement reconnu cette méthode ;</span></li>
-<li style="font-weight: 400;"><b>tearDown()</b><span style="font-weight: 400;">. Cette méthode est appelée après l’invocation de chaque méthode de tests écrits dans la classe ;</span></li>
-<li style="font-weight: 400;"><b>testExample()</b><span style="font-weight: 400;">. Méthode créée par défaut par Xcode. Il est important de savoir que chaque méthode de test que vous allez créer doit absolument être préfixée par </span><b>test </b>;</li>
-<li style="font-weight: 400;"><b>testPerformanceExample()</b><span style="font-weight: 400;">. Méthode créée par défaut par Xcode. Dans celle-ci, Xcode nous montre que nous pouvons aussi faire un test de performance. Tester la perfomance de votre code permet de s’assurer que les algorithmes les plus importants qui demandent un traitement particulier restent performants avec le temps.</span></li>
+<li style="font-weight: 400;">**setUp()**<span style="font-weight: 400;">. Cette méthode est appelée avant chaque invocation de chaque méthode de test écrit dans la classe. Pour ceux ou celles qui font des tests avec phpunit vous avez sûrement reconnu cette méthode ;</span></li>
+<li style="font-weight: 400;">**tearDown()**<span style="font-weight: 400;">. Cette méthode est appelée après l’invocation de chaque méthode de tests écrits dans la classe ;</span></li>
+<li style="font-weight: 400;">**testExample()**<span style="font-weight: 400;">. Méthode créée par défaut par Xcode. Il est important de savoir que chaque méthode de test que vous allez créer doit absolument être préfixée par </span>**test **;</li>
+<li style="font-weight: 400;">**testPerformanceExample()**<span style="font-weight: 400;">. Méthode créée par défaut par Xcode. Dans celle-ci, Xcode nous montre que nous pouvons aussi faire un test de performance. Tester la perfomance de votre code permet de s’assurer que les algorithmes les plus importants qui demandent un traitement particulier restent performants avec le temps.</span></li>
 </ul>
 <pre class="lang:swift decode:true">import XCTest
 @testable import tuto_xctest
@@ -100,13 +100,13 @@ class AstronauteTests: XCTestCase {
 }</pre>
 <p><span style="font-weight: 400;">Rien ne vous choque ? J’ai ajouté un @testable import {nomDeMonProjet}. </span></p>
 <p><span style="font-weight: 400;">En effet, sur chaque classe de test que vous allez créer, vous devrez ajouter ceci afin d’autoriser l’accès au AppDelegate notamment mais aussi à l’ensemble des classes et méthodes créées dans votre application. Cependant, @testable donne accès seulement aux méthodes dites internes et non aux méthodes privées.</span></p>
-<p><span style="font-weight: 400;">Nous allons créer notre première méthode de test. Pour ceci, nous allons tester que notre structure Astronaute initialise bien les valeurs qu'on lui passe. C'est pourquoi, nous allons créer la méthode </span><b>testInitAstronaute</b><span style="font-weight: 400;"> (bien évidemment la bonne pratique est de donner un nom qui indique ce qu’on souhaite tester et son nom doit être en camelCase).</span></p>
+<p><span style="font-weight: 400;">Nous allons créer notre première méthode de test. Pour ceci, nous allons tester que notre structure Astronaute initialise bien les valeurs qu'on lui passe. C'est pourquoi, nous allons créer la méthode </span>**testInitAstronaute**<span style="font-weight: 400;"> (bien évidemment la bonne pratique est de donner un nom qui indique ce qu’on souhaite tester et son nom doit être en camelCase).</span></p>
 <p><span style="font-weight: 400;">Dans cette méthode, nous initialisons dans une constante astronaute la structure Astronaute avec les paramètres obligatoires.</span></p>
 <p><span style="font-weight: 400;">Pour tester que nos valeurs sont bien passées à la structure, il n’y a rien de plus simple.</span></p>
-<p><span style="font-weight: 400;">Nous allons utiliser une méthode fournie par le framework XCTest. Dans notre cas, nous testerons l’égalité entre deux valeurs et nous nous servirons de la méthode </span><b>XCTAssertEqual</b><span style="font-weight: 400;"> (la notion d’assert a déjà été vue plus haut) qui prend plusieurs arguments.</span></p>
+<p><span style="font-weight: 400;">Nous allons utiliser une méthode fournie par le framework XCTest. Dans notre cas, nous testerons l’égalité entre deux valeurs et nous nous servirons de la méthode </span>**XCTAssertEqual**<span style="font-weight: 400;"> (la notion d’assert a déjà été vue plus haut) qui prend plusieurs arguments.</span></p>
 <ol>
-<li style="font-weight: 400;"><span style="font-weight: 400;">expression1 </span><b>: </b><span style="font-weight: 400;">Une expression de type scalaire C ;</span></li>
-<li style="font-weight: 400;"><span style="font-weight: 400;">expression2 </span><b>: </b><span style="font-weight: 400;">Une expression de type scalaire C ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">expression1 </span>**: **<span style="font-weight: 400;">Une expression de type scalaire C ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">expression2 </span>**: **<span style="font-weight: 400;">Une expression de type scalaire C ;</span></li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">…: Une description optionnelle lors d’un échec. Cette description doit être typée en String.</span></li>
 </ol>
 <p><span style="font-weight: 400;">Cette méthode génère un échec lorsque expression1 != expression2.</span></p>
@@ -118,7 +118,7 @@ class AstronauteTests: XCTestCase {
 <li style="font-weight: 400;"><span style="font-weight: 400;">Même procédure que la solution 2 mais seulement sur la méthode que vous souhaitez tester.</span></li>
 </ol>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-17-à-23.46.10.png"><img class="size-medium wp-image-3232 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-17-à-23.46.10-300x70.png" alt="" width="300" height="70" /></a></p>
-<p><span style="font-weight: 400;">Pour finir notre test, nous allons rajouter la méthode </span><b>testInitAstronuateWithPlanet </b><span style="font-weight: 400;">qui va tester l’initialisation d’un astronaute avec une planète (oui j’aime bien mettre des noms en rapport avec Star Wars :) ).</span></p>
+<p><span style="font-weight: 400;">Pour finir notre test, nous allons rajouter la méthode </span>**testInitAstronuateWithPlanet **<span style="font-weight: 400;">qui va tester l’initialisation d’un astronaute avec une planète (oui j’aime bien mettre des noms en rapport avec Star Wars :) ).</span></p>
 <pre class="lang:swift decode:true">func testInitAstronuateWithPlanet() {
   let astronaute = Astronaute(name: "Skywalker", grade: "Jedi", sex: "Male", planet: "Tatooine")
 

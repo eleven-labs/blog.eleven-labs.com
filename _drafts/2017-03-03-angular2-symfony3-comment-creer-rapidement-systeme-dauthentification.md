@@ -236,7 +236,7 @@ class PostController extends FOSRestController implements ClassResourceInterface
 <pre class="lang:default decode:true">cd api-lab &amp;&amp; ng serve</pre>
 <p>Maintenant que notre application est lancée, vous pouvez vous rendre sur l'url indiquée dans votre console pour accéder à votre application :</p>
 <pre class="lang:default decode:true">http://localhost:4200</pre>
-<p>Vous devriez alors voir apparaître : <b>app works!</b></p>
+<p>Vous devriez alors voir apparaître : **app works!**</p>
 <h5>2.2 Création des différents composants</h5>
 <p>Nous allons ensuite générer trois composants principaux supplémentaires :</p>
 <ul>

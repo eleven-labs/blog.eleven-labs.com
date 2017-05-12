@@ -14,12 +14,12 @@ tags:
 - Chiffrement
 ---
 {% raw %}
-<h4><b>Record protocol</b></h4>
+<h4>**Record protocol**</h4>
 <p><span style="font-weight: 400;">Ce protocole a pour buts :</span></p>
 <ul>
-<li style="font-weight: 400;"><b>Encapsulation</b><span style="font-weight: 400;"> - permet aux données SSL / TLS d'être transmises et reconnues sous une forme homogène ;</span></li>
-<li style="font-weight: 400;"><b>Confidentialité</b><span style="font-weight: 400;"> - assure que le contenu du message ne peut pas être lu par un tiers : les données sont chiffrées en utilisant les clés produites lors de la négociation ;</span></li>
-<li style="font-weight: 400;"><b>Intégrité et Identité</b><span style="font-weight: 400;"> - permet de vérifier la validité des données transmises, grâce aux signatures HMAC : cette signature est elle aussi générée à l'aide des clés produites lors de la négociation.</span></li>
+<li style="font-weight: 400;">**Encapsulation**<span style="font-weight: 400;"> - permet aux données SSL / TLS d'être transmises et reconnues sous une forme homogène ;</span></li>
+<li style="font-weight: 400;">**Confidentialité**<span style="font-weight: 400;"> - assure que le contenu du message ne peut pas être lu par un tiers : les données sont chiffrées en utilisant les clés produites lors de la négociation ;</span></li>
+<li style="font-weight: 400;">**Intégrité et Identité**<span style="font-weight: 400;"> - permet de vérifier la validité des données transmises, grâce aux signatures HMAC : cette signature est elle aussi générée à l'aide des clés produites lors de la négociation.</span></li>
 </ul>
 <p><span style="font-weight: 400;">Voici en détail comment se déroule le record protocole :</span></p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/12/ssl_intro_fig3.jpg"><img class="size-medium wp-image-2995 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/12/ssl_intro_fig3-300x229.jpg" alt="" width="300" height="229" /></a></p>
@@ -60,13 +60,13 @@ tags:
 <li style="font-weight: 400;"><span style="font-weight: 400;">Ré-assemblage des parties</span></li>
 </ol>
 <p><span style="font-weight: 400;">Si ça se passe mal au cours de ces vérifications, alors une alarme est générée.</span></p>
-<h4><b>Outils:</b></h4>
-<p><b>OpenSSL:</b></p>
+<h4>**Outils:**</h4>
+<p>**OpenSSL:**</p>
 <p><span style="font-weight: 400;">Implémenté en C, OpenSSL est une boîte à outils de chiffrement comportant deux bibliothèques (une de cryptographie générale et une qui implémente le protocole SSL), ainsi qu'une commande en ligne. OpenSSL est distribué sous une licence de type Apache.</span></p>
-<p><b>GnuTLS:</b></p>
+<p>**GnuTLS:**</p>
 <p><span style="font-weight: 400;">Le projet GnuTLS propose une implémentation du protocole TLS conforme aux spécifications de l'IETF. Il permet l'authentification via les certificats X509 et PGP. À la différence d'OpenSSL, GnuTLS est compatible avec les licences GPL.</span></p>
 <p><span style="font-weight: 400;">Si vous souhaitez tester votre certificat, vous pouvez utiliser </span><a href="https://www.ssllabs.com/" target="_blank"><span style="font-weight: 400;">SSLlab</span></a><span style="font-weight: 400;">.</span></p>
-<p><b>Conclusion:</b></p>
+<p>**Conclusion:**</p>
 <p><span style="font-weight: 400;">Le protocole SSL / TLS n’est pas facile à prendre en main car il touche énormément de choses différentes et complexes. Cependant, je trouve très intéressant de voir le “côté obscur” de ce protocole afin de comprendre les notions que celui-ci met en place. Dans cette série d’articles, j’ai essayé de vous montrer toutes les phases importantes à savoir : le chiffrement, le certificat et les sous-protocoles, afin que vous ne soyez plus perdu quand on vous parle de SSL / TLS (que vous ayez compris les principes).</span><br />
 <span style="font-weight: 400;">Toutefois, si vous mettez en place un certificat SSL sur votre site, cela ne vous garantira pas à 100% que celui-ci est sécurisé. Pour exemple récent, le faille connue sous le nom de </span><span style="font-weight: 400;"><a href="https://fr.wikipedia.org/wiki/Heartbleed">Heartbleed</a> </span><span style="font-weight: 400;">qui a ébranlé tout le web.</span></p>
 {% endraw %}

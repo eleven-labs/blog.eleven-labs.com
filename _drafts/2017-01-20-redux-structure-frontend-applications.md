@@ -184,7 +184,7 @@ export default connect(
 <p>This way, we are able to retrieve our props values which came from the Redux store but also an <span class="lang:default decode:true crayon-inline">actions</span>  property that will allow us to dispatch Redux events when we will call it.</p>
 <p>Main things to note here are:</p>
 <ul>
-<li><span class="lang:default decode:true crayon-inline">mapStateToProps</span>  is a function that allows to map our Redux <b>state properties</b> with <strong>React properties</strong>,</li>
+<li><span class="lang:default decode:true crayon-inline">mapStateToProps</span>  is a function that allows to map our Redux **state properties** with <strong>React properties</strong>,</li>
 <li><span class="lang:default decode:true crayon-inline">mapDispatchToProps</span>  is a function that allows to map Redux <strong>actions</strong> with <strong>React properties</strong>.</li>
 </ul>
 <p>These two functions are applied thanks to the <span class="lang:default decode:true crayon-inline">connect()</span>  function brought by the <span class="lang:default decode:true crayon-inline">react-redux</span> library.</p>

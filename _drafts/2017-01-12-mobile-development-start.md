@@ -38,11 +38,11 @@ ionic build ios
 ionic emulate ios</pre>
 <p><span style="font-weight: 400;">In 4 command lines, you just built your iOS application.</span></p>
 <p>One of the main advantages of Ionic is that it provides pre-made components, which allows to develop applications quickly.</p>
-<p><b>A spinner example:</b></p>
+<p>**A spinner example:**</p>
 <pre class="lang:default decode:true">&lt;ion-spinner&gt;&lt;/ion-spinner&gt;</pre>
 <p><span style="font-weight: 400;">I had the chance to develop several applications with Ionic, and I have to say that the component aspect is really handy. The </span><a href="http://ionicframework.com/docs/"><span style="font-weight: 400;">documentation</span></a><span style="font-weight: 400;"> exposes all components available with Ionic.</span></p>
 <p>As mentioned before, Ionic is also based on Cordova to interact with native components of devices. Through plugins you can use localisation, camera, etc...</p>
-<p><b>E</b><b>xample of the command to add the camera plugin:</b></p>
+<p>**E****xample of the command to add the camera plugin:**</p>
 <pre class="lang:sh decode:true">ionic plugin add cordova-plugin-camera</pre>
 <p><span style="font-weight: 400;">But Ionic has weaknesses as well:</span></p>
 <ul>
@@ -55,12 +55,12 @@ ionic emulate ios</pre>
 </ul>
 <p style="text-align: center;"><em><span style="font-weight: 400;">Compatibility table with Cordova:</span></em></p>
 <p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/platform-support.png"><img class="alignnone size-medium wp-image-2490" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/platform-support-300x232.png" alt="platform-support" width="300" height="232" /></a></p>
-<p><span style="text-decoration: underline;"><b>Conclusion:</b></span></p>
-<p><b>Ionic is a great way to build small applications quickly. But as soon as you want to widen the scope of features, or to have proper performances, it starts biting. I haven't tested the version 2, but I know that they have made some improvements.</b></p>
-<h3 style="text-align: left;"><b>React Native:</b></h3>
+<p><span style="text-decoration: underline;">**Conclusion:**</span></p>
+<p>**Ionic is a great way to build small applications quickly. But as soon as you want to widen the scope of features, or to have proper performances, it starts biting. I haven't tested the version 2, but I know that they have made some improvements.**</p>
+<h3 style="text-align: left;">**React Native:**</h3>
 <p><span style="font-weight: 400;">As its name suggests, React Native is a variation of React (driven by Facebook in 2015). Its goal is to re-use as much code as possible between different platforms.</span></p>
 <p style="text-align: left;">Coding in JavaScript allows web developers to build a native mobile application, unlike Cordova which encapsulates the application in a WebView.</p>
-<p><b>How does it work?</b></p>
+<p>**How does it work?**</p>
 <p>Thanks to a JavaScript engine executed asynchronously in a separated thread, the developers manage a native UI with JavaScript code. Thus, the technology avoids usual concessions of native applications, while offering an optimum user experience, almost a native one.</p>
 <p><i><span style="font-weight: 400;">A piece of advice</span></i><span style="font-weight: 400;">:</span></p>
 <p><span style="font-weight: 400;">Before diving into React Native, I suggest that you start by getting familiar with React. You can check out the <a href="https://www.youtube.com/watch?v=WbUO00hrjiE">video</a> of a conference I've given, where I explain basics of React with a rather interesting and full example. </span></p>
@@ -81,16 +81,16 @@ ionic emulate ios</pre>
 <li>It offers a certain amount of components, but if the behavior you need requires using native APIs that don't have a component yet (such as Speech Recognition for example), you'll have to develop it natively, and this requires knowledge of the appropriate languages;</li>
 <li>The installation of the emulator for Android on Mac asks for more time and patience.</li>
 </ul>
-<p><b>Conclusion:</b></p>
-<p><b>React Native seems to be the perfect approach for creating applications of any type. Nevertheless, it being young means that it isn't mature enough to be used to building big application that may demand particular treatments. But I recommend following its evolution closely.</b></p>
-<h3><b>Native:</b></h3>
+<p>**Conclusion:**</p>
+<p>**React Native seems to be the perfect approach for creating applications of any type. Nevertheless, it being young means that it isn't mature enough to be used to building big application that may demand particular treatments. But I recommend following its evolution closely.**</p>
+<h3>**Native:**</h3>
 <p><span style="font-weight: 400;">Obviously, to build an application there is nothing better than native development.</span></p>
 <p>Why? Because there are no restrictions linked to a technology. There are no problems with OS upgrades. The user experience is certainly better and the performances are as well (if the application is coded properly *troll*). In one word, it's great!</p>
 <p>Hence, a little time ago, I told myself: "Astronaut, this mission is for you!"</p>
 <p>So, first I had do choose a language.</p>
 <p>Yes, native mobile development is great, but you have to know 2 languages if you want to build a multi platform application. My choice was iOS for practical reasons. I have a Mac and an iPhone (alright, I'm an Apple bot *troll*).</p>
-<p><b>Objective-C /  Swift: What to choose?</b></p>
-<p><b>A small history:</b></p>
+<p>**Objective-C /  Swift: What to choose?**</p>
+<p>**A small history:**</p>
 <p>There are 2 languages to develop on iOS. The first one is Objective-C.</p>
 <p>It's an extension of C ANSI, just like C++, but different in dynamic message distribution, typing... It's based on class library Cocoa and used in operating systems such as NeXTSTEP.</p>
 <p>In 2014, at WWDC conference, Apple presented a new language called Swift designed for application development on iOS, macOS, watchOS and tvOS.</p>
@@ -104,8 +104,8 @@ ionic emulate ios</pre>
 <li>If you want to do some advanced Swift, it's best to know Objective-C first;</li>
 <li>The reality gets the upper hand. You might be brought to work on a project that already has an old mobile application, and by consequence, it is written in Objective-C. Don't panic, usually, it's to understand the existing code in order to migrate to a new application which is written in Swift.</li>
 </ol>
-<p><b>Conclusion:</b></p>
-<p><b>Native development allows to have a better finish. Nonetheless, it requires more effort since you need to learn more languages to publish an application on several platforms.</b></p>
+<p>**Conclusion:**</p>
+<p>**Native development allows to have a better finish. Nonetheless, it requires more effort since you need to learn more languages to publish an application on several platforms.**</p>
 <p>&nbsp;</p>
 <p><em>Translated from the french by Marie Gautier</em></p>
 {% endraw %}

@@ -16,7 +16,7 @@ tags:
 <p style="text-align: left;">Et bien sûr, Eleven Labs et Wilson étaient au rendez-vous et partenaire de l’évènement !</p>
 <p style="text-align: left;"><img class="aligncenter" src="https://c4.staticflickr.com/8/7536/15215885334_04d802e9f0_b.jpg" alt="" width="317" height="211" /></p>
 <p style="text-align: left;">Cette année, ce n’est pas loin de 16 conférences qui nous ont été présentées aussi bien en JavaScript Front, qu’en Node.JS ou en management de projet !</p>
-<p style="text-align: center;"><b>Voici un petit aperçu du programme de cette journée</b></p>
+<p style="text-align: center;">**Voici un petit aperçu du programme de cette journée**</p>
 <p>Le matin, Justin Meyer nous a fait une présentation sur comment réussir son projet en utilisant le plus souvent possible des check-lists. Sur de petits comme de grands projets, cela lui a toujours permis de mieux communiquer avec le client.</p>
 <p style="text-align: left;">Domenic Denicola est ensuite venu nous parler des différentes méthodes et modules NPM permettant de manipuler le DOM en Node.JS.</p>
 <p><img class="size-medium wp-image-1028 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2014/11/dotjssubstack-300x225.jpg" alt="dotjssubstack" width="300" height="225" /></p>
