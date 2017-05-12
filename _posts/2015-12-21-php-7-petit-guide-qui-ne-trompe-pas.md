@@ -4,6 +4,7 @@ title: PHP 7 - Le petit guide qui ne trompe pas
 author: aandre
 date: '2015-12-21 18:33:37 +0100'
 date_gmt: '2015-12-21 17:33:37 +0100'
+permalink: /fr/php-7-petit-guide-qui-ne-trompe-pas/
 categories:
 - Php
 tags:

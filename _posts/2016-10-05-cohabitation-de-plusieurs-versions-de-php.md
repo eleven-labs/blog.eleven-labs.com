@@ -4,6 +4,7 @@ title: Cohabitation de plusieurs versions de PHP
 author: aandre
 date: '2016-10-05 10:23:54 +0200'
 date_gmt: '2016-10-05 08:23:54 +0200'
+permalink: /fr/cohabitation-de-plusieurs-version-de-php/
 categories:
 - Php
 tags: []

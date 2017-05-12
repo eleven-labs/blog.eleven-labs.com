@@ -4,6 +4,7 @@ title: PHP 7.1 - For dummies candidates
 author: aandre
 date: '2016-09-08 15:00:05 +0200'
 date_gmt: '2016-09-08 13:00:05 +0200'
+permalink: /en/php-7-1-dummies-candidates/
 categories:
 - Non classé
 tags:
