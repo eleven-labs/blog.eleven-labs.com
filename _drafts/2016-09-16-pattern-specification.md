@@ -281,7 +281,7 @@ class TransferMoneyCommand
 <li>So it is easier to unit test specifications and classes using them</li>
 <li>We made the implicit explicit with a clear definition of business rules</li>
 </ul>
-<h2>References</h2>
+## References
 <p><a href="http://martinfowler.com/apsupp/spec.pdf">Eric Evans &amp; Martin Fowler - Specifications</a></p>
 <p><a href="http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/">Specification pattern: C# implementation</a></p>
 {% endraw %}

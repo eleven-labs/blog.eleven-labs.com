@@ -25,7 +25,7 @@ tags:
 <p><strong>Tous vos composants peuvent donc accéder à vos données.</strong></p>
 <p>Pour plus d'informations sur les différences Redux / Flux, je vous invite à lire cette <a href="http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux/32920459#32920459">réponse de Dan</a>.</p>
 <p>&nbsp;</p>
-<h2>Installation</h2>
+## Installation
 <p>Nous allons voir dans cet article comment mettre en place et utiliser Redux sur vos projets.<br />
 Notez dès maintenant que la librairie peut être utilisée avec plusieurs librairies de rendu comme React ou VueJS.</p>
 <p>Pour installer Redux, il vous faudra installer le package npm (ou yarn) <span class="lang:default decode:true crayon-inline ">redux</span> .<br />
@@ -33,7 +33,7 @@ Si vous utilisez Redux sur une application React, il vous faudra également le p
 <pre class="lang:default decode:true">$ yarn add redux</pre>
 <p>Rien de plus, vous êtes prêt à utiliser Redux.</p>
 <p>&nbsp;</p>
-<h2>Utilisation classique</h2>
+## Utilisation classique
 <p>Comme décrit précédemment, il vous faudra initialiser un <span class="lang:default decode:true crayon-inline">store</span>  qui va permettre de stocker l'état de votre application.</p>
 <p>Pour instancier ce store, il vous faudra passer un ou plusieurs <span class="lang:default decode:true crayon-inline ">reducers</span> . Les reducers contiennent les méthodes qui effectuent le changement d'état de votre application.<br />
 Ces changements d'état sont effectués lorsqu'une <span class="lang:default decode:true crayon-inline ">action</span>  est déclenchée sur votre application.</p>
@@ -159,7 +159,7 @@ export default configureStore;</pre>
 <p>&nbsp;</p>
 <p>N'oubliez pas d'utiliser la fonction <span class="lang:default decode:true crayon-inline ">applyMiddleware()</span>  lorsque vous passez vos fonctions de middleware au store.</p>
 <p>&nbsp;</p>
-<h2>Utilisation avec React</h2>
+## Utilisation avec React
 <p>Le principe reste exactement le même lorsque Redux est utilisé avec React, cependant, la librairie <span class="lang:default decode:true crayon-inline ">react-redux</span>  va vous apporter des petites choses en plus.</p>
 <p>Vous allez en effet pouvoir lier l'état de votre application gérée par Redux ainsi que les actions que vous avez définies avec les <span class="lang:default decode:true crayon-inline ">props</span>  de vos composants React.</p>
 <p>Prenons un composant <span class="lang:default decode:true crayon-inline ">Counter</span>  reflétant l'architecture Redux mise en place dans notre cas d'exemple :</p>
@@ -206,7 +206,7 @@ export default connect(
 <p>Ces deux fonctions sont ensuite appliquées à l'aide de la fonction <span class="lang:default decode:true crayon-inline ">connect()</span>  fournie par <span class="lang:default decode:true crayon-inline">react-redux</span> .</p>
 <p>[note]<strong>Note :</strong> Nous devons ici utiliser <span class="lang:default decode:true crayon-inline ">bindActionCreators()</span>  sur nos <span class="lang:default decode:true crayon-inline ">CounterActions</span>  car il s'agit d'un objet dont les valeurs sont des actions et cette fonction va permettre d'ajouter un appel à la fonction <span class="lang:default decode:true crayon-inline ">dispatch()</span>  de Redux afin que celles-ci soient correctement déclenchées.[/note]</p>
 <p>&nbsp;</p>
-<h2>Conclusion</h2>
+## Conclusion
 <p>Si nous mettons en parallèle les <strong>1 303 720 téléchargements sur le mois précédent</strong> <strong>de la librairie Redux</strong> avec les <strong>2 334 221 de téléchargements pour React</strong>, nous remarquons que Redux est aujourd'hui <strong>très utilisé</strong> et semble vraiment très <strong>apprécié</strong> par les développeurs car il s'agit d'une solution <strong>simple</strong> qui permet réellement de structurer une application front.</p>
 <p>Redux apporte, selon moi, une <strong>vraie solution</strong> permettant de structurer des applications au métier complexe aux communautés comme React, VueJS mais également aux autres.</p>
 {% endraw %}

@@ -14,11 +14,11 @@ tags:
 <p>A l’heure où tout le monde ne parle que de Big data, je vais tenter de vous présenter les microdata.</p>
 <p>Ces derniers temps, beaucoup de nouveautés sont apparues pour les intégrateurs web du monde entier tels les microformats, microdata (ou microdonnées en français) ou encore de nouvelles balises sémantiques.</p>
 <p>Bien que les microformats existent depuis quelques années, l’avènement de la spécification HTML5 a accéléré leur utilisation.</p>
-<h2>Qu'est-ce-que c'est ?</h2>
+## Qu'est-ce-que c'est ?
 <p>HTML5 apporte de nouvelles balises pour décrire de manière encore plus précise un contenu. Les nouveaux éléments de section d’une page html (header, section, footer …) et les nouvelles balises (time, video, audio …).</p>
 <p>L’utilisation des microdonnées transmises dans vos codes sources participe à l’amélioration et à la pertinence dans les pages de résultats de vos moteurs de recherche préférés.</p>
 <p>Les microdata ou microdonnées, en français dans le texte, sont un moyen d’associer des libellés à du contenu afin de décrire un type d’information spécifique. Plus simplement, il permet de transmettre des informations sur le contenu et de le préciser.</p>
-<h2>Quels sont les nouveaux attributs ?</h2>
+## Quels sont les nouveaux attributs ?
 <ul>
 <li><strong>itemscope</strong> : il crée un élément et indique que les descendants de cette balise HTML contiennent des informations à son sujet</li>
 <li><strong>itemtype</strong> : c’est une URL pointant vers un vocabulaire qui décrit l’élément et ses propriétés</li>
@@ -26,7 +26,7 @@ tags:
 <li><strong>itemprop</strong> : il est porteur d’une valeur permettant de préciser la nature d’une donnée au sein d’un schéma spécifié précédemment</li>
 <li><strong>itemref</strong> : il permet de faire le lien complémentaire entre deux données sans descendance</li>
 </ul>
-<h2>Mais comment ça marche ?</h2>
+## Mais comment ça marche ?
 <p>Pour renseigner ces attributs, un vocabulaire spécifique à chaque type d’identification (société, personne, événement…) est nécessaire. <strong>Schema.org</strong>, initiative commune de <strong>Google</strong>, <strong>Yahoo</strong>, <strong>Bing</strong>, et <strong>Yandex</strong> est devenu la référence sur ce sujet.</p>
 <p>Les moteurs de recherche comptent sur ce balisage pour améliorer l'affichage des résultats de recherche, et pour les gens à trouver les pages web les plus pertinentes par rapport à leur recherche.</p>
 <p>Nous allons voir un premier exemple que vous avez probablement rencontré dans les résultats de Google.</p>
@@ -133,11 +133,11 @@ dans les locaux de
     &lt;p&gt;Tu penses pouvoir relever le défi ? Entre dans la station Eleven Labs!&lt;/p&gt;
 &lt;/div&gt;</pre>
 <p>En fait tout se joue au niveau du vocabulaire utilisé car plus il est précis et plus vous pourrez donner du sens à votre contenu. Schema.org propose une arborescence et présente une hiérarchie assez profonde qui touche à des domaines très variés. Le principe est simple : plus vous descendez dans l'arborescence, plus le vocabulaire se précisera.</p>
-<h2>En conclusion</h2>
+## En conclusion
 <p>Schema.org propose de nombreux vocabulaires adaptés à beaucoup de situations ainsi qu’une grande souplesse dans son utilisation.</p>
 <p>Les principaux moteurs de recherche prennent en charge le vocabulaire schema.org pour l'affichage des résultats de recherche. Maintenant tout est là pour faire de la sémantique un atout indéniable pour le référencement de vos sites.</p>
 <p>Pour finir, je ne sais pas de quoi le web sera fait à l'avenir : le Big data, les Microdata... Je ne suis pas médium !</p>
-<h2>Quelques ressources</h2>
+## Quelques ressources
 <p><a href="http://schema.org">http://schema.org</a><br />
 <a href="https://developers.google.com/structured-data/">https://developers.google.com/structured-data/<br />
 https://developers.google.com/structured-data/testing-tool/<br />

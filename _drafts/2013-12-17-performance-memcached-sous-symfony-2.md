@@ -15,7 +15,7 @@ tags:
 <p>Certains peuvent être liés au trop grand nombre de requêtes effectuées ou encore à la quantité d'informations récupérées dans la BDD.</p>
 <p>Nous allons vous proposer dans cet article de faire un point sur les quelques techniques rapides afin d'optimiser votre solution, ainsi que sur l'installation de memcached sous Sf2.</p>
 <p><!--more--></p>
-<h2>PART I : "Less Request For Less Time"</h2>
+## PART I : "Less Request For Less Time"
 <p>Si il y a une chose que l'on apprécie tous sous Sf2, c'est son Entity Manager avec son système de Lazy Loading. Le principe ? La donnée n'est réellement chargée depuis la BDD que lorsque que vous en avez réellement besoin, c'est a dire, lorsque que vous tentez d'accéder à l'un de ses attributs (le nom par exemple).</p>
 <p>Mais cela peut aussi amener à quelques problèmes de performances lorsque l'on ne fait pas attention.</p>
 <p>Prenons par exemple un model ou l'on a des Ecoles, des Classes et des Elèves. La problématique de votre projet implique que sur une page vous devez tout charger pour un affichage par liste.</p>
@@ -59,7 +59,7 @@ public function getEcoles() {
 <p>Et voila, le boulot est fait. Ici, pas de Lazy Loading, toutes nos données sont chargées en une seule requête. Vous devrez donc gagner un temps proportionnel au nombre d'éléments chargés sur la page.</p>
 <p>Vous pouvez aussi gérer les jointures par défaut dans les entités avec l'annotation fetch="EAGER"</p>
 <p>&nbsp;</p>
-<h2>PART II : "Object Or Array"</h2>
+## PART II : "Object Or Array"
 <p>Bon maintenant que notre requête est optimisée, il serait temps de s'occuper de notre donnée à proprement parlé.</p>
 <p>Premier test, pour voir un peut ce qu'on l'on récupère, on peut toujours faire un var_dump() sur notre variable $liste_ecoles, mais c'est une mauvaise idée...</p>
 <p>Pourquoi ? Tout simplement parce que l'objet (enfin la liste d'objet) est tellement gros qu'il fera certainement planter le rendu de votre navigateur.</p>
@@ -89,7 +89,7 @@ public function getEcoles() {
 <p>Ex :</p>
 <pre class="lang:xhtml decode:true" title="Twig">{{ eleve["nom"] }} {# remplace {{ eleve.getNom }} #}</pre>
 <p>&nbsp;</p>
-<h2>PART III : "Time to Cache"</h2>
+## PART III : "Time to Cache"
 <p>Bon, jusqu'ici c'était la partie facile, celle qui est à mettre en place partout, un réflexe à prendre en quelque sorte.</p>
 <p>Nous allons maintenant rentrer dans les dernières phases d'optimisation côté code, même si nous allons tricher, puisque nous allons coupler Sf à une autre technologie : Memcached.</p>
 <p><strong>/!\ Cette partie consiste à "stocker" nos données dans la RAM, cela est toujours mieux si la donnée à stocker est elle-même déjà optimisée, par exemple avec les conseils ci-dessus ;) /!\</strong></p>

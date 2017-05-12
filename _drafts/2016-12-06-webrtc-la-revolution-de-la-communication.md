@@ -28,7 +28,7 @@ tags:
 <p>Le <strong>WebRTC</strong> permet enfin aux applications Web (HTML, CSS, JavaScript) de fournir cette <em>instantanéité</em> à ses utilisateurs.</p>
 <p>Bon OK, je vois bien que je suis en train de vous saouler avec <em>l'histoire du Web</em> en mode édulcoré alors que vous êtes forcément un public averti qui en vaut deux.</p>
 <p>Mais rassurez-vous, ça va rapidement devenir intéressant !</p>
-<h2 id="comment-a-marche-">Comment ça marche ?</h2>
+<h2 id="comment-a-marche-">Comment ça marche ?
 <p>Le <strong>WebRTC</strong> est exploitable dans le navigateur au travers de plusieurs nouvelles API JavaScript :</p>
 <ul>
 <li>navigator.getUserMedia()</li>
@@ -130,7 +130,7 @@ signalingChannel.onmessage = function (evt) {
 <p>On voit que cela devient légèrement plus complexe d'arriver à ses fins, et cela sans compter les polyfills nécessaires pour les différents navigateurs. Heureusement, comme l'adaptateur de l'API navigator.getUserMedia(), il existe de très bonnes librairies open-source qui s'occupent de gérer cette complexité pour vous (<a href="https://www.twilio.com/">Twilio</a>, <a href="https://www.easyrtc.com/">EasyRTC</a>).</p>
 <h4 id="stun-ice">STUN/ICE</h4>
 <p>En ce qui concerne le serveur de liaison <em>STUN/ICE</em>, si on ne passe pas par un service de <em>signaling</em> dédié, Google fournit une instance publique à l'adresse <a href="19302">stun.l.google.com:19302</a>. Il existe également une application serveur open-source développée en <em>C/C++</em> pour déployer sa propre instance <em>STUN/ICE</em> et <em>TURN</em> : <a href="https://github.com/coturn/coturn">https://github.com/coturn/coturn</a>.</p>
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion">Conclusion
 <p>Nous n'avons fait que gratter la surface de ce qui est possible avec le <strong>WebRTC</strong>. La technologie pousse à imaginer une nouvelle forme d'application Web et le meilleur dans tout ça c'est qu'elle est exploitable dès aujourd'hui !</p>
 <p>Serait-ce enfin ce qu'on pourrait appeler le <em>Web 3.0</em> ? Ce qui est sûr c'est que cette technologie ne va pas disparaître de si tôt, bien que sa standardisation par le consortium W3C prenne beaucoup de temps.</p>
 <p>Beaucoup d'applications se basent déjà sur cette nouvelle technologie :</p>

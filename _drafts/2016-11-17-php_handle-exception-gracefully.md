@@ -19,7 +19,7 @@ tags:
 <li>raise exceptions</li>
 <li>handle exceptions</li>
 </ul>
-<h2><span id="result_box" class="short_text" lang="en"><span class="">Raise exceptions at the right time</span></span></h2>
+## <span id="result_box" class="short_text" lang="en"><span class="">Raise exceptions at the right time</span></span>
 <p><span id="result_box" class="" lang="en"><span class="">Let's start with the beginning, there is an exception because at some point in the application or one of the components, a condition or operation could not be fulfilled.</span></span></p>
 <p><span id="result_box" class="" lang="en">There are some good practices on creating exceptions. <span class="">I will focus on two in particular: naming and context.</span></span></p>
 <h3><span id="result_box" class="short_text" lang="en"><span class="">Name the error, not the issuer</span></span></h3>
@@ -88,7 +88,7 @@ class InvalidArgumentException extends \InvalidArgumentException implements Exce
 }
 
 // https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Validator/Exception/InvalidArgumentException.php</pre>
-<h2><span id="result_box" class="short_text" lang="en"><span class="">Catch them at the right time</span></span></h2>
+## <span id="result_box" class="short_text" lang="en"><span class="">Catch them at the right time</span></span>
 <p><span id="result_box" class="" lang="en">It is tempting to catch any errors that may arise. <span class="">But it is better to only catch the exceptions that the application is able to handle.</span> Otherwise, it is better to let them spread to the highest level. <span class="">With the use of a framework such as Symfony, an exception that is not caught in the application will be managed by the framework (and will display a nice page 500).</span></span></p>
 <h3><span id="result_box" class="short_text" lang="en"><span class="">Catch what is manageable</span></span></h3>
 <p><span id="result_box" class="" lang="en">In a modern application, the code is stacked like Russian dolls. <span class="">An exception thrown at a place, even in depth, will go up all the layers if it is not caught.</span></span></p>
@@ -115,7 +115,7 @@ public function actionType($username)
 <p><span id="result_box" class="" lang="en"><span class="">As we have just seen in the previous example, I have managed only the exception I need.</span> <span class="">For the other cases, I let the exception spread so that it goes up in the highest layers.</span></span></p>
 <p><span id="result_box" class="" lang="en">An application is a nesting of components, which when assembled together make it possible to construct a functionality. An exception thrown at the component level, and therefore at the bottom of the application layer, does not make sense on its own. There is a functional set related to this exception. It is this functional chain that is able to take care of this exception. As in the previous example. <span class="">It is the functionality that managed this exception, not the Guzzle component.</span> <span class="">The component only threw the exception to the top.</span></span></p>
 <p><span id="result_box" class="" lang="en">For a framework, such as Symfony, it's the same principle. If the developer does not know what to do with the exception, he will let it go up to a listener able to manage it. <span class="">And at the top, there's this listener: <a href="https://github.com/guzzle/guzzle/blob/master/src/Exception/RequestException.php">src\Symfony\Component\HttpKernel\EventListener\ExceptionListener</a>.</span></span></p>
-<h2><span id="result_box" class="short_text" lang="en"><span class="">To conclude</span></span></h2>
+## <span id="result_box" class="short_text" lang="en"><span class="">To conclude</span></span>
 <p><span id="result_box" class="" lang="en">An exception, as its name suggests, is an event that happens at an exceptional moment in the life of the application. It happens because an operation went wrong, or a developer misused a component. Whatever the reason is, the exception must be as explicit as possible. Its good understanding makes it possible to repair it as quickly as possible. <span class="">It is important to lift the exception at the right time.</span></span></p>
 <p><span id="result_box" class="" lang="en">On the other hand, the exception should not be placed under the mat, but it should be handled properly. Good management of the exception requires a good understanding of the expected functionality and its perimeter. <span style="text-decoration: underline;"><span class=""><span style="color: #ff0000; text-decoration: underline;">Catching all exceptions with a `try {catch (\ Exception $ e)` is a very bad practice</span>.</span></span> This would mask an even more serious exception.</span></p>
 <p><span id="result_box" class="" lang="en"><span class="">An exception well launched and managed correctly allows your application to be easily maintainable and makes the diagnosis of an error simpler and faster.</span></span></p>

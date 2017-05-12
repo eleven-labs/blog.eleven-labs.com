@@ -16,7 +16,7 @@ tags:
 <p>Bonjour ! je vais vous parler d'un nouveau framework JavaScript qui s'appelle <a href="https://github.com/yoshuawuyts/choo">Choo</a> (ou ChooChoo pour les intimes).</p>
 <p>Encore un nouveau framework JS?!!?! Ça commence à bien faire!</p>
 <p>Et oui encore un, mais celui-ci est super mignon ! Vous allez voir !</p>
-<h2>6 méthodes</h2>
+## 6 méthodes
 <p>En effet, la simplicité de Choo est ce qui le caractérise le plus. Son API est composée de six méthodes uniquement. Vous allez me dire que ce n'est pas possible. Eh ben si, c'est possible de reproduire un système très similaire en fonctionnement au couple React + Redux avec uniquement six méthodes à manipuler :</p>
 <ul>
 <li>const app = choo() Instancie le framework</li>
@@ -67,14 +67,14 @@ const tree = app.start()
 document.body.appendChild(tree)</pre>
 <p>Et voilà ! Un petit compteur avec un bouton pour incrémenter la valeur du compteur, rien de plus simple !</p>
 <p>Maintenant, voyons ça un peu plus en détails.</p>
-<h2>Charger les dépendances</h2>
+## Charger les dépendances
 <pre class="lang:js decode:true ">const choo = require('choo')
 const html = require('choo/html')</pre>
 <p>Rien de plus banal ici. On charge la méthode choo() qui va nous servir à démarrer notre petit train. Puis, on charge une méthode html qui n'est rien d'autre que la librairie open-source bel, une des dépendances de Choo. En effet, ce n'est pas Choo qui s'occupe du DOM. À la place, il délègue ça à une autre petite librairie qui sait déjà le faire.</p>
-<h2>Démarrer le petit train</h2>
+## Démarrer le petit train
 <pre class="lang:js decode:true ">const app = choo()</pre>
 <p>On instancie le framework en exécutant la méthode choo() à laquelle on peut passer un objet pour écouter certains événements globaux. On en récupère un objet qui va nous permettre d'accéder aux autres méthodes du framework.</p>
-<h2>Les modèles</h2>
+## Les modèles
 <pre class="lang:js decode:true ">const http = require('xhr')
 
 app.model({
@@ -100,7 +100,7 @@ app.model({
 <p>Les reducers sont des méthodes synchrones qui sont chargées de modifier le state. C'est le seul endroit où l'on peut réellement le modifier, le reste de l'application étant obligé d'appeler ces reducers via la méthode send() que chaque vue reçoit en paramètre pour modifier le state.</p>
 <p>Choo représente les données dans un objet de state global, ce qui veut dire que peu importe le nombre de modèles que l'on crée, tous les state de ces derniers seront stockés dans un même objet. Pour éviter les conflits, on peut ajouter un namespace au modèle avec un nom unique.</p>
 <p>Enfin, nous avons les effects qui vont servir à exécuter un appel asynchrone pour ensuite modifier le state via les reducers. Pour appeler les effects, on utilise également la méthode send().</p>
-<h2>Les vues</h2>
+## Les vues
 <pre class="lang:js decode:true ">const html = require('choo/html')
 
 function mainView (state, prev, send) {
@@ -116,7 +116,7 @@ function mainView (state, prev, send) {
     }
 }</pre>
 <p>Toutes les vues Choo sont tout simplement des fonctions qui retournent du DOM. Un peu comme en React, on va écrire le HTML dans nos fichiers JavaScript mais simplement dans une <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals">template string ES2015</a>. Pour transformer cette string en DOM, Choo se repose sur la librairie <a href="https://github.com/shama/bel">bel</a>. La vue va également s'occuper d'écouter les événements utilisateur pour réagir en exécutant les effects ou reducers des modèles pour mettre à jour le state de l'application.</p>
-<h2>Le routeur</h2>
+## Le routeur
 <pre class="lang:js decode:true ">app.router({ default: '/404' }, [
     ['/', require('./views/main')],
     ['/404', require('./views/error')]
@@ -124,7 +124,7 @@ function mainView (state, prev, send) {
 </pre>
 <p>Tous les frameworks front-end se doivent d'avoir un bon routeur. Celui de Choo est très simple et efficace. Il suffit de lui donner une liste couple url/vue en forme d'Array. On peut également lui dire quelle route exécuter par défaut si la route demandée n'est pas trouvée.</p>
 <p>Le routeur va s'occuper d'écouter les clics sur les liens dans les vues pour rediriger automatiquement sur la bonne route en utilisant l'<a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">API HTML5 pushState</a>.</p>
-<h2>Commencer le voyage !</h2>
+## Commencer le voyage !
 <pre class="lang:js decode:true ">const tree = app.start()
 document.body.appendChild(tree)</pre>
 <p>C'est le début de l'aventure ! Il ne reste plus qu'à demander à Choo d'exécuter le premier rendu de l'application et de rattacher le DOM généré au document et voilà !</p>

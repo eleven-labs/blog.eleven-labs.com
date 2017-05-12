@@ -353,7 +353,7 @@ docker push registry.domain.tld/alpine</code></pre>
 011b303988d2: Pushed
 latest: digest: sha256:1354db23ff5478120c980eca1611a51c9f2b88b61f24283ee8200bf9a54f2e5c size: 528</code></pre>
 <p>Si c'est le cas, félicitations, vous avez une registry docker à dispo !</p>
-<h2 id="au-prochain-numero">Au prochain numéro…</h2>
+<h2 id="au-prochain-numero">Au prochain numéro…
 <p>Nous verrons comment utiliser <strong>docker-compose</strong> pour lancer un environnement de développement en local en tirant profit de notre registry docker et d’un outil de versionning pour fabriquer automatiquement nos images docker.</p>
 <p>À la prochaine!</p>
 {% endraw %}

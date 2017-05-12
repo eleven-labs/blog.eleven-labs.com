@@ -39,7 +39,7 @@ tags:
 <p><span style="font-weight: 400">Quoi qu’il en soit, pour que le plan d’actions de fin de rétrospective soit réalisable et que l’équipe puisse s’engager sur son application, il est préférable qu’elle l’ait établi sans contrainte et qu’il n’ait donc pas été imposé par la direction. Il vaut donc mieux qu’</span>**aucun manager**<span style="font-weight: 400"> ne participe à cette réunion. Si le rôle de SCRUM Master est tenu par un chef de projet ou manager, il faudra donc que celui-ci se limite à son rôle de facilitateur et laisse l’**équipe décider librement de ses actions**.</span></p>
 <h1 style="font-size: 35px">Quels outils ?
 <p><span style="font-weight: 400">Pour bien animer cette rétrospective, il existe différents outils permettant de mener la discussion jusqu’à l’établissement du plan d’actions d’améliorations. En voici quelques uns, à utiliser à différentes étapes de la rétrospective :</span></p>
-<h2 style="font-size: 25px">Pour récolter les données (“gathering data”)</h2>
+<h2 style="font-size: 25px">Pour récolter les données (“gathering data”)
 <p><span style="font-weight: 400">La première étape est de lancer la discussion puis de recueillir les avis de chacun et obtenir une bonne vision de ce qui s’est bien ou moins bien passé pendant cette itération.</span></p>
 <ul>
 <li><strong>Safety Check</strong></li>
@@ -90,7 +90,7 @@ tags:
 </ul>
 <p><span style="font-weight: 400">Pour récolter toutes les données d’une itération, on peut aussi demander à l’équipe de retracer l’historique du Sprint, depuis le planning jusqu’à la rétrospective. Ainsi chacun vient ajouter ses faits marquants sur la ligne temporelle tracée sur le tableau, en expliquant chaque fait, positif ou négatif.</span></p>
 <p><span style="font-weight: 400">Une itération de type Sprint SCRUM étant de courte durée, cette technique n’est pas toujours cohérente, puisqu’il n’est pas toujours simple de placer au bon endroit sur la timeline un fait du sprint. Cet exercice est donc généralement plutôt utilisé sur une échelle de temps plus importante, pour une rétrospective release ou un projet entier par exemple.</span></p>
-<h2 style="font-size: 25px">Pour trouver les causes des problèmes et leurs solutions</h2>
+<h2 style="font-size: 25px">Pour trouver les causes des problèmes et leurs solutions
 <p><span style="font-weight: 400">Les techniques précédentes permettent ainsi d’avoir une bonne vision des problèmes rencontrés par l’équipe. Avant d’établir un plan d’actions d’améliorations, il nous faut trouver des solutions pour chacun de ces points.</span></p>
 <ul>
 <li><strong>Bisounours</strong></li>
@@ -113,7 +113,7 @@ tags:
 <li><strong>Five Times Why exercise</strong></li>
 </ul>
 <p><span style="font-weight: 400">Enfin, cette dernière technique très simple consiste à demander “Pourquoi” cinq fois de suite quand un problème a été identifié, jusqu’à en arriver à la vraie cause du problème, qui est souvent masquée. Une fois la cause “racine” connue, on peut plus facilement trouver la solution à apporter.</span></p>
-<h2 style="font-size: 25px">Pour définir le plan d’actions</h2>
+<h2 style="font-size: 25px">Pour définir le plan d’actions
 <p><span style="font-weight: 400">Si vous avez bien pratiqué les techniques précédentes, vous avez maintenant une bonne vision des problèmes rencontrés par l’équipe et avez identifié de potentielles solutions et améliorations. Ils s’agit donc maintenant de vous mettre d’accord sur un plan d’actions.</span></p>
 <p><span style="font-weight: 400">Rappelons-le, l’équipe auto-organisée doit décider seule de ces actions et elle s’engage à les réaliser dans les temps. Ces décisions ne doivent pas être imposées par un manager.</span></p>
 <p><span style="font-weight: 400">Il est préférable de privilégier la qualité à la quantité d’actions : il sera donc suffisant de s’engager sur deux ou trois actions vraiment impactantes à réaliser d’ici la prochaine rétrospective.</span></p>

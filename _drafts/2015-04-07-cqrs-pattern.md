@@ -19,14 +19,14 @@ tags:
 <div style="text-align: center; font-size: 10px;">Figure 1: Exemple d'implémentation du pattern CQRS</div>
 <p>On voit clairement la séparation des parties lectures et écritures sur la figure précédente : l'utilisateur fait une modification sur sa page, ce qui engendre l'envoie d'une commande. Une fois cette commande terminée, un <em>event </em>est publié pour signaler qu'une modification a été apportée.</p>
 <p>Voyons cela plus en détail.</p>
-<h2>Commands</h2>
+## Commands
 <p>Une commande demande à notre application de faire quelque chose. Elle se nomme toujours à l'indicatif, comme par exemple<em> TerminateBusiness</em> ou <em>SendForgottenPasswordEmail</em>. Il est très important de ne pas cantonner ses noms de commandes à des <em>create, change, delete...</em> et vraiment se concentrer sur les use cases (voir le document <em>CQRS Documents </em>en annexe pour plus d'informations).</p>
 <p>Une commande capte l'intention de l'utilisateur. Aucun contenu de réponse n'est retourné par le serveur, car comme nous en avons discuté précédemment, seules les <em>queries</em> sont responsables de la récupération de données.</p>
-<h2>Queries</h2>
+## Queries
 <p>Utiliser différents <em>data stores</em> dans notre application pour la partie <em>command </em>et <em>query </em>semble être une idée plus qu'intéressante. Ainsi, comme nous l'explique très bien Udi Dahan dans son article <em>Clarified CQRS</em>, nous pourrions créer une base de données orientée pour l'interface utilisateur, qui reflétera ce que l'on doit afficher à notre <em>user</em>. On gagnera en performance et en rapidité.<br />
 Dissocier nos datastores (un pour la modification de données et un pour la lecture) ne nous oblige pas à utiliser de base de données relationnelles pour les deux par exemple. Ainsi, il serait plus judicieux d'utiliser une base de données rapide en lecture pour nos <em>queries. </em></p>
 <p>Mais si nous dissocions nos sources de données, comment les garder synchronisées? En effet, notre <em>read data store</em> n'est pas censé savoir qu'une commande a été envoyée! C'est là où les événements arrivent.</p>
-<h2>Events</h2>
+## Events
 <div class="page" title="Page 259">
 <div class="layoutArea">
 <div class="column">
@@ -36,21 +36,21 @@ Les événements sont traitées par un ou plusieurs consommateurs. C'est donc ce
 </div>
 </div>
 </div>
-<h2>Avantages et inconvénients</h2>
+## Avantages et inconvénients
 <p>Les différents avantages concernant cette ségrégation sont nombreux. En voici quelques uns :</p>
 <ul>
 <li><em>Scalability : </em>Le nombre de lectures étant généralement bien plus élevé que le nombre de modification  dans une application, le fait d'appliquer le modèle CQRS permet de se focaliser indépendamment sur chacun des deux enjeux. Un avantage majeur de cette scission est la <em>scalability</em>, qui permet une mise à l'échelle de la partie <em>lecture</em> différente de notre partie écrite (allouer plus de ressources, différents types de base de données).</li>
 <li>Flexibilité : il est facile de mettre à jour ou ajouter coté <em>reading</em> sans changer quoique ce soit niveau écriture. La cohérence des données n'est donc pas altérée.</li>
 </ul>
 <p>L'un des principaux inconvénients est, comme le souligne l'excellent article <em>CQRS Journey</em>, de convaincre les membres de l'équipe que les bénéfices justifient la complexité additionnelle de cette solution.</p>
-<h2>Utilisation</h2>
+## Utilisation
 <p>Le pattern CQRS est à utiliser dans un <em>bounded context </em>(notion clé du <em>Domain Driven Development</em>), ou un composant métier de votre application. En effet, bien que ce modèle ait un impact sur votre code à beaucoup d'endroits, il ne doit pas résider au niveau le plus haut de votre application.</p>
-<h2>Event Sourcing</h2>
+## Event Sourcing
 <p>Ce qui est intéressant avec le CQRS est l’<i>event sourcing</i>. Ce dernier peut être utilisé sans l'application du modèle CQRS, mais si on utilise le CQRS, l’<i>event sourcing</i> devient presque une obligation.<br />
 L’<i>event sourcing </i>consiste à sauvegarder chaque événement qui se déroule dans une base de données et avoir ainsi une sauvegardes des faits. Dans un modèle d’<i>event sourcing</i>, vous ne pouvez pas supprimer ou modifier d’événement, vous ne pouvez qu’en ajouter. Ceci est bénéfique pour notre business et notre SI car nous pouvons savoir à un moment T dans quel état se trouve une commande, un client, ou autre. Egalement, la sauvegarde des événements nous permet de pouvoir reconstruire l’enchaînement de ces derniers et gagner en analyse.<br />
 L'un des exemples donné par Greg Young dans la conférence <em>Code on the Beach</em>, est le solde d'un compte en banque. Ce dernier peut être considéré comme une colonne dans une table, que l'on vient mettre à jour dès que l'argent est débité ou ajouté sur le compte. L'autre approche est de stocker dans notre base de données l'ensemble des transactions qui ont permis d'arriver à ce solde. Il devient donc plus facile d'être sûr que le montant indiqué est le bon, car nous gardons une trace de tous ces événements, sans pouvoir les changer.</p>
 <p>Nous ne rentrerons pas dans les détails sur ce principe dans cet article. Cependant, un très bon approfondissement est disponible dans l'article (disponible en bas de document) <em>CQRS Journey</em>.</p>
-<h2>Recap</h2>
+## Recap
 <p>CQRS est un pattern simple, qui engendre de fantastiques possibilités. Il consiste à séparer la partie lecture et écriture de votre application, grâce à des <em>queries</em> et des <em>commands.</em></p>
 <p>De nombreux avantages résultent de l'utilisation, notamment en termes de flexibilité et de mise à l'échelle.</p>
 <p>L'<em>event sourcing </em>complète le <em>pattern </em>CQRS en sauvegardant l'historique qui détermine l'état actuel de notre application. Ceci est très utile dans des domaines comme la comptabilité, car vous avez ainsi dans votre <em>data store</em> une suite d’événements (par exemple de transactions financières) ne pouvant être modifiés ou supprimés.</p>

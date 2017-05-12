@@ -11,13 +11,13 @@ tags:
 - workflow
 ---
 {% raw %}
-<h2 style="text-align: left;">Git workflow</h2>
+<h2 style="text-align: left;">Git workflow
 <p style="text-align: left;">Connaissez-vous le "git workflow" ? Si ce n'est pas le cas, je vous invite à lire cet article <a href="http://nvie.com/posts/a-successful-git-branching-model">http://nvie.com/posts/a-successful-git-branching-model</a></p>
 <p style="text-align: left;">Je vais mettre ci-dessous l'image pour bien l'avoir en tête :</p>
 <p>[caption id="" align="alignnone" width="463"]<img src="http://nvie.com/img/git-model@2x.png" alt="" width="463" height="613" /> Git workflow. source: http://nvie.com/posts/a-successful-git-branching-model/[/caption]</p>
 <p style="text-align: left;">Ce schéma est intéressant, cependant, il manque une réponse à une question : comment faire pour annuler une fonctionnalité depuis la branche <em>release</em> ?</p>
 <p style="text-align: left;">Ce flux de travail suppose que toutes les fonctionnalités en <em>develop</em> soient <em>recettées</em> par le <em>product owner</em> et validées. Mais si une fonctionnalité n'est pas validée, alors qu'elle est en <em>develop </em>: nous sommes un peu coincés. La branche <em>release</em> permet de préparer la mise en production. Il faut donc l'utiliser pour fixer les éventuels bogues et annuler les fonctionnalités non validées. C'est sur ce dernier point que l'article va se concentrer.</p>
-<h2 style="text-align: left;">Maîtriser git comme un chef</h2>
+<h2 style="text-align: left;">Maîtriser git comme un chef
 <p style="text-align: left;">Posons le décor : nous avons une branche <em>master</em> qui sera utilisée pour la mise en production, une branche <em>develop</em> pour toutes les nouvelles fonctionnalités du <em>sprint</em> en cours, et enfin une branche de <em>release</em> pour préparer la mise en production.</p>
 <p style="text-align: left;">Ça donne ceci :</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/init_git.png" rel="attachment wp-att-1621"><img class="size-medium wp-image-1621" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/init_git-300x189.png" alt="git workflow" width="300" height="189" /></a></p>
@@ -49,7 +49,7 @@ git push origin develop</pre>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_merge_killer_feat.png" rel="attachment wp-att-1627"><img class="alignnone size-full wp-image-1627" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_merge_killer_feat.png" alt="git_merge_killer_feat" width="140" height="264" /></a></p>
 <p>Voilà, mon décor est posé. Petite vue en mode terminal.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_log.png" rel="attachment wp-att-1628"><img class="alignnone size-medium wp-image-1628" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_log-300x62.png" alt="git_log" width="300" height="62" /></a></p>
-<h2>Préparation de la branche release</h2>
+## Préparation de la branche release
 <p>Notre <em>sprint</em> va bientôt s'achever, préparons la branche de <em>release</em>. Mais au dernier moment, un <em>product owner</em> affolé voit que la fonctionnalité n'est pas valide. Il ne faut pas passer cette fonctionnalité en production.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/seriously.png" rel="attachment wp-att-1630"><img class="alignnone wp-image-1630" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/seriously-300x250.png" alt="seriously" width="126" height="105" /></a></p>
 <p>Il faut gérer cette situation !</p>
@@ -59,7 +59,7 @@ git merge develop --no-ff
 </pre>
 <p>Il est important de faire un <em>merge --no-ff</em> car cela va permettre de garder une trace dans l'historique sur cette annulation.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_release.png" rel="attachment wp-att-1632"><img class="alignnone size-full wp-image-1632" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_release.png" alt="git_release" width="162" height="262" /></a></p>
-<h2>Annuler la branche "feat-my-awesome-feature"</h2>
+## Annuler la branche "feat-my-awesome-feature"
 <p>Cette fonctionnalité n'est pas si géniale que ça (selon le <em>product owner</em>), je vais donc l'annuler de la branche <em>release</em>, mais je veux pouvoir la garder en <em>develop</em> pour l'améliorer dans le prochain <em>sprint</em>.</p>
 <p>Je vais donc faire un <em>revert.</em></p>
 <pre class="lang:default decode:true">git checkout release
@@ -82,7 +82,7 @@ git checkout master
 git merge release --no-ff
 </pre>
 <p>Depuis <em>master</em>, je vois que j'ai bien la fonctionnalité <em>feat-killer-feature</em> uniquement.</p>
-<h2>Remettre à jour develop</h2>
+## Remettre à jour develop
 <p>Maintenant, une autre problématique se pose : si je <em>merge</em> de nouveau <em>develop</em> dans <em>release</em>,  git considère qu'il n'y a aucune modification. C'est à cause du <em>commit</em> de <em>revert</em> dans la branche <em>release</em>. Pour cela, il faut annuler ce <em>commit</em> de <em>revert</em> (en gros, annuler une annulation x) ).</p>
 <p>Je vais tout d'abord mettre à jour <em>develop.</em></p>
 <pre class="lang:default decode:true ">git checkout develop

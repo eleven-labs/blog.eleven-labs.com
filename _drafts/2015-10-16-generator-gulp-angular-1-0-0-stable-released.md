@@ -12,10 +12,10 @@ tags:
 - Gulp
 ---
 {% raw %}
-<h2>Intro</h2>
+## Intro
 <p>It has now been more than a year since I (<a href="https://twitter.com/Swiip">@Swiip</a>), quickly followed by <a href="https://twitter.com/Zckrs">@zckrs</a>, started working on our Yeoman generator. Today we’re celebrating the release of our first major and stable version : <a href="https://www.npmjs.com/package/generator-gulp-angular">generator-gulp-angular 1.0.0</a>.</p>
 <p>At first we simply wanted to make a good merge of <a href="https://github.com/yeoman/generator-gulp-webapp">generator-gulp-webapp</a> and <a href="https://github.com/yeoman/generator-angular">generator-angular</a> as I worked on Angular and got tired of Grunt's verbosity. Then, the project popularity started to increase and so did its ambition.</p>
-<h2>Philosophy</h2>
+## Philosophy
 <p>We followed all the precepts of Yeoman adding our own:</p>
 <ul>
 <li>Provide a well written seed project following the best recommendations in terms of folder structure and code style.</li>
@@ -23,11 +23,11 @@ tags:
 <li>Use the concept of automatic injection in different parts of the project: scripts tags both vendor and sources in the index.html, styles files, vendor, css or preprocessed.</li>
 <li>Provide a test coverage, as perfect as possible, of the code of the generator but also of the generated code.</li>
 </ul>
-<h2>Technologies supported</h2>
+## Technologies supported
 <p>We are not joking around when we talk about this being a stable version. We integrated lots of technologies and languages, from Coffee to Typescript, from Sass to Stylus. The amount of combinations exceeds several millions! We wrote tests, documentation and fixed issues for 12 minor versions and 2 release candidates, to be able to deliver a perfectly configured seed project, no matter the options you choose.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2015/10/technologies-gga.png"><img class="alignnone size-medium wp-image-1335" src="http://blog.eleven-labs.com/wp-content/uploads/2015/10/technologies-gga-300x89.png" alt="technologies-gga" width="300" height="89" /></a></p>
-<h2></h2>
-<h2>Optimization served</h2>
+## 
+## Optimization served
 <p>We integrated many optimizations for your web application using some Gulp plugins :</p>
 <ul>
 <li><em>browserSync</em>: full-featured development web server with livereload and devices sync</li>
@@ -42,7 +42,7 @@ tags:
 <li><em>karma</em>: out of the box unit test configuration with karma</li>
 <li><em>protractor</em>: out of the box e2e test configuration with protractor</li>
 </ul>
-<h2>2.0.0 on the road...</h2>
+## 2.0.0 on the road...
 <p>But the v1 is not the end of the road. While maintaining the v1 branch, we started a new Github organization called <a href="https://github.com/FountainJS">FountainJS</a> targeting a futuristic v2 version. As the context of the build tools has greatly evolved over a year, it will be a reboot of the code base.<br />
 The major selling point will be to use Yeoman's generators composition, to upgrade to Gulp 4 and to write it in ES6. Finally, I hope to open new horizons in terms of options: dependency management for sure, but also, why not Web frameworks (someone talked about React?) and also a backend.</p>
 <p>Go try out <a href="https://www.npmjs.com/package/generator-gulp-angular">generator-gulp-angular</a> v1.0.0 release! Any feedbacks, issues, or investment on the new  <a href="https://github.com/FountainJS">FountainJS</a> project will always be appreciated. <a href="https://www.npmjs.com/package/generator-gulp-angular"><img class="alignnone size-full wp-image-1336" src="http://blog.eleven-labs.com/wp-content/uploads/2015/10/generator-gulp-angular-logo.png" alt="generator-gulp-angular-logo" width="29" height="55" /></a></p>

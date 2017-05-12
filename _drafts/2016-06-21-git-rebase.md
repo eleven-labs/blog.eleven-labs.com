@@ -12,17 +12,17 @@ tags: []
 <p>Aujourd'hui, nous utilisons tous git pour gérer le code source des projets, que ce soit pour notre usage personnel ou professionnel.</p>
 <p>Nous savons tous commiter ou tirer des modifications. Mais il y a un problème assez récurrent dans les projets à plusieurs collaborateurs : les conflits.</p>
 <p>Pour mieux les gérer et les éviter, je vous propose d'aborder une commande git : rebase.</p>
-<h2>Le problème</h2>
+## Le problème
 <p>Git permet d'avoir un historique complet des modifications du code source. Pour réaliser une fonctionnalité, chaque contributeur va créer une branche depuis la branche <em>master</em>.</p>
 <p>Les développements commencent et chacun modifie des lignes de codes.</p>
 <p>Nous avons Jean qui a terminé le développement d'une fonctionnalité. Elle est fusionnée dans <em>master</em>. Tout se passe bien.</p>
 <p>Marc a également terminé son développement, mais il a modifié les même fichiers que Jean. Si la branche de marc est fusionnée à ce moment, il y aura des <strong>conflits</strong>.</p>
-<h2>La solution</h2>
+## La solution
 <p>Il est donc nécessaire de mettre à jour sa branche avant de pousser ses modifications. Cette mise à jour va inclure toutes les modifications de Jean dans la branche de Marc. Ça s'appelle un <em>rebase</em>.</p>
 <pre class="lang:sh decode:true">git rebase</pre>
 <p>Cette commande va prendre tous les commits de la branche en cours pour les appliquer à la suite de l'historique de la branche cible (très souvent <em>master</em>).</p>
 <p>Il est important de voir l'historique git comme un empilement d'éléments (<em>commit</em>).</p>
-<h2>Exemple</h2>
+## Exemple
 <p>J'ai une branche <em>master</em> avec le code source de mon application.</p>
 <pre class="lang:sh decode:true">commit c1
 Author: lepiaf

@@ -19,11 +19,11 @@ tags:
 <li style="font-weight: 400"><span style="font-weight: 400">Explorer les modèles de son domaine via une collaboration créative des experts métiers et des développeurs</span></li>
 <li style="font-weight: 400"><span style="font-weight: 400">Parler un langage partagé (<em>ubiquitous language)</em> dans un contexte délimité (</span><i><span style="font-weight: 400">bounded context</span></i><span style="font-weight: 400">)</span></li>
 </ul>
-<h2><span style="font-weight: 400">Le besoin d’un langage partagé</span></h2>
+## <span style="font-weight: 400">Le besoin d’un langage partagé</span>
 <p><span style="font-weight: 400">Les experts métiers utilisent leur propre jargon, tandis que les développeurs ont leur propre langage pour discuter de la façon dont ils vont implémenter techniquement ce qui est exprimé par le métier. Ainsi, une déconnexion survient entre le vocabulaire utilisé dans le code et celui utilisé dans les discussions quotidiennes. </span><span style="font-weight: 400"><br />
 </span><span style="font-weight: 400">Eric Evans souligne ici un point crucial : utiliser le modèle en tant que pierre angulaire du langage. Impliquer l’équipe à s’exercer à utiliser ce langage partagé entre tous les membres de l'équipe et dans le code. Utiliser le même vocabulaire à l’écrit, à l’oral, dans les diagrammes… Cela rendra toute communication plus cohérente et explicite. </span><span style="font-weight: 400"><br />
 </span><span style="font-weight: 400">Le fort couplage entre le langage et le modèle permet ainsi de réduire toute confusion et de rendre le design lisible. Tout changement dans le langage partagé impliquera donc forcément du changement dans le code. Il est important de revoir le design, renommer les méthodes ou classes pour convenir à l'évolution du modèle.</span></p>
-<h2><span style="font-weight: 400">Layered Architecture</span></h2>
+## <span style="font-weight: 400">Layered Architecture</span>
 <p><span style="font-weight: 400">Dans une application complexe, de nombreuses choses sont mélangées au sein du code : notre code métier est couplé avec notre base de données, notre interface utilisateur, des librairies externes… Cela engendre une plus grande difficulté pour faire évoluer le code, et même le comprendre. Nous perdons le plus important dans la représentation de notre code métier : sa compréhension et son évolutivité. </span><span style="font-weight: 400"><br />
 </span><span style="font-weight: 400">Le <em>Domain Driven Design</em> permet de répondre à ce problème en isolant complètement le code métier de notre application et en éliminant toute dépendance superflue : infrastructure, interface utilisateur, logique applicative…</span></p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/01/Screen-Shot-2016-01-31-at-14.43.25-1.png"><img class="size-medium wp-image-1566 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/01/Screen-Shot-2016-01-31-at-14.43.25-1-300x185.png" alt="Screen Shot 2016-01-31 at 14.43.25 1" width="300" height="185" /></a></p>
@@ -41,7 +41,7 @@ Nous détaillerons plus profondément comment modéliser notre métier dans la 
 <p>&nbsp;</p>
 <p><span style="font-weight: 400">Ce découpage en couches permet aux objets du domaine de se concentrer à modéliser le métier, car ils n’ont pas la responsabilité de se persister en base de données, de s’afficher…</span><span style="font-weight: 400"><br />
 </span><span style="font-weight: 400">Voilà donc un autre point intéressant : l'indépendance du domaine, le fait de se concentrer uniquement sur le modèle du domaine, et l'isoler de tout système externe.</span></p>
-<h2><span style="font-weight: 400">Modéliser son </span><i><span style="font-weight: 400">domain</span></i></h2>
+## <span style="font-weight: 400">Modéliser son </span><i><span style="font-weight: 400">domain</span></i>
 <p><span style="font-weight: 400">Nous venons de voir que la couche </span><i><span style="font-weight: 400">domain </span></i><span style="font-weight: 400">est celle qui contient toute la logique métier. La modélisation du domaine est faite avec de nombreux éléments. Voyons en quelques uns en détail.</span></p>
 <h4><span style="font-weight: 400">Entities</span></h4>
 <p><span style="font-weight: 400">Ce sont des objets avec une identité et un cycle de vie (ex: un Customer, un Purchase)</span></p>

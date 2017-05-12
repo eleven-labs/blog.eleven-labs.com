@@ -15,10 +15,10 @@ tags:
 - Angular2
 ---
 {% raw %}
-<h2>Introduction</h2>
+## Introduction
 <p>Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde version du framework : Angular2. Pour me faire la main, j'ai choisi de travailler sur un système d'authentification par token en utilisant Symfony pour la partie back-end, en incluant le bundle <strong>Lexik JWT Authentication. </strong></p>
 <p>Je vous propose de voir ensemble un exemple très simple et les différentes étapes à suivre pour la mise en place d'une API sécurisée servant une liste de publications (...très privées) à notre application Angular2.</p>
-<h2>Sommaire</h2>
+## Sommaire
 <ol>
 <li><strong>Mise en place de la partie Back-end</strong>
 <ol>
@@ -39,7 +39,7 @@ tags:
 </li>
 <li><strong>Conclusion</strong></li>
 </ol>
-<h2><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/sf-blog-2.png" target="_blank"><img class="alignnone size-full wp-image-3517" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/sf-blog-2.png" alt="" width="80" height="80" /></a></h2>
+## <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/sf-blog-2.png" target="_blank"><img class="alignnone size-full wp-image-3517" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/sf-blog-2.png" alt="" width="80" height="80" /></a>
 <h4><strong>1 Mise en place de la partie Back-end</strong></h4>
 <h5><strong>1.1 </strong>Installation d'une application Symfony3</h5>
 <p>Installons tout d'abord la dernière version de Symfony3 via l'installeur prévu à cet effet sur le site officiel :</p>
@@ -225,7 +225,7 @@ class PostController extends FOSRestController implements ClassResourceInterface
 <pre class="lang:default decode:true">curl -X POST http://localhost:8000/api/login_check -d username=gary -d password=pass</pre>
 <p>Si tout va bien, vous devriez recevoir un token d'authentification.</p>
 <p>C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)</p>
-<h2><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/ng-blog.png" target="_blank"><img class="alignnone size-full wp-image-3513" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/ng-blog.png" alt="" width="80" height="86" /></a></h2>
+## <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/ng-blog.png" target="_blank"><img class="alignnone size-full wp-image-3513" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/ng-blog.png" alt="" width="80" height="86" /></a>
 <h4><strong>2 Mise en place de la partie Front-end</strong></h4>
 <h5>2.1 Création de l'application Angular2 via Angular CLI</h5>
 <p>Installons tout d'abord Angular CLI globalement sur notre machine. Cet outil va nous servir à générer la structure de notre application via une simple commande et à recompiler à la volée nos modifications :</p>

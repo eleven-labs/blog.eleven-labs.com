@@ -12,10 +12,10 @@ tags:
 - directive
 ---
 {% raw %}
-<h2>Préambule</h2>
+## Préambule
 <p>Comme vu dans l’article précédent, une directive est un marqueur HTML interprété par AngularJS via son $compile. Nous allons donc nous intéresser ici aux divers moyens nous permettant d’avoir une gestion la plus fine possible des transformations de nos directives.</p>
 <p>&nbsp;</p>
-<h2>Manipulation du contenu</h2>
+## Manipulation du contenu
 <p>Nous pouvons donc agir à quatre moments clefs de la vie d’une directive :</p>
 <ul>
 <li>Le compile n’est appelé qu’une seule fois lors de l’initialisation. C’est ici que l’on manipule le template de la directive en amont, souvent dans un but d’optimisation.</li>
@@ -75,8 +75,8 @@ tags:
       }
     };  
   });</pre>
-<h2 class="lang:js decode:true "></h2>
-<h2 class="lang:js decode:true ">Transclusion</h2>
+<h2 class="lang:js decode:true ">
+<h2 class="lang:js decode:true ">Transclusion
 <p>Il peut arriver qu'une directive doive modifier les éléments du DOM se trouvant à l’intérieur d'elle. Dans ce cas, la transclusion est notre amie, et nous permet de récupérer le contenu interne à la directive pour le manipuler.</p>
 <h3>Mise en place</h3>
 <p>Pour se faire il suffit de spécifier à sa directive qu'elle souhaite utiliser la transclusion.</p>

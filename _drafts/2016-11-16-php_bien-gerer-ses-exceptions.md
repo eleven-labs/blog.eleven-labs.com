@@ -20,7 +20,7 @@ tags:
 <li>lever les exceptions</li>
 <li>gérer les exceptions</li>
 </ul>
-<h2>Lever les exceptions au bon moment</h2>
+## Lever les exceptions au bon moment
 <p>Commençons d'abord par le début, il y a une exception parce qu'à un moment dans l'application ou un des composants, une condition ou une opération n'a pas pu être remplie.</p>
 <p>Il existe quelques bonnes pratiques sur la création des exceptions. Je vais m'intéresser à deux en particulier : le nommage et le contexte.</p>
 <h3>Nommer l'erreur, pas l'émetteur</h3>
@@ -89,7 +89,7 @@ class InvalidArgumentException extends \InvalidArgumentException implements Exce
 }
 
 // https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Validator/Exception/InvalidArgumentException.php</pre>
-<h2>Les attraper au bon moment</h2>
+## Les attraper au bon moment
 <p>Il est tentant d'attraper toutes les erreurs qui peuvent survenir. Mais il est préférable d'attraper uniquement les exceptions que l'application est capable de gérer. Sinon, il vaut mieux les laisser se propager jusqu'au niveau le plus haut. Avec l'utilisation d'un framework tel que Symfony, une exception qui n'est pas attrapée dans l'application sera gérée par le framework (et affichera une belle page 500).</p>
 <h3>Attraper ce qui est gérable</h3>
 <p>Dans une application moderne, le code est empilé comme des poupées russes. Une exception qui est levée à un endroit, même en profondeur, va remonter toutes les couches si elle n'est pas attrapée.</p>
@@ -116,7 +116,7 @@ public function actionType($username)
 <p>Comme nous venons de le voir dans l'exemple précédent, je n'ai géré que l'exception dont j'ai besoin. Pour les autres cas, j'ai laissé l'exception se propager pour qu'elle remonte dans les couches les plus hautes.</p>
 <p>Une application est un emboîtement de composants, qui lorsqu'ils sont assemblés ensemble permettent de construire une fonctionnalité. Une exception levée au niveau du composant, et donc au plus bas de la couche applicative, n'a pas de sens toute seule. Il y a un ensemble fonctionnel lié à cette exception. C'est cette chaîne fonctionnelle qui est capable de prendre soin de cette exception. Comme dans l'exemple précédent. C'est la fonctionnalité qui a permis de gérer cette exception, et non le composant Guzzle. Le composant n'a fait que lancer l'exception pour qu'elle remonte au plus haut.</p>
 <p>Pour un framework, tel que Symfony, c'est le même principe. Si le développeur ne sait pas quoi faire de l'exception, il va la laisser remonter jusqu'à un écouteur capable de la gérer. Et tout en haut, il y a cet écouteur: <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/EventListener/ExceptionListener.php">src\Symfony\Component\HttpKernel\EventListener\ExceptionListener</a>.</p>
-<h2>Pour conclure</h2>
+## Pour conclure
 <p>Une exception, telle que son nom l'indique, est un événement qui arrive à un moment exceptionnel dans la vie de l'application. Elle arrive car une opération s'est mal déroulée, ou un développeur a mal utilisé un composant. Quelque soit la raison, l'exception se doit d'être le plus explicite possible. Sa bonne compréhension permet de la réparer au plus vite. Il est important de lever l'exception au bon moment.</p>
 <p>Par contre, l'exception ne doit pas être mise sous le tapis, mais elle doit être gérée correctement. Une bonne gestion de l'exception passe par une bonne compréhension de la fonctionnalité attendue et de son périmètre. <span style="text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;">Attraper toutes les exceptions avec un `try {} catch (\Exception $e)` est une très mauvaise pratique</span></span>. Cela masquerait une exception encore plus grave.</p>
 <p>Une exception bien lancée et gérée correctement permet à votre application d'être facilement maintenable et rend le diagnostic d'une erreur plus simple et rapide.</p>

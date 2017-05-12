@@ -10,11 +10,11 @@ tags:
 - AngularJS
 ---
 {% raw %}
-<h2>Kézako ?</h2>
+## Kézako ?
 <p>Pour faire simple une directive est un marqueur sur un élément du DOM (en tant qu'attribut, nom d’élément commentaire ou de classe CSS), ce marqueur informe le compiler HTML ($compile) d'attacher un comportement à cet élément voir de transformer cet élément et ses enfants.</p>
 <p>A mon sens un des gros plus du framework AngularJS  réside dans le fait que tout son langage de Template (directive, filtre…) est implémenté de la même manière que ce que nous allons voir ci-dessous. Les sources sont accessibles ici : <a title="https://github.com/angular/angular.js/tree/master/src/ng" href="https://github.com/angular/angular.js/tree/master/src/ng" target="_blank">https://github.com/angular/angular.js/tree/master/src/ng</a>.</p>
-<h2></h2>
-<h2>Créer des directives</h2>
+## 
+## Créer des directives
 <p>Tout d'abord nous suivrons  une convention de nommage qui  veut qu'on préfixe le nom de ses propres directives, dans nos exemples ci-dessous nous utiliserons le préfixe "my".</p>
 <p>Lors de cet article nous étudierons les options les plus communes des directives, deux autres articles compléteront le tour d'horizon des directives.</p>
 <h3></h3>

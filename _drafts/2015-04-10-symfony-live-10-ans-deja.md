@@ -12,16 +12,16 @@ tags:
 ---
 {% raw %}
 <h1 id="symfony-live-10-ans-deja">Symfony Live, 10 ans déjà !
-<h2 id="presensation">Présentation</h2>
+<h2 id="presensation">Présentation
 <p>Le Symfony Live est une journée de conférences autour du framework Symfony. Les conférences présentées sont d'un bon niveau technique. Il y a également des retours d'expériences, sur des cas concrets et avec des problématiques que l'on peut rencontrer au quotidien.</p>
-<h2 id="deroulement-de-la-journee">Déroulement de la journée</h2>
+<h2 id="deroulement-de-la-journee">Déroulement de la journée
 <p>La journée était rythmée par des conférences de 40 min et de 10 min, sur des thèmes divers et variés. La cadence était assez soutenue, il fallait s'accrocher : 17 au total.</p>
 <p><a title="Planning des présentations" href="http://paris2015.live.symfony.com/speakers,">Planning des présentations</a></p>
 <p>Cette journée s'est passée à Paris à la Cité Universitaire.</p>
 <blockquote class="twitter-tweet" lang="en"><p>En direct des <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> ! <a href="http://t.co/FF8J9DWZzX">pic.twitter.com/FF8J9DWZzX</a></p>
 <p>— SmartyBoy (@CptSmartyBoy) <a href="https://twitter.com/CptSmartyBoy/status/586110067675639808">April 9, 2015</a></p></blockquote>
 <p>Je vais parler des conférences que j'ai le plus appréciées.</p>
-<h2 id="ouverture-de-la-journee">Ouverture de la journée</h2>
+<h2 id="ouverture-de-la-journee">Ouverture de la journée
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/hashtag/symfony?src=hash">#symfony</a> déjà 10 ans ! <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="http://t.co/rElZII1jMj">pic.twitter.com/rElZII1jMj</a></p>
 <p>— Mickael Lapeyre (@ckimn) <a href="https://twitter.com/ckimn/status/586075241002246144">April 9, 2015</a></p></blockquote>
 <p>La matinée commence par un discours d'ouverture par <a href="https://twitter.com/fabpot">Fabien Potencier</a>. Un peu "freestyle", il n'a pas de support de présentation. Il revient sur l'origine du framework, son historique.</p>
@@ -47,7 +47,7 @@ tags:
 <p>Pour illustrer l'exemple, une petite mise en scène d'une requête HTTP.</p>
 <blockquote class="twitter-tweet" lang="en"><p>Http version humaine ^_^ <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="http://t.co/GJ150f2iSs">pic.twitter.com/GJ150f2iSs</a></p>
 <p>— Thierry Piaf (@piaf_) <a href="https://twitter.com/piaf_/status/586094748198428672">April 9, 2015</a></p></blockquote>
-<h2 id="stack-elk">Stack ELK</h2>
+<h2 id="stack-elk">Stack ELK
 <p>Présenté par <a href="https://twitter.com/odolbeau">Olivier Dolbeau</a>, elle nous a fait découvrir un moyen de mieux visialiser les logs. ELK pour <span class="message_content">ElasticSearch</span> Logstash Kibana. Cet écosystème fonctionne à merveille. Les logs applicatifs et systèmes sont envoyés à Logstash. Elles sont ensuite stockeés dans <span class="message_content">ElasticSearch</span>. Avec Kibana, la création des tableaux permet de visualiser et d'être rapidement alerté sur un problème.</p>
 <blockquote class="twitter-tweet" lang="en"><p>Avec <a href="https://twitter.com/odolbeau">@odolbeau</a>, on part à la chasse aux logs ! <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="http://t.co/QZk71pDIKh">pic.twitter.com/QZk71pDIKh</a></p>
 <p>— Les-Tilleuls.coop (@coopTilleuls) <a href="https://twitter.com/coopTilleuls/status/586100702797295616">April 9, 2015</a></p></blockquote>
@@ -57,18 +57,18 @@ tags:
 <p>Lien vers la présentation: <a href="https://speakerdeck.com/odolbeau/logs-hunting">Laisse pas traîner ton log !</a></p>
 <blockquote class="twitter-tweet" lang="en"><p>Blablacar, c'est 110 Go de log par jour O_o <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a></p>
 <p>— Bastien Picharles (@Kleinast) <a href="https://twitter.com/Kleinast/status/586103060533010432">April 9, 2015</a></p></blockquote>
-<h2 id="mediapart-le-changement-cest-maintenant">Mediapart, le changement c'est maintenant</h2>
+<h2 id="mediapart-le-changement-cest-maintenant">Mediapart, le changement c'est maintenant
 <p>Ce qui était intéressant dans la présentation, c'est leur prise de décision radicale. A un moment, quand tout par "en sucette", il faut savoir dire <strong>"stop"</strong> et faire table rase du passé pour repartir sur de nouvelles bases. Cette décision n'est pas facile. Comme lors de la transition Symfony 1 vers Symfony 2. Mais elle peut être un bon moyen pour redonner du souffle à un projet.</p>
-<h2 id="pattern-view-model">Pattern view model</h2>
+<h2 id="pattern-view-model">Pattern view model
 <p>Romain Kuzniak a déjà présenté une conférence complète sur les différentes architectures d'<span class="message_content">applicatives</span> lors d'un <a href="http://afsy.fr/blog/meetup-de-decembre-a-paris">précédent SfPot</a>.</p>
 <p>Ici, il a exposé le patron "Vue-Model". La problématique est que la vue a besoin de données en provenance de plusieurs sources : par exemple en provenance de plusieurs tables sql ou service. Chaque vue est donc spécifique et il est difficile de l'adapter.</p>
 <p>Pour résoudre cela, il faut ajouter une couche d'abstraction : un assembleur. Il va permettre d'agréger les données de plusieurs <span class="message_content">sources</span> pour la transmettre à la vue. Ainsi, la vue n'utilise plus que les données de l'assembleur, et non des données brutes. Il n'y a plus de logique dans la vue, ni dans le contrôleur. Tout est dans l'assembleur.</p>
 <p>Lien vers la présentation: <a href="http://fr.slideshare.net/RomainKuzniak/le-pattern-view-model-avec-symfony2">OpenClassrooms - Le pattern View Model avec Symfony2</a></p>
-<h2 id="pause-dejeuner">Pause déjeuner</h2>
+<h2 id="pause-dejeuner">Pause déjeuner
 <p>Après cette grosse matinée, il se faisait faim ^^. Il y a eu un grand buffet.</p>
 <blockquote class="twitter-tweet" lang="en"><p>Manger ! :-D <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="http://t.co/p7dGg1p2vp">pic.twitter.com/p7dGg1p2vp</a></p>
 <p>— Matthieu Moquet (@MattKetmo) <a href="https://twitter.com/MattKetmo/status/586116887270072321">April 9, 2015</a></p></blockquote>
-<h2 id="meetic-et-la-migration-du-backend">Meetic et la migration du backend</h2>
+<h2 id="meetic-et-la-migration-du-backend">Meetic et la migration du backend
 <p>Meetic nous a présenté la façon dont ils ont migré leur backend. Une des problématiques que l'on va rencontrer dans toutes les applications un peu ancienne : c'est leur base. Elle est monolithique. Tout est centré autour d'un coeur unique. Au fur et à mesure des ajouts de fonctionnalités, le code devient de plus en plus complexe, bienvenue au "code spaghetti".</p>
 <p>La probabilité de rencontrer un bug est d'autant plus grande qu'il faut maintenir ce code. Sachant que le coût d'un bug est exponentiel est fonction du stade de la fonctionnalité (développement, code review, test, déploiement en intégration, puis en production), il vaut mieux le maîtriser en amont.</p>
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/MeeticTech">@MeeticTech</a> Bug Cost <a href="https://twitter.com/hashtag/Coding?src=hash">#Coding</a> <a href="https://twitter.com/hashtag/UnitTest?src=hash">#UnitTest</a> <a href="https://twitter.com/hashtag/FunctionalTest?src=hash">#FunctionalTest</a> <a href="https://twitter.com/hashtag/FunctionalTest?src=hash">#FunctionalTest</a> <a href="https://twitter.com/hashtag/SystemTest?src=hash">#SystemTest</a> <a href="https://twitter.com/hashtag/AfterRelease?src=hash">#AfterRelease</a> au <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="http://t.co/1ZQW69vbYo">pic.twitter.com/1ZQW69vbYo</a></p>
@@ -78,7 +78,7 @@ tags:
 <blockquote class="twitter-tweet" lang="en"><p>Une très belle utilisation de docker chez Meetic : le testing <a href="https://twitter.com/MeeticTech">@MeeticTech</a> <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="http://t.co/CWJw5BuKNM">pic.twitter.com/CWJw5BuKNM</a></p>
 <p>— CARIOU Pierre-Yves (@pycariou) <a href="https://twitter.com/pycariou/status/586139102933884929">April 9, 2015</a></p></blockquote>
 <p>Lien vers la présentation: <a href="http://www.slideshare.net/meeticTech/meetic-backend-mutation-with-symfony">Meetic backend mutation with Symfony</a></p>
-<h2 id="surveillez-votre-prod">Surveillez votre prod</h2>
+<h2 id="surveillez-votre-prod">Surveillez votre prod
 <p>On a vu dans une précédente présentation comment partir à la chasse au log. Ce qui était intéressant ici, c'est comment rendre les logs intéressants et pertinents. Il faut utiliser les variables de contexte bien sur. Mais il est possible de faire plus.</p>
 <p>Avec Monolog, il est possible d'ajouter des "channel". Cela permet de regrouper les messages de log par "groupe" ou "thème". Comme "assetic", "doctrine", "event", "rabbitmq".</p>
 <p>Autre point, avec les processeurs, il est possible d'enrichir les logs avec des données supplémentaires. Par exemple, on peut ajouter la version du framework et l'ip du serveur.</p>
@@ -91,7 +91,7 @@ tags:
 <blockquote class="twitter-tweet" lang="en"><p>Petite démo de VarDumper <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="http://t.co/fFKBTfaYD4">pic.twitter.com/fFKBTfaYD4</a></p>
 <p>— Thierry Piaf (@piaf_) <a href="https://twitter.com/piaf_/status/586154149756145666">April 9, 2015</a></p></blockquote>
 <p>Lien vers la présentation: <a href="http://fr.slideshare.net/nicolas.grekas/symfony-debug-vardumper">Symfony Debug et VarDumper, ou comment debugger comfortablement</a></p>
-<h2 id="docker-et-lintegration-continue">Docker et l'intégration continue</h2>
+<h2 id="docker-et-lintegration-continue">Docker et l'intégration continue
 <p>Meetic l'a utilisé, cette présentation est rentrée plus en détail sur l'utilisation des conteneurs Docker.</p>
 <p>La problématique est la suivante: comment passer d'un projet à l'autre sans devoir réinstaller et reconfigurer toute une stack applicative (LAMP par exemple) ?</p>
 <p><a href="https://github.com/jderusse">Jérémy Derussé</a> nous propose une solution à base de conteneur Docker.</p>
@@ -102,12 +102,12 @@ tags:
 <blockquote class="twitter-tweet" lang="en"><p>Accélérer vos tests en préchargeant les données dans son docker et recréation de la bdd plutôt que de recharger les fixtures <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a></p>
 <p>— Loïck P. (@pyrech) <a href="https://twitter.com/pyrech/status/586197127463890944">April 9, 2015</a></p></blockquote>
 <p>Et surtout, "penser docker".</p>
-<h2 id="api-et-admin-en-10-min">API et Admin en 10 min</h2>
+<h2 id="api-et-admin-en-10-min">API et Admin en 10 min
 <p>Cette présentation, par <a href="http://www.jonathan-petitcolas.com/">Jonathan Petitcolas</a> était impressionnante par son efficacité. D'un côté, la création de l'API avec le model. De l'autre le front avec ng-admin. Le tout s'assemble parfaitement et le rendu est bien sympa.</p>
 <blockquote class="twitter-tweet" lang="en"><p>Ng-admin c'est un peu le générateur d'administration pour une API <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a></p>
 <p>— Thierry Piaf (@piaf_) <a href="https://twitter.com/piaf_/status/586200815934840832">April 9, 2015</a></p></blockquote>
 <p>Lien vers une ressource: <a href="http://marmelab.com/blog/2015/02/24/ngadmingeneratorbundle-create-javascript-admin-panel-rest-api-symfony2-in-minutes.html">Create a JavaScript Admin Panel and a REST API for Symfony2 Apps in Minutes</a></p>
-<h2 id="pour-conclure">Pour conclure</h2>
+<h2 id="pour-conclure">Pour conclure
 <p>Cette journée a été riche en conférences, en partage de connaissances, en participants (750 participants) et en soleil.</p>
 <p>Les deux annonces à retenir sont :<br />
 <em> Symfony 3.0 en novembre<br />

@@ -24,7 +24,7 @@ tags:
 <p><strong>All of your application components can access to the whole state.</strong></p>
 <p>For more information about Redux/Flux differences I encourage you to have a look at <a href="http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux/32920459#32920459">Dan's answer</a> on this subject.</p>
 <p>&nbsp;</p>
-<h2>Installation</h2>
+## Installation
 <p>This article will deal about how to install and use Redux on your own projects.<br />
 Please keep in mind that Redux can be used with multiple rendering frameworks like React or VueJS.</p>
 <p>To install Redux, you will just need the <span class="lang:default decode:true crayon-inline">redux</span> npm (or yarn) package.<br />
@@ -32,7 +32,7 @@ If you use Redux into a React application, you will also need the <span class=
 <pre class="lang:default decode:true">$ yarn add redux</pre>
 <p>Nothing more, you can now start to use Redux.</p>
 <p>&nbsp;</p>
-<h2>Basic usage</h2>
+## Basic usage
 <p>As previously described, you will have to instanciate a new <span class="lang:default decode:true crayon-inline">store</span>  that will allow to store the state of all your application.</p>
 <p>In order to instanciate this store, you will have to give to it some <span class="lang:default decode:true crayon-inline">reducers</span> . Reducers contain methods that change the state of your application.<br />
 These state changes occur when an <span class="lang:default decode:true crayon-inline">action</span>  is dispatched by your application.</p>
@@ -144,7 +144,7 @@ const configureStore = () =&gt; {
 export default configureStore;</pre>
 <p>Do not forget to call the <span class="lang:default decode:true crayon-inline">applyMiddleware()</span>  function when you pass your function to the store argument.</p>
 <p>&nbsp;</p>
-<h2>React use case</h2>
+## React use case
 <p>Principles are exactly the same when you want to use Redux on a React application. However, the <span class="lang:default decode:true crayon-inline">react-redux</span>  library brings some cool additional features to fit with React.</p>
 <p>Indeed, thanks to this library, you will be able to map your React components <span class="lang:default decode:true crayon-inline">props</span>  with the Redux state and actions.</p>
 <p>Let's take a concrete case: a <span class="lang:default decode:true crayon-inline">Counter</span>  component which could be a component for our previous use case:</p>
@@ -190,7 +190,7 @@ export default connect(
 <p>These two functions are applied thanks to the <span class="lang:default decode:true crayon-inline">connect()</span>  function brought by the <span class="lang:default decode:true crayon-inline">react-redux</span> library.</p>
 <p>[note]<strong>Note:</strong> We have to use the <span class="lang:default decode:true crayon-inline">bindActionCreators()</span>  function over our <span class="lang:default decode:true crayon-inline">CounterActions</span>  because this is an object that contains actions functions so this function will allows React to call the <span class="lang:default decode:true crayon-inline">dispatch()</span>  Redux function when React will call the functions in order to have them correctly triggered.[/note]</p>
 <p>&nbsp;</p>
-<h2>Conclusion</h2>
+## Conclusion
 <p>If we put in parallel the download numbers of Redux (<strong>1 303 720 download over the previous month)</strong> with the <strong>2 334 221 downloads of React</strong>, we can conclude that Redux is today <strong>very used</strong> and seems very much <strong>appreciated</strong> by developers because it's a <strong>simple</strong> solution that can greatly help you to structure your application.</p>
 <p>Redux brings, in my opinion, a <strong>real solution</strong> to structure complex (or large) business applications and bring that to the React and VueJS (and others) communities.</p>
 {% endraw %}

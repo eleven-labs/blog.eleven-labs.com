@@ -30,7 +30,7 @@ PHP 6 a existé de 2005 à 2014.</p>
 <p>Afin d'endiguer la montée d'HHVM, la communauté des développeurs du moteur PHP se doit de répondre avec une solution officielle. S'il s'agit au départ d'un nettoyage des API, la branche dérive rapidement sur une refonte du moteur nommé "PHP-NG" (New Generation). Cette branche sera par la suite réintégrée à la branche principale du projet en 2014. Au même moment, PHP 6 sera officiellement annulé et l'intégration de ce nouveau moteur permettra la création de PHP 7.</p>
 # Les nouveautés
 <p>La refonte du moteur est une des nouveautés majeures de PHP 7 puisqu'il multiple par deux la vitesse d'exécution du code source. Mais de nombreuses fonctionnalités ont été proposées, parfois acceptées, et parfois refusées. Cet article se veut être un résumé des changements majeurs et non une liste exhaustive.</p>
-<h2>Spaceship operator</h2>
+## Spaceship operator
 <p>Non sans humour, l'opérateur de comparaison introduit a en effet une ressemble visuelle importante avec un vaisseau spatial : &lt;=&gt; . Son intérêt est néanmoins tout autre, il permet de comparer deux variables d'une façon beaucoup plus simplifiée que ce qui était proposé auparavant. Si les deux opérandes sont égales, l'opérateur renverra 0, 1 si l'opérande de gauche est plus grande, -1 sinon.</p>
 <pre class="theme:github lang:default decode:true">&lt;?php
 // PHP 5
@@ -48,7 +48,7 @@ usort($r, function($a, $b) {
   return $a &lt;=&gt; $b;
 });</pre>
 <p>Un opérateur qui simplifie donc la vie des développeurs. Cependant, l'importance de cet opérateur est négligeable sur du code orienté objet, celui-ci se contentant de comparer les valeurs des attributs. Il aurait été intéressant de créer une interface de type Comparable comme ce qu'il existe en Java, afin de mieux gérer la comparaison entre objets.</p>
-<h2> Null coalesce operator</h2>
+##  Null coalesce operator
 <p>Autre opérateur ajouté, il sert deux buts : les tests et l'affectation. Jusqu'ici, il fallait tester l'existence d'une variable avant de l'affecter à une autre par le biais d'une condition (en général un ternaire). Ici, l'opérateur simplifie encore une fois le travail des développeurs :</p>
 <pre class="theme:github lang:default decode:true">&lt;?php
 // PHP 5
@@ -60,7 +60,7 @@ if (isset($bar)) {
 }
 // PHP 7
 $foo = $bar ?? $baz;</pre>
-<h2>Les classes anonymes</h2>
+## Les classes anonymes
 <p>Largement inspiré de Java, les classes anonymes font leur entrée en PHP 7. Une suite logique à l'introduction des fonctions anonymes en PHP 5.3. Tout comme les classes définies, elle acceptent l'héritage, l'implémentation et l'usage des traits. L'avantage est multiple mais reste spécifique.<br />
 On peut évoquer une simplification des mocks dans les tests unitaires, ou une alternative à la lourdeur de la norme PSR (qui recommande la création d'un fichier par classe) dans certains cas :</p>
 <pre class="theme:github lang:default decode:true">&lt;?php
@@ -73,7 +73,7 @@ $foo-&gt;setLogger(new class implements LoggerInterface {
 
   // etc.
 });</pre>
-<h2>Scalar Type Hinting</h2>
+## Scalar Type Hinting
 <p>PHP a toujours été reconnu pour son typage faible et sa permissivité parfois extrême, qui peut mener à des incohérences et de nombreuses heures de debug. Dans cette nouvelle version de PHP, le typage fort est probablement l'une des plus importantes évolutions du langage, et ce n'est pas sans débats que celle-ci a été intégrée. Il aura en effet fallu pas moins de 5 propositions pour faire accepter cette fonctionnalité.</p>
 <p>Le but est d'autoriser le typage des types primitifs (ou scalaires) en argument des méthodes ou fonctions, comme c'est déjà le cas pour les objets, les tableaux et les fonctions anonymes. Étant donné le changement majeur apporté, il a été décidé que ce typage fort serait optionnel. Pour l'activer, il faudra utiliser l'instruction : "declare(strict_types=1);". Par ailleurs cette instruction doit être la première après avoir déclaré le tag "<!--?php". En cas de manquement au contrat imposé par la méthode ou fonction, une erreur sera levée (le nouveau système d'exception étant expliqué plus bas). Les nouveaux types supportés (en plus des actuels) sont : int, float, string, bool.--></p>
 <p>Il est important de préciser que de l'autocast peut-être réalisé dans certains cas par le moteur, et qu'il reste possible de forcer le cast manuellement lors de l'appel d'une fonction ou méthode.</p>
@@ -87,7 +87,7 @@ function mySum(float $a, float $b)
 }
 
 echo mySum((float) "1.0", (float) "2");</pre>
-<h2>Types de retour</h2>
+## Types de retour
 <p>Souvent associée au Scalar Type Hinting, cette fonctionnalité est pourtant différente et fonctionne en toute circonstances, quelque soit la valeur ou la présence du "declare(strict_types=1|0)". Il s'agit ici d'une nouvelle implémentation et non d'une amélioration de l'existant comme pour le typage d'arguments. Sont supportés en retour de méthodes les types primitifs ainsi que les différentes classes, mais également les mots-clé "self" et "parent".</p>
 <p>Nous noterons deux choses supplémentaires qui sont importantes à prendre en compte :</p>
 <ul>
@@ -103,11 +103,11 @@ function bar($a, $b) : int
 {
   return $a + $b;
 }</pre>
-<h2>Throwable</h2>
+## Throwable
 <p>Enfin, dernière modification majeure, le changement du système d'exceptions.<br />
 Jusqu'ici tout était géré par exceptions, en PHP 7, le mécanisme a été scindé en deux : exceptions d'un côté (Exception), erreur de l'autre (Error), les deux implémentant l'interface Throwable. Le but étant de pouvoir <em>catcher</em> certaines erreurs propres au moteur, par exemple une division par 0, ou encore un problème de typage comme nous avons pu le voir plus haut. On peut donc faire l'hypothèse que la plupart des exceptions relèveront du code métier.</p>
 <p>Un point important est qu'il est impossible d'implémenter directement l'interface Throwable, il faudra impérativement hériter d'Exception, mais il sera possible d'utiliser l'interface lors du typage, pour <em>catcher</em> les erreurs et les exceptions de la même manière. Vous pouvez consulter la liste des erreurs prédéfinies <a href="http://php.net/manual/en/reserved.exceptions.php">ici</a>.</p>
-<h2>Sortie</h2>
+## Sortie
 <p>La première release stable est sortie le 3 décembre 2015, et un premier patch correctif (7.0.1) a été diffusé le 17 décembre. Étant donné les nombreux changements apportés par cette nouvelle version, il reste à savoir combien de temps l'adoption de PHP 7 prendra par le monde professionnel. Sachant que certains systèmes d'informations tournant encore sur PHP 4, d'autres sur des versions de PHP plus récentes, mais souvent obsolètes, il n'est pas improbable que la migration prenne plusieurs années.</p>
 <p>&nbsp;</p>
 {% endraw %}

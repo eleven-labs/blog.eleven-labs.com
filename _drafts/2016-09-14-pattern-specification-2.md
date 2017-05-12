@@ -285,7 +285,7 @@ class TransferMoneyCommand
 <li>Ainsi, il est plus facile de tester unitairement à la fois les spécifications et les classes utilisant ces dernières</li>
 <li>L'implicite est rendu explicite avec une définition claire des règles métier</li>
 </ul>
-<h2>Références</h2>
+## Références
 <p><a href="http://martinfowler.com/apsupp/spec.pdf">Eric Evans &amp; Martin Fowler - Specifications</a></p>
 <p><a href="http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/">Specification pattern: C# implementation</a></p>
 {% endraw %}

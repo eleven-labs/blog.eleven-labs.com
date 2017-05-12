@@ -15,10 +15,10 @@ tags:
 <p>RabbitMQ est un gestionnaire de queues, permettant d'asynchroniser différents traitements. Si vous n'êtes pas familier avec cet outil, un <a href="http://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/">article</a> traitant du sujet a déjà été écrit précédemment, je vous invite donc à le lire.</p>
 <p>Ce que j'aimerais vous présenter ici correspond à la mise en place du cycle de vie d'un message, avec une gestion des erreurs. Le tout, en quelques lignes de code.</p>
 <p>Ainsi, nous allons voir ensemble comment configurer son <em>virtual host </em>RabbitMQ, publier un message, le consommer, puis le "rattraper" si ce dernier rencontre une erreur lors de la consommation.</p>
-<h2></h2>
+## 
 <p>&nbsp;</p>
-<h2></h2>
-<h2>Nos outils</h2>
+## 
+## Nos outils
 <p>La solution technique s'organise aurour de deux librairies :</p>
 <ul>
 <li><a href="https://github.com/odolbeau/rabbit-mq-admin-toolkit">RabbitMQ Admin Toolkit</a> : librairie PHP qui permet d'interagir avec l'API HTTP de notre serveur RabbitMQ pour y créer les <em>exchanges</em>, les <em>queues</em>...</li>
@@ -26,7 +26,7 @@ tags:
 </ul>
 <p>Swarrot est compatible avec l'extension amqp de PHP ainsi la librairie <a href="https://github.com/php-amqplib/php-amqplib">php-amqplib</a>. L'extension PHP possède un avantage certain en performances (écrite en C) sur la librairie d'après les <a href="https://odolbeau.fr/blog/benchmark-php-amqp-lib-amqp-extension-swarrot.html">benchmarks</a>. Pour installer l'extension, rendez-vous <a href="https://serverpilot.io/community/articles/how-to-install-the-php-amqp-extension.html">ici</a>.<br />
 Le principal concurrent de Swarrot, <a href="https://github.com/php-amqplib/RabbitMqBundle">RabbitMqBundle</a>, n'est pas compatible avec l'extension PHP, et n'est pas aussi simple dans sa configuration et son utilisation.</p>
-<h2>Configuration</h2>
+## Configuration
 <p>Notre première étape va être de créer notre configuration RabbitMQ : notre <em>exchange </em>et notre <em>queue</em>.</p>
 <p>La librairie RabbitMQ Admin Toolkit, développée par <em><a href="https://github.com/odolbeau">odolbeau</a>,</em> permet de configurer notre vhost très simplement. Voici une config très basique déclarant un <em>exchange </em>et une <em>queue</em> nous permettant d'envoyer Wilson et ses camarades dans l'espace :</p>
 <pre class="theme:sublime-text lang:yaml decode:true" title="RabbitMQ configuration"># default_vhost.yml
@@ -63,7 +63,7 @@ Create binding between exchange default and queue send_astronaut_to_space (with 
 <p style="text-align: left;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Screenshot-from-2016-12-27-13-13-29.png"><img class="wp-image-3074 size-medium aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Screenshot-from-2016-12-27-13-13-29-300x213.png" width="300" height="213" /></a></p>
 <p style="text-align: left;">Si l'on clique maintenant sur <em>Queues</em>, <em>send_astronaut_to_space</em> est également présente. Jusqu'à présent, pas de problèmes.</p>
 <p>Passons maintenant à la partie publication et consommation de messages.</p>
-<h2>Consommation</h2>
+## Consommation
 <p>La librairie PHP qui va nous aider à consommer et publier nos messages, Swarrot, possède un bundle Symfony, qui va nous permettre de l'utiliser simplement dans notre application : <a href="https://github.com/swarrot/SwarrotBundle">SwarrotBundle</a>.</p>
 <p>Nous devons donc publier des messages, et ensuite les consommer. Voici comment le faire très simplement.</p>
 <p>Une fois votre bundle installé, il est nécessaire de configurer le bundle :</p>
@@ -107,7 +107,7 @@ class SendAstronautToSpace implements ProcessorInterface
 }</pre>
 <p>Notre <em>processor </em>SendAstronautToSpace implémente la méthode <em>process</em>, qui nous permet de récupérer le message à consommer, et l'utiliser dans notre application.</p>
 <p>Nous venons donc de mettre en place la consommation de nos messages. Que nous reste-t-il à faire ? La publication bien sûr !</p>
-<h2>Publication</h2>
+## Publication
 <p>Encore une fois, il est très simple de publier des messages avec Swarrot. Il nous suffit juste de déclarer un <em>publisher</em> dans notre configuration et d'utiliser le service de publication du SwarrotBundle pour publier un nouveau message.</p>
 <pre class="theme:sublime-text lang:yaml decode:true"># app/config/config.yml
     consumers:
@@ -129,7 +129,7 @@ $this-&gt;get('swarrot.publisher')-&gt;publish('send_astronaut_to_space_publishe
 </pre>
 <p>Le service Symfony <em>swarrot.publisher</em> s'occupe ainsi de la publication de notre message. Simple tout cela non ?</p>
 <p>Avec la mise en place des <em>queues</em>, la publication, la consommation des messages, la boucle est bouclée.</p>
-<h2>Gestion des erreurs</h2>
+## Gestion des erreurs
 <p>Un dernier aspect que j'aimerai partager avec vous concerne les erreurs lors de la consommation de vos messages.</p>
 <p>Mis à part les problèmes d'implémentation dans votre code, il est possible que vous rencontriez des exceptions, dues à des causes "externes". Par exemple, vous avez un processeur qui doit faire une requête HTTP à un autre service. Ce dernier peut ne pas répondre temporairement, ou être en erreur. Vous avez besoin de publier le message sans que ce dernier ne soit perdu. Ne serait-il pas bien de republier le message si le service ne répond pas, et de le faire après un certain laps de temps ? Faire ce que l'on appelle en anglais un <em>retry</em> ?</p>
 <p>Il m'est arrivé d'être confronté à ces problématiques, nous savions que cela pouvait arriver, et que le non-rattrapage des messages perdus devait se faire automatiquement.<br />
@@ -204,12 +204,12 @@ Si l'on regarde les détails de la queue <em>send_astronaut_to_space</em>, on v
 <p>À chaque erreur rencontrée par notre <em>processor</em>, le <em>retryProcessor</em> va catcher cette erreur, et republier notre message dans la <em>queue</em> de <em>retry</em> autant de fois qu'on l'a configuré. Puis, Swarrot va laisser le champ libre à RabbitMQ pour router le message dans la queue <em>send_astronaut_to_space_dl.</em></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>Conclusion</h2>
+## Conclusion
 <p>Swarrot est une librairie qui vous permet de consommer et publier des messages de manière très simple. Son système de <em>middleware</em> vous permet d'accroitre les possibilités de consommation de vos messages.<br />
 Couplé au RabbitMQ Admin Toolkit pour configurer vos <em>exchanges</em> et<em> </em><em>queues</em>, Swarrot vous permettra également de rattraper vos messages perdus très facilement.</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h2>Références</h2>
+## Références
 <ul>
 <li><a href="https://github.com/odolbeau/rabbit-mq-admin-toolkit">RabbitMQ Admin Toolkit</a></li>
 <li><a href="https://github.com/swarrot/swarrot">Swarrot</a></li>

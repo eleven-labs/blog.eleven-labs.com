@@ -61,8 +61,8 @@ $response = $kernel-&gt;handle($request);
 $response-&gt;send();
 $kernel-&gt;terminate($request, $response);</pre>
 <p>Et c’est tout ? Eh ben oui, c’est pas plus compliqué que ça. Rajoutez votre dépendance à AppCache et instanciez là avec en paramètre votre kernel.</p>
-<h2></h2>
-<h2>Exemple 1 : Utilisation simple</h2>
+## 
+## Exemple 1 : Utilisation simple
 <p>Maintenant, on va dans un premier temps créer un exemple sans activer le cache.</p>
 <p>Pour le routing :</p>
 <pre class="lang:yaml decode:true" title="app/config/routing.yml">app/config/routing.yml :
@@ -137,7 +137,7 @@ class ExampleController extends Controller {
 <p>Ok, tout ça c’est bien, mais cela met en cache une page entière. Mais votre besoin sera peut-être de ne mettre en page qu’une partie de la page.</p>
 <p>Heureusement pour nous, Symfony a pensé à tout et nous fournit une solution, les « Edge Side Includes » (ESI).</p>
 <p>&nbsp;</p>
-<h2> Exemple 2 : ESI</h2>
+##  Exemple 2 : ESI
 <p>Pour activer le mode ESI dans Symfony, ouvrez votre app/config/config.yml et ajoutez ces deux lignes dans la partie framework :</p>
 <pre class="lang:yaml decode:true">framework:
     esi: true # Pour utiliser les tags ESI dans les templates Twig

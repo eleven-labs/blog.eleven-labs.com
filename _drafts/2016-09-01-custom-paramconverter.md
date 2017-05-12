@@ -9,10 +9,10 @@ categories:
 tags: []
 ---
 {% raw %}
-<h2>Introduction</h2>
+## Introduction
 <p>The following article is aimed at developers who have already used the ParamConverter, and who understand its basic principles.</p>
 <p>It was written in order to explain how to solve the following issue: I needed to pass a token into a custom header, and to be able to get it back in the controllers. The goal was to avoid repeating the acquisition of the header in each one of the controllers.</p>
-<h2>The basics</h2>
+## The basics
 <p>The ParamConverter is a magic tool. From a controller, you just need to type-hint the argument to obtain an instance of a class based on the id in the url.</p>
 <pre class="lang:php decode:true">&lt;?php
 
@@ -26,7 +26,7 @@ public function getAction(Post $post)
 <p>In my example, Symfony has recognised the<em> post</em> token in the route. In the method signature, the <em>$post</em> variable is type hinted by the <em>Post </em>class. Through ParamConverter, Symfony will try to create an instance of the <em>Post</em> class and to assign it to the <em>$post</em> variable.</p>
 <p>I would refer you to the documentation for the basic usage of the ParamConverter: <a href="http://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html">http://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html</a></p>
 <p>But what if the value I am looking for is not found in the url, for example in a header?</p>
-<h2>A token in a header</h2>
+## A token in a header
 <p>Let’s take another example:</p>
 <pre class="lang:php decode:true">&lt;?php
 
@@ -38,7 +38,7 @@ public function isTokenValidAction($token)
     return $this-&gt;get('app.service')-&gt;isValid($token);
 }</pre>
 <p>The value of the token must pass through an <em>x-token</em> header. I will then create a ParamConverter in order to fetch the token from the header and not from the url.</p>
-<h2>Creation of the Paramconverter</h2>
+## Creation of the Paramconverter
 <p>All ParamConverters must implement the <span class="lang:php decode:true crayon-inline">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface</span>.</p>
 <p>There are the <span class="lang:php decode:true crayon-inline ">apply(Request $request, ConfigurationInterface $configuration);</span> and <span class="lang:php decode:true crayon-inline ">supports(ConfigurationInterface $configuration);</span> methods.</p>
 <ul>
@@ -88,12 +88,12 @@ class TokenConverter implements ParamConverterInterface
 }</pre>
 <p>During the building of the controller, Symfony will fetch all the values of the controller’s arguments in the <em>attributes </em>variable of the request. This is why I assign the token’s value in the <em>attributes </em>variable through the <em>ParameterBag </em>method.</p>
 <p>My custom <em>ParamConverter</em> is complete. I can now use it.</p>
-<h2>Service statement</h2>
+## Service statement
 <p>A <em>compiler pass</em> will read the services with the "request.param_converter" tag. We can define a priority and a name. If there’s a priority, they will be sorted in this order.</p>
 <pre class="lang:xhtml decode:true ">&lt;service id="token_converter" class="AppBundle\Request\ParamConverter\CrmTokenConverter"&gt;
     &lt;tag name="request.param_converter" converter="token" /&gt;
 &lt;/service&gt;</pre>
-<h2>Use in the controller</h2>
+## Use in the controller
 <p>In order to use it in my controller, I add the <em>ParamConverter </em>annotation to my controller with the <em>name </em>option and the converter name given in the service.</p>
 <pre class="lang:php decode:true">&lt;?php
 

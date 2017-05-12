@@ -15,7 +15,7 @@ tags:
 ---
 {% raw %}
 <p>Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet article, je vais l'aborder sur la partie PHP.</p>
-<h2>Qu'est ce que la qualité du code ?</h2>
+## Qu'est ce que la qualité du code ?
 <p>En PHP, nous pouvons définir la qualité du code par certaines métriques, telles que la couverture des tests ou l'usage des normes PSR. Le but est d'avoir un code compréhensible par tous les développeurs et facilement maintenable.</p>
 <p>Tout au long de cet article, je vais aborder les points suivants :</p>
 <ul>
@@ -25,7 +25,7 @@ tags:
 <li>l'intégration continue</li>
 <li>le service sass</li>
 </ul>
-<h2>PSR, késako ?</h2>
+## PSR, késako ?
 <p>PSR, pour <em>PHP Standard Recommendation,</em> est un ensemble de normes pour PHP qui permet de faciliter l'interopérabilité des composants entre eux.</p>
 <p>Elles sont éditées par le php-fig : <em>PHP Framework Interoperability Groupement</em>. C'est un groupement de personnes qui travaillent autour de ces recommandations. Tout le monde peut faire partie de ce groupement. Mais seuls certains membres avec le droit de vote peuvent voter sur les nouvelles recommandations. Les membres votants sont généralement des représentants de projets tels que Doctrine, Composer ou Symfony.</p>
 <p>Il y a actuellement 7 normes validées :</p>
@@ -37,7 +37,7 @@ tags:
 <li>PSR-7 pour les requêtes/réponses HTTP</li>
 </ul>
 <p>Toutes ces normes vont permettre de bien structurer le code, d'avoir les mêmes interfaces, et de permettre aux autres développeurs de contribuer plus facilement.</p>
-<h2>Détection des erreurs</h2>
+## Détection des erreurs
 <p>Avec toutes ces normes et recommandations, nous avons une bonne base solide. Apprendre et bien connaître ces recommandations peut prendre du temps. Pour cela, il y a des outils pour nous permettre de détecter les erreurs que nous faisons.</p>
 <h3>Erreur de style</h3>
 <p>Pour PSR-1 et PSR-2, il y a <a title="Github.com PHP Code Sniffer" href="https://github.com/squizlabs/PHP_CodeSniffer">PHP Code Sniffer</a>. Cet outil va se baser sur un ensemble de règles, parcourir le code et afficher toutes les erreurs. Les règles peuvent être enrichies selon les spécificités du framework.</p>
@@ -202,7 +202,7 @@ Time: 2.21 seconds, Memory: 20.00Mb</pre>
 <pre><code>php bin/php-cs-fixer src/
 </code></pre>
 <p>L'outil va parcourir tout le code et corriger les erreurs. Simple, n'est-ce pas ?</p>
-<h2>Intégration continue</h2>
+## Intégration continue
 <p>Tous ces outils, une fois en place, permettent de surveiller et de maintenir la qualité du code. Lancer régulièrement ces commandes doit être une exigence à adopter.</p>
 <p>Avec Jenkins, il est possible de lancer ces commandes de manière automatisée. Il suffit de créer un "job" et de le programmer. Chacune des commandes abordées dans cet article permettent de produire un rapport au format jUnit.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/01/Capture-d’écran-2016-01-25-à-21.35.56.png"><img class="alignnone size-medium wp-image-1554" src="http://blog.eleven-labs.com/wp-content/uploads/2016/01/Capture-d’écran-2016-01-25-à-21.35.56-300x242.png" alt="rapport jenkins" width="300" height="242" /></a></p>
@@ -215,7 +215,7 @@ Time: 2.21 seconds, Memory: 20.00Mb</pre>
 <h3>Blackfire.io</h3>
 <p>Encore un autre outil Sensio, mais très efficace dans l'analyse des performances d'une application. <a href="https://blackfire.io/">Blackfire.io</a> va permettre de cibler les points faibles : consommation mémoire, CPU, disque et réseau.</p>
 <p>Cet outil s'utilise principalement pour le débogage, notamment lorsqu'une route met du temps à répondre.</p>
-<h2>Pour conclure</h2>
+## Pour conclure
 <p>Tout au long de cet article, nous avons vu les normes et recommandations en PHP, comment détecter les erreurs que nous pouvons faire, et enfin comment les corriger.</p>
 <p>Avoir une bonne qualité de code et les mêmes conventions de code permet d'avoir un projet solide et compréhensible par tous les développeurs. C'est la base pour la réussite d'un projet. Ainsi, le projet s'adaptera plus facilement au changement de fonctionnalités.</p>
 <p>En complément, nous avons abordé l'utilisation de ces outils dans un flux d'intégration continue avec Jenkins et SonarQube.</p>

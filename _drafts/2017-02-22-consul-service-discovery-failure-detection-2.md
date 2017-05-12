@@ -136,7 +136,7 @@ hello from 172.18.0.X</pre>
     ekofr/http-ip</pre>
 <p>Nous voilà prêt à découvrir ce que nous apporte Consul.</p>
 <p>&nbsp;</p>
-<h2>Requêtes DNS</h2>
+## Requêtes DNS
 <p>Vous pouvez en effet maintenant résoudre votre service <span class="lang:default decode:true crayon-inline ">http-ip.service.consul</span>  en utilisant le serveur DNS apporté par Consul, vous devriez voir vos deux services enregistrés :</p>
 <pre class="lang:sh decode:true ">$ dig @$(docker-machine ip consul) http-ip.service.consul
 
