@@ -12,7 +12,7 @@ tags:
 - code-coverage
 - gitlab-ci
 ---
-{% raw %}
+
 Voici un tip qui permet de pouvoir voir en un clin d’œil les répercussions d'une MR sur la couverture de code de votre projet.
 
 <!--more-->
@@ -25,7 +25,9 @@ Dans un premier temps, nous allons modifier notre .gitlab-ci.yml
 
 &nbsp;
 
-<pre class="lang:yaml decode:true ">before_script:
+<pre class="lang:yaml decode:true ">
+{% raw %}
+before_script:
   - composer install
 
 stages:
@@ -33,7 +35,9 @@ stages:
 
 test:
   script:
-  - vendor/phpunit/phpunit/phpunit -c app --coverage-text --colors=never</pre>
+  - vendor/phpunit/phpunit/phpunit -c app --coverage-text --colors=never{% endraw %}
+</pre>
+
 &nbsp;
 
 La modification de notre pipeline porte sur les configs de phpunit en ajoutant <span class="lang:yaml decode:true crayon-inline ">--coverage-text --colors=never</span>  afin d'avoir dans les logs du pipeline les résultats du code-coverage.
@@ -52,7 +56,11 @@ Et voila !!!
 
 Petit bonus, pour avoir le badge avec le code coverage sur le README, ajouter simplement ces lignes :
 
-<pre class="lang:default decode:true ">[![build status](https://gitlab.com/[TEAM]/[PROJECT]/badges/master/build.svg)](https://gitlab.com/[TEAM]/[PROJECT]/commits/master)</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+[![build status](https://gitlab.com/[TEAM]/[PROJECT]/badges/master/build.svg)](https://gitlab.com/[TEAM]/[PROJECT]/commits/master){% endraw %}
+</pre>
+
 &nbsp;
 
 Et voila le résultat
@@ -67,4 +75,4 @@ Pour plus d'infos : <a href="https://docs.gitlab.com/ee/user/project/pipelines/
 
 &nbsp;
 
-{% endraw %}
+

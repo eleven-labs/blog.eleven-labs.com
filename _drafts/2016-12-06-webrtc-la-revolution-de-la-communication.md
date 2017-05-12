@@ -13,7 +13,7 @@ tags:
 - P2P
 - Vidéo
 ---
-{% raw %}
+
  Le <strong>WebRTC</strong> (aka <strong>Web</strong> <strong>R</strong>eal-<strong>T</strong>ime <strong>C</strong>ommunication) apporte la communication en temps réel au Web.
 
 Historiquement, le Web était un outil qui permettait le chargement, l'interprétation et l'exploitation d'interfaces distribuées. Un serveur héberge un contenu (dynamique ou non), l'expose sur le Web via une URL (Uniform Resources Location), puis un navigateur se connecte à cette URL pour télécharger et afficher le contenu en question à l'utilisateur.
@@ -52,7 +52,9 @@ Une liste plus exhaustive peut être trouvée <a href="https://developer.mozilla
 <h3 id="-navigator-getusermedia-https-developer-mozilla-org-en-docs-web-api-navigator-getusermedia-"><a href="https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia">navigator.getUserMedia()</a>
 L'API navigator.getUserMedia() sert à prendre le contrôle sur les équipements médias de l'utilisateur, c.à.d. la webcam et le micro. On pourra alors manipuler ou transférer les flux émis par ces différents médias sous la forme d'une instance de <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream">MediaStream()</a>. Le navigateur s'occupera de normaliser les protocoles audio/vidéo utilisés pour encoder ces flux. L'utilisateur devra néanmoins autoriser l'application à accéder à ses équipements.
 
-<pre><code class="lang-js">// Ask for permission to access user webcam and microphone
+<pre>
+{% raw %}
+<code class="lang-js">// Ask for permission to access user webcam and microphone
 navigator.getUserMedia({ audio: true, video: true }, success, failure);
 
 // Success callback that gets a `MediaStream` instance
@@ -64,17 +66,23 @@ function success (stream) {
 // Error callback
 function failure (err) {
   console.error('Could not capture user media', err);
-}</code></pre>
+}</code>{% endraw %}
+</pre>
+
 La spécification <em>WebRTC</em> n'étant pas finalisée, la façon d'appeler cette API diffère selon le navigateur et sa version. Un <a href="https://github.com/webrtc/adapter">adaptateur</a> développé et maintenu par le groupe de développement <a href="https://webrtc.org"><em>WebRTC</em></a> existe pour uniformiser l'exploitation de cette API.
 
 Sur la documentation de <a href="https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia">MDN</a> on peut voir que cette méthode est obsolète, et remplacée par la nouvelle version de la spécification <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia">mediaDevices.getUserMedia()</a> qui dorénavant renvoie une <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise()</a> :
 
-<pre><code class="lang-js">navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+<pre>
+{% raw %}
+<code class="lang-js">navigator.mediaDevices.getUserMedia({ audio: true, video: true })
   .then(function (stream) {
     /* use the stream */
   }).catch(function (err) {
     /* handle the error */
-  });</code></pre>
+  });</code>{% endraw %}
+</pre>
+
 <h3 id="-rtcpeerconnection-https-developer-mozilla-org-en-us-docs-web-api-rtcpeerconnection-rtcicecandidate-https-developer-mozilla-org-en-us-docs-web-api-rtcicecandidate-"><a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection">RTCPeerConnection()</a> / <a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate">RTCIceCandidate()</a>
 L'API RTCPeerConnection() nous sert à établir une connexion réseau <em>P2P</em> (tunnel) pour envoyer des données entre deux clients. Pour réussir à l'établir, ce n'est pas aussi simple que d'entrer une <em>URL</em> dans un navigateur, la plupart des clients existants n'ayant pas d'adresse publique accessible.
 
@@ -88,7 +96,9 @@ Dans certains cas, la connexion <em>P2P</em> n'est tout de même pas possible, p
 
 Voici un exemple qui suppose que vous avez déjà un système de <em>signaling</em> accessible via la méthode createSignalingChannel(), ainsi que deux éléments &lt;video&gt; : selfView et remoteView pour afficher les flux vidéos.
 
-<pre><code class="lang-js">const signalingChannel = createSignalingChannel();
+<pre>
+{% raw %}
+<code class="lang-js">const signalingChannel = createSignalingChannel();
 const peer;
 const configuration = ...;
 
@@ -147,7 +157,9 @@ signalingChannel.onmessage = function (evt) {
       new RTCIceCandidate(signal.candidate)
     );
   }
-};</code></pre>
+};</code>{% endraw %}
+</pre>
+
 On voit que cela devient légèrement plus complexe d'arriver à ses fins, et cela sans compter les polyfills nécessaires pour les différents navigateurs. Heureusement, comme l'adaptateur de l'API navigator.getUserMedia(), il existe de très bonnes librairies open-source qui s'occupent de gérer cette complexité pour vous (<a href="https://www.twilio.com/">Twilio</a>, <a href="https://www.easyrtc.com/">EasyRTC</a>).
 
 <h4 id="stun-ice">STUN/ICE
@@ -175,4 +187,4 @@ Dans une série d'articles, j'entrerai dans le vif du sujet avec des exemples co
 
 Et surtout, Happy Coding !
 
-{% endraw %}
+

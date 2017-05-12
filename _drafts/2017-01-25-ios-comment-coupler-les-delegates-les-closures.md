@@ -11,7 +11,7 @@ tags:
 - delegates
 - closure
 ---
-{% raw %}
+
 #### Introduction
 Salut les Astronautes, aujourd'hui on va continuer dans notre lancée sur le mobile, toujours en NATIF.
 
@@ -47,7 +47,9 @@ On va agir en 3 étapes:
 
 -Objective-C
 
-<pre class="lang:Objective-C decode:true">typedef void (^successBlock)();
+<pre class="lang:Objective-C decode:true">
+{% raw %}
+typedef void (^successBlock)();
 typedef void (^failureBlock)();
 
 @protocol RequestManagerObjCDelegate
@@ -77,10 +79,14 @@ typedef void (^failureBlock)();
 
 @end
 
+{% endraw %}
 </pre>
+
 On va maintenant implémenter la classe qui va hériter du protocole. Elle va donc contenir les 2 méthodes <strong>onRequestSuccess</strong> et <strong>onRequestFailure</strong> et chacune appellera le block/closure qui lui correspondra.
 
-<pre class="lang:Objective-C decode:true ">@implementation RequestManagerObjCDelegateImplementation
+<pre class="lang:Objective-C decode:true ">
+{% raw %}
+@implementation RequestManagerObjCDelegateImplementation
 
 - (void)onRequestSuccess {
     self.success();
@@ -92,10 +98,14 @@ On va maintenant implémenter la classe qui va hériter du protocole. Elle va do
 
 @end
 
+{% endraw %}
 </pre>
+
 Ensuite, on code la classe <strong>RequestManager</strong> que vous devez commencer à connaître
 
-<pre class="lang:Objective-C decode:true ">@implementation RequestManagerObjC
+<pre class="lang:Objective-C decode:true ">
+{% raw %}
+@implementation RequestManagerObjC
 
 - (void)get:(NSString *)url {
     //Do the call
@@ -114,10 +124,14 @@ Ensuite, on code la classe <strong>RequestManager</strong> que vous devez comme
 }
 
 @end
+{% endraw %}
 </pre>
+
 Puis on va faire une méthode pour appeler notre webservice
 
-<pre class="lang:Objective-C decode:true ">- (void)callWebService {
+<pre class="lang:Objective-C decode:true ">
+{% raw %}
+- (void)callWebService {
 
     RequestManagerObjC* manager = [[RequestManagerObjC alloc] init];
 
@@ -137,7 +151,9 @@ Puis on va faire une méthode pour appeler notre webservice
 
     [manager get: @"http://plop.fr"];
 }
+{% endraw %}
 </pre>
+
 On va un peu regarder ensemble ce que l'on a codé.<br />
 - On a instancié notre <strong>Manager,</strong> qui va appeler le webservice<br />
 - On a définit nos deux <strong>blocks/closures</strong><br />
@@ -150,7 +166,9 @@ Je vous donne le code Swift pour les plus impatients
 
 - Swift
 
-<pre class="lang:Swift decode:true">protocol RequesterDelegateSwift {
+<pre class="lang:Swift decode:true">
+{% raw %}
+protocol RequesterDelegateSwift {
     func onRequestSuccess()
     func onRequestFailure()
 }
@@ -211,7 +229,9 @@ func callWebService() {
      manager.get(url: "http://plop.fr")
  }
 
+{% endraw %}
 </pre>
+
 Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans le block/closure requestSuccess.
 
 #### Mais pourquoi faire tout ça ?
@@ -236,4 +256,4 @@ Après, je vous laisse tester et me dire ce que vous en pensez dans les commenta
 
 Allez, salut les astronautes :)
 
-{% endraw %}
+

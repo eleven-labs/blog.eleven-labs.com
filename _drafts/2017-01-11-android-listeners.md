@@ -12,7 +12,7 @@ tags:
 - dév mobile
 - Android
 ---
-{% raw %}
+
 #### Introduction
 Salut les astronautes !
 
@@ -44,15 +44,21 @@ onRequestSuccess<br />
 onRequestFailure
 
 <pre class="lang:Android decode:true">
+{% raw %}
+
 public interface RequesterListener {
     void onRequestSuccess();
     void onRequestFailure();
 }
 
+{% endraw %}
 </pre>
+
 On va donc hériter cette interface dans notre classe Java
 
 <pre class="lang:Android decode:true">
+{% raw %}
+
 public class MainActivity extends AppCompatActivity implements RequesterListener {
 
     @Override
@@ -72,10 +78,14 @@ public class MainActivity extends AppCompatActivity implements RequesterListener
     }
 }
 
+{% endraw %}
 </pre>
+
 On a donc notre Class MainActivity qui hérite de l'interface RequesterListener et qui implémente 2 méthodes (onRequestSuccess, onRequestFailure). On va faire une dummy implementation pour vous donner une idée de comment ça fonctionne :
 
 <pre class="lang:Android decode:true">
+{% raw %}
+
 public class RequestManager {
 
     private RequesterListener mListener;
@@ -105,10 +115,14 @@ public class RequestManager {
     }
 }
 
+{% endraw %}
 </pre>
+
 La classe RequestManager nous sert à exécuter un call GET sur une URL donnée.
 
 <pre class="lang:Android decode:true">
+{% raw %}
+
 public class MainActivity extends AppCompatActivity implements RequesterListener {
 
     @Override
@@ -137,7 +151,9 @@ public class MainActivity extends AppCompatActivity implements RequesterListener
     }
 }
 
+{% endraw %}
 </pre>
+
 Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans la méthode onRequestSuccess.
 
 <strong>Mais pourquoi faire tout ça?</strong>
@@ -163,6 +179,8 @@ En fait, grace au Java, on peut instancier une interface si on redéfinit les m�
 Un petit bout de code pour vous montrer ça ?
 
 <pre class="lang:Android decode:true">
+{% raw %}
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -186,7 +204,9 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
+{% endraw %}
 </pre>
+
 Et donc, si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans la méthode onRequestSuccess.
 
 Du coup, c'est plutôt pas mal tout ça non ?<br />
@@ -200,4 +220,4 @@ Mais bon, ça ce sera lors d'un prochain article :)
 
 Allez, salut les astronautes !
 
-{% endraw %}
+

@@ -9,7 +9,7 @@ categories:
 tags:
 - php
 ---
-{% raw %}
+
 Some time ago, well almost one year ago (time just flies!), I wrote about PHP 7.0. Ten months later, things are moving again: PHP 7.1 is in RC1 stage.
 
 This article doesn't pretend to be a list of all the modifications, but points out the new interesting features (you'll find at the bottom a link to all PHP 7.1 RFC's which have been used to write this article). Moreover, you need to know and understand all features introduced in PHP 7.0.
@@ -93,4 +93,4 @@ See you later for an article on PHP 7.2, if features are good enough to be liste
 
 <img class="aligncenter" src="https://media.giphy.com/media/iPiUxztIL4Sl2/giphy.gif" alt="cat bye goodbye done im out" />
 
-{% endraw %}
+

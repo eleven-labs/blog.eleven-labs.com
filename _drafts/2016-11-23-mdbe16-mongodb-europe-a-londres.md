@@ -11,7 +11,7 @@ tags:
 - mongodays
 - "#MDBE16"
 ---
-{% raw %}
+
 Cette Année, j'ai eu l'occasion de participer à l’événement MongoDB Europe qui s'est déroulé à Londres le 15 Novembre dernier. Voici un retour non exhaustif sur les tracks et les annonces intéressantes de la journée !
 
 <!--more-->
@@ -184,4 +184,4 @@ On se retrouve donc l'année prochaine pour l’évent à Paris !
 
 &nbsp;
 
-{% endraw %}
+

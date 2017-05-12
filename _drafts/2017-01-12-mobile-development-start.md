@@ -11,7 +11,7 @@ tags:
 - Android
 - mobile
 ---
-{% raw %}
+
 #### Mobile development: where to start?
 These days more than ever before mobile applications have become essential in the lives of millions of people. If you are reading this article, it means that you too are interested in this subject. I'll try to make a series of articles to share with you as much as I can on it.
 
@@ -45,24 +45,36 @@ Stop right there, young padawan, read the whole article you must!<span style="fo
 
 <span style="font-weight: 400;">The installation process is of an extraordinary simplicity:</span>
 
-<pre class="lang:sh decode:true">npm install -g cordova ionic
+<pre class="lang:sh decode:true">
+{% raw %}
+npm install -g cordova ionic
 ionic platform add ios
 ionic build ios
-ionic emulate ios</pre>
+ionic emulate ios{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">In 4 command lines, you just built your iOS application.</span>
 
 One of the main advantages of Ionic is that it provides pre-made components, which allows to develop applications quickly.
 
 **A spinner example:**
 
-<pre class="lang:default decode:true">&lt;ion-spinner&gt;&lt;/ion-spinner&gt;</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;ion-spinner&gt;&lt;/ion-spinner&gt;{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">I had the chance to develop several applications with Ionic, and I have to say that the component aspect is really handy. The </span><a href="http://ionicframework.com/docs/"><span style="font-weight: 400;">documentation</span></a><span style="font-weight: 400;"> exposes all components available with Ionic.</span>
 
 As mentioned before, Ionic is also based on Cordova to interact with native components of devices. Through plugins you can use localisation, camera, etc...
 
 **E****xample of the command to add the camera plugin:**
 
-<pre class="lang:sh decode:true">ionic plugin add cordova-plugin-camera</pre>
+<pre class="lang:sh decode:true">
+{% raw %}
+ionic plugin add cordova-plugin-camera{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">But Ionic has weaknesses as well:</span>
 
 <ul>
@@ -167,4 +179,4 @@ In my opinion, Swift has an easier syntax, so it's more convenient to start wit
 
 <em>Translated from the french by Marie Gautier</em>
 
-{% endraw %}
+

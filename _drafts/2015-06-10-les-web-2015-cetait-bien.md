@@ -11,7 +11,7 @@ tags:
 - conférence
 - bestofweb
 ---
-{% raw %}
+
 Le 5 juin dernier, tandis que la France entière affrontait vaillamment sa première canicule de l’année avec du courage, de la sueur et les jambes à l'air, les organisateurs du Best of Web ont eu la bonne idée de réunir une petite tranche de notre communauté bien au frais - ou pas - dans la Grande Crypte du 16e arrondissement de Paris. Salariés, freelance, étudiants… Des développeurs et intégrateurs de tout bord étaient présents dans la salle pour assister à une douzaine de conférences, chacune portant sur un sujet très différent de la précédente.
 
 [caption id="attachment_1199" align="aligncenter" width="300"]<a href="http://blog.eleven-labs.com/wp-content/uploads/2015/06/IMG_0788.jpg"><img class="wp-image-1199 size-medium" src="http://blog.eleven-labs.com/wp-content/uploads/2015/06/IMG_0788-300x225.jpg" alt="IMG_0788" width="300" height="225" /></a> Jésus, le premier évangéliste Web, était également présent ce jour-là.[/caption]
@@ -86,4 +86,4 @@ S’ils engagent le même traiteur que cette année, j’y retourne.
 
 Tous les liens vers les présentations sont présents sur <strong><a href="http://bestofweb.paris/#schedule" target="_blank">le site du Best of Web 2015</a></strong>.
 
-{% endraw %}
+

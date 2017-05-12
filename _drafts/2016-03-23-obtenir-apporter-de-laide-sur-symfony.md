@@ -12,7 +12,7 @@ tags:
 - stackoverflow
 - opensource
 ---
-{% raw %}
+
 Aujourd'hui, je vous propose un article -qui s'adresse plutôt aux débutants- sur les mécaniques pour obtenir et apporter de l’aide sur Symfony. Une grande partie des informations sont applicables à n'importe quel framework ou librairie.
 
 # Recherche Google
@@ -69,4 +69,4 @@ Contribuer c'est aussi améliorer la doc (<a href="https://github.com/symfony/sy
 # Conclusion
 Voilà donc ce qui clos ce petit guide d’obtention d’aide utile lorsque vous êtes bloqués (mais sentez être proche de la solution). J’ai essayé de définir les différentes parties de ce guide en fonction de la difficulté du problème. Chacun travaille à sa propre façon mais la démarche restera plus ou moins la même.
 
-{% endraw %}
+

@@ -11,7 +11,7 @@ tags:
 - AngularJS
 - dotJS
 ---
-{% raw %}
+
 La 5ème édition des conférences dotJS a battu un nouveau record d'affluence ce lundi 5 décembre en accueillant environ 1500 personnes. Cette année le rendez-vous était fixé au Dock Pullman à Aubervilliers, en région Parisienne.
 
 Bien que le charme du théâtre parisien des années passées n'y était plus, il était beaucoup plus agréable de suivre une journée entière de conférence dotJS dans cette salle de bon volume, bien ventilée et avec de bons sièges :)
@@ -127,4 +127,4 @@ On termine cette conférence par un pot autour de quelques bières et de bons �
 
 À l'année prochaine !
 
-{% endraw %}
+

@@ -13,7 +13,7 @@ tags:
 - http
 - web
 ---
-{% raw %}
+
 Je suis actuellement Lead développeur pour un site de presse Français à très fort trafic (<a href="http://www.lemonde.fr">lemonde.fr</a>). Au cours de mes expériences précédentes, j'ai pu développer sur plusieurs autres sites à forte volumétrie.
 
 Quand avec seulement une dizaine de serveurs vous devez contenir des pics de trafic entre 100 000 et 300 000 visiteurs instantanés, le cache n'est plus optionnel. Il devient une véritable nécessité. Votre application peut avoir les meilleures performances, vous serez toujours limités par vos machines physiques -même si ce n'est plus vrai dans le cloud (avec un budget illimité)- le cache doit donc devenir votre ami.
@@ -78,33 +78,57 @@ Maintenant que nous savons où nous devons configurer notre cache,
 </blockquote>
 D'abord, activons le cache pour notre page. Pour cela, nous devons ajouter le header.
 
-<pre class="">Cache-Control: public</pre>
+<pre class="">
+{% raw %}
+Cache-Control: public{% endraw %}
+</pre>
+
 Il existe d'autres paramètres pour ce header que je vous invite à retrouver sur  https://fr.wikipedia.org/wiki/Cache-Control, un des plus utilisés est le
 
-<pre class="">Cache-Control: no-store
+<pre class="">
+{% raw %}
+Cache-Control: no-store
+{% endraw %}
 </pre>
+
 permettant de désactiver le cache sur la page.
 
 Nous pouvons désormais configurer le temps de cache de la page, c'est ce que l'on appelle le TTL de la page. Pour cela, le header à changer est le suivant :
 
-<pre class="">max-age: 300</pre>
+<pre class="">
+{% raw %}
+max-age: 300{% endraw %}
+</pre>
+
 300 étant un temps de cache donné en seconde.
 
 Vous pouvez trouvez dans certaines documentations disponibles un header très ressemblant :
 
-<pre class="lang:default decode:true">s-max-age: 300</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+s-max-age: 300{% endraw %}
+</pre>
+
 Il a la même utilité que le header max-age mais permet d'être utilisé sur un proxy (varnish par exemple) et donc avec un TTL différent pour le CDN et le proxy.
 
 Vous pouvez aussi choisir une date d'expiration ce qui permet d'être encore plus précis avec le cache, le header est simple :
 
-<pre class="">Expires: Thu, 25 Feb 2016 12:00:00 GMT</pre>
+<pre class="">
+{% raw %}
+Expires: Thu, 25 Feb 2016 12:00:00 GMT{% endraw %}
+</pre>
+
 Avec ces trois header, vous pouvez déjà utiliser le cache avec une bonne précision, en gérant vos TTL et expirations, vous pouvez faire vivre vos pages et les laisser se décacher toutes seules.
 
 <blockquote>Mais comment les décacher à volonté ?
 </blockquote>
 Le cache HTTP a une fonctionnalité très intéressante permettant de demander au serveur de calculer s'il doit renvoyer une nouvelle page. Pour l'utiliser, il suffit de remplir un nouveau header lors de la génération de la page.
 
-<pre class="">Last-Modified: Wed, 25 Feb 2015 12:00:00 GMT</pre>
+<pre class="">
+{% raw %}
+Last-Modified: Wed, 25 Feb 2015 12:00:00 GMT{% endraw %}
+</pre>
+
 Le client (votre navigateur) envoie quant à lui un header dans sa requête au serveur .
 
 Si le serveur renvoie une date plus récente que celle du client alors le client prend la nouvelle page. Sinon, il garde la page dans le cache.
@@ -113,12 +137,20 @@ Cela permet aussi de gérer la réponse 304 qui permet au serveur de n'envoyer q
 
 Il existe un autre header ayant le même principe, il s'agit du header Etag, qui se configure avec un 'string' généré par le serveur qui change selon le contenu de la page.
 
-<pre class="">Etag: home560</pre>
+<pre class="">
+{% raw %}
+Etag: home560{% endraw %}
+</pre>
+
 Attention, le calcul de l'etag doit être très réfléchi puisqu'il régit le temps de cache de la page, il doit donc être calculé avec les données dynamiques de la page.
 
 Comme expliqué dans le premier chapitre, la clé du cache HTTP est l'url de la page. Cela peut être gênant si votre page est dynamique selon l'utilisateur car l'url sera la même, mais le contenu sera différent. Il faut donc cacher plusieurs contenus pour une url. Heureusement, <a title="Tim Berners-Lee" href="https://fr.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Le</a>, l'inventeur du protocole HTTP a prévu le cas en ajoutant le header :
 
-<pre class="">Vary: Cookie User-agent</pre>
+<pre class="">
+{% raw %}
+Vary: Cookie User-agent{% endraw %}
+</pre>
+
 Comme son nom l'indique, il permet de faire varier le cache en utilisant un autre header, par exemple 'User-agent' qui permet de stocker pour une url toutes les pages pour chaque user-agent (exemple page mobile, page desktop). Le Cookie permet de stocker une page par cookie (donc par utilisateur).
 
 Nous venons de faire un tour plutôt complet des configurations possibles pour le cache HTTP, mais il est aussi possible d'ajouter ses propres header. Avant d'avancer sur ce sujet, nous allons réfléchir à l'architecture du cache HTTP.
@@ -152,7 +184,11 @@ Le web serveur aussi permet d'utiliser le cache HTTP, on l'utilise généralemen
 L'avantage du cache HTTP est que son utilisation est très simple, et que la plupart des frameworks web mettent en place des interfaces simples pour utiliser ce dernier. Malgré un nombre de fonctionnalités très important, nous avons toujours besoin de plus, c'est pour cela que lors d'un projet sur un site à fort trafic, on place deux header varnish personnalisés qui peuvent aider.
 
 ### Le catalogue
-<pre class="">X-Varnish-Catalog: |home|345|567|</pre>
+<pre class="">
+{% raw %}
+X-Varnish-Catalog: |home|345|567|{% endraw %}
+</pre>
+
 Il s'agit d'un header qui référence votre page, soit par terme (home, page, etc ...), soit par id d'objet.
 
 <blockquote>Mais pourquoi faire ?
@@ -161,7 +197,9 @@ Parce que cela vous permet de facilement trouver toutes les pages stockées dans
 
 <span style="font-weight: 400;">  </span>
 
-<pre class="lang:zsh decode:true" title="Varnish ban configuration"># Ban - Catalogue decache
+<pre class="lang:zsh decode:true" title="Varnish ban configuration">
+{% raw %}
+# Ban - Catalogue decache
 #
 # How to ban all objects referencing &lt;my_tag&gt; in the X-Cache-Varnish-Catalog header
 #       curl -X BAN http://&lt;varnish_hostname&gt;/uncache/&lt;my_tag&gt;
@@ -177,18 +215,28 @@ if (req.method == "BAN") {
     }
 
     eturn (synth(200, "Nothing to ban"));
-}</pre>
+}{% endraw %}
+</pre>
+
 ### Le grace
-<pre class="">X-Varnish-Grace: 300</pre>
+<pre class="">
+{% raw %}
+X-Varnish-Grace: 300{% endraw %}
+</pre>
+
 Comme le max-age, vous devez lui donner un temps en seconde. Ce petit header permet de gagner encore plus en performance. Il dit à votre varnish le temps acceptable pour renvoyer un cache même après l'expiration du max-age.
 
 Pour mieux comprendre, voici un exemple :
 
 Prenons la page /home qui à pour header :
 
-<pre class="lang:default decode:true " title="Exemple header">Cache-control: public
+<pre class="lang:default decode:true " title="Exemple header">
+{% raw %}
+Cache-control: public
 max-age: 300
-X-varnish-grace: 600</pre>
+X-varnish-grace: 600{% endraw %}
+</pre>
+
 Imaginons que varnish a la page dans son cache, si un utilisateur arrive à la 299ème seconde, varnish renvoie directement le cache.
 
 <blockquote>Mais que se passe t-il à la 301ème seconde ?
@@ -201,7 +249,9 @@ Facile, votre page est expiré la requête arrive directement sur votre serveur.
 
 Voici la configuration pour varnish :
 
-<pre class="lang:zsh decode:true " title="Configuration Grace Varnish">sub vcl_backend_response {
+<pre class="lang:zsh decode:true " title="Configuration Grace Varnish">
+{% raw %}
+sub vcl_backend_response {
    # Happens after we have read the response headers from the backend.
    #
    # Here you clean the response headers, removing silly Set-Cookie headers
@@ -220,7 +270,9 @@ Voici la configuration pour varnish :
        set beresp.grace = std.duration(beresp.http.X-Cache-Varnish-Grace + "s", 3600s);
    }
 }
+{% endraw %}
 </pre>
+
 # Les ESI
 Vous êtes désormais un expert dans l'utilisation du cache HTTP, il ne reste plus qu'une chose à comprendre : les ESI.
 
@@ -234,13 +286,17 @@ Sur chacune des pages, vous avez un bloc de pages qui est toujours le même mais
 
 Les ESI servent dans cette situation. Il s'agit seulement d'une page avec son cache propre que l'on peut intégrer dans une autre via une balise HTML.
 
-<pre class="lang:default decode:true" title="ESI intégration">//home.html
+<pre class="lang:default decode:true" title="ESI intégration">
+{% raw %}
+//home.html
 &lt;html&gt;
 &lt;body&gt;
 &lt;esi url='block.html'/&gt;
 Test
 &lt;/body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;{% endraw %}
+</pre>
+
 Varnish va reconnaître l'utilisation d'un ESI et va donc cacher deux objets, l'un pour la page complète avec les informations de cache de la page et l'un pour ESI avec d'autres informations de cache. Vous pouvez alors décacher seulement l'ESI et varnish va mettre à jour un seul objet (une seule demande au serveur), l'utilisateur a tout de même toutes les pages mises à jour.
 
 Pour plus d'informations, je vous invite à aller voir un ancien article<a href="http://blog.eleven-labs.com/symfony-2-cache-http-esi/" target="_blank"> http://blog.eleven-labs.com/symfony-2-cache-http-esi/</a> , qui explique une implémentation pour Symfony.
@@ -253,4 +309,4 @@ Vous pouvez aussi retrouver une présentation sur le cache HTTP et Symfony <a hr
 
 &nbsp;
 
-{% endraw %}
+

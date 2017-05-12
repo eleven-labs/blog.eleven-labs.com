@@ -19,7 +19,7 @@ tags:
 - react-native
 - application
 ---
-{% raw %}
+
 #### <strong>Faire du mobile oui, mais par où commencer ?</strong>
 Aujourd’hui plus qu’hier les applications mobiles deviennent indispensables dans la vie de plusieurs millions de personnes. Si vous lisez cet article, c’est que le sujet vous intéresse ou que vous souhaitez vous y mettre vous aussi. Je vais essayer de faire une série d’articles afin de partager avec vous le plus possible sur ce sujet.
 
@@ -56,24 +56,36 @@ Ainsi, Ionic ne permet pas de créer à proprement parler d’applications nativ
 
 <span style="font-weight: 400;">L’installation de Ionic est d’une simplicité extraordinaire !</span>
 
-<pre class="lang:sh decode:true ">npm install -g cordova ionic
+<pre class="lang:sh decode:true ">
+{% raw %}
+npm install -g cordova ionic
 ionic platform add ios
 ionic build ios
-ionic emulate ios</pre>
+ionic emulate ios{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">En 4 lignes de commandes, vous venez de builder votre application sous iOS.</span>
 
 <span style="font-weight: 400;">L’un des gros avantages de Ionic est qu’il fournit des composants tout prêts, ce qui permet encore une fois de faire des applications de manière rapide.</span>
 
 **Exemple de spinner :**
 
-<pre class="lang:default decode:true">&lt;ion-spinner&gt;&lt;/ion-spinner&gt;</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;ion-spinner&gt;&lt;/ion-spinner&gt;{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">J’ai eu l’occasion de développer quelques applications sous Ionic et je dois dire que cet aspect composant m’a énormément servi. <a href="http://ionicframework.com/docs/">La </a></span><span style="font-weight: 400;">documentation</span><span style="font-weight: 400;"> expose tous les composants mis à disposition par Ionic.</span>
 
 <span style="font-weight: 400;">Comme mentionné plus haut, Ionic se base aussi sur Cordova pour interagir sur les composants natifs de l’appareil. Il vous permet, via des plugins, d’utiliser la géolocalisation, l’appareil photo, etc…</span>
 
 **E****xemple de commande afin d’ajouter le plugin caméra :**
 
-<pre class="lang:sh decode:true">ionic plugin add cordova-plugin-camera</pre>
+<pre class="lang:sh decode:true">
+{% raw %}
+ionic plugin add cordova-plugin-camera{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">Mais Ionic dispose de points faibles :</span>
 
 <ul>
@@ -177,4 +189,4 @@ ionic emulate ios</pre>
 
 **Le natif permet d’avoir un meilleur rendu final. ****Cependant, il demande plus d'investissement car il convient d’apprendre un à plusieurs langages afin de publier une app sur plusieurs plateformes.**
 
-{% endraw %}
+

@@ -10,7 +10,7 @@ tags:
 - conférence
 - go
 ---
-{% raw %}
+
 Parce qu'il n’y a pas que PHP dans la vie, j’ai décidé d’assister au <a href="http://www.dotgo.eu/" target="_blank">dotGo</a> 2015, la conférence européenne sur le <a href="https://golang.org/" target="_blank">Go</a>. Ce langage open source et créé, à la base, par une équipe de Google, vient d’avoir 6 ans, et <a href="https://www.quora.com/Is-Google-Go-worth-learning" target="_blank">certains puristes ne jurent déjà que par lui</a>. Voici un résumé des présentations de l’unique journée de conférence:
 
 <blockquote class="twitter-tweet" lang="fr">
@@ -65,4 +65,4 @@ This is the best representation of a map function I've even seen! <a href="https
 
 <span style="font-weight: 400;">Ce n'est probablement pas le meilleur choix pour du développement web. Mais encore une fois, un développeur se doit d’être curieux des évolutions dans le milieu, ne serait-ce que pour s’adapter à la demande du marché. Dans le meilleur des cas, il le fait par passion.</span>
 
-{% endraw %}
+

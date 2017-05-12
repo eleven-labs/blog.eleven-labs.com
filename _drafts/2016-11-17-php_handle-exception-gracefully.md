@@ -11,7 +11,7 @@ tags:
 - best practice
 - exception
 ---
-{% raw %}
+
 <span id="result_box" class="" lang="en">Hello everyone! Today I would like to speak about a subject too little discussed in php: the exceptions. An exception is an alert issued when the code is executed, to indicate that something has not happened as expected. <span class="">It can be a bad connection identifier to the database, or an operation on a file that is not allowed, or a division by zero for example.</span></span>
 
 <span id="result_box" class="" lang="en">Once this alert is raised, you have to do something about it. <span class="">Either I leave it under the carpet and I pass it over in silence, or I manage it correctly so that my application continues to function normally even after this error.</span></span>
@@ -32,7 +32,9 @@ tags:
 
 <span id="result_box" class="" lang="en"><span class="">An exception must describe as simply as possible the problem encountered.</span></span>
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 class Filesystem
 {
@@ -45,7 +47,9 @@ class Filesystem
     }
 }
 
-// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Filesystem/Filesystem.php#L41</pre>
+// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Filesystem/Filesystem.php#L41{% endraw %}
+</pre>
+
 <span id="result_box" class="" lang="en">In this example, the copy could not be performed because of the original file not found. The exception is named by the cause of the error and not by the issuer: here the <em>copy()</em> method. <span class="">If I had named the exception by the issuer, it could be <em>CouldNotCopyFileException</em>.</span></span>
 
 ### <span id="result_box" class="short_text" lang="en"><span class="">Raise the exception according to the context</span></span>
@@ -55,7 +59,9 @@ class Filesystem
 
 <span id="result_box" class="" lang="en">A logical exception shows a problem with the code. For example, the exception <em>\InvalidArgumentException</em> gives an indication to the developer about an error in the code: an expected argument is invalid. In addition to being named according to the cause, I know it is in the context of a logical exception. <span class="">This means that as a developer, I did not pass a good argument to the method.</span></span>
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 class Constraint
 {
@@ -72,12 +78,16 @@ class Constraint
     }
 }
 
-// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Validator/Constraint.php#L80</pre>
+// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Validator/Constraint.php#L80{% endraw %}
+</pre>
+
 <span id="result_box" class="" lang="en">Exceptions taken at the runtime execution can not be detected before their interpretation. These are the following exceptions: <em>OutOfBoundsException</em>, <em>OverflowException</em>, <em>RangeException</em>, <em>UnderflowException</em>, <em>UnexpectedValueException</em>. <span class="">Unlike a logical exception, it is not an error related to the code or its misuse, but linked to an error when executing the code.</span></span>
 
 <span id="result_box" class="" lang="en">Take the <em>OutOfBoundsException</em> example. <span class="">This exception indicates that the index has no valid value in an array.</span></span>
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 class PropertyPath
 {
@@ -91,18 +101,24 @@ class PropertyPath
     }
 }
 
-// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/PropertyAccess/PropertyPath.php#L188</pre>
+// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/PropertyAccess/PropertyPath.php#L188{% endraw %}
+</pre>
+
 <span id="result_box" class="" lang="en">Here, the size of the array varies depending on the execution of the code. Occasionally, the selected index does not exist in the array. This exception protects the application against a fatal error that could stop code interpretation.</span>
 
 <span id="result_box" class="" lang="en">These two groups of exceptions can be extended to describe their own errors. With the principle of segregating interfaces, it is possible to describe more precisely the errors that can occur when using a library. <span class="">This makes it possible to know which component causes the error.</span></span>
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 class InvalidArgumentException extends \InvalidArgumentException implements ExceptionInterface
 {
 }
 
-// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Validator/Exception/InvalidArgumentException.php</pre>
+// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Validator/Exception/InvalidArgumentException.php{% endraw %}
+</pre>
+
 ## <span id="result_box" class="short_text" lang="en"><span class="">Catch them at the right time</span></span>
 <span id="result_box" class="" lang="en">It is tempting to catch any errors that may arise. <span class="">But it is better to only catch the exceptions that the application is able to handle.</span> Otherwise, it is better to let them spread to the highest level. <span class="">With the use of a framework such as Symfony, an exception that is not caught in the application will be managed by the framework (and will display a nice page 500).</span></span>
 
@@ -115,7 +131,9 @@ class InvalidArgumentException extends \InvalidArgumentException implements Exce
 
 &lt;?php
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 public function actionType($username)
 {
     try {
@@ -129,7 +147,9 @@ public function actionType($username)
     }
 
     return "update";
-}</pre>
+}{% endraw %}
+</pre>
+
 <span id="result_box" class="" lang="en"><span class="">In this example, I only manage the case of the 404. For the other types, I do not manage them, I re-throw the exception to let the other layers of the application manage it.</span></span>
 
 ### <span id="result_box" class="short_text" lang="en"><span class="">Let the exception spread</span></span>
@@ -152,4 +172,4 @@ public function actionType($username)
 <li>http://www.phptherightway.com/#exceptions</li>
 <li>http://ralphschindler.com/2010/09/15/exception-best-practices-in-php-5-3</li>
 </ul>
-{% endraw %}
+

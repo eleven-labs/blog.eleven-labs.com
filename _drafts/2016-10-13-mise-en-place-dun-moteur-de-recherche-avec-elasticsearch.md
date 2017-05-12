@@ -8,7 +8,7 @@ categories:
 - Non classé
 tags: []
 ---
-{% raw %}
+
     Vous avez une application qui possède des millions de données, votre site commence à ramer ou vous voulez simplement mettre en place un moteur de recherche rapide et efficace sans vous prendre la tête : Elasticsearch est fait pour vous.
 
     Voici un moteur de recherche open source qui commence à faire beaucoup de bruit. Et ça se comprend vu qu'il suffit de quelques minutes à peine pour disposer d’un moteur de recherche <em>clusterisé</em>, automatiquement sauvegardé et répliqué, équipé d'une API REST et proposant toutes les fonctionnalités d’un moteur de recherche.
@@ -46,16 +46,30 @@ On a fait le plus gros du travail maintenant, téléchargez la dernière version
 
 Dézippez-le:
 
-<pre class="lang:default decode:true">tar -xvf elasticsearch-2.3.4.tar.gz</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+tar -xvf elasticsearch-2.3.4.tar.gz{% endraw %}
+</pre>
+
 Un dossier "elasticsearch-2.3.4" va être créé, déplacez-vous dedans :
 
-<pre class="lang:default decode:true ">cd elasticsearch-2.3.4/bin</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+cd elasticsearch-2.3.4/bin{% endraw %}
+</pre>
+
 Il n'y a plus qu'à lancer une instance d'Elastic :
 
-<pre class="lang:default decode:true ">./elasticsearch</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+./elasticsearch{% endraw %}
+</pre>
+
 Et voilà, votre moteur de recherche est opérationnel :
 
-<pre class="lang:default decode:true">[2016-07-19 11:20:06,036][INFO ][node                     ] [Turner D. Century] version[2.3.4], pid[9825], build[e455fd0/2016-06-30T11:24:31Z]
+<pre class="lang:default decode:true">
+{% raw %}
+[2016-07-19 11:20:06,036][INFO ][node                     ] [Turner D. Century] version[2.3.4], pid[9825], build[e455fd0/2016-06-30T11:24:31Z]
 [2016-07-19 11:20:06,038][INFO ][node                     ] [Turner D. Century] initializing ...
 [2016-07-19 11:20:07,487][INFO ][plugins                  ] [Turner D. Century] modules [reindex, lang-expression, lang-groovy], plugins [], sites []
 [2016-07-19 11:20:07,568][INFO ][env                      ] [Turner D. Century] using [1] data paths, mounts [[/ (/dev/sda2)]], net usable_space [74.7gb], net total_space [226.3gb], spins? [no], types [ext4]
@@ -68,15 +82,23 @@ Et voilà, votre moteur de recherche est opérationnel :
 [2016-07-19 11:20:15,557][INFO ][cluster.service          ] [Turner D. Century] new_master {Turner D. Century}{q8cNxoNrSKWNDDoOTWgPnA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
 [2016-07-19 11:20:15,596][INFO ][http                     ] [Turner D. Century] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
 [2016-07-19 11:20:15,596][INFO ][node                     ] [Turner D. Century] started
-[2016-07-19 11:20:15,649][INFO ][gateway                  ] [Turner D. Century] recovered [0] indices into cluster_state</pre>
+[2016-07-19 11:20:15,649][INFO ][gateway                  ] [Turner D. Century] recovered [0] indices into cluster_state{% endraw %}
+</pre>
+
 Par défaut, Elasticsearch choisira un nom d'un personnage Marvel de manière aléatoire parmi une liste de plus de 3000 noms.
 
 Si vous allez sur <a href="http://localhost:9200/">http://localhost:9200/</a> dans votre navigateur ou que vous tapez dans votre terminal :
 
-<pre class="lang:default decode:true ">curl -XGET 'http://localhost:9200/'</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+curl -XGET 'http://localhost:9200/'{% endraw %}
+</pre>
+
 Vous aurez une réponse du genre :
 
-<pre class="lang:default decode:true">{
+<pre class="lang:default decode:true">
+{% raw %}
+{
     "name" : "Turner D. Century",
     "cluster_name" : "elasticsearch",
     "version" : {
@@ -87,7 +109,9 @@ Vous aurez une réponse du genre :
         "lucene_version" : "5.5.0"
     },
     "tagline" : "You Know, for Search"
-}</pre>
+}{% endraw %}
+</pre>
+
 <strong>Arborescence:</strong>
 
 Dans votre dossier Elasticsearch vous allez trouver les dossiers suivants :
@@ -104,31 +128,45 @@ Bon maintenant que tout est fonctionnel, il n'y a plus qu'à jouer un peu :)
 
 Créons un index "foo" avec un type "users" qui aurait comme propriétés un "name", un "age" et des "hobbies":
 
-<pre class="lang:sh decode:true">curl XPUT 'http://localhost:9200/foo' -d '
+<pre class="lang:sh decode:true">
+{% raw %}
+curl XPUT 'http://localhost:9200/foo' -d '
   { "mappings": {
     "users" : {
       "properties" : {
 	"name" : {"type":"string"},
 	"age" : {"type":"integer"},
 	"hobbies": {"type":"string"}
-}}}}'</pre>
+}}}}'{% endraw %}
+</pre>
+
 Maintenant que notre index est créé, on va insérer des données :
 
-<pre class="lang:sh decode:true ">curl XPOST 'http://localhost:9200/_bulk' -d '
+<pre class="lang:sh decode:true ">
+{% raw %}
+curl XPOST 'http://localhost:9200/_bulk' -d '
 { "create" : { "_index" : "foo", "_type" : "users", "_id": 1 } }
 {"name": "john", "hobbies": ["tennis", "guitar", "cinema"], "age" : 30}
 { "create" : { "_index" : "foo", "_type" : "users", "_id": 2 } }
 {"name": "jane", "hobbies": ["dance", "running"], "age" : 25}
 { "create" : { "_index" : "foo", "_type" : "users", "_id": 3 } }
-{"name": "tom", "hobbies": ["tennis", "guitar"], "age" : 35}'</pre>
+{"name": "tom", "hobbies": ["tennis", "guitar"], "age" : 35}'{% endraw %}
+</pre>
+
 Ici, j'ai utilisé l'<span style="color: #0000ff;"><a style="color: #0000ff;" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html">API Bulk</a></span> de Elasticsearch qui permet d'insérer plusieurs documents en même temps.
 
 Maintenant qu'on a des données, passons aux requêtes. La requête la plus simple que vous puissiez faire, c'est celle par id:
 
-<pre class="lang:sh decode:true ">curl XGET 'http://localhost:9200/foo/users/1'</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+curl XGET 'http://localhost:9200/foo/users/1'{% endraw %}
+</pre>
+
 Ce qui vous retournera :
 
-<pre class="lang:default decode:true ">{
+<pre class="lang:default decode:true ">
+{% raw %}
+{
   "_index": "foo",
   "_type": "users",
   "_id": "1",
@@ -143,20 +181,28 @@ Ce qui vous retournera :
     ],
     "age": 30
   }
-}</pre>
+}{% endraw %}
+</pre>
+
 Une requête plus poussée :
 
-<pre class="lang:sh decode:true">curl XGET 'http://localhost:9200/foo/users/_search' -d '
+<pre class="lang:sh decode:true">
+{% raw %}
+curl XGET 'http://localhost:9200/foo/users/_search' -d '
 {
   "query": {
     "match": {
       "hobbies": "guitar"
     }
   }
-}'</pre>
+}'{% endraw %}
+</pre>
+
 Et hop :
 
-<pre class="lang:default decode:true">{
+<pre class="lang:default decode:true">
+{% raw %}
+{
   "took": 2,
   "timed_out": false,
   "_shards": {
@@ -199,7 +245,9 @@ Et hop :
       }
     ]
   }
-}</pre>
+}{% endraw %}
+</pre>
+
 Ici vous remarquez que bien que le champ "hobbies" soit un tableau, la recherche s'effectue comme s'il était un simple champ string. Elasticsearch est suffisamment intelligent pour comprendre que la recherche s'applique au contenu du tableau.
 
 Le système de recherche est très poussé et ne peut être traité dans un simple article mais je vous laisse parcourir la <span style="color: #0000ff;"><a style="color: #0000ff;" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">documentation</a></span> qui est très complète.
@@ -210,10 +258,16 @@ Utiliser les "analyzers" pour que les données soient retravaillées avant d'�
 
 Typiquement, l'API "_analyze" vous permet de visualiser la valeur qui sera indexée pour un analyzer donné :
 
-<pre class="lang:default decode:true">GET /foo/_analyze?analyzer=french&amp;text=tennis</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+GET /foo/_analyze?analyzer=french&amp;text=tennis{% endraw %}
+</pre>
+
 Vous retournera :
 
-<pre class="lang:default decode:true">{
+<pre class="lang:default decode:true">
+{% raw %}
+{
   "tokens": [
     {
       "token": "teni",
@@ -223,7 +277,9 @@ Vous retournera :
       "position": 0
     }
   ]
-}</pre>
+}{% endraw %}
+</pre>
+
 On constate que le mot "tennis" sera indexé en tant que "teni" pour l'analyzer "<strong>french</strong>". Donc une recherche sur le mot "tennis", "tenis", "tenni"... vous retournera tous les documents qui contiendront le mot "tennis".
 
 On pourrait passer des heures sur les requêtes car le Query DSL d'Elasticsearch est très puissant mais je vous laisse découvrir ça par vous-même.
@@ -239,4 +295,4 @@ Donc baladez-vous sur la documentation, jouez un peu avec et vous serez rapideme
 
 &nbsp;
 
-{% endraw %}
+

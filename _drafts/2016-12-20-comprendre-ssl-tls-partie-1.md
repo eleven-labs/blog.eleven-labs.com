@@ -13,7 +13,7 @@ tags:
 - Algorithmie
 - Protocoles
 ---
-{% raw %}
+
 <span style="font-weight: 400;">Vous avez sans doute entendu parler des </span>**protocoles** **SSL**<span style="font-weight: 400;"> ou </span>**TLS**<span style="font-weight: 400;">, non, oui ?<br />
 </span><span style="font-weight: 400;">Nous allons voir ensemble de quoi il s’agit.<br />
 </span>
@@ -111,4 +111,4 @@ tags:
 </ul>
 <span style="font-weight: 400;">Bon j’espère que j’en ai pas perdu en chemin car c’est maintenant qu’on passe aux choses sérieuses.</span>
 
-{% endraw %}
+

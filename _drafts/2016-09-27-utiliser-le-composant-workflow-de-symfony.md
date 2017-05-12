@@ -12,7 +12,7 @@ tags:
 - symfony
 - workflow
 ---
-{% raw %}
+
 Depuis Symfony 3.2, un nouveau composant très utile a vu le jour : <a href="http://symfony.com/blog/new-in-symfony-3-2-workflow-component">le composant Workflow</a>.<br />
 Celui-ci est en effet très pratique et peut très largement simplifier vos développements lorsque vous avez, par exemple, à gérer des workflows de statut dans votre application.
 
@@ -22,10 +22,18 @@ Celui-ci est en effet très pratique et peut très largement simplifier vos dév
 
 Dans tous les cas, vous devez installer la dépendance suivante :
 
-<pre class="lang:js decode:true">"symfony/workflow": "~3.2@dev"</pre>
+<pre class="lang:js decode:true">
+{% raw %}
+"symfony/workflow": "~3.2@dev"{% endraw %}
+</pre>
+
 Si vous utilisez une version antérieure de Symfony mais &gt;=2.3, c'est aussi possible mais il vous faudra également installer ce bundle non-officiel qui embarque le composant et ajoute la configuration nécessaire sous le namespace du bundle :
 
-<pre class="lang:js decode:true">"fduch/workflow-bundle": "~0.2@dev"</pre>
+<pre class="lang:js decode:true">
+{% raw %}
+"fduch/workflow-bundle": "~0.2@dev"{% endraw %}
+</pre>
+
 Pensez bien à activer le bundle dans votre kernel.
 
 &nbsp;
@@ -42,7 +50,9 @@ Cependant, elle ne pourra, par exemple, pas être passée en <span class="lang:d
 
 Voici ce que donne notre configuration complète :
 
-<pre class="lang:yaml decode:true">workflow:
+<pre class="lang:yaml decode:true">
+{% raw %}
+workflow:
     workflows:
         pull_request:
             marking_store:
@@ -69,12 +79,16 @@ Voici ce que donne notre configuration complète :
                     to:   merged
                 close:
                     from: [opened, needs_review, reviewed]
-                    to:   closed</pre>
+                    to:   closed{% endraw %}
+</pre>
+
 Nous spécifions ici que nous souhaitons utiliser un workflow de type <span class="lang:default decode:true  crayon-inline ">multiple_state</span> . Notez que si vous souhaitez utiliser une transition simple d'un statut vers un autre, vous pouvez utiliser ici <span class="lang:default decode:true  crayon-inline">single_state</span>.
 
 Nous disposons donc également d'une classe <span class="lang:default decode:true crayon-inline ">AppBundle\Entity\PullRequest</span>  qui dispose d'une propriété <span class="lang:default decode:true crayon-inline ">state</span>  ainsi que son setter et getter associé (le composant va utiliser les méthodes getter et setter pour changer l'état et/ou obtenir l'état courant) :
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace AppBundle\Entity;
 
@@ -99,7 +113,9 @@ class PullRequest
     {
         return $this-&gt;state;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 &nbsp;
 
 Nous avons terminé, nous pouvons maintenant commencer à utiliser le composant Workflow !
@@ -112,7 +128,11 @@ La première chose utile à effectuer après avoir écrit votre workflow est de 
 
 Pour se faire, nous utilisons la commande Symfony :
 
-<pre class="lang:sh decode:true">$ bin/console workflow:dump pull_request</pre>
+<pre class="lang:sh decode:true">
+{% raw %}
+$ bin/console workflow:dump pull_request{% endraw %}
+</pre>
+
 &nbsp;
 
 Celle-ci va vous générer un code Graphviz qui donne le schéma suivant :
@@ -127,7 +147,9 @@ Le composant Workflow implémente des méthodes permettant d'effectuer une trans
 
 Pour vérifier si vous pouvez effectuer une transition et l'appliquer, rien de plus simple :
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 namespace AppBundle\Controller;
 
@@ -158,14 +180,20 @@ class PullRequestController extends Controller
 
         ...
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Si vous ne passez pas par la méthode <span class="lang:default decode:true crayon-inline ">can()</span> , la méthode <span class="lang:default decode:true crayon-inline">apply()</span>  renverra une exception si la transition ne peut pas être effectuée. Vous pouvez donc également catcher cette exception de type <span class="lang:default decode:true crayon-inline">Symfony\Component\Workflow\Exception\LogicException</span> .
 
 &nbsp;
 
 Pour lister les transitions disponibles :
 
-<pre class="lang:php decode:true">$workflow-&gt;getEnabledTransitions($pullRequest);</pre>
+<pre class="lang:php decode:true">
+{% raw %}
+$workflow-&gt;getEnabledTransitions($pullRequest);{% endraw %}
+</pre>
+
 Globalement, l'utilisation du composant se limite à ces 3 méthodes. Comme vous le remarquez, il devient très simple d'utiliser un workflow, même complexe !
 
 &nbsp;
@@ -198,4 +226,4 @@ N'hésitez pas à l'utiliser, sa facilité de configuration et d'utilisation vou
 
 Aussi, il m'a permis de donner un graphique clair sur un workflow complexe à toutes les personnes avec qui je travaillais.
 
-{% endraw %}
+

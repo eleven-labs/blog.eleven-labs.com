@@ -8,7 +8,7 @@ categories:
 - Php
 tags: []
 ---
-{% raw %}
+
 Il y a quelques temps, pour ainsi dire un an (le temps passe vite ! ), je parlais de la sortie de PHP 7.0. Dix mois plus tard, les choses évoluent à nouveau : PHP 7.1 est en RC1.
 
 Cet article n'a pas pour vocation d'être exhaustif, mais uniquement de présenter les changements intéressants (vous trouverez en bas de page un lien vers les RFC de PHP 7.1 qui m'ont servi de socle pour cet article). Par ailleurs, cela nécessite d'avoir pris connaissance des features de PHP 7.0 que vous pouvez retrouver dans le <a href="http://blog.eleven-labs.com/fr/php-7-petit-guide-qui-ne-trompe-pas/">précédent article</a>.
@@ -92,4 +92,4 @@ Si vous souhaitez en savoir plus, je vous invite à lire les différentes <a hre
 
 <img class="aligncenter" src="https://media.giphy.com/media/iPiUxztIL4Sl2/giphy.gif" alt="cat bye goodbye done im out" />
 
-{% endraw %}
+

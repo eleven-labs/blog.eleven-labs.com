@@ -15,7 +15,7 @@ tags:
 - rest
 - json
 ---
-{% raw %}
+
 ## Introduction
 Dans le contexte d'une API REST, intéressons nous particulièrement à la donnée rendue par le contrôleur. Je vous emmène découvrir le mécanisme qui permet l'affichage de la donnée en format compréhensible par d'autres systèmes, JSON dans cet exemple.
 
@@ -46,7 +46,9 @@ Pour mon exemple, ma fonctionnalité devra prendre en entrée le retour du contr
 ## Création d'un service
 Après avoir récupéré toutes mes données depuis le contrôleur, je retourne un tableau.
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace AppBundle\Controller;
 
@@ -61,10 +63,14 @@ class FooController
             "foo" =&gt; "bar",
         ];
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 En l'état, symfony va lever une exception car il ne saura pas quoi faire du tableau. Je vais donc créer un écouteur pour transformer ce tableau. C'est une simple classe PHP.
 
-<pre class="lang:default decode:true">&lt;?php
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;?php
 
 namespace AppBundle\EventListener;
 
@@ -80,7 +86,9 @@ class JsonListener
             $event-&gt;setResponse(new JsonResponse($data));
         }
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 L'événement kernel.view passe en argument un objet de type <em><a href="http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html">Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent</a>. </em>J'ai accès au retour du contrôleur avec <em>getControllerResult().</em>
 
 Je fais une simple vérification sur le type avant de créer la réponse: ici JsonResponse. Une fois la réponse créé, j'affecte l'objet à la méthode <em>setResponse()</em> de l'événement.
@@ -90,7 +98,9 @@ Avec cet écouteur, je transforme un tableau en une réponse JSON.
 ## Branchement à l'événement
 Une fois la classe créée, il faut la déclarer en tant que service et taguer le service.
 
-<pre class="lang:xhtml decode:true ">&lt;!-- app/config/services.xml --&gt;
+<pre class="lang:xhtml decode:true ">
+{% raw %}
+&lt;!-- app/config/services.xml --&gt;
 &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -101,7 +111,9 @@ Une fois la classe créée, il faut la déclarer en tant que service et taguer l
             &lt;tag name="kernel.event_listener" event="kernel.view" /&gt;
         &lt;/service&gt;
     &lt;/services&gt;
-&lt;/container&gt;</pre>
+&lt;/container&gt;{% endraw %}
+</pre>
+
 Je tague le service avec le nom <em>kernel.event_listener</em> et avec l'événement<em> kernel.view</em>.
 
 Tout est bien branché. Lorsque je vais aller sur la route pour accéder au contrôleur, je vais avoir une réponse au format json.
@@ -116,4 +128,4 @@ Cette méthode est pratique lors de la création de webservice. Avec la réponse
 <li><a href="http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html">http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html</a></li>
 <li><a href="http://symfony.com/doc/current/reference/dic_tags.html#kernel-event-listener">http://symfony.com/doc/current/reference/dic_tags.html#kernel-event-listener</a></li>
 </ul>
-{% endraw %}
+

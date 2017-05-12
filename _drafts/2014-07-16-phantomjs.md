@@ -11,7 +11,7 @@ tags:
 - Javascript
 - PhantomJS
 ---
-{% raw %}
+
 PhantomJS est un navigateur webkit en ligne de commande.
 
 Il vous permet entre autres :
@@ -42,7 +42,9 @@ Phantomjs supporte trois formats d'export: PNG, JPEG et PDF.
 
 Commencez par créer un fichier javascript que j’appellerai phantomjs.js et mettez-y le code suivant :
 
-<pre class="lang:js decode:true" title="exemple capture">var page = require('webpage').create(),
+<pre class="lang:js decode:true" title="exemple capture">
+{% raw %}
+var page = require('webpage').create(),
 system = require('system'),
 address, output, size;
 
@@ -60,7 +62,9 @@ page.open(address, function(status) {
 	  phantom.exit();
     }
 });
+{% endraw %}
 </pre>
+
 Ceci est un exemple très simpliste car PhantomJS possède tout un tas d'<span style="color: #0000ff;"><a title="options phantomjs" href="http://phantomjs.org/api/webpage/" target="_blank"><span style="color: #0000ff;">options</span></a></span>.
 
 La première ligne est essentielle comme vous pouvez l'imaginer car elle permet de récupérer le mode rendu de page web.
@@ -75,16 +79,26 @@ Vous remarquez que j'ai précisé l'extension ".png" du fichier afin d'avoir une
 
 Enfin la commande à taper dans le shell :
 
-<pre class="lang:sh decode:true" title="commande PhantomJs">path/to/phantomjs phantomjs.js 'url' 'yourfolder'</pre>
+<pre class="lang:sh decode:true" title="commande PhantomJs">
+{% raw %}
+path/to/phantomjs phantomjs.js 'url' 'yourfolder'{% endraw %}
+</pre>
+
 Pour faire le rendu du site de PhantomJS par exemple, vous taperez:
 
-<pre class="lang:sh decode:true">path/to/phantomjs phantomjs.js 'http://phantomjs.org/' 'yourfolder'</pre>
+<pre class="lang:sh decode:true">
+{% raw %}
+path/to/phantomjs phantomjs.js 'http://phantomjs.org/' 'yourfolder'{% endraw %}
+</pre>
+
 Si des erreurs existent sur la page, il est possible que celles-ci s'affichent dans votre console.
 
 #### Exemple 2
 Voici un second exemple pour faire un rendu d'une partie de la page. Ici je crée une image de l'icône de PhantomJS présent sur leur site.
 
-<pre class="lang:js decode:true">var page = require('webpage').create(),
+<pre class="lang:js decode:true">
+{% raw %}
+var page = require('webpage').create(),
 system = require('system'),
 address, output, size;
 
@@ -112,7 +126,9 @@ page.open(address, function(status) {
 	});
     }
 });
+{% endraw %}
 </pre>
+
 Vous remarquerez l'utilisation de la méthode includeJs() . Cette dernière vous permet d'inclure des librairies javascript (tel que jQuery dans cet exemple) afin de pouvoir les utiliser sur la page que vous évaluez.
 
 Cependant, si la librairie est déjà présente, il est inutile de l'inclure une deuxième fois.
@@ -128,7 +144,9 @@ Voici un exemple avec QUnit:
 
 <span style="text-decoration: underline;">test.html</span>
 
-<pre class="lang:xhtml decode:true" title="test.html">&lt;!DOCTYPE html&gt;
+<pre class="lang:xhtml decode:true" title="test.html">
+{% raw %}
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8"&gt;
@@ -142,20 +160,34 @@ Voici un exemple avec QUnit:
   &lt;script src="qunit-1.14.0.js"&gt;&lt;/script&gt;
   &lt;script src="test.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;{% endraw %}
+</pre>
+
 <span style="text-decoration: underline;"> test.js</span>
 
-<pre class="lang:js decode:true" title="test.js">QUnit.test( "hello test", function( assert ) {
+<pre class="lang:js decode:true" title="test.js">
+{% raw %}
+QUnit.test( "hello test", function( assert ) {
   assert.ok( 1 == "1", "Passed!" );
-});</pre>
+});{% endraw %}
+</pre>
+
 Et enfin, téléchargez le fichier <span style="color: #0000ff;"><a title="run-qunit.js" href="https://github.com/ariya/phantomjs/blob/master/examples/run-qunit.js" target="_blank"><span style="color: #0000ff;">run-qunit.js</span></a></span> et lancez la commande:
 
-<pre class="lang:sh decode:true" title="commande">path/to/phantomjs run-qunit.js page.html</pre>
+<pre class="lang:sh decode:true" title="commande">
+{% raw %}
+path/to/phantomjs run-qunit.js page.html{% endraw %}
+</pre>
+
 Vous devriez voir les lignes suivantes:
 
-<pre class="lang:sh decode:true" title="output">'waitFor()' finished in 200ms.
+<pre class="lang:sh decode:true" title="output">
+{% raw %}
+'waitFor()' finished in 200ms.
 Tests completed in 15 milliseconds.
-1 assertions of 1 passed, 0 failed.</pre>
+1 assertions of 1 passed, 0 failed.{% endraw %}
+</pre>
+
 Vous trouverez d'autres scripts tels que run-qunit.js à <span style="color: #0000ff;"><a title="qunit-phantomjs-runner" href="https://github.com/jonkemp/qunit-phantomjs-runner" target="_blank"><span style="color: #0000ff;">cette adresse</span></a></span>.
 
 #  IV Conclusion
@@ -165,4 +197,4 @@ Mais ce n'est là qu'un aperçu de ses possibilités, je vous encourage à fair
 
 &nbsp;
 
-{% endraw %}
+

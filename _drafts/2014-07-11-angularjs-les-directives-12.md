@@ -9,7 +9,7 @@ categories:
 tags:
 - AngularJS
 ---
-{% raw %}
+
 ## Kézako ?
 Pour faire simple une directive est un marqueur sur un élément du DOM (en tant qu'attribut, nom d’élément commentaire ou de classe CSS), ce marqueur informe le compiler HTML ($compile) d'attacher un comportement à cet élément voir de transformer cet élément et ses enfants.
 
@@ -25,15 +25,23 @@ Lors de cet article nous étudierons les options les plus communes des directive
 ### template et templateUrl
 Une première étape sera de créer une simple directive chargée d'afficher "Hello Directive"
 
-<pre class="lang:js decode:true">angular.module('exemple', [])
+<pre class="lang:js decode:true">
+{% raw %}
+angular.module('exemple', [])
   .directive('myDirective', function() {
     return {
       template: 'Hello Directive',
       // une autre solution serait de cibler un template html
       // templateUrl: 'my-template.html',
     }
-  });</pre>
-<pre class="lang:xhtml decode:true">&lt;div my-directive&gt;&lt;/div&gt;</pre>
+  });{% endraw %}
+</pre>
+
+<pre class="lang:xhtml decode:true">
+{% raw %}
+&lt;div my-directive&gt;&lt;/div&gt;{% endraw %}
+</pre>
+
 Par défaut le seul moyen d'afficher une directive est de l'utiliser via un <em>attribut</em>. Si cela ne convient pas à votre usage il faudra passer par l'option <strong>restrict</strong>.
 
 ### 
@@ -51,14 +59,18 @@ Ces restrictions sont combinables.
 <ul>
 <li><em>AEC</em> : le marqueur peut être un attribut, un élément ou une classe.</li>
 </ul>
-<pre class="lang:xhtml decode:true">// attribut
+<pre class="lang:xhtml decode:true">
+{% raw %}
+// attribut
 &lt;div my-directive&gt;&lt;/div&gt;
 // élément
 &lt;my-directive&gt;&lt;/my-directive&gt;
 // classe
 &lt;div class="my-directive"&gt;
 // commentaire
-&lt;!-- directive:my-directive --&gt;</pre>
+&lt;!-- directive:my-directive --&gt;{% endraw %}
+</pre>
+
 L'usage veut que la déclaration via commentaire ne soit jamais utilisée.
 
 La déclaration via élément est privilégiée dans le cas de création de directive complexe de type widget/composant.
@@ -95,7 +107,9 @@ Pour définir un <em>scope isolé</em> il est necessaire de <em>binder</em> ses
 </ul>
 Afin de définir une propriété du <em>scope isolé</em> on fait précéder le nom de l'attribut par le signe adéquat. Si le nom de la propriété est identique au nom de l'attribut, on peut également se contenter de son signe.
 
-<pre class="lang:js decode:true">angular.module('exemple', [])
+<pre class="lang:js decode:true">
+{% raw %}
+angular.module('exemple', [])
   .directive('myAstraunote', function() {
     return {
       restrict: 'E',
@@ -105,11 +119,17 @@ Afin de définir une propriété du <em>scope isolé</em> on fait précéder le
         fn: '&amp;action',
       },
     }
-  });</pre>
-<pre class="lang:xhtml decode:true ">&lt;my-directive name='wiston' expression='user.mission' action='launch(user)'&gt;&lt;/my-directive&gt;
+  });{% endraw %}
 </pre>
+
+<pre class="lang:xhtml decode:true ">
+{% raw %}
+&lt;my-directive name='wiston' expression='user.mission' action='launch(user)'&gt;&lt;/my-directive&gt;
+{% endraw %}
+</pre>
+
 &nbsp;
 
 Dans le prochain opus, controller, compile, link et transclude !
 
-{% endraw %}
+

@@ -11,7 +11,7 @@ tags:
 - extension
 - responsive
 ---
-{% raw %}
+
 Depuis quelques mois, le navigateur Google Chrome permet, dans ses fonctionnalités expérimentales, de profiter des DevTools pour les téléphones et tablettes Android.
 
 <!--more-->
@@ -64,4 +64,4 @@ Retrouvez encore plus de fonctionnalités avancées dans cet excellent article d
 <div class="wrclogo"></div>
 </div>
 </div>
-{% endraw %}
+

@@ -11,7 +11,7 @@ tags:
 - Ionic
 - Cordova
 ---
-{% raw %}
+
 Après 14 versions beta et 5 release candidates, la première version stable de Ionic est disponible.
 
 https://twitter.com/Ionicframework/status/598185812220465154
@@ -38,33 +38,61 @@ Ionic c’est un nombre impressionnant d’outils et services pour vous aider da
 
 1- En pré-requis il vous faut NodeJS et installer la ligne de commande Ionic :
 
-<pre class="lang:sh decode:true ">$ npm install -g ionic</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+$ npm install -g ionic{% endraw %}
+</pre>
+
 2- Pour démarrer un nouveau projet, il suffit de taper :
 
-<pre class="lang:sh decode:true ">$ ionic start myApp [starter]</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+$ ionic start myApp [starter]{% endraw %}
+</pre>
+
 L’équipe Ionic met à disposition une multitude de starters pour démarrer un projet : <a href="https://github.com/driftyco?utf8=%E2%9C%93&amp;query=starter">Ionic Starter</a>
 
 Il est aussi possible d’utiliser l’url d’un CodePen, par exemple :
 
-<pre class="lang:sh decode:true">$ ionic start myApp http://codepen.io/ionic/pen/odqCz</pre>
+<pre class="lang:sh decode:true">
+{% raw %}
+$ ionic start myApp http://codepen.io/ionic/pen/odqCz{% endraw %}
+</pre>
+
 3- A partir de là, vous pouvez déjà tester votre application dans un navigateur et profiter des joies du livereload
 
-<pre class="lang:sh decode:true">$ ionic serve</pre>
+<pre class="lang:sh decode:true">
+{% raw %}
+$ ionic serve{% endraw %}
+</pre>
+
 4- Ajouter les plateformes sur lesquelles vous souhaitez publier votre application :
 
-<pre class="lang:sh decode:true ">$ ionic platform add android
-$ ionic platform add ios</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+$ ionic platform add android
+$ ionic platform add ios{% endraw %}
+</pre>
+
 5- Pour installer l’application sur un appareil connecté à votre poste de travail :
 
-<pre class="lang:sh decode:true">$ ionic run android
-$ ionic run ios</pre>
+<pre class="lang:sh decode:true">
+{% raw %}
+$ ionic run android
+$ ionic run ios{% endraw %}
+</pre>
+
 Avec Chrome il est possible de débugger directement l’application sur le téléphone en allant à l’adresse "chrome://inspect"
 
 6- Une fois votre application prête pour la publication sur le store concerné :
 
-<pre class="lang:sh decode:true">$ ionic build --release android
+<pre class="lang:sh decode:true">
+{% raw %}
+$ ionic build --release android
 $ ionic build --release ios
+{% endraw %}
 </pre>
+
 Vous obtiendrez un fichier compressé et optimisé à déposer sur le store.
 
 <strong>Quelques liens utiles</strong>
@@ -79,4 +107,4 @@ Vous obtiendrez un fichier compressé et optimisé à déposer sur le store.
 
 <a href="https://github.com/driftyco/ionic-cli">Ionic-cli Github</a>
 
-{% endraw %}
+

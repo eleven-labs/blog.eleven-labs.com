@@ -10,7 +10,7 @@ tags:
 - ios
 - dév mobile
 ---
-{% raw %}
+
 Techno : IOS<br />
 Niveau : Débutant
 
@@ -28,4 +28,4 @@ Je me ferai un plaisir d'échanger avec vous.
 
 https://www.youtube.com/watch?v=lMETVJSr9R4
 
-{% endraw %}
+

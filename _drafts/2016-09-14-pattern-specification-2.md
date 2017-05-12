@@ -11,7 +11,7 @@ tags:
 - architecture
 - conception
 ---
-{% raw %}
+
 Au cours de mes différentes expériences professionnelles, j'ai dû mettre en place de nombreuses règles métier dans diverses applications riches fonctionnellement. Un jour, j'ai été confronté à une façon de faire différente : l'utilisation du pattern specification. Cette méthode s’est avérée structurante pour les projets, et si vous ne la connaissez pas encore elle mérite qu’on s’y attarde.
 
 ### Commençons
@@ -27,7 +27,9 @@ Dans un cas classique, il vous serait possible d’écrire cela sous cette forme
 
 &nbsp;
 
-<pre class="theme:sublime-text lang:php decode:true">&lt;?php
+<pre class="theme:sublime-text lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace ElevenLabs\Application;
 
@@ -47,7 +49,9 @@ class TransferMoneyCommand
             //...
         }
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Cette règle métier, bien que triviale, doit être implémentée dès que l’on souhaite effectuer un virement.<br />
 Il apparait plusieurs contraintes, suite à cette implémentation.
 
@@ -64,7 +68,9 @@ Il existe principalement trois types de spécifications :
 </ul>
 Une spécification est régie par l'interface suivante :
 
-<pre class="theme:sublime-text lang:php decode:true">&lt;?php
+<pre class="theme:sublime-text lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace ElevenLabs\Domain;
 
@@ -76,13 +82,17 @@ interface Specification
      * @return bool
      */
     public function isSatisfiedBy($candidate);
-}</pre>
+}{% endraw %}
+</pre>
+
 ### Spécifications Hard-coded
 Ce type de specifications permet de déclarer en dur la connaissance métier sans pouvoir modifier la règle métier de l'extérieur.
 
 Une règle métier peut donc être, par exemple, traduite de la sorte :
 
-<pre class="theme:sublime-text lang:php decode:true">&lt;?php
+<pre class="theme:sublime-text lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace ElevenLabs\Domain\Payment;
 
@@ -99,13 +109,17 @@ class AccountCanTransferMoney implements Specification
     {
          return $account-&gt;getBalance() &gt; 0 &amp;&amp; $account-&gt;getOwner()-&gt;isActive();
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 En ayant créé une classe séparée pour appliquer notre règle, nous gagnons en découplage et en clarté. Cependant, il apparait évident que nous sommes cantonnés à l'object $account, et qu'aucune information ne peut être apportée de l'extérieur. Nous ne pouvons toujours pas utiliser ce type de spécification dans notre <em>TransferMoneyCommand </em>car il ne répond pas totalement à notre règle métier (seul le solde actuel du compte est comparé).
 
 ### Spécifications paramétrées
 Les spécifications paramétrées sont identiques au point précédent, sauf qu'elles résolvent le problème que nous venons d'indiquer en permettant de passer des paramètres extérieurs à notre <em>candidate</em>.
 
-<pre class="theme:sublime-text lang:php decode:true">&lt;?php
+<pre class="theme:sublime-text lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace ElevenLabs\Domain\Payment;
 
@@ -133,12 +147,16 @@ class AccountCanTransferMoney implements Specification
     {
          return $account-&gt;getBalance() - $this-&gt;amount &gt; 0 &amp;&amp; $account-&gt;getOwner()-&gt;isActive();
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Avec ce type de spécifications, nous gardons les mêmes avantages que précédemment, et nous gagnons en flexibilité.
 
 Voici ce que donnerait notre commande avec l'utilisation de notre spécification paramétrée :
 
-<pre class="theme:sublime-text lang:php decode:true">&lt;?php
+<pre class="theme:sublime-text lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace ElevenLabs\Application;
 
@@ -162,7 +180,9 @@ class TransferMoneyCommand
         }
     }
 }
+{% endraw %}
 </pre>
+
 Pour simplifier l'explication des spécifications paramétrées, j'ai instancié la class AccountCanTransferMoney en dur. Une amélioration notable de cette utilisation serait d'injecter dans la commande la spécification, au lieu de l'instancier en dur, afin de pouvoir tester unitairement notre commande.
 
 ### Spécifications composites
@@ -170,7 +190,9 @@ Le dernier type de spécification que nous aborderons aujourd'hui concerne la sp
 
 L'exemple suivant vous explique l'implémentation de l'opération logique AND :
 
-<pre class="theme:sublime-text lang:php decode:true ">&lt;?php
+<pre class="theme:sublime-text lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 namespace ElevenLabs\Domain;
 
@@ -219,10 +241,14 @@ class AndSpecification extends Composite
     {
         return $this-&gt;a-&gt;isSatisfiedBy($candidate) &amp;&amp; $this-&gt;b-&gt;isSatisfiedBy($candidate);
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Ainsi, si l'on déclare une spécification composite, on peut la chainer à d'autres spécifications, comme ci-dessous, en modifiant notre spécification précédente <em>AccountCanTransferMoney</em> :
 
-<pre class="theme:sublime-text lang:php decode:true">&lt;?php
+<pre class="theme:sublime-text lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace ElevenLabs\Domain\Payment;
 
@@ -250,8 +276,12 @@ class AccountCanTransferMoney extends Composite
     {
          return $account-&gt;getBalance() - $this-&gt;amount &gt; 0;
     }
-}</pre>
-<pre class="theme:sublime-text lang:php decode:true ">&lt;?php
+}{% endraw %}
+</pre>
+
+<pre class="theme:sublime-text lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 namespace ElevenLabs\Domain\Payment\Specification;
 
@@ -269,10 +299,14 @@ class AccountOwnerIsActive implements Specification
         return $account-&gt;getOwner()-&gt;isActive();
     }
 }
+{% endraw %}
 </pre>
+
 Enfin, voici comment utiliser notre composition :
 
-<pre class="theme:sublime-text lang:php decode:true">&lt;?php
+<pre class="theme:sublime-text lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace ElevenLabs\Application;
 
@@ -297,7 +331,9 @@ class TransferMoneyCommand
             //...
         }
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Les avantages de ce type de spécifications sont bien sûr le support des opérations logiques, et donc la création de règles métier plus complexes. Il est maintenant possible de combiner les spécifications. La flexibilité est encore accrue, mais attention à la complexité générée !
 
 ### Recap
@@ -313,4 +349,4 @@ Les avantages du pattern spécification sont les suivants :
 
 <a href="http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/">Specification pattern: C# implementation</a>
 
-{% endraw %}
+

@@ -11,7 +11,7 @@ tags:
 - Javascript
 - AngularJS
 ---
-{% raw %}
+
 <em>AngularJS</em> est un <em>framework</em> <em>JavaScript</em> open-source qui a vu le jour en 2009 et dont le père Miško Hevery est un expert Web autour des technologies <em>Java</em> et <em>JavaScript</em>, travaillant chez Google.
 
 Construire une application web avec une interface utilisateur complexe devient très difficile en utilisant uniquement des librairies telles que <em>jQuery</em>. <em>AngularJS</em> facilite la création et la maintenance des applications, et accélère le développement <em>JavaScript/AJAX</em>. Il permet la création d'applications web monopage (<em>single-page application</em>) et apporte aux applications Web côté client les services traditionnellement apportés côté serveur, rendant de ce fait les applications Web beaucoup plus légères.
@@ -28,7 +28,9 @@ Voici un exemple minimaliste contenant un <em>template</em> et un <em>controller
 
 Voici notre <em>template</em> "hello.html" :
 
-<pre class="lang:xhtml decode:true">&lt;html ng-app&gt;
+<pre class="lang:xhtml decode:true">
+{% raw %}
+&lt;html ng-app&gt;
 &lt;head&gt;
 &lt;title&gt;Hello, World in AngularJS&lt;/title&gt;
   &lt;script src="angular.js"&gt;&lt;/script&gt;
@@ -40,12 +42,18 @@ Voici notre <em>template</em> "hello.html" :
     &lt;p&gt;{{hello.text}}, World&lt;/p&gt;
   &lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;{% endraw %}
+</pre>
+
 Voici notre contrôleur "controller.js"
 
-<pre class="lang:js decode:true">function HelloController($scope) {
+<pre class="lang:js decode:true">
+{% raw %}
+function HelloController($scope) {
   $scope.hello = { text: 'Hello' };
-}</pre>
+}{% endraw %}
+</pre>
+
 Le chargement de "hello.html" dans un navigateur produira l'affichage suivant :
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2013/12/hello.png"><img class="alignnone size-full wp-image-802" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/hello.png" alt="hello" width="165" height="74" /></a>
@@ -89,7 +97,9 @@ Si l'on reprend notre <em>template</em> "hello.html", on remarque la notation d
 
 Comparons notre code écrit avec <em>AngularJS</em>, à ce que l'on écrirait en <em>JavaScript</em> natif :
 
-<pre class="lang:default decode:true">&lt;html&gt;
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;Hello, World in JavaScript&lt;/title&gt;
 &lt;/head&gt;
@@ -111,7 +121,9 @@ Comparons notre code écrit avec <em>AngularJS</em>, à ce que l'on écrirait en
   });
 &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;{% endraw %}
+</pre>
+
 N'y a-t-il pas une très grande différence entre un code <em>JavaScrit</em> natif et un code <em>AngularJS</em> ?
 
 Cette petite introduction à <em>AngularJS</em> ne vous donne-t-elle pas envie d'aller plus loin ?<br />
@@ -124,4 +136,4 @@ http://egghead.io/lessons
 
 &nbsp;
 
-{% endraw %}
+

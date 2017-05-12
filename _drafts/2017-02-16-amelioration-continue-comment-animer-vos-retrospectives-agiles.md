@@ -13,7 +13,7 @@ tags:
 - Inspect &amp; Adapt
 - Amélioration continue
 ---
-{% raw %}
+
 <span style="font-weight: 400">Nous partageons très régulièrement sur ce blog notre expertise technique autour du développement et de l’architecture web et mobile. Aujourd’hui, j’aimerais aborder un autre sujet, tout aussi important : notre </span>**expertise méthodologique**<span style="font-weight: 400">.</span>
 
 <span style="font-weight: 400">Chez Eleven Labs, notre méthodologie agile repose principalement sur la méthode **SCRUM**. J’aurais l’occasion de partager d’autres articles pour décrire cette méthodologie et ses outils plus en détails. Nous allons parler ici d’un must-have de toutes les méthodologies agiles, très probablement la cérémonie agile la plus mise en pratique : la </span>**rétrospective**<span style="font-weight: 400">.</span>
@@ -194,4 +194,4 @@ tags:
 </span></a><a href="http://retrospectives-agiles.fr/"><span style="font-weight: 400">http://retrospectives-agiles.fr/<br />
 </span></a><a href="http://www.scaledagileframework.com/inspect-and-adapt/"><span style="font-weight: 400">http://www.scaledagileframework.com/inspect-and-adapt/</span></a></em>
 
-{% endraw %}
+

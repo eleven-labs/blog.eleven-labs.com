@@ -12,7 +12,7 @@ tags:
 - test
 - phpunit
 ---
-{% raw %}
+
 Une question revient souvent : comment tester unitairement chaque bundle d'un projet Symfony 2?
 
 Il existe Jenkins qui  permet de tester unitairement son projet dans sa globalité.  Néanmoins, si votre projet contient 10 à 20 bundles et que vous en avez seulement modifié un, pourquoi lancer les tests sur l'ensemble du projet et attendre des heures.
@@ -31,7 +31,9 @@ Dans le dossier parent, ajoutez un composer.json avec toutes les dépendances do
 
 Dans votre dossier /Tests, ajoutez le fichier bootstrap.php contenant alors l'autoload.
 
-<pre class="lang:default decode:true">&lt;?php
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;?php
 // Test/bootstrap.php
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
@@ -42,14 +44,18 @@ if (!is_file($loaderFile = __DIR__.'/../vendor/autoload.php') &amp;&amp; !is_fil
 
 $loader = require $loaderFile;
 
-AnnotationRegistry::registerLoader(array($loader, 'loadClass'));</pre>
+AnnotationRegistry::registerLoader(array($loader, 'loadClass'));{% endraw %}
+</pre>
+
 Puis créez un dossier Fixtures dans Tests, contenant le dossier app/ et le dossier web/, votre app devient alors une simple fixture de votre bundle.
 
 Dans app/ gardez la structure classique avec vos configurations dans le dossier config/ vous devez y retrouver vos définitions de services, de configuration de bdd etc .....
 
 Créez alors le fichier AppKernel.php d'initialisation de votre Kernel
 
-<pre class="lang:default decode:true">&lt;?php
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;?php
 
 // Test/Fixtures/app/AppKernel.php
 
@@ -104,10 +110,14 @@ class AppKernel extends Kernel
 
         return $logDir;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Ainsi que votre fichier console, vous pourrez appeler votre Kernel.
 
-<pre class="lang:default decode:true">#!/usr/bin/env php
+<pre class="lang:default decode:true">
+{% raw %}
+#!/usr/bin/env php
 &lt;?php
 
 // if you don't want to setup permissions the proper way, just uncomment the following PHP line
@@ -128,12 +138,16 @@ $debug = getenv('SYMFONY_DEBUG') !== '0' &amp;&amp; !$input-&gt;hasParameterOpti
 
 $kernel = new AppKernel($env, $debug);
 $application = new Application($kernel);
-$application-&gt;run($input);</pre>
+$application-&gt;run($input);{% endraw %}
+</pre>
+
 À partir de là, votre bunlde peut fonctionner seul et donc effectuer ses tests indépendamment de votre projet.
 
 Il ne reste plus qu'à faire le fichier phpunit.xml.dist permettant de configurer votre phpunit.
 
-<pre class="lang:default decode:true">// phpunit.xml.dist
+<pre class="lang:default decode:true">
+{% raw %}
+// phpunit.xml.dist
 
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
@@ -175,12 +189,16 @@ Il ne reste plus qu'à faire le fichier phpunit.xml.dist permettant de configure
         &lt;log type="coverage-clover" target="build/logs/clover.xml"/&gt;
         &lt;log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/&gt;
     &lt;/logging&gt;
-&lt;/phpunit&gt;</pre>
+&lt;/phpunit&gt;{% endraw %}
+</pre>
+
 &nbsp;
 
 Pour rendre vos tests encore plus propres et plus indépendants, mettez en place un système de rollback des requêtes de test, il suffit pour cela d'étendre le Client de Symfony2 par un client qui isole les requêtes de test. Créez la class Client dans le dossier de test.
 
-<pre class="lang:default decode:true">&lt;?php
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;?php
 
 /Tests/Client.php
 
@@ -223,10 +241,14 @@ class Client extends BaseClient
 
         return $response;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Terminez par le plus simple : la configuration du build.xml pour Jenkins, voici un exemple mais là, c'est à vous de jouer.
 
-<pre class="lang:default decode:true">/build.xml
+<pre class="lang:default decode:true">
+{% raw %}
+/build.xml
 
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;project name="Push Server" default="build"&gt;
@@ -388,7 +410,9 @@ Terminez par le plus simple : la configuration du build.xml pour Jenkins, voici 
       &lt;arg path="${basedir}/build/code-browser" /&gt;
     &lt;/exec&gt;
   &lt;/target&gt;
-&lt;/project&gt;</pre>
+&lt;/project&gt;{% endraw %}
+</pre>
+
 &nbsp;
 
 Si vous avez des questions laissez moi un commentaire :)
@@ -399,4 +423,4 @@ Si vous avez des questions laissez moi un commentaire :)
 
 &nbsp;
 
-{% endraw %}
+

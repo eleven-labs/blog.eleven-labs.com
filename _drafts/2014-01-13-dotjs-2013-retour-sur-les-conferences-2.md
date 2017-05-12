@@ -10,7 +10,7 @@ tags:
 - Javascript
 - dotJS
 ---
-{% raw %}
+
 # DotJs 2013
 <a href="http://www.dotjs.eu/">dotJS</a> est une journée consacrée au langage JavaScript, créée par <a href="http://www.dotconferences.eu/">dotConferences</a>, dont le but est d'apporter des conférences du niveau de <a href="http://www.ted.com/">TED</a> au monde de l'informatique.
 
@@ -86,4 +86,4 @@ Suite à cette dernière conférence, beaucoup d'interrogations sont nées sur l
 <li>Comment va évoluer les différents frameworks de développement de jeu comme <a href="http://unity3d.com/">Unity</a>, <a href="http://jmonkeyengine.org/">JMonkey</a>, <a href="http://threejs.org/">Three.js</a> ?</li>
 </ul>
 
-{% endraw %}
+

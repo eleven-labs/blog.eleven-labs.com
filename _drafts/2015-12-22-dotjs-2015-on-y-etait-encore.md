@@ -18,7 +18,7 @@ tags:
 - angular
 - node
 ---
-{% raw %}
+
 &nbsp;
 
 <span style="font-weight: 400;">Cette année encore, Eleven Labs et sa bande d'astronautes étaient partenaires de la </span><a href="http://www.dotjs.io/"><span style="font-weight: 400;">dotJS</span></a><span style="font-weight: 400;"> version 2015.</span>
@@ -199,4 +199,4 @@ J’attendais un peu plus de cette présentation cependant.</span>
 
 <span style="font-weight: 400;">Compte Twitter : https://twitter.com/dotJS</span>
 
-{% endraw %}
+

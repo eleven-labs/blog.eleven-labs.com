@@ -13,7 +13,7 @@ tags:
 - web
 - cloud
 ---
-{% raw %}
+
 Aujourd'hui le Cloud c'est le mot à la mode, mais qu'est-ce que c'est ?
 
 Comment ça marche ? Et comment en faire ?
@@ -91,4 +91,4 @@ N'oubliez pas de supprimer le projet Jenkins, pour ne pas payer pour rien.
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-11.51.59.png"><img class="aligncenter size-large wp-image-2736" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-11.51.59-1024x446.png" alt="Supprimer Jenkins - Google Cloud Platform" width="1024" height="446" /></a>
 
-{% endraw %}
+

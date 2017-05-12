@@ -10,13 +10,15 @@ tags:
 - php
 - symfony2
 ---
-{% raw %}
+
 La documentation de Symfony2 explique très bien ce que c'est qu'un <a href="http://symfony.com/fr/doc/current/book/service_container.html">service et le conteneur de dépendances</a>. Mais dans une application on a souvent besoin d'injecter plusieurs services ou paramètres. Vous vous êtes déjà dit que c'était plus simple d'injecter le container de service directement plutôt que d'injecter toutes les dépendances les unes après les autres ? Voici les "pour" et les "contre".
 
 ## Pourquoi ne pas le faire ?
 Tout d'abord, quand un service ressemble à ça,
 
-<pre class="lang:default decode:true">class MyService
+<pre class="lang:default decode:true">
+{% raw %}
+class MyService
 {
     private $container;
 
@@ -25,7 +27,9 @@ Tout d'abord, quand un service ressemble à ça,
         $this-&gt;container = $container;
     }
     // ....
-}</pre>
+}{% endraw %}
+</pre>
+
 ... en lisant le constructeur <em>on ne sait pas quelles sont les dépendances</em> du service. On serait obligé d'aller lire toute la classe pour savoir de quoi elle a réellement besoin.
 
 Deuxièmement, il faudra utiliser le conteneur de service dans les tests, ou avoir un mock du conteneur si on l'injecte. Par défaut, il ne contiendra pas de services, donc il faudra quand même mocker ceux utilisés par notre service. Il faudra donc lire toute la classe pour ne pas oublier des dépendances. Ce qui impose d'écrire du code (inutile) en plus, tout en rendant les <em>tests plus compliqués et longs</em> à écrire... et à maintenir.
@@ -37,7 +41,9 @@ Il existe quand même des cas où injecter le conteneur de services directement 
 
 Les extensions Twig doivent être dans le scope "container" puisqu'elle dépendent de Twig qui est dans ce scope. Mais injecter Request directement demande que le scope soit réduit à "request". Pour résoudre ce problème, on va injecter le service container dans l'extension et vérifier si une request est disponible :
 
-<pre class="lang:default decode:true">class MyExtension extends \Twig_Extension
+<pre class="lang:default decode:true">
+{% raw %}
+class MyExtension extends \Twig_Extension
 {
     private $container;
     private $request;
@@ -51,9 +57,11 @@ Les extensions Twig doivent être dans le scope "container" puisqu'elle dépende
         }
     }
     // ...
-}</pre>
+}{% endraw %}
+</pre>
+
 Note : les extensions Twig ne bénéficient pas du lazy loading, et sont donc toujours chargées, même si vous lancez une commande. Puisqu’il n'y a pas de Request dans une commande, nous avons besoin de vérifier son existence avant d’essayer d'y accéder.
 
 <strong>EDIT</strong> : Depuis symfony 2.4, un nouveau scope, "request_stack", a été introduit (cf <a href="http://symfony.com/blog/new-in-symfony-2-4-the-request-stack">l'article de Fabien Potencier</a>). Le problème décrit ci-dessus ne se pose donc plus.
 
-{% endraw %}
+

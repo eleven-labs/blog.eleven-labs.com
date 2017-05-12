@@ -9,19 +9,27 @@ categories:
 tags:
 - mongodb
 ---
-{% raw %}
+
 Lors de l’exécution de certain map reduce de MongoDB, il se peut que des tables temporaires ne se drop pas.
 
 Voici la ligne de commande magique pour les supprimer.
 
 <!--more-->
 
-<pre class="brush: shell; gutter: true">mongo "nom de la base"</pre>
-<pre class="brush: shell; gutter: true">db.system.namespaces.find({name:/tmp.mr/}).forEach(function(z) {
+<pre class="brush: shell; gutter: true">
+{% raw %}
+mongo "nom de la base"{% endraw %}
+</pre>
+
+<pre class="brush: shell; gutter: true">
+{% raw %}
+db.system.namespaces.find({name:/tmp.mr/}).forEach(function(z) {
   try{
     db.getMongo().getCollection( z.name ).drop();
   } catch(err) {}
-});</pre>
+});{% endraw %}
+</pre>
+
 Voila si vous aimez alors likez ;)
 
-{% endraw %}
+

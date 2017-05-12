@@ -8,7 +8,7 @@ categories:
 - Non classé
 tags: []
 ---
-{% raw %}
+
 ### <strong>Unit tests and trust</strong>
 It is well established : unit tests are mandatory when developing an application. They allow to highlight possible regressions when code is modified, so the developer gets a certain confidence when shipping his code to production : If tests do pass, everything works correctly.
 
@@ -20,7 +20,9 @@ But be careful ! This affirmation is a pure theory !
 We are going to see that sometimes, code coverage is a false indicator of protection.<br />
 Here is a simple example :
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 class Astronaut {}
 
@@ -41,10 +43,14 @@ class SpaceShip
         }
     }
 }
+{% endraw %}
 </pre>
+
 The <em>SpaceShip</em> class has a public method <em>addAstronaut</em> which adds an instance of <em>Astronaut</em> only if maximum capacity is not reached. Let's see the associated unit test :
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 class SpaceShipTest extends \PHPUnit_Framework_TestCase
 {
@@ -57,7 +63,9 @@ class SpaceShipTest extends \PHPUnit_Framework_TestCase
         $this-&gt;assertCount(1, $spaceShip-&gt;astronauts);
     }
 }
+{% endraw %}
 </pre>
+
 The test checks that the method is actually adding an entry to the astronaut array. When we launch the tests, we have a code coverage of 100% (even without assertion we would still have this result).<br />
 But we are not protected enough : what would happen if the <em>addAstronaut</em> method changed ?<br />
 Would our test be sufficient to detect the regression ?
@@ -89,7 +97,9 @@ We are going to see <a href="https://github.com/padraic/humbug">Humbug</a>, a fr
 
 As we execute the Humbug binary, we get the following output :
 
-<pre class="lang:txt decode:true">$&gt; humbug
+<pre class="lang:txt decode:true">
+{% raw %}
+$&gt; humbug
 ...
 Mutation Testing is commencing on 1 files...
 (.: killed, M: escaped, S: uncovered, E: fatal error, T: timed out)
@@ -107,10 +117,14 @@ Metrics:
     Mutation Score Indicator (MSI): 50%
     Mutation Code Coverage: 100%
     Covered Code MSI: 50%
+{% endraw %}
 </pre>
+
 Damn ! A Mutant escaped ! Let's have a look at the log file :
 
-<pre class="lang:txt decode:true">1) \Humbug\Mutator\ConditionalBoundary\LessThan
+<pre class="lang:txt decode:true">
+{% raw %}
+1) \Humbug\Mutator\ConditionalBoundary\LessThan
 Diff on \SpaceShip::addAstronaut() in src/SpaceShip.php:
 --- Original
 +++ New
@@ -122,11 +136,15 @@ Diff on \SpaceShip::addAstronaut() in src/SpaceShip.php:
          }
      }
  }
+{% endraw %}
 </pre>
+
 As we can see in the generated diff, tests didn't detect the operator substitution. Actually, we haven't tested the case when our spaceship is full !<br />
 Now, let's add a test to cover this use-case :
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 class SpaceShipTest extends \PHPUnit_Framework_TestCase
 {
@@ -148,10 +166,14 @@ class SpaceShipTest extends \PHPUnit_Framework_TestCase
         $this-&gt;assertCount(0, $spaceShip-&gt;astronauts);
     }
 }
+{% endraw %}
 </pre>
+
 Launch Humbug again :
 
-<pre class="lang:txt decode:true">$&gt; humbug
+<pre class="lang:txt decode:true">
+{% raw %}
+$&gt; humbug
 ...
 Mutation Testing is commencing on 1 files...
 (.: killed, M: escaped, S: uncovered, E: fatal error, T: timed out)
@@ -169,7 +191,9 @@ Metrics:
     Mutation Score Indicator (MSI): 100%
     Mutation Code Coverage: 100%
     Covered Code MSI: 100%
+{% endraw %}
 </pre>
+
 That's it ! This time no mutant escaped, our test suite is more efficient, and this potential bug will never reach production !<br />
 Obviously, the example chosen here is voluntarily very simple and might not be evocative, but in the core businnes logic of your application, you may have a lot more sensitive use-cases.
 
@@ -188,4 +212,4 @@ I'm not going to detail everything here, if wou want to know more about this, I 
 Mutation testing is a simple and efficient way of measuring unit tests fiability. Code coverage is not a very reliable metric, a code can be 100% covered without any assertion !<br />
 Humbug allows to automate these tests, so it's possible to plug it in your continuous integration workflow. However, be aware that execution time increases exponentially when codebase grows, we want to use mutation testing where there is a true concern in priority : business code.
 
-{% endraw %}
+

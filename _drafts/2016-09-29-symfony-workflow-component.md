@@ -8,7 +8,7 @@ categories:
 - Non classé
 tags: []
 ---
-{% raw %}
+
 Since Symfony 3.2, a new useful component was born: the <a href="http://symfony.com/blog/new-in-symfony-3-2-workflow-component">Workflow component</a>.
 
 It is indeed really convenient and can simplify greatly your developments when you have to manage status workflows in your application, that occurs a lot.
@@ -19,10 +19,18 @@ It is indeed really convenient and can simplify greatly your developments when y
 
 In all cases, you have to install the following dependency:
 
-<pre class="lang:default decode:true">"symfony/workflow": "~3.2@dev"</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+"symfony/workflow": "~3.2@dev"{% endraw %}
+</pre>
+
 If you use an earlier version of Symfony but &gt;=2.3 you are also able to use this component, but you have to install the following non-official bundle, which loads the component itself and add the required configuration under the bundle's namespace:
 
-<pre class="lang:default decode:true">"fduch/workflow-bundle": "~0.2@dev"</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+"fduch/workflow-bundle": "~0.2@dev"{% endraw %}
+</pre>
+
 Do not forget to enable the bundle in your kernel class.
 
 &nbsp;
@@ -39,7 +47,9 @@ However, it cannot be, for instance, moved from the <span class="lang:default d
 
 Here is our full workflow configuration:
 
-<pre class="lang:yaml decode:true">workflow:
+<pre class="lang:yaml decode:true">
+{% raw %}
+workflow:
     workflows:
         pull_request:
             marking_store:
@@ -66,12 +76,16 @@ Here is our full workflow configuration:
                     to:   merged
                 close:
                     from: [opened, needs_review, reviewed]
-                    to:   closed</pre>
+                    to:   closed{% endraw %}
+</pre>
+
 Here, we specify we want to use a <span class="lang:default decode:true crayon-inline">multiple_state</span>  workflow. Please not that if you want to use a simple transition from one state to another, you can use a <span class="lang:default decode:true crayon-inline">single_state</span> .
 
 For this example, we also have defined a <span class="lang:default decode:true crayon-inline">AppBundle\Entity\PullRequest</span> class which has a <span class="lang:default decode:true crayon-inline ">state</span>  property and associated setter and getter methods (component will use these methods to manage transitions):
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace AppBundle\Entity;
 
@@ -96,7 +110,9 @@ class PullRequest
     {
         return $this-&gt;state;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 &nbsp;
 
 &nbsp;
@@ -113,7 +129,11 @@ First useful thing to do after you have written your workflow configuration is t
 
 Here is the Symfony command you have to run:
 
-<pre class="lang:sh decode:true">$ bin/console workflow:dump pull_request</pre>
+<pre class="lang:sh decode:true">
+{% raw %}
+$ bin/console workflow:dump pull_request{% endraw %}
+</pre>
+
 The generated Graphviz will give you the following diagram:
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/Capture-d’écran-2016-09-26-à-20.50.44-1.png"><img class="size-full wp-image-2288 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/Capture-d’écran-2016-09-26-à-20.50.44-1.png" alt="Workflow - Graphviz" width="879" height="224" /></a>
@@ -126,7 +146,9 @@ The Workflow component implements methods that allow you to verify if a transiti
 
 In order to check if you can apply a specific transition and apply it, simply use the following code:
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace AppBundle\Controller;
 
@@ -157,7 +179,9 @@ class PullRequestController extends Controller
 
         ...
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 In the case you do not want to use the <span class="lang:default decode:true crayon-inline">can()</span> method, the <span class="lang:default decode:true crayon-inline ">apply()</span> <span id="crayon-57ea364c0a715059785852" class="crayon-syntax crayon-syntax-inline crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco"><span class="crayon-pre crayon-code"><span class="crayon-sy"> one</span></span></span> will throw an exception if the transition cannot be effectively done, so you will be able to catch exceptions on the <span class="lang:default decode:true crayon-inline ">Symfony\Component\Workflow\Exception\LogicException</span> type.
 
 &nbsp;
@@ -166,7 +190,11 @@ In the case you do not want to use the <span class="lang:default decode:true cr
 
 To list all enabled transitions:
 
-<pre class="lang:php decode:true">$workflow-&gt;getEnabledTransitions($pullRequest);</pre>
+<pre class="lang:php decode:true">
+{% raw %}
+$workflow-&gt;getEnabledTransitions($pullRequest);{% endraw %}
+</pre>
+
 Overall, the component usage is just as simple as these 3 methods. As you can see, complex workflows are now easier to manage!
 
 &nbsp;
@@ -204,4 +232,4 @@ Do not hesitate to use it because its simplicity of configuration and use will p
 
 Also, this component helps me a lot to give people I was working with a clear vision on a complex workflow we have to manage. The graph generation allows to clarify all of that for everyone!
 
-{% endraw %}
+

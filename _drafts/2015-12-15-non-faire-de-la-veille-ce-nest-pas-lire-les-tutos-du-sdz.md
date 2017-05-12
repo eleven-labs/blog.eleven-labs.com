@@ -12,7 +12,7 @@ tags:
 - tutoriel
 - veille
 ---
-{% raw %}
+
 <ul>
 <li><strong> C'est quoi la veille?</strong></li>
 </ul>
@@ -114,4 +114,4 @@ Dernier conseil, n'hésitez pas à mélanger le fun et le boulot! Si vous mettez
 
 Seeya!
 
-{% endraw %}
+

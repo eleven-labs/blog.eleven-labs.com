@@ -10,7 +10,7 @@ tags:
 - doctrine
 - symfony2
 ---
-{% raw %}
+
 Quand on exécute une suite de tests fonctionnels ou unitaires sur une application, le mieux est de ne pas changer l'état de la base de données. Cela permet ainsi d'exécuter ces tests plusieurs fois sur un état stable des données. Chaque test est ainsi isolé des autres.
 
 <strong>Contexte : isolation grâce à un rollback de la base de données :</strong>
@@ -19,7 +19,9 @@ Comme indiqué dans un <a title="Test unitaire d’un bundle Symfony 2" href="h
 
 Cela repose sur cette classe que vos tests fonctionnels PHPUnit devront étendre et qui déclenche le système d'isolation, avant et après chaque cas de tests grâce aux méthodes <em>setUp</em> et <em>tearDown</em> :
 
-<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Test/IsolatedWebTestCase.php">&lt;?php
+<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Test/IsolatedWebTestCase.php">
+{% raw %}
+&lt;?php
 
 namespace Cheric\ExampleBundle\Test;
 
@@ -46,10 +48,14 @@ class IsolatedWebTestCase extends BaseWebTestCase
 
         parent::tearDown();
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Ce <em>Test Case</em> utilise le <em>Test Client</em> suivant, il est capable de déclencher un rollback en base de données :
 
-<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Test/Client.php">&lt;?php
+<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Test/Client.php">
+{% raw %}
+&lt;?php
 
 namespace Cheric\ExampleBundle\Test;
 
@@ -149,14 +155,18 @@ class Client extends BaseClient
 
         return $this-&gt;crawler;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Cela fonctionne très bien sauf dans les cas où vous souhaitez tester des <em>Events Listeners Doctrine</em> dans vos tests fonctionnels, dans lesquels vous effectuez plusieurs requêtes (pour connecter l'utilisateur avant votre action par exemple). Nous allons donc d'abord constater l'erreur dans ce cas là avant de voir comment l'éviter.
 
 <strong>Problème : quand on utilise des <em>Listeners</em> Doctrine :</strong>
 
 Imaginons par exemple que vous ayez besoin d'exécuter une stratégie particulière pour changer un attribut de votre entité Doctrine juste après sa création, i.e. lors de l'event postPersit et/ou postUpdate. Vous mettriez alors en place ce <a title="How to Register Event Listeners and Subscribers" href="http://symfony.com/doc/current/cookbook/doctrine/event_listeners_subscribers.html" target="_blank">listener</a> :
 
-<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Doctrine/Listener/ArticleListener.php">&lt;?php
+<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Doctrine/Listener/ArticleListener.php">
+{% raw %}
+&lt;?php
 
 namespace Cheric\ExampleBundle\Doctrine\Listener;
 
@@ -199,10 +209,14 @@ class ArticleListener
 
         $this-&gt;execute($article);
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 qui fait appel à la <em>Strategy</em> suivante (sans intérêt fonctionnel je vous l'accorde, mais je vous laisse imaginer le service qui répondra à vos besoins et fera appel à différents Web Services ou base de données pour trouver le prix unitaire de notre article) :
 
-<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Strategy/PriceStrategy.php">&lt;?php
+<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Strategy/PriceStrategy.php">
+{% raw %}
+&lt;?php
 
 namespace Cheric\ExampleBundle\Strategy;
 
@@ -229,10 +243,14 @@ class PriceStrategy
 
         $this-&gt;doctrine-&gt;getManager()-&gt;flush($article);
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Et vous voudriez ensuite tester cela fonctionnellement :
 
-<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Tests/Controller/ArticleControllerTest.php">&lt;?php
+<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Tests/Controller/ArticleControllerTest.php">
+{% raw %}
+&lt;?php
 
 namespace Cheric\ExampleBundle\Tests\Controller;
 
@@ -272,12 +290,18 @@ class ArticleControllerTest extends IsolatedWebTestCase
         $this-&gt;assertEquals(42, $article-&gt;getQuantity());
         $this-&gt;assertEquals(42, $article-&gt;getPrice());
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Ce test fonctionnel vérifie simplement que les données postées (quantity = 42) sont bien settées dans l'entité par le <a title="ArticleController" href="https://github.com/ch3ric/BlogTestsIsolation/blob/master/src/Cheric/ExampleBundle/Controller/ArticleController.php" target="_blank">controller</a>, et que le prix est ensuite renseigné lors du passage dans notre <em>ArticleListener</em> avant la sauvegarde en base de données.
 
 Et là, surprise lors de l’exécution de PHPUnit :
 
-<pre class="lang:sh decode:true ">Failed asserting that 500 matches expected 200.</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+Failed asserting that 500 matches expected 200.{% endraw %}
+</pre>
+
 associée à l'erreur "<em>InvalidArgumentException</em>: <em>Entity has to be managed or scheduled for removal for single computation</em>" visible dans les logs...
 
 Et pourtant si l'on exécute ce code, sans utiliser nos tests fonctionnels, via de simples appels curl par exemple (1 premier pour se logguer et un deuxième en POST ou PUT pour mettre à jour notre entité, en utilisant le token d'authentification retourné lors du login), on constate que cela fonctionne très bien : l'entité est bien modifiée ou créée en base de données.
@@ -296,7 +320,9 @@ Finalement, on en déduit que l'<em>Event Manager</em> de la <em>DBAL Connection
 
 La <a title="Commit Solution" href="https://github.com/ch3ric/BlogTestsIsolation/commit/2038a61e723f3091b7dd935cf3da9f3cc57651e1" target="_blank">solution</a> consiste donc simplement à setter le bon<em> Event Manager</em> dans la <em>Connection</em> conservée entre chaque requête de test, lors de l'appel à la méthode <em>startIsolation</em>. Cela passe par une extension de la classe <em>DBAL Connection</em> dans laquelle on ajoute un setter <em>setEventManager</em> :
 
-<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Doctrine/DBAL/Connection.php">&lt;?php
+<pre class="lang:php decode:true" title="src/Cheric/ExampleBundle/Doctrine/DBAL/Connection.php">
+{% raw %}
+&lt;?php
 
 namespace Cheric\ExampleBundle\Doctrine\DBAL;
 
@@ -319,10 +345,14 @@ class Connection extends BaseConnection
         $this-&gt;_platform-&gt;setEventManager($eventManager);
     }
 }
+{% endraw %}
 </pre>
+
 Et dans notre <em>Test Client</em>, on set le bon <em>EventManager</em> dans la <em>Connection</em> conservée entre chaque test :
 
-<pre class="lang:default decode:true" title="src/Cheric/ExampleBundle/Test/Client.php">&lt;?php
+<pre class="lang:default decode:true" title="src/Cheric/ExampleBundle/Test/Client.php">
+{% raw %}
+&lt;?php
 
 namespace Cheric\ExampleBundle\Test;
 
@@ -349,7 +379,9 @@ class Client extends BaseClient
     }
 
     // ...
-}</pre>
+}{% endraw %}
+</pre>
+
 Voir commit complet <a title="Commit Solution" href="https://github.com/ch3ric/BlogTestsIsolation/commit/2038a61e723f3091b7dd935cf3da9f3cc57651e1#diff-d618fa2c315d1d7b933528805e889d00R55" target="_blank">ici : sur github</a>.
 
 Le code complet permettant l'analyse de ce problème d'isolation et la solution sont disponibles ici : <a title="github.com/ch3ric/BlogTestsIsolation" href="https://github.com/ch3ric/BlogTestsIsolation" target="_blank">github.com/ch3ric/BlogTestsIsolation</a>
@@ -364,4 +396,4 @@ Intergalactiquement vôtre et à bientôt !!
 
 NB : je me suis concentré ici sur la recherche d'une solution à mon problème d'isolation bien précis, sans pour autant pousser l'analyse du comportement de Doctrine et plus spécifiquement de son <em>Event Manager</em>. Si certains ont fait cette analyse, je suis intéressé :) !
 
-{% endraw %}
+

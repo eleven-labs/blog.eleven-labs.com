@@ -13,7 +13,7 @@ tags:
 - SSL
 - TLS
 ---
-{% raw %}
+
 <span style="font-weight: 400;">You've certainly heard about SSL or TLS protocols.</span><span style="font-weight: 400;"><br />
 </span><span style="font-weight: 400;">We're going to see what it's all about together.<br />
 </span>
@@ -111,4 +111,4 @@ What also differentiates TLS from SSL is that <strong>asymmetrical<span style="
 </ul>
 <span style="font-weight: 400;">I really hope not to have lost anyone along the way, because we're now going to dig in deep !</span>
 
-{% endraw %}
+

@@ -9,7 +9,7 @@ categories:
 tags:
 - dotcss
 ---
-{% raw %}
+
 C'est en plein coeur du 2e arrondissement de Paris, dans ce monument historique légèrement cossu qu'est le Théâtre des Variétés, que s'est déroulée la deuxième édition de dotCSS le 4 décembre dernier. Ce jour-là, mon compère Elevenien Thibaut et moi-même avons délesté nos clients bien-aimés de notre présence pour nous y rendre, et écouter ce que quelques grands acteurs de la scène CSS voulaient partager avec nous en cette fin d'année. Et pour être franc, c'était très instructif.
 
 https://twitter.com/glazou/status/672756354608664576
@@ -109,4 +109,4 @@ https://twitter.com/dotCSS/status/672797455692529664
 
 Les photos officielles de l'événement sont disponibles sur <a href="https://www.flickr.com/photos/97226415@N08/sets/72157662173518555">le Flickr de dotConferences</a>. Quant aux vidéos, elles devraient être en ligne d'ici quelques jours.
 
-{% endraw %}
+

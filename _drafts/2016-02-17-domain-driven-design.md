@@ -11,7 +11,7 @@ tags:
 - architecture
 - DDD
 ---
-{% raw %}
+
 <span style="font-weight: 400">Le Domain Driven Design, décrit dans le livre d’Eric Evans </span><span style="font-weight: 400">“</span><i><span style="font-weight: 400">Domain Driven Design, Tackling Complexity in the Heart of Software</span></i><span style="font-weight: 400">”, permet de mieux appréhender la complexité d’un projet en partageant une approche et un langage communs par tous les membres impliqués dans la construction d’une application.</span>
 
 <span style="font-weight: 400">Sa définition peut être énoncée en 3 points clés :</span>
@@ -78,7 +78,9 @@ Les événements métiers permettent de modéliser l'information sur l'activité
 <span style="font-weight: 400">Un dernier aspect que j’aimerai aborder concerne le pattern </span><i><span style="font-weight: 400"><a href="http://martinfowler.com/apsupp/spec.pdf" target="_blank">specification</a></span></i><span style="font-weight: 400">. Ce dernier ne fait pas parti des <em>building blocks</em> du <em>Domain Driven Design,</em> mais présente de nombreux avantages.<br />
 Très simple à mettre en place, il permet d’encapsuler vos règles métiers dans une classe avec une sémantique précise.</span>
 
-<pre class="theme:sublime-text lang:php decode:true" title="Le pattern specification">&lt;?php
+<pre class="theme:sublime-text lang:php decode:true" title="Le pattern specification">
+{% raw %}
+&lt;?php
 
 class RocketCanBeLaunched implements Specification
 {
@@ -93,7 +95,9 @@ class RocketCanBeLaunched implements Specification
 
         return true;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 <span style="font-weight: 400">Les spécifications ont un réel intérêt car elles présentent les avantages suivants : </span>
 
 <ul>
@@ -124,4 +128,4 @@ Le <em>ubiquitous language </em>et les outils de modélisation du modèle perm
 
 <a href="http://thepaulrayner.com/blog/why-value-objects/" target="_blank">Why Value Objects</a>
 
-{% endraw %}
+

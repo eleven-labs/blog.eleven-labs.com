@@ -10,7 +10,7 @@ tags:
 - php
 - symfony2
 ---
-{% raw %}
+
 Si vous êtes courageux, vous aurez dans l'idée de vouloir passer à Symfony2.
 
 Voici une petite liste non-exaustive des points de différences à connaître pour passer de Symfony1.x à Symfony2
@@ -56,7 +56,9 @@ D'autre part, la synthaxe de ces fichiers de création d'entité a légèrement
 
 Par exemple, là où vous auriez crée une table intermediaire pour créer une relation N-N entre deux objets en SF1, vous aurez simplement à décrire ce comportement grâce à des mots clefs propres à SF2:
 
-<pre class="brush: xml; gutter: true">User:
+<pre class="brush: xml; gutter: true">
+{% raw %}
+User:
   type: entity
   manyToMany:
     groups:
@@ -69,26 +71,40 @@ Par exemple, là où vous auriez crée une table intermediaire pour créer une r
             referencedColumnName: id
         inverseJoinColumns:
           group_id:
-            referencedColumnName: id</pre>
-<pre class="brush: xml; gutter: true">Group:
+            referencedColumnName: id{% endraw %}
+</pre>
+
+<pre class="brush: xml; gutter: true">
+{% raw %}
+Group:
   type: entity
   manyToMany:
     users:
       targetEntity: User
-      mappedBy: groups</pre>
+      mappedBy: groups{% endraw %}
+</pre>
+
 <span class="Apple-style-span" style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; font-size: 13px; line-height: 19px; white-space: normal;">Vous pouvez retrouver toutes ces nouveautés sur la doc <a title="Doctrine2 - Mapping Relation" href="http://www.doctrine-project.org/docs/orm/2.1/en/reference/association-mapping.html">officielle de Doctrine 2</a></span> Et pour ce qui est de la récupération des données, tout se passe maintenant via l'utilisation d'une class EntityManager. C'est grâce à cette objet que vous pourrez créer votre propre requête, DQL par exemple, afin d'obtenir vos données tant convoitées. <span style="text-decoration: underline;">Exemple</span>:
 
-<pre class="lang:default decode:true ">$em = $this-&gt;getDoctrine()-&gt;getEntityManager();
-$myObjects= $em-&gt;getRepository('MyBundle:MyEntity')-&gt;findAll();</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+$em = $this-&gt;getDoctrine()-&gt;getEntityManager();
+$myObjects= $em-&gt;getRepository('MyBundle:MyEntity')-&gt;findAll();{% endraw %}
+</pre>
+
 &nbsp;
 
 <div>ou encore</div>
-<pre class="lang:php decode:true brush: php; gutter: true ">$qb = $em-&gt;createQueryBuilder()
+<pre class="lang:php decode:true brush: php; gutter: true ">
+{% raw %}
+$qb = $em-&gt;createQueryBuilder()
             -&gt;select("d")
             -&gt;addSelect("b")
             -&gt;from('MyBundle:MyEntity', "d")
             -&gt;leftJoin('d.other-entity', "b")
-           -&gt;getResult();</pre>
+           -&gt;getResult();{% endraw %}
+</pre>
+
 <span class="Apple-style-span" style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; font-size: 13px; line-height: 19px; white-space: normal;"> </span>
 
 ### <span style="text-decoration: underline;">Symfony 2 c'est ... un nouveau moteur de template:</span>
@@ -116,4 +132,4 @@ Si toutefois vous êtes determiné à passer à la nouvelle version, je vous inv
 &nbsp;
 
 </div>
-{% endraw %}
+

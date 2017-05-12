@@ -8,7 +8,7 @@ categories:
 - Agilité
 tags: []
 ---
-{% raw %}
+
 Jeudi 17 novembre avait lieu la 9ème édition de l’Agile Tour Paris dans les locaux de Microsoft à Issy les Moulineaux - première édition pour ma part.
 
 Les slides n’étant pas toutes en ligne, cet article sera mis à jour quand elles seront à disposition.
@@ -97,4 +97,4 @@ J'aurais bien entendu aimé participer à plus de conférences et ateliers, comm
 
 Cette journée a été riche en connaissances et en rencontres, j'espère y retourner l'année prochaine !
 
-{% endraw %}
+

@@ -11,7 +11,7 @@ tags:
 - Yeoman
 - Gulp
 ---
-{% raw %}
+
 ## Intro
 It has now been more than a year since I (<a href="https://twitter.com/Swiip">@Swiip</a>), quickly followed by <a href="https://twitter.com/Zckrs">@zckrs</a>, started working on our Yeoman generator. Today we’re celebrating the release of our first major and stable version : <a href="https://www.npmjs.com/package/generator-gulp-angular">generator-gulp-angular 1.0.0</a>.
 
@@ -54,4 +54,4 @@ The major selling point will be to use Yeoman's generators composition, to upgr
 
 Go try out <a href="https://www.npmjs.com/package/generator-gulp-angular">generator-gulp-angular</a> v1.0.0 release! Any feedbacks, issues, or investment on the new  <a href="https://github.com/FountainJS">FountainJS</a> project will always be appreciated. <a href="https://www.npmjs.com/package/generator-gulp-angular"><img class="alignnone size-full wp-image-1336" src="http://blog.eleven-labs.com/wp-content/uploads/2015/10/generator-gulp-angular-logo.png" alt="generator-gulp-angular-logo" width="29" height="55" /></a>
 
-{% endraw %}
+

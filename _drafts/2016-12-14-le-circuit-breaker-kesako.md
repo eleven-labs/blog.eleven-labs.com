@@ -12,7 +12,7 @@ tags:
 - microservice
 - circuit-breaker
 ---
-{% raw %}
+
 Aujourd'hui les architectures micro-services sont de plus en plus répandues. Mais quels sont les moyens de contrôler votre nouveau système d'information ?
 
 Mettons fin au mystère dès maintenant, le circuit-breaker, c'est le <strong>disjoncteur</strong> de votre architecture micro-services. Mais comment cela fonctionne et pourquoi en aurions-nous besoin ?
@@ -66,7 +66,9 @@ Ce dont nous avons besoin :
 
 Nous allons commencer par l'event, pour cela rien de plus simple : nous devons envoyer le nom du service et le statut de la communication.
 
-<pre class="lang:php decode:true " title="CircuitBreakerEvent">&lt;?php declare(strict_types=1);
+<pre class="lang:php decode:true " title="CircuitBreakerEvent">
+{% raw %}
+&lt;?php declare(strict_types=1);
 
 namespace AppBundle\Event;
 
@@ -109,10 +111,14 @@ class CircuitBreakerEvent extends Event
     {
         return $this-&gt;status;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Une fois l'événement envoyé, il faut le récupérer dans un listener, qui servira de passe-plat vers le service du circuit-breaker.
 
-<pre class="lang:default decode:true " title="CircuitBreakerListener">&lt;?php declare(strict_types=1);
+<pre class="lang:default decode:true " title="CircuitBreakerListener">
+{% raw %}
+&lt;?php declare(strict_types=1);
 
 namespace AppBundle\EventListener;
 
@@ -141,20 +147,28 @@ class CircuitBreakerListener
     {
         $this-&gt;circuitBreaker-&gt;save($event-&gt;getKey(), $event-&gt;getStatus());
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 On n'oublie pas de mettre en place le listener dans la configuration des services.
 
-<pre class="lang:yaml decode:true" title="services.yml">services:
+<pre class="lang:yaml decode:true" title="services.yml">
+{% raw %}
+services:
     circuit.breaker.listener:
         class: AppBundle\EventListener\CircuitBreakerListener
         arguments: ['@circuit.breaker']
         tags:
-            - { name: kernel.event_listener, event: circuit.breaker, method: onCircuitBreaker, priority: 1  }</pre>
+            - { name: kernel.event_listener, event: circuit.breaker, method: onCircuitBreaker, priority: 1  }{% endraw %}
+</pre>
+
 Maintenant nous allons mettre en place le service CircuitBreaker, qui permet de calculer le statut du circuit-breaker pour un service donné.
 
 Nous allons d'abord initialiser le service avec les trois statuts possibles, nous allons aussi mettre en configuration le nombre d'essais en erreur possibles et le temps avant de relancer un appel.
 
-<pre class="lang:php decode:true" title="CircuitBreakerService Init">&lt;?php declare(strict_types=1);
+<pre class="lang:php decode:true" title="CircuitBreakerService Init">
+{% raw %}
+&lt;?php declare(strict_types=1);
 
 namespace AppBundle\Service;
 
@@ -197,10 +211,14 @@ class CircuitBreakerService
         $this-&gt;threshold = $threshold;
         $this-&gt;timeout = $timeout;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Maintenant nous allons créer la fonction "save" qui permet de prendre en compte  le statut de la dernière communication.
 
-<pre class="lang:php decode:true" title="Circuit-Breaker Save">&lt;?php declare(strict_types=1);
+<pre class="lang:php decode:true" title="Circuit-Breaker Save">
+{% raw %}
+&lt;?php declare(strict_types=1);
 
 namespace AppBundle\Service;
 
@@ -264,12 +282,16 @@ class CircuitBreakerService
             $this-&gt;resetCount($key);
         }
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Comme vous pouvez le constater, nous suivons ce qui est dans le schéma plus haut. Arrivé dans la fonction save, si le circuit-breaker n'a pas encore de statut, nous le mettons à CLOSED et enregistrons le statut de la communication. Si celui-ci est OPEN nous appelons la fonction "attemptReset", ce qui permet de retenter ou non un appel.
 
 Nous continuons en mettant en place les fonctions "countFailure" et "resetCount".
 
-<pre class="lang:php decode:true" title="CircuitBreaker Take status">&lt;?php declare(strict_types=1);
+<pre class="lang:php decode:true" title="CircuitBreaker Take status">
+{% raw %}
+&lt;?php declare(strict_types=1);
 
 namespace AppBundle\Service;
 
@@ -373,14 +395,18 @@ class CircuitBreakerService
         $this-&gt;status[$service] = self::CLOSED;
         $this-&gt;cacheApp-&gt;save($value);
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 "ResetCount" est super simple, on remet le compteur stoker en cache à 0 et on met le circuit-breaker en CLOSED.
 
 "CountFailure" incrémente le compteur, si celui-ci atteint le "threshold" on passe dans le "tripBreaker". Si le statut du cricuit-breaker est HALFOPEN on le remet tout de suite au niveau du "threshold".
 
 Maintenant on va développer les fonctions "attemptReset" et "tripBreaker".
 
-<pre class="lang:php decode:true " title="Circuit Breaker Change Status">&lt;?php declare(strict_types=1);
+<pre class="lang:php decode:true " title="Circuit Breaker Change Status">
+{% raw %}
+&lt;?php declare(strict_types=1);
 
 namespace AppBundle\Service;
 
@@ -506,14 +532,18 @@ class CircuitBreakerService
         $this-&gt;warning('[CircuitBreaker] call attemptReset to ' . $service);
         $this-&gt;status[$service] = self::HALFOPEN;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 "AttemptReset" change le statut du circuit-breaker en HALFOPEN.
 
 "TripBreaker" change le statut du circuit-breaker en OPEN.
 
 Il ne nous reste plus qu'à mettre en place la fonction qui permet de connaitre le statut du circuit-breaker.
 
-<pre class="lang:php decode:true " title="Circuit Breaker Service">&lt;?php declare(strict_types=1);
+<pre class="lang:php decode:true " title="Circuit Breaker Service">
+{% raw %}
+&lt;?php declare(strict_types=1);
 
 namespace AppBundle\Service;
 
@@ -656,10 +686,14 @@ class CircuitBreakerService
         $this-&gt;warning('[CircuitBreaker] call attemptReset to ' . $service);
         $this-&gt;status[$service] = self::HALFOPEN;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Vous n'avez plus qu'à utiliser votre circuit-breaker. Voici un exemple avec une communication avec Guzzle 6.
 
-<pre class="lang:php decode:true " title="Utilisation du circuit-breaker">    /**
+<pre class="lang:php decode:true " title="Utilisation du circuit-breaker">
+{% raw %}
+    /**
      * @param string $method
      * @param string $uri
      * @param array  $options
@@ -723,7 +757,9 @@ Vous n'avez plus qu'à utiliser votre circuit-breaker. Voici un exemple avec une
                     return $return;
                 }
             );
-    }</pre>
+    }{% endraw %}
+</pre>
+
 Pour aller plus loin, je vous invite à lire <a href="https://www.amazon.com/Release-Production-Ready-Software-Pragmatic-Programmers/dp/0978739213">Release-It</a>, dans lequel vous pourrez trouver une superbe explication d'un circuit-breaker.
 
-{% endraw %}
+

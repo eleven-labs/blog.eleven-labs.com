@@ -10,7 +10,7 @@ tags:
 - php
 - migration
 ---
-{% raw %}
+
 <blockquote>Dans la vie, il n'y a pas que Symfony — Un collègue
 </blockquote>
 Les frameworks sont indispensables au monde des entreprises, mais occultent parfois les évolutions d'un langage. C'est le cas de PHP 7, qui même si sa sortie est largement relayée, est caché derrière d'autres projets portés par le langage. À l'aube d'un changement potentiellement radical dans la façon de développer en PHP, il est important de souligner les évolutions apportées et leurs conséquences.
@@ -43,7 +43,9 @@ La refonte du moteur est une des nouveautés majeures de PHP 7 puisqu'il multipl
 ## Spaceship operator
 Non sans humour, l'opérateur de comparaison introduit a en effet une ressemble visuelle importante avec un vaisseau spatial : &lt;=&gt; . Son intérêt est néanmoins tout autre, il permet de comparer deux variables d'une façon beaucoup plus simplifiée que ce qui était proposé auparavant. Si les deux opérandes sont égales, l'opérateur renverra 0, 1 si l'opérande de gauche est plus grande, -1 sinon.
 
-<pre class="theme:github lang:default decode:true">&lt;?php
+<pre class="theme:github lang:default decode:true">
+{% raw %}
+&lt;?php
 // PHP 5
 usort($r, function($a, $b) {
   if ($a &lt; $b) {
@@ -57,13 +59,17 @@ usort($r, function($a, $b) {
 // PHP 7
 usort($r, function($a, $b) {
   return $a &lt;=&gt; $b;
-});</pre>
+});{% endraw %}
+</pre>
+
 Un opérateur qui simplifie donc la vie des développeurs. Cependant, l'importance de cet opérateur est négligeable sur du code orienté objet, celui-ci se contentant de comparer les valeurs des attributs. Il aurait été intéressant de créer une interface de type Comparable comme ce qu'il existe en Java, afin de mieux gérer la comparaison entre objets.
 
 ##  Null coalesce operator
 Autre opérateur ajouté, il sert deux buts : les tests et l'affectation. Jusqu'ici, il fallait tester l'existence d'une variable avant de l'affecter à une autre par le biais d'une condition (en général un ternaire). Ici, l'opérateur simplifie encore une fois le travail des développeurs :
 
-<pre class="theme:github lang:default decode:true">&lt;?php
+<pre class="theme:github lang:default decode:true">
+{% raw %}
+&lt;?php
 // PHP 5
 $foo = isset($bar) ? $bar : 'baz';
 // or
@@ -72,12 +78,16 @@ if (isset($bar)) {
   $foo = $bar;
 }
 // PHP 7
-$foo = $bar ?? $baz;</pre>
+$foo = $bar ?? $baz;{% endraw %}
+</pre>
+
 ## Les classes anonymes
 Largement inspiré de Java, les classes anonymes font leur entrée en PHP 7. Une suite logique à l'introduction des fonctions anonymes en PHP 5.3. Tout comme les classes définies, elle acceptent l'héritage, l'implémentation et l'usage des traits. L'avantage est multiple mais reste spécifique.<br />
 On peut évoquer une simplification des mocks dans les tests unitaires, ou une alternative à la lourdeur de la norme PSR (qui recommande la création d'un fichier par classe) dans certains cas :
 
-<pre class="theme:github lang:default decode:true">&lt;?php
+<pre class="theme:github lang:default decode:true">
+{% raw %}
+&lt;?php
 use Psr\Log\LoggerInterface,
 
 $foo-&gt;setLogger(new class implements LoggerInterface {
@@ -86,7 +96,9 @@ $foo-&gt;setLogger(new class implements LoggerInterface {
   }
 
   // etc.
-});</pre>
+});{% endraw %}
+</pre>
+
 ## Scalar Type Hinting
 PHP a toujours été reconnu pour son typage faible et sa permissivité parfois extrême, qui peut mener à des incohérences et de nombreuses heures de debug. Dans cette nouvelle version de PHP, le typage fort est probablement l'une des plus importantes évolutions du langage, et ce n'est pas sans débats que celle-ci a été intégrée. Il aura en effet fallu pas moins de 5 propositions pour faire accepter cette fonctionnalité.
 
@@ -96,7 +108,9 @@ Il est important de préciser que de l'autocast peut-être réalisé dans certai
 
 Un exemple de contournement :
 
-<pre class="theme:github lang:default decode:true">&lt;?php
+<pre class="theme:github lang:default decode:true">
+{% raw %}
+&lt;?php
 declare(strict_types=1);
 
 function mySum(float $a, float $b)
@@ -104,7 +118,9 @@ function mySum(float $a, float $b)
   return $a + $b;
 }
 
-echo mySum((float) "1.0", (float) "2");</pre>
+echo mySum((float) "1.0", (float) "2");{% endraw %}
+</pre>
+
 ## Types de retour
 Souvent associée au Scalar Type Hinting, cette fonctionnalité est pourtant différente et fonctionne en toute circonstances, quelque soit la valeur ou la présence du "declare(strict_types=1|0)". Il s'agit ici d'une nouvelle implémentation et non d'une amélioration de l'existant comme pour le typage d'arguments. Sont supportés en retour de méthodes les types primitifs ainsi que les différentes classes, mais également les mots-clé "self" et "parent".
 
@@ -116,14 +132,18 @@ Nous noterons deux choses supplémentaires qui sont importantes à prendre en co
 </ul>
 Exemple de syntaxe :
 
-<pre class="theme:github lang:default decode:true">&lt;?php
+<pre class="theme:github lang:default decode:true">
+{% raw %}
+&lt;?php
 
 // pas de typage en entrée, cela peut donc lever une erreur
 // (cf. le nouveau système d'exception plus bas)
 function bar($a, $b) : int
 {
   return $a + $b;
-}</pre>
+}{% endraw %}
+</pre>
+
 ## Throwable
 Enfin, dernière modification majeure, le changement du système d'exceptions.<br />
 Jusqu'ici tout était géré par exceptions, en PHP 7, le mécanisme a été scindé en deux : exceptions d'un côté (Exception), erreur de l'autre (Error), les deux implémentant l'interface Throwable. Le but étant de pouvoir <em>catcher</em> certaines erreurs propres au moteur, par exemple une division par 0, ou encore un problème de typage comme nous avons pu le voir plus haut. On peut donc faire l'hypothèse que la plupart des exceptions relèveront du code métier.
@@ -135,4 +155,4 @@ La première release stable est sortie le 3 décembre 2015, et un premier patch 
 
 &nbsp;
 
-{% endraw %}
+

@@ -13,7 +13,7 @@ tags:
 - Algorithmes
 - Chiffrement
 ---
-{% raw %}
+
 #### <span style="text-decoration: underline;">**Algorithmes symétriques :**</span>
 <span style="font-weight: 400;">La </span>**cryptographie symétrique**<span style="font-weight: 400;">, également dite </span>**à clé secrète**<span style="font-weight: 400;">, est la plus ancienne forme de chiffrement. Elle permet à la fois de chiffrer et de déchiffrer des messages à l'aide d'un même mot clé.</span>
 
@@ -74,4 +74,4 @@ tags:
 
 <span style="font-weight: 400;">Rassurez-vous </span><span style="font-weight: 400;">les <strong>certificats</strong> peuvent résoudre ce problème grâce à la <strong>signature</strong> de tiers de confiance.</span>
 
-{% endraw %}
+

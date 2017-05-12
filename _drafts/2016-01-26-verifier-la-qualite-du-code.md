@@ -13,7 +13,7 @@ tags:
 - code
 - scrutinizer
 ---
-{% raw %}
+
 Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet article, je vais l'aborder sur la partie PHP.
 
 ## Qu'est ce que la qualité du code ?
@@ -54,16 +54,24 @@ Avec Symfony, il y a cet ensemble de règles : https://github.com/instaclick/Sym
 
 Exemple d'exécution de la commande phpcs :
 
-<pre class="lang:php decode:true">php bin/phpcs --report=checkstyle --standard=vendor/instaclick/symfony2-coding-standard/Symfony2/ruleset.xml --extensions=php --ignore=Tests,DataFixtures,DoctrineMigrations src/
+<pre class="lang:php decode:true">
+{% raw %}
+php bin/phpcs --report=checkstyle --standard=vendor/instaclick/symfony2-coding-standard/Symfony2/ruleset.xml --extensions=php --ignore=Tests,DataFixtures,DoctrineMigrations src/
+{% endraw %}
 </pre>
+
 La sortie va être un xml:
 
-<pre class="lang:xhtml decode:true">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre class="lang:xhtml decode:true">
+{% raw %}
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;checkstyle version="1.5.5"&gt;
 &lt;file name="../Service/AvailableTimeService.php"&gt;
  &lt;error line="28" column="12" severity="error" message="Method name &amp;quot;AvailableTimeService::transform_To_NewValue&amp;quot; is not in camel caps format" source="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/&gt;
 &lt;/file&gt;
-&lt;/checkstyle&gt;</pre>
+&lt;/checkstyle&gt;{% endraw %}
+</pre>
+
 Dans cet exemple, le fichier "AvailableTimeService" contient une erreur. Cet erreur se situe à la ligne 28 et colonne 12. Le message d'erreur indique que le nom de la méthode n'est pas en camelCase. Or, selon PSR-1, <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md#1-overview">les méthodes doivent être écrites en camelCase</a>.
 
 Lors du premier lancement de la commande, il peut y avoir beaucoup d'erreurs. Au fur et à mesure, ces erreurs se réduisent et vous connaîtrez par coeur ces règles :D .
@@ -75,10 +83,16 @@ Cet outil va nous aider à rendre le code beaucoup plus simple, lisible et d'év
 
 Exemple :
 
-<pre class="lang:default decode:true ">php bin/phpmd src/ xml app/phpmd.xml --exclude Tests,DataFixtures,DoctrineMigrations,Test</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+php bin/phpmd src/ xml app/phpmd.xml --exclude Tests,DataFixtures,DoctrineMigrations,Test{% endraw %}
+</pre>
+
 Sortie de la commande :
 
-<pre class="lang:xhtml decode:true">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+<pre class="lang:xhtml decode:true">
+{% raw %}
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;pmd version="@project.version@" timestamp="2016-01-21T13:40:01+01:00"&gt;
   &lt;file name="../Service/AvailableTimeService.php"&gt;
     &lt;violation beginline="28" endline="61" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="MyVendor\Bundle\AppBundle\Service" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="AvailableTimeService" method="transformToNewValue" priority="3"&gt;
@@ -89,10 +103,14 @@ Sortie de la commande :
     &lt;/violation&gt;
   &lt;/file&gt;
 &lt;/pmd&gt;
+{% endraw %}
 </pre>
+
 Pour comprendre ces erreurs, affichons un bout de code :
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace MyVendor\Bundle\AppBundle\Service;
 
@@ -154,7 +172,9 @@ class AvailableTimeService
         return $value;
     }
 }
+{% endraw %}
 </pre>
+
 <em><span id="yui_3_17_2_3_1453380107099_1635" class="ya-q-full-text">Le code de cet article étant purement fictif, toute ressemblance avec du code existant ou ayant existé ne saurait être que fortuite.</span></em><span id="yui_3_17_2_3_1453380107099_1635" class="ya-q-full-text"> </span><span id="yui_3_17_2_3_1453380107099_1635" class="ya-q-full-text">( </span><span id="yui_3_17_2_3_1453380107099_1635" class="ya-q-full-text">:p on ne sait jamais)<br />
 </span>
 
@@ -162,7 +182,9 @@ class AvailableTimeService
 
 Au final, il est possible de réduire le code plus simplement :
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace MyVendor\Bundle\AppBundle\Service;
 
@@ -198,7 +220,9 @@ class AvailableTimeService
         return $value;
     }
 }
+{% endraw %}
 </pre>
+
 Bien entendu, la refactorisation de code s'accompagne de tests unitaires afin d'assurer la fiabilité et la stabilité de cette partie.
 
 ### La tentation du copier/coller
@@ -210,10 +234,16 @@ Pour ne pas entrer dans cette mauvaise pratique, il y a <a title="Github PHP CPD
 
 Petit exemple :
 
-<pre class="lang:default decode:true ">phpcpd src/</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+phpcpd src/{% endraw %}
+</pre>
+
 En sortie, la liste des fichiers avec les lignes dupliquées :
 
-<pre class="lang:default decode:true ">phpcpd 2.0.1 by Sebastian Bergmann.
+<pre class="lang:default decode:true ">
+{% raw %}
+phpcpd 2.0.1 by Sebastian Bergmann.
 
 Found 1 exact clones with 81 duplicated lines in 2 files:
 
@@ -222,7 +252,9 @@ Found 1 exact clones with 81 duplicated lines in 2 files:
 
 0.25% duplicated lines out of 32388 total lines of code.
 
-Time: 2.21 seconds, Memory: 20.00Mb</pre>
+Time: 2.21 seconds, Memory: 20.00Mb{% endraw %}
+</pre>
+
 La sortie indique que les fichiers "MyManager" et "PastedManger" contiennent des lignes dupliquées. L'action à faire est de refactoriser en créant une classe abstraire, par exemple.
 
 ### Corriger en un éclair
@@ -230,8 +262,12 @@ Une fois les erreurs détectées, il faut les corriger. Personnellement, je n'ut
 
 <a title="Github PHP CS Fixer" href="https://github.com/FriendsOfPHP/PHP-CS-Fixer">PHP CS Fixer</a> va permettre de corriger toutes les erreurs de formatage du code de manière automatisée. Il s'intéresse aux recommandations PSR-1 et PSR-2.
 
-<pre><code>php bin/php-cs-fixer src/
-</code></pre>
+<pre>
+{% raw %}
+<code>php bin/php-cs-fixer src/
+</code>{% endraw %}
+</pre>
+
 L'outil va parcourir tout le code et corriger les erreurs. Simple, n'est-ce pas ?
 
 ## Intégration continue
@@ -265,4 +301,4 @@ En complément, nous avons abordé l'utilisation de ces outils dans un flux d'in
 
 Enfin, des outils en SASS efficaces permettent de déboguer facilement et d'avoir des indicateurs enrichis.
 
-{% endraw %}
+

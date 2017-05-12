@@ -13,7 +13,7 @@ tags:
 - Chiffrement
 - Certificats
 ---
-{% raw %}
+
 #### <span style="font-weight: 400;">Qu'est-ce qu'un certificat ?</span>
 <span style="font-weight: 400;">Un </span>**certificat électronique**<span style="font-weight: 400;"> (aussi appelé </span>**certificat numérique**<span style="font-weight: 400;"> ou </span>**certificat de clé publique**<span style="font-weight: 400;">) peut être vu comme une carte d'</span><a href="https://fr.wikipedia.org/wiki/Identit%C3%A9_num%C3%A9rique_(Internet)"><span style="font-weight: 400;">identité numérique</span></a><span style="font-weight: 400;">. Il est utilisé principalement pour identifier et authentifier une personne physique ou morale, mais aussi pour chiffrer des échanges.</span>
 
@@ -154,4 +154,4 @@ Cependant, les certificats SSL auto-signés déclenchent des alertes de sécurit
 <li style="font-weight: 400;"><span style="font-weight: 400;">Multi-domaine : généralement réservé aux grandes structures, agences web ou hébergeurs.<br />
 </span><span style="font-weight: 400;"><em>exemple</em>: www.hatem-ben-arfa.com, www.estcequecestbientotleweekend.com, ...</span></li>
 </ul>
-{% endraw %}
+

@@ -13,7 +13,7 @@ tags:
 - cloud
 - express
 ---
-{% raw %}
+
 Vous avez souvent été bloqué dans vos projets parce qu'il est difficile de mettre en production.<br />
 En effet, il faut des serveurs, les installer, les configurer et installer votre projet.<br />
 Comment rendre cela plus simple ?
@@ -37,7 +37,9 @@ Si ce n'est pas le cas, vérifiez votre installation.
 Pour continuer nous allons faire simple en mettant en place un petit "Hello Word",  avec <a href="http://expressjs.com/fr/">Express.js</a>.<br />
 Créez un nouveau dossier, ajoutez le fichier package.json :
 
-<pre class="lang:js decode:true" title="package.json">//package.json
+<pre class="lang:js decode:true" title="package.json">
+{% raw %}
+//package.json
 {
   "name": "hello-word",
   "version": "1.0.0",
@@ -49,10 +51,14 @@ Créez un nouveau dossier, ajoutez le fichier package.json :
     "express": "^4.14.0"
   }
 }
+{% endraw %}
 </pre>
+
 Puis ajoutez le fichier index.js :
 
-<pre class="lang:js decode:true " title="index.js">var express = require('express');
+<pre class="lang:js decode:true " title="index.js">
+{% raw %}
+var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
@@ -62,7 +68,9 @@ app.get('/', function (req, res) {
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
 });
+{% endraw %}
 </pre>
+
 Si vous lancez dans votre terminal :
 
 <span class="lang:sh decode:true crayon-inline">npm install &amp;&amp; npm start</span>
@@ -72,9 +80,13 @@ Normalement si vous suivez le lien <a href="http://localhost:8080/">http://loca
 ##### Etape 3, mettons du Cloud
 Nous allons ajouter le fichier app.yaml qui permet de configurer votre AppEngine. Vous trouverez la documentation complète <a href="https://cloud.google.com/appengine/docs">ici</a>. Dans le fichier, nous allons mettre en place la configuration de base pour un environnement node.
 
-<pre class="lang:yaml decode:true " title="app.yaml">runtime: nodejs
+<pre class="lang:yaml decode:true " title="app.yaml">
+{% raw %}
+runtime: nodejs
 env: flex
+{% endraw %}
 </pre>
+
 Comme vous pouvez le comprendre facilement, la première ligne permet de définir la technologie utilisée, la seconde ligne permet de choisir un environnement dit 'flex', ce qui signifie qu'il "s'auto scale" selon le trafic.
 
 ##### Etape 4, on met en production
@@ -98,7 +110,9 @@ Vous pouvez suivre les logs de l'application en lançant la commande suivante da
 ##### Etape 6, créons une nouvelle version
 Dans index.js changeons le message du "Hello World!" avec par exemple :
 
-<pre class="lang:js decode:true " title="Index.js V2">var express = require('express');
+<pre class="lang:js decode:true " title="Index.js V2">
+{% raw %}
+var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
@@ -108,7 +122,9 @@ app.get('/', function (req, res) {
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
 });
+{% endraw %}
 </pre>
+
 Puis lancez la commande :
 
 <span class="lang:sh decode:true crayon-inline ">gcloud app deploy --version version2</span>
@@ -136,4 +152,4 @@ Je vous invite à jouer un peu avec AppEngine, il permet de très vite tester vo
 
 &nbsp;
 
-{% endraw %}
+

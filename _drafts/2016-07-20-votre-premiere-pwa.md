@@ -13,7 +13,7 @@ tags:
 - web
 - pwa
 ---
-{% raw %}
+
 Le monde du web évolue. Le site web mobile est devenu le plus grand concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps (le cas contraire, je vous invite à lire mon précédent article sur cet événement, disponible <a href="http://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/" target="_blank">ici</a>). Ça tombe bien, cet article va vous permettre de mettre en place votre première "PWA".
 
 ### <!--more--> Pré-requis :
@@ -28,13 +28,25 @@ Avant de commencer ce tutoriel:
 ### Étape 1, l'installation :
 L'installation du projet est très simple (suivez le README) ou les étapes suivantes :
 
-<pre class="lang:sh decode:true ">git clone git@github.com:CaptainJojo/pwa.git</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+git clone git@github.com:CaptainJojo/pwa.git{% endraw %}
+</pre>
+
 Puis allez dans le répertoire pwa et lancez l'installation.
 
-<pre class="lang:sh decode:true ">cd pwa &amp;&amp; npm install</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+cd pwa &amp;&amp; npm install{% endraw %}
+</pre>
+
 Une fois l'installation terminée, vous n'avez plus qu'à lancer le serveur.
 
-<pre class="lang:sh decode:true ">npm start</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+npm start{% endraw %}
+</pre>
+
 Si tout se passe bien, l'application est disponible sur <a href="http://localhost:8080/">cette adresse localhost</a>.
 
 Vous pouvez alors naviguer dans l'application, son seul but étant d'avoir quelques urls et d'afficher des images (ce qui n'a que peu d'intérêt). Je vous invite à lancer l'extension installée plus tôt. Vous devez arriver sur cette page :
@@ -48,16 +60,24 @@ Le service worker est un simple fichier js à enregistrer dans le navigateur (s'
 
 Nous allons tout d'abord créer un fichier vide sw.js dans le dossier public.
 
-<pre class="lang:sh decode:true ">touch public/sw.js</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+touch public/sw.js{% endraw %}
+</pre>
+
 Puis, pour enregistrer le service worker, il vous suffit d'ajouter le code suivant dans le fichier public/index.html
 
-<pre class="lang:xhtml decode:true " title="Enregistrement d'un service worker">&lt;script&gt;
+<pre class="lang:xhtml decode:true " title="Enregistrement d'un service worker">
+{% raw %}
+&lt;script&gt;
 if('serviceWorker' in navigator) {
   navigator.serviceWorker
            .register('/sw.js')
            .then(function() { console.log("Service Worker Registered"); });
 }
-&lt;/script&gt;</pre>
+&lt;/script&gt;{% endraw %}
+</pre>
+
 Vous pouvez retrouver cette étape <a href="https://github.com/CaptainJojo/pwa/compare/step1-register-sw" target="_blank">ici</a>.
 
 Il vous suffit alors de relancer le serveur. Si vous allez sur http://localhost:8080 et que vous ouvrez l'outil de développement, vous trouverez l'onglet application qui vous permet de gérer l'état de votre PWA. Je vous invite à cliquer sur "Service Workers" pour vérifier que vous avez bien un service enregistré pour votre site.
@@ -75,7 +95,9 @@ Maintenant que vous avez enregistré votre service nous allons mettre en cache 
 
 Pour cela, il suffit d'agrémenter le fichier sw.js. Si vous lisez la norme du W3C sur le service worker, disponible <a href="https://www.w3.org/TR/service-workers/" target="_blank">ici</a>, vous verrez qu'il fonctionne comme suit : il lit des événements javascript et, en fonction de ce qui a été lu, il effectue une action. Nous allons commencer par l’événement 'install' qui va vous permettre de mettre en cache l'ensemble des pages statiques de votre site. Voici le code à ajouter dans le fichier public/sw.js :
 
-<pre class="lang:js decode:true " title="Service worker - install">self.addEventListener('install', e =&gt; {
+<pre class="lang:js decode:true " title="Service worker - install">
+{% raw %}
+self.addEventListener('install', e =&gt; {
   e.waitUntil(
     caches.open('pwa').then(cache =&gt; {
       return cache.addAll([
@@ -93,20 +115,26 @@ Pour cela, il suffit d'agrémenter le fichier sw.js. Si vous lisez la norme du W
       .then(() =&gt; self.skipWaiting());
     })
   )
-});</pre>
+});{% endraw %}
+</pre>
+
 Comme vous pouvez le lire, quand l’événement est lancé, on ouvre un cache au nom 'pwa' et on lui ajoute les fichiers statiques.
 
 Si vous relancez l'application, vous pouvez alors mettre en "offline" dans l'outil de développement puis dans l'onglet applications, bien que cela ne devrait pas encore fonctionner car nous n'avons pas pris en compte les appels serveur. Pour cela, vous allez récupérer l’événement 'fetch' qui permet de récupérer ces appels serveurs en question.
 
 Vous ajoutez dans le fichier public/sw.js, le code suivant :
 
-<pre class="lang:js decode:true " title="Service Worker - Fetch">self.addEventListener('fetch', event =&gt; {
+<pre class="lang:js decode:true " title="Service Worker - Fetch">
+{% raw %}
+self.addEventListener('fetch', event =&gt; {
   event.respondWith(
     caches.match(event.request).then(response =&gt; {
       return response || fetch(event.request);
     })
   );
-});</pre>
+});{% endraw %}
+</pre>
+
 Ce que l'on fait est simple, vous récupérez chaque requête et la mettez dans le cache.
 
 Vous retrouverez cette étape <a href="https://github.com/CaptainJojo/pwa/compare/step1-register-sw...step2-service-worker-offline" target="_blank">ici</a>.
@@ -128,14 +156,24 @@ Vous allez utiliser le projet sw-précache disponible sur <a href="https://gith
 
 Vous n'avez plus qu'à ajouter dans le package.json.
 
-<pre class="lang:js decode:true " title="Package.json">"sw-precache": "^3.2.0",
-"gulp": "^3.9.1",</pre>
+<pre class="lang:js decode:true " title="Package.json">
+{% raw %}
+"sw-precache": "^3.2.0",
+"gulp": "^3.9.1",{% endraw %}
+</pre>
+
 Et faire un
 
-<pre class="lang:sh decode:true ">npm install</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+npm install{% endraw %}
+</pre>
+
 Vous pouvez alors ajouter un fichier Gulpfile.js qui contiendra la configuration pour votre service worker.
 
-<pre class="lang:js decode:true" title="Gulpfile - service worker">'use strict';
+<pre class="lang:js decode:true" title="Gulpfile - service worker">
+{% raw %}
+'use strict';
 
 // Include Gulp &amp; Tools We'll Use
 var gulp = require('gulp');
@@ -156,7 +194,9 @@ gulp.task('generate-service-worker', function(callback) {
     verbose: true
 
   }, callback);
-});</pre>
+});{% endraw %}
+</pre>
+
 En lisant le fichier, vous pouvez voir que lors de l'initialisation du sw-precache vous avez plusieurs clés de configuration. La première est la 'staticFileGlobs' qui permet d'aller chercher l'ensemble des fichiers statiques. Vous avez ensuite le 'runtimeCaching' qui permet de cacher les requêtes qui vont vers le serveur. Il vous suffit de choisir un pattern d'url et une façon de cacher, sachant qu'il existe plusieurs 'handler' :
 
 <ul>
@@ -166,7 +206,11 @@ En lisant le fichier, vous pouvez voir que lors de l'initialisation du sw-precac
 </ul>
 Pour générer le fichier, il ne vous reste plus qu'à lancer la commande suivante :
 
-<pre class="lang:sh decode:true ">gulp generate-service-worker</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+gulp generate-service-worker{% endraw %}
+</pre>
+
 Je vous invite à lire le fichier généré que vous pouvez trouver à la place de l'ancien /public/sw.js
 
 Si vous relancez l'application normalement vous n'avez aucune modification.
@@ -178,7 +222,9 @@ La mise en place du manifest est une étape simple mais qui permet de signifier 
 
 Je vous donne l'exemple typique que l'on trouve dans tous les bons tutoriels.
 
-<pre class="lang:js decode:true" title="manifest.json">{
+<pre class="lang:js decode:true" title="manifest.json">
+{% raw %}
+{
   "name": "My PWA",
   "short_name": "PWA",
   "icons": [{
@@ -202,12 +248,18 @@ Je vous donne l'exemple typique que l'on trouve dans tous les bons tutoriels.
   "display": "standalone",
   "background_color": "#3E4EB8",
   "theme_color": "#2F3BA2"
-}</pre>
+}{% endraw %}
+</pre>
+
 Il est très lisible puisque vous y trouvez le nom de votre application, les icônes utilisés lors de l'installation sur le téléphone et les couleurs pour le splashScreen.  La clé 'display' vous permet de choisir l'orientation du téléphone lors de l'installation, soit horizontale, verticale ou 'standalone' qui permet de laisser l'utilisateur choisir.
 
 Une fois le fichier rempli, vous devez signifier son emplacement pour le navigateur. Dans le header de la page, il faut ajouter dans le fichier /public/index.html :
 
-<pre class="lang:xhtml decode:true " title="Installation du manifest"> &lt;link rel="manifest" href="/manifest.json"&gt;</pre>
+<pre class="lang:xhtml decode:true " title="Installation du manifest">
+{% raw %}
+ &lt;link rel="manifest" href="/manifest.json"&gt;{% endraw %}
+</pre>
+
 Vous pouvez retrouver cette étape <a href="https://github.com/CaptainJojo/pwa/compare/step3-sw-precache...step4-manifest" target="_blank">ici</a>.
 
 Si vous relancez l'application et que vous allez dans l'outil de développement, onglet application, vous trouverez les propriétés de votre manifest. Il est même possible d'installer votre application en cliquant sur 'Add to homescreen'.
@@ -224,4 +276,4 @@ En conclusion, ce n'est pas compliqué de mettre en place une PWA, maintenant il
 
 Pour en apprendre encore plus, vous pouvez trouver des tutoriels super intéressants dont je me suis inspiré, chez <a href="https://codelabs.developers.google.com/" target="_blank">Google</a>.
 
-{% endraw %}
+

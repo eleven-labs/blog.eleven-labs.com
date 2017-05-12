@@ -10,7 +10,7 @@ tags:
 - php
 - symfony2
 ---
-{% raw %}
+
 Attention ce code date du début de Symfony2 un nouveau tuto est en cours
 
 &nbsp;
@@ -38,7 +38,9 @@ Il fonctionne en deux étapes, la première est l'authentification de l'utilisat
 <div>Tout ce passe dans le fichier app/config/security.yml, qui va nous permettre de mettre en place les pages que nous voulons protéger ainsi que la page de login.</div>
 <div>Tout d'abord, nous allons ajouter un firewall en donnant le type d'authentificaiton que nous souhaitons, ici, c'est un formulaire de login qui aura pour accès l'url /login, pour la vérification du formulaire il aura comme url /login_check et enfin l'url de logout.</div>
 <div>
-<pre class="brush: xml; gutter: true">security:
+<pre class="brush: xml; gutter: true">
+{% raw %}
+security:
     firewalls:
         assets:
             pattern:  ^/(_(profiler|wdt)|css|images|js|favicon.ico)/
@@ -49,11 +51,15 @@ Il fonctionne en deux étapes, la première est l'authentification de l'utilisat
               check_path:  /login_check
             logout:
                 path: /logout
-                target: /</pre>
+                target: /{% endraw %}
+</pre>
+
 </div>
 <div>Il faut alors ajouter les zone d'access des utilisateurs, pour cela il faut ajouter access_control et mettre les rôles pour une serie d'url. Comme nous l'avons dit, nous voulons que la partie admin de notre site soit visible seulement pour les administrateurs.</div>
 <div>
-<pre class="brush: xml; gutter: false">security:
+<pre class="brush: xml; gutter: false">
+{% raw %}
+security:
     firewalls:
         assets:
             pattern:  ^/(_(profiler|wdt)|css|images|js|favicon.ico)/
@@ -71,13 +77,17 @@ Il fonctionne en deux étapes, la première est l'authentification de l'utilisat
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY}
-        - { path: ^/admin, roles: ROLE_ADMIN }</pre>
+        - { path: ^/admin, roles: ROLE_ADMIN }{% endraw %}
+</pre>
+
 </div>
 <div>Ce qui fait que si l'url commence par /admin alors l'utilisateur doit avoir le rôle admin.</div>
 <div>Maintenant que nous savons comment l'utilisateur va s'authentifier et quelles url sont protégées, nous devons definir nos utilisateurs.</div>
 <div>Dans ce système d'authentification c'est ce que l'on appelle le provider qui est le service de récupération des utilisateurs. Comme nous protégeons la partie admin de notre site, il n'y a pas besoin de stocker les utilisateurs nous avons seulement 2 utilisateurs.</div>
 <div>
-<pre class="brush: xml; gutter: false">security:
+<pre class="brush: xml; gutter: false">
+{% raw %}
+security:
     firewalls:
         assets:
             pattern:  ^/(_(profiler|wdt)|css|images|js|favicon.ico)/
@@ -100,12 +110,16 @@ Il fonctionne en deux étapes, la première est l'authentification de l'utilisat
         in_memory:
             users:
                 user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }</pre>
+                admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }{% endraw %}
+</pre>
+
 </div>
 <div>Comme on peut le voir dans le fichier, il y a deux utilisateurs dont un qui à le rôle admin, c'est avec celui-ci que nous pourront nous logguer.</div>
 <div>Apres avoir configuré le fichier security.yml, nous devons definir les url de login et logout, pour cela il faut ouvrir le fichier routing.yml. Dans notre projet, nous utilisons app/config/routing.yml.</div>
 <div>
-<pre class="brush: xml; gutter: true">login:
+<pre class="brush: xml; gutter: true">
+{% raw %}
+login:
     pattern:   /login
     defaults:  { _controller: ClycksBundle:Default:login }
 login_check:
@@ -113,12 +127,16 @@ login_check:
 
 logout:
     pattern: /logout
-    defaults:  { _controller: ClycksBundle:Default:logout }</pre>
+    defaults:  { _controller: ClycksBundle:Default:logout }{% endraw %}
+</pre>
+
 </div>
 <div>Pour login_check, il n'y a pas besoin de controller, Symfony le fait pour vous :).</div>
 <div>Il ne reste plus qu'à remplir le controller pour afficher le formulaire d'authentification.</div>
 <div>
-<pre class="lang:php decode:true brush: php; gutter: true">// src/Clycks/ClycksBundle/Controller/;
+<pre class="lang:php decode:true brush: php; gutter: true">
+{% raw %}
+// src/Clycks/ClycksBundle/Controller/;
 namespace ClycksClycksBundleController;
 
 use SymfonyBundleFrameworkBundleControllerController;
@@ -146,12 +164,16 @@ class ClycksController extends Controller
     }
     public function logoutAction()
     {
-    }</pre>
+    }{% endraw %}
+</pre>
+
 </div>
 <div>Comme vous pouvez le voir, nous n'avons pas de code dans l'action logout à vous de mettre ce que vous souhaitez :)</div>
 <div>Maintenant nous allons afficher le formulaire dans le fichier login.html.twig.</div>
 <div>
-<pre class="lang:php decode:true brush: html; gutter: false ">{% if error %}
+<pre class="lang:php decode:true brush: html; gutter: false ">
+{% raw %}
+{% if error %}
     &lt;div&gt;{{ error.message }}&lt;/div&gt;
 {% endif %}
 
@@ -163,10 +185,12 @@ class ClycksController extends Controller
     &lt;input type="password" id="password" name="_password" /&gt;
 
     &lt;input type="submit" name="login" /&gt;
-&lt;/form&gt;</pre>
+&lt;/form&gt;{% endraw %}
+</pre>
+
 </div>
 <div>
 Voila maintenant votre partie admin est protégée, dans un prochain tuto j'expliquerai comment créer son propre provider.
 
 </div>
-{% endraw %}
+

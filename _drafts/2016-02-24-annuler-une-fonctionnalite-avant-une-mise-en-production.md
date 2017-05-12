@@ -10,7 +10,7 @@ tags:
 - git
 - workflow
 ---
-{% raw %}
+
 <h2 style="text-align: left;">Git workflow
 Connaissez-vous le "git workflow" ? Si ce n'est pas le cas, je vous invite à lire cet article <a href="http://nvie.com/posts/a-successful-git-branching-model">http://nvie.com/posts/a-successful-git-branching-model</a>
 
@@ -31,36 +31,52 @@ Posons le décor : nous avons une branche <em>master</em> qui sera utilisée pou
 
 Un développeur créé une nouvelle fonctionnalité. Il va créer sa branche depuis <em>develop et</em> la nommer "<em>feat-my-awesome-feature</em>". Des fichiers sont créés, il y a un commit et la branche est poussée.
 
-<pre class="lang:sh decode:true">git checkout develop
+<pre class="lang:sh decode:true">
+{% raw %}
+git checkout develop
 git checkout -b feat-my-awesome-feature
 # faire des modifications
 git add -A
 git commit -m "create some awesome code"
-git push origin feat-my-awesome-feature</pre>
+git push origin feat-my-awesome-feature{% endraw %}
+</pre>
+
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_feature.png" rel="attachment wp-att-1622"><img class="alignnone size-medium wp-image-1622" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_feature-300x192.png" alt="git_feature" width="300" height="192" /></a>
 
 La <em>code review</em> est ok, les tests passent, la branche est <em>fusionnée</em> dans <em>develop</em> pour être déployée en environnement d'intégration. Lors d'une <em>pull request</em>, le <em>merge</em> est fait en no-ff (<em>no fast forward</em>). Cela signifie qu'il y a un <em>commit</em> de <em>merge</em> dans l'historique. C'est important car il sera utilisé plus tard.
 
-<pre class="lang:default decode:true">git checkout develop
+<pre class="lang:default decode:true">
+{% raw %}
+git checkout develop
 git merge --no-ff feat-my-awesome-feature
-git push origin develop</pre>
+git push origin develop{% endraw %}
+</pre>
+
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_awesome_feature.png" rel="attachment wp-att-1624"><img class="alignnone wp-image-1624 size-medium" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_awesome_feature-300x220.png" alt="git_awesome_feature" width="300" height="220" /></a>
 
 Je refais de même avec une seconde fonctionnalité : <em>feat-killer-feature</em>
 
-<pre class="lang:default decode:true">git checkout develop
+<pre class="lang:default decode:true">
+{% raw %}
+git checkout develop
 git checkout -b feat-killer-feature
 # faire des modifications
 git add -A
 git commit -m "create killer code"
-git push origin feat-killer-feature</pre>
+git push origin feat-killer-feature{% endraw %}
+</pre>
+
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_killer_feat.png" rel="attachment wp-att-1625"><img class="alignnone size-full wp-image-1625" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_killer_feat.png" alt="git_killer_feat" width="122" height="258" /></a>
 
 Et je <em>merge</em>.
 
-<pre class="lang:default decode:true ">git checkout develop
+<pre class="lang:default decode:true ">
+{% raw %}
+git checkout develop
 git merge --no-ff feat-killer-feature
-git push origin develop</pre>
+git push origin develop{% endraw %}
+</pre>
+
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_merge_killer_feat.png" rel="attachment wp-att-1627"><img class="alignnone size-full wp-image-1627" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_merge_killer_feat.png" alt="git_merge_killer_feat" width="140" height="264" /></a>
 
 Voilà, mon décor est posé. Petite vue en mode terminal.
@@ -76,9 +92,13 @@ Il faut gérer cette situation !
 
 Faisons avancer <em>release</em> vers <em>develop</em>.
 
-<pre class="lang:default decode:true ">git checkout release
+<pre class="lang:default decode:true ">
+{% raw %}
+git checkout release
 git merge develop --no-ff
+{% endraw %}
 </pre>
+
 Il est important de faire un <em>merge --no-ff</em> car cela va permettre de garder une trace dans l'historique sur cette annulation.
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_release.png" rel="attachment wp-att-1632"><img class="alignnone size-full wp-image-1632" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/git_release.png" alt="git_release" width="162" height="262" /></a>
@@ -88,15 +108,21 @@ Cette fonctionnalité n'est pas si géniale que ça (selon le <em>product owner<
 
 Je vais donc faire un <em>revert.</em>
 
-<pre class="lang:default decode:true">git checkout release
-git revert -m 1 &lt;commit de merge de feat-my-awesome-feature&gt;</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+git checkout release
+git revert -m 1 &lt;commit de merge de feat-my-awesome-feature&gt;{% endraw %}
+</pre>
+
 Si je fais un <em>git log</em>, je vais retrouver mon <em>commit</em> de <em>merge</em> correspondant :  184a372a608b632636f20a1ab7c64027cc9eecc2
 
 En appliquant cette commande, un nouveau <em>commit</em> va être créé : un <em>commit</em> de <em>revert</em>. Cela va permettre d'indiquer qu'il y a eu <em>revert</em> et donc une annulation de l'ensemble des modifications de ce <em>commit</em>.
 
 Mon historique indique bien un <em>commit</em> de <em>revert</em> avec en commentaire une explication:
 
-<pre class="lang:default decode:true ">commit 15c3c27a603263d1e59f5b137e7acfc6dcad5ce0
+<pre class="lang:default decode:true ">
+{% raw %}
+commit 15c3c27a603263d1e59f5b137e7acfc6dcad5ce0
 Author: Thierry Thuon &lt;thierry.thuon.ext@francetv.fr&gt;
 Date:   Fri Feb 19 12:49:07 2016 +0100
 
@@ -104,13 +130,19 @@ Date:   Fri Feb 19 12:49:07 2016 +0100
 
     This reverts commit 184a372a608b632636f20a1ab7c64027cc9eecc2, reversing
     changes made to 59596dd37699742262fc5a2705e2b9396540af77.
+{% endraw %}
 </pre>
+
 Je pousse ma branche <em>release </em>et la <em>merge</em> dans <em>master</em>. Il faut toujours pousser en --<em>no-ff</em> pour avoir un <em>commit</em> de <em>merge</em>, et donc avoir la possibilité de faire un <em>revert</em>.
 
-<pre class="lang:default decode:true">git push origin release
+<pre class="lang:default decode:true">
+{% raw %}
+git push origin release
 git checkout master
 git merge release --no-ff
+{% endraw %}
 </pre>
+
 Depuis <em>master</em>, je vois que j'ai bien la fonctionnalité <em>feat-killer-feature</em> uniquement.
 
 ## Remettre à jour develop
@@ -118,29 +150,41 @@ Maintenant, une autre problématique se pose : si je <em>merge</em> de nouveau <
 
 Je vais tout d'abord mettre à jour <em>develop.</em>
 
-<pre class="lang:default decode:true ">git checkout develop
-git merge release</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+git checkout develop
+git merge release{% endraw %}
+</pre>
+
 Ici je n'ai pas besoin de faire un <em>--no-ff</em>, j'applique les modifications directement en <em>fast-forward</em>.
 
 Depuis <em>develop</em>, je cherche mon <em>commit</em> de <em>revert </em>: 15c3c27a603263d1e59f5b137e7acfc6dcad5ce0
 
 Et j'applique un <em>revert</em> sur ce <em>commit</em>.
 
-<pre class="lang:default decode:true">git revert &lt;commit de revert&gt;</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+git revert &lt;commit de revert&gt;{% endraw %}
+</pre>
+
 Un nouveau <em>commit</em> s'ajoute : il annule un <em>commit</em> d'annulation ("revert the revert").
 
-<pre class="lang:default decode:true ">commit b7f210da78305284f72edc2e671e5be1f167faad
+<pre class="lang:default decode:true ">
+{% raw %}
+commit b7f210da78305284f72edc2e671e5be1f167faad
 Author: Thierry Thuon &lt;thierry.thuon.ext@francetv.fr&gt;
 Date:   Fri Feb 19 13:01:53 2016 +0100
 
     Revert "Revert "Merge branch 'feat-my-awesome-feature' into develop""
 
     This reverts commit 15c3c27a603263d1e59f5b137e7acfc6dcad5ce0.
+{% endraw %}
 </pre>
+
 Je retrouve bien les modifications de ma branche <em>feat-my-awesome-feature</em>. Et lors de la prochaine <em>release</em>, si tout est ok, elle pourra passer en <em>master</em>. Sinon, il faudra faire de nouveau un <em>revert</em> dans <em>release</em>.
 
 Pour conclure, cette solution permet d'avoir la rigueur du <em>git workflow</em>, tout en ayant la souplesse et la possibilité d'annuler une fonctionnalité complète juste avant une mise en production. L'exemple montré ici est un cas nominal, mais la plupart du temps il peut y avoir un risque de conflit. Cette technique fonctionne bien pour des fonctionnalités isolées. De plus, il est important de bien faire les <em>merge</em> vers <em>release</em> et <em>master</em> en <em>no fast forward</em> (<em>--no-ff</em>). Enfin, il ne faut pas oublier les <em>commit</em> de <em>revert</em> lors de la mise à jour de <em>develop</em>.
 
 Je vous mets en lien la démo: <a href="https://github.com/eleven-labs/cancel-story-before-deploying-prod/network" target="_blank">https://github.com/eleven-labs/cancel-story-before-deploying-prod/network</a>
 
-{% endraw %}
+

@@ -10,7 +10,7 @@ tags:
 - conférence
 - dotcss
 ---
-{% raw %}
+
 Le 14 novembre a eu lieu la première (et possiblement dernière) édition de <strong>dotCSS</strong>, une conférence par dotConferences, déjà responsables de dotJS, dotScale, dotGo, la future dotSwift et la non-renouvellée dotRB.
 
 Version courte : dotCSS était une très bonne conférence qui a clairement trouvé son public étant donné que le théâtre des variétés, lieu où elle avait lieu, était rempli, mais n'a pas probablement pas trouvé assez de ressources pour se financer, ce qui a conduit à la réduction de sa durée (une journée annoncée, réduite à un après-midi)
@@ -79,4 +79,4 @@ Et voilà comment dotCSS s'est terminé. Une fort bonne conférence donc, et on 
 
 C'était en tout cas un après-midi très enrichissant, qui a permis d'avoir l'avis d'experts reconnus sur l'évolution et la qualité du CSS (et de l'environnement qui gravite autour, particulièrement Sass), et de réfléchir aux challenges qui y sont associés. C'était aussi l'occasion de voir tout ce qu'on peut faire d'impressionnant avec CSS, comme les dernières démos l'ont montré.
 
-{% endraw %}
+

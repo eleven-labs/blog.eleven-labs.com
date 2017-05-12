@@ -10,7 +10,7 @@ tags:
 - conférence
 - symfony live
 ---
-{% raw %}
+
 Nous sommes allés au Symfony Live Paris en force cette année ! En tant que sponsor Gold, nous avions notre stand et avons pu rencontrer plein de symfoniens.
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2014/04/photo-2.jpg"><img class="size-medium wp-image-877 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2014/04/photo-2-e1397058361401-300x225.jpg" alt="photo 2" width="300" height="225" /></a>
@@ -51,4 +51,4 @@ P.S.: Have you been Stoffed yet?
 
 &nbsp;
 
-{% endraw %}
+

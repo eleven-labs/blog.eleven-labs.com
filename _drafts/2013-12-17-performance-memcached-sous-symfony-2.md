@@ -10,7 +10,7 @@ tags:
 - symfony2
 - memcached
 ---
-{% raw %}
+
 Dans tout (gros) projet, à un moment avancé de votre développement/exploitation, vous serez amené à rencontrer divers problèmes de performance.
 
 Certains peuvent être liés au trop grand nombre de requêtes effectuées ou encore à la quantité d'informations récupérées dans la BDD.
@@ -32,7 +32,9 @@ Votre logique métier étant bien faite, il vous suffit de récupérer votre lis
 
 &nbsp;
 
-<pre class="lang:php decode:true" title="Code Simple">class EcoleRepository {
+<pre class="lang:php decode:true" title="Code Simple">
+{% raw %}
+class EcoleRepository {
 
 public function getEcoles() {
   $qBuilder = $this-&gt;getEntityManager()
@@ -42,7 +44,9 @@ public function getEcoles() {
 
   return $qBuilder-&gt;getQuery()-&gt;getResult();
  }
-}</pre>
+}{% endraw %}
+</pre>
+
 Il ne vous reste plus qu'à parcourir la liste des écoles, puis pour chaque école sa liste de classe.
 
 Parfait ! Mais si vous jetez un coup d'oeil sur votre Profiler en bas de page, vous verrez quelque chose comme cela :
@@ -61,7 +65,9 @@ La solution est très simple : indiquer à Doctrine de tout charger dans notre o
 
 &nbsp;
 
-<pre class="lang:php decode:true" title="Requete sans Easy Loading">class EcoleRepository {
+<pre class="lang:php decode:true" title="Requete sans Easy Loading">
+{% raw %}
+class EcoleRepository {
 
 public function getEcoles() {
   $qBuilder = $this-&gt;getEntityManager()
@@ -73,7 +79,9 @@ public function getEcoles() {
 
   return $qBuilder-&gt;getQuery()-&gt;getResult();
  }
-}</pre>
+}{% endraw %}
+</pre>
+
 &nbsp;
 
 Et voila, le boulot est fait. Ici, pas de Lazy Loading, toutes nos données sont chargées en une seule requête. Vous devrez donc gagner un temps proportionnel au nombre d'éléments chargés sur la page.
@@ -101,7 +109,9 @@ Du coup, on va changer de méthode d'hydratation, pour quelque chose de beaucoup
 
 &nbsp;
 
-<pre class="lang:php decode:true" title="Doctrine Array Result">class EcoleRepository {
+<pre class="lang:php decode:true" title="Doctrine Array Result">
+{% raw %}
+class EcoleRepository {
 
 public function getEcoles() {
   $qBuilder = $this-&gt;getEntityManager()
@@ -113,7 +123,9 @@ public function getEcoles() {
 
   return $qBuilder-&gt;getQuery()-&gt;getArrayResult();
  }
-}</pre>
+}{% endraw %}
+</pre>
+
 Voila, simple non !?
 
 Maintenant faites un var_dump(), si si vous pouvez promis ;)
@@ -124,7 +136,11 @@ Petite chose à vous rappeler dans votre template twig, vos données sont access
 
 Ex :
 
-<pre class="lang:xhtml decode:true" title="Twig">{{ eleve["nom"] }} {# remplace {{ eleve.getNom }} #}</pre>
+<pre class="lang:xhtml decode:true" title="Twig">
+{% raw %}
+{{ eleve["nom"] }} {# remplace {{ eleve.getNom }} #}{% endraw %}
+</pre>
+
 &nbsp;
 
 ## PART III : "Time to Cache"
@@ -162,7 +178,9 @@ Pour l'installation, référez vous au README, c'est assez simple sous Linux.
 
 Maintenant, allons "stocker" notre tableau dans la mémoire : (Note, le plugin permet de cacher directement les requêtes Doctrine, mais c'est aussi bien d'avoir toujours le contrôle sur ce que vous faites, à vous de voir)
 
-<pre class="lang:php decode:true" title="Utilisation de Memcached">class EcoleRepository {
+<pre class="lang:php decode:true" title="Utilisation de Memcached">
+{% raw %}
+class EcoleRepository {
 
 public function getEcoles() {
 
@@ -184,7 +202,9 @@ public function getEcoles() {
 
   return $data;
  }
-}</pre>
+}{% endraw %}
+</pre>
+
 &nbsp;
 
 Ici on considérera que l'on a passé le service memcached dans le repo, sinon on y accède par service : <em>$this-&gt;get('memcache.default')</em>
@@ -197,17 +217,25 @@ Et voila, c'était simple non ?
 
 Attention, une dernière petite chose, la donnée dans cet état n'est pas mise à jour lorsque vous ajoutez une école ou encore un élève par exemple. Il faut donc penser à expirer le namespace du cache ("ecole_list") lors de l'ajout ou la modification d'une donnée :
 
-<pre class="lang:php decode:true">$this-&gt;memcache-&gt;delete("ecole_list");</pre>
+<pre class="lang:php decode:true">
+{% raw %}
+$this-&gt;memcache-&gt;delete("ecole_list");{% endraw %}
+</pre>
+
 &nbsp;
 
 Voila vous savez tout. Pour pousser l'exemple plus loin, et surtout pour qu'il soit plus exploitable, vous pouvez créer un service MyMemcache qui gère vos enregistrements et suppressions en fonction du context, des paramètres (utile quand les données sont propres à l'utilisateur courant par exemple) :
 
-<pre class="lang:php decode:true">$param = array("ecole_list", "clientId", "ListId", ...);
+<pre class="lang:php decode:true">
+{% raw %}
+$param = array("ecole_list", "clientId", "ListId", ...);
 
 //Creer un namespace unique composé des éléments du tableau $param
 if ($data = $this-&gt;memcache-&gt;get(implode("_", $param), null)) {
   return $data;
-}</pre>
+}{% endraw %}
+</pre>
+
 &nbsp;
 
-{% endraw %}
+

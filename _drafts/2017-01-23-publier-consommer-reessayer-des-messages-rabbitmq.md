@@ -10,7 +10,7 @@ categories:
 tags:
 - RabbitMQ
 ---
-{% raw %}
+
 <img class="aligncenter" src="https://avatars2.githubusercontent.com/u/6749375?v=3&amp;s=400" alt="See original image" />
 
 RabbitMQ est un gestionnaire de queues, permettant d'asynchroniser différents traitements. Si vous n'êtes pas familier avec cet outil, un <a href="http://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/">article</a> traitant du sujet a déjà été écrit précédemment, je vous invite donc à le lire.
@@ -38,7 +38,9 @@ Notre première étape va être de créer notre configuration RabbitMQ : notre�
 
 La librairie RabbitMQ Admin Toolkit, développée par <em><a href="https://github.com/odolbeau">odolbeau</a>,</em> permet de configurer notre vhost très simplement. Voici une config très basique déclarant un <em>exchange </em>et une <em>queue</em> nous permettant d'envoyer Wilson et ses camarades dans l'espace :
 
-<pre class="theme:sublime-text lang:yaml decode:true" title="RabbitMQ configuration"># default_vhost.yml
+<pre class="theme:sublime-text lang:yaml decode:true" title="RabbitMQ configuration">
+{% raw %}
+# default_vhost.yml
 '/':
     parameters:
         with_dl: false # If true, all queues will have a dl and the corresponding mapping with the exchange "dl"
@@ -55,19 +57,25 @@ La librairie RabbitMQ Admin Toolkit, développée par <em><a href="https://gith
             bindings:
                 - exchange: default
                   routing_key: send_astronaut_to_space
+{% endraw %}
 </pre>
+
 Ici, on demande donc la création d'un <em>echange </em>nommé "default", et d'une <em>queue </em>"send_astronaut_to_space", associé à notre échange par une <em>routing key </em>homonyme.<br />
 Un <em>binding </em>est une relation entre un <em>exchange </em>et une <em>queue.</em>
 
 Lançons la commande pour la création de notre vhost :
 
-<pre class="theme:sublime-text lang:sh decode:true">vendor/bin/rabbit vhost:mapping:create default_vhost.yml --host=127.0.0.1
+<pre class="theme:sublime-text lang:sh decode:true">
+{% raw %}
+vendor/bin/rabbit vhost:mapping:create default_vhost.yml --host=127.0.0.1
 Password?
 With DL: false
 With Unroutable: false
 Create exchange default
 Create queue send_astronaut_to_space
-Create binding between exchange default and queue send_astronaut_to_space (with routing_key: send_astronaut_to_space)</pre>
+Create binding between exchange default and queue send_astronaut_to_space (with routing_key: send_astronaut_to_space){% endraw %}
+</pre>
+
 En vous connectant sur votre interface RabbitMQ management (ex: http://127.0.0.1:15672/), plusieurs choses apparaissent :
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Screenshot-from-2016-12-27-13-12-34.png"><img class="wp-image-3073 size-medium aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Screenshot-from-2016-12-27-13-12-34-300x271.png" width="300" height="271" /></a>
@@ -87,7 +95,9 @@ Nous devons donc publier des messages, et ensuite les consommer. Voici comment l
 
 Une fois votre bundle installé, il est nécessaire de configurer le bundle :
 
-<pre class="theme:sublime-text lang:yaml decode:true"># app/config/config.yml
+<pre class="theme:sublime-text lang:yaml decode:true">
+{% raw %}
+# app/config/config.yml
 swarrot:
     provider: pecl # pecl or amqp_lib
     connections:
@@ -105,7 +115,9 @@ swarrot:
                 requeue_on_error: false
             middleware_stack:
                 - configurator: swarrot.processor.exception_catcher
-                - configurator: swarrot.processor.ack</pre>
+                - configurator: swarrot.processor.ack{% endraw %}
+</pre>
+
 Voici donc un exemple de configuration. La partie intéressante arrive à partir du paramètre <em>consumers</em>.
 
 Chaque message publié dans un <em>exchange</em> sera acheminé vers une <em>queue</em> en fonction de sa <em>routing key</em>. Ainsi, il nous est donc nécessaire de traiter une message stocké dans une <em>queue</em>. Dans Swarrot, ce sont les <em>processors</em> qui s'occcupent de cela.<br />
@@ -115,7 +127,9 @@ Pour consommer notre message, il nous est donc nécessaire de créer notre propr
 
 La particularité des <em>processors</em> est qu'ils fonctionnent avec des <em>middlewares</em>, permettant d'ajouter du comportement avant et/ou après le traitement de notre message (notre processeur). C'est pour cela qu'il y a le paramètre <em>middleware_stack</em>, qui contient deux choses : <em>swarrotot.processor.exception_catcher </em>et <em>swarrot.processor.ack</em>. Bien que facultatifs, ces middlewares apportent une souplesse non négligeable. Nous y reviendrons dans la suite de cet article.
 
-<pre class="theme:sublime-text lang:php decode:true">&lt;?php
+<pre class="theme:sublime-text lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace AppBundle\Processor;
 
@@ -128,7 +142,9 @@ class SendAstronautToSpace implements ProcessorInterface
     {
         //...
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Notre <em>processor </em>SendAstronautToSpace implémente la méthode <em>process</em>, qui nous permet de récupérer le message à consommer, et l'utiliser dans notre application.
 
 Nous venons donc de mettre en place la consommation de nos messages. Que nous reste-t-il à faire ? La publication bien sûr !
@@ -136,7 +152,9 @@ Nous venons donc de mettre en place la consommation de nos messages. Que nous r
 ## Publication
 Encore une fois, il est très simple de publier des messages avec Swarrot. Il nous suffit juste de déclarer un <em>publisher</em> dans notre configuration et d'utiliser le service de publication du SwarrotBundle pour publier un nouveau message.
 
-<pre class="theme:sublime-text lang:yaml decode:true"># app/config/config.yml
+<pre class="theme:sublime-text lang:yaml decode:true">
+{% raw %}
+# app/config/config.yml
     consumers:
 # ...
             middleware_stack:
@@ -147,14 +165,20 @@ Encore une fois, il est très simple de publier des messages avec Swarrot. Il n
         send_astronaut_to_space_publisher:
             connection: rabbitmq
             exchange: default
-            routing_key: send_astronaut_to_space</pre>
+            routing_key: send_astronaut_to_space{% endraw %}
+</pre>
+
 Le secret est de déclarer un nouveau type de message, en spécificant la <em>connection</em>, l'<em>exchange</em>, et la <em>routing key</em>, et de publier un message de cette façon :
 
-<pre class="theme:sublime-text lang:default decode:true">&lt;?php
+<pre class="theme:sublime-text lang:default decode:true">
+{% raw %}
+&lt;?php
 
 $message = new Message('Wilson wants to go to space');
 $this-&gt;get('swarrot.publisher')-&gt;publish('send_astronaut_to_space_publisher', $message);
+{% endraw %}
 </pre>
+
 Le service Symfony <em>swarrot.publisher</em> s'occupe ainsi de la publication de notre message. Simple tout cela non ?
 
 Avec la mise en place des <em>queues</em>, la publication, la consommation des messages, la boucle est bouclée.
@@ -167,7 +191,9 @@ Mis à part les problèmes d'implémentation dans votre code, il est possible qu
 Il m'est arrivé d'être confronté à ces problématiques, nous savions que cela pouvait arriver, et que le non-rattrapage des messages perdus devait se faire automatiquement.<br />
 Je vais vous montrer comment procéder en gardant l'exemple de <em>send_astronaut_to_space. </em>Partons du principe que nous retenterons la publication de notre message au maximum 3 fois. Il nous faut donc créer 3 <em>queues </em>de <em>retry</em>. Fort heureusement, la configuration des <em>queues </em>et <em>exchanges </em>de <em>retry </em>est faite très facilement avec la librairie <a href="https://github.com/odolbeau/rabbit-mq-admin-toolkit">RabbitMQ Admin Toolkit</a>. En effet, il ne suffit que d'une ligne ! Voyons cela plus en détails :
 
-<pre class="theme:sublime-text lang:yaml decode:true"># default_vhost.yml
+<pre class="theme:sublime-text lang:yaml decode:true">
+{% raw %}
+# default_vhost.yml
 # ...
 queues:
     send_astronaut_to_space:
@@ -175,12 +201,16 @@ queues:
         retries: [5, 25, 100] # Create a retry exchange with 3 retry queues prefixed with send_astronaut_to_space
         bindings:
             - exchange: default
-              routing_key: send_astronaut_to_space</pre>
+              routing_key: send_astronaut_to_space{% endraw %}
+</pre>
+
 Le tableau de paramètres de la clé <em>retries</em> correspondra à la durée à partir de laquelle le message sera republié. Suite au premier échec, 5 secondes s'écouleront avant de republier le message. Puis 25 secondes, et enfin 100 secondes. Ce comportement correspond très bien à la problématique rencontrée.
 
 Si l'on relance notre commande de création de <em>vhost</em>, voici le résultat :
 
-<pre class="theme:sublime-text lang:sh decode:true ">vendor/bin/rabbit vhost:mapping:create default_vhost.yml --host=127.0.0.1
+<pre class="theme:sublime-text lang:sh decode:true ">
+{% raw %}
+vendor/bin/rabbit vhost:mapping:create default_vhost.yml --host=127.0.0.1
 Password?
 With DL: false
 With Unroutable: false
@@ -195,7 +225,9 @@ Create queue send_astronaut_to_space_retry_2
 Create binding between exchange retry and queue send_astronaut_to_space_retry_2 (with routing_key: send_astronaut_to_space_retry_2)
 Create queue send_astronaut_to_space_retry_3
 Create binding between exchange retry and queue send_astronaut_to_space_retry_3 (with routing_key: send_astronaut_to_space_retry_3)
-Create binding between exchange default and queue send_astronaut_to_space (with routing_key: send_astronaut_to_space)</pre>
+Create binding between exchange default and queue send_astronaut_to_space (with routing_key: send_astronaut_to_space){% endraw %}
+</pre>
+
 On créé l'<em>exchange</em> <em>default </em>comme précédemment. Ensuite, une multitude de nouvelles choses se fait :
 
 <ul>
@@ -206,7 +238,9 @@ Passons maintenant à la configuration côté consommation.
 
 Avec Swarrot, la gestion des <em>retries</em> est très facile à mettre en place. Vous vous souvenez des <em>middlewares </em>dont je vous ai parlé plus haut ? Et bien, il existe un <em>middleware</em> pour ça !
 
-<pre class="theme:sublime-text lang:yaml decode:true"># app/config/config.yml
+<pre class="theme:sublime-text lang:yaml decode:true">
+{% raw %}
+# app/config/config.yml
     consumers:
 # ...
             middleware_stack:
@@ -222,7 +256,9 @@ Avec Swarrot, la gestion des <em>retries</em> est très facile à mettre en pla
         send_astronaut_to_space_publisher:
             connection: rabbitmq
             exchange: default
-            routing_key: send_astronaut_to_space</pre>
+            routing_key: send_astronaut_to_space{% endraw %}
+</pre>
+
 La différence avec la configuration précédente se situe uniquement au niveau du <em>middleware_stack</em> : on ajoute le processor <em>swarrot.processor.retry</em>, ainsi que la configuration de la stratégie de <em>retry</em> :
 
 <ul>
@@ -232,13 +268,17 @@ La différence avec la configuration précédente se situe uniquement au niveau 
 </ul>
 Le <em>workflow</em> va se faire ainsi : si le message n'est pas <em>acknowledged </em>suite à une exception, la première fois, il va être publié dans l'exchange <em>retry</em>, avec la<em> routing key </em><em>send_astronaut_to_space_retry_1, </em>puis 5 secondes après, republié dans la queue principale <em>send_astronaut_to_space</em>. Si le traitement du message rencontre encore une erreur, il va etre publié dans l'<em>exchange retry</em> avec la <em>routing key</em>  <em>send_astronaut_to_space_retry_2</em>, et au bout de 25 secondes, republié dans la <em>queue </em>principale. Et ainsi de suite.
 
-<pre class="theme:sublime-text lang:sh decode:true">sf swarrot:consume:send_astronaut_to_space send_astronaut_to_space
+<pre class="theme:sublime-text lang:sh decode:true">
+{% raw %}
+sf swarrot:consume:send_astronaut_to_space send_astronaut_to_space
 [2017-01-12 12:53:41] app.WARNING: [Retry] An exception occurred. Republish message for the 1 times (key: send_astronaut_to_space_retry_1) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
 [2017-01-12 12:53:46] app.WARNING: [Retry] An exception occurred. Republish message for the 2 times (key: send_astronaut_to_space_retry_2) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
 [2017-01-12 12:54:11] app.WARNING: [Retry] An exception occurred. Republish message for the 3 times (key: send_astronaut_to_space_retry_3) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
 [2017-01-12 12:55:51] app.WARNING: [Retry] Stop attempting to process message after 4 attempts {"swarrot_processor":"retry"}
 [2017-01-12 12:55:51] app.ERROR: [Ack] An exception occurred. Message #4 has been nack'ed. {"swarrot_processor":"ack","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
-[2017-01-12 12:55:51] app.ERROR: [ExceptionCatcher] An exception occurred. This exception has been caught. {"swarrot_processor":"exception","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}</pre>
+[2017-01-12 12:55:51] app.ERROR: [ExceptionCatcher] An exception occurred. This exception has been caught. {"swarrot_processor":"exception","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}{% endraw %}
+</pre>
+
 Dans la création de notre <em>virtual host</em>, nous avons vu qu'un exchange <em>dl</em> ainsi qu'une queue <em>send_astronaut_to_space_dl</em> ont été créés. Cette queue va être la dernière étape dans le cas où notre message rencontre toujours une erreur.<br />
 Si l'on regarde les détails de la queue <em>send_astronaut_to_space</em>, on voit que "<em>x-dead-letter-exchange</em>" a pour valeur "<em>dl</em>", et que "<em>x-dead-letter-routing-key</em>" a pour valeur "<em>send_astronaut_to_space</em>", correspondant à notre <em>binding </em>précédemment expliqué.
 
@@ -261,4 +301,4 @@ Couplé au RabbitMQ Admin Toolkit pour configurer vos <em>exchanges</em> et<em>
 <li><a href="https://github.com/odolbeau/rabbit-mq-admin-toolkit">RabbitMQ Admin Toolkit</a></li>
 <li><a href="https://github.com/swarrot/swarrot">Swarrot</a></li>
 </ul>
-{% endraw %}
+

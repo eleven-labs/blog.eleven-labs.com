@@ -15,7 +15,7 @@ tags:
 - test
 - api
 ---
-{% raw %}
+
 <div><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/codeception-logo.png"><img class="alignnone size-medium wp-image-3611" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/codeception-logo-300x85.png" alt="" width="300" height="85" /></a></div>
 <div></div>
 <div>Dans cet article je vous propose un retour d'expérience sur le framework de test Codeception, outil choisi par mon équipe au sein de France Télévisions lors de la refonte de notre stack !</div>
@@ -95,7 +95,9 @@ Test sur un GET /endpoint (nous utilisons mongodb mais vous pouvez bien entendu 
 <div></div>
 <div>Configuration :</div>
 <div>
-<pre class="lang:yaml decode:true"># api.suite.yml
+<pre class="lang:yaml decode:true">
+{% raw %}
+# api.suite.yml
 class_name: ApiTester
 modules:
     enabled:
@@ -108,12 +110,16 @@ modules:
         - MongoDb:
             dsn: 'mongodb://root:root@localhost:27017/endpoint'
             dump: tests/_data/
+{% endraw %}
 </pre>
+
 Test (attention le code ci-dessous n'est pas fonctionnel en l'état !) :
 
 </div>
 <div>
-<pre class="lang:php decode:true"># EndpointCest.php
+<pre class="lang:php decode:true">
+{% raw %}
+# EndpointCest.php
 &lt;?php
 
 use Codeception\Util\HttpCode;
@@ -151,14 +157,18 @@ class EndpointCest
         $I-&gt;seeResponseContainsJson([ 'label' =&gt; 'Label' ]);
     }
  }
+{% endraw %}
 </pre>
+
 On vient donc de vérifier que notre API nous retourne bien nos données avec le bon code HTTP et les bon headers. Il existe beaucoup d'helpers qui vous permettent de vérifier un peu tout et n'importe quoi. Et si vous ne trouvez pas votre bonheur, vous pouvez ajoutez les vôtres très simplement !
 
 L'avantage c'est que l'ajout de module se fait très simplement. Imaginons que votre code envoie une notification rabbitMQ lors d'une modification de donnée à travers votre API. Vous devez rajouter la configuration du module rabbitMQ dans codeception :
 
 </div>
 <div>
-<pre class="lang:default decode:true"># api.suite.yml
+<pre class="lang:default decode:true">
+{% raw %}
+# api.suite.yml
 class_name: ApiTester
 modules:
     enabled:
@@ -177,10 +187,14 @@ modules:
             username: 'root'
             password: 'root'
             vhost: '/'
-            queues: [test]</pre>
+            queues: [test]{% endraw %}
+</pre>
+
 Test :
 
-<pre class="lang:php decode:true "># EndpointCest.php
+<pre class="lang:php decode:true ">
+{% raw %}
+# EndpointCest.php
 &lt;?php
 
 use Codeception\Util\HttpCode;
@@ -213,7 +227,9 @@ class EndpointCest
         // Assert that the new endpoint is present in the database
         $I-&gt;seeInRepository('Endpoint', ['label' =&gt; 'label']);
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Je vous invite à aller lire <a href="http://codeception.com/docs/">la doc de codeception</a>, elle est assez complète et vous pourrez voir qu'ils supportent pas mal de modules :)
 
 Je ne rentre pas plus dans le détail pour le moment, le but était plus de vous faire un retour d'expérience, si vous êtes intéressé pour un article plus poussé sur son utilisation n'hésitez pas à me l'indiquer.
@@ -221,4 +237,4 @@ Je ne rentre pas plus dans le détail pour le moment, le but était plus de vous
 Seeya !
 
 </div>
-{% endraw %}
+

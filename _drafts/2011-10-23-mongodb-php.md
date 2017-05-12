@@ -10,7 +10,7 @@ tags:
 - php
 - mongodb
 ---
-{% raw %}
+
 Aujourd'hui, petit tuto pour installer MongoDB pour php5. Pour cela plusieurs étapes sont nécessaires aussi bien sur le serveur que sur la partie software.
 
 Sur ce tuto nous travaillons sur un ubuntu 10.10 lors de l'installation des différents softwares.
@@ -22,20 +22,34 @@ Sur ce tuto nous travaillons sur un ubuntu 10.10 lors de l'installation des diff
 </ul>
 <div>Pour installer le serveur Mongo la meilleure solution est d'utiliser le package mongo fait pour ubuntu.</div>
 <div>
-<pre class="brush: shell; gutter: true">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10</pre>
+<pre class="brush: shell; gutter: true">
+{% raw %}
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10{% endraw %}
+</pre>
+
 </div>
 <div>Puis ajouter la ligne suivante dans le fichier /etc/apt/source.list</div>
 <div>
-<pre class="brush: shell; gutter: false">deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen</pre>
+<pre class="brush: shell; gutter: false">
+{% raw %}
+deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen{% endraw %}
+</pre>
+
 </div>
 <div>Pour terminer, lancer les deux commandes suivantes:</div>
 <div>
-<pre class="brush: shell; gutter: true">sudo apt-get update
-sudo apt-get install mongodb-10gen</pre>
+<pre class="brush: shell; gutter: true">
+{% raw %}
+sudo apt-get update
+sudo apt-get install mongodb-10gen{% endraw %}
+</pre>
+
 </div>
 <div>Si tout c'est bien passé le message suivant doit apparaître:</div>
 <div>
-<pre class="brush: shell; gutter: true">Adding system user `mongodb' (UID 110) ...
+<pre class="brush: shell; gutter: true">
+{% raw %}
+Adding system user `mongodb' (UID 110) ...
 Adding new user `mongodb' (UID 110) with group `nogroup' ...
 Not creating home directory `/home/mongodb'.
 Adding group `mongodb' (GID 118) ...
@@ -43,7 +57,9 @@ Done.
 Adding user `mongodb' to group `mongodb' ...
 Adding user mongodb to group mongodb
 Done.
-mongodb start/running, process 1937</pre>
+mongodb start/running, process 1937{% endraw %}
+</pre>
+
 </div>
 <ul>
 <li>Installation d'un "phpmyadmin"</li>
@@ -60,16 +76,26 @@ Maintenant que le serveur mongo est lancé, il faut installer un "phpmyadmin" po
 <div><a href="http://clycks.fr/wp-content/uploads/2011/10/rockmongo-v1.1.0.zip">rockmongo-v1.1.0</a></div>
 <div>Ensuite il faut l'envoyer sur le serveur:</div>
 <div>
-<pre class="brush: shell; gutter: true">scp path_to_rockmongo.zip username@host:~</pre>
+<pre class="brush: shell; gutter: true">
+{% raw %}
+scp path_to_rockmongo.zip username@host:~{% endraw %}
+</pre>
+
 </div>
 <div>  Puis on dezippe le dossier:</div>
 <div>
-<pre class="brush: shell; gutter: true">unzip rockmongo.zip</pre>
+<pre class="brush: shell; gutter: true">
+{% raw %}
+unzip rockmongo.zip{% endraw %}
+</pre>
+
 </div>
 <div>
 Ensuite il faut mettre la configuration de notre mongo dans le fichier config.php. Puis nous devons ajouter le virtualhost pour accéder à notre rockmongo, voici un exemple:
 
-<pre class="lang:default decode:true brush: shell; gutter: true ">// etc/apache2/site-available/rockmongo
+<pre class="lang:default decode:true brush: shell; gutter: true ">
+{% raw %}
+// etc/apache2/site-available/rockmongo
 
 &lt;VirtualHost *:80&gt;
   ServerName rockmongo.host
@@ -89,12 +115,18 @@ Ensuite il faut mettre la configuration de notre mongo dans le fichier config.
 
   RedirectMatch 403 /phpmyadmin(.*)
 
-&lt;/VirtualHost&gt;</pre>
+&lt;/VirtualHost&gt;{% endraw %}
+</pre>
+
 </div>
 <div>Ensuite comme d'habitude, on lance les commandes pour relancer apache2:</div>
 <div>
-<pre class="brush: shell; gutter: true">sudo a2ensite rockmongo
-sudo /etc/init.d/apache2 restart</pre>
+<pre class="brush: shell; gutter: true">
+{% raw %}
+sudo a2ensite rockmongo
+sudo /etc/init.d/apache2 restart{% endraw %}
+</pre>
+
 </div>
 <div>Si tout c'est bien passé rockmongo est visible sur le navigateur à l'url choisi.</div>
 <div>Pour la plupart, vous devez avoir le message suivant sur le navigateur:</div>
@@ -108,7 +140,11 @@ sudo /etc/init.d/apache2 restart</pre>
 </div>
 <div>Cela reste très simple, lancer la commande</div>
 <div>
-<pre class="brush: shell; gutter: true">sudo pecl install mongo</pre>
+<pre class="brush: shell; gutter: true">
+{% raw %}
+sudo pecl install mongo{% endraw %}
+</pre>
+
 </div>
 <div>Une fois la commande lancée, il faut ajouter la ligne suivante:</div>
 <blockquote>
@@ -117,7 +153,9 @@ sudo /etc/init.d/apache2 restart</pre>
 <div>Dans les fichiers /etc/php5/cli/php.ini et /etc/php5/apache2/php.ini</div>
 <div>Vous pouvez dès maintenant utiliser MongoDb dans votre projet PHP. Pour cela voici un exemple d'utilisation.</div>
 <div>
-<pre class="lang:php decode:true brush: php; gutter: true">&lt;?php
+<pre class="lang:php decode:true brush: php; gutter: true">
+{% raw %}
+&lt;?php
 
 // Permet la connexion à MongoDb
 $m = new Mongo();
@@ -140,7 +178,9 @@ foreach ($cursor as $obj) {
     echo $obj["title"] . "n";
 }
 
-?&gt;</pre>
+?&gt;{% endraw %}
+</pre>
+
 </div>
 <div>Ce tuto est terminé, surtout s'il vous a aidé, partagez-le sur vos facebook :)</div>
-{% endraw %}
+

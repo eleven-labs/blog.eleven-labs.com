@@ -10,7 +10,7 @@ tags:
 - architecture
 - design pattern
 ---
-{% raw %}
+
 <strong>- Qu'est-ce que c'est ?</strong>
 
 Le design pattern State, ou patron de conception Etat, permet la modification d'un objet en fonction de son statut. Pour faire simple, il vous permet d'exécuter des actions en fonction d'un contexte.
@@ -103,7 +103,9 @@ Ce bundle permet la mise en place d'une state machine assez facilement. En effet
 
 Dans notre cas, la configuration du bundle pourrait ressembler à ça :
 
-<pre class="lang:yaml decode:true"># app/config/config.yml
+<pre class="lang:yaml decode:true">
+{% raw %}
+# app/config/config.yml
 
 winzou_state_machine:
     my_bundle_video:
@@ -147,7 +149,9 @@ winzou_state_machine:
                     on:   ['create', 'download', 'encode', 'upload', 'publish']
                     do:   [@my.awesome.service, 'setTransitionalState']
                     args: ['object']
+{% endraw %}
 </pre>
+
 De cette manière, chaque étape sait à quel statut elle doit se déclencher, fera appel à une méthode <code>setTransitionalState</code> qui se chargera de mettre à jour le statut en début d'étape (<em>creating</em>, <em>downloading</em>,...), et enfin définira le statut de fin lorsqu'elle aura terminé.
 
 Ensuite, il suffira juste de choisir de quelle manière activer chaque étape. On peut très bien imaginer la réception d'un call POST sur une url afin de déclencher l'étape <em>create</em>, puis des crons s'occupant de récupérer les objets vidéos et de les traiter en fonction de leurs statuts.
@@ -158,4 +162,4 @@ Pour conclure, je pense que ce pattern est utile dans des workflows assez comple
 
 See ya!
 
-{% endraw %}
+

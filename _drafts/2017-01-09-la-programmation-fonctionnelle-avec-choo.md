@@ -12,7 +12,7 @@ tags:
 - framework
 - choo
 ---
-{% raw %}
+
 Bonjour ! je vais vous parler d'un nouveau framework JavaScript qui s'appelle <a href="https://github.com/yoshuawuyts/choo">Choo</a> (ou ChooChoo pour les intimes).
 
 Encore un nouveau framework JS?!!?! Ça commence à bien faire!
@@ -32,7 +32,9 @@ En effet, la simplicité de Choo est ce qui le caractérise le plus. Son API est
 </ul>
 Voici un exemple des plus basiques :
 
-<pre class="lang:js decode:true">const choo = require('choo')
+<pre class="lang:js decode:true">
+{% raw %}
+const choo = require('choo')
 const html = require('choo/html')
 
 // Instancier l'application
@@ -69,22 +71,34 @@ app.router(['/', mainView])
 // Activer le rendu de l'application
 const tree = app.start()
 // Attacher l'arbre DOM généré au document
-document.body.appendChild(tree)</pre>
+document.body.appendChild(tree){% endraw %}
+</pre>
+
 Et voilà ! Un petit compteur avec un bouton pour incrémenter la valeur du compteur, rien de plus simple !
 
 Maintenant, voyons ça un peu plus en détails.
 
 ## Charger les dépendances
-<pre class="lang:js decode:true ">const choo = require('choo')
-const html = require('choo/html')</pre>
+<pre class="lang:js decode:true ">
+{% raw %}
+const choo = require('choo')
+const html = require('choo/html'){% endraw %}
+</pre>
+
 Rien de plus banal ici. On charge la méthode choo() qui va nous servir à démarrer notre petit train. Puis, on charge une méthode html qui n'est rien d'autre que la librairie open-source bel, une des dépendances de Choo. En effet, ce n'est pas Choo qui s'occupe du DOM. À la place, il délègue ça à une autre petite librairie qui sait déjà le faire.
 
 ## Démarrer le petit train
-<pre class="lang:js decode:true ">const app = choo()</pre>
+<pre class="lang:js decode:true ">
+{% raw %}
+const app = choo(){% endraw %}
+</pre>
+
 On instancie le framework en exécutant la méthode choo() à laquelle on peut passer un objet pour écouter certains événements globaux. On en récupère un objet qui va nous permettre d'accéder aux autres méthodes du framework.
 
 ## Les modèles
-<pre class="lang:js decode:true ">const http = require('xhr')
+<pre class="lang:js decode:true ">
+{% raw %}
+const http = require('xhr')
 
 app.model({
     namespace: 'counter',
@@ -103,7 +117,9 @@ app.model({
         }
     }
 })
+{% endraw %}
 </pre>
+
 Un modèle avec Choo est simplement un objet qui décrit un état initial et fournit quelques méthodes pour modifier cet état. L'exemple ici est un peu plus complexe pour montrer les paramètres plus avancés du fonctionnement des modèles.
 
 Les données sont représentées par le state qui est un objet avec le contenu que l'on souhaite.
@@ -115,7 +131,9 @@ Choo représente les données dans un objet de state global, ce qui veut dire qu
 Enfin, nous avons les effects qui vont servir à exécuter un appel asynchrone pour ensuite modifier le state via les reducers. Pour appeler les effects, on utilise également la méthode send().
 
 ## Les vues
-<pre class="lang:js decode:true ">const html = require('choo/html')
+<pre class="lang:js decode:true ">
+{% raw %}
+const html = require('choo/html')
 
 function mainView (state, prev, send) {
     return html `
@@ -128,26 +146,36 @@ function mainView (state, prev, send) {
     function increment () {
         send('counter:increment')
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Toutes les vues Choo sont tout simplement des fonctions qui retournent du DOM. Un peu comme en React, on va écrire le HTML dans nos fichiers JavaScript mais simplement dans une <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals">template string ES2015</a>. Pour transformer cette string en DOM, Choo se repose sur la librairie <a href="https://github.com/shama/bel">bel</a>. La vue va également s'occuper d'écouter les événements utilisateur pour réagir en exécutant les effects ou reducers des modèles pour mettre à jour le state de l'application.
 
 ## Le routeur
-<pre class="lang:js decode:true ">app.router({ default: '/404' }, [
+<pre class="lang:js decode:true ">
+{% raw %}
+app.router({ default: '/404' }, [
     ['/', require('./views/main')],
     ['/404', require('./views/error')]
 ])
+{% endraw %}
 </pre>
+
 Tous les frameworks front-end se doivent d'avoir un bon routeur. Celui de Choo est très simple et efficace. Il suffit de lui donner une liste couple url/vue en forme d'Array. On peut également lui dire quelle route exécuter par défaut si la route demandée n'est pas trouvée.
 
 Le routeur va s'occuper d'écouter les clics sur les liens dans les vues pour rediriger automatiquement sur la bonne route en utilisant l'<a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">API HTML5 pushState</a>.
 
 ## Commencer le voyage !
-<pre class="lang:js decode:true ">const tree = app.start()
-document.body.appendChild(tree)</pre>
+<pre class="lang:js decode:true ">
+{% raw %}
+const tree = app.start()
+document.body.appendChild(tree){% endraw %}
+</pre>
+
 C'est le début de l'aventure ! Il ne reste plus qu'à demander à Choo d'exécuter le premier rendu de l'application et de rattacher le DOM généré au document et voilà !
 
 Pour plus d'informations, d'exemples, et de petits trains mignons rendez-vous sur la <a href="https://github.com/yoshuawuyts/choo">page github de Choo</a> ou sur sa <a href="https://choo.io/">page de démonstration</a>.
 
 Bon voyage !
 
-{% endraw %}
+

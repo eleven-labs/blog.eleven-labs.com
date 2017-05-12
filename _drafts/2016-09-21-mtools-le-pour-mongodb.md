@@ -11,7 +11,7 @@ tags:
 - tools
 - devops
 ---
-{% raw %}
+
 Maintenir une application MongoDB, notamment sur des sujets Datas avec beaucoup de volumétrie et/ou d’opérations peut vite devenir un supplice, surtout si, comme la plupart des Devs, vous n'avez pas accès aux machines de productions qui sont généralement réservées aux exploitants.
 
 Problème : comment trouver dans vos dizaines de millions de données ou requêtes quotidiennes, celles qui ont un impact négatif sur vos performances ou encore les goulots d’étranglement de votre architecture ?
@@ -31,13 +31,17 @@ Mloginfo lit les log générés par mongoDB et retourne des informations d'utili
 
 Exemple d'utilisation :
 
-<pre class="lang:default decode:true" title="mloginfo">mloginfo --queries logs.mongo/mongod.log
+<pre class="lang:default decode:true" title="mloginfo">
+{% raw %}
+mloginfo --queries logs.mongo/mongod.log
 
 namespace              operation        pattern                              count     min (ms)    max (ms)    mean (ms)    95%-ile (ms)    sum (ms)
 
 myCol.$cmd               findandmodify    {"ID": 1}                          916493         101       10486          277           453.0    254423325
 myCol.User               count            {"activeSeg": 1, "updatedAt": 1}   68           30135     1413998       419353       1350776.4    28516024
-myCol.InactiveUser       count            {"inactiveSeg": 1}                 32          625038     1019698       813384        984999.6    26028315</pre>
+myCol.InactiveUser       count            {"inactiveSeg": 1}                 32          625038     1019698       813384        984999.6    26028315{% endraw %}
+</pre>
+
 Au niveau des colonnes :
 
 <ul>
@@ -58,7 +62,9 @@ Plus d'infos <a href="https://github.com/rueckstiess/mtools/wiki/mloginfo">ici</
 
 Mlogfilter permet comme son nom l'indique de réduire la quantité d'information d'un fichier de log. Nous pouvons appliquer plusieurs filtres et combiner le résultat avec mloginfo par exemple.
 
-<pre class="lang:default decode:true " title="mlogfilter">cat logs.mongo/mongod.log | mlogfilter --human --slow --from start +1day
+<pre class="lang:default decode:true " title="mlogfilter">
+{% raw %}
+cat logs.mongo/mongod.log | mlogfilter --human --slow --from start +1day
 
 Fri Sep 16 08:01:58.883 I COMMAND [conn195591] command dbm_rcu_v2.Client command:
 aggregate { aggregate: "Client", pipeline: [ { $match: { somedate:
@@ -68,7 +74,9 @@ aggregate { aggregate: "Client", pipeline: [ { $match: { somedate:
 ntoskip:0 keyUpdates:0 writeConflicts:0 numYields:549 reslen:862557
 locks:{ Global: { acquireCount: { r: 1120 } },
 Database: { acquireCount: { r: 560 } }, Collection: { acquireCount: { r: 560 } } }
-protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
+protocol:op_query (0hr 0min 3secs 99ms) 3,099ms{% endraw %}
+</pre>
+
 Avec cette commande, mlogfilter nous permet de filtrer les logs des commandes les plus longues (--slow) dans un intervalle d'un jour à partir du début du fichier. On peut voir que cela nous donne une commande d'agrégation qui a pris plus de 3 secondes pour s’exécuter.
 
 Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mlogfilter">mlogfilter</a>.
@@ -93,7 +101,9 @@ Mgenerate permet, à partir d'un modèle JSON, de remplir une base de données 
 
 Exemple de modèle JSON pour la génération d'une collection User :
 
-<pre class="lang:default decode:true " title="json model">{
+<pre class="lang:default decode:true " title="json model">
+{% raw %}
+{
     "user": {
         "name": {
             "first": {"$choose": ["Liam", "Noah", "Ethan", "Mason", "Logan", "Jacob", "Lucas", "Jackson", "Aiden", "Jack", "James", "Elijah", "Luke", "William", "Michael", "Alexander", "Oliver", "Owen", "Daniel", "Gabriel", "Henry", "Matthew", "Carter", "Ryan", "Wyatt", "Andrew", "Connor", "Caleb", "Jayden", "Nathan", "Dylan", "Isaac", "Hunter", "Joshua", "Landon", "Samuel", "David", "Sebastian", "Olivia", "Emma", "Sophia", "Ava", "Isabella", "Mia", "Charlotte", "Emily", "Abigail", "Avery", "Harper", "Ella", "Madison", "Amelie", "Lily", "Chloe", "Sofia", "Evelyn", "Hannah", "Addison", "Grace", "Aubrey", "Zoey", "Aria", "Ellie", "Natalie", "Zoe", "Audrey", "Elizabeth", "Scarlett", "Layla", "Victoria", "Brooklyn", "Lucy", "Lillian", "Claire", "Nora", "Riley", "Leah"] },
@@ -113,7 +123,9 @@ Exemple de modèle JSON pour la génération d'une collection User :
     },
     "tags": {"$array": {"of": {"label": "$string", "id": "$oid", "subtags":
         {"$missing": {"percent": 80, "ifnot": {"$array": ["$string", {"$number": [2, 5]}]}}}}, "number": {"$number": [0, 10] }}}
-}</pre>
+}{% endraw %}
+</pre>
+
 Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mgenerate">Mgenerate</a>.
 
 &nbsp;
@@ -124,7 +136,11 @@ Mlaunch permet de créer rapidement un environnement local de travail avec mongo
 
 <em><strong>Exemple :</strong></em>
 
-<pre class="lang:default decode:true ">mlaunch --replicaset --nodes 5</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+mlaunch --replicaset --nodes 5{% endraw %}
+</pre>
+
 Cette commande permet de demander la création d'une instance mongo avec 5 replicats
 
 &nbsp;
@@ -139,4 +155,4 @@ Cette commande permet de demander la création d'une instance mongo avec 5 repli
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder.png"><img class="alignnone size-medium wp-image-2255" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder-300x217.png" alt="query-builder" width="300" height="217" /></a>
 
-{% endraw %}
+

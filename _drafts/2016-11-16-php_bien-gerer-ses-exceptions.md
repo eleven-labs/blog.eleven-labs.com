@@ -12,7 +12,7 @@ tags:
 - best practice
 - error
 ---
-{% raw %}
+
 Bonjour à tous ! Aujourd'hui je voudrais vous parler d'un sujet peu abordé en php : les exceptions. Une exception est une alerte lancée lors de l'exécution du code, pour indiquer que quelque chose ne s'est pas passé comme prévu. Cela peut être un mauvais identifiant de connexion à la base de données, ou bien une opération sur un fichier qui n'est pas autorisée, ou encore une division par zéro par exemple.
 
 Une fois que cette alerte est levée, il faut bien en faire quelque chose. Soit je la laisse sous le tapis et je la passe sous silence, soit je la gère correctement pour que mon application continue de fonctionner normalement même après cette erreur.
@@ -33,7 +33,9 @@ Il est plus facile de nommer l'exception par sa localisation plutôt que par le 
 
 Une exception doit permettre de décrire le plus simplement possible le problème rencontré.
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 class Filesystem
 {
@@ -46,7 +48,9 @@ class Filesystem
     }
 }
 
-// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Filesystem/Filesystem.php#L41</pre>
+// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Filesystem/Filesystem.php#L41{% endraw %}
+</pre>
+
 Dans cet exemple, la copie n'a pas pu être effectuée à cause du fichier d'origine introuvable. L'exception est nommée par la cause de l'erreur et non par l'émetteur : ici la méthode <em>copy()</em>. Si j'avais nommé l'exception par l'émetteur, ça pourrait être <em>CouldNotCopyFileException</em>.
 
 ### Lever l'exception en fonction du contexte
@@ -56,7 +60,9 @@ Les exceptions PHP de base ne permettent pas d'identifier le contexte de l'erreu
 
 Une exception logique montre un problème au niveau du code. Par exemple l'exception <em>\InvalidArgumentException</em> donne une indication au développeur sur une erreur dans le code : un argument attendu n'est pas valide. En plus d'être nommée en fonction de la cause, je sais que c'est dans le contexte d'une exception logique. Cela signifie qu'en tant que développeur, je n'ai pas passé un bon argument à la méthode.
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 class Constraint
 {
@@ -73,12 +79,16 @@ class Constraint
     }
 }
 
-// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Validator/Constraint.php#L80</pre>
+// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Validator/Constraint.php#L80{% endraw %}
+</pre>
+
 Les exceptions levées au moment de l'exécution du code ne peuvent pas être détectées avant leur interprétation. Ce sont les exceptions suivantes : <em>OutOfBoundsException</em>, <em>OverflowException</em>, <em>RangeException</em>, <em>UnderflowException</em>, <em>UnexpectedValueException</em>. A la différence d'une exception logique, ce n'est pas une erreur liée au code ou à sa mauvaise utilisation, mais liée à une erreur lors de l'exécution du code.
 
 Prenons l'exemple <em>OutOfBoundsException</em>.  Cette exception indique que l'index n'a pas de valeur valide dans un tableau.
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 class PropertyPath
 {
@@ -92,18 +102,24 @@ class PropertyPath
     }
 }
 
-// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/PropertyAccess/PropertyPath.php#L188</pre>
+// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/PropertyAccess/PropertyPath.php#L188{% endraw %}
+</pre>
+
 Ici, la taille du tableau varie en fonction de l'exécution du code. Il peut arriver que l'index sélectionné n'existe pas dans le tableau. Cette exception permet de protéger l'application contre une erreur fatale qui pourrait stopper l'interprétation du code.
 
 Ces deux groupes d'exceptions peuvent être étendus pour décrire ses propres erreurs. Avec le principe de ségrégation des interfaces, il est possible de décrire plus précisément les erreurs qui peuvent survenir lors de l'utilisation d'une librairie. Cela permet notamment de savoir de quel composant provient l'erreur.
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 class InvalidArgumentException extends \InvalidArgumentException implements ExceptionInterface
 {
 }
 
-// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Validator/Exception/InvalidArgumentException.php</pre>
+// https://github.com/symfony/symfony/blob/master/src/Symfony/Component/Validator/Exception/InvalidArgumentException.php{% endraw %}
+</pre>
+
 ## Les attraper au bon moment
 Il est tentant d'attraper toutes les erreurs qui peuvent survenir. Mais il est préférable d'attraper uniquement les exceptions que l'application est capable de gérer. Sinon, il vaut mieux les laisser se propager jusqu'au niveau le plus haut. Avec l'utilisation d'un framework tel que Symfony, une exception qui n'est pas attrapée dans l'application sera gérée par le framework (et affichera une belle page 500).
 
@@ -114,7 +130,9 @@ Avec ce principe, le développeur a la possibilité de maîtriser une partie des
 
 Prenons un exemple pour le cas d'une erreur gérable. Dans mon application, je dois contacter une API pour créer un utilisateur ou le mettre à jour. Je ne sais pas par avance si cet utilisateur existe ou non. Je vais d'abord faire une requête GET pour le savoir. L'API me renvoie soit une erreur 404 pour dire que l'utilisateur n'existe pas, ou une erreur 200 dans le cas contraire. Pour faire ces requêtes, j'utilise une librairie : <a href="http://docs.guzzlephp.org/en/latest/">Guzzle</a>. Dans le cas d'une 404, j'ai une exception <a href="https://github.com/guzzle/guzzle/blob/master/src/Exception/RequestException.php">RequestException</a>.
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 public function actionType($username)
 {
@@ -129,7 +147,9 @@ public function actionType($username)
     }
 
     return "update";
-}</pre>
+}{% endraw %}
+</pre>
+
 Dans cet exemple, je ne gère que le cas de la 404. Pour les autres types, je ne les gère pas, je re-lance l'exception pour laisser les autres couches de l'application la gérer.
 
 ### Laisser se propager le reste
@@ -152,4 +172,4 @@ Une exception bien lancée et gérée correctement permet à votre application d
 <li>http://www.phptherightway.com/#exceptions</li>
 <li>http://ralphschindler.com/2010/09/15/exception-best-practices-in-php-5-3</li>
 </ul>
-{% endraw %}
+

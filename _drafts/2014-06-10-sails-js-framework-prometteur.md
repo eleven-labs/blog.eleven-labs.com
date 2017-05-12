@@ -11,7 +11,7 @@ tags:
 - Nodejs
 - Javascript
 ---
-{% raw %}
+
 Un post court pour vous parler d'une technologie que je viens de trouver, il s'agit d'un framework js pour nodejs, sails.js.
 
 <!--more-->
@@ -48,4 +48,4 @@ Si vous voulez plus de renseignements, je vous invite à aller voir le site de <
 
 &nbsp;
 
-{% endraw %}
+

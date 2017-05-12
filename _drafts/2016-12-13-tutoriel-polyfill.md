@@ -11,7 +11,7 @@ tags:
 - Javascript
 - web
 ---
-{% raw %}
+
 Avec l'avènement du js natif, et la multiplication des navigateurs et des environnements (mobile, desktop, tablette), on entend de plus en plus dans nos open-spaces :
 
 <blockquote>«-Dis, tu connaîtrais pas un polyfill ?»
@@ -51,20 +51,30 @@ Si vous allez sur <a href="http://caniuse.com/">Can I Use</a> vous trouvez la 
 Donc comme vous pouvez le voir, la fonction n'est pas implémentée sur IE11. Nous allons donc faire le polyfill nous même.<br />
 Il suffit d'abord de vérifier l'existence de la fonction :
 
-<pre class="lang:js decode:true " title="Polyfill - exist">if (typeof Object.assign != 'function') {
+<pre class="lang:js decode:true " title="Polyfill - exist">
+{% raw %}
+if (typeof Object.assign != 'function') {
   // La fonction n'existe pas
-}</pre>
+}{% endraw %}
+</pre>
+
 Si elle n'existe pas alors on la surcharge avec notre polyfill, et en js il suffit de définir la fonction :
 
-<pre class="lang:js decode:true " title="Polyfill assign function">if (typeof Object.assign != 'function') {
+<pre class="lang:js decode:true " title="Polyfill assign function">
+{% raw %}
+if (typeof Object.assign != 'function') {
   Object.assign = function (target, varArgs) {
     'use strict';
     // on developpe
   };
-}</pre>
+}{% endraw %}
+</pre>
+
 Et maintenant on fait le développement :
 
-<pre class="lang:js decode:true " title="Polyfill Object Assign">if (typeof Object.assign != 'function') {
+<pre class="lang:js decode:true " title="Polyfill Object Assign">
+{% raw %}
+if (typeof Object.assign != 'function') {
   Object.assign = function (target, varArgs) {
     'use strict';
     if (target == null) { // TypeError if undefined or null
@@ -87,11 +97,13 @@ Et maintenant on fait le développement :
     }
     return to;
   };
-}</pre>
+}{% endraw %}
+</pre>
+
 Et voilà ! Vous avez un polyfill !
 
 Normalement il y a un polyfill pour tout alors avant de l'implémenter, go to <a href="https://www.google.fr/">Google</a>.
 
 &nbsp;
 
-{% endraw %}
+

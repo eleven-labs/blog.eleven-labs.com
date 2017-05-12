@@ -11,7 +11,7 @@ tags:
 - w3c
 - html
 ---
-{% raw %}
+
 Pour cette 3ème édition des DotCSS consacrée à la partie stylée de la Force, le menu était alléchant : 8 conférenciers de qualité dont quelques pointures de la profession, avec comme cerise sur le gâteau un talk de Dieu le père, aka Håkon Wium Lie, le créateur de CSS en personne. Comme d’habitude aux Dot Conférences, l’accueil était princier et l’ambiance chaleureuse dans un théâtre des variétés plein à craquer.
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/12/dot2016.jpg"><img class="size-medium wp-image-2782 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/12/dot2016.jpg" alt="dot2016" /></a>
@@ -63,4 +63,4 @@ Il nous a ensuite emmené sur un tout autre terrain que celui qu'on a l'habitude
 
 Et voilà, c'est fini pour cette année. Une édition particulièrement intéressante sur une techno toujours en train de se réinventer. Vivement 2017 !
 
-{% endraw %}
+

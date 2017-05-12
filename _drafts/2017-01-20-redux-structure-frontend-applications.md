@@ -12,7 +12,7 @@ tags:
 - react
 - redux
 ---
-{% raw %}
+
 Javascript ecosystem is really rich: full of developers but also full of frameworks and libraries.
 
 When you want to develop a frontend application, whatever its rendering framework, you will have to structure things into your project in order to organize the data management with views. This case occurs particularly when you use component rendering frameworks like <strong>React</strong> or <strong>VueJS</strong>.
@@ -42,7 +42,11 @@ Please keep in mind that Redux can be used with multiple rendering frameworks l
 To install Redux, you will just need the <span class="lang:default decode:true crayon-inline">redux</span> npm (or yarn) package.<br />
 If you use Redux into a React application, you will also need the <span class="lang:default decode:true crayon-inline">react-redux</span>  package or even the <span class="lang:default decode:true crayon-inline">vue-redux</span>  if you want to use it on a VueJS project.
 
-<pre class="lang:default decode:true">$ yarn add redux</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+$ yarn add redux{% endraw %}
+</pre>
+
 Nothing more, you can now start to use Redux.
 
 &nbsp;
@@ -59,7 +63,9 @@ We will use a simple practical case: a counter that we can increment or decremen
 
 Here is our target arborescence:
 
-<pre class="lang:default decode:true">src/
+<pre class="lang:default decode:true">
+{% raw %}
+src/
 ├── actions
 │   └── counter.js
 ├── constants
@@ -69,7 +75,9 @@ Here is our target arborescence:
 │   ├── counter.js
 │   └── index.js
 └── store
-    └── configureStore.js</pre>
+    └── configureStore.js{% endraw %}
+</pre>
+
 ### Actions
 Let's write an actions containing file that will implement our 2 actions: increment and decrement.
 
@@ -77,14 +85,22 @@ Before all, we will store these actions names into constants in order to keep o
 
 Start by creating a <span class="lang:default decode:true crayon-inline">src/constants/ActionTypes.js</span>  file with the following content:
 
-<pre class="lang:js decode:true">export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';</pre>
+<pre class="lang:js decode:true">
+{% raw %}
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';{% endraw %}
+</pre>
+
 Great, we will now write actions that correspond to these constants in a <span class="lang:default decode:true crayon-inline">src/actions/counter.js</span>  file:
 
-<pre class="lang:js decode:true">import * as types from '../constants/ActionTypes';
+<pre class="lang:js decode:true">
+{% raw %}
+import * as types from '../constants/ActionTypes';
 
 export const increment = (value) =&gt; ({ type: types.INCREMENT, value });
-export const decrement = (value) =&gt; ({ type: types.DECREMENT, value });</pre>
+export const decrement = (value) =&gt; ({ type: types.DECREMENT, value });{% endraw %}
+</pre>
+
 You have just created your 2 actions (<span class="lang:default decode:true crayon-inline">increment</span>  and <span class="lang:default decode:true crayon-inline">decrement</span>) which each have a type property (required) and a value to add or remove to the current counter value.
 
 ### Reducers
@@ -92,7 +108,9 @@ We will now write reducers functions that correspond to the actions we previousl
 
 This will be written in the <span class="lang:default decode:true crayon-inline ">src/reducers/counter.js</span>  file:
 
-<pre class="lang:js decode:true">import { INCREMENT, DECREMENT } from '../constants/ActionTypes';
+<pre class="lang:js decode:true">
+{% raw %}
+import { INCREMENT, DECREMENT } from '../constants/ActionTypes';
 
 const initialState = {
   current: 0,
@@ -113,7 +131,9 @@ export default function counter(state = initialState, action) {
     default:
       return state;
   }
-}</pre>
+}{% endraw %}
+</pre>
+
 You got the idea, we have our actions wrapped into a <span class="lang:default decode:true crayon-inline">switch() { case ... }</span>  and directly return the store updated with new values.<br />
 You can also observe that we have initialized an initial state (initialState) in order to prepare our application state with some default values.
 
@@ -121,7 +141,9 @@ You can also observe that we have initialized an initial state (initialState) 
 
 Only point if you declare multiple reducers into your application is that you will have to combine them here in a file named <span class="lang:default decode:true crayon-inline">src/reducers/index.js</span>  as follows:
 
-<pre class="lang:js decode:true">import { combineReducers } from 'redux';
+<pre class="lang:js decode:true">
+{% raw %}
+import { combineReducers } from 'redux';
 
 import counter from './counter';
 import another from './another';
@@ -131,13 +153,17 @@ const reducers = combineReducers({
   another,
 });
 
-export default reducers;</pre>
+export default reducers;{% endraw %}
+</pre>
+
 ### Store
 You have your actions and your reducers so let's dive into the final step: store creation!
 
 Store will be created in a <span class="lang:default decode:true crayon-inline">src/store/configureStore.js</span>  file with only these couple of lines:
 
-<pre class="lang:js decode:true">import { createStore } from 'redux';
+<pre class="lang:js decode:true">
+{% raw %}
+import { createStore } from 'redux';
 import reducers from '../reducers';
 
 const configureStore = () =&gt; {
@@ -146,7 +172,9 @@ const configureStore = () =&gt; {
   );
 };
 
-export default configureStore;</pre>
+export default configureStore;{% endraw %}
+</pre>
+
 You just have to call the Redux's <span class="lang:default decode:true crayon-inline">createStore()</span>  API function in order to create your store.
 
 In order to go further, please note that this function can take a maximum of 3 arguments:
@@ -160,7 +188,9 @@ A middleware is a callback that is executed each time Redux can the <span clas
 
 Here is a simple middleware that logs each dispatched actions:
 
-<pre class="lang:js decode:true ">import { createStore, applyMiddleware } from 'redux'
+<pre class="lang:js decode:true ">
+{% raw %}
+import { createStore, applyMiddleware } from 'redux'
 import reducers from '../reducers';
 
 function logger({ getState }) {
@@ -177,7 +207,9 @@ const configureStore = () =&gt; {
   );
 };
 
-export default configureStore;</pre>
+export default configureStore;{% endraw %}
+</pre>
+
 Do not forget to call the <span class="lang:default decode:true crayon-inline">applyMiddleware()</span>  function when you pass your function to the store argument.
 
 &nbsp;
@@ -189,7 +221,9 @@ Indeed, thanks to this library, you will be able to map your React components 
 
 Let's take a concrete case: a <span class="lang:default decode:true crayon-inline">Counter</span>  component which could be a component for our previous use case:
 
-<pre class="lang:js decode:true ">import React, { PropTypes } from 'react';
+<pre class="lang:js decode:true ">
+{% raw %}
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -221,7 +255,9 @@ const mapDispatchToProps = dispatch =&gt; ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Counter);</pre>
+)(Counter);{% endraw %}
+</pre>
+
 This way, we are able to retrieve our props values which came from the Redux store but also an <span class="lang:default decode:true crayon-inline">actions</span>  property that will allow us to dispatch Redux events when we will call it.
 
 Main things to note here are:
@@ -241,4 +277,4 @@ If we put in parallel the download numbers of Redux (<strong>1 303 720 download
 
 Redux brings, in my opinion, a <strong>real solution</strong> to structure complex (or large) business applications and bring that to the React and VueJS (and others) communities.
 
-{% endraw %}
+

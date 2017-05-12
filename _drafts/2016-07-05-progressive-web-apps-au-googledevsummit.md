@@ -15,7 +15,7 @@ tags:
 - webperformance
 - application mobile
 ---
-{% raw %}
+
 Lundi 19 juin et mardi 20 juin 2016 a eu lieu la GoogleDevSummit à Amsterdam pour une présentation en grande pompe d'une nouvelle façon de faire des sites mobiles : les progressives web apps.
 
 Voici mon retour sur les deux jours de conférence.<!--more-->
@@ -192,4 +192,4 @@ Vous pouvez aussi faire les différents code lab disponibles <a href="https://c
 
 Pour voir des exemples de PWA, un site dédié à été mis en place <a href="https://pwa.rocks/">ici</a>.
 
-{% endraw %}
+

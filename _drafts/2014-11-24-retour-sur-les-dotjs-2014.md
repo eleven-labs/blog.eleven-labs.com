@@ -10,7 +10,7 @@ tags:
 - dotJS
 - conférence
 ---
-{% raw %}
+
 <img class=" wp-image-1026 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2014/11/wilsononstagedotjs-300x300.jpg" alt="wilsononstagedotjs" width="177" height="177" />
 
 <a href="http://www.dotjs.eu/">DotJS</a> est une journée consacrée au langage JavaScript, créée par <a href="http://www.dotconferences.eu/">dotConferences</a>, dont le but est d’apporter des conférences du niveau de <a href="http://www.ted.com/">TED</a> au monde de l’informatique. C’est la plus grande conférence de ce type en Europe et elle regroupe des participants du monde entier.
@@ -56,4 +56,4 @@ Si vous voulez voir (ou revoir, on ne s’en lasse pas!) toutes les photos, cost
 
 Vivement la DotJS 2015 !
 
-{% endraw %}
+

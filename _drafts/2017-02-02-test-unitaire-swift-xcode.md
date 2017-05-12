@@ -8,7 +8,7 @@ categories:
 - Mobile
 tags: []
 ---
-{% raw %}
+
 <span style="font-weight: 400;">Bonjour à vous les astronautes !!! :)</span>
 
 <span style="font-weight: 400;">Aujourd'hui, nous allons voir ensemble un nouveau tuto de l'espace sous iOS/Xcode.</span>
@@ -44,7 +44,9 @@ tags: []
 ### Test sur un(e) Model/Classe
 <span style="font-weight: 400;">Tout d’abord, nous allons créer une structure Astronaute (dans un dossier Model pour faire genre on fait du MVC :p ) comme ceci :</span>
 
-<pre class="lang:swift decode:true">import Foundation
+<pre class="lang:swift decode:true">
+{% raw %}
+import Foundation
 
 struct Astronaute {
     let name: String
@@ -59,7 +61,9 @@ struct Astronaute {
         self.sex = sex
         self.planet = planet
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">Comme vous pouvez le constater, un Astronaute a obligatoirement un nom, un grade et un sexe mais n’a pas forcément de planète (c’est pas bien ça !).</span>
 
 <span style="font-weight: 400;">On vient de créer cette structure donc le bon réflexe à prendre c’est de la tester tout de suite.</span>
@@ -75,7 +79,9 @@ struct Astronaute {
 
 <span style="font-weight: 400;">Nous allons maintenant nous attarder sur la classe générée afin de vous expliquer la base.</span>
 
-<pre class="lang:swift decode:true">import XCTest
+<pre class="lang:swift decode:true">
+{% raw %}
+import XCTest
 
 class AstronauteTests: XCTestCase {
 
@@ -95,7 +101,9 @@ class AstronauteTests: XCTestCase {
         }
     }
 
-}</pre>
+}{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">La première chose à noter est qu’on importe XCTest. Comme vous vous en doutez, ceci permet d’avoir accès au framework XCTest.</span>
 
 <span style="font-weight: 400;">Ensuite nous avons plusieurs méthodes que nous allons voir en détail :</span>
@@ -106,7 +114,9 @@ class AstronauteTests: XCTestCase {
 <li style="font-weight: 400;">**testExample()**<span style="font-weight: 400;">. Méthode créée par défaut par Xcode. Il est important de savoir que chaque méthode de test que vous allez créer doit absolument être préfixée par </span>**test **;</li>
 <li style="font-weight: 400;">**testPerformanceExample()**<span style="font-weight: 400;">. Méthode créée par défaut par Xcode. Dans celle-ci, Xcode nous montre que nous pouvons aussi faire un test de performance. Tester la perfomance de votre code permet de s’assurer que les algorithmes les plus importants qui demandent un traitement particulier restent performants avec le temps.</span></li>
 </ul>
-<pre class="lang:swift decode:true">import XCTest
+<pre class="lang:swift decode:true">
+{% raw %}
+import XCTest
 @testable import tuto_xctest
 
 class AstronauteTests: XCTestCase {
@@ -118,7 +128,9 @@ class AstronauteTests: XCTestCase {
         XCTAssertEqual("Amiral", astronaute.grade)
         XCTAssertEqual("Male", astronaute.sex)
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">Rien ne vous choque ? J’ai ajouté un @testable import {nomDeMonProjet}. </span>
 
 <span style="font-weight: 400;">En effet, sur chaque classe de test que vous allez créer, vous devrez ajouter ceci afin d’autoriser l’accès au AppDelegate notamment mais aussi à l’ensemble des classes et méthodes créées dans votre application. Cependant, @testable donne accès seulement aux méthodes dites internes et non aux méthodes privées.</span>
@@ -151,11 +163,15 @@ class AstronauteTests: XCTestCase {
 
 <span style="font-weight: 400;">Pour finir notre test, nous allons rajouter la méthode </span>**testInitAstronuateWithPlanet **<span style="font-weight: 400;">qui va tester l’initialisation d’un astronaute avec une planète (oui j’aime bien mettre des noms en rapport avec Star Wars :) ).</span>
 
-<pre class="lang:swift decode:true">func testInitAstronuateWithPlanet() {
+<pre class="lang:swift decode:true">
+{% raw %}
+func testInitAstronuateWithPlanet() {
   let astronaute = Astronaute(name: "Skywalker", grade: "Jedi", sex: "Male", planet: "Tatooine")
 
   XCTAssertEqual("Tatooine", astronaute.planet)
-}</pre>
+}{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">Bon normalement nous avons testé tous les cas possibles sur notre structure. Mais comment en être sûr ?  </span>
 
 <span style="font-weight: 400;">La solution : le code coverage. Il permet d’écrire le taux de code source testé d'un programme. Comment faire sous Xcode ?</span><br />
@@ -174,7 +190,9 @@ class AstronauteTests: XCTestCase {
 <h3 style="text-align: left;">Test sur un ViewController
 Maintenant nous allons créer une méthode qui va changer le texte d'un label en fonction d'une condition. Voici le code d'exemple (rien de très compliqué).
 
-<pre class="lang:swift decode:true">import UIKit
+<pre class="lang:swift decode:true">
+{% raw %}
+import UIKit
 
 class ViewController: UIViewController {
 
@@ -194,10 +212,14 @@ class ViewController: UIViewController {
         self.uiText.text = "Perdu"
     }
 
-}</pre>
+}{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">Nous allons voir en détails ensemble comment tester ceci :</span>
 
-<pre class="lang:swift decode:true">import XCTest
+<pre class="lang:swift decode:true">
+{% raw %}
+import XCTest
 @testable import tuto_xctest
 
 class ViewControllerTests: XCTestCase {
@@ -231,7 +253,9 @@ class ViewControllerTests: XCTestCase {
     }
 
 }
+{% endraw %}
 </pre>
+
 Nous devons créer une variable de type ViewController afin d'accéder pour chaque méthode de test à celle-ci.
 
 <ol>
@@ -261,4 +285,4 @@ L’alternative est d’utiliser la propriété <strong>view</strong> de votre c
 <li><span style="font-weight: 400;">Cela cible plus facilement une erreur due à un changement de code ;</span></li>
 <li><span style="font-weight: 400;">Vous y gagnerez sur le long terme.</span></li>
 </ul>
-{% endraw %}
+

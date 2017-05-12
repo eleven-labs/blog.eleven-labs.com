@@ -10,7 +10,7 @@ tags:
 - conférence
 - symfony live
 ---
-{% raw %}
+
 <h1 id="symfony-live-10-ans-deja">Symfony Live, 10 ans déjà !
 <h2 id="presensation">Présentation
 Le Symfony Live est une journée de conférences autour du framework Symfony. Les conférences présentées sont d'un bon niveau technique. Il y a également des retours d'expériences, sur des cas concrets et avec des problématiques que l'on peut rencontrer au quotidien.
@@ -210,4 +210,4 @@ Bon anniversaire Symfony !
 
 Lien vers toutes les présentations: <a href="https://github.com/clem/sflive-paris-2015">Symfony Live Paris 2015</a>
 
-{% endraw %}
+

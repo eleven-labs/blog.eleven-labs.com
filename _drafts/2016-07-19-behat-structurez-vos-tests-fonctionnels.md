@@ -9,7 +9,7 @@ categories:
 - Php
 tags: []
 ---
-{% raw %}
+
 <strong>Introduction</strong>
 
 Il est important de mettre en place des tests fonctionnels sur les projets afin de s'assurer du bon fonctionnement de l'application.<br />
@@ -42,26 +42,36 @@ Pour être clair sur l'architecture, voici un schéma qui résume le rôle de ch
 
 La première étape est d'installer Behat et ses extensions en tant que dépendance dans notre fichier <strong>composer.json</strong> :
 
-<pre class="theme:github lang:js decode:true ">"require-dev": {
+<pre class="theme:github lang:js decode:true ">
+{% raw %}
+"require-dev": {
     "behat/behat": "~3.1",
     "behat/symfony2-extension": "~2.1",
     "behat/mink": "~1.7",
     "behat/mink-extension": "~2.2",
     "behat/mink-selenium2-driver": "~1.3",
     "emuse/behat-html-formatter": "dev-master"
-}</pre>
+}{% endraw %}
+</pre>
+
 Afin que vos futurs contextes soient autoloadés, nous allons également ajouter la section <strong>PSR-4</strong> suivante :
 
-<pre class="theme:github lang:js decode:true ">"autoload-dev": {
+<pre class="theme:github lang:js decode:true ">
+{% raw %}
+"autoload-dev": {
     "psr-4": {
         "Acme\Tests\Behat\Context\": "features/context/"
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Maintenant, créons le fichier de configuration <strong>behat.yml</strong> à la racine de notre projet afin d'architecturer nos tests.
 
 Voici le fichier de configuration à partir duquel nous allons débuter :
 
-<pre class="theme:github lang:yaml decode:true">default:
+<pre class="theme:github lang:yaml decode:true">
+{% raw %}
+default:
     suites: ~
     extensions:
         Behat\Symfony2Extension: ~
@@ -81,7 +91,9 @@ Voici le fichier de configuration à partir duquel nous allons débuter :
     formatters:
         pretty: ~
         html:
-            output_path: %paths.base%/web/reports/behat</pre>
+            output_path: %paths.base%/web/reports/behat{% endraw %}
+</pre>
+
 Si nous prenons les sections dans leur ordre, nous avons avant tout une section <em>suites</em> pour le moment vide mais que nous allons alimenter par la suite de cet article.
 
 Ensuite, nous chargeons ici plusieurs extensions de Behat :
@@ -107,7 +119,9 @@ Nous allons donc avoir, par exemple, le scénario suivant :
 
 <span style="text-decoration: underline;">Fichier</span><em> </em>: <strong>features/registration/register.feature</strong> :
 
-<pre class="theme:github lang:default decode:true">Feature: Register
+<pre class="theme:github lang:default decode:true">
+{% raw %}
+Feature: Register
     In order to create an account
     As a user
     I want to be able to register on the application
@@ -116,7 +130,9 @@ Scenario: I register when I fill my username and password only
     Given I am on the registration page
         And I register with username "johndoe" and password "azerty123"
     When I submit the form
-    Then I should see the registration confirmation</pre>
+    Then I should see the registration confirmation{% endraw %}
+</pre>
+
 &nbsp;
 
 <strong>Tests d'intégration</strong>
@@ -127,7 +143,9 @@ Nous allons donc créer un contexte d'intégration propre à l'inscription sous 
 
 <span style="text-decoration: underline;">Fichier</span> : <strong>features/context/registration/IntegrationRegisterContext</strong> :
 
-<pre class="theme:github lang:php decode:true ">&lt;?php
+<pre class="theme:github lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 namespace Acme\Tests\Behat\Context\Registration;
 
@@ -199,7 +217,9 @@ class IntegrationRegisterContext implements Context
             throw new \RuntimeException('User is not registered.');
         }
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 L'implémentation du test d'intégration est terminé pour cette feature !<br />
 Passons maintenant au test d'interface !
 
@@ -213,7 +233,9 @@ Créons donc le contexte qui sera utilisé pour le test d'interface (préfixé p
 
 <span style="text-decoration: underline;">Fichier</span> : <strong>features/context/registration/MinkRegisterContext</strong> :
 
-<pre class="theme:github lang:php decode:true ">&lt;?php
+<pre class="theme:github lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 namespace Acme\Tests\Behat\Context\Registration;
 
@@ -259,7 +281,9 @@ class MinkRegisterContext extends MinkContext
     {
         $this-&gt;assertPageContainsText('Congratulations, you are now registered!');
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Nous venons d'implémenter un test d'interface basé sur le même scénario que celui que nous avons utilisé pour notre test d'intégration, reprenant exactement les quatre méthodes implémentées précédemment avec les mêmes annotations Behat.
 
 La seule différence est que dans ce contexte, Mink va demander à Selenium d'effectuer les actions au niveau de l'interface de notre application en pilotant un navigateur au lieu de tester le code lui-même.
@@ -270,7 +294,9 @@ La seule différence est que dans ce contexte, Mink va demander à Selenium d'ef
 
 Il ne nous reste plus qu'à ajouter les contextes créés précédemment sous notre section <strong>suites</strong> dans le fichier de configuration <strong>behat.yml</strong> :
 
-<pre class="theme:github lang:default decode:true ">    suites:
+<pre class="theme:github lang:default decode:true ">
+{% raw %}
+    suites:
         integration:
             paths:
                 - %paths.base%/features/registration
@@ -282,7 +308,9 @@ Il ne nous reste plus qu'à ajouter les contextes créés précédemment sous no
                 - %paths.base%/features/registration
             contexts:
                 - Behat\MinkExtension\Context\MinkContext: []
-                - Acme\Tests\Behat\Context\Registration\MinkRegisterContext: []</pre>
+                - Acme\Tests\Behat\Context\Registration\MinkRegisterContext: []{% endraw %}
+</pre>
+
 Il est important de voir ici que nous découpons clairement les tests en deux suites distinctes : <strong>integration</strong> et <strong>interface</strong> : chacune d'entre elles sera exécutée avec les contextes qui lui sont propres.
 
 Etant donné que nous avons chargés l'extension Symfony2 lors de la mise en place de Behat, nous avons la possibilité d'injecter des services Symfony dans nos contextes, c'est le cas ici avec le service <strong>acme.registration.registerer</strong>.
@@ -308,7 +336,9 @@ Ceci est possible grâce à l'annotation <strong>@BeforeScenario</strong> de Beh
 
 <span style="text-decoration: underline;">Fichier</span> : <strong>features/context/registration/IntegrationProfileContext</strong> :
 
-<pre class="theme:github lang:php decode:true">&lt;?php
+<pre class="theme:github lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace Acme\Tests\Behat\Context\Registration;
 
@@ -336,7 +366,9 @@ class IntegrationProfileContext implements Context
             'Acme\Tests\Behat\Context\Registration\IntegrationRegisterContext'
         );
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Vous avez maintenant à disposition une propriété <strong>$registerContext</strong> et pouvez accéder à des informations qui proviennent du contexte précédent.
 
 &nbsp;
@@ -346,4 +378,4 @@ Vous avez maintenant à disposition une propriété <strong>$registerContext</st
 Tout part de l'écriture des tests fonctionnels qui doivent être bien réfléchis pour ensuite permettre une implémentation technique à la fois en test d'intégration mais aussi en test d'interface.<br />
 La structure choisie pour classer ses tests fonctionnels est aussi importante pour pouvoir s'y retrouver rapidement dans les différents scénarios de test lorsque l'application prend de l'ampleur.
 
-{% endraw %}
+

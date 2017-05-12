@@ -14,7 +14,7 @@ tags:
 - Javascript
 - Angular2
 ---
-{% raw %}
+
 ## Introduction
 Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde version du framework : Angular2. Pour me faire la main, j'ai choisi de travailler sur un système d'authentification par token en utilisant Symfony pour la partie back-end, en incluant le bundle <strong>Lexik JWT Authentication. </strong>
 
@@ -46,40 +46,60 @@ Je vous propose de voir ensemble un exemple très simple et les différentes ét
 ##### <strong>1.1 </strong>Installation d'une application Symfony3
 Installons tout d'abord la dernière version de Symfony3 via l'installeur prévu à cet effet sur le site officiel :
 
-<pre class="lang:default decode:true">symfony new api-lab</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+symfony new api-lab{% endraw %}
+</pre>
+
 Puis lançons le serveur PHP interne via cette commande à la racine du projet :
 
-<pre class="lang:default decode:true">bin/console server:start
+<pre class="lang:default decode:true">
+{% raw %}
+bin/console server:start
+{% endraw %}
 </pre>
+
 ##### 1.2 Installation des bundles nécessaires
 <span class="s1">Viens ensuite l'installation et la configuration de certains bundles incontournables lorsque l'on veut créer une API. Nous sauterons volontairement l'étape du "composer require" et de la déclaration des bundles dans le Kernel de Symfony pour passer directement à la configuration.</span>
 
 ###### <strong>FOSRestBundle</strong>
 <span class="s1">Ce bundle va nous permettre d'utiliser des routes API automatiques ainsi que de retourner des réponses au format Json à notre client Angular2 avec un minimum de configuration :</span>
 
-<pre class="lang:default decode:true"># app/config/config.yml
+<pre class="lang:default decode:true">
+{% raw %}
+# app/config/config.yml
 fos_rest:
     routing_loader:
         default_format: json
     view:
-        view_response_listener: true</pre>
-<pre class="lang:default decode:true"># app/config/routing.yml
+        view_response_listener: true{% endraw %}
+</pre>
+
+<pre class="lang:default decode:true">
+{% raw %}
+# app/config/routing.yml
 app:
     resource: "@AppBundle/Controller/"
     type: rest
-    prefix: /api</pre>
+    prefix: /api{% endraw %}
+</pre>
+
 <strong><a href="http://symfony.com/doc/current/bundles/FOSRestBundle/index.html" target="_blank">+ d'information sur la documentation</a></strong>
 
 ###### <strong>NelmioCorsBundle</strong>
 <span class="s1">Continuons ensuite avec le Bundle, qui va nous permettre de faire des requêtes Ajax sur l'API, étant donné que nos deux applications se trouvent sur deux domaines différents :</span>
 
-<pre class="lang:default decode:true">nelmio_cors:
+<pre class="lang:default decode:true">
+{% raw %}
+nelmio_cors:
     paths:
         '^/api/':
             allow_origin: ['http://localhost:4200']
             allow_headers: ['origin', 'content-type', 'authorization']
             allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
-            max_age: 3600</pre>
+            max_age: 3600{% endraw %}
+</pre>
+
 <em>Note : Nous avons ici autorisé notre future application Angular2 ainsi que le header "authorization" qui nous servira à nous authentifier. Patience, on y est bientôt :)</em>
 
 ###### <strong>JMSSerializerBundle</strong>
@@ -90,14 +110,20 @@ Ce bundle va nous permettre de sérialiser les données renvoyées par notre API
 
 <em>Note : J'ai ajouté deux petites lignes sous l'index "form_login" du security.yml de façon à pouvoir envoyer username &amp; password au lieu de _username et _password pour nous authentifier auprès de notre API. Je vous invite à en faire de même :</em>
 
-<pre class="lang:default decode:true">username_parameter: username
-password_parameter: password</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+username_parameter: username
+password_parameter: password{% endraw %}
+</pre>
+
 <span class="s1">Nous allons ensuite devoir générer des données de bases pour pouvoir tester notre système.</span>
 
 <h5 class="p1">1.3 Création d'utilisateurs
 <span class="s1">Nous avons besoin d'un utilisateur. Il s'appellera "gary" et aura comme password "pass" (très original...). Pour ce faire nous n'allons pas mettre en place un système de gestion d'utilisateurs car ce n'est pas le but de cet article. Nous allons utiliser le système "user in memory" de Symfony. Je vous propose donc de rajouter un peu de configuration :</span>
 
-<pre class="lang:default decode:true"># app/config/security.yml
+<pre class="lang:default decode:true">
+{% raw %}
+# app/config/security.yml
 security:
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
@@ -108,13 +134,17 @@ security:
                 users:
                     gary:
                         password: pass
-                        roles: 'ROLE_USER'</pre>
+                        roles: 'ROLE_USER'{% endraw %}
+</pre>
+
 <h5 class="p1">1.4 Création d'un jeu de données
 <span class="s1">Nous allons avoir besoin de publications à renvoyer à notre client Angular2. </span><span class="s1">Nous devons créer une entity "Post" qui sera la représentation de nos données.</span>
 
 <span class="s1"><i>Note : Nous n'ajouterons qu'une seule propriété "title" à cette entity pour les besoins de ce tutoriel même s'il serait utile que nos publications aient aussi un auteur, un contenu, une date de création, etc, etc...</i></span>
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 namespace AppBundle\Entity;
 
@@ -184,10 +214,14 @@ class Post
     }
 }
 
+{% endraw %}
 </pre>
+
 Utilisons ensuite le <strong>DoctrineFixturesBundle </strong>(après l'avoir installé bien sûr !) pour générer deux publications en créant une classe LoadPostData :
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace AppBundle\DataFixtures\ORM;
 
@@ -209,20 +243,28 @@ class LoadPostData implements FixtureInterface
       $manager-&gt;persist($post2);
       $manager-&gt;flush();
    }
-}</pre>
+}{% endraw %}
+</pre>
+
 Créons ensuite la base de données, le schéma, et chargeons les données via ces commandes :
 
-<pre class="lang:default decode:true"># Création de la base
+<pre class="lang:default decode:true">
+{% raw %}
+# Création de la base
 bin/console do:da:cr
 
 # Création du schéma de données
 bin/console do:sc:cr
 
 # Générations des fixtures
-bin/console doctrine:fixtures:load</pre>
+bin/console doctrine:fixtures:load{% endraw %}
+</pre>
+
 Enfin créons notre PostController avec la méthode qui sera le endpoint de notre micro API :
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace AppBundle\Controller;
 
@@ -239,10 +281,16 @@ class PostController extends FOSRestController implements ClassResourceInterface
     {
         return $this-&gt;getDoctrine()-&gt;getRepository('AppBundle:Post')-&gt;findAll();
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Nous voilà parés ! Vous pouvez dès lors tester la partie back-end en faisant une requête POST vers notre endpoint :
 
-<pre class="lang:default decode:true">curl -X POST http://localhost:8000/api/login_check -d username=gary -d password=pass</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+curl -X POST http://localhost:8000/api/login_check -d username=gary -d password=pass{% endraw %}
+</pre>
+
 Si tout va bien, vous devriez recevoir un token d'authentification.
 
 C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)
@@ -252,16 +300,32 @@ C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)
 ##### 2.1 Création de l'application Angular2 via Angular CLI
 Installons tout d'abord Angular CLI globalement sur notre machine. Cet outil va nous servir à générer la structure de notre application via une simple commande et à recompiler à la volée nos modifications :
 
-<pre class="lang:default decode:true ">npm install -g @angular/cli</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+npm install -g @angular/cli{% endraw %}
+</pre>
+
 Créons ensuite notre application :
 
-<pre class="lang:default decode:true">ng new api-lab</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+ng new api-lab{% endraw %}
+</pre>
+
 Puis lançons notre serveur interne :
 
-<pre class="lang:default decode:true">cd api-lab &amp;&amp; ng serve</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+cd api-lab &amp;&amp; ng serve{% endraw %}
+</pre>
+
 Maintenant que notre application est lancée, vous pouvez vous rendre sur l'url indiquée dans votre console pour accéder à votre application :
 
-<pre class="lang:default decode:true">http://localhost:4200</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+http://localhost:4200{% endraw %}
+</pre>
+
 Vous devriez alors voir apparaître : **app works!**
 
 ##### 2.2 Création des différents composants
@@ -274,11 +338,17 @@ Nous allons ensuite générer trois composants principaux supplémentaires :
 </ul>
 Commençons notre composant "homepage" en lançant la commande suivante :
 
-<pre class="lang:default decode:true">ng g c homepage
+<pre class="lang:default decode:true">
+{% raw %}
+ng g c homepage
+{% endraw %}
 </pre>
+
 <em>Note : "g" pour generate et "c" pour... component :)</em>
 
-<pre class="lang:default decode:true ">// homepage/homepage.component.ts
+<pre class="lang:default decode:true ">
+{% raw %}
+// homepage/homepage.component.ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -286,15 +356,27 @@ import { Component } from '@angular/core';
   templateUrl: './homepage.component.html',
 })
 export class HomepageComponent {}
+{% endraw %}
 </pre>
+
 <em>Note : vous remarquerez que nous avons enlevé la déclaration du fichier css. En effet, nous inclurons bootstrap pour styliser rapidement notre application.</em>
 
-<pre class="lang:default decode:true ">// homepage/homepage.html
-&lt;h1&gt;Home&lt;/h1&gt;</pre>
+<pre class="lang:default decode:true ">
+{% raw %}
+// homepage/homepage.html
+&lt;h1&gt;Home&lt;/h1&gt;{% endraw %}
+</pre>
+
 Créons ensuite le composant "authentication" de la même manière :
 
-<pre class="lang:default decode:true">ng g c authentication</pre>
-<pre class="lang:default decode:true ">// authentication/authentication.component.ts
+<pre class="lang:default decode:true">
+{% raw %}
+ng g c authentication{% endraw %}
+</pre>
+
+<pre class="lang:default decode:true ">
+{% raw %}
+// authentication/authentication.component.ts
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -331,7 +413,9 @@ export class AuthenticationComponent {
                 error =&gt; this.error = error.message
             );
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 <ul>
 <li>authentication/authentication.component.html</li>
 </ul>
@@ -343,8 +427,14 @@ Ce composant sera notre formulaire d'authentification vers notre API. Nous utili
 
 Passons ensuite à la création du composant "post" :
 
-<pre class="lang:default decode:true ">ng g c post</pre>
-<pre class="lang:default decode:true">// post/post.component.ts
+<pre class="lang:default decode:true ">
+{% raw %}
+ng g c post{% endraw %}
+</pre>
+
+<pre class="lang:default decode:true">
+{% raw %}
+// post/post.component.ts
 import { Component, OnInit } from '@angular/core';
 
 import { PostRepository } from './post-repository.service';
@@ -367,7 +457,9 @@ export class PostComponent implements OnInit {
                 error =&gt; this.error = error.message
             );
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 <ul>
 <li>post/post.component.html</li>
 </ul>
@@ -381,10 +473,16 @@ Pour finir, nous allons ajouter deux services à notre application.
 </ul>
 Pour se faire, lancez les commandes suivantes :
 
-<pre class="lang:default decode:true">ng g s authentication/authentication --flat</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+ng g s authentication/authentication --flat{% endraw %}
+</pre>
+
 <em>Note : "g" pour generate, "s" pour... service (je sais que vous saviez !) et "--flat" pour créer des composants sans dossiers :)</em>
 
-<pre class="lang:default decode:true">// authentication/authentication.service.ts
+<pre class="lang:default decode:true">
+{% raw %}
+// authentication/authentication.service.ts
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import { tokenNotExpired } from 'angular2-jwt';
@@ -417,9 +515,17 @@ export class AuthenticationService {
     return tokenNotExpired();
   }
 }
+{% endraw %}
 </pre>
-<pre class="lang:default decode:true">ng g s post/post-repository --flat</pre>
-<pre class="lang:default decode:true">// post/post-repository.service.ts
+
+<pre class="lang:default decode:true">
+{% raw %}
+ng g s post/post-repository --flat{% endraw %}
+</pre>
+
+<pre class="lang:default decode:true">
+{% raw %}
+// post/post-repository.service.ts
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { AuthHttp } from 'angular2-jwt';
@@ -436,7 +542,9 @@ export class PostRepository {
           .get(url)
           .map((data: Response) =&gt; data.json());
   }
-}</pre>
+}{% endraw %}
+</pre>
+
 <em>Note : Nous remarquerons que nous utilisons Http dans l'authentication service alors que nous utilisons AuthHttp dans le post-repository service. Il y a une très bonne raison à cela. En effet, comme il est écrit dans la documentation de la librairie Angular2-jwt :</em>
 
 <blockquote>This library does not have any functionality for (or opinion about) implementing user authentication and retrieving JWTs to begin with. Those details will vary depending on your setup, but in most cases, you will use a regular HTTP request to authenticate your users and then save their JWTs in local storage or in a cookie if successful.
@@ -446,7 +554,9 @@ En d'autres termes, cette librairie n'est pas faite pour s'authentifier et stock
 ##### 2.3 Mise en place d'un système de routing
 Nous allons maintenant nous occuper du routing. En effet nous n'avons pour l'instant aucun moyen d'afficher le contenu qui se trouve dans les fichiers html de nos composants. Pour configurer le routing de votre application, c'est très simple. Nous allons créer un fichier app.routing.ts à la racine de notre application et indiquer les trois routes de nos composants principaux ainsi que la route de redirection au cas où nous entrions une url qui ne correspond à aucune route :
 
-<pre class="lang:default decode:true">// app.routing.ts
+<pre class="lang:default decode:true">
+{% raw %}
+// app.routing.ts
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomepageComponent } from './homepage/homepage.component';
@@ -471,11 +581,15 @@ const APP_ROUTES: Routes = [
     { path: '**', redirectTo: '' }
 ];
 
-export const Routing = RouterModule.forRoot(APP_ROUTES);</pre>
+export const Routing = RouterModule.forRoot(APP_ROUTES);{% endraw %}
+</pre>
+
 ##### 2.4 Protéger les routes authentifiées avec AuthGuard
 Pour finir, nous allons mettre en place un système permettant de protéger nos routes sécurisées via Guard. Créons un dossier "_guard" dans le dossier "app" contenant deux fichiers :
 
-<pre class="lang:default decode:true ">// _guard/auth.guard.ts
+<pre class="lang:default decode:true ">
+{% raw %}
+// _guard/auth.guard.ts
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { CanActivate } from '@angular/router';
@@ -495,9 +609,15 @@ export class AuthGuard implements CanActivate {
             return false;
         }
     }
-}</pre>
-<pre class="lang:default decode:true ">// _guard/index.ts
-export * from './auth.guard';</pre>
+}{% endraw %}
+</pre>
+
+<pre class="lang:default decode:true ">
+{% raw %}
+// _guard/index.ts
+export * from './auth.guard';{% endraw %}
+</pre>
+
 Nous importerons le fichier index.ts dans notre fichier app.module.ts et nous déclarerons AuthGuard en tant que provider puis nous l'importerons également dans notre fichier app.routing.ts pour protéger notre route "post" via la propriété "canActivate".
 
 ##### 2.5 Authentifier ses requêtes avec Angular2-jwt
@@ -509,10 +629,16 @@ Le deuxième avantage de cette librairie est qu'elle va automatiquement vérifie
 
 Installons angular2-jwt via npm à la racine du projet en lançant cette commande :
 
-<pre class="lang:default decode:true">npm install angular2-jwt</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+npm install angular2-jwt{% endraw %}
+</pre>
+
 Maintenant que nous avons structuré notre application, il nous faut mettre à jour notre composant "app" ainsi que notre fichier app.module.ts avec les imports nécessaires :
 
-<pre class="lang:default decode:true">// app.component.ts
+<pre class="lang:default decode:true">
+{% raw %}
+// app.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -535,13 +661,17 @@ export class AppComponent {
              this.router.navigate(['home']);
     }
 }
+{% endraw %}
 </pre>
+
 <ul>
 <li>app.component.html</li>
 </ul>
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.51.44.png" target="_blank"><img class="alignnone wp-image-3584" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.51.44-300x145.png" alt="" width="794" height="384" /></a>
 
-<pre class="lang:default decode:true">// app.component.ts
+<pre class="lang:default decode:true">
+{% raw %}
+// app.component.ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -587,7 +717,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
      ],
      bootstrap: [AppComponent]
 })
-export class AppModule { }</pre>
+export class AppModule { }{% endraw %}
+</pre>
+
 <em>Note : J'ai délibérément inclus la factory authHttpServiceFactory directement dans ce fichier contrairement à ce que dit la documentation car il y a un bug connu de la team Angular2-jwt lors de la compilation </em><em>qui peut être résolu de cette manière :)</em>
 
 Enfin, pour finaliser notre application, il ne reste plus qu'à lui appliquer un peu de style :
@@ -597,7 +729,9 @@ Enfin, pour finaliser notre application, il ne reste plus qu'à lui appliquer u
 </ul>
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.52.07.png" target="_blank"><img class="alignnone wp-image-3585" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.52.07-300x138.png" alt="" width="922" height="424" /></a>
 
-<pre class="lang:default decode:true">// style.css
+<pre class="lang:default decode:true">
+{% raw %}
+// style.css
 /* You can add global styles to this file, and also import other style files */
 body {
     padding-top: 50px;
@@ -610,7 +744,9 @@ body {
 
 .logo {
     margin: 5px;
-}</pre>
+}{% endraw %}
+</pre>
+
 Et voilà le travail !
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-01.58.49.png" target="_blank"><img class="alignnone wp-image-3559" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-01.58.49-300x165.png" alt="" width="924" height="508" /></a>
@@ -624,4 +760,4 @@ Pour conclure, je dirais que cette expérience s'est avérée très enrichissant
 
 &nbsp;
 
-{% endraw %}
+

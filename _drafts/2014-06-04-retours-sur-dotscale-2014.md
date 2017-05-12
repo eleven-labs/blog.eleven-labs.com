@@ -9,7 +9,7 @@ categories:
 tags:
 - dotScale
 ---
-{% raw %}
+
 Le lundi 19 mai je suis allée à dotScale, conférence technique qui parle de scalabilité, DevOps et systèmes distribués.
 
 Pour commencer, je voudrais noter que l'endroit choisi par les organisateurs était très sympathique et inhabituel : le théâtre de Paris ! C'est très beau et le son circule bien. Il faut dire qu'il fallait de la place pour 700 spectateurs. Bravo au passage pour toute l'organisation très bien réussie (accueil, nourriture, etc.).
@@ -28,4 +28,4 @@ Enfin, <strong>Paul Mockapetris</strong>, l'inventeur du DNS, s’interroge su
 
 Toutes les vidéos seront disponibles <a title="Chaîne youtube dotConferences" href="https://www.youtube.com/user/dotconferences" target="_blank">ici</a> rapidement.
 
-{% endraw %}
+

@@ -10,7 +10,7 @@ tags:
 - microdata
 - bdd
 ---
-{% raw %}
+
 A l’heure où tout le monde ne parle que de Big data, je vais tenter de vous présenter les microdata.
 
 Ces derniers temps, beaucoup de nouveautés sont apparues pour les intégrateurs web du monde entier tels les microformats, microdata (ou microdonnées en français) ou encore de nouvelles balises sémantiques.
@@ -43,15 +43,21 @@ Nous allons voir un premier exemple que vous avez probablement rencontré dans l
 
 Voici une version HTML de l’exemple ci-dessus :
 
-<pre class="lang:default decode:true">&lt;div&gt;
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;div&gt;
     &lt;h1&gt;Restaurant Chez Clément Elysées à Paris 8ème : Arc de ...&lt;/h1&gt;
 	Note : 7,8/10 - 171 votes
     &lt;p&gt;Restaurant Chez Clément Elysées à Paris : Réservez gratuitement…&lt;/p&gt;
     {...}
-&lt;/div&gt;</pre>
+&lt;/div&gt;{% endraw %}
+</pre>
+
 Voici ce que cela peut donner avec les microdata :
 
-<pre class="lang:default decode:true">&lt;div itemscope itemtype=”http://schema.org/Restaurant”&gt;
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;div itemscope itemtype=”http://schema.org/Restaurant”&gt;
     &lt;h1&gt;Restaurant Chez Clément Elysées à Paris 8ème : Arc de ...&lt;/h1&gt;
 	Note :
     &lt;span itemprop=”aggregateRating” itemscope itemtype=”http://schema.org/AggregateRating”&gt;
@@ -63,7 +69,9 @@ Voici ce que cela peut donner avec les microdata :
 
     {...}
 &lt;/div&gt;
+{% endraw %}
 </pre>
+
 Maintenant, nous allons voir un exemple d’une notation simple pour une société.
 
 Eleven Labs<br />
@@ -73,14 +81,18 @@ contact@eleven-labs.com
 
 La version HTML avec les microdata :
 
-<pre class="lang:default decode:true">&lt;div itemscope itemtype=”http://schema.org/Corporation”&gt;
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;div itemscope itemtype=”http://schema.org/Corporation”&gt;
     &lt;span itemprop=”name”&gt;Eleven Labs&lt;/span&gt;
     &lt;span itemprop=”streetAddress”&gt;81 rue de Courcelles&lt;/span&gt;
     &lt;span itemprop=”postalCode”&gt;75017&lt;/span&gt;
     &lt;span itemprop=”adressLocality”&gt;Paris&lt;/span&gt;
     &lt;span itemprop=”telephone”&gt;+33 1 82 83 11 75&lt;/span&gt;
     &lt;span itemprop=”email”&gt;contact@eleven-labs.com&lt;/span&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;{% endraw %}
+</pre>
+
 Ci-dessous un exemple d'une notation imbriquée pour un événement.
 
 Wilson Coding Battlespace<br />
@@ -89,7 +101,9 @@ La 1ère édition aura lieu le jeudi 26 mars 2015 dans les locaux de Eleven Labs
 
 La version HTML avec les microdata :
 
-<pre class="lang:default decode:true">&lt;article itemscope itemtype=”http://schema.org/Event”&gt;
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;article itemscope itemtype=”http://schema.org/Event”&gt;
     &lt;h1 itemprop=”name”&gt;Wilson Coding Battlespace&lt;/h1&gt;
     &lt;p itemprop=”description”&gt;Bataille de code entre les 4 planètes.&lt;/p&gt;
     &lt;p&gt;La 1ère édition aura lieu le jeudi
@@ -104,12 +118,16 @@ dans les locaux de
 	&lt;/span&gt;
         &lt;!-- Fin de l’imbrication --&gt;
     &lt;/p&gt;
-&lt;/article&gt;</pre>
+&lt;/article&gt;{% endraw %}
+</pre>
+
 Voici un exemple d’offre d’emploi issu du site <a href="http://www.eleven-labs.com">eleven-labs.com</a> :
 
 Version HTML
 
-<pre class="lang:default decode:true">&lt;div&gt;
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;div&gt;
     &lt;h1&gt;Développeur Front-End&lt;/h2&gt;
     &lt;h2&gt;LE POSTE&lt;/h2&gt;
     &lt;p&gt;Tu es passionné de l'Open Source, monstre sur HTML5 et CSS3, torpille au babyfoot et pro du Scrum ? Tu aimes partager tes connaissances et tu es toujours prêt à tester des nouvelles technos ?&lt;/p&gt;
@@ -129,10 +147,14 @@ Version HTML
         &lt;li&gt;Familier avec les standards du web (W3C, accessibilité)&lt;/li&gt;
     &lt;/ul&gt;
     &lt;p&gt;Tu penses pouvoir relever le défi ? Entre dans la station Eleven Labs!&lt;/p&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;{% endraw %}
+</pre>
+
 Voici la version avec les microdata :
 
-<pre class="lang:default decode:true">&lt;div itemscope itemtype=”http://schema.org/JobPosting”&gt;
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;div itemscope itemtype=”http://schema.org/JobPosting”&gt;
     &lt;h1 itemprop=”title”&gt;Développeur Front-End&lt;/h2&gt;
     &lt;h2&gt;LE POSTE&lt;/h2&gt;
     &lt;p itemprop=”description”&gt;Tu es passionné de l'Open Source, monstre sur HTML5 et CSS3, torpille au babyfoot et pro du Scrum ? Tu aimes partager tes connaissances et tu es toujours prêt à tester des nouvelles technos ?&lt;/p&gt;
@@ -152,7 +174,9 @@ Voici la version avec les microdata :
         &lt;li&gt;Familier avec les standards du web (W3C, accessibilité)&lt;/li&gt;
     &lt;/ul&gt;
     &lt;p&gt;Tu penses pouvoir relever le défi ? Entre dans la station Eleven Labs!&lt;/p&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;{% endraw %}
+</pre>
+
 En fait tout se joue au niveau du vocabulaire utilisé car plus il est précis et plus vous pourrez donner du sens à votre contenu. Schema.org propose une arborescence et présente une hiérarchie assez profonde qui touche à des domaines très variés. Le principe est simple : plus vous descendez dans l'arborescence, plus le vocabulaire se précisera.
 
 ## En conclusion
@@ -170,4 +194,4 @@ https://developers.google.com/structured-data/testing-tool/<br />
 
 Google propose également un <a href="http://www.google.com/webmasters/tools/richsnippets">outil d'analyse</a> de vos pages à la recherche qui détecte le schéma utilisé et vous fait un rapport sur les données trouvées, leur formatage ainsi que les éventuelles erreurs rencontrées.
 
-{% endraw %}
+

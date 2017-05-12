@@ -11,7 +11,7 @@ tags:
 - web
 - cloud
 ---
-{% raw %}
+
 Si vous avez suivi les deux premiers articles sur Google Cloud Platform, vous êtes capable de mettre en production un site rapidement et êtes capable de scaler automatiquement selon le trafic. Mais tout cela n'est possible qu'avec les éléments pré-installés de Google Cloud Platform. Comment créer sa propre configuration ? Réinstaller un serveur facilement ? Scaler automatiquement ?
 
 <!--more-->
@@ -51,9 +51,13 @@ Cliquez sur SSH pour ouvrir la connexion à la machine.
 
 Une fois connecté, nous allons installer apache. Pour cela il vous suffit de lancer les commandes suivantes :
 
-<pre class="lang:sh decode:true " title="Installation d'apache">sudo apt-get update;
+<pre class="lang:sh decode:true " title="Installation d'apache">
+{% raw %}
+sudo apt-get update;
 sudo apt-get install apache2;
-sudo /etc/init.d/apache2 restart;</pre>
+sudo /etc/init.d/apache2 restart;{% endraw %}
+</pre>
+
 Une fois terminé, si vous cliquez sur l'IP externe fournie dans l'interface "Instance de VM", vous devriez voir la page apache par défaut.
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.25.36.png"><img class="aligncenter size-large wp-image-2749" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.25.36-1024x230.png" alt="Apache - Google Cloud Platform" width="1024" height="230" /></a>
@@ -180,4 +184,4 @@ Si vous allez dans le dashboard vous devez ne plus voir de machine "compute engi
 
 &nbsp;
 
-{% endraw %}
+

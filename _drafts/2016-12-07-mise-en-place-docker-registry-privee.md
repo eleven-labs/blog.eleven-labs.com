@@ -8,7 +8,7 @@ categories:
 - Dev Ops
 tags: []
 ---
-{% raw %}
+
 Dans cet article, nous allons détailler, étape par étape, la mise en place d'une Docker Registry.
 
 Une Docker Registry est une application qui permet de distribuer des images Docker au sein de votre organisation.
@@ -47,27 +47,41 @@ Pour ce guide, je vais utiliser une instance <a href="https://www.ovh.com/fr/clo
 <h4 id="configuration-du-serveur">Configuration du serveur
 Partons d'une distribution récente, une Ubuntu 16.04 qui a le bon goût d'avoir dans ces dépôts une version de Docker à jour :
 
-<pre class="bash"><code># Installation de Docker
+<pre class="bash">
+{% raw %}
+<code># Installation de Docker
 sudo apt-get update &amp;&amp; sudo apt-get install docker.io curl
 
 # Ajoute l'utilisateur courant au groupe docker (si différent de root)
-sudo usermod -a -G docker $(id -un)</code></pre>
+sudo usermod -a -G docker $(id -un)</code>{% endraw %}
+</pre>
+
 On se déconnecte du serveur, puis on se reconnecte pour initialiser Docker Swarm mode.
 
-<pre class="bash"><code># Initialise Docker Swarm Mode
-docker swarm init</code></pre>
+<pre class="bash">
+{% raw %}
+<code># Initialise Docker Swarm Mode
+docker swarm init</code>{% endraw %}
+</pre>
+
 <h4 id="installation-de-traefik">Installation de Traefik
 Traefik va nous permettre d'associer un domaine au conteneur dans lequel tournera la registry. Le gros avantage, c'est qu'il permet d'obtenir automatiquement un certificat TLS délivré par <a href="https://letsencrypt.org/">Let's Encrypt</a>.
 
-<pre class="bash"><code># Créer un réseau traefik
+<pre class="bash">
+{% raw %}
+<code># Créer un réseau traefik
 docker network create --driver overlay traefik
 
 # Création d'un répertoire où seront stockés nos certificats
-sudo mkdir -p /opt/traefik</code></pre>
+sudo mkdir -p /opt/traefik</code>{% endraw %}
+</pre>
+
 On va maintenant créer la définition de notre service Traefik.<br />
 Créez un fichier à l'adresse <strong>$HOME/traefik.json</strong> dans lequel vous ajoutez :
 
-<pre class="json"><code>{
+<pre class="json">
+{% raw %}
+<code>{
     "Name": "traefik",
     "TaskTemplate": {
         "ContainerSpec": {
@@ -145,12 +159,18 @@ Créez un fichier à l'adresse <strong>$HOME/traefik.json</strong> dans lequel 
             }
         ]
     }
-}</code></pre>
+}</code>{% endraw %}
+</pre>
+
 <blockquote><strong>Important</strong>: Remplacez <strong>[email]</strong> par une adresse mail valide sans quoi, Let's Encrypt ne vous délivrera pas de certificat.
 </blockquote>
 Il ne nous reste plus qu'à lancer le service en utilisant l'API Docker :
 
-<pre class="bash"><code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/traefik.json</code></pre>
+<pre class="bash">
+{% raw %}
+<code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/traefik.json</code>{% endraw %}
+</pre>
+
 Contrôlez que le service tourne en tapant <strong>docker service ls</strong>. Au bout d'un certain temps, vous allez voir <strong>1/1</strong> s'afficher en face du service <strong>traefik</strong>.
 
 <blockquote><strong>Astuce </strong>: Utilisez la commande <strong>watch</strong> pour exécuter la commande périodiquement par intervalles de 1 seconde :<br />
@@ -190,17 +210,23 @@ Cette application en GO prend en charge plusieurs backends. Vous avez au choix l
 
 L'authentification des utilisateurs se fait par jeton <a href="https://jwt.io/">JWT</a>. La registry Docker, de son coté, attend que ces jetons soient signés par un certificat. Commençons par le générer :
 
-<pre class="bash"><code># Préparation des répertoires nécessaires à docker auth
+<pre class="bash">
+{% raw %}
+<code># Préparation des répertoires nécessaires à docker auth
 sudo mkdir -p /opt/docker-auth/{logs,config,certs}
 
 # Génération du certificat
 cd /opt/docker-auth/certs
-sudo openssl req -x509 -newkey rsa:2048 -new -nodes -keyout privkey.pem -out fullchain.pem -subj "/C=FR/ST=Paris/L=Paris/O=ACME/OU=IT Department/CN=[domain.tld]"</code></pre>
+sudo openssl req -x509 -newkey rsa:2048 -new -nodes -keyout privkey.pem -out fullchain.pem -subj "/C=FR/ST=Paris/L=Paris/O=ACME/OU=IT Department/CN=[domain.tld]"</code>{% endraw %}
+</pre>
+
 <blockquote><strong>Note </strong>: Remplacez <strong>[domain.tld]</strong> par votre nom de domaine
 </blockquote>
 On crée un fichier de configuration contenant nos utilisateurs et nos règles d'accès dans <strong>/opt/docker-auth/config/auth_config.yml</strong>
 
-<pre class="yml"><code>server:
+<pre class="yml">
+{% raw %}
+<code>server:
   addr: ":5001"
 
 token:
@@ -232,10 +258,14 @@ acl:
 
   - match: {account: ""}
     actions: ["pull"]
-    comment: "Les utilisateurs anonymes peuvent tirer n'importe quelle image"</code></pre>
+    comment: "Les utilisateurs anonymes peuvent tirer n'importe quelle image"</code>{% endraw %}
+</pre>
+
 Créons enfin un fichier à l'adresse <strong>$HOME/docker-auth.json</strong>:
 
-<pre class="json"><code>{
+<pre class="json">
+{% raw %}
+<code>{
     "Name": "docker-auth",
     "Labels": {
         "traefik.docker.network": "traefik",
@@ -294,12 +324,18 @@ Créons enfin un fichier à l'adresse <strong>$HOME/docker-auth.json</strong>:
     "EndpointSpec": {
         "Mode": "vip"
     }
-}</code></pre>
+}</code>{% endraw %}
+</pre>
+
 <blockquote><strong>Important </strong>: Remplacez <strong>[token.domain.tld]</strong> par le sous-domaine que vous avez créé précédemment pour le serveur d'authentification
 </blockquote>
 On lance le service :
 
-<pre class="bash"><code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/docker-auth.json</code></pre>
+<pre class="bash">
+{% raw %}
+<code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/docker-auth.json</code>{% endraw %}
+</pre>
+
 Et on vérifie que le service <strong>docker-auth</strong> est bien lancé en utilisant la commande <strong>docker service ls</strong>.
 
 <h4 id="mise-en-place-de-la-registry">Mise en place de la registry
@@ -307,10 +343,16 @@ Il ne nous reste plus qu'à mettre en place la registry.
 
 Créons des répertoires qui contiendront nos images docker :
 
-<pre class="bash"><code>sudo mkdir -p /opt/registry</code></pre>
+<pre class="bash">
+{% raw %}
+<code>sudo mkdir -p /opt/registry</code>{% endraw %}
+</pre>
+
 Puis on finit avec un fichier que l'on crée à l'adresse <strong>$HOME/registry.json </strong>:
 
-<pre class="json"><code>{
+<pre class="json">
+{% raw %}
+<code>{
     "Name": "docker-registry",
     "Labels": {
         "traefik.docker.network": "traefik",
@@ -366,12 +408,18 @@ Puis on finit avec un fichier que l'on crée à l'adresse <strong>$HOME/registr
     "EndpointSpec": {
         "Mode": "vip"
     }
-}</code></pre>
+}</code>{% endraw %}
+</pre>
+
 <blockquote><strong>Important </strong>: Remplacez <strong>[registry.domain.tld]</strong> par le sous-domaine que vous avez créé précédemment pour la registry et <strong>[token.domain.tld]</strong> par celui dédié au serveur d'authentification.
 </blockquote>
 On lance la registry :
 
-<pre class="bash"><code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/registry.json</code></pre>
+<pre class="bash">
+{% raw %}
+<code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/registry.json</code>{% endraw %}
+</pre>
+
 Et on vérifie que le service <strong>docker-registry</strong> est bien lancé en utilisant la commande <strong>docker service ls</strong>.
 
 <h4 id="tests">Tests
@@ -387,22 +435,34 @@ Maintenant, <strong>sur votre poste local</strong> (sur lequel vous avez install
 
 <blockquote><strong>Note </strong>: Pensez toujours à remplacer <strong>[registry.domain.tld]</strong> par le sous-domaine choisi précédemment.
 </blockquote>
-<pre class="bash"><code>docker login registry.domain.tld
+<pre class="bash">
+{% raw %}
+<code>docker login registry.domain.tld
 Username: # saisir l'identifiant admin
 Password: # saisir badmin
-Login Succeeded</code></pre>
+Login Succeeded</code>{% endraw %}
+</pre>
+
 Récupérons une image lambda sur DockerHub, tagguons-la, puis envoyons-la sur notre registry.
 
-<pre><code>docker pull alpine
+<pre>
+{% raw %}
+<code>docker pull alpine
 docker tag alpine registry.domain.tld/alpine
-docker push registry.domain.tld/alpine</code></pre>
+docker push registry.domain.tld/alpine</code>{% endraw %}
+</pre>
+
 <blockquote><strong>Note </strong>: Remplacez toujours et encore le fameux <strong>[registry.domain.tld]</strong>
 </blockquote>
 Si tout se déroule comme prévu, vous voyez alors quelque chose de proche de :
 
-<pre class="bash"><code>The push refers to a repository [registry.domain.tld/alpine]
+<pre class="bash">
+{% raw %}
+<code>The push refers to a repository [registry.domain.tld/alpine]
 011b303988d2: Pushed
-latest: digest: sha256:1354db23ff5478120c980eca1611a51c9f2b88b61f24283ee8200bf9a54f2e5c size: 528</code></pre>
+latest: digest: sha256:1354db23ff5478120c980eca1611a51c9f2b88b61f24283ee8200bf9a54f2e5c size: 528</code>{% endraw %}
+</pre>
+
 Si c'est le cas, félicitations, vous avez une registry docker à dispo !
 
 <h2 id="au-prochain-numero">Au prochain numéro…
@@ -410,4 +470,4 @@ Nous verrons comment utiliser <strong>docker-compose</strong> pour lancer un env
 
 À la prochaine!
 
-{% endraw %}
+

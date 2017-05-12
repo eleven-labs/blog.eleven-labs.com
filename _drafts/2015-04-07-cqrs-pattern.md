@@ -10,7 +10,7 @@ tags:
 - cqrs
 - architecture
 ---
-{% raw %}
+
 CQRS, qui signifie <i>Command</i> <i>Query Responsibility Segregation</i>, est issu du CQS (<em>Command Query Separation</em>) introduit par Bertrand Meyer dans son ouvrage <em>Object Oriented Software Construction</em>. Meyer soumet le principe que les classes d'une méthode doivent être soit des <em>queries </em>soit des <em>commands</em>.
 
 La différence entre le CQS et le CQRS résulte dans le fait que chaque object CQRS est divisé en deux objets : un pour la requête et un pour la commande.
@@ -86,4 +86,4 @@ L'<em>event sourcing </em>complète le <em>pattern </em>CQRS en sauvegardant l
 <span id="eow-title" class="watch-title " dir="ltr" title="Greg Young - CQRS and Event Sourcing - Code on the Beach 2014"><span style="text-decoration: underline;"><a href="https://www.youtube.com/watch?v=JHGkaShoyNs" target="_blank">CQRS and Event Sourcing - Code on the Beach 2014</a></span>, <em>Greg Young</em></span>
 
 </div>
-{% endraw %}
+

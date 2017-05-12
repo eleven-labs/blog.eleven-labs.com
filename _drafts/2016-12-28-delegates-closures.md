@@ -13,7 +13,7 @@ tags:
 - block
 - closure
 ---
-{% raw %}
+
 #### Introduction
 Salut les Astronautes, aujourd'hui on va parler un peu de mobile, et qui plus est de NATIF !!!
 
@@ -66,25 +66,35 @@ onRequestFailure
 
 Notre protocol va ressembler à ça :
 
-<pre class="lang:Objective-C decode:true">@protocol RequesterDelegateObjc
+<pre class="lang:Objective-C decode:true">
+{% raw %}
+@protocol RequesterDelegateObjc
 
 - (void)onRequestSuccess;
 - (void)onRequestFailure;
 
 @end
 
+{% endraw %}
 </pre>
+
 On va l'hériter dans le ficher .h
 
-<pre class="lang:Objective-C decode:true ">@interface MyClassObjC : UIViewController &lt;RequesterDelegateObjc&gt;
+<pre class="lang:Objective-C decode:true ">
+{% raw %}
+@interface MyClassObjC : UIViewController &lt;RequesterDelegateObjc&gt;
 
 
 @end
 
+{% endraw %}
 </pre>
+
 Puis on va implémenter les méthodes dans notre classe de cette manière :
 
-<pre class="lang:Objective-C decode:true">#import "MyClass.h"
+<pre class="lang:Objective-C decode:true">
+{% raw %}
+#import "MyClass.h"
 
 @implementation MyClassObjC
 
@@ -98,19 +108,27 @@ Puis on va implémenter les méthodes dans notre classe de cette manière :
 
 @end
 
+{% endraw %}
 </pre>
+
 -Swift
 
 Le delegate
 
-<pre class="lang:Swift decode:true">protocol RequesterDelegateSwift {
+<pre class="lang:Swift decode:true">
+{% raw %}
+protocol RequesterDelegateSwift {
     func onRequestFailure()
     func onRequestSuccess()
 }
+{% endraw %}
 </pre>
+
 L'implémentation dans notre classe
 
-<pre class="lang:Swift decode:true">class MyClassSwift: UIViewController, RequesterDelegateSwift {
+<pre class="lang:Swift decode:true">
+{% raw %}
+class MyClassSwift: UIViewController, RequesterDelegateSwift {
 
     func onRequestFailure() {
 
@@ -120,12 +138,16 @@ L'implémentation dans notre classe
     }
 }
 
+{% endraw %}
 </pre>
+
 On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui implémente 2 méthodes (onRequestSuccess, onRequestFailure). On va faire une dummy implementation pour vous donner une idée de comment ça fonctionne :
 
 -Objective-C
 
-<pre class="lang:Objective-C decode:true">#import "MyClass.h"
+<pre class="lang:Objective-C decode:true">
+{% raw %}
+#import "MyClass.h"
 #import "RequestManager.h"
 
 @implementation MyClassObjC
@@ -145,8 +167,12 @@ On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui i
 }
 
 @end
+{% endraw %}
 </pre>
-<pre class="lang:Objective-C decode:true">@interface RequestManager : NSObject
+
+<pre class="lang:Objective-C decode:true">
+{% raw %}
+@interface RequestManager : NSObject
 {
 
 }
@@ -155,8 +181,12 @@ On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui i
 
 - (void)get:(NSString*)url;
 
+{% endraw %}
 </pre>
-<pre class="lang:Objective-C decode:true">#import "RequestManager.h"
+
+<pre class="lang:Objective-C decode:true">
+{% raw %}
+#import "RequestManager.h"
 
 @implementation RequestManager
 
@@ -178,10 +208,14 @@ On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui i
 
 @end
 
+{% endraw %}
 </pre>
+
 -Swift
 
-<pre class="lang:Swift decode:true">class MyClassSwift: UIViewController, RequesterDelegateSwift {
+<pre class="lang:Swift decode:true">
+{% raw %}
+class MyClassSwift: UIViewController, RequesterDelegateSwift {
 
     func callWebService() {
         let manager: RequestManager = RequestManager()
@@ -197,8 +231,12 @@ On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui i
     }
 }
 
+{% endraw %}
 </pre>
-<pre class="lang:Swift decode:true">class RequestManager {
+
+<pre class="lang:Swift decode:true">
+{% raw %}
+class RequestManager {
 
     var delegate: RequesterDelegateSwift?
 
@@ -220,7 +258,9 @@ On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui i
     }
 }
 
+{% endraw %}
 </pre>
+
 Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans la méthode onRequestSuccess.
 
 <strong>Mais pourquoi faire tout ça?</strong>
@@ -256,7 +296,9 @@ On va rajouter une méthode dans chaque classe qui va nous permettre d'utiliser 
 
 -Objective-C
 
-<pre class="lang:Objective-C decode:true">typedef void (^successBlock)();
+<pre class="lang:Objective-C decode:true">
+{% raw %}
+typedef void (^successBlock)();
 typedef void (^failureBlock)();
 
 - (void)callWebServiceWithBlocks {
@@ -271,8 +313,12 @@ Block failure = ^void() {
     };
     [manager get:@"http://plop.fr/json" success:success failure:failure];
 }
+{% endraw %}
 </pre>
-<pre class="lang:Objective-C decode:true">- (void)get:(NSString *)url success:(successBlock)successBlock failure:(failureBlock)failureBlock {
+
+<pre class="lang:Objective-C decode:true">
+{% raw %}
+- (void)get:(NSString *)url success:(successBlock)successBlock failure:(failureBlock)failureBlock {
     //Do the call
     BOOL requestSucceed = [self isSuccess];
 
@@ -283,10 +329,14 @@ Block failure = ^void() {
         failureBlock();
     }
 }
+{% endraw %}
 </pre>
+
 - Swift
 
-<pre class="lang:Swift decode:true">func callWebServiceWithClosure() {
+<pre class="lang:Swift decode:true">
+{% raw %}
+func callWebServiceWithClosure() {
     let manager: RequestManager = RequestManager()
 
     let success: () -&gt; Void = {
@@ -299,8 +349,12 @@ Block failure = ^void() {
 
     manager.get(url: "http://plop.fr/json", successClosure: success, failureClosure: failure)
 }
+{% endraw %}
 </pre>
-<pre class="lang:Swift decode:true">func get(url: String, successClosure: () -&gt; Void, failureClosure: () -&gt; Void) {
+
+<pre class="lang:Swift decode:true">
+{% raw %}
+func get(url: String, successClosure: () -&gt; Void, failureClosure: () -&gt; Void) {
     //Do the call
     let requestSucceed: Bool = self.isSuccess()
 
@@ -311,7 +365,9 @@ Block failure = ^void() {
        failureClosure()
     }
 }
+{% endraw %}
 </pre>
+
 Du coup, comme avant, on a juste à appeler la méthode callWebServiceWithClosure et on a une callback de retour pour le succès et une pour l'erreur. Vous me allez me demander, quel est l'avantage ? Tout simplement, de base vous n'êtes plus obligé d'hériter d'une interface, ça ne parait pas, mais comme ça, au bout d'un moment, c'est plus simple.
 
 Pour la compréhension aussi, c'est plus clair/facile, on voit directement les traitements qui sont fait juste au dessus du call, plutôt que de devoir chercher dans le code pour trouver où le retour est géré. Et comme dit plus haut, si vous avez plusieurs Webservices à appeler, vous êtes capable de bien isoler le code à chaque fois.
@@ -322,4 +378,4 @@ Mais du coup, ce serait pas cool de pouvoir combiner les deux, Delegates avec bl
 
 Allez, salut les astronautes :)
 
-{% endraw %}
+

@@ -8,7 +8,7 @@ categories:
 - Mobile
 tags: []
 ---
-{% raw %}
+
 <span style="font-weight: 400;">Je voulais partager avec vous un retour d’expérience sur ma première application IOS. Personnellement, j’apprécie ce genre d’article car je peux facilement m’identifier à celui-ci.</span>
 
 ### **Intro**
@@ -70,7 +70,9 @@ tags: []
 </ol>
 <span style="font-weight: 400;">Pour ajouter les deux librairies, il vous suffit de créer un fichier Podfile à la racine de votre projet et d’ajouter ces petites lignes :</span>
 
-<pre class="lang:sh decode:true"># Podfile
+<pre class="lang:sh decode:true">
+{% raw %}
+# Podfile
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 platform :ios, '10.0'
@@ -81,17 +83,25 @@ target 'GeniusApp' do
   # Pods for GeniusApp
   pod 'Alamofire', '~&gt; 4.0'
   pod 'AlamofireImage', '~&gt; 3.1'
-end</pre>
+end{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">Puis de faire un :</span>
 
-<pre class="lang:sh decode:true ">$ pod install</pre>
+<pre class="lang:sh decode:true ">
+{% raw %}
+$ pod install{% endraw %}
+</pre>
+
 **Model :**
 
 <span style="font-weight: 400;">Au lieu d'avoir tout mon code métier dans mes controllers (pas bien ça !!), j’ai décidé de mettre un peu de logique dans des model afin d’isoler mon code pour notamment le tester plus facilement... </span>
 
 <em>Exemple :</em>
 
-<pre class="lang:swift decode:true">// Model/Party.swift
+<pre class="lang:swift decode:true">
+{% raw %}
+// Model/Party.swift
 import Foundation
 
 class Party {
@@ -129,7 +139,9 @@ class Party {
         self.score = BASE_SCORE
     }
 }
+{% endraw %}
 </pre>
+
 <strong>ViewController </strong>**:**
 
 <span style="font-weight: 400;">Au lieu de vous montrer en détail mes ViewControllers, je vais vous parler de quelques parties que je trouve intéressantes.</span>
@@ -146,13 +158,19 @@ class Party {
 
 <span style="font-weight: 400;">Je souhaite que lorsque mon utilisateur clique sur ma cellule cela déclenche l’activation de mon clavier.</span>
 
-<pre class="lang:swift decode:true">// Controller/ViewController.swift
+<pre class="lang:swift decode:true">
+{% raw %}
+// Controller/ViewController.swift
 let click = UITapGestureRecognizer(target: self, action: #selector(self.showKeyboard))
 
-cell.addGestureRecognizer(click)</pre>
+cell.addGestureRecognizer(click){% endraw %}
+</pre>
+
 Dans la méthode showKeyboard(), je fais appel à une autre méthode addDoneButtonOnKeyboard() qui permet d’ajouter un bouton "Envoyer" sur le clavier.
 
-<pre class="lang:swift decode:true">// Controller/ViewController.swift
+<pre class="lang:swift decode:true">
+{% raw %}
+// Controller/ViewController.swift
 // let doneToolbar: UIToolbar = UIToolbar()
 func addDoneButtonOnKeyboard() {
     doneToolbar.barStyle = UIBarStyle.default
@@ -166,21 +184,29 @@ func addDoneButtonOnKeyboard() {
 
     doneToolbar.items = items
     doneToolbar.sizeToFit()
- }</pre>
+ }{% endraw %}
+</pre>
+
 <span style="font-weight: 400;">J’ai d'abord initialisé une constante de type UIToolbar pour pouvoir y accéder à un autre moment dans le code. </span><span style="font-weight: 400;">Une fois la Toolbar initialisée, je souhaite lui ajouter le bouton "Envoyer" (UIBarButtonItem). </span>
 
 <span style="font-weight: 400;">Cependant, il faudrait que celui-ci se situe tout à droite de la Toolbar car par défaut il se place tout à gauche. Pour y remédier, j’ai donc créé un bouton flexSpace qui ne fait rien mais qui va cependant permettre d’avoir le bouton à droite. Je n’ai plus qu'à ajouter lesdits boutons à ma Toolbar. </span>
 
 <span style="font-weight: 400;">Attention : il ne faut pas oublier aussi d'ajouter la Toolbar au clavier via : </span>
 
-<pre class="lang:swift decode:true">// Controller/ViewController.swift
+<pre class="lang:swift decode:true">
+{% raw %}
+// Controller/ViewController.swift
 {UITextField}.inputAccessoryView = doneToolbar
+{% endraw %}
 </pre>
+
 <span style="font-weight: 400;">La propriété inputAccessoryView est utilisée pour attacher une vue accessoire (ici, notre UIToolbar) au clavier qui est présentée par UITextField.</span>
 
 Pour résoudre le deuxième "problème", je vous avoue que j'ai opté pour la solution la plus simple mais qui marche parfaitement bien. J'ai donc créé deux méthodes qui me permettent de faire un "scroll" sur ma vue.
 
-<pre class="lang:swift decode:true">// Controller/ViewController.swift
+<pre class="lang:swift decode:true">
+{% raw %}
+// Controller/ViewController.swift
 if self.view.frame.origin.y &lt; 0.0 {
     if UIScreen.main.bounds.size.height &lt; 600 {
         self.view.frame.origin.y += 285
@@ -200,14 +226,18 @@ if self.view.frame.origin.y &gt;= 0.0 {
     }
 
     self.view.frame.origin.y -= 180
-}</pre>
+}{% endraw %}
+</pre>
+
 J'ai dû rajouter un petit "hack" car sur l'Iphone 5 il me faut un plus grand scroll. C'est une des parties de mon code qui je pense demande une refacto (si vous avez des suggestions je suis bien évidemment preneur).
 
 <strong>Extension:</strong>
 
 Une des choses qui me plait le plus en Swift, ce sont les extensions ! J'ai donc pensé à en faire une pour la partie téléchargement d'une image depuis une url.
 
-<pre class="lang:swift decode:true ">// Extensions/UIImageViewExtension.swift
+<pre class="lang:swift decode:true ">
+{% raw %}
+// Extensions/UIImageViewExtension.swift
 import UIKit
 import Alamofire
 import AlamofireImage
@@ -220,11 +250,17 @@ extension UIImageView {
             }
         }
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Je n'ai plus qu'à appeler celle-ci dans mon ViewController:
 
-<pre class="lang:swift decode:true ">// Controller/ViewController.swift
-cell.image.getUIImageViewByUrl(url: url)</pre>
+<pre class="lang:swift decode:true ">
+{% raw %}
+// Controller/ViewController.swift
+cell.image.getUIImageViewByUrl(url: url){% endraw %}
+</pre>
+
 ### **Conclusion**
 J'ai pris énormément de plaisir à coder cette application (c'est le plus important je pense).
 
@@ -236,4 +272,4 @@ Ce que je retiens de ma toute première application sous IOS, c'est que j'appré
 
 <em>P.S. : Merci aux Pandas pour les relectures</em>
 
-{% endraw %}
+

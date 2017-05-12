@@ -21,7 +21,7 @@ tags:
 - sécurité
 - http
 ---
-{% raw %}
+
 Cette année, Eleven Labs a, pour la troisième fois, sponsorisé le Symfony Live 2016, qui s’est déroulé à la Cité Universitaire. Nous étions présents avec nos brand new Wilson Black Edition, notre borne d’arcade et nos astrobeers.
 
 <a href="http://blog.eleven-labs.com/wp-content/uploads/2016/04/Astrobeer.jpg" rel="attachment wp-att-1709"><br />
@@ -361,4 +361,4 @@ La conférence était un vrai succès et merci à tous les conférenciers pour l
 </blockquote>
 Je vous invite à voir l'ensemble des slides et à poser vos questions en commentaire de ce post.
 
-{% endraw %}
+

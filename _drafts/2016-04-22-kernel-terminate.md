@@ -9,7 +9,7 @@ categories:
 - Php
 tags: []
 ---
-{% raw %}
+
 Symfony 2 c'est plusieurs composants -dont le domaine d'application est spécifique- qui forment les parpaings d'une maison ; pour assembler tout ça, un autre composant existe, à la fois le parpaing et le ciment : l'EventDispatcher. Son rôle est de distribuer des événements qui seront traités par les divers composants.
 
 Il ne s'agit pas dans cet article de revenir sur le fonctionnement de l'EventDispatcher, mais d'expliquer le rôle d'un événement mal connu, l'event "kernel.terminate".
@@ -76,4 +76,4 @@ PHP n'est pas le langage le plus rapide du monde, mais il s'en sort quand même 
 
 N'hésitez pas à faire un retour dans les commentaires, si vous constatez des inexactitudes, des améliorations à apporter, ou simplement si vous avez des questions sur des points un peu obscurs ;)
 
-{% endraw %}
+

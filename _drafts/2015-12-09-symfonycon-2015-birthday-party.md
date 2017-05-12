@@ -16,7 +16,7 @@ tags:
 - symfony con
 - routing
 ---
-{% raw %}
+
 <img class="alignnone" src="http://pariscon2015.symfony.com/bundles/sensiosymfonylive/images/pariscon2015/assets/header.jpg" alt="" width="916" height="289" />
 
 <span style="font-weight: 400;">Pour la troisième édition de la SymfonyCon (conférence internationale sur Symfony), SensioLabs a fait les choses en grand aux Folies Bergère à Paris, la ville natale de Symfony. Les conférences ont eu lieu pendant deux jours en deux tracks.</span>
@@ -86,4 +86,4 @@ L'ambiance était au rendez-vous, les lieux également cependant, petit bémol
 ### Bonus
 https://twitter.com/Eleven_Labs/status/672775123116625920
 
-{% endraw %}
+

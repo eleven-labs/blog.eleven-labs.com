@@ -9,7 +9,7 @@ categories:
 tags:
 - symfony2
 ---
-{% raw %}
+
 <span style="text-align: justify; font-size: 13px;">Lorsque l’on développe un site, en particulier un site à fort trafic, on est forcément amené à se poser la question des ressources consommées par ce dernier afin d’optimiser son temps de réponse. En effet, une page qui met plus de 3-4 secondes à s’afficher rend vite désagréable la navigation et découragera plus d’une personne à venir sur votre site.</span>
 
 <!--more-->
@@ -34,7 +34,9 @@ Sa mise en place dans Symfony est relativement simple.
 
 Il vous faut dans un premier temps modifier votre app_dev.php afin qu’il ressemble à ceci :
 
-<pre class="lang:php mark:28,32 decode:true" title="web/app_dev.php">&lt;?php
+<pre class="lang:php mark:28,32 decode:true" title="web/app_dev.php">
+{% raw %}
+&lt;?php
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Debug\Debug;
@@ -70,7 +72,9 @@ Request::enableHttpMethodParameterOverride();
 $request = Request::createFromGlobals();
 $response = $kernel-&gt;handle($request);
 $response-&gt;send();
-$kernel-&gt;terminate($request, $response);</pre>
+$kernel-&gt;terminate($request, $response);{% endraw %}
+</pre>
+
 Et c’est tout ? Eh ben oui, c’est pas plus compliqué que ça. Rajoutez votre dépendance à AppCache et instanciez là avec en paramètre votre kernel.
 
 ## 
@@ -79,22 +83,32 @@ Maintenant, on va dans un premier temps créer un exemple sans activer le cache.
 
 Pour le routing :
 
-<pre class="lang:yaml decode:true" title="app/config/routing.yml">app/config/routing.yml :
+<pre class="lang:yaml decode:true" title="app/config/routing.yml">
+{% raw %}
+app/config/routing.yml :
     cache:
         resource: "@MyBundle/Resources/config/routing.yml"
-        prefix:   /</pre>
+        prefix:   /{% endraw %}
+</pre>
+
 &nbsp;
 
 MyBundle/Ressources/config/routing.yml :
 
-<pre class="lang:yaml decode:true" title="MyBundle/Resources/views/routing.yml">example:
+<pre class="lang:yaml decode:true" title="MyBundle/Resources/views/routing.yml">
+{% raw %}
+example:
     pattern:  /example
-    defaults: { _controller: MyBundle:Example:cache}</pre>
+    defaults: { _controller: MyBundle:Example:cache}{% endraw %}
+</pre>
+
 &nbsp;
 
 Voici pour le Controller :
 
-<pre class="lang:php decode:true" title="MyBundle/Controller/ExampleController.php">&lt;?php
+<pre class="lang:php decode:true" title="MyBundle/Controller/ExampleController.php">
+{% raw %}
+&lt;?php
 
 namespace MyBundle\Controller;
 
@@ -104,18 +118,24 @@ class ExampleController extends Controller {
     public function cacheAction() {
         return $this-&gt;renderView('MyBundle:Cache:cache.html.twig', array('hello' =&gt; 'Hello World!!!'));
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 &nbsp;
 
 Enfin, votre template cache.html.twig situé dans MyBundle/Resources/views/Cache/cache.html.twig:
 
-<pre class="lang:default decode:true" title="MyBundle/Resources/views/Cache/cache.html.twig">{% extends "@MyBundle/layout.html.twig" %}
+<pre class="lang:default decode:true" title="MyBundle/Resources/views/Cache/cache.html.twig">
+{% raw %}
+{% extends "@MyBundle/layout.html.twig" %}
 
 {% block body %}
 
     &lt;h1&gt;{{ hello }}&lt;/h1&gt;
 
-{% endblock %}</pre>
+{% endblock %}{% endraw %}
+</pre>
+
 &nbsp;
 
 Et voilà le résultat :
@@ -142,12 +162,18 @@ Maintenant pour activer le cache, on va légèrement modifier notre Controller:
 
 Commencez par rajouter votre dépendance à l’objet Response dans votre controller :
 
-<pre class="lang:php decode:true">use Symfony\Component\HttpFoundation\Response;</pre>
+<pre class="lang:php decode:true">
+{% raw %}
+use Symfony\Component\HttpFoundation\Response;{% endraw %}
+</pre>
+
 &nbsp;
 
 Modifiez maintenant votre action :
 
-<pre class="lang:php decode:true">public function cacheAction() {
+<pre class="lang:php decode:true">
+{% raw %}
+public function cacheAction() {
     $response = new Response();
     $response-&gt;setMaxAge(300);
 
@@ -160,7 +186,9 @@ Modifiez maintenant votre action :
 
         return $response;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 &nbsp;
 
 Voici une utilisation très simpliste du système de cache.
@@ -186,19 +214,29 @@ Heureusement pour nous, Symfony a pensé à tout et nous fournit une solution, l
 ##  Exemple 2 : ESI
 Pour activer le mode ESI dans Symfony, ouvrez votre app/config/config.yml et ajoutez ces deux lignes dans la partie framework :
 
-<pre class="lang:yaml decode:true">framework:
+<pre class="lang:yaml decode:true">
+{% raw %}
+framework:
     esi: true # Pour utiliser les tags ESI dans les templates Twig
-    fragments:     { path: /_proxy }</pre>
+    fragments:     { path: /_proxy }{% endraw %}
+</pre>
+
 &nbsp;
 
 Maintenant créez un deuxième template. Moi je l’appellerai esi.html.twig et il contiendra simplement :
 
-<pre class="lang:default decode:true">&lt;h2&gt;Partie en Cache&lt;/h2&gt;</pre>
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;h2&gt;Partie en Cache&lt;/h2&gt;{% endraw %}
+</pre>
+
 &nbsp;
 
 Modifiez le premier template :
 
-<pre class="lang:default decode:true">{% extends "@ MyBundle/layout.html.twig" %}
+<pre class="lang:default decode:true">
+{% raw %}
+{% extends "@ MyBundle/layout.html.twig" %}
 
 {% block body %}
 
@@ -206,12 +244,16 @@ Modifiez le premier template :
 
     {{ render_esi(controller(' MyBundle:Example:getEsiCache')) }}
 
-{% endblock %}</pre>
+{% endblock %}{% endraw %}
+</pre>
+
 &nbsp;
 
 Et enfin votre controlleur :
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace My\Bundle\TrainingBundle\Controller;
 
@@ -240,7 +282,9 @@ class ExampleController extends Controller {
         }
         return $response;
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 &nbsp;
 
 J’ai ici simplifié l’action cacheAction() pour n’activer le cache que pour le fragment ESI.
@@ -269,4 +313,4 @@ Je vous passe les explications mais vous aurez compris que le fragment en cache 
 
 Vous avez maintenant les bases pour voler de vos propres ailes et optimiser votre application.
 
-{% endraw %}
+

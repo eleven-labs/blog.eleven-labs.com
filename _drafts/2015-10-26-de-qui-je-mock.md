@@ -10,7 +10,7 @@ tags:
 - symfony
 - phpunit
 ---
-{% raw %}
+
 <a href="https://phpunit.de/">PHPUnit</a> est un outil de test puissant. Il permet de tester de manière unitaire l'ensemble de son projet.
 
 Dans cet article, je vais me concentrer sur les mock et les stub d'objet.
@@ -27,7 +27,9 @@ Je vais rentrer directement dans le cœur du sujet avec un exemple simple.
 
 J'ai les classes suivantes:
 
-<pre class="lang:php decode:true ">&lt;?php
+<pre class="lang:php decode:true ">
+{% raw %}
+&lt;?php
 
 class Bouteille
 {
@@ -62,12 +64,16 @@ class Bouchon
      {
          return true;
      }
-}</pre>
+}{% endraw %}
+</pre>
+
 La classe Bouteille a besoin de la classe Bouchon (une bouteille sans bouchon, c'est inutile).
 
 Je vais tester ma classe Bouteille et bouchonner la méthode <span class="lang:default decode:true crayon-inline ">getBouchon()</span>
 
-<pre class="lang:default decode:true">&lt;?php
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;?php
 
 class BouteilleTest extends \PHPUnit_Framework_TestCase
 {
@@ -79,7 +85,9 @@ class BouteilleTest extends \PHPUnit_Framework_TestCase
         $this-&gt;assertInstanceOf("Bouchon", $bouteille-&gt;getBouchon());
     }
 }
+{% endraw %}
 </pre>
+
 Tout d'abord, je crée le stub avec la méthode <span class="lang:default decode:true crayon-inline ">getMockBuilder()</span> . Il prend en paramètre le nom de la classe. J'ai chaîné un appel à la méthode <span class="lang:default decode:true crayon-inline ">disableOriginalConstructor()</span>  car je ne veux pas que le stub utilise le constructeur de la classe <span class="lang:default decode:true crayon-inline ">Bouteille()</span>  pour se construire. Enfin, la méthode <span class="lang:default decode:true crayon-inline ">getMock()</span> me retourne le bouchon.
 
 A la ligne 8, je configure le bouchon. <span class="lang:default decode:true crayon-inline ">-&gt;method()</span> . Il prend en paramètre le nom de la méthode à bouchonner. Ici, c'est <span class="lang:default decode:true crayon-inline ">getBouchon()</span> . <span class="lang:default decode:true crayon-inline ">-&gt;will()</span> indique la valeur qui va être retournée. Je place en paramètre une instance de <span class="lang:default decode:true crayon-inline ">Bouchon()</span>  : <span class="lang:default decode:true crayon-inline ">$this-&gt;returnValue(new Bouchon())</span> .
@@ -93,7 +101,9 @@ Maintenant, je vais tester que ma fonction <span class="lang:default decode:true
 ### Mock, le bouchon intelligent
 Mon test va s’intéresser à la classe <span class="lang:default decode:true crayon-inline ">Bouchon()</span> . Je veux vérifier que la méthode <span class="lang:default decode:true crayon-inline ">popIt()</span>  est appelée une fois lorsque j'appelle la méthode <span class="lang:default decode:true crayon-inline ">open()</span>  de la classe <span class="lang:default decode:true crayon-inline ">Bouteille()</span> .
 
-<pre class="lang:default decode:true">&lt;?php
+<pre class="lang:default decode:true">
+{% raw %}
+&lt;?php
 
 class BouteilleTest extends \PHPUnit_Framework_TestCase
 {
@@ -106,7 +116,9 @@ class BouteilleTest extends \PHPUnit_Framework_TestCase
         $bouteille-&gt;open();
     }
 }
+{% endraw %}
 </pre>
+
 La différence avec le test précédent est l'<strong>assertion</strong> dans la configuration du mock.
 
 A la ligne 7, la méthode <span class="lang:default decode:true crayon-inline ">-&gt;expect()</span>  est l'assertion. Le paramètre prend en valeur le nombre de fois que la méthode sera appelée. Ici, c'est une fois <span class="lang:default decode:true crayon-inline ">$this-&gt;once()</span>  .
@@ -118,7 +130,9 @@ Je vais prendre un exemple concret où un service fait appel au repository pour 
 
 Mon repository:
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace App\AppBundle\Repository;
 
@@ -133,10 +147,14 @@ class UserRepository extends DocumentRepository
     {
         // a complicated aggration to get stats of user
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Mon service:
 
-<pre class="lang:default decode:true ">&lt;?php
+<pre class="lang:default decode:true ">
+{% raw %}
+&lt;?php
 
 namespace App\AppBundle\Service;
 
@@ -159,10 +177,14 @@ class UserService
 
         return json_encode($stats);
     }
-}</pre>
+}{% endraw %}
+</pre>
+
 Mon test:
 
-<pre class="lang:php decode:true">&lt;?php
+<pre class="lang:php decode:true">
+{% raw %}
+&lt;?php
 
 namespace App\AppBundle\Tests;
 
@@ -197,7 +219,9 @@ class UserServiceTest extends \PHPUnit_Framework_TestCase
     $this-&gt;assertEquals($expectedString, $service-&gt;generateReport("dummy-user-id"))
   }
 }
+{% endraw %}
 </pre>
+
 Dans ce test, j'ai décomposé bloc par bloc.
 
 <ul>
@@ -216,4 +240,4 @@ N.B. : Injecter le document manager est totalement "overkill", mais c'était pou
 
 Référence : <a href="https://phpunit.de/manual/current/en/test-doubles.html">https://phpunit.de/manual/current/en/test-doubles.html</a>
 
-{% endraw %}
+

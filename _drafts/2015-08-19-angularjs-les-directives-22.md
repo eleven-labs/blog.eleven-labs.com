@@ -11,7 +11,7 @@ tags:
 - angular
 - directive
 ---
-{% raw %}
+
 ## Préambule
 Comme vu dans l’article précédent, une directive est un marqueur HTML interprété par AngularJS via son $compile. Nous allons donc nous intéresser ici aux divers moyens nous permettant d’avoir une gestion la plus fine possible des transformations de nos directives.
 
@@ -30,7 +30,9 @@ Nous pouvons donc agir à quatre moments clefs de la vie d’une directive :
 
 Ci-dessous une directive implémentant tous ces concepts :
 
-<pre class="lang:js decode:true">angular.module('exemple', [])
+<pre class="lang:js decode:true">
+{% raw %}
+angular.module('exemple', [])
   .directive('myDirective', function() {
     return {
       restrict: 'EA',
@@ -49,10 +51,14 @@ Ci-dessous une directive implémentant tous ces concepts :
         };
       }
     };  
-  });</pre>
+  });{% endraw %}
+</pre>
+
 La fonction pre-link étant rarement utile, nous pouvons la supprimer. Dans ce cas le compile doit retourner la fonction post-link.
 
-<pre class="lang:js decode:true">angular.module('exemple', [])
+<pre class="lang:js decode:true">
+{% raw %}
+angular.module('exemple', [])
   .directive('myDirective', function() {
     return {
       restrict: 'EA',
@@ -67,10 +73,14 @@ La fonction pre-link étant rarement utile, nous pouvons la supprimer. Dans ce c
       }
     };  
   });
+{% endraw %}
 </pre>
+
 Si l'on ne souhaite effectuer aucune manipulation du template, la fonction compile devient inutile Dans ce cas il est possible de déclarer uniquement un link contenant la fonction post-link.
 
-<pre class="lang:js decode:true">angular.module('exemple', [])
+<pre class="lang:js decode:true">
+{% raw %}
+angular.module('exemple', [])
   .directive('myDirective', function() {
     return {
       restrict: 'EA',
@@ -81,7 +91,9 @@ Si l'on ne souhaite effectuer aucune manipulation du template, la fonction compi
         // post-link code
       }
     };  
-  });</pre>
+  });{% endraw %}
+</pre>
+
 <h2 class="lang:js decode:true ">
 <h2 class="lang:js decode:true ">Transclusion
 Il peut arriver qu'une directive doive modifier les éléments du DOM se trouvant à l’intérieur d'elle. Dans ce cas, la transclusion est notre amie, et nous permet de récupérer le contenu interne à la directive pour le manipuler.
@@ -89,7 +101,9 @@ Il peut arriver qu'une directive doive modifier les éléments du DOM se trouvan
 ### Mise en place
 Pour se faire il suffit de spécifier à sa directive qu'elle souhaite utiliser la transclusion.
 
-<pre class="lang:js decode:true">angular.module('exemple', [])
+<pre class="lang:js decode:true">
+{% raw %}
+angular.module('exemple', [])
   .directive('myDirective', function () {
     return {
       restrict: 'EA',
@@ -102,17 +116,23 @@ Pour se faire il suffit de spécifier à sa directive qu'elle souhaite utiliser 
         // post-link code
       }
     };  
-  });</pre>
+  });{% endraw %}
+</pre>
+
 &nbsp;
 
 &nbsp;
 
 Mais cela seul ne suffit pas, il vous faudra aussi définir dans son template l'emplacement où la transclusion sera faite
 
-<pre class="lang:xhtml decode:true">&lt;div&gt;
+<pre class="lang:xhtml decode:true">
+{% raw %}
+&lt;div&gt;
   &lt;h2&gt;{{chapo}}&lt;/h2&gt;
   &lt;div ng-transclude&gt;&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;{% endraw %}
+</pre>
+
 Dans certains cas plus complexes, il faudra passer par la fonction $transclude, qui est un peu plus complexe mais pas insurmontable.
 
 Nous voilà donc au terme de notre promenade dans le monde merveilleux des directives sous Angular 1.x. Souvent un peu complexe à prendre en main au début, on peut très rapidement en devient friand parfois de façon un peu excessive.<br />
@@ -120,4 +140,4 @@ Si je peux vous donner un conseil assurez-vous que la fonctionnalité va être r
 
 En complément n'hésitez à aller voir <a href="https://docs.angularjs.org/guide/directive">le guide</a> du site officiel, et bon Angular à tous !
 
-{% endraw %}
+

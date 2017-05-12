@@ -8,7 +8,7 @@ categories:
 - Non classé
 tags: []
 ---
-{% raw %}
+
 <span style="font-weight: 400;">Les protocoles SSL / TLS peuvent être divisés en 2 couches.</span>
 
 <span style="font-weight: 400;">La première couche est constituée par des protocoles de négociation (Handshake, Cipher, Alert) et la deuxième couche est le protocole Record.</span>
@@ -199,4 +199,4 @@ tags: []
 
 <span style="font-weight: 400;">Le tunnel SSL / TLS est établi, c'est maintenant le </span>**Record Protocol**<span style="font-weight: 400;"> qui prend le relais pour chiffrer les données.</span>
 
-{% endraw %}
+

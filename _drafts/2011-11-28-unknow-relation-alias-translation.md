@@ -9,7 +9,7 @@ categories:
 tags:
 - symfony
 ---
-{% raw %}
+
 Hello,
 
 Un petit Bug qui subsiste dans Symfony 1.4, lorsque l'on joue avec l'admin generator avec les éléments i18n.
@@ -24,16 +24,24 @@ Essayez de mettre une majuscule au nom de la class ici sur cette ligne.
 
 On aura alors
 
-<pre class="brush: xml; gutter: false">generator:
+<pre class="brush: xml; gutter: false">
+{% raw %}
+generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           actor</pre>
+    model_class:           actor{% endraw %}
+</pre>
+
 Qui devient :
 
-<pre class="brush: xml; gutter: false">generator:
+<pre class="brush: xml; gutter: false">
+{% raw %}
+generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           Actor</pre>
+    model_class:           Actor{% endraw %}
+</pre>
+
 Vous avez une chance sur deux pour que cela corrige votre problème. Cela vient de Doctrine qui utilise sa propre config en cache avec ses noms de model contenant une majuscule comme première lettre.
 
 &nbsp;
@@ -42,4 +50,4 @@ Bref, en espérant que cela vous aide.
 
 &nbsp;
 
-{% endraw %}
+
