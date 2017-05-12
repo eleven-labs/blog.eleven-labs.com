@@ -11,10 +11,10 @@ tags: []
 {% raw %}
 <p>Il y a quelques temps, pour ainsi dire un an (le temps passe vite ! ), je parlais de la sortie de PHP 7.0. Dix mois plus tard, les choses évoluent à nouveau : PHP 7.1 est en RC1.</p>
 <p>Cet article n'a pas pour vocation d'être exhaustif, mais uniquement de présenter les changements intéressants (vous trouverez en bas de page un lien vers les RFC de PHP 7.1 qui m'ont servi de socle pour cet article). Par ailleurs, cela nécessite d'avoir pris connaissance des features de PHP 7.0 que vous pouvez retrouver dans le <a href="http://blog.eleven-labs.com/fr/php-7-petit-guide-qui-ne-trompe-pas/">précédent article</a>.</p>
-<h1>RC1 ?</h1>
+# RC1 ?
 <p>RC prévaut pour "Release Candidate". Dans le processus de développement on a souvent une alpha, une beta et une Release Candidate. Il s'agit là de versions majeures dans le processus de développement. Et pour chaque version majeure, comme en cycle normal, il y a plusieurs versions mineures. La RC1 est donc une version mineure. Si des bugs (en règle générale mineurs) sont détectés, ceux-ci seront corrigés puis une RC2 verra le jour.</p>
 <p>Dans l'idée, PHP 7.1 sortira donc incessamment sous peu, en tout cas, avant la fin de l'année.</p>
-<h1>Les features</h1>
+# Les features
 <h2>Nullable types</h2>
 <p>Il s'agit selon moi de l'implémentation la plus intéressante de PHP 7.1. En effet, PHP 7.0 a permis l'ajout du Scalar Type Hinting en paramètres des fonctions, mais il est également possible de typer le retour (classes &amp; scalaires). Cependant, le problème se pose lorsque l'on a potentiellement un paramètre ou un retour null.</p>
 <p>Comme un exemple vaut mieux qu'un long discours, voici le comportement en PHP 7.0 (c'est également le cas pour php ~5 lorsque l'on passe ou renvoie null :</p>
@@ -48,14 +48,14 @@ tags: []
 <li>une quasi-interdiction de l'usage de $this dans les classes pour éviter des effets de bords dus à des réassignations hasardeuses ;</li>
 <li>etc.</li>
 </ul>
-<h1>Comment qu'on teste ?</h1>
+# Comment qu'on teste ?
 <p>Avant toute chose, il ne s'agit que d'une RC, donc mon conseil reste de ne l'utiliser que sur vos environnements de développement. Et pour répondre, vous avez deux solutions :</p>
 <ul>
 <li>compiler PHP 7.1 RC1 à la main, je vous renvoie à la <a href="http://php.net/manual/fr/install.windows.building.php">documentation officielle</a> ;</li>
 <li>utiliser phpenv, qui de toute manière compile également les sources (mais de façon plus automatisée).</li>
 </ul>
 <p>Je préconise d'utiliser la seconde méthode sur vos environnements de développement, il n'est pas rare dans un environnement professionnel d'être confronté à des projets nécessitant différentes versions de PHP. PHPEnv permettant de faire tourner plusieurs versions de PHP en console selon le projet. Je détaillerai dans un article comment utiliser Nginx et PHPEnv pour pouvoir faire tourner plusieurs versions de PHP en HTTP toujours sur vos environnements de développement, nous ne sommes pas des barbares !</p>
-<h1>Conclusion</h1>
+# Conclusion
 <p>Cette version, même mineure, apporte un lot de nouveautés non négligeable.</p>
 <p>Bien entendu PHP est encore loin d'être un langage parfait, et souffre encore de lacunes. Mais ne désespérons pas de voir apparaître un jour les annotations ou les énumérations par exemple. La communauté est sans cesse en mouvement, et tend à améliorer le projet, afin que PHP aie une meilleure réputation dans le monde du développement.</p>
 <p>Si vous souhaitez en savoir plus, je vous invite à lire les différentes <a href="https://wiki.php.net/rfc#php_71">RFC</a> qui concernent PHP 7.1.</p>

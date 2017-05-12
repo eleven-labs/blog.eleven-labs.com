@@ -46,14 +46,14 @@ tags: []
 <p>source: https://fr.wikipedia.org/wiki/Cache_web</p>
 <p>Don't worry, there is a solution; the purpose of this article is to enable you to finally get to grips with the HTTP cache.</p>
 <p>&nbsp;</p>
-<h1>Principle of the HTTP Cache</h1>
+# Principle of the HTTP Cache
 <p>The HTTP cache uses the same principle as all caches; it is simply a key/value recording.</p>
 <blockquote><p>How is the key chosen? And what is the value?</p></blockquote>
 <p>The key is a unique value which enables you to recognize a web page; you are probably beginning to understand that it is obviously the URL. As for the stored value, it is the content of your page in all possible formats (text, html, json, etc.).</p>
 <p>The HTTP cache makes possible a lot of things that we shall see as the article progresses.</p>
 <blockquote><p>But how can I use all these features?</p></blockquote>
 <p>You simply need to look at what an HTTP query contains. In its simple version, a query contains a header and some content. The content is what the browser displays; more often than not this is your HTML page. As for the header, it contains all the essential data of the page, the best known being the "status code" allowing us to know the status of the page (200 OK, 404 Not Found, 500 error); but it is also the place where your HTTP cache is configured. Many of the headers can be changed to improve and configure your cache.</p>
-<h1>Configuring your HTTP cache</h1>
+# Configuring your HTTP cache
 <p>Now that we know where we need to configure our cache,</p>
 <blockquote><p>what can we configure?</p></blockquote>
 <p>First of all, let us enable the cache for our page. To do this we must add the header.</p>
@@ -84,7 +84,7 @@ tags: []
 <pre class="">Vary: Cookie User-agent</pre>
 <p>As its name indicates, it allows you to vary the cache by using another header, e.g.: 'User-agent' which allows you to store, for one URL, all the pages for each user-agent (e.g.: mobile page and desktop page). The cookie allows you to store one page per cookie (hence per user).</p>
 <p>We have just made a rather comprehensive tour of the possible configurations for the HTTP cache, but it is also possible to add one's own headers. Before moving forward on this topic, we shall look at the architecture of the HTTP cache.</p>
-<h1>Classic HTTP cache architecture</h1>
+# Classic HTTP cache architecture
 <p>You know how to configure your cache like a professional.</p>
 <blockquote><p>But where should you place your cache?</p></blockquote>
 <p>The HTTP cache can be used in several places in your architecture; each place has specificities and allows an improvement in performance.</p>
@@ -99,7 +99,7 @@ tags: []
 <p>The web server also allows you to use the HTTP cache, it is generally used for the cache of assets (JS, CSS, images, etc.). Like Varnish, its advantage is to be very finely configurable.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/05/Untitled.png" rel="attachment wp-att-1791"><img class="aligncenter wp-image-1791 size-full" src="http://blog.eleven-labs.com/wp-content/uploads/2016/05/Untitled.png" alt="Architecture Http" width="818" height="770" /></a></p>
 <p>&nbsp;</p>
-<h1>Customizing your HTTP cache</h1>
+# Customizing your HTTP cache
 <p>The advantage of the HTTP cache is that it is very simple to use, and that most of the web frameworks put in place simple interfaces to use it. Despite a great number of features, we always need more; it is for this reason that for a project on a high traffic site we place two Varnish custom headers, which can help.</p>
 <h3>The catalog</h3>
 <pre class="">X-Varnish-Catalog: |home|345|567|</pre>
@@ -158,7 +158,7 @@ X-varnish-grace: 600</pre>
    }
 }
 </pre>
-<h1>The ESIs</h1>
+# The ESIs
 <p>You are now an expert in the use of the HTTP cache, only one thing is left to be understood: ESIs.</p>
 <p>Edge Side Include (ESI) allows you to use the full power of Varnish. As stated above, this technology was invented by <a href="https://www.akamai.com/fr/fr/" target="_blank">Akamai</a>, one of the most famous CDNs.</p>
 <blockquote><p>What is it used for?</p></blockquote>

@@ -12,14 +12,14 @@ tags:
 {% raw %}
 <p><span style="text-align: justify; font-size: 13px;">Lorsque l’on développe un site, en particulier un site à fort trafic, on est forcément amené à se poser la question des ressources consommées par ce dernier afin d’optimiser son temps de réponse. En effet, une page qui met plus de 3-4 secondes à s’afficher rend vite désagréable la navigation et découragera plus d’une personne à venir sur votre site.</span></p>
 <p><!--more--></p>
-<h1> 1)    Principe du cache HTTP</h1>
+#  1)    Principe du cache HTTP
 <p style="text-align: justify;">Le système de cache de Symfony vous permettra de diminuer les temps de réponses de vos pages en utilisant la puissance du cache HTTP tel qu'il est défini dans la <em><span style="color: #0000ff;"><a title="Spécification HTTP" href="http://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank"><span style="color: #0000ff;">spécification HTTP</span></a></span>. </em>Sachez cependant que ce n’est qu’une des solutions possibles.</p>
 <p style="text-align: justify;">Pour augmenter la vitesse d'une application, on peut par exemple :</p>
 <p style="text-align: justify;">-          optimiser l’utilisation de la base de données. Gérer l’espace alloué à la mémoire tampon pour accélérer l’accès aux données les plus souvent demandées, développer des vues et des procédures pour alléger votre serveur par exemple.</p>
 <p style="text-align: justify;">-          Utiliser la mise en cache des <span style="color: #0000ff;"><em><a title="OPCodes" href="http://fr.openclassrooms.com/informatique/cours/accelerer-la-generation-de-vos-pages-php-avec-l-extension-apc/presentation-de-l-extension-apc" target="_blank"><span style="color: #0000ff;">OPCodes</span></a></em></span> si vous êtes admin de votre serveur. Pour résumer grossièrement, l’OPCode est le code intermédiaire lors de la transformation de votre code (HTML, PHP …) en code binaire compréhensible par la machine. On trouvera parmi les plus connus APC, XCache ou encore EAccelerator.</p>
 <p style="text-align: justify;">Pour revenir au cache http, expliquons en un peu le principe. Le rôle de la mémoire cache (ou reverse proxy) est d’accepter les requêtes coté client et de les transmettre au serveur. Il va ensuite recevoir les réponses et les transmettre au client. Lors de ces deux étapes, il va mémoriser les requêtes et les réponses associées. Ceci lui permettra lorsque qu’une même requête est demandée, de vous retourner la réponse sans la redemander au serveur. On économise donc du temps et des ressources.</p>
 <p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2013/12/reverse_proxy.png"><img class="aligncenter  wp-image-728" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/reverse_proxy-300x148.png" alt="mémoire cache" width="300" height="148" /></a></p>
-<h1>2)    Le Cache dans Symfony</h1>
+# 2)    Le Cache dans Symfony
 <p style="text-align: justify;">Rentrons maintenant dans le vif du sujet. Symfony est équipé d’un reverse proxy défini par la classe AppCache.php qui se situe dans app/AppCache.php de votre projet.</p>
 <p style="text-align: justify;">Sa mise en place dans Symfony est relativement simple.</p>
 <p style="text-align: justify;">Il vous faut dans un premier temps modifier votre app_dev.php afin qu’il ressemble à ceci :</p>

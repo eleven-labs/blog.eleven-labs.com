@@ -12,10 +12,10 @@ tags:
 {% raw %}
 <p>Some time ago, well almost one year ago (time just flies!), I wrote about PHP 7.0. Ten months later, things are moving again: PHP 7.1 is in RC1 stage.</p>
 <p>This article doesn't pretend to be a list of all the modifications, but points out the new interesting features (you'll find at the bottom a link to all PHP 7.1 RFC's which have been used to write this article). Moreover, you need to know and understand all features introduced in PHP 7.0.</p>
-<h1>RC1?</h1>
+# RC1?
 <p>RC means "Release Candidate". In the development process we often have alphas, betas, and release candidates. Those are major versions in development process. And for every major versions, there are also minor versions, just as in the normal process. Consequently, RC1 is a minor version. If bugs are spotted (generally minor ones), a RC2 will be... well... released.</p>
 <p>As far as we know, PHP 7.1 should be released anytime soon, at least before the end of the year!</p>
-<h1>Features</h1>
+# Features
 <h2>Nullable types</h2>
 <p>In my opinion, it's the most interesting feature of PHP 7.1. As you might know (I hope so!), PHP 7.0 allowed to type hint scalar in parameters of functions, but also type hint returns (both classes and scalars). However, there was something missing: the ability to pass or return null when using type hinting.</p>
 <p>Since an image (ok it's a video) is worth a thousand words, you can see above the behavior of PHP 7.0 when giving null to type hinted methods or functions (it's also the case with PHP5):</p>
@@ -49,14 +49,14 @@ tags:
 <li>a very restrictive use of $this in class to avoid side effects due to random-weird reassignements;</li>
 <li>etc.</li>
 </ul>
-<h1>Okay, how can I test those wonderful things?</h1>
+# Okay, how can I test those wonderful things?
 <p>You first want to know that you shouldn't use it in production environments! It's a RC for duck's sake! And to answer:</p>
 <ul>
 <li>compile it from source, this <a href="http://php.net/manual/fr/install.windows.building.php">guide</a> explains it very clearly;</li>
 <li>use phpenv, which is basically compiling it from source in an automated way.</li>
 </ul>
 <p>I recommend using the second solution on dev environments since it's not rare professionnally to handle projects not using same PHP versions. PHPEnv allows you to run multiple versions of PHP in CLI, based on the project. I'll certainly do a post to explain how to plug Nginx, PHP-FPM and PHPEnv to have multiple versions of PHP in a HTTP way (on dev env, right ? RIGHT ?!).</p>
-<h1>Conclusion</h1>
+# Conclusion
 <p>This version, even being minor, comes with a lot of changes.</p>
 <p>I'm aware that PHP is not the perfect language, and has many missing features. But we can hope that, one day, we will have native annotations or enumerations for example. The community is constantly moving, and tries really hard to improve PHP and its reputation.</p>
 <p>If you want to know more about PHP 7.1 features, I invite you to read <a href="https://wiki.php.net/rfc#php_71">RFC's</a>.</p>

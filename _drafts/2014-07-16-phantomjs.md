@@ -24,12 +24,12 @@ tags:
 <li>etc</li>
 </ul>
 <p>Je vous laisse la curiosité de survoler la <span style="color: #0000ff;"><a title="documentation" href="http://phantomjs.org/documentation/" target="_blank"><span style="color: #0000ff;">documentation</span></a></span> qui est assez complète et plutôt bien faite. Au pire la communauté est plutôt active et répondra à la plupart de vos questions.</p>
-<h1>I Installation</h1>
+# I Installation
 <p style="text-align: justify;">Les exemples que je vais détailler dans cet article seront faits sous ubuntu 14.04.</p>
 <p style="text-align: justify;">Pour installer PhantomJS, rien de compliqué, rendez-vous sur le <span style="color: #0000ff;"><a title="install" href="http://phantomjs.org/download.html" target="_blank"><span style="color: #0000ff;">site officiel</span></a></span>.</p>
 <p style="text-align: justify;">Deux possibilités s'offrent à vous, la 1ère (et celle que j'ai choisie) est de télécharger un zip, vous le décompressez et c'est gagné.</p>
 <p style="text-align: justify;">La 2ème est de <a title="compiler" href="http://phantomjs.org/build.html" target="_blank"><span style="color: #0000ff;"><span style="color: #0000ff;">compiler Phantom</span>JS</span></a> vous-même. Ce n'est pas plus compliqué que la 1ère méthode, c'est juste plus long.</p>
-<h1>II Capture</h1>
+# II Capture
 <h4>Exemple 1</h4>
 <p style="text-align: justify;">Phantomjs supporte trois formats d'export: PNG, JPEG et PDF.</p>
 <p style="text-align: justify;">Commencez par créer un fichier javascript que j’appellerai phantomjs.js et mettez-y le code suivant :</p>
@@ -98,7 +98,7 @@ page.open(address, function(status) {
 <p style="text-align: justify;">Cependant, si la librairie est déjà présente, il est inutile de l'inclure une deuxième fois.</p>
 <p style="text-align: justify;">Ensuite, la propriété clipRect nous permet de préciser la zone à retourner et le tour est joué. Retapez la commande précédente et l'image devrait apparaître.</p>
 <p style="text-align: justify;">Vous voyez également via cet exemple qu'il vous est possible de manipuler le DOM (supprimer, modifier, rajouter des éléments) à votre guise avant de faire le rendu.</p>
-<h1>III Exécuter des tests</h1>
+# III Exécuter des tests
 <p style="text-align: justify;">PhantomJS peut également être utilisé pour exécuter des tests JavaScript. Parmi tous <span style="color: #0000ff;"><a title="exemples" href="https://github.com/ariya/phantomjs/tree/master/examples" target="_blank"><span style="color: #0000ff;">les exemples</span></a></span> fournis sur leur GitHub officiel, vous trouverez des scripts afin d’exécuter des tests QUnit et Jasmine.</p>
 <p style="text-align: justify;">Voici un exemple avec QUnit:</p>
 <p><span style="text-decoration: underline;">test.html</span></p>
@@ -128,7 +128,7 @@ page.open(address, function(status) {
 Tests completed in 15 milliseconds.
 1 assertions of 1 passed, 0 failed.</pre>
 <p>Vous trouverez d'autres scripts tels que run-qunit.js à <span style="color: #0000ff;"><a title="qunit-phantomjs-runner" href="https://github.com/jonkemp/qunit-phantomjs-runner" target="_blank"><span style="color: #0000ff;">cette adresse</span></a></span>.</p>
-<h1> IV Conclusion</h1>
+#  IV Conclusion
 <p style="text-align: justify;">PhantomJS est un outil très puissant et bien documenté. Donc, si vous avez besoin de générer des pdfs et/ou des images et que votre site contient beaucoup de javascript, PhantomJS peut devenir votre allié.</p>
 <p style="text-align: justify;">Mais ce n'est là qu'un aperçu de ses possibilités, je vous encourage à faire un tour sur leur <span style="color: #0000ff;"><a title="documentation" href="http://phantomjs.org/examples/index.html" target="_blank"><span style="color: #0000ff;">site</span></a></span>, cela peut vous donner des idées.</p>
 <p>&nbsp;</p>

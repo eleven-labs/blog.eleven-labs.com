@@ -11,7 +11,7 @@ tags:
 - dotJS
 ---
 {% raw %}
-<h1>DotJs 2013</h1>
+# DotJs 2013
 <p dir="ltr"><a href="http://www.dotjs.eu/">dotJS</a> est une journée consacrée au langage JavaScript, créée par <a href="http://www.dotconferences.eu/">dotConferences</a>, dont le but est d'apporter des conférences du niveau de <a href="http://www.ted.com/">TED</a> au monde de l'informatique.</p>
 <h3>Introduction / Historique</h3>
 <p dir="ltr">JavaScript a été créé en 1995 par Brendan Eich, développeur chez Netscape, comme un langage de script côté serveur. Il portait alors le nom de LiveScript. Netscape travaille ensuite sur une version client du langage qui sera donc déployée sur son navigateur. Quelques jours avant sa sortie, il est renommé en JavaScript en partie à cause de la popularité de la machine virtuelle Java crée par Sun Microsystem et en partie à cause du partenariat entre Netscape et Sun. Oui, "à cause", car ce nom a longtemps desservi ce langage, souvent considéré comme un simple langage de script, un "java simplifié", alors que comme on peut le lire sur les Internets : "Java is to JavaScript as ham is to hamster".</p>

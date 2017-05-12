@@ -17,7 +17,7 @@ tags:
 - check
 ---
 {% raw %}
-<h1>Introduction</h1>
+# Introduction
 <p>Consul est un outil développé en Go par la société HashiCorp et a vu le jour en 2013.<br />
 Consul a plusieurs composants mais son objectif principal est de regrouper la connaissance des services d'une architecture (service discovery) et permet de s'assurer que les services contactés sont toujours disponibles en s'assurant que la santé de ces services est toujours bonne (via du health check).</p>
 <p>&nbsp;</p>
@@ -45,7 +45,7 @@ Consul a plusieurs composants mais son objectif principal est de regrouper la co
 <p>Pour plus d'informations concernant <strong>Registrator</strong>, vous pouvez vous rendre sur : <a href="https://gliderlabs.com/registrator/">https://gliderlabs.com/registrator/</a></p>
 <p>Commençons à installer notre architecture !</p>
 <p>&nbsp;</p>
-<h1>Service discovery</h1>
+# Service discovery
 <p>&nbsp;</p>
 <h4>Première machine : Consul (Swarm Discovery)</h4>
 <p>Nous allons commencer par créer la première machine : notre Consul.</p>
@@ -168,7 +168,7 @@ hello from 172.19.0.2</pre>
 <p>&nbsp;</p>
 <p>Nous avons ici une IP correspondant à chaque service HTTP que nous avons enregistré.</p>
 <p>&nbsp;</p>
-<h1>Failure detection</h1>
+# Failure detection
 <p>Nous allons maintenant ajouter un Health Check à notre service afin de s'assurer que celui-ci peut être utilisé.</p>
 <p>Nous allons donc commencer par retourner sur notre node 01 et supprimer le container <span class="lang:default decode:true crayon-inline ">ekofr/http-ip</span>  afin de le recréer avec un Health Check :</p>
 <pre class="lang:sh decode:true">$ eval $(docker-machine env swarm-node-01)</pre>
@@ -199,7 +199,7 @@ $(docker ps -q --filter='ancestor=ekofr/http-ip')</pre>
   ...
 ]</pre>
 <p>&nbsp;</p>
-<h1>Conclusion</h1>
+# Conclusion
 <p>Vous pouvez maintenant mettre en place Consul sur vos architectures afin de vous assurer que les services contactés sont bien disponibles mais surtout pouvoir identifier les éventuels problèmes qui peuvent survenir sur vos services.</p>
 <p>Il est donc important d'ajouter un maximum de checks sur les éléments pouvant rendre vos services indisponibles (vérifier que celui-ci peut bien être contacté, vérifier l'espace disque disponible sur la machine, etc ...).</p>
 <p>Consul est un outil qui s'intègre parfaitement dans vos architectures, grâce à son utilisation très simple et son API complète.</p>

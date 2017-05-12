@@ -13,7 +13,7 @@ tags: []
 <p>Symfony 2 c'est plusieurs composants -dont le domaine d'application est spécifique- qui forment les parpaings d'une maison ; pour assembler tout ça, un autre composant existe, à la fois le parpaing et le ciment : l'EventDispatcher. Son rôle est de distribuer des événements qui seront traités par les divers composants.</p>
 <p>Il ne s'agit pas dans cet article de revenir sur le fonctionnement de l'EventDispatcher, mais d'expliquer le rôle d'un événement mal connu, l'event "kernel.terminate".</p>
 <p>Sachez tout d'abord qu'aucun code n'est exposé ici, je vous laisse cette démarche. D'autre part, si l'exemple est pris avec Symfony (qui simplifie le problème), ce n'est pas Symfony qui permet ce que nous allons étudier ici, mais l'implémentation du serveur PHP.</p>
-<h1>Les events kernel.*</h1>
+# Les events kernel.*
 <p>Avant de rentrer dans le vif du sujet, profitons-en pour rappeler les différents types d'événements kernel.* qui sont dispatchés. Bien entendu, une liste exhaustive et bien plus complète existe en anglais dans la <a href="http://symfony.com/doc/current/reference/events.html">documentation officielle</a> (et <a href="http://symfony.com/doc/current/components/http_kernel/introduction.html">une version très détaillée</a>). Dans leur ordre d'apparition dans le cycle d'une requête HTTP jusqu'à sa réponse.</p>
 <ul>
 <li><strong>kernel.request</strong> : il est dispatché une fois que l'objet Request a été créé. Il est utilisé par Symfony pour renvoyer des réponses qui ne nécessitent pas de parcourir tout le cycle. Un erreur 401 dans le cadre du security component, ou 404 pour le routeur. Il est possible d'écouter cet event pour enrichir l'objet Request par exemple ;</li>
@@ -22,7 +22,7 @@ tags: []
 <li><strong>kernel.response</strong> : cet event est dispatché juste avant l'envoi de la réponse HTTP au client. Le but étant si nécessaire d'enrichir l'objet Response avec des entêtes supplémentaires par exemple ;</li>
 <li><strong>kernel.terminate</strong> : c'est l'objet de cet article, nous allons voir tout de suite à quoi il sert.</li>
 </ul>
-<h1>app.php</h1>
+# app.php
 <p>Si vous ouvrez votre arborescence Symfony 2, et plus particulièrement le fichier web/app.php -à savoir le point d'entrée de votre application- vous verrez très peu de lignes :</p>
 <ul>
 <li>un <em>use</em> ;</li>
@@ -36,7 +36,7 @@ tags: []
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/04/catbeer.gif" rel="attachment wp-att-1748"><img class="aligncenter size-full wp-image-1748" src="http://blog.eleven-labs.com/wp-content/uploads/2016/04/catbeer.gif" alt="catbeer" width="400" height="225" /></a></p>
 <p>Alors, trouvé ? Une fois la réponse envoyée (<em>$response-&gt;send();</em>) l'exécution du processus de votre serveur HTTP devrait se terminer étant donné que la réponse à été envoyée et probablement reçue par le client. Pourtant, on a de nouveau une instruction ensuite.</p>
 <p>La vérité est un peu plus complexe en fait. Il existe plusieurs implémentations du serveur PHP. Comme je suis un peu oldschool, j'utilise toujours Apache, qui pour moi a toujours fait l'affaire dans mes projets personnels. D'autant plus que mon travail chez les clients n'est pas de m'occuper de l'administration système des serveurs. Dans le cadre d'Apache il a existé et existe encore la librairie mod_php. Le problème de celle-ci est de terminer l'exécution du processus une fois que la réponse HTTP a été renvoyée. Mais il existe une autre implémentation : PHP-FPM. Je ne prétends pas faire un article orienté admin', étant donné que ce n'est pas mon domaine. Mais pour simplifier, la plupart des handler PHP pour HTTP actuels, peuvent renvoyer une réponse HTTP puis continuer le traitement du script PHP impliqué (sauf mod_php sur Apache). Et ça, ça peut être très utile, d'où l'event kernel.terminate.</p>
-<h1>kernel.terminate</h1>
+# kernel.terminate
 <p>Cet événement est dispatché lorsque la réponse HTTP à été transmise au client. L'intérêt étant de pouvoir effectuer des traitements coûteux en temps. Si ces traitements étaient fait en amont de l'envoi de la réponse, l'utilisateur le ressentirait sur le délai de réponse de la page. Et à mon sens, cet événement est bien souvent sous-estimé.</p>
 <h2>Exemple concret</h2>
 <p>Vous ne voyez toujours pas l'intérêt ? Un petit exemple pour vous l'expliquer pourrait vous aider à comprendre.</p>
@@ -52,7 +52,7 @@ tags: []
 <h2>Ce n'est pas la réponse à tous les problèmes</h2>
 <p>Il y a des cas où l'événement ne peut pas être utilisé, il cible des problèmes particuliers. En effet parfois, vous aurez besoin d'attendre que votre traitement coûteux soit terminé pour fournir une réponse HTTP, car celle-ci dépend de votre traitement. Dans ce cas vous ne pourrez pas utiliser cet événement. Ce sera à vous donc d'optimiser au mieux votre algorithme, pour qu'il prenne le moins de temps possible dans votre contrôleur ; et ainsi retourner une réponse dans les meilleurs délais.</p>
 <p>Notez aussi que si vous tournez sur Apache + mod_php, toute la logique liée à l'événement sera quand même exécutée, mais avant d'envoyer la réponse.</p>
-<h1>Conclusion</h1>
+# Conclusion
 <p>PHP n'est pas le langage le plus rapide du monde, mais il s'en sort quand même plutôt bien avec ce genre de petites optimisations, pour peu qu'on sache l'appréhender. Avec Symfony, cela rajoute un peu de complexité pour configurer l'optimisation aux petits oignons, mais c'est du devoir du développeur d'anticiper ces problèmes. J'ai pris l'exemple ici avec Symfony qui mâche le travail avec l'event kernel.terminate, mais sachez que c'est possible en PHP natif comme je le disais grâce à la fonction <a href="http://php.net/manual/en/function.fastcgi-finish-request.php">fastcgi_finish_request</a>.</p>
 <p>N'hésitez pas à faire un retour dans les commentaires, si vous constatez des inexactitudes, des améliorations à apporter, ou simplement si vous avez des questions sur des points un peu obscurs ;)</p>
 {% endraw %}

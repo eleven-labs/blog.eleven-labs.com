@@ -13,7 +13,7 @@ tags:
 {% raw %}
 <blockquote>Dans la vie, il n'y a pas que Symfony — Un collègue</p></blockquote>
 <p>Les frameworks sont indispensables au monde des entreprises, mais occultent parfois les évolutions d'un langage. C'est le cas de PHP 7, qui même si sa sortie est largement relayée, est caché derrière d'autres projets portés par le langage. À l'aube d'un changement potentiellement radical dans la façon de développer en PHP, il est important de souligner les évolutions apportées et leurs conséquences.</p>
-<h1>PHP 6</h1>
+# PHP 6
 <p>En premier lieu, évoquons le fait que nous soyons passés de PHP 5 à PHP 7.<br />
 PHP 6 a existé de 2005 à 2014.</p>
 <p>Parmi les fonctionnalités prévues dans cette version on peut évoquer :</p>
@@ -23,12 +23,12 @@ PHP 6 a existé de 2005 à 2014.</p>
 <li>Multi-thread &amp; meilleur support 64 bits</li>
 </ul>
 <p>Néanmoins, aucune version stable n'est jamais sortie, même si de nombreux livres sur le sujet sont sortis durant ces quelques années. Afin d'éviter toute confusion avec PHP 6, la nouvelle version de PHP est donc passée à 7.</p>
-<h1>Les origines de PHP 7</h1>
+# Les origines de PHP 7
 <p>Afin de comprendre l'origine de PHP 7, il est nécessaire de parler des problèmes de performance de l'interpréteur PHP. Clairement orienté pour le web, le langage souffre néanmoins de nombreux défauts, notamment lorsqu'il est question de performance et de rapidité d'exécution.</p>
 <p>Confrontés à ces problèmes, la société Facebook ; reposant sur PHP ; lance en 2008 l'initiative d'un projet basé sur PHP avec plusieurs améliorations, autant situées au niveau des paradigmes du langage, que sur son exécution. Le projet viendra finalement à terme sous le nom de HHVM, et sera utilisé en production par la société, en multipliant par deux la vitesse d'exécution du langage, via une transformation en <a href="https://en.wikipedia.org/wiki/Bytecode">bytecode</a> du code source.</p>
 <p>Étant distribué librement, HHVM fait son chemin depuis quelques années comme alternative non-officielle au moteur PHP, employé ça et là par quelques sociétés, mais également cité dans de nombreux benchmarks.</p>
 <p>Afin d'endiguer la montée d'HHVM, la communauté des développeurs du moteur PHP se doit de répondre avec une solution officielle. S'il s'agit au départ d'un nettoyage des API, la branche dérive rapidement sur une refonte du moteur nommé "PHP-NG" (New Generation). Cette branche sera par la suite réintégrée à la branche principale du projet en 2014. Au même moment, PHP 6 sera officiellement annulé et l'intégration de ce nouveau moteur permettra la création de PHP 7.</p>
-<h1>Les nouveautés</h1>
+# Les nouveautés
 <p>La refonte du moteur est une des nouveautés majeures de PHP 7 puisqu'il multiple par deux la vitesse d'exécution du code source. Mais de nombreuses fonctionnalités ont été proposées, parfois acceptées, et parfois refusées. Cet article se veut être un résumé des changements majeurs et non une liste exhaustive.</p>
 <h2>Spaceship operator</h2>
 <p>Non sans humour, l'opérateur de comparaison introduit a en effet une ressemble visuelle importante avec un vaisseau spatial : &lt;=&gt; . Son intérêt est néanmoins tout autre, il permet de comparer deux variables d'une façon beaucoup plus simplifiée que ce qui était proposé auparavant. Si les deux opérandes sont égales, l'opérateur renverra 0, 1 si l'opérande de gauche est plus grande, -1 sinon.</p>

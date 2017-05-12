@@ -50,14 +50,14 @@ tags:
 <p>source: https://fr.wikipedia.org/wiki/Cache_web</p>
 <p>Rassurez-vous, il y a une solution : le but de cet article est de vous permettre d'enfin apprivoiser le cache HTTP.</p>
 <p>&nbsp;</p>
-<h1>Le principe du cache HTTP</h1>
+# Le principe du cache HTTP
 <p>Le cache HTTP utilise le même principe que n'importe quel cache, il s'agit simplement d'un enregistrement clé/valeur.</p>
 <blockquote><p>Comment est choisie la clé ? Et quelle est la valeur ?</p></blockquote>
 <p>La clé est une valeur unique qui permet de reconnaître une page web, vous commencez sans doute à comprendre qu'il s'agit bien évidemment de l'url. La valeur stockée quant à elle, est le contenu de votre page dans tous les formats possibles (text, html, json, etc ...).</p>
 <p>Le cache HTTP permet beaucoup de choses que nous verrons au fur et à mesure de l'article.</p>
 <blockquote><p>Mais comment utiliser toutes ces fonctionnalités ?</p></blockquote>
 <p>Il vous suffit de regarder ce que contient une requête HTTP. En version simple, une requête contient un header et un contenu. Le contenu est ce que le navigateur affiche, le plus souvent, il s'agit de votre page html. Le header, quant à lui, contient toutes les informations essentielles de la page, la plus connue étant le "status code"  permettant de savoir le statut de la page (200 OK, 404 Not Found, 500 Error), mais c'est aussi le lieu de la configuration de votre cache HTTP. De nombreux header peuvent être changés pour améliorer et configurer votre cache.</p>
-<h1>Configurer votre cache HTTP</h1>
+# Configurer votre cache HTTP
 <p>Maintenant que nous savons où nous devons configurer notre cache,</p>
 <blockquote><p>Que pouvons-nous configurer ?</p></blockquote>
 <p>D'abord, activons le cache pour notre page. Pour cela, nous devons ajouter le header.</p>
@@ -88,7 +88,7 @@ tags:
 <pre class="">Vary: Cookie User-agent</pre>
 <p>Comme son nom l'indique, il permet de faire varier le cache en utilisant un autre header, par exemple 'User-agent' qui permet de stocker pour une url toutes les pages pour chaque user-agent (exemple page mobile, page desktop). Le Cookie permet de stocker une page par cookie (donc par utilisateur).</p>
 <p>Nous venons de faire un tour plutôt complet des configurations possibles pour le cache HTTP, mais il est aussi possible d'ajouter ses propres header. Avant d'avancer sur ce sujet, nous allons réfléchir à l'architecture du cache HTTP.</p>
-<h1>L'architecture classique du cache HTTP</h1>
+# L'architecture classique du cache HTTP
 <p>Vous savez configurer votre cache comme un professionnel.</p>
 <blockquote><p>Mais où placer votre cache ?</p></blockquote>
 <p>Le cache HTTP peut être utilisé à plusieurs endroits dans votre architecture, chaque endroit a des spécificités et permet une amélioration des performances.</p>
@@ -103,7 +103,7 @@ tags:
 <p>Le web serveur aussi permet d'utiliser le cache HTTP, on l'utilise généralement pour le cache des assets (js, css, images, etc ...). Comme le varnish, son avantage est d'être configurable très finement.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/05/Untitled.png" rel="attachment wp-att-1791"><img class="aligncenter wp-image-1791 size-full" src="http://blog.eleven-labs.com/wp-content/uploads/2016/05/Untitled.png" alt="Architecture Http" width="818" height="770" /></a></p>
 <p>&nbsp;</p>
-<h1>Personnaliser votre cache HTTP</h1>
+# Personnaliser votre cache HTTP
 <p>L'avantage du cache HTTP est que son utilisation est très simple, et que la plupart des frameworks web mettent en place des interfaces simples pour utiliser ce dernier. Malgré un nombre de fonctionnalités très important, nous avons toujours besoin de plus, c'est pour cela que lors d'un projet sur un site à fort trafic, on place deux header varnish personnalisés qui peuvent aider.</p>
 <h3>Le catalogue</h3>
 <pre class="">X-Varnish-Catalog: |home|345|567|</pre>
@@ -162,7 +162,7 @@ X-varnish-grace: 600</pre>
    }
 }
 </pre>
-<h1>Les ESI</h1>
+# Les ESI
 <p>Vous êtes désormais un expert dans l'utilisation du cache HTTP, il ne reste plus qu'une chose à comprendre : les ESI.</p>
 <p>Edge Side Include (ESI) permet d'utiliser toute la puissance de varnish. Comme indiqué plus haut, cette technologie fut inventée par <a href="https://www.akamai.com/fr/fr/" target="_blank">Akamai</a>, l'un des plus célèbres CDN.</p>
 <blockquote><p>À quoi ça sert ?</p></blockquote>

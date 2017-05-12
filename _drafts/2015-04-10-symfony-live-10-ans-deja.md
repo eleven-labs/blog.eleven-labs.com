@@ -11,7 +11,7 @@ tags:
 - symfony live
 ---
 {% raw %}
-<h1 id="symfony-live-10-ans-deja">Symfony Live, 10 ans déjà !</h1>
+<h1 id="symfony-live-10-ans-deja">Symfony Live, 10 ans déjà !
 <h2 id="presensation">Présentation</h2>
 <p>Le Symfony Live est une journée de conférences autour du framework Symfony. Les conférences présentées sont d'un bon niveau technique. Il y a également des retours d'expériences, sur des cas concrets et avec des problématiques que l'on peut rencontrer au quotidien.</p>
 <h2 id="deroulement-de-la-journee">Déroulement de la journée</h2>

@@ -9,7 +9,7 @@ categories:
 tags: []
 ---
 {% raw %}
-<h1>Introduction</h1>
+# Introduction
 <p>Consul is a product developed in Go language by the HashiCorp company and was born in 2013.<br />
 Consul has multiple components but its main goal is to manage the services knowledge in an architecture (which is service discovery) and also allows to ensure that all contacted services are always available by adding health checks on them.</p>
 <p class="p1"><span class="s1">Basically, Consul will bring us a DNS server that will resolve IP addresses of a host's services, depending on which one will be healthy.</span></p>
@@ -38,7 +38,7 @@ Consul has multiple components but its main goal is to manage the services knowl
 <p>For more information about Registrator, you can visit: <a href="https://gliderlabs.com/registrator/">https://gliderlabs.com/registrator/</a>.</p>
 <p>Let's start to install our architecture!</p>
 <p>&nbsp;</p>
-<h1>Service discovery</h1>
+# Service discovery
 <h4>First machine: Consul (Swarm Discovery)</h4>
 <p>We'll start by creating our first machine: Consul</p>
 <p>To do that, just type:</p>
@@ -126,7 +126,7 @@ hello from 172.18.0.X</pre>
     ekofr/http-ip</pre>
 <p>We are all set! We can now discover what Consul brings to us.</p>
 <p>&nbsp;</p>
-<h1>DNS Request</h1>
+# DNS Request
 <p>Indeed, you can now resolve your service hostname `http-ip.service.consul` by using the DNS server brought by Consul and you should see your two services appearing as a DNS record:</p>
 <pre class="lang:sh decode:true">$ dig @$(docker-machine ip consul) http-ip.service.consul
 
@@ -157,7 +157,7 @@ $ curl http://http-ip.service.consul
 hello from 172.19.0.2</pre>
 <p class="p1"><span class="s1">Here, we have an IP address that</span> corresponds to each HTTP service that we have registered so we can clearly see that we are load balanced between our two containers.</p>
 <p>&nbsp;</p>
-<h1>Failure detection</h1>
+# Failure detection
 <p>We'll now add a Health Check to our service in order to ensure that it can be use safely by our users.</p>
 <p>In this case we'll start to return on our node 01 and suppress the container named <span class="lang:default decode:true crayon-inline ">ekofr/http-ip</span>  in order to recreate it with a Health Check:</p>
 <pre class="lang:sh decode:true">$ eval $(docker-machine env swarm-node-01)</pre>
@@ -186,7 +186,7 @@ hello from 172.19.0.2</pre>
   ...
 ]</pre>
 <p>&nbsp;</p>
-<h1>Conclusion</h1>
+# Conclusion
 <p>You are now able to install Consul on your projects architectures in order to ensure that services you contact are available and also be able to identify eventual issues that can occur on your services.</p>
 <p>It's important to add a maximum of checks on elements that can make your services become unavailable (ensure that this one can be contacted and answer, ensure that remaining available disk space is sufficient, etc...).</p>
 <p>Consul is a tool that integrates well in your architectures by its simplicity of use and its powerful API.</p>

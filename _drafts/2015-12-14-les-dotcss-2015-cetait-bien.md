@@ -12,11 +12,11 @@ tags:
 {% raw %}
 <p>C'est en plein coeur du 2e arrondissement de Paris, dans ce monument historique légèrement cossu qu'est le Théâtre des Variétés, que s'est déroulée la deuxième édition de dotCSS le 4 décembre dernier. Ce jour-là, mon compère Elevenien Thibaut et moi-même avons délesté nos clients bien-aimés de notre présence pour nous y rendre, et écouter ce que quelques grands acteurs de la scène CSS voulaient partager avec nous en cette fin d'année. Et pour être franc, c'était très instructif.</p>
 <p>https://twitter.com/glazou/status/672756354608664576</p>
-<h1>Un peu de contexte</h1>
+# Un peu de contexte
 <p>Avant de détailler chaque conférence, petite introduction pour ceux qui ne connaissent pas l'événement.</p>
 <p>dotCSS est un événement faisant parti de l'initiative dotConferences, une série de conférences qui vise à proposer des présentations de haute volée en lien avec des technologies ou des sujets particuliers. On en recense six aujourd'hui, dont les dotJS qui se sont déroulés lundi dernier, mais aussi les dotGo, et bientôt les dotScale. Ces rassemblements ont lieu exclusivement à Paris, mais attirent néanmoins une audience venue en large partie de l'étranger. Pour toucher le plus large public possible, les présentations se font donc exclusivement en anglais, alors mieux vaut avoir été attentif pendant ses cours de langue pour bien suivre le discours des orateurs.</p>
 <p>D'autant plus que cette année, c'est un savoureux gratin qui est venu nous honorer de son temps, composé notamment du Co-président du CSS Working Group, Alan Stearns, ainsi que de son prédécesseur Daniel Glazman. Daniel Eden était également présent pour nous parler de son expérience chez Dropbox, et Andrey Sitnik a fait tout le chemin depuis Moscou pour venir nous parler de PostCSS. Bref, ça valait le coup d'y être. Mais si vous n'avez pas pu, ce petit billet est là pour résumer un peu ce qu'on a retenu.</p>
-<h1>Les présentations en résumé</h1>
+# Les présentations en résumé
 <h2>The New CSS Layout, par <a href="https://twitter.com/rachelandrew">Rachel Andrew</a></h2>
 <p>https://twitter.com/dotCSS/status/672760704781393920</p>
 <p>Rachel Andrew est la co-fondatrice de Perch CMS, <a href="https://grabaperch.com">un CMS avec des poussins</a>. Dans cette présentation riche en démonstrations, Rachel a fait un point sur les trois dernières innovations majeures pour la création de mises en pages flexibles et responsives en CSS : <a href="http://www.w3.org/TR/css-grid-1/">CSS Grid Layout</a> et <a href="http://www.w3.org/TR/css-flexbox-1/">Flexbox</a>, qui sont les deux plus récents modèles de mise en page, ainsi que le <a href="http://www.w3.org/TR/css-align-3/">Box Alignment Level 3</a>, qui définit les règles d'alignement des éléments.</p>
@@ -60,7 +60,7 @@ tags:
 <p>https://twitter.com/dotCSS/status/672820792481198084</p>
 <p>En point final de cette journée, c'est l'ex Co-président du CSS Working Group, Daniel Glazman, qui est monté sur scène pour une présentation un tantinet coup-de-gueule, et qui fait écho à la précédente.</p>
 <p>Daniel dénonce en effet les limitations dramatiques du CSS Object Model et la pauvreté des APIs qu'il définit. De plus, à l'instar de Chris Eppstein, il explique que CSS devrait déjà permettre nativement tout ce que permettent les pré-processeurs comme les variables et les imbrications de sélecteurs. Surtout, il pense que le CSS pourrait servir à bien plus qu'à définir des styles, et que la syntaxe des sélecteurs pourrait être utilisée pour des usages plus variés. En bref, CSS est comme une boîte noire inaccessible qui a besoin de s'ouvrir et se développer.</p>
-<h1>En conclusion</h1>
+# En conclusion
 <p>Si je me suis bien débrouillé, vous avez dû remarquer que les sujets évoqués étaient relativement variés, s'attardant tantôt sur des applications concrètes et emballantes de propriétés CSS émergentes, tantôt sur des notions plus abstraites qui nous invitent à réfléchir sur ce que nous attendons de ce langage avec lequel nous travaillons tous les jours. C'est de là que vient le vrai succès de cette journée pour moi : une alternance de sujets variés et intéressants portés par des présentations solides et démonstratives.</p>
 <p>Ca, et puis les pauses buffet.</p>
 <p>https://twitter.com/dotCSS/status/672797455692529664</p>
