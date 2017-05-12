@@ -13,11 +13,11 @@ tags:
 {% raw %}
 <p><a href="https://phpunit.de/">PHPUnit</a> est un outil de test puissant. Il permet de tester de manière unitaire l'ensemble de son projet.</p>
 <p>Dans cet article, je vais me concentrer sur les mock et les stub d'objet.</p>
-<h3>Mock, stub, what else ?</h3>
+### Mock, stub, what else ?
 <p>Lorsque l'on teste unitairement une classe, très souvent, cette classe a des dépendances avec d'autres classes (qui elles-mêmes ont des dépendances avec d'autres classes.). L'objectif du test unitaire est de tester la classe cible, et uniquement cette classe. En admettant que les classes dépendantes soient fiables et retournent ce qui est attendu, il ne reste plus que la classe cible à tester.</p>
 <p>Un "<strong>stub</strong>" est un objet qui va simuler les différentes classes utilisées par la classe cible. Cet objet va toujours retourner la même valeur, quels que soient ses paramètres.</p>
 <p>Un "<strong>mock</strong>" est un "<strong>stub</strong>" dans lequel on va vérifier des attentes à des appels de méthodes. Par exemple, je vérifie qu'une méthode est appelée une fois.</p>
-<h3>Stub, un simple bouchon</h3>
+### Stub, un simple bouchon
 <p>Je vais rentrer directement dans le cœur du sujet avec un exemple simple.</p>
 <p>J'ai les classes suivantes:</p>
 <pre class="lang:php decode:true ">&lt;?php
@@ -76,7 +76,7 @@ class BouteilleTest extends \PHPUnit_Framework_TestCase
 <p>Enfin, ligne 10, je vérifie que <span class="lang:default decode:true crayon-inline ">getBouchon()</span>  est bien une instance de <span class="lang:default decode:true crayon-inline ">Bouchon()</span> .</p>
 <p>Ce test démontre l'utilisation d'un bouchon. Le bouchon va toujours retourner la même valeur. Ici, je bouchonne la méthode <span class="lang:default decode:true crayon-inline ">getBouchon()</span>  pour toujours retourner une instance de <span class="lang:default decode:true crayon-inline ">Bouchon()</span> .</p>
 <p>Maintenant, je vais tester que ma fonction <span class="lang:default decode:true crayon-inline ">open()</span> ouvre bien la bouteille et fait appel à la méthode <span class="lang:default decode:true crayon-inline ">popIt()</span>  de la classe <span class="lang:default decode:true crayon-inline ">Bouchon()</span> .</p>
-<h3>Mock, le bouchon intelligent</h3>
+### Mock, le bouchon intelligent
 <p>Mon test va s’intéresser à la classe <span class="lang:default decode:true crayon-inline ">Bouchon()</span> . Je veux vérifier que la méthode <span class="lang:default decode:true crayon-inline ">popIt()</span>  est appelée une fois lorsque j'appelle la méthode <span class="lang:default decode:true crayon-inline ">open()</span>  de la classe <span class="lang:default decode:true crayon-inline ">Bouteille()</span> .</p>
 <pre class="lang:default decode:true">&lt;?php
 
@@ -94,7 +94,7 @@ class BouteilleTest extends \PHPUnit_Framework_TestCase
 </pre>
 <p>La différence avec le test précédent est l'<strong>assertion</strong> dans la configuration du mock.</p>
 <p>A la ligne 7, la méthode <span class="lang:default decode:true crayon-inline ">-&gt;expect()</span>  est l'assertion. Le paramètre prend en valeur le nombre de fois que la méthode sera appelée. Ici, c'est une fois <span class="lang:default decode:true crayon-inline ">$this-&gt;once()</span>  .</p>
-<h3>Et avec Symfony ?</h3>
+### Et avec Symfony ?
 <p>Nous avons vu des exemples très théoriques sur l'utilisation des stub et des mock. Qu'en est-il avec Symfony ?</p>
 <p>Je vais prendre un exemple concret où un service fait appel au repository pour avoir des données depuis la base de données. Le service <span class="lang:default decode:true crayon-inline ">UserService()</span>  a une méthode <span class="lang:default decode:true crayon-inline ">generateReport()</span>  qui génère un rapport au format JSON. Pour avoir les statistiques de l'utilisateur, je vais créer une méthode <span class="lang:default decode:true crayon-inline ">getStatsForUser()</span> qui va me retourner un array. Le contenu de la méthode ne m’intéresse pas car je vais le bouchonner. Par contre, je sais que cette méthode doit retourner un array.</p>
 <p>Mon repository:</p>

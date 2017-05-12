@@ -13,7 +13,7 @@ tags:
 ---
 {% raw %}
 <p>Au cours de mes différentes expériences professionnelles, j'ai dû mettre en place de nombreuses règles métier dans diverses applications riches fonctionnellement. Un jour, j'ai été confronté à une façon de faire différente : l'utilisation du pattern specification. Cette méthode s’est avérée structurante pour les projets, et si vous ne la connaissez pas encore elle mérite qu’on s’y attarde.</p>
-<h3>Commençons</h3>
+### Commençons
 <p>Imaginez une application bancaire par exemple. Cette dernière comprend des clients et des comptes bancaires. Un client peut avoir un ou plusieurs comptes bancaires. Vous devez mettre en place un système hyper simple de virement bancaire entre comptes d’un même client, comprenant la règle métier suivante :</p>
 <ul>
 <li>Un client ne peut pas effectuer un virement depuis un compte dont le solde est inférieur à 0</li>
@@ -67,7 +67,7 @@ interface Specification
      */
     public function isSatisfiedBy($candidate);
 }</pre>
-<h3>Spécifications Hard-coded</h3>
+### Spécifications Hard-coded
 <p>Ce type de specifications permet de déclarer en dur la connaissance métier sans pouvoir modifier la règle métier de l'extérieur.</p>
 <p>Une règle métier peut donc être, par exemple, traduite de la sorte :</p>
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
@@ -89,7 +89,7 @@ class AccountCanTransferMoney implements Specification
     }
 }</pre>
 <p>En ayant créé une classe séparée pour appliquer notre règle, nous gagnons en découplage et en clarté. Cependant, il apparait évident que nous sommes cantonnés à l'object $account, et qu'aucune information ne peut être apportée de l'extérieur. Nous ne pouvons toujours pas utiliser ce type de spécification dans notre <em>TransferMoneyCommand </em>car il ne répond pas totalement à notre règle métier (seul le solde actuel du compte est comparé).</p>
-<h3>Spécifications paramétrées</h3>
+### Spécifications paramétrées
 <p>Les spécifications paramétrées sont identiques au point précédent, sauf qu'elles résolvent le problème que nous venons d'indiquer en permettant de passer des paramètres extérieurs à notre <em>candidate</em>.</p>
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
 
@@ -148,7 +148,7 @@ class TransferMoneyCommand
 }
 </pre>
 <p>Pour simplifier l'explication des spécifications paramétrées, j'ai instancié la class AccountCanTransferMoney en dur. Une amélioration notable de cette utilisation serait d'injecter dans la commande la spécification, au lieu de l'instancier en dur, afin de pouvoir tester unitairement notre commande.</p>
-<h3>Spécifications composites</h3>
+### Spécifications composites
 <p>Le dernier type de spécification que nous aborderons aujourd'hui concerne la spécification composite. Cette dernière se base sur ce que nous venons de voir. En effet, ce pattern utilise une composition de spécifications pour exister. Les opérations logiques entre deux (ou plus) spécifications font parties des <em>composite specifications. </em></p>
 <p>L'exemple suivant vous explique l'implémentation de l'opération logique AND :</p>
 <pre class="theme:sublime-text lang:php decode:true ">&lt;?php
@@ -278,7 +278,7 @@ class TransferMoneyCommand
     }
 }</pre>
 <p>Les avantages de ce type de spécifications sont bien sûr le support des opérations logiques, et donc la création de règles métier plus complexes. Il est maintenant possible de combiner les spécifications. La flexibilité est encore accrue, mais attention à la complexité générée !</p>
-<h3>Recap</h3>
+### Recap
 <p>Les avantages du pattern spécification sont les suivants :</p>
 <ul>
 <li>Découplage augmenté car la responsabilité de la validation est maintenant limitée à une classe isolée</li>

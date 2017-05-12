@@ -26,7 +26,7 @@ tags:
 <li style="font-weight: 400;"><span style="font-weight: 400;">Record Protocol</span></li>
 </ol>
 <p><span style="font-weight: 400;">Tout d'abord un peu d'historique : attachez vos ceintures, en route pour la partie 1 !</span></p>
-<h3>**On parle de quoi ?**</h3>
+### **On parle de quoi ?**
 <p><span style="font-weight: 400;">SSL et TLS sont des protocoles de sécurisation des données.</span></p>
 <p><span style="font-weight: 400;">Ils se comportent comme une couche intermédiaire supplémentaire entre la couche </span><span style="font-weight: 400;">Transport (TCP) et la couche application (HTTP, FTP, SMTP etc.. ) (cf. schéma). </span></p>
 <p><span style="font-weight: 400;">Cela signifie donc qu'ils peuvent aussi bien être employés pour sécuriser une transaction web que pour l'envoi ou la réception d'email, etc…</span></p>

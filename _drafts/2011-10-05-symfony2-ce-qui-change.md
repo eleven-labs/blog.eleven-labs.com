@@ -17,7 +17,7 @@ tags:
 <p>Symfony 2, tout le monde en parle en ce moment, mais qu'est ce qu'il change exactement par rapport à la première mouture ?</p>
 <p>Nous allons voir ici les trois grands changements de Symfony 2</p>
 <p>&nbsp;</p>
-<h3><span style="text-decoration: underline;">Symfony 2 c'est ... un projet basé sur une version de PHP 5.3.x:</span></h3>
+### <span style="text-decoration: underline;">Symfony 2 c'est ... un projet basé sur une version de PHP 5.3.x:</span>
 <p>Et oui, comme vous l'aurez surement vu/lu, Symfony 2 tourne exclusivement sous PHP 5.3 et plus. Mais en quoi cela est il important ?</p>
 <p>Tout simplement parce que cette version de PHP apporte des fonctionnalités tout droit sortie du Java et quelque autre langage OO: les <a title="Namespaces : Kesako ?" href="http://www.journaldunet.com/developpeur/php/tutoriel-pratique/chargement-automatique-de-classes-avance-avec-php-5/php-5-3-et-les-namespaces-pour-simplifier-tout-ca.shtml" target="_blank">namespaces</a>.</p>
 <p>Hormis le côté "propreté du code", ce nouveau système est à la base de toute la nouvelle architecture de Symfony 2, les Bundles.</p>
@@ -30,8 +30,8 @@ tags:
 </ul>
 <div>En fait, un Bundle c'est plus ou moins ce que vous décidez d'en faire. Certains auront pour envie de dire que cela ressemble aux "app" dans Sf1, d'autres au plugins.</div>
 <div>
-<h3></h3>
-<h3><span style="text-decoration: underline;">Symfony 2 c'est ... un nouvel ORM :</span></h3>
+### 
+### <span style="text-decoration: underline;">Symfony 2 c'est ... un nouvel ORM :</span>
 <p>Et oui, qui dit nouveau framwork, dit aussi nouvel ORM, et Symfony 2 intègre de base ... Doctrine 2 ! (Et oui, une autre version 2 :) )</p>
 <p>C'est la partie la plus déroutante pour ceux qui veulent passer de SF1 à SF2. En effet, le passage de la version 1 à 2 de Doctrine a entraîné pas mal de modifications, tant au niveau du mapping en lui même de la donnée (les fameux schema.yml de Sf1) que des fonctions pour récupérer et travailler cette donnée.</p>
 <p>Pour faire simple et court, il n'y a plus de notion de "Model" dans Sf2 mais d' "Entités" (Entities). Qu'est ce que cela apporte ? Un code plus clair mais une architecture beaucoup plus dense que Sf1 (et oui c'est possible).</p>
@@ -71,13 +71,13 @@ $myObjects= $em-&gt;getRepository('MyBundle:MyEntity')-&gt;findAll();</pre>
             -&gt;leftJoin('d.other-entity', "b")
            -&gt;getResult();</pre>
 <p><span class="Apple-style-span" style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif; font-size: 13px; line-height: 19px; white-space: normal;"> </span></p>
-<h3><span style="text-decoration: underline;">Symfony 2 c'est ... un nouveau moteur de template:</span></h3>
+### <span style="text-decoration: underline;">Symfony 2 c'est ... un nouveau moteur de template:</span>
 <p>La dernière grosse modification de Sf2 est son nouveau moteur de template : <a title="Twig" href="http://twig.sensiolabs.org/">TWIG</a></p>
 <p>Twig est un moteur de template simple, plutôt rapide et sécurisé, ne permettant l'accès aux seuls éléments que ce que vous lui aurez préalablement passé. Twig est un autre projet développé et soutenu par Sensio et vient directement, concurrent d'autres technologies plus anciennes comme Smarty.</p>
 <p>En gros, si vous le souhaitez, vous pouvez maintenant éliminer totalement de vos templates la moindre trace de code PHP, et utiliser toutes les fonctions de templating propre a twig comme les boucles, echo, if ....</p>
 <p>Vous pouvez configurer le moteur de template que vous voulez utiliser directement dans l'action de votre page, ce qui permet de pouvoir utiliser Twig et PHP comme vous le souhaitez.</p>
 <p>&nbsp;</p>
-<h3><span style="text-decoration: underline;">En conclusion :</span></h3>
+### <span style="text-decoration: underline;">En conclusion :</span>
 <p>Symfony 2, c'est pas mal de nouvelles choses, je dirais même c'est assez différent de SF1. Si vous avez fait du Symfony 1, ne partez pas avec l'idée que le passage d'une version à une autre sera simple. D'autant plus que cette version du framwork intègre beaucoup de spécificités du langage Java comme les injections de dépendance, les déclarations de services ...</p>
 <p>Si toutefois vous êtes determiné à passer à la nouvelle version, je vous invite à suivre le tuto <a title="Mon premier projet en Symfony2" href="http://clycks.fr/2011/10/449-mon-premier-projet-en-symfony2">Mon premier projet en Symfony 2</a> sur ce même blog :)</p>
 <p>&nbsp;</p>

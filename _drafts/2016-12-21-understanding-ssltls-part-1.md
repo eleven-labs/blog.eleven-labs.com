@@ -26,7 +26,7 @@ tags:
 <li style="font-weight: 400;"><span style="font-weight: 400;">Record Protocol</span></li>
 </ol>
 <p><span style="font-weight: 400;">First of all, a little history lesson: fasten your seat belt, let's start with part 1!</span></p>
-<h3>**So, what is it?**</h3>
+### **So, what is it?**
 <p><span style="font-weight: 400;">SSL and TLS are cryptographic protocols that provide communications security.</span></p>
 <p><span style="font-weight: 400;">They behave like an additional intermediate layer between the transport layer (TCP) and the applicative one (HTTP, FTP, SMTP...) (see diagram below)</span></p>
 <p>This means that they can be used to secure a web transaction, sending or receiving emails...</p>

@@ -114,7 +114,7 @@ Date:   Sun Jun 12 16:32:19 2016 +0200
 </pre>
 <p>Je vois que master contient bien les modifications de <em>myfeat</em> et <em>anotherfe</em>.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/gitrebase-master-final-1.png"><img class="alignnone size-medium wp-image-1899" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/gitrebase-master-final-1-193x300.png" alt="gitrebase-master-final" width="193" height="300" /></a></p>
-<h3>Gestion des conflits</h3>
+### Gestion des conflits
 <p>Il arrive que les modifications soient sur le même fichier et sur les même lignes. Dans ce cas, git ne sait pas lesquelles appliquer.</p>
 <p>Je vais créer deux branches: <em>feat-commit</em> et <em>feat-cherry-pick</em></p>
 <p>Sur <em>feat-commit</em>, j'ai un commit et il est prêt à être fusionné sur <em>master</em>.</p>

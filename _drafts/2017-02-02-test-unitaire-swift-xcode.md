@@ -30,7 +30,7 @@ tags: []
 <p><span style="font-weight: 400;">Bon ça c'est la théorie, passons un peu à la pratique.</span></p>
 <p><span style="font-weight: 400;">Sur Xcode, pour effectuer des tests, nous utiliserons le framework fournit par Apple qui s’appel XCTest.</span></p>
 <p><span style="font-weight: 400;">Ce framework fournit pas mal de choses mais je ne vous en dis pas plus, après on va me reprocher de spoiler :)</span></p>
-<h3>Test sur un(e) Model/Classe</h3>
+### Test sur un(e) Model/Classe
 <p><span style="font-weight: 400;">Tout d’abord, nous allons créer une structure Astronaute (dans un dossier Model pour faire genre on fait du MVC :p ) comme ceci :</span></p>
 <pre class="lang:swift decode:true">import Foundation
 
@@ -132,7 +132,7 @@ class AstronauteTests: XCTestCase {
 <p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-18-à-00.21.30.png"><img class="alignnone size-medium wp-image-3236" src="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-18-à-00.21.30-300x169.png" alt="" width="300" height="169" /></a></p>
 <p style="text-align: left;"><span style="font-weight: 400;">Une fois ces étapes effectuées, relancez le processus de test sur votre classe et cliquez sur l’icône qui ressemble à un message dans votre onglet à gauche puis dans l’onglet principal sélectionnez Code Coverage. N’oubliez pas de cocher dans cette partie la checkbox “Show Test Bundles”</span></p>
 <p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-18-à-00.23.46.png"><img class="alignnone size-medium wp-image-3237" src="http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-18-à-00.23.46-300x72.png" alt="" width="300" height="72" /></a></p>
-<h3 style="text-align: left;">Test sur un ViewController</h3>
+<h3 style="text-align: left;">Test sur un ViewController
 <p style="text-align: left;">Maintenant nous allons créer une méthode qui va changer le texte d'un label en fonction d'une condition. Voici le code d'exemple (rien de très compliqué).</p>
 <pre class="lang:swift decode:true">import UIKit
 
@@ -211,7 +211,7 @@ L’alternative est d’utiliser la propriété <strong>view</strong> de votre c
 </ol>
 </li>
 </ol>
-<h3>Conclusion</h3>
+### Conclusion
 <p><span style="font-weight: 400;">J’espère que cet article vous a plu et qu’il vous a donné envie de faire pleins de test unitaires. J’insiste sur le fait que faire des tests est vraiment important car :</span></p>
 <ul>
 <li><span style="font-weight: 400;">Cela vérifie le bon fonctionnement de votre code ;</span></li>

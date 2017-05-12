@@ -39,7 +39,7 @@ tags:
 <p>Toutes ces normes vont permettre de bien structurer le code, d'avoir les mêmes interfaces, et de permettre aux autres développeurs de contribuer plus facilement.</p>
 ## Détection des erreurs
 <p>Avec toutes ces normes et recommandations, nous avons une bonne base solide. Apprendre et bien connaître ces recommandations peut prendre du temps. Pour cela, il y a des outils pour nous permettre de détecter les erreurs que nous faisons.</p>
-<h3>Erreur de style</h3>
+### Erreur de style
 <p>Pour PSR-1 et PSR-2, il y a <a title="Github.com PHP Code Sniffer" href="https://github.com/squizlabs/PHP_CodeSniffer">PHP Code Sniffer</a>. Cet outil va se baser sur un ensemble de règles, parcourir le code et afficher toutes les erreurs. Les règles peuvent être enrichies selon les spécificités du framework.</p>
 <p>Avec Symfony, il y a cet ensemble de règles : https://github.com/instaclick/Symfony2-coding-standard</p>
 <p>Exemple d'exécution de la commande phpcs :</p>
@@ -54,7 +54,7 @@ tags:
 &lt;/checkstyle&gt;</pre>
 <p>Dans cet exemple, le fichier "AvailableTimeService" contient une erreur. Cet erreur se situe à la ligne 28 et colonne 12. Le message d'erreur indique que le nom de la méthode n'est pas en camelCase. Or, selon PSR-1, <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md#1-overview">les méthodes doivent être écrites en camelCase</a>.</p>
 <p>Lors du premier lancement de la commande, il peut y avoir beaucoup d'erreurs. Au fur et à mesure, ces erreurs se réduisent et vous connaîtrez par coeur ces règles :D .</p>
-<h3>Consistance du code</h3>
+### Consistance du code
 <p><a title="Github.com PHP Mess Detector" href="https://github.com/phpmd/phpmd">PHP Mess Detector</a> permet de détecter tout ce qui fait un bon "<em>code spaghetti</em>". D'où le nom de <em>mess detector</em> (littéralement 'détecteur de bordel'). Cet outil va se baser sur des règles telles que la<a href="http://www-igm.univ-mlv.fr/~dr/XPOSE2008/Mesure%20de%20la%20qualite%20du%20code%20source%20-%20Algorithmes%20et%20outils/complexite-cyclomatique.html"> complexité cyclomatique</a> du code, le nombre de conditions dans une méthode, etc...</p>
 <p>Cet outil va nous aider à rendre le code beaucoup plus simple, lisible et d'éviter les répétitions ou des méthodes à rallonge.</p>
 <p>Exemple :</p>
@@ -178,7 +178,7 @@ class AvailableTimeService
 }
 </pre>
 <p>Bien entendu, la refactorisation de code s'accompagne de tests unitaires afin d'assurer la fiabilité et la stabilité de cette partie.</p>
-<h3>La tentation du copier/coller</h3>
+### La tentation du copier/coller
 <p>"<em>pff j'ai la flemme de mutualiser ce code, je vais juste le copier coller ici</em>"</p>
 <p>Combien de fois avez-vous entendu cette phrase ? Et puis le jour où le fonctionnel change, nous oublions et ça fait des choses bizarres.</p>
 <p>Pour ne pas entrer dans cette mauvaise pratique, il y a <a title="Github PHP CPD" href="https://github.com/sebastianbergmann/phpcpd">PHP Copy/Paste Detector</a>. Il détecte les parties de codes qui ont été dupliquées.</p>
@@ -196,7 +196,7 @@ Found 1 exact clones with 81 duplicated lines in 2 files:
 
 Time: 2.21 seconds, Memory: 20.00Mb</pre>
 <p>La sortie indique que les fichiers "MyManager" et "PastedManger" contiennent des lignes dupliquées. L'action à faire est de refactoriser en créant une classe abstraire, par exemple.</p>
-<h3>Corriger en un éclair</h3>
+### Corriger en un éclair
 <p>Une fois les erreurs détectées, il faut les corriger. Personnellement, je n'utilise pas d'outils pour corriger les erreurs de manière automatique. Je me force à apprendre les règles pour que ça deviennent un automatisme.</p>
 <p><a title="Github PHP CS Fixer" href="https://github.com/FriendsOfPHP/PHP-CS-Fixer">PHP CS Fixer</a> va permettre de corriger toutes les erreurs de formatage du code de manière automatisée. Il s'intéresse aux recommandations PSR-1 et PSR-2.</p>
 <pre><code>php bin/php-cs-fixer src/
@@ -206,13 +206,13 @@ Time: 2.21 seconds, Memory: 20.00Mb</pre>
 <p>Tous ces outils, une fois en place, permettent de surveiller et de maintenir la qualité du code. Lancer régulièrement ces commandes doit être une exigence à adopter.</p>
 <p>Avec Jenkins, il est possible de lancer ces commandes de manière automatisée. Il suffit de créer un "job" et de le programmer. Chacune des commandes abordées dans cet article permettent de produire un rapport au format jUnit.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/01/Capture-d’écran-2016-01-25-à-21.35.56.png"><img class="alignnone size-medium wp-image-1554" src="http://blog.eleven-labs.com/wp-content/uploads/2016/01/Capture-d’écran-2016-01-25-à-21.35.56-300x242.png" alt="rapport jenkins" width="300" height="242" /></a></p>
-<h3>SonarQube</h3>
+### SonarQube
 <p>Pour ceux qui n'ont pas envie d'ajouter chaque outil séparément et de mettre un place un serveur Jenkins, il y a SonarQube.</p>
 <p><a href="http://www.sonarqube.org/">SonarQube</a> est un projet libre de droit qui permet de vérifier et contrôler la qualité du code. C'est une solution tout-en-un.</p>
-<h3>SensioLab Insight</h3>
+### SensioLab Insight
 <p><a href="https://insight.sensiolabs.com/">SensioLab Insight</a> est un service en SASS. Principalement orienté vers Symfony 2, il s'adapte également au projet PHP sans framework.</p>
 <p>Ce service va analyser votre code et vous indiquer les faiblesses du code. Un des points intéressants est le temps estimé pour le corriger.</p>
-<h3>Blackfire.io</h3>
+### Blackfire.io
 <p>Encore un autre outil Sensio, mais très efficace dans l'analyse des performances d'une application. <a href="https://blackfire.io/">Blackfire.io</a> va permettre de cibler les points faibles : consommation mémoire, CPU, disque et réseau.</p>
 <p>Cet outil s'utilise principalement pour le débogage, notamment lorsqu'une route met du temps à répondre.</p>
 ## Pour conclure

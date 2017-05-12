@@ -15,7 +15,7 @@ tags:
 ---
 {% raw %}
 <p>Le monde du web évolue. Le site web mobile est devenu le plus grand concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps (le cas contraire, je vous invite à lire mon précédent article sur cet événement, disponible <a href="http://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/" target="_blank">ici</a>). Ça tombe bien, cet article va vous permettre de mettre en place votre première "PWA".</p>
-<h3><!--more--> Pré-requis :</h3>
+### <!--more--> Pré-requis :
 <p>Avant de commencer ce tutoriel:</p>
 <ul>
 <li>Je vous invite à mettre à jour ou installer nodejs, toutes les explications pour ce faire sont disponibles <a href="https://nodejs.org/en/" target="_blank">ici</a>.</li>
@@ -23,7 +23,7 @@ tags:
 <li>Une fois l'installation de votre chrome Canary, je vous invite à installer l'extension suivante, disponible <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk" target="_blank">ici</a>.</li>
 <li>Durant l'ensemble du tutoriel, nous allons suivre le projet git suivant, disponible <a href="https://github.com/CaptainJojo/pwa" target="_blank">ici</a>.</li>
 </ul>
-<h3>Étape 1, l'installation :</h3>
+### Étape 1, l'installation :
 <p>L'installation du projet est très simple (suivez le README) ou les étapes suivantes :</p>
 <pre class="lang:sh decode:true ">git clone git@github.com:CaptainJojo/pwa.git</pre>
 <p>Puis allez dans le répertoire pwa et lancez l'installation.</p>
@@ -34,7 +34,7 @@ tags:
 <p>Vous pouvez alors naviguer dans l'application, son seul but étant d'avoir quelques urls et d'afficher des images (ce qui n'a que peu d'intérêt). Je vous invite à lancer l'extension installée plus tôt. Vous devez arriver sur cette page :</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/07/Capture-d’écran-2016-07-18-à-18.16.05.png"><img class="aligncenter wp-image-2011 size-large" src="http://blog.eleven-labs.com/wp-content/uploads/2016/07/Capture-d’écran-2016-07-18-à-18.16.05-1024x587.png" alt="Lighthouse Step1" width="1024" height="587" /></a></p>
 <p>Cette extension génère une note sur 100 pour votre application. Plus la note est proche de 100, plus votre application est une progressive web app. Comme vous pouvez le lire, il y a deux choses principales qui permettent de gagner des points : la mise en oeuvre d'un service worker qui permet d'avoir une application offline et la mise en place d'un manifest notifiant le navigateur que "vous êtes une progressive web app" et donc installable sur votre téléphone.  Nous allons commencer par mettre en place le service worker.</p>
-<h3>Étape 2, le service worker :</h3>
+### Étape 2, le service worker :
 <p>Le service worker est un simple fichier js à enregistrer dans le navigateur (s'il est compatible), une fois enregistré, il peut lancer du code sans que vous soyez connecté à internet. La première chose à faire est donc d'enregistrer un fichier js dans le navigateur.</p>
 <p>Nous allons tout d'abord créer un fichier vide sw.js dans le dossier public.</p>
 <pre class="lang:sh decode:true ">touch public/sw.js</pre>
@@ -52,7 +52,7 @@ if('serviceWorker' in navigator) {
 <p>Fermez l'outil de développement et relancez l'extension Lighthouse.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/07/Capture-d’écran-2016-07-18-à-19.36.15.png"><img class="aligncenter wp-image-2015 size-large" src="http://blog.eleven-labs.com/wp-content/uploads/2016/07/Capture-d’écran-2016-07-18-à-19.36.15-1024x477.png" alt="LightHouse - Enregistrez votre service worker" width="1024" height="477" /></a></p>
 <p>Bravo, vous avez gagné des points ! Passons à la suite.</p>
-<h3>Étape 3, le offline :</h3>
+### Étape 3, le offline :
 <p>Maintenant que vous avez enregistré votre service nous allons mettre en cache le site pour vous permettre d'avoir un site visible en offline.</p>
 <p>Pour cela, il suffit d'agrémenter le fichier sw.js. Si vous lisez la norme du W3C sur le service worker, disponible <a href="https://www.w3.org/TR/service-workers/" target="_blank">ici</a>, vous verrez qu'il fonctionne comme suit : il lit des événements javascript et, en fonction de ce qui a été lu, il effectue une action. Nous allons commencer par l’événement 'install' qui va vous permettre de mettre en cache l'ensemble des pages statiques de votre site. Voici le code à ajouter dans le fichier public/sw.js :</p>
 <pre class="lang:js decode:true " title="Service worker - install">self.addEventListener('install', e =&gt; {
@@ -91,7 +91,7 @@ if('serviceWorker' in navigator) {
 <p>Puis, encore une fois, fermez l'outil de développement, et relancez LightHouse.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/07/Capture-d’écran-2016-07-18-à-19.57.34.png"><img class="aligncenter wp-image-2018 size-large" src="http://blog.eleven-labs.com/wp-content/uploads/2016/07/Capture-d’écran-2016-07-18-à-19.57.34-1024x581.png" alt="LightHouse - Offline" width="1024" height="581" /></a></p>
 <p>Vous êtes sur la bonne voie, mais il y a une méthode encore meilleure pour initialiser votre cache.</p>
-<h3>Étape 4, PreCache du service worker :</h3>
+### Étape 4, PreCache du service worker :
 <p>Comme vous avez pu le voir, il est très fastidieux de mettre chaque fichier statique dans le service worker, Google y a pensé et a mis en place plusieurs outils pour faciliter le développement.</p>
 <p>Vous allez utiliser le projet sw-précache disponible sur <a href="https://github.com/GoogleChrome/sw-precache" target="_blank">github</a>, ce dernier permet de générer le service worker via un fichier <a href="http://gulpjs.com/" target="_blank">Gulp</a>.</p>
 <p>Vous n'avez plus qu'à ajouter dans le package.json.</p>
@@ -133,7 +133,7 @@ gulp.task('generate-service-worker', function(callback) {
 <p>Je vous invite à lire le fichier généré que vous pouvez trouver à la place de l'ancien /public/sw.js</p>
 <p>Si vous relancez l'application normalement vous n'avez aucune modification.</p>
 <p>Vous pouvez retrouver l'étape <a href="https://github.com/CaptainJojo/pwa/compare/step2-service-worker-offline...step3-sw-precache" target="_blank">ici</a>.</p>
-<h3>Étape 5, le manifest :</h3>
+### Étape 5, le manifest :
 <p>La mise en place du manifest est une étape simple mais qui permet de signifier aux navigateurs que vous avez créé votre première PWA.  Vous pouvez retrouver la spécification sur le site <a href="https://w3c.github.io/manifest/" target="_blank">W3C</a>.</p>
 <p>Je vous donne l'exemple typique que l'on trouve dans tous les bons tutoriels.</p>
 <pre class="lang:js decode:true" title="manifest.json">{

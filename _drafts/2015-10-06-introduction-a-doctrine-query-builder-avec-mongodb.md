@@ -16,7 +16,7 @@ tags:
 <p>Bonjour à tous,</p>
 <p>Je vais parler du query builder (constructeur de requête) Doctrine pour faire des requêtes vers une base de données MongoDB.</p>
 <p>Si vous voulez suivre les exemples et les tester, il est nécessaire d'installer le bundle <a href="http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html" target="_blank">DoctrineMongoDBBundle.</a></p>
-<h3>Qu'est-ce que c'est ?</h3>
+### Qu'est-ce que c'est ?
 <p>Le query builder est une classe qui va permettre de créer des requêtes à la base de données en passant par des objets et méthodes. Il facilite l'écriture de requête complexe.</p>
 <p>Prenons un exemple avec une liste d'articles dans la collection "articles" :</p>
 <pre class="lang:js decode:true">[
@@ -64,7 +64,7 @@ $article = $this-&gt;createQueryBuilder()
     -&gt;getQuery()
     -&gt;execute();</pre>
 <p>Avec le query builder, on va rester dans le monde de l'objet et manipuler exclusivement des objets.</p>
-<h3>Le query builder et Symfony</h3>
+### Le query builder et Symfony
 <p>Dans Symfony, toutes les méthodes qui vont effectuer des requêtes à la base de données se situent dans les repository.</p>
 <p>Je veux créer une méthode pour retrouver les articles avec un tag spécifique. Je vais donc créer une méthode "getArticleByTag" dans le repository tag.</p>
 <pre class="lang:php decode:true">&lt;?php
@@ -103,7 +103,7 @@ class ArticleRepository extends DocumentRepository
     }
 }</pre>
 <p>Pour mettre à jour un article qui a pour titre "Mon article", je dois indiquer que je veux le document avec un titre égal à "Mon article" : <span class="lang:default decode:true crayon-inline">-&gt;field('title')-&gt;equals("Mon article")</span> . Ensuite, je mets <span class="lang:default decode:true crayon-inline ">-&gt;field('tags')-&gt;set($tags)</span> pour mettre à jour mon champs "tags".</p>
-<h3>Ajouter des expressions</h3>
+### Ajouter des expressions
 <p>Le builder de base donne un bon nombre d'expressions. Mais parfois, ce n'est pas suffisant. Pour reprendre l'exemple avec les articles, je veux avoir tous les articles publiés à la date d'aujourd'hui. Je vais donc ajouter une expression <span class="lang:default decode:true crayon-inline ">isPublished(\DateTime $datetime)</span> .</p>
 <p>Je vais étendre la classe <span class="lang:default decode:true crayon-inline ">Doctrine\ODM\MongoDB\Query\Expr</span> et ajouter ma méthode.</p>
 <pre class="lang:php decode:true">&lt;?php
@@ -192,7 +192,7 @@ class ArticleRepository extends DocumentRepository
         }
     ]
 }</pre>
-<h3>Quick tip</h3>
+### Quick tip
 <p>Le query builder va hydrater les objets Doctrine avec les données. Sur des objets complexes, ce processus est gourmand en ressource.  Pour gagner en performance, il est possible de désactiver cette hydratation.</p>
 <pre class="lang:default decode:true ">&lt;?php
 
@@ -201,7 +201,7 @@ $this-&gt;createQueryBuilder()
     -&gt;find()
     -&gt;getQuery()
     -&gt;execute();</pre>
-<h3>Conclusion</h3>
+### Conclusion
 <p>Cet article vous a montré comment utiliser le query builder de Doctrine sur une base de données MongoDB. Il facilite l'écriture de requêtes plus ou moins complexes tout en restant dans un style objet. Étendre et ajouter des expressions permet de simplifier des requêtes métier complexes.</p>
 <p>Référence : <a href="http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/reference/query-builder-api.html">http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/reference/query-builder-api.html</a></p>
 <p>&nbsp;</p>

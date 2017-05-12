@@ -50,7 +50,7 @@ These state changes occur when an <span class="lang:default decode:true crayon-
 │   └── index.js
 └── store
     └── configureStore.js</pre>
-<h3>Actions</h3>
+### Actions
 <p>Let's write an actions containing file that will implement our 2 actions: increment and decrement.</p>
 <p>Before all, we will store these actions names into constants in order to keep our code clear and comprehensible as we will always call these constants in all of our code.</p>
 <p>Start by creating a <span class="lang:default decode:true crayon-inline">src/constants/ActionTypes.js</span>  file with the following content:</p>
@@ -62,7 +62,7 @@ export const DECREMENT = 'DECREMENT';</pre>
 export const increment = (value) =&gt; ({ type: types.INCREMENT, value });
 export const decrement = (value) =&gt; ({ type: types.DECREMENT, value });</pre>
 <p>You have just created your 2 actions (<span class="lang:default decode:true crayon-inline">increment</span>  and <span class="lang:default decode:true crayon-inline">decrement</span>) which each have a type property (required) and a value to add or remove to the current counter value.</p>
-<h3>Reducers</h3>
+### Reducers
 <p>We will now write reducers functions that correspond to the actions we previously wrote in order to update the value in our application state.</p>
 <p>This will be written in the <span class="lang:default decode:true crayon-inline ">src/reducers/counter.js</span>  file:</p>
 <pre class="lang:js decode:true">import { INCREMENT, DECREMENT } from '../constants/ActionTypes';
@@ -102,7 +102,7 @@ const reducers = combineReducers({
 });
 
 export default reducers;</pre>
-<h3>Store</h3>
+### Store
 <p>You have your actions and your reducers so let's dive into the final step: store creation!</p>
 <p>Store will be created in a <span class="lang:default decode:true crayon-inline">src/store/configureStore.js</span>  file with only these couple of lines:</p>
 <pre class="lang:js decode:true">import { createStore } from 'redux';

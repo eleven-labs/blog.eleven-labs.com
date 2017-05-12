@@ -92,20 +92,20 @@ tags:
 <p>Vous savez configurer votre cache comme un professionnel.</p>
 <blockquote><p>Mais où placer votre cache ?</p></blockquote>
 <p>Le cache HTTP peut être utilisé à plusieurs endroits dans votre architecture, chaque endroit a des spécificités et permet une amélioration des performances.</p>
-<h3>Le navigateur</h3>
+### Le navigateur
 <p>C'est le cache HTTP le plus proche de votre utilisateur : ce qui lui permet d'être très rapide. Le seul souci est qu'il est lié avec l'utilisateur, il peut donc être vide assez souvent, exemple lors de la première connexion. Il peut aussi être vidé par l'utilisateur ou même désactivé. La résilience de ce cache ne vous est donc pas imputée, ce dernier doit donc être couplé avec un autre cache HTTP.</p>
-<h3>Le CDN</h3>
+### Le CDN
 <p>Le Content Delivery Network est un réseau d'ordinateurs permettant de servir du contenu (https://fr.wikipedia.org/wiki/Content_delivery_network). Il est externe à l'architecture et sa spécialité est la géolocalisation, il permet donc à un utilisateur d'aller sur le CDN le plus proche. Vous en avez surement déjà utilisé un quand vous utilisez un tag js, exemple jquery, angular etc ..., et que vous utilisez l'url fournie plutôt que le fichier téléchargé.</p>
 <p>L'avantage principal du CDN est d'avoir de nombreux serveurs à travers le monde et de vous permettre de ne pas recevoir l'ensemble du trafic du site sur vos serveurs. Si vous avez déjà travaillé pour un site à fort trafic, le CDN est le meilleur moyen de ne pas maintenir 10 000 serveurs pour votre application. Le coût d'un CDN est souvent lié à la bande passante, il est donc important de cacher seulement ce dont vous avez besoin et d'utiliser le plus de 304 possible.</p>
-<h3 class="">Le proxy cache, Varnish</h3>
+<h3 class="">Le proxy cache, Varnish
 <p>Il agit comme le CDN et ce dernier appartient à l'architecture. Il s'agit souvent de serveurs que vous maintenez, il demande beaucoup de RAM (le stockage y est fait). Le varnish ou autre technologie de cache permet des configurations plus fines qu'un CDN et surtout permet d'utiliser ses propres header. Il permet aussi d'utiliser les ESI que nous verrons dans le prochain chapitre. (Akamai l'inventeur des ESI est un CDN)</p>
-<h3>Web serveur</h3>
+### Web serveur
 <p>Le web serveur aussi permet d'utiliser le cache HTTP, on l'utilise généralement pour le cache des assets (js, css, images, etc ...). Comme le varnish, son avantage est d'être configurable très finement.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/05/Untitled.png" rel="attachment wp-att-1791"><img class="aligncenter wp-image-1791 size-full" src="http://blog.eleven-labs.com/wp-content/uploads/2016/05/Untitled.png" alt="Architecture Http" width="818" height="770" /></a></p>
 <p>&nbsp;</p>
 # Personnaliser votre cache HTTP
 <p>L'avantage du cache HTTP est que son utilisation est très simple, et que la plupart des frameworks web mettent en place des interfaces simples pour utiliser ce dernier. Malgré un nombre de fonctionnalités très important, nous avons toujours besoin de plus, c'est pour cela que lors d'un projet sur un site à fort trafic, on place deux header varnish personnalisés qui peuvent aider.</p>
-<h3>Le catalogue</h3>
+### Le catalogue
 <pre class="">X-Varnish-Catalog: |home|345|567|</pre>
 <p>Il s'agit d'un header qui référence votre page, soit par terme (home, page, etc ...), soit par id d'objet.</p>
 <blockquote><p>Mais pourquoi faire ?</p></blockquote>
@@ -128,7 +128,7 @@ if (req.method == "BAN") {
 
     eturn (synth(200, "Nothing to ban"));
 }</pre>
-<h3>Le grace</h3>
+### Le grace
 <pre class="">X-Varnish-Grace: 300</pre>
 <p>Comme le max-age, vous devez lui donner un temps en seconde. Ce petit header permet de gagner encore plus en performance. Il dit à votre varnish le temps acceptable pour renvoyer un cache même après l'expiration du max-age.</p>
 <p>Pour mieux comprendre, voici un exemple :</p>

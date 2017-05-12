@@ -21,7 +21,7 @@ tags:
 <p><span style="font-weight: 400;">Pour la troisième édition de la SymfonyCon (conférence internationale sur Symfony), SensioLabs a fait les choses en grand aux Folies Bergère à Paris, la ville natale de Symfony. Les conférences ont eu lieu pendant deux jours en deux tracks.</span></p>
 <hr />
 <p>&nbsp;</p>
-<h3>1ère journée pleine d’émotions</h3>
+### 1ère journée pleine d’émotions
 <p><span style="font-weight: 400;">L’ouverture des conférences débute par le discours de <a class="ProfileHeaderCard-screennameLink u-linkComplex js-nav" href="https://twitter.com/fabpot" target="_blank">@<span class="u-linkComplex-target">fabpot</span></a>, qui va retracer le chemin parcouru depuis la première version du framework jusqu'à la sortie très récente de Symfony 3. En effet, le projet a 10 ans, 10 ans de commits, PRs, merges, tags, releases… mais également une communauté unie pour l’amour de Symfony.</span></p>
 <p>https://twitter.com/piaf_/status/672343739986272256</p>
 <h4>Dig in Security with Symfony</h4>
@@ -39,7 +39,7 @@ tags:
 <p>https://twitter.com/Eleven_Labs/status/672501912726544384</p>
 <hr />
 <p>&nbsp;</p>
-<h3>2ème journée plus technique</h3>
+### 2ème journée plus technique
 <h4 id="conf-guard-authentication">Guard Authentication</h4>
 <p class="p1"><span class="s1">Le choc de la simplification on l'attendait, <a class="ProfileHeaderCard-screennameLink u-linkComplex js-nav" href="https://twitter.com/weaverryan" target="_blank">@<span class="u-linkComplex-target">weaverryan</span></a> l'a fait. Désormais, on peut gérer l'authentification avec seulement un fichier. Les différents cas d'utilisation les plus communs sont montrés avec une simplicité déconcertante. Il ne reste plus qu'à l'essayer puis l'adopter. </span><a href="http://fr.slideshare.net/weaverryan/guard-authentication-powerful-beautiful-security" target="_blank">Retrouvez les slides ici.</a></p>
 <h4>Matters of State</h4>
@@ -55,9 +55,9 @@ tags:
 <p>Sur la même lancée, <a class="ProfileHeaderCard-screennameLink u-linkComplex js-nav" href="https://twitter.com/webmozart" target="_blank">@<span class="u-linkComplex-target">webmozart</span></a> nous présente les nouveautés et quelques features méconnues sur les composants Form et Validation. On retrouve également ses conseils et bonnes pratiques à utiliser. <a href="https://speakerdeck.com/webmozart/symfony2-forms-dos-and-donts" target="_blank">Retrouvez les slides ici.</a></p>
 <hr />
 <p>&nbsp;</p>
-<h3>Conclusion de ces deux jours</h3>
+### Conclusion de ces deux jours
 <p>L'ambiance était au rendez-vous, les lieux également cependant, petit bémol pour l'accès à la deuxième salle le premier jour. <span style="font-weight: 400;">Pour la première journée, les présentations étaient un peu light techniquement, c'était surtout un balayage de Symfony plus ou moins approfondi qui s'adressait aux plus novices. La deuxième journée se rattrape avec des conférences plus techniques, offrant des conseils intéressants et des nouveautés qui donnent envie d'aller plus loin.</span></p>
 <p>&nbsp;</p>
-<h3>Bonus</h3>
+### Bonus
 <p>https://twitter.com/Eleven_Labs/status/672775123116625920</p>
 {% endraw %}

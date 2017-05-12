@@ -18,7 +18,7 @@ tags:
 <p>Suite à l’accompagnement de MongoDB inc sur nos sujets Datas au sein de FranceTV Edition Numérique, nous avons automatisé l'utilisation d'outils afin de pouvoir étudier les comportements des productions sans impacts sur les applications.</p>
 <p>L'outil, ou plutôt la boite à outils que nous utilisons le plus à ce jour est <a href="https://github.com/rueckstiess/mtools">MTools</a>. Ce projet a été initié et est toujours maintenu par <a href="https://github.com/rueckstiess">Thomas Rückstieß</a>, ayant travaillé chez... MongoDB :)</p>
 <p>&nbsp;</p>
-<h3>MTools est composé de 6 outils :</h3>
+### MTools est composé de 6 outils :
 <p><strong><span style="text-decoration: underline;">Mloginfo :</span></strong></p>
 <p>Mloginfo lit les log générés par mongoDB et retourne des informations d'utilisation de la base de données. Dans notre cas, ce qui nous intéresse (entre autres) c'est le profiling des requêtes afin de voir celles qui s’exécutent le plus ou encore celles qui consomment le plus de temps.</p>
 <p>Exemple d'utilisation :</p>

@@ -88,20 +88,20 @@ tags: []
 <p>You know how to configure your cache like a professional.</p>
 <blockquote><p>But where should you place your cache?</p></blockquote>
 <p>The HTTP cache can be used in several places in your architecture; each place has specificities and allows an improvement in performance.</p>
-<h3>The browser</h3>
+### The browser
 <p>This is the HTTP cache closest to your user; this allows it to be very fast. The only concern is that it is linked to the user; consequently it may be empty quite often, for example on the first connection. It may also be emptied by the user or even disabled. Consequently the resilience of this cache is not allocated to you; it must therefore be paired with another HTTP cache.</p>
-<h3>The CDN</h3>
+### The CDN
 <p>The Content Delivery Network is a network of computers to serve content (https://fr.wikipedia.org/wiki/Content_delivery_network). It is external to the architecture and its specialty is geolocation, it therefore allows a user to go onto the nearest CDN. You have probably already used one when you use a JS tag, e.g.: jquery, angular, etc. …, and if you use the URL provided rather than the downloaded file.</p>
 <p>The main advantage of the CDN is to have many servers across the world and allow you not to receive all the traffic to the site on your servers. If you have already worked for a high traffic site, the CDN is the best way not to maintain 10,000 servers for your application. The cost of a CDN is often linked to the bandwidth, hence it is important to cache only what you need and use the most possible 304s.</p>
-<h3>The cache proxy, Varnish</h3>
+### The cache proxy, Varnish
 <p>It acts like the CDN, and the CDN belongs to the architecture. It often concerns servers that you maintain, it requires a lot of RAM (the storage is done there). The Varnish or other cache technology allows finer configurations than a CDN and above all allows the use of one's own headers. It also allows use of the ESI that we shall see in the next chapter. (Akamai, the inventor of ESI is a CDN)</p>
-<h3>The Web Server</h3>
+### The Web Server
 <p>The web server also allows you to use the HTTP cache, it is generally used for the cache of assets (JS, CSS, images, etc.). Like Varnish, its advantage is to be very finely configurable.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/05/Untitled.png" rel="attachment wp-att-1791"><img class="aligncenter wp-image-1791 size-full" src="http://blog.eleven-labs.com/wp-content/uploads/2016/05/Untitled.png" alt="Architecture Http" width="818" height="770" /></a></p>
 <p>&nbsp;</p>
 # Customizing your HTTP cache
 <p>The advantage of the HTTP cache is that it is very simple to use, and that most of the web frameworks put in place simple interfaces to use it. Despite a great number of features, we always need more; it is for this reason that for a project on a high traffic site we place two Varnish custom headers, which can help.</p>
-<h3>The catalog</h3>
+### The catalog
 <pre class="">X-Varnish-Catalog: |home|345|567|</pre>
 <p>This is a header that references your page, either by name (home, page, etc.), or by object ID.</p>
 <blockquote><p>But to do what?</p></blockquote>
@@ -124,7 +124,7 @@ if (req.method == "BAN") {
 
     eturn (synth(200, "Nothing to ban"));
 }</pre>
-<h3>The Grace</h3>
+### The Grace
 <pre class="">X-Varnish-Grace: 300</pre>
 <p>As for the max-age, you must give it a time in seconds. This small header allows you to gain even more performance. It tells your Varnish the acceptable time to deliver a cache even after expiry of the max-age.</p>
 <p>For a better understanding, here is an example:</p>

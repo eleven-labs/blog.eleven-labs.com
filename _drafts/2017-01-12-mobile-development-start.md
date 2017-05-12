@@ -21,7 +21,7 @@ tags:
 <li>Because they are the most common in making mobile applications and their communities are most active;</li>
 <li>I have already used these technologies and I want to give real feedback on them. Regarding native mobile development, I chose iOS and not Android (I explain hereafter why, no spoilers).</li>
 </ul>
-<h3><strong>Ionic:</strong></h3>
+### <strong>Ionic:</strong>
 <p>Ionic is a JavaScript framework based on AngularJS for the web application part of the framework, and on Cordova for the native application development.</p>
 <p><strong>How does it work?</strong></p>
 <p>Ionic actually allows to create an application that opens a "WebView" natively available on mobile devices. To simplify, it is a web browser window, executed in our application, which is responsible for interpreting and displaying the content of our scripts. The WebView, whose possibilities are extended by Cordova, allows to access a certain amount of native features of the mobile device (see schema below).</p>
@@ -57,7 +57,7 @@ ionic emulate ios</pre>
 <p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/platform-support.png"><img class="alignnone size-medium wp-image-2490" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/platform-support-300x232.png" alt="platform-support" width="300" height="232" /></a></p>
 <p><span style="text-decoration: underline;">**Conclusion:**</span></p>
 <p>**Ionic is a great way to build small applications quickly. But as soon as you want to widen the scope of features, or to have proper performances, it starts biting. I haven't tested the version 2, but I know that they have made some improvements.**</p>
-<h3 style="text-align: left;">**React Native:**</h3>
+<h3 style="text-align: left;">**React Native:**
 <p><span style="font-weight: 400;">As its name suggests, React Native is a variation of React (driven by Facebook in 2015). Its goal is to re-use as much code as possible between different platforms.</span></p>
 <p style="text-align: left;">Coding in JavaScript allows web developers to build a native mobile application, unlike Cordova which encapsulates the application in a WebView.</p>
 <p>**How does it work?**</p>
@@ -83,7 +83,7 @@ ionic emulate ios</pre>
 </ul>
 <p>**Conclusion:**</p>
 <p>**React Native seems to be the perfect approach for creating applications of any type. Nevertheless, it being young means that it isn't mature enough to be used to building big application that may demand particular treatments. But I recommend following its evolution closely.**</p>
-<h3>**Native:**</h3>
+### **Native:**
 <p><span style="font-weight: 400;">Obviously, to build an application there is nothing better than native development.</span></p>
 <p>Why? Because there are no restrictions linked to a technology. There are no problems with OS upgrades. The user experience is certainly better and the performances are as well (if the application is coded properly *troll*). In one word, it's great!</p>
 <p>Hence, a little time ago, I told myself: "Astronaut, this mission is for you!"</p>

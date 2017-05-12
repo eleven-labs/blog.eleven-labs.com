@@ -18,7 +18,7 @@ tags: []
 <li>À des outils d'intégration en continu de jouer une suite de tests sans avoir besoin d'autre chose que de Docker.</li>
 <li>Et à des systèmes automatisés de déployer ces applications sur vos environnement de développement, de tests, de recette et de production.</li>
 </ul>
-<h3 id="petit-rappel">Petit rappel</h3>
+<h3 id="petit-rappel">Petit rappel
 <p>Une image Docker est en quelque sorte une image disque qui contient l'arborescence d'une distribution linux, le code source d'une application et des binaires capables de la faire tourner.</p>
 <p>Une image se construit à partir d'un fichier <strong>Dockerfile</strong> que l'on retrouve généralement à la racine des sources d'une application.</p>
 <p>Docker met à disposition un registre d’images publiques : <a href="https://hub.docker.com/">DockerHub</a>.<br />
@@ -30,7 +30,7 @@ Dans ce registre, vous allez retrouver des images, telles que :</p>
 <li>et des applications open-source prêtes à l’emploi</li>
 </ul>
 <p>Docker propose également le dépôt d’images privées via une offre détaillée <a href="https://hub.docker.com/account/billing-plans/">ici</a>.</p>
-<h3 id="mise-en-place">Mise en place</h3>
+<h3 id="mise-en-place">Mise en place
 <p>Nous allons déployer notre Docker Registry avec <a href="https://docs.docker.com/engine/swarm/">Docker Swarm Mode</a> et <a href="https://traefik.io/">Traefik</a>, un reverse proxy qui va nous permettre d’associer un domaine à notre registre Docker.</p>
 <p>Nous aurons besoin d’un nom de domaine, d’un serveur et d’un terminal.</p>
 <p>Pour ce guide, je vais utiliser une instance <a href="https://www.ovh.com/fr/cloud/">OVH Public Cloud</a> et un nom de domaine géré par OVH. Dans les grandes lignes, toutes les étapes critiques peuvent être reproduite sur n’importe quel environnement.</p>

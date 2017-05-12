@@ -89,7 +89,7 @@ class RocketCanBeLaunched implements Specification
 Le <em>ubiquitous language </em>et les outils de modélisation du modèle permettent de faire apparaître l'intention dans le code, et d'expliciter les contextes. N'est-ce pas une approche intéressante?</span></p>
 <p>&nbsp;</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/02/CZ4vGqYUEAEkzNa.jpg-large.jpeg" rel="attachment wp-att-1592"><img class=" wp-image-1592 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/02/CZ4vGqYUEAEkzNa.jpg-large-300x207.jpeg" alt="CZ4vGqYUEAEkzNa.jpg-large" width="659" height="455" /></a></p>
-<h3>Pour aller plus loin</h3>
+### Pour aller plus loin
 <p><a href="http://www.infoq.com/minibooks/domain-driven-design-quickly" target="_blank">Domain Driven Design Quickly</a></p>
 <p><a href="http://blog.octo.com/domain-driven-design-des-armes-pour-affronter-la-complexite/" target="_blank">Domain Driven Design : des armes pour affronter la complexité</a></p>
 <p><a href="http://thepaulrayner.com/blog/why-value-objects/" target="_blank">Why Value Objects</a></p>

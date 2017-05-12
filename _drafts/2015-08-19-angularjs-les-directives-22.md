@@ -78,7 +78,7 @@ tags:
 <h2 class="lang:js decode:true ">
 <h2 class="lang:js decode:true ">Transclusion
 <p>Il peut arriver qu'une directive doive modifier les éléments du DOM se trouvant à l’intérieur d'elle. Dans ce cas, la transclusion est notre amie, et nous permet de récupérer le contenu interne à la directive pour le manipuler.</p>
-<h3>Mise en place</h3>
+### Mise en place
 <p>Pour se faire il suffit de spécifier à sa directive qu'elle souhaite utiliser la transclusion.</p>
 <pre class="lang:js decode:true">angular.module('exemple', [])
   .directive('myDirective', function () {

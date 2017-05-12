@@ -37,7 +37,7 @@ tags:
 </ul>
 <p>Le <em>WebRTC</em> ne se limite pas à ces trois API mais nous allons nous concentrer sur celles-ci pour commencer.</p>
 <p>Une liste plus exhaustive peut être trouvée <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API">sur MDN</a>.</p>
-<h3 id="-navigator-getusermedia-https-developer-mozilla-org-en-docs-web-api-navigator-getusermedia-"><a href="https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia">navigator.getUserMedia()</a></h3>
+<h3 id="-navigator-getusermedia-https-developer-mozilla-org-en-docs-web-api-navigator-getusermedia-"><a href="https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia">navigator.getUserMedia()</a>
 <p>L'API navigator.getUserMedia() sert à prendre le contrôle sur les équipements médias de l'utilisateur, c.à.d. la webcam et le micro. On pourra alors manipuler ou transférer les flux émis par ces différents médias sous la forme d'une instance de <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream">MediaStream()</a>. Le navigateur s'occupera de normaliser les protocoles audio/vidéo utilisés pour encoder ces flux. L'utilisateur devra néanmoins autoriser l'application à accéder à ses équipements.</p>
 <pre><code class="lang-js">// Ask for permission to access user webcam and microphone
 navigator.getUserMedia({ audio: true, video: true }, success, failure);
@@ -60,7 +60,7 @@ function failure (err) {
   }).catch(function (err) {
     /* handle the error */
   });</code></pre>
-<h3 id="-rtcpeerconnection-https-developer-mozilla-org-en-us-docs-web-api-rtcpeerconnection-rtcicecandidate-https-developer-mozilla-org-en-us-docs-web-api-rtcicecandidate-"><a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection">RTCPeerConnection()</a> / <a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate">RTCIceCandidate()</a></h3>
+<h3 id="-rtcpeerconnection-https-developer-mozilla-org-en-us-docs-web-api-rtcpeerconnection-rtcicecandidate-https-developer-mozilla-org-en-us-docs-web-api-rtcicecandidate-"><a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection">RTCPeerConnection()</a> / <a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate">RTCIceCandidate()</a>
 <p>L'API RTCPeerConnection() nous sert à établir une connexion réseau <em>P2P</em> (tunnel) pour envoyer des données entre deux clients. Pour réussir à l'établir, ce n'est pas aussi simple que d'entrer une <em>URL</em> dans un navigateur, la plupart des clients existants n'ayant pas d'adresse publique accessible.</p>
 <p>Le <strong>WebRTC</strong> va se reposer sur deux technologies serveur nommées <strong>STUN/ICE</strong> et <strong>TURN</strong> pour que chaque client puisse découvrir le moyen, selon leur configuration réseau, d'exposer de façon sécurisée un tunnel de connexion public et de transférer les données souhaitées.</p>
 <p>Concrètement, il faut que chaque client instancie une RTCPeerConnection() en fournissant l'adresse du serveur <em>STUN/ICE,</em> ce qui leur donnera une description d'accès à leur réseau (<em>NAT</em>) sous la forme d'une instance RTCIceCandidate().</p>

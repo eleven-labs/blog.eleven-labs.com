@@ -11,9 +11,9 @@ tags: []
 {% raw %}
 <p style="padding-left: 30px; text-align: justify;">    Vous avez une application qui possède des millions de données, votre site commence à ramer ou vous voulez simplement mettre en place un moteur de recherche rapide et efficace sans vous prendre la tête : Elasticsearch est fait pour vous.</p>
 <p style="padding-left: 30px; text-align: justify;">    Voici un moteur de recherche open source qui commence à faire beaucoup de bruit. Et ça se comprend vu qu'il suffit de quelques minutes à peine pour disposer d’un moteur de recherche <em>clusterisé</em>, automatiquement sauvegardé et répliqué, équipé d'une API REST et proposant toutes les fonctionnalités d’un moteur de recherche.</p>
-<h3 style="padding-left: 30px; text-align: justify;">I. Présentation</h3>
+<h3 style="padding-left: 30px; text-align: justify;">I. Présentation
 <p style="padding-left: 30px; text-align: justify;">    Je ne vais pas refaire l'historique complet d'Elasticsearch mais pour faire court, c'est un projet open source développé en Java sous licence Apache2. Elastisearch est basé sur la librairie java Apache Lucene qui sert de base à d'autres moteurs de recherche dont le plus connu est Apache Solr. Il est utilisé par les plus grands tels que Wikipedia, StackOverflow, GitHub, Dailymotion...</p>
-<h3 style="padding-left: 30px; text-align: justify;">II. Terminologie</h3>
+<h3 style="padding-left: 30px; text-align: justify;">II. Terminologie
 <p style="padding-left: 30px; text-align: justify;">    Voici un peu de vocabulaire propre à Elasticsearch.</p>
 <p style="padding-left: 30px; text-align: justify;">    Un <strong>index</strong> peut être assimilé à une base de données sur un SGBD relationnel. Chaque index dispose d'un mapping, qui permet de définir la structure des types.</p>
 <p style="padding-left: 30px; text-align: justify;">    Le <strong>mapping</strong> est similaire à la définition de votre schéma de base de données. Vous pouvez le définir manuellement, sinon il sera généré automatiquement lors de la première indexation de votre document. Attention, une fois le mapping définit, il vous est impossible de le modifier. Il vous faudra le supprimer, le redéfinir et relancer une indexation de vos données.</p>
@@ -24,7 +24,7 @@ tags: []
 <p style="padding-left: 30px; text-align: justify;">   Les <strong>replicas</strong> sont des copies des shards primaires auxquels elles sont rattachées. En cas d'erreur du primaire, un replica deviendra shard primaire selon un système d'élection afin que l'application reste disponible.</p>
 <p style="padding-left: 30px; text-align: justify;">   Un <strong>cluster</strong> est une collection de node, donc plusieurs instances d'Elasticsearch qui vont partager toutes vos données. Il est identifié par un nom ce qui permet à un node de faire partie du cluster lors de son instanciation.</p>
 <p style="padding-left: 30px; text-align: justify;">   Trêve de bavardage, je vous sens impatients de commencer donc en avant pour l'installation ! J'espère que vous avez 5 minutes devant vous :)</p>
-<h3 style="padding-left: 30px; text-align: justify;">III. Installation</h3>
+<h3 style="padding-left: 30px; text-align: justify;">III. Installation
 <p style="padding-left: 30px;">Pour ce tuto, je serai sous Ubuntu 14.04 mais il ne devrait pas y avoir de difficultés sous un autre OS, même Windows.</p>
 <p style="padding-left: 30px;">Elasticsearch nécessite que Java soit installé sur votre machine, il vous faut au moins la version 7 mais le jdk 1.8 est recommandé.</p>
 <p style="padding-left: 30px;">On a fait le plus gros du travail maintenant, téléchargez la dernière version de <span style="color: #0000ff;"><a style="color: #0000ff;" href="https://www.elastic.co/downloads/elasticsearch">Elasticsearch</a></span>.</p>
@@ -74,7 +74,7 @@ tags: []
 <li><strong>logs</strong>, où vous trouverez vos fichiers de logs</li>
 <li><strong>plugins</strong>, où se trouveront tous les plugins que vous installerez</li>
 </ul>
-<h3>    IV. Utilisation</h3>
+###     IV. Utilisation
 <p style="padding-left: 30px;">Bon maintenant que tout est fonctionnel, il n'y a plus qu'à jouer un peu :)</p>
 <p style="padding-left: 30px;">Créons un index "foo" avec un type "users" qui aurait comme propriétés un "name", un "age" et des "hobbies":</p>
 <pre class="lang:sh decode:true">curl XPUT 'http://localhost:9200/foo' -d '
@@ -187,7 +187,7 @@ tags: []
 }</pre>
 <p style="padding-left: 30px; text-align: justify;">On constate que le mot "tennis" sera indexé en tant que "teni" pour l'analyzer "<strong>french</strong>". Donc une recherche sur le mot "tennis", "tenis", "tenni"... vous retournera tous les documents qui contiendront le mot "tennis".</p>
 <p style="padding-left: 30px; text-align: justify;">On pourrait passer des heures sur les requêtes car le Query DSL d'Elasticsearch est très puissant mais je vous laisse découvrir ça par vous-même.</p>
-<h3 style="padding-left: 30px;">V. Conclusion</h3>
+<h3 style="padding-left: 30px;">V. Conclusion
 <p style="padding-left: 30px; text-align: justify;">Voilà pour une première approche, mais Elasticsearch vous réserve beaucoup d'autres surprises.</p>
 <p style="padding-left: 30px; text-align: justify;">Le système de requête est très poussé et vous permettra de configurer votre moteur de recherche de manière très précise et tout ça en un temps record.</p>
 <p style="padding-left: 30px; text-align: justify;">Beaucoup d'outils sont fournis par Elastic afin de faciliter le monitoring, les requêtes, le débogage</p>

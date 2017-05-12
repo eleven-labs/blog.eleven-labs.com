@@ -36,7 +36,7 @@ tags:
 <p>Ce point de vue est intéressant. Sachant qu'HTTP a déjà sa spécification : RFC2616.</p>
 <p>Autre annonce très intéressante, les SymfonyCon seront les <strong>3 et 4 decembre</strong>. 2 jours de conférences internationales et tout ça dans une grande salle : les Folies Bergère.</p>
 <p>Cette ouverture était simple, conviviale, tout le monde pouvait poser ses questions sur Twitter. D'ailleurs, j'en ai posé une concernant la certification. Elle sera mise à jour en même temps que la publication de Symfony 3.0.</p>
-<h3 id="http-caching">HTTP Caching</h3>
+<h3 id="http-caching">HTTP Caching
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> "Going crazy with http caching : caching content for authenticated users" <a href="http://t.co/Q5UNQquVRR">pic.twitter.com/Q5UNQquVRR</a></p>
 <p>— Julien Lechevanton (@jlechevanton) <a href="https://twitter.com/jlechevanton/status/586085249387515904">April 9, 2015</a></p></blockquote>
 <p>Un des sujets complexes dans le monde du web : la mise en cache des ressources. Cette conférence s'est axée sur une problématique que tout le monde rencontre : comment mettre en cache des ressources spécifiques à un groupe d'utilisateur ?</p>
@@ -84,7 +84,7 @@ tags:
 <p>Autre point, avec les processeurs, il est possible d'enrichir les logs avec des données supplémentaires. Par exemple, on peut ajouter la version du framework et l'ip du serveur.</p>
 <p>Avec ces différents outils, le log devient plus intéressant, et l'on devient "pro-actif" lorsque qu'il y a un pic anormal d'erreur.</p>
 <p>Lien vers la présentation: <a href="https://speakerdeck.com/lyrixx/symfony-live-2015-paris-monitorer-sa-prod">Faites plaisir à vos utilisateurs : surveillez votre prod</a></p>
-<h3 id="vardumper">VarDumper</h3>
+<h3 id="vardumper">VarDumper
 <p>var_dump est mort ! Vive VarDumper ! Il est <a href="https://speakerdeck.com/nicolasgrekas/debug-plus-symfony">enfin sorti</a> !</p>
 <p>Présenté par <a href="https://github.com/nicolas-grekas">Nicolas Grekas</a>, ce composant permet de débuguer plus facilement le contenu de ses variables. Certes, il y a var_dump. Mais pour dumper une entité doctrine, c'est moins rigolo.</p>
 <p>Avec VarDumper, il n'y a que les données essentielles et même des informations supplémentaires. Avec var_dump, il est impossible de savoir si la valeur d'une clef d'un array est une référence ou non. VarDumper le permet.</p>

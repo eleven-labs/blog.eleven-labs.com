@@ -10,7 +10,7 @@ tags: []
 ---
 {% raw %}
 <p>Through my different professional experiences, I had to set a lot of business rules in rich web apps. One day, I stumbled upon a different way to deal with those: using the specification pattern. This method has proven to be structuring and deserves some attention if you do not know what it is.</p>
-<h3>Let's dig in</h3>
+### Let's dig in
 <p>Imagine a simple banking application for instance. This app only has clients and bank accounts. A client can have one or multiple accounts, and your job is to create a very simple system of wire transfer between accounts of a same client with this business rule:</p>
 <ul>
 <li>A client cannot transfer money if his account has a balance equals to 0 or less.</li>
@@ -63,7 +63,7 @@ interface Specification
      */
     public function isSatisfiedBy($candidate);
 }</pre>
-<h3>Hard-coded Specifications</h3>
+### Hard-coded Specifications
 <p>This type of specification enables us to hard code the business knowledge without having the possibility to modify the business rule from the outside.</p>
 <p>A business rule can then be translated this way:</p>
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
@@ -85,7 +85,7 @@ class AccountCanTransferMoney implements Specification
     }
 }</pre>
 <p>Having created a separated class in order to apply our business rule, we gain clarity and decoupling. Although, it appears obvious that we are condemned to only using our object $account, and that no additional info can be brought from the outside. We still can't use this type of specification in our <em>TransferMoneyCommand </em>because it does not comply totally to our business rule (only the balance is compared).</p>
-<h3>Parameterized specifications</h3>
+### Parameterized specifications
 <p>Parameterized specifications are identical to what we've been talking about, but they resolve the issue we've just mentioned, allowing us to get outside parameters to our candidate.</p>
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
 
@@ -144,7 +144,7 @@ class TransferMoneyCommand
 }
 </pre>
 <p>To simplify my explanation on parameterized specifications, I've hard coded the instantiation of the class AccountCanTransferMoney. A noticeable improvement of this use would be to inject the specification directly into the command, in order to better unit test our command.</p>
-<h3>Composite specifications</h3>
+### Composite specifications
 <p>The last type of specification I'd like to take a look into is composite specifications. Such specification bases itself on what we've seen. Indeed, it uses composition to exist. Logical operations between two (or more) specifications are part of composite specifications.</p>
 <p>The following example explains the implementation of the AND logical operator:</p>
 <pre class="theme:sublime-text lang:php decode:true ">&lt;?php
@@ -274,7 +274,7 @@ class TransferMoneyCommand
     }
 }</pre>
 <p>The advantages of this type of specifications are obviously the support of logical operator, and therefore the creation of even more complex business rules. It's now possible to combine specifications. Flexibility is improved, but beware of additional complexity!</p>
-<h3>Recap</h3>
+### Recap
 <p>Advantages of the specification pattern are as follow:</p>
 <ul>
 <li>Increased decoupling because the responsability of the validation is now limited to an isolated class</li>

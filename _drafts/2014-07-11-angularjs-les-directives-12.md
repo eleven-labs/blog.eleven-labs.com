@@ -17,8 +17,8 @@ tags:
 ## Créer des directives
 <p>Tout d'abord nous suivrons  une convention de nommage qui  veut qu'on préfixe le nom de ses propres directives, dans nos exemples ci-dessous nous utiliserons le préfixe "my".</p>
 <p>Lors de cet article nous étudierons les options les plus communes des directives, deux autres articles compléteront le tour d'horizon des directives.</p>
-<h3></h3>
-<h3>template et templateUrl</h3>
+### 
+### template et templateUrl
 <p>Une première étape sera de créer une simple directive chargée d'afficher "Hello Directive"</p>
 <pre class="lang:js decode:true">angular.module('exemple', [])
   .directive('myDirective', function() {
@@ -30,8 +30,8 @@ tags:
   });</pre>
 <pre class="lang:xhtml decode:true">&lt;div my-directive&gt;&lt;/div&gt;</pre>
 <p>Par défaut le seul moyen d'afficher une directive est de l'utiliser via un <em>attribut</em>. Si cela ne convient pas à votre usage il faudra passer par l'option <strong>restrict</strong>.</p>
-<h3></h3>
-<h3>restrict</h3>
+### 
+### restrict
 <p>L'option <em>restrict</em> permet de définir le marqueur auquel réagira le compilateur, elle peut valoir :</p>
 <ul>
 <li><em>A</em> : un attribut</li>
@@ -55,7 +55,7 @@ tags:
 <p>La déclaration via élément est privilégiée dans le cas de création de directive complexe de type widget/composant.</p>
 <p>La déclaration par classe ou attribut quand à elle convient parfaitement à un comportement simple, un gestionnaire de rebond par exemple.</p>
 <p>&nbsp;</p>
-<h3>scope</h3>
+### scope
 <p>Une directive peut avoir pour but d'être réutilisée plusieurs fois sur la même page, ce genre de problématique, entre autre, nous amène à nous intéresser à l'option <em>scope</em>.</p>
 <p>L'option <em>scope</em> peut avoir 3 types de valeurs :</p>
 <ul>

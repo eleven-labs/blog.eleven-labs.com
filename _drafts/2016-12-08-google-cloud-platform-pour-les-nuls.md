@@ -23,7 +23,7 @@ tags:
 <p>En fait, vous utilisez du Cloud tous les jours. Par exemple votre messagerie mail est dans le Cloud, c'est d'ailleurs de celui-ci que nous allons parler.</p>
 <h4>Comment en faire ?</h4>
 <p>Aujourd'hui les deux plus gros fournisseurs de Cloud sont Amazon avec leur offre <a href="https://aws.amazon.com/fr/">AWS</a> et Google avec <a href="https://cloud.google.com/">GCP</a>. Les deux concurrents proposent des produits similaires. Pour cette série de tutoriels, nous allons nous concentrer sur Google et apprendre 3 façon de faire du Cloud.</p>
-<h3>Le Cloud pour les nuls</h3>
+### Le Cloud pour les nuls
 <p>Si vous êtes comme moi, c'est à dire pas passionné par l'installation des serveurs, nous allons commencer par l'installation "prêt-à-porter" d'un serveur. Dans cette exemple nous allons installer un <a href="https://jenkins.io/">Jenkins</a> en moins de 10 minutes, ce qui est un record si vous avez eu la chance d'en installer un vous-même.</p>
 <h5>Etape 1, allons dans la console :</h5>
 <p>Je vous invite à aller sur cette url <a href="https://cloud.google.com/">https://cloud.google.com/</a> puis à cliquer en haut à droite sur <a href="https://console.cloud.google.com/">console</a>. Vous devez alors vous connecter avec votre compte Google. À partir de maintenant, vous allez devoir sortir la carte bleue, mais pas de panique Google vous crédite de 300 dollars pour toute activation de compte. Cela sera suffisant pour faire les trois tutoriels prévus et même plus encore. Vous devez suivre les instructions de Google à partir de <a href="https://console.cloud.google.com/freetrial">cette page</a>. Une fois cette étape terminée, vous êtes redirigé vers un dashboard vide.</p>

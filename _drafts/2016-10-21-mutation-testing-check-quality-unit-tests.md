@@ -9,11 +9,11 @@ categories:
 tags: []
 ---
 {% raw %}
-<h3><strong>Unit tests and trust</strong></h3>
+### <strong>Unit tests and trust</strong>
 <p>It is well established : unit tests are mandatory when developing an application. They allow to highlight possible regressions when code is modified, so the developer gets a certain confidence when shipping his code to production : If tests do pass, everything works correctly.</p>
 <p>To measure this confidence, we use code coverage as our main metric. The more your code is covered, (close to 100%), the less chance there is that regressions would fall through the net.</p>
 <p>But be careful ! This affirmation is a pure theory !</p>
-<h3><strong>Coverage vs protection</strong></h3>
+### <strong>Coverage vs protection</strong>
 <p>We are going to see that sometimes, code coverage is a false indicator of protection.<br />
 Here is a simple example :</p>
 <pre class="lang:php decode:true">&lt;?php
@@ -56,7 +56,7 @@ class SpaceShipTest extends \PHPUnit_Framework_TestCase
 <p>The test checks that the method is actually adding an entry to the astronaut array. When we launch the tests, we have a code coverage of 100% (even without assertion we would still have this result).<br />
 But we are not protected enough : what would happen if the <em>addAstronaut</em> method changed ?<br />
 Would our test be sufficient to detect the regression ?</p>
-<h3><strong>Mutation Tests</strong></h3>
+### <strong>Mutation Tests</strong>
 <p>In order to detect breaches in your unit tests, one solution exist : <strong>mutation tests</strong>.<br />
 The principle is very simple : alter the source code to check that associated tests would fail accordingly.</p>
 <p>To get to this, here are the required steps :</p>
@@ -74,7 +74,7 @@ The principle is very simple : alter the source code to check that associated te
 <li><strong>Escaped</strong> : A mutant escapes if the unit test dosn't fail (negative outcome)</li>
 <li><strong>Uncovered</strong> : A mutant is uncovered if no test cover the mutated code</li>
 </ul>
-<h3><strong>Case study : Humbug</strong></h3>
+### <strong>Case study : Humbug</strong>
 <p>We are going to see <a href="https://github.com/padraic/humbug">Humbug</a>, a framework that allows us to do mutation tests in PHP.</p>
 <p>As we execute the Humbug binary, we get the following output :</p>
 <pre class="lang:txt decode:true">$&gt; humbug
@@ -166,7 +166,7 @@ Obviously, the example chosen here is voluntarily very simple and might not be e
 <li>Return values substitution</li>
 </ul>
 <p>I'm not going to detail everything here, if wou want to know more about this, I invite you to check the <a href="https://github.com/padraic/humbug" target="_blank">GitHub project page</a>.</p>
-<h3><strong>Conclusion</strong></h3>
+### <strong>Conclusion</strong>
 <p>Mutation testing is a simple and efficient way of measuring unit tests fiability. Code coverage is not a very reliable metric, a code can be 100% covered without any assertion !<br />
 Humbug allows to automate these tests, so it's possible to plug it in your continuous integration workflow. However, be aware that execution time increases exponentially when codebase grows, we want to use mutation testing where there is a true concern in priority : business code.</p>
 {% endraw %}

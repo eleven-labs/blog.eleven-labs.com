@@ -31,7 +31,7 @@ tags:
 <ul>
 <li>J’ai déjà utilisé ces technos et donc je peux vous faire un vrai retour d’expérience dessus. Concernant la partie natif, je suis parti sur de l’IOS et non sur de l’Android (j’explique plus bas pourquoi, non *spoil*)</li>
 </ul>
-<h3><strong>Ionic :</strong></h3>
+### <strong>Ionic :</strong>
 <p>Ionic est un framework Javascript basé sur AngularJS pour la partie application web du framework et sur Cordova pour la partie construction des applications natives.</p>
 <p><strong>Comment ça marche ?</strong></p>
 <p>Ionic permet en fait de créer une application qui ouvre une « WebView » disponible nativement sur les appareils mobiles. Pour simplifier, il s’agit d’une fenêtre de  navigateur Web, exécutée dans notre application, qui va se charger d’interpréter et d’afficher le contenu de nos scripts. Cette WebView, dont les possibilités sont étendues par Cordova, permet d’accéder à un certain nombre de fonctionnalités natives à l’appareil mobile (voir schéma plus bas)</p>
@@ -69,7 +69,7 @@ ionic emulate ios</pre>
 <p><span style="text-decoration: underline;">**Conclusion :**</span></p>
 <p>**Ionic est un super moyen de faire des applications rapides et petites. Mais dès lors que vous voulez agrandir vos fonctionnalités ou avoir des performances correctes, il montre les dents. Je n’ai pas testé la version 2 mais je sais qu’ils ont améliorés quelques points.**</p>
 <p>&nbsp;</p>
-<h3 style="text-align: left;"> **React Native :**</h3>
+<h3 style="text-align: left;"> **React Native :**
 <p><span style="font-weight: 400;">Comme son nom l’indique, React Native est une déclinaison de React (propulsée par Facebook en 2015). Le but de React Native est de pouvoir réutiliser le maximum de code entre les différentes plateformes.</span></p>
 <p style="text-align: left;"><span style="font-weight: 400;">L'écriture en Javascript permet aux développeurs web de construire une application mobile native, contrairement à Cordova qui encapsule l'application dans une WebView.</span></p>
 <p>**Comment ça marche ?**</p>
@@ -95,8 +95,8 @@ ionic emulate ios</pre>
 </ul>
 <p>**Conclusion :**</p>
 <p>**React Native semble l’approche idéale pour faire des applications de tous types. Cependant, il faudra noter que son jeune âge lui fait défaut car il ne dispose pas encore de la maturité nécessaire afin de développer de grosses applications qui nécessitent des traitements particuliers. Mais je vous conseille de suivre de près son évolution.**</p>
-<h3></h3>
-<h3>**Natif :**</h3>
+### 
+### **Natif :**
 <p><span style="font-weight: 400;">Bien évidement pour faire une application il n’y a rien de mieux que le natif. </span></p>
 <p><span style="font-weight: 400;">Pourquoi ? Car il n’y a pas de contraintes dues à la technologie. Il n’y a pas de problèmes lors des mises à jour de l’OS. L’expérience utilisateur est forcément meilleure et les perfs sont au rendez-vous (si l’app est bien codée *troll*), bref c’est le top !</span></p>
 <p><span style="font-weight: 400;">Du coup, depuis peu je me suis dit : “Astronaute, c’est une mission pour toi !”</span></p>

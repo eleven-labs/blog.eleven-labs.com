@@ -54,7 +54,7 @@ L'un des exemples donné par Greg Young dans la conférence <em>Code on the Bea
 <p>CQRS est un pattern simple, qui engendre de fantastiques possibilités. Il consiste à séparer la partie lecture et écriture de votre application, grâce à des <em>queries</em> et des <em>commands.</em></p>
 <p>De nombreux avantages résultent de l'utilisation, notamment en termes de flexibilité et de mise à l'échelle.</p>
 <p>L'<em>event sourcing </em>complète le <em>pattern </em>CQRS en sauvegardant l'historique qui détermine l'état actuel de notre application. Ceci est très utile dans des domaines comme la comptabilité, car vous avez ainsi dans votre <em>data store</em> une suite d’événements (par exemple de transactions financières) ne pouvant être modifiés ou supprimés.</p>
-<h3>Pour approfondir le sujet</h3>
+### Pour approfondir le sujet
 <p><span style="text-decoration: underline;"><a title="CQRS Documents" href="https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf" target="_blank">CQRS Documents</a></span>, <em>Greg Young</em></p>
 <p><span style="text-decoration: underline;"><a title="Exploring CQRS and Event Sourcing" href="https://msdn.microsoft.com/en-us/library/jj554200.aspx" target="_blank">CQRS Journey</a></span>, <em>Dominic Betts, Julián Domínguez, Grigori Melnik, Fernando Simonazzi, Mani Subramanian</em></p>
 <p><span style="text-decoration: underline;"><a href="http://www.udidahan.com/2009/12/09/clarified-cqrs/" target="_blank">Clarified CQRS</a></span>, <em>Udi Dahan</em></p>
