@@ -28,14 +28,14 @@ tags:
 </span><span style="font-weight: 400">Le <em>Domain Driven Design</em> permet de répondre à ce problème en isolant complètement le code métier de notre application et en éliminant toute dépendance superflue : infrastructure, interface utilisateur, logique applicative…</span></p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/01/Screen-Shot-2016-01-31-at-14.43.25-1.png"><img class="size-medium wp-image-1566 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/01/Screen-Shot-2016-01-31-at-14.43.25-1-300x185.png" alt="Screen Shot 2016-01-31 at 14.43.25 1" width="300" height="185" /></a></p>
 <p><span style="font-weight: 400">Ainsi l’architecture adoptée du <em>Domain Driven Design</em> est composée de 4 couches. Voyons cela plus en détail.</span></p>
-<h4>Domain</h4>
+#### Domain
 <p>Cette couche contient l’information sur le domaine. C’est le coeur de l’application.  C’est ici que votre code métier vit. Le stockage de données est une tache délaissée à la couche infrastructure.<br />
 Nous détaillerons plus profondément comment modéliser notre métier dans la partie suivante.</p>
-<h4><span style="font-weight: 400">Presentation (ou User Interface)</span></h4>
+#### <span style="font-weight: 400">Presentation (ou User Interface)</span>
 <p><span style="font-weight: 400">Cette couche a pour responsabilité de présenter les informations observables du systèmes à l’utilisateur et interpréter ses intentions vis-à-vis du système.</span></p>
-<h4><span style="font-weight: 400">Application</span></h4>
+#### <span style="font-weight: 400">Application</span>
 <p><span style="font-weight: 400">Cette couche est responsable de la coordination de l’activité de l’application. Aucune logique métier n’est présente dans cette couche, et elle ne maintient aucun état des objets du domaine. Cependant, elle peut contenir un état de progression d’une tache applicative.</span></p>
-<h4><span style="font-weight: 400">Infrastructure</span></h4>
+#### <span style="font-weight: 400">Infrastructure</span>
 <p><span style="font-weight: 400">Cette couche cache les détails d'implémentation technique de l’application, et s'occupe de la persistance des données du modèle. La communication entre les couches fait parti du rôle de l’infrastructure. </span><span style="font-weight: 400"><br />
 </span><span style="font-weight: 400">Ainsi, tout ce qui est choix d’ORM, de serializer ou tout autre détail technique est implémenté dans cette couche. Cela a un gros bénéfice : la couche domaine n’est pas du tout consciente des choix techniques, et donc aucune dépendance n’est introduite avec notre modèle. </span></p>
 <p>&nbsp;</p>
@@ -43,19 +43,19 @@ Nous détaillerons plus profondément comment modéliser notre métier dans la 
 </span><span style="font-weight: 400">Voilà donc un autre point intéressant : l'indépendance du domaine, le fait de se concentrer uniquement sur le modèle du domaine, et l'isoler de tout système externe.</span></p>
 ## <span style="font-weight: 400">Modéliser son </span><i><span style="font-weight: 400">domain</span></i>
 <p><span style="font-weight: 400">Nous venons de voir que la couche </span><i><span style="font-weight: 400">domain </span></i><span style="font-weight: 400">est celle qui contient toute la logique métier. La modélisation du domaine est faite avec de nombreux éléments. Voyons en quelques uns en détail.</span></p>
-<h4><span style="font-weight: 400">Entities</span></h4>
+#### <span style="font-weight: 400">Entities</span>
 <p><span style="font-weight: 400">Ce sont des objets avec une identité et un cycle de vie (ex: un Customer, un Purchase)</span></p>
-<h4><span style="font-weight: 400">Value Objects</span></h4>
+#### <span style="font-weight: 400">Value Objects</span>
 <p><span style="font-weight: 400">Elément clé du Domain Driven Design, un Value Object peut être défini de la sorte : un objet dont la notion d’égalité n’est pas basée sur son identité mais sur ses attributs. Ainsi, une date, une devise ou encore une adresse sont des candidats naturels pour devenir des Value Objects.</span></p>
 <p><span style="font-weight: 400"><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/01/Screen-Shot-2016-01-31-at-15.44.05.png"><img class="size-medium wp-image-1567 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/01/Screen-Shot-2016-01-31-at-15.44.05-300x173.png" alt="Screen Shot 2016-01-31 at 15.44.05" width="300" height="173" /></a></span><span style="font-weight: 400">Les Value Objects permettent de nommer explicitement des concepts clés de notre modèle, d’en améliorer la lisibilité et la communication.</span><span style="font-weight: 400"><br />
 </span><span style="font-weight: 400">Il est fortement conseillé de rendre les Value Objects immuables, car s’ils sont partagés, ils peuvent mettre en péril l’intégrité des données.</span></p>
-<h4><span style="font-weight: 400">Services</span></h4>
+#### <span style="font-weight: 400">Services</span>
 <p><span style="font-weight: 400">Quand certaines opérations agissent sur notre domaine et qu'elles ne sont pas la responsabilité d'une entité ou d'un value object, il est nécessaire de créer un service du domaine. Le nom de ce service doit faire parti du <em>ubiquitous language</em>.</span></p>
-<h4><span style="font-weight: 400">Domain Events</span></h4>
+#### <span style="font-weight: 400">Domain Events</span>
 <p>Les événements métiers permettent de modéliser l'information sur l'activité du domaine. Un <em>domain event </em>est une représentation de quelque chose qui s'est passé dans le domaine.</p>
-<h4><span style="font-weight: 400">Repositories</span></h4>
+#### <span style="font-weight: 400">Repositories</span>
 <p><span style="font-weight: 400">Pour chaque entité qui nécessite un accès, il faut créer une interface qui définira l’ajout et la suppression, ainsi que la sélection d’objets selon différents critères. L’implémentation de cette interface sera effectuée dans la couche infrastructure (notre domaine ne sait pas comment les objets sont persistés ou récupérés)</span></p>
-<h4><span style="font-weight: 400">Specifications</span></h4>
+#### <span style="font-weight: 400">Specifications</span>
 <p><span style="font-weight: 400">Un dernier aspect que j’aimerai aborder concerne le pattern </span><i><span style="font-weight: 400"><a href="http://martinfowler.com/apsupp/spec.pdf" target="_blank">specification</a></span></i><span style="font-weight: 400">. Ce dernier ne fait pas parti des <em>building blocks</em> du <em>Domain Driven Design,</em> mais présente de nombreux avantages.<br />
 Très simple à mettre en place, il permet d’encapsuler vos règles métiers dans une classe avec une sémantique précise.</span></p>
 <pre class="theme:sublime-text lang:php decode:true" title="Le pattern specification">&lt;?php
@@ -83,7 +83,7 @@ class RocketCanBeLaunched implements Specification
 <p><span style="font-weight: 400">Il est clair que définir ses règles métiers au travers de spécifications accroît la lisibilité et la maintenabilité de votre application.</span></p>
 <p>&nbsp;</p>
 <p><span style="font-weight: 400">Tous ces patterns permettent ainsi une meilleure séparation des responsabilités et ont pour objectifs de rendre explicite notre modèle. </span></p>
-<h4>Conclusion</h4>
+#### Conclusion
 <p><span style="font-weight: 400">Le Domain Driven Design permet donc de se focaliser sur le métier, plutôt que la technique. Afin d'obtenir un domaine autonome, notre application peut être divisée en quatre couches : Presentation, Application, Domain et Infrastructure.</span></p>
 <p><span style="font-weight: 400">Penser à sa modélisation métier en communiquant et en utilisant un langage partagé au sein de l’équipe permettra une meilleure lisibilité. De plus, prendre du recul avant d’implémenter une fonctionnalité pour savoir dans quel contexte cette dernière intervient vous garantira une meilleure maintenabilité, ainsi qu’une plus grande aisance lors de la lecture de votre code.<br />
 Le <em>ubiquitous language </em>et les outils de modélisation du modèle permettent de faire apparaître l'intention dans le code, et d'expliciter les contextes. N'est-ce pas une approche intéressante?</span></p>

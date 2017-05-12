@@ -17,11 +17,11 @@ tags:
 <p>Aujourd'hui le Cloud c'est le mot à la mode, mais qu'est-ce que c'est ?</p>
 <p>Comment ça marche ? Et comment en faire ?</p>
 <p><!--more--></p>
-<h4>Qu'est-ce que c'est ?</h4>
+#### Qu'est-ce que c'est ?
 <p>C'est simple, c'est l'utilisation de la puissance de calcul de serveur distant via le réseau. En résumé, le Cloud nous permet de ne plus installer de machines physiques dans nos propres data-center mais d'utiliser ceux installées par d'autres.</p>
-<h4>Comment ça marche ?</h4>
+#### Comment ça marche ?
 <p>En fait, vous utilisez du Cloud tous les jours. Par exemple votre messagerie mail est dans le Cloud, c'est d'ailleurs de celui-ci que nous allons parler.</p>
-<h4>Comment en faire ?</h4>
+#### Comment en faire ?
 <p>Aujourd'hui les deux plus gros fournisseurs de Cloud sont Amazon avec leur offre <a href="https://aws.amazon.com/fr/">AWS</a> et Google avec <a href="https://cloud.google.com/">GCP</a>. Les deux concurrents proposent des produits similaires. Pour cette série de tutoriels, nous allons nous concentrer sur Google et apprendre 3 façon de faire du Cloud.</p>
 ### Le Cloud pour les nuls
 <p>Si vous êtes comme moi, c'est à dire pas passionné par l'installation des serveurs, nous allons commencer par l'installation "prêt-à-porter" d'un serveur. Dans cette exemple nous allons installer un <a href="https://jenkins.io/">Jenkins</a> en moins de 10 minutes, ce qui est un record si vous avez eu la chance d'en installer un vous-même.</p>

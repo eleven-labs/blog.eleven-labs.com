@@ -14,7 +14,7 @@ tags:
 - closure
 ---
 {% raw %}
-<h4>Introduction</h4>
+#### Introduction
 <p>Salut les Astronautes, aujourd'hui on va parler un peu de mobile, et qui plus est de NATIF !!!</p>
 <p>Cet article se veut accessible pour les néophytes, donc on va passer un petit peu de temps pour voir quelques termes techniques ensemble avant de rentrer dans le vif du sujet.</p>
 <p>On va se concentrer sur iOS pour cette fois-ci, mais ne vous en faites pas, j'ai prévu de faire l'équivalent sur Android dans très peu de temps.</p>
@@ -32,7 +32,7 @@ tags:
 <p>-les delegates<br />
 -les closures (Swift) / blocks (Objective-C)</p>
 <p>Nous allons couvrir ces deux points plus en détails, mais avant même de se lancer c'est important de savoir qu'ils existent ! Voilà les principes de bases à connaître ! C'est fini pour l'intro, on va pouvoir rentrer dans les détails !</p>
-<h4>Les Delegates</h4>
+#### Les Delegates
 <p>Un delegate est une référence vers un objet dont on ignore le type exact, mais, chose importante, il hérite d'un protocol.<br />
 Comme cet objet hérite d'un protocol, on sait que l'on peut appeler les méthodes définies dans le protocol, même si l'on ne connait pas l'objet qu'il y a en face. Je pense qu'une petite mise en situation pourra nous aider là-dessus.</p>
 <p>N.B. : Le code que je vais vous fournir est juste une dummy implementation pour que vous compreniez les principes, il ne fera pas de vrai appel HTTP sur l'adresse donnée en paramètres.</p>
@@ -206,7 +206,7 @@ C'est vrai, on peut faire ça, mais ça peut vite devenir verbeux et pas éviden
 <p>- Y'a peut-être une autre solution non?<br />
 - Eh mais il avait pas parlé de block ou closure au début?<br />
 - C'est quoi ces trucs?</p>
-<h4>Les Closures / Blocks</h4>
+#### Les Closures / Blocks
 <p>Tout simplement, on va plus utiliser le terme block en Objective-C et closure en Swift, il s'agit en fait d'une fonction anonyme. Pour ceux qui viennent du web et qui ont fait du JS, ça doit pas mal leur parler.</p>
 <p>On jette un coup d'oeil ?</p>
 <p>On va rajouter une méthode dans chaque classe qui va nous permettre d'utiliser des blocks/closures.</p>

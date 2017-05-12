@@ -119,7 +119,7 @@ public function actionType($username)
 <p><span id="result_box" class="" lang="en">An exception, as its name suggests, is an event that happens at an exceptional moment in the life of the application. It happens because an operation went wrong, or a developer misused a component. Whatever the reason is, the exception must be as explicit as possible. Its good understanding makes it possible to repair it as quickly as possible. <span class="">It is important to lift the exception at the right time.</span></span></p>
 <p><span id="result_box" class="" lang="en">On the other hand, the exception should not be placed under the mat, but it should be handled properly. Good management of the exception requires a good understanding of the expected functionality and its perimeter. <span style="text-decoration: underline;"><span class=""><span style="color: #ff0000; text-decoration: underline;">Catching all exceptions with a `try {catch (\ Exception $ e)` is a very bad practice</span>.</span></span> This would mask an even more serious exception.</span></p>
 <p><span id="result_box" class="" lang="en"><span class="">An exception well launched and managed correctly allows your application to be easily maintainable and makes the diagnosis of an error simpler and faster.</span></span></p>
-<h4><span id="result_box" class="short_text" lang="en"><span class="">References</span></span></h4>
+#### <span id="result_box" class="short_text" lang="en"><span class="">References</span></span>
 <ul>
 <li>http://wiki.c2.com/?ExceptionPatterns</li>
 <li>http://www.phptherightway.com/#exceptions</li>

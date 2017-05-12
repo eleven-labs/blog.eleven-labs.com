@@ -128,7 +128,7 @@ signalingChannel.onmessage = function (evt) {
   }
 };</code></pre>
 <p>On voit que cela devient légèrement plus complexe d'arriver à ses fins, et cela sans compter les polyfills nécessaires pour les différents navigateurs. Heureusement, comme l'adaptateur de l'API navigator.getUserMedia(), il existe de très bonnes librairies open-source qui s'occupent de gérer cette complexité pour vous (<a href="https://www.twilio.com/">Twilio</a>, <a href="https://www.easyrtc.com/">EasyRTC</a>).</p>
-<h4 id="stun-ice">STUN/ICE</h4>
+<h4 id="stun-ice">STUN/ICE
 <p>En ce qui concerne le serveur de liaison <em>STUN/ICE</em>, si on ne passe pas par un service de <em>signaling</em> dédié, Google fournit une instance publique à l'adresse <a href="19302">stun.l.google.com:19302</a>. Il existe également une application serveur open-source développée en <em>C/C++</em> pour déployer sa propre instance <em>STUN/ICE</em> et <em>TURN</em> : <a href="https://github.com/coturn/coturn">https://github.com/coturn/coturn</a>.</p>
 <h2 id="conclusion">Conclusion
 <p>Nous n'avons fait que gratter la surface de ce qui est possible avec le <strong>WebRTC</strong>. La technologie pousse à imaginer une nouvelle forme d'application Web et le meilleur dans tout ça c'est qu'elle est exploitable dès aujourd'hui !</p>

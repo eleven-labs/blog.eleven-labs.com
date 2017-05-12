@@ -18,7 +18,7 @@ Nous avions le choix entre trois ateliers ou une conférence sur des plages hora
 <p>&nbsp;</p>
 <p>Dans ce billet, je vais revenir sur les quatre conférences qui m’ont le plus plu.</p>
 <p>&nbsp;</p>
-<h4>"Le code de la Route Agile" par Virgile Delécolle et Gérard Danièle</h4>
+#### "Le code de la Route Agile" par Virgile Delécolle et Gérard Danièle
 <p>[embed]https://twitter.com/JulieMorvan/status/799180740126736384[/embed]</p>
 <p>La première conférence portait sur le Code de la route agile présenté par Virgile Delécolle et Gérard Danièle, avec 30 questions sur le thème de l’agilité.</p>
 <p>Elle était très interactive : nous nous sommes tous connectés dans une room privée sur Kahoot, et nous répondions directement sur nos téléphones. Nous avons pu tester nos connaissances sur l'agilité, via des questions plus ou moins sérieuses.<br />
@@ -26,7 +26,7 @@ J’ai par exemple appris que la pratique agile la plus utilisée était la rét
 <p>J’ai été classée 22/52 \o/</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<h4>« CoP Agile…. quelques clés »par Jean-Claude Grosjean</h4>
+#### « CoP Agile…. quelques clés »par Jean-Claude Grosjean
 <p>[embed]https://twitter.com/JulieMorvan/status/799182142714560512[/embed]<br />
 Une CoP, Communauty of Practices - Communauté de Pratiques - est un groupe dont les membres s'engagent régulièrement dans des activités de partage de connaissances et d'apprentissage à partir d'intérêts communs" (Etienne Wenger)<br />
 La présentation s’est orientée sur deux parties, le POURQUOI et le COMMENT<br />
@@ -34,9 +34,9 @@ Il nous a donné 8 clefs pour faire fonctionner les CoP en interne.<br />
 Jean-Claude Grosjean a conclu que les CoP sont plus compliquées à mettre en place niveau agile.<br />
 Cela me permet de faire un parallèle avec note fonctionnement chez Eleven Labs. Nous avons un système planétaire : les salariés sont tous dans quatre planètes différentes. Cependant, nous ne sommes pas affectés par intérêt commun mais par hasard. Cela étant dit, si un jour les planètes viennent à être réformées ou si des guildes d’intérêt commun naissent au sein des planètes, nous disposeront alors d'un modèle proche de ces CoP !</p>
 <p>Vous pouvez trouver ses slides <a href="http://www.slideshare.net/jcgrosjean/une-communaut-de-pratiques-agile-qui-marche?ref=http://www.qualitystreet.fr/2016/11/24/les-cles-dune-communaute-agile-qui-marche/">ici</a></p>
-<h4></h4>
-<h4></h4>
-<h4>"Kata des représentations systémiques", par Arnaud Gervais</h4>
+#### 
+#### 
+#### "Kata des représentations systémiques", par Arnaud Gervais
 <p>https://twitter.com/JulieMorvan/status/799198169317961728</p>
 <p>Si j’ai retenu une chose pendant cette journée, c’est « Si tu ne sais pas quelle conférence choisir, choisis celle dont tu ne comprends pas le titre ». Cette conférence a été ma préférée de la journée.<br />
 Arnaud Gervais est Coach Agile. Il a commencé sa présentation avec quelques quotes - ‘plus ça change, plus c’est la même chose’ - , puis il est rentré dans le vif du sujet.</p>
@@ -45,8 +45,8 @@ Dans la mise en pratique, nous avons pris l’exemple d’un membre d’équipe 
 <p>[embed]https://twitter.com/JulieMorvan/status/799221821711192064[/embed]</p>
 <p>Ce workshop était très intéressant car il nous a permis de mapper des problèmes, et de travailler directement sur ces derniers, de les dédramatiser et d’éviter les conflits d’opinion, comme l’a très bien dit Arnaud Gervais à la suite de ce workshop. On se rend ainsi compte de l’étendue qu’un petit problème peut avoir sur l’ensemble d’un projet ou d’une structure juste en mappant ces problèmes.</p>
 <p>Vous pouvez trouver ses slides <a href="http://www.slideshare.net/ArnaudGervais/prgrinations-dun-coach-agile-explorateur-en-systmique">ici</a>.</p>
-<h4></h4>
-<h4>"JTBD", par Ricardo Tome</h4>
+#### 
+#### "JTBD", par Ricardo Tome
 <p>[embed]https://twitter.com/JulieMorvan/status/799258833063448577[/embed]<br />
 Ce workshop a été présenté par Ricardo Tome, qui est Lean Enterprise Coach chez HSBC Londres et Coach Agile dans une startup londonienne, et Speaker "Where people want him".<br />
 Le JTBD est l'acronyme de Job To Be Done. C'est une technique très poussée, qui dit qu'il ne faut pas penser au besoin, mais au 'job'. La subtilité n'a pas été très simple à saisir au départ !</p>

@@ -12,7 +12,7 @@ tags:
 - mobile
 ---
 {% raw %}
-<h4>Mobile development: where to start?</h4>
+#### Mobile development: where to start?
 <p>These days more than ever before mobile applications have become essential in the lives of millions of people. If you are reading this article, it means that you too are interested in this subject. I'll try to make a series of articles to share with you as much as I can on it.</p>
 <p><strong>Which technologies?</strong></p>
 <p>The questions you should ask yourself are: "What are the tools, plugins, functionalities my application needs? What is my target audience? How many people are targeted by this application?". Once these questions answered, you are going to answer automatically the question about the technology choice.</p>

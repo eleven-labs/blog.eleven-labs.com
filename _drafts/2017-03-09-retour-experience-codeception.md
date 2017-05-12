@@ -26,7 +26,7 @@ tags:
 <li>) Notre utilisation</li>
 </ol>
 <p>&nbsp;</p>
-<h4>1) Contexte</h4>
+#### 1) Contexte
 <div></div>
 <div>
 <p><strong>Un peu de FitNesse...</strong></p>
@@ -36,8 +36,8 @@ Dans le cadre de la refonte d'une autre partie de notre SI nous avons donc déci
 <p><strong>Pas de déception avec Codeception</strong></p>
 <p>Nous avons cherché ce qui se faisait dans le domaine du test fonctionnel. Nos critères étaient d'avoir un outil qui n'est pas forcément "human friendly" mais qui ne constitue pas une difficulté pour les devs (PHP en l'occurence). On a de fait écarté tous les outils dans un langage tierce, à cause du temps d'apprentissage.</p>
 <p>On a fini par découvrir Codeception (<a href="http://codeception.com/" target="_blank">http://codeception.com/</a>) qui est une solution de test écrit en PHP et qui possède beaucoup de modules (AMQP, Doctrine2, Filesystem, MongoDb, REST, Symfony,...).</p>
-<h4></h4>
-<h4>2) Présentation</h4>
+#### 
+#### 2) Présentation
 <div></div>
 <div>
 <p>Codeception permet de couvrir votre application entièrement, en effet ils intègrent tout type de tests :</p>
@@ -63,7 +63,7 @@ Dans le cadre de la refonte d'une autre partie de notre SI nous avons donc déci
 </div>
 <div></div>
 <p>&nbsp;</p>
-<h4>3) Notre utilisation</h4>
+#### 3) Notre utilisation
 <div>
 <p> Je vais maintenant vous parler de l'utilisation que nous en faisons et donc aller un peu plus dans le détail. Nous avons besoin de couvrir notre code unitairement, pour cela pas de miracle, on utilise Phpunit (à travers Codeception) mais qui reste du test Phpunit classique (ça suffit largement). Le point le plus intéressant est donc la couverture de nos API et Crons fonctionnellement.</p>
 <p>Test sur un GET /endpoint (nous utilisons mongodb mais vous pouvez bien entendu utiliser n'importe quelle database !) :</p>

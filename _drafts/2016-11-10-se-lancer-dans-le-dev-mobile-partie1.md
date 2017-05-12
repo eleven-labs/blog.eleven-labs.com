@@ -20,7 +20,7 @@ tags:
 - application
 ---
 {% raw %}
-<h4><strong>Faire du mobile oui, mais par où commencer ?</strong></h4>
+#### <strong>Faire du mobile oui, mais par où commencer ?</strong>
 <p>Aujourd’hui plus qu’hier les applications mobiles deviennent indispensables dans la vie de plusieurs millions de personnes. Si vous lisez cet article, c’est que le sujet vous intéresse ou que vous souhaitez vous y mettre vous aussi. Je vais essayer de faire une série d’articles afin de partager avec vous le plus possible sur ce sujet.</p>
 <p><strong>Quelles technos ?</strong></p>
 <p>Les bonnes questions avant de prendre parti pour une solution sont : “Quels sont les outils, plugins, fonctionnalités dont mon application a besoin ? Quel public viser ? Quel volume de personne est visé par cette appli ? ”. Une fois ces questions résolues, vous allez automatiquement répondre à la question de l’orientation de la techno.</p>

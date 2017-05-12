@@ -13,7 +13,7 @@ tags: []
 <p><span style="font-weight: 400;">La première couche est constituée par des protocoles de négociation (Handshake, Cipher, Alert) et la deuxième couche est le protocole Record.</span></p>
 <p><span style="font-weight: 400;">L’image ci-dessous illustre les différentes couches :</span></p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Untitled-Diagram.png"><img class="size-medium wp-image-2877 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Untitled-Diagram-300x233.png" alt="" width="300" height="233" /></a></p>
-<h4>**Handshake Protocol :**</h4>
+#### **Handshake Protocol :**
 <p><span style="font-weight: 400;">Traduit “poignée de main” en Français, </span><span style="font-weight: 400;">ce protocole permet au serveur et au client de : </span></p>
 <ol>
 <li><span style="font-weight: 400;">s'authentifier mutuellement ;</span></li>

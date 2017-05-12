@@ -14,7 +14,7 @@ tags:
 - Chiffrement
 ---
 {% raw %}
-<h4>**Record protocol**</h4>
+#### **Record protocol**
 <p><span style="font-weight: 400;">Ce protocole a pour buts :</span></p>
 <ul>
 <li style="font-weight: 400;">**Encapsulation**<span style="font-weight: 400;"> - permet aux données SSL / TLS d'être transmises et reconnues sous une forme homogène ;</span></li>
@@ -60,7 +60,7 @@ tags:
 <li style="font-weight: 400;"><span style="font-weight: 400;">Ré-assemblage des parties</span></li>
 </ol>
 <p><span style="font-weight: 400;">Si ça se passe mal au cours de ces vérifications, alors une alarme est générée.</span></p>
-<h4>**Outils:**</h4>
+#### **Outils:**
 <p>**OpenSSL:**</p>
 <p><span style="font-weight: 400;">Implémenté en C, OpenSSL est une boîte à outils de chiffrement comportant deux bibliothèques (une de cryptographie générale et une qui implémente le protocole SSL), ainsi qu'une commande en ligne. OpenSSL est distribué sous une licence de type Apache.</span></p>
 <p>**GnuTLS:**</p>

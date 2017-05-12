@@ -47,7 +47,7 @@ Consul a plusieurs composants mais son objectif principal est de regrouper la co
 <p>&nbsp;</p>
 # Service discovery
 <p>&nbsp;</p>
-<h4>Première machine : Consul (Swarm Discovery)</h4>
+#### Première machine : Consul (Swarm Discovery)
 <p>Nous allons commencer par créer la première machine : notre Consul.</p>
 <p>&nbsp;</p>
 <p>Pour cela, tapez :</p>
@@ -70,7 +70,7 @@ $ docker run -d \
 <p>&nbsp;</p>
 <p>Puis ouvrez dans votre navigateur l'URL : http://&lt;ip-obtenue&gt;:8500.</p>
 <p>&nbsp;</p>
-<h4>Deuxième machine : Node 01</h4>
+#### Deuxième machine : Node 01
 <p>Nous allons maintenant créer la machine correspondant au premier node de notre cluster Docker Swarm qui se verra également obtenir le rôle de master de notre cluster Swarm (il en faut bien un).</p>
 <pre class="lang:sh decode:true ">$ docker-machine create -d virtualbox \
     --swarm \
@@ -111,7 +111,7 @@ L'option <span class="lang:default decode:true crayon-inline ">-ip</span>  perm
 <pre class="lang:sh decode:true ">$ curl http://localhost:80
 hello from 172.18.0.X</pre>
 <p>&nbsp;</p>
-<h4>Troisième machine : Node 02</h4>
+#### Troisième machine : Node 02
 <p>Nous allons donc (presque) répéter les étapes du node 01 en changeant quelques valeurs seulement. Créez la machine :</p>
 <pre class="lang:sh decode:true ">$ docker-machine create -d virtualbox \
     --swarm \

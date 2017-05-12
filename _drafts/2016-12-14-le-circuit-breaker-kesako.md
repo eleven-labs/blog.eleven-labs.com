@@ -15,7 +15,7 @@ tags:
 {% raw %}
 <p>Aujourd'hui les architectures micro-services sont de plus en plus répandues. Mais quels sont les moyens de contrôler votre nouveau système d'information ?</p>
 <p>Mettons fin au mystère dès maintenant, le circuit-breaker, c'est le <strong>disjoncteur</strong> de votre architecture micro-services. Mais comment cela fonctionne et pourquoi en aurions-nous besoin ?</p>
-<h4>Pourquoi j'ai besoin d'un disjoncteur ?</h4>
+#### Pourquoi j'ai besoin d'un disjoncteur ?
 <p>Pour expliquer l'utilité d'un disjoncteur, un peu d'histoire. C'est Thomas Edison qui apporte l'électricité dans nos foyers en 1879. Peu après la sortie de cette impressionnante invention, de nombreux accidents de surtension, tuent ou blessent de nombreuses personnes. C'est alors que Thomas Edison, et oui toujours lui, invente le disjoncteur : un mécanisme permettant de couper le courant lors d'un surtension avant que celui-ci détruise les éléments du circuit électrique. Aujourd'hui, le disjoncteur est un élément essentiel dans tout circuit électrique, il y a en dans les téléphones, les ordinateurs, les télévisions etc...</p>
 <p>Mais quel parallèle avec notre architecture micro-services ? Il faut se représenter cette architecture comme un circuit électrique : Tous les services peuvent communiquer entre eux. conséquence, si un des services surchauffe, il risque de contaminer les autres. Il ne faut donc plus faire appel à lui. Et c'est ici que le circuit-breaker rentre en action.</p>
 <h6><em>Exemple:</em></h6>
@@ -32,7 +32,7 @@ tags:
 <p><em><strong>Bonus </strong></em>: L'intérêt est encore plus présent quand votre architecture est dans le cloud et que vous avez choisi un système d'autoscalling. Quand un service tombe ou est ralenti cela peut entraîner une plus forte demande du service, ce qui par effet de levier peut faire des demandes de création de machine et ne ferrons que sur-alimenter le cloud. Cela peut vite coûter cher !</p>
 <p>Vous êtes désormais convaincu d'avoir besoin d'avoir un circuit-breaker, mais comment l'implémenter ? Nous allons en faire une en Symfony permettant de gérer un circuit-breaker minimum avec comme base une communication entre service utilisant Guzzle.</p>
 <p>&nbsp;</p>
-<h4>Implémentation en Symfony 3 :</h4>
+#### Implémentation en Symfony 3 :
 <p>Nous allons suivre le pattern suivant.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Untitled-drawing-6.png"><img class="aligncenter size-full wp-image-2889" src="http://blog.eleven-labs.com/wp-content/uploads/2016/12/Untitled-drawing-6.png" alt="" width="960" height="720" /></a></p>
 <p>Ce dont nous avons besoin :</p>

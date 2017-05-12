@@ -34,7 +34,7 @@ Dans ce registre, vous allez retrouver des images, telles que :</p>
 <p>Nous allons déployer notre Docker Registry avec <a href="https://docs.docker.com/engine/swarm/">Docker Swarm Mode</a> et <a href="https://traefik.io/">Traefik</a>, un reverse proxy qui va nous permettre d’associer un domaine à notre registre Docker.</p>
 <p>Nous aurons besoin d’un nom de domaine, d’un serveur et d’un terminal.</p>
 <p>Pour ce guide, je vais utiliser une instance <a href="https://www.ovh.com/fr/cloud/">OVH Public Cloud</a> et un nom de domaine géré par OVH. Dans les grandes lignes, toutes les étapes critiques peuvent être reproduite sur n’importe quel environnement.</p>
-<h4 id="configuration-du-serveur">Configuration du serveur</h4>
+<h4 id="configuration-du-serveur">Configuration du serveur
 <p>Partons d'une distribution récente, une Ubuntu 16.04 qui a le bon goût d'avoir dans ces dépôts une version de Docker à jour :</p>
 <pre class="bash"><code># Installation de Docker
 sudo apt-get update &amp;&amp; sudo apt-get install docker.io curl
@@ -44,7 +44,7 @@ sudo usermod -a -G docker $(id -un)</code></pre>
 <p>On se déconnecte du serveur, puis on se reconnecte pour initialiser Docker Swarm mode.</p>
 <pre class="bash"><code># Initialise Docker Swarm Mode
 docker swarm init</code></pre>
-<h4 id="installation-de-traefik">Installation de Traefik</h4>
+<h4 id="installation-de-traefik">Installation de Traefik
 <p>Traefik va nous permettre d'associer un domaine au conteneur dans lequel tournera la registry. Le gros avantage, c'est qu'il permet d'obtenir automatiquement un certificat TLS délivré par <a href="https://letsencrypt.org/">Let's Encrypt</a>.</p>
 <pre class="bash"><code># Créer un réseau traefik
 docker network create --driver overlay traefik
@@ -140,7 +140,7 @@ Créez un fichier à l'adresse <strong>$HOME/traefik.json</strong> dans lequel 
 <strong>watch -n1 docker service ls</strong>. <strong>Ctrl+c</strong> pour quitter.</p></blockquote>
 <p>Sur le port <strong>8080</strong> de votre serveur vous devez trouver l'interface de contrôle de Traefik :</p>
 <p><img title="Traefik Web" src="https://lh3.googleusercontent.com/-7OVJ1TQ-U80/WEeRgAfxt_I/AAAAAAAAAaM/-CFecYhSv-AQRsQxuVBAJ-tj0MG5wyTMQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.32.37.png" alt="enter image description here" /></p>
-<h4 id="configuration-du-domaine">Configuration du domaine</h4>
+<h4 id="configuration-du-domaine">Configuration du domaine
 <p>Avant de lancer la registry sur notre environnement, nous allons créer deux sous-domaines pointant vers notre serveur web :</p>
 <ul>
 <li>l'un pour la registry,</li>
@@ -155,7 +155,7 @@ Créez un fichier à l'adresse <strong>$HOME/traefik.json</strong> dans lequel 
 </ul>
 <p><img title="Ajout pointage DNS" src="https://lh3.googleusercontent.com/-MaFb82-SY3c/WEeVhjIumFI/AAAAAAAAAag/a8dyGIA0gfEQ4MvTFwgu89tEBYWE6j9FwCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.51.24.png" alt="enter image description here" /></p>
 <blockquote><p><strong>Important</strong>: Remplacez <strong>domain.tld</strong> par votre domaine et <strong>xxx.xxx.xxx.xxx</strong> par l'adresse IPv4 de votre serveur.</p></blockquote>
-<h4 id="serveur-dauthentification">Serveur d’authentification</h4>
+<h4 id="serveur-dauthentification">Serveur d’authentification
 <p>Docker registry permet d'utiliser des services tiers pour gérer l'authentification et les contrôles d'accès des utilisateurs.</p>
 <p>Nous allons utiliser ici <a href="https://github.com/cesanta/docker_auth">Docker Registry 2 authentication server</a>.</p>
 <p>Cette application en GO prend en charge plusieurs backends. Vous avez au choix la possibilité de stocker vos utilisateurs et ACL dans MongoDB, d'utiliser un serveur LDAP, ou dans notre cas, d'utiliser un fichier YAML.</p>
@@ -266,7 +266,7 @@ acl:
 <p>On lance le service :</p>
 <pre class="bash"><code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/docker-auth.json</code></pre>
 <p>Et on vérifie que le service <strong>docker-auth</strong> est bien lancé en utilisant la commande <strong>docker service ls</strong>.</p>
-<h4 id="mise-en-place-de-la-registry">Mise en place de la registry</h4>
+<h4 id="mise-en-place-de-la-registry">Mise en place de la registry
 <p>Il ne nous reste plus qu'à mettre en place la registry.</p>
 <p>Créons des répertoires qui contiendront nos images docker :</p>
 <pre class="bash"><code>sudo mkdir -p /opt/registry</code></pre>
@@ -332,7 +332,7 @@ acl:
 <p>On lance la registry :</p>
 <pre class="bash"><code>curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/registry.json</code></pre>
 <p>Et on vérifie que le service <strong>docker-registry</strong> est bien lancé en utilisant la commande <strong>docker service ls</strong>.</p>
-<h4 id="tests">Tests</h4>
+<h4 id="tests">Tests
 <p>Sur le port <strong>8080</strong> de votre serveur, vous devez avoir quelque chose d'équivalent à ceci :</p>
 <p><img title="Traefik Services" src="https://lh3.googleusercontent.com/-CHOW4DC6pi4/WEefmOVQGpI/AAAAAAAAAbA/f7W-kRKRLaoUKMXb1BNgQHEyRLxPZHuNgCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+06.34.33.png" alt="enter image description here" /></p>
 <p>Si c'est le cas, c'est que Traefik à fait correctement son boulot, vous avez maintenant un registre docker et un serveur d'authentification associés à leur domaines respectifs.</p>

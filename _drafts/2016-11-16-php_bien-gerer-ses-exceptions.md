@@ -120,7 +120,7 @@ public function actionType($username)
 <p>Une exception, telle que son nom l'indique, est un événement qui arrive à un moment exceptionnel dans la vie de l'application. Elle arrive car une opération s'est mal déroulée, ou un développeur a mal utilisé un composant. Quelque soit la raison, l'exception se doit d'être le plus explicite possible. Sa bonne compréhension permet de la réparer au plus vite. Il est important de lever l'exception au bon moment.</p>
 <p>Par contre, l'exception ne doit pas être mise sous le tapis, mais elle doit être gérée correctement. Une bonne gestion de l'exception passe par une bonne compréhension de la fonctionnalité attendue et de son périmètre. <span style="text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;">Attraper toutes les exceptions avec un `try {} catch (\Exception $e)` est une très mauvaise pratique</span></span>. Cela masquerait une exception encore plus grave.</p>
 <p>Une exception bien lancée et gérée correctement permet à votre application d'être facilement maintenable et rend le diagnostic d'une erreur plus simple et rapide.</p>
-<h4>Références</h4>
+#### Références
 <ul>
 <li>http://wiki.c2.com/?ExceptionPatterns</li>
 <li>http://www.phptherightway.com/#exceptions</li>

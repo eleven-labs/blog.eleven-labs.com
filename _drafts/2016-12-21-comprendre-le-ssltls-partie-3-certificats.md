@@ -14,7 +14,7 @@ tags:
 - Certificats
 ---
 {% raw %}
-<h4><span style="font-weight: 400;">Qu'est-ce qu'un certificat ?</span></h4>
+#### <span style="font-weight: 400;">Qu'est-ce qu'un certificat ?</span>
 <p><span style="font-weight: 400;">Un </span>**certificat électronique**<span style="font-weight: 400;"> (aussi appelé </span>**certificat numérique**<span style="font-weight: 400;"> ou </span>**certificat de clé publique**<span style="font-weight: 400;">) peut être vu comme une carte d'</span><a href="https://fr.wikipedia.org/wiki/Identit%C3%A9_num%C3%A9rique_(Internet)"><span style="font-weight: 400;">identité numérique</span></a><span style="font-weight: 400;">. Il est utilisé principalement pour identifier et authentifier une personne physique ou morale, mais aussi pour chiffrer des échanges.</span></p>
 <p><span style="font-weight: 400;">Il est </span>**signé**<span style="font-weight: 400;"> par un tiers de confiance (aussi appelé </span>**autorités de certification, AC**<span style="font-weight: 400;"> ou </span>**CA**<span style="font-weight: 400;"> pour </span>**Certificate Authority**<span style="font-weight: 400;"> en anglais</span><span style="font-weight: 400;">) qui atteste du lien entre l'identité physique et l'entité numérique.</span></p>
 <p><span style="font-weight: 400;">Les autorités de certification sont des organismes enregistrés et certifiés auprès d'autorités publiques et/ou de </span><a href="https://fr.wikipedia.org/wiki/Gouvernance_d%27Internet"><span style="font-weight: 400;">gouvernance de l'Internet</span></a><span style="font-weight: 400;"> qui établissent leur viabilité comme intermédiaire fiable. </span></p>
@@ -31,7 +31,7 @@ tags:
 <li style="font-weight: 400;">La hiérarchie du certificat ! On voit clairement que le certificat intermédiaire d’Eleven-labs qui est émis par Let’s Encrypt Authority X3 est **signé **<span style="font-weight: 400;">par DST Root CA X3</span></li>
 </ol>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-26-à-11.15.04.png"><img class="size-medium wp-image-2705 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-26-à-11.15.04-202x300.png" alt="capture-decran-2016-11-26-a-11-15-04" width="202" height="300" /></a></p>
-<h4>**Normes de certificat :**</h4>
+#### **Normes de certificat :**
 <p><span style="font-weight: 400;">Les deux normes de certificat les plus utilisées aujourd'hui sont :</span></p>
 <ul>
 <li style="font-weight: 400;"><span style="font-weight: 400;">X.509, défini dans la </span><a href="https://tools.ietf.org/html/rfc5280"><span style="font-weight: 400;">RFC 5280</span></a><span style="font-weight: 400;"> ;</span></li>
@@ -67,7 +67,7 @@ tags:
 </li>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Signature des informations ci-dessus par l'autorité de certification</span></li>
 </ul>
-<h4>**"Signature" ? "Certificat signé" ?**</h4>
+#### **"Signature" ? "Certificat signé" ?**
 <p><span style="font-weight: 400;">Tout d’abord la fonction de signature doit répondre à plusieurs critères :</span></p>
 <ul>
 <li style="font-weight: 400;">**Authentique**<span style="font-weight: 400;"> : L'identité du signataire doit pouvoir être retrouvée de manière certaine ;</span></li>
@@ -97,7 +97,7 @@ tags:
 <p><span style="font-weight: 400;"><em>Attention</em> : nous avons oublié une étape importante. En effet, comme indiqué plus haut, votre navigateur dispose d’un tas de clé publique CA dont </span><span style="font-weight: 400;">DST Root CA X3</span><span style="font-weight: 400;">.</span></p>
 <p><span style="font-weight: 400;">Donc en amont de l’étape II, votre navigateur utilise la clé publique de </span><span style="font-weight: 400;">DST Root CA X3 afin de vérifier la signature du certificat intermédiaire Let’s Encrypt (chaîne de confiance).</span></p>
 <p><span style="font-weight: 400;">Si la vérification est bonne alors le client passe à l’étape II.</span></p>
-<h4>**Type de certificats :**</h4>
+#### **Type de certificats :**
 <p><span style="font-weight: 400;">Lorsque vous allez vouloir acheter un certificat auprès d’un tiers de confiance, celui-ci va vous proposer plusieurs types de certificats. Nous allons voir ensemble de quoi il s’agit :</span></p>
 <ul>
 <li style="font-weight: 400;">**Domain Validation (DV)**<span style="font-weight: 400;"> : Il authentifie uniquement le nom de domaine : il s’agit du certificat le plus répandu (c’est le cas de Let’s Encrypt).</span></li>
@@ -111,7 +111,7 @@ tags:
 <li>Créer vous même un certificat dit **auto-signé**.</li>
 </ol>
 <p>Cependant, les certificats SSL auto-signés déclenchent des alertes de sécurité sur la plupart des navigateurs web car ils n'ont pas été vérifiés par une Autorité de Certification de confiance. La plupart du temps, ces alertes conseillent aux visiteurs de quitter la page pour des raisons de sécurité. Mais si vous passez par Let's Encrypt vous n'aurez pas ce type de problème.</p>
-<h4>**Portée du certificat :**</h4>
+#### **Portée du certificat :**
 <ul>
 <li style="font-weight: 400;"><span style="font-weight: 400;">Un seul domaine : suffisant pour votre site web, mais pas pour les autres services (mail, webmail, ftp, etc.)<br />
 </span><span style="font-weight: 400;"><em>exemple</em>: www.hatem-ben-arfa.com</span></li>

@@ -15,7 +15,7 @@ tags:
 <p>Si vous avez suivi les deux premiers articles sur Google Cloud Platform, vous êtes capable de mettre en production un site rapidement et êtes capable de scaler automatiquement selon le trafic. Mais tout cela n'est possible qu'avec les éléments pré-installés de Google Cloud Platform. Comment créer sa propre configuration ? Réinstaller un serveur facilement ? Scaler automatiquement ?</p>
 <p><!--more--></p>
 <p>Dans ce tutoriel nous allons seulement installer un apache, mais vous pouvez appliquer tout ceci avec n'importe quelle installation.</p>
-<h4>Etape 1, créer votre configuration :</h4>
+#### Etape 1, créer votre configuration :
 <p>Allez dans le menu "Compute Engine", disponible <a href="https://console.cloud.google.com/compute/instances">ici</a>.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.09.20.png"><img class="aligncenter size-large wp-image-2744" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.09.20-1024x569.png" alt="Compute Engine - Google Cloud Platform" width="1024" height="569" /></a></p>
 <p>Puis cliquez sur "Créer une instance", vous allez arriver sur un formulaire qu'il va falloir remplir.</p>
@@ -30,7 +30,7 @@ tags:
 <p>Ouvrez le lien "Gestion, disque, réseau et clés SSH", et dans l'onglet Disque décochez la case "Supprimer le disque de démarrage lorsque l'instance est supprimée".</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.14.42.png"><img class="aligncenter size-full wp-image-2746" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.14.42.png" alt="Suppression du disque - Google Cloud Platform" width="956" height="574" /></a></p>
 <p>Cliquez alors sur "Créer".</p>
-<h4>Etape 2, installer apache :</h4>
+#### Etape 2, installer apache :
 <p>Allez dans "Instance de VM" et attendre que la machine soit prête.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.18.22.png"><img class="aligncenter size-large wp-image-2747" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.18.22-1024x148.png" alt="Instance de VM - Google Cloud Platform" width="1024" height="148" /></a></p>
 <p>Cliquez sur SSH pour ouvrir la connexion à la machine.</p>
@@ -42,7 +42,7 @@ sudo /etc/init.d/apache2 restart;</pre>
 <p>Une fois terminé, si vous cliquez sur l'IP externe fournie dans l'interface "Instance de VM", vous devriez voir la page apache par défaut.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.25.36.png"><img class="aligncenter size-large wp-image-2749" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.25.36-1024x230.png" alt="Apache - Google Cloud Platform" width="1024" height="230" /></a></p>
 <p>Comme vous pouvez le voir l'installation prend un certain temps, et nous ne voulons pas le refaire pour chaque machine dont nous avons besoin. Nous allons donc nous servir de cette machine comme template pour d'autres machines.</p>
-<h4>Etape 3, création d'un template de machine :</h4>
+#### Etape 3, création d'un template de machine :
 <p>Retour dans l'interface "Instance de VM", vous allez supprimer la machine en sélectionnant la VM puis cliquer sur supprimer.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.29.17.png"><img class="aligncenter size-large wp-image-2750" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.29.17-1024x444.png" alt="Supprimer une instance - Google Cloud Platform" width="1024" height="444" /></a></p>
 <p>Allez dans le menu "Images" et cliquez sur "Créer une image".</p>
@@ -58,7 +58,7 @@ Une fois l'image créée, allez dans le menu "Modèles d'instances" et cliquez s
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.41.14.png"><img class="aligncenter size-large wp-image-2755" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.41.14-768x1024.png" alt="Image perso - Google Cloud Platform" width="768" height="1024" /></a></p>
 <p>Et n'oubliez pas de cocher la case "Autoriser le trafic HTTP". Puis cliquez sur "Créer".</p>
 <p>Pour vérifier que tout est bon, nous allons créer de nouvelles instances via ce template.</p>
-<h4>Etape 4, création d'un groupe d'instance:</h4>
+#### Etape 4, création d'un groupe d'instance:
 <p>Allez dans le menu "Groupes d'instances" puis cliquez sur "Créer un groupe d'instances".</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.47.54.png"><img class="aligncenter size-large wp-image-2756" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.47.54-1024x647.png" alt="Créer groupe d'instances - Google Cloud Platform" width="1024" height="647" /></a></p>
 <p>Vous avez l'habitude, nous arrivons sur un formulaire assez long.</p>
@@ -75,7 +75,7 @@ Une fois l'image créée, allez dans le menu "Modèles d'instances" et cliquez s
 <p>Si vous retournez dans le menu "Instances de VM" vous pourrez voir les trois machines en cours de création. Une fois terminé, cliquez sur l"IP externe" de chaque machine. Normalement la page d'apache par défaut s'affiche.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.56.59.png"><img class="aligncenter size-large wp-image-2759" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-18.56.59-1024x286.png" alt="groupe d'instance - Google Cloud Platform" width="1024" height="286" /></a></p>
 <p>À partir de maintenant, nous avons un groupe d'instances qui va scaler selon le trafic. Seulement, le trafic arrive sur les trois Ips, il nous faut donc un "load balancer" devant les machines pour envoyer le trafic sur le groupe d'instances.</p>
-<h4>Etape 5, le load balancer :</h4>
+#### Etape 5, le load balancer :
 <p>Changez de menu et allez dans "réseau".</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-19.02.40.png"><img class="aligncenter size-large wp-image-2760" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-19.02.40-1024x817.png" alt="Réseau - Google Cloud Platform" width="1024" height="817" /></a></p>
 <p>Puis allez dans "Équilibrage des charges", et créez un équilibreur.</p>
@@ -106,7 +106,7 @@ Vous arrivez sur le formulaire suivant :</p>
 <p>Toujours dans cette interface, dans l'onglet surveillance vous pouvez suivre les backends qui reçoivent les requêtes.</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-19.20.22.png"><img class="aligncenter size-large wp-image-2768" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-30-à-19.20.22-1024x603.png" alt="Surveillance Backend - Google Cloud Platform" width="1024" height="603" /></a></p>
 <p>Et voila vous avez une architecture scalable automatiquement avec un load balancer comme un vrai architecte réseau.</p>
-<h4>Etape 6, on supprime les machines :</h4>
+#### Etape 6, on supprime les machines :
 <p>Avant de vous quitter, nous allons supprimer les machines.  Vous devez le faire dans l'ordre suivant car sinon les machines se relanceront automatiquement.</p>
 <ol>
 <li>Supprimez le load balancer</li>

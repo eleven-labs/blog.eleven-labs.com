@@ -40,7 +40,7 @@ tags:
 <li><strong>Conclusion</strong></li>
 </ol>
 ## <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/sf-blog-2.png" target="_blank"><img class="alignnone size-full wp-image-3517" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/sf-blog-2.png" alt="" width="80" height="80" /></a>
-<h4><strong>1 Mise en place de la partie Back-end</strong></h4>
+#### <strong>1 Mise en place de la partie Back-end</strong>
 <h5><strong>1.1 </strong>Installation d'une application Symfony3</h5>
 <p>Installons tout d'abord la dernière version de Symfony3 via l'installeur prévu à cet effet sur le site officiel :</p>
 <pre class="lang:default decode:true">symfony new api-lab</pre>
@@ -226,7 +226,7 @@ class PostController extends FOSRestController implements ClassResourceInterface
 <p>Si tout va bien, vous devriez recevoir un token d'authentification.</p>
 <p>C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)</p>
 ## <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/ng-blog.png" target="_blank"><img class="alignnone size-full wp-image-3513" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/ng-blog.png" alt="" width="80" height="86" /></a>
-<h4><strong>2 Mise en place de la partie Front-end</strong></h4>
+#### <strong>2 Mise en place de la partie Front-end</strong>
 <h5>2.1 Création de l'application Angular2 via Angular CLI</h5>
 <p>Installons tout d'abord Angular CLI globalement sur notre machine. Cet outil va nous servir à générer la structure de notre application via une simple commande et à recompiler à la volée nos modifications :</p>
 <pre class="lang:default decode:true ">npm install -g @angular/cli</pre>
@@ -559,7 +559,7 @@ body {
 <p>Et voilà le travail !</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-01.58.49.png" target="_blank"><img class="alignnone wp-image-3559" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-01.58.49-300x165.png" alt="" width="924" height="508" /></a></p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.28.40.png" target="_blank"><img class="alignnone wp-image-3587" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.28.40-300x165.png" alt="" width="865" height="476" /></a></p>
-<h4>3 Conclusion</h4>
+#### 3 Conclusion
 <p>Pour conclure, je dirais que cette expérience s'est avérée très enrichissante. Angular2 propose une nouvelle perception du framework front-end en comparaison à la première version. Une façon de développer qui se rapproche plus de la programmation orientée objet et rappelle étrangement les frameworks PHP au niveau de la structures des fichiers. Enfin le CLI, bien que toujours en version beta, reste un outil très pratique dans la lignée de la console de Symfony. Une très bonne première expérience. To be continued !</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

@@ -12,7 +12,7 @@ tags:
 - closure
 ---
 {% raw %}
-<h4>Introduction</h4>
+#### Introduction
 <p>Salut les Astronautes, aujourd'hui on va continuer dans notre lancée sur le mobile, toujours en NATIF.</p>
 <p>Cet article s'inscrit dans la lignée des 2 précédents, et il est impératif de les avoir lu pour comprendre ce dont il s'agit ici :</p>
 <p><a href="http://blog.eleven-labs.com/fr/delegates-closures/" target="_blank">http://blog.eleven-labs.com/fr/delegates-closures/</a><br />
@@ -24,7 +24,7 @@ tags:
 <p>Bon comme le premier article, pour que tout le monde soit heureux, je vais vous produire du DUMMY code en Objective-C comme en Swift.</p>
 <p>Dans le monde du développement iOS, comme vous avez pu le comprendre, on peut utiliser les delegates ou bien les closures. En général, on va utiliser la closure pour plus de flexibilité et c'est aussi plus simple à mettre en place. Cependant, dans certains cas, des composants graphiques par exemple sont juste utilisables via un delegate ou un datasource. Je pense à 2 de ces composants que j'utilise beaucoup: UITableView et UICollectionView.</p>
 <p>Sur ces 2 composants par exemple, pas possible d'utiliser de blocks/closures, et on doit passer par un bon delegate à l'ancienne. Dans l'absolu, ce n'est pas très gênant, sauf dans le cas où on se retrouve avec plusieurs de ces composants sur le même écran. Les méthodes deviennent alors énormes et cela devient compliqué de faire du code élégant. Ce que je vous propose ici est une petite solution que je trouve assez propre.</p>
-<h4>Mise en situation</h4>
+#### Mise en situation
 <p>Comme dans les deux articles précédents, on va juste faire un Appel GET sur une URL  donnée et avoir un système qui nous prévient en cas de succès comme d'erreur. On va aller un peu plus vite que dans le premier article, car ce sont des notions que vous devez déjà maîtriser.</p>
 <p>C'est parti pour le code !</p>
 <p>Notre but ici est de réaliser une classe qui fait un GET sur une URL donnée. Je veux prévenir l'objet qui a été l'instigateur de cette requête si elle a réussi ou non. Pour éviter un couplage fort, on va utiliser le principe du delegate, grâce à ça, je n'aurai pas à connaitre le type exact de cet objet.</p>
@@ -193,7 +193,7 @@ func callWebService() {
 
 </pre>
 <p>Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans le block/closure requestSuccess.</p>
-<h4>Mais pourquoi faire tout ça ?</h4>
+#### Mais pourquoi faire tout ça ?
 <p>En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un <strong>Delegate</strong> ou des <strong>blocks/closures</strong> comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...<br />
 Comme je vous l'ai dit au début de l'article, cette solution vient pour un besoin assez spécifique. Celui de rendre un <strong>Delegate</strong> plus flexible quand on est obligé de passer par ce pattern.</p>
 <p><strong>Problèmes soulevés</strong></p>

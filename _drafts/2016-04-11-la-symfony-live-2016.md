@@ -33,7 +33,7 @@ tags:
 <blockquote class="twitter-tweet">
 <p dir="ltr" lang="fr"><a href="https://twitter.com/hashtag/Symfony_Live?src=hash">#Symfony_Live</a> .. prêts :) <a href="https://t.co/6m7gWYENYs">pic.twitter.com/6m7gWYENYs</a></p>
 <p>— Ronan Malek (@MalekArkana) <a href="https://twitter.com/MalekArkana/status/717957350104162304">7 avril 2016</a></p></blockquote>
-<h4><span style="line-height: 1.5">Tout commence par Fabien Potencier qui nous présente les répertoires de code monolithique.</span></h4>
+#### <span style="line-height: 1.5">Tout commence par Fabien Potencier qui nous présente les répertoires de code monolithique.</span>
 <blockquote class="twitter-tweet"><p>La conférence <a href="https://twitter.com/hashtag/Symfony_Live?src=hash">#Symfony_Live</a> Paris 2016 a commencé avec le talk de <a href="https://twitter.com/fabpot">@fabpot</a> ! C'est parti pour 2 jours ! <a href="https://t.co/RgkjFe2tG7">pic.twitter.com/RgkjFe2tG7</a></p>
 <p>— Symfony Live (@symfony_live) <a href="https://twitter.com/symfony_live/status/717978114043805696">7 avril 2016</a></p></blockquote>
 <p>La notion de répertoire monolithique est utilisée par Facebook et Google, qui pourtant ont des dizaines de gigas de données.</p>
@@ -56,7 +56,7 @@ tags:
 <p>&nbsp;</p>
 <p>J'ai tout de même envie de tester ce mode de fonctionnement qui parait avoir plus d'avantages que la gestion actuelle.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/monolith-repositories-with-git" target="_blank">Les slides et les avis.</a></p>
-<h4>Le composant Guard</h4>
+#### Le composant Guard
 <p>Jéremy, un Marseillais de Sensio, est venu nous parler d'un nouveau composant Guard, disponible depuis la version 2.8 de Symfony. La première chose est que le composant n'apporte aucune nouvelle fonctionnalité par rapport à l'authentification qui existe déjà dans Symfony.</p>
 <p>La seule nouveauté est la gestion de l'authentification en une seule class, et non plus les trois ou quatre à mettre en place actuellement.</p>
 <p>&nbsp;</p>
@@ -64,7 +64,7 @@ tags:
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/717989825274585089">7 avril 2016</a></p></blockquote>
 <p>Lors de son talk, un exemple de code nous apporte une idée de l'utilisation beaucoup plus simple, je vous invite à tester le composant dans vos projets en Symfony 2.8.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/guard-dans-la-vraie-vie" target="_blank">Les slides et les avis</a></p>
-<h4>La migration de Symfony 2.0 à 3.0 où comment faire une migration progressive.</h4>
+#### La migration de Symfony 2.0 à 3.0 où comment faire une migration progressive.
 <p>La Fourchette est venue nous montrer comment mettre en place une migration progressive de leurs applications, la problématique étant de ne jamais avoir d'interruption de service.</p>
 <blockquote class="twitter-tweet">
 <p dir="ltr" lang="fr">Voilà comment faire une migration from scratch <a href="https://twitter.com/hashtag/Symfony_Live?src=hash">#Symfony_Live</a> , bientôt sur <a href="https://twitter.com/lemondefr">@lemondefr</a> <a href="https://t.co/k4Jk3YESfD">pic.twitter.com/k4Jk3YESfD</a></p>
@@ -76,7 +76,7 @@ tags:
 <p>Après un an de travail, il leur reste encore beaucoup de fonctionnalités à migrer mais l'architecture qu'ils ont mise en place leur permet d'être sereins.</p>
 <p>Je trouve leur migration vraiment sympa, elle permet de vérifier les choix techniques à chaque instant et de ne pas fermer des services utilisateur.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/r2d2-to-bb8" target="_blank">Les slides et avis.</a></p>
-<h4>Les fuites de mémoire en PHP</h4>
+#### Les fuites de mémoire en PHP
 <p>Le début du talk nous a permis de comprendre comment PHP opère la gestion de sa mémoire. Cela permet d'avoir une réflexion sur les problèmes liés à cette façon de faire et donc de réfléchir à notre code. L'exemple marquant est l'utilisation d'objet cyclique (A appelle B qui lui même utilise A), qui arrive à chaque fois à une fuite mémoire.</p>
 <blockquote class="twitter-tweet">
 <p dir="ltr" lang="fr">Très bonne explication des memory leak en <a href="https://twitter.com/hashtag/php?src=hash">#php</a> par <a href="https://twitter.com/BJacquemont">@BJacquemont</a> <a href="https://twitter.com/hashtag/Symfony_Live?src=hash">#Symfony_Live</a> <a href="https://t.co/xFJms9WrHQ">pic.twitter.com/xFJms9WrHQ</a></p>
@@ -86,7 +86,7 @@ tags:
 <blockquote class="twitter-tweet"><p><a href="https://twitter.com/hashtag/memory?src=hash">#memory</a> <a href="https://twitter.com/hashtag/leak?src=hash">#leak</a> c'est surtout pour les deamon mais pourquoi les faire en <a href="https://twitter.com/hashtag/php?src=hash">#php</a> ? <a href="https://twitter.com/hashtag/Symfony_Live?src=hash">#Symfony_Live</a> <a href="https://t.co/Tz8ERo2wtQ">pic.twitter.com/Tz8ERo2wtQ</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718013770950434816">7 avril 2016</a></p></blockquote>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/php-meminfo-ou-la-chasse-aux-memory-leak" target="_blank">Les slides et avis.</a></p>
-<h4>Retour d'expérience sur les microservices.</h4>
+#### Retour d'expérience sur les microservices.
 <p>Le speaker vient nous expliquer la mise en place des microservices chez Auchan, il commence par présenter ce qu'est une architecture microservices.</p>
 <ul>
 <li>1 microservice = 1 domaine métier = 1 composant applicatif</li>
@@ -108,7 +108,7 @@ tags:
 <p>Je ne suis pas fan de son architecture car elle ne contient qu'une seule technologie et non une réflexion plus globale, de plus l'utilisation d'un bundle commun entre chaque applicatif n'est pas microservices compiliant car cela créé une dépendance entre les services.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/retour-dexprience-reactive-architecture-et-microservices--comment-dcoupler-mes-applications-" target="_blank">Les slides et avis.</a></p>
 <p>&nbsp;</p>
-<h4>Le composant workflow.</h4>
+#### Le composant workflow.
 <p>Ce composant ne parle pas à grand monde, d'ailleurs peu de personnes l'utilisent car il n'est pas en production depuis longtemps.</p>
 <blockquote class="twitter-tweet"><p>Le composant Workflow, mais c'est quoi ? <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="https://t.co/2aC62jFuGQ">pic.twitter.com/2aC62jFuGQ</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718065203225706498">7 avril 2016</a></p></blockquote>
@@ -116,7 +116,7 @@ tags:
 <p>Le composant permet de suivre le workflow d'un objet très facilement, il suffit de beaucoup de config et un peu d'implémentation pour les transitions.</p>
 <p>Durant tout le talk, il donne l'exemple de la presse et la gestion du workflow de publication ce qui nous donne un vrai exemple d'utilisation de ce nouveau composant.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/le-reveil-du-workflow" target="_blank">Les slides et avis.</a></p>
-<h4>Blablacar nous présente ElasticSearch</h4>
+#### Blablacar nous présente ElasticSearch
 <p>Le talk nous propose de comprendre comment Blablacar utilise ElasticSearch sur leur front.</p>
 <p>On y retrouve un tutoriel de l'utilisation d'Elasticsearch avec de nombreux exemples concrets récupérés du site de Blablacar. Le talk fut assez court et manquait de préparation.</p>
 <blockquote class="twitter-tweet">
@@ -124,7 +124,7 @@ tags:
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718084231981830144">7 avril 2016</a></p></blockquote>
 <p>En bref un bon récapitulatif de la documentation Elasticsearch, dommage de ne pas être allé plus loin.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/elasticsearch-chez-blablacar" target="_blank">Les slides et avis.</a></p>
-<h4>Performance au quotidien dans un environnement Symfony.</h4>
+#### Performance au quotidien dans un environnement Symfony.
 <p>Certainement la meilleure présentation de la première journée de la Symfony Live, Xavier Leune est venu nous présenter la performance chez CCM Benchmark, le plus gros groupe de médias en termes de pages vues au monde.</p>
 <p>Tout d'abord, il a choisi des métriques à suivre qui permettent d'avoir une ligne directrice lors de tout choix technique ou de développement.</p>
 <p>Il a choisi alors le framework, Symfony n'avait pas les meilleures performances, au contraire il était dans les derniers, mais cela était surtout dû à Doctrine, CCM Benchmark avait envie de travailler avec Symfony car malgré de mauvaises performances, c'est un framework très suivi et qui a beaucoup d'autres avantages.</p>
@@ -134,7 +134,7 @@ tags:
 <p>Cette présentation est à voir, elle permet de se familiariser avec la gestion de la performance dans un grand groupe média.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/performance-au-quotidien-dans-un-environnement-symfony" target="_blank">Les slides et avis.</a></p>
 <p>&nbsp;</p>
-<h4>La confiance dans une entreprise.</h4>
+#### La confiance dans une entreprise.
 <p>Le fondateur d'OpenClassRoom vient présenter sa vision de la société d'aujourd'hui.</p>
 <blockquote class="twitter-tweet"><p>La <a href="https://twitter.com/hashtag/confiance?src=hash">#confiance</a> élément clé du travail en équipe. <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="https://t.co/ntVXMLCxVZ">pic.twitter.com/ntVXMLCxVZ</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718334302191284225">8 avril 2016</a></p></blockquote>
@@ -145,7 +145,7 @@ tags:
 <p>Puis, nous explique ce qu'il a mis en place chez OpenClassRoom avec un historique très sympa du Site du zéro. On y voit des images d'il y a 10 ans et ça nous fait revenir dans le passé.</p>
 <p>Il finit par de nombreux conseils de management tels que la transparence et la confiance. On n'est pas loin chez Eleven :)</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/pourquoi-se-faire-confiance-" target="_blank">Les slides et avis.</a></p>
-<h4>PSR6 ou le cache interface.</h4>
+#### PSR6 ou le cache interface.
 <blockquote class="twitter-tweet"><p>PSR-6 et le cache c'est pas mal ça <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718345799944560640">8 avril 2016</a></p></blockquote>
 <p>Nicolas Grekas est venu nous présenter l'un des derniers standards de la php-fig. Il explique que PSR6 est une norme qui tente d'uniformiser la gestion du cache. Le problème étant que cette norme est en 'brouillon' depuis plus de 3 ans et que personne n'arrive à se mettre d'accord.</p>
@@ -162,14 +162,14 @@ tags:
 <p>Pour l'instant, l'implémentation est simple, mais il reste beaucoup de travail donc toute aide est la bienvenue.</p>
 <p>La présentation était sympa et permet de réfléchir sur la mise en place du cache ainsi que l'intérêt du PSR.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/psr-6--symfony-cache--de-la-perf-en-standard" target="_blank">Les slides et avis.</a></p>
-<h4>La sécurité web par Blablacar.</h4>
+#### La sécurité web par Blablacar.
 <p>La présentation était très parlante et permet de voir le nombre de failles possibles dans un site web. L'exemple parlant du champ hidden qui n'est pas correctement vérifié sur le serveur et permet d'avoir pleins de billets SNCF pour le prix d'un parait une évidence mais rappelle que la sécurité est une affaire du quotidien.</p>
 <blockquote class="twitter-tweet"><p>Et voilà un petit crawler fait par <a href="https://twitter.com/BlaBlaCarTech">@BlaBlaCarTech</a> grâce à <a href="https://twitter.com/fabpot">@fabpot</a> <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="https://t.co/wQm5QBrcgO">pic.twitter.com/wQm5QBrcgO</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718364085990137856">8 avril 2016</a></p></blockquote>
 <p>Il montre ensuite une succession de problèmes de sécurité courants, tels que les XSS, le CRSF TOKEN, le brut force, etc ....</p>
 <p>Je vous invite à regarder les slides au plus vite, en espérant qu'ils soient disponibles.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/scurit-web-pirater-pour-mieux-protger" target="_blank">Les slides et avis.</a></p>
-<h4>Doctrine 2</h4>
+#### Doctrine 2
 <p>Cette présentation ne partait pas gagnante, je ne suis pas fan de Doctrine et même contre beaucoup d'ORM.</p>
 <blockquote class="twitter-tweet">
 <p dir="ltr" lang="fr">Une petite présentation sur <a href="https://twitter.com/hashtag/doctrine?src=hash">#doctrine</a>, pas sur de changer d'avis sur l'outil !!! <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="https://t.co/IOYTNuNw4n">pic.twitter.com/IOYTNuNw4n</a></p>
@@ -183,13 +183,13 @@ tags:
 <p dir="ltr" lang="fr">Pas de changement d'avis sur <a href="https://twitter.com/hashtag/doctrine?src=hash">#doctrine</a> trop de code pour faire des requêtes <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="https://t.co/25Mna0ppTz">pic.twitter.com/25Mna0ppTz</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718380797800132609">8 avril 2016</a></p></blockquote>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/aller-plus-loin-avec-doctrine2" target="_blank">Les slides et avis.</a></p>
-<h4>Le composant d'expression langage.</h4>
+#### Le composant d'expression langage.
 <p>La présentation était très métier, je n'ai presque rien noté. La seule chose que j'ai comprise est que l'utilisation du composant d'expression langage était très simple d'utilisation.</p>
 <p>C'est ce genre de présentation très métier qui sans notion de ce dernier, me pose problème et m'ennuie dans les conférences. Heureusement, une session de live coding m'a permis de ne pas m'endormir.</p>
 <blockquote class="twitter-tweet"><p>Une petit session de <a href="https://twitter.com/hashtag/livecoding?src=hash">#livecoding</a> au <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> sur le composant <a href="https://twitter.com/hashtag/expression?src=hash">#expression</a>-language. <a href="https://twitter.com/hashtag/bravo?src=hash">#bravo</a> <a href="https://t.co/c14TmoOirn">pic.twitter.com/c14TmoOirn</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718418419448721409">8 avril 2016</a></p></blockquote>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/refondre-un-moteur-de-rgles-avec-lexpression-language-de-symfony2" target="_blank">Les slides et avis.</a></p>
-<h4>Sécurité et HTTP</h4>
+#### Sécurité et HTTP
 <p>Romain Neutron était là pour nous expliquer comment fonctionnent les headers http de sécurité. Il nous a montré les bases d'un serveur sécurisé avec les headers tels que xss-protection, frame-options, content-type-option, ainsi que la configuration sécurisée d'un nginx.</p>
 <blockquote class="twitter-tweet">
 <p dir="ltr" lang="fr">Voilà ma nouvelle config de header dans mon nginx, merci <a href="https://twitter.com/romainneutron">@romainneutron</a> <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="https://t.co/HcuXPdk3yj">pic.twitter.com/HcuXPdk3yj</a></p>
@@ -199,7 +199,7 @@ tags:
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718428864758816768">8 avril 2016</a></p></blockquote>
 <p>L'utilisation du <a href="https://github.com/nelmio/NelmioSecurityBundle" target="_blank">nelmio/NelmioSecurityBundle</a> permet de faire une migration en douceur des headers et donc de la sécurisation de vos applications.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/scurit-et-http" target="_blank">Les slides et avis.</a></p>
-<h4>Les applications cloud native</h4>
+#### Les applications cloud native
 <p>Le speaker était "fou", il parlait très vite et se perdait parfois dans ses explications. Mais ce qu'il faut retenir, c'est que applications cloud natives ne veulent pas dire applications sur des serveur cloud, il suffit de suivre des règles d'architecture :</p>
 <ul>
 <li>avoir un CDN</li>
@@ -212,7 +212,7 @@ tags:
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718444803374063621">8 avril 2016</a></p></blockquote>
 <p>La présentation était très intéressante mais manquait d'une ligne directrice.</p>
 <p><a href="https://joind.in/event/symfonylive-paris-2016/construire-des-applications-cloud-natives" target="_blank">Les slides et avis.</a></p>
-<h4>Conclusion</h4>
+#### Conclusion
 <p>La conférence était un vrai succès et merci à tous les conférenciers pour la qualité de leurs présentations. J'ai appris beaucoup de choses et repars avec de nombreuses idées de veille.</p>
 <blockquote class="twitter-tweet"><p>Merci <a href="https://twitter.com/symfony">@symfony</a> pour ce <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> sympa. Vivement les <a href="https://twitter.com/symfonycon">@symfonycon</a> <a href="https://t.co/UtSTMnm2iO">pic.twitter.com/UtSTMnm2iO</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718451424892465152">8 avril 2016</a></p></blockquote>

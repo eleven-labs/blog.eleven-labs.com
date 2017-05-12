@@ -15,10 +15,10 @@ tags:
 <p>Bien que la plupart des développeurs PHP connaissent l'existence de xDebug, je me rends compte que bien peu l'utilisent réellement, et souvent se laissent tenter par la méthode "à l'ancienne" du "**var_dump(); die;**".</p>
 <p>Dans cet article je vais tenter de vous familiariser avec cet outil d'une incroyable utilité, qui vous fera gagner un temps fou pour débugger vos applications.</p>
 <p><!--more--></p>
-<h4>Les bases</h4>
+#### Les bases
 <p>Le principe est assez simple : On place tout d'abord un ou plusieurs points d'arrêt dans le code, là où on veut interrompre l'exécution du script. Lorsque l'on accède à une URL via le navigateur, xDebug intercepte l'appel et déclenche une session de debug en notifiant l'IDE. On retrouve alors dans l'IDE la valeur des variables du scope courant ainsi que la pile d'appels. Le plus sympathique est de pouvoir avancer l'exécution pas à pas en naviguant dans les appels de fonctions tout en gardant un œil sur les valeurs des variables présentes dans le scope.</p>
 <p>Il est également possible de débugger les scripts en mode CLI. C'est exactement le même principe.</p>
-<h4>Prérequis</h4>
+#### Prérequis
 <p>Si ce n'est pas déjà le cas, il faut installer et activer l'extension xDebug.</p>
 <p>Sur ubuntu cela donne :</p>
 <pre class="lang:sh decode:true" title="Installer xDebug sur Ubuntu">$ sudo apt-get install php-xdebug
@@ -29,7 +29,7 @@ tags:
 xdebug
 </pre>
 <p>Vous aurez également besoin d'un IDE, ici nous verrons un exemple avec PHPStorm, mais bien d'autres sont compatibles en installant simplement un plugin (NetBeans, Atom, SublimeText, etc...)</p>
-<h4>Remote debugging (web)</h4>
+#### Remote debugging (web)
 <p>Dans cette section nous verrons comment utiliser xDebug avec votre IDE pour débugger une application web sur un serveur distant (ou même en local).</p>
 <p>Pour activer le debug distant, nous avons besoin de modifier la config php.ini :</p>
 <pre class="lang:ini false" title="xDebug configuration">xdebug.remote_enable=On         # Activer le debug distant
@@ -54,7 +54,7 @@ On ajoute ensuite un serveur en cliquent sur le bouton "**...**"</p>
 <p>Et HOP ! PHPStorm surgit tout à coup et nous montre tout ce qui se passe à l'endroit de notre point d'arrêt !<br />
 On peut même avancer l'exécution au pas à pas !</p>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/12/debugging.png"><img class="aligncenter size-full wp-image-2934" src="http://blog.eleven-labs.com/wp-content/uploads/2016/12/debugging.png" alt="" width="1253" height="982" /></a></p>
-<h4>Debugger les scripts CLI</h4>
+#### Debugger les scripts CLI
 <p>Pour utiliser xDebug sur un script CLI (exécuter un simple fichier PHP ou une commande Symfony par exemple), la démarche est exactement la même. Mais cette fois xDebug ne peut plus déterminer sur quelle IP se connecter pour lancer la session de debug. La propriété **xdebug.remote_connect_back** n'est d'aucune utilité. Nous devons spécifier sur quel hôte nous voulons être contactés en utilisant la propriété **xdebug.remote_host** (localhost par défaut).</p>
 <p>Voici à quoi ressemble notre configuration php.ini (celui du CLI cette fois) :</p>
 <pre class="lang:text decode:true" title="xDebug configuration">xdebug.remote_enable=On         # Activer le debug distant
@@ -73,6 +73,6 @@ $ unset XDEBUG_CONFIG                       # Fin de session
 </pre>
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/12/debugging_cli.png"><img class="aligncenter size-full wp-image-2935" src="http://blog.eleven-labs.com/wp-content/uploads/2016/12/debugging_cli.png" alt="" width="1209" height="778" /></a></p>
 <p>Pour débugger en mode CLI sur un serveur distant, vous devez simplement changer la valeur de **xdebug.remote_host** dans le php.ini par votre IP.</p>
-<h4>Conclusion</h4>
+#### Conclusion
 <p>L'utilisation de xDebug ne demande pas 5 ans d'études ! Alors utilisez-le, vu l'énorme gain de temps qu'il apporte par rapport à du debug à la main, que ce soit en web ou en CLI, en local ou sur un serveur distant, vous n'avez plus d'excuse !</p>
 {% endraw %}

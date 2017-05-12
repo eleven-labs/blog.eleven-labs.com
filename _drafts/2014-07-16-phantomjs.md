@@ -30,7 +30,7 @@ tags:
 <p style="text-align: justify;">Deux possibilités s'offrent à vous, la 1ère (et celle que j'ai choisie) est de télécharger un zip, vous le décompressez et c'est gagné.</p>
 <p style="text-align: justify;">La 2ème est de <a title="compiler" href="http://phantomjs.org/build.html" target="_blank"><span style="color: #0000ff;"><span style="color: #0000ff;">compiler Phantom</span>JS</span></a> vous-même. Ce n'est pas plus compliqué que la 1ère méthode, c'est juste plus long.</p>
 # II Capture
-<h4>Exemple 1</h4>
+#### Exemple 1
 <p style="text-align: justify;">Phantomjs supporte trois formats d'export: PNG, JPEG et PDF.</p>
 <p style="text-align: justify;">Commencez par créer un fichier javascript que j’appellerai phantomjs.js et mettez-y le code suivant :</p>
 <pre class="lang:js decode:true" title="exemple capture">var page = require('webpage').create(),
@@ -63,7 +63,7 @@ page.open(address, function(status) {
 <p>Pour faire le rendu du site de PhantomJS par exemple, vous taperez:</p>
 <pre class="lang:sh decode:true">path/to/phantomjs phantomjs.js 'http://phantomjs.org/' 'yourfolder'</pre>
 <p>Si des erreurs existent sur la page, il est possible que celles-ci s'affichent dans votre console.</p>
-<h4>Exemple 2</h4>
+#### Exemple 2
 <p>Voici un second exemple pour faire un rendu d'une partie de la page. Ici je crée une image de l'icône de PhantomJS présent sur leur site.</p>
 <pre class="lang:js decode:true">var page = require('webpage').create(),
 system = require('system'),

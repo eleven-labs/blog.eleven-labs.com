@@ -39,7 +39,7 @@ Consul has multiple components but its main goal is to manage the services knowl
 <p>Let's start to install our architecture!</p>
 <p>&nbsp;</p>
 # Service discovery
-<h4>First machine: Consul (Swarm Discovery)</h4>
+#### First machine: Consul (Swarm Discovery)
 <p>We'll start by creating our first machine: Consul</p>
 <p>To do that, just type:</p>
 <pre class="lang:sh decode:true ">$ docker-machine create -d virtualbox consul</pre>
@@ -61,7 +61,7 @@ $ docker run -d \
 <p>&nbsp;</p>
 <p>Then, open in your browser the following URL: <span class="lang:default decode:true crayon-inline ">http://&lt;obtained-ip&gt;:8500</span> .</p>
 <p>&nbsp;</p>
-<h4>Second machine: Node 01</h4>
+#### Second machine: Node 01
 <p>Now, it's time to create t<span class="s1">he machine that corresponds to </span>our first Docker Swarm cluster node and that will also receive the master role for our cluster (we need one...):</p>
 <pre class="lang:sh decode:true ">$ docker-machine create -d virtualbox \
     --swarm \
@@ -101,7 +101,7 @@ $ docker run -d \
 <pre class="lang:sh decode:true ">$ curl http://localhost:80
 hello from 172.18.0.X</pre>
 <p>&nbsp;</p>
-<h4>Third machine: Node 02</h4>
+#### Third machine: Node 02
 <p class="p1"><span class="s1">We'll now repeat most steps we've ran</span> for our first node but we'll change some values. First, create the Docker machine:</p>
 <pre class="lang:sh decode:true ">$ docker-machine create -d virtualbox \
     --swarm \

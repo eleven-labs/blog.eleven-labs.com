@@ -14,7 +14,7 @@ tags:
 - Chiffrement
 ---
 {% raw %}
-<h4><span style="text-decoration: underline;">**Algorithmes symétriques :**</span></h4>
+#### <span style="text-decoration: underline;">**Algorithmes symétriques :**</span>
 <p><span style="font-weight: 400;">La </span>**cryptographie symétrique**<span style="font-weight: 400;">, également dite </span>**à clé secrète**<span style="font-weight: 400;">, est la plus ancienne forme de chiffrement. Elle permet à la fois de chiffrer et de déchiffrer des messages à l'aide d'un même mot clé.</span></p>
 <p><span style="font-weight: 400;">Nous pouvons citer le chiffre de Jules César, qui consiste en un chiffrement par </span>**décalage**<span style="font-weight: 400;">.</span></p>
 <p><span style="font-weight: 400;">C’est à dire que le texte chiffré s'obtient en remplaçant chaque lettre du texte clair original par une lettre à distance fixe, toujours du même côté, dans l'ordre de l'alphabet.</span></p>
@@ -31,7 +31,7 @@ tags:
 <p><span style="font-weight: 400;">L’avantage de ces types d’</span><span style="font-weight: 400;">algorithmes est qu’ils sont rapides. Ce qui nous arrange lorsque nous traitons un grand nombre de requêtes HTTP.</span></p>
 <p><span style="font-weight: 400;">Cependant, ces types </span><span style="font-weight: 400;">d’</span><span style="font-weight: 400;">algorithmes comportent un problème. En effet, il faut envoyer la clé grâce à laquelle nous avons chiffré le message à un destinataire.</span></p>
 <p><span style="font-weight: 400;">Comment envoyer de manière sécurisée la clé au destinataire pour qu'il puisse déchiffrer votre message ?</span></p>
-<h4><span style="text-decoration: underline;">**Algorithmes asymétriques :**</span></h4>
+#### <span style="text-decoration: underline;">**Algorithmes asymétriques :**</span>
 <p><span style="font-weight: 400;">À la différence des algorithmes symétriques, les algorithmes asymétriques fonctionnent avec </span>**deux clés**<span style="font-weight: 400;">. On peut les appeler aussi, algorithmes à </span>**clé publique**<span style="font-weight: 400;">.</span></p>
 <p><span style="font-weight: 400;">Les deux algorithmes asymétriques les plus connus </span><span style="font-weight: 400;">sont :</span></p>
 <ol>
