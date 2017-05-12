@@ -13,26 +13,40 @@ tags:
 ---
 {% raw %}
 #### Introduction
-<p>Salut les Astronautes, aujourd'hui on va continuer dans notre lancée sur le mobile, toujours en NATIF.</p>
-<p>Cet article s'inscrit dans la lignée des 2 précédents, et il est impératif de les avoir lu pour comprendre ce dont il s'agit ici :</p>
-<p><a href="http://blog.eleven-labs.com/fr/delegates-closures/" target="_blank">http://blog.eleven-labs.com/fr/delegates-closures/</a><br />
-<a href="http://blog.eleven-labs.com/fr/android-listeners/">http://blog.eleven-labs.com/fr/android-listeners/</a></p>
-<p>Si vous avez lu les 2 précédents articles, vous devez vous douter de ce dont celui-ci va parler.<br />
+Salut les Astronautes, aujourd'hui on va continuer dans notre lancée sur le mobile, toujours en NATIF.
+
+Cet article s'inscrit dans la lignée des 2 précédents, et il est impératif de les avoir lu pour comprendre ce dont il s'agit ici :
+
+<a href="http://blog.eleven-labs.com/fr/delegates-closures/" target="_blank">http://blog.eleven-labs.com/fr/delegates-closures/</a><br />
+<a href="http://blog.eleven-labs.com/fr/android-listeners/">http://blog.eleven-labs.com/fr/android-listeners/</a>
+
+Si vous avez lu les 2 précédents articles, vous devez vous douter de ce dont celui-ci va parler.<br />
 -Mais oui on sait, allez dépêche-toi là, on veut savoir comment faire un truc aussi sexy que les listeners mais sur iOS cette fois-ci.<br />
--Ok, juste encore un petit peu de blabla technique et on se lance.</p>
-<p><strong>Comment ça va se passer :</strong></p>
-<p>Bon comme le premier article, pour que tout le monde soit heureux, je vais vous produire du DUMMY code en Objective-C comme en Swift.</p>
-<p>Dans le monde du développement iOS, comme vous avez pu le comprendre, on peut utiliser les delegates ou bien les closures. En général, on va utiliser la closure pour plus de flexibilité et c'est aussi plus simple à mettre en place. Cependant, dans certains cas, des composants graphiques par exemple sont juste utilisables via un delegate ou un datasource. Je pense à 2 de ces composants que j'utilise beaucoup: UITableView et UICollectionView.</p>
-<p>Sur ces 2 composants par exemple, pas possible d'utiliser de blocks/closures, et on doit passer par un bon delegate à l'ancienne. Dans l'absolu, ce n'est pas très gênant, sauf dans le cas où on se retrouve avec plusieurs de ces composants sur le même écran. Les méthodes deviennent alors énormes et cela devient compliqué de faire du code élégant. Ce que je vous propose ici est une petite solution que je trouve assez propre.</p>
+-Ok, juste encore un petit peu de blabla technique et on se lance.
+
+<strong>Comment ça va se passer :</strong>
+
+Bon comme le premier article, pour que tout le monde soit heureux, je vais vous produire du DUMMY code en Objective-C comme en Swift.
+
+Dans le monde du développement iOS, comme vous avez pu le comprendre, on peut utiliser les delegates ou bien les closures. En général, on va utiliser la closure pour plus de flexibilité et c'est aussi plus simple à mettre en place. Cependant, dans certains cas, des composants graphiques par exemple sont juste utilisables via un delegate ou un datasource. Je pense à 2 de ces composants que j'utilise beaucoup: UITableView et UICollectionView.
+
+Sur ces 2 composants par exemple, pas possible d'utiliser de blocks/closures, et on doit passer par un bon delegate à l'ancienne. Dans l'absolu, ce n'est pas très gênant, sauf dans le cas où on se retrouve avec plusieurs de ces composants sur le même écran. Les méthodes deviennent alors énormes et cela devient compliqué de faire du code élégant. Ce que je vous propose ici est une petite solution que je trouve assez propre.
+
 #### Mise en situation
-<p>Comme dans les deux articles précédents, on va juste faire un Appel GET sur une URL  donnée et avoir un système qui nous prévient en cas de succès comme d'erreur. On va aller un peu plus vite que dans le premier article, car ce sont des notions que vous devez déjà maîtriser.</p>
-<p>C'est parti pour le code !</p>
-<p>Notre but ici est de réaliser une classe qui fait un GET sur une URL donnée. Je veux prévenir l'objet qui a été l'instigateur de cette requête si elle a réussi ou non. Pour éviter un couplage fort, on va utiliser le principe du delegate, grâce à ça, je n'aurai pas à connaitre le type exact de cet objet.</p>
-<p>On va agir en 3 étapes:</p>
-<p>-Créer un protocol<br />
+Comme dans les deux articles précédents, on va juste faire un Appel GET sur une URL  donnée et avoir un système qui nous prévient en cas de succès comme d'erreur. On va aller un peu plus vite que dans le premier article, car ce sont des notions que vous devez déjà maîtriser.
+
+C'est parti pour le code !
+
+Notre but ici est de réaliser une classe qui fait un GET sur une URL donnée. Je veux prévenir l'objet qui a été l'instigateur de cette requête si elle a réussi ou non. Pour éviter un couplage fort, on va utiliser le principe du delegate, grâce à ça, je n'aurai pas à connaitre le type exact de cet objet.
+
+On va agir en 3 étapes:
+
+-Créer un protocol<br />
 -Créer des blocks/closure<br />
--Créer une classe qui hérite du protocole et qui a nos 2 blocks/closures en variables.</p>
-<p>-Objective-C</p>
+-Créer une classe qui hérite du protocole et qui a nos 2 blocks/closures en variables.
+
+-Objective-C
+
 <pre class="lang:Objective-C decode:true">typedef void (^successBlock)();
 typedef void (^failureBlock)();
 
@@ -64,7 +78,8 @@ typedef void (^failureBlock)();
 @end
 
 </pre>
-<p>On va maintenant implémenter la classe qui va hériter du protocole. Elle va donc contenir les 2 méthodes <strong>onRequestSuccess</strong> et <strong>onRequestFailure</strong> et chacune appellera le block/closure qui lui correspondra.</p>
+On va maintenant implémenter la classe qui va hériter du protocole. Elle va donc contenir les 2 méthodes <strong>onRequestSuccess</strong> et <strong>onRequestFailure</strong> et chacune appellera le block/closure qui lui correspondra.
+
 <pre class="lang:Objective-C decode:true ">@implementation RequestManagerObjCDelegateImplementation
 
 - (void)onRequestSuccess {
@@ -78,7 +93,8 @@ typedef void (^failureBlock)();
 @end
 
 </pre>
-<p>Ensuite, on code la classe <strong>RequestManager</strong> que vous devez commencer à connaître</p>
+Ensuite, on code la classe <strong>RequestManager</strong> que vous devez commencer à connaître
+
 <pre class="lang:Objective-C decode:true ">@implementation RequestManagerObjC
 
 - (void)get:(NSString *)url {
@@ -99,7 +115,8 @@ typedef void (^failureBlock)();
 
 @end
 </pre>
-<p>Puis on va faire une méthode pour appeler notre webservice</p>
+Puis on va faire une méthode pour appeler notre webservice
+
 <pre class="lang:Objective-C decode:true ">- (void)callWebService {
 
     RequestManagerObjC* manager = [[RequestManagerObjC alloc] init];
@@ -121,15 +138,18 @@ typedef void (^failureBlock)();
     [manager get: @"http://plop.fr"];
 }
 </pre>
-<p>On va un peu regarder ensemble ce que l'on a codé.<br />
+On va un peu regarder ensemble ce que l'on a codé.<br />
 - On a instancié notre <strong>Manager,</strong> qui va appeler le webservice<br />
 - On a définit nos deux <strong>blocks/closures</strong><br />
 - On a instancié notre <strong>Delegate</strong><br />
 - On a assigné nos deux <strong>blocks/closures</strong><br />
 - On a assigné le <strong>Delegate</strong> au Manager<br />
-- On appelle le webservice</p>
-<p>Je vous donne le code Swift pour les plus impatients</p>
-<p>- Swift</p>
+- On appelle le webservice
+
+Je vous donne le code Swift pour les plus impatients
+
+- Swift
+
 <pre class="lang:Swift decode:true">protocol RequesterDelegateSwift {
     func onRequestSuccess()
     func onRequestFailure()
@@ -192,20 +212,28 @@ func callWebService() {
  }
 
 </pre>
-<p>Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans le block/closure requestSuccess.</p>
+Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans le block/closure requestSuccess.
+
 #### Mais pourquoi faire tout ça ?
-<p>En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un <strong>Delegate</strong> ou des <strong>blocks/closures</strong> comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...<br />
-Comme je vous l'ai dit au début de l'article, cette solution vient pour un besoin assez spécifique. Celui de rendre un <strong>Delegate</strong> plus flexible quand on est obligé de passer par ce pattern.</p>
-<p><strong>Problèmes soulevés</strong></p>
-<p>-Si le <strong>Protocol</strong> contient beaucoup de méthodes, on en a beaucoup à ré-implémenter.<br />
+En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un <strong>Delegate</strong> ou des <strong>blocks/closures</strong> comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...<br />
+Comme je vous l'ai dit au début de l'article, cette solution vient pour un besoin assez spécifique. Celui de rendre un <strong>Delegate</strong> plus flexible quand on est obligé de passer par ce pattern.
+
+<strong>Problèmes soulevés</strong>
+
+-Si le <strong>Protocol</strong> contient beaucoup de méthodes, on en a beaucoup à ré-implémenter.<br />
 -On doit aussi définir tous les <strong>blocks/closures</strong> correspondants.<br />
--Il faut redéfinir les <strong>blocks/closures</strong> pour chaque appel.</p>
-<p><strong>Gains apportés</strong></p>
-<p>-Des delegates plus flexibles<br />
+-Il faut redéfinir les <strong>blocks/closures</strong> pour chaque appel.
+
+<strong>Gains apportés</strong>
+
+-Des delegates plus flexibles<br />
 -Du code localisé<br />
 -Des méthodes réduites<br />
--Une gestion plus fine des retours du <strong>Delegate</strong></p>
-<p>Cette solution n'est pas parfaite, mais reste assez élégante et n'est pas trop lourde à mettre en place.<br />
-Après, je vous laisse tester et me dire ce que vous en pensez dans les commentaires.</p>
-<p>Allez, salut les astronautes :)</p>
+-Une gestion plus fine des retours du <strong>Delegate</strong>
+
+Cette solution n'est pas parfaite, mais reste assez élégante et n'est pas trop lourde à mettre en place.<br />
+Après, je vous laisse tester et me dire ce que vous en pensez dans les commentaires.
+
+Allez, salut les astronautes :)
+
 {% endraw %}

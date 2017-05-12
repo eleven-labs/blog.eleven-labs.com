@@ -11,9 +11,12 @@ tags:
 - RabbitMQ
 ---
 {% raw %}
-<p>RabbitMQ est un gestionnaire de queue, il permet donc de conserver des messages et de les lire via une autre tâche. Une présentation plus approfondie sera faite dans un autre article. Dans cet article, nous allons nous intéresser à un concept important dans RabbitMQ : le RPC.</p>
-<p>Un RPC (remote procedure call) permet d'envoyer un message à une queue et d'en attendre la réponse, pour mieux comprendre ce concept, partons d'un exemple simple : la génération d'une url de contenu externalisée.</p>
-<p>Il y a donc un client qui envoie un contenu dans une queue RabbitMQ afin de connaitre l'url générée. Le client n'a alors besoin que d'une méthode "call".</p>
+RabbitMQ est un gestionnaire de queue, il permet donc de conserver des messages et de les lire via une autre tâche. Une présentation plus approfondie sera faite dans un autre article. Dans cet article, nous allons nous intéresser à un concept important dans RabbitMQ : le RPC.
+
+Un RPC (remote procedure call) permet d'envoyer un message à une queue et d'en attendre la réponse, pour mieux comprendre ce concept, partons d'un exemple simple : la génération d'une url de contenu externalisée.
+
+Il y a donc un client qui envoie un contenu dans une queue RabbitMQ afin de connaitre l'url générée. Le client n'a alors besoin que d'une méthode "call".
+
 <pre class="lang:php decode:true" title="Création de la class client">&lt;?php
 
 class generateUrlClient
@@ -28,7 +31,8 @@ class generateUrlClient
 $generateUrlClient= new generateUrlClient();
 $response = $generateUrlClient-&gt;call('vive le RPC');
 echo "Url généré ".$response;</pre>
-<p>Toujours dans le client, l'initialisation de la queue de "callback" permet au message mis dans la queue de savoir où déposer le message de réponse.</p>
+Toujours dans le client, l'initialisation de la queue de "callback" permet au message mis dans la queue de savoir où déposer le message de réponse.
+
 <pre class="lang:php decode:true" title="Création d'un queue de callback">list($queue_name, ,) = $channel-&gt;queue_declare("", false, false, true, false);
 
 $msg = new AMQPMessage(
@@ -38,14 +42,22 @@ $msg = new AMQPMessage(
 $channel-&gt;basic_publish($msg, '', 'rpc_queue');
 
 // Ici le code de lecture le réponse</pre>
-<p>Vous pouvez trouver toutes les options disponibles pour le protocole AMQP dans la library suivante <a href="https://github.com/videlalvaro/php-amqplib">https://github.com/videlalvaro/php-amqplib</a>.</p>
-<p>Le code ci-dessus fait que tous les messages publiés dans la queue auront une réponse dans la queue de callback. Un problème demeure : comment reconnaître chaque message dans la queue de callback? L'idée est de mettre sur chaque message une clé unique qui permet de le reconnaitre ensuite.</p>
-<p>La clé unique est ce que l'on appelle la 'correlation_id', elle permet d'identifier chaque réponse par rapport à son message. Elle est envoyée sur chaque message envoyé sur le serveur, et renvoyée dans la réponse qui permet alors de reconnaître la demande initiale.</p>
-<p>Avant de faire l'exemple de code, voici un petit résumé:</p>
-<p>&nbsp;</p>
-<p>[caption id="attachment_627" align="alignnone" width="300"]<a href="http://blog.eleven-labs.com/wp-content/uploads/2013/11/python-six.png"><img class="size-medium wp-image-627" src="http://blog.eleven-labs.com/wp-content/uploads/2013/11/python-six-300x104.png" alt="RPC description" width="300" height="104" /></a> RPC description[/caption]</p>
-<p>Comme on peut le voir sur le schéma ci-dessus, le client envoie un message dans la queue 'rpc_queue' avec l'option reply_to qui permet d'envoyer la réponse dans une queue de callblack et la clé de 'correlation_id' qui est l'index unique de chaque demande.</p>
-<p>Commençons l'exemple du serveur de génération d'url via un titre. Nous commencerons par le serveur qui s'occupera de créer une url à partir d'un titre. Pour l'exemple, nous prenons simplement un titre et remplaçons les espaces par des underscores.</p>
+Vous pouvez trouver toutes les options disponibles pour le protocole AMQP dans la library suivante <a href="https://github.com/videlalvaro/php-amqplib">https://github.com/videlalvaro/php-amqplib</a>.
+
+Le code ci-dessus fait que tous les messages publiés dans la queue auront une réponse dans la queue de callback. Un problème demeure : comment reconnaître chaque message dans la queue de callback? L'idée est de mettre sur chaque message une clé unique qui permet de le reconnaitre ensuite.
+
+La clé unique est ce que l'on appelle la 'correlation_id', elle permet d'identifier chaque réponse par rapport à son message. Elle est envoyée sur chaque message envoyé sur le serveur, et renvoyée dans la réponse qui permet alors de reconnaître la demande initiale.
+
+Avant de faire l'exemple de code, voici un petit résumé:
+
+&nbsp;
+
+[caption id="attachment_627" align="alignnone" width="300"]<a href="http://blog.eleven-labs.com/wp-content/uploads/2013/11/python-six.png"><img class="size-medium wp-image-627" src="http://blog.eleven-labs.com/wp-content/uploads/2013/11/python-six-300x104.png" alt="RPC description" width="300" height="104" /></a> RPC description[/caption]
+
+Comme on peut le voir sur le schéma ci-dessus, le client envoie un message dans la queue 'rpc_queue' avec l'option reply_to qui permet d'envoyer la réponse dans une queue de callblack et la clé de 'correlation_id' qui est l'index unique de chaque demande.
+
+Commençons l'exemple du serveur de génération d'url via un titre. Nous commencerons par le serveur qui s'occupera de créer une url à partir d'un titre. Pour l'exemple, nous prenons simplement un titre et remplaçons les espaces par des underscores.
+
 <pre class="lang:php decode:true">&lt;?php
 
 require_once __DIR__.'/vendor/autoload.php';
@@ -120,12 +132,17 @@ foreach ($titles as $title) {
     $response = $generateUrlClient-&gt;call($title);
     echo " Pour le titre ".$title.' url recu '.$response, "\n";
 }</pre>
-<p>&nbsp;</p>
-<p>Lancer le serveur directement avec:</p>
+&nbsp;
+
+Lancer le serveur directement avec:
+
 <pre class="lang:sh decode:true">php generateUrlServer.php</pre>
-<p>&nbsp;</p>
-<p>Maintenant créons le  client qui devra envoyer le message au serveur de génération et l'utiliser ensuite.</p>
-<p>&nbsp;</p>
+&nbsp;
+
+Maintenant créons le  client qui devra envoyer le message au serveur de génération et l'utiliser ensuite.
+
+&nbsp;
+
 <pre class="lang:php decode:true">&lt;?php
 
 require_once __DIR__.'/vendor/autoload.php';
@@ -200,23 +217,41 @@ foreach ($titles as $title) {
     $response = $generateUrlClient-&gt;call($title);
     echo " Pour le titre ".$title.' url recu '.$response, "\n";
 }</pre>
-<p>&nbsp;</p>
-<p>Maintenant lançons le client :</p>
+&nbsp;
+
+Maintenant lançons le client :
+
 <pre class="lang:sh decode:true">php generateUrlClient.php</pre>
-<p>&nbsp;</p>
-<p>Si tout se passe bien, le serveur renvoie les bonnes valeurs.</p>
-<p>&nbsp;</p>
-<p>Laissez un commentaire si vous avez des questions.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+&nbsp;
+
+Si tout se passe bien, le serveur renvoie les bonnes valeurs.
+
+&nbsp;
+
+Laissez un commentaire si vous avez des questions.
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 {% endraw %}

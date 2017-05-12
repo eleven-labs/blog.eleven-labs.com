@@ -13,12 +13,17 @@ tags:
 - mongodb
 ---
 {% raw %}
-<p>Bonjour à tous,</p>
-<p>Je vais parler du query builder (constructeur de requête) Doctrine pour faire des requêtes vers une base de données MongoDB.</p>
-<p>Si vous voulez suivre les exemples et les tester, il est nécessaire d'installer le bundle <a href="http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html" target="_blank">DoctrineMongoDBBundle.</a></p>
+Bonjour à tous,
+
+Je vais parler du query builder (constructeur de requête) Doctrine pour faire des requêtes vers une base de données MongoDB.
+
+Si vous voulez suivre les exemples et les tester, il est nécessaire d'installer le bundle <a href="http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html" target="_blank">DoctrineMongoDBBundle.</a>
+
 ### Qu'est-ce que c'est ?
-<p>Le query builder est une classe qui va permettre de créer des requêtes à la base de données en passant par des objets et méthodes. Il facilite l'écriture de requête complexe.</p>
-<p>Prenons un exemple avec une liste d'articles dans la collection "articles" :</p>
+Le query builder est une classe qui va permettre de créer des requêtes à la base de données en passant par des objets et méthodes. Il facilite l'écriture de requête complexe.
+
+Prenons un exemple avec une liste d'articles dans la collection "articles" :
+
 <pre class="lang:js decode:true">[
     {
         "title": "Mon article",
@@ -53,9 +58,11 @@ tags:
         }
     }
 ]</pre>
-<p>Je veux avoir l'article avec le titre "Mon second article" en simple query mongo:</p>
+Je veux avoir l'article avec le titre "Mon second article" en simple query mongo:
+
 <pre class="lang:default decode:true ">db.articles.find({"title":"Mon second article"});</pre>
-<p>Avec le query builder:</p>
+Avec le query builder:
+
 <pre class="lang:php decode:true ">&lt;?php
 
 $article = $this-&gt;createQueryBuilder()
@@ -63,10 +70,13 @@ $article = $this-&gt;createQueryBuilder()
     -&gt;field('title')-&gt;equals('Mon second article')
     -&gt;getQuery()
     -&gt;execute();</pre>
-<p>Avec le query builder, on va rester dans le monde de l'objet et manipuler exclusivement des objets.</p>
+Avec le query builder, on va rester dans le monde de l'objet et manipuler exclusivement des objets.
+
 ### Le query builder et Symfony
-<p>Dans Symfony, toutes les méthodes qui vont effectuer des requêtes à la base de données se situent dans les repository.</p>
-<p>Je veux créer une méthode pour retrouver les articles avec un tag spécifique. Je vais donc créer une méthode "getArticleByTag" dans le repository tag.</p>
+Dans Symfony, toutes les méthodes qui vont effectuer des requêtes à la base de données se situent dans les repository.
+
+Je veux créer une méthode pour retrouver les articles avec un tag spécifique. Je vais donc créer une méthode "getArticleByTag" dans le repository tag.
+
 <pre class="lang:php decode:true">&lt;?php
 namespace App\Appbundle\Repository;
 
@@ -83,8 +93,10 @@ class ArticleRepository extends DocumentRepository
               -&gt;execute();
     }
 }</pre>
-<p><span class="lang:default decode:true crayon-inline">$this-&gt;createQueryBuilder()</span> va me donner une instance de <span class="lang:default decode:true crayon-inline">Doctrine\ODM\MongoDB\Query\Builder</span> . Avec cette instance, je vais avoir accès à un ensemble d'expressions pour construire ma requête. Les expressions, ce sont les différents opérateurs Mongo. Dans cet exemple, <span class="lang:php decode:true crayon-inline ">-&gt;find()</span> <span class="lang:default decode:true crayon-inline ">-&gt;field()</span> <span class="lang:default decode:true crayon-inline ">-&gt;equal()</span> sont des expressions. Chacune d'elles sont des instances de <span class="lang:default decode:true crayon-inline ">Doctrine\ODM\MongoDB\Query\Expr</span> .</p>
-<p>Pour mettre à jour un document, j'utilise le même principe.</p>
+<span class="lang:default decode:true crayon-inline">$this-&gt;createQueryBuilder()</span> va me donner une instance de <span class="lang:default decode:true crayon-inline">Doctrine\ODM\MongoDB\Query\Builder</span> . Avec cette instance, je vais avoir accès à un ensemble d'expressions pour construire ma requête. Les expressions, ce sont les différents opérateurs Mongo. Dans cet exemple, <span class="lang:php decode:true crayon-inline ">-&gt;find()</span> <span class="lang:default decode:true crayon-inline ">-&gt;field()</span> <span class="lang:default decode:true crayon-inline ">-&gt;equal()</span> sont des expressions. Chacune d'elles sont des instances de <span class="lang:default decode:true crayon-inline ">Doctrine\ODM\MongoDB\Query\Expr</span> .
+
+Pour mettre à jour un document, j'utilise le même principe.
+
 <pre class="lang:php mark:12,13 decode:true">&lt;?php
 namespace App\Appbundle\Repository;
 
@@ -102,10 +114,13 @@ class ArticleRepository extends DocumentRepository
               -&gt;execute();
     }
 }</pre>
-<p>Pour mettre à jour un article qui a pour titre "Mon article", je dois indiquer que je veux le document avec un titre égal à "Mon article" : <span class="lang:default decode:true crayon-inline">-&gt;field('title')-&gt;equals("Mon article")</span> . Ensuite, je mets <span class="lang:default decode:true crayon-inline ">-&gt;field('tags')-&gt;set($tags)</span> pour mettre à jour mon champs "tags".</p>
+Pour mettre à jour un article qui a pour titre "Mon article", je dois indiquer que je veux le document avec un titre égal à "Mon article" : <span class="lang:default decode:true crayon-inline">-&gt;field('title')-&gt;equals("Mon article")</span> . Ensuite, je mets <span class="lang:default decode:true crayon-inline ">-&gt;field('tags')-&gt;set($tags)</span> pour mettre à jour mon champs "tags".
+
 ### Ajouter des expressions
-<p>Le builder de base donne un bon nombre d'expressions. Mais parfois, ce n'est pas suffisant. Pour reprendre l'exemple avec les articles, je veux avoir tous les articles publiés à la date d'aujourd'hui. Je vais donc ajouter une expression <span class="lang:default decode:true crayon-inline ">isPublished(\DateTime $datetime)</span> .</p>
-<p>Je vais étendre la classe <span class="lang:default decode:true crayon-inline ">Doctrine\ODM\MongoDB\Query\Expr</span> et ajouter ma méthode.</p>
+Le builder de base donne un bon nombre d'expressions. Mais parfois, ce n'est pas suffisant. Pour reprendre l'exemple avec les articles, je veux avoir tous les articles publiés à la date d'aujourd'hui. Je vais donc ajouter une expression <span class="lang:default decode:true crayon-inline ">isPublished(\DateTime $datetime)</span> .
+
+Je vais étendre la classe <span class="lang:default decode:true crayon-inline ">Doctrine\ODM\MongoDB\Query\Expr</span> et ajouter ma méthode.
+
 <pre class="lang:php decode:true">&lt;?php
 
 namespace App\AppBundle\Query\Expr;
@@ -123,7 +138,8 @@ class Expr extends BaseExpr
         ]
     }
 }</pre>
-<p>Je n'oublie pas de surcharger la création du query builder pour pouvoir utiliser cette nouvelle classe expression.</p>
+Je n'oublie pas de surcharger la création du query builder pour pouvoir utiliser cette nouvelle classe expression.
+
 <pre class="lang:default decode:true ">&lt;?php
 
 namespace App\AppBundle\Query;
@@ -154,7 +170,8 @@ classe DocumentRepository extends BaseDocumentRepository
        return new Builder($this-&gt;dm, $this-&gt;documentName);
    }
 }</pre>
-<p>Et je peux utiliser ma nouvelle expression dans mon query builder.</p>
+Et je peux utiliser ma nouvelle expression dans mon query builder.
+
 <pre class="lang:php mark:12 decode:true ">&lt;?php
 namespace App\Appbundle\Repository;
 
@@ -171,8 +188,10 @@ class ArticleRepository extends DocumentRepository
               -&gt;execute();
     }
 }</pre>
-<p>Cette requête doit me retourner les articles qui sont publiés en date du 02 octobre 2015 à 11h00.</p>
-<p>La requête Mongo générée est la suivante :</p>
+Cette requête doit me retourner les articles qui sont publiés en date du 02 octobre 2015 à 11h00.
+
+La requête Mongo générée est la suivante :
+
 <pre class="lang:js decode:true ">{
     "$and": [
         {
@@ -193,7 +212,8 @@ class ArticleRepository extends DocumentRepository
     ]
 }</pre>
 ### Quick tip
-<p>Le query builder va hydrater les objets Doctrine avec les données. Sur des objets complexes, ce processus est gourmand en ressource.  Pour gagner en performance, il est possible de désactiver cette hydratation.</p>
+Le query builder va hydrater les objets Doctrine avec les données. Sur des objets complexes, ce processus est gourmand en ressource.  Pour gagner en performance, il est possible de désactiver cette hydratation.
+
 <pre class="lang:default decode:true ">&lt;?php
 
 $this-&gt;createQueryBuilder()
@@ -202,7 +222,10 @@ $this-&gt;createQueryBuilder()
     -&gt;getQuery()
     -&gt;execute();</pre>
 ### Conclusion
-<p>Cet article vous a montré comment utiliser le query builder de Doctrine sur une base de données MongoDB. Il facilite l'écriture de requêtes plus ou moins complexes tout en restant dans un style objet. Étendre et ajouter des expressions permet de simplifier des requêtes métier complexes.</p>
-<p>Référence : <a href="http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/reference/query-builder-api.html">http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/reference/query-builder-api.html</a></p>
-<p>&nbsp;</p>
+Cet article vous a montré comment utiliser le query builder de Doctrine sur une base de données MongoDB. Il facilite l'écriture de requêtes plus ou moins complexes tout en restant dans un style objet. Étendre et ajouter des expressions permet de simplifier des requêtes métier complexes.
+
+Référence : <a href="http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/reference/query-builder-api.html">http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/reference/query-builder-api.html</a>
+
+&nbsp;
+
 {% endraw %}

@@ -11,9 +11,12 @@ tags:
 - dotcss
 ---
 {% raw %}
-<p>Le 14 novembre a eu lieu la première (et possiblement dernière) édition de <strong>dotCSS</strong>, une conférence par dotConferences, déjà responsables de dotJS, dotScale, dotGo, la future dotSwift et la non-renouvellée dotRB.</p>
-<p>Version courte : dotCSS était une très bonne conférence qui a clairement trouvé son public étant donné que le théâtre des variétés, lieu où elle avait lieu, était rempli, mais n'a pas probablement pas trouvé assez de ressources pour se financer, ce qui a conduit à la réduction de sa durée (une journée annoncée, réduite à un après-midi)</p>
-<p>Résumé rapide des différentes présentations :</p>
+Le 14 novembre a eu lieu la première (et possiblement dernière) édition de <strong>dotCSS</strong>, une conférence par dotConferences, déjà responsables de dotJS, dotScale, dotGo, la future dotSwift et la non-renouvellée dotRB.
+
+Version courte : dotCSS était une très bonne conférence qui a clairement trouvé son public étant donné que le théâtre des variétés, lieu où elle avait lieu, était rempli, mais n'a pas probablement pas trouvé assez de ressources pour se financer, ce qui a conduit à la réduction de sa durée (une journée annoncée, réduite à un après-midi)
+
+Résumé rapide des différentes présentations :
+
 <ul>
 <li><strong>Daniel Glazman</strong>, co-chairman du CSS Working Group au W3C, a expliqué durant sa présentation les divers problèmes, et comme il semble complexe pour le langage d'avancer tout en essayant d'atteindre des compromis qui satisfassent tous les éditeurs de navigateurs et leur priorités. Il a par exemple parlé de l'historique problème de centrage vertical des éléments en CSS, et a expliqué qu'il était très dur pour le working group d'arriver à des consensus, parfois sur des sujets comme "simplement" nommer des propriétés.</li>
 </ul>
@@ -35,7 +38,8 @@ tags:
 <li>Ne rien construire jusqu'à ce que ce soit explicitement demandé</li>
 <li>S'attendre, et se préparer, aux changements</li>
 </ol>
-<p>A suivi une série de lightning talks:</p>
+A suivi une série de lightning talks:
+
 <ul>
 <li><strong>Maxime Thirouin</strong> a résumé ce qui a été l'idée générale de la conférence entière : "Nous aimons le CSS, mais c'est un langage frustrant". Frustrant, car il n'y a toujours pas (sans préprocesseurs) de variables, de math, de customisation... c'est pour cela qu'il travaille sur <a href="https://github.com/cssnext/cssnext">cssnext</a>, un projet permettant de récupérer d'utiliser immédiatement les futures features CSS</li>
 <li><strong>Victor Brito</strong> a demandé à tous les développeurs web de faire des efforts pour rendre le web accessible</li>
@@ -43,10 +47,12 @@ tags:
 <li><strong>Guido Boman</strong> a parlé de la manière de coder correctement le parallax scrolling en CSS, et d'une implémentation faite par Keith Clark (Détails : http://keithclark.co.uk/articles/pure-css-parallax-websites/)</li>
 <li>Enfin, <strong>Tim Pietrusky</strong> a parlé des règles CSS appliquées à un élément (http://slides.com/timpietrusky/one-element-rules#/)</li>
 </ul>
-<p>Les présentations des invités ont ensuite repris !</p>
+Les présentations des invités ont ensuite repris !
+
 <ul>
 <li><strong>Hugo Giraudel</strong>, dans sa présentation <em>Keep calm and write Sass</em>, a parlé de la manière dont les préprocesseurs CSS permettent de faire plus facilement la transition entre les débuts simples de CSS, utilisé pour donner du style à des pages web, et les applications web complexes qu'il doit styler aujourd'hui.<br />
-Il a présenté des principes à suivre pour développer avec Sass:</p>
+Il a présenté des principes à suivre pour développer avec Sass:
+
 <ul>
 <li>KYSS - Keep Your Sass Simple(, Smart &amp; Straightforward), extending KISS (Keep It Simple, Stupid)</li>
 <li>Ne pas tout faire avec Sass</li>
@@ -69,6 +75,8 @@ Il a présenté des principes à suivre pour développer avec Sass:</p>
 <ul>
 <li><strong>Ana Tudor</strong> (@thebabydino), la dernière invitée de la journée, a montré une série de démos impressionnantes ayant pour sujet la distribution. <a href="http://codepen.io/thebabydino/">Les examples sont sur Codepen</a>.</li>
 </ul>
-<p>Et voilà comment dotCSS s'est terminé. Une fort bonne conférence donc, et on regrettera que l'expérience ne semble visiblement pas avoir vocation à être renouvelée l'an prochain.</p>
-<p>C'était en tout cas un après-midi très enrichissant, qui a permis d'avoir l'avis d'experts reconnus sur l'évolution et la qualité du CSS (et de l'environnement qui gravite autour, particulièrement Sass), et de réfléchir aux challenges qui y sont associés. C'était aussi l'occasion de voir tout ce qu'on peut faire d'impressionnant avec CSS, comme les dernières démos l'ont montré.</p>
+Et voilà comment dotCSS s'est terminé. Une fort bonne conférence donc, et on regrettera que l'expérience ne semble visiblement pas avoir vocation à être renouvelée l'an prochain.
+
+C'était en tout cas un après-midi très enrichissant, qui a permis d'avoir l'avis d'experts reconnus sur l'évolution et la qualité du CSS (et de l'environnement qui gravite autour, particulièrement Sass), et de réfléchir aux challenges qui y sont associés. C'était aussi l'occasion de voir tout ce qu'on peut faire d'impressionnant avec CSS, comme les dernières démos l'ont montré.
+
 {% endraw %}

@@ -10,12 +10,15 @@ tags: []
 ---
 {% raw %}
 ### Les tests unitaires et la confiance
-<p>Ce n'est plus à démontrer : les tests unitaires sont incontournables dans le développement d'une application. Ils permettent de mettre en évidence d'éventuelles régressions apportées lors de modifications du code, et donc au développeur d'acquérir une certaine confiance à mettre le code en production : si les tests passent, c'est que tout fonctionne correctement.</p>
-<p>Pour mesurer cette confiance, on utilise principalement comme métrique la couverture de code. Plus la couverture est grande (proche de 100%), moins il y a de chances qu'une régression passe entre les mailles du filet.<br />
-Mais attention ! Cette affirmation n'est que purement théorique !</p>
+Ce n'est plus à démontrer : les tests unitaires sont incontournables dans le développement d'une application. Ils permettent de mettre en évidence d'éventuelles régressions apportées lors de modifications du code, et donc au développeur d'acquérir une certaine confiance à mettre le code en production : si les tests passent, c'est que tout fonctionne correctement.
+
+Pour mesurer cette confiance, on utilise principalement comme métrique la couverture de code. Plus la couverture est grande (proche de 100%), moins il y a de chances qu'une régression passe entre les mailles du filet.<br />
+Mais attention ! Cette affirmation n'est que purement théorique !
+
 ### Couverture vs protection
-<p>Nous allons voir que dans certains cas la couverture de code n'est qu'un faux indicateur de protection.<br />
-Voici un exemple simple :</p>
+Nous allons voir que dans certains cas la couverture de code n'est qu'un faux indicateur de protection.<br />
+Voici un exemple simple :
+
 <pre class="lang:php decode:true">&lt;?php
 
 class Astronaut {}
@@ -38,8 +41,9 @@ class SpaceShip
     }
 }
 </pre>
-<p>Ici notre classe <em>SpaceShip</em> a une méthode publique <em>addAstronaut</em> qui ajoute une instance de <em>Astronaut</em> uniquement si la capacité maximale n'est pas atteinte.<br />
-Voyons un exemple de test unitaire associé :</p>
+Ici notre classe <em>SpaceShip</em> a une méthode publique <em>addAstronaut</em> qui ajoute une instance de <em>Astronaut</em> uniquement si la capacité maximale n'est pas atteinte.<br />
+Voyons un exemple de test unitaire associé :
+
 <pre class="lang:php decode:true">&lt;?php
 
 class SpaceShipTest extends \PHPUnit_Framework_TestCase
@@ -54,21 +58,26 @@ class SpaceShipTest extends \PHPUnit_Framework_TestCase
     }
 }
 </pre>
-<p>Le test vérifie ici que la méthode ajoute bien une entrée au tableau d'astronautes. En lançant les tests nous avons une couverture de 100% (même sans assertion nous aurions eu ce résultat).<br />
+Le test vérifie ici que la méthode ajoute bien une entrée au tableau d'astronautes. En lançant les tests nous avons une couverture de 100% (même sans assertion nous aurions eu ce résultat).<br />
 Mais nous ne sommes pas protégés pour autant : que se passerait-il si la méthode <em>addAstronaut</em> changeait ?<br />
-Notre test suffira-t-il à détecter une régression ?</p>
+Notre test suffira-t-il à détecter une régression ?
+
 ### Tests de Mutation
-<p>Pour détecter les failles dans vos tests unitaires, il existe une solution : les <strong>tests de mutation</strong>.</p>
-<p>Le principe est simple : altérer le code source pour vérifier que les tests associés échouent en conséquence.<br />
-Afin d'y parvenir, voici les étapes nécessaires :</p>
+Pour détecter les failles dans vos tests unitaires, il existe une solution : les <strong>tests de mutation</strong>.
+
+Le principe est simple : altérer le code source pour vérifier que les tests associés échouent en conséquence.<br />
+Afin d'y parvenir, voici les étapes nécessaires :
+
 <ul>
 <li>Lancer la suite de tests une première fois pour vérifier que tous les tests passent (il est inutile d'essayer de faire échouer un test qui échoue déjà !)</li>
 <li>Relancer la suite en modifiant certaines parties du code testé.</li>
 <li>Vérifier que les tests échouent lorsque le code testé a subi une mutation.</li>
 <li>Recommencer autant de fois qu'il y a de mutations possibles.</li>
 </ul>
-<p>Évidemment, pas la peine de faire tout ça à la main, il existe des frameworks qui vont s'en occuper pour nous.</p>
-<p>Mais avant de voir ça de plus près, voici un peu de vocabulaire :</p>
+Évidemment, pas la peine de faire tout ça à la main, il existe des frameworks qui vont s'en occuper pour nous.
+
+Mais avant de voir ça de plus près, voici un peu de vocabulaire :
+
 <ul>
 <li><strong>Mutant</strong> : Altération unitaire du code (ex: un !== remplacé par un ===)</li>
 <li><strong>Killed/Captured</strong> : On dit qu'un mutant est tué si le test unitaire échoue (résultat positif)</li>
@@ -76,8 +85,10 @@ Afin d'y parvenir, voici les étapes nécessaires :</p>
 <li><strong>Uncovered</strong> : Un mutant n'est pas couvert si aucun test ne couvre le code qui porte le mutant.</li>
 </ul>
 ### Mise en pratique avec Humbug
-<p>Ici nous utiliserons <a href="https://github.com/padraic/humbug">Humbug</a>, un framework parmi d'autres qui permet de faire des tests de mutation en PHP.</p>
-<p>Lorsque nous lançons Humbug avec notre exemple de tout à l'heure, nous obtenons :</p>
+Ici nous utiliserons <a href="https://github.com/padraic/humbug">Humbug</a>, un framework parmi d'autres qui permet de faire des tests de mutation en PHP.
+
+Lorsque nous lançons Humbug avec notre exemple de tout à l'heure, nous obtenons :
+
 <pre class="lang:txt decode:true">$&gt; humbug
 ...
 Mutation Testing is commencing on 1 files...
@@ -97,7 +108,8 @@ Metrics:
     Mutation Code Coverage: 100%
     Covered Code MSI: 50%
 </pre>
-<p>Diantre ! Un mutant nous a échappé ! Voyons dans le fichier de de log :</p>
+Diantre ! Un mutant nous a échappé ! Voyons dans le fichier de de log :
+
 <pre class="lang:txt decode:true">1) \Humbug\Mutator\ConditionalBoundary\LessThan
 Diff on \SpaceShip::addAstronaut() in src/SpaceShip.php:
 --- Original
@@ -111,7 +123,8 @@ Diff on \SpaceShip::addAstronaut() in src/SpaceShip.php:
      }
  }
 </pre>
-<p>Nos tests n'ont pas détecté le changement d'opérateur de comparaison. En effet, nous n'avons pas testé le cas où notre vaisseau spatial est plein. À présent, ajoutons un test pour couvrir ce use-case :</p>
+Nos tests n'ont pas détecté le changement d'opérateur de comparaison. En effet, nous n'avons pas testé le cas où notre vaisseau spatial est plein. À présent, ajoutons un test pour couvrir ce use-case :
+
 <pre class="lang:php decode:true">&lt;?php
 
 class SpaceShipTest extends \PHPUnit_Framework_TestCase
@@ -135,7 +148,8 @@ class SpaceShipTest extends \PHPUnit_Framework_TestCase
     }
 }
 </pre>
-<p>Maintenant relançons Humbug :</p>
+Maintenant relançons Humbug :
+
 <pre class="lang:txt decode:true">$&gt; humbug
 ...
 Mutation Testing is commencing on 1 files...
@@ -155,9 +169,11 @@ Metrics:
     Mutation Code Coverage: 100%
     Covered Code MSI: 100%
 </pre>
-<p>Et voilà, cette fois aucun mutant ne s'est échappé, notre suite de tests est vraiment efficace, ce bug éventuel n'arrivera jamais jusqu'à la production !<br />
-Evidemment, l'exemple choisi ici est volontairement simple et n'est pas très évocateur, mais dans le code métier au cœur de votre application, vous avez certainement des use-case beaucoup plus sensibles.</p>
-<p>Pour parvenir à ses fins, Humbug est capable de générer tout un éventail de mutations :</p>
+Et voilà, cette fois aucun mutant ne s'est échappé, notre suite de tests est vraiment efficace, ce bug éventuel n'arrivera jamais jusqu'à la production !<br />
+Evidemment, l'exemple choisi ici est volontairement simple et n'est pas très évocateur, mais dans le code métier au cœur de votre application, vous avez certainement des use-case beaucoup plus sensibles.
+
+Pour parvenir à ses fins, Humbug est capable de générer tout un éventail de mutations :
+
 <ul>
 <li>Remplacement d'opérateurs de comparaison (<strong>&gt;</strong> par <strong>&gt;=</strong>, <strong>!==</strong> par <strong>===</strong>, etc...)</li>
 <li>Remplacement de constantes (<strong>0</strong> par <strong>1</strong>, <strong>true</strong> par <strong>false</strong>, etc...)</li>
@@ -165,8 +181,10 @@ Evidemment, l'exemple choisi ici est volontairement simple et n'est pas très é
 <li>Remplacement des opérateurs binaires (<strong>&amp;</strong>, <strong>|</strong>, <strong>%</strong>, etc...)</li>
 <li>Remplacement des valeurs de retour d'une fonction</li>
 </ul>
-<p>Je ne vais pas tout détailler ici, si vous voulez en savoir plus je vous invite à consulter la <a href="https://github.com/padraic/humbug" target="_blank">page GitHub du projet</a>.</p>
+Je ne vais pas tout détailler ici, si vous voulez en savoir plus je vous invite à consulter la <a href="https://github.com/padraic/humbug" target="_blank">page GitHub du projet</a>.
+
 ### Conclusion
-<p>Les tests de mutation sont un moyen simple et efficace de détecter la fiabilité des tests unitaires. La couverture de code n'est pas une métrique très fiable, un code peut être couvert à 100% sans une seule assertion !<br />
-Nous avons vu avec Humbug que nous pouvons automatiser ces tests, il devient alors possible de les greffer dans notre workflow d'intégration continue. Attention toutefois au temps d'exécution qui grandit de manière exponentielle lorsque la base de code grandit, on utilisera en priorité les tests de mutation là où il y a un véritable enjeu : le code métier.</p>
+Les tests de mutation sont un moyen simple et efficace de détecter la fiabilité des tests unitaires. La couverture de code n'est pas une métrique très fiable, un code peut être couvert à 100% sans une seule assertion !<br />
+Nous avons vu avec Humbug que nous pouvons automatiser ces tests, il devient alors possible de les greffer dans notre workflow d'intégration continue. Attention toutefois au temps d'exécution qui grandit de manière exponentielle lorsque la base de code grandit, on utilisera en priorité les tests de mutation là où il y a un véritable enjeu : le code métier.
+
 {% endraw %}

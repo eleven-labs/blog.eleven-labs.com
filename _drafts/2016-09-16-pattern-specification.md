@@ -9,15 +9,19 @@ categories:
 tags: []
 ---
 {% raw %}
-<p>Through my different professional experiences, I had to set a lot of business rules in rich web apps. One day, I stumbled upon a different way to deal with those: using the specification pattern. This method has proven to be structuring and deserves some attention if you do not know what it is.</p>
+Through my different professional experiences, I had to set a lot of business rules in rich web apps. One day, I stumbled upon a different way to deal with those: using the specification pattern. This method has proven to be structuring and deserves some attention if you do not know what it is.
+
 ### Let's dig in
-<p>Imagine a simple banking application for instance. This app only has clients and bank accounts. A client can have one or multiple accounts, and your job is to create a very simple system of wire transfer between accounts of a same client with this business rule:</p>
+Imagine a simple banking application for instance. This app only has clients and bank accounts. A client can have one or multiple accounts, and your job is to create a very simple system of wire transfer between accounts of a same client with this business rule:
+
 <ul>
 <li>A client cannot transfer money if his account has a balance equals to 0 or less.</li>
 <li>The client associated to his debiting account must be active.</li>
 </ul>
-<p>You can clearly see the condition which would prevent a transfer from happening.</p>
-<p>In a simple implementation, you would write it this way:</p>
+You can clearly see the condition which would prevent a transfer from happening.
+
+In a simple implementation, you would write it this way:
+
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
 
 namespace ElevenLabs\Application;
@@ -39,17 +43,22 @@ class TransferMoneyCommand
         }
     }
 }</pre>
-<p>This business rule, although trivial, needs to be implemented every time we want to do a wire transfer.<br />
-Many constraints arise from such implementation.</p>
-<p>First off, if our business rule evolves, we have to change the (or all) class that uses it. Then, this implementation in a <em>if </em>statement is really not explicit at all.</p>
-<p>This is where the specification pattern comes into play. The main idea is to isolate the business rule, separating it from its use. It's used for validation, selection and building of business logic.</p>
-<p>Mainly three types of specification exist:</p>
+This business rule, although trivial, needs to be implemented every time we want to do a wire transfer.<br />
+Many constraints arise from such implementation.
+
+First off, if our business rule evolves, we have to change the (or all) class that uses it. Then, this implementation in a <em>if </em>statement is really not explicit at all.
+
+This is where the specification pattern comes into play. The main idea is to isolate the business rule, separating it from its use. It's used for validation, selection and building of business logic.
+
+Mainly three types of specification exist:
+
 <ul>
 <li>hard coded specifications</li>
 <li>parameterized specifications</li>
 <li>composite specifications</li>
 </ul>
-<p>A specification is driven by the following interface:</p>
+A specification is driven by the following interface:
+
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
 
 namespace ElevenLabs\Domain;
@@ -64,8 +73,10 @@ interface Specification
     public function isSatisfiedBy($candidate);
 }</pre>
 ### Hard-coded Specifications
-<p>This type of specification enables us to hard code the business knowledge without having the possibility to modify the business rule from the outside.</p>
-<p>A business rule can then be translated this way:</p>
+This type of specification enables us to hard code the business knowledge without having the possibility to modify the business rule from the outside.
+
+A business rule can then be translated this way:
+
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
 
 namespace ElevenLabs\Domain\Payment;
@@ -84,9 +95,11 @@ class AccountCanTransferMoney implements Specification
          return $account-&gt;getBalance() &gt; 0 &amp;&amp; $account-&gt;getOwner()-&gt;isActive();
     }
 }</pre>
-<p>Having created a separated class in order to apply our business rule, we gain clarity and decoupling. Although, it appears obvious that we are condemned to only using our object $account, and that no additional info can be brought from the outside. We still can't use this type of specification in our <em>TransferMoneyCommand </em>because it does not comply totally to our business rule (only the balance is compared).</p>
+Having created a separated class in order to apply our business rule, we gain clarity and decoupling. Although, it appears obvious that we are condemned to only using our object $account, and that no additional info can be brought from the outside. We still can't use this type of specification in our <em>TransferMoneyCommand </em>because it does not comply totally to our business rule (only the balance is compared).
+
 ### Parameterized specifications
-<p>Parameterized specifications are identical to what we've been talking about, but they resolve the issue we've just mentioned, allowing us to get outside parameters to our candidate.</p>
+Parameterized specifications are identical to what we've been talking about, but they resolve the issue we've just mentioned, allowing us to get outside parameters to our candidate.
+
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
 
 namespace ElevenLabs\Domain\Payment;
@@ -116,8 +129,10 @@ class AccountCanTransferMoney implements Specification
          return $account-&gt;getBalance() - $this-&gt;amount &gt; 0 &amp;&amp; $account-&gt;getOwner()-&gt;isActive();
     }
 }</pre>
-<p>With this type of specifications, we keep the same pros as before, and we gain flexibility.</p>
-<p>This is how our command would look like using our parameterized specification:</p>
+With this type of specifications, we keep the same pros as before, and we gain flexibility.
+
+This is how our command would look like using our parameterized specification:
+
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
 
 namespace ElevenLabs\Application;
@@ -143,10 +158,13 @@ class TransferMoneyCommand
     }
 }
 </pre>
-<p>To simplify my explanation on parameterized specifications, I've hard coded the instantiation of the class AccountCanTransferMoney. A noticeable improvement of this use would be to inject the specification directly into the command, in order to better unit test our command.</p>
+To simplify my explanation on parameterized specifications, I've hard coded the instantiation of the class AccountCanTransferMoney. A noticeable improvement of this use would be to inject the specification directly into the command, in order to better unit test our command.
+
 ### Composite specifications
-<p>The last type of specification I'd like to take a look into is composite specifications. Such specification bases itself on what we've seen. Indeed, it uses composition to exist. Logical operations between two (or more) specifications are part of composite specifications.</p>
-<p>The following example explains the implementation of the AND logical operator:</p>
+The last type of specification I'd like to take a look into is composite specifications. Such specification bases itself on what we've seen. Indeed, it uses composition to exist. Logical operations between two (or more) specifications are part of composite specifications.
+
+The following example explains the implementation of the AND logical operator:
+
 <pre class="theme:sublime-text lang:php decode:true ">&lt;?php
 
 namespace ElevenLabs\Domain;
@@ -197,7 +215,8 @@ class AndSpecification extends Composite
         return $this-&gt;a-&gt;isSatisfiedBy($candidate) &amp;&amp; $this-&gt;b-&gt;isSatisfiedBy($candidate);
     }
 }</pre>
-<p>Then, if we instantiate a composite spec, we can chain it to other specifications (see below), by modifying our previous <em>AccountCanTransferMoney </em>specification:</p>
+Then, if we instantiate a composite spec, we can chain it to other specifications (see below), by modifying our previous <em>AccountCanTransferMoney </em>specification:
+
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
 
 namespace ElevenLabs\Domain\Payment;
@@ -246,7 +265,8 @@ class AccountOwnerIsActive implements Specification
     }
 }
 </pre>
-<p>Finally, here is how we use our composition:</p>
+Finally, here is how we use our composition:
+
 <pre class="theme:sublime-text lang:php decode:true">&lt;?php
 
 namespace ElevenLabs\Application;
@@ -273,15 +293,19 @@ class TransferMoneyCommand
         }
     }
 }</pre>
-<p>The advantages of this type of specifications are obviously the support of logical operator, and therefore the creation of even more complex business rules. It's now possible to combine specifications. Flexibility is improved, but beware of additional complexity!</p>
+The advantages of this type of specifications are obviously the support of logical operator, and therefore the creation of even more complex business rules. It's now possible to combine specifications. Flexibility is improved, but beware of additional complexity!
+
 ### Recap
-<p>Advantages of the specification pattern are as follow:</p>
+Advantages of the specification pattern are as follow:
+
 <ul>
 <li>Increased decoupling because the responsability of the validation is now limited to an isolated class</li>
 <li>So it is easier to unit test specifications and classes using them</li>
 <li>We made the implicit explicit with a clear definition of business rules</li>
 </ul>
 ## References
-<p><a href="http://martinfowler.com/apsupp/spec.pdf">Eric Evans &amp; Martin Fowler - Specifications</a></p>
-<p><a href="http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/">Specification pattern: C# implementation</a></p>
+<a href="http://martinfowler.com/apsupp/spec.pdf">Eric Evans &amp; Martin Fowler - Specifications</a>
+
+<a href="http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/">Specification pattern: C# implementation</a>
+
 {% endraw %}

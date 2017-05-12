@@ -16,8 +16,10 @@ tags:
 ---
 {% raw %}
 ## Introduction
-<p>Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde version du framework : Angular2. Pour me faire la main, j'ai choisi de travailler sur un système d'authentification par token en utilisant Symfony pour la partie back-end, en incluant le bundle <strong>Lexik JWT Authentication. </strong></p>
-<p>Je vous propose de voir ensemble un exemple très simple et les différentes étapes à suivre pour la mise en place d'une API sécurisée servant une liste de publications (...très privées) à notre application Angular2.</p>
+Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde version du framework : Angular2. Pour me faire la main, j'ai choisi de travailler sur un système d'authentification par token en utilisant Symfony pour la partie back-end, en incluant le bundle <strong>Lexik JWT Authentication. </strong>
+
+Je vous propose de voir ensemble un exemple très simple et les différentes étapes à suivre pour la mise en place d'une API sécurisée servant une liste de publications (...très privées) à notre application Angular2.
+
 ## Sommaire
 <ol>
 <li><strong>Mise en place de la partie Back-end</strong>
@@ -42,15 +44,19 @@ tags:
 ## <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/sf-blog-2.png" target="_blank"><img class="alignnone size-full wp-image-3517" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/sf-blog-2.png" alt="" width="80" height="80" /></a>
 #### <strong>1 Mise en place de la partie Back-end</strong>
 ##### <strong>1.1 </strong>Installation d'une application Symfony3
-<p>Installons tout d'abord la dernière version de Symfony3 via l'installeur prévu à cet effet sur le site officiel :</p>
+Installons tout d'abord la dernière version de Symfony3 via l'installeur prévu à cet effet sur le site officiel :
+
 <pre class="lang:default decode:true">symfony new api-lab</pre>
-<p>Puis lançons le serveur PHP interne via cette commande à la racine du projet :</p>
+Puis lançons le serveur PHP interne via cette commande à la racine du projet :
+
 <pre class="lang:default decode:true">bin/console server:start
 </pre>
 ##### 1.2 Installation des bundles nécessaires
-<p class="p1"><span class="s1">Viens ensuite l'installation et la configuration de certains bundles incontournables lorsque l'on veut créer une API. Nous sauterons volontairement l'étape du "composer require" et de la déclaration des bundles dans le Kernel de Symfony pour passer directement à la configuration.</span></p>
+<span class="s1">Viens ensuite l'installation et la configuration de certains bundles incontournables lorsque l'on veut créer une API. Nous sauterons volontairement l'étape du "composer require" et de la déclaration des bundles dans le Kernel de Symfony pour passer directement à la configuration.</span>
+
 ###### <strong>FOSRestBundle</strong>
-<p class="p1"><span class="s1">Ce bundle va nous permettre d'utiliser des routes API automatiques ainsi que de retourner des réponses au format Json à notre client Angular2 avec un minimum de configuration :</span></p>
+<span class="s1">Ce bundle va nous permettre d'utiliser des routes API automatiques ainsi que de retourner des réponses au format Json à notre client Angular2 avec un minimum de configuration :</span>
+
 <pre class="lang:default decode:true"># app/config/config.yml
 fos_rest:
     routing_loader:
@@ -62,9 +68,11 @@ app:
     resource: "@AppBundle/Controller/"
     type: rest
     prefix: /api</pre>
-<p><strong><a href="http://symfony.com/doc/current/bundles/FOSRestBundle/index.html" target="_blank">+ d'information sur la documentation</a></strong></p>
+<strong><a href="http://symfony.com/doc/current/bundles/FOSRestBundle/index.html" target="_blank">+ d'information sur la documentation</a></strong>
+
 ###### <strong>NelmioCorsBundle</strong>
-<p class="p1"><span class="s1">Continuons ensuite avec le Bundle, qui va nous permettre de faire des requêtes Ajax sur l'API, étant donné que nos deux applications se trouvent sur deux domaines différents :</span></p>
+<span class="s1">Continuons ensuite avec le Bundle, qui va nous permettre de faire des requêtes Ajax sur l'API, étant donné que nos deux applications se trouvent sur deux domaines différents :</span>
+
 <pre class="lang:default decode:true">nelmio_cors:
     paths:
         '^/api/':
@@ -72,17 +80,23 @@ app:
             allow_headers: ['origin', 'content-type', 'authorization']
             allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
             max_age: 3600</pre>
-<p><em>Note : Nous avons ici autorisé notre future application Angular2 ainsi que le header "authorization" qui nous servira à nous authentifier. Patience, on y est bientôt :)</em></p>
+<em>Note : Nous avons ici autorisé notre future application Angular2 ainsi que le header "authorization" qui nous servira à nous authentifier. Patience, on y est bientôt :)</em>
+
 ###### <strong>JMSSerializerBundle</strong>
-<p>Ce bundle va nous permettre de sérialiser les données renvoyées par notre API. Aucune configuration n'est nécessaire dans le cadre de cet article. Nous utiliserons JMSSerializer plus tard, directement dans notre PostController.</p>
+Ce bundle va nous permettre de sérialiser les données renvoyées par notre API. Aucune configuration n'est nécessaire dans le cadre de cet article. Nous utiliserons JMSSerializer plus tard, directement dans notre PostController.
+
 ###### <strong>LexikJWTAuthenticationBundle</strong>
-<p class="p1"><span class="s1">Enfin,  last but not least, le bundle qui va nous servir à sécuriser l'accès à nos données Symfony via un token d'authentification. Je vous laisse lire la <strong><a href="https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#getting-started" target="_blank">documentation</a></strong> officielle qui est très claire. Il vous suffit vraiment de suivre les étapes point par point.</span></p>
-<p><em>Note : J'ai ajouté deux petites lignes sous l'index "form_login" du security.yml de façon à pouvoir envoyer username &amp; password au lieu de _username et _password pour nous authentifier auprès de notre API. Je vous invite à en faire de même :</em></p>
+<span class="s1">Enfin,  last but not least, le bundle qui va nous servir à sécuriser l'accès à nos données Symfony via un token d'authentification. Je vous laisse lire la <strong><a href="https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#getting-started" target="_blank">documentation</a></strong> officielle qui est très claire. Il vous suffit vraiment de suivre les étapes point par point.</span>
+
+<em>Note : J'ai ajouté deux petites lignes sous l'index "form_login" du security.yml de façon à pouvoir envoyer username &amp; password au lieu de _username et _password pour nous authentifier auprès de notre API. Je vous invite à en faire de même :</em>
+
 <pre class="lang:default decode:true">username_parameter: username
 password_parameter: password</pre>
-<p class="p1"><span class="s1">Nous allons ensuite devoir générer des données de bases pour pouvoir tester notre système.</span></p>
+<span class="s1">Nous allons ensuite devoir générer des données de bases pour pouvoir tester notre système.</span>
+
 <h5 class="p1">1.3 Création d'utilisateurs
-<p class="p1"><span class="s1">Nous avons besoin d'un utilisateur. Il s'appellera "gary" et aura comme password "pass" (très original...). Pour ce faire nous n'allons pas mettre en place un système de gestion d'utilisateurs car ce n'est pas le but de cet article. Nous allons utiliser le système "user in memory" de Symfony. Je vous propose donc de rajouter un peu de configuration :</span></p>
+<span class="s1">Nous avons besoin d'un utilisateur. Il s'appellera "gary" et aura comme password "pass" (très original...). Pour ce faire nous n'allons pas mettre en place un système de gestion d'utilisateurs car ce n'est pas le but de cet article. Nous allons utiliser le système "user in memory" de Symfony. Je vous propose donc de rajouter un peu de configuration :</span>
+
 <pre class="lang:default decode:true"># app/config/security.yml
 security:
     encoders:
@@ -96,8 +110,10 @@ security:
                         password: pass
                         roles: 'ROLE_USER'</pre>
 <h5 class="p1">1.4 Création d'un jeu de données
-<p class="p1"><span class="s1">Nous allons avoir besoin de publications à renvoyer à notre client Angular2. </span><span class="s1">Nous devons créer une entity "Post" qui sera la représentation de nos données.</span></p>
-<p class="p1"><span class="s1"><i>Note : Nous n'ajouterons qu'une seule propriété "title" à cette entity pour les besoins de ce tutoriel même s'il serait utile que nos publications aient aussi un auteur, un contenu, une date de création, etc, etc...</i></span></p>
+<span class="s1">Nous allons avoir besoin de publications à renvoyer à notre client Angular2. </span><span class="s1">Nous devons créer une entity "Post" qui sera la représentation de nos données.</span>
+
+<span class="s1"><i>Note : Nous n'ajouterons qu'une seule propriété "title" à cette entity pour les besoins de ce tutoriel même s'il serait utile que nos publications aient aussi un auteur, un contenu, une date de création, etc, etc...</i></span>
+
 <pre class="lang:php decode:true ">&lt;?php
 
 namespace AppBundle\Entity;
@@ -169,7 +185,8 @@ class Post
 }
 
 </pre>
-<p>Utilisons ensuite le <strong>DoctrineFixturesBundle </strong>(après l'avoir installé bien sûr !) pour générer deux publications en créant une classe LoadPostData :</p>
+Utilisons ensuite le <strong>DoctrineFixturesBundle </strong>(après l'avoir installé bien sûr !) pour générer deux publications en créant une classe LoadPostData :
+
 <pre class="lang:php decode:true">&lt;?php
 
 namespace AppBundle\DataFixtures\ORM;
@@ -193,7 +210,8 @@ class LoadPostData implements FixtureInterface
       $manager-&gt;flush();
    }
 }</pre>
-<p>Créons ensuite la base de données, le schéma, et chargeons les données via ces commandes :</p>
+Créons ensuite la base de données, le schéma, et chargeons les données via ces commandes :
+
 <pre class="lang:default decode:true"># Création de la base
 bin/console do:da:cr
 
@@ -202,7 +220,8 @@ bin/console do:sc:cr
 
 # Générations des fixtures
 bin/console doctrine:fixtures:load</pre>
-<p>Enfin créons notre PostController avec la méthode qui sera le endpoint de notre micro API :</p>
+Enfin créons notre PostController avec la méthode qui sera le endpoint de notre micro API :
+
 <pre class="lang:php decode:true">&lt;?php
 
 namespace AppBundle\Controller;
@@ -221,33 +240,44 @@ class PostController extends FOSRestController implements ClassResourceInterface
         return $this-&gt;getDoctrine()-&gt;getRepository('AppBundle:Post')-&gt;findAll();
     }
 }</pre>
-<p>Nous voilà parés ! Vous pouvez dès lors tester la partie back-end en faisant une requête POST vers notre endpoint :</p>
+Nous voilà parés ! Vous pouvez dès lors tester la partie back-end en faisant une requête POST vers notre endpoint :
+
 <pre class="lang:default decode:true">curl -X POST http://localhost:8000/api/login_check -d username=gary -d password=pass</pre>
-<p>Si tout va bien, vous devriez recevoir un token d'authentification.</p>
-<p>C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)</p>
+Si tout va bien, vous devriez recevoir un token d'authentification.
+
+C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)
+
 ## <a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/ng-blog.png" target="_blank"><img class="alignnone size-full wp-image-3513" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/ng-blog.png" alt="" width="80" height="86" /></a>
 #### <strong>2 Mise en place de la partie Front-end</strong>
 ##### 2.1 Création de l'application Angular2 via Angular CLI
-<p>Installons tout d'abord Angular CLI globalement sur notre machine. Cet outil va nous servir à générer la structure de notre application via une simple commande et à recompiler à la volée nos modifications :</p>
+Installons tout d'abord Angular CLI globalement sur notre machine. Cet outil va nous servir à générer la structure de notre application via une simple commande et à recompiler à la volée nos modifications :
+
 <pre class="lang:default decode:true ">npm install -g @angular/cli</pre>
-<p>Créons ensuite notre application :</p>
+Créons ensuite notre application :
+
 <pre class="lang:default decode:true">ng new api-lab</pre>
-<p>Puis lançons notre serveur interne :</p>
+Puis lançons notre serveur interne :
+
 <pre class="lang:default decode:true">cd api-lab &amp;&amp; ng serve</pre>
-<p>Maintenant que notre application est lancée, vous pouvez vous rendre sur l'url indiquée dans votre console pour accéder à votre application :</p>
+Maintenant que notre application est lancée, vous pouvez vous rendre sur l'url indiquée dans votre console pour accéder à votre application :
+
 <pre class="lang:default decode:true">http://localhost:4200</pre>
-<p>Vous devriez alors voir apparaître : **app works!**</p>
+Vous devriez alors voir apparaître : **app works!**
+
 ##### 2.2 Création des différents composants
-<p>Nous allons ensuite générer trois composants principaux supplémentaires :</p>
+Nous allons ensuite générer trois composants principaux supplémentaires :
+
 <ul>
 <li>homepage</li>
 <li>authentication</li>
 <li>post</li>
 </ul>
-<p>Commençons notre composant "homepage" en lançant la commande suivante :</p>
+Commençons notre composant "homepage" en lançant la commande suivante :
+
 <pre class="lang:default decode:true">ng g c homepage
 </pre>
-<p><em>Note : "g" pour generate et "c" pour... component :)</em></p>
+<em>Note : "g" pour generate et "c" pour... component :)</em>
+
 <pre class="lang:default decode:true ">// homepage/homepage.component.ts
 import { Component } from '@angular/core';
 
@@ -257,10 +287,12 @@ import { Component } from '@angular/core';
 })
 export class HomepageComponent {}
 </pre>
-<p><em>Note : vous remarquerez que nous avons enlevé la déclaration du fichier css. En effet, nous inclurons bootstrap pour styliser rapidement notre application.</em></p>
+<em>Note : vous remarquerez que nous avons enlevé la déclaration du fichier css. En effet, nous inclurons bootstrap pour styliser rapidement notre application.</em>
+
 <pre class="lang:default decode:true ">// homepage/homepage.html
 &lt;h1&gt;Home&lt;/h1&gt;</pre>
-<p>Créons ensuite le composant "authentication" de la même manière :</p>
+Créons ensuite le composant "authentication" de la même manière :
+
 <pre class="lang:default decode:true">ng g c authentication</pre>
 <pre class="lang:default decode:true ">// authentication/authentication.component.ts
 import { Component } from '@angular/core';
@@ -303,10 +335,14 @@ export class AuthenticationComponent {
 <ul>
 <li>authentication/authentication.component.html</li>
 </ul>
-<p><img class="wp-image-3575 alignleft" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.11.50-300x106.png" alt="" width="777" height="274" /></p>
-<p style="text-align: left"><em>Note : Pardons pour le screen mais le plugin ne prend pas en charge cette syntaxe...</em></p>
-<p>Ce composant sera notre formulaire d'authentification vers notre API. Nous utiliserons le module ReactiveFormsModule de Angular2 pour une mise en place plus simple sans utiliser la directive [(ngModel)] très gourmande en ressources et pour pouvoir lui attribuer des validateurs.</p>
-<p>Passons ensuite à la création du composant "post" :</p>
+<img class="wp-image-3575 alignleft" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.11.50-300x106.png" alt="" width="777" height="274" />
+
+<em>Note : Pardons pour le screen mais le plugin ne prend pas en charge cette syntaxe...</em>
+
+Ce composant sera notre formulaire d'authentification vers notre API. Nous utiliserons le module ReactiveFormsModule de Angular2 pour une mise en place plus simple sans utiliser la directive [(ngModel)] très gourmande en ressources et pour pouvoir lui attribuer des validateurs.
+
+Passons ensuite à la création du composant "post" :
+
 <pre class="lang:default decode:true ">ng g c post</pre>
 <pre class="lang:default decode:true">// post/post.component.ts
 import { Component, OnInit } from '@angular/core';
@@ -335,15 +371,19 @@ export class PostComponent implements OnInit {
 <ul>
 <li>post/post.component.html</li>
 </ul>
-<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.31.10.png" target="_blank"><img class="alignnone wp-image-3578" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.31.10-300x60.png" alt="" width="855" height="171" /></a></p>
-<p>Pour finir, nous allons ajouter deux services à notre application.</p>
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.31.10.png" target="_blank"><img class="alignnone wp-image-3578" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.31.10-300x60.png" alt="" width="855" height="171" /></a>
+
+Pour finir, nous allons ajouter deux services à notre application.
+
 <ul>
 <li>Un service qui nous servira à nous authentifier sur notre API et à gérer le login &amp; logout</li>
 <li>Un service qui nous servira à requêter notre endpoint qui nous renverra notre liste de publications</li>
 </ul>
-<p>Pour se faire, lancez les commandes suivantes :</p>
+Pour se faire, lancez les commandes suivantes :
+
 <pre class="lang:default decode:true">ng g s authentication/authentication --flat</pre>
-<p><em>Note : "g" pour generate, "s" pour... service (je sais que vous saviez !) et "--flat" pour créer des composants sans dossiers :)</em></p>
+<em>Note : "g" pour generate, "s" pour... service (je sais que vous saviez !) et "--flat" pour créer des composants sans dossiers :)</em>
+
 <pre class="lang:default decode:true">// authentication/authentication.service.ts
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
@@ -397,11 +437,15 @@ export class PostRepository {
           .map((data: Response) =&gt; data.json());
   }
 }</pre>
-<p><em>Note : Nous remarquerons que nous utilisons Http dans l'authentication service alors que nous utilisons AuthHttp dans le post-repository service. Il y a une très bonne raison à cela. En effet, comme il est écrit dans la documentation de la librairie Angular2-jwt :</em></p>
-<blockquote><p>This library does not have any functionality for (or opinion about) implementing user authentication and retrieving JWTs to begin with. Those details will vary depending on your setup, but in most cases, you will use a regular HTTP request to authenticate your users and then save their JWTs in local storage or in a cookie if successful.</p></blockquote>
-<p>En d'autres termes, cette librairie n'est pas faite pour s'authentifier et stocker notre token. Pour cette étape, il vaut mieux privilégier l'utilisation du module Http basique livré avec Angular2.</p>
+<em>Note : Nous remarquerons que nous utilisons Http dans l'authentication service alors que nous utilisons AuthHttp dans le post-repository service. Il y a une très bonne raison à cela. En effet, comme il est écrit dans la documentation de la librairie Angular2-jwt :</em>
+
+<blockquote>This library does not have any functionality for (or opinion about) implementing user authentication and retrieving JWTs to begin with. Those details will vary depending on your setup, but in most cases, you will use a regular HTTP request to authenticate your users and then save their JWTs in local storage or in a cookie if successful.
+</blockquote>
+En d'autres termes, cette librairie n'est pas faite pour s'authentifier et stocker notre token. Pour cette étape, il vaut mieux privilégier l'utilisation du module Http basique livré avec Angular2.
+
 ##### 2.3 Mise en place d'un système de routing
-<p>Nous allons maintenant nous occuper du routing. En effet nous n'avons pour l'instant aucun moyen d'afficher le contenu qui se trouve dans les fichiers html de nos composants. Pour configurer le routing de votre application, c'est très simple. Nous allons créer un fichier app.routing.ts à la racine de notre application et indiquer les trois routes de nos composants principaux ainsi que la route de redirection au cas où nous entrions une url qui ne correspond à aucune route :</p>
+Nous allons maintenant nous occuper du routing. En effet nous n'avons pour l'instant aucun moyen d'afficher le contenu qui se trouve dans les fichiers html de nos composants. Pour configurer le routing de votre application, c'est très simple. Nous allons créer un fichier app.routing.ts à la racine de notre application et indiquer les trois routes de nos composants principaux ainsi que la route de redirection au cas où nous entrions une url qui ne correspond à aucune route :
+
 <pre class="lang:default decode:true">// app.routing.ts
 import { Routes, RouterModule } from '@angular/router';
 
@@ -429,7 +473,8 @@ const APP_ROUTES: Routes = [
 
 export const Routing = RouterModule.forRoot(APP_ROUTES);</pre>
 ##### 2.4 Protéger les routes authentifiées avec AuthGuard
-<p>Pour finir, nous allons mettre en place un système permettant de protéger nos routes sécurisées via Guard. Créons un dossier "_guard" dans le dossier "app" contenant deux fichiers :</p>
+Pour finir, nous allons mettre en place un système permettant de protéger nos routes sécurisées via Guard. Créons un dossier "_guard" dans le dossier "app" contenant deux fichiers :
+
 <pre class="lang:default decode:true ">// _guard/auth.guard.ts
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -453,14 +498,20 @@ export class AuthGuard implements CanActivate {
 }</pre>
 <pre class="lang:default decode:true ">// _guard/index.ts
 export * from './auth.guard';</pre>
-<p>Nous importerons le fichier index.ts dans notre fichier app.module.ts et nous déclarerons AuthGuard en tant que provider puis nous l'importerons également dans notre fichier app.routing.ts pour protéger notre route "post" via la propriété "canActivate".</p>
+Nous importerons le fichier index.ts dans notre fichier app.module.ts et nous déclarerons AuthGuard en tant que provider puis nous l'importerons également dans notre fichier app.routing.ts pour protéger notre route "post" via la propriété "canActivate".
+
 ##### 2.5 Authentifier ses requêtes avec Angular2-jwt
-<p>Pourquoi ai-je choisi d'utiliser cette librairie ? Et bien tout d'abord pour l'essayer. Et puis parce qu'elle va nous simplifier la vie. Enfin du moins l'envoi des requêtes vers notre API dans un premier temps.</p>
-<p>En effet, ce wrapper du module Http natif d'Angular2 permet d'inclure directement l'id_token contenu dans le localStorage, dans un header "authorization" compatible avec le format utilisé par notre LexikJwtAuthenticationBundle.</p>
-<p>Le deuxième avantage de cette librairie est qu'elle va automatiquement vérifier si le token est valide. Ce qui n'est pas du tout négligeable.</p>
-<p>Installons angular2-jwt via npm à la racine du projet en lançant cette commande :</p>
+Pourquoi ai-je choisi d'utiliser cette librairie ? Et bien tout d'abord pour l'essayer. Et puis parce qu'elle va nous simplifier la vie. Enfin du moins l'envoi des requêtes vers notre API dans un premier temps.
+
+En effet, ce wrapper du module Http natif d'Angular2 permet d'inclure directement l'id_token contenu dans le localStorage, dans un header "authorization" compatible avec le format utilisé par notre LexikJwtAuthenticationBundle.
+
+Le deuxième avantage de cette librairie est qu'elle va automatiquement vérifier si le token est valide. Ce qui n'est pas du tout négligeable.
+
+Installons angular2-jwt via npm à la racine du projet en lançant cette commande :
+
 <pre class="lang:default decode:true">npm install angular2-jwt</pre>
-<p>Maintenant que nous avons structuré notre application, il nous faut mettre à jour notre composant "app" ainsi que notre fichier app.module.ts avec les imports nécessaires :</p>
+Maintenant que nous avons structuré notre application, il nous faut mettre à jour notre composant "app" ainsi que notre fichier app.module.ts avec les imports nécessaires :
+
 <pre class="lang:default decode:true">// app.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -488,7 +539,8 @@ export class AppComponent {
 <ul>
 <li>app.component.html</li>
 </ul>
-<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.51.44.png" target="_blank"><img class="alignnone wp-image-3584" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.51.44-300x145.png" alt="" width="794" height="384" /></a></p>
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.51.44.png" target="_blank"><img class="alignnone wp-image-3584" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.51.44-300x145.png" alt="" width="794" height="384" /></a>
+
 <pre class="lang:default decode:true">// app.component.ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -536,12 +588,15 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
      bootstrap: [AppComponent]
 })
 export class AppModule { }</pre>
-<p><em>Note : J'ai délibérément inclus la factory authHttpServiceFactory directement dans ce fichier contrairement à ce que dit la documentation car il y a un bug connu de la team Angular2-jwt lors de la compilation </em><em>qui peut être résolu de cette manière :)</em></p>
-<p>Enfin, pour finaliser notre application, il ne reste plus qu'à lui appliquer un peu de style :</p>
+<em>Note : J'ai délibérément inclus la factory authHttpServiceFactory directement dans ce fichier contrairement à ce que dit la documentation car il y a un bug connu de la team Angular2-jwt lors de la compilation </em><em>qui peut être résolu de cette manière :)</em>
+
+Enfin, pour finaliser notre application, il ne reste plus qu'à lui appliquer un peu de style :
+
 <ul>
 <li>index.html</li>
 </ul>
-<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.52.07.png" target="_blank"><img class="alignnone wp-image-3585" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.52.07-300x138.png" alt="" width="922" height="424" /></a></p>
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.52.07.png" target="_blank"><img class="alignnone wp-image-3585" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.52.07-300x138.png" alt="" width="922" height="424" /></a>
+
 <pre class="lang:default decode:true">// style.css
 /* You can add global styles to this file, and also import other style files */
 body {
@@ -556,11 +611,17 @@ body {
 .logo {
     margin: 5px;
 }</pre>
-<p>Et voilà le travail !</p>
-<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-01.58.49.png" target="_blank"><img class="alignnone wp-image-3559" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-01.58.49-300x165.png" alt="" width="924" height="508" /></a></p>
-<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.28.40.png" target="_blank"><img class="alignnone wp-image-3587" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.28.40-300x165.png" alt="" width="865" height="476" /></a></p>
+Et voilà le travail !
+
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-01.58.49.png" target="_blank"><img class="alignnone wp-image-3559" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-01.58.49-300x165.png" alt="" width="924" height="508" /></a>
+
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.28.40.png" target="_blank"><img class="alignnone wp-image-3587" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/Capture-d’écran-2017-03-03-à-13.28.40-300x165.png" alt="" width="865" height="476" /></a>
+
 #### 3 Conclusion
-<p>Pour conclure, je dirais que cette expérience s'est avérée très enrichissante. Angular2 propose une nouvelle perception du framework front-end en comparaison à la première version. Une façon de développer qui se rapproche plus de la programmation orientée objet et rappelle étrangement les frameworks PHP au niveau de la structures des fichiers. Enfin le CLI, bien que toujours en version beta, reste un outil très pratique dans la lignée de la console de Symfony. Une très bonne première expérience. To be continued !</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+Pour conclure, je dirais que cette expérience s'est avérée très enrichissante. Angular2 propose une nouvelle perception du framework front-end en comparaison à la première version. Une façon de développer qui se rapproche plus de la programmation orientée objet et rappelle étrangement les frameworks PHP au niveau de la structures des fichiers. Enfin le CLI, bien que toujours en version beta, reste un outil très pratique dans la lignée de la console de Symfony. Une très bonne première expérience. To be continued !
+
+&nbsp;
+
+&nbsp;
+
 {% endraw %}

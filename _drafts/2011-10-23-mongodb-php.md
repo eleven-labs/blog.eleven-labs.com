@@ -11,9 +11,12 @@ tags:
 - mongodb
 ---
 {% raw %}
-<p>Aujourd'hui, petit tuto pour installer MongoDB pour php5. Pour cela plusieurs étapes sont nécessaires aussi bien sur le serveur que sur la partie software.</p>
-<p>Sur ce tuto nous travaillons sur un ubuntu 10.10 lors de l'installation des différents softwares.</p>
-<p><!--more--></p>
+Aujourd'hui, petit tuto pour installer MongoDB pour php5. Pour cela plusieurs étapes sont nécessaires aussi bien sur le serveur que sur la partie software.
+
+Sur ce tuto nous travaillons sur un ubuntu 10.10 lors de l'installation des différents softwares.
+
+<!--more-->
+
 <ul>
 <li>Installation de MongoDB</li>
 </ul>
@@ -45,7 +48,8 @@ mongodb start/running, process 1937</pre>
 <ul>
 <li>Installation d'un "phpmyadmin"</li>
 </ul>
-<p>Maintenant que le serveur mongo est lancé, il faut installer un "phpmyadmin" pour pouvoir interagir avec les données de MongoDB. Il existe de nombreux softwares pour cela:</p>
+Maintenant que le serveur mongo est lancé, il faut installer un "phpmyadmin" pour pouvoir interagir avec les données de MongoDB. Il existe de nombreux softwares pour cela:
+
 <ol>
 <li>phpmoadmin</li>
 <li>obricot</li>
@@ -63,7 +67,8 @@ mongodb start/running, process 1937</pre>
 <pre class="brush: shell; gutter: true">unzip rockmongo.zip</pre>
 </div>
 <div>
-<p>Ensuite il faut mettre la configuration de notre mongo dans le fichier config.php. Puis nous devons ajouter le virtualhost pour accéder à notre rockmongo, voici un exemple:</p>
+Ensuite il faut mettre la configuration de notre mongo dans le fichier config.php. Puis nous devons ajouter le virtualhost pour accéder à notre rockmongo, voici un exemple:
+
 <pre class="lang:default decode:true brush: shell; gutter: true ">// etc/apache2/site-available/rockmongo
 
 &lt;VirtualHost *:80&gt;

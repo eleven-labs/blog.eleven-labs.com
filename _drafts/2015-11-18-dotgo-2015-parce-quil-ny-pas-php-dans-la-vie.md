@@ -11,11 +11,15 @@ tags:
 - go
 ---
 {% raw %}
-<p>Parce qu'il n’y a pas que PHP dans la vie, j’ai décidé d’assister au <a href="http://www.dotgo.eu/" target="_blank">dotGo</a> 2015, la conférence européenne sur le <a href="https://golang.org/" target="_blank">Go</a>. Ce langage open source et créé, à la base, par une équipe de Google, vient d’avoir 6 ans, et <a href="https://www.quora.com/Is-Google-Go-worth-learning" target="_blank">certains puristes ne jurent déjà que par lui</a>. Voici un résumé des présentations de l’unique journée de conférence:</p>
+Parce qu'il n’y a pas que PHP dans la vie, j’ai décidé d’assister au <a href="http://www.dotgo.eu/" target="_blank">dotGo</a> 2015, la conférence européenne sur le <a href="https://golang.org/" target="_blank">Go</a>. Ce langage open source et créé, à la base, par une équipe de Google, vient d’avoir 6 ans, et <a href="https://www.quora.com/Is-Google-Go-worth-learning" target="_blank">certains puristes ne jurent déjà que par lui</a>. Voici un résumé des présentations de l’unique journée de conférence:
+
 <blockquote class="twitter-tweet" lang="fr">
-<p dir="ltr" lang="en">.<a href="https://twitter.com/francesc">@francesc</a> talking about implementing FP primitives with Go. Here Haskell's 'Maybe'. Fun. <a href="https://twitter.com/hashtag/dotgoeu?src=hash">#dotgoeu</a> <a href="https://twitter.com/hashtag/dotgo?src=hash">#dotgo</a> <a href="https://t.co/ZVHmhrSsRs">pic.twitter.com/ZVHmhrSsRs</a></p>
-<p>— Sam Bessalah (@samklr) <a href="https://twitter.com/samklr/status/663665425373396992">9 Novembre 2015</a></p></blockquote>
-<p>&nbsp;</p>
+.<a href="https://twitter.com/francesc">@francesc</a> talking about implementing FP primitives with Go. Here Haskell's 'Maybe'. Fun. <a href="https://twitter.com/hashtag/dotgoeu?src=hash">#dotgoeu</a> <a href="https://twitter.com/hashtag/dotgo?src=hash">#dotgo</a> <a href="https://t.co/ZVHmhrSsRs">pic.twitter.com/ZVHmhrSsRs</a>
+
+— Sam Bessalah (@samklr) <a href="https://twitter.com/samklr/status/663665425373396992">9 Novembre 2015</a>
+</blockquote>
+&nbsp;
+
 <ol>
 <ol>
 <ol>
@@ -34,18 +38,31 @@ tags:
 </ol>
 </ol>
 </ol>
-<p>&nbsp;</p>
-<blockquote class="twitter-tweet" lang="fr"><p>Jason Hickey about running Go in Chrome and vanadium at <a href="https://twitter.com/hashtag/dotgoeu?src=hash">#dotgoeu</a> <a href="https://t.co/eMTKa970rx">pic.twitter.com/eMTKa970rx</a> — Charles Sarrazin (@csarrazi) <a href="https://twitter.com/csarrazi/status/663720318154973185">9 Novembre 2015</a></p></blockquote>
-<p>**Ça valait le coup ?**</p>
-<p><span style="font-weight: 400;">Tout à fait. Je pense que <a href="http://blog.teamtreehouse.com/learn-a-new-programming-language-every-year">tout développeur se doit de s’intéresser à d’autres langages</a> et à leurs mécaniques. Même sans comprendre toutes les subtilités du Go, l’expérience a été très enrichissante en tous points. Je continuerai à garder un oeil sur le Golang.</span></p>
-<p>&nbsp;</p>
+&nbsp;
+
+<blockquote class="twitter-tweet" lang="fr">Jason Hickey about running Go in Chrome and vanadium at <a href="https://twitter.com/hashtag/dotgoeu?src=hash">#dotgoeu</a> <a href="https://t.co/eMTKa970rx">pic.twitter.com/eMTKa970rx</a> — Charles Sarrazin (@csarrazi) <a href="https://twitter.com/csarrazi/status/663720318154973185">9 Novembre 2015</a>
+</blockquote>
+**Ça valait le coup ?**
+
+<span style="font-weight: 400;">Tout à fait. Je pense que <a href="http://blog.teamtreehouse.com/learn-a-new-programming-language-every-year">tout développeur se doit de s’intéresser à d’autres langages</a> et à leurs mécaniques. Même sans comprendre toutes les subtilités du Go, l’expérience a été très enrichissante en tous points. Je continuerai à garder un oeil sur le Golang.</span>
+
+&nbsp;
+
 <blockquote class="twitter-tweet" lang="fr">
-<p dir="ltr" lang="en">This is the best representation of a map function I've even seen! <a href="https://twitter.com/francesc">@francesc</a> <a href="https://twitter.com/hashtag/DotGoEu?src=hash">#DotGoEu</a> <a href="https://t.co/HBehkUhvTY">pic.twitter.com/HBehkUhvTY</a></p>
-<p>— Micha Mazaheri (@mittsh) <a href="https://twitter.com/mittsh/status/663663348312092672">9 Novembre 2015</a></p>
-<p>&nbsp;</p></blockquote>
-<p>**Mais le Golang, c’est demandé/utilisé ?** <span style="font-weight: 400;">En France, à part MailJet qui était un ambassadeur de la conférence, je n’ai jamais entendu parler de sociétés qui le mettent en avant. Même les entreprises de formation n’ont pas l’air de s’en soucier. #dotgoeu a été très “influent” sur Twitter ce jour là vers San Francisco.</span></p>
-<p>&nbsp;</p>
-<blockquote class="twitter-tweet" lang="fr"><p>San Francisco 1 TensorFlow 2 <a href="https://twitter.com/hashtag/TacoEmojiEngine?src=hash">#TacoEmojiEngine</a> 3 <a href="https://twitter.com/hashtag/mondaymotivation?src=hash">#mondaymotivation</a> 4 <a href="https://twitter.com/hashtag/satsummit?src=hash">#satsummit</a> 5 Fallout 4 6 <a href="https://twitter.com/hashtag/dotgoeu?src=hash">#dotgoeu</a> <a href="https://t.co/jX4Hago2xs">pic.twitter.com/jX4Hago2xs</a> — Trend Topics USA (@TrendTopicsUSA) <a href="https://twitter.com/TrendTopicsUSA/status/663749439241097217">9 Novembre 2015</a></p></blockquote>
-<p>**Ah ça sert à rien alors...**</p>
-<p><span style="font-weight: 400;">Ce n'est probablement pas le meilleur choix pour du développement web. Mais encore une fois, un développeur se doit d’être curieux des évolutions dans le milieu, ne serait-ce que pour s’adapter à la demande du marché. Dans le meilleur des cas, il le fait par passion.</span></p>
+This is the best representation of a map function I've even seen! <a href="https://twitter.com/francesc">@francesc</a> <a href="https://twitter.com/hashtag/DotGoEu?src=hash">#DotGoEu</a> <a href="https://t.co/HBehkUhvTY">pic.twitter.com/HBehkUhvTY</a>
+
+— Micha Mazaheri (@mittsh) <a href="https://twitter.com/mittsh/status/663663348312092672">9 Novembre 2015</a>
+
+&nbsp;
+</blockquote>
+**Mais le Golang, c’est demandé/utilisé ?** <span style="font-weight: 400;">En France, à part MailJet qui était un ambassadeur de la conférence, je n’ai jamais entendu parler de sociétés qui le mettent en avant. Même les entreprises de formation n’ont pas l’air de s’en soucier. #dotgoeu a été très “influent” sur Twitter ce jour là vers San Francisco.</span>
+
+&nbsp;
+
+<blockquote class="twitter-tweet" lang="fr">San Francisco 1 TensorFlow 2 <a href="https://twitter.com/hashtag/TacoEmojiEngine?src=hash">#TacoEmojiEngine</a> 3 <a href="https://twitter.com/hashtag/mondaymotivation?src=hash">#mondaymotivation</a> 4 <a href="https://twitter.com/hashtag/satsummit?src=hash">#satsummit</a> 5 Fallout 4 6 <a href="https://twitter.com/hashtag/dotgoeu?src=hash">#dotgoeu</a> <a href="https://t.co/jX4Hago2xs">pic.twitter.com/jX4Hago2xs</a> — Trend Topics USA (@TrendTopicsUSA) <a href="https://twitter.com/TrendTopicsUSA/status/663749439241097217">9 Novembre 2015</a>
+</blockquote>
+**Ah ça sert à rien alors...**
+
+<span style="font-weight: 400;">Ce n'est probablement pas le meilleur choix pour du développement web. Mais encore une fois, un développeur se doit d’être curieux des évolutions dans le milieu, ne serait-ce que pour s’adapter à la demande du marché. Dans le meilleur des cas, il le fait par passion.</span>
+
 {% endraw %}

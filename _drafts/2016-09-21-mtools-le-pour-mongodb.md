@@ -12,16 +12,25 @@ tags:
 - devops
 ---
 {% raw %}
-<p>Maintenir une application MongoDB, notamment sur des sujets Datas avec beaucoup de volumétrie et/ou d’opérations peut vite devenir un supplice, surtout si, comme la plupart des Devs, vous n'avez pas accès aux machines de productions qui sont généralement réservées aux exploitants.</p>
-<p>Problème : comment trouver dans vos dizaines de millions de données ou requêtes quotidiennes, celles qui ont un impact négatif sur vos performances ou encore les goulots d’étranglement de votre architecture ?</p>
-<p><!--more--></p>
-<p>Suite à l’accompagnement de MongoDB inc sur nos sujets Datas au sein de FranceTV Edition Numérique, nous avons automatisé l'utilisation d'outils afin de pouvoir étudier les comportements des productions sans impacts sur les applications.</p>
-<p>L'outil, ou plutôt la boite à outils que nous utilisons le plus à ce jour est <a href="https://github.com/rueckstiess/mtools">MTools</a>. Ce projet a été initié et est toujours maintenu par <a href="https://github.com/rueckstiess">Thomas Rückstieß</a>, ayant travaillé chez... MongoDB :)</p>
-<p>&nbsp;</p>
+Maintenir une application MongoDB, notamment sur des sujets Datas avec beaucoup de volumétrie et/ou d’opérations peut vite devenir un supplice, surtout si, comme la plupart des Devs, vous n'avez pas accès aux machines de productions qui sont généralement réservées aux exploitants.
+
+Problème : comment trouver dans vos dizaines de millions de données ou requêtes quotidiennes, celles qui ont un impact négatif sur vos performances ou encore les goulots d’étranglement de votre architecture ?
+
+<!--more-->
+
+Suite à l’accompagnement de MongoDB inc sur nos sujets Datas au sein de FranceTV Edition Numérique, nous avons automatisé l'utilisation d'outils afin de pouvoir étudier les comportements des productions sans impacts sur les applications.
+
+L'outil, ou plutôt la boite à outils que nous utilisons le plus à ce jour est <a href="https://github.com/rueckstiess/mtools">MTools</a>. Ce projet a été initié et est toujours maintenu par <a href="https://github.com/rueckstiess">Thomas Rückstieß</a>, ayant travaillé chez... MongoDB :)
+
+&nbsp;
+
 ### MTools est composé de 6 outils :
-<p><strong><span style="text-decoration: underline;">Mloginfo :</span></strong></p>
-<p>Mloginfo lit les log générés par mongoDB et retourne des informations d'utilisation de la base de données. Dans notre cas, ce qui nous intéresse (entre autres) c'est le profiling des requêtes afin de voir celles qui s’exécutent le plus ou encore celles qui consomment le plus de temps.</p>
-<p>Exemple d'utilisation :</p>
+<strong><span style="text-decoration: underline;">Mloginfo :</span></strong>
+
+Mloginfo lit les log générés par mongoDB et retourne des informations d'utilisation de la base de données. Dans notre cas, ce qui nous intéresse (entre autres) c'est le profiling des requêtes afin de voir celles qui s’exécutent le plus ou encore celles qui consomment le plus de temps.
+
+Exemple d'utilisation :
+
 <pre class="lang:default decode:true" title="mloginfo">mloginfo --queries logs.mongo/mongod.log
 
 namespace              operation        pattern                              count     min (ms)    max (ms)    mean (ms)    95%-ile (ms)    sum (ms)
@@ -29,7 +38,8 @@ namespace              operation        pattern                              cou
 myCol.$cmd               findandmodify    {"ID": 1}                          916493         101       10486          277           453.0    254423325
 myCol.User               count            {"activeSeg": 1, "updatedAt": 1}   68           30135     1413998       419353       1350776.4    28516024
 myCol.InactiveUser       count            {"inactiveSeg": 1}                 32          625038     1019698       813384        984999.6    26028315</pre>
-<p>Au niveau des colonnes :</p>
+Au niveau des colonnes :
+
 <ul>
 <li>namespace : DB et collection utilisée</li>
 <li>operation : opération mongo (find, update, remove ...)</li>
@@ -38,11 +48,16 @@ myCol.InactiveUser       count            {"inactiveSeg": 1}                 32 
 <li>min, max, mean, 95%-ile : temps d’exécution de la requête</li>
 <li>sum : temps cumulé de cette requête</li>
 </ul>
-<p>Dans notre cas, on peut se rendre compte que la commande "findandmodify" est très souvent utilisée, dans un temps moyen correct. En revanche les fonctions de "count" sont très longues, probablement synonyme d'un index manquant.</p>
-<p>Plus d'infos <a href="https://github.com/rueckstiess/mtools/wiki/mloginfo">ici</a>.</p>
-<p>&nbsp;</p>
-<p><strong><span style="text-decoration: underline;">Mlogfilter</span> :</strong></p>
-<p>Mlogfilter permet comme son nom l'indique de réduire la quantité d'information d'un fichier de log. Nous pouvons appliquer plusieurs filtres et combiner le résultat avec mloginfo par exemple.</p>
+Dans notre cas, on peut se rendre compte que la commande "findandmodify" est très souvent utilisée, dans un temps moyen correct. En revanche les fonctions de "count" sont très longues, probablement synonyme d'un index manquant.
+
+Plus d'infos <a href="https://github.com/rueckstiess/mtools/wiki/mloginfo">ici</a>.
+
+&nbsp;
+
+<strong><span style="text-decoration: underline;">Mlogfilter</span> :</strong>
+
+Mlogfilter permet comme son nom l'indique de réduire la quantité d'information d'un fichier de log. Nous pouvons appliquer plusieurs filtres et combiner le résultat avec mloginfo par exemple.
+
 <pre class="lang:default decode:true " title="mlogfilter">cat logs.mongo/mongod.log | mlogfilter --human --slow --from start +1day
 
 Fri Sep 16 08:01:58.883 I COMMAND [conn195591] command dbm_rcu_v2.Client command:
@@ -54,18 +69,30 @@ ntoskip:0 keyUpdates:0 writeConflicts:0 numYields:549 reslen:862557
 locks:{ Global: { acquireCount: { r: 1120 } },
 Database: { acquireCount: { r: 560 } }, Collection: { acquireCount: { r: 560 } } }
 protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
-<p>Avec cette commande, mlogfilter nous permet de filtrer les logs des commandes les plus longues (--slow) dans un intervalle d'un jour à partir du début du fichier. On peut voir que cela nous donne une commande d'agrégation qui a pris plus de 3 secondes pour s’exécuter.</p>
-<p>Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mlogfilter">mlogfilter</a>.</p>
-<p>&nbsp;</p>
-<p><strong><span style="text-decoration: underline;">Mplotqueries &amp; Mlogvis</span> :</strong></p>
-<p>Ces deux exécutables permettent de générer des graphiques afin de visualiser plus d'informations (répartition des appels, type de commandes etc...) de manière graphique.</p>
-<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/mlogvis.png"><img class="alignnone size-medium wp-image-2248" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/mlogvis-300x134.png" alt="mlogvis" width="300" height="134" /></a></p>
-<p>Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mlogvis">Mlogvis</a> &amp; <a href="https://github.com/rueckstiess/mtools/wiki/mplotqueries">Mplotqueries</a>.</p>
-<p>&nbsp;</p>
-<p><strong><span style="text-decoration: underline;">Mgenerate</span> :</strong></p>
-<p>Mgenerate permet, à partir d'un modèle JSON, de remplir une base de données mongoDB avec de la donnée aléatoire. C'est l'outil parfait pour tester le comportement de fonction ou de requête avec un grand set de données.</p>
-<p>&nbsp;</p>
-<p>Exemple de modèle JSON pour la génération d'une collection User :</p>
+Avec cette commande, mlogfilter nous permet de filtrer les logs des commandes les plus longues (--slow) dans un intervalle d'un jour à partir du début du fichier. On peut voir que cela nous donne une commande d'agrégation qui a pris plus de 3 secondes pour s’exécuter.
+
+Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mlogfilter">mlogfilter</a>.
+
+&nbsp;
+
+<strong><span style="text-decoration: underline;">Mplotqueries &amp; Mlogvis</span> :</strong>
+
+Ces deux exécutables permettent de générer des graphiques afin de visualiser plus d'informations (répartition des appels, type de commandes etc...) de manière graphique.
+
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/mlogvis.png"><img class="alignnone size-medium wp-image-2248" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/mlogvis-300x134.png" alt="mlogvis" width="300" height="134" /></a>
+
+Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mlogvis">Mlogvis</a> &amp; <a href="https://github.com/rueckstiess/mtools/wiki/mplotqueries">Mplotqueries</a>.
+
+&nbsp;
+
+<strong><span style="text-decoration: underline;">Mgenerate</span> :</strong>
+
+Mgenerate permet, à partir d'un modèle JSON, de remplir une base de données mongoDB avec de la donnée aléatoire. C'est l'outil parfait pour tester le comportement de fonction ou de requête avec un grand set de données.
+
+&nbsp;
+
+Exemple de modèle JSON pour la génération d'une collection User :
+
 <pre class="lang:default decode:true " title="json model">{
     "user": {
         "name": {
@@ -87,17 +114,29 @@ protocol:op_query (0hr 0min 3secs 99ms) 3,099ms</pre>
     "tags": {"$array": {"of": {"label": "$string", "id": "$oid", "subtags":
         {"$missing": {"percent": 80, "ifnot": {"$array": ["$string", {"$number": [2, 5]}]}}}}, "number": {"$number": [0, 10] }}}
 }</pre>
-<p>Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mgenerate">Mgenerate</a>.</p>
-<p>&nbsp;</p>
-<p><strong><span style="text-decoration: underline;">Mlaunch</span> :</strong></p>
-<p>Mlaunch permet de créer rapidement un environnement local de travail avec mongo. Il peut fournir un configuration MongoDB en stand-alone mais aussi en replica et/ou avec shard. Combiné avec mgenerate, cela peut permettre de mettre en place des environnements de tests très rapidement afin de tester diverses applications tournants sous mongoDB.</p>
-<p><em><strong>Exemple :</strong></em></p>
+Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mgenerate">Mgenerate</a>.
+
+&nbsp;
+
+<strong><span style="text-decoration: underline;">Mlaunch</span> :</strong>
+
+Mlaunch permet de créer rapidement un environnement local de travail avec mongo. Il peut fournir un configuration MongoDB en stand-alone mais aussi en replica et/ou avec shard. Combiné avec mgenerate, cela peut permettre de mettre en place des environnements de tests très rapidement afin de tester diverses applications tournants sous mongoDB.
+
+<em><strong>Exemple :</strong></em>
+
 <pre class="lang:default decode:true ">mlaunch --replicaset --nodes 5</pre>
-<p>Cette commande permet de demander la création d'une instance mongo avec 5 replicats</p>
-<p>&nbsp;</p>
-<p><strong><span style="text-decoration: underline;">Point bonus, MongoDB Compass</span> :</strong></p>
-<p><a href="https://docs.mongodb.com/compass/">Compass</a> est un client lourd permettant d’analyser et de parcourir les données d'une base MongoDB. Globalement l'outils permet de manipuler la data sans réellement demander des compétences en query mongo. Petit bémol, il n'est encore disponible que sous Windows ou MacOs :'(</p>
-<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/date-sample.png"><img class="alignnone size-medium wp-image-2254" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/date-sample-300x41.png" alt="date-sample" width="300" height="41" /></a></p>
-<p>&nbsp;</p>
-<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder.png"><img class="alignnone size-medium wp-image-2255" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder-300x217.png" alt="query-builder" width="300" height="217" /></a></p>
+Cette commande permet de demander la création d'une instance mongo avec 5 replicats
+
+&nbsp;
+
+<strong><span style="text-decoration: underline;">Point bonus, MongoDB Compass</span> :</strong>
+
+<a href="https://docs.mongodb.com/compass/">Compass</a> est un client lourd permettant d’analyser et de parcourir les données d'une base MongoDB. Globalement l'outils permet de manipuler la data sans réellement demander des compétences en query mongo. Petit bémol, il n'est encore disponible que sous Windows ou MacOs :'(
+
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/date-sample.png"><img class="alignnone size-medium wp-image-2254" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/date-sample-300x41.png" alt="date-sample" width="300" height="41" /></a>
+
+&nbsp;
+
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder.png"><img class="alignnone size-medium wp-image-2255" src="http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder-300x217.png" alt="query-builder" width="300" height="217" /></a>
+
 {% endraw %}

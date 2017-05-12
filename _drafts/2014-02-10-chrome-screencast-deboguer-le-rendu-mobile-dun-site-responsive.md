@@ -12,15 +12,24 @@ tags:
 - responsive
 ---
 {% raw %}
-<p>Depuis quelques mois, le navigateur Google Chrome permet, dans ses fonctionnalités expérimentales, de profiter des DevTools pour les téléphones et tablettes Android.</p>
-<p><!--more--></p>
-<p>Pour faire simple, voilà ce que j'ai sur ma tablette Nexus 7.</p>
-<p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Screenshot-Nexus-7.jpg"><img class="size-medium wp-image-778 aligncenter" alt="Screenshot Nexus 7" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Screenshot-Nexus-7-187x300.jpg" width="187" height="300" /></a></p>
-<p>&nbsp;</p>
-<p>Sur mon ordinateur, après avoir activé le Chrome Screencast, je peux faire de l'édition live et contrôler le rendu sur la tablette :</p>
-<p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Screenshot-Google-Chrome-Screencast.png"><img class="size-medium wp-image-779 aligncenter" alt="Screenshot Google Chrome Screencast" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Screenshot-Google-Chrome-Screencast-300x168.png" width="300" height="168" /></a></p>
-<p>&nbsp;</p>
-<p>Pour activer ces fonctionnalités :</p>
+Depuis quelques mois, le navigateur Google Chrome permet, dans ses fonctionnalités expérimentales, de profiter des DevTools pour les téléphones et tablettes Android.
+
+<!--more-->
+
+Pour faire simple, voilà ce que j'ai sur ma tablette Nexus 7.
+
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Screenshot-Nexus-7.jpg"><img class="size-medium wp-image-778 aligncenter" alt="Screenshot Nexus 7" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Screenshot-Nexus-7-187x300.jpg" width="187" height="300" /></a>
+
+&nbsp;
+
+Sur mon ordinateur, après avoir activé le Chrome Screencast, je peux faire de l'édition live et contrôler le rendu sur la tablette :
+
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Screenshot-Google-Chrome-Screencast.png"><img class="size-medium wp-image-779 aligncenter" alt="Screenshot Google Chrome Screencast" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Screenshot-Google-Chrome-Screencast-300x168.png" width="300" height="168" /></a>
+
+&nbsp;
+
+Pour activer ces fonctionnalités :
+
 <ul>
 <li>Sur votre ordinateur, allez sur <a href="//flags/" target="_blank">chrome://flags/</a> et cliquez :
 <ul>
@@ -37,13 +46,18 @@ tags:
 <li>Ensuite, connectez votre tablette ou téléphone en USB, et ouvrez Google Chrome.</li>
 <li>Sur la tablette, il faut accepter votre ordinateur en validant la fenêtre d'alerte.</li>
 </ul>
-<p>Et c'est bon ! Il ne vous reste plus qu'à aller sur <a href="//inspect/" target="_blank">chrome://inspect/</a> pour voir apparaitre les pages ouvertes sur le périphérique :</p>
-<p style="text-align: center;"><a href="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Google-inspect-screencast.jpg"><img class="size-medium wp-image-786 aligncenter" alt="Google inspect screencast" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Google-inspect-screencast-300x107.jpg" width="300" height="107" /></a></p>
-<p style="text-align: center;">
-<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Google-toggle-screencast.jpg"><img class="size-medium wp-image-788 alignright" alt="Google-toggle-screencast" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Google-toggle-screencast-300x76.jpg" width="300" height="76" /></a><br />
-Et à cliquer sur <em>inspect</em>. Vous trouverez en bas à gauche de de la fenètre DevTools qui s'ouvre un bouton <em>Toggle Screencast </em>:</p>
-<p>&nbsp;</p>
-<p>Retrouvez encore plus de fonctionnalités avancées dans cet excellent article de Paul Irish pour HTML5Rocks : <a title="Chrome DevTools for Mobile: Screencast and Emulation by Paul Irish" href="http://www.html5rocks.com/en/tutorials/developertools/mobile/" target="_blank">Chrome DevTools for Mobile: Screencast and Emulation</a></p>
+Et c'est bon ! Il ne vous reste plus qu'à aller sur <a href="//inspect/" target="_blank">chrome://inspect/</a> pour voir apparaitre les pages ouvertes sur le périphérique :
+
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Google-inspect-screencast.jpg"><img class="size-medium wp-image-786 aligncenter" alt="Google inspect screencast" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Google-inspect-screencast-300x107.jpg" width="300" height="107" /></a>
+
+
+<a href="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Google-toggle-screencast.jpg"><img class="size-medium wp-image-788 alignright" alt="Google-toggle-screencast" src="http://blog.eleven-labs.com/wp-content/uploads/2013/12/Google-toggle-screencast-300x76.jpg" width="300" height="76" /></a><br />
+Et à cliquer sur <em>inspect</em>. Vous trouverez en bas à gauche de de la fenètre DevTools qui s'ouvre un bouton <em>Toggle Screencast </em>:
+
+&nbsp;
+
+Retrouvez encore plus de fonctionnalités avancées dans cet excellent article de Paul Irish pour HTML5Rocks : <a title="Chrome DevTools for Mobile: Screencast and Emulation by Paul Irish" href="http://www.html5rocks.com/en/tutorials/developertools/mobile/" target="_blank">Chrome DevTools for Mobile: Screencast and Emulation</a>
+
 <div id="wrchoverdiv">
 <div id="wrccontainer" style="background: #a5abb2 url('chrome-extension://gomekmidlodglbbmalcneegieacbdmki/common/skin/img/se_icn_norating.png');">
 <div id="wrcratingtext">Ce site n'a pas été évalué</div>

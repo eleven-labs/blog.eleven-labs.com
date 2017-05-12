@@ -10,12 +10,16 @@ tags: []
 ---
 {% raw %}
 ### <strong>Unit tests and trust</strong>
-<p>It is well established : unit tests are mandatory when developing an application. They allow to highlight possible regressions when code is modified, so the developer gets a certain confidence when shipping his code to production : If tests do pass, everything works correctly.</p>
-<p>To measure this confidence, we use code coverage as our main metric. The more your code is covered, (close to 100%), the less chance there is that regressions would fall through the net.</p>
-<p>But be careful ! This affirmation is a pure theory !</p>
+It is well established : unit tests are mandatory when developing an application. They allow to highlight possible regressions when code is modified, so the developer gets a certain confidence when shipping his code to production : If tests do pass, everything works correctly.
+
+To measure this confidence, we use code coverage as our main metric. The more your code is covered, (close to 100%), the less chance there is that regressions would fall through the net.
+
+But be careful ! This affirmation is a pure theory !
+
 ### <strong>Coverage vs protection</strong>
-<p>We are going to see that sometimes, code coverage is a false indicator of protection.<br />
-Here is a simple example :</p>
+We are going to see that sometimes, code coverage is a false indicator of protection.<br />
+Here is a simple example :
+
 <pre class="lang:php decode:true">&lt;?php
 
 class Astronaut {}
@@ -38,7 +42,8 @@ class SpaceShip
     }
 }
 </pre>
-<p>The <em>SpaceShip</em> class has a public method <em>addAstronaut</em> which adds an instance of <em>Astronaut</em> only if maximum capacity is not reached. Let's see the associated unit test :</p>
+The <em>SpaceShip</em> class has a public method <em>addAstronaut</em> which adds an instance of <em>Astronaut</em> only if maximum capacity is not reached. Let's see the associated unit test :
+
 <pre class="lang:php decode:true">&lt;?php
 
 class SpaceShipTest extends \PHPUnit_Framework_TestCase
@@ -53,21 +58,26 @@ class SpaceShipTest extends \PHPUnit_Framework_TestCase
     }
 }
 </pre>
-<p>The test checks that the method is actually adding an entry to the astronaut array. When we launch the tests, we have a code coverage of 100% (even without assertion we would still have this result).<br />
+The test checks that the method is actually adding an entry to the astronaut array. When we launch the tests, we have a code coverage of 100% (even without assertion we would still have this result).<br />
 But we are not protected enough : what would happen if the <em>addAstronaut</em> method changed ?<br />
-Would our test be sufficient to detect the regression ?</p>
+Would our test be sufficient to detect the regression ?
+
 ### <strong>Mutation Tests</strong>
-<p>In order to detect breaches in your unit tests, one solution exist : <strong>mutation tests</strong>.<br />
-The principle is very simple : alter the source code to check that associated tests would fail accordingly.</p>
-<p>To get to this, here are the required steps :</p>
+In order to detect breaches in your unit tests, one solution exist : <strong>mutation tests</strong>.<br />
+The principle is very simple : alter the source code to check that associated tests would fail accordingly.
+
+To get to this, here are the required steps :
+
 <ul>
 <li>Launch the test suite once to check that all the tests pass (it's useless to try to make a failing test fail !)</li>
 <li>Launch the test suite again but with parts of the tested code modified</li>
 <li>Check that tests fail when tested code have been mutated</li>
 <li>Start over as many times as there are possible mutations to apply</li>
 </ul>
-<p>Of course, we don't have to do this by hand, there are frameworks out there that are going to automate the process.</p>
-<p>Before we go deeper, let's see some vocabulary :</p>
+Of course, we don't have to do this by hand, there are frameworks out there that are going to automate the process.
+
+Before we go deeper, let's see some vocabulary :
+
 <ul>
 <li><strong>Mutant</strong> : Unit modification of the code (e.g: <strong>!==</strong> replaced by <strong>===</strong>)</li>
 <li><strong>Killed/Captured</strong> : A mutant is said killed (or captured) if the unit test fails (positive outcome)</li>
@@ -75,8 +85,10 @@ The principle is very simple : alter the source code to check that associated te
 <li><strong>Uncovered</strong> : A mutant is uncovered if no test cover the mutated code</li>
 </ul>
 ### <strong>Case study : Humbug</strong>
-<p>We are going to see <a href="https://github.com/padraic/humbug">Humbug</a>, a framework that allows us to do mutation tests in PHP.</p>
-<p>As we execute the Humbug binary, we get the following output :</p>
+We are going to see <a href="https://github.com/padraic/humbug">Humbug</a>, a framework that allows us to do mutation tests in PHP.
+
+As we execute the Humbug binary, we get the following output :
+
 <pre class="lang:txt decode:true">$&gt; humbug
 ...
 Mutation Testing is commencing on 1 files...
@@ -96,7 +108,8 @@ Metrics:
     Mutation Code Coverage: 100%
     Covered Code MSI: 50%
 </pre>
-<p>Damn ! A Mutant escaped ! Let's have a look at the log file :</p>
+Damn ! A Mutant escaped ! Let's have a look at the log file :
+
 <pre class="lang:txt decode:true">1) \Humbug\Mutator\ConditionalBoundary\LessThan
 Diff on \SpaceShip::addAstronaut() in src/SpaceShip.php:
 --- Original
@@ -110,8 +123,9 @@ Diff on \SpaceShip::addAstronaut() in src/SpaceShip.php:
      }
  }
 </pre>
-<p>As we can see in the generated diff, tests didn't detect the operator substitution. Actually, we haven't tested the case when our spaceship is full !<br />
-Now, let's add a test to cover this use-case :</p>
+As we can see in the generated diff, tests didn't detect the operator substitution. Actually, we haven't tested the case when our spaceship is full !<br />
+Now, let's add a test to cover this use-case :
+
 <pre class="lang:php decode:true">&lt;?php
 
 class SpaceShipTest extends \PHPUnit_Framework_TestCase
@@ -135,7 +149,8 @@ class SpaceShipTest extends \PHPUnit_Framework_TestCase
     }
 }
 </pre>
-<p>Launch Humbug again :</p>
+Launch Humbug again :
+
 <pre class="lang:txt decode:true">$&gt; humbug
 ...
 Mutation Testing is commencing on 1 files...
@@ -155,9 +170,11 @@ Metrics:
     Mutation Code Coverage: 100%
     Covered Code MSI: 100%
 </pre>
-<p>That's it ! This time no mutant escaped, our test suite is more efficient, and this potential bug will never reach production !<br />
-Obviously, the example chosen here is voluntarily very simple and might not be evocative, but in the core businnes logic of your application, you may have a lot more sensitive use-cases.</p>
-<p>Humbug is capable of generating a whole set of mutations :</p>
+That's it ! This time no mutant escaped, our test suite is more efficient, and this potential bug will never reach production !<br />
+Obviously, the example chosen here is voluntarily very simple and might not be evocative, but in the core businnes logic of your application, you may have a lot more sensitive use-cases.
+
+Humbug is capable of generating a whole set of mutations :
+
 <ul>
 <li>Comparison operator substitution (<strong>&gt;</strong> becomes <strong>&gt;=</strong>, <strong>!==</strong> becomes <strong>===</strong>, etc...)</li>
 <li>Constant substitution (<strong>0</strong> becomes <strong>1</strong>, <strong>true</strong> becomes <strong>false</strong>, etc...)</li>
@@ -165,8 +182,10 @@ Obviously, the example chosen here is voluntarily very simple and might not be e
 <li>Binary operator subsctirution (<strong>&amp;</strong>, <strong>|</strong>, <strong>%</strong>, etc...)</li>
 <li>Return values substitution</li>
 </ul>
-<p>I'm not going to detail everything here, if wou want to know more about this, I invite you to check the <a href="https://github.com/padraic/humbug" target="_blank">GitHub project page</a>.</p>
+I'm not going to detail everything here, if wou want to know more about this, I invite you to check the <a href="https://github.com/padraic/humbug" target="_blank">GitHub project page</a>.
+
 ### <strong>Conclusion</strong>
-<p>Mutation testing is a simple and efficient way of measuring unit tests fiability. Code coverage is not a very reliable metric, a code can be 100% covered without any assertion !<br />
-Humbug allows to automate these tests, so it's possible to plug it in your continuous integration workflow. However, be aware that execution time increases exponentially when codebase grows, we want to use mutation testing where there is a true concern in priority : business code.</p>
+Mutation testing is a simple and efficient way of measuring unit tests fiability. Code coverage is not a very reliable metric, a code can be 100% covered without any assertion !<br />
+Humbug allows to automate these tests, so it's possible to plug it in your continuous integration workflow. However, be aware that execution time increases exponentially when codebase grows, we want to use mutation testing where there is a true concern in priority : business code.
+
 {% endraw %}

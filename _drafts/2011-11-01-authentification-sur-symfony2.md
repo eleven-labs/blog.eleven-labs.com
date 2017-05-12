@@ -11,11 +11,16 @@ tags:
 - symfony2
 ---
 {% raw %}
-<p>Attention ce code date du début de Symfony2 un nouveau tuto est en cours</p>
-<p>&nbsp;</p>
-<p>Nouveau tuto sur Symfony2, comme pour tous les sites nous avons souvent besoin de rendre une partie de ce dernier non visible pour le public. Pour cela, nous allons mettre en place le système d'authentification de Symfony.</p>
-<p><!--more-->Pour commencer, il faut comprendre comment fonctionne le système d'authentification avec Symfony2.</p>
-<p>Il fonctionne en deux étapes, la première est l'authentification de l'utilisateur qui peut se faire de différentes manières :</p>
+Attention ce code date du début de Symfony2 un nouveau tuto est en cours
+
+&nbsp;
+
+Nouveau tuto sur Symfony2, comme pour tous les sites nous avons souvent besoin de rendre une partie de ce dernier non visible pour le public. Pour cela, nous allons mettre en place le système d'authentification de Symfony.
+
+<!--more-->Pour commencer, il faut comprendre comment fonctionne le système d'authentification avec Symfony2.
+
+Il fonctionne en deux étapes, la première est l'authentification de l'utilisateur qui peut se faire de différentes manières :
+
 <ul>
 <li>un formulaire de login</li>
 <li>http authentification</li>
@@ -161,6 +166,7 @@ class ClycksController extends Controller
 &lt;/form&gt;</pre>
 </div>
 <div>
-<p>Voila maintenant votre partie admin est protégée, dans un prochain tuto j'expliquerai comment créer son propre provider.</p>
+Voila maintenant votre partie admin est protégée, dans un prochain tuto j'expliquerai comment créer son propre provider.
+
 </div>
 {% endraw %}

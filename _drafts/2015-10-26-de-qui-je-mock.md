@@ -11,15 +11,22 @@ tags:
 - phpunit
 ---
 {% raw %}
-<p><a href="https://phpunit.de/">PHPUnit</a> est un outil de test puissant. Il permet de tester de manière unitaire l'ensemble de son projet.</p>
-<p>Dans cet article, je vais me concentrer sur les mock et les stub d'objet.</p>
+<a href="https://phpunit.de/">PHPUnit</a> est un outil de test puissant. Il permet de tester de manière unitaire l'ensemble de son projet.
+
+Dans cet article, je vais me concentrer sur les mock et les stub d'objet.
+
 ### Mock, stub, what else ?
-<p>Lorsque l'on teste unitairement une classe, très souvent, cette classe a des dépendances avec d'autres classes (qui elles-mêmes ont des dépendances avec d'autres classes.). L'objectif du test unitaire est de tester la classe cible, et uniquement cette classe. En admettant que les classes dépendantes soient fiables et retournent ce qui est attendu, il ne reste plus que la classe cible à tester.</p>
-<p>Un "<strong>stub</strong>" est un objet qui va simuler les différentes classes utilisées par la classe cible. Cet objet va toujours retourner la même valeur, quels que soient ses paramètres.</p>
-<p>Un "<strong>mock</strong>" est un "<strong>stub</strong>" dans lequel on va vérifier des attentes à des appels de méthodes. Par exemple, je vérifie qu'une méthode est appelée une fois.</p>
+Lorsque l'on teste unitairement une classe, très souvent, cette classe a des dépendances avec d'autres classes (qui elles-mêmes ont des dépendances avec d'autres classes.). L'objectif du test unitaire est de tester la classe cible, et uniquement cette classe. En admettant que les classes dépendantes soient fiables et retournent ce qui est attendu, il ne reste plus que la classe cible à tester.
+
+Un "<strong>stub</strong>" est un objet qui va simuler les différentes classes utilisées par la classe cible. Cet objet va toujours retourner la même valeur, quels que soient ses paramètres.
+
+Un "<strong>mock</strong>" est un "<strong>stub</strong>" dans lequel on va vérifier des attentes à des appels de méthodes. Par exemple, je vérifie qu'une méthode est appelée une fois.
+
 ### Stub, un simple bouchon
-<p>Je vais rentrer directement dans le cœur du sujet avec un exemple simple.</p>
-<p>J'ai les classes suivantes:</p>
+Je vais rentrer directement dans le cœur du sujet avec un exemple simple.
+
+J'ai les classes suivantes:
+
 <pre class="lang:php decode:true ">&lt;?php
 
 class Bouteille
@@ -56,8 +63,10 @@ class Bouchon
          return true;
      }
 }</pre>
-<p>La classe Bouteille a besoin de la classe Bouchon (une bouteille sans bouchon, c'est inutile).</p>
-<p>Je vais tester ma classe Bouteille et bouchonner la méthode <span class="lang:default decode:true crayon-inline ">getBouchon()</span></p>
+La classe Bouteille a besoin de la classe Bouchon (une bouteille sans bouchon, c'est inutile).
+
+Je vais tester ma classe Bouteille et bouchonner la méthode <span class="lang:default decode:true crayon-inline ">getBouchon()</span>
+
 <pre class="lang:default decode:true">&lt;?php
 
 class BouteilleTest extends \PHPUnit_Framework_TestCase
@@ -71,13 +80,19 @@ class BouteilleTest extends \PHPUnit_Framework_TestCase
     }
 }
 </pre>
-<p>Tout d'abord, je crée le stub avec la méthode <span class="lang:default decode:true crayon-inline ">getMockBuilder()</span> . Il prend en paramètre le nom de la classe. J'ai chaîné un appel à la méthode <span class="lang:default decode:true crayon-inline ">disableOriginalConstructor()</span>  car je ne veux pas que le stub utilise le constructeur de la classe <span class="lang:default decode:true crayon-inline ">Bouteille()</span>  pour se construire. Enfin, la méthode <span class="lang:default decode:true crayon-inline ">getMock()</span> me retourne le bouchon.</p>
-<p>A la ligne 8, je configure le bouchon. <span class="lang:default decode:true crayon-inline ">-&gt;method()</span> . Il prend en paramètre le nom de la méthode à bouchonner. Ici, c'est <span class="lang:default decode:true crayon-inline ">getBouchon()</span> . <span class="lang:default decode:true crayon-inline ">-&gt;will()</span> indique la valeur qui va être retournée. Je place en paramètre une instance de <span class="lang:default decode:true crayon-inline ">Bouchon()</span>  : <span class="lang:default decode:true crayon-inline ">$this-&gt;returnValue(new Bouchon())</span> .</p>
-<p>Enfin, ligne 10, je vérifie que <span class="lang:default decode:true crayon-inline ">getBouchon()</span>  est bien une instance de <span class="lang:default decode:true crayon-inline ">Bouchon()</span> .</p>
-<p>Ce test démontre l'utilisation d'un bouchon. Le bouchon va toujours retourner la même valeur. Ici, je bouchonne la méthode <span class="lang:default decode:true crayon-inline ">getBouchon()</span>  pour toujours retourner une instance de <span class="lang:default decode:true crayon-inline ">Bouchon()</span> .</p>
-<p>Maintenant, je vais tester que ma fonction <span class="lang:default decode:true crayon-inline ">open()</span> ouvre bien la bouteille et fait appel à la méthode <span class="lang:default decode:true crayon-inline ">popIt()</span>  de la classe <span class="lang:default decode:true crayon-inline ">Bouchon()</span> .</p>
+Tout d'abord, je crée le stub avec la méthode <span class="lang:default decode:true crayon-inline ">getMockBuilder()</span> . Il prend en paramètre le nom de la classe. J'ai chaîné un appel à la méthode <span class="lang:default decode:true crayon-inline ">disableOriginalConstructor()</span>  car je ne veux pas que le stub utilise le constructeur de la classe <span class="lang:default decode:true crayon-inline ">Bouteille()</span>  pour se construire. Enfin, la méthode <span class="lang:default decode:true crayon-inline ">getMock()</span> me retourne le bouchon.
+
+A la ligne 8, je configure le bouchon. <span class="lang:default decode:true crayon-inline ">-&gt;method()</span> . Il prend en paramètre le nom de la méthode à bouchonner. Ici, c'est <span class="lang:default decode:true crayon-inline ">getBouchon()</span> . <span class="lang:default decode:true crayon-inline ">-&gt;will()</span> indique la valeur qui va être retournée. Je place en paramètre une instance de <span class="lang:default decode:true crayon-inline ">Bouchon()</span>  : <span class="lang:default decode:true crayon-inline ">$this-&gt;returnValue(new Bouchon())</span> .
+
+Enfin, ligne 10, je vérifie que <span class="lang:default decode:true crayon-inline ">getBouchon()</span>  est bien une instance de <span class="lang:default decode:true crayon-inline ">Bouchon()</span> .
+
+Ce test démontre l'utilisation d'un bouchon. Le bouchon va toujours retourner la même valeur. Ici, je bouchonne la méthode <span class="lang:default decode:true crayon-inline ">getBouchon()</span>  pour toujours retourner une instance de <span class="lang:default decode:true crayon-inline ">Bouchon()</span> .
+
+Maintenant, je vais tester que ma fonction <span class="lang:default decode:true crayon-inline ">open()</span> ouvre bien la bouteille et fait appel à la méthode <span class="lang:default decode:true crayon-inline ">popIt()</span>  de la classe <span class="lang:default decode:true crayon-inline ">Bouchon()</span> .
+
 ### Mock, le bouchon intelligent
-<p>Mon test va s’intéresser à la classe <span class="lang:default decode:true crayon-inline ">Bouchon()</span> . Je veux vérifier que la méthode <span class="lang:default decode:true crayon-inline ">popIt()</span>  est appelée une fois lorsque j'appelle la méthode <span class="lang:default decode:true crayon-inline ">open()</span>  de la classe <span class="lang:default decode:true crayon-inline ">Bouteille()</span> .</p>
+Mon test va s’intéresser à la classe <span class="lang:default decode:true crayon-inline ">Bouchon()</span> . Je veux vérifier que la méthode <span class="lang:default decode:true crayon-inline ">popIt()</span>  est appelée une fois lorsque j'appelle la méthode <span class="lang:default decode:true crayon-inline ">open()</span>  de la classe <span class="lang:default decode:true crayon-inline ">Bouteille()</span> .
+
 <pre class="lang:default decode:true">&lt;?php
 
 class BouteilleTest extends \PHPUnit_Framework_TestCase
@@ -92,12 +107,17 @@ class BouteilleTest extends \PHPUnit_Framework_TestCase
     }
 }
 </pre>
-<p>La différence avec le test précédent est l'<strong>assertion</strong> dans la configuration du mock.</p>
-<p>A la ligne 7, la méthode <span class="lang:default decode:true crayon-inline ">-&gt;expect()</span>  est l'assertion. Le paramètre prend en valeur le nombre de fois que la méthode sera appelée. Ici, c'est une fois <span class="lang:default decode:true crayon-inline ">$this-&gt;once()</span>  .</p>
+La différence avec le test précédent est l'<strong>assertion</strong> dans la configuration du mock.
+
+A la ligne 7, la méthode <span class="lang:default decode:true crayon-inline ">-&gt;expect()</span>  est l'assertion. Le paramètre prend en valeur le nombre de fois que la méthode sera appelée. Ici, c'est une fois <span class="lang:default decode:true crayon-inline ">$this-&gt;once()</span>  .
+
 ### Et avec Symfony ?
-<p>Nous avons vu des exemples très théoriques sur l'utilisation des stub et des mock. Qu'en est-il avec Symfony ?</p>
-<p>Je vais prendre un exemple concret où un service fait appel au repository pour avoir des données depuis la base de données. Le service <span class="lang:default decode:true crayon-inline ">UserService()</span>  a une méthode <span class="lang:default decode:true crayon-inline ">generateReport()</span>  qui génère un rapport au format JSON. Pour avoir les statistiques de l'utilisateur, je vais créer une méthode <span class="lang:default decode:true crayon-inline ">getStatsForUser()</span> qui va me retourner un array. Le contenu de la méthode ne m’intéresse pas car je vais le bouchonner. Par contre, je sais que cette méthode doit retourner un array.</p>
-<p>Mon repository:</p>
+Nous avons vu des exemples très théoriques sur l'utilisation des stub et des mock. Qu'en est-il avec Symfony ?
+
+Je vais prendre un exemple concret où un service fait appel au repository pour avoir des données depuis la base de données. Le service <span class="lang:default decode:true crayon-inline ">UserService()</span>  a une méthode <span class="lang:default decode:true crayon-inline ">generateReport()</span>  qui génère un rapport au format JSON. Pour avoir les statistiques de l'utilisateur, je vais créer une méthode <span class="lang:default decode:true crayon-inline ">getStatsForUser()</span> qui va me retourner un array. Le contenu de la méthode ne m’intéresse pas car je vais le bouchonner. Par contre, je sais que cette méthode doit retourner un array.
+
+Mon repository:
+
 <pre class="lang:php decode:true">&lt;?php
 
 namespace App\AppBundle\Repository;
@@ -114,7 +134,8 @@ class UserRepository extends DocumentRepository
         // a complicated aggration to get stats of user
     }
 }</pre>
-<p>Mon service:</p>
+Mon service:
+
 <pre class="lang:default decode:true ">&lt;?php
 
 namespace App\AppBundle\Service;
@@ -139,7 +160,8 @@ class UserService
         return json_encode($stats);
     }
 }</pre>
-<p>Mon test:</p>
+Mon test:
+
 <pre class="lang:php decode:true">&lt;?php
 
 namespace App\AppBundle\Tests;
@@ -176,7 +198,8 @@ class UserServiceTest extends \PHPUnit_Framework_TestCase
   }
 }
 </pre>
-<p>Dans ce test, j'ai décomposé bloc par bloc.</p>
+Dans ce test, j'ai décomposé bloc par bloc.
+
 <ul>
 <li>ligne 9: c'est l'array qui sera retourné par la méthode <span class="lang:default decode:true crayon-inline ">getStatsForUser()</span></li>
 <li>ligne 15: la valeur finale de la méthode <span class="lang:default decode:true crayon-inline ">generateReport()</span></li>
@@ -185,8 +208,12 @@ class UserServiceTest extends \PHPUnit_Framework_TestCase
 <li>ligne 31: j'injecte le mock dans mon service <span class="lang:default decode:true crayon-inline">UserService()</span></li>
 <li>ligne 33: j'appelle la méthode <span class="lang:default decode:true crayon-inline ">generateReport()</span>  et je vérifie que j'ai bien la valeur de <span class="lang:default decode:true crayon-inline ">$expectedString</span> .</li>
 </ul>
-<p>Le test permet de bien comprendre comment fonctionnent les différents objets et les différentes interactions.</p>
-<p>Voilà !</p>
-<p>N.B. : Injecter le document manager est totalement "overkill", mais c'était pour les besoins de l'exemple ^^.</p>
-<p>Référence : <a href="https://phpunit.de/manual/current/en/test-doubles.html">https://phpunit.de/manual/current/en/test-doubles.html</a></p>
+Le test permet de bien comprendre comment fonctionnent les différents objets et les différentes interactions.
+
+Voilà !
+
+N.B. : Injecter le document manager est totalement "overkill", mais c'était pour les besoins de l'exemple ^^.
+
+Référence : <a href="https://phpunit.de/manual/current/en/test-doubles.html">https://phpunit.de/manual/current/en/test-doubles.html</a>
+
 {% endraw %}

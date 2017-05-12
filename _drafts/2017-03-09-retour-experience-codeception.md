@@ -25,48 +25,72 @@ tags:
 <li>) Présentation</li>
 <li>) Notre utilisation</li>
 </ol>
-<p>&nbsp;</p>
+&nbsp;
+
 #### 1) Contexte
 <div></div>
 <div>
-<p><strong>Un peu de FitNesse...</strong></p>
-<p>Quand je suis arrivé dans l'équipe, une refonte d'une partie de notre SI était en cours. Des tests fonctionnels (en plus des unitaires bien entendu) étaient donc une obligation (refonte oblige). Le choix de l'époque s'était porté sur FitNesse (<a href="http://fitnesse.org/" target="_blank">http://fitnesse.org/</a>) un outil qui permet d'écrire des tests de manière "human friendly". Le but était donc de laisser le PO écrire les tests fonctionnels. L'équipe technique quant à elle n'avait qu'à écrire les fixtures derrière.</p>
-<p>Ce choix aurait pu être une bonne idée si dans la réalité des choses le PO avait réellement écrit les tests techniques. En réalité, l'équipe technique se retrouvait à écrire à la fois les tests techniques et fonctionnels. On devait donc utiliser un outil peu intuitif pour un dev (pas d'autocomplétion, utilisation abusive des tableaux...) et écrire les fixtures qui permettaient à ces tests d'interagir avec notre code.<br />
-Dans le cadre de la refonte d'une autre partie de notre SI nous avons donc décidé de changer d'outil de test fonctionnel, afin de choisir un outil plus adapté aux devs (le fait que les devs aient à réaliser les tests fonctionnels étant acté).</p>
-<p><strong>Pas de déception avec Codeception</strong></p>
-<p>Nous avons cherché ce qui se faisait dans le domaine du test fonctionnel. Nos critères étaient d'avoir un outil qui n'est pas forcément "human friendly" mais qui ne constitue pas une difficulté pour les devs (PHP en l'occurence). On a de fait écarté tous les outils dans un langage tierce, à cause du temps d'apprentissage.</p>
-<p>On a fini par découvrir Codeception (<a href="http://codeception.com/" target="_blank">http://codeception.com/</a>) qui est une solution de test écrit en PHP et qui possède beaucoup de modules (AMQP, Doctrine2, Filesystem, MongoDb, REST, Symfony,...).</p>
+<strong>Un peu de FitNesse...</strong>
+
+Quand je suis arrivé dans l'équipe, une refonte d'une partie de notre SI était en cours. Des tests fonctionnels (en plus des unitaires bien entendu) étaient donc une obligation (refonte oblige). Le choix de l'époque s'était porté sur FitNesse (<a href="http://fitnesse.org/" target="_blank">http://fitnesse.org/</a>) un outil qui permet d'écrire des tests de manière "human friendly". Le but était donc de laisser le PO écrire les tests fonctionnels. L'équipe technique quant à elle n'avait qu'à écrire les fixtures derrière.
+
+Ce choix aurait pu être une bonne idée si dans la réalité des choses le PO avait réellement écrit les tests techniques. En réalité, l'équipe technique se retrouvait à écrire à la fois les tests techniques et fonctionnels. On devait donc utiliser un outil peu intuitif pour un dev (pas d'autocomplétion, utilisation abusive des tableaux...) et écrire les fixtures qui permettaient à ces tests d'interagir avec notre code.<br />
+Dans le cadre de la refonte d'une autre partie de notre SI nous avons donc décidé de changer d'outil de test fonctionnel, afin de choisir un outil plus adapté aux devs (le fait que les devs aient à réaliser les tests fonctionnels étant acté).
+
+<strong>Pas de déception avec Codeception</strong>
+
+Nous avons cherché ce qui se faisait dans le domaine du test fonctionnel. Nos critères étaient d'avoir un outil qui n'est pas forcément "human friendly" mais qui ne constitue pas une difficulté pour les devs (PHP en l'occurence). On a de fait écarté tous les outils dans un langage tierce, à cause du temps d'apprentissage.
+
+On a fini par découvrir Codeception (<a href="http://codeception.com/" target="_blank">http://codeception.com/</a>) qui est une solution de test écrit en PHP et qui possède beaucoup de modules (AMQP, Doctrine2, Filesystem, MongoDb, REST, Symfony,...).
+
 #### 
 #### 2) Présentation
 <div></div>
 <div>
-<p>Codeception permet de couvrir votre application entièrement, en effet ils intègrent tout type de tests :</p>
+Codeception permet de couvrir votre application entièrement, en effet ils intègrent tout type de tests :
+
 <ol>
 <li>) Acceptance <a href="http://codeception.com/docs/03-AcceptanceTests" target="_blank">http://codeception.com/docs/03-AcceptanceTests</a></li>
 <li>) Functional <a href="http://codeception.com/docs/04-FunctionalTests" target="_blank">http://codeception.com/docs/04-FunctionalTests</a></li>
 <li>) Unit <a href="http://codeception.com/docs/05-UnitTests" target="_blank">http://codeception.com/docs/05-UnitTests</a></li>
 </ol>
 </div>
-<p><strong>Les tests unitaires </strong></p>
-<p>Concernant les tests unitaires, il se base sur Phpunit (donc pas besoin de tout réapprendre, ne vous inquiétez pas), ils ajoutent juste une couche d'abstraction qui vous fournit quelques outils supplémentaires (notamment l'accès aux modules).</p>
-<p><strong>Les tests fonctionnels</strong></p>
-<p>Ici, ce sont les tests fonctionnels qui nous intéressent le plus. Notre équipe n'a pas de front (nous ne fournissons qu'une API). Ils vont nous permettre de la tester de manière complète (nous en discuterons dans la prochaine partie).</p>
-<p><strong>Les tests d'acceptances</strong></p>
-<p>Finalement, pour les tests d'acceptances, plusieurs solutions sont proposées : PHP Browser, un simple crawler qui utilise Guzzle, ou Selenium (PhantomJS est possible aussi). Ces solutions permettent donc toutes de tester votre front.</p>
-<p><strong>Le BDD</strong></p>
-<p>Vous pouvez aussi si vous le souhaitez faire du Behavior Driven Development en utilisant Gherkin. Si vous utilisez déjà Behat, vous pouvez aussi migrer vos tests vers Codeception afin d'avoir tous vos tests au même endroit.</p>
-<p><strong>La gestion de data</strong></p>
-<p>Comme indiqué plus haut, plusieurs modules sont proposés pour gérer vos data. Vous pourrez donc facilement configurer une base de données pour vos tests et l'utiliser au travers des différents modules (Doctrine2, MongoDb, Redis, Memcache, ou tout simplement Db si vous souhaitez utiliser votre base SQL directement).</p>
-<p><strong>Et le reste</strong></p>
-<p>Ils proposent aussi beaucoup d'helpers permettant de tester des webservices (REST ou SOAP) donc vous pourrez facilement simuler des appels sur vos API dans vos tests fonctionnels.</p>
-<p>Je ne l'approfondirai pas ici mais ils vous propose bien entendu des solutions pour tout ce qui est couverture de code, intégration continue,...</p>
+<strong>Les tests unitaires </strong>
+
+Concernant les tests unitaires, il se base sur Phpunit (donc pas besoin de tout réapprendre, ne vous inquiétez pas), ils ajoutent juste une couche d'abstraction qui vous fournit quelques outils supplémentaires (notamment l'accès aux modules).
+
+<strong>Les tests fonctionnels</strong>
+
+Ici, ce sont les tests fonctionnels qui nous intéressent le plus. Notre équipe n'a pas de front (nous ne fournissons qu'une API). Ils vont nous permettre de la tester de manière complète (nous en discuterons dans la prochaine partie).
+
+<strong>Les tests d'acceptances</strong>
+
+Finalement, pour les tests d'acceptances, plusieurs solutions sont proposées : PHP Browser, un simple crawler qui utilise Guzzle, ou Selenium (PhantomJS est possible aussi). Ces solutions permettent donc toutes de tester votre front.
+
+<strong>Le BDD</strong>
+
+Vous pouvez aussi si vous le souhaitez faire du Behavior Driven Development en utilisant Gherkin. Si vous utilisez déjà Behat, vous pouvez aussi migrer vos tests vers Codeception afin d'avoir tous vos tests au même endroit.
+
+<strong>La gestion de data</strong>
+
+Comme indiqué plus haut, plusieurs modules sont proposés pour gérer vos data. Vous pourrez donc facilement configurer une base de données pour vos tests et l'utiliser au travers des différents modules (Doctrine2, MongoDb, Redis, Memcache, ou tout simplement Db si vous souhaitez utiliser votre base SQL directement).
+
+<strong>Et le reste</strong>
+
+Ils proposent aussi beaucoup d'helpers permettant de tester des webservices (REST ou SOAP) donc vous pourrez facilement simuler des appels sur vos API dans vos tests fonctionnels.
+
+Je ne l'approfondirai pas ici mais ils vous propose bien entendu des solutions pour tout ce qui est couverture de code, intégration continue,...
+
 </div>
 <div></div>
-<p>&nbsp;</p>
+&nbsp;
+
 #### 3) Notre utilisation
 <div>
-<p> Je vais maintenant vous parler de l'utilisation que nous en faisons et donc aller un peu plus dans le détail. Nous avons besoin de couvrir notre code unitairement, pour cela pas de miracle, on utilise Phpunit (à travers Codeception) mais qui reste du test Phpunit classique (ça suffit largement). Le point le plus intéressant est donc la couverture de nos API et Crons fonctionnellement.</p>
-<p>Test sur un GET /endpoint (nous utilisons mongodb mais vous pouvez bien entendu utiliser n'importe quelle database !) :</p>
+ Je vais maintenant vous parler de l'utilisation que nous en faisons et donc aller un peu plus dans le détail. Nous avons besoin de couvrir notre code unitairement, pour cela pas de miracle, on utilise Phpunit (à travers Codeception) mais qui reste du test Phpunit classique (ça suffit largement). Le point le plus intéressant est donc la couverture de nos API et Crons fonctionnellement.
+
+Test sur un GET /endpoint (nous utilisons mongodb mais vous pouvez bien entendu utiliser n'importe quelle database !) :
+
 </div>
 <div></div>
 <div>Configuration :</div>
@@ -85,7 +109,8 @@ modules:
             dsn: 'mongodb://root:root@localhost:27017/endpoint'
             dump: tests/_data/
 </pre>
-<p>Test (attention le code ci-dessous n'est pas fonctionnel en l'état !) :</p>
+Test (attention le code ci-dessous n'est pas fonctionnel en l'état !) :
+
 </div>
 <div>
 <pre class="lang:php decode:true"># EndpointCest.php
@@ -127,8 +152,10 @@ class EndpointCest
     }
  }
 </pre>
-<p>On vient donc de vérifier que notre API nous retourne bien nos données avec le bon code HTTP et les bon headers. Il existe beaucoup d'helpers qui vous permettent de vérifier un peu tout et n'importe quoi. Et si vous ne trouvez pas votre bonheur, vous pouvez ajoutez les vôtres très simplement !</p>
-<p>L'avantage c'est que l'ajout de module se fait très simplement. Imaginons que votre code envoie une notification rabbitMQ lors d'une modification de donnée à travers votre API. Vous devez rajouter la configuration du module rabbitMQ dans codeception :</p>
+On vient donc de vérifier que notre API nous retourne bien nos données avec le bon code HTTP et les bon headers. Il existe beaucoup d'helpers qui vous permettent de vérifier un peu tout et n'importe quoi. Et si vous ne trouvez pas votre bonheur, vous pouvez ajoutez les vôtres très simplement !
+
+L'avantage c'est que l'ajout de module se fait très simplement. Imaginons que votre code envoie une notification rabbitMQ lors d'une modification de donnée à travers votre API. Vous devez rajouter la configuration du module rabbitMQ dans codeception :
+
 </div>
 <div>
 <pre class="lang:default decode:true"># api.suite.yml
@@ -151,7 +178,8 @@ modules:
             password: 'root'
             vhost: '/'
             queues: [test]</pre>
-<p>Test :</p>
+Test :
+
 <pre class="lang:php decode:true "># EndpointCest.php
 &lt;?php
 
@@ -186,8 +214,11 @@ class EndpointCest
         $I-&gt;seeInRepository('Endpoint', ['label' =&gt; 'label']);
     }
 }</pre>
-<p>Je vous invite à aller lire <a href="http://codeception.com/docs/">la doc de codeception</a>, elle est assez complète et vous pourrez voir qu'ils supportent pas mal de modules :)</p>
-<p>Je ne rentre pas plus dans le détail pour le moment, le but était plus de vous faire un retour d'expérience, si vous êtes intéressé pour un article plus poussé sur son utilisation n'hésitez pas à me l'indiquer.</p>
-<p>Seeya !</p>
+Je vous invite à aller lire <a href="http://codeception.com/docs/">la doc de codeception</a>, elle est assez complète et vous pourrez voir qu'ils supportent pas mal de modules :)
+
+Je ne rentre pas plus dans le détail pour le moment, le but était plus de vous faire un retour d'expérience, si vous êtes intéressé pour un article plus poussé sur son utilisation n'hésitez pas à me l'indiquer.
+
+Seeya !
+
 </div>
 {% endraw %}
