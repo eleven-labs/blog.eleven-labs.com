@@ -1,0 +1,50 @@
+#!/bin/bash
+
+
+#################################################
+# Convert HTML files to Github's Markdown (GFM) #
+#################################################
+
+set -e
+BASEDIR=$(dirname $(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd))
+
+find "$BASEDIR/_drafts" -name "*.ht*" | while read i; do
+
+    BASENAME=`basename "$i"`
+    echo "--> Processing $BASENAME"
+
+    # Extract front matter block
+    FRONTMATTER=`cat "$i" | sed '/{% raw %}/,$d'`
+
+    # Extract HTML content within {% raw %}{% endraw %}
+    CONTENT=`cat "$i" | sed '/{% raw %}/,$!d' | sed '1d; $d'`
+    
+	# Markdown file filename
+    MARKDOWNFILE="${i%.*}.md"
+
+    # Append the front matter block
+    echo "$FRONTMATTER" > $MARKDOWNFILE
+    echo "" >> $MARKDOWNFILE
+
+    # Transform HTML into Github's Markdown (GFM)
+    echo "$CONTENT" | pandoc -f html -t markdown_github-raw_html-native_divs-native_spans >> $MARKDOWNFILE
+
+    # Fix: transform clickable images with real markown images
+    perl -i.bak -pe 's|\[<img.*?alt="(.*?)"[^\>]+>\]|![\1]|' $MARKDOWNFILE
+
+    # Fix: transform clickable image without an alt attribute
+    perl -i.bak -pe 's|\[<img[^\>]+>\]|![Image Legend Missing]|' $MARKDOWNFILE
+
+    # Fix: remove code block language prefix added by Pandoc (lang:)
+	perl -i.bak -pe 's|``` lang:(.*?)|```\L\1|' $MARKDOWNFILE
+
+    # Fix: remove weird code block language guessed by Pandoc
+    perl -i.bak -pe 's|```(?:\sbrush:\|default)|```|' $MARKDOWNFILE
+
+	# Fix: remove weird Markdown link legend containing an Markdown image tag
+	# Example: 2016-09_21-mtools-le-pour-mongodb.html
+	perl -i.bak -pe 's|\[\!\[(.*?)\]\(.*?\)\]|![\1]|' $MARKDOWNFILE
+
+    # Remove Perl's backup files
+    rm -f _drafts/*.bak
+done
