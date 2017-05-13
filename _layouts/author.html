@@ -1,8 +1,27 @@
 ---
-layout: page
+layout: default
 ---
-{{page.name}} : @{{page.twitter}}
 
-<img src="/img/authors/{{page.login}}.jpg" />
+<article>
+  <header>
+     <img src="/img/authors/{{page.login}}.jpg" style="max-width: 180px"/>
+      <h1 class="title">{{ page.name }}</h1>
+  </header>
 
-{{content}}
+    <section class="post-content">
+      {{ content }}
+    </section>
+    <h3>Derniers articles :</h3>
+    <div class="posts">
+    {% for post in site.posts %}
+        {% if post.author == page.login %}
+        <div>
+              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                  {{ post.title }}
+              </a>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+</article>
