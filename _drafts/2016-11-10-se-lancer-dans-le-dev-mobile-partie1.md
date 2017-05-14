@@ -20,7 +20,7 @@ tags:
 - application
 ---
 
-#### **Faire du mobile oui, mais par où commencer ?**
+## Faire du mobile oui, mais par où commencer ?
 
 Aujourd’hui plus qu’hier les applications mobiles deviennent indispensables dans la vie de plusieurs millions de personnes. Si vous lisez cet article, c’est que le sujet vous intéresse ou que vous souhaitez vous y mettre vous aussi. Je vais essayer de faire une série d’articles afin de partager avec vous le plus possible sur ce sujet.
 
@@ -35,7 +35,7 @@ Je vais parler aujourd’hui de 3 technos que j’ai choisies pour plusieurs rai
 &nbsp;
 -   J’ai déjà utilisé ces technos et donc je peux vous faire un vrai retour d’expérience dessus. Concernant la partie natif, je suis parti sur de l’IOS et non sur de l’Android (j’explique plus bas pourquoi, non \*spoil\*)
 
-### **Ionic :**
+## Ionic :
 
 Ionic est un framework Javascript basé sur AngularJS pour la partie application web du framework et sur Cordova pour la partie construction des applications natives.
 
@@ -48,8 +48,6 @@ La WebView d’Android est basée sur Chromium. Il s’agit de Safari pour iOS, 
 Ainsi, Ionic ne permet pas de créer à proprement parler d’applications natives. On parlera plutôt d’applications hybrides.
 
 *Schéma représentation Ionic* :![schema1](http://blog.eleven-labs.com/wp-content/uploads/2016/11/Schéma1.png)
-
- 
 
 Je vous vois venir :  “AngularJs, super je maîtrise le truc, aller hop on y go”.
 Hop hop hop !!!!. Jeune padawan, lire l’article en entier tu dois !
@@ -101,9 +99,7 @@ Mais Ionic dispose de points faibles :
 
 **Ionic est un super moyen de faire des applications rapides et petites. Mais dès lors que vous voulez agrandir vos fonctionnalités ou avoir des performances correctes, il montre les dents. Je n’ai pas testé la version 2 mais je sais qu’ils ont améliorés quelques points.**
 
- 
-
-###  **React Native :**
+##  React Native :
 
 Comme son nom l’indique, React Native est une déclinaison de React (propulsée par Facebook en 2015). Le but de React Native est de pouvoir réutiliser le maximum de code entre les différentes plateformes.
 
@@ -143,9 +139,7 @@ De mon point de vue et de mon retour d’expérience, voici les points faibles q
 
 **React Native semble l’approche idéale pour faire des applications de tous types. Cependant, il faudra noter que son jeune âge lui fait défaut car il ne dispose pas encore de la maturité nécessaire afin de développer de grosses applications qui nécessitent des traitements particuliers. Mais je vous conseille de suivre de près son évolution.**
 
-### 
-
-### **Natif :**
+## Natif :
 
 Bien évidement pour faire une application il n’y a rien de mieux que le natif.
 

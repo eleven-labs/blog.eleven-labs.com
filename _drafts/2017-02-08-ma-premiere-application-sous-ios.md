@@ -11,13 +11,13 @@ tags: []
 
 Je voulais partager avec vous un retour d’expérience sur ma première application IOS. Personnellement, j’apprécie ce genre d’article car je peux facilement m’identifier à celui-ci.
 
-### **Intro**
+## Intro
 
 En ce moment, je travaille ma montée en compétence sur Swift 3/Xcode et donc comme on le sait tous, quand on apprend un nouveau langage c’est bien beau de savoir faire une boucle et des méthodes, mais il n’y a rien de mieux qu’un vrai projet pour valider ses acquis et monter en xp.
 
 Le premier “problème", c’est de trouver une idée sur laquelle travailler. En effet, je ne suis pas très fan des to do lists que je trouve sans grand intérêt. Mais c’est là justement que ça se complique : trouver une idée est la chose la plus difficile  :( (coder est tellement plus simple à côté :) ). Bon, je vous rassure après quelques jours j’ai trouvé un sujet assez intéressant. Sur mon fil d’actualité Facebook je n’arrête pas de voir un petit “jeu” de quizz concernant des calculs mentaux (je ne sais pas si vous avez déjà vu ce genre de publication mais c’est très addictif). J’ai trouvé l’idée mais...
 
-### **Graphisme**
+## Graphisme
 
 Mais je ne vais pas faire une app sans un minimum de graphisme, non ? À ce moment là, je me dis, "autant faire une belle app pour la montrer à mon entourage…" Car il faut être honnête, la majorité des gens à qui je vais montrer cette application se contre-fiche de mon code \#vieMaVieDeDev :), et par conséquent ils vont juger mon travail plus sur le côté interactif et graphique que sur mon code.
 
@@ -36,25 +36,25 @@ Après avoir visionné quelques tutos vidéos pour apprendre les bases, j’ai p
 
 Aperçu de mes maquettes:
 
-\[caption id="attachment\_3269" align="alignleft" width="168"\]![Ecran de lancement.](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.39.50.png) Ecran de lancement.\[/caption\]
+![Ecran de lancement.](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.39.50.png) Ecran de lancement.
 
-\[caption id="attachment\_3274" align="alignleft" width="169"\]![Ecran home](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.54.23.png) Ecran home\[/caption\]
+![Ecran home](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.54.23.png) Ecran home
 
-\[caption id="attachment\_3270" align="alignleft" width="169"\]![Ecran "mode normal"](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.52.43.png) Ecran "mode normal"\[/caption\]
+![Ecran "mode normal"](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.52.43.png) Ecran "mode normal"
 
-\[caption id="attachment\_3272" align="alignleft" width="170"\]![Ecran "mode normal"](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.53.11.png) Ecran "mode normal"\[/caption\]
+![Ecran "mode normal"](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.53.11.png) Ecran "mode normal"
 
-\[caption id="attachment\_3271" align="alignleft" width="169"\]![Ecran "mode chrono"](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.52.54.png) Ecran "mode chrono"\[/caption\]
+![Ecran "mode chrono"](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.52.54.png) Ecran "mode chrono"
 
-\[caption id="attachment\_3273" align="aligncenter" width="169"\]![Ecran "Perdu"](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.53.29.png) Ecran "Perdu"\[/caption\]
+![Ecran "Perdu"](http://blog.eleven-labs.com/wp-content/uploads/2017/01/Capture-d’écran-2017-01-22-à-13.53.29.png) Ecran "Perdu"
 
 *PS: Je remercie Julie qui m'a aidée sur la partie Graphique/UX :)*
 
-### **Backend**
+## **Backend**
 
 Je ne vais pas trop m’attarder sur cette partie car ce n’est pas vraiment le but de cet article. Pour la faire courte, j’ai juste mis en place un symfony 3.\* avec un controller qui retourne une réponse en json. Cette réponse est un tableau de questions qui contient pour chacune des questions sa réponse et les liens d'images.
 
-### **Xcode**
+## **Xcode**
 
 Bon on rentre enfin dans le vif du sujet !
 
@@ -250,14 +250,12 @@ Je n'ai plus qu'à appeler celle-ci dans mon ViewController:
 cell.image.getUIImageViewByUrl(url: url)
 ```
 
-### **Conclusion**
+## Conclusion
 
 J'ai pris énormément de plaisir à coder cette application (c'est le plus important je pense).
 
 Avant de me lancer, j'avais pas mal d'a priori et je me disais "cette partie va être dure... ; comment je vais gérer ça..." Et finalement, pour chaque problème rencontré, j'ai su trouver des solutions. Alors oui, mon application n'est pas hyper optimisée et elle demande surement une refacto générale mais j'ai tellement appris de choses qu'on ne voit pas dans un tuto :).
 
 Ce que je retiens de ma toute première application sous IOS, c'est que j'apprécie vraiment de faire du mobile, que je prends du plaisir à coder sous Swift et qu'il ne faut pas avoir peur de se lancer. Alors j'espère qu'en lisant cet article, ça va tenter certaines personnes à se lancer sur cette voie.
-
- 
 
 *P.S. : Merci aux Pandas pour les relectures*

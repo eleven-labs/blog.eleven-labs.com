@@ -17,7 +17,7 @@ L’image ci-dessous illustre les différentes couches :
 
 ![](http://blog.eleven-labs.com/wp-content/uploads/2016/12/Untitled-Diagram.png)
 
-#### **Handshake Protocol :**
+## **Handshake Protocol :**
 
 Traduit “poignée de main” en Français, ce protocole permet au serveur et au client de :
 

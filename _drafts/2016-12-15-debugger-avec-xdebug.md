@@ -16,13 +16,13 @@ Bien que la plupart des développeurs PHP connaissent l'existence de xDebug, je 
 
 Dans cet article je vais tenter de vous familiariser avec cet outil d'une incroyable utilité, qui vous fera gagner un temps fou pour débugger vos applications.
 
-#### Les bases
+## Les bases
 
 Le principe est assez simple : On place tout d'abord un ou plusieurs points d'arrêt dans le code, là où on veut interrompre l'exécution du script. Lorsque l'on accède à une URL via le navigateur, xDebug intercepte l'appel et déclenche une session de debug en notifiant l'IDE. On retrouve alors dans l'IDE la valeur des variables du scope courant ainsi que la pile d'appels. Le plus sympathique est de pouvoir avancer l'exécution pas à pas en naviguant dans les appels de fonctions tout en gardant un œil sur les valeurs des variables présentes dans le scope.
 
 Il est également possible de débugger les scripts en mode CLI. C'est exactement le même principe.
 
-#### Prérequis
+## Prérequis
 
 Si ce n'est pas déjà le cas, il faut installer et activer l'extension xDebug.
 
@@ -43,7 +43,7 @@ xdebug
 
 Vous aurez également besoin d'un IDE, ici nous verrons un exemple avec PHPStorm, mais bien d'autres sont compatibles en installant simplement un plugin (NetBeans, Atom, SublimeText, etc...)
 
-#### Remote debugging (web)
+## Remote debugging (web)
 
 Dans cette section nous verrons comment utiliser xDebug avec votre IDE pour débugger une application web sur un serveur distant (ou même en local).
 
@@ -86,13 +86,13 @@ On peut même avancer l'exécution au pas à pas !
 
 ![](http://blog.eleven-labs.com/wp-content/uploads/2016/12/debugging.png)
 
-#### Debugger les scripts CLI
+## Debugger les scripts CLI
 
 Pour utiliser xDebug sur un script CLI (exécuter un simple fichier PHP ou une commande Symfony par exemple), la démarche est exactement la même. Mais cette fois xDebug ne peut plus déterminer sur quelle IP se connecter pour lancer la session de debug. La propriété **xdebug.remote\_connect\_back** n'est d'aucune utilité. Nous devons spécifier sur quel hôte nous voulons être contactés en utilisant la propriété **xdebug.remote\_host** (localhost par défaut).
 
 Voici à quoi ressemble notre configuration php.ini (celui du CLI cette fois) :
 
-```text
+```ini
 xdebug.remote_enable=On         # Activer le debug distant
 xdebug.remote_host=localhost    # Host à contacter (obligatoire en mode CLI)
 xdebug.remote_port=9000         # Port par défaut
@@ -118,6 +118,6 @@ $ XDEBUG_CONFIG="remote_enable=1" php bin/console xdebug:test
 
 Pour débugger en mode CLI sur un serveur distant, vous devez simplement changer la valeur de **xdebug.remote\_host** dans le php.ini par votre IP.
 
-#### Conclusion
+## Conclusion
 
 L'utilisation de xDebug ne demande pas 5 ans d'études ! Alors utilisez-le, vu l'énorme gain de temps qu'il apporte par rapport à du debug à la main, que ce soit en web ou en CLI, en local ou sur un serveur distant, vous n'avez plus d'excuse !

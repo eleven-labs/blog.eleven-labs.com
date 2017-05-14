@@ -110,7 +110,7 @@ Comme nous voulons faire quelque chose de propre (même s'il ne s'agit que d'un 
 
 L'installation du script se fait dans le code html, donc public/home.html et public/article/alorscettearticle.html.
 
-```xhtml
+```html
 <html>
   <head>
     <meta charset=utf-8/>
@@ -227,8 +227,16 @@ self.addEventListener('push', function(event) {
 
   event.waitUntil(
     self.registration.showNotification(title, {
-     body: 'Bravo tu l
+     body: 'Bravo tu l\'as reçu',
+     icon: 'images/icon.png',
+     tag: 'my-tag'
+   }));
+});
+```
+
 C'est presque fini ! Nous allons créer une url "/sender" qui nous permettra d'envoyer les notifications à tous les tokens que nous avons en base. Pour cela nous allons utiliser les modules request et firebase (version npm). Voici le nouveau package.json :
+
+```json
 {
   "name": "pwa-parisjs",
   "version": "0.0.1",
@@ -249,8 +257,6 @@ C'est presque fini ! Nous allons créer une url "/sender" qui nous permettra d'e
   }
 }
 ```
-
- 
 
 Dans le fichier app.js, nous initialisons Firebase. Vous allez avoir besoin d'un fichier de clé serveur. Vous allez cliquer sur la roue dans Firebase puis "Autorisation". Vous êtes alors redirigé sur une autre console.
 
@@ -323,116 +329,6 @@ app.listen(8080, function () {
 Attention ! La clé Authorization se trouve dans le premier onglet que l'on a ouvert.
 
 ![Firebase - Autorisation](http://blog.eleven-labs.com/wp-content/uploads/2016/10/Capture-d’écran-2016-10-26-à-17.44.27.png)
-
- 
-
-Si tout est bon, quand vous relancez le serveur et que vous allez sur / puis /sender vous avez la notification. Si ce n'est pas le cas supprimez le cache de votre application dans la console chrome onglet application.
-
-![Enfin - la push notification](http://blog.eleven-labs.com/wp-content/uploads/2016/10/Capture-d’écran-2016-10-26-à-17.46.23.png)
-
-Encore une fois ce code est vraiment un tutoriel, je vous invite donc à faire des issues pour la moindre question. Le code final est [ici](https://github.com/CaptainJojo/pwa-parisjs/tree/push).
-
-as reçu', icon: 'images/icon.png', tag: 'my-tag' })); });
-
-C'est presque fini ! Nous allons créer une url "/sender" qui nous permettra d'envoyer les notifications à tous les tokens que nous avons en base. Pour cela nous allons utiliser les modules *request* et *firebase* (version npm). Voici le nouveau package.json :
-
-```js
-{
-  "name": "pwa-parisjs",
-  "version": "0.0.1",
-  "description": "A Progressive Web App",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "sw": "gulp sw-precache"
-  },
-  "dependencies": {
-    "express": "^4.14.0",
-    "firebase": "^3.5.1",
-    "request": "^2.75.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "sw-precache": "^3.2.0"
-  }
-}
-```
-
- 
-
-Dans le fichier app.js, nous initialisons Firebase. Vous allez avoir besoin d'un fichier de clé serveur. Vous allez cliquer sur la roue dans Firebase puis "Autorisation". Vous êtes alors redirigé sur une autre console.
-
-![Firebase - Autorisation](http://blog.eleven-labs.com/wp-content/uploads/2016/10/Capture-d’écran-2016-10-26-à-16.59.31.png)
-
-Puis dans Comptes de service, vous créez un nouveau compte de service.
-
-![Création - Compte et services](http://blog.eleven-labs.com/wp-content/uploads/2016/10/Capture-d’écran-2016-10-26-à-17.02.45.png)
-
-Un fichier json sera alors téléchargé, il vous suffit de l'ajouter à la racine de votre projet.
-
-![JsonFile - Racine](http://blog.eleven-labs.com/wp-content/uploads/2016/10/Capture-d’écran-2016-10-26-à-17.22.04.png)
-
-Dans le fichier app.js nous allons ajouter la route /sender qui envoie la requête de demande de push en prenant l'ensemble des tokens.
-
-```js
-var path = require('path');
-var express = require('express');
-var app = express();
-var firebase = require('firebase');
-var request = require('request');
-
-firebase.initializeApp({
-  databaseURL: 'https://pwa-parisjs.firebaseio.com/', // A trouver dans l'onglet Database
-  serviceAccount: 'pwa-parisjs-cf0bc079ee69.json' // Nom du fichier json a votre racine
-});
-
-app.use(express.static(path.join(__dirname, 'public'), {index: false}))
-
-app.get('/sender', function(req, res){
-  var allToken = firebase.database().ref('/token');
-  Promise.all([allToken.once('value')]).then(function(resp) {
-    var allToken = resp[0].val();
-    tokenRep = '';
-    Object.keys(allToken).forEach(function(uid) {
-      var token = allToken[uid];
-      request({
-        url: 'https://android.googleapis.com/gcm/send',
-        method: 'POST',
-        headers: {
-          'Content-Type' :' application/json',
-          'Authorization': 'key=AIzaSyDV-KhCa9dM-bSg_r23GUwpRJqBw6qrJIc', // Clé serveur disponible dans les paramètres du projet Firebase
-        },
-        body: JSON.stringify(
-          {
-            "registration_ids" : [token.subscriptionId]
-          }
-        )
-      }, function(error, response, body) {
-
-      });
-    });
-  }).catch(function(error) {
-    console.log('Failed to start weekly top posts emailer:', error);
-  });
-
-  res.send('ok');
-});
-
-
-app.use('/', function (req, res) {
-  res.sendFile(__dirname + '/public/home.html');
-});
-
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
-});
-```
-
-Attention ! La clé Authorization se trouve dans le premier onglet que l'on a ouvert.
-
-![Firebase - Autorisation](http://blog.eleven-labs.com/wp-content/uploads/2016/10/Capture-d’écran-2016-10-26-à-17.44.27.png)
-
- 
 
 Si tout est bon, quand vous relancez le serveur et que vous allez sur / puis /sender vous avez la notification. Si ce n'est pas le cas supprimez le cache de votre application dans la console chrome onglet application.
 

@@ -20,7 +20,7 @@ Encore un nouveau framework JS?!!?! Ça commence à bien faire!
 Et oui encore un, mais celui-ci est super mignon ! Vous allez voir !
 
 6 méthodes
-----------
+==========
 
 En effet, la simplicité de Choo est ce qui le caractérise le plus. Son API est composée de six méthodes uniquement. Vous allez me dire que ce n'est pas possible. Eh ben si, c'est possible de reproduire un système très similaire en fonctionnement au couple React + Redux avec uniquement six méthodes à manipuler :
 
@@ -79,7 +79,7 @@ Et voilà ! Un petit compteur avec un bouton pour incrémenter la valeur du comp
 Maintenant, voyons ça un peu plus en détails.
 
 Charger les dépendances
------------------------
+=======================
 
 ```js
 const choo = require('choo')
@@ -89,7 +89,7 @@ const html = require('choo/html')
 Rien de plus banal ici. On charge la méthode choo() qui va nous servir à démarrer notre petit train. Puis, on charge une méthode html qui n'est rien d'autre que la librairie open-source bel, une des dépendances de Choo. En effet, ce n'est pas Choo qui s'occupe du DOM. À la place, il délègue ça à une autre petite librairie qui sait déjà le faire.
 
 Démarrer le petit train
------------------------
+=======================
 
 ```js
 const app = choo()
@@ -98,7 +98,7 @@ const app = choo()
 On instancie le framework en exécutant la méthode choo() à laquelle on peut passer un objet pour écouter certains événements globaux. On en récupère un objet qui va nous permettre d'accéder aux autres méthodes du framework.
 
 Les modèles
------------
+===========
 
 ```js
 const http = require('xhr')
@@ -133,7 +133,7 @@ Choo représente les données dans un objet de state global, ce qui veut dire qu
 Enfin, nous avons les effects qui vont servir à exécuter un appel asynchrone pour ensuite modifier le state via les reducers. Pour appeler les effects, on utilise également la méthode send().
 
 Les vues
---------
+========
 
 ```js
 const html = require('choo/html')
@@ -155,7 +155,7 @@ function mainView (state, prev, send) {
 Toutes les vues Choo sont tout simplement des fonctions qui retournent du DOM. Un peu comme en React, on va écrire le HTML dans nos fichiers JavaScript mais simplement dans une [template string ES2015](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals). Pour transformer cette string en DOM, Choo se repose sur la librairie [bel](https://github.com/shama/bel). La vue va également s'occuper d'écouter les événements utilisateur pour réagir en exécutant les effects ou reducers des modèles pour mettre à jour le state de l'application.
 
 Le routeur
-----------
+==========
 
 ```js
 app.router({ default: '/404' }, [
@@ -169,7 +169,7 @@ Tous les frameworks front-end se doivent d'avoir un bon routeur. Celui de Choo e
 Le routeur va s'occuper d'écouter les clics sur les liens dans les vues pour rediriger automatiquement sur la bonne route en utilisant l'[API HTML5 pushState](https://developer.mozilla.org/en-US/docs/Web/API/History_API).
 
 Commencer le voyage !
----------------------
+=====================
 
 ```js
 const tree = app.start()

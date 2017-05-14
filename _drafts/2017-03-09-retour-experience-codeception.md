@@ -24,9 +24,7 @@ Dans cet article je vous propose un retour d'expérience sur le framework de tes
 2.  ) Présentation
 3.  ) Notre utilisation
 
- 
-
-#### 1) Contexte
+## 1) Contexte
 
 **Un peu de FitNesse...**
 
@@ -41,9 +39,7 @@ Nous avons cherché ce qui se faisait dans le domaine du test fonctionnel. Nos c
 
 On a fini par découvrir Codeception (<http://codeception.com/>) qui est une solution de test écrit en PHP et qui possède beaucoup de modules (AMQP, Doctrine2, Filesystem, MongoDb, REST, Symfony,...).
 
-#### 
-
-#### 2) Présentation
+## 2) Présentation
 
 Codeception permet de couvrir votre application entièrement, en effet ils intègrent tout type de tests :
 
@@ -77,9 +73,7 @@ Ils proposent aussi beaucoup d'helpers permettant de tester des webservices (RES
 
 Je ne l'approfondirai pas ici mais ils vous propose bien entendu des solutions pour tout ce qui est couverture de code, intégration continue,...
 
- 
-
-#### 3) Notre utilisation
+## 3) Notre utilisation
 
  Je vais maintenant vous parler de l'utilisation que nous en faisons et donc aller un peu plus dans le détail. Nous avons besoin de couvrir notre code unitairement, pour cela pas de miracle, on utilise Phpunit (à travers Codeception) mais qui reste du test Phpunit classique (ça suffit largement). Le point le plus intéressant est donc la couverture de nos API et Crons fonctionnellement.
 
@@ -150,7 +144,7 @@ On vient donc de vérifier que notre API nous retourne bien nos données avec le
 
 L'avantage c'est que l'ajout de module se fait très simplement. Imaginons que votre code envoie une notification rabbitMQ lors d'une modification de donnée à travers votre API. Vous devez rajouter la configuration du module rabbitMQ dans codeception :
 
-```
+```yaml
 # api.suite.yml
 class_name: ApiTester
 modules:

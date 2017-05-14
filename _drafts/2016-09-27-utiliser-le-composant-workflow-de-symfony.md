@@ -16,8 +16,6 @@ tags:
 Depuis Symfony 3.2, un nouveau composant très utile a vu le jour : [le composant Workflow](http://symfony.com/blog/new-in-symfony-3-2-workflow-component).
 Celui-ci est en effet très pratique et peut très largement simplifier vos développements lorsque vous avez, par exemple, à gérer des workflows de statut dans votre application.
 
- 
-
 **Installation**
 
 Dans tous les cas, vous devez installer la dépendance suivante :
@@ -34,8 +32,6 @@ Si vous utilisez une version antérieure de Symfony mais &gt;=2.3, c'est aussi p
 
 Pensez bien à activer le bundle dans votre kernel.
 
- 
-
 **Configuration**
 
 Il va maintenant nous falloir définir la configuration de notre workflow et ainsi définir les statuts (appelés places) et transitions possibles.
@@ -43,8 +39,6 @@ Il va maintenant nous falloir définir la configuration de notre workflow et ain
 Pour cet article, nous sommes partis sur un exemple basé sur les statuts d'une pull request. Celle-ci peut avoir les états suivants : opened , closed , needs\_review , reviewed  et enfin merged .
 
 Cependant, elle ne pourra, par exemple, pas être passée en merged  sans être passée par le statut reviewed . C'est ici que le composant Workflow prend tout son sens.
-
- 
 
 Voici ce que donne notre configuration complète :
 
@@ -112,11 +106,8 @@ class PullRequest
 }
 ```
 
- 
 
 Nous avons terminé, nous pouvons maintenant commencer à utiliser le composant Workflow !
-
- 
 
 **Utilisation**
 
@@ -125,10 +116,8 @@ La première chose utile à effectuer après avoir écrit votre workflow est de 
 Pour se faire, nous utilisons la commande Symfony :
 
 ```sh
-$ bin/console workflow:dump pull_request
+bin/console workflow:dump pull_request
 ```
-
- 
 
 Celle-ci va vous générer un code Graphviz qui donne le schéma suivant :
 
@@ -137,8 +126,6 @@ Celle-ci va vous générer un code Graphviz qui donne le schéma suivant :
 Celui-ci permet vraiment de donner une vision claire de son workflow, à tous les niveaux (développeurs, product owners, clients, ...).
 
 Le composant Workflow implémente des méthodes permettant d'effectuer une transition, vérifier si une transition peut être effectuée avec l'état actuel et lister les transitions possibles avec l'état actuel.
-
- 
 
 Pour vérifier si vous pouvez effectuer une transition et l'appliquer, rien de plus simple :
 
@@ -179,8 +166,6 @@ class PullRequestController extends Controller
 
 Si vous ne passez pas par la méthode can() , la méthode apply()  renverra une exception si la transition ne peut pas être effectuée. Vous pouvez donc également catcher cette exception de type Symfony\\Component\\Workflow\\Exception\\LogicException .
 
- 
-
 Pour lister les transitions disponibles :
 
 ```php
@@ -188,8 +173,6 @@ $workflow->getEnabledTransitions($pullRequest);
 ```
 
 Globalement, l'utilisation du composant se limite à ces 3 méthodes. Comme vous le remarquez, il devient très simple d'utiliser un workflow, même complexe !
-
- 
 
 **Branchez-vous sur les événements !**
 
@@ -206,8 +189,6 @@ Faisons encore mieux, vous pouvez même vous brancher sur une transition particu
 
 -   workflow.pull\_request.enter.needs\_review  : permet de se brancher uniquement lorsque nous définissons un nouvel état needs\_review  à notre pull request, nous pourrons alors envoyer un email à l'auteur pour qu'il corrige certaines choses,
 -   workflow.pull\_request.transition.merge  : interviendra lorsque la transition de merge prendra effet sur notre pull request.
-
- 
 
 **Conclusion**
 

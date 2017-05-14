@@ -14,7 +14,7 @@ tags:
 ---
 
 Introduction to Atom
---------------------
+====================
 
 [Atom](https://atom.io) is an open-source text editor (mostly used by developers) which is multi-platform and developed by GitHub company. It is based on [Electron](http://electron.atom.io/), the Github-developed framework, which allows developers to build native desktop applications for any operating systems by writing Javascript code.
 
@@ -25,23 +25,19 @@ You can browse all packages by going to the following address: <https://atom.io/
 
 However, if you cannot find a package that fits your needs you can start creating your own and we will see how simple it is.
 
- 
-
 Generate your first package
----------------------------
+===========================
 
 In order to create your own package, don't worry, you will not start from scratch. Indeed, we will use the Package Generator  command which is brought to us by Atom core.
 
 To do that, you will just have to navigate into  Packages -&gt; Package Generator -&gt; Generate Atom Package.
 
-\[note\]In order to generate your package, you can choose the language between **Javascript**  and **Coffeescript** . This article will use Javascript.\[/note\]
+Note: In order to generate your package, you can choose the language between **Javascript**  and **Coffeescript** . This article will use Javascript.
 
 When the command is executed, Atom will open a new window into your package project, by default named my-package .
 
- 
-
 Package structure
------------------
+=================
 
 We will now see in details what's inside our package project directory:
 
@@ -98,10 +94,8 @@ This command will execute the code contained in the toggle()  method of the cl
 
 You can add as many commands as you want and I really encourage you to decouple your code.
 
- 
-
 Add settings for your package
------------------------------
+=============================
 
 The [Config](https://atom.io/docs/api/latest/Config) component allows your package to have some settings.
 
@@ -131,7 +125,7 @@ let gitlabUrl = atom.config.get('gitlabUrl');
 ```
 
 Components overview
--------------------
+===================
 
 So you are now ready to develop your package. We will have a quick overview of some interesting components that Atom brings to you and allows you to use in your package.
 
@@ -161,123 +155,22 @@ export default class MyPackageView {
 
     // Create message element
     const message = document.createElement('div');
-    message.textContent = 'The MyPackage package is Alive! It
-NotificationManager & Notification: Alert your users with notifications
-Your package can also display a variety of notifications from "success" to "fatal error":
-atom.notifications.addSuccess('My success notification');
-atom.notifications.addInfo('My info notification');
-atom.notifications.addWarning('My warning notification');
-atom.notifications.addError('My error notification');
-atom.notifications.addFatalError('My fatal error notification');
-```
+    message.textContent = 'The MyPackage package is Alive! It\'s ALIVE!';
+    message.classList.add('message');
+    this.element.appendChild(message);
+  }
 
-**GitRepository**
+  // ...
+}
 
-This one is also really interesting: indeed, you can access all the git properties of the current git repository that is used.
-
-This way, you will be able to access the current branch name, the repository remote URL and also see if a file is considered as a new or modified file. Let's see it in action:
-
-```js
-let repository = atom.project.getRepositoryForDirectory('/path/to/project');
-
-console.log(repository.getOriginURL());               // -> git@github.com:eko/atom-pull-request.git
-console.log(repository.getShortHead());               // -> master
-console.log(repository.isStatusNew('/path/to/file')); // -> true
-```
-
-**And more things to discover...**
-
-We just made a review of the components that I played with but I invite you to read more on the following link if you want to go further: <https://atom.io/docs/api/latest/AtomEnvironment>
-
- 
-
-Test your package with specs
-----------------------------
-
-Our package is now developed but we don't have to forget about the tests. To do that, Atom uses [Jasmine](https://jasmine.github.io/).
-
-Your default package already has a prepared test file:
-
-```js
-import MyPackageView from '../lib/my-package-view';
-
-describe('MyPackageView', () => {
-  it('has one valid test', () => {
-    expect('life').toBe('easy');
-  });
+let myPackageView = new MyPackageView(state.myPackageViewState);
+let modalPanel = atom.workspace.addModalPanel({
+  item: myPackageView.getElement(),
+  visible: false;
 });
+
+modalPanel.show();
 ```
-
-Jasmine specs tests are written in the following way:
-
--   describe() : A Jasmine test suite starts with a "describe" function which takes a name as the first argument and a function as the second,
--   it() : A specification is added by using this function, "it" has to be contained into a specification,
--   expect() : This one is an assertion, when we expect something to happen.
-
-This is now your turn to play with Jasmine and test your package logic.
-
-In order to run the specs tests, you just have to navigate into the following menu: View  -&gt; Packages  -&gt; Run Package Specs .
-
- 
-
-Publish your package
---------------------
-
-Our package is now ready to be deployed! Let's send it.
-
-![Atom - Fusée](http://blog.eleven-labs.com/wp-content/uploads/2016/11/fusee.gif)
-
-To do that, we will use the apm  CLI tool which comes with Atom when installing it.
-After pushing your code into a Github repository, simply go into your package directory and type the following command:
-
-```sh
-$ apm publish --tag v0.0.1 minor
-
-Preparing and tagging a new version ✓
-Pushing v0.0.1 tag ✓
-...
-```
-
-This command will be in charge of creating the new version tag into repository and publish this version into the Atom registry.
-
-Congratulations, your package is now published and available on the following URL: **https://atom.io/packages/***&lt;your-package&gt;*!
-
- 
-
-Continuous Integration
-----------------------
-
-The final step is to ensure that your package will continue to work in the future when you or your contributors will add new features but also when Atom releases a new beta version. To do that, you can use [Travis-CI](https://travis-ci.org) on your repository with the following configuration:
-
-```yaml
-language: objective-c
-
-notifications:
-  email:
-    on_success: never
-    on_failure: change
-
-script: 'curl -s https://raw.githubusercontent.com/nikhilkalige/docblockr/develop/spec/atom-build-package.sh | sh'
-
-env:
-  global:
-    - APM_TEST_PACKAGES=""
-
-  matrix:
-    - ATOM_CHANNEL=stable
-    - ATOM_CHANNEL=beta
-```
-
-Conclusion
-----------
-
-I personally think that this is a little revolution to allow developers to make their own editor and bring the features they want.
-
-Moreover, the Atom API is already very rich and very simple to use and this is certainly the main reason why the community offers a large number of packages.
-
-To conclude, as for all libraries, it is not useful to reinvent the wheel by creating already existing packages. The idea is to add features if they don't already exists, in order to enrich your user experience.
-
-s ALIVE!'; message.classList.add('message'); this.element.appendChild(message); } // ... } let myPackageView = new MyPackageView(state.myPackageViewState); let modalPanel = atom.workspace.addModalPanel({ item: myPackageView.getElement(), visible: false; }); modalPanel.show();
 
 **NotificationManager & Notification: Alert your users with notifications**
 
@@ -309,10 +202,8 @@ console.log(repository.isStatusNew('/path/to/file')); // -> true
 
 We just made a review of the components that I played with but I invite you to read more on the following link if you want to go further: <https://atom.io/docs/api/latest/AtomEnvironment>
 
- 
-
 Test your package with specs
-----------------------------
+============================
 
 Our package is now developed but we don't have to forget about the tests. To do that, Atom uses [Jasmine](https://jasmine.github.io/).
 
@@ -330,18 +221,16 @@ describe('MyPackageView', () => {
 
 Jasmine specs tests are written in the following way:
 
--   describe() : A Jasmine test suite starts with a "describe" function which takes a name as the first argument and a function as the second,
--   it() : A specification is added by using this function, "it" has to be contained into a specification,
--   expect() : This one is an assertion, when we expect something to happen.
+-   `describe()` : A Jasmine test suite starts with a "describe" function which takes a name as the first argument and a function as the second,
+-   `it()` : A specification is added by using this function, "it" has to be contained into a specification,
+-   `expect()` : This one is an assertion, when we expect something to happen.
 
 This is now your turn to play with Jasmine and test your package logic.
 
 In order to run the specs tests, you just have to navigate into the following menu: View  -&gt; Packages  -&gt; Run Package Specs .
 
- 
-
 Publish your package
---------------------
+====================
 
 Our package is now ready to be deployed! Let's send it.
 
@@ -360,12 +249,10 @@ Pushing v0.0.1 tag ✓
 
 This command will be in charge of creating the new version tag into repository and publish this version into the Atom registry.
 
-Congratulations, your package is now published and available on the following URL: **https://atom.io/packages/***&lt;your-package&gt;*!
-
- 
+Congratulations, your package is now published and available on the following URL: `https://atom.io/packages/your-package`!
 
 Continuous Integration
-----------------------
+======================
 
 The final step is to ensure that your package will continue to work in the future when you or your contributors will add new features but also when Atom releases a new beta version. To do that, you can use [Travis-CI](https://travis-ci.org) on your repository with the following configuration:
 
@@ -389,7 +276,7 @@ env:
 ```
 
 Conclusion
-----------
+==========
 
 I personally think that this is a little revolution to allow developers to make their own editor and bring the features they want.
 

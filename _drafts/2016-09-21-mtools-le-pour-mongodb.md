@@ -20,9 +20,8 @@ Suite à l’accompagnement de MongoDB inc sur nos sujets Datas au sein de Fran
 
 L'outil, ou plutôt la boite à outils que nous utilisons le plus à ce jour est [MTools](https://github.com/rueckstiess/mtools). Ce projet a été initié et est toujours maintenu par [Thomas Rückstieß](https://github.com/rueckstiess), ayant travaillé chez... MongoDB :)
 
- 
-
-### MTools est composé de 6 outils :
+MTools est composé de 6 outils :
+================================
 
 **Mloginfo :**
 
@@ -53,8 +52,6 @@ Dans notre cas, on peut se rendre compte que la commande "findandmodify" est tr�
 
 Plus d'infos [ici](https://github.com/rueckstiess/mtools/wiki/mloginfo).
 
- 
-
 **Mlogfilter :**
 
 Mlogfilter permet comme son nom l'indique de réduire la quantité d'information d'un fichier de log. Nous pouvons appliquer plusieurs filtres et combiner le résultat avec mloginfo par exemple.
@@ -77,8 +74,6 @@ Avec cette commande, mlogfilter nous permet de filtrer les logs des commandes le
 
 Plus d'infos sur [mlogfilter](https://github.com/rueckstiess/mtools/wiki/mlogfilter).
 
- 
-
 **Mplotqueries & Mlogvis :**
 
 Ces deux exécutables permettent de générer des graphiques afin de visualiser plus d'informations (répartition des appels, type de commandes etc...) de manière graphique.
@@ -87,17 +82,13 @@ Ces deux exécutables permettent de générer des graphiques afin de visualiser 
 
 Plus d'infos sur [Mlogvis](https://github.com/rueckstiess/mtools/wiki/mlogvis) & [Mplotqueries](https://github.com/rueckstiess/mtools/wiki/mplotqueries).
 
- 
-
 **Mgenerate :**
 
 Mgenerate permet, à partir d'un modèle JSON, de remplir une base de données mongoDB avec de la donnée aléatoire. C'est l'outil parfait pour tester le comportement de fonction ou de requête avec un grand set de données.
 
- 
-
 Exemple de modèle JSON pour la génération d'une collection User :
 
-```
+```json
 {
     "user": {
         "name": {
@@ -123,7 +114,6 @@ Exemple de modèle JSON pour la génération d'une collection User :
 
 Plus d'infos sur [Mgenerate](https://github.com/rueckstiess/mtools/wiki/mgenerate).
 
- 
 
 **Mlaunch :**
 
@@ -137,14 +127,10 @@ mlaunch --replicaset --nodes 5
 
 Cette commande permet de demander la création d'une instance mongo avec 5 replicats
 
- 
-
 **Point bonus, MongoDB Compass :**
 
 [Compass](https://docs.mongodb.com/compass/) est un client lourd permettant d’analyser et de parcourir les données d'une base MongoDB. Globalement l'outils permet de manipuler la data sans réellement demander des compétences en query mongo. Petit bémol, il n'est encore disponible que sous Windows ou MacOs :'(
 
 ![date-sample](http://blog.eleven-labs.com/wp-content/uploads/2016/09/date-sample.png)
-
- 
 
 ![query-builder](http://blog.eleven-labs.com/wp-content/uploads/2016/09/query-builder.png)

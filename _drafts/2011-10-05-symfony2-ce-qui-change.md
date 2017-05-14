@@ -19,8 +19,6 @@ Symfony 2, tout le monde en parle en ce moment, mais qu'est ce qu'il change exac
 
 Nous allons voir ici les trois grands changements de Symfony 2
 
- 
-
 ### Symfony 2 c'est ... un projet basé sur une version de PHP 5.3.x:
 
 Et oui, comme vous l'aurez surement vu/lu, Symfony 2 tourne exclusivement sous PHP 5.3 et plus. Mais en quoi cela est il important ?
@@ -38,8 +36,6 @@ Un Bundle est au sens très large un module/plugin, c'est :
 
 En fait, un Bundle c'est plus ou moins ce que vous décidez d'en faire. Certains auront pour envie de dire que cela ressemble aux "app" dans Sf1, d'autres au plugins.
 
-### 
-
 ### Symfony 2 c'est ... un nouvel ORM :
 
 Et oui, qui dit nouveau framwork, dit aussi nouvel ORM, et Symfony 2 intègre de base ... Doctrine 2 ! (Et oui, une autre version 2 :) )
@@ -52,11 +48,9 @@ Par exemple, vous n'aurez pas un fichier Yml pour la génération de votre base 
 
 D'autre part, la synthaxe de ces fichiers de création d'entité a légèrement changée, surtout au niveau de la gestion des relations entre les objets de notre base de données.
 
- 
-
 Par exemple, là où vous auriez crée une table intermediaire pour créer une relation N-N entre deux objets en SF1, vous aurez simplement à décrire ce comportement grâce à des mots clefs propres à SF2:
 
-```
+```yaml
 User:
   type: entity
   manyToMany:
@@ -73,7 +67,7 @@ User:
             referencedColumnName: id
 ```
 
-```
+```yaml
 Group:
   type: entity
   manyToMany:
@@ -82,14 +76,14 @@ Group:
       mappedBy: groups
 ```
 
-Vous pouvez retrouver toutes ces nouveautés sur la doc [officielle de Doctrine 2](http://www.doctrine-project.org/docs/orm/2.1/en/reference/association-mapping.html "Doctrine2 - Mapping Relation") Et pour ce qui est de la récupération des données, tout se passe maintenant via l'utilisation d'une class EntityManager. C'est grâce à cette objet que vous pourrez créer votre propre requête, DQL par exemple, afin d'obtenir vos données tant convoitées. Exemple:
+Vous pouvez retrouver toutes ces nouveautés sur la doc [officielle de Doctrine 2](http://www.doctrine-project.org/docs/orm/2.1/en/reference/association-mapping.html "Doctrine2 - Mapping Relation")
 
-```
+Et pour ce qui est de la récupération des données, tout se passe maintenant via l'utilisation d'une class EntityManager. C'est grâce à cette objet que vous pourrez créer votre propre requête, DQL par exemple, afin d'obtenir vos données tant convoitées. Exemple:
+
+```php
 $em = $this->getDoctrine()->getEntityManager();
 $myObjects= $em->getRepository('MyBundle:MyEntity')->findAll();
 ```
-
- 
 
 ou encore
 
@@ -102,8 +96,6 @@ $qb = $em->createQueryBuilder()
            ->getResult();
 ```
 
- 
-
 ### Symfony 2 c'est ... un nouveau moteur de template:
 
 La dernière grosse modification de Sf2 est son nouveau moteur de template : [TWIG](http://twig.sensiolabs.org/ "Twig")
@@ -113,8 +105,6 @@ Twig est un moteur de template simple, plutôt rapide et sécurisé, ne perme
 En gros, si vous le souhaitez, vous pouvez maintenant éliminer totalement de vos templates la moindre trace de code PHP, et utiliser toutes les fonctions de templating propre a twig comme les boucles, echo, if ....
 
 Vous pouvez configurer le moteur de template que vous voulez utiliser directement dans l'action de votre page, ce qui permet de pouvoir utiliser Twig et PHP comme vous le souhaitez.
-
- 
 
 ### En conclusion :
 

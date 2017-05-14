@@ -24,8 +24,7 @@ As far as we know, PHP 7.1 should be released anytime soon, at least before the 
 Features
 ========
 
-Nullable types
---------------
+### Nullable types
 
 In my opinion, it's the most interesting feature of PHP 7.1. As you might know (I hope so!), PHP 7.0 allowed to type hint scalar in parameters of functions, but also type hint returns (both classes and scalars). However, there was something missing: the ability to pass or return null when using type hinting.
 
@@ -43,8 +42,7 @@ And now, we will adapt our code, to make it work with PHP 7.1, and completely so
 
 As you can see, we can now, without using default parameters (such as = null), give or return null values thanks to our type prefixed with the operator "?".
 
-Multi-Catch
------------
+### Multi-Catch
 
 It has long been possible to do multi-catching with the use of multiple catch blocks, one by one. Yet, it can be redundant, especially when we want to handle the same way two exceptions which have nothing in common. Here is how you should use it:
 
@@ -52,8 +50,7 @@ It has long been possible to do multi-catching with the use of multiple catch b
 
 As you can see, I only used two exceptions, but I could have used much more if needed.
 
-Void type
----------
+### Void type
 
 Another new type has been introduced, the void type. Here is its behavior:
 
@@ -63,22 +60,19 @@ As shown in this video, it's okay to use a return with nothing behind, but it's
 
 At first sight, the use of void may seem useless (mainly in this precise exemple) but it is not. Used in an interface, it ensures that implementations deflect too much from the original purpose of the interface.
 
-Iterable type
--------------
+### Iterable type
 
 Following the same pattern of void, an iterable type has also been introduced. Again, its use might not be obvious at first sight because we have the native Traversable interface. Since we move forward type hinting (and embrace it right ? RIGHT ?!), we had no solution to represent both scalar arrays and traversable objects. It was inconsistent since then, because we could pass arrays or traversable objects the same way before type hinting.
 
 It's usable in type hinting of parameters and returns.
 
-Class constant visibility
--------------------------
+### Class constant visibility
 
 Something I found missing the whole time, and which is now solved. Class constant visibility allows us to set a visibility to class constants (yeah I know, it's in the name, deal with it!). From now on, you'll avoid static to restrict visibility of things you should have called constants.
 
 You might want to know that if you don't indicate visibility, it will be public by default, to be compliant with older versions of PHP behaviors.
 
- Miscellaneous
---------------
+### Miscellaneous
 
 We can also add randomly in the list of interesting features the following:
 

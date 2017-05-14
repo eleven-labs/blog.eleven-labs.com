@@ -56,9 +56,7 @@ La clé unique est ce que l'on appelle la 'correlation\_id', elle permet d'ident
 
 Avant de faire l'exemple de code, voici un petit résumé:
 
- 
-
-\[caption id="attachment\_627" align="alignnone" width="300"\]![RPC description](http://blog.eleven-labs.com/wp-content/uploads/2013/11/python-six.png) RPC description\[/caption\]
+![RPC description](http://blog.eleven-labs.com/wp-content/uploads/2013/11/python-six.png "RPC description")
 
 Comme on peut le voir sur le schéma ci-dessus, le client envoie un message dans la queue 'rpc\_queue' avec l'option reply\_to qui permet d'envoyer la réponse dans une queue de callblack et la clé de 'correlation\_id' qui est l'index unique de chaque demande.
 
@@ -141,19 +139,13 @@ foreach ($titles as $title) {
 }
 ```
 
- 
-
 Lancer le serveur directement avec:
 
 ```sh
 php generateUrlServer.php
 ```
 
- 
-
 Maintenant créons le  client qui devra envoyer le message au serveur de génération et l'utiliser ensuite.
-
- 
 
 ```php
 <?php
@@ -232,19 +224,13 @@ foreach ($titles as $title) {
 }
 ```
 
- 
-
 Maintenant lançons le client :
 
 ```sh
 php generateUrlClient.php
 ```
 
- 
-
 Si tout se passe bien, le serveur renvoie les bonnes valeurs.
-
- 
 
 Laissez un commentaire si vous avez des questions.
 

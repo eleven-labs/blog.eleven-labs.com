@@ -38,8 +38,6 @@ Ce sera d'ailleurs le leitmotiv de cette journée : *Quels sont les outils exist
 
 Par ailleurs, plutôt que de présenter les différents intervenants et résumer leurs conférences, je me limiterai à la description des outils qui nous ont marqué et à la problématique à laquelle ils répondent.
 
- 
-
 ### [Polymer](http://www.polymer-project.org/) présenté par Addi Osmani
 
 > “Polymer is a new type of library for the web, built on top of Web Components, and designed to leverage the evolving web platform on modern browsers.”

@@ -163,7 +163,7 @@ test.html
 </html>
 ```
 
- test.js
+test.js
 
 ```js
 QUnit.test( "hello test", function( assert ) {
@@ -187,7 +187,7 @@ Tests completed in 15 milliseconds.
 
 Vous trouverez d'autres scripts tels que run-qunit.js à [cette adresse](https://github.com/jonkemp/qunit-phantomjs-runner "qunit-phantomjs-runner").
 
- IV Conclusion
+IV Conclusion
 ==============
 
 PhantomJS est un outil très puissant et bien documenté. Donc, si vous avez besoin de générer des pdfs et/ou des images et que votre site contient beaucoup de javascript, PhantomJS peut devenir votre allié.

@@ -22,7 +22,7 @@ In this article, I will focus on two axes:
 -   handle exceptions
 
 Raise exceptions at the right time
-----------------------------------
+==================================
 
 Let's start with the beginning, there is an exception because at some point in the application or one of the components, a condition or operation could not be fulfilled.
 
@@ -119,7 +119,7 @@ class InvalidArgumentException extends \InvalidArgumentException implements Exce
 ```
 
 Catch them at the right time
-----------------------------
+============================
 
 It is tempting to catch any errors that may arise. But it is better to only catch the exceptions that the application is able to handle. Otherwise, it is better to let them spread to the highest level. With the use of a framework such as Symfony, an exception that is not caught in the application will be managed by the framework (and will display a nice page 500).
 
@@ -130,8 +130,6 @@ In a modern application, the code is stacked like Russian dolls. An exception th
 With this principle, the developer has the ability to control some of the exceptions that can be removed. If he can not manage them, he will let them spread in the upper layers.
 
 Let's take an example for a manageable error. In my application, I need to contact an API to create a user or update it. I do not know in advance whether this user exists or not. I will first make a GET query to find out. The API returns either an error 404 to say that the user does not exist, or an error 200 otherwise. To make these queries, I use a library: [Guzzle](http://docs.guzzlephp.org/en/latest/). In the case of a 404, I have a [RequestException](https://github.com/guzzle/guzzle/blob/master/src/Exception/RequestException.php).
-
-&lt;?php
 
 ```php
 <?php
@@ -162,7 +160,7 @@ An application is a nesting of components, which when assembled together make it
 For a framework, such as Symfony, it's the same principle. If the developer does not know what to do with the exception, he will let it go up to a listener able to manage it. And at the top, there's this listener: [src\\Symfony\\Component\\HttpKernel\\EventListener\\ExceptionListener](https://github.com/guzzle/guzzle/blob/master/src/Exception/RequestException.php).
 
 To conclude
------------
+===========
 
 An exception, as its name suggests, is an event that happens at an exceptional moment in the life of the application. It happens because an operation went wrong, or a developer misused a component. Whatever the reason is, the exception must be as explicit as possible. Its good understanding makes it possible to repair it as quickly as possible. It is important to lift the exception at the right time.
 
@@ -170,7 +168,8 @@ On the other hand, the exception should not be placed under the mat, but it shou
 
 An exception well launched and managed correctly allows your application to be easily maintainable and makes the diagnosis of an error simpler and faster.
 
-#### References
+References
+==========
 
 -   http://wiki.c2.com/?ExceptionPatterns
 -   http://www.phptherightway.com/\#exceptions

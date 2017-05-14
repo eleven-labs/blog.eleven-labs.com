@@ -16,8 +16,6 @@ Il est important de mettre en place des tests fonctionnels sur les projets afin 
 Lorsqu'il s'agit d'une application Symfony, Behat est l'outil le plus souvent utilisé pour réaliser ces tests et c'est tant mieux car cet outil est très complet.
 Il faut néanmoins savoir l'utiliser à bon escient afin de couvrir des cas de tests utiles et complets, c'est ce que nous allons voir dans cet article.
 
- 
-
 **Tests fonctionnels : qu'est-ce ?**
 
 Lorsque nous parlons de "tests fonctionnels", nous entendons bien souvent vouloir tester l'interface de l'application (site web), autrement dit, automatiser des tests qui pourraient être faits par un humain.
@@ -35,13 +33,11 @@ Pour être clair sur l'architecture, voici un schéma qui résume le rôle de ch
 
 \[caption id="attachment\_1986" align="alignnone" width="781"\]![Schéma d'architecture Behat/Selenium](http://blog.eleven-labs.com/wp-content/uploads/2016/07/behat.jpg) Schéma d'architecture Behat/Selenium\[/caption\]
 
- 
-
 **Mise en place de Behat**
 
 La première étape est d'installer Behat et ses extensions en tant que dépendance dans notre fichier **composer.json** :
 
-``` theme:github
+```json
 "require-dev": {
     "behat/behat": "~3.1",
     "behat/symfony2-extension": "~2.1",
@@ -54,7 +50,7 @@ La première étape est d'installer Behat et ses extensions en tant que dépenda
 
 Afin que vos futurs contextes soient autoloadés, nous allons également ajouter la section **PSR-4** suivante :
 
-``` theme:github
+```json
 "autoload-dev": {
     "psr-4": {
         "Acme\Tests\Behat\Context\": "features/context/"
@@ -66,7 +62,7 @@ Maintenant, créons le fichier de configuration **behat.yml** à la racine de no
 
 Voici le fichier de configuration à partir duquel nous allons débuter :
 
-``` theme:github
+```yaml
 default:
     suites: ~
     extensions:
@@ -102,8 +98,6 @@ Notons enfin que dans la section **formatters**, nous conservons le formatter **
 
 Maintenant que Behat est prêt et configuré, nous allons préparer nos tests fonctionnels que nous allons découper en deux "suites" Behat distinctes : **integration** et **interface**.
 
- 
-
 **Ecriture des tests fonctionnels (features)**
 
 Nous allons partir sur des tests permettant de s'assurer du bon fonctionnement d'une page d'inscription.
@@ -114,7 +108,7 @@ Nous allons donc avoir, par exemple, le scénario suivant :
 
 Fichier* *: **features/registration/register.feature** :
 
-``` theme:github
+```feature
 Feature: Register
     In order to create an account
     As a user
@@ -127,8 +121,6 @@ Scenario: I register when I fill my username and password only
     Then I should see the registration confirmation
 ```
 
- 
-
 **Tests d'intégration**
 
 Il va maintenant convenir d'implémenter le code qui va nous permettre de tester que le code écrit pour l'inscription d'un utilisateur peut être exécuté et enchaîné sans erreur.
@@ -137,7 +129,7 @@ Nous allons donc créer un contexte d'intégration propre à l'inscription sous 
 
 Fichier : **features/context/registration/IntegrationRegisterContext** :
 
-``` theme:github
+```php
 <?php
 
 namespace Acme\Tests\Behat\Context\Registration;
@@ -216,8 +208,6 @@ class IntegrationRegisterContext implements Context
 L'implémentation du test d'intégration est terminé pour cette feature !
 Passons maintenant au test d'interface !
 
- 
-
 **Tests d'interface**
 
 Ce test va se baser sur la même feature et nous n'avons absolument rien modifié dans le test précédemment écrit. C'est pourquoi il est important de bien rédiger ses tests fonctionnels afin qu'ils restent assez génériques pour être implémentés à la fois en test d'intégration et en test d'interface.
@@ -226,7 +216,7 @@ Créons donc le contexte qui sera utilisé pour le test d'interface (préfixé p
 
 Fichier : **features/context/registration/MinkRegisterContext** :
 
-``` theme:github
+```php
 <?php
 
 namespace Acme\Tests\Behat\Context\Registration;
@@ -280,13 +270,11 @@ Nous venons d'implémenter un test d'interface basé sur le même scénario que 
 
 La seule différence est que dans ce contexte, Mink va demander à Selenium d'effectuer les actions au niveau de l'interface de notre application en pilotant un navigateur au lieu de tester le code lui-même.
 
- 
-
 **Définitions des contextes**
 
 Il ne nous reste plus qu'à ajouter les contextes créés précédemment sous notre section **suites** dans le fichier de configuration **behat.yml** :
 
-``` theme:github
+```yaml
     suites:
         integration:
             paths:
@@ -306,8 +294,6 @@ Il est important de voir ici que nous découpons clairement les tests en deux su
 
 Etant donné que nous avons chargés l'extension Symfony2 lors de la mise en place de Behat, nous avons la possibilité d'injecter des services Symfony dans nos contextes, c'est le cas ici avec le service **acme.registration.registerer**.
 
- 
-
 **Exécution des tests**
 
 Pour lancer tous les tests, exécutez simplement, à la racine du projet : **bin/behat -c behat.yml**.
@@ -315,8 +301,6 @@ Pour lancer tous les tests, exécutez simplement, à la racine du projet : **bin
 Pour lancer uniquement la suite d'integration, par exemple : **bin/behat -c behat.yml --suite=integration**.
 
 Le rapport HTML est quand à lui généré dans **web/reports/behat/**, comme spécifié dans notre configuration, ce qui vous permettra d'avoir un aperçu rapide des tests qui échouent, plutôt pratique lorsque vous avez de nombreux tests.
-
- 
 
 **Lier plusieurs contextes entre eux**
 
@@ -327,7 +311,7 @@ Ceci est possible grâce à l'annotation **@BeforeScenario** de Behat.
 
 Fichier : **features/context/registration/IntegrationProfileContext** :
 
-``` theme:github
+```php
 <?php
 
 namespace Acme\Tests\Behat\Context\Registration;
@@ -360,8 +344,6 @@ class IntegrationProfileContext implements Context
 ```
 
 Vous avez maintenant à disposition une propriété **$registerContext** et pouvez accéder à des informations qui proviennent du contexte précédent.
-
- 
 
 **Conclusion**
 

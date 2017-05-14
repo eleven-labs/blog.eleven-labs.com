@@ -12,7 +12,7 @@ tags:
 - closure
 ---
 
-#### Introduction
+## Introduction
 
 Salut les Astronautes, aujourd'hui on va continuer dans notre lancée sur le mobile, toujours en NATIF.
 
@@ -33,7 +33,7 @@ Dans le monde du développement iOS, comme vous avez pu le comprendre, on peut u
 
 Sur ces 2 composants par exemple, pas possible d'utiliser de blocks/closures, et on doit passer par un bon delegate à l'ancienne. Dans l'absolu, ce n'est pas très gênant, sauf dans le cas où on se retrouve avec plusieurs de ces composants sur le même écran. Les méthodes deviennent alors énormes et cela devient compliqué de faire du code élégant. Ce que je vous propose ici est une petite solution que je trouve assez propre.
 
-#### Mise en situation
+## Mise en situation
 
 Comme dans les deux articles précédents, on va juste faire un Appel GET sur une URL  donnée et avoir un système qui nous prévient en cas de succès comme d'erreur. On va aller un peu plus vite que dans le premier article, car ce sont des notions que vous devez déjà maîtriser.
 
@@ -49,7 +49,7 @@ On va agir en 3 étapes:
 
 -Objective-C
 
-```Objective-C
+```objective-c
 typedef void (^successBlock)();
 typedef void (^failureBlock)();
 
@@ -83,7 +83,7 @@ typedef void (^failureBlock)();
 
 On va maintenant implémenter la classe qui va hériter du protocole. Elle va donc contenir les 2 méthodes **onRequestSuccess** et **onRequestFailure** et chacune appellera le block/closure qui lui correspondra.
 
-```Objective-C
+```objective-c
 @implementation RequestManagerObjCDelegateImplementation
 
 - (void)onRequestSuccess {
@@ -99,7 +99,7 @@ On va maintenant implémenter la classe qui va hériter du protocole. Elle va do
 
 Ensuite, on code la classe **RequestManager** que vous devez commencer à connaître
 
-```Objective-C
+```objective-c
 @implementation RequestManagerObjC
 
 - (void)get:(NSString *)url {
@@ -123,7 +123,7 @@ Ensuite, on code la classe **RequestManager** que vous devez commencer à conna
 
 Puis on va faire une méthode pour appeler notre webservice
 
-```Objective-C
+```objective-c
 - (void)callWebService {
 
     RequestManagerObjC* manager = [[RequestManagerObjC alloc] init];
@@ -158,7 +158,7 @@ Je vous donne le code Swift pour les plus impatients
 
 - Swift
 
-```Swift
+```swift
 protocol RequesterDelegateSwift {
     func onRequestSuccess()
     func onRequestFailure()
@@ -223,7 +223,7 @@ func callWebService() {
 
 Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans le block/closure requestSuccess.
 
-#### Mais pourquoi faire tout ça ?
+## Mais pourquoi faire tout ça ?
 
 En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un **Delegate** ou des **blocks/closures** comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...
 Comme je vous l'ai dit au début de l'article, cette solution vient pour un besoin assez spécifique. Celui de rendre un **Delegate** plus flexible quand on est obligé de passer par ce pattern.

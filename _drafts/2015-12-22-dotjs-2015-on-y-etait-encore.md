@@ -19,11 +19,9 @@ tags:
 - node
 ---
 
- 
-
 Cette année encore, Eleven Labs et sa bande d'astronautes étaient partenaires de la [dotJS](http://www.dotjs.io/) version 2015.
 
-![](https://c1.staticflickr.com/1/593/23547337312_1589d2613a_h.jpg)
+![wilson](https://c1.staticflickr.com/1/593/23547337312_1589d2613a_h.jpg)
 
  
 

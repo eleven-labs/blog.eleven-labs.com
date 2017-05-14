@@ -18,8 +18,6 @@ Bien que le charme du théâtre parisien des années passées n'y était plus, i
 
 ![dotjs-1](http://blog.eleven-labs.com/wp-content/uploads/2016/12/dotjs-1.jpg)
 
- 
-
 La journée est composée de dix regular talks (sujets de 30 min présentés par des personnalités) et de huit lightning talks (sujets de 5 min présentés par des courageux ;)). Quatre sessions au total temporisent la journée, intercalées par des temps de pauses suffisamment long pour se ressourcer. Ce fût très enrichissant tout en étant très agréable.
 
 Voici un résumé des talks présentés :
@@ -118,8 +116,6 @@ Il nous raconte une petite histoire :c'est un discours de [Fat](https://github
 Igor nous fait une petite timeline de l'évolution des frameworks avec [Angular 1.x](https://angularjs.org/), React, [Angular 2](https://angular.io/) et [Ember](http://emberjs.com/). Ensuite il nous présente le concept de compilation anticipée (AOT: [Ahead-Of-Time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)).
 
 Puis on revient à Angular et sa communauté, il raconte les sujets du moment autour des Web Components et le rapprochement entre Angular 2 et Microsoft avec son transpiler [Typescript](https://www.typescriptlang.org/). On finira par un appel à ce que la communauté open-source soit ouverte d'esprit. Que les orientations et les décisions des mainteneurs doivent trancher en considérant les paroles de chacun.
-
- 
 
 **Fin de la conférence**
 

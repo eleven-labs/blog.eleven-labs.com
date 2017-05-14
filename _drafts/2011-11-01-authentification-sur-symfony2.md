@@ -13,8 +13,6 @@ tags:
 
 Attention ce code date du début de Symfony2 un nouveau tuto est en cours
 
- 
-
 Nouveau tuto sur Symfony2, comme pour tous les sites nous avons souvent besoin de rendre une partie de ce dernier non visible pour le public. Pour cela, nous allons mettre en place le système d'authentification de Symfony.
 
 Pour commencer, il faut comprendre comment fonctionne le système d'authentification avec Symfony2.
@@ -37,7 +35,7 @@ Tout ce passe dans le fichier app/config/security.yml, qui va nous permettre d
 
 Tout d'abord, nous allons ajouter un firewall en donnant le type d'authentificaiton que nous souhaitons, ici, c'est un formulaire de login qui aura pour accès l'url /login, pour la vérification du formulaire il aura comme url /login\_check et enfin l'url de logout.
 
-```
+```yaml
 security:
     firewalls:
         assets:
@@ -54,7 +52,7 @@ security:
 
 Il faut alors ajouter les zone d'access des utilisateurs, pour cela il faut ajouter access\_control et mettre les rôles pour une serie d'url. Comme nous l'avons dit, nous voulons que la partie admin de notre site soit visible seulement pour les administrateurs.
 
-```
+```yaml
 security:
     firewalls:
         assets:
@@ -82,7 +80,7 @@ Maintenant que nous savons comment l'utilisateur va s'authentifier et quelles ur
 
 Dans ce système d'authentification c'est ce que l'on appelle le provider qui est le service de récupération des utilisateurs. Comme nous protégeons la partie admin de notre site, il n'y a pas besoin de stocker les utilisateurs nous avons seulement 2 utilisateurs.
 
-```
+```yaml
 security:
     firewalls:
         assets:
@@ -113,7 +111,7 @@ Comme on peut le voir dans le fichier, il y a deux utilisateurs dont un qui à l
 
 Apres avoir configuré le fichier security.yml, nous devons definir les url de login et logout, pour cela il faut ouvrir le fichier routing.yml. Dans notre projet, nous utilisons app/config/routing.yml.
 
-```
+```yaml
 login:
     pattern:   /login
     defaults:  { _controller: ClycksBundle:Default:login }
@@ -159,6 +157,8 @@ class ClycksController extends Controller
     public function logoutAction()
     {
     }
+    // ...
+}
 ```
 
 Comme vous pouvez le voir, nous n'avons pas de code dans l'action logout à vous de mettre ce que vous souhaitez :)

@@ -9,7 +9,7 @@ categories:
 tags: []
 ---
 
-### **Unit tests and trust**
+## Unit tests and trust
 
 It is well established : unit tests are mandatory when developing an application. They allow to highlight possible regressions when code is modified, so the developer gets a certain confidence when shipping his code to production : If tests do pass, everything works correctly.
 
@@ -17,7 +17,7 @@ To measure this confidence, we use code coverage as our main metric. The more yo
 
 But be careful ! This affirmation is a pure theory !
 
-### **Coverage vs protection**
+## Coverage vs protection
 
 We are going to see that sometimes, code coverage is a false indicator of protection.
 Here is a simple example :
@@ -89,7 +89,7 @@ Before we go deeper, let's see some vocabulary :
 -   **Escaped** : A mutant escapes if the unit test dosn't fail (negative outcome)
 -   **Uncovered** : A mutant is uncovered if no test cover the mutated code
 
-### **Case study : Humbug**
+## Case study : Humbug
 
 We are going to see [Humbug](https://github.com/padraic/humbug), a framework that allows us to do mutation tests in PHP.
 
@@ -197,7 +197,7 @@ Humbug is capable of generating a whole set of mutations :
 
 I'm not going to detail everything here, if wou want to know more about this, I invite you to check the [GitHub project page](https://github.com/padraic/humbug).
 
-### **Conclusion**
+## Conclusion
 
 Mutation testing is a simple and efficient way of measuring unit tests fiability. Code coverage is not a very reliable metric, a code can be 100% covered without any assertion !
 Humbug allows to automate these tests, so it's possible to plug it in your continuous integration workflow. However, be aware that execution time increases exponentially when codebase grows, we want to use mutation testing where there is a true concern in priority : business code.

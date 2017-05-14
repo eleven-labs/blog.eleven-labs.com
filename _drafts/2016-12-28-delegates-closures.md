@@ -14,7 +14,7 @@ tags:
 - closure
 ---
 
-#### Introduction
+## Introduction
 
 Salut les Astronautes, aujourd'hui on va parler un peu de mobile, et qui plus est de NATIF !!!
 
@@ -48,7 +48,7 @@ Dans le développement iOS, vous allez souvent retrouver 2 principes :
 
 Nous allons couvrir ces deux points plus en détails, mais avant même de se lancer c'est important de savoir qu'ils existent ! Voilà les principes de bases à connaître ! C'est fini pour l'intro, on va pouvoir rentrer dans les détails !
 
-#### Les Delegates
+## Les Delegates
 
 Un delegate est une référence vers un objet dont on ignore le type exact, mais, chose importante, il hérite d'un protocol.
 Comme cet objet hérite d'un protocol, on sait que l'on peut appeler les méthodes définies dans le protocol, même si l'on ne connait pas l'objet qu'il y a en face. Je pense qu'une petite mise en situation pourra nous aider là-dessus.
@@ -68,7 +68,7 @@ onRequestFailure
 
 Notre protocol va ressembler à ça :
 
-```Objective-C
+```objective-c
 @protocol RequesterDelegateObjc
 
 - (void)onRequestSuccess;
@@ -79,16 +79,15 @@ Notre protocol va ressembler à ça :
 
 On va l'hériter dans le ficher .h
 
-```Objective-C
+```objective-c
 @interface MyClassObjC : UIViewController <RequesterDelegateObjc>
-
 
 @end
 ```
 
 Puis on va implémenter les méthodes dans notre classe de cette manière :
 
-```Objective-C
+```objective-c
 #import "MyClass.h"
 
 @implementation MyClassObjC
@@ -108,7 +107,7 @@ Puis on va implémenter les méthodes dans notre classe de cette manière :
 
 Le delegate
 
-```Swift
+```swift
 protocol RequesterDelegateSwift {
     func onRequestFailure()
     func onRequestSuccess()
@@ -117,7 +116,7 @@ protocol RequesterDelegateSwift {
 
 L'implémentation dans notre classe
 
-```Swift
+```swift
 class MyClassSwift: UIViewController, RequesterDelegateSwift {
 
     func onRequestFailure() {
@@ -133,7 +132,7 @@ On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui i
 
 -Objective-C
 
-```Objective-C
+```objective-c
 #import "MyClass.h"
 #import "RequestManager.h"
 
@@ -156,7 +155,7 @@ On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui i
 @end
 ```
 
-```Objective-C
+```objective-c
 @interface RequestManager : NSObject
 {
 
@@ -193,7 +192,7 @@ On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui i
 
 -Swift
 
-```Swift
+```swift
 class MyClassSwift: UIViewController, RequesterDelegateSwift {
 
     func callWebService() {
@@ -211,7 +210,7 @@ class MyClassSwift: UIViewController, RequesterDelegateSwift {
 }
 ```
 
-```Swift
+```swift
 class RequestManager {
 
     var delegate: RequesterDelegateSwift?
@@ -261,7 +260,7 @@ Un truc que j'aime bien faire en programmation, c'est éviter le couplage fort (
 - Eh mais il avait pas parlé de block ou closure au début?
 - C'est quoi ces trucs?
 
-#### Les Closures / Blocks
+## Les Closures / Blocks
 
 Tout simplement, on va plus utiliser le terme block en Objective-C et closure en Swift, il s'agit en fait d'une fonction anonyme. Pour ceux qui viennent du web et qui ont fait du JS, ça doit pas mal leur parler.
 
@@ -271,7 +270,7 @@ On va rajouter une méthode dans chaque classe qui va nous permettre d'utiliser 
 
 -Objective-C
 
-```Objective-C
+```objective-c
 typedef void (^successBlock)();
 typedef void (^failureBlock)();
 
@@ -289,7 +288,7 @@ Block failure = ^void() {
 }
 ```
 
-```Objective-C
+```objective-c
 - (void)get:(NSString *)url success:(successBlock)successBlock failure:(failureBlock)failureBlock {
     //Do the call
     BOOL requestSucceed = [self isSuccess];
@@ -305,7 +304,7 @@ Block failure = ^void() {
 
 - Swift
 
-```Swift
+```swift
 func callWebServiceWithClosure() {
     let manager: RequestManager = RequestManager()
 
@@ -321,7 +320,7 @@ func callWebServiceWithClosure() {
 }
 ```
 
-```Swift
+```swift
 func get(url: String, successClosure: () -> Void, failureClosure: () -> Void) {
     //Do the call
     let requestSucceed: Bool = self.isSuccess()

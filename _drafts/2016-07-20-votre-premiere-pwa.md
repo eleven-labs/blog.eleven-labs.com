@@ -16,7 +16,7 @@ tags:
 
 Le monde du web évolue. Le site web mobile est devenu le plus grand concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps (le cas contraire, je vous invite à lire mon précédent article sur cet événement, disponible [ici](http://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/)). Ça tombe bien, cet article va vous permettre de mettre en place votre première "PWA".
 
-###  Pré-requis :
+##  Pré-requis :
 
 Avant de commencer ce tutoriel:
 
@@ -53,7 +53,7 @@ Vous pouvez alors naviguer dans l'application, son seul but étant d'avoir quelq
 
 Cette extension génère une note sur 100 pour votre application. Plus la note est proche de 100, plus votre application est une progressive web app. Comme vous pouvez le lire, il y a deux choses principales qui permettent de gagner des points : la mise en oeuvre d'un service worker qui permet d'avoir une application offline et la mise en place d'un manifest notifiant le navigateur que "vous êtes une progressive web app" et donc installable sur votre téléphone.  Nous allons commencer par mettre en place le service worker.
 
-### Étape 2, le service worker :
+## Étape 2, le service worker :
 
 Le service worker est un simple fichier js à enregistrer dans le navigateur (s'il est compatible), une fois enregistré, il peut lancer du code sans que vous soyez connecté à internet. La première chose à faire est donc d'enregistrer un fichier js dans le navigateur.
 
@@ -87,7 +87,7 @@ Fermez l'outil de développement et relancez l'extension Lighthouse.
 
 Bravo, vous avez gagné des points ! Passons à la suite.
 
-### Étape 3, le offline :
+## Étape 3, le offline :
 
 Maintenant que vous avez enregistré votre service nous allons mettre en cache le site pour vous permettre d'avoir un site visible en offline.
 
@@ -145,7 +145,7 @@ Puis, encore une fois, fermez l'outil de développement, et relancez LightHouse.
 
 Vous êtes sur la bonne voie, mais il y a une méthode encore meilleure pour initialiser votre cache.
 
-### Étape 4, PreCache du service worker :
+## Étape 4, PreCache du service worker :
 
 Comme vous avez pu le voir, il est très fastidieux de mettre chaque fichier statique dans le service worker, Google y a pensé et a mis en place plusieurs outils pour faciliter le développement.
 
@@ -209,7 +209,7 @@ Si vous relancez l'application normalement vous n'avez aucune modification.
 
 Vous pouvez retrouver l'étape [ici](https://github.com/CaptainJojo/pwa/compare/step2-service-worker-offline...step3-sw-precache).
 
-### Étape 5, le manifest :
+## Étape 5, le manifest :
 
 La mise en place du manifest est une étape simple mais qui permet de signifier aux navigateurs que vous avez créé votre première PWA.  Vous pouvez retrouver la spécification sur le site [W3C](https://w3c.github.io/manifest/).
 

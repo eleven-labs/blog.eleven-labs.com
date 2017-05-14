@@ -14,7 +14,7 @@ tags:
 - Certificats
 ---
 
-#### Qu'est-ce qu'un certificat ?
+## Qu'est-ce qu'un certificat ?
 
 Un **certificat électronique** (aussi appelé **certificat numérique** ou **certificat de clé publique**) peut être vu comme une carte d'[identité numérique](https://fr.wikipedia.org/wiki/Identit%C3%A9_num%C3%A9rique_(Internet)). Il est utilisé principalement pour identifier et authentifier une personne physique ou morale, mais aussi pour chiffrer des échanges.
 
@@ -42,7 +42,7 @@ On remarque plusieurs points :
 
 ![capture-decran-2016-11-26-a-11-15-04](http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-26-à-11.15.04.png)
 
-#### **Normes de certificat :**
+## **Normes de certificat :**
 
 Les deux normes de certificat les plus utilisées aujourd'hui sont :
 
@@ -115,7 +115,7 @@ Donc en amont de l’étape II, votre navigateur utilise la clé publique de DST
 
 Si la vérification est bonne alors le client passe à l’étape II.
 
-#### **Type de certificats :**
+## **Type de certificats :**
 
 Lorsque vous allez vouloir acheter un certificat auprès d’un tiers de confiance, celui-ci va vous proposer plusieurs types de certificats. Nous allons voir ensemble de quoi il s’agit :
 
@@ -132,7 +132,7 @@ Aujourd'hui, il existe deux solutions qui vous permettent d'avoir un certificat
 
 Cependant, les certificats SSL auto-signés déclenchent des alertes de sécurité sur la plupart des navigateurs web car ils n'ont pas été vérifiés par une Autorité de Certification de confiance. La plupart du temps, ces alertes conseillent aux visiteurs de quitter la page pour des raisons de sécurité. Mais si vous passez par Let's Encrypt vous n'aurez pas ce type de problème.
 
-#### **Portée du certificat :**
+## **Portée du certificat :**
 
 -   Un seul domaine : suffisant pour votre site web, mais pas pour les autres services (mail, webmail, ftp, etc.)
     *exemple*: www.hatem-ben-arfa.com

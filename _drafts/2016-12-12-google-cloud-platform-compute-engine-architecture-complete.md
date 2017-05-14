@@ -16,7 +16,7 @@ Si vous avez suivi les deux premiers articles sur Google Cloud Platform, vous ê
 
 Dans ce tutoriel nous allons seulement installer un apache, mais vous pouvez appliquer tout ceci avec n'importe quelle installation.
 
-#### Etape 1, créer votre configuration :
+## Etape 1, créer votre configuration :
 
 Allez dans le menu "Compute Engine", disponible [ici](https://console.cloud.google.com/compute/instances).
 
@@ -38,7 +38,7 @@ Ouvrez le lien "Gestion, disque, réseau et clés SSH", et dans l'onglet Disque 
 
 Cliquez alors sur "Créer".
 
-#### Etape 2, installer apache :
+## Etape 2, installer apache :
 
 Allez dans "Instance de VM" et attendre que la machine soit prête.
 
@@ -62,7 +62,7 @@ Une fois terminé, si vous cliquez sur l'IP externe fournie dans l'interface "I
 
 Comme vous pouvez le voir l'installation prend un certain temps, et nous ne voulons pas le refaire pour chaque machine dont nous avons besoin. Nous allons donc nous servir de cette machine comme template pour d'autres machines.
 
-#### Etape 3, création d'un template de machine :
+## Etape 3, création d'un template de machine :
 
 Retour dans l'interface "Instance de VM", vous allez supprimer la machine en sélectionnant la VM puis cliquer sur supprimer.
 
@@ -93,7 +93,7 @@ Et n'oubliez pas de cocher la case "Autoriser le trafic HTTP". Puis cliquez sur 
 
 Pour vérifier que tout est bon, nous allons créer de nouvelles instances via ce template.
 
-#### Etape 4, création d'un groupe d'instance:
+## Etape 4, création d'un groupe d'instance:
 
 Allez dans le menu "Groupes d'instances" puis cliquez sur "Créer un groupe d'instances".
 
@@ -119,7 +119,7 @@ Si vous retournez dans le menu "Instances de VM" vous pourrez voir les trois mac
 
 À partir de maintenant, nous avons un groupe d'instances qui va scaler selon le trafic. Seulement, le trafic arrive sur les trois Ips, il nous faut donc un "load balancer" devant les machines pour envoyer le trafic sur le groupe d'instances.
 
-#### Etape 5, le load balancer :
+## Etape 5, le load balancer :
 
 Changez de menu et allez dans "réseau".
 
@@ -167,7 +167,7 @@ Toujours dans cette interface, dans l'onglet surveillance vous pouvez suivre les
 
 Et voila vous avez une architecture scalable automatiquement avec un load balancer comme un vrai architecte réseau.
 
-#### Etape 6, on supprime les machines :
+## Etape 6, on supprime les machines :
 
 Avant de vous quitter, nous allons supprimer les machines.  Vous devez le faire dans l'ordre suivant car sinon les machines se relanceront automatiquement.
 

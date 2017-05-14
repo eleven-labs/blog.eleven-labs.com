@@ -16,7 +16,7 @@ Nous savons tous commiter ou tirer des modifications. Mais il y a un problème a
 Pour mieux les gérer et les éviter, je vous propose d'aborder une commande git : rebase.
 
 Le problème
------------
+===========
 
 Git permet d'avoir un historique complet des modifications du code source. Pour réaliser une fonctionnalité, chaque contributeur va créer une branche depuis la branche *master*.
 
@@ -27,7 +27,7 @@ Nous avons Jean qui a terminé le développement d'une fonctionnalité. Elle est
 Marc a également terminé son développement, mais il a modifié les même fichiers que Jean. Si la branche de marc est fusionnée à ce moment, il y aura des **conflits**.
 
 La solution
------------
+===========
 
 Il est donc nécessaire de mettre à jour sa branche avant de pousser ses modifications. Cette mise à jour va inclure toutes les modifications de Jean dans la branche de Marc. Ça s'appelle un *rebase*.
 
@@ -40,11 +40,11 @@ Cette commande va prendre tous les commits de la branche en cours pour les appli
 Il est important de voir l'historique git comme un empilement d'éléments (*commit*).
 
 Exemple
--------
+=======
 
 J'ai une branche *master* avec le code source de mon application.
 
-```sh
+```
 commit c1
 Author: lepiaf
 Date: Sun Jun 12 16:32:19 2016 +0200
@@ -68,7 +68,7 @@ git checkout -b anotherfe
 
 Les développements avancent. La branche *myfeat* :
 
-```sh
+```
 commit c2
 Author: lepiaf
 Date:   Sun Jun 12 17:06:00 2016 +0200
@@ -93,7 +93,7 @@ git merge myfeat
 
 Et mon historique de *master*
 
-```sh
+```
 commit c1
 Author: lepiaf
 Date:   Sun Jun 12 17:06:00 2016 +0200
@@ -111,10 +111,9 @@ Date:   Sun Jun 12 16:32:19 2016 +0200
 
 Ici il y a eu une fusion rapide.
 
-Avec la branche *anotherfe* je crée un autre commit.*
-*
+Avec la branche *anotherfe* je crée un autre commit.
 
-```sh
+```
 commit c3
 Author: lepiaf
 Date:   Sun Jun 12 17:15:59 2016 +0200
@@ -146,7 +145,7 @@ Ici, le *rebase* s'est bien déroulé car il n'y a pas eu de modification au mê
 
 Ensuite je peux fusionner *anotherfe* dans *master* sans problème.
 
-```sh
+```
 commit c3
 Author: lepiaf
 Date:   Sun Jun 12 17:15:59 2016 +0200
@@ -214,7 +213,7 @@ git rebase master
 
 Et là, kaboum !
 
-```sh
+```
 git rebase master
 Premièrement, rembobinons head pour rejouer votre travail par-dessus...
 Application : how to cherry pick
@@ -237,35 +236,37 @@ Le rebase n'a pas fonctionné. Il y a des conflits dans le fichier README.md.
 
 Git va marquer les sections en conflit avec des chevrons.
 
-```sh
+```
 <<<<<<< HEAD
+```
+
 ## Commit
 
 To commit a change:
 
 ```bash
 git commit -m "my message"
-=======
+```
+
 ## Cherry pick
 
 To cherry-pick a commit
 
 ```bash
 git cherry-pick
-<<<<<<< how to cherry pick
 ```
 
 D'un côté il y a le HEAD qui correspond au master, de l'autre la branche en cours de rebase.
 
 Dans notre cas, je veux garder les deux modifications et les fusionner. J'édite le fichier en supprimant les chevrons.
 
-```sh
 ## Commit
 
 To commit a change:
 
 ```bash
 git commit -m "my message"
+```
 
 ## Cherry pick
 

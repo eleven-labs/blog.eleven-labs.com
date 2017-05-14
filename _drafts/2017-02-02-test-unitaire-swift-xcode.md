@@ -39,7 +39,7 @@ Sur Xcode, pour effectuer des tests, nous utiliserons le framework fournit par A
 
 Ce framework fournit pas mal de choses mais je ne vous en dis pas plus, après on va me reprocher de spoiler :)
 
-### Test sur un(e) Model/Classe
+## Test sur un(e) Model/Classe
 
 Tout d’abord, nous allons créer une structure Astronaute (dans un dossier Model pour faire genre on fait du MVC :p ) comme ceci :
 
@@ -260,7 +260,7 @@ Nous devons créer une variable de type ViewController afin d'accéder pour chaq
         *Note: L'utilisation d'un underscore (\_) comme nom de constante a pour but de réduire le nom de la constante car nous n'avons pas vraiment besoin de la vue. Cela dit au compilateur qu'on prétend avoir l'accès à la vue et qu'on déclenche toutes les méthodes.*
     2.  Nous appelons la méthode concernée et nous vérifions l’assertion entre notre string et notre texte du label.
 
-### Conclusion
+## Conclusion
 
 J’espère que cet article vous a plu et qu’il vous a donné envie de faire pleins de test unitaires. J’insiste sur le fait que faire des tests est vraiment important car :
 

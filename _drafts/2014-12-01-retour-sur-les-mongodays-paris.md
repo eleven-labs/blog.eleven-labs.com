@@ -28,11 +28,7 @@ Hormis la présentation générael de la société et du produit, certains chiff
 
 Enfin, les nouveautés de la futur version 2.8(http://docs.mongodb.org/manual/release-notes/2.8/) de mongoDB ont été presentées. A l'affiche, le "Document Level Locking" ainsi que la possibilité de plugger un autre moteur de stockage, notamment dans cette version avec (http://www.wiredtiger.com) wiredtiger comme alternative au moteur MMAPv1 par defaut.
 
- 
-
 ------------------------------------------------------------------------
-
- 
 
 **Socialite, the Open Source Status Feed**
 10h-11h par Asya Kamsky, Principal Solutions Architect, MongoDB
@@ -48,11 +44,7 @@ Par exemple, saviez vous que l'objet ObjectId contient une methode getTimestamp(
 
 [Lien de la présentation](http://fr.slideshare.net/mongodb/socialite-the-open-source-status-feed)
 
- 
-
 ------------------------------------------------------------------------
-
- 
 
 **Plus de flexibilité et de scalabilité chez Bouygues Télécom grâce à MongoDB**
 
@@ -114,11 +106,7 @@ Présentation detaillée sur l'utilisation d'une couche d'application supplémen
 15h-16h
 Speak des sponsors de l’événement par Teradata et Zenika
 
- 
-
 ------------------------------------------------------------------------
-
- 
 
 **Automatisez votre gestion de MongoDB avec MMS**
 
@@ -128,11 +116,7 @@ Dernier speak technique de la journée. La nouvelle version de l'outil en ligne 
 
 [Lien de la présentation](http://fr.slideshare.net/mongodb/mongo-db-days-paris-2014-mms-fr)
 
- 
-
 ------------------------------------------------------------------------
-
- 
 
 **Roadmap produit**
 
@@ -152,8 +136,6 @@ Voici une liste non exhaustive :
  
 
 Tugdual a mis en avant les difficultés pour développer ces fonctionnalités ainsi que les potentielles limites. Par exemple pour le join, cela ne pourrait ce faire que sur les clefs de shard afin de pouvoir être scalable et donc de fonctionner avec le sharding de mongoDB.
-
- 
 
 **En conclusion**
 

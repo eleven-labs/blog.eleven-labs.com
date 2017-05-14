@@ -17,11 +17,7 @@ Voici un tip qui permet de pouvoir voir en un clin d’œil les répercussions 
 
 ![Gitlab ci - code coverage](http://blog.eleven-labs.com/wp-content/uploads/2016/11/Sans-titre.png)
 
- 
-
 Dans un premier temps, nous allons modifier notre .gitlab-ci.yml
-
- 
 
 ```yaml
 before_script:
@@ -35,11 +31,7 @@ test:
   - vendor/phpunit/phpunit/phpunit -c app --coverage-text --colors=never
 ```
 
- 
-
 La modification de notre pipeline porte sur les configs de phpunit en ajoutant --coverage-text --colors=never  afin d'avoir dans les logs du pipeline les résultats du code-coverage.
-
- 
 
 Puis dans l'interface de réglages du pipeline, nous allons configurer la regex afin de récupérer la couverture de code du commit.
 
@@ -49,24 +41,14 @@ Là, gitlab est plutot sympa et nous donne déjà plusieurs regex toutes prêtes
 
 Et voila !!!
 
- 
-
 Petit bonus, pour avoir le badge avec le code coverage sur le README, ajouter simplement ces lignes :
 
 ```
 ![build status](https://gitlab.com/[TEAM]/[PROJECT]/commits/master)
 ```
 
- 
-
 Et voila le résultat
 
 ![Badge Gitlab](http://blog.eleven-labs.com/wp-content/uploads/2016/11/Sans-titre-2.png)
 
- 
-
 Pour plus d'infos : <https://docs.gitlab.com/ee/user/project/pipelines/settings.html#test-coverage-parsing>
-
- 
-
- 

@@ -55,16 +55,12 @@ Les présentations des invités ont ensuite repris !
     -   Tester
     -   Documenter
 
-&nbsp;
 -   **Estelle Weyl** a parlé de features moins connues de CSS, comme compter des éléments, puis a parlé des spécificités des sélectures dans sa présentation *[CSS? WTF!](http://estelle.github.io/doyouknowcss/indexjs.html)*, qui s'est terminée avec son explication d'astuces en CSS pour éviter !important, ou même l'overrider avec des animations CSS.
 
-&nbsp;
 -   **Nicolas Gallagher** a parlé de CSS scalable et de comment dans une large société comme Twitter penser les différents éléments pour que le développement ne demande pas à se poser des questions, de penser directement en termes de design d'interface utilisateur.
 
-&nbsp;
 -   **Bert Bos**, le co-createur de CSS, a parlé de typographie, donnant des examples clair au sujet des difficultés qui y sont liées, qui ne peuvent potentiellement pas toutes être réglées avec CSS. Par exemple, les guillemets sont différents en français, anglais, néerlandais. De même, la ponctuation peut être différente (un espace avant ! et ? en français mais pas en anglais), il est donc dififcile de penser à comment faire du markup logique pour ces éléments.
 
-&nbsp;
 -   **Ana Tudor** (@thebabydino), la dernière invitée de la journée, a montré une série de démos impressionnantes ayant pour sujet la distribution. [Les examples sont sur Codepen](http://codepen.io/thebabydino/).
 
 Et voilà comment dotCSS s'est terminé. Une fort bonne conférence donc, et on regrettera que l'expérience ne semble visiblement pas avoir vocation à être renouvelée l'an prochain.

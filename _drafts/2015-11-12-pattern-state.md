@@ -27,8 +27,6 @@ Nous pourrions donc décider de traiter chaque demande unitairement de bout en b
 
 Ou alors, nous pouvons décider d'utiliser le pattern State afin de gérer ces différentes étapes indépendamment.
 
- 
-
 **- Comment ça marche ?**
 
 Si nous reprenons l'exemple de notre vidéo ci-dessus, nous pouvons donc dégager plusieurs étapes utiles à notre workflow :

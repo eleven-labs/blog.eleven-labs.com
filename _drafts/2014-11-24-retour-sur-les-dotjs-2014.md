@@ -17,7 +17,7 @@ tags:
 
 Et bien sûr, Eleven Labs et Wilson étaient au rendez-vous et partenaire de l’évènement !
 
-![](https://c4.staticflickr.com/8/7536/15215885334_04d802e9f0_b.jpg)
+![wilson army](https://c4.staticflickr.com/8/7536/15215885334_04d802e9f0_b.jpg)
 
 Cette année, ce n’est pas loin de 16 conférences qui nous ont été présentées aussi bien en JavaScript Front, qu’en Node.JS ou en management de projet !
 
@@ -52,6 +52,8 @@ Et entre les conférences, beaucoup d’ambiance au Dot JS...
 Quelques extraits des photos souvenirs du photomaton Eleven Labs ci-dessous !
 Si vous voulez voir (ou revoir, on ne s’en lasse pas!) toutes les photos, costumes à l’appui : c’est [ici](https://www.facebook.com/media/set/?set=a.236453333168290.1073741837.152455631568061&type=1ci).
 
-![15648693537\_048cd14d2d\_z](http://blog.eleven-labs.com/wp-content/uploads/2014/11/15648693537_048cd14d2d_z-300x200.jpg)                               ![elevenlabscrewpic](http://blog.eleven-labs.com/wp-content/uploads/2014/11/elevenlabscrewpic-200x300.jpg)
+![15648693537\_048cd14d2d\_z](http://blog.eleven-labs.com/wp-content/uploads/2014/11/15648693537_048cd14d2d_z-300x200.jpg)
+
+![elevenlabscrewpic](http://blog.eleven-labs.com/wp-content/uploads/2014/11/elevenlabscrewpic-200x300.jpg)
 
 Vivement la DotJS 2015 !

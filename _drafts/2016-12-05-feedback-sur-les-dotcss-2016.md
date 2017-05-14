@@ -59,6 +59,4 @@ Val Head a décortiqué le fonctionnement des "easings" en ouvrant le capot et e
 Hakon Wium Lie est au language CSS ce que Maïté est au cholestérol. Il en est l'inventeur. Il nous a fait un historique sur ce qui l'a emmené en 1994 à imaginer un langage voué à décrire la mise en forme d'un document purement structurel, HTML.
 Il nous a ensuite emmené sur un tout autre terrain que celui qu'on a l'habitude de pratiquer, à savoir les livres papiers. CSS répond en effet parfaitement à la mise en forme de livres et pourrait être employé pour les mettre en page. C'était donc un aperçu avancé de ce qu'il est possible de faire avec les styles d'impression qu'il nous a proposé.
 
- 
-
 Et voilà, c'est fini pour cette année. Une édition particulièrement intéressante sur une techno toujours en train de se réinventer. Vivement 2017 !

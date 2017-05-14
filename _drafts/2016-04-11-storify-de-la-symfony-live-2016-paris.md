@@ -15,4 +15,4 @@ tags:
 
 Voici un storify avec les nombreux tweets de la Symfony Live 2016 Paris.
 
-\[&lt;a href="//storify.com/CaptainJojo42/symfony-live" target="\_blank"&gt;View the story "Une Symfony Live 2016 comme on les aime" on Storify&lt;/a&gt;\]
+[CaptainJojo42 SymfonyLive's Storify](https://storify.com/CaptainJojo42/symfony-live)

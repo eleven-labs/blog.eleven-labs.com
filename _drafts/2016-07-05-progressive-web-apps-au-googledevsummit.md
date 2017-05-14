@@ -20,7 +20,7 @@ Lundi 19 juin et mardi 20 juin 2016 a eu lieu la GoogleDevSummit à Amsterdam po
 
 Voici mon retour sur les deux jours de conférence.
 
-####  Keynote (Thao Tran et Alex Russel)
+## Keynote (Thao Tran et Alex Russel)
 
 Il s'agit d'une introduction commerciale sur les PWA, il met en perspective l'objectif business des webs apps.
 
@@ -38,11 +38,10 @@ Le coût d'acquisition d'un utilisateur est aussi très différent :
 
 Alex Russel montre que les PWA sont la fusion parfaite entre un site web et une application native, ils permettent d'allier la puissance du site mobile aux features des applications natives.
 
-\[embed\]https://www.youtube.com/watch?v=9Jef9IluQw0&w=560&h=315\[/embed\]
+{% youtube 9Jef9IluQw0 %}
+<!-- https://www.youtube.com/watch?v=9Jef9IluQw0&w=560&h=315 -->
 
- 
-
-#### Instant-loading offline-first progressive web apps the next generation part II uncovered (Jake Archibald)
+## Instant-loading offline-first progressive web apps the next generation part II uncovered (Jake Archibald)
 
 L'intérêt principal des PWA est le fait d'avoir le site en version offline installé sur son mobile.
 
@@ -54,11 +53,10 @@ Il montre ensuite comment fonctionne le offline et le lie-fi (mauvaise connexion
 
 Toute la présentation est faite avec des comparaisons sur le chargement de pages en live, je vous invite donc à la regarder.
 
-\[embed\]https://www.youtube.com/watch?v=qDJAz3IIq18&w=560&h=315\[/embed\]
+{% youtube qDJAz3IIq18 %}
+<!-- https://www.youtube.com/watch?v=qDJAz3IIq18&w=560&h=315 -->
 
- 
-
-#### **Mythbusting HTTPS (Emily Schechter)**
+## **Mythbusting HTTPS (Emily Schechter)**
 
 Les PWA obligent le site à être en HTTPS, et Emily Schechter vient pour détruire l'ensemble des idées reçues sur ce protocole.
 
@@ -80,11 +78,10 @@ C'est la partie la plus difficile du passage en HTTPS, aujourd'hui de nombreux p
 
 Elle termine par un petit cours sur l'HTTP2 qui permet de gagner en performance.
 
-\[embed\]https://www.youtube.com/watch?v=e6DUrH56g14&w=560&h=315\[/embed\]
+{% youtube e6DUrH56g14 %}
+<!-- https://www.youtube.com/watch?v=e6DUrH56g14&w=560&h=315 -->
 
- 
-
-#### Instant Loading with HTTP/2 (Surma)
+## Instant Loading with HTTP/2 (Surma)
 
 Une piqûre de rappel signée Surma, sur ce que sont les webperformances. Il insiste sur le fait que la première visite est la plus importante et qu'il faut absolument faire en sorte que le site s'affiche sans le cache avec une performance équivalente.
 
@@ -98,13 +95,10 @@ Il nous donne donc quelques principes de base:
 -   paramétrer correctement les headers HTTP
 -   utiliser HTTP/2 https://github.com/GoogleChrome/simplehttp2server
 
- 
+{% youtube G62aCRIlONU%}
+<!-- https://www.youtube.com/watch?v=G62aCRIlONU&w=560&h=315 -->
 
-\[embed\]https://www.youtube.com/watch?v=G62aCRIlONU&w=560&h=315\[/embed\]
-
- 
-
-#### Deep Engagement with Push Notifications (Owen Campbell-Moore)
+## Deep Engagement with Push Notifications (Owen Campbell-Moore)
 
 L'intérêt des PWA est aussi de pouvoir faire des push notifications comme avec une application native.  Owen Campbell-Moore nous explique que les push notifications permettent un meilleur engagement de l'utilisateur, dans le cas d'une notification intelligente.
 
@@ -116,11 +110,10 @@ D'ailleurs, il nous donne les règles d'une bonne notification:
 
 La suite de la conférence nous permet de mettre en place notre première push notification, je vous invite à voir ce [code lab](https://developers.google.com/web/fundamentals/getting-started/push-notifications/).
 
-\[embed\]https://www.youtube.com/watch?v=Zq-tRtBN3ws\[/embed\]
+{% youtube Zq-tRtBN3ws %}
+<!-- https://www.youtube.com/watch?v=Zq-tRtBN3ws -->
 
- 
-
-#### UI Elements at 60fps (Paul Lewis)
+## UI Elements at 60fps (Paul Lewis)
 
 La conférence la plus technique de ces deux journées. Paul Lewis montre que faire une application mobile comme une applicative peut causer de gros problèmes de performance. Il nous explique comment les éviter avec trois use-cases d'interface d'application mobile :
 
@@ -130,9 +123,10 @@ La conférence la plus technique de ces deux journées. Paul Lewis montre que fa
 
 Cette conférence est très dure à résumer, je vous invite donc à regarder la vidéo.
 
-\[embed\]https://www.youtube.com/watch?v=ZqdNgn5Huqk&w=560&h=315\[/embed\]
+{% youtube ZqdNgn5Huqk %}
+<!-- https://www.youtube.com/watch?v=ZqdNgn5Huqk&w=560&h=315 -->
 
-#### Progressive Web Apps in Any Context (Rod Dodson)
+## Progressive Web Apps in Any Context (Rod Dodson)
 
 Maintenant que vous savez faire des PWA, Rod Dodson propose de mettre en place les technologies pour améliorer l'accessibilité aux personnes présentant un handicap.
 
@@ -142,37 +136,33 @@ Le problème de l'utilisation du tabindex dans une application mobile (SPA) est 
 
 Le second réflexe à avoir pour améliorer l'accessibilité de votre PWA est de mettre en place la norme ARIA que vous pouvez retrouver sur le site  [W3C](https://www.w3.org/WAI/intro/aria.php).
 
-\[embed\]https://www.youtube.com/watch?v=8dr\_IUGwsO0&w=560&h=315\[/embed\]
+{% youtube 8dr_IUGwsO0 %}
+<!-- https://www.youtube.com/watch?v=8dr_IUGwsO0&w=560&h=315 -->
 
- 
-
-#### Progressively Enhanced Markup: Using Web Components to Build PWAs (Eric Bidelman)
+## Progressively Enhanced Markup: Using Web Components to Build PWAs (Eric Bidelman)
 
 Eric Bidelman nous donne un cours sur les web components, pour cela il nous donne des exemples concrets avec Polymer. La conférence étant assez technique il faut la regarder pour tout comprendre, je vous invite aussi à faire le [code lab](https://codelabs.developers.google.com/codelabs/polymer-first-elements/index.html?index=..%2F..%2Findex#0).
 
-\[embed\]https://www.youtube.com/watch?v=pBCDdeqzUlY&w=560&h=315\[/embed\]
+{% youtube pBCDdeqzUlY %}
+<!-- https://www.youtube.com/watch?v=pBCDdeqzUlY&w=560&h=315 -->
 
- 
-
-#### Putting the Progressive in Progressive Web Apps (Paul Kinlan)
+## Putting the Progressive in Progressive Web Apps (Paul Kinlan)
 
 Pas grand chose à dire sur cette conférence. Ce qu'il faut retenir est qu'il ne faut pas faire une PWA pour faire une PWA, mais il faut d'abord choisir les fonctionnalités que l'on souhaite pour nos utilisateurs.
 
-\[embed\]https://www.youtube.com/watch?v=zHNYFUhVzgw&w=560&h=315\[/embed\]
+{% youtube zHNYFUhVzgw %}
+<!-- https://www.youtube.com/watch?v=zHNYFUhVzgw&w=560&h=315 -->
 
- 
-
-#### Tools for Success (Mat Scales)
+## Tools for Success (Mat Scales)
 
 Le service worker étant la base d'une PWA, Mat Scales nous propose de nombreuses librairies disponibles sur Github pour mettre en place les différents caches des services worker. L'idée est de rendre le code plus simple et très générique, vous pouvez retrouver toutes les librairies [ici](https://github.com/GoogleChrome/).
 
 Il nous montre aussi les dev-tools, que Chrome a mis en place pour nous permettre de travailler sur nos PWA et qui sont disponibles à partir de la version 52 de Chrome. Elles permettent de voir les services worker en cours, de mettre votre application en offlline, de vérifier le cache utilisé, parmi plein d'autres fonctionnalités.
 
-\[embed\]https://www.youtube.com/watch?v=m2Zk5CgVX9I\[/embed\]
+{% youtube m2Zk5CgVX9I %}
+<!-- https://www.youtube.com/watch?v=m2Zk5CgVX9I -->
 
- 
-
-#### To the Lighthouse (Jeffrey Posnick)
+## To the Lighthouse (Jeffrey Posnick)
 
 Certainement l'une des meilleures conférences de la journée, Jefferey Posnick nous montre comment mettre en place sa première PWA en s'aidant de l'extension [LightHouse](https://github.com/GoogleChrome/lighthouse).
 
@@ -182,11 +172,10 @@ Pour cela, il utilise un projet Github qu'il passe étape par étape pour améli
 2.  Service worker <https://github.com/GoogleChrome/sw-precache/compare/step2...step3>
 3.  Manifest <https://github.com/GoogleChrome/sw-precache/compare/step3...step4>
 
-\[embed\]https://www.youtube.com/watch?v=LZjQ25NRV-E&w=560&h=315\[/embed\]
+{% youtube LZjQ25NRV-E %}
+<!-- https://www.youtube.com/watch?v=LZjQ25NRV-E&w=560&h=315 -->
 
- 
-
-#### Autres conférences
+## Autres conférences
 
 Les autres conférences étant assez redondantes, je vous invite à voir les vidéos disponibles [ici](https://www.youtube.com/playlist?list=PLNYkxOF6rcIAWWNR_Q6eLPhsyx6VvYjVb).
 

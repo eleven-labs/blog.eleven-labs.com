@@ -34,8 +34,6 @@ source: https://fr.wikipedia.org/wiki/Cache\_web
 
 Rassurez-vous, il y a une solution : le but de cet article est de vous permettre d'enfin apprivoiser le cache HTTP.
 
- 
-
 Le principe du cache HTTP
 =========================
 
@@ -143,8 +141,6 @@ Le web serveur aussi permet d'utiliser le cache HTTP, on l'utilise généralemen
 
 ![Architecture Http](http://blog.eleven-labs.com/wp-content/uploads/2016/05/Untitled.png)
 
- 
-
 Personnaliser votre cache HTTP
 ==============================
 
@@ -159,10 +155,8 @@ Il s'agit d'un header qui référence votre page, soit par terme (home, page, et
 > Mais pourquoi faire ?
 
 Parce que cela vous permet de facilement trouver toutes les pages stockées dans varnish et qui référencent un objet particulier, si vous pouvez les trouver, vous pouvez les supprimer, et donc générer un cache. Il faut pour cela configurer varnish pour réaliser un ban d'une url. Voici un petit code simple à mettre en place :
-
   
-
-```zsh
+```varnish
 # Ban - Catalogue decache
 #
 # How to ban all objects referencing <my_tag> in the X-Cache-Varnish-Catalog header
@@ -210,7 +204,7 @@ Facile, votre page est expiré la requête arrive directement sur votre serveur.
 
 Voici la configuration pour varnish :
 
-```zsh
+```varnish
 sub vcl_backend_response {
    # Happens after we have read the response headers from the backend.
    #
@@ -247,7 +241,7 @@ Sur chacune des pages, vous avez un bloc de pages qui est toujours le même mais
 
 Les ESI servent dans cette situation. Il s'agit seulement d'une page avec son cache propre que l'on peut intégrer dans une autre via une balise HTML.
 
-```
+```html
 //home.html
 <html>
 <body>

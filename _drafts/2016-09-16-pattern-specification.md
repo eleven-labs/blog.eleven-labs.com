@@ -11,7 +11,8 @@ tags: []
 
 Through my different professional experiences, I had to set a lot of business rules in rich web apps. One day, I stumbled upon a different way to deal with those: using the specification pattern. This method has proven to be structuring and deserves some attention if you do not know what it is.
 
-### Let's dig in
+Let's dig in
+============
 
 Imagine a simple banking application for instance. This app only has clients and bank accounts. A client can have one or multiple accounts, and your job is to create a very simple system of wire transfer between accounts of a same client with this business rule:
 
@@ -22,7 +23,7 @@ You can clearly see the condition which would prevent a transfer from happening
 
 In a simple implementation, you would write it this way:
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Application;
@@ -61,7 +62,7 @@ Mainly three types of specification exist:
 
 A specification is driven by the following interface:
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain;
@@ -77,13 +78,14 @@ interface Specification
 }
 ```
 
-### Hard-coded Specifications
+Hard-coded Specifications
+=========================
 
 This type of specification enables us to hard code the business knowledge without having the possibility to modify the business rule from the outside.
 
 A business rule can then be translated this way:
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain\Payment;
@@ -106,11 +108,12 @@ class AccountCanTransferMoney implements Specification
 
 Having created a separated class in order to apply our business rule, we gain clarity and decoupling. Although, it appears obvious that we are condemned to only using our object $account, and that no additional info can be brought from the outside. We still can't use this type of specification in our *TransferMoneyCommand *because it does not comply totally to our business rule (only the balance is compared).
 
-### Parameterized specifications
+Parameterized specifications
+============================
 
 Parameterized specifications are identical to what we've been talking about, but they resolve the issue we've just mentioned, allowing us to get outside parameters to our candidate.
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain\Payment;
@@ -146,7 +149,7 @@ With this type of specifications, we keep the same pros as before, and we gain f
 
 This is how our command would look like using our parameterized specification:
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Application;
@@ -175,13 +178,14 @@ class TransferMoneyCommand
 
 To simplify my explanation on parameterized specifications, I've hard coded the instantiation of the class AccountCanTransferMoney. A noticeable improvement of this use would be to inject the specification directly into the command, in order to better unit test our command.
 
-### Composite specifications
+Composite specifications
+========================
 
 The last type of specification I'd like to take a look into is composite specifications. Such specification bases itself on what we've seen. Indeed, it uses composition to exist. Logical operations between two (or more) specifications are part of composite specifications.
 
 The following example explains the implementation of the AND logical operator:
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain;
@@ -236,7 +240,7 @@ class AndSpecification extends Composite
 
 Then, if we instantiate a composite spec, we can chain it to other specifications (see below), by modifying our previous *AccountCanTransferMoney* specification:
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain\Payment;
@@ -268,7 +272,7 @@ class AccountCanTransferMoney extends Composite
 }
 ```
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain\Payment\Specification;
@@ -291,7 +295,7 @@ class AccountOwnerIsActive implements Specification
 
 Finally, here is how we use our composition:
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Application;
@@ -331,7 +335,7 @@ Advantages of the specification pattern are as follow:
 -   We made the implicit explicit with a clear definition of business rules
 
 References
-----------
+==========
 
 [Eric Evans & Martin Fowler - Specifications](http://martinfowler.com/apsupp/spec.pdf)
 

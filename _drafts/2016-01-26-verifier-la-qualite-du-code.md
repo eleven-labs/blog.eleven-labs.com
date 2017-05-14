@@ -17,7 +17,7 @@ tags:
 Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet article, je vais l'aborder sur la partie PHP.
 
 Qu'est ce que la qualité du code ?
-----------------------------------
+==================================
 
 En PHP, nous pouvons définir la qualité du code par certaines métriques, telles que la couverture des tests ou l'usage des normes PSR. Le but est d'avoir un code compréhensible par tous les développeurs et facilement maintenable.
 
@@ -30,7 +30,7 @@ Tout au long de cet article, je vais aborder les points suivants :
 -   le service sass
 
 PSR, késako ?
--------------
+=============
 
 PSR, pour *PHP Standard Recommendation,* est un ensemble de normes pour PHP qui permet de faciliter l'interopérabilité des composants entre eux.
 
@@ -47,7 +47,7 @@ Il y a actuellement 7 normes validées :
 Toutes ces normes vont permettre de bien structurer le code, d'avoir les mêmes interfaces, et de permettre aux autres développeurs de contribuer plus facilement.
 
 Détection des erreurs
----------------------
+=====================
 
 Avec toutes ces normes et recommandations, nous avons une bonne base solide. Apprendre et bien connaître ces recommandations peut prendre du temps. Pour cela, il y a des outils pour nous permettre de détecter les erreurs que nous faisons.
 
@@ -86,13 +86,13 @@ Cet outil va nous aider à rendre le code beaucoup plus simple, lisible et d'év
 
 Exemple :
 
-```
+```sh
 php bin/phpmd src/ xml app/phpmd.xml --exclude Tests,DataFixtures,DoctrineMigrations,Test
 ```
 
 Sortie de la commande :
 
-```xhtml
+```html
 <?xml version="1.0" encoding="UTF-8" ?>
 <pmd version="@project.version@" timestamp="2016-01-21T13:40:01+01:00">
   <file name="../Service/AvailableTimeService.php">
@@ -230,7 +230,7 @@ Pour ne pas entrer dans cette mauvaise pratique, il y a [PHP Copy/Paste Detector
 
 Petit exemple :
 
-```
+```sh
 phpcpd src/
 ```
 
@@ -262,7 +262,7 @@ Une fois les erreurs détectées, il faut les corriger. Personnellement, je n'ut
 L'outil va parcourir tout le code et corriger les erreurs. Simple, n'est-ce pas ?
 
 Intégration continue
---------------------
+====================
 
 Tous ces outils, une fois en place, permettent de surveiller et de maintenir la qualité du code. Lancer régulièrement ces commandes doit être une exigence à adopter.
 
@@ -289,7 +289,7 @@ Encore un autre outil Sensio, mais très efficace dans l'analyse des performance
 Cet outil s'utilise principalement pour le débogage, notamment lorsqu'une route met du temps à répondre.
 
 Pour conclure
--------------
+=============
 
 Tout au long de cet article, nous avons vu les normes et recommandations en PHP, comment détecter les erreurs que nous pouvons faire, et enfin comment les corriger.
 

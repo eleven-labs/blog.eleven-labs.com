@@ -22,7 +22,7 @@ What I'd like to talk to you about is the lifecycle of a message, with error han
 Therefore, we're going to configure a RabbitMQ virtual host, publish a message, consume it and retry publication if any error occurs.
 
 Our Tools
----------
+=========
 
 The technical solution is based on two libraries:
 
@@ -33,13 +33,13 @@ Swarrot is compatible with the amqp extension of PHP, as well as the [php-amqpl
 The main adversary to Swarrot, [RabbitMqBundle](https://github.com/php-amqplib/RabbitMqBundle), is not compatible with the PHP extension, and is not as simple in both configuration and usage.
 
 Configuration
--------------
+=============
 
 Our first step will be to create our RabbitMQ configuration: our exchange and our queue.
 
 The RabbitMQ Admin Toolkit library, developed by *[odolbeau](https://github.com/odolbeau),* allows us to configure our vhost very easily. Here is a basic configuration declaring an exchange and a queue, allowing us to send our mascot Wilson and his fellow friends to space:
 
-``` theme:sublime-text
+```yaml
 # default_vhost.yml
 '/':
     parameters:
@@ -64,7 +64,7 @@ A binding represents a relation between a queue and an exchange*.*
 
 Let's launch the command to create our vhost:
 
-``` theme:sublime-text
+```
 vendor/bin/rabbit vhost:mapping:create default_vhost.yml --host=127.0.0.1
 Password?
 With DL: false
@@ -87,7 +87,7 @@ Now click on the *Queues *tab: *send\_astronaut\_to\_space* is also here.
 Let's take a look at the publication and consumption of messages.
 
 Consumption
------------
+===========
 
 The library helping us to consume and publish messages, Swarrot, has a Symfony bundle which will help us use it very easily in our app: [SwarrotBundle](https://github.com/swarrot/SwarrotBundle).
 
@@ -95,7 +95,7 @@ The thing we want to achieve here is to publish messages, and to consume them. H
 
 After installing the bundle, we have to configure it:
 
-``` theme:sublime-text
+```yaml
 # app/config/config.yml
 swarrot:
     provider: pecl # pecl or amqp_lib
@@ -123,11 +123,11 @@ Every message published in an exchange will be routed to a queue according to it
 
 To consume a message, we need to create our own processor. As indicated in the documentation, a processor is just a Symfony service who needs to implement the *ProcessInterface *interface.
 
-\[caption id="" align="aligncenter" width="548"\]![Swarrot - Middleware stack](https://camo.githubusercontent.com/8ac89cd415aebfb1026b2278093dbcc986b126da/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3145615f514a486f2d3970375957386c5f62793753344e494430652d41477058527a7a6974416c59593543632f7075623f773d39363026683d373230) Swarrot - Middleware stack\[/caption\]
+![Swarrot - Middleware stack](https://camo.githubusercontent.com/8ac89cd415aebfb1026b2278093dbcc986b126da/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3145615f514a486f2d3970375957386c5f62793753344e494430652d41477058527a7a6974416c59593543632f7075623f773d39363026683d373230) Swarrot - Middleware stack
 
 The particularity of processors is that they work using middlewares, allowing to add behavior before and/or after the processing of our message (our processor). That's why there is a *middleware\_stack* parameter, that holds two things: *swarrotot.processor.exception\_catcher *and *swarrot.processor.ack*. Although optional, these middlewares bring nice flexibility. We'll come back on this later on.
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace AppBundle\Processor;
@@ -149,11 +149,11 @@ Our *SendAstronautToSpace* processor implements a method called *process*, which
 We've just setup the consumption of messages. What do we need to do next? See the publication part of course!
 
 Publication
------------
+===========
 
 Once again, it's very simple to publish messages with Swarrot. We only need to declare a *publisher* in our configuration, and use the SwarrotBundle publication service to publish a new message.
 
-``` theme:sublime-text
+```yaml
 # app/config/config.yml
     consumers:
 # ...
@@ -170,7 +170,7 @@ Once again, it's very simple to publish messages with Swarrot. We only need to d
 
 The secret is to declare a new message type, specifying the *connection*, *exchange*, and the *routing key.* Then publish a message this way:
 
-``` theme:sublime-text
+```php
 <?php
 
 $message = new Message('Wilson wants to go to space');
@@ -182,7 +182,7 @@ The service *swarrot.publisher *deals with publishing our message. Simple righ
 After setting up *queues*, published and consumed a message, we now have a good view of the life-cycle of a message.
 
 Handling errors
----------------
+===============
 
 One last aspect I'd like to share with you today is about errors while consuming your messages.
 
@@ -191,7 +191,7 @@ Setting aside implementation problems in your code, it's possible that you encou
 Somewhere along the way, I've been confronted to this problem. We knew such things could happen and we needed to automatically "retry" our messages publication.
 I'm going to show you how to proceed, keeping our example *send\_astronaut\_to\_space.* Let's decide that we're going to retry the publication of our message 3 times maximum. To do that, we need 3 retry queues. Fortunately, configuration of retry queues and exchanges is so easy with [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit): we only need one line! Let's see this more closely :
 
-``` theme:sublime-text
+```yaml
 # default_vhost.yml
 # ...
 queues:
@@ -207,7 +207,7 @@ The array of parameters of key *retries* corresponds to the delay after which th
 
 If we launch our command one more time, here is the result:
 
-``` theme:sublime-text
+```
 vendor/bin/rabbit vhost:mapping:create default_vhost.yml --host=127.0.0.1
 Password?
 With DL: false
@@ -235,7 +235,7 @@ Now let's configure our consumer.
 
 With Swarrot, handling of retries is very easy to configure. Do you remember those middlewares we've seen before? Well there's a middleware for that!
 
-``` theme:sublime-text
+```yaml
 # app/config/config.yml
     consumers:
 # ...
@@ -263,7 +263,7 @@ The main difference with our previous configuration is located around the parame
 
 The workflow works this way: if the message is not *acknowledged* following* *an exception the first time, it will be published in the *retry* exchange*,* with routing key* send\_astronaut\_to\_space\_retry\_1.* Then, 5 seconds later, the message is published back in our main queue *send\_astronaut\_to\_space*. If another error is encountered, it will be republished in the retry exchange, with the routing key *send\_astronaut\_to\_space\_retry\_2*, and 25 seconds later the message will be back on our main queue. Same thing one last time with 100 seconds.
 
-``` theme:sublime-text
+```
 sf swarrot:consume:send_astronaut_to_space send_astronaut_to_space
 [2017-01-12 12:53:41] app.WARNING: [Retry] An exception occurred. Republish message for the 1 times (key: send_astronaut_to_space_retry_1) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
 [2017-01-12 12:53:46] app.WARNING: [Retry] An exception occurred. Republish message for the 2 times (key: send_astronaut_to_space_retry_2) {"swarrot_processor":"retry","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
@@ -279,13 +279,13 @@ If we look closely the details of queue *send\_astronaut\_to\_space*, we see th
 On every error in our processor, the *retryProcessor* will catch this error, and republish our message in the retry queue as many times as we've configured it. Then Swarrot will hand everything to RabbitMQ to route our message to the queue queue *send\_astronaut\_to\_space\_dl.*
 
 Conclusion
-----------
+==========
 
 Swarrot is a library that allows us to consume and publish messages in a very simple manner. Its system of middlewares increases possibility in the consumption of messages.
 Tied to RabbitMQ Admin Toolkit to configure exchanges and queues, Swarrot will also let you retry your lost messages very easily.
 
 References
-----------
+==========
 
 -   [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit)
 -   [Swarrot](https://github.com/swarrot/swarrot)

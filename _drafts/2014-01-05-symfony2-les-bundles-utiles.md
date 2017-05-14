@@ -16,7 +16,7 @@ Cela fait maintenant plus de 2 ans que Symfony2 est sorti et, comme vous le save
 
 **JMSSerializerBundle** utilise la librairie Serializer du même auteur, et vous permet de sérialiser vos données dans un format de sortie demandé, tel que JSON, XML ou YAML, et inversement. En twig cela donne ça :
 
-```
+```twig
 {{ data | serialize }} {# serializes to JSON #}
 {{ data | serialize('json') }}
 {{ data | serialize('xml') }}
@@ -26,7 +26,7 @@ Les possibilités sont illimitées, plus d'informations [ici](http://jmsyst.com/
 
 Vous devez développer une API REST ? Utilisez **FOSRESTBundle** ! Il vous aide à respecter les conventions RESTful, fournit un controller et un système de routing adaptés au REST, et est très simple à utiliser. FOSRESTBundle va de paire avec JMSSerializerBundle ci-dessus. Avec le serializer vous pouvez paramétrer la politique d'exclusion et exposer uniquement certains attributs de vos entités en utilisant les annotations, le format xml ou yml, ou encore définir le format de sortie pour les dates.
 
-```
+```php
 <?php
 
 namespace Demo\Bundle\ApiBundle\Controller;
@@ -48,13 +48,15 @@ class DefaultController extends FOSRestController
 
         return $this->handleView($view);
     }
+    // ...
+}
 ```
 
 Le détail est sur [la page github du projet](https://github.com/FriendsOfSymfony/FOSRestBundle).
 
 Vous appelez des web services REST ? [**Guzzle**](https://github.com/guzzle/guzzle) et [**Buzz**](https://github.com/kriswallsmith/Buzz) sont deux librairies PHP basées sur cURL, qui permettent de faire des requêtes HTTP. Ils ont chacun leur bundle respectif, ils sont rapides à prendre en main, même si Guzzle est plus intuitif. Rien de plus simple qu'un appel de web service :
 
-```
+```php
 // use Guzzle\Http\Client;
 $client = new Client($googleMapsApiUrl);
 $request = $client->get($address);
@@ -65,7 +67,7 @@ Si votre application permet la gestion des utilisateurs, **FOSUserBundle **le f
 
 Dans un projet on a aussi souvent du JavaScript et de l'AJAX. Et quand on a besoin de faire un appel AJAX, **FOSJsRoutingBundle** nous vient en aide. Il permet d'accéder au routing du projet dans le code JavaScript. Il suffit d'indiquer que vous souhaitez exposer la route comme ceci :
 
-```
+```yaml
 # routing.yml
 getCoordinates:
     pattern: /getCoordinates/{address}
@@ -76,7 +78,7 @@ getCoordinates:
 
 Et de l'appeler dans un code JavaScript :
 
-```
+```js
 var input = $('#address').val();
 $.ajax({
     url: Routing.generate('getCoordinates', { 'address': input }),
@@ -91,7 +93,7 @@ $.ajax({
 
 N'oubliez pas d'inclure les fichiers JS du bundle dans votre layout :
 
-```
+```html
 <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
 <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
 ```
@@ -100,7 +102,7 @@ Plus d'informations sur le [site du projet](https://github.com/FriendsOfSymfony/
 
 En ce qui concerne la navigation sur votre site, prenez **KNPMenuBundle**. Vous définissez notre navigation dans une classe :
 
-```
+```php
 <?php
 // src/MyBundle/Menu/Builder.php
 namespace Demo\MyBundle\Menu;
@@ -132,7 +134,7 @@ Faites un tour [ici](https://github.com/KnpLabs/KnpMenuBundle/blob/master/Resour
 
 Maintenant que l'on peut accéder à la liste d'articles via le menu, on voudrait améliorer l'affichage et ajouter une pagination. Pour cela existe **KNPPaginatorBundle**. Il gère la pagination et le tri des résultats pour les requêtes Doctrine, MongoDB et Propel. Dans votre action, vous créez une requête et la passez au service paginator :
 
-```
+```php
 public function listAction()
 {
     $em    = $this->get('doctrine.orm.entity_manager');
@@ -153,7 +155,7 @@ public function listAction()
 
 Et dans le template twig :
 
-```
+```twig
 {# total items count #}
 <div class="count">
     {{ pagination.getTotalItemCount }}
@@ -187,7 +189,7 @@ La documentation complète est ici : [JMSPaymentCore](http://jmsyst.com/bundles/
 
 On voudrait pouvoir générer la facture au format PDF pour le client pour confirmer son paiement. Pour cela, il y a **KNPSnappyBundle**. Il est basé sur [wkhtmltopdf](http://code.google.com/p/wkhtmltopdf/) qui génère un PDF à partir d'un fichier HTML comme son nom l'indique. On définit notre HTML dans un template twig par exemple. Et le controller n'a besoin que de très peu de code :
 
-```
+```php
 public function getPDFAction()
 {
     $html = $this->renderView('DemoMyBundle:Default:pdf.html.twig');

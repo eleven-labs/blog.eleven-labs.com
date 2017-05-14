@@ -14,7 +14,7 @@ tags:
 - Chiffrement
 ---
 
-#### **Record protocol**
+## **Record protocol**
 
 Ce protocole a pour buts :
 
@@ -26,7 +26,6 @@ Voici en détail comment se déroule le record protocole :
 
 ![](http://blog.eleven-labs.com/wp-content/uploads/2016/12/ssl_intro_fig3.jpg)
 
- 
 
 1 - Segmentation - les données sont découpées en blocs de taille inférieure à 16 384 octets ;
 
@@ -82,7 +81,7 @@ Content-Type (1 octet) - Indique le type de paquet SSL et TLS contenu dans l'enr
 
 Si ça se passe mal au cours de ces vérifications, alors une alarme est générée.
 
-#### **Outils:**
+## **Outils:**
 
 **OpenSSL:**
 

@@ -13,7 +13,7 @@ tags:
 - Android
 ---
 
-#### Introduction
+## Introduction
 
 Salut les astronautes !
 
@@ -44,7 +44,7 @@ On va donc définir une interface qui va contenir deux méthodes :
 onRequestSuccess
 onRequestFailure
 
-```Android
+```java
 public interface RequesterListener {
     void onRequestSuccess();
     void onRequestFailure();
@@ -53,7 +53,7 @@ public interface RequesterListener {
 
 On va donc hériter cette interface dans notre classe Java
 
-```Android
+```java
 public class MainActivity extends AppCompatActivity implements RequesterListener {
 
     @Override
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements RequesterListener
 
 On a donc notre Class MainActivity qui hérite de l'interface RequesterListener et qui implémente 2 méthodes (onRequestSuccess, onRequestFailure). On va faire une dummy implementation pour vous donner une idée de comment ça fonctionne :
 
-```Android
+```java
 public class RequestManager {
 
     private RequesterListener mListener;
@@ -109,7 +109,7 @@ public class RequestManager {
 
 La classe RequestManager nous sert à exécuter un call GET sur une URL donnée.
 
-```Android
+```java
 public class MainActivity extends AppCompatActivity implements RequesterListener {
 
     @Override
@@ -163,7 +163,7 @@ Laissez moi vous expliquer.
 En fait, grace au Java, on peut instancier une interface si on redéfinit les méthodes au moment de l'instanciation.
 Un petit bout de code pour vous montrer ça ?
 
-```Android
+```java
 public class MainActivity extends AppCompatActivity {
 
     @Override

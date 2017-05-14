@@ -22,7 +22,7 @@ Essayez de mettre une majuscule au nom de la class ici sur cette ligne.
 
 On aura alors
 
-```
+```yaml
 generator:
   class: sfDoctrineGenerator
   param:
@@ -31,7 +31,7 @@ generator:
 
 Qui devient :
 
-```
+```yaml
 generator:
   class: sfDoctrineGenerator
   param:
@@ -39,8 +39,6 @@ generator:
 ```
 
 Vous avez une chance sur deux pour que cela corrige votre problème. Cela vient de Doctrine qui utilise sa propre config en cache avec ses noms de model contenant une majuscule comme première lettre.
-
- 
 
 Bref, en espérant que cela vous aide.
 

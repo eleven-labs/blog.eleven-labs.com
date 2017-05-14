@@ -119,7 +119,7 @@ Dans votre dossier Elasticsearch vous allez trouver les dossiers suivants :
 -   **logs**, où vous trouverez vos fichiers de logs
 -   **plugins**, où se trouveront tous les plugins que vous installerez
 
-###     IV. Utilisation
+### IV. Utilisation
 
 Bon maintenant que tout est fonctionnel, il n'y a plus qu'à jouer un peu :)
 
@@ -158,7 +158,7 @@ curl XGET 'http://localhost:9200/foo/users/1'
 
 Ce qui vous retournera :
 
-```
+```json
 {
   "_index": "foo",
   "_type": "users",
@@ -192,7 +192,7 @@ curl XGET 'http://localhost:9200/foo/users/_search' -d '
 
 Et hop :
 
-```
+```json
 {
   "took": 2,
   "timed_out": false,
@@ -255,7 +255,7 @@ GET /foo/_analyze?analyzer=french&text=tennis
 
 Vous retournera :
 
-```
+```json
 {
   "tokens": [
     {

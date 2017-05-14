@@ -15,7 +15,7 @@ tags:
 
 La console est un composant essentiel pour beaucoup d’applications web. Nous avons pas mal de nouveautés dans cette nouvelle version de Symfony. Je vous présente dans cet article mes préférées et vous mettrai les liens de celles que je ne détaille pas ici à la fin (on est comme ça chez Eleven).
 
-### Les alias dans les commandes
+## Les alias dans les commandes
 
 On l’attendait, ils l’ont fait : nous pouvons désormais créer une liste d’alias à nos commandes. Pour cela, rien de plus simple : ajoutez “setAliases” avec en paramètre un tableau de string comportant tous les alias.
 
@@ -23,7 +23,7 @@ Voici un exemple :
 
 **ElevenLabsAliasCommand.php** :
 
-``` theme:monokai
+```php
 <?php
 
 namespace AppBundle\Command;
@@ -57,14 +57,14 @@ Voici une petite vidéo pour voir ce que ça rend :
 
 ![](https://asciinema.org/a/8i85eeqih2rwmccrtab407qtv)
 
-### Test des commandes
+## Test des commandes
 
 Tester des commandes, on sait faire. Mais lorsque dans les commandes nous devons répondre à des questions par des étapes intermédiaires, ça devient plus difficile. Terminé les complications, il suffit de rajouter dans vos tests la méthode "setInputs", avec en paramètre un tableau contenant les réponses à vos étapes.
 Voici rien que pour vous un exemple très simple :
 
 **ElevenLabsTestCommand.php** :
 
-``` theme:monokai
+```php
 <?php
 
 namespace AppBundle\Command;
@@ -101,7 +101,7 @@ class ElevenLabsTestCommand extends ContainerAwareCommand
 
 **ElevenLabsTestCommandTest.php** :
 
-``` theme:monokai
+```php
 <?php
 
 namespace AppBundle\Command;
@@ -138,7 +138,7 @@ class ElevenLabsTestCommandTest extends KernelTestCase
 }
 ```
 
-### Single command application
+## Single command application
 
 Les “**S**ingle **C**ommand **A**pplication” sont possibles sur Symfony, comme vous pouvez le voir dans la [documentation](http://symfony.com/doc/3.1/components/console/single_command_tool.html).
 Cette feature améliorée dans la version 3.2 nous permet d’ajouter un booléen à la méthode setDefaultCommand(). C’est grâce à ce booléen que nous pouvons désormais basculer l’application en une SCA.
@@ -147,7 +147,7 @@ Mieux vaut un exemple qu’un long discours, commençons par créer deux simples
 
 **Command/EspaceCommand.php :**
 
-``` theme:monokai
+```php
 <?php
 namespace Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -161,149 +161,20 @@ class EspaceCommand extends Command
     {
         $this
             ->setName('espace')
-            ->setDescription('Aller dans l
-Command/TerreCommand.php :
-<?php
-namespace Command;
-
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Command\Command;
-
-
-class TerreCommand extends Command
-{
-    protected function configure()
-    {
-        $this
-            ->setName('terre')
-            ->setDescription('Redescendre sur terre')
+            ->setDescription('Aller dans l\'espace')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Je retourne sur terre');
+        $output->writeln('Je suis dans l\'espace');
     }
 }
 ```
-
-**SingleCommand.php :**
-
-``` theme:monokai
-#!/usr/bin/env php
-<?php
-
-require __DIR__.'/vendor/autoload.php';
-
-use Command\EspaceCommand;
-use Command\TerreCommand;
-use Symfony\Component\Console\Application;
-
-// On initialise les deux commandes
-$espaceCommand = new EspaceCommand();
-$terreCommand = new TerreCommand();
-
-// On créer une nouvelle application, et on lui ajoute nos 2 commandes
-$application = new Application();
-$application->add($espaceCommand);
-$application->add($terreCommand);
-
-// On met la commande EspaceCommand en par défaut et on ajout un booléen à TRUE
-$application->setDefaultCommand($espaceCommand->getName(), true);
-
-$application->run();
-```
-
-Dans le fichier SingleCommand, nous avons rajouté un booléen à true, pour indiquer que nous souhaitons avoir une **SCA**.
-
-![](https://asciinema.org/a/ctpdd6v34qfh35try9xtqrrpd)
-
-### LockableTrait
-
-Depuis la version 2.6, il est possible de bloquer une commande si la commande est déjà en train de tourner.
-Voici un petit exemple de comment nous devions faire :
-
-``` theme:monokai
-class LockableCommand extends Command
-{
-    protected function configure()
-    {
-        // ...
-    }
-
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-        $lock = new LockHandler('update:contents');
-        if (!$lock->lock()) {
-            $output->writeln('The command is already running in another process.');
-            return 0;
-        }
-
-        $lock->release();
-    }
-}
-```
-
-Avec la version 3.2, vous pouvez ajouter le trait directement dans votre commande :
-
-``` theme:monokai
-class LockableCommand extends Command
-{
-    use LockableTrait;
-
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-         if (!$this->lock()) {
-            $output->writeln('The command is already running in another process.');
-            return 0;
-         }
-
-         $this->release();
-    }
-}
-```
-
-### Hidden et Options multiples
-
-Une petite nouveauté qui vous permettra de cacher une commande très simplement.
-Une fois la commande cachée, vous pourrez  toujours la lancer, mais elle n’apparaîtra plus dans la liste de vos commandes :
-
-``` theme:monokai
-class HiddenCommand extends Command
-{
-    protected function configure()
-    {
-        $this
-            ->setName('hidden')
-            ->hidden(true)
-        ;
-    }
-
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-        // your code here
-    }
-}
-```
-
-Enfin, il est désormais possible de combiner plusieurs options de texte sur le même input, voici un exemple :
-
-``` theme:monokai
-$output->writeln('<fg=green;options=italic,underscore>Texte vert italic et souligné</>');
-```
-
-### Conclusion
-
-Voilà, je vous ai montré les nouveautés que je préfère, mais ce ne sont pas les seules, pour voir toute la liste des nouveautés pour le composant console, je vous conseille de suivre ce lien : <http://symfony.com/blog/symfony-3-2-0-released>
-
-### 
-
-espace') ; } protected function execute(InputInterface $input, OutputInterface $output) { $output-&gt;writeln('Je suis dans l
 
 **Command/TerreCommand.php :**
 
-``` theme:monokai
+```php
 <?php
 namespace Command;
 
@@ -331,7 +202,7 @@ class TerreCommand extends Command
 
 **SingleCommand.php :**
 
-``` theme:monokai
+```php
 #!/usr/bin/env php
 <?php
 
@@ -360,12 +231,12 @@ Dans le fichier SingleCommand, nous avons rajouté un booléen à true, pour ind
 
 ![](https://asciinema.org/a/ctpdd6v34qfh35try9xtqrrpd)
 
-### LockableTrait
+## LockableTrait
 
 Depuis la version 2.6, il est possible de bloquer une commande si la commande est déjà en train de tourner.
 Voici un petit exemple de comment nous devions faire :
 
-``` theme:monokai
+```php
 class LockableCommand extends Command
 {
     protected function configure()
@@ -388,7 +259,7 @@ class LockableCommand extends Command
 
 Avec la version 3.2, vous pouvez ajouter le trait directement dans votre commande :
 
-``` theme:monokai
+```php
 class LockableCommand extends Command
 {
     use LockableTrait;
@@ -405,12 +276,12 @@ class LockableCommand extends Command
 }
 ```
 
-### Hidden et Options multiples
+## Hidden et Options multiples
 
 Une petite nouveauté qui vous permettra de cacher une commande très simplement.
 Une fois la commande cachée, vous pourrez  toujours la lancer, mais elle n’apparaîtra plus dans la liste de vos commandes :
 
-``` theme:monokai
+```php
 class HiddenCommand extends Command
 {
     protected function configure()
@@ -434,149 +305,6 @@ Enfin, il est désormais possible de combiner plusieurs options de texte sur le 
 $output->writeln('<fg=green;options=italic,underscore>Texte vert italic et souligné</>');
 ```
 
-### Conclusion
+## Conclusion
 
 Voilà, je vous ai montré les nouveautés que je préfère, mais ce ne sont pas les seules, pour voir toute la liste des nouveautés pour le composant console, je vous conseille de suivre ce lien : <http://symfony.com/blog/symfony-3-2-0-released>
-
-### 
-
-espace'); } }
-
-**Command/TerreCommand.php :**
-
-``` theme:monokai
-<?php
-namespace Command;
-
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Command\Command;
-
-
-class TerreCommand extends Command
-{
-    protected function configure()
-    {
-        $this
-            ->setName('terre')
-            ->setDescription('Redescendre sur terre')
-        ;
-    }
-
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-        $output->writeln('Je retourne sur terre');
-    }
-}
-```
-
-**SingleCommand.php :**
-
-``` theme:monokai
-#!/usr/bin/env php
-<?php
-
-require __DIR__.'/vendor/autoload.php';
-
-use Command\EspaceCommand;
-use Command\TerreCommand;
-use Symfony\Component\Console\Application;
-
-// On initialise les deux commandes
-$espaceCommand = new EspaceCommand();
-$terreCommand = new TerreCommand();
-
-// On créer une nouvelle application, et on lui ajoute nos 2 commandes
-$application = new Application();
-$application->add($espaceCommand);
-$application->add($terreCommand);
-
-// On met la commande EspaceCommand en par défaut et on ajout un booléen à TRUE
-$application->setDefaultCommand($espaceCommand->getName(), true);
-
-$application->run();
-```
-
-Dans le fichier SingleCommand, nous avons rajouté un booléen à true, pour indiquer que nous souhaitons avoir une **SCA**.
-
-![](https://asciinema.org/a/ctpdd6v34qfh35try9xtqrrpd)
-
-### LockableTrait
-
-Depuis la version 2.6, il est possible de bloquer une commande si la commande est déjà en train de tourner.
-Voici un petit exemple de comment nous devions faire :
-
-``` theme:monokai
-class LockableCommand extends Command
-{
-    protected function configure()
-    {
-        // ...
-    }
-
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-        $lock = new LockHandler('update:contents');
-        if (!$lock->lock()) {
-            $output->writeln('The command is already running in another process.');
-            return 0;
-        }
-
-        $lock->release();
-    }
-}
-```
-
-Avec la version 3.2, vous pouvez ajouter le trait directement dans votre commande :
-
-``` theme:monokai
-class LockableCommand extends Command
-{
-    use LockableTrait;
-
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-         if (!$this->lock()) {
-            $output->writeln('The command is already running in another process.');
-            return 0;
-         }
-
-         $this->release();
-    }
-}
-```
-
-### Hidden et Options multiples
-
-Une petite nouveauté qui vous permettra de cacher une commande très simplement.
-Une fois la commande cachée, vous pourrez  toujours la lancer, mais elle n’apparaîtra plus dans la liste de vos commandes :
-
-``` theme:monokai
-class HiddenCommand extends Command
-{
-    protected function configure()
-    {
-        $this
-            ->setName('hidden')
-            ->hidden(true)
-        ;
-    }
-
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-        // your code here
-    }
-}
-```
-
-Enfin, il est désormais possible de combiner plusieurs options de texte sur le même input, voici un exemple :
-
-``` theme:monokai
-$output->writeln('<fg=green;options=italic,underscore>Texte vert italic et souligné</>');
-```
-
-### Conclusion
-
-Voilà, je vous ai montré les nouveautés que je préfère, mais ce ne sont pas les seules, pour voir toute la liste des nouveautés pour le composant console, je vous conseille de suivre ce lien : <http://symfony.com/blog/symfony-3-2-0-released>
-
-### 

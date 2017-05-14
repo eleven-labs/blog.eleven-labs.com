@@ -342,7 +342,7 @@ class Connection extends BaseConnection
 
 Et dans notre *Test Client*, on set le bon *EventManager* dans la *Connection* conservée entre chaque test :
 
-```
+```php
 <?php
 
 namespace Cheric\ExampleBundle\Test;
@@ -379,10 +379,6 @@ Le code complet permettant l'analyse de ce problème d'isolation et la solution 
 
 Je ne pense pas être le seul à avoir rencontré ce problème avec les tests de listeners Doctrine et j'espère donc que cette astuce pourra vous permettre de tester fonctionnellement vos listeners plus proprement.
 
- 
-
 Intergalactiquement vôtre et à bientôt !!
-
- 
 
 NB : je me suis concentré ici sur la recherche d'une solution à mon problème d'isolation bien précis, sans pour autant pousser l'analyse du comportement de Doctrine et plus spécifiquement de son *Event Manager*. Si certains ont fait cette analyse, je suis intéressé :) !

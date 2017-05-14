@@ -19,7 +19,7 @@ Je vais parler du query builder (constructeur de requête) Doctrine pour faire d
 
 Si vous voulez suivre les exemples et les tester, il est nécessaire d'installer le bundle [DoctrineMongoDBBundle.](http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html)
 
-### Qu'est-ce que c'est ?
+## Qu'est-ce que c'est ?
 
 Le query builder est une classe qui va permettre de créer des requêtes à la base de données en passant par des objets et méthodes. Il facilite l'écriture de requête complexe.
 
@@ -82,7 +82,7 @@ $article = $this->createQueryBuilder()
 
 Avec le query builder, on va rester dans le monde de l'objet et manipuler exclusivement des objets.
 
-### Le query builder et Symfony
+## Le query builder et Symfony
 
 Dans Symfony, toutes les méthodes qui vont effectuer des requêtes à la base de données se situent dans les repository.
 
@@ -133,7 +133,7 @@ class ArticleRepository extends DocumentRepository
 
 Pour mettre à jour un article qui a pour titre "Mon article", je dois indiquer que je veux le document avec un titre égal à "Mon article" : -&gt;field('title')-&gt;equals("Mon article") . Ensuite, je mets -&gt;field('tags')-&gt;set($tags) pour mettre à jour mon champs "tags".
 
-### Ajouter des expressions
+## Ajouter des expressions
 
 Le builder de base donne un bon nombre d'expressions. Mais parfois, ce n'est pas suffisant. Pour reprendre l'exemple avec les articles, je veux avoir tous les articles publiés à la date d'aujourd'hui. Je vais donc ajouter une expression isPublished(\\DateTime $datetime) .
 
@@ -161,7 +161,7 @@ class Expr extends BaseExpr
 
 Je n'oublie pas de surcharger la création du query builder pour pouvoir utiliser cette nouvelle classe expression.
 
-```
+```php
 <?php
 
 namespace App\AppBundle\Query;
@@ -180,7 +180,7 @@ public function __construct(DocumentManager $dm, $documentName = null)
 }
 ```
 
-```
+```php
 <?php
 
 namespace App\AppBundle\Repository;
@@ -244,7 +244,7 @@ La requête Mongo générée est la suivante :
 }
 ```
 
-### Quick tip
+## Quick tip
 
 Le query builder va hydrater les objets Doctrine avec les données. Sur des objets complexes, ce processus est gourmand en ressource.  Pour gagner en performance, il est possible de désactiver cette hydratation.
 
@@ -258,7 +258,7 @@ $this->createQueryBuilder()
     ->execute();
 ```
 
-### Conclusion
+## Conclusion
 
 Cet article vous a montré comment utiliser le query builder de Doctrine sur une base de données MongoDB. Il facilite l'écriture de requêtes plus ou moins complexes tout en restant dans un style objet. Étendre et ajouter des expressions permet de simplifier des requêtes métier complexes.
 

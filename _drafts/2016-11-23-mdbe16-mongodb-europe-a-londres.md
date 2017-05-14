@@ -14,8 +14,6 @@ tags:
 
 Cette Année, j'ai eu l'occasion de participer à l’événement MongoDB Europe qui s'est déroulé à Londres le 15 Novembre dernier. Voici un retour non exhaustif sur les tracks et les annonces intéressantes de la journée !
 
- 
-
 Note : les slides n’étant pas encore disponibles, l'article sera mis à jour avec les illustrations/slides dès qu'elles seront disponibles.
 
 Edit : [les voici](https://www.mongodb.com/presentations/all?page=1&search=europe%202016)
@@ -30,15 +28,11 @@ Comme chaque année, une ouverture sur quelques chiffres :
 
 Puis quelques grands acteurs sous MongoDB : Baidu (plus grand site chinois, +1000 noeuds MongoDB) ou Barclays
 
- 
-
 **Mongo 3.4**
 
 Les nouveautés de cette version sont présentées sous forme d’amélioration, d'extension ou d'innovation.
 
 ![Improve, Extend and innovate](http://blog.eleven-labs.com/wp-content/uploads/2016/11/IMG_4288.jpg)
-
- 
 
 Improve :
 
@@ -57,11 +51,7 @@ Innovate :
 -   [Compass](https://www.mongodb.com/products/compass)
 -   Possibilité de mélanger les types de stockage (Ex : In Memory et wiredTiger)
 
- 
-
 Toutes les nouveautés de la 3.4 [ici](https://www.mongodb.com/mongodb-3.4).
-
- 
 
 **Keynote du Prof Brian Cox, physicien et astronome.**
 
@@ -69,7 +59,6 @@ Toutes les nouveautés de la 3.4 [ici](https://www.mongodb.com/mongodb-3.4).
 
 L'objectif de cette présentation était de nous montrer l’utilité de MongoDB dans le travail de cartographie de l'univers du prof Cox, et comment l’avènement du BigData aide aujourd'hui énormément les chercheurs à définir des "modèles" d’expansion de l'univers (milliards de données).
 
- 
 
 > Great keynote this morning with Professor Brian Cox, OBE at [@MongoDB](https://twitter.com/MongoDB) [\#MDBE16](https://twitter.com/hashtag/MDBE16?src=hash) [pic.twitter.com/3x9SNp7VS6](https://t.co/3x9SNp7VS6)
 >
@@ -79,17 +68,11 @@ L'objectif de cette présentation était de nous montrer l’utilité de MongoDB
 
 La présentation a commencé par un récapitulatif de l'utilité de l'aggregation framework, puis plusieurs use-cases plus ou moins compliqués d'application.
 
- 
-
 ![Aggregation Framework](http://blog.eleven-labs.com/wp-content/uploads/2016/11/CxTD2xUWEAAaGFI-1.jpg)
-
- 
 
 Par exemple le calcul des nombres premiers en MongoDB
 
-![MongoDB](http://blog.eleven-labs.com/wp-content/uploads/2016/11/CxTJq9WXUAAw7Et.jpg)
-
- 
+![MongoDB](http://blog.eleven-labs.com/wp-content/uploads/2016/11/CxTJq9WXUAAw7Et.jpg) 
 
 Et enfin, une première présentation des graphes sous MongoDB 3.4 avec $graphLookup
 
@@ -99,43 +82,26 @@ Par exemple :
 
 ![$graphLookup](http://blog.eleven-labs.com/wp-content/uploads/2016/11/CxTHdM2XAAAsM_G.jpg)
 
- 
-
- 
 
 ![cxthdmtw8aeguuu](http://blog.eleven-labs.com/wp-content/uploads/2016/11/CxTHdMTW8AEgUuU.jpg)
 
- 
-
 Un article sur les fonctionnalités de $graphLookup plus complet sera disponible sur le blog d'ici peu.
-
- 
 
 **Building WiredTiger**
 
 Il s'agit d'un REX sur la conception du moteur WiredTiger et sur sa gestion de la mémoire.
 
- 
-
 > [\#MDBE16](https://twitter.com/hashtag/MDBE16?src=hash) [pic.twitter.com/ENF1ViV1JT](https://t.co/ENF1ViV1JT)
 >
 > — Pouzor (@Pouz0r) [15 novembre 2016](https://twitter.com/Pouz0r/status/798489580328648704)
-
- 
 
 **The rise of Data Lake**
 
 Cette session avait pour but d'exprimer une architecture cible pour la construction d'un data lake et la place de MongoDB dans cette architecture.
 
- 
-
 > Complète moderne EDM architecture avec [\#MongoDB](https://twitter.com/hashtag/MongoDB?src=hash) [\#MDBE16](https://twitter.com/hashtag/MDBE16?src=hash) [pic.twitter.com/FMNIuwFi5T](https://t.co/FMNIuwFi5T)
 >
 > — Pouzor (@Pouz0r) [15 novembre 2016](https://twitter.com/Pouz0r/status/798539076559175680)
-
- 
-
- 
 
 **Graph Operations with MongoDB**
 
@@ -143,21 +109,15 @@ Cette session finale avait pour but de couvrir en détail les possibilités des
 
 La session a commencé par une timeline des versions MongoDB.
 
- 
-
 > Évolution of MongoDB [\#MDBE16](https://twitter.com/hashtag/MDBE16?src=hash) [pic.twitter.com/Sbj45iHEFk](https://t.co/Sbj45iHEFk)
 >
 > — Pouzor (@Pouz0r) [15 novembre 2016](https://twitter.com/Pouz0r/status/798572477001633792)
 
 Puis sur l’étude de plusieurs cas d'utilisations des graphes sous MongoDB.
 
- 
-
 > [\#MongoDB](https://twitter.com/hashtag/MongoDB?src=hash) graph usage : Get friends of mine [pic.twitter.com/sbXzUIUqvr](https://t.co/sbXzUIUqvr)
 >
 > — Pouzor (@Pouz0r) [15 novembre 2016](https://twitter.com/Pouz0r/status/798577288715571200)
-
- 
 
 **Goodby and see you soon**
 

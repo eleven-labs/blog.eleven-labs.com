@@ -29,7 +29,7 @@ Dans le dossier parent, ajoutez un composer.json avec toutes les dépendances do
 
 Dans votre dossier /Tests, ajoutez le fichier bootstrap.php contenant alors l'autoload.
 
-```
+```php
 <?php
 // Test/bootstrap.php
 
@@ -50,7 +50,7 @@ Dans app/ gardez la structure classique avec vos configurations dans le dossier 
 
 Créez alors le fichier AppKernel.php d'initialisation de votre Kernel
 
-```
+```php
 <?php
 
 // Test/Fixtures/app/AppKernel.php
@@ -111,7 +111,7 @@ class AppKernel extends Kernel
 
 Ainsi que votre fichier console, vous pourrez appeler votre Kernel.
 
-```
+```php
 #!/usr/bin/env php
 <?php
 
@@ -140,7 +140,7 @@ $application->run($input);
 
 Il ne reste plus qu'à faire le fichier phpunit.xml.dist permettant de configurer votre phpunit.
 
-```
+```xml
 // phpunit.xml.dist
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -186,11 +186,9 @@ Il ne reste plus qu'à faire le fichier phpunit.xml.dist permettant de configure
 </phpunit>
 ```
 
- 
-
 Pour rendre vos tests encore plus propres et plus indépendants, mettez en place un système de rollback des requêtes de test, il suffit pour cela d'étendre le Client de Symfony2 par un client qui isole les requêtes de test. Créez la class Client dans le dossier de test.
 
-```
+```php
 <?php
 
 /Tests/Client.php
@@ -239,7 +237,7 @@ class Client extends BaseClient
 
 Terminez par le plus simple : la configuration du build.xml pour Jenkins, voici un exemple mais là, c'est à vous de jouer.
 
-```
+```xml
 /build.xml
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -404,8 +402,6 @@ Terminez par le plus simple : la configuration du build.xml pour Jenkins, voici 
   </target>
 </project>
 ```
-
- 
 
 Si vous avez des questions laissez moi un commentaire :)
 

@@ -14,7 +14,7 @@ tags:
 - Chiffrement
 ---
 
-#### **Algorithmes symétriques :**
+## **Algorithmes symétriques :**
 
 La **cryptographie symétrique**, également dite **à clé secrète**, est la plus ancienne forme de chiffrement. Elle permet à la fois de chiffrer et de déchiffrer des messages à l'aide d'un même mot clé.
 
@@ -43,7 +43,7 @@ Cependant, ces types d’algorithmes comportent un problème. En effet, il faut
 
 Comment envoyer de manière sécurisée la clé au destinataire pour qu'il puisse déchiffrer votre message ?
 
-#### **Algorithmes asymétriques :**
+## **Algorithmes asymétriques :**
 
 À la différence des algorithmes symétriques, les algorithmes asymétriques fonctionnent avec **deux clés**. On peut les appeler aussi, algorithmes à **clé publique**.
 

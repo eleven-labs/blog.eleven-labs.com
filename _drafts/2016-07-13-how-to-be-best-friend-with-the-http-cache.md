@@ -31,7 +31,6 @@ source: https://fr.wikipedia.org/wiki/Cache\_web
 
 Don't worry, there is a solution; the purpose of this article is to enable you to finally get to grips with the HTTP cache.
 
- 
 
 Principle of the HTTP Cache
 ===========================
@@ -140,7 +139,6 @@ The web server also allows you to use the HTTP cache, it is generally used for t
 
 ![Architecture Http](http://blog.eleven-labs.com/wp-content/uploads/2016/05/Untitled.png)
 
- 
 
 Customizing your HTTP cache
 ===========================
@@ -157,9 +155,8 @@ This is a header that references your page, either by name (home, page, etc.), o
 
 To allow you to easily find all pages stored in Varnish and that reference a particular object; if you can find them, you can delete them, and hence generate a cache. To do this, it is necessary to configure Varnish to create a ban of a URL. Here is a little code easy to set up:
 
-  
 
-```zsh
+```varnish
 # Ban - Catalogue decache
 #
 # How to ban all objects referencing <my_tag> in the X-Cache-Varnish-Catalog header
@@ -207,7 +204,7 @@ Easy; your page is expired and the request arrives directly on your server.
 
 Here is the configuration for Varnish:
 
-```zsh
+```varnish
 sub vcl_backend_response {
    # Happens after we have read the response headers from the backend.
    #
@@ -244,7 +241,7 @@ On every page you have a block of pages which is always the same, but you must c
 
 ESIs serve in this situation. An ESI is simply a page with its own cache that can be inserted into another via an HTML tag.
 
-```
+```html
 //home.html
 <html>
 <body>

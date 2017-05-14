@@ -34,10 +34,8 @@ Dan Abramov a donc lancé, en juin 2015, [Redux](http://redux.js.org/), qui perm
 
 Pour plus d'informations sur les différences Redux / Flux, je vous invite à lire cette [réponse de Dan](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux/32920459#32920459).
 
- 
-
 Installation
-------------
+============
 
 Nous allons voir dans cet article comment mettre en place et utiliser Redux sur vos projets.
 Notez dès maintenant que la librairie peut être utilisée avec plusieurs librairies de rendu comme React ou VueJS.
@@ -46,15 +44,13 @@ Pour installer Redux, il vous faudra installer le package npm (ou yarn) redux 
 Si vous utilisez Redux sur une application React, il vous faudra également le package react-redux  ou encore vue-redux  s'il s'agit d'un projet VueJS.
 
 ```
-$ yarn add redux
+yarn add redux
 ```
 
 Rien de plus, vous êtes prêt à utiliser Redux.
 
- 
-
 Utilisation classique
----------------------
+=====================
 
 Comme décrit précédemment, il vous faudra initialiser un store  qui va permettre de stocker l'état de votre application.
 
@@ -64,8 +60,6 @@ Ces changements d'état sont effectués lorsqu'une action  est déclenchée sur
 Voilà, nous avons là les 3 composantes d'une application structurée par Redux : des **actions**, des **reducers** et un **store**.
 
 Nous allons prendre un cas pratique simple : un compteur que l'on peut incrémenter ou décrémenter d'une certaine valeur.
-
- 
 
 Voici l'arborescence que nous ciblons :
 
@@ -83,8 +77,6 @@ src/
     └── configureStore.js
 ```
 
- 
-
 ### Actions
 
 Écrivons donc un fichier d'actions qui permet de définir ces deux actions : incrémenter et décrémenter.
@@ -98,8 +90,6 @@ export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 ```
 
- 
-
 Nous allons maintenant écrire les définitions des actions. Créez maintenant le fichier src/actions/counter.js  :
 
 ```js
@@ -109,11 +99,7 @@ export const increment = (value) => ({ type: types.INCREMENT, value });
 export const decrement = (value) => ({ type: types.DECREMENT, value });
 ```
 
- 
-
 Vous venez de déclarer deux actions (increment  et decrement ) qui prennent chacune un type (obligatoire) et une valeur à ajouter ou soustraire.
-
- 
 
 ### Reducers
 
@@ -146,20 +132,13 @@ export default function counter(state = initialState, action) {
 }
 ```
 
- 
-
- 
 
 Vous avez compris l'idée, nous avons nos actions dans un switch() { case ... }  et mettons directement à jour les valeurs de notre store.
 Vous remarquerez que nous avons créés un état initial (initialState) afin d'initialiser les valeurs de notre application.
 
-\[note\]**Note :** Il vous est possible de créer autant de reducers que nécessaire.\[/note\]
-
- 
+**Note :** Il vous est possible de créer autant de reducers que nécessaire.
 
 Si vous avez déclaré plusieurs reducers dans votre application, vous pouvez les combiner dans un fichier src/reducers/index.js  comme suit :
-
- 
 
 ```js
 import { combineReducers } from 'redux';
@@ -174,8 +153,6 @@ const reducers = combineReducers({
 
 export default reducers;
 ```
-
- 
 
 ### Store
 
@@ -196,11 +173,7 @@ const configureStore = () => {
 export default configureStore;
 ```
 
- 
-
 Nous utilisons ici la fonction createStore()  de l'API Redux permettant de créer notre store.
-
- 
 
 Afin d'aller un peu plus loin, notez que cette fonction peut prendre jusqu'à 3 arguments :
 
@@ -209,8 +182,6 @@ Afin d'aller un peu plus loin, notez que cette fonction peut prendre jusqu'à 3 
 3.  des "enhancers" (*optionnels*), autrement dit des callbacks comme des middlewares.
 
 Un middleware permet d'exécuter une callback à chaque fois que le dispatch()  d'actions est exécuté.
-
- 
 
 Voici un exemple de middleware permettant de logger chaque action déclenchée :
 
@@ -235,14 +206,10 @@ const configureStore = () => {
 export default configureStore;
 ```
 
- 
-
 N'oubliez pas d'utiliser la fonction applyMiddleware()  lorsque vous passez vos fonctions de middleware au store.
 
- 
-
 Utilisation avec React
-----------------------
+======================
 
 Le principe reste exactement le même lorsque Redux est utilisé avec React, cependant, la librairie react-redux  va vous apporter des petites choses en plus.
 
@@ -286,8 +253,6 @@ export default connect(
 )(Counter);
 ```
 
- 
-
 De cette façon, nous récupérons donc les valeurs de nos props provenant de notre store mais également une propriété actions  permettant d'appeler nos actions Redux.
 
 Les principaux éléments à noter ici sont :
@@ -297,12 +262,10 @@ Les principaux éléments à noter ici sont :
 
 Ces deux fonctions sont ensuite appliquées à l'aide de la fonction connect()  fournie par react-redux .
 
-\[note\]**Note :** Nous devons ici utiliser bindActionCreators()  sur nos CounterActions  car il s'agit d'un objet dont les valeurs sont des actions et cette fonction va permettre d'ajouter un appel à la fonction dispatch()  de Redux afin que celles-ci soient correctement déclenchées.\[/note\]
-
- 
+**Note :** Nous devons ici utiliser bindActionCreators()  sur nos CounterActions  car il s'agit d'un objet dont les valeurs sont des actions et cette fonction va permettre d'ajouter un appel à la fonction dispatch()  de Redux afin que celles-ci soient correctement déclenchées.
 
 Conclusion
-----------
+==========
 
 Si nous mettons en parallèle les **1 303 720 téléchargements sur le mois précédent** **de la librairie Redux** avec les **2 334 221 de téléchargements pour React**, nous remarquons que Redux est aujourd'hui **très utilisé** et semble vraiment très **apprécié** par les développeurs car il s'agit d'une solution **simple** qui permet réellement de structurer une application front.
 

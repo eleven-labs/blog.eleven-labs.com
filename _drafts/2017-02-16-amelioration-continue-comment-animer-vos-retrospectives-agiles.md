@@ -20,7 +20,7 @@ Chez Eleven Labs, notre méthodologie agile repose principalement sur la méthod
 
 Dans cet article, on parlera plus particulièrement d’une rétrospective de sprint SCRUM dans le cadre d’un projet informatique mais la plupart des outils mentionnés ici sont utilisables pour n’importe quelle méthodologie agile et la majorité des projets.
 
-\[caption id="attachment\_3417" align="aligncenter" width="720"\]![](http://blog.eleven-labs.com/wp-content/uploads/2017/02/Prez-Scrum-Eleven-fondblanc-focus-retrospective.png) Rétrospective de fin d'un Sprint SCRUM\[/caption\]
+![](http://blog.eleven-labs.com/wp-content/uploads/2017/02/Prez-Scrum-Eleven-fondblanc-focus-retrospective.png) Rétrospective de fin d'un Sprint SCRUM
 
 Objectif ?
 ==========
@@ -69,8 +69,7 @@ Quels outils ?
 
 Pour bien animer cette rétrospective, il existe différents outils permettant de mener la discussion jusqu’à l’établissement du plan d’actions d’améliorations. En voici quelques uns, à utiliser à différentes étapes de la rétrospective :
 
-Pour récolter les données (“gathering data”)
---------------------------------------------
+### Pour récolter les données (“gathering data”)
 
 La première étape est de lancer la discussion puis de recueillir les avis de chacun et obtenir une bonne vision de ce qui s’est bien ou moins bien passé pendant cette itération.
 
@@ -94,7 +93,7 @@ Si l’équipe n’est globalement pas suffisamment à l’aise pour discuter de
 
 De la même façon, les 5 notes du Safety Check précédent peuvent être représentées de manières plus ludiques à l’aide d’images, de personnages ou smileys plus ou moins confiants.
 
-\[caption id="attachment\_3418" align="aligncenter" width="300"\]![](http://blog.eleven-labs.com/wp-content/uploads/2017/02/mood-board.jpg) Mood Board des astronautes Eleven Labs\[/caption\]
+![](http://blog.eleven-labs.com/wp-content/uploads/2017/02/mood-board.jpg) Mood Board des astronautes Eleven Labs
 
 -   **One word**
 
@@ -111,7 +110,7 @@ La manière la plus courante, et aussi souvent la plus efficace, est de demander
 -   ou variante métaphorique du bateau, symbolisant l’équipe : le facilitateur dessine sur un paper board ou tableau un bateau à moitié sous l’eau et à moitié à la surface, avec sa voile qui lui permet d’avancer, son ancre qui le ralentit et le tire vers le fond, et le vent qui permettrait de faire encore accélérer le bateau.
 -   Il est aussi possible de laisser l’équipe inventer ses propres catégories. Chez Eleven Labs, on aime bien celles-ci : **“⊕ Points positifs”, “⊖ Points négatifs”, “✨ Idées d’amélioration”, “❤ Remerciements personnalisés”**
 
-\[caption id="attachment\_3419" align="aligncenter" width="300"\]![](http://blog.eleven-labs.com/wp-content/uploads/2017/02/post-it-rétrospective-web.jpg) Post-it catégorisés lors de nos rétrospectives chez Eleven Labs\[/caption\]
+![](http://blog.eleven-labs.com/wp-content/uploads/2017/02/post-it-rétrospective-web.jpg) Post-it catégorisés lors de nos rétrospectives chez Eleven Labs
 
 Quelques soient ces catégories, l’idée est de définir une courte durée (5 ou 10 minutes) pendant laquelle chacun met ses idées sur ses post-it. Ensuite chacun à son tour va les coller sur le tableau, dans la bonne catégorie, et expliquer à l’équipe chacun de ses points. Le dernier à s’exprimer, ou autre volontaire, pourra ensuite regrouper les idées similaires pour donner une meilleure vision globale.
 
@@ -131,8 +130,8 @@ Pour récolter toutes les données d’une itération, on peut aussi demander à
 
 Une itération de type Sprint SCRUM étant de courte durée, cette technique n’est pas toujours cohérente, puisqu’il n’est pas toujours simple de placer au bon endroit sur la timeline un fait du sprint. Cet exercice est donc généralement plutôt utilisé sur une échelle de temps plus importante, pour une rétrospective release ou un projet entier par exemple.
 
-Pour trouver les causes des problèmes et leurs solutions
---------------------------------------------------------
+### Pour trouver les causes des problèmes et leurs solutions
+
 
 Les techniques précédentes permettent ainsi d’avoir une bonne vision des problèmes rencontrés par l’équipe. Avant d’établir un plan d’actions d’améliorations, il nous faut trouver des solutions pour chacun de ces points.
 
@@ -159,8 +158,7 @@ Ce framework de facilitation permet de guider la discussion, de la rendre très 
 
 Enfin, cette dernière technique très simple consiste à demander “Pourquoi” cinq fois de suite quand un problème a été identifié, jusqu’à en arriver à la vraie cause du problème, qui est souvent masquée. Une fois la cause “racine” connue, on peut plus facilement trouver la solution à apporter.
 
-Pour définir le plan d’actions
-------------------------------
+### Pour définir le plan d’actions
 
 Si vous avez bien pratiqué les techniques précédentes, vous avez maintenant une bonne vision des problèmes rencontrés par l’équipe et avez identifié de potentielles solutions et améliorations. Ils s’agit donc maintenant de vous mettre d’accord sur un plan d’actions.
 
@@ -189,10 +187,9 @@ Pour les autres, j’espère que cela vous aura donné l’envie de pratiquer ce
 
 N’hésitez pas à partager vos expériences de rétrospectives en commentaires ci-dessous.
 
- 
+**Sources :**
 
-*Sources :
-[http://scrumtrainingseries.com/SprintRetrospectiveMeeting/SprintRetrospectiveMeeting.htm
-](http://scrumtrainingseries.com/SprintRetrospectiveMeeting/SprintRetrospectiveMeeting.htm)[http://retrospectivewiki.org/
-](http://retrospectivewiki.org/)[http://retrospectives-agiles.fr/
-](http://retrospectives-agiles.fr/)[http://www.scaledagileframework.com/inspect-and-adapt/](http://www.scaledagileframework.com/inspect-and-adapt/)*
+- [Sprint Retrospective Meeting](http://scrumtrainingseries.com/SprintRetrospectiveMeeting/SprintRetrospectiveMeeting.htm)
+- [Retrospective Wiki](http://retrospectivewiki.org/)
+- [Retrospective Agiles](http://retrospectives-agiles.fr/)
+- [Inspect and Adapt](http://www.scaledagileframework.com/inspect-and-adapt/)

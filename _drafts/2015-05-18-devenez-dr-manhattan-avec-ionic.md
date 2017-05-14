@@ -88,12 +88,8 @@ Vous obtiendrez un fichier compressé et optimisé à déposer sur le store.
 
 **Quelques liens utiles**
 
-[Ionic cheatsheet](http://devdactic.com/wp-content/uploads/2015/02/ionic-cheatsheet.png)
-
-[100 Ionic framework resources](http://mcgivery.com/100-ionic-framework-resources/)
-
-[Ionic CodePen](http://codepen.io/ionic/)
-
-[Ionic Github](https://github.com/driftyco/ionic)
-
-[Ionic-cli Github](https://github.com/driftyco/ionic-cli)
+- [Ionic cheatsheet](http://devdactic.com/wp-content/uploads/2015/02/ionic-cheatsheet.png)
+- [100 Ionic framework resources](http://mcgivery.com/100-ionic-framework-resources/)
+- [Ionic CodePen](http://codepen.io/ionic/)
+- [Ionic Github](https://github.com/driftyco/ionic)
+- [Ionic-cli Github](https://github.com/driftyco/ionic-cli)

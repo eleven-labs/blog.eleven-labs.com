@@ -23,8 +23,7 @@ Dans l'idée, PHP 7.1 sortira donc incessamment sous peu, en tout cas, avant la 
 Les features
 ============
 
-Nullable types
---------------
+### Nullable types
 
 Il s'agit selon moi de l'implémentation la plus intéressante de PHP 7.1. En effet, PHP 7.0 a permis l'ajout du Scalar Type Hinting en paramètres des fonctions, mais il est également possible de typer le retour (classes & scalaires). Cependant, le problème se pose lorsque l'on a potentiellement un paramètre ou un retour null.
 
@@ -42,8 +41,7 @@ Adaptons maintenant ce code pour PHP 7.1, et voyons ce que cela donne :
 
 Comme on peut le constater, nous pouvons dorénavant sans utiliser les paramètres par défaut, passer ou retourner des valeurs nulles grâce au type préfixé "?".
 
-Multi-catch
------------
+### Multi-catch
 
 Il est déjà possible depuis bien longtemps de faire du multi-catch avec plusieurs blocs catch, les uns à la suite des autres. Néanmoins, cela peut être parfois redondant, lorsque l'on veut gérer de la même manière deux types d'exceptions qui n'ont rien en commun. Voici comment l'utiliser :
 
@@ -51,8 +49,7 @@ Il est déjà possible depuis bien longtemps de faire du multi-catch avec plusie
 
 Notez que je n'utilise que deux exceptions ici, mais j'aurais pu les chaîner avec d'autres.
 
-Void type
----------
+### Void type
 
 Un nouveau type de retour a également été introduit, il s'agit du type "void". Voici son comportement :
 
@@ -62,22 +59,19 @@ Comme on peut le voir, il est possible d'utiliser un return. Mais il faut noter
 
 De prime abord, son utilisation peut paraître inutile (surtout dans le cadre de cet exemple) mais est pourtant bien réel, appliqué dans une interface par exemple, il permet de ne pas faire dévier les multiples implémentations de cette interface.
 
-Iterable type
--------------
+### Iterable type
 
 De la même manière que pour le type void, un autre type a été introduit, le type "iterable". Là encore, son utilité peut paraître trouble, puisqu'il existe pour cela l'interface native Traversable. Cependant, étant donné le retour à un typage des scalaires, les tableaux et les objets pouvant être itérés de la même manière, il fallait pouvoir englober à la fois tableaux scalaires, et objets traversable, ce à quoi répond ce type.
 
 Encore une fois, il est utilisable aussi bien pour typer un paramètre, que dans le typage de retour.
 
-Class constant visibility
--------------------------
+### Class constant visibility
 
 Quelque chose qui manquait à mon sens dans les classes, et qui est enfin résolu. Il n'était pas possible jusqu'ici d'appliquer une visibilité à une constante de classe. Ce problème est résolu, et évitera à bon nombre d'utiliser des variables statiques pour contourner le problème.
 
 Notez tout de même, que la portée par défaut si vous ne la spécifiez pas reste publique, afin de garder un minimum de cohérence avec les anciennes versions.
 
-Miscellaneous
--------------
+### Miscellaneous
 
 Nous pouvons également citer *en vrac* d'autres features :
 

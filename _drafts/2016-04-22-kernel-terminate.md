@@ -16,8 +16,8 @@ Il ne s'agit pas dans cet article de revenir sur le fonctionnement de l'EventDis
 
 Sachez tout d'abord qu'aucun code n'est exposé ici, je vous laisse cette démarche. D'autre part, si l'exemple est pris avec Symfony (qui simplifie le problème), ce n'est pas Symfony qui permet ce que nous allons étudier ici, mais l'implémentation du serveur PHP.
 
-Les events kernel.\*
-====================
+Les events kernel.
+==================
 
 Avant de rentrer dans le vif du sujet, profitons-en pour rappeler les différents types d'événements kernel.\* qui sont dispatchés. Bien entendu, une liste exhaustive et bien plus complète existe en anglais dans la [documentation officielle](http://symfony.com/doc/current/reference/events.html) (et [une version très détaillée](http://symfony.com/doc/current/components/http_kernel/introduction.html)). Dans leur ordre d'apparition dans le cycle d'une requête HTTP jusqu'à sa réponse.
 
@@ -53,7 +53,7 @@ kernel.terminate
 Cet événement est dispatché lorsque la réponse HTTP à été transmise au client. L'intérêt étant de pouvoir effectuer des traitements coûteux en temps. Si ces traitements étaient fait en amont de l'envoi de la réponse, l'utilisateur le ressentirait sur le délai de réponse de la page. Et à mon sens, cet événement est bien souvent sous-estimé.
 
 Exemple concret
----------------
+===============
 
 Vous ne voyez toujours pas l'intérêt ? Un petit exemple pour vous l'expliquer pourrait vous aider à comprendre.
 
@@ -70,14 +70,14 @@ Alors pourquoi ne pas duper l'utilisateur ? 20 secondes pour une tâche inform
 Ce pari, il a été pris par de nombreuses entreprises, qui anticipent vos déplacements sur leurs sites pour vous faire croire que celui-ci est fluide et réactif, et pour cacher certaines lenteurs dû à des processus parfois complexes. Et ça marche plutôt bien, alors pourquoi ne pas en profiter dans vos projets ? Pour plus d'informations, je vous renvoie une fois de plus à la documentation officielle pour cet [événement](http://symfony.com/doc/current/components/http_kernel/introduction.html#the-kernel-terminate-event).
 
 Est-ce vraiment utile ?
------------------------
+=======================
 
 Dans des grosses structures, telles que LinkedIn par exemple, on préférera utiliser des solutions asynchrones qui passent par des queues manager (exemple : RabbitMQ, Kafka, etc.) qui sont beaucoup plus scalables sur de larges architectures. Mais dans des projets de petite à moyenne envergure, dans les PME notamment, il n'est pas toujours simple de mettre en place ces solutions qui répondent à des problématiques de grande envergure. Ce serait comme pêcher du poisson avec un lance-roquettes.
 
 Or ici, dans de plus petits projets, le fait de jouer avec cette notion de kernel.terminate prend tout son sens. De plus, il est très simple à mettre en place avec Symfony, il suffit de créer un [listener](http://symfony.com/doc/current/cookbook/event_dispatcher/event_listener.html#creating-an-event-listener) ou un [subscriber](http://symfony.com/doc/current/cookbook/event_dispatcher/event_listener.html#creating-an-event-subscriber) dessus.
 
 Ce n'est pas la réponse à tous les problèmes
---------------------------------------------
+============================================
 
 Il y a des cas où l'événement ne peut pas être utilisé, il cible des problèmes particuliers. En effet parfois, vous aurez besoin d'attendre que votre traitement coûteux soit terminé pour fournir une réponse HTTP, car celle-ci dépend de votre traitement. Dans ce cas vous ne pourrez pas utiliser cet événement. Ce sera à vous donc d'optimiser au mieux votre algorithme, pour qu'il prenne le moins de temps possible dans votre contrôleur ; et ainsi retourner une réponse dans les meilleurs délais.
 

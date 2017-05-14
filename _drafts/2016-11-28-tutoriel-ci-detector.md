@@ -24,6 +24,5 @@ Nous allons voir ensemble un cas pratique d'utilisation afin de mieux comprendre
 Et bien sûr, si vous avez des remarques et/ou questions, n'hésitez pas à écrire un commentaire !
 Je me ferai un plaisir d'échanger avec vous.
 
- 
-
-https://www.youtube.com/watch?v=lMETVJSr9R4
+{% youtube lMETVJSr9R4 %}
+<!-- https://www.youtube.com/watch?v=lMETVJSr9R4 -->

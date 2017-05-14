@@ -33,10 +33,8 @@ In June 2015, Dan Abramov has launched [Redux](http://redux.js.org/) which sim
 
 For more information about Redux/Flux differences I encourage you to have a look at [Dan's answer](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux/32920459#32920459) on this subject.
 
- 
-
 Installation
-------------
+============
 
 This article will deal about how to install and use Redux on your own projects.
 Please keep in mind that Redux can be used with multiple rendering frameworks like React or VueJS.
@@ -45,15 +43,13 @@ To install Redux, you will just need the redux npm (or yarn) package.
 If you use Redux into a React application, you will also need the react-redux  package or even the vue-redux  if you want to use it on a VueJS project.
 
 ```
-$ yarn add redux
+yarn add redux
 ```
 
 Nothing more, you can now start to use Redux.
 
- 
-
 Basic usage
------------
+===========
 
 As previously described, you will have to instanciate a new store  that will allow to store the state of all your application.
 
@@ -138,7 +134,7 @@ export default function counter(state = initialState, action) {
 You got the idea, we have our actions wrapped into a switch() { case ... }  and directly return the store updated with new values.
 You can also observe that we have initialized an initial state (initialState) in order to prepare our application state with some default values.
 
-\[note\]**Note:** You can write as many reducers as you need in your application so you can clearly split your code application.\[/note\]
+**Note:** You can write as many reducers as you need in your application so you can clearly split your code application.
 
 Only point if you declare multiple reducers into your application is that you will have to combine them here in a file named src/reducers/index.js  as follows:
 
@@ -210,10 +206,8 @@ export default configureStore;
 
 Do not forget to call the applyMiddleware()  function when you pass your function to the store argument.
 
- 
-
 React use case
---------------
+==============
 
 Principles are exactly the same when you want to use Redux on a React application. However, the react-redux  library brings some cool additional features to fit with React.
 
@@ -229,12 +223,8 @@ import { bindActionCreators } from 'redux';
 import * as CounterActions from '../actions/counter';
 
 const Counter = ({ children, value, actions }) => (
-  
-
-
     Increment
     Decrement
-  
 );
 
 Counter.propTypes = {
@@ -266,12 +256,10 @@ Main things to note here are:
 
 These two functions are applied thanks to the connect()  function brought by the react-redux library.
 
-\[note\]**Note:** We have to use the bindActionCreators()  function over our CounterActions  because this is an object that contains actions functions so this function will allows React to call the dispatch()  Redux function when React will call the functions in order to have them correctly triggered.\[/note\]
-
- 
+**Note:** We have to use the bindActionCreators()  function over our CounterActions  because this is an object that contains actions functions so this function will allows React to call the dispatch()  Redux function when React will call the functions in order to have them correctly triggered.
 
 Conclusion
-----------
+==========
 
 If we put in parallel the download numbers of Redux (**1 303 720 download over the previous month)** with the **2 334 221 downloads of React**, we can conclude that Redux is today **very used** and seems very much **appreciated** by developers because it's a **simple** solution that can greatly help you to structure your application.
 

@@ -23,7 +23,7 @@ Dans cet article, je vais m'intéresser à deux axes :
 -   gérer les exceptions
 
 Lever les exceptions au bon moment
-----------------------------------
+==================================
 
 Commençons d'abord par le début, il y a une exception parce qu'à un moment dans l'application ou un des composants, une condition ou une opération n'a pas pu être remplie.
 
@@ -120,7 +120,7 @@ class InvalidArgumentException extends \InvalidArgumentException implements Exce
 ```
 
 Les attraper au bon moment
---------------------------
+==========================
 
 Il est tentant d'attraper toutes les erreurs qui peuvent survenir. Mais il est préférable d'attraper uniquement les exceptions que l'application est capable de gérer. Sinon, il vaut mieux les laisser se propager jusqu'au niveau le plus haut. Avec l'utilisation d'un framework tel que Symfony, une exception qui n'est pas attrapée dans l'application sera gérée par le framework (et affichera une belle page 500).
 
@@ -162,7 +162,7 @@ Une application est un emboîtement de composants, qui lorsqu'ils sont assemblé
 Pour un framework, tel que Symfony, c'est le même principe. Si le développeur ne sait pas quoi faire de l'exception, il va la laisser remonter jusqu'à un écouteur capable de la gérer. Et tout en haut, il y a cet écouteur: [src\\Symfony\\Component\\HttpKernel\\EventListener\\ExceptionListener](https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/EventListener/ExceptionListener.php).
 
 Pour conclure
--------------
+=============
 
 Une exception, telle que son nom l'indique, est un événement qui arrive à un moment exceptionnel dans la vie de l'application. Elle arrive car une opération s'est mal déroulée, ou un développeur a mal utilisé un composant. Quelque soit la raison, l'exception se doit d'être le plus explicite possible. Sa bonne compréhension permet de la réparer au plus vite. Il est important de lever l'exception au bon moment.
 
@@ -170,7 +170,8 @@ Par contre, l'exception ne doit pas être mise sous le tapis, mais elle doit êt
 
 Une exception bien lancée et gérée correctement permet à votre application d'être facilement maintenable et rend le diagnostic d'une erreur plus simple et rapide.
 
-#### Références
+Références
+==========
 
 -   http://wiki.c2.com/?ExceptionPatterns
 -   http://www.phptherightway.com/\#exceptions

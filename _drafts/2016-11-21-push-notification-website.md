@@ -33,8 +33,6 @@ Feel free to choose any name for the project. Once you are on the dashboard, you
 
 ![settings](http://blog.eleven-labs.com/wp-content/uploads/2016/11/settings-1.png)
 
- 
-
 In the "Cloud messaging" tab you'll find your sender ID.
 
 ![cloud](http://blog.eleven-labs.com/wp-content/uploads/2016/11/cloud.png)
@@ -107,7 +105,7 @@ Since we want to do something clean (even if it's just a tutorial), we are going
 
 The script installation is done in the HTML code, in files public/home.html and public/article/alorscettearticle.html.
 
-```xhtml
+```html
 <html>
   <head>
     <meta charset=utf-8/>
@@ -207,25 +205,28 @@ Now that the tokens are stored in the database, we are going to prepare a messag
 
 ```js
 console.log('Started', self);
-
 self.addEventListener('install', function(event) {
   self.skipWaiting();
   console.log('Installed', event);
 });
-
 self.addEventListener('activate', function(event) {
   console.log('Activated', event);
 });
-
 self.addEventListener('push', function(event) {
   console.log('Push message', event);
-
   var title = 'Le push de test :)';
-
   event.waitUntil(
     self.registration.showNotification(title, {
-     body: 'Bravo tu l
+     body: 'Bravo tu l\'as reçu',
+     icon: 'images/icon.png',
+     tag: 'my-tag'
+   }));
+});
+```
+
 It's almost ready! We are going to create a "/sender" url that will allow us to send notifications to all the tokens that we have in the database. To do so, we are going to use the request and firebase modules (npm version). Here is the new package.json:
+
+```json
 {
   "name": "pwa-parisjs",
   "version": "0.0.1",

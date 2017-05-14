@@ -14,7 +14,7 @@ tags:
 ---
 
 Introduction à Atom
--------------------
+===================
 
 [Atom](https://atom.io) est un éditeur de texte (principalement utilisé pour du code) multi-plateforme développé par la société GitHub et qui s'appuie sur un autre framework développé par GitHub : [Electron](http://electron.atom.io/), qui permet de développer des applications natives pour chaque système d'exploitation à partir de code Javascript.
 
@@ -25,23 +25,19 @@ Vous pouvez les retrouver à l'URL suivante : <https://atom.io/packages>
 
 Si toutefois vous ne trouvez pas votre bonheur dans les packages déjà proposés, vous pouvez alors écrire le votre et nous allons voir qu'il n'y a rien de compliqué.
 
- 
-
 Générer son premier package
----------------------------
+===========================
 
 Pour créer votre premier package, rassurez-vous, vous n'allez pas partir de rien. En effet, nous allons utiliser la commande fournie par le package Package Generator  natif à Atom.
 
 Pour se faire, il vous suffira de naviguer dans : Packages -&gt; Package Generator -&gt; Generate Atom Package.
 
-\[note\]Lors de la génération, vous pouvez choisir le langage que vous souhaitez utiliser pour développer votre package, entre **Javascript** et **Coffeescript**. Cet article est rédigé en Javascript.\[/note\]
+Note: Lors de la génération, vous pouvez choisir le langage que vous souhaitez utiliser pour développer votre package, entre **Javascript** et **Coffeescript**. Cet article est rédigé en Javascript.
 
 Atom vous ouvrira alors une nouvelle fenêtre à l'intérieur de votre nouveau package, nommé my-package .
 
- 
-
 Structure d'un package
-----------------------
+======================
 
 Nous allons maintenant détailler la structure par défaut du projet :
 
@@ -64,8 +60,6 @@ Nous allons maintenant détailler la structure par défaut du projet :
 └── my-package.less
 ```
 
- 
-
 Le premier élément à renseigner est le fichier package.json  qui doit contenir les informations relatives à votre package tel que son nom, sa version, license, mots clés pour trouver votre package et également ses librairies de dépendances.
 
 Notez également la présence dans ce fichier d'une section activationCommands  qui vous permet de définir la commande exécutée lors de l'activation de votre package.
@@ -79,8 +73,6 @@ Nous avons ensuite le fichier keymaps/my-package.json  qui vous permet d'enregi
   }
 }
 ```
-
- 
 
 Passons maintenant au point d'entrée de votre package. Il s'agit de ce qui se trouve dans lib/my-package.js .
 
@@ -97,17 +89,15 @@ activate(state) {
 }
 ```
 
- 
 
 Notre commande étant enregistrée, nous pouvons dès maintenant l'exécuter en ouvrant la palette de commande : My Package: Toggle .
 Celle-ci va exécuter le code contenu dans la méthode toggle()  de votre classe, soit dans le package par défaut, afficher une petite fenêtre en haut de l'écran.
 
 Vous pouvez ajouter autant de commandes que vous le souhaitez et surtout, découper votre code comme vous le sentez.
 
- 
 
 Ajouter des paramètres dans mon package
----------------------------------------
+=======================================
 
 Vous avez la possibilité d'ajouter des paramètres à votre package et ceci est rendu possible grâce au composant [Config](https://atom.io/docs/api/latest/Config).
 
@@ -123,8 +113,6 @@ config: {
 }
 ```
 
- 
-
 La configuration offre un grand nombre de valeurs disponibles (boolean , color , integer , string , ...) ce qui permet de laisser un grand nombre de choix à vos utilisateurs.
 
 Les paramètres de votre package apparaîtront alors pour votre package, sous Atom :
@@ -138,14 +126,10 @@ Vous pourrez alors, à tout moment dans votre code, obtenir dans votre package l
 let gitlabUrl = atom.config.get('gitlabUrl');
 ```
 
- 
-
 Tour d'horizon des composants
------------------------------
+=============================
 
 Vous pouvez maintenant commencer à développer votre package, nous allons donc parcourir les différents composants qui sont à votre disposition et que vous pourrez utiliser dans votre package !
-
- 
 
 **TextEditor : Agissez sur l'éditeur de texte**
 
@@ -158,8 +142,6 @@ editor.setCursorBufferPosition([row, column]);
 editor.insertText('foo');
 editor.save();
 ```
-
- 
 
 **ViewRegistry et View : Créez et affichez votre propre fenêtre**
 
@@ -175,141 +157,23 @@ export default class MyPackageView {
 
     // Create message element
     const message = document.createElement('div');
-    message.textContent = 'The MyPackage package is Alive! It
- 
-NotificationManager et Notification : Informez vos utilisateurs via des notifications
-Vous avez également la possibilité de rendre des notifications dans l'éditeur de plusieurs niveaux, avec les commandes suivantes :
-atom.notifications.addSuccess('My success notification');
-atom.notifications.addInfo('My info notification');
-atom.notifications.addWarning('My warning notification');
-atom.notifications.addError('My error notification');
-atom.notifications.addFatalError('My fatal error notification');
-```
+    message.textContent = 'The MyPackage package is Alive! It\'s ALIVE!';
+    message.classList.add('message');
+    this.element.appendChild(message);
+  }
 
- 
+  // ...
+}
 
-**GitRepository**
-
-Celui-ci est très intéressant : vous pouvez en effet accéder à toutes les propriétés du repository Git actuellement utilisé par l'utilisateur.
-
-Vous pourrez alors obtenir (entre autres) la branche actuellement utilisée, obtenir l'URL du remote, voir si un fichier est nouveau ou modifié ou encore accéder au diff.
-
-```js
-let repository = atom.project.getRepositoryForDirectory('/path/to/project');
-
-console.log(repository.getOriginURL());               // -> git@github.com:eko/atom-pull-request.git
-console.log(repository.getShortHead());               // -> master
-console.log(repository.isStatusNew('/path/to/file')); // -> true
-```
-
- 
-
-**Encore bien d'autres choses à découvrir ...**
-
-Je vous ai présenté les composants les plus courants mais je vous invite à visiter la documentation de l'API si vous souhaitez aller plus loin : <https://atom.io/docs/api/latest/AtomEnvironment>
-
- 
-
-Tester votre package
---------------------
-
-Nous en arrivons au moment de tester notre package, et pour cela, Atom utilise [Jasmine](https://jasmine.github.io/).
-
-Votre package vient déjà avec un fichier de test pré-défini :
-
-```js
-import MyPackageView from '../lib/my-package-view';
-
-describe('MyPackageView', () => {
-  it('has one valid test', () => {
-    expect('life').toBe('easy');
-  });
+let myPackageView = new MyPackageView(state.myPackageViewState);
+let modalPanel = atom.workspace.addModalPanel({
+  item: myPackageView.getElement(),
+  visible: false;
 });
+
+modalPanel.show();
 ```
-
  
-
- 
-
-Les tests Jasmine doivent être structurés de la façon suivante :
-
--   describe()  : Une suite de test commence par une fonction describe qui prend un nom en premier argument et une fonction en deuxième argument,
--   it()  : Une spécification est ajoutée par ce mot clé, il doit être contenu à l'intérieur d'une suite de test,
--   expect()  : Il s'agit d'une assertion, lorsqu'on s'attend à avoir un résultat donné.
-
-C'est maintenant à vous de jouer et de tester votre logique applicative.
-
- 
-
-Vous pouvez lancer les specs via le menu d'Atom : View  -&gt; Packages  -&gt; Run Package Specs .
-
- 
-
-Publier votre package
----------------------
-
-Notre package est maintenant prêt à être publié !
-
-![Atom - Fusée](http://blog.eleven-labs.com/wp-content/uploads/2016/11/fusee.gif)
-
-Pour se faire, nous allons utiliser l'outil CLI installé avec Atom : apm .
-Après avoir pushé votre code sur un repository Github, rendez-vous dans le répertoire de votre package et jouez la commande suivante :
-
-```sh
-$ apm publish --tag v0.0.1 minor
-
-Preparing and tagging a new version ✓
-Pushing v0.0.1 tag ✓
-...
-```
-
- 
-
-La commande va s'occuper de créer et pusher le tag de la version spécifiée et référencer cette version sur le registry d'Atom.
-
-Félicitations, votre package est maintenant publié et visible à l'URL : **https://atom.io/packages/***&lt;votre-package&gt;* !
-
- 
-
-Intégration continue
---------------------
-
-Afin de vous assurer que votre package fonctionne toujours sur la version stable d'Atom mais également pour anticiper et tester également la version bêta, vous pouvez mettre en place [Travis-CI](https://travis-ci.org) sur le repository de votre code avec le fichier suivant :
-
-```yaml
-language: objective-c
-
-notifications:
-  email:
-    on_success: never
-    on_failure: change
-
-script: 'curl -s https://raw.githubusercontent.com/nikhilkalige/docblockr/develop/spec/atom-build-package.sh | sh'
-
-env:
-  global:
-    - APM_TEST_PACKAGES=""
-
-  matrix:
-    - ATOM_CHANNEL=stable
-    - ATOM_CHANNEL=beta
-```
-
- 
-
-Conclusion
-----------
-
-Je trouve personnellement qu'il s'agit d'une vraie révolution de pouvoir interagir à tel point avec l'éditeur de texte, l'outil utilisé la plupart du temps par les développeurs.
-
-L'API d'Atom est déjà très riche et est très simple à utiliser, c'est très certainement la raison pour laquelle la communauté offre déjà un bon nombre de packages.
-
-Comme pour toute librairie, inutile de réinventer la roue et de créer des doublons dans les packages, l'idée est vraiment d'ajouter des fonctionnalités à Atom afin d'enrichir notre expérience utilisateur d'Atom.
-
-s ALIVE!'; message.classList.add('message'); this.element.appendChild(message); } // ... } let myPackageView = new MyPackageView(state.myPackageViewState); let modalPanel = atom.workspace.addModalPanel({ item: myPackageView.getElement(), visible: false; }); modalPanel.show();
-
- 
-
 **NotificationManager et Notification : Informez vos utilisateurs via des notifications**
 
 Vous avez également la possibilité de rendre des notifications dans l'éditeur de plusieurs niveaux, avec les commandes suivantes :
@@ -322,8 +186,6 @@ atom.notifications.addError('My error notification');
 atom.notifications.addFatalError('My fatal error notification');
 ```
 
- 
-
 **GitRepository**
 
 Celui-ci est très intéressant : vous pouvez en effet accéder à toutes les propriétés du repository Git actuellement utilisé par l'utilisateur.
@@ -338,16 +200,12 @@ console.log(repository.getShortHead());               // -> master
 console.log(repository.isStatusNew('/path/to/file')); // -> true
 ```
 
- 
-
 **Encore bien d'autres choses à découvrir ...**
 
 Je vous ai présenté les composants les plus courants mais je vous invite à visiter la documentation de l'API si vous souhaitez aller plus loin : <https://atom.io/docs/api/latest/AtomEnvironment>
 
- 
-
 Tester votre package
---------------------
+====================
 
 Nous en arrivons au moment de tester notre package, et pour cela, Atom utilise [Jasmine](https://jasmine.github.io/).
 
@@ -363,26 +221,19 @@ describe('MyPackageView', () => {
 });
 ```
 
- 
-
- 
 
 Les tests Jasmine doivent être structurés de la façon suivante :
 
--   describe()  : Une suite de test commence par une fonction describe qui prend un nom en premier argument et une fonction en deuxième argument,
--   it()  : Une spécification est ajoutée par ce mot clé, il doit être contenu à l'intérieur d'une suite de test,
--   expect()  : Il s'agit d'une assertion, lorsqu'on s'attend à avoir un résultat donné.
+-   `describe()`  : Une suite de test commence par une fonction describe qui prend un nom en premier argument et une fonction en deuxième argument,
+-   `it()`  : Une spécification est ajoutée par ce mot clé, il doit être contenu à l'intérieur d'une suite de test,
+-   `expect()`  : Il s'agit d'une assertion, lorsqu'on s'attend à avoir un résultat donné.
 
 C'est maintenant à vous de jouer et de tester votre logique applicative.
 
- 
-
 Vous pouvez lancer les specs via le menu d'Atom : View  -&gt; Packages  -&gt; Run Package Specs .
 
- 
-
 Publier votre package
----------------------
+=====================
 
 Notre package est maintenant prêt à être publié !
 
@@ -399,16 +250,12 @@ Pushing v0.0.1 tag ✓
 ...
 ```
 
- 
-
 La commande va s'occuper de créer et pusher le tag de la version spécifiée et référencer cette version sur le registry d'Atom.
 
-Félicitations, votre package est maintenant publié et visible à l'URL : **https://atom.io/packages/***&lt;votre-package&gt;* !
-
- 
+Félicitations, votre package est maintenant publié et visible à l'URL : `https://atom.io/packages/votre-package` !
 
 Intégration continue
---------------------
+====================
 
 Afin de vous assurer que votre package fonctionne toujours sur la version stable d'Atom mais également pour anticiper et tester également la version bêta, vous pouvez mettre en place [Travis-CI](https://travis-ci.org) sur le repository de votre code avec le fichier suivant :
 
@@ -431,10 +278,9 @@ env:
     - ATOM_CHANNEL=beta
 ```
 
- 
 
 Conclusion
-----------
+==========
 
 Je trouve personnellement qu'il s'agit d'une vraie révolution de pouvoir interagir à tel point avec l'éditeur de texte, l'outil utilisé la plupart du temps par les développeurs.
 

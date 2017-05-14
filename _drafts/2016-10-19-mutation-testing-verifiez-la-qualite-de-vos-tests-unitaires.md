@@ -9,14 +9,14 @@ categories:
 tags: []
 ---
 
-### Les tests unitaires et la confiance
+## Les tests unitaires et la confiance
 
 Ce n'est plus à démontrer : les tests unitaires sont incontournables dans le développement d'une application. Ils permettent de mettre en évidence d'éventuelles régressions apportées lors de modifications du code, et donc au développeur d'acquérir une certaine confiance à mettre le code en production : si les tests passent, c'est que tout fonctionne correctement.
 
 Pour mesurer cette confiance, on utilise principalement comme métrique la couverture de code. Plus la couverture est grande (proche de 100%), moins il y a de chances qu'une régression passe entre les mailles du filet.
 Mais attention ! Cette affirmation n'est que purement théorique !
 
-### Couverture vs protection
+## Couverture vs protection
 
 Nous allons voir que dans certains cas la couverture de code n'est qu'un faux indicateur de protection.
 Voici un exemple simple :
@@ -68,7 +68,7 @@ Le test vérifie ici que la méthode ajoute bien une entrée au tableau d'astron
 Mais nous ne sommes pas protégés pour autant : que se passerait-il si la méthode *addAstronaut* changeait ?
 Notre test suffira-t-il à détecter une régression ?
 
-### Tests de Mutation
+## Tests de Mutation
 
 Pour détecter les failles dans vos tests unitaires, il existe une solution : les **tests de mutation**.
 
@@ -89,7 +89,7 @@ Mais avant de voir ça de plus près, voici un peu de vocabulaire :
 -   **Escaped** : Un mutant s'échappe si le test unitaire n'échoue pas (résultat négatif)
 -   **Uncovered** : Un mutant n'est pas couvert si aucun test ne couvre le code qui porte le mutant.
 
-### Mise en pratique avec Humbug
+## Mise en pratique avec Humbug
 
 Ici nous utiliserons [Humbug](https://github.com/padraic/humbug), un framework parmi d'autres qui permet de faire des tests de mutation en PHP.
 

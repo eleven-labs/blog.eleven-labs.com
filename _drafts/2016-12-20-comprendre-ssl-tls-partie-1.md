@@ -27,7 +27,7 @@ Pour cela, nous allons découper cet article en 5 parties, une postée chaque jo
 
 Tout d'abord un peu d'historique : attachez vos ceintures, en route pour la partie 1 !
 
-### **On parle de quoi ?**
+## **On parle de quoi ?**
 
 SSL et TLS sont des protocoles de sécurisation des données.
 

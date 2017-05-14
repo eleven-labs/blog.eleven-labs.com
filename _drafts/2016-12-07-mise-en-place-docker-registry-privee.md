@@ -20,7 +20,7 @@ C'est un composant majeur dans l'écosystème Docker, car il va permettre :
 -   À des outils d'intégration en continu de jouer une suite de tests sans avoir besoin d'autre chose que de Docker.
 -   Et à des systèmes automatisés de déployer ces applications sur vos environnement de développement, de tests, de recette et de production.
 
-### Petit rappel
+## Petit rappel
 
 Une image Docker est en quelque sorte une image disque qui contient l'arborescence d'une distribution linux, le code source d'une application et des binaires capables de la faire tourner.
 
@@ -36,7 +36,7 @@ Dans ce registre, vous allez retrouver des images, telles que :
 
 Docker propose également le dépôt d’images privées via une offre détaillée [ici](https://hub.docker.com/account/billing-plans/).
 
-### Mise en place
+## Mise en place
 
 Nous allons déployer notre Docker Registry avec [Docker Swarm Mode](https://docs.docker.com/engine/swarm/) et [Traefik](https://traefik.io/), un reverse proxy qui va nous permettre d’associer un domaine à notre registre Docker.
 
@@ -44,7 +44,7 @@ Nous aurons besoin d’un nom de domaine, d’un serveur et d’un terminal.
 
 Pour ce guide, je vais utiliser une instance [OVH Public Cloud](https://www.ovh.com/fr/cloud/) et un nom de domaine géré par OVH. Dans les grandes lignes, toutes les étapes critiques peuvent être reproduite sur n’importe quel environnement.
 
-#### Configuration du serveur
+### Configuration du serveur
 
 Partons d'une distribution récente, une Ubuntu 16.04 qui a le bon goût d'avoir dans ces dépôts une version de Docker à jour :
 
@@ -63,7 +63,7 @@ On se déconnecte du serveur, puis on se reconnecte pour initialiser Docker Swar
 docker swarm init
 ```
 
-#### Installation de Traefik
+### Installation de Traefik
 
 Traefik va nous permettre d'associer un domaine au conteneur dans lequel tournera la registry. Le gros avantage, c'est qu'il permet d'obtenir automatiquement un certificat TLS délivré par [Let's Encrypt](https://letsencrypt.org/).
 
@@ -177,7 +177,7 @@ Sur le port **8080** de votre serveur vous devez trouver l'interface de contrôl
 
 ![enter image description here](https://lh3.googleusercontent.com/-7OVJ1TQ-U80/WEeRgAfxt_I/AAAAAAAAAaM/-CFecYhSv-AQRsQxuVBAJ-tj0MG5wyTMQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.32.37.png "Traefik Web")
 
-#### Configuration du domaine
+### Configuration du domaine
 
 Avant de lancer la registry sur notre environnement, nous allons créer deux sous-domaines pointant vers notre serveur web :
 
@@ -197,7 +197,7 @@ Puis nous ajoutons un pointage DNS de type **A** pour les sous-domaines :
 
 > **Important**: Remplacez **domain.tld** par votre domaine et **xxx.xxx.xxx.xxx** par l'adresse IPv4 de votre serveur.
 
-#### Serveur d’authentification
+### Serveur d’authentification
 
 Docker registry permet d'utiliser des services tiers pour gérer l'authentification et les contrôles d'accès des utilisateurs.
 
@@ -220,7 +220,7 @@ sudo openssl req -x509 -newkey rsa:2048 -new -nodes -keyout privkey.pem -out ful
 
 On crée un fichier de configuration contenant nos utilisateurs et nos règles d'accès dans **/opt/docker-auth/config/auth\_config.yml**
 
-``` yml
+```yaml
 server:
   addr: ":5001"
 
@@ -258,7 +258,7 @@ acl:
 
 Créons enfin un fichier à l'adresse **$HOME/docker-auth.json**:
 
-``` json
+```json
 {
     "Name": "docker-auth",
     "Labels": {
@@ -325,7 +325,7 @@ Créons enfin un fichier à l'adresse **$HOME/docker-auth.json**:
 
 On lance le service :
 
-``` bash
+```bash
 curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/docker-auth.json
 ```
 
@@ -337,13 +337,13 @@ Il ne nous reste plus qu'à mettre en place la registry.
 
 Créons des répertoires qui contiendront nos images docker :
 
-``` bash
+```bash
 sudo mkdir -p /opt/registry
 ```
 
 Puis on finit avec un fichier que l'on crée à l'adresse **$HOME/registry.json **:
 
-``` json
+```json
 {
     "Name": "docker-registry",
     "Labels": {
@@ -413,7 +413,7 @@ curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/r
 
 Et on vérifie que le service **docker-registry** est bien lancé en utilisant la commande **docker service ls**.
 
-#### Tests
+### Tests
 
 Sur le port **8080** de votre serveur, vous devez avoir quelque chose d'équivalent à ceci :
 
@@ -427,7 +427,7 @@ Maintenant, **sur votre poste local** (sur lequel vous avez installé docker) no
 
 > **Note **: Pensez toujours à remplacer **\[registry.domain.tld\]** par le sous-domaine choisi précédemment.
 
-``` bash
+```
 docker login registry.domain.tld
 Username: # saisir l'identifiant admin
 Password: # saisir badmin
@@ -436,15 +436,17 @@ Login Succeeded
 
 Récupérons une image lambda sur DockerHub, tagguons-la, puis envoyons-la sur notre registry.
 
-    docker pull alpine
-    docker tag alpine registry.domain.tld/alpine
-    docker push registry.domain.tld/alpine
+```
+docker pull alpine
+docker tag alpine registry.domain.tld/alpine
+docker push registry.domain.tld/alpine
+```
 
 > **Note **: Remplacez toujours et encore le fameux **\[registry.domain.tld\]**
 
 Si tout se déroule comme prévu, vous voyez alors quelque chose de proche de :
 
-``` bash
+```
 The push refers to a repository [registry.domain.tld/alpine]
 011b303988d2: Pushed
 latest: digest: sha256:1354db23ff5478120c980eca1611a51c9f2b88b61f24283ee8200bf9a54f2e5c size: 528
@@ -452,8 +454,7 @@ latest: digest: sha256:1354db23ff5478120c980eca1611a51c9f2b88b61f24283ee8200bf9a
 
 Si c'est le cas, félicitations, vous avez une registry docker à dispo !
 
-Au prochain numéro…
--------------------
+## Au prochain numéro…
 
 Nous verrons comment utiliser **docker-compose** pour lancer un environnement de développement en local en tirant profit de notre registry docker et d’un outil de versionning pour fabriquer automatiquement nos images docker.
 

@@ -17,8 +17,6 @@ Parce qu'il n’y a pas que PHP dans la vie, j’ai décidé d’assister au [do
 >
 > — Sam Bessalah (@samklr) [9 Novembre 2015](https://twitter.com/samklr/status/663665425373396992)
 
- 
-
 1.  **Happiness **: Péter Bourgon rappelle que les micro services peuvent entraver le débuggage quand ils sont nombreux, et que le Golang n’était pas facile à manipuler à ses débuts. Mais il avoue tout de même qu’il est heureux de travailler avec..
 2.  **Systèmes distribués **: Verónica López raconte l’expansion du langage depuis quelques années.
 3.  **Tools **: Fatih Arslan fait une démo des outils pour développer en Go, du générateur de code au linter en passant par le chercheur de définition, mais sans s’étayer sur les packages de test.
@@ -32,15 +30,11 @@ Parce qu'il n’y a pas que PHP dans la vie, j’ai décidé d’assister au [do
 11. **Go at Docker’s **: Jessica Frazelle partage des petites anecdotes et bugs liés au Go chez Docker
 12. **Simple is complicated **: Rob Pyke, l’un des créateurs du langage, raconte comment il a été difficile de le concevoir pour qu'il soit simple. Go est un langage fixé et ajouter des features n’en est absolument pas la philosophie
 
- 
-
 > Jason Hickey about running Go in Chrome and vanadium at [\#dotgoeu](https://twitter.com/hashtag/dotgoeu?src=hash) [pic.twitter.com/eMTKa970rx](https://t.co/eMTKa970rx) — Charles Sarrazin (@csarrazi) [9 Novembre 2015](https://twitter.com/csarrazi/status/663720318154973185)
 
 **Ça valait le coup ?**
 
 Tout à fait. Je pense que [tout développeur se doit de s’intéresser à d’autres langages](http://blog.teamtreehouse.com/learn-a-new-programming-language-every-year) et à leurs mécaniques. Même sans comprendre toutes les subtilités du Go, l’expérience a été très enrichissante en tous points. Je continuerai à garder un oeil sur le Golang.
-
- 
 
 > This is the best representation of a map function I've even seen! [@francesc](https://twitter.com/francesc) [\#DotGoEu](https://twitter.com/hashtag/DotGoEu?src=hash) [pic.twitter.com/HBehkUhvTY](https://t.co/HBehkUhvTY)
 >
@@ -49,8 +43,6 @@ Tout à fait. Je pense que [tout développeur se doit de s’intéresser à d’
 >  
 
 **Mais le Golang, c’est demandé/utilisé ?** En France, à part MailJet qui était un ambassadeur de la conférence, je n’ai jamais entendu parler de sociétés qui le mettent en avant. Même les entreprises de formation n’ont pas l’air de s’en soucier. \#dotgoeu a été très “influent” sur Twitter ce jour là vers San Francisco.
-
- 
 
 > San Francisco 1 TensorFlow 2 [\#TacoEmojiEngine](https://twitter.com/hashtag/TacoEmojiEngine?src=hash) 3 [\#mondaymotivation](https://twitter.com/hashtag/mondaymotivation?src=hash) 4 [\#satsummit](https://twitter.com/hashtag/satsummit?src=hash) 5 Fallout 4 6 [\#dotgoeu](https://twitter.com/hashtag/dotgoeu?src=hash) [pic.twitter.com/jX4Hago2xs](https://t.co/jX4Hago2xs) — Trend Topics USA (@TrendTopicsUSA) [9 Novembre 2015](https://twitter.com/TrendTopicsUSA/status/663749439241097217)
 

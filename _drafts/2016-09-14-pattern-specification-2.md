@@ -14,7 +14,8 @@ tags:
 
 Au cours de mes différentes expériences professionnelles, j'ai dû mettre en place de nombreuses règles métier dans diverses applications riches fonctionnellement. Un jour, j'ai été confronté à une façon de faire différente : l'utilisation du pattern specification. Cette méthode s’est avérée structurante pour les projets, et si vous ne la connaissez pas encore elle mérite qu’on s’y attarde.
 
-### Commençons
+Commençons
+==========
 
 Imaginez une application bancaire par exemple. Cette dernière comprend des clients et des comptes bancaires. Un client peut avoir un ou plusieurs comptes bancaires. Vous devez mettre en place un système hyper simple de virement bancaire entre comptes d’un même client, comprenant la règle métier suivante :
 
@@ -25,9 +26,7 @@ Vous apercevez donc clairement la condition qui empêcherait le virement bancair
 
 Dans un cas classique, il vous serait possible d’écrire cela sous cette forme :
 
- 
-
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Application;
@@ -66,7 +65,7 @@ Il existe principalement trois types de spécifications :
 
 Une spécification est régie par l'interface suivante :
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain;
@@ -82,13 +81,14 @@ interface Specification
 }
 ```
 
-### Spécifications Hard-coded
+Spécifications Hard-coded
+=========================
 
 Ce type de specifications permet de déclarer en dur la connaissance métier sans pouvoir modifier la règle métier de l'extérieur.
 
 Une règle métier peut donc être, par exemple, traduite de la sorte :
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain\Payment;
@@ -111,11 +111,12 @@ class AccountCanTransferMoney implements Specification
 
 En ayant créé une classe séparée pour appliquer notre règle, nous gagnons en découplage et en clarté. Cependant, il apparait évident que nous sommes cantonnés à l'object $account, et qu'aucune information ne peut être apportée de l'extérieur. Nous ne pouvons toujours pas utiliser ce type de spécification dans notre *TransferMoneyCommand *car il ne répond pas totalement à notre règle métier (seul le solde actuel du compte est comparé).
 
-### Spécifications paramétrées
+Spécifications paramétrées
+==========================
 
 Les spécifications paramétrées sont identiques au point précédent, sauf qu'elles résolvent le problème que nous venons d'indiquer en permettant de passer des paramètres extérieurs à notre *candidate*.
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain\Payment;
@@ -151,7 +152,7 @@ Avec ce type de spécifications, nous gardons les mêmes avantages que précé
 
 Voici ce que donnerait notre commande avec l'utilisation de notre spécification paramétrée :
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Application;
@@ -180,13 +181,14 @@ class TransferMoneyCommand
 
 Pour simplifier l'explication des spécifications paramétrées, j'ai instancié la class AccountCanTransferMoney en dur. Une amélioration notable de cette utilisation serait d'injecter dans la commande la spécification, au lieu de l'instancier en dur, afin de pouvoir tester unitairement notre commande.
 
-### Spécifications composites
+Spécifications composites
+=========================
 
 Le dernier type de spécification que nous aborderons aujourd'hui concerne la spécification composite. Cette dernière se base sur ce que nous venons de voir. En effet, ce pattern utilise une composition de spécifications pour exister. Les opérations logiques entre deux (ou plus) spécifications font parties des *composite specifications. *
 
 L'exemple suivant vous explique l'implémentation de l'opération logique AND :
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain;
@@ -241,7 +243,7 @@ class AndSpecification extends Composite
 
 Ainsi, si l'on déclare une spécification composite, on peut la chainer à d'autres spécifications, comme ci-dessous, en modifiant notre spécification précédente *AccountCanTransferMoney* :
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain\Payment;
@@ -273,7 +275,7 @@ class AccountCanTransferMoney extends Composite
 }
 ```
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Domain\Payment\Specification;
@@ -296,7 +298,7 @@ class AccountOwnerIsActive implements Specification
 
 Enfin, voici comment utiliser notre composition :
 
-``` theme:sublime-text
+```php
 <?php
 
 namespace ElevenLabs\Application;
@@ -336,7 +338,7 @@ Les avantages du pattern spécification sont les suivants :
 -   L'implicite est rendu explicite avec une définition claire des règles métier
 
 Références
-----------
+==========
 
 [Eric Evans & Martin Fowler - Specifications](http://martinfowler.com/apsupp/spec.pdf)
 

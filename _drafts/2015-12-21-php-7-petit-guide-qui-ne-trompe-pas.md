@@ -45,8 +45,7 @@ Les nouveautés
 
 La refonte du moteur est une des nouveautés majeures de PHP 7 puisqu'il multiple par deux la vitesse d'exécution du code source. Mais de nombreuses fonctionnalités ont été proposées, parfois acceptées, et parfois refusées. Cet article se veut être un résumé des changements majeurs et non une liste exhaustive.
 
-Spaceship operator
-------------------
+### Spaceship operator
 
 Non sans humour, l'opérateur de comparaison introduit a en effet une ressemble visuelle importante avec un vaisseau spatial : &lt;=&gt; . Son intérêt est néanmoins tout autre, il permet de comparer deux variables d'une façon beaucoup plus simplifiée que ce qui était proposé auparavant. Si les deux opérandes sont égales, l'opérateur renverra 0, 1 si l'opérande de gauche est plus grande, -1 sinon.
 
@@ -70,12 +69,11 @@ usort($r, function($a, $b) {
 
 Un opérateur qui simplifie donc la vie des développeurs. Cependant, l'importance de cet opérateur est négligeable sur du code orienté objet, celui-ci se contentant de comparer les valeurs des attributs. Il aurait été intéressant de créer une interface de type Comparable comme ce qu'il existe en Java, afin de mieux gérer la comparaison entre objets.
 
- Null coalesce operator
------------------------
+### Null coalesce operator
 
 Autre opérateur ajouté, il sert deux buts : les tests et l'affectation. Jusqu'ici, il fallait tester l'existence d'une variable avant de l'affecter à une autre par le biais d'une condition (en général un ternaire). Ici, l'opérateur simplifie encore une fois le travail des développeurs :
 
-``` theme:github
+```php
 <?php
 // PHP 5
 $foo = isset($bar) ? $bar : 'baz';
@@ -88,13 +86,12 @@ if (isset($bar)) {
 $foo = $bar ?? $baz;
 ```
 
-Les classes anonymes
---------------------
+### Les classes anonymes
 
 Largement inspiré de Java, les classes anonymes font leur entrée en PHP 7. Une suite logique à l'introduction des fonctions anonymes en PHP 5.3. Tout comme les classes définies, elle acceptent l'héritage, l'implémentation et l'usage des traits. L'avantage est multiple mais reste spécifique.
 On peut évoquer une simplification des mocks dans les tests unitaires, ou une alternative à la lourdeur de la norme PSR (qui recommande la création d'un fichier par classe) dans certains cas :
 
-``` theme:github
+```php
 <?php
 use Psr\Log\LoggerInterface,
 
@@ -107,8 +104,7 @@ $foo->setLogger(new class implements LoggerInterface {
 });
 ```
 
-Scalar Type Hinting
--------------------
+### Scalar Type Hinting
 
 PHP a toujours été reconnu pour son typage faible et sa permissivité parfois extrême, qui peut mener à des incohérences et de nombreuses heures de debug. Dans cette nouvelle version de PHP, le typage fort est probablement l'une des plus importantes évolutions du langage, et ce n'est pas sans débats que celle-ci a été intégrée. Il aura en effet fallu pas moins de 5 propositions pour faire accepter cette fonctionnalité.
 
@@ -118,7 +114,7 @@ Il est important de préciser que de l'autocast peut-être réalisé dans certai
 
 Un exemple de contournement :
 
-``` theme:github
+```php
 <?php
 declare(strict_types=1);
 
@@ -130,8 +126,7 @@ function mySum(float $a, float $b)
 echo mySum((float) "1.0", (float) "2");
 ```
 
-Types de retour
----------------
+### Types de retour
 
 Souvent associée au Scalar Type Hinting, cette fonctionnalité est pourtant différente et fonctionne en toute circonstances, quelque soit la valeur ou la présence du "declare(strict\_types=1|0)". Il s'agit ici d'une nouvelle implémentation et non d'une amélioration de l'existant comme pour le typage d'arguments. Sont supportés en retour de méthodes les types primitifs ainsi que les différentes classes, mais également les mots-clé "self" et "parent".
 
@@ -142,7 +137,7 @@ Nous noterons deux choses supplémentaires qui sont importantes à prendre en co
 
 Exemple de syntaxe :
 
-``` theme:github
+```php
 <?php
 
 // pas de typage en entrée, cela peut donc lever une erreur
@@ -153,8 +148,7 @@ function bar($a, $b) : int
 }
 ```
 
-Throwable
----------
+### Throwable
 
 Enfin, dernière modification majeure, le changement du système d'exceptions.
 Jusqu'ici tout était géré par exceptions, en PHP 7, le mécanisme a été scindé en deux : exceptions d'un côté (Exception), erreur de l'autre (Error), les deux implémentant l'interface Throwable. Le but étant de pouvoir *catcher* certaines erreurs propres au moteur, par exemple une division par 0, ou encore un problème de typage comme nous avons pu le voir plus haut. On peut donc faire l'hypothèse que la plupart des exceptions relèveront du code métier.
@@ -162,7 +156,7 @@ Jusqu'ici tout était géré par exceptions, en PHP 7, le mécanisme a été sci
 Un point important est qu'il est impossible d'implémenter directement l'interface Throwable, il faudra impérativement hériter d'Exception, mais il sera possible d'utiliser l'interface lors du typage, pour *catcher* les erreurs et les exceptions de la même manière. Vous pouvez consulter la liste des erreurs prédéfinies [ici](http://php.net/manual/en/reserved.exceptions.php).
 
 Sortie
-------
+======
 
 La première release stable est sortie le 3 décembre 2015, et un premier patch correctif (7.0.1) a été diffusé le 17 décembre. Étant donné les nombreux changements apportés par cette nouvelle version, il reste à savoir combien de temps l'adoption de PHP 7 prendra par le monde professionnel. Sachant que certains systèmes d'informations tournant encore sur PHP 4, d'autres sur des versions de PHP plus récentes, mais souvent obsolètes, il n'est pas improbable que la migration prenne plusieurs années.
 

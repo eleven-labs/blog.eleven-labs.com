@@ -13,14 +13,12 @@ tags:
 ---
 
 Préambule
----------
+=========
 
 Comme vu dans l’article précédent, une directive est un marqueur HTML interprété par AngularJS via son $compile. Nous allons donc nous intéresser ici aux divers moyens nous permettant d’avoir une gestion la plus fine possible des transformations de nos directives.
 
- 
-
 Manipulation du contenu
------------------------
+=======================
 
 Nous pouvons donc agir à quatre moments clefs de la vie d’une directive :
 
@@ -28,8 +26,6 @@ Nous pouvons donc agir à quatre moments clefs de la vie d’une directive :
 -   Le controller est appelé quand une directive est instanciée. Il permet d’initialiser le scope de la directive et de définir les méthodes de notre directive qui pourront éventuellement être partagées avec d’autres controllers extérieurs.
 -   Le pre-link est très rarement utilisé, sa principale particularité est que les pre-link sont appelés en héritage parent vers les enfants, là ou les post-link sont appelés en remontant des enfants vers les parents.
 -   Le post-link sera votre principal outil car à ce moment là, le contenu est prêt et disponible pour agir dessus. C’est donc ici que l’on pourra par exemple manipuler le DOM finalisé, attacher des événements, attacher des watchers sur le scope, observer les attributs de la directive ...
-
- 
 
 Ci-dessous une directive implémentant tous ces concepts :
 
@@ -94,7 +90,7 @@ angular.module('exemple', [])
 ```
 
 Transclusion
-------------
+============
 
 Il peut arriver qu'une directive doive modifier les éléments du DOM se trouvant à l’intérieur d'elle. Dans ce cas, la transclusion est notre amie, et nous permet de récupérer le contenu interne à la directive pour le manipuler.
 
@@ -119,13 +115,10 @@ angular.module('exemple', [])
   });
 ```
 
- 
-
- 
 
 Mais cela seul ne suffit pas, il vous faudra aussi définir dans son template l'emplacement où la transclusion sera faite
 
-```xhtml
+```html
 <div>
   <h2>{{chapo}}</h2>
   <div ng-transclude></div>

@@ -14,7 +14,7 @@ Lors de l’exécution de certain map reduce de MongoDB, il se peut que des tabl
 
 Voici la ligne de commande magique pour les supprimer.
 
-```
+```bash
 mongo "nom de la base"
 ```
 

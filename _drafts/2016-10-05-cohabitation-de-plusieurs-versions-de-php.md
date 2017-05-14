@@ -22,8 +22,8 @@ Selon votre OS et vos préférences, vous aurez peut-être donc des adaptations 
 
 Clonez le projet dans votre home (ou l'outil le plus récent, comme je l'expliquais : https://github.com/phpenv/phpenv) :
 
-```
-$ git clone git://github.com/humanshell/phpenv.git ~/.phpenv
+```sh
+git clone git://github.com/humanshell/phpenv.git ~/.phpenv
 ```
 
 Étape 2 : lister les versions de PHP
@@ -31,9 +31,9 @@ $ git clone git://github.com/humanshell/phpenv.git ~/.phpenv
 
 Lister les versions PHP disponibles à la compilation, c'est toujours à jour puisque l'outil analyse directement les dépôts git de PHP :
 
-```
-$ cd .phpenv
-$ ./bin/phpenv install --releases
+```sh
+cd .phpenv
+./bin/phpenv install --releases
 ```
 
 Dans mon cas, au moment où j'écris ces lignes, nous avons :
@@ -83,7 +83,7 @@ J'ai volontairement affiché le log précédent parce qu'il y a une **premièr
 On va donc éditer le script PHPEnv en charge de l'installation (à l'arrache, c'est fait pour du dev' pas pour de la prod') :
 
 ```
-$ vim libexec/phpenv-install
+vim libexec/phpenv-install
 ```
 
 Pour supprimer la ligne **--with-mysql=mysqlnd \\**

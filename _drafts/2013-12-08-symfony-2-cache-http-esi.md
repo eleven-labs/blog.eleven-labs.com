@@ -12,23 +12,23 @@ tags:
 
 Lorsque l’on développe un site, en particulier un site à fort trafic, on est forcément amené à se poser la question des ressources consommées par ce dernier afin d’optimiser son temps de réponse. En effet, une page qui met plus de 3-4 secondes à s’afficher rend vite désagréable la navigation et découragera plus d’une personne à venir sur votre site.
 
- 1)    Principe du cache HTTP
-=============================
+ 1) Principe du cache HTTP
+==========================
 
 Le système de cache de Symfony vous permettra de diminuer les temps de réponses de vos pages en utilisant la puissance du cache HTTP tel qu'il est défini dans la *[spécification HTTP](http://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol "Spécification HTTP").* Sachez cependant que ce n’est qu’une des solutions possibles.
 
 Pour augmenter la vitesse d'une application, on peut par exemple :
 
--          optimiser l’utilisation de la base de données. Gérer l’espace alloué à la mémoire tampon pour accélérer l’accès aux données les plus souvent demandées, développer des vues et des procédures pour alléger votre serveur par exemple.
+- optimiser l’utilisation de la base de données. Gérer l’espace alloué à la mémoire tampon pour accélérer l’accès aux données les plus souvent demandées, développer des vues et des procédures pour alléger votre serveur par exemple.
 
--          Utiliser la mise en cache des *[OPCodes](http://fr.openclassrooms.com/informatique/cours/accelerer-la-generation-de-vos-pages-php-avec-l-extension-apc/presentation-de-l-extension-apc "OPCodes")* si vous êtes admin de votre serveur. Pour résumer grossièrement, l’OPCode est le code intermédiaire lors de la transformation de votre code (HTML, PHP …) en code binaire compréhensible par la machine. On trouvera parmi les plus connus APC, XCache ou encore EAccelerator.
+- Utiliser la mise en cache des *[OPCodes](http://fr.openclassrooms.com/informatique/cours/accelerer-la-generation-de-vos-pages-php-avec-l-extension-apc/presentation-de-l-extension-apc "OPCodes")* si vous êtes admin de votre serveur. Pour résumer grossièrement, l’OPCode est le code intermédiaire lors de la transformation de votre code (HTML, PHP …) en code binaire compréhensible par la machine. On trouvera parmi les plus connus APC, XCache ou encore EAccelerator.
 
 Pour revenir au cache http, expliquons en un peu le principe. Le rôle de la mémoire cache (ou reverse proxy) est d’accepter les requêtes coté client et de les transmettre au serveur. Il va ensuite recevoir les réponses et les transmettre au client. Lors de ces deux étapes, il va mémoriser les requêtes et les réponses associées. Ceci lui permettra lorsque qu’une même requête est demandée, de vous retourner la réponse sans la redemander au serveur. On économise donc du temps et des ressources.
 
 ![mémoire cache](http://blog.eleven-labs.com/wp-content/uploads/2013/12/reverse_proxy.png)
 
-2)    Le Cache dans Symfony
-===========================
+2) Le Cache dans Symfony
+========================
 
 Rentrons maintenant dans le vif du sujet. Symfony est équipé d’un reverse proxy défini par la classe AppCache.php qui se situe dans app/AppCache.php de votre projet.
 
@@ -79,7 +79,7 @@ $kernel->terminate($request, $response);
 Et c’est tout ? Eh ben oui, c’est pas plus compliqué que ça. Rajoutez votre dépendance à AppCache et instanciez là avec en paramètre votre kernel.
 
 Exemple 1 : Utilisation simple
-------------------------------
+==============================
 
 Maintenant, on va dans un premier temps créer un exemple sans activer le cache.
 
@@ -92,8 +92,6 @@ app/config/routing.yml :
         prefix:   /
 ```
 
- 
-
 MyBundle/Ressources/config/routing.yml :
 
 ```yaml
@@ -101,8 +99,6 @@ example:
     pattern:  /example
     defaults: { _controller: MyBundle:Example:cache}
 ```
-
- 
 
 Voici pour le Controller :
 
@@ -120,11 +116,9 @@ class ExampleController extends Controller {
 }
 ```
 
- 
-
 Enfin, votre template cache.html.twig situé dans MyBundle/Resources/views/Cache/cache.html.twig:
 
-```
+```twig
 {% extends "@MyBundle/layout.html.twig" %}
 
 {% block body %}
@@ -133,8 +127,6 @@ Enfin, votre template cache.html.twig situé dans MyBundle/Resources/views/Cache
 
 {% endblock %}
 ```
-
- 
 
 Et voilà le résultat :
 
@@ -146,13 +138,9 @@ Allez dans l’onglet Réseau (ou Network pour ceux qu’ils l’ont en anglais)
 
 ![firebug1](http://blog.eleven-labs.com/wp-content/uploads/2013/12/firebug1.png)
 
- 
-
 Et dépliez le get correspondant à votre route :
 
 ![response1](http://blog.eleven-labs.com/wp-content/uploads/2013/12/response1.png)
-
- 
 
 On voit donc bien ici la valeur du Cache-Control qui est à no-cache.
 
@@ -163,8 +151,6 @@ Commencez par rajouter votre dépendance à l’objet Response dans votre contro
 ```php
 use Symfony\Component\HttpFoundation\Response;
 ```
-
- 
 
 Modifiez maintenant votre action :
 
@@ -185,7 +171,6 @@ public function cacheAction() {
 }
 ```
 
- 
 
 Voici une utilisation très simpliste du système de cache.
 
@@ -195,20 +180,14 @@ Maintenant, si on jette à nouveau un œil à notre firebug :
 
 ![response2](http://blog.eleven-labs.com/wp-content/uploads/2013/12/response2.png)
 
- 
-
 On constate que le système de cache est bien activé. Pour aller plus loin avec les différentes options possibles de l’en-tête, je vous invite fortement, si ce n’est pas déjà fait, à lire la doc sur le site officiel de *[Symfony](http://symfony.com/fr/doc/master/book/http_cache.html "cache Symfony 2")*.
-
- 
 
 Ok, tout ça c’est bien, mais cela met en cache une page entière. Mais votre besoin sera peut-être de ne mettre en page qu’une partie de la page.
 
 Heureusement pour nous, Symfony a pensé à tout et nous fournit une solution, les « Edge Side Includes » (ESI).
 
- 
-
- Exemple 2 : ESI
-----------------
+Exemple 2 : ESI
+===============
 
 Pour activer le mode ESI dans Symfony, ouvrez votre app/config/config.yml et ajoutez ces deux lignes dans la partie framework :
 
@@ -218,19 +197,16 @@ framework:
     fragments:     { path: /_proxy }
 ```
 
- 
 
 Maintenant créez un deuxième template. Moi je l’appellerai esi.html.twig et il contiendra simplement :
 
-```
+```html
 <h2>Partie en Cache</h2>
 ```
 
- 
-
 Modifiez le premier template :
 
-```
+```twig
 {% extends "@ MyBundle/layout.html.twig" %}
 
 {% block body %}
@@ -241,8 +217,6 @@ Modifiez le premier template :
 
 {% endblock %}
 ```
-
- 
 
 Et enfin votre controlleur :
 
@@ -279,7 +253,6 @@ class ExampleController extends Controller {
 }
 ```
 
- 
 
 J’ai ici simplifié l’action cacheAction() pour n’activer le cache que pour le fragment ESI.
 
@@ -287,19 +260,14 @@ Actualiser votre page et vous devez obtenir ceci :
 
 ![hello2](http://blog.eleven-labs.com/wp-content/uploads/2013/12/hello2.png)
 
- 
 
 Maintenant, si on repart voir ce que nous dit notre bon vieil ami firebug, on voit :
 
 ![response3](http://blog.eleven-labs.com/wp-content/uploads/2013/12/response3.png)
 
- 
-
 Une ligne X-Symfony-Cache est apparu. Si on se concentre sur la fin de la ligne, on lit : «…EsiCache : stale, invalid, store ». En gros, le cache de ce fragment n’était pas valide (normal vu qu’on vient de le créer :) ). Mais si vous faite un petit F5, vous aurez le message suivant :
 
 ![response4](http://blog.eleven-labs.com/wp-content/uploads/2013/12/response4.png)
-
- 
 
 Aahhhh, ça a l’air d’être « fresh » :)
 

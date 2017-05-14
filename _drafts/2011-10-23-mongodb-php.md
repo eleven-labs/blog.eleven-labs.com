@@ -15,11 +15,11 @@ Aujourd'hui, petit tuto pour installer MongoDB pour php5. Pour cela plusieurs é
 
 Sur ce tuto nous travaillons sur un ubuntu 10.10 lors de l'installation des différents softwares.
 
--   Installation de MongoDB
+- Installation de MongoDB
 
 Pour installer le serveur Mongo la meilleure solution est d'utiliser le package mongo fait pour ubuntu.
 
-```
+```bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 ```
 
@@ -31,7 +31,7 @@ deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen
 
 Pour terminer, lancer les deux commandes suivantes:
 
-```
+```bash
 sudo apt-get update
 sudo apt-get install mongodb-10gen
 ```
@@ -50,7 +50,7 @@ Done.
 mongodb start/running, process 1937
 ```
 
--   Installation d'un "phpmyadmin"
+- Installation d'un "phpmyadmin"
 
 Maintenant que le serveur mongo est lancé, il faut installer un "phpmyadmin" pour pouvoir interagir avec les données de MongoDB. Il existe de nombreux softwares pour cela:
 
@@ -66,19 +66,19 @@ Commençons par télécharger la dernière version de rockmongo.
 
 Ensuite il faut l'envoyer sur le serveur:
 
-```
+```bash
 scp path_to_rockmongo.zip username@host:~
 ```
 
-  Puis on dezippe le dossier:
+Puis on dezippe le dossier:
 
-```
+```bash
 unzip rockmongo.zip
 ```
 
 Ensuite il faut mettre la configuration de notre mongo dans le fichier config.php. Puis nous devons ajouter le virtualhost pour accéder à notre rockmongo, voici un exemple:
 
-```
+```apacheconf
 // etc/apache2/site-available/rockmongo
 
 <VirtualHost *:80>
@@ -104,7 +104,7 @@ Ensuite il faut mettre la configuration de notre mongo dans le fichier config.
 
 Ensuite comme d'habitude, on lance les commandes pour relancer apache2:
 
-```
+```bash
 sudo a2ensite rockmongo
 sudo /etc/init.d/apache2 restart
 ```
@@ -115,11 +115,11 @@ Pour la plupart, vous devez avoir le message suivant sur le navigateur:
 
 > To make things right, you must install php\_mongo module. [Here for installation documents on PHP.net.](http://www.php.net/manual/en/mongo.installation.php)
 
--   Installation de mongo pour php
+- Installation de mongo pour php
 
 Cela reste très simple, lancer la commande
 
-```
+```bash
 sudo pecl install mongo
 ```
 

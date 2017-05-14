@@ -17,36 +17,36 @@ Lorsque vous recevez votre serveur (vps/serveur dédié/...), il est important d
 
 Les commandes présentées ci-dessous sont basées sur une Debian, elles conviennent donc aussi à une Ubuntu mais il va falloir les adapter si vous utilisez une autre distrib :). De plus je n'utilise pas sudo donc il est possible que vous ayez à le rajouter si vous n'utilisez pas le compte root.
 
-### Se connecter au serveur
+## Se connecter au serveur
 
-```
-# ssh root@ip_du_serveur
+```sh
+ssh root@ip_du_serveur
 ```
 
-###  Mettre à jour le serveur
+##  Mettre à jour le serveur
 
-```
-# apt-get update && apt-get upgrade
+```sh
+apt-get update && apt-get upgrade
 ```
 
 Et si vous désirez mettre à jour votre distrib :
 
-```
-# apt-get dist-upgrade
+```sh
+apt-get dist-upgrade
 ```
 
-### Ajouter un nouvel utilisateur
+## Ajouter un nouvel utilisateur
 
 Une bonne pratique est de ne pas utiliser le compte root directement, que ce soit pour la connexion au serveur comme nous verrons plus bas ou pour toute action ne nécessitant pas de droits spécifiques, il est donc important de créer un nouvel utilisateur.
 
-```
-# adduser username
+```sh
+adduser username
 ```
 
 ### Modifier le mot de passe root
 
-```
-# passwd
+```sh
+passwd
 ```
 
 Attention, cette commande modifiera le mot de passe de l'utilisateur courant, donc si vous utilisez sudo vérifiez de bien être connecté en root !
@@ -55,91 +55,91 @@ Attention, cette commande modifiera le mot de passe de l'utilisateur courant, do
 
 Comme indiqué précedemment il est courant de désactiver la connexion via le compte root, principalement pour éviter la plupart des attaques bruteforces qui tenteront de s'effectuer par cet utilisateur.
 
-```
-# vim /etc/ssh/sshd_config
+```sh
+vim /etc/ssh/sshd_config
 ```
 
 Modifier la ligne "PermitRootLogin yes" en "PermitRootLogin no".
 
-```
-# systemctl restart ssh
+```sh
+systemctl restart ssh
 ```
 
 Puis se déconnecter afin de se reconnecter avec son user créé précédemment.
 
-### Utiliser des clés ssh pour renforcer la sécurité
+## Utiliser des clés ssh pour renforcer la sécurité
 
 Vous pouvez aussi utiliser des clés ssh afin de ne plus utiliser de mot de passe, un exemple ici : <https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2>
 
-### Iptables : bloquer les ports non utilisés (DROP policy)
+## Iptables : bloquer les ports non utilisés (DROP policy)
 
 Par défaut toute connexion est autorisée, nous allons donc faire en sorte de modifier ce comportement afin de refuser toute connexion sauf celles indiquées.
 
 Vérifier que vous êtes bien en INPUT ACCEPT :
 
-```
-# iptables -L
+```sh
+iptables -L
 ```
 
 Si vous n'avez pas la ligne suivante : "Chain INPUT (policy ACCEPT)" alors utilisez cette commande :
 
-```
-# iptables -t filter -P INPUT ACCEPT
+```sh
+iptables -t filter -P INPUT ACCEPT
 ```
 
 Purger les règles existantes :
 
-```
-# iptables -F
+```sh
+iptables -F
 ```
 
-/!\\ Attention, ne jamais lancer cette commande lors que vous êtes en INPUT policy DROP sinon cela va bloquer votre connexion ssh et vous devrez passer par la console de rescue de votre hébergeur (si vous en avez une). Si vous voulez re-purger vos iptables, pensez à repasser l'INPUT en ACCEPT !
+⚠ Attention, ne jamais lancer cette commande lors que vous êtes en INPUT policy DROP sinon cela va bloquer votre connexion ssh et vous devrez passer par la console de rescue de votre hébergeur (si vous en avez une). Si vous voulez re-purger vos iptables, pensez à repasser l'INPUT en ACCEPT !
 
 Garder les connexions actuelles (pour éviter de perdre sa connexion ssh actuelle lors de la prochaine commande :))
 
-```
-# iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+```sh
+iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 ```
 
 Autoriser le loopback :
 
-```
-# iptables -A INPUT -i lo -j ACCEPT
+```sh
+iptables -A INPUT -i lo -j ACCEPT
 ```
 
 On indique que par défaut on refuse n'importe quelle connexion en entrée :
 
-```
-# iptables -P INPUT DROP
+```sh
+iptables -P INPUT DROP
 ```
 
 On autorise les connexions ssh (sur le port 22) :
 
-```
-# iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+```sh
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 ```
 
 On autorise les connexions web (ports 80 et 443), si vous en avez besoin bien entendu :
 
-```
-# iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-# iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+```sh
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 ```
 
 Remarque : votre configuration sera remise à zéro si vous redémarrez votre serveur ! Pour faire en sorte qu'elle soit persistente vous pouvez utiliser iptables-persistent, un exemple ici : <https://serversforhackers.com/video/firewall-persisting-iptables-rules>
 
-/!\\ Attention, si votre hébergeur vous a fourni une ipv6 pensez à appliquer ces règles dans l'iptables réservé aux ipv6 : ip6tables ! (rejouez les commandes ci-dessus en changeant iptables par ip6tables et pensez à les rendre persistent si vous le souhaitez).
+⚠ Attention, si votre hébergeur vous a fourni une ipv6 pensez à appliquer ces règles dans l'iptables réservé aux ipv6 : ip6tables ! (rejouez les commandes ci-dessus en changeant iptables par ip6tables et pensez à les rendre persistent si vous le souhaitez).
 
-### Fail2ban : éviter de vous faire bruteforce
+## Fail2ban : éviter de vous faire bruteforce
 
-```
-# apt-get install fail2ban
-# vim /etc/fail2ban/jail.conf
+```sh
+apt-get install fail2ban
+vim /etc/fail2ban/jail.conf
 ```
 
 Vous y trouverez une section réservée au ssh :
 
-```
+```ini
 [ssh]
 
 enabled = true
@@ -153,16 +153,13 @@ Vous pouvez ici modifier le port utilisé (si jamais vous avez modifié votre po
 
 Si vous voulez vérifier les filtres appliqués (par défaut il fonctionne pour n'importe quel utilisateur) :
 
-```
-# vim /etc/fail2ban/filter.d/sshd.conf
+```sh
+vim /etc/fail2ban/filter.d/sshd.conf
 ```
 
- 
 
 Voilà ! Cela ne vous permettra pas d'avoir le serveur le mieux sécurisé au monde mais il vous permettra au moins d'éviter les vecteurs d'attaques basique.
 
 Comme indiqué au début n'hésitez pas à commenter cet article si vous avez des questions ou remarques, je suis preneur :)
-
- 
 
 Seeya !

@@ -11,20 +11,18 @@ tags:
 ---
 
 Kézako ?
---------
+========
 
 Pour faire simple une directive est un marqueur sur un élément du DOM (en tant qu'attribut, nom d’élément commentaire ou de classe CSS), ce marqueur informe le compiler HTML ($compile) d'attacher un comportement à cet élément voir de transformer cet élément et ses enfants.
 
 A mon sens un des gros plus du framework AngularJS  réside dans le fait que tout son langage de Template (directive, filtre…) est implémenté de la même manière que ce que nous allons voir ci-dessous. Les sources sont accessibles ici : <https://github.com/angular/angular.js/tree/master/src/ng>.
 
 Créer des directives
---------------------
+====================
 
 Tout d'abord nous suivrons  une convention de nommage qui  veut qu'on préfixe le nom de ses propres directives, dans nos exemples ci-dessous nous utiliserons le préfixe "my".
 
 Lors de cet article nous étudierons les options les plus communes des directives, deux autres articles compléteront le tour d'horizon des directives.
-
-### 
 
 ### template et templateUrl
 
@@ -46,8 +44,6 @@ angular.module('exemple', [])
 ```
 
 Par défaut le seul moyen d'afficher une directive est de l'utiliser via un *attribut*. Si cela ne convient pas à votre usage il faudra passer par l'option **restrict**.
-
-### 
 
 ### restrict
 
@@ -79,8 +75,6 @@ La déclaration via élément est privilégiée dans le cas de création de dire
 
 La déclaration par classe ou attribut quand à elle convient parfaitement à un comportement simple, un gestionnaire de rebond par exemple.
 
- 
-
 ### scope
 
 Une directive peut avoir pour but d'être réutilisée plusieurs fois sur la même page, ce genre de problématique, entre autre, nous amène à nous intéresser à l'option *scope*.
@@ -96,8 +90,6 @@ Rassurez vous le principe de scope en Angular est très proche de celle de Javas
 Le *scope enfant* ainsi que le *scope isolé* dispose d'un accès au *scope parent* via sa propriété *$parent*.
 
 La grosse différence entre ces deux types de *scope* est la gestion de *l'héritage*, ainsi seul un *scope enfant* hérite via son prototype des données de son *scope parent*, il est donc inutile d'aller chercher les informations via *$parent*, à l'inverse d'un *scope isolé*.
-
- 
 
 ##### Céation d'un scope isolé
 
@@ -123,10 +115,8 @@ angular.module('exemple', [])
   });
 ```
 
-```xhtml
+```html
 <my-directive name='wiston' expression='user.mission' action='launch(user)'></my-directive>
 ```
-
- 
 
 Dans le prochain opus, controller, compile, link et transclude !

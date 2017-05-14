@@ -26,8 +26,7 @@ D'autant plus que cette année, c'est un savoureux gratin qui est venu nous hon
 Les présentations en résumé
 ===========================
 
-The New CSS Layout, par [Rachel Andrew](https://twitter.com/rachelandrew)
--------------------------------------------------------------------------
+### The New CSS Layout, par [Rachel Andrew](https://twitter.com/rachelandrew)
 
 https://twitter.com/dotCSS/status/672760704781393920
 
@@ -41,8 +40,7 @@ En terme de support, si vous ne supportez plus IE9-, faites-vous plaisir : [Flex
 
 Vous pouvez retrouver les diapos ainsi que tous les exemples de la présentation sur [le site de Rachel Andrew](https://rachelandrew.co.uk/presentations/modern-css-layout?utm_content=bufferd2221&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer).
 
-Fix Global CSS with PostCSS, par [Andrey Sitnik](https://twitter.com/andreysitnik)
-----------------------------------------------------------------------------------
+### Fix Global CSS with PostCSS, par [Andrey Sitnik](https://twitter.com/andreysitnik)
 
 https://twitter.com/andreysitnik/status/672768576466649088
 
@@ -54,8 +52,7 @@ Dans sa présentation, Andrey explique en quoi PostCSS peut être utilisé pour 
 
 Si vous voulez en savoir plus, je vous conseille vivement de jeter un oeil à ses diapos de présentation sur [son GitHub](http://ai.github.io/postcss-isolation/).
 
-(S)CSS at Dropbox, par [Daniel Eden](https://twitter.com/_dte)
---------------------------------------------------------------
+### (S)CSS at Dropbox, par [Daniel Eden](https://twitter.com/_dte)
 
 https://twitter.com/\_dte/status/672736555472154624
 
@@ -67,8 +64,7 @@ Pour changer ces mauvaises habitudes, Daniel a mis en place des linters pour vé
 
 Je n'ai pas réussi à mettre la main sur les diapos de cette présentation, mais je les ajouterai si j'y parviens.
 
-Editing photos with CSS, par [Una Kravets](https://twitter.com/Una)
--------------------------------------------------------------------
+### Editing photos with CSS, par [Una Kravets](https://twitter.com/Una)
 
 https://twitter.com/dotCSS/status/672784779922788352
 
@@ -78,8 +74,7 @@ Les [CSS filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) propo
 
 Enfin, une partie importante de la présentation était dédiée à [blend-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode), une propriété qui permet de définir comment les parties superposées de deux images doivent s'afficher. Comme c'est un sujet avec un jargon particulier que je ne maîtrise pas aussi bien qu'Una, je vous invite à jeter à son site [\#artTheWeb](http://arttheweb.com), qui compile pas mal de démos agrémentées d'explications techniques.
 
-Becoming responsible for CSS, par [Alan Stearns](https://twitter.com/alanstearns)
----------------------------------------------------------------------------------
+### Becoming responsible for CSS, par [Alan Stearns](https://twitter.com/alanstearns)
 
 https://twitter.com/alanstearns/status/673124776181911552
 
@@ -89,8 +84,7 @@ Mais ce que nous dit Alan, c'est qu'en réalité, le CSS est entre les mains de 
 
 Il a également évoqué un nouveau groupe de travail qui a émergé cette année, baptisé [Houdini](https://wiki.css-houdini.org), et qui vise à définir de nouvelles APIs bas niveau de style et de mise en forme pour faciliter l'implémentation de nouvelles spécifications via JavaScript. Alan et d'autres membres du W3C espèrent ainsi qu'à terme, l'implémentation de nouvelles propriétés dans le navigateur sera accélérée, pour ne plus être victimes de leur lente standardisation.
 
-Transform alchemy, par [Tom Giannattasio](https://twitter.com/attasi)
----------------------------------------------------------------------
+### Transform alchemy, par [Tom Giannattasio](https://twitter.com/attasi)
 
 https://twitter.com/dotCSS/status/672807657439404032
 
@@ -100,8 +94,7 @@ Avec la propriété *transform*, on peut ajuster des valeurs de rotation et de t
 
 Tom précise tout de même que dès lors qu'il s'agit de faire des choses plus complexes à une échelle plus large, WebGL est une solution plus adaptée que CSS. C'est sans doute vrai, mais c'est toujours amusant de voir [jusqu'où les gens sont capables de pousser le langage](http://www.keithclark.co.uk/labs/css-fps/desktop/).
 
-The expanding boundaries of CSS, par [Chris Eppstein](https://twitter.com/chriseppstein)
-----------------------------------------------------------------------------------------
+### The expanding boundaries of CSS, par [Chris Eppstein](https://twitter.com/chriseppstein)
 
 https://twitter.com/dotCSS/status/672813085892198400
 
@@ -111,8 +104,7 @@ Pour cela, il évoque d'abord la philosophie originelle derrière le langage, qu
 
 Le succès massif des pré-processeurs tels que Sass et Less prouve que les développeurs CSS sont prêts à accueillir plus de possibilités et de complexité dans le langage. Variables, mixins, héritage... Toutes ces notions ajoutent une richesse supplémentaire à CSS qui facilite le travail des développeurs. Tom évoque également Houdini, et la vocation de ce groupe à étendre les possibilités offertes par les outils natifs du Web, à rendre ce dernier plus compréhensible et son développement plus rapide et efficace.
 
-Pushing CSS to new frontiers, par [Daniel Glazman](https://twitter.com/glazou)
-------------------------------------------------------------------------------
+### Pushing CSS to new frontiers, par [Daniel Glazman](https://twitter.com/glazou)
 
 https://twitter.com/dotCSS/status/672820792481198084
 

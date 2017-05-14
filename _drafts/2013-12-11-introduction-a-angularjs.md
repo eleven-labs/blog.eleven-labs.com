@@ -26,7 +26,7 @@ Voici un exemple minimaliste contenant un *template* et un *controller* :
 
 Voici notre *template* "hello.html" :
 
-```xhtml
+```html
 <html ng-app>
 <head>
 <title>Hello, World in AngularJS</title>
@@ -61,8 +61,6 @@ Il y a plusieurs choses intéressantes à noter ici en comparaison avec la plupa
 -   Le contrôleur est un bon vieux code *JavaScript* qui n'a besoin de rien hériter de ce que *AngularJS* fournit, et qui obtient l'objet *$scope* sans que l'on n'ait besoin de le créer.
 -   Nous n'avons pas eu à appeler le constructeur du contrôleur.
 
- 
-
 ***MVC* (Modèle-Vue-Contrôleur)**
 
 Dans les applications *AngularJS*, la vue est le *DOM* (*Document Object Model*), les contrôleurs sont des classes *JavaScript*, et le modèle est stocké dans les propriétés des objets.
@@ -73,8 +71,6 @@ Dans les applications *AngularJS*, la vue est le *DOM* (*Document Object Model*)
 Retournons dans l'exemple de code ci-dessus. Si nous remplaçons le texte *Hello* par le texte *Hi* dans le champ de saisie, voici l'affichage que nous aurons dans le navigateur :
 
 ![Hi](http://blog.eleven-labs.com/wp-content/uploads/2013/12/Hi.png)
-
- 
 
 L'interface utilisateur se met à jour dynamiquement, sans que nous ayons eu besoin d'attacher un *change listener* sur le champ de saisie.
 Il faut également noter que le *data binding* est bidirectionnel. Dans notre contrôleur, le changement de valeur de notre variable *$scope.hello.text*, à la suite d'une requête au serveur par exemple, mettrait automatiquement à jour le champ de saisie et le texte dans les doubles accolades.
@@ -92,7 +88,7 @@ Si l'on reprend notre *template* "hello.html", on remarque la notation de doubl
 
 Comparons notre code écrit avec *AngularJS*, à ce que l'on écrirait en *JavaScript* natif :
 
-```
+```html
 <html>
 <head>
 <title>Hello, World in JavaScript</title>

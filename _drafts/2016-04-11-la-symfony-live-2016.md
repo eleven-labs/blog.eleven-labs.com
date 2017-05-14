@@ -24,15 +24,17 @@ tags:
 
 Cette année, Eleven Labs a, pour la troisième fois, sponsorisé le Symfony Live 2016, qui s’est déroulé à la Cité Universitaire. Nous étions présents avec nos brand new Wilson Black Edition, notre borne d’arcade et nos astrobeers.
 
-[
-](http://blog.eleven-labs.com/wp-content/uploads/2016/04/Astrobeer.jpg)[
-](http://blog.eleven-labs.com/wp-content/uploads/2016/04/stand-eleven.jpg)![tomgregbox](http://blog.eleven-labs.com/wp-content/uploads/2016/04/tomgregbox.jpg) [![stand eleven](http://blog.eleven-labs.com/wp-content/uploads/2016/04/stand-eleven-300x169.jpg)](http://blog.eleven-labs.com/wp-content/uploads/2016/04/stand-eleven.jpg)[![Astrobeer](http://blog.eleven-labs.com/wp-content/uploads/2016/04/Astrobeer-225x300.jpg)](http://blog.eleven-labs.com/wp-content/uploads/2016/04/Astrobeer.jpg)
+![Astrobeer](http://blog.eleven-labs.com/wp-content/uploads/2016/04/Astrobeer.jpg)
+
+![Stand ElevenLabs](http://blog.eleven-labs.com/wp-content/uploads/2016/04/stand-eleven.jpg)
+
+![tomgregbox](http://blog.eleven-labs.com/wp-content/uploads/2016/04/tomgregbox.jpg) 
+
+[![stand eleven](http://blog.eleven-labs.com/wp-content/uploads/2016/04/stand-eleven-300x169.jpg)](http://blog.eleven-labs.com/wp-content/uploads/2016/04/stand-eleven.jpg)
+
+[![Astrobeer](http://blog.eleven-labs.com/wp-content/uploads/2016/04/Astrobeer-225x300.jpg)](http://blog.eleven-labs.com/wp-content/uploads/2016/04/Astrobeer.jpg)
 
 Après notre Storify de ce matin, voici un retour détaillé en mode live tweet de l’astronaute Captain Jojo !
-
- 
-
- 
 
 Cette année, le Symfony Live Paris s'est déroulé à la Cité universitaire, un lieu d'exception pour une des meilleures conférences de l'année.
 
@@ -65,25 +67,20 @@ Mais comme le dit Fabien Potencier, le mieux est d'avoir les deux gestions de r�
 
 La difficulté d'avoir cette gestion pour les répertoires, est de s'outiller pour suivre l'ensemble des projets. Durant la conférence, Fabien Potencier nous a montré comment il gère cet ensemble plutôt compliqué à l'aide de "git sub-tree" qui a du être recodé suite à des problèmes de lenteur d'exécution (jusqu'a 1 jour complet).
 
- 
-
 > Recoder git sub-tree pour splitter mon repo [\#github](https://twitter.com/hashtag/github?src=hash) c'est pas facile [\#Symfony\_Live](https://twitter.com/hashtag/Symfony_Live?src=hash)
 >
 > — Jonathan (@CaptainJojo42) [7 avril 2016](https://twitter.com/CaptainJojo42/status/717984691131957248)
-
- 
 
 J'ai tout de même envie de tester ce mode de fonctionnement qui parait avoir plus d'avantages que la gestion actuelle.
 
 [Les slides et les avis.](https://joind.in/event/symfonylive-paris-2016/monolith-repositories-with-git)
 
-#### Le composant Guard
+## Le composant Guard
 
 Jéremy, un Marseillais de Sensio, est venu nous parler d'un nouveau composant Guard, disponible depuis la version 2.8 de Symfony. La première chose est que le composant n'apporte aucune nouvelle fonctionnalité par rapport à l'authentification qui existe déjà dans Symfony.
 
 La seule nouveauté est la gestion de l'authentification en une seule class, et non plus les trois ou quatre à mettre en place actuellement.
 
- 
 
 > Guard ou l'authentification en une seul class [\#Symfony\_Live](https://twitter.com/hashtag/Symfony_Live?src=hash). Moins casse tête qu'avant. [@Eleven\_Labs](https://twitter.com/Eleven_Labs) [pic.twitter.com/ajaHcQpVR9](https://t.co/ajaHcQpVR9)
 >
@@ -93,7 +90,7 @@ Lors de son talk, un exemple de code nous apporte une idée de l'utilisation bea
 
 [Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/guard-dans-la-vraie-vie)
 
-#### La migration de Symfony 2.0 à 3.0 où comment faire une migration progressive.
+## La migration de Symfony 2.0 à 3.0 où comment faire une migration progressive.
 
 La Fourchette est venue nous montrer comment mettre en place une migration progressive de leurs applications, la problématique étant de ne jamais avoir d'interruption de service.
 
@@ -115,7 +112,7 @@ Je trouve leur migration vraiment sympa, elle permet de vérifier les choix tech
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/r2d2-to-bb8)
 
-#### Les fuites de mémoire en PHP
+## Les fuites de mémoire en PHP
 
 Le début du talk nous a permis de comprendre comment PHP opère la gestion de sa mémoire. Cela permet d'avoir une réflexion sur les problèmes liés à cette façon de faire et donc de réfléchir à notre code. L'exemple marquant est l'utilisation d'objet cyclique (A appelle B qui lui même utilise A), qui arrive à chaque fois à une fuite mémoire.
 
@@ -133,7 +130,7 @@ Le talk était très sympa, mais le speaker oublie que le choix de PHP n'est pas
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/php-meminfo-ou-la-chasse-aux-memory-leak)
 
-#### Retour d'expérience sur les microservices.
+## Retour d'expérience sur les microservices.
 
 Le speaker vient nous expliquer la mise en place des microservices chez Auchan, il commence par présenter ce qu'est une architecture microservices.
 
@@ -162,9 +159,7 @@ Je ne suis pas fan de son architecture car elle ne contient qu'une seule technol
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/retour-dexprience-reactive-architecture-et-microservices--comment-dcoupler-mes-applications-)
 
- 
-
-#### Le composant workflow.
+## Le composant workflow.
 
 Ce composant ne parle pas à grand monde, d'ailleurs peu de personnes l'utilisent car il n'est pas en production depuis longtemps.
 
@@ -180,7 +175,7 @@ Durant tout le talk, il donne l'exemple de la presse et la gestion du workflow d
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/le-reveil-du-workflow)
 
-#### Blablacar nous présente ElasticSearch
+## Blablacar nous présente ElasticSearch
 
 Le talk nous propose de comprendre comment Blablacar utilise ElasticSearch sur leur front.
 
@@ -194,7 +189,7 @@ En bref un bon récapitulatif de la documentation Elasticsearch, dommage de ne 
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/elasticsearch-chez-blablacar)
 
-#### Performance au quotidien dans un environnement Symfony.
+## Performance au quotidien dans un environnement Symfony.
 
 Certainement la meilleure présentation de la première journée de la Symfony Live, Xavier Leune est venu nous présenter la performance chez CCM Benchmark, le plus gros groupe de médias en termes de pages vues au monde.
 
@@ -212,9 +207,8 @@ Cette présentation est à voir, elle permet de se familiariser avec la gestion 
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/performance-au-quotidien-dans-un-environnement-symfony)
 
- 
 
-#### La confiance dans une entreprise.
+## La confiance dans une entreprise.
 
 Le fondateur d'OpenClassRoom vient présenter sa vision de la société d'aujourd'hui.
 
@@ -234,7 +228,7 @@ Il finit par de nombreux conseils de management tels que la transparence et la c
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/pourquoi-se-faire-confiance-)
 
-#### PSR6 ou le cache interface.
+## PSR6 ou le cache interface.
 
 > PSR-6 et le cache c'est pas mal ça [\#symfony\_live](https://twitter.com/hashtag/symfony_live?src=hash)
 >
@@ -264,7 +258,7 @@ La présentation était sympa et permet de réfléchir sur la mise en place du c
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/psr-6--symfony-cache--de-la-perf-en-standard)
 
-#### La sécurité web par Blablacar.
+## La sécurité web par Blablacar.
 
 La présentation était très parlante et permet de voir le nombre de failles possibles dans un site web. L'exemple parlant du champ hidden qui n'est pas correctement vérifié sur le serveur et permet d'avoir pleins de billets SNCF pour le prix d'un parait une évidence mais rappelle que la sécurité est une affaire du quotidien.
 
@@ -278,7 +272,7 @@ Je vous invite à regarder les slides au plus vite, en espérant qu'ils soient d
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/scurit-web-pirater-pour-mieux-protger)
 
-#### Doctrine 2
+## Doctrine 2
 
 Cette présentation ne partait pas gagnante, je ne suis pas fan de Doctrine et même contre beaucoup d'ORM.
 
@@ -302,7 +296,7 @@ Je repars dans le même état d'esprit qu'en arrivant : je n'ai aucune envie d'
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/aller-plus-loin-avec-doctrine2)
 
-#### Le composant d'expression langage.
+## Le composant d'expression langage.
 
 La présentation était très métier, je n'ai presque rien noté. La seule chose que j'ai comprise est que l'utilisation du composant d'expression langage était très simple d'utilisation.
 
@@ -314,7 +308,7 @@ C'est ce genre de présentation très métier qui sans notion de ce dernier, me
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/refondre-un-moteur-de-rgles-avec-lexpression-language-de-symfony2)
 
-#### Sécurité et HTTP
+## Sécurité et HTTP
 
 Romain Neutron était là pour nous expliquer comment fonctionnent les headers http de sécurité. Il nous a montré les bases d'un serveur sécurisé avec les headers tels que xss-protection, frame-options, content-type-option, ainsi que la configuration sécurisée d'un nginx.
 
@@ -332,7 +326,7 @@ L'utilisation du [nelmio/NelmioSecurityBundle](https://github.com/nelmio/Nelmio
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/scurit-et-http)
 
-#### Les applications cloud native
+## Les applications cloud native
 
 Le speaker était "fou", il parlait très vite et se perdait parfois dans ses explications. Mais ce qu'il faut retenir, c'est que applications cloud natives ne veulent pas dire applications sur des serveur cloud, il suffit de suivre des règles d'architecture :
 
@@ -349,7 +343,7 @@ La présentation était très intéressante mais manquait d'une ligne directrice
 
 [Les slides et avis.](https://joind.in/event/symfonylive-paris-2016/construire-des-applications-cloud-natives)
 
-#### Conclusion
+## Conclusion
 
 La conférence était un vrai succès et merci à tous les conférenciers pour la qualité de leurs présentations. J'ai appris beaucoup de choses et repars avec de nombreuses idées de veille.
 

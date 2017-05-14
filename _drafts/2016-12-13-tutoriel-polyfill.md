@@ -18,7 +18,7 @@ Avec l'avènement du js natif, et la multiplication des navigateurs et des envi
 
 Mais c'est qui ce polyfill ?
 
-#### Définition :
+## Définition :
 
 Un polyfill, c'est simple. C'est un ensemble de fonctions permettant de simuler, sur un [navigateur web](https://fr.wikipedia.org/wiki/Navigateur_web "Navigateur web") ancien, des fonctionnalités qui ne sont pas nativement disponible. (cf : Wikipédia)
 
@@ -40,7 +40,7 @@ Et maintenant, je vous entend encore:
 
 > «-Je trouve pas mon polyfill, alors comment je le développe ?»
 
-#### Comment implémenter un polyfill ?
+## Comment implémenter un polyfill ?
 
 Nous allons faire simple, aujourd'hui nous voulons utiliser la fonction "Object.assign()" permettant de créer un nouvel object js.
 

@@ -17,13 +17,13 @@ Aujourd'hui les architectures micro-services sont de plus en plus répandues. Ma
 
 Mettons fin au mystère dès maintenant, le circuit-breaker, c'est le **disjoncteur** de votre architecture micro-services. Mais comment cela fonctionne et pourquoi en aurions-nous besoin ?
 
-#### Pourquoi j'ai besoin d'un disjoncteur ?
+## Pourquoi j'ai besoin d'un disjoncteur ?
 
 Pour expliquer l'utilité d'un disjoncteur, un peu d'histoire. C'est Thomas Edison qui apporte l'électricité dans nos foyers en 1879. Peu après la sortie de cette impressionnante invention, de nombreux accidents de surtension, tuent ou blessent de nombreuses personnes. C'est alors que Thomas Edison, et oui toujours lui, invente le disjoncteur : un mécanisme permettant de couper le courant lors d'un surtension avant que celui-ci détruise les éléments du circuit électrique. Aujourd'hui, le disjoncteur est un élément essentiel dans tout circuit électrique, il y a en dans les téléphones, les ordinateurs, les télévisions etc...
 
 Mais quel parallèle avec notre architecture micro-services ? Il faut se représenter cette architecture comme un circuit électrique : Tous les services peuvent communiquer entre eux. conséquence, si un des services surchauffe, il risque de contaminer les autres. Il ne faut donc plus faire appel à lui. Et c'est ici que le circuit-breaker rentre en action.
 
-###### *Exemple:*
+### *Exemple:*
 
 Un service A fait appel à un service B.
 
@@ -45,13 +45,11 @@ Ce qui permet au service A de prendre en charge la panne, et d'attendre que le s
 
 ![](http://blog.eleven-labs.com/wp-content/uploads/2016/12/Untitled-drawing-5.png)
 
-***Bonus ***: L'intérêt est encore plus présent quand votre architecture est dans le cloud et que vous avez choisi un système d'autoscalling. Quand un service tombe ou est ralenti cela peut entraîner une plus forte demande du service, ce qui par effet de levier peut faire des demandes de création de machine et ne ferrons que sur-alimenter le cloud. Cela peut vite coûter cher !
+**Bonus**: L'intérêt est encore plus présent quand votre architecture est dans le cloud et que vous avez choisi un système d'autoscalling. Quand un service tombe ou est ralenti cela peut entraîner une plus forte demande du service, ce qui par effet de levier peut faire des demandes de création de machine et ne ferrons que sur-alimenter le cloud. Cela peut vite coûter cher !
 
 Vous êtes désormais convaincu d'avoir besoin d'avoir un circuit-breaker, mais comment l'implémenter ? Nous allons en faire une en Symfony permettant de gérer un circuit-breaker minimum avec comme base une communication entre service utilisant Guzzle.
 
- 
-
-#### Implémentation en Symfony 3 :
+## Implémentation en Symfony 3 :
 
 Nous allons suivre le pattern suivant.
 
@@ -63,8 +61,6 @@ Ce dont nous avons besoin :
 -   une [listener](http://symfony.com/doc/current/event_dispatcher.html) permettant de récupérer l'événement précédent
 -   un [service](http://symfony.com/doc/current/service_container.html) permettant de connaitre le statut du circuit-breaker
 -   un [cache](https://symfony.com/blog/new-in-symfony-3-1-cache-component) permettant de stocker les informations du circuit-breaker
-
- 
 
 Nous allons commencer par l'event, pour cela rien de plus simple : nous devons envoyer le nom du service et le statut de la communication.
 
@@ -117,7 +113,7 @@ class CircuitBreakerEvent extends Event
 
 Une fois l'événement envoyé, il faut le récupérer dans un listener, qui servira de passe-plat vers le service du circuit-breaker.
 
-```
+```php
 <?php declare(strict_types=1);
 
 namespace AppBundle\EventListener;
