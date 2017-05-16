@@ -6,6 +6,11 @@ layout: default
   <header>
      <img src="/img/authors/{{page.login}}.jpg" style="max-width: 180px"/>
       <h1 class="title">{{ page.name }}</h1>
+      <div class="author-social">
+          <ul>
+            {% include icons.html data=page %}
+        </ul>
+      </div>
   </header>
 
     <section class="post-content">
