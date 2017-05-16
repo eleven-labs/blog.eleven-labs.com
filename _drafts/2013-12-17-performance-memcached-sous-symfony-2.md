@@ -121,10 +121,11 @@ Petite chose à vous rappeler dans votre template twig, vos données sont access
 
 Ex :
 
+{% raw %}
 ```twig
 {{ eleve["nom"] }} {# remplace {{ eleve.getNom }} #}
 ```
-
+{% endraw %}
 
 PART III : "Time to Cache"
 ==========================
@@ -133,7 +134,7 @@ Bon, jusqu'ici c'était la partie facile, celle qui est à mettre en place parto
 
 Nous allons maintenant rentrer dans les dernières phases d'optimisation côté code, même si nous allons tricher, puisque nous allons coupler Sf à une autre technologie : Memcached.
 
-**/!\\ Cette partie consiste à "stocker" nos données dans la RAM, cela est toujours mieux si la donnée à stocker est elle-même déjà optimisée, par exemple avec les conseils ci-dessus ;) /!\\**
+**⚠ Cette partie consiste à "stocker" nos données dans la RAM, cela est toujours mieux si la donnée à stocker est elle-même déjà optimisée, par exemple avec les conseils ci-dessus ;) ⚠**
 
 Alors, pourquoi stocker notre donnée dans la RAM, si celle-ci est déjà optimisée grâce aux exemples précédents ?
 

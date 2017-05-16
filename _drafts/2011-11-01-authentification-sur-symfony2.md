@@ -165,7 +165,8 @@ Comme vous pouvez le voir, nous n'avons pas de code dans l'action logout à vous
 
 Maintenant nous allons afficher le formulaire dans le fichier login.html.twig.
 
-```php
+{% raw %}
+```twig
 {% if error %}
     <div>{{ error.message }}</div>
 {% endif %}
@@ -180,5 +181,6 @@ Maintenant nous allons afficher le formulaire dans le fichier login.html.twig.
     <input type="submit" name="login" />
 </form>
 ```
+{% endraw %}
 
 Voila maintenant votre partie admin est protégée, dans un prochain tuto j'expliquerai comment créer son propre provider.
