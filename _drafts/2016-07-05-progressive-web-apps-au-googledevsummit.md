@@ -20,7 +20,7 @@ Lundi 19 juin et mardi 20 juin 2016 a eu lieu la GoogleDevSummit à Amsterdam po
 
 Voici mon retour sur les deux jours de conférence.
 
-## Keynote (Thao Tran et Alex Russel)
+## Keynote (Thao Tran et Alex Russel)
 
 Il s'agit d'une introduction commerciale sur les PWA, il met en perspective l'objectif business des webs apps.
 
