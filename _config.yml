@@ -76,7 +76,10 @@ theme_settings:
 
 # PAGINATION
 paginate: 5
-paginate_path: blog/page:num
+paginate_path: /blog/page:num
+
+paginate_category_basepath: /:name/
+paginate_category_layout: 'home.html'
 
 # BUILD SETTINGS
 markdown: kramdown
@@ -87,3 +90,4 @@ sass:
 gems:
     - jekyll-paginate
     - jekyll-seo-tag
+    - jekyll-paginate-categories
