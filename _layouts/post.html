@@ -6,7 +6,7 @@ layout: default
         <h1 class="title">{{ page.title }}</h1>
         <p class="meta">
             {{ page.date | date: "%B %-d, %Y" }}
-            {% if site.data.authors[page.author] %} - {{ site.data.authors[page.author].display_name }}{% endif %}
+            {% include author_link.html login=page.author %}
         </p>
     </header>
     <section class="post-content">{{ content }}</section>
