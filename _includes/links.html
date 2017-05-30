@@ -1,0 +1,8 @@
+<h3>A lire aussi</h3>
+<ul>
+  {% for post in site.posts limit:3 %}
+    <li>
+      <a href='{{ post.url | prepend: site.baseurl }}'>{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
