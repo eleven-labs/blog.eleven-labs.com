@@ -7,3 +7,7 @@ gem 'rouge', '1.11.1'
 group :test do
   gem 'rake'
 end
+
+group :jekyll_plugins do
+  gem 'algoliasearch-jekyll', '~> 0.8.0'
+end

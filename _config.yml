@@ -81,6 +81,13 @@ theme_settings:
 paginate: 5
 paginate_path: blog/page:num
 
+# ALGOLIA
+algolia:
+  application_id: 'Y0KZQHR2II'
+  index_name:     'blog_eleven'
+
+exclude: [vendor]
+
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: rouge
@@ -90,6 +97,7 @@ sass:
 gems:
     - jekyll-paginate
     - jekyll-seo-tag
+    - algoliasearch-jekyll
 
 collections:
   authors:

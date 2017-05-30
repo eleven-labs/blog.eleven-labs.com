@@ -1,3 +1,5 @@
 cache: bundler
 language: ruby
 sudo: false
+script:
+  - bundle exec jekyll algolia push
