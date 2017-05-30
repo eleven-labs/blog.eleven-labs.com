@@ -20,7 +20,7 @@ layout: default
                     </a>
                 </h1>
                 <p class="meta">
-                    {{ post.date | date: "%B %-d, %Y" }}
+                    {{ post.date | date: "%B %-d, %Y" }} - {% include reading_time.html content=post.content %}
                 </p>
             </header>
             <div class="excerpt">
