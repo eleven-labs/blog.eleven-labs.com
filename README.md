@@ -21,11 +21,11 @@ git clone git@github.com:eleven-labs/eleven-labs.github.io.git
 
 **2 - Installer Jekyll**
 ```bash
-gem install jekyll bundler
+cd eleven-labs.github.io && bundle install
 ```
 **3 - Lancer le blog**
 ```bash
-cd eleven-labs.github.io && bundle exec jekyll serve
+bundle exec jekyll serve
 ```
 Vous devriez avoir le blog qui s'affiche dans votre navigateur préféré à l'adresse suivante http://localhost:4000
 
@@ -41,7 +41,7 @@ cd _authors && touch login.md
 ```
 **2 - Remplissez votre fiche**
 
-Veuillez utiliser le template d'auteur suivant, vous pouvez copier template disponible dans le fichier `_authors/template-autor.md`
+Veuillez utiliser le template d'auteur suivant, vous pouvez copier template disponible dans le fichier `_authors/TEMPLATE-AUTOR`
 
 ```md
 ---
@@ -77,7 +77,7 @@ AAAA-MM-DD-titre.md
 
 **2 - Remplissez le template d'article**
 
-Veuillez utiliser le template d'article suivant, vous pouvez copier template disponible dans le fichier `_drafts/template-article.md`
+Veuillez utiliser le template d'article suivant, vous pouvez copier template disponible dans le fichier `_drafts/TEMPLATE-ARTICLE`
 
 ```md
 ---
@@ -103,6 +103,8 @@ image:
 VOTRE ARTICLE EN MARKDOWN
 ```
 
+**ATTENTION** S'il s'agit de la reprise d'un article il faut garder le même lien qu'actuellement sur le site dans le `permalink`.
+
 **3 - Ecrivez votre article**
 
 Votre article doit être écrit en [markdown](https://guides.github.com/features/mastering-markdown/) , il existe de nombreuses solution online pour écrire en markdown comme par exemple:
@@ -110,10 +112,10 @@ Votre article doit être écrit en [markdown](https://guides.github.com/features
  - https://stackedit.io
  - http://dillinger.io
 
- Si vous avez besoin de mettre des images dans votre article il faut d'abord les ajouter dans le dossier suivant `assets` puis de les insérer dans votre article.
+ Si vous avez besoin de mettre des images dans votre article il faut d'abord les ajouter dans le dossier suivant `assets/AAAA-MM-DD-titre/` puis de les insérer dans votre article.
 
 ```md
-![DESCRIPTION](/assets/MON IMAGE)
+![DESCRIPTION](/assets/AAAA-MM-DD-titre/MON IMAGE)
 ```
 
 **4 - Demandez une la publication**
@@ -145,4 +147,4 @@ Tout le monde peut commenter une pull request de `publication`, une fois approuv
 
 **2 - On partage**
 
-L'article est ligne !!! Vous n'avez plus qu'a le partager.
+L'article est en ligne !!! Vous n'avez plus qu'a le partager.
