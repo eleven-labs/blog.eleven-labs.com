@@ -1,0 +1,55 @@
+.search-bar {
+    position: relative;
+    font-size: 1.4rem;
+
+    @media (min-width: 480px) {
+        margin-right: 25px;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+
+    &-label {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    &-input {
+        cursor: pointer;
+        display: block;
+        padding: 4px;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        bottom:0;
+        right: 0;
+        border: none;
+        opacity: 0;
+        min-width: 100%;
+        max-width: 100%;
+        background: white;
+        border-bottom: 2px solid transparent;
+        transition: all .2s ease;
+
+        &:focus {
+            opacity: 1;
+            outline: none;
+            border-bottom: 2px solid $brand-black;
+
+            @media (min-width: 480px) {
+                min-width: 120px;
+            }
+
+            @media (max-width: 480px) {
+                left: -30px;
+                right: -30px;
+                max-width: 1000px;
+            }
+        }
+    }
+}

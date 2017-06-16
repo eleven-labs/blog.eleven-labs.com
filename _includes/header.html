@@ -1,16 +1,20 @@
 <header class="site-header">
-    <a href="{{ site.baseurl }}/" class="branding">
-        <h1 class="site-title visually-hidden">
-            {{ site.theme_settings.title }}
-        </h1>
-    </a>
+    <div class="branding-container">
+        <a class="branding" class="no-link-style" href="{{ site.baseurl }}/">
+            <h1 class="site-title visually-hidden">
+                {{ site.theme_settings.title }}
+            </h1>
+        </a>
+    </div>
+
+    {% include search.html %}
 
     <nav class="site-nav">
         <ul>
             {% for page in site.pages %}
             {% if page.title and page.hide != true %}
             <li>
-                <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">
+                <a class="page-link no-link-style" href="{{ page.url | prepend: site.baseurl }}">
                     {{ page.title }}
                 </a>
             </li>
@@ -20,8 +24,4 @@
             {% include icons.html data=site.theme_settings %}
         </ul>
     </nav>
-
-    <!--<form class="search">
-        <input type="search" id="js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
-    </form>-->
 </header>
