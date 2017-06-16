@@ -1,0 +1,21 @@
+.page-heading {
+    background: $brand-yellow;
+
+    @media (min-width: 480px) {
+        padding: 60px 0;
+    }
+
+    @media (max-width: 480px) {
+        padding: 30px 0;
+    }
+
+    &-title {
+        @extend %h1;
+        margin: 15px 0;
+    }
+
+    &-reading-time {
+        font-size: 1.2rem;
+        margin-top: 5px;
+    }
+}

@@ -1,8 +1,12 @@
-<h3>A lire aussi</h3>
-<ul>
-  {% for post in site.posts limit:3 %}
-    <li>
-      <a href='{{ post.url | prepend: site.baseurl }}'>{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+<aside class="slice read-also">
+    <div class="container">
+        <h3 class="read-also-title">A lire aussi</h3>
+        <ul class="read-also-list">
+            {% for post in site.posts limit:3 %}
+            <li class="read-also-item">
+                <a class="read-also-link" href='{{ post.url | prepend: site.baseurl }}'>{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</aside>
