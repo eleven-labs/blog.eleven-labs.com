@@ -5,7 +5,7 @@
     width: 100%;
     background-color:$header-desc-background-color;
     background-size: cover;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     text-align: center;
     color: $header-desc-text-color;
 }
@@ -14,24 +14,44 @@
 }
 // Post listing
 .posts {
-    .post-teaser {
-        @extend %padding-regular;
+    &-teaser {
         width: 100%;
         margin-bottom: 0;
         display: inline-block;
         background-size: $feature-image-size;
-        border-bottom: 1px solid $border-color;
+
         p a:hover {
             @extend %link-hover;
         }
     }
+
+    &-title {
+        @extend %h2;
+        margin: 0 0 5px;
+
+        a {
+            color: $brand-black;
+            text-decoration: none;
+        }
+    }
+
+    &-date {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+    }
+
+    &-button {
+        margin-top: 1.5rem;
+    }
+
     .excerpt {
-        margin-top: 1em;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
     }
 }
 // Pagination
 .pagination .button {
-    margin: 0 1.5em;
+    margin: 0 1.5rem;
     i {
         vertical-align: middle;
     }

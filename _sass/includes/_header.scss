@@ -5,15 +5,26 @@
     padding: 20px 45px;
     background: $brand-color;
     border-bottom: 1px solid $border-color;
-    float: left;
     width: 100%;
 
-    .branding {
+    .branding-container {
         flex: auto;
-        display: block;
+    }
+
+    .branding {
+        display: inline-block;
+        width: 160px;
+        height: 60px;
 
         @media (max-width: 480px) {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            width: 120px;
+            height: 40px;
+        }
+
+        &:hover {
+            background: none;
+            text-decoration: none;
         }
 
         &:before {
@@ -26,6 +37,8 @@
 
             @media (max-width: 480px) {
                 margin: 0 auto;
+                width: 120px;
+                height: 40px;
             }
         }
     }
@@ -35,18 +48,18 @@
     }
 
     .avatar {
-        height: 2em;
-        width: 2em;
+        height: 2rem;
+        width: 2rem;
         float: left;
         margin-top: -3px;
-        border-radius: 0.2em;
-        margin-right: 1em;
+        border-radius: 0.2rem;
+        margin-right: 1rem;
     }
 
     .site-title {
         float: left;
         font-weight: bold;
-        font-size: 1em;
+        font-size: 1rem;
         line-height: 1.5;
     }
 
@@ -62,31 +75,18 @@
 
         li {
             display: inline-block;
-            margin-right: 0.4em;
+            margin-right: 0.4rem;
         }
     }
 
-    .branding,
-    .site-nav {
+    .search-bar {}
+
+    .branding-container,
+    .site-nav,
+    .search-bar {
         @media (max-width: 480px) {
             flex: 0 0 100%;
             text-align: center;
         }
     }
 }
-
-
-/*
-.search {
-    display: block;
-    background: $brand-black;
-    color: #F5F5F5;
-
-    @media (min-width: 480px) {
-        margin-left: 15px;
-    }
-
-    @media (max-width: 480px) {
-        margin-top: 10px;
-    }
-}*/

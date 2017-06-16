@@ -1,0 +1,20 @@
+.button {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-family: $font-family-headings;
+    font-weight: lighter;
+    color: $brand-black;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+        background: $brand-yellow;
+    }
+
+    &:visited,
+    &:visited:hover {
+        color: #999;
+    }
+}
