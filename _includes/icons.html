@@ -1,6 +1,6 @@
 {% if include.data.rss %}
 <li>
-    <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" title="{{ site.theme_settings.str_rss_follow }}">
+    <a href class="no-link-style" ="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" title="{{ site.theme_settings.str_rss_follow }}">
         <i class="fa fa-fw fa-rss"></i>
     </a>
 </li>
@@ -8,7 +8,7 @@
 
 {% if include.data.email_address %}
 <li>
-    <a href="mailto:{{ include.data.email_address }}" title="{{ site.theme_settings.str_email }}">
+    <a href class="no-link-style" ="mailto:{{ include.data.email_address }}" title="{{ site.theme_settings.str_email }}">
         <i class="fa fa-fw fa-envelope"></i>
     </a>
 </li>
@@ -16,7 +16,7 @@
 
 {% if include.data.behance %}
 <li>
-    <a href="https://www.behance.net/{{ include.data.behance }}" title="{{ site.theme_settings.str_follow_on }} Behance">
+    <a href class="no-link-style" ="https://www.behance.net/{{ include.data.behance }}" title="{{ site.theme_settings.str_follow_on }} Behance">
         <i class="fa fa-fw fa-behance"></i>
     </a>
 </li>
@@ -24,7 +24,7 @@
 
 {% if include.data.bitbucket %}
 <li>
-    <a href="https://bitbucket.org/{{ include.data.bitbucket }}" title="{{ site.theme_settings.str_follow_on }} Bitbucket">
+    <a href class="no-link-style" ="https://bitbucket.org/{{ include.data.bitbucket }}" title="{{ site.theme_settings.str_follow_on }} Bitbucket">
         <i class="fa fa-fw fa-bitbucket"></i>
     </a>
 </li>
@@ -32,7 +32,7 @@
 
 {% if include.data.dribbble %}
 <li>
-    <a href="https://dribbble.com/{{ include.data.dribbble }}" title="{{ site.theme_settings.str_follow_on }} Dribbble">
+    <a href class="no-link-style" ="https://dribbble.com/{{ include.data.dribbble }}" title="{{ site.theme_settings.str_follow_on }} Dribbble">
         <i class="fa fa-fw fa-dribbble"></i>
     </a>
 </li>
@@ -40,7 +40,7 @@
 
 {% if include.data.facebook %}
 <li>
-    <a href="https://www.facebook.com/{{ include.data.facebook }}" title="{{ site.theme_settings.str_follow_on }} Facebook">
+    <a href class="no-link-style" ="https://www.facebook.com/{{ include.data.facebook }}" title="{{ site.theme_settings.str_follow_on }} Facebook">
         <i class="fa fa-fw fa-facebook"></i>
     </a>
 </li>
@@ -48,7 +48,7 @@
 
 {% if include.data.flickr %}
 <li>
-    <a href="https://www.flickr.com/photos/{{ include.data.flickr }}" title="{{ site.theme_settings.str_follow_on }} Flickr">
+    <a href class="no-link-style" ="https://www.flickr.com/photos/{{ include.data.flickr }}" title="{{ site.theme_settings.str_follow_on }} Flickr">
         <i class="fa fa-fw fa-flickr"></i>
     </a>
 </li>
@@ -56,7 +56,7 @@
 
 {% if include.data.github %}
 <li>
-    <a href="https://github.com/{{ include.data.github }}" title="{{ site.theme_settings.str_follow_on }} GitHub">
+    <a href class="no-link-style" ="https://github.com/{{ include.data.github }}" title="{{ site.theme_settings.str_follow_on }} GitHub">
         <i class="fa fa-fw fa-github"></i>
     </a>
 </li>
@@ -64,7 +64,7 @@
 
 {% if include.data.google_plus %}
 <li>
-    <a href="https://plus.google.com/{{ include.data.google_plus }}" title="{{ site.theme_settings.str_follow_on }} Google+">
+    <a href class="no-link-style" ="https://plus.google.com/{{ include.data.google_plus }}" title="{{ site.theme_settings.str_follow_on }} Google+">
         <i class="fa fa-fw fa-google-plus"></i>
     </a>
 </li>
@@ -72,7 +72,7 @@
 
 {% if include.data.instagram %}
 <li>
-    <a href="http://instagram.com/{{ include.data.instagram }}" title="{{ site.theme_settings.str_follow_on }} Instagram">
+    <a href class="no-link-style" ="http://instagram.com/{{ include.data.instagram }}" title="{{ site.theme_settings.str_follow_on }} Instagram">
         <i class="fa fa-fw fa-instagram"></i>
     </a>
 </li>
@@ -80,7 +80,7 @@
 
 {% if include.data.linkedin %}
 <li>
-    <a href="{{ include.data.linkedin }}" title="{{ site.theme_settings.str_follow_on }} LinkedIn">
+    <a href class="no-link-style" ="{{ include.data.linkedin }}" title="{{ site.theme_settings.str_follow_on }} LinkedIn">
         <i class="fa fa-fw fa-linkedin"></i>
     </a>
 </li>
@@ -88,7 +88,7 @@
 
 {% if include.data.pinterest %}
 <li>
-    <a href="http://www.pinterest.com/{{ include.data.pinterest }}" title="{{ site.theme_settings.str_follow_on }} Pinterest">
+    <a href class="no-link-style" ="http://www.pinterest.com/{{ include.data.pinterest }}" title="{{ site.theme_settings.str_follow_on }} Pinterest">
         <i class="fa fa-fw fa-pinterest"></i>
     </a>
 </li>
@@ -96,7 +96,7 @@
 
 {% if include.data.reddit %}
 <li>
-    <a href="https://www.reddit.com/user/{{ include.data.reddit }}" title="{{ site.theme_settings.str_follow_on }} Reddit">
+    <a href class="no-link-style" ="https://www.reddit.com/user/{{ include.data.reddit }}" title="{{ site.theme_settings.str_follow_on }} Reddit">
         <i class="fa fa-fw fa-reddit"></i>
     </a>
 </li>
@@ -104,7 +104,7 @@
 
 {% if include.data.soundcloud %}
 <li>
-    <a href="https://soundcloud.com/{{ include.data.soundcloud }}" title="{{ site.theme_settings.str_follow_on }} SoundCloud">
+    <a href class="no-link-style" ="https://soundcloud.com/{{ include.data.soundcloud }}" title="{{ site.theme_settings.str_follow_on }} SoundCloud">
         <i class="fa fa-fw fa-soundcloud"></i>
     </a>
 </li>
@@ -112,7 +112,7 @@
 
 {% if include.data.stack_exchange %}
 <li>
-    <a href="{{ include.data.stack_exchange }}" title="{{ site.theme_settings.str_follow_on }} Stack Exchange">
+    <a href class="no-link-style" ="{{ include.data.stack_exchange }}" title="{{ site.theme_settings.str_follow_on }} Stack Exchange">
         <i class="fa fa-fw fa-stack-exchange"></i>
     </a>
 </li>
@@ -120,7 +120,7 @@
 
 {% if include.data.steam %}
 <li>
-    <a href="http://steamcommunity.com/id/{{ include.data.steam }}" title="{{ site.theme_settings.str_follow_on }} Steam">
+    <a href class="no-link-style" ="http://steamcommunity.com/id/{{ include.data.steam }}" title="{{ site.theme_settings.str_follow_on }} Steam">
         <i class="fa fa-fw fa-steam"></i>
     </a>
 </li>
@@ -128,7 +128,7 @@
 
 {% if include.data.tumblr %}
 <li>
-    <a href="http://{{ include.data.tumblr }}.tumblr.com/" title="{{ site.theme_settings.str_follow_on }} Tumblr">
+    <a href class="no-link-style" ="http://{{ include.data.tumblr }}.tumblr.com/" title="{{ site.theme_settings.str_follow_on }} Tumblr">
         <i class="fa fa-fw fa-tumblr"></i>
     </a>
 </li>
@@ -136,7 +136,7 @@
 
 {% if include.data.twitter %}
 <li>
-    <a href="https://twitter.com/{{ include.data.twitter }}" title="{{ site.theme_settings.str_follow_on }} Twitter">
+    <a href class="no-link-style" ="https://twitter.com/{{ include.data.twitter }}" title="{{ site.theme_settings.str_follow_on }} Twitter">
         <i class="fa fa-fw fa-twitter"></i>
     </a>
 </li>
@@ -144,7 +144,7 @@
 
 {% if include.data.wordpress %}
 <li>
-    <a href="https://{{ include.data.wordpress }}.wordpress.com/" title="{{ site.theme_settings.str_follow_on }} WordPress">
+    <a href class="no-link-style" ="https://{{ include.data.wordpress }}.wordpress.com/" title="{{ site.theme_settings.str_follow_on }} WordPress">
         <i class="fa fa-fw fa-wordpress"></i>
     </a>
 </li>
@@ -152,7 +152,7 @@
 
 {% if include.data.youtube %}
 <li>
-    <a href="https://www.youtube.com/channel/{{ include.data.youtube }}" title="{{ site.theme_settings.str_follow_on }} YouTube">
+    <a href class="no-link-style" ="https://www.youtube.com/channel/{{ include.data.youtube }}" title="{{ site.theme_settings.str_follow_on }} YouTube">
         <i class="fa fa-fw fa-youtube"></i>
     </a>
 </li>

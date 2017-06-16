@@ -1,7 +1,8 @@
 // Typography
 $font-family-main: Helvetica, Arial, sans-serif;
 $font-family-headings: 'din', Helvetica, Arial, sans-serif;
-$font-size: 1.25em;
+$font-size: 1.9rem;
+$font-size-mobile: 1.6rem;
 
 // Padding
 $padding-large: 20%;
@@ -31,3 +32,6 @@ $header-desc-text-color: #FFF;
 // brand colors
 $brand-yellow: #FBE300;
 $brand-black: #323334;
+
+// layout
+$max-width-layout: 720px;
