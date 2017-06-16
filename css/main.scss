@@ -1,11 +1,14 @@
 ---
 ---
+// Settings
+@import 'settings/fonts';
+@import 'settings/variables';
+
 // External
 @import 'external/reset';
 @import 'external/syntax';
 
 // Base
-@import 'base/variables';
 @import 'base/global';
 @import 'base/utility';
 

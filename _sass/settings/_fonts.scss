@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'din';
+    src: url('../fonts/din-light-webfont.woff2') format('woff2'),
+         url('../fonts/din-light-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'din';
+    src: url('../fonts/din_black-webfont.woff2') format('woff2'),
+         url('../fonts/din_black-webfont.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
