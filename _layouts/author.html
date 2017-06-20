@@ -3,30 +3,38 @@ layout: default
 ---
 
 <article>
-  <header>
-     <img src="/img/authors/{{page.login}}.jpg" style="max-width: 180px"/>
-      <h1 class="title">{{ page.name }}</h1>
-      <div class="author-social">
-          <ul>
-            {% include icons.html data=page %}
-        </ul>
-      </div>
-  </header>
-
-    <section class="post-content">
-      {{ content }}
-    </section>
-    <h3>Derniers articles :</h3>
-    <div class="posts">
-    {% for post in site.posts %}
-        {% if post.author == page.login %}
-        <div>
-              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-                  {{ post.title }}
-              </a>
+    <header class="page-heading">
+        <div class="avatar">
+            <img class="avatar-img" src="/img/authors/{{page.login}}.jpg"/>
         </div>
-        {% endif %}
-    {% endfor %}
-    </div>
+        <h1 class="page-heading-title">{{ page.name }}</h1>
+        <div class="author-social">
+            <ul>
+                {% include icons.html data=page %}
+            </ul>
+        </div>
+    </header>
 
+    <section class="slice">
+        <div class="container post-content">
+            {{ content }}
+        </div>
+    </section>
+
+    <section class="slice">
+        <div class="read-also container">
+            <h3 class="read-also-title">Derniers articles :</h3>
+            <ul class="posts read-also-list">
+                {% for post in site.posts %}
+                {% if post.author == page.login %}
+                <li class="read-also-item">
+                    <a class="read-also-link" href="{{ post.url | prepend: site.baseurl }}">
+                        {{ post.title }}
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
 </article>

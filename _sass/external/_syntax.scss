@@ -1,9 +1,9 @@
-code,pre {
+code,
+pre {
     font-family: Menlo, Monaco, "Courier New", monospace;
 }
 code {
-    padding: .25em .5em;
-    font-size: 85%;
+    padding: .25em .5rem;
     background-color: rgba(0, 0, 0, 0.04);
     border-radius: 3px;
 }
@@ -12,13 +12,21 @@ pre {
     margin-top: 0;
     margin-bottom: 1rem;
     padding: 1rem;
-    font-size: .8rem;
     line-height: 1.4;
     white-space: pre;
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word;
     background-color: rgba(0, 0, 0, 0.04);
+
+    @media (min-width: 480px) {
+        font-size: 1.4rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.3rem;
+    }
+
 }
 pre code {
     padding: 0;

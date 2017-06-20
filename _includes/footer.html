@@ -1,6 +1,13 @@
 {% if site.theme_settings.footer_text %}
-<footer class="site-footer">
-    {% include newsletter.html %}
-    <p class="text">{{ site.theme_settings.footer_text }}</p>
+<footer class="slice newsletter">
+    <div class="container">
+        <a class="newsletter-link" target="_blank" href="https://mailchimp.com">
+            abonnez vous à notre newsletter !
+        </a>
+    </div>
+</footer>
+
+<footer class="slice site-footer">
+    <p class="text container">{{ site.theme_settings.footer_text }}</p>
 </footer>
 {% endif %}

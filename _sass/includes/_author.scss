@@ -6,16 +6,15 @@
         line-height: 1.5;
         text-align: center;
     }
+
     li {
         display: inline;
-        margin-right: 0.4em;
+        margin-right: 0.4rem;
     }
+
     @media (max-width: 1100px) {
         ul {
             display: inline-block;
-            float: left;
-            padding-top: $padding-small;
-            text-align: left;
             width: 100%;
         }
     }

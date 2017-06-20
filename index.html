@@ -12,19 +12,24 @@ layout: default
 
     <div class="posts">
     {% for post in paginator.posts %}
-        <div class="post-teaser">
-            <header>
-                <h1>
-                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+        <div class="posts-teaser slice">
+            <div class="container">
+                <h2 class="posts-title">
+                    <a class="no-link-style" href="{{ post.url | prepend: site.baseurl }}">
                         {{ post.title }}
                     </a>
-                </h1>
-                <p class="meta">
-                    {{ post.date | date: "%B %-d, %Y" }} - {% include reading_time.html content=post.content %}
+                </h2>
+
+                <time class="posts-date meta">
+                    <span class="meta-content">
+                        {{ post.date | date: "%B %-d, %Y" }} - {% include reading_time.html content=post.content %}
+                    </span>
+                </time>
+
+                <p class="excerpt">
+                    {{ post.excerpt }}
                 </p>
-            </header>
-            <div class="excerpt">
-                {{ post.excerpt }}
+
                 <a class="button" href="{{ post.url | prepend: site.baseurl }}">
                     {{ site.theme_settings.str_continue_reading }}
                 </a>

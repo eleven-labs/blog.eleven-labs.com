@@ -1,24 +1,20 @@
 <header class="site-header">
-    <div class="branding">
-        {% if site.theme_settings.gravatar %}
-        <a href="{{ site.baseurl }}/">
-            <img class="avatar" src="https://secure.gravatar.com/avatar/{{ site.theme_settings.gravatar }}?s=100" alt=""/>
+    <div class="branding-container">
+        <a class="branding" class="no-link-style" href="{{ site.baseurl }}/">
+            <h1 class="site-title visually-hidden">
+                {{ site.theme_settings.title }}
+            </h1>
         </a>
-        {% elsif site.theme_settings.avatar %}
-        <a href="{{ site.baseurl }}/">
-            <img class="avatar" src="{{ site.baseurl }}/img/{{ site.theme_settings.avatar }}" alt=""/>
-        </a>
-        {% endif %}
-        <h1 class="site-title">
-            <a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}</a>
-        </h1>
     </div>
+
+    {% include search.html %}
+
     <nav class="site-nav">
         <ul>
             {% for page in site.pages %}
             {% if page.title and page.hide != true %}
             <li>
-                <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">
+                <a class="page-link no-link-style" href="{{ page.url | prepend: site.baseurl }}">
                     {{ page.title }}
                 </a>
             </li>
@@ -26,8 +22,6 @@
             {% endfor %}
             <!-- Social icons from Font Awesome, if enabled -->
             {% include icons.html data=site.theme_settings %}
-
-            <input type="text" id="js-algolia__input" autocomplete="off" name="query" placeholder="Search in this site..." />
         </ul>
     </nav>
 </header>
