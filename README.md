@@ -107,7 +107,7 @@ VOTRE ARTICLE EN MARKDOWN
 
 **3 - Ecrivez votre article**
 
-Votre article doit être écrit en [markdown](https://guides.github.com/features/mastering-markdown/) , il existe de nombreuses solution online pour écrire en markdown comme par exemple:
+Votre article doit être écrit en [markdown](https://guides.github.com/features/mastering-markdown/) , il existe de nombreuses solutions online pour écrire en markdown comme par exemple:
 
  - https://stackedit.io
  - http://dillinger.io
@@ -120,19 +120,19 @@ Votre article doit être écrit en [markdown](https://guides.github.com/features
 
 **4 - Demandez une la publication**
 
-Une fois votre article terminer il faut déplacer le fichier de l'article du dossier `_drafts`au dossier `_posts`
+Une fois votre article terminé il faut déplacer le fichier de l'article du dossier `_drafts`au dossier `_posts`
 
 ```sh
 cp _drafts/AAAA-MM-DD-NOUVEL-ARTICLE.md _posts/AAAA-MM-DD-NOUVEL-ARTICLE.md
 ```
 
-Il vous suffit de faire une pull request avec le nom de branche suivante.
+Il vous suffit de faire une pull request avec le nom de branche suivant.
 
 ```bash
 git checkout -b feat/add-article-TITRE
 ```
 
-N'oubliez le tag  `publication`.
+N'oubliez pas le tag  `publication`.
 
 --------------------------------
 
@@ -141,10 +141,10 @@ Mettre en ligne un article
 
 **1 - Validation d'un article**
 
-Tout le monde peut commenter une pull request de `publication`, une fois approuvé elle est mergé dans master.
+Tout le monde peut commenter une pull request de `publication`, une fois approuvée elle est mergée dans master.
 
 **ATTENTION**: Seulement quelques personnes ont le droit de merger les pulls requests
 
 **2 - On partage**
 
-L'article est en ligne !!! Vous n'avez plus qu'a le partager.
+L'article est en ligne !!! Vous n'avez plus qu'à le partager.
