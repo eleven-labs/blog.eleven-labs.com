@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         Object.keys(content.hits).map(function(key){
           var hit = content.hits[key];
 
-          if (hit.type == 'document') {
+          if (hit.type == 'document' && hit.layout != 'author') {
             var date = new Date(hit.date);
             date = moment(date).format("MMMM DD, YYYY");
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
         htmlArticle += '<div class="container search-logo">';
-        htmlArticle += '   powered by';
+        htmlArticle += '   search by';
         htmlArticle += '   <span class="search-logo-bg"></span>';
         htmlArticle += '</div>';
 
