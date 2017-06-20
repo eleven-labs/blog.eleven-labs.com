@@ -53,7 +53,11 @@ twitter: Compte twitter
 Votre Bio
 ```
 
-**3 - Faite votre pull request**
+**3 - Ajoutez votre avatar**
+
+Ajoutez votre avatar dans le dossier `/img/login.jpg`.
+
+**4 - Faite votre pull request**
 
 Vous pouvez créer votre branche, avec le naming suivant.
 ```bash
