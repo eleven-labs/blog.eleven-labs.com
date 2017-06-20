@@ -1,0 +1,21 @@
+---
+layout: post
+title: TITRE
+excerpt: DESCRIPTION (VISIBLE SUR LA HOME)
+author: LOGIN
+permalink: /LANGUE (fr/en)/TITRE SANS ESPACES/
+categories:
+    - CATEGORIE 1
+    - CATEGORIE 2
+    - ...
+tags:
+    - TAG 1
+    - TAG 2
+    - ...
+image:
+  path: URL D'IMAGE DE HOME
+  height: HAUTEUR DE L'IMAGE
+  width: LARGEUR DE L'IMAGE
+---
+
+VOTRE ARTICLE EN MARKDOWN
