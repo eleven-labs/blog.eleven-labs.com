@@ -1,48 +1,35 @@
-article,
 .comments {
     @extend %padding-regular;
     border-bottom: 1px solid $border-color;
     float: left;
     width: 100%;
 }
+
 article {
     header {
-        margin-bottom: 6%;
         text-align: center;
     }
     a:hover {
         @extend %link-hover;
     }
     .footnotes {
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
 }
-header {
-    h1 {
-        margin: 0;
-    }
-    .meta {
-        color: rgba($text-color, .5);
-        font-size: 0.9em;
-        letter-spacing: 0.1em;
-        margin: 0;
-        text-transform: uppercase;
-    }
-}
+
 .feature-image {
     padding: 0%;
     .post-link {
         color: $feature-image-text-color;
     }
+
     header {
         color: $feature-image-text-color;
         background-size: $feature-image-size;
         margin-bottom: 0;
         padding: $padding-large/2.5 $padding-large;
-        .meta {
-            color: rgba($feature-image-text-color, .7);
-        }
     }
+
     .post-content {
         @extend %padding-regular;
     }
@@ -59,28 +46,12 @@ header {
     }
 
     .page-title {
-        font-size: 1.2em;
-        margin-bottom: 1em;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
         width: 100%;
-    }
-
-    a {
-        padding: 2em 3em;
-        border: 1px solid rgba(255, 255, 255, 0);
-        text-align: center;
-        width: 50%;
-    }
-    a:hover {
-        @extend a.button:hover;
     }
 
     i {
         vertical-align: middle;
     }
-}
-// Share button
-.share-button {
-    width:100%;
-    float: left;
-    @extend %padding-regular;
 }

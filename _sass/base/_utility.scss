@@ -12,24 +12,76 @@
     }
 }
 %link-hover {
-    text-decoration: underline;
-    color: darken($link-color, 15%);
+    font-family: $font-family-headings;
+    line-height: 1.1;
 }
-// Buttons
-.button {
-    border-radius: 0.3em;
-    border: 1px solid;
+
+%h1 {
+    font-family: $font-family-headings;
+    line-height: 1.1;
+    font-weight: lighter;
+    text-transform: uppercase;
+
+    @media (min-width: 480px) {
+        font-size: 5rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 3rem;
+    }
+}
+
+%h2 {
+    font-family: $font-family-headings;
+    line-height: 1.1;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    @media (min-width: 480px) {
+        font-size: 2.4rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 2rem;
+    }
+}
+
+%h3 {
+    font-family: $font-family-headings;
+    line-height: 1.1;
+    padding: 0.3em 0.5em;
+    background: $brand-yellow;
+    font-weight: lighter;
     display: inline-block;
-    margin: 1em 0;
-    padding: 0.5em 0.75em;
+    text-transform: uppercase;
+
+    @media (min-width: 480px) {
+        font-size: 1.6rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.3rem;
+    }
 }
-a.button:hover {
-    background: $link-color;
-    border: 1px solid $link-color;
-    color: $background-color;
-    text-decoration: none;
+
+%h4 {
+    font-family: $font-family-headings;
+    line-height: 1.1;
+    font-size: 1.8rem;
 }
+
 // States
 .disabled {
     opacity: 0.7;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    border: 0;
 }

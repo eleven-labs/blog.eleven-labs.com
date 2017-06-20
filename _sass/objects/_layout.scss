@@ -1,0 +1,28 @@
+.slice {
+    border-bottom: 1px solid $border-color;
+
+    @media (min-width: 480px) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    @media (max-width: 480px) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+.container {
+    max-width: $max-width-layout;
+    margin: 0 auto;
+
+    @media (min-width: 480px) {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+
+    @media (max-width: 480px) {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}

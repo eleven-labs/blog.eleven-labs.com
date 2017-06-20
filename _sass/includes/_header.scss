@@ -1,53 +1,92 @@
 .site-header {
-    @extend %padding-small;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 20px 45px;
     background: $brand-color;
     border-bottom: 1px solid $border-color;
-    display: inline-block;
-    float: left;
     width: 100%;
+
+    .branding-container {
+        flex: auto;
+    }
+
+    .branding {
+        display: inline-block;
+        width: 160px;
+        height: 60px;
+
+        @media (max-width: 480px) {
+            margin-bottom: 5px;
+            width: 120px;
+            height: 40px;
+        }
+
+        &:hover {
+            background: none;
+            text-decoration: none;
+        }
+
+        &:before {
+            display: block;
+            content: "";
+            width: 160px;
+            height: 60px;
+            background: url('../img/logo_eleven_lab.svg') top left no-repeat;
+            background-size: contain;
+
+            @media (max-width: 480px) {
+                margin: 0 auto;
+                width: 120px;
+                height: 40px;
+            }
+        }
+    }
 
     a {
         color: $header-link-color;
     }
 
     .avatar {
-        height: 2em;
-        width: 2em;
+        height: 2rem;
+        width: 2rem;
         float: left;
         margin-top: -3px;
-        border-radius: 0.2em;
-        margin-right: 1em;
+        border-radius: 0.2rem;
+        margin-right: 1rem;
     }
 
     .site-title {
         float: left;
         font-weight: bold;
-        font-size: 1em;
+        font-size: 1rem;
         line-height: 1.5;
     }
 
     .site-nav {
         ul {
+            display: inline-block;
+            text-align: center;
             margin: 0;
             padding: 0;
             list-style: none;
             line-height: 1.5;
-            float: right;
-            text-align: right;
         }
+
         li {
-            display: inline;
-            float: left;
-            margin-right: 0.4em;
+            display: inline-block;
+            margin-right: 0.4rem;
         }
-        @media (max-width: 1100px) {
-            ul {
-                display: inline-block;
-                float: left;
-                padding-top: $padding-small;
-                text-align: left;
-                width: 100%;
-            }
+    }
+
+    .search-bar {}
+
+    .branding-container,
+    .site-nav,
+    .search-bar {
+        @media (max-width: 480px) {
+            flex: 0 0 100%;
+            text-align: center;
         }
     }
 }

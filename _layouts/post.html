@@ -2,23 +2,29 @@
 layout: default
 ---
 
-<!-- Share -->
 {% if site.theme_settings.share_button %}
-  <div class="share-button">
     {% include share.html %}
-  </div>
 {% endif %}
 
-<article {% if page.feature-img %}class="feature-image"{% endif %}>
-    <header style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
-        <h1 class="title">{{ page.title }}</h1>
-        <p class="meta">
-            {{ page.date | date: "%B %-d, %Y" }}
 
-            {% include author_link.html login=page.author %} - {% include reading_time.html content=content %}
-        </p>
+<article {% if page.feature-img %}class="feature-image"{% endif %}>
+    <header class="page-heading" style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
+        <div class="container">
+            <h1 class="page-heading-title">{{ page.title }}</h1>
+            <span class="meta">
+                <span class="meta-content">
+                    {{ page.date | date: "%B %-d, %Y" }}
+                    {% include author_link.html login=page.author %}
+                </span>
+            </span>
+            <div class="page-heading-reading-time">{% include reading_time.html content=content %}</div>
+        </div>
     </header>
-    <section class="post-content">{{ content }}</section>
+
+    <section class="slice">
+        <div class="post-content container">{{ content }}</div>
+    </section>
+
 </article>
 
 <!-- Post navigation -->
@@ -43,25 +49,23 @@ layout: default
 </div>
 {% endif %}
 
-<!-- Share -->
-{% if site.theme_settings.share_button %}
-  <div class="share-button">
-    {% include share.html %}
-  </div>
-{% endif %}
 
 {% include links.html %}
 
 <!-- Disqus -->
 {% if site.theme_settings.disqus_shortname %}
-<div class="comments">
-    {% include disqus.html %}
-</div>
+<section class="slice">
+    <div class="container">
+        {% include disqus.html %}
+    </div>
+</section>
 {% endif %}
 
 <!-- Muut -->
 {% if site.theme_settings.muut_community_name %}
-<div class="comments">
-    {% include muut.html %}
-</div>
+<section class="slice">
+    <div class="container">
+        {% include muut.html %}
+    </div>
+</section>
 {% endif %}
