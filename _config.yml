@@ -82,7 +82,7 @@ algolia:
   application_id: 'Y0KZQHR2II'
   index_name:     'blog_eleven'
 
-exclude: [vendor]
+exclude: [vendor, _authors/TEMPLATE-AUTOR]
 
 # BUILD SETTINGS
 markdown: kramdown
