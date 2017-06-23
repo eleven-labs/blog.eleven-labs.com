@@ -74,7 +74,7 @@ theme_settings:
     share_button: true
 
 # PAGINATION
-paginate: 5
+paginate: 10
 paginate_path: blog/page:num
 
 # ALGOLIA
