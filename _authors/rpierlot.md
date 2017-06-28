@@ -4,4 +4,4 @@ login: rpierlot
 name: Romain Pierlot
 twitter: RomainPierlot
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nibh urna, auctor sit amet vehicula quis, feugiat eu sem. Duis sed lorem nibh. Nam pretium finibus sodales. Vivamus elementum ultricies magna, sit amet hendrerit ex fringilla eget. Morbi facilisis, lorem nec eleifend malesuada, erat lorem euismod urna, et interdum libero mi at leo. Aliquam erat volutpat. Duis et odio id metus feugiat interdum. Mauris sed elementum sem.
+Diplomé de l'ISEP en 2013, Romain Pierlot est ingénieur en Etudes et Développement chez Eleven Labs, avec qui il s'amuse comme un petit fou.
