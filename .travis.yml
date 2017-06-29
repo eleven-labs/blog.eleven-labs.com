@@ -1,5 +1,8 @@
 cache: bundler
 language: ruby
 sudo: false
-script:
-  - bundle exec jekyll algolia push
+deploy:
+  - provider: script
+    script: bundle exec jekyll algolia push
+    on:
+      branch: master
