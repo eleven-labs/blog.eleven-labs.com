@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 'Codeception : Retour d''expérience'
-excerpt: 'Retour d\'expérience sur le framework de test Codeception, présentation + exemples d\'implémentations dans une application Symfony'
+title: Codeception, Retour d'expérience
+excerpt: Retour d'expérience sur le framework de test Codeception, présentation et exemples d'implémentations dans une application Symfony
 author: nkania
 date: '2017-03-09 18:24:38 +0100'
 date_gmt: '2017-03-09 17:24:38 +0100'
