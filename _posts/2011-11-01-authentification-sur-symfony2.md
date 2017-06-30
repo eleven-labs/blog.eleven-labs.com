@@ -2,7 +2,8 @@
 layout: post
 title: Authentification sur Symfony2
 excerpt: Nouveau tuto sur Symfony2, comme pour tous les sites nous avons souvent besoin de rendre une partie de ce dernier non visible pour le public. Pour cela, nous allons mettre en place le système d'authentification de Symfony.
-author: captainjojo
+authors: 
+    - captainjojo
 permalink: /fr/authentification-sur-symfony2/
 categories:
     - Symfony

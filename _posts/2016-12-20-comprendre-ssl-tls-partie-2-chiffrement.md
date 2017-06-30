@@ -3,7 +3,8 @@ layout: post
 title: "Comprendre le SSL/TLS : Partie 2 Chiffrement"
 excerpt: "Algorithmes symétriques"
 permalink: /fr/comprendre-ssl-tls-partie-2-chiffrement/
-author: ibenichou
+authors: 
+    - ibenichou
 date: '2016-12-20 14:15:41 +0100'
 date_gmt: '2016-12-20 13:15:41 +0100'
 categories:

@@ -2,7 +2,8 @@
 layout: post
 title: "HTTP/2 is not future. It's present."
 permalink: /en/http2-future-present/
-author: vcomposieux
+authors: 
+    - vcomposieux
 date: '2017-04-12 12:00:00 +0100'
 date_gmt: '2017-04-12 12:00:00 +0100'
 categories:

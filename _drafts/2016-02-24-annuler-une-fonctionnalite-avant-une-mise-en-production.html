@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Annuler une fonctionnalité avant une mise en production
-author: tthuon
+authors:
+- tthuon
 date: '2016-02-24 17:30:02 +0100'
 date_gmt: '2016-02-24 16:30:02 +0100'
 categories:
@@ -68,7 +69,7 @@ git revert -m 1 &lt;commit de merge de feat-my-awesome-feature&gt;</pre>
 <p>En appliquant cette commande, un nouveau <em>commit</em> va être créé : un <em>commit</em> de <em>revert</em>. Cela va permettre d'indiquer qu'il y a eu <em>revert</em> et donc une annulation de l'ensemble des modifications de ce <em>commit</em>.</p>
 <p>Mon historique indique bien un <em>commit</em> de <em>revert</em> avec en commentaire une explication:</p>
 <pre class="lang:default decode:true ">commit 15c3c27a603263d1e59f5b137e7acfc6dcad5ce0
-Author: Thierry Thuon &lt;thierry.thuon.ext@francetv.fr&gt;
+authors: Thierry Thuon &lt;thierry.thuon.ext@francetv.fr&gt;
 Date:   Fri Feb 19 12:49:07 2016 +0100
 
     Revert "Merge branch 'feat-my-awesome-feature' into develop"
@@ -93,7 +94,7 @@ git merge release</pre>
 <pre class="lang:default decode:true">git revert &lt;commit de revert&gt;</pre>
 <p>Un nouveau <em>commit</em> s'ajoute : il annule un <em>commit</em> d'annulation ("revert the revert").</p>
 <pre class="lang:default decode:true ">commit b7f210da78305284f72edc2e671e5be1f167faad
-Author: Thierry Thuon &lt;thierry.thuon.ext@francetv.fr&gt;
+authors: Thierry Thuon &lt;thierry.thuon.ext@francetv.fr&gt;
 Date:   Fri Feb 19 13:01:53 2016 +0100
 
     Revert "Revert "Merge branch 'feat-my-awesome-feature' into develop""

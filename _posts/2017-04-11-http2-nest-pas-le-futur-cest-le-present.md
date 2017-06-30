@@ -2,7 +2,8 @@
 layout: post
 title: "HTTP/2 n'est pas le futur. C'est le présent."
 permalink: /fr/http2-nest-pas-le-futur-cest-le-present/
-author: vcomposieux
+authors: 
+    - vcomposieux
 date: '2017-04-11 12:00:00 +0100'
 date_gmt: '2017-04-11 12:00:00 +0100'
 categories:

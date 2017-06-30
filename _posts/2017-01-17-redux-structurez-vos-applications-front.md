@@ -2,7 +2,8 @@
 layout: post
 title: 'Redux : Structurez vos applications front'
 permalink: /fr/redux-structurez-vos-applications-front/
-author: vcomposieux
+authors: 
+    - vcomposieux
 date: '2017-01-17 10:09:00 +0100'
 date_gmt: '2017-01-17 09:09:00 +0100'
 categories:

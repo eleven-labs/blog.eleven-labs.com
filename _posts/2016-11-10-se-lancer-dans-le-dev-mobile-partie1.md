@@ -3,7 +3,8 @@ layout: post
 title: "Se lancer dans le dév mobile : Partie I"
 excerpt: "Faire du mobile oui, mais par où commencer ?"
 permalink: /fr/se-lancer-dans-le-dev-mobile-partie1/
-author: ibenichou
+authors: 
+    - ibenichou
 date: '2016-11-10 15:44:34 +0100'
 date_gmt: '2016-11-10 14:44:34 +0100'
 categories:

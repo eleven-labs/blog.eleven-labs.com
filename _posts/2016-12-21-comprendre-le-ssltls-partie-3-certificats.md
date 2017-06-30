@@ -3,7 +3,8 @@ layout: post
 title: "Comprendre le SSL/TLS : Partie 3 Certificats"
 excerpt: "Qu'est-ce qu'un certificat ?"
 permalink: /fr/comprendre-le-ssltls-partie-3-certificats/
-author: ibenichou
+authors: 
+    - ibenichou
 date: '2016-12-21 16:19:21 +0100'
 date_gmt: '2016-12-21 15:19:21 +0100'
 categories:

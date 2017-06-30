@@ -2,7 +2,8 @@
 layout: post
 title: Storify de la Symfony Live 2016 Paris
 excerpt: Voici un storify avec les nombreux tweets de la Symfony Live 2016 Paris.
-author: captainjojo
+authors: 
+    - captainjojo
 permalink: /fr/storify-de-la-symfony-live-2016-paris/
 categories:
     - PHP

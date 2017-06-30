@@ -2,7 +2,8 @@
 layout: post
 title: "Construct and structure a Go GraphQL API"
 permalink: /en/construct-structure-go-graphql-api/
-author: vcomposieux
+authors: 
+    - vcomposieux
 date: '2017-06-15 12:00:00 +0100'
 date_gmt: '2017-06-15 12:00:00 +0100'
 categories:

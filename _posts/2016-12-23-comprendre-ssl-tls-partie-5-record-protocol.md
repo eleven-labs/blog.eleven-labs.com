@@ -3,7 +3,8 @@ layout: post
 title: "Comprendre le SSL/TLS: Partie 5 Record Protocol"
 excerpt: "Record protocol"
 permalink: /fr/comprendre-ssl-tls-partie-5-record-protocol/
-author: ibenichou
+authors: 
+    - ibenichou
 date: '2016-12-23 12:00:01 +0100'
 date_gmt: '2016-12-23 11:00:01 +0100'
 categories:

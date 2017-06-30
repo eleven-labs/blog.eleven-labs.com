@@ -3,7 +3,8 @@ layout: post
 title: "Tutoriel Vidéo : CIDetector"
 excerpt: "Tutoriel Vidéo : CIDetector"
 permalink: /fr/tutoriel-ci-detector/
-author: ibenichou
+authors: 
+    - ibenichou
 date: '2016-11-28 18:46:23 +0100'
 date_gmt: '2016-11-28 17:46:23 +0100'
 categories:

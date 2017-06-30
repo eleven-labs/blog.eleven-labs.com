@@ -2,7 +2,8 @@
 layout: post
 title: Le cache HTTP, votre meilleur ami
 excerpt: e suis actuellement Lead développeur pour un site de presse Français à très fort trafic (lemonde.fr). Au cours de mes expériences précédentes, j'ai pu développer sur plusieurs autres sites à forte volumétrie.
-author: captainjojo
+authors: 
+    - captainjojo
 permalink: /fr/le-cache-http-votre-meilleur-ami/
 categories:
     - Symfony

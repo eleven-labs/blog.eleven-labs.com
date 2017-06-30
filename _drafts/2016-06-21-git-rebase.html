@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Git rebase
-author: tthuon
+authors:
+- tthuon
 date: '2016-06-21 17:56:42 +0200'
 date_gmt: '2016-06-21 15:56:42 +0200'
 categories:
@@ -25,7 +26,7 @@ tags: []
 <h2>Exemple</h2>
 <p>J'ai une branche <em>master</em> avec le code source de mon application.</p>
 <pre class="lang:sh decode:true">commit c1
-Author: lepiaf
+authors: lepiaf
 Date: Sun Jun 12 16:32:19 2016 +0200
 
     initialize tutorial
@@ -38,13 +39,13 @@ Date: Sun Jun 12 16:32:19 2016 +0200
 <p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/06/gitrebase-init.png"><img class="alignnone size-full wp-image-1893" src="http://blog.eleven-labs.com/wp-content/uploads/2016/06/gitrebase-init.png" alt="gitrebase-init" width="192" height="170" /></a></p>
 <p>Les développements avancent. La branche <em>myfeat</em> :</p>
 <pre class="lang:sh decode:true">commit c2
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 17:06:00 2016 +0200
 
     create a branch
 
 commit c1
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 16:32:19 2016 +0200
 
     initialize tutorial
@@ -56,13 +57,13 @@ git merge myfeat
 </pre>
 <p>Et mon historique de <em>master</em></p>
 <pre class="lang:sh decode:true">commit c1
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 17:06:00 2016 +0200
 
     create a branch
 
 commit c1
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 16:32:19 2016 +0200
 
     initialize tutorial
@@ -72,13 +73,13 @@ Date:   Sun Jun 12 16:32:19 2016 +0200
 <p>Avec la branche <em>anotherfe </em>je crée un autre commit.<em><br />
 </em></p>
 <pre class="lang:sh decode:true">commit c3
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 17:15:59 2016 +0200
 
     add title level 2
 
 commit c1
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 16:32:19 2016 +0200
 
     initialize tutorial
@@ -95,19 +96,19 @@ Application : add title level 2
 <p>Ici, le <em>rebase</em> s'est bien déroulé car il n'y a pas eu de modification au même endroit.</p>
 <p>Ensuite je peux fusionner <em>anotherfe</em> dans <em>master</em> sans problème.</p>
 <pre class="lang:sh decode:true">commit c3
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 17:15:59 2016 +0200
 
     add title level 2
 
 commit c2
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 17:06:00 2016 +0200
 
     create a branch
 
 commit c1
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 16:32:19 2016 +0200
 
     initialize tutorial
@@ -119,13 +120,13 @@ Date:   Sun Jun 12 16:32:19 2016 +0200
 <p>Je vais créer deux branches: <em>feat-commit</em> et <em>feat-cherry-pick</em></p>
 <p>Sur <em>feat-commit</em>, j'ai un commit et il est prêt à être fusionné sur <em>master</em>.</p>
 <pre class="lang:sh decode:true">commit 98dfce3f58f158b966dbd4a8ef177b2a4aa23f18
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 17:23:21 2016 +0200
 
     create commit
 
 commit 13f1553f92a9ef09da02a695743dd0f6952b4b82
-Author: lepiaf
+authors: lepiaf
 Date:   Sun Jun 12 17:15:59 2016 +0200
 
     add title level 2

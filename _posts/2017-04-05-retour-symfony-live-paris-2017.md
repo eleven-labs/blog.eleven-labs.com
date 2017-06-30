@@ -2,18 +2,20 @@
 layout: post
 title: 'LE SYMFONY LIVE PARIS 2017'
 excerpt: 'Récapitulatif des différentes présentations du sflive 2017'
-author: nkania aandre
+authors: 
+    - nkania
+    - aandre
 date: '2017-04-05 18:24:38 +0100'
 date_gmt: '2017-04-05 18:24:38 +0100'
 permalink: /fr/retour-symfony-live-paris-2017/
 categories:
-- Symfony
-- Php
+    - Symfony
+    - Php
 tags:
-- conférence
-- php
-- symfony
-- symfony_live
+    - conférence
+    - php
+    - symfony
+    - symfony_live
 image:
     path: /assets/2017-04-05-retour-symfony-live-paris-2017/symfony-live-2017.png
     height: 295

@@ -3,7 +3,8 @@ layout: post
 title: "Des tests unitaires en Swift avec Xcode"
 excerpt: "Des tests unitaires en Swift avec Xcode"
 permalink: /fr/test-unitaire-swift-xcode/
-author: ibenichou
+authors: 
+    - ibenichou
 date: '2017-02-02 10:29:51 +0100'
 date_gmt: '2017-02-02 09:29:51 +0100'
 categories:
