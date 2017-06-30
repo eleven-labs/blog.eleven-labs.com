@@ -3,7 +3,8 @@ layout: post
 title: "Ma première Application sous IOS"
 excerpt: "Ma première Application sous IOS"
 permalink: /fr/ma-premiere-application-sous-ios/
-author: ibenichou
+authors: 
+    - ibenichou
 date: '2017-02-08 10:42:47 +0100'
 date_gmt: '2017-02-08 09:42:47 +0100'
 categories:

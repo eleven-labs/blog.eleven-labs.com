@@ -1,0 +1,88 @@
+---
+layout: post
+title: 'Comprendre le SSL/TLS : Partie 1 On parle de quoi ?'
+authors:
+- ibenichou
+date: '2016-12-20 10:07:16 +0100'
+date_gmt: '2016-12-20 09:07:16 +0100'
+categories:
+- Non classé
+tags:
+- sécurité
+- SSL
+- TLS
+- Algorithmie
+- Protocoles
+---
+{% raw %}
+<p><span style="font-weight: 400;">Vous avez sans doute entendu parler des </span><b>protocoles</b> <b>SSL</b><span style="font-weight: 400;"> ou </span><b>TLS</b><span style="font-weight: 400;">, non, oui ?<br />
+</span><span style="font-weight: 400;">Nous allons voir ensemble de quoi il s’agit.<br />
+</span></p>
+<p><span style="font-weight: 400;">Pour cela, nous allons découper cet article en 5 parties, une postée chaque jour jusqu'à vendredi.</span></p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">On parle de quoi ? </span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Chiffrement</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Certificats</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Handshake Protocol</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Record Protocol</span></li>
+</ol>
+<p><span style="font-weight: 400;">Tout d'abord un peu d'historique : attachez vos ceintures, en route pour la partie 1 !</span></p>
+<h3><b>On parle de quoi ?</b></h3>
+<p><span style="font-weight: 400;">SSL et TLS sont des protocoles de sécurisation des données.</span></p>
+<p><span style="font-weight: 400;">Ils se comportent comme une couche intermédiaire supplémentaire entre la couche </span><span style="font-weight: 400;">Transport (TCP) et la couche application (HTTP, FTP, SMTP etc.. ) (cf. schéma). </span></p>
+<p><span style="font-weight: 400;">Cela signifie donc qu'ils peuvent aussi bien être employés pour sécuriser une transaction web que pour l'envoi ou la réception d'email, etc…</span></p>
+<p><span style="font-weight: 400;">Jusqu’ici tout va bien !</span></p>
+<p><span style="font-weight: 400;">SSL et TLS sont donc transparents pour l'utilisateur et ne nécessitent pas l'emploi de protocole de niveau d'application spécifique.</span></p>
+<p style="text-align: center;"><i><span style="font-weight: 400;">Modèle OSI avec le SSL/TLS</span></i></p>
+<p><a href="http://blog.eleven-labs.com/wp-content/uploads/2016/11/tls-in-osi.png"><img class="size-medium wp-image-2563 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/tls-in-osi-300x202.png" alt="tls-in-osi" width="300" height="202" /></a></p>
+<p><i><span style="font-weight: 400;">En clair:</span></i></p>
+<p><span style="font-weight: 400;">Les protocoles SSL et TLS  permettent d'échanger des informations entre deux ordinateurs de façon sûre. </span></p>
+<p><span style="font-weight: 400;">Ils sont censés assurer les 3 points suivants:</span></p>
+<ol>
+<li style="font-weight: 400;"><b>Confidentialité </b><span style="font-weight: 400;">: il est impossible d'espionner les informations échangées. Le client et le serveur doivent avoir l'assurance que leur conversation ne pourra pas être écoutée par un tiers. Cette fonctionnalité est assurée par un </span><b>algorithme de chiffrement</b><span style="font-weight: 400;">.</span></li>
+<li style="font-weight: 400;"><b>Intégrité </b><span style="font-weight: 400;">: il est impossible de truquer les informations échangées. Le client et le serveur doivent pouvoir s'assurer que les messages transmis ne sont ni tronqués ni modifiés (intégrité), qu'ils proviennent bien de l'expéditeur attendu. Ces fonctionnalités sont assurées par la </span><b>signature des données</b><span style="font-weight: 400;">.</span></li>
+<li style="font-weight: 400;"><b>Authentification </b><span style="font-weight: 400;">: ce point permet de s'assurer de l'identité du programme, de la personne ou de l'entreprise avec laquelle on communique. Depuis SSL </span><b>3.0</b><span style="font-weight: 400;">, le serveur peut aussi demander au client de s'authentifier. Cette fonctionnalité est assurée par l'emploi de </span><b>certificats</b><span style="font-weight: 400;">.</span></li>
+</ol>
+<p><span style="font-weight: 400;">Les protocoles SSL et TLS reposent donc sur la combinaison de plusieurs concepts cryptographiques, exploitant à la fois le chiffrement </span><b>asymétrique</b><span style="font-weight: 400;"> et le chiffrement </span><b>symétrique</b><span style="font-weight: 400;"> (nous allons voir ces notions dans la partie chiffrement).</span></p>
+<p><span style="font-weight: 400;">De plus, ces protocoles se veulent évolutifs,  indépendants des algorithmes de cryptage et d'authentification mis en oeuvre dans une transaction. Cela leur permet de s'adapter aux besoins des utilisateurs et d’avoir une meilleure sécurité puisque ces protocoles ne sont pas soumis aux évolutions théoriques de la cryptographie (si un chiffrement devient obsolète, le protocole reste exploitable en choisissant un chiffrement plus sûr).</span></p>
+<p><b>Histoire :</b></p>
+<p><b>A - SSL</b><span style="font-weight: 400;"> :</span></p>
+<p><span style="font-weight: 400;">SSL signifie </span><b>Secure Socket Layer. </b></p>
+<ul>
+<li><span style="font-weight: 400;">Développée par Netscape en </span><b>1994, </b>la version<span style="font-weight: 400;"> </span><b>1.0 </b><span style="font-weight: 400;">reste en interne et n'est jamais mis en œuvre ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">La première version de SSL réellement utilisée est la version<b> 2.0 </b>sortie en </span><b>février 1995</b>. Il s'agit<span style="font-weight: 400;"> également la première implémentation de SSL bannie, en mars 2011 (</span><a href="https://tools.ietf.org/html/rfc6176"><span style="font-weight: 400;">RFC 6176</span></a><span style="font-weight: 400;">) ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">En</span><b> novembre 1996 </b><span style="font-weight: 400;">SSL sort sa version </span><b>3.0</b><span style="font-weight: 400;">, la dernière version de SSL, qui inspirera son successeur </span><b>TLS</b><span style="font-weight: 400;">. Ses spécifications sont rééditées en août 2008 dans la </span><a href="https://tools.ietf.org/html/rfc6101"><span style="font-weight: 400;">RFC 6101</span></a><a href="https://fr.wikipedia.org/wiki/Transport_Layer_Security#cite_note-4"><span style="font-weight: 400;">4</span></a><span style="font-weight: 400;">. Le protocole est banni en 2014, à la suite de la publication de la faille </span><a href="https://fr.wikipedia.org/wiki/POODLE"><span style="font-weight: 400;">POODLE</span></a><span style="font-weight: 400;">, ce bannissement est définitivement ratifié en juin 2015 (</span><a href="https://tools.ietf.org/html/rfc7568"><span style="font-weight: 400;">RFC 7568</span></a><span style="font-weight: 400;">).</span></li>
+</ul>
+<p><b>B - TLS :</b></p>
+<p><span style="font-weight: 400;">TLS signifie </span><b>Transport Layer Security</b><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Le développement de ce protocole a été repris par l'</span><a href="https://www.ietf.org/"><span style="font-weight: 400;">IETF</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Le protocole TLS n'est pas structurellement différent de la version 3 de SSL, mais des modifications dans l'utilisation des fonctions de hachage font que les deux protocoles ne sont pas directement "interopérables". </span></p>
+<p><span style="font-weight: 400;">Cependant TLS, comme SSLv3, intègre un mécanisme de compatibilité ascendante avec les versions précédentes, c'est-à-dire qu'au début de la phase de <strong>négociation</strong>, le client et le serveur négocient la «meilleure » version du protocole disponible en commun. Pour des raisons de sécurité (mentionnées plus haut), la compatibilité de TLS avec la version 2 de SSL est abandonnée.</span></p>
+<p><span style="font-weight: 400;">Ce qui différencie aussi le TLS du SSL c’est que la génération des </span><b>clés symétriques</b><span style="font-weight: 400;"> est un peu plus sécurisée dans TLS que dans SSLv3, dans la mesure où aucune étape de l'algorithme ne repose uniquement sur du MD5 (pour lequel sont apparues des faiblesses en </span><span style="font-weight: 400;"><a href="https://fr.wikipedia.org/wiki/Cryptanalyse">cryptanalyse</a>)</span><span style="font-weight: 400;">.</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">En </span><b>janvier 1993</b><span style="font-weight: 400;">: IETF publie la norme </span><b>TLS 1.0</b><span style="font-weight: 400;">. Plusieurs améliorations lui sont apportées par la suite :</span>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Octobre 1999 (</span><a href="https://tools.ietf.org/html/rfc2712"><span style="font-weight: 400;">RFC 2712</span></a><span style="font-weight: 400;">) : Ajout du protocole </span><a href="https://fr.wikipedia.org/wiki/Kerberos_(protocole)"><span style="font-weight: 400;">Kerberos</span></a><span style="font-weight: 400;"> à TLS</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Mai 2000 (</span><a href="https://tools.ietf.org/html/rfc2817"><span style="font-weight: 400;">RFC 2817</span></a><span style="font-weight: 400;"> et </span><a href="https://tools.ietf.org/html/rfc2818"><span style="font-weight: 400;">RFC 2818</span></a><span style="font-weight: 400;">) : Passage à TLS lors d'une session HTTP 1.1</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Juin 2002 (</span><a href="https://tools.ietf.org/html/rfc3268"><span style="font-weight: 400;">RFC 3268</span></a><span style="font-weight: 400;">) : Support du système de chiffrement </span><a href="https://fr.wikipedia.org/wiki/Standard_de_chiffrement_avanc%C3%A9"><span style="font-weight: 400;">AES</span></a><span style="font-weight: 400;"> par TLS</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Avril 2006 (</span><a href="https://tools.ietf.org/html/rfc4346"><span style="font-weight: 400;">RFC 4346</span></a><span style="font-weight: 400;">) : Publication de la norme </span><b>TLS 1.1</b><span style="font-weight: 400;">.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Août 2008 (</span><a href="https://tools.ietf.org/html/rfc5246"><span style="font-weight: 400;">RFC 5246</span></a><span style="font-weight: 400;">) : Publication de la norme </span><b>TLS 1.2</b><span style="font-weight: 400;">.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Mars 2011 (</span><a href="https://tools.ietf.org/html/rfc6176"><span style="font-weight: 400;">RFC 6176</span></a><span style="font-weight: 400;">) : Abandon de la compatibilité avec SSLv2 pour toutes les versions de TLS.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Avril 2014 : 1</span><span style="font-weight: 400;">er</span><span style="font-weight: 400;"> brouillon pour </span><b>TLS 1.3</b><span style="font-weight: 400;">.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Juin 2015 (</span><a href="https://tools.ietf.org/html/rfc7568"><span style="font-weight: 400;">RFC 7568</span></a><span style="font-weight: 400;">) : Abandon de la compatibilité avec SSLv2 et SSLv3.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Octobre 2015 : Nouveau brouillon de </span><b>TLS 1.3</b></li>
+</ul>
+<p><b>Navigateurs :</b></p>
+<p><span style="font-weight: 400;">La plupart des navigateurs web gèrent TLS 1.0. Les navigateurs supportant par défaut la dernière version TLS 1.1 et TLS 1.2 sont :</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Apple Safari 7 et suivants ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Google Chrome et Chromium 30 et suivants ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Microsoft Internet Explorer 11 et suivants ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Mozilla Firefox 27 et suivants ;</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Opera 17 et suivants.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Microsoft Edge</span></li>
+</ul>
+<p><span style="font-weight: 400;">Bon j’espère que j’en ai pas perdu en chemin car c’est maintenant qu’on passe aux choses sérieuses.</span></p>
+{% endraw %}

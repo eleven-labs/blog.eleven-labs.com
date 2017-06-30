@@ -1,13 +1,14 @@
 ---
 layout: post
 title: Kernel Terminate
-author: aandre
+authors: 
+    - aandre
 date: '2016-04-22 16:30:30 +0200'
 date_gmt: '2016-04-22 14:30:30 +0200'
 permalink: /fr/kernel-terminate/
 categories:
-- Symfony
-- Php
+    - Symfony
+    - Php
 tags: []
 ---
 Symfony 2 c'est plusieurs composants -dont le domaine d'application est spécifique- qui forment les parpaings d'une maison ; pour assembler tout ça, un autre composant existe, à la fois le parpaing et le ciment : l'EventDispatcher. Son rôle est de distribuer des événements qui seront traités par les divers composants.

@@ -2,7 +2,8 @@
 layout: post
 title: 'Redux: Structure your frontend applications'
 permalink: /en/redux-structure-frontend-applications/
-author: vcomposieux
+authors: 
+    - vcomposieux
 date: '2017-01-20 12:12:34 +0100'
 date_gmt: '2017-01-20 11:12:34 +0100'
 categories:

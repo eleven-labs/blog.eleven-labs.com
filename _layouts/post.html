@@ -14,7 +14,7 @@ layout: default
             <span class="meta">
                 <span class="meta-content">
                     {{ page.date | date: "%B %-d, %Y" }}
-                    {% include author_link.html login=page.author %}
+                    {% include author_link.html authors=page.authors %}
                 </span>
             </span>
             <div class="page-heading-reading-time">{% include reading_time.html content=content %}</div>

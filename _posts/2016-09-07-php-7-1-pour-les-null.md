@@ -1,12 +1,13 @@
 ---
 layout: post
 title: PHP 7.1 - Pour les null
-author: aandre
+authors: 
+    - aandre
 date: '2016-09-07 11:39:10 +0200'
 date_gmt: '2016-09-07 09:39:10 +0200'
 permalink: /fr/php-7-1-pour-les-null/
 categories:
-- Php
+    - Php
 tags: []
 ---
 Il y a quelques temps, pour ainsi dire un an (le temps passe vite ! ), je parlais de la sortie de PHP 7.0. Dix mois plus tard, les choses évoluent à nouveau : PHP 7.1 est en RC1.

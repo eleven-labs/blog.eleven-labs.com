@@ -2,15 +2,16 @@
 layout: post
 title: Pattern State
 excerpt: Explication du design pattern State et exemple d'implémentation dans une application Symfony via winzou/state-machine-bundle
-author: nkania
+authors: 
+    - nkania
 date: '2015-11-12 14:35:21 +0100'
 date_gmt: '2015-11-12 13:35:21 +0100'
 permalink: /fr/pattern-state/
 categories:
-- Symfony
+    - Symfony
 tags:
-- architecture
-- design pattern
+    - architecture
+    - design pattern
 image:
     path: /assets/2015-11-12-pattern-state/pattern-state.jpg
     height: 375

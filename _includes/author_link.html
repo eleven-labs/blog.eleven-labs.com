@@ -1,6 +1,13 @@
 <!-- _includes/author_link.html -->
-{% for author in site.authors %}
-  {% if author.login == include.login %}
-   - par <a class="author-link" href="/authors/{{author.login}}">{{author.login}}</a>
+- par
+{% for author in include.authors %}
+   {% if site.authors | where: 'login',author %}
+      {% if forloop.first %}
+      {% elsif forloop.last %}
+         et
+      {% else %}
+         ,
+      {% endif %}
+         <a class="author-link" href="/authors/{{author}}">{{author}}</a>
    {% endif %}
 {% endfor %}

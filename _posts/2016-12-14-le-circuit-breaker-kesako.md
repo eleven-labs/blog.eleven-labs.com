@@ -2,7 +2,8 @@
 layout: post
 title: Le circuit breaker Késako ?
 excerpt: Aujourd'hui les architectures micro-services sont de plus en plus répandues. Mais quels sont les moyens de contrôler votre nouveau système d'information ?
-author: captainjojo
+authors: 
+    - captainjojo
 permalink: /fr/le-circuit-breaker-kesako/
 categories:
     - Symfony

@@ -88,7 +88,8 @@ Veuillez utiliser le template d'article suivant, vous pouvez copier template dis
 layout: post
 title: TITRE
 excerpt: DESCRIPTION (VISIBLE SUR LA HOME)
-author: LOGIN
+authors: 
+    - LOGIN
 permalink: /LANGUE (fr/en)/TITRE SANS ESPACES/
 categories:
     - CATEGORIE 1
