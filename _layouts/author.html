@@ -26,7 +26,7 @@ layout: default
             <h3 class="read-also-title">Derniers articles :</h3>
             <ul class="posts read-also-list">
                 {% for post in site.posts %}
-                {% if post.author == page.login %}
+                {% if post.authors contains page.login %}
                 <li class="read-also-item">
                     <a class="read-also-link" href="{{ post.url | prepend: site.baseurl }}">
                         {{ post.title }}
