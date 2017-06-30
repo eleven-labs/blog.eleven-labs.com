@@ -1,7 +1,8 @@
 ---
 layout: post
 title: AMP le futur du web ?
-author: captainjojo
+authors:
+    - captainjojo
 permalink: /fr/amp-le-futur-du-web/
 excerpt: Google, leader incontesté des services web (recherche, pub, analytics...), propose depuis plus d'un an une nouvelle façon d'afficher vos pages, désignée sous le nom AMP project
 categories:
