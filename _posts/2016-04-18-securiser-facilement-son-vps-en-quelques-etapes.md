@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Sécuriser facilement son serveur linux en quelques étapes
+excerpt: Quelques commandes de bases qui permettent de sécuriser facilement et rapidement un serveur linux (protection ssh, iptables, fail2ban,...)
 author: nkania
 date: '2016-04-18 14:48:08 +0200'
 date_gmt: '2016-04-18 12:48:08 +0200'

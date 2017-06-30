@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'LE SYMFONY LIVE PARIS 2017'
+excerpt: 'Récapitulatif des différentes présentations du sflive 2017'
 author: nkania aandre
 date: '2017-04-05 18:24:38 +0100'
 date_gmt: '2017-04-05 18:24:38 +0100'
