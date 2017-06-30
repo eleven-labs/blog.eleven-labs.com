@@ -1,0 +1,13 @@
+<!-- _includes/author_link.html -->
+- par
+{% for author in include.authors %}
+   {% if site.authors | where: 'login',author %}
+      {% if forloop.first %}
+      {% elsif forloop.last %}
+         et
+      {% else %}
+         ,
+      {% endif %}
+         {{author}}
+   {% endif %}
+{% endfor %}
