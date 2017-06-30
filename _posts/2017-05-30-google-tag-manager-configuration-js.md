@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Google tag manager, votre configuration js
-author: captainjojo
+authors:
+    - captainjojo
 permalink: /fr/google-tag-manager-votre-configuration-js/
 excerpt: La gestion des "tags" javascript externe peut très vite devenir un vrai calvaire. Si vous regardez les grands sites de médias avec l'extension Ghostery vous remarquerez que chaque site charge environ 20 mouchards, ce qui donne autant de tags javascript. Mais comment contrôler les différentes versions, la publication, les changements ? C'est là que Google Tag Manager intervient.
 categories:

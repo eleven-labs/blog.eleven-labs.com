@@ -2,7 +2,8 @@
 layout: post
 title: Google Cloud Platform (1/3) - Le cloud pour les nuls
 excerpt: Aujourd'hui le Cloud c'est le mot à la mode, mais qu'est-ce que c'est ? Comment ça marche ? Et comment en faire ?
-author: captainjojo
+authors:
+    - captainjojo
 permalink: /fr/google-cloud-platform-pour-les-nuls/
 categories:
 - Dev Ops

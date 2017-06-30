@@ -2,7 +2,8 @@
 layout: post
 title: Push notification on your website
 excerpt: The convenience of PWA is to act like a mobile application, to be installed on a phone, to manage off-line mode, and especially to send push notifications. Notifications are the essential element of user involvement, they allow to send a reminder and to communicate with our users
-author: captainjojo
+authors:
+    - captainjojo
 permalink: /en/push-notification-website/
 categories:
 - Javascript

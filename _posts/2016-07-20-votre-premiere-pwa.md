@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Votre première PWA
-author: captainjojo
+authors:
+    - captainjojo
 excerpt: Le monde du web évolue. Le site web mobile est devenu le plus grand concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps
 permalink: /fr/votre-premiere-pwa/
 categories:

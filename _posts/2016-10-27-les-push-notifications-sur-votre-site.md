@@ -2,7 +2,8 @@
 layout: post
 title: Les push notifications sur votre site
 excerpt: L'intérêt d'une PWA, c'est d'agir comme une application mobile, d'être installé sur le téléphone, de gérer le off-line et surtout d'envoyer des push notifications. Les notifications sont un élément essentiel de l'engagement de l'utilisateur, elles permettent de faire un rappel et de communiquer avec nos utilisateurs
-author: captainjojo
+authors:
+    - captainjojo
 permalink: /fr/les-push-notifications-sur-votre-site/
 categories:
 - Javascript
