@@ -55,7 +55,7 @@ Votre Bio
 
 **3 - Ajoutez votre avatar**
 
-Ajoutez votre avatar dans le dossier `/img/login.jpg`.
+Ajoutez votre avatar dans le dossier `/img/authors/<votre_login>.jpg`.
 
 **4 - Faite votre pull request**
 
