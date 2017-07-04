@@ -3,7 +3,7 @@ layout: post
 title: "Se lancer dans le dév mobile : Partie I"
 excerpt: "Faire du mobile oui, mais par où commencer ?"
 permalink: /fr/se-lancer-dans-le-dev-mobile-partie1/
-authors: 
+authors:
     - ibenichou
 date: '2016-11-10 15:44:34 +0100'
 date_gmt: '2016-11-10 14:44:34 +0100'
@@ -52,7 +52,7 @@ La WebView d’Android est basée sur Chromium. Il s’agit de Safari pour iOS, 
 Ainsi, Ionic ne permet pas de créer à proprement parler d’applications natives. On parlera plutôt d’applications hybrides.
 
 *Schéma représentation Ionic* :
-<img src="../../assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/schema1.png" alt="schema1" width="520" height="229" />
+<img src="../../assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/schema.png" alt="schema1" width="520" height="229" />
 
 
 Je vous vois venir :  “AngularJs, super je maîtrise le truc, aller hop on y go”.

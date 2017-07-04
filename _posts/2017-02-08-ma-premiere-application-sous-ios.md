@@ -3,7 +3,7 @@ layout: post
 title: "Ma première Application sous IOS"
 excerpt: "Ma première Application sous IOS"
 permalink: /fr/ma-premiere-application-sous-ios/
-authors: 
+authors:
     - ibenichou
 date: '2017-02-08 10:42:47 +0100'
 date_gmt: '2017-02-08 09:42:47 +0100'
@@ -45,12 +45,12 @@ Après avoir visionné quelques tutos vidéos pour apprendre les bases, j’ai p
 
 Aperçu de mes maquettes :
 
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d’écran-2017-01-22-à-13.39.50.png" />
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d’écran-2017-01-22-à-13.52.43.png" />
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d’écran-2017-01-22-à-13.52.54.png" />
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d’écran-2017-01-22-à-13.53.11.png" />
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d’écran-2017-01-22-à-13.53.29.png" />
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d’écran-2017-01-22-à-13.54.23.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d-ecran-2017-01-22-à-13.39.50.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d-ecran-2017-01-22-à-13.52.43.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d-ecran-2017-01-22-à-13.52.54.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d-ecran-2017-01-22-à-13.53.11.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d-ecran-2017-01-22-à-13.53.29.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/Capture-d-ecran-2017-01-22-à-13.54.23.png" />
 
 * PS: Je remercie Julie qui m'a aidée sur la partie Graphique/UX :)*
 
