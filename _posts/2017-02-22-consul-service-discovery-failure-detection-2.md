@@ -262,7 +262,7 @@ $ docker run -d \
 
 Vous pouvez faire de même sur le node 02 (en faisant attention à bien modifier les `node-01`  en `node-02` ) et vous devriez maintenant pouvoir visualiser ces checks sur l'interface Consul :
 
-<img class="aligncenter size-full wp-image-3446" src="http://blog.eleven-labs.com/wp-content/uploads/2017/02/consul-checks.png" alt="" />
+![Consul Infrastructure Schema](/assets/2017-02-22-consul-service-discovery-failure/schema.png)
 
 De la même façon, vous pouvez également utiliser l'API de Consul afin de vérifier la santé de vos services :
 
