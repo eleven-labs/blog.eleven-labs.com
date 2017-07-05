@@ -3,7 +3,7 @@ layout: post
 title: "Des tests unitaires en Swift avec Xcode"
 excerpt: "Des tests unitaires en Swift avec Xcode"
 permalink: /fr/test-unitaire-swift-xcode/
-authors: 
+authors:
     - ibenichou
 date: '2017-02-02 10:29:51 +0100'
 date_gmt: '2017-02-02 09:29:51 +0100'
@@ -84,7 +84,7 @@ Lorsque vous créez un projet, généralement Xcode vous demande si vous désire
 
 Une fois cette étape terminée, faites clique droit sur le dossier &gt; New File et sélectionnez Unit Test Case Class.
 
-<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/Capture-d’écran-2017-01-16-à-23.18.39.png" />
+<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/Capture-d-ecran-2017-01-16-à-23.18.39.png" />
 
 Le nommage de la classe doit obligatoirement finir par Tests, soit dans notre cas **AstronauteTests**.
 
@@ -165,7 +165,7 @@ Il y a 3 solutions :
 2. Vous passez votre curseur sur le carré vide à côté du nom de la classe et celui-ci se transforme en bouton play. Ce procédé va lancer tous les tests de votre classe (cf. screenshot ci-dessous) ;
 3. Même procédure que la solution 2 mais seulement sur la méthode que vous souhaitez tester.
 
-<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/Capture-d’écran-2017-01-17-à-23.46.10.png" />
+<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/Capture-d-ecran-2017-01-17-à-23.46.10.png" />
 
 Pour finir notre test, nous allons rajouter la méthode **testInitAstronuateWithPlanet** >qui va tester l’initialisation d’un astronaute avec une planète (oui j’aime bien mettre des noms en rapport avec Star Wars :) ).
 
@@ -182,15 +182,15 @@ Bon normalement nous avons testé tous les cas possibles sur notre structure. Ma
 La solution : le code coverage. Il permet d’écrire le taux de code source testé d'un programme. Comment faire sous Xcode ?
 Cliquez sur l’icone (cf. screenshot ci-dessous) et cliquez sur “Edit Schema”
 
-<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/Capture-d’écran-2017-01-18-à-00.19.57.png" />
+<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/Capture-d-ecran-2017-01-18-à-00.19.57.png" />
 
 Allez dans l’onglet Test et cochez la case “Gather coverage data” (cf. screenshot ci-dessous)
 
-<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/Capture-d’écran-2017-01-18-à-00.21.30.png" />
+<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/Capture-d-ecran-2017-01-18-à-00.21.30.png" />
 
 Une fois ces étapes effectuées, relancez le processus de test sur votre classe et cliquez sur l’icône qui ressemble à un message dans votre onglet à gauche puis dans l’onglet principal sélectionnez Code Coverage. N’oubliez pas de cocher dans cette partie la checkbox “Show Test Bundles”
 
-<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/Capture-d’écran-2017-01-18-à-00.23.46.png" />
+<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/Capture-d-ecran-2017-01-18-à-00.23.46.png" />
 
 ## Test sur un ViewController
 
