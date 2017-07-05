@@ -109,7 +109,7 @@ config: {
 La configuration offre un grand nombre de valeurs disponibles (`boolean` , `color` , `integer` , `string` , ...) ce qui permet de laisser un grand nombre de choix à vos utilisateurs.
 Les paramètres de votre package apparaîtront alors pour votre package, sous Atom :
 
-<img class="size-full wp-image-2642 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-24-à-13.58.11.png" alt="Atom - Settings" />
+![Gitlab URL Parameter](/assets/2016-12-05-create-atom-package/gitlab-url.png)
 
 Vous pourrez alors, à tout moment dans votre code, obtenir dans votre package la valeur définie par l'utilisateur (ou la valeur par défaut fournie si aucune valeur n'a été renseignée) via :
 
@@ -222,7 +222,7 @@ Vous pouvez lancer les specs via le menu d'Atom : `View`  -> `Packages`  -> `R
 
 Notre package est maintenant prêt à être publié !
 
-<img class="size-full wp-image-2635 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/fusee.gif" alt="Atom - Fusée" />
+![Publish](/assets/2016-12-05-create-atom-package/publish.gif)
 
 Pour se faire, nous allons utiliser l'outil CLI installé avec Atom : `apm`.
 

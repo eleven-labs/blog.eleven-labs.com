@@ -3,7 +3,7 @@ layout: post
 title: "Comprendre le SSL/TLS : Partie 3 Certificats"
 excerpt: "Qu'est-ce qu'un certificat ?"
 permalink: /fr/comprendre-le-ssltls-partie-3-certificats/
-authors: 
+authors:
     - ibenichou
 date: '2016-12-21 16:19:21 +0100'
 date_gmt: '2016-12-21 15:19:21 +0100'
@@ -49,7 +49,7 @@ On remarque plusieurs points :
 2. Le nom de l'émetteur (ici Let’s Encrypt), son algo de signature, les infos de la clé publique…
 3. La hiérarchie du certificat ! On voit clairement que le certificat intermédiaire d’Eleven-labs qui est émis par Let’s Encrypt Authority X3 est **signé** par DST Root CA X3
 
-<img src="../../assets/2016-12-21-comprendre-le-ssltls-partie-3-certificats/Capture-d’écran-2016-11-26-à-11.15.04.png" />
+<img src="../../assets/2016-12-21-comprendre-le-ssltls-partie-3-certificats/Capture-d-ecran-2016-11-26-à-11.15.04.png" />
 
 # Normes de certificat :
 
