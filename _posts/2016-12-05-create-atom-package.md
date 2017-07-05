@@ -107,7 +107,7 @@ Atom settings allow multiple setting types (`boolean` , `color` , `integer` ,
 
 Once it is added, if you reload your package, you will see your package settings appearing into Atom settings:
 
-<img class="size-full wp-image-2642 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/Capture-d’écran-2016-11-24-à-13.58.11.png" alt="Atom - Settings" />
+![Gitlab URL Parameter](/assets/2016-12-05-create-atom-package/gitlab-url.png)
 
 In order to retrieve the value (or default value) defined by a user for a given setting in your code, you just have to use the following line:
 
@@ -221,7 +221,7 @@ In order to run the specs tests, you just have to navigate into the following me
 
 Our package is now ready to be deployed! Let's send it.
 
-<img class="size-full wp-image-2635 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2016/11/fusee.gif" alt="Atom - Fusée" />
+![Publish](/assets/2016-12-05-create-atom-package/publish.gif)
 
 To do that, we will use the `apm`  CLI tool which comes with Atom when installing it.
 
