@@ -31,7 +31,7 @@ After a first step made by Google in 2009 with the `SPDY` protocol, `HTTP/2`
 
 Nowadays, HTTP/2 protocol is supported by most browsers and it's important to point out. While writing this blog post, only Opera Mini does not implement the new protocol, as shown on the following table:
 
-<img class="aligncenter size-full wp-image-3657" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/caniuse_http2.jpg" alt="" />
+![Can I use HTTP/2?](/assets/2017-04-12-http2-future-present/caniuse.jpg)
 
 That being said, you can consider upgrading your own web applications to HTTP/2 as soon as possible and thus offer high browsing performances to your visitors.
 
@@ -51,13 +51,13 @@ If you want more information about how to [improve SSL exchanges security](http
 
 HTTP/1 resources were loaded one by one as you can see below on a HTTP/1 application waterfall. HTTP/2 will allow to gain a lot of time on "waiting time" because multiple resources could be sent/downloaded by the client using the same HTTP stream (which is often called binary stream).
 
-<img class="aligncenter size-full wp-image-3658" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/waterfall_http.jpg" alt="" />
+![Waterfall HTTP?](/assets/2017-04-12-http2-future-present/waterfall_http.jpg)
 
 Here, time passed and displayed in green color is corresponding to wait time before resource loading. Purple time is corresponding to resource loading time (TTFB - Time To First Byte) and finally the grey time is corresponding on the resource reception to the client.
 
 Here is a waterfall of resources loading using the HTTP/2 protocol:
 
-<img class="aligncenter size-full wp-image-3659" src="http://blog.eleven-labs.com/wp-content/uploads/2017/03/waterfall_http2.jpg" alt="" />
+![Waterfall HTTP/2?](/assets/2017-04-12-http2-future-present/waterfall_http2.jpg)
 
 You can clearly see here that time allocated to wait on resources (old-green time) has disappeared completely and all resources are clearly loaded in the same time because they are in the same stream.
 
