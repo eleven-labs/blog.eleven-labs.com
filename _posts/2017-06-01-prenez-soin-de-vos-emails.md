@@ -17,15 +17,15 @@ Le moyen de communication le plus répandu entre un prestataire et son client, 
 
 Vous avez dû le voir dans votre boite Gmail, dans certains cas, vos mails ont un affichage différent ou même un bouton en plus (un "call-to-action").
 
-![](/assets/2017-06-01-prenez-soin-de-vos-emails/capture-d’écran-2017-05-30-à-20.20.36.png)
+![](/assets/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-20.20.36.png)
 
 > Exemple: Réservation d'un événement
 
-![](/assets/2017-06-01-prenez-soin-de-vos-emails/capture-d’écran-2017-05-30-à-20.26.14.png)
+![](/assets/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-20.26.14.png)
 
 > Exemple: Votre prochain voyage
 
-![](/assets/2017-06-01-prenez-soin-de-vos-emails/capture-d’écran-2017-05-30-à-20.29.24.png)
+![](/assets/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-20.29.24.png)
 
 > Exemple: Un call-to-action
 
@@ -171,9 +171,9 @@ Comme Google vous connait mieux que vous même, vous pouvez faire des recherches
 
 Je vous invite à taper *'mes vols', 'mes commandes', 'mes réservations',*  vous serez surpris.
 
-![](/assets/2017-06-01-prenez-soin-de-vos-emails/capture-d’écran-2017-05-30-à-21.11.52.png)
+![](/assets/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-21.11.52.png)
 
-![](/assets/2017-06-01-prenez-soin-de-vos-emails/capture-d’écran-2017-05-30-à-21.11.11.png)
+![](/assets/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-21.11.11.png)
 
 ### Conclusion
 

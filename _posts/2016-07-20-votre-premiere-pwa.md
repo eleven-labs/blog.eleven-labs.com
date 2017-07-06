@@ -51,7 +51,7 @@ Si tout se passe bien, l'application est disponible sur [cette adresse localhost
 
 Vous pouvez alors naviguer dans l'application, son seul but étant d'avoir quelques urls et d'afficher des images (ce qui n'a que peu d'intérêt). Je vous invite à lancer l'extension installée plus tôt. Vous devez arriver sur cette page :
 
-![Lighthouse Step1](/assets/2016-07-20-votre-premiere-pwa/capture-d’écran-2016-07-18-à-18.16.05.png)
+![Lighthouse Step1](/assets/2016-07-20-votre-premiere-pwa/capture-decran-2016-07-18-a-18.16.05.png)
 
 Cette extension génère une note sur 100 pour votre application. Plus la note est proche de 100, plus votre application est une progressive web app. Comme vous pouvez le lire, il y a deux choses principales qui permettent de gagner des points : la mise en oeuvre d'un service worker qui permet d'avoir une application offline et la mise en place d'un manifest notifiant le navigateur que "vous êtes une progressive web app" et donc installable sur votre téléphone.  Nous allons commencer par mettre en place le service worker.
 
@@ -80,11 +80,11 @@ Vous pouvez retrouver cette étape [ici](https://github.com/CaptainJojo/pwa/comp
 
 Il vous suffit alors de relancer le serveur. Si vous allez sur http://localhost:8080 et que vous ouvrez l'outil de développement, vous trouverez l'onglet application qui vous permet de gérer l'état de votre PWA. Je vous invite à cliquer sur "Service Workers" pour vérifier que vous avez bien un service enregistré pour votre site.
 
-![Enregistrer votre service worker](/assets/2016-07-20-votre-premiere-pwa/capture-d’écran-2016-07-18-à-19.34.26.png)
+![Enregistrer votre service worker](/assets/2016-07-20-votre-premiere-pwa/capture-decran-2016-07-18-a-19.34.26.png)
 
 Fermez l'outil de développement et relancez l'extension Lighthouse.
 
-![LightHouse - Enregistrez votre service worker](/assets/2016-07-20-votre-premiere-pwa/capture-d’écran-2016-07-18-à-19.36.15.png)
+![LightHouse - Enregistrez votre service worker](/assets/2016-07-20-votre-premiere-pwa/capture-decran-2016-07-18-a-19.36.15.png)
 
 Bravo, vous avez gagné des points ! Passons à la suite.
 
@@ -135,11 +135,11 @@ Vous retrouverez cette étape [ici](https://github.com/CaptainJojo/pwa/compare/s
 
 Si vous relancez l'application, vous pouvez voir dans l'outil de développement, onglet application, un lien pour voir ce que contient votre cache (Cache Storage), vous y retrouvez l'ensemble des fichiers statiques.
 
-![Service worker - Cache Storage](/assets/2016-07-20-votre-premiere-pwa/capture-d’écran-2016-07-18-à-19.54.56.png)
+![Service worker - Cache Storage](/assets/2016-07-20-votre-premiere-pwa/capture-decran-2016-07-18-a-19.54.56.png)
 
 Puis, encore une fois, fermez l'outil de développement, et relancez LightHouse.
 
-![LightHouse - Offline](/assets/2016-07-20-votre-premiere-pwa/capture-d’écran-2016-07-18-à-19.57.34.png)
+![LightHouse - Offline](/assets/2016-07-20-votre-premiere-pwa/capture-decran-2016-07-18-a-19.57.34.png)
 
 Vous êtes sur la bonne voie, mais il y a une méthode encore meilleure pour initialiser votre cache.
 
@@ -252,11 +252,11 @@ Vous pouvez retrouver cette étape [ici](https://github.com/CaptainJojo/pwa/comp
 
 Si vous relancez l'application et que vous allez dans l'outil de développement, onglet application, vous trouverez les propriétés de votre manifest. Il est même possible d'installer votre application en cliquant sur 'Add to homescreen'.
 
-![Propriétés du manifest](/assets/2016-07-20-votre-premiere-pwa/capture-d’écran-2016-07-18-à-21.10.55.png)
+![Propriétés du manifest](/assets/2016-07-20-votre-premiere-pwa/capture-decran-2016-07-18-a-21.10.55.png)
 
 Et encore une fois, fermez l'outil de développement et lancez l'extension LightHouse.
 
-![LightHouse - Manifest](/assets/2016-07-20-votre-premiere-pwa/capture-d’écran-2016-07-18-à-21.12.32.png)
+![LightHouse - Manifest](/assets/2016-07-20-votre-premiere-pwa/capture-decran-2016-07-18-a-21.12.32.png)
 
 Vous y êtes, votre application est une Progressive Web App !
 En conclusion, ce n'est pas compliqué de mettre en place une PWA, maintenant il faut jouer avec, tester le cache, etc... Il existe d'autres fonctionnalités sympa comme la mise en place des push notifications, le fait de contrôler le bluetooth...

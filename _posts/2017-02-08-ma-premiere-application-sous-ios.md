@@ -45,12 +45,12 @@ Après avoir visionné quelques tutos vidéos pour apprendre les bases, j’ai p
 
 Aperçu de mes maquettes :
 
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-à-13.39.50.png" />
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-à-13.52.43.png" />
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-à-13.52.54.png" />
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-à-13.53.11.png" />
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-à-13.53.29.png" />
-<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-à-13.54.23.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.39.50.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.52.43.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.52.54.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.53.11.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.53.29.png" />
+<img src= "../../assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.54.23.png" />
 
 * PS: Je remercie Julie qui m'a aidée sur la partie Graphique/UX :)*
 
@@ -252,4 +252,3 @@ Avant de me lancer, j'avais pas mal d'a priori et je me disais "cette partie va
 Ce que je retiens de ma toute première application sous IOS, c'est que j'apprécie vraiment de faire du mobile, que je prends du plaisir à coder sous Swift et qu'il ne faut pas avoir peur de se lancer. Alors j'espère qu'en lisant cet article, ça va tenter certaines personnes à se lancer sur cette voie.
 
 *P.S. : Merci aux Pandas pour les relectures*
-
