@@ -1,0 +1,27 @@
+---
+layout: page
+title: "Page non trouvée"
+permalink: /404.html
+hide: true
+---
+<div class="container">
+	<div style="text-align:center;margin-bottom:4em;">Toutes nos excuses, mais la page que vous avez demandé n'a pu être trouvée.
+Vous pouvez utiliser la recherche pour lire un article en particulier ou vous laisser guider par la liste des derniers articles.</div>
+
+
+    <section class="slice">
+	    <div class="read-also container">
+	        <h3 class="read-also-title">Derniers articles :</h3>
+	        <ul class="posts read-also-list">
+			    {% for post in site.posts limit:5 %}
+			    	<li class="read-also-item">
+			            <a class="read-also-link" href="{{ post.url | prepend: site.baseurl }}">
+			                {{ post.title }}
+			            </a>
+			        </li>
+			    {% endfor %}
+	        </ul>
+	    </div>
+    </section>
+</div>
+
