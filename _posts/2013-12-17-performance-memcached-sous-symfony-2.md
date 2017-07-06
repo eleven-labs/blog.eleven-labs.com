@@ -51,7 +51,7 @@ Il ne vous reste plus qu'à parcourir la liste des écoles, puis pour chaque éc
 
 Parfait ! Mais si vous jetez un coup d'oeil sur votre Profiler en bas de page, vous verrez quelque chose comme cela :
 
-![Doctrine Too much Request](http://blog.eleven-labs.com/wp-content/uploads/2013/11/Capture-d’écran-2013-11-19-à-15.12.39.png)
+![Doctrine Too much Request](http://blog.eleven-labs.com/wp-content/uploads/2013/11/capture-d’écran-2013-11-19-à-15.12.39.png)
 
 Et oui, 194 requêtes Doctrine juste pour votre simple page, et pourtant votre jeu d'essai ne contient que 20 lignes en tout. Alors pourquoi ?
 

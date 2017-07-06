@@ -104,7 +104,7 @@ Allez dans la console Cloud dans l'onglet [AppEngine](https://console.cloud.goog
 Puis dans "versions" vous devriez voir la version de votre projet apparaître.
 
 
-![AppEngine - Google Cloud Platform](/assets/2016-12-09-google-cloud-platform-appengine-pour-vos-projets/Capture-d’écran-2016-11-30-à-14.05.13.png)
+![AppEngine - Google Cloud Platform](/assets/2016-12-09-google-cloud-platform-appengine-pour-vos-projets/capture-d’écran-2016-11-30-à-14.05.13.png)
 
 Quand le déploiement sera terminé, vous pourrez accéder à votre site en cliquant sur le nom de la version.
 Vous pouvez suivre les logs de l'application en lançant la commande suivante dans votre terminal :
@@ -137,7 +137,7 @@ gcloud app deploy --version version2
 ```
 Dans l'interface AppEngine, vous devez voir la nouvelle version se lancer :
 
-![AppEngine V2 - Google Cloud Platform](/assets/2016-12-09-google-cloud-platform-appengine-pour-vos-projets/Capture-d’écran-2016-11-30-à-14.13.55.png)
+![AppEngine V2 - Google Cloud Platform](/assets/2016-12-09-google-cloud-platform-appengine-pour-vos-projets/capture-d’écran-2016-11-30-à-14.13.55.png)
 
 Google enverra 100% du trafic sur la nouvelle version dès que celle-ci sera lancée entièrement.
 Une fois le processus terminé vous pouvez choisir vous même comment répartir le trafic.
@@ -148,12 +148,12 @@ La répartition du trafic permet de gérer un changement de version progressif d
 
 Vous arrivez sur l'interface suivante :
 
-![Répartir le traffic - Google Cloud Platform](/assets/2016-12-09-google-cloud-platform-appengine-pour-vos-projets/Capture-d’écran-2016-11-30-à-14.18.42.png)
+![Répartir le traffic - Google Cloud Platform](/assets/2016-12-09-google-cloud-platform-appengine-pour-vos-projets/capture-d’écran-2016-11-30-à-14.18.42.png)
 
 ### Etape 8, Stopper les versions
 
 Avant de partir, nous allons éteindre les versions, pour cela sélectionnez la version que vous souhaitez éteindre, puis cliquez sur "Arrêter".
 
-![Arreter - Google Cloud Platform](/assets/2016-12-09-google-cloud-platform-appengine-pour-vos-projets/Capture-d’écran-2016-11-30-à-14.22.54.png)
+![Arreter - Google Cloud Platform](/assets/2016-12-09-google-cloud-platform-appengine-pour-vos-projets/capture-d’écran-2016-11-30-à-14.22.54.png)
 
 Je vous invite à jouer un peu avec AppEngine, il permet de très vite tester vos POC sur de vrais serveurs, et même de maintenir une charge importante pour vos projets.
