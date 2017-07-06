@@ -1,11 +1,21 @@
-task :default => [:test]
+task :default => [:test, :deploy]
 
 # testsuite
-task :test => [:test_build]
+task :test => [:jekyll_build]
+
+# deploy task
+task :deploy => [:algolia_push]
 
 # test jekyll build
-task :test_build do
+task :jekyll_build do
   jekyll('build')
+end
+
+# push to algolia
+task :algolia_push do
+  if ENV['TRAVIS_BRANCH'] == 'master' && ENV['TRAVIS_PULL_REQUEST'] == "false"
+    jekyll('algolia push')
+  end
 end
 
 # launch jekyll
