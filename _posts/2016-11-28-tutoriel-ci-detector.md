@@ -3,7 +3,7 @@ layout: post
 title: "Tutoriel Vidéo : CIDetector"
 excerpt: "Tutoriel Vidéo : CIDetector"
 permalink: /fr/tutoriel-ci-detector/
-authors: 
+authors:
     - ibenichou
 date: '2016-11-28 18:46:23 +0100'
 date_gmt: '2016-11-28 17:46:23 +0100'
@@ -14,7 +14,7 @@ tags:
     - ios
     - swift
 image:
-    path: /assets/2016-11-28-tutoriel-ci-detector/Wilson-CI.png
+    path: /assets/2016-11-28-tutoriel-ci-detector/wilson-ci.png
     height: 100
     width: 100
 ---

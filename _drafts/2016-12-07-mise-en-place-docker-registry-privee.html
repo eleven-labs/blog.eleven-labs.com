@@ -140,7 +140,7 @@ Créez un fichier à l'adresse <strong>$HOME/traefik.json</strong> dans lequel 
 <blockquote><p><strong>Astuce </strong>: Utilisez la commande <strong>watch</strong> pour exécuter la commande périodiquement par intervalles de 1 seconde :<br />
 <strong>watch -n1 docker service ls</strong>. <strong>Ctrl+c</strong> pour quitter.</p></blockquote>
 <p>Sur le port <strong>8080</strong> de votre serveur vous devez trouver l'interface de contrôle de Traefik :</p>
-<p><img title="Traefik Web" src="https://lh3.googleusercontent.com/-7OVJ1TQ-U80/WEeRgAfxt_I/AAAAAAAAAaM/-CFecYhSv-AQRsQxuVBAJ-tj0MG5wyTMQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.32.37.png" alt="enter image description here" /></p>
+<p><img title="Traefik Web" src="https://lh3.googleusercontent.com/-7OVJ1TQ-U80/WEeRgAfxt_I/AAAAAAAAAaM/-CFecYhSv-AQRsQxuVBAJ-tj0MG5wyTMQCLcB/s0/capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.32.37.png" alt="enter image description here" /></p>
 <h4 id="configuration-du-domaine">Configuration du domaine</h4>
 <p>Avant de lancer la registry sur notre environnement, nous allons créer deux sous-domaines pointant vers notre serveur web :</p>
 <ul>
@@ -148,13 +148,13 @@ Créez un fichier à l'adresse <strong>$HOME/traefik.json</strong> dans lequel 
 <li>l'autre pour le serveur d'authentification</li>
 </ul>
 <p>Sur le manager d'OVH, il suffit de se rendre dans <strong>Web/Domaine(s)</strong>, de choisir son domaine, puis de cliquer sur l'onglet <strong>Zone DNS</strong></p>
-<p><img title="Ajout entrée DNS" src="https://lh3.googleusercontent.com/-YW_nkX8qJV8/WEeUfHNWOaI/AAAAAAAAAaY/ljqtytkTCccK3eak8Gu6Ytt15XX28cEyQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.44.40.png" alt="enter image description here" /></p>
+<p><img title="Ajout entrée DNS" src="https://lh3.googleusercontent.com/-YW_nkX8qJV8/WEeUfHNWOaI/AAAAAAAAAaY/ljqtytkTCccK3eak8Gu6Ytt15XX28cEyQCLcB/s0/capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.44.40.png" alt="enter image description here" /></p>
 <p>Puis nous ajoutons un pointage DNS de type <strong>A</strong> pour les sous-domaines :</p>
 <ul>
 <li><strong>registry.domain.tld</strong> pour la registry,</li>
 <li><strong>token.domain.tld</strong> pour le serveur d'authentification</li>
 </ul>
-<p><img title="Ajout pointage DNS" src="https://lh3.googleusercontent.com/-MaFb82-SY3c/WEeVhjIumFI/AAAAAAAAAag/a8dyGIA0gfEQ4MvTFwgu89tEBYWE6j9FwCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.51.24.png" alt="enter image description here" /></p>
+<p><img title="Ajout pointage DNS" src="https://lh3.googleusercontent.com/-MaFb82-SY3c/WEeVhjIumFI/AAAAAAAAAag/a8dyGIA0gfEQ4MvTFwgu89tEBYWE6j9FwCLcB/s0/capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.51.24.png" alt="enter image description here" /></p>
 <blockquote><p><strong>Important</strong>: Remplacez <strong>domain.tld</strong> par votre domaine et <strong>xxx.xxx.xxx.xxx</strong> par l'adresse IPv4 de votre serveur.</p></blockquote>
 <h4 id="serveur-dauthentification">Serveur d’authentification</h4>
 <p>Docker registry permet d'utiliser des services tiers pour gérer l'authentification et les contrôles d'accès des utilisateurs.</p>
@@ -335,7 +335,7 @@ acl:
 <p>Et on vérifie que le service <strong>docker-registry</strong> est bien lancé en utilisant la commande <strong>docker service ls</strong>.</p>
 <h4 id="tests">Tests</h4>
 <p>Sur le port <strong>8080</strong> de votre serveur, vous devez avoir quelque chose d'équivalent à ceci :</p>
-<p><img title="Traefik Services" src="https://lh3.googleusercontent.com/-CHOW4DC6pi4/WEefmOVQGpI/AAAAAAAAAbA/f7W-kRKRLaoUKMXb1BNgQHEyRLxPZHuNgCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+06.34.33.png" alt="enter image description here" /></p>
+<p><img title="Traefik Services" src="https://lh3.googleusercontent.com/-CHOW4DC6pi4/WEefmOVQGpI/AAAAAAAAAbA/f7W-kRKRLaoUKMXb1BNgQHEyRLxPZHuNgCLcB/s0/capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+06.34.33.png" alt="enter image description here" /></p>
 <p>Si c'est le cas, c'est que Traefik à fait correctement son boulot, vous avez maintenant un registre docker et un serveur d'authentification associés à leur domaines respectifs.</p>
 <blockquote><p><strong>Note </strong>: Concernant le support de l'HTTPS pour ces domaines, il faut savoir que Traefik génère les certificats TLS et les fait signer par Let's Encrypt lors du premier accès. Il est recommandé d'utiliser cURL sur chacun d'eux pour initier la procédure. (exemple: **curl -L <a class="uri" href="http://registry.guillem.me**">http://registry.guillem.me**</a>) Répéter la procédure dans le cas ou ça échoue.</p></blockquote>
 <p>Maintenant, <strong>sur votre poste local</strong> (sur lequel vous avez installé docker) nous allons nous authentifier à la registry, "tagguer" une image puis l'envoyer.</p>
