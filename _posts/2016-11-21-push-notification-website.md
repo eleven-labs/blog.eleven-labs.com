@@ -93,7 +93,7 @@ if('serviceWorker' in navigator) {
 
 As you would expect, if you restart your server, you'll have a request to accept the notifications.
 
-![PWA - Autoriser les notifications](/assets/2016-11-21-push-notification-website/capture-d’écran-2016-10-26-à-15.34.14.png)
+![PWA - Autoriser les notifications](/assets/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-15.34.14.png)
 
 You should also see in your console a message such as:
 
@@ -201,7 +201,7 @@ Before starting the server, you have to open permissions to Firebase in order fo
 
 If you restart the server, you will see a token stored in the DB in the "Database" tab of Firebase.
 
-![](/assets/2016-11-21-push-notification-website/capture-d’écran-2016-10-26-à-16.24.58.png)
+![](/assets/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-16.24.58.png)
 
 Now that the tokens are stored in the database, we are going to prepare a message that will appear when a push notification occurs. Let's add the following code to the file public/sw.js:
 
@@ -265,7 +265,7 @@ In "Service accounts", create a new account.
 
 A json file will be downloaded, you need to add it to your project folder.
 
-![JsonFile - Racine](/assets/2016-11-21-push-notification-website/capture-d’écran-2016-10-26-à-17.22.04.png)
+![JsonFile - Racine](/assets/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-17.22.04.png)
 
 In the app.js file, we are going to add the route /sender that will send a request of a push notification with all the tokens.
 
@@ -329,7 +329,7 @@ Be careful! The authorization key is in the first tab that we opened.
 
 If everything is ok, when you restart the server and go to / and then /sender, you will get a notification. If it isn't the case, clear the cache of your application in the chrome console.
 
-![Enfin - la push notification](/assets/2016-11-21-push-notification-website/capture-d’écran-2016-10-26-à-17.46.23.png)
+![Enfin - la push notification](/assets/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-17.46.23.png)
 
 
 Once again, this code is only a tutorial, I invite you to open issues for any question. The finale code is available [here](https://github.com/CaptainJojo/pwa-parisjs/tree/push).

@@ -182,15 +182,15 @@ Bon normalement nous avons testé tous les cas possibles sur notre structure. Ma
 La solution : le code coverage. Il permet d’écrire le taux de code source testé d'un programme. Comment faire sous Xcode ?
 Cliquez sur l’icone (cf. screenshot ci-dessous) et cliquez sur “Edit Schema”
 
-<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-18-à-00.19.57.png" />
+<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-18-a-00.19.57.png" />
 
 Allez dans l’onglet Test et cochez la case “Gather coverage data” (cf. screenshot ci-dessous)
 
-<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-18-à-00.21.30.png" />
+<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-18-a-00.21.30.png" />
 
 Une fois ces étapes effectuées, relancez le processus de test sur votre classe et cliquez sur l’icône qui ressemble à un message dans votre onglet à gauche puis dans l’onglet principal sélectionnez Code Coverage. N’oubliez pas de cocher dans cette partie la checkbox “Show Test Bundles”
 
-<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-18-à-00.23.46.png" />
+<img src="../../assets/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-18-a-00.23.46.png" />
 
 ## Test sur un ViewController
 
