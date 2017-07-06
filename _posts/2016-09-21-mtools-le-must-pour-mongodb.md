@@ -3,6 +3,7 @@ layout: post
 title: mTools - Le must have pour MongoDB
 authors:
     - pouzor
+excerpt: Maintenir une application MongoDB, notamment sur des sujets Datas avec beaucoup de volumétrie et/ou d’opérations peut vite devenir un supplice, surtout si, comme la plupart des Devs, vous n'avez pas accès aux machines de productions qui sont généralement réservées aux exploitants. Problème : comment trouver dans vos dizaines de millions de données ou requêtes quotidiennes, celles qui ont un impact négatif sur vos performances ou encore les goulots d’étranglement de votre architecture ?
 date: '2016-09-21 15:49:44 +0200'
 date_gmt: '2016-09-21 13:49:44 +0200'
 permalink: /fr/mtools-le-must-have-pour-mongodb/
@@ -15,13 +16,12 @@ tags:
     - logs
 ---
 
-
 Maintenir une application MongoDB, notamment sur des sujets Datas avec beaucoup de volumétrie et/ou d’opérations peut vite devenir un supplice, surtout si, comme la plupart des Devs, vous n'avez pas accès aux machines de productions qui sont généralement réservées aux exploitants.
 Problème : comment trouver dans vos dizaines de millions de données ou requêtes quotidiennes, celles qui ont un impact négatif sur vos performances ou encore les goulots d’étranglement de votre architecture ?
 
 Suite à l’accompagnement de MongoDB inc sur nos sujets Datas au sein de FranceTV Edition Numérique, nous avons automatisé l'utilisation d'outils afin de pouvoir étudier les comportements des productions sans impacts sur les applications.
 
-L'outil, ou plutôt la boite à outils que nous utilisons le plus à ce jour est <a href="https://github.com/rueckstiess/mtools">MTools</a>. Ce projet a été initié et est toujours maintenu par <a href="https://github.com/rueckstiess">Thomas Rückstieß</a>, ayant travaillé chez... MongoDB :)
+L'outil, ou plutôt la boite à outils que nous utilisons le plus à ce jour est [MTools](https://github.com/rueckstiess/mtools). Ce projet a été initié et est toujours maintenu par [Thomas Rückstieß](https://github.com/rueckstiess), ayant travaillé chez... MongoDB :)
 
 
 ## MTools est composé de 6 outils :  
@@ -52,7 +52,7 @@ Au niveau des colonnes :
 - sum : temps cumulé de cette requête
 
 Dans notre cas, on peut se rendre compte que la commande "findandmodify" est très souvent utilisée, dans un temps moyen correct. En revanche les fonctions de "count" sont très longues, probablement synonyme d'un index manquant.
-Plus d'infos <a href="https://github.com/rueckstiess/mtools/wiki/mloginfo">ici</a>.  
+Plus d'infos [ici](https://github.com/rueckstiess/mtools/wiki/mloginfo).  
 
 ### Mlogfilter :
 
@@ -74,15 +74,15 @@ protocol:op_query (0hr 0min 3secs 99ms) 3,099ms
 
 Avec cette commande, mlogfilter nous permet de filtrer les logs des commandes les plus longues (--slow) dans un intervalle d'un jour à partir du début du fichier. On peut voir que cela nous donne une commande d'agrégation qui a pris plus de 3 secondes pour s’exécuter.
 
-Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mlogfilter">mlogfilter</a>.  
+Plus d'infos sur [mlogfilter](https://github.com/rueckstiess/mtools/wiki/mlogfilter).  
 
 ### Mplotqueries & Mlogvis :
 
 Ces deux exécutables permettent de générer des graphiques afin de visualiser plus d'informations (répartition des appels, type de commandes etc...) de manière graphique.
 
-<img src="../../assets/2016-09-21-mtools/mlogvis.png" />
+![Mlogvis](../../assets/2016-09-21-mtools/mlogvis.png)
 
-Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mlogvis">Mlogvis</a> & <a href="https://github.com/rueckstiess/mtools/wiki/mplotqueries">Mplotqueries</a>.   
+Plus d'infos sur [Mlogvis](https://github.com/rueckstiess/mtools/wiki/mlogvis) & [Mplotqueries](https://github.com/rueckstiess/mtools/wiki/mplotqueries).   
 
 ### Mgenerate :
 
@@ -114,7 +114,7 @@ Exemple de modèle JSON pour la génération d'une collection User :
 }
 ```
 
-Plus d'infos sur <a href="https://github.com/rueckstiess/mtools/wiki/mgenerate">Mgenerate</a>.  
+Plus d'infos sur [Mgenerate](https://github.com/rueckstiess/mtools/wiki/mgenerate).
 
 ### Mlaunch :
 
@@ -126,8 +126,9 @@ Cette commande permet de demander la création d'une instance mongo avec 5 repli
 
 ### Point bonus, MongoDB Compass :
 
-<a href="https://docs.mongodb.com/compass/">Compass</a> est un client lourd permettant d’analyser et de parcourir les données d'une base MongoDB. Globalement l'outils permet de manipuler la data sans réellement demander des compétences en query mongo. Petit bémol, il n'est encore disponible que sous Windows ou MacOs :'(
 
-<img src="../../assets/2016-09-21-mtools/date-sample.png" />
+ est un client lourd permettant d’analyser et de parcourir les données d'une base MongoDB. Globalement l'outils permet de manipuler la data sans réellement demander des compétences en query mongo. Petit bémol, il n'est encore disponible que sous Windows ou MacOs :'(
 
-<img src="../../assets/2016-09-21-mtools/query-builder.png" />
+![Compass](../../assets/2016-09-21-mtools/date-sample.png)
+
+![Compass](../../assets/2016-09-21-mtools/query-builder.png)
