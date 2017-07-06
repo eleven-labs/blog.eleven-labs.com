@@ -3,7 +3,7 @@ layout: post
 title: "Comprendre le SSL/TLS : Partie 1 On parle de quoi ?"
 excerpt: "Vous avez sans doute entendu parler des protocoles SSL ou TLS, non, oui ?"
 permalink: /fr/comprendre-ssl-tls-partie-1/
-authors: 
+authors:
     - ibenichou
 date: '2016-12-20 10:07:16 +0100'
 date_gmt: '2016-12-20 09:07:16 +0100'
@@ -17,7 +17,7 @@ tags:
     - Algorithmie
     - Protocoles
 image:
-    path: /assets/2016-12-20-comprendre-ssl-tls-partie-1/SSL-splash.png
+    path: /assets/2016-12-20-comprendre-ssl-tls-partie-1/ssl-splash.png
     height: 100
     width: 100
 ---

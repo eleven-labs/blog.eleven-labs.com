@@ -2,7 +2,7 @@
 layout: post
 title: Mutation Testing – Vérifiez la qualité de vos tests unitaires
 excerpt: Vos tests unitaires sont-ils fiables ? Dans cet article nous allons voir comment s’en assurer
-authors: 
+authors:
     - rgraillon
 date: '2016-10-19 13:28:19 +0100'
 date_gmt: '2016-10-19 14:28:19 +0100'
@@ -14,7 +14,7 @@ tags:
     - test
     - php
 image:
-    path: /assets/2016-10-19-mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/DNA.jpg
+    path: /assets/2016-10-19-mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/dna.jpg
     height: 100
     width: 100
 ---

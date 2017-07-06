@@ -3,7 +3,7 @@ layout: post
 title: "Comprendre le SSL/TLS: Partie 4 Handshake Protocol"
 excerpt: "Les protocoles SSL / TLS"
 permalink: /fr/comprendre-le-ssltls-partie-4-handshake-protocol/
-authors: 
+authors:
     - ibenichou
 date: '2016-12-22 11:15:59 +0100'
 date_gmt: '2016-12-22 10:15:59 +0100'
@@ -28,7 +28,7 @@ La première couche est constituée par des protocoles de négociation (Handshak
 
 L’image ci-dessous illustre les différentes couches :
 
-<img src="../../assets/2016-12-22-comprendre-le-ssltls-partie-4-handshake-protocol/Untitled-Diagram.png" />
+<img src="../../assets/2016-12-22-comprendre-le-ssltls-partie-4-handshake-protocol/untitled-diagram.png" />
 
 # Handshake Protocol :
 
@@ -41,7 +41,7 @@ Traduit “poignée de main” en Français, ce protocole permet au serveur et a
 
 Voici en détails comment se déroule le handshake, dans l'ordre chronologique :
 
-<img src="../../assets/2016-12-22-comprendre-le-ssltls-partie-4-handshake-protocol/Untitled-Diagram-1.png" />
+<img src="../../assets/2016-12-22-comprendre-le-ssltls-partie-4-handshake-protocol/untitled-diagram-1.png" />
 
 **1 - Client Hello**
 
