@@ -2,7 +2,7 @@
 layout: post
 title: Le cache HTTP, votre meilleur ami
 excerpt: e suis actuellement Lead développeur pour un site de presse Français à très fort trafic (lemonde.fr). Au cours de mes expériences précédentes, j'ai pu développer sur plusieurs autres sites à forte volumétrie.
-authors: 
+authors:
     - captainjojo
 permalink: /fr/le-cache-http-votre-meilleur-ami/
 categories:
@@ -159,7 +159,7 @@ Il agit comme le CDN et ce dernier appartient à l'architecture. Il s'agit souve
 
 Le web serveur aussi permet d'utiliser le cache HTTP, on l'utilise généralement pour le cache des assets (js, css, images, etc ...). Comme le varnish, son avantage est d'être configurable très finement.
 
-![Architecture Http](/assets/2016-06-29-le-cache-http-votre-meilleur-ami/Untitled.png)
+![Architecture Http](/assets/2016-06-29-le-cache-http-votre-meilleur-ami/untitled.png)
 
 ### Personnaliser votre cache HTTP
 

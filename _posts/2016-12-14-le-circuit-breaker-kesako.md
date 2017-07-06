@@ -2,7 +2,7 @@
 layout: post
 title: Le circuit breaker Késako ?
 excerpt: Aujourd'hui les architectures micro-services sont de plus en plus répandues. Mais quels sont les moyens de contrôler votre nouveau système d'information ?
-authors: 
+authors:
     - captainjojo
 permalink: /fr/le-circuit-breaker-kesako/
 categories:
@@ -13,7 +13,7 @@ tags:
     - microservice
     - circuit-breaker
 image:
-  path: /assets/2016-12-14-le-circuit-breaker-kesako/Miniature-Circuit-Breaker-Application-Guide.jpg
+  path: /assets/2016-12-14-le-circuit-breaker-kesako/miniature-circuit-breaker-application-guide.jpg
   height: 80
   width: 63
 ---
@@ -32,23 +32,23 @@ Mais quel parallèle avec notre architecture micro-services ? Il faut se représ
 
 Un service A fait appel à un service B.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/Untitled-drawing-1.png)
+![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-1.png)
 
 Si le service B tombe ou est ralenti, sans circuit breaker la communication entre le service A et le service B continue.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/Untitled-drawing-1-1.png)
+![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-1-1.png)
 
 Le service A peut alors être ralenti ou même tomber.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/Untitled-drawing-2.png)
+![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-2.png)
 
 Mais si vous avez un circuit-breaker, quand le service B tombe ou est ralenti, le circuit-breaker s'ouvre et stoppe la communication entre A et B.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/Untitled-drawing-3.png)
+![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-3.png)
 
 Ce qui permet au service A de prendre en charge la panne, et d'attendre que le service B soit relancé. Dans ce cas là le circuit-breaker se ferme et la communication recommence.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/Untitled-drawing-5.png)
+![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-5.png)
 
 ***Bonus***: L'intérêt est encore plus présent quand votre architecture est dans le cloud et que vous avez choisi un système d'autoscalling. Quand un service tombe ou est ralenti cela peut entraîner une plus forte demande du service, ce qui par effet de levier peut faire des demandes de création de machine et ne ferrons que sur-alimenter le cloud. Cela peut vite coûter cher !
 
@@ -57,7 +57,7 @@ Vous êtes désormais convaincu d'avoir besoin d'avoir un circuit-breaker, mais 
 ### Implémentation en Symfony 3 :
 Nous allons suivre le pattern suivant.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/Untitled-drawing-6.png)
+![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-6.png)
 
 Ce dont nous avons besoin :
 

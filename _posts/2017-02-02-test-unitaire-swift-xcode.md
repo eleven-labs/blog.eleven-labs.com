@@ -16,7 +16,7 @@ tags:
     - tests
     - xctest
 image:
-    path: /assets/2017-02-02-test-unitaire-swift-xcode/Logo_xcode.png
+    path: /assets/2017-02-02-test-unitaire-swift-xcode/logo_xcode.png
     height: 100
     width: 100
 ---

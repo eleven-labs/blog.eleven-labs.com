@@ -3,7 +3,7 @@ layout: post
 title: "Comprendre le SSL/TLS : Partie 2 Chiffrement"
 excerpt: "Algorithmes symétriques"
 permalink: /fr/comprendre-ssl-tls-partie-2-chiffrement/
-authors: 
+authors:
     - ibenichou
 date: '2016-12-20 14:15:41 +0100'
 date_gmt: '2016-12-20 13:15:41 +0100'
@@ -33,7 +33,7 @@ C’est à dire que le texte chiffré s'obtient en remplaçant chaque lettre du 
 
 *Chiffre de Jules César*
 
-<img src="../../assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/Caesar3.jpg" />
+<img src="../../assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/caesar3.jpg" />
 
 Bien évidemment, nous parlons ici d'un algorithme enfantin pour notre époque, mais si vous avez compris le principe qui s'applique ici, alors vous avez compris la cryptographie symétrique.
 

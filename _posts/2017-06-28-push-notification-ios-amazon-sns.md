@@ -16,7 +16,7 @@ tags:
     - push
     - aws
 image:
-    path: /assets/2017-06-28-push-notification-ios-amazon-sns/Banniere-article-Ilan.png
+    path: /assets/2017-06-28-push-notification-ios-amazon-sns/banniere-article-ilan.png
     height: 100
     width: 100
 ---
@@ -335,7 +335,7 @@ Amazon met à votre disposition un json generator si vous ne savez pas comment �
 
 Résultat :
 
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/IMG_0562.png" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/img_0562.png" />
 
 # Conclusion
 

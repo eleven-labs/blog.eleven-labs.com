@@ -19,7 +19,7 @@ Depuis quelques mois, le navigateur Google Chrome permet, dans ses fonctionnalit
 
 Pour faire simple, voilà ce que j'ai sur ma tablette Nexus 7.
 
-![Screenshot Nexus 7](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/Screenshot-Nexus-7.jpg)
+![Screenshot Nexus 7](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/screenshot-Nexus-7.jpg)
 
 Sur mon ordinateur, après avoir activé le Chrome Screencast, je peux faire de l'édition live et contrôler le rendu sur la tablette :
 
@@ -38,7 +38,7 @@ Pour activer ces fonctionnalités :
 
 Et c'est bon ! Il ne vous reste plus qu'à aller sur [chrome://inspect/](//inspect/) pour voir apparaitre les pages ouvertes sur le périphérique :
 
-![Google inspect screencast](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/Google-inspect-screencast.jpg)
+![Google inspect screencast](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/google-inspect-screencast.jpg)
 
 ![Google-toggle-screencast](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/Google-toggle-screencast.jpg)
 Et à cliquer sur *inspect*. Vous trouverez en bas à gauche de de la fenètre DevTools qui s'ouvre un bouton *Toggle Screencast *:

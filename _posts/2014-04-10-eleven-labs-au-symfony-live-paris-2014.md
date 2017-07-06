@@ -20,7 +20,7 @@ Nous sommes allés au Symfony Live Paris en force cette année ! En tant que spo
 
 Et tout le monde a pu tester le photomaton Eleven Labs (vous pouvez voir toutes les photos [ici](https://www.facebook.com/11Labs)).  On espère que vous en avez profité pour immortaliser des moments magiques avec les astronautes, Mario et Jurassic Park ! Voici quand même LE selfie de l’événement (oui, nous espérons battre [celui des Oscars](http://i.cbc.ca/1.2571222.1394724679!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/ellen-degeneres-s-oscar-selfie.jpg))  :)
 
-![BkpLVSjIUAAHEBA](/assets/2014-04-10-eleven-labs-au-symfony-live-paris-2014/BkpLVSjIUAAHEBA.jpg)
+![BkpLVSjIUAAHEBA](/assets/2014-04-10-eleven-labs-au-symfony-live-paris-2014/bkplvsjiuaaheba.jpg)
 
 Mais parlons des conférences qui nous ont paru les plus intéressantes.
 

@@ -2,7 +2,7 @@
 layout: post
 title: Le Symfony Live Paris 2016
 excerpt: Cette année, Eleven Labs a, pour la troisième fois, sponsorisé le Symfony Live 2016, qui s’est déroulé à la Cité Universitaire. Nous étions présents avec nos brand new Wilson Black Edition, notre borne d’arcade et nos astrobeers.
-authors: 
+authors:
     - captainjojo
 permalink: /fr/la-symfony-live-2016/
 categories:
@@ -16,7 +16,7 @@ tags:
 
 Cette année, Eleven Labs a, pour la troisième fois, sponsorisé le Symfony Live 2016, qui s’est déroulé à la Cité Universitaire. Nous étions présents avec nos brand new Wilson Black Edition, notre borne d’arcade et nos astrobeers.
 
-![](/assets/2016-04-11-la-symfony-live-2016/Astrobeer.jpg)
+![](/assets/2016-04-11-la-symfony-live-2016/astrobeer.jpg)
 ![](/assets/2016-04-11-la-symfony-live-2016/stand-eleven.jpg)
 ![](/assets/2016-04-11-la-symfony-live-2016/tomgregbox.jpg)
 
