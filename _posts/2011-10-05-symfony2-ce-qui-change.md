@@ -4,7 +4,7 @@ title: Symfony2 - Ce qui change
 permalink: /fr/symfony2-ce-qui-change/
 excerpt: Si vous êtes courageux, vous aurez dans l'idée de vouloir passer à Symfony2.
 authors:
- - rjardinet
+ - pouzor
 date: '2011-10-05 15:43:21 +0200'
 date_gmt: '2011-10-05 15:43:21 +0200'
 categories:
