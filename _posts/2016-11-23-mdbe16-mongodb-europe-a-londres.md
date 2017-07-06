@@ -65,6 +65,7 @@ L'objectif de cette présentation était de nous montrer l’utilité de MongoDB
 <blockquote class="twitter-tweet" data-lang="fr">
 <p dir="ltr" lang="en">Great keynote this morning with Professor Brian Cox, OBE at <a href="https://twitter.com/MongoDB">@MongoDB</a> <a href="https://twitter.com/hashtag/MDBE16?src=hash">#MDBE16</a> <a href="https://t.co/3x9SNp7VS6">pic.twitter.com/3x9SNp7VS6</a></p>
 <p>— Charlotte Brown (@Charlotte_Br8wn) <a href="https://twitter.com/Charlotte_Br8wn/status/798485488474669056">15 novembre 2016</a></p></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 ### Advanced MongoDB Aggregation pipelines
@@ -95,6 +96,7 @@ Il s'agit d'un REX sur la conception du moteur WiredTiger et sur sa gestion de 
 <blockquote class="twitter-tweet" data-lang="fr">
 <p dir="ltr" lang="und"><a href="https://twitter.com/hashtag/MDBE16?src=hash">#MDBE16</a> <a href="https://t.co/ENF1ViV1JT">pic.twitter.com/ENF1ViV1JT</a></p>
 <p>— Pouzor (@Pouz0r) <a href="https://twitter.com/Pouz0r/status/798489580328648704">15 novembre 2016</a></p></blockquote>
+
 
 
 ### The rise of Data Lake
