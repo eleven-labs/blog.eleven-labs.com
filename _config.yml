@@ -29,7 +29,7 @@ theme_settings:
     footer_text: To infinity and beyond !
 
     # Icons
-    rss: https://eleven-labs.github.io/feed.xml
+    rss: /feed.xml
     email_address: contact@eleven-labs.com
     behance:
     bitbucket:
