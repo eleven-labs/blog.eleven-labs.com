@@ -22,7 +22,7 @@ layout: default
 
                 <time class="posts-date meta">
                     <span class="meta-content">
-                        {{ post.date | date: "%B %-d, %Y" }} {% include author.html authors=post.authors %} - {% include reading_time.html content=post.content %}
+                        {{ post.date | date: "%B %-d, %Y" }} {% include author_link.html authors=post.authors %} - {% include reading_time.html content=post.content %}
                     </span>
                 </time>
 
