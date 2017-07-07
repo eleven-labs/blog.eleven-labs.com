@@ -1,5 +1,6 @@
 <!-- _includes/author_link.html -->
 - par
+
 {% for author in include.authors %}
   {% assign isFirstAuthor = forloop.first %}
   {% assign isLastAuthor = forloop.last %}
@@ -12,7 +13,7 @@
       {% else %}
          ,
       {% endif %}
-      <a class="author-link" href="/authors/{{author}}">{{ existingAuthor.name }}</a>
+      <a class="author-link" href="/authors/{{author}}">{{ existingAuthor.title }}</a>
     {% endif %}
   {% endfor %}
 {% endfor %}

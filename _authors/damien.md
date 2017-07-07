@@ -1,6 +1,6 @@
 ---
 layout: author
 login: damien
-name: Damien Saillard
+title: Damien Saillard
 twitter: daemon1981
 ---

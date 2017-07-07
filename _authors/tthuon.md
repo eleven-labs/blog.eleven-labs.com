@@ -1,6 +1,6 @@
 ---
 layout: author
 login: tthuon
-name: Thierry Thuon
+title: Thierry Thuon
 ---
 Astronaute adepte de Symfony.

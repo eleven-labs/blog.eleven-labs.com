@@ -1,7 +1,7 @@
 ---
 layout: author
 login: thuchon
-name: Thibaud Huchon
+title: Thibaud Huchon
 twitter: ettibo
 ---
 Plop
