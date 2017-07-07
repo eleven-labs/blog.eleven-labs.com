@@ -2,7 +2,7 @@
 layout: post
 title: 'Consul : Service Discovery et Failure Detection'
 permalink: /fr/consul-service-discovery-failure-detection-2/
-authors: 
+authors:
     - vcomposieux
 date: '2017-02-22 10:49:25 +0100'
 date_gmt: '2017-02-22 09:49:25 +0100'
@@ -34,7 +34,7 @@ Afin de clarifier la suite de cet article, voici les ports utilisés par Consul 
 
 La suite de cet article va se concentrer sur la partie service discovery et failure detection. Nous allons pour cela mettre en place un cluster Docker Swarm possédant l'architecture suivante :
 
-<img class="size-full wp-image-3445 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2017/02/consul-archi.png" alt="" />
+![](/assets/2017-02-22-consul-service-discovery-failure-detection-2/consul-archi.png)
 
 Nous aurons donc 3 machines Docker :
 
