@@ -1,13 +1,18 @@
 <!-- _includes/author_link.html -->
 - par
 {% for author in include.authors %}
-   {% if site.authors | where: 'login',author %}
-      {% if forloop.first %}
-      {% elsif forloop.last %}
+  {% assign isFirstAuthor = forloop.first %}
+  {% assign isLastAuthor = forloop.last %}
+
+  {% for existingAuthor in site.authors %}
+    {% if existingAuthor.login == author %}
+      {% if isFirstAuthor %}
+      {% elsif isLastAuthor %}
          et
       {% else %}
          ,
       {% endif %}
-         <a class="author-link" href="/authors/{{author}}">{{author}}</a>
-   {% endif %}
+      <a class="author-link" href="/authors/{{author}}">{{ existingAuthor.name }}</a>
+    {% endif %}
+  {% endfor %}
 {% endfor %}
