@@ -13,7 +13,7 @@ tags:
 - conférence
 ---
 
-![wilsononstagedotjs](/assets/2014-11-24-retour-sur-les-dotjs-2014/wilsononstagedotjs-300x300.jpg)
+![wilsononstagedotjs](/assets/2014-11-24-retour-sur-les-dotjs-2014/wilsononstagedotjs.jpg)
 
 [DotJS](http://www.dotjs.eu/) est une journée consacrée au langage JavaScript, créée par [dotConferences](http://www.dotconferences.eu/), dont le but est d’apporter des conférences du niveau de [TED](http://www.ted.com/) au monde de l’informatique. C’est la plus grande conférence de ce type en Europe et elle regroupe des participants du monde entier.
 
