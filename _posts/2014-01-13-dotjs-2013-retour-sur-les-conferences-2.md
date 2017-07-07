@@ -64,7 +64,7 @@ Si Polymer aiguise votre curiosité, une [FAQ](http://www.polymer-project.org/fa
 
 TypeScript se présente comme une sur-couche de Javascript. Il offre un cadre de développement plus strict que le Javascript natif. Il permet d’utiliser un typage strict et des mots clefs de POO (class, interface, implements, extends, …) A la manière de l’ActionScript, il faut compiler notre fichier hello.ts pour obtenir un fichier en sortie hello.js. Développé en partenariat avec Microsoft, le compilateur écrit en CodePlex est disponible pour Node.js. La forte valeur ajoutée de TypeScripte réside dans l'existance des plugins pour les éditeurs de textes comme VirtualStudio 2012/2013, Sublime Text, Vim et Emacs.
 
-![Type2\_Fig\_06](http://blog.eleven-labs.com/wp-content/uploads/2013/12/Type2_Fig_06.gif)
+![Type2\_Fig\_06](/assets/2014-01-13-dotjs-2013-retour-sur-les-conferences-2/Type2_Fig_06.gif)
 
 Note : TypeScript est différent de CoffeeScript qui supprime la syntaxe superflue du Javascript tel que les accolades, les parenthèses, les semi-colons.
 
@@ -74,7 +74,7 @@ Note : TypeScript est différent de CoffeeScript qui supprime la syntaxe superfl
 
 Brendan Eich, alias PapaJS, nous a offert une présentation des perspectives d’avenir des jeux développés dans les technologies web. Nous avons assisté à une démo en temps réel de la carte [Epic Citadel](http://www.unrealengine.com/html5/) du  jeu Infinity Blade, avec des combats et des bots contrôlés par l’IA. Le réputé et très utilisé moteur physique et graphique “Unreal Engine” a été porté pour les navigateurs modernes en 4 jours avec [Asm.js](http://www.generation-nt.com/go/?url=http%3A%2F%2Fasmjs.org%2F) et [Emscripten](http://www.generation-nt.com/go/?url=https%3A%2F%2Fgithub.com%2Fkripken%2Femscripten%2Fwiki) pour la compilation du code C++ en JavaScript. Les performances sont au rendez-vous et les graphismes impressionnants pour un jeu dans le navigateur. Cette avancée confirme un peu plus la volonté de faire du navigateur l’élément central d’un ordinateur personnel.
 
-![citadel-demo-2-100068222-orig](http://blog.eleven-labs.com/wp-content/uploads/2013/12/citadel-demo-2-100068222-orig.png)
+![citadel-demo-2-100068222-orig](/assets/2014-01-13-dotjs-2013-retour-sur-les-conferences-2/citadel-demo-2-100068222-orig.png)
 
 Suite à cette dernière conférence, beaucoup d'interrogations sont nées sur le devenir du gaming :
 

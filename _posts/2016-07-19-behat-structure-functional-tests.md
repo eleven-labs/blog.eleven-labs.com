@@ -2,7 +2,7 @@
 layout: post
 title: 'Behat: structure your functional tests'
 permalink: /en/behat-structure-functional-tests/
-authors: 
+authors:
     - vcomposieux
 date: '2016-07-19 14:15:31 +0200'
 date_gmt: '2016-07-19 12:15:31 +0200'
@@ -33,7 +33,8 @@ Idea is to develop and run both integration tests and interface tests with Behat
 Before we can go, please note that we will use a `Selenium` server which will receive orders by `Mink` (a Behat extension) and will pilot our browser (Chrome in our configuration).
 
 To be clear on the architecture we will use, here is a scheme that will resume the role of all elements:
-<a href="http://blog.eleven-labs.com/wp-content/uploads/2016/07/behat_en.jpg"><img class="wp-image-1997 size-full" src="http://blog.eleven-labs.com/wp-content/uploads/2016/07/behat_en.jpg" alt="Behat architecture schema" /></a>
+
+!["Behat architecture schema"](/assets/2016-07-19-behat-structure-functional-tests/behat_en.jpg)
 
 ## Behat set up
 First step is to install Behat and its extensions as dependencies in our `composer.json` file:

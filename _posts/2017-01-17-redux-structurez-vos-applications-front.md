@@ -2,7 +2,7 @@
 layout: post
 title: 'Redux : Structurez vos applications front'
 permalink: /fr/redux-structurez-vos-applications-front/
-authors: 
+authors:
     - vcomposieux
 date: '2017-01-17 10:09:00 +0100'
 date_gmt: '2017-01-17 09:09:00 +0100'
@@ -21,7 +21,7 @@ Historiquement, le besoin s'est fait sentir sur [React](https://facebook.github
 
 Le principe est le suivant :
 
-<img class="size-full wp-image-3188 aligncenter" src="http://blog.eleven-labs.com/wp-content/uploads/2017/01/flux-diagram.png" alt="" />
+![](/assets/2017-01-17-redux-structurez-vos-applications-front/flux-diagram.png)
 
 Votre application déclare, pour chaque composant, les `actions`  qui lui sont liées. Ces actions permettent de définir l'état de votre composant, stocké dans un `store` , qui permet de maintenir votre `vue`  à jour.
 L'inconvénient est que dans ce cas, vous avez un store par composant. Ce modèle fonctionne pour React mais vous pouvez vous sentir limité sur certaines applications.
