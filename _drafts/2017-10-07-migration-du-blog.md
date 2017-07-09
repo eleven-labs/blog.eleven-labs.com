@@ -33,8 +33,15 @@ Qu'avons nous fait techniquement ?
 
 ### Techniquement
 
-### La migration
 
-
+La migration ne fut pas compliqué, chaque astronautes à eu la mission de migrer leurs articles en les passants de HTML en Markdown. Grâce à certain astronautes nous avions quelques scripts permettant une migration rapide de certain articles simple.
 
 ### Maintenant
+
+Eleven-labs souhaitant faire vivre le blog comme un projet open-source, il est possible à tous nos utilisateurs de proposer des nouvelles fonctionnalités simplement en suivant le [contributing](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/.github/CONTRIBUTING.md) du projet publique. Chaque issues sera alors ajoutées dans nos sprints projets et seront réalisées pour améliorer en continue notre blog.
+
+Comme notre projet est publique, vous pouvez aussi directement développer des nouvelles fonctionnalités et les proposer à nos astronautes,  il vous sufft de suivre le [contributing](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/.github/CONTRIBUTING.md) et de proposer une pull request.
+
+Les astronautes d'Eleven-labs n'étant pas les seuls à vouloir partager leurs connaissances, il vous ait vous aussi possible de proposer des articles et d'être publié avec les astronautes, suivez le [README](https://github.com/eleven-labs/eleven-labs.github.io).
+
+Bien d'autres chose sont en préparation par notre équipe d'astronautes, en attendant merci d'etre des lecteurs fidèle de notre blog et continuer de partager la connaissances.
