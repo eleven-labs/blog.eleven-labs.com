@@ -18,7 +18,7 @@ Quand on exécute une suite de tests fonctionnels ou unitaires sur une applicati
 
 **Contexte : isolation grâce à un rollback de la base de données :**
 
-Comme indiqué dans un [article précédent](http://eleven-labs.com/blog/test-unitaire-dun-bundle-symfony2/ "Test unitaire d’un bundle Symfony 2") et [décrit par Alexandre Salomé](http://alexandre-salome.fr/blog/Symfony2-Isolation-Of-Tests "Isolation of tests in Symfony2"), il est possible de mettre en place un système de rollback pour rétablir l'état initial des données après l’exécution de chaque test.
+Comme indiqué dans un [article précédent](http://blog.eleven-labs.com/fr/test-unitaire-dun-bundle-symfony2/ "Test unitaire d’un bundle Symfony 2") et [décrit par Alexandre Salomé](http://alexandre-salome.fr/blog/Symfony2-Isolation-Of-Tests "Isolation of tests in Symfony2"), il est possible de mettre en place un système de rollback pour rétablir l'état initial des données après l’exécution de chaque test.
 
 Cela repose sur cette classe que vos tests fonctionnels PHPUnit devront étendre et qui déclenche le système d'isolation, avant et après chaque cas de tests grâce aux méthodes *setUp* et *tearDown* :
 
@@ -299,7 +299,7 @@ Et là, surprise lors de l’exécution de PHPUnit :
 Failed asserting that 500 matches expected 200.
 ```
 
-associée à l'erreur "*InvalidArgumentException*: *Entity has to be managed or scheduled for removal for single computation*" visible dans les logs...
+associée à l'erreur `InvalidArgumentException: Entity has to be managed or scheduled for removal for single computation` visible dans les logs...
 
 Et pourtant si l'on exécute ce code, sans utiliser nos tests fonctionnels, via de simples appels curl par exemple (1 premier pour se logguer et un deuxième en POST ou PUT pour mettre à jour notre entité, en utilisant le token d'authentification retourné lors du login), on constate que cela fonctionne très bien : l'entité est bien modifiée ou créée en base de données.
 
@@ -309,7 +309,7 @@ Le problème vient donc de notre façon de tester, et très probablement de la f
 
 En analysant notre *IsolatedWebTestCase* et notre *Test Client*, on constate que la *DBAL Connection* initialisée lors de la première requête de login est ensuite réutilisée dans la requête de l'action suivante, dans la méthode *startIsolation*. Ce premier indice permet de dire que la *Connection* initialisée lors de la première requête ne sait pas gérer correctement ce qui lui est demandé lors de la deuxième requête.
 
-Deuxième indice : la stack trace de l'exception dit que l'erreur est levée lors de l'appel $this-&gt;doctrine-&gt;getManager()-&gt;flush($article); dans notre *PriceStrategy*, déclenché par notre *ArticleListener*. Autrement dit, l'instance du *Doctrine Registry* injectée dans la *PriceStrategy* et l'*Entity Manager* lié n'ont pas connaissance de l'état de l'entité Article qu'ils doivent flusher : "*Entity has to be managed*".
+Deuxième indice : la stack trace de l'exception dit que l'erreur est levée lors de l'appel `$this->doctrine->getManager()->flush($article);` dans notre *PriceStrategy*, déclenché par notre *ArticleListener*. Autrement dit, l'instance du *Doctrine Registry* injectée dans la *PriceStrategy* et l'*Entity Manager* lié n'ont pas connaissance de l'état de l'entité Article qu'ils doivent flusher : "*Entity has to be managed*".
 
 De plus, en regardant d'un peu plus près la [DBAL Connection de Doctrine](Doctrine\DBAL\Connection "https://github.com/doctrine/dbal/blob/master/lib/Doctrine/DBAL/Connection.php#L107"), on remarque une propriété [EventManager](https://github.com/doctrine/common/blob/master/lib/Doctrine/Common/EventManager.php "Doctrine\Common\EventManager") qui gère les *Events* et *Listeners* Doctrine, dont notre *ArticleListener*.
 

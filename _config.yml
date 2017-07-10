@@ -29,7 +29,7 @@ theme_settings:
     footer_text: To infinity and beyond !
 
     # Icons
-    rss: false
+    rss: /feed.xml
     email_address: contact@eleven-labs.com
     behance:
     bitbucket:
@@ -57,7 +57,7 @@ theme_settings:
 
     # Localization strings
     str_follow_on: Suivez nous sur
-    str_rss_follow:
+    str_rss_follow: Ajoutez nous à votre veille
     str_email: Email
     str_next: Suivant
     str_prev: Précédent
@@ -90,6 +90,7 @@ gems:
     - jekyll-paginate
     - jekyll-seo-tag
     - algoliasearch-jekyll
+    - jekyll-feed
 
 collections:
   authors:
