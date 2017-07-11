@@ -24,7 +24,7 @@ Mais le changement n'est pas qu'esthétique, nos astronautes voulaient aussi pou
 
 C'est donc après une grande réflexion que nous avons pris **THE** décision.
 
-> Migrer notre blog en JEKYLL sur GitHub Page
+> Migrer notre blog en JEKYLL sur GitHub Pages
 
 L'utilisation de GitHub va nous permettre de garder un workflow de publication bien connu par les développeurs.
 Jekyll, quant à lui, nous permet de personnaliser le site et de rendre le blog plus lisible pour nos utilisateurs.
@@ -33,7 +33,17 @@ Qu'avons nous fait techniquement ?
 
 ### Techniquement
 
-La migration ne fut pas compliquée, chaque astronaute a eu la mission de migrer leurs articles en les passant de HTML vers Markdown. Grâce à certains astronautes, nous avions quelques scripts permettant une migration rapide de certains articles simples.
+Pour commencer, nous avons initaliser le repo github en forkant le projet [Type Theme](https://github.com/rohanchandra/type-theme). 
+Celà nous a permis d'avoir une base de travail avec un jekyll pré-configuré et un visuel épuré proche de notre objectif de lisibilité.
+
+Afin de servir le blog via la plateforme Github Pages, nous n'avons eu qu'a renommer le projet en `eleven-labs.github.io` (convention de nommage Github Pages pour les organisations) et activer Github Pages sur le repo. 
+La magie github faisant le reste, nous avions le prémices du nouveau blog servit en https sur le domaine github.io quelques minutes après.
+
+La reprise des articles du wordpress s'est faite grâce au package [jekyll-import](http://import.jekyllrb.com/docs/wordpress/), qui se connecte directement à la base de donées du wordpress pour en extraire les posts et autre meta-données nécessaires au bon fonctionnement du blog.
+Ces posts au format html wysiwyg wordpress ont dans un premier temps étaient placés dans un dossier `_drafts` permettant des les afficher en local (grace au flag `--drafts`) sans les builder lors du déploiement.
+Cette étape de transition a permis de temporiser la migration sans bloquer le reste des développements sur le SEO et le design par exemple.
+
+La migration ne fut pas compliquée, chaque astronaute a eu pour mission de migrer ses articles en les passant de HTML vers Markdown. Certains astronautes s'étant mis au défis de scripter cette transformation, nous avions quelques scripts permettant une simplification de la transformation pour les articles complexes et une transformation totale pour les articles simples.
 
 ### Maintenant
 
