@@ -1,7 +1,7 @@
 # SITE CONFIGURATION
 title: Blog Eleven Labs
 description: Blog Eleven Labs
-url: https://eleven-labs.github.io
+url: https://blog.eleven-labs.com
 twitter:
     username: Eleven_Labs
 logo: /img/avatar.png
@@ -52,7 +52,7 @@ theme_settings:
 
     # Scripts
     google_analytics: UA-99013054-1
-    disqus_shortname: eleven-labs-github-io
+    disqus_shortname: blog-eleven-labs
     muut_community_name:
 
     # Localization strings
@@ -75,7 +75,7 @@ paginate_path: "/blog/page:num"
 
 # ALGOLIA
 algolia:
-  application_id: 'Y0KZQHR2II'
+  application_id: '5IGTHBX5JS'
   index_name:     'blog_eleven'
 
 exclude: [vendor, _authors/TEMPLATE-AUTOR]
