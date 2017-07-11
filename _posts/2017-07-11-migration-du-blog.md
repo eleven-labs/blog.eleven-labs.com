@@ -20,7 +20,7 @@ Une des fonctionnalités qui manquait le plus sur notre blog, c'était la **rech
 
 Nous voulions aussi encore plus partager avec la communauté : il est maintenant possible de s'inscrire à notre newsletter et de suivre l'actualité d'Eleven-labs.
 
-Mais le changement n'est pas qu'esthétique, nos astronautes souhaitaient lus de liberté dans l'écriture de leurs articles et même réfléchir à de nouvelles façons d'afficher du contenu (ça arrive, mais chut !!!). Wordpress ne permettait pas de réaliser cette ambition.
+Mais le changement n'est pas qu'esthétique, nos astronautes souhaitaient plus de liberté dans l'écriture de leurs articles et même réfléchir à de nouvelles façons d'afficher du contenu (ça arrive, mais chut !!!). Wordpress ne permettait pas de réaliser cette ambition.
 
 C'est donc après une grande réflexion que nous avons pris **THE** décision.
 
@@ -39,7 +39,7 @@ Celà nous a permis d'avoir une base de travail avec un jekyll pré-configuré e
 Afin de servir le blog via la plateforme Github Pages, nous n'avons eu qu'à renommer le projet en `eleven-labs.github.io` (convention de nommage Github Pages pour les organisations) et activer Github Pages sur le repo. 
 La magie github faisant le reste, nous avions les prémices du nouveau blog servi en https sur le domaine github.io en quelques minutes.
 
-La reprise des articles du wordpress s'est faite grâce au package [jekyll-import](http://import.jekyllrb.com/docs/wordpress/), qui se connecte directement à la base de donées du wordpress pour en extraire les posts et autre meta-données nécessaires au bon fonctionnement du blog.
+La reprise des articles du wordpress s'est faite grâce au package [jekyll-import](http://import.jekyllrb.com/docs/wordpress/), qui se connecte directement à la base de donées du wordpress pour en extraire les posts et autres meta-données nécessaires au bon fonctionnement du blog.
 Ces posts au format html wysiwyg wordpress ont dans un premier temps été placés dans un dossier `_drafts` permettant des les afficher en local (grace au flag `--drafts`) sans les builder lors du déploiement.
 Cette étape de transition a permis de temporiser la migration sans bloquer le reste des développements, sur le SEO et le design par exemple.
 
@@ -49,7 +49,7 @@ La migration ne fut pas compliquée. Chaque astronaute a eu pour mission de migr
 
 Eleven-labs souhaitant faire vivre le blog comme un projet open-source, il est possible à tous nos utilisateurs de proposer des nouvelles fonctionnalités simplement en suivant le [contributing](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/.github/CONTRIBUTING.md) du projet public. Chaque issue sera alors ajoutée dans nos sprints projet et sera réalisée pour améliorer en continu notre blog.
 
-Comme notre projet est public, vous pouvez aussi directement développer des nouvelles fonctionnalités et les proposer à nos astronautes, il vous sufft de suivre le [contributing](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/.github/CONTRIBUTING.md) et de proposer une pull request.
+Comme notre projet est public, vous pouvez aussi directement développer des nouvelles fonctionnalités et les proposer à nos astronautes, il vous suffit de suivre le [contributing](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/.github/CONTRIBUTING.md) et de proposer une pull request.
 
 Comme nous savons que les astronautes d'Eleven-labs ne sont pas les seuls à vouloir partager leurs connaissances, il vous est aussi possible de proposer des articles et d'être publié sur le blog, suivez le [README](https://github.com/eleven-labs/eleven-labs.github.io).
 
