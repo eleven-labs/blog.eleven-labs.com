@@ -6,7 +6,7 @@ authors:
     - VEBERArnaud
 excerpt: "Depuis 2013, les astronautes d'Eleven-labs partagent leurs connaissances techniques avec plaisir. Notre blog est devenu un élément indissociable de notre effort vers l'open-source. Pour aller plus loin dans cette démarche nous avons donc décidé de changer radicalement de technologie. Mais pourquoi ? Comment ? Quelle est la suite ?"
 permalink: /fr/migration-du-blog/
-cover: /assets/2017-07-11-migration-du-blog/cover.jpg
+cover: /assets/2017-07-11-migration-du-blog/cover.png
 ---
 
 Depuis 2013, les astronautes d'Eleven-labs partagent leurs connaissances techniques avec plaisir. Notre blog est devenu un élément indissociable de notre effort vers l'open-source. Pour aller plus loin dans cette démarche nous avons donc décidé de changer radicalement de technologie. Mais pourquoi ? Comment ? Quelle est la suite ?
@@ -34,10 +34,10 @@ Qu'avons nous fait techniquement ?
 
 ### Techniquement
 
-Pour commencer, nous avons initalisé le repo github en forkant le projet [Type Theme](https://github.com/rohanchandra/type-theme). 
+Pour commencer, nous avons initalisé le repo github en forkant le projet [Type Theme](https://github.com/rohanchandra/type-theme).
 Celà nous a permis d'avoir une base de travail avec un jekyll pré-configuré et un visuel épuré proche de notre objectif de lisibilité.
 
-Afin de servir le blog via la plateforme Github Pages, nous n'avons eu qu'à renommer le projet en `eleven-labs.github.io` (convention de nommage Github Pages pour les organisations) et activer Github Pages sur le repo. 
+Afin de servir le blog via la plateforme Github Pages, nous n'avons eu qu'à renommer le projet en `eleven-labs.github.io` (convention de nommage Github Pages pour les organisations) et activer Github Pages sur le repo.
 La magie github faisant le reste, nous avions les prémices du nouveau blog servi en https sur le domaine github.io en quelques minutes.
 
 La reprise des articles du wordpress s'est faite grâce au package [jekyll-import](http://import.jekyllrb.com/docs/wordpress/), qui se connecte directement à la base de donées du wordpress pour en extraire les posts et autres meta-données nécessaires au bon fonctionnement du blog.
