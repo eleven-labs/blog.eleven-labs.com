@@ -7,8 +7,8 @@ layout: default
 {% endif %}
 
 
-<article {% if page.feature-img %}class="feature-image"{% endif %}>
-    <header class="page-heading" style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
+<article {% if page.cover %}class="feature-image"{% endif %}>
+    <header class="page-heading" style="background-image: url('{{ site.baseurl }}{{ page.cover }}')">
         <div class="container">
             <h1 class="page-heading-title">{{ page.title }}</h1>
             <span class="meta">

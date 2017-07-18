@@ -28,10 +28,18 @@ article {
         background-size: $feature-image-size;
         margin-bottom: 0;
         padding: $padding-large/2.5 $padding-large;
-    }
 
-    .post-content {
-        @extend %padding-regular;
+        &.page-heading {
+            .container .meta {
+                &:before {
+                    background-color: transparent;
+                }
+
+                .author-link {
+                    color: white;
+                }
+            }
+        }
     }
 }
 // Post navigation

@@ -6,6 +6,7 @@ authors:
     - VEBERArnaud
 excerpt: "Depuis 2013, les astronautes d'Eleven-labs partagent leurs connaissances techniques avec plaisir. Notre blog est devenu un élément indissociable de notre effort vers l'open-source. Pour aller plus loin dans cette démarche nous avons donc décidé de changer radicalement de technologie. Mais pourquoi ? Comment ? Quelle est la suite ?"
 permalink: /fr/migration-du-blog/
+cover: /assets/2017-07-11-migration-du-blog/cover.jpg
 ---
 
 Depuis 2013, les astronautes d'Eleven-labs partagent leurs connaissances techniques avec plaisir. Notre blog est devenu un élément indissociable de notre effort vers l'open-source. Pour aller plus loin dans cette démarche nous avons donc décidé de changer radicalement de technologie. Mais pourquoi ? Comment ? Quelle est la suite ?
