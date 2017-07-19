@@ -25,7 +25,7 @@ Cet article traite des deux grandes technologies permettant le streaming vidéo 
 
 ## Le HLS
 
-Le HLS (HTTP Live Streaming) est un protocole de streaming audio/video conçu par Apple à la fin des année 2000, à la base pour le lecteur QuickTime. Comme son nom l'indique, ce protocole utilise le HTTP comme potocole de transport, ce qui le rend très adaptable et facilement utilisable via un Nginx ou autre Apache.
+Le HLS (HTTP Live Streaming) est un protocole de streaming audio/video conçu par Apple à la fin des années 2000, à la base pour le lecteur QuickTime. Comme son nom l'indique, ce protocole utilise le HTTP comme protocole de transport, ce qui le rend très adaptable et facilement utilisable via un Nginx ou autre Apache.
 
 Au même titre que les autres protocoles servant les même objectifs, le HLS envoie des segments audios et/ou vidéos d'une longueur donnée, laissant la responsabilité au client d'enchaîner l'affichage desdits segments. Dans le bon ordre de préférence.
 
@@ -83,7 +83,7 @@ live/high.m3u8
 live/low.m3u8
 ```
 
-Chaque balise `#EXT-X-STREAM-INF` indique les données nécéssaires à la lecture du segment, chacun d'entre eux d'une qualité et d'un encodage donnés. Ainsi, le client compatible pourra passer d'une qualité à une autre en temps réel, en fonction de la bande passante disponible ou du choix de l'utilisateur. Le diagramme suivant illustre d'ailleurs très bien cette possibilité :
+Chaque balise `#EXT-X-STREAM-INF` indique les données nécessaires à la lecture du segment, chacun d'entre eux d'une qualité et d'un encodage donnés. Ainsi, le client compatible pourra passer d'une qualité à une autre en temps réel, en fonction de la bande passante disponible ou du choix de l'utilisateur. Le diagramme suivant illustre d'ailleurs très bien cette possibilité :
 
 ![Fichier M3U - HLS ](/assets/2017-07-12-video-live-dash-hls/HLS_Figure_1.jpg?raw=true)
 
@@ -113,11 +113,11 @@ Une démo live est disponible [ici](http://video-dev.github.io/hls.js/demo).
 
 ## Le DASH
 
-Le Moving Picture Expert Group, plus connu sous son acronyme MPEG, a commencé la conception du MPEG-DASH en 2010. Le DASH (Dynamic Adaptive Streaming over HTTP) est ensuite devenu un standard internationnal à la fin de l'année 2011. C'est d'ailleurs la seule solution de streaming certifiée [ISO](http://mpeg.chiariglione.org/standards/mpeg-dash).
+Le Moving Picture Expert Group, plus connu sous son acronyme MPEG, a commencé la conception du MPEG-DASH en 2010. Le DASH (Dynamic Adaptive Streaming over HTTP) est ensuite devenu un standard international à la fin de l'année 2011. C'est d'ailleurs la seule solution de streaming certifiée [ISO](http://mpeg.chiariglione.org/standards/mpeg-dash).
 
 Utilisé lui aussi par de très grandes plateformes comme Youtube ou Netflix, le DASH est assez semblable au HLS dans son fonctionnement général : des fichiers séquencés répertoriés dans un fichier servant de playlist.
 
-Le DASH, en plus d'étre normalisé et standardisé ISO, dispose de plusieurs fonctionnalités introuvables dans les autres technologies similaires, au prix d'une complexité un peu plus élevée.
+Le DASH, en plus d'être normalisé et standardisé ISO, dispose de plusieurs fonctionnalités introuvables dans les autres technologies similaires, au prix d'une complexité un peu plus élevée.
 
 ### Fonctionnement
 
@@ -125,9 +125,9 @@ Ne changeons pas une équipe qui gagne et commençons par un bon diagramme :
 
 ![Diagramme de fonctionnement - DASH ](/assets/2017-07-12-video-live-dash-hls/diagram_DASH.png?raw=true)
 
-Les différentes séquences du contenu sont un fois encore d'une taille, d'une qualité et d'un encodage donnés et sont envoyées au client via HTTP. Ce dernier à la responsabilité de selectionner puis d'afficher les séquences dans la qualité voulue. Et toujours dans le bon ordre. Je vous assure, c'est important.
+Les différentes séquences du contenu sont un fois encore d'une taille, d'une qualité et d'un encodage donnés et sont envoyées au client via HTTP. Ce dernier a la responsabilité de sélectionner puis d'afficher les séquences dans la qualité voulue. Et toujours dans le bon ordre. Je vous assure, c'est important.
 
-Le fichier centralisant toutes les informations du contenu est un fichier MPD (Media Presentation Description). Fichier au format XML, il regroupe toutes les données dont pourrait réver le client.
+Le fichier centralisant toutes les informations du contenu est un fichier MPD (Media Presentation Description). Fichier au format XML, il regroupe toutes les données dont pourrait rêver le client.
 
 C'est parti pour un *petit* exemple :
 
@@ -187,23 +187,23 @@ type="static">
 </MPD>
 ```
 
-Nous avons donc ici du XML classique, chaque tag donnant des informations spécifiques. Voyons ensemble les tag principaux par ordre hierarchique :
+Nous avons donc ici du XML classique, chaque tag donnant des informations spécifiques. Voyons ensemble les tag principaux par ordre hiérarchique :
 
 - `<MPD>` : Décrit les métadata du fichier, sa version, la version du DASH utilisée, la durée total du contenu...
-- `<AdaptationSet>` : Une adaption est l'un des éléments du contenu, pas exemple la vidéo ou l'audio.
+- `<AdaptationSet>` : Une adaptaion est l'un des éléments du contenu, pas exemple la vidéo ou l'audio.
 - `<ContentComponent>` : De manière assez similaire au tag précédent, le ContentComponent décrit exactement le type d'adaptation.
 - `<Representation>` : La représentation décrit une version spécifique du contenu séquencé. Elle dispose d'un encodage qui lui est propre et c'est cet elément qui est utilisé par l'adaptive streaming, décrit dans la partie dédiée au HLS.
 - `<BaseURL>` : L'URL de la séquence.
 
-Il peut être intéréssant de noter que le DASH supporte les DRM, pour diffuser du contenu protégé. Il permet aussi d'utiliser n'importe quel codec audio/vidéo, ce qui le rend particulièrement adaptable.
+Il peut être intéressant de noter que le DASH supporte les DRM, pour diffuser du contenu protégé. Il permet aussi d'utiliser n'importe quel codec audio/vidéo, ce qui le rend particulièrement adaptable.
 
 ### Librairie JS
 
 L'une des librairies open-source les plus complètes pour implémenter un client DASH est sans doute le [Rx-Player](https://github.com/canalplus/rx-player), une librairie maintenue par Canal +. Elle permet de jouer aussi bien du DASH live que du replay, utilisable via une [API](https://github.com/canalplus/rx-player/blob/master/doc/api/index.md) très complète et dont le niveau de documentation est assez incroyable. Le tout est utilisé en production, notamment dans certaines box Canal +.
 
-Je leur laisse le soins d'expliquer [pourquoi](https://github.com/canalplus/rx-player#why-a-new-player-why-rx) le Rx-player est au-dessus quand il s'agit de la délicate mission d'implementer un player DASH. Il implémente aussi le Smooth Streaming (un autre protocole de streaming moins connu), si le coeur vous en dit.
+Je leur laisse le soin d'expliquer [pourquoi](https://github.com/canalplus/rx-player#why-a-new-player-why-rx) le Rx-player est au-dessus quand il s'agit de la délicate mission d'implémenter un player DASH. Il implémente aussi le Smooth Streaming (un autre protocole de streaming moins connu), si le coeur vous en dit.
 
-Si vous n'êtes pas convaincu, je vous laisser jeter un oeil à leur [démo](http://developers.canal-plus.com/rx-player/).
+Si vous n'êtes pas convaincus, je vous laisse jeter un oeil à leur [démo](http://developers.canal-plus.com/rx-player/).
 
 ## Conclusion
 
@@ -212,7 +212,7 @@ Les deux protocoles présentés dans cet article partagent donc de nombreuses re
 Le HLS est sans doute le plus simple à mettre en place, que ce soit coté serveur ([ffmpeg](https://www.ffmpeg.org/) est votre ami) ou coté client.<br>
 Le DASH est un peu plus complexe, mais il offre des possibilités incroyables si vous avez des besoins avancés, notamment au niveau de la gestion des DRM.
 
-Il ne serait pas fair-play de finir cet article sans au moins mentionner deux autre grandes technologies de streaming : Le MSS (Microsoft Smooth Streaming) et le HDS (HTTP Dynamic Streaming). Moins connu et disposant de fonctionnalités qui leurs sont propres, je vous laisse consulter à leurs sujets cet excellent [article](https://bitmovin.com/mpeg-dash-vs-apple-hls-vs-microsoft-smooth-streaming-vs-adobe-hds/) (en anglais) comparant, fonctionnalité par fonctionnalité, les quatre protocoles.
+Il ne serait pas fair-play de finir cet article sans au moins mentionner deux autres grandes technologies de streaming : Le MSS (Microsoft Smooth Streaming) et le HDS (HTTP Dynamic Streaming). Moins connu et disposant de fonctionnalités qui leurs sont propres, je vous laisse consulter à leurs sujets cet excellent [article](https://bitmovin.com/mpeg-dash-vs-apple-hls-vs-microsoft-smooth-streaming-vs-adobe-hds/) (en anglais) comparant, fonctionnalité par fonctionnalité, les quatre protocoles.
 
 ## Références
 
