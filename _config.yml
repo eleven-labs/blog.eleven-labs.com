@@ -1,7 +1,7 @@
 # SITE CONFIGURATION
 title: Blog Eleven Labs
 description: Blog Eleven Labs
-url: https://eleven-labs.github.io
+url: http://blog.eleven-labs.com
 twitter:
     username: Eleven_Labs
 logo: /img/avatar.png
@@ -26,14 +26,10 @@ theme_settings:
     # Header and footer text
     header_text: <img src="/img/fg-header.png" />
     header_text_feature_image: img/bg-header.png
-    footer_text: >
-        Powered by
-        <a href="http://jekyllrb.com">Jekyll</a>
-        with
-        <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+    footer_text: To infinity and beyond !
 
     # Icons
-    rss: false
+    rss: /feed.xml
     email_address: contact@eleven-labs.com
     behance:
     bitbucket:
@@ -56,12 +52,12 @@ theme_settings:
 
     # Scripts
     google_analytics: UA-99013054-1
-    disqus_shortname: eleven-labs-github-io
+    disqus_shortname: blog-eleven-labs
     muut_community_name:
 
     # Localization strings
     str_follow_on: Suivez nous sur
-    str_rss_follow:
+    str_rss_follow: Ajoutez nous à votre veille
     str_email: Email
     str_next: Suivant
     str_prev: Précédent
@@ -75,11 +71,11 @@ theme_settings:
 
 # PAGINATION
 paginate: 10
-paginate_path: blog/page:num
+paginate_path: "/blog/page:num"
 
 # ALGOLIA
 algolia:
-  application_id: 'Y0KZQHR2II'
+  application_id: '5IGTHBX5JS'
   index_name:     'blog_eleven'
 
 exclude: [vendor, _authors/TEMPLATE-AUTOR]
@@ -94,6 +90,7 @@ gems:
     - jekyll-paginate
     - jekyll-seo-tag
     - algoliasearch-jekyll
+    - jekyll-feed
 
 collections:
   authors:

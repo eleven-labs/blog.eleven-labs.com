@@ -44,7 +44,7 @@ Nous allons faire simple, aujourd'hui nous voulons utiliser la fonction "Object.
 
 Si vous allez sur [Can I Use](http://caniuse.com/) vous trouvez la page [suivante](http://kangax.github.io/compat-table/es6/#test-Object_static_methods_Object.assign) :
 
-![](/assets/2016-12-13-tutoriel-polyfill/Capture-d’écran-2016-12-11-à-17.38.08.png)
+![](/assets/2016-12-13-tutoriel-polyfill/capture-decran-2016-12-11-a-17.38.08.png)
 
 Donc comme vous pouvez le voir, la fonction n'est pas implémentée sur IE11. Nous allons donc faire le polyfill nous même.
 

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-  var client = algoliasearch('Y0KZQHR2II', 'c640339fddbd925dafa8321e21646e4a');
+  var client = algoliasearch('5IGTHBX5JS', '7f7511d659569fcede7653d568b3206c');
   var index = client.initIndex('blog_eleven');
 
   var searchInput = document.getElementById('js-algolia__input');

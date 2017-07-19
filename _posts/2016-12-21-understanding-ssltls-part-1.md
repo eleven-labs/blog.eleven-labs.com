@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 'Understanding SSL/TLS: Part 1 - What is it?'
-author: ibenichou
+authors:
+- ibenichou
 permalink: /en/understanding-ssltls-part-1/
 date: '2016-12-21 11:46:42 +0100'
 date_gmt: '2016-12-21 10:46:42 +0100'

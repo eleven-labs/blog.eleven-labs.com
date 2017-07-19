@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cohabitation de plusieurs versions de PHP
-authors: 
+authors:
     - aandre
 date: '2016-10-05 10:23:54 +0200'
 date_gmt: '2016-10-05 08:23:54 +0200'
@@ -83,7 +83,7 @@ On va donc éditer le script PHPEnv en charge de l'installation (à l'arrache,
 $ vim libexec/phpenv-install
 ```
 
-Pour supprimer la ligne **--with-mysql=mysqlnd \ **
+Pour supprimer la ligne **--with-mysql=mysqlnd \**
 
 J'ai eu bien sûr d'autres erreurs, je vous laisse chercher, la plupart du temps il s'agit de librairies de développement manquantes ou pas à jour (comme libssl-dev dans mon cas). La compilation n'a jamais été une science exacte tant cela dépend de nombreux facteurs.
 
@@ -98,11 +98,11 @@ $ ./bin/phpenv install php-7.1.0beta3
  [Branching]: for a clean build environment
  [Configuring]: build options for selected release
  [Compiling]: /home/alexception/tmp/.phpenv/versions/7.1.0beta3
- ```
+```
 
 J'ai le temps d'aller prendre un café :
 
-[![cat](http://blog.eleven-labs.com/wp-content/uploads/2016/09/cat.gif)](http://blog.eleven-labs.com/wp-content/uploads/2016/09/cat.gif)
+![cat](/assets/2016-10-05-cohabitation-de-plusieurs-versions-de-php/cat.gif)
 
 ```bash
 (12h40, le ventilateur se met en route, ça compile beaucoup)

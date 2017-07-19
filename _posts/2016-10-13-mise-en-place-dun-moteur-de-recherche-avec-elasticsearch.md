@@ -11,7 +11,7 @@ categories:
 tags:
     - elasticsearch
 image:
-  path: /assets/2016-10-13-mise-en-place-dun-moteur-de-recherche-avec-elasticsearch/Elasticsearch-icon.png
+  path: /assets/2016-10-13-mise-en-place-dun-moteur-de-recherche-avec-elasticsearch/elasticsearch-icon.png
   height: 160
   width: 160
 ---

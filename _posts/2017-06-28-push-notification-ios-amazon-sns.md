@@ -3,7 +3,7 @@ layout: post
 title: "Envoyer des push notifications via Amazon SNS en Swift 3"
 excerpt: "Envoyer des push notifications via Amazon SNS en Swift 3"
 permalink: /fr/envoyer-push-notifications-amazon-sns-swift-3/
-authors: 
+authors:
   - ibenichou
 date: '2017-06-28 12:00:00 +0100'
 date_gmt: '2017-06-28 12:00:00 +0100'
@@ -16,7 +16,7 @@ tags:
     - push
     - aws
 image:
-    path: /assets/2017-06-28-push-notification-ios-amazon-sns/Banniere-article-Ilan.png
+    path: /assets/2017-06-28-push-notification-ios-amazon-sns/banniere-article-ilan.png
     height: 100
     width: 100
 ---
@@ -225,16 +225,16 @@ Pour générer un certificat SSL de client universel, il faut :
 2. Cliquer sur le button (+) à droite
 <img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/ios_notif_cert01.png" />
 3. Sélectionner dans la partie développement “Apple Push Notification service SSL (Sandbox)” et cliquer sur “Continue”. Bien évidemment, si vous devez mettre en production vous devez sélectionner la partie “production”.
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/Capture-d-ecran-2017-05-01-à-17.31.52.png" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-17.31.52.png" />
 4. Choisir L’App ID qui match avec votre bundle ID et cliquer sur “Continue”.
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/Capture-d-ecran-2017-05-01-à-17.37.58.jpg" />
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/Capture-d-ecran-2017-05-01-à-17.35.17.jpg" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-17.37.58.jpg" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-17.35.17.jpg" />
 5. Apple vous demande de créer un “Certificate Signing Request” (CSR)
 Pour générer manuellement un certificat, vous avez besoin d’un fichier de demande de signature de certificat (CSR) à partir de votre Mac.
 Pour créer un fichier CSR, suivez les instructions ci-dessous:
     1. Ouvrez l’application “Keychain Access”.
     2. Cliquez sur Trousseaux > Assistant de certification > Demandez un certificat à une autre autorité de certificat (cf: screenshot)
-    <img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/Capture-d-ecran-2017-05-01-à-17.56.30.jpg" />
+    <img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-17.56.30.jpg" />
     3. Dans la fenêtre Informations sur le certificat, entrez les informations suivantes :
         1. Votre adresse email
         2. Dans le champ Nom commun, créez un nom pour votre clé privée (par exemple, Pepito Dev Key).
@@ -243,7 +243,7 @@ Pour créer un fichier CSR, suivez les instructions ci-dessous:
         5. Cliquez sur continuer
 6. Uploader votre fichier .certSigningRequest précédemment créé.
 7. Votre certificat est prêt, téléchargez-le.
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/Capture-d-ecran-2017-05-01-à-18.05.22.jpg" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-18.05.22.jpg" />
 
 Encore un effort c’est presque fini !
 
@@ -251,11 +251,11 @@ Maintenant, nous devons transformer notre fichier aps_development.cer en fichier
 Pour se faire, c’est très simple :
 
 1. Double-cliquez sur votre fichier précédemment créé. Ça l’ajoutera dans votre application Keychain.
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/Capture-d-ecran-2017-05-01-à-18.13.54.jpg" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-18.13.54.jpg" />
 2. Clique droit sur celui-ci et cliquez sur Exporter
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/Capture-d-ecran-2017-05-01-à-19.09.52.png" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-19.09.52.png" />
 3. Choisissez bien le format .p12, puis l’application Keychain vous demandera un mot de passe.
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/Capture-d-ecran-2017-05-01-à-18.18.55.png" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-18.18.55.png" />
 
 Bien évidemment vous pouvez utiliser openssl en cli afin d’exporter votre .cer en .pem :
 
@@ -264,7 +264,7 @@ $ openssl x509 -in aps_development.cer -inform DER -out myapnsappcert.pem
 ```
 
 Pour vérifier que tout est en ordre, il suffit d’aller sur la liste des App IDs, de cliquer sur l’ID de votre App puis sur “Edit”. Dans la partie Push notification, vous devriez voir que vous avez bien un certificat dans la partie Development.
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/Capture-d-ecran-2017-05-01-à-18.22.00.png" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-18.22.00.png" />
 
 Enfin fini ! Je vous l’accorde cette partie est fastidieuse et lourde. Il ne manque plus que la partie Amazon SNS.
 
@@ -303,7 +303,7 @@ Les subscribers reçoivent tous les messages publiés dans les topics auxquels i
 4. Dans la zone “Push certificate type”, sélectionnez “iOS push certificate”
 5. Choisissez le fichier .p12 créer ultérieurement
 6. Entrez votre mot de passe et cliquez sur “load credentials”
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/Capture-d-ecran-2017-05-01-à-19.19.53.jpg" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-19.19.53.jpg" />
 
 **Etape 3 : Ajoutez notre token à notre application**
 
@@ -335,7 +335,7 @@ Amazon met à votre disposition un json generator si vous ne savez pas comment �
 
 Résultat :
 
-<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/IMG_0562.png" />
+<img src="../../assets/2017-06-28-push-notification-ios-amazon-sns/img_0562.png" />
 
 # Conclusion
 
