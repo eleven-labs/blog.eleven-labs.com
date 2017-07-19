@@ -26,6 +26,7 @@ article {
     header {
         color: $feature-image-text-color;
         background-size: $feature-image-size;
+        background-position-x: center;
         margin-bottom: 0;
         padding: $padding-large/2.5 $padding-large;
 
