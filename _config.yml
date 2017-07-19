@@ -56,8 +56,8 @@ theme_settings:
     muut_community_name:
 
     # Localization strings
-    str_follow_on: Suivez nous sur
-    str_rss_follow: Ajoutez nous à votre veille
+    str_follow_on: Suivez-nous sur
+    str_rss_follow: Ajoutez-nous à votre veille
     str_email: Email
     str_next: Suivant
     str_prev: Précédent
