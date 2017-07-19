@@ -25,7 +25,7 @@ Cet article traite des deux grandes technologies permettant le streaming vidéo 
 
 ## Le HLS
 
-Le HLS (HTTP Live Streaming) est une protocole de streaming audio/video conçu par Apple à la fin des année 2000, à la base pour le lecteur QuickTime. Comme son nom l'indique, ce protocole utilise le HTTP comme potocole de transport, ce qui le rend très adaptable et facilement utilisable via un Nginx ou autre Apache.
+Le HLS (HTTP Live Streaming) est un protocole de streaming audio/video conçu par Apple à la fin des année 2000, à la base pour le lecteur QuickTime. Comme son nom l'indique, ce protocole utilise le HTTP comme potocole de transport, ce qui le rend très adaptable et facilement utilisable via un Nginx ou autre Apache.
 
 Au même titre que les autres protocoles servant les même objectifs, le HLS envoie des segments audios et/ou vidéos d'une longueur donnée, laissant la responsabilité au client d'enchaîner l'affichage desdits segments. Dans le bon ordre de préférence.
 
