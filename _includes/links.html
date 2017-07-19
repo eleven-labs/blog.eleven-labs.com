@@ -2,10 +2,19 @@
     <div class="container">
         <h3 class="read-also-title">A lire aussi</h3>
         <ul class="read-also-list">
-            {% for post in site.posts limit:3 %}
-            <li class="read-also-item">
-                <a class="read-also-link" href='{{ post.url | prepend: site.baseurl }}'>{{ post.title }}</a>
-            </li>
+            {% assign limit = 0 %}
+            {% for post in site.posts %}
+                {% if limit >= 3 %}
+                    {% break %}
+                {% endif %}
+                {% if post.url == page.url %}
+                    {% continue %}
+                {% else %}
+                    <li class="read-also-item">
+                        <a class="read-also-link" href='{{ post.url | prepend: site.baseurl }}'>{{ post.title }}</a>
+                    </li>
+                    {% assign limit = limit | plus:1 %}
+                {% endif %}
             {% endfor %}
         </ul>
     </div>
