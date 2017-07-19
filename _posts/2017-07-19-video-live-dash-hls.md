@@ -5,8 +5,8 @@ excerpt: Le HLS et le DASH, deux protocoles pour les streamer tous.
 authors:
     - jbernard
 permalink: /fr/video-live-dash-hls/
-date: '2017-07-18 12:00:00 +0100'
-date_gmt: '2017-07-18 12:00:00 +0100'
+date: '2017-07-19 12:00:00 +0100'
+date_gmt: '2017-07-19 12:00:00 +0100'
 categories:
     - JS
     - Stream Video
