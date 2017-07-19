@@ -12,7 +12,7 @@ Le blog s'installe comme un projet classique.
 
 **Prérequis**
 
-Avoir [ruby](https://www.ruby-lang.org/fr/) d'installer sur sa machine dernière version.
+Avoir [ruby](https://www.ruby-lang.org/fr/) d'installé sur sa machine dernière version.
 
 **1 - Cloner le projet**
 ```bash
@@ -40,13 +40,13 @@ Créer votre page auteur
 -------------------------
 **1 - Ajoutez votre page**
 
-Dans le dossier `_authors` ajouter votre page.
+Dans le dossier `_authors` ajoutez votre page.
 ```bash
 cd _authors && touch login.md
 ```
 **2 - Remplissez votre fiche**
 
-Veuillez utiliser le template d'auteur suivant, vous pouvez copier template disponible dans le fichier `_authors/TEMPLATE-AUTOR`
+Veuillez utiliser le template d'auteur suivant. Vous pouvez copier le template disponible dans le fichier `_authors/TEMPLATE-AUTOR`
 
 ```md
 ---
@@ -62,14 +62,14 @@ Votre Bio
 
 Ajoutez votre avatar dans le dossier `/img/authors/<votre_login>.jpg`.
 
-**4 - Faite votre pull request**
+**4 - Faites votre pull request**
 
-Vous pouvez créer votre branche, avec le naming suivant.
+Vous pouvez créer votre branche, avec le naming suivant :
 ```bash
 git checkout -b feat/add-author-login
 ```
 
-Il ne vous reste plus qu'a faire votre pull request, en mettant le TAG `publication`.
+Il ne vous reste plus qu'à faire votre pull request, en mettant le TAG `publication`.
 
 -------------------------
 
@@ -78,7 +78,7 @@ Créer votre article
 
 **1 - Ajoutez votre article**
 
-Dans le dossier `_drafts` ajoutez un fichier pour votre article avec le naming suivant.
+Dans le dossier `_drafts` ajoutez un fichier pour votre article avec le naming suivant :
 
 ```bash
 AAAA-MM-DD-titre.md
@@ -86,7 +86,7 @@ AAAA-MM-DD-titre.md
 
 **2 - Remplissez le template d'article**
 
-Veuillez utiliser le template d'article suivant, vous pouvez copier template disponible dans le fichier `_drafts/TEMPLATE-ARTICLE`
+Veuillez utiliser le template d'article suivant, vous pouvez copier le template disponible dans le fichier `_drafts/TEMPLATE-ARTICLE`
 
 ```md
 ---
@@ -117,18 +117,18 @@ VOTRE ARTICLE EN MARKDOWN
 
 **3 - Ecrivez votre article**
 
-Votre article doit être écrit en [markdown](https://guides.github.com/features/mastering-markdown/) , il existe de nombreuses solutions online pour écrire en markdown comme par exemple:
+Votre article doit être écrit en [markdown](https://guides.github.com/features/mastering-markdown/). Il existe de nombreuses solutions online pour écrire en markdown comme par exemple :
 
  - https://stackedit.io
  - http://dillinger.io
 
- Si vous avez besoin de mettre des images dans votre article il faut d'abord les ajouter dans le dossier suivant `assets/AAAA-MM-DD-titre/` puis de les insérer dans votre article.
+ Si vous avez besoin de mettre des images dans votre article il faut d'abord les ajouter dans le dossier suivant `assets/AAAA-MM-DD-titre/`, puis les insérer dans votre article.
 
 ```md
 ![DESCRIPTION](/assets/AAAA-MM-DD-titre/MON IMAGE)
 ```
 
-**4 - Demandez une la publication**
+**4 - Demandez la publication**
 
 Une fois votre article terminé il faut déplacer le fichier de l'article du dossier `_drafts`au dossier `_posts`
 
@@ -136,7 +136,7 @@ Une fois votre article terminé il faut déplacer le fichier de l'article du dos
 cp _drafts/AAAA-MM-DD-NOUVEL-ARTICLE.md _posts/AAAA-MM-DD-NOUVEL-ARTICLE.md
 ```
 
-Il vous suffit de faire une pull request avec le nom de branche suivant.
+Il vous suffit de faire une pull request avec le nom de branche suivant :
 
 ```bash
 git checkout -b feat/add-article-TITRE
@@ -151,7 +151,7 @@ Mettre en ligne un article
 
 **1 - Validation d'un article**
 
-Tout le monde peut commenter une pull request de `publication`, une fois approuvée elle est mergée dans master.
+Tout le monde peut commenter une pull request de `publication`. Une fois approuvée, elle est mergée dans master.
 
 **ATTENTION**: Seulement quelques personnes ont le droit de merger les pulls requests
 
