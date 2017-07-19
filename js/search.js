@@ -1,62 +1,59 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-  var client = algoliasearch('5IGTHBX5JS', '7f7511d659569fcede7653d568b3206c');
-  var index = client.initIndex('blog_eleven');
+(function() {
+  'use strict';
 
-  var searchInput = document.getElementById('js-algolia__input');
-  searchInput.addEventListener("keyup", onQueryChange);
+  const client = algoliasearch('5IGTHBX5JS', '7f7511d659569fcede7653d568b3206c');
+  const index = client.initIndex('blog_eleven');
+
+  const searchInput = document.getElementById('js-algolia__input');
 
   function onQueryChange() {
-    var contentId = document.getElementById('js-content');
-    var contentSearchId = document.getElementById('js-content-search');
+    const contentId = document.getElementById('js-content');
+    const contentSearchId = document.getElementById('js-content-search');
     contentId.style.display = 'none';
     contentSearchId.style.display = 'block';
 
-    if (searchInput.value == '') {
+    if (!searchInput.value) {
       contentId.style.display = 'block';
       contentSearchId.style.display = 'none';
-    } else {
-      index.search(searchInput.value, function(err, content) {
-
-        var htmlArticle = '';
-
-        Object.keys(content.hits).map(function(key){
-          var hit = content.hits[key];
-
-          if (hit.type == 'document' && hit.layout != 'author') {
-            var date = new Date(hit.date);
-            date = moment(date).format("MMMM DD, YYYY");
-
-            htmlArticle += '<div class="posts-teaser slice">';
-            htmlArticle += '    <div class="container">';
-            htmlArticle += '        <h2 class="posts-title">';
-            htmlArticle += '            <a class="no-link-style" href="' + hit.url + '">';
-            htmlArticle += '                ' + hit.title;
-            htmlArticle += '            </a>';
-            htmlArticle += '        </h2>';
-            htmlArticle += '        <time class="posts-date meta">';
-            htmlArticle += '            <span class="meta-content">';
-            htmlArticle += '                 ' + date;
-            htmlArticle += '            </span>';
-            htmlArticle += '        </time>';
-            htmlArticle += '        <p class="excerpt">';
-            htmlArticle += '            ' + hit.excerpt;
-            htmlArticle += '        </p>';
-            htmlArticle += '        <a class="button" href="' + hit.url + '">';
-            htmlArticle += '            Lire l\'article';
-            htmlArticle += '        </a>';
-            htmlArticle += '    </div>';
-            htmlArticle += '</div>';
-          }
-        });
-
-
-        htmlArticle += '<div class="container search-logo">';
-        htmlArticle += '   search by';
-        htmlArticle += '   <span class="search-logo-bg"></span>';
-        htmlArticle += '</div>';
-
-        contentSearchId.innerHTML = htmlArticle;
-      });
+      return;
     }
-  };
-});
+
+    index.search(searchInput.value, (err, content) => {
+      let htmlArticle = '';
+
+      Object.keys(content.hits).forEach((key) => {
+        const hit = content.hits[key];
+
+        if (hit.type === 'document' && hit.layout !== 'author') {
+          const date = moment(new Date(hit.date)).format('MMMM DD, YYYY');
+
+          htmlArticle += `
+            <div class="posts-teaser slice">
+              <div class="container">
+                <h2 class="posts-title">
+                  <a class="no-link-style" href="${hit.url}">${hit.title}</a>
+                </h2>
+                <time class="posts-date meta">
+                  <span class="meta-content">${date}</span>
+                </time>
+                <p class="excerpt">${hit.excerpt}</p>
+                <a class="button" href="${hit.url}">Lire l'article</a>
+              </div>
+            </div>
+          `;
+        }
+      });
+
+      htmlArticle += `
+        <div class="container search-logo">
+          search by
+          <span class="search-logo-bg"></span>
+        </div>
+      `;
+
+      contentSearchId.innerHTML = htmlArticle;
+    });
+  }
+
+  searchInput.addEventListener('keyup', onQueryChange);
+})();
