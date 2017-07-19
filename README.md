@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/eleven-labs/eleven-labs.github.io.svg?branch=master)](https://travis-ci.org/eleven-labs/eleven-labs.github.io)
+
 Participer à notre blog
 ===================
 
