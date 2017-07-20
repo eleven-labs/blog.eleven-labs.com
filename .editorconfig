@@ -12,8 +12,5 @@ trim_trailing_whitespace = true
 [*.js]
 indent_size = 2
 
-[*.scss]
-indent_size = 2
-
 [Rakefile]
 indent_size = 2
