@@ -11,7 +11,7 @@ task :deploy => [:algolia_push]
 
 # lint scss files
 task :scss_lint do
-  sh 'scss-lint css/ _sass/'
+  sh 'scss-lint _sass/'
 end
 
 # test jekyll build
