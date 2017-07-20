@@ -1,76 +1,77 @@
 .comments {
-    @extend %padding-regular;
-    border-bottom: 1px solid $border-color;
-    float: left;
-    width: 100%;
+  @extend %padding-regular;
+  border-bottom: 1px solid $border-color;
+  float: left;
+  width: 100%;
 }
 
 article {
-    header {
-        text-align: center;
-    }
-    a:hover {
-        @extend %link-hover;
-    }
-    .footnotes {
-        font-size: 0.9rem;
-    }
+  header {
+    text-align: center;
+  }
+
+  a:hover {
+    @extend %link-hover;
+  }
+
+  .footnotes {
+    font-size: .9rem;
+  }
 }
 
 .feature-image {
-    padding: 0%;
-    .post-link {
-        color: $feature-image-text-color;
+  padding: 0;
+
+  .post-link {
+    color: $feature-image-text-color;
+  }
+
+  header {
+    background-position-x: center;
+    background-size: $feature-image-size;
+    color: $feature-image-text-color;
+    margin-bottom: 0;
+    padding: $padding-large / 2.5 $padding-large;
+
+    .meta::before {
+      background-color: transparent;
     }
 
-    header {
-        color: $feature-image-text-color;
-        background-size: $feature-image-size;
-        background-position-x: center;
-        margin-bottom: 0;
-        padding: $padding-large/2.5 $padding-large;
-
-        &.page-heading {
-            .container .meta {
-                &:before {
-                    background-color: transparent;
-                }
-
-                .author-link {
-                    color: white;
-                }
-            }
-        }
+    .author-link {
+      color: $brand-color;
     }
+  }
 }
+
 // Post navigation
-#post-nav {
-    width:100%;
-    border-bottom: 1px solid $border-color;
-    display: flex;
-    float: left;
+.post-nav {
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  float: left;
+  width: 100%;
 
-    a, .page-title {
-        display: inline-block;
-    }
+  .page-title,
+  a {
+    display: inline-block;
+  }
 
-    .page-title {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-        width: 100%;
-    }
+  .page-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
 
-    i {
-        vertical-align: middle;
-    }
+  i {
+    vertical-align: middle;
+  }
 }
 
-.center-image
-{
-    margin: 0 auto;
+.center-image {
+  display: block;
+  margin: 0 auto;
+
+  img {
     display: block;
-    img {
-        margin: 0 auto;
-        display: block;
-    }
+    margin: 0 auto;
+  }
 }
