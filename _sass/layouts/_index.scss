@@ -1,62 +1,66 @@
 // Header text feature
 .call-out {
-    @extend %padding-regular;
-    display: inline-block;
-    width: 100%;
-    background-color:$header-desc-background-color;
-    background-size: cover;
-    font-size: 1.2rem;
-    text-align: center;
-    color: $header-desc-text-color;
-}
-.call-out p:last-child {
+  @extend %padding-regular;
+  background-color: $header-desc-background-color;
+  background-size: cover;
+  color: $header-desc-text-color;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+
+  p:last-child {
     margin-bottom: 0;
+  }
 }
+
 // Post listing
 .posts {
-    &-teaser {
-        width: 100%;
-        margin-bottom: 0;
-        display: inline-block;
-        background-size: $feature-image-size;
+  &-teaser {
+    background-size: $feature-image-size;
+    display: inline-block;
+    margin-bottom: 0;
+    width: 100%;
 
-        p a:hover {
-            @extend %link-hover;
-        }
+    p a:hover {
+      @extend %link-hover;
     }
+  }
 
-    &-title {
-        @extend %h2;
-        margin: 0 0 5px;
+  &-title {
+    @extend %h2;
+    margin: 0 0 5px;
 
-        a {
-            color: $brand-black;
-            text-decoration: none;
-        }
+    a {
+      color: $brand-black;
+      text-decoration: none;
     }
+  }
 
-    &-date {
-        display: inline-block;
-        margin-bottom: 1.5rem;
-    }
+  &-date {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
 
-    &-button {
-        margin-top: 1.5rem;
-    }
+  &-button {
+    margin-top: 1.5rem;
+  }
 
-    .excerpt {
-        margin-top: 1rem;
-        margin-bottom: 1.5rem;
-    }
+  .excerpt {
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
 }
 // Pagination
-.pagination .button {
-    margin: 0 1.5rem;
-    i {
-        vertical-align: middle;
-    }
-}
 .pagination {
-    padding: $padding-small $padding-large 0 $padding-large;
-    text-align: center;
+  padding: $padding-small $padding-large 0;
+  text-align: center;
+
+  .button {
+    margin: 0 1.5rem;
+
+    i {
+      vertical-align: middle;
+    }
+  }
 }
