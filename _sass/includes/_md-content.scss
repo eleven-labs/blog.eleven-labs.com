@@ -1,74 +1,69 @@
 .post-content {
-  @media (min-width: 480px) {
-    padding-top: 30px;
-  }
-
-  @media (max-width: 480px) {
-    padding-top: 10px;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $font-family-headings;
-    line-height: 1.1;
-
-    a {
-      color: $brand-black;
-    }
-
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-
-  h1 {
-    @extend %h1;
-
     @media (min-width: 480px) {
-      margin: 2em 0 .7em -15px;
+        padding-top: 30px;
     }
 
     @media (max-width: 480px) {
-      margin: 2em 0 .7em;
-    }
-  }
-
-  h2 {
-    @extend %h2;
-
-    @media (min-width: 480px) {
-      margin: 2em 0 .7em -15px;
+        padding-top: 10px;
     }
 
-    @media (max-width: 480px) {
-      margin: 2em 0 .7em;
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $font-family-headings;
+        line-height: 1.1;
+
+        a {
+            color: $brand-black;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
-  }
 
-  h3 {
-    @extend %h3;
-    margin: .7em 0;
-  }
+    h1 {
+        @extend %h1;
 
-  h4 {
-    @extend %h4;
-    margin: .7em 0;
-  }
+        @media (min-width: 480px) {
+            margin: 2em 0 0.7em -15px;
+        }
 
-  blockquote {
-    border-left: 5px solid $brand-yellow;
-    font-style: italic;
-    margin: 3rem 0;
-    opacity: .8;
-    padding-left: 2rem;
-  }
+        @media (max-width: 480px) {
+            margin: 2em 0 0.7em;
+        }
+    }
 
-  pre {
-    margin: 3rem 0;
-    padding: 15px;
-  }
+    h2 {
+        @extend %h2;
+
+        @media (min-width: 480px) {
+            margin: 2em 0 0.7em -15px;
+        }
+
+        @media (max-width: 480px) {
+            margin: 2em 0 0.7em;
+        }
+    }
+
+    h3 {
+        @extend %h3;
+        margin: 0.7em 0;
+    }
+
+    h4 {
+        @extend %h4;
+        margin: 0.7em 0;
+    }
+
+    blockquote {
+        border-left: 5px solid $brand-yellow;
+        padding-left: 2rem;
+        font-style: italic;
+        margin: 3rem 0;
+        opacity: 0.8;
+    }
+
+    pre {
+        padding: 15px;
+        margin: 3rem 0;
+    }
 }

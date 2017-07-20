@@ -1,90 +1,92 @@
 .site-header {
-  align-items: center;
-  background: $brand-color;
-  border-bottom: 1px solid $border-color;
-  display: flex;
-  flex-flow: row wrap;
-  padding: 20px 45px;
-  width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 20px 45px;
+    background: $brand-color;
+    border-bottom: 1px solid $border-color;
+    width: 100%;
 
-  .branding-container {
-    flex: auto;
-  }
-
-  .branding {
-    display: inline-block;
-    height: 60px;
-    width: 160px;
-
-    @media (max-width: 480px) {
-      height: 40px;
-      margin-bottom: 5px;
-      width: 120px;
+    .branding-container {
+        flex: auto;
     }
 
-    &:hover {
-      background: none;
-      text-decoration: none;
+    .branding {
+        display: inline-block;
+        width: 160px;
+        height: 60px;
+
+        @media (max-width: 480px) {
+            margin-bottom: 5px;
+            width: 120px;
+            height: 40px;
+        }
+
+        &:hover {
+            background: none;
+            text-decoration: none;
+        }
+
+        &:before {
+            display: block;
+            content: "";
+            width: 160px;
+            height: 60px;
+            background: url('../img/logo_eleven_lab.svg') top left no-repeat;
+            background-size: contain;
+
+            @media (max-width: 480px) {
+                margin: 0 auto;
+                width: 120px;
+                height: 40px;
+            }
+        }
     }
 
-    &::before {
-      background: url('../img/logo_eleven_lab.svg') top left no-repeat;
-      background-size: contain;
-      content: '';
-      display: block;
-      height: 60px;
-      width: 160px;
-
-      @media (max-width: 480px) {
-        height: 40px;
-        margin: 0 auto;
-        width: 120px;
-      }
-    }
-  }
-
-  a {
-    color: $header-link-color;
-  }
-
-  .avatar {
-    border-radius: .2rem;
-    float: left;
-    height: 2rem;
-    margin-right: 1rem;
-    margin-top: -3px;
-    width: 2rem;
-  }
-
-  .site-title {
-    float: left;
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.5;
-  }
-
-  .site-nav {
-    ul {
-      display: inline-block;
-      line-height: 1.5;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    a {
+        color: $header-link-color;
     }
 
-    li {
-      display: inline-block;
-      margin-right: .4rem;
+    .avatar {
+        height: 2rem;
+        width: 2rem;
+        float: left;
+        margin-top: -3px;
+        border-radius: 0.2rem;
+        margin-right: 1rem;
     }
-  }
 
-  .branding-container,
-  .search-bar,
-  .site-nav {
-    @media (max-width: 480px) {
-      flex: 0 0 100%;
-      text-align: center;
+    .site-title {
+        float: left;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.5;
     }
-  }
+
+    .site-nav {
+        ul {
+            display: inline-block;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            line-height: 1.5;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 0.4rem;
+        }
+    }
+
+    .search-bar {}
+
+    .branding-container,
+    .site-nav,
+    .search-bar {
+        @media (max-width: 480px) {
+            flex: 0 0 100%;
+            text-align: center;
+        }
+    }
 }

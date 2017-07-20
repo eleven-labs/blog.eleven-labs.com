@@ -1,18 +1,10 @@
-task :default => [:lint, :test, :deploy]
-
-# lint
-task :lint => [:scss_lint]
+task :default => [:test, :deploy]
 
 # testsuite
 task :test => [:jekyll_build]
 
 # deploy task
 task :deploy => [:algolia_push]
-
-# lint scss files
-task :scss_lint do
-  sh 'scss-lint css/ _sass/'
-end
 
 # test jekyll build
 task :jekyll_build do

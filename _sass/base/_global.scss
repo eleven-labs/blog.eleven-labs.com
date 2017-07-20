@@ -1,165 +1,139 @@
-// scss-lint:disable VendorPrefix QualifyingElement
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 figure {
-  margin: 0;
+    margin: 0;
 }
 // For correct line number width in Github Gists
-
-.gist td {
-  box-sizing: content-box;
+.gist table tbody tr td {
+    box-sizing: content-box;
 }
-
 html {
-  background: $background-color;
-  font-size: 10px;
+    background: $background-color;
+    font-size: 10px;
 }
+
 // Typography
 ::selection {
-  background: $selection-color;
+    background: $selection-color;
 }
-
 ::-moz-selection {
-  background: $selection-color;
+    background: $selection-color;
 }
-
 body {
-  color: $brand-black;
-  font-family: $font-family-headings;
-  font-weight: lighter;
-  word-wrap: break-word;
+    color: $brand-black;
+    font-family: $font-family-headings;
+    font-weight: lighter;
+    word-wrap: break-word;
 
-  @media (min-width: 480px) {
-    font-size: $font-size;
-  }
+    @media (min-width: 480px) {
+        font-size: $font-size;
+    }
 
-  @media (max-width: 480px) {
-    font-size: $font-size-mobile;
-  }
+    @media (max-width: 480px) {
+        font-size: $font-size-mobile;
+    }
+
 }
 
 blockquote p:last-child,
 footer p:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
-
 table {
-  table-layout: fixed;
-  width: 100%;
-  word-wrap: break-word;
-
-  @media (max-width: 1100px) {
-    display: inline-block;
-    overflow-x: scroll;
-  }
+    table-layout:fixed;
+    width:100%;
+    word-wrap:break-word;
+    @media (max-width: 1100px) {
+        overflow-x: scroll;
+        display: inline-block;
+    }
 }
-
 td,
 th {
-  border: 1px solid $border-color;
-  padding: .5em 1rem;
-  text-align: left;
+    padding: 0.5em 1rem;
+    border: 1px solid $border-color;
+    text-align: left;
 }
-
+table,
+dl,
 blockquote,
 code,
-dl,
 kbd,
 pre,
-samp,
-table {
-  margin: 1em 0;
+samp {
+    margin: 1em 0;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
+h1, h2, h3, h4 {
+    margin: 0;
 }
 
 dt {
-  font-weight: bold;
+    font-weight: bold;
 }
-
 dd {
-  margin-left: 2rem;
+    margin-left: 2rem;
 }
-
-.math-display,
-dl,
-ol,
-p,
-ul {
-  line-height: 1.5;
-  margin-bottom: 1rem;
+p, ol, ul, dl, .math-display {
+    line-height: 1.5;
+    margin-bottom: 1rem;
 }
 // KaTeX math display
-
 .math-display {
-  display: inline-block;
-  width: 100%;
+    display: inline-block;
+    width: 100%;
 }
 // Lists within lists
-
-li > ol,
-li > ul {
-  margin-bottom: 0;
-  margin-left: 1rem;
+li > ul, li > ol {
+    margin-bottom: 0;
+    margin-left: 1rem;
 }
-
-ol,
-ul {
-  list-style-position: inside;
+ol, ul {
+    list-style-position: inside;
 }
-
 hr {
-  border: 0;
-  border-bottom: 1px solid $brand-color;
-  border-top: 1px solid $border-color;
-  margin: 1em 0;
+    border: 0;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid #fff;
+    margin: 1em 0;
 }
 
 a:not(.no-link-style) {
-  color: $brand-black;
-  display: inline-block;
-  letter-spacing: .05em;
-  text-decoration: underline;
-
-  &:hover {
-    background: $brand-yellow;
+    color: $link-color;
     text-decoration: none;
-  }
+    color: $brand-black;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    text-decoration: underline;
 
-  &:visited,
-  &:visited:hover {
-    color: $button-hover;
-  }
+    &:hover {
+        text-decoration: none;
+        background: $brand-yellow;
+    }
+
+    &:visited,
+    &:visited:hover {
+        color: #999;
+    }
 }
+
+
 
 .nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 // Responsive media
-
-embed,
-iframe,
-img,
-object,
-video {
-  max-width: 100%;
+iframe, img, embed, object, video {
+    max-width: 100%;
 }
-
 img[align=left] {
-  margin-right: 3%;
+    margin-right: 3%;
 }
-
 img[align=right] {
-  margin-left: 3%;
+    margin-left: 3%;
 }

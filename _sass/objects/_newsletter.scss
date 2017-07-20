@@ -1,8 +1,8 @@
 .newsletter {
-  background: $brand-yellow;
-  text-align: center;
+    background: $brand-yellow;
+    text-align: center;
 
-  &-link {
-    @extend %h2;
-  }
+    &-link {
+        @extend %h2;
+    }
 }

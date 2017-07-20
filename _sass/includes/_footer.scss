@@ -1,8 +1,8 @@
 .site-footer {
-  @extend %padding-regular;
-  color: lighten($brand-black, 30%);
-  display: inline-block;
-  font-size: .9rem;
-  text-align: center;
-  width: 100%;
+    @extend %padding-regular;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: lighten($brand-black, 30%);
+    font-size: 0.9rem;
 }
