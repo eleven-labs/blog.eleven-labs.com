@@ -190,7 +190,7 @@ type="static">
 Nous avons donc ici du XML classique, chaque tag donnant des informations spécifiques. Voyons ensemble les tag principaux par ordre hiérarchique :
 
 - `<MPD>` : Décrit les métadata du fichier, sa version, la version du DASH utilisée, la durée total du contenu...
-- `<AdaptationSet>` : Une adaptaion est l'un des éléments du contenu, pas exemple la vidéo ou l'audio.
+- `<AdaptationSet>` : Une adaptation est l'un des éléments du contenu, pas exemple la vidéo ou l'audio.
 - `<ContentComponent>` : De manière assez similaire au tag précédent, le ContentComponent décrit exactement le type d'adaptation.
 - `<Representation>` : La représentation décrit une version spécifique du contenu séquencé. Elle dispose d'un encodage qui lui est propre et c'est cet elément qui est utilisé par l'adaptive streaming, décrit dans la partie dédiée au HLS.
 - `<BaseURL>` : L'URL de la séquence.
