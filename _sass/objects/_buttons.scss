@@ -1,20 +1,20 @@
 .button {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    font-family: $font-family-headings;
-    font-weight: lighter;
-    color: $brand-black;
-    display: inline-block;
-    letter-spacing: 0.05em;
-    text-decoration: underline;
+  color: $brand-black;
+  display: inline-block;
+  font-family: $font-family-headings;
+  font-size: 1.1rem;
+  font-weight: lighter;
+  letter-spacing: .05em;
+  text-decoration: underline;
+  text-transform: uppercase;
 
-    &:hover {
-        text-decoration: none;
-        background: $brand-yellow;
-    }
+  &:hover {
+    background: $brand-yellow;
+    text-decoration: none;
+  }
 
-    &:visited,
-    &:visited:hover {
-        color: #999;
-    }
+  &:visited,
+  &:visited:hover {
+    color: $button-hover;
+  }
 }
