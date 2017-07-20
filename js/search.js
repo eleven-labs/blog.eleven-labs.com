@@ -19,30 +19,28 @@
     }
 
     index.search(searchInput.value, (err, content) => {
-      let htmlArticle = '';
-
-      Object.keys(content.hits).forEach((key) => {
+      let htmlArticle = Object.keys(content.hits).reduce((article, key) => {
         const hit = content.hits[key];
 
-        if (hit.type === 'document' && hit.layout !== 'author') {
-          const date = moment(new Date(hit.date)).format('MMMM DD, YYYY');
-
-          htmlArticle += `
-            <div class="posts-teaser slice">
-              <div class="container">
-                <h2 class="posts-title">
-                  <a class="no-link-style" href="${hit.url}">${hit.title}</a>
-                </h2>
-                <time class="posts-date meta">
-                  <span class="meta-content">${date}</span>
-                </time>
-                <p class="excerpt">${hit.excerpt}</p>
-                <a class="button" href="${hit.url}">Lire l'article</a>
-              </div>
-            </div>
-          `;
+        if (hit.type !== 'document' || hit.layout === 'author') {
+          return article;
         }
-      });
+
+        return article + `
+          <div class="posts-teaser slice">
+            <div class="container">
+              <h2 class="posts-title">
+                <a class="no-link-style" href="${hit.url}">${hit.title}</a>
+              </h2>
+              <time class="posts-date meta">
+                <span class="meta-content">${moment(new Date(hit.date)).format('MMMM DD, YYYY')}</span>
+              </time>
+              <p class="excerpt">${hit.excerpt}</p>
+              <a class="button" href="${hit.url}">Lire l'article</a>
+            </div>
+          </div>
+        `;
+      }, '');
 
       htmlArticle += `
         <div class="container search-logo">
