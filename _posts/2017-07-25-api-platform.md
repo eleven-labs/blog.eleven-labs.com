@@ -12,7 +12,7 @@ tags:
 ---
 
 Api Platform se définit comme un « framework PHP pour construire des APIs web modernes ». En effet, cet outil va nous permettre de construire rapidement une API riche et facilement utilisable.  
-Pourquoi réinventer la roue ? Cet outil est accompagné de tout un tas de _features_ comme une documentation automatisée, la gestion des filtres et des tris, et bien d’autre encore.  
+Pourquoi réinventer la roue ? Cet outil est accompagné de tout un tas de _features_ comme une documentation automatisée, la gestion des filtres et des tris, et bien d’autres encore.  
 Dans cet article, nous allons voir ensemble la création d’une API avec Api Platform, en parlant de certaines fonctionnalités. Je pars du principe que vous avez déjà installé [Api Platform](https://api-platform.com/docs/).
 
 ## Créons notre API
@@ -22,7 +22,7 @@ Dans notre article, nous allons créer une API autour d’une seule ressource : 
 La première chose à faire consiste à créer notre modèle de données. Un film est composé d’un titre, d’une date de sortie, d’acteurs, d’un réalisateur… Plusieurs propriétés qui sont connues de tous.
 Si l’on parcourt la documentation d’API Platform, on peut voir qu’il nous est possible de générer nos modèles d’après [Schema.org](http://schema.org). Ce dernier permet d’utiliser un langage commun pour définir des ressources de tous les jours (_Book, Organization_, _Person_…), mais est surtout compris par les moteurs de recherche comme Google ou Yahoo.
 
-Il existe donc l’entité _Movie_ au sein de _Schema.org_, avec de nombreuses propriétés qui nous intéressent. Pour la simplicité de lecture, nous allons en selectionner uniquement quelques unes.
+Il existe donc l’entité _Movie_ au sein de _Schema.org_, avec de nombreuses propriétés qui nous intéressent. Pour la simplicité de lecture, nous allons en sélectionner uniquement quelques unes.
 
 ```yaml
 # app/config/schemas.yml
@@ -112,8 +112,8 @@ Api Platform tient sa promesse quant à la rapidité de développement. Comme no
 
 Développé selon les bonnes pratiques, API Platform est très facilement _extensible_, ce qui permet à chacun d'ajouter sa propre touche.
 
-Enfin la documentation est un gros point positif. Etant très riche, elle contient de nombreux exemples et explications.
+Enfin la documentation est un gros point positif. Étant très riche, elle contient de nombreux exemples et explications.
 
-## A venir
+## À venir
 
 La version 2.1 d'API Platform va bientot sortir, et nous reserve de nombreuses nouvelles fonctionnalités, notamment un système d'administration développé en _React_, de nouveaux filtres... Les détails [ici](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/)
