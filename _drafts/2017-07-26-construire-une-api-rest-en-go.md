@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 'Construire une api REST en Go'
+title: 'Construire une api en Go'
 excerpt: Présentation du package http/net et de la librairie Buffalo
 authors:
 - qneyrat
-permalink: /fr/construire-une-api-rest-en-go/
+permalink: /fr/construire-une-api-en-go/
 categories:
     - Go
 tags:
@@ -13,10 +13,10 @@ tags:
     - rest
 ---
 
-CONSTRUIRE UNE API REST EN GO
+CONSTRUIRE UNE API EN GO
 ===================
 
-Le langage Go est rapidement devenu très populaire mais encore beaucoup hésitent à l'utiliser pour le développement de leurs nouvelles applications. Nous allons ici voir comment construire une api rest rapidement et facilement. 
+Le langage Go est rapidement devenu très populaire mais encore beaucoup hésitent à l'utiliser pour le développement de leurs nouvelles applications. Nous allons ici voir comment construire une api REST rapidement et facilement. 
 
 ----------
 
