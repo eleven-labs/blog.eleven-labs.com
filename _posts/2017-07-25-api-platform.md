@@ -9,6 +9,7 @@ categories:
     - PHP
 tags:
     - php
+cover: /assets/2017-07-25-api-platform/cover.jpg
 ---
 
 Api Platform se définit comme un « framework PHP pour construire des APIs web modernes ». En effet, cet outil va nous permettre de construire rapidement une API riche et facilement utilisable.  
