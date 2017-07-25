@@ -4,7 +4,7 @@ title: 'Construire une api REST en Go'
 excerpt: Présentation du package http/net et de la librairie Buffalo
 authors:
 - qneyrat
-permalink: /fr/construire-une-api-en-go/
+permalink: /fr/construire-une-api-rest-en-go/
 categories:
     - Go
 tags:
