@@ -22,7 +22,7 @@ Dans notre article, nous allons créer une API autour d’une seule ressource : 
 La première chose à faire consiste à créer notre modèle de données. Un film est composé d’un titre, d’une date de sortie, d’acteurs, d’un réalisateur… Plusieurs propriétés qui sont connues de tous.
 Si l’on parcourt la documentation d’API Platform, on peut voir qu’il nous est possible de générer nos modèles d’après [Schema.org](http://schema.org). Ce dernier permet d’utiliser un langage commun pour définir des ressources de tous les jours (_Book, Organization_, _Person_…), mais est surtout compris par les moteurs de recherche comme Google ou Yahoo.
 
-Il existe donc l’entité _Movie_ au sein de _Schema.org_, avec de nombreuses propriétés qui nous intéressent. Pour la simplicité de lecture, nous allons en sélectionner uniquement quelques unes.
+Il existe donc l’entité _Movie_ au sein de _Schema.org_, avec de nombreuses propriétés qui nous intéressent. Pour la simplicité de lecture, nous allons en sélectionner uniquement quelques-unes.
 
 ```yaml
 # app/config/schemas.yml
@@ -41,7 +41,7 @@ Pour générer notre entité, il suffit de lancer la commande suivante :
 vendor/bin/schema generate-types src/ app/config/schema.yml
 ```
 
-Et hop ! Si vous allez dans src/AppBundle/Entity/Movie.php, on peut apercevoir une entité générée automatiquement qui contient tout un tas de validation par défaut en fonction des types définis dans _Schema.org_.
+Et hop ! Si vous allez dans src/AppBundle/Entity/Movie.php, on peut apercevoir une entité générée automatiquement qui contient tout un tas de validations par défaut en fonction des types définis dans _Schema.org_.
 
 Enfin, il nous reste à mettre à jour la base de données pour pouvoir jouer avec notre API movies :
 
@@ -49,7 +49,7 @@ Enfin, il nous reste à mettre à jour la base de données pour pouvoir jouer av
 bin/console do:sche:update --force vendor/bin/schema generate-types src/ app/config/schema.yml
 ```
 
-![](/assets/2017-07-25-api-platform/api_platform_movies.png)En accédant à la documentation, vous apercevrez que la ressource _Movie_ est maintenant là, accompagnée de toutes les opérations de création, modification, suppression.  
+![](/assets/2017-07-25-api-platform/api_platform_movies.png)En accédant à la documentation, vous apercevrez que la ressource _Movie_ est maintenant là, accompagnée de toutes les opérations de création, modification, suppression.
 Je vous laisse jouer avec l’interface et la documentation auto-générée avant de passer à une fonctionnalité très utilisée dans les API de listing : les filtres.
 
 ## Filtres et sort
@@ -116,4 +116,4 @@ Enfin la documentation est un gros point positif. Étant très riche, elle conti
 
 ## À venir
 
-La version 2.1 d'API Platform va bientot sortir, et nous reserve de nombreuses nouvelles fonctionnalités, notamment un système d'administration développé en _React_, de nouveaux filtres... Les détails [ici](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/)
+La version 2.1 d'API Platform va bientot sortir, et nous réserve de nombreuses nouvelles fonctionnalités, notamment un système d'administration développé en _React_, de nouveaux filtres... Les détails [ici](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/)
