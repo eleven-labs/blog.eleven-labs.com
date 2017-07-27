@@ -24,7 +24,7 @@ Le langage Go est rapidement devenu très populaire mais encore beaucoup hésite
 Introduction
 -------------
 
-La particularité du langage Go est sa simplicité d’écriture. La syntaxe inspirée du langage C avec un code procédural et des éléments bien distincts pour éviter la confusion. Il n’intègre pas de concept de classe mais fournit les mécanismes nécessaires à l’écriture de code dans un style orienté-objet. Le code est concis et clair, principe KISS (Keep it simple, stupid). Nous allos donc voir comment utiliser ce language pour faire du web. Nous verrons dans un premier temps une implémentation du package "net/http" pour la création d'une api REST. Dans un second temps, je vous présenterai un utilitaire pour faciliter le développement d'une application web : **Buffalo**.
+La particularité du langage Go est sa simplicité d’écriture. La syntaxe est inspirée du langage C avec un code procédural. Il n’intègre pas de concept de classe mais fournit les mécanismes nécessaires à l’écriture de code dans un style orienté-objet. Le code est concis et clair, principe KISS (Keep it simple, stupid). Nous allos donc voir comment utiliser ce language pour faire du web. Nous verrons dans un premier temps une implémentation du package "net/http" pour la création d'une api REST. Dans un second temps, je vous présenterai un utilitaire pour faciliter le développement d'une application web : **Buffalo**.
 
 Package "http/net"
 -------------
