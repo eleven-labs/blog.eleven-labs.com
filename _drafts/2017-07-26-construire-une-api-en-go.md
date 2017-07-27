@@ -307,7 +307,7 @@ func (ur UserResource) List(c buffalo.Context) error {
 On va maintenant attacher ce nouvel handler à une route dans le fichier `app.go`. Avant cela on va faire préfixer nos routes par `/api/v1`.
 
 ```go
-// on faire préfixer nos nouvelles routes par /api/v1
+// on préfixe nos nouvelles routes par /api/v1
 g := app.Group("/api/v1")
 
 // on déclare notre UserResource
