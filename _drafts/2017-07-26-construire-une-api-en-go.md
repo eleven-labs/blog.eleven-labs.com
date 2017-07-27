@@ -16,7 +16,7 @@ tags:
 CONSTRUIRE UNE API EN GO
 ===================
 
-Le langage Go est rapidement devenu très populaire mais encore beaucoup hésitent à l'utiliser pour le développement de leurs nouvelles applications. Nous allons ici voir comment construire une api REST rapidement et facilement. 
+Le langage Go est rapidement devenu très populaire mais beaucoup hésitent encore à l'utiliser pour le développement de leurs nouvelles applications. Nous allons ici voir comment construire une api REST rapidement et facilement. 
 
 ----------
 
@@ -24,7 +24,7 @@ Le langage Go est rapidement devenu très populaire mais encore beaucoup hésite
 Introduction
 -------------
 
-La particularité du langage Go est sa simplicité d’écriture. La syntaxe est inspirée du langage C avec un code procédural. Il n’intègre pas de concept de classe mais fournit les mécanismes nécessaires à l’écriture de code dans un style orienté-objet. Le code est concis et clair, principe KISS (Keep it simple, stupid). Nous allos donc voir comment utiliser ce language pour faire du web. Nous verrons dans un premier temps une implémentation du package "net/http" pour la création d'une api REST. Dans un second temps, je vous présenterai un utilitaire pour faciliter le développement d'une application web : **Buffalo**.
+La particularité du langage Go est sa simplicité d’écriture. La syntaxe est inspirée du langage C avec un code procédural. Il n’intègre pas de concept de classes mais fournit les mécanismes nécessaires à l’écriture de code dans un style orienté objet. Le code est concis et clair, principe KISS (Keep It Simple, Stupid). Nous allons donc voir comment utiliser ce language pour faire du web. Nous verrons dans un premier temps une implémentation du package "net/http" pour la création d'une api REST. Dans un second temps, je vous présenterai un utilitaire pour faciliter le développement d'une application web : **Buffalo**.
 
 Package "http/net"
 -------------
@@ -50,7 +50,7 @@ Pour démarrer le serveur, il suffit d’exécuter le fichier `main.go` avec la 
 go run main.go
 ```
 
-Si vous essayez de faire une requête http sur `127.0.0.1:8001`, le serveur vous retournera une `404` puisque la route `/` n'est pas spécifiée. Pour remédier a ce problème il faut implémenter un handler sur `/`.
+Si vous essayez de faire une requête http sur `127.0.0.1:8001`, le serveur vous retournera une `404` puisque la route `/` n'est pas spécifiée. Pour remédier à ce problème il faut implémenter un handler sur `/`.
 
 ```go
 // Handle registers the handler for the given pattern
@@ -59,7 +59,7 @@ Si vous essayez de faire une requête http sur `127.0.0.1:8001`, le serveur vous
 func Handle(pattern string, handler Handler) { DefaultServeMux.Handle(pattern, handler) }
 ```
 
-Pour cela, http.Handle a besoin d'un modèle qui va correspondre avec la route de la requête et d'un handler.
+Pour cela, http.Handle a besoin d'un modèle qui va correspondre à la route de la requête et à un handler.
 
 ```go
 type Handler interface {
@@ -97,7 +97,7 @@ func main() {
 
 Cette fois-ci, si on lance le serveur et que l’on fait une requête http sur `127.0.0.1:8001`, le serveur répond bien un code 200 avec notre message en JSON. 
 
-Ce package est très bas niveau et assez pénible à utiliser. La communauté a donc mis a disposition différentes surcouches notamment au niveau du routing pour faciliter le développement. 
+Ce package est très bas niveau et assez pénible à utiliser. La communauté a donc mis à disposition différentes surcouches notamment au niveau du routing pour faciliter le développement. 
 
 Présentation de Buffalo
 -------------
@@ -136,18 +136,18 @@ Flags:
 
 ```
 
-La commande `new` permet de générer un nouveau projet. On va donc créer un projet api sans la base de données qui est gérée par `pop`. Nous allons donc lancer cette commande pour générer la base de notre api REST. Placez vous dans votre répertoire de travail (`$GOPATH/src/your_user_name` par exemple) et lancez la commande suivante :
+La commande `new` permet de générer un nouveau projet. On va donc créer un projet api sans la base de données qui est gérée par `pop`. Nous allons donc lancer cette commande pour générer la base de notre api REST. Placez-vous dans votre répertoire de travail (`$GOPATH/src/your_user_name` par exemple) et lancez la commande suivante :
 
 ```
 buffalo new api --api --skip-pop
 ```
                                                   
-Cette commande vous a donc créé le dossier `api`. Celui-ci comprend :
+Cette commande a créé le dossier `api`. Celui-ci comprend :
 * le fichier `main.go`, il s’agit de l’entrée de l'application ;
-* le dossier `actions/` il s’agit du le dossier contenant nos handlers ; 
+* le dossier `actions/` il s’agit du dossier contenant nos handlers ; 
 * le dossier `grifts/` il s’agit du dossier contenant les commandes
 
-Le reste des fichiers ne nous intéressent pas.
+Le reste des fichiers ne nous intéresse pas.
 
 Lancez le serveur :
 
@@ -248,7 +248,7 @@ Par exemple, pour retourner notre message JSON, on utilise `Render`.
 return c.Render(200, r.JSON(map[string]string{"message": "Welcome to Buffalo!"}))
 ```
 
-Vous pouvez maintenant construire l'application et lancer le serveur. Buffalo offre un mode `dev` qui va automatiquement recompiler votre l'application lorsque vous faites une modification dans le code. Pour cela, lancez la commande :
+Vous pouvez maintenant construire l'application et lancer le serveur. Buffalo offre un mode `dev` qui va automatiquement recompiler votre application lorsque vous faites une modification dans le code. Pour cela, lancez la commande :
 
 ```
 buffalo dev
@@ -256,7 +256,7 @@ buffalo dev
 
 Maintenant, si vous essayez de faire une requête sur `127.0.0.1:3000`, vous aurez bien votre message `Welcome to Buffalo!` en JSON.
 
-Pour faciliter le développement buffalo intègre le package `grifts` qui permet la création de commandes. Les commandes sont déclarées dans le dossier `grifts`. 
+Pour faciliter le développement buffalo intègre le package `grifts` qui permet la création de commandes. Les commandes sont déclarées dans le dossier `grifts`.
 
 ```
 buffalo task list
@@ -287,7 +287,7 @@ type User struct {
 
 ```
 
-Créez une nouvelle action dans le dossier `actions` pour gérer la ressource `user`.Créez donc un fichier `users.go`.
+Créez une nouvelle action dans le dossier `actions` pour gérer la ressource `user`. Créez donc un fichier `users.go`.
 Pour s'abstraire d'une base de données, on va créer une map pour stocker nos utilisateurs.
 
 ```go
@@ -318,8 +318,8 @@ ur := &UserResource{}
 g.GET("/users", ur.List)
 ```
 
-Si vous faites donc un `GET` sur `/api/v1/users`, l'api vous retourne une collection vide puisqu'il n'y a encore d’utilisateur.
-On va donc créer un nouveau handler qui va créer un utilisateur.
+Si vous faites donc un `GET` sur `/api/v1/users`, l'api vous retourne une collection vide puisqu'il n'y a pas encore d’utilisateur.
+On va donc créer un nouveau handler qui va en créer un.
 
 ```go
 // Create User.
@@ -375,4 +375,4 @@ g.GET("/users/{id}", ur.Show)
 ```
 Maintenant, on crée un utilisateur avec un `POST` sur `/api/v1/users` puis on fait un `GET` sur `/api/v1/users/{id}` en remplaçant `{id}` par l'uuid de l’utilisateur que vous venez de créer. L'api vous retourne un code 200 avec les informations de l’utilisateur.
 
-Vous avez maintenant une base d'api performante avec des outils pour développer rapidement et facilement une api en Go. Vous pouvez retrouvez l'ensemble de la documentation et découvrir les autres fonctionnalités de buffalo sur [http://gobuffalo.io](http://gobuffalo.io).
+Vous avez maintenant une base d'api performante avec des outils pour développer rapidement et facilement une api en Go. Vous pouvez retrouver l'ensemble de la documentation et découvrir les autres fonctionnalités de buffalo sur [http://gobuffalo.io](http://gobuffalo.io).
