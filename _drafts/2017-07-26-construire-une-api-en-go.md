@@ -11,6 +11,7 @@ tags:
     - api
     - golang
     - rest
+cover: /img/covers/StockSnap_SUUS3AK5EA.jpg
 ---
 
 CONSTRUIRE UNE API EN GO
