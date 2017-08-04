@@ -4,17 +4,18 @@ title: 'Amélioration continue : comment animer vos rétrospectives agiles ?'
 excerpt: "Nous partageons très régulièrement sur ce blog notre expertise technique autour du développement et de l’architecture web et mobile. Aujourd’hui, j’aimerais aborder un autre sujet, tout aussi important : notre expertise méthodologique."
 permalink: /fr/amelioration-continue-comment-animer-vos-retrospectives-agiles/
 authors:
- - charles-eric
+    - charles-eric
 date: '2017-02-16 17:32:11 +0100'
 date_gmt: '2017-02-16 16:32:11 +0100'
 categories:
-- Agilité
+    - Agilité
 tags:
-- SCRUM
-- Agile
-- Retrospective
-- Inspect &amp; Adapt
-- Amélioration continue
+    - SCRUM
+    - Agile
+    - Retrospective
+    - Inspect &amp; Adapt
+    - Amélioration continue
+cover: /assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-heart-retrospective.jpg
 ---
 
 Nous partageons très régulièrement sur ce blog notre expertise technique autour du développement et de l’architecture web et mobile. Aujourd’hui, j’aimerais aborder un autre sujet, tout aussi important : notre **expertise méthodologique**.
@@ -23,7 +24,8 @@ Chez Eleven Labs, notre méthodologie agile repose principalement sur la méthod
 
 Dans cet article, on parlera plus particulièrement d’une rétrospective de sprint SCRUM dans le cadre d’un projet informatique mais la plupart des outils mentionnés ici sont utilisables pour n’importe quelle méthodologie agile et la majorité des projets.
 
-![](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/Prez-Scrum-Eleven-fondblanc-focus-retrospective.png) Rétrospective de fin d'un Sprint SCRUM
+![](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/Prez-Scrum-Eleven-fondblanc-focus-retrospective.png)
+*Rétrospective de fin d'un Sprint SCRUM*
 
 Objectif ?
 ==========
@@ -96,7 +98,8 @@ Si l’équipe n’est globalement pas suffisamment à l’aise pour discuter de
 
 De la même façon, les 5 notes du Safety Check précédent peuvent être représentées de manières plus ludiques à l’aide d’images, de personnages ou smileys plus ou moins confiants.
 
-![](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/mood-board.jpg) Mood Board des astronautes Eleven Labs
+![](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/mood-board.jpg)
+*Mood Board des astronautes Eleven Labs*
 
 -   **One word**
 
@@ -113,7 +116,8 @@ La manière la plus courante, et aussi souvent la plus efficace, est de demander
 -   ou variante métaphorique du bateau, symbolisant l’équipe : le facilitateur dessine sur un paper board ou tableau un bateau à moitié sous l’eau et à moitié à la surface, avec sa voile qui lui permet d’avancer, son ancre qui le ralentit et le tire vers le fond, et le vent qui permettrait de faire encore accélérer le bateau.
 -   Il est aussi possible de laisser l’équipe inventer ses propres catégories. Chez Eleven Labs, on aime bien celles-ci : **“⊕ Points positifs”, “⊖ Points négatifs”, “✨ Idées d’amélioration”, “❤ Remerciements personnalisés”**
 
-![](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-retrospective-web.jpg) Post-it catégorisés lors de nos rétrospectives chez Eleven Labs
+![](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-retrospective-web.jpg)
+*Post-it catégorisés lors de nos rétrospectives chez Eleven Labs*
 
 Quelques soient ces catégories, l’idée est de définir une courte durée (5 ou 10 minutes) pendant laquelle chacun met ses idées sur ses post-it. Ensuite chacun à son tour va les coller sur le tableau, dans la bonne catégorie, et expliquer à l’équipe chacun de ses points. Le dernier à s’exprimer, ou autre volontaire, pourra ensuite regrouper les idées similaires pour donner une meilleure vision globale.
 
