@@ -75,8 +75,8 @@ paginate_path: "/blog/page:num"
 
 # ALGOLIA
 algolia:
-  application_id: '5IGTHBX5JS'
-  index_name:     'blog_eleven'
+    application_id: '5IGTHBX5JS'
+    index_name:     'blog_eleven'
 
 exclude: [vendor, _authors/TEMPLATE-AUTOR]
 
