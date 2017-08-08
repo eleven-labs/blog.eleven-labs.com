@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android et les Design Pattern
-excerpt: Nous allons voir à travers cet article jusqu'à quel point peut-on appliquer les principaux Design Pattern dans un projet Android 
+excerpt: Nous allons voir à travers cet article jusqu'à quel point on peut appliquer les principaux Design Pattern dans un projet Android 
 authors:
     - obennouna
 date: '2017-08-02 22:21:00 +0100'
@@ -19,7 +19,7 @@ tags:
     - databinding
 cover: /assets/2017-08-02-android-design-pattern/cover.jpg
 ---
-Aujourd'hui nous allons voir jusqu'à quel point peut-on implémenter le plus rigoureusement possible certains Design Patterns. En effet nous allons les séparer en deux catégories :
+Aujourd'hui nous allons voir jusqu'à quel point on peut implémenter le plus rigoureusement possible certains Design Patterns. En effet nous allons les séparer en deux catégories :
  - Design Patterns structurants
  - Design Patterns non structurants
  
