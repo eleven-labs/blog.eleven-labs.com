@@ -43,11 +43,11 @@ cat some_text.md | aspell --lang=en --encoding=utf-8 list
 - `--lang=en` or `--lang=fr` for example depending on your language
 - `--encoding=utf-8` if your file contains special characters
 
-This command will return all the words that Aspell does not know, not listed in its dictionnaries: so this words might be misspelled.
+This command will return all the words that Aspell does not know, not listed in its dictionaries: so this words might be misspelled.
 
 Note that you might want to execute this command many times, in English and French, especially if you write technical documents in French that will also contain many English words, for example.
 
-Of course you will also need to allow personal words. To do so, you can add and use custom dictionnaries files, named `.aspell.en.pws` for an English personal dictionnary for example:
+Of course you will also need to allow personal words. To do so, you can add and use custom dictionaries files, named `.aspell.en.pws` for an English personal dictionary for example:
 
 ```
 personal_ws-1.1 en 3
@@ -58,12 +58,12 @@ android
 
 Note that the first line header is important: the two last arguments correspond to the language and the number of words.
 
-Then to use this personal dictionnary, you have to add this argument in your command: `--personal=./.aspell.en.pws`
+Then to use this personal dictionary, you have to add this argument in your command: `--personal=./.aspell.en.pws`
 
 Conclusion
 ==========
 
-We will probably improve these scripts and checking during the next few weeks, you can follow our blog repository on github, if you want to follow.
+We will probably improve these scripts and checking during the next few weeks, you can follow our blog repository on Github, if you want to follow.
 
 Anyway I hope these tips will help others. Note that you could also use the same process to check spelling in your code doc blocks, or in your documentations.
 

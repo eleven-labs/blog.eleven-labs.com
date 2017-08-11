@@ -38,8 +38,15 @@ if [ "$NB_MISSPELLED" -gt 0 ]
 then
     echo -e "$RED>> Words that might be misspelled, please check:$NC"
     echo "$MISSPELLED"
+    COMMENT="$NB_MISSPELLED words might be misspelled, please check them: $MISSPELLED"
 else
-    echo -e "$GREEN>>No spelling errors, congratulations!"
+    COMMENT="No spelling errors, congratulations!"
+    echo -e "$GREEN>>$COMMENT$NC"
 fi
 
-exit $NB_MISSPELLED
+curl -i -H 'Authorization: token $GITHUB_TOKEN' \
+    -H "Content-Type: application/json" \
+    -X POST -d '{"body":"$COMMENT"}' \
+    https://api.github.com/repos/eleven-labs/eleven-labs.github.io/pulls/$TRAVIS_PULL_REQUEST/comments
+
+exit 0
