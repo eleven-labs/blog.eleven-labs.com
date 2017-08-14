@@ -13,6 +13,7 @@ tags:
     - JSON
     - API
     - NodeJS
+cover: /assets/2017-08-16-json-server/cover.jpg
 ---
 
 Hello, Today I’m going to talk about [json-server](https://github.com/typicode/json-server), what is it? why use it? and especially how to use it?
