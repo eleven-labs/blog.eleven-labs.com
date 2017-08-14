@@ -111,7 +111,7 @@ To fill it in, we can either do it by hand or use a random json generator, my fa
 }
 ```
 
-Now we can run `json-server` so that we can access the endpoints we that `json-server` created for us
+Now we can run `json-server` so that we can access the endpoints that `json-server` created for us
 
 
 ```bash
@@ -218,7 +218,7 @@ In case we want to sort by multiple properties, we can write our properties sepa
 
 **Operators** are suffixes used to augment our query parameters:
 
-* `_gte` (greater than or equal), `_lte` (lower than or equal) `GET http://localhost:3000/comments?score_gte=5` (assuming we have a `score` field in the comments)
+* `_gt` (greater than), `_lt` (less than), `_gte` (greater than or equal) and `_lte` (less than or equal): `GET http://localhost:3000/comments?score_gte=5` (assuming we have a `score` field in the comments)
 * `_ne`(not equal) negation of an expression `GET http://localhost:3000/comments?articleId_ne=2`
 * `_like` is an operator that can be applied to string properties, it gives the same result as an `SQL`'s `LIKE`. `GET http://localhost:3000/articles?title_like=API`
 
@@ -580,4 +580,73 @@ GET /api/groups/ducks/stats 200 4.609 ms - 94
 
 ### As a NodeJS module
 
+`json-server` is an express application, which means that we can use it in an existing node/express app to achieve special behaviors. Here is a simple example that shows how to customize the logger:
 
+`json-server` uses [`morgan`](https://github.com/expressjs/morgan) for logs, and the default format that it uses is the [`dev`](https://github.com/expressjs/morgan#dev) log format, which doesn't expose all the info that we want, we need to use the [standard Apache combined log outpout format](https://github.com/expressjs/morgan#combined) format instead:
+
+```js
+// server.js
+import express from 'express';
+import api from './api';
+
+const port = 9001;
+const app = express();
+const API_ROOT = `http://localhost:${port}/api`;
+
+app.use('/api', api);
+
+app.listen(port, error => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.info('==> 🌎  Listening on port %s. Open up %s in your browser.', port, API_ROOT);
+  }
+});
+```
+
+
+```js
+// api.js
+import { create, defaults, rewriter, router } from 'json-server';
+import morgan from 'morgan';
+import rewrites from './routes.json';
+
+const server = create();
+const apiEndpoints = router('db2.json');
+// Deactivate the existing logger
+const middlewares = defaults({ logger: false });
+
+// Here we use our own logging format
+server.use(morgan('combined', { colors: true }));
+
+server.use(rewriter(rewrites));
+server.use(middlewares);
+server.use(apiEndpoints);
+
+export default server;
+```
+
+Then we run our server:
+
+```bash
+$ nodemon --exec babel-node server.js
+==> 🌎  Listening on port 9001. Open up http://localhost:9001/api/ in your browser.
+```
+
+Here we can see our custom logs in the console:
+
+```bash
+$ curl --user kamal:secret http://localhost:9001/api/groups/ducks/stats
+::1 - kamal [11/Aug/2017:15:04:58 +0000] "GET /api/groups/ducks/stats HTTP/1.1" 200 187 "-" "curl/7.51.0"
+
+# or with Chrome
+::1 - - [10/Aug/2017:08:57:04 +0000] "GET /api/ HTTP/1.1" 200 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+```
+
+## Conclusion
+
+`json-server` has drastically decreased the time of scaffolding an API. Amongst the possibilities that we've seen, there are lots of use cases you can explore in order to use json-server, like logging customization, testing, reconciliation between micro-services, serverless applications ...etc.
+
+I hope this post did shed some light on how we can use json-server. I tried to bring some useful use cases we encounter every day. If you still want to learn more about using it or even its inner working, I recommend exploring its repo.
+
+Thanks for reading!
