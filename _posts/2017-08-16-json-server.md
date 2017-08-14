@@ -422,7 +422,7 @@ Imagine we are supposed to perform requests on several different endpoints on ou
 /rpierlot/articles
 ```
 
-`json-server` allows us to specify route rewrites, We can address this problem using a map that resolves the actual routes in our json schema:
+`json-server` allows us to specify route rewrites. We can address this problem using a map that resolves the actual routes in our json schema:
 
 ```json
 {
@@ -433,7 +433,7 @@ Imagine we are supposed to perform requests on several different endpoints on ou
 }
 ```
 
-So, when we start `json-server` it shows us what are the route rewrites we are using :
+So, when we start `json-server` it shows us the route rewrites we are using :
 
 ```bash
 $ json-server --watch db2.json --routes routes.json
@@ -489,7 +489,7 @@ $ curl http://localhost:3000/api/groups/ducks/stats
 
 ### Middlewares
 
-In case we want to augment our `json-server` instance with a specific behavior, we have the possibility to do so using custom middlewares, and these middlewares are passed to the express server the same way we would do it when developing a classic express app. In this section, we're going to explore a useful example of a feature that is usually necessary.
+In case we want to augment our `json-server` instance with a specific behavior, we have the possibility to do so using custom middlewares, these middlewares are passed to the express server the same way we would do it when developing a classic express app. In this section, we're going to explore a useful example of a feature that is usually necessary.
 
 Imagine we want to access a resource on the API, but it turns out that this resource is secured. We can say that it's just about data and assume that we'll be satisfied by just returning it, then we use `json-server` to provide the data without worrying about security. But, we know that something's odd, we want our app to be ready when our future API is ready, in order to test the whole thing together. So, instead of bypassing it, let's use middlewares to set up an authentication layer.
 
@@ -582,9 +582,9 @@ GET /api/groups/ducks/stats 200 4.609 ms - 94
 
 ### As a NodeJS module
 
-`json-server` is an express application, which means that we can use it in an existing node/express app to achieve special behaviors. Here is a simple example that shows how to customize the logger:
+`json-server` is an `express` application, which means that we can use it in an existing node/express app to achieve special behaviors. Here is a simple example that shows how to customize the logger:
 
-`json-server` uses [`morgan`](https://github.com/expressjs/morgan) for logs, and the default format that it uses is the [`dev`](https://github.com/expressjs/morgan#dev) log format, which doesn't expose all the info that we want, we need to use the [standard Apache combined log outpout format](https://github.com/expressjs/morgan#combined) format instead:
+`json-server` uses [`morgan`](https://github.com/expressjs/morgan) for logs, and the default format that it uses is the [`dev`](https://github.com/expressjs/morgan#dev) log format, which doesn't expose all the info that we want, we need to use the [standard Apache combined log outpout format](https://github.com/expressjs/morgan#combined) instead:
 
 ```js
 // server.js
@@ -649,6 +649,6 @@ $ curl --user kamal:secret http://localhost:9001/api/groups/ducks/stats
 
 `json-server` has drastically decreased the time of scaffolding an API. Amongst the possibilities that we've seen, there are lots of use cases you can explore in order to use json-server, like logging customization, testing, reconciliation between micro-services, serverless applications ...etc.
 
-I hope this post did shed some light on how we can use json-server. I tried to bring some useful use cases we encounter every day. If you still want to learn more about using it or even its inner working, I recommend exploring its repo.
+I hope this post did shed some light on how we can use json-server. I tried to bring some useful use cases we encounter every day. If you still want to learn more about using it or even its inner working, I recommend exploring its [github project](https://github.com/typicode/json-server).
 
 Thanks for reading!
