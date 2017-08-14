@@ -21,7 +21,7 @@ Hello, Today I’m going to talk about [json-server](https://github.com/typicode
 
 ## Why use it?
 
-Let's say you are starting to work on your awesome (Javascript, PHP, IOS, Android, … whatever) app, and you want to consume remote data of some, not finished yet, API. The first step you take consists of setting up some mocks, either hard coded in some constant (please, don't do this), or using a static JSON file, which will be a pain in the neck. Why? You're a good developer who likes to do the right thing. You want to test your app against data updates. You want to perform HTTP requests (like `GET`, `POST` …etc.), and you want to persist your updates. Unfortunately, you can't do all of this using a static file, you need to look for a way to make it dynamic. So, unless your pal who's developing the API has finished their work, you're gonna need some serious help.
+Let's say you are starting to work on your awesome (Javascript, PHP, IOS, Android, … whatever) app, and you want to consume remote data of some, not finished yet, API. The first step you take consists in setting up some mocks, either hard coded in some constant (please, don't do this), or using a static JSON file, which will be a pain in the neck. Why? You're a good developer who likes to do the right thing. You want to test your app against data updates. You want to perform HTTP requests (like `GET`, `POST` …etc.), and you want to persist your updates. Unfortunately, you can't do all of this using a static file, you need to look for a way to make it dynamic. So, unless your pal who's developing the API has finished their work, you're gonna need some serious help.
 
 Here comes `json-server`, it allows you to mock the API, and provide dynamic access to data. By dynamic, I mean that we can read, add, update, and delete data (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`).
 
@@ -75,12 +75,12 @@ To fill it in, we can either do it by hand or use a random json generator, my fa
   "articles": [
     {
       "id": 1,
-      "title": "Construire une API en GO",
+      "title": "Build an API using GO",
       "authorId": 2
     },
     {
       "id": 2,
-      "title": "Créer une API avec API Platform",
+      "title": "Build an API using API Platform",
       "authorId": 1
     }
   ],
@@ -140,12 +140,12 @@ $ curl http://localhost:3000/articles
 [
   {
     "id": 1,
-    "title": "Construire une API en GO",
+    "title": "Build an API using GO",
     "authorId": 2
   },
   {
     "id": 2,
-    "title": "Créer une API avec API Platform",
+    "title": "Build an API using API Platform",
     "authorId": 1
   }
 ]
@@ -153,7 +153,7 @@ $ curl http://localhost:3000/articles
 $ curl http://localhost:3000/articles/1
 {
   "id": 1,
-  "title": "Construire une API en GO",
+  "title": "Build an API using GO",
   "authorId": 2
 }
 ```
@@ -161,6 +161,7 @@ $ curl http://localhost:3000/articles/1
 <a name="routes"></a>
 
 ### Routes
+
 We can use almost all kinds of URIs to perform requests:
 For example, to insert (create) a new author, we might use:
 `POST http://localhost:3000/authors`
@@ -261,12 +262,12 @@ $ curl http://localhost:3000/articles?q=api
 [
   {
     "id": 1,
-    "title": "Construire une API en GO",
+    "title": "Build an API using GO",
     "author": "qneyrat"
   },
   {
     "id": 2,
-    "title": "Créer une API avec API Platform",
+    "title": "Build an API using API Platform",
     "author": "rpierlot"
   }
 ]
@@ -312,7 +313,7 @@ $ curl http://localhost:3000/comments?_expand=article
     "articleId": 1,
     "article": {
       "id": 1,
-      "title": "Construire une API en GO",
+      "title": "Build an API using GO",
       "author": "qneyrat"
     }
   },
@@ -322,7 +323,7 @@ $ curl http://localhost:3000/comments?_expand=article
     "articleId": 2,
     "article": {
       "id": 2,
-      "title": "Créer une API avec API Platform",
+      "title": "Build an API using API Platform",
       "author": "rpierlot"
     }
   },
