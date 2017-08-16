@@ -45,7 +45,7 @@ Okay, let's get to it.
 
 ## How to use it?
 
-This can take less than 5min!
+This will take less than 5 minutes!
 
 ### Requirements
 
@@ -69,7 +69,7 @@ $ mkdir blog && cd $_
 $ touch db.json
 ```
 
-To fill it in, we can either do it by hand or use a random json generator, my favorite is [json-generator](http://json-generator.com)
+To fill it in, we can either do it by hand or use a random json generator (my favorite is [json-generator](http://json-generator.com))
 
 ```json
 {
@@ -414,7 +414,7 @@ And we can still perform requests on it as we've seen in the [routes](#routes) s
 
 ### Custom routes
 
-Imagine we are supposed to perform requests on several different endpoints on our future API, and these endpoints don't have the same URIs:
+Let's imagine we are supposed to perform requests on several different endpoints on our future API, and these endpoints don't have the same URIs:
 
 ```url
 /api/dashboard
@@ -423,7 +423,7 @@ Imagine we are supposed to perform requests on several different endpoints on ou
 /rpierlot/articles
 ```
 
-`json-server` allows us to specify route rewrites. We can address this problem using a map that resolves the actual routes in our json schema:
+`json-server` allows us to specify route rewrites. We can address this problem by using a map that resolves the actual routes in our json schema:
 
 ```json
 {
