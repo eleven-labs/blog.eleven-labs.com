@@ -16,6 +16,7 @@ tags:
 - symfony
 - Javascript
 - Angular2
+- Angular
 ---
 
 Introduction
@@ -48,7 +49,7 @@ Sommaire
 
 ### **1 Mise en place de la partie Back-end**
 
-#### **1.1 **Installation d'une application Symfony3
+#### 1.1 Installation d'une application Symfony3
 
 Installons tout d'abord la dernière version de Symfony3 via l'installeur prévu à cet effet sur le site officiel :
 
@@ -355,7 +356,7 @@ export class HomepageComponent {}
 *Note : vous remarquerez que nous avons enlevé la déclaration du fichier css. En effet, nous inclurons bootstrap pour styliser rapidement notre application.*
 
 ```html
-// homepage/homepage.html
+<!-- homepage/homepage.html -->
 <h1>Home</h1>
 ```
 
@@ -406,11 +407,28 @@ export class AuthenticationComponent {
 }
 ```
 
--   authentication/authentication.component.html
+```html
+<!-- authentication/authentication.component.html -->
+<h1>Login</h1>
+<div>
+	<div [hidden]="!error" class="alert alert-danger" role="alert">
+	  	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+	  	<span class="sr-only">Error:</span>
+	  	{{ error }}
+	</div>
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Username*" formControlName="username">
+		</div>
 
-![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-13.11.50-300x106.png)
+		<div class="form-group">
+			<input type="password" class="form-control" placeholder="Password*" formControlName="password">
+		</div>
 
-*Note : Pardons pour le screen mais le plugin ne prend pas en charge cette syntaxe...*
+		<button type="submit" class="btn btn-success pull-right" [disabled]="!loginForm.valid">Submit</button>
+	</form>
+</div>
+```
 
 Ce composant sera notre formulaire d'authentification vers notre API. Nous utiliserons le module ReactiveFormsModule de Angular2 pour une mise en place plus simple sans utiliser la directive \[(ngModel)\] très gourmande en ressources et pour pouvoir lui attribuer des validateurs.
 
@@ -447,9 +465,20 @@ export class PostComponent implements OnInit {
 }
 ```
 
--   post/post.component.html
-
-![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-13.31.10.png)
+```html
+<!-- post/post.component.html -->
+<h1>Posts</h1>
+<div [hidden]="!error" class="alert alert-danger" role="alert">
+  	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  	<span class="sr-only">Error:</span>
+  	{{ error }}
+</div>
+<ul>
+	<li *ngFor="let post of posts">
+		<a href="#">{{ post.title }}</a>
+	</li>
+</ul>
+```
 
 Pour finir, nous allons ajouter deux services à notre application.
 
@@ -641,9 +670,35 @@ export class AppComponent {
 }
 ```
 
--   app.component.html
+```html
+<!-- app.component.html -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img class="pull-left logo" src="../assets/images/ng-xs.png" alt="Angular2">
+            <a class="navbar-brand" [routerLink]="['']">Api Lab</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a [routerLink]="['']">Home</a></li>
+                <li><a [routerLink]="['post']">Posts</a></li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li *ngIf="!hasAuthToken()"><a [routerLink]="['login']">Login</a></li>
+                <li *ngIf="hasAuthToken()"><a (click)="logout()" href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-13.51.44.png)
+<router-outlet></router-outlet>
+```
 
 ```js
 // app.component.ts
@@ -699,9 +754,34 @@ export class AppModule { }
 
 Enfin, pour finaliser notre application, il ne reste plus qu'à lui appliquer un peu de style :
 
--   index.html
+```html
+<!-- index.html -->
 
-![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-13.52.07.png)
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Api Lab</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" 
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous">
+  </script>   
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+  	<app-root><div class="text-center loading">Loading...</div></app-root>
+  </div>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+```
 
 ```css
 // style.css
