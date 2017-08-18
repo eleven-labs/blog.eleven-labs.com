@@ -109,7 +109,7 @@ In the case of a serious issue, a single word can be enough to initiate the disc
 
 -   **Post-it splitted into several categories**
 
-The most common practice, and usually the most efficient, is to ask to everyone to summarise their ideas on post-its according to different categories:
+The most common practice, and usually the most efficient, is to ask to everyone to summarize their ideas on post-its according to different categories:
 
 -   'Positive points' and 'Negative points': two obvious categories, what went well and what went bad during this iteration
 -   or another way: 'Start' (what has to be started for the next Sprint), 'Stop' (What has to be put to an end), 'Continue' (What has to be carried on)
@@ -128,7 +128,7 @@ For larger teams, this kind of exercise may take too much time. A solution can b
 
 -   **Guess Who?**
 
-In order to revitalize team which may become used to a unique kind of retrosepctive, it's possible to switch from one of the techniques listed above to another, and so on and so forth.
+In order to revitalize team which may become used to a unique kind of retrospective, it's possible to switch from one of the techniques listed above to another, and so on and so forth.
 
 To empower the communication and better understand the issues encountered by the other team members, here's an exercice worth practicing: the facilitator asks each member to write down his points (sorted out as explained earlier) and to hand them over to him. The facilitator can then pass them on to another team member, without revealing who wrote them. This other team member should now interpret them, and explain them to the team as if he was the author, before trying to guess who actually wrote them.
 
@@ -142,7 +142,7 @@ An iteration of the SCRUM sprint kind being short, this technique doesn't always
 
 ### To find the problems causes and their solutions
 
-The previous techniques allow to have a good insight on the problems encoutered by the team. Before establishing an improvement action plan, we have to find a solution for each of these points.
+The previous techniques allow to have a good insight on the problems encountered by the team. Before establishing an improvement action plan, we have to find a solution for each of these points.
 
 -   **Care bears**
 
@@ -173,7 +173,7 @@ If you practiced well the previous techniques, you should now have a good vision
 
 Keep in mind that the self-managed team should decide on its own of its actions, and then commit to run them in time. These decisions shouldn't be in any way commanded by a manager.
 
-It's better to privilege quality of actions over quantity: it's enough to commit on two or three actions trully impactful to be realized between now and the next retrospective.
+It's better to privilege quality of actions over quantity: it's enough to commit on two or three actions truly impactful to be realized between now and the next retrospective.
 
 -   **Read again the actions plan of the previous retrospective**
 

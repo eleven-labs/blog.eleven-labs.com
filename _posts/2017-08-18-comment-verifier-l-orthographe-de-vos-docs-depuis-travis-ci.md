@@ -18,7 +18,7 @@ tags:
 cover: /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/typing.jpg
 ---
 
-Notre blog est basé sur Jekyll et hébergé sur Github Pages : [plus de détails ici](/fr/migration-du-blog/). Donc pour publier un article de blog, chaque auteur doit ouvrir une pull request sur Github pour soumettre ses fichiers markedown.
+Notre blog est basé sur Jekyll et hébergé sur Github Pages : [plus de détails ici](/fr/migration-du-blog/). Donc pour publier un article de blog, chaque auteur doit ouvrir une pull request sur Github pour soumettre ses fichiers markdown.
 Ensuite les autres astronautes peuvent relire ce qui a été rédigé avant de merger, i.e. publier l'article. Bien-sûr le but de cette revue est de s'assurer que tout est bien expliqué et pas uniquement de corriger toutes les fautes d'orthographe, sinon cette relecture ne serait pas très drôle ! ;)
 
 C'est pourquoi nous avions besoin d'un moyen simple permettant de trouver automatiquement toutes les fautes dans les fichiers changés des pull requests, pour faciliter cette revue. Bien-sûr nous savons que les outils de vérification automatique d'orthographe ne sont jamais parfaits, et nous voulions donc seulement que cet outil nous envoie une notifications avec les éventuelles erreurs, sans bloquer les autres astronautes qui voudraient merger la pull request.
@@ -92,11 +92,18 @@ Si vous voulez récupérer seulement les fichiers de type markdown, vous pouvez 
 Une fois que vous avez les noms des fichiers que vous voulez vérifier sur votre pull request, vous pouvez lander la commande `aspell list` que nous avons vue en première partie.
 
 Vous pouvez aussi utiliser les commandes `grep` et `sed` pour supprimer les meta-données ou les blocs de code de vos fichiers, avant d'exécuter la commande `aspell`, si vous ne voulez pas vérifier l'orthographe dans ces blocs.
+Par exemple, si vous voulez supprimer vos blocs de code de vos fichiers markdown, vous pouvez utiliser cette commande :
+
+```bash
+cat your_file.md | sed  -n '/^```/,/^```/ !p'
+```
+
+Cette commande va ainsi retourner le contenu de votre fichier, sans aucun bloc de code.
 
 Comment envoyer les résultats vers votre pull request Github ?
 ==============================================================
 
-Nous ne voulons pas que ce script bloque ceux qui souhaient merger la pull request. La première chose à faire est donc de retourner `exit 0` à la fin de notre script qui sera exécuté depuis Travis CI.
+Nous ne voulons pas que ce script bloque ceux qui souhaitent merger la pull request. La première chose à faire est donc de retourner `exit 0` à la fin de notre script qui sera exécuté depuis Travis CI.
 
 La façon la plus simple d'envoyer les résultats des précédentes commandes est donc de les poster dans un commentaire sur la pull request Github.
 
@@ -105,7 +112,7 @@ Premièrement vous devrez choisir un utilisateur Github qui sera utilisé pour a
 - Allez sur [https://github.com/settings/tokens](https://github.com/settings/tokens)
 - Ajoutez un nom/description au token que vous créez et cochez bien le scope `public_repo` seulement, si votre repository Github est public.
 
-Ensuite, depuis le script exécuté sur Travis, une fois que vous avez les résultats de la commande `aspell`, vous pouvez utiliser `curl` pour appeler l'API Github avec le token précédémment créé :
+Ensuite, depuis le script exécuté sur Travis, une fois que vous avez les résultats de la commande `aspell`, vous pouvez utiliser `curl` pour appeler l'API Github avec le token précédemment créé :
 
 ```bash
 curl -i -H "Authorization: token $GITHUB_TOKEN" \

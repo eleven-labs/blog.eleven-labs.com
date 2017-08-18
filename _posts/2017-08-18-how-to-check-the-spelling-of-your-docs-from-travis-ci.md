@@ -91,6 +91,13 @@ If you want to get only markdown files, you can add `| grep .md` at the end of t
 Once you have the names of the files that should be checked for this pull request, you can execute the `aspell list` command that we've seen in the first part.
 
 Note that you can also use `grep` and `sed` commands to remove metadata or code blocks from your files before executing `aspell` command, if you don't want to check the spelling in these blocks.
+For example, if you want to remove your code blocks from your markdown file, you can use this command:
+
+```bash
+cat your_file.md | sed  -n '/^```/,/^```/ !p'
+```
+
+This command will return your file content, without all the code blocks.
 
 How to send the results to Github pull request?
 ===============================================
