@@ -107,7 +107,7 @@ In the same way, the 5 grades of the Safety Check described above can be display
 
 In the case of a serious issue, a single word can be enough to initiate the discussion. With experience, the facilitator will be able to feel this kind of situations even before starting the restrospective, and will be able to propose to the team members to write one word only on a post-it, within a limited amount of time, before any member can explain his word in front of the whole team.
 
--   **Post-it splitted into several categories**
+-   **Post-it split into several categories**
 
 The most common practice, and usually the most efficient, is to ask to everyone to summarize their ideas on post-its according to different categories:
 
@@ -122,7 +122,7 @@ The most common practice, and usually the most efficient, is to ask to everyone 
 
 *<center>Post-its, as used during our retrospectives</center>*
 
-No matter the categories, the idea is to define a short time (5 to 10 mins) during which everyone puts their ideas on post-its. Then every member takes turn and goes to pin it on the board, in the right category, while explaining his point to the team. The last person to go, or the one who volunteers, could then gather the similar ideas to help the team achieve a global view of what has been pointed out.
+No matter the categories, the idea is to define a short time (5 to 10 minutes) during which everyone puts their ideas on post-its. Then every member takes turn and goes to pin it on the board, in the right category, while explaining his point to the team. The last person to go, or the one who volunteers, could then gather the similar ideas to help the team achieve a global view of what has been pointed out.
 
 For larger teams, this kind of exercise may take too much time. A solution can be to limit the number of post-its per person to make sure everyone stays concise and focused about what he has to say.
 
@@ -136,7 +136,7 @@ In the same perspective of walking in other team members' shoes, a variation of 
 
 -   **Timeline**
 
-To gather all data of an iteration, we can also ask the team to draw the sprint history, from the planning to the restrospective. This way everyone comes and adds their missing facts on the chronological line drawn on the board, explaining each fact, positive or negative.
+To gather all data of an iteration, we can also ask the team to draw the sprint history, from the planning to the retrospective. This way everyone comes and adds their missing facts on the chronological line drawn on the board, explaining each fact, positive or negative.
 
 An iteration of the SCRUM sprint kind being short, this technique doesn't always make sense, because it's not always easy to put a specific fact at its right place on the timeline. So this exercise is usually used with long timelines, for a release retrospective, or a whole project.
 

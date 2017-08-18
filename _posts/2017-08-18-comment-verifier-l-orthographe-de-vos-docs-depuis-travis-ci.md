@@ -44,7 +44,7 @@ cat some_text.md | aspell --lang=en --encoding=utf-8 list
 - `--lang=en` ou `--lang=fr` par exemple, en fonction de votre langue
 - `--encoding=utf-8` si votre fichier contient des caractères spéciaux
 
-Cette commande va retourner tous les mots qu'Aspell ne connait pas, c'est à dire non listés dans ses dictionnaires : nos potentielles fautes d'orthographe.
+Cette commande va retourner tous les mots qu'Aspell ne connaît pas, c'est à dire non listés dans ses dictionnaires : nos potentielles fautes d'orthographe.
 
 A noter qu'il peut être intéressant d'exécuter cette commande plusieurs fois, en anglais et en français par exemple, surtout si vous rédigez des documents techniques en français qui contiendront forcément aussi beaucoup de termes anglais.
 
