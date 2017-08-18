@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Comment vérifier l'orthographe de vos docs depuis Travis CI?'
+title: Comment vérifier l'orthographe de vos docs depuis Travis CI?
 excerpt: "Nous allons montrer dans cet article comment vérifier l'orthographe automatiquement dans vos documents markdown, modifiés dans vos pull requests, simplement avec Aspell et Travis CI"
 excerpt: "We will show you how to check the spelling in your markdown documents, changed in your pull requests, very easily using Aspell and Travis CI"
 permalink: /fr/comment-verifier-l-orthographe-de-vos-docs-depuis-travis-ci/
