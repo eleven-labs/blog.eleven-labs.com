@@ -55,7 +55,6 @@ TEXT_CONTENT_WITHOUT_METADATA=`echo "$TEXT_CONTENT_WITHOUT_METADATA" | sed -E 's
 echo -e "$BLUE>> Text content that will be checked (without metadata, html, and links):$NC"
 echo "$TEXT_CONTENT_WITHOUT_METADATA"
 
-
 echo -e "$BLUE>> Checking in 'en' (many technical words are in English anyway)...$NC"
 MISSPELLED=`echo "$TEXT_CONTENT_WITHOUT_METADATA" | aspell --lang=en --encoding=utf-8 --personal=./.aspell.en.pws list | sort -u`
 
