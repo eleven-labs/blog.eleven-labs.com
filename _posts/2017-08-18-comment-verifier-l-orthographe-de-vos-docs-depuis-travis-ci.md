@@ -21,7 +21,7 @@ cover: /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/
 Notre blog est basé sur Jekyll et hébergé sur Github Pages : [plus de détails ici](/fr/migration-du-blog/). Donc pour publier un article de blog, chaque auteur doit ouvrir une pull request sur Github pour soumettre ses fichiers markdown.
 Ensuite les autres astronautes peuvent relire ce qui a été rédigé avant de merger, i.e. publier l'article. Bien-sûr le but de cette revue est de s'assurer que tout est bien expliqué et pas uniquement de corriger toutes les fautes d'orthographe, sinon cette relecture ne serait pas très drôle ! ;)
 
-C'est pourquoi nous avions besoin d'un moyen simple permettant de trouver automatiquement toutes les fautes dans les fichiers changés des pull requests, pour faciliter cette revue. Bien-sûr nous savons que les outils de vérification automatique d'orthographe ne sont jamais parfaits, et nous voulions donc seulement que cet outil nous envoie une notifications avec les éventuelles erreurs, sans bloquer les autres astronautes qui voudraient merger la pull request.
+C'est pourquoi nous avions besoin d'un moyen simple permettant de trouver automatiquement toutes les fautes dans les fichiers changés des pull requests, pour faciliter cette revue. Bien-sûr nous savons que les outils de vérification automatique d'orthographe ne sont jamais parfaits, et nous voulions donc seulement que cet outil nous envoie une notification avec les éventuelles erreurs, sans bloquer les autres astronautes qui voudraient merger la pull request.
 
 Voilà ce que nous avons donc fait :
 
@@ -31,7 +31,7 @@ Comment fonctionne Aspell ?
 Premièrement il faut installer cet outil :
 
 ```bash
-apt-get install aspell aspell-en # and aspell-fr for French for example
+apt-get install aspell aspell-en # et aspell-fr pour l'orthographe française par exemple
 ```
 
 La commande que nous allons utiliser est la suivante :
@@ -57,7 +57,7 @@ javascript
 android
 ```
 
-A noter que l'entête de ce fichier (première ligne) est importante : les deux derniers correspondent à la langue et aux nombre de mots.
+A noter que l'entête de ce fichier (première ligne) est importante : les deux derniers arguments correspondent à la langue et au nombre de mots.
 
 Ensuite pour utiliser ce dictionnaire personnel, vous devez ajouter cet argument à la commande : `--personal=./.aspell.en.pws`
 
@@ -81,7 +81,7 @@ Ensuite, dans ce même fichier de configuration, vous pouvez exécuter votre scr
 script: your_script.sh
 ```
 
-Dans ce script, vous pouvez utiliser la variable d'environnement `$TRAVIS_COMMIT_RANGE`, disponible dans le container Travis, pour récupérer seulement les fichiers qui ont changé dans la pull request du build en cours :
+Dans ce script, vous pouvez utiliser la variable d'environnement `$TRAVIS_COMMIT_RANGE`, disponible dans le container Travis, pour récupérer seulement les fichiers qui ont changés dans la pull request du build en cours :
 
 ```bash
 git diff --name-only $TRAVIS_COMMIT_RANGE
@@ -89,7 +89,7 @@ git diff --name-only $TRAVIS_COMMIT_RANGE
 
 Si vous voulez récupérer seulement les fichiers de type markdown, vous pouvez ajouter `| grep .md` à la fin de la précédente ligne de commande.
 
-Une fois que vous avez les noms des fichiers que vous voulez vérifier sur votre pull request, vous pouvez lander la commande `aspell list` que nous avons vue en première partie.
+Une fois que vous avez les noms des fichiers que vous voulez vérifier sur votre pull request, vous pouvez lancer la commande `aspell list` que nous avons vue en première partie.
 
 Vous pouvez aussi utiliser les commandes `grep` et `sed` pour supprimer les meta-données ou les blocs de code de vos fichiers, avant d'exécuter la commande `aspell`, si vous ne voulez pas vérifier l'orthographe dans ces blocs.
 Par exemple, si vous voulez supprimer vos blocs de code de vos fichiers markdown, vous pouvez utiliser cette commande :
@@ -98,12 +98,10 @@ Par exemple, si vous voulez supprimer vos blocs de code de vos fichiers markdown
 cat your_file.md | sed  -n '/^```/,/^```/ !p'
 ```
 
-Cette commande va ainsi retourner le contenu de votre fichier, sans aucun bloc de code.
-
 Comment envoyer les résultats vers votre pull request Github ?
 ==============================================================
 
-Nous ne voulons pas que ce script bloque ceux qui souhaitent merger la pull request. La première chose à faire est donc de retourner `exit 0` à la fin de notre script qui sera exécuté depuis Travis CI.
+Nous ne voulons pas que ce script bloque ceux qui souhaitent merger la pull request. La première chose à faire est donc de retourner `exit 0` à la fin de notre script qui sera exécuté depuis Travis CI. Sinon si un code d'erreur est retourné, Travis va indiquer un statut d'erreur sur la pull request qui empêchera de la merger.
 
 La façon la plus simple d'envoyer les résultats des précédentes commandes est donc de les poster dans un commentaire sur la pull request Github.
 
@@ -127,7 +125,7 @@ curl -i -H "Authorization: token $GITHUB_TOKEN" \
 Conclusion
 ==========
 
-Si vous voulez voir le script entier qui nous utilisons pour notre site, c'est pas [ici](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/bin/check-spelling.sh).
+Si vous voulez voir le script entier qui nous utilisons pour notre blog, c'est par [ici](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/bin/check-spelling.sh).
 
 J'espère que ces astuces vous aiderons ! Notez que vous pouvez aussi utiliser ce même process pour vérifier vos doc blocks dans votre code, ou vos fichiers de documentation.
 

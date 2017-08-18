@@ -105,7 +105,7 @@ In the same way, the 5 grades of the Safety Check described above can be display
 
 -   **One word**
 
-In the case of a serious issue, a single word can be enough to initiate the discussion. With experience, the facilitator will be able to feel this kind of situations even before starting the restrospective, and will be able to propose to the team members to write one word only on a post-it, within a limited amount of time, before any member can explain his word in front of the whole team.
+In the case of a serious issue, a single word can be enough to initiate the discussion. With experience, the facilitator will be able to feel this kind of situations even before starting the retrospective, and will be able to propose to the team members to write one word only on a post-it, within a limited amount of time, before any member can explain his word in front of the whole team.
 
 -   **Post-it split into several categories**
 

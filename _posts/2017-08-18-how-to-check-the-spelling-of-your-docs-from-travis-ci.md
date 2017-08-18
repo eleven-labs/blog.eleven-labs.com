@@ -97,12 +97,10 @@ For example, if you want to remove your code blocks from your markdown file, you
 cat your_file.md | sed  -n '/^```/,/^```/ !p'
 ```
 
-This command will return your file content, without all the code blocks.
-
 How to send the results to Github pull request?
 ===============================================
 
-We don't want this script to block the reviewers to merge the pull request, so the first thing to do is to add `exit 0` at the end of the script that will be executed from Travis CI.
+We don't want this script to block the reviewers to merge the pull request, so the first thing to do is to add `exit 0` at the end of the script that will be executed from Travis CI. Otherwise if an error code is returned by the script, Travis will mark the pull request status as failing, and will block the user from merging this merge request.
 
 The easiest thing that we can do to send the results of previous commands is to post them in a comment on the Github pull request.
 
