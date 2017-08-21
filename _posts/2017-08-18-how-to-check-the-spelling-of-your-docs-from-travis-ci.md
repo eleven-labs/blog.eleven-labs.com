@@ -119,8 +119,8 @@ curl -i -H "Authorization: token $GITHUB_TOKEN" \
     https://api.github.com/repos/eleven-labs/eleven-labs.github.io/issues/$TRAVIS_PULL_REQUEST/comments
 ```
 
-- the Github token should be hidden and not hard-coded in your script, so you should add it in an environment variable in the Travis settings. To do that, go on this page: [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings)
-- the environment variable `$TRAVIS_PULL_REQUEST` is automatically available in the Travis container and corresponds to the identification number of your pull request related to the current Travis build.
+- The Github token should be hidden and not hard-coded in your script, so you should add it in an environment variable in the Travis settings. To do that, go on this page: [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings)
+- The environment variable `$TRAVIS_PULL_REQUEST` is automatically available in the Travis container and corresponds to the identification number of your pull request related to the current Travis build.
 
 Conclusion
 ==========

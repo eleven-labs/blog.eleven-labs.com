@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Comment vérifier l'orthographe de vos docs depuis Travis CI?
+title: Comment vérifier l'orthographe de vos docs depuis Travis CI ?
 excerpt: "Nous allons montrer dans cet article comment vérifier l'orthographe automatiquement dans vos documents markdown, modifiés dans vos pull requests, simplement avec Aspell et Travis CI"
 permalink: /fr/comment-verifier-l-orthographe-de-vos-docs-depuis-travis-ci/
 authors:
@@ -18,9 +18,9 @@ cover: /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/
 ---
 
 Notre blog est basé sur Jekyll et hébergé sur Github Pages : [plus de détails ici](/fr/migration-du-blog/). Donc pour publier un article de blog, chaque auteur doit ouvrir une pull request sur Github pour soumettre ses fichiers markdown.
-Ensuite les autres astronautes peuvent relire ce qui a été rédigé avant de merger, i.e. publier l'article. Bien-sûr le but de cette revue est de s'assurer que tout est bien expliqué et pas uniquement de corriger toutes les fautes d'orthographe, sinon cette relecture ne serait pas très drôle ! ;)
+Ensuite les autres astronautes peuvent relire ce qui a été rédigé avant de merger, i.e. publier l'article. Bien sûr le but de cette revue est de s'assurer que tout est bien expliqué et pas uniquement de corriger toutes les fautes d'orthographe, sinon cette relecture ne serait pas très drôle ! ;)
 
-C'est pourquoi nous avions besoin d'un moyen simple permettant de trouver automatiquement toutes les fautes dans les fichiers changés des pull requests, pour faciliter cette revue. Bien-sûr nous savons que les outils de vérification automatique d'orthographe ne sont jamais parfaits, et nous voulions donc seulement que cet outil nous envoie une notification avec les éventuelles erreurs, sans bloquer les autres astronautes qui voudraient merger la pull request.
+C'est pourquoi nous avions besoin d'un moyen simple permettant de trouver automatiquement toutes les fautes dans les fichiers changés des pull requests, pour faciliter cette revue. Nous savons que les outils de vérification automatique d'orthographe ne sont jamais parfaits, et nous voulions donc seulement que cet outil nous envoie une notification avec les éventuelles erreurs, sans bloquer les autres astronautes qui voudraient merger la pull request.
 
 Voilà ce que nous avons donc fait :
 
@@ -48,7 +48,7 @@ Cette commande va retourner tous les mots qu'Aspell ne connaît pas, c'est à di
 > À noter :**
 > Il peut être intéressant d'exécuter cette commande plusieurs fois, en anglais et en français par exemple, surtout si vous rédigez des documents techniques en français qui contiendront forcément aussi beaucoup de termes anglais.
 
-Bien-sûr vous allez aussi avoir besoin d'autoriser vos propres expressions, qui ne seraient pas reconnues par défaut. Pour cela, vous pouvez ajouter et utiliser vos dictionnaires personnels, nommé `.aspell.en.pws` pour un dictionnaire personnel anglais. Voici un exemple de ce que pourrait contenir ce fichier :
+Vous allez aussi avoir besoin d'autoriser vos propres expressions, qui ne seraient pas reconnues par défaut. Pour cela, vous pouvez ajouter et utiliser vos dictionnaires personnels, nommé `.aspell.en.pws` pour un dictionnaire personnel anglais. Voici un exemple de ce que pourrait contenir ce fichier :
 
 ```
 personal_ws-1.1 fr 3
@@ -81,7 +81,7 @@ Ensuite, dans ce même fichier de configuration, vous pouvez exécuter votre scr
 script: your_script.sh
 ```
 
-Dans ce script, vous pouvez utiliser la variable d'environnement `$TRAVIS_COMMIT_RANGE`, disponible dans le container Travis, pour récupérer seulement les fichiers qui ont changés dans la pull request du build en cours :
+Dans ce script, vous pouvez utiliser la variable d'environnement `$TRAVIS_COMMIT_RANGE`, disponible dans le container Travis, pour récupérer seulement les fichiers qui ont changé dans la pull request du build en cours :
 
 ```bash
 git diff --name-only $TRAVIS_COMMIT_RANGE
@@ -119,8 +119,8 @@ curl -i -H "Authorization: token $GITHUB_TOKEN" \
     https://api.github.com/repos/eleven-labs/eleven-labs.github.io/issues/$TRAVIS_PULL_REQUEST/comments
 ```
 
-- le token Github doit être caché et non pas en dur dans votre script, vous devez donc ajouter une variable d'environnement dans les paramètres Travis. Pour cela, allez sur cette page : [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings)
-- la variable d'environnement `$TRAVIS_PULL_REQUEST` est automatiquement disponible sur le container Travis et correspond au numéro de la pull request liée au build en cours sur Travis.
+- Le token Github doit être caché et non pas en dur dans votre script, vous devez donc ajouter une variable d'environnement dans les paramètres Travis. Pour cela, allez sur cette page : [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings)
+- La variable d'environnement `$TRAVIS_PULL_REQUEST` est automatiquement disponible sur le container Travis et correspond au numéro de la pull request liée au build en cours sur Travis.
 
 Conclusion
 ==========
@@ -131,4 +131,4 @@ J'espère que ces astuces vous aideront ! Notez que vous pouvez aussi utiliser c
 
 Nous améliorerons très certainement ces scripts et vérifications automatiques lors des prochaines semaines, suivez donc [le repository de notre blog sur Github](https://github.com/eleven-labs/eleven-labs.github.io), pour voir les prochaines mises à jour.
 
-Vos idées d'amélioration sont également les bienvenues : vous pouvez ajouter des commentaires ci-dessous ;)
+Vos idées d'améliorations sont également les bienvenues : vous pouvez ajouter des commentaires ci-dessous ;)
