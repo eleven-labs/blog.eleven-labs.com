@@ -6,9 +6,9 @@ GREEN='\033[0;32m'
 BLUE='\033[0;36m'
 NC='\033[0m' # No Color
 
-MARKEDOWN_FILES_CHANGED=`(git diff --name-only $TRAVIS_COMMIT_RANGE || true) | grep .md`
+MARKDOWN_FILES_CHANGED=`(git diff --name-only $TRAVIS_COMMIT_RANGE || true) | grep .md`
 
-if [ -z "$MARKEDOWN_FILES_CHANGED" ]
+if [ -z "$MARKDOWN_FILES_CHANGED" ]
 then
     echo -e "$GREEN>> No markdown file to check $NC"
 
@@ -16,9 +16,9 @@ then
 fi
 
 echo -e "$BLUE>> Following markdown files were changed in this pull request (commit range: $TRAVIS_COMMIT_RANGE):$NC"
-echo "$MARKEDOWN_FILES_CHANGED"
+echo "$MARKDOWN_FILES_CHANGED"
 
-FOUND_LANGUAGES=`echo "$MARKEDOWN_FILES_CHANGED" | xargs cat | grep "permalink: /" | sed -E 's/permalink: \/(fr|en)\/.*/\1/g'`
+FOUND_LANGUAGES=`echo "$MARKDOWN_FILES_CHANGED" | xargs cat | grep "permalink: /" | sed -E 's/permalink: \/(fr|en)\/.*/\1/g'`
 echo -e "$BLUE>> Languages recognized from the permalinks:$NC"
 echo "$FOUND_LANGUAGES"
 
@@ -39,8 +39,8 @@ fi
 echo -e "$BLUE>> Will use this language as main one:$NC"
 echo "$USE_LANGUAGE"
 
-# cat all markedown files that changed
-TEXT_CONTENT_WITHOUT_METADATA=`cat $(echo "$MARKEDOWN_FILES_CHANGED" | sed -E ':a;N;$!ba;s/\n/ /g')`
+# cat all markdown files that changed
+TEXT_CONTENT_WITHOUT_METADATA=`cat $(echo "$MARKDOWN_FILES_CHANGED" | sed -E ':a;N;$!ba;s/\n/ /g')`
 # remove metadata tags
 TEXT_CONTENT_WITHOUT_METADATA=`echo "$TEXT_CONTENT_WITHOUT_METADATA" | grep -v -E '^(layout:|permalink:|date:|date_gmt:|authors:|categories:|tags:|cover:)(.*)'`
 # remove { } attributes

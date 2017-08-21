@@ -2,7 +2,6 @@
 layout: post
 title: Comment vérifier l'orthographe de vos docs depuis Travis CI?
 excerpt: "Nous allons montrer dans cet article comment vérifier l'orthographe automatiquement dans vos documents markdown, modifiés dans vos pull requests, simplement avec Aspell et Travis CI"
-excerpt: "We will show you how to check the spelling in your markdown documents, changed in your pull requests, very easily using Aspell and Travis CI"
 permalink: /fr/comment-verifier-l-orthographe-de-vos-docs-depuis-travis-ci/
 authors:
     - charles-eric
@@ -14,7 +13,7 @@ tags:
     - CI
     - Travis
     - Aspell
-    - Spelling
+    - Orthographe
 cover: /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/typing.jpg
 ---
 
@@ -46,7 +45,8 @@ cat some_text.md | aspell --lang=en --encoding=utf-8 list
 
 Cette commande va retourner tous les mots qu'Aspell ne connaît pas, c'est à dire non listés dans ses dictionnaires : nos potentielles fautes d'orthographe.
 
-A noter qu'il peut être intéressant d'exécuter cette commande plusieurs fois, en anglais et en français par exemple, surtout si vous rédigez des documents techniques en français qui contiendront forcément aussi beaucoup de termes anglais.
+> À noter :**
+> Il peut être intéressant d'exécuter cette commande plusieurs fois, en anglais et en français par exemple, surtout si vous rédigez des documents techniques en français qui contiendront forcément aussi beaucoup de termes anglais.
 
 Bien-sûr vous allez aussi avoir besoin d'autoriser vos propres expressions, qui ne seraient pas reconnues par défaut. Pour cela, vous pouvez ajouter et utiliser vos dictionnaires personnels, nommé `.aspell.en.pws` pour un dictionnaire personnel anglais. Voici un exemple de ce que pourrait contenir ce fichier :
 
@@ -57,7 +57,7 @@ javascript
 android
 ```
 
-A noter que l'entête de ce fichier (première ligne) est importante : les deux derniers arguments correspondent à la langue et au nombre de mots.
+À noter que l'entête de ce fichier (première ligne) est importante : les deux derniers arguments correspondent à la langue et au nombre de mots.
 
 Ensuite pour utiliser ce dictionnaire personnel, vous devez ajouter cet argument à la commande : `--personal=./.aspell.en.pws`
 
@@ -106,8 +106,8 @@ Nous ne voulons pas que ce script bloque ceux qui souhaitent merger la pull requ
 La façon la plus simple d'envoyer les résultats des précédentes commandes est donc de les poster dans un commentaire sur la pull request Github.
 
 Premièrement vous devrez choisir un utilisateur Github qui sera utilisé pour ajouter un commentaire, et configurer un token d'accès pour cet utilisateur :
-- Connectez vous sur [https://github.com](https://github.com) avec et utilisateur
-- Allez sur [https://github.com/settings/tokens](https://github.com/settings/tokens)
+- Connectez vous sur [https://github.com](https://github.com) avec cet utilisateur
+- Allez sur [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
 - Ajoutez un nom/description au token que vous créez et cochez bien le scope `public_repo` seulement, si votre repository Github est public.
 
 Ensuite, depuis le script exécuté sur Travis, une fois que vous avez les résultats de la commande `aspell`, vous pouvez utiliser `curl` pour appeler l'API Github avec le token précédemment créé :
@@ -127,7 +127,7 @@ Conclusion
 
 Si vous voulez voir le script entier qui nous utilisons pour notre blog, c'est par [ici](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/bin/check-spelling.sh).
 
-J'espère que ces astuces vous aiderons ! Notez que vous pouvez aussi utiliser ce même process pour vérifier vos doc blocks dans votre code, ou vos fichiers de documentation.
+J'espère que ces astuces vous aideront ! Notez que vous pouvez aussi utiliser ce même process pour vérifier vos doc blocks dans votre code, ou vos fichiers de documentation.
 
 Nous améliorerons très certainement ces scripts et vérifications automatiques lors des prochaines semaines, suivez donc [le repository de notre blog sur Github](https://github.com/eleven-labs/eleven-labs.github.io), pour voir les prochaines mises à jour.
 

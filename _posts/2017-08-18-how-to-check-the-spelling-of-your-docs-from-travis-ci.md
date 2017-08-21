@@ -45,7 +45,8 @@ cat some_text.md | aspell --lang=en --encoding=utf-8 list
 
 This command will return all the words that Aspell does not know, not listed in its dictionaries: so the words that might be misspelled.
 
-Note that you might want to execute this command many times, in English and French for example, especially if you write technical documents in French that will also contain many English words.
+> Note:
+> You might want to execute this command many times, in English and French for example, especially if you write technical documents in French that will also contain many English words.
 
 Of course you will also need to allow personal words. To do so, you can add and use custom dictionaries files, named `.aspell.en.pws` for an English personal dictionary. Here is an example of what this file could contain:
 
@@ -100,13 +101,13 @@ cat your_file.md | sed  -n '/^```/,/^```/ !p'
 How to send the results to Github pull request?
 ===============================================
 
-We don't want this script to block the reviewers to merge the pull request, so the first thing to do is to add `exit 0` at the end of the script that will be executed from Travis CI. Otherwise if an error code is returned by the script, Travis will mark the pull request status as failing, and will block the user from merging this merge request.
+We don't want this script to block the reviewers to merge the pull request, so the first thing to do is to add `exit 0` at the end of the script that will be executed from Travis CI. Otherwise if an error code is returned by the script, Travis will mark the pull request status as failing, and will block the user from merging this pull request.
 
 The easiest thing that we can do to send the results of previous commands is to post them in a comment on the Github pull request.
 
 First you need to choose the Github user that will be used to add this comment, and configure an access token for this user:
 - Login to [https://github.com](https://github.com) with this user
-- Go to [https://github.com/settings/tokens](https://github.com/settings/tokens)
+- Go to [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
 - Add a name/description for the token you're creating, and check the scope `public_repo` only, if your Github repository is public.
 
 Then, from the script executed on Travis, once you've got the results of the `aspell` command, you can use `curl` to call Github API, with the token previously created:
