@@ -24,7 +24,7 @@ We'll create an API around a single resource: _movie._ Indeed, we will build som
 The first thing we need to do is creating our data model. A movie is made of a title, a release date, actors, a director... Many properties known from everyone.
 If we go through the documentation, we can see that we can generate our entities with [Schema.org](http://schema.org). This allows us to use a common language to define our usual resources (_Book, Organization_, _Person_…), but it's also understood by search engines like Google or Yahoo.
 
-Good for us, there is a _Movie_ entity from _Schema.org_, with many interesting properties. For simplicity, we'll only work with a some of them.
+Good for us, there is a _Movie_ entity from _Schema.org_, with many interesting properties. For simplicity, we'll only work with some of them.
 
 ```yaml
 # app/config/schemas.yml
@@ -43,7 +43,7 @@ To generate our entity, we only need to execute the following command:
 vendor/bin/schema generate-types src/ app/config/schema.yml
 ```
 
-Yay ! If you go to `src/AppBundle/Entity/Movie.php`, we get an entity generated automatically that has all kinds of validation according to the types set in _Schema.org_.
+Yay! If you go to `src/AppBundle/Entity/Movie.php`, we get an entity generated automatically that has all kinds of validation according to the types set in _Schema.org_.
 
 Last but not least, we need to update the database to be able to play with our movie API:
 
