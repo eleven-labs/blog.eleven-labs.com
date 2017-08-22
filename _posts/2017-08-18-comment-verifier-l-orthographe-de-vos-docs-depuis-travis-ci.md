@@ -45,7 +45,7 @@ cat some_text.md | aspell --lang=en --encoding=utf-8 list
 
 Cette commande va retourner tous les mots qu'Aspell ne connaît pas, c'est à dire non listés dans ses dictionnaires : nos potentielles fautes d'orthographe.
 
-> À noter :**
+> À noter :
 > Il peut être intéressant d'exécuter cette commande plusieurs fois, en anglais et en français par exemple, surtout si vous rédigez des documents techniques en français qui contiendront forcément aussi beaucoup de termes anglais.
 
 Vous allez aussi avoir besoin d'autoriser vos propres expressions, qui ne seraient pas reconnues par défaut. Pour cela, vous pouvez ajouter et utiliser vos dictionnaires personnels, nommé `.aspell.en.pws` pour un dictionnaire personnel anglais. Voici un exemple de ce que pourrait contenir ce fichier :
