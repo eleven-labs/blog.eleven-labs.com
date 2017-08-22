@@ -1,7 +1,7 @@
 task :default => [:lint, :test, :deploy]
 
 # lint
-task :lint => [:scss_lint]
+task :lint => [:scss_lint, :check_spelling]
 
 # testsuite
 task :test => [:jekyll_build]
@@ -12,6 +12,10 @@ task :deploy => [:algolia_push]
 # lint scss files
 task :scss_lint do
   sh 'scss-lint _sass/'
+end
+
+task :check_spelling do
+  sh './bin/check-spelling.sh'
 end
 
 # test jekyll build
