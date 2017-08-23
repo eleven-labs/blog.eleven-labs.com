@@ -16,19 +16,19 @@ cover: /assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/
 
 Cet article fait suite à un workshop / live-coding que j'ai eu l'occasion d'organiser chez Eleven Labs pour une initiation au langage Go.
 
-Les workshops sont pour moi le meilleur moyen d'entrer dans un sujet technique que l'on ne maîtrise pas encore car il permet vraiment la pratique du sujet et en plus d'être accompagné par une personne (pas forcémment experte sur le sujet) qui a déjà pratiquée le sujet, qui a travaillée son workshop et qui donc saura vous donner les billes pour commencer.
+Les workshops sont pour moi le meilleur moyen d'entrer dans un sujet technique que l'on ne maîtrise pas encore. Ils permettent une pratique concrète du sujet, tout en étant accompagné par une personne (pas forcémment experte sur le sujet) qui a déjà été confrontée au sujet, qui a travaillé son workshop et qui saura donc vous donner les billes nécessaires pour bien commencer.
 
 Définition du sujet
 -------------------
 
 L'objectif premier de ce workshop était de permettre aux participants (la plupart n'ayant jamais écrit une ligne de Go) de sortir de ces trois heures de live-coding en ayant appris la logique du langage ainsi qu'en sachant maîtriser ses concepts.
 
-Il fallait alors trouver un sujet qui permettent de pratiquer tous ces concepts, qui puisse paraître complexe au début mais qui en fait est rapidement développé. Après un temps de réflexion, j'ai donc choisi de partir sur un cas concret sur lequel chaque développeur participant au workshop peut être amené à avoir besoin au niveau web : un worker (ou message queue) en Go.
+Il fallait alors trouver un sujet qui permette de pratiquer tous ces concepts, qui puisse paraître complexe au début mais qui en fait soit rapidement développé. Après un temps de réflexion, j'ai donc choisi de partir sur un cas concret que chaque développeur participant au workshop pourra un jour trouver utile au niveau web : un worker (ou message queue) en Go.
 
 Présentation de WorkMQ
 ----------------------
 
-WorkMQ est donc le nom de code du projet (ou plutôt de la librairie) que nous allons développer durant ce workshop.
+WorkMQ est le nom de code du projet (ou plutôt de la librairie) développé durant ce workshop.
 
 L'idée est simple :
 
@@ -40,16 +40,16 @@ Avant de rentrer dans les détails, voici un schéma expliquant le fonctionnemen
 
 ![WorkMQ Schema](/assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/schema.jpg)
 
-Comme vous pouvez le voir sur ce diagramme, nous avons ici quatre `Queues` de définies et chacune d'entre elles dispose de trois `Workers`.
+Comme vous pouvez le voir sur ce diagramme, nous avons ici quatre `Queues` de définies, et chacune d'entre elles dispose de trois `Workers`.
 
 Notre librairie (`WorkMQ`, ici le point central), fournira un [Channel (au sens du langage Go)](https://golang.org/ref/spec#Channel_types){:target="_blank"} dans lequel seront stockés les messages de la queue correspondante qui seront dépilés par le premier worker disponible.
 
 Configuration
 -------------
 
-Loin d'être le meilleur moyen de gérer la configuration d'une application, le fichier `json` reste une des manières simple et qui permet d'écrire les premières lignes de Go tout en permettant de comprendre les principes de base du langage.
+Loin d'être le meilleur moyen de gérer la configuration d'une application, le fichier `json` reste une des manières simple qui permet d'écrire les premières lignes de Go tout en permettant de comprendre les principes de base du langage.
 
-En effet, pour lire la configuration (écrite donc dans un fichier JSON) et la transformer sous forme de `struct` (structures) Go, nous avons ainsi commencé par définir la structure de données de notre configuration :
+Pour lire la configuration (écrite donc dans un fichier JSON) et la transformer sous forme de `struct` (structures) Go, nous avons commencé par définir la structure de données de notre configuration de la manière suivante :
 
 ```json
 {
@@ -70,9 +70,9 @@ En effet, pour lire la configuration (écrite donc dans un fichier JSON) et la t
 }
 ```
 
-Simple et efficace, celle-ci nous permet de définir les ports `UDP` (pour l'envoie des messages) et `HTTP` (pour l'export de statistiques) ainsi que les noms de nos `queues` et les identifiants des `processor` associés. Nous reviendrons sur les processors un peu plus tard.
+Simple et efficace, celle-ci nous permet de définir les ports `UDP` (pour l'envoi des messages) et `HTTP` (pour l'export de statistiques) ainsi que les noms de nos `queues` et les identifiants des `processor` associés. Nous reviendrons sur les processors un peu plus tard.
 
-Ce qui est intéressant est que nous allons également pouvoir contrôler ici est, pour chaque `queue`, le nombre de workers que nous souhaitons voir disponible.
+Ce qui est intéressant et que nous allons également pouvoir contrôler ici est, pour chaque `queue`, le nombre de workers que nous souhaitons voir disponibles.
 
 Côté Go, nous avons commencé par importer les librairies nécessaires, ici, que des packages natifs, ce qui m'a permis d'expliquer rapidement le concept d'import de librairies internes mais aussi externes ainsi que que la logique de namespaces en répertoires dans un projet :
 
@@ -84,7 +84,7 @@ import (
 )
 ```
 
-Puis, nous avons donc définis les `struct` associées à chaque élément de configuration JSON :
+Puis, nous avons donc défini les `struct` associées à chaque élément de configuration JSON :
 
 ```go
 // Config is the configuration type definition.
@@ -106,7 +106,7 @@ type QueueConfig struct {
 }
 ```
 
-Jusque là, rien de particulier si ce n'est ce familiariser avec le typage des données et la notation.
+Jusque là, rien de particulier si ce n'est se familiariser avec le typage des données et la notation.
 
 Il était maintenant temps d'écrire notre première `fonction` en Go, pour lire le fichier `config.json` à la racine du projet et importer les données de JSON vers Go :
 
@@ -131,9 +131,9 @@ Il est important ici de discuter avec les participants de la gestion d'erreur, d
 Le coeur de notre librairie
 ---------------------------
 
-La configuration prête à être exploitée, nous avons pu commencer à mettre en place le coeur de notre librairie. L'occasion d'introduire la notion de pointeurs, quand et comment l'utiliser.
+La configuration prête à être exploitée, nous avons pu commencer à mettre en place le coeur de notre librairie. L'occasion d'introduire la notion de pointeurs, quand et comment les utiliser.
 
-Nous avons donc écris la structure de données ainsi que la fonction d'initialisation de notre librairie :
+Nous avons donc écrit la structure de données ainsi que la fonction d'initialisation de notre librairie :
 
 ```go
 type Workmq struct {
@@ -177,7 +177,7 @@ Les workers (partie intégrante du coeur)
 Le type de structure `Worker` est en effet partie intégrante de notre librairie. Un worker va :
 * Se voir associer à une `queue` (comme défini dans la configuration),
 * Se voir associer un `Processor` (comme défini dans la configuration) pour traiter les messages de cette `queue`,
-* Récupérer le `channel` de messages pour traiter les messages arrivant,
+* Récupérer le `channel` de messages pour traiter les messages arrivants,
 * Et enfin, récupérer une instance de `RateCounter`, une librairie externe que nous utilisons pour calculer le nombre de messages traités à la seconde.
 
 Voici la définition de nos workers :
@@ -216,13 +216,13 @@ func (w *Worker) Process() {
 }
 ```
 
-Première chose importante à expliquer ici, dès que vous rencontrez le cas, c'est la notation `func (w *Worker) Process() {` permettant à cette méthode `Process()` d'être appelée uniquement sur un type de structure `Workmq`.
+La première chose importante à retenir, est que la notation `func (w *Worker) Process() {` permet à cette méthode `Process()` d'être appelée uniquement sur un type de structure `Worker`.
 
 Ensuite, la notion intéressante à expliquer ici également est la notation des `channel` :
-* `<-chan` : signifie que le channel sera utilisé ici en lecture uniquement,
+* `<-chan` : signifie que le channel sera utilisé en lecture uniquement,
 * `chan<-` : signifie que le channel sera utilisé pour recevoir des données uniquement.
 
-Enfin, vous pouvez également faire un tour sur les boucles `for` et leur notations avec `range`.
+Enfin, vous pouvez également faire un tour sur les boucles `for` et leurs notations avec `range`.
 
 Les processors (partie intégrante du coeur)
 -------------------------------------------
@@ -257,11 +257,12 @@ func (w *Workmq) RemoveProcessor(name string) {
 }
 ```
 
-Les notions à expliquer ici étaient les notations `if _, ok := w.Processors[name]; !ok` qui permettent de rentrer dans la condition en cas d'erreur (`!ok`) ou non (`ok`) ainsi que comment utiliser `nil` et `error` pour retourner notre processor ou aucun mais tout de même retourner une erreur si le cas se présentait de ne pas disposer du processor demandé.
+Les notions à expliquer ici étaient :
+-les notations `if _, ok := w.Processors[name]; !ok` qui permettent de rentrer dans la condition en cas d'erreur (`!ok`) ou non (`ok`) --comment utiliser `nil` et `error` pour retourner notre processor ou aucun, mais tout de même retourner une erreur si le cas se présentait de ne pas disposer du processor demandé.
 
 Aussi, vous noterez la notation `delete(w.Processors, name)` qui permet de supprimer un élément d'une `map`.
 
-Toutes ces petites choses n'ont l'air de pas grand chose mais sont intéressantes à apprendre lorsque vous découvrez le langage Go. Sinon, vous allez devoir aller fouiller dans la documentation à chaques fois pour savoir comment l'écrire.
+Toutes ces petites choses ne paient pas de mine mais sont intéressantes à apprendre lorsque vous découvrez le langage Go. Sinon, vous allez devoir aller fouiller dans la documentation à chaque fois pour savoir comment l'écrire.
 
 La réception en UDP et l'exposition en HTTP
 -------------------------------------------
@@ -363,4 +364,4 @@ Pour ce live-coding / workshop, j'avais deux objectifs :
 
 Je pense que le contrat est rempli avec ce projet et j'espère qu'il vous servira pour découvrir Go vous-même ou le faire découvrir à vos collègues.
 
-Aussi, n'hésitez pas à contacter Eleven Labs ou à me contacter directement si vous souhaitez organiser des sessions de workshop sur des technologies.
+N'hésitez pas à contacter Eleven Labs ou à me contacter directement si vous souhaitez organiser des sessions de workshop sur des technologies.
