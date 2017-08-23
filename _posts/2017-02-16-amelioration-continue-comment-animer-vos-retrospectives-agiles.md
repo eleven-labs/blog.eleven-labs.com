@@ -53,7 +53,7 @@ Combien de temps ?
 
 Comme chacune des réunions agiles, pour plus d'efficacité, la rétrospective doit toujours être définie et limitée dans le temps : **time-boxée**.
 
-Evidemment pour que cette **durée maximale** soit respectée, il faut que celle-ci soit **annoncée** **clairement** avant de commencer. De plus, un membre de l’équipe peut jouer le rôle de “**gardien du temps**” qui devra informer régulièrement l’équipe du temps passé et restant. Attention, son rôle est seulement de notifier l’équipe et en aucun cas de couper les conversations pour imposer son timing.
+Évidemment pour que cette **durée maximale** soit respectée, il faut que celle-ci soit **annoncée** **clairement** avant de commencer. De plus, un membre de l’équipe peut jouer le rôle de “**gardien du temps**” qui devra informer régulièrement l’équipe du temps passé et restant. Attention, son rôle est seulement de notifier l’équipe et en aucun cas de couper les conversations pour imposer son timing.
 
 On convient généralement que ce rituel ne doit pas dépasser 45 minutes par semaine de Sprint, soit **1 heure 30 pour des itérations de 2 semaines**. Il peut être bien de réduire cette durée maximale à 1 heure pour une équipe plus expérimentée.
 
