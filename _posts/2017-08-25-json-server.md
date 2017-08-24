@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JSON Server
-excerpt: Accelerez le prototypage de vos applications, en imitant vos APIs avec JSON Server.
+excerpt: Accélérez le prototypage de vos applications, en imitant vos APIs avec JSON Server.
 authors:
     - kelfarsaoui
 permalink: /fr/json-server/
@@ -336,9 +336,9 @@ Jusqu'à présent, on n'a vu que les routes `json-server`, il y a encore plein d
 
 ### La génération de données aléatoire
 
-L'[exemple de base de Typicode](https://github.com/typicode/json-server#generate-random-data) présente un script simple qui génère le point d'accès `users`. Ici, on va écrire des points d'accès qui servent des données générées de manière aléatoire en utilisant un module qui génére de fausses données. Personnellement, j'utilise [faker.js](https://github.com/Marak/faker.js), mais il y en a d'autres que vous pouvez explorer comme [Chance](https://github.com/chancejs/chancejs) et [Casual](https://github.com/boo1ean/casual).
+L'[exemple de base de Typicode](https://github.com/typicode/json-server#generate-random-data) présente un script simple qui génère le point d'accès `users`. Ici, on va écrire des points d'accès qui servent des données générées de manière aléatoire en utilisant un module qui génère de fausses données. Personnellement, j'utilise [faker.js](https://github.com/Marak/faker.js), mais il y en a d'autres que vous pouvez explorer comme [Chance](https://github.com/chancejs/chancejs) et [Casual](https://github.com/boo1ean/casual).
 
-L'aspect aléatoire de la génération ne se produit qu'une seule fois, et c'est seulement pendant le démarage du serveur. Cela signifie que `json-server` ne nous donnera pas une réponse différente pour chaque requête. Finalement, on doit installer le générateur de données fausses, puis écrire le script de génération.
+L'aspect aléatoire de la génération ne se produit qu'une seule fois, et c'est seulement pendant le démarrage du serveur. Cela signifie que `json-server` ne nous donnera pas une réponse différente pour chaque requête. Finalement, on doit installer le générateur de données fausses, puis écrire le script de génération.
 
 ```bash
 $ yarn add faker
@@ -421,7 +421,7 @@ Imaginons qu'on est censés effectuer des requêtes sur plusieurs points d'accè
 /rpierlot/articles
 ```
 
-`json-server` permet de spécifier des routes personnalisées. Elle vont permettre de résoudre ce problème en utilisant un mapping qui résout les routes réeles dans notre schéma json :
+`json-server` permet de spécifier des routes personnalisées. Elle vont permettre de résoudre ce problème en utilisant un mapping qui résout les routes réelles dans notre schéma json :
 
 ```json
 {
@@ -488,7 +488,7 @@ $ curl http://localhost:3000/api/groups/ducks/stats
 
 ### Middlewares
 
-Dans le cas où l'on veut ajouter un comportement spécifique à notre instance json-server, on peut utiliser des middlewares personnalisés, qu'on intégre dans le serveur de la même manière que lors du développement d'une application express classique. Dans cette section, on va explorer un exemple utile d'une fonctionnalité qui est habituellement nécessaire.
+Dans le cas où l'on veut ajouter un comportement spécifique à notre instance json-server, on peut utiliser des middlewares personnalisés, qu'on intègre dans le serveur de la même manière que lors du développement d'une application express classique. Dans cette section, on va explorer un exemple utile d'une fonctionnalité qui est habituellement nécessaire.
 
 Imaginez qu'on veut accéder à une ressource sur l'API, mais il s'avère que cette ressource est sécurisée. On peut dire qu'il s'agit simplement de données, et qu'on sera satisfait par les utiliser sans se soucier de la sécurité. Mais, on sait que ce n'est le bon choix, on veut que l'application soit prête lorsque la future API est prête, afin de tout tester. Donc, au lieu de contourner la sécurité, on va utiliser les middlewares pour mettre en place une couche d'authentification.
 
