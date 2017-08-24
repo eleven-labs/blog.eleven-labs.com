@@ -421,7 +421,7 @@ Imaginons qu'on est censés effectuer des requêtes sur plusieurs points d'accè
 /rpierlot/articles
 ```
 
-`json-server` permet de spécifier des routes personnalisées. Elle vont permettre de résoudre ce problème en utilisant un mapping qui résout les routes réelles dans notre schéma json :
+`json-server` permet de spécifier des routes personnalisées. Elles vont permettre de résoudre ce problème en utilisant un mapping qui résout les routes réelles dans notre schéma json :
 
 ```json
 {
