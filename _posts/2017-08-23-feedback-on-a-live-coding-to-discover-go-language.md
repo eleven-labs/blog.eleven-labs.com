@@ -16,38 +16,38 @@ cover: /assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/
 
 This blog post follows a workshop / live-coding session I organized at Eleven Labs for an initiation to Go language.
 
-Workshops are to me the best way to enter in a technical subject that we don't already know because it allows to practice it using a real subject and we are also helped by a person that knows the subject (even if this person could not be an expert on it) as the workshop has been planned and organized so he could be really helpful to you.
+Workshops are to me the best way to enter in a technical subject that we don't already know. It allows to practice it using a real subject, with the help of a person that knows the subject (even if this person may not be a total expert) as the workshop has been planned and organized so he could be really helpful to you.
 
 Define a subject
 ----------------
 
-Main objective for this workshop was to allow participants (most of them never write a single line of Go) to go out of these three hours of live-coding by completely understanding the logic of the Go language and also by knowing the main concepts.
+The main objective for this workshop was to allow participants (most of them never wrote a single line of Go) to walk out of these three hours of live-coding, completely understanding the logic of the Go language and knowing the main concepts.
 
-I had to find a subject that allows to practice these main concepts and also that sounds like a complex and complete application but is in fact a simple one that could be developed quickly during the workshop. After a reflection time I've chosen to go on a concrete case on which every developer could encounter the need: a worker (or message queue).
+I had to find a subject that allows to practice these main concepts and also that sounds like a complex and complete application, but is in fact a simple one that could be developed quickly during the workshop. After a reflection time I've chosen to go on a concrete case on which every developer could encounter the need: a worker (or message queue).
 
 Presentation of WorkMQ
 ----------------------
 
 WorkMQ is the name of the project (library) we will develop during this workshop.
 
-Idea is pretty simple:
+The idea is pretty simple:
 
 * The application must receive messages in input and each of them has to be linked to a `Queue` (waiting line),
 * The application must process these messages by using a defined number of `Workers` (thread that will process the message),
 * The application must expose some statistics of current usage over HTTP.
 
-Before going in details, here is a diagram representing the features of our library:
+Before going into details, here is a diagram representing the features of our library:
 
 ![WorkMQ Diagram](/assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/schema.jpg)
 
 As you can see on this diagram, we have four `Queues` defined and each of them has three `Workers`.
 
-Our library (`WorkMQ`, here the central point) will gives a [Channel (a Go one)](https://golang.org/ref/spec#Channel_types){:target="_blank"} in which messages will be stored for corresponding queue. These messages will then be processed by the first available worker.
+Our library (`WorkMQ`, here the central point) will give a [Channel (a Go one)](https://golang.org/ref/spec#Channel_types){:target="_blank"} in which messages will be stored for corresponding queue. These messages will then be processed by the first available worker.
 
 Configuration
 -------------
 
-Far from being the best way to manage the configuration of an application, the `json` file is still a simple way to manage it and will allow us to write our first lines of Go by understanding the language basics.
+Far from being the best way to manage the configuration of an application, the `json` file is still a simple one to manage it, and will allow us to write our first lines of Go by understanding the language basics.
 
 Indeed, in order to read the configuration (written in a JSON file) and transform it on a Go `struct`, we have started by defining the JSON structure we will need in the application:
 
@@ -72,7 +72,7 @@ Indeed, in order to read the configuration (written in a JSON file) and transfor
 
 Simple and efficient, this configuration allows to define `UDP` port (on which we will receive messages), `HTTP` one (to expose usage statistics) and also the names of our `queues` and `processor` identifiers associated to each queue. We will talk about processors later.
 
-What is interesting in this part and that will be able to control here is, for each `queue`, the number of workers we want to be available for each queue.
+What is interesting in this part is that we will be able to control for each `queue`, the number of workers we want to be available.
 
 On Go side, we've started to import core needed libraries, and I took advantage of this moment to explain the principles of namespaces in Go, project structure and how to import both internal and external libraries:
 
@@ -126,7 +126,7 @@ func GetConfig() Config {
 }
 ```
 
-It is important here to discuss with participants about error handling, multiple returned values, variables declaration with and without direct assignation, to sum up, a lot of quick elements to know when developing in Go.
+It is important here to discuss with participants the error handling, multiple returned values, variables declaration with and without direct assignation. To sum up, these are a lot of quick elements to know about when you are developing in Go.
 
 Our library's core
 ------------------
@@ -165,12 +165,12 @@ func Init() *Workmq {
 }
 ```
 
-In this piece of code which initialize a pointer of `Workmq` struct, most of subjects I would like to talk about was:
+In this piece of code which initialize a pointer of `Workmq` struct, most of the subjects I talk about are:
 * Global structure of `Workmq` (configuration, queues, processors, workers, counters, ...),
 * `Channels` notion,
 * Synchronization (wait) of `goroutines` while exploiting a `channel` into them.
 
-In short terms, the most interesting concepts and the biggest part of the project is explained here.
+In short terms, the most interesting concepts and the biggest part of the project are explained here.
 
 Workers (part of core)
 ----------------------
@@ -258,9 +258,9 @@ func (w *Workmq) RemoveProcessor(name string) {
 }
 ```
 
-Notions to explain here was some little sexy things like the `if _, ok := w.Processors[name]; !ok` notation that will allow to enter in the condition in case of errors (`!ok`) or not (`ok`) and also how to use `nil` and `error` to return an error or our processor when it is found.
+The notions to explain here were some little sexy things like the `if _, ok := w.Processors[name]; !ok` notation that will allow to enter in the condition in case of errors (`!ok`) or not (`ok`) and also how to use `nil` and `error` to return an error or our processor when it is found.
 
-Also, you can explain the `delete(w.Processors, name)` notation that allows to remove an element of the `map` from its name.
+You can also explain the `delete(w.Processors, name)` notation that allows to remove an element of the `map` from its name.
 
 All of these little things seem to be nothing but are really helpful and it's important to be able to use them without googling each time to know how to achieve your goal.
 
@@ -309,13 +309,13 @@ Messages are received on a JSON format and must respect the following structure:
 }
 ```
 
-This way, we listen on each new elements sent on configuration defined port and we transform the `[]byte` received into a `Message` structure thanks to a `TransformStringToMessage` we have defined (quite the same work of transforming JSON configuration to Go struct).
+This way, we listen on each new elements sent on configuration defined port and we transform the `[]byte` received into a `Message` structure thanks to a `TransformStringToMessage` we have defined (quite the same work as transforming JSON configuration to Go struct).
 
 Finally, we added this message to the corresponding queue channel with the `w.Queues[message.Queue] <- message` notation.
 
 At this time, the message will be processed by the first available worker in our queue workers pool.
 
-Last step! We also had to expose some statistics using a HTTP server. On a same way, we have written a `ListenHTTP()` function that is running under a separated `goroutine`:
+Last step! We also had to expose some statistics using a HTTP server. In a same way, we have written a `ListenHTTP()` function that is running under a separated `goroutine`:
 
 ```go
 // ListenHTTP creates a HTTP server to expose statistics information
@@ -347,7 +347,7 @@ func (w *Workmq) ListenHTTP() {
 }
 ```
 
-In this code, we loop over each queues to display counters data on output.
+In this code, we loop over each queue to display counters data on output.
 
 In order to let you have a better visualization of the output, here is a sample:
 
@@ -359,9 +359,9 @@ Conclusion
 Before any conclusion, the open-source code of this library is available here: [https://github.com/unikorp/workmq](https://github.com/unikorp/workmq){:target="_blank"}.
 
 I had two main objectives for this live-coding/workshio session:
-* Allow to my participants to write a complete and functional open-source library in three hours,
-* Allow to my participants to discover most of the Go language features and concepts so that they are able to develop a Go library or application by themselves the day after.
+* Allow my participants to write a complete and functional open-source library in three hours,
+* Allow my participants to discover most of the Go language features and concepts so that they are able to develop a Go library or application by themselves the day after.
 
-I think the contract is fulfilled with this workshop and I hope it will be useful to you to discover Go language or to let your colleagues know it.
+I think the contract is fulfilled with this workshop and I hope it will be useful to you, to discover Go language or to let your colleagues know about it.
 
-Also, do not hesitate to contact Eleven Labs or contact me directly if you want to organize workshop sessions on web technologies.
+To conclude, do not hesitate to contact Eleven Labs or me directly if you want to organize workshop sessions on web technologies.
