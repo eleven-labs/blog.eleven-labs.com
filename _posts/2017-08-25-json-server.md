@@ -579,7 +579,7 @@ GET /api/groups/ducks/stats 200 4.609 ms - 94
 
 <a name="nodejs-module"></a>
 
-### As a NodeJS module
+### En tant que module NodeJS
 
 `json-server` est une application Express, ce qui signifie que nous pouvons l'utiliser dans une application NodeJS/Express existante pour réaliser des comportements personnalisés. Voici un exemple simple qui montre comment personnaliser le logger :
 
