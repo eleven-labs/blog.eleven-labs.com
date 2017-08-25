@@ -24,9 +24,9 @@ Bonjour, aujourd'hui, je vais parler de `json-server`, de la motivation qui pous
 
 Disons que vous travaillez sur votre application (Javascript, PHP, IOS, Android, ...) et que vous souhaitez consommer les données d'une certaine API. Sauf qu'il s'avère que cette API est encore en développement. La première étape consiste à travailler avec de fausses données, soit codées en dur dans une certaine constante (à éviter), soit en utilisant un fichier JSON statique, ce qui sera un peu difficile à gérer. Pourquoi ? Vous êtes un bon développeur qui aime faire le bon choix; vous voulez que votre application puisse effectuer des mises à jour de données, en utilisant des requêtes HTTP (comme GET, POST... etc.), et vous souhaitez conserver vos mises à jour. Malheureusement, vous ne pouvez pas faire tout cela en utilisant un fichier statique, vous devez trouver un moyen de le rendre dynamique. Donc, à moins que votre collègue ait fini de développer l'API, vous aurez besoin d'une aide sérieuse.
 
-`json-server` nous permet d'imiter une API et de fournir un accès dynamique aux données. cela veut dire qu'on peut lire, ajouter, mettre à jour et supprimer des données (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`).
+`json-server` nous permet d'imiter une API et de fournir un accès dynamique aux données. Cela veut dire qu'on peut lire, ajouter, mettre à jour et supprimer des données (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`).
 
-Il fournis des cas d'utilisation d'URL comme :
+Il fournit des cas d'utilisation d'URL comme :
 
 - [Les routes](#routes) (`/articles/1`)
 - [Les filtres](#filters) (`/articles/1/comments?author.username=rpierlot`)
@@ -34,7 +34,7 @@ Il fournis des cas d'utilisation d'URL comme :
 - [La recherche intégrale de texte](#full-text-search) (`/articles?q=graphql`)
 - [Les relations](#relationships) (`/articles?_embed=comments`)
 
-Et d'autres choses diverses comme:
+Et d'autres choses diverses comme :
 
 - `CORS` & `JSONP`
 - La possibilité d'accéder aux schémas à distance
@@ -112,7 +112,7 @@ Pour le remplir, on peut le faire à la main, ou utiliser un générateur de jso
 }
 ```
 
-Maintenant, on peut exécuter `json-server` afin qu'on puisse accéder aux URL que `json-server` a créés.
+Maintenant, on peut exécuter `json-server` afin de pouvoir accéder aux URL que `json-server` a créées.
 
 ```bash
 $ json-server db.json
@@ -162,7 +162,7 @@ $ curl http://localhost:3000/articles/1
 
 ### Les routes
 
-On peut utiliser presque toute sortes de requête : par exemple, pour insérer (créer) un nouvel auteur, on peut utiliser : `POST http://localhost:3000/authors`
+On peut utiliser presque toutes sortes de requêtes : par exemple, pour insérer (créer) un nouvel auteur, on peut utiliser : `POST http://localhost:3000/authors`
 
 ```bash
 $ curl --data-urlencode "title=Vincent Composieux" --data "username=vcomposieux" http://localhost:3000/authors
@@ -188,7 +188,7 @@ $ curl --data-urlencode "body=Cool article ;-)" http://localhost:3000/articles/1
 }
 ```
 
-Idem avec la création d'un article par l'auteur ayant l'id 3:
+Idem avec la création d'un article par l'auteur ayant l'id 3 :
 
 ```bash
 $ curl --data-urlencode "title=GraphQL" http://localhost:3000/authors/3/articles
@@ -203,15 +203,15 @@ $ curl --data-urlencode "title=GraphQL" http://localhost:3000/authors/3/articles
 
 #### Filtres, tri et opérateurs
 
-**Le filtrage** se fait à l' aide de simples paramètres de requête : `GET http://localhost:3000/articles?title=GraphQL`.
+**Le filtrage** se fait à l'aide de simples paramètres de requête : `GET http://localhost:3000/articles?title=GraphQL`.
 
-**Le tri** est aussi simple que d'ajouter les paramètres `_sort` et `_order` (`asc` & `desc`) dans la requête:
+**Le tri** est aussi simple que d'ajouter les paramètres `_sort` et `_order` (`asc` & `desc`) dans la requête :
 
 `GET http://localhost:3000/articles?_sort=likes`
 
 (En supposant qu'on a ajouté le champ `likes` à chaque article). Le tri est ascendant par défaut.
 
-Dans le cas où l'on veux trier par plusieurs propriétés, on peut écrire les propriétés séparées par une virgule:
+Dans le cas où l'on veux trier par plusieurs propriétés, on peut écrire les propriétés séparées par une virgule :
 
 `GET http://localhost:3000/articles?_sort=author,score&_order=desc,asc`
 
@@ -221,7 +221,7 @@ Dans le cas où l'on veux trier par plusieurs propriétés, on peut écrire les 
 * `_gt` (greater than), `_lt` (less than), `_gte` (greater than or equal) et `_lte` (less than or equal) : `GET http://localhost:3000/comments?score_gte=5` (en supposant qu'on a un champ `score` dans les commentaires).
 
 * `_ne` (not equal) négation d'une expression `GET http://localhost:3000/comments?articleId_ne=2`
-* `_like` est un opérateur qui peut être appliqué à des chaînes de caractère, il donne le même résultat que le `LIKE` de `SQL`. `GET http://localhost:3000/articles?title_like=API`
+* `_like` est un opérateur qui peut être appliqué à des chaînes de caractères, il donne le même résultat que le `LIKE` de `SQL`. `GET http://localhost:3000/articles?title_like=API`
 
 <a name="pagination"></a>
 
@@ -330,7 +330,7 @@ $ curl http://localhost:3000/comments?_expand=article
 ]
 ```
 
-Jusqu'à présent, on n'a vu que les routes `json-server`, il y a encore plein de chose à découvrir.
+Jusqu'à présent, on n'a vu que les routes `json-server`, mais il y a encore plein de choses à découvrir.
 
 <a name="random-data"></a>
 
@@ -412,7 +412,7 @@ Et on peut toujours effectuer des requêtes comme on l'a vu dans la section des 
 
 ### Les routes personnalisées
 
-Imaginons qu'on est censés effectuer des requêtes sur plusieurs points d'accès différents sur la future API, et que ces paramètres ne contiennent pas les mêmes URI:
+Imaginons qu'on est censés effectuer des requêtes sur plusieurs points d'accès différents sur la future API, et que ces paramètres ne contiennent pas les mêmes URI :
 
 ```url
 /api/dashboard
@@ -462,7 +462,7 @@ $ json-server --watch db2.json --routes routes.json
   Watching...
 ```
 
-Maintenant, on peut effectuer les requêtes personnalisées pour voir les résultats:
+Maintenant, on peut effectuer les requêtes personnalisées pour voir les résultats :
 
 ```bash
 $ curl http://localhost:3000/api/dashboard
@@ -490,7 +490,7 @@ $ curl http://localhost:3000/api/groups/ducks/stats
 
 Dans le cas où l'on veut ajouter un comportement spécifique à notre instance json-server, on peut utiliser des middlewares personnalisés, qu'on intègre dans le serveur de la même manière que lors du développement d'une application express classique. Dans cette section, on va explorer un exemple utile d'une fonctionnalité qui est habituellement nécessaire.
 
-Imaginez qu'on veut accéder à une ressource sur l'API, mais il s'avère que cette ressource est sécurisée. On peut dire qu'il s'agit simplement de données, et qu'on sera satisfait par les utiliser sans se soucier de la sécurité. Mais, on sait que ce n'est le bon choix, on veut que l'application soit prête lorsque la future API est prête, afin de tout tester. Donc, au lieu de contourner la sécurité, on va utiliser les middlewares pour mettre en place une couche d'authentification.
+Imaginez qu'on veuille accéder à une ressource sur l'API, mais qu'il s'avère que cette ressource est sécurisée. On peut dire qu'il s'agit simplement de données, et qu'on se satisferait de les utiliser sans se soucier de la sécurité. Mais, on sait que ce n'est le bon choix, on veut que l'application soit prête lorsque la future API est prête, afin de tout tester. Donc, au lieu de contourner la sécurité, on va utiliser les middlewares pour mettre en place une couche d'authentification.
 
 ```js
 // auth.js
@@ -532,7 +532,7 @@ Et on peut voir le log avec le status HTTP `401` :
 GET /api/groups/ducks/stats 401 12.180 ms - 29
 ```
 
-Lorsque on affiche les en-têtes de la réponse, on reconnaît cet en-tête `WWW-Authenticate: Basic realm="Access to the API"` :
+Lorsqu'on affiche les en-têtes de la réponse, on reconnaît cet en-tête `WWW-Authenticate: Basic realm="Access to the API"` :
 
 ```http
 HTTP/1.1 401 Unauthorized
@@ -583,7 +583,7 @@ GET /api/groups/ducks/stats 200 4.609 ms - 94
 
 `json-server` est une application Express, ce qui signifie que nous pouvons l'utiliser dans une application NodeJS/Express existante pour réaliser des comportements personnalisés. Voici un exemple simple qui montre comment personnaliser le logger :
 
-`json-server` utilise `morgan` pour les logs, et le format par défaut qu'il utilise est le format [`dev`](https://github.com/expressjs/morgan#dev), qui n'expose pas toutes les informations qu'on veut. Pour avoir un log détaillé on doit utiliser le [format  standard d'Apache](https://github.com/expressjs/morgan#combined) :
+`json-server` utilise `morgan` pour les logs, et le format par défaut qu'il utilise est le format [`dev`](https://github.com/expressjs/morgan#dev), qui n'expose pas toutes les informations que l'on veut. Pour avoir un log détaillé on doit utiliser le [format  standard d'Apache](https://github.com/expressjs/morgan#combined) :
 
 ```js
 // server.js
@@ -647,7 +647,7 @@ $ curl --user kamal:secret http://localhost:9001/api/groups/ducks/stats
 
 ## Conclusion
 
-`json-server` a considérablement réduit le temps de scaffolding d'une API. Parmi les possibilités qu'on a vus, il existe de nombreux cas d'utilisation que vous pouvez explorer pour utiliser `json-server`, comme la personnalisation des logs, les tests, la réconciliation entre micro-services, les applications sans serveur ... etc.
+`json-server` a considérablement réduit le temps de scaffolding d'une API. Parmi les possibilités qu'on a vues, il existe de nombreux cas d'utilisation que vous pouvez explorer pour utiliser `json-server`, comme la personnalisation des logs, les tests, la réconciliation entre micro-services, les applications sans serveur ... etc.
 
 J'espère que cet article a pu éclairer la façon dont on peut utiliser `json-server`. J'ai essayé d'apporter des cas d'utilisation utiles qu'on rencontre tous les jours. Si vous souhaitez encore en savoir plus sur l'utilisation ou même sur son fonctionnement interne, je recommande d'explorer son [projet Github](https://github.com/typicode/json-server).
 
