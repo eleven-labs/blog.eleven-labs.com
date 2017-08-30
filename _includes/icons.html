@@ -38,14 +38,6 @@
 </li>
 {% endif %}
 
-{% if include.data.facebook %}
-<li>
-    <a class="no-link-style" href="https://www.facebook.com/{{ include.data.facebook }}" title="{{ include.data.str_follow_on }} Facebook">
-        <i class="fa fa-fw fa-facebook"></i>
-    </a>
-</li>
-{% endif %}
-
 {% if include.data.flickr %}
 <li>
     <a class="no-link-style" href="https://www.flickr.com/photos/{{ include.data.flickr }}" title="{{ include.data.str_follow_on }} Flickr">
@@ -58,6 +50,22 @@
 <li>
     <a class="no-link-style" href="https://github.com/{{ include.data.github }}" title="{{ include.data.str_follow_on }} GitHub">
         <i class="fa fa-fw fa-github"></i>
+    </a>
+</li>
+{% endif %}
+
+{% if include.data.twitter %}
+<li>
+    <a class="no-link-style" href="https://twitter.com/{{ include.data.twitter }}" title="{{ include.data.str_follow_on }} Twitter">
+        <i class="fa fa-fw fa-twitter"></i>
+    </a>
+</li>
+{% endif %}
+
+{% if include.data.facebook %}
+<li>
+    <a class="no-link-style" href="https://www.facebook.com/{{ include.data.facebook }}" title="{{ include.data.str_follow_on }} Facebook">
+        <i class="fa fa-fw fa-facebook"></i>
     </a>
 </li>
 {% endif %}
@@ -130,14 +138,6 @@
 <li>
     <a class="no-link-style" href="http://{{ include.data.tumblr }}.tumblr.com/" title="{{ include.data.str_follow_on }} Tumblr">
         <i class="fa fa-fw fa-tumblr"></i>
-    </a>
-</li>
-{% endif %}
-
-{% if include.data.twitter %}
-<li>
-    <a class="no-link-style" href="https://twitter.com/{{ include.data.twitter }}" title="{{ include.data.str_follow_on }} Twitter">
-        <i class="fa fa-fw fa-twitter"></i>
     </a>
 </li>
 {% endif %}

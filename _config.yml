@@ -30,7 +30,7 @@ theme_settings:
 
     # Icons
     rss: /feed.xml
-    email_address: contact@eleven-labs.com
+    email_address:
     behance:
     bitbucket:
     dribbble:
@@ -43,12 +43,12 @@ theme_settings:
     pinterest:
     reddit:
     soundcloud:
-    stack_exchange: http://stackoverflow.com/jobs/companies/eleven-labs
+    stack_exchange:
     steam:
     tumblr:
     twitter: eleven_labs
     wordpress:
-    youtube: UCt_NukjmUm4whjmbMuZ0MMw
+    youtube:
 
     # Scripts
     google_analytics: UA-99013054-1
