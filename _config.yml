@@ -24,8 +24,8 @@ theme_settings:
     description: A website with blog posts and pages
 
     # Header and footer text
-    header_text: <img src="/img/fg-header.png" />
-    header_text_feature_image: img/bg-header.png
+    header_text_fg_image: img/fg-header.png
+    header_text_bg_image: img/bg-header.png
     footer_text: To infinity and beyond !
 
     # Icons
