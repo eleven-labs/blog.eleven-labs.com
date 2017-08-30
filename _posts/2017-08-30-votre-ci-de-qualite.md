@@ -2,7 +2,7 @@
 layout: post
 title: Votre CI de qualité
 permalink: /fr/votre-ci-de-qualite/
-excerpt: La qualité est un vaste sujet, surtout quand on l'associe au développement d'application web. Ce qui est encore plus compliqué, c'est de mettre en place l'environnement d'intégration continue (CI) de suivi de qualité.
+excerpt: La qualité est un vaste sujet, surtout quand on l'associe au développement d'applications web. Ce qui est encore plus compliqué, c'est de mettre en place l'environnement d'intégration continue (CI) de suivi de qualité.
 authors:
     - captainjojo
 categories:
@@ -32,7 +32,7 @@ php -l somefile.php
 
 Maintenant, il faut savoir quand faire cette vérification. L'idée numéro 1 étant de laisser le développeur le faire avant d'envoyer son code sur git. Si l'appel n'est pas automatisé, 1 fois sur 3, le développeur ne lance pas la commande.
 
-L'idée est donc de le faire à chaque commit, pour cela rien de plus simple, on ajoute [un hook de pre-commit](https://git-scm.com/docs/githooks).
+L'idée est donc de le faire à chaque commit. Pour cela rien de plus simple, on ajoute [un hook de pre-commit](https://git-scm.com/docs/githooks).
 
 Dans le fichier `.git/hooks/pre-commit` il faut ajouter le code suivant.
 
@@ -72,11 +72,11 @@ exit $EXITCODE
 
 Si tout est ok, lors de chaque `commit` , le hook va vérifier la syntaxe php.
 
-Une fois cela validé, la suite logique est de faire que les développeurs codent tous avec les mêmes standards. Ce qui est bien, c'est que PHP a déjà des standards : les **[PSR](http://www.php-fig.org/psr/)**.
+Une fois cela validé, la suite logique est de faire en sorte que les développeurs codent tous avec les mêmes standards. Ce qui est bien, c'est que PHP a déjà des standards : les **[PSR](http://www.php-fig.org/psr/)**.
 
 Encore faut-il que tous les développeurs les suivent, c'est assez simple en PHP. Nous avons ajouté dans notre hook de pre-commit la commande de vérification disponible dans cet article, *[vérifier la qualité du code](http://blog.eleven-labs.com/fr/verifier-la-qualite-du-code/)*
 
-Nous étions satisfait mais c'était assez contraignant de passer par les hooks git. La première difficulté était que chaque développeur pouvait changer ses hooks, ce qui peut poser des problèmes.
+Nous étions satisfaits mais c'était assez contraignant de passer par les hooks git. La première difficulté était que chaque développeur pouvait changer ses hooks, ce qui peut poser des problèmes.
 
 Nous avons donc regardé les solutions du marché, et comme nous utilisions Github, [Travis](https://travis-ci.org) était la plus approprié.
 
@@ -122,7 +122,7 @@ indent_style = tabs
 
 **La syntaxe c'est fait !!!!**
 
-Passons au code, comme tout le monde, nous avons des tests unitaires et fonctionnels en [phpunit](https://phpunit.de/).  Comme nous avons Travis, qui est en place, il faut seulement ajouter le script pour les lancer dans la configuration.
+Passons au code ! Comme tout le monde, nous avions des tests unitaires et fonctionnels en [phpunit](https://phpunit.de/).  Comme nous avions Travis, qui était en place, il fallait seulement ajouter le script pour les lancer dans la configuration.
 
 ```yml
 //.travis.yml
@@ -133,7 +133,7 @@ script:
 
 **Bravo vos tests sont dans la CI !!!**
 
-Après cette importante étape, nous avons cherché à savoir ce qui nous manquait. Nous avions des tests mais cela ne dit pas que notre code est de qualité mais seulement qu'il est fonctionnel. Pour améliorer la qualité du code, nous avons alors instauré l'obligation d'une relecture par deux autres développeurs de chaque pull request afin qu'elle soit validée. Nous avions la sensation que la qualité était meilleure car les gens posaient les bonnes questions:
+Après cette importante étape, nous avons cherché à savoir ce qui nous manquait. Nous avions des tests, mais cela n'attestait pas de la qualité de notre code, seulement du fait qu'il était fonctionnel. Pour améliorer la qualité du code, nous avons alors instauré l'obligation d'une relecture par deux autres développeurs de chaque pull request afin qu'elle soit validée. Nous avions la sensation que la qualité était meilleure car les gens posaient les bonnes questions :
 
  1. pourquoi cette variable ?
  2. ton nom de fonction est étrange.
@@ -141,9 +141,9 @@ Après cette importante étape, nous avons cherché à savoir ce qui nous manqua
  4. j'ai déjà codé un truc ressemblant.
  5. etc...
 
-Mais il nous est arrivé que certaines pull request nous aient posées des problèmes. Des questions du type `for` ou `while` sont apparues dans les codes review et cela est devenu trollLand sur certaine pull request. Comment faire ?
+Mais il nous est arrivé que certaines pull requests nous aient posé des problèmes. Des questions du type `for` ou `while` sont apparues dans les codes review et cela est devenu trollLand sur certaines pull requests. Comment faire ?
 
-L'idée fut d'avoir un juge de touche, nous avons cherché et nous avons choisi [Scrutinizer](https://scrutinizer-ci.com/). [Scrutinizer](https://scrutinizer-ci.com/) est une solution qui permet de *juger* votre code. Il vous donne une note en prenant en compte plusieurs signes de qualité:
+L'idée fut d'avoir un juge de touche Nous avons cherché et nous avons choisi [Scrutinizer](https://scrutinizer-ci.com/). [Scrutinizer](https://scrutinizer-ci.com/) est une solution qui permet de *juger* votre code. Il vous donne une note en prenant en compte plusieurs signes de qualité :
 
  1. nom de variable
  2. taille du code
@@ -314,7 +314,7 @@ Scrutinizer est assez complet et permet de suivre la qualité de votre code au f
 
 **Encore une étape de terminée !!!!**
 
-Nous avons utilisé cette stack pendant plus d'un an, nous étions assez satisfait. Puis un jour, un article sur [les tests de mutation](http://blog.eleven-labs.com/fr/mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/), nous a donné envie d'aller plus loin. Nous avons alors essayé les tests de mutation, ce qui nous a permis de voir que même avec un code coverage de 90%, il y avait des tests qui ne faisaient rien ou qui testaient mal le code. Après avoir fait les changements, nous voulions aussi l'introduire dans notre CI. Le premier réflexe étant d'ajouter le script dans la configuration travis. Grosse erreur, le script mettant plus de 20 minutes sur notre projet, nous avions les jobs Travis en attente sur les autres projets. Mais heureusement, Travis avait sorti une nouvelle fonctionnalité qui permet de lancer les jobs en mode CRON et donc de le faire qu'une fois par jour, ce qui est suffisant pour ce genre de test. Il nous suffit alors d'ajouter la config suivante.
+Nous avons utilisé cette stack pendant plus d'un an, nous étions assez satisfait. Puis un jour, un article sur [les tests de mutation](http://blog.eleven-labs.com/fr/mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/), nous a donné envie d'aller plus loin. Nous avons alors essayé les tests de mutation, ce qui nous a permis de voir que même avec un code coverage de 90%, il y avait des tests qui ne faisaient rien ou qui testaient mal le code. Après avoir fait les changements, nous voulions aussi l'introduire dans notre CI. Le premier réflexe étant d'ajouter le script dans la configuration travis. Grosse erreur, le script mettant plus de 20 minutes sur notre projet, nous avions les jobs Travis en attente sur les autres projets. Mais heureusement, Travis avait sorti une nouvelle fonctionnalité qui permet de lancer les jobs en mode CRON et donc de le faire qu'une fois par jour, ce qui est suffisant pour ce genre de test. Il nous suffsait alors d'ajouter la config suivante.
 
 ```yml
 //.travis.yml
@@ -332,7 +332,7 @@ Il suffit alors de regarder chaque jour le build humbug fait sur la branche mast
 
 ### La partie javascript
 
-L'architecture évoluant, nous avons du nous adapter et donc travailler de plus en plus avec du javascript.
+L'architecture évoluant, nous avons dû nous adapter et donc travailler de plus en plus avec du javascript.
 
 Nous avons alors réfléchi à la même problématique, du javascript oui, mais de qualité.
 
@@ -351,7 +351,7 @@ Encore une fois, nous avons commencé par la syntaxe avec la mise en place [Esli
                 config: 'app/config/webpack.config.js'
 ```
 
-Et donc ajouter à la configuration de Travis la vérification.
+Puis nous avons ajouté la vérification à la configuration de Travis.
 
 ```yml
 //.travis.yml
@@ -363,7 +363,7 @@ Comme nous faisons déjà du javascript dans le frontend, notre Editorconfig ét
 
 **Étape 1, 3 secondes !!!**
 
-Nous avons alors fait les tests unitaires, comme toujours le choix de la techno ne fut pas simple. Mais comme nous faisions du [react](https://facebook.github.io/react/), [jest](https://facebook.github.io/jest/) s'est très vite imposé.
+Nous avons alors fait les tests unitaires. Comme toujours le choix de la techno ne fut pas simple. Mais comme nous faisions du [react](https://facebook.github.io/react/), [jest](https://facebook.github.io/jest/) s'est très vite imposé.
 Une fois les tests développés, nous avons encore une fois ajouté l'appel dans la configuration Travis.
 
 ```yml
@@ -374,7 +374,7 @@ script:
 
 **Étape 2, done !!!!**
 
-Comme nous le savions de notre expérience en PHP, tout cela ne suffit pas. Nous avons donc cherché un outil équivalent à Scrutinizer et nous avons trouvé [Bithound](https://www.bithound.io). Cet outil est un peu moins poussé, mais il permet de mettre une note sur votre code et surtout de vous alerter quand des librairies extérieures ne sont plus à jour.
+Comme nous le savions de notre expérience en PHP, tout cela ne suffisait pas. Nous avons donc cherché un outil équivalent à Scrutinizer et nous avons trouvé [Bithound](https://www.bithound.io). Cet outil est un peu moins poussé, mais il permet de mettre une note sur votre code et surtout de vous alerter quand des librairies extérieures ne sont plus à jour.
 
 La configuration est comme toujours un fichier à la racine du projet.
 
@@ -408,11 +408,11 @@ On l'oublie souvent mais le CSS, c'est aussi du code, et la qualité de celui-ci
 Jamais deux sans trois, on commence par la syntaxe. Pour cela, nous avons utilisé [Stylelint](https://stylelint.io/) qui permet de gérer la syntaxe de vos fichiers CSS. Stylelint permet de nombreuses vérifications:
 
  1. Ne pas avoir de commentaire vide
- 2. Le nombre de sélecteur max
+ 2. Le nombre de sélecteurs max
  3. Vérification des accolades
  4. etc...
 
-Si vous suivez le tutoriel, vous devez écrire un fichier de configuration à la racine de votre répository.
+Si vous suivez le tutoriel, vous devez écrire un fichier de configuration à la racine de votre repository.
 
 Exemple de fichier `.stylelintrc`
 
@@ -528,7 +528,7 @@ Exemple de fichier `.stylelintrc`
 }
 ```
 
-Pour lancer ceci dans nos CI, nous avons utilisé le plugin pour gulp et donc ajouté une tache gulp.
+Pour lancer ceci dans nos CI, nous avons utilisé le plugin pour gulp et donc ajouté une tâche gulp.
 
 ```js
 gulp.task('scss:lint', () => {
@@ -555,7 +555,7 @@ La seconde façon de vérifier la qualité du CSS est de faire des tests de non 
 
 L'idée est de générer une version statique des pages de votre site avec votre code actuel et de stocker le résultat. Ensuite, vous pouvez faire des modifications de votre code et lancer les tests de régression visuelle, cela génère un site qui vous montre les différences entre les deux versions. À vous de décider si la différence est normale ou non.
 
-Nous n'avons pas ajouté cette vérification dans la partie automatique de la CI, parce que souvent les tests montrent des différences normales et non des erreurs. Mais pour rendre ceci plus simple, nous avions généré le site statique de BackstopJs lors d'un merge dans master. Pour cela, nous utilisions la variable d'environnement de travis qui permet de connaître la branche, si celle-ci était un tag, nous déployons le site dans un bucket qui est lisible par tout le monde et permet de faire les vérifications manuelles.
+Nous n'avons pas ajouté cette vérification dans la partie automatique de la CI, parce que souvent les tests montrent des différences normales et non des erreurs. Mais pour rendre ceci plus simple, nous avions généré le site statique de BackstopJs lors d'un merge dans master. Pour cela, nous utilisions la variable d'environnement de travis qui permet de connaître la branche, si celle-ci était un tag, nous déployions le site dans un bucket lisible par tout le monde et qui permettait de faire les vérifications manuelles.
 
 Voici l'exemple de configuration Travis.
 
@@ -618,8 +618,8 @@ Ce qui est intéressant avec cette fonctionnalité, c'est de pouvoir suivre jour
 
 La seconde chose est que vous pouvez mettre d'autres sites que le votre et donc vérifier votre WebPerformance par rapport aux autres.
 
-La dernière fonctionnalité importante, permet de lancer une demande de vérification via une API. Nous avions alors, après chaque mise en production lancée, un check sur Speedcurve en le nommant avec le numéro de la release mise en prod. Ceci permet ensuite de voir sur l'ensemble des dashboards disponible sur Speedcurve, le moment de la mise en production, mais aussi de faire des comparaisons entre les releases.
+La dernière fonctionnalité importante permet de lancer une demande de vérification via une API. Nous avions alors, après chaque mise en production lancée, un check sur Speedcurve en le nommant avec le numéro de la release mise en prod. Ceci permet ensuite de voir sur l'ensemble des dashboards disponible sur Speedcurve le moment de la mise en production, mais aussi de faire des comparaisons entre les releases.
 
 ### Conclusion
 
-L'utilisation de l'ensemble des outils nous a permis de suivre la qualité de notre site dans le temps. Ceci permet d'éviter la dette technique qui peu très vite s'accumuler. Effectivement, cela prend du temps de mettre tous les outils en place, mais il faut savoir le prendre pour en gagner après. Nous avons mis plus de deux ans pour avoir l'ensemble des outils, allez y pas à pas et vous y arriverez.
+L'utilisation de l'ensemble des outils nous a permis de suivre la qualité de notre site dans le temps. Ceci permet d'éviter la dette technique qui peut très vite s'accumuler. Effectivement, cela prend du temps de mettre tous les outils en place, mais il faut savoir le prendre pour en gagner après. Nous avons mis plus de deux ans pour avoir l'ensemble des outils, allez y pas à pas et vous y arriverez.
