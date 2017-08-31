@@ -38,6 +38,9 @@
     <link href="//fonts.googleapis.com/css?family={{ site.theme_settings.google_fonts }}" rel="stylesheet" type="text/css">
     {% endif %}
 
+    {% if page.path contains '_posts' %}
+     <link rel="amphtml" href="{{ page.id | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
     <!-- Google Analytics -->
     {% if site.theme_settings.google_analytics %}
     <script>

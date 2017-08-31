@@ -91,6 +91,7 @@ gems:
     - jekyll-seo-tag
     - algoliasearch-jekyll
     - jekyll-feed
+    - amp-jekyll
 
 collections:
   authors:
