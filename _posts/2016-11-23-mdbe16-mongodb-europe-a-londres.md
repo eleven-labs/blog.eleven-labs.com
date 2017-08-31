@@ -35,7 +35,7 @@ Puis quelques grands acteurs sous MongoDB : Baidu (plus grand site chinois, +100
 ### Mongo 3.4
 
 Les nouveautés de cette version sont présentées sous forme d’amélioration, d'extension ou d'innovation.
-![Mongo3.4](../../assets/2016-11-23-mdbe16/IMG_4288.jpg)
+![Mongo3.4](/assets/2016-11-23-mdbe16/IMG_4288.jpg)
 
 *Improve :*
 
@@ -58,7 +58,7 @@ Toutes les nouveautés de la 3.4 <a href="https://www.mongodb.com/mongodb-3.4">i
 
 ### Keynote du Prof Brian Cox, physicien et astronome.
 
-![Prof Brian Cox](../../assets/2016-11-23-mdbe16/CxS5AUkWgAAgyK0.jpg)
+![Prof Brian Cox](/assets/2016-11-23-mdbe16/CxS5AUkWgAAgyK0.jpg)
 
 L'objectif de cette présentation était de nous montrer l’utilité de MongoDB dans le travail de cartographie de l'univers du prof Cox, et comment l’avènement du BigData aide aujourd'hui énormément les chercheurs à définir des "modèles" d’expansion de l'univers (milliards de données).
 
@@ -72,20 +72,20 @@ L'objectif de cette présentation était de nous montrer l’utilité de MongoDB
 
 La présentation a commencé par un récapitulatif de l'utilité de l'aggregation framework, puis plusieurs use-cases plus ou moins compliqués d'application.
 
-![Pipelines](../../assets/2016-11-23-mdbe16/CxTD2xUWEAAaGFI-1.jpg)
+![Pipelines](/assets/2016-11-23-mdbe16/CxTD2xUWEAAaGFI-1.jpg)
 
 Par exemple le calcul des nombres premiers en MongoDB
 
-![Pipelines2](../../assets/2016-11-23-mdbe16/CxTJq9WXUAAw7Et.jpg)
+![Pipelines2](/assets/2016-11-23-mdbe16/CxTJq9WXUAAw7Et.jpg)
 
 Et enfin, une première présentation des graphes sous MongoDB 3.4 avec $graphLookup
 Avec $graphLookup dans MongoDB 3.4, nous avons enfin la possibilité de "join" des données d'une même collection, afin de constituer un graphe de données.
 
 Par exemple :
 
-![Pipelines3](../../assets/2016-11-23-mdbe16/CxTHdM2XAAAsM_G.jpg)
+![Pipelines3](/assets/2016-11-23-mdbe16/CxTHdM2XAAAsM_G.jpg)
 
-![Pipelines4](../../assets/2016-11-23-mdbe16/CxTHdMTW8AEgUuU.jpg)
+![Pipelines4](/assets/2016-11-23-mdbe16/CxTHdMTW8AEgUuU.jpg)
 
 Un article sur les fonctionnalités de $graphLookup plus complet sera disponible sur le blog d'ici peu.
 

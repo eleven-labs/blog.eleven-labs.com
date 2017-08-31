@@ -58,7 +58,7 @@ class ElevenLabsAliasCommand extends ContainerAwareCommand
 
 Voici une petite vidéo pour voir ce que ça rend :
 
-![](https://asciinema.org/a/8i85eeqih2rwmccrtab407qtv)
+[https://asciinema.org/a/8i85eeqih2rwmccrtab407qtv](https://asciinema.org/a/8i85eeqih2rwmccrtab407qtv)
 
 ## Test des commandes
 
@@ -232,7 +232,7 @@ $application->run();
 
 Dans le fichier SingleCommand, nous avons rajouté un booléen à true, pour indiquer que nous souhaitons avoir une **SCA**.
 
-![](https://asciinema.org/a/ctpdd6v34qfh35try9xtqrrpd)
+[asciinema](https://asciinema.org/a/ctpdd6v34qfh35try9xtqrrpd)
 
 ## LockableTrait
 

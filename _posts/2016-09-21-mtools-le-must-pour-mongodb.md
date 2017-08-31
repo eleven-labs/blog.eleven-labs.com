@@ -81,7 +81,7 @@ Plus d'infos sur [mlogfilter](https://github.com/rueckstiess/mtools/wiki/mlogfil
 
 Ces deux exécutables permettent de générer des graphiques afin de visualiser plus d'informations (répartition des appels, type de commandes etc...) de manière graphique.
 
-![Mlogvis](../../assets/2016-09-21-mtools/mlogvis.png)
+![Mlogvis](/assets/2016-09-21-mtools/mlogvis.png)
 
 Plus d'infos sur [Mlogvis](https://github.com/rueckstiess/mtools/wiki/mlogvis) & [Mplotqueries](https://github.com/rueckstiess/mtools/wiki/mplotqueries).   
 
@@ -130,6 +130,6 @@ Cette commande permet de demander la création d'une instance mongo avec 5 repli
 
  est un client lourd permettant d’analyser et de parcourir les données d'une base MongoDB. Globalement l'outils permet de manipuler la data sans réellement demander des compétences en query mongo. Petit bémol, il n'est encore disponible que sous Windows ou MacOs :'(
 
-![Compass](../../assets/2016-09-21-mtools/date-sample.png)
+![Compass](/assets/2016-09-21-mtools/date-sample.png)
 
-![Compass](../../assets/2016-09-21-mtools/query-builder.png)
+![Compass](/assets/2016-09-21-mtools/query-builder.png)

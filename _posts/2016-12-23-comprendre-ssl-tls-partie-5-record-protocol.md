@@ -31,7 +31,7 @@ Ce protocole a pour buts :
 
 Voici en détail comment se déroule le record protocole :
 
-<img src="../../assets/2016-12-23-comprendre-ssl-tls-partie-5-record-protocol/ssl_intro_fig3.jpg" />
+<img src="/assets/2016-12-23-comprendre-ssl-tls-partie-5-record-protocol/ssl_intro_fig3.jpg" />
 
 
 1. Segmentation - les données sont découpées en blocs de taille inférieure à 16 384 octets ;
