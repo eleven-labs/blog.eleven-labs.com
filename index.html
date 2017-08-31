@@ -3,12 +3,9 @@ layout: default
 ---
 
 <div class="home">
-    {% if site.theme_settings.header_text %}
-    <div class="call-out"
-        style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
-        {{ site.theme_settings.header_text }}
+    <div class="call-out" style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_bg_image }}')">
+        <img src="{{ site.baseurl }}/{{ site.theme_settings.header_text_fg_image }}" />
     </div>
-    {% endif %}
 
     <div class="posts">
     {% for post in paginator.posts %}
