@@ -11,7 +11,7 @@ then
     bundle exec jekyll build
 
     # create deployment
-    DEPLOYMENT_ID=$(curl --silent -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -H "Accept: application/vnd.github.ant-man-preview+json" -X POST -d '{"ref":"'"$TRAVIS_PULL_REQUEST_BRANCH"'","environment":"dev","required_contexts":[]}' "https://api.github.com/repos/eleven-labs/eleven-labs.github.io/deployments" | jq -r ".id")
+    DEPLOYMENT_ID=$(curl --silent -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -H "Accept: application/vnd.github.ant-man-preview+json" -X POST -d '{"ref":"'"$TRAVIS_PULL_REQUEST_BRANCH"'","environment":"'"$TRAVIS_PULL_REQUEST_BRANCH"'","required_contexts":[]}' "https://api.github.com/repos/eleven-labs/eleven-labs.github.io/deployments" | jq -r ".id")
 
     # upload files
     aws s3 cp "_site/" "s3://dev.blog.eleven-labs.com/$TRAVIS_PULL_REQUEST_BRANCH" --recursive
