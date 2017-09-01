@@ -35,7 +35,7 @@ De grandes plateformes de streaming utilisent ce protocole pour servir leurs str
 
 Un diagramme vaut sûrement mieux qu'un long discours :
 
-![Diagramme de fonctionnement - HLS ](/assets/2017-07-12-video-live-dash-hls/diagram_HLS.png?raw=true)
+![Diagramme de fonctionnement - HLS ](/assets/2017-07-12-video-live-dash-hls/diagram_HLS.png)
 
 On voit ici le workflow permettant à l'audio/vidéo brut d'arriver sous forme de streaming au client.
 Les fichiers segmentés, le plus souvent au format MPEG-2 TS, sont accessibles via un "manifest", un fichier index au format M3U qui décrit les différents segments du contenu ainsi que des métadata que le client peut/doit utiliser. Ce fichier est basiquement une playlist d'URL.
@@ -85,7 +85,7 @@ live/low.m3u8
 
 Chaque balise `#EXT-X-STREAM-INF` indique les données nécessaires à la lecture du segment, chacun d'entre eux d'une qualité et d'un encodage donnés. Ainsi, le client compatible pourra passer d'une qualité à une autre en temps réel, en fonction de la bande passante disponible ou du choix de l'utilisateur. Le diagramme suivant illustre d'ailleurs très bien cette possibilité :
 
-![Fichier M3U - HLS ](/assets/2017-07-12-video-live-dash-hls/HLS_Figure_1.jpg?raw=true)
+![Fichier M3U - HLS ](/assets/2017-07-12-video-live-dash-hls/HLS_Figure_1.jpg)
 
 ### Librairie JS
 
@@ -123,7 +123,7 @@ Le DASH, en plus d'être normalisé et standardisé ISO, dispose de plusieurs fo
 
 Ne changeons pas une équipe qui gagne et commençons par un bon diagramme :
 
-![Diagramme de fonctionnement - DASH ](/assets/2017-07-12-video-live-dash-hls/diagram_DASH.png?raw=true)
+![Diagramme de fonctionnement - DASH ](/assets/2017-07-12-video-live-dash-hls/diagram_DASH.png)
 
 Les différentes séquences du contenu sont un fois encore d'une taille, d'une qualité et d'un encodage donnés et sont envoyées au client via HTTP. Ce dernier a la responsabilité de sélectionner puis d'afficher les séquences dans la qualité voulue. Et toujours dans le bon ordre. Je vous assure, c'est important.
 

@@ -84,7 +84,7 @@ Lorsque vous créez un projet, généralement Xcode vous demande si vous désire
 
 Une fois cette étape terminée, faites clique droit sur le dossier &gt; New File et sélectionnez Unit Test Case Class.
 
-<img src="{{ site.baseurl }}/assets/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-16-à-23.18.39.png" />
+<img src="{{ site.baseurl }}/assets/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-16-a-23.18.39.png" />
 
 Le nommage de la classe doit obligatoirement finir par Tests, soit dans notre cas **AstronauteTests**.
 
@@ -165,7 +165,7 @@ Il y a 3 solutions :
 2. Vous passez votre curseur sur le carré vide à côté du nom de la classe et celui-ci se transforme en bouton play. Ce procédé va lancer tous les tests de votre classe (cf. screenshot ci-dessous) ;
 3. Même procédure que la solution 2 mais seulement sur la méthode que vous souhaitez tester.
 
-<img src="{{ site.baseurl }}/assets/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-17-à-23.46.10.png" />
+<img src="{{ site.baseurl }}/assets/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-17-a-23.46.10.png" />
 
 Pour finir notre test, nous allons rajouter la méthode **testInitAstronuateWithPlanet** >qui va tester l’initialisation d’un astronaute avec une planète (oui j’aime bien mettre des noms en rapport avec Star Wars :) ).
 
