@@ -1,2 +1,21 @@
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_inline_share_toolbox"></div>
+<div class="share-buttons">
+	<!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;">
+        <img src="{{ "/img/share_buttons/facebook.png" | prepend: site.baseurl }}" alt="Facebook" />
+    </a>
+
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url={{ site.url }}{{ site.baseurl }}{{ page.url }}&text={{ page.title }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;">
+        <img src="{{ "/img/share_buttons/twitter.png" | prepend: site.baseurl }}" alt="Twitter" />
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title }}&summary={{ page.description }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;">
+        <img src="{{ "/img/share_buttons/linkedin.png" | prepend: site.baseurl }}" alt="LinkedIn" />
+    </a>
+
+    <!-- Reddit -->
+    <a href="http://reddit.com/submit?url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;">
+        <img src="{{ "/img/share_buttons/reddit.png" | prepend: site.baseurl }}" alt="Reddit" />
+    </a>
+</div>
