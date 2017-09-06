@@ -1,0 +1,31 @@
+.share-buttons {
+  background-color: $brand-color;
+  border: 0;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 230px;
+  width: 50px;
+  z-index: 1100;
+
+  a {
+    border: 0;
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: all .25s ease-in-out;
+
+    img {
+      border: 0;
+      display: block;
+      height: 50px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
