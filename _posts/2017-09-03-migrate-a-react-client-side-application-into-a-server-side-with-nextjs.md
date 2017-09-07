@@ -70,16 +70,16 @@ The first thing to do is to add our dependencies to the `package. json` file:
  }
 ```
 
-We therefore add here our three dependencies: `next`, `next-redux-wrapper` and `next-routes`. No need to go into more detail on the subject, the name of the libraries seems to me clear enough to guess their usefulness.
+We therefore add here our three dependencies: `next`, `next-redux-wrapper` and `next-routes`. No need to go into more details on the subject, to me the name of the libraries seems clear enough to guess their usefulness.
 
 We also need to modify the scripts. Indeed, we will now need a `node` HTTP server and will use the `next' library to build and develop our application with an on-the-fly compiler.
 
-Note that for the moment, I have kept `react-scripts` to run my tests but note that this one could of course be deleted.
+Note that for the moment, I have kept `react-scripts` to run my tests but this one could of course be deleted.
 
 New file structure
 ------------------
 
-We will respect the conventions proposed by Next.JS, so we will place our different pages in a directory named `page`, our static files in a `static` directory.
+We will respect the conventions proposed by Next.JS, so we will place our different pages in a directory named `page`, and our static files in a `static` directory.
 
 The only difference is that we will place them in `src`. This is why we have specified this directory in the previous commands.
 
@@ -157,7 +157,7 @@ Writing the first page
 
 Now it's time to write our first server-side page!
 
-We will start with a very simple homepage. So place a file at `src/pages/index.js`:
+We will start with a very simple homepage. Place a file at `src/pages/index.js`:
 
 ```js
 import React from 'react'
@@ -184,12 +184,12 @@ Very simple, we instantiate a `Page` React object comprising the components that
 
 This way, our entire page (and the components included inside) will have access and can manipulate the Redux store.
 
-If you go to `http://localhost:3000/` now, your homepage must now be visible!
+If you go to `http://localhost:3000/` now, your homepage should be visible!
 
 Customized routes / including variables
 ---------------------------------------
 
-Unfortunately, it is a bit complicated to declare custom routes and/or containing variables directly via Next.JS framework, that's why I chose to use the `next-routes` library which will allow me to do this very simply.
+Unfortunately, it is a bit complicated to declare custom routes and/or containing variables directly via Next.JS framework, that's why I choose to use the `next-routes` library which will allow me to do this very simply.
 
 For this example, we will start with a `/category/: slug` URL.
 
@@ -251,7 +251,7 @@ This way, you will be able to retrieve the API data and insert it into your stor
 Manipulating templates
 ----------------------
 
-In the templates of your React components, you can declare links to your routes in this way, by importing the `Link` component available through your `routes.js` file and then:
+In the templates of your React components, you can declare links to your routes this way, by importing the `Link` component available through your `routes.js` file and then:
 
 {% raw %}
 ```js
@@ -270,7 +270,7 @@ Note that you can also use the following notation:
 ```
 
 > **Note :**
-> You can also add a `prefetch` attribute if you want to preload your pages.
+> You can add a `prefetch` attribute if you want to preload your pages.
 
 Next.JS also provides a `Head` component that will allow you, as its name suggests, to manipulate the `<head>` HTML of your page.
 
@@ -296,4 +296,4 @@ Migrating from a client-side React application (initialized with `create-react-a
 
 In fact, Next.JS integrates very well with most of the React ecosystem tools.
 
-I hope this article may have helped you migrate your client-side application to server-side.
+I hope this article will help you migrate your client-side application to server-side.
