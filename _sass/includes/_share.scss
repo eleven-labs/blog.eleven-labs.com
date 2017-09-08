@@ -9,26 +9,16 @@
   top: 230px;
   width: 50px;
   z-index: 1100;
+  
+  a {
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    text-decoration: none;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+  }
 }
 
-.share-buttons a {
-  border: 0;
-  cursor: pointer;
-  display: block;
-  height: 50px;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  -moz-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-}
-
-.share-buttons a img {
-  border: 0;
-  display: block;
-  height: 50px;
-  margin: 0;
-  padding: 0;
-}
