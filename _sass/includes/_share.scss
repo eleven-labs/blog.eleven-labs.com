@@ -1,34 +1,34 @@
 #share-buttons {
-  padding: 0;
-  margin: 0;
+  background-color: #fff;
   border: 0;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   position: fixed;
-  left: 0px;
   top: 230px;
   width: 50px;
   z-index: 1100;
-  background-color: #fff;
-  list-style-type: none;
 }
 
 #share-buttons a {
-  height: 50px;
-  padding: 0;
-  margin: 0;
   border: 0;
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
   cursor: pointer;
-  text-decoration: none;
   display: block;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  -moz-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
 }
 
 #share-buttons a img {
-  height: 50px;
-  padding: 0;
-  margin: 0;
   border: 0;
   display: block;
+  height: 50px;
+  margin: 0;
+  padding: 0;
 }
