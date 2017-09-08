@@ -1,5 +1,5 @@
 .share-buttons {
-  background-color: #fff;
+  background-color: black;
   border: 0;
   left: 0;
   list-style-type: none;
@@ -9,15 +9,12 @@
   top: 230px;
   width: 50px;
   z-index: 1100;
-  
+
   a {
     cursor: pointer;
     display: block;
     height: 50px;
     text-decoration: none;
-    -moz-transition: all .25s ease-in-out;
-    -o-transition: all .25s ease-in-out;
-    -webkit-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
   }
 }
