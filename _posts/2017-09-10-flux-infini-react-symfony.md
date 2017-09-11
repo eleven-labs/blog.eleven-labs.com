@@ -77,7 +77,7 @@ SECRET=d3e2fa9715287ba25b2d0fd41685ac031970f555
 
 Si vous avez fait un peu attention, vous avez vu que dans le fichier `.env` il y a d'autres variables, c'est parce que l'application utilise [docker](https://www.docker.com/).
 
-### Mettez en place votre docker (optionel)
+### Mettez en place votre docker (optionnel)
 
 Pour allez plus vite dans les suites de notre projet, nous avons mis en place une architecture docker permettant d'utiliser l'application. La mise en place est optionnel mais vous aidera pour avancer dans votre développement.
 
@@ -304,7 +304,7 @@ Vous pouvez aussi retrouver le code directement dans le projet [Infinite github]
 
 ### Mettre en place React
 
-Nous allons utiliser React/Redux pour mettre en place notre flux infinie. Comme tout les projets node la première chose à faire des d'ajouter à la racine de votre projet le fichier `package.json`. Comme nous utiliserons [Babel](https://babeljs.io/) pour la compilation de [l'ES2105](https://babeljs.io/learn-es2015/) il faut le mettre dans la configuration du projet, ainsi que l'utilisation [EsLint](https://eslint.org/) parce que même dans un tutoriel nous faisons les choses proprement. Bien sur il nous faut aussi [React](https://facebook.github.io/react/) et [Redux](http://redux.js.org/)  pour avoir notre configuration au complet. Vous pouvez alors ajoutez l'ensemble dans votre fichier `package.json`
+Nous allons utiliser React/Redux pour mettre en place notre flux infini. Comme tout les projets node la première chose à faire des d'ajouter à la racine de votre projet le fichier `package.json`. Comme nous utiliserons [Babel](https://babeljs.io/) pour la compilation de [l'ES2105](https://babeljs.io/learn-es2015/) il faut le mettre dans la configuration du projet, ainsi que l'utilisation [EsLint](https://eslint.org/) parce que même dans un tutoriel nous faisons les choses proprement. Bien sur il nous faut aussi [React](https://facebook.github.io/react/) et [Redux](http://redux.js.org/)  pour avoir notre configuration au complet. Vous pouvez alors ajoutez l'ensemble dans votre fichier `package.json`
 
 ```json
 {
