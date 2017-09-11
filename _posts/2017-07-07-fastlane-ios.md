@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mise en place d'un Workflow CD avec Fastlane pour iOs ou Android
+title: Mise en place d'un Workflow Continuous Delivery avec Fastlane pour IOS ou Android
 excerpt: Nous allons découvrir un outil qui permet d'automatiser des tâches fastidieuses en mobile.
 permalink: /fr/mise-en-place-d-un-workflow-cd-avec-fastlane-pour-ios-ou-android
 categories:
@@ -13,6 +13,7 @@ tags:
     - Xcode
     - Tutorial
     - CI
+    - Fastlane
 image:
   path: /assets/2017-07-17-fastlane-ios/fastlane_logo.png
   height: 100
@@ -22,7 +23,7 @@ image:
 # Qu'est-ce que "Fastlane"
 
 Fastlane est un outil open-source qui permet de faire du **Continuous Delivery** sous IOS et Android.
-Il permet d'automatiser un certain nombre de tâches fastidieuses comme gèrer les sreenshots, les certificats, déployer votre app ...
+Il permet d'automatiser un certain nombre de tâches fastidieuses comme gèrer les sreenshots, les certificats, déployer votre app...
 
 Vous l'avez compris, cet outil va changer votre vie.
 
@@ -213,7 +214,7 @@ Les provisioning profile sont installés dans ~ / Library / MobileDevice / Provi
 
 **Comment faire si vous devez ajouter un nouveau device ?**
 
-Non on va pas se connecter et le faire a la main !!!
+Non on va pas se connecter et le faire à la main !!!
 On va utiliser l'action [register_devices](https://docs.fastlane.tools/actions/#register_devices) en combinaison avec match.
 
 ```ruby
@@ -238,7 +239,7 @@ Vous pouvez utiliser aussi `force: true` pour générer le profils de provisionn
 #### Paramétrer Xcode
 
 Avec Xcode 8 vous pouvez définir un profil de provisionnement pour chaque targets au lieu d'un provisioning profile UUID.
-En faisant ça, Xcode selectionne automatiquement le dernier provisioning profile corresponddant à son nom.
+En faisant ça, Xcode sélectionne automatiquement le dernier provisioning profile corresponddant à son nom.
 De cette manière, vous n'aurez pas à mettre à jour Xcode à chaque fois que vous générez un profil de provisionnement (ex: Quand vous ajoutez un nouveau device).
 
 Vous pouvez spécifier quel profil de provisionnement utiliser dans `General` tab après avoir désactivé `Automatically manage signing`.
@@ -249,8 +250,7 @@ On vient de voir avec quel facilité on gère les certificats et profil de provi
 
 # PEM
 
-Si vous avez lu mon précédent article [Envoyer des push notifications via Amazon SNS en Swift 3](/fr/envoyer-push-notifications-amazon-sns-swift-3/),
-vous avez vite comprit que c'était super "galère" de faire ceci à la main.
+Si vous avez lu mon précédent article [Envoyer des push notifications via Amazon SNS en Swift 3](/fr/envoyer-push-notifications-amazon-sns-swift-3/), vous avez vite comprit que c'était super "galère" de faire ceci à la main.
 
 Mais ça c'était avant !
 
@@ -292,7 +292,7 @@ $ bundle exec fastlane pushCertificat
 
 ![](/assets/2017-07-17-fastlane-ios/fastlane_pem.jpg)
 
-Et hop, un jeux d'enfant !
+Et hop, un jeu d'enfants !
 
 ![](/assets/2017-07-17-fastlane-ios/fastlane_pem_apple.jpg)
 
@@ -622,13 +622,13 @@ end
 $ bundle exec fastlane buildTestFlight
 ```
 
-*Note* : Il se peut que vous ayez une erreur du au faite que vous n'ayez pas de bundle identifier sur Itunes Connect. Pour remédier à ça, il faut juste en créer un via:
+*Note* : Il se peut que vous ayez une erreur dû au fait que vous n'ayez pas de bundle identifier sur Itunes Connect. Pour remédier à ça, il faut juste en créer un via:
 
 ```shell
 $ bundle exec fastlane produce -u MAIL -a com.eleven.fastlane.debug --skip_itc
 ```
 
-Avouez que c'est plus façile que de le faire sois-même. Maintenant on va voir comment envoyer notre fichier ipa pour le tester via TestFlight.
+Avouez que c'est plus facile que de le faire sois-même. Maintenant on va voir comment envoyer notre fichier ipa pour le tester via TestFlight.
 
 # Pilot
 
@@ -672,7 +672,7 @@ $ bundle exec fastlane buildTestFlight
 
 # Deliver
 
-Il est temps de mettre en prod votre application.
+Il est temps de mettre en prod votre application sur Itunes Connect.
 
 ```shell
 # Comme d'habitude on initialise
@@ -694,11 +694,10 @@ Vous devriez avoir un nouveau folder metadata qui vient d'apparaître.
 
 ![](https://raw.githubusercontent.com/fastlane/fastlane/master/deliver/assets/metadata.png)
 
-A vous maintenant de mettre à jours ces metadata.
-
+A vous maintenant de mettre à jour ces metadata.
 
 # Conclusion
 
-Si vous n'êtes pas tomber amoureux de Fastlane je ne comprends pas, vous aimez souffrir :)
+Si vous n'êtes pas tombé amoureux de Fastlane je ne comprends pas, vous aimez souffrir :)
 On voit très rapidement que ce petit bijou nous fait gagner un temps monstre et nous évite de faire une erreur humaine (l'avantage de l'automatisation).
 Après quelques tests et configurations vous pouvez facilement reprendre vos scripts pour les réutiliser sur d'autres projets.
