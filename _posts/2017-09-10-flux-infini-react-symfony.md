@@ -2,7 +2,7 @@
 layout: post
 title: Mise en place d'un flux infini Symfony-React
 permalink: /fr/flux-infini-symfony-react/
-excerpt: Pour rendre l'expérience utilisateur de nos applications web de plus en plus agréable, nous somme de plus en plus obligé d'utiliser plusieurs technologies en même temps. Nous allons mettre en place un flux infini en utilisant un backend Symfony et un front en ReactJs.
+excerpt: Pour rendre l'expérience utilisateur de nos applications web toujours plus agréable, nous sommes de plus en plus obligés d'utiliser plusieurs technologies en même temps. Nous allons mettre en place un flux infini en utilisant un backend Symfony et un front en ReactJs.
 authors:
     - captainjojo
 categories:
@@ -16,11 +16,11 @@ tags:
     - javascript
 cover: /assets/2017-09-10-flux-infini-react-symfony/cover.jpg
 ---
-Pour rendre l'expérience utilisateur de nos applications web de plus en plus agréable, nous somme de plus en plus obligé d'utiliser plusieurs technologies en même temps. Nous allons mettre en place un flux infini en utilisant un backend Symfony et un front en ReactJs.
+Pour rendre l'expérience utilisateur de nos applications web toujours plus agréable, nous sommes de plus en plus obligés d'utiliser plusieurs technologies en même temps. Nous allons mettre en place un flux infini en utilisant un backend Symfony et un front en ReactJs.
 
 ### Mise en place du backend
 
-Notre site est tout d'abord un site en Symfony 3.3. La mise en place est assez basique, il vous suffit d'installer Symfony en suivant le tutoriel suivant sur le [site officiel](https://symfony.com/doc/current/setup.html).  Pour la suite de notre projet, nous allons avoir besoin de stocker les données du flux, pour cela nous allons mettre en place une base de données [Postgresql](https://www.postgresql.org/). Il vous suffit de changer dans votre fichier de configuration les paramètres par default de la database doctrine.
+Notre site est tout d'abord un site en Symfony 3.3. La mise en place est assez basique, il vous suffit d'installer Symfony en suivant le tutoriel suivant sur le [site officiel](https://symfony.com/doc/current/setup.html).  Pour la suite de notre projet, nous allons avoir besoin de stocker les données du flux, pour cela nous allons mettre en place une base de données [Postgresql](https://www.postgresql.org/). Il vous suffit de changer dans votre fichier de configuration les paramètres par défaut de la database doctrine.
 
 ```yaml
 # config.yml
@@ -40,7 +40,7 @@ doctrine:
         auto_mapping: true
 ```
 
-Comme nous aimons le code propre, nous allons utiliser les variables d'environnement pour notre configuration de base de donnée. Il vous faut alors changez dans votre fichier parameters.yml les valeurs des variables pour aller chercher les valeurs dans votre environnements.
+Comme nous aimons le code propre, nous allons utiliser les variables d'environnement pour notre configuration de base de donnée. Il vous faut alors changer dans votre fichier parameters.yml les valeurs des variables pour aller chercher les valeurs dans votre environnement.
 
 ```yaml
 # parameters.yml
@@ -53,7 +53,7 @@ parameters:
     secret: '%env(SECRET)%'
 ```
 
-Vous pouvez alors créer votre fichier .env avec les valeurs de vos variables.
+Vous pouvez maintenant créer votre fichier .env avec les valeurs de vos variables.
 
 ```yaml
 // .env
@@ -79,23 +79,23 @@ Si vous avez fait un peu attention, vous avez vu que dans le fichier `.env` il y
 
 ### Mettez en place votre docker (optionnel)
 
-Pour allez plus vite dans les suites de notre projet, nous avons mis en place une architecture docker permettant d'utiliser l'application. La mise en place est optionnel mais vous aidera pour avancer dans votre développement.
+Pour aller plus vite dans la suite de notre projet, nous avons mis en place une architecture docker permettant d'utiliser l'application. La mise en place est optionnelle mais vous aidera pour avancer dans votre développement.
 
-A la racine de votre projet,  ajouter un dossier `docker` qui contiendra la configuration de votre stack technique. Pour le projet nous allons utiliser:
+À la racine de votre projet,  ajoutez un dossier `docker` qui contiendra la configuration de votre stack technique. Pour le projet nous allons utiliser :
 
  1. Php7 pour la partie symfony
- 2. Nodejs pour bulder l'application React
+ 2. Nodejs pour builder l'application React
  3. Nginx comme serveur web pour servir le site
 
-Vous devez créer les trois dossiers suivant à l'intéreieur du dossier `docker`.
+Vous devez créer les trois dossiers suivants à l'intérieur du dossier `docker`.
 
  - `nginx`
  - `php`
  - `node`
 
-Respectivement dans chaque dossier vous devez ajouter les fichiers `Dockerfile` suivant.
+Respectivement dans chaque dossier vous devez ajouter les fichiers `Dockerfile` suivants.
 
-Dans le fiichier `nginx/Dockerfile`
+Dans le fichier `nginx/Dockerfile`
 
 ```sh
 /nginx/Dockerfile
@@ -250,7 +250,7 @@ server {
 }
 ```
 
-Il ne vous reste plus qu'a ajouter le fichier `docker-compose.yml`à la racine de votre projet avec la configuration suivante.
+Il ne vous reste plus qu'à ajouter le fichier `docker-compose.yml`à la racine de votre projet avec la configuration suivante.
 
 ```yml
 version: '2'
@@ -294,7 +294,7 @@ Ajoutez la ligne suivante dans votre `/etc/hosts`
 120.0.0.1 infinite.dev
 ```
 
-Si vous lancer un `docker-compose up` puis allez sur la page suivante [infinite.dev](infinite.dev). Vous devriez voir la page suivante, vous indiquant que votre site est bien configurez.
+Si vous lancez un `docker-compose up` puis allez sur la page suivante [infinite.dev](infinite.dev), vous devriez voir la page suivante vous indiquant que votre site est bien configuré.
 
 ![Configuration](/assets/2017-09-10-flux-infini-react-symfony/image1.png)
 
@@ -304,7 +304,7 @@ Vous pouvez aussi retrouver le code directement dans le projet [Infinite github]
 
 ### Mettre en place React
 
-Nous allons utiliser React/Redux pour mettre en place notre flux infini. Comme tout les projets node la première chose à faire des d'ajouter à la racine de votre projet le fichier `package.json`. Comme nous utiliserons [Babel](https://babeljs.io/) pour la compilation de [l'ES2105](https://babeljs.io/learn-es2015/) il faut le mettre dans la configuration du projet, ainsi que l'utilisation [EsLint](https://eslint.org/) parce que même dans un tutoriel nous faisons les choses proprement. Bien sur il nous faut aussi [React](https://facebook.github.io/react/) et [Redux](http://redux.js.org/)  pour avoir notre configuration au complet. Vous pouvez alors ajoutez l'ensemble dans votre fichier `package.json`
+Nous allons utiliser React/Redux pour mettre en place notre flux infini. Comme tous les projets node la première chose à faire est d'ajouter à la racine de votre projet le fichier `package.json`. Comme nous utiliserons [Babel](https://babeljs.io/) pour la compilation de [l'ES2105](https://babeljs.io/learn-es2015/) il faut le mettre dans la configuration du projet, ainsi que l'utilisation [EsLint](https://eslint.org/) parce que même dans un tutoriel nous faisons les choses proprement. Bien sur il nous faut aussi [React](https://facebook.github.io/react/) et [Redux](http://redux.js.org/)  pour avoir notre configuration au complet. Vous pouvez alors ajouter l'ensemble dans votre fichier `package.json`
 
 ```json
 {
@@ -384,9 +384,9 @@ Nous allons utiliser React/Redux pour mettre en place notre flux infini. Comme t
 }
 ```
 
-Comme vous pouvez le constatez nous allons utiliser [Webpack](https://webpack.github.io/docs/)  pour compiler et préparer nos fichiers javascript. Vous avez aussi en fin du fichier la configuration de [Jest](https://facebook.github.io/jest/) qui sera l'outil qui va nous permettre de mettre en place les tests unitaires et les tests visuels de notre application javascript. La configuration Jest permet ici de *mapper* les noms des modules lors d'un import javascript avec l'emplacement des fichiers.
+Comme vous pouvez le constater nous allons utiliser [Webpack](https://webpack.github.io/docs/)  pour compiler et préparer nos fichiers javascript. Vous avez aussi en fin du fichier la configuration de [Jest](https://facebook.github.io/jest/) qui sera l'outil qui va nous permettre de mettre en place les tests unitaires et les tests visuels de notre application javascript. La configuration Jest permet ici de *mapper* les noms des modules lors d'un import javascript avec l'emplacement des fichiers.
 
-Il faut donc ajouter les fichiers pour la configuration de Babel et d'Eslint. Pour Babel il vous faut ajouter le fichier `.babelrc` a la racine de votre projet.
+Il faut donc ajouter les fichiers pour la configuration de Babel et d'Eslint. Pour Babel il vous faut ajouter le fichier `.babelrc` à la racine de votre projet.
 
 ```json
 {
@@ -409,9 +409,9 @@ Pour la configuration d'Eslint il vous faut ajouter le fichier `.eslintrc.yml` �
                 config: 'app/config/webpack.config.js'
 ```
 
-Maintenant la grande question qu'il faut se poser c'est où mettre en place l'architecture javascript pour quel communique et interagisse facilement avec Symfony. *La décision n'a pas été facile et n'ai pas forcément la meilleur*.
+Maintenant la grande question qu'il faut se poser c'est où mettre en place l'architecture javascript pour qu'elle communique et interagisse facilement avec Symfony ? *La décision n'a pas été facile et n'est pas forcément la meilleure*.
 
-Commençons par la mise en place de la configuration `webpack`, nous la placerons dans le dossier `app/config` de Symfony.  Vous devez ajouter le fichier `webpack.config.js`suivant:
+Commençons par la mise en place de la configuration `webpack`, nous la placerons dans le dossier `app/config` de Symfony.  Vous devez ajouter le fichier `webpack.config.js`suivant :
 
 ```js
 const _ = require('lodash');
@@ -556,14 +556,14 @@ module.exports = config;
 
 Puis comme pour l'ensemble des fichiers javascript d'un projet javascript, nous allons les mettre dans les `ressources` du `bundle` Symfony.
 
-Nous allons créer la coquille d'une architecture Rect/Redux à l'intérieur du dossier `src/AppBundle/Resources/scripts/js/react` pour cela créez les dossiers suivants:
+Nous allons créer la coquille d'une architecture Rect/Redux à l'intérieur du dossier `src/AppBundle/Resources/scripts/js/react` pour cela, créez les dossiers suivants :
 
  - `actions`
  - `containers`
  - `reducers`
  - `store`
 
-Dans chaque dossiers nous allons commencer à créer notre architecture. Le but du tutoriel n'étant pas la comprehension d'une architecture React/Redux si vous le souhaitez je vous invite à lire [ceci](http://redux.js.org/docs/introduction/).
+Dans chaque dossier nous allons commencer à créer notre architecture. Le but du tutoriel n'étant pas la compréhension d'une architecture React/Redux, si vous le souhaitez je vous invite à lire [ceci](http://redux.js.org/docs/introduction/).
 
 Ajoutez le fichier `index.js` dans le dossier `store` avec le code suivant.
 
@@ -579,7 +579,7 @@ export default function configureStore(initial) {
 ```
 Le fichier est assez simple et permet seulement de gérer votre store.
 
-Ajoutez le fichier `index.js` dans le dossier `reducers` avec le code suivant
+Ajoutez le fichier `index.js` dans le dossier `reducers` avec le code suivant :
 
 ```js
 import { combineReducers } from 'redux';
@@ -591,7 +591,7 @@ export default combineReducers({
 });
 ```
 
-Nous allons créer le premier `reducers` du projet qui ensuite contiendra les changements d'états de notre application. Ajoutez le fichier `latest_news.js` avec le code suivant.
+Nous allons créer le premier `reducers` du projet qui ensuite contiendra les changements d'état de notre application. Ajoutez le fichier `latest_news.js` avec le code suivant :
 
 ```js
 import actions from 'actions';
@@ -650,7 +650,7 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps)(LatestNewsHome);
 ```
 
-Voila notre architecture React/Redux terminé, il nous faut maintenant la faire communiquer avec Symfony.
+Voilà notre architecture React/Redux terminée, il nous faut maintenant la faire communiquer avec Symfony.
 
 ### Faire communiquer React et Symfony
 
@@ -684,7 +684,7 @@ Comme vous pouvez le voir, nous allons insérer notre composant React dans notre
 
 Il faut donc dans votre fichier template Twig ajouter cet `id`.
 
-*Pour le tutoriel j'utilise les pages par défauts du projet Symfony, à vous de choisir votre page*
+*Pour le tutoriel j'utilise les pages par défaut du projet Symfony, à vous de choisir votre page*
 
 Dans la page `app/Resources/views/default/index.html.twig` changez le `block` body avec le code suivant.
 
@@ -705,17 +705,17 @@ Dans la page `app/Resources/views/default/index.html.twig` changez le `block` bo
 ```
 {% endraw %}
 
-Si vous lancez votre site il ne se passe rien, et oui il manque les appels javascript.
+Si vous lancez votre site il ne se passe rien... Et oui, il manque les appels javascript.
 
-Si vous lancez un `yarn watch` vous verrez que les fichiers sont générer dans votre dossier `web/scripts/js` sous trois formes:
+Si vous lancez un `yarn watch` vous verrez que les fichiers sont générés dans votre dossier `web/scripts/js` sous trois formes :
 
- 1. `vendor.*.js` contenant les librairies React etc ...
+ 1. `vendor.*.js` contenant les librairies React etc...
  2. `home.*.js` contenant le code de votre composant
  3. `home.*.js` contenant la configuration de webpack
 
-Le [cache busting](https://www.keycdn.com/support/what-is-cache-busting/) est déjà intégrer dans la configuration Webpack.
+Le [cache busting](https://www.keycdn.com/support/what-is-cache-busting/) est déjà intégré dans la configuration Webpack.
 
-Il nous faut maintenant ajoutez les balises `scripts` dans votre page `twig`. La facilité serait de poser la balise suivante.
+Il nous faut maintenant ajouter les balises `scripts` dans votre page `twig`. La facilité serait de poser la balise suivante :
 
 ```html
 <script src="http://infinite.dev/scripts/js/inlined.2d4b19e4578c3af04a03.js" defer></script>
@@ -723,7 +723,7 @@ Il nous faut maintenant ajoutez les balises `scripts` dans votre page `twig`. La
 <script src="http://infinite.dev/scripts/js/home.e428223280fc3028d63f.js" defer></script>
 ```
 
-Cela n'est pas très pratique car vous devez changez vos balises à chaque changement de javascript. Nous voulons donc utilisez la fonction `asset` de twig comme pour tout autre javascript.  Vous pouvez mettre dans votre `block javascript` les deux balises suivantes.
+Cela n'est pas très pratique car vous devez changer vos balises à chaque changement de javascript. Nous voulons donc utiliser la fonction `asset` de twig comme pour tout autre javascript.  Vous pouvez mettre dans votre `block javascript` les deux balises suivantes :
 
 {% raw %}
 ```twig
@@ -737,7 +737,7 @@ Cela n'est pas très pratique car vous devez changez vos balises à chaque chang
 
 Si vous testez maintenant vous avez deux 404. Effectivement `asset`ne prend pas en compte le cache busting mais nous allons l'aider.
 
-Nous allons créer un service permettant de gérer l'utilisation du cache busting. Dans votre fichier `config.yml` vous pouvez surchargé la function `asset`.  Si vous voulez mieux comprendre vous pouvez allez lire l'article de Symfony [ici](https://symfony.com/doc/current/frontend/custom_version_strategy.html).
+Nous allons créer un service permettant de gérer l'utilisation du cache busting. Dans votre fichier `config.yml` vous pouvez surcharger la function `asset`.  Si vous voulez mieux comprendre vous pouvez allez lire l'article de Symfony [ici](https://symfony.com/doc/current/frontend/custom_version_strategy.html).
 
 ```yml
 framework:
@@ -781,9 +781,9 @@ services:
             - '%kernel.root_dir%/../var/webpack/manifest.json'
 ```
 
-Nous utiliserons la `manifest.json` de webpack qui nous permettra de connaitre la version actuel du cache busting.
+Nous utiliserons la `manifest.json` de webpack qui nous permettra de connaître la version actuelle du cache busting.
 
-Il ne vous reste plus qu'a ajouter le fichier `src/AppBundle/Service/VersionStrategy/JavascriptBusterVersionStrategy.php` avec le code suivant.
+Il ne vous reste plus qu'à ajouter le fichier `src/AppBundle/Service/VersionStrategy/JavascriptBusterVersionStrategy.php` avec le code suivant :
 
 ```php
 <?php
@@ -871,7 +871,7 @@ class JavascriptBusterVersionStrategy implements VersionStrategyInterface
 }
 ```
 
-Vous n'avez normalement plus de 404, mais un erreur javascript signalant que vous n'avez pas d'`__INITIAL_STATE__` pour votre composant React.
+Vous n'avez normalement plus de 404, mais une erreur javascript signalant que vous n'avez pas d'`__INITIAL_STATE__` pour votre composant React.
 
 Nous allons donc le configurer dans votre fichier Twig, en ajoutant une valeur par défaut.
 
@@ -893,11 +893,11 @@ Vous pouvez aussi retrouver le code directement dans le projet [Infinite github]
 
 #### Partie Symfony
 
-Dans ce flux nous allons mettre des articles contenant seulement une date et un titre.  Nous aurons besoin d'initialiser le composant React avec les X premiers article, puis pour chaque passage sur le `voir plus` d'un appel vers un webservice qui nous renverra les articles suivants.
+Dans ce flux nous allons mettre des articles contenant seulement une date et un titre. Nous aurons besoin d'initialiser le composant React avec les X premiers articles, puis pour chaque passage sur le `voir plus` d'un appel vers un webservice qui nous renverra les articles suivants.
 
-*Pour ce tutoriel, nous allons seulement utilisé des `fixtures` à vous de jouer pour le reste.*
+*Pour ce tutoriel, nous allons seulement utiliser des `fixtures` à vous de jouer pour le reste.*
 
-Nous allons créer l'`Entity`article en ajoutant le fichier `src/AppBundle/Entity/Article.php` avec le code suivant.
+Nous allons créer l'`Entity`article en ajoutant le fichier `src/AppBundle/Entity/Article.php` avec le code suivant :
 
 ```php
 <?php
@@ -988,7 +988,7 @@ class Article
 }
 ```
 
-Ensuite en suivant l'article [ici](http://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html), permettant de mettre en place des fixtures doctrine vous pouvez ajouter dans votre `composer.json`
+Ensuite en suivant l'article [ici](http://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html), permettant de mettre en place des fixtures doctrine, vous pouvez ajouter dans votre `composer.json`
 
 ```json
     "require-dev": {
@@ -1137,13 +1137,13 @@ class LoadArticleData  extends AbstractFixture implements OrderedFixtureInterfac
 
 Vous pouvez lancer la commande suivante `php bin/console doctrine:fixtures:load` pour insérer les données dans votre base de données.
 
-Fonctionnellement nous voulons afficher les articles par ordre de dernière création,  l'idée est donc que lors du clique sur le bouton `voir plus` que l'on voit les articles antérieurs.
+Fonctionnellement nous voulons afficher les articles par ordre de dernière création, l'idée est donc qu'un clic sur le bouton `voir plus` permette de voir les articles antérieurs.
 
     Mais comment être sur d'avoir les articles les plus anciens ?
 
-En effet, si on utilise seulement l'offset et le limit il se peut qu'un article s'insère dans notre flux. Nous allons donc prendre les articles qui sont plus ancien que le dernier article qui c'est affiché.
+En effet, si on utilise seulement l'offset et le limit il se peut qu'un article s'insère dans notre flux. Nous allons donc prendre les articles qui sont plus anciens que le dernier article qui s'est affiché.
 
-Dans le dossier `src/AppBundle/Repository/ArticleRepository.php` nous allons y mettre la `query`qu'il faudra utiliser pour récupérer les contenus.
+Dans le dossier `src/AppBundle/Repository/ArticleRepository.php` nous allons mettre la `query`qu'il faudra utiliser pour récupérer les contenus.
 
 ```php
 <?php
@@ -1175,7 +1175,7 @@ class ArticleRepository extends EntityRepository
 }
 ```
 
-Maintenant nous allons initialiser le composant React avec les premiers articles. Nous le faisons dans la partie PHP car nous voulons que l'utilisateur n'ayant pas javascript voit tout de même les articles.
+Maintenant nous allons initialiser le composant React avec les premiers articles. Nous le faisons dans la partie PHP car nous voulons que l'utilisateur n'ayant pas javascript voie tout de même les articles.
 
 Dans votre fichier `src/AppBundle/Controller/DefaultController.php` vous pouvez changer votre `indexAction` avec le code suivant
 
@@ -1262,7 +1262,7 @@ class DefaultController extends Controller
 }
 ```
 
-Dernier chose à faire afficher les articles et initialiser votre React. Il vous faut changer votre fichier `app/Resources/views/default/index.html.twig`
+Dernières choses : faire afficher les articles et initialiser votre React. Il vous faut changer votre fichier `app/Resources/views/default/index.html.twig`
 
 {% raw %}
 ```twig
@@ -1299,7 +1299,7 @@ Dernier chose à faire afficher les articles et initialiser votre React. Il vous
 ```
 {% endraw %}
 
-Si vous affichez votre site, vous devez voir les trois premier contenus mais le `voir plus` ne marchera pas, normal nous n'avons pas fini notre React.
+Si vous affichez votre site, vous devez voir les trois premiers contenus mais le `voir plus` ne marchera pas, normal nous n'avons pas fini notre React.
 
 
 #### Partie React
@@ -1384,7 +1384,7 @@ export const refresh = () => ({
 });
 ```
 
-On y trouve l'appel au webservice lors de l'action `Fetch` pour améliorer les performances nous allons chercher les données lors de l'affichage des données précédentes qui permet d'avoir un coup d'avance sur l'utilisateur.
+On y trouve l'appel au webservice lors de l'action `Fetch`. Pour améliorer les performances nous allons chercher les données lors de l'affichage des données précédentes qui permet d'avoir un coup d'avance sur l'utilisateur.
 
 Vous pouvez maintenant changer le `reducers` suivant `src/AppBundle/Resources/scripts/js/react/reducers/latest_news.js`
 
@@ -1429,7 +1429,7 @@ export default function latestNews(state = {}, action) {
 }
 ```
 
-Puis terminons les composants. D'abord `src/AppBundle/Resources/scripts/js/react/containers/LatestNewsHome.jsx` qui est le point d'entré.
+Puis terminons les composants. D'abord `src/AppBundle/Resources/scripts/js/react/containers/LatestNewsHome.jsx` qui est le point d'entrée.
 
 ```js
 import React, { Component, PropTypes } from 'react';
@@ -1483,7 +1483,7 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps)(LatestNewsHome);
 ```
 
-Puis vous pouvez ajouter dans le dossier `src/AppBundle/Resources/scripts/js/react/components` les composants suivant:
+Puis vous pouvez ajouter dans le dossier `src/AppBundle/Resources/scripts/js/react/components` les composants suivants :
 
  - `src/AppBundle/Resources/scripts/js/react/components/Organisms/ThreadSection.jsx`
 
@@ -1565,7 +1565,7 @@ Button.propTypes = {
 export default Button;
 ````
 
-Bravo vous avez terminer votre flux infini.
+Bravo vous avez terminé votre flux infini.
 
 Vous pouvez aussi retrouver le code directement dans le projet [Infinite github](https://github.com/CaptainJojo/infinite) dans la branche `master`.
 
