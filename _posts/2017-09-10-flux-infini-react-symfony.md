@@ -90,7 +90,7 @@ Pour aller plus vite dans la suite de notre projet, nous avons mis en place une 
 Vous devez créer les trois dossiers suivants à l'intérieur du dossier `docker`.
 
  - `nginx`
- - `php`
+ - `php7-fpm`
  - `node`
 
 Respectivement dans chaque dossier vous devez ajouter les fichiers `Dockerfile` suivants.
