@@ -711,7 +711,7 @@ Si vous lancez un `yarn watch` vous verrez que les fichiers sont générés dans
 
  1. `vendor.*.js` contenant les librairies React etc...
  2. `home.*.js` contenant le code de votre composant
- 3. `home.*.js` contenant la configuration de webpack
+ 3. `inlined.*.js` contenant la configuration de webpack
 
 Le [cache busting](https://www.keycdn.com/support/what-is-cache-busting/) est déjà intégré dans la configuration Webpack.
 
