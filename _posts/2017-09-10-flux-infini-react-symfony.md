@@ -2,7 +2,7 @@
 layout: post
 title: Mise en place d'un flux infini Symfony-React
 permalink: /fr/flux-infini-symfony-react/
-excerpt: Pour rendre l'expérience utilisateur de nos applications web toujours plus agréable, nous sommes de plus en plus obligés d'utiliser plusieurs technologies en même temps. C'est par exemple le cas si l'on souhaite mettre en place un flux infini. La question se pose alors : comment interfacer les deux technos ? Pour le rendre simple et performant, nous avons choisis d'utiliser un backend Symfony et un front en ReactJs.
+excerpt: "Pour rendre l'expérience utilisateur de nos applications web toujours plus agréable, nous sommes de plus en plus obligés d'utiliser plusieurs technologies en même temps. C'est par exemple le cas si l'on souhaite mettre en place un flux infini. La question se pose alors : comment interfacer les deux technos ? Pour le rendre simple et performant, nous avons choisis d'utiliser un backend Symfony et un front en ReactJs."
 authors:
     - captainjojo
 categories:
