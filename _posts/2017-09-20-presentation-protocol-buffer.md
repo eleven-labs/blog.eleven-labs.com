@@ -12,14 +12,14 @@ tags:
     - go
 ---
 
-Une problématique assez récurente dans nos applications est la maniére de rendre notre données, qu'elle soit transmise ou stocké. Le format qu'on utilise souvent aujourd'hui est le JSON. Cependant certain language gère très mal le JSON comme Java et Go. Google a donc dévéloppé un système pour palier à ce problème : `Protocol Buffer`.
+Une problématique assez récurrente dans nos applications est la manière de rendre notre donnée, qu'elle soit transmise ou stockée. Le format qu'on utilise souvent aujourd'hui est le `JSON`. Cependant certain language le gère très mal tel que Java et Go. Google a donc développé un système pour palier à ce problème : `Protocol Buffer`.
 
 ## Présentation
 ---
 
 Protocol Buffer est un système de sérialisation de données tout comme `JSON` et `XML`. Il est disponible pour la plupart des languages. Une application en Java peut envoyer des objets à une application en Go. Le système repose sur un fichier qui va permettre de structurer notre objet, les fichiers `.proto`. Ce fichier va un peu comme une interface décrire notre objet. Protobuf permet ensuite de générer le code source de l'objet dans plusieurs langage différent.
 
-Pour récapituler, on déclare un fichier proto, on génére notre objet dans notre application serveur et dans notre application client. Nos objets auront dans leurs déclaration des méthodes de sérialisation et de de-sérialisation et ce quelque soit le langage.
+Pour récapituler, on déclare un fichier proto, on génère notre objet dans notre application serveur et dans notre application client. Nos objets auront dans leurs déclaration des méthodes de sérialisation et de de-sérialisation et ce quelque soit le langage.
 
 Notre exemple va être le suivant :
 
@@ -63,8 +63,8 @@ message Person {
 Dans cette example notre objet `Person` est constitué d'un `name`, d'un `id`, d'un `email` et de `phones`.
 La déclaration d'une propriété est définie par un type `int32` ou `string` (et bien d'autres), du nom de la propriété puis d'un identifiant unique (la position) de cette propriété.
 
-On peut aussi faire de la composition est créant de nouveux type comme ici `PhoneNumber` ou bien des enums.
-Des modeles de données sont aussi disponible comme les `array` avec le mot clé `repeated` ou bien encore des maps avec `map<Key, Value>`.
+On peut aussi faire de la composition est créant de nouveaux types comme ici `PhoneNumber` ou bien des énumérations.
+Des modèles de données sont aussi disponible comme les `array` avec le mot clé `repeated` ou bien encore des maps avec `map<Key, Value>`.
 
 Vous pouvez retrouver tout les types et déclaration sur [la documentation de Protobuf](https://developers.google.com/protocol-buffers/docs/proto3).
 
@@ -78,7 +78,7 @@ book := &pb.AddressBook{}
 out, err := proto.Marshal(book)
 ```
 
-Pour comprendre comment Protocul Buffer sérialise un objet en binaire nous allons prendre la définition suivante :
+Pour comprendre comment Protocol Buffer sérialise un objet en binaire nous allons prendre la définition suivante :
 
 ```Proto
 message Test1 {
@@ -86,7 +86,7 @@ message Test1 {
 }
 ```
 
-Nous allons assigné à `a` la valeur 150. Une serialisation en `json` donnerait :
+Nous allons assigné à `a` la valeur 150. Une sérialisation en `json` donnerait :
 
 ```JSON
 {"a": 150}
@@ -94,7 +94,7 @@ Nous allons assigné à `a` la valeur 150. Une serialisation en `json` donnerait
 
 Donne `7b 22 61 22 3a 31 35 30 7d` sur 9 octets.
 
-En serilisant avec Protobuf on obtient `08 96 01` sur 3 octets. Ce binaire est composé pour chacune des propriétés de notre objet d'un couple clé/valeur.
+En sérialisant avec Protobuf on obtient `08 96 01` sur 3 octets. Ce binaire est composé pour chacune des propriétés de notre objet d'un couple clé/valeur.
 
 ### Clé :
 
@@ -110,7 +110,7 @@ La position ici est 1 et le type 0, soit :
 
 ### Valeur :
 
-Codage de la valeur : groupage en 7 bits avec l'ajoût d'un msb (most significant bit), soit :
+Codage de la valeur : groupage en 7 bits avec l'ajout d'un msb (most significant bit), soit :
 
 ```
 96 01 = 1001 0110  0000 0001
@@ -154,7 +154,7 @@ Nous allons donc générer le fichier `Post` grâce à `protoc`:
 protoc --proto_path=. --go_out=. post.proto 
 ```
 
-Nous devons récuperer la librairie `proto` qui sera utilisé dans le client et dans le serveur.
+Nous devons récupérer la librairie `proto` qui sera utilisé dans le client et dans le serveur.
 
 ```Bash
 go get github.com/golang/protobuf/proto
@@ -247,7 +247,7 @@ Points positifs :
 - taille du binaire
 - langage-agnostic
 
-Points negatifs :
+Points négatifs :
 - maintenir les fichiers proto
 - debug (message en binaire)
 
