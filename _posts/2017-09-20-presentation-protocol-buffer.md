@@ -23,7 +23,7 @@ Pour récapituler, on déclare un fichier proto, on génère notre objet dans no
 
 Notre exemple va être le suivant :
 
-Notre api va retourné un objet `Post`. Un client va appeler cette api. Nous allons avoir besoin d'un fichier `proto` qui va générér le code source en Go. Le serveur va sérialisé un objet et le rendre au client. Ce qui nous donne :
+Notre api va retourné un objet `Post`. Un client va appeler cette api. Nous allons avoir besoin d'un fichier `proto` qui va générer le code source en Go. Le serveur va sérialisé un objet et le rendre au client. Ce qui nous donne :
 
 ```
 Go Struct  ↘                                              ↗ Go Struct
