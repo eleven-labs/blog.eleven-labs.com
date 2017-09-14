@@ -69,7 +69,14 @@ Des modèles de données sont aussi disponible comme les `array` avec le mot cl�
 Vous pouvez retrouver tous les types et déclaration sur [la documentation de Protobuf](https://developers.google.com/protocol-buffers/docs/proto3){:target="_blank"}.
 
 Une fois notre fichier proto prêt nous pouvons générer notre fichier Go ou autres avec la commande `protoc`.
-par example `protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/person.proto` en lui donnant le fichier proto en entrée et le dossier de destination en précisant le langage Go `--go_out` ou Java `--java_out`.
+
+Par exemple :
+
+```Bash
+protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/person.proto
+``` 
+
+En lui donnant le fichier proto en entrée et le dossier de destination en précisant le langage Go `--go_out` ou Java `--java_out`.
 
 Maintenant que notre fichier Go ou Java est généré, nous avons accès à la méthode de sérialisation.
 
