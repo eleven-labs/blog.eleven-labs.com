@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Présentation de Protocol Buffer
+title: Présentation de Protocol Buffers
 authors: 
     - qneyrat
-permalink: /fr/presentation-protocol-buffer/
+permalink: /fr/presentation-protocol-buffers/
 categories:
     - Api
     - Go
@@ -12,21 +12,21 @@ tags:
     - go
 ---
 
-Une problématique assez récurrente dans nos applications est la manière de rendre notre donnée, qu'elle soit transmise ou stockée. Le format qu'on utilise souvent aujourd'hui est le `JSON`. Cependant certain language le gère très mal tel que Java et Go. Google a donc développé un système pour palier à ce problème : `Protocol Buffer`.
+Une problématique assez récurrente dans nos applications est la manière de rendre notre donnée, qu'elle soit transmise ou stockée. Le format qu'on utilise souvent aujourd'hui est le `JSON`. Cependant certains langages le gèrent très mal tel que Java et Go. Google a donc développé un système pour palier à ce problème : `Protocol Buffers`.
 
 ## Présentation
 ---
 
-Protocol Buffer est un système de sérialisation de données tout comme `JSON` et `XML`. Il est disponible pour la plupart des languages. Une application en Java peut envoyer des objets à une application en Go. Le système repose sur un fichier qui va permettre de structurer notre objet, les fichiers `.proto`. Ce fichier va un peu comme une interface décrire notre objet. Protobuf permet ensuite de générer le code source de l'objet dans plusieurs langage différent.
+Protocol Buffers est un système de sérialisation de données tout comme `JSON` et `XML`. Il est disponible pour la plupart des langages. Une application en Java peut envoyer des objets à une application en Go. Le système repose sur un fichier qui va permettre de structurer notre objet, les fichiers `.proto`. Ce fichier va un peu comme une interface décrire notre objet. Protobuf permet ensuite de générer le code source de l'objet dans plusieurs langages différents.
 
-Pour récapituler, on déclare un fichier proto, on génère notre objet dans notre application serveur et dans notre application client. Nos objets auront dans leurs déclaration des méthodes de sérialisation et de de-sérialisation et ce quelque soit le langage.
+Pour récapituler, on déclare un fichier proto, on génère notre objet dans notre application serveur et dans notre application client. Nos objets auront dans leur déclaration des méthodes de sérialisation et de de-sérialisation et ce quelque soit le langage.
 
 Notre exemple va être le suivant :
 
-Notre api va retourné un objet `Post`. Un client va appeler cette api. Nous allons avoir besoin d'un fichier `proto` qui va générer le code source en Go. Le serveur va sérialisé un objet et le rendre au client. Ce qui nous donne :
+Notre API va retourner un objet `Post`. Un client va appeler cette api. Nous allons avoir besoin d'un fichier `proto` qui va générer le code source en Go. Le serveur va sérialiser un objet et le rendre au client. Ce qui nous donne :
 
 ```
-Go Struct  ↘                                              ↗ Go Struct
+Go Struct  ↘                                              ↗ Java Object
              Serialization -> bytes -> Deserialization 
 Proto file ↗                                              ↖ Proto file     
 ```
@@ -36,8 +36,8 @@ Nous allons maintenant voir étape par étape comment ça fonctionne.
 ## Fonctionnement
 ---
 
-Protobuf est un language qui va permettre de définir comment l'objet va être sérialisé et comment il va générer le code source.
-Voici un example de fichier protobuf :
+Protobuf est un langage qui va permettre de définir comment l'objet va être sérialisé et comment il va générer le code source.
+Voici un exemple de fichier protobuf :
 
 ```proto
 message Person {
@@ -60,16 +60,16 @@ message Person {
 }
 ```
 
-Dans cette example notre objet `Person` est constitué d'un `name`, d'un `id`, d'un `email` et de `phones`.
+Dans cet exemple notre objet `Person` est constitué d'un `name`, d'un `id`, d'un `email` et de `phones`.
 La déclaration d'une propriété est définie par un type `int32` ou `string` (et bien d'autres), du nom de la propriété puis d'un identifiant unique (la position) de cette propriété.
 
-On peut aussi faire de la composition est créant de nouveaux types comme ici `PhoneNumber` ou bien des énumérations.
+On peut aussi faire de la composition en créant de nouveaux types comme ici `PhoneNumber` ou bien des énumérations.
 Des modèles de données sont aussi disponible comme les `array` avec le mot clé `repeated` ou bien encore des maps avec `map<Key, Value>`.
 
-Vous pouvez retrouver tout les types et déclaration sur [la documentation de Protobuf](https://developers.google.com/protocol-buffers/docs/proto3).
+Vous pouvez retrouver tous les types et déclaration sur [la documentation de Protobuf](https://developers.google.com/protocol-buffers/docs/proto3){:target="_blank"}.
 
 Une fois notre fichier proto prêt nous pouvons générer notre fichier Go ou autres avec la commande `protoc`.
-par example `protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/person.proto` en lui donnant le fichier proto en entré et le dossier de destination en précisant le langage Go `--go_out` ou Java `--java_out`.
+par example `protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/person.proto` en lui donnant le fichier proto en entrée et le dossier de destination en précisant le langage Go `--go_out` ou Java `--java_out`.
 
 Maintenant que notre fichier Go ou Java est généré, nous avons accès à la méthode de sérialisation.
 
@@ -78,7 +78,7 @@ book := &pb.AddressBook{}
 out, err := proto.Marshal(book)
 ```
 
-Pour comprendre comment Protocol Buffer sérialise un objet en binaire nous allons prendre la définition suivante :
+Pour comprendre comment Protocol Buffers sérialise un objet en binaire nous allons prendre la définition suivante :
 
 ```Proto
 message Test1 {
@@ -86,7 +86,7 @@ message Test1 {
 }
 ```
 
-Nous allons assigné à `a` la valeur 150. Une sérialisation en `json` donnerait :
+Nous allons assigner à `a` la valeur 150. Une sérialisation en `json` donnerait :
 
 ```JSON
 {"a": 150}
@@ -119,11 +119,11 @@ Codage de la valeur : groupage en 7 bits avec l'ajout d'un msb (most significant
        → 2 + 4 + 16 + 128 = 150
 ```
 
-Un binaire protobuf sera plus léger qu'un json et donc plus rapidement transmis dans une requête. De plus le parsing est très performant, retrouvez un article sur [les performances de Protobuf](https://medium.com/@fzambia/centrifugo-protobuf-inside-json-outside-21d39bdabd68).
+Un binaire protobuf sera plus léger qu'un json et donc plus rapidement transmis dans une requête. De plus le parsing est très performant, retrouvez un article sur [les performances de Protobuf](https://medium.com/@fzambia/centrifugo-protobuf-inside-json-outside-21d39bdabd68){:target="_blank"}.
 
 Nous allons maintenant voir tout ça en pratique.
 
-## Example d'application
+## Exemple d'application
 ---
 
 Nous allons tout d'abord installer `protoc` qui permet de générer notre code depuis les fichiers protobuf. [Installer la version pour votre système d'exploitation](https://github.com/google/protobuf/releases/latest). Une fois ceci fait on va déclarer notre fichier protobuf. Nous allons ensuite installer la librairie qui va permettre de gérer la génération des fichiers Go.
@@ -154,7 +154,7 @@ Nous allons donc générer le fichier `Post` grâce à `protoc`:
 protoc --proto_path=. --go_out=. post.proto 
 ```
 
-Nous devons récupérer la librairie `proto` qui sera utilisé dans le client et dans le serveur.
+Nous devons récupérer la librairie `proto` qui sera utilisée dans le client et dans le serveur.
 
 ```Bash
 go get github.com/golang/protobuf/proto
@@ -203,7 +203,7 @@ package main
 import (
 	"bufio"
 	"bytes"
-	fmt "fmt"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -240,7 +240,7 @@ func main() {
 ## Conclusion
 ---
 
-Protocol Buffer est un système maintenu par Google qui va permettre de jouer plus facilement avec nos données et de pouvoir travailler avec différents langages. Ceci est relativement important dans une architecture micro-services où chaque service doit communiquer avec d'autres quelque soit le langage.
+Protocol Buffers est un système maintenu par Google qui va permettre de jouer plus facilement avec nos données et de pouvoir travailler avec différents langages. Ceci est relativement important dans une architecture micro-services où chaque service doit communiquer avec d'autres quelque soit le langage.
 
 Points positifs :
 - performance
