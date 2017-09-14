@@ -39,7 +39,7 @@ Nous allons maintenant voir étape par étape comment ça fonctionne.
 Protobuf est un langage qui va permettre de définir comment l'objet va être sérialisé et comment il va générer le code source.
 Voici un exemple de fichier protobuf :
 
-```proto
+```Proto
 message Person {
   string name = 1;
   int32 id = 2;
@@ -157,7 +157,7 @@ message Post {
 Un `Post` est donc composé d'un `id`, d'un `title` et d'un `author`.
 Nous allons donc générer le fichier `Post` grâce à `protoc`:
 
-```bash
+```Bash
 protoc --proto_path=. --go_out=. post.proto 
 ```
 
@@ -258,4 +258,4 @@ Points négatifs :
 - maintenir les fichiers proto
 - debug (message en binaire)
 
-Nous verrons dans un prochain article grpc, un client rpc qui utilise http2 et protobuf.  
+Nous verrons dans un prochain article gRPC, un client RPC qui utilise HTTP2 et protobuf.  
