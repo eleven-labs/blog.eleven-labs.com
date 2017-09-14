@@ -52,8 +52,6 @@ La librairie se décompose en trois parties :
 -   **Core** : l’identité et la nature de Polymer. Les développeurs ont fait des choix et affirmé des opinions : comment déclarer un élément, étendre un élément à partir d’un autre, capturer le changement d’un élément, lancer un événement, gérer l’asynchrone, ...
 -   **Elements** : il y a deux catégories d'éléments prédéfini par Polymer, les éléments d’interfaces et les autres. On est libre de piocher dans une liste qui s’agrandit au fil du temps ou bien de les définir soit même.
 
-![Polymer architecture](http://www.polymer-project.org/images/architecture-diagram.svg)
-
 L’objectif principal de Polymer est de faire gagner du temps de développement en se basant sur les fonctionnalités natives des navigateurs et du HTML. L’association des éléments prédéfinis et des éléments personnalisés permet de construire une application complète. En contre partie, l’utilisation et la compréhension de la librairie peut prendre du temps selon votre habitude à développer avec des frameworks tel que Angular ou Meteor.
 
 Si Polymer aiguise votre curiosité, une [FAQ](http://www.polymer-project.org/faq.html) et une [sandbox](http://www.polymer-project.org/tools/sandbox/) sont à disposition sur leur [site](http://www.polymer-project.org/) qui est lui-même fait avec Polymer.
