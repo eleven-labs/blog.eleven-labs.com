@@ -166,7 +166,7 @@ Nous devons récupérer la librairie `proto` qui sera utilisée dans le client e
 ```Bash
 go get github.com/golang/protobuf/proto
 ```
-### Le serveur
+### Le serveur :
 Nous allons maintenant passer au code du serveur.
 
 ```Go
@@ -201,7 +201,7 @@ func main() {
 }
 ```
 
-### Le client
+### Le client :
 Nous allons maintenant passer au code du client.
 
 ```Go
