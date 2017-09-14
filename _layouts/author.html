@@ -4,7 +4,7 @@ layout: default
 <article>
     <header class="page-heading">
         <div class="avatar">
-            <img class="avatar-img" src="/img/authors/{{page.login}}.jpg"/>
+            <img class="avatar-img" src="{{ '/img/authors/:author.jpg' | prepend: site.baseurl | replace: '//', '/' | replace: ':author', page.login }}"/>
         </div>
         <h1 class="page-heading-title">{{ page.title }}</h1>
         <div class="author-social">
