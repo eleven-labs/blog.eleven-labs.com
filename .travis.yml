@@ -21,6 +21,8 @@ after_success:
 
 before_deploy:
     - bundle exec jekyll build
+    - pip install --user awscli
+    - aws s3 rm s3://blog.eleven-labs.com --recursive
 
 deploy:
     - provider: s3
@@ -34,6 +36,5 @@ deploy:
           branch: master
 
 after_deploy:
-    - pip install --user awscli
     - aws configure set preview.cloudfront true
     - aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" --paths "/*"
