@@ -18,7 +18,7 @@ Quand on exécute une suite de tests fonctionnels ou unitaires sur une applicati
 
 **Contexte : isolation grâce à un rollback de la base de données :**
 
-Comme indiqué dans un [article précédent](http://blog.eleven-labs.com/fr/test-unitaire-dun-bundle-symfony2/ "Test unitaire d’un bundle Symfony 2") et [décrit par Alexandre Salomé](http://alexandre-salome.fr/blog/Symfony2-Isolation-Of-Tests "Isolation of tests in Symfony2"), il est possible de mettre en place un système de rollback pour rétablir l'état initial des données après l’exécution de chaque test.
+Comme indiqué dans un [article précédent](https://blog.eleven-labs.com/fr/test-unitaire-dun-bundle-symfony2/ "Test unitaire d’un bundle Symfony 2") et [décrit par Alexandre Salomé](http://alexandre-salome.fr/blog/Symfony2-Isolation-Of-Tests "Isolation of tests in Symfony2"), il est possible de mettre en place un système de rollback pour rétablir l'état initial des données après l’exécution de chaque test.
 
 Cela repose sur cette classe que vos tests fonctionnels PHPUnit devront étendre et qui déclenche le système d'isolation, avant et après chaque cas de tests grâce aux méthodes *setUp* et *tearDown* :
 

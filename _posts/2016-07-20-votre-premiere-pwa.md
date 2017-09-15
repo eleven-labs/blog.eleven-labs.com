@@ -15,7 +15,7 @@ tags:
 - pwa
 ---
 
-Le monde du web évolue. Le site web mobile est devenu le plus grand concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps (le cas contraire, je vous invite à lire mon précédent article sur cet événement, disponible [ici](http://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/)). Ça tombe bien, cet article va vous permettre de mettre en place votre première "PWA".
+Le monde du web évolue. Le site web mobile est devenu le plus grand concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps (le cas contraire, je vous invite à lire mon précédent article sur cet événement, disponible [ici](https://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/)). Ça tombe bien, cet article va vous permettre de mettre en place votre première "PWA".
 
 ### Pré-requis :
 

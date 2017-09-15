@@ -150,7 +150,7 @@ On nous rappelle que cette architecture est applicable à la plupart des problé
 
 En ce qui concerne le pattern CQRS il est parfait pour fonctionner avec l'event sourcing. D'un côté les commandes vont générer des événements, de l'autre les Query vont permettre de générer des vues optimisées pour la lecture. Il peut y avoir autant de vues que nécessaire à partir d'un seul agrégat d'événements à reconstituer.
 
-Nous vous renvoyons vers l'article de Romain Pierlot sur le sujet du [CQRS](http://blog.eleven-labs.com/fr/cqrs-pattern/) qui rentre vraiment dans le détail technique.
+Nous vous renvoyons vers l'article de Romain Pierlot sur le sujet du [CQRS](https://blog.eleven-labs.com/fr/cqrs-pattern/) qui rentre vraiment dans le détail technique.
 
 Notre ressenti : l'introduction est très bonne en terme de théorie sur des exemples basiques, mais il manque un peu de cas pratiques et en conditions réelles.
 
