@@ -18,7 +18,7 @@ image:
   path: /assets/2017-07-17-fastlane-ios/fastlane_logo.png
   height: 100
   width: 100
- cover: /assets/2017-07-17-fastlane-ios/cover.jpg
+cover: /assets/2017-07-17-fastlane-ios/cover.jpg
 ---
 
 # Qu'est-ce que "Fastlane"
