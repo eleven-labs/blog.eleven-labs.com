@@ -23,19 +23,19 @@ image:
 # Qu'est-ce que "Fastlane"
 
 Fastlane est un outil open-source qui permet de faire du **Continuous Delivery** sous IOS et Android.
-Il permet d'automatiser un certain nombre de tâches fastidieuses comme gèrer les sreenshots, les certificats, déployer votre app...
+Il permet d'automatiser un certain nombre de tâches fastidieuses comme gérer les sreenshots, les certificats, déployer votre app...
 
 Vous l'avez compris, cet outil va changer votre vie.
 
-Voici la liste des libs à dispositions avec Fastlane :
+Voici la liste des libs à disposition avec Fastlane :
 
 ![Fastlane tools]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_tools.png){:width="400px"}
 
 * **Deliver**: Télécharge des captures d'écran, des métadonnées et votre application sur l'App Store en utilisant une seule commande.
-* **Snapshot**: Automatisez la prise des captures d'écran localisées de votre application iOS sur tous les périphériques.
+* **Snapshot**: Automatise la prise des captures d'écran localisées de votre application iOS sur tous les périphériques.
 * **Frameit**: Place rapidement vos captures d'écran dans les cadres appropriés (iphone, ipad...).
-* **Pem**: Génére et renouvèle automatiquement vos profils de notification push
-* **Sigh**: Crée, renouvèle, télécharge et répare des profils de provisionnement
+* **Pem**: Génére et renouvèle automatiquement vos profils de notification push.
+* **Sigh**: Crée, renouvèle, télécharge et répare des profils de provisionnement.
 * **Produce**: Crée de nouvelles applications iOS sur le portail développeur Apple et iTunes Connect avec les informations minimales requises.
 * **Cert**: Crée automatiquement et conserve des certificats de signature.
 * **Scan**: Facilite l'exécution des tests de votre application iOS et Mac sur un simulateur ou un périphérique connecté.
@@ -51,12 +51,12 @@ Se rajoute également à cette liste :
 
 ![Fastlane tree]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane-tree.png){:width="400px"}
 
-Personellement, quand j'ai vu ce que Fastlane était capable de faire j'ai limite versé une petite larmichette !
+Personnellement, quand j'ai vu ce que Fastlane était capable de faire j'ai limite versé une petite larmichette !
 Fini le temps de tout faire à la main !
 
 *Note* : J'ai créé un projet "bidon" avec différents écrans et tests pour cet article.
 
-# Premier pas
+# Premiers pas
 
 #### Installation
 
@@ -88,7 +88,7 @@ Il générera également une configuration pour vous, en fonction des informatio
 
 ![Fastlane files]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastline-files.png){:width="400px"}
 
-**Appfile**: L'Appfile stocke des informations utiles qui sont utilisées dans toutes les libs Fastlane comme votre Apple ID ou le Bundle Identifier, pour déployer vos **lanes** (voies) plus rapidement et adaptées aux besoins de votre projet.
+**Appfile**: L'Appfile stocke des informations utiles qui sont utilisées dans toutes les libs Fastlane comme votre Apple ID ou le Bundle Identifier, pour déployer vos **lanes** (voies) plus rapidement, adaptées aux besoins de votre projet.
 
 Par défaut, ce fichier ressemble à :
 
@@ -116,7 +116,7 @@ identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 ```
 
-**Fastfile**: Fichier ruby qui définit toutes vos lanes. Une lane est un ensemble d'instructions que vous souhaitez que Fastlane exécute.
+**Fastfile**: Fichier ruby qui définit toutes vos lanes. Une lane est un ensemble d'instructions que vous souhaitez faire éxécuter par Fastlane.
 
 ``` ruby
 # Fastfile - J'ai clean le fichier et j'ai créé une lane test
@@ -137,13 +137,13 @@ Si vous lancez un :
 $ bundle exec fastlane test
 ```
 
-Il lance alors tous les unit/ui tests de votre projet. Bien évidement Scan peut générer des rapports au format HTML, JSON et JUnit.
+Il lance alors tous les unit/ui tests de votre projet. Bien évidemment, Scan peut générer des rapports au format HTML, JSON et JUnit.
 
 ![CLI scan]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/cli-scan.png){:width="900px"}
 
 Magique non ?
 
-Nous allons partir du principe que je travaille en collaboration avec pleins de dev mobile sur ma super application.
+Nous allons partir du principe que je travaille en collaboration avec pleins de devs mobile sur ma super application.
 Le problème se pose au niveau des certificats et profils de provisionnement.
 Heureusement Fastlane nous met à disposition **Match**.
 
@@ -158,7 +158,7 @@ Ceci est bien évidement [sécurisé](https://github.com/fastlane/fastlane/tree/
 
 *Note* : L'implémentation de match vous oblige à révoquer vos certificats existants.
 
-Si vous ne voulez pas revoquer vos certificats existants, mais souhaitez toujours une configuration automatisée, cert et sigh sont la pour vous.
+Si vous ne voulez pas révoquer vos certificats existants, mais souhaitez toujours une configuration automatisée, cert et sigh sont là pour vous.
 
 * **Cert** : Veillera à ce que vous ayez un certificat valide et sa clé privée installée sur votre machine.
 * **Sigh** : Veillera à ce que vous ayez un provisioning profile valide installé sur votre machine, qui correspond au certificat installé.
@@ -199,7 +199,7 @@ match(git_branch: "team2", username: "user@team2.com")
 
 Avant d'exécuter match pour la première fois, vous devriez envisager de supprimer vos profils et certificats existants à l'aide de la commande [match nuke](https://github.com/fastlane/fastlane/tree/master/match#nuke).
 
-Executer match :
+Exécuter match :
 
 ```
 $ bundle exec fastlane match appstore
@@ -207,14 +207,14 @@ $ bundle exec fastlane match appstore
 
 ![](https://github.com/fastlane/fastlane/raw/master/match/assets/match_appstore_small.gif)
 
-Cela créera un nouveau certificat et un profils de provisionnement (si nécessaire) et les stockera dans votre repo Git.
+Cela créera un nouveau certificat et un profil de provisionnement (si nécessaire) et les stockera dans votre repo Git.
 Si vous avez précédemment exécuté match, il installera automatiquement les profils existants à partir du repo Git.
 
-Les provisioning profile sont installés dans ~ / Library / MobileDevice / Provisioning Profiles alors que les certificats et les clés privées sont installés dans votre Keychain.
+Les provisioning profiles sont installés dans ~ / Library / MobileDevice / Provisioning Profiles alors que les certificats et les clés privées sont installés dans votre Keychain.
 
 **Comment faire si vous devez ajouter un nouveau device ?**
 
-Non on va pas se connecter et le faire à la main !!!
+Non on ne va pas se connecter et le faire à la main !
 On va utiliser l'action [register_devices](https://docs.fastlane.tools/actions/#register_devices) en combinaison avec match.
 
 ```ruby
@@ -231,14 +231,14 @@ A123456789012345678901234567890123456789	NAME1
 B123456789012345678901234567890123456789	NAME2
 ```
 
-En utilisant le paramètre `force_for_new_devices`, match va checker si le nombre de device a changé depuis la dernière
-exécution et regénère automatiquement le profils de provisionnement si nécessaire.
+En utilisant le paramètre `force_for_new_devices`, match va checker si le nombre de devices a changé depuis la dernière
+exécution et regénère automatiquement le profil de provisionnement si nécessaire.
 
-Vous pouvez utiliser aussi `force: true` pour générer le profils de provisionnement à chaque exécution.
+Vous pouvez utiliser aussi `force: true` pour générer le profil de provisionnement à chaque exécution.
 
 #### Paramétrer Xcode
 
-Avec Xcode 8 vous pouvez définir un profil de provisionnement pour chaque targets au lieu d'un provisioning profile UUID.
+Avec Xcode 8 vous pouvez définir un profil de provisionnement pour chaque target au lieu d'un provisioning profile UUID.
 En faisant ça, Xcode sélectionne automatiquement le dernier provisioning profile corresponddant à son nom.
 De cette manière, vous n'aurez pas à mettre à jour Xcode à chaque fois que vous générez un profil de provisionnement (ex: Quand vous ajoutez un nouveau device).
 
@@ -246,11 +246,11 @@ Vous pouvez spécifier quel profil de provisionnement utiliser dans `General` ta
 
 ![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_xcode_sign.png){:width="600px"}
 
-On vient de voir avec quel facilité on gère les certificats et profil de provisionnement. Maintenant on va s'attaquer au push notification profile.
+On vient de voir avec quelle facilité on gère les certificats et profils de provisionnement. Maintenant on va s'attaquer au push notification profile.
 
 # PEM
 
-Si vous avez lu mon précédent article [Envoyer des push notifications via Amazon SNS en Swift 3](/fr/envoyer-push-notifications-amazon-sns-swift-3/), vous avez vite comprit que c'était super "galère" de faire ceci à la main.
+Si vous avez lu mon précédent article [Envoyer des push notifications via Amazon SNS en Swift 3](/fr/envoyer-push-notifications-amazon-sns-swift-3/), vous avez vite compris que c'était super "galère" de faire ceci à la main.
 
 Mais ça c'était avant !
 
@@ -292,7 +292,7 @@ $ bundle exec fastlane pushCertificat
 
 ![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_pem.jpg)
 
-Et hop, un jeu d'enfants !
+Et hop, un jeu d'enfant !
 
 ![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_pem_apple.jpg)
 
@@ -317,7 +317,7 @@ clean true #Clean le projet à chaque execution
 code_coverage true
 #slack_only_on_failure true
 
-#Vous pouvez specifier sur quel iphone,ipad vous souhaitez lancer les tests.
+#Vous pouvez spécifier sur quel iphone ou ipad vous souhaitez lancer les tests.
 #devices [
 #  "iPhone 6s",
 #  "iPhone 7"
@@ -325,14 +325,14 @@ code_coverage true
 ```
 
 
-Une bonne pratique est de notifier Slack lorsque les tests failed. J'ai donc ajouté dans mon fichier `Fastfile` la configuration Slack.
+Une bonne pratique est de notifier Slack lorsque les tests sont failed. J'ai donc ajouté dans mon fichier `Fastfile` la configuration Slack :
 
 ```ruby
 #...
 
 platform :ios do
   before_all do
-    ENV["SLACK_URL"] = "https://hooks.slack.com/services/XXXXXX" # URL Webhook créer via Slack.
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/XXXXXX" # URL Webhook créé via Slack.
   end
 
   desc "Runs all the tests"
@@ -351,8 +351,7 @@ end
 
 # Snapshot - Frameit
 
-Si vous devez manuellement créer pour 20 langues x 6 devices x 5 screenshots (car 5 écrans différents) = 600 screenshots.
-On voit la quantité de travail énorme que demande les screenshots.
+Si vous devez manuellement créer des screenshots pour 20 langues x 6 devices x 5 screenshots (car 5 écrans différents) = 600 screenshots. On voit tout de suite la quantité de travail énorme que demandent les screenshots.
 
 Les screenshots sont une partie importante car cela influence beaucoup l'utilisateur sur votre application.
 
@@ -411,7 +410,7 @@ func testCarDetail() {
 
 **Attention !**
 
-Pour une raison étrange sur certain device (dans mon cas iphone 5) avec certaines langues le ``tap()``ne marche pas.
+Pour une raison étrange sur certain devices (dans mon cas iphone 5) avec certaines langues le ``tap()``ne marche pas.
 Il faut créer une méthode qui va forcer celui-ci.
 
 ```swift
@@ -449,7 +448,7 @@ languages([
 
 scheme "FastlaneArticle"
 
-# Super important sinon vous aller avoir une erreur
+# Super important sinon vous allez avoir une erreur
 project "../FastlaneArticle.xcodeproj"
 
 # Plaçons-les dans ./screenshots
@@ -490,7 +489,7 @@ name.text = UserDefaults.standard.string(forKey: "firstName")
 // name.text = "Hatem"
 ```
 
-Fastlane inclue `FASTLANE_SNAPSHOT`, qui permet de définir temporairement un `UserDefaults.standard`.
+Fastlane inclut `FASTLANE_SNAPSHOT`, qui permet de définir temporairement un `UserDefaults.standard`.
 Vous pouvez l'utiliser pour détecter quand l'application est exécutée par Snapshot.
 
 ```swift
@@ -499,7 +498,7 @@ if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
 }
 ```
 
-Bon maintenant qu'on a nos beaux screenshot, on va rajouter de beaux cadre non ? Aller c'est parti.
+Bon, maintenant qu'on a nos beaux screenshots, on va rajouter de beaux cadres non ? Allez c'est parti.
 
 ### Frameit
 
@@ -507,27 +506,27 @@ Bon maintenant qu'on a nos beaux screenshot, on va rajouter de beaux cadre non ?
 
 Pour utiliser `Frameit`, il faut avoir sur votre machine [ImageMagick](https://www.imagemagick.org/script/index.php).
 
-Sur mac, il suffit de faire:
+Sur mac, il suffit de faire :
 
 ```shell
 $ brew install imagemagick
 ```
 
-Vous pouvez dès à présent essaye ce petit bijou via:
+Vous pouvez dès à présent essayer ce petit bijou via :
 
 ```shell
 # Executer cette command dans votre dossier ou ce situe les screenshots.
 $ bundle exec fastlane frameit
 ```
 
-Vous avez normalement des nouvelles images qui sont arrivés tel que:
+Vous avez normalement de nouvelles images qui sont arrivées telles que :
 
 ![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6Plus-02CarDetail-d41d8cd98f00b204e9800998ecf8427e_framed.png){:height="600px"}
 
 Et si vous avez envie d'avoir l'iphone rose on fait comment ?
 
 ```shell
-# Tout d'abord, met à jours ta liste de frames
+# Tout d'abord, mettez à jour votre liste de frames
 $ bundle exec fastlane frameit download_frames
 
 $ bundle exec fastlane frameit rose_gold
@@ -537,7 +536,7 @@ $ bundle exec fastlane frameit rose_gold
 
 Vous trouverez la liste des frames [ici](https://github.com/fastlane/frameit-frames/tree/gh-pages/latest).
 
-Bon c'est pas mal mais on peut encore faire mieux. Comment ? En rajoutant un titre à ce beau screenshot.
+Bon, c'est pas mal mais on peut encore faire mieux. Comment ? En rajoutant un titre à ce beau screenshot.
 
 Dans la version 2.0 de Frameit vous pouvez maintenant ajouter un fond custom, un titre et des couleurs à vos screenshots.
 
@@ -550,9 +549,9 @@ Créer un fichier `Framefile.json` dans le dossier screenshots.
     "title": {
       "color": "#545454"
     },
-    "background": "./background.jpg", // Ajouter un background
+    "background": "./background.jpg", // Ajoute un background
     "padding": 50,
-    "show_complete_frame": true, // Retricit le device et le cadre afin de tout afficher
+    "show_complete_frame": true, // Retrécit le device et le cadre afin de tout afficher
     "stack_title" : false // Spécifie si frameit doit afficher le mot-clé au-dessus du titre lorsque le mot-clé et le titre sont définis.
   },
   "data": [
@@ -599,12 +598,12 @@ clean true
 
 sdk "iphoneos10.3" # Le SDK qui devra être utilisé pour le build de l'application
 
-output_directory "../build" # Chemain ou nous allons stocker le fichier .ipa
+output_directory "../build" # Chemain où nous allons stocker le fichier .ipa
 output_name "Fastlane"
 
 silent true # Cache toutes les informations qui ne sont pas nécessaire pendant le build
 
-#configuration => Configuration utilisé pour le build. Par defaut la valeur est Release
+#configuration => Configuration utilisée pour le build. Par défaut la valeur est Release
 ```
 
 Nous allons créer une **lane** pour builder notre application pour Apple TestFlight
@@ -613,7 +612,7 @@ Nous allons créer une **lane** pour builder notre application pour Apple TestFl
 desc "Submits to Apple TestFlight"
   lane :buildTestFlight do
     match(app_identifier: "com.eleven.fastlane.debug", type: "appstore")
-    increment_build_number # Incremente le chiffre du build de votre projet
+    increment_build_number # Incrémente le chiffre du build de votre projet
     gym(configuration: "Debug")
 end
 ```
@@ -622,13 +621,13 @@ end
 $ bundle exec fastlane buildTestFlight
 ```
 
-*Note* : Il se peut que vous ayez une erreur dû au fait que vous n'ayez pas de bundle identifier sur Itunes Connect. Pour remédier à ça, il faut juste en créer un via:
+*Note* : Il se peut que vous ayez une erreur dûe au fait que vous n'ayez pas de bundle identifié sur Itunes Connect. Pour remédier à ça, il faut juste en créer un via :
 
 ```shell
 $ bundle exec fastlane produce -u MAIL -a com.eleven.fastlane.debug --skip_itc
 ```
 
-Avouez que c'est plus facile que de le faire sois-même. Maintenant on va voir comment envoyer notre fichier ipa pour le tester via TestFlight.
+Avouez que c'est plus facile que de le faire soi-même. Maintenant on va voir comment envoyer notre fichier ipa pour le tester via TestFlight.
 
 # Pilot
 
@@ -639,19 +638,19 @@ Pilot permet de :
 * Récupérer des informations sur les testeurs et les devices
 * Import/export tous les testeurs disponibles
 
-Pour uploader un nouveau build vous pouvez executer la commande:
+Pour uploader un nouveau build vous pouvez exécuter la commande:
 
 ```shell
 $ bundle exec fastlane pilot upload
 ```
 
-Cela recherchera automatiquement un ipa dans votre répertoire courrant et tente de récupérer les informations d'identification
+Cela recherchera automatiquement un ipa dans votre répertoire courant et tentera de récupérer les informations d'identification
 de connexion à partir de votre configuration Fastlane.
 
 *Note* : Pensez bien à créer votre application sur Itunes Connect avant.
-(ou utiliser la lib [produce](https://github.com/fastlane/fastlane/tree/master/produce))
+(ou utilisez la lib [produce](https://github.com/fastlane/fastlane/tree/master/produce))
 
-Nous pouvons reprendre notre **lane** précédement créer et y rajouter l'intruction `pilot`
+Nous pouvons reprendre notre **lane** précédement créée et y rajouter l'instruction `pilot`
 
 ```ruby
 desc "Submits to Apple TestFlight"
@@ -667,8 +666,8 @@ end
 $ bundle exec fastlane buildTestFlight
 ```
 *Note*:
-1. Si comme moi vous avez une double identification via votre téléphone, il suffit de ce connecter [ici](https://appleid.apple.com/account/manage) et de générer un password dans la section Security > APP-SPECIFIC PASSWORDS
-2. Vérifier sur votre Itunes Connect le bundle identifier renseigner.
+1. Si comme moi vous avez une double identification via votre téléphone, il suffit de se connecter [ici](https://appleid.apple.com/account/manage) et de générer un password dans la section Security > APP-SPECIFIC PASSWORDS
+2. Vérifiez sur votre Itunes Connect le bundle identifier renseigné.
 
 # Deliver
 
@@ -684,7 +683,7 @@ $ bundle exec fastlane deliver init
 username "yourItunesEmail@eleven-labs.com"
 ```
 
-Il vous suffit dans votre lane d'ajouter l'instruction
+Il vous suffit dans votre lane d'ajouter l'instruction :
 
 ```ruby
 deliver(force: true) # Force: true pour skip le repport HTML de verification
@@ -694,10 +693,10 @@ Vous devriez avoir un nouveau folder metadata qui vient d'apparaître.
 
 ![](https://raw.githubusercontent.com/fastlane/fastlane/master/deliver/assets/metadata.png)
 
-A vous maintenant de mettre à jour ces metadata.
+À vous maintenant de mettre à jour ces metadata.
 
 # Conclusion
 
-Si vous n'êtes pas tombé amoureux de Fastlane je ne comprends pas, vous aimez souffrir :)
+Si vous n'êtes pas tombés amoureux de Fastlane je ne comprends pas, vous aimez souffrir :)
 On voit très rapidement que ce petit bijou nous fait gagner un temps monstre et nous évite de faire une erreur humaine (l'avantage de l'automatisation).
 Après quelques tests et configurations vous pouvez facilement reprendre vos scripts pour les réutiliser sur d'autres projets.
