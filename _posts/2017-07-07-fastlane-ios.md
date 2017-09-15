@@ -29,7 +29,7 @@ Vous l'avez compris, cet outil va changer votre vie.
 
 Voici la liste des libs à dispositions avec Fastlane :
 
-![Fastlane tools](/assets/2017-07-17-fastlane-ios/fastlane_tools.png){:width="400px"}
+![Fastlane tools]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_tools.png){:width="400px"}
 
 * **Deliver**: Télécharge des captures d'écran, des métadonnées et votre application sur l'App Store en utilisant une seule commande.
 * **Snapshot**: Automatisez la prise des captures d'écran localisées de votre application iOS sur tous les périphériques.
@@ -49,7 +49,7 @@ Se rajoute également à cette liste :
 
 *Schéma de lanes fastlane*
 
-![Fastlane tree](/assets/2017-07-17-fastlane-ios/fastlane-tree.png){:width="400px"}
+![Fastlane tree]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane-tree.png){:width="400px"}
 
 Personellement, quand j'ai vu ce que Fastlane était capable de faire j'ai limite versé une petite larmichette !
 Fini le temps de tout faire à la main !
@@ -86,7 +86,7 @@ On vous demandera votre Apple ID, mot de passe et dans mon cas un digit code via
 Fastlane vous récapitulera vos informations dans  `Summary for produce` et créera votre application dans Itunes Connect et Dev Center.
 Il générera également une configuration pour vous, en fonction des informations fournies.
 
-![Fastlane files](/assets/2017-07-17-fastlane-ios/fastline-files.png){:width="400px"}
+![Fastlane files]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastline-files.png){:width="400px"}
 
 **Appfile**: L'Appfile stocke des informations utiles qui sont utilisées dans toutes les libs Fastlane comme votre Apple ID ou le Bundle Identifier, pour déployer vos **lanes** (voies) plus rapidement et adaptées aux besoins de votre projet.
 
@@ -139,7 +139,7 @@ $ bundle exec fastlane test
 
 Il lance alors tous les unit/ui tests de votre projet. Bien évidement Scan peut générer des rapports au format HTML, JSON et JUnit.
 
-![CLI scan](/assets/2017-07-17-fastlane-ios/cli-scan.png){:width="900px"}
+![CLI scan]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/cli-scan.png){:width="900px"}
 
 Magique non ?
 
@@ -244,7 +244,7 @@ De cette manière, vous n'aurez pas à mettre à jour Xcode à chaque fois que v
 
 Vous pouvez spécifier quel profil de provisionnement utiliser dans `General` tab après avoir désactivé `Automatically manage signing`.
 
-![](/assets/2017-07-17-fastlane-ios/fastlane_xcode_sign.png){:width="600px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_xcode_sign.png){:width="600px"}
 
 On vient de voir avec quel facilité on gère les certificats et profil de provisionnement. Maintenant on va s'attaquer au push notification profile.
 
@@ -290,11 +290,11 @@ end
 $ bundle exec fastlane pushCertificat
 ```
 
-![](/assets/2017-07-17-fastlane-ios/fastlane_pem.jpg)
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_pem.jpg)
 
 Et hop, un jeu d'enfants !
 
-![](/assets/2017-07-17-fastlane-ios/fastlane_pem_apple.jpg)
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_pem_apple.jpg)
 
 # Scan
 
@@ -346,8 +346,8 @@ end
 
 *Résultat sur Slack*
 
-![](/assets/2017-07-17-fastlane-ios/fastlane_scan_success.png){:width="180px"}
-![](/assets/2017-07-17-fastlane-ios/fastlane_scan_error.png){:width="200px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_scan_success.png){:width="180px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_scan_error.png){:width="200px"}
 
 # Snapshot - Frameit
 
@@ -471,8 +471,8 @@ Bon c'est le moment d'aller prendre un café ou de manger une pomme ! (Oui les p
 
 Fastlane vous crée une page HTML récapitulant tous les devices par langues.
 
-![](/assets/2017-07-17-fastlane-ios/fastlane_snapshot_success.png){:width="200px"}
-![](/assets/2017-07-17-fastlane-ios/fastlane_snapshot.png)
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_snapshot_success.png){:width="200px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_snapshot.png)
 
 Cool non ?
 
@@ -522,7 +522,7 @@ $ bundle exec fastlane frameit
 
 Vous avez normalement des nouvelles images qui sont arrivés tel que:
 
-![](/assets/2017-07-17-fastlane-ios/iPhone6Plus-02CarDetail-d41d8cd98f00b204e9800998ecf8427e_framed.png){:height="600px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6Plus-02CarDetail-d41d8cd98f00b204e9800998ecf8427e_framed.png){:height="600px"}
 
 Et si vous avez envie d'avoir l'iphone rose on fait comment ?
 
@@ -533,7 +533,7 @@ $ bundle exec fastlane frameit download_frames
 $ bundle exec fastlane frameit rose_gold
 ```
 
-![](/assets/2017-07-17-fastlane-ios/iPhone6-01CarList-d41d8cd98f00b204e9800998ecf8427e_framed.png){:height="600px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6-01CarList-d41d8cd98f00b204e9800998ecf8427e_framed.png){:height="600px"}
 
 Vous trouverez la liste des frames [ici](https://github.com/fastlane/frameit-frames/tree/gh-pages/latest).
 
@@ -575,8 +575,8 @@ Créer un fichier `Framefile.json` dans le dossier screenshots.
 }
 ```
 
-![](/assets/2017-07-17-fastlane-ios/iPhone6-01CarList-d41d8cd98f00b204e9800998ecf8427e_framed_custom.png){:height="600px"}
-![](/assets/2017-07-17-fastlane-ios/iPhone6-02CarDetail-d41d8cd98f00b204e9800998ecf8427e_framed_custom.png){:height="600px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6-01CarList-d41d8cd98f00b204e9800998ecf8427e_framed_custom.png){:height="600px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6-02CarDetail-d41d8cd98f00b204e9800998ecf8427e_framed_custom.png){:height="600px"}
 
 Avouez c'est bad ass ? :)
 
