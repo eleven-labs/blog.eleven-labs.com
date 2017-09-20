@@ -21,7 +21,7 @@ Une problématique assez récurrente dans nos applications est la manière de re
 
 Protocol Buffers est un système de sérialisation de données tout comme `JSON` et `XML`. Il est disponible pour la plupart des langages. Une application en Java peut envoyer des objets à une application en Go. Le système repose sur un fichier qui va permettre de structurer notre objet, les fichiers `.proto`. Ce fichier va un peu comme une interface décrire notre objet. Protobuf permet ensuite de générer le code source de l'objet dans plusieurs langages différents.
 
-Pour récapituler, on déclare un fichier proto, on génère notre objet dans notre application serveur et dans notre application client. Nos objets auront dans leur déclaration des méthodes de sérialisation et de de-sérialisation et ce quelque soit le langage.
+Pour récapituler, on déclare un fichier proto, on génère notre objet dans notre application serveur et dans notre application client. Nos objets auront dans leur déclaration des méthodes de sérialisation et de de-sérialisation et ce quel que soit le langage.
 
 Notre exemple va être le suivant :
 
@@ -66,11 +66,11 @@ Dans cet exemple notre objet `Person` est constitué d'un `name`, d'un `id`, d'u
 La déclaration d'une propriété est définie par un type `int32` ou `string` (et bien d'autres), du nom de la propriété puis d'un identifiant unique (la position) de cette propriété.
 
 On peut aussi faire de la composition en créant de nouveaux types comme ici `PhoneNumber` ou bien des énumérations.
-Des modèles de données sont aussi disponible comme les `array` avec le mot clé `repeated` ou bien encore des maps avec `map<Key, Value>`.
+Des modèles de données sont aussi disponibles comme les `array` avec le mot-clé `repeated` ou bien encore des maps avec `map<Key, Value>`.
 
 Vous pouvez retrouver tous les types et déclaration sur [la documentation de Protobuf](https://developers.google.com/protocol-buffers/docs/proto3){:target="_blank"}.
 
-Une fois notre fichier proto prêt nous pouvons générer notre fichier Go ou autres avec la commande `protoc`.
+Une fois notre fichier proto prêt, nous pouvons générer notre fichier Go ou autres avec la commande `protoc`.
 
 Par exemple :
 
@@ -249,7 +249,7 @@ func main() {
 ## Conclusion
 ---
 
-Protocol Buffers est un système maintenu par Google qui va permettre de jouer plus facilement avec nos données et de pouvoir travailler avec différents langages. Ceci est relativement important dans une architecture micro-services où chaque service doit communiquer avec d'autres quelque soit le langage.
+Protocol Buffers est un système maintenu par Google qui va permettre de jouer plus facilement avec nos données et de pouvoir travailler avec différents langages. Ceci est relativement important dans une architecture micro-services où chaque service doit communiquer avec d'autres quel que soit le langage.
 
 Points positifs :
 - performance
