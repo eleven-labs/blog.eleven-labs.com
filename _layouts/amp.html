@@ -10,6 +10,54 @@ layout: amp
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-custom>
       {% capture include_to_sassify %}{% include amp.scss %}{% endcapture %}{{ include_to_sassify | scssify }}
+      .amp-site-header {
+          padding: 20px 45px;
+      }
+
+      .amp-branding-container {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      
+      .amp-page-heading {
+        position: relative;
+      }
+
+      .amp-page-heading-assets {
+        position: relative;
+      }
+
+      .amp-page-heading-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+      }
+
+      .amp-site-nav {
+        flex: 0 0 100%;
+        text-align: center;
+      }
+
+      .amp-site-nav ul{
+        display: inline-block;
+        line-height: 1.5;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      .amp-site-nav li {
+        display: inline-block;
+        margin-right: .6rem;
+      }
+
+      .amp-no-link-style:hover {
+        background: transparent;
+      }
     </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -17,22 +65,40 @@ layout: amp
   </head>
   <body>
 
-<div class="content container">
+<div class="content">
+    <header class="amp-site-header">
+        <div class="amp-branding-container branding-container">
+            <a class="no-link-style" href="{{ site.baseurl }}/">
+              <amp-img src="/img/logo_eleven_lab.svg" width="120" height="40"></amp-img>
+                <h1 class="site-title visually-hidden">
+                    {{ site.theme_settings.title }}
+                </h1>
+            </a>
+        </div>
+
+        <nav class="amp-site-nav">
+            <ul>
+                {% include amp-icons.html data=site.theme_settings %}
+            </ul>
+        </nav>
+    </header>
+
     <article {% if page.cover %}class="feature-image"{% endif %}>
-        <header class="page-heading">
+        <header class="amp-page-heading page-heading">
+            <amp-img class="amp-page-heading-image" src="{{ site.baseurl }}{{ page.cover }}" layout=fill width="1" height="1"></amp-img>
             <div class="container">
-                <h1 class="page-heading-title">{{ page.title }}</h1>
+                <h1 class="page-heading-title amp-page-heading-assets">{{ page.title }}</h1>
                 <span class="meta">
                     <span class="meta-content">
                         {{ page.date | date: "%B %-d, %Y" }}
                         {% include author_link.html authors=page.authors %}
                     </span>
                 </span>
-                <div class="page-heading-reading-time">{% include reading_time.html content=content %}</div>
+                <div class="page-heading-reading-time amp-page-heading-assets">{% include reading_time.html content=content %}</div>
             </div>
         </header>
 
-        <section class="slice">
+        <section class="slice containers">
             <div class="post-content container">{{ content | markdownify | amp_images }}</div>
         </section>
 
