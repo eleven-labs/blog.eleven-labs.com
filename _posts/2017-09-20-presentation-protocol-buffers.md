@@ -10,8 +10,7 @@ categories:
 tags:
     - api
     - go
-cover:
-/assets/2017-09-20-presentation-protocol-buffers/cover.jpg
+cover: /assets/2017-09-20-presentation-protocol-buffers/cover.jpg
 ---
 
 Une problématique assez récurrente dans nos applications est la manière de rendre notre donnée, qu'elle soit transmise ou stockée. Le format qu'on utilise souvent aujourd'hui est le `JSON`. Cependant certains langages le gèrent très mal tel que Java et Go. Google a donc développé un système pour palier à ce problème : `Protocol Buffers`.
