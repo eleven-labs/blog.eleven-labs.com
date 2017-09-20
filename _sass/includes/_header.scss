@@ -28,7 +28,7 @@
     }
 
     &::before {
-      background: url('../img/logo_eleven_lab.svg') top left no-repeat;
+      background: url($baseurl + '/img/logo_eleven_lab.svg') top left no-repeat;
       background-size: contain;
       content: '';
       display: block;
