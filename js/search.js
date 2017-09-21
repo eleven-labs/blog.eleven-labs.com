@@ -45,7 +45,9 @@
       htmlArticle += `
         <div class="container search-logo">
           search by
-          <span class="search-logo-bg"></span>
+          <a href="https://algolia.com" target="_blank">
+            <span class="search-logo-bg"></span>
+          </a>
         </div>
       `;
 

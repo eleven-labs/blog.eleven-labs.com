@@ -15,7 +15,7 @@ tags:
 - notification
 ---
 
-In a [previous article](http://blog.eleven-labs.com/fr/votre-premiere-pwa/) we created our first PWA, but we haven't seen the whole concept. The convenience of [PWA](http://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/) is to act like a mobile application, to be installed on a phone, to manage off-line mode, and especially to send push notifications. Notifications are the essential element of user involvement, they allow to send a reminder and to communicate with our users. We are going to finalize the last tutorial by setting up a simple push notification system, using [Firebase](https://firebase.google.com/) to store user tokens.
+In a [previous article](https://blog.eleven-labs.com/fr/votre-premiere-pwa/) we created our first PWA, but we haven't seen the whole concept. The convenience of [PWA](https://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/) is to act like a mobile application, to be installed on a phone, to manage off-line mode, and especially to send push notifications. Notifications are the essential element of user involvement, they allow to send a reminder and to communicate with our users. We are going to finalize the last tutorial by setting up a simple push notification system, using [Firebase](https://firebase.google.com/) to store user tokens.
 
 To go quicker, we invite you to catch up by retrieving the project [https://github.com/CaptainJojo/pwa-parisjs](https://github.com/CaptainJojo/pwa-parisjs) that contains a ready to go PWA.
 

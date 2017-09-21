@@ -13,7 +13,7 @@
       {% else %}
          ,
       {% endif %}
-      <a class="author-link" href="/authors/{{author}}">{{ existingAuthor.title }}</a>
+      <a class="author-link" href="{{ '/authors/:author' | prepend: site.baseurl | replace: '//', '/' | replace: ':author', author }}">{{ existingAuthor.title }}</a>
     {% endif %}
   {% endfor %}
 {% endfor %}
