@@ -38,7 +38,7 @@ I ranked 22/52 \o/
 ----------
 
 ### "CoP Agile .... quelques clés" (“CoP Agile… some advice”)by Jean-Claude Grosjean
-A CoP, as for Communauty of Practices, is a group of people where the members ought to commit themselves regularly in activities of knowledge-sharing and learning based on common interests (concept by Etienne Wenger).
+A CoP, which stands for Community of Practices, is a group of people where the members ought to commit themselves regularly in activities of knowledge-sharing and learning based on common interests (concept by Etienne Wenger).
 
 The presentation focused on two parts, WHY and HOW.
 He gave us 8 pieces of advice to run the CoPs internally in a company.
@@ -52,14 +52,14 @@ You can find his slides [here](https://www.slideshare.net/jcgrosjean/une-communa
 
 ### "Kata of systemic representations", by Arnaud Gervais
 
-If I have to retain only one thing of this day, it is "If you do not know which conference to choose, choose the one which title you do not understand.” This conference was my favorite of all.
+If I have to retain only one thing from this day, it is "If you do not know which conference to choose, choose the one which title you do not understand.” This conference was my favorite of all.
 
 
 Arnaud Gervais is an Agile Coach. He started his presentation with a few quotes - 'the more it changes, the more it stays the same' - then he got to it.
 
 He took the example of a facilitator who talks too much during a meeting, and all the consequences of this little matter. Then he explained the principles of circular causality and amplifying loop.
-Going into practice, we took the example of a "diva" team member who works on the interesting tasks only, and then we though on the consequences of this behaviour. We came up with counterattacks and levers of actions, in order to avoid the causality of this problem.
-This workshop was very interesting because it allowed us to map problems, to work directly on them, to de-dramatize them and to avoid conflicting viewpoints, as Arnaud Gervais said very well at the end of the workshop. Thus, one realizes the extent to which a small problem can affect a whole project or a structure only by mapping these problems, which is quite helpful !
+Going into practice, we took the example of a "diva" team member who works on the interesting tasks only, and then we thought about the consequences of this behaviour. We came up with counterattacks and leverages of actions, in order to avoid the causality of this problem.
+This workshop was very interesting because it allowed us to map problems, to work directly on them, to de-dramatize them and to avoid conflicting viewpoints, as Arnaud Gervais said very well at the end of the workshop. Thus, one realizes the extent to which a small problem can affect a whole project or a structure only by mapping these problems, which is quite helpful!
 
 ----------
 
