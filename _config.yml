@@ -1,7 +1,7 @@
 # SITE CONFIGURATION
 title: Blog Eleven Labs
 description: Blog Eleven Labs
-url: http://blog.eleven-labs.com
+url: https://blog.eleven-labs.com
 twitter:
     username: Eleven_Labs
 logo: /img/avatar.png
@@ -91,6 +91,7 @@ gems:
     - jekyll-seo-tag
     - algoliasearch-jekyll
     - jekyll-feed
+    - amp-jekyll
 
 collections:
   authors:

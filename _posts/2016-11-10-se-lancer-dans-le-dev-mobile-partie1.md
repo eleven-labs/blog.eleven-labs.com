@@ -52,7 +52,8 @@ La WebView d’Android est basée sur Chromium. Il s’agit de Safari pour iOS, 
 Ainsi, Ionic ne permet pas de créer à proprement parler d’applications natives. On parlera plutôt d’applications hybrides.
 
 *Schéma représentation Ionic* :
-<img src="../../assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/schema.png" alt="schema1" width="520" height="229" />
+
+<img src="{{ site.baseurl }}/assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/schema.png" alt="schema1" width="520" height="229" />
 
 
 Je vous vois venir :  “AngularJs, super je maîtrise le truc, aller hop on y go”.
@@ -97,7 +98,8 @@ Mais Ionic dispose de points faibles :
 
 *Tableau compatibilité sous Cordova* :
 
-<img src="../../assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/platform-support.png" width="300" height="232" />
+
+<img src="{{ site.baseurl }}/assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/platform-support.png" width="300" height="232" />
 
 
 **Conclusion :**
