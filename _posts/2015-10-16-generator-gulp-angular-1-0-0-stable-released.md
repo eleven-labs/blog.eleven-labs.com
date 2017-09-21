@@ -62,3 +62,4 @@ But the v1 is not the end of the road. While maintaining the v1 branch, we start
 The major selling point will be to use Yeoman's generators composition, to upgrade to Gulp 4 and to write it in ES6. Finally, I hope to open new horizons in terms of options: dependency management for sure, but also, why not Web frameworks (someone talked about React?) and also a backend.
 
 Go try out [generator-gulp-angular](https://www.npmjs.com/package/generator-gulp-angular) v1.0.0 release! Any feedbacks, issues, or investment on the new  [FountainJS](https://github.com/FountainJS) project will always be appreciated. [generator-gulp-angular-logo](https://www.npmjs.com/package/generator-gulp-angular)
+

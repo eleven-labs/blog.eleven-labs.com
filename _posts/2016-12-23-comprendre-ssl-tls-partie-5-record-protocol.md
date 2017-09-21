@@ -3,7 +3,7 @@ layout: post
 title: "Comprendre le SSL/TLS: Partie 5 Record Protocol"
 excerpt: "Record protocol"
 permalink: /fr/comprendre-ssl-tls-partie-5-record-protocol/
-authors: 
+authors:
     - ibenichou
 date: '2016-12-23 12:00:01 +0100'
 date_gmt: '2016-12-23 11:00:01 +0100'
@@ -31,8 +31,7 @@ Ce protocole a pour buts :
 
 Voici en détail comment se déroule le record protocole :
 
-<img src="/assets/2016-12-23-comprendre-ssl-tls-partie-5-record-protocol/ssl_intro_fig3.jpg" />
-
+<img src="{{ site.baseurl }}/assets/2016-12-23-comprendre-ssl-tls-partie-5-record-protocol/ssl_intro_fig3.jpg" />
 
 1. Segmentation - les données sont découpées en blocs de taille inférieure à 16 384 octets ;
 2. Compression - les données sont compressées en utilisant l'algorithme choisi lors de la négociation.

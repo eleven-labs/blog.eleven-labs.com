@@ -3,7 +3,7 @@
 Participer à notre blog
 ===================
 
-Bienvenue sur le blog d'[ElevenLabs](http://blog.eleven-labs.com), il s'agit d'un site en Jekyll sur lequel **tout le monde** peut participer.
+Bienvenue sur le blog d'[ElevenLabs](https://blog.eleven-labs.com), il s'agit d'un site en Jekyll sur lequel **tout le monde** peut participer.
 
 ----------
 
