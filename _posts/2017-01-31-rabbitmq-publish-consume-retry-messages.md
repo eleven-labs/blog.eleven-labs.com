@@ -16,7 +16,7 @@ tags:
 ---
 ![Swarrot Logo](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 
-RabbitMQ is a message broker, allowing to process things asynchronously. There's already an [article](https://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/) written about it, if you're not familiar with RabbitMQ.
+RabbitMQ is a message broker, allowing to process things asynchronously. There's already an [article](http://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/) written about it, if you're not familiar with RabbitMQ.
 
 What I'd like to talk to you about is the lifecycle of a message, with error handling. Everything in a few lines of code.
 

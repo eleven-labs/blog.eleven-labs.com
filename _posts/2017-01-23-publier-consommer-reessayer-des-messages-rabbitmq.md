@@ -15,7 +15,7 @@ tags:
 
 ![Swarrot Logo](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 
-RabbitMQ est un gestionnaire de queues, permettant d'asynchroniser différents traitements. Si vous n'êtes pas familier avec cet outil, un [article](https://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/) traitant du sujet a déjà été écrit précédemment, je vous invite donc à le lire.
+RabbitMQ est un gestionnaire de queues, permettant d'asynchroniser différents traitements. Si vous n'êtes pas familier avec cet outil, un [article](http://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/) traitant du sujet a déjà été écrit précédemment, je vous invite donc à le lire.
 
 Ce que j'aimerais vous présenter ici correspond à la mise en place du cycle de vie d'un message, avec une gestion des erreurs. Le tout, en quelques lignes de code.
 

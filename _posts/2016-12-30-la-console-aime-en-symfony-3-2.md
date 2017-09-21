@@ -58,7 +58,7 @@ class ElevenLabsAliasCommand extends ContainerAwareCommand
 
 Voici une petite vidéo pour voir ce que ça rend :
 
-<script type="text/javascript" src="https://asciinema.org/a/8i85eeqih2rwmccrtab407qtv.js" id="asciicast-8i85eeqih2rwmccrtab407qtv" async></script>
+[https://asciinema.org/a/8i85eeqih2rwmccrtab407qtv](https://asciinema.org/a/8i85eeqih2rwmccrtab407qtv)
 
 ## Test des commandes
 
@@ -232,7 +232,7 @@ $application->run();
 
 Dans le fichier SingleCommand, nous avons rajouté un booléen à true, pour indiquer que nous souhaitons avoir une **SCA**.
 
-<script type="text/javascript" src="https://asciinema.org/a/ctpdd6v34qfh35try9xtqrrpd.js" id="asciicast-ctpdd6v34qfh35try9xtqrrpd" async></script>
+[asciinema](https://asciinema.org/a/ctpdd6v34qfh35try9xtqrrpd)
 
 ## LockableTrait
 
