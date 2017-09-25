@@ -25,9 +25,9 @@ end
 
 # push to algolia
 task :algolia_push do
-  if ENV['TRAVIS_BRANCH'] == 'master' && ENV['TRAVIS_PULL_REQUEST'] == "false"
-    jekyll('algolia push')
-  end
+#  if ENV['TRAVIS_BRANCH'] == 'master' && ENV['TRAVIS_PULL_REQUEST'] == "false"
+  jekyll('algolia push')
+#  end
 end
 
 # launch jekyll
