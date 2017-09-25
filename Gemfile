@@ -5,7 +5,7 @@ gem 'jekyll-seo-tag', '2.2.3'
 gem 'rouge', '1.11.1'
 gem 'jekyll-feed', '0.9.2'
 gem 'scss_lint', require: false
-gem 'amp-jekyll', '1.0.2'
+gem 'elevenlabs-amp-jekyll', '1.0'
 
 group :test do
   gem 'rake'
