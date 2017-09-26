@@ -85,7 +85,9 @@ layout: amp
 
     <article {% if page.cover %}class="feature-image"{% endif %}>
         <header class="amp-page-heading page-heading">
-            <amp-img class="amp-page-heading-image" src="{{ site.baseurl }}{{ page.cover }}" layout=fill width="1" height="1"></amp-img>
+            {% if page.cover %}
+                <amp-img class="amp-page-heading-image" src="{{ site.baseurl }}{{ page.cover }}" layout=fill width="1" height="1"></amp-img>
+            {% endif %}
             <div class="container">
                 <h1 class="page-heading-title amp-page-heading-assets">{{ page.title }}</h1>
                 <span class="meta">
