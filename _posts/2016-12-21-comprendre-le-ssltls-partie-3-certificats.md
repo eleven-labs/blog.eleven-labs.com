@@ -98,11 +98,13 @@ Procédure de signature (avec l’exemple du certificat d’Eleven-labs) :
     * B- Il chiffre le résultat du hash avec sa clé privé en RSA (4096 bits)
     * C- Le résultat du chiffrement correspond à la signature
     * D- Let’s Encrypt vous envoie votre certificat <img src="{{ site.baseurl }}/assets/2016-12-21-comprendre-le-ssltls-partie-3-certificats/cert_1.jpg" />
+
 2. Client
     * A - Lors de la connexion à votre serveur, le client récupère votre certificat.
     * B - Il hash votre certificat avec du SHA-256 (défini dans votre certificat)
     * C - Il déchiffre la signature du certificat avec la clé publique récupérée dans le certificat.
     * D - Il compare le résultat du hash avec le résultat du déchiffrement de la signature. <img src="{{ site.baseurl }}/assets/2016-12-21-comprendre-le-ssltls-partie-3-certificats/cert_2.jpg" />
+
 
 Si le résultat est le même alors on est sûr que les données que nous allons récupérer de ce serveur viennent bien d’Eleven-labs.
 

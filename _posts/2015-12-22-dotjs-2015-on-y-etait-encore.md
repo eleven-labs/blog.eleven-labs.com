@@ -48,7 +48,7 @@ Le programme est assez alléchant: ES6, Node, WebRTC... On retrouve du beau mond
 
 Pour cette 4ème édition, la communauté JS et plus de 1000 développeurs se sont donc retrouvés le 7 décembre à partir de 9h au coeur du 9eme arrondissement de Paris, plus exactement au “Théatre de Paris”, l’un des plus beaux théâtre de capitale.
 
-![](https://c2.staticflickr.com/6/5667/23025882214_242cee679a_k.jpg)
+[https://c2.staticflickr.com/6/5667/23025882214_242cee679a_k.jpg](https://c2.staticflickr.com/6/5667/23025882214_242cee679a_k.jpg)
 
 ------------------------------------------------------------------------
 

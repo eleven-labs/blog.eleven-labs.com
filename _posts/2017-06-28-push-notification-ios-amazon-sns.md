@@ -266,6 +266,7 @@ $ openssl x509 -in aps_development.cer -inform DER -out myapnsappcert.pem
 Pour vérifier que tout est en ordre, il suffit d’aller sur la liste des App IDs, de cliquer sur l’ID de votre App puis sur “Edit”. Dans la partie Push notification, vous devriez voir que vous avez bien un certificat dans la partie Development.
 <img src="{{ site.baseurl }}/assets/2017-06-28-push-notification-ios-amazon-sns/capture-d-ecran-2017-05-01-a-18.22.00.png" />
 
+
 Enfin fini ! Je vous l’accorde cette partie est fastidieuse et lourde. Il ne manque plus que la partie Amazon SNS.
 
 # Amazon SNS
@@ -291,13 +292,17 @@ Les subscribers reçoivent tous les messages publiés dans les topics auxquels i
 
 **Etape 1: Création d’un topic**
 1. Connectez-vous à la console AWS , cliquez sur “Create topic”
+
 <img src="{{ site.baseurl }}/assets/2017-06-28-push-notification-ios-amazon-sns/sns_c_app.jpg" />
+
 2. Renseignez un nom.
 
 **Etape 2 : Inscription de votre application mobile auprès d’Amazon SNS**
 
 1. Cliquez sur “Create platform application”
+
 <img src="{{ site.baseurl }}/assets/2017-06-28-push-notification-ios-amazon-sns/sns_c_s.jpg" />
+
 2. Indiquez un nom à votre application
 3. Dans la zone “Push notification platform”, sélectionnez la plateforme auprès de laquelle l’application est inscrite. Dans notre cas nous choisissons “Apple development”.
 4. Dans la zone “Push certificate type”, sélectionnez “iOS push certificate”

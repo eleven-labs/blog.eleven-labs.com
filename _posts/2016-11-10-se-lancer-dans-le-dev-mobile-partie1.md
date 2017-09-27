@@ -52,6 +52,7 @@ La WebView d’Android est basée sur Chromium. Il s’agit de Safari pour iOS, 
 Ainsi, Ionic ne permet pas de créer à proprement parler d’applications natives. On parlera plutôt d’applications hybrides.
 
 *Schéma représentation Ionic* :
+
 <img src="{{ site.baseurl }}/assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/schema.png" alt="schema1" width="520" height="229" />
 
 
@@ -96,6 +97,7 @@ Mais Ionic dispose de points faibles :
 *Exemple* : IOS a mis au point une nouvelle fonctionnalité de reconnaissance faciale, permettant de détecter sur l’image si la personne sourit, a les yeux ouverts ou fermés… .Cette fonctionnalité n’est pas disponible sur Cordova.
 
 *Tableau compatibilité sous Cordova* :
+
 
 <img src="{{ site.baseurl }}/assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/platform-support.png" width="300" height="232" />
 
