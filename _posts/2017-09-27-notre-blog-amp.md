@@ -2,7 +2,7 @@
 layout: post
 title: Notre blog en AMP
 permalink: /fr/notre-blog-en-amp/
-excerpt: "Notre est blog est à l'image d'Eleven-labs, on aime partagé et suivre les dernières tendances. Alors même pour notre blog nous voulons ce qu'il y a de meilleur, mais aussi pour  le confort de nos  lecteurs. C'est pour cela qu'aujourd'hui notre blog est **AMP compliant**."
+excerpt: "Notre blog est à l'image d'Eleven-labs, on aime partager et suivre les dernières tendances. À la fois pour notre blog et pour nos lecteurs nous voulons ce qu'il y a de meilleur et de plus confortable. C'est pour cela qu'aujourd'hui notre blog est **AMP compliant**."
 authors:
     - captainjojo
 categories:
@@ -12,26 +12,26 @@ tags:
     - javascript
 cover: /assets/2017-09-27-notre-blog-amp/cover.jpg
 ---
-Notre est blog est à l'image d'Eleven-labs, on aime partagé et suivre les dernières tendances. Alors même pour notre blog nous voulons ce qu'il y a de meilleur, mais aussi pour  le confort de nos  lecteurs. C'est pour cela qu'aujourd'hui notre blog est **AMP compliant**.
+Notre blog est à l'image d'Eleven-labs, on aime partager et suivre les dernières tendances. À la fois pour notre blog et pour nos lecteurs nous voulons ce qu'il y a de meilleur et de plus confortable. C'est pour cela qu'aujourd'hui notre blog est **AMP compliant**.
 
 # Mais c'est quoi AMP ?
 
 Petit résumé pour ceux qui n'ont pas lu l'article [AMP le futur du web ?](https://blog.eleven-labs.com/fr/amp-le-futur-du-web/).
-[AMP](https://www.ampproject.org/) est un projet open-source ayant pour volonté d'améliorer les performances de nos sites internet. A la base AMP est créé pour les pages mobiles, même si il est totalement possible de faire le l'AMP sur votre site desktop.
-AMP est surtout une technologie Google, en effet le principe est de limité le nombre de requêtes et tout ce qui fait ralentir l'affichage de vos pages web, le petit plus c'est que vos pages AMP sont alors caché directement par les CDN de Google.
-Comme Google donne une préférence aux pages AMP lors des recherches mobile, votre SEO n'en est que mieux.
+[AMP](https://www.ampproject.org/) est un projet open-source ayant pour volonté d'améliorer les performances de nos sites internet. À la base AMP est créé pour les pages mobiles, même si il est totalement possible de faire de l'AMP sur votre site desktop.
+AMP est surtout une technologie Google, en effet le principe est de limiter le nombre de requêtes et tout ce qui fait ralentir l'affichage de vos pages web. Le petit plus c'est que vos pages AMP sont alors cachées directement par les CDN de Google.
+Comme Google donne une préférence aux pages AMP lors des recherches mobile, votre SEO n'en est que meilleur.
 
 # Notre blog est AMP !!
 
-Eh oui, c'est fait ! Notre blog peut être servir en AMP ce qui va permettre à nos utilisateurs mobile d'avoir une expérience encore meilleur.
+Eh oui, c'est fait ! Notre blog peut être servi en AMP, ce qui va permettre à nos utilisateurs mobile d'avoir une expérience améliorée.
 
     Mais comme on a fait ca ?
 
-Si vous avez suivi l'activité de notre blog cette année, nous [venons de migrer ce dernier](https://blog.eleven-labs.com/fr/migration-du-blog/). En passant de Wordpress à Jekyll nous pouvons faire plus de développement (enfin plus facilement), et c'est pour cela que nous avons passez nos pages articles en AMP.
+Si vous avez suivi l'activité de notre blog cette année, nous [venons de migrer ce dernier](https://blog.eleven-labs.com/fr/migration-du-blog/). En passant de Wordpress à Jekyll nous pouvons faire plus de développement (enfin plus facilement), et c'est pour cela que nous avons passé nos pages articles en AMP.
 
-Pour commencer nous avons installer le plugin [AMP-jekyll](https://github.com/juusaw/amp-jekyll) qui permet de générer le site avec deux layouts différents.
+Pour commencer nous avons installé le plugin [AMP-jekyll](https://github.com/juusaw/amp-jekyll) qui permet de générer le site avec deux layouts différents.
 
-Il nous a donc fallut créer le layout pour nos pages AMP. Le principe est simple pas d'import de fichier js ou css, et l'utilisation de certaine balise interdite.
+Il nous a donc fallu créer le layout pour nos pages AMP. Le principe est simple : pas d'import de fichier js ou css, et l'utilisation de certaines balises interdite.
 
 ```html
 ---
@@ -81,9 +81,9 @@ layout: amp
 </html>
 ```
 
-Maintenant que la base est posé nous devons mettre notre CSS, comme nous ne pouvons pas importer le fichier existant et devons inlined le css directement dans la balise `<style amp-custom>`
+Maintenant que la base est posée nous devons mettre notre CSS. Comme nous ne pouvons pas importer le fichier existant, nous devons inliner le css directement dans la balise `<style amp-custom>`
 
-Nous avons choisi de continuer d'utiliser Saas, nous avons donc créer un fichier `amp.scss` dans le dossier `_includes` de Jekyll pour nous permettre de *l'inliner*  facilement dans notre layout.
+Nous avons choisi de continuer d'utiliser Saas, nous avons donc créé un fichier `amp.scss` dans le dossier `_includes` de Jekyll pour nous permettre de *l'inliner* facilement dans notre layout.
 
 ```scss
 // Settings
@@ -119,7 +119,7 @@ Nous avons choisi de continuer d'utiliser Saas, nous avons donc créer un fichie
 @import 'includes/author';
 ```
 
-Une fois cette étapes réaliser, il suffit de l'appeler dans notre layout en ajoutant dans la balise `head`.
+Une fois cette étape réalisée, il suffit de l'appeler dans notre layout en ajoutant dans la balise `head` :
 
 ```html
 <style amp-custom>
@@ -127,14 +127,14 @@ Une fois cette étapes réaliser, il suffit de l'appeler dans notre layout en aj
 </style>
 ```
 
-Comme nous  n'importons aucun javascript, nous n'avons plus de tag Google Analytics mais heureusement AMP y a pensé. D'abord il faut ajouter le script javascript.
+Comme nous n'importons aucun javascript, nous n'avons plus de tag Google Analytics mais heureusement AMP y a pensé. D'abord il faut ajouter le script javascript :
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ````
 
 
-Ce qui nous permet d'utiliser la balise `<amp-analytics>` et y intégrer le code javascript. Juste avant la fermeture de la balise `body`, il faut ajouter.
+Ce qui nous permet d'utiliser la balise `<amp-analytics>` et d'y intégrer le code javascript. Juste avant la fermeture de la balise `body`, il faut ajouter :
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -157,9 +157,9 @@ Ce qui nous permet d'utiliser la balise `<amp-analytics>` et y intégrer le code
 </amp-analytics>
 ```
 
-Une dernière étape nécessaire pour que Google voit nos pages AMP est de laisser une balise `link` dans nos pages non AMP avec l'url des nouvelles pages.
+Une dernière étape nécessaire pour que Google voie nos pages AMP est de laisser une balise `link` dans nos pages non AMP avec l'url des nouvelles pages.
 
-Dans notre layout principal nous ajouter le code suivant dans le `head`.
+Dans notre layout principal nous ajoutons le code suivant dans le `head` :
 
 ```html
 {% if page.path contains '_posts' %}
@@ -167,15 +167,15 @@ Dans notre layout principal nous ajouter le code suivant dans le `head`.
 {% endif %}
 ```
 
-Si vous voulez vous pouvez voir la pull request [ici](https://github.com/eleven-labs/eleven-labs.github.io/pull/211).
+Si vous le souhaitez, vous pouvez voir la pull request [ici](https://github.com/eleven-labs/eleven-labs.github.io/pull/211).
 
 # Le mot de la fin
 
-Et voila vous pouvez retrouver ceci dans vos recherches Google Mobile.
+Et voilà ! Vous pouvez retrouver ceci dans vos recherches Google Mobile :
 
 ![Search Google](/assets/2017-09-27-notre-blog-amp/search-google.png)
 
-Et notre page dans le CDN google.
+Et notre page dans le CDN google :
 
 ![AMP](/assets/2017-09-27-notre-blog-amp/amp.png)
 
