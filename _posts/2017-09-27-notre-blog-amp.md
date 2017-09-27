@@ -2,7 +2,7 @@
 layout: post
 title: Notre blog en AMP
 permalink: /fr/notre-blog-en-amp/
-excerpt: "Notre blog est à l'image d'Eleven-labs, on aime partager et suivre les dernières tendances. À la fois pour notre blog et pour nos lecteurs nous voulons ce qu'il y a de meilleur et de plus confortable. C'est pour cela qu'aujourd'hui notre blog est **AMP compliant**."
+excerpt: "Notre blog est à l'image d'Eleven-labs, on aime partager et suivre les dernières tendances. À la fois pour notre blog et pour nos lecteurs nous voulons ce qu'il y a de meilleur et de plus confortable. C'est pour cela qu'aujourd'hui notre blog est AMP compliant."
 authors:
     - captainjojo
 categories:
