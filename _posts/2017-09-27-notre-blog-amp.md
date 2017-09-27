@@ -25,7 +25,7 @@ Comme Google donne une préférence aux pages AMP lors des recherches mobile, vo
 
 Eh oui, c'est fait ! Notre blog peut être servi en AMP, ce qui va permettre à nos utilisateurs mobile d'avoir une expérience améliorée.
 
-    Mais comme on a fait ca ?
+    Mais comment on a fait ca ?
 
 Si vous avez suivi l'activité de notre blog cette année, nous [venons de migrer ce dernier](https://blog.eleven-labs.com/fr/migration-du-blog/). En passant de Wordpress à Jekyll nous pouvons faire plus de développement (enfin plus facilement), et c'est pour cela que nous avons passé nos pages articles en AMP.
 
