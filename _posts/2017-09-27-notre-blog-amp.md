@@ -119,11 +119,13 @@ Nous avons choisi de continuer d'utiliser Saas, nous avons donc créé un fichie
 
 Une fois cette étape réalisée, il suffit de l'appeler dans notre layout en ajoutant dans la balise `head` :
 
+{% raw %}
 ```html
 <style amp-custom>
 	{% capture include_to_sassify %}{% include amp.scss %}{% endcapture %}{{ include_to_sassify | scssify }}
 </style>
 ```
+{% endraw %}
 
 Comme nous n'importons aucun javascript, nous n'avons plus de tag Google Analytics mais heureusement AMP y a pensé. D'abord il faut ajouter le script javascript :
 
@@ -134,6 +136,7 @@ Comme nous n'importons aucun javascript, nous n'avons plus de tag Google Analyti
 
 Ce qui nous permet d'utiliser la balise `<amp-analytics>` et d'y intégrer le code javascript. Juste avant la fermeture de la balise `body`, il faut ajouter :
 
+{% raw %}
 ```html
 <amp-analytics type="googleanalytics">
 <script type="application/json">
@@ -154,16 +157,19 @@ Ce qui nous permet d'utiliser la balise `<amp-analytics>` et d'y intégrer le co
 </script>
 </amp-analytics>
 ```
+{% endraw %}
 
 Une dernière étape nécessaire pour que Google voie nos pages AMP est de laisser une balise `link` dans nos pages non AMP avec l'url des nouvelles pages.
 
 Dans notre layout principal nous ajoutons le code suivant dans le `head` :
 
+{% raw %}
 ```html
 {% if page.path contains '_posts' %}
      <link rel="amphtml" href="{{ page.id | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}">
 {% endif %}
 ```
+{% endraw %}
 
 Si vous le souhaitez, vous pouvez voir la pull request [ici](https://github.com/eleven-labs/eleven-labs.github.io/pull/211).
 
