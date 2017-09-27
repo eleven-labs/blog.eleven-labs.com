@@ -14,14 +14,14 @@ cover: /assets/2017-09-27-notre-blog-amp/cover.jpg
 ---
 Notre blog est à l'image d'Eleven-labs, on aime partager et suivre les dernières tendances. À la fois pour notre blog et pour nos lecteurs nous voulons ce qu'il y a de meilleur et de plus confortable. C'est pour cela qu'aujourd'hui notre blog est **AMP compliant**.
 
-# Mais c'est quoi AMP ?
+### Mais c'est quoi AMP ?
 
 Petit résumé pour ceux qui n'ont pas lu l'article [AMP le futur du web ?](https://blog.eleven-labs.com/fr/amp-le-futur-du-web/).
 [AMP](https://www.ampproject.org/) est un projet open-source ayant pour volonté d'améliorer les performances de nos sites internet. À la base AMP est créé pour les pages mobiles, même si il est totalement possible de faire de l'AMP sur votre site desktop.
 AMP est surtout une technologie Google, en effet le principe est de limiter le nombre de requêtes et tout ce qui fait ralentir l'affichage de vos pages web. Le petit plus c'est que vos pages AMP sont alors cachées directement par les CDN de Google.
 Comme Google donne une préférence aux pages AMP lors des recherches mobile, votre SEO n'en est que meilleur.
 
-# Notre blog est AMP !!
+### Notre blog est AMP !!
 
 Eh oui, c'est fait ! Notre blog peut être servi en AMP, ce qui va permettre à nos utilisateurs mobile d'avoir une expérience améliorée.
 
@@ -33,6 +33,7 @@ Pour commencer nous avons installé le plugin [AMP-jekyll](https://github.com/ju
 
 Il nous a donc fallu créer le layout pour nos pages AMP. Le principe est simple : pas d'import de fichier js ou css, et l'utilisation de certaines balises interdite.
 
+{% raw %}
 ```html
 ---
 layout: amp
@@ -48,7 +49,6 @@ layout: amp
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-
 <div class="content container">
     <article {% if page.cover %}class="feature-image"{% endif %}>
         <header class="page-heading">
@@ -69,17 +69,15 @@ layout: amp
         </section>
 
     </article>
-
     {% include links.html %}
 </div>
-
     {% include newsletter_link.html %}
-
 {% include footer.html %}
 
 </body>
 </html>
 ```
+{% endraw %}
 
 Maintenant que la base est posée nous devons mettre notre CSS. Comme nous ne pouvons pas importer le fichier existant, nous devons inliner le css directement dans la balise `<style amp-custom>`
 
@@ -169,7 +167,7 @@ Dans notre layout principal nous ajoutons le code suivant dans le `head` :
 
 Si vous le souhaitez, vous pouvez voir la pull request [ici](https://github.com/eleven-labs/eleven-labs.github.io/pull/211).
 
-# Le mot de la fin
+### Le mot de la fin
 
 Et voilà ! Vous pouvez retrouver ceci dans vos recherches Google Mobile :
 
