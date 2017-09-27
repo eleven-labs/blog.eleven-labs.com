@@ -10,7 +10,7 @@ categories:
 tags:
     - amp
     - javascript
-cover: /assets/2017-09-10-flux-infini-react-symfony/cover.jpg
+cover: /assets/2017-09-27-notre-blog-amp/cover.jpg
 ---
 Notre est blog est à l'image d'Eleven-labs, on aime partagé et suivre les dernières tendances. Alors même pour notre blog nous voulons ce qu'il y a de meilleur, mais aussi pour  le confort de nos  lecteurs. C'est pour cela qu'aujourd'hui notre blog est **AMP compliant**.
 
@@ -173,6 +173,10 @@ Si vous voulez vous pouvez voir la pull request [ici](https://github.com/eleven-
 
 Et voila vous pouvez retrouver ceci dans vos recherches Google Mobile.
 
-// image
+![Search Google](/assets/2017-09-27-notre-blog-amp/search-google.png)
+
+Et notre page dans le CDN google.
+
+![AMP](/assets/2017-09-27-notre-blog-amp/amp.png)
 
 **Bonne lecture.**
