@@ -240,7 +240,7 @@ func (s *Server) ListPosts(empty *google_protobuf.Empty, stream PostService_List
 }
 
 func main() {
-	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%d", 4000))
+	lis, err := net.Listen("tcp", "localhost:4000")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
