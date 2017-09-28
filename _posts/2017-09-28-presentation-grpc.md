@@ -18,7 +18,7 @@ tags:
 
 # Présentation de gRPC
 
-Avant toute chose je vous invite à lire la [première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) si ce n'ai déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et chaque service communique avec d'autre via HTTP. Et si maintenant on utilisé HTTP/2 pour faire communiquer nos services ?
+Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) si ce n'ai déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et chaque service communique avec d'autre via HTTP. Et si maintenant on utilisé HTTP/2 pour faire communiquer nos services ?
 
 Parceque qu'un client HTTP/1 c'est bien mais un client HTTP/2 c'est mieux.
 
@@ -76,7 +76,7 @@ service CustomService {
 
 Nous allons voir pour cette article uniquement le troisième mode `streaming côté serveur` mais les quatres sont très semblables.
 
-Vous pouvez retrouver l'ensemble du code [de l'exemple sur mon github](https://github.com/qneyrat/go-grpc-example).
+Vous pouvez retrouver l'ensemble du code de [l'exemple sur mon github](https://github.com/qneyrat/go-grpc-example).
 
 ### Installation
 
