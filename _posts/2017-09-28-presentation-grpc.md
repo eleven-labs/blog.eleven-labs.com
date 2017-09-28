@@ -27,7 +27,7 @@ HTTP/2 c'est quoi ? Je vous invite à lire [cet article de Vincent](https://blog
 
 gRPC c'est quoi ?
 
-gRPC a été dévellopé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ces nouveautés. Les données sont sérialisé et désérialisé grâce à Protocol Buffers. Le framework gRPC permet aussi d'avoir un client et un serveur dans différents languages. En effet il est disponible pour la plupart des langages.
+gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ces nouveautés. Les données sont sérialisé et désérialisé grâce à Protocol Buffers. Le framework gRPC permet aussi d'avoir un client et un serveur dans différents languages. En effet il est disponible pour la plupart des langages.
 
 Chaque service rpc est déclaré dans le fichier protobuf.
 
