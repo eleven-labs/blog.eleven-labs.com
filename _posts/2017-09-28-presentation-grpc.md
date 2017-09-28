@@ -19,15 +19,17 @@ cover: /assets/2017-09-28-presentation-grpc/cover.jpg
 
 # Présentation de gRPC
 
-Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) si ce n'ai déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et chaque service communique avec d'autre via HTTP. Et si maintenant on utilisé HTTP/2 pour faire communiquer nos services ?
+Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) si ce n'ai déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et communique via HTTP. Et si maintenant on utilisé HTTP/2 pour faire communiquer nos services ?
 
 Parce que qu'un client HTTP/1 c'est bien mais un client HTTP/2 c'est mieux.
 
-HTTP/2 c'est quoi ? Je vous invite à lire [cet article de Vincent](https://blog.eleven-labs.com/fr/http2-nest-pas-le-futur-cest-le-present/)  pour y voir plus clair.
+HTTP/2 c'est quoi ? 
+
+Je vous invite à lire [cet article de Vincent](https://blog.eleven-labs.com/fr/http2-nest-pas-le-futur-cest-le-present/)  pour y voir plus clair.
 
 gRPC c'est quoi ?
 
-gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ces nouveautés. Les données sont sérialisé et désérialisé grâce à Protocol Buffers. Le framework gRPC permet aussi d'avoir un client et un serveur dans différents languages. En effet il est disponible pour la plupart des langages.
+gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ses nouveautés. Les données sont sérialisé et désérialisé grâce à Protocol Buffers. Le framework gRPC permet aussi d'avoir un client et un serveur dans différents languages. En effet il est disponible pour la plupart des langages.
 
 Chaque service rpc est déclaré dans le fichier protobuf.
 
