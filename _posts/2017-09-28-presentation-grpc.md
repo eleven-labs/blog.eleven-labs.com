@@ -4,6 +4,7 @@ title: Présentation de gRPC
 authors: 
     - qneyrat
 permalink: /fr/presentation-grpc/
+excerpt: "gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ses nouveautés."
 categories:
     - Api
     - Go
@@ -17,26 +18,26 @@ tags:
 cover: /assets/2017-09-28-presentation-grpc/cover.jpg
 ---
 
-# Présentation de gRPC
+### Présentation de gRPC
 
-Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) si ce n'ai déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et communique via HTTP. Et si maintenant on utilisé HTTP/2 pour faire communiquer nos services ?
+Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) si ce n'est pas déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et communiquent via HTTP.
 
-Parce que qu'un client HTTP/1 c'est bien mais un client HTTP/2 c'est mieux.
+> Et si maintenant on utilisait HTTP/2 pour faire communiquer nos services ?
 
-HTTP/2 c'est quoi ? 
+Parce qu'un client HTTP/1 c'est bien mais un client HTTP/2 c'est mieux.
 
-Je vous invite à lire [cet article de Vincent](https://blog.eleven-labs.com/fr/http2-nest-pas-le-futur-cest-le-present/)  pour y voir plus clair.
+> HTTP/2 c'est quoi ? 
 
-gRPC c'est quoi ?
+Je vous invite à lire [cet article de Vincent](https://blog.eleven-labs.com/fr/http2-nest-pas-le-futur-cest-le-present/) pour y voir plus clair.
 
-gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ses nouveautés. Les données sont sérialisé et désérialisé grâce à Protocol Buffers. Le framework gRPC permet aussi d'avoir un client et un serveur dans différents languages. En effet il est disponible pour la plupart des langages.
+> gRPC c'est quoi ?
 
-Chaque service rpc est déclaré dans le fichier protobuf.
+gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ses nouveautés. Les données sont sérialisées et désérialisées grâce à Protocol Buffers. Le framework gRPC permet aussi d'avoir un client et un serveur dans différents langages. En effet il est disponible pour la plupart des langages. Chaque service rpc est déclaré dans un fichier protobuf. La RFC est [disponible ici](https://tools.ietf.org/html/draft-kumar-rtgwg-grpc-protocol-00) si ça vous intéresse.
 
-gRPC permet quatre modes communications.
-
+gRPC permet quatre modes de communication.
 
 Le one to one classique :
+
 ```
 Client Request -> Server
 Client <- Response Server
@@ -47,6 +48,7 @@ service CustomService {
 ```
 
 La streaming côté client :
+
 ```
 Streaming Request -> Server
 Client <- Response Server
@@ -68,6 +70,7 @@ service CustomService {
 ```
 
 Le streaming bidirectionnel :
+
 ```
 Streaming Request -> Server
 Client -> Streaming Response
@@ -83,7 +86,7 @@ Vous pouvez retrouver l'ensemble du code de [l'exemple sur mon github](https://g
 
 ### Installation
 
-Assurez vous avant de commencer l'installation d'avoir bien installé Go en version supérieur à 1.5 et Protocol Buffers en version 3.
+Assurez vous avant de commencer l'installation d'avoir bien installé Go en version supérieure à 1.5 et Protocol Buffers en version 3.
 
 Récupérez gRPC pour Go :
 
@@ -95,9 +98,9 @@ go get google.golang.org/grpc
 
 Nous allons commencer par récupérer le fichier proto du [précédent article](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/).
 
-Nous allons ajouté un service pour récupérer en streaming la liste des Posts.
+Nous allons ajouter un service pour récupérer en streaming la liste des Posts.
 
-Un service rpc est composé :
+Un service rpc est composé de la structure suivante :
 
 ```
 rpc function(request) returns (response)
@@ -134,7 +137,7 @@ service PostService {
 
 ### Serveur
 
-On va commencé par générer le code source depuis le fichier protobuf.
+On va commencer par générer le code source depuis le fichier protobuf.
 
 ```Bash
 protoc --proto_path=. --go_out=plugins=grpc:. post.proto
@@ -165,14 +168,15 @@ var posts = []Post{
 Puis on crée un serveur TCP sur le port 4000 pour notre serveur gRPC et on attache notre service déclaré dans le protobuf :
 
 ```Go
-	lis, _ := net.Listen("tcp", fmt.Sprintf("localhost:%d", 4000))
+	lis, _ := net.Listen("tcp", "localhost:4000")
 	g := grpc.NewServer()
 	RegisterPostServiceServer(g, NewServer())
 	g.Serve(lis)
 }
 ```
 
-On a plus qu'a créer notre endpoint qui va parcourir notre pseudo base de données et envoyer les posts un par un :
+On a plus qu'à créer notre endpoint qui va parcourir notre pseudo base de données et envoyer les posts un par un :
+
 ```Go
 func (s *Server) ListPosts(empty *google_protobuf.Empty, stream PostService_ListPostsServer) error {
 	for _, post := range posts {
@@ -187,6 +191,7 @@ func (s *Server) ListPosts(empty *google_protobuf.Empty, stream PostService_List
 ```
 
 Le code final :
+
 ```Go
 package main
 
@@ -246,17 +251,20 @@ func main() {
 }
 ```
 
-astuce : `go run *` pour compiler entièrement le projet.
+> **Astuce :**
+> Vous pouvez exécuter `go run *` pour compiler entièrement le projet.
 
 ### Client
 
 Dans un nouveau projet, on déclare un client gRPC pour notre service.
+
 ```Go
 conn, _ := grpc.Dial("localhost:4000", grpc.WithInsecure())
 client := NewPostServiceClient(conn)
 ```
 
 Puis une méthode pour récupérer les Posts :
+
 ```Go
 func printPosts(client PostServiceClient) {
 	stream, err := client.ListPosts(context.Background(), &google_protobuf.Empty{})
@@ -280,6 +288,7 @@ func printPosts(client PostServiceClient) {
 ```
 
 Le code final donne :
+
 ```Go
 package main
 
@@ -326,7 +335,7 @@ func main() {
 }
 ```
 
-## Conclusion
+### Conclusion
 ---
 
 gRPC permet de profiter de toute les nouveautés de HTTP/2 et la puissance de Protocol Buffers. Indispensable pour la communication entre micro-services.
