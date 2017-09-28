@@ -77,15 +77,15 @@ service CustomService {
 }
 ```
 
-Nous allons voir pour cette article uniquement le troisième mode `streaming côté serveur` mais les quatre sont très semblables.
+Nous allons voir pour cet article uniquement le troisième mode `streaming côté serveur` mais les quatre sont très semblables.
 
 Vous pouvez retrouver l'ensemble du code de [l'exemple sur mon github](https://github.com/qneyrat/go-grpc-example).
 
 ### Installation
 
-Assurez vous avant de commencer l'installation d'avoir bien installé Go en version supérieur à 1.5 et Protocol Buffers V3.
+Assurez vous avant de commencer l'installation d'avoir bien installé Go en version supérieur à 1.5 et Protocol Buffers en version 3.
 
-Récupérez gRPC pour Go.
+Récupérez gRPC pour Go :
 
 ```Bash
 go get google.golang.org/grpc
@@ -103,7 +103,7 @@ Un service rpc est composé :
 rpc function(request) returns (response)
 ```
 
-Ici on va une request vide et retourné un streaming de Post.
+Ici on a une request vide et un streaming de Post.
 
 ```Proto
 service PostService {
@@ -111,7 +111,7 @@ service PostService {
 }
 ```
 
-Ce qui nous donnes :
+Ce qui nous donne :
 
 ```Proto
 syntax = "proto3";
