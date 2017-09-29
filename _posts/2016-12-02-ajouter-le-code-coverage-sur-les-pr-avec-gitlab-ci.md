@@ -22,6 +22,7 @@ Voici un tip qui permet de pouvoir voir en un clin d’œil les répercussions 
 
 ![gitlab-ci-code-coverage]({{ site.baseurl }}/assets/2016-12-02-gitlab-ci/gitlab-ci-code-coverage-1.png)
 
+
 Dans un premier temps, nous allons modifier notre .gitlab-ci.yml
 
 ```yaml
