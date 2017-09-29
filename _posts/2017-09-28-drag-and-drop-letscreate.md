@@ -26,15 +26,15 @@ Je vous propose de réaliser une version simplifiée de cette fonctionnalité, e
 
 Tout d'abord, voici les images que nous allons utiliser:
 
-![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/room.jpeg =600x)
+![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/room.jpeg)
 
-![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/desk.png =200x)
+![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/desk.png)
 
-![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/trackpad.png =80x)
+![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/trackpad.png)
 
-![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/keyboard.png =150x)
+![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/keyboard.png)
 
-![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/screen.png =100x)
+![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/screen.png)
 
 Plaçons les objets dans la pièce. Pour pouvoir les bouger, ils doivent avoir une position absolue:
 ```html
@@ -224,7 +224,7 @@ Dans notre pièce, on peut détecter quatre zones principales.
 - le mur du fond
 
 
-![](/assets/2017-09-28-drag-and-drop-letscreate/room-sections.png)
+![]({{site.baseurl}}/assets/2017-09-28-drag-and-drop-letscreate/room-sections.png)
 
 Sur le sol:
 
@@ -251,7 +251,7 @@ const points = [
 
 Pour savoir sur quelle section se trouve l'objet, nous allons  d'abord faire un repérage sur des sections verticales.
 
-![](/assets/2017-09-28-drag-and-drop-letscreate/room-sections-2.png)
+![]({{site.baseurl}}/assets/2017-09-28-drag-and-drop-letscreate/room-sections-2.png)
 
 ```javascript
 const isInSection = x => points.findIndex(({ left }) => x < left);
@@ -302,7 +302,7 @@ Maintenant qu'on sait dans quelle zône notre objet est, il faut déterminer sa 
 On peut utiliser notre générateur de fonction linéaire :
 
 Resize coté gauche:
-![](/assets/2017-09-28-drag-and-drop-letscreate/room-resize-left.png)
+![]({{site.baseurl}}/assets/2017-09-28-drag-and-drop-letscreate/room-resize-left.png)
  - A: left = 0px > Taille = 800px
  - B: left = 287px > Taille = 354px
 
@@ -311,7 +311,7 @@ const getResizeLeft = getEquation(0, 800, 287, 354);
 ```
 
 Resize coté droit:
-![](/assets/2017-09-28-drag-and-drop-letscreate/room-resize-write.png)
+![]({{site.baseurl}}/assets/2017-09-28-drag-and-drop-letscreate/room-resize-write.png)
  - A: left = 287px > Taille = 354px
  - B: left = 1067px > Taille = 800px
 
@@ -320,7 +320,7 @@ const getResizeWrite = getEquation(825, 354, 1067, 800);
 ```
 
 Resize sol:
-![](/assets/2017-09-28-drag-and-drop-letscreate/room-resize-ground.png)
+![]({{site.baseurl}}/assets/2017-09-28-drag-and-drop-letscreate/room-resize-ground.png)
  - A: top = 544px > Taille = 354px
  - B: top = 800px > Taille = 800px
 
