@@ -12,7 +12,7 @@
     <nav class="site-nav">
         <ul>
             {% for page in site.pages %}
-            {% if page.title and page.hide != true %}
+            {% if page.title and page.hide != true and page.path contains '_posts' %}
             <li>
                 <a class="page-link no-link-style" href="{{ page.url | prepend: site.baseurl }}">
                     {{ page.title }}

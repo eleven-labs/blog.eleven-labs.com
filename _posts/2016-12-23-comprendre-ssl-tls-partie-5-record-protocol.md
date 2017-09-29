@@ -33,7 +33,6 @@ Voici en détail comment se déroule le record protocole :
 
 <img src="{{ site.baseurl }}/assets/2016-12-23-comprendre-ssl-tls-partie-5-record-protocol/ssl_intro_fig3.jpg" />
 
-
 1. Segmentation - les données sont découpées en blocs de taille inférieure à 16 384 octets ;
 2. Compression - les données sont compressées en utilisant l'algorithme choisi lors de la négociation.
 A noter : à partir de SSL 3.0, il n'y a plus de compression.

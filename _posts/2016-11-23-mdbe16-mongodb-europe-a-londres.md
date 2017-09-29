@@ -35,6 +35,7 @@ Puis quelques grands acteurs sous MongoDB : Baidu (plus grand site chinois, +100
 ### Mongo 3.4
 
 Les nouveautés de cette version sont présentées sous forme d’amélioration, d'extension ou d'innovation.
+
 ![Mongo3.4]({{ site.baseurl }}/assets/2016-11-23-mdbe16/IMG_4288.jpg)
 
 *Improve :*
