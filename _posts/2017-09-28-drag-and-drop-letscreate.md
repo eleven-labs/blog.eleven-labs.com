@@ -25,11 +25,15 @@ Je vous propose de réaliser une version simplifiée de cette fonctionnalité, e
 
 Tout d'abord, voici les images que nous allons utiliser:
 
-<div><img src="/assets/2017-09-28-drag-and-drop-letscreate/room.jpeg" style="width: 600px; margin: 10px;"/></div>
-<img src="/assets/2017-09-28-drag-and-drop-letscreate/desk.png" style="width: 200px; margin: 10px;" />
-<img src="/assets/2017-09-28-drag-and-drop-letscreate/trackpad.png" style="width: 80px; margin: 10px;" />
-<img src="/assets/2017-09-28-drag-and-drop-letscreate/keyboard.png" style="width: 150px; margin: 10px;" />
-<img src="/assets/2017-09-28-drag-and-drop-letscreate/screen.png" style="width: 100px; margin: 10px;" />
+![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/room.jpeg =600x)
+
+![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/desk.png =200x)
+
+![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/trackpad.png =80x)
+
+![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/keyboard.png =150x)
+
+![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/screen.png =100x)
 
 Plaçons les objets dans la pièce. Pour pouvoir les bouger, ils doivent avoir une position absolue:
 ```html
