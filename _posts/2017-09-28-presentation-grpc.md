@@ -90,7 +90,7 @@ Assurez-vous avant de commencer l'installation d'avoir bien installé Go en vers
 
 Récupérez gRPC pour Go :
 
-```Bash
+```bash
 go get google.golang.org/grpc
 ```
 
@@ -108,7 +108,7 @@ rpc function(request) returns (response)
 
 Ici on a une request vide et un streaming de Post.
 
-```Proto
+```proto
 service PostService {
     rpc ListPosts(google.protobuf.Empty) returns (stream Post) {}
 }
@@ -116,7 +116,7 @@ service PostService {
 
 Ce qui nous donne :
 
-```Proto
+```proto
 syntax = "proto3";
 
 import "google/protobuf/empty.proto";
@@ -139,13 +139,13 @@ service PostService {
 
 On va commencer par générer le code source depuis le fichier protobuf.
 
-```Bash
+```bash
 protoc --proto_path=. --go_out=plugins=grpc:. post.proto
 ```
 
 On commence par déclarer une pseudo base de données :
 
-```Go
+```go
 var posts = []Post{
 	{
 		Id:     1,
@@ -167,7 +167,7 @@ var posts = []Post{
 
 Puis on crée un serveur TCP sur le port 4000 pour notre serveur gRPC et on attache notre service déclaré dans le protobuf :
 
-```Go
+```go
 	lis, _ := net.Listen("tcp", "localhost:4000")
 	g := grpc.NewServer()
 	RegisterPostServiceServer(g, NewServer())
@@ -177,7 +177,7 @@ Puis on crée un serveur TCP sur le port 4000 pour notre serveur gRPC et on atta
 
 On a plus qu'à créer notre endpoint qui va parcourir notre pseudo base de données et envoyer les posts un par un :
 
-```Go
+```go
 func (s *Server) ListPosts(empty *google_protobuf.Empty, stream PostService_ListPostsServer) error {
 	for _, post := range posts {
 		fmt.Printf("Send post #%d \n", post.GetId())
@@ -192,7 +192,7 @@ func (s *Server) ListPosts(empty *google_protobuf.Empty, stream PostService_List
 
 Le code final :
 
-```Go
+```go
 package main
 
 import (
@@ -258,14 +258,14 @@ func main() {
 
 Dans un nouveau projet, on déclare un client gRPC pour notre service.
 
-```Go
+```go
 conn, _ := grpc.Dial("localhost:4000", grpc.WithInsecure())
 client := NewPostServiceClient(conn)
 ```
 
 Puis une méthode pour récupérer les Posts :
 
-```Go
+```go
 func printPosts(client PostServiceClient) {
 	stream, err := client.ListPosts(context.Background(), &google_protobuf.Empty{})
 	if err != nil {
@@ -289,7 +289,7 @@ func printPosts(client PostServiceClient) {
 
 Le code final donne :
 
-```Go
+```go
 package main
 
 import (
