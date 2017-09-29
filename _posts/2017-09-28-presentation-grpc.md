@@ -36,7 +36,7 @@ gRPC a été développé initialement par Google puis rendu open source. Il perm
 
 gRPC permet quatre modes de communication.
 
-Le one to one classique :
+Le one-to-one classique :
 
 ```
 Client Request -> Server
@@ -86,7 +86,7 @@ Vous pouvez retrouver l'ensemble du code de [l'exemple sur mon github](https://g
 
 ### Installation
 
-Assurez vous avant de commencer l'installation d'avoir bien installé Go en version supérieure à 1.5 et Protocol Buffers en version 3.
+Assurez-vous avant de commencer l'installation d'avoir bien installé Go en version supérieure à 1.5 et Protocol Buffers en version 3.
 
 Récupérez gRPC pour Go :
 
@@ -338,4 +338,4 @@ func main() {
 ### Conclusion
 ---
 
-gRPC permet de profiter de toute les nouveautés de HTTP/2 et la puissance de Protocol Buffers. Indispensable pour la communication entre micro-services.
+gRPC permet de profiter de toutes les nouveautés de HTTP/2 et la puissance de Protocol Buffers. Indispensable pour la communication entre micro-services.
