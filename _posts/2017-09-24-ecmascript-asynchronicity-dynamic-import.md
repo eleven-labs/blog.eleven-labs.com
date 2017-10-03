@@ -526,7 +526,7 @@ export default [{
 }];
 ```
 
-Now, all you need to do is visit those routes, so you can apreciate how amazing is asynchronous import of components. In the case of the `/list` route, React's representation of the components tree will look like this:
+Now, all you need to do is visit those routes, so you can appreciate how amazing is asynchronous import of components. In the case of the `/list` route, React's representation of the components tree will look like this:
 
 ```html
 <Route>
