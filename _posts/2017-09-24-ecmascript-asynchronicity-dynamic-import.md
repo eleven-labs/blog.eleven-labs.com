@@ -26,22 +26,22 @@ tags:
 cover: /assets/2017-09-24-ecmascript-asynchronicity-dynamic-import/cover.jpg
 ---
 
-ECMAScript came up with some awesome features that demystify the concept of asynchronous programming. They go from promises, through asynchronous functions (and soon iterations), to lazy loading modules. Today I'm going to talk about ECMAScript's dynamic import, one of the promising features in Javascript's Asynchronicity.
+ECMAScript came up with some awesome features that demystify the concept of asynchronous programming. These features vary from promises, through asynchronous functions —and soon iterations— to lazy loading modules. Today I'm going to talk about one of the promising features in Javascript's Asynchronicity; ECMAScript's dynamic import.
 
 ### motivation
-Imagine you are developing a large scale web application, with several thousands of lines of code, and dozens of dependencies. And, now you are happy that you're finally building your application to be ready for production. Once you create your bundle file and load it in the page, your application might work just fine. However, because life is full of surprises which are sometimes unpleasant, your app might be just another disappointment and you will end up feeling annoyingly uncomfortable. 
+Imagine you are developing a large scale web application, with several thousands of lines of code, and dozens of dependencies. And, now you are happy that you're finally building your application to be ready for production. Once you create your bundle file and load it in the page, your application might work just fine. However, because life is full of unpleasant surprises, your app might be just another disappointment and you will end up feeling annoyingly uncomfortable.
 
-Why is that? Your bundle, my friend, is nothing less than a massive file that's gonna need a big deal of time to load into your page. Given some, not so glorifying, browsers performance, you're going to need to address the situation.
+Why is that? Your bundle, my friend, is nothing less than a massive file which requires too much time in order to be loaded in your page. Given some, not so glorifying, browsers performance, you're gonna need to address the situation.
 
-Fortunately, there are some good folks out there, who are working on stuff that can help you. Stuff like code splitting, to make sure your app is loaded in several chunks, as small as possible, in order to accelerate the loading. The tools that provide this kind of features are: [RequireJS](https://requirejs.org), [SystemJS](https://github.com/systemjs/systemjs), [Webpack](https://github.com/webpack/webpack) and [curl](https://github.com/cujojs/curl). They are capable of bundling your app and generating your bundle chunks, and especially lazy loading them, so you can load only the one that you need at a given time.
+Fortunately for you, there are some good folks out there working on stuff that can help you, stuff like code splitting. They make sure your app is loaded in several chunks, as small as possible, in order to accelerate the loading. The tools that provide this kind of features are: [RequireJS](https://requirejs.org), [SystemJS](https://github.com/systemjs/systemjs), [Webpack](https://github.com/webpack/webpack), [Rollup](https://rollupjs.org/) and [curl](https://github.com/cujojs/curl). They are capable of bundling your app and generating your bundle chunks, and especially lazy loading them, so you can load only the one that you need at a given time.
 
 Therefore, the use of dynamic import is necessary. Its main purpose is to optimize the amount of loaded code by lazy loading modules.
 
-Since we're talking about modules, let us take a look at them.
+Since we're talking about modules, let's take a look at them.
 
 ### modules
 
-ECMAScript provides a module system that is similar to Node’s one. Its modules are represented by simple files, each module has its own context, this means that whatever stuff you declare inside of it (variables, functions, ...), won’t pollute the global context.
+ECMAScript provides a module system that is similar to that of Node. Its modules are represented by simple files, and each module has its own context. This means that whatever variables, functions, etc, you declare inside of these files won’t pollute the global context.
 
 ```js
 // add.js
@@ -52,7 +52,7 @@ const multipleAdd = (...numbers) => numbers.reduce(simpleAdd, 0);
 export default (...numbers) => multipleAdd(...numbers);
 ```
 
-The code above declares 2 local functions, and exports an anonymous one. We can't use the local functions outside of this module. In the module below, we have only access to what `add.js` exports, namely the anonymous function (which we are naming to `add`).
+The code above declares 2 local functions and exports an anonymous one. We can't use the local functions outside of this module. In the module below, we only have access to what `add.js` exports, namely the anonymous function, which we are renaming to `add`.
 
 ```js
 // service.js
@@ -63,28 +63,28 @@ export default () => {
 }
 ```
 
-The ascension of ES6 made it possible to put an end to the choice between the two protagonist systems of ES5: `CommonJS` and `AMD`. because a system with a declarative syntax, thanks to its clarity and simplicity, is much better. It combines their benefits, and provides an intuitive syntax that makes it easy, for engineers, to handle.
+The ascension of ES6 made it possible to put an end to the choice between the two protagonist systems of ES5: `CommonJS` and `AMD`. Because, ES6 system has a declarative syntax, which makes it clear and simple; It combines their benefits, and provides an intuitive syntax that makes it easy, for engineers, to handle.
 
-It even goes beyond the capabilities of ES5 system by using both synchronous and asynchronous loading. Also, by having a static module structure, which means that you need to explicitly specify what you are importing, by using module names instead of dynamic variables. So you can't do something like this:
+It even goes beyond the capabilities of ES5 system by using both synchronous and asynchronous loading, along with a static module structure. That is, you need to explicitly specify what you are importing, by using module names instead of dynamic variables. So, the following is not recommended:
 
 ```js
 import myService from `../services/${myServiceName}`;
 ```
 
-The static aspect of ES6 modules come up with some nice benefits:
+The static aspect of ES6 modules come up with some great benefits:
 
-- It make it easy for bundlers to eliminate unused modules and de-duplicate redundant ones when bundling. This is called Tree Shaking (which was made popular by the module bundler [Rollup](https://rollupjs.org/)).
+- It makes it easy for bundlers to eliminate unused modules and de-duplicate redundant ones when bundling. This is called Tree Shaking —which was made popular by the module bundler [Rollup](https://rollupjs.org/).
 - Allows cyclic dependencies between modules.
-- Variable checking that we can think of as a "shallow type checking", which will give us the opportunity to early catch common errors.
-- Possibility to add static type checking in future versions of ECMAScript.
+- Provides variable checking that we can think of as a "shallow type checking", which will give us the opportunity to early catch common errors.
+- Gives the possibility to add static type checking in future versions of ECMAScript.
 
 For further reading on modules, check Dr. Axel Rauschmayer's [online book](http://exploringjs.com/es6/ch_modules.html) on modules.
 
 ### code splitting with Webpack
 
-Webpack offers several features to optimize your application's bundle. among these features is code splitting. It can be done in 2 different ways, declarative or imperative. The declarative way generate several bundles based on the entries you specify in its config, and the imperative way generates bundles based on dynamic imports in your code. let us see how the declarative one is done :
+Webpack offers several features to optimize your application's bundle. Code splitting is among these features. It can be done in 2 different ways: declarative and imperative. The declarative way generates several bundles based on the entries you specify in Webpack's config, while the imperative way generates bundles based on dynamic imports in your code. Let's see how the declarative one is done :
 
-here is a classical Webpack config file :
+Here is a classical Webpack config file :
 
 ```ts
 // webpack.config.ts
@@ -141,9 +141,9 @@ main.js.map.gz     803 kB          [emitted]  [big]
 Done in 13.48s.
 ```
 
-One of the ways that help you split your bundle is defining entry points in Webpack config. These entry points represent the chunks that will be generated. Another way is by using [CommonsChunkPlugin](https://webpack.js.org/plugins/commons-chunk-plugin/). In the following example, we’re going to use both ways.
+One of the ways you can split your bundle is by defining entry points in Webpack config. These entry points represent the chunks that will be generated. Another way is by using [CommonsChunkPlugin](https://webpack.js.org/plugins/commons-chunk-plugin/). In the following example, we’re going to use both ways.
 
-How to choose your entry points is totally up to you. In our case, we will adopt a strategy that will help us isolate vendor libraries in a single chunk. then we create another chunk only for our app’s code.
+How to choose your entry points is totally up to you. In our case, we will adopt a strategy that will help us isolate vendor libraries in a single chunk. Then, we create another chunk only for our app’s code.
 
 ```ts
 import * as HTMLWebpackPlugin from 'html-webpack-plugin';
@@ -184,7 +184,7 @@ export default {
 }
 ```
 
-In our entry property, we're specifying 2 entry points `main` and `styles`, then we use the `CommonsChunkPlugin` to intercept vendor modules, so that we can isolate them in a single chunk `vendor.js`. this is done by the `minChunks` function of the plugin.
+In our entry property, we're specifying 2 entry points `main` and `styles`, and we're using the `CommonsChunkPlugin` to intercept vendor modules, so that we can isolate them in a single chunk `vendor.js`. This is done by the `minChunks` function of the plugin.
 
 ```bash
 $ NODE_ENV=production webpack -p
@@ -205,11 +205,11 @@ vendor.js.map    3.78 MB       2  [emitted]         vendor
 Done in 16.68s.
 ```
 
-Until now we've seen how to split our code at compile time, how about runtime?
+Until now we've only seen how to split our code at compile time, how about runtime?
 
 ### Lazy loading
 
-Lazy loading is a much cooler feature than simple code splitting, not only it splits your code, but loads only the chunks you need. It allows you to incrementally load your app. This is a piece of cake for ECMAScript's `import()`, but before attacking it, let us see how the legacy way was:
+Lazy loading is a much cooler feature than simple code splitting; not only it splits your code, but loads only the chunks you need. It allows you to incrementally load your app. This is a piece of cake for ECMAScript's `import()`, but before getting there, let's see how the legacy way was:
 
 ---
 #### Webpack's `require.ensure`
@@ -268,9 +268,9 @@ export default class extends React.Component {
 }
 ```
 
-In the `componentDidMount` lifecycle method we use `require.ensure` to load and make available the `StoryEditor` component. then we use the static `require` to extract it and display it.
+In the `componentDidMount` lifecycle method we use `require.ensure` to load and make available the `StoryEditor` component. Then, we use the static `require` to extract and display it.
 
-so when we execute our code, here is the file that is loaded:
+So, when we execute our code, the file that is loaded should be as follows:
 
 ```js
 webpackJsonp_name_([0],{
@@ -313,7 +313,7 @@ module.exports = exports['default'];
 
 This ugly code is the result of transpiling and bundling the `StoryEditor` component. As you can see, it asynchronously loaded children components too, namely `FormGroup`.
 
-There is, However, some restrictions to this approach. The `require.ensure` method resolves modules statically, it means that you need to specify the modules in string literals, that are evaluated at compile time, so you can't use variables. But if you want to lazy load modules dynamically, ECMAScript's dynamic `import()` will have the pleasure to satisfy your request.
+There is, however, some restrictions to this approach. The `require.ensure` method resolves modules statically. It means that you need to specify the modules in string literals, that are evaluated at compile time, so you can't use variables. But, if you want to lazy load modules dynamically, ECMAScript's dynamic `import()` will have the pleasure to satisfy your request.
 
 ---
 #### `import()`
@@ -344,7 +344,7 @@ Here is the `import()` version of the previous example:
 
 So intuitive!
 
-In the `require.ensure` example, we've seen how it loads a statically resolved modules. Now, what if `Editor.jsx` doesn't know which editor to load? What if we pass an array of editors to it, so it can load them? let us see how `import()` handles this like a boss:
+In the `require.ensure` example, we've seen how it loads a statically resolved modules. Now, what if `Editor.jsx` doesn't know which editor to load? What if we give it an array of editors, so it can load them? Let's see how `import()` handles this like a boss:
 
 ```js
 // Editor.jsx
@@ -401,7 +401,7 @@ export default class extends React.Component {
 }
 ```
 
-The `import()` statement is dynamic, Yes! But it needs something to rely on, it needs a context. And here the context is the `./editors/` that we feed it.
+The `import()` statement is dynamic. Yes! But it needs something to rely on: a context. In our case, this context is the `./editors/` that we feed it.
 
 ```js
   ...
@@ -411,7 +411,7 @@ The `import()` statement is dynamic, Yes! But it needs something to rely on, it 
   ...
 ```
 
-At compile time, ECMAScript cannot resolve the `module` argument. so it will ignore it, and take the first static piece of the module name (`./editors/`), and generate a context module using it.
+At compile time, ECMAScript cannot resolve the `module` argument. It's going to systematically ignore it, and take the first static piece of the module name `./editors/`, then generate a context module using it.
 
 Wait, what the heck is a context module?
 
@@ -423,7 +423,7 @@ const context = require.context('./editors/', true, /\.jsx?$/);
 context.keys(); // returns ["./StoryEditor.jsx", "./MessageEditor.jsx"]
 ```
 
-We just created a context module that contains the 2 files `StoryEditor.jsx` and `MessageEditor.jsx`. Now we can dynamically load them by simply `require`ing them:
+We just created a context module that contains the 2 files `StoryEditor.jsx` and `MessageEditor.jsx`. Now, we can dynamically load them by simply `require`ing them:
 
 ```js
 const context = require.context('./editors/', true, /\.jsx?$/);
@@ -433,7 +433,7 @@ var modules = ((contextRequire) => {
 })(context);
 ```
 
-_**Notice**: the context returned from `require.context` is a function that behaves like a local `require`, and in the same time an object that contains the paths to all the files it holds._
+_**Notice**: the context returned from `require.context` is a function that works like a local `require`, and in the same time an object that contains the paths to all the files it holds._
 
 Here is what Webpack says about `require.context`:
 > A context module is generated. It contains references to all modules in that directory that can be required with a request matching the regular expression. The context module contains a map which translates requests to module ids.
@@ -446,7 +446,7 @@ Okay, but what about asynchronous routing?
 
 ### Example of asynchronous routing
 
-using `react-router` we will define some routes in our app, in order to load the components of those routes asynchronously:
+using `react-router` we will define some routes in our app in order to load the components of those routes asynchronously:
 
 Here are some classic routes:
 
@@ -473,9 +473,9 @@ export default [{
 }];
 ```
 
-The components are loaded synchronously because we're importing them statically. To do it dynamically we need to use a wrapper component that loads the other components (`ListPage` and `StoryPage`) right after it's mounted (`componentDidMount`).
+The components are loaded synchronously because we're importing them statically. To do it dynamically we need to use a wrapper component that loads the other components —`ListPage` and `StoryPage`. The wrapper component uses the `componentDidMount` lifecycle method to load those components.
 
-We are going to write it as a Factory that takes a `name` argument in order to tell it what to load.
+We are going to write it as a factory function that takes a `name` argument in order to know what to load.
 
 ```js
 // asyncComponentFactory.js
@@ -502,7 +502,7 @@ export default name => class extends React.Component {
 };
 ```
 
-This factory returns a component class which the router renders in the page, and once it's mounted, it imports the real component (`ListPage` or `StoryPage`) and renders it. This way, we can use it like this:
+This factory returns a component class which the router renders in the page, and once it is mounted, the class imports the real component (`ListPage` or `StoryPage`) and renders it. The following explains how we should use it:
 
 ```js
 // routes.jsx
@@ -526,7 +526,7 @@ export default [{
 }];
 ```
 
-Now, all you need to do is visit those routes, so you can appreciate how amazing is asynchronous import of components. In the case of the `/list` route, React's representation of the components tree will look like this:
+Now, all you need to do is visit those routes, so that you can appreciate how amazing asynchronous import of components is. In the case of the `/list` route, React's representation of the components tree should look like this:
 
 ```html
 <Route>
@@ -540,6 +540,6 @@ Now, all you need to do is visit those routes, so you can appreciate how amazing
 
 ### Conclusion
 
-Optimizing production performances is a boundless topic. There are many other strategies that helps improving it. Asynchronicity is just a little thing compared to the vast variety of solutions out there. I hope I did enlighten some curious souls about ECMAScript's asynchronous loading.
+Optimizing production performances is a boundless topic. There are many other strategies that help improving it. Thus it should be clear that Asynchronicity is merely one solution amongst other various ones that can be used to enhance production performances. I hope this post was useful and could enlighten some curious minds about ECMAScript's asynchronous loading.
 
 Thanks for reading.
