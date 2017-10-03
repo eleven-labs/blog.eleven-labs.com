@@ -1,27 +1,27 @@
 ---
 layout: post
 title: ECMAScript Asynchronicity - dynamic import
-excerpt: Optimize your bundles
+excerpt: Optimize your production code by splitting and lazy loading modules
 authors:
     - kelfarsaoui
 permalink: /en/ecmascript-asynchronicity-dynamic-import/
 categories:
-    - ecmascript
-    - asynchronous
-    - dynamic import
+    - ECMAScript
+    - Asynchronous
+    - Dynamic import
     - AMD
     - NodeJS
     - Lazy loading
-    - webpack
+    - Webpack
     - Modules
 tags:
-    - ecmascript
-    - asynchronous
-    - dynamic import
+    - ECMAScript
+    - Asynchronous
+    - Dynamic import
     - AMD
     - NodeJS
     - Lazy loading
-    - webpack
+    - Webpack
     - Modules
 cover: /assets/2017-08-16-json-server/cover.jpg
 ---
