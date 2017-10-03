@@ -320,7 +320,7 @@ There is, However, some restrictions to this approach. The `require.ensure` meth
 
 The dynamic import is a pretty awesome feature ECMAScript came up with. It offers the possibility to handle cases like: computed module specifiers, conditional loading of modules, accessing exports and default exports, and many more. The [dynamic import proposal](https://github.com/tc39/proposal-dynamic-import) is in stage 3 at the time of this writing.
 
-Like `require.ensure`, `import()` relies on `Promise`, this implies that you have to use some polyfills like [es6-promise](https://www.npmjs.com/package/es6-promise) or [promise-polyfill](https://www.npmjs.com/package/promise-polyfill) in order to make it work. You're gonna need `babel` support too, using the [Syntax Dynamic Import](https://babeljs.io/docs/plugins/syntax-dynamic-import/) plugin that allows the parsing of `import()`.
+Like `require.ensure`, `import()` relies on `Promise`. This implies that you have to use some polyfills like [es6-promise](https://www.npmjs.com/package/es6-promise) or [promise-polyfill](https://www.npmjs.com/package/promise-polyfill) in order to make it work. You're gonna need `babel` support too, using the [Syntax Dynamic Import](https://babeljs.io/docs/plugins/syntax-dynamic-import/) plugin that allows the parsing of `import()`.
 
 ```json
 // .babelrc
@@ -406,12 +406,14 @@ The `import()` statement is dynamic, Yes! But it needs something to rely on, it 
 ```js
   ...
   importEditor(module) {
-    return import(`./${module}`);
+    return import(`./editors/${module}`);
   }
   ...
 ```
 
-At compile time, ECMAScript cannot resolve the `module` argument. so it will ignore it, and take the first static piece of the module name (`./editors/`), and generate a context module using it. Wait, what the heck is a context module?
+At compile time, ECMAScript cannot resolve the `module` argument. so it will ignore it, and take the first static piece of the module name (`./editors/`), and generate a context module using it.
+
+Wait, what the heck is a context module?
 
 A context module is a kind of a bundle that webpack generates for a given directory, in order to make it possible to **dynamically** load any file in that directory. Take for example Webpack's [`require.context`](https://webpack.js.org/api/module-methods/#require-context) function:
 
@@ -423,8 +425,6 @@ context.keys(); // returns ["./StoryEditor.jsx", "./MessageEditor.jsx"]
 
 We just created a context module that contains the 2 files `StoryEditor.jsx` and `MessageEditor.jsx`. Now we can dynamically load them by simply `require`ing them:
 
-_**Notice**: the context returned from `require.context` is a function that behaves like a local `require`, and in the same time an object that contains the paths to all the files it holds._
-
 ```js
 const context = require.context('./editors/', true, /\.jsx?$/);
 
@@ -433,21 +433,113 @@ var modules = ((contextRequire) => {
 })(context);
 ```
 
-Which will generate a module for all the possible files with that dynamic pattern. In this example 2, for home.js and about.js
+_**Notice**: the context returned from `require.context` is a function that behaves like a local `require`, and in the same time an object that contains the paths to all the files it holds._
 
+Here is what webpack says about `require.context`:
+> A context module is generated. It contains references to all modules in that directory that can be required with a request matching the regular expression. The context module contains a map which translates requests to module ids.
+>
+>The context module also contains some runtime logic to access the map.
+>
+>–– https://webpack.github.io/docs/context.html
 
+Okay, but what about asynchronous routing?
 
-A context module is generated. It contains references to all modules in that directory that can be required with a request matching the regular expression. The context module contains a map which translates requests to module ids.
+### Example of asynchronous routing
 
+using `react-router` we will define some routes in our app, in order to load the components of those routes asynchronously:
 
+Here are some classic routes:
 
-### Une app composée de 3 bundles.
+```js
+// routes.jsx
+import App from './App';
+import ListPage from './containers/ListPage';
+import StoryPage from './containers/StoryPage';
 
-1. pour l'affichage de la liste et les actions qu'on peut faire sur les elements (like, dislike, ...)
-2. pour l'affichage d'un élément et ses sous éléments
-3. pour la visualisation
+export default [{
+  component: App,
+  routes: [
+    {
+      path: '/list',
+      exact: true,
+      component: ListPage,
+    },
+    {
+      path: '/stories/:id',
+      exact: true,
+      component: StoryPage,
+    },
+  ],
+}];
+```
+
+The components are loaded synchronously because we're importing them statically. To do it dynamically we need to use a wrapper component that loads the other components right after it's mounted (`componentDidMount`).
+
+We are going to write it as a Factory that takes a `name` argument in order to tell it what to load.
+
+```js
+// asyncComponentFactory.js
+export default name => class extends React.Component {
+  static displayName = `${name}Wrapper`;
+
+  state = {};
+
+  async componentDidMount() {
+    const component = await import(`./containers/${name}`);
+    this.setState({ component });
+  }
+
+  render() {
+    const { component } = this.state;
+
+    if (!component) {
+      return null;
+    }
+
+    const renderer = React.createFactory(component);
+    return renderer(this.props);
+  }
+};
+```
+
+This factory returns a component class which the router renders in the page, and once it's mounted, it imports the real component (`ListPage` or `StoryPage`) and renders it. This way, we can use it like this:
+
+```js
+// routes.jsx
+import App from './App';
+import AsyncComponentFactory from './asyncComponentFactory';
+
+export default [{
+  component: App,
+  routes: [
+    {
+      path: '/list',
+      exact: true,
+      component: AsyncComponentFactory('ListPage'),
+    },
+    {
+      path: '/stories/:id',
+      exact: true,
+      component: AsyncComponentFactory('StoryPage'),
+    },
+  ],
+}];
+```
+
+Now, all you need to do is visit those routes, so you can apreciate how amazing is asynchronous import of components. In the case of the `/list` route, React's representation of the components tree will look like this:
+
+```html
+<Route>
+  <ListPageWrapper>
+    <ListPage>
+      ...
+    </ListPage>
+  </ListPageWrapper>
+</Route>
+```
 
 ### Conclusion
 
-there are other alternatives:
-- https://reacttraining.com/react-router/web/guides/code-splitting
+Optimizing production performances is a boundless topic. There are many other strategies that helps improving it. Asynchronicity is just a little thing compared to the vast variety of solutions out there. I hope I did enlighten some curious souls about ECMAScript's asynchronous loading.
+
+Thanks for reading.
