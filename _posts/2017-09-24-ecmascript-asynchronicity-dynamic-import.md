@@ -80,11 +80,11 @@ The static aspect of ES6 modules come up with some nice benefits:
 
 For further reading on modules, check Dr. Axel Rauschmayer's [online book](http://exploringjs.com/es6/ch_modules.html) on modules.
 
-### code splitting with webpack
+### code splitting with Webpack
 
 Webpack offers several features to optimize your application's bundle. among these features is code splitting. It can be done in 2 different ways, declarative or imperative. The declarative way generate several bundles based on the entries you specify in its config, and the imperative way generates bundles based on dynamic imports in your code. let us see how the declarative one is done :
 
-here is a classical webpack config file :
+here is a classical Webpack config file :
 
 ```ts
 // webpack.config.ts
@@ -121,7 +121,7 @@ export default {
 };
 ```
 
-After building our app, webpack generates only one bundle, `main.js`, with its source map `main.js.map`. And, thanks to the [`compression-webpack-plugin`](https://www.npmjs.com/package/compression-webpack-plugin), we have also those files "gzip"ed.
+After building our app, Webpack generates only one bundle, `main.js`, with its source map `main.js.map`. And, thanks to the [`compression-webpack-plugin`](https://www.npmjs.com/package/compression-webpack-plugin), we have also those files "gzip"ed.
 
 ```bash
 $ NODE_ENV=production webpack -p
@@ -415,7 +415,7 @@ At compile time, ECMAScript cannot resolve the `module` argument. so it will ign
 
 Wait, what the heck is a context module?
 
-A context module is a kind of a bundle that webpack generates for a given directory, in order to make it possible to **dynamically** load any file in that directory. Take for example Webpack's [`require.context`](https://webpack.js.org/api/module-methods/#require-context) function:
+A context module is a kind of a bundle that Webpack generates for a given directory, in order to make it possible to **dynamically** load any file in that directory. Take for example Webpack's [`require.context`](https://webpack.js.org/api/module-methods/#require-context) function:
 
 ```js
 const context = require.context('./editors/', true, /\.jsx?$/);
@@ -435,7 +435,7 @@ var modules = ((contextRequire) => {
 
 _**Notice**: the context returned from `require.context` is a function that behaves like a local `require`, and in the same time an object that contains the paths to all the files it holds._
 
-Here is what webpack says about `require.context`:
+Here is what Webpack says about `require.context`:
 > A context module is generated. It contains references to all modules in that directory that can be required with a request matching the regular expression. The context module contains a map which translates requests to module ids.
 >
 >The context module also contains some runtime logic to access the map.
@@ -473,7 +473,7 @@ export default [{
 }];
 ```
 
-The components are loaded synchronously because we're importing them statically. To do it dynamically we need to use a wrapper component that loads the other components right after it's mounted (`componentDidMount`).
+The components are loaded synchronously because we're importing them statically. To do it dynamically we need to use a wrapper component that loads the other components (`ListPage` and `StoryPage`) right after it's mounted (`componentDidMount`).
 
 We are going to write it as a Factory that takes a `name` argument in order to tell it what to load.
 
