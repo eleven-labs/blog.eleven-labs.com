@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Le drag and drop Lets Create
-excerpt: Dans cet article, nous allons voir comment a été réalisé le drag and drop du jeu Lets Create
+title: Le drag and drop Let's Create
+excerpt: Dans cet article, nous allons voir comment a été réalisé le drag and drop du jeu Let's Create
 authors:
     - jiefmoreno
 permalink: /fr/drag-and-drop-letscreate/
@@ -13,18 +13,18 @@ tags:
 cover: /assets/2017-09-28-drag-and-drop-letscreate/cover.jpg
 ---
 
-# Le drag and drop Lets Create
+# Le drag and drop Let's Create
 
-Dans le cadre du projet [Lets Create de Maisons du Monde](https://letscreate.maisonsdumonde.com/FR/fr), nous avons développé un jeu permettant de décorer une pièce. Pour cela, l'utilisateur peut sélectionner des objets et les placer dans la pièce de son choix.
+Dans le cadre du projet [Let's Create de Maisons du Monde](https://letscreate.maisonsdumonde.com/FR/fr), nous avons développé un jeu permettant de décorer une pièce. Pour cela, l'utilisateur peut sélectionner des objets et les placer dans la pièce de son choix.
 
 ### Problématique
 
-Dans cet article, je vais vous décrire la partie drag and drop du jeu. Je m'attarderais particulièrement sur le redimensionnement des objets.
+Dans cet article, je vais vous décrire la partie drag and drop du jeu. Je m'attarderai particulièrement sur le redimensionnement des objets.
 Je vous propose de réaliser une version simplifiée de cette fonctionnalité, en utilisant simplement javascript.
 
 ### Le drag and Drop
 
-Tout d'abord, voici les images que nous allons utiliser:
+Tout d'abord, voici les images que nous allons utiliser :
 
 ![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/room.jpeg)
 
@@ -36,7 +36,7 @@ Tout d'abord, voici les images que nous allons utiliser:
 
 ![]({{ site.baseurl }}/assets/2017-09-28-drag-and-drop-letscreate/screen.png)
 
-Plaçons les objets dans la pièce. Pour pouvoir les bouger, ils doivent avoir une position absolue:
+Plaçons les objets dans la pièce. Pour pouvoir les bouger, ils doivent avoir une position absolue :
 ```html
 <!-- index.html -->
 
@@ -109,7 +109,7 @@ body {
   height: 100%;
 }
 ```
-On initialise la taille et la position des objets:
+On initialise la taille et la position des objets :
 
 ```javascript
 /* script.js */
@@ -139,7 +139,7 @@ const trackpadElement = document.querySelector('#trackpad');
 })();
 ```
 
-Pour pouvoir réaliser le drag and drop, nous allons ajouter des listeners à ces objets:
+Pour pouvoir réaliser le drag and drop, nous allons ajouter des listeners à ces objets :
 ```javascript
 /* script.js */
 ...
@@ -164,7 +164,7 @@ const getPositionForElement = element => event => {};
 ```
 Ces listeners appellent la fonction getPositionForElement au drag de l'objet.
 
-Dans cette fonction, nous allons récupérer la position de la souris jusqu'au drop. On attribue ensuite la position de la souris à la position de l'objet:
+Dans cette fonction, nous allons récupérer la position de la souris jusqu'au drop. On attribue ensuite la position de la souris à la position de l'objet :
 
 ```javascript
 /* script.js */
@@ -188,11 +188,11 @@ Notre drag and drop est maintenant fonctionnel !
 
 Mais on peut observer ce petit saut lors du drag d'un objet.
 
-Reprenons notre code:
+Reprenons notre code :
 
-On récupère la position du curseur, et on place l'objet au niveau de celui-ci. Mais si l'utilisateur à cliqué sur le milieu de l'objet, un décalage se créé.
+On récupère la position du curseur, et on place l'objet au niveau de celui-ci. Mais si l'utilisateur à cliqué sur le milieu de l'objet, un décalage se crée.
 
-Corrigeons ce problème:
+Corrigeons ce problème :
 ```javascript
 /* script.js */
 
@@ -226,19 +226,19 @@ Dans notre pièce, on peut détecter quatre zones principales.
 
 ![]({{site.baseurl}}/assets/2017-09-28-drag-and-drop-letscreate/room-sections.png)
 
-Sur le sol:
+Sur le sol :
 
 Il faut que la taille de notre objet s'adapte selon l'axe y. C'est à dire que plus l'objet est haut sur l'image, plus l'objet sera petit.
 
-Sur les cotés gauche:
+Sur les cotés :
 
-Il faut que la taille de notre objet s'adapte selon l'axe x. plus l'objet sera vers le centre, plus il sera petit;
+Il faut que la taille de notre objet s'adapte selon l'axe x. plus l'objet sera vers le centre, plus il sera petit.
 
-Sur le mur du fond:
+Sur le mur du fond :
 
 L'objet sera toujours à sa taille minimum.
 
-pour détecter les zônes depuis javascript, on va repérer les points délimitant le sol.
+pour détecter les zones depuis javascript, on va repérer les points délimitant le sol.
 
 ```javascript
 const points = [
@@ -257,7 +257,7 @@ Pour savoir sur quelle section se trouve l'objet, nous allons  d'abord faire un 
 const isInSection = x => points.findIndex(({ left }) => x < left);
 ```
 
-Dans chaque section verticale, il y a une partie haute et une partie basse, qui va nous permettre de determiner dans quelle zône est notre objet. Ces zônes sont délimitées par des vecteurs.
+Dans chaque section verticale, il y a une partie haute et une partie basse, qui va nous permettre de déterminer dans quelle zone est notre objet. Ces zones sont délimitées par des vecteurs.
 
 ```javascript
 const isInZone = (section, mousePosition) => {
@@ -279,7 +279,7 @@ const isInZone = (section, mousePosition) => {
 };
 ```
 
-Pour construire nos fonctions linéaire représentants les vecteurs, on utilise la fonction getEquation, qui créé une fonction depuis deux points:
+Pour construire nos fonctions linéaire représentant les vecteurs, on utilise la fonction getEquation, qui crée une fonction depuis deux points :
 ```javascript
 /* script.js */
 
@@ -297,11 +297,11 @@ const getEquation = (x1, y1, x2, y2) => {
 };
 ```
 
-Maintenant qu'on sait dans quelle zône notre objet est, il faut déterminer sa taille selon sa position.
+Maintenant qu'on sait dans quelle zone notre objet est, il faut déterminer sa taille selon sa position.
 
 On peut utiliser notre générateur de fonction linéaire :
 
-Resize coté gauche:
+Resize coté gauche :
 ![]({{site.baseurl}}/assets/2017-09-28-drag-and-drop-letscreate/room-resize-left.png)
  - A: left = 0px > Taille = 800px
  - B: left = 287px > Taille = 354px
@@ -310,7 +310,7 @@ Resize coté gauche:
 const getResizeLeft = getEquation(0, 800, 287, 354);
 ```
 
-Resize coté droit:
+Resize coté droit :
 ![]({{site.baseurl}}/assets/2017-09-28-drag-and-drop-letscreate/room-resize-write.png)
  - A: left = 287px > Taille = 354px
  - B: left = 1067px > Taille = 800px
@@ -319,7 +319,7 @@ Resize coté droit:
 const getResizeWrite = getEquation(825, 354, 1067, 800);
 ```
 
-Resize sol:
+Resize sol :
 ![]({{site.baseurl}}/assets/2017-09-28-drag-and-drop-letscreate/room-resize-ground.png)
  - A: top = 544px > Taille = 354px
  - B: top = 800px > Taille = 800px
@@ -328,13 +328,13 @@ Resize sol:
 const getResizeBottom = getEquation(544, 354, 800, 800);
 ```
 
-Resize fond:
+Resize fond :
 on aura toujours la taille minimale.
 ```javascript
 const getResizeBack = () => 354;
 ```
 
-On créé une fonction qui va appeler le bon resize selon la zône de l'objet:
+On crée une fonction qui va appeler le bon resize selon la zône de l'objet :
 ```javascript
 /* script.js */
 ...
@@ -362,7 +362,7 @@ const getObjectScale = position => {
 
 On vient de déterminer la hauteur de la pièce en pixel, selon la position sur l'image.
 
-On doit maintenant déterminer le ratio entre l'objet et la hauteur de la pièce. On peut utiliser les tailles réelles des objets et de la pièce:
+On doit maintenant déterminer le ratio entre l'objet et la hauteur de la pièce. On peut utiliser les tailles réelles des objets et de la pièce :
 
 T pièce > 100%
 
@@ -374,7 +374,7 @@ X % = 100% x T objet / T pièce
 const getObjectRatio = objectId =>
   objects[objectId].size / objects.room.size || 1;
 ```
-En renseignant la taille réelle des objets et de la pièce dans un objet. Vous remarquerez qu'on que nous récupérons la moitié de la hauteur et la largeur de l'objet, pour que le point de repère soit au centre de l'objet.
+En renseignant la taille réelle des objets et de la pièce dans un objet, vous remarquerez que nous récupérons la moitié de la hauteur et la largeur de l'objet, pour que le point de repère soit au centre de l'objet.
 ```javascript
 const objects = {
   desk: { size: 0.7 },
@@ -384,7 +384,7 @@ const objects = {
   trackpad: { size: 0.03 }
 };
 ```
-On attribue la taille calculée à l'objet lors de chaque mouvement:
+On attribue la taille calculée à l'objet lors de chaque mouvement :
 ```javascript
 /* script.js */
 ...
