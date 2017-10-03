@@ -41,7 +41,7 @@ Since we're talking about modules, let us take a look at them.
 
 ### modules
 
-ECMAScript provides a module system that is similar to Node’s one. Its modules are represented by simple files, each module has its own context, this means that whatever stuff you declare inside of it (variables, functions, ...), won’t pollute the global context. These modules can be imported and used inside other modules, and taking advantage of what they export.
+ECMAScript provides a module system that is similar to Node’s one. Its modules are represented by simple files, each module has its own context, this means that whatever stuff you declare inside of it (variables, functions, ...), won’t pollute the global context.
 
 ```js
 // add.js
@@ -52,7 +52,7 @@ const multipleAdd = (...numbers) => numbers.reduce(simpleAdd, 0);
 export default (...numbers) => multipleAdd(...numbers);
 ```
 
-The code above declares 2 local functions, and exports an anonymous one. We can't use the local functions outside this module. In the module below, we have only access to what `add.js` exports, namely the anonymous function (which we are naming `add`).
+The code above declares 2 local functions, and exports an anonymous one. We can't use the local functions outside of this module. In the module below, we have only access to what `add.js` exports, namely the anonymous function (which we are naming to `add`).
 
 ```js
 // service.js
@@ -71,9 +71,9 @@ It even goes beyond the capabilities of ES5 system by using both synchronous and
 import myService from `../services/${myServiceName}`;
 ```
 
-The static aspect of ES6 modules come up with nice benefits:
+The static aspect of ES6 modules come up with some nice benefits:
 
-- It make it easy for bundlers to eliminate unused modules and de-duplicate redundant ones when bundling.
+- It make it easy for bundlers to eliminate unused modules and de-duplicate redundant ones when bundling. This is called Tree Shaking (which was made popular by the module bundler [Rollup](https://rollupjs.org/)).
 - Allows cyclic dependencies between modules.
 - Variable checking that we can think of as a "shallow type checking", which will give us the opportunity to early catch common errors.
 - Possibility to add static type checking in future versions of ECMAScript.
@@ -82,31 +82,372 @@ For further reading on modules, check Dr. Axel Rauschmayer's [online book](http:
 
 ### code splitting with webpack
 
-the normal declarative syntax looks like CommonJS require(), but works more like AMD behind the scenes (which is necessary for browsers). And for that, everything needs to be fixed *before* actually running the code. Look at the use cases again: none of them would work with the declarative syntax.
-  - `require.ensure` vs `import()`
+Webpack offers several features to optimize your application's bundle. among these features is code splitting. It can be done in 2 different ways, declarative or imperative. The declarative way generate several bundles based on the entries you specify in its config, and the imperative way generates bundles based on dynamic imports in your code. let us see how the declarative one is done :
 
-#### Prerequisites
+here is a classical webpack config file :
 
-The [dynamic import proposal](https://github.com/tc39/proposal-dynamic-import) is in stage 3 (At the time of this writing), 
+```ts
+// webpack.config.ts
+import * as CompressionPlugin from 'compression-webpack-plugin';
+import * as path from 'path';
+import * as webpack from 'webpack';
 
-> This feature relies on Promise internally. If you use import() with older browsers, remember to shim Promise using a polyfill such as es6-promise or promise-polyfill.
+export default {
+  devtool: 'source-map',
+  target: 'web',
+  entry: [
+    './src/index',
+  ],
+  plugins: [
+    new CompressionPlugin(),
+  ],
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].js',
+    chunkFilename: '[name].js',
+    publicPath: '/',
+    library: '[name]',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  module: {
+    rules: [
+      ...
+    ],
+  },
+};
+```
+
+After building our app, webpack generates only one bundle, `main.js`, with its source map `main.js.map`. And, thanks to the [`compression-webpack-plugin`](https://www.npmjs.com/package/compression-webpack-plugin), we have also those files "gzip"ed.
+
+```bash
+$ NODE_ENV=production webpack -p
+ts-loader: Using typescript@2.5.3 and /Users/kamal/code/vacs/tsconfig.json
+Hash: 35488b05aa5b90774401
+Version: webpack 3.6.0
+Time: 10955ms
+         Asset       Size  Chunks                    Chunk Names
+       main.js     406 kB       0  [emitted]  [big]  main
+   main.js.map    3.83 MB       0  [emitted]         main
+    main.js.gz    97.7 kB          [emitted]
+main.js.map.gz     803 kB          [emitted]  [big]
+    index.html  246 bytes          [emitted]
+  [38] (webpack)/buildin/global.js 509 bytes {0} [built]
+  [50] ./src/constants.ts 173 bytes {0} [built]
+  ...
+Done in 13.48s.
+```
+
+One of the ways that help you split your bundle is defining entry points in Webpack config. These entry points represent the chunks that will be generated. Another way is by using [CommonsChunkPlugin](https://webpack.js.org/plugins/commons-chunk-plugin/). In the following example, we’re going to use both ways.
+
+How to choose your entry points is totally up to you. In our case, we will adopt a strategy that will help us isolate vendor libraries in a single chunk. then we create another chunk only for our app’s code.
+
+```ts
+import * as HTMLWebpackPlugin from 'html-webpack-plugin';
+import * as path from 'path';
+import * as webpack from 'webpack';
+
+export default {
+  devtool: 'source-map',
+  entry: {
+    styles: path.join(__dirname, 'src', 'assets', 'scss', 'main.scss'),
+    main: path.join(__dirname, 'src', 'index'),
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.js',
+      minChunks(module) {
+        const context = module.context;
+        return context && context.indexOf('node_modules') >= 0;
+      },
+    }),
+
+    new HTMLWebpackPlugin({
+      title: 'App',
+      template: './templates/index.ejs',
+    }),
+  ],
+  output: {
+    path: path.join(__dirname, 'demo'),
+    filename: '[name].js',
+    chunkFilename: '[name].js',
+    publicPath: '/',
+    library: '[name]',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+  },
+  ...
+}
+```
+
+In our entry property, we're specifying 2 entry points `main` and `styles`, then we use the `CommonsChunkPlugin` to intercept vendor modules, so that we can isolate them in a single chunk `vendor.js`. this is done by the `minChunks` function of the plugin.
+
+```bash
+$ NODE_ENV=production webpack -p
+ts-loader: Using typescript@2.5.3 and /Users/kamal/code/vacs/tsconfig.json
+Hash: 5aabff62c38fc1681fe7
+Version: webpack 3.6.0
+Time: 12965ms
+        Asset       Size  Chunks                    Chunk Names
+      main.js    15.3 kB       0  [emitted]         main
+    styles.js  926 bytes       1  [emitted]         styles
+    vendor.js     388 kB       2  [emitted]  [big]  vendor
+  main.js.map    66.8 kB       0  [emitted]         main
+styles.js.map     5.8 kB       1  [emitted]         styles
+vendor.js.map    3.78 MB       2  [emitted]         vendor
+   index.html  360 bytes          [emitted]
+  [49] (webpack)/buildin/global.js 509 bytes {2} [built]
+  ...
+Done in 16.68s.
+```
+
+Until now we've seen how to split our code at compile time, how about runtime?
+
+### Lazy loading
+
+Lazy loading is a much cooler feature than simple code splitting, not only it splits your code, but loads only the chunks you need. It allows you to incrementally load your app. This is a piece of cake for ECMAScript's `import()`, but before attacking it, let us see how the legacy way was:
+
+---
+#### Webpack's `require.ensure`
+
+In the following example we will see how to asynchronously load the `StoryEditor` component from `Editor`:
+
+```js
+// StoryEditor.jsx
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+export default class StoryEditor extends Component {
+  ...
+}
+```
+
+Here is the Editor component that loads the `StoryEditor` component asynchronously, using the `require.ensure` method:
+
+```js
+// Editor.jsx
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default class extends React.Component {
+  static propTypes = {
+    story: PropTypes.shape().isRequired,
+  };
+
+  state = {};
+
+  componentDidMount() {
+    require.ensure(['./editors/StoryEditor'], (require) => {
+      const StoryEditor = require('./editors/StoryEditor');
+      this.setState({ entityEditor: StoryEditor });
+    });
+  }
+
+  render() {
+    const { entityEditor: EntityEditor } = this.state;
+
+    return (
+      <div className="editor">
+        <div className="editor-header">
+          <div className="editor-header-title">Editor</div>
+          <button
+            className="editor-header-close"
+            onClick={this.props.close}
+          >Close</button>
+        </div>
+        <div className="editor-body">
+          {EntityEditor && <EntityEditor {...this.props} />}
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+In the `componentDidMount` lifecycle method we use `require.ensure` to load and make available the `StoryEditor` component. then we use the static `require` to extract it and display it.
+
+so when we execute our code, here is the file that is loaded:
+
+```js
+webpackJsonp_name_([0],{
+
+/***/ 177:
+/***/ (function(module, exports, __webpack_require__) {
+
+... // too much code
+
+var StoryEditor = function (_Component) {
+  _inherits(StoryEditor, _Component);
+
+  ... // too much code
+
+  return StoryEditor;
+}(_react.Component);
+
+exports.default = StoryEditor;
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ 462:
+/***/ (function(module, exports, __webpack_require__) {
+
+... // too much code
+
+var FormGroup = function FormGroup(_ref) {
+  ... // too much code
+};
+
+exports.default = FormGroup;
+module.exports = exports['default'];
+
+/***/ })
+
+});
+//# sourceMappingURL=0.js.map
+```
+
+This ugly code is the result of transpiling and bundling the `StoryEditor` component. As you can see, it asynchronously loaded children components too, namely `FormGroup`.
+
+There is, However, some restrictions to this approach. The `require.ensure` method resolves modules statically, it means that you need to specify the modules in string literals, that are evaluated at compile time, so you can't use variables. But if you want to lazy load modules dynamically, ECMAScript's dynamic `import()` will have the pleasure to satisfy your request.
+
+---
+#### `import()`
+
+The dynamic import is a pretty awesome feature ECMAScript came up with. It offers the possibility to handle cases like: computed module specifiers, conditional loading of modules, accessing exports and default exports, and many more. The [dynamic import proposal](https://github.com/tc39/proposal-dynamic-import) is in stage 3 at the time of this writing.
+
+Like `require.ensure`, `import()` relies on `Promise`, this implies that you have to use some polyfills like [es6-promise](https://www.npmjs.com/package/es6-promise) or [promise-polyfill](https://www.npmjs.com/package/promise-polyfill) in order to make it work. You're gonna need `babel` support too, using the [Syntax Dynamic Import](https://babeljs.io/docs/plugins/syntax-dynamic-import/) plugin that allows the parsing of `import()`.
+
+```json
+// .babelrc
+{
+  "presets": ["env", "react"],
+  "plugins": [
+    "syntax-dynamic-import"
+  ]
+}
+```
+
+Here is the `import()` version of the previous example:
+
+```js
+  ...
+  async componentDidMount() {
+    this.setState({ entityEditor: await import('./editors/StoryEditor') });
+  }
+  ...
+```
+
+So intuitive!
+
+In the `require.ensure` example, we've seen how it loads a statically resolved modules. Now, what if `Editor.jsx` doesn't know which editor to load? What if we pass an array of editors to it, so it can load them? let us see how `import()` handles this like a boss:
+
+```js
+// Editor.jsx
+import React from 'react';
+import PropTypes from 'prop-types';
 
 
-[Syntax Dynamic Import](https://babeljs.io/docs/plugins/syntax-dynamic-import/) : Allow parsing of `import()`.
+export default class extends React.Component {
+  static propTypes = {
+    story: PropTypes.shape().isRequired,
+    editors: PropTypes.arrayOf(PropTypes.string),
+  };
 
-babel config
+  static defaultProps = {
+    editors: [
+      'StoryEditor',
+      'MessageEditor',
+    ],
+  };
 
-[babel-plugin-dynamic-import-webpack](https://github.com/airbnb/babel-plugin-dynamic-import-webpack) Babel plugin to transpile import() to require.ensure, for Webpack
+  state = {};
 
-Node.js: Guy Bedford’s node-es-module-loader provides a Node.js executable that supports ES6 module syntax and import().
+  async componentDidMount() {
+    const { editors } = this.props;
+    const loadedEditors = await Promise.all(editors.map(this.importEditor));
+    this.setState({ loadedEditors });
+  }
 
-webpack v1: babel-plugin-dynamic-import-webpack is a Babel plugin that transpiles import() to require.ensure().
+  importEditor(module) {
+   return import(`./editors/${module}`);
+  }
 
-webpack v2 (v2.1.0-beta.28 and later): supports code splitting via import()
-babel config
+  render() {
+    const { loadedEditors } = this.state;
+
+    return (
+      <div className="editor">
+        <div className="editor-header">
+          <div className="editor-header-title">Editor</div>
+          <button
+            className="editor-header-close"
+            onClick={this.props.close}
+          >Close</button>
+        </div>
+        <div className="editor-body">
+          {loadedEditors && loadedEditors.map((editor, key) => {
+            const renderer = React.createFactory(editor);
+            return renderer({ ...this.props, key });
+          })}
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+The `import()` statement is dynamic, Yes! But it needs something to rely on, it needs a context. And here the context is the `./editors/` that we feed it.
+
+```js
+  ...
+  importEditor(module) {
+    return import(`./${module}`);
+  }
+  ...
+```
+
+At compile time, ECMAScript cannot resolve the `module` argument. so it will ignore it, and take the first static piece of the module name (`./editors/`), and generate a context module using it. Wait, what the heck is a context module?
+
+A context module is a kind of a bundle that webpack generates for a given directory, in order to make it possible to **dynamically** load any file in that directory. Take for example Webpack's [`require.context`](https://webpack.js.org/api/module-methods/#require-context) function:
+
+```js
+const context = require.context('./editors/', true, /\.jsx?$/);
+
+context.keys(); // returns ["./StoryEditor.jsx", "./MessageEditor.jsx"]
+```
+
+We just created a context module that contains the 2 files `StoryEditor.jsx` and `MessageEditor.jsx`. Now we can dynamically load them by simply `require`ing them:
+
+_**Notice**: the context returned from `require.context` is a function that behaves like a local `require`, and in the same time an object that contains the paths to all the files it holds._
+
+```js
+const context = require.context('./editors/', true, /\.jsx?$/);
+
+var modules = ((contextRequire) => {
+  return contextRequire.keys().map(contextRequire);
+})(context);
+```
+
+Which will generate a module for all the possible files with that dynamic pattern. In this example 2, for home.js and about.js
+
+
+
+A context module is generated. It contains references to all modules in that directory that can be required with a request matching the regular expression. The context module contains a map which translates requests to module ids.
+
+
 
 ### Une app composée de 3 bundles.
 
 1. pour l'affichage de la liste et les actions qu'on peut faire sur les elements (like, dislike, ...)
 2. pour l'affichage d'un élément et ses sous éléments
 3. pour la visualisation
+
+### Conclusion
+
+there are other alternatives:
+- https://reacttraining.com/react-router/web/guides/code-splitting
