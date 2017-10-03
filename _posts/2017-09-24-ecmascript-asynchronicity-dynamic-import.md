@@ -23,7 +23,7 @@ tags:
     - Lazy loading
     - Webpack
     - Modules
-cover: /assets/2017-08-16-json-server/cover.jpg
+cover: /assets/2017-09-24-ecmascript-asynchronicity-dynamic-import/cover.jpg
 ---
 
 ECMAScript came up with some awesome features that demystify the concept of asynchronous programming. They go from promises, through asynchronous functions (and soon iterations), to lazy loading modules. Today I'm going to talk about ECMAScript's dynamic import, one of the promising features in Javascript's Asynchronicity.
