@@ -26,10 +26,10 @@ tags:
 cover: /assets/2017-09-24-ecmascript-asynchronicity-dynamic-import/cover.jpg
 ---
 
-ECMAScript came up with some awesome features that demystify the concept of asynchronous programming. These features vary from promises, through asynchronous functions —and soon iterations— to lazy loading modules. Today I'm going to talk about one of the promising features in Javascript's Asynchronicity; ECMAScript's dynamic import.
+ECMAScript came up with some awesome features that demystify the concept of asynchronous programming. These features vary from promises, through asynchronous functions —and soon iterations— to lazy loading modules. Today I'm going to talk about one of the promising features in Javascript's Asynchronicity: ECMAScript's dynamic import.
 
-### motivation
-Imagine you are developing a large scale web application, with several thousands of lines of code, and dozens of dependencies. And, now you are happy that you're finally building your application to be ready for production. Once you create your bundle file and load it in the page, your application might work just fine. However, because life is full of unpleasant surprises, your app might be just another disappointment and you will end up feeling annoyingly uncomfortable.
+### Motivation
+Imagine you are developing a large scale web application, with several thousands of lines of code, and dozens of dependencies. And now you are happy that you're finally building your application to be ready for production. Once you create your bundle file and load it in the page, your application might work just fine. However, because life is full of unpleasant surprises, your app might be just another disappointment and you will end up feeling annoyingly uncomfortable.
 
 Why is that? Your bundle, my friend, is nothing less than a massive file which requires too much time in order to be loaded in your page. Given some, not so glorifying, browsers performance, you're gonna need to address the situation.
 
@@ -39,9 +39,9 @@ Therefore, the use of dynamic import is necessary. Its main purpose is to optimi
 
 Since we're talking about modules, let's take a look at them.
 
-### modules
+### Modules
 
-ECMAScript provides a module system that is similar to that of Node. Its modules are represented by simple files, and each module has its own context. This means that whatever variables, functions, etc, you declare inside of these files won’t pollute the global context.
+ECMAScript provides a module system that is similar to that of Node. Its modules are represented by simple files, and each module has its own context. This means that whatever variables, functions, etc, you declare inside of these files, they won’t pollute the global context.
 
 ```js
 // add.js
@@ -63,7 +63,7 @@ export default () => {
 }
 ```
 
-The ascension of ES6 made it possible to put an end to the choice between the two protagonist systems of ES5: `CommonJS` and `AMD`. Because, ES6 system has a declarative syntax, which makes it clear and simple; It combines their benefits, and provides an intuitive syntax that makes it easy, for engineers, to handle.
+The ascension of ES6 made it possible to put an end to the choice between the two protagonist systems of ES5: `CommonJS` and `AMD`. ES6 system has a declarative syntax, which makes it clear and simple. It combines their benefits, and provides an intuitive syntax that makes it easy for engineers to handle.
 
 It even goes beyond the capabilities of ES5 system by using both synchronous and asynchronous loading, along with a static module structure. That is, you need to explicitly specify what you are importing, by using module names instead of dynamic variables. So, the following is not recommended:
 
@@ -71,7 +71,7 @@ It even goes beyond the capabilities of ES5 system by using both synchronous and
 import myService from `../services/${myServiceName}`;
 ```
 
-The static aspect of ES6 modules come up with some great benefits:
+The static aspect of ES6 modules comes up with some great benefits:
 
 - It makes it easy for bundlers to eliminate unused modules and de-duplicate redundant ones when bundling. This is called Tree Shaking —which was made popular by the module bundler [Rollup](https://rollupjs.org/).
 - Allows cyclic dependencies between modules.
@@ -80,11 +80,11 @@ The static aspect of ES6 modules come up with some great benefits:
 
 For further reading on modules, check Dr. Axel Rauschmayer's [online book](http://exploringjs.com/es6/ch_modules.html) on modules.
 
-### code splitting with Webpack
+### Code splitting with Webpack
 
-Webpack offers several features to optimize your application's bundle. Code splitting is among these features. It can be done in 2 different ways: declarative and imperative. The declarative way generates several bundles based on the entries you specify in Webpack's config, while the imperative way generates bundles based on dynamic imports in your code. Let's see how the declarative one is done :
+Webpack offers several features to optimize your application's bundle. Code splitting is among these features. It can be done in 2 different ways: declarative and imperative. The declarative way generates several bundles based on the entries you specify in Webpack's config, while the imperative way generates bundles based on dynamic imports in your code. Let's see how the declarative one is done:
 
-Here is a classical Webpack config file :
+Here is a classical Webpack config file:
 
 ```ts
 // webpack.config.ts
@@ -415,7 +415,7 @@ At compile time, ECMAScript cannot resolve the `module` argument. It's going to 
 
 Wait, what the heck is a context module?
 
-A context module is a kind of a bundle that Webpack generates for a given directory, in order to make it possible to **dynamically** load any file in that directory. Take for example Webpack's [`require.context`](https://webpack.js.org/api/module-methods/#require-context) function:
+A context module is a kind of bundle that Webpack generates for a given directory, in order to make it possible to **dynamically** load any file in that directory. Take for example Webpack's [`require.context`](https://webpack.js.org/api/module-methods/#require-context) function:
 
 ```js
 const context = require.context('./editors/', true, /\.jsx?$/);
@@ -446,7 +446,7 @@ Okay, but what about asynchronous routing?
 
 ### Example of asynchronous routing
 
-using `react-router` we will define some routes in our app in order to load the components of those routes asynchronously:
+Using `react-router` we will define some routes in our app in order to load the components of those routes asynchronously:
 
 Here are some classic routes:
 
