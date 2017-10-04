@@ -15,7 +15,7 @@ cover: /assets/2017-09-28-drag-and-drop-letscreate/cover.jpg
 
 # Le drag and drop Let's Create
 
-Eleven-labs a créé son Studio il y a un peu plus d'un an, afin de pouvoir prendre en charge des projets très complets, directement dans notre Headquarter. C'est avec plaisir que cet été nous avons travaillé sur le projet [Let's Create de Maisons du Monde](https://letscreate.maisonsdumonde.com/FR/fr) en développant un jeu permettant de décorer une pièce de manière ineteractive : l'utilisateur peut sélectionner des objets et les placer dans la pièce de son choix. Mais comment s'y est-on pris ?
+Eleven-labs a créé son Studio il y a un peu plus d'un an, afin de pouvoir prendre en charge des projets très complets directement dans son Headquarter. C'est avec plaisir que cet été nous (une des équipes du Studio) avons travaillé sur le projet [Let's Create de Maisons du Monde](https://letscreate.maisonsdumonde.com/FR/fr) en développant un jeu permettant de décorer une pièce de manière interactive : l'utilisateur peut sélectionner des objets et les placer dans la pièce de son choix. Mais comment s'y est-on pris ?
 
 ### Problématique
 
