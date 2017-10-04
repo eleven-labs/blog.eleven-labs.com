@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Le drag and drop Let's Create
-excerpt: Dans cet article, nous allons voir comment a été réalisé le drag and drop du jeu Let's Create
+excerpt: Dans cet article, nous allons voir comment a été réalisé le drag and drop du jeu Let's Create pour Maisons du Monde
 authors:
     - jiefmoreno
 permalink: /fr/drag-and-drop-letscreate/
@@ -15,12 +15,11 @@ cover: /assets/2017-09-28-drag-and-drop-letscreate/cover.jpg
 
 # Le drag and drop Let's Create
 
-Dans le cadre du projet [Let's Create de Maisons du Monde](https://letscreate.maisonsdumonde.com/FR/fr), nous avons développé un jeu permettant de décorer une pièce. Pour cela, l'utilisateur peut sélectionner des objets et les placer dans la pièce de son choix.
+Eleven-labs a créé son Studio il y a un peu plus d'un an, afin de pouvoir prendre en charge des projets très complets, directement dans notre Headquarter. C'est avec plaisir que cet été nous avons travaillé sur le projet [Let's Create de Maisons du Monde](https://letscreate.maisonsdumonde.com/FR/fr) en développant un jeu permettant de décorer une pièce de manière ineteractive : l'utilisateur peut sélectionner des objets et les placer dans la pièce de son choix. Mais comment s'y est-on pris ?
 
 ### Problématique
 
-Dans cet article, je vais vous décrire la partie drag and drop du jeu. Je m'attarderai particulièrement sur le redimensionnement des objets.
-Je vous propose de réaliser une version simplifiée de cette fonctionnalité, en utilisant simplement javascript.
+Dans cet article, je vais vous décrire la partie drag and drop du jeu. Je m'attarderai particulièrement sur le redimensionnement des objets. Je vous propose de réaliser une version simplifiée de cette fonctionnalité, en utilisant simplement javascript.
 
 ### Le drag and Drop
 
