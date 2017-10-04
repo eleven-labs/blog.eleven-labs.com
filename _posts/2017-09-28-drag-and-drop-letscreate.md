@@ -5,6 +5,8 @@ excerpt: Dans cet article, nous allons voir comment a été réalisé le drag an
 authors:
     - jiefmoreno
 permalink: /fr/drag-and-drop-letscreate/
+date: '2017-10-03 00:00:00 +0100'
+date_gmt: '2017-10-03 00:00:00 +0100'
 categories:
     - javascript
 tags:
