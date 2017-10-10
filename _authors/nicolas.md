@@ -1,8 +1,8 @@
 ---
 layout: author
-login: aandre
-title: Alexandre Andre
-twitter: alexception_ck
-permalink: /authors/aandre/
+login: nicolas
+title: Nicolas Grévin
+twitter: nicolas_grevin
+permalink: /authors/nicolas/
 ---
-Astronaut, backend developer, PHP & Symfony lover. I should write something about myself but you know... developers.
+Alternator Astronaut, backend developer, PHP & Symfony.
