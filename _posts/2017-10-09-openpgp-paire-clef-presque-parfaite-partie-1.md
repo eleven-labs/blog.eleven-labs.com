@@ -201,7 +201,7 @@ public and secret key created and signed.
 gpg: checking the trustdb
 gpg: marginals needed: 3  completes needed: 1  trust model: PGP
 gpg: depth: 0  valid:   2  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 2u
-pub   rsa4096/1A8132B1 2017-10-05 []
+pub   rsa4096/1A8132B1 2017-10-05 [] [expires: 2018-10-10]
       Key fingerprint = 5EA4 4FF5 3CEB 240F D3F1  A6E4 DCEE 216E 1A81 32B1
 uid         [ultimate] Wilson Eleven <wilson.eleven@labs.com>
 ```
@@ -224,7 +224,7 @@ wilson@spaceship:~$ gpg2 --list-keys
 
 /home/wilson/.gnupg/pubring.gpg
 --------------------------------
-pub   rsa4096/1A8132B1 2017-10-05 [C]
+pub   rsa4096/1A8132B1 2017-10-05 [C] [expires: 2018-10-10]
 uid         [ultimate] Wilson Eleven <wilson.eleven@labs.com>
 ```
 
@@ -239,7 +239,7 @@ There is NO WARRANTY, to the extent permitted by law.
 Secret key is available.
 
 sec  rsa4096/1A8132B1
-     created: 2017-10-05  expires: never       usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C   
      trust: ultimate      validity: ultimate
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
@@ -303,7 +303,7 @@ disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 
 sec  rsa4096/1A8132B1
-     created: 2017-10-05  expires: never       usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C   
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
      created: 2017-10-05  expires: 2018-10-05  usage: E   
@@ -319,7 +319,7 @@ La clé avec l'empreinte B73A9C79 a bien été créée. Répétez l'opération p
 
 ```bash
 sec  rsa4096/1A8132B1
-     created: 2017-10-05  expires: never       usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C   
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
      created: 2017-10-05  expires: 2018-10-05  usage: E   
@@ -381,7 +381,7 @@ Vérifions que nous avons uniquement les clés privées des sous-clés :
 ```bash
 wilson@spaceship:~$ gpg2 --list-secret-keys
 /home/wilson/.gnupg/secring.gpg
-sec#  rsa4096/1A8132B1 2017-10-05 [C]
+sec#  rsa4096/1A8132B1 2017-10-05 [C] [expires: 2018-10-05]
 uid         [ultimate] Wilson Eleven <wilson.eleven@labs.com>
 ssb   rsa4096/B73A9C79 2017-10-05 [E] [expires: 2018-10-05]
 ssb   rsa4096/9CC8B2FB 2017-10-05 [S] [expires: 2018-10-05]
@@ -403,9 +403,9 @@ Par ailleurs, le 2 novembre, il y aura une fête de la signature des clés (key 
 Cet évévenement est l'occasion de rencontrer d'autres adeptes d'OpenPGP et surtout, il permettra de faire certifier votre clé nouvellement créée.
 
 ### Resources
-* https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm#a__create
-* https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm
-* https://alexcabal.com/creating-the-perfect-gpg-keypair/
-* http://www.bortzmeyer.org/nouvelle-cle-pgp.html
-* https://riseup.net/en/security/message-security/openpgp/best-practices
-* https://wiki.debian.org/Subkeys
+* [https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm#a__create](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm#a__create)
+* [https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm](https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm)
+* [https://alexcabal.com/creating-the-perfect-gpg-keypair/](https://alexcabal.com/creating-the-perfect-gpg-keypair/)
+* [http://www.bortzmeyer.org/nouvelle-cle-pgp.html](http://www.bortzmeyer.org/nouvelle-cle-pgp.html)
+* [https://riseup.net/en/security/message-security/openpgp/best-practices](https://riseup.net/en/security/message-security/openpgp/best-practices)
+* [https://wiki.debian.org/Subkeys](https://wiki.debian.org/Subkeys)
