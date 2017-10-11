@@ -44,8 +44,7 @@ Sommaire
 
 ![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/sf-blog-2.png)
 
-----------------
----------------------------------------------------------------------------------------------------------------------------------
+---
 
 ### **1 Mise en place de la partie Back-end**
 
@@ -296,7 +295,7 @@ C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)
 
 ![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/ng-blog.png)
 
----------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 ### **2 Mise en place de la partie Front-end**
 
