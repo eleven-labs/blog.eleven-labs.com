@@ -15,7 +15,7 @@ tags:
 
 Le 6 avril a eu lieu le plus grand hackaton organisé par eleven-labs: Wilson Coding Battlespace. Avec de nombreux challenges tous plus fous les uns que les autres, je vais vous parler d'un en particulier: Roverity.
 
-### Une idée qui germe
+### Une idée qui a germé
 
 L'idée du challenge Roverity est venue assez naturellement. Notre univers est principalement centré sur le monde de l'espace. Dans l'histoire de l'espace, il y a les Hommes et... les robots. Grâce au robot, il est beaucoup plus facile pour les Hommes d'explorer les planètes voisines.
 
@@ -23,19 +23,19 @@ Pour ce challenge, nous allons donc construire un robot qui serait semblable aux
 
 Nous avons un prémice d'idée. Commençons à la développer.
 
-Notre robot, comme les robots des missions martiennes, doit se déplacer dans un espace dans un but de reconnaissance. Il va prendre des photos, prélever des éléments et les déposer. Voilà l'idée initiale.
+Notre robot, comme les robots des missions martiennes, doit se déplacer dans un espace dans un but de reconnaissance. Il doit prendre des photos, prélever des éléments et les déposer. Voilà l'idée initiale.
 
-Une fois l'idée plus claire, je pouvais passer à la réalisation. Eleven-Labs est spécialisé dans les technologies Javascript et PHP. Ce robot devait refléter cette expertise. Il devait donc être programmable dans ces langages. Cette dernière contrainte rend la réalisation du challenge assez particulière. Fallait-il prendre un robot du commerce et l'adapter à notre besoin ? Ou alors construire notre propre robot ?
+Une fois l'idée plus claire, je peux passer à la réalisation. Eleven-Labs est spécialisé dans les technologies Javascript et PHP. Ce robot doit refléter cette expertise. Il doit donc être programmable dans ces langages. Cette dernière contrainte rend la réalisation du challenge assez particulière. Faut-il prendre un robot du commerce et l'adapter à notre besoin ? Ou alors construire notre propre robot ?
 
-J'ai fait quelques recherches sur des robots du commerce existants. Il y en avait des bons, mais je ne savais pas s'ils étaient facilement personnalisables. Etant donné l'investissement, il fallait être sûr de pouvoir y répondre. J'ai donc décidé de concevoir et de construire le robot par moi-même. Ainsi, j'étais sûr des différents composants et j'avais la pleine maîtrise des logiciels embarqués (vive l'open source!).
+Je fais quelques recherches sur des robots du commerce existants. Il y en a des bons, mais je ne sais pas s'ils sont facilement personnalisables. Etant donné l'investissement, il faut être sûr de pouvoir y répondre. J'ai donc décidé de concevoir et de construire le robot par moi-même. Ainsi, je suis sûr des différents composants et j'ai la pleine maîtrise des logiciels embarqués (vive l'open source!).
 
- Mes connaissances en terme de robotique étaient assez basiques. J'ai également des connaissances basiques en électronique et en Arduino. Malgré ce bagage modeste, j'avais une vision très claire des éléments à mettre en place.
+ Mes connaissances en terme de robotique sont assez basiques. J'ai également des connaissances basiques en électronique et en Arduino. Malgré ce bagage modeste, j'ai une vision très claire des éléments à mettre en place.
 
 ### Phase de recherche et developpement
 
 Avec ce projet, nous avions des réunions mensuelles. Je pouvais appliquer un des principe de l'agilité: fournir un livrable fonctionnel à chaque itération. Comme les cycles duraient 1 mois, ça tombait bien.
 
-J'ai commencé à réfléchir sur les composants. Je savais que j'avais besoin d'une partie pour gérer les mouvements du robot. J'ai opté pour un chassis à 2 roues car c'est économique pour un premier prototype. Ensuite en électronique, j'ai pris un Arduino et une carte de contrôle pour les moteurs (un bouclier basé sur des ponts en H L293D). Ce choix était naturel car il existe de nombreux tutoriels à ce sujet. Ensuite, je devais faire en sorte que ce soit programmable en PHP et NodeJS. Malheuresement, l'Arduino ne se programme qu'en C/C++. Comment faire ? J'ai donc créé une API en utilisant la liaison série. La liaison série de l'Arduino était le point d'entrée pour faire faire des actions au robot. L'avantage d'utiliser une liaison série est que c'est universel. A l'image du protocole HTTP, la liaison série est facilement exploitable. Il suffit d'avoir la documentation de l'API pour faire des actions. L'ajout d'un Raspberry Pi dans le robot va permettre de communiquer avec l'Arduino en liaison série. L'avantage d'un Raspberry Pi est sa taille. Il rentre parfaitment dans les dimensions du robot. De plus, il y a une liaison Wifi embarqué et un système d'exploitation complet.
+J'ai commencé à réfléchir sur les composants. Je savais que j'avais besoin d'une partie pour gérer les mouvements du robot. J'ai opté pour un chassis à 2 roues car c'est économique pour un premier prototype. Ensuite en électronique, j'ai pris un Arduino et une carte de contrôle pour les moteurs (un bouclier basé sur des ponts en H L293D). Ce choix était naturel car il existe de nombreux tutoriels à ce sujet. Ensuite, je devais faire en sorte que ce soit programmable en PHP et NodeJS. Malheureusement, l'Arduino ne se programme qu'en C/C++. Comment faire ? J'ai donc créé une API en utilisant la liaison série. La liaison série de l'Arduino était le point d'entrée pour faire faire des actions au robot. L'avantage d'utiliser une liaison série est que c'est universel. A l'image du protocole HTTP, la liaison série est facilement exploitable. Il suffisait d'avoir la documentation de l'API pour faire des actions. L'ajout d'un Raspberry Pi dans le robot va permettre de communiquer avec l'Arduino en liaison série. L'avantage d'un Raspberry Pi était sa taille. Il rentre parfaitment dans les dimensions du robot. De plus, il y a une liaison Wifi embarqué et un système d'exploitation complet.
 
 ```
                                            Robot roverity
@@ -83,7 +83,7 @@ A partir de là j'ai commencé à expérimenter la partie logicielle. C'était l
 
 #### Avance petit robot
 
-Le robot était parfait dans notre esprit. Maintenant il fallait le faire bouger. Après avoir fait tout le câblable, j'ai commencé par expérimenter la partie Arduino uniquement. J'ai chargé des programmes de base qui faisaient avancer le robot en ligne droite. Je me suis aperçu que le robot n'avançait pas droit. Pourquoi ? J'ai longtemps cherché. Il y avait 2 réponses : 
+Le robot était parfait dans notre esprit. Maintenant il fallait le faire bouger. Après avoir fait tout le câblable, j'ai commencé par expérimenter la partie Arduino uniquement. J'ai chargé des programmes de base qui faisaient avancer le robot en ligne droite. Je me suis aperçu que le robot n'avançait pas droit. Pourquoi ? J'ai longtemps cherché. Il y avait 2 réponses :
 - la répartition de la charge qui n'était pas égale sur le chassis
 - les moteurs
 
