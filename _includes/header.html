@@ -14,7 +14,7 @@
             {% for page in site.pages %}
             {% if page.title and page.hide != true and page.path contains '_posts' %}
             <li>
-                <a class="page-link no-link-style" href="{{ page.url | prepend: site.baseurl }}">
+                <a class="page-link no-link-style" href="{{ page.url | prepend: site.baseurl_root }}">
                     {{ page.title }}
                 </a>
             </li>
@@ -22,6 +22,20 @@
             {% endfor %}
             <!-- Social icons from Font Awesome, if enabled -->
             {% include icons.html data=site.theme_settings %}
+
+            <!-- Language switcher -->
+            {% for language in site.languages %}
+                {% if language != site.lang %}
+                    {% if site.default_lang != language %}
+                        {% assign link = language %}
+                    {% endif %}
+                    <li class="language">
+                        <a class="page-link no-link-style" href="{{ site.baseurl_root }}/{{ link }}">
+                            <img src="{{ site.baseurl_root }}/img/flags/{{ language }}.svg" alt="{% translate global.language_switch_to %}" title="{% translate global.language_switch_to %}" width="18" height="12" />
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
         </ul>
     </nav>
 </header>

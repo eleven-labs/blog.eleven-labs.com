@@ -1,7 +1,7 @@
 {% if include.data.rss %}
 <li>
-    <a class="no-link-style" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" title="{{ include.data.str_rss_follow }}">
-        <amp-img src="{{ "/img/follow/rss.svg" | prepend: site.baseurl }}" width="12" height="12"></amp-img>
+    <a class="no-link-style" href="{{ "/feed.xml" | prepend: site.baseurl_root | prepend: site.url }}" title="{% translate global.rss_follow %}">
+      <amp-img src="{{ "/img/follow/rss.svg" | prepend: site.baseurl_root }}" width="12" height="12"></amp-img>
     </a>
 </li>
 {% endif %}
@@ -9,47 +9,47 @@
 {% if include.data.email_address %}
 <li>
     <a class="no-link-style" href="mailto:{{ include.data.email_address }}" title="{{ include.data.str_email }}">
-        <amp-img src="{{ "/img/follow/envelope.svg" | prepend: site.baseurl }}" width="12" height="12"></amp-img>
+        <amp-img src="{{ "/img/follow/envelope.svg" | prepend: site.baseurl_root }}" width="12" height="12"></amp-img>
     </a>
 </li>
 {% endif %}
 
 {% if include.data.github %}
 <li>
-    <a class="no-link-style" href="https://github.com/{{ include.data.github }}" title="{{ include.data.str_follow_on }} GitHub">
-      <amp-img src="{{ "/img/follow/github.svg" | prepend: site.baseurl }}" width="12" height="12"></amp-img>
+    <a class="no-link-style" href="https://github.com/{{ include.data.github }}" title="{% translate global.follow_us_on %} GitHub">
+      <amp-img src="{{ "/img/follow/github.svg" | prepend: site.baseurl_root }}" width="12" height="12"></amp-img>
     </a>
 </li>
 {% endif %}
 
 {% if include.data.twitter %}
 <li>
-    <a class="no-link-style" href="https://twitter.com/{{ include.data.twitter }}" title="{{ include.data.str_follow_on }} Twitter">
-      <amp-img src="{{ "/img/follow/twitter.svg" | prepend: site.baseurl }}" width="12" height="12"></amp-img>
+    <a class="no-link-style" href="https://twitter.com/{{ include.data.twitter }}" title="{% translate global.follow_us_on %} Twitter">
+      <amp-img src="{{ "/img/follow/twitter.svg" | prepend: site.baseurl_root }}" width="12" height="12"></amp-img>
     </a>
 </li>
 {% endif %}
 
 {% if include.data.facebook %}
 <li>
-    <a class="no-link-style" href="https://www.facebook.com/{{ include.data.facebook }}" title="{{ include.data.str_follow_on }} Facebook">
-      <amp-img src="{{ "/img/follow/facebook.svg" | prepend: site.baseurl }}" width="12" height="12"></amp-img>
+    <a class="no-link-style" href="https://www.facebook.com/{{ include.data.facebook }}" title="{% translate global.follow_us_on %} Facebook">
+      <amp-img src="{{ "/img/follow/facebook.svg" | prepend: site.baseurl_root }}" width="12" height="12"></amp-img>
     </a>
 </li>
 {% endif %}
 
 {% if include.data.linkedin %}
 <li>
-    <a class="no-link-style" href="{{ include.data.linkedin }}" title="{{ include.data.str_follow_on }} LinkedIn">
-      <amp-img src="{{ "/img/follow/linkedin.svg" | prepend: site.baseurl }}" width="12" height="12"></amp-img>
+    <a class="no-link-style" href="{{ include.data.linkedin }}" title="{% translate global.follow_us_on %} LinkedIn">
+      <amp-img src="{{ "/img/follow/linkedin.svg" | prepend: site.baseurl_root }}" width="12" height="12"></amp-img>
     </a>
 </li>
 {% endif %}
 
 {% if include.data.corporate %}
 <li>
-    <a class="no-link-style" href="{{ include.data.corporate }}" title="{{ include.data.str_corporate }}">
-        <amp-img src="{{ include.data.corporate_logo | prepend: site.baseurl }}" width="12" height="12"></amp-img>
+    <a class="no-link-style" href="{{ include.data.corporate }}" title="{% translate global.corporate %}">
+        <amp-img src="{{ include.data.corporate_logo | prepend: site.baseurl_root }}" width="12" height="12"></amp-img>
     </a>
 </li>
 {% endif %}

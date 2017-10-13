@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/eko/jekyll-multiple-languages-plugin.git
+  revision: ac72749206194a11e2614c9d8e26c77d5fcf560e
+  specs:
+    jekyll-multiple-languages-plugin (1.5.1)
+      jekyll (>= 2.0, < 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -81,6 +88,7 @@ DEPENDENCIES
   elevenlabs-amp-jekyll (~> 1.1.0)
   jekyll (~> 3.6.2)
   jekyll-feed (~> 0.9.2)
+  jekyll-multiple-languages-plugin!
   jekyll-paginate (~> 1.1.0)
   jekyll-seo-tag (~> 2.3.0)
   rake
@@ -88,4 +96,4 @@ DEPENDENCIES
   scss_lint
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.3

@@ -2,6 +2,7 @@
 layout: author
 login: vcomposieux
 title: Vincent Composieux
+github: eko
 twitter: vcomposieux
 permalink: /authors/vcomposieux/
 ---

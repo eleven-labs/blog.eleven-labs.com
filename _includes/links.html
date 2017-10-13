@@ -1,6 +1,6 @@
 <aside class="slice read-also">
     <div class="container">
-        <h3 class="read-also-title">A lire aussi</h3>
+        <h3 class="read-also-title">{% translate global.also_read %}</h3>
         <ul class="read-also-list">
             {% assign limit = 0 %}
             {% for post in site.posts %}
@@ -11,7 +11,7 @@
                     {% continue %}
                 {% else %}
                     <li class="read-also-item">
-                        <a class="read-also-link" href='{{ post.url | prepend: site.baseurl }}'>{{ post.title }}</a>
+                        <a class="read-also-link" href='{{ post.url | prepend: site.baseurl_root }}'>{{ post.title }}</a>
                     </li>
                     {% assign limit = limit | plus:1 %}
                 {% endif %}

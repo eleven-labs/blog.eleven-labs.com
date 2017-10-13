@@ -27,9 +27,11 @@ layout: compress-js
       let htmlArticle = Object.keys(content.hits).reduce((article, key) => {
         const hit = content.hits[key];
 
-        if (hit.type !== 'document' || hit.layout === 'author') {
+        if (hit.type !== 'document' || hit.layout === 'author' || hit.lang !== lang) {
           return article;
         }
+
+        const dateFormat = lang === 'fr' ? 'DD MMMM YYYY' : 'MMMM DD, YYYY';
 
         const hitDate = moment(hit.date, 'YYYY-MM-DD HH:mm:ss ZZ');
         return article + `
@@ -39,10 +41,10 @@ layout: compress-js
                 <a class="no-link-style" href="${hit.url}">${hit.title}</a>
               </h2>
               <time class="posts-date meta">
-                <span class="meta-content">${hitDate.format('MMMM DD, YYYY')}</span>
+                <span class="meta-content">${hitDate.format(dateFormat)}</span>
               </time>
               <p class="excerpt">${hit.excerpt}</p>
-              <a class="button" href="${hit.url}">Lire l'article</a>
+              <a class="button" href="${hit.url}">${window.site.translations.global.continue_reading}</a>
             </div>
           </div>
         `;

@@ -15,7 +15,7 @@ Vous pouvez utiliser la recherche pour lire un article en particulier ou vous la
 	        <ul class="posts read-also-list">
 			    {% for post in site.posts limit:5 %}
 			    	<li class="read-also-item">
-			            <a class="read-also-link" href="{{ post.url | prepend: site.baseurl }}">
+			            <a class="read-also-link" href="{{ post.url | prepend: site.baseurl_root }}">
 			                {{ post.title }}
 			            </a>
 			        </li>

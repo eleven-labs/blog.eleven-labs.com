@@ -1,0 +1,14 @@
+# ALGOLIA
+algolia:
+    application_id: '5IGTHBX5JS'
+    index_name:     'blog_eleven'
+    excluded_files:
+        - index.html
+        - amp
+        - authors
+        - page
+
+# Trick to only build default site (and not each language)
+default_lang: fr
+languages: ["fr"]
+exclude_from_localizations: ["authors", "css", "fonts", "img", "js", "_posts"]

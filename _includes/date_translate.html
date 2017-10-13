@@ -1,0 +1,22 @@
+<!-- _includes/date_translate.html -->
+{% if site.lang != 'en' %}
+    {% assign month = include.object | date: "%-m" %}
+    {{ include.object | date: "%-d" }}
+    {% case month %}
+        {% when '1' %}{% translate date.months.january %}
+        {% when '2' %}{% translate date.months.february %}
+        {% when '3' %}{% translate date.months.march %}
+        {% when '4' %}{% translate date.months.april %}
+        {% when '5' %}{% translate date.months.may %}
+        {% when '6' %}{% translate date.months.june %}
+        {% when '7' %}{% translate date.months.july %}
+        {% when '8' %}{% translate date.months.august %}
+        {% when '9' %}{% translate date.months.september %}
+        {% when '10' %}{% translate date.months.october %}
+        {% when '11' %}{% translate date.months.november %}
+        {% when '12' %}{% translate date.months.december %}
+    {% endcase %}
+    {{ include.object | date: "%Y" }}
+{% else %}
+    {{ include.object | date: "%B %-d, %Y" }}
+{% endif %}
