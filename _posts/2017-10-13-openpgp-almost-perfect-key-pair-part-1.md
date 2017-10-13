@@ -1,63 +1,63 @@
 ---
 layout: post
-title: OpenPGP - Une paire de clés presque parfaite
-excerpt: Guide sur la création de clés OpenPGP presque parfaites
+title: OpenPGP - The almost perfect key pair
+excerpt: Guide to create the almost perfect OpenPGP keys
 authors:
 - tthuon
-permalink: /fr/openpgp-paire-clef-presque-parfaite-partie-1/
+permalink: /en/openpgp-almost-perfect-key-pair-part-1/
 categories:
     - openpgp
-    - sécurité
+    - security
 tags:
     - openpgp
-    - sécurité
+    - security
 cover: /assets/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
 ---
 
-Dans cet article, je voudrais créer un petit guide sur la création d'une clé PGP parfaite. Pour ceux qui ne connaissent pas,
-OpenPGP est un standard qui permet de chiffrer et déchiffrer des messages. À la différence d'une simple paire de clés RSA, le protocole
-OpenPGP permet de créer une identité numérique qui est vérifiée par d'autres personnes et qui est décentralisée. Il n'y a aucune
-autorité qui va contrôler l'identité. Ce sont les utilisateurs qui vont vérifier les autres personnes.
+In this article, I would like to create a small guide on creating a perfect PGP key. For those who do not know,
+OpenPGP is a standard for encrypting and decrypting messages. Unlike a simple RSA key pair, the protocol
+OpenPGP allows to create a digital identity that is verified by other people and that is decentralized. There is no
+authority that will control the identity. It's the users who will check the other people.
 
-À travers un ensemble de 4 articles, nous allons aborder :
-* La création de la paire de clés PGP
-* Comment déporter le secret sur une carte à puce Yubikey
-* Le stockage et la sauvegarde de la clé maître
-* La participation à une fête de la signature des clés
+Through a set of 4 articles, we will see:
+* How to create the PGP key pair
+* How to export secrets on a Yubikey smart card
+* The storage and backup of master key
+* The join in a key signing party
 
-### Installer les bon outils
+### Install the right tools
 
-Que vous soyez sur Linux, Mac ou Windows, tout pourra être fait en lignes de commande.
+Whether you are on Linux, Mac or Windows, everything can be done in command lines.
 
-Tout d'abord, installons les outils :
+First, let's install the tools:
 * Windows:  [https://www.gpg4win.org/](GPG4Win)
 * Mac:  [https://gpgtools.org/](GPGtools)
-* Linux:  [https://gnupg.org/download/](gnupg.org) (déjà intégré dans Ubuntu par exemple)
+* Linux:  [https://gnupg.org/download/](gnupg.org) (already integrated in Ubuntu for example)
 
-Pour cet article, je vais me baser sur Ubuntu 16.04 et GnuPG v2.1.11. Il s'agit de la nouvelle version moderne de gnupg qui va
-remplacer la v1.4 et la v2.0.
+For this article, I will run on Ubuntu 16.04 and GnuPG v2.1.11. This is the modern version of gnupg that will
+replace v1.4 and v2.0.
 
-Avant de lancer la création de la clé, il faut configurer gpg pour renforcer la sécurité.
-Les premières lignes permettent de ne pas diffuser des informations sur la façon dont la clé a été créée.
-Ensuite il y a la configuration d'OpenPGP pour afficher plus d'information lors du listage des clés. En fin de configuration, il y a des restrictions sur les algorithmes de chiffrement afin d'utiliser les meilleurs et les plus résistantes à ce jour.
+Before you start creating the key, you need to configure gpg to enhance security.
+The first lines avoid leaking information on how the key was created.
+Then there is the configuration of OpenPGP to display more information when listing keys. At the end of the configuration, there are restrictions on the encryption algorithms in order to use the best and most resistant to date.
 
-Copier cette configuration dans ~/.gnupg/gpg.conf (Linux et Mac) ou C:\Users\[nom de l'utilisateur]\AppData\Roaming\gnupg\gpg.conf (Windows).
+Copy this configuration to ~/.gnupg/gpg.conf (Linux and Mac) or C:\Users\[username]\AppData\Roaming\gnupg\gpg.conf (Windows).
 
 ```
-# Limite les informations diffusées
+# Avoid information leaked
 no-emit-version
 no-comments
 export-options export-minimal
 
-# Permet d'afficher le format long de l'ID des clés et leurs empreintes
+# Displays the long format of the ID of the keys and their fingerprints
 keyid-format 0xlong
 with-fingerprint
 
-# Affiche la validité des clés
+# Displays the validity of the keys
 list-options show-uid-validity
 verify-options show-uid-validity
 
-# Limite les algorithmes utilisés
+# Limits the algorithms used
 personal-cipher-preferences AES256
 personal-digest-preferences SHA512
 default-preference-list SHA512 SHA384 SHA256 RIPEMD160 AES256 TWOFISH BLOWFISH ZLIB BZIP2 ZIP Uncompressed
@@ -70,28 +70,26 @@ compress-algo ZLIB
 disable-cipher-algo 3DES
 weak-digest SHA1
 
-# Paramètres S2K (String-to-Key) de la phrase de passe des clés
-# Le paramètre s2k-count peut être réduit sur les machines peu puissantes
 s2k-cipher-algo AES256
 s2k-digest-algo SHA512
 s2k-mode 3
 s2k-count 65011712
 ```
-### Prendre l'avantage des sous-clés
+### Take advantage of subkeys
 
-Lors de la création d'une clé OpenPGP dans son mode de base, gpg va créer une paire de clés qui permet de signer et de certifier.
-Pour augmenter la sécurité de notre clé, nous allons utiliser une particularité d'OpenPGP : les sous-clés.
+When creating an OpenPGP key in its basic mode, gpg will create a key pair that allows you to sign and certify.
+To increase the security of our key, we will use a special feature of OpenPGP: the subkeys.
 
-OpenPGP permet de créer des sous-clés avec un usage spécifique : signer, chiffrer et authentifier. Un autre avantage à l'utilisation 
-des sous-clés est qu'en cas de perte ou vol des clés secrètes des sous-clés, il suffira de révoquer la sous-clé 
-sans avoir à révoquer la clé principale (celle qui permet de certifier d'autres clés).
+OpenPGP allows to create subkeys with a specific use: sign, encrypt and authenticate. Another advantage to the use
+of the subkeys is that in the event of loss or theft of the secret keys of the subkeys, you only need to revoke the subkey
+without having to revoke the master key (the one that allows to certify other keys).
 
-Commençons par créer la clé principale, celle qui va détenir notre identité. Puis ensuite, créons des sous-clés pour signer, chiffrer et authentifier.
+Let's start by creating the master key, the one that will hold our identity. Then, we create subkeys to sign, encrypt and authenticate.
 
-### Création de la clé principale
+### Creating the master key
 
-Nous allons choisir de générer notre clé de façon personnalisée et de créer la clé de certification pour Wilson.
-Elle va permettre de certifier d'autre clés. Elle est très importante, il faudra la conserver précieusement. En cas de perte ou de vol, celui qui détiendra cette clé pourra se faire passer pour cette personne.
+We will choose to generate our key in a custom way and create the certification key for Wilson.
+It will allow to certify other keys. It is very important, you must keep it safely. In the event of loss or theft, the person who holds the key would then be able to pretend to be the rightful owner.
 
 ```bash
 wilson@spaceship:~$ gpg2 --expert --full-gen-key
@@ -113,7 +111,7 @@ Please select what kind of key you want:
 Your selection? 8
 ```
 
-Ensuite il faudra sélectionner les attributs de cette clé. Il ne faut garder que la capacité **Certifier** (*Certify* en anglais).
+Then you have to select the attributes of this key. Only the capability **Certify**.
 
 ```bash
 Possible actions for a RSA key: Sign Certify Encrypt Authenticate
@@ -147,14 +145,14 @@ Current allowed actions: Certify
 Your selection? q
 ```
 
-Nous avons configuré les capacités de cette premiere clé pour n'autoriser que la certification.
-Passons ensuite à la taille de la clé : il est recommandé d'avoir une clé
-d'une taille minimale de 2048. À ce jour, cette longueur est encore résistante, mais il est 
-préférable de prendre la taille maximale : 4096. 
+We have configured the capabilities of this first key to allow only certification.
+Let's move on to the size of the key: it is recommended to have a key
+of a minimum size of 2048. To this day, this length is still resistant, but it is
+preferable to take the maximum size: 4096.
 
-Pour la durée de vie de la clé, il est toujours recommandé d'en mettre une. En cas de perte de cette clé, et si elle 
-a été envoyée sur un serveur de clé, elle y restera à jamais valide. Mettez une durée d'au maximum 2 ans. Ici je vais mettre 1 an. 
-Cela permet de réviser les commandes chaque année :) .
+For the lifetime of the key, it is always recommended to put one. If this key is lost, and it
+has been sent to a key server, it will remain there forever valid. Put a duration up to 2 years. Here I will put 1 year.
+This allows you to practice command lines every year :).
 
 ```bash
 RSA keys may be between 1024 and 4096 bits long.
@@ -171,7 +169,7 @@ Key does not expire at all
 Is this correct? (y/N) y
 ```
 
-Ajoutons des détails sur l'identité de Wilson :
+Let's add details about Wilson's identity:
 
 ```bash
 GnuPG needs to construct a user ID to identify your key.
@@ -189,8 +187,8 @@ disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 ```
 
-Une fenêtre va s'afficher. Elle va vous demander de renseigner un pass-phrase pour protéger les clés secrètes. 
-Choisissez-en un assez long que vous pouvez mémoriser facilement.
+A window will appear. It will ask you to fill in a pass-phrase to protect the secret keys.
+Choose one long enough that you can memorize easily.
 
 ```bash
 gpg: key 1A8132B1 marked as ultimately trusted
@@ -206,18 +204,18 @@ pub   rsa4096/1A8132B1 2017-10-05 [] [expires: 2018-10-10]
 uid         [ultimate] Wilson Eleven <wilson.eleven@labs.com>
 ```
 
-La paire de clés principale est créée. Maintenant créons les sous-clés.
+The master key pair is created. Now create the subkeys.
 
-### Création des sous-clés
+### Creating subkeys
 
-Comme nous l'avons vu en introduction sur les sous-clés, il est important d'en avoir une dédiée à chaque tâche :
-* Authentification (A)
-* Signature (S)
-* Chiffrement (E)
+As we saw in the introduction on the subkeys, it is important to have one dedicated to each task:
+* Authenticate (A)
+* Sign (S)
+* Encrypt (E)
 
-Créons les maintenant.
+Let's create them now.
 
-Nous allons d'abord faire la liste des clés disponibles :
+We will first list the available keys:
 
 ```
 wilson@spaceship:~$ gpg2 --list-keys
@@ -228,7 +226,7 @@ pub   rsa4096/1A8132B1 2017-10-05 [C] [expires: 2018-10-10]
 uid         [ultimate] Wilson Eleven <wilson.eleven@labs.com>
 ```
 
-Éditons-la pour lui ajouter des sous-clés. Pour cela, il va falloir passer en mode expert.
+Edit it to add subkeys. To do this, you will need to switch to expert mode.
 
 ```bash
 wilson@spaceship:~$ gpg2 --expert --edit-key 1A8132B1
@@ -246,9 +244,9 @@ sec  rsa4096/1A8132B1
 gpg>
 ```
 
-Vous êtes maintenant en mode édition de la clé.
+You are now in edit mode.
 
-Ajoutons la clé de chiffrement avec la commande `addkey`.
+Add the encryption key with the `addkey` command.
 
 ```bash
 gpg> addkey
@@ -313,9 +311,9 @@ gpg>
 
 ```
 
-La clé avec l'empreinte B73A9C79 a bien été créée. Répétez l'opération pour la clé de signature et d'authentification.
+The key with fingerprint B73A9C79 has been created. Repeat for *Signing* and *Authentication* key.
 
-À la fin, vous devez avoir ces clés :
+In the end, you must have these keys:
 
 ```bash
 sec  rsa4096/1A8132B1
@@ -333,25 +331,25 @@ gpg> save
 gpg> quit
 ```
 
-Entrez `save` puis `quit`, et vous avez fini. Wilson a maintenant une paire de clés OpenPGP avec son identité et des sous-clés avec chacune une capacité.
-Avant de pouvoir pleinement utiliser cette clé, sauvegardons-la.
+Enter `save` then` quit`, and you're done. Wilson now has an OpenPGP key pair with its identity and subkeys with each a capability.
+Before you can fully use this key, let's backup it.
 
-### Exporter la clé principale
+### Export the master key
 
-La clé PGP ne doit pas être utilisée telle quelle. En cas de vol de la clé principale et du mot de passe, 
-le détenteur de cette clé peut usurper l'identitié numérique et signer des messages à la place de la vraie personne. 
-Il est donc primordial de séparer la clé principale des sous-clés. La cleé principale, celle qui permet de certifier, 
-sera conservée dans un espace de stockage à froid et totalement déconnectée du réseau.
+The PGP key must not be used as it is. Remember, in the event of theft of the master key and the password,
+the robber can spoof the digital identity and sign messages instead of the real person.
+It is therefore essential to separate the master key from the subkeys. The master key, which allows to certify,
+will be stored in a cold storage space and totally disconnected from the network.
 
-Tout d'abord, créons un certificat de révocation en cas de vol de la clé principale.
+First, create a revocation certificate in the event of theft of the master key.
 
 ```bash
 wilson@spaceship:~$ gpg2 --output 1A8132B1.rev --gen-revoke 1A8132B1
 ```
 
-Le certificat de révocation est créé dans `1A8132B1.rev`. Il faudra le conserver précieusement (nous le verrons en partie 3).
+The revocation certificate is created in `1A8132B1.rev`. It must be preserved in a safe place (we will see in part 3).
 
-Sauvegardons également toutes les clés.
+Let's also save all keys.
 
 ```bash
 wilson@spaceship:~$ gpg2 --export --armor 1A8132B1 > 1A8132B1.pub.asc
@@ -359,24 +357,24 @@ wilson@spaceship:~$ gpg2 --export-secret-keys --armor 1A8132B1 > 1A8132B1.priv.a
 wilson@spaceship:~$ gpg2 --export-secret-subkeys --armor 1A8132B1 > 1A8132B1.sub_priv.asc
 ```
 
-`1A8132B1.pub.asc` va contenir toutes les clés publiques et `1A8132B1.priv.asc` la clé privée de la clé principale.
-`1A8132B1.sub_priv.asc` ne contient que les clés privée des sous-clés.
+`1A8132B1.pub.asc` will contain all public keys and `1A8132B1.priv.asc` the private keys of the master key.
+`1A8132B1.sub_priv.asc` contains only the private keys of the subkeys.
 
-Comme dit plus haut, nous n'allons utiliser que les sous-clés pour une utilisation quotidienne.
+As mentioned above, we will only use the subkeys for daily use.
 
-Supprimons toutes les clés privées.
+Let's delete all private keys.
 
 ```bash
 wilson@spaceship:~$ gpg2 --delete-secret-key 1A8132B1
 ```
 
-Ensuite, nous importons uniquement les clés privée des sous-clés.
+Then, we import only the private keys of the subkeys.
 
 ```bash
 wilson@spaceship:~$ gpg2 --import 1A8132B1.sub_priv.asc
 ```
 
-Vérifions que nous avons uniquement les clés privées des sous-clés :
+Let's check that we have only the private keys of the subkeys:
 
 ```bash
 wilson@spaceship:~$ gpg2 --list-secret-keys
@@ -388,19 +386,19 @@ ssb   rsa4096/9CC8B2FB 2017-10-05 [S] [expires: 2018-10-05]
 ssb   rsa4096/8047B454 2017-10-05 [A] [expires: 2018-10-05]
 ```
 
-Le petit `#` devant `sec` indique que la clé secrète de la clé principale n'existe plus, c'est un bouchon à la place.
+The small `#` before `sec` indicates that the secret key of the master key no longer exists, it's a stub instead.
 
-Tous les fichiers que nous avons créés seront à conserver sur un média déconnecté du réseau (CD, clé USB, bande magnétique, feuille papier, ...).
+All the files we have created will have to be kept offline (CD, USB stick, magnetic tape, paper sheet, ...).
 
 ### Conclusion
 
-À travers cet article, nous avons créé une clé PGP avec un ensemble de sous-clés dédié à une tâche particulière. L'avantage d'utiliser OpenPGP par rapport à une simple clé asymétrique ce sont les sous-clés. Si une des clés est compromise, il suffira de la révoquer et d'en regénérer une nouvelle. Il ne sera pas nécessaire de révoquer la clé principale, celle qui détient notre identité numérique. Cette stratégie offre un niveau de sécurité beaucoup plus élevé.
+Through this article, we have created a PGP key with a set of subkeys dedicated to a particular task. The advantage of using OpenPGP against a simple asymmetric key is the subkeys. If one of the keys is compromised, you only need to revoke it and regenerate a new one. It will not be necessary to revoke the master key, the one that holds our digital identity. This strategy offers a much higher level of security.
 
-Vous pouvez dès à présent signer vos emails et en recevoir des chiffrés, signer vos commit git, utiliser keybase.io et 
-même vous authentifier sur un serveur en SSH.
+You can now sign your emails and get them encrypted, sign your commit git, use keybase.io and
+even authenticate yourself to a server in SSH.
 
-Par ailleurs, le 2 novembre, il y aura [https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris](une fête de la signature des clés) (key signing party) dans les locaux de Mozilla France. 
-Cet évévenement est l'occasion de rencontrer d'autres adeptes d'OpenPGP et surtout, il permettra de faire certifier votre clé nouvellement créée.
+In addition, on November 2, there will be a [https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris](key signing party) (key signing party) at Mozilla France.
+This event is an opportunity to meet other OpenPGP enthusiasts and, above all, it will make it possible to have your newly created key certified.
 
 ### Resources
 * [https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm#a__create](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm#a__create)
