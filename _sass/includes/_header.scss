@@ -45,6 +45,8 @@
 
   a {
     color: $header-link-color;
+    font-size: 1.6rem;
+    text-decoration: none;
   }
 
   .avatar {
@@ -76,6 +78,11 @@
     li {
       display: inline-block;
       margin-right: .4rem;
+    }
+
+    .language {
+      border-left: 1px solid $header-link-color;
+      padding-left: 8px;
     }
 
     .corporate-logo {

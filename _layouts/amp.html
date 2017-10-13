@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
-    <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl | prepend: site.url }}" />
+    <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl_root | prepend: site.url }}" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-custom>
       {% capture include_to_sassify %}{% include amp.scss %}{% endcapture %}{{ include_to_sassify | scssify }}
@@ -89,7 +89,7 @@
                 <h1 class="page-heading-title amp-page-heading-assets">{{ page.title }}</h1>
                 <span class="meta">
                     <span class="meta-content">
-                        {{ page.date | date: "%B %-d, %Y" }}
+                        {% include date_translate.html object=page.date %}
                         {% include author_link.html authors=page.authors %}
                     </span>
                 </span>

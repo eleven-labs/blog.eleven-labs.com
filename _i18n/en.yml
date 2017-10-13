@@ -1,0 +1,30 @@
+global:
+  also_read: You can also read
+  author_by: by
+  contact_us: Contact us
+  continue_reading: Read article
+  corporate: Discover Eleven Labs
+  email: Email
+  estimated_reading_time: Estimated reading time
+  follow_us_on: Follow us on
+  language_switch_to: Changer vers Français
+  next: Next
+  newsletter_subscribe: Subscribe to our newsletter!
+  prev: Previous
+  reading: Reading time
+  rss_follow: Add us to your watch
+  search_input: Search
+date:
+  months:
+    january: January
+    february: February
+    march: March
+    april: April
+    may: May
+    june: June
+    july: July
+    august: August
+    september: September
+    october: October
+    november: November
+    december: December

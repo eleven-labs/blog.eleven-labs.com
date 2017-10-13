@@ -14,7 +14,13 @@ social:
         - https://www.youtube.com/channel/UCt_NukjmUm4whjmbMuZ0MMw
         - https://github.com/eleven-labs
         - https://stackoverflow.com/jobs/companies/eleven-labs
-baseurl:
+baseurl: ""
+
+# LANGUAGE-SPECIFIC CONFIGURATION
+default_lang: fr
+languages: ["fr", "en"]
+exclude_from_localizations: ["authors", "css", "fonts", "img", "js"]
+localized_posts_dir: _posts
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
@@ -57,15 +63,6 @@ theme_settings:
     disqus_shortname: blog-eleven-labs
     muut_community_name:
 
-    # Localization strings
-    str_follow_on: Suivez-nous sur
-    str_rss_follow: Ajoutez-nous à votre veille
-    str_corporate: Découvrez Eleven Labs
-    str_email: Email
-    str_next: Suivant
-    str_prev: Précédent
-    str_continue_reading: Lire l'article
-
     # Post navigation
     post_navigation: false
 
@@ -76,16 +73,6 @@ theme_settings:
 paginate: 10
 paginate_path: "/page/:num"
 
-# ALGOLIA
-algolia:
-    application_id: '5IGTHBX5JS'
-    index_name:     'blog_eleven'
-    excluded_files:
-        - index.html
-        - amp
-        - authors
-        - page
-
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: rouge
@@ -94,6 +81,7 @@ sass:
     style: :compressed
 plugins:
     - jekyll-paginate
+    - jekyll-multiple-languages-plugin
     - jekyll-seo-tag
     - algoliasearch-jekyll
     - jekyll-feed

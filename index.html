@@ -3,8 +3,8 @@ layout: default
 ---
 
 <div class="home">
-    <div class="call-out" style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_bg_image }}')">
-        <img src="{{ site.baseurl }}/{{ site.theme_settings.header_text_fg_image }}" />
+    <div class="call-out" style="background-image: url('{{ site.baseurl_root }}/{{ site.theme_settings.header_text_bg_image }}')">
+        <img src="{{ site.baseurl_root }}/{{ site.theme_settings.header_text_fg_image }}" />
     </div>
 
     <div class="posts">
@@ -19,7 +19,7 @@ layout: default
 
                 <time class="posts-date meta">
                     <span class="meta-content">
-                        {{ post.date | date: "%B %-d, %Y" }} {% include author_link.html authors=post.authors %} - {% include reading_time.html content=post.content %}
+                        {% include date_translate.html object=post.date %} {% include author_link.html authors=post.authors %} - {% include reading_time.html content=post.content %}
                     </span>
                 </time>
 
@@ -28,7 +28,7 @@ layout: default
                 </p>
 
                 <a class="button" href="{{ post.url | prepend: site.baseurl }}">
-                    {{ site.theme_settings.str_continue_reading }}
+                    {% translate global.continue_reading %}
                 </a>
             </div>
         </div>
@@ -40,7 +40,7 @@ layout: default
             {% if paginator.previous_page %}
                 <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="button">
                     <i class="fa fa-chevron-left"></i>
-                    {{ site.theme_settings.str_prev }}
+                    {% translate global.prev %}
                 </a>
             {% endif %}
 
@@ -48,7 +48,7 @@ layout: default
                 {% if page == paginator.page %}
                     {{ page }}
                 {% elsif page == 1 %}
-                    <a href="/">{{ page }}</a>
+                    <a href="/{{ site.baseurl }}">{{ page }}</a>
                 {% else %}
                     <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
                 {% endif %}
@@ -56,7 +56,7 @@ layout: default
 
             {% if paginator.next_page %}
                 <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="button">
-                    {{ site.theme_settings.str_next }}
+                    {% translate global.next %}
                     <i class="fa fa-chevron-right"></i>
                 </a>
             {% endif %}

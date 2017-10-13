@@ -26,7 +26,7 @@ end
 # push to algolia
 task :algolia_push do
   if ENV['TRAVIS_BRANCH'] == 'master' && ENV['TRAVIS_PULL_REQUEST'] == "false"
-    jekyll('algolia push')
+    jekyll('algolia push --config _config.yml,_algolia.yml')
   end
 end
 

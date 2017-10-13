@@ -1,5 +1,8 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
+    var disqus_config = function () {
+        this.language = '{{ site.lang }}';
+    };
     var disqus_shortname = '{{ site.theme_settings.disqus_shortname }}';
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

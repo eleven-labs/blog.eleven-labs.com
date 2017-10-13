@@ -1,7 +1,7 @@
 ---
 ---
 // jekyll variables
-$baseurl: '{{ site.baseurl }}';
+$baseurl: '{{ site.baseurl_root }}';
 
 // Settings
 @import 'settings/fonts';
