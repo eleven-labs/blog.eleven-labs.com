@@ -17,29 +17,29 @@ cover: /assets/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
 In this article, I would like to create a small guide on creating a perfect PGP key. For those who do not know,
 OpenPGP is a standard for encrypting and decrypting messages. Unlike a simple RSA key pair, the protocol
 OpenPGP allows to create a digital identity that is verified by other people and that is decentralized. There is no
-authority that will control identity. It is the users who will check the other people.
+authority that will control the identity. It's the users who will check the other people.
 
 Through a set of 4 articles, we will see:
-* Creating the PGP key pair
+* How to create the PGP key pair
 * How to export secrets on a Yubikey smart card
-* Storage and backup of master key
-* Join in a key signing party
+* The storage and backup of master key
+* The join in a key signing party
 
 ### Install the right tools
 
 Whether you are on Linux, Mac or Windows, everything can be done in command lines.
 
-First, let's install the tools :
+First, let's install the tools:
 * Windows:  [https://www.gpg4win.org/](GPG4Win)
 * Mac:  [https://gpgtools.org/](GPGtools)
 * Linux:  [https://gnupg.org/download/](gnupg.org) (already integrated in Ubuntu for example)
 
-For this article, I will be based on Ubuntu 16.04 and GnuPG v2.1.11. This is the modern version of gnupg that will
+For this article, I will run on Ubuntu 16.04 and GnuPG v2.1.11. This is the modern version of gnupg that will
 replace v1.4 and v2.0.
 
 Before you start creating the key, you need to configure gpg to enhance security.
 The first lines avoid leaking information on how the key was created.
-Then there is the configuration of OpenPGP to display more information when listing keys. At the end of configuration, there are restrictions on the encryption algorithms in order to use the best and most resistant to date.
+Then there is the configuration of OpenPGP to display more information when listing keys. At the end of the configuration, there are restrictions on the encryption algorithms in order to use the best and most resistant to date.
 
 Copy this configuration to ~/.gnupg/gpg.conf (Linux and Mac) or C:\Users\[username]\AppData\Roaming\gnupg\gpg.conf (Windows).
 
@@ -89,7 +89,7 @@ Let's start by creating the master key, the one that will hold our identity. The
 ### Creating the master key
 
 We will choose to generate our key in a custom way and create the certification key for Wilson.
-It will allow to certify other keys. It is very important, you must keep it safely. In the event of loss or theft, the person who holds the key may impersonate the person.
+It will allow to certify other keys. It is very important, you must keep it safely. In the event of loss or theft, the person who holds the key would then be able to pretend to be the rightful owner.
 
 ```bash
 wilson@spaceship:~$ gpg2 --expert --full-gen-key
@@ -336,9 +336,9 @@ Before you can fully use this key, let's backup it.
 
 ### Export the master key
 
-The PGP key must not be used as is. In the event of theft of the master key and the password,
+The PGP key must not be used as it is. Remember, in the event of theft of the master key and the password,
 the robber can spoof the digital identity and sign messages instead of the real person.
-It is therefore essential to separate the master key from the subkeys. The master key, that which allows to certify,
+It is therefore essential to separate the master key from the subkeys. The master key, which allows to certify,
 will be stored in a cold storage space and totally disconnected from the network.
 
 First, create a revocation certificate in the event of theft of the master key.
@@ -347,7 +347,7 @@ First, create a revocation certificate in the event of theft of the master key.
 wilson@spaceship:~$ gpg2 --output 1A8132B1.rev --gen-revoke 1A8132B1
 ```
 
-The revocation certificate is created in `1A8132B1.rev`. It must be preserved in safe place (we will see in part 3).
+The revocation certificate is created in `1A8132B1.rev`. It must be preserved in a safe place (we will see in part 3).
 
 Let's also save all keys.
 
@@ -395,7 +395,7 @@ All the files we have created will have to be kept offline (CD, USB stick, magne
 Through this article, we have created a PGP key with a set of subkeys dedicated to a particular task. The advantage of using OpenPGP against a simple asymmetric key is the subkeys. If one of the keys is compromised, you only need to revoke it and regenerate a new one. It will not be necessary to revoke the master key, the one that holds our digital identity. This strategy offers a much higher level of security.
 
 You can now sign your emails and get them encrypted, sign your commit git, use keybase.io and
-even you authenticate to a server in SSH.
+even authenticate yourself to a server in SSH.
 
 In addition, on November 2, there will be a [https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris](key signing party) (key signing party) at Mozilla France.
 This event is an opportunity to meet other OpenPGP enthusiasts and, above all, it will make it possible to have your newly created key certified.
