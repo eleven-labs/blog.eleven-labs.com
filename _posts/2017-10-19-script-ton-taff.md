@@ -17,7 +17,7 @@ Parce que l'outil informatique n'est pas reservé qu'aux développeurs, je vous 
 
 ### Pourquoi cet article ?
 
-Aujourd'hui l'informatique est omniprésente au quotidien, et il est important de bien connaitre notre outils de travail et de bien les utiliser pour optimiser nos actions et notre temps.
+Aujourd'hui l'informatique est omniprésente au quotidien, et il est important de bien connaître nos outils de travail et de bien les utiliser pour optimiser nos actions et notre temps.
 
 L'idée de cet article m'est venue d'un constat simple, mon moto en tant que développeur est que
 
