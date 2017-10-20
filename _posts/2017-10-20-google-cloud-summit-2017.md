@@ -45,7 +45,7 @@ Puis laissons place à Ulku Rowe.
 
 ![Ulku Rowe](/assets/2017-10-20-google-cloud-summit-2017/ulku.jpg)
 
-Qui va nous présenter pourquoi le cloud Google est'il le meilleur ?  Elle commence par nous montrer ce que doit être le futur des sociétés.
+Qui va nous présenter pourquoi le cloud Google est il le meilleur ?  Elle commence par nous montrer ce que doit être le futur des sociétés.
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Les clés de la réussite des sociétés <a href="https://twitter.com/hashtag/GoogleCloudSummit?src=hash&amp;ref_src=twsrc%5Etfw">#GoogleCloudSummit</a> <a href="https://twitter.com/hashtag/paris?src=hash&amp;ref_src=twsrc%5Etfw">#paris</a> <a href="https://t.co/RiYDcjCaQZ">pic.twitter.com/RiYDcjCaQZ</a></p>&mdash; Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/920918792628301825?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
@@ -54,7 +54,7 @@ Qui va nous présenter pourquoi le cloud Google est'il le meilleur ?  Elle comme
 
 Ulku Rowe insistera longuement sur la sécurité des services Cloud, sur leurs performances, sur la collaboration et sur les lien avec les partenaires.
 
-C'est alors que plusieurs intervenants sont venu faire des démos des outils Google. D'abord le partage avec en tâche de fond comme dans l'ensemble des conférences la Data. Une démo sur l'utilisation de l'outils **Explorer**  de Google Sheet. Explorer devient *malin* et peut créer seul des query compliqué.
+C'est alors que plusieurs intervenants sont venu faire des démonstrations des outils Google. D'abord le partage avec en tâche de fond comme dans l'ensemble des conférences la Data. Une démonstration sur l'utilisation de l'outil **Explorer**  de Google Sheet. Explorer devient *malin* et peut créer seul des query compliqué.
 
 Puis, on y reviendra plus tard, une présentation de la Cloud Vision Api, assez impressionnantes car permettant de reconnaitre instantanément les visages.
 
@@ -158,7 +158,7 @@ Le machine learning en 3 images c'est ..
 
 Google à même créer leurs propre Processeur et TPU pour avoir de meilleur performance dans leurs data centrer pour faire du machine learning.
 
-La conférence prouve que le machine learning est essentiel pour l'avenir de nos enreprises, la question qu'il faut se poser est
+La conférence prouve que le machine learning est essentiel pour l'avenir de nos entreprises, la question qu'il faut se poser est
 
 > Qu'elle données en notre possesion devenons tagger ?
 
@@ -184,7 +184,7 @@ Aujourd'hui l'api est encore plus pertinente car Google utilise du machine learn
 
 C'est l'api utilisé dans DataDialog qui permet aujourd'hui d'avoir des Google Home qui comprend ce que l'on dit.
 
-Aujourd'hui l'api permet de définir dans des phrases l'utilités de chaque mots et de comprend à quoi ce dernier sert. Vous pouvez aussi savoir la catégorie de la conversation, les sentiments de la phrase et de chaque mot. Et pour finir elle vous donne la syntaxe de la pharse.
+Aujourd'hui l'api permet de définir dans des phrases, l'utilités de chaque mots et de comprend à quoi ce dernier sert. Vous pouvez aussi savoir la catégorie de la conversation, les sentiments de la phrase et de chaque mot. Et pour finir elle vous donne la syntaxe de la phrase.
 
 Vous trouverez des exemples [ici](https://cloud.google.com/natural-language/).
 
