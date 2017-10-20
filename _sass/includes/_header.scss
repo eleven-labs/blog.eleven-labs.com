@@ -28,7 +28,7 @@
     }
 
     &::before {
-      background: url($baseurl + '/img/logo_eleven_lab.svg') top left no-repeat;
+      background: url($baseurl + '/img/logo_eleven_lab.png') top left no-repeat;
       background-size: contain;
       content: '';
       display: block;
@@ -76,6 +76,11 @@
     li {
       display: inline-block;
       margin-right: .4rem;
+    }
+
+    .corporate-logo {
+      position: relative;
+      top: 3px;
     }
   }
 

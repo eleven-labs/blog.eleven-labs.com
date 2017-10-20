@@ -157,3 +157,11 @@
     </a>
 </li>
 {% endif %}
+
+{% if include.data.corporate %}
+<li>
+    <a class="no-link-style" href="{{ include.data.corporate }}" title="{{ include.data.str_corporate }}">
+        <img class="corporate-logo" src="{{ include.data.corporate_logo | prepend: site.baseurl }}" alt="corporate_logo" width="24.42" height="19" />
+    </a>
+</li>
+{% endif %}
