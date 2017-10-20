@@ -5,6 +5,8 @@
   const index = client.initIndex('blog_eleven');
 
   const searchInput = document.getElementById('js-algolia__input');
+  const lang = window.site && window.site.lang;
+  moment.locale(lang || 'en');
 
   function onQueryChange() {
     const contentId = document.getElementById('js-content');
@@ -26,6 +28,7 @@
           return article;
         }
 
+        const hitDate = moment(hit.date, 'YYYY-MM-DD HH:mm:ss ZZ');
         return article + `
           <div class="posts-teaser slice">
             <div class="container">
@@ -33,7 +36,7 @@
                 <a class="no-link-style" href="${hit.url}">${hit.title}</a>
               </h2>
               <time class="posts-date meta">
-                <span class="meta-content">${moment(new Date(hit.date)).format('MMMM DD, YYYY')}</span>
+                <span class="meta-content">${hitDate.format('MMMM DD, YYYY')}</span>
               </time>
               <p class="excerpt">${hit.excerpt}</p>
               <a class="button" href="${hit.url}">Lire l'article</a>
