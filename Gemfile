@@ -13,4 +13,5 @@ end
 
 group :jekyll_plugins do
   gem 'algoliasearch-jekyll', '~> 0.8.0'
+  gem 'jekyll-offline', :git => 'git://github.com/jeremiak/jekyll-offline.git'
 end

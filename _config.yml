@@ -94,6 +94,7 @@ gems:
     - algoliasearch-jekyll
     - jekyll-feed
     - amp-jekyll
+    - jekyll-offline
 
 collections:
   authors:
