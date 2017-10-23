@@ -19,7 +19,7 @@ Parce que l'outil informatique n'est pas réservé qu'aux développeurs, je vous
 
 Aujourd'hui l'informatique est omniprésente au quotidien, et il est important de bien connaître nos outils de travail et de bien les utiliser pour optimiser nos actions et notre temps.
 
-L'idée de cet article m'est venue d'un constat simple, mon moto en tant que développeur est que
+L'idée de cet article m'est venue d'un constat simple, mon motto en tant que développeur est que
 
 > si je peux scripter mon travail, je le fais
 
