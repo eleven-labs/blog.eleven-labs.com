@@ -14,6 +14,7 @@ global:
   reading: Reading time
   rss_follow: Add us to your watch
   search_input: Search
+  offline_ready: Site is Ready for Offline Use
 date:
   months:
     january: January

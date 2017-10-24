@@ -14,6 +14,7 @@ global:
   reading: Lecture
   rss_follow: Ajoutez-nous à votre veille
   search_input: Rechercher
+  offline_ready: Utilisation hors-ligne disponible
 date:
   months:
     january: Janvier
