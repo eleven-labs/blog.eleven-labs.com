@@ -2,6 +2,7 @@
     window.site = {
         lang: '{{ site.lang }}',
         translations: {{ site.translations[site.lang] | jsonify }},
+        sw: '{{ "/sw.js" | prepend: site.baseurl }}',
     };
 </script>
 
@@ -11,3 +12,4 @@
 <script src="https://cdn.jsdelivr.net/npm/moment@2.19.1/locale/fr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"></script>
 <script src="{{ "/js/search.js" | prepend: site.baseurl_root }}"></script>
+<script src="{{ "/js/service-worker.js" | prepend: site.baseurl_root }}"></script>

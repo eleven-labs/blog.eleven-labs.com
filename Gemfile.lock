@@ -30,6 +30,7 @@ GEM
       fastimage (>= 1.8.0)
       jekyll (~> 3.0)
       nokogiri (>= 1.6.0)
+    execjs (2.7.0)
     fastimage (2.1.0)
     ffi (1.9.18)
     forwardable-extended (2.6.0)
@@ -78,6 +79,8 @@ GEM
       rake (>= 0.9, < 13)
       sass (~> 3.4.20)
     thor (0.20.0)
+    uglifier (3.2.0)
+      execjs (>= 0.3.0, < 3)
     verbal_expressions (0.1.5)
 
 PLATFORMS
@@ -94,6 +97,7 @@ DEPENDENCIES
   rake
   rouge (~> 2.2.1)
   scss_lint
+  uglifier (~> 3.2.0)
 
 BUNDLED WITH
    1.16.0.pre.3
