@@ -94,6 +94,15 @@ gems:
     - algoliasearch-jekyll
     - jekyll-feed
     - amp-jekyll
+exclude:
+    - CNAME
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
+    - Rakefile
+    - bin
+    - vendor
 
 collections:
   authors:
