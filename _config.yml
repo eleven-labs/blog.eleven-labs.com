@@ -1,7 +1,7 @@
 # SITE CONFIGURATION
 title: Blog Eleven Labs
 description: Blog Eleven Labs
-url: http://blog.eleven-labs.com
+url: https://blog.eleven-labs.com
 twitter:
     username: Eleven_Labs
 logo: /img/avatar.png
@@ -77,6 +77,8 @@ paginate_path: "/blog/page:num"
 algolia:
     application_id: '5IGTHBX5JS'
     index_name:     'blog_eleven'
+    excluded_files:
+        - amp
 
 exclude: [vendor, _authors/TEMPLATE-AUTOR]
 
@@ -91,6 +93,16 @@ gems:
     - jekyll-seo-tag
     - algoliasearch-jekyll
     - jekyll-feed
+    - amp-jekyll
+exclude:
+    - CNAME
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
+    - Rakefile
+    - bin
+    - vendor
 
 collections:
   authors:

@@ -19,11 +19,11 @@ Depuis quelques mois, le navigateur Google Chrome permet, dans ses fonctionnalit
 
 Pour faire simple, voilà ce que j'ai sur ma tablette Nexus 7.
 
-![Screenshot Nexus 7](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/screenshot-Nexus-7.jpg)
+![Screenshot Nexus 7](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/screenshot-nexus-7.jpg)
 
 Sur mon ordinateur, après avoir activé le Chrome Screencast, je peux faire de l'édition live et contrôler le rendu sur la tablette :
 
-![Screenshot Google Chrome Screencast](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/Screenshot-Google-Chrome-Screencast.png)
+![Screenshot Google Chrome Screencast](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/screenshot-google-chrome-screencast.png)
 
 Pour activer ces fonctionnalités :
 
@@ -40,7 +40,7 @@ Et c'est bon ! Il ne vous reste plus qu'à aller sur [chrome://inspect/](//inspe
 
 ![Google inspect screencast](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/google-inspect-screencast.jpg)
 
-![Google-toggle-screencast](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/Google-toggle-screencast.jpg)
+![Google-toggle-screencast](/assets/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/google-toggle-screencast.jpg)
 Et à cliquer sur *inspect*. Vous trouverez en bas à gauche de de la fenètre DevTools qui s'ouvre un bouton *Toggle Screencast *:
 
 Retrouvez encore plus de fonctionnalités avancées dans cet excellent article de Paul Irish pour HTML5Rocks : [Chrome DevTools for Mobile: Screencast and Emulation](http://www.html5rocks.com/en/tutorials/developertools/mobile/ "Chrome DevTools for Mobile: Screencast and Emulation by Paul Irish")

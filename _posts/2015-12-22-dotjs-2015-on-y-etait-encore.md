@@ -33,7 +33,7 @@ Alors oui, mais la dotJS c’est quoi déjà ?
 
 Il s’agit ni plus ni moins de la plus grande conférence Javascript d’Europe. Le but étant de se rassembler afin de présenter l’avenir du Javascript, de voir l’avancement de certaines technologies ou fonctionnalités, et de troller tous ensemble.
 
-dotJS fait partie des dotConferences, dont mon collègue astronaute Martin Cadoux nous explique très clairement le concept dans [son article sur dotCSS](http://blog.eleven-labs.com/les-dotcss-2015-cetait-bien/) :
+dotJS fait partie des dotConferences, dont mon collègue astronaute Martin Cadoux nous explique très clairement le concept dans [son article sur dotCSS](https://blog.eleven-labs.com/les-dotcss-2015-cetait-bien/) :
 
 > "dotConference une série de conférences qui vise à proposer des présentations de haute volée en lien avec des technologies ou des sujets particuliers. On en recense six aujourd’hui, dont les dotJS qui se sont déroulés lundi dernier, mais aussi les dotGo, et bientôt les dotScale. Ces rassemblements ont lieu exclusivement à Paris, mais attirent néanmoins une audience venue en large partie de l’étranger."
 
@@ -48,7 +48,7 @@ Le programme est assez alléchant: ES6, Node, WebRTC... On retrouve du beau mond
 
 Pour cette 4ème édition, la communauté JS et plus de 1000 développeurs se sont donc retrouvés le 7 décembre à partir de 9h au coeur du 9eme arrondissement de Paris, plus exactement au “Théatre de Paris”, l’un des plus beaux théâtre de capitale.
 
-![](https://c2.staticflickr.com/6/5667/23025882214_242cee679a_k.jpg)
+[https://c2.staticflickr.com/6/5667/23025882214_242cee679a_k.jpg](https://c2.staticflickr.com/6/5667/23025882214_242cee679a_k.jpg)
 
 ------------------------------------------------------------------------
 

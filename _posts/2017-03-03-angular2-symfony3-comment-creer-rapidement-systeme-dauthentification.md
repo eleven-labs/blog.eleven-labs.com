@@ -44,8 +44,7 @@ Sommaire
 
 ![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/sf-blog-2.png)
 
-----------------
----------------------------------------------------------------------------------------------------------------------------------
+---
 
 ### **1 Mise en place de la partie Back-end**
 
@@ -296,7 +295,7 @@ C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)
 
 ![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/ng-blog.png)
 
----------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 ### **2 Mise en place de la partie Front-end**
 
@@ -571,7 +570,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { PostComponent } from './post/post.component';
-import { AuthGuard } from './_guards/index';
+import { AuthGuard } from './_guard/index';
 
 const APP_ROUTES: Routes = [
     {
@@ -701,7 +700,7 @@ export class AppComponent {
 ```
 
 ```js
-// app.component.ts
+// app.module.ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -710,7 +709,7 @@ import { AuthHttp, AuthConfig } from 'angular2-jwt';
 
 import { AppComponent } from './app.component';
 import { Routing } from './app.routing';
-import { AuthGuard } from './_guards/index';
+import { AuthGuard } from './_guard/index';
 
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { AuthenticationService } from './authentication/authentication.service';
