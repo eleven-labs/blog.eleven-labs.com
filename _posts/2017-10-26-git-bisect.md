@@ -2,7 +2,7 @@
 layout: post
 title: Débugger avec Git
 permalink: /fr/debugging-with-git/
-excerpt: "Aujourd'hui je souhaite vous faire part d'un outil vous permettant d'isoler rapidement notre commit frauduleux qui a occasionné un bug dans notre application : git bisect"
+excerpt: "Aujourd'hui je souhaite vous présenter un outil vous permettant d'isoler rapidement notre commit frauduleux qui a occasionné un bug dans notre application : git bisect"
 authors:
     - rpierlot
 categories:
@@ -14,15 +14,15 @@ tags:
 cover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
 ---
 
-Des risques de régressions existent lors de mise en production de nouvelles fonctionnalités. Notamment sur les grosses applications ayant beaucoup de code non testé.
+Des risques de régressions existent lors de la mise en production de nouvelles fonctionnalités. Notamment sur les grosses applications ayant beaucoup de code non testé.
 En effet, nous ne sommes jamais à l'abri d'un effet de bord, ou d'impacts qui demandent une investigation immédiate. 
 
-Dans un projet utilisant Git comme outil de management de code source, il apparait capital de pouvoir trouver la source du problème rapidement. 
-Si un nombre important de personnes sont impliquées dans le développement d'une application, chaque mise en production est accompagnée de multiple commits. 
-Hors si la source du problème est dissimulée au milieu d'un ensemble de commits, il est compliqué d'aller vérifier sur chaque commit l'origine du problème. 
+Dans un projet utilisant Git comme outil de management de code source, il apparaît capital de pouvoir trouver la source du problème rapidement. 
+Si un nombre important de personnes sont impliquées dans le développement d'une application, chaque mise en production est accompagnée de multiples commits.
+Or, si la source du problème est dissimulée au milieu d'un ensemble de commits, il est compliqué d'aller vérifier sur chaque commit l'origine du problème. 
 
-Git est un outil plus que populaire dans le développement d'applications, et vient avec tout un tas de commandes qui nous empêche de regretter ce bon vieux SVN.
-Aujourd'hui je souhaite vous faire part d'un outil vous permettant d'isoler rapidement notre commit frauduleux qui a occasionné un bug dans notre application : `git bisect`
+Git est un outil plus que populaire dans le développement d'applications, et vient avec tout un tas de commandes qui nous empêchent de regretter ce bon vieux SVN.
+Aujourd'hui je souhaite vous partagezr un outil vous permettant d'isoler rapidement notre commit frauduleux qui a occasionné un bug dans notre application : `git bisect`
 
 Pour simplifier l'explication de `git bisect`, je vais utiliser un historique de quelques commits que voici :
 
@@ -38,12 +38,12 @@ Pour simplifier l'explication de `git bisect`, je vais utiliser un historique de
 Imaginons que ces commits aient été déployés en production. Au bout de quelques jours, quelqu'un s'aperçoit que quelque chose cloche. Une des fonctionnalités ne marche plus comme convenu.
 Le problème est donc immédiatement remonté aux développeurs et ces derniers doivent isoler la cause de ce non fonctionnement. Leur seul indice est le suivant : tout marchait bien lors de la dernière mise en production.
  
-Git nous sauve l'ennui de tester tous nos commits un par un avec `git bisect`. Cette commande effectue une recherche par [dichotomie (recherche binaire)](https://fr.wikipedia.org/wiki/Recherche_dichotomique).
+Git nous épargne l'ennui de tester tous nos commits un par un avec `git bisect`. Cette commande effectue une recherche par [dichotomie (recherche binaire)](https://fr.wikipedia.org/wiki/Recherche_dichotomique).
 
 ![](/assets/2017-10-26-debugging-with-git/binary_search.jpg)
 *Binary search illustration*
 
-A chaque étape de la recherche binaire, nous devons dire à `git bisect` si le problème persiste toujours. 
+À chaque étape de la recherche binaire, nous devons dire à `git bisect` si le problème persiste toujours. 
 En fonction de notre réponse, `bisect` va chercher en amont ou en aval pour isoler le problème. 
 
 Il existe deux commandes principales pour `git bisect` :
@@ -110,11 +110,11 @@ Nous sommes maintenant au point de départ, mais nous avons trouvé le méchant 
 ## Bonus
 
 La commande `bisect` vous permet d'automatiser le process de recherche d'un mauvais commit. 
-En effet, si vous avez le luxe d'ajouter un test permettant de mettre en évidence le bug vous pouvez lancer git bisect comme cela : 
+En effet, si vous avez le luxe d'ajouter un test permettant de mettre en évidence le bug, vous pouvez lancer git bisect comme cela : 
 ```
 git bisect run vendor/bin/phpunit --filter ThatWontHappenAgainISwearTest
 ```
-Le test sera lancé à chaque étape vue précédemment, et vous aurez de manière automatique le hash du commit que vous chercher.
+Le test sera lancé à chaque étape vue précédemment, et vous aurez de manière automatique le hash du commit que vous cherchez.
 
 ## Conclusion
 
