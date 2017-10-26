@@ -30,9 +30,9 @@ Through a set of 4 articles, we will see:
 Whether you are on Linux, Mac or Windows, everything can be done in command lines.
 
 First, let's install the tools:
-* Windows:  [https://www.gpg4win.org/](GPG4Win)
-* Mac:  [https://gpgtools.org/](GPGtools)
-* Linux:  [https://gnupg.org/download/](gnupg.org) (already integrated in Ubuntu for example)
+* Windows:  [GPG4Win](https://www.gpg4win.org/)
+* Mac:  [GPGtools](https://gpgtools.org/)
+* Linux:  [gnupg.org](https://gnupg.org/download/) (already integrated in Ubuntu for example)
 
 For this article, I will run on Ubuntu 16.04 and GnuPG v2.1.11. This is the modern version of gnupg that will
 replace v1.4 and v2.0.
@@ -397,15 +397,15 @@ Through this article, we have created a PGP key with a set of subkeys dedicated 
 You can now sign your emails and get them encrypted, sign your commit git, use keybase.io and
 even authenticate yourself to a server in SSH.
 
-In addition, on November 2, there will be a [https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris](key signing party) (key signing party) at Mozilla France.
+In addition, on November 2, there will be a [key signing party](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris) (key signing party) at Mozilla France.
 This event is an opportunity to meet other OpenPGP enthusiasts and, above all, it will make it possible to have your newly created key certified.
 
 ### Resources
-* [https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm#a__create](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm#a__create)
-* [https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm](https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm)
-* [https://alexcabal.com/creating-the-perfect-gpg-keypair/](https://alexcabal.com/creating-the-perfect-gpg-keypair/)
-* [http://www.bortzmeyer.org/nouvelle-cle-pgp.html](http://www.bortzmeyer.org/nouvelle-cle-pgp.html)
-* [https://riseup.net/en/security/message-security/openpgp/best-practices](https://riseup.net/en/security/message-security/openpgp/best-practices)
-* [https://wiki.debian.org/Subkeys](https://wiki.debian.org/Subkeys)
-* [https://www.eventbrite.com/e/pgp-key-signing-party-tickets-37092612001](https://www.eventbrite.com/e/pgp-key-signing-party-tickets-37092612001)
-* [https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris)
+* [GPG : création de votre première paire de clefs et chiffrement d'un fichier](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm)
+* [GPG : comment créer une paire de clefs presque parfaite](https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm)
+* [Creating the perfect GPG keypair](https://alexcabal.com/creating-the-perfect-gpg-keypair/)
+* [Ma nouvelle clé PGP](http://www.bortzmeyer.org/nouvelle-cle-pgp.html)
+* [OpenPGP Best Practices](https://riseup.net/en/security/message-security/openpgp/best-practices)
+* [Using OpenPGP subkeys in Debian development](https://wiki.debian.org/Subkeys)
+* [PGP Key signing party](https://www.eventbrite.com/e/pgp-key-signing-party-tickets-37092612001)
+* [Se rencontrer pour échanger ses clefs le 2 novembre à Paris](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris)

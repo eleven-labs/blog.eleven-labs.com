@@ -88,12 +88,21 @@ highlighter: rouge
 sass:
     sass_dir: _sass
     style: :compressed
-gems:
+plugins:
     - jekyll-paginate
     - jekyll-seo-tag
     - algoliasearch-jekyll
     - jekyll-feed
     - amp-jekyll
+exclude:
+    - CNAME
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
+    - Rakefile
+    - bin
+    - vendor
 
 collections:
   authors:
