@@ -17,6 +17,7 @@ script:
     - bundle exec rake
 
 after_success:
+    - ./bin/spellcheck.sh
     - ./bin/deploy-pr.sh
 
 before_deploy:
