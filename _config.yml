@@ -95,6 +95,7 @@ plugins:
     - algoliasearch-jekyll
     - jekyll-feed
     - amp-jekyll
+    - uglifier
 exclude:
     - CNAME
     - CODE_OF_CONDUCT.md

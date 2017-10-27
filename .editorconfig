@@ -15,5 +15,8 @@ indent_size = 2
 [*.scss]
 indent_size = 2
 
+[*.rb]
+indent_size = 2
+
 [Rakefile]
 indent_size = 2
