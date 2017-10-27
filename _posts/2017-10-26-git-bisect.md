@@ -22,7 +22,7 @@ Si un nombre important de personnes sont impliquées dans le développement d'un
 Or, si la source du problème est dissimulée au milieu d'un ensemble de commits, il est compliqué d'aller vérifier sur chaque commit l'origine du problème. 
 
 Git est un outil plus que populaire dans le développement d'applications, et vient avec tout un tas de commandes qui nous empêchent de regretter ce bon vieux SVN.
-Aujourd'hui je souhaite vous partagezr un outil vous permettant d'isoler rapidement notre commit frauduleux qui a occasionné un bug dans notre application : `git bisect`
+Aujourd'hui je souhaite vous partager un outil vous permettant d'isoler rapidement notre commit frauduleux qui a occasionné un bug dans notre application : `git bisect`
 
 Pour simplifier l'explication de `git bisect`, je vais utiliser un historique de quelques commits que voici :
 
