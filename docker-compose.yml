@@ -1,0 +1,10 @@
+version: '2'
+services:
+  jekyll:
+    image: ruby:2.4
+    command: 'bash -c "cd /srv/jekyll && bundle install && bundle exec jekyll serve"'
+    volumes:
+      - .:/srv/jekyll
+    ports:
+      - "4000:4000"
+    tty: true

@@ -106,6 +106,7 @@ exclude:
     - _authors/TEMPLATE-AUTOR
     - bin
     - vendor
+    - docker-compose.yml
 
 collections:
   authors:
