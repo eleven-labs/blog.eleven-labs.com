@@ -411,3 +411,5 @@ les utilisateurs, à l'exception de l'utilisation du protocole https, qui était
 
 Cette migration a également entraîné la mise en place de "live preview" des pull requests, le fonctionnement étant très
 proche de ce que l'on vient de voir ensemble, mais je garde ce sujet pour un potentiel futur article sur notre blog.
+
+test
