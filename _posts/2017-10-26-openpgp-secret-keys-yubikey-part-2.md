@@ -47,7 +47,7 @@ a Yubikey 4.
 ### Yubikey, what is it?
 
 Yubikey is a device the size of a classic USB key. This key makes it possible to perform double authentication on website, 
-such as Google or Github. Thus, if a person is in possession of the email and the password of the victim, the attacker 
+such as Google or Github. Thus, if a person is in possession of both the email and the password of the victim, the attacker 
 will not be able to connect without this usb key. This is the principle of double authentication, you must be in possession of two secrets.
    
 Yubikey implements an open protocol: *universal 2nd factor*. 
@@ -59,18 +59,18 @@ The one that will interest us is OpenPGP.
 ### How to get one
 
 I recommend you go through [the official store](https://www.yubico.com/product/yubikey-4-series/)
-to ensure the origin of the product. We are on products related to safety, it is important to know where the purchased product comes from.
+to ensure the origin of the product. We are on products related to safety, it's important to know where the purchased product comes from.
 
 For those who have a Github account, there is a [promotional offer that allows to have -10%](https://www.yubico.com/github-special-offer/) on the cart. Interesting :).
-However, it is valid only once. I recommend you order at least 2. The second will be useful to make a backup in case of loss of the first.
+However, it's valid only once. I recommend you order at least 2 products. The second will be useful to make a backup in the unfortunate event of the loss of the first one.
 
-Last but not least, our OpenPGP key was generated with a size of 4096 bits. Only version 4 of the Yubikey allows
-to save keys of this size. Version 3 and NEO, and only support keys up to 3072 bits.
+Last but not least, our OpenPGP key was generated with a size of 4096 bits. Only the version 4 of the Yubikey allows
+to save keys of this size. Version 3 and NEO only support keys up to 3072 bits.
 
 ### Install the necessary tools
 
-As a reminder, we started our generation of OpenPGP key with a machine running Ubuntu 16.04 and GnuPG 2.1.11. To can
-export the keys to the Yubikey, we need to install additional tools.
+As a reminder, we started our generation of OpenPGP key with a machine running Ubuntu 16.04 and GnuPG 2.1.11. To be able to
+export the keys to the Yubikey, we need to install additional tools beforehand.
 
 ```bash
 wilson@spaceship:~$ sudo apt-get install -y gnupg-agent pinentry-curses scdaemon pcscd yubikey-personalization libusb-1.0-0-dev
@@ -78,7 +78,7 @@ wilson@spaceship:~$ sudo apt-get install -y gnupg-agent pinentry-curses scdaemon
 
 ### Customize the Yubikey with gpg
 
-Before using the Yubikey, check that the warranty tape is not tampered with. If so, do not use it.
+Before using the Yubikey, check that the warranty tape has not been broken. If so, do not use it.
 
 Insert the Yubikey into a USB port and type the following command to verify that the card is well recognized.
  
@@ -106,7 +106,7 @@ General key info..: [none]
 ```
 
 The card is blank, there is no personal information. It is recommended to supplement the information in case a
-nobody finds this key.
+nobody would find this key.
 
 Edit the card and switch to admin mode. You can enter `help` to get the list of available commands.
 
@@ -116,9 +116,9 @@ gpg/card> admin
 Admin commands are allowed
 ```
 
-We will first change the PIN key administration code and user PIN. By default, the administrator PIN is 12345678 and 123456 for the user PIN.
+First of all, we'll change the PIN key administration code and user PIN. By default, the administrator PIN is 12345678 and the user PIN is 123456.
 
-The administrator PIN is required for some operations on the card (the key export for example), and to unlock when a PIN code has been entered 3 times by mistake.
+The administrator PIN is required for some operations on the card, such as the key export, and to unlock when a PIN code has been entered 3 times by mistake.
 
 Enter `passwd` to change them. Let's start with the administrator PIN and then the user PIN.
 
@@ -177,7 +177,7 @@ The key is now configured. We can export the private keys of the subkeys in the 
 
 ### Export the keys to the Yubikey
 
-The goal is to move the secret keys of the subkeys into the Yubikey. For that, we will
+The goal is to move the secret keys of the subkeys into the Yubikey. In order to do so, we will
 select each subkey one by one with the `key n` command and move it in the card with` keytocard`.
 In the end, there will be no more secrets in the gpg keychain.
 
@@ -222,7 +222,7 @@ ssb  rsa4096/8047B454
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 ```
 
-The small asterisk in front of the key's fingerprint indicates that it is selected.
+The small asterisk in front of the key's fingerprint indicates that it's selected.
 
 Enter `keytocard` to export it to the Yubikey. Then type `2` which is the only choice. The Yubikey can store the 3 types
 subkeys.
@@ -286,7 +286,7 @@ gpg>
 
 The second key is well selected because there is the small asterisk in front of the key `9CC8B2FB`.
 
-Repeat the operation with `keytocard` command and select `1` because it is a key signature.
+Repeat the operation with `keytocard` command and select `1` because it's a key signature.
 
 ```bash
 gpg> keytocard
@@ -361,7 +361,7 @@ ssb* rsa4096/8047B454
 gpg> 
 ``` 
 
-We finished. Type `save` and` quit`.
+We are done. Type `save` and` quit`.
 
 Let's check that we do not have any secret keys in our gpg keychain anymore.
 
@@ -415,27 +415,27 @@ ssb>  rsa4096/8047B454  created: 2017-10-05  expires: 2018-10-05
 ```
 
 We find the personal information in the first part. Then there is the information
-on the keys present in the Yubikey.
+on the keys stored in the Yubikey.
 
 We see that there is the chevron `>` before `ssb`. As seen above, this indicates the absence of the secret key in the
 keychain. Just below, there is an extra line that tells gpg where to find the secret key.
 Here we have the serial number of the Yubikey `card-no: 0006 06476495`. This serial number is also printed on the key physically.
-If you have multiple Yubikey, it will be easy to find the one you are looking for.
+If you have multiple Yubikeys, it will be easy to find the one you are looking for.
 
 ### Conclusion
 
 Through these first two articles, we covered the creation of an OpenPGP key and the export of secrets on a smart card. 
-The use of a smart card provides additional protection against the theft of secret keys. 
+The use of a smart card provides additional protection against the theft of secret keys.
 It will not be enough to hack the computer to steal them, but it will be necessary to physically steal 
 the key and the associated PIN code to use the secret keys. Moreover, as seen in the introduction, the secret 
-key can not be extracted. Our key is well protected, except against the human factor which remains the only threat.
+key cannot be extracted. Our key is well protected, except against the human factor which remains the only threat.
 
 In addition, you can distribute your public key on [a key server](https://pgp.mit.edu/) and other services (GitHub, Kraken, keybase.io). 
 This allows you to receive encrypted messages, and [sign your commits](https://help.github.com/articles/signing-commits-using-gpg/) 
 on GitHub (example on this commit [31dd621](https : //github.com/eleven-labs/eleven-labs.github.io/commit/31dd621db58a7ee1428bc9615c23e74d5ac98c3f)).
 
-In a future article, we will put in place a backup strategy in case of loss of secret keys. An error can quickly happen, 
-like erasing your computer following a ransonware.
+In a future article, we will set up a backup strategy to cover for the potential loss of secret keys. An error can quickly happen, 
+like erasing your computer following a ransomware.
 
 ### Resources
 
@@ -457,5 +457,4 @@ like erasing your computer following a ransonware.
 This tutorial uses a Yubikey for storing secrets. Yubikey is the most popular key in the general public, especially
 for the second authentication factor feature. There are other keys that support OpenPGP such as [NitroKey](https://www.nitrokey.com/).
 Unlike the Yubikey, the NitroKey is open-source. Security with closed and proprietary hardware is not a viable solution in the long term. 
-It's also contrary to the OpenPGP spirit that wants to be open. However, I chose the Yubikey for its ease of implementation and its ability 
-to do double authentication.
+It's also contradictory to the OpenPGP spirit, that aims to be open. However, I chose the Yubikey for its ease of implementation and its ability to do double authentication.
