@@ -2,9 +2,9 @@ version: '2'
 services:
   jekyll:
     image: ruby:2.4
-    command: 'bash -c "cd /srv/jekyll && bundle install && bundle exec jekyll serve"'
+    command: sh -c "bundle install && bundle exec jekyll serve --destination /tmp --host 0.0.0.0"
     volumes:
-      - .:/srv/jekyll
+      - ".:/usr/src/app"
     ports:
       - "4000:4000"
-    tty: true
+    working_dir: "/usr/src/app"
