@@ -80,15 +80,13 @@ algolia:
     excluded_files:
         - amp
 
-exclude: [vendor, _authors/TEMPLATE-AUTOR]
-
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: rouge
 sass:
     sass_dir: _sass
     style: :compressed
-gems:
+plugins:
     - jekyll-paginate
     - jekyll-seo-tag
     - algoliasearch-jekyll
@@ -96,11 +94,13 @@ gems:
     - amp-jekyll
 exclude:
     - CNAME
+    - CODE_OF_CONDUCT.md
     - Gemfile
     - Gemfile.lock
     - LICENSE
     - README.md
     - Rakefile
+    - _authors/TEMPLATE-AUTOR
     - bin
     - vendor
 
