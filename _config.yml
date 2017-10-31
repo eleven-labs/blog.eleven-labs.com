@@ -19,7 +19,7 @@ baseurl:
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
     # Meta
-    title: Eleven Labs
+    title: Eleven Labs - Le Blog
     gravatar:
     description: A website with blog posts and pages
 
@@ -49,6 +49,8 @@ theme_settings:
     twitter: eleven_labs
     wordpress:
     youtube:
+    corporate: https://eleven-labs.com
+    corporate_logo: /img/follow/eleven.svg
 
     # Scripts
     google_analytics: UA-99013054-1
@@ -58,6 +60,7 @@ theme_settings:
     # Localization strings
     str_follow_on: Suivez-nous sur
     str_rss_follow: Ajoutez-nous à votre veille
+    str_corporate: Découvrez Eleven Labs
     str_email: Email
     str_next: Suivant
     str_prev: Précédent
