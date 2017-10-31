@@ -400,7 +400,7 @@ Nous sommes passés d'un hébergement Github Pages gratuit mais qui ne nous sati
 payante mais plus flexible et répondant à nos attentes.
 Les coûts de cette architecture sont relativement compliqués à estimer étant donné que la facturation pour les services
 Amazon Cloudfront et Amazon S3 sont principalement liés à l'utilisation.
-L'utilisation de ces services est calculée en fonction du volume de données tranférés pour Cloudfront et du volume de
+L'utilisation de ces services est calculée en fonction du volume de données transférées pour Cloudfront et du volume de
 données stockées sur S3.
 Cette solution reste tout de même économique comparée à un hébergement traditionnel composé de serveurs web sur Amazon EC2,
 auxquels peuvent s'ajouter un load balancer pour les sites ayant un traffic plus soutenu.
