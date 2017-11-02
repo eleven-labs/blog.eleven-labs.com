@@ -1,6 +1,10 @@
 .share-buttons {
   background-color: $brand-color;
-  border: 0;
+  border: 1px solid $border-color;
+  border-left: 0;
+  bottom: auto;
+  display: flex;
+  flex-direction: column;
   left: 0;
   list-style-type: none;
   margin: 0;
@@ -9,6 +13,20 @@
   top: 230px;
   width: 50px;
   z-index: 1100;
+
+  @media screen and (min-width: 992px) and (max-height: 660px) {
+    top: 35vh;
+  }
+
+  @media screen and (max-width: 992px) {
+    border-bottom: 0;
+    border-left: 1px solid $border-color;
+    bottom: 0;
+    flex-direction: row;
+    left: calc(50vw - 100px);
+    top: auto;
+    width: 200px;
+  }
 
   a {
     border: 0;
