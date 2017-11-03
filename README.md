@@ -14,7 +14,11 @@ Le blog s'installe comme un projet classique.
 
 **Prérequis**
 
-Avoir [ruby](https://www.ruby-lang.org/fr/) d'installé sur sa machine dernière version.
+Avoir [ruby](https://www.ruby-lang.org/fr/) d'installé sur sa machine (dernière version) et installer la gem [bundler](http://bundler.io/) avec la commande qui suit :
+
+```bash
+gem install bundler
+```
 
 **1 - Cloner le projet**
 ```bash
