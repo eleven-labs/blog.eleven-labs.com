@@ -21,7 +21,7 @@ Il existe aujourd'hui de nombreuses aides à la mise en place des ChatBots conve
 
 ### J'écris un chatbot sans code
 
-DialogFlow c'est avant tout une interface qui va vous permettre d'utiliser l'intelligence de Google. Ce que DialogFlow contient est assez simple, il s'agit de [l'API Cloud Natural Language](https://cloud.google.com/natural-language/?hl=fr) qui permet de reconnaître des phrases envoyées par l'utilisateur. Avec les phrases récupérées et un peu de machine learning, Google reconnaît la phrase, et lance en adéquation, une action proposée par votre configuration.
+DialogFlow c'est avant tout une interface qui va vous permettre d'utiliser l'intelligence de Google. Ce que DialogFlow contient est assez simple, il s'agit de [l'API Cloud Natural Language](https://cloud.google.com/natural-language/?hl=fr) qui permet de reconnaître des phrases envoyées par l'utilisateur. Avec les phrases récupérées et un peu de machine learning, Google reconnaît la phrase, et lance en adéquation une action proposée par votre configuration.
 
 En bref, l'utilisateur propose une phrase, Google cherche parmi les "intents" que vous avez configurés et effectue l'action que vous avez proposée.
 
@@ -99,7 +99,7 @@ Puis créer l'intent *tu habites ?*,  qui aura un context de sortie *city*. Puis
 
 ![dialogflow-response](/assets/2017-11-06-chatbot-dialogflow/dialogflow-response.png)
 
-Si tous se passe bien, DialogFlow va directement reconnaître les *entities* de géolocalisation. Si ce n'est pas le cas, en sélectionnant le mot vous pouvez choisir l'entity *@sys.geo-city*.
+Si tout se passe bien, DialogFlow va directement reconnaître les *entities* de géolocalisation. Si ce n'est pas le cas, en sélectionnant le mot vous pouvez choisir l'entity *@sys.geo-city*.
 
 ![dialogflow-entity](/assets/2017-11-06-chatbot-dialogflow/dialogflow-entity.png)
 
