@@ -2,7 +2,7 @@
 layout: post
 title: DialogFlow, votre chatbot facile
 permalink: /fr/dialogflow-votre-chatbot-facile/
-excerpt: "La communication avec l'utilisateur est cruciale pour le fidéliser. Il est alors naturel que les ChatBots conversationnels fassent leurs apparition et deviennent un point important dans nos applications.
+excerpt: "La communication avec l'utilisateur est cruciale pour le fidéliser. Il est alors naturel que les ChatBots conversationnels fassent leur apparition et deviennent un point important dans nos applications.
 Il existe aujourd'hui de nombreuses aides à la mise en place des ChatBots conversationnels dits intelligents. On parlera aujourd'hui spécifiquement de DialogFlow, anciennement Api.ai de Google."
 authors:
     - captainjojo
@@ -15,7 +15,7 @@ tags:
 cover: /assets/2017-11-06-chatbot-dialogflow/cover.png
 ---
 
-La communication avec l'utilisateur est cruciale pour le fidéliser. Il est alors naturel que les ChatBots conversationnels fassent leurs apparition et deviennent un point important dans nos applications.
+La communication avec l'utilisateur est cruciale pour le fidéliser. Il est alors naturel que les ChatBots conversationnels fassent leur apparition et deviennent un point important dans nos applications.
 
 Il existe aujourd'hui de nombreuses aides à la mise en place des ChatBots conversationnels dits intelligents. On parlera aujourd'hui spécifiquement de DialogFlow, anciennement Api.ai de Google.
 
