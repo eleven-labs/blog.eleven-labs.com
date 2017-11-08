@@ -12,7 +12,7 @@ tags:
     - openpgp
     - sécurité
     - yubikey
-cover: /assets/2017-11-03-openpgp-stockage-froid-clefs-part-3/cover.jpg
+cover: /assets/2017-11-08-openpgp-stockage-froid-clefs-part-3/cover.jpg
 ---
 
 Nous avons vu dans le premier article que la clef privée principale ne doit pas être divulguée publiquement. Elle doit être conservée et stockée sur un espace de stockage complètement déconnecté du réseau. Mais alors, comment stocker cette clef privée ?
