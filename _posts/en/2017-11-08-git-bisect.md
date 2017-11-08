@@ -14,14 +14,13 @@ tags:
 cover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
 ---
 
-When deploying new features to a production environment, risks of regression exist. Especially in big applications with a lot of non-tested code.
-We are never safe from negative behaviour, or impacts that need our immediate attention. 
+When deploying new features to a production environment, risks of regression exist. Especially in big applications with a lot of untested code.vWe are never safe from negative behaviour, or impacts that need our immediate attention.
 
 In a project using Git as a source code management tool, it appears essential to rapidly find the source of our problem. 
 When dealing with large teams composed of many people, every deployment comes with a lot of commits.
 But if the origin of the problem is hidden in the middle of all those commits, it is quite complicated to check every commit for the source of the issue.
 
-Git is a very famous tool in software development, and it comes with a bunch off commands that prevent us from missing good old SVN.
+Git is a very famous tool in software development, and it comes with a bunch of commands that prevent us from missing good old SVN.
 Today I'd like to talk about a tool that will allow us to rapidly isolate an incorrect commit, that caused a bug in our application:  : `git bisect`
 
 To simplify my explanation of `git bisect`, I'm going to use the following history of commits:
@@ -35,7 +34,7 @@ To simplify my explanation of `git bisect`, I'm going to use the following histo
 * 0d7c223 - computed the ideal playlist based upon astronauts tastes (2 days ago) <Wilson DJ>
 * 29d90f9 - updated README.md (2 days ago) <Wilson Documentation>
 ```
-Imagine that those commits have been deployed to production. After a few moments, someone notices that something's wrong. One of the functionality is broken.
+Imagine that those commits have been deployed to production. After a few moments, someone notices that something's wrong. One of the functionalities is broken.
 The problem is immediately brought to developers and they have to isolate the cause of the bug. They only have one clue: everything was fine before the last deployment.
  
 Git takes away the boredom of testing our commits one by one with `git bisect`. This command does a [binary search](https://en.wikipedia.org/wiki/Binary_search_algorithm) in our history.
@@ -43,10 +42,10 @@ Git takes away the boredom of testing our commits one by one with `git bisect`. 
 ![](/assets/2017-10-26-debugging-with-git/binary_search.jpg)
 
 At every step of the binary search, we must tell `git bisect` if the issue still persists.
-According to our response, `bisect` will go forward or backward to isolate the issue. 
+According to our response, `bisect` will go forward or backward to isolate the issue.
 
 There are two main commands with `git bisect` :
-* `git bisect good`: this allows us to say that the commit which `bisect` stopped us on does not contain the bug
+* `git bisect good`: this allows us to say that the commit which `bisect` stopped us on does not contain the bug.
 * `git bisect bad`: this allows us to say that the bug still exists on the commit we're on. 
 
 ## Let's debug!
@@ -63,7 +62,7 @@ Once this is done, we can notice that `bisect` changed our position in the commi
 Bisecting: 2 revisions left to test after this (roughly 2 steps)
 [99f3fa1b86489dd9d6f30368d5b5321e04a955df] worked on real-time suggestion when encounting problems in space
 ```
-Now on, we must check if the bug is still here. Unfortunately yes in this case! 
+Now we must check if the bug is still here. Unfortunately yes in this case! 
 Keep on "bisecting". 
 ```
 git bisect bad
