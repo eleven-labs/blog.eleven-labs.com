@@ -14,7 +14,11 @@ Le blog s'installe comme un projet classique.
 
 **Prérequis**
 
-Avoir [ruby](https://www.ruby-lang.org/fr/) d'installé sur sa machine dernière version.
+Avoir [ruby](https://www.ruby-lang.org/fr/) d'installé sur sa machine (dernière version) et installer la gem [bundler](http://bundler.io/) avec la commande qui suit :
+
+```bash
+gem install bundler
+```
 
 **1 - Cloner le projet**
 ```bash
@@ -164,3 +168,17 @@ Tout le monde peut commenter une pull request de `publication`. Une fois approuv
 **2 - On partage**
 
 L'article est en ligne !!! Vous n'avez plus qu'à le partager.
+
+---------------------------------
+
+Bonnes pratiques sur les images
+-----------
+
+**1 - Attention à la taille des images**
+
+Ne mettez pas d'image ayant une résolution trop grande sur vos articles. Cela engendrerait des baisses de performance. Il ne sert à rien que votre image fasse plus de 800px de large.
+
+**2 - Optimiser vos images**
+
+Toujours afin de garder des performances satisfaisantes, optimisez vos images à l'aide de logiciels adaptés.
+Des logiciels comme [ImageOptim](https://imageoptim.com/) sur Mac, [Trimage](https://trimage.org/) sur Lisnux ou [FileOptimizer](http://nikkhokkho.sourceforge.net/static.php?page=FileOptimizer) sur Windows offrent des interfaces très faciles d'utilisation et des compressions efficaces.
