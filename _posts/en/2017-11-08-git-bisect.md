@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Debugging with Git
-permalink: /en/debugging-with-git/
+lang: en
+permalink: /debugging-with-git/
 excerpt: "Today I'd like to talk about a tool that will allow us to rapidly isolate an incorrect commit, that caused a bug in our application: git bisect"
 authors:
     - rpierlot
