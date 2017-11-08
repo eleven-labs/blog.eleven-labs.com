@@ -14,7 +14,7 @@ tags:
 cover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
 ---
 
-When deploying new features to a production environment, risks of regression exist. Especially in big applications with a lot of untested code.vWe are never safe from negative behaviour, or impacts that need our immediate attention.
+When deploying new features to a production environment, risks of regression exist. Especially in big applications with a lot of untested code. We are never safe from negative behaviour, or impacts that need our immediate attention.
 
 In a project using Git as a source code management tool, it appears essential to rapidly find the source of our problem. 
 When dealing with large teams composed of many people, every deployment comes with a lot of commits.
@@ -62,7 +62,7 @@ Once this is done, we can notice that `bisect` changed our position in the commi
 Bisecting: 2 revisions left to test after this (roughly 2 steps)
 [99f3fa1b86489dd9d6f30368d5b5321e04a955df] worked on real-time suggestion when encounting problems in space
 ```
-Now we must check if the bug is still here. Unfortunately yes in this case! 
+Now, we must check if the bug is still here. Unfortunately yes in this case! 
 Keep on "bisecting". 
 ```
 git bisect bad
