@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/eleven-labs/eleven-labs.github.io.svg?branch=master)](https://travis-ci.org/eleven-labs/eleven-labs.github.io)
+[![Build Status](https://travis-ci.org/eleven-labs/blog.eleven-labs.com.svg?branch=master)](https://travis-ci.org/eleven-labs/blog.eleven-labs.com)
 
 Participer à notre blog
 ===================
@@ -22,12 +22,12 @@ gem install bundler
 
 **1 - Cloner le projet**
 ```bash
-git clone git@github.com:eleven-labs/eleven-labs.github.io.git
+git clone git@github.com:eleven-labs/blog.eleven-labs.com.git
 ```
 
 **2 - Installer Jekyll**
 ```bash
-cd eleven-labs.github.io && bundle install
+cd blog.eleven-labs.com && bundle install
 ```
 **3 - Lancer le blog**
 ```bash
