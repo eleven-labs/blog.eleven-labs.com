@@ -5,7 +5,7 @@ excerpt: Presentation of http/net package and Buffalo.
 authors:
 - qneyrat
 lang: en
-permalink: /en/build-an-api-with-go-and-buffalo/
+permalink: /build-an-api-with-go-and-buffalo/
 categories:
     - Go
 tags:
