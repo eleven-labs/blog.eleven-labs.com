@@ -1,6 +1,6 @@
 .share-buttons {
   background-color: $brand-color;
-  border: 1px solid $brand-black; 
+  border: 1px solid $brand-black;
   border-left: 0;
   bottom: auto;
   display: flex;
@@ -38,7 +38,7 @@
     text-decoration: none;
     transition: all .25s ease-in-out;
     width: 40px;
-    
+
     &:hover,
     &:visited:hover {
       background-color: $brand-black;
