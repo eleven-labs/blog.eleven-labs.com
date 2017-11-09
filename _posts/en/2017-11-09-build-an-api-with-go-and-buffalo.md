@@ -95,7 +95,7 @@ This package is very low level and quite annoying to use. The community has ther
 
 ### Buffalo framework
 
-> Buffalo documentaion on [http://gobuffalo.io](http://gobuffalo.io).
+> Buffalo documentation on [http://gobuffalo.io](http://gobuffalo.io).
 
 Buffalo is a library that makes web development with Go easier. It mainly uses the Gorilla libraries [https://github.com/gorilla](https://github.com/gorilla).
 
