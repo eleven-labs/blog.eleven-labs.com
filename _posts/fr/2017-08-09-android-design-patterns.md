@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android et les Design Patterns
-excerpt: Nous allons voir à travers cet article jusqu'à quel point on peut appliquer les principaux Design Patterns dans un projet Android 
+excerpt: Nous allons voir à travers cet article jusqu'à quel point on peut appliquer les principaux Design Patterns dans un projet Android
 authors:
     - obennouna
 date: '2017-08-09 22:21:00 +0100'
@@ -23,21 +23,21 @@ cover: /assets/2017-08-02-android-design-pattern/cover.jpg
 Aujourd'hui nous allons voir jusqu'à quel point on peut implémenter le plus rigoureusement possible certains Design Patterns. En effet nous allons les séparer en deux catégories :
  - Design Patterns structurants
  - Design Patterns non structurants
- 
+
 Concernant les Design Patterns structurants, nous allons voir en détail les trois plus connus, à savoir :
  - MVC
  - MVP
  - MVVM
- 
+
 Enfin concernant les non structurants, nous n'allons en survoler que quelques-uns car nous allons surtout nous intéresser à la première catégorie.
- 
+
 > **Petit rappel :**
 > Android est l'OS mobile développé par Google utilisant le langage JAVA (et Kotlin récemment mais nous en parlerons une autre fois) pour la partie développement. Pour en savoir plus il n'y a pas mieux que la [documentation officielle](https://developer.android.com/index.html).
 
 Néanmoins Android a une particularité par rapport au JAVA : le SDK est déjà structurant.
- 
+
 Avant de commencer à rentrer dans le vif du sujet, il est important de noter certaines différences cruciales avec une application en JAVA (Desktop par exemple) afin de comprendre jusqu'à quel point on peut suivre les différents Design Patterns.
- 
+
 En effet, un nouveau projet en JAVA ne contient que la méthode main qui sert de point de départ ce qui nous laisse une totale liberté de l'architecture du projet :
 ```Java
 public static void main(String[] args) {
@@ -64,7 +64,7 @@ Plusieurs choses ont changé :
 
  > **Note:**
  > Si vous avez remarqué on commence déjà à "subir" une implémentation en parlant d'héritage ou de vue alors que le projet est à peine créé, car le SDK impose un certain MVC
- 
+
 # MVC
 
 
@@ -74,7 +74,7 @@ Rien de mieux qu'un schéma pour illustrer une implémentation MVC
 
 Maintenant essayons d'attribuer chaque partie constituant un projet Android à un élément de ce pattern, on se retrouve avec :
 - **Modèle** : Une classe qui contiendra notre modèle (jusque-là rien de particulier)
-- **Contrôleur** : Il s'agit de l'Activity (ou fragment), vu qu'elle va remonter les interactions utilisateurs et mettre à jour nos vues. 
+- **Contrôleur** : Il s'agit de l'Activity (ou fragment), vu qu'elle va remonter les interactions utilisateurs et mettre à jour nos vues.
 - **Vue** : Cela correspond aux fichiers layout en .XML
 
 En creusant un peu on peut se rendre compte de quelques détails.
@@ -88,7 +88,7 @@ Tout d'abord, on peut définir l'action à faire lors d'un clic sur un bouton, p
     android:layout_height="wrap_content"
     android:text="On décolle !"
     android:onClick="goIntoSpace" />
-    
+
 <!-- JAVA -->
 public void goIntoSpace(View view) {
     // C'est parti !
@@ -109,7 +109,7 @@ btn.setOnClickListener(new View.OnClickListener() {
 Maintenant intéressons-nous à l'interaction entre la vue et son modèle. D'abord, on note que le modèle est complètement indépendant car il ne possède aucun lien avec une vue ou un contrôleur.
 Ensuite, et c'est le point le plus important, la vue devrait avoir connaissance de son modèle afin de pouvoir lire les informations dont elle a besoin, sauf que sur Android **il est impossible d'indiquer à la vue quel modèle elle utilise.**
 
-Effectivement, le SDK Android nous propose déjà une panoplie de vues (Champ texte, checkbox etc...) qui ne prennent pas un modèle en paramètre mais directement des données brutes (Chaîne de caractère, entier etc...). 
+Effectivement, le SDK Android nous propose déjà une panoplie de vues (Champ texte, checkbox etc...) qui ne prennent pas un modèle en paramètre mais directement des données brutes (Chaîne de caractère, entier etc...).
 
 **Exemple :**
 Prenons un formulaire de contact avec les champs suivants :
@@ -118,7 +118,7 @@ Prenons un formulaire de contact avec les champs suivants :
  - Mail
  - Message
 
-Le modèle correspondant sera une classe avec quatre champs `String` pour chaque attribut. Seulement notre layout n'aura jamais connaissance d'un objet de ce type, mais uniquement des quatre champs qui lui auront été fournis (Grâce à une Activity / Fragment ou autre **contrôleur**). 
+Le modèle correspondant sera une classe avec quatre champs `String` pour chaque attribut. Seulement notre layout n'aura jamais connaissance d'un objet de ce type, mais uniquement des quatre champs qui lui auront été fournis (Grâce à une Activity / Fragment ou autre **contrôleur**).
 
 > Et les ViewModels ?
 
@@ -135,7 +135,7 @@ Au final, si l'on veut respecter scrupuleusement cette implémentation, on se re
  - Le SDK nous fournit déjà un projet tout prêt pour du MVC
  - Il s'agit d'un des Patterns les plus connus et donc très bien documenté, utilisé etc...
  - Il empêche la création de "god" application, voire de "god" classe
-	
+
 <span style="color:red">-</span>
 ----------
  - Comme on a vu plus haut, son respect le plus strict peut s'avérer compliqué.
@@ -162,10 +162,10 @@ Voici un exemple d'implémentation (très basique) d'un MVP :
 protected void onCreate(Bundle savedInstanceState) {
    super.onCreate(savedInstanceState);
    setContentView(R.layout.activity_main);
-   
+
    // Model
    Post post = new Post();
-   
+
    // Presenter
    TextView textView = findViewById(R.id.title);
    textView.setText(post.getTitle());
@@ -244,10 +244,10 @@ La TextView ne contient plus de données statiques (par exemple `@string/app_tit
 
 
  > **Note:**
- > Une subtilité s'est glissée dans cet exemple : le champ `title` n'existe pas. En effet notre seul attribut s'appelle `mTitle` , en private, mais possède une méthode `getTitle` qui est publique. 
+ > Une subtilité s'est glissée dans cet exemple : le champ `title` n'existe pas. En effet notre seul attribut s'appelle `mTitle` , en private, mais possède une méthode `getTitle` qui est publique.
  > Le DataBinding Android permet d'appeler le getter comme s'il correspondait à un attribut (si ce getter respecte une certaine nomenclature).
  > Dans notre cas puisque le getter s'appelle `getTitle`, le DataBinding va pouvoir nous permettre de l'appeler comme si on avait un attribut `title` qui existait.
- > Bien sûr rien ne nous empêche de l'appeler directement : `android:text="@{model.getTitle()}"` 
+ > Bien sûr rien ne nous empêche de l'appeler directement : `android:text="@{model.getTitle()}"`
 
 Maintenant reste une étape très importante : générer nos ViewModels. On peut le faire directement dans une Activity ou un Fragment par exemple :
 
@@ -256,10 +256,10 @@ Maintenant reste une étape très importante : générer nos ViewModels. On peut
 protected void onCreate(Bundle savedInstanceState) {
    super.onCreate(savedInstanceState);
    MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
-   
+
    // Création du modèle
    Post post = new Post("Eleven Labs !");
-   
+
    // Création du ViewModel
    MainViewModel viewModel = new MainViewModel (post);
    binding.setUser(viewModel);
@@ -290,7 +290,7 @@ L'un des avantages de cette approche est de proposer du code plus clair et lisib
  - Moins de code Boiler Plate avec l'absence des `findViewById`.
  - Il permet l'utilisation des [Binding Adapter](https://developer.android.com/reference/android/databinding/BindingAdapter.html)
  - Grâce à l'utilisation de `BaseObservable`, on peut rafraîchir la vue dès que le ViewModel subit un changement, ce qui évite toute gestion manuelle du rafraîchissement.
-	
+
 <span style="color:red">-</span>
 ----------
  - Approche complètement différente des Design Patterns qui peut perturber.
@@ -303,7 +303,7 @@ Les Design Pattern qui ne sont pas structurants, c'est-à-dire qui ne façonnent
 
 Par exemple, le Singleton est implémenté exactement de la même manière que sur une autre plateforme. Il en va de même pour la Factory.
 
-Concernant le Design Pattern Observer, il est très répandu grâce à la profusion des listeners (Cf. [Android : Pourquoi j'aime les Listeners](https://eleven-labs.github.io//fr/android-listeners/)), mais aussi et surtout aux librairies tels qu'[Otto](http://square.github.io/otto/) de Square, [EventBus](https://github.com/greenrobot/EventBus) de GreenRobot ou même encore [Guava](https://github.com/google/guava/wiki/EventBusExplained) de Google.
+Concernant le Design Pattern Observer, il est très répandu grâce à la profusion des listeners (Cf. [Android : Pourquoi j'aime les Listeners](https://blog.eleven-labs.com/fr/android-listeners/)), mais aussi et surtout aux librairies tels qu'[Otto](http://square.github.io/otto/) de Square, [EventBus](https://github.com/greenrobot/EventBus) de GreenRobot ou même encore [Guava](https://github.com/google/guava/wiki/EventBusExplained) de Google.
 
 # Conclusion
 
@@ -315,4 +315,4 @@ Pour terminer, je n'ai pas souhaité parler de librairies d'injection tel que [D
 
 > Embrace Android do not fight it
 
-Et vous, quel Design Pattern vous plaît le plus ? 
+Et vous, quel Design Pattern vous plaît le plus ?

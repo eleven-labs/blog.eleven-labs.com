@@ -16,7 +16,7 @@ tags:
 cover: /assets/2017-10-24-openpgp-clef-secrete-yubikey-partie-2/cover.jpg
 ---
 
-Nous avons vu dans l'article précedent [la génération de clefs OpenPGP](/fr/openpgp-paire-clef-presque-parfaite-partie-1/). 
+Nous avons vu dans l'article précedent [la génération de clefs OpenPGP](/fr/openpgp-paire-clef-presque-parfaite-partie-1/).
 Pour rappel, nous avons dans notre trousseau de clefs privées gpg :
 
 ```bash
@@ -35,11 +35,11 @@ Nous avons également exporté les clefs dans des fichiers :
 * 1A8132B1.sub_priv.asc : contient uniquement les clefs privées des sous-clefs
 
 Avec cette configuration, nous avons une stratégie efficace contre le vol ou la perte de la clef privée qui sert à la certification.
-Si un attaquant venait à s'emparer de l'ordinateur, il ne pourra pas certifier d'autre clef. Cependant, les clefs privées qui permettent 
+Si un attaquant venait à s'emparer de l'ordinateur, il ne pourra pas certifier d'autre clef. Cependant, les clefs privées qui permettent
 de signer, chiffrer et s'authentifier sont encore présentes sur l'ordinateur. Donc, en cas de vol des clefs, il serait possible de signer des messages pendant un certains temps (le temps que la sous-clef dérobée soit révoquée).
 
-Pour contrer cette attaque, il est possible de placer les clefs privées dans une carte à puce (smart card). Ces dispositifs sont 
-très résistants à des techniques d'extraction de clef. En plus des attaques physiques, il y a un code pin avec 3 essais uniquement. Ensuite, elle se bloque.  
+Pour contrer cette attaque, il est possible de placer les clefs privées dans une carte à puce (smart card). Ces dispositifs sont
+très résistants à des techniques d'extraction de clef. En plus des attaques physiques, il y a un code pin avec 3 essais uniquement. Ensuite, elle se bloque.
 
 Nous allons voir dans cet article l'export des clefs privées des sous-clefs dans une carte à puce. Pour cet exemple, je vais utiliser
 une Yubikey 4.
@@ -48,8 +48,8 @@ une Yubikey 4.
 
 Yubikey est un dispositif de la taille d'une clef usb classique. Cette clef permet d'effectuer la double authentification sur des sites
  web, tel que Google ou Github. Ainsi, si une personne est en possession de l'email et du mot de passe de la victime, l'attaquant ne pourra pas se connecter sans cette clef usb. C'est le principe de la double authentification, il faut être en possession de deux secrets.
- 
-La Yubikey implémente un protocole ouvert : *universal 2nd factor*. 
+
+La Yubikey implémente un protocole ouvert : *universal 2nd factor*.
 
 En plus de ce principal protocole, elle en supporte d'autres : OpenPGP, TOTP, HOTP, défi-réponse.
 
@@ -63,12 +63,12 @@ pour s'assurer de la provenance du produit. Nous sommes sur des produits liés �
 Pour ceux qui ont un compte Github, il y a une [offre promotionelle qui permet d'avoir -10%](https://www.yubico.com/github-special-offer/) sur le panier. Intéressant :).
 Par contre, elle n'est valable qu'une seule fois. Je vous recommande d'en commander au moins 2. La deuxième sera utile pour faire une sauvegarde en cas de perte de la première.
 
-Dernier point important, notre clef OpenPGP a été générée avec une taille de 4096 bits. Seule la version 4 de la Yubikey permet 
+Dernier point important, notre clef OpenPGP a été générée avec une taille de 4096 bits. Seule la version 4 de la Yubikey permet
 d'enregistrer des clefs de cette taille. La version 3 et la NEO, et ne supporte que des clefs de 3072 bits au maximum.
 
 ### Installons les outils nécessaires
 
-Pour rappel, nous avons commencé notre génération de clef OpenPGP avec une machine sous Ubuntu 16.04 et GnuPG 2.1.11. Pour pouvoir 
+Pour rappel, nous avons commencé notre génération de clef OpenPGP avec une machine sous Ubuntu 16.04 et GnuPG 2.1.11. Pour pouvoir
 faire l'export des clefs vers la Yubikey, nous devons installer des outils supplémentaires.
 
 ```bash
@@ -80,7 +80,7 @@ wilson@spaceship:~$ sudo apt-get install -y gnupg-agent pinentry-curses scdaemon
 Avant d'utiliser la Yubikey, vérifer que la bande de garantie ne soit pas altérée. Si c'est le cas, ne pas l'utiliser.
 
 Insérer la Yubikey dans un port USB et taper la commande suivante pour vérifier que la carte est bien reconnue.
- 
+
 ```bash
 wilson@spaceship:~$ gpg2 --card-status
 Reader ...........: 1050:0407:X:0
@@ -104,7 +104,7 @@ Authentication key: [none]
 General key info..: [none]
 ```
 
-La carte est vierge, il n'y aucune information personnelle. Il est recommandé de compléter les informations au cas où une 
+La carte est vierge, il n'y aucune information personnelle. Il est recommandé de compléter les informations au cas où une
 personne retrouve cette clef.
 
 Éditons la carte et passons en mode admin. Vous pouvez entrer `help` pour avoir la liste des commandes disponibles.
@@ -115,7 +115,7 @@ gpg/card> admin
 Admin commands are allowed
 ```
 
-Nous allons tout d'abord changer le code PIN d'administration de la clef et le code PIN utilisateur. Par défaut, le code PIN de l'administrateur est 12345678 et 123456 pour le code PIN utilisateur. 
+Nous allons tout d'abord changer le code PIN d'administration de la clef et le code PIN utilisateur. Par défaut, le code PIN de l'administrateur est 12345678 et 123456 pour le code PIN utilisateur.
 
 Le PIN administrateur est requis pour quelques opérations sur la carte (l'export de clef par exemple), et pour débloquer quand un code PIN a été entré 3 fois par erreur.
 
@@ -191,17 +191,17 @@ There is NO WARRANTY, to the extent permitted by law.
 Secret key is available.
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
-gpg> 
+gpg>
 ```
 
 Exportons la clef de chiffrement `B73A9C79`.
@@ -210,20 +210,20 @@ Exportons la clef de chiffrement `B73A9C79`.
 gpg> key 1
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb* rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 ```
 
-Le petit astérisque devant l'empreinte de la clef indique qu'elle est sélectionnée. 
+Le petit astérisque devant l'empreinte de la clef indique qu'elle est sélectionnée.
 
-Entrer `keytocard` pour l'exporter vers la Yubikey. Ensuite, taper `2` qui est l'unique choix. La Yubikey peut stocker les 3 types 
+Entrer `keytocard` pour l'exporter vers la Yubikey. Ensuite, taper `2` qui est l'unique choix. La Yubikey peut stocker les 3 types
 de sous-clefs.
 
 ```bash
@@ -233,15 +233,15 @@ Please select where to store the key:
 Your selection? 2
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb* rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 ```
 
@@ -254,32 +254,32 @@ Séléctionnons la clef de signature. Il faut désélectionner la première clef
 gpg> key 1
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
 gpg> key 2
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb* rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
-gpg> 
+gpg>
 ```
 
 La seconde clef est bien séléctionnée car il y a la petite astérisque devant la clef `9CC8B2FB`.
@@ -294,18 +294,18 @@ Please select where to store the key:
 Your selection? 1
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb* rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
-gpg> 
+gpg>
 ```
 
 C'est ok pour la seconde clef. Répéter avec la troisième.
@@ -314,29 +314,29 @@ C'est ok pour la seconde clef. Répéter avec la troisième.
 gpg> key 2
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
 gpg> key 3
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb* rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
 gpg> keytocard
@@ -345,19 +345,19 @@ Please select where to store the key:
 Your selection? 3
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb* rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
-gpg> 
-``` 
+gpg>
+```
 
 Nous avons terminé. Taper `save` et `quit`.
 
@@ -416,14 +416,14 @@ Nous retrouvons bien les informations personnelles dans la première partie. Ens
 sur les clefs présentes dans la Yubikey.
 
 Nous voyons qu'il y a le chevron `>` devant `ssb`. Comme vu plus haut, cela indique l'absence de la clef secrète dans le
-trousseau de clefs. Mais juste en dessous, il y a une ligne supplémentaire qui permet de dire à gpg où trouver la clef secrète. 
+trousseau de clefs. Mais juste en dessous, il y a une ligne supplémentaire qui permet de dire à gpg où trouver la clef secrète.
 Ici, nous avons le numéro de série de la Yubikey `card-no: 0006 06476495`. Ce numéro de série est également imprimé sur la clef physiquement. Si vous avez plusieurs Yubikey, il sera facile de retrouver celle que vous cherchez.
 
 ### Conclusion
 
 À travers ces deux premiers articles, nous avons couvert la création d'une clef OpenPGP et l'exportation des secrets sur une carte à puce. L'utilisation d'une carte à puce permet une protection supplémentaire contre le vol des clefs secrètes. Il ne suffira pas de pirater l'ordinateur pour les voler, mais il sera nécessaire de voler physiquement la clef et le code PIN associé pour utiliser les clefs secrètes. De plus, comme vu en introduction, la clef secrète ne peut être extraite. Notre clef est bien protégée, sauf contre le facteur humain qui reste la seule menace.
 
-Par ailleurs, vous pouvez diffuser votre clef publique sur [un serveur de clefs](https://pgp.mit.edu/) et d'autre services (GitHub, Kraken, keybase.io). Cela vous permet de recevoir des messages chiffrés, et de [signer vos commits](https://help.github.com/articles/signing-commits-using-gpg/) sur GitHub (exemple sur ce commit [31dd621](https://github.com/eleven-labs/eleven-labs.github.io/commit/31dd621db58a7ee1428bc9615c23e74d5ac98c3f)).
+Par ailleurs, vous pouvez diffuser votre clef publique sur [un serveur de clefs](https://pgp.mit.edu/) et d'autre services (GitHub, Kraken, keybase.io). Cela vous permet de recevoir des messages chiffrés, et de [signer vos commits](https://help.github.com/articles/signing-commits-using-gpg/) sur GitHub (exemple sur ce commit [31dd621](https://github.com/eleven-labs/blog.eleven-labs.com/commit/31dd621db58a7ee1428bc9615c23e74d5ac98c3f)).
 
 Dans un prochain article, nous allons mettre en place une stratégie de sauvegarde en cas de perte des clefs secrètes. Une erreur peut vite arriver, comme formater son ordinateur suite à un ransonware (ce qui est d'actualité en ce moment).
 

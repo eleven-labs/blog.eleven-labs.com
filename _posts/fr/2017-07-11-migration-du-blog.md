@@ -49,10 +49,10 @@ La migration ne fut pas compliquée. Chaque astronaute a eu pour mission de migr
 
 ### Maintenant
 
-Eleven-labs souhaitant faire vivre le blog comme un projet open-source, il est possible à tous nos utilisateurs de proposer des nouvelles fonctionnalités simplement en suivant le [contributing](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/.github/CONTRIBUTING.md) du projet public. Chaque issue sera alors ajoutée dans nos sprints projet et sera réalisée pour améliorer en continu notre blog.
+Eleven-labs souhaitant faire vivre le blog comme un projet open-source, il est possible à tous nos utilisateurs de proposer des nouvelles fonctionnalités simplement en suivant le [contributing](https://github.com/eleven-labs/blog.eleven-labs.com/blob/master/.github/CONTRIBUTING.md) du projet public. Chaque issue sera alors ajoutée dans nos sprints projet et sera réalisée pour améliorer en continu notre blog.
 
-Comme notre projet est public, vous pouvez aussi directement développer des nouvelles fonctionnalités et les proposer à nos astronautes, il vous suffit de suivre le [contributing](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/.github/CONTRIBUTING.md) et de proposer une pull request.
+Comme notre projet est public, vous pouvez aussi directement développer des nouvelles fonctionnalités et les proposer à nos astronautes, il vous suffit de suivre le [contributing](https://github.com/eleven-labs/blog.eleven-labs.com/blob/master/.github/CONTRIBUTING.md) et de proposer une pull request.
 
-Comme nous savons que les astronautes d'Eleven-labs ne sont pas les seuls à vouloir partager leurs connaissances, il vous est aussi possible de proposer des articles et d'être publié sur le blog, suivez le [README](https://github.com/eleven-labs/eleven-labs.github.io).
+Comme nous savons que les astronautes d'Eleven-labs ne sont pas les seuls à vouloir partager leurs connaissances, il vous est aussi possible de proposer des articles et d'être publié sur le blog, suivez le [README](https://github.com/eleven-labs/blog.eleven-labs.com).
 
 Bien d'autres choses sont en préparation par notre équipe d'astronautes, en attendant merci d'être des lecteurs fidèles de notre blog, et continuez à partager la connaissance !
