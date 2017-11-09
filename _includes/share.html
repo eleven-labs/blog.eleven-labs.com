@@ -1,21 +1,21 @@
-<div class="share-buttons">
+<aside class="share-buttons">
 	<!-- Facebook -->
-    <a href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;">
-        <img src="{{ "/img/share_buttons/facebook.png" | prepend: site.baseurl }}" alt="Facebook" />
+    <a href="http://www.facebook.com/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;" title="{% translate global.follow_us_on %} Facebook">
+        <i class="fa fa-fw fa-facebook"></i>
     </a>
 
     <!-- Twitter -->
-    <a href="https://twitter.com/share?url={{ site.url }}{{ site.baseurl }}{{ page.url }}&text={{ page.title }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;">
-        <img src="{{ "/img/share_buttons/twitter.png" | prepend: site.baseurl }}" alt="Twitter" />
+    <a href="https://twitter.com/share?url={{ site.url }}{{ site.baseurl }}{{ page.url }}&text={{ page.title }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;"  title="{% translate global.follow_us_on %} Twitter">
+        <i class="fa fa-fw fa-twitter"></i>
     </a>
 
     <!-- LinkedIn -->
-    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title }}&summary={{ page.description }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;">
-        <img src="{{ "/img/share_buttons/linkedin.png" | prepend: site.baseurl }}" alt="LinkedIn" />
+    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title }}&summary={{ page.description }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;" title="{% translate global.follow_us_on %} LinkedIn">
+        <i class="fa fa-fw fa-linkedin"></i>
     </a>
 
     <!-- Reddit -->
-    <a href="http://reddit.com/submit?url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;">
-        <img src="{{ "/img/share_buttons/reddit.png" | prepend: site.baseurl }}" alt="Reddit" />
+    <a href="http://reddit.com/submit?url={{ site.url }}{{ site.baseurl }}{{ page.url }}" title="{% translate global.follow_us_on %} Reddit" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500,top=50,left=50');return false;">
+        <i class="fa fa-fw fa-reddit"></i>
     </a>
-</div>
+</aside>
