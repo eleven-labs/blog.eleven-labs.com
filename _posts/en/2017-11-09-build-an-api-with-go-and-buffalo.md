@@ -18,7 +18,7 @@ cover: /assets/2017-07-26-construire-une-api-en-go/cover.jpg
 BUILD AN API WITH GO AND BUFFALO
 ===================
 
-The Go language has quickly become very popular, but there is still some people reluctant to use it for the development of their new apps. We will see here how to build a REST API quickly and easily.
+The Go language has quickly become very popular, but there are still some people reluctant to use it for the development of their new apps. We will see here how to build a REST API quickly and easily.
 
 ----------
 
@@ -26,14 +26,14 @@ The Go language has quickly become very popular, but there is still some people 
 Introduction
 -------------
 
-The feature of the Go language is its simplicity of writing. The syntax is inspired by the C language with a procedural code. It does not integrate a concept of classes but provides the mechanisms needed to write code in an object-oriented style. The code is brief and clear, KISS principle (Keep It Simple, Stupid). We will see how to use this language to make web: **Buffalo**.
+The greatest feature of the Go language is its simplicity of writing. The syntax is inspired by the C language with a procedural code. It does not integrate a concept of classes but provides the mechanisms needed to write code in an object-oriented style. The code is brief and clear, KISS-oriented (Keep It Simple, Stupid). We will see how to use this language to build a web application with the **Buffalo** framework.
 
 Package "http/net"
 -------------
 
 Package documentation: [https://golang.org/pkg/net/http/](https://golang.org/pkg/net/http/).
 
-To start, we are going to create a server http that will listen on the `8001` entry.
+First of all, we are going to create an http server that will listen on the `8001` entry.
 
 ```go
 package main
@@ -46,13 +46,13 @@ func main() {
 }
 ```
 
-To start the server, just run the file `main.go` with the command:
+To start the server, just run the file `main.go` with the following command:
 
 ```
 go run main.go
 ```
 
-If you try to make an http request on `127.0.0.1:8001`, the server will return you a `404` since the path is not specified. To remedy this problem, it is necessary to implement a handler on `/`.
+If you try to make an http request on `127.0.0.1:8001`, the server will return you a `404` since the path is not specified. To solve this problem, it's necessary to implement a handler on `/`.
 
 ```go
 // Handle registers the handler for the given pattern
@@ -69,7 +69,7 @@ type Handler interface {
 }
 ```
 
-A handler needs an object of type `ResponseWriter` and query. We will create a `handler` method. Here, for a REST API, the response must be in JSON format. We will therefore add to the header the content-type JSON and return JSON content. The `ResponseWriter` and `Write` method takes a byte array as a parameter. So we cast our string containing JSON to the bytes format with the `byte[](string)` method.
+A handler needs an object of type `ResponseWriter` and query. We will create a `handler` method. Here, for a REST API, the response must be in JSON format. We will therefore add to the header the content-type JSON and return JSON content. The `ResponseWriter` and `Write` method take a byte array as a parameter. So we cast our string containing JSON to the bytes format with the `byte[](string)` method.
 
 ```go
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -147,8 +147,8 @@ buffalo new api --api --skip-pop
 This command created the `api` folder. This includes:
 
 * The file `main.go`, this is the entry of the application;
-* The file `actions/` it is the file containing our handlers;
-* The folder `grifts/` this is the folder containing the commands
+* The file `actions/`, it is the file containing our handlers;
+* The folder `grifts/`, this is the folder containing the commands
 
 The rest of the files do not interest us.
 
@@ -341,7 +341,7 @@ We add the route in `app.go`.
 g.POST("/users", ur.Create)
 ```
 
-Now, if you do a `post` on `/api/v1/users`, the api will return a `201` and inform you that the user was created. We will check in our list of users. So we do a `get` on `/api/v1/users` and we see that we have our user in the collection. Finally, we will now do a handler to display a specific user. We will create a handler on the route `/users/{id}`.
+Now, if you do a `post` on `/api/v1/users`, the api will return a `201` and inform you that the user was created. We will check in our list of users. So we do a `get` on `/api/v1/users` and we see that we have our user in the collection. Finally, we will do a handler to display a specific user. We will create it on the route `/users/{id}`.
 
 ```go
 func (ur UserResource) Show(c buffalo.Context) error {
@@ -370,6 +370,6 @@ We attach this new handler to our `app`.
 g.GET("/users/{id}", ur.Show)
 ```
 
-Now we create a user with a `post` on `/api/v1/users` and then we make a `get` on `/api/v1/users/{id}` replacing `{id}` with the `uuid` of the user you just created. The api returns you a 200 code with the user's information.
+Now we create a user with a `post` on `/api/v1/users` and then we make a `get` on `/api/v1/users/{id}` replacing `{id}` with the `uuid` of the user you just created. The api returns you a code 200 with the user's information.
 
-You now have a powerful api database with tools to quickly and easily develop an api in Go. You can find all the documentation and other buffalo features on [http://gobuffalo.io](http://gobuffalo.io).
+From now on you have a powerful api database with tools to quickly and easily develop an api in Go. You can find all the documentation and other buffalo features on [http://gobuffalo.io](http://gobuffalo.io).
