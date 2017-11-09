@@ -3,16 +3,20 @@ layout: post
 title: Microdata ou microdonnées
 lang: fr
 permalink: /fr/microdata-ou-microdonnees/
-excerpt: "A l’heure où tout le monde ne parle que de Big data, je vais tenter de vous présenter les microdata. Ces derniers temps, beaucoup de nouveautés sont apparues pour les intégrateurs web du monde entier tels les microformats, microdata (ou microdonnées en français) ou encore de nouvelles balises sémantiques. Bien que les microformats existent depuis quelques années, l’avènement de la spécification HTML5 a accéléré leur utilisation."
+excerpt: Présentation des microdata ou microdonnées, leur implémentation dans les pages web, et leur utilité pour le SEO ou référencement naturel.
 authors:
- - stephane
-date: '2015-05-11 10:05:07 +0200'
-date_gmt: '2015-05-11 08:05:07 +0200'
+ - seinhorn
+permalink: /fr/microdata-ou-microdonnees/
 categories:
-- Non classé
+    - blog
 tags:
-- microdata
-- bdd
+    - microdata
+    - seo
+
+date: 2015-05-11 10:05:07 +0200
+date_gmt: 2015-05-11 08:05:07 +0200
+
+cover: 
 ---
 
 A l’heure où tout le monde ne parle que de Big data, je vais tenter de vous présenter les microdata.
@@ -21,8 +25,7 @@ Ces derniers temps, beaucoup de nouveautés sont apparues pour les intégrateurs
 
 Bien que les microformats existent depuis quelques années, l’avènement de la spécification HTML5 a accéléré leur utilisation.
 
-Qu'est-ce-que c'est ?
-=====================
+## Qu'est-ce-que les microdata ou microdonnées ?
 
 HTML5 apporte de nouvelles balises pour décrire de manière encore plus précise un contenu. Les nouveaux éléments de section d’une page html (header, section, footer …) et les nouvelles balises (time, video, audio …).
 
@@ -30,21 +33,21 @@ L’utilisation des microdonnées transmises dans vos codes sources participe à
 
 Les microdata ou microdonnées, en français dans le texte, sont un moyen d’associer des libellés à du contenu afin de décrire un type d’information spécifique. Plus simplement, il permet de transmettre des informations sur le contenu et de le préciser.
 
-Quels sont les nouveaux attributs ?
-===================================
+### Quels sont les nouveaux attributs ?
 
--   **itemscope** : il crée un élément et indique que les descendants de cette balise HTML contiennent des informations à son sujet
--   **itemtype** : c’est une URL pointant vers un vocabulaire qui décrit l’élément et ses propriétés
--   **itemid** : c’est un identifiant unique pour l’élément
--   **itemprop** : il est porteur d’une valeur permettant de préciser la nature d’une donnée au sein d’un schéma spécifié précédemment
--   **itemref** : il permet de faire le lien complémentaire entre deux données sans descendance
+- **itemscope** : il crée un élément et indique que les descendants de cette balise HTML contiennent des informations à son sujet
+- **itemtype** : c’est une URL pointant vers un vocabulaire qui décrit l’élément et ses propriétés
+- **itemid** : c’est un identifiant unique pour l’élément
+- **itemprop** : il est porteur d’une valeur permettant de préciser la nature d’une donnée au sein d’un schéma spécifié précédemment
+- **itemref** : il permet de faire le lien complémentaire entre deux données sans descendance
 
-Mais comment ça marche ?
-========================
+### Comment ça marche ?
 
 Pour renseigner ces attributs, un vocabulaire spécifique à chaque type d’identification (société, personne, événement…) est nécessaire. **Schema.org**, initiative commune de **Google**, **Yahoo**, **Bing**, et **Yandex** est devenu la référence sur ce sujet.
 
 Les moteurs de recherche comptent sur ce balisage pour améliorer l'affichage des résultats de recherche, et pour les gens à trouver les pages web les plus pertinentes par rapport à leur recherche.
+
+## Exemples d'utilisation
 
 Nous allons voir un premier exemple que vous avez probablement rencontré dans les résultats de Google.
 
@@ -77,6 +80,8 @@ Voici ce que cela peut donner avec les microdata :
 </div>
 ```
 
+### Notation simple
+
 Maintenant, nous allons voir un exemple d’une notation simple pour une société.
 
 Eleven Labs
@@ -97,7 +102,9 @@ La version HTML avec les microdata :
 </div>
 ```
 
-Ci-dessous un exemple d'une notation imbriquée pour un événement.
+### Notation imbriquée
+
+Ci-dessous un exemple d’une notation imbriquée pour un événement.
 
 Wilson Coding Battlespace
 Bataille de code entre les 4 planètes.
@@ -123,6 +130,8 @@ dans les locaux de
     </p>
 </article>
 ```
+
+### Autre exemple
 
 Voici un exemple d’offre d’emploi issu du site [eleven-labs.com](http://www.eleven-labs.com) :
 
@@ -180,8 +189,7 @@ Voici la version avec les microdata :
 
 En fait tout se joue au niveau du vocabulaire utilisé car plus il est précis et plus vous pourrez donner du sens à votre contenu. Schema.org propose une arborescence et présente une hiérarchie assez profonde qui touche à des domaines très variés. Le principe est simple : plus vous descendez dans l'arborescence, plus le vocabulaire se précisera.
 
-En conclusion
-=============
+## En conclusion
 
 Schema.org propose de nombreux vocabulaires adaptés à beaucoup de situations ainsi qu’une grande souplesse dans son utilisation.
 
@@ -189,8 +197,7 @@ Les principaux moteurs de recherche prennent en charge le vocabulaire schema.org
 
 Pour finir, je ne sais pas de quoi le web sera fait à l'avenir : le Big data, les Microdata... Je ne suis pas médium !
 
-Quelques ressources
-===================
+### Quelques ressources
 
 - [Schema.org](http://schema.org)
 - [Introduction to Structured Data](https://developers.google.com/structured-data/)
