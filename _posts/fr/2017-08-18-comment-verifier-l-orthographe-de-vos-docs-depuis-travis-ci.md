@@ -117,7 +117,7 @@ Ensuite, depuis le script exécuté sur Travis, une fois que vous avez les résu
 curl -i -H "Authorization: token $GITHUB_TOKEN" \
     -H "Content-Type: application/json" \
     -X POST -d "{\"body\":\"$ASPELL_RESULTS\"}" \
-    https://api.github.com/repos/eleven-labs/eleven-labs.github.io/issues/$TRAVIS_PULL_REQUEST/comments
+    https://api.github.com/repos/eleven-labs/blog.eleven-labs.com/issues/$TRAVIS_PULL_REQUEST/comments
 ```
 
 - Le token Github doit être caché et non pas en dur dans votre script, vous devez donc ajouter une variable d'environnement dans les paramètres Travis. Pour cela, allez sur cette page : [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings)
@@ -126,10 +126,10 @@ curl -i -H "Authorization: token $GITHUB_TOKEN" \
 Conclusion
 ==========
 
-Si vous voulez voir le script entier qui nous utilisons pour notre blog, c'est par [ici](https://github.com/eleven-labs/eleven-labs.github.io/blob/master/bin/check-spelling.sh).
+Si vous voulez voir le script entier qui nous utilisons pour notre blog, c'est par [ici](https://github.com/eleven-labs/blog.eleven-labs.com/blob/master/bin/check-spelling.sh).
 
 J'espère que ces astuces vous aideront ! Notez que vous pouvez aussi utiliser ce même process pour vérifier vos doc blocks dans votre code, ou vos fichiers de documentation.
 
-Nous améliorerons très certainement ces scripts et vérifications automatiques lors des prochaines semaines, suivez donc [le repository de notre blog sur Github](https://github.com/eleven-labs/eleven-labs.github.io), pour voir les prochaines mises à jour.
+Nous améliorerons très certainement ces scripts et vérifications automatiques lors des prochaines semaines, suivez donc [le repository de notre blog sur Github](https://github.com/eleven-labs/blog.eleven-labs.com), pour voir les prochaines mises à jour.
 
 Vos idées d'améliorations sont également les bienvenues : vous pouvez ajouter des commentaires ci-dessous ;)

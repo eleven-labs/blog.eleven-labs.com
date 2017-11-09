@@ -172,7 +172,7 @@ Dans notre layout principal nous ajoutons le code suivant dans le `head` :
 ```
 {% endraw %}
 
-Si vous le souhaitez, vous pouvez voir la pull request [ici](https://github.com/eleven-labs/eleven-labs.github.io/pull/211).
+Si vous le souhaitez, vous pouvez voir la pull request [ici](https://github.com/eleven-labs/blog.eleven-labs.com/pull/211).
 
 ### Le mot de la fin
 

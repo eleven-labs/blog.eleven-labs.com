@@ -81,6 +81,6 @@ echo -e "$BLUE>> Sending results in a comment on the Github pull request #$TRAVI
 curl -i -H "Authorization: token $GITHUB_TOKEN" \
     -H "Content-Type: application/json" \
     -X POST -d "{\"body\":\"$COMMENT\"}" \
-    https://api.github.com/repos/eleven-labs/eleven-labs.github.io/issues/$TRAVIS_PULL_REQUEST/comments
+    https://api.github.com/repos/eleven-labs/blog.eleven-labs.com/issues/$TRAVIS_PULL_REQUEST/comments
 
 exit 0
