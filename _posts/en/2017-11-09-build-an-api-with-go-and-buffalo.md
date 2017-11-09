@@ -261,7 +261,7 @@ By default, there is the `routes` command that allows you to see all routes and 
 buffalo task routes
 ```
 
-Now that buffalo has been presented, we will create new routes. You can find all the code on my github https://github.com/qneyrat/api](https://github.com/qneyrat/api).
+Now that buffalo has been presented, we will create new routes. You can find all the code on my github [https://github.com/qneyrat/api](https://github.com/qneyrat/api).
 
 We will manage a new resource for our api, the `user` resource. Create the `models` folder and in it the `user.go` file. We will state a `User` structure composed of an `ID`.
 
