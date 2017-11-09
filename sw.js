@@ -4,22 +4,29 @@ layout: compress-js
 (function() {
   'use strict';
 
-  const CACHE_NAME_PREFIX = '{{ site.title | slugify }}-cache-';
+  const trailingSlashReg = /\/$/;
+  const CACHE_NAME_PREFIX = '{{ site.title | slugify }}-{{ site.lang | slugify }}-cache-';
   const CACHE_NAME = `${CACHE_NAME_PREFIX}{{ site.time | date: "%s" }}`;
 
   const filesToCache = [
     {% for page in site.pages %}
-    {% if page.url != '/sw.js' %}'{{ page.url | relative_url }}',{% endif %}
+    {% if page.url == '/' or page.url contains '/amp/' or page.url contains '/page/' %}
+    '{{ page.url | prepend: site.baseurl }}',
+    {% elsif page.url != '/sw.js' %}
+    '{{ page.url | prepend: site.baseurl_root }}',
+    {% endif %}
     {% endfor %}
 
     {% for post in site.posts %}
-    '{{ post.url | relative_url }}',
+    '{{ post.url | prepend: site.baseurl }}',
     {% endfor %}
 
     {% for file in site.static_files %}
-    '{{ file.path | relative_url }}',
+    {% unless file.path contains '/assets/' %}
+    '{{ file.path | prepend: site.baseurl_root }}',
+    {% endunless %}
     {% endfor %}
-  ];
+  ].map(file => file.replace(trailingSlashReg, ''));
 
   self.addEventListener('install', (e) => {
     self.skipWaiting();
@@ -42,7 +49,7 @@ layout: compress-js
   // Network falling back to the cache strategy
   self.addEventListener('fetch', (e) => {
     e.respondWith(fetch(e.request)
-      .catch(() => caches.match(e.request))
+      .catch(() => caches.match(e.request.url.replace(trailingSlashReg, '')))
     );
   });
 })();
