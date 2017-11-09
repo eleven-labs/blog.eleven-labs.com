@@ -24,6 +24,11 @@ layout: compress-js
     }
 
     index.search(searchInput.value, (err, content) => {
+      if (err) {
+        console.error(err.message);
+        return;
+      }
+
       let htmlArticle = Object.keys(content.hits).reduce((article, key) => {
         const hit = content.hits[key];
 

@@ -15,13 +15,17 @@ layout: compress-js
     {% for post in site.posts %}
     '{{ post.url | relative_url }}',
     {% endfor %}
+
+    {% for file in site.static_files %}
+    '{{ file.path | relative_url }}',
+    {% endfor %}
   ];
 
   self.addEventListener('install', (e) => {
     self.skipWaiting();
     e.waitUntil(caches
       .open(CACHE_NAME)
-      .then(cache => cache.addAll(filesToCache))
+      .then(cache => Promise.all(filesToCache.map(file => cache.add(file))))
     );
   });
 
