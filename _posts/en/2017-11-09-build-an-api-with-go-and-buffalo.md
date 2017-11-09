@@ -19,8 +19,8 @@ The Go language has quickly become very popular, but there are still some people
 
 The greatest feature of the Go language is its simplicity of writing. The syntax is inspired by the C language with a procedural code. It does not integrate a concept of classes but provides the mechanisms needed to write code in an object-oriented style. The code is brief and clear, KISS-oriented (Keep It Simple, Stupid). We will see how to use this language to build a web application with the **Buffalo** framework.
 
-Package "http/net"
--------------
+
+### Package "http/net"
 
 Package documentation: [https://golang.org/pkg/net/http/](https://golang.org/pkg/net/http/).
 
@@ -92,16 +92,16 @@ This time, if we launch the server and make an http request on `127.0.0.1:8001`,
 
 This package is very low level and quite annoying to use. The community has therefore made available various overlays, especially at the level of routing to make development easier.
 
-PRESENTATION OF BUFFALO
--------------
+
+### Buffalo framework
+
+> Buffalo documentaion on [http://gobuffalo.io](http://gobuffalo.io).
 
 Buffalo is a library that makes web development with Go easier. It mainly uses the Gorilla libraries [https://github.com/gorilla](https://github.com/gorilla).
 
 To install buffalo run the command:
 
-```
-go get -u -v github.com/gobuffalo/buffalo/buffalo
-```
+`go get -u -v github.com/gobuffalo/buffalo/buffalo`
 
 After buffalo is installed:
 
