@@ -170,7 +170,7 @@ aws s3api put-bucket-policy --bucket "blog.eleven-labs.com" --policy "{\"Version
 ### Déploiement depuis Travis CI
 
 Notre bucket est maintenant prêt à servir le blog, il ne nous reste plus qu'à y uploader les fichiers buildés à chaque
-merge sur la branche master du [repository](https://github.com/eleven-labs/eleven-labs.github.io) grâce à Travis CI.
+merge sur la branche master du [repository](https://github.com/eleven-labs/blog.eleven-labs.com) grâce à Travis CI.
 Nous utilisons déjà Travis CI pour l'intégration et le déploiement continus du blog, notamment pour la
 [vérification de l'orthographe]({{ '/fr/comment-verifier-l-orthographe-de-vos-docs-depuis-travis-ci/' | prepend: site.baseurl | replace: '//', '/' }})
 dans les PR mais également la création et l'upload à Algolia des données permettant la recherche dans le blog.

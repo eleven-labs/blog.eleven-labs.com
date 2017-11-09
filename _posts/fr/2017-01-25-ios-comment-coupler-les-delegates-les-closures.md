@@ -21,11 +21,11 @@ Salut les Astronautes, aujourd'hui on va continuer dans notre lancée sur le mob
 
 Cet article s'inscrit dans la lignée des 2 précédents, et il est impératif de les avoir lu pour comprendre ce dont il s'agit ici :
 
-[Delegates VS Closures](https://eleven-labs.github.io/fr/delegates-closures/)  
-[Pourquoi j'aime les listeners](https://eleven-labs.github.io/fr/android-listeners/)
+[Delegates VS Closures](https://blog.eleven-labs.com/fr/delegates-closures/)
+[Pourquoi j'aime les listeners](https://blog.eleven-labs.com/fr/android-listeners/)
 
-Si vous avez lu les 2 précédents articles, vous devez vous douter de ce dont celui-ci va parler.  
--Mais oui on sait, allez dépêche-toi là, on veut savoir comment faire un truc aussi sexy que les listeners mais sur iOS cette fois-ci.  
+Si vous avez lu les 2 précédents articles, vous devez vous douter de ce dont celui-ci va parler.
+-Mais oui on sait, allez dépêche-toi là, on veut savoir comment faire un truc aussi sexy que les listeners mais sur iOS cette fois-ci.
 -Ok, juste encore un petit peu de blabla technique et on se lance.
 
 **Comment ça va se passer :**
@@ -46,7 +46,7 @@ Notre but ici est de réaliser une classe qui fait un GET sur une URL donnée. J
 
 On va agir en 3 étapes:
 
--Créer un protocol  
+-Créer un protocol
 -Créer des blocks/closures
 -Créer une classe qui hérite du protocole et qui a nos 2 blocks/closures en variables.
 
@@ -146,12 +146,12 @@ Puis on va faire une méthode pour appeler notre webservice
 }
 ```
 
-On va un peu regarder ensemble ce que l'on a codé.  
-- On a instancié notre **Manager,** qui va appeler le webservice  
-- On a définit nos deux **blocks/closures**  
-- On a instancié notre **Delegate**  
-- On a assigné nos deux **blocks/closures**  
-- On a assigné le **Delegate** au Manager  
+On va un peu regarder ensemble ce que l'on a codé.
+- On a instancié notre **Manager,** qui va appeler le webservice
+- On a définit nos deux **blocks/closures**
+- On a instancié notre **Delegate**
+- On a assigné nos deux **blocks/closures**
+- On a assigné le **Delegate** au Manager
 - On appelle le webservice
 
 Je vous donne le code Swift pour les plus impatients
@@ -223,23 +223,23 @@ Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a 
 
 #### Mais pourquoi faire tout ça ?
 
-En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un **Delegate** ou des **blocks/closures** comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...  
+En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un **Delegate** ou des **blocks/closures** comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...
 Comme je vous l'ai dit au début de l'article, cette solution vient pour un besoin assez spécifique. Celui de rendre un **Delegate** plus flexible quand on est obligé de passer par ce pattern.
 
 **Problèmes soulevés**
 
--Si le **Protocol** contient beaucoup de méthodes, on en a beaucoup à ré-implémenter.  
--On doit aussi définir tous les **blocks/closures** correspondants.  
+-Si le **Protocol** contient beaucoup de méthodes, on en a beaucoup à ré-implémenter.
+-On doit aussi définir tous les **blocks/closures** correspondants.
 -Il faut redéfinir les **blocks/closures** pour chaque appel.
 
 **Gains apportés**
 
--Des delegates plus flexibles  
--Du code localisé  
--Des méthodes réduites  
+-Des delegates plus flexibles
+-Du code localisé
+-Des méthodes réduites
 -Une gestion plus fine des retours du **Delegate**
 
-Cette solution n'est pas parfaite, mais reste assez élégante et n'est pas trop lourde à mettre en place.  
+Cette solution n'est pas parfaite, mais reste assez élégante et n'est pas trop lourde à mettre en place.
 Après, je vous laisse tester et me dire ce que vous en pensez dans les commentaires.
 
 Allez, salut les astronautes :)

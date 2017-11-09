@@ -15,7 +15,7 @@ tags:
 cover: /assets/2017-10-24-openpgp-clef-secrete-yubikey-partie-2/cover.jpg
 ---
 
-We saw in the previous article [the generation of OpenPGP keys](/fr/openpgp-paire-clef-presque-parfaite-partie-1/). 
+We saw in the previous article [the generation of OpenPGP keys](/fr/openpgp-paire-clef-presque-parfaite-partie-1/).
 As a reminder, we have in our keychain private keys:
 
 ```bash
@@ -35,7 +35,7 @@ We also exported the keys in files:
 
 With this configuration, we have an effective strategy against theft or loss of the private key that is used for certification.
 If an attacker take the computer, he will not be able to certify another key. However, the private keys that allow
-to sign, encrypt and authenticate are still present on the computer. So, in case of the theft of the keys, it would be possible 
+to sign, encrypt and authenticate are still present on the computer. So, in case of the theft of the keys, it would be possible
 to sign messages during a certain time (the time that the stolen subkey is revoked).
 
 To counter this attack, it is possible to place private keys in a smart card. These devices are
@@ -46,11 +46,11 @@ a Yubikey 4.
 
 ### Yubikey, what is it?
 
-Yubikey is a device the size of a classic USB key. This key makes it possible to perform double authentication on website, 
-such as Google or Github. Thus, if a person is in possession of both the email and the password of the victim, the attacker 
+Yubikey is a device the size of a classic USB key. This key makes it possible to perform double authentication on website,
+such as Google or Github. Thus, if a person is in possession of both the email and the password of the victim, the attacker
 will not be able to connect without this usb key. This is the principle of double authentication, you must be in possession of two secrets.
-   
-Yubikey implements an open protocol: *universal 2nd factor*. 
+
+Yubikey implements an open protocol: *universal 2nd factor*.
 
 In addition to this main protocol, it supports others: OpenPGP, TOTP, HOTP, challenge-response.
 
@@ -81,7 +81,7 @@ wilson@spaceship:~$ sudo apt-get install -y gnupg-agent pinentry-curses scdaemon
 Before using the Yubikey, check that the warranty tape has not been broken. If so, do not use it.
 
 Insert the Yubikey into a USB port and type the following command to verify that the card is well recognized.
- 
+
 ```bash
 wilson@spaceship:~$ gpg2 --card-status
 Reader ...........: 1050:0407:X:0
@@ -192,17 +192,17 @@ There is NO WARRANTY, to the extent permitted by law.
 Secret key is available.
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
-gpg> 
+gpg>
 ```
 
 Let's export the encryption key to `B73A9C79`.
@@ -211,14 +211,14 @@ Let's export the encryption key to `B73A9C79`.
 gpg> key 1
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb* rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 ```
 
@@ -234,20 +234,20 @@ Please select where to store the key:
 Your selection? 2
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb* rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 ```
 
 gpg will ask you for the password of the secret encryption key and then the admin pin code of the Yubikey key.
-Once the Yubikey admin pin code entered, the secret encryption key is in the Yubikey. We can check it right after 
+Once the Yubikey admin pin code entered, the secret encryption key is in the Yubikey. We can check it right after
 moving the other two keys.
 
 Let's select the signature key. Deselect the first key and select the second.
@@ -256,32 +256,32 @@ Let's select the signature key. Deselect the first key and select the second.
 gpg> key 1
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
 gpg> key 2
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb* rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
-gpg> 
+gpg>
 ```
 
 The second key is well selected because there is the small asterisk in front of the key `9CC8B2FB`.
@@ -296,18 +296,18 @@ Please select where to store the key:
 Your selection? 1
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb* rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
-gpg> 
+gpg>
 ```
 
 It's ok for the second key. Repeat with the third.
@@ -316,29 +316,29 @@ It's ok for the second key. Repeat with the third.
 gpg> key 2
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
 gpg> key 3
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb* rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
 gpg> keytocard
@@ -347,19 +347,19 @@ Please select where to store the key:
 Your selection? 3
 
 pub  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
      card-no: 0006 06476495
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb* rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
-gpg> 
-``` 
+gpg>
+```
 
 We are done. Type `save` and` quit`.
 
@@ -424,17 +424,17 @@ If you have multiple Yubikeys, it will be easy to find the one you are looking f
 
 ### Conclusion
 
-Through these first two articles, we covered the creation of an OpenPGP key and the export of secrets on a smart card. 
+Through these first two articles, we covered the creation of an OpenPGP key and the export of secrets on a smart card.
 The use of a smart card provides additional protection against the theft of secret keys.
-It will not be enough to hack the computer to steal them, but it will be necessary to physically steal 
-the key and the associated PIN code to use the secret keys. Moreover, as seen in the introduction, the secret 
+It will not be enough to hack the computer to steal them, but it will be necessary to physically steal
+the key and the associated PIN code to use the secret keys. Moreover, as seen in the introduction, the secret
 key cannot be extracted. Our key is well protected, except against the human factor which remains the only threat.
 
-In addition, you can distribute your public key on [a key server](https://pgp.mit.edu/) and other services (GitHub, Kraken, keybase.io). 
-This allows you to receive encrypted messages, and [sign your commits](https://help.github.com/articles/signing-commits-using-gpg/) 
-on GitHub (example on this commit [31dd621](https : //github.com/eleven-labs/eleven-labs.github.io/commit/31dd621db58a7ee1428bc9615c23e74d5ac98c3f)).
+In addition, you can distribute your public key on [a key server](https://pgp.mit.edu/) and other services (GitHub, Kraken, keybase.io).
+This allows you to receive encrypted messages, and [sign your commits](https://help.github.com/articles/signing-commits-using-gpg/)
+on GitHub (example on this commit [31dd621](https://github.com/eleven-labs/blog.eleven-labs.com/commit/31dd621db58a7ee1428bc9615c23e74d5ac98c3f)).
 
-In a future article, we will set up a backup strategy to cover for the potential loss of secret keys. An error can quickly happen, 
+In a future article, we will set up a backup strategy to cover for the potential loss of secret keys. An error can quickly happen,
 like erasing your computer following a ransomware.
 
 ### Resources
@@ -456,5 +456,5 @@ like erasing your computer following a ransomware.
 
 This tutorial uses a Yubikey for storing secrets. Yubikey is the most popular key in the general public, especially
 for the second authentication factor feature. There are other keys that support OpenPGP such as [NitroKey](https://www.nitrokey.com/).
-Unlike the Yubikey, the NitroKey is open-source. Security with closed and proprietary hardware is not a viable solution in the long term. 
+Unlike the Yubikey, the NitroKey is open-source. Security with closed and proprietary hardware is not a viable solution in the long term.
 It's also contradictory to the OpenPGP spirit, that aims to be open. However, I chose the Yubikey for its ease of implementation and its ability to do double authentication.
