@@ -15,16 +15,7 @@ tags:
 cover: /assets/2017-07-26-construire-une-api-en-go/cover.jpg
 ---
 
-BUILD AN API WITH GO AND BUFFALO
-===================
-
 The Go language has quickly become very popular, but there are still some people reluctant to use it for the development of their new apps. We will see here how to build a REST API quickly and easily.
-
-----------
-
-
-Introduction
--------------
 
 The greatest feature of the Go language is its simplicity of writing. The syntax is inspired by the C language with a procedural code. It does not integrate a concept of classes but provides the mechanisms needed to write code in an object-oriented style. The code is brief and clear, KISS-oriented (Keep It Simple, Stupid). We will see how to use this language to build a web application with the **Buffalo** framework.
 
