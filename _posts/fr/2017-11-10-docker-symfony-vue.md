@@ -265,7 +265,7 @@ snc_redis:
 ```
 Voilà qui est fait pour la partie docker et symfony. Nous allons maintenant passer à la partie Vue.sj
 
-## FRONTEND: Vue.js
+## FRONTEND : Vue.js
 Si vous n’êtes pas familier avec Vue.js, vous pouvez visiter la [page officielle du framework](https://vuejs.org). Vous trouverez des tutoriels très bien faits et traduits en français.
 
 Tout d’abord, initialisons notre gestionnaire de package :
@@ -684,7 +684,7 @@ mounted() {
 
 Et voilà, vous pouvez maintenant faire communiquer votre application Symfony avec Vue.js
 
-## EXTRA UN SCRIPT POUR SE SIMPLIFIER LA VIE
+## EXTRA : UN SCRIPT POUR SE SIMPLIFIER LA VIE
 Voici un petit extra pour se simplifier la vie. Comme vous avez pu le voir, pour l’installation de bundle, nous devions écrire une commande assez longue donc pour ne pas la réécrire entièrement, je vous propose de créer un script dédié à notre projet.
 Nous définissons dans un premier temps la fonction d'entrée et la fonction d’information sur l'usage comme ceci :
 ```bash
