@@ -4,7 +4,6 @@ layout: compress-js
 (function() {
   'use strict';
 
-  const trailingSlashReg = /\/$/;
   const CACHE_NAME_PREFIX = '{{ site.title | slugify }}-{{ site.lang | slugify }}-cache-';
   const CACHE_NAME = `${CACHE_NAME_PREFIX}{{ site.time | date: "%s" }}`;
 
@@ -26,7 +25,7 @@ layout: compress-js
     '{{ file.path | prepend: site.baseurl_root }}',
     {% endunless %}
     {% endfor %}
-  ].map(file => file.replace(trailingSlashReg, ''));
+  ];
 
   self.addEventListener('install', (e) => {
     self.skipWaiting();
@@ -49,7 +48,9 @@ layout: compress-js
   // Network falling back to the cache strategy
   self.addEventListener('fetch', (e) => {
     e.respondWith(fetch(e.request)
-      .catch(() => caches.match(e.request.url.replace(trailingSlashReg, '')))
-    );
+      .catch(err => caches
+        .match(e.request)
+        .then(response => response || Promise.reject(err))
+      ));
   });
 })();
