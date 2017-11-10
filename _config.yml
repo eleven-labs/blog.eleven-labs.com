@@ -30,8 +30,8 @@ theme_settings:
     description: A website with blog posts and pages
 
     # Header and footer text
-    header_text_fg_image: img/fg-header.png
-    header_text_bg_image: img/bg-header.png
+    header_text_fg_image: /img/fg-header.png
+    header_text_bg_image: /img/bg-header.png
     footer_text: To infinity and beyond !
 
     # Icons
@@ -71,7 +71,7 @@ theme_settings:
 
 # PAGINATION
 paginate: 10
-paginate_path: "/page/:num"
+paginate_path: "/page/:num/"
 
 # BUILD SETTINGS
 markdown: kramdown

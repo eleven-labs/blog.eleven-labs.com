@@ -3,8 +3,8 @@ layout: default
 ---
 
 <div class="home">
-    <div class="call-out" style="background-image: url('{{ site.baseurl_root }}/{{ site.theme_settings.header_text_bg_image }}')">
-        <img src="{{ site.baseurl_root }}/{{ site.theme_settings.header_text_fg_image }}" />
+    <div class="call-out" style="background-image: url('{{ site.theme_settings.header_text_bg_image | prepend: site.baseurl_root }}')">
+        <img src="{{ site.theme_settings.header_text_fg_image | prepend: site.baseurl_root }}" alt="{{ site.title }}">
     </div>
 
     <div class="posts">
@@ -38,7 +38,7 @@ layout: default
     {% if paginator.total_pages > 1 %}
         <div class="pagination" style="margin-bottom:2em;">
             {% if paginator.previous_page %}
-                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="button">
+                <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button">
                     <i class="fa fa-chevron-left"></i>
                     {% translate global.prev %}
                 </a>
@@ -48,14 +48,14 @@ layout: default
                 {% if page == paginator.page %}
                     {{ page }}
                 {% elsif page == 1 %}
-                    <a href="/{{ site.baseurl }}">{{ page }}</a>
+                    <a href="{{ "/" | prepend: site.baseurl }}">{{ page }}</a>
                 {% else %}
-                    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+                    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: ':num', page }}">{{ page }}</a>
                 {% endif %}
             {% endfor %}
 
             {% if paginator.next_page %}
-                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="button">
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button">
                     {% translate global.next %}
                     <i class="fa fa-chevron-right"></i>
                 </a>
