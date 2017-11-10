@@ -18,10 +18,8 @@ cover: /assets/2017-11-10-docker-symfony-vue/cover.jpg
 
 Dans cette article nous allons vous montrer comment mettre en place une application web avec symfony et Vue.js dans un environnement docker. À la fin de cette article vous aurez un projet prêt au développement, mais vous pouvez également retrouver le projet sur le github d’Eleven-labs sur ce dépôt [eleven-labs/docker-symfony-vuejs](https://github.com/eleven-labs/docker-symfony-vuejs)  
 
-## BACKEND : DOCKER & SYMFONY
-Nous allons tout d’abord mettre en place l’application Symfony en version 3.3.x sous un environnement docker. 
-
-Pour la mise en place de l'environnement docker nous allons nous baser sur le projet de Maxence POUTORD disponible sur son [GitHub](https://github.com/maxpou/docker-symfony) et nous allons apporter quelques modifications. 
+## ENVIRONEMENT : Docker
+Pour l'environement nous allons nous baser sur le projet de Maxence POUTORD disponible sur son [GitHub](https://github.com/maxpou/docker-symfony) et nous allons apporter quelques modifications.
 Dans un premier temps nous changeons de base de donnée pour passer sur  [PostgreSQL](https://www.postgresql.org). Pour ce faire nous modifions le fichier `docker-compose.yml` se trouvant à la racine de notre projet :
 
 ```yaml
@@ -47,7 +45,7 @@ php:
 # ...
 ```
 
-Ensuite nous ajoutons à notre stack Node JS pour Vue.js ainsi que Redis pour la gestion des session. Toujours dans le fichier `docker-compose.yml` :
+Ensuite nous ajoutons à notre stack Node JS pour Vue.js ainsi que Redis pour la gestion des sessions. Toujours dans le fichier `docker-compose.yml` :
 ```yaml
 # …
 
@@ -59,8 +57,8 @@ node:
 	volumes:
 		- ${SYMFONY_APP_PATH}:/var/www/symfony
 	command: bash -c "yarn && yarn dev"
-``` 
-Avant dernière étape, nous créons le Dockerfile pour node dans le répertoire `docker/node` :
+```
+Puis nous créeons le Dockerfile pour Node JS dans le répertoire `docker/node` :
 ```dockerfile
 FROM node:8
 
@@ -77,7 +75,7 @@ RUN apt-get update && apt-get install yarn
 WORKDIR /var/www/symfony
 ```
 
-Enfin, nous modifions le Dockerfile de PHP qui se trouve dans le répertoire `docker/php7-fpm` pour installer la librairie cliente de PostgreSQL [libpq-dev](https://www.postgresql.org/docs/9.5/static/libpq.html) ainsi que l’exention [pdo_pgsql](http://php.net/manual/en/ref.pdo-pgsql.php) pour PHP :
+Enfin nous modifions le Dockerfile de PHP qui se trouve dans le répertoire `docker/php7-fpm` pour installer la librairie cliente de PostgreSQL [libpq-dev](https://www.postgresql.org/docs/9.5/static/libpq.html) ainsi que l’extension [pdo_pgsql](http://php.net/manual/en/ref.pdo-pgsql.php) pour PHP :
 ```dockerfile
 # ...
 RUN apt-get update && \
@@ -94,7 +92,7 @@ RUN docker-php-ext-install pdo pdo_pgsql
 ```
 Dans le même fichier, nous en profitons aussi pour supprimer l’alias de la commande pour Symfony 2 `RUN echo 'alias sf="php app/console"' >> ~/.bashrc`
 
-Avant de passer à l’installation de Symfony nous redéfinition nos variables du fichier `.env.dist` se trouvant à la racine du projet :
+Et nous mettons à jour nos variables du fichier `.env.dist` se trouvant à la racine du projet :
 ```dotenv
 # PATH DIR
 SYMFONY_APP_PATH=./
@@ -122,32 +120,16 @@ SMTP_TRANSPORT=
 #REDIS
 REDIS_DNS=
 ```
-Nous ajoutons le fichier `.editorconfig` à la racine de notre projet pour configurer les IDEs avec nos règles d’écritures : 
 
-```
-root = true
+## BACKEND : Symfony
+Maintenant que notre environnement est prêt nous installons Symfony, je vous invite à suivre le [tutoriel officiel sur le site de symfony](https://symfony.com/doc/current/setup.html).
+Nous allons personnaliser Symfony pour notre projet et pour ce faire nous supprimons l'appel à trois scripts exécutés lors du `composer install ` ou du `composer update`, qui se trouvent dans le fichier `composer.json` à la racine du projet. Qui sont :
 
-[*]
-charset = utf-8
-indent_style = space
-end_of_line = lf
-insert_final_newline = true
-trim_trailing_whitespace = true
+- `installRequirementsFile`
+- `prepareDeploymentTarget`,
+- `buildParameters`.
 
-[*.{js,vue}]
-indent_size = 2
-
-[*.php]
-indent_size = 4
-```
-
-Maintenant que notre environnement est prêt nous installons Symfony, je vous invite à suivre le [tutoriel officiel sur le site de symfony](https://symfony.com/doc/current/setup.html). 
-Nous allons personnaliser Symfony pour notre projet et pour ce faire nous supprimons trois commande exécuter après `composer install ` ou `composer update` dans le `composer.json` se trouvant à la racine du projet:
-- L’installation des fichiers requis, pour ne pas réécrire le fichier `app_dev.php` par exemple,
-- La préparation au déploiement car nous ne l’utiliserons pas,
-- Et la construction du fichier `parameters.yml` grâce au fichier `parameters.yml.dist` car nos variable sont contenu dans le fichier `.env`
-Ce que nous donne les modification suivante dans `scripts`:
-
+Ce qui nous donne :
 ```json
 // …
 {
@@ -165,7 +147,7 @@ Ce que nous donne les modification suivante dans `scripts`:
 
 // ...
 ```
-Nous pouvons donc supprimer les lignes de contrôle d’accès uniquement à `localhost` du fichier `app_dev.php` qui se trouve dans `web/` (:waring: ce fichier ne devra plus se trouver dans un environnement de production):
+Nous pouvons donc supprimer les lignes de contrôle d’accès du fichier `app_dev.php` qui se trouvent dans `web/` (ATTENTION: ce fichier ne devra plus se trouver dans un environnement de production) :
 ```php
 <?php
 
@@ -181,7 +163,7 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 
 // ...
 ```
-Nous pouvons aussi supprimer le fichier `web/config.php` car notre environnement reste constant grâce à docker. Et nous pouvons aussi supprimer le fichier `app/config/parameters.yml.dist`, puis éditer le fichier `app/config/parameters.yml` comme ceci :
+Nous pouvons supprimer les fichiers `web/config.php` et `app/config/parameters.yml.dist`, et éditer le fichier `app/config/parameters.yml` comme ceci :
 ```yaml
 parameters:
     # Database parameters
@@ -205,13 +187,13 @@ parameters:
     redis_options: ~
     session_ttl: 86400
 ```
-Notre projet est installé et personnalisé. Il ne reste plus qu’à installer quelques bundles :
+Notre projet est installer et personnalisé, il ne reste plus qu'à installer quelques bundle :
 - friendsofsymfony/rest-bundle, pour la mise en place rapide d’une API REST
 - jms/serializer-bundle, pour faciliter la sérialisation et désérialisation des données
-- predis/predis et snc/redis-bundle, pour la communication avec Redis et la gestion des sessions
+- predis/predis et snc/redis-bundle, pour la communication avec redis et la gestion des sessions
 - (optionnel) doctrine/doctrine-fixtures-bundle, pour générer des données
 
-En une commande nous les installons `docker-compose exec -T --user www-data php composer require friendsofsymfony/rest-bundle jms/serializer-bundle predis/predis snc/redis-bundle doctrine/doctrine-fixtures-bundle`
+Avec cette commande, nous les installons `docker-compose exec -T --user www-data php composer require friendsofsymfony/rest-bundle jms/serializer-bundle predis/predis snc/redis-bundle doctrine/doctrine-fixtures-bundle`
 
 Nous les référençons dans `app/AppKernel.php` :
 ```php
@@ -234,7 +216,7 @@ class AppKernel extends Kernel
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             // ...
             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-	
+
 	// ..
         }
 // ...
@@ -280,12 +262,12 @@ snc_redis:
         prefix: app_session_
         ttl: '%session_ttl%'
 ```
-Voilà qui est fait pour la parti docker et symfony nous allons donc passer à la partie Vue.js
+Voilà qui est fait pour la partie docker et symfony nous allons donc passer à la partie Vue.sj
 
 ## FRONTEND: Vue.js
 Si vous n’êtes pas familier avec Vue.js, vous pouvez visiter la [page officielle du framework](https://vuejs.org). Vous trouverez des tutoriels très bien fait et traduits en français.
 
-Tout d’abord initialisons notre gestionnaire de package: 
+Tout d’abord initialisons notre gestionnaire de package:
 ```bash
 symfony-vue $ yarn init
 yarn init v1.3.2
@@ -328,7 +310,7 @@ Pour nous permettre d’utiliser ES6 tout en restant compatible, nous utilisons 
   ],
 }
 ```
-Et pour gérer nos différents bundles nous utilisons Webpack. Voici notre configuration: 
+Et pour gérer nos différents bundles nous utilisons Webpack. Voici notre configuration:
 ```javascript
 /* app/config/webpack.config.js */
 
@@ -413,7 +395,7 @@ module.exports = {
 ```
 Nous avons aussi configuré Webpack pour utiliser SASS.
 
-Nous pouvons ajouter les scripts suivant à notre package.json pour lancer et builder notre application: 
+Nous pouvons ajouter les scripts suivant à notre package.json pour lancer et builder notre application:
 
 ```json
 /* package.json */
@@ -426,7 +408,7 @@ Nous pouvons ajouter les scripts suivant à notre package.json pour lancer et bu
 ```
 Comme vous pouvez le voir, nous avons deux entrypoints différents dans notre configuration Webpack. De ces deux entrypoints, Webpack va générer deux bundles. De cette façon, nous allons pouvoir intégrer des applications Vue.js à différentes pages Twig.
 
-Pour cet exemple, nous allons créer un composant “message” que nous allons appeler dans deux pages différentes. 
+Pour cet exemple, nous allons créer un composant “message” que nous allons appeler dans deux pages différentes.
 Créons d’abord notre composant, qui prend en propriété “text”:
 ```javascript
 /* src/AppBundle/Resources/js/components/message/index.vue */
@@ -492,7 +474,7 @@ export const vm = new Vue({
 });
 ```
 
-Puis nous appelons notre application dans la page Twig: 
+Puis nous appelons notre application dans la page Twig:
 {% raw %}
 ```twig
 /* src/AppBundle/Resources/views/App/index.html.twig */
@@ -506,7 +488,7 @@ Puis nous appelons notre application dans la page Twig:
 ```
 {% endraw %}
 
-Nous faisons de même pour la page 2: 
+Nous faisons de même pour la page 2:
 
 ```javascript
 /* src/AppBundle/Resources/js/page2/index.vue */
@@ -564,7 +546,7 @@ Parfois nous avons besoin d’envoyer des informations de Symfony vers Vue.js. S
 
 Commençons par le Data Layout. Le Data Layout est un objet déclaré globalement, qui sera donc accessible par notre template Twig, et notre application Vue.js.
 
-Nous allons d’abord définir un objet dataLayout au niveau le plus haut de nos template Twig: 
+Nous allons d’abord définir un objet dataLayout au niveau le plus haut de nos template Twig:
 
 {% raw %}
 ```twig
@@ -702,10 +684,8 @@ mounted() {
 Et voilà, vous pouvez maintenant faire communiquer votre application Symfony avec Vue.js
 
 ## EXTRA UN SCRIPT POUR SE SIMPLIFIER LA VIE
-Voici un petit extra pour se simplifier la vie. Comme vous avez pu le voir pour l’installation de bundles, nous devons écrire une commande assez longue. Donc pour ne pas la réécrire entièrement je vous propose de créer un script pour simplifier vos commandes.
-Dans une script `bash` nous allons définir des fonctions qui pourront être exécutées pour des actions dans notre projet.
-Nous définissons dans un premier temps la fonction d'entrée et la fonction d’usage comme ceci :
-
+Voici un petit extra pour se simplifier la vie. Comme vous avez pu le voir, pour l’installation de bundle, nous devions écrire une commande assez longue donc pour ne pas la réécrire entièrement, je vous propose de créer un script dédié  à notre projet.
+Nous définissons dans un premier temps la fonction d'entrée et la fonction d’information sur l'usage comme ceci :
 ```bash
 #!/bin/bash
 
@@ -746,8 +726,9 @@ main ()
 
 main $@
 ```
-Ensuite nous implémentons nos fonctions. Je vais prendre uniquement l’exemple de composer mais vous pouvez retrouver l'intégralité du script [ici](https://github.com/eleven-labs/docker-symfony-vuejs/master/bin/app).
-```bash 
+Ensuite nous implémentons nos fonctions, je vais prendre uniquement
+l’exemple de `composer`, mais vous pouvez retrouver l'intégralité du script [ici](https://github.com/eleven-labs/docker-symfony-vuejs/master/bin/app).
+```bash
 #!/bin/bash
 
 # …
@@ -762,8 +743,7 @@ composer ()
 # …
 ```
 
-Et voilà le tour est joué, maintenant au lieu d’écrire `docker-compose exec -T --user www-data php compose [repositor/bundleName]`, nous écrirons `bin/app compose [repository/bundleName]`
+Et voilà le tour est joué ! maintenant au lieu d’écrire `docker-compose exec -T --user www-data php compose [repositor/bundleName]`, nous écrirons `bin/app compose [repository/bundleName]`
 
 ## EN CONCLUSION
 Vous disposez maintenant d’un projet configuré pour utiliser la puissance de Symfony et la simplicité de Vue.js. N’hésitez pas à nous poser des questions ou à nous laisser un commentaire !
-
