@@ -16,7 +16,7 @@ tags:
 cover: /assets/2017-11-10-docker-symfony-vue/cover.jpg
 ---
 
-Dans cette article nous allons vous montrer comment mettre en place une application web avec symfony et Vue.js dans un environnement docker. À la fin de cette article vous aurez un projet prêt au développement, mais vous pouvez également retrouver le projet sur le github d’Eleven-labs sur ce dépôt [eleven-labs/docker-symfony-vuejs](https://github.com/eleven-labs/docker-symfony-vuejs)  
+Dans cette article nous allons vous montrer comment mettre en place une application web avec symfony et Vue.js dans un environnement docker. À la fin de cette article vous aurez un projet prêt au développement, mais vous pouvez également retrouver le projet sur le github d’Eleven-labs sur ce dépôt [eleven-labs/docker-symfony-vue](https://github.com/eleven-labs/docker-symfony-vue)
 
 ## ENVIRONEMENT : Docker
 Pour l'environement nous allons nous baser sur le projet de Maxence POUTORD disponible sur son [GitHub](https://github.com/maxpou/docker-symfony) et nous allons apporter quelques modifications.
@@ -148,6 +148,7 @@ Ce qui nous donne :
 // ...
 ```
 Nous pouvons donc supprimer les lignes de contrôle d’accès du fichier `app_dev.php` qui se trouvent dans `web/` (ATTENTION: ce fichier ne devra plus se trouver dans un environnement de production) :
+
 ```php
 <?php
 
@@ -187,7 +188,7 @@ parameters:
     redis_options: ~
     session_ttl: 86400
 ```
-Notre projet est installer et personnalisé, il ne reste plus qu'à installer quelques bundle :
+Notre projet est installer et personnalisé, il ne reste plus qu'à installé quelques bundles :
 - friendsofsymfony/rest-bundle, pour la mise en place rapide d’une API REST
 - jms/serializer-bundle, pour faciliter la sérialisation et désérialisation des données
 - predis/predis et snc/redis-bundle, pour la communication avec redis et la gestion des sessions
@@ -727,7 +728,7 @@ main ()
 main $@
 ```
 Ensuite nous implémentons nos fonctions, je vais prendre uniquement
-l’exemple de `composer`, mais vous pouvez retrouver l'intégralité du script [ici](https://github.com/eleven-labs/docker-symfony-vuejs/master/bin/app).
+l’exemple de `composer`, mais vous pouvez retrouver l'intégralité du script [ici](https://github.com/eleven-labs/docker-symfony-vue/master/bin/app).
 ```bash
 #!/bin/bash
 
@@ -743,7 +744,7 @@ composer ()
 # …
 ```
 
-Et voilà le tour est joué ! maintenant au lieu d’écrire `docker-compose exec -T --user www-data php compose [repositor/bundleName]`, nous écrirons `bin/app compose [repository/bundleName]`
+Et voilà le tour est joué ! maintenant au lieu d’écrire `docker-compose exec -T --user www-data php compose [repository/bundleName]`, nous écrirons `bin/app compose [repository/bundleName]`
 
 ## EN CONCLUSION
 Vous disposez maintenant d’un projet configuré pour utiliser la puissance de Symfony et la simplicité de Vue.js. N’hésitez pas à nous poser des questions ou à nous laisser un commentaire !
