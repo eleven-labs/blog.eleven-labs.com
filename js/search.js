@@ -8,6 +8,7 @@ layout: compress-js
   const index = client.initIndex('blog_eleven');
 
   const searchInput = document.getElementById('js-algolia__input');
+  const baseurl = window.site && window.site.baseurl;
   const lang = window.site && window.site.lang;
   moment.locale(lang || 'en');
 
@@ -37,19 +38,21 @@ layout: compress-js
         }
 
         const dateFormat = lang === 'fr' ? 'DD MMMM YYYY' : 'MMMM DD, YYYY';
-
         const hitDate = moment(hit.date, 'YYYY-MM-DD HH:mm:ss ZZ');
+
+        const url = baseurl + hit.url;
+
         return article + `
           <div class="posts-teaser slice">
             <div class="container">
               <h2 class="posts-title">
-                <a class="no-link-style" href="${hit.url}">${hit.title}</a>
+                <a class="no-link-style" href="${url}">${hit.title}</a>
               </h2>
               <time class="posts-date meta">
                 <span class="meta-content">${hitDate.format(dateFormat)}</span>
               </time>
               <p class="excerpt">${hit.excerpt}</p>
-              <a class="button" href="${hit.url}">${window.site.translations.global.continue_reading}</a>
+              <a class="button" href="${url}">${window.site.translations.global.continue_reading}</a>
             </div>
           </div>
         `;
