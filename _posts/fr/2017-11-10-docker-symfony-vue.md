@@ -18,7 +18,7 @@ cover: /assets/2017-11-10-docker-symfony-vue/cover.jpg
 
 Dans cette article nous allons vous montrer comment mettre en place une application web avec symfony et Vue.js dans un environnement docker. À la fin de cet article vous aurez un projet prêt au développement. Vous pouvez également retrouver le projet sur le github d’Eleven-labs sur ce dépôt [eleven-labs/docker-symfony-vue](https://github.com/eleven-labs/docker-symfony-vue)
 
-## ENVIRONEMENT : Docker
+## ENVIRONNEMENT : Docker
 Pour l'environement nous allons nous baser sur le projet de Maxence POUTORD disponible sur son [GitHub](https://github.com/maxpou/docker-symfony) auquel nous allons apporter quelques modifications.
 Dans un premier temps nous changeons de base de données pour passer sur  [PostgreSQL](https://www.postgresql.org). Pour ce faire nous modifions le fichier `docker-compose.yml` se trouvant à la racine de notre projet :
 
@@ -58,6 +58,7 @@ node:
 		- ${SYMFONY_APP_PATH}:/var/www/symfony
 	command: bash -c "yarn && yarn dev"
 ```
+
 Puis nous créons le Dockerfile pour Node JS dans le répertoire `docker/node` :
 ```dockerfile
 FROM node:8
@@ -136,7 +137,7 @@ Ce qui nous donne :
 "deploy-scripts": [
 	"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
 	"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-	"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets
+	"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
 ],
 "symfony-scripts": [
 	"@deploy-scripts"
@@ -175,7 +176,7 @@ parameters:
     database_password: '%env(POSTGRES_PASSWORD)%'
 
     # Mailer parameters
-    mailer_transport: %env(SMTP_TRANSPORT)%
+    mailer_transport: '%env(SMTP_TRANSPORT)%'
     mailer_host: '%env(SMTP_HOST)%'
     mailer_user: '%env(SMTP_USER)%'
     mailer_password: '%env(SMTP_PASSWORD)%'
@@ -263,6 +264,7 @@ snc_redis:
         prefix: app_session_
         ttl: '%session_ttl%'
 ```
+
 Voilà qui est fait pour la partie docker et symfony. Nous allons maintenant passer à la partie Vue.sj
 
 ## FRONTEND : Vue.js
@@ -311,6 +313,7 @@ Pour nous permettre d’utiliser ES6 tout en restant compatible, nous utilisons 
   ],
 }
 ```
+
 Et pour gérer nos différents bundles nous utilisons Webpack. Voici notre configuration :
 ```javascript
 /* app/config/webpack.config.js */
@@ -410,6 +413,7 @@ Nous pouvons ajouter les scripts suivants à notre package.json pour lancer et b
 Comme vous pouvez le voir, nous avons deux entrypoints différents dans notre configuration Webpack. De ces deux entrypoints, Webpack va générer deux bundles. De cette façon, nous allons pouvoir intégrer des applications Vue.js à différentes pages Twig.
 
 Pour cet exemple, nous allons créer un composant “message” que nous allons appeler dans deux pages différentes.
+
 Créons d’abord notre composant, qui prend en propriété “text” :
 ```javascript
 /* src/AppBundle/Resources/js/components/message/index.vue */
@@ -435,8 +439,8 @@ export default {
 </style>
 
 ```
-Appelons-le dans notre page 1 :
 
+Appelons-le dans notre page 1 :
 ```javascript
 /* src/AppBundle/Resources/js/page1/index.vue */
 <template>
@@ -727,6 +731,7 @@ main ()
 
 main $@
 ```
+
 Ensuite nous implémentons nos fonctions. Je vais prendre uniquement l’exemple de `composer`, mais vous pouvez retrouver l'intégralité du script [ici](https://github.com/eleven-labs/docker-symfony-vue/master/bin/app).
 ```bash
 #!/bin/bash
