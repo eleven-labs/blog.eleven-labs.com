@@ -1,5 +1,6 @@
 <script type="text/javascript">
     window.site = {
+        baseurl: '{{ site.baseurl }}',
         lang: '{{ site.lang }}',
         translations: {{ site.translations[site.lang] | jsonify }},
         sw: '{{ "/sw.js" | prepend: site.baseurl }}',
