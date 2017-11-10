@@ -18,7 +18,7 @@ cover: /assets/2017-11-10-docker-symfony-vue/cover.jpg
 
 Dans cette article nous allons vous montrer comment mettre en place une application web avec symfony et Vue.js dans un environnement docker. À la fin de cet article vous aurez un projet prêt au développement. Vous pouvez également retrouver le projet sur le github d’Eleven-labs sur ce dépôt [eleven-labs/docker-symfony-vue](https://github.com/eleven-labs/docker-symfony-vue)
 
-## ENVIRONEMENT : Docker
+## ENVIRONNEMENT : Docker
 Pour l'environement nous allons nous baser sur le projet de Maxence POUTORD disponible sur son [GitHub](https://github.com/maxpou/docker-symfony) auquel nous allons apporter quelques modifications.
 Dans un premier temps nous changeons de base de données pour passer sur  [PostgreSQL](https://www.postgresql.org). Pour ce faire nous modifions le fichier `docker-compose.yml` se trouvant à la racine de notre projet :
 
@@ -136,7 +136,7 @@ Ce qui nous donne :
 "deploy-scripts": [
 	"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
 	"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-	"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets
+	"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
 ],
 "symfony-scripts": [
 	"@deploy-scripts"
@@ -175,7 +175,7 @@ parameters:
     database_password: '%env(POSTGRES_PASSWORD)%'
 
     # Mailer parameters
-    mailer_transport: %env(SMTP_TRANSPORT)%
+    mailer_transport: '%env(SMTP_TRANSPORT)%'
     mailer_host: '%env(SMTP_HOST)%'
     mailer_user: '%env(SMTP_USER)%'
     mailer_password: '%env(SMTP_PASSWORD)%'
