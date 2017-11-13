@@ -8,10 +8,35 @@
   font-size: 1.2rem;
   text-align: center;
   width: 100%;
+}
 
-  p:last-child {
-    margin-bottom: 0;
+.home-logo {
+  display: inline-block;
+  margin: 1rem 0;
+  position: relative;
+  width: 100%;
+
+  svg {
+    fill: $white;
+    max-width: 100%;
   }
+}
+
+.home-title {
+    bottom: 1vw;
+    color: $white;
+    font-family: $font-family-headings;
+    font-size: 5vw;
+    font-weight: 700;
+    right: 8vw;
+    position: absolute;
+    text-transform: uppercase; 
+    text-shadow: $dusty-gray 1px 1px 1px, $dusty-gray -1px 1px 1px, $dusty-gray -1px -1px 1px, $dusty-gray 1px -1px 1px;
+
+    @media (min-width: 992px) {
+      bottom: 0;
+      right: 6vw;
+    } 
 }
 
 .offline-ready {

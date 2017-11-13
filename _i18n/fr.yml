@@ -1,3 +1,7 @@
+theme_settings:
+    # Meta
+    title: Le Blog
+
 global:
   also_read: À lire aussi
   author_by: par

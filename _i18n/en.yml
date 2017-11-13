@@ -1,3 +1,7 @@
+theme_settings:
+    # Meta
+    title: Blog
+
 global:
   also_read: You can also read
   author_by: by

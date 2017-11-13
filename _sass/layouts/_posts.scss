@@ -31,14 +31,29 @@ article {
     background-size: $feature-image-size;
     color: $feature-image-text-color;
     margin-bottom: 0;
-    padding: $padding-large / 2.5 $padding-large;
+    padding: $padding-large / 2 $padding-small;
 
+    @media (min-width: 1024px) {
+      padding: $padding-large / 2.5 $padding-large;
+    }
+ 
     .meta::before {
       background-color: transparent;
     }
 
     .author-link {
-      color: $brand-color;
+      background-color: $author-link;
+      color: $brand-black;
+      display: inline-block;
+      line-height: 1;
+      padding: .2rem .5rem;
+      text-decoration: none; 
+      text-shadow: none;
+
+      &:hover {
+        background-color: $brand-yellow;
+        color: $brand-black; 
+      }
     }
   }
 }
