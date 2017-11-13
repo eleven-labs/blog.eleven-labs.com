@@ -51,7 +51,7 @@ $ npm install -g ionic
 $ ionic start myApp [starter]
 ```
 
-L’équipe Ionic met à disposition une multitude de starters pour démarrer un projet : [Ionic Starter](https://github.com/driftyco?utf8=%E2%9C%93&query=starter)
+L’équipe Ionic met à disposition une multitude de starters pour démarrer un projet : [Ionic Starter](https://github.com/driftyco?utf8=%E2%9C%93&query=starter){:target="_blank" rel="nofollow"}
 
 Il est aussi possible d’utiliser l’url d’un CodePen, par exemple :
 
@@ -92,8 +92,8 @@ Vous obtiendrez un fichier compressé et optimisé à déposer sur le store.
 
 **Quelques liens utiles**
 
-- [Ionic cheatsheet](http://devdactic.com/wp-content/uploads/2015/02/ionic-cheatsheet.png)
-- [100 Ionic framework resources](http://mcgivery.com/100-ionic-framework-resources/)
-- [Ionic CodePen](http://codepen.io/ionic/)
-- [Ionic Github](https://github.com/driftyco/ionic)
-- [Ionic-cli Github](https://github.com/driftyco/ionic-cli)
+- [Ionic cheatsheet](http://devdactic.com/wp-content/uploads/2015/02/ionic-cheatsheet.png){:target="_blank" rel="nofollow"}
+- [100 Ionic framework resources](http://mcgivery.com/100-ionic-framework-resources/){:target="_blank" rel="nofollow"}
+- [Ionic CodePen](http://codepen.io/ionic/){:target="_blank" rel="nofollow"}
+- [Ionic Github](https://github.com/driftyco/ionic){:target="_blank" rel="nofollow"}
+- [Ionic-cli Github](https://github.com/driftyco/ionic-cli){:target="_blank" rel="nofollow"}

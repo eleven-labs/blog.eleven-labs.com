@@ -15,7 +15,7 @@ tags:
 - symfony2
 ---
 
-La documentation de Symfony2 explique très bien ce que c'est qu'un [service et le conteneur de dépendances](http://symfony.com/fr/doc/current/book/service_container.html). Mais dans une application on a souvent besoin d'injecter plusieurs services ou paramètres. Vous vous êtes déjà dit que c'était plus simple d'injecter le container de service directement plutôt que d'injecter toutes les dépendances les unes après les autres ? Voici les "pour" et les "contre".
+La documentation de Symfony2 explique très bien ce que c'est qu'un [service et le conteneur de dépendances](http://symfony.com/fr/doc/current/book/service_container.html){:target="_blank" rel="nofollow"}. Mais dans une application on a souvent besoin d'injecter plusieurs services ou paramètres. Vous vous êtes déjà dit que c'était plus simple d'injecter le container de service directement plutôt que d'injecter toutes les dépendances les unes après les autres ? Voici les "pour" et les "contre".
 
 Pourquoi ne pas le faire ?
 ==========================
@@ -68,4 +68,4 @@ class MyExtension extends \Twig_Extension
 
 Note : les extensions Twig ne bénéficient pas du lazy loading, et sont donc toujours chargées, même si vous lancez une commande. Puisqu’il n'y a pas de Request dans une commande, nous avons besoin de vérifier son existence avant d’essayer d'y accéder.
 
-**EDIT** : Depuis symfony 2.4, un nouveau scope, "request\_stack", a été introduit (cf [l'article de Fabien Potencier](http://symfony.com/blog/new-in-symfony-2-4-the-request-stack)). Le problème décrit ci-dessus ne se pose donc plus.
+**EDIT** : Depuis symfony 2.4, un nouveau scope, "request\_stack", a été introduit (cf [l'article de Fabien Potencier](http://symfony.com/blog/new-in-symfony-2-4-the-request-stack)){:target="_blank" rel="nofollow"}. Le problème décrit ci-dessus ne se pose donc plus.

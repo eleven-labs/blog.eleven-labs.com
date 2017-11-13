@@ -56,7 +56,7 @@ Il nous a donné 8 clefs pour faire fonctionner les CoP en interne.
 Jean-Claude Grosjean a conclu que les CoP sont plus compliquées à mettre en place niveau agile.
 Cela me permet de faire un parallèle avec note fonctionnement chez Eleven Labs. Nous avons un système planétaire : les salariés sont tous dans quatre planètes différentes. Cependant, nous ne sommes pas affectés par intérêt commun mais par hasard. Cela étant dit, si un jour les planètes viennent à être réformées ou si des guildes d’intérêt commun naissent au sein des planètes, nous disposeront alors d'un modèle proche de ces CoP !
 
-Vous pouvez trouver ses slides [ici](http://www.slideshare.net/jcgrosjean/une-communaut-de-pratiques-agile-qui-marche?ref=http://www.qualitystreet.fr/2016/11/24/les-cles-dune-communaute-agile-qui-marche/)
+Vous pouvez trouver ses slides [ici](http://www.slideshare.net/jcgrosjean/une-communaut-de-pratiques-agile-qui-marche?ref=http://www.qualitystreet.fr/2016/11/24/les-cles-dune-communaute-agile-qui-marche/){:target="_blank" rel="nofollow"}
 
 ## "Kata des représentations systémiques", par Arnaud Gervais
 
@@ -78,7 +78,7 @@ Dans la mise en pratique, nous avons pris l’exemple d’un membre d’équipe 
 
 Ce workshop était très intéressant car il nous a permis de mapper des problèmes, et de travailler directement sur ces derniers, de les dédramatiser et d’éviter les conflits d’opinion, comme l’a très bien dit Arnaud Gervais à la suite de ce workshop. On se rend ainsi compte de l’étendue qu’un petit problème peut avoir sur l’ensemble d’un projet ou d’une structure juste en mappant ces problèmes.
 
-Vous pouvez trouver ses slides [ici](http://www.slideshare.net/ArnaudGervais/prgrinations-dun-coach-agile-explorateur-en-systmique).
+Vous pouvez trouver ses slides [ici](http://www.slideshare.net/ArnaudGervais/prgrinations-dun-coach-agile-explorateur-en-systmique){:target="_blank" rel="nofollow"}.
 
 ## "JTBD", par Ricardo Tome
 

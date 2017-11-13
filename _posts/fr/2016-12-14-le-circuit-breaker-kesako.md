@@ -62,10 +62,10 @@ Nous allons suivre le pattern suivant.
 
 Ce dont nous avons besoin :
 
- - un [event](http://symfony.com/doc/current/event_dispatcher.html) permettant d'envoyer le statut de la communication
- - un [listener](http://symfony.com/doc/current/event_dispatcher.html) permettant de récupérer l'événement précédent
- - un [service](http://symfony.com/doc/current/service_container.html) permettant de connaitre le statut du circuit-breaker
- - un [cache](https://symfony.com/blog/new-in-symfony-3-1-cache-component) permettant de stocker les informations du circuit-breaker
+ - un [event](http://symfony.com/doc/current/event_dispatcher.html){:target="_blank" rel="nofollow"} permettant d'envoyer le statut de la communication
+ - un [listener](http://symfony.com/doc/current/event_dispatcher.html){:target="_blank" rel="nofollow"} permettant de récupérer l'événement précédent
+ - un [service](http://symfony.com/doc/current/service_container.html){:target="_blank" rel="nofollow"} permettant de connaitre le statut du circuit-breaker
+ - un [cache](https://symfony.com/blog/new-in-symfony-3-1-cache-component){:target="_blank" rel="nofollow"} permettant de stocker les informations du circuit-breaker
 
 Nous allons commencer par l'event, pour cela rien de plus simple : nous devons envoyer le nom du service et le statut de la communication.
 
@@ -751,4 +751,4 @@ Vous n'avez plus qu'à utiliser votre circuit-breaker. Voici un exemple avec une
     }
 ```
 
-Pour aller plus loin, je vous invite à lire [Release-It](https://www.amazon.com/Release-Production-Ready-Software-Pragmatic-Programmers/dp/0978739213), dans lequel vous pourrez trouver une superbe explication d'un circuit-breaker.
+Pour aller plus loin, je vous invite à lire [Release-It](https://www.amazon.com/Release-Production-Ready-Software-Pragmatic-Programmers/dp/0978739213){:target="_blank" rel="nofollow"}, dans lequel vous pourrez trouver une superbe explication d'un circuit-breaker.

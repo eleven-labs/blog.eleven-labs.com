@@ -22,13 +22,13 @@ Il existe aujourd'hui de nombreuses aides à la mise en place des ChatBots conve
 
 ### J'écris un chatbot sans code
 
-DialogFlow c'est avant tout une interface qui va vous permettre d'utiliser l'intelligence de Google. Ce que DialogFlow contient est assez simple, il s'agit de [l'API Cloud Natural Language](https://cloud.google.com/natural-language/?hl=fr) qui permet de reconnaître des phrases envoyées par l'utilisateur. Avec les phrases récupérées et un peu de machine learning, Google reconnaît la phrase, et lance en adéquation une action proposée par votre configuration.
+DialogFlow c'est avant tout une interface qui va vous permettre d'utiliser l'intelligence de Google. Ce que DialogFlow contient est assez simple, il s'agit de [l'API Cloud Natural Language](https://cloud.google.com/natural-language/?hl=fr){:target="_blank" rel="nofollow"} qui permet de reconnaître des phrases envoyées par l'utilisateur. Avec les phrases récupérées et un peu de machine learning, Google reconnaît la phrase, et lance en adéquation une action proposée par votre configuration.
 
 En bref, l'utilisateur propose une phrase, Google cherche parmi les "intents" que vous avez configurés et effectue l'action que vous avez proposée.
 
 Maintenant que l'on connaît le fonctionnement basique, nous allons créer notre premier chatbot.
 
-Je vous invite à aller sur la console de DialogFlow disponible [ici](https://console.dialogflow.com). Nous allons créer notre premier "Agent" [ici](https://console.dialogflow.com/api-client/#/newAgent).
+Je vous invite à aller sur la console de DialogFlow disponible [ici](https://console.dialogflow.com). Nous allons créer notre premier "Agent" [ici](https://console.dialogflow.com/api-client/#/newAgent){:target="_blank" rel="nofollow"}.
 
 ![dialogflow-agent](/assets/2017-11-06-chatbot-dialogflow/dialogflow-agent.png)
 
@@ -46,7 +46,7 @@ Vous pouvez y mettre un "context" d'entrée et de sortie. Cela permet de garder 
 
 Exemple : Votre utilisateur demande une recette de cuisine, vous répondez avec un context *recette*, vous mettez alors *recette* dans l'output context. Puis dans un autre intent vous prenez le context *recette* dans input context. L'ensemble des paramètres contenus dans l'intent précédent seront en entrée de l'intent. Votre utilisateur pourra alors demander le temps de cuisson et vous saurez à quelle recette il fait référence.
 
-Pour plus d'explications vous pouvez allez sur la documentation [ici](https://dialogflow.com/docs/contexts).
+Pour plus d'explications vous pouvez allez sur la documentation [ici](https://dialogflow.com/docs/contexts){:target="_blank" rel="nofollow"}.
 
 **- User says**
 
@@ -54,11 +54,11 @@ Vous y renseignez les phrases possibles en entrée de votre intent. C'est aussi 
 
 C'est aussi dans user says que Google vous propose des *entities* que nous verrons plus tard.
 
-La documentation est [ici](https://dialogflow.com/docs/intents).
+La documentation est [ici](https://dialogflow.com/docs/intents){:target="_blank" rel="nofollow"}.
 
 **- Events**
 
-Permet d'invoquer l'intent via un trigger, nous ne l'utiliserons pas dans ce tutoriel mais pour plus d'informations vous pouvez lire la documentation [ici](https://dialogflow.com/docs/events).
+Permet d'invoquer l'intent via un trigger, nous ne l'utiliserons pas dans ce tutoriel mais pour plus d'informations vous pouvez lire la documentation [ici](https://dialogflow.com/docs/events){:target="_blank" rel="nofollow"}.
 
 **- Actions**
 
@@ -68,7 +68,7 @@ Quand vous sélectionnez des *entities* dans les phrases utilisateurs, elles son
 
 Lorsqu'un paramètre est obligatoire, DialogFlow vous propose d'ajouter une réponse si votre utilisateur est entré dans l'intent sans avoir renseigné le paramètre.
 
-Vous pouvez trouver d'autres précisions dans la documentation [ici](https://dialogflow.com/docs/actions-and-parameters).
+Vous pouvez trouver d'autres précisions dans la documentation [ici](https://dialogflow.com/docs/actions-and-parameters){:target="_blank" rel="nofollow"}.
 
 **- Responses**
 
@@ -154,7 +154,7 @@ Il s'agit d'une simple url que DialogFlow appellera lors d'un intent. Vous pouve
 
 Il s'agit d'un éditeur de code qui met cela directement dans une *function* Firebase.  Ce qui est pratique, c'est que vous n'avez pas à réfléchir sur le déploiement de votre code ! Google le fait pour vous, et vous n'avez pas non plus à faire la structure de base du code, elle est déjà prête.
 
-Vous trouverez toutes les informations sur les *Fulfillment* sur la documentation [ici](https://dialogflow.com/docs/fulfillment).
+Vous trouverez toutes les informations sur les *Fulfillment* sur la documentation [ici](https://dialogflow.com/docs/fulfillment){:target="_blank" rel="nofollow"}.
 
 Il ne vous reste plus qu'à activer le *Fulfillment* sur votre intent.
 Commençons par activer le *Fulfillment* Inline Editor.
@@ -190,7 +190,7 @@ Vous pouvez faire beaucoup de choses avec vos webhooks, l'entrée du webhook c'e
 
 ![dialogflow-json2](/assets/2017-11-06-chatbot-dialogflow/dialogflow-json2.png)
 
-La sortie c'est un objet json que vous pouvez retrouver [ici](https://dialogflow.com/docs/fulfillment#response).
+La sortie c'est un objet json que vous pouvez retrouver [ici](https://dialogflow.com/docs/fulfillment#response){:target="_blank" rel="nofollow"}.
 
 ### Déployons sur un outil de chat
 
@@ -215,7 +215,7 @@ Il vous permet de voir combien vous avez eu d'appels en général et sur chaque 
 
 ![dialogflow-analytics](/assets/2017-11-06-chatbot-dialogflow/dialogflow-analytics.png)
 
-La documentation est assez riche [ici](https://dialogflow.com/docs/analytics).
+La documentation est assez riche [ici](https://dialogflow.com/docs/analytics){:target="_blank" rel="nofollow"}.
 
 Et pour terminer, comme DialogFlow c'est aussi du machine learning, vous pouvez suivre ce dernier dans la section *Training* dans votre menu de gauche.
 

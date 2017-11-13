@@ -199,7 +199,7 @@ Don't hesitate to share your own retrospectives experiences by commenting below.
 
 **Sources :**
 
-- [Sprint Retrospective Meeting](http://scrumtrainingseries.com/SprintRetrospectiveMeeting/SprintRetrospectiveMeeting.htm){:target="_blank"}
-- [Retrospective Wiki](http://retrospectivewiki.org/){:target="_blank"}
-- [Retrospective Agiles](http://retrospectives-agiles.fr/){:target="_blank"}
-- [Inspect and Adapt](http://www.scaledagileframework.com/inspect-and-adapt/){:target="_blank"}
+- [Sprint Retrospective Meeting](http://scrumtrainingseries.com/SprintRetrospectiveMeeting/SprintRetrospectiveMeeting.htm){:target="_blank" rel="nofollow"}{:target="_blank"}
+- [Retrospective Wiki](http://retrospectivewiki.org/){:target="_blank" rel="nofollow"}{:target="_blank"}
+- [Retrospective Agiles](http://retrospectives-agiles.fr/){:target="_blank" rel="nofollow"}{:target="_blank"}
+- [Inspect and Adapt](http://www.scaledagileframework.com/inspect-and-adapt/){:target="_blank" rel="nofollow"}{:target="_blank"}

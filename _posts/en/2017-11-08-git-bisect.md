@@ -38,7 +38,7 @@ To simplify my explanation of `git bisect`, I'm going to use the following histo
 Imagine that those commits have been deployed to production. After a few moments, someone notices that something's wrong. One of the functionalities is broken.
 The problem is immediately brought to developers and they have to isolate the cause of the bug. They only have one clue: everything was fine before the last deployment.
  
-Git takes away the boredom of testing our commits one by one with `git bisect`. This command does a [binary search](https://en.wikipedia.org/wiki/Binary_search_algorithm) in our history.
+Git takes away the boredom of testing our commits one by one with `git bisect`. This command does a [binary search](https://en.wikipedia.org/wiki/Binary_search_algorithm){:target="_blank" rel="nofollow"} in our history.
 
 ![](/assets/2017-10-26-debugging-with-git/binary_search.jpg)
 

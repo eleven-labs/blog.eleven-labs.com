@@ -47,7 +47,7 @@ As you can see, we'll have 3 Docker machines:
 
 We'll also add on our two nodes a Docker container with Registrator image that will facilitate the discovery of Docker containers into Consul.
 
-For more information about Registrator, you can visit: [https://gliderlabs.com/registrator/](https://gliderlabs.com/registrator/).
+For more information about Registrator, you can visit: [https://gliderlabs.com/registrator/](https://gliderlabs.com/registrator/){:target="_blank" rel="nofollow"}.
 Let's start to install our architecture!
 
 # Service discovery
@@ -118,7 +118,7 @@ $ docker run -d \
     consul://$(docker-machine ip consul):8500
 ```
 
-Here, you can notice that we share the host Docker socket in the container. This solution could be a [controversial](https://www.lvh.io/posts/dont-expose-the-docker-socket-not-even-to-a-container.html) solution but in our example case, forgive me about that ;)
+Here, you can notice that we share the host Docker socket in the container. This solution could be a [controversial](https://www.lvh.io/posts/dont-expose-the-docker-socket-not-even-to-a-container.html) solution but in our example case, forgive me about that ;){:target="_blank" rel="nofollow"}
 
 If you want to register services to Consul I recommend to register them using the Consul API in order to keep control on what's added in your Consul.
 
@@ -210,7 +210,7 @@ http-ip.service.consul. 0 IN A 192.168.99.102
 In other words, a kind of load balancing will be done on one of these services when you'll try to join them `http://http-ip.service.consul`.
 
 Ok, but what about the load balancing repartition? Are we able to define a priority and/or weight for each services?
-Sadly, the answer is no, actually. An issue is currently opened about that on Github in order to bring this support. You can find it here: [https://github.com/hashicorp/consul/issues/1088](https://github.com/hashicorp/consul/issues/1088).
+Sadly, the answer is no, actually. An issue is currently opened about that on Github in order to bring this support. You can find it here: [https://github.com/hashicorp/consul/issues/1088](https://github.com/hashicorp/consul/issues/1088){:target="_blank" rel="nofollow"}.
 
 Indeed, if we look in details about `SRV`  DNS record type, here is what we get:
 
@@ -250,7 +250,7 @@ $ docker kill \
     $(docker ps -q --filter='ancestor=ekofr/http-ip')
 ```
 
-Registrator brings us some environment variables in order to add some Health Check for our containers into Consul and you can see the full list here: [http://gliderlabs.com/registrator/latest/user/backends/#consul](http://gliderlabs.com/registrator/latest/user/backends/#consul).
+Registrator brings us some environment variables in order to add some Health Check for our containers into Consul and you can see the full list here: [http://gliderlabs.com/registrator/latest/user/backends/#consul](http://gliderlabs.com/registrator/latest/user/backends/#consul){:target="_blank" rel="nofollow"}.
 
 Idea here is to verify that port 80 is opened and application answers correctly so we'll add a script that simply executes a curl command:
 

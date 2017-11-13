@@ -52,11 +52,11 @@ Là, gitlab est plutot sympa et nous donne déjà plusieurs regex toutes prêtes
 Petit bonus, pour avoir le badge avec le code coverage sur le README, ajouter simplement ces lignes :
 
 ```md
-[![build status](https://gitlab.com/[TEAM]/[PROJECT]/badges/master/build.svg)](https://gitlab.com/[TEAM]/[PROJECT]/commits/master)
+[![build status](https://gitlab.com/[TEAM]/[PROJECT]/badges/master/build.svg)](https://gitlab.com/[TEAM]/[PROJECT]/commits/master){:target="_blank" rel="nofollow"}
 ```
 
 Et voila le résultat
 
 ![gitlab-ci-code-coverage]({{ site.baseurl }}/assets/2016-12-02-gitlab-ci/gitlab-ci-code-coverage-3.png)
 
-Pour plus d'infos : [gitlab-ci: documentation](https://docs.gitlab.com/ee/user/project/pipelines/settings.html#test-coverage-parsing)
+Pour plus d'infos : [gitlab-ci: documentation](https://docs.gitlab.com/ee/user/project/pipelines/settings.html#test-coverage-parsing){:target="_blank" rel="nofollow"}

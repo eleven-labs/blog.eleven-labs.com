@@ -43,7 +43,7 @@ Before going into details, here is a diagram representing the features of our li
 
 As you can see on this diagram, we have four `Queues` defined and each of them has three `Workers`.
 
-Our library (`WorkMQ`, here the central point) will give a [Channel (a Go one)](https://golang.org/ref/spec#Channel_types){:target="_blank"} in which messages will be stored for corresponding queue. These messages will then be processed by the first available worker.
+Our library (`WorkMQ`, here the central point) will give a [Channel (a Go one)](https://golang.org/ref/spec#Channel_types){:target="_blank" rel="nofollow"}{:target="_blank"} in which messages will be stored for corresponding queue. These messages will then be processed by the first available worker.
 
 Configuration
 -------------
@@ -357,7 +357,7 @@ In order to let you have a better visualization of the output, here is a sample:
 Conclusion
 ----------
 
-Before any conclusion, the open-source code of this library is available here: [https://github.com/unikorp/workmq](https://github.com/unikorp/workmq){:target="_blank"}.
+Before any conclusion, the open-source code of this library is available here: [https://github.com/unikorp/workmq](https://github.com/unikorp/workmq){:target="_blank" rel="nofollow"}{:target="_blank"}.
 
 I had two main objectives for this live-coding/workshio session:
 * Allow my participants to write a complete and functional open-source library in three hours,

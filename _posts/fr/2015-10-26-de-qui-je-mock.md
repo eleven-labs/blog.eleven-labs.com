@@ -15,7 +15,7 @@ tags:
 - phpunit
 ---
 
-[PHPUnit](https://phpunit.de/) est un outil de test puissant. Il permet de tester de manière unitaire l'ensemble de son projet.
+[PHPUnit](https://phpunit.de/){:target="_blank" rel="nofollow"} est un outil de test puissant. Il permet de tester de manière unitaire l'ensemble de son projet.
 
 Dans cet article, je vais me concentrer sur les mock et les stub d'objet.
 
