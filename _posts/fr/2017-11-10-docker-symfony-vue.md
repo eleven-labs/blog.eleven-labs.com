@@ -16,11 +16,11 @@ tags:
 cover: /assets/2017-11-10-docker-symfony-vue/cover.jpg
 ---
 
-Dans cette article nous allons vous montrer comment mettre en place une application web avec symfony et Vue.js dans un environnement docker. À la fin de cet article vous aurez un projet prêt au développement. Vous pouvez également retrouver le projet sur le github d’Eleven-labs sur ce dépôt [eleven-labs/docker-symfony-vue](https://github.com/eleven-labs/docker-symfony-vue)
+Dans cet article nous allons vous montrer comment mettre en place une application web avec symfony et Vue.js dans un environnement docker. À la fin de cet article vous aurez un projet prêt au développement. Vous pouvez également retrouver le projet sur le github d’Eleven-labs sur ce dépôt [eleven-labs/docker-symfony-vue](https://github.com/eleven-labs/docker-symfony-vue)
 
 ## ENVIRONNEMENT : Docker
-Pour l'environement nous allons nous baser sur le projet de Maxence POUTORD disponible sur son [GitHub](https://github.com/maxpou/docker-symfony) auquel nous allons apporter quelques modifications.
-Dans un premier temps nous changeons de base de données pour passer sur  [PostgreSQL](https://www.postgresql.org). Pour ce faire nous modifions le fichier `docker-compose.yml` se trouvant à la racine de notre projet :
+Pour l'environnement nous allons nous baser sur le projet de Maxence POUTORD disponible sur son [GitHub](https://github.com/maxpou/docker-symfony) auquel nous allons apporter quelques modifications.
+Dans un premier temps nous changeons de base de données pour passer sur [PostgreSQL](https://www.postgresql.org). Pour ce faire nous modifions le fichier `docker-compose.yml` se trouvant à la racine de notre projet :
 
 ```yaml
 # ...
@@ -263,7 +263,7 @@ snc_redis:
         prefix: app_session_
         ttl: '%session_ttl%'
 ```
-Voilà qui est fait pour la partie docker et symfony. Nous allons maintenant passer à la partie Vue.sj
+Voilà qui est fait pour la partie docker et symfony. Nous allons maintenant passer à la partie Vue.js
 
 ## FRONTEND : Vue.js
 Si vous n’êtes pas familier avec Vue.js, vous pouvez visiter la [page officielle du framework](https://vuejs.org). Vous trouverez des tutoriels très bien faits et traduits en français.
