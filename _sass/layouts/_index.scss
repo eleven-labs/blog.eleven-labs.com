@@ -63,10 +63,6 @@
     display: inline-block;
     margin-bottom: 0;
     width: 100%;
-
-    p a:hover {
-      @extend %link-hover;
-    }
   }
 
   &-title {

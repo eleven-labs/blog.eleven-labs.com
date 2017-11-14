@@ -17,6 +17,7 @@ global:
   prev: Précédent
   reading: Lecture
   rss_follow: Ajoutez-nous à votre veille
+  same_author: Du même auteur
   search_input: Rechercher
   offline_ready: Utilisation hors-ligne disponible
 date:

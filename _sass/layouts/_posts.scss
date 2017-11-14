@@ -9,11 +9,7 @@ article {
   header {
     text-align: center;
   }
-
-  a:hover {
-    @extend %link-hover;
-  }
-
+  
   .footnotes {
     font-size: .9rem;
   }
@@ -44,8 +40,6 @@ article {
 
   .author-link {
     background-color: $author-link;
-    color: $brand-black;
-    display: inline-block;
     line-height: 1;
     padding: .2rem .5rem;
     text-decoration: none;
@@ -53,6 +47,11 @@ article {
 
     &:hover {
       background-color: $brand-yellow;
+    }
+
+    &:hover,
+    &:visited,
+    &:visited:hover {
       color: $brand-black;
     }
   }
