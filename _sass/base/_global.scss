@@ -19,14 +19,6 @@ html {
   font-size: 10px;
 }
 // Typography
-::selection {
-  background: $selection-color;
-}
-
-::-moz-selection {
-  background: $selection-color;
-}
-
 body {
   color: $brand-black;
   font-family: $font-family-headings;
