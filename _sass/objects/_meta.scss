@@ -14,7 +14,6 @@
     font-family: $font-family-headings;
     font-weight: lighter;
     letter-spacing: .05em;
-    line-height: 1.6;
     margin: 0;
     position: relative;
     text-transform: uppercase;
@@ -23,7 +22,7 @@
 
   &::before {
     background-color: $brand-yellow;
-    bottom: -8px;
+    bottom: -6px;
     content: '';
     display: block;
     height: 1.1em;
@@ -31,9 +30,5 @@
     position: absolute;
     width: 108%;
     z-index: 0;
-
-    @media (max-width: 768px) {
-      width: 102%;
-    }
   }
 }

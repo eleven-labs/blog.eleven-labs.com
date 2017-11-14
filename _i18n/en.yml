@@ -1,7 +1,3 @@
-theme_settings:
-    # Meta
-    title: Blog
-
 global:
   also_read: You can also read
   author_by: by
@@ -17,7 +13,6 @@ global:
   prev: Previous
   reading: Reading time
   rss_follow: Add us to your watch
-  same_author: By the same author
   search_input: Search
   offline_ready: Site is Ready for Offline Use
 date:
