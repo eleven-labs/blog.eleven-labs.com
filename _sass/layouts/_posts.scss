@@ -36,24 +36,24 @@ article {
     @media (min-width: 1024px) {
       padding: $padding-large / 2.5 $padding-large;
     }
- 
+
     .meta::before {
       background-color: transparent;
     }
+  }
 
-    .author-link {
-      background-color: $author-link;
+  .author-link {
+    background-color: $author-link;
+    color: $brand-black;
+    display: inline-block;
+    line-height: 1;
+    padding: .2rem .5rem;
+    text-decoration: none;
+    text-shadow: none;
+
+    &:hover {
+      background-color: $brand-yellow;
       color: $brand-black;
-      display: inline-block;
-      line-height: 1;
-      padding: .2rem .5rem;
-      text-decoration: none; 
-      text-shadow: none;
-
-      &:hover {
-        background-color: $brand-yellow;
-        color: $brand-black; 
-      }
     }
   }
 }
