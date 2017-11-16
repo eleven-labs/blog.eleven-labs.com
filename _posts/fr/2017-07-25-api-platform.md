@@ -15,14 +15,14 @@ cover: /assets/2017-07-25-api-platform/cover.jpg
 
 Api Platform se définit comme un « framework PHP pour construire des APIs web modernes ». En effet, cet outil va nous permettre de construire rapidement une API riche et facilement utilisable.  
 Pourquoi réinventer la roue ? Cet outil est accompagné de tout un tas de _features_ comme une documentation automatisée, la gestion des filtres et des tris, et bien d’autres encore.  
-Dans cet article, nous allons voir ensemble la création d’une API avec Api Platform, en parlant de certaines fonctionnalités. Je pars du principe que vous avez déjà installé [Api Platform](https://api-platform.com/docs/){:target="_blank" rel="nofollow"}.
+Dans cet article, nous allons voir ensemble la création d’une API avec Api Platform, en parlant de certaines fonctionnalités. Je pars du principe que vous avez déjà installé [Api Platform](https://api-platform.com/docs/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ## Créons notre API
 
 Dans notre article, nous allons créer une API autour d’une seule ressource : _movie._ En effet, nous allons simplement créer une API permettant d’ajouter, supprimer, mettre à jour et récupérer des films.
 
 La première chose à faire consiste à créer notre modèle de données. Un film est composé d’un titre, d’une date de sortie, d’acteurs, d’un réalisateur… Plusieurs propriétés qui sont connues de tous.
-Si l’on parcourt la documentation d’API Platform, on peut voir qu’il nous est possible de générer nos modèles d’après [Schema.org](http://schema.org). Ce dernier permet d’utiliser un langage commun pour définir des ressources de tous les jours (_Book, Organization_, _Person_…){:target="_blank" rel="nofollow"}, mais est surtout compris par les moteurs de recherche comme Google ou Yahoo.
+Si l’on parcourt la documentation d’API Platform, on peut voir qu’il nous est possible de générer nos modèles d’après [Schema.org](http://schema.org). Ce dernier permet d’utiliser un langage commun pour définir des ressources de tous les jours (_Book, Organization_, _Person_…){:target="_blank" rel="nofollow noopener noreferrer"}, mais est surtout compris par les moteurs de recherche comme Google ou Yahoo.
 
 Il existe donc l’entité _Movie_ au sein de _Schema.org_, avec de nombreuses propriétés qui nous intéressent. Pour la simplicité de lecture, nous allons en sélectionner uniquement quelques-unes.
 
@@ -101,10 +101,10 @@ class Movie
 Vous avez maintenant la possibilité de requêter votre API avec l’url suivante : `movies?name=O&order[name]=desc`  
 Simple à mettre en place non ?
 
-Il est bien évidemment possible de créer ses propres [filtres Api Platform](https://api-platform.com/docs/core/filters#creating-custom-filters){:target="_blank" rel="nofollow"}.
+Il est bien évidemment possible de créer ses propres [filtres Api Platform](https://api-platform.com/docs/core/filters#creating-custom-filters){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 De nombreuses autres fontionnalités détaillées dans la documentation existent notamment :
-* la [pagination](https://api-platform.com/docs/core/pagination){:target="_blank" rel="nofollow"}
+* la [pagination](https://api-platform.com/docs/core/pagination){:target="_blank" rel="nofollow noopener noreferrer"}
 * un système d'événements riche
 * un système d'invalidation de cache (à venir dans la version 2.1)
 
@@ -118,4 +118,4 @@ Enfin la documentation est un gros point positif. Étant très riche, elle conti
 
 ## À venir
 
-La version 2.1 d'API Platform va bientot sortir, et nous réserve de nombreuses nouvelles fonctionnalités, notamment un système d'administration développé en _React_, de nouveaux filtres... Les détails [ici](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/){:target="_blank" rel="nofollow"}
+La version 2.1 d'API Platform va bientot sortir, et nous réserve de nombreuses nouvelles fonctionnalités, notamment un système d'administration développé en _React_, de nouveaux filtres... Les détails [ici](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/){:target="_blank" rel="nofollow noopener noreferrer"}

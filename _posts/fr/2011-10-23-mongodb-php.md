@@ -62,7 +62,7 @@ Maintenant que le serveur mongo est lancé, il faut installer un "phpmyadmin" po
 
 Pour ce tuto nous allons installer rockmongo.
 Commençons par télécharger la dernière version de rockmongo.
-[rockmongo-v1.1.0](https://github.com/iwind/rockmongo){:target="_blank" rel="nofollow"}
+[rockmongo-v1.1.0](https://github.com/iwind/rockmongo){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Ensuite il faut l'envoyer sur le serveur:
 
@@ -111,7 +111,7 @@ Si tout c'est bien passé rockmongo est visible sur le navigateur à l'url chois
 Pour la plupart, vous devez avoir le message suivant sur le navigateur:
 
 > To make things right, you must install php_mongo module.
-> [Here](http://www.php.net/manual/en/mongo.installation.php){:target="_blank" rel="nofollow"} for installation documents on PHP.net.
+> [Here](http://www.php.net/manual/en/mongo.installation.php){:target="_blank" rel="nofollow noopener noreferrer"} for installation documents on PHP.net.
 
 ### Installation de mongo pour php
 

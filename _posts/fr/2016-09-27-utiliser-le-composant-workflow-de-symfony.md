@@ -15,7 +15,7 @@ tags:
     - php
     - workflow
 ---
-Depuis Symfony 3.2, un nouveau composant très utile a vu le jour : [le composant Workflow](http://symfony.com/blog/new-in-symfony-3-2-workflow-component){:target="_blank" rel="nofollow"}.
+Depuis Symfony 3.2, un nouveau composant très utile a vu le jour : [le composant Workflow](http://symfony.com/blog/new-in-symfony-3-2-workflow-component){:target="_blank" rel="nofollow noopener noreferrer"}.
 Celui-ci est en effet très pratique et peut très largement simplifier vos développements lorsque vous avez, par exemple, à gérer des workflows de statut dans votre application.
 
 # Installation
@@ -109,7 +109,7 @@ Nous avons terminé, nous pouvons maintenant commencer à utiliser le composant 
 
 # Utilisation
 
-La première chose utile à effectuer après avoir écrit votre workflow est de générer une représentation graphique de celui-ci (sous un format [Graphviz](http://www.graphviz.org)){:target="_blank" rel="nofollow"}.
+La première chose utile à effectuer après avoir écrit votre workflow est de générer une représentation graphique de celui-ci (sous un format [Graphviz](http://www.graphviz.org)){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Pour ce faire, nous utilisons la commande Symfony :
 

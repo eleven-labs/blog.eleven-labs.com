@@ -153,12 +153,12 @@ Heureusement Fastlane nous met à disposition **Match**.
 
 # Match
 
-Match implémente le concept de [codesigning guide](https://codesigning.guide){:target="_blank" rel="nofollow"}.
+Match implémente le concept de [codesigning guide](https://codesigning.guide){:target="_blank" rel="nofollow noopener noreferrer"}.
 Il permet de créer tous vos certificats et profils de provisionnement dans un compte Git distinct.
 Chaque membre de l'équipe ayant accès au repo peut utiliser ces credentials pour la signature de code.
 
 Match répare également automatiquement les credentials brisés et expirés.
-Ceci est bien évidement [sécurisé](https://github.com/fastlane/fastlane/tree/master/match#is-this-secure){:target="_blank" rel="nofollow"}.
+Ceci est bien évidement [sécurisé](https://github.com/fastlane/fastlane/tree/master/match#is-this-secure){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 *Note* : L'implémentation de match vous oblige à révoquer vos certificats existants.
 
@@ -173,7 +173,7 @@ Si vous ne voulez pas révoquer vos certificats existants, mais souhaitez toujou
 $ bundle exec fastlane match init
 ```
 
-![](https://github.com/fastlane/fastlane/raw/master/match/assets/match_init.gif){:target="_blank" rel="nofollow"}
+![](https://github.com/fastlane/fastlane/raw/master/match/assets/match_init.gif){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Cela vous demandera d'entrer l'url de votre repo Git. Vous pouvez aussi utiliser un lien git@ si votre machine peut se connecter en SSH sur ce repo.
 
@@ -201,7 +201,7 @@ match(git_branch: "team2", username: "user@team2.com")
 ```
 
 
-Avant d'exécuter match pour la première fois, vous devriez envisager de supprimer vos profils et certificats existants à l'aide de la commande [match nuke](https://github.com/fastlane/fastlane/tree/master/match#nuke){:target="_blank" rel="nofollow"}.
+Avant d'exécuter match pour la première fois, vous devriez envisager de supprimer vos profils et certificats existants à l'aide de la commande [match nuke](https://github.com/fastlane/fastlane/tree/master/match#nuke){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Exécuter match :
 
@@ -209,7 +209,7 @@ Exécuter match :
 $ bundle exec fastlane match appstore
 ```
 
-![](https://github.com/fastlane/fastlane/raw/master/match/assets/match_appstore_small.gif){:target="_blank" rel="nofollow"}
+![](https://github.com/fastlane/fastlane/raw/master/match/assets/match_appstore_small.gif){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Cela créera un nouveau certificat et un profil de provisionnement (si nécessaire) et les stockera dans votre repo Git.
 Si vous avez précédemment exécuté match, il installera automatiquement les profils existants à partir du repo Git.
@@ -219,7 +219,7 @@ Les provisioning profiles sont installés dans ~ / Library / MobileDevice / Prov
 **Comment faire si vous devez ajouter un nouveau device ?**
 
 Non on ne va pas se connecter et le faire à la main !
-On va utiliser l'action [register_devices](https://docs.fastlane.tools/actions/#register_devices){:target="_blank" rel="nofollow"} en combinaison avec match.
+On va utiliser l'action [register_devices](https://docs.fastlane.tools/actions/#register_devices){:target="_blank" rel="nofollow noopener noreferrer"} en combinaison avec match.
 
 ```ruby
 lane :recette do
@@ -508,7 +508,7 @@ Bon, maintenant qu'on a nos beaux screenshots, on va rajouter de beaux cadres no
 
 *Prérequis*
 
-Pour utiliser `Frameit`, il faut avoir sur votre machine [ImageMagick](https://www.imagemagick.org/script/index.php){:target="_blank" rel="nofollow"}.
+Pour utiliser `Frameit`, il faut avoir sur votre machine [ImageMagick](https://www.imagemagick.org/script/index.php){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Sur mac, il suffit de faire :
 
@@ -538,7 +538,7 @@ $ bundle exec fastlane frameit rose_gold
 
 ![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6-01CarList-d41d8cd98f00b204e9800998ecf8427e_framed.png){:height="600px"}
 
-Vous trouverez la liste des frames [ici](https://github.com/fastlane/frameit-frames/tree/gh-pages/latest){:target="_blank" rel="nofollow"}.
+Vous trouverez la liste des frames [ici](https://github.com/fastlane/frameit-frames/tree/gh-pages/latest){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Bon, c'est pas mal mais on peut encore faire mieux. Comment ? En rajoutant un titre à ce beau screenshot.
 
@@ -652,7 +652,7 @@ Cela recherchera automatiquement un ipa dans votre répertoire courant et tenter
 de connexion à partir de votre configuration Fastlane.
 
 *Note* : Pensez bien à créer votre application sur Itunes Connect avant.
-(ou utilisez la lib [produce](https://github.com/fastlane/fastlane/tree/master/produce)){:target="_blank" rel="nofollow"}
+(ou utilisez la lib [produce](https://github.com/fastlane/fastlane/tree/master/produce)){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Nous pouvons reprendre notre **lane** précédement créée et y rajouter l'instruction `pilot`
 
@@ -670,7 +670,7 @@ end
 $ bundle exec fastlane buildTestFlight
 ```
 *Note*:
-1. Si comme moi vous avez une double identification via votre téléphone, il suffit de se connecter [ici](https://appleid.apple.com/account/manage){:target="_blank" rel="nofollow"} et de générer un password dans la section Security > APP-SPECIFIC PASSWORDS
+1. Si comme moi vous avez une double identification via votre téléphone, il suffit de se connecter [ici](https://appleid.apple.com/account/manage){:target="_blank" rel="nofollow noopener noreferrer"} et de générer un password dans la section Security > APP-SPECIFIC PASSWORDS
 2. Vérifiez sur votre Itunes Connect le bundle identifier renseigné.
 
 # Deliver
@@ -695,7 +695,7 @@ deliver(force: true) # Force: true pour skip le repport HTML de verification
 
 Vous devriez avoir un nouveau folder metadata qui vient d'apparaître.
 
-![](https://raw.githubusercontent.com/fastlane/fastlane/master/deliver/assets/metadata.png){:target="_blank" rel="nofollow"}
+![](https://raw.githubusercontent.com/fastlane/fastlane/master/deliver/assets/metadata.png){:target="_blank" rel="nofollow noopener noreferrer"}
 
 À vous maintenant de mettre à jour ces metadata.
 

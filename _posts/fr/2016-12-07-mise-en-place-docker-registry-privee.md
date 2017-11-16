@@ -30,7 +30,7 @@ Une image Docker est en quelque sorte une image disque qui contient l'arborescen
 
 Une image se construit à partir d'un fichier **Dockerfile** que l'on retrouve généralement à la racine des sources d'une application.
 
-Docker met à disposition un registre d’images publiques : [DockerHub](https://hub.docker.com/){:target="_blank" rel="nofollow"}.
+Docker met à disposition un registre d’images publiques : [DockerHub](https://hub.docker.com/){:target="_blank" rel="nofollow noopener noreferrer"}.
 Dans ce registre, vous allez retrouver des images, telles que :
 
 -   des distributions linux,
@@ -38,15 +38,15 @@ Dans ce registre, vous allez retrouver des images, telles que :
 -   des bases de données,
 -   et des applications open-source prêtes à l’emploi
 
-Docker propose également le dépôt d’images privées via une offre détaillée [ici](https://hub.docker.com/account/billing-plans/){:target="_blank" rel="nofollow"}.
+Docker propose également le dépôt d’images privées via une offre détaillée [ici](https://hub.docker.com/account/billing-plans/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ## Mise en place
 
-Nous allons déployer notre Docker Registry avec [Docker Swarm Mode](https://docs.docker.com/engine/swarm/) et [Traefik](https://traefik.io/){:target="_blank" rel="nofollow"}, un reverse proxy qui va nous permettre d’associer un domaine à notre registre Docker.
+Nous allons déployer notre Docker Registry avec [Docker Swarm Mode](https://docs.docker.com/engine/swarm/) et [Traefik](https://traefik.io/){:target="_blank" rel="nofollow noopener noreferrer"}, un reverse proxy qui va nous permettre d’associer un domaine à notre registre Docker.
 
 Nous aurons besoin d’un nom de domaine, d’un serveur et d’un terminal.
 
-Pour ce guide, je vais utiliser une instance [OVH Public Cloud](https://www.ovh.com/fr/cloud/){:target="_blank" rel="nofollow"} et un nom de domaine géré par OVH. Dans les grandes lignes, toutes les étapes critiques peuvent être reproduite sur n’importe quel environnement.
+Pour ce guide, je vais utiliser une instance [OVH Public Cloud](https://www.ovh.com/fr/cloud/){:target="_blank" rel="nofollow noopener noreferrer"} et un nom de domaine géré par OVH. Dans les grandes lignes, toutes les étapes critiques peuvent être reproduite sur n’importe quel environnement.
 
 ### Configuration du serveur
 
@@ -69,7 +69,7 @@ docker swarm init
 
 ### Installation de Traefik
 
-Traefik va nous permettre d'associer un domaine au conteneur dans lequel tournera la registry. Le gros avantage, c'est qu'il permet d'obtenir automatiquement un certificat TLS délivré par [Let's Encrypt](https://letsencrypt.org/){:target="_blank" rel="nofollow"}.
+Traefik va nous permettre d'associer un domaine au conteneur dans lequel tournera la registry. Le gros avantage, c'est qu'il permet d'obtenir automatiquement un certificat TLS délivré par [Let's Encrypt](https://letsencrypt.org/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ``` bash
 # Créer un réseau traefik
@@ -179,7 +179,7 @@ Contrôlez que le service tourne en tapant **docker service ls**. Au bout d'un c
 
 Sur le port **8080** de votre serveur vous devez trouver l'interface de contrôle de Traefik :
 
-![enter image description here](https://lh3.googleusercontent.com/-7OVJ1TQ-U80/WEeRgAfxt_I/AAAAAAAAAaM/-CFecYhSv-AQRsQxuVBAJ-tj0MG5wyTMQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.32.37.png "Traefik Web"){:target="_blank" rel="nofollow"}
+![enter image description here](https://lh3.googleusercontent.com/-7OVJ1TQ-U80/WEeRgAfxt_I/AAAAAAAAAaM/-CFecYhSv-AQRsQxuVBAJ-tj0MG5wyTMQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.32.37.png "Traefik Web"){:target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Configuration du domaine
 
@@ -190,14 +190,14 @@ Avant de lancer la registry sur notre environnement, nous allons créer deux sou
 
 Sur le manager d'OVH, il suffit de se rendre dans **Web/Domaine(s)**, de choisir son domaine, puis de cliquer sur l'onglet **Zone DNS**
 
-![enter image description here](https://lh3.googleusercontent.com/-YW_nkX8qJV8/WEeUfHNWOaI/AAAAAAAAAaY/ljqtytkTCccK3eak8Gu6Ytt15XX28cEyQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.44.40.png "Ajout entrée DNS"){:target="_blank" rel="nofollow"}
+![enter image description here](https://lh3.googleusercontent.com/-YW_nkX8qJV8/WEeUfHNWOaI/AAAAAAAAAaY/ljqtytkTCccK3eak8Gu6Ytt15XX28cEyQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.44.40.png "Ajout entrée DNS"){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Puis nous ajoutons un pointage DNS de type **A** pour les sous-domaines :
 
 -   **registry.domain.tld** pour la registry,
 -   **token.domain.tld** pour le serveur d'authentification
 
-![enter image description here](https://lh3.googleusercontent.com/-MaFb82-SY3c/WEeVhjIumFI/AAAAAAAAAag/a8dyGIA0gfEQ4MvTFwgu89tEBYWE6j9FwCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.51.24.png "Ajout pointage DNS"){:target="_blank" rel="nofollow"}
+![enter image description here](https://lh3.googleusercontent.com/-MaFb82-SY3c/WEeVhjIumFI/AAAAAAAAAag/a8dyGIA0gfEQ4MvTFwgu89tEBYWE6j9FwCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.51.24.png "Ajout pointage DNS"){:target="_blank" rel="nofollow noopener noreferrer"}
 
 > **Important**: Remplacez **domain.tld** par votre domaine et **xxx.xxx.xxx.xxx** par l'adresse IPv4 de votre serveur.
 
@@ -205,11 +205,11 @@ Puis nous ajoutons un pointage DNS de type **A** pour les sous-domaines :
 
 Docker registry permet d'utiliser des services tiers pour gérer l'authentification et les contrôles d'accès des utilisateurs.
 
-Nous allons utiliser ici [Docker Registry 2 authentication server](https://github.com/cesanta/docker_auth){:target="_blank" rel="nofollow"}.
+Nous allons utiliser ici [Docker Registry 2 authentication server](https://github.com/cesanta/docker_auth){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Cette application en GO prend en charge plusieurs backends. Vous avez au choix la possibilité de stocker vos utilisateurs et ACL dans MongoDB, d'utiliser un serveur LDAP, ou dans notre cas, d'utiliser un fichier YAML.
 
-L'authentification des utilisateurs se fait par jeton [JWT](https://jwt.io/){:target="_blank" rel="nofollow"}. La registry Docker, de son coté, attend que ces jetons soient signés par un certificat. Commençons par le générer :
+L'authentification des utilisateurs se fait par jeton [JWT](https://jwt.io/){:target="_blank" rel="nofollow noopener noreferrer"}. La registry Docker, de son coté, attend que ces jetons soient signés par un certificat. Commençons par le générer :
 
 ``` bash
 # Préparation des répertoires nécessaires à docker auth
@@ -421,7 +421,7 @@ Et on vérifie que le service **docker-registry** est bien lancé en utilisant l
 
 Sur le port **8080** de votre serveur, vous devez avoir quelque chose d'équivalent à ceci :
 
-![enter image description here](https://lh3.googleusercontent.com/-CHOW4DC6pi4/WEefmOVQGpI/AAAAAAAAAbA/f7W-kRKRLaoUKMXb1BNgQHEyRLxPZHuNgCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+06.34.33.png "Traefik Services"){:target="_blank" rel="nofollow"}
+![enter image description here](https://lh3.googleusercontent.com/-CHOW4DC6pi4/WEefmOVQGpI/AAAAAAAAAbA/f7W-kRKRLaoUKMXb1BNgQHEyRLxPZHuNgCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+06.34.33.png "Traefik Services"){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Si c'est le cas, c'est que Traefik à fait correctement son boulot, vous avez maintenant un registre docker et un serveur d'authentification associés à leur domaines respectifs.
 

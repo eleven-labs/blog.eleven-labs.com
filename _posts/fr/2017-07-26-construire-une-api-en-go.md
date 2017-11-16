@@ -270,7 +270,7 @@ Par défaut, il existe la commande `routes` qui permet de voir l'ensemble des ro
 buffalo build
 buffalo task routes
 ```
-Maintenant que buffalo a été présenté, nous allons créer de nouvelles routes. Vous pouvez retrouver l'ensemble du code sur mon github [https://github.com/qneyrat/api](https://github.com/qneyrat/api){:target="_blank" rel="nofollow"}.
+Maintenant que buffalo a été présenté, nous allons créer de nouvelles routes. Vous pouvez retrouver l'ensemble du code sur mon github [https://github.com/qneyrat/api](https://github.com/qneyrat/api){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Nous allons gérer une nouvelle ressource pour notre api, la ressource `user`.
 
@@ -377,4 +377,4 @@ g.GET("/users/{id}", ur.Show)
 ```
 Maintenant, on crée un utilisateur avec un `POST` sur `/api/v1/users` puis on fait un `GET` sur `/api/v1/users/{id}` en remplaçant `{id}` par l'uuid de l’utilisateur que vous venez de créer. L'api vous retourne un code 200 avec les informations de l’utilisateur.
 
-Vous avez maintenant une base d'api performante avec des outils pour développer rapidement et facilement une api en Go. Vous pouvez retrouver l'ensemble de la documentation et découvrir les autres fonctionnalités de buffalo sur [http://gobuffalo.io](http://gobuffalo.io){:target="_blank" rel="nofollow"}.
+Vous avez maintenant une base d'api performante avec des outils pour développer rapidement et facilement une api en Go. Vous pouvez retrouver l'ensemble de la documentation et découvrir les autres fonctionnalités de buffalo sur [http://gobuffalo.io](http://gobuffalo.io){:target="_blank" rel="nofollow noopener noreferrer"}.

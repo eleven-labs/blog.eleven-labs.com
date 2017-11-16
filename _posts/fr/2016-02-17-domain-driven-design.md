@@ -89,7 +89,7 @@ Pour chaque entité qui nécessite un accès, il faut créer une interface qui d
 
 #### Specifications
 
-Un dernier aspect que j’aimerai aborder concerne le pattern _[specification](http://martinfowler.com/apsupp/spec.pdf){:target="_blank" rel="nofollow"}_. Ce dernier ne fait pas parti des _building blocks_ du _Domain Driven Design,_ mais présente de nombreux avantages.
+Un dernier aspect que j’aimerai aborder concerne le pattern _[specification](http://martinfowler.com/apsupp/spec.pdf){:target="_blank" rel="nofollow noopener noreferrer"}_. Ce dernier ne fait pas parti des _building blocks_ du _Domain Driven Design,_ mais présente de nombreux avantages.
 Très simple à mettre en place, il permet d’encapsuler vos règles métiers dans une classe avec une sémantique précise.
 
 ```php
@@ -132,8 +132,8 @@ Le _ubiquitous language_ et les outils de modélisation du modèle permettent d
 
 ### Pour aller plus loin
 
-[Domain Driven Design Quickly](http://www.infoq.com/minibooks/domain-driven-design-quickly){:target="_blank" rel="nofollow"}
+[Domain Driven Design Quickly](http://www.infoq.com/minibooks/domain-driven-design-quickly){:target="_blank" rel="nofollow noopener noreferrer"}
 
-[Domain Driven Design : des armes pour affronter la complexité](http://blog.octo.com/domain-driven-design-des-armes-pour-affronter-la-complexite/){:target="_blank" rel="nofollow"}
+[Domain Driven Design : des armes pour affronter la complexité](http://blog.octo.com/domain-driven-design-des-armes-pour-affronter-la-complexite/){:target="_blank" rel="nofollow noopener noreferrer"}
 
-[Why Value Objects](http://thepaulrayner.com/blog/why-value-objects/){:target="_blank" rel="nofollow"}
+[Why Value Objects](http://thepaulrayner.com/blog/why-value-objects/){:target="_blank" rel="nofollow noopener noreferrer"}

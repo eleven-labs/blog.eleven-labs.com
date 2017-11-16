@@ -31,9 +31,9 @@ autorité qui va contrôler l'identité. Ce sont les utilisateurs qui vont véri
 Que vous soyez sur Linux, Mac ou Windows, tout pourra être fait en lignes de commande.
 
 Tout d'abord, installons les outils :
-* Windows:  [GPG4Win](https://www.gpg4win.org/){:target="_blank" rel="nofollow"}
-* Mac:  [GPGtools](https://gpgtools.org/){:target="_blank" rel="nofollow"}
-* Linux:  [gnupg.org](https://gnupg.org/download/) (déjà intégré dans Ubuntu par exemple){:target="_blank" rel="nofollow"}
+* Windows:  [GPG4Win](https://www.gpg4win.org/){:target="_blank" rel="nofollow noopener noreferrer"}
+* Mac:  [GPGtools](https://gpgtools.org/){:target="_blank" rel="nofollow noopener noreferrer"}
+* Linux:  [gnupg.org](https://gnupg.org/download/) (déjà intégré dans Ubuntu par exemple){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Pour cet article, je vais me baser sur Ubuntu 16.04 et GnuPG v2.1.11. Il s'agit de la nouvelle version moderne de gnupg qui va
 remplacer la v1.4 et la v2.0.
@@ -400,15 +400,15 @@ Tous les fichiers que nous avons créés seront à conserver sur un média déco
 Vous pouvez dès à présent signer vos emails et en recevoir des chiffrés, signer vos commit git, utiliser keybase.io et 
 même vous authentifier sur un serveur en SSH.
 
-Par ailleurs, le 2 novembre, il y aura [une fête de la signature des clés](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris) (key signing party){:target="_blank" rel="nofollow"} dans les locaux de Mozilla France. 
+Par ailleurs, le 2 novembre, il y aura [une fête de la signature des clés](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris) (key signing party){:target="_blank" rel="nofollow noopener noreferrer"} dans les locaux de Mozilla France. 
 Cet évévenement est l'occasion de rencontrer d'autres adeptes d'OpenPGP et surtout, il permettra de faire certifier votre clé nouvellement créée.
 
 ### Resources
-* [GPG : création de votre première paire de clefs et chiffrement d'un fichier](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm){:target="_blank" rel="nofollow"}
-* [GPG : comment créer une paire de clefs presque parfaite](https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm){:target="_blank" rel="nofollow"}
-* [Creating the perfect GPG keypair](https://alexcabal.com/creating-the-perfect-gpg-keypair/){:target="_blank" rel="nofollow"}
-* [Ma nouvelle clé PGP](http://www.bortzmeyer.org/nouvelle-cle-pgp.html){:target="_blank" rel="nofollow"}
-* [OpenPGP Best Practices](https://riseup.net/en/security/message-security/openpgp/best-practices){:target="_blank" rel="nofollow"}
-* [Using OpenPGP subkeys in Debian development](https://wiki.debian.org/Subkeys){:target="_blank" rel="nofollow"}
-* [PGP Key signing party](https://www.eventbrite.com/e/pgp-key-signing-party-tickets-37092612001){:target="_blank" rel="nofollow"}
-* [Se rencontrer pour échanger ses clefs le 2 novembre à Paris](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris){:target="_blank" rel="nofollow"}
+* [GPG : création de votre première paire de clefs et chiffrement d'un fichier](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm){:target="_blank" rel="nofollow noopener noreferrer"}
+* [GPG : comment créer une paire de clefs presque parfaite](https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm){:target="_blank" rel="nofollow noopener noreferrer"}
+* [Creating the perfect GPG keypair](https://alexcabal.com/creating-the-perfect-gpg-keypair/){:target="_blank" rel="nofollow noopener noreferrer"}
+* [Ma nouvelle clé PGP](http://www.bortzmeyer.org/nouvelle-cle-pgp.html){:target="_blank" rel="nofollow noopener noreferrer"}
+* [OpenPGP Best Practices](https://riseup.net/en/security/message-security/openpgp/best-practices){:target="_blank" rel="nofollow noopener noreferrer"}
+* [Using OpenPGP subkeys in Debian development](https://wiki.debian.org/Subkeys){:target="_blank" rel="nofollow noopener noreferrer"}
+* [PGP Key signing party](https://www.eventbrite.com/e/pgp-key-signing-party-tickets-37092612001){:target="_blank" rel="nofollow noopener noreferrer"}
+* [Se rencontrer pour échanger ses clefs le 2 novembre à Paris](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris){:target="_blank" rel="nofollow noopener noreferrer"}

@@ -19,13 +19,13 @@ tags:
     - tls
 ---
 Remember, in `may 1996`, the very first HTTP protocol version (HTTP/1.0) was born.
-This protocol is described as a [RFC 1945](https://tools.ietf.org/html/rfc1945){:target="_blank" rel="nofollow"}.
+This protocol is described as a [RFC 1945](https://tools.ietf.org/html/rfc1945){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 But time as passed and web applications has evolved a lot. We are now creating web applications that brings more and more logic in the browser and for that we need to load more and more assets: this means that we have to load multiple CSS which sometimes are making animations in the browser or also complex operations, more and more Javascript and images too.
 
 `HTTP/1.1` release has offered and allowed us to use a kind of new web technologies we've known these last years, but web application are more and more done on smartphones and other connected devices, which is why the needs are now focused on web browsing performances.
 
-After a first step made by Google in 2009 with the `SPDY` protocol, `HTTP/2` is finally going in the same direction with the [RFC 7540](https://tools.ietf.org/html/rfc7540){:target="_blank" rel="nofollow"}.
+After a first step made by Google in 2009 with the `SPDY` protocol, `HTTP/2` is finally going in the same direction with the [RFC 7540](https://tools.ietf.org/html/rfc7540){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 
 # HTTP/2 Introduction
@@ -45,7 +45,7 @@ Even if encryption is` not mandatory`, most of browsers today only support HTTP
 
 For information, if you choose to not use encryption, the protocol diminutive will be `h2c` , where it will be `h2`  if you do.
 
-If you want more information about how to [improve SSL exchanges security](https://vincent.composieux.fr/article/improve-ssl-exchanges-safety-made-by-your-web-server){:target="_blank" rel="nofollow"}, I highly invite you to read my blog post on this topic.
+If you want more information about how to [improve SSL exchanges security](https://vincent.composieux.fr/article/improve-ssl-exchanges-safety-made-by-your-web-server){:target="_blank" rel="nofollow noopener noreferrer"}, I highly invite you to read my blog post on this topic.
 
 
 ## Stream Multiplexing
@@ -66,8 +66,8 @@ Moreover, given that search engines are taking the page load time as an importa
 
 In order to help you to visualize the resource loading speed time, here is a demo comparing HTTP/1 and HTTP/2 made by Golang:
 
-* Chargement avec `HTTP/1.1` : [http://http2.golang.org/gophertiles?latency=0](http://http2.golang.org/gophertiles?latency=0){:target="_blank" rel="nofollow"}
-* Chargement avec `HTTP/2` : [https://http2.golang.org/gophertiles?latency=0](https://http2.golang.org/gophertiles?latency=0){:target="_blank" rel="nofollow"}
+* Chargement avec `HTTP/1.1` : [http://http2.golang.org/gophertiles?latency=0](http://http2.golang.org/gophertiles?latency=0){:target="_blank" rel="nofollow noopener noreferrer"}
+* Chargement avec `HTTP/2` : [https://http2.golang.org/gophertiles?latency=0](https://http2.golang.org/gophertiles?latency=0){:target="_blank" rel="nofollow noopener noreferrer"}
 
 ## HPACK: Headers compression
 
@@ -87,7 +87,7 @@ accept-encoding: gzip, deflate, sdch, br
 On my next request, headers `:authority` , `:method` , `:scheme` , `accept`  and `accept-encoding`  will probably not change.
 HTTP/2 will be able to compress them to gain some space in the response.
 
-In order to let you test header compression by yourself, I invite you to use the [h2load](https://nghttp2.org/documentation/h2load-howto.html){:target="_blank" rel="nofollow"} tool, which you can use to make a benchmark on HTTP/2 calls, by making here two requests:
+In order to let you test header compression by yourself, I invite you to use the [h2load](https://nghttp2.org/documentation/h2load-howto.html){:target="_blank" rel="nofollow noopener noreferrer"} tool, which you can use to make a benchmark on HTTP/2 calls, by making here two requests:
 
 ```bash
 $ h2load https://vincent.composieux.fr -n 2 | grep traffic
@@ -123,9 +123,9 @@ Also, if you use the <a href="https://www.symfony.com">Symfony</a> PHP framewor
 ```
 {% endraw %}
 
-For more information about this feature, you can visit: [http://symfony.com/blog/new-in-symfony-3-3-asset-preloading-with-http-2-push](http://symfony.com/blog/new-in-symfony-3-3-asset-preloading-with-http-2-push){:target="_blank" rel="nofollow"}
+For more information about this feature, you can visit: [http://symfony.com/blog/new-in-symfony-3-3-asset-preloading-with-http-2-push](http://symfony.com/blog/new-in-symfony-3-3-asset-preloading-with-http-2-push){:target="_blank" rel="nofollow noopener noreferrer"}
 
-Also note that a new Symfony component is currently in review [on this Pull Request](https://github.com/symfony/symfony/pull/22273) in order to manage all available links that allow to preload or push (preload, preset, prerender, ...){:target="_blank" rel="nofollow"}.
+Also note that a new Symfony component is currently in review [on this Pull Request](https://github.com/symfony/symfony/pull/22273) in order to manage all available links that allow to preload or push (preload, preset, prerender, ...){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ## Server Hints (prefetch)
 
@@ -157,7 +157,7 @@ Starting from here, you just have to restart your web server in order to enable 
 
 On Apache web server side, `versions 2.4.12` and greater also support HTTP/2.
 
-Globally, HTTP/2 protocol activation is quite simple. If you come from Javascript world, you have to know that a [http2](https://www.npmjs.com/package/http2){:target="_blank" rel="nofollow"} package is available in order to instanciate an `express` server with the new protocol version.
+Globally, HTTP/2 protocol activation is quite simple. If you come from Javascript world, you have to know that a [http2](https://www.npmjs.com/package/http2){:target="_blank" rel="nofollow noopener noreferrer"} package is available in order to instanciate an `express` server with the new protocol version.
 
 
 # Conclusion

@@ -14,7 +14,7 @@ tags:
 - Javascript
 - web
 ---
-Google, leader incontesté des services web (recherche, pub, analytics...), propose depuis plus d'un an une nouvelle façon d'afficher vos pages, désignée sous le nom [AMP](https://www.ampproject.org/){:target="_blank" rel="nofollow"} project.
+Google, leader incontesté des services web (recherche, pub, analytics...), propose depuis plus d'un an une nouvelle façon d'afficher vos pages, désignée sous le nom [AMP](https://www.ampproject.org/){:target="_blank" rel="nofollow noopener noreferrer"} project.
 
 ### Mais ça donne quoi ?
 
@@ -54,13 +54,13 @@ qui va permettre un affichage plus rapide des images et cela même pour les navi
 
 - AMP JS
 
-AMP propose une nouvelle utilisation de javascript dans vos pages web, au moyen d'une liste exhaustive de librairies javascript optimisées. Vous pouvez en trouver la liste [ici](https://github.com/ampproject/amphtml/tree/master/src){:target="_blank" rel="nofollow"}. Mais l'optimisation principale réside en la *désynchronisation* des librairies javascript externes à votre site. C'est d'ailleurs pour cela que la plupart des pages AMP  ne proposent pas de publicité. Cette dernière reste la hantise de la web performance.
+AMP propose une nouvelle utilisation de javascript dans vos pages web, au moyen d'une liste exhaustive de librairies javascript optimisées. Vous pouvez en trouver la liste [ici](https://github.com/ampproject/amphtml/tree/master/src){:target="_blank" rel="nofollow noopener noreferrer"}. Mais l'optimisation principale réside en la *désynchronisation* des librairies javascript externes à votre site. C'est d'ailleurs pour cela que la plupart des pages AMP  ne proposent pas de publicité. Cette dernière reste la hantise de la web performance.
 
 - AMP Cache
 
 AMP cache est en option mais c'est tout de même le point central d'AMP. Vous avez toujours rêvé d'avoir accès à l'un des meilleurs systèmes de cache du monde ? C'est maintenant possible : AMP Cache permet de stocker vos pages AMP directement dans le cache Google. C'est pour cela que vous n'êtes plus sur votre site mais directement sur www.google.com. Cela permet une optimisation exponentielle de la performance de votre page.
 
-Pour aller plus loin dans la description des principes d'AMP je vous invite à lire cette article [https://www.ampproject.org/fr/learn/amp-design-principles/](https://www.ampproject.org/fr/learn/about-how/){:target="_blank" rel="nofollow"} ou de regarder cette vidéo :
+Pour aller plus loin dans la description des principes d'AMP je vous invite à lire cette article [https://www.ampproject.org/fr/learn/amp-design-principles/](https://www.ampproject.org/fr/learn/about-how/){:target="_blank" rel="nofollow noopener noreferrer"} ou de regarder cette vidéo :
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9Cfxm7cikMY" frameborder="0" allowfullscreen></iframe>
 
@@ -108,7 +108,7 @@ Comme vous le constatez, on y retrouve :
 - le chargement de la librairie javascript AMP
 - le body de la page
 
-Pour être présent dans la recherche AMP de Google comme vu précédemment, il faut mettre en place le [schema.org](http://schema.org/), dont vous trouverez de plus amples informations [ici](https://developers.google.com/search/docs/guides/intro-structured-data){:target="_blank" rel="nofollow"}.
+Pour être présent dans la recherche AMP de Google comme vu précédemment, il faut mettre en place le [schema.org](http://schema.org/), dont vous trouverez de plus amples informations [ici](https://developers.google.com/search/docs/guides/intro-structured-data){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ```html
 <!doctype html>
@@ -134,7 +134,7 @@ Pour être présent dans la recherche AMP de Google comme vu précédemment, il 
   </body>
 </html>
 ```
-Nous avons maintenant une page de base. Mais est-elle vraiment AMP ? Afin d'effectuer une vérification, AMP a mis en place deux systèmes. Le plus simple est directement online, à cette url [https://validator.ampproject.org/](https://validator.ampproject.org/){:target="_blank" rel="nofollow"}. Votre deuxième option est d'afficher votre page dans le navigateur en ajoutant 
+Nous avons maintenant une page de base. Mais est-elle vraiment AMP ? Afin d'effectuer une vérification, AMP a mis en place deux systèmes. Le plus simple est directement online, à cette url [https://validator.ampproject.org/](https://validator.ampproject.org/){:target="_blank" rel="nofollow noopener noreferrer"}. Votre deuxième option est d'afficher votre page dans le navigateur en ajoutant 
 ```html
 #development=1
 ```
@@ -204,4 +204,4 @@ Si vous n'avez qu'une page rien de plus vous n'avez qu'à mettre le lien canoniq
 
 Bravo, vous avez fait un grand pas dans la web performance !
 
-Il existe de nombreuses autres fonctionnalités disponibles, telles que la mise en place [d'un système de login](https://www.ampproject.org/fr/docs/tutorials/login_requiring), un [live blog](https://www.ampproject.org/fr/docs/tutorials/live_blog) mais aussi de la publicité, de l'analytics... Je vous invite à regarder la page [https://www.ampproject.org/fr/docs/guides/](https://www.ampproject.org/fr/docs/guides/){:target="_blank" rel="nofollow"} qui  pourra vous inspirer pour votre application web.
+Il existe de nombreuses autres fonctionnalités disponibles, telles que la mise en place [d'un système de login](https://www.ampproject.org/fr/docs/tutorials/login_requiring), un [live blog](https://www.ampproject.org/fr/docs/tutorials/live_blog) mais aussi de la publicité, de l'analytics... Je vous invite à regarder la page [https://www.ampproject.org/fr/docs/guides/](https://www.ampproject.org/fr/docs/guides/){:target="_blank" rel="nofollow noopener noreferrer"} qui  pourra vous inspirer pour votre application web.
