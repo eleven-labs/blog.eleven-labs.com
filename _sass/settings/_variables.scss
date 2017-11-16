@@ -1,6 +1,7 @@
 // Typography
 $font-family-main: Helvetica, Arial, sans-serif;
-$font-family-headings: 'din', Helvetica, Arial, sans-serif;
+$font-family-headings:'DINPro-Regular', Helvetica, Arial, sans-serif;
+
 $font-size: 1.9rem;
 $font-size-mobile: 1.6rem;
 
@@ -9,32 +10,44 @@ $padding-large: 20%;
 $padding-small: 5%;
 $padding-x-small: 3%;
 
+// Colors
+$alto: #d4d4d4;
+$azure-radiance: #0096fb;
+$dusty-gray: #999;
+$gray: #808080;
+$mine-shaft: #383838;
+$shark: #323334;
+$turbo: #fde300;
+$white: #fff;
+
 // Button
-$button-hover: #999;
+$button-hover: $dusty-gray;
 
 // Brand colours
-$brand-color: #fff;
-$background-color: #fff;
+$brand-color: $white;
+$background-color: $white;
 $border-color: rgba(0, 0, 0, .1); // rgba recommended if using feature images
 
+$title-level3-bg: rgba(0, 0, 0, .2);
+$author-link: rgba(255, 255, 255, .6);
+
 // Typography colours
-$link-color: #0096fb;
-$selection-color: #d4d4d4; // visible when highlighting text
+$selection-color: $alto; // visible when highlighting text
 
 // Header colours
-$header-link-color: #383838;
+$header-link-color: $mine-shaft;
 
 // Feature image for articles
-$feature-image-text-color: #fff;
+$feature-image-text-color: $white;
 $feature-image-size: cover; // options include "cover", "contain", "auto"
 
 // Header description box
-$header-desc-background-color: #fbe300;
-$header-desc-text-color: #fff;
+$header-desc-background-color: $turbo;
+$header-desc-text-color: $white;
 
 // brand colors
-$brand-yellow: #fbe300;
-$brand-black: #323334;
+$brand-yellow: $turbo;
+$brand-black: $shark;
 
 // layout
 $max-width-layout: 960px;
