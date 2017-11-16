@@ -2,7 +2,7 @@
 layout: default
 ---
 <article>
-    <header class="page-heading">
+    <header class="page-heading author-heading">
         <div class="avatar">
             <img class="avatar-img" src="{{ '/img/authors/:author.jpg' | prepend: site.baseurl_root | replace: '//', '/' | replace: ':author', page.login }}"/>
         </div>
@@ -22,7 +22,7 @@ layout: default
 
     <section class="slice">
         <div class="read-also container">
-            <h3 class="read-also-title">Du même auteur :</h3>
+            <h3 class="read-also-title">{% translate global.same_author %}</h3>
             <ul class="posts read-also-list">
                 {% for post in site.posts %}
                 {% if post.authors contains page.login %}

@@ -12,33 +12,36 @@
   }
 
   .branding {
+    background-color: transparent;
     display: inline-block;
     height: 60px;
+    position: relative;
     width: 160px;
 
     @media (max-width: 480px) {
-      height: 40px;
-      margin-bottom: 5px;
+      height: 48px;
+      margin-bottom: 10px;
       width: 120px;
     }
 
-    &:hover {
-      background: none;
-      text-decoration: none;
+    svg {
+      fill: $brand-black;
+      max-width: 100%;
     }
 
-    &::before {
-      background: url($baseurl + '/img/logo_eleven_lab.png') top left no-repeat;
-      background-size: contain;
-      content: '';
-      display: block;
-      height: 60px;
-      width: 160px;
+    span {
+      bottom: 0;
+      color: $brand-black;
+      font-family: $font-family-headings;
+      font-size: 1.3rem;
+      font-weight: 700;
+      position: absolute;
+      right: 1.5rem;
+      text-transform: uppercase;
 
       @media (max-width: 480px) {
-        height: 40px;
-        margin: 0 auto;
-        width: 120px;
+        font-size: 1.1rem;
+        right: 1rem;
       }
     }
   }

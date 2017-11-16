@@ -1,9 +1,10 @@
 <header class="site-header">
     <div class="branding-container">
-        <a class="branding" class="no-link-style" href="{{ site.baseurl }}/">
-            <h1 class="site-title visually-hidden">
-                {{ site.theme_settings.title }}
-            </h1>
+        <a class="branding no-link-style" href="{{ site.baseurl }}/">
+            {% include logo.html %}
+            <span class="brand-title">
+                <span class="visually-hidden">{{ site.theme_settings.brand }}</span> {% translate theme_settings.title %}
+            </span>
         </a>
     </div>
 
