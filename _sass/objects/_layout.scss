@@ -1,14 +1,14 @@
 .slice {
   border-bottom: 1px solid $border-color;
 
-  @media (min-width: 480px) {
-    padding-bottom: 30px;
-    padding-top: 30px;
+  @media (min-width: $breakpoint-small) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
-  @media (max-width: 480px) {
-    padding-bottom: 25px;
-    padding-top: 25px;
+  @media (max-width: $breakpoint-small) {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 }
 
@@ -16,13 +16,18 @@
   margin: 0 auto;
   max-width: $max-width-layout;
 
-  @media (min-width: 480px) {
-    padding-left: 45px;
-    padding-right: 45px;
+  @media (max-width: $breakpoint-small) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
-  @media (max-width: 480px) {
-    padding-left: 25px;
-    padding-right: 25px;
+  @media (min-width: $breakpoint-small) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 }

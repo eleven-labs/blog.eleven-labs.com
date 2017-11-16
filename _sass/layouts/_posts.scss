@@ -26,11 +26,14 @@ article {
     background-position-x: center;
     background-size: $feature-image-size;
     color: $feature-image-text-color;
-    margin-bottom: 0;
-    padding: $padding-large / 2 $padding-small;
+    padding: 6rem 0;
 
-    @media (min-width: 1024px) {
-      padding: $padding-large / 2.5 $padding-large;
+    @media (min-width: $breakpoint-x-small) {
+      padding: 10rem 3rem;
+    }
+
+    @media (min-width: $breakpoint-small) {
+      padding: 12rem 3rem;
     }
 
     .meta::before {
@@ -40,8 +43,8 @@ article {
 
   .author-link {
     background-color: $author-link;
-    line-height: 1;
-    padding: .2rem .5rem;
+    margin-bottom: .5rem;
+    padding: 0 .8rem;
     text-decoration: none;
     text-shadow: none;
 

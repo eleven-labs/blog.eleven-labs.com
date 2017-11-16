@@ -1,43 +1,36 @@
 .share-buttons {
   background-color: $brand-color;
   border: 1px solid $brand-black;
-  border-left: 0;
-  bottom: auto;
+  border-bottom: 0;
+  bottom: 0;
   display: flex;
-  flex-direction: column;
-  left: 0;
+  flex-direction: row;
+  left: calc(50vw - 8rem);
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   position: fixed;
-  top: 230px;
+  top: auto;
   z-index: 1100;
 
-  @media screen and (min-width: 992px) and (max-height: 660px) {
+  @media screen and (min-width: $breakpoint-large) and (max-height: 660px) {
     top: 35vh;
   }
 
-  @media screen and (max-width: 992px) {
-    border-bottom: 0;
-    border-left: 1px solid $brand-black;
-    bottom: 0;
-    flex-direction: row;
-    left: calc(50vw - 80px);
-    top: auto;
-    width: 160px;
+  @media screen and (min-width: $breakpoint-medium) {
+    border-bottom: 1px solid $brand-black;
+    border-left: 0;
+    bottom: auto;
+    flex-direction: column;
+    left: 0;
+    top: 230px;
   }
 
   a {
-    border: 0;
-    color: $brand-black;
     cursor: pointer;
-    display: block;
-    height: 40px;
-    line-height: 40px;
+    height: 4rem;
+    line-height: 4rem;
     text-align: center;
-    text-decoration: none;
     transition: all .25s ease-in-out;
-    width: 40px;
+    width: 4rem;
 
     &:hover,
     &:visited:hover {

@@ -1,19 +1,16 @@
 .meta {
   position: relative;
 
-  @media (min-width: 480px) {
+  @media (min-width: $breakpoint-medium) {
     font-size: 1.5rem;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: $breakpoint-medium) {
     font-size: 1.3rem;
   }
 
   &-content {
     display: inline-block;
-    font-family: $font-family-headings;
-    font-weight: lighter;
-    letter-spacing: .05em;
     line-height: 1.6;
     margin: 0;
     position: relative;
@@ -32,7 +29,7 @@
     width: 108%;
     z-index: 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-medium) {
       width: 102%;
     }
   }
