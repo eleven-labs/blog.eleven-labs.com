@@ -18,7 +18,7 @@ tags:
 L'écosystème Javascript est très riche, beaucoup de développeurs mais aussi de frameworks et d'outils sont disponibles.
 Lorsque vous souhaitez développer une application, quel que soit son framework de rendu, vous allez vite être amené à vouloir architecturer votre projet afin de différencier et d'organiser les données des vues. C'est particulièrement le cas lorsque vous utilisez des frameworks de rendu de composants comme `React` ou `VueJS`.
 
-Historiquement, le besoin s'est fait sentir sur [React](https://facebook.github.io/react/) et Facebook a donc ouvert les sources de son outil [Flux](http://facebook.github.io/flux/).
+Historiquement, le besoin s'est fait sentir sur [React](https://facebook.github.io/react/) et Facebook a donc ouvert les sources de son outil [Flux](http://facebook.github.io/flux/){:target="_blank" rel="nofollow"}.
 
 Le principe est le suivant :
 
@@ -26,11 +26,11 @@ Le principe est le suivant :
 
 Votre application déclare, pour chaque composant, les `actions`  qui lui sont liées. Ces actions permettent de définir l'état de votre composant, stocké dans un `store` , qui permet de maintenir votre `vue`  à jour.
 L'inconvénient est que dans ce cas, vous avez un store par composant. Ce modèle fonctionne pour React mais vous pouvez vous sentir limité sur certaines applications.
-Dan Abramov a donc lancé, en juin 2015, [Redux](http://redux.js.org), qui permet principalement de simplifier la gestion du store car il y a en effet qu'un seul store pour toute votre application dans Redux.
+Dan Abramov a donc lancé, en juin 2015, [Redux](http://redux.js.org){:target="_blank" rel="nofollow"}, qui permet principalement de simplifier la gestion du store car il y a en effet qu'un seul store pour toute votre application dans Redux.
 
 Tous vos composants peuvent donc accéder à vos données.
 
-Pour plus d'informations sur les différences Redux / Flux, je vous invite à lire cette [réponse de Dan](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux/32920459#32920459).
+Pour plus d'informations sur les différences Redux / Flux, je vous invite à lire cette [réponse de Dan](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux/32920459#32920459){:target="_blank" rel="nofollow"}.
 
 # Installation
 

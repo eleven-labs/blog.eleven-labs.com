@@ -45,7 +45,7 @@ Nous aurons donc 3 machines Docker :
 
 Nous mettrons également sur nos deux nodes (cluster Docker Swarm) un container Docker pour Registrator, permettant de faciliter l'enregistrement de nos services Docker sur Consul.
 
-Pour plus d'informations concernant `Registrator`, vous pouvez vous rendre sur : [https://gliderlabs.com/registrator/](https://gliderlabs.com/registrator/)
+Pour plus d'informations concernant `Registrator`, vous pouvez vous rendre sur : [https://gliderlabs.com/registrator/](https://gliderlabs.com/registrator/){:target="_blank" rel="nofollow"}
 Commençons à installer notre architecture !
 
 # Service discovery
@@ -207,7 +207,7 @@ http-ip.service.consul. 0 IN A 192.168.99.102
 Autrement dit, un load balancing sera fait sur un de ces deux services lorsque vous chercherez à joindre `http://http-ip.service.consul`.
 Oui, mais qu'en est-il du côté de la répartition de cette charge ? Pouvons-nous définir une priorité et/ou poids ?
 
-Malheureusement, la réponse est non, pas pour le moment. Une issue a cependant été ouverte sur Github pour demander le support de celui-ci : [https://github.com/hashicorp/consul/issues/1088](https://github.com/hashicorp/consul/issues/1088).
+Malheureusement, la réponse est non, pas pour le moment. Une issue a cependant été ouverte sur Github pour demander le support de celui-ci : [https://github.com/hashicorp/consul/issues/1088](https://github.com/hashicorp/consul/issues/1088){:target="_blank" rel="nofollow"}.
 
 En effet, si nous regardons de plus près l'enregistrement DNS de type `SRV` , voici ce que nous obtenons :
 
@@ -248,7 +248,7 @@ $ docker kill \
 $(docker ps -q --filter='ancestor=ekofr/http-ip')
 ```
 
-Registrator nous offre des variables d'environnement afin d'ajouter des Health Check de nos containers à Consul, vous pouvez consulter la liste de toutes les variables disponibles ici : [http://gliderlabs.com/registrator/latest/user/backends/#consul](http://gliderlabs.com/registrator/latest/user/backends/#consul).
+Registrator nous offre des variables d'environnement afin d'ajouter des Health Check de nos containers à Consul, vous pouvez consulter la liste de toutes les variables disponibles ici : [http://gliderlabs.com/registrator/latest/user/backends/#consul](http://gliderlabs.com/registrator/latest/user/backends/#consul){:target="_blank" rel="nofollow"}.
 
 L'idée est pour nous de vérifier que le port 80 répond correctement, nous allons donc ajouter un script exécutant simplement une requête curl. Pour ce faire :
 

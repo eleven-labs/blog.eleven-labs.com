@@ -16,7 +16,7 @@ tags:
 
 ![Swarrot Logo](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 
-RabbitMQ est un gestionnaire de queues, permettant d'asynchroniser différents traitements. Si vous n'êtes pas familier avec cet outil, un [article](https://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/) traitant du sujet a déjà été écrit précédemment, je vous invite donc à le lire.
+RabbitMQ est un gestionnaire de queues, permettant d'asynchroniser différents traitements. Si vous n'êtes pas familier avec cet outil, un [article](https://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/){:target="_blank" rel="nofollow"} traitant du sujet a déjà été écrit précédemment, je vous invite donc à le lire.
 
 Ce que j'aimerais vous présenter ici correspond à la mise en place du cycle de vie d'un message, avec une gestion des erreurs. Le tout, en quelques lignes de code.
 
@@ -26,17 +26,17 @@ Ainsi, nous allons voir ensemble comment configurer son _virtual host_ RabbitMQ,
 
 La solution technique s'organise aurour de deux librairies :
 
-*   [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit) : librairie PHP qui permet d'interagir avec l'API HTTP de notre serveur RabbitMQ pour y créer les _exchanges_, les _queues_...
-*   [Swarrot](https://github.com/swarrot/swarrot) : librairie PHP qui permet de consommer nos messages.
+*   [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit){:target="_blank" rel="nofollow"} : librairie PHP qui permet d'interagir avec l'API HTTP de notre serveur RabbitMQ pour y créer les _exchanges_, les _queues_...
+*   [Swarrot](https://github.com/swarrot/swarrot){:target="_blank" rel="nofollow"} : librairie PHP qui permet de consommer nos messages.
 
-Swarrot est compatible avec l'extension amqp de PHP ainsi la librairie [php-amqplib](https://github.com/php-amqplib/php-amqplib). L'extension PHP possède un avantage certain en performances (écrite en C) sur la librairie d'après les [benchmarks](https://odolbeau.fr/blog/benchmark-php-amqp-lib-amqp-extension-swarrot.html). Pour installer l'extension, rendez-vous [ici](https://serverpilot.io/community/articles/how-to-install-the-php-amqp-extension.html).
-Le principal concurrent de Swarrot, [RabbitMqBundle](https://github.com/php-amqplib/RabbitMqBundle), n'est pas compatible avec l'extension PHP, et n'est pas aussi simple dans sa configuration et son utilisation.
+Swarrot est compatible avec l'extension amqp de PHP ainsi la librairie [php-amqplib](https://github.com/php-amqplib/php-amqplib). L'extension PHP possède un avantage certain en performances (écrite en C) sur la librairie d'après les [benchmarks](https://odolbeau.fr/blog/benchmark-php-amqp-lib-amqp-extension-swarrot.html). Pour installer l'extension, rendez-vous [ici](https://serverpilot.io/community/articles/how-to-install-the-php-amqp-extension.html){:target="_blank" rel="nofollow"}.
+Le principal concurrent de Swarrot, [RabbitMqBundle](https://github.com/php-amqplib/RabbitMqBundle){:target="_blank" rel="nofollow"}, n'est pas compatible avec l'extension PHP, et n'est pas aussi simple dans sa configuration et son utilisation.
 
 ## Configuration
 
 Notre première étape va être de créer notre configuration RabbitMQ : notre _exchange_ et notre _queue_.
 
-La librairie RabbitMQ Admin Toolkit, développée par _[odolbeau](https://github.com/odolbeau),_ permet de configurer notre vhost très simplement. Voici une config très basique déclarant un _exchange _et une _queue_ nous permettant d'envoyer Wilson et ses camarades dans l'espace :
+La librairie RabbitMQ Admin Toolkit, développée par _[odolbeau](https://github.com/odolbeau){:target="_blank" rel="nofollow"},_ permet de configurer notre vhost très simplement. Voici une config très basique déclarant un _exchange _et une _queue_ nous permettant d'envoyer Wilson et ses camarades dans l'espace :
 
 ```yaml
 # default_vhost.yml
@@ -87,7 +87,7 @@ Passons maintenant à la partie publication et consommation de messages.
 
 ## Consommation
 
-La librairie PHP qui va nous aider à consommer et publier nos messages, Swarrot, possède un bundle Symfony, qui va nous permettre de l'utiliser simplement dans notre application : [SwarrotBundle](https://github.com/swarrot/SwarrotBundle).
+La librairie PHP qui va nous aider à consommer et publier nos messages, Swarrot, possède un bundle Symfony, qui va nous permettre de l'utiliser simplement dans notre application : [SwarrotBundle](https://github.com/swarrot/SwarrotBundle){:target="_blank" rel="nofollow"}.
 
 Nous devons donc publier des messages, et ensuite les consommer. Voici comment le faire très simplement.
 
@@ -120,7 +120,7 @@ Voici donc un exemple de configuration. La partie intéressante arrive à part
 Chaque message publié dans un _exchange_ sera acheminé vers une _queue_ en fonction de sa _routing key_. Ainsi, il nous est donc nécessaire de traiter une message stocké dans une _queue_. Dans Swarrot, ce sont les _processors_ qui s'occcupent de cela.
 Pour consommer notre message, il nous est donc nécessaire de créer notre propre _processor_. Comme indiqué dans la documentation, un _processor_ est simplement un service Symfony qui doit implémenter l'interface _ProcessorInterface_.
 
-![Swarrot - Middleware stack](https://camo.githubusercontent.com/8ac89cd415aebfb1026b2278093dbcc986b126da/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3145615f514a486f2d3970375957386c5f62793753344e494430652d41477058527a7a6974416c59593543632f7075623f773d39363026683d373230)
+![Swarrot - Middleware stack](https://camo.githubusercontent.com/8ac89cd415aebfb1026b2278093dbcc986b126da/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3145615f514a486f2d3970375957386c5f62793753344e494430652d41477058527a7a6974416c59593543632f7075623f773d39363026683d373230){:target="_blank" rel="nofollow"}
 
 La particularité des _processors_ est qu'ils fonctionnent avec des _middlewares_, permettant d'ajouter du comportement avant et/ou après le traitement de notre message (notre processeur). C'est pour cela qu'il y a le paramètre _middleware_stack_, qui contient deux choses : _swarrot.processor.exception_catcher_ et _swarrot.processor.ack_. Bien que facultatifs, ces middlewares apportent une souplesse non négligeable. Nous y reviendrons dans la suite de cet article.
 
@@ -184,7 +184,7 @@ Un dernier aspect que j'aimerai partager avec vous concerne les erreurs lors de 
 Mis à part les problèmes d'implémentation dans votre code, il est possible que vous rencontriez des exceptions, dues à des causes "externes". Par exemple, vous avez un processeur qui doit faire une requête HTTP à un autre service. Ce dernier peut ne pas répondre temporairement, ou être en erreur. Vous avez besoin de publier le message sans que ce dernier ne soit perdu. Ne serait-il pas bien de republier le message si le service ne répond pas, et de le faire après un certain laps de temps ? Faire ce que l'on appelle en anglais un _retry_ ?
 
 Il m'est arrivé d'être confronté à ces problématiques, nous savions que cela pouvait arriver, et que le non-rattrapage des messages perdus devait se faire automatiquement.
-Je vais vous montrer comment procéder en gardant l'exemple de _send_astronaut_to_space._ Partons du principe que nous retenterons la publication de notre message au maximum 3 fois. Il nous faut donc créer 3 _queues_ de _retry_. Fort heureusement, la configuration des _queues_ et _exchanges_ de _retry_ est faite très facilement avec la librairie [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit). En effet, il ne suffit que d'une ligne ! Voyons cela plus en détails :
+Je vais vous montrer comment procéder en gardant l'exemple de _send_astronaut_to_space._ Partons du principe que nous retenterons la publication de notre message au maximum 3 fois. Il nous faut donc créer 3 _queues_ de _retry_. Fort heureusement, la configuration des _queues_ et _exchanges_ de _retry_ est faite très facilement avec la librairie [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit){:target="_blank" rel="nofollow"}. En effet, il ne suffit que d'une ligne ! Voyons cela plus en détails :
 
 ```yaml
 # default_vhost.yml
@@ -280,5 +280,5 @@ Couplé au RabbitMQ Admin Toolkit pour configurer vos _exchanges_ et _queues_, 
 
 ## Références
 
-*   [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit)
-*   [Swarrot](https://github.com/swarrot/swarrot)
+*   [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit){:target="_blank" rel="nofollow"}
+*   [Swarrot](https://github.com/swarrot/swarrot){:target="_blank" rel="nofollow"}

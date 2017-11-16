@@ -46,7 +46,7 @@ L'exemple devient beaucoup plus parlant lorsque Neha s'appuie sur le cas de Lin
 
 De plus, l'usage d'Apache Kafka devient de plus en plus simple grâce à son API d'interconnexion qui dispose aujourd'hui d'un grand nombre de connecteurs tels que Cassandra, Oracle, ElasticSearch, Mysql, MongoDB, Hadoop, ...
 
-*Les slides sont à disposition ici* : [https://speakerdeck.com/nehanarkhede/the-rise-of-real-time](https://speakerdeck.com/nehanarkhede/the-rise-of-real-time)
+*Les slides sont à disposition ici* : [https://speakerdeck.com/nehanarkhede/the-rise-of-real-time](https://speakerdeck.com/nehanarkhede/the-rise-of-real-time){:target="_blank" rel="nofollow"}
 
 ## Adrian Cole - Lead de Zipkin
 
@@ -62,7 +62,7 @@ Les métriques, quant à elles, sont simplement un nombre indicateur apparaissa
 
 Enfin, il vous faudra passer un identifiant unique de requête entre toutes vos dispositions afin de tracer les échanges entre vos applications.
 
-*Les slides sont à disposition ici* : [https://speakerdeck.com/adriancole/observability-3-ways-logging-metrics-and-tracing](https://speakerdeck.com/adriancole/observability-3-ways-logging-metrics-and-tracing)
+*Les slides sont à disposition ici* : [https://speakerdeck.com/adriancole/observability-3-ways-logging-metrics-and-tracing](https://speakerdeck.com/adriancole/observability-3-ways-logging-metrics-and-tracing){:target="_blank" rel="nofollow"}
 
 ## Ulf Adams - Lead de Bazel
 
@@ -87,11 +87,11 @@ En effet, ce talk traitait de la gestion de crise lors d'un incident majeur en 
 
 Je vous encourage à regarder la vidéo du talk lorsqu'elle sera disponible sur le site des dotConferences car l'orateur était vraiment prenant !
 
-*Les slides sont à disposition ici* : [https://speakerdeck.com/aishraj/chaos-management-during-a-major-incident](https://speakerdeck.com/aishraj/chaos-management-during-a-major-incident)
+*Les slides sont à disposition ici* : [https://speakerdeck.com/aishraj/chaos-management-during-a-major-incident](https://speakerdeck.com/aishraj/chaos-management-during-a-major-incident){:target="_blank" rel="nofollow"}
 
 ## Mitchell Hashimoto - Fondateur Hashicorp
 
-Dans ce talk, Mitchell a mis l’accent sur l’aspect central du produit de la suite Hashicorp : Vault ([https://www.vaultproject.io](https://www.vaultproject.io)).
+Dans ce talk, Mitchell a mis l’accent sur l’aspect central du produit de la suite Hashicorp : Vault ([https://www.vaultproject.io](https://www.vaultproject.io)){:target="_blank" rel="nofollow"}.
 
 En effet, dans l’organisation DevOps, ce produit permet de stocker des données de manière sécurisée pour toutes les équipes projet : il permet aussi bien de stocker des clés d’API (qui seront utiles aux développeurs) que des données de configuration réseau (qui dans ce cas sera utile pour les Ops).
 
@@ -101,15 +101,15 @@ Le stockage des données (encryptées bien sûr) peut ensuite être effectué su
 
 L’objectif principal de ce produit est de donner les moyens aux personnes de sécuriser leurs applications et infrastructures.
 
-*Les slides sont à disposition ici* : [https://speakerdeck.com/mitchellh/scaling-security](https://speakerdeck.com/mitchellh/scaling-security)
+*Les slides sont à disposition ici* : [https://speakerdeck.com/mitchellh/scaling-security](https://speakerdeck.com/mitchellh/scaling-security){:target="_blank" rel="nofollow"}
 
-Petit fait marquant pour l’occasion : Mitchell a profité de sa visite à Paris pour demander sa femme en mariage ([https://twitter.com/mitchellh/status/856202103194353664](https://twitter.com/mitchellh/status/856202103194353664)), tous nos vœux de bonheur !
+Petit fait marquant pour l’occasion : Mitchell a profité de sa visite à Paris pour demander sa femme en mariage ([https://twitter.com/mitchellh/status/856202103194353664](https://twitter.com/mitchellh/status/856202103194353664)){:target="_blank" rel="nofollow"}, tous nos vœux de bonheur !
 
 ## James Cammarata - Mainteneur principal d’Ansible
 
 James a commencé très fort son talk en pointant du doigt les erreurs d’ingénieurs qui ont eu pour effet de causer un début de black-out sur Internet ces dernières années.
 
-Comme exemple récent, nous retiendrons la coupure d’une région AWS S3 aux Etats-Unis récemment ([https://aws.amazon.com/fr/message/41926/](https://aws.amazon.com/fr/message/41926/)) dont l’erreur était clairement humaine. Un employé était en effet en train de débugger sur le système de paiement d’AWS et a voulu couper un serveur afin d’effectuer un test. Malheureusement, il y a eu un “effet domino” qui a causé l’arrêt de tous les serveurs AWS S3 de toute une région.
+Comme exemple récent, nous retiendrons la coupure d’une région AWS S3 aux Etats-Unis récemment ([https://aws.amazon.com/fr/message/41926/](https://aws.amazon.com/fr/message/41926/)){:target="_blank" rel="nofollow"} dont l’erreur était clairement humaine. Un employé était en effet en train de débugger sur le système de paiement d’AWS et a voulu couper un serveur afin d’effectuer un test. Malheureusement, il y a eu un “effet domino” qui a causé l’arrêt de tous les serveurs AWS S3 de toute une région.
 
 Le talk s’est ensuite recentré sur Ansible et les moyens que nous avons à notre disposition afin d’éviter ce genre de problème.
 
@@ -124,15 +124,15 @@ Dans ce cas, si la variable "backup_directory" n’est pas définie, les donnée
 
 D’autres cas d’erreurs sont également possibles et ce sont souvent les variables qui en sont la cause. James invite donc à toujours préfixer les variables utilisées dans le code Ansible.
 
-Autre détail annexe mais “fun” de ce talk : James a développé un module Ansible permettant d’interagir avec l’API Phillips Hue. Si cela vous intéresse, il est disponible à cette URL : [https://github.com/jimi-c/hue](https://github.com/jimi-c/hue)
+Autre détail annexe mais “fun” de ce talk : James a développé un module Ansible permettant d’interagir avec l’API Phillips Hue. Si cela vous intéresse, il est disponible à cette URL : [https://github.com/jimi-c/hue](https://github.com/jimi-c/hue){:target="_blank" rel="nofollow"}
 
-Enfin, un point important évoqué lors de l’interview qui a suivie : Ansible Tower ([https://www.ansible.com/tower](https://www.ansible.com/tower)) devrait par la suite être disponible en open-source.
+Enfin, un point important évoqué lors de l’interview qui a suivie : Ansible Tower ([https://www.ansible.com/tower](https://www.ansible.com/tower)){:target="_blank" rel="nofollow"} devrait par la suite être disponible en open-source.
 
 ## David Mazières - Chief Scientist chez Stellar et Professeur à l’université de Stanford
 
 Un talk très intéressant mais pas forcément évident à suivre pour tout le monde !
 
-En effet, l’objectif de ce talk était de nous faire prendre conscience du protocole Consensus ([https://fr.wikipedia.org/wiki/Consensus_(informatique)](https://fr.wikipedia.org/wiki/Consensus_(informatique))) et donc d’un monde où tout le monde peut avoir le moyen de vérifier une information.
+En effet, l’objectif de ce talk était de nous faire prendre conscience du protocole Consensus ([https://fr.wikipedia.org/wiki/Consensus_(informatique)](https://fr.wikipedia.org/wiki/Consensus_(informatique))){:target="_blank" rel="nofollow"} et donc d’un monde où tout le monde peut avoir le moyen de vérifier une information.
 
 Le premier exemple dont a parlé David, et qui semble évident, sont les autorités de certification. Aujourd’hui, lorsqu’elles délivrent un certificat, elles sont les seules habilitées à contrôler l’authenticité de celui-ci.
 
@@ -150,7 +150,7 @@ Grâce au système ouvert de PostgreSQL et particulièrement à la mise à dispo
 
 La conclusion de ce talk est sans appel : PostgreSQL, grâce à son système d’extension, ne se cantonne plus à la fonction de simple base de données, mais devient ainsi une plateforme SQL extensible, et surtout scalable.
 
-*Les slides sont à disposition ici* : [https://speakerdeck.com/marcocitus/scaling-out-postgre-sql](https://speakerdeck.com/marcocitus/scaling-out-postgre-sql)
+*Les slides sont à disposition ici* : [https://speakerdeck.com/marcocitus/scaling-out-postgre-sql](https://speakerdeck.com/marcocitus/scaling-out-postgre-sql){:target="_blank" rel="nofollow"}
 
 ## Andrew Shafer - Directeur de technologie chez Pivotal
 Ce talk est presque de nature philosophique. Pour autant, les propos avancés sont assez denses.
@@ -163,7 +163,7 @@ Vous en conviendrez, les deux derniers termes sont bien sûr très compliqués �
 
 Il définit alors la méthodologie “Calms” pour arriver à pratiquer correctement ces concepts: “Culture, Automation, Lean, Metrics, Sharing”.
 
-*Les slides sont à disposition ici* : [https://www.slideshare.net/littleidea/the-end-of-the-beginning-devopsdays-denver-2017](https://www.slideshare.net/littleidea/the-end-of-the-beginning-devopsdays-denver-2017)
+*Les slides sont à disposition ici* : [https://www.slideshare.net/littleidea/the-end-of-the-beginning-devopsdays-denver-2017](https://www.slideshare.net/littleidea/the-end-of-the-beginning-devopsdays-denver-2017){:target="_blank" rel="nofollow"}
 
 ## Clay Smith - Technologue chez New Relic
 
@@ -185,9 +185,9 @@ Clay montre également que le temps d’exécution varie entre la première lamb
 
 Il conclut ensuite sur le fait qu'idéalement les lambdas sont à utiliser lorsque vous avez des traitements importants à effectuer, de façon occasionnelle en réponse à un événement bien défini qui n’est pas sensible à un temps de latence.
 
-*Les slides sont disponibles ici* : [https://speakerdeck.com/smithclay/searching-for-the-server-in-serverless](https://speakerdeck.com/smithclay/searching-for-the-server-in-serverless)
+*Les slides sont disponibles ici* : [https://speakerdeck.com/smithclay/searching-for-the-server-in-serverless](https://speakerdeck.com/smithclay/searching-for-the-server-in-serverless){:target="_blank" rel="nofollow"}
 
-À lire également, l'article sur comment Clay a pu monter un serveur SSH sur une lambda : [https://medium.com/clog/ssh-ing-into-your-aws-lambda-functions-c940cebf7646](https://medium.com/clog/ssh-ing-into-your-aws-lambda-functions-c940cebf7646)
+À lire également, l'article sur comment Clay a pu monter un serveur SSH sur une lambda : [https://medium.com/clog/ssh-ing-into-your-aws-lambda-functions-c940cebf7646](https://medium.com/clog/ssh-ing-into-your-aws-lambda-functions-c940cebf7646){:target="_blank" rel="nofollow"}
 
 # Conclusion
 

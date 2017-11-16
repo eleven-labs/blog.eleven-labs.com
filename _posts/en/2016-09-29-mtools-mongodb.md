@@ -19,7 +19,7 @@ Here is the problem : how to find in your huge amount of data or in your daily r
 
 Giving the help of MongoDB Inc. on Numeric Editions subjects at FranceTV, we automated the use of tools, in order to study behaviours of our production servers without incidences on our applications.
 
-The tool, or rather the toolbox we most oftenly use is [MTools](https://github.com/rueckstiess/mtools). This project was started and is still maintained by [Thomas Rückstieß](https://github.com/rueckstiess), who worked for MongoDB.
+The tool, or rather the toolbox we most oftenly use is [MTools](https://github.com/rueckstiess/mtools). This project was started and is still maintained by [Thomas Rückstieß](https://github.com/rueckstiess){:target="_blank" rel="nofollow"}, who worked for MongoDB.
 
 MTools : 6 tools in one
 =======================
@@ -51,7 +51,7 @@ About columns:
 
 In this example, we can see that findandmodify operation is extremly used in an acceptable amount of time. However, simple count operations are taking a huge amount and time, which can be due to a missing index.
 
-More info [here](https://github.com/rueckstiess/mtools/wiki/mloginfo).
+More info [here](https://github.com/rueckstiess/mtools/wiki/mloginfo){:target="_blank" rel="nofollow"}.
 
 ### Mlogfilter
 
@@ -73,7 +73,7 @@ protocol:op_query (0hr 0min 3secs 99ms) 3,099ms
 
 This command for example show only the slower operations within a day from the beginning of the log file. As we can see, the output gives us an aggregate of commands which took more than three seconds to execute.
 
-More info [here](https://github.com/rueckstiess/mtools/wiki/mlogfilter).
+More info [here](https://github.com/rueckstiess/mtools/wiki/mlogfilter){:target="_blank" rel="nofollow"}.
 
 ### Mplotqueries & Mlogvis
 
@@ -81,7 +81,7 @@ Those tools allows you to generate graphics to visualize data in a human-readabl
 
 ![mlogvis](/assets/2016-09-29-mtools-mongodb/mlogvis.png)
 
-More info on [Mlogvis](https://github.com/rueckstiess/mtools/wiki/mlogvis) & [Mplotqueries](https://github.com/rueckstiess/mtools/wiki/mplotqueries).
+More info on [Mlogvis](https://github.com/rueckstiess/mtools/wiki/mlogvis) & [Mplotqueries](https://github.com/rueckstiess/mtools/wiki/mplotqueries){:target="_blank" rel="nofollow"}.
 
 ### Mgenerate
 
@@ -113,7 +113,7 @@ This is an example of JSON file used to generate an user collection :
 }
 ```
 
-More info on [Mgenerate](https://github.com/rueckstiess/mtools/wiki/mgenerate).
+More info on [Mgenerate](https://github.com/rueckstiess/mtools/wiki/mgenerate){:target="_blank" rel="nofollow"}.
 
 ### Mlaunch
 

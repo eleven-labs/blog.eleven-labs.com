@@ -18,12 +18,12 @@ tags:
 
 # Introduction à Atom
 
-[Atom](https://atom.io) est un éditeur de texte (principalement utilisé pour du code) multi-plateforme développé par la société GitHub et qui s'appuie sur un autre framework développé par GitHub : <a href="http://electron.atom.io/">Electron</a>, qui permet de développer des applications natives pour chaque système d'exploitation à partir de code Javascript.
+[Atom](https://atom.io) est un éditeur de texte (principalement utilisé pour du code){:target="_blank" rel="nofollow"} multi-plateforme développé par la société GitHub et qui s'appuie sur un autre framework développé par GitHub : <a href="http://electron.atom.io/">Electron</a>, qui permet de développer des applications natives pour chaque système d'exploitation à partir de code Javascript.
 
 Le grand intérêt d'Atom est qu'il peut être étendu très facilement avec un peu de code Javascript et c'est ce que nous allons voir dans cet article. Ainsi, tout le monde peut écrire son "package" pour Atom.
 
 Aussi, sa communauté très active compte déjà un bon nombre de packages : `5 285` au moment où j'écris cet article.
-Vous pouvez les retrouver à l'URL suivante : [https://atom.io/packages](https://atom.io/packages)
+Vous pouvez les retrouver à l'URL suivante : [https://atom.io/packages](https://atom.io/packages){:target="_blank" rel="nofollow"}
 
 Si toutefois vous ne trouvez pas votre bonheur dans les packages déjà proposés, vous pouvez alors écrire le votre et nous allons voir qu'il n'y a rien de compliqué.
 
@@ -75,7 +75,7 @@ Nous avons ensuite le fichier `keymaps/my-package.json`  qui vous permet d'enre
 Passons maintenant au point d'entrée de votre package. Il s'agit de ce qui se trouve dans `lib/my-package.js`.
 Dans ce fichier est exporté un objet par défaut qui contient une propriété `subscriptions`  et des méthodes `activate()`  et `deactivate()`  notamment.
 
-Lors de l'activation de notre package (dans la méthode `activate()` ), nous allons enregistrer dans notre propriété `subscriptions`  un objet de type [CompositeDisposable](https://atom.io/docs/api/latest/CompositeDisposable)  qui nous permettra d'ajouter et d'éventuellement plus tard, supprimer des commandes disponibles dans notre package :
+Lors de l'activation de notre package (dans la méthode `activate()` ), nous allons enregistrer dans notre propriété `subscriptions`  un objet de type [CompositeDisposable](https://atom.io/docs/api/latest/CompositeDisposable){:target="_blank" rel="nofollow"}  qui nous permettra d'ajouter et d'éventuellement plus tard, supprimer des commandes disponibles dans notre package :
 
 ```js
 activate(state) {
@@ -93,7 +93,7 @@ Vous pouvez ajouter autant de commandes que vous le souhaitez et surtout, décou
 
 ## Ajouter des paramètres dans mon package
 
-Vous avez la possibilité d'ajouter des paramètres à votre package et ceci est rendu possible grâce au composant [Config](https://atom.io/docs/api/latest/Config)</a>.
+Vous avez la possibilité d'ajouter des paramètres à votre package et ceci est rendu possible grâce au composant [Config](https://atom.io/docs/api/latest/Config){:target="_blank" rel="nofollow"}</a>.
 
 Il vous suffira d'ajouter une propriété `config`  à votre classe en définissant un objet avec la définition de chaque élément que vous souhaitez voir apparaître dans vos paramètres :
 
@@ -190,11 +190,11 @@ console.log(repository.isStatusNew('/path/to/file')); // -> true
 ```
 
 ## Encore bien d'autres choses à découvrir ...
-Je vous ai présenté les composants les plus courants mais je vous invite à visiter la documentation de l'API si vous souhaitez aller plus loin : [https://atom.io/docs/api/latest/AtomEnvironment](https://atom.io/docs/api/latest/AtomEnvironment)
+Je vous ai présenté les composants les plus courants mais je vous invite à visiter la documentation de l'API si vous souhaitez aller plus loin : [https://atom.io/docs/api/latest/AtomEnvironment](https://atom.io/docs/api/latest/AtomEnvironment){:target="_blank" rel="nofollow"}
 
 # Tester votre package
 
-Nous en arrivons au moment de tester notre package, et pour cela, Atom utilise [Jasmine](https://jasmine.github.io)
+Nous en arrivons au moment de tester notre package, et pour cela, Atom utilise [Jasmine](https://jasmine.github.io){:target="_blank" rel="nofollow"}
 
 Votre package vient déjà avec un fichier de test pré-défini :
 
@@ -242,7 +242,7 @@ Félicitations, votre package est maintenant publié et visible à l'URL : `http
 
 # Intégration continue
 
-Afin de vous assurer que votre package fonctionne toujours sur la version stable d'Atom mais également pour anticiper et tester également la version bêta, vous pouvez mettre en place [Travis-CI](https://travis-ci.org) sur le repository de votre code avec le fichier suivant :
+Afin de vous assurer que votre package fonctionne toujours sur la version stable d'Atom mais également pour anticiper et tester également la version bêta, vous pouvez mettre en place [Travis-CI](https://travis-ci.org){:target="_blank" rel="nofollow"} sur le repository de votre code avec le fichier suivant :
 
 ```yaml
 language: objective-c

@@ -49,7 +49,7 @@ La sauvegarde des clefs sur papier est très simple. Il suffit d'imprimer le fic
 
 Mais lors de la reconnaissance des caractères, il peut y avoir des erreurs, notamment sur des caractères se ressemblant, comme "i" et "l" ou "0" et "o". Comme notre clef fait plus de 14000 caractères et qu'il est quasiment impossible de retrouver le caractère non reconnu, nous allons encoder chaque caractère par son code hexadécimal et chaque ligne aura une somme de contrôle. Ainsi, il sera plus simple de trouver la ligne en erreur et de corriger le caractère non reconnu lors du scan du papier.
 
-L'avantage par rapport à paperkey, c'est qu'il utilise des outils simples : hd et cksum. Je me suis inspiré de [cet article de blog](https://nipil.org/2013/09/19/GnuPG-plan-de-secours-valide.html) et j'ai légèrement modifié la commande.
+L'avantage par rapport à paperkey, c'est qu'il utilise des outils simples : hd et cksum. Je me suis inspiré de [cet article de blog](https://nipil.org/2013/09/19/GnuPG-plan-de-secours-valide.html){:target="_blank" rel="nofollow"} et j'ai légèrement modifié la commande.
 
 Voici la commande qui permet d'avoir le dump hexadécimal ainsi que la somme de contrôle de chaque ligne du dump.
 
@@ -106,17 +106,17 @@ Toutes les étapes décrites tout au long de ces articles nous font prendre cons
 
 ## Ressources
 
-* [Acid free paper](https://en.wikipedia.org/wiki/Acid-free_paper)
-* [Quelle est la durée de vie d’un CD ?](http://future.arte.tv/fr/memoire-numerique/quelle-est-la-duree-de-vie-dun-cd)
-* [La durée de vie d'un CD ? Les experts sont plutôt pessimistes](https://www.tomsguide.fr/actualite/cd-audio-duree-vie,44609.html)
-* [Les supports CD et leur durée de vie](https://www.canada.ca/fr/institut-conservation/services/soin-objets/supports-electroniques/supports-cd-duree-vie-faq.html)
-* [Pourquoi les clés USB claquent-elles si vite ?](https://www.lesnumeriques.com/cle-usb/pourquoi-cles-usb-claquent-si-vite-a1648.html)
-* [Pourquoi les disques SSD ont une durée de vie limitée ?](https://lehollandaisvolant.net/?d=2017/03/21/17/16/34-pourquoi-les-disques-ssd-ont-une-duree-de-vie-limitee)
-* [Dire au revoir: 5 Alternatives au disque optique ](http://wikifra.xyz/expliqu-technology/11065-dire-au-revoir-5-alternatives-au-disque-optique.html)
-* [OpenPGP et GnuPG : 25 ans de chiffrement pour tous, ce qu'il faut savoir avant de s'y mettre](https://www.nextinpact.com/news/98509-openpgp-et-gnupg-25-ans-chiffrement-pour-tous-ce-quil-faut-savoir-avant-sy-mettre.htm)
-* [gnupg hardcopy](https://github.com/nipil/gnupg-hardcopy)
-* [GnuPG, plan de secours validé, ouf !](https://nipil.org/2013/09/19/GnuPG-plan-de-secours-valide.html)
-* [Pretty Good Privacy: Criminal_investigation](https://en.wikipedia.org/wiki/Pretty_Good_Privacy#Criminal_investigation)
-* [Journal De la gestion des clefs OpenPGP](http://linuxfr.org/users/gouttegd/journaux/de-la-gestion-des-clefs-openpgp)
-* [Rapport disque blue-ray](http://blog.nalis.fr/public/pdf/DGP_SIAF_2012_010.RAPPORT_DISQUES_BLU_RAY.pdf)
-* [Printing and Scanning a PGP Key](http://archive.is/RWTbi)
+* [Acid free paper](https://en.wikipedia.org/wiki/Acid-free_paper){:target="_blank" rel="nofollow"}
+* [Quelle est la durée de vie d’un CD ?](http://future.arte.tv/fr/memoire-numerique/quelle-est-la-duree-de-vie-dun-cd){:target="_blank" rel="nofollow"}
+* [La durée de vie d'un CD ? Les experts sont plutôt pessimistes](https://www.tomsguide.fr/actualite/cd-audio-duree-vie,44609.html){:target="_blank" rel="nofollow"}
+* [Les supports CD et leur durée de vie](https://www.canada.ca/fr/institut-conservation/services/soin-objets/supports-electroniques/supports-cd-duree-vie-faq.html){:target="_blank" rel="nofollow"}
+* [Pourquoi les clés USB claquent-elles si vite ?](https://www.lesnumeriques.com/cle-usb/pourquoi-cles-usb-claquent-si-vite-a1648.html){:target="_blank" rel="nofollow"}
+* [Pourquoi les disques SSD ont une durée de vie limitée ?](https://lehollandaisvolant.net/?d=2017/03/21/17/16/34-pourquoi-les-disques-ssd-ont-une-duree-de-vie-limitee){:target="_blank" rel="nofollow"}
+* [Dire au revoir: 5 Alternatives au disque optique ](http://wikifra.xyz/expliqu-technology/11065-dire-au-revoir-5-alternatives-au-disque-optique.html){:target="_blank" rel="nofollow"}
+* [OpenPGP et GnuPG : 25 ans de chiffrement pour tous, ce qu'il faut savoir avant de s'y mettre](https://www.nextinpact.com/news/98509-openpgp-et-gnupg-25-ans-chiffrement-pour-tous-ce-quil-faut-savoir-avant-sy-mettre.htm){:target="_blank" rel="nofollow"}
+* [gnupg hardcopy](https://github.com/nipil/gnupg-hardcopy){:target="_blank" rel="nofollow"}
+* [GnuPG, plan de secours validé, ouf !](https://nipil.org/2013/09/19/GnuPG-plan-de-secours-valide.html){:target="_blank" rel="nofollow"}
+* [Pretty Good Privacy: Criminal_investigation](https://en.wikipedia.org/wiki/Pretty_Good_Privacy#Criminal_investigation){:target="_blank" rel="nofollow"}
+* [Journal De la gestion des clefs OpenPGP](http://linuxfr.org/users/gouttegd/journaux/de-la-gestion-des-clefs-openpgp){:target="_blank" rel="nofollow"}
+* [Rapport disque blue-ray](http://blog.nalis.fr/public/pdf/DGP_SIAF_2012_010.RAPPORT_DISQUES_BLU_RAY.pdf){:target="_blank" rel="nofollow"}
+* [Printing and Scanning a PGP Key](http://archive.is/RWTbi){:target="_blank" rel="nofollow"}

@@ -63,7 +63,7 @@ La difficulté d'avoir cette gestion pour les répertoires, est de s'outiller p
 
 J'ai tout de même envie de tester ce mode de fonctionnement qui parait avoir plus d'avantages que la gestion actuelle.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/monolith-repositories-with-git)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/monolith-repositories-with-git){:target="_blank" rel="nofollow"}
 
 ### Le composant Guard
 
@@ -76,7 +76,7 @@ La seule nouveauté est la gestion de l'authentification en une seule class, et 
 
 Lors de son talk, un exemple de code nous apporte une idée de l'utilisation beaucoup plus simple, je vous invite à tester le composant dans vos projets en Symfony 2.8.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/guard-dans-la-vraie-vie)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/guard-dans-la-vraie-vie){:target="_blank" rel="nofollow"}
 
 ### La migration de Symfony 2.0 à 3.0 où comment faire une migration progressive.
 
@@ -87,7 +87,7 @@ La Fourchette est venue nous montrer comment mettre en place une migration prog
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718006558282682370">7 avril 2016</a></p></blockquote>
 
 
-Pour réussir cette migration, ils sont partis sur une solution [ApiPlatform](https://api-platform.com/), qui leur permet de ne plus se concentrer sur la partie transmission des données, mais seulement sur le métier.
+Pour réussir cette migration, ils sont partis sur une solution [ApiPlatform](https://api-platform.com/){:target="_blank" rel="nofollow"}, qui leur permet de ne plus se concentrer sur la partie transmission des données, mais seulement sur le métier.
 
 
 <Le code métier a d'abord été mis dans une LegacyBundle pour leur permettre de ne pas avoir d'interruption de service. Puis, les développeurs gèrent la synchronisation des données, pour cela ils n'ont pas choisi une migration unitaire car trop longue, mais plutôt une migration progressive qui récupère les données du legacy au fur et à mesure de l'utilisation de l'application.
@@ -100,7 +100,7 @@ Après un an de travail, il leur reste encore beaucoup de fonctionnalités à mi
 
 Je trouve leur migration vraiment sympa, elle permet de vérifier les choix techniques à chaque instant et de ne pas fermer des services utilisateur.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/r2d2-to-bb8)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/r2d2-to-bb8){:target="_blank" rel="nofollow"}
 
 ### Les fuites de mémoire en PHP
 
@@ -118,7 +118,7 @@ Le talk était très sympa, mais le speaker oublie que le choix de PHP n'est pas
 <blockquote class="twitter-tweet"><p><a href="https://twitter.com/hashtag/memory?src=hash">#memory</a> <a href="https://twitter.com/hashtag/leak?src=hash">#leak</a> c'est surtout pour les deamon mais pourquoi les faire en <a href="https://twitter.com/hashtag/php?src=hash">#php</a> ? <a href="https://twitter.com/hashtag/Symfony_Live?src=hash">#Symfony_Live</a> <a href="https://t.co/Tz8ERo2wtQ">pic.twitter.com/Tz8ERo2wtQ</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718013770950434816">7 avril 2016</a></p></blockquote>
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/php-meminfo-ou-la-chasse-aux-memory-leak)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/php-meminfo-ou-la-chasse-aux-memory-leak){:target="_blank" rel="nofollow"}
 
 ### Retour d'expérience sur les microservices.
 
@@ -126,7 +126,7 @@ Le speaker vient nous expliquer la mise en place des microservices chez Auchan, 
 
 > 1 microservice = 1 domaine métier = 1 composant applicatif
 
-Il montre que l'architecture qu'il voulait mettre en place devait suivre le reactive manifesto disponible [ici](http://www.reactivemanifesto.org/fr) . En résumé c'est:
+Il montre que l'architecture qu'il voulait mettre en place devait suivre le reactive manifesto disponible [ici](http://www.reactivemanifesto.org/fr){:target="_blank" rel="nofollow"} . En résumé c'est:
 
 - responsive
 - resilient
@@ -147,7 +147,7 @@ Il choisit donc de mettre seulement en prod un talend entre chaque appli qui per
 
 Je ne suis pas fan de son architecture car elle ne contient qu'une seule technologie et non une réflexion plus globale, de plus l'utilisation d'un bundle commun entre chaque applicatif n'est pas microservices compiliant car cela créé une dépendance entre les services.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/retour-dexprience-reactive-architecture-et-microservices--comment-dcoupler-mes-applications)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/retour-dexprience-reactive-architecture-et-microservices--comment-dcoupler-mes-applications){:target="_blank" rel="nofollow"}
 
 ### Le composant workflow.
 
@@ -163,7 +163,7 @@ Le composant permet de suivre le workflow d'un objet très facilement, il suffi
 
 Durant tout le talk, il donne l'exemple de la presse et la gestion du workflow de publication ce qui nous donne un vrai exemple d'utilisation de ce nouveau composant.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/le-reveil-du-workflow)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/le-reveil-du-workflow){:target="_blank" rel="nofollow"}
 
 ### Blablacar nous présente ElasticSearch
 
@@ -178,7 +178,7 @@ On y retrouve un tutoriel de l'utilisation d'Elasticsearch avec de nombreux exem
 
 En bref un bon récapitulatif de la documentation Elasticsearch, dommage de ne pas être allé plus loin.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/elasticsearch-chez-blablacar)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/elasticsearch-chez-blablacar){:target="_blank" rel="nofollow"}
 
 ### Performance au quotidien dans un environnement Symfony.
 
@@ -188,7 +188,7 @@ Tout d'abord, il a choisi des métriques à suivre qui permettent d'avoir une li
 
 Il a choisi alors le framework, Symfony n'avait pas les meilleures performances, au contraire il était dans les derniers, mais cela était surtout dû à Doctrine, CCM Benchmark avait envie de travailler avec Symfony car malgré de mauvaises performances, c'est un framework très suivi et qui a beaucoup d'autres avantages.
 
-Il a donc codé leur propre ORM nommé [Ting](http://tech.ccmbg.com/ting/) qui a remis Symfony dans la course des performances.
+Il a donc codé leur propre ORM nommé [Ting](http://tech.ccmbg.com/ting/){:target="_blank" rel="nofollow"} qui a remis Symfony dans la course des performances.
 
 Une fois le framework choisi, il donne plusieurs petits tips pour améliorer le cache Symfony telle que la mise en place du warm-up après la mise en production et pleins d'autres à revoir dans les slides.
 
@@ -196,7 +196,7 @@ Le dernier point de la présentation était la mise en place de Blackfire pour l
 
 Cette présentation est à voir, elle permet de se familiariser avec la gestion de la performance dans un grand groupe média.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/performance-au-quotidien-dans-un-environnement-symfony)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/performance-au-quotidien-dans-un-environnement-symfony){:target="_blank" rel="nofollow"}
 
 ### La confiance dans une entreprise.
 
@@ -215,7 +215,7 @@ Puis, nous explique ce qu'il a mis en place chez OpenClassRoom avec un historiqu
 
 Il finit par de nombreux conseils de management tels que la transparence et la confiance. On n'est pas loin chez Eleven :)
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/pourquoi-se-faire-confiance)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/pourquoi-se-faire-confiance){:target="_blank" rel="nofollow"}
 
 ### PSR6 ou le cache interface.
 
@@ -242,7 +242,7 @@ Nicolas Grekas nous montre alors comment Symfony a développé la mise en place 
 Pour l'instant, l'implémentation est simple, mais il reste beaucoup de travail donc toute aide est la bienvenue.
 La présentation était sympa et permet de réfléchir sur la mise en place du cache ainsi que l'intérêt du PSR.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/psr-6--symfony-cache--de-la-perf-en-standard)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/psr-6--symfony-cache--de-la-perf-en-standard){:target="_blank" rel="nofollow"}
 
 ### La sécurité web par Blablacar.
 
@@ -255,7 +255,7 @@ La présentation était très parlante et permet de voir le nombre de failles po
 Il montre ensuite une succession de problèmes de sécurité courants, tels que les XSS, le CRSF TOKEN, le brut force, etc ....
 Je vous invite à regarder les slides au plus vite, en espérant qu'ils soient disponibles.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/scurit-web-pirater-pour-mieux-protger)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/scurit-web-pirater-pour-mieux-protger){:target="_blank" rel="nofollow"}
 
 ### Doctrine 2
 
@@ -277,7 +277,7 @@ Je repars dans le même état d'esprit qu'en arrivant : je n'ai aucune envie d'
 <p dir="ltr" lang="fr">Pas de changement d'avis sur <a href="https://twitter.com/hashtag/doctrine?src=hash">#doctrine</a> trop de code pour faire des requêtes <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> <a href="https://t.co/25Mna0ppTz">pic.twitter.com/25Mna0ppTz</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718380797800132609">8 avril 2016</a></p></blockquote>
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/aller-plus-loin-avec-doctrine2)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/aller-plus-loin-avec-doctrine2){:target="_blank" rel="nofollow"}
 
 ### Le composant d'expression langage.
 
@@ -288,7 +288,7 @@ C'est ce genre de présentation très métier qui sans notion de ce dernier, me
 <blockquote class="twitter-tweet"><p>Une petit session de <a href="https://twitter.com/hashtag/livecoding?src=hash">#livecoding</a> au <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> sur le composant <a href="https://twitter.com/hashtag/expression?src=hash">#expression</a>-language. <a href="https://twitter.com/hashtag/bravo?src=hash">#bravo</a> <a href="https://t.co/c14TmoOirn">pic.twitter.com/c14TmoOirn</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718418419448721409">8 avril 2016</a></p></blockquote>
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/refondre-un-moteur-de-rgles-avec-lexpression-language-de-symfony2)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/refondre-un-moteur-de-rgles-avec-lexpression-language-de-symfony2){:target="_blank" rel="nofollow"}
 
 ### Sécurité et HTTP
 
@@ -303,9 +303,9 @@ La suite de la présentation était sur les content-security-policy, qui permett
 <blockquote class="twitter-tweet"><p>Une bonne solution pour sécurisé mon site avec les content-security-policy <a href="https://twitter.com/hashtag/symfony_live?src=hash">#symfony_live</a> avec <a href="https://twitter.com/romainneutron">@romainneutron</a> <a href="https://t.co/FjJORu3ZIG">pic.twitter.com/FjJORu3ZIG</a></p>
 <p>— Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/718428864758816768">8 avril 2016</a></p></blockquote>
 
-L'utilisation du [nelmio/NelmioSecurityBundle](https://github.com/nelmio/NelmioSecurityBundle) permet de faire une migration en douceur des headers et donc de la sécurisation de vos applications.
+L'utilisation du [nelmio/NelmioSecurityBundle](https://github.com/nelmio/NelmioSecurityBundle){:target="_blank" rel="nofollow"} permet de faire une migration en douceur des headers et donc de la sécurisation de vos applications.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/scurit-et-http)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/scurit-et-http){:target="_blank" rel="nofollow"}
 
 ### Les applications cloud native
 
@@ -323,7 +323,7 @@ Le speaker était "fou", il parlait très vite et se perdait parfois dans ses ex
 
 La présentation était très intéressante mais manquait d'une ligne directrice.
 
-[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/construire-des-applications-cloud-natives)
+[Les slides et les avis](https://joind.in/event/symfonylive-paris-2016/construire-des-applications-cloud-natives){:target="_blank" rel="nofollow"}
 
 ### Conclusion
 
