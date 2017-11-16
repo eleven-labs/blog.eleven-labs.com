@@ -68,7 +68,7 @@ La déclaration d'une propriété est définie par un type `int32` ou `string` (
 On peut aussi faire de la composition en créant de nouveaux types comme ici `PhoneNumber` ou bien des énumérations.
 Des modèles de données sont aussi disponibles comme les `array` avec le mot-clé `repeated` ou bien encore des maps avec `map<Key, Value>`.
 
-Vous pouvez retrouver tous les types et déclaration sur [la documentation de Protobuf](https://developers.google.com/protocol-buffers/docs/proto3){:target="_blank" rel="nofollow"}{:target="_blank"}.
+Vous pouvez retrouver tous les types et déclaration sur [la documentation de Protobuf](https://developers.google.com/protocol-buffers/docs/proto3){:target="_blank" rel="nofollow noopener noreferrer"}{:target="_blank"}.
 
 Une fois notre fichier proto prêt, nous pouvons générer notre fichier Go ou autres avec la commande `protoc`.
 
@@ -128,14 +128,14 @@ Codage de la valeur : groupage en 7 bits avec l'ajout d'un msb (most significant
        → 2 + 4 + 16 + 128 = 150
 ```
 
-Un binaire protobuf sera plus léger qu'un json et donc plus rapidement transmis dans une requête. De plus le parsing est très performant, retrouvez un article sur [les performances de Protobuf](https://medium.com/@fzambia/centrifugo-protobuf-inside-json-outside-21d39bdabd68){:target="_blank" rel="nofollow"}{:target="_blank"}.
+Un binaire protobuf sera plus léger qu'un json et donc plus rapidement transmis dans une requête. De plus le parsing est très performant, retrouvez un article sur [les performances de Protobuf](https://medium.com/@fzambia/centrifugo-protobuf-inside-json-outside-21d39bdabd68){:target="_blank" rel="nofollow noopener noreferrer"}{:target="_blank"}.
 
 Nous allons maintenant voir tout ça en pratique.
 
 ## Exemple d'application
 ---
 
-Nous allons tout d'abord installer `protoc` qui permet de générer notre code depuis les fichiers protobuf. [Installer la version pour votre système d'exploitation](https://github.com/google/protobuf/releases/latest){:target="_blank" rel="nofollow"}. Une fois ceci fait on va déclarer notre fichier protobuf. Nous allons ensuite installer la librairie qui va permettre de gérer la génération des fichiers Go.
+Nous allons tout d'abord installer `protoc` qui permet de générer notre code depuis les fichiers protobuf. [Installer la version pour votre système d'exploitation](https://github.com/google/protobuf/releases/latest){:target="_blank" rel="nofollow noopener noreferrer"}. Une fois ceci fait on va déclarer notre fichier protobuf. Nous allons ensuite installer la librairie qui va permettre de gérer la génération des fichiers Go.
 
 ```Bash
 go get -u github.com/golang/protobuf/protoc-gen-go 

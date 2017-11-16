@@ -39,7 +39,7 @@ Jean-Claude Grosjean concluded that CoPs are the most complicated thing to set u
 
 This allowed me to draw a parallel with how we work at Eleven Labs. We have a planetary system, a little bit like the Houses of Hogwarts: employees are separated in four different planets. However, we are not dispatched in a planet by common interest (same developing language, same interest for agility, same love for video games…) but by a wheel of fortune.
 That being said, if one day the planets come to be reformed or if guilds of common interest are born within the planets, we will then have a model close to these CoP!
-You can find his slides [here](https://www.slideshare.net/jcgrosjean/une-communaut-de-pratiques-agile-qui-marche?ref=http://www.qualitystreet.fr/2016/11/24/les-cles-dune-communaute-agile-qui-marche/){:target="_blank" rel="nofollow"}
+You can find his slides [here](https://www.slideshare.net/jcgrosjean/une-communaut-de-pratiques-agile-qui-marche?ref=http://www.qualitystreet.fr/2016/11/24/les-cles-dune-communaute-agile-qui-marche/){:target="_blank" rel="nofollow noopener noreferrer"}
 
 ----------
 

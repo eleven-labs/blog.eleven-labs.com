@@ -337,6 +337,6 @@ Advantages of the specification pattern are as follow:
 
 ## References
 
-[Eric Evans & Martin Fowler - Specifications](http://martinfowler.com/apsupp/spec.pdf){:target="_blank" rel="nofollow"}
+[Eric Evans & Martin Fowler - Specifications](http://martinfowler.com/apsupp/spec.pdf){:target="_blank" rel="nofollow noopener noreferrer"}
 
-[Specification pattern: C# implementation](http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/){:target="_blank" rel="nofollow"}
+[Specification pattern: C# implementation](http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/){:target="_blank" rel="nofollow noopener noreferrer"}

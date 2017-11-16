@@ -75,31 +75,31 @@ SSL signifie **Secure Socket Layer**.
 
 * Développée par Netscape en **1994**, la version **1.0** reste en interne et n'est jamais mis en œuvre ;
 * La première version de SSL réellement utilisée est la version **2.0** sortie en **février 1995**.
-Il s'agit également la première implémentation de SSL bannie, en mars 2011 ([RFC 617](https://tools.ietf.org/html/rfc6176)){:target="_blank" rel="nofollow"} ;
-* En **novembre 1996** SSL sort sa version **3.0**, la dernière version de SSL, qui inspirera son successeur **TLS**. Ses spécifications sont rééditées en août 2008 dans la [RFC 610](https://tools.ietf.org/html/rfc6101){:target="_blank" rel="nofollow"}.
-Le protocole est banni en 2014, à la suite de la publication de la faille [POODLE](https://fr.wikipedia.org/wiki/POODLE), ce bannissement est définitivement ratifié en juin 2015 ([RFC 7568](https://tools.ietf.org/html/rfc7568)){:target="_blank" rel="nofollow"}.
+Il s'agit également la première implémentation de SSL bannie, en mars 2011 ([RFC 617](https://tools.ietf.org/html/rfc6176)){:target="_blank" rel="nofollow noopener noreferrer"} ;
+* En **novembre 1996** SSL sort sa version **3.0**, la dernière version de SSL, qui inspirera son successeur **TLS**. Ses spécifications sont rééditées en août 2008 dans la [RFC 610](https://tools.ietf.org/html/rfc6101){:target="_blank" rel="nofollow noopener noreferrer"}.
+Le protocole est banni en 2014, à la suite de la publication de la faille [POODLE](https://fr.wikipedia.org/wiki/POODLE), ce bannissement est définitivement ratifié en juin 2015 ([RFC 7568](https://tools.ietf.org/html/rfc7568)){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 **B - TLS** :
 
 TLS signifie **Transport Layer Security**.
 
-Le développement de ce protocole a été repris par l'[IETF](https://www.ietf.org/){:target="_blank" rel="nofollow"}.
+Le développement de ce protocole a été repris par l'[IETF](https://www.ietf.org/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Le protocole TLS n'est pas structurellement différent de la version 3 de SSL, mais des modifications dans l'utilisation des fonctions de hachage font que les deux protocoles ne sont pas directement "interopérables".
 
 Cependant TLS, comme SSLv3, intègre un mécanisme de compatibilité ascendante avec les versions précédentes, c'est-à-dire qu'au début de la phase de **négociation**, le client et le serveur négocient la «meilleure » version du protocole disponible en commun. Pour des raisons de sécurité (mentionnées plus haut), la compatibilité de TLS avec la version 2 de SSL est abandonnée.
 
-Ce qui différencie aussi le TLS du SSL c’est que la génération des **clés symétriques** est un peu plus sécurisée dans TLS que dans SSLv3, dans la mesure où aucune étape de l'algorithme ne repose uniquement sur du MD5 (pour lequel sont apparues des faiblesses en [cryptanalyse](https://fr.wikipedia.org/wiki/Cryptanalyse)){:target="_blank" rel="nofollow"}.
+Ce qui différencie aussi le TLS du SSL c’est que la génération des **clés symétriques** est un peu plus sécurisée dans TLS que dans SSLv3, dans la mesure où aucune étape de l'algorithme ne repose uniquement sur du MD5 (pour lequel sont apparues des faiblesses en [cryptanalyse](https://fr.wikipedia.org/wiki/Cryptanalyse)){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 * En **janvier 1993** : IETF publie la norme **TLS 1.0**. Plusieurs améliorations lui sont apportées par la suite :
-    * Octobre 1999 [RFC 2712](https://tools.ietf.org/html/rfc2712) : Ajout du protocole [Kerberos](https://fr.wikipedia.org/wiki/Kerberos_(protocole)){:target="_blank" rel="nofollow"} à TLS
-    * Mai 2000 ([RFC 2817](https://tools.ietf.org/html/rfc2817) et [RFC 2818](https://tools.ietf.org/html/rfc2818)){:target="_blank" rel="nofollow"} : Passage à TLS lors d'une session HTTP 1.1
-    * Juin 2002 ([RFC 3268](https://tools.ietf.org/html/rfc3268)) : Support du système de chiffrement [AES](https://fr.wikipedia.org/wiki/Standard_de_chiffrement_avanc%C3%A9){:target="_blank" rel="nofollow"} par TLS
-* Avril 2006 ([RFC 4346](https://tools.ietf.org/html/rfc4346)){:target="_blank" rel="nofollow"} : Publication de la norme **TLS 1.1**.
-* Août 2008 ([RFC 5246](https://tools.ietf.org/html/rfc5246)){:target="_blank" rel="nofollow"} : Publication de la norme **TLS 1.2**.
-* Mars 2011 ([RFC 6176](https://tools.ietf.org/html/rfc6176)){:target="_blank" rel="nofollow"} : Abandon de la compatibilité avec SSLv2 pour toutes les versions de TLS.
+    * Octobre 1999 [RFC 2712](https://tools.ietf.org/html/rfc2712) : Ajout du protocole [Kerberos](https://fr.wikipedia.org/wiki/Kerberos_(protocole)){:target="_blank" rel="nofollow noopener noreferrer"} à TLS
+    * Mai 2000 ([RFC 2817](https://tools.ietf.org/html/rfc2817) et [RFC 2818](https://tools.ietf.org/html/rfc2818)){:target="_blank" rel="nofollow noopener noreferrer"} : Passage à TLS lors d'une session HTTP 1.1
+    * Juin 2002 ([RFC 3268](https://tools.ietf.org/html/rfc3268)) : Support du système de chiffrement [AES](https://fr.wikipedia.org/wiki/Standard_de_chiffrement_avanc%C3%A9){:target="_blank" rel="nofollow noopener noreferrer"} par TLS
+* Avril 2006 ([RFC 4346](https://tools.ietf.org/html/rfc4346)){:target="_blank" rel="nofollow noopener noreferrer"} : Publication de la norme **TLS 1.1**.
+* Août 2008 ([RFC 5246](https://tools.ietf.org/html/rfc5246)){:target="_blank" rel="nofollow noopener noreferrer"} : Publication de la norme **TLS 1.2**.
+* Mars 2011 ([RFC 6176](https://tools.ietf.org/html/rfc6176)){:target="_blank" rel="nofollow noopener noreferrer"} : Abandon de la compatibilité avec SSLv2 pour toutes les versions de TLS.
 * Avril 2014 : 1er brouillon pour **TLS 1.3**.
-* Juin 2015 ([RFC 7568](https://tools.ietf.org/html/rfc7568)){:target="_blank" rel="nofollow"} : Abandon de la compatibilité avec SSLv2 et SSLv3.
+* Juin 2015 ([RFC 7568](https://tools.ietf.org/html/rfc7568)){:target="_blank" rel="nofollow noopener noreferrer"} : Abandon de la compatibilité avec SSLv2 et SSLv3.
 * Octobre 2015 : Nouveau brouillon de **TLS 1.3**
 
 **Navigateurs** :

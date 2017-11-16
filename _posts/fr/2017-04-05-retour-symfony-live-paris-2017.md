@@ -151,7 +151,7 @@ On nous rappelle que cette architecture est applicable à la plupart des problé
 
 En ce qui concerne le pattern CQRS il est parfait pour fonctionner avec l'event sourcing. D'un côté les commandes vont générer des événements, de l'autre les Query vont permettre de générer des vues optimisées pour la lecture. Il peut y avoir autant de vues que nécessaire à partir d'un seul agrégat d'événements à reconstituer.
 
-Nous vous renvoyons vers l'article de Romain Pierlot sur le sujet du [CQRS](https://blog.eleven-labs.com/fr/cqrs-pattern/){:target="_blank" rel="nofollow"} qui rentre vraiment dans le détail technique.
+Nous vous renvoyons vers l'article de Romain Pierlot sur le sujet du [CQRS](https://blog.eleven-labs.com/fr/cqrs-pattern/){:target="_blank" rel="nofollow noopener noreferrer"} qui rentre vraiment dans le détail technique.
 
 Notre ressenti : l'introduction est très bonne en terme de théorie sur des exemples basiques, mais il manque un peu de cas pratiques et en conditions réelles.
 
@@ -181,7 +181,7 @@ Une rétrospective des changements majeurs entre Symfony 3.2 et 3.3, présentée
 - certaines options de l'autowiring sont dépréciées au profit d'autres qui sont plus simple notamment lorsque plusieurs services matchent à l'autowiring.
 - les noms des services étaient jusqu'ici insensibles à la casse.
 
-**Nous noterons par ailleurs la création de deux nouveaux composants** : le [LockComponent](https://github.com/symfony/lock) et le [DotenvComponent](https://github.com/symfony/dotenv){:target="_blank" rel="nofollow"}.
+**Nous noterons par ailleurs la création de deux nouveaux composants** : le [LockComponent](https://github.com/symfony/lock) et le [DotenvComponent](https://github.com/symfony/dotenv){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 **À noter également,**
 
@@ -213,7 +213,7 @@ Présentation de Jérôme VIEILLEDENT.
 
 La morale de l'histoire ? Lorsqu'on arrive à un code impossible à maintenir il vaut mieux investir du temps à faire une refonte et repartir sur des principes sains (SOLID, DRY, KISS) plutôt que de s'entêter dans son plat de spaghetti.
 
-[https://twitter.com/Eleven_Wilson/status/847716873797906437](https://twitter.com/Eleven_Wilson/status/847716873797906437){:target="_blank" rel="nofollow"}
+[https://twitter.com/Eleven_Wilson/status/847716873797906437](https://twitter.com/Eleven_Wilson/status/847716873797906437){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Déployer une app Symfony dans un PaaS
 -------
@@ -300,12 +300,12 @@ L'unicode en revanche gère pas mal de choses : majuscules, minuscules, folding 
 
 Si vous voulez utiliser l'unicode en PHP il y a plusieurs possiblités :
 
-- iconv ([http://php.net/manual/fr/book.iconv.php">http://php.net/manual/fr/book.iconv.php](http://php.net/manual/fr/book.iconv.php%22%3Ehttp://php.net/manual/fr/book.iconv.php)){:target="_blank" rel="nofollow"}>>
-- mbstring ([http://php.net/manual/fr/book.mbstring.php">http://php.net/manual/fr/book.mbstring.php](http://php.net/manual/fr/book.mbstring.php%22%3Ehttp://php.net/manual/fr/book.mbstring.php)){:target="_blank" rel="nofollow"}
-- PCRE via le modificateur "//u" ([http://php.net/manual/en/reference.pcre.pattern.modifiers.php">http://php.net/manual/en/reference.pcre.pattern.modifiers.php](http://php.net/manual/en/reference.pcre.pattern.modifiers.php%22%3Ehttp://php.net/manual/en/reference.pcre.pattern.modifiers.php)){:target="_blank" rel="nofollow"}
-- fonctions pour grapheme clusters ([http://php.net/manual/en/ref.intl.grapheme.php">http://php.net/manual/en/ref.intl.grapheme.php](http://php.net/manual/en/ref.intl.grapheme.php%22%3Ehttp://php.net/manual/en/ref.intl.grapheme.php)){:target="_blank" rel="nofollow"}
-- Normalizer ([http://php.net/manual/en/class.normalizer.php">http://php.net/manual/en/class.normalizer.php](http://php.net/manual/en/class.normalizer.php%22%3Ehttp://php.net/manual/en/class.normalizer.php)){:target="_blank" rel="nofollow"}
-- Intl (ICU pour PHP : [http://php.net/manual/en/book.intl.php">http://php.net/manual/en/book.intl.php](http://php.net/manual/en/book.intl.php%22%3Ehttp://php.net/manual/en/book.intl.php)){:target="_blank" rel="nofollow"}
+- iconv ([http://php.net/manual/fr/book.iconv.php">http://php.net/manual/fr/book.iconv.php](http://php.net/manual/fr/book.iconv.php%22%3Ehttp://php.net/manual/fr/book.iconv.php)){:target="_blank" rel="nofollow noopener noreferrer"}>>
+- mbstring ([http://php.net/manual/fr/book.mbstring.php">http://php.net/manual/fr/book.mbstring.php](http://php.net/manual/fr/book.mbstring.php%22%3Ehttp://php.net/manual/fr/book.mbstring.php)){:target="_blank" rel="nofollow noopener noreferrer"}
+- PCRE via le modificateur "//u" ([http://php.net/manual/en/reference.pcre.pattern.modifiers.php">http://php.net/manual/en/reference.pcre.pattern.modifiers.php](http://php.net/manual/en/reference.pcre.pattern.modifiers.php%22%3Ehttp://php.net/manual/en/reference.pcre.pattern.modifiers.php)){:target="_blank" rel="nofollow noopener noreferrer"}
+- fonctions pour grapheme clusters ([http://php.net/manual/en/ref.intl.grapheme.php">http://php.net/manual/en/ref.intl.grapheme.php](http://php.net/manual/en/ref.intl.grapheme.php%22%3Ehttp://php.net/manual/en/ref.intl.grapheme.php)){:target="_blank" rel="nofollow noopener noreferrer"}
+- Normalizer ([http://php.net/manual/en/class.normalizer.php">http://php.net/manual/en/class.normalizer.php](http://php.net/manual/en/class.normalizer.php%22%3Ehttp://php.net/manual/en/class.normalizer.php)){:target="_blank" rel="nofollow noopener noreferrer"}
+- Intl (ICU pour PHP : [http://php.net/manual/en/book.intl.php">http://php.net/manual/en/book.intl.php](http://php.net/manual/en/book.intl.php%22%3Ehttp://php.net/manual/en/book.intl.php)){:target="_blank" rel="nofollow noopener noreferrer"}
 - Mysql :
 * collation utf8_binary A != a
 * general_ci <b>œ</b> != oe
@@ -314,9 +314,9 @@ Si vous voulez utiliser l'unicode en PHP il y a plusieurs possiblités :
 
 Pour aller plus loin :
 
-[https://www.julp.fr/articles/3-php-et-utf-8.html](https://www.julp.fr/articles/3-php-et-utf-8.html){:target="_blank" rel="nofollow"}
+[https://www.julp.fr/articles/3-php-et-utf-8.html](https://www.julp.fr/articles/3-php-et-utf-8.html){:target="_blank" rel="nofollow noopener noreferrer"}
 
-[https://jolicode.com/blog/l-histoire-d-unicode-et-son-adoption-sur-le-web](https://jolicode.com/blog/l-histoire-d-unicode-et-son-adoption-sur-le-web){:target="_blank" rel="nofollow"}
+[https://jolicode.com/blog/l-histoire-d-unicode-et-son-adoption-sur-le-web](https://jolicode.com/blog/l-histoire-d-unicode-et-son-adoption-sur-le-web){:target="_blank" rel="nofollow noopener noreferrer"}
 
 <blockquote class="twitter-tweet" data-width="500">
 <p lang="fr" dir="ltr">Maintenant, Nicolas Grekas nous dit tout ce qu&#39;un <a href="https://twitter.com/hashtag/dev?src=hash">#dev</a> devrait savoir à propos d&#39;<a href="https://twitter.com/hashtag/unicode?src=hash">#unicode</a> ! <a href="https://twitter.com/nicolasgrekas">@nicolasgrekas</a> <a href="https://twitter.com/hashtag/Symfony_Live?src=hash">#Symfony_Live</a> <a href="https://t.co/jfobdtpAJT">pic.twitter.com/jfobdtpAJT</a></p>
@@ -377,6 +377,6 @@ Notre ressenti : une présentation très intéressante néanmoins très complexe
 <p>&mdash; Wilson (@Eleven_Wilson) <a href="https://twitter.com/Eleven_Wilson/status/847816590779441152">March 31, 2017</a></p></blockquote>
 <p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
 
-Voilà pour le résumé de ces deux journées ! Les twitters des auteurs ainsi que leurs slides donnés dans cet article, sont tirés du github de Nicolas Potier : [https://github.com/npotier/sflive-paris-2017](https://github.com/npotier/sflive-paris-2017){:target="_blank" rel="nofollow"}
+Voilà pour le résumé de ces deux journées ! Les twitters des auteurs ainsi que leurs slides donnés dans cet article, sont tirés du github de Nicolas Potier : [https://github.com/npotier/sflive-paris-2017](https://github.com/npotier/sflive-paris-2017){:target="_blank" rel="nofollow noopener noreferrer"}
 
 On se dit à l'année prochaine :)

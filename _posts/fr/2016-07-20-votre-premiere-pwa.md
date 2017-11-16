@@ -16,16 +16,16 @@ tags:
 - pwa
 ---
 
-Le monde du web évolue. Le site web mobile est devenu le plus grand concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps (le cas contraire, je vous invite à lire mon précédent article sur cet événement, disponible [ici](https://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/)){:target="_blank" rel="nofollow"}. Ça tombe bien, cet article va vous permettre de mettre en place votre première "PWA".
+Le monde du web évolue. Le site web mobile est devenu le plus grand concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps (le cas contraire, je vous invite à lire mon précédent article sur cet événement, disponible [ici](https://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/)){:target="_blank" rel="nofollow noopener noreferrer"}. Ça tombe bien, cet article va vous permettre de mettre en place votre première "PWA".
 
 ### Pré-requis :
 
 Avant de commencer ce tutoriel:
 
-- Je vous invite à mettre à jour ou installer nodejs, toutes les explications pour ce faire sont disponibles [ici](https://nodejs.org/en/){:target="_blank" rel="nofollow"}.
-- Il vous faudra aussi une version de chrome avancée, telle que Canary, disponible [ici](https://download-chromium.appspot.com/){:target="_blank" rel="nofollow"}
-- Une fois l'installation de votre chrome Canary, je vous invite à installer l'extension suivante, disponible [ici](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk){:target="_blank" rel="nofollow"}
-- Durant l'ensemble du tutoriel, nous allons suivre le projet git suivant, disponible [ici](https://github.com/CaptainJojo/pwa){:target="_blank" rel="nofollow"}
+- Je vous invite à mettre à jour ou installer nodejs, toutes les explications pour ce faire sont disponibles [ici](https://nodejs.org/en/){:target="_blank" rel="nofollow noopener noreferrer"}.
+- Il vous faudra aussi une version de chrome avancée, telle que Canary, disponible [ici](https://download-chromium.appspot.com/){:target="_blank" rel="nofollow noopener noreferrer"}
+- Une fois l'installation de votre chrome Canary, je vous invite à installer l'extension suivante, disponible [ici](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk){:target="_blank" rel="nofollow noopener noreferrer"}
+- Durant l'ensemble du tutoriel, nous allons suivre le projet git suivant, disponible [ici](https://github.com/CaptainJojo/pwa){:target="_blank" rel="nofollow noopener noreferrer"}
 
 
 ### Étape 1, l'installation :
@@ -48,7 +48,7 @@ Une fois l'installation terminée, vous n'avez plus qu'à lancer le serveur.
 npm start
 ```
 
-Si tout se passe bien, l'application est disponible sur [cette adresse localhost](http://localhost:8080/){:target="_blank" rel="nofollow"}.
+Si tout se passe bien, l'application est disponible sur [cette adresse localhost](http://localhost:8080/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Vous pouvez alors naviguer dans l'application, son seul but étant d'avoir quelques urls et d'afficher des images (ce qui n'a que peu d'intérêt). Je vous invite à lancer l'extension installée plus tôt. Vous devez arriver sur cette page :
 
@@ -77,7 +77,7 @@ if('serviceWorker' in navigator) {
 </script>;
 ```
 
-Vous pouvez retrouver cette étape [ici](https://github.com/CaptainJojo/pwa/compare/step1-register-sw){:target="_blank" rel="nofollow"}.
+Vous pouvez retrouver cette étape [ici](https://github.com/CaptainJojo/pwa/compare/step1-register-sw){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Il vous suffit alors de relancer le serveur. Si vous allez sur http://localhost:8080 et que vous ouvrez l'outil de développement, vous trouverez l'onglet application qui vous permet de gérer l'état de votre PWA. Je vous invite à cliquer sur "Service Workers" pour vérifier que vous avez bien un service enregistré pour votre site.
 
@@ -92,7 +92,7 @@ Bravo, vous avez gagné des points ! Passons à la suite.
 ### Étape 3, le offline :
 
 Maintenant que vous avez enregistré votre service nous allons mettre en cache le site pour vous permettre d'avoir un site visible en offline.
-Pour cela, il suffit d'agrémenter le fichier sw.js. Si vous lisez la norme du W3C sur le service worker, disponible [ici](https://www.w3.org/TR/service-workers/){:target="_blank" rel="nofollow"}, vous verrez qu'il fonctionne comme suit : il lit des événements javascript et, en fonction de ce qui a été lu, il effectue une action. Nous allons commencer par l’événement 'install' qui va vous permettre de mettre en cache l'ensemble des pages statiques de votre site. Voici le code à ajouter dans le fichier public/sw.js :
+Pour cela, il suffit d'agrémenter le fichier sw.js. Si vous lisez la norme du W3C sur le service worker, disponible [ici](https://www.w3.org/TR/service-workers/){:target="_blank" rel="nofollow noopener noreferrer"}, vous verrez qu'il fonctionne comme suit : il lit des événements javascript et, en fonction de ce qui a été lu, il effectue une action. Nous allons commencer par l’événement 'install' qui va vous permettre de mettre en cache l'ensemble des pages statiques de votre site. Voici le code à ajouter dans le fichier public/sw.js :
 
 ```javascript
 self.addEventListener('install', e =>; {
@@ -132,7 +132,7 @@ self.addEventListener('fetch', event =>; {
 ```
 
 Ce que l'on fait est simple, vous récupérez chaque requête et la mettez dans le cache.
-Vous retrouverez cette étape [ici](https://github.com/CaptainJojo/pwa/compare/step1-register-sw...step2-service-worker-offline){:target="_blank" rel="nofollow"}.
+Vous retrouverez cette étape [ici](https://github.com/CaptainJojo/pwa/compare/step1-register-sw...step2-service-worker-offline){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Si vous relancez l'application, vous pouvez voir dans l'outil de développement, onglet application, un lien pour voir ce que contient votre cache (Cache Storage), vous y retrouvez l'ensemble des fichiers statiques.
 
@@ -148,7 +148,7 @@ Vous êtes sur la bonne voie, mais il y a une méthode encore meilleure pour in
 
 Comme vous avez pu le voir, il est très fastidieux de mettre chaque fichier statique dans le service worker, Google y a pensé et a mis en place plusieurs outils pour faciliter le développement.
 
-Vous allez utiliser le projet sw-précache disponible sur [github](https://github.com/GoogleChrome/sw-precache), ce dernier permet de générer le service worker via un fichier [Gulp](http://gulpjs.com/){:target="_blank" rel="nofollow"}.
+Vous allez utiliser le projet sw-précache disponible sur [github](https://github.com/GoogleChrome/sw-precache), ce dernier permet de générer le service worker via un fichier [Gulp](http://gulpjs.com/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Vous n'avez plus qu'à ajouter dans le package.json.
 
@@ -205,11 +205,11 @@ gulp generate-service-worker
 
 Je vous invite à lire le fichier généré que vous pouvez trouver à la place de l'ancien /public/sw.js
 Si vous relancez l'application normalement vous n'avez aucune modification.
-Vous pouvez retrouver l'étape [ici](https://github.com/CaptainJojo/pwa/compare/step2-service-worker-offline...step3-sw-precache){:target="_blank" rel="nofollow"}.
+Vous pouvez retrouver l'étape [ici](https://github.com/CaptainJojo/pwa/compare/step2-service-worker-offline...step3-sw-precache){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Étape 5, le manifest :
 
-La mise en place du manifest est une étape simple mais qui permet de signifier aux navigateurs que vous avez créé votre première PWA.  Vous pouvez retrouver la spécification sur le site [W3C](https://w3c.github.io/manifest/){:target="_blank" rel="nofollow"}.
+La mise en place du manifest est une étape simple mais qui permet de signifier aux navigateurs que vous avez créé votre première PWA.  Vous pouvez retrouver la spécification sur le site [W3C](https://w3c.github.io/manifest/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Je vous donne l'exemple typique que l'on trouve dans tous les bons tutoriels.
 
@@ -249,7 +249,7 @@ Une fois le fichier rempli, vous devez signifier son emplacement pour le navigat
  <link rel="manifest" href="/manifest.json">;
 ```
 
-Vous pouvez retrouver cette étape [ici](https://github.com/CaptainJojo/pwa/compare/step3-sw-precache...step4-manifest){:target="_blank" rel="nofollow"}.
+Vous pouvez retrouver cette étape [ici](https://github.com/CaptainJojo/pwa/compare/step3-sw-precache...step4-manifest){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Si vous relancez l'application et que vous allez dans l'outil de développement, onglet application, vous trouverez les propriétés de votre manifest. Il est même possible d'installer votre application en cliquant sur 'Add to homescreen'.
 
@@ -261,4 +261,4 @@ Et encore une fois, fermez l'outil de développement et lancez l'extension Light
 
 Vous y êtes, votre application est une Progressive Web App !
 En conclusion, ce n'est pas compliqué de mettre en place une PWA, maintenant il faut jouer avec, tester le cache, etc... Il existe d'autres fonctionnalités sympa comme la mise en place des push notifications, le fait de contrôler le bluetooth...
-Pour en apprendre encore plus, vous pouvez trouver des tutoriels super intéressants dont je me suis inspiré, chez [Google](https://codelabs.developers.google.com/){:target="_blank" rel="nofollow"}.
+Pour en apprendre encore plus, vous pouvez trouver des tutoriels super intéressants dont je me suis inspiré, chez [Google](https://codelabs.developers.google.com/){:target="_blank" rel="nofollow noopener noreferrer"}.

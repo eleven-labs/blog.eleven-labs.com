@@ -170,15 +170,15 @@ class DefaultController extends Controller
 
 I set up a listener on the **kernel.view** event to handle the case where the form is invalid (see src/AppBundle/EventListener/ViewListener.php).
 
-So far, nothing surprising. I invite you to read the Symfony documentation for more information: [http://symfony.com/doc/current/controller/upload_file.html](http://symfony.com/doc/current/controller/upload_file.html){:target="_blank" rel="nofollow"}.
+So far, nothing surprising. I invite you to read the Symfony documentation for more information: [http://symfony.com/doc/current/controller/upload_file.html](http://symfony.com/doc/current/controller/upload_file.html){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Now let's move to the client side with JavaScript implementation.
 
 ### Client-side implementation with JavaScript
 
-As a PHP developer, I think this part is the most interesting. This is where the magic of **[AJAX](https://fr.wikipedia.org/wiki/Ajax_(informatique)){:target="_blank" rel="nofollow"}** will take place. As a reminder, AJAX  stands for **Asynchronous JavaScript XML**, and allows the browser to interact with the server asynchronously.
+As a PHP developer, I think this part is the most interesting. This is where the magic of **[AJAX](https://fr.wikipedia.org/wiki/Ajax_(informatique)){:target="_blank" rel="nofollow noopener noreferrer"}** will take place. As a reminder, AJAX  stands for **Asynchronous JavaScript XML**, and allows the browser to interact with the server asynchronously.
 
-[XMLHttpRequest](https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest){:target="_blank" rel="nofollow"} is a browser-accessible JavaScript object that allows you to create AJAX requests.
+[XMLHttpRequest](https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest){:target="_blank" rel="nofollow noopener noreferrer"} is a browser-accessible JavaScript object that allows you to create AJAX requests.
 
 I will first set up the HTML form.
 
@@ -218,7 +218,7 @@ function onSubmit(event) {
 }
 ```
 
-At first, I will take all the form fields and put them in the **[FormData](https://developer.mozilla.org/fr/docs/Web/API/FormData){:target="_blank" rel="nofollow"}** object. It facilitates the transport of form values. This object will then be used during the AJAX query.
+At first, I will take all the form fields and put them in the **[FormData](https://developer.mozilla.org/fr/docs/Web/API/FormData){:target="_blank" rel="nofollow noopener noreferrer"}** object. It facilitates the transport of form values. This object will then be used during the AJAX query.
 
 Then, I prepare my  **XMLHttpRequest** object. I tell him where to post the data, add some listeners and finally I pass my **FormData** object to the **send()** method to send the data.
 
@@ -264,7 +264,7 @@ function onUploadProgress(event) {
 
 A **ProgressEvent** object passed to the **onUploadProgress** callback function. It contains information about the progress of the file upload. In my example, I display percentage progress. But we can imagine a progress bar in CSS.
 
-Small demo in GIF  and full code here [https://github.com/lepiaf/file-upload](https://github.com/lepiaf/file-upload){:target="_blank" rel="nofollow"}
+Small demo in GIF  and full code here [https://github.com/lepiaf/file-upload](https://github.com/lepiaf/file-upload){:target="_blank" rel="nofollow noopener noreferrer"}
 
 ![](/assets/2017-04-20-upload-file-ajax/upload.gif)
 
@@ -275,9 +275,9 @@ We have seen together how to implement the upload of a file asynchronously with 
 
 Références :
 
-- [https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest](https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest){:target="_blank" rel="nofollow"}
-- [https://gist.github.com/joyrexus/524c7e811e4abf9afe56](https://gist.github.com/joyrexus/524c7e811e4abf9afe56){:target="_blank" rel="nofollow"}
-- [http://stackoverflow.com/questions/18240692/is-using-multipart-form-data-any-better-then-json-base64](http://stackoverflow.com/questions/18240692/is-using-multipart-form-data-any-better-then-json-base64){:target="_blank" rel="nofollow"}
-- [http://stackoverflow.com/questions/4715415/base64-what-is-the-worst-possible-increase-in-space-usage/4715499](http://stackoverflow.com/questions/4715415/base64-what-is-the-worst-possible-increase-in-space-usage/4715499){:target="_blank" rel="nofollow"}
-- [https://tools.ietf.org/html/rfc7578](https://tools.ietf.org/html/rfc7578){:target="_blank" rel="nofollow"}
-- [http://www.bortzmeyer.org/7578.html](http://www.bortzmeyer.org/7578.html){:target="_blank" rel="nofollow"}
+- [https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest](https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest){:target="_blank" rel="nofollow noopener noreferrer"}
+- [https://gist.github.com/joyrexus/524c7e811e4abf9afe56](https://gist.github.com/joyrexus/524c7e811e4abf9afe56){:target="_blank" rel="nofollow noopener noreferrer"}
+- [http://stackoverflow.com/questions/18240692/is-using-multipart-form-data-any-better-then-json-base64](http://stackoverflow.com/questions/18240692/is-using-multipart-form-data-any-better-then-json-base64){:target="_blank" rel="nofollow noopener noreferrer"}
+- [http://stackoverflow.com/questions/4715415/base64-what-is-the-worst-possible-increase-in-space-usage/4715499](http://stackoverflow.com/questions/4715415/base64-what-is-the-worst-possible-increase-in-space-usage/4715499){:target="_blank" rel="nofollow noopener noreferrer"}
+- [https://tools.ietf.org/html/rfc7578](https://tools.ietf.org/html/rfc7578){:target="_blank" rel="nofollow noopener noreferrer"}
+- [http://www.bortzmeyer.org/7578.html](http://www.bortzmeyer.org/7578.html){:target="_blank" rel="nofollow noopener noreferrer"}

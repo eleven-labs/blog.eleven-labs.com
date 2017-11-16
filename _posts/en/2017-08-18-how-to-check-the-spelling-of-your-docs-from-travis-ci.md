@@ -107,8 +107,8 @@ We don't want this script to block the reviewers to merge the pull request, so t
 The easiest thing that we can do to send the results of previous commands is to post them in a comment on the Github pull request.
 
 First you need to choose the Github user that will be used to add this comment, and configure an access token for this user:
-- Login to [https://github.com](https://github.com){:target="_blank" rel="nofollow"} with this user
-- Go to [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new){:target="_blank" rel="nofollow"}
+- Login to [https://github.com](https://github.com){:target="_blank" rel="nofollow noopener noreferrer"} with this user
+- Go to [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new){:target="_blank" rel="nofollow noopener noreferrer"}
 - Add a name/description for the token you're creating, and check the scope `public_repo` only, if your Github repository is public.
 
 Then, from the script executed on Travis, once you've got the results of the `aspell` command, you can use `curl` to call Github API, with the token previously created:
@@ -120,16 +120,16 @@ curl -i -H "Authorization: token $GITHUB_TOKEN" \
     https://api.github.com/repos/eleven-labs/blog.eleven-labs.com/issues/$TRAVIS_PULL_REQUEST/comments
 ```
 
-- The Github token should be hidden and not hard-coded in your script, so you should add it in an environment variable in the Travis settings. To do that, go on this page: [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings){:target="_blank" rel="nofollow"}
+- The Github token should be hidden and not hard-coded in your script, so you should add it in an environment variable in the Travis settings. To do that, go on this page: [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings){:target="_blank" rel="nofollow noopener noreferrer"}
 - The environment variable `$TRAVIS_PULL_REQUEST` is automatically available in the Travis container and corresponds to the identification number of your pull request related to the current Travis build.
 
 Conclusion
 ==========
 
-If you want to see the full script that we use for our blog, it's [there](https://github.com/eleven-labs/blog.eleven-labs.com/blob/master/bin/check-spelling.sh){:target="_blank" rel="nofollow"}.
+If you want to see the full script that we use for our blog, it's [there](https://github.com/eleven-labs/blog.eleven-labs.com/blob/master/bin/check-spelling.sh){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 I hope these tips will help you! Note that you could also use the same process to check the spelling in the doc blocks of your code, or in your documentations too.
 
-We will probably improve these scripts and automatic checks during the next few weeks, so you might want to follow [our blog repository on Github](https://github.com/eleven-labs/blog.eleven-labs.com){:target="_blank" rel="nofollow"}, to see all the incoming updates.
+We will probably improve these scripts and automatic checks during the next few weeks, so you might want to follow [our blog repository on Github](https://github.com/eleven-labs/blog.eleven-labs.com){:target="_blank" rel="nofollow noopener noreferrer"}, to see all the incoming updates.
 
 Any idea to improve this process is also welcomed: please add comments bellow ;)

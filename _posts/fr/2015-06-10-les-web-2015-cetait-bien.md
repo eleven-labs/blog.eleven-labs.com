@@ -41,7 +41,7 @@ De plein de choses ! Best of oblige, les sujets abordés touchaient différents 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endraw %}
 
-Puis les talks se sont enchaînés : Virginie Bardales a fait un point complet sur la conception et l’utilisation d’une API REST, Martin Gorner a passionnément expliqué les principes du Material Design et son implémentation dans une application avec Polymer, Jacopo Daeli nous a montré comment faire du streaming vidéo avec NodeWebkit… Je ne vais pas tous les mentionner un par un, la liste des sujets et les diaporamas associés étant déjà disponibles sur **[le site de l'événement](http://bestofweb.paris/#schedule){:target="_blank" rel="nofollow"}**. Sachez juste que les sujets étaient particulièrement variés et qu’il y en avait pour à peu près tous les goûts.
+Puis les talks se sont enchaînés : Virginie Bardales a fait un point complet sur la conception et l’utilisation d’une API REST, Martin Gorner a passionnément expliqué les principes du Material Design et son implémentation dans une application avec Polymer, Jacopo Daeli nous a montré comment faire du streaming vidéo avec NodeWebkit… Je ne vais pas tous les mentionner un par un, la liste des sujets et les diaporamas associés étant déjà disponibles sur **[le site de l'événement](http://bestofweb.paris/#schedule){:target="_blank" rel="nofollow noopener noreferrer"}**. Sachez juste que les sujets étaient particulièrement variés et qu’il y en avait pour à peu près tous les goûts.
 
 Parmi les moments forts de la journée, on retiendra le duo Samuel Goldszmidt et Norbert Schnell avec leur présentation inédite de la Web Audio API, qui ont mis en place un vrai petit concert virtuel avec les téléphones du public. Dans le registre de l’interactivité, Raphaël Luta avait aussi prévu de faire participer un peu son audience en la faisant voter pour ses héros préférés via Twitter, tout en visualisant simultanément les résultats en temps réel sous forme de graphes avec D3.js. L’intégrateur qui sommeille en moi a aussi particulièrement apprécié la conférence de Mathieu Parisot sur les CSS Grid, super claire et très alléchante vis-à-vis du futur de la mise en page en CSS.
 
@@ -80,4 +80,4 @@ Une date est d’ors-et-déjà fixée pour les prochains Best of Web : le 3 juin
 
 S’ils engagent le même traiteur que cette année, j’y retourne.
 
-Tous les liens vers les présentations sont présents sur **[le site du Best of Web 2015](http://bestofweb.paris/#schedule){:target="_blank" rel="nofollow"}**.
+Tous les liens vers les présentations sont présents sur **[le site du Best of Web 2015](http://bestofweb.paris/#schedule){:target="_blank" rel="nofollow noopener noreferrer"}**.
