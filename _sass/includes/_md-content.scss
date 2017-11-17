@@ -42,17 +42,17 @@
     padding: .6rem 1.2rem;
 
     @media (min-width: $breakpoint-x-small) {
-      margin: 5rem 0 2.5rem -1.2rem;
+      margin: 4rem 0 2rem -1.2rem;
     }
 
     @media (max-width: $breakpoint-x-small) {
-      margin: 3rem 0 1.5rem -1rem;
+      margin: 2rem 0 1rem -1.2rem;
     }
   }
 
   h3 {
     @extend %h3;
-    background-color: $title-level3-bg;
+    background-color: lighten($brand-black, 70%);
     margin: 3rem 0 2rem;
   }
 

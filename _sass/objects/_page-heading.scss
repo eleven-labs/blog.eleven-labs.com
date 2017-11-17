@@ -16,6 +16,10 @@
   &-title {
     @extend %h1;
     margin-bottom: 2rem;
+
+    @media (min-width: $breakpoint-large) {
+      padding: 0 9rem;
+    }
   }
 
   &-reading-time {

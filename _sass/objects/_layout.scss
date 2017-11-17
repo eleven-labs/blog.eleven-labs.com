@@ -14,11 +14,10 @@
 
 .container {
   margin: 0 auto;
-  max-width: $max-width-layout;
 
   @media (max-width: $breakpoint-small) {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   @media (min-width: $breakpoint-small) {
@@ -29,5 +28,11 @@
   @media (min-width: $breakpoint-medium) {
     padding-left: 6rem;
     padding-right: 6rem;
+  }
+
+  @media (min-width: $breakpoint-x-large) {
+    max-width: $max-width-layout-large;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

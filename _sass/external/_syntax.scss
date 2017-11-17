@@ -5,18 +5,25 @@ pre {
 }
 
 code {
-  background-color: rgba(0, 0, 0, .04);
+  background-color: rgba(0, 0, 0, .05);
   border-radius: 3px;
-  padding: .25em .5rem;
 
   &.highlighter-rouge {
-    font-size: 1.6rem;
-    padding-bottom: 0;
+
+    @media (max-width: $breakpoint-medium) {
+      font-size: 1.3rem;
+      padding: .1rem .4rem;
+    }
+
+    @media (min-width: $breakpoint-medium) {
+      font-size: 1.4rem;
+      padding: .2rem .4rem;
+    }
   }
 }
 
 pre {
-  background-color: rgba(0, 0, 0, .04);
+  background-color: rgba(0, 0, 0, .05);
   display: block;
   line-height: 1.4;
   margin-bottom: 1rem;

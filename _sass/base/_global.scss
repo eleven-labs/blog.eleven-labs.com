@@ -19,6 +19,7 @@ html {
   font-size: 62.5%;
   font-size: calc(1em * .625);
 }
+
 // Typography
 body {
   color: $brand-black;
@@ -26,12 +27,12 @@ body {
   font-weight: lighter;
   word-wrap: break-word;
 
-  @media (min-width: $breakpoint-medium) {
-    font-size: $font-size;
-  }
-
   @media (max-width: $breakpoint-medium) {
     font-size: $font-size-mobile;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: $font-size;
   }
 }
 
