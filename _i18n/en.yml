@@ -4,6 +4,7 @@ theme_settings:
 
 global:
   also_read: You can also read
+  and: and
   author_by: by
   contact_us: Contact us
   continue_reading: Read article
