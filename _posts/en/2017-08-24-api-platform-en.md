@@ -23,7 +23,7 @@ In this article, we're going to build an API using API Platform, and talk about 
 We'll create an API around a single resource: _movie._ Indeed, we will build something that adds, deletes and updates movies.
 
 The first thing we need to do is creating our data model. A movie is made of a title, a release date, actors, a director... Many properties known from everyone.
-If we go through the documentation, we can see that we can generate our entities with [Schema.org](http://schema.org). This allows us to use a common language to define our usual resources (_Book, Organization_, _Person_…), but it's also understood by search engines like Google or Yahoo.
+If we go through the documentation, we can see that we can generate our entities with [Schema.org](http://schema.org). This allows us to use a common language to define our usual resources (_Book, Organization_, _Person_…){:target="_blank" rel="nofollow noopener noreferrer"}, but it's also understood by search engines like Google or Yahoo.
 
 Good for us, there is a _Movie_ entity from _Schema.org_, with many interesting properties. For simplicity, we'll only work with some of them.
 
@@ -102,10 +102,10 @@ class Movie
 You can now query your API with the following URL: `movies?name=O&order[name]=desc`  
 Very simple to implement right?
 
-Obviously, you can create your own [API Platform filters](https://api-platform.com/docs/core/filters#creating-custom-filters).
+Obviously, you can create your own [API Platform filters](https://api-platform.com/docs/core/filters#creating-custom-filters){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Many other features exist like :
-* [pagination](https://api-platform.com/docs/core/pagination)
+* [pagination](https://api-platform.com/docs/core/pagination){:target="_blank" rel="nofollow noopener noreferrer"}
 * a rich event system
 * a cache invalidation system (coming in version 2.1)
 
@@ -119,4 +119,4 @@ Finally, the documentation is a very nice thing. You have plenty of examples and
 
 ## To come
 
-Version 2.1 of API platform will soon be released, and comes with new features such as: an admin system developed in React, new filters... Details [here](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/)
+Version 2.1 of API platform will soon be released, and comes with new features such as: an admin system developed in React, new filters... Details [here](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/){:target="_blank" rel="nofollow noopener noreferrer"}

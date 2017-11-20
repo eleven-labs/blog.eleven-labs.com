@@ -57,7 +57,7 @@ Avec toutes ces normes et recommandations, nous avons une bonne base solide. App
 
 ### Erreur de style
 
-Pour PSR-1 et PSR-2, il y a [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer "Github.com PHP Code Sniffer"). Cet outil va se baser sur un ensemble de règles, parcourir le code et afficher toutes les erreurs. Les règles peuvent être enrichies selon les spécificités du framework.
+Pour PSR-1 et PSR-2, il y a [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer "Github.com PHP Code Sniffer"){:target="_blank" rel="nofollow noopener noreferrer"}. Cet outil va se baser sur un ensemble de règles, parcourir le code et afficher toutes les erreurs. Les règles peuvent être enrichies selon les spécificités du framework.
 
 Avec Symfony, il y a cet ensemble de règles : https://github.com/instaclick/Symfony2-coding-standard
 
@@ -78,13 +78,13 @@ La sortie va être un xml:
 </checkstyle>
 ```
 
-Dans cet exemple, le fichier "AvailableTimeService" contient une erreur. Cet erreur se situe à la ligne 28 et colonne 12. Le message d'erreur indique que le nom de la méthode n'est pas en camelCase. Or, selon PSR-1, [les méthodes doivent être écrites en camelCase](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md#1-overview).
+Dans cet exemple, le fichier "AvailableTimeService" contient une erreur. Cet erreur se situe à la ligne 28 et colonne 12. Le message d'erreur indique que le nom de la méthode n'est pas en camelCase. Or, selon PSR-1, [les méthodes doivent être écrites en camelCase](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md#1-overview){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Lors du premier lancement de la commande, il peut y avoir beaucoup d'erreurs. Au fur et à mesure, ces erreurs se réduisent et vous connaîtrez par coeur ces règles :D .
 
 ### Consistance du code
 
-[PHP Mess Detector](https://github.com/phpmd/phpmd "Github.com PHP Mess Detector") permet de détecter tout ce qui fait un bon "*code spaghetti*". D'où le nom de *mess detector* (littéralement 'détecteur de bordel'). Cet outil va se baser sur des règles telles que la[complexité cyclomatique](http://www-igm.univ-mlv.fr/~dr/XPOSE2008/Mesure%20de%20la%20qualite%20du%20code%20source%20-%20Algorithmes%20et%20outils/complexite-cyclomatique.html) du code, le nombre de conditions dans une méthode, etc...
+[PHP Mess Detector](https://github.com/phpmd/phpmd "Github.com PHP Mess Detector") permet de détecter tout ce qui fait un bon "*code spaghetti*". D'où le nom de *mess detector* (littéralement 'détecteur de bordel'). Cet outil va se baser sur des règles telles que la[complexité cyclomatique](http://www-igm.univ-mlv.fr/~dr/XPOSE2008/Mesure%20de%20la%20qualite%20du%20code%20source%20-%20Algorithmes%20et%20outils/complexite-cyclomatique.html){:target="_blank" rel="nofollow noopener noreferrer"} du code, le nombre de conditions dans une méthode, etc...
 
 Cet outil va nous aider à rendre le code beaucoup plus simple, lisible et d'éviter les répétitions ou des méthodes à rallonge.
 
@@ -230,7 +230,7 @@ Bien entendu, la refactorisation de code s'accompagne de tests unitaires afin d'
 
 Combien de fois avez-vous entendu cette phrase ? Et puis le jour où le fonctionnel change, nous oublions et ça fait des choses bizarres.
 
-Pour ne pas entrer dans cette mauvaise pratique, il y a [PHP Copy/Paste Detector](https://github.com/sebastianbergmann/phpcpd "Github PHP CPD"). Il détecte les parties de codes qui ont été dupliquées.
+Pour ne pas entrer dans cette mauvaise pratique, il y a [PHP Copy/Paste Detector](https://github.com/sebastianbergmann/phpcpd "Github PHP CPD"){:target="_blank" rel="nofollow noopener noreferrer"}. Il détecte les parties de codes qui ont été dupliquées.
 
 Petit exemple :
 
@@ -259,7 +259,7 @@ La sortie indique que les fichiers "MyManager" et "PastedManger" contiennent des
 
 Une fois les erreurs détectées, il faut les corriger. Personnellement, je n'utilise pas d'outils pour corriger les erreurs de manière automatique. Je me force à apprendre les règles pour que ça deviennent un automatisme.
 
-[PHP CS Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer "Github PHP CS Fixer") va permettre de corriger toutes les erreurs de formatage du code de manière automatisée. Il s'intéresse aux recommandations PSR-1 et PSR-2.
+[PHP CS Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer "Github PHP CS Fixer"){:target="_blank" rel="nofollow noopener noreferrer"} va permettre de corriger toutes les erreurs de formatage du code de manière automatisée. Il s'intéresse aux recommandations PSR-1 et PSR-2.
 
     php bin/php-cs-fixer src/
 
@@ -278,17 +278,17 @@ Avec Jenkins, il est possible de lancer ces commandes de manière automatisée. 
 
 Pour ceux qui n'ont pas envie d'ajouter chaque outil séparément et de mettre un place un serveur Jenkins, il y a SonarQube.
 
-[SonarQube](http://www.sonarqube.org/) est un projet libre de droit qui permet de vérifier et contrôler la qualité du code. C'est une solution tout-en-un.
+[SonarQube](http://www.sonarqube.org/){:target="_blank" rel="nofollow noopener noreferrer"} est un projet libre de droit qui permet de vérifier et contrôler la qualité du code. C'est une solution tout-en-un.
 
 ### SensioLab Insight
 
-[SensioLab Insight](https://insight.sensiolabs.com/) est un service en SASS. Principalement orienté vers Symfony 2, il s'adapte également au projet PHP sans framework.
+[SensioLab Insight](https://insight.sensiolabs.com/){:target="_blank" rel="nofollow noopener noreferrer"} est un service en SASS. Principalement orienté vers Symfony 2, il s'adapte également au projet PHP sans framework.
 
 Ce service va analyser votre code et vous indiquer les faiblesses du code. Un des points intéressants est le temps estimé pour le corriger.
 
 ### Blackfire.io
 
-Encore un autre outil Sensio, mais très efficace dans l'analyse des performances d'une application. [Blackfire.io](https://blackfire.io/) va permettre de cibler les points faibles : consommation mémoire, CPU, disque et réseau.
+Encore un autre outil Sensio, mais très efficace dans l'analyse des performances d'une application. [Blackfire.io](https://blackfire.io/){:target="_blank" rel="nofollow noopener noreferrer"} va permettre de cibler les points faibles : consommation mémoire, CPU, disque et réseau.
 
 Cet outil s'utilise principalement pour le débogage, notamment lorsqu'une route met du temps à répondre.
 

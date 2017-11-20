@@ -32,13 +32,13 @@ Vous avez dû le voir dans votre boite Gmail, dans certains cas, vos mails ont u
 
 ### Comment ça marche ?
 
-La seule façon de communiquer avec votre boite mail et en particulier Gmail ou Inbox c'est l'HTML. Pour ajouter les informations complémentaires afin que Gmail comprenne ce que vous voulez, il faut ajouter un *[schema.org](http://schema.org/)*. Eh oui, c'est aussi simple que cela, comme pour améliorer votre [seo](https://developers.google.com/search/docs/guides/), Google utilise schema.org.
+La seule façon de communiquer avec votre boite mail et en particulier Gmail ou Inbox c'est l'HTML. Pour ajouter les informations complémentaires afin que Gmail comprenne ce que vous voulez, il faut ajouter un *[schema.org](http://schema.org/)*. Eh oui, c'est aussi simple que cela, comme pour améliorer votre [seo](https://developers.google.com/search/docs/guides/){:target="_blank" rel="nofollow noopener noreferrer"}, Google utilise schema.org.
 
 ### Comment tester ?
 
 On le sait tous, développer des mails, ce n'est pas ce qui est le plus simple. Mettre en place un environnement de développement peut s'avérer très galère et assez long. Mais pas d'inquiétude, Google y a pensé !
 
-Il suffit de se rendre sur [https://script.google.com](https://script.google.com) et de mettre le script suivant dans le fichier Code.gs
+Il suffit de se rendre sur [https://script.google.com](https://script.google.com){:target="_blank" rel="nofollow noopener noreferrer"} et de mettre le script suivant dans le fichier Code.gs
 
 ```javascript
 function testSchemas() {
@@ -178,4 +178,4 @@ Je vous invite à taper *'mes vols', 'mes commandes', 'mes réservations',*  vou
 
 ### Conclusion
 
-Dans le monde, plus de 2,5 milliards d'emails sont envoyés chaque année, et c'est certainement le format que vous favorisez pour communiquer avec vos clients. Donc autant faire en sorte qu'ils sortent du lot ! Google propose un grand nombre d'améliorations pour vos mails. Je vous invite à regarder ceci [https://developers.google.com/gmail/markup/](https://developers.google.com/gmail/markup/), je suis sûr que vous trouverez votre bonheur.
+Dans le monde, plus de 2,5 milliards d'emails sont envoyés chaque année, et c'est certainement le format que vous favorisez pour communiquer avec vos clients. Donc autant faire en sorte qu'ils sortent du lot ! Google propose un grand nombre d'améliorations pour vos mails. Je vous invite à regarder ceci [https://developers.google.com/gmail/markup/](https://developers.google.com/gmail/markup/){:target="_blank" rel="nofollow noopener noreferrer"}, je suis sûr que vous trouverez votre bonheur.

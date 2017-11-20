@@ -37,7 +37,7 @@ Contexte
 
 **Un peu de FitNesse..**
 
-Quand je suis arrivé dans l'équipe, une refonte d'une partie de notre SI était en cours. Des tests fonctionnels (en plus des unitaires bien entendu) étaient donc une obligation (refonte oblige). Le choix de l'époque s'était porté sur FitNesse ([http://fitnesse.org/](http://fitnesse.org/)) un outil qui permet d'écrire des tests de manière "human friendly". Le but était donc de laisser le PO écrire les tests fonctionnels. L'équipe technique quant à elle n'avait qu'à écrire les fixtures derrière.
+Quand je suis arrivé dans l'équipe, une refonte d'une partie de notre SI était en cours. Des tests fonctionnels (en plus des unitaires bien entendu) étaient donc une obligation (refonte oblige). Le choix de l'époque s'était porté sur FitNesse ([http://fitnesse.org/](http://fitnesse.org/)){:target="_blank" rel="nofollow noopener noreferrer"} un outil qui permet d'écrire des tests de manière "human friendly". Le but était donc de laisser le PO écrire les tests fonctionnels. L'équipe technique quant à elle n'avait qu'à écrire les fixtures derrière.
 
 Ce choix aurait pu être une bonne idée si dans la réalité des choses le PO avait réellement écrit les tests techniques. En réalité, l'équipe technique se retrouvait à écrire à la fois les tests techniques et fonctionnels. On devait donc utiliser un outil peu intuitif pour un dev (pas d'autocomplétion, utilisation abusive des tableaux...) et écrire les fixtures qui permettaient à ces tests d'interagir avec notre code.
 
@@ -47,16 +47,16 @@ Dans le cadre de la refonte d'une autre partie de notre SI nous avons donc déci
 
 Nous avons cherché ce qui se faisait dans le domaine du test fonctionnel. Nos critères étaient d'avoir un outil qui n'est pas forcément "human friendly" mais qui ne constitue pas une difficulté pour les devs (PHP en l'occurence). On a de fait écarté tous les outils dans un langage tierce, à cause du temps d'apprentissage.
 
-On a fini par découvrir Codeception ([http://codeception.com/](http://codeception.com/)) qui est une solution de test écrit en PHP et qui possède beaucoup de modules (AMQP, Doctrine2, Filesystem, MongoDb, REST, Symfony,...).
+On a fini par découvrir Codeception ([http://codeception.com/](http://codeception.com/)) qui est une solution de test écrit en PHP et qui possède beaucoup de modules (AMQP, Doctrine2, Filesystem, MongoDb, REST, Symfony,...){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Présentation
 --------
 
 Codeception permet de couvrir votre application entièrement, en effet ils intègrent tout type de tests :
 
-- Acceptance [http://codeception.com/docs/03-AcceptanceTests](http://codeception.com/docs/03-AcceptanceTests)
-- Functional [http://codeception.com/docs/04-FunctionalTests](http://codeception.com/docs/04-FunctionalTests)
-- Unit [http://codeception.com/docs/05-UnitTests](http://codeception.com/docs/05-UnitTests)
+- Acceptance [http://codeception.com/docs/03-AcceptanceTests](http://codeception.com/docs/03-AcceptanceTests){:target="_blank" rel="nofollow noopener noreferrer"}
+- Functional [http://codeception.com/docs/04-FunctionalTests](http://codeception.com/docs/04-FunctionalTests){:target="_blank" rel="nofollow noopener noreferrer"}
+- Unit [http://codeception.com/docs/05-UnitTests](http://codeception.com/docs/05-UnitTests){:target="_blank" rel="nofollow noopener noreferrer"}
 
 **Les tests unitaires **
 
@@ -217,7 +217,7 @@ class EndpointCest
 }
 ```
 
-Je vous invite à aller lire la [doc de codeception](http://codeception.com/docs/), elle est assez complète et vous pourrez voir qu'ils supportent pas mal de modules :)
+Je vous invite à aller lire la [doc de codeception](http://codeception.com/docs/), elle est assez complète et vous pourrez voir qu'ils supportent pas mal de modules :){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Je ne rentre pas plus dans le détail pour le moment, le but était plus de vous faire un retour d'expérience, si vous êtes intéressé pour un article plus poussé sur son utilisation n'hésitez pas à me l'indiquer.
 

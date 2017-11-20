@@ -28,7 +28,7 @@ Cela fait maintenant plus de 2 ans que Symfony2 est sorti et, comme vous le save
 ```
 {% endraw %}
 
-Les possibilités sont illimitées, plus d'informations [ici](http://jmsyst.com/bundles/JMSSerializerBundle).
+Les possibilités sont illimitées, plus d'informations [ici](http://jmsyst.com/bundles/JMSSerializerBundle){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Vous devez développer une API REST ? Utilisez **FOSRESTBundle** ! Il vous aide à respecter les conventions RESTful, fournit un controller et un système de routing adaptés au REST, et est très simple à utiliser. FOSRESTBundle va de paire avec JMSSerializerBundle ci-dessus. Avec le serializer vous pouvez paramétrer la politique d'exclusion et exposer uniquement certains attributs de vos entités en utilisant les annotations, le format xml ou yml, ou encore définir le format de sortie pour les dates.
 
@@ -58,9 +58,9 @@ class DefaultController extends FOSRestController
 }
 ```
 
-Le détail est sur [la page github du projet](https://github.com/FriendsOfSymfony/FOSRestBundle).
+Le détail est sur [la page github du projet](https://github.com/FriendsOfSymfony/FOSRestBundle){:target="_blank" rel="nofollow noopener noreferrer"}.
 
-Vous appelez des web services REST ? [**Guzzle**](https://github.com/guzzle/guzzle) et [**Buzz**](https://github.com/kriswallsmith/Buzz) sont deux librairies PHP basées sur cURL, qui permettent de faire des requêtes HTTP. Ils ont chacun leur bundle respectif, ils sont rapides à prendre en main, même si Guzzle est plus intuitif. Rien de plus simple qu'un appel de web service :
+Vous appelez des web services REST ? [**Guzzle**](https://github.com/guzzle/guzzle) et [**Buzz**](https://github.com/kriswallsmith/Buzz){:target="_blank" rel="nofollow noopener noreferrer"} sont deux librairies PHP basées sur cURL, qui permettent de faire des requêtes HTTP. Ils ont chacun leur bundle respectif, ils sont rapides à prendre en main, même si Guzzle est plus intuitif. Rien de plus simple qu'un appel de web service :
 
 ```php
 // use Guzzle\Http\Client;
@@ -106,7 +106,7 @@ N'oubliez pas d'inclure les fichiers JS du bundle dans votre layout :
 ```
 {% endraw %}
 
-Plus d'informations sur le [site du projet](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/blob/master/Resources/doc/README.markdown).
+Plus d'informations sur le [site du projet](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/blob/master/Resources/doc/README.markdown){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 En ce qui concerne la navigation sur votre site, prenez **KNPMenuBundle**. Vous définissez notre navigation dans une classe :
 
@@ -140,7 +140,7 @@ Et vous l'appelez dans votre layout :
 ```
 {% endraw %}
 
-Faites un tour [ici](https://github.com/KnpLabs/KnpMenuBundle/blob/master/Resources/doc/index.md#first-menu) pour lire toutes les informations.
+Faites un tour [ici](https://github.com/KnpLabs/KnpMenuBundle/blob/master/Resources/doc/index.md#first-menu){:target="_blank" rel="nofollow noopener noreferrer"} pour lire toutes les informations.
 
 Maintenant que l'on peut accéder à la liste d'articles via le menu, on voudrait améliorer l'affichage et ajouter une pagination. Pour cela existe **KNPPaginatorBundle**. Il gère la pagination et le tri des résultats pour les requêtes Doctrine, MongoDB et Propel. Dans votre action, vous créez une requête et la passez au service paginator :
 
@@ -193,13 +193,13 @@ Et dans le template twig :
 ```
 {% endraw %}
 
-Visitez la [page du bundle](https://github.com/KnpLabs/KnpPaginatorBundle) pour de plus amples informations.
+Visitez la [page du bundle](https://github.com/KnpLabs/KnpPaginatorBundle){:target="_blank" rel="nofollow noopener noreferrer"} pour de plus amples informations.
 
 Admettons que vous voulez facturez vos clients. Le meilleur outil pour cela est **JMSPayment**. JMSPaymentCoreBundle vous fournit une API unifiée simple qui gère les différents modes de paiement. Vous n'avez plus à vous soucier des protocoles divers. JMSPaymentPaypalBundle est une couche qui implémente PayPal.
 
-La documentation complète est ici : [JMSPaymentCore](http://jmsyst.com/bundles/JMSPaymentCoreBundle) et [JMSPaypal](http://jmsyst.com/bundles/JMSPaymentPaypalBundle)
+La documentation complète est ici : [JMSPaymentCore](http://jmsyst.com/bundles/JMSPaymentCoreBundle) et [JMSPaypal](http://jmsyst.com/bundles/JMSPaymentPaypalBundle){:target="_blank" rel="nofollow noopener noreferrer"}
 
-On voudrait pouvoir générer la facture au format PDF pour le client pour confirmer son paiement. Pour cela, il y a **KNPSnappyBundle**. Il est basé sur [wkhtmltopdf](http://code.google.com/p/wkhtmltopdf/) qui génère un PDF à partir d'un fichier HTML comme son nom l'indique. On définit notre HTML dans un template twig par exemple. Et le controller n'a besoin que de très peu de code :
+On voudrait pouvoir générer la facture au format PDF pour le client pour confirmer son paiement. Pour cela, il y a **KNPSnappyBundle**. Il est basé sur [wkhtmltopdf](http://code.google.com/p/wkhtmltopdf/){:target="_blank" rel="nofollow noopener noreferrer"} qui génère un PDF à partir d'un fichier HTML comme son nom l'indique. On définit notre HTML dans un template twig par exemple. Et le controller n'a besoin que de très peu de code :
 
 ```php
 public function getPDFAction()
@@ -217,6 +217,6 @@ public function getPDFAction()
 }
 ```
 
-Toutes les options de wkhtmltopdf sont disponibles. Cliquez [ici](https://github.com/KnpLabs/KnpSnappyBundle) pour voir le bundle sur Github.
+Toutes les options de wkhtmltopdf sont disponibles. Cliquez [ici](https://github.com/KnpLabs/KnpSnappyBundle){:target="_blank" rel="nofollow noopener noreferrer"} pour voir le bundle sur Github.
 
 Et vous, quels sont les bundles que vous utilisez ?

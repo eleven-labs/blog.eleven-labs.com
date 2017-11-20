@@ -90,9 +90,9 @@ Chaque balise `#EXT-X-STREAM-INF` indique les données nécessaires à la lectur
 
 ### Librairie JS
 
-La librairie open-source [hls.js](https://github.com/video-dev/hls.js) est certainement l'une des plus complètes quand il s'agit d'implémenter un client gérant le HTTP Live Streaming. Utilisée notamment par Canal+ et Dailymotion, hls.js est compatible avec un grand nombre de browsers et embarque des fonctionnalités avancées, comme la gestion de l'adaptive streaming ou le multi-thread (si le navigateur client est compatible) pour améliorer entre autre la fluidité de la mise en cache.
+La librairie open-source [hls.js](https://github.com/video-dev/hls.js) est certainement l'une des plus complètes quand il s'agit d'implémenter un client gérant le HTTP Live Streaming. Utilisée notamment par Canal+ et Dailymotion, hls.js est compatible avec un grand nombre de browsers et embarque des fonctionnalités avancées, comme la gestion de l'adaptive streaming ou le multi-thread (si le navigateur client est compatible){:target="_blank" rel="nofollow noopener noreferrer"} pour améliorer entre autre la fluidité de la mise en cache.
 
-hls.js dispose d'une [API](https://github.com/video-dev/hls.js/blob/master/doc/API.md) très complète (et très bien documentée !) qui permet de gérer la vidéo et le flux directement depuis le Javascript. Exemple de base d'implémentation :
+hls.js dispose d'une [API](https://github.com/video-dev/hls.js/blob/master/doc/API.md) très complète (et très bien documentée !){:target="_blank" rel="nofollow noopener noreferrer"} qui permet de gérer la vidéo et le flux directement depuis le Javascript. Exemple de base d'implémentation :
 ```html
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <video id="video"></video>
@@ -109,12 +109,12 @@ hls.js dispose d'une [API](https://github.com/video-dev/hls.js/blob/master/doc/A
 </script>
 ```
 
-Une démo live est disponible [ici](http://video-dev.github.io/hls.js/demo).
+Une démo live est disponible [ici](http://video-dev.github.io/hls.js/demo){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 
 ## Le DASH
 
-Le Moving Picture Expert Group, plus connu sous son acronyme MPEG, a commencé la conception du MPEG-DASH en 2010. Le DASH (Dynamic Adaptive Streaming over HTTP) est ensuite devenu un standard international à la fin de l'année 2011. C'est d'ailleurs la seule solution de streaming certifiée [ISO](http://mpeg.chiariglione.org/standards/mpeg-dash).
+Le Moving Picture Expert Group, plus connu sous son acronyme MPEG, a commencé la conception du MPEG-DASH en 2010. Le DASH (Dynamic Adaptive Streaming over HTTP) est ensuite devenu un standard international à la fin de l'année 2011. C'est d'ailleurs la seule solution de streaming certifiée [ISO](http://mpeg.chiariglione.org/standards/mpeg-dash){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Utilisé lui aussi par de très grandes plateformes comme Youtube ou Netflix, le DASH est assez semblable au HLS dans son fonctionnement général : des fichiers séquencés répertoriés dans un fichier servant de playlist.
 
@@ -200,27 +200,27 @@ Il peut être intéressant de noter que le DASH supporte les DRM, pour diffuser 
 
 ### Librairie JS
 
-L'une des librairies open-source les plus complètes pour implémenter un client DASH est sans doute le [Rx-Player](https://github.com/canalplus/rx-player), une librairie maintenue par Canal +. Elle permet de jouer aussi bien du DASH live que du replay, utilisable via une [API](https://github.com/canalplus/rx-player/blob/master/doc/api/index.md) très complète et dont le niveau de documentation est assez incroyable. Le tout est utilisé en production, notamment dans certaines box Canal +.
+L'une des librairies open-source les plus complètes pour implémenter un client DASH est sans doute le [Rx-Player](https://github.com/canalplus/rx-player), une librairie maintenue par Canal +. Elle permet de jouer aussi bien du DASH live que du replay, utilisable via une [API](https://github.com/canalplus/rx-player/blob/master/doc/api/index.md){:target="_blank" rel="nofollow noopener noreferrer"} très complète et dont le niveau de documentation est assez incroyable. Le tout est utilisé en production, notamment dans certaines box Canal +.
 
-Je leur laisse le soin d'expliquer [pourquoi](https://github.com/canalplus/rx-player#why-a-new-player-why-rx) le Rx-player est au-dessus quand il s'agit de la délicate mission d'implémenter un player DASH. Il implémente aussi le Smooth Streaming (un autre protocole de streaming moins connu), si le coeur vous en dit.
+Je leur laisse le soin d'expliquer [pourquoi](https://github.com/canalplus/rx-player#why-a-new-player-why-rx) le Rx-player est au-dessus quand il s'agit de la délicate mission d'implémenter un player DASH. Il implémente aussi le Smooth Streaming (un autre protocole de streaming moins connu){:target="_blank" rel="nofollow noopener noreferrer"}, si le coeur vous en dit.
 
-Si vous n'êtes pas convaincus, je vous laisse jeter un oeil à leur [démo](http://developers.canal-plus.com/rx-player/).
+Si vous n'êtes pas convaincus, je vous laisse jeter un oeil à leur [démo](http://developers.canal-plus.com/rx-player/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ## Conclusion
 
 Les deux protocoles présentés dans cet article partagent donc de nombreuses ressemblances dans leur fonctionnement général respectif.
 
-Le HLS est sans doute le plus simple à mettre en place, que ce soit coté serveur ([ffmpeg](https://www.ffmpeg.org/) est votre ami) ou coté client.<br>
+Le HLS est sans doute le plus simple à mettre en place, que ce soit coté serveur ([ffmpeg](https://www.ffmpeg.org/) est votre ami){:target="_blank" rel="nofollow noopener noreferrer"} ou coté client.<br>
 Le DASH est un peu plus complexe, mais il offre des possibilités incroyables si vous avez des besoins avancés, notamment au niveau de la gestion des DRM.
 
-Il ne serait pas fair-play de finir cet article sans au moins mentionner deux autres grandes technologies de streaming : Le MSS (Microsoft Smooth Streaming) et le HDS (HTTP Dynamic Streaming). Moins connu et disposant de fonctionnalités qui leurs sont propres, je vous laisse consulter à leurs sujets cet excellent [article](https://bitmovin.com/mpeg-dash-vs-apple-hls-vs-microsoft-smooth-streaming-vs-adobe-hds/) (en anglais) comparant, fonctionnalité par fonctionnalité, les quatre protocoles.
+Il ne serait pas fair-play de finir cet article sans au moins mentionner deux autres grandes technologies de streaming : Le MSS (Microsoft Smooth Streaming) et le HDS (HTTP Dynamic Streaming). Moins connu et disposant de fonctionnalités qui leurs sont propres, je vous laisse consulter à leurs sujets cet excellent [article](https://bitmovin.com/mpeg-dash-vs-apple-hls-vs-microsoft-smooth-streaming-vs-adobe-hds/) (en anglais){:target="_blank" rel="nofollow noopener noreferrer"} comparant, fonctionnalité par fonctionnalité, les quatre protocoles.
 
 ## Références
 
-* [ Spécification HLS - Apple ](https://developer.apple.com/streaming/)
-* [ Librairie hls.js - Github ](https://github.com/video-dev/hls.js/tree/master)
-* [ Standard DASH - MPEG ](http://mpeg.chiariglione.org/standards/mpeg-dash)
-* [ MPEG-DASH - Wikipedia ](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP)
-* [ Sample DASH - Appshot ](http://dash-mse-test.appspot.com/media.html)
-* [ Rx-player - Github ](https://github.com/canalplus/rx-player)
-* [ Comparaison HLS/DASH/MSS/HDS - Bitmovin ](https://bitmovin.com/mpeg-dash-vs-apple-hls-vs-microsoft-smooth-streaming-vs-adobe-hds/)
+* [ Spécification HLS - Apple ](https://developer.apple.com/streaming/){:target="_blank" rel="nofollow noopener noreferrer"}
+* [ Librairie hls.js - Github ](https://github.com/video-dev/hls.js/tree/master){:target="_blank" rel="nofollow noopener noreferrer"}
+* [ Standard DASH - MPEG ](http://mpeg.chiariglione.org/standards/mpeg-dash){:target="_blank" rel="nofollow noopener noreferrer"}
+* [ MPEG-DASH - Wikipedia ](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP){:target="_blank" rel="nofollow noopener noreferrer"}
+* [ Sample DASH - Appshot ](http://dash-mse-test.appspot.com/media.html){:target="_blank" rel="nofollow noopener noreferrer"}
+* [ Rx-player - Github ](https://github.com/canalplus/rx-player){:target="_blank" rel="nofollow noopener noreferrer"}
+* [ Comparaison HLS/DASH/MSS/HDS - Bitmovin ](https://bitmovin.com/mpeg-dash-vs-apple-hls-vs-microsoft-smooth-streaming-vs-adobe-hds/){:target="_blank" rel="nofollow noopener noreferrer"}

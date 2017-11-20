@@ -19,7 +19,7 @@ Dans ce tutoriel nous allons seulement installer un apache, mais vous pouvez app
 
 ### Etape 1, créer votre configuration :
 
-Allez dans le menu "Compute Engine", disponible [ici](https://console.cloud.google.com/compute/instances).
+Allez dans le menu "Compute Engine", disponible [ici](https://console.cloud.google.com/compute/instances){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ![Compute Engine - Google Cloud Platform](/assets/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.09.20.png)
 

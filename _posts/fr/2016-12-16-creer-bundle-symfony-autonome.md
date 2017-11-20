@@ -298,7 +298,7 @@ L'ajout de ce composant nous permet d'utiliser le serveur web interne de php.
 php tests/App/console server:run -d tests/App
 ```
 
-Ouvrez votre navigateur vers [](http://127.0.0.1:8000/), le json `{"foo": "bar"}` doit s'afficher.
+Ouvrez votre navigateur vers [](http://127.0.0.1:8000/){:target="_blank" rel="nofollow noopener noreferrer"}, le json `{"foo": "bar"}` doit s'afficher.
 Vous avez maintenant un bundle capable de recevoir des requêtes HTTP et d'y répondre sans avoir besoin de configurer un
 serveur web pour le développement.
 

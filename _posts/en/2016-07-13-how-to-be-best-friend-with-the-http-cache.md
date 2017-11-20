@@ -245,7 +245,7 @@ sub vcl_backend_response {
 ### The ESIs
 
 You are now an expert in the use of the HTTP cache, only one thing is left to be understood: ESIs.
-Edge Side Include (ESI) allows you to use the full power of Varnish. As stated above, this technology was invented by [Akamai](https://www.akamai.com/fr/), one of the most famous CDNs.
+Edge Side Include (ESI) allows you to use the full power of Varnish. As stated above, this technology was invented by [Akamai](https://www.akamai.com/fr/){:target="_blank" rel="nofollow noopener noreferrer"}, one of the most famous CDNs.
 
 > What is it used for?
 
@@ -264,6 +264,6 @@ Test
 ```
 
 Varnish will recognize the use of an ESI and will therefore cache two objects, one for the full page with the cache data of the page and one for ESI with other cache data. You can then uncache the ESI only and Varnish will update a single object (only one request to the server); the user has all the pages updated just the same.
-For further information, I suggest you look at a previous [article](https://blog.eleven-labs.com/symfony-2-cache-http-esi/), which explains an implementation for Symfony.
-You can also find a presentation about HTTP caches and Symfony [ici](https://docs.google.com/presentation/d/1RVr_JfpFKVRXdg4hy6war3OfiSJtdeYzFsdxhn2t0NY/edit?usp=sharing).
+For further information, I suggest you look at a previous [article](https://blog.eleven-labs.com/symfony-2-cache-http-esi/){:target="_blank" rel="nofollow noopener noreferrer"}, which explains an implementation for Symfony.
+You can also find a presentation about HTTP caches and Symfony [ici](https://docs.google.com/presentation/d/1RVr_JfpFKVRXdg4hy6war3OfiSJtdeYzFsdxhn2t0NY/edit?usp=sharing){:target="_blank" rel="nofollow noopener noreferrer"}.
 .

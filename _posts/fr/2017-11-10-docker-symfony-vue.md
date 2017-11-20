@@ -16,11 +16,11 @@ tags:
 cover: /assets/2017-11-10-docker-symfony-vue/cover.jpg
 ---
 
-Dans cet article nous allons vous montrer comment mettre en place une application web avec symfony et Vue.js dans un environnement docker. À la fin de cet article vous aurez un projet prêt au développement. Vous pouvez également retrouver le projet sur le github d’Eleven-labs sur ce dépôt [eleven-labs/docker-symfony-vue](https://github.com/eleven-labs/docker-symfony-vue)
+Dans cet article nous allons vous montrer comment mettre en place une application web avec symfony et Vue.js dans un environnement docker. À la fin de cet article vous aurez un projet prêt au développement. Vous pouvez également retrouver le projet sur le github d’Eleven-labs sur ce dépôt [eleven-labs/docker-symfony-vue](https://github.com/eleven-labs/docker-symfony-vue){:target="_blank" rel="nofollow noopener noreferrer"}
 
 ## ENVIRONNEMENT : Docker
-Pour l'environnement nous allons nous baser sur le projet de Maxence POUTORD disponible sur son [GitHub](https://github.com/maxpou/docker-symfony) auquel nous allons apporter quelques modifications.
-Dans un premier temps nous changeons de base de données pour passer sur [PostgreSQL](https://www.postgresql.org). Pour ce faire nous modifions le fichier `docker-compose.yml` se trouvant à la racine de notre projet :
+Pour l'environnement nous allons nous baser sur le projet de Maxence POUTORD disponible sur son [GitHub](https://github.com/maxpou/docker-symfony){:target="_blank" rel="nofollow noopener noreferrer"} auquel nous allons apporter quelques modifications.
+Dans un premier temps nous changeons de base de données pour passer sur [PostgreSQL](https://www.postgresql.org){:target="_blank" rel="nofollow noopener noreferrer"}. Pour ce faire nous modifions le fichier `docker-compose.yml` se trouvant à la racine de notre projet :
 
 ```yaml
 # ...
@@ -75,7 +75,7 @@ RUN apt-get update && apt-get install yarn
 WORKDIR /var/www/symfony
 ```
 
-Enfin nous modifions le Dockerfile de PHP qui se trouve dans le répertoire `docker/php7-fpm` pour installer la librairie cliente de PostgreSQL [libpq-dev](https://www.postgresql.org/docs/9.5/static/libpq.html) ainsi que l’extension [pdo_pgsql](http://php.net/manual/en/ref.pdo-pgsql.php) pour PHP :
+Enfin nous modifions le Dockerfile de PHP qui se trouve dans le répertoire `docker/php7-fpm` pour installer la librairie cliente de PostgreSQL [libpq-dev](https://www.postgresql.org/docs/9.5/static/libpq.html) ainsi que l’extension [pdo_pgsql](http://php.net/manual/en/ref.pdo-pgsql.php){:target="_blank" rel="nofollow noopener noreferrer"} pour PHP :
 ```dockerfile
 # ...
 RUN apt-get update && \
@@ -122,7 +122,7 @@ REDIS_DNS=
 ```
 
 ## BACKEND : Symfony
-Maintenant que notre environnement est prêt, nous installons Symfony, je vous invite à suivre le [tutoriel officiel sur le site de symfony](https://symfony.com/doc/current/setup.html).
+Maintenant que notre environnement est prêt, nous installons Symfony, je vous invite à suivre le [tutoriel officiel sur le site de symfony](https://symfony.com/doc/current/setup.html){:target="_blank" rel="nofollow noopener noreferrer"}.
 Nous allons personnaliser Symfony pour notre projet et pour ce faire nous supprimons l'appel à trois scripts exécutés lors du `composer install ` ou du `composer update`, qui se trouvent dans le fichier `composer.json` à la racine du projet, et qui sont :
 
 - `installRequirementsFile`
@@ -266,7 +266,7 @@ snc_redis:
 Voilà qui est fait pour la partie docker et symfony. Nous allons maintenant passer à la partie Vue.js
 
 ## FRONTEND : Vue.js
-Si vous n’êtes pas familier avec Vue.js, vous pouvez visiter la [page officielle du framework](https://vuejs.org). Vous trouverez des tutoriels très bien faits et traduits en français.
+Si vous n’êtes pas familier avec Vue.js, vous pouvez visiter la [page officielle du framework](https://vuejs.org){:target="_blank" rel="nofollow noopener noreferrer"}. Vous trouverez des tutoriels très bien faits et traduits en français.
 
 Tout d’abord, initialisons notre gestionnaire de package :
 ```bash
@@ -727,7 +727,7 @@ main ()
 
 main $@
 ```
-Ensuite nous implémentons nos fonctions. Je vais prendre uniquement l’exemple de `composer`, mais vous pouvez retrouver l'intégralité du script [ici](https://github.com/eleven-labs/docker-symfony-vue/master/bin/app).
+Ensuite nous implémentons nos fonctions. Je vais prendre uniquement l’exemple de `composer`, mais vous pouvez retrouver l'intégralité du script [ici](https://github.com/eleven-labs/docker-symfony-vue/master/bin/app){:target="_blank" rel="nofollow noopener noreferrer"}.
 ```bash
 #!/bin/bash
 

@@ -19,7 +19,7 @@ Quand on exécute une suite de tests fonctionnels ou unitaires sur une applicati
 
 **Contexte : isolation grâce à un rollback de la base de données :**
 
-Comme indiqué dans un [article précédent](https://blog.eleven-labs.com/fr/test-unitaire-dun-bundle-symfony2/ "Test unitaire d’un bundle Symfony 2") et [décrit par Alexandre Salomé](http://alexandre-salome.fr/blog/Symfony2-Isolation-Of-Tests "Isolation of tests in Symfony2"), il est possible de mettre en place un système de rollback pour rétablir l'état initial des données après l’exécution de chaque test.
+Comme indiqué dans un [article précédent](https://blog.eleven-labs.com/fr/test-unitaire-dun-bundle-symfony2/ "Test unitaire d’un bundle Symfony 2") et [décrit par Alexandre Salomé](http://alexandre-salome.fr/blog/Symfony2-Isolation-Of-Tests "Isolation of tests in Symfony2"){:target="_blank" rel="nofollow noopener noreferrer"}, il est possible de mettre en place un système de rollback pour rétablir l'état initial des données après l’exécution de chaque test.
 
 Cela repose sur cette classe que vos tests fonctionnels PHPUnit devront étendre et qui déclenche le système d'isolation, avant et après chaque cas de tests grâce aux méthodes *setUp* et *tearDown* :
 
@@ -164,7 +164,7 @@ Cela fonctionne très bien sauf dans les cas où vous souhaitez tester des *Even
 
 **Problème : quand on utilise des *Listeners* Doctrine :**
 
-Imaginons par exemple que vous ayez besoin d'exécuter une stratégie particulière pour changer un attribut de votre entité Doctrine juste après sa création, i.e. lors de l'event postPersit et/ou postUpdate. Vous mettriez alors en place ce [listener](http://symfony.com/doc/current/cookbook/doctrine/event_listeners_subscribers.html "How to Register Event Listeners and Subscribers") :
+Imaginons par exemple que vous ayez besoin d'exécuter une stratégie particulière pour changer un attribut de votre entité Doctrine juste après sa création, i.e. lors de l'event postPersit et/ou postUpdate. Vous mettriez alors en place ce [listener](http://symfony.com/doc/current/cookbook/doctrine/event_listeners_subscribers.html "How to Register Event Listeners and Subscribers"){:target="_blank" rel="nofollow noopener noreferrer"} :
 
 ```php
 <?php
@@ -292,7 +292,7 @@ class ArticleControllerTest extends IsolatedWebTestCase
 }
 ```
 
-Ce test fonctionnel vérifie simplement que les données postées (quantity = 42) sont bien settées dans l'entité par le [controller](https://github.com/ch3ric/BlogTestsIsolation/blob/master/src/Cheric/ExampleBundle/Controller/ArticleController.php "ArticleController"), et que le prix est ensuite renseigné lors du passage dans notre *ArticleListener* avant la sauvegarde en base de données.
+Ce test fonctionnel vérifie simplement que les données postées (quantity = 42) sont bien settées dans l'entité par le [controller](https://github.com/ch3ric/BlogTestsIsolation/blob/master/src/Cheric/ExampleBundle/Controller/ArticleController.php "ArticleController"){:target="_blank" rel="nofollow noopener noreferrer"}, et que le prix est ensuite renseigné lors du passage dans notre *ArticleListener* avant la sauvegarde en base de données.
 
 Et là, surprise lors de l’exécution de PHPUnit :
 
@@ -312,11 +312,11 @@ En analysant notre *IsolatedWebTestCase* et notre *Test Client*, on constate que
 
 Deuxième indice : la stack trace de l'exception dit que l'erreur est levée lors de l'appel `$this->doctrine->getManager()->flush($article);` dans notre *PriceStrategy*, déclenché par notre *ArticleListener*. Autrement dit, l'instance du *Doctrine Registry* injectée dans la *PriceStrategy* et l'*Entity Manager* lié n'ont pas connaissance de l'état de l'entité Article qu'ils doivent flusher : "*Entity has to be managed*".
 
-De plus, en regardant d'un peu plus près la [DBAL Connection de Doctrine](Doctrine\DBAL\Connection "https://github.com/doctrine/dbal/blob/master/lib/Doctrine/DBAL/Connection.php#L107"), on remarque une propriété [EventManager](https://github.com/doctrine/common/blob/master/lib/Doctrine/Common/EventManager.php "Doctrine\Common\EventManager") qui gère les *Events* et *Listeners* Doctrine, dont notre *ArticleListener*.
+De plus, en regardant d'un peu plus près la [DBAL Connection de Doctrine](Doctrine\DBAL\Connection "https://github.com/doctrine/dbal/blob/master/lib/Doctrine/DBAL/Connection.php#L107"), on remarque une propriété [EventManager](https://github.com/doctrine/common/blob/master/lib/Doctrine/Common/EventManager.php "Doctrine\Common\EventManager"){:target="_blank" rel="nofollow noopener noreferrer"} qui gère les *Events* et *Listeners* Doctrine, dont notre *ArticleListener*.
 
 Finalement, on en déduit que l'*Event Manager* de la *DBAL Connection* de notre deuxième requête doit être conservé tel quel, pour gérer correctement l'enregistrement de l'entité après passage dans le listener. Pour permettre le rollback et l'isolation de nos tests, on ne souhaite conserver que l'état de la *Connection*, qui a lancé la requête SQL "*START TRANSACTION"*, sans pour autant conserver l'*Event Manager* de la première requête, qui semble poser problème.
 
-La [solution](https://github.com/ch3ric/BlogTestsIsolation/commit/2038a61e723f3091b7dd935cf3da9f3cc57651e1 "Commit Solution") consiste donc simplement à setter le bon *Event Manager* dans la *Connection* conservée entre chaque requête de test, lors de l'appel à la méthode *startIsolation*. Cela passe par une extension de la classe *DBAL Connection* dans laquelle on ajoute un setter *setEventManager* :
+La [solution](https://github.com/ch3ric/BlogTestsIsolation/commit/2038a61e723f3091b7dd935cf3da9f3cc57651e1 "Commit Solution"){:target="_blank" rel="nofollow noopener noreferrer"} consiste donc simplement à setter le bon *Event Manager* dans la *Connection* conservée entre chaque requête de test, lors de l'appel à la méthode *startIsolation*. Cela passe par une extension de la classe *DBAL Connection* dans laquelle on ajoute un setter *setEventManager* :
 
 ```php
 <?php
@@ -377,9 +377,9 @@ class Client extends BaseClient
 }
 ```
 
-Voir commit complet [ici : sur github](https://github.com/ch3ric/BlogTestsIsolation/commit/2038a61e723f3091b7dd935cf3da9f3cc57651e1#diff-d618fa2c315d1d7b933528805e889d00R55 "Commit Solution").
+Voir commit complet [ici : sur github](https://github.com/ch3ric/BlogTestsIsolation/commit/2038a61e723f3091b7dd935cf3da9f3cc57651e1#diff-d618fa2c315d1d7b933528805e889d00R55 "Commit Solution"){:target="_blank" rel="nofollow noopener noreferrer"}.
 
-Le code complet permettant l'analyse de ce problème d'isolation et la solution sont disponibles ici : [github.com/ch3ric/BlogTestsIsolation](https://github.com/ch3ric/BlogTestsIsolation "github.com/ch3ric/BlogTestsIsolation")
+Le code complet permettant l'analyse de ce problème d'isolation et la solution sont disponibles ici : [github.com/ch3ric/BlogTestsIsolation](https://github.com/ch3ric/BlogTestsIsolation "github.com/ch3ric/BlogTestsIsolation"){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Je ne pense pas être le seul à avoir rencontré ce problème avec les tests de listeners Doctrine et j'espère donc que cette astuce pourra vous permettre de tester fonctionnellement vos listeners plus proprement.
 

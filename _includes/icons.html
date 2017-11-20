@@ -1,6 +1,6 @@
 {% if include.data.rss %}
 <li>
-    <a class="no-link-style" href="{{ "/feed.xml" | prepend: site.baseurl_root | prepend: site.url }}" title="{% translate global.rss_follow %}">
+    <a class="no-link-style" href="{{ "/feed.xml" | prepend: site.baseurl_root | prepend: site.url }}" title="{% translate global.rss_follow %}" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-rss"></i>
     </a>
 </li>
@@ -8,7 +8,7 @@
 
 {% if include.data.email_address %}
 <li>
-    <a class="no-link-style" href="mailto:{{ include.data.email_address }}" title="{% translate global.email %}">
+    <a class="no-link-style" href="mailto:{{ include.data.email_address }}" title="{% translate global.email %}" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-envelope"></i>
     </a>
 </li>
@@ -16,7 +16,7 @@
 
 {% if include.data.behance %}
 <li>
-    <a class="no-link-style" href="https://www.behance.net/{{ include.data.behance }}" title="{% translate global.follow_us_on %} Behance">
+    <a class="no-link-style" href="https://www.behance.net/{{ include.data.behance }}" title="{% translate global.follow_us_on %} Behance" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-behance"></i>
     </a>
 </li>
@@ -24,7 +24,7 @@
 
 {% if include.data.bitbucket %}
 <li>
-    <a class="no-link-style" href="https://bitbucket.org/{{ include.data.bitbucket }}" title="{% translate global.follow_us_on %} Bitbucket">
+    <a class="no-link-style" href="https://bitbucket.org/{{ include.data.bitbucket }}" title="{% translate global.follow_us_on %} Bitbucket" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-bitbucket"></i>
     </a>
 </li>
@@ -32,7 +32,7 @@
 
 {% if include.data.dribbble %}
 <li>
-    <a class="no-link-style" href="https://dribbble.com/{{ include.data.dribbble }}" title="{% translate global.follow_us_on %} Dribbble">
+    <a class="no-link-style" href="https://dribbble.com/{{ include.data.dribbble }}" title="{% translate global.follow_us_on %} Dribbble" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-dribbble"></i>
     </a>
 </li>
@@ -40,7 +40,7 @@
 
 {% if include.data.flickr %}
 <li>
-    <a class="no-link-style" href="https://www.flickr.com/photos/{{ include.data.flickr }}" title="{% translate global.follow_us_on %} Flickr">
+    <a class="no-link-style" href="https://www.flickr.com/photos/{{ include.data.flickr }}" title="{% translate global.follow_us_on %} Flickr" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-flickr"></i>
     </a>
 </li>
@@ -48,7 +48,7 @@
 
 {% if include.data.github %}
 <li>
-    <a class="no-link-style" href="https://github.com/{{ include.data.github }}" title="{% translate global.follow_us_on %} GitHub">
+    <a class="no-link-style" href="https://github.com/{{ include.data.github }}" title="{% translate global.follow_us_on %} GitHub" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-github"></i>
     </a>
 </li>
@@ -56,7 +56,7 @@
 
 {% if include.data.twitter %}
 <li>
-    <a class="no-link-style" href="https://twitter.com/{{ include.data.twitter }}" title="{% translate global.follow_us_on %} Twitter">
+    <a class="no-link-style" href="https://twitter.com/{{ include.data.twitter }}" title="{% translate global.follow_us_on %} Twitter" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-twitter"></i>
     </a>
 </li>
@@ -64,7 +64,7 @@
 
 {% if include.data.facebook %}
 <li>
-    <a class="no-link-style" href="https://www.facebook.com/{{ include.data.facebook }}" title="{% translate global.follow_us_on %} Facebook">
+    <a class="no-link-style" href="https://www.facebook.com/{{ include.data.facebook }}" title="{% translate global.follow_us_on %} Facebook" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-facebook"></i>
     </a>
 </li>
@@ -72,7 +72,7 @@
 
 {% if include.data.google_plus %}
 <li>
-    <a class="no-link-style" href="https://plus.google.com/{{ include.data.google_plus }}" title="{% translate global.follow_us_on %} Google+">
+    <a class="no-link-style" href="https://plus.google.com/{{ include.data.google_plus }}" title="{% translate global.follow_us_on %} Google+" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-google-plus"></i>
     </a>
 </li>
@@ -80,7 +80,7 @@
 
 {% if include.data.instagram %}
 <li>
-    <a class="no-link-style" href="http://instagram.com/{{ include.data.instagram }}" title="{% translate global.follow_us_on %} Instagram">
+    <a class="no-link-style" href="http://instagram.com/{{ include.data.instagram }}" title="{% translate global.follow_us_on %} Instagram" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-instagram"></i>
     </a>
 </li>
@@ -88,7 +88,7 @@
 
 {% if include.data.linkedin %}
 <li>
-    <a class="no-link-style" href="{{ include.data.linkedin }}" title="{% translate global.follow_us_on %} LinkedIn">
+    <a class="no-link-style" href="{{ include.data.linkedin }}" title="{% translate global.follow_us_on %} LinkedIn" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-linkedin"></i>
     </a>
 </li>
@@ -96,7 +96,7 @@
 
 {% if include.data.pinterest %}
 <li>
-    <a class="no-link-style" href="http://www.pinterest.com/{{ include.data.pinterest }}" title="{% translate global.follow_us_on %} Pinterest">
+    <a class="no-link-style" href="http://www.pinterest.com/{{ include.data.pinterest }}" title="{% translate global.follow_us_on %} Pinterest" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-pinterest"></i>
     </a>
 </li>
@@ -104,7 +104,7 @@
 
 {% if include.data.reddit %}
 <li>
-    <a class="no-link-style" href="https://www.reddit.com/user/{{ include.data.reddit }}" title="{% translate global.follow_us_on %} Reddit">
+    <a class="no-link-style" href="https://www.reddit.com/user/{{ include.data.reddit }}" title="{% translate global.follow_us_on %} Reddit" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-reddit"></i>
     </a>
 </li>
@@ -112,7 +112,7 @@
 
 {% if include.data.soundcloud %}
 <li>
-    <a class="no-link-style" href="https://soundcloud.com/{{ include.data.soundcloud }}" title="{% translate global.follow_us_on %} SoundCloud">
+    <a class="no-link-style" href="https://soundcloud.com/{{ include.data.soundcloud }}" title="{% translate global.follow_us_on %} SoundCloud" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-soundcloud"></i>
     </a>
 </li>
@@ -120,7 +120,7 @@
 
 {% if include.data.stack_exchange %}
 <li>
-    <a class="no-link-style" href="{{ include.data.stack_exchange }}" title="{% translate global.follow_us_on %} Stack Exchange">
+    <a class="no-link-style" href="{{ include.data.stack_exchange }}" title="{% translate global.follow_us_on %} Stack Exchange" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-stack-exchange"></i>
     </a>
 </li>
@@ -128,7 +128,7 @@
 
 {% if include.data.steam %}
 <li>
-    <a class="no-link-style" href="http://steamcommunity.com/id/{{ include.data.steam }}" title="{% translate global.follow_us_on %} Steam">
+    <a class="no-link-style" href="http://steamcommunity.com/id/{{ include.data.steam }}" title="{% translate global.follow_us_on %} Steam" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-steam"></i>
     </a>
 </li>
@@ -136,7 +136,7 @@
 
 {% if include.data.tumblr %}
 <li>
-    <a class="no-link-style" href="http://{{ include.data.tumblr }}.tumblr.com/" title="{% translate global.follow_us_on %} Tumblr">
+    <a class="no-link-style" href="http://{{ include.data.tumblr }}.tumblr.com/" title="{% translate global.follow_us_on %} Tumblr" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-tumblr"></i>
     </a>
 </li>
@@ -144,7 +144,7 @@
 
 {% if include.data.wordpress %}
 <li>
-    <a class="no-link-style" href="https://{{ include.data.wordpress }}.wordpress.com/" title="{% translate global.follow_us_on %} WordPress">
+    <a class="no-link-style" href="https://{{ include.data.wordpress }}.wordpress.com/" title="{% translate global.follow_us_on %} WordPress" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-wordpress"></i>
     </a>
 </li>
@@ -152,7 +152,7 @@
 
 {% if include.data.youtube %}
 <li>
-    <a class="no-link-style" href="https://www.youtube.com/channel/{{ include.data.youtube }}" title="{% translate global.follow_us_on %} YouTube">
+    <a class="no-link-style" href="https://www.youtube.com/channel/{{ include.data.youtube }}" title="{% translate global.follow_us_on %} YouTube" target="_blank" rel="nofollow noopener noreferrer">
         <i class="fa fa-fw fa-youtube"></i>
     </a>
 </li>
@@ -160,7 +160,7 @@
 
 {% if include.data.corporate %}
 <li>
-    <a class="no-link-style" href="{{ include.data.corporate }}" title="{% translate global.corporate %}">
+    <a class="no-link-style" href="{{ include.data.corporate }}" title="{% translate global.corporate %}" target="_blank" rel="nofollow noopener">
         <img class="corporate-logo" src="{{ include.data.corporate_logo | prepend: site.baseurl_root }}" alt="corporate_logo" width="24.42" height="19" />
     </a>
 </li>

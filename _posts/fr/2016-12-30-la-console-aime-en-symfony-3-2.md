@@ -144,7 +144,7 @@ class ElevenLabsTestCommandTest extends KernelTestCase
 
 ## Single command application
 
-Les “**S**ingle **C**ommand **A**pplication” sont possibles sur Symfony, comme vous pouvez le voir dans la [documentation](http://symfony.com/doc/3.1/components/console/single_command_tool.html).
+Les “**S**ingle **C**ommand **A**pplication” sont possibles sur Symfony, comme vous pouvez le voir dans la [documentation](http://symfony.com/doc/3.1/components/console/single_command_tool.html){:target="_blank" rel="nofollow noopener noreferrer"}.
 Cette feature améliorée dans la version 3.2 nous permet d’ajouter un booléen à la méthode setDefaultCommand(). C’est grâce à ce booléen que nous pouvons désormais basculer l’application en une SCA.
 
 Mieux vaut un exemple qu’un long discours, commençons par créer deux simples commandes :
