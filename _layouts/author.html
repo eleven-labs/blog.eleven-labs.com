@@ -4,7 +4,7 @@ layout: default
 <article>
     <header class="page-heading author-heading">
         <div class="avatar">
-            <img class="avatar-img" src="{{ '/img/authors/:author.jpg' | prepend: site.baseurl_root | replace: '//', '/' | replace: ':author', page.login }}"/>
+            <img class="avatar-img" src="{{ '/img/authors/:author.jpg' | prepend: site.baseurl_root | replace: '//', '/' | replace: ':author', page.login }}" alt="{{ page.title }}" />
         </div>
         <h1 class="page-heading-title">{{ page.title }}</h1>
         <div class="author-social">
@@ -13,13 +13,11 @@ layout: default
             </ul>
         </div>
     </header>
-
     <section class="slice">
         <div class="container post-content">
             {{ content }}
         </div>
     </section>
-
     <section class="slice">
         <div class="read-also container">
             <h3 class="read-also-title">{% translate global.same_author %}</h3>
@@ -37,5 +35,4 @@ layout: default
         </div>
     </section>
 </article>
-
 {% include newsletter_link.html %}

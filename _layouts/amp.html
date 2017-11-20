@@ -64,73 +64,63 @@ layout: null
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
   </head>
   <body>
-
-<div class="content">
-    <header class="amp-site-header">
-        <div class="amp-branding-container branding-container">
-            <a class="no-link-style" href="{{ site.baseurl }}/">
-              <amp-img src="/img/logo_eleven_lab.png" width="120" height="40"></amp-img>
-                <h1 class="site-title visually-hidden">
-                    {{ site.theme_settings.title }}
-                </h1>
-            </a>
-        </div>
-
-        <nav class="amp-site-nav">
-            <ul>
-                {% include amp-icons.html data=site.theme_settings %}
-            </ul>
-        </nav>
-    </header>
-
-    <article {% if page.cover %}class="feature-image"{% endif %}>
-        <header class="amp-page-heading page-heading">
-            {% if page.cover %}
-                <amp-img class="amp-page-heading-image" src="{{ site.baseurl }}{{ page.cover }}" layout=fill width="1" height="1"></amp-img>
-            {% endif %}
-            <div class="container">
-                <h1 class="page-heading-title amp-page-heading-assets">{{ page.title }}</h1>
-                <span class="meta">
-                    <span class="meta-content">
-                        {% include date_translate.html object=page.date %}
-                        {% include author_link.html authors=page.authors %}
-                    </span>
-                </span>
-                <div class="page-heading-reading-time amp-page-heading-assets">{% include reading_time.html content=content %}</div>
-            </div>
-        </header>
-
-        <section class="slice containers">
-            <div class="post-content container">{{ content | markdownify | amp_images }}</div>
-        </section>
-
-    </article>
-
-    {% include links.html %}
-</div>
-
-    {% include newsletter_link.html %}
-
-{% include footer.html %}
-
-
-<amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "{{ site.theme_settings.google_analytics }}"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+    <div class="content">
+      <header class="amp-site-header">
+          <div class="amp-branding-container branding-container">
+              <a class="no-link-style" href="{{ site.baseurl }}/">
+                <amp-img src="/img/logo_eleven_lab.png" width="120" height="40"></amp-img>
+                  <h1 class="site-title visually-hidden">
+                      {{ site.theme_settings.title }}
+                  </h1>
+              </a>
+          </div>
+          <nav class="amp-site-nav">
+              <ul>
+                  {% include amp-icons.html data=site.theme_settings %}
+              </ul>
+          </nav>
+      </header>
+      <article {% if page.cover %}class="feature-image"{% endif %}>
+          <header class="amp-page-heading page-heading">
+              {% if page.cover %}
+                  <amp-img class="amp-page-heading-image" src="{{ site.baseurl }}{{ page.cover }}" layout=fill width="1" height="1"></amp-img>
+              {% endif %}
+              <div class="container">
+                  <h1 class="page-heading-title amp-page-heading-assets">{{ page.title }}</h1>
+                  <span class="meta">
+                      <span class="meta-content">
+                          {% include date_translate.html object=page.date %}
+                          {% include author_link.html authors=page.authors %}
+                      </span>
+                  </span>
+                  <div class="page-heading-reading-time amp-page-heading-assets">{% include reading_time.html content=content %}</div>
+              </div>
+          </header>
+          <section class="slice containers">
+              <div class="post-content container">{{ content | markdownify | amp_images }}</div>
+          </section>
+      </article>
+      {% include links.html %}
+  </div>
+  {% include newsletter_link.html %}
+  {% include footer.html %}
+  <amp-analytics type="googleanalytics">
+    <script type="application/json">
+    {
       "vars": {
-        "title": "{{ page.title }}"
+        "account": "{{ site.theme_settings.google_analytics }}"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "{{ page.title }}"
+          }
+        }
       }
     }
-  }
-}
-</script>
-</amp-analytics>
+    </script>
+  </amp-analytics>
 </body>
 </html>

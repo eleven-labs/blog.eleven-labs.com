@@ -1,32 +1,31 @@
 ---
 layout: default
 ---
-
 {% if site.theme_settings.share_button %}
     {% include share.html %}
 {% endif %}
-
 <article {% if page.cover %}class="feature-image"{% endif %}>
     <header class="page-heading{% if page.cover %} with-cover{% endif %}" style="background-image: url('{{ site.baseurl }}{{ page.cover }}')">
         <div class="container">
             <h1 class="page-heading-title">{{ page.title }}</h1>
             <span class="meta">
-                <span class="meta-content">
-                    {% include date_translate.html object=page.date %}
-
-                    {% include author_link.html authors=page.authors %}
+                <span class="meta-item">
+                    <i class="fa fa-fw fa-calendar"></i> {% include date_translate.html object=page.date %} 
                 </span>
+                <span class="meta-item">
+                    <i class="fa fa-fw fa-clock-o">
+                        <span class="visually-hidden">{% translate global.estimated_reading_time %}</span>
+                    </i> {% include reading_time.html content=content %} 
+                </span>
+                {% include author_link.html authors=page.authors %}
             </span>
-            <div class="page-heading-reading-time">{% include reading_time.html content=content %}</div>
+
         </div>
     </header>
-
     <section class="slice">
         <div class="post-content container">{{ content }}</div>
     </section>
-
 </article>
-
 <!-- Post navigation -->
 {% if site.theme_settings.post_navigation %}
 <div id="post-nav" class="post-nav">
@@ -48,11 +47,8 @@ layout: default
     {% endif %}
 </div>
 {% endif %}
-
 {% include links.html %}
-
 {% include newsletter_link.html %}
-
 <!-- Disqus -->
 {% if site.theme_settings.disqus_shortname %}
 <section class="slice">
@@ -61,7 +57,6 @@ layout: default
     </div>
 </section>
 {% endif %}
-
 <!-- Muut -->
 {% if site.theme_settings.muut_community_name %}
 <section class="slice">
