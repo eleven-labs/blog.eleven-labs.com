@@ -27,11 +27,11 @@
     @extend %h1;
 
     @media (min-width: $breakpoint-x-small) {
-      margin: 2em 0 .7em -15px;
+      margin: 4rem 0 2rem;
     }
 
     @media (max-width: $breakpoint-x-small) {
-      margin: 2em 0 .7em;
+      margin: 2rem 0 1rem;
     }
   }
 
