@@ -90,13 +90,13 @@
   .current-page,
   a {
     display: inline-block;
+    line-height: 1.8;
     margin: 0 .1rem .6rem;
     min-height: 3rem;
     min-width: 3rem;
-    line-height: 1.8;
   }
 
-  a::hover {
+  a:hover {
     text-decoration: none;
   }
 
@@ -106,9 +106,9 @@
   }
 
   .button {
+    line-height: normal;
     min-height: auto;
     min-width: auto;
-    line-height: normal;
     text-decoration: none;
 
     i {
