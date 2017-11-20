@@ -84,14 +84,43 @@
 }
 // Pagination
 .pagination {
-  padding: $padding-small $padding-large 0;
+  margin: 3rem 0 6rem;
   text-align: center;
 
+  .current-page,
+  a {
+    display: inline-block;
+    margin: 0 .1rem .6rem;
+    min-height: 3rem;
+    min-width: 3rem;
+    line-height: 1.8;
+  }
+
+  a::hover {
+    text-decoration: none;
+  }
+
+  .current-page {
+    background-color: $brand-black;
+    color: $white;
+  }
+
   .button {
-    margin: 0 1.5rem;
+    min-height: auto;
+    min-width: auto;
+    line-height: normal;
+    text-decoration: none;
 
     i {
       vertical-align: middle;
     }
+  }
+
+  .prev {
+    margin-right: 1.2rem;
+  }
+
+  .next {
+    margin-left: 1.2rem;
   }
 }

@@ -42,16 +42,16 @@ layout: default
     {% endfor %}
     </div>
     {% if paginator.total_pages > 1 %}
-        <div class="pagination" style="margin-bottom:2em;">
+        <div class="pagination container">
             {% if paginator.previous_page %}
-                <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button">
+                <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button previous">
                     <i class="fa fa-chevron-left"></i>
                     {% translate global.prev %}
                 </a>
             {% endif %}
             {% for page in (1..paginator.total_pages) %}
                 {% if page == paginator.page %}
-                    {{ page }}
+                    <span class="current-page">{{ page }}</span>
                 {% elsif page == 1 %}
                     <a href="{{ "/" | prepend: site.baseurl }}">{{ page }}</a>
                 {% else %}
@@ -59,7 +59,7 @@ layout: default
                 {% endif %}
             {% endfor %}
             {% if paginator.next_page %}
-                <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button">
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button next">
                     {% translate global.next %}
                     <i class="fa fa-chevron-right"></i>
                 </a>
