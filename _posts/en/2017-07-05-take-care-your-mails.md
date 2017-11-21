@@ -33,13 +33,13 @@ You should have seen it in your Gmail mailbox, in some cases your mails have a d
 
 ### How does it work?
 
-The only way to communicate with your mailbox and especially Gmail or Inbox is HTML. To add additional information so that Gmail understands what you want, you need to add a schema.org. Yes, it's as simple as this, as to improve your [seo](https://developers.google.com/search/docs/guides/), Google uses *[schema.org](http://schema.org/)*.
+The only way to communicate with your mailbox and especially Gmail or Inbox is HTML. To add additional information so that Gmail understands what you want, you need to add a schema.org. Yes, it's as simple as this, as to improve your [seo](https://developers.google.com/search/docs/guides/), Google uses *[schema.org](http://schema.org/){:target="_blank" rel="nofollow noopener noreferrer"}*.
 
 ### How to test?
 
 We all know that developing e-mails is not the simplest thing in the world. Setting up a development environment can be very difficult and time consuming. But no worries, Google thought about it!
 
-Just go to [https://script.google.com](https://script.google.com) and put the following script in the Code.gs  file
+Just go to [https://script.google.com](https://script.google.com){:target="_blank" rel="nofollow noopener noreferrer"} and put the following script in the Code.gs  file
 
 
 ```javascript
@@ -179,4 +179,4 @@ I invite you to type **my flights**, **my orders**, **my reservations**, you wil
 
 ### Conclusion
 
-Worldwide, more than 215 billion of emails are sent daily, by a bit more than 2,6 users. It's certainly the format you favor to communicate with your customers. So why not take a little time and make sure they stand out? Google offers a lot of improvements for your mails. I invite you to watch this[https://developers.google.com/gmail/markup/](https://developers.google.com/gmail/markup/), I'm sure you will find what you need.
+Worldwide, more than 215 billion of emails are sent daily, by a bit more than 2,6 users. It's certainly the format you favor to communicate with your customers. So why not take a little time and make sure they stand out? Google offers a lot of improvements for your mails. I invite you to watch this[https://developers.google.com/gmail/markup/](https://developers.google.com/gmail/markup/){:target="_blank" rel="nofollow noopener noreferrer"}, I'm sure you will find what you need.

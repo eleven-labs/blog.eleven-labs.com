@@ -81,7 +81,7 @@ De nombreux avantages résultent de l'utilisation, notamment en termes de flexib
 L'_event sourcing_ complète le _pattern_ CQRS en sauvegardant l'historique qui détermine l'état actuel de notre application. Ceci est très utile dans des domaines comme la comptabilité, car vous avez ainsi dans votre _data store_ une suite d’événements (par exemple de transactions financières) ne pouvant être modifiés ou supprimés.
 
 ### Pour approfondir le sujet
-[CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf "CQRS Documents"), _Greg Young_
-[CQRS Journey](https://msdn.microsoft.com/en-us/library/jj554200.aspx "Exploring CQRS and Event Sourcing"), _Dominic Betts, Julián Domínguez, Grigori Melnik, Fernando Simonazzi, Mani Subramanian_
-[Clarified CQRS](http://www.udidahan.com/2009/12/09/clarified-cqrs/), _Udi Dahan_
-[CQRS and Event Sourcing - Code on the Beach 2014](https://www.youtube.com/watch?v=JHGkaShoyNs), _Greg Young_
+[CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf "CQRS Documents"){:target="_blank" rel="nofollow noopener noreferrer"}, _Greg Young_
+[CQRS Journey](https://msdn.microsoft.com/en-us/library/jj554200.aspx "Exploring CQRS and Event Sourcing"){:target="_blank" rel="nofollow noopener noreferrer"}, _Dominic Betts, Julián Domínguez, Grigori Melnik, Fernando Simonazzi, Mani Subramanian_
+[Clarified CQRS](http://www.udidahan.com/2009/12/09/clarified-cqrs/){:target="_blank" rel="nofollow noopener noreferrer"}, _Udi Dahan_
+[CQRS and Event Sourcing - Code on the Beach 2014](https://www.youtube.com/watch?v=JHGkaShoyNs){:target="_blank" rel="nofollow noopener noreferrer"}, _Greg Young_

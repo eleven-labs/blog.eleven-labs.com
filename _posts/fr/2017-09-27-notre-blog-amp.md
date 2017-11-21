@@ -17,8 +17,8 @@ Notre blog est à l'image d'Eleven-labs, on aime partager et suivre les dernièr
 
 ### Mais c'est quoi AMP ?
 
-Petit résumé pour ceux qui n'ont pas lu l'article [AMP le futur du web ?](https://blog.eleven-labs.com/fr/amp-le-futur-du-web/).
-[AMP](https://www.ampproject.org/) est un projet open-source ayant pour volonté d'améliorer les performances de nos sites internet. À la base AMP est créé pour les pages mobiles, même si il est totalement possible de faire de l'AMP sur votre site desktop.
+Petit résumé pour ceux qui n'ont pas lu l'article [AMP le futur du web ?](https://blog.eleven-labs.com/fr/amp-le-futur-du-web/){:target="_blank" rel="nofollow noopener noreferrer"}.
+[AMP](https://www.ampproject.org/){:target="_blank" rel="nofollow noopener noreferrer"} est un projet open-source ayant pour volonté d'améliorer les performances de nos sites internet. À la base AMP est créé pour les pages mobiles, même si il est totalement possible de faire de l'AMP sur votre site desktop.
 AMP est surtout une technologie Google, en effet le principe est de limiter le nombre de requêtes et tout ce qui fait ralentir l'affichage de vos pages web. Le petit plus c'est que vos pages AMP sont alors cachées directement par les CDN de Google.
 Comme Google donne une préférence aux pages AMP lors des recherches mobile, votre SEO n'en est que meilleur.
 
@@ -28,9 +28,9 @@ Eh oui, c'est fait ! Notre blog peut être servi en AMP, ce qui va permettre à 
 
     Mais comment on a fait ca ?
 
-Si vous avez suivi l'activité de notre blog cette année, nous [venons de migrer ce dernier](https://blog.eleven-labs.com/fr/migration-du-blog/). En passant de Wordpress à Jekyll nous pouvons faire plus de développement (enfin plus facilement), et c'est pour cela que nous avons passé nos pages articles en AMP.
+Si vous avez suivi l'activité de notre blog cette année, nous [venons de migrer ce dernier](https://blog.eleven-labs.com/fr/migration-du-blog/). En passant de Wordpress à Jekyll nous pouvons faire plus de développement (enfin plus facilement){:target="_blank" rel="nofollow noopener noreferrer"}, et c'est pour cela que nous avons passé nos pages articles en AMP.
 
-Pour commencer nous avons installé le plugin [AMP-jekyll](https://github.com/juusaw/amp-jekyll) qui permet de générer le site avec deux layouts différents.
+Pour commencer nous avons installé le plugin [AMP-jekyll](https://github.com/juusaw/amp-jekyll){:target="_blank" rel="nofollow noopener noreferrer"} qui permet de générer le site avec deux layouts différents.
 
 Il nous a donc fallu créer le layout pour nos pages AMP. Le principe est simple : pas d'import de fichier js ou css, et l'utilisation de certaines balises interdite.
 
@@ -172,7 +172,7 @@ Dans notre layout principal nous ajoutons le code suivant dans le `head` :
 ```
 {% endraw %}
 
-Si vous le souhaitez, vous pouvez voir la pull request [ici](https://github.com/eleven-labs/blog.eleven-labs.com/pull/211).
+Si vous le souhaitez, vous pouvez voir la pull request [ici](https://github.com/eleven-labs/blog.eleven-labs.com/pull/211){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Le mot de la fin
 

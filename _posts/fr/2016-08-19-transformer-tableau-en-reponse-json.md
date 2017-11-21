@@ -43,7 +43,7 @@ Nous pouvons avoir cette liste:
 * kernel.terminate
 * kernel.exception
 
-Pour référence, vous pouvez aller lire la description de chacun des événements : [http://symfony.com/doc/current/components/http_kernel.html](http://symfony.com/doc/current/components/http_kernel.html)
+Pour référence, vous pouvez aller lire la description de chacun des événements : [http://symfony.com/doc/current/components/http_kernel.html](http://symfony.com/doc/current/components/http_kernel.html){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Pour mon exemple, ma fonctionnalité devra prendre en entrée le retour du contrôleur et renvoyer un objet _JsonResponse._ Pour cela, je vais me brancher sur l'événement **kernel.view**. Cet événement est situé juste après l'exécution du contrôleur, mais juste avant l'envoi de la réponse.
 
@@ -92,7 +92,7 @@ class JsonListener
 }
 ```
 
-L'événement kernel.view passe en argument un objet de type _[Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent](http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html)._ J'ai accès au retour du contrôleur avec _getControllerResult()._
+L'événement kernel.view passe en argument un objet de type _[Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent](http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html)._ J'ai accès au retour du contrôleur avec _getControllerResult(){:target="_blank" rel="nofollow noopener noreferrer"}._
 
 Je fais une simple vérification sur le type avant de créer la réponse: ici JsonResponse. Une fois la réponse créé, j'affecte l'objet à la méthode _setResponse()_ de l'événement.
 
@@ -125,6 +125,6 @@ Cette méthode est pratique lors de la création de webservice. Avec la réponse
 
 ## Références :
 
-* [http://symfony.com/doc/current/event_dispatcher.html](http://symfony.com/doc/current/event_dispatcher.html)
-* [http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html](http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html)
-* [http://symfony.com/doc/current/reference/dic_tags.html#kernel-event-listener](http://symfony.com/doc/current/reference/dic_tags.html#kernel-event-listener)
+* [http://symfony.com/doc/current/event_dispatcher.html](http://symfony.com/doc/current/event_dispatcher.html){:target="_blank" rel="nofollow noopener noreferrer"}
+* [http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html](http://api.symfony.com/3.1/Symfony/Component/HttpKernel/Event/GetResponseForControllerResultEvent.html){:target="_blank" rel="nofollow noopener noreferrer"}
+* [http://symfony.com/doc/current/reference/dic_tags.html#kernel-event-listener](http://symfony.com/doc/current/reference/dic_tags.html#kernel-event-listener){:target="_blank" rel="nofollow noopener noreferrer"}

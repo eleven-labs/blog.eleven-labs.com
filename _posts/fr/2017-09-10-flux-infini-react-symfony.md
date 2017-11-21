@@ -21,7 +21,7 @@ Pour rendre l'expérience utilisateur de nos applications web toujours plus agr�
 
 ### Mise en place du backend
 
-Notre site est tout d'abord un site en Symfony 3.3. La mise en place est assez basique, il vous suffit d'installer Symfony en suivant le tutoriel suivant sur le [site officiel](https://symfony.com/doc/current/setup.html).  Pour la suite de notre projet, nous allons avoir besoin de stocker les données du flux, pour cela nous allons mettre en place une base de données [Postgresql](https://www.postgresql.org/). Il vous suffit de changer dans votre fichier de configuration les paramètres par défaut de la database doctrine.
+Notre site est tout d'abord un site en Symfony 3.3. La mise en place est assez basique, il vous suffit d'installer Symfony en suivant le tutoriel suivant sur le [site officiel](https://symfony.com/doc/current/setup.html).  Pour la suite de notre projet, nous allons avoir besoin de stocker les données du flux, pour cela nous allons mettre en place une base de données [Postgresql](https://www.postgresql.org/){:target="_blank" rel="nofollow noopener noreferrer"}. Il vous suffit de changer dans votre fichier de configuration les paramètres par défaut de la database doctrine.
 
 ```yaml
 # config.yml
@@ -76,7 +76,7 @@ WEB_PORT=80
 SECRET=d3e2fa9715287ba25b2d0fd41685ac031970f555
 ```
 
-Si vous avez fait un peu attention, vous avez vu que dans le fichier `.env` il y a d'autres variables, c'est parce que l'application utilise [docker](https://www.docker.com/).
+Si vous avez fait un peu attention, vous avez vu que dans le fichier `.env` il y a d'autres variables, c'est parce que l'application utilise [docker](https://www.docker.com/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Mettez en place votre docker (optionnel)
 
@@ -299,13 +299,13 @@ Si vous lancez un `docker-compose up` puis allez sur la page suivante [infinite.
 
 ![Configuration](/assets/2017-09-10-flux-infini-react-symfony/image1.png)
 
-Une partie de la configuration est tirée de l'article de Maxence Poutord disponible [ici](http://www.maxpou.fr/docker-pour-symfony/).
+Une partie de la configuration est tirée de l'article de Maxence Poutord disponible [ici](http://www.maxpou.fr/docker-pour-symfony/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
-Vous pouvez aussi retrouver le code directement dans le projet [Infinite github](https://github.com/CaptainJojo/infinite) dans la branche [configuration](https://github.com/CaptainJojo/infinite/tree/configuration).
+Vous pouvez aussi retrouver le code directement dans le projet [Infinite github](https://github.com/CaptainJojo/infinite) dans la branche [configuration](https://github.com/CaptainJojo/infinite/tree/configuration){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Mettre en place React
 
-Nous allons utiliser React/Redux pour mettre en place notre flux infini. Comme tous les projets node la première chose à faire est d'ajouter à la racine de votre projet le fichier `package.json`. Comme nous utiliserons [Babel](https://babeljs.io/) pour la compilation de [l'ES2105](https://babeljs.io/learn-es2015/) il faut le mettre dans la configuration du projet, ainsi que l'utilisation [EsLint](https://eslint.org/) parce que même dans un tutoriel nous faisons les choses proprement. Bien sur il nous faut aussi [React](https://facebook.github.io/react/) et [Redux](http://redux.js.org/)  pour avoir notre configuration au complet. Vous pouvez alors ajouter l'ensemble dans votre fichier `package.json`
+Nous allons utiliser React/Redux pour mettre en place notre flux infini. Comme tous les projets node la première chose à faire est d'ajouter à la racine de votre projet le fichier `package.json`. Comme nous utiliserons [Babel](https://babeljs.io/) pour la compilation de [l'ES2105](https://babeljs.io/learn-es2015/) il faut le mettre dans la configuration du projet, ainsi que l'utilisation [EsLint](https://eslint.org/) parce que même dans un tutoriel nous faisons les choses proprement. Bien sur il nous faut aussi [React](https://facebook.github.io/react/) et [Redux](http://redux.js.org/){:target="_blank" rel="nofollow noopener noreferrer"}  pour avoir notre configuration au complet. Vous pouvez alors ajouter l'ensemble dans votre fichier `package.json`
 
 ```json
 {
@@ -385,7 +385,7 @@ Nous allons utiliser React/Redux pour mettre en place notre flux infini. Comme t
 }
 ```
 
-Comme vous pouvez le constater nous allons utiliser [Webpack](https://webpack.github.io/docs/)  pour compiler et préparer nos fichiers javascript. Vous avez aussi en fin du fichier la configuration de [Jest](https://facebook.github.io/jest/) qui sera l'outil qui va nous permettre de mettre en place les tests unitaires et les tests visuels de notre application javascript. La configuration Jest permet ici de *mapper* les noms des modules lors d'un import javascript avec l'emplacement des fichiers.
+Comme vous pouvez le constater nous allons utiliser [Webpack](https://webpack.github.io/docs/)  pour compiler et préparer nos fichiers javascript. Vous avez aussi en fin du fichier la configuration de [Jest](https://facebook.github.io/jest/){:target="_blank" rel="nofollow noopener noreferrer"} qui sera l'outil qui va nous permettre de mettre en place les tests unitaires et les tests visuels de notre application javascript. La configuration Jest permet ici de *mapper* les noms des modules lors d'un import javascript avec l'emplacement des fichiers.
 
 Il faut donc ajouter les fichiers pour la configuration de Babel et d'Eslint. Pour Babel il vous faut ajouter le fichier `.babelrc` à la racine de votre projet.
 
@@ -564,7 +564,7 @@ Nous allons créer la coquille d'une architecture Rect/Redux à l'intérieur du 
  - `reducers`
  - `store`
 
-Dans chaque dossier nous allons commencer à créer notre architecture. Le but du tutoriel n'étant pas la compréhension d'une architecture React/Redux, si vous le souhaitez je vous invite à lire [ceci](http://redux.js.org/docs/introduction/).
+Dans chaque dossier nous allons commencer à créer notre architecture. Le but du tutoriel n'étant pas la compréhension d'une architecture React/Redux, si vous le souhaitez je vous invite à lire [ceci](http://redux.js.org/docs/introduction/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Ajoutez le fichier `index.js` dans le dossier `store` avec le code suivant.
 
@@ -714,7 +714,7 @@ Si vous lancez un `yarn watch` vous verrez que les fichiers sont générés dans
  2. `home.*.js` contenant le code de votre composant
  3. `inlined.*.js` contenant la configuration de webpack
 
-Le [cache busting](https://www.keycdn.com/support/what-is-cache-busting/) est déjà intégré dans la configuration Webpack.
+Le [cache busting](https://www.keycdn.com/support/what-is-cache-busting/){:target="_blank" rel="nofollow noopener noreferrer"} est déjà intégré dans la configuration Webpack.
 
 Il nous faut maintenant ajouter les balises `scripts` dans votre page `twig`. La facilité serait de poser la balise suivante :
 
@@ -738,7 +738,7 @@ Cela n'est pas très pratique car vous devez changer vos balises à chaque chang
 
 Si vous testez maintenant vous avez deux 404. Effectivement `asset`ne prend pas en compte le cache busting mais nous allons l'aider.
 
-Nous allons créer un service permettant de gérer l'utilisation du cache busting. Dans votre fichier `config.yml` vous pouvez surcharger la function `asset`.  Si vous voulez mieux comprendre vous pouvez allez lire l'article de Symfony [ici](https://symfony.com/doc/current/frontend/custom_version_strategy.html).
+Nous allons créer un service permettant de gérer l'utilisation du cache busting. Dans votre fichier `config.yml` vous pouvez surcharger la function `asset`.  Si vous voulez mieux comprendre vous pouvez allez lire l'article de Symfony [ici](https://symfony.com/doc/current/frontend/custom_version_strategy.html){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ```yml
 framework:
@@ -888,7 +888,7 @@ Nous allons donc le configurer dans votre fichier Twig, en ajoutant une valeur p
 ```
 {% endraw %}
 
-Vous pouvez aussi retrouver le code directement dans le projet [Infinite github](https://github.com/CaptainJojo/infinite) dans la branche [communication](https://github.com/CaptainJojo/infinite/tree/communication).
+Vous pouvez aussi retrouver le code directement dans le projet [Infinite github](https://github.com/CaptainJojo/infinite) dans la branche [communication](https://github.com/CaptainJojo/infinite/tree/communication){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### On code le flux infini
 
@@ -989,7 +989,7 @@ class Article
 }
 ```
 
-Ensuite en suivant l'article [ici](http://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html), permettant de mettre en place des fixtures doctrine, vous pouvez ajouter dans votre `composer.json`
+Ensuite en suivant l'article [ici](http://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html){:target="_blank" rel="nofollow noopener noreferrer"}, permettant de mettre en place des fixtures doctrine, vous pouvez ajouter dans votre `composer.json`
 
 ```json
     "require-dev": {
@@ -1568,6 +1568,6 @@ export default Button;
 
 Bravo vous avez terminé votre flux infini.
 
-Vous pouvez aussi retrouver le code directement dans le projet [Infinite github](https://github.com/CaptainJojo/infinite) dans la branche `master`.
+Vous pouvez aussi retrouver le code directement dans le projet [Infinite github](https://github.com/CaptainJojo/infinite){:target="_blank" rel="nofollow noopener noreferrer"} dans la branche `master`.
 
 Merci d'avoir suivi ce tutoriel, si vous avez des questions surtout n'hésitez pas.

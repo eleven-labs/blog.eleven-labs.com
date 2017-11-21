@@ -18,7 +18,7 @@ tags:
 Javascript ecosystem is really rich: full of developers but also full of frameworks and libraries.
 
 When you want to develop a frontend application, whatever its rendering framework, you will have to structure things into your project in order to organize the data management with views. This case occurs particularly when you use component rendering frameworks like `React` or `VueJS`.
-Historically, this has been needed by [React](https://facebook.github.io/react/) so that's why Facebook has open sourced its tool named [Flux](http://facebook.github.io/flux/).
+Historically, this has been needed by [React](https://facebook.github.io/react/) so that's why Facebook has open sourced its tool named [Flux](http://facebook.github.io/flux/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Here is the philosophy:
 
@@ -26,11 +26,11 @@ Here is the philosophy:
 
 Your application declare `actions`  for each components. These actions allow you to define the state of your data which is stored in a `store` . This stores continually maintains your `view`  up-to-date.
 We have a drawback in this case because you have to define one store per component. This is working but on large applications you can feel limited with it.
-In June 2015, Dan Abramov has launched [Redux](http://redux.js.org/) which simplify store management because you only have one store for all your application.
+In June 2015, Dan Abramov has launched [Redux](http://redux.js.org/){:target="_blank" rel="nofollow noopener noreferrer"} which simplify store management because you only have one store for all your application.
 
 All of your application components can access to the whole state.
 
-For more information about Redux/Flux differences I encourage you to have a look at [Dan's answer](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux/32920459#32920459) on this subject.
+For more information about Redux/Flux differences I encourage you to have a look at [Dan's answer](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux/32920459#32920459){:target="_blank" rel="nofollow noopener noreferrer"} on this subject.
 
 # Installation
 

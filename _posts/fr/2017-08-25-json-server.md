@@ -19,7 +19,7 @@ cover: /assets/2017-08-16-json-server/cover.jpg
 
 Bonjour, aujourd'hui, je vais parler de `json-server`, de la motivation qui pousse à l'utiliser, et surtout comment l'utiliser ?
 
-`json-server` est un module `npm`, qui fournit un serveur [Express](https://github.com/expressjs/express) qui sert une API JSON.
+`json-server` est un module `npm`, qui fournit un serveur [Express](https://github.com/expressjs/express){:target="_blank" rel="nofollow noopener noreferrer"} qui sert une API JSON.
 
 ## Motivation
 
@@ -70,7 +70,7 @@ $ mkdir blog && cd $_
 $ touch db.json
 ```
 
-Pour le remplir, on peut le faire à la main, ou utiliser un générateur de json aléatoire (mon préféré est [json-generator](http://json-generator.com))
+Pour le remplir, on peut le faire à la main, ou utiliser un générateur de json aléatoire (mon préféré est [json-generator](http://json-generator.com)){:target="_blank" rel="nofollow noopener noreferrer"}
 
 ```json
 {
@@ -337,7 +337,7 @@ Jusqu'à présent, on n'a vu que les routes `json-server`, mais il y a encore pl
 
 ### La génération de données aléatoire
 
-L'[exemple de base de Typicode](https://github.com/typicode/json-server#generate-random-data) présente un script simple qui génère le point d'accès `users`. Ici, on va écrire des points d'accès qui servent des données générées de manière aléatoire en utilisant un module qui génère de fausses données. Personnellement, j'utilise [faker.js](https://github.com/Marak/faker.js), mais il y en a d'autres que vous pouvez explorer comme [Chance](https://github.com/chancejs/chancejs) et [Casual](https://github.com/boo1ean/casual).
+L'[exemple de base de Typicode](https://github.com/typicode/json-server#generate-random-data) présente un script simple qui génère le point d'accès `users`. Ici, on va écrire des points d'accès qui servent des données générées de manière aléatoire en utilisant un module qui génère de fausses données. Personnellement, j'utilise [faker.js](https://github.com/Marak/faker.js), mais il y en a d'autres que vous pouvez explorer comme [Chance](https://github.com/chancejs/chancejs) et [Casual](https://github.com/boo1ean/casual){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 L'aspect aléatoire de la génération ne se produit qu'une seule fois, et c'est seulement pendant le démarrage du serveur. Cela signifie que `json-server` ne nous donnera pas une réponse différente pour chaque requête. Finalement, on doit installer le générateur de données fausses, puis écrire le script de génération.
 
@@ -555,9 +555,9 @@ Voici ce que Mozilla Developer Network en dit :
 
 > Les en-têtes de réponse `WWW-Authenticate` et `Proxy-Authenticate` définissent la méthode d'authentification qui devrait être utilisée pour accéder à une ressource. Ils doivent spécifier quel schéma d'authentification est utilisé afin que le client qui souhaite l'autoriser sache comment fournir les informations d'identification.
 >
-> <cite>[HTTP authentication : `WWW-Authenticate` and `Proxy-Authenticate` headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#WWW-Authenticate_and_Proxy-Authenticate_headers)</cite>
+> <cite>[HTTP authentication : `WWW-Authenticate` and `Proxy-Authenticate` headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#WWW-Authenticate_and_Proxy-Authenticate_headers){:target="_blank" rel="nofollow noopener noreferrer"}</cite>
 
-Ensuite, on teste à nouveau, et cette fois en ajoutant les informations d'identification à la requête (Remarque: l'option `--user` de `curl` n'est pas limitée à l'authentification de type `Basic`, nous pouvons effectuer d'autres types d'authentification, [voir ici](https://ec.haxx.se/http-auth.html)) :
+Ensuite, on teste à nouveau, et cette fois en ajoutant les informations d'identification à la requête (Remarque: l'option `--user` de `curl` n'est pas limitée à l'authentification de type `Basic`, nous pouvons effectuer d'autres types d'authentification, [voir ici](https://ec.haxx.se/http-auth.html)){:target="_blank" rel="nofollow noopener noreferrer"} :
 
 ```bash
 $ curl --user kamal:secret http://localhost:3000/api/groups/ducks/stats
@@ -584,7 +584,7 @@ GET /api/groups/ducks/stats 200 4.609 ms - 94
 
 `json-server` est une application Express, ce qui signifie que nous pouvons l'utiliser dans une application NodeJS/Express existante pour réaliser des comportements personnalisés. Voici un exemple simple qui montre comment personnaliser le logger :
 
-`json-server` utilise `morgan` pour les logs, et le format par défaut qu'il utilise est le format [`dev`](https://github.com/expressjs/morgan#dev), qui n'expose pas toutes les informations que l'on veut. Pour avoir un log détaillé on doit utiliser le [format  standard d'Apache](https://github.com/expressjs/morgan#combined) :
+`json-server` utilise `morgan` pour les logs, et le format par défaut qu'il utilise est le format [`dev`](https://github.com/expressjs/morgan#dev), qui n'expose pas toutes les informations que l'on veut. Pour avoir un log détaillé on doit utiliser le [format  standard d'Apache](https://github.com/expressjs/morgan#combined){:target="_blank" rel="nofollow noopener noreferrer"} :
 
 ```js
 // server.js
@@ -650,6 +650,6 @@ $ curl --user kamal:secret http://localhost:9001/api/groups/ducks/stats
 
 `json-server` a considérablement réduit le temps de scaffolding d'une API. Parmi les possibilités qu'on a vues, il existe de nombreux cas d'utilisation que vous pouvez explorer pour utiliser `json-server`, comme la personnalisation des logs, les tests, la réconciliation entre micro-services, les applications sans serveur ... etc.
 
-J'espère que cet article a pu éclairer la façon dont on peut utiliser `json-server`. J'ai essayé d'apporter des cas d'utilisation utiles qu'on rencontre tous les jours. Si vous souhaitez encore en savoir plus sur l'utilisation ou même sur son fonctionnement interne, je recommande d'explorer son [projet Github](https://github.com/typicode/json-server).
+J'espère que cet article a pu éclairer la façon dont on peut utiliser `json-server`. J'ai essayé d'apporter des cas d'utilisation utiles qu'on rencontre tous les jours. Si vous souhaitez encore en savoir plus sur l'utilisation ou même sur son fonctionnement interne, je recommande d'explorer son [projet Github](https://github.com/typicode/json-server){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Merci pour la lecture !

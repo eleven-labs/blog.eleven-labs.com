@@ -21,7 +21,7 @@ cover: /assets/2017-09-28-presentation-grpc/cover.jpg
 
 ### Présentation de gRPC
 
-Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) si ce n'est pas déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et communiquent via HTTP.
+Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/){:target="_blank" rel="nofollow noopener noreferrer"} si ce n'est pas déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et communiquent via HTTP.
 
 > Et si maintenant on utilisait HTTP/2 pour faire communiquer nos services ?
 
@@ -29,11 +29,11 @@ Parce qu'un client HTTP/1 c'est bien mais un client HTTP/2 c'est mieux.
 
 > HTTP/2 c'est quoi ? 
 
-Je vous invite à lire [cet article de Vincent](https://blog.eleven-labs.com/fr/http2-nest-pas-le-futur-cest-le-present/) pour y voir plus clair.
+Je vous invite à lire [cet article de Vincent](https://blog.eleven-labs.com/fr/http2-nest-pas-le-futur-cest-le-present/){:target="_blank" rel="nofollow noopener noreferrer"} pour y voir plus clair.
 
 > gRPC c'est quoi ?
 
-gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ses nouveautés. Les données sont sérialisées et désérialisées grâce à Protocol Buffers. Le framework gRPC permet aussi d'avoir un client et un serveur dans différents langages. En effet il est disponible pour la plupart des langages. Chaque service rpc est déclaré dans un fichier protobuf. La RFC est [disponible ici](https://tools.ietf.org/html/draft-kumar-rtgwg-grpc-protocol-00) si ça vous intéresse.
+gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ses nouveautés. Les données sont sérialisées et désérialisées grâce à Protocol Buffers. Le framework gRPC permet aussi d'avoir un client et un serveur dans différents langages. En effet il est disponible pour la plupart des langages. Chaque service rpc est déclaré dans un fichier protobuf. La RFC est [disponible ici](https://tools.ietf.org/html/draft-kumar-rtgwg-grpc-protocol-00){:target="_blank" rel="nofollow noopener noreferrer"} si ça vous intéresse.
 
 gRPC permet quatre modes de communication.
 
@@ -83,7 +83,7 @@ service CustomService {
 
 Nous allons voir pour cet article uniquement le troisième mode `streaming côté serveur` mais les quatre sont très semblables.
 
-Vous pouvez retrouver l'ensemble du code de [l'exemple sur mon github](https://github.com/qneyrat/go-grpc-example).
+Vous pouvez retrouver l'ensemble du code de [l'exemple sur mon github](https://github.com/qneyrat/go-grpc-example){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Installation
 
@@ -97,7 +97,7 @@ go get google.golang.org/grpc
 
 ### Protobuf
 
-Nous allons commencer par récupérer le fichier proto du [précédent article](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/).
+Nous allons commencer par récupérer le fichier proto du [précédent article](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Nous allons ajouter un service pour récupérer en streaming la liste des Posts.
 

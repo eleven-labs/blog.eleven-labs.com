@@ -82,7 +82,7 @@ Maintenant il ne nous reste plus qu'à poser un point d'arrêt dans le code et d
 Pour déclencher la session de debug, nous devons passer la variable `XDEBUG_SESSION_START` en query string avec comme valeur notre idekey.
 
 ![](/assets/2016-12-15-debugger-avec-xdebug/browser.png)
-> Il est également possible de passer par un cookie, mais le plus simple est d'utiliser un plugin sur votre navigateur ([Xdebug helper](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc) pour chrome, [The easiest debug](https://addons.mozilla.org/fr/firefox/addon/the-easiest-xdebug/) pour firefox) qui vous permet en un clic d'activer le debugging.
+> Il est également possible de passer par un cookie, mais le plus simple est d'utiliser un plugin sur votre navigateur ([Xdebug helper](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc) pour chrome, [The easiest debug](https://addons.mozilla.org/fr/firefox/addon/the-easiest-xdebug/) pour firefox){:target="_blank" rel="nofollow noopener noreferrer"} qui vous permet en un clic d'activer le debugging.
 
 Et HOP ! PHPStorm surgit tout à coup et nous montre tout ce qui se passe à l'endroit de notre point d'arrêt !
 On peut même avancer l'exécution au pas à pas !

@@ -27,7 +27,7 @@ Nous allons voir ici les trois grands changements de Symfony 2
 
 Et oui, comme vous l'aurez surement vu/lu, Symfony 2 tourne exclusivement sous PHP 5.3 et plus. Mais en quoi cela est il important ?
 
-Tout simplement parce que cette version de PHP apporte des fonctionnalités tout droit sortie du Java et quelque autre langage OO: les [namespaces](http://www.journaldunet.com/developpeur/php/tutoriel-pratique/chargement-automatique-de-classes-avance-avec-php-5/php-5-3-et-les-namespaces-pour-simplifier-tout-ca.shtml "Namespaces : Kesako ?").
+Tout simplement parce que cette version de PHP apporte des fonctionnalités tout droit sortie du Java et quelque autre langage OO: les [namespaces](http://www.journaldunet.com/developpeur/php/tutoriel-pratique/chargement-automatique-de-classes-avance-avec-php-5/php-5-3-et-les-namespaces-pour-simplifier-tout-ca.shtml "Namespaces : Kesako ?"){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 Hormis le côté "propreté du code", ce nouveau système est à la base de toute la nouvelle architecture de Symfony 2, les Bundles.
 
@@ -80,7 +80,7 @@ Group:
       mappedBy: groups
 ```
 
-Vous pouvez retrouver toutes ces nouveautés sur la doc [officielle de Doctrine 2](http://www.doctrine-project.org/docs/orm/2.1/en/reference/association-mapping.html "Doctrine2 - Mapping Relation")
+Vous pouvez retrouver toutes ces nouveautés sur la doc [officielle de Doctrine 2](http://www.doctrine-project.org/docs/orm/2.1/en/reference/association-mapping.html "Doctrine2 - Mapping Relation"){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Et pour ce qui est de la récupération des données, tout se passe maintenant via l'utilisation d'une class EntityManager. C'est grâce à cette objet que vous pourrez créer votre propre requête, DQL par exemple, afin d'obtenir vos données tant convoitées. Exemple:
 
@@ -102,7 +102,7 @@ $qb = $em->createQueryBuilder()
 
 ### Symfony 2 c'est ... un nouveau moteur de template:
 
-La dernière grosse modification de Sf2 est son nouveau moteur de template : [TWIG](http://twig.sensiolabs.org/ "Twig")
+La dernière grosse modification de Sf2 est son nouveau moteur de template : [TWIG](http://twig.sensiolabs.org/ "Twig"){:target="_blank" rel="nofollow noopener noreferrer"}
 
 Twig est un moteur de template simple, plutôt rapide et sécurisé, ne permettant l'accès aux seuls éléments que ce que vous lui aurez préalablement passé. Twig est un autre projet développé et soutenu par Sensio et vient directement, concurrent d'autres technologies plus anciennes comme Smarty.
 
@@ -114,4 +114,4 @@ Vous pouvez configurer le moteur de template que vous voulez utiliser directemen
 
 Symfony 2, c'est pas mal de nouvelles choses, je dirais même c'est assez différent de SF1. Si vous avez fait du Symfony 1, ne partez pas avec l'idée que le passage d'une version à une autre sera simple. D'autant plus que cette version du framwork intègre beaucoup de spécificités du langage Java comme les injections de dépendance, les déclarations de services ...
 
-Si toutefois vous êtes determiné à passer à la nouvelle version, je vous invite à suivre le tuto [Mon premier projet en Symfony 2](http://clycks.fr/2011/10/449-mon-premier-projet-en-symfony2 "Mon premier projet en Symfony2") sur ce même blog :)
+Si toutefois vous êtes determiné à passer à la nouvelle version, je vous invite à suivre le tuto [Mon premier projet en Symfony 2](http://clycks.fr/2011/10/449-mon-premier-projet-en-symfony2 "Mon premier projet en Symfony2") sur ce même blog :){:target="_blank" rel="nofollow noopener noreferrer"}

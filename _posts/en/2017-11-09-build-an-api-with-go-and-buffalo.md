@@ -22,7 +22,7 @@ The greatest feature of the Go language is its simplicity of writing. The syntax
 
 ### Package "http/net"
 
-Package documentation: [https://golang.org/pkg/net/http/](https://golang.org/pkg/net/http/).
+Package documentation: [https://golang.org/pkg/net/http/](https://golang.org/pkg/net/http/){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 First of all, we are going to create an http server that will listen on the `8001` entry.
 
@@ -95,9 +95,9 @@ This package is very low level and quite annoying to use. The community has ther
 
 ### Buffalo framework
 
-> Buffalo documentation on [http://gobuffalo.io](http://gobuffalo.io).
+> Buffalo documentation on [http://gobuffalo.io](http://gobuffalo.io){:target="_blank" rel="nofollow noopener noreferrer"}.
 
-Buffalo is a library that makes web development with Go easier. It mainly uses the Gorilla libraries [https://github.com/gorilla](https://github.com/gorilla).
+Buffalo is a library that makes web development with Go easier. It mainly uses the Gorilla libraries [https://github.com/gorilla](https://github.com/gorilla){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 To install buffalo run the command:
 
@@ -261,7 +261,7 @@ By default, there is the `routes` command that allows you to see all routes and 
 buffalo task routes
 ```
 
-Now that buffalo has been presented, we will create new routes. You can find all the code on my github [https://github.com/qneyrat/api](https://github.com/qneyrat/api).
+Now that buffalo has been presented, we will create new routes. You can find all the code on my github [https://github.com/qneyrat/api](https://github.com/qneyrat/api){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 We will manage a new resource for our api, the `user` resource. Create the `models` folder and in it the `user.go` file. We will state a `User` structure composed of an `ID`.
 
@@ -363,4 +363,4 @@ g.GET("/users/{id}", ur.Show)
 
 Now we create a user with a `post` on `/api/v1/users` and then we make a `get` on `/api/v1/users/{id}` replacing `{id}` with the `uuid` of the user you just created. The api returns you a code 200 with the user's information.
 
-From now on you have a powerful api database with tools to quickly and easily develop an api in Go. You can find all the documentation and other buffalo features on [http://gobuffalo.io](http://gobuffalo.io).
+From now on you have a powerful api database with tools to quickly and easily develop an api in Go. You can find all the documentation and other buffalo features on [http://gobuffalo.io](http://gobuffalo.io){:target="_blank" rel="nofollow noopener noreferrer"}.

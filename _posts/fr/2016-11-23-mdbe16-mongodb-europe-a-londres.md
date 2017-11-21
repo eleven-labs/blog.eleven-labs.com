@@ -21,7 +21,7 @@ Cette Année, j'ai eu l'occasion de participer à l’événement MongoDB Europe
 
 
 Note : les slides n’étant pas encore disponibles, l'article sera mis à jour avec les illustrations/slides dès qu'elles seront disponibles.
-Edit : [les voici](https://www.mongodb.com/presentations/all?page=1&amp;search=europe%202016")
+Edit : [les voici](https://www.mongodb.com/presentations/all?page=1&amp;search=europe%202016"){:target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Welcome et nouveautés
 

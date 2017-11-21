@@ -39,7 +39,7 @@ Pour simplifier l'explication de `git bisect`, je vais utiliser un historique de
 Imaginons que ces commits aient été déployés en production. Au bout de quelques jours, quelqu'un s'aperçoit que quelque chose cloche. Une des fonctionnalités ne marche plus comme convenu.
 Le problème est donc immédiatement remonté aux développeurs et ces derniers doivent isoler la cause de ce non fonctionnement. Leur seul indice est le suivant : tout marchait bien lors de la dernière mise en production.
  
-Git nous épargne l'ennui de tester tous nos commits un par un avec `git bisect`. Cette commande effectue une recherche par [dichotomie (recherche binaire)](https://fr.wikipedia.org/wiki/Recherche_dichotomique).
+Git nous épargne l'ennui de tester tous nos commits un par un avec `git bisect`. Cette commande effectue une recherche par [dichotomie (recherche binaire)](https://fr.wikipedia.org/wiki/Recherche_dichotomique){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ![](/assets/2017-10-26-debugging-with-git/binary_search.jpg)
 *Binary search illustration*
