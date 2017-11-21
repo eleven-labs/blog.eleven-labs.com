@@ -42,6 +42,7 @@
 
     &::after {
       content: '';
+      display: inline-block;
       font-size: 1.4rem;
       margin: 0 .6rem;
     }
