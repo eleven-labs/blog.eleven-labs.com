@@ -1,8 +1,8 @@
-<span class="reading-time" title="{% translate global.estimated_reading_time %}">
+<span class="reading-time">
   {% assign words = include.content | number_of_words %}
   {% if words < 360 %}
-    {% translate global.reading %}: 1 min
+    1 min
   {% else %}
-    {% translate global.reading %}: {{ words | divided_by:180 }} mins
+    {{ words | divided_by:180 }} mins
   {% endif %}
 </span>

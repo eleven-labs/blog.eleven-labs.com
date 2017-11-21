@@ -2,7 +2,11 @@
   color: lighten($brand-black, 30%);
   display: inline-block;
   font-size: 1.3rem;
-  padding: 50px 0;
+  padding: 3rem 0 5rem;
   text-align: center;
   width: 100%;
+
+  @media (min-width: $breakpoint-large) {
+    padding: 2rem 0;
+  }
 }

@@ -4,8 +4,12 @@
   border-bottom: 1px solid $border-color;
   display: flex;
   flex-flow: row wrap;
-  padding: 20px 45px;
+  padding: 1.25rem 2.5rem;
   width: 100%;
+
+  @media (min-width: $breakpoint-medium) {
+    padding: 2rem 6rem;
+  }
 
   .branding-container {
     flex: auto;
@@ -14,14 +18,11 @@
   .branding {
     background-color: transparent;
     display: inline-block;
-    height: 60px;
     position: relative;
-    width: 160px;
+    width: 12rem;
 
-    @media (max-width: 480px) {
-      height: 48px;
-      margin-bottom: 10px;
-      width: 120px;
+    @media (min-width: $breakpoint-medium) {
+      width: 16rem;
     }
 
     svg {
@@ -36,18 +37,24 @@
       font-size: 1.3rem;
       font-weight: 700;
       position: absolute;
-      right: 1.5rem;
       text-transform: uppercase;
 
-      @media (max-width: 480px) {
+      @media (max-width: $breakpoint-medium) {
         font-size: 1.1rem;
+        line-height: 1.1;
         right: 1rem;
+      }
+
+      @media (min-width: $breakpoint-medium) {
+        font-size: 1.3rem;
+        right: 1.5rem;
       }
     }
   }
 
   a {
-    color: $header-link-color;
+    color: $mine-shaft;
+    display: inline-block;
     font-size: 1.6rem;
     text-decoration: none;
   }
@@ -70,34 +77,35 @@
 
   .site-nav {
     ul {
-      display: inline-block;
-      line-height: 1.5;
       list-style: none;
-      margin: 0;
-      padding: 0;
+      margin-bottom: 0;
       text-align: center;
     }
 
     li {
       display: inline-block;
-      margin-right: .4rem;
     }
 
     .language {
-      border-left: 1px solid $header-link-color;
-      padding-left: 8px;
+      border-left: 1px solid $brand-black;
+      margin-left: .4rem;
+      padding-left: .8rem;
+
+      @media (max-width: $breakpoint-x-small) {
+        margin-right: .4rem;
+      }
     }
 
     .corporate-logo {
       position: relative;
-      top: 3px;
+      top: .3rem;
     }
   }
 
   .branding-container,
   .search-bar,
   .site-nav {
-    @media (max-width: 480px) {
+    @media (max-width: $breakpoint-x-small) {
       flex: 0 0 100%;
       text-align: center;
     }

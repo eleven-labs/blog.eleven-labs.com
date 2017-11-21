@@ -2,15 +2,17 @@
   font-size: 1.4rem;
   position: relative;
 
-  @media (min-width: 480px) {
-    margin-right: 25px;
+  @media (min-width: $breakpoint-x-small) {
+    margin-right: 1.5rem;
   }
 
-  @media (max-width: 480px) {
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 120px;
+  @media (max-width: $breakpoint-x-small) {
+    margin: 1rem auto 1.5rem;
+    max-width: 12rem;
+  }
+
+  @media (min-width: $breakpoint-small) {
+    margin-right: 3rem;
   }
 
   &-label {
@@ -29,7 +31,7 @@
     max-width: 100%;
     min-width: 100%;
     opacity: 0;
-    padding: 4px;
+    padding: .4rem;
     position: absolute;
     right: 0;
     top: 0;
@@ -41,14 +43,8 @@
       opacity: 1;
       outline: none;
 
-      @media (min-width: 480px) {
-        min-width: 120px;
-      }
-
-      @media (max-width: 480px) {
-        left: -30px;
-        max-width: 1000px;
-        right: -30px;
+      @media (min-width: $breakpoint-small) {
+        min-width: 12rem;
       }
     }
   }

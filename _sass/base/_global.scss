@@ -16,8 +16,9 @@ figure {
 
 html {
   background: $background-color;
-  font-size: 10px;
+  font-size: 62.5%;
 }
+
 // Typography
 body {
   color: $brand-black;
@@ -25,12 +26,12 @@ body {
   font-weight: lighter;
   word-wrap: break-word;
 
-  @media (min-width: 480px) {
-    font-size: $font-size;
+  @media (max-width: $breakpoint-medium) {
+    font-size: $font-size-mobile;
   }
 
-  @media (max-width: 480px) {
-    font-size: $font-size-mobile;
+  @media (min-width: $breakpoint-medium) {
+    font-size: $font-size;
   }
 }
 
@@ -44,7 +45,7 @@ table {
   width: 100%;
   word-wrap: break-word;
 
-  @media (max-width: 1100px) {
+  @media (max-width: $breakpoint-x-large) {
     display: inline-block;
     overflow-x: scroll;
   }
@@ -118,7 +119,6 @@ hr {
 
 a:not(.no-link-style) {
   color: $brand-black;
-  display: inline-block;
   letter-spacing: .05em;
   text-decoration: underline;
 

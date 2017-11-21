@@ -5,13 +5,25 @@ pre {
 }
 
 code {
-  background-color: rgba(0, 0, 0, .04);
+  background-color: rgba(0, 0, 0, .05);
   border-radius: 3px;
-  padding: .25em .5rem;
+
+  &.highlighter-rouge {
+
+    @media (max-width: $breakpoint-medium) {
+      font-size: 1.3rem;
+      padding: .1rem .4rem;
+    }
+
+    @media (min-width: $breakpoint-medium) {
+      font-size: 1.4rem;
+      padding: .2rem .4rem;
+    }
+  }
 }
 
 pre {
-  background-color: rgba(0, 0, 0, .04);
+  background-color: rgba(0, 0, 0, .05);
   display: block;
   line-height: 1.4;
   margin-bottom: 1rem;
@@ -21,12 +33,12 @@ pre {
   word-break: break-all;
   word-wrap: break-word;
 
-  @media (min-width: 480px) {
-    font-size: 1.4rem;
+  @media (max-width: $breakpoint-medium) {
+    font-size: 1.3rem;
   }
 
-  @media (max-width: 480px) {
-    font-size: 1.3rem;
+  @media (min-width: $breakpoint-medium) {
+    font-size: 1.4rem;
   }
 
   code {
@@ -370,5 +382,9 @@ pre {
   // Link
   .vglnk {
     color: #0096fb;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 }

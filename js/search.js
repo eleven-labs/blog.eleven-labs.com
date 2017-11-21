@@ -46,16 +46,15 @@ layout: compress-js
         const url = baseurl + hit.url;
 
         return article + `
-          <div class="posts-teaser slice">
+          <div class="slice">
             <div class="container">
               <h2 class="posts-title">
                 <a class="no-link-style" href="${url}">${hit.title}</a>
               </h2>
-              <time class="posts-date meta">
-                <span class="meta-content">${hitDate.format(dateFormat)}</span>
-              </time>
               <p class="excerpt">${hit.excerpt}</p>
-              <a class="button" href="${url}">${window.site.translations.global.continue_reading}</a>
+              <time class="posts-date meta">
+                <span class="meta-content"><i class="fa fa-fw fa-calendar"></i> ${hitDate.format(dateFormat)}</span>
+              </time>
             </div>
           </div>
         `;

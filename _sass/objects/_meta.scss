@@ -1,21 +1,17 @@
 .meta {
   position: relative;
 
-  @media (min-width: 480px) {
-    font-size: 1.5rem;
+  @media (max-width: $breakpoint-medium) {
+    font-size: 1.3rem;
   }
 
-  @media (max-width: 480px) {
-    font-size: 1.3rem;
+  @media (min-width: $breakpoint-medium) {
+    font-size: 1.5rem;
   }
 
   &-content {
     display: inline-block;
-    font-family: $font-family-headings;
-    font-weight: lighter;
-    letter-spacing: .05em;
     line-height: 1.6;
-    margin: 0;
     position: relative;
     text-transform: uppercase;
     z-index: 1;
@@ -23,17 +19,57 @@
 
   &::before {
     background-color: $brand-yellow;
-    bottom: -8px;
+    bottom: -.8rem;
     content: '';
     display: block;
-    height: 1.1em;
+    height: 1.4rem;
     left: -1%;
     position: absolute;
     width: 108%;
-    z-index: 0;
+    z-index: -1;
 
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-medium) {
       width: 102%;
+    }
+  }
+
+  &-item {
+    display: inline-block;
+
+    .page-heading & {
+      margin-bottom: 1rem;
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      font-size: 1.4rem;
+      margin: 0 .6rem;
+    }
+  }
+
+  &-author {
+    text-transform: uppercase;
+
+    @media (max-width: $breakpoint-small) {
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: $breakpoint-small) {
+      display: inline-block;
+    }
+
+    @media (max-width: $breakpoint-medium) {
+      font-size: 1.3rem;
+    }
+
+    @media (min-width: $breakpoint-medium) {
+      font-size: 1.5rem;
+    }
+
+    .fa {
+      transform: rotateY(180deg);
     }
   }
 }

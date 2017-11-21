@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <div class="home">
     <div class="call-out" style="background-image: url('{{ site.theme_settings.header_text_bg_image | prepend: site.baseurl_root }}')">
         <h1 class="home-logo">
@@ -11,56 +10,56 @@ layout: default
             </span>
         </h1>    
     </div>
-
     <div class="posts">
     {% for post in paginator.posts %}
-        <div class="posts-teaser slice">
+        <div class="slice">
             <div class="container">
                 <h2 class="posts-title">
                     <a class="no-link-style" href="{{ post.url | prepend: site.baseurl }}">
                         {{ post.title }}
                     </a>
                 </h2>
-
-                <time class="posts-date meta">
-                    <span class="meta-content">
-                        {% include date_translate.html object=post.date %} {% include author_link.html authors=post.authors %} - {% include reading_time.html content=post.content %}
-                    </span>
-                </time>
-
+                <span class="meta">
+                    <time class="posts-date">
+                        <span class="meta-content">
+                            <span class="meta-item">
+                                <i class="fa fa-fw fa-calendar"></i> {% include date_translate.html object=post.date %} 
+                            </span>
+                            <span class="meta-item">
+                                <i class="fa fa-fw fa-clock-o">
+                                    <span class="visually-hidden">{% translate global.estimated_reading_time %}</span>
+                                </i> {% include reading_time.html content=post.content %} 
+                            </span>
+                        </span>
+                    </time>
+                    {% include author_link.html authors=post.authors %}
+                </span>
                 <p class="excerpt">
                     {{ post.excerpt }}
                 </p>
-
-                <a class="button" href="{{ post.url | prepend: site.baseurl }}">
-                    {% translate global.continue_reading %}
-                </a>
             </div>
         </div>
     {% endfor %}
     </div>
-
     {% if paginator.total_pages > 1 %}
-        <div class="pagination" style="margin-bottom:2em;">
+        <div class="pagination container">
             {% if paginator.previous_page %}
-                <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button">
+                <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button previous">
                     <i class="fa fa-chevron-left"></i>
                     {% translate global.prev %}
                 </a>
             {% endif %}
-
             {% for page in (1..paginator.total_pages) %}
                 {% if page == paginator.page %}
-                    {{ page }}
+                    <span class="current-page">{{ page }}</span>
                 {% elsif page == 1 %}
                     <a href="{{ "/" | prepend: site.baseurl }}">{{ page }}</a>
                 {% else %}
                     <a href="{{ site.paginate_path | prepend: site.baseurl | replace: ':num', page }}">{{ page }}</a>
                 {% endif %}
             {% endfor %}
-
             {% if paginator.next_page %}
-                <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button">
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button next">
                     {% translate global.next %}
                     <i class="fa fa-chevron-right"></i>
                 </a>
@@ -68,5 +67,4 @@ layout: default
         </div>
     {% endif %}
 </div>
-
 {% include newsletter_link.html %}

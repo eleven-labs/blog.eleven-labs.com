@@ -1,16 +1,16 @@
 // Typography
-$font-family-main: Helvetica, Arial, sans-serif;
-$font-family-headings:'DINPro-Regular', Helvetica, Arial, sans-serif;
+$font-family-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-headings:'DINPro-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-$font-size: 1.9rem;
-$font-size-mobile: 1.6rem;
+$font-size: 19px;
+$font-size-mobile: 16px;
 
 // Padding
 $padding-large: 20%;
-$padding-small: 5%;
+$padding-small: 6%;
 $padding-x-small: 3%;
 
-// Colors
+// Colours
 $alto: #d4d4d4;
 $azure-radiance: #0096fb;
 $dusty-gray: #999;
@@ -20,6 +20,10 @@ $shark: #323334;
 $turbo: #fde300;
 $white: #fff;
 
+// Eleven Labs colours
+$brand-yellow: $turbo;
+$brand-black: $shark;
+
 // Button
 $button-hover: $dusty-gray;
 
@@ -28,14 +32,8 @@ $brand-color: $white;
 $background-color: $white;
 $border-color: rgba(0, 0, 0, .1); // rgba recommended if using feature images
 
-$title-level3-bg: rgba(0, 0, 0, .2);
-$author-link: rgba(255, 255, 255, .6);
-
 // Typography colours
 $selection-color: $alto; // visible when highlighting text
-
-// Header colours
-$header-link-color: $mine-shaft;
 
 // Feature image for articles
 $feature-image-text-color: $white;
@@ -45,9 +43,13 @@ $feature-image-size: cover; // options include "cover", "contain", "auto"
 $header-desc-background-color: $turbo;
 $header-desc-text-color: $white;
 
-// brand colors
-$brand-yellow: $turbo;
-$brand-black: $shark;
+// Layout
+$max-width-layout-large: 1024px;
+$max-width-layout-x-large: 1130px;
 
-// layout
-$max-width-layout: 960px;
+// Breakpoints
+$breakpoint-x-large: 1200px;
+$breakpoint-large: 1024px;
+$breakpoint-medium: 768px;
+$breakpoint-small: 576px;
+$breakpoint-x-small: 480px;

@@ -7,9 +7,7 @@
             </span>
         </a>
     </div>
-
     {% include search.html %}
-
     <nav class="site-nav">
         <ul>
             {% for page in site.pages %}
@@ -23,7 +21,6 @@
             {% endfor %}
             <!-- Social icons from Font Awesome, if enabled -->
             {% include icons.html data=site.theme_settings %}
-
             <!-- Language switcher -->
             {% for language in site.languages %}
                 {% if language != site.lang %}

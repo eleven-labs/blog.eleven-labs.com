@@ -1,8 +1,6 @@
 .read-also {
   &-list {
     list-style: none;
-    margin: 0;
-    padding: 0;
   }
 
   &-title {
@@ -15,6 +13,13 @@
   }
 
   &-link {
-    @extend %h4;
+
+    @media (max-width: $breakpoint-medium) {
+      font-size: 1.6rem;
+    }
+
+    @media (min-width: $breakpoint-medium) {
+      font-size: 1.9rem;
+    }
   }
 }

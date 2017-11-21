@@ -17,23 +17,22 @@
   width: 100%;
 
   svg {
-    fill: $white;
+    fill: $brand-black;
     max-width: 100%;
   }
 }
 
 .home-title {
   bottom: 1vw;
-  color: $white;
+  color: $brand-black;
   font-family: $font-family-headings;
   font-size: 5vw;
   font-weight: 700;
   position: absolute;
   right: 8vw;
-  text-shadow: $dusty-gray 1px 1px 1px, $dusty-gray -1px 1px 1px, $dusty-gray -1px -1px 1px, $dusty-gray 1px -1px 1px;
   text-transform: uppercase;
 
-  @media (min-width: 992px) {
+  @media (min-width: $breakpoint-large) {
     bottom: 0;
     right: 6vw;
   }
@@ -58,16 +57,10 @@
 
 // Post listing
 .posts {
-  &-teaser {
-    background-size: $feature-image-size;
-    display: inline-block;
-    margin-bottom: 0;
-    width: 100%;
-  }
 
   &-title {
     @extend %h2;
-    margin: 0 0 5px;
+    margin-bottom: .6rem;
 
     a {
       color: $brand-black;
@@ -77,7 +70,7 @@
 
   &-date {
     display: inline-block;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
   }
 
   &-button {
@@ -91,14 +84,43 @@
 }
 // Pagination
 .pagination {
-  padding: $padding-small $padding-large 0;
+  margin: 3rem 0 6rem;
   text-align: center;
 
+  .current-page,
+  a {
+    display: inline-block;
+    line-height: 1.8;
+    margin: 0 .1rem .6rem;
+    min-height: 3rem;
+    min-width: 3rem;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .current-page {
+    background-color: $brand-black;
+    color: $white;
+  }
+
   .button {
-    margin: 0 1.5rem;
+    line-height: normal;
+    min-height: auto;
+    min-width: auto;
+    text-decoration: none;
 
     i {
       vertical-align: middle;
     }
+  }
+
+  .prev {
+    margin-right: 1.2rem;
+  }
+
+  .next {
+    margin-left: 1.2rem;
   }
 }
