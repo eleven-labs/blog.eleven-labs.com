@@ -8,11 +8,14 @@ layout: compress-js
   const index = client.initIndex('blog_eleven');
 
   const searchInput = document.getElementById('js-algolia__input');
+  const searchForm = document.getElementById('js-algolia__form');
   const baseurl = window.site && window.site.baseurl;
   const lang = window.site && window.site.lang;
   moment.locale(lang || 'en');
 
-  function onQueryChange() {
+  function onQueryChange(e) {
+    e.preventDefault();
+
     const contentId = document.getElementById('js-content');
     const contentSearchId = document.getElementById('js-content-search');
     contentId.style.display = 'none';
@@ -70,5 +73,6 @@ layout: compress-js
     });
   }
 
+  searchForm.addEventListener('submit', onQueryChange);
   searchInput.addEventListener('keyup', onQueryChange);
 })();
