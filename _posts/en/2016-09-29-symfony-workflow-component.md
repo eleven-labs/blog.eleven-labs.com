@@ -15,7 +15,7 @@ tags:
     - php
     - workflow
 ---
-Since Symfony 3.2, a new useful component was born: the [Workflow component](http://symfony.com/blog/new-in-symfony-3-2-workflow-component){:target="_blank" rel="nofollow noopener noreferrer"}.
+Since Symfony 3.2, a new useful component was born: the [Workflow component](http://symfony.com/blog/new-in-symfony-3-2-workflow-component){:rel="nofollow"}.
 It is indeed really convenient and can simplify greatly your developments when you have to manage status workflows in your application, that occurs a lot.
 
 # Installation
@@ -109,7 +109,7 @@ Everything is now ready, we can start to use the Workflow component!
 
 # Usage
 
-First useful thing to do after you have written your workflow configuration is to generate a graph using the Symfony command. The command will generate one graph using the [Graphviz](http://www.graphviz.org){:target="_blank" rel="nofollow noopener noreferrer"} format.
+First useful thing to do after you have written your workflow configuration is to generate a graph using the Symfony command. The command will generate one graph using the [Graphviz](http://www.graphviz.org){:rel="nofollow"} format.
 
 Here is the Symfony command you have to run:
 

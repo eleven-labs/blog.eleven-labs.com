@@ -171,15 +171,15 @@ class DefaultController extends Controller
 
 J’ai mis en place un écouteur sur l’événement **kernel.view** pour gérer le cas où le formulaire est invalide (voir src/AppBundle/EventListener/ViewListener.php).
 
-Jusqu’ici, rien de surprenant. Je vous invite à lire la documentation Symfony pour avoir plus d’informations : [http://symfony.com/doc/current/controller/upload_file.html](http://symfony.com/doc/current/controller/upload_file.html){:target="_blank" rel="nofollow noopener noreferrer"}.
+Jusqu’ici, rien de surprenant. Je vous invite à lire la documentation Symfony pour avoir plus d’informations : [http://symfony.com/doc/current/controller/upload_file.html](http://symfony.com/doc/current/controller/upload_file.html){:rel="nofollow noreferrer"}.
 
 Passons maintenant côté client avec la mise en place du JavaScript.
 
 ### Implementation côté client avec JavaScript
 
-En tant que développeur PHP, je pense que cette partie est la plus intéressante. C’est ici que va prendre place la magie de l’AJAX. Pour rappel, *[AJAX](https://fr.wikipedia.org/wiki/Ajax_(informatique)){:target="_blank" rel="nofollow noopener noreferrer"}** pour **Asynchronous JavaScript XML** permet au navigateur de dialoguer avec le serveur de manière asynchrone.
+En tant que développeur PHP, je pense que cette partie est la plus intéressante. C’est ici que va prendre place la magie de l’AJAX. Pour rappel, *[AJAX](https://fr.wikipedia.org/wiki/Ajax_(informatique)){:rel="nofollow noreferrer"}** pour **Asynchronous JavaScript XML** permet au navigateur de dialoguer avec le serveur de manière asynchrone.
 
-[XMLHttpRequest](https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest){:target="_blank" rel="nofollow noopener noreferrer"}est un objet JavaScript accessible via le navigateur qui permet de créer des requêtes AJAX.
+[XMLHttpRequest](https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest){:rel="nofollow noreferrer"}est un objet JavaScript accessible via le navigateur qui permet de créer des requêtes AJAX.
 
 Je vais d’abord mettre en place le formulaire HTML.
 
@@ -219,7 +219,7 @@ function onSubmit(event) {
 }
 ```
 
-Dans un premier temps, je vais prendre tous les champs du formulaire et les mettre dans l’objet **[FormData](https://developer.mozilla.org/fr/docs/Web/API/FormData){:target="_blank" rel="nofollow noopener noreferrer"}**. Il facilite le transport des valeurs du formulaire. Cet objet sera ensuite utilisé lors de la requête AJAX.
+Dans un premier temps, je vais prendre tous les champs du formulaire et les mettre dans l’objet **[FormData](https://developer.mozilla.org/fr/docs/Web/API/FormData){:rel="nofollow noreferrer"}**. Il facilite le transport des valeurs du formulaire. Cet objet sera ensuite utilisé lors de la requête AJAX.
 
 Ensuite, je prépare mon objet **XMLHttpRequest**. Je lui indique l’url vers où poster les données, j’ajoute quelques écouteurs et enfin je passe mon objet **FormData** à la méthode **send()** pour envoyer les données.
 
@@ -265,7 +265,7 @@ function onUploadProgress(event) {
 
 Un objet **ProgressEvent** est passé à la fonction de rappel **onUploadProgress**. Il contient les informations sur la progression du téléversement du fichier. Dans mon exemple, j’affiche le pourcentage d’avancement. Mais on peut imaginer une barre de progression en CSS.
 
-Petite démo en GIF :) et le code complet [https://github.com/lepiaf/file-upload](https://github.com/lepiaf/file-upload){:target="_blank" rel="nofollow noopener noreferrer"}
+Petite démo en GIF :) et le code complet [https://github.com/lepiaf/file-upload](https://github.com/lepiaf/file-upload){:rel="nofollow noreferrer"}
 
 ![](/assets/2017-04-20-televersement-dun-fichier-en-ajax/upload.gif)
 
@@ -276,9 +276,9 @@ Nous avons vu ensemble comment mettre en place le téléversement d’un fichier
 
 Références :
 
-- [https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest](https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest){:target="_blank" rel="nofollow noopener noreferrer"}
-- [https://gist.github.com/joyrexus/524c7e811e4abf9afe56](https://gist.github.com/joyrexus/524c7e811e4abf9afe56){:target="_blank" rel="nofollow noopener noreferrer"}
-- [http://stackoverflow.com/questions/18240692/is-using-multipart-form-data-any-better-then-json-base64](http://stackoverflow.com/questions/18240692/is-using-multipart-form-data-any-better-then-json-base64){:target="_blank" rel="nofollow noopener noreferrer"}
-- [http://stackoverflow.com/questions/4715415/base64-what-is-the-worst-possible-increase-in-space-usage/4715499](http://stackoverflow.com/questions/4715415/base64-what-is-the-worst-possible-increase-in-space-usage/4715499){:target="_blank" rel="nofollow noopener noreferrer"}
-- [https://tools.ietf.org/html/rfc7578](https://tools.ietf.org/html/rfc7578){:target="_blank" rel="nofollow noopener noreferrer"}
-- [http://www.bortzmeyer.org/7578.html](http://www.bortzmeyer.org/7578.html){:target="_blank" rel="nofollow noopener noreferrer"}
+- [https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest](https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest){:rel="nofollow noreferrer"}
+- [https://gist.github.com/joyrexus/524c7e811e4abf9afe56](https://gist.github.com/joyrexus/524c7e811e4abf9afe56){:rel="nofollow noreferrer"}
+- [http://stackoverflow.com/questions/18240692/is-using-multipart-form-data-any-better-then-json-base64](http://stackoverflow.com/questions/18240692/is-using-multipart-form-data-any-better-then-json-base64){:rel="nofollow noreferrer"}
+- [http://stackoverflow.com/questions/4715415/base64-what-is-the-worst-possible-increase-in-space-usage/4715499](http://stackoverflow.com/questions/4715415/base64-what-is-the-worst-possible-increase-in-space-usage/4715499){:rel="nofollow noreferrer"}
+- [https://tools.ietf.org/html/rfc7578](https://tools.ietf.org/html/rfc7578){:rel="nofollow noreferrer"}
+- [http://www.bortzmeyer.org/7578.html](http://www.bortzmeyer.org/7578.html){:rel="nofollow noreferrer"}

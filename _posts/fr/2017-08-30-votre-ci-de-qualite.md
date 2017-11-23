@@ -33,7 +33,7 @@ php -l somefile.php
 
 Maintenant, il faut savoir quand faire cette vérification. L'idée numéro 1 étant de laisser le développeur le faire avant d'envoyer son code sur git. Si l'appel n'est pas automatisé, 1 fois sur 3, le développeur ne lance pas la commande.
 
-L'idée est donc de le faire à chaque commit. Pour cela rien de plus simple, on ajoute [un hook de pre-commit](https://git-scm.com/docs/githooks){:target="_blank" rel="nofollow noopener noreferrer"}.
+L'idée est donc de le faire à chaque commit. Pour cela rien de plus simple, on ajoute [un hook de pre-commit](https://git-scm.com/docs/githooks){:rel="nofollow noreferrer"}.
 
 Dans le fichier `.git/hooks/pre-commit` il faut ajouter le code suivant.
 
@@ -73,13 +73,13 @@ exit $EXITCODE
 
 Si tout est ok, lors de chaque `commit` , le hook va vérifier la syntaxe php.
 
-Une fois cela validé, la suite logique est de faire en sorte que les développeurs codent tous avec les mêmes standards. Ce qui est bien, c'est que PHP a déjà des standards : les **[PSR](http://www.php-fig.org/psr/){:target="_blank" rel="nofollow noopener noreferrer"}**.
+Une fois cela validé, la suite logique est de faire en sorte que les développeurs codent tous avec les mêmes standards. Ce qui est bien, c'est que PHP a déjà des standards : les **[PSR](http://www.php-fig.org/psr/){:rel="nofollow noreferrer"}**.
 
-Encore faut-il que tous les développeurs les suivent, c'est assez simple en PHP. Nous avons ajouté dans notre hook de pre-commit la commande de vérification disponible dans cet article, *[vérifier la qualité du code](https://blog.eleven-labs.com/fr/verifier-la-qualite-du-code/){:target="_blank" rel="nofollow noopener noreferrer"}*
+Encore faut-il que tous les développeurs les suivent, c'est assez simple en PHP. Nous avons ajouté dans notre hook de pre-commit la commande de vérification disponible dans cet article, *[vérifier la qualité du code](https://blog.eleven-labs.com/fr/verifier-la-qualite-du-code/){:rel="nofollow noreferrer"}*
 
 Nous étions satisfaits mais c'était assez contraignant de passer par les hooks git. La première difficulté était que chaque développeur pouvait changer ses hooks, ce qui peut poser des problèmes.
 
-Nous avons donc regardé les solutions du marché, et comme nous utilisions Github, [Travis](https://travis-ci.org){:target="_blank" rel="nofollow noopener noreferrer"} était la plus approprié.
+Nous avons donc regardé les solutions du marché, et comme nous utilisions Github, [Travis](https://travis-ci.org){:rel="nofollow noreferrer"} était la plus approprié.
 
 La migration était simple, nous avons ajouté le fichier `.travis.yml` dans notre projet contenant les mêmes scripts de vérification.
 
@@ -89,7 +89,7 @@ before_script:
 ```
 
 La vérification ne se faisait que lors d'une pull request. Il fallait aider le développeur à voir les erreurs de coding style et syntaxe avant, c'est-à-dire pendant son développement.
-Nous avons choisi d'utiliser [l'editorconfig](http://editorconfig.org/){:target="_blank" rel="nofollow noopener noreferrer"} ! L'editorconfig est un fichier que l'on ajoute à la racine du repo et qui est utilisé par la plupart des IDE pour vérifier en live la syntaxe.
+Nous avons choisi d'utiliser [l'editorconfig](http://editorconfig.org/){:rel="nofollow noreferrer"} ! L'editorconfig est un fichier que l'on ajoute à la racine du repo et qui est utilisé par la plupart des IDE pour vérifier en live la syntaxe.
 
 Exemple de fichier .editorconfig
 
@@ -123,7 +123,7 @@ indent_style = tabs
 
 **La syntaxe c'est fait !!!!**
 
-Passons au code ! Comme tout le monde, nous avions des tests unitaires et fonctionnels en [phpunit](https://phpunit.de/){:target="_blank" rel="nofollow noopener noreferrer"}.  Comme nous avions Travis, qui était en place, il fallait seulement ajouter le script pour les lancer dans la configuration.
+Passons au code ! Comme tout le monde, nous avions des tests unitaires et fonctionnels en [phpunit](https://phpunit.de/){:rel="nofollow noreferrer"}.  Comme nous avions Travis, qui était en place, il fallait seulement ajouter le script pour les lancer dans la configuration.
 
 ```yml
 //.travis.yml
@@ -144,7 +144,7 @@ Après cette importante étape, nous avons cherché à savoir ce qui nous manqua
 
 Mais il nous est arrivé que certaines pull requests nous aient posé des problèmes. Des questions du type `for` ou `while` sont apparues dans les codes review et cela est devenu trollLand sur certaines pull requests. Comment faire ?
 
-L'idée fut d'avoir un juge de touche Nous avons cherché et nous avons choisi [Scrutinizer](https://scrutinizer-ci.com/). [Scrutinizer](https://scrutinizer-ci.com/){:target="_blank" rel="nofollow noopener noreferrer"} est une solution qui permet de *juger* votre code. Il vous donne une note en prenant en compte plusieurs signes de qualité :
+L'idée fut d'avoir un juge de touche Nous avons cherché et nous avons choisi [Scrutinizer](https://scrutinizer-ci.com/). [Scrutinizer](https://scrutinizer-ci.com/){:rel="nofollow noreferrer"} est une solution qui permet de *juger* votre code. Il vous donne une note en prenant en compte plusieurs signes de qualité :
 
  1. nom de variable
  2. taille du code
@@ -152,7 +152,7 @@ L'idée fut d'avoir un juge de touche Nous avons cherché et nous avons choisi [
  4. psr
  5. etc...
 
-La mise en place est simple puisque [Scrutinizer](https://scrutinizer-ci.com/){:target="_blank" rel="nofollow noopener noreferrer"} se plugue facilement à Github. Il suffit d'ajouter un fichier `.scrutinizer.yml` dans votre projet.
+La mise en place est simple puisque [Scrutinizer](https://scrutinizer-ci.com/){:rel="nofollow noreferrer"} se plugue facilement à Github. Il suffit d'ajouter un fichier `.scrutinizer.yml` dans votre projet.
 
 Exemple:
 ```yml
@@ -302,7 +302,7 @@ build_failure_conditions:
 
 Vous pouvez configurer énormément de choses mais surtout les conditions d'acceptation. Comme vous le voyez dans la configuration, on y trouve `build_failure_conditions` qui permet de mettre les seuils d'acceptation de la pull request.
 
-Scrutinizer permet aussi de gérer le taux de code coverage, il faut alors l'envoyer à Scrutinizer à partir de la sortie de Travis. Un tutoriel est disponible [ici](https://scrutinizer-ci.com/docs/tools/external-code-coverage/){:target="_blank" rel="nofollow noopener noreferrer"}. Normalement, il vous faut ajouter ceci dans le fichier `.travis.yml`
+Scrutinizer permet aussi de gérer le taux de code coverage, il faut alors l'envoyer à Scrutinizer à partir de la sortie de Travis. Un tutoriel est disponible [ici](https://scrutinizer-ci.com/docs/tools/external-code-coverage/){:rel="nofollow noreferrer"}. Normalement, il vous faut ajouter ceci dans le fichier `.travis.yml`
 
 ```yml
 after_script:
@@ -315,7 +315,7 @@ Scrutinizer est assez complet et permet de suivre la qualité de votre code au f
 
 **Encore une étape de terminée !!!!**
 
-Nous avons utilisé cette stack pendant plus d'un an, nous étions assez satisfait. Puis un jour, un article sur [les tests de mutation](https://blog.eleven-labs.com/fr/mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/){:target="_blank" rel="nofollow noopener noreferrer"}, nous a donné envie d'aller plus loin. Nous avons alors essayé les tests de mutation, ce qui nous a permis de voir que même avec un code coverage de 90%, il y avait des tests qui ne faisaient rien ou qui testaient mal le code. Après avoir fait les changements, nous voulions aussi l'introduire dans notre CI. Le premier réflexe étant d'ajouter le script dans la configuration travis. Grosse erreur, le script mettant plus de 20 minutes sur notre projet, nous avions les jobs Travis en attente sur les autres projets. Mais heureusement, Travis avait sorti une nouvelle fonctionnalité qui permet de lancer les jobs en mode CRON et donc de le faire qu'une fois par jour, ce qui est suffisant pour ce genre de test. Il nous suffsait alors d'ajouter la config suivante.
+Nous avons utilisé cette stack pendant plus d'un an, nous étions assez satisfait. Puis un jour, un article sur [les tests de mutation](https://blog.eleven-labs.com/fr/mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/){:rel="nofollow noreferrer"}, nous a donné envie d'aller plus loin. Nous avons alors essayé les tests de mutation, ce qui nous a permis de voir que même avec un code coverage de 90%, il y avait des tests qui ne faisaient rien ou qui testaient mal le code. Après avoir fait les changements, nous voulions aussi l'introduire dans notre CI. Le premier réflexe étant d'ajouter le script dans la configuration travis. Grosse erreur, le script mettant plus de 20 minutes sur notre projet, nous avions les jobs Travis en attente sur les autres projets. Mais heureusement, Travis avait sorti une nouvelle fonctionnalité qui permet de lancer les jobs en mode CRON et donc de le faire qu'une fois par jour, ce qui est suffisant pour ce genre de test. Il nous suffsait alors d'ajouter la config suivante.
 
 ```yml
 //.travis.yml
@@ -337,7 +337,7 @@ L'architecture évoluant, nous avons dû nous adapter et donc travailler de plus
 
 Nous avons alors réfléchi à la même problématique, du javascript oui, mais de qualité.
 
-Encore une fois, nous avons commencé par la syntaxe avec la mise en place [Eslint](https://eslint.org/). Nous avons choisi comme standard la configuration de [airbnb](https://www.npmjs.com/package/eslint-config-airbnb){:target="_blank" rel="nofollow noopener noreferrer"}.
+Encore une fois, nous avons commencé par la syntaxe avec la mise en place [Eslint](https://eslint.org/). Nous avons choisi comme standard la configuration de [airbnb](https://www.npmjs.com/package/eslint-config-airbnb){:rel="nofollow noreferrer"}.
 
 ```js
 ---
@@ -364,7 +364,7 @@ Comme nous faisons déjà du javascript dans le frontend, notre Editorconfig ét
 
 **Étape 1, 3 secondes !!!**
 
-Nous avons alors fait les tests unitaires. Comme toujours le choix de la techno ne fut pas simple. Mais comme nous faisions du [react](https://facebook.github.io/react/), [jest](https://facebook.github.io/jest/){:target="_blank" rel="nofollow noopener noreferrer"} s'est très vite imposé.
+Nous avons alors fait les tests unitaires. Comme toujours le choix de la techno ne fut pas simple. Mais comme nous faisions du [react](https://facebook.github.io/react/), [jest](https://facebook.github.io/jest/){:rel="nofollow noreferrer"} s'est très vite imposé.
 Une fois les tests développés, nous avons encore une fois ajouté l'appel dans la configuration Travis.
 
 ```yml
@@ -375,7 +375,7 @@ script:
 
 **Étape 2, done !!!!**
 
-Comme nous le savions de notre expérience en PHP, tout cela ne suffisait pas. Nous avons donc cherché un outil équivalent à Scrutinizer et nous avons trouvé [Bithound](https://www.bithound.io){:target="_blank" rel="nofollow noopener noreferrer"}. Cet outil est un peu moins poussé, mais il permet de mettre une note sur votre code et surtout de vous alerter quand des librairies extérieures ne sont plus à jour.
+Comme nous le savions de notre expérience en PHP, tout cela ne suffisait pas. Nous avons donc cherché un outil équivalent à Scrutinizer et nous avons trouvé [Bithound](https://www.bithound.io){:rel="nofollow noreferrer"}. Cet outil est un peu moins poussé, mais il permet de mettre une note sur votre code et surtout de vous alerter quand des librairies extérieures ne sont plus à jour.
 
 La configuration est comme toujours un fichier à la racine du projet.
 
@@ -406,7 +406,7 @@ Nous n'avons malheureusement pas trouvé une technologie permettant de faire des
 
 On l'oublie souvent mais le CSS, c'est aussi du code, et la qualité de celui-ci doit aussi être prise en compte.
 
-Jamais deux sans trois, on commence par la syntaxe. Pour cela, nous avons utilisé [Stylelint](https://stylelint.io/){:target="_blank" rel="nofollow noopener noreferrer"} qui permet de gérer la syntaxe de vos fichiers CSS. Stylelint permet de nombreuses vérifications:
+Jamais deux sans trois, on commence par la syntaxe. Pour cela, nous avons utilisé [Stylelint](https://stylelint.io/){:rel="nofollow noreferrer"} qui permet de gérer la syntaxe de vos fichiers CSS. Stylelint permet de nombreuses vérifications:
 
  1. Ne pas avoir de commentaire vide
  2. Le nombre de sélecteurs max
@@ -552,7 +552,7 @@ script:
   - gulp scss:lint
 ```
 
-La seconde façon de vérifier la qualité du CSS est de faire des tests de non régression visuelle. Pour cela [BackstopJs](https://github.com/garris/BackstopJS){:target="_blank" rel="nofollow noopener noreferrer"} est une solution complète, qui permet de tester deux versions de votre code html/css.
+La seconde façon de vérifier la qualité du CSS est de faire des tests de non régression visuelle. Pour cela [BackstopJs](https://github.com/garris/BackstopJS){:rel="nofollow noreferrer"} est une solution complète, qui permet de tester deux versions de votre code html/css.
 
 L'idée est de générer une version statique des pages de votre site avec votre code actuel et de stocker le résultat. Ensuite, vous pouvez faire des modifications de votre code et lancer les tests de régression visuelle, cela génère un site qui vous montre les différences entre les deux versions. À vous de décider si la différence est normale ou non.
 
@@ -599,7 +599,7 @@ Nous avions avec cela gagné en qualité CSS et avons eu beaucoup moins de régr
 
 Parce que la WebPerformance, c'est aussi de la qualité, nous avons ajouté un outil dans notre CI pour suivre cette dernière.
 
-Nous avons choisi [Speedcurve](https://speedcurve.com/){:target="_blank" rel="nofollow noopener noreferrer"}, un outil de monitoring simple d'utilisation et surtout qui permet de suivre les concurrents.
+Nous avons choisi [Speedcurve](https://speedcurve.com/){:rel="nofollow noreferrer"}, un outil de monitoring simple d'utilisation et surtout qui permet de suivre les concurrents.
 
 Speedcurve permet beaucoup de choses, nous avons essayé d'utiliser l'ensemble des fonctionnalités disponibles.
 

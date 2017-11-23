@@ -29,15 +29,15 @@ En fait, vous utilisez du Cloud tous les jours. Par exemple votre messagerie mai
 
 ### Comment en faire ?
 
-Aujourd'hui les deux plus gros fournisseurs de Cloud sont Amazon avec leur offre [AWS](https://aws.amazon.com/fr/) et Google avec [GCP](https://cloud.google.com/){:target="_blank" rel="nofollow noopener noreferrer"}. Les deux concurrents proposent des produits similaires. Pour cette série de tutoriels, nous allons nous concentrer sur Google et apprendre 3 façon de faire du Cloud.
+Aujourd'hui les deux plus gros fournisseurs de Cloud sont Amazon avec leur offre [AWS](https://aws.amazon.com/fr/) et Google avec [GCP](https://cloud.google.com/){:rel="nofollow noreferrer"}. Les deux concurrents proposent des produits similaires. Pour cette série de tutoriels, nous allons nous concentrer sur Google et apprendre 3 façon de faire du Cloud.
 
 ### Le Cloud pour les nuls
 
-Si vous êtes comme moi, c'est à dire pas passionné par l'installation des serveurs, nous allons commencer par l'installation "prêt-à-porter" d'un serveur. Dans cette exemple nous allons installer un [Jenkins](https://jenkins.io/){:target="_blank" rel="nofollow noopener noreferrer"}> en moins de 10 minutes, ce qui est un record si vous avez eu la chance d'en installer un vous-même.
+Si vous êtes comme moi, c'est à dire pas passionné par l'installation des serveurs, nous allons commencer par l'installation "prêt-à-porter" d'un serveur. Dans cette exemple nous allons installer un [Jenkins](https://jenkins.io/){:rel="nofollow noreferrer"}> en moins de 10 minutes, ce qui est un record si vous avez eu la chance d'en installer un vous-même.
 
 ### Etape 1, allons dans la console :
 
-Je vous invite à aller sur cette url [https://cloud.google.com/](https://cloud.google.com/) puis à cliquer en haut à droite sur [console](https://console.cloud.google.com/). Vous devez alors vous connecter avec votre compte Google. À partir de maintenant, vous allez devoir sortir la carte bleue, mais pas de panique Google vous crédite de 300 dollars pour toute activation de compte. Cela sera suffisant pour faire les trois tutoriels prévus et même plus encore. Vous devez suivre les instructions de Google à partir de [cette page](https://console.cloud.google.com/freetrial){:target="_blank" rel="nofollow noopener noreferrer"}. Une fois cette étape terminée, vous êtes redirigé vers un dashboard vide.
+Je vous invite à aller sur cette url [https://cloud.google.com/](https://cloud.google.com/) puis à cliquer en haut à droite sur [console](https://console.cloud.google.com/). Vous devez alors vous connecter avec votre compte Google. À partir de maintenant, vous allez devoir sortir la carte bleue, mais pas de panique Google vous crédite de 300 dollars pour toute activation de compte. Cela sera suffisant pour faire les trois tutoriels prévus et même plus encore. Vous devez suivre les instructions de Google à partir de [cette page](https://console.cloud.google.com/freetrial){:rel="nofollow noreferrer"}. Une fois cette étape terminée, vous êtes redirigé vers un dashboard vide.
 
 ### Etape 2, création du projet :
 
