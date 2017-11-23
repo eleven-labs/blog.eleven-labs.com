@@ -16,11 +16,11 @@ tags:
     - package
 ---
 # Introduction to Atom
-[Atom](https://atom.io) is an open-source text editor (mostly used by developers){:target="_blank" rel="nofollow noopener noreferrer"} which is multi-platform and developed by GitHub company. It is based on <a href="http://electron.atom.io/">Electron</a>, the Github-developed framework, which allows developers to build native desktop applications for any operating systems by writing Javascript code.
+[Atom](https://atom.io) is an open-source text editor (mostly used by developers){:rel="nofollow"} which is multi-platform and developed by GitHub company. It is based on <a href="http://electron.atom.io/">Electron</a>, the Github-developed framework, which allows developers to build native desktop applications for any operating systems by writing Javascript code.
 
 The main interesting feature of Atom is that it also has a great package management tool and packages are also written in Javascript so it's quite easy for anyone to create one. This article aims to talk about it.
 Finally, its community is also active as it already has a lot of available packages: `5 285` at this time.
-You can browse all packages by going to the following address: [https://atom.io/packages](https://atom.io/packages){:target="_blank" rel="nofollow noopener noreferrer"}.
+You can browse all packages by going to the following address: [https://atom.io/packages](https://atom.io/packages){:rel="nofollow"}.
 
 However, if you cannot find a package that fits your needs you can start creating your own and we will see how simple it is.
 
@@ -90,7 +90,7 @@ You can add as many commands as you want and I really encourage you to decouple 
 
 # Add settings for your package
 
-The [Config](https://atom.io/docs/api/latest/Config){:target="_blank" rel="nofollow noopener noreferrer"} component allows your package to have some settings.
+The [Config](https://atom.io/docs/api/latest/Config){:rel="nofollow"} component allows your package to have some settings.
 
 To add a new setting, you just have to define a `config`  property into your package's class which is an object containing each settings definition, as follows:
 
@@ -191,11 +191,11 @@ console.log(repository.isStatusNew('/path/to/file')); // -> true
 
 ## And more things to discover...
 
-We just made a review of the components that I played with but I invite you to read more on the following link if you want to go further: [https://atom.io/docs/api/latest/AtomEnvironment](https://atom.io/docs/api/latest/AtomEnvironment){:target="_blank" rel="nofollow noopener noreferrer"}.
+We just made a review of the components that I played with but I invite you to read more on the following link if you want to go further: [https://atom.io/docs/api/latest/AtomEnvironment](https://atom.io/docs/api/latest/AtomEnvironment){:rel="nofollow"}.
 
 ## Test your package with specs
 
-Our package is now developed but we don't have to forget about the tests. To do that, Atom uses [Jasmine](https://jasmine.github.io){:target="_blank" rel="nofollow noopener noreferrer"}.
+Our package is now developed but we don't have to forget about the tests. To do that, Atom uses [Jasmine](https://jasmine.github.io){:rel="nofollow"}.
 
 Your default package already has a prepared test file:
 
@@ -241,7 +241,7 @@ Congratulations, your package is now published and available on the following UR
 
 # Continuous Integration
 
-The final step is to ensure that your package will continue to work in the future when you or your contributors will add new features but also when Atom releases a new beta version. To do that, you can use [Travis-CI](https://travis-ci.org){:target="_blank" rel="nofollow noopener noreferrer"} on your repository with the following configuration:
+The final step is to ensure that your package will continue to work in the future when you or your contributors will add new features but also when Atom releases a new beta version. To do that, you can use [Travis-CI](https://travis-ci.org){:rel="nofollow"} on your repository with the following configuration:
 
 ```yaml
 language: objective-c

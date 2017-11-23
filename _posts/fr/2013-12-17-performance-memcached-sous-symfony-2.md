@@ -155,7 +155,7 @@ Memcached est un binaire, tournant sur à peu près toutes les plateformes, perm
 
 En fait, memcached va nous permettre d'accéder à la RAM comme un simple tableau PHP, indéx clef => valeur, avec une durée de vie.
 
-Pour nous simplifier la vie, nous allons utiliser le Bundle Memcached de Leaseweb, disponible [ici](https://github.com/LeaseWeb/LswMemcacheBundle){:target="_blank" rel="nofollow noopener noreferrer"}.
+Pour nous simplifier la vie, nous allons utiliser le Bundle Memcached de Leaseweb, disponible [ici](https://github.com/LeaseWeb/LswMemcacheBundle){:rel="nofollow noreferrer"}.
 
 Pour l'installation, référez vous au README, c'est assez simple sous Linux.
 

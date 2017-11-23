@@ -54,7 +54,7 @@ php-7.1.0beta3
 
 # Étape 3 : compiler une version de PHP
 
-La dernière fois que j'évoquais [PHP 7.1](https://blog.eleven-labs.com/fr/php-7-1-pour-les-null/) c'était la première RC, donc je vais en profiter pour installer la beta 3, c'est tout simple (j'ai précédé les logs par les horaires, pour que vous voyiez le temps que ça peut prendre){:target="_blank" rel="nofollow noopener noreferrer"} :
+La dernière fois que j'évoquais [PHP 7.1](https://blog.eleven-labs.com/fr/php-7-1-pour-les-null/) c'était la première RC, donc je vais en profiter pour installer la beta 3, c'est tout simple (j'ai précédé les logs par les horaires, pour que vous voyiez le temps que ça peut prendre){:rel="nofollow noreferrer"} :
 
 ```bash
 $ ./bin/phpenv install php-7.1.0beta3
@@ -133,8 +133,8 @@ Où l'on peut constater que nous avons bien la version PHP 7.1.0beta3.
 
 # Conclusion
 
-Cette première étape de l'utilisation de PHPEnv vous permet déjà d'avoir plusieurs versions de PHP sur vos projets en CLI aussi bien que via un serveur HTTP, puisque PHP 5.4 sortait avec un [serveur HTTP interne](http://php.net/manual/fr/features.commandline.webserver.php). On pourrait aller un peu plus loin dans l'utilisation de cet outil, mais pour ça il y a la [documentation de l'outil](https://github.com/humanshell/phpenv). Il est bon de rappeler que c'est un outil de développement à utiliser en local ou sur un serveur de développement, et non sur un serveur de production, surtout si vous ne configurez pas les options de PHP, ou compilez des versions non finales (RC/alpha/beta). Vous vous exposeriez potentiellement à des bugs ou des failles de sécurité. Donc ne vous amusez pas à binder votre configuration Nginx sur php-fpm en version beta :){:target="_blank" rel="nofollow noopener noreferrer"}
+Cette première étape de l'utilisation de PHPEnv vous permet déjà d'avoir plusieurs versions de PHP sur vos projets en CLI aussi bien que via un serveur HTTP, puisque PHP 5.4 sortait avec un [serveur HTTP interne](http://php.net/manual/fr/features.commandline.webserver.php). On pourrait aller un peu plus loin dans l'utilisation de cet outil, mais pour ça il y a la [documentation de l'outil](https://github.com/humanshell/phpenv). Il est bon de rappeler que c'est un outil de développement à utiliser en local ou sur un serveur de développement, et non sur un serveur de production, surtout si vous ne configurez pas les options de PHP, ou compilez des versions non finales (RC/alpha/beta). Vous vous exposeriez potentiellement à des bugs ou des failles de sécurité. Donc ne vous amusez pas à binder votre configuration Nginx sur php-fpm en version beta :){:rel="nofollow noreferrer"}
 
-Si toutefois vous veniez à compiler vos versions de PHP pour la production, ce qui est totalement justifié pour des raisons de performances en affinant la granularité des options, faites le correctement en utilisant [le manuel](http://php.net/manual/fr/install.unix.php){:target="_blank" rel="nofollow noopener noreferrer"}.
+Si toutefois vous veniez à compiler vos versions de PHP pour la production, ce qui est totalement justifié pour des raisons de performances en affinant la granularité des options, faites le correctement en utilisant [le manuel](http://php.net/manual/fr/install.unix.php){:rel="nofollow noreferrer"}.
 
-_Crédits photo : [Nick Brandt](http://visualattraction.fr/nick-brandt){:target="_blank" rel="nofollow noopener noreferrer"}_
+_Crédits photo : [Nick Brandt](http://visualattraction.fr/nick-brandt){:rel="nofollow noreferrer"}_

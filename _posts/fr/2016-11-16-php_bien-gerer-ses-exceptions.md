@@ -134,7 +134,7 @@ Dans une application moderne, le code est empilé comme des poupées russes. Une
 
 Avec ce principe, le développeur a la possibilité de maîtriser une partie des exceptions qui peuvent être levées. S'il ne peut pas les gérer, il va les laisser se propager dans les couches supérieures.
 
-Prenons un exemple pour le cas d'une erreur gérable. Dans mon application, je dois contacter une API pour créer un utilisateur ou le mettre à jour. Je ne sais pas par avance si cet utilisateur existe ou non. Je vais d'abord faire une requête GET pour le savoir. L'API me renvoie soit une erreur 404 pour dire que l'utilisateur n'existe pas, ou une erreur 200 dans le cas contraire. Pour faire ces requêtes, j'utilise une librairie : [Guzzle](http://docs.guzzlephp.org/en/latest/). Dans le cas d'une 404, j'ai une exception [RequestException](https://github.com/guzzle/guzzle/blob/master/src/Exception/RequestException.php){:target="_blank" rel="nofollow noopener noreferrer"}.
+Prenons un exemple pour le cas d'une erreur gérable. Dans mon application, je dois contacter une API pour créer un utilisateur ou le mettre à jour. Je ne sais pas par avance si cet utilisateur existe ou non. Je vais d'abord faire une requête GET pour le savoir. L'API me renvoie soit une erreur 404 pour dire que l'utilisateur n'existe pas, ou une erreur 200 dans le cas contraire. Pour faire ces requêtes, j'utilise une librairie : [Guzzle](http://docs.guzzlephp.org/en/latest/). Dans le cas d'une 404, j'ai une exception [RequestException](https://github.com/guzzle/guzzle/blob/master/src/Exception/RequestException.php){:rel="nofollow noreferrer"}.
 
 ```php
 <?php
@@ -163,7 +163,7 @@ Comme nous venons de le voir dans l'exemple précédent, je n'ai géré que l'ex
 
 Une application est un emboîtement de composants, qui lorsqu'ils sont assemblés ensemble permettent de construire une fonctionnalité. Une exception levée au niveau du composant, et donc au plus bas de la couche applicative, n'a pas de sens toute seule. Il y a un ensemble fonctionnel lié à cette exception. C'est cette chaîne fonctionnelle qui est capable de prendre soin de cette exception. Comme dans l'exemple précédent. C'est la fonctionnalité qui a permis de gérer cette exception, et non le composant Guzzle. Le composant n'a fait que lancer l'exception pour qu'elle remonte au plus haut.
 
-Pour un framework, tel que Symfony, c'est le même principe. Si le développeur ne sait pas quoi faire de l'exception, il va la laisser remonter jusqu'à un écouteur capable de la gérer. Et tout en haut, il y a cet écouteur: [src\\Symfony\\Component\\HttpKernel\\EventListener\\ExceptionListener](https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/EventListener/ExceptionListener.php){:target="_blank" rel="nofollow noopener noreferrer"}.
+Pour un framework, tel que Symfony, c'est le même principe. Si le développeur ne sait pas quoi faire de l'exception, il va la laisser remonter jusqu'à un écouteur capable de la gérer. Et tout en haut, il y a cet écouteur: [src\\Symfony\\Component\\HttpKernel\\EventListener\\ExceptionListener](https://github.com/symfony/symfony/blob/master/src/Symfony/Component/HttpKernel/EventListener/ExceptionListener.php){:rel="nofollow noreferrer"}.
 
 Pour conclure
 =============

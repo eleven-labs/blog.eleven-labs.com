@@ -70,8 +70,8 @@ Avant d’attaquer mon application, je me suis posé un peu (oui ça m’arrive 
 Qu’est-ce que cocoapods ? C’est un gestionnaire de dépendance comme npm, composer, yarn…
 
 J’ai besoin de cocoapods car je souhaite inclure deux librairies à mon projet, à savoir :
-1. [Alamofire](https://github.com/Alamofire/Alamofire){:target="_blank" rel="nofollow noopener noreferrer"}, qui est une des librairies la plus connue et utilisée sur Swift. Elle permet de faire des requêtes HTTP. Quand j’ai vu la différence entre la procédure dite “classique” utilisant les méthodes natives, et Alamofire, mon choix a été vite fait !
-2. [AlamofireImage](https://github.com/Alamofire/AlamofireImage), cette librairie permet de gérer les images qui proviennent du net. Lorsque vous récupérez des images via une url, il faut gérer cette dernière en passant par de l’asynchrone. Je me suis amusé une fois à écrire du code afin de gérer ce cas et j’ai comparé le résultat de mon code avec l’utilisation d’AlamoFireImage. Je ne vous cache pas qu’Alamofire m’a mis une fessée ! :){:target="_blank" rel="nofollow noopener noreferrer"}
+1. [Alamofire](https://github.com/Alamofire/Alamofire){:rel="nofollow noreferrer"}, qui est une des librairies la plus connue et utilisée sur Swift. Elle permet de faire des requêtes HTTP. Quand j’ai vu la différence entre la procédure dite “classique” utilisant les méthodes natives, et Alamofire, mon choix a été vite fait !
+2. [AlamofireImage](https://github.com/Alamofire/AlamofireImage), cette librairie permet de gérer les images qui proviennent du net. Lorsque vous récupérez des images via une url, il faut gérer cette dernière en passant par de l’asynchrone. Je me suis amusé une fois à écrire du code afin de gérer ce cas et j’ai comparé le résultat de mon code avec l’utilisation d’AlamoFireImage. Je ne vous cache pas qu’Alamofire m’a mis une fessée ! :){:rel="nofollow noreferrer"}
 
 Pour ajouter les deux librairies, il vous suffit de créer un fichier Podfile à la racine de votre projet et d’ajouter ces petites lignes :
 ```podfile

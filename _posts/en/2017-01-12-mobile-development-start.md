@@ -67,7 +67,7 @@ One of the main advantages of Ionic is that it provides pre-made components, whi
 <ion-spinner></ion-spinner>
 ```
 
-I had the chance to develop several applications with Ionic, and I have to say that the component aspect is really handy. The [documentation](http://ionicframework.com/docs/){:target="_blank" rel="nofollow noopener noreferrer"} exposes all components available with Ionic.
+I had the chance to develop several applications with Ionic, and I have to say that the component aspect is really handy. The [documentation](http://ionicframework.com/docs/){:rel="nofollow"} exposes all components available with Ionic.
 
 As mentioned before, Ionic is also based on Cordova to interact with native components of devices. Through plugins you can use localisation, camera, etc...
 
@@ -106,7 +106,7 @@ Thanks to a JavaScript engine executed asynchronously in a separated thread, the
 
 *A piece of advice*:
 
-Before diving into React Native, I suggest that you start by getting familiar with React. You can check out the [video](https://www.youtube.com/watch?v=WbUO00hrjiE){:target="_blank" rel="nofollow noopener noreferrer"} of a conference I've given, where I explain basics of React with a rather interesting and full example.
+Before diving into React Native, I suggest that you start by getting familiar with React. You can check out the [video](https://www.youtube.com/watch?v=WbUO00hrjiE){:rel="nofollow"} of a conference I've given, where I explain basics of React with a rather interesting and full example.
 
 To be honest I had a hard time with React Native at the beginning when I started developing my first application.
 

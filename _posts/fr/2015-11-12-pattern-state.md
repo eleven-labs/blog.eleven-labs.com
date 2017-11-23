@@ -96,7 +96,7 @@ Cependant, il reste des cas où il est inutile de l'utiliser, par exemple, sur u
 
 > **- Cas concret avec le bundle Symfony winzou/state-machine-bundle**
 
-Ce bundle permet la mise en place d'une state machine assez facilement. En effet, il se base en grande partie sur de la config pour la gérer automatiquement. Vous pouvez trouver son dépôt ici : [https://github.com/winzou/StateMachineBundle](https://github.com/winzou/StateMachineBundle){:target="_blank" rel="nofollow noopener noreferrer"}
+Ce bundle permet la mise en place d'une state machine assez facilement. En effet, il se base en grande partie sur de la config pour la gérer automatiquement. Vous pouvez trouver son dépôt ici : [https://github.com/winzou/StateMachineBundle](https://github.com/winzou/StateMachineBundle){:rel="nofollow noreferrer"}
 
 Dans notre cas, la configuration du bundle pourrait ressembler à ça :
 

@@ -338,6 +338,6 @@ Les avantages du pattern spécification sont les suivants :
 
 ## Références
 
-[Eric Evans & Martin Fowler - Specifications](http://martinfowler.com/apsupp/spec.pdf){:target="_blank" rel="nofollow noopener noreferrer"}
+[Eric Evans & Martin Fowler - Specifications](http://martinfowler.com/apsupp/spec.pdf){:rel="nofollow noreferrer"}
 
-[Specification pattern: C# implementation](http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/){:target="_blank" rel="nofollow noopener noreferrer"}
+[Specification pattern: C# implementation](http://enterprisecraftsmanship.com/2016/02/08/specification-pattern-c-implementation/){:rel="nofollow noreferrer"}

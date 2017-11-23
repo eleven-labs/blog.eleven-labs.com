@@ -133,7 +133,7 @@ In a modern application, the code is stacked like Russian dolls. An exception th
 
 With this principle, the developer has the ability to control some of the exceptions that can be removed. If he can not manage them, he will let them spread in the upper layers.
 
-Let's take an example for a manageable error. In my application, I need to contact an API to create a user or update it. I do not know in advance whether this user exists or not. I will first make a GET query to find out. The API returns either an error 404 to say that the user does not exist, or an error 200 otherwise. To make these queries, I use a library: [Guzzle](http://docs.guzzlephp.org/en/latest/). In the case of a 404, I have a [RequestException](https://github.com/guzzle/guzzle/blob/master/src/Exception/RequestException.php){:target="_blank" rel="nofollow noopener noreferrer"}.
+Let's take an example for a manageable error. In my application, I need to contact an API to create a user or update it. I do not know in advance whether this user exists or not. I will first make a GET query to find out. The API returns either an error 404 to say that the user does not exist, or an error 200 otherwise. To make these queries, I use a library: [Guzzle](http://docs.guzzlephp.org/en/latest/). In the case of a 404, I have a [RequestException](https://github.com/guzzle/guzzle/blob/master/src/Exception/RequestException.php){:rel="nofollow"}.
 
 ```php
 <?php
@@ -161,7 +161,7 @@ As we have just seen in the previous example, I have managed only the exception 
 
 An application is a nesting of components, which when assembled together make it possible to construct a functionality. An exception thrown at the component level, and therefore at the bottom of the application layer, does not make sense on its own. There is a functional set related to this exception. It is this functional chain that is able to take care of this exception. As in the previous example. It is the functionality that managed this exception, not the Guzzle component. The component only threw the exception to the top.
 
-For a framework, such as Symfony, it's the same principle. If the developer does not know what to do with the exception, he will let it go up to a listener able to manage it. And at the top, there's this listener: [src\\Symfony\\Component\\HttpKernel\\EventListener\\ExceptionListener](https://github.com/guzzle/guzzle/blob/master/src/Exception/RequestException.php){:target="_blank" rel="nofollow noopener noreferrer"}.
+For a framework, such as Symfony, it's the same principle. If the developer does not know what to do with the exception, he will let it go up to a listener able to manage it. And at the top, there's this listener: [src\\Symfony\\Component\\HttpKernel\\EventListener\\ExceptionListener](https://github.com/guzzle/guzzle/blob/master/src/Exception/RequestException.php){:rel="nofollow"}.
 
 To conclude
 ===========

@@ -35,4 +35,4 @@ Il permet de générer automatiquement des Api Json via une maîtrise du CRUD de
 
 La bonne nouvelle est que Sails supporte Grunt et permet donc de faire des tests plus facilement.
 
-Si vous voulez plus de renseignements, je vous invite à aller voir le site de [Sails.js](http://sailsjs.org/){:target="_blank" rel="nofollow noopener noreferrer"}, prochainement un test technique.
+Si vous voulez plus de renseignements, je vous invite à aller voir le site de [Sails.js](http://sailsjs.org/){:rel="nofollow noreferrer"}, prochainement un test technique.

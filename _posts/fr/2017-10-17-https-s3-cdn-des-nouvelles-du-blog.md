@@ -28,14 +28,14 @@ Dans ce post, je vais vous expliquer les modifications que nous avons faites afi
 l'hébergement en https tout en conservant notre stratégie de déploiement continu.
 
 Les services AWS que nous utilisons pour cela sont :
-- [AWS Certificate Manager](https://aws.amazon.com/fr/certificate-manager/){:target="_blank" rel="nofollow noopener noreferrer"}
-- [Amazon S3](https://aws.amazon.com/fr/s3/){:target="_blank" rel="nofollow noopener noreferrer"}
-- [Amazon Cloudfront](https://aws.amazon.com/fr/cloudfront/){:target="_blank" rel="nofollow noopener noreferrer"}
+- [AWS Certificate Manager](https://aws.amazon.com/fr/certificate-manager/){:rel="nofollow noreferrer"}
+- [Amazon S3](https://aws.amazon.com/fr/s3/){:rel="nofollow noreferrer"}
+- [Amazon Cloudfront](https://aws.amazon.com/fr/cloudfront/){:rel="nofollow noreferrer"}
 
 > Pour simplifier les interactions avec AWS, nous allons utiliser `aws-cli` afin de ne pas nous perdre dans son interface
 > web chargée.
-> Un [guide d'installation](http://docs.aws.amazon.com/fr_fr/cli/latest/userguide/installing.html){:target="_blank" rel="nofollow noopener noreferrer"} est disponible sur la
-> [documentation officielle](https://aws.amazon.com/fr/documentation/){:target="_blank" rel="nofollow noopener noreferrer"}.
+> Un [guide d'installation](http://docs.aws.amazon.com/fr_fr/cli/latest/userguide/installing.html){:rel="nofollow noreferrer"} est disponible sur la
+> [documentation officielle](https://aws.amazon.com/fr/documentation/){:rel="nofollow noreferrer"}.
 
 ## Mise en place du certificat SSL/TLS avec AWS Certificate Manager
 
@@ -170,7 +170,7 @@ aws s3api put-bucket-policy --bucket "blog.eleven-labs.com" --policy "{\"Version
 ### Déploiement depuis Travis CI
 
 Notre bucket est maintenant prêt à servir le blog, il ne nous reste plus qu'à y uploader les fichiers buildés à chaque
-merge sur la branche master du [repository](https://github.com/eleven-labs/blog.eleven-labs.com){:target="_blank" rel="nofollow noopener noreferrer"} grâce à Travis CI.
+merge sur la branche master du [repository](https://github.com/eleven-labs/blog.eleven-labs.com){:rel="nofollow noreferrer"} grâce à Travis CI.
 Nous utilisons déjà Travis CI pour l'intégration et le déploiement continus du blog, notamment pour la
 [vérification de l'orthographe]({{ '/fr/comment-verifier-l-orthographe-de-vos-docs-depuis-travis-ci/' | prepend: site.baseurl | replace: '//', '/' }})
 dans les PR mais également la création et l'upload à Algolia des données permettant la recherche dans le blog.

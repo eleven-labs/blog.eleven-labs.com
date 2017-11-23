@@ -144,5 +144,5 @@ complexe à prendre en main au début, on peut très rapidement en devient frian
 Si je peux vous donner un conseil assurez-vous que la fonctionnalité va être répété sinon il peut être contre-productif
 de faire une directive.
 
-En complément n'hésitez à aller voir [le guide](https://docs.angularjs.org/guide/directive){:target="_blank" rel="nofollow noopener noreferrer"} du site officiel, et bon
+En complément n'hésitez à aller voir [le guide](https://docs.angularjs.org/guide/directive){:rel="nofollow noreferrer"} du site officiel, et bon
 Angular à tous !

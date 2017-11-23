@@ -30,15 +30,15 @@ In my opinion, it's the most interesting feature of PHP 7.1\. As you might know 
 
 Since an image (ok it's a video) is worth a thousand words, you can see above the behavior of PHP 7.0 when giving null to type hinted methods or functions (it's also the case with PHP5):
 
-[![](https://asciinema.org/a/84925.png)](https://asciinema.org/a/84925){:target="_blank" rel="nofollow noopener noreferrer"}
+[![](https://asciinema.org/a/84925.png)](https://asciinema.org/a/84925){:rel="nofollow"}
 
 Now, let's see a simple workaround for parameters, which is not solving the problem when it's about type hinted returns:
 
-[![](https://asciinema.org/a/84927.png)](https://asciinema.org/a/84927){:target="_blank" rel="nofollow noopener noreferrer"}
+[![](https://asciinema.org/a/84927.png)](https://asciinema.org/a/84927){:rel="nofollow"}
 
 And now, we will adapt our code, to make it work with PHP 7.1, and completely solve our problem:
 
-[![](https://asciinema.org/a/84926.png)](https://asciinema.org/a/84926){:target="_blank" rel="nofollow noopener noreferrer"}
+[![](https://asciinema.org/a/84926.png)](https://asciinema.org/a/84926){:rel="nofollow"}
 
 As you can see, we can now, without using default parameters (such as = null), give or return null values thanks to our type prefixed with the operator "?".
 
@@ -46,7 +46,7 @@ As you can see, we can now, without using default parameters (such as = null), g
 
 It has long been possible to do multi-catching with the use of multiple catch blocks, one by one. Yet, it can be redundant, especially when we want to handle the same way two exceptions which have nothing in common. Here is how you should use it:
 
-[![](https://asciinema.org/a/84954.png)](https://asciinema.org/a/84954){:target="_blank" rel="nofollow noopener noreferrer"}
+[![](https://asciinema.org/a/84954.png)](https://asciinema.org/a/84954){:rel="nofollow"}
 
 As you can see, I only used two exceptions, but I could have used much more if needed.
 
@@ -54,7 +54,7 @@ As you can see, I only used two exceptions, but I could have used much more if n
 
 Another new type has been introduced, the void type. Here is its behavior:
 
-[![](https://asciinema.org/a/84952.png)](https://asciinema.org/a/84952){:target="_blank" rel="nofollow noopener noreferrer"}
+[![](https://asciinema.org/a/84952.png)](https://asciinema.org/a/84952){:rel="nofollow"}
 
 As shown in this video, it's okay to use a return with nothing behind, but it's strictly forbidden to return null. From this previous test, I asked myself a weird and useless question: is it possible to prefix our void type with our nullable operator? The video proves that it luckily can't be.
 
@@ -86,7 +86,7 @@ We can also add randomly in the list of interesting features the following:
 
 You first want to know that you shouldn't use it in production environments! It's a RC for duck's sake! And to answer:
 
-*   compile it from source, this [guide](http://php.net/manual/fr/install.windows.building.php){:target="_blank" rel="nofollow noopener noreferrer"} explains it very clearly;
+*   compile it from source, this [guide](http://php.net/manual/fr/install.windows.building.php){:rel="nofollow"} explains it very clearly;
 *   use phpenv, which is basically compiling it from source in an automated way.
 
 I recommend using the second solution on dev environments since it's not rare professionnally to handle projects not using same PHP versions. PHPEnv allows you to run multiple versions of PHP in CLI, based on the project. I'll certainly do a post to explain how to plug Nginx, PHP-FPM and PHPEnv to have multiple versions of PHP in a HTTP way (on dev env, right ? RIGHT ?!).
@@ -97,8 +97,8 @@ This version, even being minor, comes with a lot of changes.
 
 I'm aware that PHP is not the perfect language, and has many missing features. But we can hope that, one day, we will have native annotations or enumerations for example. The community is constantly moving, and tries really hard to improve PHP and its reputation.
 
-If you want to know more about PHP 7.1 features, I invite you to read [RFC's](https://wiki.php.net/rfc#php_71){:target="_blank" rel="nofollow noopener noreferrer"}.
+If you want to know more about PHP 7.1 features, I invite you to read [RFC's](https://wiki.php.net/rfc#php_71){:rel="nofollow"}.
 
 See you later for an article on PHP 7.2, if features are good enough to be listed ;)
 
-![cat bye goodbye done im out](https://media.giphy.com/media/iPiUxztIL4Sl2/giphy.gif){:target="_blank" rel="nofollow noopener noreferrer"}
+![cat bye goodbye done im out](https://media.giphy.com/media/iPiUxztIL4Sl2/giphy.gif){:rel="nofollow"}
