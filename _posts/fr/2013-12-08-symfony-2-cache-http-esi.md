@@ -23,11 +23,11 @@ Lorsque l’on développe un site, en particulier un site à fort trafic, on est
 
 # 1) Principe du cache HTTP
 
-Le système de cache de Symfony vous permettra de diminuer les temps de réponses de vos pages en utilisant la puissance du cache HTTP tel qu'il est défini dans la <a href="https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank" style="color:#0000ff;">spécification HTTP</a>. Sachez cependant que ce n’est qu’une des solutions possibles.
+Le système de cache de Symfony vous permettra de diminuer les temps de réponses de vos pages en utilisant la puissance du cache HTTP tel qu'il est défini dans la <a href="https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol" rel="nofollow noreferrer" style="color:#0000ff;">spécification HTTP</a>. Sachez cependant que ce n’est qu’une des solutions possibles.
 
 Pour augmenter la vitesse d'une application, on peut par exemple:
 - optimiser l’utilisation de la base de données. Gérer l’espace alloué à la mémoire tampon pour accélérer l’accès aux données les plus souvent demandées, développer des vues et des procédures pour alléger votre serveur par exemple.
-- Utiliser la mise en cache des <a href="http://php.net/manual/fr/book.opcache.php" target="_blank" style="color:#0000ff;">OPCodes</a> si vous êtes admin de votre serveur. Pour résumer grossièrement, l’OPCode est le code intermédiaire lors de la transformation de votre code (HTML, PHP …) en code binaire compréhensible par la machine. On trouvera parmi les plus connus APC, XCache ou encore EAccelerator.
+- Utiliser la mise en cache des <a href="http://php.net/manual/fr/book.opcache.php" rel="nofollow noreferrer" style="color:#0000ff;">OPCodes</a> si vous êtes admin de votre serveur. Pour résumer grossièrement, l’OPCode est le code intermédiaire lors de la transformation de votre code (HTML, PHP …) en code binaire compréhensible par la machine. On trouvera parmi les plus connus APC, XCache ou encore EAccelerator.
 
 Pour revenir au cache http, expliquons en un peu le principe. Le rôle de la mémoire cache (ou reverse proxy) est d’accepter les requêtes coté client et de les transmettre au serveur. Il va ensuite recevoir les réponses et les transmettre au client. Lors de ces deux étapes, il va mémoriser les requêtes et les réponses associées. Ceci lui permettra lorsque qu’une même requête est demandée, de vous retourner la réponse sans la redemander au serveur. On économise donc du temps et des ressources.
 
@@ -185,7 +185,7 @@ Maintenant, si on jette à nouveau un œil à notre firebug:
 <br/>
 [![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/response2.png)](/assets/2013-12-08-symfony-2-cache-http-esi/response2.png){: .center-image .no-link-style}
 
-On constate que le système de cache est bien activé. Pour aller plus loin avec les différentes options possibles de l’en-tête, je vous invite fortement, si ce n’est pas déjà fait, à lire la doc sur le site officiel de <a href="http://symfony.com/doc/master/http_cache.html" target="_blank" style="color:#0000ff;">Symfony</a>.
+On constate que le système de cache est bien activé. Pour aller plus loin avec les différentes options possibles de l’en-tête, je vous invite fortement, si ce n’est pas déjà fait, à lire la doc sur le site officiel de <a href="http://symfony.com/doc/master/http_cache.html" rel="nofollow noreferrer" style="color:#0000ff;">Symfony</a>.
 
 Ok, tout ça c’est bien, mais cela met en cache une page entière. Mais votre besoin sera peut-être de ne mettre en page qu’une partie de la page.
 Heureusement pour nous, Symfony a pensé à tout et nous fournit une solution, les «Edge Side Includes» (ESI).

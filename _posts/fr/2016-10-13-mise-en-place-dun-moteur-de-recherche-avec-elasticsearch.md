@@ -52,7 +52,7 @@ Pour ce tuto, je serai sous Ubuntu 14.04 mais il ne devrait pas y avoir de diff
 
 Elasticsearch nécessite que Java soit installé sur votre machine, il vous faut au moins la version 7 mais le jdk 1.8 est recommandé.
 
-On a fait le plus gros du travail maintenant, téléchargez la dernière version de <a href="https://www.elastic.co/downloads/elasticsearch" target="_blank" style="color:#0000ff;">Elasticsearch HTTP</a>.
+On a fait le plus gros du travail maintenant, téléchargez la dernière version de <a href="https://www.elastic.co/downloads/elasticsearch" rel="nofollow noreferrer" style="color:#0000ff;">Elasticsearch HTTP</a>.
 
 Dézippez-le:
 ```bash
@@ -89,7 +89,7 @@ Et voilà, votre moteur de recherche est opérationnel :
 
 Par défaut, Elasticsearch choisira un nom d'un personnage Marvel de manière aléatoire parmi une liste de plus de 3000 noms.
 
-Si vous allez sur <a href="http://localhost:9200/" target="_blank" style="color:#0000ff;">http://localhost:9200/</a> dans votre navigateur ou que vous tapez dans votre terminal :
+Si vous allez sur <a href="http://localhost:9200/" rel="nofollow noreferrer" style="color:#0000ff;">http://localhost:9200/</a> dans votre navigateur ou que vous tapez dans votre terminal :
 ```bash
 curl -XGET 'http://localhost:9200/'
 ```
@@ -145,7 +145,7 @@ curl XPOST 'http://localhost:9200/_bulk' -d '
 {"name": "tom", "hobbies": ["tennis", "guitar"], "age" : 35}'
 ```
 
-Ici, j'ai utilisé l'<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html" target="_blank" style="color:#0000ff;">API Bulk</a> de Elasticsearch qui permet d'insérer plusieurs documents en même temps.
+Ici, j'ai utilisé l'<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html" rel="nofollow noreferrer" style="color:#0000ff;">API Bulk</a> de Elasticsearch qui permet d'insérer plusieurs documents en même temps.
 
 Maintenant qu'on a des données, passons aux requêtes. La requête la plus simple que vous puissiez faire, c'est celle par id:
 ```bash
@@ -234,7 +234,7 @@ Et hop :
 
 Ici vous remarquez que bien que le champ "hobbies" soit un tableau, la recherche s'effectue comme s'il était un simple champ string. Elasticsearch est suffisamment intelligent pour comprendre que la recherche s'applique au contenu du tableau.
 
-Le système de recherche est très poussé et ne peut être traité dans un simple article mais je vous laisse parcourir la <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html" target="_blank" style="color:#0000ff;">documentation</a> qui est très complète.
+Le système de recherche est très poussé et ne peut être traité dans un simple article mais je vous laisse parcourir la <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html" rel="nofollow noreferrer" style="color:#0000ff;">documentation</a> qui est très complète.
 
 On peut voir dans le résultat ci-dessus, un champ "_score" qui correspond à la pertinence du document par rapport à la recherche. Vous pourrez donc influencer la pertinence des résultats en _boostant _la valeur d'un champ lorsque celui-ci match votre requête.
 

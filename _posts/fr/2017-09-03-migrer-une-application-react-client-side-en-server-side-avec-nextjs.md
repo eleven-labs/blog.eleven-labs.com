@@ -31,12 +31,12 @@ Premiers pas
 
 Avant tout, il nous faut regarder ce que propose Next.JS afin de voir si ce framework correspond à nos besoins :
 
-* Une [installation simple](https://github.com/zeit/next.js#setup){:rel="nofollow noreferrer"}{:target="_blank"},
-* Rendu de [fichiers statiques](https://github.com/zeit/next.js#static-file-serving-eg-images){:rel="nofollow noreferrer"}{:target="_blank"} tel que des images et fichiers CSS dans un répertoire `static`,
+* Une [installation simple](https://github.com/zeit/next.js#setup){:rel="nofollow noreferrer"},
+* Rendu de [fichiers statiques](https://github.com/zeit/next.js#static-file-serving-eg-images){:rel="nofollow noreferrer"} tel que des images et fichiers CSS dans un répertoire `static`,
 * Des URLs (routing) pré-définies à partir des noms des fichiers JS présents dans le répertoire `pages`,
-* Possibilité de définir des [routes personnalisées/paramétrisées](https://github.com/zeit/next.js/#custom-server-and-routing){:target="_blank"} (mais j'ai utilisé [next-routes](https://github.com/fridays/next-routes){:target="_blank"} pour cela, plus simple d'utilisation){:rel="nofollow noreferrer"},
-* Exécuter des [actions côté serveur seulement](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle){:rel="nofollow noreferrer"}{:target="_blank"},
-* Une intégration simple avec Redux grâce à [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper){:rel="nofollow noreferrer"}{:target="_blank"}.
+* Possibilité de définir des [routes personnalisées/paramétrisées](https://github.com/zeit/next.js/#custom-server-and-routing){:rel="nofollow noreferrer"} (mais j'ai utilisé [next-routes](https://github.com/fridays/next-routes){:rel="nofollow noreferrer"} pour cela, plus simple d'utilisation){:rel="nofollow noreferrer"},
+* Exécuter des [actions côté serveur seulement](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle){:rel="nofollow noreferrer"},
+* Une intégration simple avec Redux grâce à [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper){:rel="nofollow noreferrer"}.
 
 À priori, vous devriez donc avoir tout ce dont vous avez besoin pour migrer votre projet. Commençons !
 

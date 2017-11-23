@@ -28,17 +28,17 @@ PhantomJS est un navigateur webkit en ligne de commande. Il vous permet entre au
 *   de manipuler le DOM
 *   etc
 
-Je vous laisse la curiosité de survoler la <a href="http://phantomjs.org/documentation/" target="_blank" style="color:#0000ff;">documentation</a> qui est assez complète et plutôt bien faite. Au pire la communauté est plutôt active et répondra à la plupart de vos questions.
+Je vous laisse la curiosité de survoler la <a href="http://phantomjs.org/documentation/" rel="nofollow noreferrer" style="color:#0000ff;">documentation</a> qui est assez complète et plutôt bien faite. Au pire la communauté est plutôt active et répondra à la plupart de vos questions.
 
 # I Installation
 
 Les exemples que je vais détailler dans cet article seront faits sous ubuntu 14.04.
 
-Pour installer PhantomJS, rien de compliqué, rendez-vous sur le <a href="http://phantomjs.org/download.html" target="_blank" style="color:#0000ff;">site officiel</a>.
+Pour installer PhantomJS, rien de compliqué, rendez-vous sur le <a href="http://phantomjs.org/download.html" rel="nofollow noreferrer" style="color:#0000ff;">site officiel</a>.
 
 Deux possibilités s'offrent à vous, la 1ère (et celle que j'ai choisie) est de télécharger un zip, vous le décompressez et c'est gagné.
 
-La 2ème est de <a href="http://phantomjs.org/build.html" target="_blank" style="color:#0000ff;">compiler Phantom</a> vous-même. Ce n'est pas plus compliqué que la 1ère méthode, c'est juste plus long.
+La 2ème est de <a href="http://phantomjs.org/build.html" rel="nofollow noreferrer" style="color:#0000ff;">compiler Phantom</a> vous-même. Ce n'est pas plus compliqué que la 1ère méthode, c'est juste plus long.
 
 # II Capture
 
@@ -68,7 +68,7 @@ page.open(address, function(status) {
 });
 ```
 
-Ceci est un exemple très simpliste car PhantomJS possède tout un tas d'<a href="http://phantomjs.org/api/webpage/" target="_blank" style="color:#0000ff;">options</a>.
+Ceci est un exemple très simpliste car PhantomJS possède tout un tas d'<a href="http://phantomjs.org/api/webpage/" rel="nofollow noreferrer" style="color:#0000ff;">options</a>.
 
 La première ligne est essentielle comme vous pouvez l'imaginer car elle permet de récupérer le mode rendu de page web.
 
@@ -136,7 +136,7 @@ Vous voyez également via cet exemple qu'il vous est possible de manipuler le DO
 
 # III Exécuter des tests
 
-PhantomJS peut également être utilisé pour exécuter des tests JavaScript. Parmi tous <a href="https://github.com/ariya/phantomjs/tree/master/examples" target="_blank" style="color:#0000ff;">les exemples</a> fournis sur leur GitHub officiel, vous trouverez des scripts afin d’exécuter des tests QUnit et Jasmine.
+PhantomJS peut également être utilisé pour exécuter des tests JavaScript. Parmi tous <a href="https://github.com/ariya/phantomjs/tree/master/examples" rel="nofollow noreferrer" style="color:#0000ff;">les exemples</a> fournis sur leur GitHub officiel, vous trouverez des scripts afin d’exécuter des tests QUnit et Jasmine.
 
 Voici un exemple avec QUnit:
 
@@ -166,7 +166,7 @@ QUnit.test( "hello test", function( assert ) {
 });
 ```
 
-Et enfin, téléchargez le fichier <a href="https://github.com/ariya/phantomjs/blob/master/examples/run-qunit.js" target="_blank" style="color:#0000ff;">run-qunit.js</a> et lancez la commande:
+Et enfin, téléchargez le fichier <a href="https://github.com/ariya/phantomjs/blob/master/examples/run-qunit.js" rel="nofollow noreferrer" style="color:#0000ff;">run-qunit.js</a> et lancez la commande:
 ```
 path/to/phantomjs run-qunit.js page.html
 ```
@@ -178,10 +178,10 @@ Tests completed in 15 milliseconds.
 1 assertions of 1 passed, 0 failed.
 ```
 
-Vous trouverez d'autres scripts tels que run-qunit.js à <a href="https://github.com/jonkemp/qunit-phantomjs-runner" target="_blank" style="color:#0000ff;">cette adresse</a>.
+Vous trouverez d'autres scripts tels que run-qunit.js à <a href="https://github.com/jonkemp/qunit-phantomjs-runner" rel="nofollow noreferrer" style="color:#0000ff;">cette adresse</a>.
 
 # IV Conclusion
 
 PhantomJS est un outil très puissant et bien documenté. Donc, si vous avez besoin de générer des pdfs et/ou des images et que votre site contient beaucoup de javascript, PhantomJS peut devenir votre allié.
 
-Mais ce n'est là qu'un aperçu de ses possibilités, je vous encourage à faire un tour sur leur <a href="http://phantomjs.org/examples/index.html" target="_blank" style="color:#0000ff;">site</a>, cela peut vous donner des idées.
+Mais ce n'est là qu'un aperçu de ses possibilités, je vous encourage à faire un tour sur leur <a href="http://phantomjs.org/examples/index.html" rel="nofollow noreferrer" style="color:#0000ff;">site</a>, cela peut vous donner des idées.
