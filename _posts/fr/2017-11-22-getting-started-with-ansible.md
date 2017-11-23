@@ -13,8 +13,7 @@ tags:
     - vps
     - serveur
     - ansible
-image:
-  path: /assets/2017-11-22-getting-started-with-ansible/ansible.png
+cover: /assets/2017-11-22-getting-started-with-ansible/ansible.png
 ---
 
 ## Commencer avec Ansible
