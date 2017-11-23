@@ -19,22 +19,22 @@ image:
 
 ## Commencer avec Ansible
 
-Quoi de mieux qu'un cas concret pour découvrir et apprendre à utiliser un nouvel outil ? On va donc voir ensemble commencer avec Ansible et ne plus répéter manuellement les mêmes étapes pour chaque nouveau serveur. Cet article va donc se baser sur un précédent qui vous présentait [les bases de la sécurisation d'un nouveau serveur](
+Quoi de mieux qu'un cas concret pour découvrir et apprendre à utiliser un nouvel outil ? On va donc voir ensemble comment se lancer avec Ansible et ne plus répéter manuellement les mêmes étapes pour chaque nouveau serveur. Cet article va donc se baser sur un précédent qui vous présentait [les bases de la sécurisation d'un nouveau serveur](
 /fr/securiser-facilement-son-vps-en-quelques-etapes/).
 
 C'est parti !
 
 ### Introduction
 
-Ansible est un outil qui permet d'automatiser le provisionning de serveur (jouer des commandes sur ceux-ci). Le but est donc de vous faire gagner du temps lorsque vous devez administrer vos systèmes et éviter les tâches répétitives. Il ne nécessite que peut de choses pour fonctionner : python et openssh (on peut donc l'utiliser sur presque tous les systèmes d'exploitation). De plus il utilise le langage YAML pour gérer ses configurations qui est très simple d'utilisation.
+Ansible est un outil qui permet d'automatiser le provisionning de serveur (jouer des commandes sur ceux-ci). Le but est donc de vous faire gagner du temps lorsque vous devez administrer vos systèmes et éviter les tâches répétitives. Il ne nécessite que peu de choses pour fonctionner : python et openssh (on peut donc l'utiliser sur presque tous les systèmes d'exploitation). De plus il utilise le langage YAML pour gérer ses configurations, qui est très simple d'utilisation.
 
 ### Installation
 
-Bon pour cette partie rien de spécial, je vous renvoie sur la doc afin que vous puissiez [installer Ansible sur votre OS](http://docs.ansible.com/ansible/latest/intro_installation.html#installing-the-control-machine){:target="_blank" rel="nofollow noopener noreferrer"}.
+Bon, pour cette partie rien de spécial, je vous renvoie sur la doc afin que vous puissiez [installer Ansible sur votre OS](http://docs.ansible.com/ansible/latest/intro_installation.html#installing-the-control-machine){:target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Configuration
 
-La première chose à faire et d'ajouter l'adresse ip ou hostname de notre serveur dans le fichier hosts de Ansible : 
+La première chose à faire, c'est d'ajouter l'adresse ip ou hostname de notre serveur dans le fichier hosts de Ansible : 
 
 ```bash
 # vim /etc/ansible/hosts
@@ -54,7 +54,7 @@ Si comme moi vous recevez l'erreur `/bin/sh: 1: /usr/bin/python: not found\r\n` 
 
 ### Script
 
-Maintenant qu'Ansible a accès à notre serveur on peut passer aux choses sérieuses, à savoir notre configuration à proprement parlé (Playbook dans le langage Ansible), les choses qu'on veut installer sur notre serveur et les configurations qu'on souhaite modifier.
+Maintenant qu'Ansible a accès à notre serveur on peut passer aux choses sérieuses, à savoir notre configuration à proprement parler (Playbook dans le langage Ansible), les choses que l'on veut installer sur notre serveur et les configurations que l'on souhaite modifier.
 
 ```yaml
 ---
@@ -123,11 +123,11 @@ On voit que le script est séparé en plusieurs parties :
   - Mettre à jour la distribution installée
   - Installer les paquets dont on a besoin (ici : fail2ban et iptables-persistent)
   - Ajout un nouvel utilisateur qu'on utilisera pour se connecter en ssh au serveur par la suite
-  - On désactive le fait que le compte root puisse se connecter via ssh
-  - On redémarre le serveur ssh pour prendre en compte nos modifications
-  - On ajoute nos règles iptables v4
-  - On ajoute nos règles iptables v6 (si notre serveur possède une ipv6 bien entendu)
-  - On redémarre le service iptables-persistent (attention dans mon cas j'ai testé sur une ubuntu qui a renommé le service iptables-persistent en netfiler-persistent !)
+  - Désactiver le fait que le compte root puisse se connecter via ssh
+  - Redémarrer le serveur ssh pour prendre en compte nos modifications
+  - Ajouter nos règles iptables v4
+  - Ajouter nos règles iptables v6 (si notre serveur possède une ipv6 bien entendu)
+  - Redémarrer le service iptables-persistent (attention dans mon cas j'ai testé sur une ubuntu qui a renommé le service iptables-persistent en netfiler-persistent !)
 
 Cela reste minimaliste, on peut bien entendu étoffer le playbook afin de changer le port ssh, rajouter des règles fail2ban, etc. Mais le but ici est simplement de vous présenter l'outil et son fonctionnement.
 
@@ -136,7 +136,7 @@ Je vous ai mis un exemple concret de répertoire Ansible ici : [github.com/snrok
 Le répertoire possède plusieurs fichiers :
 
 - main.yml (qui est le fichier que j'ai recopié au dessus) : permet de définir les tasks qu'Ansible va devoir effectuer (une bonne pratique est de séparer les différentes "étapes" en plusieurs fichiers)
-- ansible.cfg : permet d'indiquer à Ansible qu'il faut qu'il utilise le fichier hosts de ce dossier et qu'il ne doit pas vérifier le ou les host(s) auquel il doit se connecter
+- ansible.cfg : permet d'indiquer à Ansible qu'il faut qu'il utilise le fichier hosts de ce dossier et qu'il ne doit pas vérifier le ou les host(s) auxquels il doit se connecter
 - iptables.rules : les règles iptables qu'on veut exécuter sur nos serveurs
 - hosts : le fichier qui contient la liste des serveurs où exécuter Ansible
 
@@ -148,7 +148,7 @@ Vous pouvez cloner le repository ci-dessus ou créer le votre. Une fois fait voi
 # ansible-playbook main.yml -uroot --ask-pass
 ```
 
-Si tout ce passe bien vous devriez vous retrouver avec un récap qui vous indique ce qu'il s'est passé.
+Si tout se passe bien vous devriez vous retrouver avec un récap qui vous indique ce qu'il s'est passé.
 
 Vous pouvez maintenant vous connecter à votre serveur en utilisant le username et password indiqués plus haut !
 
