@@ -13,10 +13,7 @@ tags:
     - TAG 1
     - TAG 2
     - ...
-image:
-  path: URL D'IMAGE DE HOME
-  height: HAUTEUR DE L'IMAGE
-  width: LARGEUR DE L'IMAGE
+cover: URL DE L'IMAGE (/assets/....)
 ---
 
 VOTRE ARTICLE EN MARKDOWN
