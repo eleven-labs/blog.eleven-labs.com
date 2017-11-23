@@ -29,11 +29,11 @@ Ansible est un outil qui permet d'automatiser le provisionning de serveur (jouer
 
 ### Installation
 
-Bon, pour cette partie rien de spécial, je vous renvoie sur la doc afin que vous puissiez [installer Ansible sur votre OS](http://docs.ansible.com/ansible/latest/intro_installation.html#installing-the-control-machine){:target="_blank" rel="nofollow noopener noreferrer"}.
+Bon, pour cette partie rien de spécial, je vous renvoie sur la doc afin que vous puissiez [installer Ansible sur votre OS](http://docs.ansible.com/ansible/latest/intro_installation.html#installing-the-control-machine){rel="nofollow noreferrer"}.
 
 ### Configuration
 
-La première chose à faire, c'est d'ajouter l'adresse ip ou hostname de notre serveur dans le fichier hosts de Ansible : 
+La première chose à faire, c'est d'ajouter l'adresse ip ou hostname de notre serveur dans le fichier hosts de Ansible :
 
 ```bash
 # vim /etc/ansible/hosts
@@ -101,7 +101,7 @@ Maintenant qu'Ansible a accès à notre serveur on peut passer aux choses série
       action: copy src=iptables.rules dest=/etc/iptables/rules.v6 owner=root group=root mode=0644
 
     - name: Restart iptables-persistent
-      service: 
+      service:
         name: netfilter-persistent
         state: restarted
 
@@ -130,7 +130,7 @@ On voit que le script est séparé en plusieurs parties :
 
 Cela reste minimaliste, on peut bien entendu étoffer le playbook afin de changer le port ssh, rajouter des règles fail2ban, etc. Mais le but ici est simplement de vous présenter l'outil et son fonctionnement.
 
-Je vous ai mis un exemple concret de répertoire Ansible ici : [github.com/snroki/ansible](https://github.com/snroki/ansible){:target="_blank" rel="nofollow noopener noreferrer"}
+Je vous ai mis un exemple concret de répertoire Ansible ici : [github.com/snroki/ansible](https://github.com/snroki/ansible){:rel="nofollow noreferrer"}
 
 Le répertoire possède plusieurs fichiers :
 

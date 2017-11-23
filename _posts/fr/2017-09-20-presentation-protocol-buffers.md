@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Présentation de Protocol Buffers
-authors: 
+authors:
     - qneyrat
 lang: fr
 permalink: /fr/presentation-protocol-buffers/
@@ -29,8 +29,8 @@ Notre API va retourner un objet `Post`. Un client va appeler cette api. Nous all
 
 ```
 Go Struct  ↘                                              ↗ Java Object
-             Serialization -> bytes -> Deserialization 
-Proto file ↗                                              ↖ Proto file     
+             Serialization -> bytes -> Deserialization
+Proto file ↗                                              ↖ Proto file
 ```
 
 Nous allons maintenant voir étape par étape comment ça fonctionne.
@@ -68,7 +68,7 @@ La déclaration d'une propriété est définie par un type `int32` ou `string` (
 On peut aussi faire de la composition en créant de nouveaux types comme ici `PhoneNumber` ou bien des énumérations.
 Des modèles de données sont aussi disponibles comme les `array` avec le mot-clé `repeated` ou bien encore des maps avec `map<Key, Value>`.
 
-Vous pouvez retrouver tous les types et déclaration sur [la documentation de Protobuf](https://developers.google.com/protocol-buffers/docs/proto3){:rel="nofollow noreferrer"}{:target="_blank"}.
+Vous pouvez retrouver tous les types et déclaration sur [la documentation de Protobuf](https://developers.google.com/protocol-buffers/docs/proto3){:rel="nofollow noreferrer"}.
 
 Une fois notre fichier proto prêt, nous pouvons générer notre fichier Go ou autres avec la commande `protoc`.
 
@@ -76,7 +76,7 @@ Par exemple :
 
 ```Bash
 protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/person.proto
-``` 
+```
 
 En lui donnant le fichier proto en entrée et le dossier de destination en précisant le langage Go `--go_out` ou Java `--java_out`.
 
@@ -99,7 +99,7 @@ Nous allons assigner à `a` la valeur 150. Une sérialisation en `json` donnerai
 
 ```JSON
 {"a": 150}
-``` 
+```
 
 Donne `7b 22 61 22 3a 31 35 30 7d` sur 9 octets.
 
@@ -109,7 +109,7 @@ En sérialisant avec Protobuf on obtient `08 96 01` sur 3 octets. Ce binaire est
 
 Codage de la clé : `(POSITION << 3) | TYPE`
 
-La position ici est 1 et le type 0, soit :  
+La position ici est 1 et le type 0, soit :
 
 ```
 (1 << 3) | 0 = 0000 1000
@@ -128,7 +128,7 @@ Codage de la valeur : groupage en 7 bits avec l'ajout d'un msb (most significant
        → 2 + 4 + 16 + 128 = 150
 ```
 
-Un binaire protobuf sera plus léger qu'un json et donc plus rapidement transmis dans une requête. De plus le parsing est très performant, retrouvez un article sur [les performances de Protobuf](https://medium.com/@fzambia/centrifugo-protobuf-inside-json-outside-21d39bdabd68){:rel="nofollow noreferrer"}{:target="_blank"}.
+Un binaire protobuf sera plus léger qu'un json et donc plus rapidement transmis dans une requête. De plus le parsing est très performant, retrouvez un article sur [les performances de Protobuf](https://medium.com/@fzambia/centrifugo-protobuf-inside-json-outside-21d39bdabd68){:rel="nofollow noreferrer"}.
 
 Nous allons maintenant voir tout ça en pratique.
 
@@ -138,7 +138,7 @@ Nous allons maintenant voir tout ça en pratique.
 Nous allons tout d'abord installer `protoc` qui permet de générer notre code depuis les fichiers protobuf. [Installer la version pour votre système d'exploitation](https://github.com/google/protobuf/releases/latest){:rel="nofollow noreferrer"}. Une fois ceci fait on va déclarer notre fichier protobuf. Nous allons ensuite installer la librairie qui va permettre de gérer la génération des fichiers Go.
 
 ```Bash
-go get -u github.com/golang/protobuf/protoc-gen-go 
+go get -u github.com/golang/protobuf/protoc-gen-go
 ```
 
 ### Le fichier Proto :
@@ -160,7 +160,7 @@ Un `Post` est donc composé d'un `id`, d'un `title` et d'un `author`.
 Nous allons donc générer le fichier `Post` grâce à `protoc`:
 
 ```Bash
-protoc --proto_path=. --go_out=. post.proto 
+protoc --proto_path=. --go_out=. post.proto
 ```
 
 Nous devons récupérer la librairie `proto` qui sera utilisée dans le client et dans le serveur.
@@ -260,4 +260,4 @@ Points négatifs :
 - maintenir les fichiers proto
 - debug (message en binaire)
 
-Nous verrons dans un prochain article gRPC, un client RPC qui utilise HTTP2 et protobuf.  
+Nous verrons dans un prochain article gRPC, un client RPC qui utilise HTTP2 et protobuf.

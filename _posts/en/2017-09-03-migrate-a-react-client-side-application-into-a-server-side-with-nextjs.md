@@ -32,12 +32,12 @@ First steps
 
 First of all, we need to look at what Next.JS has to offer so that we can see if this framework fits our needs:
 
-* A [simple installation](https://github.com/zeit/next.js#setup){:rel="nofollow noreferrer"}{: target="_blank"},
-* Rendering of [static files](https://github.com/zeit/next.js#static-file-serving-eg-images){:rel="nofollow noreferrer"}{: target="_blank"} such as images and CSS files in a `static` directory,
+* A [simple installation](https://github.com/zeit/next.js#setup){:rel="nofollow noreferrer"},
+* Rendering of [static files](https://github.com/zeit/next.js#static-file-serving-eg-images){:rel="nofollow noreferrer"} such as images and CSS files in a `static` directory,
 * Routing URLs pre-defined from the names of the JS files in the `pages` directory,
-* Possibility to define [customized/parameterized routes](https://github.com/zeit/next.js/#custom-server-and-routing){: target="_blank"} (but I used [next-routes](https://github.com/fridays/next-routes){: target="_blank"} for this, a cleaner way){:rel="nofollow noreferrer"},
-* Running [server-side actions only](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle){:rel="nofollow noreferrer"}{: target="_blank"},
-* Simple integration with Redux using [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper){:rel="nofollow noreferrer"}{: target="_blank"}.
+* Possibility to define [customized/parameterized routes](https://github.com/zeit/next.js/#custom-server-and-routing){:rel="nofollow noreferrer"} (but I used [next-routes](https://github.com/fridays/next-routes){:rel="nofollow noreferrer"} for this, a cleaner way),
+* Running [server-side actions only](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle){:rel="nofollow noreferrer"},
+* Simple integration with Redux using [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper){:rel="nofollow noreferrer"}.
 
 So you should have everything you need to migrate your project. Let's get started!
 

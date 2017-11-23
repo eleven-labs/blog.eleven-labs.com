@@ -25,7 +25,7 @@ At Eleven Labs, our agile methodology is mainly based on the SCRUM framework. I 
 
 We will focus on the SCRUM sprint retrospective in the context of a web development project, but most of the tools mentioned here could be used with any other agile frameworks and almost all types of projects.
 
-[![SCRUM Sprint Retrospective](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/eleven-labs-scrum-sprint-focus-retrospective.png)](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/eleven-labs-scrum-sprint-focus-retrospective.png){: .center-image .no-link-style}{:target="_blank"}
+[![SCRUM Sprint Retrospective](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/eleven-labs-scrum-sprint-focus-retrospective.png)](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/eleven-labs-scrum-sprint-focus-retrospective.png){: .center-image .no-link-style}
 
 *<center>SCRUM Sprint Retrospective</center>*
 
@@ -100,7 +100,7 @@ If the team is globally not confident enough to discuss any subjects, possibly t
 
 In the same way, the 5 grades of the Safety Check described above can be displayed in a funny way, using pictures, characters or smileys reflecting the level of confidence.
 
-[![Mood Board with Eleven Labs astronauts](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/astronauts-mood-board.jpg)](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/astronauts-mood-board.jpg){: .center-image .no-link-style}{:target="_blank"}
+[![Mood Board with Eleven Labs astronauts](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/astronauts-mood-board.jpg)](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/astronauts-mood-board.jpg){: .center-image .no-link-style}
 
 *<center>Mood Board with Eleven Labs astronauts</center>*
 
@@ -119,7 +119,7 @@ The most common practice, and usually the most efficient, is to ask to everyone 
 -   or a metaphorical declination of a boat, symbolizing the team: the facilitator draws a boat, half under water, half above water, with its sail allowing it to move, its anchor slowing it down and attracting it to the ocean ground, and the wind which has the potential to make it move faster.
 -   In the end you can even come up with your very own categories. At Eleven Labs we are quite fond of these ones: **'⊕ Positive Points', '⊖ Negative Points', '✨ Improvement ideas', '❤ Special thanks'**
 
-[![Post-its, as used during our retrospectives](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-retrospective.jpg)](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-retrospective.jpg){: .center-image .no-link-style}{:target="_blank"}
+[![Post-its, as used during our retrospectives](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-retrospective.jpg)](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-retrospective.jpg){: .center-image .no-link-style}
 
 *<center>Post-its, as used during our retrospectives</center>*
 
@@ -199,7 +199,7 @@ Don't hesitate to share your own retrospectives experiences by commenting below.
 
 **Sources :**
 
-- [Sprint Retrospective Meeting](http://scrumtrainingseries.com/SprintRetrospectiveMeeting/SprintRetrospectiveMeeting.htm){:rel="nofollow noreferrer"}{:target="_blank"}
-- [Retrospective Wiki](http://retrospectivewiki.org/){:rel="nofollow noreferrer"}{:target="_blank"}
-- [Retrospective Agiles](http://retrospectives-agiles.fr/){:rel="nofollow noreferrer"}{:target="_blank"}
-- [Inspect and Adapt](http://www.scaledagileframework.com/inspect-and-adapt/){:rel="nofollow noreferrer"}{:target="_blank"}
+- [Sprint Retrospective Meeting](http://scrumtrainingseries.com/SprintRetrospectiveMeeting/SprintRetrospectiveMeeting.htm){:rel="nofollow noreferrer"}
+- [Retrospective Wiki](http://retrospectivewiki.org/){:rel="nofollow noreferrer"}
+- [Retrospective Agiles](http://retrospectives-agiles.fr/){:rel="nofollow noreferrer"}
+- [Inspect and Adapt](http://www.scaledagileframework.com/inspect-and-adapt/){:rel="nofollow noreferrer"}
