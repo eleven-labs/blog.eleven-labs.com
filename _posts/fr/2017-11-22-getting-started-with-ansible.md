@@ -67,7 +67,7 @@ Maintenant qu'Ansible a accès à notre serveur on peut passer aux choses série
 
     - name: Install base packages
       apt:
-        name: "{{ item }}"
+        name: "{% raw %}{{ item }}{% endraw %}"
         state: present
         update_cache: yes
       with_items:
@@ -76,8 +76,8 @@ Maintenant qu'Ansible a accès à notre serveur on peut passer aux choses série
 
     - name: Add non-root user
       user:
-        name: "{{ username }}"
-        password: "{{ password }}"
+        name: "{% raw %}{{ username }}{% endraw %}"
+        password: "{% raw %}{{ password }}{% endraw %}"
         shell: /bin/bash
         update_password: on_create
         state: present
