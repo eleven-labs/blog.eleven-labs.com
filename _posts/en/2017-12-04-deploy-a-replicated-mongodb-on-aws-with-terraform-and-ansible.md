@@ -22,7 +22,7 @@ I recently had the opportunity to deploy a MongoDB server on Amazon Web Services
 
 To automate the creation of EC2 machines, I used [Terraform](https://www.terraform.io/) (and its `aws` provider) as well as Ansible](https://www.ansible.com/) for provisioning. This article describes the technical logic that we set up to achieve this.
 
-# Context
+## Context
 
 So we have a MongoDB cluster composed of three EC2 instances (say, `t2. large` type).
 
@@ -43,7 +43,7 @@ The definition of a server (primary or secondary) is done through a majority ele
 
 It is therefore impossible to define this replication model with only two servers in your cluster.
 
-# Terraform: server creation
+## Terraform: server creation
 
 So let's move on to the creation of machines on AWS: we have made the choice of [Terraform](https://www.terraform.io){"target":"_blank"} for this part, a resource automation tool.
 
@@ -197,7 +197,7 @@ You will notice that we allow here all the provenances in the `cidr_blocks` entr
 
 We are now finished with the Terraform part: we are able to create a MongoDB (EC2) server on AWS but we still have to provision the server.
 
-# Ansible: provisioning
+## Ansible: provisioning
 
 To provision the MongoDB server, we use an Ansible playbook. Here is the definition of the playbook:
 
@@ -390,10 +390,10 @@ rs0:PRIMARY> rs.conf()
 
 Thus, no more doubt about your configuration. You also have the option of giving weight to certain servers that will allow you to influence the elections of a new primary server in case of a failure on your cluster via the `priority` property.
 
-# Conclusion
+## Conclusion
 
 Deploying a MongoDB cluster with an active replication on a specified infrastructure via Terraform code and provisioned with Ansible is really very simple. Indeed, MongoDB makes things much easier for us because it only takes a few lines of configuration to activate replication.
 
 The whole logic of primary server election and re-definition is managed by MongoDB.
 
-To go further with MongoDB replication, I invite you to browse the official MongoDB documentation which explains very well, with diagrams, the operation and the various configuration parameters available to configure your replicas:[https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction](https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction){"target":"_blank"}.
+To go further with MongoDB replication, I invite you to browse the official MongoDB documentation which explains very well, with diagrams, operation and the various configuration parameters available to configure your replicas:[https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction](https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction).

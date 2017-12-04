@@ -22,7 +22,7 @@ J'ai récemment eu l'occasion de déployer un serveur MongoDB sur Amazon Web Ser
 
 Pour l'automatisation de la création des machines EC2, j'ai utilisé [Terraform](https://www.terraform.io/) (et son provider `aws`) ainsi que [Ansible](https://www.ansible.com/) pour le provisionnement. Cet article décrit la logique technique que nous avons mis en place pour y arriver.
 
-# Contexte
+## Contexte
 
 Nous avons donc un cluster MongoDB composé de trois instances EC2 (disons de type `t2.large`).
 
@@ -43,7 +43,7 @@ La définition d'un serveur (primaire ou secondaire) se fait via le biais d'une 
 
 Impossible donc de définir ce modèle de réplication avec seulement deux serveurs dans votre cluster.
 
-# Terraform : création des serveurs
+## Terraform : création des serveurs
 
 Passons maintenant à la création des machines sur AWS : nous avons fait le choix de ![Terraform](https://www.terraform.io){"target":"_blank"} pour cette partie, un outil d'automatisation de ressources.
 
@@ -197,7 +197,7 @@ Vous noterez que l'on autorise ici toutes les provenances dans l'entrée `cidr_b
 
 Nous en avons terminé avec la partie Terraform : nous sommes capables de créer un serveur MongoDB (EC2) sur AWS mais il nous reste à provisionner le serveur.
 
-# Ansible : provisioning
+## Ansible : provisioning
 
 Pour provisionner le serveur MongoDB, nous utilisons un playbook Ansible. Voici la définition du playbook :
 
@@ -390,10 +390,10 @@ rs0:PRIMARY> rs.conf()
 
 Ainsi, plus de doute sur votre configuration. Vous avez également la possibilité de donner du poids à certains serveur, ce qui permettra d'influencer les élections d'un nouveau serveur primaire en cas de panne sur votre cluster via la propriété `priority`.
 
-# Conclusion
+## Conclusion
 
 Déployer un cluster MongoDB avec un réplication active sur une infrastructure spécifiée via du code Terraform et provisionnée avec Ansible est vraiment très simple. En effet, MongoDB nous facilite beaucoup les choses car il ne suffit que de quelques lignes de configuration pour activer la réplication.
 
 Toute la logique d'élection et de re-définition de serveur primaire est gérée par MongoDB.
 
-Pour aller plus loin au niveau de la réplication MongoDB, je vous invite à parcourir la documentation officielle de MongoDB qui explique très bien, avec des schémas, le fonctionnement et les différents paramètres de configuration disponibles pour configurer au mieux vos réplicas : [https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction](https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction){"target":"_blank"}
+Pour aller plus loin au niveau de la réplication MongoDB, je vous invite à parcourir la documentation officielle de MongoDB qui explique très bien, avec des schémas, le fonctionnement et les différents paramètres de configuration disponibles pour configurer au mieux vos réplicas : [https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction](https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction).
