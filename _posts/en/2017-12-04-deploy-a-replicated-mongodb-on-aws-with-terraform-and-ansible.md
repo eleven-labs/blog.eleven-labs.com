@@ -20,7 +20,7 @@ cover: /assets/2017-09-03-migrer-une-application-react-client-side-en-server-sid
 
 I recently had the opportunity to deploy a MongoDB server on Amazon Web Services (AWS). In order to limit the problems of crash and data loss, it is also replicated with two other servers, ideally in a different geographical area to ensure high availability.
 
-To automate the creation of EC2 machines, I used [Terraform](https://www.terraform.io/) (and its `aws` provider) as well as Ansible](https://www.ansible.com/) for provisioning and this article describes the technical logic that we set up to achieve this.
+To automate the creation of EC2 machines, I used [Terraform](https://www.terraform.io/) (and its `aws` provider) as well as Ansible](https://www.ansible.com/) for provisioning. This article describes the technical logic that we set up to achieve this.
 
 # Context
 
@@ -32,7 +32,7 @@ In order for these three servers to share the same data, we will need to create 
 
 What is important to note is that only the `primary` server will be able to read or write data. The `secondary` servers are there to take over in case the `primary` server is unavailable. This is possible thanks to an election that is launched automatically by MongoDB to elect a new `primary` server.
 
-This is the target infrastructure we are looking for for this replication:
+This is the target infrastructure we are looking for, for this replication:
 
 ![MongoDB Replication](/assets/2017-11-01-deployer-un-mongodb-replique-sur-aws-avec-terraform-et-ansible/replication.svg)
 
@@ -133,7 +133,7 @@ The field you will be interested in is `ImageId`, which you must copy into your 
 
 We then specify the type of instance as well as the type of disk and sizing we want to use for our server.
 
-Next, you will also notice that we specify a `security_groups' entry for our instance that is dynamic and actually points to another resource we have to declare.
+You will notice that we specify a `security_groups' entry for our instance that is dynamic and actually points to another resource we have to declare.
 
 So let's declare our security group for this MongoDB server:
 
@@ -191,11 +191,11 @@ resource "aws_security_group_rule" "mongodb_mongodb_replication" {
 
 Here, a bunch of rules are specified in our security group.
 
-Here we need to allow the input ports `22` (SSH), `27017` (default port of MongoDB) and `27019` which is used by MongoDB to manage communication between servers.
+We need to allow the input ports `22` (SSH), `27017` (default port of MongoDB) and `27019` which is used by MongoDB to manage communication between servers.
 
-You will notice that we allow here all the provenances in the `cidr_blocks` entry, it is obviously necessary in fact to restrict these accesses as much as possible.
+You will notice that we allow here all the provenances in the `cidr_blocks` entry, it is obviously necessary to restrict these accesses as much as possible.
 
-We have now finished with the Terraform part: we are able to create a MongoDB (EC2) server on AWS but we still have to provision the server.
+We are now finished with the Terraform part: we are able to create a MongoDB (EC2) server on AWS but we still have to provision the server.
 
 # Ansible: provisioning
 
@@ -280,9 +280,9 @@ replication:
   replSetName: "rs0"
 ```
 
-This replication cannot work only if the servers can communicate with each other.
+This replication will work only if the servers are able to communicate with each other.
 
-It is also important to secure these exchanges, which is why we will also create a key to authenticate the servers discussing between them:
+It is also important to secure these exchanges, which is why we will create a key to authenticate the servers discussing with one another:
 
 {% raw %}
 ```yaml
@@ -318,7 +318,7 @@ It is also important to secure these exchanges, which is why we will also create
 ```
 {% endraw %}
 
-We create here the necessary key with `openssl`, copy it on the servers and specify it in the configuration file (a restart of MongoDB will be necessary then to take this key into account).
+We create here the necessary key with `openssl`, copy it on the servers and specify it in the configuration file (a restart of MongoDB will be necessary to take this key into account).
 
 Finally, let's boot or reboot our MongoDB servers using the system service previously created:
 
@@ -327,7 +327,7 @@ Finally, let's boot or reboot our MongoDB servers using the system service previ
   command: systemctl restart mongodb.service
 ```
 
-When you then connect to your different MongoDB servers, you will have the `PRIMARY` or `SECONDARY` element in the console, as in the example below, which allows you to know where you are:
+Now, when you connect to your different MongoDB servers, you will have the `PRIMARY` or `SECONDARY` element in the console, as in the example below, which allows you to know where you are:
 
 ```
 root@mongodb:~# mongo --host localhost -u user -p<password> admin
@@ -396,4 +396,4 @@ Deploying a MongoDB cluster with an active replication on a specified infrastruc
 
 The whole logic of primary server election and re-definition is managed by MongoDB.
 
-To go further with MongoDB replication, I invite you to browse the official MongoDB documentation which explains very well, with diagrams, operation and the various configuration parameters available to configure your replicas:[https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction](https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction){"target":"_blank"}.
+To go further with MongoDB replication, I invite you to browse the official MongoDB documentation which explains very well, with diagrams, the operation and the various configuration parameters available to configure your replicas:[https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction](https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction){"target":"_blank"}.
