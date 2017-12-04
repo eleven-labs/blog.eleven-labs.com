@@ -45,7 +45,7 @@ Impossible donc de définir ce modèle de réplication avec seulement deux serve
 
 ## Terraform : création des serveurs
 
-Passons maintenant à la création des machines sur AWS : nous avons fait le choix de ![Terraform](https://www.terraform.io){"target":"_blank"} pour cette partie, un outil d'automatisation de ressources.
+Passons maintenant à la création des machines sur AWS : nous avons fait le choix de ![Terraform](https://www.terraform.io) pour cette partie, un outil d'automatisation de ressources.
 
 Terraform est un outil permettant d'industrialiser des tâches d'infrastructure telles que, dans notre cas, la création de machines EC2 sur notre compte AWS.
 
