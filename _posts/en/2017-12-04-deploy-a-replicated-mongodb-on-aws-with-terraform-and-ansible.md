@@ -45,7 +45,7 @@ It is therefore impossible to define this replication model with only two server
 
 ## Terraform: server creation
 
-So let's move on to the creation of machines on AWS: we have made the choice of [Terraform](https://www.terraform.io){"target":"_blank"} for this part, a resource automation tool.
+So let's move on to the creation of machines on AWS: we have made the choice of [Terraform](https://www.terraform.io) for this part, a resource automation tool.
 
 Terraform is therefore a tool for industrializing infrastructure tasks such as, in our case, the creation of EC2 machines on our AWS account.
 
