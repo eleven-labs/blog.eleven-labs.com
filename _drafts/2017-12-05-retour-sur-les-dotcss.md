@@ -3,7 +3,7 @@ layout: post
 title: Retour sur les DotCSS 2017
 lang: fr
 permalink: /fr/retour-sur-les-dotcss-2017/
-excerpt: "Comme les dotJS l’an dernier, c’est au tour des dotCSS de déménager aux docks d’Aubervilliers pour cette édition 2017 ! On est bien, on a la place d’étendre ses jambes convenablement sans qu’elles ne soient posées sur les épaules de la personne devant soi et on arrête de regretter les dorures du cosy théâtre des variétés. On s’installe donc confortablement dans notre fatboy pour assister à cette cérémonie du langage CSS dont voici les meilleurs moments. Amen!"
+excerpt: "Comme les dotJS l’an dernier, c’est au tour des dotCSS de déménager aux docks d’Aubervilliers pour cette édition 2017 ! On est bien, on a la place d’étendre ses jambes convenablement sans qu’elles ne soient posées sur les épaules de la personne devant soi et on arrête de regretter les dorures du cosy théâtre des variétés. On s’installe donc confortablement dans notre fatboy pour assister à cette cérémonie du langage CSS dont voici les meilleurs moments. Amen !"
 authors:
     - tbrugidou
 categories:
@@ -13,24 +13,24 @@ tags:
 cover: /assets/2017-12-05-retour-sur-les-dotcss/cover.jpg
 ---
 
-Comme les dotJS l’an dernier, c’est au tour des dotCSS de déménager aux docks d’Aubervilliers pour cette édition 2017 ! On est bien, on a la place d’étendre ses jambes convenablement sans qu’elles ne soient posées sur les épaules de la personne devant soi et on arrête de regretter les dorures du cosy théâtre des variétés. On s’installe donc confortablement dans notre fatboy pour assister à cette cérémonie du langage CSS dont voici les meilleurs moments. Amen!
+Comme les dotJS l’an dernier, c’est au tour des dotCSS de déménager aux docks d’Aubervilliers pour cette édition 2017 ! On est bien, on a la place d’étendre ses jambes convenablement sans qu’elles ne soient posées sur les épaules de la personne devant soi et on arrête de regretter les dorures du cosy théâtre des variétés. On s’installe donc confortablement dans notre fatboy pour assister à cette cérémonie du langage CSS dont voici les meilleurs moments. Amen !
 
 ### Tim Carry
 
-C’est Tim Carry qui ouvrit la fête, déjà connu pour ces hobbies CSS oriented. Il a notamment réalisé CSS flags, la collection complète (ou presque) des drapeaux sur une structure HTML plutôt minimaliste : `<div></div>`.
+C’est Tim Carry qui ouvre le bal, déjà connu pour ces hobbies CSS-oriented. Il a notamment réalisé CSS flags, la collection complète (ou presque) des drapeaux sur une structure HTML plutôt minimaliste : `<div></div>`.
 Cette année, dans le même esprit de challenge, il nous présente un moteur de recherche en full CSS. Un champ de recherche dont la valeur sert à conditionner l’affichage de tous les résultats positionnés après lui en display : none; sur le modèle suivant :
 ```
 input[value=eleven i] ~ #result:before {
     content: “Eleven Labs”;
 }
 ```
-Il faut donc répéter cette règle pour TOUS les patterns possibles conduisant au bon résultat : e, el, ele, elev, eleve ...
+Il faut donc répéter cette règle pour TOUS les patterns possibles conduisants au bon résultat : e, el, ele, elev, eleve ...
 Le fichier CSS généré est donc scandaleusement volumineux et il va de soi que c’est juste une démonstration qui ne pourrait en aucun cas être utilisée en production.
 
 ### Benjamin De Cock
 
-Benjamin De Cock nous a fait une présentation du futur chouchou de la mise en page CSS, j’ai nommé « grid layout ». Il permet en plus de remplacer tous les systèmes de grilles bootstrap&co d’alléger la structure HTML et de mieux maîtriser le positionnement avec une plus fine granularité. Le positionnement est bi-directionnel, là où celui de flexbox est uni-directionnel.
-Il a aussi évoqué la toute nouvelle propriété `display : contents;` inaugurée par Firefox qui permet de remplacer virtuellement un élément par ses enfants et permet encore plus de souplesse dans la mise en page.
+Benjamin De Cock nous a fait une présentation du futur chouchou de la mise en page CSS, j’ai nommé « grid layout ». Il permet en plus de remplacer tous les systèmes de grilles bootstrap, d’alléger la structure HTML, et de mieux maîtriser le positionnement avec une plus fine granularité. Le positionnement est bi-directionnel, là où celui de flexbox est uni-directionnel.
+Il a aussi évoqué la toute nouvelle propriété `display : contents;` inaugurée par Firefox, qui permet de remplacer virtuellement un élément par ses enfants et permet encore plus de souplesse dans la mise en page.
 
 ### Jackie Balzer
 
