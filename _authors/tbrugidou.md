@@ -1,8 +1,7 @@
 ---
 layout: author
-login: jbernard
-title: Jérémy Bernard
-twitter: bernar_w
-permalink: /authors/jbernard/
+login: tbrugidou
+title: Thibaut Brugidou
+permalink: /authors/tbrugidou/
 ---
-Développeur Javascript actif. Et d'autre choses aussi.
+Développeur front-end
