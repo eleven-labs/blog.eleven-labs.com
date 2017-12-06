@@ -3,7 +3,6 @@
 
   &.with-cover {
     text-shadow: $gray 1px 1px 1px, $gray -1px 1px 1px, $gray -1px -1px 1px, $gray 1px -1px 1px;
-    background-position: center center;
   }
 
   @media (min-width: $breakpoint-x-small) {
