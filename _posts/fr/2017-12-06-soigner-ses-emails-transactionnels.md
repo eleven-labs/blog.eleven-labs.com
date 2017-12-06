@@ -23,9 +23,8 @@ Le but de la fonctionnalité était d'avoir des emails beaucoup plus soignés et
 
 > Ah!
 
-Nos e-mails n'étaient pas très compliqués, mais le centrage du logo de l'entreprise et le design était un peu compliqués.
-J'ai donc commencé le ticket avec du HTML 3 et ses fabuleux tableaux, puis au bout de 5 minutes, je me suis dit qu'en 2017, devoir faire ça était vraiment stupide.
-J'ai donc cherché un moyen plus moderne de pouvoir intégrer ces e-mails.
+Nos e-mails n'étaient pas particulièrement compliqués, mais le centrage du logo de l'entreprise et le design étaient problématiques.
+J'ai donc commencé le ticket avec du HTML 3 et ses fabuleux tableaux, puis au bout de 5 minutes, je me suis dit qu'en 2017, devoir faire ça était vraiment stupide. J'ai donc cherché un moyen plus moderne de pouvoir intégrer ces e-mails.
 
 ## solution 1 : un builder drag and drop
 
