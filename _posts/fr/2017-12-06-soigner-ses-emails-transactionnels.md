@@ -27,7 +27,7 @@ Nos e-mails n'étaient pas très compliqués, mais le centrage du logo de l'entr
 J'ai donc commencé le ticket avec du HTML 3 et ses fabuleux tableaux, puis au bout de 5 minutes, je me suis dit qu'en 2017, devoir faire ça était vraiment stupide.
 J'ai donc cherché un moyen plus moderne de pouvoir intégrer ces e-mails.
 
-### solution 1 : un builder drag and drop
+## solution 1 : un builder drag and drop
 
 La plupart des services d'e-mails proposent sur leur plateforme un builder avec drag and drop et un système de blocs.
 Intéressant, mais je devais exporter chaque e-mail en HTML 3.
@@ -37,7 +37,7 @@ J'ai donc cherché une solution plus orientée développeur.
 
 Ils venaient tout juste de rendre open source un nouveau projet : [MJML](https://github.com/mjmlio/mjml).
 
-### solution 2 : un générateur de HTML
+## solution 2 : un générateur de HTML
 
 MJML est une application CLI qui utilise des composants React pour générer du HTML 3 responsive.
 
@@ -100,7 +100,7 @@ ou directement dans les headers HTML via le composant `mj-style`.
 ...
 ```
 
-### Utilisation
+## Utilisation
 
 MJML est disponible sous forme de CLI installable comme ceci :
 ```
@@ -114,7 +114,7 @@ Pour générer un template de MJML vers HTML3 il suffit de lancer la commande :
 mjml template.mjml --output my-email.html
 ```
 
-### Intégration rapide dans Symfony
+## Intégration rapide dans Symfony
 
 Une fois le template réalisé, j'ai remplacé les données par des variables `twig` et lors du déploiment, je génére des fichiers avec l'extension `twig` :
 ```
