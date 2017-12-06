@@ -116,7 +116,7 @@ mjml template.mjml --output my-email.html
 
 ## Intégration rapide dans Symfony
 
-Une fois le template réalisé, j'ai remplacé les données par des variables `twig` et lors du déploiment, je génère des fichiers avec l'extension `twig` :
+Une fois le template réalisé, j'ai remplacé les données par des variables `twig` et lors du déploiement, je génère des fichiers avec l'extension `twig` :
 ```
 mjml /path/of/templates/template.mjml --output /path/of/ressources/my-email.html.twig
 ```
