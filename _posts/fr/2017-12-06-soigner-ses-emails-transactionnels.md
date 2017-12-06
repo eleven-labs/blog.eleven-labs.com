@@ -116,9 +116,9 @@ mjml template.mjml --output my-email.html
 
 ## Intégration rapide dans Symfony
 
-Une fois le template réalisé, j'ai remplacé les données par des variables `twig` et lors du déploiment, je génére des fichiers avec l'extension `twig` :
+Une fois le template réalisé, j'ai remplacé les données par des variables `twig` et lors du déploiment, je génère des fichiers avec l'extension `twig` :
 ```
 mjml /path/of/templates/template.mjml --output /path/of/ressources/my-email.html.twig
 ```
 
-Grâce à cet outil, un développeur peut réussir sans trop de prôblemes à proposer dans son application des emails transactionnels propres. En espérant ne plus voir en 2018 des emails composés uniquement d'un texte et non affichables sur son téléphone...
+Grâce à cet outil, un développeur peut réussir sans trop de problèmes à proposer dans son application des emails transactionnels propres. En espérant ne plus voir en 2018 des emails composés uniquement d'un texte et non affichables sur son téléphone...
