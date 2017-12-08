@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Retour sur les DotJS 2017
-excerpt: "DotJS est la plus grande conférence JavaScript en Europe et c'est souvent l'occasion de parler des nouvelles technologies à notre disposition et découvrir ce que nous réserve le futur de ECMAScript. Cette année, elle se déroulait pour la deuxième fois aux docks d'Aubervilliers, au nord de Paris. Ce qui nous permettait de profiter d'un confort digne d'une salle de cinéma ! Petit résumé de ce qui s'est y passé..."
+excerpt: "DotJS est la plus grande conférence JavaScript en Europe et c'est souvent l'occasion de parler des nouvelles technologies à notre disposition et découvrir ce que nous réserve le futur de ECMAScript. Cette année, elle se déroulait pour la deuxième fois aux docks d'Aubervilliers, au nord de Paris. Ce qui nous a permis de profiter d'un confort digne d'une salle de cinéma ! Petit résumé de ce qu'il s'y est passé..."
 lang: fr
 authors:
     - mlenglet
@@ -20,7 +20,7 @@ cover: /assets/2017-12-08-dotjs-2017/cover.jpg
 
 [DotJS](https://www.dotjs.io/){:rel="nofollow"} est la plus grande conférence JavaScript en Europe et c'est souvent l'occasion de parler des nouvelles technologies à notre disposition et découvrir ce que nous réserve le futur de ECMAScript.
 
-Cette année, elle se déroula pour la deuxième fois aux docks d'Aubervilliers, au nord de Paris. Ce qui nous permis de profiter d'un confort digne d'une salle de cinéma !
+Cette année, elle se déroulait pour la deuxième fois aux docks d'Aubervilliers, au nord de Paris. Ce qui nous a permis de profiter d'un confort digne d'une salle de cinéma !
 
 La conférence s'articule autour d'une dizaine de talks d'une demi-heure répartis tout au long de la journée. En début d'après-midi des "Lightning Talks" d'une durée de cinq minutes chacun portent sur des sujets diverses et nous laisser digérer le copieux buffet du déjeuner.
 
@@ -101,11 +101,11 @@ Après un déjeuner plus que mérité, il est temps de continuer.
 
 Voilà un sujet intéressant que l'on pourrait penser à contre-courant. [Adrian Holovaty](https://twitter.com/adrianholovaty){:rel="nofollow"}, co-fondateur du célèbre framework Django nous fait un plaidoyer en faveur d'une notion simple : arrêter d'utiliser des frameworks.
 
-Derrière ce constat vient l'expérience d'Adrian avec Django qui a fini par devenir une "usine à gaz" à force de demandes et de corrections de bug qui ne les concernaient, lui et son équipe, nullement. Le projet qu'ils avait monté pour se faciliter la vie suite à des demandes de rentabilité de sa direction ne leur appartenaient plus. Les nouvelles features et correction de bugs ne leur étaient d'aucune utilité.
+Derrière ce constat vient l'expérience d'Adrian avec Django qui a fini par devenir une "usine à gaz" à force de demandes et de corrections de bugs qui ne les concernaient, lui et son équipe, nullement. Le projet qu'ils avaient monté pour se faciliter la vie suite à des demandes de rentabilité de sa direction ne leur appartenaient plus. Les nouvelles features et correction de bugs ne leur étaient d'aucune utilité.
 
 C'est pourquoi avec son nouveau site [SoundSlice](https://www.soundslice.com/scores/auld-lang-syne/){:rel="nofollow"}, Adrian n'a utilisé que du JavaScript simple (_plain javascript_ dans la langue de Shakespeare). Et le résultat est assez impressionnant. L'interface est fluide, ergonomique et totalement responsive (les partitions aussi !).
 
-Mais attention de ne pas faire l'erreur : Adrian utilise bien des bibliothèques pour réaliser son site. Il ne va pas réinventer la roue à chaque fois. Mais il faut comprendre la différence fondamentale entre bibliothèque et framework : un framework appelle votre code, tandis qu'une bibliothèque est appellée par votre code.
+Mais attention de ne pas faire l'erreur : Adrian utilise bien des bibliothèques pour réaliser son site. Il ne va pas réinventer la roue à chaque fois. Mais il faut comprendre la différence fondamentale entre bibliothèque et framework : un framework appelle votre code, tandis qu'une bibliothèque est, elle, appellée par votre code.
 
 ### Thomas Watson
 
@@ -174,7 +174,7 @@ Vous pouvez tester cette nouvelle technique sur [Glimmer Playground](https://gli
 
 Il nous présente ensuite ce que nous réserve le comité ECMA pour les années à venir avec notamment les gestions des BigInt, de nouvelles syntaxes pour la gestion de l'asynchrone (`for await of`), etc.
 
-Il finit sur un ton plus philosophique en exposant le fait que, que pendant des années, énormément de personnes n'ont pas cru en JavaScript et lui disaient "Non, on ne pourra jamais faire ça avec du JS". Il l'a à chaque fois démenti en introduisant des notions avancés comme WebGL.
+Il finit sur un ton plus philosophique en exposant le fait que, que pendant des années, énormément de personnes n'ont pas cru en JavaScript et lui disaient "Non, on ne pourra jamais faire ça avec du JS". Il l'a à chaque fois démenti en introduisant des notions avancées comme WebGL.
 
 Comme disait Ian Ickson, un des rédacteurs de la spec HTML5 :
 > Things that are impossible just take longer
