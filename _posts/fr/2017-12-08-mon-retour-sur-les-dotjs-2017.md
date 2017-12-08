@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Retour sur les DotJS 2017
-excerpt: "DotJS est la plus grande conférence JavaScript en Europe et c'est souvent l'occasion pour parler des nouvelles technologies à notre disposition et découvrir ce que nous réserve le futur de ECMAScript. Cette année, elle se déroulait pour la deuxième fois aux docks d'Aubervilliers, au nord de Paris. Ce qui nous permettait de profiter d'un confort digne d'une salle de cinéma ! Petit résumé de ce qui s'est y passé..."
+excerpt: "DotJS est la plus grande conférence JavaScript en Europe et c'est souvent l'occasion de parler des nouvelles technologies à notre disposition et découvrir ce que nous réserve le futur de ECMAScript. Cette année, elle se déroulait pour la deuxième fois aux docks d'Aubervilliers, au nord de Paris. Ce qui nous permettait de profiter d'un confort digne d'une salle de cinéma ! Petit résumé de ce qui s'est y passé..."
 lang: fr
 authors:
     - mlenglet
@@ -18,15 +18,15 @@ cover: /assets/2017-12-08-dotjs-2017/cover.jpg
 ---
 ![DotJS logo]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/logo.png){:class="center-image"}
 
-[DotJS](https://www.dotjs.io/){:rel="nofollow"} est la plus grande conférence JavaScript en Europe et c'est souvent l'occasion pour parler des nouvelles technologies à notre disposition et découvrir ce que nous réserve le futur de ECMAScript.
+[DotJS](https://www.dotjs.io/){:rel="nofollow"} est la plus grande conférence JavaScript en Europe et c'est souvent l'occasion de parler des nouvelles technologies à notre disposition et découvrir ce que nous réserve le futur de ECMAScript.
 
 Cette année, elle se déroula pour la deuxième fois aux docks d'Aubervilliers, au nord de Paris. Ce qui nous permis de profiter d'un confort digne d'une salle de cinéma !
 
-La conférence s'articule autour d'une dizaine de talks d'une demi-heure répartie tout au long de la journée. En début d'après-midi des "Lightning Talks" d'une durée de cinq minutes chacun viennent nous informer sur des sujets diverses et nous laisser digérer le copieux buffet du déjeuner.
+La conférence s'articule autour d'une dizaine de talks d'une demi-heure répartis tout au long de la journée. En début d'après-midi des "Lightning Talks" d'une durée de cinq minutes chacun portent sur des sujets diverses et nous laisser digérer le copieux buffet du déjeuner.
 
 ## Talks - 1ère partie
 
-Après un bon petit déjeuner offert par les partenaires de l'événement, il est temps de commencer.
+Après un bon petit-déjeuner offert par les partenaires de l'événement, il est temps de commencer.
 
 ### Wes Bos
 
@@ -38,7 +38,7 @@ Il revient notamment sur la problématique historique du JavaScript sur la gesti
 Les promesses sont LA solution qui a permis de faciliter la gestion du workflow, en le rendant nativement plus lisible et efficace.
 Wes démontre d'ailleurs leur utilisation maintenant commune dans la plupart des APIs des navigateurs web en prenant l'exemple de [fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API){:rel="nofollow"}.
 
-ECMAScript 2017 introduit la nouvelle syntaxe async/await qui permet encore d'améliorer cette gestion en offrant un code encore plus lisible se rapprochant d'un code synchrone. Wes finit par démontrer les différentes possibilités pour gérer les erreurs avec cette nouvelle syntaxe.
+ECMAScript 2017 introduit la nouvelle syntaxe async/await qui permet d'améliorer cette gestion en offrant un code encore plus lisible, se rapprochant d'un code synchrone. Wes finit par montrer les différentes possibilités pour gérer les erreurs avec cette nouvelle syntaxe.
 
 _[Voir ses slides](https://wesbos.github.io/Async-Await-Talk/#1){:rel="nofollow"}_
 
@@ -69,7 +69,7 @@ Ainsi il fait la démonstration d'une technique éprouvée permettant d'activer 
 
 Une autre limitation qui peut être enfreinte est celle du stockage de données dans le navigateur via localStorage, qui est normalement plafonné à quelques Mo par nom de domaine. Or il "suffit" d'exploiter une myriade de sous-domaines différents pour rapidement remplir le disque dur du visiteur innocent. Principe démontré par [Filldisk.com](http://www.filldisk.com/){:rel="nofollow"}.
 
-Dans le même ordre d'idée, on peut utiliser l'API Fullscreen pour du phishing, en faisant croire au visiteur qu'il est sur le site de sa banque et récupérer ses identifiants.
+Dans le même ordre d'idées, on peut utiliser l'API Fullscreen pour du phishing, en faisant croire au visiteur qu'il est sur le site de sa banque et récupérer ses identifiants.
 
 Feross jongle ainsi avec les popups, leur déplacement sur l'écran, leur génération automatique suite à une action de l'utilisateur et les équipe de comportements bien embêtants : impossibilité de les attraper/fermer, auto-redimensionnement aux coordonnées de la souris, etc. En écoutant des events comme keypress, on peut ouvrir à nouveau une vidéo en plein écran.
 
@@ -79,17 +79,17 @@ Vous pouvez en retrouver la compilation sur [Theannoyingsite.com](http://www.the
 
 ![La salle de conférence]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/lightningtalks.jpg){:class="center-image"}
 
-Les Lightning Talks sont une suite de petites présentations d'environ cinq minutes. Elle permettent de présenter des sujets simples ne nécessitant pas la durée complète d'un talk. Ces sujets sont très variés et peuvent être aussi bien une anecdote amusante, un rappel utile, une découverte intéressante ou la présentation du métier et/ou produit d'un des partenaires de l'événement.
+Les Lightning Talks sont une suite de petites présentations d'environ cinq minutes. Elles permettent de présenter des sujets simples ne nécessitant pas la durée complète d'un talk. Ces sujets sont très variés et peuvent être aussi bien une anecdote amusante, un rappel utile, une découverte intéressante ou la présentation du métier et/ou produit d'un des partenaires de l'événement.
 
 Nous avons donc eu :
 
 - Un rappel sur l'utilité et la mise en place du SSR (Server Side Rendering)
-- Une présentation des comportements parfois contre-intuitif de JavaScript lors d'addition/concaténation, de comparaison ou encore d'affectation
+- Une présentation des comportements parfois contre-intuitifs de JavaScript lors d'addition/concaténation, de comparaison ou encore d'affectation
 - La création d'un jeu avec React/Redux
 - Comment faire du traitement d'image avec les APIs WebAudio
 - Une présentation de TypeScript
 - La gestion du State avec GraphQL
-- Comment marche les GPUs et leur utilisation au niveau du Web
+- Comment marchent les GPUs et leur utilisation au niveau du Web
 
 ## Talks - 2ème partie
 
@@ -101,17 +101,17 @@ Après un déjeuner plus que mérité, il est temps de continuer.
 
 Voilà un sujet intéressant que l'on pourrait penser à contre-courant. [Adrian Holovaty](https://twitter.com/adrianholovaty){:rel="nofollow"}, co-fondateur du célèbre framework Django nous fait un plaidoyer en faveur d'une notion simple : arrêter d'utiliser des frameworks.
 
-Derrière ce constat vient l'expérience d'Adrian avec Django qui a fini par devenir une "usine à gaz" à force de demande et de correction de bug qui ne le concernait, lui et son équipe, nullement. Le projet qu'ils avait monté pour se faciliter la vie suite à des demandes de rentabilité de sa direction ne leur appartenaient plus. Les nouvelles features et correction de bugs ne leur étaient d'aucune utilité.
+Derrière ce constat vient l'expérience d'Adrian avec Django qui a fini par devenir une "usine à gaz" à force de demandes et de corrections de bug qui ne les concernaient, lui et son équipe, nullement. Le projet qu'ils avait monté pour se faciliter la vie suite à des demandes de rentabilité de sa direction ne leur appartenaient plus. Les nouvelles features et correction de bugs ne leur étaient d'aucune utilité.
 
 C'est pourquoi avec son nouveau site [SoundSlice](https://www.soundslice.com/scores/auld-lang-syne/){:rel="nofollow"}, Adrian n'a utilisé que du JavaScript simple (_plain javascript_ dans la langue de Shakespeare). Et le résultat est assez impressionnant. L'interface est fluide, ergonomique et totalement responsive (les partitions aussi !).
 
-Mais attention de ne pas faire l'erreur. Adrian utilise bien des bibliothèques pour réaliser son site. Il ne va pas réinventer la roue à chaque fois. Mais il faut comprendre la différence fondamentale entre bibliothèque et framework : Un framework appelle votre code, tandis que votre code appelle une bibliothèque.
+Mais attention de ne pas faire l'erreur : Adrian utilise bien des bibliothèques pour réaliser son site. Il ne va pas réinventer la roue à chaque fois. Mais il faut comprendre la différence fondamentale entre bibliothèque et framework : un framework appelle votre code, tandis qu'une bibliothèque est appellée par votre code.
 
 ### Thomas Watson
 
 ![Thomas Watson]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/thomaswatson.jpg){:class="center-image"}
 
-[Thomas Watson](https://twitter.com/wa7son){:rel="nofollow"} nous explique pendant près de 15 minutes comment les avions communiquaient entre eux et comment le contrôle aérien pouvait récupérer énormément d'information sur leur radar. Quel rapport avec JavaScript me diriez-vous ? Et bien Thomas s'est mis en tête de créer une application permettant de capter les signaux émis par les avions à plusieurs dizaines de kilomètres (protocole ADS-B) puis récupérer leur identification transpondeur, altitude, longitude, latitude, etc, et les placer sur une carte en direct. Toutes ses données sont librement accessible et il n'y aucune sécurité (ce qui peut poser des questions...). Il suffit de s'équiper d'une petite antenne radio grand public (chip RTL2832U fréquence 1090 Mhz) et de la piloter avec Node.JS.
+[Thomas Watson](https://twitter.com/wa7son){:rel="nofollow"} nous explique pendant près de 15 minutes comment les avions communiquaient entre eux et comment le contrôle aérien pouvait récupérer énormément d'informations sur ses radars. Quel rapport avec JavaScript me direz-vous ? Et bien Thomas s'est mis en tête de créer une application permettant de capter les signaux émis par les avions à plusieurs dizaines de kilomètres (protocole ADS-B) puis récupérer leur identification transpondeur, altitude, longitude, latitude, etc, et les placer sur une carte en direct. Toutes ces données sont librement accessibles et il n'y aucune sécurité (ce qui peut poser des questions...). Il suffit de s'équiper d'une petite antenne radio grand public (chip RTL2832U fréquence 1090 Mhz) et de la piloter avec Node.JS.
 Si vous êtes intéressé, n'hésitez pas à consulter ses projets récents sur son compte GitHub : [rtl-sdr](https://github.com/watson/rtl-sdr){:rel="nofollow"}, [mode-s-decoder](https://github.com/watson/mode-s-decoder){:rel="nofollow"}.
 
 _[Voir ses slides](https://speakerdeck.com/wa7son/dotjs-2017-getting-data-from-the-sky){:rel="nofollow"}_
@@ -123,21 +123,21 @@ _[Voir ses slides](https://speakerdeck.com/wa7son/dotjs-2017-getting-data-from-t
 [Sean Larkin](https://www.twitter.com/thelarkinn){:rel="nofollow"} est, entre autres, un des _lead maintainer_ sur [Webpack](https://webpack.js.org/){:rel="nofollow"}. Et ça tombe bien, car il a décidé de nous expliquer comment que tout ça marche dedans.
 Il nous introduit la bibliothèque [Tapable](https://github.com/webpack/tapable){:rel="nofollow"} qui constitue l'épine dorsale de Webpack.
 Elle permet d'étendre les classes de base, d'attraper les événements de compilation et donc de personnaliser le fonctionnement global et l'architecture du compilateur de WebPack...
-Il nous présente enfin le futur de Webpack avec sa version 4 : amélioration des performance, réduction de la taille des fichiers générés, gestion intelligente du chargement asynchrone des fichiers JavaScript.
+Il nous présente enfin le futur de Webpack avec sa version 4 : amélioration des performances, réduction de la taille des fichiers générés, gestion intelligente du chargement asynchrone des fichiers JavaScript.
 
 ### Marcy Sutton
 
 ![Marcy Sutton]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/marcysutton.jpg){:class="center-image"}
 
-[Marcy](https://www.twitter.com/marcysutton){:rel="nofollow"} mets particulièrement l'accent dans son travail sur l'accessibilité. Elle souhaite prendre en compte toutes les spécificités : handicap, situation géographique, capacités de lecture, âge, matériel, moyens, vitesse d'accès au réseau. Elle démontre ainsi l'importance de JavaScript sur ce domaine et comment il est possible d'apporter des améliorations en suivant quelques critères :
+[Marcy](https://www.twitter.com/marcysutton){:rel="nofollow"} met particulièrement l'accent dans son travail sur l'accessibilité. Elle souhaite prendre en compte toutes les spécificités : handicap, situation géographique, capacités de lecture, âge, matériel, moyens, vitesse d'accès au réseau. Elle démontre ainsi l'importance de JavaScript sur ce domaine et comment il est possible d'apporter des améliorations en suivant quelques critères :
 
-- Respecter la structuration du document, les niveaux de titre
+- Respecter la structuration du document, les niveaux de titres
 - Faire attention au contraste et aux couleurs
 - Mieux gérer le focus (ne jamais utiliser `* { outline: none;` } en CSS) et permettre la navigation clavier par tabulation (en ajustant avec l'attribut tabindex s'il le faut)
 - Utilisation d'ARIA avec par exemple aria-label sur les icônes
 - Si des éléments de la page sont cachés (par exemple un menu en `display: none` affiché lors du clic sur un "hamburger"), il convient d'appliquer l'attribut `inert` sur le conteneur HTML. Malheureusement il faudra souvent utiliser des polyfills (WCIG inert).
 
-Enfin la meilleur façon de se rendre compte si notre site est bien accessible et d'utiliser les même outils ceux qui en nécessite. C'est ce que font [axe-coconut](https://axe-core.org/coconut/){:rel="nofollow"} ou Chrome Accessibility Debugger qui permettent d'effectuer des audits.
+Enfin, la meilleure façon de se rendre compte de la bonne accessibilité ou non de notre site, est d'utiliser les même outils que ceux qui en ont besoin. C'est le rôle que remplissent [axe-coconut](https://axe-core.org/coconut/){:rel="nofollow"} ou Chrome Accessibility Debugger, en permettant d'effectuer des audits.
 
 _[Voir ses slides](https://marcysutton.github.io/enabling-users/){:rel="nofollow"}_
 
@@ -156,15 +156,15 @@ Le téléchargement est solutionné par l'introduction des bundlers (Webpack, Ro
 On peut aussi économiser du temps sur le parsing et le rendu en utilisant le SSR (Serveur Side Rendering).
 
 Mais la réactivité de l'interface est aussi importante : elle doit se mettre à jour rapidement, comporter des animations fluides et supporter une fréquence de 60 images par seconde.
-Une solution récente à ce dernier problème a été l'introduction d'un DOM Virtuel (Shadow DOM) notamment utilisé par React. Cela permet de résoudre les souci de réactivité et de rendering des navigateurs.
+Une solution récente à ce dernier problème a été l'introduction d'un DOM Virtuel (Shadow DOM) notamment utilisé par React. Cela permet de résoudre les soucis de réactivité et de rendering des navigateurs.
 
-Mais comme l'explique Tom, le mobile exacerbe tous ces problèmes. Si votre terminal possède un processeur lent, le parsing peut parfois prendre deux fois plus temps que le téléchargement !
+Mais comme l'explique Tom, le mobile exacerbe tous ces problèmes. Si votre terminal possède un processeur lent, le parsing peut parfois prendre deux fois plus de temps que le téléchargement !
 La solution à ce souci serait [Glimmer](https://glimmerjs.com/){:rel="nofollow"} qui permet de transformer JavaScript en langage compilé (!). En gros, le but sera de pré-compiler tout votre code en bytecode qui sera directement interprété par une petite machine virtuelle sur le navigateur.
 Résultat : le téléchargement est plus rapide, le compilé étant plus léger, le parsing est quasi inexistant.
 
-Mais ce n'est pas tout, car la machine virtuelle est en fait deux petites machines virtuelles qui ont chacun une tâche spécifique : l'une à la création, l'autre à l'update. Ainsi que les performances sont réelle et permettent de dépasser aisément ce que fait React sans les nombreuses techniques d'optimisation manuelle de ce dernier (`shouldComponentUpdate`, `PureComponent`, etc).
+Mais ce n'est pas tout, car la machine virtuelle est en fait deux petites machines virtuelles qui ont chacune une tâche spécifique : l'une à la création, l'autre à l'update. Les performances sont réelles et permettent de dépasser aisément ce que fait React sans les nombreuses techniques d'optimisation manuelle de ce dernier (`shouldComponentUpdate`, `PureComponent`, etc).
 
-Vous pouvez tester cette nouvelle technique sur [Glimmer Playground](https://glimmer-playground.netlify.com/){:rel="nofollow"}. Cela se destine aux sites les plus gourmand pour l'instant, mais cela pourrait se démocratiser dans quelques années !
+Vous pouvez tester cette nouvelle technique sur [Glimmer Playground](https://glimmer-playground.netlify.com/){:rel="nofollow"}. Cela se destine aux sites les plus gourmands pour l'instant, mais cela pourrait se démocratiser dans quelques années !
 
 ### Brendan Eich
 
@@ -174,7 +174,7 @@ Vous pouvez tester cette nouvelle technique sur [Glimmer Playground](https://gli
 
 Il nous présente ensuite ce que nous réserve le comité ECMA pour les années à venir avec notamment les gestions des BigInt, de nouvelles syntaxes pour la gestion de l'asynchrone (`for await of`), etc.
 
-Il finit sur un ton plus philosophique que pendant des années, énormément de personnes n'ont pas cru en JavaScript et lui disait "Non, on ne pourra jamais faire ça avec du JS". Il l'a à chaque fois démenti en introduisant des notions avancés comme WebGL.
+Il finit sur un ton plus philosophique en exposant le fait que, que pendant des années, énormément de personnes n'ont pas cru en JavaScript et lui disaient "Non, on ne pourra jamais faire ça avec du JS". Il l'a à chaque fois démenti en introduisant des notions avancés comme WebGL.
 
 Comme disait Ian Ickson, un des rédacteurs de la spec HTML5 :
 > Things that are impossible just take longer
@@ -183,5 +183,5 @@ _[Voir ses slides](https://brendaneich.com/wp-content/uploads/2017/12/dotJS-2017
 
 ## En bref
 
-Cette année, dotJS est clairement une réussite. Avec des talks extrêmement intéressant, trouvant le juste ton entre complexité, amusement et vulgarisation.
+Cette année, dotJS est clairement une réussite. Avec des talks extrêmement intéressants, trouvant le juste ton entre complexité, amusement et vulgarisation.
 Vivement les dotJS 2018 !
