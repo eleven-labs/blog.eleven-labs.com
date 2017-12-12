@@ -3,7 +3,7 @@ layout: post
 title: Monitorer ses containers Docker
 lang: fr
 permalink: /fr/monitorer-ses-containers-docker/
-excerpt: "Les containers sont aujourd'hui largement utilisés en développement jusqu'en production. Cependant un `docker stats` en ssh ne permet pas de gèrer correctement sont environnement de production. Nous allons donc voir comment répondre à ce besoin de monitoring pour des containers en production."
+excerpt: "Les containers sont aujourd'hui largement utilisés en développement jusqu'en production. Cependant un `docker stats` en ssh ne permet pas de gérer correctement sont environnement de production. Nous allons donc voir comment répondre à ce besoin de monitoring pour des containers en production."
 authors:
     - qneyrat
 categories:
@@ -17,7 +17,7 @@ tags:
 cover: /assets/2017-12-12-monitorer-ses-containers-docker/cover.jpeg
 ---
 
-Les containers sont aujourd'hui largement utilisés en développement jusqu'en production. Cependant un `docker stats` en ssh ne permet pas de gèrer correctement sont environnement de production. Nous allons donc voir comment répondre à ce besoin de monitoring pour des containers en production.
+Les containers sont aujourd'hui largement utilisés en développement jusqu'en production. Cependant un `docker stats` en ssh ne permet pas de gérer correctement sont environnement de production. Nous allons donc voir comment répondre à ce besoin de monitoring pour des containers en production.
 
 Nous allons donc aborder plusieurs technologies pour répondre à ce besoin :
 - [cAdvisor](https://github.com/google/cadvisor), solution rendue open-source par Google qui permet d'exposer l'ensemble des metrics des containers.
@@ -248,6 +248,6 @@ Vous pouvez aussi créer vous-même un `exporter` du moment qu'il expose des met
 - [https://www.digitalocean.com/community/tutorials/how-to-install-prometheus-on-ubuntu-16-04](https://www.digitalocean.com/community/tutorials/how-to-install-prometheus-on-ubuntu-16-04)
 - [https://www.ctl.io/developers/blog/post/monitoring-docker-services-with-prometheus/](https://www.ctl.io/developers/blog/post/monitoring-docker-services-with-prometheus/)
 
-## Dépots Github pour le monitoring avec Docker
+## Dépôts Github pour le monitoring avec Docker
 - [https://github.com/vegasbrianc/prometheus](https://github.com/vegasbrianc/prometheus)
 - [https://github.com/stefanprodan/dockprom](https://github.com/stefanprodan/dockprom)
