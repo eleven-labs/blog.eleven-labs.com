@@ -54,7 +54,7 @@ Pour commencer, nous allons installer rapidement une application, prenons par ex
 ```
 Nous avons maintenant accès à la documentation de l’api que vous venez d’installer.
 
-![api](({{site.baseurl}}/assets/2017-12-12-monitorer-ses-containers-docker/api.png)
+![api]({{site.baseurl}}/assets/2017-12-12-monitorer-ses-containers-docker/api.png)
 
 ## cAdvisor
 
