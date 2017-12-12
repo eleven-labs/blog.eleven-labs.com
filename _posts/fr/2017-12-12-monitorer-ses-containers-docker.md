@@ -99,7 +99,7 @@ Nous avons maintenant accès à l'interface de `cAdvisor`.
 
 Ce qui nous permet déjà de voir sommairement les metrics de nos containers.
 
-image
+![metrics](/assets/2017-12-12-monitorer-ses-containers-docker/metrics.png)
 
 Malgré tout cette solution seul n'est pas assez configurable et ne peut pas répondre pleinement à notre besoin.
 
@@ -134,7 +134,7 @@ volumes:
 prometheus-data: {}
 ```
 
-Et ajoutons dans le dossier `docker` le fichier de configuration de `Prometheus` `prometheus.yml` dans le dossier `prometheus`.
+Et ajoutons dans le dossier `docker/prometheus` le fichier de configuration `prometheus.yml`.
 
 ```yml
 global:
@@ -163,7 +163,7 @@ static_configs:
 Nous pouvons remarquer le job de scraping `cadvisor` sur l'endpoint `cadvisor:8080`. Prometheus va toujours scraper selon le schéma suivant :
 
 ```
-/metrics
+<host>:<port>/metrics
 ```
 
 Pour la configuration, le `/metrics` est implicite.
@@ -178,7 +178,7 @@ Nous pouvons de nouveau relancer le `docker-compose`.
 
 Nous pouvons voir que les jobs que nous avons configuré sont bien `up`. C'est à dire que `Prometheus` a bien réussi à scraper les metrics de `cAdisor` et de `Prometheus`.
 
-![metrics](/assets/2017-12-12-monitorer-ses-containers-docker/metrics.png)
+![prom](/assets/2017-12-12-monitorer-ses-containers-docker/prom.png)
 
 ## Grafana
 
@@ -230,6 +230,8 @@ Importons ce nouveau dashboard [http://localhost:3000/dashboard/new?editview=imp
 > [http://localhost:3000/dashboard/db/docker-monitoring?refresh=10s∨gId=1](http://localhost:3000/dashboard/db/docker-monitoring?refresh=10s∨gId=1)
 
 ![dashboard](/assets/2017-12-12-monitorer-ses-containers-docker/dashboard.png)
+
+Nous pouvons maintenant voir les metrics systèmes de nos containers, comme la consommation `cpu` ou `ram` de chacun.
 
 Selon vos besoins, vous pouvez créer des dashboards plus spécifique avec les informations que vous avez besoin.
 Pour `Prometheus`, il existe de nombreux `exporter` pour pouvoir récupérer encore plus de metrics comme par exemple pour `Redis` ou `RabbitMQ`.
