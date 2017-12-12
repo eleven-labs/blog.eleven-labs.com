@@ -56,7 +56,7 @@ Une fois installé, vous devriez vous la documentation de l'api que vous venez d
 
 ![api](/assets/2017-12-12-monitorer-ses-containers-docker/api.png)
 
-## cAvisor
+## cAdvisor
 
 Nous allons maintenant ajouter `cAvisor` au `docker-compose.yml` :
 
@@ -177,7 +177,7 @@ Nous pouvons de nouveau relancer le `docker-compose`.
 > $ open http://localhost:9090/targets
 ```
 
-Nous pouvons voir que les jobs que nous avons configuré sont bien `up`. C'est à dire que `Prometheus` a bien réussi à scraper les metrics de `cAdisor` et de `Prometheus`.
+Nous pouvons voir que les jobs que nous avons configuré sont bien `up`. C'est à dire que `Prometheus` a bien réussi à scraper les metrics de `cAdvisor` et de `Prometheus`.
 
 ![prom](/assets/2017-12-12-monitorer-ses-containers-docker/prom.png)
 
