@@ -47,6 +47,7 @@ Pour commencer, nous allons installer rapidement une application, prenons par ex
 
 ```bash
 > $ git clone git@github.com:api-platform/api-platform.git
+> $ cd api-platform
 > $ git checkout v2.1.4
 > $ docker-compose up
 > $ open http://127.0.0.1
