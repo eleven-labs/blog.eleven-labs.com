@@ -58,7 +58,7 @@ Une fois installé, vous devriez vous la documentation de l'api que vous venez d
 
 ## cAdvisor
 
-Nous allons maintenant ajouter `cAvisor` au `docker-compose.yml` :
+Nous allons maintenant ajouter `cAdvisor` au `docker-compose.yml` :
 
 > **Ressource :**
 > vous pouvez retrouver [les fichiers `docker-compose.yml` et `prometheus.yml` ici](https://gist.github.com/qneyrat/318e7433b8c4de9edeccbac8ef0ec335).
