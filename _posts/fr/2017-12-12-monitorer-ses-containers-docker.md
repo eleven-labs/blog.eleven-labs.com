@@ -222,7 +222,7 @@ Commençons par ajouter notre `Prometheus` comme `Data Sources`. Rendons-nous su
 
 ![grafana](/assets/2017-12-12-monitorer-ses-containers-docker/grafana.png)
 
-Maintenant que `Grafana` peut accèder à notre `Prometheus`. Il nous reste plus qu'à créer un nouveau dashboard. Pour gagner du temps nous allons en importer directement.
+Maintenant que `Grafana` peut accéder à notre `Prometheus`. Il nous reste plus qu'à créer un nouveau dashboard. Pour gagner du temps nous allons en importer directement.
 
 > [https://grafana.com/dashboards/193](https://grafana.com/dashboards/193)
 
