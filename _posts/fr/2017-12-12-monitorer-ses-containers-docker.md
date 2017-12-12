@@ -3,7 +3,7 @@ layout: post
 title: Monitorer ses containers Docker
 lang: fr
 permalink: /fr/monitorer-ses-containers-docker/
-excerpt: "Les containers sont aujourd'hui largement utilisés en développement jusqu'en production. Cependant un `docker stats` en ssh ne permet pas de gérer correctement sont environnement de production. Nous allons donc voir comment répondre à ce besoin de monitoring pour des containers en production."
+excerpt: "Les containers sont aujourd'hui largement utilisés du développement jusqu'en production. Cependant un `docker stats` en ssh ne permet pas de gérer correctement son environnement de production. Nous allons donc voir comment répondre à ce besoin de monitoring pour des containers en production."
 authors:
     - qneyrat
 categories:
@@ -17,15 +17,15 @@ tags:
 cover: /assets/2017-12-12-monitorer-ses-containers-docker/cover.jpeg
 ---
 
-Les containers sont aujourd'hui largement utilisés en développement jusqu'en production. Cependant un `docker stats` en ssh ne permet pas de gérer correctement sont environnement de production. Nous allons donc voir comment répondre à ce besoin de monitoring pour des containers en production.
+Les containers sont aujourd'hui largement utilisés du développement jusqu'en production. Cependant un `docker stats` en ssh ne permet pas de gérer correctement son environnement de production. Nous allons donc voir comment répondre à ce besoin de monitoring pour des containers en production.
 
-Nous allons donc aborder plusieurs technologies pour répondre à ce besoin :
+Nous allons aborder plusieurs technologies pour répondre à ce besoin :
 - [cAdvisor](https://github.com/google/cadvisor), solution rendue open-source par Google qui permet d'exposer l'ensemble des metrics des containers.
-- [Prometheus](https://github.com/prometheus/prometheus), solution open-source de base de données orienté time series.
-- [Grafana](https://github.com/grafana/grafana), solution open-source de dashboard très facilement configurable qui va permettre de tracer de jolies graphs.
+- [Prometheus](https://github.com/prometheus/prometheus), solution open-source de base de données orientée time series.
+- [Grafana](https://github.com/grafana/grafana), solution open-source de dashboard très facilement configurable qui va permettre de tracer de jolis graphs.
 
 > **Ressource :**
-> [ctop](https://ctop.sh/) vous permets de visualiser les infos de `docker stats` dans le style de `htop`.
+> [ctop](https://ctop.sh/) vous permet de visualiser les infos de `docker stats` dans le style de `htop`.
 
 La stack que nous allons voir fonctionne comme ceci :
 
@@ -52,7 +52,7 @@ Pour commencer, nous allons installer rapidement une application, prenons par ex
 > $ docker-compose up
 > $ open http://127.0.0.1
 ```
-Une fois installé, vous devriez vous la documentation de l'api que vous venez d'installer.
+Nous avons maintenant accès à la documentation de l’api que vous venez d’installer.
 
 ![api](/assets/2017-12-12-monitorer-ses-containers-docker/api.png)
 
@@ -102,7 +102,7 @@ Ce qui nous permet déjà de voir sommairement les metrics de nos containers.
 
 ![metrics](/assets/2017-12-12-monitorer-ses-containers-docker/metrics.png)
 
-Malgré tout cette solution seul n'est pas assez configurable et ne peut pas répondre pleinement à notre besoin.
+Malgré tout, cette solution seule n'est pas assez configurable et ne peut pas répondre pleinement à notre besoin.
 
 ## Prometheus
 
@@ -177,7 +177,7 @@ Nous pouvons de nouveau relancer le `docker-compose`.
 > $ open http://localhost:9090/targets
 ```
 
-Nous pouvons voir que les jobs que nous avons configuré sont bien `up`. C'est à dire que `Prometheus` a bien réussi à scraper les metrics de `cAdvisor` et de `Prometheus`.
+Nous pouvons voir que les jobs que nous avons configurés sont bien `up`. C'est à dire que `Prometheus` a bien réussi à scraper les metrics de `cAdvisor` et de `Prometheus`.
 
 ![prom](/assets/2017-12-12-monitorer-ses-containers-docker/prom.png)
 
@@ -234,12 +234,12 @@ Importons ce nouveau dashboard [http://localhost:3000/dashboard/new?editview=imp
 
 Nous pouvons maintenant voir les metrics systèmes de nos containers, comme la consommation `cpu` ou `ram` de chacun.
 
-Selon vos besoins, vous pouvez créer des dashboards plus spécifique avec les informations que vous avez besoin.
+Selon vos besoins, vous pouvez créer des dashboards plus spécifiques avec les informations que vous avez besoin.
 Pour `Prometheus`, il existe de nombreux `exporter` pour pouvoir récupérer encore plus de metrics comme par exemple pour `Redis` ou `RabbitMQ`.
 Vous pouvez aussi créer vous-même un `exporter` du moment qu'il expose des metrics sur un endpoint `HTTP` `/metrics` ou encore exposer des metrics métier de votre application.
 
 > **Ressource :**
-> vous pouvez retrouvez l'exposition de metrics métier dans une application Java expliquer dans cette article
+> vous pouvez retrouver l'exposition de metrics métier dans une application Java, comme expliqué dans cet article
 > [http://blog.xebia.fr/2017/07/28/superviser-mon-application-play-avec-prometheus](http://blog.xebia.fr/2017/07/28/superviser-mon-application-play-avec-prometheus)
 
 ## Ressources complémentaires
