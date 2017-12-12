@@ -66,24 +66,24 @@ Nous allons maintenant ajouter `cAdvisor` au `docker-compose.yml` :
 ```yml
 services:
 ...
-cadvisor:
-image: google/cadvisor
-container_name: cadvisor
-volumes:
-- /:/rootfs:ro
-- /var/run:/var/run:rw
-- /sys:/sys:ro
-- /var/lib/docker/:/var/lib/docker:ro
-expose:
-- 8080
-ports:
-- "8005:8080"
-networks:
-- monitoring
+  cadvisor:
+    image: google/cadvisor
+    container_name: cadvisor
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    expose:
+      - 8080
+    ports:
+      - "8005:8080"
+    networks:
+      - monitoring
 
 networks:
-monitoring:
-driver: bridge
+  monitoring:
+    driver: bridge
 ```
 
 Nous pouvons relancer le `docker-compose`.
@@ -111,54 +111,54 @@ Commençons par installer `Prometheus` :
 ```yml
 services:
 ...
-prometheus:
-image: prom/prometheus:v2.0.0
-container_name: prometheus
-volumes:
-- ./docker/prometheus/:/etc/prometheus/
-- prometheus-data:/prometheus
-command:
-- '--config.file=/etc/prometheus/prometheus.yml'
-- '--storage.tsdb.path=/prometheus'
-- '--web.console.libraries=/etc/prometheus/console_libraries'
-- '--web.console.templates=/etc/prometheus/consoles'
-- '--storage.tsdb.retention=200h'
-expose:
-- 9090
-ports:
-- "9090:9090"
-networks:
-- monitoring
+    prometheus:
+      image: prom/prometheus:v2.0.0
+      container_name: prometheus
+      volumes:
+        - ./docker/prometheus/:/etc/prometheus/
+        - prometheus-data:/prometheus
+      command:
+        - '--config.file=/etc/prometheus/prometheus.yml'
+        - '--storage.tsdb.path=/prometheus'
+        - '--web.console.libraries=/etc/prometheus/console_libraries'
+        - '--web.console.templates=/etc/prometheus/consoles'
+        - '--storage.tsdb.retention=200h'
+      expose:
+        - 9090
+      ports:
+        - "9090:9090"
+      networks:
+        - monitoring
 
 volumes:
 ...
-prometheus-data: {}
+  prometheus-data: {}
 ```
 
 Et ajoutons dans le dossier `docker/prometheus` le fichier de configuration `prometheus.yml`.
 
 ```yml
 global:
-scrape_interval: 15s
-evaluation_interval: 15s
-external_labels:
-monitor: 'docker-host-alpha'
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'docker-host-alpha'
 
 rule_files:
-- "targets.rules"
-- "host.rules"
-- "containers.rules"
+  - "targets.rules"
+  - "host.rules"
+  - "containers.rules"
 
 scrape_configs:
-- job_name: 'cadvisor'
-scrape_interval: 5s
-static_configs:
-- targets: ['cadvisor:8080']
+  - job_name: 'cadvisor'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['cadvisor:8080']
 
-- job_name: 'prometheus'
-scrape_interval: 10s
-static_configs:
-- targets: ['localhost:9090']
+  - job_name: 'prometheus'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['localhost:9090']
 ```
 
 Nous pouvons remarquer le job de scraping `cadvisor` sur l'endpoint `cadvisor:8080`. Prometheus va toujours scraper selon le schéma suivant :
@@ -188,21 +188,21 @@ Nous allons maintenant installer `Grafana` :
 ```yml
 services:
 ...
-grafana:
-image: grafana/grafana:4.6.2
-container_name: grafana
-volumes:
-- grafana-data:/var/lib/grafana
-expose:
-- 3000
-ports:
-- "3000:3000"
-networks:
-- monitoring
+  grafana:
+    image: grafana/grafana:4.6.2
+    container_name: grafana
+    volumes:
+      - grafana-data:/var/lib/grafana
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    networks:
+      - monitoring
 
 volumes:
 ...
-grafana-data: {}
+  grafana-data: {}
 ```
 
 Nous pouvons lancer une dernière fois le `docker-compose`.
