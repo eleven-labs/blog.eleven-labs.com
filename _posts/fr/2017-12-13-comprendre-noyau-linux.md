@@ -20,18 +20,18 @@ Pourquoi compiler son noyau alors qu'on a tous au moins 8 Go de mémoire vive me
 
 La réponse est très simple : un jour vous allez tomber sur une vieille machine et vous dire "hey pourquoi ne pas en faire un serveur ou un genre de NAS ?".
 Un peu optimiste, vous allez commencer par installer une Ubuntu 17.04 version graphique (on sait jamais), *pimpée comme une voiture volée* et vous dire après coup : "en fait, c'est lent".
-En effet, on s'aperçoit rapidement que Ubuntu 17.04 ou Debian Strech, ça tourne mal sur une vieille machine.
+En effet, on constate rapidement que Ubuntu 17.04 ou Debian Strech, ça tourne mal sur une vieille machine.
 
 C'est là que l'on s'aperçoit que des distributions comme Ubuntu chargent l'équivalent du nombre d'atomes dans l'univers :
  - Driver pour lecteur d'empreintes ;
  - Driver pour cartes Wifi ;
- - etc.
+ - etc...
 
 Les distributions "grand public" sont très bien, mais couvrent un champ des possibles beaucoup trop vaste pour certaines applications.
 
 # Pré-requis
 
-Avant de commencer, voici quelques assertions de base nécessaires au suivi de ces quelques articles :
+Avant de commencer, voici quelques notions de base indispensables au suivi de ces quelques articles :
 
  - Avoir une distribution basée sur le kernel GNU/Linux ;
  - Maîtriser les commandes de base de GNU/Linux ;
@@ -40,7 +40,7 @@ Avant de commencer, voici quelques assertions de base nécessaires au suivi de c
 Si vous ne souhaitez pas installer les différents outils sur votre machine, vous pouvez au choix utiliser un container Debian pour docker ou encore Virtual Box.
 Sachez en tout cas que si vous compilez votre noyau sur votre machine, nous n'écraserons pas l'ancien, et nous ferons une entrée différente dans le bootloader.
 
-Ces assertions ne seront néanmoins pas nécessaires si vous ne souhaitez que la théorie. En effet, il s'agit d'une série de trois articles composés comme il suit :
+Ces notions ne seront néanmoins pas nécessaires si vous ne souhaitez que la théorie. En effet, il s'agit d'une série de trois articles composés comme il suit :
  - théorie (& pourquoi) ;
  - configuration (& comment) ;
  - compilation (& installation).
@@ -48,25 +48,25 @@ Ces assertions ne seront néanmoins pas nécessaires si vous ne souhaitez que la
 # Pourquoi parler de Kernel Linux ?
 
 Linux c'est juste le noyau, c'est une couche logicielle permettant au software de dialoguer avec le hardware.
-Debian, Ubuntu, Arch, Fedora, Red Hat, OpenSUSE, Gentoo, etc j'en passe et des plus ou moins bonnes, ce sont des distributions basées sur une seule et même base : le noyau GNU/Linux.
+Debian, Ubuntu, Arch, Fedora, Red Hat, OpenSUSE, Gentoo, et j'en passe des plus ou moins bonnes, sont des distributions basées sur une seule et même base : le noyau GNU/Linux.
 
-Ce qui fait qu'on les nomme "distribution", c'est qu'il y a une philosophie derrière, et surtout un gestionnaire de paquets souvent différents d'une distribution à l'autre (apt, yum, emerge, pacman, etc.). Ils sont divers & variés.
+Ce qui fait qu'on les nomme "distributions", c'est qu'il y a une philosophie derrière, et surtout un gestionnaire de paquets souvent différent d'une distribution à l'autre (apt, yum, emerge, pacman, etc.). Ils sont divers & variés.
 
-Des distributions orientées grand public vont tout inclure pour couvrir le maximum d'utilsateurs et donc d'environnements, drivers (Ubuntu), d'autres vont préférer la stabilité (Debian), et certaines vont même jusqu'à compiler tout pour l'optimisation (Gentoo).
+Des distributions orientées grand public vont tout inclure pour couvrir le maximum d'utilsateurs et donc d'environnements et drivers (Ubuntu). D'autres vont préférer la stabilité (Debian), et certaines vont même jusqu'à compiler tout pour l'optimisation (Gentoo).
 
 # Alors, pourquoi (re)compiler son Kernel ?
 
 Les raisons sont multiples. On peut travailler dans l'embedded (IoT/satellites/etc.) et avoir de grandes restrictions en terme de mémoire utilisée.
 On peut aussi être passionné et se dire : "je veux comprendre le noyau, et je suis un fou je veux booter en 5 secondes sur ma machine".
 Ou tout simplement penser : "j'ai une vieille machine, j'essaie de la sauver de la casse, il ne faut pas que je lui en demande trop".
-Un autre domaine ou la compilation du noyau est très utilisée, est la musique assistée par ordinateur. En effet, un noyau temps-réel est souvent bien plus performant pour la MAO.
+Un autre domaine où la compilation du noyau est très utilisée, est la musique assistée par ordinateur. En effet, un noyau temps-réel est souvent bien plus performant pour la MAO.
 
 Une chose est sûre, c'est que sur un hardware un tout petit peu exotique, ou pour configurer des devices un peu particuliers, vous recompilerez au moins une fois votre Kernel dans votre vie.
-Bien souvent cette opération fait peur, même pour des utilisateurs confirmés sur Linux. Pour preuve, faites un sondage, vous verrez que rares sont ceux qu'il l'ont fait manuellement (en effet le but ici est de le faire manuellement pour comprendre les impacts).
+Bien souvent cette opération fait peur, même pour des utilisateurs confirmés sur Linux. Pour preuve, faites un sondage, vous verrez que rares sont ceux qui l'ont fait manuellement (en effet le but ici est de le faire manuellement pour comprendre les impacts).
 
 Je n'ai pas de benchmarks sous la main, mais j'en ai fait plusieurs à l'époque sur une machine relativement standard : le kernel proposé par Ubuntu prenait 30 secondes à booter, mes kernel customisés pas plus de 10 secondes.
 
-# Quel problèmes cela peut-il engendrer ?
+# Quels problèmes cela peut-il engendrer ?
 
 ![](/assets/2017-12-13-understanding-linux-kernel/kernel_panic.jpg)
 
@@ -78,8 +78,7 @@ Dans un cas réel, les problèmes qui peuvent empêcher le boot de votre machine
  - ne pas avoir de clé/disque bootable avec la distribution Linux de votre choix ;
  - ne pas avoir fait un backup de votre config.
 
-En suivant ces trois règles, rien est irréversible dans l'immédiat. Même si vous ne suivez pas ces consignes, vous pourrez toujours rebooter.
-Le risque est donc présent, mais jamais irréversible, celà peut juste être frustant parfois.
+En suivant ces trois règles, rien n'est irréversible dans l'immédiat. Même si vous ne suivez pas ces consignes, vous pourrez toujours rebooter. Le risque est donc présent, mais jamais irréversible, celà peut juste être frustant parfois.
 
 D'expérience, mes deux *pires* problèmes ont été les suivants :
  - compiler un noyau sans le support du système de fichiers ext2 alors que celui-ci était stocké sur une partition ext2 ;
@@ -93,27 +92,27 @@ Ici, je laisse H2G2 répondre au problème : "Don't panic", c'est normal, cela a
 ## Firmware & MBR
 
 Au démarrage, le premier élément à être démarré est le firmware (BIOS et EFI sont les plus courants), qui est stocké en ROM.
-Celui-ci va appeler le MBR (Master Boot Record), aussi appelée zone d'amorce, stocké lui sur un disque à l'adresse 0 pour une taille de 512 octets. On y trouve notamment les éléments suivants :
+Celui-ci va appeler le MBR (Master Boot Record), aussi appelé zone d'amorce, stocké lui sur un disque à l'adresse 0 pour une taille de 512 octets. On y trouve notamment les éléments suivants :
  - La table des quatre partitions primaires du disque : 64 octets ;
  - Une "routine" (instructions peremettant de charger le bootloader, nous y reviendrons) : ~440 octets ;
 
 ## Bootloader
 
 Le MBR appelle donc le bootloader. Les plus courants sont GRUB & LILO sur Linux.
-C'est lors de l'installation du bootloader lui même qui va mettre dans le MBR la routine lui permettant de se charger.
+C'est lors de l'installation du bootloader lui-même qui va mettre dans le MBR la routine lui permettant de se charger.
 
 C'est le bootloader dans notre cas qui va charger tel ou tel noyau pour Linux, et même dans le cas d'un dualboot Linux/Windows, se charger d'appeler le bootloader de Windows.
 
 ## Initrd & Kernel
 
-Dans la plupart des distributions grand public, du fait de pouvoir supporter un grand nombre de configurations matérielles, les pilotes sont embarqués dans le noyau en tant que "module", c'est-à-dire qu'ils seront chargés dynamiquement, et non pas inclus de base dans le noyau, cela allège la taille du noyau, mais en revanche, cela rend impossible de booter le noyau seul. Dans ce cas, un autre binaire est chargé par le bootloader en même temps que le kernel : Initrd.
+Dans la plupart des distributions grand public, du fait de pouvoir supporter un grand nombre de configurations matérielles, les pilotes sont embarqués dans le noyau en tant que "modules", c'est-à-dire qu'ils seront chargés dynamiquement, et non pas inclus de base dans le noyau. Cela allège la taille du noyau, mais en revanche, cela rend impossible de booter le noyau seul. Dans ce cas, un autre binaire est chargé par le bootloader en même temps que le kernel : Initrd.
 
 L'initrd sert trois objectifs principaux :
  - Monter en RAM un premier système de fichier : initramfs, pour exécuter des tâches telles que monter un vrai système de fichier sur un disque ;
  - Contenir un kernel minimaliste contenant des pilotes indispensables ;
  - Permettre de charger les pilotes compilés en tant que modules dans le vrai noyau.
 
-Si les deux sont chargés, cela implique deux images, cela se traduit par d'autant plus de RAM utilisée. Voici la taille d'un noyau et de son initrd tous les deux compressés pour une Debian Stretch :
+Si les deux sont chargés, cela implique deux images, et cela se traduit par d'autant plus de RAM utilisée. Voici la taille d'un noyau et de son initrd tous les deux compressés pour une Debian Stretch :
 
 ```
 alexception@rataxes-HQ:~$ ls /boot -lah
@@ -152,7 +151,7 @@ fan                    16384  0
 thermal                20480  0
 ```
 
-En comptant le nombre de ligne, on s'aperçoit qu'une Debian Stretch charge en plus 145 modules de tailles diverses en RAM.
+En comptant le nombre de lignes, on s'aperçoit qu'une Debian Stretch charge en plus 145 modules de tailles diverses en RAM.
 
 ```
 alexception@rataxes-HQ:/boot$ lsmod |wc -l
@@ -162,7 +161,7 @@ alexception@rataxes-HQ:/boot$ lsmod |wc -l
 Deux "noyaux" sont donc chargés au lieu d'un seul afin de supporter une vaste majorité de matériels & configuration.
 En apprenant de votre matériel, ce que nous ferons dans le prochain article, vous pourrez vous passer de l'initrd, et compiler uniquement vos pilotes nécessaires en dur dans votre noyau.
 
-Voilà qui conclu cette première approche du noyau Linux et de quelques généralités concernant son fonctionnement et sa compilation.
+Voilà qui conclut cette première approche du noyau Linux et de quelques généralités concernant son fonctionnement et sa compilation.
 
 # [Bonus] Le "sachiez-tu" ?
 
