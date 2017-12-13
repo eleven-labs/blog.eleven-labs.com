@@ -29,7 +29,7 @@ C'est là que l'on s'aperçoit que des distributions comme Ubuntu chargent l'éq
 
 Les distributions "grand public" sont très bien, mais couvrent un champ des possibles beaucoup trop vaste pour certaines applications.
 
-# Pré-requis
+## Pré-requis
 
 Avant de commencer, voici quelques notions de base indispensables au suivi de ces quelques articles :
 
@@ -45,7 +45,7 @@ Ces notions ne seront néanmoins pas nécessaires si vous ne souhaitez que la th
  - configuration (& comment) ;
  - compilation (& installation).
 
-# Pourquoi parler de Kernel Linux ?
+## Pourquoi parler de Kernel Linux ?
 
 Linux c'est juste le noyau, c'est une couche logicielle permettant au software de dialoguer avec le hardware.
 Debian, Ubuntu, Arch, Fedora, Red Hat, OpenSUSE, Gentoo, et j'en passe des plus ou moins bonnes, sont des distributions basées sur une seule et même base : le noyau GNU/Linux.
@@ -54,7 +54,7 @@ Ce qui fait qu'on les nomme "distributions", c'est qu'il y a une philosophie der
 
 Des distributions orientées grand public vont tout inclure pour couvrir le maximum d'utilsateurs et donc d'environnements et drivers (Ubuntu). D'autres vont préférer la stabilité (Debian), et certaines vont même jusqu'à compiler tout pour l'optimisation (Gentoo).
 
-# Alors, pourquoi (re)compiler son Kernel ?
+## Alors, pourquoi (re)compiler son Kernel ?
 
 Les raisons sont multiples. On peut travailler dans l'embedded (IoT/satellites/etc.) et avoir de grandes restrictions en terme de mémoire utilisée.
 On peut aussi être passionné et se dire : "je veux comprendre le noyau, et je suis un fou je veux booter en 5 secondes sur ma machine".
@@ -66,7 +66,7 @@ Bien souvent cette opération fait peur, même pour des utilisateurs confirmés 
 
 Je n'ai pas de benchmarks sous la main, mais j'en ai fait plusieurs à l'époque sur une machine relativement standard : le kernel proposé par Ubuntu prenait 30 secondes à booter, mes kernel customisés pas plus de 10 secondes.
 
-# Quels problèmes cela peut-il engendrer ?
+## Quels problèmes cela peut-il engendrer ?
 
 ![](/assets/2017-12-13-understanding-linux-kernel/kernel_panic.jpg)
 
@@ -87,23 +87,23 @@ D'expérience, mes deux *pires* problèmes ont été les suivants :
 Notez tout de même ce qu'il suit. Plus le nombre d'expérimentations est grand et réalisé sans trop de méthodologie, plus le risque de voir s'afficher un message "Kernel Panic" est proportionnel. Voyez ça comme le BSOD Windows, que vous aurez provoqué tout seul.
 Ici, je laisse H2G2 répondre au problème : "Don't panic", c'est normal, cela arrive de faire des bétises !
 
-# Comprendre le processus de boot
+## Comprendre le processus de boot
 
-## Firmware & MBR
+### Firmware & MBR
 
 Au démarrage, le premier élément à être démarré est le firmware (BIOS et EFI sont les plus courants), qui est stocké en ROM.
 Celui-ci va appeler le MBR (Master Boot Record), aussi appelé zone d'amorce, stocké lui sur un disque à l'adresse 0 pour une taille de 512 octets. On y trouve notamment les éléments suivants :
  - La table des quatre partitions primaires du disque : 64 octets ;
  - Une "routine" (instructions peremettant de charger le bootloader, nous y reviendrons) : ~440 octets ;
 
-## Bootloader
+### Bootloader
 
 Le MBR appelle donc le bootloader. Les plus courants sont GRUB & LILO sur Linux.
 C'est lors de l'installation du bootloader lui-même qui va mettre dans le MBR la routine lui permettant de se charger.
 
 C'est le bootloader dans notre cas qui va charger tel ou tel noyau pour Linux, et même dans le cas d'un dualboot Linux/Windows, se charger d'appeler le bootloader de Windows.
 
-## Initrd & Kernel
+### Initrd & Kernel
 
 Dans la plupart des distributions grand public, du fait de pouvoir supporter un grand nombre de configurations matérielles, les pilotes sont embarqués dans le noyau en tant que "modules", c'est-à-dire qu'ils seront chargés dynamiquement, et non pas inclus de base dans le noyau. Cela allège la taille du noyau, mais en revanche, cela rend impossible de booter le noyau seul. Dans ce cas, un autre binaire est chargé par le bootloader en même temps que le kernel : Initrd.
 
@@ -163,7 +163,7 @@ En apprenant de votre matériel, ce que nous ferons dans le prochain article, vo
 
 Voilà qui conclut cette première approche du noyau Linux et de quelques généralités concernant son fonctionnement et sa compilation.
 
-# [Bonus] Le "sachiez-tu" ?
+## [Bonus] Le "sachiez-tu" ?
 
 Une petite rubrique pour conclure cette introduction à la compilation d'un Kernel avant de rentrer dans le vif du sujet.
 
