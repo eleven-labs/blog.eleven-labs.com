@@ -6,8 +6,9 @@
       sw: '{{ "/sw.js" | prepend: site.baseurl }}',
     };
 </script>
-<script src="{{ "/js/lib/moment/moment.min.js" | prepend: site.baseurl_root }}"></script>
-<script src="{{ "/js/lib/moment/locale/fr.min.js" | prepend: site.baseurl_root }}"></script>
-<script src="{{ "/js/lib/algoliasearch/algoliasearchLite.min.js" | prepend: site.baseurl_root }}"></script>
-<script src="{{ "/js/search.js" | prepend: site.baseurl_root }}"></script>
-<script src="{{ "/js/service-worker.js" | prepend: site.baseurl_root }}"></script>
+<script src="{{ "/js/service-worker.js" | prepend: site.baseurl_root }}" async></script>
+<script src="{{ "/js/track-links.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/lib/moment/moment.min.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/lib/moment/locale/fr.min.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/lib/algoliasearch/algoliasearchLite.min.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/search.js" | prepend: site.baseurl_root }}" defer></script>
