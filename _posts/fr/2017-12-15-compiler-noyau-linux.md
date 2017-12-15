@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pour Noël, je compile mon noyau GNU/Linux !
-excerpt: ~
+excerpt: Le moment tant attendu est finalement arrivé, il est tant de : compiler, installer, tester (kernel-paniquer, recompiler, réinstaller, retester).
 authors:
 - aandre
 permalink: /fr/compiler-kernel-linux/
@@ -20,7 +20,7 @@ Le moment tant attendu est finalement arrivé, il est tant de : compiler, instal
 
 ## Compilation
 
-Ici rien de très compliqué nous allons juste lancer la compilation du noyau et des potentiels modules avec l'option -j4 ce qui correspond à paralléliser sur 4 coeurs de microprocesseur.
+Ici rien de très compliqué nous allons juste lancer la compilation du noyau et des potentiels modules avec l'option -j4, ce qui correspond à paralléliser sur 4 coeurs de microprocesseur.
 La règle empirique est de faire 1 core = 1 job, vous pouvez connaître le nombre de coeur de votre microprocesseur via la commande `nproc` ou via `cat /proc/cpuinfo |grep processor` :
 ```
 # make -j4 & make -j4 modules_install
@@ -30,7 +30,7 @@ Je vous vois venir :
 
 > Et qu'est-ce qu'on fait  pendant que ça compile ? Ça dure longtemps ?
 
-Déjà assurez vous que votre processeur n'est pas trop utilisé par d'autres tâches, cela accélère grandement la compilation.
+Déjà assurez-vous que votre processeur n'est pas trop utilisé par d'autres tâches, cela accélère grandement la compilation.
 Par exemple évitez de miner de la crypto-monnaie sur votre processeur en même temps.
 Et pour répondre, pendant que ça compile on fait autre chose :
 
@@ -56,7 +56,7 @@ lrwxrwxrwx 1 root root 22 déc.  15 02:09 ./arch/x86_64/boot/bzImage -> ../../x8
 -rw-r--r-- 1 root root 3.7M déc.  15 02:09 ./arch/x86/boot/bzImage
 ```
 
-Les dates & heures sont bonnes, la taille correcte, tout est bon.
+Les date & heure sont bonnes, la taille correcte, tout est bon.
 
 ## Installation
 
@@ -65,15 +65,15 @@ Pour installer le kernel dans son répertoire, il suffit de lancer la commande s
 make install
 ```
 
-Cette effectue plusieurs tâches :
+Cela effectue plusieurs tâches :
  - copier le binaire du kernel `./arch/x86/bzImage` => `/boot/vmlinuz-4.14.5`.
  - copier la configuration écrite dans le fichier `./.config` => `/boot/config-4.14.5`
  - copier le fichier `./System.map` => `/boot/System.map-4.14.5`
- - Créer un `/boot/initrd.img-4.14.5`
+ - créer un `/boot/initrd.img-4.14.5`
 
  Deux choses devraient vous choquer ici.
- Pourquoi diantre à-t'on un fichier initrd, alors que nous n'en voulions pas, la réponse est simple c'est comme ça que fait make install, mais rien ne nous oblige à l'utiliser.
- Et quel est ce mystérieux fichier System.map, il contient tout simplement l'adresse mémoire d'un bon nombre de fonctions et de variables (83334 dans mon cas) :
+ Pourquoi diantre a-t-on un fichier initrd, alors que nous n'en voulions pas ? La réponse est simple. C'est comme ça que fait make install, mais rien ne nous oblige à l'utiliser.
+ Et quel est ce mystérieux fichier System.map ? Il contient tout simplement l'adresse mémoire d'un bon nombre de fonctions et de variables (83334 dans mon cas) :
 
 ```
 # cat System.map
@@ -142,7 +142,7 @@ Si ma partition avait été `/dev/sdb1`, j'aurais renseigné `root=(hd1,1)` et `
 ### Cas de plusieurs partitions dont l'une sur /boot
 
 Maintenant si j'avais deux partitions `/dev/sda1` et `/dev/sda2`, la première sur `/` et l'autre sur `/boot`.
-J'utiliserai alors `/dev/sda2` parce que le kernel se trouve sur `/boot`, donc c'est une partition qui est bootable (en effet, il existe des partitions non bootables, il faut switcher un flag avec un gestionnaire de partition tel que `fdisk`).
+J'utiliserais alors `/dev/sda2` parce que le kernel se trouve sur `/boot`, donc c'est une partition qui est bootable (en effet, il existe des partitions non bootables, il faut switcher un flag avec un gestionnaire de partition tel que `fdisk`).
 Donc dans mon fichier grub j'aurais à la première ligne `set root=(hd0,2)` et à la seconde `linux /vmlinuz-4.14.5 root=/dev/sda2 ro quiet` (notez que la nous n'avons pas préfixé le noyau de `/boot`)
 
 ### Mapping /dev/sd* / hd*,*
@@ -180,7 +180,7 @@ Bon dans mon cas précis j'ai vite fait trouvé l'erreur, je l'ai fait sur une V
 
 C'est dorénavant à vous de jouer, vous savez comment compiler votre Kernel.
 Si vous avez des Kernel Panic encore une fois c'est normal, c'est même mieux, c'est en faisant des erreurs qu'on apprend !
-Il vaut mieux avoir trop de Kernel Panic et savoir comment les résoudre, que ne pas en avoir et dire "je sais compiler  mon Kernel".
+Il vaut mieux avoir trop de Kernel Panic et savoir comment les résoudre, que ne pas en avoir et dire "je sais compiler mon Kernel".
 L'avantage c'est que le Kernel évolue toujours !
 Des drivers & autres options sont ajoutés à chaque nouvelle version, de nouveaux devices/matériels sont créés, et de nouveaux matériels sont donc supportés !
 C'est donc une source intarissable d'apprentissage !
