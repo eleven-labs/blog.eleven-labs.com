@@ -18,7 +18,7 @@ cover: /assets/2017-12-14-configuring-linux-kernel/cover.jpg
 
 Maintenant que nous avons compris de façon générale comment fonctionnait le noyau Linux dans le précédent article, voyons comment le configurer afin, à terme, de le compiler et l'utiliser.
 
-Je considère dorénavant que votre choix est faitsur comment compiler votre Kernel par l'usage d'une des solutions suivantes :
+Je considère dorénavant que votre choix est fait sur comment compiler votre Kernel par l'usage d'une des solutions suivantes :
  - Sur votre machine actuelle ;
  - Sur une ancienne machine ;
  - Sur une VM type VirtualBox ;
@@ -55,7 +55,7 @@ Dans la plupart des cas (sauf distributions isolées telles que Gentoo), le noya
 Comme je souhaite que cet article soit le plus agnostique possible de la distribution utilisée, nous allons récupérer les sources directement depuis kernel.org, mais sachez que chaque distribution fourni en général un package permettant de récupérer les sources de façon automatisée. Les manipulations que vous allez effectuer sont donc l'équivalent de ce que fait votre distribution quand vous lui dites "je veux installer les sources du kernel pour les compiler".
 Sauf qu'ici nous allons outrepasser les sécurités d'usage de votre gestionnaire de paquet qui peuvent vous interdire d'installer la dernière version du noyau, car il n'a pas été validé par la Core Team de la distribution, ce qui est potentiellement le cas pour Debian.
 
-Lorsque j'écris ces lignes, le noyau est en version 4.x, plus précisément en 4.14.5. La liste est donc disponible ici : https://www.kernel.org/pub/linux/kernel/v4.x/. Exécutons les commandes suivantes :
+Lorsque j'écris ces lignes, le noyau est en version 4.x, plus précisément en 4.14.5. La liste est donc disponible ici : [](https://www.kernel.org/pub/linux/kernel/v4.x/). Exécutons les commandes suivantes :
 
 ```
 # cd /usr/src
@@ -178,7 +178,7 @@ General setup : comme son nom l'indique il traite de configurations générales,
     - Type de compression du module
     - Optimisation de compilation taille vs. performance
     - etc...
-    
+
 Il y a des options qu'il est préférable de ne pas désactiver par hasard (lisez l'aide associée à l'option, faites des recherches sur le web). Par exemple si vous désactivez le support de la Swap sur une machine avec très peu de RAM, vous voudrez sûrement y penser à deux fois.
 
 Loadable module support : Permet d'activer ou non la possibilité d'utiliser la compilation en tant que module, et de charger des modules autour du noyau. En effet, ce n'est pas parce vous désactivez l'initrd qu'il vous sera impossible de charger des modules. Néanmoins tous les pilotes nécessaires au boot devront être compilés en dur.
