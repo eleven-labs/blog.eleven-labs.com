@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pour Noël, je compile mon noyau GNU/Linux !
-excerpt: Le moment tant attendu est finalement arrivé, il est tant de : compiler, installer, tester (kernel-paniquer, recompiler, réinstaller, retester).
+excerpt: "Le moment tant attendu est finalement arrivé, il est tant de : compiler, installer, tester (kernel-paniquer, recompiler, réinstaller, retester)."
 authors:
 - aandre
 permalink: /fr/compiler-kernel-linux/
