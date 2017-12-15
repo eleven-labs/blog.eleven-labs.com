@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pour Noël, je configure mon noyau GNU/Linux !
-excerpt: Maintenant que nous avons compris de façon générale comment fonctionnait le noyau Linux dans le précédent article, voyons comment le configurer afin, à terme, de le compiler et l'utiliser.
+excerpt: ~
 authors:
 - aandre
 permalink: /fr/configurer-kernel-linux/
@@ -18,7 +18,7 @@ cover: /assets/2017-12-14-configuring-linux-kernel/cover.jpg
 
 Maintenant que nous avons compris de façon générale comment fonctionnait le noyau Linux dans le précédent article, voyons comment le configurer afin, à terme, de le compiler et l'utiliser.
 
-Je considère dorénavant que votre choix est faitsur comment compiler votre Kernel par l'usage d'une des solutions suivantes :
+Je considère dorénavant que votre choix est fait entre compiler votre Kernel par l'usage d'une des solutions suivantes :
  - Sur votre machine actuelle ;
  - Sur une ancienne machine ;
  - Sur une VM type VirtualBox ;
@@ -26,7 +26,7 @@ Je considère dorénavant que votre choix est faitsur comment compiler votre Ker
 
 À noter encore une fois que nous n'écraserons pas votre ancien Kernel, l'exemple est donc beaucoup plus concret en utilisant votre machine ou une ancienne machine.
 
-Afin de correspondre à une majorité de personnes sous Linux, je vais jouer le rôle de l'initrd, et fournir des commandes pour Debian et toutes distributions qui héritent de Debian.
+Afin de correspondre à une majorité de personne sous Linux, je vais jouer le rôle de l'initrd, et fournir des commandes pour Debian et toutes distributions qui héritent de Debian.
 Par ailleurs, certains faits énoncés ne seront pas toujours vrais selon les distributions ainsi que les versions des distributions.
 Je pars du principe que vous avez la version la plus naïve d'une distribution Debian. Donc il se peut, à votre avantage, que certaines manipulations ne soient pas à réaliser.
 
@@ -36,8 +36,9 @@ Abordons tout d'abord très rapidement quelques notions théoriques.
 
 ### Notions d'architecture
 
-Avant de compiler son noyau soi-même, encore faut-il disposer d'un environnement propice à sa compilation. Mais bien souvent, vous n'avez pas cet environnement de compilation.
-En effet, lorsque vous téléchargez une image bootable de votre future distribution, vous avez souvent le choix entre les architectures amd64 et x86. Cela correspond aux deux types de processeurs majeurs du marché sur ordinateur standard.
+Avant de compiler son noyau soit même, encore faut-il disposer d'un environnement propice à sa compilation. Mais bien souvent, vous n'avez pas cet environnement de compilation.
+En effet, lorsque vous téléchargez une image bootable de votre future distribution, vous avez souvent le choix entre les architectures amd64 et x86. Cela correspond aux deux types
+de processeurs majeurs du marché sur ordinateur standard.
 Cependant il en existe d'autres pour des processeurs mais également des microcontrôleurs (les microcontrôleurs étant assimilables à des microprocesseurs de basse consommation énergétique) : arm, sparc, hppa, etc.
 
 ### Le cas de la cross-compilation
@@ -52,10 +53,10 @@ Dans la plupart des cas (sauf distributions isolées telles que Gentoo), le noya
 
 ## Step 1 : Récupérer le Kernel
 
-Comme je souhaite que cet article soit le plus agnostique possible de la distribution utilisée, nous allons récupérer les sources directement depuis kernel.org, mais sachez que chaque distribution fourni en général un package permettant de récupérer les sources de façon automatisée. Les manipulations que vous allez effectuer sont donc l'équivalent de ce que fait votre distribution quand vous lui dites "je veux installer les sources du kernel pour les compiler".
+Comme je souhaite que cet article soit le plus agnostique possible de la distribution utilisée, nous allons récupérer les sources directement depuis kernel.org, mais sachez que chaque distribution fourni en général un package permettant de récupérer les sources de façon automatisée. Les manipulations que vous allez donc effectuer sont donc l'équivalent de ce que fait votre distribution quand vous lui dites "je veux installer les sources du kernel pour les compiler".
 Sauf qu'ici nous allons outrepasser les sécurités d'usage de votre gestionnaire de paquet qui peuvent vous interdire d'installer la dernière version du noyau, car il n'a pas été validé par la Core Team de la distribution, ce qui est potentiellement le cas pour Debian.
 
-Lorsque j'écris ces lignes, le noyau est en version 4.x, plus précisément en 4.14.5. La liste est donc disponible ici : https://www.kernel.org/pub/linux/kernel/v4.x/. Exécutons les commandes suivantes :
+Lorsque j'écris ces lignes, le noyau est en version 4.x, plus précisément en 4.14.5. La liste est donc disponible ici : [](https://www.kernel.org/pub/linux/kernel/v4.x/). Exécutons les commandes suivantes :
 
 ```
 # cd /usr/src
@@ -63,7 +64,7 @@ Lorsque j'écris ces lignes, le noyau est en version 4.x, plus précisément en 
 # tar xvzf linux-4.14.5.tar.gz
 ```
 
-En premier lieu, nous nous sommes placés dans le répertoire conventionnel des sources du noyau linux (à priori il ne contient rien sauf pour certaines distributions).
+En premier lieu, nous nous somme placé dans le répertoire conventionnel des sources du noyau linux (à priori il ne contient rien sauf pour certaines distributions).
 À priori vous mettez les sources où vous le souhaitez (sauf dans /dev/null tant qu'à faire), mais /usr/src pour les puristes reste la zone où stocker les sources des différentes versions du Kernel avec leurs configurations respectives.
 J'irais même plus loin en vous disant : versionnez vos configuration de kernel avec git par exemple, mais cela fera un très bon sujet d'article de ma part sur la globalité de votre système.
 
@@ -73,7 +74,7 @@ Avoir les sources du Kernel c'est bien, pouvoir en tirer quelque chose, c'est mi
 
 ### Installer les utilitaires nécessaires
 
-Nous aurons besoin des programmes suivants :
+Nous aurons besoins des programmes suivants :
 
  - make
  - gcc
@@ -89,13 +90,13 @@ ncurses-dev n'est pas obligatoire mais dans ce cas, vous devrez répondre à aut
 
 Sans ncurses-dev, `make config` :
 
-![Vue make config]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/make_config.png){:class="center-image"}
+![]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/make_config.png){:class="center-image"}
 
-*Have fun ! On se revoit dans 10 jours quand vous aurez fini de configurer votre kernel :troll:*
+*Have fun ! On se revoit dans 10 jours quand vous aurez fini de configuré votre kernel :troll:*
 
 Avec ncurses-dev, `make menuconfig` (ou `make nconfig` pour un style plus épuré) :
 
-![Vue make menuconfig]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/make_menuconfig.png){:class="center-image"}
+![]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/make_menuconfig.png){:class="center-image"}
 
 *Bien plus user-friendly*
 
@@ -106,12 +107,12 @@ Là vous vous dites sûrement :
 > ok `make menuconfig` c'est bien, mais je ne comprends rien.
 
 C'est là que la commande `lspci` va nous être très utile. Elle permet de lister tous les périphériques PCI : cartes graphiques, cartes réseau, cartes son, etc :
-Cette commande dispose d'ailleurs d'options très utiles :
+Cette commande dispose d'ailleurs d'option très utiles :
 
  - `-k` : permet d'afficher le driver utilisé par le kernel pour piloter ce périphérique ;
  - `-q` : parfois certains périphériques ne sont pas reconnus localement via leur ID, cette option permet d'interroger la base de données centrale des PCI ID pour les reconnaître.
 
-Pour tout autres type de périphériques externes vous devriez déjà avoir les références.
+Pour tout autres types de périphériques externes vous devriez déjà avoir les références.
 
 ### Google is your friend
 
@@ -132,22 +133,24 @@ Par exemple je dispose d'un pilote graphique intégré Intel HD Graphics 430, ma
 ### A. Depuis une configuration "vierge"
 
 Je n'ai jamais configuré de noyau avec la configuration de base de Kernel.org, mais j'imagine sans trop spéculer, que la configuration proposée se doit d'être plutôt neutre par rapport aux distributions qui vont se greffer par dessus et surtout par rapport au hardware.
-Il y a donc potentiellement plus de choses à configurer, le but n'étant pas de vous dégoûter de la compilation de kernel, cet article traîtera uniquement de l'option B.
+Il y a donc potentiellement plus de chose à configurer, le but n'étant pas de vous dégouter de la compilation de kernel, cet article traîtera uniquement de l'option B.
 
 ### B. Depuis une configuration existante
 
-C'est la solution la plus utilisée : partir d'une configuration de Kernel imposée par votre distribution, bien trop lourde, pour retirer l'inutile. Comme je l'expliquais, cet article reprend les concepts de Debian & Ubuntu, on se base sur un noyau assez gourmand.
-Autre avantage, ce choix permet d'itérer, en retirant des pilotes pas à pas (d'où encore, l'intérêt de versionner la configuration de son noyau). Je recommande vivement cette méthode en faisant confiance à la configuration du Kernel proposée par votre distribution, qui est souvent en adéquation avec votre volonté de choisir cette distribution plutôt qu'une autre.
+C'est la solution la plus utilisée : partir d'une configuration de Kernel imposée par votre distribution, bien trop lourde, pour retirer l'inutile.
+Par ailleurs, comme je l'expliquais, cet article reprends les concepts de Debian & Ubuntu, on se base sur un noyau assez gourmand.
+Mais surtout pour pouvoir itérer en retirant des pilotes pas à pas (d'où encore, l'intérêt de versionner la configuration de son noyau).
+Je recommande vivement cette méthode en faisant confiance à la configuration du Kernel proposée par votre distribution, qui est souvent en adéquation avec votre volonté de choisir cette distribution plutôt qu'une autre.
 
 ## Step 5 : Configuration
 
-C'est parti, il est temps de commencer :
+C'est parti, il est tant de commencer :
 ```
 # cd linux-4.14.5
 ```
 ### Récupérer notre configuration actuelle
 
-Comme je le disais nous allons récupérer la configuration du noyau actuel. Deux possibilités s'offrent à nous :
+Comme je le disais nous allons récupérer, la configuration du noyau actuel. Deux possibilités s'offrent à nous :
 ```
 # zcat /proc/config.gz > /usr/src/linux-4.14.5/.config
 # cat /boot/config-$(uname -r) > /usr/src/linux-4.14.5/.config
@@ -173,18 +176,19 @@ Nous allons enfin pouvoir configurer notre noyau.
 
 #### Explication des menus
 
-General setup : comme son nom l'indique il traite de configurations générales, telles que :
+General setup : comme son nom l'indique il traite de configuration générales, telles que :
     - Initrd
-    - Type de compression du module
+    - Type de compression du modules
     - Optimisation de compilation taille vs. performance
-    - etc...
-    
-Il y a des options qu'il est préférable de ne pas désactiver par hasard (lisez l'aide associée à l'option, faites des recherches sur le web). Par exemple si vous désactivez le support de la Swap sur une machine avec très peu de RAM, vous voudrez sûrement y penser à deux fois.
+    - etc.
+Il y a des options qu'il est préférable de ne pas désactiver par hasard (lisez l'aide associée à l'option, faites des recherches sur le web).
+Par exemple si vous désactivez le support de la Swap sur une machine avec très peu de RAM, vous voudrez sûrement y penser à deux fois.
 
-Loadable module support : Permet d'activer ou non la possibilité d'utiliser la compilation en tant que module, et de charger des modules autour du noyau. En effet, ce n'est pas parce vous désactivez l'initrd qu'il vous sera impossible de charger des modules. Néanmoins tous les pilotes nécessaires au boot devront être compilés en dur.
+Loadable module support : Permet d'activer ou non la possibilité d'utiliser la compilation en tant que module, et de charger des modules autour du noyau
+En effet, ce n'est pas parce vous désactivez l'initrd qu'il vous sera impossible de charger des modules. Néanmoins tous les pilotes nécessaires au boot devront être compilés en dur.
 
 Block layer : cela fait partie des options que je ne m'amuse pas à désactiver, puisque je n'en ai jamais eu l'utilité.
-Une rapide lecture de l'aide m'indique que sans cette option, je risque de me tirer une balle dans le pied, en rendant inutilisables certains systèmes de fichiers.
+Une rapide lecture de l'aide m'indique que sans cette option, je risque de me tirer une balle dans le pied, en rendant inutilisables certains système de fichiers.
 
 Processor type & features : comme son nom l'indique tout ce qui touche au processeur.
 Comme pour le general setup il y a des modifications qu'il est préférable de ne pas changer sans maîtriser.
@@ -196,11 +200,12 @@ Bus options : Tout ce qui gère les différents bus, évitez de désactiver le P
 Executable file formats : l'intitulé est trompeur. Je vous invite à regarder plus en détails l'aide de chacune des options.
 C'est ici que vous pourriez décider de ne plus supporter les librairies 32bits lorsque vous êtes sur du amd64.
 
-Networking support : le nom parle de lui-même.
-Il y a beaucoup de choses qui peuvent être désactivées ici.
+Networking support : le nom parle de lui même.
+Il y a beaucoup de chose qui peuvent être désactivées ici.
 Pour le sous-menu `networking options` soyez prudent, certaines options ne devraient pas être désactivées tandis que d'autres sont totalement inutiles si vous n'utilisez pas la machine pour faire un routeur comme `IP: advanced router`.
 
-Device drivers : Ce menu contient tous les drivers pour carte graphique, audio, réseaux, tout ! C'est là que vous désactiverez le plus de choses. Faites-vous plaisir mais n'oubliez pas google et `lspci`.
+Device drivers : Ce menu contient tous les drivers pour carte graphique, audio, réseaux, tout ! C'est là que vous désactiverez le plus de choses.
+Faites-vous plaisir mais n'oubliez pas google et `lspci`.
 
 Firmware drivers : cela permet au kernel de dialoguer avec le firmware (BIOS, EFI, etc.) pour obtenir des informations supplémentaires.
 
@@ -212,7 +217,7 @@ Kernel hacking, security options, cryptographic API, Virtualization, library rou
 #### Désactiver initrd
 
 Dans notre cas, nous voulions nous passer de l'initrd. Une brève recherche m'indique que je peux trouver cette option dans le menu general setup :
-![Recherche initrd]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/search_initrd.png){:class="center-image"}
+![]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/search_initrd.png){:class="center-image"}
 
 Il me suffit de m'y rendre pour le désactiver.
 En faisant ça je m'assure que l'initrd ne pourra jamais être utilisé, ce qui m'oblige à avoir un noyau très épuré, avec les drivers nécessaires au boot compilés en dur dans le Kernel.
@@ -233,13 +238,13 @@ Selects: INTEL_GTT [=y] && INTERVAL_TREE [=y] && SHMEM [=y] && TMPFS [=y] && DRM
 ```
 C'est donc dans le sous-menu graphics support que je vais aller activer l'option si ce n'est pas déjà fait, et désactiver ce qui me semble inutile (c'est à dire d'autres pilotes graphiques).
 
-![Menu graphics]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/graphics.png){:class="center-image"}
+![]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/graphics.png){:class="center-image"}
 
-Comme vous le voyez, tout est compilé en modules, et quasiment toutes les cartes sont supportées ! Faisons un peu de ménage.
+Comme vous le voyez, tout est compilé en modules, et quasiement toutes les cartes sont supportées ! Faisons un peu de ménage.
 
-![Twelve seconds later]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/12s.jpg){:class="center-image"}
+![]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/12s.jpg){:class="center-image"}
 
-![Menu graphics propre]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/clean_graphics.png){:class="center-image"}
+![]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/clean_graphics.png){:class="center-image"}
 
 C'est beaucoup plus digeste !
 
@@ -251,5 +256,5 @@ Jouez, lisez les différentes aides, utilisez abondamment vos moteurs de recherc
 ## Conclusion
 
 Nous verrons dans le prochain article comment compiler notre noyau.
-En attendant, jouez avec les différentes options, et essayez d'apprendre de votre matériel et du kernel.
+En attendant jouez avec les différentes options essayez d'apprendre de votre matériel et du kernel.
 Si vous avez tenté d'optimiser au maximum votre kernel, votre première compilation sera probablement défectueuse :D
