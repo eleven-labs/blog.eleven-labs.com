@@ -16,7 +16,7 @@ cover: /assets/2017-12-18-devops-facile/cover.jpg
 
 Ce n'est pas parce que l'on n'est pas DevOp que l'on ne peut pas mettre en production notre code dans le Cloud.
 
-Depuis que deployer n'est plus un Rsync ou un upload FTP (oui je suis #old) la mise en place d'un environnement de production est devenu un métier à par entier. Puis il y a eu l'avènement du Cloud et la je me suis senti encore plus perdu.
+Depuis que deployer n'est plus un Rsync ou un upload FTP (oui je suis #old) la mise en place d'un environnement de production est devenu un métier à par entière. Puis il y a eu l'avènement du Cloud et là je me suis senti encore plus perdu.
 
 Sauf que le Cloud c'est justement ce qui ma permis de remettre un pied dans le monde secret du déploiement en production.
 
