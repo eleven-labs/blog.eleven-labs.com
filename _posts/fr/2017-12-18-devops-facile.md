@@ -28,7 +28,7 @@ Mettre en production une application front en React. L'application n'a pas de se
 
 ## Mise en place
 
-Notre première idée était de mettre l'ensemble des fichiers générer (Javascript/CSS/HTML) dans une [Bucket Google Cloud](https://cloud.google.com/storage/?hl=fr).
+Notre première idée était de mettre l'ensemble des fichiers générés (Javascript/CSS/HTML) dans un [Bucket Google Cloud](https://cloud.google.com/storage/?hl=fr).
 
 Pour cela rien de plus de simple, comme le projet est hébergé sur GitHub et que nous avons Travis pour les tests unitaires, nous allons utiliser Travis pour aussi faire le déploiement.
 
@@ -36,7 +36,7 @@ Pour cela rien de plus de simple, comme le projet est hébergé sur GitHub et qu
 
 Je vous invite à regarder la documentation disponible [ici](https://docs.travis-ci.com/user/deployment).
 
-Dans notre fichier `.travis.yml`nous avons seulement besoin d'ajouter.
+Dans notre fichier `.travis.yml` nous avons seulement besoin d'ajouter:
 
 ```yml
 deploy:
@@ -51,17 +51,17 @@ deploy:
     branch: master
 ```
 
-Et voila vous avez déployé tous ce qui est contenu dans le dossier `public` dans le [bucket](https://cloud.google.com/storage/?hl=fr) `tutos`.
+Et voilà vous avez déployé tout ce qui est contenu dans le dossier `public` dans le [bucket](https://cloud.google.com/storage/?hl=fr) `tutos`.
 
 Cela fut très pratique, mais la navigation React ne fonctionnait pas, effectivement Storage se comporte mal lors d'un changement dynamique d'url (en même temps ce n'est pas fait pour cela). Cloud storage ce n'est pas un serveur web, c'est très bien pour nos assets mais ce n'est pas fait pour gérer l'application.
 
 > Mais alors comment faire ?
 
-La première idée aurait été de créer une machine dans le cloud avec [Compute Engine](https://cloud.google.com/compute/?hl=fr). Mais la on arrive à ma problèmatique, il va faloir faire la machine et ensuite créer des script de déployement avec un système de rollback etc ...
+La première idée aurait été de créer une machine dans le cloud avec [Compute Engine](https://cloud.google.com/compute/?hl=fr). Mais la on arrive à ma problèmatique, il va faloir faire la machine et ensuite ccréer des scripts de déploiement avec un système de rollback etc ...
 
 > Mais comment faire ????
 
-C'est la que l'idée de [App Engine](https://cloud.google.com/appengine/?hl=fr) est apparu.  App Engine permet d'avoir une application évolutive, ce dernier scale automatiquement selon le CPU de la machine. De plus il permet de mettre en production plusieurs version de l'application et donc de garder chacun d'elle et faire du [rolling deployment](http://searchitoperations.techtarget.com/definition/rolling-deployment).
+C'est la que l'idée de [App Engine](https://cloud.google.com/appengine/?hl=fr) est apparue.  App Engine permet d'avoir une application évolutive, ce dernier scale automatiquement selon le CPU de la machine. De plus il permet de mettre en production plusieurs versions de l'application et donc de garder chacune d'elles et faire du [rolling deployment](http://searchitoperations.techtarget.com/definition/rolling-deployment).
 
 Ce qui est super pratique c'est que App Engine prend en compte les Dockerfile, il faut donc simplement lui donner la configuration de votre Docker.
 
@@ -155,7 +155,7 @@ runtime: custom
 env: flex
 ```
 
-Il ne vous reste plus qu'a dire à Travis que vous voulez déployer dans Google App Engine. Nous vons tout de même gardé le déployement dans Google Storage pour les assets ce qui donne la configuration dans le fichier `.travis.yml` suivante:
+Il ne vous reste plus qu'a dire à Travis que vous voulez déployer dans Google App Engine. Nous avons tout de même gardé le déploiement dans Google Storage pour les assets ce qui donne la configuration dans le fichier `.travis.yml` suivante:
 
 ```yaml
 deploy:
@@ -182,7 +182,7 @@ Petite attention dans les tutoriels il faut créer un fichier encodé contenant 
 
 ## Conclusion
 
-En quelques ligne de code et un peu de lecture de tutoriel, vous avez déployé votre application dans des serveurs scalables et dans un service d'asset avec le CDN Google. Ce qui est magique c'est que avec l'ensemble des outils Google, vous pouvez monitorer votre application simplement (CPU/Mémoire/Logs).
+En quelques lignes de code et un peu de lecture de tutoriel, vous avez déployé votre application sur des serveurs scalables et dans un service d'asset avec le CDN Google. Ce qui est magique c'est que avec l'ensemble des outils Google, vous pouvez monitorer votre application simplement (CPU/Mémoire/Logs).
 
 Le Cloud et l'outillage autour nous aide à tous devenir des DevOps en puissance, il suffit de s'y mettre.
 
