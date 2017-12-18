@@ -14,29 +14,29 @@ tags:
 cover: /assets/2017-12-18-devops-facile/cover.jpg
 ---
 
-Ce n'est pas parce que l'on n'est pas DevOp que l'on ne peut pas mettre en production notre code dans le Cloud.
+Ce n'est pas parce que l'on n'est pas DevOps que l'on ne peut pas mettre en production notre code dans le Cloud.
 
 Depuis que deployer n'est plus un Rsync ou un upload FTP (oui je suis #old) la mise en place d'un environnement de production est devenu un métier à part entière. Puis il y a eu l'avènement du Cloud et là je me suis senti encore plus perdu.
 
 Sauf que le Cloud c'est justement ce qui ma permis de remettre un pied dans le monde secret du déploiement en production.
 
-Le but de ce petit d'article est de montrer qu'avec peu d'effort on peut avoir une application scalable dans le Cloud sans une ligne de bash.
+Le but de ce petit article est de montrer qu'avec peu d'effort on peut avoir une application scalable dans le Cloud sans une ligne de bash.
 
 ## Le besoin
 
-Mettre en production une application front en React. L'application n'a pas de serveur c'est du pur React, nous avons donc besoin d'un serveur web type Nginx. Pour ce qui est des assets on veut avec un CDN puissant.
+Mettre en production une application front en React. L'application n'a pas de serveur, c'est du pur React, nous avons donc besoin d'un serveur web type Nginx. Pour ce qui est des assets, on les veut avec un CDN puissant.
 
 ## Mise en place
 
 Notre première idée était de mettre l'ensemble des fichiers générés (Javascript/CSS/HTML) dans un [Bucket Google Cloud](https://cloud.google.com/storage/?hl=fr).
 
-Pour cela rien de plus de simple, comme le projet est hébergé sur GitHub et que nous avons Travis pour les tests unitaires, nous allons utiliser Travis pour aussi faire le déploiement.
+Pour cela rien de plus simple, comme le projet est hébergé sur GitHub et que nous avons Travis pour les tests unitaires, nous allons utiliser Travis pour faire le déploiement aussi.
 
-> Oui Travis permet aussi le déploiement !!!!
+> Oui Travis permet aussi le déploiement !
 
 Je vous invite à regarder la documentation disponible [ici](https://docs.travis-ci.com/user/deployment).
 
-Dans notre fichier `.travis.yml` nous avons seulement besoin d'ajouter:
+Dans notre fichier `.travis.yml` nous avons seulement besoin d'ajouter :
 
 ```yml
 deploy:
@@ -51,23 +51,23 @@ deploy:
     branch: master
 ```
 
-Et voilà vous avez déployé tout ce qui est contenu dans le dossier `public` dans le [bucket](https://cloud.google.com/storage/?hl=fr) `tutos`.
+Et voilà, vous avez déployé tout ce qui est contenu dans le dossier `public` dans le [bucket](https://cloud.google.com/storage/?hl=fr) `tutos`.
 
-Cela fut très pratique, mais la navigation React ne fonctionnait pas, effectivement Storage se comporte mal lors d'un changement dynamique d'url (en même temps ce n'est pas fait pour cela). Cloud storage ce n'est pas un serveur web, c'est très bien pour nos assets mais ce n'est pas fait pour gérer l'application.
+Cela fut très pratique, mais la navigation React ne fonctionnait pas. Effectivement, Storage se comporte mal lors d'un changement dynamique d'url (en même temps ce n'est pas fait pour cela). Cloud storage ce n'est pas un serveur web, c'est très bien pour nos assets mais ce n'est pas fait pour gérer l'application.
 
 > Mais alors comment faire ?
 
-La première idée aurait été de créer une machine dans le cloud avec [Compute Engine](https://cloud.google.com/compute/?hl=fr). Mais la on arrive à ma problèmatique, il va faloir faire la machine et ensuite ccréer des scripts de déploiement avec un système de rollback etc ...
+La première idée aurait été de créer une machine dans le cloud avec [Compute Engine](https://cloud.google.com/compute/?hl=fr). Mais là on arrive à ma problèmatique. Il va faloir faire la machine et ensuite ccréer des scripts de déploiement avec un système de rollback etc...
 
-> Mais comment faire ????
+> Mais comment faire ?
 
 C'est la que l'idée de [App Engine](https://cloud.google.com/appengine/?hl=fr) est apparue.  App Engine permet d'avoir une application évolutive, ce dernier scale automatiquement selon le CPU de la machine. De plus il permet de mettre en production plusieurs versions de l'application et donc de garder chacune d'elles et faire du [rolling deployment](http://searchitoperations.techtarget.com/definition/rolling-deployment).
 
 Ce qui est super pratique c'est que App Engine prend en compte les Dockerfile, il faut donc simplement lui donner la configuration de votre Docker.
 
-Pour notre projet comme il s'agit d'un projet statique nous avons suivi le tutoriel Google disponible [ici](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/quickstart).
+Pour notre projet, qui est statique, nous avons suivi le tutoriel Google disponible [ici](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/quickstart).
 
-Donc dans notre projet nous avons ajouté le fichier Dockerfile suivant
+Donc dans notre projet nous avons ajouté le fichier Dockerfile suivant :
 
 ```sh
 # The standard nginx container just runs nginx. The configuration file added
@@ -96,7 +96,7 @@ ADD www/ /usr/share/nginx/www/
 RUN chmod -R a+r /usr/share/nginx/www
 ```
 
-Puis la configuration de notre serveur nginx.
+Puis la configuration de notre serveur nginx :
 
 ```sh
 # Copyright 2015 Google Inc.
@@ -148,14 +148,14 @@ http {
 }
 ```
 
-Pour terminer il faut ajouter le fichier `app.yml` qui permet de dire à App Engine quel machine utiliser.
+Pour terminer il faut ajouter le fichier `app.yml` qui permet de dire à App Engine quel machine utiliser :
 
 ```sh
 runtime: custom
 env: flex
 ```
 
-Il ne vous reste plus qu'a dire à Travis que vous voulez déployer dans Google App Engine. Nous avons tout de même gardé le déploiement dans Google Storage pour les assets ce qui donne la configuration dans le fichier `.travis.yml` suivante:
+Il ne vous reste plus qu'à dire à Travis que vous voulez déployer dans Google App Engine. Nous avons tout de même gardé le déploiement dans Google Storage pour les assets, ce qui donne la configuration dans le fichier `.travis.yml` suivante :
 
 ```yaml
 deploy:
@@ -178,12 +178,12 @@ deploy:
       branch: master
 ```
 
-Attention dans les tutoriels que vous allez trouver, il faut récupérer le fichier de `credentials` fourni par Google et l'encoder via les scripts de Travis. Surtout ne versionnez pas le fichier de credentials mais seulement le fichier encodé. Il faut seulement garder le fichier de Google en local à l'abri des regards.
+Attention, dans les tutoriels que vous allez trouver, il faut récupérer le fichier de `credentials` fourni par Google et l'encoder via les scripts de Travis. Surtout ne versionnez pas le fichier de credentials mais seulement le fichier encodé. Il faut seulement garder le fichier de Google en local à l'abri des regards.
 
 ## Conclusion
 
-En quelques lignes de code et un peu de lecture de tutoriel, vous avez déployé votre application sur des serveurs scalables et dans un service d'asset avec le CDN Google. Ce qui est magique c'est que avec l'ensemble des outils Google, vous pouvez monitorer votre application simplement (CPU/Mémoire/Logs).
+En quelques lignes de code et un peu de lecture de tutoriel, vous avez déployé votre application sur des serveurs scalables et dans un service d'asset avec le CDN Google. Ce qui est magique c'est qu'avec l'ensemble des outils Google, vous pouvez monitorer votre application simplement (CPU/Mémoire/Logs).
 
-Le Cloud et l'outillage associé nous aide tous à devenir des DevOps en puissance. Il suffit de s'y mettre.
+Le Cloud et l'outillage associés nous aident tous à devenir des DevOps en puissance. Il suffit de s'y mettre.
 
 Vous pouvez retrouver le projet [ici](https://github.com/eleven-labs/codelabs).
