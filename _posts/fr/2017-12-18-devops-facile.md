@@ -178,7 +178,7 @@ deploy:
       branch: master
 ```
 
-Petite attention dans les tutoriels il faut créer un fichier encodé contenant les informations reçu dans le fichier `json` de Google permettant l'authentification de Travis.  Surtout ne pas mettre le fichier original dans votre Git mais conservé précieusement sur votre machine.
+Attention dans les tutoriels que vous allez trouver, il faut récupérer le fichier de `credentials` fourni par Google et l'encoder via les scripts de Travis. Surtout ne versionnez pas le fichier de credentials mais seulement le fichier encodé. Il faut seulement garder le fichier de Google en local à l'abri des regards.
 
 ## Conclusion
 
