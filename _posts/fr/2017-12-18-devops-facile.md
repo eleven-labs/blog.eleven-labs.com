@@ -184,7 +184,6 @@ Attention dans les tutoriels que vous allez trouver, il faut récupérer le fich
 
 En quelques lignes de code et un peu de lecture de tutoriel, vous avez déployé votre application sur des serveurs scalables et dans un service d'asset avec le CDN Google. Ce qui est magique c'est que avec l'ensemble des outils Google, vous pouvez monitorer votre application simplement (CPU/Mémoire/Logs).
 
-Le Cloud et l'outillage autour nous aide à tous devenir des DevOps en puissance, il suffit de s'y mettre.
-
+Le Cloud et l'outillage associé nous aide tous à devenir des DevOps en puissance. Il suffit de s'y mettre.
 
 Vous pouvez retrouver le projet [ici](https://github.com/eleven-labs/codelabs).
