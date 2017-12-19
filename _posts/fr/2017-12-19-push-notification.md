@@ -125,12 +125,12 @@ L'enregistrement du token utilisateur se fait au même endroit que celui du serv
 
 ```js
   function subscribeDevice() {
-    navigator.serviceWorker.ready.then(function (serviceWorkerRegistration) {
+    navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
       return serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true });
-    }).then(function (subscription) {
-      var endpointSections = subscription.endpoint.split('/');
-      var subscriptionId = endpointSections[endpointSections.length - 1];
-      fb.auth().onAuthStateChanged(function(user) {
+    }).then((subscription) => {
+      const endpointSections = subscription.endpoint.split('/');
+      const subscriptionId = endpointSections[endpointSections.length - 1];
+      fb.auth().onAuthStateChanged((user) => {
         if (user) {
           fb.database().ref('token/' + user.uid).set({subscriptionId: subscriptionId});
         }
@@ -139,9 +139,8 @@ L'enregistrement du token utilisateur se fait au même endroit que celui du serv
     });
   }
 
-  function getFirebase()
-  {
-    var config = {
+  function getFirebase() {
+    const config = {
       apiKey: "API_KEY",
       authDomain: "AUTH_DOMAIN",
       databaseURL: "DATABASE_URL",
@@ -190,7 +189,7 @@ Vous pouvez ajouter cela:
 Vous pouvez faire un lien vers votre site lors du clique sur la notification, en ajoutant l'event dans le service workers.
 
 ```js
-  self.addEventListener('notificationclick', function(event) {
+  self.addEventListener('notificationclick', (event) => {
     console.log('[Service Worker] Notification click Received.');
 
     event.notification.close();
@@ -261,7 +260,7 @@ const requestOptions = {
   method: 'POST',
   headers: {
     'Content-Type': ' application/json',
-    'Authorization': 'key=AAAAQ8mcQKQ:APA91bEpnFTV6oOWPLWN29q58M-tDI_LyBTisD4B-Aw3xkF4CMZ7KZ1Lnmzf9qUGF4YMZk48jpjWXxLw9GM19wItSYKyIdGYIMN3dXQR9dmRsy0Y6Pi0pMCUNJRePxKEAL4TwOK5p32Z',
+    'Authorization': 'key=SERVER_KEY',
   },
 };
 
