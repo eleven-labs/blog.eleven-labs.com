@@ -8,7 +8,7 @@ then
     # build with updated config
     sed -i '/^url:/c\url: http:\/\/dev.blog.eleven-labs.com.s3-website.eu-west-2.amazonaws.com' _config.yml
     sed -i '/^baseurl:/c\baseurl: \/'"$TRAVIS_PULL_REQUEST_BRANCH" _config.yml
-    bundle exec jekyll build --drafts
+    bundle exec jekyll build --drafts --future
 
     # create deployment
     DEPLOYMENT_ID=$(curl --silent -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -H "Accept: application/vnd.github.ant-man-preview+json" -X POST -d '{"ref":"'"$TRAVIS_PULL_REQUEST_BRANCH"'","environment":"'"$TRAVIS_PULL_REQUEST_BRANCH"'","required_contexts":[],"auto_merge":false}' "https://api.github.com/repos/eleven-labs/blog.eleven-labs.com/deployments" | jq -r ".id")
