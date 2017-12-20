@@ -154,7 +154,7 @@ L'enregistrement du token utilisateur se fait au même endroit que celui du serv
   }
 ```
 
-Il faut appeler la fonction `subscribeDevice` juste après l'enregistrement du service worker. Si tout est ok vous avez un petit popup qui vous demande de valider l'autorisation de recevoir les notifications.
+Il faut appeler la fonction `subscribeDevice` si le service worker est disponible dans le navigateur. Si tout est ok vous avez un petit popup qui vous demande de valider l'autorisation de recevoir les notifications.
 
 ![Popup notification]({{site.baseurl}}/assets/2017-12-19-push-notification/image4.png)
 
