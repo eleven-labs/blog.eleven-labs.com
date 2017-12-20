@@ -26,7 +26,7 @@ La suite de cet article sera dédiée à expliquer notre démarche en créant un
 
 ## Definition du projet
 Notre projet est un jeu dont le but est de placer des objets (par drag and drop en Javascript) dans une pièce.
-Les données à manipuler essentiellement sont:
+Les données à manipuler essentiellement sont :
 * **la pièce**: Elle est caractérisée principalement par _une image_ et un _coefficient d'agrandissement_ des objets.
 
 ![un exemple de pièce](/assets/2017-12-20-optimize-image-with-imagine/room.jpg)
@@ -35,12 +35,12 @@ Les données à manipuler essentiellement sont:
 ![une table](/assets/2017-12-20-optimize-image-with-imagine/table.png)
 ![un écran](/assets/2017-12-20-optimize-image-with-imagine/imac.png).
 
-L'objectif à atteindre:
+L'objectif à atteindre :
 * Optimiser les fonds de pièces
 * Optimiser les objets
 
 ## Résolution
-Cette section sera subdivisée en deux grandes parties:
+Cette section sera subdivisée en deux grandes parties :
 * Installation et définition
 * Optimisation
 
@@ -50,7 +50,7 @@ Dans cette partie, on parlera brièvement de la mise en place de la bibliothèqu
 
 #### Imagine
 
-Nous utilisons la librairie **Imagine** parce qu'elle permet notamment:
+Nous utilisons la librairie **Imagine** parce qu'elle permet notamment :
 * d'unifier les méthodes des bibliothèques [GD](http://php.net/manual/fr/book.image.php){:rel="nofollow"}, [Imagick](http://php.net/manual/fr/book.imagick.php){:rel="nofollow"} et [GMagick](http://php.net/manual/fr/book.gmagick.php){:rel="nofollow"},
 * simplifier les tests.
 
@@ -110,8 +110,8 @@ Optimiser, dans notre cas, cela implique de :
 #### Taille de destination
 A quoi servent les tailles de destination ? Elles permettent de définir les tailles idéales que doivent avoir nos images.
 Dans notre projet, nous avons défini deux tailles basées sur la taille maximale de chaque pièce sur mobile, et sur desktop.
-* LD (Low display): La largeur maximale a été fixée à 600px.
-* HD (High display): Une largeur maximale de 1200px a été choisie.
+* LD (Low display) : La largeur maximale a été fixée à 600px.
+* HD (High display) : Une largeur maximale de 1200px a été choisie.
 
 Nous reflétons nos tailles dans le fichier de configuration **config.yml**.
 
@@ -135,7 +135,7 @@ Pour toutes nos images, nous utiliserons les méthodes ```open```, ```resize``` 
 
 Elles sont censées recouvrir la quasi totalité de l'écran donc nous leur appliquons les tailles maximales **LD** et **HD** tout en gardant les proportions des images.
 
-Ex: Pour une image ```WIDTHxHEIGHT: 3000x1687``` de **14Mo** ca donnera en:
+Ex : Pour une image ```WIDTHxHEIGHT: 3000x1687``` de **14Mo** ca donnera en :
 * LD : ```600x336```, soit à peu près **592 ko**
 * HD : ```1200x672```, soit environ **2 Mo**
 
@@ -164,7 +164,7 @@ protected function execute(
 ): string {
     //On récupère la taille de l'image d'origine
     list($width, $height) = getimagesize($fullInputfile);
-    //On calcul le ratio pour toujours garder la meme proportion
+    //On calcule le ratio pour toujours garder la même proportion
     $ratio = $height / $width;
     $newWidth = $size;
 
@@ -177,7 +177,7 @@ protected function execute(
     $newHeight = ceil($newWidth * $ratio);
     $this->createFileDirectory($fullOutputFilePath);
 
-    //Enregistrons tout ca
+    //Enregistrons tout ça
     $box = new Box($newWidth, $newHeight);
     $this->imagine->open($fullInputfile)
         ->resize($box)
@@ -197,12 +197,12 @@ Pour les objets, la méthode de calcul est un peu différente. On ne peut pas le
 
 Nous avons décidé de calculer la taille maximale des images de nos objets lorsqu'elles sont au maximum zoomées dans les pièces.
 
-Pour ce faire il fallait se baser sur trois éléments:
+Pour ce faire il fallait se baser sur trois éléments :
 * La longueur maximale de la pièce, on la retrouve en multipliant la largeur par 0,75 _(0,75 parce que la partie jeu est au format quatre tiers.)_. Soite ```LONG_PIECE_EN_PX = LARG_PIECE_EN_PX * 0.75```.
-* La taille réelle de l’objet en mètre(Pas de l’image!). Soit ```HAUTEUR_REEL_OBJET_EN_METRE = HAUTEUR_REEL_OBJET_EN_CM * 0.01```.
-* Et la taille de la pièce en mètre (Nous l’avons fixé à 2m30).
+* La taille réelle de l’objet en mètre (pas de l’image !). Soit ```HAUTEUR_REEL_OBJET_EN_METRE = HAUTEUR_REEL_OBJET_EN_CM * 0.01```.
+* Et la taille de la pièce en mètre (nous l’avons fixée à 2m30).
 
-Par une petite règle de trois, nous obtenons:
+Par une petite règle de trois, nous obtenons :
 
 ```
 LONG_PIECE_EN_PX    -> HAUTEUR_PIECE_EN_METRE
@@ -260,8 +260,8 @@ public function execute(
 
 ## Récapitulons:
 
-Pour résoudre notre problème, nous avons:
+Pour résoudre notre problème, nous avons :
 
 * utilisé la librairie Imagine
 * défini les différents objectifs (tailles) que nous voulions atteindre
-* mis en place, les différentes méthodes de redimensionnement de nos objets.
+* mis en place les différentes méthodes de redimensionnement de nos objets.
