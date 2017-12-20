@@ -19,7 +19,7 @@ L’optimisation d’images est un enjeu très important dans la conception d’
 Durant le développement d’un jeu en ligne impliquant une gestion importante d’images, nous avons été amenés à les optimiser pour différents devices (desktop et mobile).
 La suite de cet article sera dédiée à expliquer notre démarche en créant une version simplifiée que vous retrouverez [ici](https://github.com/shalomaku/resize-with-imagine){:rel="nofollow"}.
 
-## Pré-requis:
+## Pré-requis :
 * php7
 * SYMFONY3
 * [GD](http://php.net/manual/fr/book.image.php){:rel="nofollow"}, [Imagick](http://php.net/manual/fr/book.imagick.php){:rel="nofollow"} ou [GMagick](http://php.net/manual/fr/book.gmagick.php){:rel="nofollow"}
@@ -258,7 +258,7 @@ public function execute(
 ...
 ```
 
-## Récapitulons:
+## Récapitulons :
 
 Pour résoudre notre problème, nous avons :
 
