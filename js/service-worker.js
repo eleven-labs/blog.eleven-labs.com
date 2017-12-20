@@ -68,8 +68,8 @@ layout: compress-js
           showOfflineToast();
         }
       });
-
-      subscribeDevice();
     });
+
+    subscribeDevice();
   }
 })();
