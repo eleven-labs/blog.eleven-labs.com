@@ -25,7 +25,10 @@ Nous avons pourtant une infinité de possibilités de simplifications, si on fai
 
 Je vais vous présenter dans cet article une de ces idées qui me permet de simplifier le process de demande de congés.
 
+
 ## Notre Contexte
+
+Voilà plus d'éléments sur notre process.
 
 ### Le process existant à améliorer
 
@@ -62,7 +65,8 @@ Pour mettre en place cette première étape du process, nous avons allons donc :
 - Mettre en place un agent **DialogFlow** : outil Google, anciennement appelé API.AI, déjà décrit sur notre [blog ici](/fr/dialogflow-votre-chatbot-facile/). Celui-ci va nous permettre de comprendre, grâce au *machine learning*, les messages envoyés au bot par les utilisateurs, ce qui est loin d'être simple sans ce type d'outils !
 - Mettre en place une application **Symfony** exposant un **webhook** qui sera appelé par le serveur Slack à chaque fois qu'un message privé est envoyé à notre bot. C'est depuis cette application que nous allons ensuite appeler DialogFlow pour interpréter le message Slack reçu, puis répondre à l'astronaute, puis enregistrer la demande de congés.
 
-## Notre bot Slack
+
+## Notre bot Slack
 
 Commençons par la mise en place du bot Slack.
 
@@ -127,7 +131,7 @@ Les "intents" correspondent aux types de messages de l'utilisateur que nous avon
 
 [![DialogFlow intents]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png){: .center-image .no-link-style}
 
-- Premier intent, le plus intéressant que nous appelons "**Demande de congés avec dates de début et de fin**" :
+#### Premier intent, le plus intéressant que nous appelons "**Demande de congés avec dates de début et de fin**" :
 
 Nous allons lister dans la partie "**User says**" un maximum d'inputs utilisateurs qui pourraient être envoyés par les astronautes qui font leur demande de congés.
 
@@ -142,14 +146,19 @@ Enfin, nous pouvons configurer les réponses qui seront renvoyées par DialogFlo
 [![DialogFlow intent dates output]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_output.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_output.png){: .center-image .no-link-style}
 
 Nous avons deux types de réponses :
-* les textes que nous utiliserons pour répondre à l'astronaute sur Slack.
-* le "**Custom Payload**" qui nous permettra de retourner les valeurs des paramètres "startDate" et "endDate" qui seront reconnus par Google.
+- les textes que nous utiliserons pour répondre à l'astronaute sur Slack.
+- le "**Custom Payload**" qui nous permettra de retourner les valeurs des paramètres "startDate" et "endDate" qui seront reconnus par Google.
 
-- L'intent "**Bonjour**" quant à lui nous permettra de répondre poliment à l'astronaute qui nous dit bonjour. Mais pas de paramètre à configurer pour celui-ci.
+#### L'intent "**Bonjour**"
 
-- Enfin l'intent "**Fallback**" nous permet de configurer des messages par défaut, quand le message de l'utilisateur n'est pas reconnu par les précédent intents.
+Quant à lui, il nous permettra de répondre poliment à l'astronaute qui nous dit bonjour. Mais pas de paramètre à configurer pour celui-ci.
 
-## Notre application Symfony
+#### Enfin l'intent "**Fallback**"
+
+Il nous permet de configurer des messages par défaut, quand le message de l'utilisateur n'est pas reconnu par les précédent intents.
+
+
+## Notre application Symfony
 
 Tout le code de l'application Symfony qui permet de communiquer avec Slack et DialogFlow est sur [mon Github ici](https://github.com/ch3ric/WilsonPlanning/tree/master/src/AppBundle). Je vais détailler ici uniquement les parties les plus importantes.
 
@@ -173,7 +182,7 @@ namespace AppBundle\Action\Webhook;
 
 final class SlackAction
 {
-	// private properties and __construct...
+    // private properties and __construct...
 
     /**
      * @Route("/api/webhook/slack", defaults={"_format": "json"})
@@ -201,20 +210,20 @@ final class SlackAction
 }
 ```
 
-### Parser le contenu de la requête Slack
+### Parser le contenu de la requête Slack
 
 Ensuite, nous récupérons le "content" de la requête qui a cette forme :
 
 ```json
 {
-	...
-	"event": {
-		"type": "message",
-		"text": "Je veux poser des congés entre le 5 décembre et le 6 janvier",
-		"user": "XXXXXX",
-		"channel": "ZZZZZZ"
-	},
-	...
+    ...
+    "event": {
+        "type": "message",
+        "text": "Je veux poser des congés entre le 5 décembre et le 6 janvier",
+        "user": "XXXXXX",
+        "channel": "ZZZZZZ"
+    },
+    ...
 }
 ```
 
@@ -240,7 +249,7 @@ namespace AppBundle\Slack;
 
 class Client
 {
-	private $client; // GuzzleHttp\ClientInterface
+    private $client; // GuzzleHttp\ClientInterface
     private $baseUri; // https://slack.com/api/
     private $token; // 'OAuth Access Token' from 'OAuth & Permissions' > 'Tokens for Your Workspace' on https://api.slack.com/apps
 
@@ -286,14 +295,14 @@ Nous pouvons ainsi utiliser la méthode `get` de ce service en lui passant le us
 
 ```json
 {
-	"user": {
-		"name": "Charles-Eric Gorron",
-		...
-		"profile": {
-			...
-			"email": "cgorron@eleven-labs.com"
-		}
-	}
+    "user": {
+        "name": "Charles-Eric Gorron",
+        ...
+        "profile": {
+            ...
+            "email": "cgorron@eleven-labs.com"
+        }
+    }
 }
 ```
 
@@ -503,17 +512,19 @@ final class SlackAction
 Voilà pourquoi je catch ici les `\InvalidArgumentException` retournées par mes parsers.
 Si votre webhook retourne un code d'erreur HTTP, il rappellera plusieurs fois votre webhook, jusqu'à obtenir une réponse avec un code 20X. Cela peut avoir des conséquences surprenantes : si l'erreur intervient à la dernière étape de votre controller, après le POST vers Slack, vous pourriez spammer la conversation privée de l'utilisateur en lui renvoyant un nouveau message à chaque fois que Slack rappelle le webhook en erreur !
 
-## Notre résultat final
 
-**Démo** : voici un extrait d'une conversation Slack avec notre bot :
+## Notre résultat final
 
-[![Démo]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo1.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo1.png){: .center-image .no-link-style}
+**Démonstration** : voici un extrait d'une conversation Slack avec notre bot :
+
+[![Démonstration]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo1.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo1.png){: .center-image .no-link-style}
 
 Et voilà le résultat enregistré en base de données :
 
-[![Démo]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png){: .center-image .no-link-style}
+[![Résultats en base de données]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png){: .center-image .no-link-style}
 
-On remarque notre ami Google a bien sû reconnaître les dates écrites en français et nous a permis d'enregistrer des dates au format 'datetime' en base de données, merci à lui !
+On remarque notre ami Google a bien su reconnaître les dates écrites en français et nous a permis d'enregistrer des dates au format 'datetime' en base de données, merci à lui !
+
 
 ## Conclusion
 
@@ -522,4 +533,4 @@ Je m'arrête ici pour cette fois, même si comme mentionné en première partie 
 Vous noterez que j'ai utilisé "API Platform" sur mon projet [Github](https://github.com/ch3ric/WilsonPlanning), alors qu'il n'a aucun intérêt pour cet article en particulier : car j'ai encore beaucoup d'idées en tête à implémenter pour interagir avec d'autres systèmes qui pourraient appeler cette API.
 
 Je vous tiendrai au courant des prochaines évolutions de cet outil si ça vous intéresse :P !
-Faites moi savoir en commentaire si vous avez d'autres idées doptimisations !
+Faites moi savoir en commentaire si vous avez d'autres idées d'optimisations !
