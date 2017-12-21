@@ -15,7 +15,7 @@ tags:
 cover: /assets/2017-12-19-push-notification/cover.jpg
 ---
 
-Parce que nous voulons toujours améliorer notre blog, et parce que ce dernier est la vitrine de notre expertisetechnique, aujourd'hui nous avons mis en place les notifications.
+Parce que nous voulons toujours améliorer notre blog, et parce que ce dernier est la vitrine de notre expertise technique, aujourd'hui nous avons mis en place les notifications.
 
 > Mais à quoi cela sert-il ?
 
@@ -23,13 +23,13 @@ Cela sert à savoir quand un nouvel article est en ligne. Si vous acceptez les n
 
 Voyons ensemble comment nous nous y sommes pris.
 
-## Etape 1: le service worker
+## Etape 1 : le service worker
 
-Tout d'abord nous avons mis en place un service worker. Le service worker est un script Javascript qui tourne directement sur votre navigateur sans que le site soit activé. Pour plus d'explications, vous pouvez lire ce super document [ici](https://developers.google.com/web/fundamentals/primers/service-workers/){:rel="nofollow noreferrer"}.
+Tout d'abord, nous avons mis en place un service worker. Le service worker est un script Javascript qui tourne directement sur votre navigateur sans que le site soit activé. Pour plus d'explications, vous pouvez lire ce super document [ici](https://developers.google.com/web/fundamentals/primers/service-workers/){:rel="nofollow noreferrer"}.
 
 Le service worker est la base pour faire de votre site une [PWA](https://developers.google.com/web/progressive-web-apps/){:rel="nofollow noreferrer"}.  Tout d'abord cela nous permet d'avoir le site offline (d'ailleurs testé dès maintenant).
 
-Pour cela lors de la première visite sur le site, le service worker s'enregistre et met en cache les assets et les pages d'articles.
+Pour cela, lors de la première visite sur le site, le service worker s'enregistre et met en cache les assets et les pages d'articles.
 
 Vous pouvez voir cela directement dans votre console de développement dans l'onglet `application`.
 
@@ -76,7 +76,7 @@ const CACHE_NAME_PREFIX = 'PREFIX DU CACHE-cache-';
   const CACHE_NAME = `NOM DU CACHE`;
 
   const filesToCache = [
-    // LIST DES FICHIERS A CACHÉ
+    // LISTE DES FICHIERS A CACHER
   ];
 
 
@@ -154,17 +154,17 @@ L'enregistrement du token utilisateur se fait au même endroit que celui du serv
   }
 ```
 
-Il faut appeler la fonction `subscribeDevice` si le service worker est disponible dans le navigateur. Si tout est ok vous avez un petit popup qui vous demande de valider l'autorisation de recevoir les notifications.
+Il faut appeler la fonction `subscribeDevice` si le service worker est disponible dans le navigateur. Si tout est ok, vous avez un petit popup qui vous demande de valider l'autorisation de recevoir les notifications.
 
 ![Popup notification]({{site.baseurl}}/assets/2017-12-19-push-notification/image4.png)
 
-Si la personne accepte son token (unique par navigateur) cela devrait apparaître dans votre base de données Firebase.
+Si la personne accepte son token (unique par navigateur), cela devrait apparaître dans votre base de données Firebase.
 
 ![BDD Firebase]({{site.baseurl}}/assets/2017-12-19-push-notification/image5.png)
 
-Et voilà la première étape est terminée, vous avez dans votre base de données l'ensemble des utilisateurs qui acceptent de recevoir vos notifications.
+Et voilà, la première étape est terminée, vous avez dans votre base de données l'ensemble des utilisateurs qui acceptent de recevoir vos notifications.
 
-## Etape 2: Afficher les notifications
+## Etape 2 : Afficher les notifications
 
 Dans cette première version nous allons mettre en place une notification très simple. Pour que les notifications soient envoyées même si l'onglet de votre site est fermé, il faut mettre le code d'affichage dans votre service worker.
 
@@ -207,7 +207,7 @@ Donc maintenant l'utilisateur pourra voir votre notification s'afficher.
 
 C'est la meilleur question car c'est à ce moment que c'est un peu plus compliqué.
 
-## Etape 3 : Je pushe ma notification
+## Etape 3 : Je push ma notification
 
 Sur le papier c'est assez simple, il faut faire un post avec les paramètres suivants :
 
@@ -304,6 +304,6 @@ Si tout est ok, vous devriez voir la notification apparaître sur votre écran.
 
 ## Conclusion
 
-Nous avons maintenant une PWA permettant d'envoyer des notifications lors d'un nouvel article. La suite c'est d'avoir des notifications personnalisées. Pour cela lors de la réception du push par le service workers nous allons faire un call sur une api pour récupérer l'information à afficher.
+Nous avons maintenant une PWA permettant d'envoyer des notifications lors d'un nouvel article. La suite c'est d'avoir des notifications personnalisées. Pour cela, lors de la réception du push par le service workers nous allons faire un call sur une api pour récupérer l'information à afficher.
 
 Vous pouvez nous aider à améliorer le blog en allant sur le [Github](https://github.com/eleven-labs/blog.eleven-labs.com){:rel="nofollow noreferrer"}.
