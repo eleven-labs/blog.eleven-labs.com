@@ -92,7 +92,7 @@ Il suffit ici de nommer le bot et de le rendre visible "online".
 
 Ensuite allez dans le menu "Event Subscriptions", saisissez l'**URL de votre futur webhook** Symfony que nous implémenterons dans la dernière partie. Notez que tant que le webhook n'est pas créé et accessible par Slack, ce dernier ne pourra pas le vérifier et l'enregistrer, il faudra donc revenir plus tard à cette étape quand le webhook sera prêt.
 
-Il faut également séléctionner l'event "**message.im**" pour signifier à Slack d'appeler le webhook précédent à chaque fois qu'un message privé est envoyé à notre bot.
+Il faut également sélectionner l'event "**message.im**" pour signifier à Slack d'appeler le webhook précédent à chaque fois qu'un message privé est envoyé à notre bot.
 
 [![Slack Event Subscriptions]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png){: .center-image .no-link-style}
 
@@ -123,19 +123,19 @@ Puis créez un nouvel **agent** (bouton "Create New Agent") et sélectionnez la 
 
 ### Configurer les intents
 
-Les "intents" correspondent aux types de messages de l'utilisateurs que nous avons envie de comprendre. Nous allons en configurer trois dans le cadre de cet article :
+Les "intents" correspondent aux types de messages de l'utilisateur que nous avons envie de comprendre. Nous allons en configurer trois dans le cadre de cet article :
 
 [![DialogFlow intents]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png){: .center-image .no-link-style}
 
-- Permier intent, le plus intéressant que nous appelons "**Demande de congés avec dates de début et de fin**" :
+- Premier intent, le plus intéressant que nous appelons "**Demande de congés avec dates de début et de fin**" :
 
 Nous allons lister dans la partie "**User says**" un maximum d'inputs utilisateurs qui pourraient être envoyés par les astronautes qui font leur demande de congés.
 
 [![DialogFlow intent dates input]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_input.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_input.png){: .center-image .no-link-style}
 
-Pour chacun de ces inputs, nous séléctionnons les passages les plus intéressants, en jaune et orange sur l'image ci-dessus. Ces passages correspondent aux dates de congés qu'on doit reconnaître puis enregistrer.
+Pour chacun de ces inputs, nous sélectionnons les passages les plus intéressants, en jaune et orange sur l'image ci-dessus. Ces passages correspondent aux dates de congés qu'on doit reconnaître puis enregistrer.
 
-Ces sélections sont assocées à des paramètres que nous nommerons "**startDate**" et "**endDate**" et que nous typons en tant que "**@sys.date**" pour que Google reconnaisse automatiquement ces dates.
+Ces sélections sont associées à des paramètres que nous nommerons "**startDate**" et "**endDate**" et que nous typons en tant que "**@sys.date**" pour que Google reconnaisse automatiquement ces dates.
 
 Enfin, nous pouvons configurer les réponses qui seront renvoyées par DialogFlow quand on lui enverra un message de ce type, s'il le reconnaît :
 
@@ -438,7 +438,7 @@ On donne en entrée ces arguments :
 - "message" : réponse "speech" de DialogFlow.
 - "channel" : ID de la conversation privée Slack entre l'utilisateur et le bot, telle que retourné dans la première requête Slack.
 
-Le "token" à utiliser est le même que celui qu'on a envoyé lors de la requête `GET` qui récuère les informations de l'utilisateur.
+Le "token" à utiliser est le même que celui qu'on a envoyé lors de la requête `GET` qui récupère les informations de l'utilisateur.
 
 ### Enregistrer la période de congés en base de données
 
@@ -501,7 +501,7 @@ final class SlackAction
 
 **Point d'attention** : il faut bien prévoir tous les types de messages qu'on peut possiblement recevoir de Slack ou DialogFlow et éviter à tout prix les erreurs.
 Voilà pourquoi je catch ici les `\InvalidArgumentException` retournées par mes parsers.
-Si votre webhook retourne un code d'erreur HTTP, il rappelera plusieurs fois votre webhook, jusqu'à obtenir une réponse avec un code 20X. Cela peut avoir des conséquences surprenantes : si l'erreur intervient à la dernière étape de votre controller, après le POST vers Slack, vous pourriez spammer la conversation privée de l'utilisateur en lui renvoyant un nouveau message à chaque fois que Slack rappelle le webhook en erreur !
+Si votre webhook retourne un code d'erreur HTTP, il rappellera plusieurs fois votre webhook, jusqu'à obtenir une réponse avec un code 20X. Cela peut avoir des conséquences surprenantes : si l'erreur intervient à la dernière étape de votre controller, après le POST vers Slack, vous pourriez spammer la conversation privée de l'utilisateur en lui renvoyant un nouveau message à chaque fois que Slack rappelle le webhook en erreur !
 
 ## Notre résultat final
 
@@ -519,7 +519,7 @@ On remarque notre ami Google a bien sû reconnaître les dates écrites en fran�
 
 Je m'arrête ici pour cette fois, même si comme mentionné en première partie de cet article, il y aurait encore beaucoup à faire pour automatiser totalement ce process et ne plus jamais avoir besoin d'utiliser nos vieux ERPs : appels vers les API des calendar, utilisation des boutons Slack pour la validation, envoi de notifications Slack à tous les membres de la même équipe, ou même calcul automatique de la capacité du Sprint de l'équipe impactée par cette nouvelle demande de congés !
 
-Vous noterez que j'ai utilisé "API Platform" sur mon projet [Github](https://github.com/ch3ric/WilsonPlanning), alors qu'il n'a aucun intérêt pour cet article en particulier : car j'ai encore beaucoup d'idées en tête à implémenter pour intéragir avec d'autres systèmes qui pourraient appeler cette API.
+Vous noterez que j'ai utilisé "API Platform" sur mon projet [Github](https://github.com/ch3ric/WilsonPlanning), alors qu'il n'a aucun intérêt pour cet article en particulier : car j'ai encore beaucoup d'idées en tête à implémenter pour interagir avec d'autres systèmes qui pourraient appeler cette API.
 
 Je vous tiendrai au courant des prochaines évolutions de cet outil si ça vous intéresse :P !
 Faites moi savoir en commentaire si vous avez d'autres idées doptimisations !
