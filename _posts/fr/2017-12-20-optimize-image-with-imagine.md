@@ -29,7 +29,7 @@ Notre projet est un jeu dont le but est de placer des objets (par drag and drop 
 Les données à manipuler essentiellement sont :
 * **la pièce**: Elle est caractérisée principalement par _une image_ et un _coefficient d'agrandissement_ des objets.
 
-![un exemple de pièce]({{site.baseurl}}/assets/2017-12-20-optimize-image-with-imagine/room.jpg)
+![un exemple de pièce]({{site.baseurl}}/assets/2017-12-20-optimize-image-with-imagine/room.png)
 * **les objets**: Ils ont comme informations principales _une image_, et _une taille réelle_ en centimètre.
 
 ![une table]({{site.baseurl}}/assets/2017-12-20-optimize-image-with-imagine/table.png)
