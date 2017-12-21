@@ -2,9 +2,9 @@ version: '2'
 services:
   jekyll:
     image: starefossen/ruby-node:latest
-    command: sh -c "bundle config git.allow_insecure true && bundle install && bundle exec jekyll serve --destination /tmp --host 0.0.0.0"
+    command: sh -c "bundle config git.allow_insecure true && bundle install && bundle exec jekyll serve --draft --destination /tmp --host 0.0.0.0"
     volumes:
-      - ".:/usr/src/app"
+      - ".:/usr/src/app:cached"
     ports:
       - "4000:4000"
     working_dir: "/usr/src/app"
