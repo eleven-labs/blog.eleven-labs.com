@@ -46,9 +46,9 @@ On pourrait gérer les cas de refus de congés manuellement en parallèle, si ç
 L'idée serait donc de mettre en place un **bot Slack** qui :
 
 1. Permettrait à chacun de faire ces demandes de congés.
-2. Puis ce bot serait ensuite responsable d'envoyer les notifications à tout le monde dans Slack ou par email : manager, équipe, client.
-3. Il pourrait également faire appel à l'API Google Calendar pour ajouter un event dans le calendrier
-4. Et idéalement faire un appel à l'API de l'ERP utilisé pour la compta.
+2. Puis ce bot serait ensuite responsable d'envoyer les notifications à tout le monde dans Slack ou par email : manager, équipe et client.
+3. Il pourrait également faire appel à l'API Google Calendar pour ajouter un event dans l'agenda.
+4. Et idéalement, faire un appel à l'API de l'ERP utilisé pour la comptabilité.
 
 Si une validation est vraiment nécessaire, on pourrait aussi imaginer que ce bot enverrait des demandes de validation, soit par Slack en utilisant les [interactive message buttons](https://api.slack.com/docs/message-buttons), soit par email avec un lien de validation.
 
@@ -59,7 +59,7 @@ Vous l'avez compris, les possibilités sont multiples, mais concentrons nous ici
 Pour mettre en place cette première étape du process, nous avons allons donc :
 
 - Créer un **bot Slack** et le rendre accessible sur notre Workspace pour que tous les utilisateurs puissent lui envoyer des messages privés.
-- Mettre en place un agent **DialogFlow** : outil Google, anciennement appelé API.AI, déjà décrit sur notre [blog ici](/fr/dialogflow-votre-chatbot-facile/). Celui-ci va nous permettre de comprendre, grâce au machine learning, les messages envoyés au bot par les utilisateurs, ce qui est loin d'être simple sans ce type d'outils !
+- Mettre en place un agent **DialogFlow** : outil Google, anciennement appelé API.AI, déjà décrit sur notre [blog ici](/fr/dialogflow-votre-chatbot-facile/). Celui-ci va nous permettre de comprendre, grâce au *machine learning*, les messages envoyés au bot par les utilisateurs, ce qui est loin d'être simple sans ce type d'outils !
 - Mettre en place une application **Symfony** exposant un **webhook** qui sera appelé par le serveur Slack à chaque fois qu'un message privé est envoyé à notre bot. C'est depuis cette application que nous allons ensuite appeler DialogFlow pour interpréter le message Slack reçu, puis répondre à l'astronaute, puis enregistrer la demande de congés.
 
 ## Notre bot Slack
@@ -72,31 +72,31 @@ Il faut tout d'abord créer une app Slack.
 
 Connectez vous donc à votre compte Slack relié à votre Workspace d'entreprise. Puis allez sur [https://api.slack.com/apps](https://api.slack.com/apps) et cliquez sur "Create New App".
 
-[![Create Slack App](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_create_app.png)](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_create_app.png){: .center-image .no-link-style}
+[![Create Slack App]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_create_app.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_create_app.png){: .center-image .no-link-style}
 
-Puis à vous de compléter les informations de votre app comme bon vous semble : nom, description, couleur, icône.
+Puis à vous de compléter les informations de votre app comme bon vous semble : nom, description, couleur et icône.
 
 Vous pourrez ensuite accéder aux configurations suivantes depuis cet écran de "Basic Information" :
 
-[![Slack App Basic Information](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_basic_info.png)](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_basic_info.png){: .center-image .no-link-style}
+[![Slack App Basic Information]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_basic_info.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_basic_info.png){: .center-image .no-link-style}
 
 ### Créer un bot
 
 Il faut maintenant créer un utilisateur bot relié à cette app. Pour cela rendez vous dans le menu de gauche "Bot Users" ou depuis les "Basic Information" > "Add features and functionality" > "Bots".
 
-[![Slack Bot](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png)](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png){: .center-image .no-link-style}
+[![Slack Bot]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png){: .center-image .no-link-style}
 
 Il suffit ici de nommer le bot et de le rendre visible "online".
 
 ### Activer les events
 
-Ensuite allez dans le menu "Event Subscriptions", saisissez l'**URL de votre futur webhook** Symfony que nous implémenterons dans la dernière partie. Notez que tant que le webhook n'est pas créé et accessible par Slack, ce dernier ne pourra pas le vérifieret l'enregistrer, il faudra donc revenir plus tard à cette étape quand le webhook sera prêt.
+Ensuite allez dans le menu "Event Subscriptions", saisissez l'**URL de votre futur webhook** Symfony que nous implémenterons dans la dernière partie. Notez que tant que le webhook n'est pas créé et accessible par Slack, ce dernier ne pourra pas le vérifier et l'enregistrer, il faudra donc revenir plus tard à cette étape quand le webhook sera prêt.
 
 Il faut également séléctionner l'event "**message.im**" pour signifier à Slack d'appeler le webhook précédent à chaque fois qu'un message privé est envoyé à notre bot.
 
-[![Slack Event Subscriptions](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png)](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png){: .center-image .no-link-style}
+[![Slack Event Subscriptions]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png){: .center-image .no-link-style}
 
-Les appels faits vers ce webhook devront être sécurisés à l'aide d'un token dans la dernière partie, veuillez donc noter la valeur du "**Verification Token**" affiché sur la page "Basic Information".
+Les appels faits vers ce webhook devront être sécurisés à l'aide d'un token dans la dernière partie, veuillez donc noter la valeur du "**Verification Token**" affichée sur la page "Basic Information".
 
 ### Configurer les permissions OAuth
 
@@ -123,15 +123,15 @@ Puis créez un nouvel **agent** (bouton "Create New Agent") et sélectionnez la 
 
 ### Configurer les intents
 
-Les "intents" correspondent aux types de messages de l'utilisateurs que nous avons envie de comprendre. Nous allons en configurer 3 dans le cadre de cet article :
+Les "intents" correspondent aux types de messages de l'utilisateurs que nous avons envie de comprendre. Nous allons en configurer trois dans le cadre de cet article :
 
-[![DialogFlow intents](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png)](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png){: .center-image .no-link-style}
+[![DialogFlow intents]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png){: .center-image .no-link-style}
 
 - Permier intent, le plus intéressant que nous appelons "**Demande de congés avec dates de début et de fin**" :
 
 Nous allons lister dans la partie "**User says**" un maximum d'inputs utilisateurs qui pourraient être envoyés par les astronautes qui font leur demande de congés.
 
-[![DialogFlow intent dates input](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_input.png)](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_input.png){: .center-image .no-link-style}
+[![DialogFlow intent dates input]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_input.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_input.png){: .center-image .no-link-style}
 
 Pour chacun de ces inputs, nous séléctionnons les passages les plus intéressants, en jaune et orange sur l'image ci-dessus. Ces passages correspondent aux dates de congés qu'on doit reconnaître puis enregistrer.
 
@@ -139,7 +139,7 @@ Ces sélections sont assocées à des paramètres que nous nommerons "**startDat
 
 Enfin, nous pouvons configurer les réponses qui seront renvoyées par DialogFlow quand on lui enverra un message de ce type, s'il le reconnaît :
 
-[![DialogFlow intent dates output](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_output.png)](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_output.png){: .center-image .no-link-style}
+[![DialogFlow intent dates output]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_output.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_output.png){: .center-image .no-link-style}
 
 Nous avons deux types de réponses :
 * les textes que nous utiliserons pour répondre à l'astronaute sur Slack.
@@ -151,9 +151,9 @@ Nous avons deux types de réponses :
 
 ## Notre application Symfony
 
-Tout le code de l'application Symfony qui permet de communiquer avec Slack et DialogFlow est sur [mon Github ici](https://github.com/ch3ric/WilsonPlanning/tree/master/src/AppBundle). Je vais détailler ici les parties les plus importantes.
+Tout le code de l'application Symfony qui permet de communiquer avec Slack et DialogFlow est sur [mon Github ici](https://github.com/ch3ric/WilsonPlanning/tree/master/src/AppBundle). Je vais détailler ici uniquement les parties les plus importantes.
 
-> Je vous recommande d'utiliser les options autoconfigure et autowiring pour gérer vos injections de dépendances pour plus de simplicité : voir [app/config/services.yml](https://github.com/ch3ric/WilsonPlanning/blob/master/app/config/services.yml)
+> Je vous recommande d'utiliser les options "autoconfigure" et "autowiring" pour gérer vos injections de dépendances en toute simplicité : voir [app/config/services.yml](https://github.com/ch3ric/WilsonPlanning/blob/master/app/config/services.yml).
 
 ### Créer le Controller pour le webhook Slack
 
@@ -301,7 +301,7 @@ Ensuite nous utilisons un autre service [src/AppBundle/Service/MemberHandler.php
 
 ### Appeler l'API DialogFlow
 
-Maintenant que nous avons le texte du message Slack ainsi que les données de l'utilisateur qui nous l'a envoyé, nous devons appeler DialogFlow via l'API "**query**" pour que celle-ci nous retourne la réponse à renvoyer à l'astronaute, ainsiq que les valeurs de "startDate" et "endDate" qui nous intéressent.
+Maintenant que nous avons le texte du message Slack ainsi que les données de l'utilisateur qui nous l'a envoyé, nous devons appeler DialogFlow via l'API "**query**" pour que celle-ci nous retourne la réponse à renvoyer à l'astronaute, ainsi que les valeurs de "startDate" et "endDate" qui nous intéressent.
 
 Là encore nous utilisons un client Guzzle pour appeler cette API :
 
@@ -361,7 +361,7 @@ class Client
 ```
 
 - Le paramètre 'query' doit être le texte du message envoyé par l'utilisateur.
-- Le paramètre 'sessionId' correspond à un session d'utilisation de DialogFlow. Pour simplifier, j'envoie l'ID de l'utilisaeur pour ce paramètre : chaque utilisateur a donc une seule session d'utilisation de DialogFlow.
+- Le paramètre 'sessionId' correspond à un session d'utilisation de DialogFlow. Pour simplifier, j'envoie l'ID de l'utilisateur pour ce paramètre : chaque utilisateur a donc une seule session d'utilisation de DialogFlow.
 - Les paramètres 'lang' et 'v' sont également obligatoires. Plus de détails dans la [doc ici](https://dialogflow.com/docs/reference/agent/query).
 
 ### Parser la réponse de DialogFlow
@@ -388,7 +388,8 @@ Cette réponse est sous cette forme :
 }
 ```
 
-Ainsi nous utilisons un service [src/AppBundle/DialogFlow/Parser.php](https://github.com/ch3ric/WilsonPlanning/blob/master/src/AppBundle/DialogFlow/Parser.php) pour extraire les informations intéressante de cette réponse :
+Ainsi nous utilisons un service [src/AppBundle/DialogFlow/Parser.php](https://github.com/ch3ric/WilsonPlanning/blob/master/src/AppBundle/DialogFlow/Parser.php) pour extraire les informations intéressantes de cette réponse :
+
 - "**speech**" qui est un des réponses textes, configurées sur DialogFlow, qu'on va pouvoir renvoyer à l'utilisateur.
 - les "startDate" et "endDate" de notre "**payload**"
 
@@ -433,6 +434,7 @@ Pour cela, on peut ajouter une méthode dans notre service Client Slack :
 ```
 
 On donne en entrée ces arguments :
+
 - "message" : réponse "speech" de DialogFlow.
 - "channel" : ID de la conversation privée Slack entre l'utilisateur et le bot, telle que retourné dans la première requête Slack.
 
@@ -440,13 +442,13 @@ Le "token" à utiliser est le même que celui qu'on a envoyé lors de la requêt
 
 ### Enregistrer la période de congés en base de données
 
-On a bien récupéré précédemment les informations de l'utilisateur qui nous ont permis de créer un `Member`, et on a aussi les "startDate" et "endDate" retournée par DialogFlow. Il ne nous reste donc qu'à créer une instance de `Vacation` et l'enregistrer en base de données.
+On a bien récupéré précédemment les informations de l'utilisateur qui nous ont permis de créer un `Member`, et on a aussi les "startDate" et "endDate" retournées par DialogFlow. Il ne nous reste donc qu'à créer une instance de `Vacation` et l'enregistrer en base de données.
 
 Voir [src/AppBundle/Service/VacationHandler.php](https://github.com/ch3ric/WilsonPlanning/blob/master/src/AppBundle/Service/VacationHandler.php) pour plus de détails.
 
 ### Appeler tous les services précédents
 
-Il ne nous reste plus qu'à brancher tous ces services ensemble, ce qui est très simple puisque nous avons configuré nos services en autowiring : il suffit donc d'injecter les services au bon endroit dans le constructeur, et finalement voilà à quoi ressemble notre action de controller :
+Il faut maintenant brancher tous ces services ensemble, ce qui est très simple puisque nous avons configuré nos services en "autowiring" : il suffit donc d'injecter les services au bon endroit dans le constructeur. Finalement voilà à quoi ressemble notre action de controller :
 
 ```php
 <?php
@@ -503,13 +505,13 @@ Si votre webhook retourne un code d'erreur HTTP, il rappelera plusieurs fois vot
 
 ## Notre résultat final
 
-Démo : voici un extrait d'une conversation Slack avec notre bot :
+**Démo** : voici un extrait d'une conversation Slack avec notre bot :
 
-[![Démo](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo1.png)](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo1.png){: .center-image .no-link-style}
+[![Démo]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo1.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo1.png){: .center-image .no-link-style}
 
 Et voilà le résultat enregistré en base de données :
 
-[![Démo](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png)](/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png){: .center-image .no-link-style}
+[![Démo]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png){: .center-image .no-link-style}
 
 On remarque notre ami Google a bien sû reconnaître les dates écrites en français et nous a permis d'enregistrer des dates au format 'datetime' en base de données, merci à lui !
 
@@ -519,5 +521,5 @@ Je m'arrête ici pour cette fois, même si comme mentionné en première partie 
 
 Vous noterez que j'ai utilisé "API Platform" sur mon projet [Github](https://github.com/ch3ric/WilsonPlanning), alors qu'il n'a aucun intérêt pour cet article en particulier : car j'ai encore beaucoup d'idées en tête à implémenter pour intéragir avec d'autres systèmes qui pourraient appeler cette API.
 
-Je vous tiendrais au courant des prochaines évolutions de cet outil si ça vous intéresse :P
-Faites moi savoir en commentaire si vous avez d'autres idées de process à optimiser !
+Je vous tiendrai au courant des prochaines évolutions de cet outil si ça vous intéresse :P !
+Faites moi savoir en commentaire si vous avez d'autres idées doptimisations !
