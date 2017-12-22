@@ -401,12 +401,12 @@ Cette réponse est sous cette forme :
 
 Ainsi nous utilisons un service [src/AppBundle/DialogFlow/Parser.php](https://github.com/ch3ric/WilsonPlanning/blob/master/src/AppBundle/DialogFlow/Parser.php) pour extraire les informations intéressantes de cette réponse :
 
-- "**speech**" qui est un des réponses textes, configurées sur DialogFlow, qu'on va pouvoir renvoyer à l'utilisateur.
+- "**speech**" qui est une des réponses textes, configurées sur DialogFlow, qu'on va pouvoir renvoyer à l'utilisateur.
 - les "startDate" et "endDate" de notre "**payload**".
 
 ### Envoyer une réponse privée à l'utilisateur via Slack
 
-Pour cela, on peut ajouter une méthode dans notre service Client Slack pour appeler "**chat.postMessage**":
+Pour cela, on peut ajouter une méthode dans notre service Client Slack pour appeler "**chat.postMessage**" :
 
 ```php
 // src/AppBundle/Slack/Client.php
