@@ -19,7 +19,7 @@ tags:
 cover: /assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/cover.jpg
 ---
 
-Je suis sûr que vous rencontrez tous cette problématique : vous êtes obligés d'utiliser les outils ERP de votre entreprise pour faire vos demandes de congés, faire vos comptes-rendus d'activité, vos notes de frais, etc... Et avouez le, ça vous emm$#de ! Pourquoi ? Car ces outils ne sont pas ergonomiques.
+Je suis sûr que vous rencontrez tous cette problématique : vous êtes obligés d'utiliser les outils ERP de votre entreprise pour faire vos demandes de congés, faire vos comptes-rendus d'activité, vos notes de frais, etc... Et avouez le, ça vous emm$#de ! Pourquoi ? Car ces outils ne sont pas ergonomiques, pas compatibles sur mobile...
 
 Nous avons pourtant une infinité de possibilités de simplifications, si on fait preuve d'un peu d'imagination :) !
 
@@ -35,7 +35,7 @@ Voilà plus d'éléments sur notre process.
 1. L'astronaute envoie une demande par email à son manager Eleven Labs en indiquant les dates de début et fin des congés.
 2. Si cette demande est validée, il faut également faire une demande par email au client.
 3. Puis une fois validée également, il faut créer un event dans le Google calendar partagé pour donner de la visibilité à toute l'équipe.
-4. Puis, il faut faire apparaître cette période de congés dans l'ERP interne pour la compta.
+4. Puis, il faut faire apparaître cette période de congés dans l'ERP interne pour la comptabilité.
 
 ### Comment simplifier ce process ?
 
@@ -63,7 +63,7 @@ Pour mettre en place cette première étape du process, nous avons allons donc :
 
 - Créer un **bot Slack** et le rendre accessible sur notre Workspace pour que tous les utilisateurs puissent lui envoyer des messages privés.
 - Mettre en place un agent **DialogFlow** : outil Google, anciennement appelé API.AI, déjà décrit sur notre [blog ici](/fr/dialogflow-votre-chatbot-facile/). Celui-ci va nous permettre de comprendre, grâce au *machine learning*, les messages envoyés au bot par les utilisateurs, ce qui est loin d'être simple sans ce type d'outils !
-- Mettre en place une application **Symfony** exposant un **webhook** qui sera appelé par le serveur Slack à chaque fois qu'un message privé est envoyé à notre bot. C'est depuis cette application que nous allons ensuite appeler DialogFlow pour interpréter le message Slack reçu, puis répondre à l'astronaute, puis enregistrer la demande de congés.
+- Mettre en place une application **Symfony** exposant un **webhook** qui sera appelé par le serveur Slack à chaque fois qu'un message privé est envoyé à notre bot. C'est depuis cette application que nous allons ensuite appeler DialogFlow pour interpréter le message Slack reçu, puis répondre à l'astronaute, et enfin enregistrer la demande de congés.
 
 
 ## Notre bot Slack
@@ -100,7 +100,7 @@ Il faut également sélectionner l'event "**message.im**" pour signifier à Slac
 
 [![Slack Event Subscriptions]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png){: .center-image .no-link-style}
 
-Les appels faits vers ce webhook devront être sécurisés à l'aide d'un token dans la dernière partie, veuillez donc noter la valeur du "**Verification Token**" affichée sur la page "Basic Information".
+Les appels faits vers ce webhook devront être sécurisés à l'aide d'un token qui sera utilisé dans la dernière partie : veuillez donc noter la valeur du "**Verification Token**" affichée sur la page "Basic Information".
 
 ### Configurer les permissions OAuth
 
@@ -131,7 +131,7 @@ Les "intents" correspondent aux types de messages de l'utilisateur que nous avon
 
 [![DialogFlow intents]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png){: .center-image .no-link-style}
 
-#### Premier intent, le plus intéressant que nous appelons "**Demande de congés avec dates de début et de fin**" :
+#### 1. Premier intent, le plus intéressant que nous appelons "**Demande de congés avec dates de début et de fin**" :
 
 Nous allons lister dans la partie "**User says**" un maximum d'inputs utilisateurs qui pourraient être envoyés par les astronautes qui font leur demande de congés.
 
@@ -149,11 +149,11 @@ Nous avons deux types de réponses :
 - les textes que nous utiliserons pour répondre à l'astronaute sur Slack.
 - le "**Custom Payload**" qui nous permettra de retourner les valeurs des paramètres "startDate" et "endDate" qui seront reconnus par Google.
 
-#### L'intent "**Bonjour**"
+#### 2. L'intent "**Bonjour**"
 
 Quant à lui, il nous permettra de répondre poliment à l'astronaute qui nous dit bonjour. Mais pas de paramètre à configurer pour celui-ci.
 
-#### Enfin l'intent "**Fallback**"
+#### 3. Et enfin, l'intent "**Fallback**"
 
 Il nous permet de configurer des messages par défaut, quand le message de l'utilisateur n'est pas reconnu par les précédent intents.
 
@@ -237,6 +237,8 @@ Voir [src/AppBundle/Slack/WebhookParser.php](https://github.com/ch3ric/WilsonPla
 ### Appeler l'API Slack pour récupérer les informations de l'utilisateur
 
 Nous avons besoin des informations de l'astronaute qui a envoyé le message Slack pour être capable de créer un `Member` dans notre application Symfony, qui sera relié à notre demande de congés.
+
+Pour cela, nous allons appeler la méthode "**users.info**" de l'API Slack. Pour plus de détails, voir la [doc de cette API ici](https://api.slack.com/methods).
 
 Il nous faut donc un client **Guzzle** pour appeler l'API Slack :
 
@@ -361,7 +363,7 @@ class Client
         $data = json_decode($response->getBody()->getContents(), true);
 
         if (JSON_ERROR_NONE !== json_last_error()) {
-            throw new \LogicException("Can't get DialogFlow response");
+            throw new \RuntimeException("Can't get DialogFlow response");
         }
 
         return $data;
@@ -400,11 +402,11 @@ Cette réponse est sous cette forme :
 Ainsi nous utilisons un service [src/AppBundle/DialogFlow/Parser.php](https://github.com/ch3ric/WilsonPlanning/blob/master/src/AppBundle/DialogFlow/Parser.php) pour extraire les informations intéressantes de cette réponse :
 
 - "**speech**" qui est un des réponses textes, configurées sur DialogFlow, qu'on va pouvoir renvoyer à l'utilisateur.
-- les "startDate" et "endDate" de notre "**payload**"
+- les "startDate" et "endDate" de notre "**payload**".
 
 ### Envoyer une réponse privée à l'utilisateur via Slack
 
-Pour cela, on peut ajouter une méthode dans notre service Client Slack :
+Pour cela, on peut ajouter une méthode dans notre service Client Slack pour appeler "**chat.postMessage**":
 
 ```php
 // src/AppBundle/Slack/Client.php
@@ -418,11 +420,6 @@ Pour cela, on peut ajouter une méthode dans notre service Client Slack :
             'channel' => $channel,
             'username' => 'wilson-planning',
         ];
-
-        $this->logger->debug(
-            'Post this message {payload} to Slack',
-            ['payload' => $payload]
-        );
 
         $response = $this->client->post(
             $this->baseUri . 'chat.postMessage',
@@ -445,7 +442,7 @@ Pour cela, on peut ajouter une méthode dans notre service Client Slack :
 On donne en entrée ces arguments :
 
 - "message" : réponse "speech" de DialogFlow.
-- "channel" : ID de la conversation privée Slack entre l'utilisateur et le bot, telle que retourné dans la première requête Slack.
+- "channel" : ID de la conversation privée Slack entre l'utilisateur et le bot, tel que retourné dans la première requête Slack.
 
 Le "token" à utiliser est le même que celui qu'on a envoyé lors de la requête `GET` qui récupère les informations de l'utilisateur.
 
@@ -510,8 +507,9 @@ final class SlackAction
 
 **Point d'attention** : il faut bien prévoir tous les types de messages qu'on peut possiblement recevoir de Slack ou DialogFlow et éviter à tout prix les erreurs.
 Voilà pourquoi je catch ici les `\InvalidArgumentException` retournées par mes parsers.
-Si votre webhook retourne un code d'erreur HTTP, il rappellera plusieurs fois votre webhook, jusqu'à obtenir une réponse avec un code 20X. Cela peut avoir des conséquences surprenantes : si l'erreur intervient à la dernière étape de votre controller, après le POST vers Slack, vous pourriez spammer la conversation privée de l'utilisateur en lui renvoyant un nouveau message à chaque fois que Slack rappelle le webhook en erreur !
+Si votre webhook retourne un code d'**erreur HTTP**, il **rappellera plusieurs fois votre webhook**, jusqu'à obtenir une réponse avec un code 20X. Cela peut avoir des conséquences surprenantes : si l'erreur intervient à la dernière étape de votre controller, après le POST vers Slack, vous pourriez spammer la conversation privée de l'utilisateur en lui renvoyant un nouveau message à chaque fois que Slack rappelle le webhook en erreur !
 
+> Bien sûr, pour respecter les bonnes pratiques, il faudrait aussi déplacer toute la logique métier de ce controller vers un service dédié.
 
 ## Notre résultat final
 
@@ -523,14 +521,14 @@ Et voilà le résultat enregistré en base de données :
 
 [![Résultats en base de données]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png){: .center-image .no-link-style}
 
-On remarque notre ami Google a bien su reconnaître les dates écrites en français et nous a permis d'enregistrer des dates au format 'datetime' en base de données, merci à lui !
+On remarque notre ami Google a bien su reconnaître les dates écrites en français et nous a permis d'enregistrer des dates au format "datetime" en base de données, merci à lui !
 
 
 ## Conclusion
 
-Je m'arrête ici pour cette fois, même si comme mentionné en première partie de cet article, il y aurait encore beaucoup à faire pour automatiser totalement ce process et ne plus jamais avoir besoin d'utiliser nos vieux ERPs : appels vers les API des calendar, utilisation des boutons Slack pour la validation, envoi de notifications Slack à tous les membres de la même équipe, ou même calcul automatique de la capacité du Sprint de l'équipe impactée par cette nouvelle demande de congés !
+Je m'arrête ici pour cette fois, même si comme mentionné en première partie de cet article, il y aurait encore beaucoup à faire pour automatiser totalement ce process et ne plus jamais avoir besoin d'utiliser nos vieux ERPs : appels vers les API des calendars, utilisation des boutons Slack pour la validation, envoi de notifications Slack à tous les membres de la même équipe, ou même calcul automatique de la capacité du Sprint de l'équipe impactée par cette nouvelle demande de congés !
 
-Vous noterez que j'ai utilisé "API Platform" sur mon projet [Github](https://github.com/ch3ric/WilsonPlanning), alors qu'il n'a aucun intérêt pour cet article en particulier : car j'ai encore beaucoup d'idées en tête à implémenter pour interagir avec d'autres systèmes qui pourraient appeler cette API.
+Vous noterez que j'ai utilisé [API Platform](/fr/creer-une-api-avec-api-platform/) sur mon [projet Github](https://github.com/ch3ric/WilsonPlanning), alors qu'il n'a aucun intérêt pour cet article en particulier : car j'ai encore beaucoup d'idées en tête à implémenter pour interagir avec d'autres systèmes qui pourraient appeler cette API.
 
 Je vous tiendrai au courant des prochaines évolutions de cet outil si ça vous intéresse :P !
 Faites moi savoir en commentaire si vous avez d'autres idées d'optimisations !
