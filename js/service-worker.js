@@ -6,12 +6,12 @@ layout: compress-js
 
   function getFirebase() {
     const config = {
-      apiKey: "AIzaSyCuWxK1PXYm5LxCUerQ3m8DFBXf7KNbWAo",
-      authDomain: "pwa-blog-39121.firebaseapp.com",
-      databaseURL: "https://pwa-blog-39121.firebaseio.com",
-      projectId: "pwa-blog-39121",
-      storageBucket: "pwa-blog-39121.appspot.com",
-      messagingSenderId: "291145269412"
+      apiKey: 'AIzaSyCuWxK1PXYm5LxCUerQ3m8DFBXf7KNbWAo',
+      authDomain: 'pwa-blog-39121.firebaseapp.com',
+      databaseURL: 'https://pwa-blog-39121.firebaseio.com',
+      projectId: 'pwa-blog-39121',
+      storageBucket: 'pwa-blog-39121.appspot.com',
+      messagingSenderId: '291145269412'
     };
 
     firebase.initializeApp(config);
@@ -21,7 +21,7 @@ layout: compress-js
 
   const fb = getFirebase();
   fb.auth().signInAnonymously().catch((error) => {
-    console.log(error.message);
+    console.error(error.message);
   });
 
   function showOfflineToast() {
@@ -33,17 +33,18 @@ layout: compress-js
   }
 
   function subscribeDevice() {
-    navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
-      return serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true });
-    }).then((subscription) => {
-      const endpointSections = subscription.endpoint.split('/');
-      const subscriptionId = endpointSections[endpointSections.length - 1];
-      fb.auth().onAuthStateChanged((user) => {
-        if (user) {
-          fb.database().ref(`token/${user.uid}`).set({subscriptionId});
-        }
-      })
-    });
+    navigator.serviceWorker.ready
+      .then((serviceWorkerRegistration) => serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true }))
+      .then((subscription) => {
+        const endpointSections = subscription.endpoint.split('/');
+        const subscriptionId = endpointSections[endpointSections.length - 1];
+
+        fb.auth().onAuthStateChanged((user) => {
+          if (user) {
+            fb.database().ref(`token/${user.uid}`).set({ subscriptionId });
+          }
+        })
+      });
   }
 
   if (navigator.serviceWorker) {
@@ -53,18 +54,19 @@ layout: compress-js
         return;
       }
 
-      console.log("[*] ServiceWorker is installing...");
+      console.log('[*] ServiceWorker is installing...');
       const worker = reg.installing;
 
       worker.addEventListener('statechange', () => {
-        if (worker.state == 'redundant') {
+        if (worker.state === 'redundant') {
           console.log('[*] ServiceWorker Install failed');
         }
-        if (worker.state == 'installed') {
+
+        if (worker.state === 'installed') {
           console.log('[*] ServiceWorker Install successful!');
         }
 
-        if (worker.state == 'activated' && !navigator.serviceWorker.controller) {
+        if (worker.state === 'activated' && !navigator.serviceWorker.controller) {
           showOfflineToast();
         }
       });
