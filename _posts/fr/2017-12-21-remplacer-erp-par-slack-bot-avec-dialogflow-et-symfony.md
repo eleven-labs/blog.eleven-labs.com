@@ -168,7 +168,7 @@ Tout le code de l'application Symfony qui permet de communiquer avec Slack et Di
 
 Tout d'abord, il faut créer l'action avec une route qui doit correspondre à ce qui a été configuré dans la partie "Event Subscriptions" de l'app Slack.
 
-Pour que Slack vérifie ce wehbook, il faut non seulement vérifier le "**Verification Token**" envoyé dans la requête de Slack mais également retourner le "challenge" envoyé par Slack en cas de requête de type "**url_verification**".
+Pour que Slack vérifie ce webhook, il faut non seulement vérifier le "**Verification Token**" envoyé dans la requête de Slack mais également retourner le "challenge" envoyé par Slack en cas de requête de type "**url_verification**".
 
 Voilà donc le code à utiliser :
 
