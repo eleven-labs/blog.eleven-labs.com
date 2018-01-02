@@ -49,7 +49,7 @@ On pourrait gérer les cas de refus de congés manuellement en parallèle, si ç
 L'idée serait donc de mettre en place un **bot Slack** qui :
 
 1. Permettrait à chacun de faire ces demandes de congés.
-2. Puis ce bot serait ensuite responsable d'envoyer les notifications à tout le monde dans Slack ou par email : manager, équipe et client.
+2. Puis ce bot serait responsable d'envoyer les notifications à tout le monde dans Slack ou par email : manager, équipe et client.
 3. Il pourrait également faire appel à l'API Google Calendar pour ajouter un event dans l'agenda.
 4. Et idéalement, faire un appel à l'API de l'ERP utilisé pour la comptabilité.
 
@@ -86,7 +86,7 @@ Vous pourrez ensuite accéder aux configurations suivantes depuis cet écran de 
 
 ### Créer un bot
 
-Il faut maintenant créer un utilisateur bot relié à cette app. Pour cela rendez vous dans le menu de gauche "Bot Users" ou depuis les "Basic Information" > "Add features and functionality" > "Bots".
+Il faut maintenant créer un utilisateur bot relié à cette app. Pour cela, rendez vous dans le menu de gauche "Bot Users" ou depuis les "Basic Information" > "Add features and functionality" > "Bots".
 
 [![Slack Bot]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png){: .center-image .no-link-style}
 
