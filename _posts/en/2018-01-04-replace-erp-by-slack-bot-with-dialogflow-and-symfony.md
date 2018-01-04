@@ -6,8 +6,8 @@ lang: fr
 permalink: /en/replace-erp-by-slack-bot-with-dialogflow-and-symfony/
 authors:
     - charles-eric
-date: '2018-01-03 11:30:00 +0100'
-date_gmt: '2017-01-03 11:30:00 +0100'
+date: '2018-01-04 15:30:00 +0100'
+date_gmt: '2017-01-04 15:30:00 +0100'
 categories:
     - bot
     - Symfony
@@ -129,13 +129,13 @@ Then create a new **agent** (button 'Create New Agent') and select the default l
 
 Then 'intents' correspond to different messages types received from the user, that we need to understand. We will configure three of them for this blog post:
 
-[![DialogFlow intents]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intents.png){: .center-image .no-link-style}
+[![DialogFlow intents]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intents.png)]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intents.png){: .center-image .no-link-style}
 
 #### 1. First intent, the most interesting one that we will call '**Leave request with start and end dates**':
 
 We're gonna list in the part '**User says**' a maximum number of inputs which could be sent by astronauts who send their leave requests.
 
-[![DialogFlow intent dates input]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_input.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_input.png){: .center-image .no-link-style}
+[![DialogFlow intent dates input]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_input.png)]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_input.png){: .center-image .no-link-style}
 
 For each of these inputs, we select the most interesting parts, in yellow and orange on the picture just above. These parts correspond to the dates of the vacation that we need to identify and save.
 
@@ -143,7 +143,7 @@ These selected parts are related to parameters that we can name '**startDate**' 
 
 Finally, we can configure the answers that will be sent back by DialogFlow when we will send this message type, if it recognizes it:
 
-[![DialogFlow intent dates output]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_output.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/dialogflow_intent_dates_output.png){: .center-image .no-link-style}
+[![DialogFlow intent dates output]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_output.png)]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_output.png){: .center-image .no-link-style}
 
 We notice there is two types of answers:
 - texts that we will use to answer the astronaut on Slack.
