@@ -19,7 +19,7 @@ tags:
 cover: /assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/cover.jpg
 ---
 
-I'm pretty sure you have the same problem: you're forced to use the ERP systems of your company to handle your leave requests, manage your expenses and receipts, etc... And admit it: it bothers you! Why? Because these tools are not user friendly, not available on your mobile...
+I'm pretty sure you have the same issue: you're forced to use the ERP systems of your company to handle your leave requests, manage your expenses and receipts, etc... And admit it: it bothers you! Why? Because these tools are not user friendly, not available on your mobile...
 
 Yet there are many ways to simplify, if you're creative enough! :)
 
@@ -53,7 +53,7 @@ Thus the idea would be to set up a **slack bot** which:
 3. It could also call Google Calendar API to add a new event in the shared calendar.
 4. Ideally, it could send a request to the API of the ERP used by the accountants as well.
 
-If a validation is really needed, we could also imagine that this bot would send validation request, using Slack [interactive message buttons](https://api.slack.com/docs/message-buttons), or by email containing validation links.
+If a validation is really needed, we could also imagine that this bot would send a validation request, using Slack [interactive message buttons](https://api.slack.com/docs/message-buttons), or by email containing validation links.
 
 ### What we will implement
 
@@ -61,9 +61,9 @@ I think you got that, the possibilities are endless, but let's focus here on the
 
 To set up the first step of this process, here is what we gonna do:
 
-- Create a **Slack bot** and make is available in our Workspace so that all the users can send private messages to it.
+- Create a **Slack bot** and make it available in our Workspace so that all the users can send private messages to it.
 - Configure a **DialogFlow** agent: Google tool, formerly known as API.AI, already described on our [blog there (in French)](/fr/dialogflow-votre-chatbot-facile/). It will allow us to understand the messages sent by the users to the bot, thanks to *machine learning*, thing that's not so easy to do without this kind of tools!
-- Set up a **Symfony** application that will expose a **webhook** which will be called by Slack server each time a private message will be sent to our bot. That's from this application that we will send request to DialogFlow to understand the message received, then call Slack to send an answer to the astronaut, and finally save the leave request in the database.
+- Set up a **Symfony** application that will expose a **webhook** which will be called by Slack server each time a private message will be sent to our bot. That's from this application that we will send request to DialogFlow in order to understand the message received, then call Slack to send an answer to the astronaut, and finally save the leave request in the database.
 
 
 ## Our Slack bot
@@ -111,7 +111,7 @@ To do so please go in the menu '**OAuth & Permissions**'.
 First, you can write down the value of '**OAuth Access Token**' which is displayed on this page: we will use it later.
 
 Then, here are the scopes that you will necessarily need and that need to be selected on the same page:
-- '**chat:write:bot**' (or 'chat:write:user' depending of the token you will use) that will allow you to send private messages to Slack, to answer the astronaut.
+- '**chat:write:bot**' (or 'chat:write:user' depending on the token you will use) that will allow you to send private messages to Slack, to answer the astronaut.
 - '**users:read**' and **users:read.email** to be able to access profile information of the user who sends us a message.
 
 There is no need to add more scopes for now, and you will see with more experience that Slack suggests the scopes that you might need to add if needed, when you call an API method which is not autorized.
@@ -127,7 +127,7 @@ Then create a new **agent** (button 'Create New Agent') and select the default l
 
 ### Configure the intents
 
-Then 'intents' correspond to different types of messages received from the user, that we need to understand. We will configure three of them for this blog post:
+The 'intents' correspond to different types of messages received from the user, that we need to understand. We will configure three of them for this blog post:
 
 [![DialogFlow intents]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intents.png)]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intents.png){: .center-image .no-link-style}
 
@@ -145,7 +145,7 @@ Finally, we can configure the answers that will be sent back by DialogFlow when 
 
 [![DialogFlow intent dates output]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_output.png)]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_output.png){: .center-image .no-link-style}
 
-We notice there is two types of answers:
+We notice there are two types of answers:
 - texts that we will use to answer the astronaut on Slack.
 - '**Custom Payload**' which will allow us to return the values of the parameters 'startDate' and 'endDate' recognized by Google.
 
@@ -168,7 +168,7 @@ All the code of the Symfony application which is connected with Slack and Dialog
 
 First we need to create the action with the same route as the one configured in the part 'Event Subscriptions' of our Slack app.
 
-In order for Slack to be able to verify this webhook, not only we have the check the value of the '**Verification Token**' sent by Slack, but also we need to return the 'challenge' value as it was sent in the Slack request which as a type '**url_verification**'.
+In order for Slack to be able to verify this webhook, not only do we have the check the value of the '**Verification Token**' sent by Slack, but we also need to return the 'challenge' value as it was sent in the Slack request which as a type '**url_verification**'.
 
 Here is the code you can use:
 
@@ -314,7 +314,7 @@ Then we will user another service [src/AppBundle/Service/MemberHandler.php](http
 
 Now that we've got the text of the Slack message and profile information of the user that sent this message, we need to call DialogFlow '**query**' API. This API method will return the answer text that we will be able to send back to the user, and the values of the parameters 'startDate' and 'endDate' that we are interested in.
 
-Here also we're are going to use a Guzzle client to call this API:
+Here we're are also going to use a Guzzle client to call this API:
 
 
 ```php
@@ -373,7 +373,7 @@ class Client
 ```
 
 - The query parameter named 'query' is the text of the message sent by the user.
-- The parameter 'sessionId' corresponds to the the current session or the DialogFlow user. To make it easier, I will use the user ID for this parameter: each user has a single user session in DialogFlow, that corresponds to his private discussion with the bot.
+- The parameter 'sessionId' corresponds to the current session or the DialogFlow user. To make it easier, I will use the user ID for this parameter: each user has a single user session in DialogFlow, that corresponds to his private discussion with the bot.
 - Parameters 'lang' and 'v' are required too. More details in the [doc here](https://dialogflow.com/docs/reference/agent/query).
 
 ### Parse the response from DialogFlow
@@ -522,7 +522,7 @@ And here is the result in our database:
 
 [![Results from the database]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png){: .center-image .no-link-style}
 
-We notice our friend Good managed to recognize the dates that were written in full English and allowed us to save the dates with a 'datetime' format in our database, big thanks to him!
+We notice our friend Google managed to recognize the dates that were written in full English and allowed us to save the dates with a 'datetime' format in our database: big thanks to him!
 
 ## Conclusion
 
@@ -531,4 +531,4 @@ I will stop there for now, even if, like I mentionned in the first part of this 
 You will also notice that I used [API Platform](/en/build-an-api-with-api-platform/) on [my Github project](https://github.com/ch3ric/WilsonPlanning), even if it's not used for the purpose of this article: because I have many other ideas in mind to implement and this application's API could be called by other systems.
 
 I'll let you know when I'll improve this tool in the future, if you're interested!
-Let me know in the comments if you have other ideas or optimizations to ease this process!
+Let me know in the comments if you have other ideas to ease this process!
