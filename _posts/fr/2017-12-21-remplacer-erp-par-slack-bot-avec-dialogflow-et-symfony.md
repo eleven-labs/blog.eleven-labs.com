@@ -49,7 +49,7 @@ On pourrait gérer les cas de refus de congés manuellement en parallèle, si ç
 L'idée serait donc de mettre en place un **bot Slack** qui :
 
 1. Permettrait à chacun de faire ces demandes de congés.
-2. Puis ce bot serait ensuite responsable d'envoyer les notifications à tout le monde dans Slack ou par email : manager, équipe et client.
+2. Puis ce bot serait responsable d'envoyer les notifications à tout le monde dans Slack ou par email : manager, équipe et client.
 3. Il pourrait également faire appel à l'API Google Calendar pour ajouter un event dans l'agenda.
 4. Et idéalement, faire un appel à l'API de l'ERP utilisé pour la comptabilité.
 
@@ -86,7 +86,7 @@ Vous pourrez ensuite accéder aux configurations suivantes depuis cet écran de 
 
 ### Créer un bot
 
-Il faut maintenant créer un utilisateur bot relié à cette app. Pour cela rendez vous dans le menu de gauche "Bot Users" ou depuis les "Basic Information" > "Add features and functionality" > "Bots".
+Il faut maintenant créer un utilisateur bot relié à cette app. Pour cela, rendez vous dans le menu de gauche "Bot Users" ou depuis les "Basic Information" > "Add features and functionality" > "Bots".
 
 [![Slack Bot]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png){: .center-image .no-link-style}
 
@@ -371,9 +371,9 @@ class Client
 }
 ```
 
-- Le paramètre 'query' doit être le texte du message envoyé par l'utilisateur.
-- Le paramètre 'sessionId' correspond à un session d'utilisation de DialogFlow. Pour simplifier, j'envoie l'ID de l'utilisateur pour ce paramètre : chaque utilisateur a donc une seule session d'utilisation de DialogFlow.
-- Les paramètres 'lang' et 'v' sont également obligatoires. Plus de détails dans la [doc ici](https://dialogflow.com/docs/reference/agent/query).
+- Le paramètre "query" doit être le texte du message envoyé par l'utilisateur.
+- Le paramètre "sessionId" correspond à une session d'utilisation de DialogFlow. Pour simplifier, j'envoie l'ID de l'utilisateur pour ce paramètre : chaque utilisateur a donc une seule session d'utilisation de DialogFlow.
+- Les paramètres "lang" et "v" sont également obligatoires. Plus de détails dans la [doc ici](https://dialogflow.com/docs/reference/agent/query).
 
 ### Parser la réponse de DialogFlow
 
@@ -507,7 +507,7 @@ final class SlackAction
 
 **Point d'attention** : il faut bien prévoir tous les types de messages qu'on peut possiblement recevoir de Slack ou DialogFlow et éviter à tout prix les erreurs.
 Voilà pourquoi je catch ici les `\InvalidArgumentException` retournées par mes parsers.
-Si votre webhook retourne un code d'**erreur HTTP**, il **rappellera plusieurs fois votre webhook**, jusqu'à obtenir une réponse avec un code 20X. Cela peut avoir des conséquences surprenantes : si l'erreur intervient à la dernière étape de votre controller, après le POST vers Slack, vous pourriez spammer la conversation privée de l'utilisateur en lui renvoyant un nouveau message à chaque fois que Slack rappelle le webhook en erreur !
+Si votre webhook retourne un code d'**erreur HTTP**, Slack **rappellera plusieurs fois votre webhook**, jusqu'à obtenir une réponse avec un code 20X. Cela peut avoir des conséquences surprenantes : si l'erreur intervient à la dernière étape de votre controller, après le POST vers Slack, vous pourriez spammer la conversation privée de l'utilisateur en lui renvoyant un nouveau message à chaque fois que Slack rappelle le webhook en erreur !
 
 > Bien sûr, pour respecter les bonnes pratiques, il faudrait aussi déplacer toute la logique métier de ce controller vers un service dédié.
 
