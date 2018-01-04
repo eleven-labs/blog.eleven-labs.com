@@ -26,7 +26,7 @@ Yet there are many ways to simplify, if you're creative enough! :)
 In this post, I'm gonna show you one of these simplification ideas that will ease the management of our leave requests.
 
 
-## Our context
+## Our context
 
 Here are a few more details about our context.
 
@@ -66,7 +66,7 @@ To set up the first step of this process, here is what we gonna do:
 - Set up a **Symfony** application that will expose a **webhook** which will be called by Slack server each time a private message will be sent to our bot. That's from this application that we will send request to DialogFlow in order to understand the message received, then call Slack to send an answer to the astronaut, and finally save the leave request in the database.
 
 
-## Our Slack bot
+## Our Slack bot
 
 Let's start with the setup of the Slack bot.
 
@@ -102,7 +102,7 @@ You also need to select the event "**message.im**" in order for Slack to call th
 
 The requests sent to this webhook must be secured with a token that will be used in the last step: please write down the value of the '**Verification Token**' displayed on the page 'Basic Information' that you will need later.
 
-### Configure OAuth permissions
+### Configure OAuth permissions
 
 You will not be surprised to hear that access to Slack data is protected. So you must configure your bot so that it could access some specific **scopes** of data with its **access token**.
 
@@ -116,7 +116,8 @@ Then, here are the scopes that you will necessarily need and that need to be sel
 
 There is no need to add more scopes for now, and you will see with more experience that Slack suggests the scopes that you might need to add if needed, when you call an API method which is not autorized.
 
-## Our DialogFlow agent
+
+## Our DialogFlow agent
 
 Now that our Slack bot is ready, we need to configure a DialogFlow agent that will help us understand messages sent by the users.
 
@@ -158,7 +159,7 @@ This intent will allow us to politely answer to the astronaut who says 'hi'. But
 It allows us to configure default messages, returned when the user's message is not supported by previous intents.
 
 
-## Our Symfony application
+## Our Symfony application
 
 All the code of the Symfony application which is connected with Slack and DialogFlow is on [my Github profile](https://github.com/ch3ric/WilsonPlanning/tree/master/src/AppBundle). I'm gonna describe here only the most interesting parts.
 
@@ -210,7 +211,7 @@ final class SlackAction
 }
 ```
 
-### Parse content of Slack request
+### Parse content of Slack request
 
 Then we get this request content:
 
@@ -376,7 +377,7 @@ class Client
 - The parameter 'sessionId' corresponds to the current session or the DialogFlow user. To make it easier, I will use the user ID for this parameter: each user has a single user session in DialogFlow, that corresponds to his private discussion with the bot.
 - Parameters 'lang' and 'v' are required too. More details in the [doc here](https://dialogflow.com/docs/reference/agent/query).
 
-### Parse the response from DialogFlow
+### Parse the response from DialogFlow
 
 Here is the response we receive:
 
@@ -452,7 +453,7 @@ We've already got the user information that allowed us to create the `Member`, a
 
 See [src/AppBundle/Service/VacationHandler.php](https://github.com/ch3ric/WilsonPlanning/blob/master/src/AppBundle/Service/VacationHandler.php) for more details.
 
-### Call all previous services
+### Call all previous services
 
 We now need to plug all our components together: this is pretty easy because we decided to use 'autowiring' option for dependencies injection. We only need to inject the service we need and call them from the controller action. Here is how our controller now looks like:
 
@@ -524,7 +525,8 @@ And here is the result in our database:
 
 We notice our friend Google managed to recognize the dates that were written in full English and allowed us to save the dates with a 'datetime' format in our database: big thanks to him!
 
-## Conclusion
+
+## Conclusion
 
 I will stop there for now, even if, like I mentionned in the first part of this blog post, there would be so many other ways to automate this process so that we would never have to use our old ERP again: call calendars APIs, use interactive Slack buttons to ask for validation, send Slack notifications to all team members, or even calculate the sprint velocity of the team which is impacted by this new leave request!
 
