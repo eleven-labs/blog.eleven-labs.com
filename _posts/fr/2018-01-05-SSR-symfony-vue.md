@@ -52,6 +52,7 @@ La premier chose à faire c'est d'installer twig et les annotations
 
 Cela va vous permettre de créer votre premier controller dans le ficher `src/Controller/DefaultController.php`
 
+{% raw %}
 ```php
 <?php
 
@@ -72,9 +73,11 @@ class DefaultController  extends Controller
     }
 }
 ```
+{% endraw %}
 
 Et ajouter votre template twig dans le fichier `templates/home.html.twig`
 
+{% raw %}
 ```html
 <!DOCTYPE html>
 <html>
@@ -92,11 +95,13 @@ Et ajouter votre template twig dans le fichier `templates/home.html.twig`
     </body>
 </html>
 ```
+{% endraw %}
 
 Nous alolons maintenant ajouter la partie vue.js, en utilsant Webpack-encore de Symfony, vous trouverez la documents [ici](http://symfony.com/doc/current/frontend/encore/installation.html).
 
 Nous allons faire une configuration très simple pour la moise en place de vue.js. Il faut mettre dans votre fichier `webpack.config.js`
 
+{% raw %}
 ```js
 var Encore = require('@symfony/webpack-encore');
 
@@ -113,12 +118,14 @@ Encore
 
 module.exports = Encore.getWebpackConfig();
 ```
+{% endraw %}
 
 Puis nous allons ajouter le composant Vue.js. 
 
 
 Dans le dossier `assets` je vous invite à créer le dossier `js` à l'interieur de ce dossiers vous pouvez créer le composant vue.js. Dans le fichier `assets/js/components/App.vue`
 
+{% raw %}
 ```html
 <template>
   <div id="app">
@@ -135,9 +142,11 @@ Dans le dossier `assets` je vous invite à créer le dossier `js` à l'interieur
   }
 </script>
 ```
+{% endraw %}
 
 Puis vous pouvez créer `app` vue.js, dans le fichier `assets/js/app.js` qui est le point d'entré de votre application vue.js.
 
+{% raw %}
 ```
 import App from './components/App.vue';
 import Vue from 'vue';
@@ -146,12 +155,15 @@ new Vue({
   render: h => h(App)
 });
 ```
+{% endraw %}
 
 Dans votre fichier twig vous devez appéler le fichier générer par webpack en ajoutant ceci dans le block javascripts.
 
+{% raw %}
 ```
 <script src="{{ asset('build/app.js') }}"></script>
 ```
+{% endraw %}
 
 Voila vous devez avoir un site symfony 4 qui vous affiche `Hello world` en vue.js. Si vous désactivez le javascript vous n'aurez que le `salut` qui s'affiche.
 
@@ -171,22 +183,27 @@ Tout d'abord nous allons créer deux fichiers d'entrés pour vue.js, parce qu'il
 
 Commençons par créer le fichier `assets/js/entry-client.js` qui permet de "monter" l'application sur l'id `#app`
 
+{% raw %}
 ```js
 import { createApp } from './app'
 createApp().$mount('#app');
 ```
+{% endraw %}
 
 Puis il faut créer le fichier `assets/js/entry-server.js` qui lui permet de transformer le composant vue.js en un chaine de caractère que vous pourrez ensuite interpréter dans le php.
 
+{% raw %}
 ```js
 import { createApp } from './app'
 renderVueComponentToString(createApp(), (err, res) => {
   print(res);
 });
 ```
+{% endraw %}
 
 Et nous terminons par mettre à jours le fichier  `assets/js/app.js` qui permet d'exporter l'application pour quel soit lisible par les deux fichiers précédent.
 
+{% raw %}
 ```js
 import App from './components/App.vue';
 import Vue from 'vue';
@@ -197,9 +214,11 @@ export function createApp() {
   });
 }
 ```
+{% endraw %}
 
 Il vous faut alors changer la configuration de votre `webpack` pour générer les deux fichiers d'entrés
 
+{% raw %}
 ```js
 var Encore = require('@symfony/webpack-encore');
 
@@ -217,10 +236,13 @@ Encore
 
 module.exports = Encore.getWebpackConfig();
 ```
+{% endraw %}
 
 Si vous changez le bloc javascript dans votre fichier  `templates/home.html.twig` par ceci.
 
+{% raw %}
 `<script src="{{ asset('build/entry-client.js') }}"></script>`
+{% endraw %}
 
 Vous devez avoir exactement le même résultat que précédement.
 
@@ -232,6 +254,7 @@ Ce que l'on va faire c'est de récupérer le retour du fichier `entry-server.js`
 
 Ajoutons une fonction privée dans notre controleur Symfony qui va permettre de faire cela (pour faire propore il faudrait le faire dans un service).
 
+{% raw %}
 ```
 private function renderJs()
 {
@@ -245,9 +268,11 @@ private function renderJs()
     return ob_get_clean();
 }
 ``` 
+{% endraw %}
 
 Il ne reste plus qu'a récuperer le résultat dans le controleur et de l'envoyé dans le template
 
+{% raw %}
 ```
 /**
  * @Route("/")
@@ -258,9 +283,11 @@ public function home()
     return $this->render('home.html.twig', ['ssr' => $ssr]);
 }
 ```
+{% endraw %}
 
 Et dans le twig vous pouvez mettre la valeur `raw` de `ssr`.
 
+{% raw %}
 ```html
 <!DOCTYPE html>
 <html>
@@ -278,11 +305,9 @@ Et dans le twig vous pouvez mettre la valeur `raw` de `ssr`.
     </body>
 </html>
 ```
-
+{% endraw %}
 
 Si tout est ok votre page affichera Hello World directement dans votre code source.
-
-// Image 3
 
 ## Conclusion
 
