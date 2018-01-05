@@ -147,7 +147,7 @@ Dans le dossier `assets` je vous invite à créer le dossier `js` à l'interieur
 Puis vous pouvez créer `app` vue.js, dans le fichier `assets/js/app.js` qui est le point d'entré de votre application vue.js.
 
 {% raw %}
-```
+```js
 import App from './components/App.vue';
 import Vue from 'vue';
 new Vue({
@@ -160,7 +160,7 @@ new Vue({
 Dans votre fichier twig vous devez appéler le fichier générer par webpack en ajoutant ceci dans le block javascripts.
 
 {% raw %}
-```
+```html
 <script src="{{ asset('build/app.js') }}"></script>
 ```
 {% endraw %}
@@ -255,7 +255,7 @@ Ce que l'on va faire c'est de récupérer le retour du fichier `entry-server.js`
 Ajoutons une fonction privée dans notre controleur Symfony qui va permettre de faire cela (pour faire propore il faudrait le faire dans un service).
 
 {% raw %}
-```
+```php
 private function renderJs()
 {
     $renderer_source = file_get_contents(__DIR__ . '/../../node_modules/vue-server-renderer/basic.js');
@@ -273,7 +273,7 @@ private function renderJs()
 Il ne reste plus qu'a récuperer le résultat dans le controleur et de l'envoyé dans le template
 
 {% raw %}
-```
+```php
 /**
  * @Route("/")
  */
