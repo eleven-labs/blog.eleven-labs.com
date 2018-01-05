@@ -3,7 +3,7 @@ layout: post
 title: SSR avec Symfony et Vue.js
 lang: fr
 permalink: /fr/ssr-symfony-vue/
-excerpt: "Nous travaillons de plus en plus avec à la fois un framework serveur type Symfony et un framework client type Vue.js. D'ailleurs on trouve énormement d'articles sur le sujet. La question que l'on se pose le plus souvent, c'est comment rendre ces choix technologiques performants."
+excerpt: "Nous travaillons de plus en plus avec à la fois un framework serveur type Symfony et un framework client type Vue.js. D'ailleurs on trouve énormément d'articles sur le sujet. La question que l'on se pose le plus souvent, c'est comment rendre ces choix technologiques performants."
 authors:
     - captainjojo
 categories:
@@ -13,15 +13,15 @@ tags:
 cover: /assets/2018-01-05-SSR-symfony-vue/cover.jpg
 ---
 
-Nous travaillons de plus en plus avec à la fois un framework serveur type Symfony et un framework client type Vue.js. D'ailleurs on trouve énormement d'articles sur le sujet. La question que l'on se pose le plus souvent, c'est comment rendre ces choix technologiques performants.
+Nous travaillons de plus en plus avec à la fois un framework serveur type Symfony et un framework client type Vue.js. D'ailleurs on trouve énormément d'articles sur le sujet. La question que l'on se pose le plus souvent, c'est comment rendre ces choix technologiques performants.
 
-C'est en lisant un article sur [Medium](https://medium.com/js-dojo/server-side-rendering-with-laravel-vue-js-2-5-6afedd64aa90) qui présente la mise en place de SSR (server side rendering) de vue.js sur un serveur Laravle que je me suis dit pourquoi ne pas le faire en Symfony.
+C'est en lisant un article sur [Medium](https://medium.com/js-dojo/server-side-rendering-with-laravel-vue-js-2-5-6afedd64aa90) qui présente la mise en place de SSR (server side rendering) de vue.js sur un serveur Laravel que je me suis dit "Et pourquoi ne pas le faire en Symfony ?".
 
 ## Symfony et Vue.js premiere partie
 
-Tout d'abord je vous invite à installer un Symfony 4 en suivant les instructions disponible [ici](https://symfony.com/doc/current/setup.html). 
+Tout d'abord, je vous invite à installer un Symfony 4 en suivant les instructions disponibles [ici](https://symfony.com/doc/current/setup.html).
 
-Vous devez alors avoir un projet qui ressemble à ceci:
+Vous devez alors avoir un projet qui ressemble à ceci :
 
 ```
 your-project/
@@ -45,7 +45,7 @@ your-project/
 └── vendor/
 ```
 
-La premier chose à faire c'est d'installer twig et les annotations
+La première chose à faire, c'est d'installer twig et les annotations :
 
     composer require annotations
     composer require twig
@@ -75,7 +75,7 @@ class DefaultController  extends Controller
 ```
 {% endraw %}
 
-Et ajouter votre template twig dans le fichier `templates/home.html.twig`
+Et d'ajouter votre template twig dans le fichier `templates/home.html.twig`
 
 {% raw %}
 ```html
@@ -97,9 +97,9 @@ Et ajouter votre template twig dans le fichier `templates/home.html.twig`
 ```
 {% endraw %}
 
-Nous alolons maintenant ajouter la partie vue.js, en utilsant Webpack-encore de Symfony, vous trouverez la documents [ici](http://symfony.com/doc/current/frontend/encore/installation.html).
+Nous allons maintenant ajouter la partie vue.js, en utilsant Webpack-encore de Symfony. Vous trouverez la documentation [ici](http://symfony.com/doc/current/frontend/encore/installation.html).
 
-Nous allons faire une configuration très simple pour la moise en place de vue.js. Il faut mettre dans votre fichier `webpack.config.js`
+Nous allons faire une configuration très simple pour la mise en place de vue.js. Il faut mettre dans votre fichier `webpack.config.js`
 
 {% raw %}
 ```js
@@ -123,7 +123,7 @@ module.exports = Encore.getWebpackConfig();
 Puis nous allons ajouter le composant Vue.js. 
 
 
-Dans le dossier `assets` je vous invite à créer le dossier `js` à l'interieur de ce dossiers vous pouvez créer le composant vue.js. Dans le fichier `assets/js/components/App.vue`
+Dans le dossier `assets` je vous invite à créer le dossier `js`. À l'intérieur de ce dossier vous pouvez créer le composant vue.js. Dans le fichier `assets/js/components/App.vue`
 
 {% raw %}
 ```html
@@ -144,7 +144,7 @@ Dans le dossier `assets` je vous invite à créer le dossier `js` à l'interieur
 ```
 {% endraw %}
 
-Puis vous pouvez créer `app` vue.js, dans le fichier `assets/js/app.js` qui est le point d'entré de votre application vue.js.
+Puis vous pouvez créer `app` vue.js, dans le fichier `assets/js/app.js` qui est le point d'entrée de votre application vue.js.
 
 {% raw %}
 ```js
@@ -157,7 +157,7 @@ new Vue({
 ```
 {% endraw %}
 
-Dans votre fichier twig vous devez appéler le fichier générer par webpack en ajoutant ceci dans le block javascripts.
+Dans votre fichier twig vous devez appeler le fichier généré par webpack en ajoutant ceci dans le block javascript.
 
 {% raw %}
 ```html
@@ -165,19 +165,19 @@ Dans votre fichier twig vous devez appéler le fichier générer par webpack en 
 ```
 {% endraw %}
 
-Voila vous devez avoir un site symfony 4 qui vous affiche `Hello world` en vue.js. Si vous désactivez le javascript vous n'aurez que le `salut` qui s'affiche.
+Voilà, vous devez avoir un site symfony 4 qui vous affiche `Hello world` en vue.js. Si vous désactivez le javascript, vous n'aurez que le `salut` qui s'affiche.
 
 ![Demo1]({{site.baseurl}}/assets/2018-01-05-SSR-symfony-vue/demo1.png)
 
 ## Faire du SSR
 
-L'interet du SSR est de ne pas interpréter le javascript sur le client lors du premier appel mais plutot par votre serveur. Cela permet d'avoir une page directement générer, et de ganger en performance d'affichage et aussi en SEO.
+L'intérêt du SSR est de ne pas interpréter le javascript sur le client lors du premier appel mais plutôt par votre serveur. Cela permet d'avoir une page directement générée, et de gagner en performance d'affichage ainsi qu'en SEO.
 
-Normalement le SSR ce fait directement sur un serveur javascript, il existe d'ailleurs des librairies directement faite pour cela.  Je vous incite à lire cet article qui parle du [SSR sur React](https://blog.eleven-labs.com/en/react-ssr/).
+Normalement le SSR se fait directement sur un serveur javascript. Il existe d'ailleurs des librairies directement faites pour cela.  Je vous incite à lire cet article qui parle du [SSR sur React](https://blog.eleven-labs.com/en/react-ssr/).
 
-Mais ici  nous voulons garder notre serveur Symfony (pour plein de raison que je n'expliquerai pas). 
+Mais ici, nous voulons garder notre serveur Symfony (pour plein de raison que je n'expliquerai pas).
 
-Tout d'abord nous allons créer deux fichiers d'entrés pour vue.js, parce qu'il faut appéler des fonctions différentes pour l'affichage dans le client et dans le serveur.
+Tout d'abord nous allons créer deux fichiers d'entrée pour vue.js, parce qu'il faut appeler des fonctions différentes pour l'affichage dans le client et dans le serveur.
 
 ![App.js]({{site.baseurl}}/assets/2018-01-05-SSR-symfony-vue/appjs.png)
 
@@ -190,7 +190,7 @@ createApp().$mount('#app');
 ```
 {% endraw %}
 
-Puis il faut créer le fichier `assets/js/entry-server.js` qui lui permet de transformer le composant vue.js en un chaine de caractère que vous pourrez ensuite interpréter dans le php.
+Puis il faut créer le fichier `assets/js/entry-server.js` qui, lui, permet de transformer le composant vue.js en un chaîne de caractères que vous pourrez ensuite interpréter dans le php.
 
 {% raw %}
 ```js
@@ -201,7 +201,7 @@ renderVueComponentToString(createApp(), (err, res) => {
 ```
 {% endraw %}
 
-Et nous terminons par mettre à jours le fichier  `assets/js/app.js` qui permet d'exporter l'application pour quel soit lisible par les deux fichiers précédent.
+Et nous terminons par mettre à jour le fichier  `assets/js/app.js` qui permet d'exporter l'application pour qu'elle soit lisible par les deux fichiers précédents.
 
 {% raw %}
 ```js
@@ -216,7 +216,7 @@ export function createApp() {
 ```
 {% endraw %}
 
-Il vous faut alors changer la configuration de votre `webpack` pour générer les deux fichiers d'entrés
+Il vous faut alors changer la configuration de votre `webpack` pour générer les deux fichiers d'entrée
 
 {% raw %}
 ```js
@@ -246,13 +246,13 @@ Si vous changez le bloc javascript dans votre fichier  `templates/home.html.twig
 
 Vous devez avoir exactement le même résultat que précédement.
 
-Nous allons maintenant mettre en place le SSR, pour faire simple nous allons charger la librairie V8js qui permet à PHP d'utiliser le moteur d'interprétation de javascript. 
+Nous allons maintenant mettre en place le SSR. Pour faire simple nous allons charger la librairie V8js qui permet à PHP d'utiliser le moteur d'interprétation de javascript. 
 
 Pour cela il vous faut installer l'extension [PHP V8js](http://php.net/manual/fr/book.v8js.php) qui vous permet ensuite d'utiliser le class `V8Js` dans votre code PHP.
 
-Ce que l'on va faire c'est de récupérer le retour du fichier `entry-server.js` en format string et le mettre directement dans le template.
+Ce que l'on va faire, c'est récupérer le retour du fichier `entry-server.js` en format string et le mettre directement dans le template.
 
-Ajoutons une fonction privée dans notre controleur Symfony qui va permettre de faire cela (pour faire propore il faudrait le faire dans un service).
+Ajoutons une fonction privée dans notre contrôleur Symfony qui va permettre de faire cela (pour faire propre il faudrait le faire dans un service).
 
 {% raw %}
 ```php
@@ -270,7 +270,7 @@ private function renderJs()
 ``` 
 {% endraw %}
 
-Il ne reste plus qu'a récuperer le résultat dans le controleur et de l'envoyé dans le template
+Il ne reste plus qu'à récuperer le résultat dans le contrôleur et à l'envoyer dans le template.
 
 {% raw %}
 ```php
@@ -307,7 +307,7 @@ Et dans le twig vous pouvez mettre la valeur `raw` de `ssr`.
 ```
 {% endraw %}
 
-Si tout est ok votre page affichera Hello World directement dans votre code source.
+Si tout est ok, votre page affichera "Hello World" directement dans votre code source.
 
 ## Conclusion
 
