@@ -82,7 +82,7 @@ Then it's yours to fill all information about your app: name, description, color
 
 After that, you'll be able to access other following configurations from the screen 'Basic Information':
 
-[![Slack Bot]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png){: .center-image .no-link-style}
+[![Slack App Basic Information]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_basic_info.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_basic_info.png){: .center-image .no-link-style}
 
 ### Create a bot
 
