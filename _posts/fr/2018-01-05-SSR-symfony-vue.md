@@ -179,7 +179,7 @@ Mais ici  nous voulons garder notre serveur Symfony (pour plein de raison que je
 
 Tout d'abord nous allons créer deux fichiers d'entrés pour vue.js, parce qu'il faut appéler des fonctions différentes pour l'affichage dans le client et dans le serveur.
 
-![App.js]({{site.baseurl}}/assets/2018-01-05-SSR-symfony-vue/app.png)
+![App.js]({{site.baseurl}}/assets/2018-01-05-SSR-symfony-vue/appjs.png)
 
 Commençons par créer le fichier `assets/js/entry-client.js` qui permet de "monter" l'application sur l'id `#app`
 
