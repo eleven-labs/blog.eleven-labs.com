@@ -120,7 +120,7 @@ module.exports = Encore.getWebpackConfig();
 ```
 {% endraw %}
 
-Puis nous allons ajouter le composant Vue.js. 
+Puis nous allons ajouter le composant Vue.js.
 
 
 Dans le dossier `assets` je vous invite à créer le dossier `js`. À l'intérieur de ce dossier vous pouvez créer le composant vue.js. Dans le fichier `assets/js/components/App.vue`
@@ -246,7 +246,7 @@ Si vous changez le bloc javascript dans votre fichier  `templates/home.html.twig
 
 Vous devez avoir exactement le même résultat que précédement.
 
-Nous allons maintenant mettre en place le SSR. Pour faire simple nous allons charger la librairie V8js qui permet à PHP d'utiliser le moteur d'interprétation de javascript. 
+Nous allons maintenant mettre en place le SSR. Pour faire simple nous allons charger la librairie V8js qui permet à PHP d'utiliser le moteur d'interprétation de javascript.
 
 Pour cela il vous faut installer l'extension [PHP V8js](http://php.net/manual/fr/book.v8js.php) qui vous permet ensuite d'utiliser le class `V8Js` dans votre code PHP.
 
@@ -267,7 +267,7 @@ private function renderJs()
     $v8->executeString($app_source);
     return ob_get_clean();
 }
-``` 
+```
 {% endraw %}
 
 Il ne reste plus qu'à récuperer le résultat dans le contrôleur et à l'envoyer dans le template.
@@ -309,11 +309,10 @@ Et dans le twig vous pouvez mettre la valeur `raw` de `ssr`.
 
 Si tout est ok, votre page affichera "Hello World" directement dans votre code source.
 
+![CodeSource]({{site.baseurl}}/assets/2018-01-05-SSR-symfony-vue/source.png)
+
 ## Conclusion
 
 Il est assez simple de mettre en place le système à plus grande échelle et donc d'avoir à la fois la puissance d'un framework javascript même lors du premier appel.
 
 Vous trouverez l'ensemble du code sur mon github [ici](https://github.com/CaptainJojo/symfony-vue).
-
-
-
