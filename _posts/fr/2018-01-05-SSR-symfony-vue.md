@@ -88,10 +88,10 @@ Et d'ajouter votre template twig dans le fichier `templates/home.html.twig`
     </head>
     <body>
         {% block body %}
-			<div id="app">SALUT</div>
-		{% endblock %}
-		{% block javascripts %}
-		{% endblock %}
+            <div id="app">SALUT</div>
+        {% endblock %}
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>
 ```
@@ -298,10 +298,10 @@ Et dans le twig vous pouvez mettre la valeur `raw` de `ssr`.
     </head>
     <body>
         {% block body %}
-			{{ ssr|raw }}
-		{% endblock %}
-		{% block javascripts %}
-		{% endblock %}
+            {{ ssr|raw }}
+        {% endblock %}
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>
 ```
