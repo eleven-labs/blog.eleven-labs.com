@@ -7,7 +7,7 @@ excerpt: "Nous travaillons de plus en plus avec à la fois un framework serveur 
 authors:
     - captainjojo
 categories:
-    - 
+    -
 tags:
     - javascript
 cover: /assets/2018-01-05-SSR-symfony-vue/cover.jpg
@@ -97,7 +97,7 @@ Et d'ajouter votre template twig dans le fichier `templates/home.html.twig`
 ```
 {% endraw %}
 
-Nous allons maintenant ajouter la partie vue.js, en utilsant Webpack-encore de Symfony. Vous trouverez la documentation [ici](http://symfony.com/doc/current/frontend/encore/installation.html).
+Nous allons maintenant ajouter la partie vue.js, en utilisant Webpack-encore de Symfony. Vous trouverez la documentation [ici](http://symfony.com/doc/current/frontend/encore/installation.html).
 
 Nous allons faire une configuration très simple pour la mise en place de vue.js. Il faut mettre dans votre fichier `webpack.config.js`
 
@@ -244,7 +244,7 @@ Si vous changez le bloc javascript dans votre fichier  `templates/home.html.twig
 `<script src="{{ asset('build/entry-client.js') }}"></script>`
 {% endraw %}
 
-Vous devez avoir exactement le même résultat que précédement.
+Vous devez avoir exactement le même résultat que précédemment.
 
 Nous allons maintenant mettre en place le SSR. Pour faire simple nous allons charger la librairie V8js qui permet à PHP d'utiliser le moteur d'interprétation de javascript.
 
@@ -270,7 +270,7 @@ private function renderJs()
 ```
 {% endraw %}
 
-Il ne reste plus qu'à récuperer le résultat dans le contrôleur et à l'envoyer dans le template.
+Il ne reste plus qu'à récupérer le résultat dans le contrôleur et à l'envoyer dans le template.
 
 {% raw %}
 ```php
