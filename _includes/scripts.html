@@ -6,10 +6,16 @@
       sw: '{{ "/sw.js" | prepend: site.baseurl }}',
     };
 </script>
-<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js" defer></script>
-<script src="{{ "/js/service-worker.js" | prepend: site.baseurl_root }}" defer></script>
-<script src="{{ "/js/track-links.js" | prepend: site.baseurl_root }}" defer></script>
-<script src="{{ "/js/lib/moment/moment.min.js" | prepend: site.baseurl_root }}" defer></script>
-<script src="{{ "/js/lib/moment/locale/fr.min.js" | prepend: site.baseurl_root }}" defer></script>
-<script src="{{ "/js/lib/algoliasearch/algoliasearchLite.min.js" | prepend: site.baseurl_root }}" defer></script>
-<script src="{{ "/js/search.js" | prepend: site.baseurl_root }}" defer></script>
+
+{% if site.theme_settings.google_analytics %}
+<script src="{{ "/js/lib/js-cookie/js.cookie.min.js" | prepend: site.baseurl_root }}"></script>
+<script src="{{ "/js/cookie-consent.js" | prepend: site.baseurl_root }}"></script>
+{% endif %}
+
+<script src="{{ "/js/lib/firebase/firebase.js" | prepend: site.baseurl_root }}"></script>
+<script src="{{ "/js/service-worker.js" | prepend: site.baseurl_root }}"></script>
+
+<script src="{{ "/js/lib/moment/moment.min.js" | prepend: site.baseurl_root }}"></script>
+<script src="{{ "/js/lib/moment/locale/fr.min.js" | prepend: site.baseurl_root }}"></script>
+<script src="{{ "/js/lib/algoliasearch/algoliasearchLite.min.js" | prepend: site.baseurl_root }}"></script>
+<script src="{{ "/js/search.js" | prepend: site.baseurl_root }}"></script>

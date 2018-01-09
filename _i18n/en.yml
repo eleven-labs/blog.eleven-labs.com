@@ -22,6 +22,12 @@ global:
   same_author: By the same author
   search_input: Search
   offline_ready: Site is Ready for Offline Use
+  cookie_banner_message: This website uses Google Analytics. By continuing to browse, you authorize us to place a cookie for audience measurement purposes.
+  cookie_banner_more: Learn more or disagree
+  cookie_inform_and_ask_title: Google Analytics cookies
+  cookie_inform_and_ask_message: This website uses cookies from Google Analytics. These cookies help us to identify the content that interests you the most and to identify certain malfunctions. Your navigational data on this site is sent to Google Inc.
+  cookie_inform_and_ask_agree: Agree
+  cookie_inform_and_ask_disagree: Disagree
 date:
   months:
     january: January

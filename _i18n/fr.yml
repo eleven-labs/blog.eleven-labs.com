@@ -22,6 +22,12 @@ global:
   same_author: Du même auteur
   search_input: Rechercher
   offline_ready: Utilisation hors-ligne disponible
+  cookie_banner_message: Ce site utilise Google Analytics. En continuant à naviguer, vous nous autorisez à déposer un cookie à des fins de mesure d'audience.
+  cookie_banner_more: En savoir plus ou s'opposer
+  cookie_inform_and_ask_title: Les cookies Google Analytics
+  cookie_inform_and_ask_message: Ce site utilise des cookies de Google Analytics. Ces cookies nous aident à identifier le contenu qui vous intéresse le plus ainsi qu'à repérer certains dysfonctionnements. Vos données de navigations sur ce site sont envoyées à Google Inc.
+  cookie_inform_and_ask_agree: Accepter
+  cookie_inform_and_ask_disagree: S'opposer
 date:
   months:
     january: Janvier

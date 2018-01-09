@@ -35,3 +35,5 @@ $baseurl: '{{ site.baseurl_root }}';
 @import 'includes/md-content';
 @import 'includes/author';
 @import 'includes/share';
+@import 'includes/offline-ready-banner';
+@import 'includes/cookie-banner';
