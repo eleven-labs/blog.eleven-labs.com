@@ -13,10 +13,10 @@ layout: compress
             <div class="posts" id="js-content-search">
             </div>
         </div>
-        <div class="offline-ready">
-            {% translate global.offline_ready %}
-        </div>
         {% include footer.html %}
+
+        {% include offline_ready_banner.html %}
+        {% include cookie_banner.html %}
         {% include scripts.html %}
     </body>
 </html>
