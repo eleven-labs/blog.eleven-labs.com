@@ -10,6 +10,7 @@ layout: compress-js
 
   const GA_PROPERTY = '{{ site.theme_settings.google_analytics }}'
   const GA_COOKIE_NAMES = ['__utma', '__utmb', '__utmc', '__utmz', '_ga', '_gat'];
+  const COOKIE_EXPIRES = 395 // 395 days = 13 months = max legal duration
 
   const cookieBanner = document.getElementById('cookie-banner');
   const cookieInformAndAsk = document.getElementById('cookie-inform-and-ask');
@@ -65,8 +66,8 @@ layout: compress-js
    * Reject GA exec, set cookies to save choice, remove GA cookies
    */
   function reject() {
-    Cookies.set(`ga-disable-${GA_PROPERTY}`, true, { expires: 365 });
-    Cookies.set('hasConsent', false, { expires: 365 });
+    Cookies.set(`ga-disable-${GA_PROPERTY}`, true, { expires: COOKIE_EXPIRES });
+    Cookies.set('hasConsent', false, { expires: COOKIE_EXPIRES });
     window[`ga-disable-${GA_PROPERTY}`] = true;
     GA_COOKIE_NAMES.forEach(cookieName => Cookies.remove(cookieName));
   }
@@ -92,7 +93,7 @@ layout: compress-js
   function onGaConfirmButtonClick(event) {
     event.preventDefault();
 
-    Cookies.set('hasConsent', true, { expires: 365 });
+    Cookies.set('hasConsent', true, { expires: COOKIE_EXPIRES });
     startGoogleAnalytics();
 
     cookieInformAndAsk.className = cookieBanner.className.replace('active', '').trim();
@@ -115,7 +116,7 @@ layout: compress-js
 
     event.preventDefault();
 
-    Cookies.set('hasConsent', true, { expires: 365 });
+    Cookies.set('hasConsent', true, { expires: COOKIE_EXPIRES });
     startGoogleAnalytics();
 
     cookieBanner.className = cookieBanner.className.replace('active', '').trim();
@@ -158,7 +159,7 @@ layout: compress-js
     }
 
     if (doNotTrack === 'no' || doNotTrack === '0') {
-      Cookies.set('hasConsent', true, { expires: 365 });
+      Cookies.set('hasConsent', true, { expires: COOKIE_EXPIRES });
       startGoogleAnalytics();
       return;
     }
