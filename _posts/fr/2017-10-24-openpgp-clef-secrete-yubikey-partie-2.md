@@ -427,6 +427,12 @@ Par ailleurs, vous pouvez diffuser votre clef publique sur [un serveur de clefs]
 
 Dans un prochain article, nous allons mettre en place une stratégie de sauvegarde en cas de perte des clefs secrètes. Une erreur peut vite arriver, comme formater son ordinateur suite à un ransonware (ce qui est d'actualité en ce moment).
 
+## Article en relation
+* [OpenPGP - Une paire de clés presque parfaite (partie 1)](/fr/openpgp-paire-clef-presque-parfaite-partie-1/)
+* [OpenPGP - Exporter les clefs secrètes sur une Yubikey (partie 2)](/fr/openpgp-clef-secrete-yubikey-partie-2/)
+* [OpenPGP - Stockage sur le long terme de clefs (partie 3)](/fr/openpgp-stockage-froid-clefs-partie-3/)
+* [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)](/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
+
 ### Resources
 - [wikipedia - Universal 2nd Factor](https://en.wikipedia.org/wiki/Universal_2nd_Factor){:rel="nofollow noreferrer"}
 - [fidoalliance -Universal 2nd Factor (U2F) Overview](https://fidoalliance.org/specs/fido-u2f-overview-ps-20150514.pdf){:rel="nofollow noreferrer"}

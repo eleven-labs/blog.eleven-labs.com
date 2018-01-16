@@ -437,6 +437,12 @@ on GitHub (example on this commit [31dd621](https://github.com/eleven-labs/blog.
 In a future article, we will set up a backup strategy to cover for the potential loss of secret keys. An error can quickly happen,
 like erasing your computer following a ransomware.
 
+### Article en relation
+* [OpenPGP - The almost perfect key pair (part 1)](/openpgp-almost-perfect-key-pair-part-1/)
+* [OpenPGP - Export Secret Keys to a Yubikey (part 2)](/openpgp-secret-keys-yubikey-part-2/)
+* [OpenPGP - Long term storage (part 3)](/fr/openpgp-stockage-froid-clefs-partie-3/)
+* [OpenPGP - I was in a Key Signing Party (part 4)](/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
+
 ### Resources
 
 - [wikipedia - Universal 2nd Factor](https://en.wikipedia.org/wiki/Universal_2nd_Factor){:rel="nofollow noreferrer"}
