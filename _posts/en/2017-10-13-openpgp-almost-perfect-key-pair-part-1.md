@@ -401,6 +401,12 @@ even authenticate yourself to a server in SSH.
 In addition, on November 2, there will be a [key signing party](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris) (key signing party){:rel="nofollow noreferrer"} at Mozilla France.
 This event is an opportunity to meet other OpenPGP enthusiasts and, above all, it will make it possible to have your newly created key certified.
 
+### Article en relation
+* [OpenPGP - The almost perfect key pair (part 1)](/openpgp-almost-perfect-key-pair-part-1/)
+* [OpenPGP - Export Secret Keys to a Yubikey (part 2)](/openpgp-secret-keys-yubikey-part-2/)
+* [OpenPGP - Long term storage (part 3)](/fr/openpgp-stockage-froid-clefs-partie-3/)
+* [OpenPGP - I was in a Key Signing Party (part 4)](/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
+
 ### Resources
 * [GPG : création de votre première paire de clefs et chiffrement d'un fichier](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm){:rel="nofollow noreferrer"}
 * [GPG : comment créer une paire de clefs presque parfaite](https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm){:rel="nofollow noreferrer"}
