@@ -1,0 +1,16 @@
+.offline-ready {
+  background-color: $brand-black;
+  bottom: 0;
+  color: $brand-color;
+  height: 3.4rem;
+  padding: .5rem;
+  position: fixed;
+  text-align: center;
+  transform: translateY(3.5rem);
+  transition: transform 1s;
+  width: 100%;
+
+  &.active {
+    transform: translateY(0);
+  }
+}

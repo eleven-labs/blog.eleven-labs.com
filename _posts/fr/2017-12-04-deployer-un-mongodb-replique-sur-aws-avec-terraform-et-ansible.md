@@ -20,7 +20,7 @@ cover: /assets/2017-09-03-migrer-une-application-react-client-side-en-server-sid
 
 J'ai récemment eu l'occasion de déployer un serveur MongoDB sur Amazon Web Services (AWS). Afin de limiter les problèmes de crash et de perte de données, celui-ci est également répliqué avec deux autres serveurs, idéalement dans une zone géographique différente pour assurer de la haute disponibilité.
 
-Pour l'automatisation de la création des machines EC2, j'ai utilisé [Terraform](https://www.terraform.io/) (et son provider `aws`) ainsi que [Ansible](https://www.ansible.com/) pour le provisionnement. Cet article décrit la logique technique que nous avons mis en place pour y arriver.
+Pour l'automatisation de la création des machines EC2, j'ai utilisé [Terraform](https://www.terraform.io/){:rel="nofollow"} (et son provider `aws`) ainsi que [Ansible](https://www.ansible.com/) pour le provisionnement. Cet article décrit la logique technique que nous avons mis en place pour y arriver.
 
 ## Contexte
 
@@ -28,7 +28,7 @@ Nous avons donc un cluster MongoDB composé de trois instances EC2 (disons de ty
 
 Parmi ces instances, MongoDB va élire un serveur master, appelé `primaire` dans le langage MongoDB ainsi que des serveurs slaves, appelés `secondaires`.
 
-Afin que ces trois serveurs se partagent les mêmes données, nous allons devoir créer ce que MongoDB appelle un [replica set](https://docs.mongodb.com/manual/tutorial/deploy-replica-set/), soit un ensemble de données.
+Afin que ces trois serveurs se partagent les mêmes données, nous allons devoir créer ce que MongoDB appelle un [replica set](https://docs.mongodb.com/manual/tutorial/deploy-replica-set/){:rel="nofollow"}, soit un ensemble de données.
 
 Ce qu'il est important de noter est que seul le serveur `primaire` pourra lire ou écrire des données. Les serveurs `secondaires` sont là pour prendre le relai au cas ou le serveur `primaire` serait amené à être indisponible. Ceci est possible grâce à une élection qui est lancée automatiquement par MongoDB pour élire un nouveau serveur `primaire`.
 
@@ -45,7 +45,7 @@ Impossible donc de définir ce modèle de réplication avec seulement deux serve
 
 ## Terraform : création des serveurs
 
-Passons maintenant à la création des machines sur AWS : nous avons fait le choix de ![Terraform](https://www.terraform.io) pour cette partie, un outil d'automatisation de ressources.
+Passons maintenant à la création des machines sur AWS : nous avons fait le choix de [Terraform](https://www.terraform.io){:rel="nofollow"} pour cette partie, un outil d'automatisation de ressources.
 
 Terraform est un outil permettant d'industrialiser des tâches d'infrastructure telles que, dans notre cas, la création de machines EC2 sur notre compte AWS.
 
@@ -396,4 +396,4 @@ Déployer un cluster MongoDB avec un réplication active sur une infrastructure 
 
 Toute la logique d'élection et de re-définition de serveur primaire est gérée par MongoDB.
 
-Pour aller plus loin au niveau de la réplication MongoDB, je vous invite à parcourir la documentation officielle de MongoDB qui explique très bien, avec des schémas, le fonctionnement et les différents paramètres de configuration disponibles pour configurer au mieux vos réplicas : [https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction](https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction).
+Pour aller plus loin au niveau de la réplication MongoDB, je vous invite à parcourir la documentation officielle de MongoDB qui explique très bien, avec des schémas, le fonctionnement et les différents paramètres de configuration disponibles pour configurer au mieux vos réplicas : [https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction](https://docs.mongodb.com/v3.0/core/replication-introduction/#replication-introduction){:rel="nofollow"}.
