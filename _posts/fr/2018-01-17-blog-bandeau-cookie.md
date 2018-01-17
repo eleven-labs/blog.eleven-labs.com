@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google Analytics et le bandeau cookie CNIL
-excerpt: "Vous avez tous au moins été confrontés une fois, lors de la visite d'un site, à un message précisant que ce dernier utilise des cookies. Ce message parfois agaçant est due à une loi passée il y a quelques années par la commission européenne. Profitons donc de l'intégration récente de ce bandeau sur ce blog pour en parler."
+excerpt: "Vous avez tous au moins été confrontés une fois, lors de la visite d'un site, à un message précisant que ce dernier utilise des cookies. Ce message parfois agaçant est dû à une loi passée il y a quelques années par la commission européenne. Profitons donc de l'intégration récente de ce bandeau sur ce blog pour en parler."
 lang: fr
 authors:
     - mlenglet
@@ -20,7 +20,7 @@ tags:
 cover: /assets/2018-01-17-cookie-banner/cover.jpg
 ---
 
-Vous avez tous au moins été confrontés une fois, lors de la visite d'un site, à un message précisant que ce dernier utilise des cookies. Ce message parfois agaçant (jetez un coup d'oeil à _[I don't care about cookies](https://www.i-dont-care-about-cookies.eu/){:rel="nofollow"}_) est due à une loi passée il y a quelques années par la commission européenne. Profitons donc de l'intégration récente de ce bandeau sur ce blog pour en parler.
+Vous avez tous au moins été confrontés une fois, lors de la visite d'un site, à un message précisant que ce dernier utilise des cookies. Ce message parfois agaçant (jetez un coup d'oeil à _[I don't care about cookies](https://www.i-dont-care-about-cookies.eu/){:rel="nofollow"}_) est dû à une loi passée il y a quelques années par la commission européenne. Profitons donc de l'intégration récente de ce bandeau sur ce blog pour en parler.
 
 ## Se conformer à la loi
 
@@ -32,7 +32,7 @@ En application de la directive européenne dite "paquet télécom", les internau
 
 ### Mauvaise application
 
-Cette directive demeure très mal appliquée. En fait la plupart des sites le font de façon non conforme à la directive, en se limitant à une simple "bannière" informant de l'utilisation de "cookies" sans donner d'information sur les utilisations, sans différencier les cookies "techniques" des cookies de "pistage", ni d'offrir de choix réel à l’utilisateur désirant maintenir les cookies techniques (comme les cookies de gestion du panier d'achat) et refuser les cookies de "pistage". De fait de nombreux sites ne fonctionnent pas correctement si les cookies sont refusés ce qui est non conforme.
+Cette directive demeure très mal appliquée. En fait la plupart des sites le font de façon non conforme à la directive, en se limitant à une simple "bannière" informant de l'utilisation de "cookies" sans donner d'information sur les utilisations, sans différencier les cookies "techniques" des cookies de "pistage", ni d'offrir de choix réel à l’utilisateur désirant maintenir les cookies techniques (comme les cookies de gestion du panier d'achat) et refuser les cookies de "pistage". De fait de nombreux sites ne fonctionnent pas correctement si les cookies sont refusés, ce qui est non conforme.
 
 ### Sanctions
 
@@ -53,11 +53,11 @@ Certains traceurs sont cependant dispensés du recueil de ce consentement.
 Pour en faire partie, les outils de mesure d'audience doivent respecter les conditions suivantes :
 
 - L'éditeur du site doit délivrer une information claire et complète ;
-- Un mécanisme d’opposition doit être accessible simplement et doit pouvoir être utilisable sur tous les navigateurs, et tous les types de terminaux (y compris les smartphones et tablettes).
-- Les données collectées ne doivent pas être recoupées avec d’autres traitements (fichiers clients ou statistiques de fréquentation d'autres sites par exemple).
+- Un mécanisme d’opposition doit être accessible simplement et doit pouvoir être utilisable sur tous les navigateurs, et tous les types de terminaux (y compris les smartphones et tablettes) ;
+- Les données collectées ne doivent pas être recoupées avec d’autres traitements (fichiers clients ou statistiques de fréquentation d'autres sites par exemple) ;
 - Le cookie déposé doit servir uniquement à la production de statistiques anonymes ;
-- Le cookie ne doit pas permettre de suivre la navigation de l’internaute sur d’autres sites.
-- L’adresse IP permettant de géolocaliser l’internaute ne doit pas être plus précise que l’échelle de la ville. Concrètement les deux derniers octets de l’adresse IP doivent être supprimés.
+- Le cookie ne doit pas permettre de suivre la navigation de l’internaute sur d’autres sites ;
+- L’adresse IP permettant de géolocaliser l’internaute ne doit pas être plus précise que l’échelle de la ville. Concrètement les deux derniers octets de l’adresse IP doivent être supprimés ;
 - Les cookies permettant la traçabilité des internautes et les adresses IP ne doivent pas être conservés au-delà de 13 mois à compter de la première visite.
 
 Certains outils respectent l'ensemble de ces critères comme [Matomo](https://matomo.org/){:rel="nofollow"} (anciennement Piwik) ou [Xiti](https://www.xiti.com/){:rel="nofollow"}. Malheureusement, Google Analytics n'en fait pas partie, notamment car les cookies posés par ce dernier ont une durée de vie supérieure à 13 mois.
@@ -65,7 +65,7 @@ Certains outils respectent l'ensemble de ces critères comme [Matomo](https://ma
 
 ## L'implémentation sur notre blog
 
-Nous avons développé cette fonctionnalité récemment sur ce blog. Les seuls cookies posés par ce site sont ceux de Google Analytics, c'est pourquoi la solution a été orienté vers celle-ci. Elle s'inspire d'un [code d'exemple disponible directement sur le compte Github de la CNIL](https://github.com/LINCnil/Cookie-consent_Google-Analytics){:rel="nofollow"}.
+Nous avons développé cette fonctionnalité récemment sur ce blog. Les seuls cookies posés par ce site sont ceux de Google Analytics, c'est pourquoi la solution a été orientée vers celle-ci. Elle s'inspire d'un [code d'exemple disponible directement sur le compte Github de la CNIL](https://github.com/LINCnil/Cookie-consent_Google-Analytics){:rel="nofollow"}.
 
 ### Le HTML/CSS
 
@@ -123,7 +123,7 @@ Cette boite de dialogue comportera un "overlay" obligeant l'utilisateur à faire
     display: block;
   }
 
-  // La vraie boite de dialogue
+  // La vraie boîte de dialogue
   .cookie-dialog {
     left: 50%;
     position: absolute;
@@ -212,7 +212,7 @@ const GA_PROPERTY = 'UA-XXXXX-Y'
 const GA_COOKIE_NAMES = ['__utma', '__utmb', '__utmc', '__utmz', '_ga', '_gat'];
 
 function reject() {
-  // création du cookie spécifique empéchant Google Analytics de démarrer
+  // création du cookie spécifique empêchant Google Analytics de démarrer
   Cookies.set(`ga-disable-${GA_PROPERTY}`, true, { expires: 395 });
   // insertion de cette valeur dans l'objet window
   window[`ga-disable-${GA_PROPERTY}`] = true;
@@ -258,13 +258,13 @@ function onDocumentClick(event) {
 function onMoreButtonClick(event) {
   event.preventDefault();
 
-  // On affiche la boite de dialogue permettant à l'utilisateur de faire son choix
+  // On affiche la boîte de dialogue permettant à l'utilisateur de faire son choix
   cookieInformAndAsk.classList.add('active');
 
   // On cache le bandeau
   cookieBanner.className = cookieBanner.className.replace('active', '').trim();
 
-  // On crée les listeners sur les boutons de la boite de dialogue
+  // On crée les listeners sur les boutons de la boîte de dialogue
   gaCancelButton.addEventListener('click', onGaCancelButtonClick, false);
   gaConfirmButton.addEventListener('click', onGaConfirmButtonClick, false);
 
@@ -273,7 +273,7 @@ function onMoreButtonClick(event) {
   cookieMoreButton.removeEventListener('click', onMoreButtonClick, false);
 }
 ```
-- Lorsque l'utilisateur accepte l'utilisation des cookies sur la boite de dialogue
+- Lorsque l'utilisateur accepte l'utilisation des cookies sur la boîte de dialogue
 ```js
 function onGaConfirmButtonClick(event) {
   event.preventDefault();
@@ -282,15 +282,15 @@ function onGaConfirmButtonClick(event) {
   Cookies.set('hasConsent', true, { expires: 365 });
   startGoogleAnalytics();
 
-  // On cache la boite de dialogue
+  // On cache la boîte de dialogue
   cookieInformAndAsk.className = cookieBanner.className.replace('active', '').trim();
 
-  // On supprime les listeners sur les boutons de la boite de dialogue
+  // On supprime les listeners sur les boutons de la boîte de dialogue
   gaCancelButton.removeEventListener('click', onGaCancelButtonClick, false);
   gaConfirmButton.removeEventListener('click', onGaConfirmButtonClick, false);
 }
 ```
-- Lorsque l'utilisateur refuse l'utilisation des cookies sur la boite de dialogue
+- Lorsque l'utilisateur refuse l'utilisation des cookies sur la boîte de dialogue
 ```js
 function onGaCancelButtonClick(event) {
   event.preventDefault();
@@ -298,10 +298,10 @@ function onGaCancelButtonClick(event) {
   // On lance la procédure de refus de l'utilisation des cookies
   reject();
 
-  // On cache la boite de dialogue
+  // On cache la boîte de dialogue
   cookieInformAndAsk.className = cookieBanner.className.replace('active', '').trim();
 
-  // On supprime les listeners sur les boutons de la boite de dialogue
+  // On supprime les listeners sur les boutons de la boîte de dialogue
   gaCancelButton.removeEventListener('click', onGaCancelButtonClick, false);
   gaConfirmButton.removeEventListener('click', onGaConfirmButtonClick, false);
 }
@@ -309,8 +309,8 @@ function onGaCancelButtonClick(event) {
 
 ## Vers la RGPD
 
-Si vous avez bien suivi cet article et si vous l'avez adapté aux besoin de votre site, vous avez maintenant un bandeau cookie parfaitement fonctionnel et respectant les recommandations de la CNIL !
-Évidemment un site comme celui-ci (un simple blog) est un cas simple où il y a peu voire pas de cookie posé du tout. En réalité, votre site est déjà quasiment près pour la future mise en application de la RGPD à quelques ajustements près.
-Si vous ne savez pas ce qu'est la RGPD, c'est en gros une évolution de la directive européenne dont nous avons parlée précédemment vers une version XXL. Pour de plus amples informations, je vous invite à lire l'excellent article de mon collègue [Pouzor](/authors/pouzor/) : [RGPD - Ce qu'il va changer](/fr/rgpd-ce-qu-il-va-changer/).
+Si vous avez bien suivi cet article et si vous l'avez adapté aux besoins de votre site, vous avez maintenant un bandeau cookie parfaitement fonctionnel et respectant les recommandations de la CNIL !
+Évidemment un site comme celui-ci (un simple blog) est un cas simple où il y a peu voire pas de cookies posés du tout. En réalité, votre site est déjà quasiment prêt pour la future mise en application de la RGPD à quelques ajustements près.
+Si vous ne savez pas ce qu'est la RGPD, c'est en gros une évolution de la directive européenne dont nous avons parlé précédemment vers une version XXL. Pour de plus amples informations, je vous invite à lire l'excellent article de mon collègue [Pouzor](/authors/pouzor/) : [RGPD - Ce qu'il va changer](/fr/rgpd-ce-qu-il-va-changer/).
 
 ![Cookie Monster]({{site.baseurl}}/assets/2018-01-17-cookie-banner/cookie-monster.jpg){:class="center-image"}
