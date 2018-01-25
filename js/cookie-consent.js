@@ -33,11 +33,14 @@ layout: compress-js
 
     event.preventDefault();
     const url = anchor.getAttribute('href');
+    const isShareButton = anchor.classList.contains('share-button');
 
     ga('send', 'event', 'outbound', 'click', url, {
       transport: 'beacon',
       hitCallback: () => {
-        document.location = url;
+        if (!isShareButton) {
+          document.location = url;
+        }
       }
     });
   }
