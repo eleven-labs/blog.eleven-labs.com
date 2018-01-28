@@ -358,7 +358,7 @@ Il ne vous reste plus qu'a afficher la page complete
 ```
 {% endraw %}
 
-![arbo]({{site.baseurl}}/assets/2018-01-30-neo4j-et-symfony/arbo.png.png)
+![arbo]({{site.baseurl}}/assets/2018-01-30-neo4j-et-symfony/arbo.png)
 
 # Conclusion
 
