@@ -295,7 +295,7 @@ Et pour terminer nous allons mettre en place une extension twig qui permet d'aff
 
 Commencons par le code php de l'extension.
 
-```
+```php
 //src/service/ArboExtension.php
 
 class ArboExtension extends AbstractExtension
@@ -324,6 +324,7 @@ class ArboExtension extends AbstractExtension
 
 Puis ajoutons l'affichage qui appel récursivement l'extension twig.
 
+{% raw %}
 ```twig
 <!-- /templates/node.html.twig ->
 <ul>
@@ -337,9 +338,11 @@ Puis ajoutons l'affichage qui appel récursivement l'extension twig.
     </li>
 </ul>
 ```
+{% endraw %}
 
 Il ne vous reste plus qu'a afficher la page complete
 
+{% raw %}
 ```
 <!-- /templates/arbo.html.twig ->
 {% extends 'base.html.twig' %}
@@ -353,6 +356,7 @@ Il ne vous reste plus qu'a afficher la page complete
 {% endblock %}
 
 ```
+{% endraw %}
 
 // Image display arbo
 
