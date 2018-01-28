@@ -3,7 +3,7 @@ layout: post
 title: Neo4j et Symfony, comment utiliser un BDD graph ? 
 lang: fr
 permalink: /fr/neo4j-et-symfony/
-excerpt: "L'architecture et les données que nous stockons étant de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut ous être utile c'est la base de données graphs neo4j."
+excerpt: "L'architecture et les données que nous stockons étant de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile c'est la base de données graphes neo4j."
 authors:
     - captainjojo
 categories:
@@ -14,8 +14,7 @@ tags:
 cover: /assets/2018-01-05-SSR-symfony-vue/cover.jpg
 ---
 
-L'architecture et les données que nous stockons étant de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. 
-L'une des technologies qui peut ous être utile c'est la base de données graphes neo4j.
+L'architecture et les données que nous stockons étant de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile c'est la base de données graphes neo4j.
 
 # Neo4j c'est quoi ?
 
@@ -25,26 +24,24 @@ Neo4j c'est une base de données graphes, elle permet de stocker vos données da
 
 Un graphe est composé de deux choses:
 
-- des noeuds qui contiennent la données dans un format simple de propriété du noeuds
-- des relations qui permettent de lier les noeuds entre eux, les relations aussi peuvent avoir des propriétés et donc contenir aussi de la données
+- des noeuds qui contiennent la donnée dans un format simple de propriété du noeuds
+- des relations qui permettent de lier les noeuds entre eux, les relations aussi peuvent avoir des propriétés et donc contenir aussi de la donnée
 
 // Image de graphs
 
 > Mais cela permet quoi ? 
 
-Les bases de données type graphe permet de gérer des données très liée. Le use case que vous trouverez sur le net est toujours le même, la gestion des relations dans les réseaux sociaux.
-Il est assez plus simple de représenté les amis d'une personne via une ce genre de base de données, en prenant le noeud comme un utilisateur et la relation comme le lien d'amitié. Ce qu'apporte Neo4J c'est qu'il devient très simple de récupérer les amis de mes amis en une seul requetes ce qui serait très compliqué via une base de donnée relationnel.
+Les bases de données type graphe permet de gérer des données très liée. Le use case que vous trouverez sur le net est toujours le même, la gestion des relations dans les réseaux sociaux. Il est assez plus simple de représenter les amis d'une personne via une ce genre de base de données, en prenant le noeud comme un utilisateur et la relation comme le lien d'amitié. Ce qu'apporte Neo4J c'est qu'il devient très simple de récupérer les amis de mes amis en une seule requête ce qui serait très compliqué via une base de données relationnel.
 
 > Et mais c'est comme graphQL ?
 
-Alors la non !!! GraphQL n'est pas une base de donnée graphes, GrpahQl n'est même pas une base de donnée. 
-Neo4J est rééllement une base de donnée et permet de stocker vos données dans un format graphe, tandis que GrpahQL est une convention de requetage. 
+Alors la non !!! GraphQL n'est pas une base de données graphes, GrpahQl n'est même pas une base de données. Neo4J est rééllement une base de données et permet de stocker vos données dans un format graphe, tandis que GrpahQL est une convention de requêtage.
 
 # Installation d'un Neo4J
 
 L'installation d'un serveur Neo4j est assez simple, il suffit de suivre les indications sur le site https://neo4j.com/. Vous pouvez aussi utiliser la machine docker disponible https://store.docker.com/images/neo4j.
 
-Si vous êtes sur un environnement Ubuntu vous n'avez qu'a suivre les instructions suivantes https://doc.ubuntu-fr.org/neo4j.
+Si vous êtes sur un environnement Ubuntu vous n'avez qu'à suivre les instructions suivantes https://doc.ubuntu-fr.org/neo4j.
 
 Une fois l'installation terminé vous aurez accès à l'interface web qui est très pratique, elle st disponible ici http://127.0.0.1:7474/browser/.
 
@@ -52,8 +49,7 @@ Une fois l'installation terminé vous aurez accès à l'interface web qui est tr
 
 # Cypher le requetage simple
 
-Pour requeter votre base de données, il faut apprendre à faire du Cypher. Cypher c'est le lanquage de requetage pour Neo4J.
-Il est assez simmple car très visuel. Vous pouvez lancer dirrectement vos requetes dans l'interface de Neo4j. 
+Pour requêter votre base de données, il faut apprendre à faire du Cypher. Cypher c'est le lanquage de requêtage pour Neo4J. Il est assez simple car très visuel. Vous pouvez lancer directement vos requêtes dans l'interface de Neo4j.
 
 Commencons par créer un noeud.
 
@@ -95,8 +91,7 @@ CREATE
 (rvb)-[:KNOWS]->(ally)
 ```
 
-Nous récupérons donc l'ensemble des noeuds déjà créé, puis nous créeons les relations. 
-Dans cet exemple, il y a deux façon de créer des relations.
+Nous récupérons donc l'ensemble des noeuds déjà créés, puis nous créeons les relations. Dans cet exemple, il y a deux façon de créer des relations.
 
 ```
 CREATE (ee)-[:KNOWS {since: 2001}]->(js)
@@ -121,7 +116,7 @@ Vous devez voir cela
 // Image Grpah person
 
 
-Pour finir nous allons récupérer toute les relations avec `Emil`. 
+Pour finir nous allons récupérer toutes les relations avec `Emil`. 
 
 ``` 
 MATCH (ee:Person)-[:KNOWS]-(friends)
@@ -135,7 +130,7 @@ La requête est assez simple vous faites un `MATCH` sur les relations qui on com
 
 ## Use Case
 
-Dans notre use case, nous allons créer un système d'arborescence pour une site web. 
+Dans notre use case, nous allons créer un système d'arborescence pour un site web. 
 Un noeuds sera donc une rubrique avec comme propriété `title`, et les noeuds seront en relation afin de créer l'arborescence de votre site.
 
 
@@ -165,7 +160,7 @@ Disponible ici https://github.com/graphaware/neo4j-php-ogm. Cette librairie perm
 Nous allons créer un controller avec deux actions:
 
 - première action, permet de récuperer l'ensemble des rubriques ainsi que leurs relations
-- seconde action, permet de créer une nouvelle rubrique liée à la rubrique choisi
+- seconde action, permet de créer une nouvelle rubrique liée à la rubrique choisie
 
 Commencons ajouter le client neo4j à votre controller
 
@@ -198,7 +193,7 @@ services:
 
 ```
 
-Codons maintenant l'action permettant de récuperer l'ensemble des rubriques et des relations.
+Codons maintenant l'action permettant de récupérer l'ensemble des rubriques et des relations.
 
 ```php
 //src/Controller/ArboController.php 
@@ -249,7 +244,7 @@ public function getArbo(Request $request)
 }
 ```
 
-Comme vous pouvez le voir, nous récuperrons l'ensemble des rubriques liées. Puis nous parcourons les noeuds et relations pour les mettre dans un format plus simple pour le `front`.
+Comme vous pouvez le voir, nous récupérons l'ensemble des rubriques liées. Puis nous parcourons les noeuds et relations pour les mettre dans un format plus simple pour le `front`.
 
 Maintenant nous allons ajouter l'action permettant de sauvegarder un nouveau noeud et sa relation
 
@@ -363,9 +358,6 @@ Il ne vous reste plus qu'a afficher la page complete
 
 # Conclusion
 
-Voila vous avez un exemple assez simple de l'utilisation d'une base de donnée Neo4J. Il existe de nombreux use cases qui donne tout l'intéret a Neo4j, l'idée n'est jamais de faire un site qui n'utilise que Neo4j mais dans nos architectures micro-service pourquoi ne pas faire un service avec Neo4j.
-
-Il existe aussi des systèmes pour faire de l'affichage de grpah Neo4j c'est le cas par exemple de Linkurious un petite start-up francaise. 
-
-Si vous utiliser ou compter le faire Neo4j laisser moi un message pour connaitre votre cas d'utilisation, je suis sur que beaucoup de personnes seraient intéressé.
-
+Voilà vous avez un exemple assez simple de l'utilisation d'une base de données Neo4J. 
+Il existe de nombreux uses cases qui donne tout l'intérêt a Neo4j, l'idée n'est jamais de faire un site qui n'utilise que Neo4j mais dans nos architectures micro-service pourquoi ne pas faire un service avec Neo4j. 
+Il existe aussi des systèmes pour faire de l'affichage de grpah Neo4j c'est le cas par exemple de Linkurious une petite start-up française. Si vous utilisez ou compter le faire Neo4j laissez moi un message pour connaitre votre cas d'utilisation, je suis certain que beaucoup de personnes seraient intéressé.
