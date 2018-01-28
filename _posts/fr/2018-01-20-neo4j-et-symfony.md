@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Neo4j et Symfony, comment utiliser un BDD graph ? 
+title: Neo4j et Symfony, comment utiliser une BDD graph ? 
 lang: fr
 permalink: /fr/neo4j-et-symfony/
 excerpt: "L'architecture et les données que nous stockons étant de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile c'est la base de données graphes neo4j."
@@ -11,7 +11,7 @@ categories:
     - neo4j
 tags:
     - symfony
-cover: /assets/2018-01-05-SSR-symfony-vue/cover.jpg
+cover: /assets/2018-01-20-neo4j-et-symfony/cover.png
 ---
 
 L'architecture et les données que nous stockons étant de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile c'est la base de données graphes neo4j.
@@ -27,7 +27,8 @@ Un graphe est composé de deux choses:
 - des noeuds qui contiennent la donnée dans un format simple de propriété du noeuds
 - des relations qui permettent de lier les noeuds entre eux, les relations aussi peuvent avoir des propriétés et donc contenir aussi de la donnée
 
-// Image de graphs
+![Graph]({{site.baseurl}}/assets/2018-01-20-neo4j-et-symfony/graph.png)
+
 
 > Mais cela permet quoi ? 
 
@@ -35,19 +36,19 @@ Les bases de données type graphe permet de gérer des données très liée. Le 
 
 > Et mais c'est comme graphQL ?
 
-Alors la non !!! GraphQL n'est pas une base de données graphes, GrpahQl n'est même pas une base de données. Neo4J est rééllement une base de données et permet de stocker vos données dans un format graphe, tandis que GrpahQL est une convention de requêtage.
+Alors la non !!! GraphQL n'est pas une base de données graphes, GrpahQl n'est même pas une base de données. Neo4J est réellement une base de données et permet de stocker vos données dans un format graphe, tandis que GrpahQL est une convention de requêtage.
 
 # Installation d'un Neo4J
 
-L'installation d'un serveur Neo4j est assez simple, il suffit de suivre les indications sur le site https://neo4j.com/. Vous pouvez aussi utiliser la machine docker disponible https://store.docker.com/images/neo4j.
+L'installation d'un serveur Neo4j est assez simple, il suffit de suivre les indications sur le site [neo4j](https://neo4j.com/). Vous pouvez aussi utiliser la machine docker disponible [ici](https://store.docker.com/images/neo4j).
 
-Si vous êtes sur un environnement Ubuntu vous n'avez qu'à suivre les instructions suivantes https://doc.ubuntu-fr.org/neo4j.
+Si vous êtes sur un environnement Ubuntu vous n'avez qu'à suivre les instructions suivantes [ubuntu](https://doc.ubuntu-fr.org/neo4j).
 
-Une fois l'installation terminé vous aurez accès à l'interface web qui est très pratique, elle st disponible ici http://127.0.0.1:7474/browser/.
+Une fois l'installation terminé vous aurez accès à l'interface web qui est très pratique, elle st disponible [ici](http://127.0.0.1:7474/browser/).
 
-// Image de l'interface
+![Interface]({{site.baseurl}}/assets/2018-01-20-neo4j-et-symfony/interface.png)
 
-# Cypher le requetage simple
+# Cypher le requêtage simple
 
 Pour requêter votre base de données, il faut apprendre à faire du Cypher. Cypher c'est le lanquage de requêtage pour Neo4J. Il est assez simple car très visuel. Vous pouvez lancer directement vos requêtes dans l'interface de Neo4j.
 
@@ -67,7 +68,7 @@ MATCH (ee:Person) WHERE ee.name = "Emil" RETURN ee;
 
 En Cypher la récupération se fait via le mot clé `MATCH` puis nous récupérons les noeuds de type `Person` qui ont pour valeur dans la propriété `name` `Emil`. 
 
-Maintenant que nous savons créer des noeuds, nous allons en créer plusieurs pour ensuite les mettres en relation.
+Maintenant que nous savons créer des noeuds, nous allons en créer plusieurs pour ensuite les mettre en relation.
 
 ```
 CREATE (js:Person { name: "Johan", from: "Sweden", learn: "surfing" }),
@@ -105,7 +106,7 @@ CREATE (rvb)-[:KNOWS]->(ally)
 
 Ici nous créons une autre relation de type `KNOWS` entre `rvb` et `ally` mais ici sans propriété.
 
-Si vous récuperer l'ensemble des noeuds de type `Person`.
+Si vous récupérer l'ensemble des noeuds de type `Person`.
 
 ```
 MATCH (n:Person) RETURN n
@@ -113,8 +114,7 @@ MATCH (n:Person) RETURN n
 
 Vous devez voir cela 
 
-// Image Grpah person
-
+![person]({{site.baseurl}}/assets/2018-01-20-neo4j-et-symfony/person.png)
 
 Pour finir nous allons récupérer toutes les relations avec `Emil`. 
 
@@ -144,7 +144,7 @@ Vous pouvez maintenant ajouter le bundle suivant:
 "neo4j/neo4j-bundle": "^0.4.0",
 ```
 
-Disponible ici https://github.com/neo4j-contrib/neo4j-symfony
+Disponible [ici](https://github.com/neo4j-contrib/neo4j-symfony)
 
 Vous devez aussi ajouter la librairi suivante:
 
@@ -152,7 +152,7 @@ Vous devez aussi ajouter la librairi suivante:
 "graphaware/neo4j-php-ogm": "@rc",
 ```
 
-Disponible ici https://github.com/graphaware/neo4j-php-ogm. Cette librairie permet de récupérer un entityManager pour Neo4j.
+Disponible [ici](https://github.com/graphaware/neo4j-php-ogm). Cette librairie permet de récupérer un entityManager pour Neo4j.
 
 
 ## Controller
@@ -175,7 +175,7 @@ public function __construct(Client $client)
 }
 ```
 
-Pour que cela fonctionne n'oublié pas de `bind` le service Neo4j dans la configuration
+Pour que cela fonctionne n'oubliez pas de `bind` le service Neo4j dans la configuration
 
 ```yaml
 ## config/services.yaml
@@ -358,7 +358,7 @@ Il ne vous reste plus qu'a afficher la page complete
 ```
 {% endraw %}
 
-// Image display arbo
+![arbo]({{site.baseurl}}/assets/2018-01-20-neo4j-et-symfony/arbo.png.png)
 
 # Conclusion
 
