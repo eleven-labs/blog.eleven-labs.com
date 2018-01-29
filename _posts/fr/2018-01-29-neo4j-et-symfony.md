@@ -36,7 +36,7 @@ Les bases de données type graphe permettent de gérer des données très liées
 
 > Hé ! Mais c'est comme graphQL ?
 
-Alors là non !!! GraphQL n'est pas une base de données graphe, GrpahQl n'est même pas une base de données. Neo4J est réellement une base de données et permet de stocker vos données dans un format graphe, tandis que GrpahQL est une convention de requêtage.
+Alors là non !!! GraphQL n'est pas une base de données graphe, GrpahQl n'est même pas une base de données. Neo4J est réellement une base de données et permet de stocker vos données dans un format graphe, tandis que GraphQL est une convention de requêtage.
 
 # Installation d'un Neo4J
 
@@ -44,7 +44,7 @@ L'installation d'un serveur Neo4j est assez simple, il suffit de suivre les indi
 
 Si vous êtes sur un environnement Ubuntu vous n'avez qu'à suivre les instructions suivantes [ubuntu](https://doc.ubuntu-fr.org/neo4j).
 
-Une fois l'installation terminée vous aurez accès à l'interface web qui est très pratique, elle est disponible [ici](http://127.0.0.1:7474/browser/).
+Une fois l'installation terminée, vous aurez accès à l'interface web qui est très pratique, elle est disponible [ici](http://127.0.0.1:7474/browser/).
 
 ![Interface]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/interface.png)
 
@@ -52,7 +52,7 @@ Une fois l'installation terminée vous aurez accès à l'interface web qui est t
 
 Pour requêter votre base de données, il faut apprendre à faire du Cypher. Cypher c'est le lanquage de requêtage pour Neo4J. Il est assez simple car très visuel. Vous pouvez lancer directement vos requêtes dans l'interface de Neo4j.
 
-Commencons par créer un noeud :
+Commençons par créer un noeud :
 
 ```
 CREATE (ee:Person { name: "Emil", from: "Sweden" })
@@ -162,7 +162,7 @@ Nous allons créer un controller avec deux actions :
 - première action, permet de récupérer l'ensemble des rubriques ainsi que leurs relations ;
 - seconde action, permet de créer une nouvelle rubrique liée à la rubrique choisie.
 
-Commencons par ajouter le client neo4j à votre controller :
+Commençons par ajouter le client neo4j à votre controller :
 
 ```php
 //src/Controller/ArboController.php 
@@ -364,4 +364,4 @@ Il ne vous reste plus qu'a afficher la page complète !
 
 Voilà ! Vous avez un exemple assez simple de l'utilisation d'une base de données Neo4J. 
 Il existe de nombreux uses cases qui donnent tout l'intérêt à Neo4j. L'idée n'est jamais de faire un site qui n'utilise que Neo4j, mais dans nos architectures micro-service, pourquoi ne pas faire un service avec Neo4j ?
-Il existe aussi des systèmes pour faire de l'affichage de grpah Neo4j. C'est le cas par exemple de Linkurious, une petite start-up française. Si vous utilisez ou comptez utiliser Neo4j, laissez-moi un message pour connaître votre cas d'utilisation, je suis certain que beaucoup de personnes seraient intéressées.
+Il existe aussi des systèmes pour faire de l'affichage de graph Neo4j. C'est le cas par exemple de Linkurious, une petite start-up française. Si vous utilisez ou comptez utiliser Neo4j, laissez-moi un message pour connaître votre cas d'utilisation, je suis certain que beaucoup de personnes seraient intéressées.
