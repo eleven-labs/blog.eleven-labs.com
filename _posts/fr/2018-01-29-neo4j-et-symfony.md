@@ -11,7 +11,7 @@ categories:
     - neo4j
 tags:
     - symfony
-cover: /assets/2018-01-30-neo4j-et-symfony/cover.png
+cover: /assets/2018-01-29-neo4j-et-symfony/cover.png
 ---
 
 L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes neo4j.
@@ -27,7 +27,7 @@ Un graphe est composé de deux choses :
 - des noeuds qui contiennent la donnée dans un format simple de propriété du noeud ;
 - des relations qui permettent de lier les noeuds entre eux. Les relations aussi peuvent avoir des propriétés, et donc contenir de la donnée.
 
-![Graph]({{site.baseurl}}/assets/2018-01-30-neo4j-et-symfony/graph.png)
+![Graph]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/graph.png)
 
 
 > Mais cela permet quoi ? 
@@ -46,7 +46,7 @@ Si vous êtes sur un environnement Ubuntu vous n'avez qu'à suivre les instructi
 
 Une fois l'installation terminée vous aurez accès à l'interface web qui est très pratique, elle est disponible [ici](http://127.0.0.1:7474/browser/).
 
-![Interface]({{site.baseurl}}/assets/2018-01-30-neo4j-et-symfony/interface.png)
+![Interface]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/interface.png)
 
 # Cypher, le requêtage simple
 
@@ -114,7 +114,7 @@ MATCH (n:Person) RETURN n
 
 ...vous devez voir cela :
 
-![person]({{site.baseurl}}/assets/2018-01-30-neo4j-et-symfony/person.png)
+![person]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/person.png)
 
 Pour finir, nous allons récupérer toutes les relations avec `Emil`.
 
@@ -358,7 +358,7 @@ Il ne vous reste plus qu'a afficher la page complète !
 ```
 {% endraw %}
 
-![arbo]({{site.baseurl}}/assets/2018-01-30-neo4j-et-symfony/arbo.png)
+![arbo]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/arbo.png)
 
 # Conclusion
 
