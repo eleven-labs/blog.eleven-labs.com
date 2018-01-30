@@ -36,7 +36,7 @@ Les bases de données type graphe permettent de gérer des données très liées
 
 > Hé ! Mais c'est comme graphQL ?
 
-Alors là non !!! GraphQL n'est pas une base de données graphe, GrpahQl n'est même pas une base de données. Neo4J est réellement une base de données et permet de stocker vos données dans un format graphe, tandis que GraphQL est une convention de requêtage.
+Alors là non !!! GraphQL n'est pas une base de données graphe, GraphQL n'est même pas une base de données. Neo4J est réellement une base de données et permet de stocker vos données dans un format graphe, tandis que GraphQL est une convention de requêtage.
 
 # Installation d'un Neo4J
 
@@ -92,7 +92,7 @@ CREATE
 (rvb)-[:KNOWS]->(ally)
 ```
 
-Nous récupérons donc l'ensemble des noeuds déjà créés, puis nous créeons les relations. Dans cet exemple, il y a deux façon de créer des relations :
+Nous récupérons donc l'ensemble des noeuds déjà créés, puis nous créons les relations. Dans cet exemple, il y a deux façons de créer des relations :
 
 ```
 CREATE (ee)-[:KNOWS {since: 2001}]->(js)
@@ -293,7 +293,7 @@ class NodeType extends AbstractType
 
 Et pour terminer nous allons mettre en place une extension twig qui permet d'afficher l'arborescence.
 
-Commencons par le code php de l'extension :
+Commençons par le code php de l'extension :
 
 ```php
 //src/service/ArboExtension.php
@@ -340,7 +340,7 @@ Puis ajoutons l'affichage qui appelle récursivement l'extension twig :
 ```
 {% endraw %}
 
-Il ne vous reste plus qu'a afficher la page complète !
+Il ne vous reste plus qu'à afficher la page complète !
 
 {% raw %}
 ```
