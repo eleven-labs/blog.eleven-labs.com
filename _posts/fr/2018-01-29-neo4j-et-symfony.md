@@ -3,7 +3,7 @@ layout: post
 title: Neo4j et Symfony, comment utiliser une BDD graph ? 
 lang: fr
 permalink: /fr/neo4j-et-symfony/
-excerpt: "L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes neo4j."
+excerpt: "L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes Neo4j."
 authors:
     - captainjojo
 categories:
@@ -14,7 +14,7 @@ tags:
 cover: /assets/2018-01-29-neo4j-et-symfony/cover.png
 ---
 
-L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes neo4j.
+L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes Neo4j.
 
 # Neo4j c'est quoi ?
 
@@ -36,7 +36,7 @@ Les bases de données type graphe permettent de gérer des données très liées
 
 > Hé ! Mais c'est comme graphQL ?
 
-Alors là non !!! GraphQL n'est pas une base de données graphe, GrpahQl n'est même pas une base de données. Neo4J est réellement une base de données et permet de stocker vos données dans un format graphe, tandis que GraphQL est une convention de requêtage.
+Alors là non !!! GraphQL n'est pas une base de données graphe, GraphQL n'est même pas une base de données. Neo4J est réellement une base de données et permet de stocker vos données dans un format graphe, tandis que GraphQL est une convention de requêtage.
 
 # Installation d'un Neo4J
 
@@ -50,7 +50,7 @@ Une fois l'installation terminée, vous aurez accès à l'interface web qui est 
 
 # Cypher, le requêtage simple
 
-Pour requêter votre base de données, il faut apprendre à faire du Cypher. Cypher c'est le lanquage de requêtage pour Neo4J. Il est assez simple car très visuel. Vous pouvez lancer directement vos requêtes dans l'interface de Neo4j.
+Pour requêter votre base de données, il faut apprendre à faire du Cypher. Cypher c'est le langage de requêtage pour Neo4J. Il est assez simple car très visuel. Vous pouvez lancer directement vos requêtes dans l'interface de Neo4j.
 
 Commençons par créer un noeud :
 
@@ -92,7 +92,7 @@ CREATE
 (rvb)-[:KNOWS]->(ally)
 ```
 
-Nous récupérons donc l'ensemble des noeuds déjà créés, puis nous créeons les relations. Dans cet exemple, il y a deux façon de créer des relations :
+Nous récupérons donc l'ensemble des noeuds déjà créés, puis nous créons les relations. Dans cet exemple, il y a deux façons de créer des relations :
 
 ```
 CREATE (ee)-[:KNOWS {since: 2001}]->(js)
@@ -123,7 +123,7 @@ MATCH (ee:Person)-[:KNOWS]-(friends)
 WHERE ee.name = "Emil" RETURN ee, friends
 ```
 
-La requête est assez simple. Vous faites un `MATCH` sur les relations qui on comme noeud dans un des sens `ee`.
+La requête est assez simple. Vous faites un `MATCH` sur les relations qui ont comme noeud dans un des sens `ee`.
 
 # Utiliser Symfony et Neo4J
 
@@ -136,7 +136,7 @@ Un noeud sera donc une rubrique avec comme propriété `title`, et les noeuds se
 
 ## Installation
 
-L'architecture du projet est un symfony4 avec twig et la gestion des annotations.
+L'architecture du projet est un Symfony 4 avec Twig et la gestion des annotations.
 
 Vous pouvez maintenant ajouter le bundle suivant :
 
@@ -162,7 +162,7 @@ Nous allons créer un controller avec deux actions :
 - première action, permet de récupérer l'ensemble des rubriques ainsi que leurs relations ;
 - seconde action, permet de créer une nouvelle rubrique liée à la rubrique choisie.
 
-Commençons par ajouter le client neo4j à votre controller :
+Commençons par ajouter le client Neo4j à votre controller :
 
 ```php
 //src/Controller/ArboController.php 
@@ -293,7 +293,7 @@ class NodeType extends AbstractType
 
 Et pour terminer nous allons mettre en place une extension twig qui permet d'afficher l'arborescence.
 
-Commencons par le code php de l'extension :
+Commençons par le code php de l'extension :
 
 ```php
 //src/service/ArboExtension.php
@@ -340,7 +340,7 @@ Puis ajoutons l'affichage qui appelle récursivement l'extension twig :
 ```
 {% endraw %}
 
-Il ne vous reste plus qu'a afficher la page complète !
+Il ne vous reste plus qu'à afficher la page complète !
 
 {% raw %}
 ```
