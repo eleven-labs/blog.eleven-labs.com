@@ -123,7 +123,7 @@ MATCH (ee:Person)-[:KNOWS]-(friends)
 WHERE ee.name = "Emil" RETURN ee, friends
 ```
 
-La requête est assez simple. Vous faites un `MATCH` sur les relations qui on comme noeud dans un des sens `ee`.
+La requête est assez simple. Vous faites un `MATCH` sur les relations qui ont comme noeud dans un des sens `ee`.
 
 # Utiliser Symfony et Neo4J
 
