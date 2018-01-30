@@ -50,7 +50,7 @@ Une fois l'installation terminée, vous aurez accès à l'interface web qui est 
 
 # Cypher, le requêtage simple
 
-Pour requêter votre base de données, il faut apprendre à faire du Cypher. Cypher c'est le lanquage de requêtage pour Neo4J. Il est assez simple car très visuel. Vous pouvez lancer directement vos requêtes dans l'interface de Neo4j.
+Pour requêter votre base de données, il faut apprendre à faire du Cypher. Cypher c'est le langage de requêtage pour Neo4J. Il est assez simple car très visuel. Vous pouvez lancer directement vos requêtes dans l'interface de Neo4j.
 
 Commençons par créer un noeud :
 
