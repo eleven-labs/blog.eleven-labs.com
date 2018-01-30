@@ -3,7 +3,7 @@ layout: post
 title: Neo4j et Symfony, comment utiliser une BDD graph ? 
 lang: fr
 permalink: /fr/neo4j-et-symfony/
-excerpt: "L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes neo4j."
+excerpt: "L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes Neo4j."
 authors:
     - captainjojo
 categories:
@@ -14,7 +14,7 @@ tags:
 cover: /assets/2018-01-29-neo4j-et-symfony/cover.png
 ---
 
-L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes neo4j.
+L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes Neo4j.
 
 # Neo4j c'est quoi ?
 
@@ -136,7 +136,7 @@ Un noeud sera donc une rubrique avec comme propriété `title`, et les noeuds se
 
 ## Installation
 
-L'architecture du projet est un symfony4 avec twig et la gestion des annotations.
+L'architecture du projet est un Symfony 4 avec Twig et la gestion des annotations.
 
 Vous pouvez maintenant ajouter le bundle suivant :
 
@@ -162,7 +162,7 @@ Nous allons créer un controller avec deux actions :
 - première action, permet de récupérer l'ensemble des rubriques ainsi que leurs relations ;
 - seconde action, permet de créer une nouvelle rubrique liée à la rubrique choisie.
 
-Commençons par ajouter le client neo4j à votre controller :
+Commençons par ajouter le client Neo4j à votre controller :
 
 ```php
 //src/Controller/ArboController.php 
