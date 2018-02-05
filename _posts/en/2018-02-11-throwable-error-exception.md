@@ -87,10 +87,10 @@ interface Throwable
           |- UnexpectedValueException extends RuntimeException
 ```
 
-> ⚠ Caution!!! You can only implement `Throwable` throught `Error` and `Exception`. 
+> ⚠ Caution!!! You can only implement `Throwable` through `Error` and `Exception`. 
 > Else you got a FATAL error
 > `PHP Fatal error:  Class MyClass cannot implement interface Throwable, extend Exception or Error instead`
-> But you can extends this interface in userspace
+> But you can extends this interface in user space
 
 ```php
 interface MyThrowable extends Throwable {
@@ -134,8 +134,8 @@ throw new Exception('Render error.');
 echo 'Example text.';
 ```
 
-> An `Exception` interupt the execution of current instrauction.
-> In this example the `echo` should'nt be called. 
+> An `Exception` interrupt the execution of current instruction.
+> In this example the `echo` shouldn't be called. 
 
 ### Catch exception
 
@@ -171,20 +171,20 @@ __⚠ It's very important to correctly choose the `Exception` type to preserve e
 **Need to know**
 
 Most of `LogicException` lead to bring code correction.
-Catch `LogicalException` is going to show an error page and log information in order to inform the developper. 
+Catch `LogicalException` is going to show an error page and log information in order to inform the developer. 
 
-`RuntimeException` represent errors that apper during the execution (invalide data, data source error). 
+`RuntimeException` represent errors that appear during the execution (invalide data, data source error). 
 You can catch `RuntimeException` in order to execute an alternative code for finish the process correctly.
 
 ℹ️ _You must have an exception handler to render nice error page to visitors.
 The second purpose is to avoid any leaking informations (file path, stack trace, error message...)
-Best pratice: Don't let the exception brake website._
+Best practice: Don't let the exception brake website._
 
 ```
 set_exception_handler(function($exception){
     echo 'Error appear. Retry in a moment.';
     // log($exception->getMessage());
-    // developper email
+    // developer email
 });
 ```
 
@@ -198,7 +198,7 @@ Errors codes was an `integer` which can be use to codify/identify error.
 
 ### Custom exception
 
-It's very usefull to create your custom `Exception` class. They are more accurate and can carry an extra data(text, object, array...) to the error process.
+It's very useful to create your custom `Exception` class. They are more accurate and can carry an extra data(text, object, array...) to the error process.
 
 ```php
 class MyObject
@@ -305,7 +305,7 @@ catch (Exception $exception) {
 class UpdateContentException extends RuntimeException {}
 ```
 
-> All underlaying error trigger this catch and throw unique `UpdateContentException` type.
+> All underlay error trigger this catch and throw unique `UpdateContentException` type.
 > When you catch the `UpdateContentException` you can access to all previous exception with `getPrevious()` method.
 
 
@@ -343,7 +343,7 @@ interface PasswordGeneratorInterface
 }
 ```
 
-> UserFactory::create() throw allways an `UserFactoryException`.
+> UserFactory::create() throw always an `UserFactoryException`.
 > The first information we need to know is what going wrong? -> We can't create user. Why ? -> exception->getPrevious() 
 > Layer separation is preserve.
 
@@ -351,7 +351,7 @@ interface PasswordGeneratorInterface
 
 We have seen how to throw and catch exception and custom exception with PHP but also more advance exception usage like rethrow and wrapping exception to have a better control when something wrong happen.
 
-**Errors exists in our code, in externe library, even when hardware fail, it's why undertanding Throwable is essential to have a smart error handler.**
+**Errors exists in our code, in externe library, even when hardware fail, it's why understanding Throwable is essential to have a smart error handler.**
 
 Pros
  - Better visibility about what happen
@@ -363,10 +363,10 @@ Pros
  
 Cons
  - need to know how to wrap/rethrow exception
- - render/readstack trace can be complex.
+ - render/read stack trace can be complex.
  - dont forget to handle all exceptions  with `catch`/`set_exception_handler` to avoid leaking informations.
 
-## Interresting link
+## Interesting link
 
 http://php.net/manual/fr/language.errors.php7.php
 https://3v4l.org/sDMsv
