@@ -368,7 +368,7 @@ Les points négatifs
  - la lecture/mise en forme de la stack trace peut être complexe.
  - il ne faut pas oublier de gérer toutes les exceptions `catch`/`set_exception_handler` afin qu'aucune information sensible ne soit affiché aux visiteurs.
 
-## Source
+## Autre articles intéressant
 
 http://php.net/manual/fr/language.errors.php7.php
 https://3v4l.org/sDMsv
