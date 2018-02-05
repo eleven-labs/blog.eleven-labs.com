@@ -3,7 +3,7 @@ layout: post
 title: PHP 7 Throwable Errors Exceptions 
 lang: fr
 permalink: /fr/php7-throwable-error-exception/
-excerpt: "Les erreurs sont présentes dans notre code, dans le code des librairies externes, ou même en cas de défaillance matérielle, c'est pourquoi la maitrise des Throwable est indispensable afin d'avoir une gestion d'erreurs de qualitée."
+excerpt: "Les erreurs sont présentes dans notre code, dans le code des librairies externes, ou même en cas de défaillance matérielle, c'est pourquoi la maîtrise des Throwable est indispensable afin d'avoir une gestion d'erreurs de qualitée."
 authors:
     - amoutte
 categories:
@@ -27,7 +27,7 @@ Désormais la plupart des erreurs sont rapportées en lançant des exceptions `E
 Les `Throwable` vont remonter la pile d'exécution (bubble up) jusqu'à rencontrer un des cas suivants:
  - si elle rencontre un bloc`catch` qui supporte ce type d'erreur.
  - si un gestionnaire d'exception est configuré via `set_exception_handler()`.
- - sinon l'exception sera convertie en erreur FATAL et sera traitée par le système traditionel.
+ - sinon l'exception sera convertie en erreur FATAL et sera traitée par le système traditionnel.
 
 Nous allons donc, plus en détails, définir et voir comment utilisé `Throwable`, `Error` et `Exception`. 
 
@@ -53,7 +53,7 @@ interface Throwable
 
 `Errors` et `Exceptions` sont les deux types de base qui l'implémente.
 
-Voici la hierarchie des `Throwable`
+Voici la hiérarchie des `Throwable`
 
 ```
 interface Throwable
@@ -152,7 +152,7 @@ catch (Exception $e) {
 }
 ```
 > Dans cet exemple le script affichera le titre s'il est fourni
-> sinon il affichera le message d'erreur comme quoi il est obliguatoire.
+> sinon il affichera le message d'erreur comme quoi il est obligatoire.
 
 depuis PHP 7.1 il est également possible de spécifier plusieurs types d'`Exception` dans le catch en utilisant le caractère `|`
 
@@ -174,7 +174,7 @@ La `LogicException` référence une erreur de code qui devrait la plupart du tem
 Attrapé une `LogicalException` à généralement pour but d'afficher une page d'erreur et de logger en vue d'informer le développeur. 
 
 La `RuntimeException` représente des erreurs durant l'exécution (donnée invalide, erreur d'une source de données). 
-Attrapé une `RuntimeException` est très utile pour executer un code alternatif qui permettra au script de finir son execution.
+Attrapé une `RuntimeException` est très utile pour exécuter un code alternatif qui permettra au script de finir son execution.
 
 ℹ️ _Il est très fortement recommandé d'avoir un exception handler afin d'afficher une page d'erreur au visiteur.
 Mais aussi pour évité d'afficher des informations sensibles (url du fichier, stack trace, message d'erreur ...)
@@ -190,7 +190,7 @@ set_exception_handler(function($exception){
 
 ### Les codes d'erreurs
 
-Le code d'erreur est un `integer` qui peut etre utilisé pour codifier/identifier l'erreur.
+Le code d'erreur est un `integer` qui peut être utilisé pour codifier/identifier l'erreur.
 
 > Il permet par exemple d'afficher le code de l'erreur plutôt que le message de l'`Exception` au visiteur. 
 > Afin de masquer la raison de l'erreur, qui, peu dans certain cas contenir des informations sensibles. 
@@ -230,7 +230,7 @@ class MyObjectException extends RuntimeException
 }
 ```
 
-> Quand l'`MyObjectException` est attrapé on peut récupérer l'object `MyObject` via la méthode `getMyObject()`
+> Quand l'`MyObjectException` est attrapé on peut récupérer l'objet `MyObject` via la méthode `getMyObject()`
 > Ce qui permet de gérer encore plus précisément la gestion d'erreur. 
 
 ### Relancé une exception
@@ -291,7 +291,7 @@ interface PasswordGeneratorInterface
 
 > Ici on peut remarqué que l'on va seulement logger un message d'erreur et laisser remonté (bubble up) l'exception.
 
-### Encapsulé un exception
+### Encapsuler un exception
 
 Il existe également l'encapsulation d'une `Exception` dans une autre `Exception` afin de créer un stack trace complète.
 
@@ -308,7 +308,7 @@ class UpdateContentException extends RuntimeException {}
 
 > Peu importe le type d'exception qui serais lancée pendant la mise à jour du contenu, le code
 > renverra toujours une `UpdateContentException`
-> Si on attrape l'`AffichageException` on peut récupérer l'`Exception` précédente grâce à la méthode `getPrevious()`
+> Si on attrape l'`UpdateContentException` on peut récupérer l'`Exception` précédente grâce à la méthode `getPrevious()`
 
 
 Exemple concret
@@ -351,10 +351,9 @@ interface PasswordGeneratorInterface
 ## Conclusion
 
 Nous avons vu comment lancé et attrapé une exception en PHP ainsi que des notions un peu plus avancé sur la création d'une exception personnalisée pouvant transporté des données supplémentaires utilisable en cas d'erreur.
-Sans oublier la gestion du loging/tracing grâce au rethrow et à l'encapsulation d'exception.
+Sans oublier la gestion du logging/tracing grâce au rethrow et à l'encapsulation d'exception.
 
-**Les erreurs sont présentes dans notre code, dans le code des librairies externes, ou même en cas de défaillance matérielle,
-c'est pourquoi la maitrise de ces connaissances et très fortement conseillé afin d'avoir une gestion d'erreurs de qualité.**
+**Les erreurs sont présentes dans notre code, dans le code des librairies externes, ou même en cas de défaillance matérielle, c'est pourquoi la maîtrise des Throwable est indispensable afin d'avoir une gestion d'erreurs de qualitée.**
 
 Les points positifs
  - Une meilleure visibilité de ce qui c'est déroulé
