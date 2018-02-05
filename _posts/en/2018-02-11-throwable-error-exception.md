@@ -3,7 +3,7 @@ layout: post
 title: PHP 7 Throwable Errors Exceptions 
 lang: fr
 permalink: /fr/php7-throwable-error-exception/
-excerpt: "Errors exists in our code, in externe library, even when hardware fail, it's why undertanding Throwable is essential to have a smart error handler."
+excerpt: "Errors exists in our code, in externe library, even when hardware fail, it's why understanding Throwable is essential to have a smart error handler."
 authors:
     - amoutte
 categories:
@@ -292,7 +292,7 @@ interface PasswordGeneratorInterface
 
 ### Wrap exception
 
-Wrap an `Exception` is very usefull to create a nice stack trace and delegate exception handling to the main exception handler.
+Wrap an `Exception` is very useful to create a nice stack trace and delegate exception handling to the main exception handler.
 
 ```php
 try {
