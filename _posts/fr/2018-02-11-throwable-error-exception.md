@@ -46,7 +46,7 @@ interface Throwable
     public function getLine(): int;             // La ligne à laquel l'erreur à débuter
     public function getTrace(): array;          // Retourne la stack trace en array comme debug_backtrace()
     public function getTraceAsString(): string; // Retourne la stack trace en chaine de caractère
-    public function getPrevious(): Throwable;   // Retourne le `Trowable` précédent
+    public function getPrevious(): Throwable;   // Retourne le `Throwable` précédent
     public function __toString(): string;       // Convertit en chaine de caractère
 }
 ```
@@ -111,7 +111,7 @@ class MyException extends Exception implements MyThrowable {
 
 Les plus communes sont :
  - `ParseError`, qui est lancée quand on `require` ou `eval` un code qui contient une erreur de syntax.
- - `TypeError`, qui est lancé quand le typehint d'un argument/retour d'une fonction n'est pas respectée. _Et également en `strict mode` quand on passe un nombre invalid d'arguments à une fonction native de PHP._
+ - `TypeError`, qui est lancée quand le typehint d'un argument/retour d'une fonction n'est pas respecté. _Et également en `strict mode` quand on passe un nombre invalid d'arguments à une fonction native de PHP._
 
 _Vous pourriez être amenés à throw des `Error` dans votre code si par exemple vous parsez un fichier et qu'il contient une erreur de syntaxe.
 Ou si vous avez une fonction avec un nombre de paramètres variable et que le nombre/type d'arguments n'est pas correct._
@@ -121,7 +121,7 @@ Ou si vous avez une fonction avec un nombre de paramètres variable et que le no
 `Exception` est la classe de base de toutes les exceptions utilisateurs.
 
 Il est très fréquent de lancer ou créer des `Exception`. 
-C'est d'ailleurs sur le fonctionnement et l'utilisation des `Exception` que nous nous concentrer. 
+C'est d'ailleurs sur le fonctionnement et l'utilisation des `Exception` que nous allons nous concentrer. 
 
 ## Utilisation
 
@@ -135,7 +135,7 @@ echo "Affichage d'un contenu texte.";
 ```
 
 > Il faut savoir qu'une `Exception` interrompt l'exécution des instructions suivantes.
-> Dans l'exemple le `echo` ne seras pas exécuté.
+> Dans l'exemple le `echo` ne sera pas exécuté.
 
 ### Attraper une exception
 
@@ -143,24 +143,43 @@ Pour attraper et gérer l'exception, il faut utiliser la structure `try` `catch`
 ```php
 try {
     if (!$_GET['titre']) {
-        throw new Exception('Impossible d'afficher le titre. Le titre est requis.);
+        throw new Exception('Impossible d\'afficher le titre. Le titre est requis.');
     }
     echo $_GET['titre'];
-}
-catch (Exception $e) {
+} catch (Exception $e) {
     echo '⚠ Une exception est survenue : ' . $e->getMessage();
 }
 ```
 > Dans cet exemple le script affichera le titre s'il est fourni
 > sinon il affichera le message d'erreur comme quoi il est obligatoire.
 
+Vous pouvez également effectué de multiple `catch` afin de séparer les différents types d'`Exception`.
+Il faut placé les `catch` dans l'ordre du plus précis au moins précis.  
+
+```php
+try {
+    if (!$_GET['titre']) {
+        throw new Exception('Impossible d\'afficher le titre. Le titre est requis.);
+    }
+    if (!is_string($_GET['titre'])) {
+        throw new RuntimeException('Le titre doit être une chaîne de caractères.);
+    }
+    echo $_GET['titre'];
+} catch (RuntimeException $e) {
+    echo $e->getMessage();
+} catch (Exception $e) {
+    echo '⚠ Une exception est survenue : ' . $e->getMessage();
+}
+```
+
+> Ici `RuntimeException` étends `Exception`, il faudra donc catch `RuntimeException` avant les `Exceptions`.
+
 Depuis PHP 7.1 il est également possible de spécifier plusieurs types d'`Exception` dans le catch en utilisant le caractère `|`
 
 ```php
 try {
     // Code
-}
-catch (OutOfBoundsException | LogicException $e) {
+} catch (OutOfBoundsException | LogicException $e) {
     echo '⚠ Une exception est survenue : ' . $e->getMessage();
 }
 ``` 
@@ -170,9 +189,9 @@ __⚠ Il est très important de bien choisir l'`Exception` que l'on veut lancer 
 **Également à savoir**
 
 La `LogicException` référence une erreur de code qui devrait, la plupart du temps, mener à un correctif sur le code.
-Attraper une `LogicalException` a généralement pour but d'afficher une page d'erreur et de logger en vue d'informer le développeur.
+Attraper une `LogicException` a généralement pour but d'afficher une page d'erreur et de logger en vue d'informer le développeur.
 
-La `RuntimeException` représente des erreurs durant l'exécution (donnée invalide, erreur d'une source de données). 
+La `RuntimeException` représente une erreur survenue durant l'exécution (donnée invalide, erreur d'une source de données). 
 Attraper une `RuntimeException` est très utile pour exécuter un code alternatif qui permettra au script de finir son exécution.
 
 ℹ️ _Il est très fortement recommandé d'avoir un exception handler afin d'afficher une page d'erreur au visiteur.
@@ -229,19 +248,18 @@ class MyObjectException extends RuntimeException
 }
 ```
 
-> Quand l'`MyObjectException` est attrapé, on peut récupérer l'objet `MyObject` via la méthode `getMyObject()`
-> ce qui permet de gérer encore plus précisément la gestion d'erreur. 
+> Quand `MyObjectException` est attrapée, on peut récupérer l'objet `MyObject` via la méthode `getMyObject()`
+> ce qui permet de gérer encore plus précisément les erreurs. 
 
 ### Relancer une exception
 
-Parfois il est utile de tracer/logguer ce qui s'est mal déroulé.
+Parfois il est utile de tracer/loguer ce qui s'est mal déroulé.
 Dans ce cas on va donc attraper l'`Exception`, logger un message d'erreur avant de relancer l'`Exception`.
 
 ```php
 try {
     // mise à jour d'un contenu
-}
-catch (Exception $e) {
+} catch (Exception $e) {
     // log('La mise à jour a échoué.');
     throw $e;
 }
@@ -275,7 +293,7 @@ class UserFactory implements LoggerAwareInterface
             
             return $user;
         } catch (Exception $exception) {
-            $this->logger->error('Une erreur est survenue pendant la creation d'un utilisateur. Raison: ' . $exception->getMessage());
+            $this->logger->error('Une erreur est survenue pendant la creation d\'un utilisateur. Raison: ' . $exception->getMessage());
             
             throw $exception;
         } 
@@ -297,8 +315,7 @@ Il existe également l'encapsulation d'une `Exception` dans une autre `Exception
 ```php
 try {
     // mise à jour d'un contenu
-}
-catch (Exception $exception) {
+} catch (RuntimeException $exception) {
     throw new UpdateContentException('Erreur de mise a jour du contenu.', 0, $exception);
 }
 
@@ -344,7 +361,7 @@ interface PasswordGeneratorInterface
 ```
 
 > On peut voir ici que peu importe l'`Exception` qui se produit dans `$this->passwordGenerator->generatePassword()`
-> l'`Exception` qui sera remontée est une `UserFactoryException` qui nous informe que la création a échoué. 
+> l'`Exception` qui sera remontée est une `UserFactoryException` qui nous informe que la création a échouée. 
 > La séparation des couches logicielles est respectée.
 
 ## Conclusion
