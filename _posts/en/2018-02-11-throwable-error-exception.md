@@ -147,10 +147,32 @@ try {
         throw new Exception('Can show title. Title is require.');
     }
     echo $_GET['title'];
-}
-catch (Exception $e) {
+} catch (Exception $e) {
     echo '⚠ Exception appear: ' . $e->getMessage();
 }
+
+You can attach multiple `catch` to a `try` bloc in order to split different exception type.
+You must respect catch block precedence.  
+
+```php
+try {
+    if (!$_GET['title']) {
+        throw new Exception('Can show title. Title is require.');
+    }
+    if (!is_string($_GET['title'])) {
+        throw new RuntimeException('Title must be a string.);
+    }
+    echo $_GET['title'];
+} catch (RuntimeException $e) {
+    echo $e->getMessage();
+} catch (Exception $e) {
+    echo '⚠ Exception appear: ' . $e->getMessage();
+}
+```
+
+> `RuntimeException` extends `Exception`, then you must catch `RuntimeException` before `Exceptions`.
+
+ 
 ```
 > The script gonna to show the title if it provided
 > else gonna to show error message.
@@ -160,8 +182,7 @@ In PHP 7.1 you can specify multiple `Exception` types with `|` char.
 ```php
 try {
     // Code
-}
-catch (OutOfBoundsException | LogicException $e) {
+} catch (OutOfBoundsException | LogicException $e) {
     echo '⚠ Exception appear: ' . $e->getMessage();
 }
 ``` 
@@ -171,7 +192,7 @@ __⚠ It's very important to correctly choose the `Exception` type to preserve e
 **Need to know**
 
 Most of `LogicException` lead to bring code correction.
-Catch `LogicalException` is going to show an error page and log information in order to inform the developer. 
+Catch `LogicException` is going to show an error page and log information in order to inform the developer. 
 
 `RuntimeException` represent errors that appear during the execution (invalide data, data source error). 
 You can catch `RuntimeException` in order to execute an alternative code for finish the process correctly.
@@ -240,8 +261,7 @@ In this case we gonna to catch `Exception`, doing alternative process(log, email
 ```php
 try {
     // content update
-}
-catch (Exception $e) {
+} catch (Exception $e) {
     // log('Update failed.');
     throw $e;
 }
@@ -297,8 +317,7 @@ Wrap an `Exception` is very useful to create a nice stack trace and delegate exc
 ```php
 try {
     // content update
-}
-catch (Exception $exception) {
+} catch (RuntimeException $exception) {
     throw new UpdateContentException('Content update failed.', 0, $exception);
 }
 
