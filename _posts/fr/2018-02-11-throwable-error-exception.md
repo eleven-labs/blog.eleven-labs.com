@@ -196,7 +196,7 @@ Attraper une `RuntimeException` est très utile pour exécuter un code alternati
 Mais aussi pour éviter d'afficher des informations sensibles (url du fichier, stack trace, message d'erreur ...)
 La bonne pratique étant de ne pas laisser une exception casser le site._
 
-```
+```php
 set_exception_handler(function($exception){
     echo 'Une erreur est survenue. Veuillez rééssayer ulterieurement.';
     // log($exception->getMessage());
