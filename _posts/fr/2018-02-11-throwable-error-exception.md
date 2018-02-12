@@ -159,10 +159,10 @@ Il faut placé les `catch` dans l'ordre du plus précis au moins précis.
 ```php
 try {
     if (!$_GET['titre']) {
-        throw new Exception('Impossible d\'afficher le titre. Le titre est requis.);
+        throw new Exception('Impossible d\'afficher le titre. Le titre est requis.');
     }
     if (!is_string($_GET['titre'])) {
-        throw new RuntimeException('Le titre doit être une chaîne de caractères.);
+        throw new RuntimeException('Le titre doit être une chaîne de caractères.');
     }
     echo $_GET['titre'];
 } catch (RuntimeException $e) {
@@ -346,7 +346,7 @@ class UserFactory
             $user->setPassword($password);
             
             return $user;
-        } catch (Exception $exception) {
+        } catch (RuntimeException $exception) {
             throw new UserFactoryException('Une erreur est survenue pendant la creation d\'un utilisateur.', 0, $exception);
         } 
     }
@@ -360,7 +360,7 @@ interface PasswordGeneratorInterface
 }
 ```
 
-> On peut voir ici que peu importe l'`Exception` qui se produit dans `$this->passwordGenerator->generatePassword()`
+> On peut voir ici que peu importe la `RuntimeException` qui se produit dans `$this->passwordGenerator->generatePassword()`
 > l'`Exception` qui sera remontée est une `UserFactoryException` qui nous informe que la création a échouée. 
 > La séparation des couches logicielles est respectée.
 
