@@ -67,7 +67,6 @@ L’apprentissage nécessite des erreurs et du feedback, afin de garder un proce
 Lamine Gueye nous a ensuite raconté son parcours. Il a participé aux Jeux Olympiques de 1984, 1992 et 1994 en tant que skieur alpin pour le Sénégal. Afin de participer aux JO, il a dû créer la Fédération Sénégalaise de ski et surtout se battre afin d’y arriver. Il nous a parlé des trois fondamentaux : 
 - le coeur :  c’est l’envie de faire, le moteur. Lamine nous a parlé d'un cadre, qu'il faut créer le plus grand possible afin d'atteindre ses objectifs.
 - la pièce : c’est le cadre, l’environnement. C’est la limite que l’on se met dans la tête. Est-ce que je prends le chemin facile ou le chemin difficile ? Est-ce que je provoque la chute de la pièce du côté difficile ou du côté simple ? Là encore, la limite est dans notre tête. 
-Mark Twain : Ils l’ont fait car ils ignoraient que c’était impossible. 
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">quand on joue au pile ou face avec soi même, on a le choix sur notre destin. <a href="https://twitter.com/hashtag/schoolofpo?src=hash&amp;ref_src=twsrc%5Etfw">#schoolofpo</a> <a href="https://t.co/hKuwQGeaPU">pic.twitter.com/hKuwQGeaPU</a>.</p>&mdash; Tauron (@Tauron15) <a href="https://twitter.com/Tauron15/status/963411290453618689?ref_src=twsrc%5Etfw">13 février 2018</a></blockquote>
