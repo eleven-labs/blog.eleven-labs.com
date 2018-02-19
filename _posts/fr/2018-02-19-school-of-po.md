@@ -26,7 +26,7 @@ Résumé de ce qu'il s’est passé durant cette journée :
 
 ## The Learners Hypothesis 
 
-Pendant cette conférence, Alberto est revenu sur la notion d’apprentissage au travail, qui est trop souvent oubliée au quotidien. L’apprentissage n’est pas quelque chose de visible. 
+Pendant cette conférence, Alberto est revenu sur la notion d’apprentissage au travail, qui est trop souvent oubliée au quotidien.  
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">You can rush the delivery. Not the learning. <a href="https://twitter.com/hashtag/schoolOfPO?src=hash&amp;ref_src=twsrc%5Etfw">#schoolOfPO</a> <a href="https://t.co/R2EGLOcIoQ">pic.twitter.com/R2EGLOcIoQ</a></p>&mdash; υѕe caѕe drιven (@tpierrain) <a href="https://twitter.com/tpierrain/status/963336034753961984?ref_src=twsrc%5Etfw">13 février 2018</a></blockquote>
