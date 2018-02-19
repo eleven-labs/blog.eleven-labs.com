@@ -91,6 +91,7 @@ J’écoute beaucoup mon intuition, il m’est déjà arrivé de recevoir une de
 Ecoutez vous, car comme elle le dit, “on va tous mourir de toute façon”.
 
 > https://twitter.com/solamosso/status/963369373380595713
+>
 > https://twitter.com/LydieHu/status/963388329449414661
 
 
@@ -111,6 +112,7 @@ Le story telling pour un projet est très important, cependant, pour une epic, p
 
 
 ***The human side of PO : gérer le stress et la pression, easy ?***
+
 Le dernier atelier que j’ai choisi avait pour thème “The human side of PO : gérer le stress et la pression, easy ?”. Comme le sujet l’annonce, nous avons travaillé sur les situations qui nous faisaient stresser et les émotions qui en découlaient. Nous avons donc identifié ces emotions (peur, colère, frustration, tristesse), puis, par groupe de 5, nous avons échangé sur les phrases que l’on se dit lorsque nous ressentons ces émotions.
 
 > https://twitter.com/pablopernot/status/963431958868037632
