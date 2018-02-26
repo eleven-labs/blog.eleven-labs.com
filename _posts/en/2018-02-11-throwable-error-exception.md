@@ -87,7 +87,7 @@ interface Throwable
           |- UnexpectedValueException extends RuntimeException
 ```
 
-> ⚠ Caution!!! You can only implement `Throwable` through `Error` and `Exception`. 
+> ⚠ Caution! You can only implement `Throwable` through `Error` and `Exception`. 
 > Else you got a FATAL error
 > `PHP Fatal error:  Class MyClass cannot implement interface Throwable, extend Exception or Error instead`
 > But you can extends this interface in user space
@@ -134,7 +134,7 @@ throw new Exception('Render error.');
 echo 'Example text.';
 ```
 
-> An `Exception` interrupt the execution of current instruction.
+> An `Exception` interrupt the execution of next instructions.
 > In this example the `echo` shouldn't be called. 
 
 ### Catch exception
@@ -151,6 +151,9 @@ try {
     echo '⚠ Exception appear: ' . $e->getMessage();
 }
 
+> The script gonna to show the title if it provided
+> else gonna to show error message.
+
 You can attach multiple `catch` to a `try` bloc in order to split different exception type.
 You must respect catch block precedence.  
 
@@ -160,7 +163,7 @@ try {
         throw new Exception('Can show title. Title is require.');
     }
     if (!is_string($_GET['title'])) {
-        throw new RuntimeException('Title must be a string.);
+        throw new RuntimeException('Title must be a string.');
     }
     echo $_GET['title'];
 } catch (RuntimeException $e) {
@@ -171,11 +174,6 @@ try {
 ```
 
 > `RuntimeException` extends `Exception`, then you must catch `RuntimeException` before `Exceptions`.
-
- 
-```
-> The script gonna to show the title if it provided
-> else gonna to show error message.
 
 In PHP 7.1 you can specify multiple `Exception` types with `|` char. 
 
