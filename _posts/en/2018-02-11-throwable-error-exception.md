@@ -29,7 +29,7 @@ All `Throwable` will bubble up through the execution stack until they meet one o
  - if an exception handler is configured via `set_exception_handler()`;
  - or else, the exception will be converted into FATAL error and will be processed by the traditional system.
 
-We are then going to first define, and then see how to use  `Throwable`, `Error` and `Exception`. 
+We are going to first define, and then see how to use  `Throwable`, `Error` and `Exception`. 
 
 ## Definition
 
