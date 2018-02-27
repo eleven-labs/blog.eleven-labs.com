@@ -31,7 +31,7 @@ All `Throwable` will bubble up through the execution stack until they meet one o
 
 We are going to first define, and then see how to use  `Throwable`, `Error` and `Exception`. 
 
-## Definition
+## Definition  
 
 ### Throwable
 
@@ -121,7 +121,7 @@ _Sometimes you have the right to throw `Error` in your code, for example if you 
 
 Very often you have to throw or create one, se we are going to see how it works and how use to it properly.
 
-## Usage
+## Usage  
 
 ### Throw exception
 
@@ -210,7 +210,7 @@ the error code is an `integer` which can be used to codify/identify the error.
 
 > You can show the error code instead of the message of the real `Exception` to the visitor, and prevent him to potentially be confronted to sensitive data.
 
-## Advanced use
+## Advanced use  
 
 ### Customize an exception
 
