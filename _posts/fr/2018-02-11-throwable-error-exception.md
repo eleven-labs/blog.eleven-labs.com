@@ -31,7 +31,7 @@ Les `Throwable` vont remonter la pile d'exécution (bubble up) jusqu'à rencontr
 
 Nous allons donc, plus en détails, définir et voir comment utiliser `Throwable`, `Error` et `Exception`. 
 
-## Définition
+## Définition  
 
 ### Throwable
 
@@ -123,7 +123,7 @@ Ou si vous avez une fonction avec un nombre de paramètres variable et que le no
 Il est très fréquent de lancer ou créer des `Exception`. 
 C'est d'ailleurs sur le fonctionnement et l'utilisation des `Exception` que nous allons nous concentrer. 
 
-## Utilisation
+## Utilisation  
 
 ### Lancer une exception
 
@@ -153,8 +153,8 @@ try {
 > Dans cet exemple le script affichera le titre s'il est fourni
 > sinon il affichera le message d'erreur comme quoi il est obligatoire.
 
-Vous pouvez également effectué de multiple `catch` afin de séparer les différents types d'`Exception`.
-Il faut placé les `catch` dans l'ordre du plus précis au moins précis.  
+Vous pouvez également effectuer de multiple `catch` afin de séparer les différents types d'`Exception`.
+Il faut placer les `catch` dans l'ordre du plus précis au moins précis.  
 
 ```php
 try {
@@ -213,7 +213,7 @@ Le code d'erreur est un `integer` qui peut être utilisé pour codifier/identifi
 > Il permet par exemple d'afficher le code de l'erreur plutôt que le message de l'`Exception` au visiteur. 
 > Il permet de masquer la raison de l'erreur, qui peut dans certains cas contenir des informations sensibles. 
 
-## Utilisation avancée
+## Utilisation avancée  
 
 ### Créer une exception personalisée
 
