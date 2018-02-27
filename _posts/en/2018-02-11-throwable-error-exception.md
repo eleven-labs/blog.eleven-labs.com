@@ -26,7 +26,7 @@ From now on, most of the errors are reported through the exception class `Error`
 
 All `Throwable` will bubble up through the execution stack until they meet one of these cases:
  - when meeting a `catch` block which supports this kind of error;
- - if an exception handler is configured vie `set_exception_handler()`;
+ - if an exception handler is configured via `set_exception_handler()`;
  - or else, the exception will be converted into FATAL error and will be processed by the traditional system.
 
 We are then going to first define, and then see how to use  `Throwable`, `Error` and `Exception`. 
