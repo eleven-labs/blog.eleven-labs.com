@@ -3,7 +3,7 @@ layout: post
 title: PHP 7 Throwable Errors Exceptions 
 lang: fr
 permalink: /fr/php7-throwable-error-exception/
-excerpt: "Errors exists in our code, in externe library, even when hardware fail, it's why understanding Throwable is essential to have a smart error handler."
+excerpt: "Errors exist in our code, in external library, and also when hardware fail. That's why understanding Throwable is essential to handle these errors cleverly."
 authors:
     - amoutte
 categories:
@@ -21,21 +21,21 @@ cover: /assets/2018-02-11-php7-throwable-error-exception/cover.jpg
 
 # PHP 7 Throwable Exceptions Errors
 
-PHP 7 bring some changes about error reporting. 
-The most errors are bring back through exception class `Error`.
+PHP 7 brings some changes about how errors are reported. 
+From now on, most of the errors are reported through the exception class `Error`.
 
-All `Throwable` gonna to bubble up through the execution stack until these cases:
- - when meet a `catch` block who support this kind of error.
- - if an exception handler was configure (`set_exception_handler()`).
- - else the exception gonna to be converted into FATAL error an will be process by the traditional system.
+All `Throwable` will bubble up through the execution stack until they meet one of these cases:
+ - when meeting a `catch` block which supports this kind of error;
+ - if an exception handler is configured vie `set_exception_handler()`;
+ - or else, the exception will be converted into FATAL error and will be processed by the traditional system.
 
-We gonna to define and see how to use  `Throwable`, `Error` and `Exception`. 
+We are then going to first define, and then see how to use  `Throwable`, `Error` and `Exception`. 
 
 ## Definition
 
 ### Throwable
 
-`Throwable` is an PHP 7 interface which represent an error. 
+`Throwable` is a PHP 7 interface which represents an error. 
 
 ```php
 interface Throwable
@@ -53,7 +53,7 @@ interface Throwable
 
 `Errors` and `Exceptions` are implementing `Throwable`.
 
-Here is `Throwable` hierarchy
+Here is `Throwable` hierarchy:
 
 ```
 interface Throwable
@@ -88,9 +88,9 @@ interface Throwable
 ```
 
 > ⚠ Caution! You can only implement `Throwable` through `Error` and `Exception`. 
-> Else you got a FATAL error
+> Else you get a FATAL error
 > `PHP Fatal error:  Class MyClass cannot implement interface Throwable, extend Exception or Error instead`
-> But you can extends this interface in user space
+> But you can extend this interface in user space
 
 ```php
 interface MyThrowable extends Throwable {
@@ -107,35 +107,33 @@ class MyException extends Exception implements MyThrowable {
 
 ### Error
 
-`Error` is the base class of all internal PHP errors.
+`Error` is the base class of all the internal PHP errors.
 
-The most common:
- - `ParseError` was throw when `require` or `eval` code with syntax error.
- - `TypeError` was throw when arguments/return not match its declare type. _When an invalid number of arguments are passed to php built-in function in `strict mode`._
+The most commons are the following:
+ - `ParseError`, which is thrown when we `require` or `eval` a code with syntax error.
+ - `TypeError`, which is thrown when arguments/return do not match its declare type. It's also the case when an invalid number of arguments are passed to php built-in function in `strict mode`._
 
-_Sometimes you have the right to throw `Error` in your code if you parse a file that contains a syntax error.
-Or if you pass wrong numbers of arguments to a variadic function._
+_Sometimes you have the right to throw `Error` in your code, for example if you parse a file that contains a syntax error, or if you pass wrong numbers of arguments to a variadic function._
 
 ### Exception
 
-`Exception` is user exception base class.
+`Exception` is the user exception base class.
 
-Very often you have to throw or create `Exception`.
-We going to see how `Exception` work and how use it properly. 
+Very often you have to throw or create one, se we are going to see how it works and how use to it properly.
 
 ## Usage
 
 ### Throw exception
 
-You have to use `throw` keyword in order to throw an `Exception`.
+You have to use the `throw` keyword in order to throw an `Exception`.
 
 ```php
 throw new Exception('Render error.');
 echo 'Example text.';
 ```
 
-> An `Exception` interrupt the execution of next instructions.
-> In this example the `echo` shouldn't be called. 
+> An `Exception` interrupts the execution of next instructions.
+> In this example the `echo` won't be called.
 
 ### Catch exception
 
@@ -144,23 +142,22 @@ You have to use `try` `catch` structure.
 ```php
 try {
     if (!$_GET['title']) {
-        throw new Exception('Can show title. Title is require.');
+        throw new Exception('Can't show title. Title is required.');
     }
     echo $_GET['title'];
 } catch (Exception $e) {
     echo '⚠ Exception appear: ' . $e->getMessage();
 }
 
-> The script gonna to show the title if it provided
-> else gonna to show error message.
+> The script will show the title if it's provided, or else it will show the error message.
 
-You can attach multiple `catch` to a `try` bloc in order to split different exception type.
-You must respect catch block precedence.  
+You can attach multiple `catch` to a `try` bloc in order to split different exception types.
+You must respect catch block precedence.
 
 ```php
 try {
     if (!$_GET['title']) {
-        throw new Exception('Can show title. Title is require.');
+        throw new Exception('Can't show title. Title is required.');
     }
     if (!is_string($_GET['title'])) {
         throw new RuntimeException('Title must be a string.');
@@ -189,15 +186,15 @@ __⚠ It's very important to correctly choose the `Exception` type to preserve e
 
 **Need to know**
 
-Most of `LogicException` lead to bring code correction.
-Catch `LogicException` is going to show an error page and log information in order to inform the developer. 
+Most of `LogicException` usually leads to a code correction.
+To catch `LogicException` is going to show an error page and log information in order to inform the developer. 
 
-`RuntimeException` represent errors that appear during the execution (invalide data, data source error). 
-You can catch `RuntimeException` in order to execute an alternative code for finish the process correctly.
+`RuntimeException` represents errors that appear during the execution (invalide data, data source error). 
+You can catch `RuntimeException` in order to execute an alternative code for finishing the process correctly.
 
-ℹ️ _You must have an exception handler to render nice error page to visitors.
+ℹ️ _You must have an exception handler to render a nice error page to visitors.
 The second purpose is to avoid any leaking informations (file path, stack trace, error message...)
-Best practice: Don't let the exception brake website._
+Best practice: Don't let the exception break the website._
 
 ```
 set_exception_handler(function($exception){
@@ -209,15 +206,15 @@ set_exception_handler(function($exception){
 
 ### Errors codes
 
-Errors codes was an `integer` which can be use to codify/identify error.
+the error code is an `integer` which can be used to codify/identify the error.
 
-> You can show code error instead of real `Exception` error message in order to hide it to the visitor. 
+> You can show the error code instead of the message of the real `Exception` to the visitor, and prevent him to potentially be confronted to sensitive data.
 
-## Advance usage
+## Advanced use
 
-### Custom exception
+### Customize an exception
 
-It's very useful to create your custom `Exception` class. They are more accurate and can carry an extra data(text, object, array...) to the error process.
+It's very useful to create your custom `Exception` class. They are more accurate and can carry extra data (text, object, array...) to the error process.
 
 ```php
 class MyObject
@@ -248,13 +245,13 @@ class MyObjectException extends RuntimeException
 }
 ```
 
-> When `MyObjectException` is catch you can get back `MyObject` with method `getMyObject()`
-> You can use this object to run alternative process and help you with more information than regular `Exception`. 
+> When `MyObjectException` is caught, you can get back `MyObject` with the method `getMyObject()`
+> You can use this object to run alternative processes, that will provide you more information than with the regular `Exception`. 
 
-### Rethrow exception
+### Rethrow an exception
 
-Sometime we need to trace/log what going wrong.
-In this case we gonna to catch `Exception`, doing alternative process(log, email, ...) and rethrow this exception.
+Sometime we need to trace/log what's going wrong.
+In this case we will have to catch the `Exception`, then do an alternative process (log, email, ...) and rethrow this exception.
 
 ```php
 try {
@@ -265,7 +262,7 @@ try {
 }
 ```
 
-Concret example
+Here's a concrete example:
 
 ```php
 use Psr\Log\LoggerAwareInterface;
@@ -306,11 +303,11 @@ interface PasswordGeneratorInterface
 }
 ```
 
-> We going to log an message and let the `Exception` bubble up.
+> We are logging a message and letting the `Exception` bubble up.
 
-### Wrap exception
+### Wrap an exception
 
-Wrap an `Exception` is very useful to create a nice stack trace and delegate exception handling to the main exception handler.
+Wrap an `Exception` is very useful to create a nice stack trace and delegate the exception handling to the main exception handler.
 
 ```php
 try {
@@ -322,11 +319,10 @@ try {
 class UpdateContentException extends RuntimeException {}
 ```
 
-> All underlay error trigger this catch and throw unique `UpdateContentException` type.
-> When you catch the `UpdateContentException` you can access to all previous exception with `getPrevious()` method.
+> During the content update, the exception type doesn't matter and will always return an `UpdateContentException`. If you catch the `UpdateContentException`, you can access to all previous exceptions with the `getPrevious()` method.
 
 
-Concret example
+Here's a concrete example:
 
 ```php
 class UserFactory
@@ -360,30 +356,30 @@ interface PasswordGeneratorInterface
 }
 ```
 
-> UserFactory::create() throw always an `UserFactoryException`.
-> The first information we need to know is what going wrong? -> We can't create user. Why ? -> exception->getPrevious() 
-> Layer separation is preserve.
+> UserFactory::create() always tyhrows an `UserFactoryException`.
+> The first information we need to know is what is going wrong? -> We can't create a user. Why ? -> exception->getPrevious() 
+> Layer separation is preserved.
 
 ## Conclusion
 
-We have seen how to throw and catch exception and custom exception with PHP but also more advance exception usage like rethrow and wrapping exception to have a better control when something wrong happen.
+We have seen how to throw and catch exceptions, and even how to customize them with PHP. We have also seen how more advanced exception usages such as rethrow and wrap, in order to have a better control when something wrong happens.
 
-**Errors exists in our code, in externe library, even when hardware fail, it's why understanding Throwable is essential to have a smart error handler.**
+**Errors exists in our code, in external library, or when hardware fails. that's why understanding Throwable is essential to handle errors cleverly.**
 
 Pros
- - Better visibility about what happen
- - more readable error
- - multiple type and error level in order to split domain error from software one.
- - easy to debug
- - better split software responsibility (SOLID)
- - error code can hide real error reason
+ - Better visibility about what's happening
+ - Erros easier to read
+ - Multiple types and error levels in order to split domain errors from software one
+ - Easy to debug
+ - Better split software responsibility (SOLID)
+ - Error code can hide the real error reason
  
 Cons
- - need to know how to wrap/rethrow exception
- - render/read stack trace can be complex.
- - dont forget to handle all exceptions  with `catch`/`set_exception_handler` to avoid leaking informations.
+ - Need to know how to wrap/rethrow exception
+ - Render/read stack trace can be complex
+ - Don't forget to handle all exceptions with `catch`/`set_exception_handler` to avoid leaking informations
 
-## Interesting link
+## Interesting links
 
 http://php.net/manual/fr/language.errors.php7.php
 https://3v4l.org/sDMsv
