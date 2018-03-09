@@ -3,7 +3,7 @@ layout: post
 title: RabbitMQ des bases à la maîtrise (Partie 1) 
 lang: fr
 permalink: /fr/rabbitmq-partie-1-les-bases/
-excerpt: "Rabbitmq est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utilisé est assez simple par contre le maîtriser l'est un peu moins."
+excerpt: "Rabbitmq est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utiliser est assez simple, en revanche, le maîtriser l'est un peu moins."
 authors:
     - amoutte
 categories:
@@ -21,14 +21,13 @@ cover: /assets/2018-03-11-rabbitmq-partie-1-les-bases/cover.jpg
 
 # RabbitMQ des bases à la maîtrise (Partie 1)
 
-RabbitMQ est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utilisé est assez simple
-par contre le maîtriser l'est un peu moins.
+RabbitMQ est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utilisé est assez simple, en revanche, le maîtriser l'est un peu moins.
 
 *Donc avant de manger du pâté de lapin il va falloir bouffer des carottes!*
 
 ## Introduction
 
-RabbitMQ a de nombreux points fort ce qui en fais une solution utilisable sur tout type/taille de projet.
+RabbitMQ a de nombreux points fort ce qui en fait une solution utilisable sur tout type/taille de projet.
 Voici quelque uns des ces points fort:
 
 - utilise AMQP (courante: 0.9.1)
@@ -42,7 +41,7 @@ Voici quelque uns des ces points fort:
 
 *Ok donc on va commencer par semer des carottes*
 
-Afin de pouvoir utilisé efficacement RabbitMQ il faut comprendre le fonctionnement du protocol `AMQP`.
+Afin de pouvoir utiliser efficacement RabbitMQ il faut comprendre le fonctionnement du protocol `AMQP`.
 
 Voici le fonctionnement global du `broker`.
 
@@ -62,7 +61,7 @@ Parmi les `attributs` du protocol vous pouvez y ajouter des `headers` depuis vot
 
 Les `headers` seront disponibles dans `attributes[headers]`.
 
-L'attribut `routing_key` bien qu'optionnel n'en est pas moins très utile dans le protocol.
+L'attribut `routing_key`, bien qu'optionnel, n'en est pas moins très utile dans le protocol.
 
 ### Le Broker
 
@@ -101,7 +100,7 @@ Si la `routing_key` du message est strictement égale à la `routing_key` spéci
 
 #### L'exchange type topic
 
-L'`exchange` `topic délivre le message si `routing_key` du message match le pattern définis dans le binding.
+L'`exchange` `topic` délivre le message si `routing_key` du message match le pattern défini dans le binding.
 
 ![RabbitMQ Broker]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-topic.jpg)
 
@@ -119,7 +118,7 @@ Par exemple pour la routing key `foo.bar.baz`
 - `#.baz` match
 - `#.bar.baz` match
 - `#` match
-- `foo.*` **non trouver**
+- `foo.*` **non trouvé**
 
 > match(binding.routing_key, message.routing_key) 
 
@@ -136,13 +135,13 @@ Avec le `x-match = any` le message sera délivré si un seul des headers du bind
 > x-match = any
 > binding.headers[attrName1] == message.headers[attrName1] || binding.headers[attrName2] == message.headers[attrName2]
 
-*Le message sera délivré si le header `attrName1` (configurer au moment du binding) est égal au header `attrName1` du message* 
+*Le message sera délivré si le header `attrName1` (configuré au moment du binding) est égal au header `attrName1` du message* 
 
 OU
 
 *si le header `attrName2` est égal au header `attrName2` du message.*
  
-Avec le `x-match = all` le message sera délivré si **tous** les headers du binding correspond aux header du message.
+Avec le `x-match = all` le message sera délivré si **tous** les headers du binding correspondent aux headers du message.
 
 > x-match = all
 > binding.headers[attrName1] == message.headers[attrName1] && binding.headers[attrName2] == message.headers[attrName2]
@@ -151,18 +150,19 @@ Avec le `x-match = all` le message sera délivré si **tous** les headers du bin
 
 ### Les Bindings
 
-Les bindings se sont les règles que les exchanges utilisent pour déterminé à quel queue il faut délivrer le message.
-Les différentes configuration peuvent utiliser la `routing key` (direct/topic exchanges) les `headers`(header exchanges) ou même le simple fait d'être binder`(fanout exchanges).
+Les bindings se sont les règles que les exchanges utilisent pour déterminer à quelle queue il faut délivrer le message.
+Les différentes configurations peuvent utiliser la `routing key` (direct/topic exchanges) ainsi que les `headers`(header exchanges).
+Dans le cas des `exchanges` fanout, les `queues` n'ont qu'à être bindées pour recevoir le message.
 
 ### Les Queues
 
-Une queue est l'endroit ou sont stocké les messages. Il existe des options de configuration afin de modifier leurs comportements.
+Une queue est l'endroit où sont stockés les messages. Il existe des options de configuration afin de modifier leurs comportements.
 
 Quelques options:
 
  - Durable, (stocker sur disque) la queue survivra au redémarrage du broker. Attention seul les messages *persistent* survivront au redémarrage.
- - Exclusive, seras utilisable que pas une seul connection et sera supprimer à la cloture de celle-ci.
- - Auto-delete, la queue sera supprimer quand toutes les connections sont fermés (après au moins une connection).
+ - Exclusive, sera utilisable que pas une seule connection et sera supprimé à la cloture de celle-ci.
+ - Auto-delete, la queue sera supprimée quand toutes les connections sont fermées (après au moins une connection).
 
 **Vous consommez une queue.**
 
@@ -176,7 +176,7 @@ Le rôle du `consumer` est d'exécuter un traitement après avoir récupéré un
 Pour ce faire il va réserver (prefetching) un ou plusieurs `messages` depuis la `queue`, avant d'exécuter un traitement. 
 Généralement si le traitement c'est correctement déroulé le consumer va acquitter le message avec succès (basic.ack).
 En cas d'erreur le `consumer` peut également acquitter négativement le `message` (basic.nack).
-Si le `message` n'est pas acquitter il restera à ça place dans la queue et sera re fetch un peu plus tard.
+Si le `message` n'est pas acquitter il restera à sa place dans la queue et sera re fetch un peu plus tard.
 
 *Vous voila maintenant fin prêt à récolter vos carottes*
 
