@@ -1,19 +1,15 @@
 # SITE CONFIGURATION
-title: Blog Eleven Labs
-description: Blog Eleven Labs
-url: https://blog.eleven-labs.com
+title: Brouette Labs
+description: Brouette Labs
+url: https://brouette-labs.com
 twitter:
-    username: Eleven_Labs
+    username: Brouette_Labs
 logo: /img/avatar.png
 social:
-    name: Eleven Labs
+    name: Brouette Labs
     links:
         - https://twitter.com/Eleven_Labs
-        - https://www.facebook.com/11Labs
-        - https://www.linkedin.com/company/eleven-labs
-        - https://www.youtube.com/channel/UCt_NukjmUm4whjmbMuZ0MMw
-        - https://github.com/eleven-labs
-        - https://stackoverflow.com/jobs/companies/eleven-labs
+        - https://github.com/brouette-labs
 baseurl: ""
 
 # LANGUAGE-SPECIFIC CONFIGURATION
@@ -26,7 +22,7 @@ localized_posts_dir: _posts
 theme_settings:
     # Meta
     # title: Eleven Labs - Le Blog
-    brand : Eleven Labs
+    brand : Brouette Labs
     gravatar:
     description: A website with blog posts and pages
 
@@ -40,27 +36,27 @@ theme_settings:
     behance:
     bitbucket:
     dribbble:
-    facebook: 11Labs
+    facebook:
     flickr:
-    github: eleven-labs
+    github: brouette-labs
     google_plus:
     instagram:
-    linkedin: https://fr.linkedin.com/company/eleven-labs
+    linkedin:
     pinterest:
     reddit:
     soundcloud:
     stack_exchange:
     steam:
     tumblr:
-    twitter: eleven_labs
+    twitter:
     wordpress:
     youtube:
-    corporate: https://eleven-labs.com
+    corporate: https://brouette-labs.com
     corporate_logo: /img/follow/eleven.svg
 
     # Scripts
     google_analytics: UA-99013054-1
-    disqus_shortname: blog-eleven-labs
+    disqus_shortname: brouette-labs
     muut_community_name:
 
     # Post navigation
