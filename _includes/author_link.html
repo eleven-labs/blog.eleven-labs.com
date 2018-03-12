@@ -6,17 +6,16 @@
     {% if existingAuthor.login == author %}
       {% if isFirstAuthor %}
         <span class="meta-author">
-          <i class="fa fa-fw fa-pencil"><span class="visually-hidden">{% translate global.author_by %}</span></i> 
-          {% elsif isLastAuthor %}
-             {% translate global.and %} 
-          {% else %}
-             ,
-          {% endif %}
-          <a class="author-link" href="{{ '/authors/:author' | prepend: site.baseurl | replace: '//', '/' | replace: ':author', author }}">{{ existingAuthor.title }}</a>
+          <i class="fas fa-fw fa-pencil-alt" data-fa-transform="flip-h" title="{% translate global.author_by %}"></i>
+      {% elsif isLastAuthor %}
+         {% translate global.and %}
+      {% else %}
+         ,
+      {% endif %}
+        <a class="author-link" href="{{ '/authors/:author' | prepend: site.baseurl | replace: '//', '/' | replace: ':author', author }}">{{ existingAuthor.title }}</a>
       {% if isLastAuthor %}
         </span>
       {% endif %}
     {% endif %}
   {% endfor %}
 {% endfor %}
-
