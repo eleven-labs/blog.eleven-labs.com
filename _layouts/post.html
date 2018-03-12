@@ -10,12 +10,10 @@ layout: default
             <h1 class="page-heading-title">{{ page.title }}</h1>
             <span class="meta">
                 <span class="meta-item">
-                    <i class="fa fa-fw fa-calendar"></i> {% include date_translate.html object=page.date %} 
+                    <i class="fas fa-fw fa-calendar-alt"></i> {% include date_translate.html object=page.date %}
                 </span>
                 <span class="meta-item">
-                    <i class="fa fa-fw fa-clock-o">
-                        <span class="visually-hidden">{% translate global.estimated_reading_time %}</span>
-                    </i> {% include reading_time.html content=content %} 
+                    <i class="fas fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i> {% include reading_time.html content=content %}
                 </span>
                 {% include author_link.html authors=page.authors %}
             </span>
@@ -33,7 +31,7 @@ layout: default
     <a id="prev-post" href="{{ page.previous.url | prepend: site.baseurl }}">
         <span class="page-title">{{ page.previous.title }}</span>
         <span class="nav-label">
-            <i class="fa fa-chevron-left"></i> {% translate global.prev %}
+            <i class="fas fa-chevron-left"></i> {% translate global.prev %}
         </span>
     </a>
     {% endif %}
@@ -41,7 +39,7 @@ layout: default
     <a id="next-post" href="{{ page.next.url | prepend: site.baseurl }}">
         <span class="page-title">{{ page.next.title }}</span>
         <span class="nav-label">
-            {% translate global.next %} <i class="fa fa-chevron-right"></i>
+            {% translate global.next %} <i class="fas fa-chevron-right"></i>
         </span>
     </a>
     {% endif %}
