@@ -38,4 +38,3 @@ deploy:
 after_deploy:
     - aws configure set preview.cloudfront true
     - aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" --paths "/*"
-    - curl -X POST -H "Content-type: application/json" --data '{"text":"MEP blog\n'${TRAVIS_COMMIT_MESSAGE}'", "channel": "#'${SLACK_CHANNEL}'", "username": "'${SLACK_USERNAME}'", "icon_emoji": ":'${SLACK_EMOJI}':"}' ${SLACK_WEBHOOK_URL}
