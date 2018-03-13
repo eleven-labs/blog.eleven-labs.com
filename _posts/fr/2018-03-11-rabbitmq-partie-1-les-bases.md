@@ -28,6 +28,7 @@ RabbitMQ est un message broker très complet et robuste, c'est pourquoi le compr
 ## Introduction
 
 RabbitMQ a de nombreux points forts, ce qui en fait une solution utilisable sur tous types/tailles de projet.
+
 En voici quelques-uns :
 
 - Utilise AMQP (courante: 0.9.1)
@@ -85,7 +86,7 @@ Un `exchange` est un routeur de message. Il existe différents types de routages
 
 > Important à savoir : l'`exchange` `amq.default` est l'`exchange` par défaut de rabbit. Vous ne pouvez ni le supprimer ni vous binder dessus.
 
-*Cet exchange est auto bindé avec toutes les `queues` avec une routing key égale au nom de la queue.*  
+*Cet exchange est auto bindé avec toutes les `queues` avec une `routing key` égale au nom de la queue.*  
 
 ![RabbitMQ Exchange default]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-default.jpg)
 
@@ -97,7 +98,7 @@ L'`exchange` `fanout` est le plus simple. En effet il délivre le message à **t
 
 ### L'exchange type direct
 
-L'`exchange` `direct` n'autorise que le binding utilisant strictement la routing key.
+L'`exchange` `direct` n'autorise que le binding utilisant strictement la `routing key`.
 
 ![RabbitMQ Exchange Direct]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-direct.jpg)
 
@@ -111,13 +112,13 @@ L'`exchange` `topic` délivre le message si `routing_key` du message matche le p
 
 ![RabbitMQ Exchange Topic]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-topic.jpg)
 
-Un routing key est composé de plusieurs segments séparés par des `.`. Il y a également 2 caractères utilisés dans le matching.
+Une `routing key` est composé de plusieurs segments séparés par des `.`. Il y a également 2 caractères utilisés dans le matching.
 
 `*` n'importe quelle valeur de segment
 
 `#` n'importe quelle valeur de segment une ou plusieurs fois 
 
-Par exemple pour la routing key `foo.bar.baz`
+Par exemple pour la `routing key` `foo.bar.baz`
 
 - `foo.*.baz` match
 - `foo.*.*` match
@@ -143,7 +144,7 @@ L'option `x-match` dans le binding permet de définir si **un seul** header ou *
 
 Avec le `x-match = any` le message sera délivré si un seul des headers du binding correspond à un header du message. 
 
-> binding.headers[attrName1] == message.headers[attrName1] || binding.headers[attrName2] == message.headers[attrName2]
+> binding.headers[attrName1] == message.headers[attrName1] `OU` binding.headers[attrName2] == message.headers[attrName2]
 
 *Le message sera délivré si le header `attrName1` (configuré au moment du binding) est égal au header `attrName1` du message* 
 
@@ -155,7 +156,7 @@ OU
 
 Avec le `x-match = all` le message sera délivré si **tous** les headers du binding correspondent aux headers du message.
 
-> binding.headers[attrName1] == message.headers[attrName1] && binding.headers[attrName2] == message.headers[attrName2]
+> binding.headers[attrName1] == message.headers[attrName1] `ET` binding.headers[attrName2] == message.headers[attrName2]
 
 *Ici le message sera délivré seulement si les headers `attrName1` ET `attrName2` (du binding) sont égaux aux headers `attrName1` et `attrName2` du message.*
 
@@ -170,7 +171,7 @@ Quelques options :
  - Auto-delete, la queue sera supprimée quand toutes les connections sont fermées (après au moins une connexion).
 
 > Vous publiez dans un exchange. Vous ne consommez pas un exchange !
-> (quand vous croyez publier dans une queue en réalité le message est publié dans l'`exchange` `amq.default` avec la routing key = queue name)
+> (quand vous croyez publier dans une queue en réalité le message est publié dans l'`exchange` `amq.default` avec la `routing key` = queue name)
 
 ## Consumer
 
