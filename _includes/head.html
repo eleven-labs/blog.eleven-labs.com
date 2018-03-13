@@ -22,12 +22,11 @@
     <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl_root }}" type="image/x-icon">
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl_root | prepend: site.url }}" />
-    <!-- Font Awesome -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     {% if site.theme_settings.google_fonts %}
     <link href="//fonts.googleapis.com/css?family={{ site.theme_settings.google_fonts }}" rel="stylesheet" type="text/css">
     {% endif %}
+    <!-- AMP -->
     {% if page.path contains '_posts' %}
         {% if site.lang == 'fr' %}
             <link rel="amphtml" href="{{ page.url | prepend: '/amp' | prepend: site.baseurl_root | prepend: site.url }}">
