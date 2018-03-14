@@ -37,7 +37,7 @@ Contexte
 
 **Un peu de FitNesse..**
 
-Quand je suis arrivé dans l'équipe, une refonte d'une partie de notre SI était en cours. Des tests fonctionnels (en plus des unitaires bien entendu) étaient donc une obligation (refonte oblige). Le choix de l'époque s'était porté sur FitNesse ([http://fitnesse.org/](http://fitnesse.org/)){:rel="nofollow noreferrer"} un outil qui permet d'écrire des tests de manière "human friendly". Le but était donc de laisser le PO écrire les tests fonctionnels. L'équipe technique quant à elle n'avait qu'à écrire les fixtures derrière.
+Quand je suis arrivé dans l'équipe, une refonte d'une partie de notre SI était en cours. Des tests fonctionnels (en plus des unitaires bien entendu) étaient donc une obligation (refonte oblige). Le choix de l'époque s'était porté sur FitNesse ([http://fitnesse.org/](http://fitnesse.org/)) un outil qui permet d'écrire des tests de manière "human friendly". Le but était donc de laisser le PO écrire les tests fonctionnels. L'équipe technique quant à elle n'avait qu'à écrire les fixtures derrière.
 
 Ce choix aurait pu être une bonne idée si dans la réalité des choses le PO avait réellement écrit les tests techniques. En réalité, l'équipe technique se retrouvait à écrire à la fois les tests techniques et fonctionnels. On devait donc utiliser un outil peu intuitif pour un dev (pas d'autocomplétion, utilisation abusive des tableaux...) et écrire les fixtures qui permettaient à ces tests d'interagir avec notre code.
 
