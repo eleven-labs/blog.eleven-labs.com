@@ -19,8 +19,6 @@ tags:
 cover: /assets/2018-03-11-rabbitmq-partie-1-les-bases/cover.jpg
 ---
 
-# RabbitMQ, des bases à la maîtrise (Partie 1)
-
 RabbitMQ est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utiliser est assez simple, en revanche, le maîtriser l'est un peu moins...
 
 > Donc avant de manger du pâté de lapin il va falloir bouffer des carottes !
