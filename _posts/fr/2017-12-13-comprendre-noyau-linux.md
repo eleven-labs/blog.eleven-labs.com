@@ -173,3 +173,10 @@ Une petite rubrique pour conclure cette introduction à la compilation d'un Kern
  - Toute la configuration d'un kernel (à compiler/compilé) est disponible dans /usr/src/linux/.config ;
  - Il est possible de configurer des options du kernel comme "modules", ce qui permet d'alléger encore la taille du kernel ; et donc la vitesse de boot ; pour ne les charger que lorsque c'est nécessaire et non au boot ;
  - Sur une distribution Ubuntu, le noyau de base et ses dépendances occupent environ 20Mo compressés sur le disque, sur certains systèmes embarqués cela doit tenir sur 512Ko non compressé en mémoire vive.
+
+## Conclusion
+
+Cette article est le premier d'une série de trois. Vous pouvez retrouver les deux suivants ci-dessous :
+
+- [Je configure mon noyau GNU/Linux (partie 2)]({{site.baseurl}}/fr/configurer-kernel-linux/)
+- [Je compile mon noyau GNU/Linux (partie 3)]({{site.baseurl}}/fr/compiler-kernel-linux/)
