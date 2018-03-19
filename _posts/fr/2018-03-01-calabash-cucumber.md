@@ -3,7 +3,7 @@ layout: post
 title: Calabash / Cucumber - Ecrire des tests fonctionnels pour Mobile
 lang: fr
 permalink: /fr/calabash-cucumber-ecrire-des-tests-fonctionnels-pour-mobile
-excerpt: "Render plus robuste votre application en ajoutant des tests fonctionnels"
+excerpt: "Rendez plus robuste votre application mobile en ajoutant des tests fonctionnels"
 authors:
     - ibenichou
 categories:
@@ -24,7 +24,7 @@ cover: /assets/2018-03-01-calabash-cucumber/cover.jpg
 Nous allons voir aujourd'hui comment mettre en place des tests fonctionnels sur votre application.
 Cet article va vous permettre notamment de sensibiliser vos PO à écrire des tests et ce afin d'automatiser les sanity checks.
 
-Pour argumenter auprès de votre PO, je vous conseil de partager l'article de [Thiga](https://blog.thiga.fr/product-management/bdd-gherkin-pour-ecrire-vos-user-stories/)
+Pour argumenter auprès de votre PO, je vous conseille de partager l'article de [Thiga](https://blog.thiga.fr/product-management/bdd-gherkin-pour-ecrire-vos-user-stories/)
 
 > Pré-requis: avoir des bases en Ruby; Ruby 2.3.3 sur votre machine; Bundler
 
@@ -34,21 +34,21 @@ Pour argumenter auprès de votre PO, je vous conseil de partager l'article de [T
 
 Cucumber repose sur le principe du Behaviour-Driven Development (BDD).
 
-> Le processus BDD met en avant le langage naturel et les intéractions dans le processus de développement logiciel.
+> Le processus BDD met en avant le langage naturel et les interactions dans le processus de développement logiciel.
 
 En clair, Cucumber vous permet d'exprimer le comportement de votre application en utilisant un langage naturel (Gherkin) qui peut être compris par tout le monde. Cela permet également d'obtenir une documentation fonctionnelle de votre application.
 
 Exemple:
 
-![Cucumber](http://calaba.sh/images/cucumber-feature@2x.png)
+![Cucumber]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/cucumber-feature@2x.png)
 
 ## Comment ça marche ?
 
-Un morceau de code Ruby s'exécute lorsque le test s'exécute.
+Un morceau de code Ruby est exécuté pour chaque ligne de test.
 
 Le diagramme suivant illustre comment toutes ces pièces s'emboîtent:
 
-![cucumberSchema](https://developer.xamarin.com/guides/testcloud/calabash/introduction-to-calabash/Images/image-02.png)
+![cucumberSchema]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/image-02.png)
 
 Les `steps definitions` utilisent les API Calabash (Ruby) pour interagir avec l'application lorsqu'elle s'exécute sur un périphérique ou dans le simulateur. Les API contiennent des méthodes pour simuler des actions de l'utilisateur, telles que toucher l'écran, entrer du texte dans des champs de texte, etc.
 
@@ -56,18 +56,18 @@ Les `steps definitions` utilisent les API Calabash (Ruby) pour interagir avec l'
 
 [Calabash](https://calaba.sh/) est open-source, développé et maintenu par [Xamarin](https://github.com/calabash/calabash-ios).
 
-Il est constitué de bibliothèques qui permettent au code de test d'interagir par programmation avec des applications natives et hybrides.
+Il est constitué de bibliothèques qui permettent au code de test d’interagir par programmation avec des applications natives et hybrides.
 
 Nous allons voir tout ça en détail dans la suite de l'article.
 
 ## Cucumber - Calabash
 
-Cucumber est un cadre générique pour les tests. Il nécessite une bibliothèque d'automatisation qui se connecte et permet à Cucumber de s'exécuter sur une plate-forme ou une technologie particulière.
-Cette architecture permet d'écrire des tests Cucumber pour presque n'importe quelle plate-forme, à condition qu'il existe une bibliothèque d'automatisation qui assure la prise en charge de la plate-forme en question.
+Cucumber est un cadre générique pour les tests. Il nécessite une bibliothèque d'automatisation qui se connecte et permet à Cucumber de s'exécuter sur une plateforme ou une technologie particulière.
+Cette architecture permet d'écrire des tests Cucumber pour presque n'importe quel dispositif, à condition qu'il existe une bibliothèque d'automatisation qui assure la prise en charge du dispositif en question.
 
 Schéma Cucumber / Calabash:
 
-![stackCucumberCalabash](https://developer.xamarin.com/guides/testcloud/calabash/introduction-to-calabash/Images/image-01.png){:height="600px"}
+![stackCucumberCalabash]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/image-01.png){:height="600px"}
 
 Schéma sur le fonctionnement sur device / simulateur.
 
@@ -77,7 +77,7 @@ Le framework Calabash fournit un petit serveur HTTP intégré qui permet aux tes
 
 # Installation
 
-## Dependances Ruby
+## Dépendances Ruby
 
 Créez un fichier `Gemfile` à la racine de votre projet afin d'installer le [gem](https://rubygems.org/gems/calabash-cucumber/versions/0.21.4?locale=fr) `calabash-cucumber` pour les dépendances de ligne de commande qui vont nous permettre de lancer nos tests.
 
@@ -89,7 +89,7 @@ ruby '2.3.3' # On fixe la version de ruby
 gem 'calabash-cucumber', '~> 0.21.4'
 ```
 
-Pour l'installer, rien de plus simple, taper dans votre terminal: `bundle install`
+Pour l'installer, rien de plus simple, tapez dans votre terminal : `bundle install`
 
 ## Target Calabash sous Xcode
 
@@ -115,7 +115,7 @@ Changez son bundle identifier
 
 ![changeBundlerIdentifier](https://cloud.githubusercontent.com/assets/466104/10642083/79b15a2c-781c-11e5-844a-92ebe29e6e9c.png)
 
-Changez le `Info.plist` pour mettre l'originale
+Changez le `Info.plist` pour mettre l'original
 
 ![infoPlis](https://cloud.githubusercontent.com/assets/466104/10642086/79bf2580-781c-11e5-9415-0313ebfcfc51.png)
 
@@ -164,19 +164,19 @@ end
 
 ```
 
-Ensuite, installez le via `pod install` et n'oubliez pas d'ouvrir le projet en `*.xcworkspace`.
+Ensuite, installez-le via `pod install` et n'oubliez pas d'ouvrir le projet en `*.xcworkspace`.
 
 Voilà, nous avons terminé la configuration ! Cette partie semble longue comme ça, je vous l'accorde mais à force de pratiquer ça vous prendra peu de temps.
 
-# Generation de fichier features et scripts Ruby
+# Génération de fichier features et scripts Ruby
 
-Maintenant, il est temps de rentrer dans le vif du sujet. Dans votre terminal à la racine du projet, lancez la commande suivante:
+Maintenant, il est temps de rentrer dans le vif du sujet. Dans votre terminal, à la racine du projet, lancez la commande suivante :
 
 ```shell
 bundle exec calabash-ios gen
 ```
 
-Après avoir répondu `Y` à la question, vous constatez que cette commande crée un dossier `features` contenant plusieurs sous-dossiers/fichiers:
+Après avoir répondu `Y` à la question, vous constatez que cette commande créé un dossier `features` contenant plusieurs sous-dossiers/fichiers:
 
 * `steps/samples_step.rb`: Répertoire contenant les fichiers Ruby qui traduisent les tests [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin);
 * `support`: Répertoire, avec plus de scripts Ruby qui font fonctionner l'ensemble de l'automatisation;
@@ -194,7 +194,7 @@ Magique, non ? :)
 
 # Gherkin - Cucumber
 
-Nous allons partir du principe que vous travaillez avec un PO execeptionnel qui connait le Gherkin !
+Nous allons partir du principe que vous travaillez avec un PO exceptionnel qui connaît le Gherkin !
 Il rédige donc les scénarios d'acceptation de test de chaque écran dans des fichiers `.features` 
 
 Aide :
@@ -227,7 +227,7 @@ Feature: Page d'accueil
   Alors je dois voir "Register" comme bouton
 ```
 
-Je vous conseil de lire la documentation sur les [steps prédéfinies](https://github.com/calabash/calabash-ios/wiki/02-Predefined-steps) de Cucumber. Ces steps vous offrent un moyen rapide et facile de commencer à tester votre application sans avoir à programmer ; tel que lorsque vous voulez cliquer sur un bouton, écrire dans un textfield...
+Je vous conseille de lire la documentation sur les [steps prédéfinies](https://github.com/calabash/calabash-ios/wiki/02-Predefined-steps) de Cucumber. Ces steps vous offrent un moyen rapide et facile de commencer à tester votre application sans avoir à programmer ; comme lorsque vous voulez cliquer sur un bouton, écrire dans un textfield...
 
 Cependant, vous pouvez facilement écrire vos `custom steps` comme `Then I should see the button "Login"` dans `home.feature`.
 
@@ -414,7 +414,7 @@ Rappelez-vous dans `home.feature` j'ai délibérément ajouté quelques `custom 
 * When I do nothing
 * I should see the button "Login"
 
-Vous pouvez vous aider de la documentation pour écrire des `custom steps` plus poussés:
+Vous pouvez vous aider de la documentation pour écrire des `custom steps` plus poussées:
 
 * http://calabashapi.xamarin.com/ios/
 * https://developer.xamarin.com/guides/testcloud/calabash/calabash-query-syntax/
@@ -438,7 +438,7 @@ end
 
 ### Query
 
-`Query` sélectionne un ou plusieurs objets de la vue "visible" dans l'écran actuel de votre application. Cette méthode prend un argument `String` qui décrit les objets à "intérroger".
+`Query` sélectionne un ou plusieurs objets de la vue "visible" dans l'écran actuel de votre application. Cette méthode prend un argument `String` qui décrit les objets à "interroger".
 
 `Query` donne une approche "CSS-selector" pour trouver des objets de vue dans les écrans de votre application.
 
@@ -454,7 +454,7 @@ Cool non ? :)
 
 Pour cet article j'ai mis sur [github](https://github.com/Prims47/CalabashCucumber) mon application qui comporte une page d'inscription/login/home.
 
-> Attention ! J'ai construit rapidement cette application pour cet article, donc j'accepte volontiers toutes pull request :)
+> Attention ! J'ai construit rapidement cette application pour cet article, donc j'accepte volontiers toutes pull requests :)
 
 ## Screenshots
 
@@ -569,7 +569,7 @@ struct Message {
 }
 ```
 
-# Aws farm device
+# Bonus - Aws farm device
 
 Aws dispose d'un service nommé `Device Farm` qui permet de lancer différents tests sur un [parc de téléphone](https://aws.amazon.com/fr/device-farm/device-list/) très vaste. Les avantages de cette solution sont multiples mais l'argument principal est que vous pouvez facilement cibler un device pour vos tests.
 Vérifiez que vous avez bien configuré un compte AWS et un utilisateur IAM pour accéder à Device Farm
@@ -597,7 +597,7 @@ Vous devriez avoir un beau fichier .ipa :)
 ### Compressez vos tests
 
 Assurez-vous que vos tests Calabash soient contenus dans un fichier .zip. Celui-ci doit comporter la structure suivante :
-Pensez bien à renommer donc votre dossier `steps` en `step_definitions`.
+Pensez donc bien à renommer votre dossier `steps` en `step_definitions`.
 
 ```
 my-zip-file-name.zip
@@ -637,7 +637,7 @@ Amazon nous indique quelques informations à propos de votre build.
 
 ### Step 3 - Uploader vos tests Calabash
 
-Séléctionnez Calabash et uploadez votre dossier .zip.
+Sélectionnez Calabash et uploadez votre dossier .zip.
 
 ![uploadCalabash]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/upload_calabash.png)
 
@@ -655,19 +655,19 @@ Cependant, vous pouvez bien-sûr créer votre propre pool.
 ### Step 5 - Configuration Devices
 
 Un des nombreux avantages d'AWS Device Farm est que vous pouvez configurer vos devices.
-En effet, on remarque via l'image ci-dessous qu'Amazon nous permet de:
+En effet, on remarque via l'image ci-dessous qu'Amazon nous permet de :
 
 * Fournir des données supplémentaires qui seront utilisées par Device Farm lors de l'exécution. `Add extra data`, choisissez Upload, puis recherchez et choisissez le fichier .zip.
-* Installez une application supplémentaire qui sera utilisée par Device Farm lors de l'exécution. Choisissez `Install other apps`, puis Upload ; enfin, recherchez et sélectionnez le fichier .ipa contenant l'application. Répétez la procédure pour toutes les applications supplémentaires que vous voulez installer. Vous pouvez modifier l'ordre d'installation en faisant glisser et en déplaçant les applications ;
-* Pré-sélectionnez la latitude et la longitude de l'appareil ;
-* Pré-sélectionnez les paramètres régionaux de l'appareil pour l'exécution ;
+* Installer une application supplémentaire qui sera utilisée par Device Farm lors de l'exécution. Choisissez `Install other apps`, puis Upload ; enfin, recherchez et sélectionnez le fichier .ipa contenant l'application. Répétez la procédure pour toutes les applications supplémentaires que vous voulez installer. Vous pouvez modifier l'ordre d'installation en faisant glisser et en déplaçant les applications ;
+* Pré-sélectionner la latitude et la longitude de l'appareil ;
+* Pré-sélectionner les paramètres régionaux de l'appareil pour l'exécution ;
 * Pré-définir le profil réseau de l'exécution, choisissez un profil dans `Network profil` ou choisissez `Create a new profile` pour créer le vôtre.
 
 ![deviceState]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/device_state.png)
 
 ### Step 6 - Run 
 
-Avant de run les tests, Amazon vous demande le temps (en minutes) maximun par devices qu'il doit prendre. Bien évidemment, ce temps dépend de vos tests ; dans mon cas, j'ai mis une valeur large de 30 minutes.
+Avant de lancer les tests, Amazon vous demande le temps (en minutes) maximum par devices qu'il doit prendre. Bien évidemment, ce temps dépend de vos tests ; dans mon cas, j'ai mis une valeur large de 30 minutes.
 
 ![runExec]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/run_exec_time.png)
 
@@ -677,9 +677,9 @@ Au bout de X minutes, lorsque vos tests sont terminés, si vous allez dans le d�
 
 ![dashboard]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/dashboard.png)
 
-Dans notre cas, Amazon nous montre directement quel scénario ne marche pas. En quelques cliques, nous pouvons rentrer en détail sur chaque device et chaque scénario. Amazon nous founit pas mal d'élements comme:
+Dans notre cas, Amazon nous montre directement quel scénario ne fonctionne pas. En quelques clics, nous pouvons rentrer en détail sur chaque device et chaque scénario. Amazon nous fournit pas mal d’éléments comme:
 
-* Vidéo du scénario executé ;
+* Vidéo du scénario exécuté ;
 * Logs (tableau + filtrer) ;
 * Perfomance (CPU, Mémoire, Threads)
 * Screenshots
@@ -688,19 +688,19 @@ Qui permettent de débugger plus facilement.
 
 ## Conclusion du service Device Farm
 
-Cependant, on remarque deux contraintes à cette solution:
+Cependant, on remarque deux contraintes à cette solution :
 
 * Aws Device Farm ne supporte pas les versions supérieures à iOS 10.3.3
-* Le prix, même si normalement c'est à votre société de prendre en charge cette partie :)
+* [Le prix](https://aws.amazon.com/fr/device-farm/pricing/), même si normalement c'est à votre société de prendre en charge cette partie :)
 
 # Conclusion
 
-Calabash et Cucumber sont un combo de feu pour la stabilisation de vos apps (avec des tests unitaires bien-sûr!). Ajoutez avec ça un AWS Device Farm, et vous pourrez parfaitement tester votre application sur l'ensemble des devices du marché.
+Calabash et Cucumber sont un combo de feu pour la stabilisation de vos apps (avec des [tests unitaires](https://blog.eleven-labs.com/fr/test-unitaire-swift-xcode/) bien-sûr !). Ajoutez avec ça un AWS Device Farm, et vous pourrez parfaitement tester votre application sur l'ensemble des devices du marché.
 
-Les avantages que j'ai remarqué sont:
+Les avantages que j'ai remarqués sont :
 
 * Faciliter vos campagnes de test de non regression de façon automatique ;
 * Avoir de la documentation fonctionnelle de votre application ;
 * Permet de tester sur un ensemble de device sans avoir à tout acheter obligatoirement.
 
-Le seul "défault" que j'ai trouvé, c'est la configuration qui nécessite un peu de temps au début.
+Le seul "défaut" que j'ai trouvé, c'est la configuration qui nécessite un peu de temps au début.
