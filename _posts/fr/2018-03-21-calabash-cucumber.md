@@ -2,7 +2,7 @@
 layout: post
 title: Calabash / Cucumber - Ecrire des tests fonctionnels pour Mobile
 lang: fr
-permalink: /fr/calabash-cucumber-ecrire-des-tests-fonctionnels-pour-mobile
+permalink: /fr/calabash-cucumber-ecrire-des-tests-fonctionnels-pour-mobile/
 excerpt: "Rendez plus robuste votre application mobile en ajoutant des tests fonctionnels"
 authors:
     - ibenichou
