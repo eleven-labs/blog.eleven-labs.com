@@ -322,7 +322,7 @@ Scenario: Success login
   And I should see "Home"
 ```
 
-## Inscription
+### Inscription
 
 ```gherkin
 Feature: Register
