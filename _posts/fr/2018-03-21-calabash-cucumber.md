@@ -199,7 +199,7 @@ Il rédige donc les scénarios d'acceptation de test de chaque écran dans des f
 
 Aide :
 
-![Gerhkins](http://dontcodetired.com/blog/image.axd?picture=Windows-Live-Writer/Gherkin-Cheat-Sheet/7E61299E/gherkincheat.png){:height="600px"}
+![Gerhkins]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/gherkincheat.png){:height="600px"}
 
 > Les scripts Gherkins ci-dessous peuvent être optimisés mais j'ai préféré vous présenter quelque chose de simple :)
 
