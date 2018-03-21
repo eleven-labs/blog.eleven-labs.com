@@ -19,8 +19,6 @@ tags:
 cover: /assets/2018-02-11-php7-throwable-error-exception/cover.jpg
 ---
 
-# PHP 7 Throwable Exceptions Errors
-
 PHP 7 apporte un changement à la façon dont les erreurs sont rapportées. 
 Désormais la plupart des erreurs sont rapportées en lançant des exceptions `Error`.
 
@@ -386,6 +384,7 @@ Les points négatifs
 
 ## Autres articles intéressants
 
-http://php.net/manual/fr/language.errors.php7.php
-https://3v4l.org/sDMsv
-https://trowski.com/2015/06/24/throwable-exceptions-and-errors-in-php7/
+* [Bien gérer ses exceptions](/fr/php_bien-gerer-ses-exceptions/)
+* [Errors in PHP 7](http://php.net/manual/fr/language.errors.php7.php)
+* [Example](https://3v4l.org/sDMsv)
+* [Throwable Exceptions and Errors in PHP 7](https://trowski.com/2015/06/24/throwable-exceptions-and-errors-in-php7/)

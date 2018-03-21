@@ -1,21 +1,38 @@
+<!-- Site Data -->
 <script type="text/javascript">
-    window.site = {
-      baseurl: '{{ site.baseurl }}',
-      lang: '{{ site.lang }}',
-      translations: {{ site.translations[site.lang] | jsonify }},
-      sw: '{{ "/sw.js" | prepend: site.baseurl }}',
-    };
+  const site = Object.freeze({
+    baseurl: '{{ site.baseurl }}',
+    lang: '{{ site.lang }}',
+    translations: {{ site.translations[site.lang] | jsonify }},
+    sw: '{{ "/sw.js" | prepend: site.baseurl }}',
+  });
+
+  Object.defineProperty(window, 'site', {
+    enumerable: false,
+    configurable: false,
+    writable: false,
+    value: site,
+  });
 </script>
 
+<!-- Font Awesome -->
+<script src="{{ "/js/lib/fontawesome/svg-with-js/js/fontawesome.min.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/lib/fontawesome/svg-with-js/js/fa-solid.min.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/lib/fontawesome/svg-with-js/js/fa-regular.min.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/lib/fontawesome/svg-with-js/js/fa-brands.min.js" | prepend: site.baseurl_root }}" defer></script>
+
 {% if site.theme_settings.google_analytics %}
-<script src="{{ "/js/lib/js-cookie/js.cookie.min.js" | prepend: site.baseurl_root }}"></script>
-<script src="{{ "/js/cookie-consent.js" | prepend: site.baseurl_root }}"></script>
+<!-- Cookie Consent & Google Analytics -->
+<script src="{{ "/js/lib/js-cookie/js.cookie.min.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/cookie-consent.js" | prepend: site.baseurl_root }}" defer></script>
 {% endif %}
 
-<script src="{{ "/js/lib/firebase/firebase.js" | prepend: site.baseurl_root }}"></script>
-<script src="{{ "/js/service-worker.js" | prepend: site.baseurl_root }}"></script>
+<!-- Service Worker -->
+<script src="{{ "/js/lib/firebase/firebase.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/service-worker.js" | prepend: site.baseurl_root }}" defer></script>
 
-<script src="{{ "/js/lib/moment/moment.min.js" | prepend: site.baseurl_root }}"></script>
-<script src="{{ "/js/lib/moment/locale/fr.min.js" | prepend: site.baseurl_root }}"></script>
-<script src="{{ "/js/lib/algoliasearch/algoliasearchLite.min.js" | prepend: site.baseurl_root }}"></script>
-<script src="{{ "/js/search.js" | prepend: site.baseurl_root }}"></script>
+<!-- Search -->
+<script src="{{ "/js/lib/moment/moment.min.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/lib/moment/locale/fr.min.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/lib/algoliasearch/algoliasearchLite.min.js" | prepend: site.baseurl_root }}" defer></script>
+<script src="{{ "/js/search.js" | prepend: site.baseurl_root }}" defer></script>
