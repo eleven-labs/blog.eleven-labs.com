@@ -93,7 +93,7 @@ Il est préférable de configurer Realm avant de l'utiliser en créant une insta
 Cette configuration permet :
 
 * De donner le chemin sur le disque du fichier de configuration ;
-* Lorsque les schémas ont changés entre les différentes versions, une fonction de migration contrôlant la façon dont les données de Realm doivent être mises à jour vers le schéma le plus récent.
+* Lorsque les schémas ont changé entre les différentes versions, une fonction de migration contrôlant la façon dont les données de Realm doivent être mises à jour vers le schéma le plus récent.
 * Stocker de nombreuses données ou des données fréquemment modifiées, une fonction de compactage contrôlant la façon dont le fichier Realm doit être compactée pour assurer une utilisation efficace de l'espace disque.
 
 La configuration peut être transmise à `Realm(configuration: config)` chaque fois que vous avez besoin d'une instance Realm ou vous pouvez définir la configuration à utiliser pour Realm par défaut avec `Realm.Configuration.defaultConfiguration = config`.
@@ -170,7 +170,7 @@ Il y a trois exceptions à cela: `LinkingObjects`, `List` et `RealmOptional`. Ce
 
 Ce tableau fournit une référence pratique pour déclarer les propriétés du modèle.
 
-| Type           | Non optionale                                                            | Optionale  |
+| Type           | Non optional                                                            | Optional  |
 | -------------  |:------------------------------------------------------------------------:| :---------:|
 | Bool           | `@objc dynamic var value = false`                                        | `let value = RealmOptional<Bool>()` |
 | Int            | `@objc dynamic var value = 0`                                            | `let value = RealmOptional<Int>()` |
@@ -179,14 +179,14 @@ Ce tableau fournit une référence pratique pour déclarer les propriétés du m
 | String         | `@objc dynamic var value = ""`                                           | `@objc dynamic var value: String? = nil` |
 | Data           | `@objc dynamic var value = Data()`                                       | `@objc dynamic var value: Data? = nil` |
 | Date           | `@objc dynamic var value = Date()`                                       | `@objc dynamic var value: Date? = nil` |
-| Object         | n/a: doit être optionale                                                    | `@objc dynamic var value: Class?` |
-| List           | `let value = List<Type>()`                                               | n/a: doit être non optionale |
-| LinkingObjects | `let value = LinkingObjects(fromType: Class.self, property: "property")` | n/a: doit être non optionale |
+| Object         | n/a: doit être optional                                                    | `@objc dynamic var value: Class?` |
+| List           | `let value = List<Type>()`                                               | n/a: doit être non optional |
+| LinkingObjects | `let value = LinkingObjects(fromType: Class.self, property: "property")` | n/a: doit être non optional |
 
 
 ## Clé primaire - Indexation de propriétés
 
-Je pense que vous connaissez tous l'intêret d'une clé primaire et de l'indexation de propriétés, donc je ne m'attarde pas trop sur ces sujet.
+Je pense que vous connaissez tous l’intérêt d'une clé primaire et de l'indexation de propriétés, donc je ne m'attarde pas trop sur ces sujet.
 
 Déclaration d'une clé primaire et d'indexation de propriétés Realm:
 
@@ -239,10 +239,10 @@ let serie1 = Bmw(value: [ "car": [ "price": 15000 ], "mDesign": false])
 
 ## Collections
 
-Realm a plusieurs types qui aident à représenter des groupes d'objets. On les appel `Realm collections`:
+Realm a plusieurs types qui aident à représenter des groupes d'objets. On les appelle `Realm collections`:
 
 * `Results`, une classe représentant des objets récupérés à partir de queries ;
-* `List`, une classs représentant les relation `to-many` des modèles ;
+* `List`, une classe représentant les relation `to-many` des modèles ;
 * `LinkingObjects`, une classe représentant les relations inverses dans les modèles ;
 * `RealmCollection`, un protocole définissant l'interface commune à laquelle toutes les collections de Realm se conforment.
 
@@ -303,7 +303,7 @@ class Author: Object {
 
 Avec les propriétés des objets de liaison, vous pouvez obtenir tous les objets liés à un objet donné à partir d'une propriété spécifique.
 
-## Creatiion - Mise à jour - Suppression d'objet
+## Création - Mise à jour - Suppression d'objet
 
 ### Création
 
@@ -347,7 +347,7 @@ Vous pouvez mettre à jour n'importe quel objet en définissant ses propriétés
 let users = realm.objects(User.self)
 try! realm.write {
     users.first?.setValue(true, forKeyPath: "isAstronaut")
-    // set pour chaque user la valeur Donuts (la meilleurs btw) dans la propriété planet
+    // set pour chaque user la valeur Donuts (la meilleure btw) dans la propriété planet
     users.setValue("Donuts", forKeyPath: "planet")
 }
 ```
@@ -531,7 +531,7 @@ Realm.Configuration.defaultConfiguration = Realm.Configuration(
 
 Il est possible d'enregistrer un listener pour recevoir des notifications de modifications Realm ou ses entités.
 
-Pour ce faire, les notifications sont envoyées tant qu'une référence est conservée sur le token de notification renvoyé. Vous devez conserver une référence forte à ce token dans la classe qui enregistre les mises à jour, car les notifications sont automatiquement désinscrites lorsque le token de notification est désalloué. Les notifications sont toujours envoyées sur le thread sur lequel elles étaient initialement enregistrées. Ce thread doit avoir une boucle d'exécution en cours d'exécution. Les gestionnaires de notification sont appelés de manière asynchrone après que chaque transaction d'écriture pertinente ai été validée, quel que soit le thread ou le processus sur lequel la transaction d'écriture a eu lieu.
+Pour ce faire, les notifications sont envoyées tant qu'une référence est conservée sur le token de notification renvoyé. Vous devez conserver une référence forte à ce token dans la classe qui enregistre les mises à jour, car les notifications sont automatiquement désinscrites lorsque le token de notification est désalloué. Les notifications sont toujours envoyées sur le thread sur lequel elles étaient initialement enregistrées. Ce thread doit avoir une boucle d'exécution en cours d'exécution. Après la validation de chaque transaction d'écriture pertinente, les gestionnaires de notification sont appelés de manière asynchrone, quel que soit le thread ou le processus sur lequel la transaction d'écriture a eu lieu.
 
 Chaque fois qu'une transaction d'écriture impliquant Realm est validée, quel que soit le thread ou le processus sur lequel la transaction d'écriture a eu lieu, le gestionnaire de notification sera déclenché:
 
@@ -561,7 +561,7 @@ class ViewController: UITableViewController {
             guard let tableView = self?.tableView else { return }
             switch changes {
             case .initial:
-                // Les résultats sont maintenant populé et peuvent être consultés sans bloquer l'interface utilisateur
+                // Les résultats sont maintenant populés et peuvent être consultés sans bloquer l'interface utilisateur
                 tableView.reloadData()
             case .update(_, let deletions, let insertions, let modifications):
                 // Les résultats des requêtes ont changé, alors appliquez-les à UITableView
@@ -642,9 +642,9 @@ Où 1 accès = configure, écrire, détruis Realm.
 
 # Realm Studio
 
-Realm met à disposition un petit [outil](https://realm.io/products/realm-studio#download-studio) qui permet de visualiser votre base de donnée et d'intéragir avec.
+Realm met à disposition un petit [outil](https://realm.io/products/realm-studio#download-studio) qui permet de visualiser votre base de donnée et d’interagir avec.
 
-<img src="https://realm.io/assets/img/docs/realm-studio.png" />
+![realmStudo]({{site.baseurl}}/assets/2018-02-24-realm-coredata-killer/realm-studio.png)
 
 Pratique, non ?
 
@@ -652,4 +652,4 @@ Si vous avez besoin de trouver votre fichier Realm de votre app, checkez la rép
 
 # Conclusion
 
-J'espère que cet article vous à convaincu d'utiliser Realm. Sa simplicité, ses perfomancese et sa communauté font qu'il s'est imposé dans le monde du mobile.
+J'espère que cet article vous a convaincu d'utiliser Realm. Sa simplicité, ses performances et sa communauté font qu'il s'est imposé dans le monde du mobile.
