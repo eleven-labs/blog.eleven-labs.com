@@ -75,7 +75,7 @@ Schéma sur le fonctionnement sur device / simulateur.
 
 Le framework Calabash fournit un petit serveur HTTP intégré qui permet aux tests de communiquer et de contrôler l'application pendant qu'elle s'exécute sur le périphérique. Cependant, le framework Calabash ne doit pas être inclus dans les versions Release de l'IPA.
 
-## Installation
+## Installation  
 
 ### Dépendances Ruby
 
@@ -624,6 +624,7 @@ Sur la page de la console Device Farm, entrez un nom pour votre projet.
 ![createProject](https://docs.aws.amazon.com/fr_fr/devicefarm/latest/developerguide/images/aws-device-farm-create-project.png)
 
 Si le bouton `Create a new run` s'affiche, choisissez-le.
+  
 
 **Step 2 - Uploader votre ipa**
 
