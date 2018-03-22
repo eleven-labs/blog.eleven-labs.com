@@ -58,7 +58,7 @@ Les `steps definitions` utilisent les API Calabash (Ruby) pour interagir avec l'
 
 Il est constitué de bibliothèques qui permettent au code de test d’interagir par programmation avec des applications natives et hybrides.
 
-Nous allons voir tout ça en détail dans la suite de l'article.
+Nous allons voir tout ça en détails dans la suite de l'article.
 
 ### Cucumber - Calabash
 
@@ -423,7 +423,7 @@ Vous pouvez vous aider de la documentation pour écrire des `custom steps` plus 
 
 ```ruby
 Given(/^the app has launched$/) do
-    wait_for do # Attends une intruction qui retourne true, sinon un timeout lève une exception.
+    wait_for do # Attend une intruction qui retourne true, sinon un timeout lève une exception.
       !query("*").empty?
     end
 end
