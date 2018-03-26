@@ -133,9 +133,23 @@ And its AST:
 
 ### Deployment
 
-Write something here
-App Engine
-Write something here
+Le deployement d'une application comme Codelab est assez complexe. En effet, la problématique est que les developpeurs qui travail sur le projet sont dispersé dans tout Paris. Il faut donc avoir un [Continuous Delevery](https://continuousdelivery.com/) simple et rapide. 
+
+Nous avons donc choisis de faire comme pour notre blog un deployement lors du merge d'une PR dans Master. Ce qui est bien c'est que Travis permet facilement d'utiliser des scripts de deployement dans le Cloud lors de cet évènement.
+
+Nous avons donc choisis d'effectuer le déployement dans Travis. 
+
+Le deployement se fait en deux étapes :
+- d'un coté les assets (Images, mais aussi les différents tutos en markdown) dans un (Bucket Google Cloud)[https://cloud.google.com/storage/]
+- de l'autre un serveur Nginx via [AppEngine](https://cloud.google.com/appengine/) qui affiche le React.
+
+Dans la config travis, que vous trouverez [ici](https://github.com/eleven-labs/codelabs/blob/master/.travis.yml). Vous pouvez voir que dans la partie `deploy` nous utilisons les providers `gae` pour Google App Engine, et `gcs` pour Google Cloud Storage. 
+
+C'est assez simple à mettre en place il suffit de suivre la documentation :
+- [`gae`](https://docs.travis-ci.com/user/deployment/google-app-engine/)
+- [`gcs`](https://docs.travis-ci.com/user/deployment/gcs/)
+
+Dans notre cas nous déployons dans le Bucket le dossier `_posts` qui contient les assets, ainsi que les tutos en markdown. Puis dans le App Engine, le dossier Nginx qui va déployer une machine docker avec Nginx et le code React.
 
 
 
