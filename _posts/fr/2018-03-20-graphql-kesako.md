@@ -160,13 +160,17 @@ La magie des serveurs GraphQL est de savoir que la donnée à déjà été charg
 
 ### Les moins
 
-Le gros moins de l'utilisation de GraphQL est que l'ensemble des query se font en POST. Elle ne sont donc *pas cachées*.
+Le gros moins de l'utilisation de GraphQL est que l'ensemble des query se font en POST sur un seul endpoint. Elle ne sont donc *pas cachées*.
 
-En effet, le cache HTTP n'est pas disponible pour les requêtes POST. 
+Comme le cache HTTP utilise l'url comme clé de cache, il n'est pas possible d'utilisé votre cache navigateur.
 
 L'un des biais que propose GraphQL c'est de faire du cache applicatif qui permet d'éviter l'appel vers les bases de données mais pas le call HTTP.
 
 Le second moins est qu'il faut souvent réécrire l'ensemble de vos types que vous avez du certainement faire pour votre ORM.
+
+Le troisième point faible est la diffuculté de metre en place une authentification via GraphQL?
+
+Le dernier problème est la difficulté de monitoré le serveur grpahQL, même si maintenant il existe [Apollo Engine](https://www.apollographql.com/engine)
 
 ### Les plus
 
@@ -174,7 +178,9 @@ GraphQL permet de mettre en place facilement une API Gateway. Il permet d'avoir 
 
 Prenons l'exemple de données séparé dans deux API, d'un coté les utilisateurs et de l'autre les articles.  Vous pouvez en *une seule requête* GraphQL récupérer l'ensemble des articles qu'un utilisateur aurait lu.
 
-Le plus majeur que c'est le front qui gère ce qu'il a besoin ce qui limite le nombre de call HTTP.
+Le point sympathique est que la documentation se fait automatiquement dans l'IDE tel que GraphIQL qui aura même l'autocomplétion. 
+
+Le plus majeur que c'est le front qui gère ce qu'il a besoin ce qui limite le nombre de call HTTP. Il arrive assez courament que pour afficher une page complexe avec une API Rest il faut 7 ou 8 call API, avec GraphQL c'est 1. Le gain de performance est donc assez sympa.
 
 ## Conclusion
 
