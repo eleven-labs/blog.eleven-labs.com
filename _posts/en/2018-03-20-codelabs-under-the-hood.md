@@ -31,7 +31,7 @@ At the beginning of summer 2017, the idea of a tutorial platform made in Eleven 
 
 ### What’s inside the box?
 
-Codelabs is a static site generator. And among the classic features that will be part of its MVP (List of tutorials, search engine, ...), there are some requirements that must be satisfied:
+Codelabs is a static site generator. And among the classic features that will be part of its MVP (List of tutorials, search engine, ...), there are other cool stuff we need to take care of:
 
 - Break a tutorial into step files, and load them on demand.
 - Transform markdown into HTML in order to display the a tutorial to the reader.
@@ -71,7 +71,7 @@ A tutorial is represented by a folder structure that contains these files:
 |   ├── ...
 ```
 
-The index.json file contains the metadata of a tutorial, here is an example:
+The `index.json` file contains the metadata of a tutorial, here is an example:
 
 ```json
 {
@@ -97,6 +97,10 @@ The index.json file contains the metadata of a tutorial, here is an example:
   ]
 }
 ```
+
+#### So how do we load a tutorial?
+
+Loading a tutorial is done by fetching Markdown files using `XMLHttpRequest` calls, thanks to the fact that they are stored locally which means we can access them statically. When a reader choses a tutorial, we "lazyload" the `*.md` files on reader's demand.
 
 ### React components generation
 
@@ -338,13 +342,9 @@ And here is the corresponding HTML :
 ```
 
 
-
-
 ### Deployment
 
-Write something here
-App Engine
-Write something here
+Google Cloud Storage
 
 
 
