@@ -8,14 +8,12 @@ lang: en
 permalink: /codelabs-under-the-hood/
 categories:
     - React
-    - Redux
     - Static site generation
     - Markdown
     - AST
     - App engine
 tags:
     - React
-    - Redux
     - Static site generation
     - Markdown
     - AST
