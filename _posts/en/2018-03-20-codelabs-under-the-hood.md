@@ -31,12 +31,12 @@ At the beginning of summer 2017, the idea of a tutorial platform made in Eleven 
 
 ### What’s inside the box?
 
-We agreed about developing the MVP by implementing these classic features:
+Codelabs is a static site generator. And among the classic features that will be part of its MVP (List of tutorials, search engine, ...), there are some requirements that must be satisfied:
 
-- Home page that displays a splash and the list of courses.
-- Make sure readers can navigate intuitively through a tutorial steps.
-- Build a search engine.
-- Display the progress of a reader in each course.
+- Break a tutorial into step files, and load them on demand.
+- Transform markdown into HTML in order to display the a tutorial to the reader.
+- Build a global json file containing the metadata of all tutorials (in order to list them in the home page).
+- Deploy into Google Cloud Storage.
 
 ### Static site generation
 
@@ -52,13 +52,13 @@ Another advantage is that we don't have to worry about security, thanks to the s
 
 There are plenty of choices when it comes to defining a stack for your project. But here in Eleven Labs, we are big fans of the React ecosystem, it makes modern web development so easy to tame, considering how with not much effort you can build a fairly decent experience. I'm not going to walk through the details of it, knowing that there is a whole bunch of articles out there talking about React and Redux. But hey! you know the drill; Webpack, Components, Props, State, Actions, Reducers, ... the whole nine yards.
 
-### The workflow
+#### The workflow
 
 We wanted to keep it simple by using the same process we use in the blog:
 - Writing articles using Markdown.
 - Storing files in the repository (in order to take advantage of Pull Requests and reviews).
 
-### Course structure
+#### Course structure
 
 A tutorial is represented by a folder structure that contains these files:
 
@@ -69,6 +69,33 @@ A tutorial is represented by a folder structure that contains these files:
 |   ├── step1.md
 |   ├── step2.md
 |   ├── ...
+```
+
+The index.json file contains the metadata of a tutorial, here is an example:
+
+```json
+{
+  "title": "GraphQL with Apollo",
+  "permalink": "/en/graphql-with-apollo/",
+  "excerpt": "In this tutorial we are going to build a GraphQL server using the Apollo framework",
+  "slug": "graphql-with-apollo",
+  "stepTitles": [
+    "Introduction",
+    "Install GraphQL server",
+    "Configure the Database",
+    "Create GraphQL types",
+    "Resolve queries",
+    "Resolve mutations"
+  ],
+  "date": "2018-03-20",
+  "cover": "/assets/2018-03-20-graphql-with-apollo/cover.jpg",
+  "authors": [
+    {
+      "name": "Jonathan Jalouzot",
+      "username": "captainjojo"
+    }
+  ]
+}
 ```
 
 ### React components generation
@@ -153,9 +180,7 @@ function createElement<P>(
     type: SFC<P> | ComponentClass<P> | string,
     props?: Attributes & P | null,
     ...children: ReactNode[]): ReactElement<P>;
-```
 
-```ts
 function createFactory<P>(type: ComponentClass<P>): Factory<P>;
 ```
 
@@ -241,8 +266,7 @@ const resolveRenderer = renderer => (
   }
 ```
 
-
-Putting it all together:
+#### Putting it all together
 
 We created a factory that generates React components based on a markdown text. This factory parses the markdown using `markdown-to-ast`, then it recursively traverses the tree in order to create a content for each component:
 
@@ -303,11 +327,16 @@ This is a very simple version of the component generation process in Codelabs. L
 
 Here is the React representation of the generated components :
 
+```
 ![React components result]({{site.baseurl}}/assets/2018-03-20-codelabs-under-the-hood/react-result.png)
+```
 
 And here is the corresponding HTML :
 
+```
 ![Html result]({{site.baseurl}}/assets/2018-03-20-codelabs-under-the-hood/html-result.png)
+```
+
 
 
 
