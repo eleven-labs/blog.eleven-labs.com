@@ -8,7 +8,7 @@ logo: /img/avatar.png
 social:
     name: Brouette Labs
     links:
-        - https://twitter.com/Eleven_Labs
+        - https://twitter.com/Brouette_Labs
         - https://github.com/brouette-labs
 baseurl: ""
 
@@ -51,8 +51,8 @@ theme_settings:
     twitter: Brouette_Labs
     wordpress:
     youtube:
-    corporate: https://brouette-labs.com
-    corporate_logo: /img/follow/eleven.svg
+    corporate:
+    corporate_logo:
 
     # Scripts
     google_analytics: UA-99013054-5
