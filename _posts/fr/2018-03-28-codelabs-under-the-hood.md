@@ -23,11 +23,9 @@ cover: /assets/2018-03-29-codelabs-under-the-hood/cover.jpg
 
 Après plusieurs mois de travail acharné, nous avons le plaisir de vous annoncer la sortie d'Eleven Codelabs !
 
-```
 ![Codelabs]({{site.baseurl}}/assets/2018-03-28-codelabs-under-the-hood/codelabs.png)
-```
 
-Au début de l'été 2017, l'idée d'une plateforme de tutoriels "Made in Eleven Labs" a commencé à prendre forme, en même temps que la création du projet sur github. En juillet 2017, douze astronautes se rassemblent pour brainstormer autour des features qui définiront le MVP. Le projet vise à proposer du contenu plus complet et plus didactique que les articles déjà proposés sur le [Blog](https://blog.eleven-labs.com/) : des tutoriels à suivre étape après étape.
+Au début de l'été 2017, l'idée d'une plateforme de tutoriels "Made in Eleven Labs" a commencé à prendre forme, en même temps que la création du projet sur github. En juillet 2017, douze astronautes se rassemblent pour brainsto_posts/fr/2018-03-29-codelabs-mais-comment.mdrmer autour des features qui définiront le MVP. Le projet vise à proposer du contenu plus complet et plus didactique que les articles déjà proposés sur le [Blog](https://blog.eleven-labs.com/) : des tutoriels à suivre étape après étape.
 
 ### Quelles features ?
 
@@ -54,7 +52,6 @@ Travailler avec des fichiers statiques permet de tirer avantage des features du 
 
 Un autre avantage est le fait de ne pas avoir à se soucier non plus de la securité grâce à l'aspect serverless et à l'absence de données utilisateurs, ce qui évite beaucoup de contraintes.
 
-
 ### La stack
 
 Les choix sont multiples lorsqu'il s'agit de définir une stack pour votre projet. Mais chez Eleven Labs nous sommes assez fan de l'ecosystème React, qui rend très accessible un développement web "moderne", si l'on considère à quel point cela demande peu d'efforts de construire une expérience utilisateur qualitative. Nous ne couvrirons pas plus en détails cet aspect, car plusieurs articles s'attardent déjà sur React et Redux. Mais vous connaissez le principe ! Webpack, Components, Props, State, Actions, reducers... et tout le toutim.
@@ -341,14 +338,11 @@ Ce que vous venez de lire est une version très simplifiée du process de géné
 
 Et voici la représentation React des composants générés : 
 
-```
 ![React components result]({{site.baseurl}}/assets/2018-03-28-codelabs-under-the-hood/react-result.png)
-```
+
 Voici le HTML correspondant :
 
-```
 ![Html result]({{site.baseurl}}/assets/2018-03-28-codelabs-under-the-hood/html-result.png)
-```
 
 ### Déploiement
 
