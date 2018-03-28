@@ -4,7 +4,7 @@ layout: compress-js
 (function() {
   'use strict';
 
-  const client = algoliasearch('HY0N86ICNI', 'f7b528e3586137bc71821c7d48c68f5d');
+  const client = algoliasearch('HY0N86ICNI', '0813f6820b9b59f8a780f632e36471ef');
   const index = client.initIndex('blog_brouette_labs');
 
   const searchInput = document.getElementById('js-algolia__input');
