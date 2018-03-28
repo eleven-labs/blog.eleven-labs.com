@@ -1,7 +1,7 @@
 # ALGOLIA
 algolia:
-    application_id: '5IGTHBX5JS'
-    index_name:     'blog_eleven'
+    application_id: 'HY0N86ICNI'
+    index_name:     'blog_brouette_labs'
     excluded_files:
         - index.html
         - amp
