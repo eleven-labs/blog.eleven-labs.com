@@ -20,7 +20,7 @@ gem install bundler
 
 **1 - Cloner le projet**
 ```bash
-git clone git@github.com:brouette-labs/brouette-labs.com.git
+git clone git@github.com:brouette-labs/blog.brouette-labs.com.git
 ```
 
 **2 - Installer Jekyll**
