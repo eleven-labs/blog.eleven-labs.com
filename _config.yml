@@ -56,7 +56,7 @@ theme_settings:
 
     # Scripts
     google_analytics: UA-99013054-5
-    disqus_shortname: brouette-labs
+    disqus_shortname: blog_brouette_labs
     muut_community_name:
 
     # Post navigation
