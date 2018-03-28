@@ -165,7 +165,7 @@ function createFactory<P>(type: ComponentClass<P>): Factory<P>;
 
 N.B.: Il y a plusieurs signatures pour ces fonctions, mais ici j'utilise les plus classiques.
 
-Comme on peut le voir, `createElement` accept une string en tant que type, et ce doit être un "tag name" en HTML. Donc si on se base sur ces types dans l'AST généré, on a `Document`, `Paragraph`, `Emphasis` et `Str`. On peut considérer le mapping suivant :
+Comme on peut le voir, `createElement` accepte une string en tant que type, et ce doit être un "tag name" en HTML. Donc si on se base sur ces types dans l'AST généré, on a `Document`, `Paragraph`, `Emphasis` et `Str`. On peut alors considérer le mapping suivant :
 
 ```js
 const AST_NODES = {
@@ -175,9 +175,9 @@ const AST_NODES = {
 };
 ```
 
-The `Str` type is a simple string that has to be added to HTML as a text node, so we don’t need to specify a tag name for it.
+Le type `Str` est une simple string qui doit être ajoutée à l'HTML en tant que noeud de texte, de srote à ce que nous n'ayons pas de tag name à lui spécifier. 
 
-We’re going to use `createFactory` to create a function that returns a component.
+Nous allons utiliser `createFactory` afin de créer une fonction qui retourne un composant.
 
 ```js
 const createComponent = ast => React.createFactory(
@@ -200,10 +200,10 @@ const createComponent = ast => React.createFactory(
 );
 ```
 
-`createComponent` takes an AST and returns a component factory that creates a React component with empty props and empty children (for the moment). But how are we going to fill in the blanks? Since AST is a tree, we need to think about recursivity. `createComponent` will be fed to a loop that walks through the main AST document. So we need to call it again inside the components that has children in order to keep the parsing going until it reaches the leafs (`type === ‘Str’`).
+`createComponent`prend un AST et retourne une usine de composants qui créé à son tour un composant react avec un props et un children vides (pour le moment). Mais comment allons nous remplir les blancs ? L'AST est une arborescence, on doit donc réfléchir en termes de récursivité. `createComponent`sera envoyé vers un loop qui parcourra le document de l'AST principal. On doit donc l'appeler encore à l'intérieur des composants qui ont des children dans le but de maintenir le parsing opérationnel jusqu'à ce qu'il atteigne les leafs (`type === ‘Str’`).
 
+Maintenant jetons un oeil à la fonction walk : 
 
-Take a look at the walk function:
 ```js
 function* walk(ast) {
   if (ast.children) {
@@ -214,7 +214,7 @@ function* walk(ast) {
 }
 ```
 
-It’s a simple `for of` loop that yields the created component, and when it reaches an Str node, it simply yields its value. So when we call `createElement`, we can call the walk generator to parse create the next level of components:
+C'est un simple loop `for of` qui rend le contenu créé, et quand il atteint un noeud Str, il rend simplement sa valeur. Donc lorsqu'on appelle `createElement`, on peut aussi appeler le walk generator, afin qu'il parse le niveau de composants suivant : 
 
 ```js
   ...
@@ -228,7 +228,7 @@ It’s a simple `for of` loop that yields the created component, and when it rea
   ...
 ```
 
-Since `createComponent` can return either a function (`type !== str`) or a string (`type === str`), we cannot have functions in the children of a React component, we need to resolve them in order to extract the real components:
+Comme `createComponent` peut retourner à la fois une fonction (`type !== str`) ou une string (`type === str`), on ne peut pas avoir de fonctions filles d'un composant React, on doit donc les résoudre afin qu'elles puissent extraire les réels composants : 
 
 ```js
 const resolveRenderer = renderer => (
@@ -245,9 +245,10 @@ const resolveRenderer = renderer => (
   }
 ```
 
-#### Putting it all together
+#### Comment assembler tout ça
 
-We created a factory that generates React components based on a markdown text. This factory parses the markdown using `markdown-to-ast`, then it recursively traverses the tree in order to create a content for each component:
+
+On a créé une usine qui génère les composants React depuis du texte en markdown. Cette usine parse ensuite le markdown en utilisant `markdown-to-ast`, et il traverse récursivement l'arbre dans le but de créer un contenu pour chaque composant : 
 
 ```js
 import React from 'react';
@@ -302,35 +303,33 @@ ReactDOM.render(
 );
 ```
 
-This is a very simple version of the component generation process in Codelabs. Let’s see the results:
+Ce que vous venez de lire est une version très simplifiée du process de génération dans codelabs. Voyons ce que ça donne : 
 
-Here is the React representation of the generated components :
+Et voici la représentation React des composants générés : 
 
 ```
 ![React components result]({{site.baseurl}}/assets/2018-03-20-codelabs-under-the-hood/react-result.png)
 ```
-
-And here is the corresponding HTML :
+Voici le HTML correspondant :
 
 ```
 ![Html result]({{site.baseurl}}/assets/2018-03-20-codelabs-under-the-hood/html-result.png)
 ```
 
-### Deployment
+### Déploiement
 
-Le deployement d'une application comme Codelab est assez complexe. En effet, la problématique est que les developpeurs qui travail sur le projet sont dispersé dans tout Paris. Il faut donc avoir un [Continuous Delevery](https://continuousdelivery.com/) simple et rapide. 
+Le déploiement d'une application comme Codelab est assez complexe. En effet, la problématique est que les développeurs qui travaillent sur le projet sont dispersés dans tout Paris. Il faut donc avoir un [Continuous Delevery](https://continuousdelivery.com/) simple et rapide. 
 
-Nous avons donc choisis de faire comme pour notre blog un deployement lors du merge d'une PR dans Master. Ce qui est bien c'est que Travis permet facilement d'utiliser des scripts de deployement dans le Cloud lors de cet évènement.
+Nous avons opté, comme pour notre blog, pour un déploiement lors du merge d'une PR dans Master. Travis permet facilement d'utiliser des scripts de déploiement dans le Cloud lors de cet évènement, notre choix s'est porté sur cette solution.
 
-Nous avons donc choisis d'effectuer le déployement dans Travis. 
+Le déploiement se fait en deux étapes :
 
-Le deployement se fait en deux étapes :
 - d'un coté les assets (Images, mais aussi les différents tutos en markdown) dans un (Bucket Google Cloud)[https://cloud.google.com/storage/]
 - de l'autre un serveur Nginx via [AppEngine](https://cloud.google.com/appengine/) qui affiche le React.
 
 Dans la config travis, que vous trouverez [ici](https://github.com/eleven-labs/codelabs/blob/master/.travis.yml). Vous pouvez voir que dans la partie `deploy` nous utilisons les providers `gae` pour Google App Engine, et `gcs` pour Google Cloud Storage. 
 
-C'est assez simple à mettre en place il suffit de suivre la documentation :
+C'est assez simple à mettre en place, il suffit de suivre la documentation :
 - [`gae`](https://docs.travis-ci.com/user/deployment/google-app-engine/)
 - [`gcs`](https://docs.travis-ci.com/user/deployment/gcs/)
 
