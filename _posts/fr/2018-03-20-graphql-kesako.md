@@ -3,7 +3,7 @@ layout: post
 title: GraphQL, kesako ? 
 lang: fr
 permalink: /fr/graphql-kesako/
-excerpt: "Dans nos architectures micro-services, l'un des nouveaux défis est de réussir à récupérer les données stockées dans les différents micro-services le plus facilement possible. Pour résoudre ce défi, je vous propose d'utilisé GrpahQL. Cette technologie qui est devenu un des buzz word du moment est en vrai très simple à mettre en place. Ne voulant pas faire de jaloux je vous propose de réaliser deux serveurs grpahQL l'un en PHP et l'autre en NodeJs."
+excerpt: "Dans nos architectures micro-services, l'un des nouveaux défis est de réussir à récupérer les données stockées dans les différents micro-services le plus facilement possible. Pour résoudre ce défi, je vous propose d'utiliser GraphQL. Cette technologie qui est devenu un des buzz word du moment est en vrai très simple à mettre en place. Ne voulant pas faire de jaloux je vous propose de réaliser deux serveurs grpahQL l'un en PHP et l'autre en NodeJs."
 authors:
     - captainjojo
 categories:
@@ -27,7 +27,7 @@ La communication sur un serveur GraphQL se fait en `json` à la fois pour l'entr
 
 Le principal intérêt de GraphQL est donc d'un faire une API-Gateway qui va devenir votre seul point d'entré pour récupérer toutes vos données très simplement. 
 
-Le serveur GraphQL aura la charge d'aller cherché les données selon la query. Ce qui permet pour une même requête d'aller chercher la données dans plusieurs type de base de données (exemple: dans un postgreSQL, dans une API, etc ...)
+Le serveur GraphQL aura la charge d'aller chercher les données selon la query. Ce qui permet pour une même requête d'aller chercher la données dans plusieurs type de base de données (exemple: dans un PostgreSQL, dans une API, etc ...)
 
 Il est possible de faire un serveur GraphQL dans n'importe quel technologie, il suffit de suivre le manifest de Facebook.  
 
@@ -46,7 +46,7 @@ L'installation est assez simple, il vous suffit de suivre le tutoriel [suivant](
 
 ## Serveur
 
-Une fois l'IDE choisi vous de choisir le serveur que vous souhaitez utiliser. Il existe de nombreux serveur différents dans cette article j'utilise le serveur de base en nodeJS ([Express GraphQL](http://graphql.org/graphql-js/running-an-express-graphql-server/)). 
+Une fois l'IDE choisi vous de choisir le serveur que vous souhaitez utiliser. Il existe de nombreux serveur différents dans cette article j'utilise le serveur de base en nodeJS ([Express GraphQL](http://graphql.org/graphql-js/running-an-express-graphql-server/)), c'est à vous de choisir. 
 Dans le cadre de projet plus poussé j'utilise soit:
 
 - en Symfony le bundle [Overblog](https://github.com/overblog/GraphQLBundle)
@@ -97,7 +97,7 @@ interface Publish {
 }
 ```
 
-Et donc l'utilisé dans vos types:
+Et donc l'utiliser dans vos types:
 
 ```json
 type Article implements Publish {
@@ -105,7 +105,7 @@ type Article implements Publish {
 }
 ```
 
-Une fois l'ensemble de vos types définit vous devez définir les types principaux:
+Une fois l'ensemble de vos types définit, vous devez définir les types principaux:
 
  - query
  - mutation
@@ -152,9 +152,9 @@ saveArticle(input: ArticleInput!): Article
 Maintenant que vos types sont faits, il faut dire à GraphQL comment allez chercher vos données. 
 Dans chaque librairie il vous faut configurer ce que l'on appel un `resolver`. 
 
-Chaque `resolver` est une fonction qui permet d'aller chercher la données au bonne endroit. 
+Chaque `resolver` est une fonction qui permet d'aller chercher la données au bon endroit. 
 
-La magie des serveurs GraphQL est de savoir que la donnée à déjà été chargé et ne pas la recharger. C'est aussi de permettre via une seule requête GraphQL d'aller cherche dans plusieurs type de base de données.
+La magie des serveurs GraphQL est de savoir que la donnée à déjà été chargée et ne pas la recharger. C'est aussi de permettre via une seule requête GraphQL d'aller chercher dans plusieurs bases.
 
 ## Les plus vs les moins
 
@@ -162,7 +162,7 @@ La magie des serveurs GraphQL est de savoir que la donnée à déjà été charg
 
 Le gros moins de l'utilisation de GraphQL est que l'ensemble des query se font en POST sur un seul endpoint. Elle ne sont donc *pas cachées*.
 
-Comme le cache HTTP utilise l'url comme clé de cache, il n'est pas possible d'utilisé votre cache navigateur.
+Comme le cache HTTP utilise l'url comme clé de cache, il n'est pas possible d'utiliser votre cache navigateur.
 
 L'un des biais que propose GraphQL c'est de faire du cache applicatif qui permet d'éviter l'appel vers les bases de données mais pas le call HTTP.
 
@@ -170,17 +170,17 @@ Le second moins est qu'il faut souvent réécrire l'ensemble de vos types que vo
 
 Le troisième point faible est la diffuculté de metre en place une authentification via GraphQL?
 
-Le dernier problème est la difficulté de monitoré le serveur grpahQL, même si maintenant il existe [Apollo Engine](https://www.apollographql.com/engine)
+Le dernier problème est la difficulté de monitorer le serveur GraphQL, même si maintenant il existe [Apollo Engine](https://www.apollographql.com/engine)
 
 ### Les plus
 
-GraphQL permet de mettre en place facilement une API Gateway. Il permet d'avoir un unique point d'entré pour l'ensemble de vos applications.
+GraphQL permet de mettre en place facilement une API Gateway. Il permet d'avoir un unique point d'entrée pour l'ensemble de vos applications.
 
 Prenons l'exemple de données séparé dans deux API, d'un coté les utilisateurs et de l'autre les articles.  Vous pouvez en *une seule requête* GraphQL récupérer l'ensemble des articles qu'un utilisateur aurait lu.
 
 Le point sympathique est que la documentation se fait automatiquement dans l'IDE tel que GraphIQL qui aura même l'autocomplétion. 
 
-Le plus majeur que c'est le front qui gère ce qu'il a besoin ce qui limite le nombre de call HTTP. Il arrive assez courament que pour afficher une page complexe avec une API Rest il faut 7 ou 8 call API, avec GraphQL c'est 1. Le gain de performance est donc assez sympa.
+Le plus majeur que c'est le front qui gère ce qu'il a besoin ce qui limite le nombre de call HTTP. Il arrive assez couramment que pour afficher une page complexe avec une API Rest il faut 7 ou 8 call API, avec GraphQL c'est 1. Le gain de performance est donc assez sympa.
 
 ## Conclusion
 
