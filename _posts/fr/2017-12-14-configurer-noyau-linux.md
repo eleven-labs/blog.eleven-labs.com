@@ -16,6 +16,8 @@ tags:
 cover: /assets/2017-12-14-configuring-linux-kernel/cover.jpg
 ---
 
+Cette article fait suite à un article intitulé [Je comprends mon noyau GNU/Linux (partie 1)]({{site.baseurl}}/fr/comprendre-kernel-linux/) et en dépend. Si vous ne l'avez pas lu, je vous invite à le faire.
+
 Maintenant que nous avons compris de façon générale comment fonctionnait le noyau Linux dans le précédent article, voyons comment le configurer afin, à terme, de le compiler et l'utiliser.
 
 Je considère dorénavant que votre choix est fait sur comment compiler votre Kernel par l'usage d'une des solutions suivantes :
@@ -253,3 +255,8 @@ Jouez, lisez les différentes aides, utilisez abondamment vos moteurs de recherc
 Nous verrons dans le prochain article comment compiler notre noyau.
 En attendant, jouez avec les différentes options, et essayez d'apprendre de votre matériel et du kernel.
 Si vous avez tenté d'optimiser au maximum votre kernel, votre première compilation sera probablement défectueuse :D
+
+Cette article est le second d'une série de trois. Vous pouvez retrouver le précédent et le suivant ci-dessous :
+
+- [Je comprends mon noyau GNU/Linux (partie 1)]({{site.baseurl}}/fr/comprendre-kernel-linux/)
+- [Je compile mon noyau GNU/Linux (partie 3)]({{site.baseurl}}/fr/compiler-kernel-linux/)

@@ -16,6 +16,8 @@ tags:
 cover: /assets/2017-12-15-compiling-linux-kernel/cover.jpg
 ---
 
+Cette article fait suite à un article intitulé [Je configure mon noyau GNU/Linux (partie 2)]({{site.baseurl}}/fr/configurer-kernel-linux/) et en dépend. Si vous ne l'avez pas lu, je vous invite à le faire.
+
 Le moment tant attendu est finalement arrivé, il est tant de : compiler, installer, tester (kernel-paniquer, recompiler, réinstaller, retester).
 
 ## Compilation
@@ -184,3 +186,8 @@ Il vaut mieux avoir trop de Kernel Panic et savoir comment les résoudre, que ne
 L'avantage c'est que le Kernel évolue toujours !
 Des drivers & autres options sont ajoutés à chaque nouvelle version, de nouveaux devices/matériels sont créés, et de nouveaux matériels sont donc supportés !
 C'est donc une source intarissable d'apprentissage !
+
+Cette article est le dernier d'une série de trois. Vous pouvez retrouver les précédents ci-dessous :
+
+- [Je comprends mon noyau GNU/Linux (partie 1)]({{site.baseurl}}/fr/comprendre-kernel-linux/)
+- [Je configure mon noyau GNU/Linux (partie 2)]({{site.baseurl}}/fr/configurer-kernel-linux/)
