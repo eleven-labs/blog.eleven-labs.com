@@ -55,7 +55,7 @@ theme_settings:
     corporate_logo: /img/follow/eleven.svg
 
     # Scripts
-    google_analytics: UA-99013054-1
+    google_analytics: UA-99013054-5
     disqus_shortname: brouette-labs
     muut_community_name:
 
