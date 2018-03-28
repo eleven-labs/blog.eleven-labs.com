@@ -22,14 +22,14 @@ after_success:
 before_deploy:
     - bundle exec jekyll build
     - pip install --user awscli
-    - aws s3 rm s3://brouette-labs.com --recursive
+    - aws s3 rm s3://blog.brouette-labs.com --recursive
 
 deploy:
     - provider: s3
       access_key_id: $AWS_ACCESS_KEY_ID
       secret_access_key: $AWS_SECRET_ACCESS_KEY
       region: $AWS_DEFAULT_REGION
-      bucket: brouette-labs.com
+      bucket: blog.brouette-labs.com
       local_dir: _site
       skip_cleanup: true
       on:
