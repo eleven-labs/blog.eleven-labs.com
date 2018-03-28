@@ -8,19 +8,17 @@ lang: en
 permalink: /codelabs-under-the-hood/
 categories:
     - React
-    - Redux
     - Static site generation
     - Markdown
     - AST
     - App engine
 tags:
     - React
-    - Redux
     - Static site generation
     - Markdown
     - AST
     - App engine
-cover: /assets/2018-03-20-codelabs-under-the-hood/cover.jpg
+cover: /assets/2018-03-29-codelabs-under-the-hood/cover.jpg
 ---
 
 Après plusieurs mois de travail acharné, nous avons le plaisir de vous annoncer la sortie d'Eleven Codelabs !
@@ -70,11 +68,45 @@ Nous voulions garder quelque chose de simple, donc nous avons gardé le process 
 
 Un tutoriel est structuré, dans son dossier,  par les fichiers suivants :
 
-- index.json
-- index.md
-- step1.md
-- step2.md
-- …
+```txt
+├── course
+|   ├── index.json
+|   ├── index.md
+|   ├── step1.md
+|   ├── step2.md
+|   ├── ...
+```
+
+Le ficher `index.json` contient les metadata d'un tutoriel, voici un exemple :
+
+```json
+{
+  "title": "GraphQL with Apollo",
+  "permalink": "/en/graphql-with-apollo/",
+  "excerpt": "In this tutorial we are going to build a GraphQL server using the Apollo framework",
+  "slug": "graphql-with-apollo",
+  "stepTitles": [
+    "Introduction",
+    "Install GraphQL server",
+    "Configure the Database",
+    "Create GraphQL types",
+    "Resolve queries",
+    "Resolve mutations"
+  ],
+  "date": "2018-03-20",
+  "cover": "/assets/2018-03-20-graphql-with-apollo/cover.jpg",
+  "authors": [
+    {
+      "name": "Jonathan Jalouzot",
+      "username": "captainjojo"
+    }
+  ]
+}
+```
+
+#### Comment charger un tutoriel ?
+
+Le chargement d'un tutoriel se fait en récupérant les fichiers Markdown via des appels `XMLHttpRequest`, le fait que les fichier soient stockés localement, permet d'y accéder statiquement. Quand un lecteur choisit un tutoriel, nous lazyloadons les fichiers `* .md` à la demande de l'utilisateur.
 
 ### Génération des composants react
 
