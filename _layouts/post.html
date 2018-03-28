@@ -10,12 +10,12 @@ layout: default
             <h1 class="page-heading-title">{{ page.title }}</h1>
             <span class="meta">
                 <span class="meta-item">
-                    <i class="fa fa-fw fa-calendar"></i> {% include date_translate.html object=page.date %} 
+                    <i class="fa fa-fw fa-calendar"></i> {% include date_translate.html object=page.date %}
                 </span>
                 <span class="meta-item">
                     <i class="fa fa-fw fa-clock-o">
                         <span class="visually-hidden">{% translate global.estimated_reading_time %}</span>
-                    </i> {% include reading_time.html content=content %} 
+                    </i> {% include reading_time.html content=content %}
                 </span>
                 {% include author_link.html authors=page.authors %}
             </span>
@@ -48,7 +48,6 @@ layout: default
 </div>
 {% endif %}
 {% include links.html %}
-{% include newsletter_link.html %}
 <!-- Disqus -->
 {% if site.theme_settings.disqus_shortname %}
 <section class="slice">
