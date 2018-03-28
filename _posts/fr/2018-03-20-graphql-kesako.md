@@ -15,7 +15,7 @@ cover: /assets/2018-03-20-graphql-kesako/cover.jpeg
 ---
 Dans nos architectures micro-services, l'un des nouveaux défis est de réussir à récupérer les données stockées dans les différents micro-services le plus facilement possible. 
 
-Pour résoudre ce défi, je vous propose d'utilisé GrpahQL. Cette technologie qui est devenu un des buzz word du moment est en vrai très simple à mettre en place. Ne voulant pas faire de jaloux je vous propose de réaliser deux serveurs grpahQL l'un en PHP et l'autre en NodeJs.
+Pour résoudre ce défi, je vous propose d'utilisé GraphQL. Cette technologie qui est devenu un des buzz word du moment est en vrai très simple à mettre en place. Ne voulant pas faire de jaloux je vous propose de réaliser deux serveurs GraphQL l'un en PHP et l'autre en NodeJs.
 
 ## GraphQL c'est quoi ?
 
@@ -23,7 +23,7 @@ GraphQL est un language de requête initié par Facebook en 2012 et développé 
 
 GraphQL **ne stocke donc pas** de données. Il va seulement décrire la donnée et savoir comment allez la récupérer sur vos différentes applications backend. 
 
-La communication sur un serveur GraphQL se fait en `json` à la fois pour l'entré et la sortie.
+La communication sur un serveur GraphQL se fait en `json` à la fois pour l'entrée et la sortie.
 
 Le principal intérêt de GraphQL est donc d'un faire une API-Gateway qui va devenir votre seul point d'entré pour récupérer toutes vos données très simplement. 
 
