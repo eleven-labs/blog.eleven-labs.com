@@ -31,7 +31,7 @@ Salut ami astronaute ! Si tu es novice sur l'utilisation de gradle, et ne l'util
 
 ## Build Type
 
-Tout d'abord, avant de voir ce qu'il est possible de faire, regardons ce qui est deja fait à la création d'un projet android :
+Tout d'abord, avant de voir ce qu'il est possible de faire, regardons ce qui est deja fait à la création d'un projet android. Si vous regardez votre projet, vous devriez voir deux fichiers build.gradle. Le premier va avoir pour rôle de gérer les informations communes à tout vos modules présent dans votre projet. Il est donc souvent utilisés pour gérer les répertoires d'où viennent vos dépendances, pour définir des variables communes à tout vos modules de types la version d'android minimum, voir la version de gradle utilisée et j'en passe mais ce n'est pas ce fichier qui va nous intéresser. Nous allons nous intéresser au deuxieme fichier qui correspond à notre module applicatif. Jetons y un oeil :
 
 ![Gradle init]({{site.baseurl}}/assets/2018-03-28-gestion-d-environnement-avec-gradle/I1.jpg)
 
@@ -41,11 +41,11 @@ Ici modifions un peu le fichier, nous allons donner un nom de package différent
 
 ![Gradle minifyEnabled]({{site.baseurl}}/assets/2018-03-28-gestion-d-environnement-avec-gradle/I2.jpg)
 
-Géneralement, notre version realease va signer l'application. Nous allons donc définir une configuration de signature, signingConfigs, à notre buildtype release pour signer automatiquement notre apk à la compilation ! (Je passe à la trappe la création d'une clé pour signer l'apk, nous éloignant un peu du sujet principal, vous trouverez tout ce qu'il vous faut [ici](https://developer.android.com/studio/publish/app-signing.html) )
+Géneralement, notre buildType realease va signer l'application, il est aussi possible que vous ayez besoin de le faire en debug, mais disons que globalement c'est plus souvent un role qui incombe au buildType release. Nous allons donc définir une configuration de signature, signingConfigs, à notre buildtype release pour signer automatiquement notre apk à la compilation ! (Je passe à la trappe la création d'une clé pour signer l'apk, nous éloignant un peu du sujet principal, vous trouverez tout ce qu'il vous faut [ici](https://developer.android.com/studio/publish/app-signing.html) )
 
 ![Gradle signingConfig]({{site.baseurl}}/assets/2018-03-28-gestion-d-environnement-avec-gradle/I3.jpg)
 
-## Flavor & Dimension
+## Flavor & Flavor Dimension
 
 Bon jusque là, rien de bien fou, on à séparé nos deux versions d'applications. Maintenant, mettons un peu plus de complexité !
 Imaginons que vous ayez différents environnements pour votre application qui dépendent d'un serveur différent à chaque fois, une version de Dev, de PreProd et de Prod. Gradle vous permet de gérer ces multiples configurations sans avoir à préciser quoi que ce soit dans vos classes Java ! Je vous montre ? Allez, on va donc déclarer ce qu'on appelle une dimension de flavor, ici "server" ! 
@@ -57,7 +57,7 @@ Une fois cette dimension déclarée, nous allons créer nos flavors, Prod/Prepro
 ![Gradle flavor]({{site.baseurl}}/assets/2018-03-28-gestion-d-environnement-avec-gradle/I5.jpg)
 
 Après avoir sync le projet, vous devriez voir apparaitre dans vos Build Variants les 6 builds ( 3 flavors x 2 build types ) !
-Mais la puissance des dimensions ne s'arrete pas là !
+Mais la puissance des flavors ne s'arrete pas là !
 Vous pouvez en effet rajouter des dimensions, et multiplier la modulation de votre application. Prenons un exemple simple, imaginons qu'en plus de travailler sur plusieurs environnements, vous ayez aussi différentes versions à devoir mettre à disposition sur le store, du type une application démo et une application complète, ou même une application personnalisée pour un client A et une autre version personnalisée pour un client B. Rien de plus simple ! On va définir une deuxième dimension, et défnir nos deux flavors ! 
 À noter tout de même qu'il y a une hiérarchie dans l'ordre de déclaration de vos dimensions. La première dimension déclarée étant plus importante que la seconde etc...
 
