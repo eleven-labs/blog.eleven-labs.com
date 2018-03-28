@@ -23,7 +23,9 @@ cover: /assets/2018-03-29-codelabs-under-the-hood/cover.jpg
 
 Après plusieurs mois de travail acharné, nous avons le plaisir de vous annoncer la sortie d'Eleven Codelabs !
 
-[image]
+```
+![Codelabs]({{site.baseurl}}/assets/2018-03-28-codelabs-under-the-hood/codelabs.png)
+```
 
 Au début de l'été 2017, l'idée d'une plateforme de tutoriels "Made in Eleven Labs" a commencé à prendre forme, en même temps que la création du projet sur github. En juillet 2017, douze astronautes se rassemblent pour brainstormer autour des features qui définiront le MVP. Le projet vise à proposer du contenu plus complet et plus didactique que les articles déjà proposés sur le [Blog](https://blog.eleven-labs.com/) : des tutoriels à suivre étape après étape.
 
@@ -38,15 +40,15 @@ Après la réunion de brainstorm, les features retenues sont les suivantes :
 
 ### Organization
 
-Write something here ...
+CodeLabs est un “side-project”, c’est à dire un projet développé par des volontaires sur leur temps libre, il faut donc s’assurer de garder la motivation après la phase de début de conception qui est toujours la plus excitante.
+
+Au delà du maintien de la motivation, pour Codelabs, nous avions un double objectif : obtenir la participation de tous et l’avancée rapide du projet. Mais alors comment concilier ces deux objectifs ? Pour en savoir plus sur la démarche adoptée, vous pouvez vous rendre sur l'article de Maxime
 
 ### Static site generation
 
 Créer une application comme celle-ci implique de se confronter à des problématiques complexes, comme le fait de monter une architecture server-side, en maintenant la base de données et en utilisant des moteurs de template. Pour se soustraire à ces difficultés, nous avons opté pour une technique de génération de site statique.
 
 Le concept de génération de site statique repose sur l'aspect serverless d'une application. Quand un utilisateur appelle une page, l'application va chercher le contenu depuis des fichiers stockés en local, plutôt que depuis des scripts server-side, qui eux iraient extraire les données depuis des bases distantes. L'absence de requêtes vers des bases de données, de traitement côté serveur, et de moteurs de templates rendent l'application particulièrement rapide.
-
-[image]
 
 Travailler avec des fichiers statiques permet de tirer avantage des features du SCM (Source Code Management, ce qui permet de controller le versioning du contenu. C'est extrêmement prometteur car en se mettant à la place d'un auteur, on  ne peut qu'apprécier la possibilité de garder une trace de l'avancement de l'écriture des tutoriels, de pouvoir rétablir une modification. Dans la pratique c'est toujours mieux de ne pas avoir à se soucier de la perte de son contenu.
 
@@ -340,12 +342,12 @@ Ce que vous venez de lire est une version très simplifiée du process de géné
 Et voici la représentation React des composants générés : 
 
 ```
-![React components result]({{site.baseurl}}/assets/2018-03-20-codelabs-under-the-hood/react-result.png)
+![React components result]({{site.baseurl}}/assets/2018-03-28-codelabs-under-the-hood/react-result.png)
 ```
 Voici le HTML correspondant :
 
 ```
-![Html result]({{site.baseurl}}/assets/2018-03-20-codelabs-under-the-hood/html-result.png)
+![Html result]({{site.baseurl}}/assets/2018-03-28-codelabs-under-the-hood/html-result.png)
 ```
 
 ### Déploiement
