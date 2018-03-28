@@ -7,13 +7,13 @@ Si votre issue permet la correction d'un bug, il faut ajouter le label `fix` à 
 Si votre issue permet de mettre en place une nouvelle fonctionnalité , il faut ajouter le label `feat`à votre issue.
 
 Si vous ne pouvez pas remplir la partie spécification technique, il faut ajouter le label `to be specified`.
-Une fois le cadrage technique validé l'issue devra être complétée, elle est alors validée et envoyée dans dans le projet suivant https://github.com/orgs/eleven-labs/projects/1.
+Une fois le cadrage technique validé l'issue devra être complétée, elle est alors validée et envoyée dans dans le projet suivant https://github.com/orgs/brouette-labs/projects/1.
 
 ------------------------------------------------------------
 DEVELOPPER UNE ISSUE
 ------------------------------
 
-Si vous souhaitez développer une issue, rien de plus simple allez sur l'url suivante https://github.com/orgs/eleven-labs/projects/1 et déplace l'issue dans `Doing`.
+Si vous souhaitez développer une issue, rien de plus simple allez sur l'url suivante https://github.com/orgs/brouette-labs/projects/1 et déplace l'issue dans `Doing`.
 Vous pouvez ensuite développer, une fois le développement terminer vous devez faire une pull request.
 
 ** ATTENTION** le naming de votre branche est important.
@@ -31,7 +31,7 @@ git checkout -b feat/NUMERO-D-ISSUE-TITRE
 
 Ensuite faite votre pull request avec les labels `feat`et `to be validated` .
 
-Il faut ensuite déplacer votre issue dans le projet https://github.com/orgs/eleven-labs/projects/1 dans la colonne `Review`.
+Il faut ensuite déplacer votre issue dans le projet https://github.com/orgs/brouette-labs/projects/1 dans la colonne `Review`.
 
 ----------------------------------------
 CODE REVIEW

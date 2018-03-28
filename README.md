@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/eleven-labs/blog.eleven-labs.com.svg?branch=master)](https://travis-ci.org/eleven-labs/blog.eleven-labs.com)
-
 Participer à notre blog
 ===================
 
-Bienvenue sur le blog d'[ElevenLabs](https://blog.eleven-labs.com), il s'agit d'un site en Jekyll sur lequel **tout le monde** peut participer.
+Bienvenue sur le blog de [BrouetteLabs](https://brouette-labs.com), il s'agit d'un site en Jekyll sur lequel **tout le monde** peut participer.
 
 ----------
 
@@ -22,12 +20,12 @@ gem install bundler
 
 **1 - Cloner le projet**
 ```bash
-git clone git@github.com:eleven-labs/blog.eleven-labs.com.git
+git clone git@github.com:brouette-labs/blog.brouette-labs.com.git
 ```
 
 **2 - Installer Jekyll**
 ```bash
-cd blog.eleven-labs.com && bundle install
+cd brouette-labs.com && bundle install
 ```
 **3 - Lancer le blog**
 ```bash
@@ -59,7 +57,7 @@ cd _authors && touch login.md
 Veuillez utiliser le template d'auteur suivant. Vous pouvez copier le template disponible dans le fichier `_authors/TEMPLATE-AUTOR`
 
 ```md
----
+--- 
 layout: author
 login: votre_login
 name: Prénom Nom

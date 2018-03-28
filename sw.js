@@ -79,7 +79,7 @@ layout: compress-js
     e.notification.close();
 
     e.waitUntil(
-      clients.openWindow('https://blog.eleven-labs.com/')
+      clients.openWindow('https://brouette-labs.com/')
     );
   });
 })();
