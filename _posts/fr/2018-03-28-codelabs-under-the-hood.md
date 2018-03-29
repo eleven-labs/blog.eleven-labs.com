@@ -352,7 +352,7 @@ Nous avons opté, comme pour notre blog, pour un déploiement lors du merge d'un
 
 Le déploiement se fait en deux étapes :
 
-- d'un coté les assets (Images, mais aussi les différents tutos en markdown) dans un (Bucket Google Cloud)[https://cloud.google.com/storage/]
+- d'un coté les assets (Images, mais aussi les différents tutos en markdown) dans un [Bucket Google Cloud](https://cloud.google.com/storage/)
 - de l'autre un serveur Nginx via [AppEngine](https://cloud.google.com/appengine/) qui affiche le React.
 
 Dans la config travis, que vous trouverez [ici](https://github.com/eleven-labs/codelabs/blob/master/.travis.yml). Vous pouvez voir que dans la partie `deploy` nous utilisons les providers `gae` pour Google App Engine, et `gcs` pour Google Cloud Storage. 
