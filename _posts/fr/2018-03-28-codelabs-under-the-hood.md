@@ -36,7 +36,7 @@ Après la réunion de brainstorm, les features retenues sont les suivantes :
 - Un moteur de recherche
 - Le display des progrès de lecture de chaque cours
 
-### Organization
+### Organisation
 
 CodeLabs est un “side-project”, c’est à dire un projet développé par des volontaires sur leur temps libre, il faut donc s’assurer de garder la motivation après la phase de début de conception qui est toujours la plus excitante.
 
