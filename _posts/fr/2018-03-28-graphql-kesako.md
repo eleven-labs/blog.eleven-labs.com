@@ -11,7 +11,7 @@ categories:
     - graphql
 tags:
     - javascript
-cover: /assets/2018-03-20-graphql-kesako/cover.jpeg
+cover: /assets/2018-03-28-graphql-kesako/cover.jpeg
 ---
 Dans nos architectures micro-services, l'un des nouveaux défis est de réussir à récupérer les données stockées dans les différents micro-services le plus facilement possible. 
 
