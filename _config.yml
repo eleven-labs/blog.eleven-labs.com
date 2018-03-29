@@ -28,7 +28,7 @@ theme_settings:
 
     # Header and footer
     header_text_bg_image: /img/bg-header.png
-    footer_text: To infinity and beyond !
+    footer_text: Une blog, une brouette
 
     # Icons
     rss: /feed.xml
