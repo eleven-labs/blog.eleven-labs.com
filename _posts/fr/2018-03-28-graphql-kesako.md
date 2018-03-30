@@ -13,9 +13,9 @@ tags:
     - javascript
 cover: /assets/2018-03-28-graphql-kesako/cover.jpeg
 ---
-Dans nos architectures micro-services, l'un des nouveaux défis est de réussir à récupérer les données stockées dans les différents micro-services le plus facilement possible. 
+Dans nos architectures micro-services, l'un des nouveaux défis est de réussir à récupérer les données stockées dans les différents micro-services le plus facilement possible.
 
-Pour résoudre ce défi, je vous propose d'utilisé GraphQL. Cette technologie qui est devenu un des buzz word du moment est en vrai très simple à mettre en place. Ne voulant pas faire de jaloux je vous propose de réaliser deux serveurs GraphQL l'un en PHP et l'autre en NodeJs.
+Pour résoudre ce défi, je vous propose d'utiliser GraphQL. Cette technologie qui est devenu un des buzz word du moment est en vrai très simple à mettre en place. Ne voulant pas faire de jaloux je vous propose de réaliser deux serveurs GraphQL l'un en PHP et l'autre en NodeJs.
 
 ## GraphQL c'est quoi ?
 
@@ -25,11 +25,11 @@ GraphQL **ne stocke donc pas** de données. Il va seulement décrire la donnée 
 
 La communication sur un serveur GraphQL se fait en `json` à la fois pour l'entrée et la sortie.
 
-Le principal intérêt de GraphQL est donc d'un faire une API-Gateway qui va devenir votre seul point d'entré pour récupérer toutes vos données très simplement. 
+Le principal intérêt de GraphQL est donc d'un faire une API-Gateway qui va devenir votre seul point d'entrée pour récupérer toutes vos données très simplement.
 
 Le serveur GraphQL aura la charge d'aller chercher les données selon la query. Ce qui permet pour une même requête d'aller chercher la données dans plusieurs type de base de données (exemple: dans un PostgreSQL, dans une API, etc ...)
 
-Il est possible de faire un serveur GraphQL dans n'importe quel technologie, il suffit de suivre le manifest de Facebook.  
+Il est possible de faire un serveur GraphQL dans n'importe quel technologie, il suffit de suivre le manifest de Facebook.
 
 Dans n'importe qu'elle technologie les étapes de construction d'un serveur GraphQL sont les suivantes.
 
@@ -150,9 +150,9 @@ saveArticle(input: ArticleInput!): Article
 ## Resolver
 
 Maintenant que vos types sont faits, il faut dire à GraphQL comment allez chercher vos données. 
-Dans chaque librairie il vous faut configurer ce que l'on appel un `resolver`. 
+Dans chaque librairie il vous faut configurer ce que l'on appel un `resolver`.
 
-Chaque `resolver` est une fonction qui permet d'aller chercher la données au bon endroit. 
+Chaque `resolver` est une fonction qui permet d'aller chercher la donnée au bon endroit.
 
 La magie des serveurs GraphQL est de savoir que la donnée a déjà été chargée et ne pas la recharger. C'est aussi de permettre via une seule requête GraphQL d'aller chercher dans plusieurs bases.
 
