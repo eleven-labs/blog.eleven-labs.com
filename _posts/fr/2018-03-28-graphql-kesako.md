@@ -158,6 +158,8 @@ La magie des serveurs GraphQL est de savoir que la donnée a déjà été charg�
 
 ## Les plus vs les moins
 
+Regardons rapidement les avantages et inconvenients de cette tehcnologie.
+
 ### Les moins
 
 Le gros moins de l'utilisation de GraphQL est que l'ensemble des queries se font en POST sur un seul endpoint. Elle ne sont donc *pas cachées*.
