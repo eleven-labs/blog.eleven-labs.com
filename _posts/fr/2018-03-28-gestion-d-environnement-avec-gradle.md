@@ -18,7 +18,7 @@ tags:
     - gradle
     - flavor
     - environnement
-cover: 
+cover: /assets/2018-03-28-gestion-d-environnement-avec-gradle/cover.jpg
 ---
 
 
