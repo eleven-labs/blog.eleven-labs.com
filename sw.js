@@ -54,32 +54,4 @@ layout: compress-js
       ));
   });
 
-  self.addEventListener('push', (e) => {
-    console.log('Push message', e);
-
-    {% if site.lang == 'fr' %}
-      const title = 'Un nouvel article est disponible sur le blog d\'Eleven-labs';
-      const body = 'Rendez vous sur notre site';
-    {% elsif site.lang == 'en' %}
-      const title = 'New article in Eleven-labs blog';
-      const body = 'Go to the web site';
-    {% endif %}
-
-    e.waitUntil(
-      self.registration.showNotification(title, {
-        body,
-        icon: 'img/icons/icon-512x512.png',
-      })
-    );
-  });
-
-  self.addEventListener('notificationclick', (e) => {
-    console.log('[Service Worker] Notification click Received.');
-
-    e.notification.close();
-
-    e.waitUntil(
-      clients.openWindow('https://brouette-labs.com/')
-    );
-  });
 })();
