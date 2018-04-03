@@ -70,6 +70,6 @@ layout: compress-js
       });
     });
 
-    subscribeDevice();
+   
   }
 })();
