@@ -2,7 +2,7 @@
 layout: post
 title: Ta liste des courses avec API Platform
 lang: fr
-excerpt: "API Plateform se veut être un framework complet permettant de créer des projets web se basant sur des APIs orienté ressource"
+excerpt: "API Plateform se veut être un framework complet permettant de créer des projets web se basant sur des APIs orientées ressource"
 authors:
     - vdelpeyroux
 permalink: /fr/ta-liste-des-courses-avec-api-plateform/
@@ -22,19 +22,19 @@ cover: /assets/2018-04-05-api-platform/cover.jpg
 ---
 Dans la continuité de l'article de notre très cher confrère Romain Pierlot sur [Api Platfrom](https://blog.eleven-labs.com/fr/creer-une-api-avec-api-platform/), nous allons essayer de faire le tour des nouvelles fonctionnalités de ce framework, et par la même occasion,  mettre en place une application web, comportant une api `REST Hydra` / `Graphql` avec un backend et un client full Javascript.
 
-Pour les présentations, [API Platform](https://api-platform.com/) se veut être un framework complet permettant de créer des projets web se basant sur des APIs orientés ressource, ce qui est un peu le standard d'architecture des besoins contemporains de notre domaine.
+Pour les présentations, [API Platform](https://api-platform.com/) se veut être un framework complet permettant de créer des projets web se basant sur des APIs orientées ressource, ce qui est un peu le standard d'architecture des besoins contemporains de notre domaine.
 
 ## Installation d'API Platform
 
 Commençons par installer ce framework en local.
 
-Clonons donc ce projet dans notre workspace préféré
+Clonons donc ce projet dans notre workspace préféré :
 
 ```shell
 git clone git@github.com:api-platform/api-platform.git
 cd api-platform
 ```
-et ensuite mettons nous sur la dernière version taguée, au moment où j'écris cet article la dernière version est la v2.2.5 
+et ensuite mettons-nous sur la dernière version taguée. Au moment où j'écris cet article, la dernière version est la v2.2.5
 
 ```shell
 git checkout tags/v2.2.5
@@ -47,7 +47,7 @@ allons donc poper ces conteneurs docker de ce pas.
 docker-compose up -d
 ```
 
-Passons rapidement en vue les images créés
+Passons rapidement en vue les images créées :
 
 ```shell
 docker-compose ps
@@ -63,22 +63,21 @@ Il y a donc 6 conteneurs docker :
  - un conteneur client, contenant un client React/[Redux](https://redux.js.org/)
  - et un conteneur h2-proxy pour orchestrer toutes ces images en local
 
-Autant vous dire qu'au niveau des technos, ils ont dépensé sans compter
+Autant vous dire qu'au niveau des technos, ils ont dépensé sans compter...
 
 Ouvrons notre navigateur pour aller à l'url [https://localhost](https://localhost)
 
-vous allez devoir accepter d'ajouter une exception de sécurité dans votre navigateur par rapport au certificat TLS qui a été générer au moment de l'installation
+Vous allez devoir accepter d'ajouter une exception de sécurité dans votre navigateur par rapport au certificat TLS qui a été généré au moment de l'installation.
 
-si vous voyez cette belle page d'accueil, c'est que tout s'est bien passé !
+Si vous voyez cette belle page d'accueil, c'est que tout s'est bien passé !
 
 ![homepage]({{ site.baseurl }}/assets/2018-04-05-api-platform/ready.png)
 
 ## Création de modèle de données
 
-Pour pouvoir créer notre api, il va falloir décrire nos ressources en codant de simple objet PHP avec leurs propriétés;
-Créons pour l'exemple une simple liste de courses, parce que niveau mémoire c'est plus trop ça;
-pour des questions de simplicité on va juste créer une classe shoppingItem et utiliser la vue List que propose le client API Platform que nous verrons plus tard.
-(Mais sachez que les toutes les relations entre entités sont très bine géré)
+Pour pouvoir créer notre api, il va falloir décrire nos ressources en codant de simples objets PHP avec leurs propriétés.
+Créons pour l'exemple une simple liste de courses, parce que niveau mémoire c'est plus trop ça.
+Pour des questions de simplicité on va juste créer une classe shoppingItem et utiliser la vue List que propose le client API Platform que nous verrons plus tard (mais sachez que toutes les relations entre entités sont très bien gérées).
 
 
 ```php
@@ -133,21 +132,21 @@ class ShoppingItem
 }
 ```
 
-et on va en profiter pour supprimer la classe php de démo api/src/Entity/Greeting.php
+On va en profiter pour supprimer la classe php de démo api/src/Entity/Greeting.php :
 
 ```shell
 rm ./api/src/Entity/Greeting.php
 ```
 
-et exécuter la commande doctrine pour synchroniser la base de données avec notre nouveau model
+et exécuter la commande doctrine pour synchroniser la base de données avec notre nouveau model :
 
 ```shell
 docker-compose exec php bin/console doctrine:schema:update --force --complete
 ```
 
-le `--complete` effacera la table `gretting` de la base de donnée, ce que la commande ne fait pas par défaut
+Le `--complete` effacera la table `gretting` de la base de données, ce que la commande ne fait pas par défaut.
 
-Maintenant ajoutons l'annotation magique d' API Platform à notre entité pour que le framework puisse détecter les propriétés à exposer par l'api et autoriser les opérations CRUD liés à l'objet 
+Maintenant, ajoutons l'annotation magique d'API Platform à notre entité pour que le framework puisse détecter les propriétés à exposer par l'api et autoriser les opérations CRUD liées à l'objet.
 
 ```php
 <?php
@@ -171,30 +170,29 @@ Et voilà, notre API est ready !
 
 Allons à cette adresse  [https://localhost:8443](https://localhost:8443)
 
-vous devriez voir cette page  qui décrit toutes les actions possibles sur cette ressource :
+Vous devriez voir cette page, qui décrit toutes les actions possibles sur cette ressource :
 
 ![docapi]({{ site.baseurl }}/assets/2018-04-05-api-platform/apidoc.png)
 
-Oh joie! Api Platform intègre NelmioApiDoc Bundle qui permet de documenter vos ressources et par la même occasion de les tester.
-Le format par défaut  de l'api est le [JSON-LD](https://json-ld.org/) avec l'extension [Hydra](http://www.hydra-cg.com/), qui est une version plus évolué que le JSON standard donnant plus d'informations sur la ressource ainsi que les opérations possible sur cette dernière;
-mais l'api supporte également les formats courants tel que le JSON, XML, HAL et très récemment le [graphQL](https://graphql.org/)...que nous allons bien évidement nous empresser d'activer de ce pas !
+Oh joie! Api Platform intègre NelmioApiDoc Bundle, qui permet de documenter vos ressources et par la même occasion de les tester.
+Le format par défaut  de l'api est le [JSON-LD](https://json-ld.org/) avec l'extension [Hydra](http://www.hydra-cg.com/), qui est une version plus évoluée que le JSON standard donnant plus d'informations sur la ressource ainsi que les opérations possibles sur cette dernière. L'api supporte également les formats courants tels que le JSON, XML, HAL et très récemment le [graphQL](https://graphql.org/) ...que nous allons bien évidemment nous empresser d'activer !
 
 
 ## Activer GraphQL
 
-Pour cela, il va falloir installer la librairie [graphql-php](https://github.com/webonyx/graphql-php) 
+Pour cela, il va falloir installer la librairie [graphql-php](https://github.com/webonyx/graphql-php) :
 
 ```shell
 docker-compose exec php composer req webonyx/graphql-php
 ```
-et voilà! L'interface graphique GraphiQL est disponible ici [https://localhost:8443/graphql](https://localhost:8443/graphql)
+Et voilà ! L'interface graphique GraphiQL est disponible ici [https://localhost:8443/graphql](https://localhost:8443/graphql)
 
 ![graphql]({{ site.baseurl }}/assets/2018-04-05-api-platform/graphql.png)
-Rien de mieux pour commencer à se faire les dents sur ce super language
+Rien de mieux pour commencer à se faire les dents sur ce super langage.
 
 ## Le Backend
 
-API Plateform intègre [Admin On Rest](https://github.com/marmelab/admin-on-rest), un client en React avec [material design](https://github.com/material-components/material-components-web) qui se bind directement sur une api et construit ses vue en fonction des ressources disponibles et des opérations permises :
+API Plateform intègre [Admin On Rest](https://github.com/marmelab/admin-on-rest), un client en React avec [material design](https://github.com/material-components/material-components-web) qui se bind directement sur une api, et construit ses vues en fonction des ressources disponibles et des opérations permises :
 [https://localhost:444](https://localhost:444)
 
 ![admin]({{ site.baseurl }}/assets/2018-04-05-api-platform/backend.png)
@@ -205,7 +203,7 @@ En sachant que ce backend est entièrement paramétrable.
 
 Le dernier point que j'aborderai et qui n'est pas des moindres, c'est la génération d'une Progressive Web App avec React/Redux, mais il est également possible de générer une application en [Vue.js](https://vuejs.org/) ou une application en [React Native](https://facebook.github.io/react-native/)
 
-Créons notre application Javascript
+Créons notre application Javascript :
 
 ```shell
 docker-compose exec client generate-api-platform-client
@@ -213,7 +211,7 @@ docker-compose exec client generate-api-platform-client
 
 ![console]({{ site.baseurl }}/assets/2018-04-05-api-platform/consolegen.png)
 
-Ajoutons maintenant les routes et les reducers générés dans index.js comme ceci
+Ajoutons maintenant les routes et les reducers générés dans index.js comme ceci :
 
 ```js
 //client/src/index.js
@@ -258,23 +256,24 @@ registerServiceWorker();
 
 ```
 
-Concernant le choix des librairies nous remarquerons que React Router est utilisé pour la navigation,
-Redux Form pour gérer les formulaires et Redux Thunk pour gérer les requêtes ou autres traitements asynchrones (désolé pour les redux-saga users), avec une gestion des Services Workers
+Concernant le choix des librairies, nous remarquerons que React Router est utilisé pour la navigation,
+Redux Form pour gérer les formulaires et Redux Thunk pour gérer les requêtes ou autres traitements asynchrones (désolé pour les redux-saga users), avec une gestion des Services Workers.
 
 
 Nous pouvons maintenant aller à l'url de la vue `list` de notre ressource `shoppingItem`: [https://localhost/shopping_items/](https://localhost/shopping_items/)
-Parfait, vous avez votre liste de courses en react/redux qui va bien
+Parfait, vous avez votre liste de courses en react/redux qui va bien :
 
 ![listecourse]({{ site.baseurl }}/assets/2018-04-05-api-platform/listcourse.png)
 
 
 ## Pour conclure
  
-Ce framework est vraiment des plus complet, ce que l'on vient d'aborder ne concerne même pas le quart de ce que propose API Platform dans sa globalité, et toutes se basent sur de bonnes pratiques.
+Ce framework est vraiment des plus complets. Ce que l'on vient d'aborder ne couvre même pas le quart de ce que propose API Platform dans sa globalité, et toutes ces possibilités se basent sur de bonnes pratiques.
 
-Le seul point négatif que l'on peut lui trouver c'est son architecture qui est orienté événement, se basant sur le système des events kernel de Symfony;
-l'avantage est que cela donne une grande liberté pour développer de nouvelles fonctionnalité;
-mais devient un inconvénient sur de gros projet où, si l'historique du code, produit par moult développeurs sûrement très bien attentionnés, devient un peu trop conséquent, ça peut très vite partir dans tout les sens, et au final être un enfer à debugger.
+Le seul point négatif que l'on peut lui trouver c'est son architecture qui est orientée événement, se basant sur le système des events kernel de Symfony. L'avantage est que cela donne une grande liberté pour développer de nouvelles fonctionnalités.  
+
+Cela devient un inconvénient sur de gros projet où l'historique du code produit par moult développeurs, sûrement très bien attentionnés, devient un peu trop conséquent. Cela peut très vite partir dans tout les sens, et au final être un enfer à débugger.
 
 ## À venir
-J'aurai aimé vous parler de l'intégration de FOSuser bundle avec l'autentification JWT, des tests en Behat, PHPUnit, déployer son projet API Platform sur un Kubernites cluster en quelques lignes de commande mais le temps me manque, je vous réserve donc cela pour la prochaine fois.
+  
+J'aurais aimé vous parler de l'intégration de FOSuser bundle avec l'autentification JWT, des tests en Behat, PHPUnit, déployer son projet API Platform sur un Kubernites cluster en quelques lignes de commande mais le temps me manque, je vous réserve donc cela pour la prochaine fois.
