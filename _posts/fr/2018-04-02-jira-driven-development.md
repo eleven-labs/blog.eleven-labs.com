@@ -17,3 +17,5 @@ tags:
     - convention
 cover: /assets/2018-04-02-jira-driven-development/cover.jpg
 ---
+
+Dès lors que l'on commence à développer dans une équipe nombreuse pratiquant les codes reviews
