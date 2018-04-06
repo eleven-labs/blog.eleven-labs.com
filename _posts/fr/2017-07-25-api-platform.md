@@ -22,7 +22,7 @@ Dans cet article, nous allons voir ensemble la création d’une API avec Api Pl
 Dans notre article, nous allons créer une API autour d’une seule ressource : _movie._ En effet, nous allons simplement créer une API permettant d’ajouter, supprimer, mettre à jour et récupérer des films.
 
 La première chose à faire consiste à créer notre modèle de données. Un film est composé d’un titre, d’une date de sortie, d’acteurs, d’un réalisateur… Plusieurs propriétés qui sont connues de tous.
-Si l’on parcourt la documentation d’API Platform, on peut voir qu’il nous est possible de générer nos modèles d’après [Schema.org](http://schema.org). Ce dernier permet d’utiliser un langage commun pour définir des ressources de tous les jours (_Book, Organization_, _Person_…){:rel="nofollow noreferrer"}, mais est surtout compris par les moteurs de recherche comme Google ou Yahoo.
+Si l’on parcourt la documentation d’API Platform, on peut voir qu’il nous est possible de générer nos modèles d’après [Schema.org](http://schema.org). Ce dernier permet d’utiliser un langage commun pour définir des ressources de tous les jours (_Book, Organization_, _Person_…), mais est surtout compris par les moteurs de recherche comme Google ou Yahoo.
 
 Il existe donc l’entité _Movie_ au sein de _Schema.org_, avec de nombreuses propriétés qui nous intéressent. Pour la simplicité de lecture, nous allons en sélectionner uniquement quelques-unes.
 
@@ -51,7 +51,8 @@ Enfin, il nous reste à mettre à jour la base de données pour pouvoir jouer av
 bin/console do:sche:update --force vendor/bin/schema generate-types src/ app/config/schema.yml
 ```
 
-![](/assets/2017-07-25-api-platform/api_platform_movies.png)En accédant à la documentation, vous apercevrez que la ressource _Movie_ est maintenant là, accompagnée de toutes les opérations de création, modification, suppression.
+![](/assets/2017-07-25-api-platform/api_platform_movies.png)
+En accédant à la documentation, vous apercevrez que la ressource _Movie_ est maintenant là, accompagnée de toutes les opérations de création, modification, suppression.
 Je vous laisse jouer avec l’interface et la documentation auto-générée avant de passer à une fonctionnalité très utilisée dans les API de listing : les filtres.
 
 ## Filtres et sort
