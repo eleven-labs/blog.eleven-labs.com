@@ -2,10 +2,10 @@
 layout: post
 title: Ta liste des courses avec API Platform
 lang: fr
-excerpt: "API Plateform se veut être un framework complet permettant de créer des projets web se basant sur des APIs orientées ressource"
+excerpt: "API Platform se veut être un framework complet permettant de créer des projets web se basant sur des APIs orientées ressource"
 authors:
     - vdelpeyroux
-permalink: /fr/ta-liste-des-courses-avec-api-plateform/
+permalink: /fr/ta-liste-des-courses-avec-api-platform/
 categories:
     - framework
     - api
@@ -192,7 +192,7 @@ Rien de mieux pour commencer à se faire les dents sur ce super langage.
 
 ## Le Backend
 
-API Plateform intègre [Admin On Rest](https://github.com/marmelab/admin-on-rest), un client en React avec [material design](https://github.com/material-components/material-components-web) qui se bind directement sur une api, et construit ses vues en fonction des ressources disponibles et des opérations permises :
+API Platform intègre [Admin On Rest](https://github.com/marmelab/admin-on-rest), un client en React avec [material design](https://github.com/material-components/material-components-web) qui se bind directement sur une api, et construit ses vues en fonction des ressources disponibles et des opérations permises :
 [https://localhost:444](https://localhost:444)
 
 ![admin]({{ site.baseurl }}/assets/2018-04-05-api-platform/backend.png)
