@@ -50,4 +50,21 @@ Gilles [Le prénom a été changé, NDLR], a accepté de témoigner sous couvert
 >
 > B-L : Vous pouvez développer ?
 >
-> G. : 
+> G. : Oui, c'était un de mes collègue, pour ne rien vous cacher un vrai grammar-nazi du code. Il voulait que je renomme ma variable en `addresseIds` donc addresse au singulier pour coller au fait que l'on parle de la ressource. Dans cette PR, il m'a fait différents retours pour autant de choses insignifiantes. L'échange sur github à donc duré pas loin d'une semaine. D'autre part, j'avais la pression de ma hiérarchie et de l'équipe Produit qui attendaient que cette feature passe en production donc que la PR soit mergée au plus vite. Des exemples comme celui-ci j'en ai beaucoup. C'est très frustrant.
+
+Comme vous pouvez le voir dans cette succincte interview, la tension peut aisément se développer dans un tel contexte. Et nous ne parlions avec Gilles que du simple nommage d'une variable, le problème est le même pour tous les types de nommage : classe, méthodes, etc.
+
+### Convention de nom des branches
+
+Un peu plus fourbe, les conventions de commit. Faut-il suivre le sacro-saint manifeste d'[AngularJS](https://gist.github.com/stephenparish/9941e89d80e2bc58a153), ou alors est-il mieux de créer sa propre norme.
+
+Qu'est-ce qu'un fix, qu'est-ce qu'un hotfix même. Comment faire lorsque le scope est trop large car il a été mal découpé en amont. Autant de questions auxquelles nous avons déjà été confronté chez Brouette-Labs de part nos expériences passées.
+
+Jonathan nous raconte :
+> Une fois j'ai fait une PR, qui a été rejected parce que j'avais mispelled un mot, j'avais écrit `fix: typoes` au lieu de `fix: typos`.
+
+
+### Conventions de commit
+
+
+## Axes de réfléxion
