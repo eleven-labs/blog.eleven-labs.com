@@ -19,25 +19,25 @@ Pour résoudre ce défi, je vous propose d'utiliser GraphQL. Cette technologie q
 
 ## GraphQL c'est quoi ?
 
-GraphQL est un language de requête initié par Facebook en 2012 et développé en 2015. [Facebook Manifest](http://facebook.github.io/graphql/October2016/). GraphQL permet de se plugguer à n'importe quel type de base de données ou d'API. Le but de GraphQL est de décrire les données et les fonctions disponible entre les applications client-server.
+GraphQL est un langage de requête initié par Facebook en 2012 et développé en 2015. [Facebook Manifest](http://facebook.github.io/graphql/October2016/). GraphQL permet de se plugguer à n'importe quel type de base de données ou d'API. Le but de GraphQL est de décrire les données et les fonctions disponibles entre les applications client-server.
 
-GraphQL **ne stocke donc pas** de données. Il va seulement décrire la donnée et savoir comment allez la récupérer sur vos différentes applications backend. 
+GraphQL **ne stocke donc pas** de données. Il va seulement décrire la donnée et savoir comment aller la récupérer sur vos différentes applications backend. 
 
 La communication sur un serveur GraphQL se fait en `json` à la fois pour l'entrée et la sortie.
 
-Le principal intérêt de GraphQL est donc d'un faire une API-Gateway qui va devenir votre seul point d'entrée pour récupérer toutes vos données très simplement.
+Le principal intérêt de GraphQL est donc d'en faire une API-Gateway qui va devenir votre seul point d'entrée pour récupérer toutes vos données très simplement.
 
-Le serveur GraphQL aura la charge d'aller chercher les données selon la query. Ce qui permet pour une même requête d'aller chercher la données dans plusieurs type de base de données (exemple: dans un PostgreSQL, dans une API, etc ...)
+Le serveur GraphQL aura la charge d'aller chercher les données selon la query. Ce qui permet pour une même requête d'aller chercher la donnée dans plusieurs types de bases de données (exemple: dans un PostgreSQL, dans une API, etc ...)
 
-Il est possible de faire un serveur GraphQL dans n'importe quel technologie, il suffit de suivre le manifest de Facebook.
+Il est possible de faire un serveur GraphQL dans n'importe quelle technologie, il suffit de suivre le manifest de Facebook.
 
-Dans n'importe qu'elle technologie les étapes de construction d'un serveur GraphQL sont les suivantes.
+Dans n'importe quelle technologie les étapes de construction d'un serveur GraphQL sont les suivantes.
 
 ## GraphiQL
 
 Tout d'abord il faut installer l'IDE de GraphQL, GraphiQL. Ce dernier se place devant un serveur GraphQL et permet :
 
- - tester les requêtes en live
+ - de tester les requêtes en live
  - de générer une documentation
  - d'utiliser l'ensemble des fonctionnalités d'un serveur GraphQL (exemple : variables)
 
@@ -46,7 +46,7 @@ L'installation est assez simple, il vous suffit de suivre le tutoriel [suivant](
 
 ## Serveur
 
-Une fois l'IDE choisi vous de choisir le serveur que vous souhaitez utiliser. Il existe de nombreux serveur différents dans cet article j'utilise le serveur de base en nodeJS ([Express GraphQL](http://graphql.org/graphql-js/running-an-express-graphql-server/)), c'est à vous de choisir. 
+Une fois l'IDE choisi, à vous de choisir le serveur que vous souhaitez utiliser. Il existe de nombreux serveurs différents. Dans cet article j'utilise le serveur de base en nodeJS ([Express GraphQL](http://graphql.org/graphql-js/running-an-express-graphql-server/)), c'est à vous de choisir. 
 Dans le cadre de projet plus poussé j'utilise soit :
 
 - en Symfony le bundle [Overblog](https://github.com/overblog/GraphQLBundle)
@@ -87,7 +87,7 @@ type Article {
 }
 ```
 
-Comme pour des objets dans un language orienté object vous pouvez utiliser des interfaces via le mot clé `interface`.
+Comme pour des objets dans un langage orienté objet, vous pouvez utiliser des interfaces via le mot clé `interface`.
 
 ```json
 interface Publish {
@@ -149,8 +149,8 @@ saveArticle(input: ArticleInput!): Article
 
 ## Resolver
 
-Maintenant que vos types sont faits, il faut dire à GraphQL comment allez chercher vos données. 
-Dans chaque librairie il vous faut configurer ce que l'on appel un `resolver`.
+Maintenant que vos types sont faits, il faut dire à GraphQL comment aller chercher vos données. 
+Dans chaque librairie, il vous faut configurer ce que l'on appelle un `resolver`.
 
 Chaque `resolver` est une fonction qui permet d'aller chercher la donnée au bon endroit.
 
@@ -168,9 +168,9 @@ Comme le cache HTTP utilise l'url comme clé de cache, il n'est pas possible d'u
 
 L'un des biais que propose GraphQL c'est de faire du cache applicatif qui permet d'éviter l'appel vers les bases de données mais pas le call HTTP.
 
-Le second moins est qu'il faut souvent réécrire l'ensemble de vos types que vous avez certainement dus faire pour votre ORM.
+Le second moins est qu'il faut souvent réécrire l'ensemble de vos types que vous avez certainement dû faire pour votre ORM.
 
-Le troisième point faible est la diffuculté de metre en place une authentification via GraphQL?
+Le troisième point faible est la diffuculté de mettre en place une authentification via GraphQL?
 
 Le dernier problème est la difficulté de monitorer le serveur GraphQL, même si maintenant il existe [Apollo Engine](https://www.apollographql.com/engine)
 
@@ -182,7 +182,7 @@ Prenons l'exemple de données séparées dans deux API, d'un coté les utilisate
 
 Le point sympathique est que la documentation se fait automatiquement dans l'IDE tel que GraphIQL qui aura même l'autocomplétion. 
 
-Le plus majeur que c'est le front qui gère ce qu'il a besoin ce qui limite le nombre de calls HTTP. Il arrive assez couramment que pour afficher une page complexe avec une API Rest il faut 7 ou 8 call API, avec GraphQL c'est 1. Le gain de performance est donc assez sympa.
+Le plus majeur, c'est que c'est le front qui gère ce dont il a besoin, ce qui limite le nombre de calls HTTP. Il arrive assez couramment que pour afficher une page complexe avec une API Rest il faut 7 ou 8 call API, avec GraphQL c'est 1. Le gain de performance est donc assez sympa.
 
 ## Conclusion
 
