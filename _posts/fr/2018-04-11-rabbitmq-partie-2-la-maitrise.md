@@ -118,7 +118,7 @@ Les différentes solutions sont :
 
 - NACK le message avec une queue configurée avec DLX = "" (default exchange amq.default) et DLK = {QUEUENAME}  (Retry infini instantané non bloquant)
 
-> Le message vas être remis en début de queue.
+> Le message va être remis en début de queue.
 > ⚠️ Je déconseille également cette approche ! Cette fois-ci, le message ne va pas bloquer le dépilement des autres messages de la queue, 
 > mais il peut quand même créer une boucle infinie si il n'y a qu'un message dans la queue.
 
