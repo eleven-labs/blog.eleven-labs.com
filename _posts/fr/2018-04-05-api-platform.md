@@ -174,7 +174,7 @@ Vous devriez voir cette page, qui décrit toutes les actions possibles sur cette
 
 ![docapi]({{ site.baseurl }}/assets/2018-04-05-api-platform/apidoc.png)
 
-Oh joie! Api Platform intègre NelmioApiDoc Bundle, qui permet de documenter vos ressources et par la même occasion de les tester.
+Oh joie! Api Platform intègre une version personnalisée de [Swagger UI](https://swagger.io/swagger-ui/), qui permet de documenter vos ressources et par la même occasion de les tester, mais propose également une alternative avec [NelmioApiDoc Bundle](https://github.com/nelmio/NelmioApiDocBundle).
 Le format par défaut  de l'api est le [JSON-LD](https://json-ld.org/) avec l'extension [Hydra](http://www.hydra-cg.com/), qui est une version plus évoluée que le JSON standard donnant plus d'informations sur la ressource ainsi que les opérations possibles sur cette dernière. L'api supporte également les formats courants tels que le JSON, XML, HAL et très récemment le [graphQL](https://graphql.org/) ...que nous allons bien évidemment nous empresser d'activer !
 
 
