@@ -3,7 +3,7 @@ layout: post
 title: RabbitMQ des bases à la maîtrise (Partie 2)   
 lang: fr  
 permalink: /fr/rabbitmq-partie-2-la-maitrise/  
-excerpt: "Les policies, le retry (dead letter, poison message), en avant pour l'utilisation avancée de RabbitMQ."  
+excerpt: "Les policies, le retry (dead letter, poison message)... en avant pour l'utilisation avancée de RabbitMQ."  
 authors:  
     - amoutte  
 categories:  
@@ -23,11 +23,11 @@ tags:
 cover: /assets/2018-04-11-rabbitmq-partie-2-la-maitrise/cover.jpg  
 ---  
 
-Les policies, le retry (dead letter, poison message), en avant pour l'utilisation avancée de RabbitMQ.  
+Les policies, le retry (dead letter, poison message)... en avant pour l'utilisation avancée de RabbitMQ.  
   
 ## Introduction
 
-Après avoir vu les bases dans [RabbitMQ: Les bases (Partie 1)](/fr/rabbitmq-partie-1-les-bases/),   
+Après avoir vu les bases dans [RabbitMQ : Les bases (Partie 1)](/fr/rabbitmq-partie-1-les-bases/),   
 nous allons pousser un peu plus loin l'utilisation de RabbitMQ.
   
 ## Plugins
@@ -39,12 +39,12 @@ afin de voir les plugins officiels disponibles.
   
 D'autre part je vous conseille fortement d'activer au minimum les plugins suivants :  
   
-* `rabbitmq_management` ce plugins ajoute une interface web très pratique pour configurer RabbitMQ.   
+* `rabbitmq_management` ce plugin ajoute une interface web très pratique pour configurer RabbitMQ.   
 * `rabbitmq_tracing` ce plugin (dans l'onglet Admin > Tracing) vous permet de tracer (debug) les messages.   
 
 ## Authentification / Autorisation  
   
-Dans tous système d'informations, l'utilisation de permissions, par utilisateur/groupe, est une notion très importante.  
+Dans tout système d'informations, l'utilisation de permissions, par utilisateur/groupe, est une notion très importante.  
 Elle permet d'organiser et maîtriser l'utilisation et l'accès au service.  
 
 RabbitMQ embarque un système interne d'authentification/autorisation mais une fois de plus il existe différents [plugins d'auth](https://github.com/rabbitmq?q=rabbitmq-auth).
@@ -70,9 +70,9 @@ Un utilisateur (username, password facultatif) est utilisé pour se connecter à
 > Le plugin `rabbitmq_management` ajoute une notion de tags (administrator, monitoring, policymaker, management, impersonator) 
 > afin de limiter l'accès aux différentes parties de l'interface.
 
-Une fois votre utilisateur crée, il faudra lui ajouter des permissions sur chaque `vhost` auxquels il aura accès. 
+Une fois votre utilisateur créé, il faudra lui ajouter des permissions sur chaque `vhost` auxquels il aura accès. 
 
-Sur le backend d'auth par défaut (`rabbit_auth_backend_internal`), les permissions sont séparées selon 3 groupes:
+Sur le backend d'auth par défaut (`rabbit_auth_backend_internal`), les permissions sont séparées en 3 groupes :
 
  * Configure regexp
  * Write regexp
@@ -83,19 +83,18 @@ Sur le backend d'auth par défaut (`rabbit_auth_backend_internal`), les permissi
 > 🚀 Pour une utilisation plus simple des regexp je vous conseille d'avoir une vraie stratégie de nommage des `exchanges`/`queues`
 > avec des préfixes/segments/suffixes. D'une part vous pourrez plus facilement identifier qui a créé les ressources mais aussi qui les consomme.
 
-Je vous laisse consulter le [tableau de répartitions des actions par ressources](http://www.rabbitmq.com/access-control.html#permissions)
+Je vous laisse consulter le [tableau de répartition des actions par ressource](http://www.rabbitmq.com/access-control.html#permissions)
 
 > 🥕 Maintenant vous pouvez facilement identifier vos petits lapins.
 
 ## Policies
 
-Les policies sont des règles de configurations qui s'appliquent aux `exchanges` et aux `queues` (dont le nom matche une regexp) afin de diminuer 
-la redondance de configuration mais aussi et surtout de pouvoir changer une `policy` sans avoir à détruire et recréer la ressource (`exchange`/`queue`).
+Les policies sont des règles de configurations qui s'appliquent aux `exchanges` et aux `queues` (dont le nom matche une regexp) afin de diminuer la redondance de configuration mais aussi et surtout de pouvoir changer une `policy` sans avoir à détruire et recréer la ressource (`exchange`/`queue`).
 Certaines options de configuration d'une `policy` sont spécifiques aux `exchanges` et d'autres aux `queues`.
 
 ![RabbitMQ Policies]({{site.baseurl}}/assets/2018-04-11-rabbitmq-partie-2-la-maitrise/rabbitmq-policies.png)
 
-Les `Policies` peuvent être utilisées pour configurer
+Les `Policies` peuvent être utilisées pour configurer :
  
 - [federation plugin](https://www.rabbitmq.com/federation.html)
 - [mirrored queues](https://www.rabbitmq.com/ha.html)
@@ -108,28 +107,27 @@ Les `Policies` peuvent être utilisées pour configurer
 
 ## Retry (Dead letter)
 
-Les retries sont un autre un sujet **très important** de RabbitMQ ! Quand le message consumer rencontre une erreur durant le traitement d'un message
-il peut être intéressant dans certains cas de réessayer le traitement du message.
-Les différentes solution sont : 
+Les retries sont un autre sujet **très important** de RabbitMQ ! Quand le message consumer rencontre une erreur durant le traitement d'un message il peut être intéressant dans certains cas de réessayer le traitement du message.
+Les différentes solutions sont : 
 
 - Ne pas ACK ou NACK le message (Retry infini instantané bloquant)
 
-> Le message vas garder sa place dans la queue et le consumer va de nouveau récupérer ce message au prochain get.
+> Le message va garder sa place dans la queue et le consumer va de nouveau récupérer ce message au prochain get.
 > ⚠️ Je déconseille *très fortement* cette approche ! Car le consumer va toujours récupérer le même message jusqu'au succès du traitement, 
 > qui pourrait ne jamais se produire et créer une boucle infinie. De plus le message en erreur bloque le dépilement des messages suivants.
 
 - NACK le message avec une queue configurée avec DLX = "" (default exchange amq.default) et DLK = {QUEUENAME}  (Retry infini instantané non bloquant)
 
 > Le message vas être remis en début de queue.
-> ⚠️ Je déconseille également cette approche ! Cette fois ci, le message ne va pas bloquer le dépilement des autres messages de la queue, 
+> ⚠️ Je déconseille également cette approche ! Cette fois-ci, le message ne va pas bloquer le dépilement des autres messages de la queue, 
 > mais il peut quand même créer une boucle infinie si il n'y a qu'un message dans la queue.
 
 - ACK le message après avoir publié un clone du message depuis le consumer. (Solution la plus dynamique -> retry retardé *variable* non bloquant)
 
-> ℹ️ Avec cette solution on peu facilement gérer des "délais avant retry" variables. Premier retry à 5 secondes, deuxième 10seconds, etc. 
+> ℹ️ Avec cette solution on peut facilement gérer des "délais avant retry" variables. Premier retry à 5 secondes, deuxième à 10 secondes, etc...
 > ⚠️ Je garde une réserve sur cette pratique car elle fonctionne mais positionne la responsabilité du retry du côté applicatif. 
 
-- NACK le message avec un délai avant de retry le message (Le "délai avant retry" est fix -> retry retardé *fix* non bloquant)
+- NACK le message avec un délai avant de retry le message (Le "délai avant retry" est fixe -> retry retardé *fix* non bloquant)
 
 > 👍 Le message va être remis en début de queue après avoir été mis en attente pendant un temps défini.
 
@@ -150,7 +148,7 @@ Configurez ensuite votre queue `queue1` avec `x-dead-letter-exchange: "waiting_5
 ![RabbitMQ Retry]({{site.baseurl}}/assets/2018-04-11-rabbitmq-partie-2-la-maitrise/rabbitmq-retry.jpg)
 
 Avec cette configuration, quand le consumer NACK le message, RabbitMQ redirige le message dans l'exchange `waiting_5` (fanout)
-qui va donc router ce message dans la queue `waiting_5`. La queue `waiting_5` vas attendre 5 secondes avant d'`expired` le message,
+qui va donc router ce message dans la queue `waiting_5`. La queue `waiting_5` va attendre 5 secondes avant d'`expired` le message,
 il va donc arriver dans l'exchange `amq.default` avec comme routing key `queue1` et donc être routé dans la queue `queue1`.
 
 > ℹ️ À noter que le retry est infini. Ce qui peu également créer des `poison messages`.
