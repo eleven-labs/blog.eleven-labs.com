@@ -23,7 +23,7 @@ In this article, we're going to build an API using API Platform, and talk about 
 We'll create an API around a single resource: _movie._ Indeed, we will build something that adds, deletes and updates movies.
 
 The first thing we need to do is creating our data model. A movie is made of a title, a release date, actors, a director... Many properties known from everyone.
-If we go through the documentation, we can see that we can generate our entities with [Schema.org](http://schema.org). This allows us to use a common language to define our usual resources (_Book, Organization_, _Person_…){:rel="nofollow noreferrer"}, but it's also understood by search engines like Google or Yahoo.
+If we go through the documentation, we can see that we can generate our entities with [Schema.org](http://schema.org). This allows us to use a common language to define our usual resources (_Book, Organization_, _Person_…), but it's also understood by search engines like Google or Yahoo.
 
 Good for us, there is a _Movie_ entity from _Schema.org_, with many interesting properties. For simplicity, we'll only work with some of them.
 
@@ -52,7 +52,8 @@ Last but not least, we need to update the database to be able to play with our m
 bin/console do:sche:update --force vendor/bin/schema generate-types src/ app/config/schema.yml
 ```
 
-![](/assets/2017-07-25-api-platform/api_platform_movies.png)Accessing documentation, you see that the _Movie_ resource is here, with all operations like creating, updating, and deleting.
+![](/assets/2017-07-25-api-platform/api_platform_movies.png)
+Accessing documentation, you see that the _Movie_ resource is here, with all operations like creating, updating, and deleting.
 You can play with the interface and the auto-generated documentation before we go on and see another feature used many times in API: filters.
 
 ## Filters and sorts
