@@ -67,7 +67,7 @@ Un managé doit demander ses vacances en avance, et vous ne devez surtout pas lu
  2. Tu n'as pas atteint tes objectifs !
  3. Priorité aux personnes avec enfants (ne marche que pour les personnes sans enfants)
 
-Si vous pouvez en profité pour le faire détester votre manager, vous avez fait une pierre deux coups. Ex :
+Si vous pouvez en profiter pour le faire détester votre manager, vous avez fait une pierre deux coups. Ex :
 
  1. Moi j'ai dis oui, mais mon manager ne veut pas.
  2. Je crois que mon manager t'aime pas ?
