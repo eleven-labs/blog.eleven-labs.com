@@ -92,10 +92,3 @@ J'espère que ces astuces vont vous aider à devenir un meilleur manager. Et n'o
 > c'est vous le plus fort !!!
 
 ![you are the best]({{ site.baseurl }}/assets/2018-04-11-manager-cest-un-art/ybest.gif)
-
-
-
-
-
-
-
