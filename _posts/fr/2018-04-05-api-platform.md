@@ -61,7 +61,7 @@ Il y a donc 6 conteneurs docker :
  - un conteneur admin pour le backend en [React](https://reactjs.org/)
  - un conteneur api, pour le serveur http de l'api [Nginx](https://nginx.org/en/)
  - un conteneur client, contenant un client React/[Redux](https://redux.js.org/)
- - et un conteneur h2-proxy pour orchestrer toutes ces images en local (h2 ou http2)
+ - et un conteneur h2-proxy pour orchestrer toutes ces images en local (h2 pour http2)
 
 Autant vous dire qu'au niveau des technos, ils ont dépensé sans compter...
 
