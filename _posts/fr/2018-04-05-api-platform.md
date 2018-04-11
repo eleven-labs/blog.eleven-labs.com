@@ -61,7 +61,7 @@ Il y a donc 6 conteneurs docker :
  - un conteneur admin pour le backend en [React](https://reactjs.org/)
  - un conteneur api, pour le serveur http de l'api [Nginx](https://nginx.org/en/)
  - un conteneur client, contenant un client React/[Redux](https://redux.js.org/)
- - et un conteneur h2-proxy pour orchestrer toutes ces images en local
+ - et un conteneur h2-proxy pour orchestrer toutes ces images en local (h2 ou http2)
 
 Autant vous dire qu'au niveau des technos, ils ont dépensé sans compter...
 
@@ -175,7 +175,7 @@ Vous devriez voir cette page, qui décrit toutes les actions possibles sur cette
 ![docapi]({{ site.baseurl }}/assets/2018-04-05-api-platform/apidoc.png)
 
 Oh joie! Api Platform intègre une version personnalisée de [Swagger UI](https://swagger.io/swagger-ui/), qui permet de documenter vos ressources et par la même occasion de les tester, mais propose également une alternative avec [NelmioApiDoc Bundle](https://github.com/nelmio/NelmioApiDocBundle).
-Le format par défaut  de l'api est le [JSON-LD](https://json-ld.org/) avec l'extension [Hydra](http://www.hydra-cg.com/), qui est une version plus évoluée que le JSON standard donnant plus d'informations sur la ressource ainsi que les opérations possibles sur cette dernière. L'api supporte également les formats courants tels que le JSON, XML, HAL et très récemment le [graphQL](https://graphql.org/) ...que nous allons bien évidemment nous empresser d'activer !
+Le format par défaut  de l'api est le [JSON-LD](https://json-ld.org/) avec l'extension [Hydra](http://www.hydra-cg.com/), qui est une version plus évoluée que le JSON standard donnant plus d'informations sur la ressource ainsi que les opérations possibles sur cette dernière. L'api supporte également les formats courants tels que le JSON, XML, HAL, JSONAPI et très récemment le [graphQL](https://graphql.org/) ...que nous allons bien évidemment nous empresser d'activer !
 
 
 ## Activer GraphQL
@@ -203,7 +203,7 @@ En sachant que ce backend est entièrement paramétrable.
 
 Le dernier point que j'aborderai et qui n'est pas des moindres, c'est la génération d'une Progressive Web App avec React/Redux, mais il est également possible de générer une application en [Vue.js](https://vuejs.org/) ou une application en [React Native](https://facebook.github.io/react-native/)
 
-Créons notre application Javascript :
+Créons notre application JavaScript :
 
 ```shell
 docker-compose exec client generate-api-platform-client
@@ -257,7 +257,7 @@ registerServiceWorker();
 ```
 
 Concernant le choix des librairies, nous remarquerons que React Router est utilisé pour la navigation,
-Redux Form pour gérer les formulaires et Redux Thunk pour gérer les requêtes ou autres traitements asynchrones (désolé pour les redux-saga users), avec une gestion des Services Workers.
+Redux Form pour gérer les formulaires et Redux Thunk pour gérer les requêtes ou autres traitements asynchrones (désolé pour les utilisateurs de redux-saga), avec une gestion des Services Workers.
 
 
 Nous pouvons maintenant aller à l'url de la vue `list` de notre ressource `shoppingItem`: [https://localhost/shopping_items/](https://localhost/shopping_items/)
@@ -276,4 +276,4 @@ Cela devient un inconvénient sur de gros projet où l'historique du code produi
 
 ## À venir
   
-J'aurais aimé vous parler de l'intégration de FOSuser bundle avec l'autentification JWT, des tests en Behat, PHPUnit, déployer son projet API Platform sur un Kubernites cluster en quelques lignes de commande mais le temps me manque, je vous réserve donc cela pour la prochaine fois.
+J'aurais aimé vous parler de l'intégration de FOSuser bundle avec l'autentification JWT, des tests en Behat, PHPUnit, déployer son projet API Platform sur un cluster Kubernetes en quelques lignes de commande mais le temps me manque, je vous réserve donc cela pour la prochaine fois.
