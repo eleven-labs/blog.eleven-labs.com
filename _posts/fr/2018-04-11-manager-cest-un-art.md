@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "L'art du management"
-excerpt: "Après 3 ans de management, je le sais, j'en suis sûr, le management est un art !!! Comme une bonne recette de cuisine, en voici les ingrédients."
+excerpt: "Après 3 ans de management, je le sais, j'en suis sûr: le management est un art, telle une bonne recette de cuisine dont voici les ingrédients."
 authors:
 - captainjaja
 permalink: /fr/manager-cest-un-art/
@@ -12,11 +12,11 @@ tags:
 cover: /assets/2018-04-11-manager-cest-un-art/cover.jpg
 ---
 
-Après 3 ans de management, je le sais, j'en suis sûr, le management est un art !!! Comme une bonne recette de cuisine, en voici les ingrédients.
+Après 3 ans de management, je le sais, j'en suis sûr: le management est un art, telle une bonne recette de cuisine dont voici les ingrédients.
 
 ![Cook]({{ site.baseurl }}/assets/2018-04-11-manager-cest-un-art/cook.gif)
 
-L'étape clé d'un bon manager est d'assoir son autorité. Une façon simple, est de montrer que l'on est plus fort que lui dans tout les domaines. Ce qui est important c'est d'assoir son autorité devant un public pour mettre en avant sa puissance.
+L'étape clé pour devenir un bon manager est d'asseoir son autorité. Une façon simple est de montrer que l'on est plus fort que lui dans tous les domaines. Ce qui est important c'est d'asseoir son autorité devant un public pour mettre en avant sa puissance.
 
 Dans le cadre de mon travail, je le fais en étant le plus fort aux jeux vidéos, au baby foot et même en buvant plus que mes managés lors des soirées entre collègues.
 
@@ -28,9 +28,9 @@ A chaque réussite, il ne faut surtout pas oublier de le souligner avec la phras
 
 Si vous avez du mal à être le meilleur à chaque fois, vous pouvez toujours l'intimider en lui disant que vous avez le pouvoir de le virer.
 
-Une fois l'autorité validé, vous pouvez passer à l'étape suivante.
+Une fois l'autorité validée, vous pouvez passer à l'étape suivante.
 
-Une fois que le managé sait que vous êtes meilleur que lui, vous vous devez de l'aider à devenir meilleur (mais pas trop quand même). Toute la journée, notez ce qu'il fait de bien ou non. En fin de journée faite lui un (et unique) compliment sur une bonne action, afin de lui donner de la satisfaction. Puis ajouter plusieurs réprimandes sur les mauvais choix, toujours dans un souci d'autorité.
+Une fois que le managé sait que vous êtes meilleur que lui, vous vous devez de l'aider à devenir meilleur (mais pas trop quand même). Toute la journée, notez ce qu'il fait de bien ou non. En fin de journée faites lui un (et unique) compliment sur une bonne action, afin de lui donner de la satisfaction. Puis ajoutez plusieurs réprimandes sur les mauvais choix, toujours dans un souci d'autorité.
 
 > Un managé qui prend trop de confiance est un mauvais managé
 
@@ -47,7 +47,7 @@ Cette technique est simple :
 Vous pouvez trouver plein d'excuses pour mettre des mauvais smileys, pour toujours avoir l'ascendant sur vos managés :
 
  - pauses café trop longues
- - ne repond pas assez vite sur slack
+ - ne répond pas assez vite sur slack
  - n'a pas dit bonjour le matin
 
 Le but que les managés s'écharpent pour avoir des bons smiley. Pendant ce temps, la conspiration n'est pas possible.
@@ -61,9 +61,9 @@ Comme je le dis tout le temps
 L'étape suivante est de rendre dépendants vos managés. Pour cela j'ai encore plusieurs astuces.
 Dans le cadre d'un projet avec un client, il n'a pas le droit d'être en contact direct avec ce dernier, tout passe par vous. Il est important que garder la main.
 
-Un managé doit demander ses vacances en avance, et vous ne devez surtout pas lui dire oui rapidement. Prenez votre temps, attendez qu'il réclame pour lui dire de travailler encore plus fort. Si vraiment vous n'arrivez pas vous faire obéïr, refusez lui en trouvant toujours la bonne excuse.
+Un managé doit demander ses vacances en avance, et vous ne devez surtout pas lui dire oui rapidement. Prenez votre temps, attendez qu'il réclame pour lui dire de travailler encore plus fort. Si vraiment vous n'arrivez pas à vous faire obéir, refusez-les lui en trouvant toujours la bonne excuse.
 
- 1. Mais il reste encore trop de chose à faire !
+ 1. Mais il reste encore trop de choses à faire !
  2. Tu n'as pas atteint tes objectifs !
  3. Priorité aux personnes avec enfants (ne marche que pour les personnes sans enfants)
 
@@ -85,7 +85,7 @@ La règle d'or :
 
 La difficulté d'un manager est de garder son calme, la loi nous interdit les sévices corporelles. Mais il est difficile de prouver les sévices psychologiques.
 
-Dans la cas d'un managé qui demande les prud'homme, gardez votre calme. La première fois, c'est dur à vivre. Mais très vite vous comprendrez que le système est fait pour vous.
+Dans la cas d'un managé qui demande les prud'hommes, gardez votre calme. La première fois, c'est dur à vivre. Mais très vite vous comprendrez que le système est fait pour vous.
 
 J'espère que ces astuces vont vous aider à devenir un meilleur manager. Et n'oubliez pas
 
