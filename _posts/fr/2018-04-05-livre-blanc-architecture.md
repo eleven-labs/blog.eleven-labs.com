@@ -30,6 +30,6 @@ Après plusieurs expériences en tant qu'architecte, il m'a semblé intéressant
 
 [![Télécharger livre blanc]({{site.baseurl}}/assets/2018-04-05-livre-blanc-architecture/button.jpg)](https://s3.eu-west-3.amazonaws.com/files.eleven-labs.com/ebooks/){: .center-image }
 
-Des questions, ou simplement envie d'échanger sur ce sujet ? Contactez-moi : vcomposieux(at)eleven-labs.com
-Vous souhaitez partager vos connaissances sur ce sujet (ou un autre) ? Faites-le sur [Codelabs](https://codelabs.eleven-labs.com) ! 
-Vous avez besoin d'accompagnement sur un projet ? [Contactez-nous](contact@eleven-labs.com) !
+Des questions, ou simplement envie d'échanger sur ce sujet ? Contactez-moi : vcomposieux(at)eleven-labs.com  
+Vous souhaitez partager vos connaissances sur ce sujet (ou un autre) ? Faites-le sur [Codelabs](https://codelabs.eleven-labs.com) !  
+Vous avez besoin d'accompagnement sur un projet ? Contactez-nous : contact(at)eleven-labs.com) !
