@@ -18,7 +18,7 @@ tags:
 cover: URL DE L'IMAGE (/assets/....)
 ---
 
-Aujourd'hui je vais prendre un peu de votre temps pour vous expliquer comment lancer vos tests unitaire et les débugger avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit ou xdebug sur votre machine ...
+Aujourd'hui je vais prendre un peu de votre temps pour vous expliquer comment lancer vos tests unitaire et les déboguer avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit ou xdebug sur votre machine ...
 
 # Prerequis
 ## Sur votre machine local
@@ -28,7 +28,7 @@ Aujourd'hui je vais prendre un peu de votre temps pour vous expliquer comment la
 - [OPTIONAL] [Docker Compose](https://docs.docker.com/compose/install/) 
  
 ## PhpStorm plugins
-Admettons qu'aucun plugin jetbrain n'est actif sur votre Phpstorm. Voici une liste exhausitive des plugins que vous allez devoir installer et que nous allons configurer:
+Admettons qu'aucun plugin jetbrain n'est actif sur votre Phpstorm. Voici une liste exhaustive des plugins que vous allez devoir installer et que nous allons configurer:
 
 - [Docker](https://www.jetbrains.com/help/idea/docker.html)
 - PHPDocker
@@ -119,14 +119,14 @@ services:
       # Keep attention to that env variable 
       PHP_IDE_CONFIG: serverName=test-app
 ```
-Ici, on notera la présence de la variable d'environement `PHP_IDE_CONFIG`. Nous allons utiliser la valeur de `serverName` pour indiquer à phpStorm le nim du serveur sur lequel il va écouter les connections. 
+Ici, on notera la présence de la variable d'environement `PHP_IDE_CONFIG`. Nous allons utiliser la valeur de `serverName` pour indiquer à phpStorm le nom du serveur sur lequel il va écouter les connections. 
 
 Pour ce faire, rendez-vous dans **File/Settings.../Languages & Framework/PHP***
 ![PHPStorm Settings PHP](https://lh3.googleusercontent.com/EypBsKBO_74JB2Sns7Q69NEoh5O-9ZBBHh3RyIg8eng-ceZJ_aC64S9jK-5kedsTiGRjKJrA2aM)
 
 - Cliquez sur ![PHPStorm Browse button](https://lh3.googleusercontent.com/J1Fz5vcsmhAsUmpe2FJhA0784r5oDXBKbFiN821jQDnf1i7AcP80MhY6D31uzKFrPhoYtK3otMI) à droite de **CLI Interpreter**
-- Dans **Remote** sélectionner **Docker** (le serveur que nous avons créé précédement est automatiquement sélectionné)
-- Dans **Image name** sélectionnez **dockerremotephpdebugingexample_test_app:latest**
+- Dans **Remote** sélectionner **Docker** (le serveur que nous avons créé précédemment est automatiquement sélectionné)
+- Dans **Image name** sélectionnez **dockerremotephpdebugingexample_test_app:latest**m
 
 ![PHPStorm Settings CLI interpreter](https://lh3.googleusercontent.com/eZcq72PfUx91M2y09sIYi3KaWDZQM2cNqA-FQWPus6usHwuOCepQozdwcojHGIRRRJ5aq5bf0yU)
 
@@ -147,7 +147,7 @@ Ici, nous allons faire en sorte de pouvoir lancer nos tests unitaires sur le con
 
 - Rendez-vous dans **Files\Settings...\Languages & framework\PHP\Test frameworks**.
 - cliquez sur ![enter image description here](https://lh3.googleusercontent.com/WxZzszQxhcQueWNtlD78nxG9fMUaD6evVK8hwC7-sCT1uvPo1S0U0sdqT0rXK4DQk4LBksEfPjE) puis **phpUnit by remote interpreter**.
-- Sé!lectionnez l'interpréteur php que nous avons créé précédemment
+- Sélectionnez l'interpréteur php que nous avons créé précédemment
 
 ![PHPStorm PHPUnit by remote interpreter](https://lh3.googleusercontent.com/SWg7OO9p3W5nss5t7M0j3UsWT0Dw5zVHPoDhXSU29EpREAcxjobYVSuAYUAjYQLrCIwg7qfc5T4)
 
@@ -165,7 +165,7 @@ PhpStorm doit alors détecter la version de phpunit installée sur le container.
 
 - cliquez sur ![PHPStorm plus button](https://lh3.googleusercontent.com/WxZzszQxhcQueWNtlD78nxG9fMUaD6evVK8hwC7-sCT1uvPo1S0U0sdqT0rXK4DQk4LBksEfPjE) puis **PHP remote debug**
 - donnez un nom à cette configuration
-- cliquez sur ![PHPStorm browse](https://lh3.googleusercontent.com/8MmEu0jTW8VyS9ICfpztslvRdidj-JQYBqqRyMR7YSSGPRQBAMaZKNFvp44bGhQB6xfYkaMew0M)  afin d'ajouter un serveur de débugging
+- cliquez sur ![PHPStorm browse](https://lh3.googleusercontent.com/8MmEu0jTW8VyS9ICfpztslvRdidj-JQYBqqRyMR7YSSGPRQBAMaZKNFvp44bGhQB6xfYkaMew0M)  afin d'ajouter un serveur de déboguag
 
 ![PHPStorm Settings Server](https://lh3.googleusercontent.com/_3grYeA__43Oi-w7APRxv6Bprk1plqoUoU8LzYbF2Ri7wqwZgXm1VjtLdLQsXKtk387lLdnKPXSl)
 
@@ -185,7 +185,7 @@ Nous pouvons dés maintenant lancer notre suite de tests unitaire sur notre cont
 ![PHPStorm](https://lh3.googleusercontent.com/0QNIQp1eCGSEZRekZCA7vrRwuwwetc9PZwAeGrSBrB7LsLueJfB3rhaakKICITwme_Mb8JPHA-U)
 > Tips: Dans une classe de TU, si vous placez votre curseur à l'intérieur d'une fonction et que vous effectué un `ctrl`+`Shift`+`F10` alors seul ce test sera lancé.
 > 
-> A l'insverse, si vous placez votre curseur à l'extérieur des fonctions et que vous effectuez un `ctrl`+`Shift`+`F10` alors tous les tests de la classe seront lancés.
+> A l'inverse, si vous placez votre curseur à l'extérieur des fonctions et que vous effectuez un `ctrl`+`Shift`+`F10` alors tous les tests de la classe seront lancés.
 
 # Déboguer
 
