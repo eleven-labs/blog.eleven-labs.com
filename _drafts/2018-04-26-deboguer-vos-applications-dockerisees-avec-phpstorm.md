@@ -139,6 +139,7 @@ PhpStorm va de nouveau détecter (ou au moins essayer ...) le mapping entre le c
 - Dans la partie `Docker container` cliquez les ![PHPStorm browse button](https://lh3.googleusercontent.com/8MmEu0jTW8VyS9ICfpztslvRdidj-JQYBqqRyMR7YSSGPRQBAMaZKNFvp44bGhQB6xfYkaMew0M)
 
 Vous pouvez alors modifier le mapping entre le volume docker et le chemin en local (ici `/home/rmasclef/Documents/projects/ElevenLabs/DockerRemotePhpDebugingExample` doit être bindé avec `var/www/TEST_APP` étant donné que nous avons effectué ce binding dans le [DockerFile](https://github.com/rmasclef/docker-remote-php-debuging/blob/master/docker-compose.yml#L8).
+
 ![PHPStorm](https://lh3.googleusercontent.com/-IuvSJqUUATWDadbYy5Z3MR_a6sElYR8gbVGAMsbsvvm98aGT1Q4sd480qUAwjOI7nPeJ6CPWgk)
 
 ## PHPUnit
