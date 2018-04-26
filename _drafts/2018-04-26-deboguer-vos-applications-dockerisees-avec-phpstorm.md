@@ -165,7 +165,7 @@ PhpStorm doit alors détecter la version de phpunit installée sur le container.
 
 - cliquez sur ![PHPStorm plus button](https://lh3.googleusercontent.com/WxZzszQxhcQueWNtlD78nxG9fMUaD6evVK8hwC7-sCT1uvPo1S0U0sdqT0rXK4DQk4LBksEfPjE) puis **PHP remote debug**
 - donnez un nom à cette configuration
-- cliquez sur ![PHPStorm browse](https://lh3.googleusercontent.com/8MmEu0jTW8VyS9ICfpztslvRdidj-JQYBqqRyMR7YSSGPRQBAMaZKNFvp44bGhQB6xfYkaMew0M)  afin d'ajouter un serveur de déboguag
+- cliquez sur ![PHPStorm browse](https://lh3.googleusercontent.com/8MmEu0jTW8VyS9ICfpztslvRdidj-JQYBqqRyMR7YSSGPRQBAMaZKNFvp44bGhQB6xfYkaMew0M)  afin d'ajouter un serveur de débogage
 
 ![PHPStorm Settings Server](https://lh3.googleusercontent.com/_3grYeA__43Oi-w7APRxv6Bprk1plqoUoU8LzYbF2Ri7wqwZgXm1VjtLdLQsXKtk387lLdnKPXSl)
 
