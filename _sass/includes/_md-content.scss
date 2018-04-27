@@ -38,7 +38,7 @@
   h2 {
     @extend %h2;
     background-color: $brand-yellow;
-    display: inline-block;
+    display: table;
     padding: .6rem 1.2rem;
 
     @media (min-width: $breakpoint-x-small) {
