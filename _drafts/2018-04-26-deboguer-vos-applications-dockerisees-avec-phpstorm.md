@@ -1,33 +1,32 @@
 ---
 layout: post
 title: Déboguer vos applications dockerisées avec PhpStorm  
-excerpt: Aujourd'hui je vais vous expliquer comment lancer vos tests unitaires et les déboguer avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit ou xdebug sur votre machine...
+excerpt: Aujourd'hui je vais vous expliquer comment lancer vos tests unitaires et les déboguer avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit ou Xdebug sur votre machine...
 authors:
 - rmasclef
 permalink: /fr/debug-run-phpunit-tests-using-docker-remote-interpreters-with-phpstorm/
 categories:
-    - CATEGORIE 1
-    - CATEGORIE 2
-    - ...
+    - php
+    - docker
 tags:
     - PhpStorm
     - Docker
-    - Tests Unitaire
-    - XDEBUG
+    - Tests Unitaires
+    - Xdebug
 
-cover: URL DE L'IMAGE (/assets/....)
+cover: /img/covers/StockSnap_X7ZB66F677.jpg
 ---
 
-Aujourd'hui je vais vous expliquer comment lancer vos tests unitaires et les déboguer avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit ou xdebug sur votre machine...
+Aujourd'hui je vais prendre un peu de votre temps pour vous expliquer comment lancer vos tests unitaires et les déboguer avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit ou Xdebug sur votre machine ...
 
-## Prerequis
+## Pré-requis
 ### Sur votre machine locale
 
 - [PhpStorm](https://www.jetbrains.com/phpstorm/)  >= 2016.3
 - [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-- [OPTIONAL] [Docker Compose](https://docs.docker.com/compose/install/) 
- 
-### PhpStorm plugins
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+## PhpStorm plugins
 Admettons qu'aucun plugin jetbrain ne soit actif sur votre Phpstorm. Voici la liste des plugins que vous allez devoir installer et que nous allons configurer :
 
 - [Docker](https://www.jetbrains.com/help/idea/docker.html)
@@ -40,7 +39,7 @@ Admettons qu'aucun plugin jetbrain ne soit actif sur votre Phpstorm. Voici la li
 
 Afin de rester simple, je me suis permis de créer un petit projet qui regroupe les différentes configurations que je vais vous présenter dans un instant.
 
-Je vous invite donc à cloner le [projet](https://github.com/rmasclef/docker-remote-php-debuging) afin de pouvoir vous entraîner
+Je vous invite donc à cloner le [projet](https://github.com/rmasclef/docker-remote-php-debuging) afin de pouvoir vous entraîner.
  
 Une fois le repo cloné, vous pouvez lancer un `docker-compose up -d` suivi par un `docker-compose exec test_app composer install --prefer-dist`.
 
@@ -96,7 +95,7 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 RUN mkdir -p /var/www/TEST_APP  
 WORKDIR /var/www/TEST_APP  
 
-# Install PHP XDEBUG configuration, (see https://blog.eleven-labs.com/fr/debugger-avec-xdebug/)
+# Install PHP Xdebug configuration, (see https://blog.eleven-labs.com/fr/debugger-avec-xdebug/)
 ADD xdebug.ini /etc/php/conf.d/  
   
 CMD ["php-fpm"]
@@ -110,8 +109,9 @@ Comme vous pouvez le voir, j'ai simplement ajouté `xdebug` , `zip` et `composer
 version: '3'
 services:
   test_app:
-    build: context: ./
-    dockerfile: DockerFile
+    build: 
+      context: ./
+    dockerfile: Dockerfile
     volumes:
       - "./:/var/www/TEST_APP:cached"
       - "~/.composer:/var/composer:cached"
@@ -135,11 +135,10 @@ PhpStorm va alors automatiquement récupérer l'image si elle n'est pas déjà p
 ![PHPStorm Settings PHP](https://lh3.googleusercontent.com/oRRQLkDBgO6Ssjmnij2HaDlxX2o3rywdbi9roIeezA2jVoN2Wm5rxiEiOMg9s6PwR66dOkZyxQg)
   - sélectionnez l'interpréteur que nous venons de créer...
 
-PhpStorm va de nouveau détecter (ou au moins essayer...) le mapping entre le chemin du projet en local, et celui sur le container. Je dis "essayer" car vous devrez peut-être setter manuellement ce mapping de la manière suivante :
+PhpStorm va de nouveau détecter (ou au moins essayer...) le mapping entre le chemin du projet en local, et celui sur le container. Je dis "essayer" car vous devrez peut-être configurer manuellement ce mapping de la manière suivante :
 - Dans la partie `Docker container` cliquez les ![PHPStorm browse buttons](https://lh3.googleusercontent.com/8MmEu0jTW8VyS9ICfpztslvRdidj-JQYBqqRyMR7YSSGPRQBAMaZKNFvp44bGhQB6xfYkaMew0M)
 
 Vous pouvez alors modifier le mapping entre le volume docker et le chemin en local (ici `/home/rmasclef/Documents/projects/ElevenLabs/DockerRemotePhpDebugingExample` doit être bindé avec `var/www/TEST_APP` étant donné que nous avons effectué ce binding dans le [DockerFile](https://github.com/rmasclef/docker-remote-php-debuging/blob/master/docker-compose.yml#L8).
-
 ![PHPStorm](https://lh3.googleusercontent.com/-IuvSJqUUATWDadbYy5Z3MR_a6sElYR8gbVGAMsbsvvm98aGT1Q4sd480qUAwjOI7nPeJ6CPWgk)
 
 ### PHPUnit
@@ -158,7 +157,7 @@ Ici, nous allons faire en sorte de pouvoir lancer nos tests unitaires sur le con
 PhpStorm doit alors détecter la version de phpunit installée sur le container.
 > Note : Vous pouvez également ajouter un fichier de configuration phpunit (ici `/var/www/TEST_APP/phpunit.xml.dist`).
 
-**À présent, vous pouvez lancer les TUs sur votre container via phpStorm**
+**À présent, vous pouvez lancer les tests unitaires sur votre container via phpStorm**
 
 ### PHP Remote debugger
 ![PHPStorm menu tests](https://lh3.googleusercontent.com/m9mBKwxFDUD6UfBzQRCZOd8yMS1tjlXIYjeVmR86Syu0QxHXw_fJeEg5cJxM8gOtx-l2jBtBpTQ)
@@ -176,14 +175,14 @@ Notez également qu'il faut ajouter le mapping entre notre environnement local e
 Sélectionnez le serveur précédemment créé et ajoutez l'IDE key qui est renseigné dans le fichier de configuration `xdebug.ini` (https://github.com/rmasclef/docker-remote-php-debuging/blob/master/xdebug.ini#L5)
 ![enter image description here](https://lh3.googleusercontent.com/bGCZ72gHEqROnZJPZLB_37YD_cN1sdFY1XO0Wmjmwqv7rtKSJglitenE9sb_UJaJRuQtcolgxd79)
 
-Félicitations ! Vous êtes maintenant capable de déboguer votre application sans avoir php, phpunit, xdebug ou tout autre librairie sur votre environnement local. 
+Félicitation, vous êtes maintenant capable de déboguer votre application sans avoir php, phpunit, Xdebug ou tout autre librairie sur votre environnement local. 
 
-## Lancement des TUs
-Nous pouvons à présent lancer notre suite de tests unitaires sur notre container. Vous pouvez effectuer un clic droit sur le dossier `tests` puis sur `run tests` (ou `ctrl`+`Shift`+`F10`).
+# Lancement des tests unitaires
+Nous pouvons dés à présent lancer notre suite de tests unitaires sur notre container. Vous pouvez effectuer un clic droit sur le dossier `tests` puis cliquer sur `run tests` (ou `ctrl`+`Shift`+`F10`).
  
 > Vous pouvez également lancer les tests d'une seule classe ou encore lancer un test d'une classe en particulier.
 ![PHPStorm](https://lh3.googleusercontent.com/0QNIQp1eCGSEZRekZCA7vrRwuwwetc9PZwAeGrSBrB7LsLueJfB3rhaakKICITwme_Mb8JPHA-U)
-> Tips: Dans une classe de TU, si vous placez votre curseur à l'intérieur d'une fonction et que vous effectuez un `ctrl`+`Shift`+`F10` alors seul ce test sera lancé.
+> Tips: Dans une classe de tests unitaires, si vous placez votre curseur à l'intérieur d'une fonction et que vous effectuez un `ctrl`+`Shift`+`F10` alors seul ce test sera lancé.
 > 
 > À l'inverse, si vous placez votre curseur à l'extérieur des fonctions et que vous effectuez un `ctrl`+`Shift`+`F10` alors tous les tests de la classe seront lancés.
 
