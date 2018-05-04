@@ -188,13 +188,13 @@ Nous pouvons dés à présent lancer notre suite de tests unitaires sur notre co
 
 ## Déboguer
 
-Tout d'abord, ajoutons un point d'arrêt dans notre code :
+Ajoutons un point d'arrêt dans notre code :
 
-![PHPStorm IDE Break point](https://lh3.googleusercontent.com/B9c4mc_Uety40u4nbMk2XinVOa9OqCr29z8A6MxFQ24DgimpKAUD06_9cf0mylEIUVt5qTTxtN5-)
+![PHPStorm IDE Break point]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm-IDE-break-point.png)
 
 Cette fonction est testée unitairement, nous allons donc pouvoir la déboguer...
 - Effectuez un clic droit sur le test unitaire que vous souhaitez déboguer puis cliquez sur **Debug 'testGetContent'**. Le débogueur se lance alors et arrive au point d'arrêt ajouté dans notre classe concrète :D
-> Vous pouvez également déboguer des scripts tels que des commandes symfony de cette manière.
+> De la même manière, vous pouvez également déboguer des scripts tels que des commandes symfony.
 
 # Conclusion
 C'est terminé, vous êtes maintenant capable de configurer PHPStorm afin qu'il lance vos tests unitaires et/ou une session de débogage à travers un container Docker.
