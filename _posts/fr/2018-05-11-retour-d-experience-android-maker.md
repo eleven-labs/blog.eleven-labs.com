@@ -24,7 +24,7 @@ Voici un petit résumé de ce que l'on a pu observer et penser avec l'astronaute
 
 ##LiveData 
 
-Pendant cette conférence, "name" nous a présenté plus en détails les LiveData, nouveau gestionnaire de données.
+Pendant cette conférence, Florina Muntenescu nous a présenté plus en détails les LiveData, nouveau gestionnaire de données.
 On y a vu plus en détails son implementation lors de cas concret, divers objet de la librairie avec leurs fonctionnement en détails.
 L'occasion de nous préciser que LiveData peut très bien vivre en parrallèle de RXJava, et n'agis pas comme une alternative.
 Ce fut aussi l'opportunité de nous expliquer en quoi le ViewModel de l'architecture component mis en avant dans leur guideline était semblable au ViewModel en MVVM. 
@@ -33,7 +33,7 @@ A éclaircir ! ^^
 
 ##SDK (presque) parfait 
 
-Ce retour d'expérience de "name", développeur Android chez Parrot sur la création d'un SDK fut l'occasion de partager plusieurs tips.
+Ce retour d'expérience de Djavan Bertrand, développeur Android chez Parrot sur la création d'un SDK fut l'occasion de partager plusieurs tips.
 Nottament à bien définir le profil de ses utilisateurs, et le réel but final du SDK pour mieux en définir la forme dans laquelle il va être mis à disposition et comment on va concevoir son utilisation.
 Au final un talk très interressant, pas mal de tips je vous en selectinné plusieurs pelle-mele :
   - Rendre cohérente l'utilisation au détriment de la justesse technique, ici un exemple simple pour avancer, un robot parrot doit avoir une vitesse sur ses roues mises en négatives ! Pas très user friendly et, pour les non initiés, logique d'avancer avec du négatif, du coup ils ont opté pour inverser en toute transparance la valeur.
@@ -45,7 +45,7 @@ Au final un talk très interressant, pas mal de tips je vous en selectinné plus
 ##Kotlin coroutines 
 
 Une présentation sous les couleurs du mème de chat toujours très efficace ! 
-Ici "name" nous présentais une alternative pour pouvoir travailler en asynchrone aux Asynctask et autres outils actuels.
+Ici Erik Hellman nous présentais une alternative pour pouvoir travailler en asynchrone aux Asynctask et autres outils actuels.
 Je dois dire que cette présentation m'as plutôt convaincu ^^ 
 On y vois en effet la simplicité et la meilleur visibilité qu'offre les coroutines quand elles sont mises en pratique avec Kotlin !
 Les coroutines peuvent etre cancel, elles peuvent lancer elle même d'autres coroutines (inception de coroutine).
@@ -69,7 +69,7 @@ Petit bémol de la présentation, et plus généralement de la solution, elle n'
 
 ##Gitlab dans vos process 
 
-Présentation de "name", développeur chez Nokia qui nous a présenté en entrant dans les détails le panel d'outils qui est mis à disposition avec Gitlab :
+Présentation de Marc Daniel, développeur chez Nokia qui nous a présenté en entrant dans les détails le panel d'outils qui est mis à disposition avec Gitlab :
  - Gitlab pour le versioning
  - Gitlab CI pour les tests automatisés
  - Gitlab Store pour la mise à disposition des apks
@@ -88,8 +88,8 @@ A noter que tout les changements sont effectifs à partir d'Android Studio 3.0, 
 
 ##ConstraintLayout 2.0 
 
-Présentation de google sur toute les nouveautés et reflexions qui ont étaient porté sur le ConstraintLayout. 
-On a parlé Barriers, element invisible que l'on peut fixer comme réference entre élement de design notamment lorsque que l'on veux aligner un element à partir de plusieurs champs texte à longueur variable.
+John Hoford et Nicolas Roard, dreamteam du ConstraintLayout sont revenus sur toute les nouveautés et refléxions qui ont étaient portées sur le ConstraintLayout. 
+On a parlé Barriers, élément invisible que l'on peut fixer comme réference entre élement de design notamment lorsque que l'on veux aligner un element à partir de plusieurs champs texte à longueur variable.
 On a vu l'apparition aussi de nouveau concept comme les Helpers qui permettent de refactor du code d'animation, la notion aussi de State XML, donc d'état permettant de gérer des reactions de design, des animations sans avoir à le faire programmatiquement ! 
 Permet aussi en cas de changement de taille d'écran de faire des changements réactifs de design, ou même de layout, un peu comme du responsive design !
 Enfin la mise à disposition enfin d'une réele API, Fluent Api permettant de centraliser et de trouver une documentation sur tout ces elements de design lié au ConstraintLayout.
