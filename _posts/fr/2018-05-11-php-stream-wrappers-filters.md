@@ -1,6 +1,6 @@
 --- 
 layout: post  
-title: PHP Stream, Wrappers, Filters, un allié méconnu.   
+title: "PHP Stream : wrappers, filters... un allié méconnu."   
 lang: fr  
 permalink: /fr/php-stream-wrappers-filters/  
 excerpt: "Bien que très puissant et présent dans PHP depuis la version 4.3, ce composant est souvent méconnu, sous-exploité, voire mal utilisé."  
