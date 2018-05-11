@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Retour d'Experience Android Maker 2018
+title: Retour d'Expérience Android Maker 2018
 lang: fr
 permalink: /fr/retour-d-experience-android-maker/
 excerpt: "Cette année a eu lieu la deuxieme edition de l'Android Maker, avec l'aide d'Omar on vous propose un petit retour sur ce qu'on en a vu !"
@@ -26,44 +26,44 @@ Voici un petit résumé de ce que l'on a pu observer et penser avec l'astronaute
 
 Pendant cette conférence, Florina Muntenescu nous a présenté plus en détails les LiveData, nouveau gestionnaire de données.
 On y a vu plus en détails son implementation lors de cas concret, divers objets flous de la librairie ont étaient mis en avant comme le swicthmap.
-L'occasion de nous préciser que LiveData peut très bien vivre en parrallèle de RXJava, et n'agis pas comme une alternative.
-Cela c'est terminé ensuite sur une explication du rôle du ViewModel dans l'architecture Component, qui selon moi est très très similaire à son confrère du pattern MVVM, malgrès les explications fournis expliquant leurs différences, à éclaircir ! ^^
+L'occasion de nous préciser que LiveData peut très bien vivre en parallèle de RXJava, et n'agis pas comme une alternative.
+Cela c'est terminé ensuite sur une explication du rôle du ViewModel dans l'architecture Component, qui selon moi est très très similaire à son confrère du pattern MVVM, malgré les explications fournis expliquant leurs différences, à éclaircir ! ^^
 
 ## SDK (presque) parfait 
 
 Ce retour d'expérience de Djavan Bertrand, développeur Android chez Parrot sur la création d'un SDK fut l'occasion de partager plusieurs tips.
 Notamment de bien définir le profil de ses utilisateurs, et le réel but final du SDK pour mieux en définir la forme dans laquelle il va être mis à disposition et comment on va concevoir son utilisation.
-Au final un talk très intéressant, pas mal de tips je vous en ai selectionné plusieurs pelle-mele :
-  - Rendre cohérente l'utilisation au détriment de la justesse technique, ici un exemple simple pour avancer, un robot Parrot doit avoir une vitesse sur ses roues mises en négatives ! Pas très user friendly et, pour les non initiés, pas très logique d'avancer avec du négatif. Du coup ils ont choisis d'inverser en toute transparance la valeur et de rendre publci une méthode avec une vitesse positive.
-  - Si cross platform ne pas hésiter à rendre le sdk différent en fonction des plateforme pour rester fidèle aux pratiques nottament dans le naming de ses méthodes, cas des callbacks par exemple.
-  - Point d'honneur sur le Testing/Commentaires, la mise en place d'une documentation et la mise à disposition de sample concrèt !
+Au final un talk très intéressant, pas mal de tips je vous en ai sélectionné plusieurs pêle-mêle :
+  - Rendre cohérente l'utilisation au détriment de la justesse technique, ici un exemple simple pour avancer, un robot Parrot doit avoir une vitesse sur ses roues mises en négatives ! Pas très user friendly et, pour les non initiés, pas très logique d'avancer avec du négatif. Du coup ils ont choisis d'inverser en toute transparence la valeur et de rendre public une méthode avec une vitesse positive.
+  - Si cross platform ne pas hésiter à rendre le sdk différent en fonction des plateforme pour rester fidèle aux pratiques notamment dans le naming de ses méthodes, cas des callbacks par exemple.
+  - Point d'honneur sur le Testing/Commentaires, la mise en place d'une documentation et la mise à disposition de sample concret !
   - Toujours avoir en tête le coût et le poids ! Votre sdk doit pouvoir être utilisé en toute transparence sur les traitements de l'application. 
   - Laisser la possibilités au développeur de personnaliser certaines parties de votre librairie/votre sdk (ex du Pattern Builder ou l'on peut modifier le builder pour le custom à sa guise)
 
 ## Kotlin coroutines 
 
-Une présentation sous les couleurs du mème de chat toujours très efficace ! 
+Une présentation sous les couleurs du mèmes de chat toujours très efficace ! 
 Ici Erik Hellman nous présentais une alternative pour pouvoir travailler en asynchrone aux Asynctask et autres outils actuels.
 Je dois dire que cette présentation m'as plutôt convaincu ^^ 
 On y vois en effet la simplicité et la meilleur visibilité qu'offre les coroutines quand elles sont mises en pratique avec Kotlin !
 Les coroutines peuvent être cancel, elles peuvent lancer elle même d'autres coroutines (inception de coroutine).
-On peut préciser le thread dans lequel elle va s'éxecuter, on peut définir si l'on veux avoir un retour ou non via l'utilisation des mots clés launch (sans retour) ou async (présence d'un retour).
+On peut préciser le thread dans lequel elle va s'exécuter, on peut définir si l'on veux avoir un retour ou non via l'utilisation des mots clés launch (sans retour) ou async (présence d'un retour).
 Très important aussi, la présence dans la librairie d'un Listener, le CoroutineLifeCycleListener, qui permet à votre objet coroutine de coller parfaitement au cycle de vie de vos vues, et d'en adapter son comportement en fonction.
 Il a aussi mis en avant son utilisation lié avec l'objet Continuation, objet permettant de recevoir les retours d'erreur et de les gérer comme bon vous semble.
-Au final une solution efficace, assez complèxe à premiere vue, il faut se faire la main avec les lambdas mais le résultat à l'air d'en valoir le coup !
+Au final une solution efficace, assez complexe à première vue, il faut se faire la main avec les lambdas mais le résultat à l'air d'en valoir le coup !
 
 ## Gérer vos tests UI 
 
 Un bon retour d'expérience de la part de l'équipe Android de chez LeBonCoin ici qui nous présentais leur chemin parcouru dans l'élaboration d'un système de test d'UI automatisé.
-Cela a était le moment de partager quelques outils plutot appréciables :
+Cela a était le moment de partager quelques outils plutôt appréciables :
  - Gerrit pour la relecture de code
  - Swarmer pour la génération d'émulateur
- - Spoon pour lancer l'éxecution de test
- - Composer autre outils lancer l'execution des tests mais fournissant un rapport plus facile à lire
- - Barrista surcouche Espresso pour faciliter l'ecriture de test UI
+ - Spoon pour lancer l'exécution de test
+ - Composer autre outils lancer l'exécution des tests mais fournissant un rapport plus facile à lire
+ - Barrista surcouche Espresso pour faciliter l'écriture de test UI
  - Android test orchestrator  exécute les tests
 (à titre informatif parmi ces outils Swarmer et Composer ont était les solutions retenus par leurs équipes)
-Petit bémol de la présentation, et plus généralement de la solution, elle n'est viable que pour une stack Android, ce qui est je trouve dommage surtout lorsque comme LeBonCoin, on possède un ecosystème comprenant les deux environnements iOS/Android.
+Petit bémol de la présentation, et plus généralement de la solution, elle n'est viable que pour une stack Android, ce qui est je trouve dommage surtout lorsque comme LeBonCoin, on possède un écosystème comprenant les deux environnements iOS/Android.
 
 ## Gitlab dans vos process 
 
@@ -79,18 +79,18 @@ Il nous a prouvé que l'on pouvais plus ou moins gérer son produit de A à Z en
 
 ## Build Layout sans en chier ! 
 
-Ici l'équipe de google à essayer de nous convaincre que le builder de layout avait changé et qu'il était desormais plus user friendly ! 
+Ici l'équipe de google à essayer de nous convaincre que le builder de layout avait changé et qu'il était désormais plus user friendly ! 
 Pari plus ou moins réussis avec l'ajout de nombreuse feature sexy basé sur le constraintlayout, permettant de grandement simplifier la création de layout à partir de simple drag & drop !
-La création d'un constructeur de chaine permettant en un simple clic sur élément de les aligner à la manière d'un LinearLayout en est un bon exemple.
+La création d'un constructeur de chaîne permettant en un simple clic sur élément de les aligner à la manière d'un LinearLayout en est un bon exemple.
 A noter que tout les changements sont effectifs à partir d'Android Studio 3.0, avant ça continuez de tout faire à la dure dans le code !
 
 ## ConstraintLayout 2.0 
 
-John Hoford et Nicolas Roard, dreamteam du ConstraintLayout sont revenus sur toute les nouveautés et refléxions qui ont étaient portées sur le ConstraintLayout. 
-On a parlé Barriers, élément invisible que l'on peut fixer comme réference entre élement de design notamment lorsque que l'on veux aligner un élément à partir de plusieurs champs texte à longueur variable.
+John Hoford et Nicolas Roard, dreamteam du ConstraintLayout sont revenus sur toute les nouveautés et réflexions qui ont étaient portées sur le ConstraintLayout. 
+On a parlé Barriers, élément invisible que l'on peut fixer comme référence entre élément de design notamment lorsque que l'on veux aligner un élément à partir de plusieurs champs texte à longueur variable.
 On a vu l'apparition aussi de nouveau concept comme les Helpers qui permettent de refactor du code d'animation, la notion aussi de State XML, donc d'état permettant de gérer des reactions de design, des animations sans avoir à le faire programmatiquement ! 
 Les States XML permettent aussi en cas de changement de taille d'écran de faire des changements réactifs de design, ou même de layout, un peu comme du responsive design !
-Enfin la mise à disposition d'une réele API, Fluent Api permettant de centraliser et de trouver une documentation sur tout ces éléments de design lié au ConstraintLayout va aussi voir le jour.
+Enfin la mise à disposition d'une réelle API, Fluent Api permettant de centraliser et de trouver une documentation sur tout ces éléments de design lié au ConstraintLayout va aussi voir le jour.
 
 ### 24 Avril :
 
@@ -118,12 +118,12 @@ Personnellement je m'y perd un peu, donc je ne pourrais pas rentrer en détail s
 
 ## De la domotique faite-maison 
 
-L'une des meilleures conférences de ces Android Makers. On nous explique comment se passer des boitiers domotiques bridés (coucou Philips Hue Bridge) qui ne gèrent que ses ampoules, pour faire notre propre maison connectée avec Android Things.
+L'une des meilleures conférences de ces Android Makers. On nous explique comment se passer des boîtiers domotiques bridés (coucou Philips Hue Bridge) qui ne gèrent que ses ampoules, pour faire notre propre maison connectée avec Android Things.
 Une ampoule bluetooth à moins de 10€, un Raspberry Pi à moins de 30€, une carte SD pour y installer Android Things et Cloud Functions.
-Le principe étant que notre assistant (Google Home ou autre) se synchronise tout d'abord avec notre Raspberry, lorsqu'il reçoit une commande utilisateur, via une Google Cloud Function afin d'avoir un état des lieux de tous les objets connectés de notre domicile. Ensuite il envoit la commande de l'utilisateur, puis notre fonction va donner l'instruction à notre Raspberry, qui va enfin pouvoir commander notre ampoule ou autre objet connecté. Une fois que tout s'est bien passé, on renvoit un message à l'assistant pour lui notifier que tout s'est bien passé.
+Le principe étant que notre assistant (Google Home ou autre) se synchronise tout d'abord avec notre Raspberry, lorsqu'il reçoit une commande utilisateur, via une Google Cloud Function afin d'avoir un état des lieux de tous les objets connectés de notre domicile. Ensuite il envoie la commande de l'utilisateur, puis notre fonction va donner l'instruction à notre Raspberry, qui va enfin pouvoir commander notre ampoule ou autre objet connecté. Une fois que tout s'est bien passé, on renvoie un message à l'assistant pour lui notifier que tout s'est bien passé.
 Contrairement à des solutions toutes prêtes mais qui ne fonctionnent qu'avec un certain type d'objet, on se retrouve ici avec une infinité de possibilités à connecter, et le tout avec Android.
 
 ## En bref
 
-Cette deuxieme édition de l'Android Maker est plutot une réussite, avec un bon mix entre talks techniques et retours d'experiences.
+Cette deuxième édition de l'Android Maker est plutôt une réussite, avec un bon mix entre talks techniques et retours d'expériences.
 Vivement la troisième édition !
