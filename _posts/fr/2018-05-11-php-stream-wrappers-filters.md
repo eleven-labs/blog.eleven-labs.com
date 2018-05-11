@@ -3,7 +3,7 @@ layout: post
 title: PHP Stream, Wrappers, Filters, un allié méconnu.   
 lang: fr  
 permalink: /fr/php-stream-wrappers-filters/  
-excerpt: "Bien que très puissant et présent dans PHP depuis la version 4.3, ce composant est souvent méconnu, sous exploité, voire mal utilisé."  
+excerpt: "Bien que très puissant et présent dans PHP depuis la version 4.3, ce composant est souvent méconnu, sous-exploité, voire mal utilisé."  
 authors:  
     - amoutte  
 categories:
@@ -28,17 +28,17 @@ cover: /assets/2018-05-11-php-stream-wrappers-filters/cover.jpg
 ## Définition
 
 La définition du [manuel](http://php.net/intro.stream) étant déjà très claire, je me contente simplement de vous la partager. 
-> La gestion des flux a été introduit en PHP 4.3.0. comme méthode de généralisation des fichiers, sockets, connexions réseau, données compressées et autres opérations du même type, qui partagent des opérations communes. Dans sa définition la plus simple, un flux est une ressource qui présente des capacités de flux : c'est-à-dire que ces objets peuvent être lus ou recevoir des écritures de manière linéaire, et dispose aussi de moyen d'accéder à des positions arbitraires dans le flux.
+> La gestion des flux a été introduite en PHP 4.3.0. comme méthode de généralisation des fichiers, sockets, connexions réseau, données compressées et autres opérations du même type, qui partagent des opérations communes. Dans sa définition la plus simple, un flux est une ressource qui présente des capacités de flux. C'est-à-dire que ces objets peuvent être lus ou recevoir des écritures de manière linéaire, et disposent aussi de moyens d'accéder à des positions arbitraires dans le flux.
 
 ## Protocoles
 
-Un protocole est une spécification de plusieurs règles pour un type de communication. Il peu également être utile pour vérifier que les informations soit correctement reçues.
+Un protocole est une spécification de plusieurs règles pour un type de communication. Il peut également être utile pour vérifier que les informations soient correctement reçues.
 
-> Dans une conversation téléphonique quand l'interlocuteur décroche il commence par dire "Allô" afin de spécifier qu'il est prêt à recevoir des informations.
+> Dans une conversation téléphonique quand l'interlocuteur décroche, il commence par dire "Allô" afin de spécifier qu'il est prêt à recevoir des informations.
 
 La référence d'un flux (style URL) s'écrit de la forme `scheme://target`.
 
-> Donc oui `https://blog.eleven-labs.com/` peu être ouvert comme un flux qui pointe vers une ressource distante.
+> Donc oui `https://blog.eleven-labs.com/` peut être ouvert comme un flux qui pointe vers une ressource distante.
 
 ### Wrappers
 
@@ -80,7 +80,7 @@ Utiliser `stream_get_transports()` pour avoir la liste des protocoles de transpo
 ```php
 var_dump(stream_get_transports());
 ```
-> A noter que les paths des `sockets` web s'écrivent sous la forme
+> À noter que les paths des `sockets` web s'écrivent sous la forme
 > `{PROTOCOL}://{DOMAIN / IP v4, v6}:{PORT}`
 
 Voici plusieurs exemples :
@@ -187,7 +187,7 @@ file_put_contents('php://filter/string.toupper/resource=php://output', 'Code de 
 [`Exécuter le php`](https://3v4l.org/4nggb)
 > Les 2 exemples ci-dessus vont afficher `CODE DE LANCEMENT: 151215`
 
-**👨‍🚀 Là aussi il est possible de créer sont propre `filter` grâce à [php_user_filter](http://php.net/php_user_filter) !**
+**👨‍🚀 Là aussi il est possible de créer son propre `filter` grâce à [php_user_filter](http://php.net/php_user_filter) !**
 
 Voici un petit filtre geek.
 
@@ -214,7 +214,7 @@ file_put_contents('php://filter/l33t_filter/resource=php://output', 'Salut ça v
 
 > L'exemple du dessus convertira `Salut ça va?` en `Z41u+ ç4 v4?`
 
-On peu imaginer des filtres html>markdown,  un emoji converter, un dictionnaire de mot blacklistés, etc.
+On peut imaginer des filtres html>markdown,  un emoji converter, un dictionnaire de mots blacklistés, etc.
 
 ## Les flux I/O
 
@@ -232,14 +232,14 @@ copy(
     'php://filter/string.toupper/resource=php://stdout'
 );
 ```
-La commande ci-dessous écrira `string` dans le flux `stdin` et ici on copie simplement ce que l'on reçois dans la sortie standard après avoir appliqué un filtre `toupper`.
+La commande ci-dessous écrira `string` dans le flux `stdin` et ici on copie simplement ce que l'on reçoit dans la sortie standard après avoir appliqué un filtre `toupper`.
 ```bash
 $ echo 'string' | php index.php #affichera STRING
 $ cat file.txt | php index.php #affichera le contenu du fichier en majuscule
 ```
 
 ### php://stdout et php://stderr
-Sont les flux de sortie standard (ligne de commande)
+Sont les flux de sortie standards (ligne de commande)
 > ℹ️ stdin: est en lecture seule
 
 Exemple
@@ -257,7 +257,7 @@ Hello
 ```
 Et les erreurs seront dirigées vers le flux `php://stderr` qui est bien souvent configuré par votre file handler (nginx/apache...) grâce au paramètre [error_log](http://php.net/error-log).
 
-👨‍🚀 **En ligne de commande `php://output` `php://stderr` sont par défaut envoyer dans `php://stdout`**
+👨‍🚀 **En ligne de commande `php://output` `php://stderr` sont par défaut envoyés dans `php://stdout`**
 
 Lançons ce script avec la commande suivante :
 ```bash
@@ -285,7 +285,7 @@ tandis que le fichier `out.txt` contiendra :
 Hello
 ```
 
-**Mais on peu également rediriger la sortie d'erreur**
+**Mais on peut également rediriger la sortie d'erreur**
 ```bash
 $ php error.php 2> errors.txt
 ```
@@ -300,9 +300,9 @@ PHP Notice:  Undefined index: user in /var/www/error.php on line 5
 PHP Stack trace:
 PHP   1. {main}() /var/www/error.php:0
 ```
-ℹ️ On peu également combiner les 2 `php error.php > out.txt 2> errors.txt`
-> `>` et `2>` écrase le fichier ou le créé.
-> `>>` et `2>>` écrit à la fin du fichier ou le créé.
+ℹ️ On peut également combiner les 2 `php error.php > out.txt 2> errors.txt`
+> `>` et `2>` écrase le fichier ou le crée.
+> `>>` et `2>>` écrit à la fin du fichier ou le crée.
 > `2>&1` et `2>>&1` redirige les 2 flux (avec le même comportement pour `>` et `>>`)
 
 ### php://input
@@ -319,7 +319,7 @@ echo 'Some data';
 N'oubliez pas qu'avec `php://output` vous pouvez utiliser les filtres, le contexte et même pourquoi pas réécrire au début.
 
 ### php://temp et php://memory
-Permet d'écrire dans un gestionnaire de fichiers. `php://memory` stockera toujours en mémoire tandis que `php://temp` stockeras en mémoire, puis sur disque après avoir attends la limite prédéfinie (défaut 2Mo)
+Permet d'écrire dans un gestionnaire de fichiers. `php://memory` stockera toujours en mémoire tandis que `php://temp` stockera en mémoire, puis sur disque après avoir attendu la limite prédéfinie (défaut 2Mo)
 > 👨‍🚀 `php://temp/maxmemory:200` stockera sur disque une fois que 200 octets seront écrit dans le flux.
 
 ### php://filter
@@ -358,7 +358,7 @@ copy(
     __DIR__.'/downloaded_textfile.txt'
 );
 ```
-ℹ️ On peu faire le même traitement avec des ressources :
+ℹ️ On peut faire le même traitement avec des ressources :
 
 ```php
 stream_copy_to_stream(
@@ -374,7 +374,7 @@ Voici la consommation mémoire pour un fichier de 5Mo.
 | copy | 2Mo | 2Mo |
 |stream_copy_to_stream|2Mo|2Mo|
 
-La différence de consommation mémoire est due au fait que `copy` et `stream_copy_to_stream` vont  directement écrire la source dans la destination.
+La différence de consommation mémoire est due au fait que `copy` et `stream_copy_to_stream` vont directement écrire la source dans la destination.
 
 👨‍🚀 N'hésitez pas à utiliser les `wrappers`/`transports` cités au début de l'article.
 
@@ -394,7 +394,7 @@ Un autre exemple fréquemment rencontré lors de la création de fichier tempora
 ```php
 $tmpFile = tempnam(sys_get_temp_dir(), 'php' . rand());
 ```
-⚠️ Ici le script va créé un **fichier** dans le **dossier temporaire** de php. 
+⚠️ Ici le script va créer un **fichier** dans le **dossier temporaire** de php. 
 - Ce qui veut dire qu'il vous faudra supprimer vous-même ce fichier.
 - La fonction `tempnam()` retourne le `path` et non la ressource.
 
@@ -413,9 +413,9 @@ Ce fichier sera automatiquement effacé :
 - lorsque le script sera terminé.
 
 ## Conclusion
-Bien que très puissant et présent dans PHP depuis la version 4.3, ce composant est souvent méconnu, sous exploité, voir mal utilisé. C'est pourquoi j'en fais la promotion ici, et, j'espère avoir suscité un élan d'intérêt pour ce composant. 
+Bien que très puissant et présent dans PHP depuis la version 4.3, ce composant est souvent méconnu, sous exploité, voire mal utilisé. C'est pourquoi j'en fais la promotion ici. J'espère avoir suscité votre intérêt !
 
-📝 **Je n'ai volontairement pas abordé les flux de type `socket` car, ils mériteraient un article à eux seul.**
+📝 **Je n'ai volontairement pas abordé les flux de type `socket` car, ils mériteraient un article à eux seuls.**
 
 ## Liens utiles
 - 👍 https://www.youtube.com/watch?v=3tOGhPj8IcA
