@@ -418,8 +418,8 @@ Bien que très puissant et présent dans PHP depuis la version 4.3, ce composant
 📝 **Je n'ai volontairement pas abordé les flux de type `socket` car, ils mériteraient un article à eux seuls.**
 
 ## Liens utiles
-- 👍 https://www.youtube.com/watch?v=3tOGhPj8IcA
-- http://php.net/stream
-- http://php.net/context
-- http://php.net/wrappers
-- https://github.com/reactphp/react
+- 👍 [Les flux : méconnus et sous-utilisés - Pascal Martin - Forum PHP 2015](https://www.youtube.com/watch?v=3tOGhPj8IcA)
+- [http://php.net/stream](http://php.net/stream)
+- [http://php.net/context](http://php.net/context)
+- [http://php.net/wrappers](http://php.net/wrappers)
+- [https://github.com/reactphp/react](https://github.com/reactphp/react)
