@@ -177,7 +177,7 @@ Sélectionnez le serveur précédemment créé et ajoutez l'IDE key qui est rens
 
 Félicitations ! Vous êtes maintenant capable de déboguer votre application sans avoir php, phpunit, Xdebug ou tout autre librairie sur votre environnement local. 
 
-## Lancement des tests unitaires
+# Lancement des tests unitaires
 Nous pouvons à présent lancer notre suite de tests unitaires sur notre container. Vous pouvez effectuer un clic droit sur le dossier `tests` puis cliquer sur `run tests` (ou `ctrl`+`Shift`+`F10`).
  
 > Vous pouvez également lancer les tests d'une seule classe ou encore lancer un test d'une classe en particulier.
@@ -196,11 +196,11 @@ Cette fonction est testée unitairement, nous allons donc pouvoir la déboguer..
 - Effectuez un clic droit sur le test unitaire que vous souhaitez déboguer puis cliquez sur **Debug 'testGetContent'**. Le débogueur se lance alors et arrive au point d'arrêt ajouté dans notre classe concrète :D
 > De la même manière, vous pouvez également déboguer des scripts tels que des commandes symfony.
 
-## Conclusion
+# Conclusion
 C'est terminé, vous êtes maintenant capable de configurer PHPStorm afin qu'il lance vos tests unitaires et/ou une session de débogage à travers un container Docker.
 
 N'hésitez pas à commenter ce post pour toute question/remarque, demande d'ajout, ou éventuel point de bloquage rencontré lors de la configuration de votre environement, nous serons ravis de pouvoir échanger avec vous !
 
-## Sources
+# sources
 [configuring-remote-python-interpreters.html](https://www.jetbrains.com/help/phpstorm/configuring-remote-python-interpreters.html)
 [docker-remote-interpreters](https://blog.jetbrains.com/phpstorm/2016/11/docker-remote-interpreters/)
