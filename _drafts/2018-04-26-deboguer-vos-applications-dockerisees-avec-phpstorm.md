@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Déboguer vos applications dockerisées avec PhpStorm  
-excerpt: Aujourd'hui je vais vous expliquer comment lancer vos tests unitaires et les déboguer avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit ou Xdebug sur votre machine...
+excerpt: Aujourd'hui je vais vous expliquer comment lancer vos tests unitaires et les déboguer avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit, ou Xdebug sur votre machine...
 authors:
 - rmasclef
 permalink: /fr/debug-run-phpunit-tests-using-docker-remote-interpreters-with-phpstorm/
@@ -17,7 +17,7 @@ tags:
 cover: /img/covers/StockSnap_X7ZB66F677.jpg
 ---
 
-Aujourd'hui je vais prendre un peu de votre temps pour vous expliquer comment lancer vos tests unitaires et les déboguer avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit ou Xdebug sur votre machine ...
+Aujourd'hui je vais vous expliquer comment lancer vos tests unitaires et les déboguer avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit, ou Xdebug sur votre machine...
 
 ## Pré-requis
 ### Sur votre machine locale
@@ -55,7 +55,7 @@ Vous aurez alors accès à un container nommé `test-app` faisant tourner un `ph
 > 
 > ![Quick Docker settings access]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/quick-docker-settings-access.png)
 
-Nous arrivons alors sur la page suivante, qui va nous permettre d'ajouter notre interpréteur `docker`:
+Nous arrivons alors sur la page suivante, qui va nous permettre d'ajouter notre interpréteur `docker` :
 
 ![Docker plugin settings page]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/docker-plugin-settings-page.png)
 
@@ -125,7 +125,7 @@ Pour ce faire, rendez-vous dans **File/Settings.../Languages & Framework/PHP***
 ![PHPStorm Settings PHP]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm-settings-php.png)
 
 - Cliquez sur ![PHPStorm Browse button]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm-browse-button.png) à droite de **CLI Interpreter**
-- Dans **Remote** sélectionner **Docker** (le serveur que nous avons créé précédemment est automatiquement sélectionné)
+- Dans **Remote** sélectionnez **Docker** (le serveur que nous avons créé précédemment est automatiquement sélectionné)
 - Dans **Image name** sélectionnez **dockerremotephpdebugingexample_test_app:latest**
 
 ![PHPStorm Settings CLI interpreter]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm-settings-CLI-interpreter.png)
@@ -136,7 +136,7 @@ PhpStorm va alors automatiquement récupérer l'image si elle n'est pas déjà p
   - sélectionnez l'interpréteur que nous venons de créer...
 
 PhpStorm va de nouveau détecter (ou au moins essayer...) le mapping entre le chemin du projet en local, et celui sur le container. Je dis "essayer" car vous devrez peut-être configurer manuellement ce mapping de la manière suivante :
-- Dans la partie `Docker container` cliquez les ![PHPStorm browse buttons]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm-browse-button.png)
+- Dans la partie `Docker container` cliquez sur les ![PHPStorm browse buttons]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm-browse-button.png)
 
 Vous pouvez alors modifier le mapping entre le volume docker et le chemin en local (ici `/home/rmasclef/Documents/projects/ElevenLabs/DockerRemotePhpDebugingExample` doit être bindé avec `var/www/TEST_APP` étant donné que nous avons effectué ce binding dans le [DockerFile](https://github.com/rmasclef/docker-remote-php-debuging/blob/master/docker-compose.yml#L8).
 ![PHPStorm]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm.png)
@@ -175,16 +175,16 @@ Notez également qu'il faut ajouter le mapping entre notre environnement local e
 Sélectionnez le serveur précédemment créé et ajoutez l'IDE key qui est renseigné dans le fichier de configuration `xdebug.ini` (https://github.com/rmasclef/docker-remote-php-debuging/blob/master/xdebug.ini#L5)
 ![PHPStorm Remote debug configuration]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm-remote-debug-configuration.png)
 
-Félicitation, vous êtes maintenant capable de déboguer votre application sans avoir php, phpunit, Xdebug ou tout autre librairie sur votre environnement local. 
+Félicitations ! Vous êtes maintenant capable de déboguer votre application sans avoir php, phpunit, Xdebug ou tout autre librairie sur votre environnement local. 
 
 # Lancement des tests unitaires
-Nous pouvons dés à présent lancer notre suite de tests unitaires sur notre container. Vous pouvez effectuer un clic droit sur le dossier `tests` puis cliquer sur `run tests` (ou `ctrl`+`Shift`+`F10`).
+Nous pouvons à présent lancer notre suite de tests unitaires sur notre container. Vous pouvez effectuer un clic droit sur le dossier `tests` puis cliquer sur `run tests` (ou `ctrl`+`Shift`+`F10`).
  
 > Vous pouvez également lancer les tests d'une seule classe ou encore lancer un test d'une classe en particulier.
 ![PHPStorm test class]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm-test-class.png)
-> Tips: Dans une classe de tests unitaires, si vous placez votre curseur à l'intérieur d'une fonction et que vous effectuez un `ctrl`+`Shift`+`F10` alors seul ce test sera lancé.
+> Tips: Dans une classe de tests unitaires, si vous placez votre curseur à l'intérieur d'une fonction et que vous effectuez un `ctrl`+`Shift`+`F10`, alors seul ce test sera lancé.
 > 
-> À l'inverse, si vous placez votre curseur à l'extérieur des fonctions et que vous effectuez un `ctrl`+`Shift`+`F10` alors tous les tests de la classe seront lancés.
+> À l'inverse, si vous placez votre curseur à l'extérieur des fonctions et que vous effectuez un `ctrl`+`Shift`+`F10`, alors tous les tests de la classe seront lancés.
 
 ## Déboguer
 
@@ -199,7 +199,7 @@ Cette fonction est testée unitairement, nous allons donc pouvoir la déboguer..
 # Conclusion
 C'est terminé, vous êtes maintenant capable de configurer PHPStorm afin qu'il lance vos tests unitaires et/ou une session de débogage à travers un container Docker.
 
-N'hésitez pas à commenter ce post pour toute question/remarque, demande d'ajout ou éventuel point de bloquage rencontré lors de la configuration de votre environement, nous serons ravis de pouvoir échanger avec vous !
+N'hésitez pas à commenter ce post pour toute question/remarque, demande d'ajout, ou éventuel point de bloquage rencontré lors de la configuration de votre environement, nous serons ravis de pouvoir échanger avec vous !
 
 # sources
 [configuring-remote-python-interpreters.html](https://www.jetbrains.com/help/phpstorm/configuring-remote-python-interpreters.html)
