@@ -75,7 +75,7 @@ L'objectif ici est de configurer l'interpréteur `php` que nous allons utiliser 
 
 Avant d'attaquer la configuration, attardons-nous quelques instants sur les fichiers présents dans ce projet :
 
-**DockerFile**
+**Dockerfile**
 ```yml
 FROM php:7.2-fpm 
   
@@ -138,7 +138,8 @@ PhpStorm va alors automatiquement récupérer l'image si elle n'est pas déjà p
 PhpStorm va de nouveau détecter (ou au moins essayer...) le mapping entre le chemin du projet en local, et celui sur le container. Je dis "essayer" car vous devrez peut-être configurer manuellement ce mapping de la manière suivante :
 - Dans la partie `Docker container` cliquez sur les ![PHPStorm browse buttons]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm-browse-button.png)
 
-Vous pouvez alors modifier le mapping entre le volume docker et le chemin en local (ici `/home/rmasclef/Documents/projects/ElevenLabs/DockerRemotePhpDebugingExample` doit être bindé avec `var/www/TEST_APP` étant donné que nous avons effectué ce binding dans le [DockerFile](https://github.com/rmasclef/docker-remote-php-debuging/blob/master/docker-compose.yml#L8).
+Vous pouvez alors modifier le mapping entre le volume docker et le chemin en local (ici `/home/rmasclef/Documents/projects/ElevenLabs/DockerRemotePhpDebugingExample` doit être bindé avec `var/www/TEST_APP` étant donné que nous avons effectué ce binding dans le [Dockerfile](https://github.com/rmasclef/docker-remote-php-debuging/blob/master/docker-compose.yml#L8).
+
 ![PHPStorm]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm.png)
 
 ### PHPUnit
@@ -172,7 +173,8 @@ PhpStorm doit alors détecter la version de phpunit installée sur le container.
 
 Notez également qu'il faut ajouter le mapping entre notre environnement local et le container.
  
-Sélectionnez le serveur précédemment créé et ajoutez l'IDE key qui est renseigné dans le fichier de configuration `xdebug.ini` (https://github.com/rmasclef/docker-remote-php-debuging/blob/master/xdebug.ini#L5)
+Sélectionnez le serveur précédemment créé et ajoutez l'IDE key qui est renseignée dans le fichier de configuration [xdebug.ini](https://github.com/rmasclef/docker-remote-php-debuging/blob/master/xdebug.ini#L5).
+
 ![PHPStorm Remote debug configuration]({{site.baseurl}}/assets/2018-04-26-deboguer-vos-applications-dockerisees-avec-phpstorm/PHPStorm-remote-debug-configuration.png)
 
 Félicitations ! Vous êtes maintenant capable de déboguer votre application sans avoir php, phpunit, Xdebug ou tout autre librairie sur votre environnement local. 
