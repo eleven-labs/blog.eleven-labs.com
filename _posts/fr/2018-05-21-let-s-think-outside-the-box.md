@@ -118,7 +118,6 @@ Ce module est un clone du premier, la seule différence est le texte à l'intér
 
 Troisième module
 ```Swift
-import Foundation
 import UIKit
 
 @objc
