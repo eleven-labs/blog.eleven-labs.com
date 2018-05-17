@@ -245,7 +245,7 @@ func getModules() {
 Au dessus, je vous ai parlé du realObject. Mais qu'est-ce que c'est que ça?<br/>
 Et bien en fait ce realObject c'est notre module, on l'instancie et garde une référence accessible dessus, je me suis inspiré des pointeur sur fonctions en C pour cette idée.
 
-Passons mainteant au chargement/création de nos modules.
+Passons maintenant au chargement/création de nos modules.
 
 #### Le chargement de nos modules
 
@@ -258,7 +258,7 @@ if let programmingObject = ObjectCreator.create(self.name) {
 Cela me sert à instancier mon module en me basant sur sur nom.<br/>
 Au début de l'article, je vois ai parlé d'***Objective-C***, on y arrive enfin.<br/>
 J'utilise l'Objective-C pour accéder à une couche vraiment basse pour instancier des classes basées sur leurs noms.<br/>
-Voici la classe qui nous permet de faire ça (Objective-C oblige en 2 fichiers, le .h et le .m), le tout avec un Bridging-Header pour que ce code soit visbile pour Swift.
+Voici la classe qui nous permet de faire ça (Objective-C oblige en 2 fichiers, le .h et le .m), le tout avec un Bridging-Header pour que ce code soit visible pour Swift.
 ```Objective-C
 
 #import <Foundation/Foundation.h>
@@ -378,7 +378,7 @@ On enchaine?
 
 Il s'agit d'un array JSON qui contient 3 objets (modules).<br/>
 Le champ **name** correspond au nom du module, **actions** à la liste de méthodes du module (**func** étant le nom de chaque méthode et **value** la valeur à passer à la méthode).<br/>
-J'ai bien fait exprès pour les deux premiers modules de rajouter des actions inexistantes, car nous voulons un système un minimume robuste
+J'ai bien fait exprès pour les deux premiers modules de rajouter des actions inexistantes, car nous voulons un système un minimum robuste
 
 #### Petit Interlude
 
@@ -406,11 +406,11 @@ Pour ce qui est de visible dans le simulateur, on va voir notre application s'ou
 Hum, c'est étrange ça, ça me rappelle l'action que l'on avait définit dans le 3ème module.<br/><br/>
 ![AppVideo]({{ site.baseurl }}/assets/2018-05-21-let-s-think-outside-the-box/appvideo.gif){:height="1104px" width="621px"}<br/><br/>
 Si on se penche maintenant sur la console, on va pouvoir observer des outputs.<br/>
-Mais dis donc, ces outputs là, ce ne seraient pas ceux que l'on a défnit pour nos deux premiers modules?!.<br/><br/>
+Mais dis donc, ces outputs là, ce ne seraient pas ceux que l'on a définit pour nos deux premiers modules?!.<br/><br/>
 ![ConsoleOutput]({{ site.baseurl }}/assets/2018-05-21-let-s-think-outside-the-box/console-output.png)<br/><br/>
 Je pense que vous commencez à comprendre le truc non?<br/>
 Toutes les actions que l'on a définit dans le **JSON** et qui existent vraiment dans le module ce sont réalisées.<br/>
-Plutot cool non? :)
+Plutôt cool non? :)
 
 ### Mais pourquoi faire tout ça ?
 
