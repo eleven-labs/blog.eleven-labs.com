@@ -26,7 +26,7 @@ Attention pour celui-ci, il va falloir s'accrocher, même si le principe est plu
 
 Ne vous en faites pas, je vais bien vous expliquez chaque étape, et bien décortiquez chaque bout de code pour vous.
 
-Ça fait un petit moment que je me retrouver à développer des projets dans lesquels les features doivent être confirgurables.<br/>
+Ça fait un petit moment que je me retrouver à développer des projets dans lesquels les features doivent être configurables.<br/>
 Le plus souvent on me demande de faire en sorte que des features soient activables ou désactivables à distance.
 
 On peut prendre l'exemple, d'un burger menu ou chaque entrée correspond à une fonctionnalité de l'application, et on souhaite choisir celles qui sont accessibles.<br/>
