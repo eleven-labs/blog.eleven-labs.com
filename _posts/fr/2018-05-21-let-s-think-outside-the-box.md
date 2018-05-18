@@ -368,7 +368,7 @@ On enchaine?
         "actions": [
             {
                 "func": "openUrlWithUrl:",
-                "value": "http://google.com"
+                "value": "https://eleven-labs.com/"
             }
         ]
     }
@@ -401,7 +401,7 @@ Bah tout simplement tester ce que ça donne :)
 Bon, on a enfin tout en place, il suffit juste de runner notre application.
 Notre belle application se lance et que se passe-t-il?
 
-Pour ce qui est de visible dans le simulateur, on va voir notre application s'ouvrir, afficher notre dummy screen, puis ouvrir Safari et aller sur le site **Google.fr**.<br/>
+Pour ce qui est de visible dans le simulateur, on va voir notre application s'ouvrir, afficher notre dummy screen, puis ouvrir Safari et aller sur le site d'**Eleven-Labs**.<br/>
 Hum, c'est étrange ça, ça me rappelle l'action que l'on avait définit dans le 3ème module.<br/><br/>
 ![AppVideo]({{ site.baseurl }}/assets/2018-05-21-let-s-think-outside-the-box/appvideo.gif){:height="1104px" width="621px"}<br/><br/>
 Si on se penche maintenant sur la console, on va pouvoir observer des outputs.<br/>
