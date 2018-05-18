@@ -38,6 +38,11 @@ Aujourd'hui, je vais vous montrer comment "piloter" le comportement d'une applic
 Quézaco?<br/>
 Mais il est fou ce garçon, il est resté trop longtemps dans l'espace.<br/>
 
+Pour que la suite de cet article soit plus simple, on va définir ensemble quelques mots clefs pour que vous ne soyez pas perdus.<br/>
+Je vais beaucoup utiliser le mot module, un module correspond à un ensemble de fonctionnalités que l'on peut facilement ré-utiliser et que l'on peut potentiellement sortir d'une application pour le mettre par exemple en tant que **Pod**<br/>
+Le terme suivant sera action, j'entend par action: "Fais telle chose" dans mon application, pour la durée de l'article, ce sera un output console, une ouverture de page web, ce genres de choses.<br/>
+Maintenant que l'on a éclaircit et définit les termes nécessaires à la bonne compréhension ce cet article, je pense qu'il est temps de passer à la suite.<br/>
+
 
 **Comment nous allons procéder:**
 
