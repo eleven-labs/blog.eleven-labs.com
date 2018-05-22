@@ -51,9 +51,9 @@ Voici quelques éléments de réponses :
 
 Comme annoncé plus haut, l'un des avantages de Realm est la performance.
 
-<img src="/assets/2018-02-24-realm-coredata-killer/realm_benchmarks_count.png"  width="600" />
-<img src="/assets/2018-02-24-realm-coredata-killer/realm_benchmarks_insert.png" width="600" />
-<img src="/assets/2018-02-24-realm-coredata-killer/realm_benchmarks_queries.png" width="600" />
+![realmCount]({{ site.baseurl }}/assets/2018-02-24-realm-coredata-killer/realm_benchmarks_count.png){:width="600px"}
+![realmInsert]({{ site.baseurl }}/assets/2018-02-24-realm-coredata-killer/realm_benchmarks_insert.png){:width="600px"}
+![realmQueries]({{ site.baseurl }}/assets/2018-02-24-realm-coredata-killer/realm_benchmarks_queries.png){:width="600px"}
 
 On voit clairement que Realm en a sous le capot !
 C'est vraiment un point très important car de nos jours nous mettons en place des applications qui traitent de plus en plus de données et de ce fait nous ne pouvons absolument pas nous permettre d'avoir une application lente.
