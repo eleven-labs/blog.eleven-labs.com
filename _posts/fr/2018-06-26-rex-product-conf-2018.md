@@ -54,9 +54,9 @@ Pour en savoir plus sur RogerVoice c’est par [ici](https://rogervoice.com/fr/h
 
 > *Quand les valeurs d’une entreprise sont tellement fortes qu’elles prennent naturellement part à la stratégie.*
 
-Inspiré par le sport, Blablacar a créé ce que l’on appelle un Playbook. Dans le foot US il s'agit de la bible de chaque équipe, dans laquelle on trouve tous les schémas de jeu possibles et leurs appellations. Elle est écrite et travaillée à l’entraînement lors de la préparation de la saison pendant près d’un mois, et peut parfois faire de 300 à 700 pages !
+Inspiré par le sport, BlaBlacar a créé ce que l’on appelle un Playbook. Dans le foot US il s'agit de la bible de chaque équipe, dans laquelle on trouve tous les schémas de jeu possibles et leurs appellations. Elle est écrite et travaillée à l’entraînement lors de la préparation de la saison pendant près d’un mois, et peut parfois faire de 300 à 700 pages !
 
-Chez Blablacar, c'est un guide complet qui réunit succès, échecs et nouvelles méthodes. Il ne se contente pas de donner une procédure à suivre étape par étape mais constitue une source de savoir en évolution permanente et aide à partager une vision du produit commune au sein de l’entreprise.
+Chez BlaBlacar, c'est un guide complet qui réunit succès, échecs et nouvelles méthodes. Il ne se contente pas de donner une procédure à suivre étape par étape mais constitue une source de savoir en évolution permanente et aide à partager une vision du produit commune au sein de l’entreprise.
 
 Ce Playbook s’appuie sur 5 piliers :
 
