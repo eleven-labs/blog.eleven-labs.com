@@ -3,7 +3,7 @@ layout: post
 title: "Rex : "La Product Conf"   
 lang: fr  
 permalink: /fr/rex-product-conf-18/  
-excerpt: "Je vous propose un court retour d'expérience de la 3ème edition de la Product Conf"
+excerpt: "Je vous propose un court retour d'expérience de la Product Conf' 3ème edition"
 authors:  
     - kagiri  
 categories:
