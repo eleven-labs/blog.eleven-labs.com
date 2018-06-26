@@ -71,7 +71,7 @@ Ce Playbook s’appuie sur 5 piliers :
 - **S**ystem Design : librairie graphique comprenant plusieurs briques préconçues. L’objectif est de rester créatif tout en limitant la perte de consistance et de cohérence.
 
 Qu’est-ce que la vision produit ? En quoi diffère-t-elle de la stratégie de l’entreprise et de son business model ?  
-Il s’agit de questions que beaucoup de collaborateurs au sein d’une entité de grande taille peuvent se poser. En créant ce Playbook, Blablacar a trouvé un réel moyen de répondre à cette question et d’aligner l’ensemble de l’entreprise sur une **vision commune**, accessible à tout moment.
+Il s’agit de questions que beaucoup de collaborateurs au sein d’une entité de grande taille peuvent se poser. En créant ce Playbook, BlaBlacar a trouvé un réel moyen de répondre à cette question et d’aligner l’ensemble de l’entreprise sur une **vision commune**, accessible à tout moment.
 
 Pour en savoir d'avantage sur le sujet, c'est [ici](https://www.blablacar.fr/blablalife/inside-story/never-assume-always-check).
 
@@ -128,7 +128,7 @@ Ce talk a été également l’occasion de revenir sur deux produits intéressan
 
 -   Qwant, moteur de recherche français qui jouit aujourd’hui d’une petite renommée, et qui peut se targuer d’avoir été conçu “privacy design”, ayant fait du respect de la vie privée de ses utilisateurs un de ses arguments principal.
  
-- Facetts, société fondée par Valère Fredonic, propose une application de messagerie instantanée permettant la gestion de plusieurs profils, de sa vie privée et sa e-réputation.
+- Facetts, société fondée par Valère Fédronic, propose une application de messagerie instantanée permettant la gestion de plusieurs profils, de sa vie privée et sa e-réputation.
 
 
 
