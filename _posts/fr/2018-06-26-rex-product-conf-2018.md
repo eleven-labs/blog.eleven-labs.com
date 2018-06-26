@@ -109,6 +109,29 @@ La réponse d’Everoad : apporter la même disruption en s’attaquant cette fo
 
 Comment : s’efforcer de lever les “pain points” un par un, concevoir l’ensemble de l’expérience d’après de réels retours utilisateurs.
 
+### “Privacy by design”
+**Pierrick Thébault @Qwant, Valère Fédronic @Facetts et Geoffrey Dorne @Design&Human**
+
+
+> “Dire que l'on se moque du droit à la vie privée parce qu'on n'a rien
+> à cacher, ça revient à dire que l'on se fiche de la liberté
+> d'expression parce qu'on n'a rien à dire.”
+> Edward Snowden
+
+La notion de “Privacy by design”, est un concept qui à pour but d’assurer dès la phase d’idéation et de création d’un produit, que la vie privée de ses utilisateurs sera protégée. Sous la forme d’une échange animé par Geoffrey Dorne, retour sur les notions de vie privée, les bonnes pratiques comme les moins bonnes.
+
+
+Comment créer un modèle économique viable sans la collecte massive et abusive de données personnelles ? Comment faire coexister big data et vie privée ? Des alternatives existent. Minimisation des données collectées, transparence sur leur collecte, dépersonnalisation des données...la plupart sont reprises par les grandes lignes du RGPD.  
+  
+
+Ce talk a été également l’occasion de revenir sur deux produits intéressants :
+
+-   Qwant, moteur de recherche français qui jouit aujourd’hui d’une petite renommée, et qui peut se targuer d’avoir été conçu “privacy design”, ayant fait du respect de la vie privée de ses utilisateurs un de ses arguments principal.
+ 
+- Facetts, société fondée par Valère Fredonic, propose une application de messagerie instantanée permettant la gestion de plusieurs profils, de sa vie privée et sa e-réputation.
+
+
+
 Pour résumer cette conférence, on peut dire qu'apporter des technologies disruptives sur un marché ne sert à rien si l'expérience et la façon d’opérer sur ce marché ne sont pas réinventés.
 
 Pour en savoir plus sur Everoad, suivez ce [lien](http://www.everoad.com/).
