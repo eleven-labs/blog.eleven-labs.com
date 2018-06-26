@@ -19,7 +19,7 @@ cover: /assets/2018-06-26-rex-product-conf-2018/cover.jpg
 
 Jeudi 21 Juin a eu lieu la troisième édition de « La Product Conférence ».
 
-C'est LE rendez-vous source d’apprentissage, d’inspiration et de partage pour les professionnels de la création de produit et d'expériences numériques. Que vous soyez CEO, CPO, VP Product, Product Managers, Product Owners… ce rex vous intéressera !
+C'est LE rendez-vous annuel source d’apprentissage, d’inspiration et de partage pour les professionnels de la création de produit et d'expériences numériques. Que vous soyez CEO, CPO, VP Product, Product Managers, Product Owners… ce rex vous intéressera !
 
 Il ne sera pas aussi exhaustif que cette journée mais vous insufflera -je l’espère- quelques idées et/ou une envie de partager votre expérience.
 
@@ -97,7 +97,7 @@ Simplifier son produit aux yeux de ses utilisateurs est au final un challenge qu
 #### Par Léa Mendes @Everoad
   
 
-> «Le support importe peu, c’est l'expérience qui compte, avant tout.»
+> «Le support importe peu, c’est l'expérience qui compte avant tout.»
 
 Everoad est un service qui vise à révolutionner le transport routier de marchandise.
 
