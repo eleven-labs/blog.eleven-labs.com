@@ -19,9 +19,9 @@ cover: /assets/2018-06-26-rex-product-conf-2018/cover.jpg
 
 Jeudi 21 Juin a eu lieu la troisième édition de « La Product Conférence ».
 
-Il s’agit du rendez-vous source d’apprentissage, d’inspiration et de partage entre des professionnels de la création de produit et d'expériences numériques. Que vous soyez CEO, CPO, VP Product, Product Managers, Product Owners … ce rex peut vous intéresser.
+C'est LE rendez-vous source d’apprentissage, d’inspiration et de partage pour les professionnels de la création de produit et d'expériences numériques. Que vous soyez CEO, CPO, VP Product, Product Managers, Product Owners… ce rex vous intéressera !
 
-Il ne sera pas aussi exhaustif que cette journée mais vous insufflera -je l’espère- quelques idées ou une envie de partager votre expérience.
+Il ne sera pas aussi exhaustif que cette journée mais vous insufflera -je l’espère- quelques idées et/ou une envie de partager votre expérience.
 
 Les interventions ayant été nombreuses je ne reviendrai pas sur tout mais le cœur y est ! ;)
 
@@ -37,7 +37,7 @@ Ce qu’il fallait retenir :
  - Des problématiques UX particulières : retranscription des émotions,
    visualisation du son (tonalité), message d’alerte pour prévenir que
    la personne au bout du fil utilise une synthèse vocale et communique
-   par écrit…
+   par écrit.
  - De la traduction instantanée qui a été ajoutée, ce qui fait que la
    conception initiale du produit a été pensée pour un nombre
    d'utilisateurs restreint, pour finalement être capable de répondre à
@@ -82,7 +82,7 @@ Pour en savoir d'avantage sur le sujet, c'est [ici](https://www.blablacar.fr/bla
 
 Clustree est un outil d’accompagnement RH basé sur l’IA proposant des recommandations de postes ou de candidats.
 
-La problématique évoquée : « Comment créer un produit complexe, tout en le rendant simple pour l’utilisateur ».
+La problématique évoquée est : «Comment créer un produit complexe, tout en le rendant simple pour l’utilisateur».
 
 #### Trois constats :
 - La perception des utilisateurs est plus importante que la performance de l’algorithme : il est impossible d’expliquer le fonctionnement d’un algorithme aux utilisateurs, il faut alors rendre la plateforme très simple.
@@ -90,16 +90,16 @@ La problématique évoquée : « Comment créer un produit complexe, tout en le 
 - En tant que PM, intégrer les data scientists dès la phase d’idéation du produit est essentiel. Une chose à retenir : l’algorithme va influer sur le produit, et le produit va influer sur l’algorithme.
 
 
-Simplifier son produit aux yeux de ses utilisateurs est au final un challenge que l’on retrouve dans n’importe quel contexte. Cependant injecter de l’IA dans son produit peut être vu comme faire le pari de proposer un produit fiable basé sur une technologie pas totalement mature. Dans ces cas-là il faut savoir concevoir une expérience la moins déceptive possible, en minimisant le taux d’erreur possible.
+Simplifier son produit aux yeux de ses utilisateurs est au final un challenge que l’on retrouve dans n’importe quel contexte. Cependant injecter de l’IA dans son produit peut être vu comme faire le pari de proposer un produit fiable basé sur une technologie pas totalement mature. Dans ces cas-là il faut savoir concevoir une expérience la moins déceptive possible, en minimisant le taux d’erreur.
 
 
 ### “Faire un produit sexy sur un marché qui ne l'est pas”
 #### Par Léa Mendes @Everoad
   
 
-> « Le support importe peu, c’est l'expérience qui compte avant tout »
+> «Le support importe peu, c’est l'expérience qui compte, avant tout.»
 
-Everoad est un service qui vise à révolutionner le transport routier de marchandise
+Everoad est un service qui vise à révolutionner le transport routier de marchandise.
 
 On entend parler depuis quelques années d’uberisation. En voici un cas concret. L’idée est de mettre en relation expéditeurs et transporteurs de marchandises en temps réel.
 
@@ -118,21 +118,21 @@ Comment : s’efforcer de lever les “pain points” un par un, concevoir l’e
 > d'expression parce qu'on n'a rien à dire.”
 > Edward Snowden
 
-La notion de “Privacy by design”, est un concept qui à pour but d’assurer dès la phase d’idéation et de création d’un produit, que la vie privée de ses utilisateurs sera protégée. Sous la forme d’une échange animé par Geoffrey Dorne, retour sur les notions de vie privée, les bonnes pratiques comme les moins bonnes.
+La notion de “Privacy by design”, est un concept qui à pour but d’assurer dès la phase d’idéation et de création d’un produit, que la vie privée de ses utilisateurs soit protégée. Sous la forme d’un échange animé par Geoffrey Dorne, retour sur les notions de vie privée, et des bonnes pratiques comme des moins bonnes.
 
 
-Comment créer un modèle économique viable sans la collecte massive et abusive de données personnelles ? Comment faire coexister big data et vie privée ? Des alternatives existent. Minimisation des données collectées, transparence sur leur collecte, dépersonnalisation des données...la plupart sont reprises par les grandes lignes du RGPD.  
+Comment créer un modèle économique viable sans la collecte massive et abusive de données personnelles ? Comment faire coexister big data et vie privée ? Des alternatives existent. Minimisation des données collectées, transparence sur leur collecte, dépersonnalisation des données... la plupart sont reprises par les grandes lignes du RGPD.
   
 
-Ce talk a été également l’occasion de revenir sur deux produits intéressants :
+Ce talk a également été l’occasion de revenir sur deux produits intéressants :
 
--   Qwant, moteur de recherche français qui jouit aujourd’hui d’une petite renommée, et qui peut se targuer d’avoir été conçu “privacy design”, ayant fait du respect de la vie privée de ses utilisateurs un de ses arguments principal.
+-   Qwant, moteur de recherche français qui jouit aujourd’hui d’une petite renommée, et qui peut se targuer d’avoir été conçu “privacy design”, ayant fait du respect de la vie privée de ses utilisateurs un de ses arguments principaux.
  
 - Facetts, société fondée par Valère Fédronic, propose une application de messagerie instantanée permettant la gestion de plusieurs profils, de sa vie privée et sa e-réputation.
 
 
 
-Pour résumer cette conférence, on peut dire qu'apporter des technologies disruptives sur un marché ne sert à rien si l'expérience et la façon d’opérer sur ce marché ne sont pas réinventés.
+Pour résumer cette conférence, on peut dire qu'apporter des technologies disruptives sur un marché ne sert à rien si l'expérience et la façon d’opérer sur ce marché ne sont pas réinventées.
 
 Pour en savoir plus sur Everoad, suivez ce [lien](http://www.everoad.com/).
 
