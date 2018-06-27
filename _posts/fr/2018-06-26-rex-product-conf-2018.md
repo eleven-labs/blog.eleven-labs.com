@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rex : "La Product Conf"
+title: "Rex : La Product Conf"
 lang: fr
 permalink: /fr/rex-product-conf-18/
 excerpt: "Je vous propose un court retour d'expérience de la Product Conf' 3ème edition"
