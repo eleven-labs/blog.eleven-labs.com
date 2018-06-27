@@ -88,7 +88,7 @@ Pour en savoir d'avantage sur le sujet, c'est [ici](https://www.blablacar.fr/bla
 
 Clustree est un outil d’accompagnement RH basé sur l’IA proposant des recommandations de postes ou de candidats.
 
-![Logo Clustree]({{site.baseurl}}/assets/2018-06-26-rex-product-conf-2018/logoclustree.png =286x101)
+![Logo Clustree]({{site.baseurl}}/assets/2018-06-26-rex-product-conf-2018/logoclustree.png)
 
 La problématique évoquée est : «Comment créer un produit complexe, tout en le rendant simple pour l’utilisateur».
 
