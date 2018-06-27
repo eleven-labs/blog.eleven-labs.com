@@ -25,7 +25,7 @@ Il ne sera pas aussi exhaustif que cette journée mais vous insufflera -je l’e
 
 Les interventions ayant été nombreuses je ne reviendrai pas sur tout mais le cœur y est ! ;)
 
-### “Être la voix de l'utilisateur : créer un produit pour les sourds”
+## “Être la voix de l'utilisateur : créer un produit pour les sourds”
 
 **Par Barbara Vogel et Olivier Jeannel de Thiersant @RogerVoice**
 
@@ -51,7 +51,7 @@ C’est intéressant d’avoir un retour d’expérience sur un produit pour leq
 
 Pour en savoir plus sur RogerVoice c’est par [ici](https://rogervoice.com/fr/home).
 
-### “Infuser une culture produit”
+## “Infuser une culture produit”
 
 **Par Rémi Guyot et Tristan Charvillat @BlaBlaCar**
 
@@ -80,7 +80,7 @@ Il s’agit de questions que beaucoup de collaborateurs au sein d’une entité 
 
 Pour en savoir d'avantage sur le sujet, c'est [ici](https://www.blablacar.fr/blablalife/inside-story/never-assume-always-check).
 
-### “Construire un produit d'IA pour des humains”
+## “Construire un produit d'IA pour des humains”
 
 **Par Martin Boutges @Clustree**
 
@@ -92,7 +92,7 @@ Clustree est un outil d’accompagnement RH basé sur l’IA proposant des recom
 
 La problématique évoquée est : «Comment créer un produit complexe, tout en le rendant simple pour l’utilisateur».
 
-#### Trois constats :
+### Trois constats :
 
 - La perception des utilisateurs est plus importante que la performance de l’algorithme : il est impossible d’expliquer le fonctionnement d’un algorithme aux utilisateurs, il faut alors rendre la plateforme très simple.
 - Le produit sera parfois déceptif, c’est inévitable : l’homme présente souvent une aversion pour l’IA, et lui pardonne moins facilement qu’un humain. De plus, un produit basé sur l’IA ne sera jamais infaillible, et ses erreurs seront souvent incompréhensibles. Il faut alors savoir préparer et former ses utilisateurs sur l’importance d’avoir des données de qualité, ce qui dans le cas de Clustree est indispensable pour proposer un service pertinent et limiter l’incohérence des résultats.
@@ -102,7 +102,7 @@ La problématique évoquée est : «Comment créer un produit complexe, tout en 
 Simplifier son produit aux yeux de ses utilisateurs est au final un challenge que l’on retrouve dans n’importe quel contexte. Cependant injecter de l’IA dans son produit peut être vu comme faire le pari de proposer un produit fiable basé sur une technologie pas totalement mature. Dans ces cas-là il faut savoir concevoir une expérience la moins déceptive possible, en minimisant le taux d’erreur.
 
 
-### “Faire un produit sexy sur un marché qui ne l'est pas”
+## “Faire un produit sexy sur un marché qui ne l'est pas”
 #### Par Léa Mendes @Everoad
 
 > «Le support importe peu, c’est l'expérience qui compte avant tout.»
@@ -119,7 +119,7 @@ La réponse d’Everoad : apporter la même disruption en s’attaquant cette fo
 
 Comment : s’efforcer de lever les “pain points” un par un, concevoir l’ensemble de l’expérience d’après de réels retours utilisateurs.
 
-### “Privacy by design”
+## “Privacy by design”
 
 **Pierrick Thébault @Qwant, Valère Fédronic @Facetts et Geoffrey Dorne @Design&Human**
 
