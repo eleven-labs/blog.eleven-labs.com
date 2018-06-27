@@ -101,6 +101,7 @@ La problématique évoquée est : «Comment créer un produit complexe, tout en 
 
 Simplifier son produit aux yeux de ses utilisateurs est au final un challenge que l’on retrouve dans n’importe quel contexte. Cependant injecter de l’IA dans son produit peut être vu comme faire le pari de proposer un produit fiable basé sur une technologie pas totalement mature. Dans ces cas-là il faut savoir concevoir une expérience la moins déceptive possible, en minimisant le taux d’erreur.
 
+Pour en savoir plus sur Clustree, suivez ce [lien](https://www.clustree.com/fr).
 
 ## “Faire un produit sexy sur un marché qui ne l'est pas”
 **Par Léa Mendes @Everoad**
@@ -118,6 +119,10 @@ L’opportunité : un marché très fragmenté et très peu digitalisé qui s’
 La réponse d’Everoad : apporter la même disruption en s’attaquant cette fois au service et surtout à l’expérience afin d’accompagner ce changement.
 
 Comment : s’efforcer de lever les “pain points” un par un, concevoir l’ensemble de l’expérience d’après de réels retours utilisateurs.
+
+Pour résumer cette conférence, on peut dire qu'apporter des technologies disruptives sur un marché ne sert à rien si l'expérience et la façon d’opérer sur ce marché ne sont pas réinventées.
+
+Pour en savoir plus sur Everoad, suivez ce [lien](http://www.everoad.com/).
 
 ## “Privacy by design”
 
@@ -138,10 +143,6 @@ Ce talk a également été l’occasion de revenir sur deux produits intéressan
 
 - Facetts, société fondée par Valère Fédronic, propose une application de messagerie instantanée permettant la gestion de plusieurs profils, de sa vie privée et sa e-réputation.
 
-
-Pour résumer cette conférence, on peut dire qu'apporter des technologies disruptives sur un marché ne sert à rien si l'expérience et la façon d’opérer sur ce marché ne sont pas réinventées.
-
-Pour en savoir plus sur Everoad, suivez ce [lien](http://www.everoad.com/).
 
 
 Si comme moi vous avez été inspiré et vous avez envie de partager, n’hésitez pas à me contacter pour échanger :)
