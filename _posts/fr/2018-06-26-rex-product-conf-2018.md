@@ -103,7 +103,7 @@ Simplifier son produit aux yeux de ses utilisateurs est au final un challenge qu
 
 
 ## “Faire un produit sexy sur un marché qui ne l'est pas”
-#### Par Léa Mendes @Everoad
+**Par Léa Mendes @Everoad**
 
 > «Le support importe peu, c’est l'expérience qui compte avant tout.»
 
