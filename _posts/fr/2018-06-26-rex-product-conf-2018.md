@@ -31,7 +31,7 @@ Les interventions ayant été nombreuses je ne reviendrai pas sur tout mais le c
 
 Roger Voice est une app’ permettant aux personnes atteintes de surdité de passer des appels téléphoniques grâce à la retranscription de la voix par écrit, et une retranscription de l’écrit par synthèse vocale.
 
-[Logo Roger Voice]({{site.baseurl}}/assets/2018-06-26-rex-product-conf-2018/LogoRogerVoice.png)
+![Logo Roger Voice]({{site.baseurl}}/assets/2018-06-26-rex-product-conf-2018/LogoRogerVoice.png)
 
 Ce qu’il fallait retenir :
 
@@ -55,7 +55,7 @@ Pour en savoir plus sur RogerVoice c’est par [ici](https://rogervoice.com/fr/h
 
 **Par Rémi Guyot et Tristan Charvillat @BlaBlaCar**
 
-[Logo BlablaCar]({{site.baseurl}}/assets/2018-06-26-rex-product-conf-2018/blablacar-logo.png)
+![Logo BlablaCar]({{site.baseurl}}/assets/2018-06-26-rex-product-conf-2018/blablacar-logo.png)
 
 > *Quand les valeurs d’une entreprise sont tellement fortes qu’elles prennent naturellement part à la stratégie.*
 
@@ -88,7 +88,7 @@ Pour en savoir d'avantage sur le sujet, c'est [ici](https://www.blablacar.fr/bla
 
 Clustree est un outil d’accompagnement RH basé sur l’IA proposant des recommandations de postes ou de candidats.
 
-[Logo Clustree]({{site.baseurl}}/assets/2018-06-26-rex-product-conf-2018/logoclustree.png)
+![Logo Clustree]({{site.baseurl}}/assets/2018-06-26-rex-product-conf-2018/logoclustree.png)
 
 La problématique évoquée est : «Comment créer un produit complexe, tout en le rendant simple pour l’utilisateur».
 
@@ -109,7 +109,7 @@ Simplifier son produit aux yeux de ses utilisateurs est au final un challenge qu
 
 Everoad est un service qui vise à révolutionner le transport routier de marchandise.
 
-[Logo Everload]({{site.baseurl}}/assets/2018-06-26-rex-product-conf-2018/everoadlogo.png)
+![Logo Everload]({{site.baseurl}}/assets/2018-06-26-rex-product-conf-2018/everoadlogo.png)
 
 On entend parler depuis quelques années d’uberisation. En voici un cas concret. L’idée est de mettre en relation expéditeurs et transporteurs de marchandises en temps réel.
 
