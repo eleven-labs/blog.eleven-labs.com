@@ -15,7 +15,7 @@ tags:
 cover: /assets/2018-06-26-rex-product-conf-2018/cover.jpg
 ---
 
-## REX  : « La Product Conférence ».
+## REX : « La Product Conférence ».
 
 Jeudi 21 Juin a eu lieu la troisième édition de « La Product Conférence ».
 
