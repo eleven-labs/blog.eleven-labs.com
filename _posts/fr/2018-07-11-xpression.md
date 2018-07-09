@@ -104,6 +104,7 @@ Nous allons maintenant voir dans quel cas nous pourrions utiliser cette librairi
 Afin d'avoir une specification nous allons utiliser la classe `ClosureExpressionBuilder`.
 En effet cette class fabrique une callback qui peu être utilisée comme une spécification.
 
+{% raw %}
 ```php
 <?php
 use Symftony\Xpression\Expr\ClosureExpressionBuilder;
@@ -152,7 +153,7 @@ $astronaut1->planet = 'Raccoons of Asgard';
 $astronaut1->points = 675;
 $astronaut1->rank = 'Captain';
 
-$query = 'planet\{\{Raccoons\}\}|points≥1000';
+$query = 'planet{{Raccoons}}|points≥1000';
 
 $parser = new Parser(new ClosureExpressionBuilder());
 $specification = $parser->parse($query);
@@ -161,6 +162,7 @@ $specification(['name' => 'Arnaud', 'planet' => 'Duck Invaders', 'points' => 785
 $specification($astronaut1);// true
 $specification(new Astronaut('Ilan', 'Donut Factory', 1325, 'Commodore')); // true
 ```
+{% endraw %}
 
 Comme vous pouvez le voir la spécification est appellable avec un array associatif, des objets avec des attributs public mais aussi avec des objet qui ont des getter.
 
@@ -171,6 +173,7 @@ Pour ce faire nous allons encore utiliser `ClosureExpressionBuilder`
 
 Nous allons utilisé ces donnés pour les exemples suivant.
 
+{% raw %}
 ```php
 <?php
 $astronauts = [
@@ -196,9 +199,11 @@ $astronauts = [
     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 ];
 ```
+{% endraw %}
 
 Je veux récupérer les astronautes dont la planète contient 'Raccoons'.
 
+{% raw %}
 ```php
 <?php
 use Symftony\Xpression\Expr\ClosureExpressionBuilder;
@@ -207,7 +212,7 @@ use Symftony\Xpression\Parser;
 // jeu de donnés
 $astronauts = [...];
 
-$query = 'planet\{\{Raccoons\}\}';
+$query = 'planet{{Raccoons}}';
 
 $parser = new Parser(new ClosureExpressionBuilder());
 $expression = $parser->parse($query);
@@ -220,11 +225,13 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 //     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 // ];
 ```
+{% endraw %}
 
 > La subtilité dans l'exemple précédent c'est que l'on utilise `$expression` dans un `array_filter`.
 
 Maintenant je veux sélectionner les astronautes qui ont plus de 1000 points mais aussi les `Raccoons`.
 
+{% raw %}
 ```php
 <?php
 use Symftony\Xpression\Expr\ClosureExpressionBuilder;
@@ -233,7 +240,7 @@ use Symftony\Xpression\Parser;
 // jeu de donnés
 $astronauts = [...];
 
-$query = 'planet\{\{Raccoons\}\}|points≥1000';
+$query = 'planet{{Raccoons}}|points≥1000';
 
 $parser = new Parser(new ClosureExpressionBuilder());
 $expression = $parser->parse($query);
@@ -253,11 +260,13 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 //     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 // ];
 ```
+{% endraw %}
 
 ### Filtrer une ArrayCollection
 
 Pour filtrer une ArrayCollection il suffit d'utiliser le bridge `Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter`. 
 
+{% raw %}
 ```php
 <?php
 use Doctrine\Common\Collections\ArrayCollection;
@@ -276,6 +285,7 @@ $parser = new Parser(new ExpressionBuilderAdapter(new ExpressionBuilder()));
 $expression = $parser->parse($query);
 $filteredAstronauts = $astronauts->matching(new Criteria($expression));
 ```
+{% endraw %}
 
 > ℹ️ Les `ArrayCollection` sont les objets utilisés par doctrine pour les relations (oneToMany, manyToMany etc...).
 
@@ -289,6 +299,7 @@ Ok maintenant imaginons que ces donnés sont dans une base de donnés MongoDB.
 
 > Accrochez vous ça vas être compliqué !
 
+{% raw %}
 ```php
 <?php
 use Doctrine\Common\EventManager;
@@ -303,7 +314,7 @@ $connection = new Connection('mongodb://localhost');
 $database = $connection->selectDatabase('eleven-labs');
 $collection = $database->selectCollection('astronauts');
 
-$query = 'planet\{\{Raccoons\}\}|points≥1000';
+$query = 'planet{{Raccoons}}|points≥1000';
 
 $parser = new Parser(new ExprBuilder());
 $queryBuilder = $parser->parse($query);
@@ -322,6 +333,7 @@ $astronauts = $collection->createQueryBuilder()->setQueryArray($queryBuilder->ge
 //     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 // ];
 ```
+{% endraw %}
 
 > Ha bah non ! C'est super simple
 
@@ -329,6 +341,7 @@ $astronauts = $collection->createQueryBuilder()->setQueryArray($queryBuilder->ge
 
 Et pour doctrine/orm alors ?
 
+{% raw %}
 ```php
 <?php
 use Doctrine\ORM\Tools\Setup;
@@ -344,7 +357,7 @@ $entityManager = EntityManager::create(array(
     'path' => __DIR__ . '/ORM/astronauts.sqlite',
 ), $config);
 
-$query = 'planet\{\{Raccoons\}\}|points≥1000';
+$query = 'planet{{Raccoons}}|points≥1000';
 
 // utilisation de MapperExpressionBuilder pour ajouter dynamiquement l'alias `a` au champs de la query
 $parser = new Parser(new MapperExpressionBuilder(new ExprAdapter(new Expr()), ['*' => 'a.%s']));
@@ -364,7 +377,8 @@ $astronauts = $qb->where($expression)->getQuery()->execute();
 //     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 // ];
 ```
- 
+{% endraw %}
+
 ⚠️ Lorsque l'on crée un queryBuilder avec l'ORM il faut spécifier un alias `EntityRepository::createQueryBuilder($alias)`. C'est pourquoi il ne reconnais pas le champ `planet` dans la query.
 
 La première solution serais d'écrire les champs avec l'alias dans la query initial ce qui donnerait `a.planet{{Raccoons}}|a.points≥1000`. Le problème de cette approche c'est que des informations de structure de base de donnés leak dans la query.
@@ -373,6 +387,7 @@ La seconde solution est d'utiliser la class `MapperExpressionBuilder`. En effet 
 
 Dans l'exemple suivant on indique que tous les champs (`*`) de la query sont préfixé avec `a.`.
 
+{% raw %}
 ```php
 $parser = new Parser(
     new MapperExpressionBuilder(
@@ -381,6 +396,7 @@ $parser = new Parser(
     )
 );
 ```
+{% endraw %}
 
 ### Filtrer un endpoint d'API
 
@@ -404,6 +420,7 @@ Installer le bundle via `composer require symftony/xpression-bundle` puis ajoute
 
 Il faut également activer la correction de querystring pour que les caractères réservé soit correctement utilisés.
 
+{% raw %}
 ```php
 <?php
 // public/index.php ou web/app.php (web/app_dev.php)
@@ -412,9 +429,11 @@ Il faut également activer la correction de querystring pour que les caractères
 $request = Request::createFromGlobals();
 // ...
 ``` 
+{% endraw %}
 
 Pour l'utiliser il vous suffit uniquement d'ajouter l'annotation `@Xpression(expressionBuilder="odm")` au dessus du controller que vous souhaitez filtrer.
 
+{% raw %}
 ```php
 <?php
 namespace App\Controller;
@@ -443,6 +462,7 @@ class AstronautController extends AbstractController
     }
 }
 ```
+{% endraw %}
 
 Vous pouvez également configurer les options suivantes: 
 
@@ -453,9 +473,12 @@ Vous pouvez également configurer les options suivantes:
 
 Maintenant vous pouvez vous rendre sur votre URL et y ajouter votre Xpression dans `query`.
 
+
+{% raw %}
 ```
-http://localhost/astronauts/list?query={planet\{\{Raccoons\}\}|points≥1000}
+http://localhost/astronauts/list?query={planet{{Raccoons}}|points≥1000}
 ```
+{% endraw %}
 
 ### Mots de la fin
 
