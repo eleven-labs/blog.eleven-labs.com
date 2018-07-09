@@ -219,6 +219,8 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 // ];
 ```
 
+> La subtilité dans l'exemple précédent c'est que l'on utilise `$expression` dans un `array_filter`.
+
 Maintenant je veux sélectionner les astronautes qui ont plus de 1000 points mais aussi les `Raccoons`.
 
 ```php
@@ -249,8 +251,6 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 //     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 // ];
 ```
-
-> La subtilité dans l'exemple précédent c'est que l'on utilise `$expression` dans un `array_filter`.
 
 ### Filtrer une ArrayCollection
 
@@ -417,13 +417,13 @@ Pour l'utiliser il vous suffit uniquement d'ajouter l'annotation `@Xpression(exp
 <?php
 namespace App\Controller;
 
-use App\Document\Article;
+use App\Document\Astronaut;
 use App\Repository\AstronautsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symftony\XpressionBundle\Annotations\Xpression;
 
-class ArticleController extends AbstractController
+class AstronautController extends AbstractController
 {
     /**
      * @Xpression(expressionBuilder="odm")
@@ -448,6 +448,14 @@ Vous pouvez également configurer les options suivantes:
  - sourceName (le nom du param, dans la source, qui contient l'expression default:query) 
  - targetName (le nom de l'argument a injecter dans le controller default:query)
  - expressionBuilder (le nom de l'expressionBuilder à utiliser *requis*)
+
+Maintenant vous pouvez vous rendre sur votre URL et y ajouter votre Xpression dans `query`.
+
+```
+http://localhost/astronauts/list?query={planet\{\{Raccoons\}\}|points≥1000}
+```
+
+### Mots de la fin
 
 Je vais m'arrêter la pour la présentation de cette librairie PHP.
 Je vous invite à tester la librairie et à y contribuer (idée, bugs, feature, documentation, etc).
