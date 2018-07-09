@@ -28,7 +28,6 @@ tags:
     - odm
     - expression
     - collection
-cover: /assets/2018-07-11-xpression/cover.jpg
 ---
 
 # Présentation de Xpression
