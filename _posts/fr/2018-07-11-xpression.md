@@ -43,15 +43,19 @@ Voici plusieurs exemples d'expression que nous pouvons écrire:
 
 L'âge doit être égal à `26`.
 
+{% raw %}
 ```
 age=26
 ```
+{% endraw %}
 
 L'âge doit être supérieur à `20` (inclus) et inférieur à `30` (exclus).
 
+{% raw %}
 ```
 age≥20&age<30
 ```
+{% endraw %}
 
 Voici la liste des opérateurs supportés par les différents bridge.
 
@@ -64,8 +68,8 @@ plus grand ou égal | `>=` `≥` | `param>=value` `param≥value` | X | X | X | 
 plus petit que | `<` | `param<value` | X | X | X | X |
 plus petit ou égal | `<=` `≤` | `param<=value` `param≤value` | X | X | X | X |
 dans | `[` `]` | `param[value1,value2]` | X | X | X | X |
-contient | `{{` `}}` | `param{{value}}` | X | X |  | X |
-ne contient pas | `!{{` `}}` | `param!{{value}}` | X | X |  | X |
+contient | `{% raw %}{{{% endraw %}` `{% raw %}}}{% endraw %}` | `{% raw %}param{{value}}{% endraw %}` | X | X |  | X |
+ne contient pas | `{% raw %}!{{{% endraw %}` `{% raw %}}}{% endraw %}` | `{% raw %}param!{{value}}{% endraw %}` | X | X |  | X |
 et | `&` | `param>1&param<10` | X | X | X | X |
 non et | `!&` | `param>1!&param<10` |  | X |  | X |
 ou | <code>&#124;</code> | <code>param>1&#124;param<10</code> | X | X | X | X |
