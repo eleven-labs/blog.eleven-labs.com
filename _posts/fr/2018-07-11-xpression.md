@@ -489,7 +489,7 @@ http://localhost/astronauts/list?query={planet{{Raccoons}}|points≥1000}
 Je vais m'arrêter là pour la présentation de cette librairie PHP.
 Je vous invite à tester la librairie et à y contribuer (idée, bugs, feature, documentation, etc).
 
-Voici une petite liste des futures ajout dans la librairie :
+Voici une petite liste des futures ajouts dans la librairie :
 - fixer l'utilisation des paramètres de query (placeholder).
 - créer d'autre bridge.
 - refacto le coeur de la librairie afin d'être extensible (pouvoir ajouter des syntaxes).
