@@ -3,7 +3,7 @@ layout: post
 title: "Présentation de la librairie PHP Xpression"   
 lang: fr
 permalink: /fr/presentation-php-xpression/  
-excerpt: "En tant que développeur nous avons tous déjà eu besoin de filtrer un jeu de donnés (array, collection, API etc...). Nous allons donc découvrir la librairie Xpression qui va nous permettre de filtrer différent contenus avec une syntaxe simplifiée."
+excerpt: "En tant que développeur nous avons tous déjà eu besoin de filtrer un jeu de donnés (array, collection, API etc...). Nous allons découvrir la librairie Xpression qui va nous permettre de filtrer différents contenus avec une syntaxe simplifiée."
 authors:  
     - amoutte  
 categories:
@@ -34,12 +34,12 @@ tags:
 
 ## Présentation de Xpression
 
-[**Xpression**](https://github.com/Symftony/Xpression) est un parser qui converti une expression textuelle ([DSL](https://fr.wikipedia.org/wiki/Langage_d%C3%A9di%C3%A9)) en une expression logiciel (**pattern spécification**).
-Nous allons donc voir ce que permet de faire la librairie et comment l'utiliser.
+[**Xpression**](https://github.com/Symftony/Xpression) est un parser qui convertit une expression textuelle ([DSL](https://fr.wikipedia.org/wiki/Langage_d%C3%A9di%C3%A9)) en une expression logicielle (**pattern spécification**).
+Nous allons voir ce que permet de faire la librairie et comment l'utiliser.
 
 ## La syntaxe
 
-Voici plusieurs exemples d'expression que nous pouvons écrire:
+Voici plusieurs exemples d'expressions que nous pouvons écrire :
 
 L'âge doit être égal à `26`.
 
@@ -57,7 +57,7 @@ age≥20&age<30
 ```
 {% endraw %}
 
-Voici la liste des opérateurs supportés par les différents bridge.
+Voici la liste des opérateurs supportés par les différents bridges :
 
 Opérateur | Syntaxes | Exemples | ORM | ODM | ArrayCollection | Closure |
 -------- | ------ | ------- | --- | --- | --------------- | ------- |
@@ -76,12 +76,12 @@ ou | <code>&#124;</code> | <code>param>1&#124;param<10</code> | X | X | X | X |
 non ou | <code>!&#124;</code> | <code>param>1!&#124;param<10</code> |  |  |  | X |
 ou exclusif | <code>^&#124;</code> `⊕` | <code>param>1^&#124;param<10</code> `param>1⊕param<10` |  |  |  | X |
 
-> Et oui la librairie fournis aussi des bridges vers doctrine `ORM`, `ODM` et `common` (pour filter les collections).
+> Eh oui, la librairie fournit aussi des bridges vers doctrine `ORM`, `ODM` et `common` (pour filter les collections).
 
 #### Précédence des opérateurs de composition
 
 Il faut faire attention à la priorité des opérateurs de compositions (`&`, `!&`, `|`, `!|`, `⊕`).
-Les grandes priorités sont prisent en compte en premier.
+Les grandes priorités sont prises en compte en premier.
 
 - `et`: 15
 - `non et`: 14
@@ -91,22 +91,22 @@ Les grandes priorités sont prisent en compte en premier.
 
 Pour gérer correctement vos expressions vous pouvez utiliser les parenthèses `(` `)`.
 
-Par exemple cette expression sélectionnera les `Raccoon` ou les `Schizo` qui ont plus de 100 points.
+Par exemple, cette expression sélectionnera les `Raccoon` ou les `Schizo` qui ont plus de 100 points.
 
 `planet='Raccoon'|name='Schizo'&point>100` est identique à `planet='Raccoon'|(name='Schizo'&point>100)`
  
-Alors que l'expression suivante sélectionnera les astronautes `Raccoon` qui on plus de 100 points ou les `Schizo` qui on plus de 100 points. 
+Alors que l'expression suivante sélectionnera les astronautes `Raccoon` qui ont plus de 100 points ou les `Schizo` qui on plus de 100 points. 
  
 `(planet='Raccoon'|name='Schizo')&point>100` 
 
 ## Utilisation
 
-Nous allons maintenant voir dans quel cas nous pourrions utiliser cette librairie.
+Nous allons maintenant voir dans quels cas nous pourrions utiliser cette librairie.
 
 ### Spécification
 
-Afin d'avoir une specification nous allons utiliser la classe `ClosureExpressionBuilder`.
-En effet cette class fabrique une callback qui peu être utilisée comme une spécification.
+Afin d'avoir une spécification nous allons utiliser la classe `ClosureExpressionBuilder`.
+En effet cette classe fabrique une callback qui peut être utilisée comme une spécification.
 
 {% raw %}
 ```php
@@ -150,7 +150,7 @@ class Astronaut {
     }
 }
 
-// objet avec des propriétés public
+// objet avec des propriétés publiques
 $astronaut1 = new \stdClass();
 $astronaut1->name = 'Mehdy';
 $astronaut1->planet = 'Raccoons of Asgard';
@@ -168,14 +168,14 @@ $specification(new Astronaut('Ilan', 'Donut Factory', 1325, 'Commodore')); // tr
 ```
 {% endraw %}
 
-Comme vous pouvez le voir la spécification est appellable avec un array associatif, des objets avec des attributs public mais aussi avec des objet qui ont des getter.
+Comme vous pouvez le voir, la spécification est appelable avec un array associatif, des objets avec des attributs publics mais aussi avec des objets qui ont des getters.
 
 ### Filtrer un jeu de donnés
 
-Nous allons dans un premier temps filtrer un tableau de donnés.
+Nous allons dans un premier temps filtrer un tableau de données.
 Pour ce faire nous allons encore utiliser `ClosureExpressionBuilder`
 
-Nous allons utilisé ces donnés pour les exemples suivant.
+Nous allons utiliser ces données pour les exemples suivants :
 
 {% raw %}
 ```php
@@ -213,7 +213,7 @@ Je veux récupérer les astronautes dont la planète contient 'Raccoons'.
 use Symftony\Xpression\Expr\ClosureExpressionBuilder;
 use Symftony\Xpression\Parser;
 
-// jeu de donnés
+// jeu de données
 $astronauts = [...];
 
 $query = 'planet{{Raccoons}}';
@@ -222,7 +222,7 @@ $parser = new Parser(new ClosureExpressionBuilder());
 $expression = $parser->parse($query);
 
 $filteredAstronauts = array_filter($astronauts, $expression);
-// le tableau ne contient que les astronautes dont la planete contient 'Raccoons'
+// le tableau ne contient que les astronautes dont la planète contient 'Raccoons'
 // $filteredAstronauts = [
 //     ['name' => 'Thibaud', 'planet' => 'Raccoons of Asgard', 'points' => 760, 'rank' => 'Fleet Captain'],
 //     ['name' => 'Mehdy', 'planet' => 'Raccoons of Asgard', 'points' => 675, 'rank' => 'Captain'],
@@ -241,7 +241,7 @@ Maintenant je veux sélectionner les astronautes qui ont plus de 1000 points mai
 use Symftony\Xpression\Expr\ClosureExpressionBuilder;
 use Symftony\Xpression\Parser;
 
-// jeu de donnés
+// jeu de données
 $astronauts = [...];
 
 $query = 'planet{{Raccoons}}|points≥1000';
@@ -250,7 +250,7 @@ $parser = new Parser(new ClosureExpressionBuilder());
 $expression = $parser->parse($query);
 
 $filteredAstronauts = array_filter($astronauts, $expression);
-// le tableau contient tous les astronautes qui on au moins 1000 points, mais aussi les 'Raccoons'
+// le tableau contient tous les astronautes qui ont au moins 1000 points, mais aussi les 'Raccoons'
 // $filteredAstronauts = [
 //     ['name' => 'Jonathan', 'planet' => 'Duck Invaders', 'points' => 5505, 'rank' => 'Fleet Admiral'],
 //     ['name' => 'Thierry', 'planet' => 'Duck Invaders', 'points' => 2555, 'rank'=> 'Vice Admiral'],
@@ -279,7 +279,7 @@ use Doctrine\Common\Collections\ExpressionBuilder;
 use Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter;
 use Symftony\Xpression\Parser;
 
-// jeu de donnés
+// jeu de données
 $astronauts = [...];
 
 // on wrap l'array dans une `ArrayCollection`
@@ -295,13 +295,13 @@ $filteredAstronauts = $astronauts->matching(new Criteria($expression));
 
 > Pour filtrer une `Collection` vous pouvez utiliser `ClosureExpressionBuilder` vu précédemment et l'injecter dans `Collection::filter(Closure $p)`.
 
-### Filtrer des donnés stoquer en base
+### Filtrer des données stockées en base
  
 #### Doctrine ODM
 
-Ok maintenant imaginons que ces donnés sont dans une base de donnés MongoDB.
+Bien, maintenant imaginons que ces données soient dans une base de données MongoDB.
 
-> Accrochez vous ça vas être compliqué !
+> Accrochez-vous, ça va être compliqué !
 
 {% raw %}
 ```php
@@ -313,7 +313,7 @@ use Symftony\Xpression\Bridge\Doctrine\MongoDb\ExprBuilder;
 use Symftony\Xpression\Expr\ClosureExpressionBuilder;
 use Symftony\Xpression\Parser;
 
-// Initialisation de la connection
+// Initialisation de la connexion
 $connection = new Connection('mongodb://localhost');
 $database = $connection->selectDatabase('eleven-labs');
 $collection = $database->selectCollection('astronauts');
@@ -339,7 +339,7 @@ $astronauts = $collection->createQueryBuilder()->setQueryArray($queryBuilder->ge
 ```
 {% endraw %}
 
-> Ha bah non ! C'est super simple
+> Ha bah non ! C'est super simple en fait
 
 #### Doctrine ORM
 
@@ -353,7 +353,7 @@ use Symftony\Xpression\Bridge\Doctrine\ORM\ExprAdapter;
 use Symftony\Xpression\Expr\MapperExpressionBuilder;
 use Symftony\Xpression\Parser;
 
-// dans cette exemple j'utilise l'annotation reader pour la configuration de mon schéma
+// dans cet exemple j'utilise l'annotation reader pour la configuration de mon schéma
 $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . "/Orm/Entity"), true, null, null, false);
 $entityManager = EntityManager::create(array(
     // votre configuration d'accès à votre base de donnés
@@ -363,7 +363,7 @@ $entityManager = EntityManager::create(array(
 
 $query = 'planet{{Raccoons}}|points≥1000';
 
-// utilisation de MapperExpressionBuilder pour ajouter dynamiquement l'alias `a` au champs de la query
+// utilisation de MapperExpressionBuilder pour ajouter dynamiquement l'alias `a` aux champs de la query
 $parser = new Parser(new MapperExpressionBuilder(new ExprAdapter(new Expr()), ['*' => 'a.%s']));
 $expression = $parser->parse($query);
 $qb = $entityManager->getRepository('Example\Orm\Entity\Product')->createQueryBuilder('a');
@@ -383,13 +383,13 @@ $astronauts = $qb->where($expression)->getQuery()->execute();
 ```
 {% endraw %}
 
-⚠️ Lorsque l'on crée un queryBuilder avec l'ORM il faut spécifier un alias `EntityRepository::createQueryBuilder($alias)`. C'est pourquoi il ne reconnais pas le champ `planet` dans la query.
+⚠️ Lorsque l'on crée un queryBuilder avec l'ORM il faut spécifier un alias `EntityRepository::createQueryBuilder($alias)`. C'est pourquoi il ne reconnait pas le champ `planet` dans la query.
 
-La première solution serais d'écrire les champs avec l'alias dans la query initial ce qui donnerait `a.planet{{Raccoons}}|a.points≥1000`. Le problème de cette approche c'est que des informations de structure de base de donnés leak dans la query.
+La première solution serait d'écrire les champs avec l'alias dans la query initiale ce qui donnerait `a.planet{{Raccoons}}|a.points≥1000`. Le problème de cet approche c'est que des informations de structure de base de données leakent dans la query.
 
-La seconde solution est d'utiliser la class `MapperExpressionBuilder`. En effet cette class vas décorer l'`ExpressionBuilder` pour ajouter les alias directement au moment ou le queryBuilder va être configuré.
+La seconde solution est d'utiliser la classe `MapperExpressionBuilder`. En effet cette classe va décorer l'`ExpressionBuilder` pour ajouter les alias directement au moment où le queryBuilder va être configuré.
 
-Dans l'exemple suivant on indique que tous les champs (`*`) de la query sont préfixé avec `a.`.
+Dans l'exemple suivant on indique que tous les champs (`*`) de la query sont préfixés avec `a.`.
 
 {% raw %}
 ```php
@@ -408,34 +408,34 @@ Actuellement si vous voulez filtrer votre API vous pouvez :
  
  - utiliser GraphQL.
  
-> Ce n'est pas la solution la plus légère à implementer. N'est pas forcement adaptée pour faire uniquement du filtrage de donnés. 
+> Ce n'est pas la solution la plus légère à implementer. N'est pas forcément adaptée pour faire uniquement du filtrage de données. 
  
- - récuperer les paramètres de requête manuellement et fabriquer votre query avec tous un tas de condition
+ - récupérer les paramètres de requête manuellement et fabriquer votre query avec tous un tas de condition
 
-> la syntaxe http des paramètres n'est pas lisible et peu devenir très lourde pour des requêtes complexe.
+> la syntaxe http des paramètres n'est pas lisible et peut devenir très lourde pour des requêtes complexes.
 
-Bonne nouvelle! Si votre API utilise une des sources de donnés vu précédemment vous pouvez filtrer les donnés à l'aide d'`Xpression`.
+Bonne nouvelle ! Si votre API utilise une des sources de données vu précédemment, vous pouvez filtrer les données à l'aide d'`Xpression`.
 
-> Garder à l'esprit que Xpression remplis un rôle différent de GraphQL
+> Gardez à l'esprit que Xpression remplit un rôle différent de GraphQL
 
 Nous allons voir un exemple d'utilisation du [Bundle Xpression](https://github.com/Symftony/Xpression-Bundle).
 
-Installer le bundle via `composer require symftony/xpression-bundle` puis ajouter le dans symfony (AppKernel.php ou bundle.php).
+Installez le bundle via `composer require symftony/xpression-bundle` puis ajoutez-le dans symfony (AppKernel.php ou bundle.php).
 
-Il faut également activer la correction de querystring pour que les caractères réservé soit correctement utilisés.
+Il faut également activer la correction de querystring pour que les caractères réservés soient correctement utilisés.
 
 {% raw %}
 ```php
 <?php
 // public/index.php ou web/app.php (web/app_dev.php)
 // ...
-\Symftony\Xpression\QueryStringParser::correctServerQueryString(); // ajouter cette ligne juste avant la création de la Requete
+\Symftony\Xpression\QueryStringParser::correctServerQueryString(); // ajoutez cette ligne juste avant la création de la Requete
 $request = Request::createFromGlobals();
 // ...
 ``` 
 {% endraw %}
 
-Pour l'utiliser il vous suffit uniquement d'ajouter l'annotation `@Xpression(expressionBuilder="odm")` au dessus du controller que vous souhaitez filtrer.
+Pour l'utiliser il vous suffit uniquement d'ajouter l'annotation `@Xpression(expressionBuilder="odm")` au-dessus du controller que vous souhaitez filtrer.
 
 {% raw %}
 ```php
@@ -468,7 +468,7 @@ class AstronautController extends AbstractController
 ```
 {% endraw %}
 
-Vous pouvez également configurer les options suivantes: 
+Vous pouvez également configurer les options suivantes : 
 
  - source (la source de la query (request, query, attributes, cookies, files, server, headers default: query))
  - sourceName (le nom du param, dans la source, qui contient l'expression default:query) 
@@ -487,13 +487,13 @@ http://localhost/astronauts/list?query={planet{{Raccoons}}|points≥1000}
 ### Mots de la fin
 
 Je vais m'arrêter là pour la présentation de cette librairie PHP.
-Je vous invite à tester la librairie et à y contribuer (idée, bugs, feature, documentation, etc).
+Je vous invite à tester la librairie et à y contribuer (idée, bugs, features, documentation, etc).
 
 Voici une petite liste des futures ajouts dans la librairie :
 - fixer l'utilisation des paramètres de query (placeholder).
-- créer d'autre bridge.
+- créer d'autre bridges.
 - refacto le coeur de la librairie afin d'être extensible (pouvoir ajouter des syntaxes).
-- implementer un builder de query en PHP et JS afin de pouvoir créé directement le query textuelle. 
+- implémenter un builder de query en PHP et JS afin de pouvoir créer directement le query textuel. 
 
 ### Liens utiles
 
