@@ -219,7 +219,7 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 // ];
 ```
 
-Maintenant je veux sélectionner les astronautes qui ont plus de 1000 points mais les `Raccoons` aussi.
+Maintenant je veux sélectionner les astronautes qui ont plus de 1000 points mais aussi les `Raccoons`.
 
 ```php
 <?php
