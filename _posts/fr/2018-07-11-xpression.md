@@ -30,12 +30,12 @@ tags:
     - collection
 ---
 
-# Présentation de Xpression
+## Présentation de Xpression
 
 [**Xpression**](https://github.com/Symftony/Xpression) est un parser qui converti une expression textuelle ([DSL](https://fr.wikipedia.org/wiki/Langage_d%C3%A9di%C3%A9) en une expression logiciel (**pattern spécification**).
 Nous allons donc voir ce que permet de faire la librairie et comment l'utiliser.
 
-# La syntaxe
+## La syntaxe
 
 Voici plusieurs exemples d'expression que nous pouvons écrire:
 
@@ -72,7 +72,7 @@ ou exclusif | <code>^&#124;</code> `⊕` | <code>param>1^&#124;param<10</code> `
 
 > Et oui la librairie fournis aussi des bridges vers doctrine `ORM`, `ODM` et `common` (pour filter les collections).
 
-### Précédence des opérateurs de composition
+#### Précédence des opérateurs de composition
 
 Il faut faire attention à la priorité des opérateurs de compositions (`&`, `!&`, `|`, `!|`, `⊕`).
 Les grandes priorités sont prisent en compte en premier.
@@ -93,11 +93,11 @@ Alors que l'expression suivante sélectionnera les astronautes `Raccoon` qui on 
  
 `(planet='Raccoon'|name='Schizo')&point>100` 
 
-# Utilisation
+## Utilisation
 
 Nous allons maintenant voir dans quel cas nous pourrions utilisé cette librairie.
 
-## Spécification
+### Spécification
 
 Afin d'avoir une specification nous allons utiliser la classe `ClosureExpressionBuilder`.
 En effet cette class fabrique une callback qui peu être utilisé comme une spécification.
@@ -162,7 +162,7 @@ $specification(new Astronaut('Ilan', 'Donut Factory', 1325, 'Commodore')); // tr
 
 Comme vous pouvez le voir la spécification est appellable avec un array associatif, des objets avec des attributs public mais aussi avec des objet qui ont des getter.
 
-## Filtrer un jeu de donnés
+### Filtrer un jeu de donnés
 
 Nous allons dans un premier temps filtrer un tableau de donnés.
 Pour ce faire nous allons encore utiliser `ClosureExpressionBuilder`
@@ -252,7 +252,7 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 
 > La subtilité dans l'exemple précédent c'est que l'on utilise `$expression` dans un `array_filter`.
 
-## Filtrer une ArrayCollection
+### Filtrer une ArrayCollection
 
 Pour filtrer une ArrayCollection il suffit d'utiliser le bridge `Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter`. 
 
@@ -279,9 +279,9 @@ $filteredAstronauts = $astronauts->matching(new Criteria($expression));
 
 > Pour filtrer une `Collection` vous pouvez utiliser `ClosureExpressionBuilder` vu précédemment et l'injecter dans `Collection::filter(Closure $p)`.
 
-## Filtrer des donnés stoquer en base
+### Filtrer des donnés stoquer en base
  
-### Doctrine ODM
+#### Doctrine ODM
 
 Ok maintenant imaginons que ces donnés sont dans une base de donnés MongoDB.
 
@@ -323,7 +323,7 @@ $astronauts = $collection->createQueryBuilder()->setQueryArray($queryBuilder->ge
 
 > Ha bah non ! C'est super simple
 
-### Doctrine ORM
+#### Doctrine ORM
 
 Et pour doctrine/orm alors ?
 
@@ -380,7 +380,7 @@ $parser = new Parser(
 );
 ```
 
-## Filtrer un endpoint d'API
+### Filtrer un endpoint d'API
 
 Actuellement si vous voulez filtrer votre API vous pouvez :
  
@@ -458,7 +458,7 @@ Voici une petite liste des futures ajout dans la librairie :
 - refacto le coeur de la librairie afin d'être extensible (pouvoir ajouter des syntaxes).
 - implementer un builder de query en PHP et JS afin de pouvoir créé directement le query textuelle. 
 
-## Liens utiles
+### Liens utiles
 
 - [Demo Xpression](http://symftony-xpression.herokuapp.com/)
 - [Code source Xpression](https://github.com/Symftony/Xpression)
