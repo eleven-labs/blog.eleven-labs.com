@@ -32,7 +32,7 @@ tags:
 
 ## Présentation de Xpression
 
-[**Xpression**](https://github.com/Symftony/Xpression) est un parser qui converti une expression textuelle ([DSL](https://fr.wikipedia.org/wiki/Langage_d%C3%A9di%C3%A9) en une expression logiciel (**pattern spécification**).
+[**Xpression**](https://github.com/Symftony/Xpression) est un parser qui converti une expression textuelle ([DSL](https://fr.wikipedia.org/wiki/Langage_d%C3%A9di%C3%A9)) en une expression logiciel (**pattern spécification**).
 Nous allons donc voir ce que permet de faire la librairie et comment l'utiliser.
 
 ## La syntaxe
@@ -45,15 +45,15 @@ L'âge doit être égal à `26`.
 age=26
 ```
 
-L'âge doit être supérieur à `20` (inclus) `et inférieur à `30` (exclus).
+L'âge doit être supérieur à `20` (inclus) et inférieur à `30` (exclus).
 
 ```
 age≥20&age<30
 ```
 
-Voici la liste des opérateurs supportés
+Voici la liste des opérateurs supportés par les différents bridge.
 
-Opérateur | Syntax | Exemple | ORM | ODM | ArrayCollection | Closure |
+Opérateur | Syntaxes | Exemples | ORM | ODM | ArrayCollection | Closure |
 -------- | ------ | ------- | --- | --- | --------------- | ------- |
 égal | `=` | `param=value` | X | X | X | X |
 différent de | `!=` `≠` | `param!=value` `param≠value` | X | X | X | X |
@@ -143,14 +143,14 @@ class Astronaut {
     }
 }
 
-// object avec des propriété public
+// objet avec des propriétés public
 $astronaut1 = new \stdClass();
 $astronaut1->name = 'Mehdy';
 $astronaut1->planet = 'Raccoons of Asgard';
 $astronaut1->points = 675;
 $astronaut1->rank = 'Captain';
 
-$query = 'planet{{Raccoons}}|points≥1000';
+$query = 'planet\{\{Raccoons\}\}|points≥1000';
 
 $parser = new Parser(new ClosureExpressionBuilder());
 $specification = $parser->parse($query);
@@ -205,7 +205,7 @@ use Symftony\Xpression\Parser;
 // jeu de donnés
 $astronauts = [...];
 
-$query = 'planet{{Raccoons}}';
+$query = 'planet\{\{Raccoons\}\}';
 
 $parser = new Parser(new ClosureExpressionBuilder());
 $expression = $parser->parse($query);
@@ -229,7 +229,7 @@ use Symftony\Xpression\Parser;
 // jeu de donnés
 $astronauts = [...];
 
-$query = 'planet{{Raccoons}}|points≥1000';
+$query = 'planet\{\{Raccoons\}\}|points≥1000';
 
 $parser = new Parser(new ClosureExpressionBuilder());
 $expression = $parser->parse($query);
@@ -301,7 +301,7 @@ $connection = new Connection('mongodb://localhost');
 $database = $connection->selectDatabase('eleven-labs');
 $collection = $database->selectCollection('astronauts');
 
-$query = 'planet{{Raccoons}}|points≥1000';
+$query = 'planet\{\{Raccoons\}\}|points≥1000';
 
 $parser = new Parser(new ExprBuilder());
 $queryBuilder = $parser->parse($query);
@@ -342,7 +342,7 @@ $entityManager = EntityManager::create(array(
     'path' => __DIR__ . '/ORM/astronauts.sqlite',
 ), $config);
 
-$query = 'planet{{Raccoons}}|points≥1000';
+$query = 'planet\{\{Raccoons\}\}|points≥1000';
 
 // utilisation de MapperExpressionBuilder pour ajouter dynamiquement l'alias `a` au champs de la query
 $parser = new Parser(new MapperExpressionBuilder(new ExprAdapter(new Expr()), ['*' => 'a.%s']));
