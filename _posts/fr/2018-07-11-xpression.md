@@ -3,7 +3,7 @@ layout: post
 title: "Présentation de la librairie PHP Xpression"   
 lang: fr
 permalink: /fr/presentation-php-xpression/  
-excerpt: "En tant que developpeur nous avons tous déjà eu besoin de filtrer un jeu de donnés (array, collection, API etc...). Nous allons donc découvrir la librairie Xpression qui va nous permettre de filtrer différent contenus avec une syntaxe simplifier."
+excerpt: "En tant que développeur nous avons tous déjà eu besoin de filtrer un jeu de donnés (array, collection, API etc...). Nous allons donc découvrir la librairie Xpression qui va nous permettre de filtrer différent contenus avec une syntaxe simplifier."
 authors:  
     - amoutte  
 categories:
@@ -39,13 +39,13 @@ Nous allons donc voir ce que permet de faire la librairie et comment l'utiliser.
 
 Voici plusieurs exemples d'expression que nous pouvons écrire:
 
-L'age doit être égal à `26`.
+L'âge doit être égal à `26`.
 
 ```
 age=26
 ```
 
-L'age doit être supérieur à `20` (inclus) `et inférieur à `30` (exclus).
+L'âge doit être supérieur à `20` (inclus) `et inférieur à `30` (exclus).
 
 ```
 age≥20&age<30
@@ -53,7 +53,7 @@ age≥20&age<30
 
 Voici la liste des opérateurs supportés
 
-Operateur | Syntax | Exemple | ORM | ODM | ArrayCollection | Closure |
+Opérateur | Syntax | Exemple | ORM | ODM | ArrayCollection | Closure |
 -------- | ------ | ------- | --- | --- | --------------- | ------- |
 égal | `=` | `param=value` | X | X | X | X |
 différent de | `!=` `≠` | `param!=value` `param≠value` | X | X | X | X |
@@ -83,13 +83,13 @@ Les grandes priorités sont prisent en compte en premier.
 - `ou exclusif`: 9
 - `not or`: 8
 
-Pour gerer correctement vos expressions vous pouvez utiliser les parenthèses `(` `)`.
+Pour gérer correctement vos expressions vous pouvez utiliser les parenthèses `(` `)`.
 
-Par exemple cette expression selectionnera les `Raccoon` ou les `Schizo` qui ont plus de 100 points.
+Par exemple cette expression sélectionnera les `Raccoon` ou les `Schizo` qui ont plus de 100 points.
 
 `planet='Raccoon'|name='Schizo'&point>100` et identique à `planet='Raccoon'|(name='Schizo'&point>100)`
  
-Alors que l'expression suivante selectionnera les astronautes `Raccoon` qui on plus de 100 points ou les `Schizo` qui on plus de 100 points. 
+Alors que l'expression suivante sélectionnera les astronautes `Raccoon` qui on plus de 100 points ou les `Schizo` qui on plus de 100 points. 
  
 `(planet='Raccoon'|name='Schizo')&point>100` 
 
@@ -160,7 +160,7 @@ $specification($astronaut1);// true
 $specification(new Astronaut('Ilan', 'Donut Factory', 1325, 'Commodore')); // true
 ```
 
-Comme vous pouvez le voir la spécification est appelable avec un array associatif, des objets avec des attributs public mais aussi avec des objet qui ont des getter.
+Comme vous pouvez le voir la spécification est appellable avec un array associatif, des objets avec des attributs public mais aussi avec des objet qui ont des getter.
 
 ## Filtrer un jeu de donnés
 
@@ -195,7 +195,7 @@ $astronauts = [
 ];
 ```
 
-Je veu récuperer les astronautes dont la planete contient 'Raccoons'.
+Je veux récupérer les astronautes dont la planète contient 'Raccoons'.
 
 ```php
 <?php
@@ -219,7 +219,7 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 // ];
 ```
 
-Maintenant je veu selectionner les astronautes qui ont plus de 1000 points mais les `Raccoons` aussi.
+Maintenant je veux sélectionner les astronautes qui ont plus de 1000 points mais les `Raccoons` aussi.
 
 ```php
 <?php
@@ -250,11 +250,11 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 // ];
 ```
 
-> La subtilitée dans l'exemple précédent c'est que l'on utilise `$expression` dans un `array_filter`.
+> La subtilité dans l'exemple précédent c'est que l'on utilise `$expression` dans un `array_filter`.
 
 ## Filtrer une ArrayCollection
 
-Pour filtrer une ArrayCollection il suffit d'utilisé le bridge `Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter`. 
+Pour filtrer une ArrayCollection il suffit d'utiliser le bridge `Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter`. 
 
 ```php
 <?php
@@ -388,7 +388,7 @@ Actuellement si vous voulez filtrer votre API vous pouvez :
  
 > Ce n'est pas la solution la plus légère à implementer. N'est pas forcement adapté pour faire uniquement du filtrage de donnés. 
  
- - récuperer les parametres de requête manuellement et fabriquer votre query avec tous un tas de condition
+ - récuperer les paramètres de requête manuellement et fabriquer votre query avec tous un tas de condition
 
 > la syntaxe http des paramètres n'est pas lisible et peu devenir très lourde pour des requêtes complexe.
 
@@ -400,7 +400,7 @@ Nous allons voir un exemple d'utilisation du [Bundle Xpression](https://github.c
 
 Installer le bundle via `composer require symftony/xpression-bundle` puis ajouter le dans symfony (AppKernel.php ou bundle.php).
 
-Il faut également activer la correction de querystring pour que les caractères résèrvé soit correctement utiliser.
+Il faut également activer la correction de querystring pour que les caractères réservé soit correctement utiliser.
 
 ```php
 <?php
@@ -455,7 +455,7 @@ Je vous invite à tester la librairie et à y contribuer (idée, bugs, feature, 
 Voici une petite liste des futures ajout dans la librairie :
 - fixer l'utilisation des paramètres de query (placeholder).
 - créer d'autre bridge.
-- refacto le coeur de la librairie afin d'etre extensible (pouvoir ajouter des syntaxes).
+- refacto le coeur de la librairie afin d'être extensible (pouvoir ajouter des syntaxes).
 - implementer un builder de query en PHP et JS afin de pouvoir créé directement le query textuelle. 
 
 ## Liens utiles
