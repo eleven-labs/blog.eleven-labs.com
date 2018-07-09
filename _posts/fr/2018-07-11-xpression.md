@@ -3,7 +3,7 @@ layout: post
 title: "Présentation de la librairie PHP Xpression"   
 lang: fr
 permalink: /fr/presentation-php-xpression/  
-excerpt: "En tant que développeur nous avons tous déjà eu besoin de filtrer un jeu de donnés (array, collection, API etc...). Nous allons donc découvrir la librairie Xpression qui va nous permettre de filtrer différent contenus avec une syntaxe simplifier."
+excerpt: "En tant que développeur nous avons tous déjà eu besoin de filtrer un jeu de donnés (array, collection, API etc...). Nous allons donc découvrir la librairie Xpression qui va nous permettre de filtrer différent contenus avec une syntaxe simplifiée."
 authors:  
     - amoutte  
 categories:
@@ -13,6 +13,7 @@ categories:
     - query
     - filter
     - querybuilder
+    - doctrine
     - orm
     - odm
     - expression
@@ -23,6 +24,7 @@ tags:
     - symfony
     - query
     - filter
+    - doctrine
     - querybuilder
     - orm
     - odm
@@ -87,7 +89,7 @@ Pour gérer correctement vos expressions vous pouvez utiliser les parenthèses `
 
 Par exemple cette expression sélectionnera les `Raccoon` ou les `Schizo` qui ont plus de 100 points.
 
-`planet='Raccoon'|name='Schizo'&point>100` et identique à `planet='Raccoon'|(name='Schizo'&point>100)`
+`planet='Raccoon'|name='Schizo'&point>100` est identique à `planet='Raccoon'|(name='Schizo'&point>100)`
  
 Alors que l'expression suivante sélectionnera les astronautes `Raccoon` qui on plus de 100 points ou les `Schizo` qui on plus de 100 points. 
  
@@ -95,12 +97,12 @@ Alors que l'expression suivante sélectionnera les astronautes `Raccoon` qui on 
 
 ## Utilisation
 
-Nous allons maintenant voir dans quel cas nous pourrions utilisé cette librairie.
+Nous allons maintenant voir dans quel cas nous pourrions utiliser cette librairie.
 
 ### Spécification
 
 Afin d'avoir une specification nous allons utiliser la classe `ClosureExpressionBuilder`.
-En effet cette class fabrique une callback qui peu être utilisé comme une spécification.
+En effet cette class fabrique une callback qui peu être utilisée comme une spécification.
 
 ```php
 <?php
@@ -386,7 +388,7 @@ Actuellement si vous voulez filtrer votre API vous pouvez :
  
  - utiliser GraphQL.
  
-> Ce n'est pas la solution la plus légère à implementer. N'est pas forcement adapté pour faire uniquement du filtrage de donnés. 
+> Ce n'est pas la solution la plus légère à implementer. N'est pas forcement adaptée pour faire uniquement du filtrage de donnés. 
  
  - récuperer les paramètres de requête manuellement et fabriquer votre query avec tous un tas de condition
 
@@ -394,13 +396,13 @@ Actuellement si vous voulez filtrer votre API vous pouvez :
 
 Bonne nouvelle! Si votre API utilise une des sources de donnés vu précédemment vous pouvez filtrer les donnés à l'aide d'`Xpression`.
 
-> Garder à l'esprit que Xpression remplis un rôle différent que GraphQL
+> Garder à l'esprit que Xpression remplis un rôle différent de GraphQL
 
 Nous allons voir un exemple d'utilisation du [Bundle Xpression](https://github.com/Symftony/Xpression-Bundle).
 
 Installer le bundle via `composer require symftony/xpression-bundle` puis ajouter le dans symfony (AppKernel.php ou bundle.php).
 
-Il faut également activer la correction de querystring pour que les caractères réservé soit correctement utiliser.
+Il faut également activer la correction de querystring pour que les caractères réservé soit correctement utilisés.
 
 ```php
 <?php
@@ -457,7 +459,7 @@ http://localhost/astronauts/list?query={planet\{\{Raccoons\}\}|points≥1000}
 
 ### Mots de la fin
 
-Je vais m'arrêter la pour la présentation de cette librairie PHP.
+Je vais m'arrêter là pour la présentation de cette librairie PHP.
 Je vous invite à tester la librairie et à y contribuer (idée, bugs, feature, documentation, etc).
 
 Voici une petite liste des futures ajout dans la librairie :
