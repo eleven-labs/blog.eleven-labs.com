@@ -99,6 +99,7 @@ exclude:
     - bin
     - vendor
     - docker-compose.yml
+    - Dockerfile
 
 collections:
   authors:
