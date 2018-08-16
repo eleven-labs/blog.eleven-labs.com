@@ -19,7 +19,7 @@ tags:
     - confidentiality
     - api
     - libsodium
-cover: /assets/2018-07-18-renforcer-confidentialite-api-sapient-bundle/cover.jpg
+cover: /assets/2018-08-16-renforcer-confidentialite-api-sapient-bundle/cover.jpg
 ---
 
 ## Le web de tous les dangers
