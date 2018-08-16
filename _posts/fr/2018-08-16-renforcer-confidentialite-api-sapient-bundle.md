@@ -129,7 +129,7 @@ Ainsi, si la couche TLS (couche 6 du modèle OSI) est compromise, le contenu sit
 
 Exemple de réponse de l'API A.
 
-```http request
+```bash
 HTTP/1.1 200 OK
 Host: api-a:8000
 content-type: application/json
