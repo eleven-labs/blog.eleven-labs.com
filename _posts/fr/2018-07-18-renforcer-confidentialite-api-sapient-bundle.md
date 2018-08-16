@@ -136,7 +136,8 @@ content-type: application/json
 Body-Signature-Ed25519: 6sHYDSKwx05QNDe-s2a1tBXxKw2JZxLZwUBpLojEQpqzcGEU1XcaqdaG9_FQTbVkeSa_25vSak8MJcZ8RaoaAg==
 Sapient-Signer: api-a
 
-cipher-text (refaire la demo) 
+q6KSHArUnD0sEa-KWpBCYLka805gdA6lVG2mbeM9kq82_
+
 ```
 
 Il y a une en-tête avec la signature de la réponse. Client B va lire cet en-tête. Ensuite, le corps de la réponse est déchiffré.
@@ -199,6 +200,3 @@ Ce focus permet de mieux comprendre le fonctionnement de la libraire ainsi que l
 - [Des certificats D-Link détournés pour signer des malwares](https://www.nextinpact.com/brief/des-certificats-d-link-detournes-pour-signer-des-malwares-4865.htm?utm_source=dlvr.it&utm_medium=twitter&utm_campaign=lebrief)
 - [Confidentialité persistante](https://fr.wikipedia.org/wiki/Confidentialit%C3%A9_persistante)
 
-
-### Notes
-- [9](vendor/paragonie/sodium_compat/src/Crypto32.php:1003)
