@@ -6,8 +6,8 @@ permalink: /en/add-custom-expression-to-doctrine-query-builder-with-mongodb/
 authors:
  - tthuon
 excerpt: I'm going to talk about the query builder (Doctrine Query Builder) to make queries to a MongoDB database.
-date: '2015-10-06 16:42:12 +0200'
-date_gmt: '2015-10-06 14:42:12 +0200'
+date: '2018-08-21 16:42:12 +0200'
+date_gmt: '2018-08-21 14:42:12 +0200'
 categories:
 - Symfony
 - MongoDB
