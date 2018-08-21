@@ -19,9 +19,9 @@ tags:
 
 I'm going to talk about the query builder (Doctrine Query Builder) to make queries to a MongoDB database.
 
-If you want to follow the examples and test them, it is necessary to install the bundle [DoctrineMongoDBBundle](http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html).
+If you want to follow the examples and test them, it's necessary to install the bundle [DoctrineMongoDBBundle](http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html).
 
-## What is it ?
+## What is it?
 
 The query builder is a class that will allow you to create queries to the database through objects and methods. It facilitates the writing of complex query.
 
@@ -64,7 +64,7 @@ Let's take an example with a list of articles in the "articles" collection:
 ]
 ```
 
-I want to have the article with the title "My second article" in simple query mongo:
+I want to have the article with the title "My second article" in simple mongo query:
 
 ```
 db.articles.find({"title":"My second article"});
@@ -82,7 +82,7 @@ $article = $this->createQueryBuilder()
     ->execute();
 ```
 
-With the query builder, we will manipulate objects exclusively.
+With the query builder, we'll manipulate objects exclusively.
 
 ## Query builder and Symfony
 
@@ -137,7 +137,7 @@ To update an article with the title "My article", I must indicate that I want th
 
 ## Add expressions
 
-The basic builder gives lots of expressions. But sometimes it's not enough. To pick up the example with the articles, I want to have all the articles published as of today. I will add an expression _isPublished(\DateTime $datetime)_.
+The basic builder gives a lot of expressions. But sometimes it's not enough. To pick up the example with the articles, I want to have all the articles published as of today. I will add an expression _isPublished(\DateTime $datetime)_.
 
 I will extend _Doctrine\ODM\MongoDB\Query\Expr_ class and add my own method.
 
@@ -199,7 +199,7 @@ classe DocumentRepository extends BaseDocumentRepository
 }
 ```
 
-And I can use my new expression in my query builder.
+I can use my new expression in my query builder.
 
 ```php
 <?php
@@ -248,7 +248,7 @@ The Mongo query generated is:
 
 ## Quick tip
 
-The query builder will hydrate Doctrine objects with the data. On complex objects, this process is greedy resource. To gain performance, it is possible to disable this hydration.
+The query builder will hydrate Doctrine objects with the data. On complex objects, this process is greedy resource-wise. To gain performance, it is possible to disable this hydration.
 
 ```
 <?php
