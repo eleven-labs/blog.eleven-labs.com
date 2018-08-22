@@ -12,6 +12,7 @@ categories:
 tags:
 - git
 - workflow
+cover: /assets/2016-02-24-cancel-feature-before-pushing-into-production/cover.jpg
 ---
 
 ## Git workflow
