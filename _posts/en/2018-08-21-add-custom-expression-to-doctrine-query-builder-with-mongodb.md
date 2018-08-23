@@ -15,6 +15,7 @@ tags:
 - doctrine
 - symfony
 - mongodb
+cover: /assets/2018-08-23-add-custom-expression-to-doctrine-query-builder/cover.jpg
 ---
 
 I'm going to talk about the query builder (Doctrine Query Builder) to make queries to a MongoDB database.

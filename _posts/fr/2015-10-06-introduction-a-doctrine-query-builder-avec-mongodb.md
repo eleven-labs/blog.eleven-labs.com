@@ -15,6 +15,7 @@ tags:
 - doctrine
 - symfony
 - mongodb
+cover: /assets/2018-08-23-add-custom-expression-to-doctrine-query-builder/cover.jpg
 ---
 
 Bonjour à tous,
