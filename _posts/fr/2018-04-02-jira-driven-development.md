@@ -140,3 +140,7 @@ Vous réutilisez la technique de base, à savoir le :
 ```
 $ git add . && git commit -m "JIRA-{ID}"
 ```
+
+Une méthode également employée, mais plus redondante dans le sens où il faut à chaque fois taper l'ID du ticket.
+
+![Commit method two]({{site.baseurl}}/assets/2018-04-02-jira-driven-development/commit-method2.png){:class="center-image"}
