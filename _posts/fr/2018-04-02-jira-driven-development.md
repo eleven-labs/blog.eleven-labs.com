@@ -80,8 +80,14 @@ mes connaissances du cloud en général AWS, GCP & Azure.
 >
 > B-L : vous avez en effet un profil assez complet et une expertise non négligeable. Qu'est-ce que vous pouvez nous dire des conventions de nommage des branches ?
 >
-> A : c'est avant tout du feeling. Je préfixe toute mes branches de la catégorie dont relève le domaine étudié. "sys/" pour l'admin-sys, "ops/" pour tout ce qui concerne le devops. Ensuite je repréfixe d'uune seconde catégorie pour le champs global de la modification apportée ça peut être "doc/", "hotfix/", "fix/" ou "feat/".
+> A : c'est avant tout du feeling. Je préfixe toute mes branches de la catégorie dont relève le domaine étudié. "sys/" pour l'admin-sys, "ops/" pour tout ce qui concerne le devops. Ensuite je repréfixe d'uune seconde catégorie pour le champs global de la modification apportée. Ça peut être "doc/", "hotfix/", "fix/" ou "feat/". Enfin, ce sur quoi la modification est apportée, un description succincte et sluguée.
+>
+> B-L : votre méthode a l'air éprouvée, néanmoins qu'est-ce qui vous pousse à témoigner aujourd'hui.
+>
+> A : un jour, j'ai mal préfixé une branche, j'ai mis "ops/" au lieu de "sys/", je ne savais pas, j'étais désorienté. Tous mes collègues m'ont raillé. Cela fait maintenant deux semaines, et les blagues continuent de fuser dans l'open space, ma PR n'est pas mergée, et je fais même des cauchemars la nuit.
+
+Malgré un système en apparence rodé, Antoine a donc douté du domaine concerné. Même si nous avons appris par la suite que sa PR avait malgré tout été mergée, un suivi psychologique a été mis en place par la même occasion ainsi qu'une rééducation au nommage de branches.
 
 ## L'expertise Brouette-Labs
 
-Tous ces problèmes, nous y avons été confrontés
+Tous ces problèmes, nous y avons été confrontés chez Brouette-Labs, et nous avons trouvé le système infaillible. Il subsiste quelques failles néanmoins.
