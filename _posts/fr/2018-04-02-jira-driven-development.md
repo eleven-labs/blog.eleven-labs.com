@@ -97,4 +97,24 @@ Tous ces problèmes, nous y avons été confrontés chez Brouette-Labs, et nous 
 Comme toute société reconnue, nous utilisons un système de ticketing, afin de tracer les choses. En l'occurence Jira.
 Mais cela peut être bien sûr trello, github, gitlab, redmine, mantis ou un excel. Chaque ticket comporte en général son identifiant, son ID. C'est la base de la résolution du problème. Ce ticket est écrit par un PO, donc il est forcément bien rédigé. En effet, on attends pas d'un dev de savoir écrire mais de savoir développer.
 
-Voyons comment nous pouvons appliquer ce ticketing au reste du process. 
+Voyons comment nous pouvons appliquer ce ticketing au reste du process.
+
+### Le nommage de branche
+
+Plus besoin de se prendre la tête, prenez le numéro de ticket prefixé de l'outil utilisé, chez nous :
+
+```
+$ git checkout -b JIRA-32
+```
+
+### Le nommage de commits
+
+Plus besoin de se prendre la tête, prenez le numéro de ticket préfixé de l'outil utilisé, chez nous :
+
+```
+$ git add . && git commit -m "JIRA-32"
+```
+
+Nous avons même créé une commande `gjira {id}` ce qui nous simplifie le travail.
+
+J'avais anticipé votre question, qu'en est-il s'il y a plusieurs commits ? Il y a un deux écoles, et une même solution que je vais vous montrer en exemple (exemple issu de la rédaction article).
