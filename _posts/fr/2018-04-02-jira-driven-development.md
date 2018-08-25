@@ -141,6 +141,16 @@ Vous réutilisez la technique de base, à savoir le :
 $ git add . && git commit -m "JIRA-{ID}"
 ```
 
-Une méthode également employée, mais plus redondante dans le sens où il faut à chaque fois taper l'ID du ticket.
+Une méthode également employée, mais plus redondante dans le sens où il faut à chaque fois taper l'ID du ticket :
 
 ![Commit method two]({{site.baseurl}}/assets/2018-04-02-jira-driven-development/commit-method2.png){:class="center-image"}
+
+#### tmp ou copypasta ?
+
+Une question que l'on peut se poser. Méthode 1 ou méthode 2. Pour ma part je préfère utiliser la méthode 1 que je trouve beaucoup plus lisible, c'est une question de goûts et de facilité avant tout, je n'ai pas toujours le numéro du ticket en tête.
+
+Dans tous les cas, pensez à bien squasher vos commits !
+
+## Conclusion
+
+Cet article touche à sa fin, il reste cependant un problème que je n'avais pas anticipé, plusieurs tickets dans une seule branche étant donné que le travail n'a pas été découpé comme il faut. Je ne sais pas encore comment étudier le problème. Je pense ne pas squasher pour garder l'historique des tickets pour cet article.
