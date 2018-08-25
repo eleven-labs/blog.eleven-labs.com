@@ -91,3 +91,10 @@ Malgré un système en apparence rodé, Antoine a donc douté du domaine concern
 ## L'expertise Brouette-Labs
 
 Tous ces problèmes, nous y avons été confrontés chez Brouette-Labs, et nous avons trouvé le système infaillible. Il subsiste quelques failles néanmoins.
+
+### Le ticketing
+
+Comme toute société reconnue, nous utilisons un système de ticketing, afin de tracer les choses. En l'occurence Jira.
+Mais cela peut être bien sûr trello, github, gitlab, redmine, mantis ou un excel. Chaque ticket comporte en général son identifiant, son ID. C'est la base de la résolution du problème. Ce ticket est écrit par un PO, donc il est forcément bien rédigé. En effet, on attends pas d'un dev de savoir écrire mais de savoir développer.
+
+Voyons comment nous pouvons appliquer ce ticketing au reste du process. 
