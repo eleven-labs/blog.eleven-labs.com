@@ -69,10 +69,18 @@ Mettre une description dans un commit est donc tout un art.
 
 ### Convention de nom des branches
 
-Une technique très peu documentée, et souvent laissée de côté. Pourtant il est important de bien nommer ses branches
-pour avoir un scope clair de ce qui a été fait.
+Une technique très peu documentée, et souvent laissée de côté. Pourtant il est important de bien nommer ses branches pour avoir un scope clair de ce qui a été fait.
 
+Nous avons pu mettre la main sur un témoignage poignant, anonymisé encore une fois, d'une personne que nous appellerons Antoine.
 
+> Brouette-Labs : parlez-nous un peu de votre parcours Antoine.
+>
+> Antoine : je suis développeur fullstack PHP, Python, ASP, Go, NodeJS, VueJS, ReactJS, ReactNative, Android, iOS depuis bientôt 25 ans. En parallèle je suis également devOps et Sys admin. J'occupe mes soirées et Week-Ends à parfaire
+mes connaissances du cloud en général AWS, GCP & Azure.
+>
+> B-L : vous avez en effet un profil assez complet et une expertise non négligeable. Qu'est-ce que vous pouvez nous dire des conventions de nommage des branches ?
+>
+> A : c'est avant tout du feeling. Je préfixe toute mes branches de la catégorie dont relève le domaine étudié. "sys/" pour l'admin-sys, "ops/" pour tout ce qui concerne le devops. Ensuite je repréfixe d'uune seconde catégorie pour le champs global de la modification apportée ça peut être "doc/", "hotfix/", "fix/" ou "feat/".
 
 ## L'expertise Brouette-Labs
 
