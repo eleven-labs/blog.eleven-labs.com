@@ -118,3 +118,25 @@ $ git add . && git commit -m "JIRA-32"
 Nous avons même créé une commande `gjira {id}` ce qui nous simplifie le travail.
 
 J'avais anticipé votre question, qu'en est-il s'il y a plusieurs commits ? Il y a un deux écoles, et une même solution que je vais vous montrer en exemple (exemple issu de la rédaction article).
+
+#### Méthode 1 (dite "tmp")
+
+Vous faites votre premier commit qui respecte la convention décrite ci-dessus. Puis pour tous les commits suivants sur cette branche, vous faites les commandes suivantes :
+
+```
+$ git add . && git commit -m "tmp"
+```
+
+Cette méthode est personnelle, j'ai même créé une commande `gtmp`, qui me simplifie le travail. Le travail est très clair, en approuve cette capture d'écran :
+
+![Commit method one]({{site.baseurl}}/assets/2018-04-02-jira-driven-development/commit-method1.png){:class="center-image"}
+
+On ne parlera pas du fait que j'ai mis quatre mois à écrire cet article.
+
+#### Méthode 2 (dite "copypasta")
+
+Vous réutilisez la technique de base, à savoir le :
+
+```
+$ git add . && git commit -m "JIRA-{ID}"
+```
