@@ -28,7 +28,7 @@ Voyons quels types de problèmes peuvent apparaître, et surtout, comment nous a
 
 Nous avons identifié deux problèmes majeurs dans notre cycle de code review, qu'on vous propose de retrouver ci-dessous.
 
-### Conventions de nommage
+### Conventions de nommage de code
 
 C'est le problème majeur de tous développeurs. C'est le problème majeur de toutes les codes review. On le connaît tous.
 Nommer ses fonctions, ses méthodes, ses classes et ses variables peut parfois être un vrai casse-tête, dès lors que le métier est compliqué.
@@ -54,17 +54,26 @@ Gilles [Le prénom a été changé, NDLR], a accepté de témoigner sous couvert
 
 Comme vous pouvez le voir dans cette succincte interview, la tension peut aisément se développer dans un tel contexte. Et nous ne parlions avec Gilles que du simple nommage d'une variable, le problème est le même pour tous les types de nommage : classe, méthodes, etc.
 
-### Convention de nom des branches
+### Convention de nom des commits
 
 Un peu plus fourbe, les conventions de commit. Faut-il suivre le sacro-saint manifeste d'[AngularJS](https://gist.github.com/stephenparish/9941e89d80e2bc58a153), ou alors est-il mieux de créer sa propre norme.
 
 Qu'est-ce qu'un fix, qu'est-ce qu'un hotfix même. Comment faire lorsque le scope est trop large car il a été mal découpé en amont. Autant de questions auxquelles nous avons déjà été confronté chez Brouette-Labs de part nos expériences passées.
 
-Jonathan nous raconte :
-> Une fois j'ai fait une PR, qui a été rejected parce que j'avais mispelled un mot, j'avais écrit `fix: typoes` au lieu de `fix: typos`.
+[captainjaja]({{site.baseurl}}/authors/captainjaja/) nous raconte :
+> Une fois j'ai fait une PR, qui a été rejected parce que j'avais mispelled un mot dans un commit, j'avais écrit `fix: typoes` au lieu de `fix: typos` sur un blog concurrent de celui-ci.
+
+Cela peut sembler discriminatoire, nous n'avons pas tous un Bescherelle version anglaise à portée. Quand bien même cela existerait, les gens n'utilisent déjà pas le Bescherelle français. Il en va de même pour les dictionnaires et les livres de grammaire.
+
+Mettre une description dans un commit est donc tout un art.
+
+### Convention de nom des branches
+
+Une technique très peu documentée, et souvent laissée de côté. Pourtant il est important de bien nommer ses branches
+pour avoir un scope clair de ce qui a été fait.
 
 
-### Conventions de commit
 
+## L'expertise Brouette-Labs
 
-## Axes de réfléxion
+Tous ces problèmes, nous y avons été confrontés
