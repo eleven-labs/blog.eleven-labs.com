@@ -17,7 +17,7 @@ tags:
     - méthodologie
     - bonnes pratique
     - convention
-cover: /assets/2018-04-02-jira-driven-development/cover.jpg
+cover: /assets/2018-09-04-jira-driven-development/cover.jpg
 ---
 
 Dès lors que l'on commence à développer dans une équipe de quelques personnes en pratiquant les code reviews, de nombreux problèmes peuvent apparaître.
