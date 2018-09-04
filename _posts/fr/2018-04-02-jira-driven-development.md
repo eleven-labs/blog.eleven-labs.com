@@ -21,7 +21,7 @@ cover: /assets/2018-04-02-jira-driven-development/cover.jpg
 ---
 
 Dès lors que l'on commence à développer dans une équipe de quelques personnes en pratiquant les code reviews, de nombreux problèmes peuvent apparaître.
-L'exemple le plus fragrant est qu'il se produise des échanges interminables entre le ou les développeurs et les code reviewer.
+L'exemple le plus fragrant est qu'il se produise des échanges interminables entre le ou les développeurs et les code reviewers.
 Voyons quels types de problèmes peuvent apparaître, et surtout, comment nous avons résolu ces problèmes chez Brouette-Labs grâce au Jira Driven Development.
 
 ## Les problèmes
