@@ -17,7 +17,7 @@ tags:
     - méthodologie
     - bonnes pratique
     - convention
-cover: /assets/2018-04-02-jira-driven-development/cover.jpg
+cover: /assets/2018-09-04-jira-driven-development/cover.jpg
 ---
 
 Dès lors que l'on commence à développer dans une équipe de quelques personnes en pratiquant les code reviews, de nombreux problèmes peuvent apparaître.
@@ -129,7 +129,7 @@ $ git add . && git commit -m "tmp"
 
 Cette méthode est personnelle, j'ai même créé une commande `gtmp`, qui me simplifie le travail. Le travail est très clair, en approuve cette capture d'écran :
 
-![Commit method one]({{site.baseurl}}/assets/2018-04-02-jira-driven-development/commit-method1.png){:class="center-image"}
+![Commit method one]({{site.baseurl}}/assets/2018-09-04-jira-driven-development/commit-method1.png){:class="center-image"}
 
 On ne parlera pas du fait que j'ai mis quatre mois à écrire cet article.
 
@@ -143,7 +143,7 @@ $ git add . && git commit -m "JIRA-{ID}"
 
 Une méthode également employée, mais plus redondante dans le sens où il faut à chaque fois taper l'ID du ticket :
 
-![Commit method two]({{site.baseurl}}/assets/2018-04-02-jira-driven-development/commit-method2.png){:class="center-image"}
+![Commit method two]({{site.baseurl}}/assets/2018-09-04-jira-driven-development/commit-method2.png){:class="center-image"}
 
 #### tmp ou copypasta ?
 
