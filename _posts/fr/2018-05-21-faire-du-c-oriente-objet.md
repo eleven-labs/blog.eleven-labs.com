@@ -9,7 +9,7 @@ excerpt: "Faisons du C comme s'il s'agissait d'un langage Objet"
 date: '2018-05-21 14:30:42 +0100'
 date_gmt: 2018-05-21 13:30:42 +0100'
 categories:
-- Mobile
+- Software
 tags:
 - C
 - procedurale
@@ -21,19 +21,19 @@ tags:
 
 Salut les Astronautes, content de vous retrouver aujourd'hui après un petit moment sans avoir posté d'article.
 
-L'article que je vous propose aujourd'hui change un peu par rapport à ceux que je que j'ai pu écrire par le passé. En effet, en ce moment je suis dans une volonté de partage et j'ai envie de pouvoir promulger mes tips/bonnes pratiques à n'importe quel développeur motivé. C'est pourquoi cet article va aborder un sujet simple, mais sous un angle différent de d'habitude.
+L'article que je vous propose aujourd'hui change un peu par rapport à ceux que je que j'ai pû écrire par le passé. En effet, en ce moment je suis dans une volonté de partage et j'ai envie de pouvoir promulger mes tips/bonnes pratiques à n'importe quel développeur motivé. C'est pourquoi cet article va aborder un sujet simple, mais sous un angle différent de d'habitude.
 
-Bon, trêve de gentillesse et allons dans le vif du sujet. Cet article se veut assez spécialisé, on va parler de **C**, oui, oui, j'ai bien dit **C**, vous savez ce langage procédurale où l'on doit faire toutes les allocation à la mano et pareil pour le clean de la mémoire.<br/>
-Il est super important ce langage, le Kernel de votre ordinateur est code en **C**, même si c'est un peu galère on peut tout faire avec, et commencer par ce langage vous permettra d'être capable d'apptrendre n'importe quel langage plus facilement.<br/>
-C'est pourquoi mon école (ça ne me rajeunit pas tout ça), nous l'a donc fait apprendre et j'ai créer par mal de petits programmes avec. Le seul inconvénient à l'époque, je n'avais pas encore le recul sur la programmation comme je peux l'avoir maintenant. Et j'aurais bien aimé qu'à l'époque une âme bienveillante me guide pour ne pas faire les erreurs que j'ai pu faire.
+Bon, trêve de gentillesse et allons dans le vif du sujet. Cet article se veut assez spécialisé, on va parler de **C**, oui, oui, j'ai bien dit **C**, vous savez ce langage procédurale où l'on doit faire toutes les allocations à la mano et pareil pour la libération de la mémoire.<br/>
+Il est super important ce langage, le Kernel de votre ordinateur est codé en **C**, même si c'est un peu galère on peut tout faire avec, et commencer par ce langage vous permettra d'être capable d'apprendre n'importe quel langage plus facilement.<br/>
+C'est pourquoi mon école (ça ne me rajeunit pas tout ça), nous l'a fait apprendre, et j'ai créer par mal de petits programmes avec. Le seul inconvénient à l'époque, je n'avais pas encore le recul sur la programmation comme je peux l'avoir maintenant. Et j'aurais bien aimé qu'à l'époque une âme bienveillante me guide pour ne pas faire des erreurs comme j'ai pu faire.
 
 
-C'est donc dans ce but que je fais cet artcile, pour et aujourd'hui, on va essayer de "casser" un peu le **C**, de "**L'objectiser**".
+C'est donc dans ce but que je fais cet artcile, pour vous donner un autre regard sur la programmation procédurale, on va donc ensemble essayer de "casser" un peu le **C**, de "**L'objectiser**".
 
 
 ## Mise en situation
 
-Vous êtes étudidant en première année, vous avez un petit programme à faire qui dois être capable de gérer plusieurs utilisateurs et vous vous dites, bah tiens, ce serait bien de ne pas se faire un code hyper compliqué à maintenir, sait-on jamais, peut-être que j'aurais des nouvelles données pour mes utilisateurs dans le future comme le téléphone fixe ou le code postal (ce sont des exemples).
+Vous êtes étudidant en première année, vous avez un petit programme à faire qui doit être capable de gérer plusieurs utilisateurs et vous vous dites, bah tiens, ce serait bien de ne pas se faire un code hyper compliqué à maintenir, sait-on jamais, peut-être que j'aurais des nouvelles données pour mes utilisateurs dans le futur comme le téléphone fixe ou le code postal (ce sont des exemples).
 
 Vous avez la solution 1, qui est de faire du **C** en mode normal, donc besoin de modifier beaucoup de code dés qu'une modification arrive, ou alors vous vous posez 30 minutes, et vous vous dites, essayons de faire les choses différement. C'est là que j'interviens ;)
 
@@ -56,7 +56,7 @@ On utilise beaucoup des références en code maintenant, mais il existe aussi le
 
 ### Les listes chainées
 
-On va réutiliser les 2 notions vu précédémment. Une liste chainée est ensemble de strucures qui sont liées ensemble par des pointeurs.
+On va réutiliser les 2 notions vu précédémment. Une liste chainée est ensemble de structures qui sont liées ensemble par des pointeurs.
 
 ### Les pointeurs sur fonctions
 
@@ -116,7 +116,7 @@ plop* make_new_object(char *name) {
 }
 ```
 
-make_new list nous sert à créer une nouvelle liste, et make_new_object nous sert à créer un nouvel utilisateur. Pour le moment rien de bien compliqué, à part peut-être dans le make_new_object qui assigne hello avec un hello qui n'existe pas dans le scope de la fonction, on y reviendra un peu plus tard.
+**make_new_list** nous sert à créer une nouvelle liste, et **make_new_object** nous sert à créer un nouvel utilisateur. Pour le moment rien de bien compliqué, à part peut-être dans **make_new_object** qui assigne **hello** avec un **hello** qui n'existe pas dans le scope de la fonction, on y reviendra un peu plus tard.
 
 Passons maintenant aux fonctions utilitaires de la liste chainée : 
 
@@ -200,12 +200,12 @@ void print_list(list* my_list) {
 En fait, ils nous manquait un peu plus que juste la fonction **hello**.<br />
 On va rajouter ces 3 fonctions qui dans l'ordre font : 
 - Afficher une chaine de caractère
-- Prendre un objet **plop** en paramètre et afficher son nom sur la console.
+- Prendre un "objet" **plop** en paramètre et afficher son nom sur la console.
 - Dérouler notre liste chainée et appeler la fonction **hello** sur chaque "objet".
 
-On revient sur la fonction **hello**, cette fonction est maintenant déclaré dans notre code, et dans la fonction **make_new_object** on assigne le pointeur de la stucture fraichement créée sur cette fonction qui a une adresse en mémoire. On doit juste passer "l'objet" en paramètre car on est pas capable d'appeler directement la méthode dessus. Cette idée m'est venu quand j'ai fait du **Python**, en effet, le self est automatiquement passé dans chaque méthode et on fait nos appels dessus.
+On revient sur la fonction **hello**, cette fonction est maintenant déclaré dans notre code, et dans la fonction **make_new_object** on assigne le pointeur sur fonction de la stucture fraichement créée sur cette fonction qui a une adresse en mémoire. On doit juste passer "l'objet" en paramètre car on est pas capable d'appeler directement la méthode dessus. Cette idée m'est venu quand j'ai fait du **Python**, en effet, le self est automatiquement passé dans chaque méthode et on fait nos appels dessus.
 
-## Le rendu final.
+## Le rendu final
 
 Comme je vous ai dit, ce code a pour vocation de vous donner des idées et n'interagis pas vraiment avec l'utilisateur. Je vais donc vous dumper tout le code d'un coup, comme ça rien de plus simple pour vous, vous avez juste à le tester (par exemple sur [ideone](https://ideone.com/){:rel="nofollow noreferrer"})
 
@@ -326,7 +326,7 @@ void print_list(list* my_list) {
 ## It's time to run the code
 
 Bon, on a enfin tout en place, il suffit juste de runner notre bout de code.
-Ici, pas de paillettes et de strass, juste 3 petites sorties console.:
+Ici, pas de paillettes et de strass, juste 3 petites sorties console :
 
 ```Shell
 Hello, my name is: Pierre
@@ -336,17 +336,21 @@ Hello, my name is: Jacques
 
 Plutôt cool non ? :)
 
+- Attends, on a pondu toutes ces lignes de code juste pour ça?
+- Oui
+- Mais hum, elle est où la magie?
+- La magie n'est pas tout le temps visuel, parfois c'est juste comment c'est fait derrière. En tant que devéloppeurs vous devez vous challengez pour ne pas faire les choses d'une seule et même manière, variez les plaisirs.
+
 ## Mais pourquoi faire tout ça ?
 
 Vous devez vous dire, mais pourquoi faire tout ça ?<br/>
 Pour différentes raisons.<br/>
-La première étant que c'est très, très fun. Il faut de temps en temps sortir des sentiers battus et essayer de nouvelles choses, pousser le langage, pousser le framework, pousser les outils avec lesquels vous travaillez.
-Déstructurer une application peut être très utile, vous aider à établir de nouvelles architectures, voir des problématiques sous des angles différents et vous apporter des solutions pour des projets futurs.
+La première étant que c'est très, très fun. Il faut de temps en temps sortir des sentiers battus et essayer de nouvelles choses, pousser le langage, pousser le framework, pousser les outils avec lesquels vous travaillez.<br/>
+Aussi, vous arrivez en soutenance avec une structure de code comme ça, le correcteur va se dire, ah tiens, ça sort de l'ordinaire, est-ce que l'on pourrait pousser encore plus loin et vous donner des vrais conseils pour la suite de vos projets.<br/>
+Cela rend le code beaucoup plus lisible à mon goût aussi, on a quelques fonctions complexes et le reste est très facilement compréhensible.
+Cela va vous apprendre à mieux découper votre code aussi et architecturer vos projets avec beaucoup moins de dépendance.
 
-Voilà, j'espère que cet article vous a donné envie d'essayer de nouvelles choses et qu'il vous poussera à penser "**Outside the box**".
-
-Je vous donne un lien pour télécharger le projet déjà tout fait.<br/>
-Il suffit de le cloner, faire un pod install et la suite vous la connaissez.<br/>
-[Le Projet](https://github.com/ettibo/GenericProtocols){:rel="nofollow noreferrer"}
+Voilà, comme je l'ai dit au début, cet article est différent des autres, il est plus réservés à des gens qui débutent dans la programmation.
+Jespère que cela vous aura plus. N'hésitez surtout pas à me faire des retours dans les commentaires.
 
 Allez, salut les astronautes :)
