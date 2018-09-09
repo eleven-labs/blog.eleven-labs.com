@@ -1,0 +1,352 @@
+---
+layout: post
+title: "Faire du C orienté Objet"
+authors:
+    - thuchon
+lang: fr
+permalink: /fr/c-oriente-objet/
+excerpt: "Faisons du C comme s'il s'agissait d'un langage Objet"
+date: '2018-05-21 14:30:42 +0100'
+date_gmt: 2018-05-21 13:30:42 +0100'
+categories:
+- Mobile
+tags:
+- C
+- procedurale
+- POO
+- structure
+---
+
+## Introduction
+
+Salut les Astronautes, content de vous retrouver aujourd'hui après un petit moment sans avoir posté d'article.
+
+L'article que je vous propose aujourd'hui change un peu par rapport à ceux que je que j'ai pu écrire par le passé. En effet, en ce moment je suis dans une volonté de partage et j'ai envie de pouvoir promulger mes tips/bonnes pratiques à n'importe quel développeur motivé. C'est pourquoi cet article va aborder un sujet simple, mais sous un angle différent de d'habitude.
+
+Bon, trêve de gentillesse et allons dans le vif du sujet. Cet article se veut assez spécialisé, on va parler de **C**, oui, oui, j'ai bien dit **C**, vous savez ce langage procédurale où l'on doit faire toutes les allocation à la mano et pareil pour le clean de la mémoire.<br/>
+Il est super important ce langage, le Kernel de votre ordinateur est code en **C**, même si c'est un peu galère on peut tout faire avec, et commencer par ce langage vous permettra d'être capable d'apptrendre n'importe quel langage plus facilement.<br/>
+C'est pourquoi mon école (ça ne me rajeunit pas tout ça), nous l'a donc fait apprendre et j'ai créer par mal de petits programmes avec. Le seul inconvénient à l'époque, je n'avais pas encore le recul sur la programmation comme je peux l'avoir maintenant. Et j'aurais bien aimé qu'à l'époque une âme bienveillante me guide pour ne pas faire les erreurs que j'ai pu faire.
+
+
+C'est donc dans ce but que je fais cet artcile, pour et aujourd'hui, on va essayer de "casser" un peu le **C**, de "**L'objectiser**".
+
+
+## Mise en situation
+
+Vous êtes étudidant en première année, vous avez un petit programme à faire qui dois être capable de gérer plusieurs utilisateurs et vous vous dites, bah tiens, ce serait bien de ne pas se faire un code hyper compliqué à maintenir, sait-on jamais, peut-être que j'aurais des nouvelles données pour mes utilisateurs dans le future comme le téléphone fixe ou le code postal (ce sont des exemples).
+
+Vous avez la solution 1, qui est de faire du **C** en mode normal, donc besoin de modifier beaucoup de code dés qu'une modification arrive, ou alors vous vous posez 30 minutes, et vous vous dites, essayons de faire les choses différement. C'est là que j'interviens ;)
+
+On va penser en mode objet pour du code procédurale.<br/>
+Pour faire ceci, on va utiliser 4 éléments du langage **C** :
+
+- **Les structures**
+- **Les pointeurs**
+- **Les listes chainées**
+- **Les pointeurs sur fonctions**
+
+### Les structures
+
+Ce sont un peu les ancètres des objets que vous connaissez, il n'y pas de notion de privé/publique, tout est en publique; il n'y a pas de méthodes, elles peuvent juste contenir des **propriétés** qui sont soit des types primitifs soit des pointeurs.
+
+### Les pointeurs
+
+On utilise beaucoup des références en code maintenant, mais il existe aussi les pointeurs, c'est une variable qui pointe vers un endroit spécifique dans la mémoire. Très utile, et tout notre système va reposer sur ça.
+
+
+### Les listes chainées
+
+On va réutiliser les 2 notions vu précédémment. Une liste chainée est ensemble de strucures qui sont liées ensemble par des pointeurs.
+
+### Les pointeurs sur fonctions
+
+Je pense que vous vous en doutez avec ce que je vous ai décrit au dessus, c'est des pointeurs non pas pour accéder à des données, mais des fonctions qui ont été déclaré en mémoire.
+
+Bon, c'est pas mal tout ça, on a vu les grosses notions, vous savez ce que l'on veut réaliser.<br />
+Et si on passait au concret? :)
+
+## Comment nous allons procéder :
+
+Encore aujourd'hui, je vais vous fournir du Dummy code qui va se lancer, et réaliser une série d'opérations qui sera défini dans le code, donc pas vraiment d'interaction avec l'utilisateur. L'idée est de vous présenter le principe, à vous de l'utiliser dans des cas rééls.
+
+Ici mon objectif est d'être capable de créer des "utilisateurs" et de pouvoir en rajouter/supprimer facilement pour si mon code doit partir en run.
+
+Pour ceux faire, déjà créons nos "modèles" de données.
+
+```C
+typedef struct list list;
+struct list
+{
+    list *next;
+    void *obj;
+};
+```
+
+Je créer déjà ma stucture de liste chainée, l'idée de reproduire un **Array** comme il existe dans quasiment tous les langages.
+On a donc un pointeur qui va pointer vers le prochain maillon de ma liste (next) et un pointeur de type void* pour contenir tout type d'objet car je veux être capable de pouvoir utiliser ma liste chainée pour tout type de choses (c'est plutôt pratique en vrai).
+
+
+```C
+typedef struct plop plop;
+struct plop
+{
+    void (*hello)(plop*);
+    char* name;
+};
+```
+
+Ensuite voici le vrai "modèle" pour nos objets utilisateurs. Une stucture de type plop qui contient deux attributs, **name** pour le nom de mon utilisateur et un pointeur sur fonction **hello** qui prend en paramèetre un objet de type **plop**.
+
+Alors, on a notre stucture de données, c'est bien, mais qu'est-ce que l'on fait maintenant?
+Et bien, on va coder nos méthodes de liste chainée pour reproduire les **new**, **add**, **remove**, **getObjectAtIndex** que l'on utilise tous les jours avec nos langages modernes.
+
+Commençons par **New** :
+
+```C
+list* make_new_list() {
+    list* ptr = malloc(sizeof(list*));
+    return ptr;
+}
+ 
+plop* make_new_object(char *name) {
+    plop* obj = malloc(sizeof(plop*));
+    obj->name = name;
+    obj->hello = hello;
+    return obj;
+}
+```
+
+make_new list nous sert à créer une nouvelle liste, et make_new_object nous sert à créer un nouvel utilisateur. Pour le moment rien de bien compliqué, à part peut-être dans le make_new_object qui assigne hello avec un hello qui n'existe pas dans le scope de la fonction, on y reviendra un peu plus tard.
+
+Passons maintenant aux fonctions utilitaires de la liste chainée : 
+
+```C
+void add_in_list(list* my_list, void* obj) {
+    if (my_list->obj == NULL) {
+        my_list->obj = obj;
+        return;
+    }
+    list* list_ptr = my_list;
+    while (list_ptr->next != NULL) {
+        list_ptr = list_ptr->next;
+    }
+    list* tmp_list_obj = malloc(sizeof(list*));
+    tmp_list_obj->obj = obj;
+    tmp_list_obj->next = NULL;
+    list_ptr->next = (void*)tmp_list_obj;
+}
+ 
+void remove_in_list(list* my_list, void* obj) {
+    list* tmp = my_list;
+    if (tmp->obj == obj) {
+        my_list = tmp->next;
+        return;
+    }
+    list* prev = NULL;
+    while (tmp) {
+        if (tmp->obj == obj) {
+            prev->next = tmp->next;
+            break;
+        }
+        prev = tmp;
+        tmp = tmp->next;
+    }
+}
+ 
+list* get_object_at_index(list* my_list, int index) {
+    int i = 0;
+    list* tmp = my_list;
+    while (tmp) {
+        if (i == index)
+            return tmp;
+        i++;
+        tmp = tmp->next;
+    }
+    return NULL;
+}
+```
+
+On créer la fonction **add_in_list** qui correspond au **Add**, la fonction **remove_in_list** qui correspond au **Remove** et la fonction **get_object_at_index** qui correspond au **GetOjectAtIndex**.<br/>
+Veuillez bien noter que ces 3 méthodes prennent en paramètres des pointeurs qui ne sont pas spécialisés, ce qui veut dire que vous pouvez réutiliser ces 3 fonctions dans tous vos projets, donc gardez les bien précieusement :)
+
+- Bon bah, c'est pas mal tout ça, on a nos "modèles", nos fonctions pour jouer avec, on est parés non?
+- Bah euh non...
+- Ah? J'ai oublié un truc?
+- Bah t'avais pas parlé de la fonction **hello** au dessus?
+- Ah mais si bien-sûr, qu'est-ce que je ferais sans vous les astronautes?
+
+```C
+void print_str(char* str) {
+    write(1, str, strlen(str));
+}
+ 
+void hello(plop* obj) {
+    print_str("Hello, my name is: ");
+    print_str(obj->name);
+    print_str("\n");
+} 
+
+void print_list(list* my_list) {
+    list* tmp = my_list;
+    plop* obj = NULL;
+    while (tmp) {
+        obj = (plop*)(tmp->obj);
+        obj->hello(obj);
+        tmp = tmp->next;
+    }
+}
+```
+
+En fait, ils nous manquait un peu plus que juste la fonction **hello**.<br />
+On va rajouter ces 3 fonctions qui dans l'ordre font : 
+- Afficher une chaine de caractère
+- Prendre un objet **plop** en paramètre et afficher son nom sur la console.
+- Dérouler notre liste chainée et appeler la fonction **hello** sur chaque "objet".
+
+On revient sur la fonction **hello**, cette fonction est maintenant déclaré dans notre code, et dans la fonction **make_new_object** on assigne le pointeur de la stucture fraichement créée sur cette fonction qui a une adresse en mémoire. On doit juste passer "l'objet" en paramètre car on est pas capable d'appeler directement la méthode dessus. Cette idée m'est venu quand j'ai fait du **Python**, en effet, le self est automatiquement passé dans chaque méthode et on fait nos appels dessus.
+
+## Le rendu final.
+
+Comme je vous ai dit, ce code a pour vocation de vous donner des idées et n'interagis pas vraiment avec l'utilisateur. Je vais donc vous dumper tout le code d'un coup, comme ça rien de plus simple pour vous, vous avez juste à le tester (par exemple sur [ideone](https://ideone.com/){:rel="nofollow noreferrer"})
+
+```C
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h> 
+ 
+typedef struct plop plop;
+struct plop
+{
+    void (*hello)(plop*);
+    char* name;
+};
+ 
+typedef struct list list;
+struct list
+{
+    list *next;
+    void *obj;
+};
+ 
+plop* make_new_object(char *);
+list* make_new_list();
+void print_str(char* str);
+void hello(plop* obj);
+void add_in_list(list* my_list, void* obj);
+void remove_in_list(list* my_list, void* obj);
+list* get_object_at_index(list* my_list, int index);
+void print_list(list* my_list);
+ 
+int main(int ac, char **av) {
+    list* my_list = make_new_list();
+    add_in_list(my_list, make_new_object("Pierre"));
+    add_in_list(my_list, make_new_object("Paul"));
+    add_in_list(my_list, make_new_object("Jacques"));
+    print_list(my_list);
+    return 0;
+}
+ 
+list* make_new_list() {
+    list* ptr = malloc(sizeof(list*));
+    return ptr;
+}
+ 
+plop* make_new_object(char *name) {
+    plop* obj = malloc(sizeof(plop*));
+    obj->name = name;
+    obj->hello = hello;
+    return obj;
+}
+ 
+void print_str(char* str) {
+    write(1, str, strlen(str));
+}
+ 
+void hello(plop* obj) {
+    print_str("Hello, my name is: ");
+    print_str(obj->name);
+    print_str("\n");
+}
+ 
+void add_in_list(list* my_list, void* obj) {
+    if (my_list->obj == NULL) {
+        my_list->obj = obj;
+        return;
+    }
+    list* list_ptr = my_list;
+    while (list_ptr->next != NULL) {
+        list_ptr = list_ptr->next;
+    }
+    list* tmp_list_obj = malloc(sizeof(list*));
+    tmp_list_obj->obj = obj;
+    tmp_list_obj->next = NULL;
+    list_ptr->next = (void*)tmp_list_obj;
+}
+ 
+void remove_in_list(list* my_list, void* obj) {
+    list* tmp = my_list;
+    if (tmp->obj == obj) {
+        my_list = tmp->next;
+        return;
+    }
+    list* prev = NULL;
+    while (tmp) {
+        if (tmp->obj == obj) {
+            prev->next = tmp->next;
+            break;
+        }
+        prev = tmp;
+        tmp = tmp->next;
+    }
+}
+ 
+list* get_object_at_index(list* my_list, int index) {
+    int i = 0;
+    list* tmp = my_list;
+    while (tmp) {
+        if (i == index)
+            return tmp;
+        i++;
+        tmp = tmp->next;
+    }
+    return NULL;
+}
+ 
+void print_list(list* my_list) {
+    list* tmp = my_list;
+    plop* obj = NULL;
+    while (tmp) {
+        obj = (plop*)(tmp->obj);
+        obj->hello(obj);
+        tmp = tmp->next;
+    }
+}
+```
+
+## It's time to run the code
+
+Bon, on a enfin tout en place, il suffit juste de runner notre bout de code.
+Ici, pas de paillettes et de strass, juste 3 petites sorties console.:
+
+```Shell
+Hello, my name is: Pierre
+Hello, my name is: Paul
+Hello, my name is: Jacques
+```
+
+Plutôt cool non ? :)
+
+## Mais pourquoi faire tout ça ?
+
+Vous devez vous dire, mais pourquoi faire tout ça ?<br/>
+Pour différentes raisons.<br/>
+La première étant que c'est très, très fun. Il faut de temps en temps sortir des sentiers battus et essayer de nouvelles choses, pousser le langage, pousser le framework, pousser les outils avec lesquels vous travaillez.
+Déstructurer une application peut être très utile, vous aider à établir de nouvelles architectures, voir des problématiques sous des angles différents et vous apporter des solutions pour des projets futurs.
+
+Voilà, j'espère que cet article vous a donné envie d'essayer de nouvelles choses et qu'il vous poussera à penser "**Outside the box**".
+
+Je vous donne un lien pour télécharger le projet déjà tout fait.<br/>
+Il suffit de le cloner, faire un pod install et la suite vous la connaissez.<br/>
+[Le Projet](https://github.com/ettibo/GenericProtocols){:rel="nofollow noreferrer"}
+
+Allez, salut les astronautes :)
