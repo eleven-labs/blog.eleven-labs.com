@@ -3,7 +3,7 @@ layout: post
 title: "Presentation of PHP library Xpression"   
 lang: en
 permalink: /en/presentation-php-xpression/  
-excerpt: "As developer we already haved to filter dataset (array, collection, API, etc...). We gonna to show up Xpression library wich allow us to filter different content source with simplified query syntax."
+excerpt: "As a developer we already had to filter dataset (array, collection, API, etc...). Let's focus on the Xpression library, wich allows us to filter different content sources with a simplified query syntax."
 authors:  
     - amoutte  
 categories:
@@ -35,12 +35,12 @@ cover: /assets/2018-07-11-xpression/cover.jpg
 
 ## Presentation of Xpression
 
-[**Xpression**](https://github.com/Symftony/Xpression) is a simple parser who convert textual expression ([DSL](https://fr.wikipedia.org/wiki/Langage_d%C3%A9di%C3%A9)) into logical one (**specification pattern**).
-We gonna to show Xpression functionnalities.
+[**Xpression**](https://github.com/Symftony/Xpression) is a simple parser which converts textual expression ([DSL](https://fr.wikipedia.org/wiki/Langage_d%C3%A9di%C3%A9)) into logical one (**specification pattern**).
+Here's an overview of Xpression's functionnalities.
 
 ## The syntax
 
-There is some expression examples :
+There is some expression examples:
 
 Age must be equal to `26`.
 
@@ -50,7 +50,7 @@ age=26
 ```
 {% endraw %}
 
-Age must be greater equal than `20` (included) and less than `30` (excluded).
+Age must be greater than or equal to `20` (included) and less than `30` (excluded).
 
 {% raw %}
 ```
@@ -58,7 +58,7 @@ age≥20&age<30
 ```
 {% endraw %}
 
-Supported operator supported by bridges :
+Operators supported by bridges:
 
 Operator | Syntax | Examples | ORM | ODM | ArrayCollection | Closure |
 -------- | ------ | ------- | --- | --- | --------------- | ------- |
@@ -102,12 +102,12 @@ But the following expression will select `Raccoon` with more than 100 points or 
 
 ## Usage
 
-We gonna to show up in wich case we can use this library.
+Let's see with wich cases should we use this library.
 
 ### As specification
 
 In order to have a specification we will use `ClosureExpressionBuilder`.
-In fact this class build a callback with the input expression.
+In fact, this class builds a callback with the input expression.
 
 {% raw %}
 ```php
@@ -169,14 +169,14 @@ $specification(new Astronaut('Ilan', 'Donut Factory', 1325, 'Commodore')); // tr
 ```
 {% endraw %}
 
-As you see, the specification is callable with associative array, object with public properties and object with getters.
+As you see, the specification can be called with an associative array, an object with public properties and an object with getters.
 
 ### Filter dataset
 
-We gonna to filter an associative array.`
+We filter an associative array.`
 We use again `ClosureExpressionBuilder`.
 
-This is the dataset we use for the following examples :
+This is the dataset we use for the following examples:
 
 {% raw %}
 ```php
@@ -206,7 +206,7 @@ $astronauts = [
 ```
 {% endraw %}
 
-I want to get 'Raccoons' astronaut.
+I want to get a 'Raccoons' astronaut.
 
 {% raw %}
 ```php
@@ -232,9 +232,9 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 ```
 {% endraw %}
 
-> Tips : here we use the `$expression` with `array_filter`.
+> Tips: here we use the `$expression` with `array_filter`.
 
-Now i want to select astronauts with more than 1000 points but `Raccoons` too.
+Now, I'd like to select astronauts with more than 1000 points but `Raccoons` too.
 
 {% raw %}
 ```php
@@ -292,7 +292,7 @@ $filteredAstronauts = $astronauts->matching(new Criteria($expression));
 ```
 {% endraw %}
 
-> ℹ️ `ArrayCollection` are use by doctrine to manage relations (oneToMany, manyToMany etc...).
+> ℹ️ `ArrayCollection` are used by doctrine to manage relations (oneToMany, manyToMany etc...).
 
 > To filter `Collection` you can use `ClosureExpressionBuilder` and inject it in `Collection::filter(Closure $p)`.
 
@@ -300,9 +300,9 @@ $filteredAstronauts = $astronauts->matching(new Criteria($expression));
  
 #### Doctrine ODM
 
-Now, we gonna to filter some data in MongoDB database.
+Now, we will filter some data in the MongoDB database.
 
-> Be ready, it's gonna be complicated !
+> Brace yourselves, it's gonna be tough!
 
 {% raw %}
 ```php
@@ -340,7 +340,7 @@ $astronauts = $collection->createQueryBuilder()->setQueryArray($queryBuilder->ge
 ```
 {% endraw %}
 
-> Pretty simple !
+> Pretty simple in the end!
 
 #### Doctrine ORM
 
@@ -354,7 +354,7 @@ use Symftony\Xpression\Bridge\Doctrine\ORM\ExprAdapter;
 use Symftony\Xpression\Expr\MapperExpressionBuilder;
 use Symftony\Xpression\Parser;
 
-// in this example i will use annotation reader for my schema
+// in this example I will use the annotation reader for my schema
 $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . "/Orm/Entity"), true, null, null, false);
 $entityManager = EntityManager::create(array(
     // database configuration
@@ -384,13 +384,13 @@ $astronauts = $qb->where($expression)->getQuery()->execute();
 ```
 {% endraw %}
 
-⚠️ When we create queryBuilder with ORM we are forced to specified an alias `EntityRepository::createQueryBuilder($alias)`. That why it can't identify query field `planet`.
+⚠️ When we create queryBuilder with ORM we have to specifiy an alias `EntityRepository::createQueryBuilder($alias)`. That's why it can't identify query field `planet`.
 
-First solution is to write the full quallified path field in the query like `a.planet{{Raccoons}}|a.points≥1000`. But some database information leak in the query.
+First solution is to write the full quallified path field in the query like `a.planet{{Raccoons}}|a.points≥1000`. But some database informations leak in the query.
 
-Second solution is to use `MapperExpressionBuilder`. This class gonne decorate `ExpressionBuilder` to dinamicly add the alias when query builder configured.
+The second solution is to use `MapperExpressionBuilder`. This class will decorate `ExpressionBuilder` to dynamically add the alias when the query builder is configured.
 
-In the following example we prefix all (`*`) field with `a`.
+In the following example we prefix all (`*`) fields with `a`.
 
 {% raw %}
 ```php
@@ -405,21 +405,21 @@ $parser = new Parser(
 
 ### API endpoint filter
 
-Many solution available if you want to filter your API :
+Many solutions are available if you want to filter your API:
  
  - use GraphQL.
  
 > This is not the lightest one. It is not the best choice to only filter data. 
  
- - manually get request params and manually build the query with a lot of if conditions.
+ - manually get request params and manually build the query with a lot of "if" conditions.
 
 > http query params are not readable and can be very heavy for complex query.
 
-Good news ! If you API use one of previous data source, you can filter your endpoint with `Xpression`.
+Good news! If your API uses one of the previous data sources, you can filter your endpoint with `Xpression`.
 
-> Keep in mind Xpression is different than GraphQL
+> Keep in mind that Xpression is different than GraphQL
 
-We use gonna use [Xpression Bundle](https://github.com/Symftony/Xpression-Bundle).
+We are going to use [Xpression Bundle](https://github.com/Symftony/Xpression-Bundle).
 
 Install it with `composer require symftony/xpression-bundle` then add it in symfony (AppKernel.php or bundle.php).
 
@@ -469,12 +469,12 @@ class AstronautController extends AbstractController
 ```
 {% endraw %}
 
-You can configure following options : 
+You can configure the following options: 
 
  - source (query source (request, query, attributes, cookies, files, server, headers default: query))
  - sourceName (param name, in the source) 
- - targetName (controller argument name to inject the builded expression)
- - expressionBuilder (expressionBuilder to use for build query *required*)
+ - targetName (controller argument name to inject the built expression)
+ - expressionBuilder (expressionBuilder used for building query *required*)
 
 Now you can go to your endpoint url and add `query`.
 
@@ -484,18 +484,17 @@ http://localhost/astronauts/list?query={planet{{Raccoons}}|points≥1000}
 ```
 {% endraw %}
 
-### To finish
+### Conclusion
 
-This presentation is over.
-Dont hesitate to test this library and contribute (idea, bugs, features, documentation, etc).
+This presentation is now over! Don't hesitate to test this library and contribute (idea, bugs, features, documentation, etc).
 
-Todo list :
+To do list :
 - fix usage of query placeholder.
 - add more bridges.
 - refacto lib core to be extensible (easer way to add some syntax).
 - implement a query builder in PHP and JS in order to create directly textual query from the front. 
 
-### Liens utiles
+### Useful resources
 
 - [Demo Xpression](http://symftony-xpression.herokuapp.com/)
 - [Code source Xpression](https://github.com/Symftony/Xpression)
