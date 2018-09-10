@@ -77,12 +77,12 @@ or | <code>&#124;</code> | <code>param>1&#124;param<10</code> | X | X | X | X |
 not or | <code>!&#124;</code> | <code>param>1!&#124;param<10</code> |  |  |  | X |
 exclusive or | <code>^&#124;</code> `⊕` | <code>param>1^&#124;param<10</code> `param>1⊕param<10` |  |  |  | X |
 
-> Yes, the library provide some bridge like doctrine `ORM`, `ODM` and `common` (collections filter).
+> Yes, the library provides some bridges like doctrine `ORM`, `ODM` and `common` (collections filter).
 
 #### Priority of composition operator
 
 Pay attention to the composition priority operator (`&`, `!&`, `|`, `!|`, `⊕`).
-Bigger priority are apply first.
+The bigger priority applies first.
 
 - `and`: 15
 - `not and`: 14
@@ -90,7 +90,7 @@ Bigger priority are apply first.
 - `exclusive or`: 9
 - `not or`: 8
 
-Use parenthesis `(` `)` to group expression as you need.
+Use parenthesis `(` `)` to group the expressions as you need.
 
 For example, this expression will select the `Raccoon` or the `Schizo` with more than 100 points.
 
@@ -102,7 +102,7 @@ But the following expression will select `Raccoon` with more than 100 points or 
 
 ## Usage
 
-Let's see with wich cases should we use this library.
+Let's see with which cases we should use this library.
 
 ### As specification
 
@@ -344,7 +344,7 @@ $astronauts = $collection->createQueryBuilder()->setQueryArray($queryBuilder->ge
 
 #### Doctrine ORM
 
-And doctrine/orm then ?
+And doctrine/orm then?
 
 {% raw %}
 ```php
