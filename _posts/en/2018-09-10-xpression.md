@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Presentation of PHP library Xpression"   
+title: "Presentation of the PHP library Xpression"   
 lang: en
 permalink: /en/presentation-php-xpression/  
 excerpt: "As a developer we already had to filter dataset (array, collection, API, etc...). Let's focus on the Xpression library, wich allows us to filter different content sources with a simplified query syntax."
