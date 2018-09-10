@@ -15,32 +15,33 @@ tags:
 - procedurale
 - POO
 - structure
+- pointeurs
 ---
 
 ## Introduction
 
 Salut les Astronautes, content de vous retrouver aujourd'hui après un petit moment sans avoir posté d'article.
 
-L'article que je vous propose aujourd'hui change un peu par rapport à ceux que je que j'ai pû écrire par le passé. En effet, en ce moment je suis dans une volonté de partage et j'ai envie de pouvoir promulger mes tips/bonnes pratiques à n'importe quel développeur motivé. C'est pourquoi cet article va aborder un sujet simple, mais sous un angle différent de d'habitude.
+L'article que je vous propose aujourd'hui change un peu par rapport à ceux que je que j'ai pû écrire par le passé. En effet, en ce moment je suis dans une volonté de partage et j'ai envie de pouvoir promulger mes tips/bonnes pratiques à n'importe quel développeur motivé. C'est pourquoi on va aborder un sujet simple, mais sous un angle différent de d'habitude.
 
-Bon, trêve de gentillesse et allons dans le vif du sujet. Cet article se veut assez spécialisé, on va parler de **C**, oui, oui, j'ai bien dit **C**, vous savez ce langage procédurale où l'on doit faire toutes les allocations à la mano et pareil pour la libération de la mémoire.<br/>
+Bon, trêve de gentillesses et allons dans le vif du sujet. Cet article se veut assez spécialisé, on va parler de **C**, oui, oui, j'ai bien dit **C**, vous savez ce langage procédurale où l'on doit faire toutes les allocations à la mano et pareil pour la libération de la mémoire.<br/>
 Il est super important ce langage, le Kernel de votre ordinateur est codé en **C**, même si c'est un peu galère on peut tout faire avec, et commencer par ce langage vous permettra d'être capable d'apprendre n'importe quel langage plus facilement.<br/>
-C'est pourquoi mon école (ça ne me rajeunit pas tout ça), nous l'a fait apprendre, et j'ai créer par mal de petits programmes avec. Le seul inconvénient à l'époque, je n'avais pas encore le recul sur la programmation comme je peux l'avoir maintenant. Et j'aurais bien aimé qu'à l'époque une âme bienveillante me guide pour ne pas faire des erreurs comme j'ai pu faire.
+C'est pourquoi mon école (ça ne me rajeunit pas tout ça), nous l'a fait apprendre en premier, et j'ai créer par mal de petits programmes avec. Le seul inconvénient à l'époque était que je n'avais pas encore le recul sur la programmation comme je peux l'avoir au jour d'aujourd'hui. Et je vous avoue que j'aurais bien aimé qu'à l'époque une âme bienveillante me guide pour ne pas faire des erreurs comme j'ai pu faire.
 
 
-C'est donc dans ce but que je fais cet artcile, pour vous donner un autre regard sur la programmation procédurale, on va donc ensemble essayer de "casser" un peu le **C**, de "**L'objectiser**".
+C'est donc dans ce but que je fais cet article, pour vous donner un autre regard sur la programmation procédurale, on va donc ensemble essayer de pousser le langage et de "**L'objectiser**".
 
 
 ## Mise en situation
 
-Vous êtes étudidant en première année, vous avez un petit programme à faire qui doit être capable de gérer plusieurs utilisateurs et vous vous dites, bah tiens, ce serait bien de ne pas se faire un code hyper compliqué à maintenir, sait-on jamais, peut-être que j'aurais des nouvelles données pour mes utilisateurs dans le futur comme le téléphone fixe ou le code postal (ce sont des exemples).
+Vous êtes étudiant en première année, vous avez un petit programme à faire qui doit être capable de gérer plusieurs utilisateurs et vous vous dites, bah tiens, ce serait bien de ne pas se faire un code hyper compliqué à maintenir, sait-on jamais, peut-être que j'aurais des nouvelles données pour mes utilisateurs dans le futur comme le téléphone fixe ou le code postal (ce sont des exemples).
 
-Vous avez la solution 1, qui est de faire du **C** en mode normal, donc besoin de modifier beaucoup de code dés qu'une modification arrive, ou alors vous vous posez 30 minutes, et vous vous dites, essayons de faire les choses différement. C'est là que j'interviens ;)
+Vous avez la solution 1, qui est de faire du **C** en mode normal, donc besoin de modifier beaucoup de code dés qu'une modification arrive, ou alors vous pouvez vous poser 30 minutes, et vous dire, essayons de faire les choses différement. C'est là que j'interviens ;)
 
 On va penser en mode objet pour du code procédurale.<br/>
 Pour faire ceci, on va utiliser 4 éléments du langage **C** :
 
-- **Les structures**
+- **Les @**
 - **Les pointeurs**
 - **Les listes chainées**
 - **Les pointeurs sur fonctions**
@@ -53,14 +54,13 @@ Ce sont un peu les ancètres des objets que vous connaissez, il n'y pas de notio
 
 On utilise beaucoup des références en code maintenant, mais il existe aussi les pointeurs, c'est une variable qui pointe vers un endroit spécifique dans la mémoire. Très utile, et tout notre système va reposer sur ça.
 
-
 ### Les listes chainées
 
 On va réutiliser les 2 notions vu précédémment. Une liste chainée est ensemble de structures qui sont liées ensemble par des pointeurs.
 
 ### Les pointeurs sur fonctions
 
-Je pense que vous vous en doutez avec ce que je vous ai décrit au dessus, c'est des pointeurs non pas pour accéder à des données, mais des fonctions qui ont été déclaré en mémoire.
+Je pense que vous vous en doutez vu ce que je vous ai décrit au dessus, ce sont des pointeurs non pas pour accéder à des données, mais à des fonctions qui ont été déclaré en mémoire.
 
 Bon, c'est pas mal tout ça, on a vu les grosses notions, vous savez ce que l'on veut réaliser.<br />
 Et si on passait au concret? :)
@@ -82,9 +82,8 @@ struct list
 };
 ```
 
-Je créer déjà ma stucture de liste chainée, l'idée de reproduire un **Array** comme il existe dans quasiment tous les langages.
+Je créer déjà ma structure de liste chainée, l'idée de reproduire un **Array** comme il existe dans quasiment tous les langages.
 On a donc un pointeur qui va pointer vers le prochain maillon de ma liste (next) et un pointeur de type void* pour contenir tout type d'objet car je veux être capable de pouvoir utiliser ma liste chainée pour tout type de choses (c'est plutôt pratique en vrai).
-
 
 ```C
 typedef struct plop plop;
@@ -95,10 +94,10 @@ struct plop
 };
 ```
 
-Ensuite voici le vrai "modèle" pour nos objets utilisateurs. Une stucture de type plop qui contient deux attributs, **name** pour le nom de mon utilisateur et un pointeur sur fonction **hello** qui prend en paramèetre un objet de type **plop**.
+Ensuite voici le vrai "modèle" pour nos objets utilisateurs. Une structure de type plop qui contient deux attributs, **name** pour le nom de mon utilisateur et un pointeur sur fonction **hello** qui prend en paramètre un "objet" de type **plop**.
 
-Alors, on a notre stucture de données, c'est bien, mais qu'est-ce que l'on fait maintenant?
-Et bien, on va coder nos méthodes de liste chainée pour reproduire les **new**, **add**, **remove**, **getObjectAtIndex** que l'on utilise tous les jours avec nos langages modernes.
+Alors, on a notre structure de données, c'est bien, mais qu'est-ce que l'on fait maintenant?
+Et bien, on va coder nos "méthodes" de liste chainée pour reproduire les **new**, **add**, **remove**, **getObjectAtIndex** que l'on utilise tous les jours avec nos langages modernes.
 
 Commençons par **New** :
 
@@ -166,8 +165,8 @@ list* get_object_at_index(list* my_list, int index) {
 }
 ```
 
-On créer la fonction **add_in_list** qui correspond au **Add**, la fonction **remove_in_list** qui correspond au **Remove** et la fonction **get_object_at_index** qui correspond au **GetOjectAtIndex**.<br/>
-Veuillez bien noter que ces 3 méthodes prennent en paramètres des pointeurs qui ne sont pas spécialisés, ce qui veut dire que vous pouvez réutiliser ces 3 fonctions dans tous vos projets, donc gardez les bien précieusement :)
+On créé la fonction **add_in_list** qui correspond au **Add**, la fonction **remove_in_list** qui correspond au **Remove** et la fonction **get_object_at_index** qui correspond au **GetOjectAtIndex**.<br/>
+Veuillez bien noter que ces 3 méthodes prennent en paramètres des pointeurs qui ne sont pas typés ```C(void*)```, ce qui veut dire que vous pouvez réutiliser ces 3 fonctions dans tous vos projets, donc gardez les bien précieusement :)
 
 - Bon bah, c'est pas mal tout ça, on a nos "modèles", nos fonctions pour jouer avec, on est parés non?
 - Bah euh non...
@@ -197,17 +196,17 @@ void print_list(list* my_list) {
 }
 ```
 
-En fait, ils nous manquait un peu plus que juste la fonction **hello**.<br />
+En fait, il nous manquait un peu plus que juste la fonction **hello**.<br />
 On va rajouter ces 3 fonctions qui dans l'ordre font : 
 - Afficher une chaine de caractère
 - Prendre un "objet" **plop** en paramètre et afficher son nom sur la console.
 - Dérouler notre liste chainée et appeler la fonction **hello** sur chaque "objet".
 
-On revient sur la fonction **hello**, cette fonction est maintenant déclaré dans notre code, et dans la fonction **make_new_object** on assigne le pointeur sur fonction de la stucture fraichement créée sur cette fonction qui a une adresse en mémoire. On doit juste passer "l'objet" en paramètre car on est pas capable d'appeler directement la méthode dessus. Cette idée m'est venu quand j'ai fait du **Python**, en effet, le self est automatiquement passé dans chaque méthode et on fait nos appels dessus.
+On revient sur la fonction **hello**, cette fonction est maintenant déclaré dans notre code, et dans la fonction **make_new_object** on assigne le pointeur sur fonction de la structure fraichement créée sur cette fonction qui a une adresse en mémoire. On doit juste passer "l'objet" en paramètre car on est pas capable d'appeler directement la méthode dessus. Cette idée m'est venu quand j'ai fait du **Python**, en effet, le self est automatiquement passé dans chaque méthode et on fait nos appels dessus.
 
 ## Le rendu final
 
-Comme je vous ai dit, ce code a pour vocation de vous donner des idées et n'interagis pas vraiment avec l'utilisateur. Je vais donc vous dumper tout le code d'un coup, comme ça rien de plus simple pour vous, vous avez juste à le tester (par exemple sur [ideone](https://ideone.com/){:rel="nofollow noreferrer"})
+Comme je vous ai dit, ce code a pour vocation de vous donner des idées et n'interagit pas vraiment avec l'utilisateur. Je vais donc vous dumper tout le code d'un coup, comme ça rien de plus simple pour vous, vous avez juste à le tester (par exemple sur [ideone](https://ideone.com/){:rel="nofollow noreferrer"})
 
 ```C
 #include <stdlib.h>
@@ -339,14 +338,14 @@ Plutôt cool non ? :)
 - Attends, on a pondu toutes ces lignes de code juste pour ça?
 - Oui
 - Mais hum, elle est où la magie?
-- La magie n'est pas tout le temps visuel, parfois c'est juste comment c'est fait derrière. En tant que devéloppeurs vous devez vous challengez pour ne pas faire les choses d'une seule et même manière, variez les plaisirs.
+- La magie n'est pas tout le temps visuel, parfois c'est juste comment c'est fait derrière. En tant que devéloppeurs vous devez vous challengez pour ne pas faire les choses d'une seule et même manière, varier les plaisirs.
 
 ## Mais pourquoi faire tout ça ?
 
 Vous devez vous dire, mais pourquoi faire tout ça ?<br/>
 Pour différentes raisons.<br/>
-La première étant que c'est très, très fun. Il faut de temps en temps sortir des sentiers battus et essayer de nouvelles choses, pousser le langage, pousser le framework, pousser les outils avec lesquels vous travaillez.<br/>
-Aussi, vous arrivez en soutenance avec une structure de code comme ça, le correcteur va se dire, ah tiens, ça sort de l'ordinaire, est-ce que l'on pourrait pousser encore plus loin et vous donner des vrais conseils pour la suite de vos projets.<br/>
+La première étant que c'est très, très fun.Imaginez montrer ce code à votre binome de travail, et lui dire, tiens si on faisait le projet comme ça ?<br/>
+Aussi, vous arrivez en soutenance avec une telle structure de code, le correcteur va se dire, ah tiens, ça sort de l'ordinaire, est-ce que l'on pourrait pousser encore plus loin et vous donner des vrais conseils pour la suite de vos projets.<br/>
 Cela rend le code beaucoup plus lisible à mon goût aussi, on a quelques fonctions complexes et le reste est très facilement compréhensible.
 Cela va vous apprendre à mieux découper votre code aussi et architecturer vos projets avec beaucoup moins de dépendance.
 
