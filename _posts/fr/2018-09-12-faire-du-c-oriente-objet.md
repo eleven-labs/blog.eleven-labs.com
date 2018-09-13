@@ -16,6 +16,7 @@ tags:
 - POO
 - structure
 - pointeurs
+cover: /assets/2018-09-12-faire-du-c-oriente-objet/cover.jpg
 ---
 
 ## Introduction
@@ -106,7 +107,7 @@ list* make_new_list() {
     list* ptr = malloc(sizeof(list*));
     return ptr;
 }
- 
+
 plop* make_new_object(char *name) {
     plop* obj = malloc(sizeof(plop*));
     obj->name = name;
@@ -117,7 +118,7 @@ plop* make_new_object(char *name) {
 
 **make_new_list** nous sert à créer une nouvelle liste, et **make_new_object** nous sert à créer un nouvel utilisateur. Pour le moment rien de bien compliqué, à part peut-être dans **make_new_object** qui assigne **hello** avec un **hello** qui n'existe pas dans le scope de la fonction, on y reviendra un peu plus tard.
 
-Passons maintenant aux fonctions utilitaires de la liste chainée : 
+Passons maintenant aux fonctions utilitaires de la liste chainée :
 
 ```C
 void add_in_list(list* my_list, void* obj) {
@@ -134,7 +135,7 @@ void add_in_list(list* my_list, void* obj) {
     tmp_list_obj->next = NULL;
     list_ptr->next = (void*)tmp_list_obj;
 }
- 
+
 void remove_in_list(list* my_list, void* obj) {
     list* tmp = my_list;
     if (tmp->obj == obj) {
@@ -151,7 +152,7 @@ void remove_in_list(list* my_list, void* obj) {
         tmp = tmp->next;
     }
 }
- 
+
 list* get_object_at_index(list* my_list, int index) {
     int i = 0;
     list* tmp = my_list;
@@ -178,12 +179,12 @@ Veuillez bien noter que ces 3 méthodes prennent en paramètres des pointeurs qu
 void print_str(char* str) {
     write(1, str, strlen(str));
 }
- 
+
 void hello(plop* obj) {
     print_str("Hello, my name is: ");
     print_str(obj->name);
     print_str("\n");
-} 
+}
 
 void print_list(list* my_list) {
     list* tmp = my_list;
@@ -197,7 +198,7 @@ void print_list(list* my_list) {
 ```
 
 En fait, il nous manquait un peu plus que juste la fonction **hello**.<br />
-On va rajouter ces 3 fonctions qui dans l'ordre font : 
+On va rajouter ces 3 fonctions qui dans l'ordre font :
 - Afficher une chaine de caractère
 - Prendre un "objet" **plop** en paramètre et afficher son nom sur la console.
 - Dérouler notre liste chainée et appeler la fonction **hello** sur chaque "objet".
@@ -211,22 +212,22 @@ Comme je vous ai dit, ce code a pour vocation de vous donner des idées et n'int
 ```C
 #include <stdlib.h>
 #include <unistd.h>
-#include <string.h> 
- 
+#include <string.h>
+
 typedef struct plop plop;
 struct plop
 {
     void (*hello)(plop*);
     char* name;
 };
- 
+
 typedef struct list list;
 struct list
 {
     list *next;
     void *obj;
 };
- 
+
 plop* make_new_object(char *);
 list* make_new_list();
 void print_str(char* str);
@@ -235,7 +236,7 @@ void add_in_list(list* my_list, void* obj);
 void remove_in_list(list* my_list, void* obj);
 list* get_object_at_index(list* my_list, int index);
 void print_list(list* my_list);
- 
+
 int main(int ac, char **av) {
     list* my_list = make_new_list();
     add_in_list(my_list, make_new_object("Pierre"));
@@ -244,29 +245,29 @@ int main(int ac, char **av) {
     print_list(my_list);
     return 0;
 }
- 
+
 list* make_new_list() {
     list* ptr = malloc(sizeof(list*));
     return ptr;
 }
- 
+
 plop* make_new_object(char *name) {
     plop* obj = malloc(sizeof(plop*));
     obj->name = name;
     obj->hello = hello;
     return obj;
 }
- 
+
 void print_str(char* str) {
     write(1, str, strlen(str));
 }
- 
+
 void hello(plop* obj) {
     print_str("Hello, my name is: ");
     print_str(obj->name);
     print_str("\n");
 }
- 
+
 void add_in_list(list* my_list, void* obj) {
     if (my_list->obj == NULL) {
         my_list->obj = obj;
@@ -281,7 +282,7 @@ void add_in_list(list* my_list, void* obj) {
     tmp_list_obj->next = NULL;
     list_ptr->next = (void*)tmp_list_obj;
 }
- 
+
 void remove_in_list(list* my_list, void* obj) {
     list* tmp = my_list;
     if (tmp->obj == obj) {
@@ -298,7 +299,7 @@ void remove_in_list(list* my_list, void* obj) {
         tmp = tmp->next;
     }
 }
- 
+
 list* get_object_at_index(list* my_list, int index) {
     int i = 0;
     list* tmp = my_list;
@@ -310,7 +311,7 @@ list* get_object_at_index(list* my_list, int index) {
     }
     return NULL;
 }
- 
+
 void print_list(list* my_list) {
     list* tmp = my_list;
     plop* obj = NULL;
