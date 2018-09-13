@@ -22,7 +22,7 @@ tags:
 
 Salut les Astronautes, content de vous retrouver aujourd'hui après un petit moment sans avoir posté d'article.
 
-L'article que je vous propose aujourd'hui change un peu de ceux que je que j'ai pu écrire par le passé. La volonté est ici de transmettre mes tips/bonnes pratiques à n'importe quel développeur motivé. C'est pourquoi on va aborder un sujet simple, mais sous un angle différent de d'habitude.
+L'article que je vous propose aujourd'hui change un peu de ceux que j'ai pu écrire par le passé. La volonté est ici de transmettre mes tips/bonnes pratiques à n'importe quel développeur motivé. C'est pourquoi on va aborder un sujet simple, mais sous un angle différent de d'habitude.
 
 Allons maintenant dans le vif du sujet. Cet article se veut assez spécialisé, on va parler de **C**, oui, oui, j'ai bien dit **C**, vous savez ce langage procédural où l'on doit faire toutes les allocations à la mano et pareil pour la libération de la mémoire.<br/>
 Il est super important ce langage, le Kernel de votre ordinateur est codé en **C**, même si c'est un peu galère on peut tout faire avec, et commencer par ce langage vous permettra d'être capable d'apprendre n'importe quel langage plus facilement.<br/>
