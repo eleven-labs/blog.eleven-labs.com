@@ -6,8 +6,8 @@ authors:
 lang: fr
 permalink: /fr/c-oriente-objet/
 excerpt: "Faisons du C comme s'il s'agissait d'un langage Objet"
-date: '2018-09-12 14:30:42 +0100'
-date_gmt: 2018-09-12 13:30:42 +0100'
+date: '2018-09-13 14:30:42 +0100'
+date_gmt: 2018-09-13 13:30:42 +0100'
 categories:
 - Software
 tags:
