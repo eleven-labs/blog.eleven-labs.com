@@ -19,16 +19,15 @@ cover: /assets/2018-09-11-messenger/cover.jpg
 
 ## Présentation générale
 
-Le composant messenger nous apporte un message bus. Un message bus est un composant très simple qui permet de dispatch un objet (message).
-Le bus a pour rôle d'executer le handler approprié au message. Durant ce processus le message va passer dans une pile ordonné de middleware.
+Le composant messenger nous apporte un message bus. Un message bus est un composant très simple qui permet de dispatcher un objet (message). Le bus a pour rôle d'exécuter le handler approprié au message. Durant ce processus le message va passer dans une pile ordonnée de middleware.
 
-Les middlewares sont encapsulé les uns sur les autres autours du handler.
+Les middlewares sont encapsulés les uns sur les autres autours du handler.
 
 Exemple simplifier
 ```php
 <?php
 $handler = function ($value) {
-    // Le code metier a executer
+    // Le code métier à exécuter
     return $value;
 };
 
@@ -39,7 +38,7 @@ $wrappingMiddleware = function (callable $handler) {
     };
 };
 
-// ce middleware va logguer dans un fichier les differentes execution de la stack d'execution
+// ce middleware va logguer dans un fichier les différentes exécutions de la stack d'exécution
 $loggingMiddleware = function (callable $handler) {
     return function ($string) use ($handler) {
         $result = $handler($string);
@@ -56,25 +55,25 @@ $middlewareStack = $loggingMiddleware(
         )
     );
 
-// on execute la stack de middleware ainsi que le handler
+// on exécute la stack de middleware ainsi que le handler
 echo $middlewareStack('example string');
 // will show "before > -example string- < after"
-// le middleware logging aura quand à lui ecrit "Info: Input "example string" with output "before > -example string- < after"" dans le fichier dev.log.
+// le middleware logging aura quand à lui écrit "Info: Input "example string" with output "before > -example string- < after"" dans le fichier dev.log.
 ```
 
-Les middlewares permettent d'ajouter un traitement avant ou après l'execution du handler (ou du middleware suivant), c'est pourquoi l'ordre des middleware et très important.
+Les middlewares permettent d'ajouter un traitement avant ou après l'exécution du handler (ou du middleware suivant), c'est pourquoi l'ordre des middlewares est très important.
 
-Dans le composant Messenger de symfony il existe 2 cas d'utilisations standard:
+Dans le composant Messenger de symfony il existe 2 cas d'utilisation standard :
 - Envoi de message (sender)
-- Reception de message (receiver)
+- Réception de message (receiver)
 
 ## Envoi de message
 
-Un message est envoyer depuis le système vers une destination. Par exemple cette destination peux être un message broker ou un endpoint API.
+Un message est envoyé depuis le système vers une destination. Par exemple cette destination peut être un message broker ou un endpoint API.
 
-Vous pourriez creer un Handler qui envoi le message à votre destination mais symfony mets à disposition un `SendMessageMiddleware`.
+Vous pourriez creer un Handler qui envoie le message à votre destination mais symfony met à disposition un `SendMessageMiddleware`.
 
-Vous n'aurez donc qu'à configurer le routage des objets vers le transport souhaitez:
+Vous n'aurez donc qu'à configurer le routage des objets vers le transport souhaité :
 
 ```yaml
 framework:
@@ -86,18 +85,18 @@ framework:
              'App\MyModel': amqp
 ```
 
-Reportez vous a la [documentation](https://symfony.com/doc/current/messenger.html#routing) pour les différentes syntaxes possible.
+Reportez-vous à la [documentation](https://symfony.com/doc/current/messenger.html#routing) pour les différentes syntaxes possibles.
 
-## Reception de message
+## Réception de message
 
 Un message entre dans le système de manière synchrone (endpoint API/controlleur) ou asynchrone (via worker/queue). 
-Le message reçus est donc encapsuler avec une enveloppe `ReceivedMessage` avant d'être dispatch dans le message bus.
+Le message reçu est donc encapsulé avec une enveloppe `ReceivedMessage` avant d'être dispatché dans le message bus.
 
-> L'enveloppe `ReceivedMessage` permet d'eviter au bus de renvoyer le message au sender (boucle infinie).
+> L'enveloppe `ReceivedMessage` permet d'éviter au bus de renvoyer le message au sender (boucle infinie).
 
-Pour traiter un message il faudra créer un handler avec une méthode `__invoke` (si vous avez déjà une méthode utiliser l'attribut `handles` dans le tag de déffinition du service. Voir plus bas).
+Pour traiter un message il faudra créer un handler avec une méthode `__invoke` (si vous avez déjà une méthode, utilisez l'attribut `handles` dans le tag de définition du service. Voir plus bas).
 
-Par exemple:
+Par exemple :
 
 ```php
 <?php
@@ -124,7 +123,7 @@ services:
         tags: [messenger.message_handler]
 ```
 
-Si symfony n'arrive pas à deviner le type de message, vous pouvez utilisez la syntax complète afin de spécifier la méthode à appeler et ou le model supporté.
+Si symfony n'arrive pas à deviner le type de message, vous pouvez utiliser la syntaxe complète afin de spécifier la méthode à appeler et ou le modèle supporté.
 ```yaml
 # config/services.yaml
 services:
@@ -133,14 +132,14 @@ services:
              - {name: 'messenger.message_handler', method: 'process', handles: 'App\MyModel'}
 ```
 
-## Consomer des messages
+## Consommer des messages
 
-Le composant mets également à disposition une commande `bin/console messenger:consume-messages {TRANSPORT_NAME}` afin de lancer un worker qui va écouter/consulter le transport et dispatch un message dans le bus.
+Le composant met également à disposition une commande `bin/console messenger:consume-messages {TRANSPORT_NAME}` afin de lancer un worker qui va écouter/consulter le transport et dispatcher un message dans le bus.
 Dans le cas du transport `amqp` le worker dispatchera chaque message de la queue du broker.
-Mais il est tous à fais possible de récupérer les changement d'un resultat d'API.
+Mais il est tout à fait possible de récupérer les changements d'un résultat d'API.
 
 
-Par exemple
+Par exemple :
 ```php
 <?php
 
@@ -162,7 +161,7 @@ class APIMeteoReceiver implements ReceiverInterface
         while (!$this->shouldStop) {
             $result = file_get_contents("{URL d'une API de meteo}");
             
-            // si le resultat et le même que le précédent on n'attend une seconde avant de recommencé 
+            // si le résultat est le même que le précédent on attend une seconde avant de recommencer 
             if ($this->result === $result) {
                 sleep(1);
                 continue;
@@ -170,7 +169,7 @@ class APIMeteoReceiver implements ReceiverInterface
             
             $this->result = $result;
             
-            // Si la météo a changer on dispatch la nouvelle météo dans le bus
+            // Si la météo a changé on dispatche la nouvelle météo dans le bus
             $handler(new Envelope($this->result));
         }
     }
@@ -182,18 +181,18 @@ class APIMeteoReceiver implements ReceiverInterface
 }
 ```
 
-Dans l'exemple précédent on ne dispatch que lors ce que la météo change
+Dans l'exemple précédent on ne dispatche que lorsque la météo change
 
 ## Conclusion
 
 Voila un premier tour d'horizon du composant Messenger. 
-Bien que le concepte du message bus soit assez simple, l'implementation du composant ne l'est pas autant. 
-Et étant donné que le composant est encore experimental et que la documentation s'étoffe petit à petit c'est donc encore un composant mal connue et peu utiliser pour le moment.  
-Par ailleur le composant Messenger nous apporte plein d'outils et nous laisse un grand niveau de personalisation.
-C'est pourquoi une bonne compréhension du concepte et une bonne prise en main est préférable pour une exploitation maximum du potentiel.
+Bien que le concept du message bus soit assez simple, l'implémentation du composant ne l'est pas autant. 
+Et étant donné que le composant est encore expérimental et que la documentation s'étoffe petit à petit c'est donc encore un composant mal connu et peu utilisé pour le moment.  
+Par ailleurs le composant Messenger nous apporte plein d'outils et nous laisse un grand niveau de personnalisation.
+C'est pourquoi une bonne compréhension du concept et une bonne prise en main sont préférables pour une exploitation maximum du potentiel.
 
 Sachez qu'il est également possible d'implémenter vos propres `Transport` `Middleware` `Sender` `Receiver`. 
-Et que vous avez la possibilitée de créer plusieurs bus dans l'application afin de bien compartimenter votre logique.
+Vous avez en plus de cela la possibilité de créer plusieurs bus dans l'application afin de bien compartimenter votre logique.
 
 ### Liens utiles
 
