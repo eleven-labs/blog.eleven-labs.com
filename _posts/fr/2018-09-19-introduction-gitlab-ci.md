@@ -23,7 +23,7 @@ Dans tout projet il est intéressant de mettre en place une Ci/CD, c’est pourq
 
 Dans cette article je vais juste vous présenter les possibilités que vous offre GitLab CI/CD, mais pour aller plus loin je vous propose aussi deux Tuto sur le [codelabs d'Eleven Labs](https://codelabs.eleven-labs.com) pour voir des exemples de CI/CD :
 - Mettre en place une CI sur un projet symfony - En cours de redaction
-- [Mettre en place une Ci sur un projet js](https://codelabs.eleven-labs.com/fr/gitlab-ci-js/)
+- [Mettre en place une Ci sur un projet js](https://codelabs.eleven-labs.com/course/fr/gitlab-ci-js/)
 
 # CI/CD c'est quoi ?
 
