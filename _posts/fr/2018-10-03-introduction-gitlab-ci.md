@@ -19,7 +19,7 @@ tags:
     - DevOps
 cover: /assets/2018-09-19-introduction-gitlab-ci/cover.png
 ---
-Aujourd’hui si vous voulez mettre en place une CI/CD sur GitHub il vous faut “linker” vos dépôts avec Travis-ci, Circle-ci, Codeship, …. Mais savez vous que GitLab intègre une solution de CI/CD ? C'est l'objet de l'article d'aujourd'hui.
+Aujourd’hui si vous voulez mettre en place une CI/CD sur GitHub il vous faut “linker” vos dépôts avec Travis-ci, Circle-ci, Codeship... Mais savez-vous que GitLab intègre une solution de CI/CD ? C'est l'objet de l'article d'aujourd'hui.
 
 Dans cet article je vais juste vous présenter les possibilités que vous offre GitLab CI/CD. Mais pour aller plus loin je vous propose aussi deux tutos sur le [codelabs d'Eleven Labs](https://codelabs.eleven-labs.com) :
 - Mettre en place une CI sur un projet symfony - En cours de rédaction
