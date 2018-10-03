@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction à Gitlab CI/CD
-excerpt: Dans cet article vous retrouverez une partie des possibilitées qu’offre GitLab CI/CD. Vous retrouverez deux tutoriels liés à cette article pour vous montrez deux cas d'utilisation.
+excerpt: Cet article présente une partie des possibilités qu’offre GitLab CI/CD. Vous retrouverez sur la plateforme Codelabs deux tutoriels liés à cet article, qui vous montreront deux cas d'utilisation.
 authors:
     - nicolas
 permalink: /fr/introduction-gitlab-ci/
@@ -19,15 +19,15 @@ tags:
     - DevOps
 cover: /assets/2018-09-19-introduction-gitlab-ci/cover.png
 ---
-Dans tout projet il est intéressant de mettre en place une Ci/CD, c’est pourquoi je vais vous présentez Gitlab CI/CD. Aujourd’hui si vous voulez mettre en place une CI/CD sur GitHub il vous faut “linker” vos dépôts avec Travis-ci, Circle-ci, Codeship, …. Mais savez vous que GitLab intègre une solution de CI/CD ?
+Aujourd’hui si vous voulez mettre en place une CI/CD sur GitHub il vous faut “linker” vos dépôts avec Travis-ci, Circle-ci, Codeship, …. Mais savez vous que GitLab intègre une solution de CI/CD ? C'est l'objet de l'article d'aujourd'hui.
 
-Dans cette article je vais juste vous présenter les possibilités que vous offre GitLab CI/CD, mais pour aller plus loin je vous propose aussi deux Tuto sur le [codelabs d'Eleven Labs](https://codelabs.eleven-labs.com) pour voir des exemples de CI/CD :
-- Mettre en place une CI sur un projet symfony - En cours de redaction
+Dans cet article je vais juste vous présenter les possibilités que vous offre GitLab CI/CD. Mais pour aller plus loin je vous propose aussi deux tutos sur le [codelabs d'Eleven Labs](https://codelabs.eleven-labs.com) :
+- Mettre en place une CI sur un projet symfony - En cours de rédaction
 - [Mettre en place une Ci sur un projet js](https://codelabs.eleven-labs.com/course/fr/gitlab-ci-js/)
 
 # CI/CD c'est quoi ?
 
-Je ne vais pas vous refaire une définition mais voici ce que nous dit Wikipédia pour CI et CD:
+Je ne vais pas vous refaire une définition mais voici ce que nous dit Wikipédia pour CI et CD :
 
 ## CI : Continuous Integration
 > “L'intégration continue est un ensemble de pratiques utilisées en génie logiciel consistant à vérifier à chaque modification de code source que le résultat des modifications ne produit pas de régression dans l'application développée. [...] Le principal but de cette pratique est de détecter les problèmes d'intégration au plus tôt lors du développement. De plus, elle permet d'automatiser l'exécution des suites de tests et de voir l'évolution du développement du logiciel.”
@@ -38,43 +38,43 @@ L’approche aide à réduire le coût, le temps et les risques associés à la 
 
 # GitLab en quelques mots
 Alors Gitlab c’est :
-- **Gitlab inc** : La compagnie qui gère les développements des produits GitLab
-- **Gitlab** : C’est une version que vous pouvez installer sur votre machine, serveur ou dans le cloud facilement avec le [Market place d’AWS](https://aws.amazon.com/marketplace/pp/B071RFCJZK)
-- **GitLab.com** : C’est une version web comme GitHub ou BitBucket.
+- **Gitlab inc** : la compagnie qui gère les développements des produits GitLab
+- **Gitlab** : c’est une version que vous pouvez installer sur votre machine, serveur ou dans le cloud facilement avec le [Market place d’AWS](https://aws.amazon.com/marketplace/pp/B071RFCJZK)
+- **GitLab.com** : c’est une version web comme GitHub ou BitBucket.
 
-GitLab et GitLab.com sont des gestionnaire de repository git basé sur le web avec des fonctionnalités comme :
+GitLab et GitLab.com sont des gestionnaires de repositories git basés sur le web avec des fonctionnalités comme :
  - un wiki,
- - un suivie d’issue,
+ - un suivi d’issue,
  - un registry docker,
- - une suivi de code,
+ - un suivi de code,
  - une review de code
  - une CI/CD,
  - ...
 
-GitLab est beaucoup plus fourni en fonctionnalité que GitHub dès sa version gratuit. Il est aussi possible d'avoir des dépôts privées sans avoir d'abonnement.
+GitLab est beaucoup plus fourni en fonctionnalités que GitHub dans sa version gratuite. Il est aussi possible d'avoir des dépôts privés sans avoir d'abonnement.
 
 # Avant de commencer
-GitLab CI/CD vas vous permettre d'automatiser les `builds`, les `tests`, les `déploiements`, etc de vos applications. L’ensemble de vos tâche peut-être diviser en étape et l’ensemble des vos tache et étape constitue une pipeline.
+GitLab CI/CD va vous permettre d'automatiser les `builds`, les `tests`, les `déploiements`, etc de vos applications. L’ensemble de vos tâches peut-être divisé en étapes et l’ensemble des vos tâches et étapes constituent une pipeline.
 
-Chaque tâche est exécutée grâce à des `runners` et pour ce faire GitLab ont un projet open source qui s'appel [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner/) écrit en [GO](https://golang.org).
+Chaque tâche est exécutée grâce à des `runners`, qui fonctionnent grâce à un projet open source nommé [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner/) écrit en [GO](https://golang.org).
 
-Vous pouvez avoir vos propres `runners` directement sur votre machine ou serveur. Pour plus d'information je vous laisse lire la documentation officiel :
+Vous pouvez avoir vos propres `runners` directement sur votre machine ou serveur. Pour plus d'information je vous laisse lire la documentation officielle :
  - [Page du projet GitLab Runner](https://docs.gitlab.com/runner/)
  - [Configuration de GitLab Runner](https://docs.gitlab.com/runner/configuration/)
- - [Configuration avancé de GitLab Runner](https://docs.gitlab.com/runner/configuration/advanced-configuration.html)  
+ - [Configuration avancée de GitLab Runner](https://docs.gitlab.com/runner/configuration/advanced-configuration.html)  
 
-GitLab propose aussi des runners public pour pouvoir avoir une CI/CD sans rien a avoir a installer mais attentions il y a des quota suivant le types de votre compte. En compte gratuit vous avez le droit a 2000 minutes de temps de pipeline par mois. Les runners public de gitlab.com sont exécuter sur AWS.
+GitLab propose aussi des runners publics, qui vous épargnent une installation, mais attention, il y a des quotas suivant le type de compte dont vous diposez. En compte gratuit, vous avez le droit à 2000 minutes de temps de pipeline par mois. Les runners publics de gitlab.com sont exécutés sur AWS.
 
 # Présentation de GitLab CI/CD
-Comme je vous l’ai dit je ne vais pas vous montrez comment mettre en place une CI/CD de A à Z dans cet article mais je vais vous présentez les possibilités de la solution de GitLab CI/CD.
+Comme je vous l’ai dit je ne vais pas vous montrer comment mettre en place une CI/CD de A à Z dans cet article mais je vais vous présenter les possibilités de la solution de GitLab CI/CD.
 
 ## Le manifeste
 Pour que la CI/CD sur GitLab fonctionne il vous faut un manifeste `.gitlab-ci.yml` à la racine de votre projet. Dans ce manifeste vous allez pouvoir définir des `stages`, des `jobs`, des `variables`, des `anchors`, etc.
 
-Vous pouvez lui donner un autre nom mais il faudra changer le nom du manifeste dans les les paramètres dans l’interface web :  `Settings > CI/CD > General pipelines > Custom CI config path`
+Vous pouvez lui donner un autre nom mais il faudra changer le nom du manifeste dans les paramètres de l’interface web :  `Settings > CI/CD > General pipelines > Custom CI config path`
 
 ## Les Jobs
-Dans le manifeste de GitLab CI/CD vous pouvez définir un nombre illimité de `jobs`, avec des contraintes indiquant quand ils doivent être exécuté ou non.
+Dans le manifeste de GitLab CI/CD vous pouvez définir un nombre illimité de `jobs`, avec des contraintes indiquant quand ils doivent être exécutés ou non.
 
 Voici comment déclarer un `job` le plus simplement possible :
 ```yaml
@@ -89,7 +89,7 @@ job:1:
 job:2:
   script: echo 'my second job'
 ```
-le nom des `jobs` doivent être unique est ne doivent pas faire parti des mots réservés :
+les noms des `jobs` doivent être uniques et ne doivent pas faire parti des mots réservés :
 - `image`
 - `services`
 - `stages`
@@ -99,12 +99,12 @@ le nom des `jobs` doivent être unique est ne doivent pas faire parti des mots r
 - `variables`
 - `cache`
 
-Dans la définition d'un `jobs` il n'a que la déclaration `script` qui est obligatoire.
+Dans la définition d'un `job` seule la déclaration `script` est obligatoire.
 
 ## Script
-La déclaration `script` est donc la seule obligatoire dans un `job`. Cette déclaration est le coeur du `job` car c'est ici où vous indiquerez les actions à effectuer.
+La déclaration `script` est donc la seule obligatoire dans un `job`. Cette déclaration est le coeur du `job` car c'est ici que vous indiquerez les actions à effectuer.
 
-Il peut appeler un ou plusieurs script(s) de votre projet mais encore, exécuter une ou plusieurs ligne(s) de commande.
+Il peut appeler un ou plusieurs script(s) de votre projet, voire exécuter une ou plusieurs ligne(s) de commande.
 
 ```yaml
 job:script:
@@ -125,22 +125,22 @@ job:commands:
 ```
 
 ## before_script et after_script
-Ces déclarations permettra d'exécuter des actions avant et après votre script principal. Ceci peut être intéressant pour bien diviser les actions à faire lors des `jobs`. Ou bien, appeler ou exécuter une action avant et après chaque `jobs`
+Ces déclarations permettront d'exécuter des actions avant et après votre script principal. Ceci peut être intéressant pour bien diviser les actions à faire lors des `jobs`, ou bien appeler ou exécuter une action avant et après chaque `job`
 
 ```yaml
-before_script: # Exécution d'une commande avant chaque `jobs`
+before_script: # Exécution d'une commande avant chaque `job`
   - echo 'start jobs'
 
-after_script: # Exécution d'une commande après chaque `jobs`
+after_script: # Exécution d'une commande après chaque `job`
   - echo 'end jobs'
 
-job:no_overwrite: # Ici le job éxécutera les action du `before_script` et `after_script` par défaut
+job:no_overwrite: # Ici le job exécutera les action du `before_script` et `after_script` par défaut
   script:
     - echo 'script'
 
 job:overwrite:before_script:
   before_script:
-    - echo 'overwrite' # N'éxécutera pas l’action définie dans le `before_script` par défaut
+    - echo 'overwrite' # N'exécutera pas l’action définie dans le `before_script` par défaut
   script:
     - echo 'script'
 
@@ -148,19 +148,19 @@ job:overwrite:after_script:
   script:
     - echo 'script'
   after_script:
-    - echo 'overwrite' # N'éxécutera pas l’action définie dans le `after_script` par défaut
+    - echo 'overwrite' # N'exécutera pas l’action définie dans le `after_script` par défaut
 
 job:overwrite:all:
   before_script:
-    - echo 'overwrite' # N'éxécutera pas l’action définie dans le`before_script` par défaut
+    - echo 'overwrite' # N'exécutera pas l’action définie dans le`before_script` par défaut
   script:
     - echo 'script'
   after_script:
-    - echo 'overwrite' # N'éxécutera pas l’action définie dans le `after_script` par défaut
+    - echo 'overwrite' # N'exécutera pas l’action définie dans le `after_script` par défaut
 ```
 
 ## Image
-Cette déclaration est simplement l'image docker qui sera utilisé lors d'un job ou lors de tous les jobs
+Cette déclaration est simplement l'image docker qui sera utilisée lors d'un job ou lors de tous les jobs
 
 ```yaml
 image: alpine # Image utilisée par tous les `jobs`, ce sera l'image par défaut
@@ -174,50 +174,50 @@ job:alpine: # Job utilisant l'image par défaut
 ```
 
 ## Stages
-Cette déclaration permet de grouper des `jobs` en étape. Par exemple on peut faire une étape de `build`, de `codestyling`, de `test`, de `code coverage`, de `deployment`, ….
+Cette déclaration permet de grouper des `jobs` en étapes. Par exemple on peut faire une étape de `build`, de `codestyling`, de `test`, de `code coverage`, de `deployment`, ….
 
 ```yaml
-stages: # Ici on déclare toutes nos étape
+stages: # Ici on déclare toutes nos étapes
   - build
   - test
   - deploy
 
 job:build:
-  stage: build # On déclare que ce `job` fait parti de la l'etape build
+  stage: build # On déclare que ce `job` fait partie de l'étape build
   script: make build
 
 job:test:unit:
-  stage: test # On déclare que ce `job` fait parti de la l'etape test
+  stage: test # On déclare que ce `job` fait partie de l'étape test
   script: make test-unit
 
 job:test:functional:
-  stage: test # On déclare que ce `job` fait parti de la l'etape test
+  stage: test # On déclare que ce `job` fait partie de l'étape test
   script: make test-functional
 
 job:deploy:
-  stage: deploy # On déclare que ce `job` fait parti de la l'etape deploy
+  stage: deploy # On déclare que ce `job` fait partie de l'étape deploy
   script: make deploy
 ```
 ![CI Stages](/assets/2018-09-19-introduction-gitlab-ci/ci-stages.png)
 
 ## Only et except
-Ces deux directives permettent de mettre en place des contraintes sur l'exécution d’une tâche. Vous pouvez dire qu’une tâche s'exécutera uniquement sur l’événement d’un push sur master ou s'exécutera sur chaque push d’un branch sauf master.
+Ces deux directives permettent de mettre en place des contraintes sur l'exécution d’une tâche. Vous pouvez dire qu’une tâche s'exécutera uniquement sur l’événement d’un push sur master ou s'exécutera sur chaque push d’une branche sauf master.
 
-Voici les possibilité :
- - **branches** déclenche le `job` quand un un push est effectué sur la branches spécifiées.
- - **tags** déclenche le `job` quand un tag est créer.
- - **api** déclenche le `job` quand une deuxième pipeline le demande grâce API pipeline.
- - **external** déclenche le `job` grâce à un autre service de CI/CD autre GitLab.
- - **pipelines** déclenche le `job` grâce à une autre pipeline, utile pour les multiprojet grâce à l’API et le token `CI_JOB_TOKEN`.
+Voici les possibilités :
+ - **branches** déclenche le `job` quand un un push est effectué sur la branche spécifiée.
+ - **tags** déclenche le `job` quand un tag est créé.
+ - **api** déclenche le `job` quand une deuxième pipeline le demande grâce à API pipeline.
+ - **external** déclenche le `job` grâce à un service de CI/CD autre que GitLab.
+ - **pipelines** déclenche le `job` grâce à une autre pipeline, utile pour les multiprojets grâce à l’API et le token `CI_JOB_TOKEN`.
  - **pushes** déclenche le `job`quand un utilisateur `push` par un utilisateur.
  - **schedules** déclenche le `job` par rapport à une planification à paramétrer dans l’interface web.
  - **triggers** déclenche le `job` par rapport à un jeton de déclenchement.
  - **web** déclenche le `job` par rapport au bouton `Run pipeline` dans l'interface utilisateur.
 
- Je vais vous montrez trois exemple d'utilisation :
+ Je vais vous montrer trois exemples d'utilisation :
 
 ### only et except simple
-Dans son utilisation la plus simple, le only et le except se déclare comme ceci :
+Dans son utilisation la plus simple, le only et le except se déclarent comme ceci :
 ```yaml
 job:only:master:
   script: make deploy
@@ -231,7 +231,7 @@ job:except:master:
 ```
 ### only et except complex
 
-Dans son utilisation la plus complex, le only et le except s'utilise comme ceci :
+Dans son utilisation la plus complexe, le only et le except s'utilisent comme ceci :
 ```yaml
 job:only:master:
   script: make deploy
@@ -240,8 +240,8 @@ job:only:master:
       - master # Ne se fera uniquement sur master
     kubernetes: active # Kubernetes sera disponible
     variables:
-      - $RELEASE == "staging" # On test si $RELEASE vaut "staging"
-      - $STAGING # On test si $STAGING est défini
+      - $RELEASE == "staging" # On teste si $RELEASE vaut "staging"
+      - $STAGING # On teste si $STAGING est défini
 ```
 ### only avec schedules
 Pour l'utilisation de `schedules` il faut dans un premier temps définir des règles dans l'interface web.
@@ -249,14 +249,14 @@ On peut les configurer dans l’interface web de Gitlab :  `CI/CD -> Schedules` 
 
 ![CI Schedules](/assets/2018-09-19-introduction-gitlab-ci/ci-schedules.png)
 
-Si vous souhaitez, vous pouvez définir un interval de temps personnalisé. C'est ce que j'ai fait dans mon exemple. La définition se fait comme un [cron](https://en.wikipedia.org/wiki/Cron)
+Si vous souhaitez, vous pouvez définir un intervalle de temps personnalisé. C'est ce que j'ai fait dans mon exemple. La définition se fait comme un [cron](https://en.wikipedia.org/wiki/Cron)
 
 ## when
-Comme pour les directives `only` et `except`, la directive `when` est une contrainte sur l'exécution de la tâche. Il y a quatre mode possible:
- - `on_success` : Le job sera exécuté uniquement si tous les `jobs` du stage précédent sont passés
- - `on_failure` : Le job sera exécuté uniquement si un job est en échec
- - `always` : Le job s'exécutera quoi qu'il se passe (même en cas d’échec)
- - `manual` : Le job s'exécutera uniquement par une action manuelle
+Comme pour les directives `only` et `except`, la directive `when` est une contrainte sur l'exécution de la tâche. Il y a quatre modes possibles :
+ - `on_success` : le job sera exécuté uniquement si tous les `jobs` du stage précédent sont passés
+ - `on_failure` : le job sera exécuté uniquement si un job est en échec
+ - `always` : le job s'exécutera quoi qu'il se passe (même en cas d’échec)
+ - `manual` : le job s'exécutera uniquement par une action manuelle
 
 ```yaml
 stages:
@@ -280,7 +280,7 @@ job:report:
   stage: report
   script:
     - make report
-  when: on_failure # s'exécutera si le job `job:build` ou `job:test` ne passe pas pas
+  when: on_failure # s'exécutera si le job `job:build` ou `job:test` ne passe pas
 
 job:clean:
   stage: clean
@@ -290,7 +290,7 @@ job:clean:
 ```
 
 ## allow_failure
-Cette directive permet d'accepter qu'un job échoué sans faire échouer la pipeline.
+Cette directive permet d'accepter qu'un job échoue sans faire échouer la pipeline.
 
 ```yaml
 stages:
@@ -310,9 +310,9 @@ stage: clean
 ```
 
 ## tags
-Comme je vous l'ai dit en début d’article, avec GitLab Runner vous pouvez héberger vos propre runner sur un serveur ce qui peut être utile dans le cas de configuration spécifique.
+Comme je vous l'ai dit en début d’article, avec GitLab Runner vous pouvez héberger vos propres runners sur un serveur ce qui peut être utile dans le cas de configuration spécifique.
 
-Chaque runner que vous définissez sur votre serveur à un nom, si vous mettez le nom du runner en `tags` alors se runner sera exécuté.
+Chaque runner que vous définissez sur votre serveur à un nom, si vous mettez le nom du runner en `tags`, alors ce runner sera exécuté.
 
 ```yaml
 job:tag:
@@ -322,7 +322,7 @@ job:tag:
 ```
 
 ## services
-Cette déclaration permet d'ajouter des services (container docker) de base pour vous aidez dans vos `job`.
+Cette déclaration permet d'ajouter des services (container docker) de base pour vous aider dans vos `jobs`.
 Par exemple si vous voulez utiliser une base de données pour tester votre application c'est dans `services` que vous le demanderez.
 
 ```yaml
@@ -355,20 +355,20 @@ deploy:demo:
     - make deploy
 
 deploy:production:
-  environment: # Déclaration étendu de l'environnement
+  environment: # Déclaration étendue de l'environnement
     name: production
     url: 'https://blog.eleven-labs/fr/gitlab-ci/' # Url de l'application
   script:
     - make deploy
 ```
 
-En déclarant des `environment` vous pouvez depuis l'interface web de GitLab, déployer / redéployer votre application ou directement accéder à votre site si vous avez déclaré une `url`. Ceci se fait dans `Operations > Environment`.
+En déclarant des `environments` vous pouvez, depuis l'interface web de GitLab, déployer / redéployer votre application ou directement accéder à votre site si vous avez déclaré une `url`. Ceci se fait dans `Operations > Environment`.
 
 ![CI Environment](/assets/2018-09-19-introduction-gitlab-ci/ci-environment.png)
 
 Le bouton `undo` permet de redéployer, le bouton `external link` permet d'aller sur l'application et le bouton `remove` permet de supprimer l'environnement.
 
-`on_stop` et `action` seront utiliser pour ajouter une action à la fin du déploiement. Par si vous souhaitez arrêter votre application, utile pour les environnement de démonstration.
+`on_stop` et `action` seront utilisés pour ajouter une action à la fin du déploiement, si vous souhaitez arrêter votre application sur commande. Utile pour les environnements de démonstration.
 
 ```yaml
 ...
@@ -379,19 +379,19 @@ deploy:demo:
     name: demo
     on_stop: stop:demo
 
-stop:demo: # Ce job pourra être visible et exécutés uniquement après le job `deploy:demo`
+stop:demo: # Ce job pourra être visible et exécuté uniquement après le job `deploy:demo`
   script: make stop
   environment:
     name: demo
     action: stop
 ```
 
-Voici le lien officiel de la documentation sur les [environment](docs.gitlab.com/ee/ci/environments.html) si vous souhaitez aller plus loin.
+Voici le lien officiel de la documentation sur les [environments](docs.gitlab.com/ee/ci/environments.html) si vous souhaitez aller plus loin.
 
 
 ## variables
 Cette déclaration permet de définir des variables pour tous les `jobs` ou pour un `job` précis.
-Ceci revient à déclarer de variables d'environnement.
+Ceci revient à déclarer des variables d'environnement.
 
 ```yaml
 ...
@@ -402,25 +402,25 @@ build:
   script: echo ${SYMFONY_ENV} # Affichera "prod"
 
 test:
-  variables: # Déclaration et réécriture de variables globale pour ce `job`
+  variables: # Déclaration et réécriture de variables globales pour ce `job`
     SYMFONY_ENV: dev
     DB_URL: '127.0.0.1'
   script: echo ${SYMFONY_ENV} ${DB_URL} # Affichera "dev 127.0.0.1"
 ```
 
-Comme pour `environment` je vous laisse regarder la documentation officiel sur les [variables](https://docs.gitlab.com/ee/ci/yaml/#variables) si vous souhaitez aller plus loin.
+Comme pour `environment` je vous laisse regarder la documentation officielle sur les [variables](https://docs.gitlab.com/ee/ci/yaml/#variables) si vous souhaitez aller plus loin.
 
 Il est aussi possible de déclarer des variables depuis l'interface web de GitLab `Settings > CI/CD > Variables` et de leur spécifier un environnement.
 
 ![CI Variables](/assets/2018-09-19-introduction-gitlab-ci/ci-variables.png)
 
 ## cache
-Cette directive permet de jouer avec du cache. Le cache est intéressant pour spécifier une liste de fichier et de répertoire à mettre en cache tout le long de votre pipeline. Une fois la pipeline terminé le cache sera détruit.
+Cette directive permet de jouer avec du cache. Le cache est intéressant pour spécifier une liste de fichiers et de répertoires à mettre en cache tout le long de votre pipeline. Une fois la pipeline terminée le cache sera détruit.
 
-Plusieurs sous directives sont possibles:
- - paths : obligatoire, elle permet de spécifier la liste de fichier et/ou répertoire à mettre en cache
- - key : facultative, elle permet de définir une clé pour la liste de fichier et/ou de répertoire. Personnellement j’en ai toujours pas vu l’utilité.
- - untracked : facultative, elle permet de spécifier que les fichiers ne doit pas être suivie par votre dépôt git en cas d'un `push` lors de votre pipeline.
+Plusieurs sous-directives sont possibles :
+ - paths : obligatoire, elle permet de spécifier la liste de fichiers et/ou répertoires à mettre en cache
+ - key : facultative, elle permet de définir une clé pour la liste de fichiers et/ou de répertoires. Personnellement je n’en ai toujours pas vu l’utilité.
+ - untracked : facultative, elle permet de spécifier que les fichiers ne doivent pas être suivis par votre dépôt git en cas d'un `push` lors de votre pipeline.
  - policy : facultative, elle permet de dire que le cache doit être récupéré ou sauvegardé lors d’un job (`push` ou `pull`).
 
 ```yaml
@@ -447,15 +447,15 @@ job:deploy:
 ```
 
 ## artifacts
-Les artefacts sont un peu comme du cache mais ils peuvent être récupéré depuis une autre pipeline.
-Comme pour le cache il faut définir une liste de fichiers ou/et répertoire qui seront sauvegardé par GitLab.
-Les fichier sont sauvegardé uniquement si le `job` réussi.
+Les artefacts sont un peu comme du cache mais ils peuvent être récupérés depuis une autre pipeline.
+Comme pour le cache il faut définir une liste de fichiers ou/et répertoires qui seront sauvegardés par GitLab.
+Les fichiers sont sauvegardés uniquement si le `job` réussi.
 
-Nous y retrouvons cinq sous directives possible :
+Nous y retrouvons cinq sous-directives possibles :
  - paths : obligatoire, elle permet de spécifier la liste des fichiers et/ou dossiers à mettre en `artifact`
- - name: facultative, elle permet de donner un nom à l'`artifact` par défaut elle sera nommé `artifacts.zip`
- - untracked : facultative, elle permet d'ignorer les fichiers défini dans le fichier `.gitignore`  
- - when : facultative, elle permet de définir quand l'`artifact` doit être créer. Trois choix possible `on_success`, `on_failure`, `always`. La valeur `on_success` est la valeur par défaut.
+ - name: facultative, elle permet de donner un nom à l'`artifact`. Par défaut elle sera nommée `artifacts.zip`
+ - untracked : facultative, elle permet d'ignorer les fichiers définis dans le fichier `.gitignore`  
+ - when : facultative, elle permet de définir quand l'`artifact` doit être créé. Trois choix possibles `on_success`, `on_failure`, `always`. La valeur `on_success` est la valeur par défaut.
  - expire_in : facultative, elle permet de définir un temps d'expiration
 
 ```yaml
@@ -470,14 +470,14 @@ job:
 ```
 
 ## dependencies
-Cet déclaration fonctionne avec les `artifacts`, il rend un `job` dépendant d'un `artifact`. Si l'`artifact` a expiré ou a été supprimé / n'existe pas alors la pipeline échouera.
+Cette déclaration fonctionne avec les `artifacts`, il rend un `job` dépendant d'un `artifact`. Si l'`artifact` a expiré ou a été supprimé / n'existe pas, alors la pipeline échouera.
 
 ```yaml
 
 build:artifact:
   stage: build
   script: echo hello > artifact.txt
-  artifacts: # On ajout un `artifact`
+  artifacts: # On ajoute un `artifact`
     paths:
       - artifact.txt
 
@@ -495,7 +495,7 @@ deploy:ok:
 ```
 
 ## coverage
-Cette déclaration permet de de spécifier une expression régulière pour récupérer le code coverage pour un `job`.
+Cette déclaration permet de spécifier une expression régulière pour récupérer le code coverage pour un `job`.
 
 ```yaml
 ...
@@ -509,10 +509,10 @@ Le code coverage sera visible dans les informations du `job` dans l'interface we
 
 ![CI Coverage](/assets/2018-09-19-introduction-gitlab-ci/ci-coverage.png)
 
-> Si vous le souhaitez voici un autre article de notre blog écrit par l'astronaut [Pouzor](https://blog.eleven-labs.com/authors/pouzor/) sur le code coverage : [Ajouter le code coverage sur les MR avec avec GitLab-CI](https://blog.eleven-labs.com/fr/ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci/)
+> Si vous le souhaitez voici un autre article de notre blog écrit par l'astronaute [Pouzor](https://blog.eleven-labs.com/authors/pouzor/) sur le code coverage : [Ajouter le code coverage sur les MR avec avec GitLab-CI](https://blog.eleven-labs.com/fr/ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci/)
 
 ## retry
-Cette déclaration permet de ré-exécuter le `job` en cas d'échec. Il faut indiquer le nombre de fois que vous voulez ré-exécuter le `job`
+Cette déclaration permet de ré-exécuter le `job` en cas d'échec. Il faut indiquer le nombre de fois où vous voulez ré-exécuter le `job`
 
 ```yaml
 job:retry:
@@ -521,10 +521,10 @@ job:retry:
 ```
 
 ## include
-Pour cette fonctionnalitée il vous faudra un compte premium. Cette fonctionnalitée permet d'inclure des "template".
+Pour cette fonctionnalité il vous faudra un compte premium. Cette fonctionnalité permet d'inclure des "templates".
 les "templates" peuvent être en local dans votre projet ou à distance.
 
-les fichiers sont toujours évalués en premier et fusionnées récursivement. Vous pouvez surcharger ou remplacer des déclarations des "templates".
+les fichiers sont toujours évalués en premier et fusionnés récursivement. Vous pouvez surcharger ou remplacer des déclarations des "templates".
 
  - template en local
 
@@ -573,7 +573,7 @@ job:test:
     - yarn unit
 ```
 
-Voici ce que gitlab CI/CD vas interpréter :
+Voici ce que gitlab CI/CD va interpréter :
 
 ```yaml
 stages:
@@ -596,10 +596,10 @@ job:test:
     - yarn unit
 ```
 
-Ceci peut être intéressant dans le cas ou votre manifeste est gros donc plus difficile à maintenir.
+Ceci peut être intéressant dans le cas où votre manifeste est gros, et donc plus difficile à maintenir.
 
 ## Anchors
-Cette fonctionnalitée permet de faire des templates réutilisable plusieur fois.
+Cette fonctionnalité permet de faire des templates réutilisables plusieurs fois.
 
 ```yaml
 .test_template: &test_template
@@ -626,7 +626,7 @@ test:functional:
     - codecept run functional
 ```
 
-Voici ce que gitlab CI/CD vas interpréter :
+Voici ce que gitlab CI/CD va interpréter :
 
 ```yaml
 test:unit:
@@ -651,7 +651,7 @@ test:functional:
   when: on_success
 ```
 
-# Resources
+# Ressources
 
 - [GitLab Continuous Integration (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html)
 - [Getting started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/README.html)
