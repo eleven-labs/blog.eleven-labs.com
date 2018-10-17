@@ -4,6 +4,7 @@ title: Compte rendu Paris web
 excerpt: Compte Rendu Paris Web
 authors:
     - seinhorn
+    - martincadoux
 permalink: /fr/compte-rendu-paris-web/
 categories:
     - Conférence
