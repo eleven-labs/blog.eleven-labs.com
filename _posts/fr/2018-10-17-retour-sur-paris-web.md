@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Compte rendu Paris web
-excerpt: Compte Rendu Paris Web
+title: Mission Paris Web 2018 : compte-rendu de trois astronautes
+excerpt: Mission Paris Web 2018 : compte-rendu de trois astronautes
 authors:
     - seinhorn
     - martincadoux
