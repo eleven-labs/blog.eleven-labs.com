@@ -85,6 +85,11 @@ Le sujet était vraiment intéressant, surtout le petit cours d’histoire sur l
 
 ## L’IA et la fin du Silicium : introduction aux ordinateurs quantiques
 
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Les ordinateurs quantiques, tout un programme ! 🤓 <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <br>&quot;L’IA et la fin du Silicium : introduction aux ordinateurs quantiques&quot; par David Rousset |<a href="https://twitter.com/davrous?ref_src=twsrc%5Etfw">@davrous</a>| <a href="https://twitter.com/hashtag/IA?src=hash&amp;ref_src=twsrc%5Etfw">#IA</a> <a href="https://t.co/wW4yU4hg9t">pic.twitter.com/wW4yU4hg9t</a></p>&mdash; Agence LunaWeb (@agencelunaweb) <a href="https://twitter.com/agencelunaweb/status/1047838332498206721?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
 ### Avis de l'astronaute Martin
 
 **David Rousset** de Microsoft, que je connaissais jusque-là pour ses démos HTML5 et son framework BabylonJS, est venu nous parler d’intelligence artificielle et d’ordinateurs quantiques. Il nous explique que, si les algorithmes de machine learning et de deep learning ne sont pas nouveaux, l’explosion de la puissance de calcul des ordinateurs et l’avènement du Big Data leur a donné l’essor qu’ils ne pouvaient pas avoir à l’époque. Mais à l’heure où la finesse de gravure dépasse l’indécence, les techniques actuelles d’augmentation de la puissance de calcul s’approchent de leur limite. Et c’est là que les ordinateurs quantiques entrent en scène.
@@ -99,6 +104,11 @@ https://www.paris-web.fr/2018/conferences/lia-et-la-fin-du-silicium-introduction
 
 ## La donnée graphique avec HTML et CSS  
 
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Journée forte intéressante avec <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> ! On fait le plein de bonnes pratiques et d&#39;échanges 😀 <a href="https://twitter.com/hashtag/web?src=hash&amp;ref_src=twsrc%5Etfw">#web</a> <a href="https://twitter.com/hashtag/html?src=hash&amp;ref_src=twsrc%5Etfw">#html</a> <a href="https://twitter.com/hashtag/css?src=hash&amp;ref_src=twsrc%5Etfw">#css</a> <a href="https://t.co/zOdMkN29Xu">pic.twitter.com/zOdMkN29Xu</a></p>&mdash; Anaïs Andreosso (@AnaisAndreosso) <a href="https://twitter.com/AnaisAndreosso/status/1047842325710471169?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
 ### Avis de l'astronaute Martin
 
 **Gaël Poupard** revient à Paris Web pour nous démontrer qu’en appliquant le principe de moindre pouvoir, on peut dès aujourd’hui réaliser toutes sortes de diagrammes sémantiques et accessibles dans le DOM, avec beaucoup de CSS et un minimum de JS.  
@@ -109,6 +119,11 @@ https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.p
 
 
 ## Dear developer, the Web isn’t about you
+
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">Dear Developer, the Web Isn&#39;t About You <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <a href="https://t.co/TUDODnL36G">pic.twitter.com/TUDODnL36G</a></p>&mdash; Erwan Carriou (@ecarriou) <a href="https://twitter.com/ecarriou/status/1047858662922960896?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
 
 Développeur front-end senior chez Springer Nature à Berlin, **Charlie Owen** met les pieds dans le plat dès le titre de sa conférence, et nous rappelle quelque chose qu’on semble oublier trop souvent : nous ne faisons pas le Web pour nous, mais pour ses utilisateurs.  
 
@@ -175,6 +190,11 @@ https://www.paris-web.fr/2018/conferences/les-objets-connectes-lies-a-la-sante-p
 
 ## L’UX du X
 
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Il fait chaud à <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> 😅 la température montre d&#39;un cran avec la conférence de Quentin Bouissou |<a href="https://twitter.com/Vaucanson?ref_src=twsrc%5Etfw">@Vaucanson</a>| qui nous parle de &quot;LUX du X&quot; <a href="https://twitter.com/hashtag/UX?src=hash&amp;ref_src=twsrc%5Etfw">#UX</a> <a href="https://twitter.com/hashtag/VR?src=hash&amp;ref_src=twsrc%5Etfw">#VR</a> <a href="https://t.co/87Gh6cYi19">pic.twitter.com/87Gh6cYi19</a></p>&mdash; Agence LunaWeb (@agencelunaweb) <a href="https://twitter.com/agencelunaweb/status/1048219895413047296?ref_src=twsrc%5Etfw">5 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
 ### Avis de l'astronaute Martin
 
 Cette année à Paris Web, il y avait aussi un peu de sexe. **Quentin Bouissou**, UX designer senior chez UX Republic, aborde sans décontenance une industrie confrontée à des challenges intéressants en matière d’expérience utilisateur.  
@@ -203,17 +223,32 @@ Un [tweet de Marjorie Delrieu](https://twitter.com/MarjorieDelrieu/status/104780
 
 ## [La donnée graphique avec HTML et CSS](https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php){:rel="nofollow noreferrer"} par Gaël Poupard  
 
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Super conf de <a href="https://twitter.com/ffoodd_fr?ref_src=twsrc%5Etfw">@ffoodd_fr</a> sur comment faire des graphiques ultra stylés avec JUSTE du CSS !!!! <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <br><br>J&#39;ai pas eu le temps de noter l&#39;URL des slides par contre... <a href="https://t.co/S3c8PCCZun">pic.twitter.com/S3c8PCCZun</a></p>&mdash; Marjorie Delrieu (@MarjorieDelrieu) <a href="https://twitter.com/MarjorieDelrieu/status/1047856023011307521?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
 ### Avis de l'astronaute Stéphane
 
 Comment présenter des données sous forme de graphique uniquement avec HTML et CSS, sans utiliser de librairie JavaScript ? Le sujet et la démonstration étaient au niveau de mes attentes en tant qu’intégrateur. Mais j’étais un peu déçu sur la forme car cela ressemblait à une explication de code.  
 
 ## [Le W3C pour les développeurs Web](https://www.paris-web.fr/2018/conferences/le-w3c-pour-les-developeurs-web.php){:rel="nofollow noreferrer"} par Dominique Hazael-Massieux  
 
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Après une petite pause déjeuner entre collègues, sous le soleil de Paname ☀️ reprise des conférences à <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> ! Nous démarrons l&#39;après-midi avec Dominique Hazael-Massieux |<a href="https://twitter.com/dontcallmeDOM?ref_src=twsrc%5Etfw">@dontcallmeDOM</a>| qui nous parle des actions du <a href="https://twitter.com/w3c?ref_src=twsrc%5Etfw">@w3c</a> pour les développeurs et développeuses Web <a href="https://t.co/p2ahPY1qU8">pic.twitter.com/p2ahPY1qU8</a></p>&mdash; Agence LunaWeb (@agencelunaweb) <a href="https://twitter.com/agencelunaweb/status/1047826692000153600?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
 ### Avis de l'astronaute Stéphane
 
 Présentation sous forme de dialogue entre le W3C et Paris Web, pour exposer les différentes actions du W3C et des outils mis en place pour interagir avec la communauté des développeurs Web dans le processus de standardisation.
 
 ## [L’accessibilité au-delà des spécifications](https://www.paris-web.fr/2018/conferences/L-accessibilite-au-dela-des-specifications.php){:rel="nofollow noreferrer"} par Hugo Giraudel  
+
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Pour terminer la journée, on parle accessibilité au-delà des specs avec <a href="https://twitter.com/HugoGiraudel?ref_src=twsrc%5Etfw">@HugoGiraudel</a> <a href="https://twitter.com/hashtag/a11y?src=hash&amp;ref_src=twsrc%5Etfw">#a11y</a> <a href="https://twitter.com/hashtag/parisweb?src=hash&amp;ref_src=twsrc%5Etfw">#parisweb</a> <a href="https://t.co/DKVlammnNc">pic.twitter.com/DKVlammnNc</a></p>&mdash; Catherine Denos (@cath2nos) <a href="https://twitter.com/cath2nos/status/1047872673882284033?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
 
 ### Avis de l'astronaute Stéphane  
 
@@ -247,7 +282,7 @@ Il y a quelque chose de véritablement impressionnant dans le fait de faire face
 
 Un talk qui s’annonçait déjà plus léger me suis-je dit. Et je n’ai pas été déçu en matière de légèreté... Près de 40 minutes ont été consacrées par **Amélie Boucher** aux « dangers » des interfaces vocales. L’assistance a ainsi été sensibilisée aux risques pour la santé de remplacer le classique interrupteur par une commande vocale pour allumer la lumière chez soi. « Parce qu’après, on ne se déplace plus, on devient gros, et on doit faire du cross-fit. » J’exagère à peine les propos. Et si le second degré ne m’échappe pas, une heure à écouter des réflexions ne volant pas particulièrement plus haut m’a fait me questionner sur la pertinence de ce talk.
 
-##[Se construire en construisant l'open source](https://www.paris-web.fr/2018/conferences/se-construire-en-construisant-lopen-source.php) par JB Audras
+## [Se construire en construisant l'open source](https://www.paris-web.fr/2018/conferences/se-construire-en-construisant-lopen-source.php) par JB Audras
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Nouvelle conf pour apporter sa pierre à l’édifice <a href="https://twitter.com/hashtag/opensource?src=hash&amp;ref_src=twsrc%5Etfw">#opensource</a>, @jb_audras partage son expérience de collaboration sur WordPress ou comment étendre le champ des possibles avec la contribution de tous <a href="https://twitter.com/hashtag/parisweb?src=hash&amp;ref_src=twsrc%5Etfw">#parisweb</a> <a href="https://twitter.com/hashtag/wordpress?src=hash&amp;ref_src=twsrc%5Etfw">#wordpress</a> <a href="https://twitter.com/hashtag/benevolat?src=hash&amp;ref_src=twsrc%5Etfw">#benevolat</a> <a href="https://twitter.com/hashtag/inclusion?src=hash&amp;ref_src=twsrc%5Etfw">#inclusion</a> <a href="https://twitter.com/hashtag/evolution?src=hash&amp;ref_src=twsrc%5Etfw">#evolution</a> <a href="https://twitter.com/hashtag/girlzinweb?src=hash&amp;ref_src=twsrc%5Etfw">#girlzinweb</a> <a href="https://twitter.com/hashtag/worldwide?src=hash&amp;ref_src=twsrc%5Etfw">#worldwide</a> <a href="https://t.co/EmaYfQiZWD">pic.twitter.com/EmaYfQiZWD</a></p>&mdash; Girlz in Web (@GirlzInWeb) <a href="https://twitter.com/GirlzInWeb/status/1047823942533222400?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -259,6 +294,11 @@ Un talk qui s’annonçait déjà plus léger me suis-je dit. Et je n’ai pas �
 **JB Audras**, contributeur prolifique de la communauté WordPress, m’a donné l’envie de contribuer. À quoi ? Où ? Sous quelle forme ? *No lo sé* (ça veut dire « aucune idée » pour les moins hispanophones d’entre vous). Mais son retour d’expérience sur son parcours depuis sa première contribution à sa position de co-lead sur la sortie d’une version mineure de WordPress était inspirante. En très peu de temps il a réussi à démontrer que participer à l’effort de l’open source est à la portée de tous et que c’est une expérience potentiellement très gratifiante.
 
 ## [The past, present, and future of resource loading](https://www.paris-web.fr/2018/conferences/the-past-present-and-future-of-resource-loading.php) par Yoav Weiss
+
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Première conférence du jour : on parle performance avec Yoav Weiss <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <a href="https://t.co/fsWQE49o8b">pic.twitter.com/fsWQE49o8b</a></p>&mdash; Catherine Denos (@cath2nos) <a href="https://twitter.com/cath2nos/status/1048120183926267904?ref_src=twsrc%5Etfw">5 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
 
 ### Avis de l'astronaute Steeve
 
