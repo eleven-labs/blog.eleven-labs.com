@@ -3,7 +3,7 @@ layout: post
 title: Compte rendu Paris web
 excerpt: Compte Rendu Paris Web
 authors:
-    - nicolas
+    - seinhorn
 permalink: /fr/compte-rendu-paris-web/
 categories:
     - Conférence
