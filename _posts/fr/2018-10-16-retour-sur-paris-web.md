@@ -33,6 +33,11 @@ Au menu de cette année, on comptait pas moins d’une trentaine de sujets diff�
 
 ## Tempêtes de boulettes géantes
 
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">On démarre <a href="https://twitter.com/hashtag/parisweb?src=hash&amp;ref_src=twsrc%5Etfw">#parisweb</a> avec <a href="https://twitter.com/tut_tuuut?ref_src=twsrc%5Etfw">@tut_tuuut</a> qui nous fait un retour sur nos boulettes de dev en prod avec de l&#39;humour de haut de vol. :) <a href="https://t.co/uaHLONCC3E">pic.twitter.com/uaHLONCC3E</a></p>&mdash; David Rousset (@davrous) <a href="https://twitter.com/davrous/status/1047755108073783296?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
 ### Avis de l'astronaute Martin
 
 Le bal des conférences s’est ouvert sur les boulettes. Pas les délicieuses boulettes de viande ou de soja qu’on met dans sa bolognaise, mais celles qui nous font transpirer de stress lorsque, après une commande tapée un peu trop vite en production ou le déploiement d’un bout de code non testé, on commet la faute qui fait basculer sa journée dans l’horreur.  
@@ -54,6 +59,11 @@ https://www.paris-web.fr/2018/conferences/tempete-de-boulettes-geantes.php
 Dès le commencement, le ton est donné. En effet, qui n’a jamais fait une grosse erreur en production ? Présentation d’un palmarès des plus belles boulettes 2018, et conseils pratiques pour se sortir au mieux de cette situation de crise et éviter de la reproduire, articulèrent la démonstration.
 
 ## Les WebExtensions, du rêve et du cauchemar
+
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">En direct de <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> : conférence de Daniel Glazman |<a href="https://twitter.com/glazou?ref_src=twsrc%5Etfw">@glazou</a>| qui nous présente son retour d&#39;expérience sur les <a href="https://twitter.com/hashtag/WebExtensions?src=hash&amp;ref_src=twsrc%5Etfw">#WebExtensions</a> et le développement d&#39;une extension Chrome/Firefox/Edge/Safari <a href="https://twitter.com/hashtag/UX?src=hash&amp;ref_src=twsrc%5Etfw">#UX</a> <a href="https://t.co/cDGoWGoXaL">pic.twitter.com/cDGoWGoXaL</a></p>&mdash; Agence LunaWeb (@agencelunaweb) <a href="https://twitter.com/agencelunaweb/status/1047792528991313920?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
 
 ### Avis de l'astronaute Martin 
 
@@ -129,7 +139,12 @@ Cette présentation m’a réellement conforté dans ma vision de mon métier.
 https://www.paris-web.fr/2018/conferences/dear-developer-the-web-isnt-about-you.php
 
 
-## Les jeux vidéos sont-ils des logiciels comme les autres ?
+## Les jeux vidéos sont-ils des logiciels comme les autres ?  
+
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Et c&#39;est parti pour J2 de <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> : Les jeux vidéos sont-ils des logiciels comme les autres ? <a href="https://t.co/0987Dh2uw8">pic.twitter.com/0987Dh2uw8</a></p>&mdash; Emmanuelle (@eaboaf_) <a href="https://twitter.com/eaboaf_/status/1048107104605822976?ref_src=twsrc%5Etfw">5 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
 
 ### Avis de l'astronaute Martin
 
@@ -158,7 +173,6 @@ L’exemple d’Emmanuelle n’en est qu’un parmi d’autres. Elle nous expliq
 
 https://www.paris-web.fr/2018/conferences/les-objets-connectes-lies-a-la-sante-portent-ils-atteinte-a-la-vie-privee.php
 
-
 ## L’UX du X
 
 ### Avis de l'astronaute Martin
@@ -174,15 +188,12 @@ En prenant pour exemple une industrie tabou, Quentin nous explique que faire de 
 
 https://www.paris-web.fr/2018/conferences/lux-du-x.php
 
-
-## [Le W3C pour les développeurs Web](https://www.paris-web.fr/2018/conferences/le-w3c-pour-les-developeurs-web.php){:rel="nofollow noreferrer"} par Dominique Hazael-Massieux  
-
-### Avis de l'astronaute Stéphane
-
-Présentation sous forme de dialogue entre le W3C et Paris Web, pour exposer les différentes actions du W3C et des outils mis en place pour interagir avec la communauté des développeurs Web dans le processus de standardisation.
-
-
 ## [UX en Terre Inconnue](https://www.paris-web.fr/2018/conferences/ux-en-terre-inconnue.php){:rel="nofollow noreferrer"} par Sébastien Desbenoit  
+
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Conf suivante, l&#39;UX en Terra Incognita par Sébastien Desbenoit <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <a href="https://t.co/tovhn8P2hs">pic.twitter.com/tovhn8P2hs</a></p>&mdash; Catherine Denos (@cath2nos) <a href="https://twitter.com/cath2nos/status/1047763114161328128?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
 
 ### Avis de l'astronaute Stéphane
 
@@ -210,6 +221,11 @@ Comment prendre en compte l’accessibilité dès le démarrage d’un projet et
 
 ## [History of Web Security](https://www.paris-web.fr/2018/conferences/mozilla-observatory-a-history-of-web-security-standards.php)  
 
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">On est à <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> et ça parle histoire de la sécurité des navigateurs web. Merci <a href="https://twitter.com/hashtag/AprilKing?src=hash&amp;ref_src=twsrc%5Etfw">#AprilKing</a> pour cet envers du décor de la politique de sécurité des sites... et ses solutions. <a href="https://twitter.com/mozilla?ref_src=twsrc%5Etfw">@mozilla</a> advisory en fait partie <a href="https://twitter.com/hashtag/girlzinweb?src=hash&amp;ref_src=twsrc%5Etfw">#girlzinweb</a> <a href="https://twitter.com/hashtag/letstalkinenglish?src=hash&amp;ref_src=twsrc%5Etfw">#letstalkinenglish</a> <a href="https://twitter.com/hashtag/websafety?src=hash&amp;ref_src=twsrc%5Etfw">#websafety</a> <a href="https://t.co/LeDtkvhUZU">pic.twitter.com/LeDtkvhUZU</a></p>&mdash; Girlz in Web (@GirlzInWeb) <a href="https://twitter.com/GirlzInWeb/status/1047776189191016448?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
 ### Avis de l'astronaute Steeve
 
 En bref ? Une bonne grosse claque.  
@@ -222,11 +238,21 @@ Il y a quelque chose de véritablement impressionnant dans le fait de faire face
 
 ## [UX du futur : au-delà des buzzwords](https://www.paris-web.fr/2018/conferences/ux-du-futur-au-dela-des-buzzwords.php)  
 
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">L&#39;enfer des enceintes connectées. <a href="https://twitter.com/hashtag/cacophonie?src=hash&amp;ref_src=twsrc%5Etfw">#cacophonie</a>  <a href="https://twitter.com/amelieboucher?ref_src=twsrc%5Etfw">@amelieboucher</a> nous parle des enjeux et des frictions de technologies du futur  <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <a href="https://t.co/0qhdQ07PZ0">pic.twitter.com/0qhdQ07PZ0</a></p>&mdash; benoit poulain (@bpoulain) <a href="https://twitter.com/bpoulain/status/1047785225038835712?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
 ### Avis de l'astronaute Steeve
 
 Un talk qui s’annonçait déjà plus léger me suis-je dit. Et je n’ai pas été déçu en matière de légèreté... Près de 40 minutes ont été consacrées par **Amélie Boucher** aux « dangers » des interfaces vocales. L’assistance a ainsi été sensibilisée aux risques pour la santé de remplacer le classique interrupteur par une commande vocale pour allumer la lumière chez soi. « Parce qu’après, on ne se déplace plus, on devient gros, et on doit faire du cross-fit. » J’exagère à peine les propos. Et si le second degré ne m’échappe pas, une heure à écouter des réflexions ne volant pas particulièrement plus haut m’a fait me questionner sur la pertinence de ce talk.
 
 ##[Se construire en construisant l'open source](https://www.paris-web.fr/2018/conferences/se-construire-en-construisant-lopen-source.php) par JB Audras
+
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Nouvelle conf pour apporter sa pierre à l’édifice <a href="https://twitter.com/hashtag/opensource?src=hash&amp;ref_src=twsrc%5Etfw">#opensource</a>, @jb_audras partage son expérience de collaboration sur WordPress ou comment étendre le champ des possibles avec la contribution de tous <a href="https://twitter.com/hashtag/parisweb?src=hash&amp;ref_src=twsrc%5Etfw">#parisweb</a> <a href="https://twitter.com/hashtag/wordpress?src=hash&amp;ref_src=twsrc%5Etfw">#wordpress</a> <a href="https://twitter.com/hashtag/benevolat?src=hash&amp;ref_src=twsrc%5Etfw">#benevolat</a> <a href="https://twitter.com/hashtag/inclusion?src=hash&amp;ref_src=twsrc%5Etfw">#inclusion</a> <a href="https://twitter.com/hashtag/evolution?src=hash&amp;ref_src=twsrc%5Etfw">#evolution</a> <a href="https://twitter.com/hashtag/girlzinweb?src=hash&amp;ref_src=twsrc%5Etfw">#girlzinweb</a> <a href="https://twitter.com/hashtag/worldwide?src=hash&amp;ref_src=twsrc%5Etfw">#worldwide</a> <a href="https://t.co/EmaYfQiZWD">pic.twitter.com/EmaYfQiZWD</a></p>&mdash; Girlz in Web (@GirlzInWeb) <a href="https://twitter.com/GirlzInWeb/status/1047823942533222400?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
 
 ### Avis de l'astronaute Steeve
 
