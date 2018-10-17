@@ -297,6 +297,8 @@ Quentin aborde aussi les objets physiques, qui se présentent sous de multiples 
 En prenant pour exemple une industrie tabou, Quentin nous explique que faire de l’UX, c’est faire face à des a priori qu’on ne peut briser qu’en allant au contact des gens. C’est aussi penser à la problématique avant la solution, sortir des idées reçues, rester curieux, et tester, tester, tester.
 
 
-## Conclusion
+## Conclusion  
 
-Toutes les conférences sont visibles sur cette page : https://www.paris-web.fr/2018/
+Comme à chaque édition, Paris Web nous a réjoui par la variété des sujets abordés, la qualité de ses orateurs, et le bon état d'esprit général de l'événement. Pour certains d'entre nous, c'était aussi l'occasion de revivre notre parcours en retrouvant des personnes qui ont jalonné notre vie professionnelle. Par le dialogue et le partage d'expérience, Paris Web nous réunit autour d'une cause commune, et nous galvanise dans notre quête d'un Web plus ouvert, plus rapide, plus accessible.  
+
+Ce que vous venez de lire ne représente qu'une petite moitié des conférences présentées cette année, et c'est sans compter les ateliers pratiques auxquels nous n'avons pas participé. Si vous en voulez encore plus, on vous recommande donc vivement d'aller jeter un oeil sur le site de l'événement, où l'intégralité des présentations est disponible en vidéo : https://www.paris-web.fr/2018/
