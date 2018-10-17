@@ -12,11 +12,17 @@ tags:
 cover: /assets/2018-10-16-retour-sur-paris-web/cover.jpg
 ---
 
+##Introduction
+
+###Contexte
+
 Née en 2006, Paris Web se qualifie comme la conférence « des gens qui font un web accessible et de qualité ». En marge des manifestations orientées principalement vers un public de développeurs, cet événement se distingue par des sujets souvent plus intimement liés à l’UX et l’intégration.   
 
 On y parle ainsi W3C, prototypage, tests utilisateurs et performance, mais le spectre des thématiques proposées s’élargit bien au-delà de ce qui touche à la conception d’un site pour atteindre le Web dans son ensemble : sécurité, vie privée, gestion de projet, intelligence artificielle… La proposition est suffisamment diversifiée pour permettre même aux vétérans de découvrir quelque chose de nouveau chaque année.  
 
 Paris Web est également indissociable de son engagement à promouvoir et mettre en oeuvre l’accessibilité, droit fondamental pourtant trop peu ou trop mal pris en compte sur les projets Web en France. En plus de proposer chaque année plusieurs conférences sur ce thème, chaque intervention est traduite en langue des signes, retranscrite par vélotypie et retransmise en direct sur le site de l’événement. À l’image du Web qu’elle défend, Paris Web se plie chaque année en douze pour rester ouvert à tous.  
+
+###Programme
 
 L’événement se déroule habituellement sur trois jours. Les deux premiers, consacrés aux conférences, se tenaient cette année dans les locaux d’IBM à Bois-Colombes, au nord-ouest de Paris.   
 
@@ -25,9 +31,9 @@ Le troisième jour est quant à lui dédié à des ateliers, qui se sont déroul
 Au menu de cette année, on comptait pas moins d’une trentaine de sujets différents. Pour faire tenir ce programme sur deux jours, les conférences étaient réparties dans deux auditoriums. On ne pouvait donc pas assister à toutes les présentations en un seul coup, et comme chaque année il a fallu faire des choix difficiles, mais il est heureusement toujours possible de se rattraper avec les vidéos en ligne. Ci-dessous un petit échantillon des conférences que nous avons retenues.
 
 
-##Tempêtes de boulettes géantes##
+##Tempêtes de boulettes géantes
 
-**Avis de l'astronaute Martin**
+###Avis de l'astronaute Martin
 
 Le bal des conférences s’est ouvert sur les boulettes. Pas les délicieuses boulettes de viande ou de soja qu’on met dans sa bolognaise, mais celles qui nous font transpirer de stress lorsque, après une commande tapée un peu trop vite en production ou le déploiement d’un bout de code non testé, on commet la faute qui fait basculer sa journée dans l’horreur.  
 
@@ -43,13 +49,13 @@ L’erreur fait partie de l’apprentissage et doit permettre d’améliorer son
 
 https://www.paris-web.fr/2018/conferences/tempete-de-boulettes-geantes.php
 
-**Avis de l'astronaute Stéphane**
+###Avis de l'astronaute Stéphane
 
 Dès le commencement, le ton est donné. En effet, qui n’a jamais fait une grosse erreur en production ? Présentation d’un palmarès des plus belles boulettes 2018, et conseils pratiques pour se sortir au mieux de cette situation de crise et éviter de la reproduire, articulèrent la démonstration.
 
-##Les WebExtensions, du rêve et du cauchemar##
+##Les WebExtensions, du rêve et du cauchemar
 
-**Avis de l'astronaute Martin** 
+###Avis de l'astronaute Martin 
 
 J’avais déjà vu Daniel Glazman à dotCSS en 2015, où il était venu dénoncer le potentiel inexploité du CSS au-delà de sa fonction de mise en forme. Visiblement passé maître dans l’art d’exprimer ses frustrations, il est cette fois venu nous parler du beau bordel que sont les WebExtensions.  
 
@@ -63,27 +69,27 @@ Aujourd’hui, la spécification semble être tombée dans le coma. Sa dernière
 
 https://www.paris-web.fr/2018/conferences/les-webextensions-du-reve-et-du-cauchemar.php
 
-**Avis de l'astronaute Stéphane**
+###Avis de l'astronaute Stéphane
 
 Le sujet était vraiment intéressant, surtout le petit cours d’histoire sur les add-ons qui ont longtemps fait le succès de Firefox (Mozilla). Mais difficile d’en ressortir du positif tant la présentation était orientée principalement sur les problèmes rencontrés, et non sur les perspectives d’avenir et les évolutions possibles.
 
-##L’IA et la fin du Silicium : introduction aux ordinateurs quantiques##
+##L’IA et la fin du Silicium : introduction aux ordinateurs quantiques
 
-**Avis de l'astronaute Martin**
+###Avis de l'astronaute Martin
 
 David Rousset de Microsoft, que je connaissais jusque-là pour ses démos HTML5 et son framework BabylonJS, est venu nous parler d’intelligence artificielle et d’ordinateurs quantiques. Il nous explique que, si les algorithmes de machine learning et de deep learning ne sont pas nouveaux, l’explosion de la puissance de calcul des ordinateurs et l’avènement du Big Data leur a donné l’essor qu’ils ne pouvaient pas avoir à l’époque. Mais à l’heure où la finesse de gravure dépasse l’indécence, les techniques actuelles d’augmentation de la puissance de calcul s’approchent de leur limite. Et c’est là que les ordinateurs quantiques entrent en scène.
 Et non, je ne résumerai pas les bases de la physique quantique dans ce paragraphe, mais jetez un oeil à la conférence si le sujet vous intéresse.
 
-**Avis de l'astronaute Stéphane**  
+###Avis de l'astronaute Stéphane  
 
 À la lecture du titre de cette conférence, je me demandais réellement si j’avais fait le bon choix en y assistant. Le sujet m’était complètement inconnu. Mais l’orateur m’a rapidement mis à l’aise puisqu’il a avoué lui-même ne pas en être un spécialiste. Bravo à lui car sa présentation fut passionnante, avec des passages historiques, ludiques, et drôles.
 
 https://www.paris-web.fr/2018/conferences/lia-et-la-fin-du-silicium-introduction-aux-ordinateurs-quantiques.php
 
 
-##La donnée graphique avec HTML et CSS##  
+##La donnée graphique avec HTML et CSS  
 
-**Avis de l'astronaute Martin**
+###Avis de l'astronaute Martin
 
 Gaël Poupard revient à Paris Web pour nous démontrer qu’en appliquant le principe de moindre pouvoir, on peut dès aujourd’hui réaliser toutes sortes de diagrammes sémantiques et accessibles dans le DOM, avec beaucoup de CSS et un minimum de JS.  
 
@@ -92,7 +98,7 @@ La conférence est ponctuée de bouts de codes et d’exemples visuels qui guide
 https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php
 
 
-##Dear developer, the Web isn’t about you##
+##Dear developer, the Web isn’t about you
 
 Développeur front-end senior chez Springer Nature à Berlin, Charlie Owen met les pieds dans le plat dès le titre de sa conférence, et nous rappelle quelque chose qu’on semble oublier trop souvent : nous ne faisons pas le Web pour nous, mais pour ses utilisateurs.  
 
@@ -106,7 +112,7 @@ Notre façon de concevoir les sites, ainsi que la multiplication des librairies 
 
 Dans un timing presque parfait, cette conférence se pose comme un complément admirable à cet article récent sur le « désenchantement logiciel » http://tonsky.me/blog/disenchantment/. Les solutions existent, mais il faut revoir notre philosophie de travail. Comme Gaël Poupard l’expliquait plus tôt, il faut appliquer le principe de moindre puissance, concevoir progressivement, et surtout arrêter de supposer que nos utilisateurs ont majoritairement des téléphones de dernière génération et sont parfaitement desservis par leurs opérateurs. Pensons un peu moins aux gens qui font le Web, et un peu plus à ceux qui l’utilisent.
 
-**Avis de l'astronaute Stéphane**
+###Avis de l'astronaute Stéphane
 
 Ou comment apprendre à développer pour les autres, qui ne nous ressemblent pas.
 
@@ -123,7 +129,9 @@ Cette présentation m’a réellement conforté dans ma vision de mon métier.
 https://www.paris-web.fr/2018/conferences/dear-developer-the-web-isnt-about-you.php
 
 
-##Les jeux vidéos sont-ils des logiciels comme les autres ?##
+##Les jeux vidéos sont-ils des logiciels comme les autres ?
+
+###Avis de l'astronaute Martin
 
 Enseignant-chercheur au Conservatoire National des Arts et Métiers, Jérôme Dupire nous décrit les challenges auxquels font face les concepteurs de jeux vidéo dans leur quête d’accessibilité, et établit un parallèle avec les contraintes familières du Web.  
 
@@ -140,9 +148,9 @@ Et d’un point de vue matériel, des appareils existent pour répondre aux beso
 https://www.paris-web.fr/2018/conferences/les-jeux-video-sont-ils-des-logiciels-comme-les-autres.php
 
 
-##Les objets connectés liés à la santé portent-ils atteinte à la vie privée ?##
+##Les objets connectés liés à la santé portent-ils atteinte à la vie privée ?
 
-**Avis de l'astronaute Martin**  
+###Avis de l'astronaute Martin  
 
 L’année dernière, Emmanuelle Aboaf a reçu la greffe de son deuxième implant cochléaire. Elle nous raconte sa surprise quand, lors d’une visite chez son practicien, elle découvre que son appareil transmet à distance une foule de données sur son usage : durée d’utilisation, environnement sonore, heures du port de l’implant… Des informations collectées sans demande de consentement de sa part.  
 
@@ -151,9 +159,9 @@ L’exemple d’Emmanuelle n’en est qu’un parmi d’autres. Elle nous expliq
 https://www.paris-web.fr/2018/conferences/les-objets-connectes-lies-a-la-sante-portent-ils-atteinte-a-la-vie-privee.php
 
 
-##L’UX du X##
+##L’UX du X
 
-**Avis de l'astronaute Martin**
+###Avis de l'astronaute Martin
 
 Cette année à Paris Web, il y avait aussi un peu de sexe. **Quentin Bouissou**, UX designer senior chez UX Republic, aborde sans décontenance une industrie confrontée à des challenges intéressants en matière d’expérience utilisateur.  
 
@@ -169,14 +177,14 @@ https://www.paris-web.fr/2018/conferences/lux-du-x.php
 
 ###[Le W3C pour les développeurs Web](https://www.paris-web.fr/2018/conferences/le-w3c-pour-les-developeurs-web.php){:rel="nofollow noreferrer"} par Dominique Hazael-Massieux
 
-**Avis de l'astronaute Stéphane**
+###Avis de l'astronaute Stéphane
 
 Présentation sous forme de dialogue entre le W3C et Paris Web, pour exposer les différentes actions du W3C et des outils mis en place pour interagir avec la communauté des développeurs Web dans le processus de standardisation.
 
 
 ###[UX en Terre Inconnue](https://www.paris-web.fr/2018/conferences/ux-en-terre-inconnue.php){:rel="nofollow noreferrer"} par Sébastien Desbenoit
 
-**Avis de l'astronaute Stéphane**
+###Avis de l'astronaute Stéphane
 
 La présentation était axée sur les méthodologies utilisées au quotidien en expérience utilisateur qui permettent également de débloquer des situations, et de faire avancer des projets dans un contexte que l’on ne connaît pas et un périmètre inhabituel. L’orateur a évoqué les actions à mener en cas de difficultés, voire de conflits entre différents intervenants d’un projet. En résumé, un sujet ancré dans la réalité, et une ode à l’adaptabilité.
 
@@ -184,25 +192,25 @@ Un [tweet de Marjorie Delrieu](https://twitter.com/MarjorieDelrieu/status/104780
 
 ##[La donnée graphique avec HTML et CSS](https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php){:rel="nofollow noreferrer"} par Gaël Poupard
 
-**Avis de l'astronaute Stéphane**
+###Avis de l'astronaute Stéphane
 
 Comment présenter des données sous forme de graphique uniquement avec HTML et CSS, sans utiliser de librairie JavaScript ? Le sujet et la démonstration étaient au niveau de mes attentes en tant qu’intégrateur. Mais j’étais un peu déçu sur la forme car cela ressemblait à une explication de code.  
 
 ##[Le W3C pour les développeurs Web](https://www.paris-web.fr/2018/conferences/le-w3c-pour-les-developeurs-web.php){:rel="nofollow noreferrer"} par Dominique Hazael-Massieux
 
-**Avis de l'astronaute Stéphane**
+###Avis de l'astronaute Stéphane
 
 Présentation sous forme de dialogue entre le W3C et Paris Web, pour exposer les différentes actions du W3C et des outils mis en place pour interagir avec la communauté des développeurs Web dans le processus de standardisation.
 
 ##[L’accessibilité au-delà des spécifications](https://www.paris-web.fr/2018/conferences/L-accessibilite-au-dela-des-specifications.php){:rel="nofollow noreferrer"} par Hugo Giraudel
 
-**Avis de l'astronaute Stéphane**  
+###Avis de l'astronaute Stéphane  
 
 Comment prendre en compte l’accessibilité dès le démarrage d’un projet et son rapport au design inclusif ? Sujet intéressant mais trop vaste pour une présentation de courte durée.
 
 ##[History of Web Security](https://www.paris-web.fr/2018/conferences/mozilla-observatory-a-history-of-web-security-standards.php)
 
-**Avis de l'astronaute Steeve**
+###Avis de l'astronaute Steeve
 
 En bref ? Une bonne grosse claque.  
 
@@ -214,20 +222,20 @@ Il y a quelque chose de véritablement impressionnant dans le fait de faire face
 
 ##[UX du futur : au-delà des buzzwords](https://www.paris-web.fr/2018/conferences/ux-du-futur-au-dela-des-buzzwords.php) 
 
-**Avis de l'astronaute Steeve**
+###Avis de l'astronaute Steeve
 
 Un talk qui s’annonçait déjà plus léger me suis-je dit. Et je n’ai pas été déçu en matière de légèreté... Près de 40 minutes ont été consacrées par Amélie Boucher aux « dangers » des interfaces vocales. L’assistance a ainsi été sensibilisée aux risques pour la santé de remplacer le classique interrupteur par une commande vocale pour allumer la lumière chez soi. « Parce qu’après, on ne se déplace plus, on devient gros, et on doit faire du cross-fit. » J’exagère à peine les propos. Et si le second degré ne m’échappe pas, une heure à écouter des réflexions ne volant pas particulièrement plus haut m’a fait me questionner sur la pertinence de ce talk.
 
 ##[Se construire en construisant l'open source](https://www.paris-web.fr/2018/conferences/se-construire-en-construisant-lopen-source.php) par JB Audras
 
-**Avis de l'astronaute Steeve**
+###Avis de l'astronaute Steeve
 
 JB Audras, contributeur prolifique de la communauté WordPress, m’a donné l’envie de contribuer. À quoi ? Où ? Sous quelle forme ? *No lo
 sé* (ça veut dire « aucune idée » pour les moins hispanophones d’entre vous). Mais son retour d’expérience sur son parcours depuis sa première contribution à sa position de co-lead sur la sortie d’une version mineure de WordPress était inspirante. En très peu de temps il a réussi à démontrer que participer à l’effort de l’open source est à la portée de tous et que c’est une expérience potentiellement très gratifiante.
 
 ##[The past, present, and future of resource loading](https://www.paris-web.fr/2018/conferences/the-past-present-and-future-of-resource-loading.php) par Yoav Weiss
 
-**Avis de l'astronaute Steeve**
+###Avis de l'astronaute Steeve
 
 Cette conférence était aux performances web ce que le talk d’April King était à la sécurité. Juste impressionnante. Récemment
 embauché par Google, le bonhomme a inondé mon esprit et mon carnet de notes de concepts, pratiques, protocoles et autres outils sur lesquels tout bon développeur devrait avoir prise.  
