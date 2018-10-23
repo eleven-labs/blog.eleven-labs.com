@@ -17,7 +17,7 @@ tags:
 - choo
 ---
 
-Bonjour ! je vais vous parler d'un nouveau framework JavaScript qui s'appelle [Choo](https://github.com/yoshuawuyts/choo){:rel="nofollow noreferrer"} (ou ChooChoo pour les intimes).
+Bonjour ! je vais vous parler d'un nouveau framework JavaScript qui s'appelle [Choo](https://github.com/yoshuawuyts/choo) (ou ChooChoo pour les intimes).
 
 Encore un nouveau framework JS?!!?! Ça commence à bien faire!
 
