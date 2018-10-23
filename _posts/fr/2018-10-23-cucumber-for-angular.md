@@ -22,14 +22,14 @@ cover: /assets/2018-10-23-cucumber-for-angular/cover.png
 
 ## Introduction
 
-__AngularCLI__ est une interface en ligne de commande pour __Angular__ (trouvé sur https://cli.angular.io/).
+__AngularCLI__ est une interface en ligne de commandes pour __Angular__ (trouvé sur https://cli.angular.io/).
 
 Cet outil comporte plusieurs fonctionalités utiles qui nous font gagner beaucoup de temps.
-Il nous permet, par exemple, de générer un nouveau projet (Angular biensûr) en une seule ligne de commande.
+Il nous permet, par exemple, de générer un nouveau projet (Angular bien sûr) en une seule ligne de commande.
 
 Dans cet article, nous n'allons pas aborder toutes les fonctionalités de __AngularCLI__, nous allons plutôt nous concentrer sur la partie _test_, plus précisément les tests `e2e`.
 
-En effet, __AngularCLI__ possède une commande `ng e2e`, qui nous permet de lancer les tests `e2e`. Celà est possible car au moment de la génération d'un nouveau projet __Angular__, __AngularCLI__ va installer des paquets tiers qui nous permettent d'implémenter et exécuter les tests `e2e`. Il va installer (et configurer) pour nous __Protractor__ (qui à son tour va installer _webdriver_ et _selenium_) et __Jasmine__ (utilisé aussi pour les tests unitaires). Ce n'est peut-être pas la bonne sélection d'outils si nous voullons faire du __BDD__ ou si nous avons juste besoin d'exécuter nos tests sur _Chrome Headless_ et que les autres navigateurs ne nous intéressent pas.
+En effet, __AngularCLI__ possède une commande `ng e2e`, qui nous permet de lancer les tests `e2e`. Cela est possible car au moment de la génération d'un nouveau projet __Angular__, __AngularCLI__ va installer des paquets tiers qui nous permettent d'implémenter et exécuter les tests `e2e`. Il va installer (et configurer) pour nous __Protractor__ (qui à son tour va installer _webdriver_ et _selenium_) et __Jasmine__ (utilisé aussi pour les tests unitaires). Ce n'est peut-être pas la bonne sélection d'outils si nous voulons faire du __BDD__ ou si nous avons juste besoin d'exécuter nos tests sur _Chrome Headless_ et que les autres navigateurs ne nous intéressent pas.
 
 À travers cet article, nous allons voir comment supprimer __Protractor__ et le remplacer par __Cucumber__ (pour le __BDD__) et __Puppeteer__ (pour communiquer avec _Chrome Headless_).
 
@@ -70,7 +70,7 @@ Vu que nous ne passons plus par AngularCLI pour nos tests `e2e`, nous allons sup
  }
 ```
 
-Le dernier fichier de configuration à modifier est `src/tsconfig.e2e.json`. Nous allons retirer `jasmine` et `jasminewd2` de la propriété `types` des options du compilateur TypeScript. (nous verrons un peu plus bas par quoi nous allons le remplacer) :
+Le dernier fichier de configuration à modifier est `src/tsconfig.e2e.json`. Nous allons retirer `jasmine` et `jasminewd2` de la propriété `types` des options du compilateur TypeScript (nous verrons un peu plus bas par quoi nous allons le remplacer) :
 
 ```json
  {
@@ -104,15 +104,15 @@ Maintenant que nous avons désinstallé __Protractor__ et supprimé les fichiers
 
 Nous allons installer les paquets suivants :
 
-* __Cucumber__ : C'est l'outil qui va nous permettre d'exécuter nos tests.
-* __Puppeteer__ : Pour communiquer avec l'API de Chrome/Chromium
-* __Chai__ : Une librairie d'assertion.
+* __Cucumber__ : c'est l'outil qui va nous permettre d'exécuter nos tests.
+* __Puppeteer__ : pour communiquer avec l'API de Chrome/Chromium
+* __Chai__ : une librairie d'assertion.
 
 ```bash
 $ npm install cucumber puppeteer chai --save-dev
 ```
 
-Afin que __TypeScript__ puissen reconnaître les paquets que nous venons d'installer, nous allons aussi installer les __Type Definition__ de ces derniers :
+Afin que __TypeScript__ puisse reconnaître les paquets que nous venons d'installer, nous allons aussi installer les __Type Definition__ de ces derniers :
 
 ```bash
 $ npm install @types/{cucumber,puppeteer,chai}
@@ -120,7 +120,7 @@ $ npm install @types/{cucumber,puppeteer,chai}
 
 ### Structure des fichiers
 
-La structure par défaut proporsée par __Cucumber__ est la suivante :
+La structure par défaut proposée par __Cucumber__ est la suivante :
 
 ```
 features/
@@ -133,7 +133,7 @@ features/
   ...
 ```
 
-Personnellement je préfère séparer les _steps_ des _features_, nous allons donc les mettre au même niveau (libre à vous si vous voulez opter pour la structure proposée par __Cucumber__, il faudra dans ce cas adapter les chemins dans les étapes qui viennent). Nous allons aussi utiliser le modèle __Page Object Pattern__ afin de séparer l'appel à l'API de _Chrome/Chromium_ de nos tests :
+Personnellement je préfère séparer les _steps_ des _features_, nous allons donc les mettre au même niveau (si vous voulez opter pour la structure proposée par __Cucumber__, il faudra dans ce cas adapter les chemins dans les étapes qui viennent). Nous allons aussi utiliser le modèle __Page Object Pattern__ afin de séparer l'appel à l'API de _Chrome/Chromium_ de nos tests :
 
 ```
 e2e/
@@ -152,15 +152,15 @@ e2e/
   tsconfig.e2e.json
 ```
 
-* _features_ : Contient nos _user stories_ rédigées en _Gherkin_.
-* _steps_ : Contient l'implémentation des tests.
-* _po_ : Contient nos _class_ __PageObject__
+* _features_ : contient nos _user stories_ rédigées en _Gherkin_.
+* _steps_ : contient l'implémentation des tests.
+* _po_ : contient nos _class_ __PageObject__
 
 ### Configuration
 
-Nous allons maintent configurer notre application pour qu'elle puisse lancer les tests.
+Nous allons maintenant configurer notre application pour qu'elle puisse lancer les tests.
 
-Commençons par le fichier `src/tsconfig.e2e.json` en ajoutant `cucumber` au tableau `types` que nous avons éditez un peu plus haut :
+Commençons par le fichier `src/tsconfig.e2e.json` en ajoutant `cucumber` au tableau `types` que nous avons édité un peu plus haut :
 
 ```json
  {
@@ -177,7 +177,7 @@ Commençons par le fichier `src/tsconfig.e2e.json` en ajoutant `cucumber` au tab
  }
 ```
 
-La dernière configuration qui nous reste à faire est le _script npm_ `e2e`. C'est à cet endroit où nous ferons appel à __Cucumber__ pour exécuter nos tests.
+La dernière configuration à faire, est le _script npm_ `e2e`. C'est à cet endroit que nous ferons appel à __Cucumber__ pour exécuter nos tests.
 
 La commande `cucumber-js` permet d'écrire les _steps_ en _TypeScript_ grâce à `ts-node` (d'autres transpilateurs sont supportés aussi, comme _CoffeeScript_), nous allons donc utiliser l'option `--require-module` afin d'utiliser `ts-node`.
 
