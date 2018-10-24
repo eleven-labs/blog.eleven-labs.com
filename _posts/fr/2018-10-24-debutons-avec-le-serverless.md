@@ -11,7 +11,7 @@ categories:
 tags:
     - devops
     - serverless
-cover: /assets/2018-10-25-debutons-avec-le-serverless/cover.jpg
+cover: /assets/2018-10-24-debutons-avec-le-serverless/cover.jpg
 ---
 
 Vous avez un nouveau projet personnel ou professionnel, vous ne voulez pas vous prendre la tête avec l’infrastructure, et vous souhaitez payer seulement pour les ressources utilisées ? Serverless est fait pour vous !
