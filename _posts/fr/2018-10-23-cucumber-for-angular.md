@@ -208,7 +208,6 @@ Feature: Say hello to visitor
 
 Passons maintenent au fichier `e2e/src/steps/welcome.steps.ts` :
 ```typescript
-
 import { AfterAll, BeforeAll, Given, Then, When }  from 'cucumber';
 import { expect } from 'chai';
 
@@ -230,7 +229,7 @@ When('the home page is loaded', async () => {
 });
 
 Then('he should see a message saying {string}', async message => {
-  expect(appPage.getContent('h1')).to.be(message);
+  expect(await appPage.getContent('h1')).to.equal(message);
 });
 
 AfterAll(() => {
@@ -259,7 +258,12 @@ export class AppPage {
   }
 
   async getContent(selector) {
-    return this.page.evaluate(() => document.querySelector(selector).textContent);
+    return await this.page
+      .evaluate(select => document.querySelector(select).textContent, selector);
+  }
+
+  async waitFor(selector) {
+    return this.page.waitFor(selector);
   }
 
   close() {
@@ -268,4 +272,22 @@ export class AppPage {
 }
 ```
 
-> PS: Je vous avoue que je n'ai pas testé cette partie, mais ça devrait marcher ^^.
+## Exécution des tests
+
+Avant de lancer __Cucumber__, nous devons exécuter `npm start` pour que __Puppeteer__ puisse naviguer vers `http://localhost:4200`.
+
+Une fois que notre serveur _http_ en local est en marche, nous pouvons exécuter nos tests via la commande :
+
+```bash
+$ npm run e2e
+```
+
+> Pour rappel, lors de la configuration de __Cucumber__ nous avons remplacé le script _npm_ `e2e` par la commande qui permet de lancer __Cucumber__.
+
+## Conclusion
+
+__AngularCLI__ nous fournit pleins d'outils par défaut accélerer et faciliter le développement de nos application. Mais celà ne veut pas dire que nous ne pouvons pas remplacer ces outils par d'autres.
+
+Dans notre cas, nous avons décidé de ne pas utiliser __Protractor__ et d'utiliser à la place __Cucumber/Puppeteer__.
+
+Nous avons donc commencé par voir comment supprimer __Cucumber__. Ensuite, nous avons vu comment mettre en place __Cucumber__. Une fois tout en place, nous avons rédigé un exemple de scénario et implémenté les _steps definitions_ de ce scénario. En dernier, nous avons vu comment exécuter nos tests.
