@@ -79,7 +79,7 @@ plugins:
 ```
 Nous pouvons ajouter des plugins pour améliorer et / ou changer le comportement de serverless :
 - serverless-offline : nous permet d’avoir en local un environnement simulant le fonctionnement de Lambda et API Gateway
-serverless-webpack : nous permet de compiler le code NodeJS
+- serverless-webpack : nous permet de compiler le code NodeJS
 serverless-domain-manager : nous permet de gérer nos domaines et certificats pour les rattacher directement à notre API Gateway
 serverless-dynamodb-local : nous permet d’avoir une base de donnée DynamoDB en local pour nos développements, cela nous permet aussi de faire des développements en offline
 serverless-prune-plugin : nous permet de nettoyer au fur et à mesure les ressources non utilisées, ainsi nous ne gardons pas tout notre historique sur les lambdas, mais seulement les 3 dernières.
