@@ -286,8 +286,8 @@ $ npm run e2e
 
 ## Conclusion
 
-__AngularCLI__ nous fournit pleins d'outils par défaut accélerer et faciliter le développement de nos application. Mais celà ne veut pas dire que nous ne pouvons pas remplacer ces outils par d'autres.
+__AngularCLI__ nous fournit plein d'outils par défaut, afin d'accélerer et faciliter le développement de nos applications. Mais cela ne veut pas dire que nous ne pouvons pas remplacer ces outils par d'autres.
 
 Dans notre cas, nous avons décidé de ne pas utiliser __Protractor__ et d'utiliser à la place __Cucumber/Puppeteer__.
 
-Nous avons donc commencé par voir comment supprimer __Cucumber__. Ensuite, nous avons vu comment mettre en place __Cucumber__. Une fois tout en place, nous avons rédigé un exemple de scénario et implémenté les _steps definitions_ de ce scénario. En dernier, nous avons vu comment exécuter nos tests.
+Nous avons donc commencé par voir comment supprimer __Protractor__. Ensuite, nous avons vu comment mettre en place __Cucumber__. Une fois tout en place, nous avons rédigé un exemple de scénario et implémenté les _steps definitions_ de ce scénario. En dernier, nous avons vu comment exécuter nos tests.
