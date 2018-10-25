@@ -28,7 +28,7 @@ Cependant, nous allons souvent plus loin dans la définition du serverless. Il y
 
 # Le framework serverless, il sert à quoi ?
 
-[serverless](https://serverless.com/) est un des outils les plus connus à ce jour, il est compatible avec les solutions Cloud suivantes : AWS, IBM OpenWhisk, Microsoft Azure, GCP, Kubeless, Spotinst, Webtask. Serverless et est agnostique du langage dans lequel vous souhaitez développer. Cependant, si votre provider ne supporte pas votre langage, cela pourrait ne pas fonctionner. L’ensemble des providers supporte deux langages : NodeJS et Python.
+[serverless](https://serverless.com/) est un des outils les plus connus à ce jour, il est compatible avec les solutions Cloud suivantes : AWS, IBM OpenWhisk, Microsoft Azure, GCP, Kubeless, Spotinst, Webtask. Serverless est agnostique du langage dans lequel vous souhaitez développer. Cependant, si votre provider ne supporte pas votre langage, cela pourrait ne pas fonctionner. L’ensemble des providers supporte deux langages : NodeJS et Python.
 Mais il est aussi capable d’aller beaucoup plus loin grâce à un système de plugins. Ainsi, vous pouvez démarrer vos fonctions en local sur votre machine en simulant le fonctionnement d’API Gateway et Lambda, ou encore avoir une base DynamoDB locale pour vos développements.
 
 # Prenons un cas concret
