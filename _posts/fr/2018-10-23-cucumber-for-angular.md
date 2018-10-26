@@ -33,7 +33,7 @@ En effet, __AngularCLI__ possède une commande `ng e2e`, qui nous permet de lanc
 
 À travers cet article, nous allons voir comment supprimer __Protractor__ et le remplacer par __Cucumber__ (pour le __BDD__) et __Puppeteer__ (pour communiquer avec _Chrome Headless_).
 
-## Supprimer Protractor
+## Supprimer Protractor
 
 Avant de mettre en place __Cucumber/Puppeteer__, nous allons d'abord supprimer __Protractor__ et les répertoires/fichiers associés qui ont été générés par AngularCLI.
 
