@@ -24,7 +24,7 @@ cover: /assets/2018-10-23-cucumber-for-angular/cover.png
 
 __AngularCLI__ est une interface en ligne de commandes pour __Angular__ (trouvé sur https://cli.angular.io/).
 
-Cet outil comporte plusieurs fonctionalités utiles qui nous font gagner beaucoup de temps.
+Cet outil comporte plusieurs fonctionnalités utiles qui nous font gagner beaucoup de temps.
 Il nous permet, par exemple, de générer un nouveau projet (Angular bien sûr) en une seule ligne de commande.
 
 Dans cet article, nous n'allons pas aborder toutes les fonctionalités de __AngularCLI__, nous allons plutôt nous concentrer sur la partie _test_, plus précisément les tests `e2e`.
