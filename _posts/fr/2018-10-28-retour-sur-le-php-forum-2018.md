@@ -35,14 +35,17 @@ POMM se décompose en trois briques Foundation, ModelManager et Cli. Foundation 
 Vous pouvez utiliser POMM dans vos projets Symfony pour ça voici le lien du dépots GitHub: [POMM project - bundle](https://github.com/pomm-project/pomm-bundle). Et si vous voulez en savoir plus voici le lien de site du projet (POMM project)[http://www.pomm-project.org]
 
 ## MySQL 8.0 : quoi de neuf ? - Olivier Dasini - Oracle
-Olivier Dasini est venu nous parler de MySQL 8.0 est ses nouveautés. ALors il y a eu beaucoup de nouvelle fonctionnalité sur MySQL 8.8 mais celles que j’ai retenu c’est l'apparition de NoSQL documentaire, l’API développeur et les window functions. Et oui maintenant de MySQL vous pouvez faire du NoSQL orienté document, ici je ne vais pas revenir sur le NoSQL donc je vais directement vous parler de l’API. 
+Olivier Dasini est venu nous parler de MySQL 8.0 est ses nouveautés. ALors il y a eu beaucoup de nouvelle fonctionnalité sur MySQL 8.8 mais celles que j’ai retenu c’est l'apparition de NoSQL documentaire, l’API développeur et les window functions. Et oui maintenant de MySQL vous pouvez faire du NoSQL orienté document, ici je ne vais pas revenir sur le NoSQL donc je vais directement vous parler de l’API.
 
-Avec l'apparition du NoSQL l’API développeur à évoluer, avec MySQL 5.x on utilise le plus souvent PDO pour PHP
-
--- compatible NoSQL
--- Lien SQL - NoSQL
-
+-- NoSQl + SQL
+-- API dev
 -- Window Functions
 
 ## Cessons les estimations ! - Frédéric Leguédois - Cloud Temple
-Frédéric Leguédois est venu nous parler des estimations dans la gestion de projet
+Frédéric Leguédois est venu nous parler des estimations dans la gestion de projet. En plus d’avoir fait un one man show surprenant, Frédéric Leguédois nous a démontré rapidement que les estimations été une fausse bonne pratique dans la gestion de projet. Avec un argumentaire plus que préparé et une conviction aveugle à son idée Frédéric Leguédois à du faire changer d’avis la quasi totalité de son auditoire du PHP Forum.
+
+Je ne vais pas reprendre tous ces arguments car je vous conseille d’aller voir mais le premier qui m’a marqué est celui-ci : “Un chef de projet reçoit un cahier des charge, il va le lire une fois, deux fois et à la troisième fois comme par magie il donne une estimation : 3 mois avec 8 personnes. Mais comment a-t-il fait ?”. Je pense que vous pouvez trouver plein de réponse à son premier argument mais les suivants sont identiques et vous prouve que c’est impossible. Par exemple sur un projet de deux avec la meilleur estimation si vous faite un bilan un an après le démarrage du projet vous allez voir que les estimations de l’année dernière n’ont plus rien à voir et que le premier planning prévisionnel à eu x version pour pouvoir avoir une pseudo corrélation avec la réalité
+
+De plus les estimations ne sont pas une bonne pratique Agile. Si on regarde Framework “Agile” le plus utilisé et populaire, Scrum, on peut voir qu’il n’a pas la philosophie Agile. Une des valeur de l’Agile est `La collaboration avec les clients plus que la négociation contractuelle` et faire des estimation vas simplement permettre d’entrer dans une phase de `négociation` entre Dev Team et client, Agilité est rompu.
+
+De mémoire cela fait neuf an que Frédéric Leguédois travail sans estimation et ces clients sont contents car il n’y a tout simplement pas de retard et devenir vraiment Agile.
