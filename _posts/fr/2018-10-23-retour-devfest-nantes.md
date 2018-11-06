@@ -77,3 +77,5 @@ La fusée Eleven-Labs a également posé son camp de base à cet évènement.
 {% endraw %}
 
 ## Conclusion  
+
+Vous pouvez retrouver les conférences en vidéo sur [Playlist Youtube DevFest Nantes](https://www.youtube.com/playlist?list=PLuZ_sYdawLiXyaSnyRinPKvPXQIsNaJFz).
