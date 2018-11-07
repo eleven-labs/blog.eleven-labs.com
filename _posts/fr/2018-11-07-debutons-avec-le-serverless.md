@@ -35,7 +35,7 @@ Mais il est aussi capable d’aller beaucoup plus loin grâce à un système de 
 
 Quand on cherche à déployer avec serverless, celui-ci va lire notre fichier serverless.yml et le convertir en [CloudFormation](https://aws.amazon.com/fr/cloudformation/). Le code vas être zippé puis uploade sur S3. CloudFormation lors de son lancement va récupérer les fichiers sur S3 pour alimenter les fonctions Lambda, et créer / modifier / supprimer les resources nécessaires (rôles, lambda, dynamodb...).
 
-## Prenons un cas concret
+### Prenons un cas concret
 
 Nous allons déployer sur AWS une API GraphQL qui utilise une base de donnée DynamoDB. Nous allons découper le fichier serverless.yml et comprendre le fonctionnement de chacun des blocks.
 ```yaml
