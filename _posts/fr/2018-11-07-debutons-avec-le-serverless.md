@@ -18,7 +18,7 @@ Vous avez un nouveau projet personnel ou professionnel, vous ne voulez pas vous 
 
 Avant de vous lancer directement dans un cas concret sur l’utilisation du framework serverless, nous allons commencer par revenir sur les notions et la définition de serverless.
 
-# Que veut réellement dire serverless ?
+## Que veut réellement dire serverless ?
 
 Dans le monde du cloud et du devops, il n’y a pas une seule et unique définition. Je vais donc vous donner la mienne.
 
@@ -26,16 +26,16 @@ Nous pouvons considérer que si nous n’avons pas de gestion de serveur, alors 
 
 Cependant, nous allons souvent plus loin dans la définition du serverless. Il y a bien le côté de non-gestion des serveurs, mais aussi de pay-as-you-go. Il n’y a plus de frais fixes pour maintenir votre infrastructure disponible, mais seulement des coûts liés à l’utilisation de celle-ci. Des services comme AWS Lambda ou Google Cloud Functions rentrent parfaitement dans cette catégorie.
 
-# Le framework serverless, il sert à quoi ?
+## Le framework serverless, il sert à quoi ?
 
-[serverless](https://serverless.com/) est un des outils les plus connus à ce jour, il est compatible avec les solutions Cloud suivantes : AWS, IBM OpenWhisk, Microsoft Azure, GCP, Kubeless, Spotinst, Webtask. Serverless est agnostique du langage dans lequel vous souhaitez développer. Cependant, si votre provider ne supporte pas votre langage, cela pourrait ne pas fonctionner. L’ensemble des providers supporte deux langages : NodeJS et Python.
+[Serverless](https://serverless.com/) est un des outils les plus connus à ce jour, il est compatible avec les solutions Cloud suivantes : AWS, IBM OpenWhisk, Microsoft Azure, GCP, Kubeless, Spotinst, Webtask. Serverless est agnostique du langage dans lequel vous souhaitez développer. Cependant, si votre provider ne supporte pas votre langage, cela pourrait ne pas fonctionner. L’ensemble des providers supporte deux langages : NodeJS et Python.
 Mais il est aussi capable d’aller beaucoup plus loin grâce à un système de plugins. Ainsi, vous pouvez démarrer vos fonctions en local sur votre machine en simulant le fonctionnement d’API Gateway et Lambda, ou encore avoir une base DynamoDB locale pour vos développements.
 
-# Comment fonctionne le framework serverless
+## Comment fonctionne le framework serverless
 
 Quand on cherche à déployer avec serverless, celui-ci va lire notre fichier serverless.yml et le convertir en [CloudFormation](https://aws.amazon.com/fr/cloudformation/). Le code vas être zippé puis uploade sur S3. CloudFormation lors de son lancement va récupérer les fichiers sur S3 pour alimenter les fonctions Lambda, et créer / modifier / supprimer les resources nécessaires (rôles, lambda, dynamodb...).
 
-# Prenons un cas concret
+## Prenons un cas concret
 
 Nous allons déployer sur AWS une API GraphQL qui utilise une base de donnée DynamoDB. Nous allons découper le fichier serverless.yml et comprendre le fonctionnement de chacun des blocks.
 ```yaml
