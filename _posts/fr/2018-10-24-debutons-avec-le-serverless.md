@@ -18,13 +18,13 @@ Vous avez un nouveau projet personnel ou professionnel, vous ne voulez pas vous 
 
 Avant de vous lancer directement dans un cas concret sur l’utilisation du framework serverless, nous allons commencer par revenir sur les notions et la définition de serverless.
 
-# Que veux dire réellement serverless ?
+# Que veut réellement dire serverless ?
 
 Dans le monde du cloud et du devops, il n’y a pas une seule et unique définition. Je vais donc vous donner la mienne.
 
 Nous pouvons considérer que si nous n’avons pas de gestion de serveur, alors nous sommes dans le monde du Serverless. Cela voudrait dire que des services comme AWS Elastic Beanstalk, Google App Engine, Heroku, Clever Cloud qui sont des services PaaS pourraient être compris dans cette définition.
 
-Cependant, nous allons souvent plus loin dans la définition du serverless. Il y a bien le côté de non-gestion des serveurs, mais aussi de pay-as-you-go. Il n’y a plus de frais fixes pour maintenir votre infrastructure disponible, mais seulement des coûts liés à l’utilisation de celle-ci. Des services comme AWS Lambda ou Google Cloud Functions rentrent parfaitement dans cette catégorie de service.
+Cependant, nous allons souvent plus loin dans la définition du serverless. Il y a bien le côté de non-gestion des serveurs, mais aussi de pay-as-you-go. Il n’y a plus de frais fixes pour maintenir votre infrastructure disponible, mais seulement des coûts liés à l’utilisation de celle-ci. Des services comme AWS Lambda ou Google Cloud Functions rentrent parfaitement dans cette catégorie.
 
 # Le framework serverless, il sert à quoi ?
 
@@ -33,7 +33,7 @@ Mais il est aussi capable d’aller beaucoup plus loin grâce à un système de 
 
 # Comment fonctionne le framework serverless
 
-Quand on cherche a déployer avec serverless, celui-ci vas lire notre fichier serverless.yml et le convertire en [CloudFormation](https://aws.amazon.com/fr/cloudformation/). Le code vas être zipper puis upload sur S3, CloudFormation lors de son lancement vas récupérer les fichiers sur S3 pour les alimenter les fonctions Lambda, et créer / modifier / supprimer les resources nécessaires (roles, lambda, dynamodb, ...).
+Quand on cherche à déployer avec serverless, celui-ci va lire notre fichier serverless.yml et le convertir en [CloudFormation](https://aws.amazon.com/fr/cloudformation/). Le code vas être zippé puis uploade sur S3. CloudFormation lors de son lancement va récupérer les fichiers sur S3 pour alimenter les fonctions Lambda, et créer / modifier / supprimer les resources nécessaires (rôles, lambda, dynamodb...).
 
 # Prenons un cas concret
 
@@ -132,7 +132,7 @@ functions:
          method: post
          cors: true
 ```
-Le block functions nous permet de définir les lambdas que nous souhaitons créer avec leur spécificité.
+Le block functions nous permet de définir les lambdas que nous souhaitons créer avec leurs spécificités.
 ```yaml
 resources:
  Resources:
@@ -154,8 +154,8 @@ resources:
        TableName: ${self:provider.environment.DYNAMODB_TABLE_TEMPLATE}
 
 ```
-Nous pouvons demander à Serverless de créer des ressources supplémentaire sur AWS, dans notre cas, nous allons créer une table DynamoDB.
+Nous pouvons demander à Serverless de créer des ressources supplémentaires sur AWS, dans notre cas, nous allons créer une table DynamoDB.
 
 Comme nous avons pu le voir, avec un seul fichier, nous sommes capable de déployer l’infrastructure nécessaire au fonctionnement de notre projet, mais aussi simplifier la vie de nos développeurs.
 
-Maintenant, vous êtes capable de déployer votre projet via le framework serverless, cependant, vous pourriez vouloir aller plus loin. Pourquoi pas ajouter une queue SQS. Voire même des lambdas qui se lancent automatiquement lors d’un nouveau message dans SQS ? (Je vous recommande de regarder du côté des triggers sur SQS et Lambda).
+Maintenant, vous êtes capables de déployer votre projet via le framework serverless, cependant, vous pourriez vouloir aller plus loin. Pourquoi ne pas ajouter une queue SQS ? Voire même des lambdas qui se lancent automatiquement lors d’un nouveau message dans SQS ? (Je vous recommande de regarder du côté des triggers sur SQS et Lambda).
