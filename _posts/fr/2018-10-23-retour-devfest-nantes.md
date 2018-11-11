@@ -3,7 +3,7 @@ layout: post
 title: "Retour sur la mission spatiale au devfest Nantes"
 excerpt: "Retour sur la mission spatiale au devfest Nantes"
 authors:
-    - mminassyan
+    - marishka
     - tthuon
     - cogren
 permalink: /fr/retour-devfest-nantes/
@@ -18,9 +18,9 @@ cover: /assets/2018-10-23-retour-devfest-nantes/cover.jpg
 
 ## Le devfest en quelques mots
 
-Le DevFest est un évènement sur deux jours qui réunit toute la communauté de développeur autout de conférence orienté sur le web et le cloud computing. Les sujets sont variés. Cela passe par du Web, Mobile et aussi par toutes les technologie back avec du Cloud, Big Data, Machine Learning, DevOps, et enfin des sujets plus ouvert à la découverte.
+Le DevFest est un évènement sur deux jours qui réunit toute la communauté de développeurs autour des conférences orientées sur le web et le cloud computing. Les sujets sont variés. Cela passe par du Web, Mobile et aussi par toutes les technologies back avec du Cloud, Big Data, Machine Learning, DevOps, et enfin des sujets plus ouverts à la découverte.
 
-Chaque année une nouvelle ville et un nouveau thème est choisi. Cette année c'est dans la ville de Nantes avec le thème de l'espace. C'était l'ocassion pour les quelques astronautes présents sur ces terres d'y assister.
+Chaque année un nouveau thème est choisi. Cette année c'était le thème de l'espace. C'est donc tout naturellement que la fusée Eleven Labs et les astronautes nantais ont assisté au DevFest.
 
 ## Ce que nous avons aimé
 
@@ -28,26 +28,26 @@ Nous avons eu trois astonautes présents : Marie, Thierry et Carl. Chacun a pu a
 
 ### Hacker les catastrophes naturelles
 
-La Cybersécurité est souvent associée aux failles, attaques, confidentialité, disponibilité des infrastructures. Trop souvent les catastrophes naturelles sont négligées comme risques majeurs dans nos métiers. Cette conférence qui est orienté sur la sécurité et l'alerte aux populations m'a beaucoup intéressé puisque qu'elle parle de scénario catastrophe qui pourrait arriver dès maintenant. Le problème est que nous ne sommes pas préparé, ni même informé. Cela m'a permit de découvrir le monde du radio amateur et des moyens possible simple pour commencer à expérimenter. Par exemple avec un récepteur TNT en USB il est possible d'écouter les avions, d'intercepter des messages en clair, etc.. C'est donc bien du hacking au sens premier et non celui qui médiatisé. Un autre exemple de hack, l'ajout d'un récepteur FM pour diffuser une alerte dans les détecteurs d'incendie. 
+La Cybersécurité est souvent associée aux failles, attaques, confidentialité, disponibilité des infrastructures. Trop souvent les catastrophes naturelles sont négligées comme risques majeurs dans nos métiers. Cette conférence qui est orientée sur la sécurité et l'alerte aux populations m'a beaucoup intéressé puisque qu'elle parle de scénarios catastrophe qui pourraient arriver dès maintenant. Le problème est que nous ne sommes pas préparés, ni même informés. Cela m'a permis de découvrir le monde du radio amateur et des moyens possibles simples pour commencer à expérimenter. Par exemple, avec un récepteur TNT en USB il est possible d'écouter les avions, d'intercepter des messages en clair, etc.. C'est donc bien du hacking au sens premier et non celui qui est médiatisé. Un autre exemple de hack, l'ajout d'un récepteur FM pour diffuser une alerte dans les détecteurs d'incendie.
 
-Cette conférence, bien qu'il ne soit pas axé sur du web, était intéressant et permet d'ouvrir ses connaissances sur d'autre domaine. Il faut donc prévoir un plan de secours et le communiquer à toutes les personnes impliqué.
+Cette conférence, bien qu'elle ne soit pas axée sur du web, était intéressante et permet d'ouvrir ses connaissances sur d'autres domaines. Il faut donc prévoir un plan de secours et le communiquer à toutes les personnes impliquées.
 
 
 ### Git Dammit
 
-Git est un outil de versionning le plus utilisé dans le monde. Mais bien souvent, il est utilisé de manière basique sans vraiment comprendre son fonctionnement interne. Très souvent, dès qu'une personne est "experte", elle est très souvent solicité sur des questions récurrentes. 
+Git est l'outil de versionning le plus utilisé dans le monde. Mais bien souvent, il est utilisé de manière basique sans vraiment comprendre son fonctionnement interne. Très souvent, dès qu'une personne est "experte", elle est très souvent solicitée sur des questions récurrentes.
 
-La conférence m'a beaucoup intéressé car elle n'a pas fait qu'une liste de commande git. Elle a fait la démonstration d'un projet fictif très proche du réel. Il y a eu des explications et des schémas simple et facile à comprendre.
+La conférence m'a beaucoup intéressé car elle n'a pas fait qu'une liste de commandes git. Elle a fait la démonstration d'un projet fictif très proche du réel. Il y a eu des explications et des schémas simples et faciles à comprendre.
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Excellent talk Git Dammit, quelques bonnes commandes pour un repo propre. <a href="https://twitter.com/hashtag/DevFestNantes?src=hash&amp;ref_src=twsrc%5Etfw">#DevFestNantes</a> <a href="https://t.co/Etsf7kTFFT">pic.twitter.com/Etsf7kTFFT</a></p>&mdash; Anthony Manach (@tonicfx) <a href="https://twitter.com/tonicfx/status/1053196563907010561?ref_src=twsrc%5Etfw">19 octobre 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endraw %}
 
-Voici quelques commandes et concept que j'ai appris:
+Voici quelques commandes et concepts que j'ai appris :
  
 Fix du commit A au milieu de la branche
-- `git commit --fixup A` créé un commit de fixup 
+- `git commit --fixup A` crée un commit de fixup
 - `git rebase -i A~ --autosquash` git rebase avec le commit de fixup
 
 Supprimer un commit
@@ -61,13 +61,39 @@ Faire un rebase à partir d'un commit sur la branche master
 - `git rebase ${SHA1}~ --onto master`
 
 Faire un cherry-pick sans commiter
-- `git cherry pick -n`
+- `git cherry-pick -n`
 
-Ajouter les modifications dans plusieurs commit
+Ajouter les modifications dans plusieurs commits
 - `git add -p`
 
 Les slides de la conférence sont sur [Github: Git dammit talk](https://mghignet.github.io/git-dammit-talk/)
 
+
+## Les nouveautés "serverless" de Google Cloud
+
+Guillaume Laforge, developer advocate chez Google, nous a parlé de Google Cloud et notamment de l'offre Serverless de Google.
+
+L'avantage du serverless c'est que l'on ne s'occupe pas des serveurs, notre provider Cloud s'en charge pour nous, et nous pouvons nous concentrer sur le développement de notre application en elle même. C'est aussi avantageux au niveau des coûts et de la scalabilité des serveurs. Google nous propose 2 options :
+- App Engine, destiné plutôt aux application backend, qui sont accessibles via un navigateur, depuis un téléphone portable ou via des APIs REST - tout ce qui répond à une requête
+- Cloud functions, plateforme qui sert à exécuter des "fonctions" lorsqu'un évènement se produit.
+
+La présentation est concentrée sur les nouveautés de ces 2 offres, avec une application que l'on a pu tester en live.
+
+Retrouvez la présentation [ici](https://www.youtube.com/watch?v=wk2uOJmzNVY) et les slides [ici](https://speakerdeck.com/glaforge/whats-new-in-serverless-on-google-cloud-platform).
+
+## Highway to Elm!
+
+Cette présentation par Jordane Grenat (https://twitter.com/JoGrenat) nous a donné envie de tester ELM. Vous imaginez ? Finies les exceptions runtime, les problèmes de compatibilité entre navigateurs, etc. !
+
+Le speaker commence par nous raconter son histoire sur le JavaScript, pour expliquer comment le language a évolué. Et il dit qu'ELM réunit tous les avantages de JS moderne. ELM est un language fonctionnel qui complile le code en JavaScript. Jordane fait ensuite une démo d'une application simple 'Pile ou Face', développée sous nous yeux. Et c'est très réussi.
+
+Nous vous invitons à regarder la vidéo de cette présentation : https://www.youtube.com/watch?v=pjeXbKXSiVs.
+
+## Conclusion
+
+C'est toujours un plaisir pour les astronautes d'aller à la rencontre de leurs collègues !
+Cela nous a permis d'apprendre de nouvelles choses et d'ouvrir d'autres horizons, et ce dans un cadre détendu et accueillant.
+La mission spaciale est accomplie !
 
 La fusée Eleven-Labs a également posé son camp de base à cet évènement.
 
@@ -76,6 +102,4 @@ La fusée Eleven-Labs a également posé son camp de base à cet évènement.
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endraw %}
 
-## Conclusion  
-
-Vous pouvez retrouver les conférences en vidéo sur [Playlist Youtube DevFest Nantes](https://www.youtube.com/playlist?list=PLuZ_sYdawLiXyaSnyRinPKvPXQIsNaJFz).
+Vous pouvez retrouver toutes les conférences en vidéo sur [Playlist Youtube DevFest Nantes](https://www.youtube.com/playlist?list=PLuZ_sYdawLiXyaSnyRinPKvPXQIsNaJFz).
