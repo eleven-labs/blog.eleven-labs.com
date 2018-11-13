@@ -86,11 +86,16 @@ Retrouvez la présentation [ici](https://www.youtube.com/watch?v=wk2uOJmzNVY) et
 
 ## Highway to Elm! par Jordane Grenat
 
-Cette présentation (https://twitter.com/JoGrenat) nous a donné envie de tester ELM. Vous imaginez ? Finies les exceptions runtime, les problèmes de compatibilité entre navigateurs, etc. !
+Cette présentation nous a donné envie de tester ELM. Vous imaginez ? Finies les exceptions runtime, les problèmes de compatibilité entre navigateurs, etc. !  
+
+{% raw %}
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">Say goodbye to runtime exceptions with ELM by <a href="https://twitter.com/JoGrenat?ref_src=twsrc%5Etfw">@JoGrenat</a> <a href="https://twitter.com/hashtag/DevFestNantes?src=hash&amp;ref_src=twsrc%5Etfw">#DevFestNantes</a> <a href="https://t.co/zFNUniPWfz">pic.twitter.com/zFNUniPWfz</a></p>&mdash; Marie Gautier (@marie_minasyan) <a href="https://twitter.com/marie_minasyan/status/1052913477017329664?ref_src=twsrc%5Etfw">18 octobre 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
 
 Le speaker commence par nous raconter son histoire sur le JavaScript, pour expliquer comment le language a évolué. Et il dit qu'ELM réunit tous les avantages du JS moderne. ELM est un language fonctionnel qui complile le code en JavaScript. Jordane fait ensuite une démo d'une application simple 'Pile ou Face', développée sous nous yeux. Et c'est très réussi.
 
-Nous vous invitons à regarder la vidéo de cette présentation : https://www.youtube.com/watch?v=pjeXbKXSiVs.
+Nous vous invitons à regarder la vidéo de [cette présentation](https://www.youtube.com/watch?v=pjeXbKXSiVs){:rel="nofollow noreferrer"} sur youtube.
 
 ## Conclusion
 
