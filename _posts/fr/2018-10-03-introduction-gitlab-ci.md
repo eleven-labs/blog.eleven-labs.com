@@ -209,7 +209,7 @@ Voici les possibilités :
  - **api** déclenche le `job` quand une deuxième pipeline le demande grâce à API pipeline.
  - **external** déclenche le `job` grâce à un service de CI/CD autre que GitLab.
  - **pipelines** déclenche le `job` grâce à une autre pipeline, utile pour les multiprojets grâce à l’API et le token `CI_JOB_TOKEN`.
- - **pushes** déclenche le `job`quand un utilisateur `push` par un utilisateur.
+ - **pushes** déclenche le `job`quand un `push` est effectué par un utilisateur.
  - **schedules** déclenche le `job` par rapport à une planification à paramétrer dans l’interface web.
  - **triggers** déclenche le `job` par rapport à un jeton de déclenchement.
  - **web** déclenche le `job` par rapport au bouton `Run pipeline` dans l'interface utilisateur.
@@ -449,7 +449,7 @@ job:deploy:
 ## artifacts
 Les artefacts sont un peu comme du cache mais ils peuvent être récupérés depuis une autre pipeline.
 Comme pour le cache il faut définir une liste de fichiers ou/et répertoires qui seront sauvegardés par GitLab.
-Les fichiers sont sauvegardés uniquement si le `job` réussi.
+Les fichiers sont sauvegardés uniquement si le `job` réussit.
 
 Nous y retrouvons cinq sous-directives possibles :
  - paths : obligatoire, elle permet de spécifier la liste des fichiers et/ou dossiers à mettre en `artifact`
@@ -484,7 +484,7 @@ build:artifact:
 deploy:ko:
   stage: deploy
   script: cat artifact.txt
-  dependencies: # On lie le job avec 'build:artifact:ko' qui n'existe pas donc la pipeline échouera
+  dependencies: # On lie le job avec 'build:artifact:fail' qui n'existe pas donc la pipeline échouera
     - build:artifact:fail
 
 deploy:ok:
@@ -501,7 +501,7 @@ Cette déclaration permet de spécifier une expression régulière pour récupé
 ...
 
 test:unit:
-  script: echo 'Code coverage 13.33'
+  script: echo 'Code coverage 13.13'
   coverage: '/Code coverage \d+\.\d+/'
 ```
 
@@ -524,7 +524,7 @@ job:retry:
 Pour cette fonctionnalité il vous faudra un compte premium. Cette fonctionnalité permet d'inclure des "templates".
 les "templates" peuvent être en local dans votre projet ou à distance.
 
-les fichiers sont toujours évalués en premier et fusionnés récursivement. Vous pouvez surcharger ou remplacer des déclarations des "templates".
+Les fichiers sont toujours évalués en premier et fusionnés récursivement. Vous pouvez surcharger ou remplacer des déclarations des "templates".
 
  - template en local
 
