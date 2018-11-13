@@ -13,7 +13,7 @@ tags:
     - Conférence
     - devfest
     - nantes
-cover: /assets/2018-11-14-retour-devfest-nantes/cover.jpg
+cover: /assets/2018-10-23-retour-devfest-nantes/cover.jpg
 ---
 
 ## Le devfest en quelques mots  
