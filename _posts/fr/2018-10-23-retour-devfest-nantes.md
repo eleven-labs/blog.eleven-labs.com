@@ -26,7 +26,7 @@ Chaque année un nouveau thème est choisi. Cette année c'était le thème de l
 
 Trois astonautes étaient présents : Marie, Thierry et Carl. Chacun a pu assister à différents talks, selon leur intérêt pour les sujets présentés. Voici leurs retours !
 
-### Hacker les catastrophes naturelles par Gaël Musquet  
+## Hacker les catastrophes naturelles par Gaël Musquet  
 
 La Cybersécurité est souvent associée aux failles et attaques, à la confidentialité, et à la disponibilité des infrastructures. Mais les catastrophes naturelles restent négligées comme risques majeurs dans nos métiers.  
 
@@ -36,7 +36,7 @@ Cela m'a permis de découvrir le monde de la radio amateure et des moyens simple
 
 Cette conférence, bien que non axée sur le web, était intéressante et permet d'ouvrir ses connaissances sur d'autres domaines.
 
-### Git Dammit par Maxime Chignet
+## Git Dammit par Maxime Chignet
 
 Git est l'outil de versionning le plus utilisé dans le monde. Mais bien souvent, il est utilisé de manière basique sans une vraie compréhension de son fonctionnement interne. Et dès qu'une personne est "experte", elle est très souvent solicitée pour répondre à des questions récurrentes.
 
