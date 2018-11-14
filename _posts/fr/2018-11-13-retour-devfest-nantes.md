@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Retour sur la mission spatiale au devfest Nantes"
-excerpt: "Retour sur la mission spatiale au devfest Nantes. trois astronautes ont pu assister à différents talks, selon leur intérêt pour les sujets présentés. Voici leurs retours !"
+excerpt: "Retour sur la mission spatiale au devfest Nantes. Trois astronautes ont pu assister à différents talks, selon leur intérêt pour les sujets présentés. Voici leurs retours !"
 authors:
     - marishka
     - tthuon
