@@ -21,7 +21,7 @@ cover: /assets/2018-11-15-retour-sur-le-php-forum-2018/cover.png
 ---
 
 ## Introduction
-Les 25 et 26 Octobre s'est tenue l'édition 2018 du [Forum PHP]({{site.baseurl}}/assets/2018-11-15-retour-sur-le-php-forum-2018/eleven-labs-php-forum-2018.jpg). Les astronautes étaient encore uen fois présents sur place. Voici leurs retours sur les conférences qui les ont marqués.
+Les 25 et 26 Octobre s'est tenue l'édition 2018 du [Forum PHP]({{site.baseurl}}/assets/2018-11-15-retour-sur-le-php-forum-2018/eleven-labs-php-forum-2018.jpg). Les astronautes étaient encore une fois présents sur place. Voici les retours des conférences qui les ont marqués.
 
 ## Reprenez le contrôle de PostgreSQL grâce à POMM - Mikael Paris - SISMIC  
 
@@ -100,7 +100,9 @@ Le projet sur lequel Thomas travaillait consistait à afficher des IRM du cervea
 Thomas a donc dû trouver un moyen d’afficher ces IRM qui sont enregistrés au format .nii (pour Nifti) dans le navigateur. Ce format est de type binaire et assez volumineux. 
 
 Après avoir lu les specs (nifti-1) du format Nifti il a pu trouver le détails des données octet par octet : 
-les 352 premiers octets constituent le Header (348 pour le header et 4 pour l’extension), ce header donne du détail sur la structure du fichier, le reste constitue le détail de l’image en voxel.
+les 352 premiers octets constituent le Header (348 pour le header et 4 pour l’extension), ce header donne du détail sur la structure du fichier, le reste constitue le détail de l’image en voxel.  
+
+![Image1]({{site.baseurl}}/assets/2018-11-22-retour-sur-le-php-forum-2018/Image1.png)
 
 Thomas Jarrand nous a aussi fait un rappel sur comment sont affichées les images sur nos écrans et comment en partant de cela avec les specs il avait pu afficher l’IRM. 
 
@@ -171,6 +173,8 @@ la clef doit être totalement aléatoire
 la clef doit être cryptée
 la clef doit faire AU MOINS la taille de ce que l’on cherche à crypter 
 la clef ne doit SURTOUT pas être utilisée une deuxième fois  
+
+![Image2]({{site.baseurl}}/assets/2018-11-22-retour-sur-le-php-forum-2018/Image2.png)
 
 (L’image ci-dessus représente bien ce qui pose problème lors de la réutilisation d’une clef)
 
