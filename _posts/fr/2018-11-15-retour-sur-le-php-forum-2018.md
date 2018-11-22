@@ -65,4 +65,89 @@ Concrètement, il défend le fait que les estimations ne sont pas une bonne prat
 
 De mémoire cela fait neuf an que Frédéric Leguédois travaille sans estimations et ses clients sont contents car il n’y a tout simplement pas de retards.
 
+## Binary Brain - Thomas Jarrand  
+
+En travaillant à la conception d’un jeu de type « serious game » pour l’université de Bordeaux et la Harvard Medical School, Thomas Jarrand a été confronté à des problématiques intéressantes telles que : 
+- comment afficher un format de donnée binaire dans un navigateur ? 
+- comment lire une matrice de voxel pour pouvoir l’afficher ? 
+
+Le projet sur lequel Thomas travaillait consistait à afficher des IRM du cerveau dans les navigateurs. Après avoir appris comment repérer une lésion par le biais du jeu, on présente des images à l’utilisateur qui va dire s’il voit ou non une lésion dans le cerveau. Le but étant de « crowdsourcer » cette reconnaissance et d’essayer par la suite de l’automatiser. 
+
+Thomas a donc dû trouver un moyen d’afficher ces IRM qui sont enregistrés au format .nii (pour Nifti) dans le navigateur. Ce format est de type binaire et assez volumineux. 
+
+Après avoir lu les specs (nifti-1) du format Nifti il a pu trouver le détails des données octet par octet : 
+les 352 premiers octets constituent le Header (348 pour le header et 4 pour l’extension), ce header donne du détail sur la structure du fichier, le reste constitue le détail de l’image en voxel.
+
+Thomas Jarrand nous a aussi fait un rappel sur comment sont affichées les images sur nos écrans et comment en partant de cela avec les specs il avait pu afficher l’IRM. 
+
+Concrètement, chaque pixel de nos écrans est constitué de 3 couleurs (rouge, vert, bleu), l’intensité de chacune de ces couleurs peut être géré indépendamment pour fournir n’importe quel mélange des 3 couleurs primaires. Cette intensité peut être représentée par une valeur allant de 0 à 255 soit une valeur sur un octet (8 bits).
+
+C’est ce qu’il se passait dans le format Nifti ou une section du binaire peut être lu 3 octets par 3 octets pour avoir la teinte de chaque pixel les uns après les autres : 
+- le premier octet représentera donc notre valeur pour le rouge
+- le second notre valeur pour le vert 
+- et le dernier, notre valeur pour le bleu
+
+Après chaque série de 3 octets on passe donc au pixel suivant.
+
+Ce travail a permis à Thomas de comprendre comment il est possible d'optimiser certaines informations par le biais du binaire en définissant une spec adaptée. 
+
+« Une fois que l’on sait comment est écrite l’information on peut tout faire, le binaire supporte tout et est supporté partout » 
+
+Pour finir, il nous a présenté quelques limites du binaire, comme la rigidité une fois mis en place. Bref une bonne piqûre de rappel sur les tailles et le fonctionnement des formats d’images sur l’ordinateur et de tout ce qu’il est possible de faire avec un fichier binaire bien documenté ! 
+
+N’ayant pas encore le lien de son talk, voici le git de son projet : 
+https://github.com/Tom32i/talk-binary-brain
+
+Ou encore la démo navigateur : 
+https://talk.tom32i.fr/binary-brain/demo/  
+
+## Sécurité et Bug Bounty - Xavier Leune  
+
+Xavier Leune (directeur technique adjoint chez CCMBenchmark, et ex-president de l’AFUP) est venu pour nous faire un retour d’expérience sur la sécurité des applications de manière générale, le coût moyen de la première année, mais aussi une démonstration de quelques failles, inconnues dans son entreprise avant de les subir.
+
+La présentation de Xavier à commencé par l’exposition de failles de sécurité sur un blog de démo, je vous laisserai regarder le talk pour en voir la plupart. Certaines étaient d’un niveau élevé. L’idée que Xavier souhaitait nous faire retenir était que « quelqu’un pensera toujours à un moyen que vous ne connaissez pas, que vous n’avez peut-être jamais vu » 
+
+Je ne citerai qu’un des exemples : Xavier après avoir « sécurisé » son application pour une faille HTTP, nous a montré que dans le manuel  « curl » on pouvait utiliser un autre protocole à la place d’HTTP qui était Gopher. Il a donc re-effectué sa requête avec Gopher plutot qu’HTTP, une nouvelle faille apparaissait permettant d’envoyer un mail depuis le compte du site attaqué.
+
+Après cette démo impressionnante, Xavier nous a un peu parlé de culture de la sécurité. Aujourd’hui, peu de gens sécurisent leur application correctement. On fait des tests unitaires pour les bugs mais on a pas de « tests unitaires de sécurité ». On peut mandater des pentesteurs pour faire des test d’intrusions ou lancer des bug bounties. 
+
+Le bug bounty c’est quoi ? C’est proposer à des experts en sécurité d’essayer de casser votre site et de rémunérer la rémontée de l’information en fonction de son importance. 
+
+Lors de l’ouverture de leur site et après avoir proposé des bug bounties sur leur site, Xavier et son entreprise recevaient 25 rapports en 2 jours et plus de 50 en 8 jours.
+
+La mise en place de ces bug bounties peut prendre un temps considérable,. I faut bien échanger avec le client et les développeurs pour éviter l’apparition de messages gênant sur le site en production par exemple. 
+
+La sécurité est par ailleurs assez coûteuse. Xavier parlait d’un budget moyen de 10 000€ la première année. 
+
+À notre époque il n’est plus possible de cacher des fuites de données sous le tapis. Il est donc important de les éviter. Il faut donc apprendre à mettre son orgueil de développeur de côté et accepter que la sécurité est un métier, et que l’on ne produit pas du code sécurisé d’office.
+
+Je vous laisse le constater par vous même avec sa démonstration que vous pourrez retrouver ici : 
+https://afup.org/talks/2741-securite-bug-bounty-php  
+
+## Les bases de la cryptographie - Julien Pauli
+
+Julien Pauli est venu nous faire un rappel des « bases » de la cryptographie. Ces bases sont en réalité en pratique assez complexes, je vous conseille donc grandement de voir le talk de Julien, qui donne de très bonne explications passionnées dessus.
+
+Il n’existe qu’un seul moyen de coder une information de manière sécurisée à 100% : l’OTP (One Time Password) de Vernam. Je vous laisse chercher le détail de cet algorithme sur Internet, beaucoup seront capable de vous l’expliquer mieux que moi, mais de manière résumée on a : 
+
+un message en clair qu’on encrypte en utilisant une clef aléatoire pour obtenir un message crypté caché. 
+
+Pour que cela soit possible, 4 conditions doivent être réunies : 
+la clef doit être totalement aléatoire
+la clef doit être cryptée
+la clef doit faire AU MOINS la taille de ce que l’on cherche à crypter 
+la clef ne doit SURTOUT pas être utilisée une deuxième fois  
+
+(L’image ci-dessus représente bien ce qui pose problème lors de la réutilisation d’une clef)
+
+Ces conditions sont malheureusement très difficiles à respecter dans le cadre de l’informatique. Concrètement, si on veut chiffrer un élément de 26Mo il faudra une clef de 26Mo. Comment faire alors pour chiffrer la navigation réseau qui va être très très longue ? 
+On peut utiliser LFSR : Linear Feedback Shift Register, qui permet de rendre une clef finie virtuellement infinie. Cela peut potentiellement introduire un autre problème : on abandonne l’aspect aléatoire à cause du fonctionnement électronique.
+On ne peut pas abandonner l’aléatoire car cela fait partie des 4 conditions pour une cryptographie sûre. 
+
+Certains algorithmes et structures électroniques ont donc été mis en place pour essayer de palier à ces problèmes, la plupart ont fini par être brisés.
+
+Je vous laisse en regarder la démonstration dans le talk. Il est conseillé d’avoir des notions d’électronique pour suivre une bonne moitié de la présentation, la première partie est cependant accessible à tout le monde : 
+
+https://afup.org/talks/2693-comment-fonctionne-la-cryptographie
+
 ## Conclusion
