@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Retour sur le PHP Forum 2018
-excerpt: Cet article vous propose un retour sur le Forum PHP qui s'est tenu les 26 et 26 octobre derniers
+excerpt: Cet article vous propose un retour sur le Forum PHP qui s'est tenu les 25 et 26 octobre derniers
 authors:
     - nicolas
 permalink: /fr/retour-sur-le-php-forum-2018/
 categories:
-    - Conferance
+    - Conférence
     - PHP
 tags:
     - Conférence
@@ -21,7 +21,7 @@ cover: /assets/2018-11-15-retour-sur-le-php-forum-2018/cover.png
 ---
 
 ## Introduction
-Les 25 et 26 Octobre s'est tenue l'édition 2018 du [Forum PHP]({{site.baseurl}}/assets/2018-11-15-retour-sur-le-php-forum-2018/eleven-labs-php-forum-2018.jpg). Les astronautes étaient encore une fois présents sur place. Voici les retours des conférences qui les ont marqués.
+Les 25 et 26 octobre s'est tenue l'édition 2018 du [Forum PHP]({{site.baseurl}}/assets/2018-11-15-retour-sur-le-php-forum-2018/eleven-labs-php-forum-2018.jpg). Les astronautes étaient encore une fois présents sur place. Voici les retours des conférences qui les ont marqués.
 
 ## Reprenez le contrôle de PostgreSQL grâce à POMM - Mikael Paris - SISMIC  
 
@@ -41,9 +41,9 @@ Foundation est la brique centrale composée de sessions et de clients. C’est a
 Le ModelManager est une brique extension de la première, apportant de la modélisation objet par rapport à la base de données.  
 Quant à la brique CLI, elle va nous faciliter la vie en générant les différents objets. Des commandes d'inspection sont également disponibles pour éviter d'ouvrir une console psql.
 
-Vous pouvez utiliser POMM dans vos projets Symfony. Voici le lien du dépot GitHub: [POMM project - bundle](https://github.com/pomm-project/pomm-bundle). Et si vous voulez en savoir plus, voici le lien de site du projet (POMM project)[http://www.pomm-project.org]
+Vous pouvez utiliser POMM dans vos projets Symfony. Voici le lien du dépot GitHub: [POMM project - bundle](https://github.com/pomm-project/pomm-bundle). Et si vous voulez en savoir plus, voici le lien de site du projet [POMM project](http://www.pomm-project.org)
 
-Voici le lien de la vidéo de la présentation de Mickal Paris sur POMM : (afup.org - Reprenez le contrôle de PostgreSQL grâce à POMM)[https://afup.org/talks/2716-reprenez-le-controle-de-postgresql-grace-a-pomm]
+Voici le lien de la vidéo de la présentation de Mickal Paris sur POMM : [afup.org - Reprenez le contrôle de PostgreSQL grâce à POMM](https://afup.org/talks/2716-reprenez-le-controle-de-postgresql-grace-a-pomm)
 
 ## MySQL 8.0 : quoi de neuf ? - Olivier Dasini - Oracle  
 
@@ -64,7 +64,7 @@ L'intégration du NoSQL dans MySQL 8.0 va vous permettre de centraliser vos donn
 En plus de toutes ces nouvelles fonctionnalité MySQL 8.0 a subi un petit lifting de performances comme le montre ce graphique :
 ![Eleven Labs PHP Forum 2018 ]({{site.baseurl}}/assets/2018-11-15-retour-sur-le-php-forum-2018/mysql8performance-80.png)
 
-Voici le lien des slides et de la vidéo de la présentation d'Olivier Dasini sur MySQL 8.0 : (afup.org - MySQL 8.0: Quoi de neuf ?)[https://afup.org/talks/2669-mysql-8-0-quoi-de-neuf]
+Voici le lien des slides et de la vidéo de la présentation d'Olivier Dasini sur MySQL 8.0 : [afup.org - MySQL 8.0: Quoi de neuf ?](https://afup.org/talks/2669-mysql-8-0-quoi-de-neuf)
 
 ## Cessons les estimations ! - Frédéric Leguédois - Cloud Temple
 
@@ -122,10 +122,10 @@ Ce travail a permis à Thomas de comprendre comment il est possible d'optimiser 
 Pour finir, il nous a présenté quelques limites du binaire, comme la rigidité une fois mis en place. Bref une bonne piqûre de rappel sur les tailles et le fonctionnement des formats d’images sur l’ordinateur et de tout ce qu’il est possible de faire avec un fichier binaire bien documenté ! 
 
 N’ayant pas encore le lien de son talk, voici le git de son projet : 
-https://github.com/Tom32i/talk-binary-brain
+[https://github.com/Tom32i/talk-binary-brain](https://github.com/Tom32i/talk-binary-brain)
 
 Ou encore la démo navigateur : 
-https://talk.tom32i.fr/binary-brain/demo/  
+[https://talk.tom32i.fr/binary-brain/demo/](https://talk.tom32i.fr/binary-brain/demo/)
 
 ## Sécurité et Bug Bounty - Xavier Leune  
 
@@ -153,7 +153,7 @@ La sécurité est par ailleurs assez coûteuse. Xavier parlait d’un budget moy
 À notre époque il n’est plus possible de cacher des fuites de données sous le tapis. Il est donc important de les éviter. Il faut donc apprendre à mettre son orgueil de développeur de côté et accepter que la sécurité est un métier, et que l’on ne produit pas du code sécurisé d’office.
 
 Je vous laisse le constater par vous même avec sa démonstration que vous pourrez retrouver ici : 
-https://afup.org/talks/2741-securite-bug-bounty-php  
+[https://afup.org/talks/2741-securite-bug-bounty-php](https://afup.org/talks/2741-securite-bug-bounty-php)  
 
 ## Les bases de la cryptographie - Julien Pauli  
 
@@ -186,7 +186,7 @@ Certains algorithmes et structures électroniques ont donc été mis en place po
 
 Je vous laisse en regarder la démonstration dans le talk. Il est conseillé d’avoir des notions d’électronique pour suivre une bonne moitié de la présentation, la première partie est cependant accessible à tout le monde : 
 
-https://afup.org/talks/2693-comment-fonctionne-la-cryptographie
+[https://afup.org/talks/2693-comment-fonctionne-la-cryptographie](https://afup.org/talks/2693-comment-fonctionne-la-cryptographie)  
 
 ## Conclusion
 Une édition 2018 encore à la hauteur de ce qu'on pouvait en attendre, des confs quali et une super ambiance sur tout le salon ! On se donne rendez-vous en 2019 ;)
