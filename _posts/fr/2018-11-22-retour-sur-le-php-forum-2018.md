@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Retour sur le PHP Forum 2018
+title: Retour sur le Forum PHP 2018
 excerpt: Cet article vous propose un retour sur le Forum PHP qui s'est tenu les 25 et 26 octobre derniers
 authors:
     - nicolas
