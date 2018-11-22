@@ -52,7 +52,7 @@ Voici le lien de la vidéo de la présentation de Mickal Paris sur POMM : [afup.
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endraw %}
 
-Olivier Dasini est venu nous parler de MySQL 8.0 est de ses nouveautés. ALors il y a eu beaucoup de nouvelles fonctionnalités sur MySQL 8.8. Mais les plus notables sont : 
+Olivier Dasini est venu nous parler de MySQL 8.0 et de ses nouveautés. ALors il y a eu beaucoup de nouvelles fonctionnalités sur MySQL 8.8. Mais les plus notables sont : 
     -l'apparition de NoSQL documentaire
     -l’API développeur
     -les window functions
@@ -61,7 +61,7 @@ Et oui, maintenant, depuis MySQL vous pouvez faire du NoSQL orienté document. I
 
 L'intégration du NoSQL dans MySQL 8.0 va vous permettre de centraliser vos données dans un seul SGBD. De plus avec la nouvelle APi dev vous pouvez mêler query SQL et NoSQL ce qui vous permettra d'optimiser le nombre de requêtes vers votre SGBD. Mais aussi plusieurs nouvelles `Windows Functions` sont apparues pour permettre de prendre en charge le NoSQL.
 
-En plus de toutes ces nouvelles fonctionnalité MySQL 8.0 a subi un petit lifting de performances comme le montre ce graphique :
+En plus de toutes ces nouvelles fonctionnalités MySQL 8.0 a subi un petit lifting de performances comme le montre ce graphique :
 ![Eleven Labs PHP Forum 2018 ]({{site.baseurl}}/assets/2018-11-15-retour-sur-le-php-forum-2018/mysql8performance-80.png)
 
 Voici le lien des slides et de la vidéo de la présentation d'Olivier Dasini sur MySQL 8.0 : [afup.org - MySQL 8.0: Quoi de neuf ?](https://afup.org/talks/2669-mysql-8-0-quoi-de-neuf)
