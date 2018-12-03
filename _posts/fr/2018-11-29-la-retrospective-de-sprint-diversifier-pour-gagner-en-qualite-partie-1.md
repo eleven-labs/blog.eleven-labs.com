@@ -1,21 +1,16 @@
 ---
 layout: post
-title: La rétrospective de sprint : diversifier pour gagner en qualité - partie 1
-excerpt: Si l’on considère l’ensemble des cérémonies préconisées par le framework SCRUM, la rétrospective de sprint est certainement celle qui peut être le principal vecteur d’amélioration continue.
+title: "La rétrospective de sprint : diversifier pour gagner en qualité - partie 1"
+excerpt: "Si l'on considère l’ensemble des cérémonies préconisées par le framework SCRUM, la rétrospective de sprint est certainement celle qui peut être le principal vecteur d’amélioration continue."
 authors:
     - pbrenot
 permalink: /fr/retrospective-de-sprint-gagner-en-qualite
 categories:
     - Agilité
-tags:[]
----
-image:
-  path: /img/covers/cover-pbrenot.jpg
-  height: 853px
-  width: 1280px
+cover: /assets/2018-11-29-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/cover.jpg
 ---
 
-                   
+
 # La rétrospective de sprint, diversifier pour gagner en qualité - Partie 1
 
 ## Introduction
@@ -34,7 +29,7 @@ Comme il existe autant de points de vue et de ressentis que de personnes, cette 
 - gagner en qualité produit,
 - et enfin, gagner en productivité.
 
-J’ai volontairement placé le bien-être et la motivation en premier dans cette liste, car ce sont pour moi ceux qui justifient à eux-seuls cet article : répéter indéfiniment le même format de cérémonie ou brûler les étapes aura des conséquences sur la qualité du produit final.  
+J’ai volontairement placé le bien-être et la motivation en premier dans cette liste, car ce sont pour moi ceux qui justifient à eux-seuls cet article : répéter indéfiniment le même format de cérémonie ou brûler les étapes aura des conséquences sur la qualité du produit final.
 Ainsi avec le temps, les membres de l’équipe vont se lasser, seront de moins en moins actifs et motivés et à termes finiront par délaisser la cérémonie ce qui aura pour effet d’occulter certains problèmes.
 
 > **« Diversifiez et adaptez votre rétrospective de sprint, gardez-la vivante ! »**
@@ -42,7 +37,7 @@ Ainsi avec le temps, les membres de l’équipe vont se lasser, seront de moins 
 
 # Une méthode c'est comme un T-shirt, il faut en changer de temps en temps
 
-## La base de la base  
+## La base de la base
 
 Je ne vais pas revenir sur la méthodologie SCRUM et ses fondamentaux (quand, combien de temps, qui participe…) qui sont abordés dans l’article de l'astronaute Charles-Eric « [Amélioration continue : comment animer vos rétrospectives agiles](https://blog.eleven-labs.com/fr/amelioration-continue-comment-animer-vos-retrospectives-agiles/) ».
 Je tiens seulement à préciser que peu importent la « gamification » ou le support visuel/matériel utilisé pour la rétrospective, cette dernière aura quasi-essentiellement toujours ce type de structure, pour une durée n'excédant pas 1h :
@@ -53,24 +48,24 @@ Je tiens seulement à préciser que peu importent la « gamification » ou le su
 - Définition d’actions à mener
 - Clôture
 
-Pourquoi avoir mis en gras le « recueil des données » ? Eh bien tout simplement parce que les différents types de rétrospectives abordés ensuite vont essentiellement se concentrer sur cette section.  
+Pourquoi avoir mis en gras le « recueil des données » ? Eh bien tout simplement parce que les différents types de rétrospectives abordés ensuite vont essentiellement se concentrer sur cette section.
 Libre à vous ensuite de vous approprier les autres étapes et d’innover. J’ai par exemple déjà vu quelqu’un mettre la BO de Skyrim en introduction de cérémonie, et de narrer l’ensemble un peu à la manière d’un MJ (entendez ici : maître du jeu, comme dans un « donjon et dragons » ou autre jeu de société).
 
-## Pourquoi changer alors ?  
+## Pourquoi changer alors ?
 
-Effectivement, pourquoi vouloir changer quelque chose qui fonctionne si vous avez déjà votre type de rétrospective favori ? Nous avons déjà eu quelques éléments de réponses plus haut : l’équipe va se lasser et on peut passer à moyen et long terme à côté de problématiques qui n’émergeront pas…  
+Effectivement, pourquoi vouloir changer quelque chose qui fonctionne si vous avez déjà votre type de rétrospective favori ? Nous avons déjà eu quelques éléments de réponses plus haut : l’équipe va se lasser et on peut passer à moyen et long terme à côté de problématiques qui n’émergeront pas…
 Mais cela peut aussi être tout autre, par exemple une équipe peu mature sur l’Agile aura parfois du mal à s’approprier le type de rétrospective « imposée », des personnes timides pourraient aussi ne pas réussir à s’exprimer pleinement avec tel ou tel type de rétro…
 
 Vous l’aurez compris : plus on creuse, plus on trouve des aspects négatifs à réitérer indéfiniment le ou les mêmes types de rétrospectives.
-On pourrait alors tout à fait imaginer qu’outre la perte de motivation et d’engouement pour cette cérémonie, l’équipe pourrait aussi passer à côté d’un problème de bien-être global (ou quelque chose d'extérieur) car les rétrospectives proposées ne se concentrent que sur les aspects négatifs ou sur des problèmes de « surface ».  
+On pourrait alors tout à fait imaginer qu’outre la perte de motivation et d’engouement pour cette cérémonie, l’équipe pourrait aussi passer à côté d’un problème de bien-être global (ou quelque chose d'extérieur) car les rétrospectives proposées ne se concentrent que sur les aspects négatifs ou sur des problèmes de « surface ».
 Bien entendu, comme expliqué dans un autre article, vous pourriez aussi commencer la cérémonie avec [un mood board ou un safety check](https://blog.eleven-labs.com/fr/amelioration-continue-comment-animer-vos-retrospectives-agiles/) afin de vous en donner un aperçu et ensuite orienter vers tel ou tel type de rétrospective
 
-Enfin, de manière beaucoup plus situationnelle, on pourrait aussi imaginer que vous n’avez pas une multitude de choses à aborder et qu’un système type START, STOP, CONTINUE va sembler un peu vide et ressemblant au dernier, alors que l'équipe cherche un moyen intelligent d’aborder un énorme problème.  
+Enfin, de manière beaucoup plus situationnelle, on pourrait aussi imaginer que vous n’avez pas une multitude de choses à aborder et qu’un système type START, STOP, CONTINUE va sembler un peu vide et ressemblant au dernier, alors que l'équipe cherche un moyen intelligent d’aborder un énorme problème.
 Il existe justement un type de rétrospective adapté à ce cas de figure.
 
 **Munissez-vous de nouvelles armes, la suite de l’article vous donnera un petit tour d’horizon pour changer de type de rétrospective !**
 
-## La liste d'ingrédients pour changer de recette, partie I  
+## La liste d'ingrédients pour changer de recette, partie I
 
 Avoir envie de changer est une chose, changer efficacement en est une autre.
 Pour cet article, on ne s’attardera que sur quelques suggestions qu’on regroupe donc en 3 catégories, ayant chacune un avantage ou une spécificité propre.
@@ -79,14 +74,14 @@ Je profiterai d’un second article pour aborder les 2 catégories suivantes, no
 
 N’oubliez pas de time boxer les différentes étapes, et d’essayer de ne pas dépasser 1h au total.
 
-### Les formats classiques  
+### Les formats classiques
 
 Il existe des formats « de base », incontournables, et dont l’efficacité est très largement prouvée, vous les connaissez déjà sûrement.
 Ce sont souvent de bon points d’entrées pour des équipes qui débutent en SCRUM, ou pour des équipes plus matures sur les premiers sprints par exemple.
 
-#### Stat, stop, continue  
+#### Stat, stop, continue
 
-![start_stop_continue_sprint_review](assets/2018-11-29-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite/New Project(1).png "start stop continue sprint review")
+![start_stop_continue_sprint_review](/assets/2018-11-29-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/NewProject_1.png "start stop continue sprint review")
 **Préparation**
 - Des posts-it de 3 couleurs
 - Un stylo par personne
@@ -106,8 +101,8 @@ Le Scrum master demandera ensuite aux participants d’aller coller sur le table
 Si certains ne sont pas très compréhensibles ils peuvent être réécrits.
 
 **#Etape 3 :**
-Le Scrum master va maintenant demander à chacun d’expliquer les tickets au tableau. 
-Pour cette partie le Scrum master peut choisir de discuter des post-it dans l’ordre, ou de faire l’emphase sur certains uniquement.  
+Le Scrum master va maintenant demander à chacun d’expliquer les tickets au tableau.
+Pour cette partie le Scrum master peut choisir de discuter des post-it dans l’ordre, ou de faire l’emphase sur certains uniquement.
 
 **#Etape 4 :**
 Le Scrum master va maintenant demander aux membres de l’équipe de prendre quelques minutes pour noter sur des post-it des axes d’améliorations, avec toujours une idée par post-it.
@@ -121,7 +116,7 @@ Dans cette méthode on se focalise essentiellement sur le produit. Elle est cert
 
 
 #### KALM
-![KALM_sprint_review](assets/2018-11-29-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite/New Project(3).png)
+![KALM_sprint_review](/assets/2018-11-29-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/NewProject_3.png)
 **Préparation**
 - Des posts-it (une seule couleur)
 - Un stylo par personne
@@ -131,7 +126,7 @@ Dans cette méthode on se focalise essentiellement sur le produit. Elle est cert
 **Déroulement de KALM**
 **#Etape 1 :**
 Le Scrum master va expliquer les 4 espaces du tableau et demander aux différents participants d’écrire ce qu’ils pensent dans chacun (une idée par post-it).
-On prendra à chaque fois 5 à 10 minutes par case avant de passer à l’écriture de la suivante. 
+On prendra à chaque fois 5 à 10 minutes par case avant de passer à l’écriture de la suivante.
 On collera les éléments après chaque fin de cycle sur le tableau qui aura au préalable été découpé en 3 blocs (keep, less, more) et une rubrique « add » qui vient « oxygéner l’ensemble ».
 
 >- **« Keep »**, ce que l’équipe fait et qui apporte de la valeur, reconnue par tous.
@@ -143,7 +138,7 @@ On collera les éléments après chaque fin de cycle sur le tableau qui aura au 
 >- **« Add »**, ce sont les nouvelles idées, par exemple des choses qui ont pu être vues ailleurs et qui pourraient fonctionner ici.
 
 **#Etape 2 :**
-Le Scrum master va maintenant réorganiser les post-its (si certains sont identiques) et demander à chacun d’expliquer les tickets au tableau. 
+Le Scrum master va maintenant réorganiser les post-its (si certains sont identiques) et demander à chacun d’expliquer les tickets au tableau.
 Pour cette partie il est préférable de discuter des post-its dans l’ordre.
 
 **#Etape 3 :**
@@ -157,7 +152,7 @@ On terminera par un dot voting afin de voter pour les 3 axes d’améliorations 
 Une fois les 3 axes sélectionnés, on définira des responsables pour chacun des axes, afin de s’assurer qu’ils seront implémentés au cours du prochain sprint.
 
 **Mon avis**
-À la différence des deux précédents, on fait l’emphase sur la génération de valeur ressentie par l’équipe. C’est donc une variante très intéressante et facile à mettre en place très rapidement sur des sprints. 
+À la différence des deux précédents, on fait l’emphase sur la génération de valeur ressentie par l’équipe. C’est donc une variante très intéressante et facile à mettre en place très rapidement sur des sprints.
 Elle conviendra aussi bien aux novices (tant qu’elle est bien expliquée) qu’aux confirmés.
 
 
