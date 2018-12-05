@@ -5,14 +5,14 @@ lang: fr
 permalink: /fr/introduction-au-framework-hapi/
 excerpt: HAPI est un framework Node.js développé par Walmart Labs. Il gagne aujourd’hui en popularité. Ainsi, des entreprises prestigieuses dans le domaine du web telles que Paypal, Mozilla ou encore Beats Audio commencent à l’utiliser, tout un gage de confiance !
 authors:
-  - arubal
+    - arubal
 date: '2014-09-01 10:26:18 +0200'
 date_gmt: '2014-09-01 08:26:18 +0200'
 categories:
-- Javascript
+    - Javascript
 tags:
-- Nodejs
-- hapi
+    - Nodejs
+    - hapi
 ---
 
 HAPI est un framework Node.js développé par ‘Walmart Labs’. Il gagne aujourd’hui en popularité. Ainsi, des entreprises prestigieuses dans le domaine du web telles que Paypal, Mozilla ou encore Beats Audio commencent à l’utiliser, tout un gage de confiance !

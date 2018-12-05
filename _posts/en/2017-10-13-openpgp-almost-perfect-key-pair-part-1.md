@@ -4,7 +4,7 @@ title: OpenPGP - The almost perfect key pair
 lang: en
 excerpt: Guide to create the almost perfect OpenPGP keys
 authors:
-- tthuon
+    - tthuon
 permalink: /openpgp-almost-perfect-key-pair-part-1/
 categories:
     - openpgp

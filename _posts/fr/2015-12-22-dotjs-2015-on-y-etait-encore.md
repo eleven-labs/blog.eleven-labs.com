@@ -5,22 +5,22 @@ lang: fr
 permalink: /fr/dotjs-2015-on-y-etait-encore/
 excerpt: Cette année encore, Eleven Labs et sa bande d'astronautes étaient partenaires de la http://www.dotjs.io version 2015.
 authors:
- - trughooputh
+    - trughooputh
 date: '2015-12-22 16:44:57 +0100'
 date_gmt: '2015-12-22 15:44:57 +0100'
 categories:
-- Javascript
+    - Javascript
 tags:
-- dotJS
-- conférence
-- http
-- async
-- hyperdrive
-- lightning
-- talk
-- reaction
-- angular
-- node
+    - dotJS
+    - conférence
+    - http
+    - async
+    - hyperdrive
+    - lightning
+    - talk
+    - reaction
+    - angular
+    - node
 ---
 
 Cette année encore, Eleven Labs et sa bande d'astronautes étaient partenaires de la [dotJS](http://www.dotjs.io/){:rel="nofollow noreferrer"} version 2015.

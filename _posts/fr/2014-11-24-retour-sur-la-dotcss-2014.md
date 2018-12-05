@@ -5,14 +5,14 @@ lang: fr
 permalink: /fr/retour-sur-la-dotcss-2014/
 excerpt: Le 14 novembre a eu lieu la première (et possiblement dernière) édition de dotCSS, une conférence par dotConferences, déjà responsables de dotJS, dotScale, dotGo, la future dotSwift et la non-renouvellée dotRB.
 authors:
- - hagbonon
+    - hagbonon
 date: '2014-11-24 10:50:57 +0100'
 date_gmt: '2014-11-24 09:50:57 +0100'
 categories:
-- Javascript
+    - Javascript
 tags:
-- conférence
-- dotcss
+    - conférence
+    - dotcss
 ---
 
 Le 14 novembre a eu lieu la première (et possiblement dernière) édition de **dotCSS**, une conférence par dotConferences, déjà responsables de dotJS, dotScale, dotGo, la future dotSwift et la non-renouvellée dotRB.

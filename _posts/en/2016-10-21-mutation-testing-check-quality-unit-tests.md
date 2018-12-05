@@ -5,11 +5,11 @@ lang: en
 permalink: /mutation-testing-check-quality-unit-tests/
 excerpt: "It is well established : unit tests are mandatory when developing an application. They allow to highlight possible regressions when code is modified, so the developer gets a certain confidence when shipping his code to production : If tests do pass, everything works correctly."
 authors:
- - rgraillon
+    - rgraillon
 date: '2016-10-21 11:00:27 +0200'
 date_gmt: '2016-10-21 09:00:27 +0200'
 categories:
-- Non classé
+    - Non classé
 tags: []
 ---
 

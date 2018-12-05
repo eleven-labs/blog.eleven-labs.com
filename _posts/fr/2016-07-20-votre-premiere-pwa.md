@@ -7,13 +7,13 @@ excerpt: Le monde du web évolue. Le site web mobile est devenu le plus grand c
 lang: fr
 permalink: /fr/votre-premiere-pwa/
 categories:
-- Javascript
+    - Javascript
 tags:
-- tutoriel
-- cache
-- Javascript
-- web
-- pwa
+    - tutoriel
+    - cache
+    - Javascript
+    - web
+    - pwa
 ---
 
 Le monde du web évolue. Le site web mobile est devenu le plus grand concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps (le cas contraire, je vous invite à lire mon précédent article sur cet événement, disponible [ici](https://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/)){:rel="nofollow noreferrer"}. Ça tombe bien, cet article va vous permettre de mettre en place votre première "PWA".
