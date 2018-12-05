@@ -1,7 +1,10 @@
 ---
 layout: post
-title: "La rétrospective de sprint : diversifier pour gagner en qualité - partie 1"
-excerpt: "Si l'on considère l’ensemble des cérémonies préconisées par le framework SCRUM, la rétrospective de sprint est certainement celle qui peut être le principal vecteur d’amélioration continue."
+title: >
+    La rétrospective de sprint : diversifier pour gagner en qualité - partie 1
+excerpt: >
+    Si l'on considère l’ensemble des cérémonies préconisées par le framework SCRUM, la rétrospective de sprint est certainement celle qui peut être le principal vecteur d'amélioration continue.
+lang: fr
 authors:
     - pbrenot
 permalink: /fr/retrospective-de-sprint-gagner-en-qualite/
@@ -156,7 +159,6 @@ Une fois les 3 axes sélectionnés, on définira des responsables pour chacun de
 Elle conviendra aussi bien aux novices (tant qu’elle est bien expliquée) qu’aux confirmés.
 
 
-
 ## CONCLUSION
 
 J’espère que cet article vous aura fait comprendre l'intérêt de diversifier les formats de vos rétrospectives et vous en aura fait découvrir de nouveaux (au au moins revoir vos bases).
@@ -167,10 +169,9 @@ Nous n’avons abordé ici que les formats classiques, je profiterai d’une sui
 Essayez-vous déjà à ces différents formats et venez partager en commentaire vos REX et suggestions de type de rétrospectives !
 
 
-
 ## RÉFÉRENCES
 
 - [http://www.funretrospectives.com](http://www.funretrospectives.com/)
--[https://www.mountaingoatsoftware.com/blog/a-simple-way-to-run-a-sprint-retrospective](https://www.mountaingoatsoftware.com/blog/a-simple-way-to-run-a-sprint-retrospective)
+- [https://www.mountaingoatsoftware.com/blog/a-simple-way-to-run-a-sprint-retrospective](https://www.mountaingoatsoftware.com/blog/a-simple-way-to-run-a-sprint-retrospective)
 - [https://agiliste.fr/art-de-la-retrospective/](https://agiliste.fr/art-de-la-retrospective/)
--[http://www.qualitystreet.fr/2017/02/19/retrospective-agile/](http://www.qualitystreet.fr/2017/02/19/retrospective-agile/)
+- [http://www.qualitystreet.fr/2017/02/19/retrospective-agile/](http://www.qualitystreet.fr/2017/02/19/retrospective-agile/)
