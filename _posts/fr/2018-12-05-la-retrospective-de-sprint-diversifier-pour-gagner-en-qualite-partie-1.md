@@ -171,6 +171,6 @@ Essayez-vous déjà à ces différents formats et venez partager en commentaire 
 ## RÉFÉRENCES
 
 - [http://www.funretrospectives.com](http://www.funretrospectives.com/)
--[https://www.mountaingoatsoftware.com/blog/a-simple-way-to-run-a-sprint-retrospective](https://www.mountaingoatsoftware.com/blog/a-simple-way-to-run-a-sprint-retrospective)
+- [https://www.mountaingoatsoftware.com/blog/a-simple-way-to-run-a-sprint-retrospective](https://www.mountaingoatsoftware.com/blog/a-simple-way-to-run-a-sprint-retrospective)
 - [https://agiliste.fr/art-de-la-retrospective/](https://agiliste.fr/art-de-la-retrospective/)
--[http://www.qualitystreet.fr/2017/02/19/retrospective-agile/](http://www.qualitystreet.fr/2017/02/19/retrospective-agile/)
+- [http://www.qualitystreet.fr/2017/02/19/retrospective-agile/](http://www.qualitystreet.fr/2017/02/19/retrospective-agile/)
