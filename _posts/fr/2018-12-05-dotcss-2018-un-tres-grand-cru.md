@@ -30,7 +30,7 @@ Pour gérer les sauts de ligne (line-break) des contenus de nos éléments HTML,
 
 Les règles CSS relatives aux espaces utilisent plusieurs étapes pour la gestion des espaces. L'attribut lang en HTML affecte particulièrement la gestion de la césure d'un mot par le navigateur.
 
-Les propriétés les plus couramment utilisées pour la gestion des espaces blancs sont white-space: nowrap, white-space: normal, white-space: pre. Or, il existe de nombreuses manières de casser notre contenu et que chaque manière spécifique peut aider à atteindre un résultat ou un autre.
+Les propriétés les plus couramment utilisées pour la gestion des espaces blancs sont white-space: nowrap, white-space: normal, white-space: pre. Or, il existe de nombreuses manières de casser notre contenu, et chaque manière spécifique peut aider à atteindre un résultat ou un autre.
 
 [Florian Rivoal](https://twitter.com/frivoal) nous a éclairé avec son exposé sur les différentes manières de séparer les lignes, leur utilité pour certaines langues et leurs inconvénients. Il a également présenté quelques nouvelles fonctionnalités pour mieux gérer les sauts de ligne et le retour à la ligne, déjà implémentés dans certains navigateurs.
 
@@ -56,8 +56,8 @@ Les propriétés CSS que l'on peut utiliser de manière créative sont nombreuse
 
 Aga nous présente quelques propriétés à utiliser :
 
-* **CSS Grid Layout** : le nouveau système de grille, considéré le futur (et même le présent) de la mise en forme des pages web. A mettre en place de concert avec "Flexbox" pour utiliser la puissance des deux systèmes.
-* **Clip-path** permet d'afficher une zone spécifique d'un élément définie par des formes comme un cercle ou un triangle mais aussi avec des SVG.
+* **CSS Grid Layout** : le nouveau système de grille, considéré comme le futur (et même le présent) de la mise en forme des pages web. À mettre en place de concert avec "Flexbox" pour utiliser la puissance des deux systèmes.
+* **Clip-path** permet d'afficher une zone spécifique d'un élément défini par des formes, comme un cercle ou un triangle, mais aussi avec des SVG.
 * **Mask** : propriété sensiblement identique à clip-path, mais qui permet la gestion de la transparence et des images.
 * **Shape-outside** est une propriété qui permet d'envelopper du texte selon la forme de votre image.
 
@@ -71,25 +71,25 @@ Sara Soueidan, développeuse web front-end freelance, formatrice et auteure, a a
 
 ### Qu'est-ce-que le SVG ?
 
-Le format SVG (Scalable Vector Graphics) est un format de données décrivant des images vectorielles bidimensionnelles. Il présente 2 avantages principaux : a légèreté et son redimensionnement sans perte de qualité. De plus, on peut facilement le manipuler avec du CSS.
+Le format SVG (Scalable Vector Graphics) est un format de données décrivant des images vectorielles bidimensionnelles. Il présente 2 avantages principaux : sa légèreté et son redimensionnement sans perte de qualité. De plus, on peut facilement le manipuler avec du CSS.
 
 ### Qu'est-ce-qu'un filtre SVG ?
 
 C'est tout simplement une fonction qui permet d'appliquer un ou plusieurs traitements à une image.
 
-De nombreux filtres sont à notre disposition, comme le flou, la déformation ou les effets de lumière. Ces filtres peuvent être utiliser en cascade, ce qui offre plein de possibilités. Cette technique est largement répandue puisque vous l'utilisez quotidiennement sur Intagram pour styliser vos photos.
+De nombreux filtres sont à notre disposition, comme le flou, la déformation, ou les effets de lumière. Ces filtres peuvent être utilisés en cascade, ce qui offre plein de possibilités. Cette technique est largement répandue puisque vous l'utilisez quotidiennement sur Instagram pour styliser vos photos.
 
 ### Exemples de filtres SVG
 
-* _feBlend_ permet de combiner 2 objets en utilisant un mode de fusion (idem à fusionner 2 calques sur Photoshop)
-* _feColorMatrix_ change l'apparence d'un élément telle la sutaration
+* _feBlend_ permet de combiner 2 objets en utilisant un mode de fusion (comme fusionner 2 calques sur Photoshop)
+* _feColorMatrix_ change l'apparence d'un élément, comme la sutaration
 * _feDropShadow_ crée une ombre portée sur l'image
 * _feGaussianBlur_ applique un effet de flou à l'image
 * _feComponentTransfer_ permet notamment de régler la luminosité ou le constraste d'une image en jouant sur ses différentes couches d'informations chromatiques (Rouge, Vert, Bleu et Alpha)
 
 ### Comment ajouter un filtre SVG ?
 
-Les filtres CSS standards sont biens mais assez limités si on souhaite décorer des images. Une petite astuce consiste à utiliser url() pour appliquer les filtres SVG personnalisés.
+Les filtres CSS standards sont bien, mais assez limités si on souhaite décorer des images. Une petite astuce consiste à utiliser url() pour appliquer les filtres SVG personnalisés.
 
 Prenons un exemple concret : rendre une image floue.
 
@@ -97,7 +97,7 @@ Prenons un exemple concret : rendre une image floue.
 
 Si on utilise le filtre CSS standard blur (), on obtiendra un effet de flou radial uniforme sur les axes X et Y. Cependant, si nous voulons un flou spécifique affectant un seul des axes, nous aurons besoin d'un filtre SVG personnalisé pour obtenir ce résultat. Certains effets ne peuvent être obtenus que par les filtres SVG.
 
-Pour se faire, voici à quoi ressemble le code :
+Pour ce faire, voici à quoi ressemble le code :
 
 ```
 <svg width="600" height="450" viewBox="0 0 600 450">
@@ -119,7 +119,7 @@ Ainsi, on affecte ou modifie l'image d'origine et on lui applique des opération
 * [Effet bichromie](https://codepen.io/SaraSoueidan/pen/898c0dbac0c8d1f362f8904a7d9fe911)
 * Plus d'exemples d'[effets réalisables à l'aide des filtres SVG](https://codepen.io/collection/0b42ddcbfbd4072bbe500bab9e139563/)
 
-En conclusion, les filtres SVG sont un excellent moyen d'obtenir des éléments ludiques, décoratifs et accessibles. Leur exploration et leurs possibilités n'en sont qu'à leur début. Mais, leur utilisation présente de nombreux avantages : le contenu reste éditable et dynamique, ils sont faciles à modifier, et les effets peuvent être animer.
+En conclusion, les filtres SVG sont un excellent moyen d'obtenir des éléments ludiques, décoratifs et accessibles. Leur exploration et leurs possibilités n'en sont qu'à leurs débuts. Mais, leur utilisation présente de nombreux avantages : le contenu reste éditable et dynamique, ils sont faciles à modifier, et les effets peuvent être animés.
 
 Au final, il est donc possible de recréer la majorité des filtres Photoshop... mais pas tous.
 
@@ -133,7 +133,7 @@ Elika J. Etemad, rédactrice principale de spécifications au sein du groupe de 
 
 ### Ne pas confondre traduction et localisation
 
-En effet, chaque pays possède sa(es) propre(s) langue(s), monnaie, lois, géographie, format de date..
+En effet, chaque pays possède sa(es) propre(s) langue(s), monnaie, lois, géographie, format de date...
 
 De plus, il ne faut pas croire que la langue correspond à la localisation, sachant que certains pays comme la Suisse en utilisent plusieurs.
 
@@ -167,7 +167,7 @@ Pour en savoir plus, je vous recommande la lecture de la [présentation de Elika
 
 ## Lire les codes de couleur hexadécimaux !
 
-David DeSandro, auteur entre autre des plugins open-source [Masonry](https://masonry.desandro.com/) et [Isotope](https://isotope.metafizzy.co/), est également un designer... daltonien !
+David DeSandro, auteur entre autres des plugins open-source [Masonry](https://masonry.desandro.com/) et [Isotope](https://isotope.metafizzy.co/), est également un designer... daltonien !
 
 ### Comment un concepteur d'interface graphique daltonien fait-il pour travailler avec la couleur ?
 
@@ -268,9 +268,9 @@ Aujourd'hui, les polices variables sont assez standardisées et compatibles avec
 
 Mandy Michael nous explique que les polices variables peuvent améliorer les performances réelles et perçues de notre site web.
 
-### Qu'est-ce-qu'une police variable ?
+### Qu'est-ce qu'une police variable ?
 
-Une police de caractères variable est un format de police incluant une nouvelle technologie appelée "OpenType Font Variation". Cette police peut contenir jusqu'à 64 000 variations d'axes, notamment de poids, largeur, et d'inclinaison.
+Une police de caractères variable est un format de police incluant une nouvelle technologie appelée "OpenType Font Variation". Cette police peut contenir jusqu'à 64 000 variations d'axes, notamment de poids, largeur, et inclinaison.
 
 ### Comment mettre en place une police variable pour son site web ?
 
@@ -325,7 +325,7 @@ D'autres avantages à utiliser les polices variables :
 * les propriétés peuvent être animées
 * moins de poids pour votre site web, donc une meilleur performance
 
-En effet, les différentes variantes de la police (condensé, gras, italique...) sont configurées par un unique fichier de police. Fini les importations multiples de familles de polices !
+En effet, les différentes variantes de la police (condensé, gras, italique...) sont configurées par un unique fichier de police. Finies les importations multiples de familles de polices !
 
 Quelques exemples pour en découvrir le potentiel :
 
