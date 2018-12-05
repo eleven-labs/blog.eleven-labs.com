@@ -101,19 +101,17 @@ Pour se faire, voici à quoi ressemble le code :
 
 ```
 <svg width="600" height="450" viewBox="0 0 600 450">
-	<filter id="monFiltre">
-		<!-- Mettre ici les opérations de filtrage -->
-	</filter>
-	<image xlink:href=".Mon Image." 
-		width="100%" height="100%" x="0" y="0" 
-		filter="url(#monFiltre)">
-	</image>
+ <filter id="monFiltre">
+  <!-- Mettre ici les opérations de filtrage -->
+ </filter>
+ <image xlink:href=".Mon Image." 
+       width="100%" height="100%" x="0" y="0" 
+       filter="url(#monFiltre)">
+ </image>
 </svg>
 ```
 
 Ainsi, on affecte ou modifie l'image d'origine et on lui applique des opérations de filtrage sous forme de calques. C'est le même concept que sur Photoshop.
-
-###
 
 ### Exemples de filtres SVG présentés par Sara
 
@@ -151,9 +149,13 @@ Tout d'abord, il faut préciser la langue de votre site web :
 Puis, on pourra utiliser des sélecteurs basés sur la langue de la manière suivante :
 
 ```
-:lang(fr)       { // CSS pour des éléments en français }
+:lang(fr) {
+  // CSS pour des éléments en français
+}
 
-[lang]:lang(fr) { // CSS qui hérite de la langue racine }
+[lang]:lang(fr) {
+ // CSS qui hérite de la langue racine
+}
 ```
 
 D'autres notions sont également à prendre en compte selon la langue :
@@ -276,14 +278,14 @@ L'implémentation de polices variables en CSS est très similaire à ce qu'on fa
 
 ```
 @font-face {
-	font-family: "Ma font variable";
-	src: url("ma-font-variable.woff") format("woff-variations");
-	font-weight: 200 700; // représente la limite de plage de poids de la police
+ font-family: "Ma font variable";
+ src: url("ma-font-variable.woff") format("woff-variations");
+ font-weight: 200 700; // représente la limite de plage de poids de la police
 }
 
 h1 {
-	font-family: "Ma font variable";
-	font-variations-settings: 'wght' 375, 'INLI' 88;
+ font-family: "Ma font variable";
+ font-variations-settings: 'wght' 375, 'INLI' 88;
 }
 ```
 
@@ -295,15 +297,15 @@ Voici les quelques modifications à apporter au code précédent :
 
 ```
 h1 {
-	font-family: "Source Sans", sans serif;
-	font-weight: 700;
+ font-family: "Source Sans", sans serif;
+ font-weight: 700;
 }
 
 @supports (font-variations-settings: normal) {
-	h1 {
-		font-family: "Ma font variable";
-		font-variations-settings: 'wght' 375, 'INLI' 88;
-	}
+ h1 {
+  font-family: "Ma font variable";
+  font-variations-settings: 'wght' 375, 'INLI' 88;
+ }
 }
 ```
 
