@@ -81,7 +81,7 @@ Ce sont souvent de bon points d’entrées pour des équipes qui débutent en SC
 
 #### Stat, stop, continue
 
-![start_stop_continue_sprint_review]({{site.baseurl}}/assets/2018-11-29-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/NewProject_1.png "start stop continue sprint review")
+![start_stop_continue_sprint_review]({{site.baseurl}}/assets/2018-12-05-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/NewProject_1.png "start stop continue sprint review")
 **Préparation**
 - Des posts-it de 3 couleurs
 - Un stylo par personne
@@ -116,7 +116,7 @@ Dans cette méthode on se focalise essentiellement sur le produit. Elle est cert
 
 
 #### KALM
-![KALM_sprint_review]({{site.baseurl}}/assets/2018-11-29-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/NewProject_3.png)
+![KALM_sprint_review]({{site.baseurl}}/assets/2018-12-05-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/NewProject_3.png)
 **Préparation**
 - Des posts-it (une seule couleur)
 - Un stylo par personne
