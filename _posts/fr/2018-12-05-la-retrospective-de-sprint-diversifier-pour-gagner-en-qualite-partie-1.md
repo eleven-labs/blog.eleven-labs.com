@@ -7,7 +7,7 @@ authors:
 permalink: /fr/retrospective-de-sprint-gagner-en-qualite/
 categories:
     - Agilité
-cover: /assets/2018-11-29-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/cover.jpg
+cover: /assets/2018-12-05-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/cover.jpg
 ---
 
 
