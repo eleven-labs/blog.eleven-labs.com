@@ -137,13 +137,13 @@ En effet, chaque pays possède sa(es) propre(s) langue(s), monnaie, lois, géogr
 
 De plus, il ne faut pas croire que la langue correspond à la localisation, sachant que certains pays comme la Suisse en utilisent plusieurs.
 
-Pour chaque langue ou lieu, il faut utiliser UTF-8, à savoir '<meta charset="UTF-8">' dans les documents HTML.
+Pour chaque langue ou lieu, il faut utiliser UTF-8, à savoir '&lt;meta charset="UTF-8"&gt;' dans les documents HTML.
 
 ### Comment styliser un site web internationalisé ?
 
 Tout d'abord, il faut préciser la langue de votre site web :
 
-* soit en la renseignant dans les attributs HTML lang (ex. : '<html lang="fr">')
+* soit en la renseignant dans les attributs HTML lang (ex. : '&lt;html lang="fr"&gt;')
 * soit en utilisant l'en-tête HTTP Content-Language (ex. : Content-Language: fr-FR)
 
 Puis, on pourra utiliser des sélecteurs basés sur la langue de la manière suivante :
