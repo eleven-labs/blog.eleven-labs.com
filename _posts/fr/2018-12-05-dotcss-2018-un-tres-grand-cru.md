@@ -95,7 +95,7 @@ Prenons un exemple concret : rendre une image floue.
 
 ![Comparaison entre le filtre CSS blur() et sa version SVG]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/svg-filtre-blur.png)
 
-Si on utilise le filtre CSS standard blur (), on obtiendra un effet de flou radial uniforme sur les axes X et Y. Cependant, si nous voulons un flou spécifique affectant un seul des axes, nous aurons besoin d'un filtre SVG personnalisé pour obtenir ce résultat. Certains effets ne peuvent être obtenus que par les filtres SVG.
+Si on utilise le filtre CSS standard blur(), on obtiendra un effet de flou radial uniforme sur les axes X et Y. Cependant, si nous voulons un flou spécifique affectant un seul des axes, nous aurons besoin d'un filtre SVG personnalisé pour obtenir ce résultat. Certains effets ne peuvent être obtenus que par les filtres SVG.
 
 Pour ce faire, voici à quoi ressemble le code :
 
