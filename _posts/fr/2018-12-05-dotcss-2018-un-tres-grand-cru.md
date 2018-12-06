@@ -143,7 +143,7 @@ Pour chaque langue ou lieu, il faut utiliser UTF-8, à savoir {% raw %}<meta cha
 
 Tout d'abord, il faut préciser la langue de votre site web :
 
-* soit en la renseignant dans les attributs HTML lang (ex. : {% raw %}<meta html lang="fr">{% endraw %})
+* soit en la renseignant dans les attributs HTML lang (ex. : {% raw %}<html lang="fr">{% endraw %})
 * soit en utilisant l'en-tête HTTP Content-Language (ex. : Content-Language: fr-FR)
 
 Puis, on pourra utiliser des sélecteurs basés sur la langue de la manière suivante :
