@@ -1,7 +1,7 @@
 ---
 layout: post
 title: La retrospective de sprint, diversifier pour gagner en qualité Partie II
-excerpt: Prêt pour le niveau suivant ? Si vous « masterisez » les principes de bases, il est maintenant temps de se pencher sur des versions plus évoluées, qui vous permettrons notamment d’aborder des situations différentes et récolter des informations parfois plus pertinentes.
+excerpt: Prêt pour le niveau suivant ? Si vous « masterisez » les principes de bases, il est maintenant temps de se pencher sur des versions plus évoluées, qui vous permettront notamment d’aborder des situations différentes et récolter des informations parfois plus pertinentes.
 authors:
 - pbrenot
 permalink: /fr/retrospective-de-sprint-gagner-en-qualite-partie-II/
@@ -14,10 +14,6 @@ tags:
 
 cover: /assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/cover.jpg
 ---
-
-# LA RÉTROSPECTIVE DE SPRINT, DIVERSIFIER POUR GAGNER EN QUALITÉ PARTIE II
-
-
 ## INTRODUCTION
 
 J’avais abordé dans un précédent article (https://blog.eleven-labs.com/fr/retrospective-de-sprint-gagner-en-qualite/) l'intérêt de diversifier les types de rétrospectives de sprint. Pour rappel, il s’agissait essentiellement de gagner en motivation pour gagner en qualité, j’avais alors rappeler quelques recettes « de bases » pour animer cela.
@@ -34,10 +30,10 @@ Encore une fois, il ne s’agit pas d’une liste exhaustive. Les formats de ré
 N’oubliez pas de time boxer les différentes étapes, et d’essayer de ne pas dépasser 1h au total.
 
 
-### LES FORMATS UN POIL PLUS INNOVANTS
+## LES FORMATS UN POIL PLUS INNOVANTS
 Passons maintenant à des versions un peu plus « fun » où l’échange peut être facilité et qui permettra, le plus souvent, de faire un peu plus le focus sur le ressenti de l'équipe et de faire ressortir des signaux faibles que pourra identifier le Scrum Master ou le Product Owner.
 
-#### STARFISH
+### STARFISH
 
 ![Starfish_sprint_review](/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/starfish.png "starfish sprint review")
 
@@ -97,7 +93,7 @@ On pourrait tout aussi bien le considérer comme un classique, mais de par sa fo
   
   
 
-#### TURN ON THE TABLE
+### TURN ON THE TABLE
 
 **Préparation**
 - Des posts-it de deux couleurs
@@ -135,7 +131,7 @@ C’est une variante extrêmement intéressante, car on peut voir comment les di
 
   
 
-#### SPEED BOAT
+### SPEED BOAT
 
 ![Speed_boat](/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/boat.png "speed boat sprint review")
 
@@ -196,7 +192,7 @@ Ce type de rétrospective a un énorme avantage par rapport aux autres : en plus
 
   
 
-#### LES 3 PETITS COCHONS
+### LES 3 PETITS COCHONS
 
 ![les_trois_petits_cochons](/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/3-cochons.png "les 3 petits cochons sprint review")
 
@@ -242,11 +238,11 @@ Une fois les 3 axes sélectionnés, on définira des responsables pour chacun de
 Bien que ce type de rétrospective fait un focus important sur les faiblesses et le négatif, c’est une variante à considérer dans la mesure où elle est simple et rapide et propose des axes de réflexion assez novateur.
 
   
-### LES SITUATIONNELS
+## LES SITUATIONNELS
 Je n’en présenterai que 3 ici, que j’aime particulièrement, car ils diffèrent totalement des précédents et ne pourront convenir qu'à des équipes spécifiques ou des « moments » dans la vie du projet. Ils ne fonctionnent qu’avec des équipes habituées à ce type de rétrospectives et souvent après plusieurs sprints.
 
 
-#### LES SIX CHAPEAUX (Edward De Bono)
+### LES SIX CHAPEAUX (Edward De Bono)
 
 ![les_six_chapeaux](/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/chapeaux.png "les six chapeaux d'Edward De Bono sprint review")
 
@@ -303,7 +299,7 @@ Le découpage en 6 thématiques de natures différentes aide bien à se focalise
   
   
 
-#### LE LOTUS
+### LE LOTUS
 **Préparation**
 
 - Des posts-it (une ou plusieurs couleurs)
@@ -339,7 +335,7 @@ Très particulière, cette rétrospective permet de solutionner un problème de 
 
   
 
-#### JEOPARDY
+### JEOPARDY
 
 **Préparation**
 
