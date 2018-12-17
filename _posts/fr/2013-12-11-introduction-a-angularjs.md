@@ -5,15 +5,15 @@ lang: fr
 permalink: /fr/introduction-a-angularjs/
 excerpt: AngularJS est un framework JavaScript open-source qui a vu le jour en 2009 et dont le père Miško Hevery est un expert Web autour des technologies Java et JavaScript, travaillant chez Google.
 authors:
- - peter
+    - peter
 date: '2013-12-11 09:36:42 +0100'
 date_gmt: '2013-12-11 08:36:42 +0100'
 categories:
-- Javascript
+    - Javascript
 tags:
-- tutoriel
-- Javascript
-- AngularJS
+    - tutoriel
+    - Javascript
+    - AngularJS
 ---
 
 *AngularJS* est un *framework* *JavaScript* open-source qui a vu le jour en 2009 et dont le père Miško Hevery est un expert Web autour des technologies *Java* et *JavaScript*, travaillant chez Google.

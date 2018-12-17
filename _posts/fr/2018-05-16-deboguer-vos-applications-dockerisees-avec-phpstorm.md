@@ -4,6 +4,7 @@ title: Déboguer vos applications dockerisées avec PhpStorm
 excerpt: Aujourd'hui je vais vous expliquer comment lancer vos tests unitaires et les déboguer avec PhpStorm, le tout sans avoir besoin d'installer php, phpunit, ou Xdebug sur votre machine...
 authors:
 - rmasclef
+lang: fr
 permalink: /fr/debug-run-phpunit-tests-using-docker-remote-interpreters-with-phpstorm/
 categories:
     - php

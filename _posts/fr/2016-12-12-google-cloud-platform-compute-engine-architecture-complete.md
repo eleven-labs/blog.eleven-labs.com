@@ -7,11 +7,11 @@ authors:
 lang: fr
 permalink: /fr/google-cloud-platform-compute-engine-architecture-complete/
 categories:
-- Dev Ops
+    - Dev Ops
 tags:
-- tutoriel
-- web
-- cloud
+    - tutoriel
+    - web
+    - cloud
 ---
 
 Si vous avez suivi les deux premiers articles sur Google Cloud Platform, vous êtes capable de mettre en production un site rapidement et êtes capable de scaler automatiquement selon le trafic. Mais tout cela n'est possible qu'avec les éléments pré-installés de Google Cloud Platform. Comment créer sa propre configuration ? Réinstaller un serveur facilement ? Scaler automatiquement ?

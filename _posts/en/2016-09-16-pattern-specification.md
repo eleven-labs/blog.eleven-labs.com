@@ -8,7 +8,7 @@ permalink: /pattern-specification/
 date: '2016-09-16 11:24:46 +0200'
 date_gmt: '2016-09-16 09:24:46 +0200'
 categories:
-- Non classé
+    - Non classé
 tags: []
 ---
 

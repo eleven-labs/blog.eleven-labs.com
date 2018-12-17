@@ -5,17 +5,17 @@ lang: fr
 permalink: /fr/verifier-la-qualite-du-code/
 excerpt: "Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet article, je vais l'aborder sur la partie PHP."
 authors:
- - tthuon
+   - tthuon
 date: '2016-01-26 15:09:19 +0100'
 date_gmt: '2016-01-26 14:09:19 +0100'
 categories:
-- Non classé
+    - Non classé
 tags:
-- php
-- psr
-- qualité
-- code
-- scrutinizer
+    - php
+    - psr
+    - qualité
+    - code
+    - scrutinizer
 ---
 
 Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet article, je vais l'aborder sur la partie PHP.

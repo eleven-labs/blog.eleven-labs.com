@@ -4,6 +4,7 @@ title: Introduction à Gitlab CI/CD
 excerpt: Cet article présente une partie des possibilités qu’offre GitLab CI/CD. Vous retrouverez sur la plateforme Codelabs deux tutoriels liés à cet article, qui vous montreront deux cas d'utilisation.
 authors:
     - nicolas
+lang: fr
 permalink: /fr/introduction-gitlab-ci/
 categories:
     - continuous integration

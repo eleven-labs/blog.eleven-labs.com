@@ -4,14 +4,14 @@ title: Retour sur les DotJS 2014 !
 lang: fr
 permalink: /fr/retour-sur-les-dotjs-2014/
 authors:
- - mlenglet
+    - mlenglet
 date: '2014-11-24 18:31:51 +0100'
 date_gmt: '2014-11-24 17:31:51 +0100'
 categories:
-- Javascript
+    - Javascript
 tags:
-- dotJS
-- conférence
+    - dotJS
+    - conférence
 ---
 
 ![wilsononstagedotjs](/assets/2014-11-24-retour-sur-les-dotjs-2014/wilsononstagedotjs.jpg)

@@ -6,6 +6,7 @@ authors:
     - marishka
     - tthuon
     - cogren
+lang: fr
 permalink: /fr/retour-devfest-nantes/
 categories:
     - Conférence
