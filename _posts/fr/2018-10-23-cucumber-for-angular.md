@@ -4,6 +4,7 @@ title: "Cucumber for Angular"
 excerpt: "Comment intégrer Cucumber dans Angular"
 authors:
     - la3roug
+lang: fr
 permalink: /fr/cucumber-for-angular/
 categories:
     - e2e

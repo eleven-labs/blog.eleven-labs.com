@@ -2,15 +2,15 @@
 layout: post
 title: "Upload file with AJAX"
 authors:
-- tthuon
+    - tthuon
 lang: en
 permalink: /upload-file-ajax/
 excerpt: "Today, I would like to share with you a feature often requested in an application: uploading a file."
 categories:
-- Symfony
-- Php
+    - Symfony
+    - Php
 tags:
-- ajax
+    - ajax
 ---
 
 Today, I would like to share with you a feature often requested in an application: uploading a file.

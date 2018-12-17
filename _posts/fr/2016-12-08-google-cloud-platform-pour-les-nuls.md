@@ -7,13 +7,13 @@ authors:
 lang: fr
 permalink: /fr/google-cloud-platform-pour-les-nuls/
 categories:
-- Dev Ops
+    - Dev Ops
 tags:
-- tuto
-- tutoriel
-- Google
-- web
-- cloud
+    - tuto
+    - tutoriel
+    - Google
+    - web
+    - cloud
 ---
 
 Aujourd'hui le Cloud c'est le mot à la mode, mais qu'est-ce que c'est ?

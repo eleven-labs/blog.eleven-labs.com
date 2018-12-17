@@ -5,20 +5,20 @@ lang: fr
 permalink: /fr/symfonycon-2015-birthday-party/
 excerpt: "Pour la troisième édition de la SymfonyCon (conférence internationale sur Symfony), SensioLabs a fait les choses en grand aux Folies Bergère à Paris, la ville natale de Symfony. Les conférences ont eu lieu pendant deux jours en deux tracks."
 authors:
- - sofany
+    - sofany
 date: '2015-12-09 18:21:32 +0100'
 date_gmt: '2015-12-09 17:21:32 +0100'
 categories:
-- Symfony
+    - Symfony
 tags:
-- doctrine
-- symfony
-- form
-- conférence
-- guard
-- sécurité
-- symfony con
-- routing
+    - doctrine
+    - symfony
+    - form
+    - conférence
+    - guard
+    - sécurité
+    - symfony con
+    - routing
 ---
 
 ![](http://pariscon2015.symfony.com/bundles/sensiosymfonylive/images/pariscon2015/assets/header.jpg){:rel="nofollow noreferrer"}

@@ -4,6 +4,7 @@ title: Retour sur le Forum PHP 2018
 excerpt: Cet article vous propose un retour sur le Forum PHP qui s'est tenu les 25 et 26 octobre derniers
 authors:
     - nicolas
+lang: fr
 permalink: /fr/retour-sur-le-php-forum-2018/
 categories:
     - Conférence

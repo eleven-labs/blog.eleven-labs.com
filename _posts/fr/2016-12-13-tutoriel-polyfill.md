@@ -7,11 +7,11 @@ authors:
 lang: fr
 permalink: /fr/tutoriel-polyfill/
 categories:
-- Javascript
+    - Javascript
 tags:
-- tutoriel
-- Javascript
-- web
+    - tutoriel
+    - Javascript
+    - web
 ---
 
 Avec l'avènement du js natif, et la multiplication des navigateurs et des environnements (mobile, desktop, tablette), on entend de plus en plus dans nos open-spaces :

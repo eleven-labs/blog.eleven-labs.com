@@ -9,12 +9,12 @@ excerpt: "Parlons de Listeners"
 date: '2017-01-11 18:28:25 +0100'
 date_gmt: '2017-01-11 17:28:25 +0100'
 categories:
-- Mobile
+    - Mobile
 tags:
-- application mobile
-- mobile
-- dév mobile
-- Android
+    - application mobile
+    - mobile
+    - dév mobile
+    - Android
 ---
 #### Introduction
 

@@ -5,15 +5,15 @@ excerpt: Depuis quelques mois, le navigateur Google Chrome permet, dans ses fonc
 lang: fr
 permalink: /fr/chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/
 authors:
- - laurent
+    - laurent
 date: '2014-02-10 09:32:03 +0100'
 date_gmt: '2014-02-10 08:32:03 +0100'
 categories:
-- Javascript
+    - Javascript
 tags:
-- chrome
-- extension
-- responsive
+    - chrome
+    - extension
+    - responsive
 ---
 
 Depuis quelques mois, le navigateur Google Chrome permet, dans ses fonctionnalités expérimentales, de profiter des DevTools pour les téléphones et tablettes Android.

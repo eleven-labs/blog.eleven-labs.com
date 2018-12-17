@@ -4,15 +4,15 @@ title: generator-gulp-angular 1.0.0 stable released
 lang: fr
 permalink: /fr/generator-gulp-angular-1-0-0-stable-released/
 authors:
- - mehdy
+    - mehdy
 date: '2015-10-16 11:07:54 +0200'
 date_gmt: '2015-10-16 09:07:54 +0200'
 categories:
-- Javascript
+    - Javascript
 tags:
-- AngularJS
-- Yeoman
-- Gulp
+    - AngularJS
+    - Yeoman
+    - Gulp
 ---
 
 Intro
