@@ -35,7 +35,7 @@ Passons maintenant à des versions un peu plus « fun » où l’échange peut �
 
 ### STARFISH
 
-![Starfish_sprint_review](/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/starfish.png "starfish sprint review")
+![Starfish_sprint_review]({{site.baseurl}}/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/starfish.png "starfish sprint review")
 
 **Préparation**
 
@@ -133,7 +133,7 @@ C’est une variante extrêmement intéressante, car on peut voir comment les di
 
 ### SPEED BOAT
 
-![Speed_boat](/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/boat.png "speed boat sprint review")
+![Speed_boat]({{site.baseurl}}/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/boat.png "speed boat sprint review")
 
 **Préparation**
 
