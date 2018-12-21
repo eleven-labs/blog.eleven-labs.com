@@ -5,15 +5,15 @@ excerpt: "These days more than ever before mobile applications have become essen
 lang: en
 permalink: /mobile-development-start/
 authors:
- - ibenichou
+    - ibenichou
 date: '2017-01-12 11:06:36 +0100'
 date_gmt: '2017-01-12 10:06:36 +0100'
 categories:
-- Mobile
+    - Mobile
 tags:
-- mobile app
-- Android
-- mobile
+    - mobile app
+    - Android
+    - mobile
 ---
 
 ## Mobile development: where to start?

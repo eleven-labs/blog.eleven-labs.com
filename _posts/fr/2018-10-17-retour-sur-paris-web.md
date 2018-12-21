@@ -5,6 +5,7 @@ excerpt: "Mission Paris Web 2018 : compte-rendu de trois astronautes"
 authors:
     - seinhorn
     - martincadoux
+lang: fr
 permalink: /fr/compte-rendu-paris-web/
 categories:
     - Conférence

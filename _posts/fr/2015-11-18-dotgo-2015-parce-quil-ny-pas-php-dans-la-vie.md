@@ -5,14 +5,14 @@ excerpt: Parce qu'il n’y a pas que PHP dans la vie, j’ai décidé d’assist
 lang: fr
 permalink: /fr/dotgo-2015-parce-quil-ny-pas-php-dans-la-vie/
 authors:
- - achaysinh
+    - achaysinh
 date: '2015-11-18 18:34:27 +0100'
 date_gmt: '2015-11-18 17:34:27 +0100'
 categories:
-- Non classé
+    - Non classé
 tags:
-- conférence
-- go
+    - conférence
+    - go
 ---
 
 Parce qu'il n’y a pas que PHP dans la vie, j’ai décidé d’assister au [dotGo](http://www.dotgo.eu/) 2015, la conférence européenne sur le [Go](https://golang.org/). Ce langage open source et créé, à la base, par une équipe de Google, vient d’avoir 6 ans, et [certains puristes ne jurent déjà que par lui](https://www.quora.com/Is-Google-Go-worth-learning){:rel="nofollow noreferrer"}. Voici un résumé des présentations de l’unique journée de conférence:

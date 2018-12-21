@@ -5,15 +5,15 @@ excerpt: "Hello everyone! Today I would like to speak about a subject too little
 lang: en
 permalink: /php_handle-exception-gracefully/
 authors:
- - tthuon
+    - tthuon
 date: '2016-11-17 16:22:32 +0100'
 date_gmt: '2016-11-17 15:22:32 +0100'
 categories:
-- Non classé
+    - Non classé
 tags:
-- php
-- best practice
-- exception
+    - php
+    - best practice
+    - exception
 ---
 
 Hello everyone! Today I would like to speak about a subject too little discussed in php: the exceptions. An exception is an alert issued when the code is executed, to indicate that something has not happened as expected. It can be a bad connection identifier to the database, or an operation on a file that is not allowed, or a division by zero for example.

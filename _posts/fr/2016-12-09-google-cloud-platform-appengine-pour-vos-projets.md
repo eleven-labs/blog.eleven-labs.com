@@ -7,13 +7,13 @@ authors:
 lang: fr
 permalink: /fr/google-cloud-platform-appengine-pour-vos-projets/
 categories:
-- Javascript
-- Dev Ops
+    - Javascript
+    - Dev Ops
 tags:
-- Google
-- node
-- cloud
-- express
+    - Google
+    - node
+    - cloud
+    - express
 ---
 
 Vous avez souvent été bloqué dans vos projets parce qu'il est difficile de mettre en production.

@@ -105,6 +105,7 @@ title: TITRE
 excerpt: DESCRIPTION (VISIBLE SUR LA HOME)
 authors:
     - LOGIN
+lang: LANGUE (fr/en)
 permalink: /LANGUE (fr/en)/TITRE SANS ESPACES/
 categories:
     - CATEGORIE 1

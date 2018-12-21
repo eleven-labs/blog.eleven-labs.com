@@ -4,14 +4,14 @@ title: Annuler une fonctionnalité avant une mise en production
 lang: fr
 permalink: /fr/annuler-une-fonctionnalite-avant-une-mise-en-production/
 authors:
- - tthuon
+    - tthuon
 date: '2016-02-24 17:30:02 +0100'
 date_gmt: '2016-02-24 16:30:02 +0100'
 categories:
-- Non classé
+    - Non classé
 tags:
-- git
-- workflow
+    - git
+    - workflow
 ---
 
 Git workflow

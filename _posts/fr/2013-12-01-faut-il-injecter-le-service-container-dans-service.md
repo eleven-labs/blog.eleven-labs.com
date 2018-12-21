@@ -5,14 +5,14 @@ excerpt: La documentation de Symfony2 explique très bien ce que c'est qu'un ser
 lang: fr
 permalink: /fr/faut-il-injecter-le-service-container-dans-service/
 authors:
- - marie
+    - marie
 date: '2013-12-01 00:00:55 +0100'
 date_gmt: '2013-11-30 23:00:55 +0100'
 categories:
-- Symfony
+    - Symfony
 tags:
-- php
-- symfony2
+    - php
+    - symfony2
 ---
 
 La documentation de Symfony2 explique très bien ce que c'est qu'un [service et le conteneur de dépendances](http://symfony.com/fr/doc/current/book/service_container.html){:rel="nofollow noreferrer"}. Mais dans une application on a souvent besoin d'injecter plusieurs services ou paramètres. Vous vous êtes déjà dit que c'était plus simple d'injecter le container de service directement plutôt que d'injecter toutes les dépendances les unes après les autres ? Voici les "pour" et les "contre".

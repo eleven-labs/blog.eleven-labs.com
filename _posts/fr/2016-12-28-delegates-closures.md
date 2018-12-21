@@ -9,13 +9,13 @@ authors:
 date: '2016-12-28 18:25:24 +0100'
 date_gmt: '2016-12-28 17:25:24 +0100'
 categories:
-- Mobile
+    - Mobile
 tags:
-- mobile
-- ios
-- delegates
-- block
-- closure
+    - mobile
+    - ios
+    - delegates
+    - block
+    - closure
 ---
 #### Introduction
 

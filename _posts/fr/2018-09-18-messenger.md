@@ -5,7 +5,7 @@ lang: fr
 permalink: /fr/symfony-messenger/  
 excerpt: "Nous allons voir comment utiliser le nouveau composant Messenger de Symfony"
 authors:  
-    - amoutte  
+    - amoutte
 categories:
     - php
     - symfony

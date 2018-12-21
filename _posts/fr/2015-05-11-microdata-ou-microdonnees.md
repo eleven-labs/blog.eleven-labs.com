@@ -5,7 +5,7 @@ lang: fr
 permalink: /fr/microdata-ou-microdonnees/
 excerpt: Présentation des microdata ou microdonnées, leur implémentation dans les pages web, et leur utilité pour le SEO ou référencement naturel.
 authors:
- - seinhorn
+    - seinhorn
 permalink: /fr/microdata-ou-microdonnees/
 categories:
     - blog
