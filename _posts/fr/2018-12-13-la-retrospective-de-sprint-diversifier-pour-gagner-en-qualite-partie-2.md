@@ -244,7 +244,7 @@ Je n’en présenterai que 3 ici, que j’aime particulièrement, car ils diffè
 
 ### LES SIX CHAPEAUX (Edward De Bono)
 
-![les_six_chapeaux](/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/chapeaux.png "les six chapeaux d'Edward De Bono sprint review")
+![les_six_chapeaux]({{site.baseurl}}/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/chapeaux.png "les six chapeaux d'Edward De Bono sprint review")
 
 **Préparation**
 
