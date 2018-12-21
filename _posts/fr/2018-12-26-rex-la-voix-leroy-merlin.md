@@ -5,8 +5,7 @@ excerpt: ""
 authors:
     - captainjojo
 lang: fr
-permalink: /fr/rex-la-voix-leroy-merlin
-/
+permalink: /fr/rex-la-voix-leroy-merlin/
 categories:
     - graphql
 cover: /assets/2018-12-05-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/cover.jpg
