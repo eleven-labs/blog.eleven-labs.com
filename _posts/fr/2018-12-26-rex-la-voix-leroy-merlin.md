@@ -59,7 +59,7 @@ Ce développement nous a permis de mettre en place le dialogue suivant avec seul
 
 ## Test utilisateur V1
 
-Une fois ce développement réalisé, nous avons effectué les premiers tests utilisateurs. Pour cela nous pris deux personnes étrangères au projet, avec lequel nous avons réalisé le test suivant.
+Une fois ce développement réalisé, nous avons effectué les premiers tests utilisateurs. Pour cela nous avons pris deux personnes étrangères au projet, avec lequel nous avons réalisé le test suivant.
 
 Dans une salle filmée en live, l'utilisateur est resté avec le PO. Le PO était là pour guider l'utilisateur dans son dialogue sans le laisser seul face à l'assistant.
 

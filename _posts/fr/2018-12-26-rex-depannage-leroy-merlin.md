@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Retour d'experience sur la mise en place du nouveau service Leroy Melin"
-excerpt: "Eleven-labs depuis plus de deux ans a ouvert son studio. C'est dans ce dernier que nous mettons en place des projets web et mobile complet pour nos clients. En janvier 2018, Start le service innovation de Leroy Merlin nous a contactés pour mettre en place leur site de dépannage express en partenariat avec Bob dépannage."
+excerpt: "Eleven-labs depuis plus de deux ans a ouvert son studio. C'est dans ce dernier que nous mettons en place des projets web et mobile complet pour nos clients. En janvier 2018, Start - le service innovation de Leroy Merlin - nous a contactés pour mettre en place leur site de dépannage express en partenariat avec Bob dépannage."
 authors:
     - captainjojo
 lang: fr
@@ -13,14 +13,14 @@ categories:
 cover: /assets/2018-12-26-rex-depannage-leroy-merlin/cover.png
 ---
 
-Eleven-labs depuis plus de deux ans a ouvert son studio. C'est dans ce dernier que nous mettons en place des projets web et mobile complet pour nos clients. En janvier 2018, **Start** le service innovation de Leroy Merlin nous a contactés pour mettre en place leur site de dépannage express en partenariat avec **Bob dépannage**.
+Eleven-labs depuis plus de deux ans a ouvert son studio. C'est dans ce dernier que nous mettons en place des projets web et mobile complet pour nos clients. En janvier 2018, **Start** - le service innovation de Leroy Merlin - nous a contactés pour mettre en place leur site de dépannage express en partenariat avec **Bob dépannage**.
 Le plus du projet, c'est un client (partenaire) qui veut suivre la méthodologie Lean Startup et réaliser un site très technique, pour cela il nous donne carte blanche dans nos choix technologiques. Revenons sur 9 mois de développements.
 
 ## Le scope
 
-Le but du projet est de mettre Leroy Merlin sur le marché de ses concurrents direct. Ici c'est Engi qui depuis quelques mois a lancé le site [https://www.mesdepanneurs.fr/](https://www.mesdepanneurs.fr/). Nous avons donc composé une équipe réduite de deux personnes pour mettre en place un site (mobile first) permettant de prendre un rendez-vous avec un artisan dépanneur le plus rapidement possible. La relation avec les artisans se fera donc via un partenaire [https://www.bobdepannage.fr/](https://www.bobdepannage.fr/).
+Le but du projet est de mettre Leroy Merlin sur ce nouveau marché qui se développe, Leroy Merlin étant une marque forte dans le monde de l'habitat c'est tout naturellement qu'elle se développe sur ce nouveau marché. Ici c'est Engi qui depuis quelques mois a lancé le site [https://www.mesdepanneurs.fr/](https://www.mesdepanneurs.fr/). Nous avons donc composé une équipe réduite de deux personnes pour mettre en place un site (mobile first) permettant de prendre un rendez-vous avec un artisan dépanneur le plus rapidement possible. La relation avec les artisans se fera donc via un partenaire [https://www.bobdepannage.fr/](https://www.bobdepannage.fr/).
 
-L'équipe sera donc composée d'un développeur Fullstack, d'un Lead dev/ Dev ops et d'un UX qui notre client.
+L'équipe sera donc composée d'un développeur Fullstack, d'un Lead dev/ Dev ops et d'un UX qui est notre client.
 
 ## Reprendre l'existant
 
@@ -40,7 +40,7 @@ Une fois cette architecture posée le développement des nouvelles fonctionnalit
 
 Le développement en Lean Startup exige de pouvoir faire des virages techniques très rapides. Nous avons donc eu besoin de nous équiper techniquement pour réussir à suivre une cadence de développement avec des nouvelles `features` chaques semaines.
 
-Nous avons donc mis en place en premier un **design system** complet permettant d'utiliser des composant React générique rapidement dans le site. Nous avons choisi [storybook](https://storybook.js.org/) qui nous permet de prendre en compte les changements visuels proposer par le client simplement.
+Nous avons donc mis en place en premier un **design system** complet permettant d'utiliser des composant React générique rapidement dans le site. Nous avons transformé le design system existant **Garden** crée par l'équipe brésilienne. Nous avons choisi [storybook](https://storybook.js.org/) qui nous permet de prendre en compte les changements visuels proposer par le client simplement.
 
 Le CI/CD est aussi un élément indispensable pour répondre rapidement aux besoins du Lean Startup. Nous avons donc mis en place une pipeline complète dans **Gitlab.ci** nous permettant de livrer en un clique les différentes applications.
 

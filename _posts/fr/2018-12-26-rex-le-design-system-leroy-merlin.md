@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Retour d'expérience sur la mise d'un Design System chez Adeo"
-excerpt: "Depuis septembre le groupe Adeo travail pour mettre en place un design System complet permettant à l'ensemble des site E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuel commune. Je travaille avec Leroy Merlin depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de se projet pas comme les autres."
+excerpt: "Depuis septembre le groupe Adeo travail pour mettre en place un design system complet permettant à l'ensemble des sites E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuelle commune. Tiago l'initiateur du projet, un Bresilien travaillant depuis 2013 chez Leroy Merlin et Gael freelance depuis 10 ans qui s'occupe de l'implémentation technique du projet, et moi travail depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres."
 authors:
     - captainjojo
 lang: fr
@@ -14,7 +14,7 @@ cover: /assets/2018-12-26-rex-le-design-system-leroy-merlin/cover.png
 
 Depuis septembre le groupe Adeo travail pour mettre en place un design system complet permettant à l'ensemble des sites E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuelle commune.
 
-Je travaille avec Leroy Merlin depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres.
+Tiago l'initiateur du projet, un Bresilien travaillant depuis 2013 chez Leroy Merlin et Gael freelance depuis 10 ans qui s'occupe de l'implémentation technique du projet, et moi travail depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres.
 
 ## Brief
 
@@ -30,9 +30,9 @@ Le premier point qui nous a paru très problématique c'est que le logo du favic
 
 Avant de nous lancer dans un tel projet il y a eu beaucoup de réflexion. Ici ce n'est pas la technique qui va compter, mais les moyens de communications misent en place pour que l'ensemble du monde travaille sur le même projet.
 
-Les équipes étant dispersées dans le monde entier nous avons décidé de commencer un POC sans en discutant simplement avec les équipes en France, car ils étaient les initiateurs du projet.
+Les équipes étant dispersées dans le monde entier nous avons décidé de commencer un POC, en discutant simplement avec les équipes en France, Italie et Brésil, car ils étaient les initiateurs du projet.
 
-Avant tout nous avons regardé ce que font les autres sociétés en terme de design system celui d'IBM avec https://www.carbondesignsystem.com/, nous ont paru le plus complet.
+Avant tout nous avons regardé ce que font les autres sociétés en terme de design system celui d'IBM avec https://www.carbondesignsystem.com/, https://primer-css.now.sh/css et https://www.lightningdesignsystem.com/, nous ont paru le plus complet.
 
 Nous avons donc décidé de partir sur un site généré statiquement nous avons choisi Gatsby
 
