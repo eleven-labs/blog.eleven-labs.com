@@ -2,19 +2,19 @@
 layout: post
 title: 'Understanding SSL/TLS: Part 1 - What is it?'
 authors:
-- ibenichou
+    - ibenichou
 lang: en
 permalink: /understanding-ssltls-part-1/
 date: '2016-12-21 11:46:42 +0100'
 date_gmt: '2016-12-21 10:46:42 +0100'
 categories:
-- Non classé
+    - Non classé
 tags:
-- security
-- protocols
-- encryption
-- SSL
-- TLS
+    - security
+    - protocols
+    - encryption
+    - SSL
+    - TLS
 ---
 
 You've certainly heard about SSL or TLS protocols.

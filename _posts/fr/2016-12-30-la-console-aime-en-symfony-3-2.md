@@ -5,16 +5,16 @@ lang: fr
 permalink: /fr/la-console-aime-en-symfony-3-2/
 excerpt: "La console est un composant essentiel pour beaucoup d’applications web. Nous avons pas mal de nouveautés dans cette nouvelle version de Symfony. Je vous présente dans cet article mes préférées et vous mettrai les liens de celles que je ne détaille pas ici à la fin (on est comme ça chez Eleven)."
 authors:
- - jgreaux
+    - jgreaux
 date: '2016-12-30 10:40:56 +0100'
 date_gmt: '2016-12-30 09:40:56 +0100'
 categories:
-- Symfony
-- Php
+    - Symfony
+    - Php
 tags:
-- php
-- symfony
-- Console
+    - php
+    - symfony
+    - Console
 ---
 
 La console est un composant essentiel pour beaucoup d’applications web. Nous avons pas mal de nouveautés dans cette nouvelle version de Symfony. Je vous présente dans cet article mes préférées et vous mettrai les liens de celles que je ne détaille pas ici à la fin (on est comme ça chez Eleven).

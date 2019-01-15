@@ -7,9 +7,9 @@ excerpt: "The most common mean of communication between a provider and its custo
 lang: en
 permalink: /take-care-emails/
 categories:
-- Javascript
+    - Javascript
 tags:
-- mail
+    - mail
 ---
 
 

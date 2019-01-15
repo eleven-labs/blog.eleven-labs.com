@@ -4,6 +4,7 @@ title: "Débutons avec le Serverless"
 excerpt: "Vous avez un nouveau projet personnel ou professionnel, vous ne voulez pas vous prendre la tête avec l’infrastructure, et vous souhaitez payer seulement pour les ressources utilisées ? Serverless est fait pour vous !"
 authors:
     - mmaireaux
+lang: fr
 permalink: /fr/debutons-avec-le-serverless/
 categories:
     - devops

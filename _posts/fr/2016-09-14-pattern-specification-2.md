@@ -8,11 +8,11 @@ permalink: /fr/pattern-specification-2/
 date: '2016-09-14 16:36:55 +0200'
 date_gmt: '2016-09-14 14:36:55 +0200'
 categories:
-- Php
+    - Php
 tags:
-- php
-- architecture
-- conception
+    - php
+    - architecture
+    - conception
 ---
 
 Au cours de mes différentes expériences professionnelles, j'ai dû mettre en place de nombreuses règles métier dans diverses applications riches fonctionnellement. Un jour, j'ai été confronté à une façon de faire différente : l'utilisation du pattern specification. Cette méthode s’est avérée structurante pour les projets, et si vous ne la connaissez pas encore elle mérite qu’on s’y attarde.

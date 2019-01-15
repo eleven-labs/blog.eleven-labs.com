@@ -4,8 +4,8 @@ title: Codelabs under the hood
 excerpt: À propos d'Eleven Codelabs
 authors:
     - kelfarsaoui
-lang: en
-permalink: /codelabs-under-the-hood/
+lang: fr
+permalink: /fr/codelabs-under-the-hood/
 categories:
     - React
     - Static site generation

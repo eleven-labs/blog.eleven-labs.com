@@ -5,14 +5,14 @@ excerpt: 'Quand on exécute une suite de tests fonctionnels ou unitaires sur une
 lang: fr
 permalink: /fr/isolation-des-tests-fonctionnels-avec-symfony-2-doctrine/
 authors:
- - charles-eric
+    - charles-eric
 date: '2014-08-04 11:38:49 +0200'
 date_gmt: '2014-08-04 09:38:49 +0200'
 categories:
-- Symfony
+    - Symfony
 tags:
-- doctrine
-- symfony2
+    - doctrine
+    - symfony2
 ---
 
 Quand on exécute une suite de tests fonctionnels ou unitaires sur une application, le mieux est de ne pas changer l'état de la base de données. Cela permet ainsi d'exécuter ces tests plusieurs fois sur un état stable des données. Chaque test est ainsi isolé des autres.

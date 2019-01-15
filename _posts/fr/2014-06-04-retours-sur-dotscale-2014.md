@@ -5,13 +5,13 @@ lang: fr
 permalink: /fr/retours-sur-dotscale-2014/
 excerpt: Le lundi 19 mai je suis allée à dotScale, conférence technique qui parle de scalabilité, DevOps et systèmes distribués.
 authors:
- - marie
+    - marie
 date: '2014-06-04 15:27:59 +0200'
 date_gmt: '2014-06-04 13:27:59 +0200'
 categories:
-- Non classé
+    - Non classé
 tags:
-- dotScale
+    - dotScale
 ---
 
 Le lundi 19 mai je suis allée à dotScale, conférence technique qui parle de scalabilité, DevOps et systèmes distribués.
