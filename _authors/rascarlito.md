@@ -1,7 +1,7 @@
 ---
 layout: author
 login: rascarlito
-name: Carl Ogren
+title: Carl Ogren
 twitter: CarlOGREN
 permalink: /authors/rascarlito/
 ---

@@ -1,7 +1,7 @@
 ---
 layout: author
 login: pbrenot
-name: Pierre Brenot
+title: Pierre Brenot
 twitter: Edd_Br
 permalink: /authors/pbrenot/
 ---

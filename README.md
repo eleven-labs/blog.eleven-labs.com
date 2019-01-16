@@ -62,7 +62,7 @@ Veuillez utiliser le template d'auteur suivant. Vous pouvez copier le template d
 ---
 layout: author
 login: votre_login
-name: Prénom Nom
+title: Prénom Nom
 twitter: Compte twitter
 ---
 Votre Bio
