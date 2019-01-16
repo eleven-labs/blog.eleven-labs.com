@@ -1,7 +1,7 @@
 ---
 layout: author
 login: pouzor
-name: Rémy Jardinet
+title: Rémy Jardinet
 twitter: Pouz0r
 permalink: /authors/pouzor/
 ---

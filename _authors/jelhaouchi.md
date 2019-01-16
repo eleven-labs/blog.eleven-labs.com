@@ -1,7 +1,7 @@
 ---
 layout: author
 login: jelhaouchi
-name: Jawad Elhaouchi
+title: Jawad Elhaouchi
 twitter: jelhaouchi
 github: jelhaouchi
 permalink: /authors/jelhaouchi/
