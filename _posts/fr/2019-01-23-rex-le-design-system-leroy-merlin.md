@@ -52,21 +52,21 @@ Le projet est sur un Github privé qui communique avec GitLabCi. La pipeline est
 
 Lors d'un Push ou de la création d'une Pull Request un webhook est envoyé dans une Lambda AWS permettant de lancer la pipeline de GitlabCi.
 
-**Étape 1
+**Étape 1**
 
 L'étape 1 est le lancement des tests. Cela permet de vérifier la bonne génération du site statique.
 
-**Étape 2
+**Étape 2**
 
-L'étape deux permet de build l'application et le déploiement en démo. Chaque branche créée par un utilisateur est alors déployée et visible dans un environnement de démo. Cela permet à tout le monde de voir le site généré avec la nouvelle documentation sans forcément lire le code dans Github.
+L'étape deux permet le build de l'application et le déploiement en démo. Chaque branche créée par un utilisateur est alors déployée et visible dans un environnement de démo. Cela permet à tout le monde de voir le site généré avec la nouvelle documentation sans forcément lire le code dans Github.
 
 Un webhook toujours dans AWS Lambda, récupérant le statut de la pipeline renvoie dans Github l'url de déploiement pour garder une trace de cette dernière.
 
-**Étape 3
+**Étape 3**
 
 Cette étape n'est pas toujours réalisée, mais elle permet lors d'un merge dans la branche master de choisir quel type de release faire (patch, minor, major). Dans ce cas la pipeline automatise le changelog ainsi que le tag de l'application. Elle est alors déployée dans un environnement de production en spécifiant le tag dans l'url de déploiement.
 
-**Étape 4
+**Étape 4**
 
 Toujours dans le cadre du merge sur master, le code est envoyé dans une registry NPM pour permettre aux développeurs d'utiliser le CSS dans leurs projets.
 
