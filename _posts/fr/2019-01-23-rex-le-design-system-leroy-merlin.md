@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Retour d'expérience sur la mise en place d'un Design System chez Adeo"
-excerpt: "Depuis septembre 2018, le groupe Adeo travaille pour mettre en place un design system complet permettant à l'ensemble des sites E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuelle commune. Tiago, l'initiateur du projet, travaille depuis 2013 chez Leroy Merlin. Gael, freelance depuis 10 ans, s'occupe de l'implémentation technique du projet. Quant à moi, je travaille depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres."
+excerpt: "Depuis septembre 2018, le groupe Adeo travaille à la mise en place d'un design system complet, permettant à l'ensemble des sites E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuelle commune. Tiago, UX depuis presque 10 ans, est l'initiateur du projet. Il travaille depuis 2013 chez Leroy Merlin et a supervisé l'ensemble de la refonte utilisateur du site E-commerce Leroy Merlin Brésil. Gael, est un designer devenu intégrateur qui a mis en place le design system pour Lemonde.fr. Il est en charge de l'implémentation technique du projet. Quant à moi, je travaille depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres."
 authors:
     - captainjojo
 lang: fr
@@ -12,23 +12,23 @@ categories:
 cover: /assets/2019-01-23-rex-le-design-system-leroy-merlin/cover.png
 ---
 
-Depuis septembre 2018, le groupe Adeo travaille pour mettre en place un design system complet permettant à l'ensemble des sites E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuelle commune.  
+Depuis septembre 2018, le groupe Adeo travaille à la mise en place d'un design system complet, permettant à l'ensemble des sites E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuelle commune.
 
-Tiago, l'initiateur du projet, travaille depuis 2013 chez Leroy Merlin. Gael, freelance depuis 10 ans, s'occupe de l'implémentation technique du projet. Quant à moi, je travaille depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres.
+Tiago, UX depuis presque 10 ans, est l'initiateur du projet. Il travaille depuis 2013 chez Leroy Merlin et a supervisé l'ensemble de la refonte utilisateur du site E-commerce Leroy Merlin Brésil. Gael, est un designer devenu intégrateur qui a mis en place notamment le design system pour Lemonde.fr. Il est en chgarge de l'implémentation technique du projet. Quant à moi, je travaille depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres.
 
 ## Brief
 
-Le projet a commencé au mois de septembre. Le brief du client était assez clair. Nous devions mettre en place le plus rapidement possible un outil de design system permettant aux équipes du monde entier de partager le design et l'intégration des multiples composants utilisés dans les sites e-commerce de la marque.
+Le projet a commencé au mois de septembre 2018. Le brief du client était assez clair. Nous devions mettre en place le plus rapidement possible un outil de design system permettant aux équipes du monde entier de partager le design et l'intégration des multiples composants utilisés dans les sites e-commerce de la marque.
 
 Mais pourquoi mettre en place un tel projet ?
 
-L'inner source est devenu aujourd'hui un élément essentiel de toutes nos plateformes web. C'est dans ce cadre que Leroy Merlin a décidé de mettre en place un design system. Aujourd'hui chaque site e-commerce de la marque arbore un design différent, ce qui peut porter à confusion pour les clients.
+L'inner source est devenu aujourd'hui un élément essentiel de toutes nos plateformes web. C'est dans ce cadre que Leroy Merlin a décidé de mettre en place un design system. Aujourd'hui chaque site e-commerce de la marque arbore un design différent, ce qui peut prêter à confusion pour les clients.
 
 Par exemple, le premier point qui nous a paru très problématique c'est que le logo du favicon n'est pas le même entre le site russe, italien, français ou brésilien.
 
 ## Réflexion
 
-Avant de nous lancer dans un tel projet il y a eu beaucoup de réflexion. Ici ce n'est pas la technique qui va compter, mais les moyens de communications mis en place afin que l'ensemble des équipes puissent travailler sur le même projet.
+Avant de nous lancer dans un tel projet il y a eu beaucoup de réflexion. Ici ce n'est pas la technique qui va compter, mais les moyens de communication mis en place afin que l'ensemble des équipes puisse travailler sur le même projet.
 
 Les équipes étant dispersées dans le monde entier nous avons décidé de commencer un POC, en discutant simplement avec les équipes en France, Italie et Brésil, car ils étaient les initiateurs du projet.
 
@@ -42,7 +42,7 @@ Nous avons donc décidé de partir sur un site généré statiquement, grâce à
 
 Gatsby est un site générator en React utilisant une API GraphQL pour stocker la donnée. L'intérêt de Gatsby est de limiter le développement. La plupart des personnes qui participeront à l'élaboration du design system ne sont pas des développeurs, mais des designers, des intégrateurs, ou des DA.
 
-Il faut donc créer un outil pour tous et simple d'utilisation. Nous avons donc choisi de créer un système de documentation en Markdown. C'est un langage assez simple à utiliser, et l'on peut trouver beaucoup d'éditeurs en ligne pour faciliter la rédaction.
+Il faut alors créer un outil pour tous, qui soit simple d'utilisation. Nous avons choisi de créer un système de documentation en Markdown. C'est un langage assez simple à utiliser, et l'on peut trouver beaucoup d'éditeurs en ligne pour faciliter la rédaction.
 
 ### CI / CD
 
