@@ -14,7 +14,7 @@ cover: /assets/2019-01-23-rex-le-design-system-leroy-merlin/cover.png
 
 Depuis septembre 2018, le groupe Adeo travaille à la mise en place d'un design system complet, permettant à l'ensemble des sites E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuelle commune.
 
-Tiago, UX depuis presque 10 ans, est l'initiateur du projet. Il travaille depuis 2013 chez Leroy Merlin et a supervisé l'ensemble de la refonte utilisateur du site E-commerce Leroy Merlin Brésil. Gael, est un designer devenu intégrateur qui a mis en place notamment le design system pour Lemonde.fr. Il est en chgarge de l'implémentation technique du projet. Quant à moi, je travaille depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres.
+Tiago, UX depuis presque 10 ans, est l'initiateur du projet. Il travaille depuis 2013 chez Leroy Merlin et a supervisé l'ensemble de la refonte utilisateur du site E-commerce Leroy Merlin Brésil. Gael, est un designer devenu intégrateur qui a mis en place notamment le design system pour Lemonde.fr. Il est en charge de l'implémentation technique du projet. Quant à moi, je travaille depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres.
 
 ## Brief
 
@@ -32,7 +32,7 @@ Avant de nous lancer dans un tel projet il y a eu beaucoup de réflexion. Ici ce
 
 Les équipes étant dispersées dans le monde entier nous avons décidé de commencer un POC, en discutant simplement avec les équipes en France, Italie et Brésil, car ils étaient les initiateurs du projet.
 
-Avant tout, nous avons regardé ce que font les autres sociétés en terme de design system. Celui d'IBM, avec [https://www.carbondesignsystem.com](https://www.carbondesignsystem.com/), [https://primer-css.now.sh/css](ttps://primer-css.now.sh/css/), et [https://www.lightningdesignsystem.com](https://www.lightningdesignsystem.com/), nous a paru le plus complet.
+Avant tout, nous avons regardé ce que font les autres sociétés en terme de design system. Celui d'IBM, avec [https://www.carbondesignsystem.com](https://www.carbondesignsystem.com/), [https://primer-css.now.sh](https://primer-css.now.sh/), et [https://www.lightningdesignsystem.com](https://www.lightningdesignsystem.com/), nous a paru le plus complet.
 
 Nous avons donc décidé de partir sur un site généré statiquement, grâce à la technologie Gatsby.
 
@@ -48,9 +48,9 @@ Il faut alors créer un outil pour tous, qui soit simple d'utilisation. Nous avo
 
 Ce design system étant géré comme un projet open source, il nous fallait mettre en place une CI/CD parfaite.
 
-Le projet est sur un Github privé qui communique avec GitLabCi. La pipeline est assez simple, elle contient quatre étapes.
+Le projet est sur un Github privé qui communique avec GitLab Ci. La pipeline est assez simple, elle contient quatre étapes.
 
-Lors d'un Push ou de la création d'une Pull Request un webhook est envoyé dans une Lambda AWS permettant de lancer la pipeline de GitlabCi.
+Lors d'un Push ou de la création d'une Pull Request un webhook est envoyé dans une Lambda AWS permettant de lancer la pipeline de Gitlab Ci.
 
 **Étape 1**
 
