@@ -32,7 +32,7 @@ Avant de nous lancer dans un tel projet il y a eu beaucoup de réflexion. Ici ce
 
 Les équipes étant dispersées dans le monde entier nous avons décidé de commencer un POC, en discutant simplement avec les équipes en France, Italie et Brésil, car ils étaient les initiateurs du projet.
 
-Avant tout, nous avons regardé ce que font les autres sociétés en terme de design system. Celui d'IBM, avec https://www.carbondesignsystem.com/, https://primer-css.now.sh/css et https://www.lightningdesignsystem.com/, nous a paru le plus complet.
+Avant tout, nous avons regardé ce que font les autres sociétés en terme de design system. Celui d'IBM, avec [https://www.carbondesignsystem.com](https://www.carbondesignsystem.com/), [https://primer-css.now.sh/css](ttps://primer-css.now.sh/css/), et [https://www.lightningdesignsystem.com](https://www.lightningdesignsystem.com/), nous a paru le plus complet.
 
 Nous avons donc décidé de partir sur un site généré statiquement, grâce à la technologie Gatsby.
 
