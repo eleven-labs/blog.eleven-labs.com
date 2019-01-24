@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Retour d'expérience sur la mise en place d'un Design System chez Adeo"
-excerpt: "Depuis septembre 2018, le groupe Adeo travaille à la mise en place d'un design system complet, permettant à l'ensemble des sites E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuelle commune. Tiago, UX depuis presque 10 ans, est l'initiateur du projet. Il travaille depuis 2013 chez Leroy Merlin et a supervisé l'ensemble de la refonte utilisateur du site E-commerce Leroy Merlin Brésil. Gael, est un designer devenu intégrateur qui a mis en place le design system pour Lemonde.fr. Il est en charge de l'implémentation technique du projet. Quant à moi, je travaille depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres."
+excerpt: "Depuis septembre 2018, le groupe Adeo travaille à la mise en place d'un design system complet, permettant à l'ensemble des sites E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuelle commune."
 authors:
     - captainjojo
 lang: fr
