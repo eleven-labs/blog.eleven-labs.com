@@ -16,6 +16,8 @@ Depuis septembre 2018, le groupe Adeo travaille à la mise en place d'un design 
 
 Tiago, UX depuis presque 10 ans, est l'initiateur du projet. Il travaille depuis 2013 chez Leroy Merlin et a supervisé l'ensemble de la refonte utilisateur du site E-commerce Leroy Merlin Brésil. Gael, est un designer devenu intégrateur qui a mis en place notamment le design system pour Lemonde.fr. Il est en charge de l'implémentation technique du projet. Quant à moi, je travaille depuis maintenant trois mois pour mettre en place sur ce projet la CI/CD. Revenons sur le début de ce projet pas comme les autres.
 
+![team]({{site.baseurl}}/assets/2019-01-23-rex-le-design-system-leroy-merlin/team.png)
+
 ## Brief
 
 Le projet a commencé au mois de septembre 2018. Le brief du client était assez clair. Nous devions mettre en place le plus rapidement possible un outil de design system permettant aux équipes du monde entier de partager le design et l'intégration des multiples composants utilisés dans les sites e-commerce de la marque.
