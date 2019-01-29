@@ -1,7 +1,7 @@
 ---
 layout: post
-title: React, le local state management d'Apollo, une alternative a Redux / ContextApi?
-excerpt: Si vous suivez notre blog ou nos différents meetups, vous avez sans doute entendu parler de librairie React Apollo afin de gérer une API GraphQL. Depuis peu, celui-ci offre une autre manière de gérer le state de votre application afin de ne pas avoir à gérer un Redux, il est temps de voir ça d'un peu plus près !
+title: React, le local state management d'Apollo, une alternative à Redux / ContextApi?
+excerpt: Si vous suivez notre blog ou nos différents meetups, vous avez sans doute entendu parler de la librairie React Apollo afin de gérer une API GraphQL. Depuis peu, celle-ci offre une autre manière de gérer le state de votre application afin de ne pas avoir à gérer un Redux, il est temps de voir ça d'un peu plus près !
 authors:
     - rmavillaz
 lang: fr
@@ -21,29 +21,29 @@ image:
   width: LARGEUR DE L'IMAGE
 ---
 
-Si vous suivez notre blog ou nos différents meetups, vous avez sans doute entendu parler de la librairie React Apollo afin de gérer une API GraphQL. Depuis peu, **celui-ci propose une autre manière de gérer le state de votre application React afin de ne pas avoir à gérer un Redux**, il est temps de voir ça d'un peu plus près !
+Si vous suivez notre blog ou nos différents meetups, vous avez sans doute entendu parler de la librairie React Apollo afin de gérer une API GraphQL. Depuis peu, **celle-ci propose une autre manière de gérer le state de votre application React afin de ne pas avoir à gérer un Redux**, il est temps de voir ça d'un peu plus près !
 
-Cela fait quelques années que les développeurs utilisent le duo React / Redux pour leur application front-end, ce dernier permettant de centraliser les données dans un store. Je pars du principe que vous êtes déjà familié avec ce concept, sinon je vous invite à en savoir plus via [nos autres articles sur le blog](https://blog.eleven-labs.com/fr/redux-structurez-vos-applications-front/).
+Cela fait quelques années que les développeurs utilisent le duo React/Redux pour leurs applications front-end, ce dernier permettant de centraliser les données dans un store. Je pars du principe que vous êtes déjà familier avec ce concept, sinon je vous invite à en apprendre plus via [nos autres articles sur le blog](https://blog.eleven-labs.com/fr/redux-structurez-vos-applications-front/).
 
 Même si Redux est encore très présent, de nouveaux moyens permettent de gérer les données de son application comme le tout nouveau ContextAPI intégré directement à React. Pour ceux qui utilisent Apollo pour gérer une API GraphQL, sachez qu'il intégre également sa propre gestion du store répondant au nom de Local State Management. Nous allons voir ici comment l'utiliser et pourquoi.
 
 ### Du GraphQL pour gérer ses données locales !
 
-Habituellement, pour récupérer/modifier des données sur une API GraphQL avec Apollo, il est assez courant d'utiliser les composants <Query> et <Mutation> afin d'effectuer les réquêtes sur le serveur. Apollo stocke automatiquement les données récupérées dans un cache afin d'éviter deux fois la même requête en parcourant l'application. L'idée derrière le Local State Management est de **combiner vos données locales avec ceux provenant du serveur** ! De ce fait, on va écrire des **requêtes GraphQL en direction de son cache** !
+Habituellement, pour récupérer/modifier des données sur une API GraphQL avec Apollo, il est assez courant d'utiliser les composants <Query> et <Mutation> afin d'effectuer les requêtes sur le serveur. Apollo stocke automatiquement les données récupérées dans un cache afin d'éviter deux fois la même requête en parcourant l'application. L'idée derrière le Local State Management est de **combiner vos données locales avec celles provenant du serveur** ! De ce fait, on va écrire des **requêtes GraphQL en direction de son cache** !
 
-Cela peut paraitre assez étrange, mais il est possible d'écrire un nouveau schema de données de la même manière que sur votre serveur GraphQL sauf que celle-ci se destine uniquement à votre application front-end. Une sorte d'extension du schema GraphQL serveur avec des données locales !
+Cela peut paraître assez étrange, mais il est possible d'écrire un nouveau schéma de données de la même manière que sur votre serveur GraphQL, sauf que celui-ci se destine uniquement à votre application front-end. Une sorte d'extension du schéma GraphQL serveur avec des données locales !
 
-### Un exemple vaut mieux qu'on long discours
+### Un exemple vaut mieux qu'un long discours
 
-Utilisons ce fameux Locale State management d'Apollo dans un exemple concret: **un système de notifications**. Dans notre application, il sera possible de faire apparaitre un message de notification pour spécifier qu'une action a bien été effectuée par l'utilisateur. La donnée de notification devra être stocké dans le cache Apollo afin d'être exploitable dans toute l'application.
+Utilisons ce fameux Local State management d'Apollo dans un exemple concret: **un système de notifications**. Dans notre application, il sera possible de faire apparaitre un message de notification pour spécifier qu'une action a bien été effectuée par l'utilisateur. La donnée de notification devra être stockée dans le cache Apollo afin d'être exploitable dans toute l'application.
 
 
 #### Initialisation du client Apollo
-Ici, notre client Apollo est déjà configuré, nous allons donc ajouter un nouveau module
+Ici, notre client Apollo est déjà configuré, nous allons donc ajouter un nouveau module :
 ```
 yarn add apollo-link-state
 ```
-Puis on l'ajoute au client Apollo dans notre code:
+Puis on l'ajoute au client Apollo dans notre code :
 
 ```js
 //client.js
@@ -61,11 +61,11 @@ const client =  new ApolloClient({
   cache,
 });
 ```
-Comme vous pouvez le constater, le stateLink contient 4 paramètres dont resolvers, typeDefs, defaults. Cela ne vous rappelle rien? Comme je disais en début d'article, **on va pouvoir définir un schéma, des resolvers, afin d'exploiter les données, comme sur une API GraphQL** !
+Comme vous pouvez le constater, le stateLink contient 4 paramètres dont resolvers, typeDefs, defaults. Cela ne vous rappelle rien ? Comme je le disais en début d'article, **on va pouvoir définir un schéma, des resolvers, afin d'exploiter les données, comme sur une API GraphQL** !
 
-#### Création du schema
+#### Création du schéma
 
-Avant d'injecter notre schema dans le client, il faut créer notre fichier typeDefs.js :
+Avant d'injecter notre schéma dans le client, il faut créer notre fichier typeDefs.js :
 
 ```json
 // typeDefs.js
@@ -98,10 +98,10 @@ export  const typeDefs =  `
   }
 `;
 ```
-Comme sur une API, on retrouve les types de Input, Query, Mutations, notre objet Notification ainsi qu'un enum. En lisant ce schema, on comprend que l'on va pouvoir lire la notification, en ajouter et la supprimer. 
+Comme sur une API, on retrouve les types de Input, Query, Mutations, notre objet Notification ainsi qu'un enum. En lisant ce schéma, on comprend que l'on va pouvoir lire la notification, en ajouter et la supprimer.
 
 #### Les resolvers
-Après avoir défini notre schema, il faut ajouter nos resolvers:
+Après avoir défini notre schéma, il faut ajouter nos resolvers :
 
 ```js
 //resolvers.js
@@ -125,13 +125,13 @@ export  const resolvers = {
 export  default resolvers;
 ```
 Le principe est relativement simple, on écrit directement dans le cache avec la méthode writeData. Notre input contient les paramètres envoyés à la mutation qui vont nous permettre de créer et insérer l'objet Notification dans notre cache.
-La propriété **__typename** est obligatoire et nécessaire pour Apollo, il faut lui spécifier le nom de l'objet dans votre Schema.
+La propriété **__typename** est obligatoire et nécessaire pour Apollo, il faut lui spécifier le nom de l'objet dans votre Schéma.
 Il est également possible de lire le cache avec le méthode readQuery si vous avez besoin des données précédentes avant la mutation. Par exemple, pour ajouter une nouvelle entrée à une liste.
 
 Vous remarquerez qu'il n'y a pas de resolver pour la query Notification, en effet, Apollo se charge de la retrouver automatiquement.
 
 #### Les requêtes
-Maintenant que nous avons fait notre schema et nos resolvers, il ne reste plus qu'à créer les queries/mutations.
+Maintenant que nous avons fait notre schéma et nos resolvers, il ne reste plus qu'à créer les queries/mutations.
 
 ```js
 //locale/notification.js
@@ -160,12 +160,12 @@ export  const DELETE_NOTIFICATION =  gql`
 `;
 ```
 
-Pour éviter de les confondre avec les requêtes serveurs, je vous conseille de les mettre dans un dossier séparé nommé locale ou client car la syntaxe est identique et la seule chose qui vous permet de les différencier est **la directive @client**. Pensez y, elle est très importante, sinon Apollo tentera une requête sur le serveur !
+Pour éviter de les confondre avec les requêtes serveurs, je vous conseille de les mettre dans un dossier séparé nommé "local" ou "client" car la syntaxe est identique, et la seule chose qui vous permet de les différencier est **la directive @client**. Pensez-y, elle est très importante, sinon Apollo tentera une requête sur le serveur !
 
 #### Les composants
 
-Il ne reste plus qu'à créer nos composants ! Le découpage est relativement simple, nous allons avoir un composant Notification qui va s'occuper d'executer la Query pour lire la notification dans le cache et l'afficher.
-Puis un HOC **withNotification** qui contiendra la mutation newNotification et qui permettra de l'injecter a n'importe quel composant qui a besoin de créer une notification.
+Il ne reste plus qu'à créer nos composants ! Le découpage est relativement simple, nous allons avoir un composant Notification qui va s'occuper d'exécuter la Query pour lire la notification dans le cache et l'afficher.
+Puis un HOC **withNotification** qui contiendra la mutation newNotification et qui permettra de l'injecter à n'importe quel composant qui a besoin de créer une notification.
 
 ```js
 import { GET_NOTIFICATION, DELETE_NOTIFICATION } from '../../graphql/locale/notification';
@@ -197,7 +197,7 @@ const Notification = () => (
 );
 ```
 
-Le composant est très simple avec une Query **GET_NOTIFICATION** qui va récupérer l'objet Notification, si celle-ci existe alors un message apparait. La Query agit comme un watcher, à chaque fois que l'objet Notification est manipulé dans le cache, un nouveau rendu est effectué!
+Le composant est très simple avec une Query **GET_NOTIFICATION** qui va récupérer l'objet Notification, si celle-ci existe alors un message apparait. La Query agit comme un watcher, à chaque fois que l'objet Notification est manipulé dans le cache, un nouveau rendu est effectué !
 J'ai également mis la mutation permettant de supprimer la notification car le composant Message possède une croix ou un TTL (time to live). Il éxecute la mutation lorsque l'utilisateur ferme le message ou au bout d'un certain temps (7000ms dans notre cas).
 
 ```js
@@ -231,7 +231,7 @@ const withNotification = WrappedComponent => class extends Component {
 };
 ```
 
-Vous risquez d'utiliser très souvent la mutation afin de créer des notifications dans votre application, personnellement, je préfère faire un HOC qui va injecter directement la fonction au composant enfant. Maintenant, il suffit d'ajouter ce HOC au bon vous semble afin de créer une notification !
+Vous risquez d'utiliser très souvent la mutation afin de créer des notifications dans votre application, personnellement, je préfère faire un HOC qui va injecter directement la fonction au composant enfant. Maintenant, il suffit d'ajouter ce HOC où bon vous semble afin de créer une notification !
 
 
 ```js
@@ -257,17 +257,17 @@ class Button extends Component {
 export default withNotification(Button);
 ```
 
-Et voila, a chaque click sur le bouton, le composant Notification, affichera un nouveau message pourtant les 2 composants sont complètement indépendants !
+Et voilà, à chaque clic sur le bouton, le composant Notification affichera un nouveau message. Pourtant les 2 composants sont complètement indépendants !
 
 #### Apollo DevTools
 
-Pour les habitués d'Apollo, sachez qu'il existe une extension, nommé Apollo DevTools, uniquement sur le navigateur Chrome. Il permet d'executer des Queries/Mutations via une interface exactement comme Playground. Etant donné que le Locale State Management étend le schema de votre API,  Apollo DevTools affiche également les requêtes en direction de son cache ! Plutôt pratique pour tester sans forçément manipuler l'interface de votre application.
+Pour les habitués d'Apollo, sachez qu'il existe une extension nommée Apollo DevTools, uniquement sur le navigateur Chrome. Elle permet d'éxecuter des Queries/Mutations via une interface exactement comme Playground. Etant donné que le Local State Management étend le schéma de votre API,  Apollo DevTools affiche également les requêtes en direction de son cache ! Plutôt pratique pour tester sans forçément manipuler l'interface de votre application.
 
 ### Pour conclure
 
-Le Locale State Management est un module intéressant de librairie Apollo car il présente plusieurs avantages. Premièrement, il vous évite de gérer et maintenir un Redux qui peut très vite devenir une usine à gaz ou un ContextApi, vous aurez donc juste à comprendre la librairie Apollo. Le code de votre application sera plus simple car utiliserez uniquement des composants Mutation/Query, je trouve cela assez de fun de gérer son store avec des requêtes GraphQL.
+Le Locale State Management est un module intéressant de librairie Apollo car il présente plusieurs avantages. Premièrement, il vous évite de gérer et maintenir un Redux qui peut très vite devenir une usine à gaz ou un ContextApi, vous aurez donc juste à comprendre la librairie Apollo. Le code de votre application sera plus simple car vous utiliserez uniquement des composants Mutation/Query, je trouve cela assez fun de gérer son store avec des requêtes GraphQL.
 
-En revanche, sachez que le Locale State Management est encore très jeune et il présente quelques problèmes notamment pour la gestion des erreurs dans vos resolvers, il est assez difficile de debug pour l'instant. Néanmoins, pour une petite application avec une capacité de développement limité, je vous conseille très fortement de l'utiliser, afin de vous concentrer uniquement sur Apollo ce qui peut vous faire gagner beaucoup de temps.
+En revanche, sachez que le Local State Management est encore très jeune et il présente quelques problèmes notamment pour la gestion des erreurs dans vos resolvers, il est assez difficile de debug pour l'instant. Néanmoins, pour une petite application avec une capacité de développement limitée, je vous conseille très fortement de l'utiliser, afin de vous concentrer uniquement sur Apollo ce qui peut vous faire gagner beaucoup de temps.
 
-Vous pouvez retrouver plus d'informations sur la documentation officielle d'Apollo React:
+Vous pouvez retrouver plus d'informations sur la documentation officielle d'Apollo React :
 - [Locale State Management](https://www.apollographql.com/docs/react/essentials/local-state.html)
