@@ -32,7 +32,7 @@ Cela peut paraître assez étrange, mais il est possible d'écrire un nouveau sc
 
 ## Un exemple vaut mieux qu'un long discours
 
-Utilisons ce fameux Local State management d'Apollo dans un exemple concret: **un système de notifications**. Dans notre application, il sera possible de faire apparaitre un message de notification pour spécifier qu'une action a bien été effectuée par l'utilisateur. La donnée de notification devra être stockée dans le cache Apollo afin d'être exploitable dans toute l'application.
+Utilisons ce fameux Local State management d'Apollo dans un exemple concret : **un système de notifications**. Dans notre application, il sera possible de faire apparaitre un message de notification pour spécifier qu'une action a bien été effectuée par l'utilisateur. La donnée de notification devra être stockée dans le cache Apollo afin d'être exploitable dans toute l'application.
 
 
 ### Initialisation du client Apollo
