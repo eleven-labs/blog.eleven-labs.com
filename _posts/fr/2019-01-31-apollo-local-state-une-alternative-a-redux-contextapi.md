@@ -98,6 +98,7 @@ export  const typeDefs =  `
 Comme sur une API, on retrouve les types de Input, Query, Mutations, notre objet Notification ainsi qu'un enum. En lisant ce schéma, on comprend que l'on va pouvoir lire la notification, en ajouter et la supprimer.
 
 ### Les resolvers
+
 Après avoir défini notre schéma, il faut ajouter nos resolvers :
 
 ```js
@@ -128,6 +129,7 @@ Il est également possible de lire le cache avec le méthode readQuery si vous a
 Vous remarquerez qu'il n'y a pas de resolver pour la query Notification, en effet, Apollo se charge de la retrouver automatiquement.
 
 ### Les requêtes
+
 Maintenant que nous avons fait notre schéma et nos resolvers, il ne reste plus qu'à créer les queries/mutations.
 
 ```js
