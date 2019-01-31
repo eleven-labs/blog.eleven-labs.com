@@ -26,7 +26,7 @@ Même si Redux est encore très présent, de nouveaux moyens permettent de gére
 
 ## Du GraphQL pour gérer ses données locales !
 
-Habituellement, pour récupérer/modifier des données sur une API GraphQL avec Apollo, il est assez courant d'utiliser les composants <Query> et <Mutation> afin d'effectuer les requêtes sur le serveur. Apollo stocke automatiquement les données récupérées dans un cache afin d'éviter deux fois la même requête en parcourant l'application. L'idée derrière le Local State Management est de **combiner vos données locales avec celles provenant du serveur** ! De ce fait, on va écrire des **requêtes GraphQL en direction de son cache** !
+Habituellement, pour récupérer/modifier des données sur une API GraphQL avec Apollo, il est assez courant d'utiliser les composants Query et Mutation afin d'effectuer les requêtes sur le serveur. Apollo stocke automatiquement les données récupérées dans un cache afin d'éviter deux fois la même requête en parcourant l'application. L'idée derrière le Local State Management est de **combiner vos données locales avec celles provenant du serveur !** De ce fait, on va écrire des **requêtes GraphQL en direction de son cache** !
 
 Cela peut paraître assez étrange, mais il est possible d'écrire un nouveau schéma de données de la même manière que sur votre serveur GraphQL, sauf que celui-ci se destine uniquement à votre application front-end. Une sorte d'extension du schéma GraphQL serveur avec des données locales !
 
