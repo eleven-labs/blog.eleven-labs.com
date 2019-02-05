@@ -36,7 +36,7 @@ C'est à ce moment que l'architecte a la mission de challenger le besoin. Ce n'e
 
 L'architecte doit alors essayer de faire comprendre que, avoir 4 salles de bain dans un 150m2 c'est pas l'idéal, ou alors qu'avoir un château en plein cœur de Paris, niveau budget ca va être compliqué.
 Les contraintes sont nombreuses: taille et forme du terrain, localisation géographique, équipe de chantier, réglementations locales…. 
-L'objectif est de sortir le vrai besoin, et si possible de s'inspirer de ces maisons témoins pour certains aspects de la maison (le mobilier de Spotify, ou les matériaux de Netflix) tout en respectant le triangle vertueux Qualité/Cout/Delais ainsi que ces contraintes.
+L'objectif est de sortir le vrai besoin, et si possible de s'inspirer de ces maisons témoins pour certains aspects de la maison (le mobilier de Spotify, ou les matériaux de Netflix) tout en respectant le triangle vertueux Qualité/Cout/Délais ainsi que ces contraintes.
 
 
 ## L'architecture
@@ -53,29 +53,28 @@ Vous l'aurez compris, ici la fondation est l'analogie des bases de données. Le 
 
 ### Les murs
 
-La deuxième partie, c'est le choix des matériaux et la position des murs. Les choix ici vont avoir plusieurs impactes, plutôt sur la vie même de la maison (choix des pièces, découpage) mais aussi peuvent être impactés par des contraintes extérieurs comme la position géographique. Par exemple, on va privilégié le bois dans les zones froides et montagneuses car le bois supporte mieux le gel et les changements de températures extrême. De la même entre les maisons au nord et dans le sud de la France, les matériaux et isolants seront différents car les écarts de températures de sont pas les mêmes. On privilégiera par exemple des briques plutôt que du parpaing. Pour l'intérieur, on est plutôt sur le gout du client: petites ou grandes pièces, murs nues ou peintures…
+La deuxième partie, c'est le choix des matériaux et la position des murs. Les choix ici vont avoir plusieurs impactes, plutôt sur la vie même de la maison (choix des pièces, découpage) mais aussi peuvent être impactés par des contraintes extérieurs comme la position géographique. Par exemple, on va privilégié le bois dans les zones froides et montagneuses car le bois supporte mieux le gel et les changements de températures extrême. De la même manièere, entre les maisons au nord et dans le sud de la France, les matériaux et les isolants seront différents car les écarts de températures ne sont pas les mêmes. On privilégiera par exemple des briques plutôt que du parpaing. Pour l'intérieur, on est plutôt sur le gout du client: petites ou grandes pièces, murs nues ou peintures…
 
-Hormis les murs porteurs, il est relativement simple de changer l'agencement des pièces, de séparer en deux les pièces d'eaux, de transformer un bureau en chambre, et d'ailleurs de manière général dans la vie d'une maison, ces changements arrivent relativement souvent. Une maison qui est vieillotte et souvent refait à neuf quand des nouveaux propriétaires achète la maison.
+Hormis les murs porteurs, il est relativement simple de changer l'agencement des pièces, de séparer en deux les pièces d'eaux, de transformer un bureau en chambre, et d'ailleurs de manière général dans la vie d'une maison, ces changements arrivent relativement souvent. Une maison qui est vieillotte et souvent refaite à neuf quand des nouveaux propriétaires achète la maison.
 
-Le but de l'architecte est de répondre aux besoins du client, tout en se projetant dans l'avenir et en challengeant le besoin auprès des clients (l'arrivé d'enfants dans le futur, l'agrandissement du salon avec une véranda…
+Le but de l'architecte est de répondre aux besoins du client, tout en se projetant dans l'avenir et en challengeant le besoin auprès des clients (l'arrivé d'enfants dans le futur, l'agrandissement du salon avec une véranda…).
 
 --- 
-Ici, on fait le rapprochement entre les murs/les pièces de la maison et les technologies que l'on utilise pour développer nos applications. Il y a des éléments que l'on évite de changer complément, comme les murs porteurs, ou l'on se contente de refaire une beauté par-dessus, comme un coup de crépit ou de peinture, et il y a des parties de la maison qui avec le temps deviennent obsolète et/ou l'usage n'est plus adapté et que l'on change complètement. Cela arrive de manière naturelle (les normes, les gouts et les matières évoluent avec le temps) tout comme les technologies mais aussi quand une nouvelle équipe reprend un projets, et qu'elle décide de tout "refacto".
+Ici, on fait le rapprochement entre les murs/les pièces de la maison et les technologies que l'on utilise pour développer nos applications. Il y a des éléments que l'on évite de changer complètement, comme les murs porteurs, ou l'on se contente de refaire une beauté par-dessus, comme un coup de crépit ou de peinture, et il y a des parties de la maison qui avec le temps deviennent obsolète et/ou l'usage n'est plus adapté et que l'on change complètement. Cela arrive de manière naturelle (les normes, les gouts et les matières évoluent avec le temps) tout comme les technologies mais aussi quand une nouvelle équipe reprend un projets, et qu'elle décide de tout "refacto".
 
 
 ### La toiture
 
-Dernière partie de l'architecture, la toiture. La ici on est moins soumis aux contraintes climatiques hormis dans de rare cas. C'est plus souvent l'harmonisation que l'on cherche, avec son quartier, ses voisins et au final les choix se limites à quelques "détails". Ici l'architecte doit simplement s'assurer que le toit soit a la bonne taille par rapport à la maison, ni trop grand ce qui couterait plus cher mais qui ne servirait a rien, ni trop petit. Il y a néanmoins une évolution dans l'architecture, grâce aux toits plats, ou "tuilleless" qui permettent contrairement aux toits en pente, de pouvoir agrandir sa maison dans n'importe quel sens, contrairement aux toits en pente ou seul l'agrandissement dans la longueur est possible. Cela reste pour le moment moins répandu même si on voit de plus en plus d'architecture de ce style avec le temps.
+Dernière partie de l'architecture, la toiture. La ici on est moins soumis aux contraintes climatiques hormis dans de rare cas. C'est plus souvent l'harmonisation que l'on cherche, avec son quartier, ses voisins et au final les choix se limites à quelques "détails". Ici l'architecte doit simplement s'assurer que le toit soit à la bonne taille par rapport à la maison, ni trop grand, ce qui couterait plus cher mais qui ne servirait à rien, ni trop petit. Il y a néanmoins une évolution dans l'architecture, grâce aux toits plats, ou "tuilleless" qui permettent contrairement aux toits en pente, de pouvoir agrandir sa maison dans n'importe quel sens, contrairement aux toits en pente ou seul l'agrandissement dans la longueur est possible. Cela reste pour le moment moins répandu même si on voit de plus en plus d'architecture de ce style avec le temps.
 
 ---
-Je pense que vous l'avez, ici la toiture c'est notre infrastructure. Globalement, on travail depuis les début sur du "on-premise", et ou les impacts entre tel ou tel technologie sont négligeable par rapport au reste, tant que cette infra est à l'échelle du besoin actuel et des besoins à moyen terme.  
-Malgré tout, les nouvelles solutions cloud et serverless apporte du nouveau coté infra et comment organiser son produit et gérer ses coûts. Cela apporte aussi plus de flexibilité, afin de ne pas sur-approvisionner son infra (et donc ses coûts) avant d'avoir le nombre d'utilisateur cible.
-
+Je pense que vous l'avez, ici la toiture c'est notre infrastructure. Globalement, on travail depuis les débuts sur du "on-premise", et ou les impacts entre tel ou tel technologie sont négligeable par rapport au reste, tant que cette infra est à l'échelle du besoin actuel et des besoins à moyen terme.  
+Malgré tout, les nouvelles solutions cloud et serverless apportent du nouveau coté infra avec plus de flexibilité, afin de ne pas sur-approvisionner son infrastructure (et donc ses coûts) avant d'avoir le nombre d'utilisateur cible.
 
 
 ## La construction
 
-Une fois les plans terminés et validé avec tous les acteurs, l'architecte va travailler étroitement avec l'équipe eu chantier, notamment avec le chef de chantier afin de s'assurer que les plans soient bien compris par tous. Il interviendra tout au long du chantier jusqu'à la restitution afin de s'assurer que tout se passe correctement et que les plans soient respectés.
+Une fois les plans terminés et validés avec tous les acteurs, l'architecte va travailler étroitement avec l'équipe du chantier, notamment avec le chef de chantier afin de s'assurer que les plans soient bien compris par tous. Il interviendra tout au long du chantier jusqu'à la restitution afin de s'assurer que tout se passe correctement et que les plans soient respectés.
 
 Il pourra aussi intervenir de manière ponctuelle en cas de problème ou de nouvelles demandes au cours du chantier afin de s'assurer de la pérennité de celui ci.
 
@@ -91,12 +90,12 @@ Vous l'aurez compris, l'architecte intervient à de nombreuses étapes de la vie
 Il y a d'autres contraintes non abordées dans cette vulgarisation que l'architecte doit garder en tête, comme celles des ressources humaines. Imaginons par exemple une technologie prometteuse pouvant facilité l'exécution d'un projet. L'architecte se devra aussi de calculer le risque d'utiliser cette technologie, si peu de personnes sont disponibles sur le marché pour l'employer.
 
 
-Si vous souhaitez dans le futur exercer ce (fabuleux) métier qu'est celui d'architecte logiciel, voici quelques conseils sorties de ma besace :
+Enfin, si vous souhaitez dans le futur exercer ce (fabuleux) métier qu'est celui d'architecte logiciel, voici quelques conseils sorties de ma besace :
 
 
 ### La veille
 
-Elle est déjà importante pour les développeurs, indispensable pour les architectes. La différence ici est que cette veille doit être la plus large et cross-domain possible. Le rôle d'un architecte est de cadrer des besoins inexistants jusqu'à maintenant. La veille doit donc est le premier point d'observation du reste du monde, ce qu'il se fait ailleurs et comment. Elle doit dépasser votre domaine de compétence afin d'agrandir vos connaissances et non "juste" les améliorer.
+Elle est déjà importante pour les développeurs, indispensable pour les architectes. La différence ici est que cette veille doit être la plus large et cross-domain possible. Le rôle d'un architecte est de cadrer des besoins inexistants jusqu'à maintenant. La veille doit donc être le premier point d'observation du reste du monde, ce qu'il se fait ailleurs et comment. Elle doit dépasser votre domaine de compétence afin d'agrandir vos connaissances et non "juste" les améliorer.
 Elle peut se faire sur internet mais aussi en échangeant avec d'autres personnes, comme lors de meetup.
 
 
@@ -107,7 +106,7 @@ On apprend toujours mieux en pratiquant. C'est aussi valable dans notre domaine.
 
 ### La remise en question
 
-Certainement la partie la plus difficile, apprenez de vos erreurs, ou des personnes meilleurs que vous. Voyez cela comme un challenge, d'être capable de les surpasser et d'ajouter leurs compétences aux vôtres. Et surtout, *sortez de votre zone de confort*.
+Certainement la partie la plus difficile, apprenez de vos erreurs, mais aussi des personnes meilleurs que vous. Voyez cela comme un challenge, d'être capable de les surpasser et d'ajouter leurs compétences aux vôtres. Et surtout, *sortez de votre zone de confort*.
 
 
 ### Être agnostique
