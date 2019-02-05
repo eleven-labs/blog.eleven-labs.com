@@ -3,12 +3,11 @@ layout: post
 title: Apollojs, mise en place d'une API GraphQL
 excerpt: "Dans cette article nous partageons les bonnes pratiques que nous avons mis en place au sein de nos projets GraphQL. Pour faire simple nous allons metre en place une API GraphQL devant une API Rest existante, l'ensemble des développements utiliserons NodeJS et ApolloJS."
 authors:
-    - fabien
+    - fpasquet
     - captainjojo
 lang: fr
 permalink: /fr/commencer-avec-apollojs/
 categories:
-    - React
     - GraphQL
 tags:
     - apollo
@@ -27,15 +26,16 @@ Dans cette article nous partageons les bonnes pratiques que nous avons mis en pl
 ## Sommaire
 
 - [Comment structurer son projet](#comment-structurer-son-projet)
-- [Implémenter notre schéma GraphQL](#)
-- [Créer un dataSource REST](#)
-- [Analyser et optimiser notre GraphQL](#)
+- [Implémenter notre schéma GraphQL](#implementer-notre-schema-graphql)
+- [Créer un dataSource REST](#creer-un-datasource-rest)
+
+- [Analyser et optimiser notre GraphQL](#analyser-et-optimiser-notre-graphql)
 
 ## Comment structurer son projet
 
 La premier chose que nous avons optimisé c'est l'arborescence du projet, en tant que développeur nous savons qu'il faut avoir une architecture clair et simple pour permettre à un developpeur de travaillé le plus rapidement possible et de ne pas avoir à chercher où placer son code.
 
-Nous allons tout d'abord commencer par cloner le projet starter kit qui se trouve sur notre [github](https://github.com/fpasquet/apollo-server-starter-kit) ou bien vous pouvez le tester directement sur [codesandbox](https://codesandbox.io/s/github/fpasquet/apollo-server-starter-kit/tree/feat/master).
+Nous allons tout d'abord commencer par cloner le projet starter kit qui se trouve sur notre [GitHub](https://github.com/eleven-labs/apollo-server-starter-kit) ou bien vous pouvez le tester directement sur [CodeSandbox](https://codesandbox.io/s/github/eleven-labs/apollo-server-starter-kit/tree/master).
 
 A quoi ressemble ce starter kit et que contient-il, voici l'arborescence de notre serveur apollo GraphQL:
 
@@ -110,7 +110,9 @@ extend type Query {
 }
 ```
 
-Pour plus de détails sur l'implémentation des types graphQL nous vous invitons à lire la documentation [ici](https://graphql.org/learn/schema/#type-system)
+Pour plus de détails sur l'implémentation des types graphQL nous vous invitons à lire la documentation [ici](https://graphql.org/learn/schema/#type-system).
+
+Une démo de cette étape est présente sur [CodeSandbox](https://codesandbox.io/s/github/eleven-labs/article-starter-kit-graphql/tree/step/definitions).
 
 ## Créer un dataSource REST
 
@@ -125,14 +127,8 @@ const { compact } = require("lodash");
 const { RESTDataSource } = require("apollo-datasource-rest")
 
 class CharacterRESTDataSource extends RESTDataSource {
-  constructor() {
-    super();
-    if (!process.env.ENDPOINT_GOT_API) {
-      throw new Error(
-        "You have not set the `ENDPOINT_GOT_API` environment variable !"
-      );
-    }
-    this.baseURL = process.env.ENDPOINT_GOT_API;
+  get baseURL() {
+      return this.context.ENDPOINT_GOT_API;
   }
 
   get characters() {
@@ -169,14 +165,8 @@ Ajoutons notre deuxième DataSource pour les maisons dans le fichier `src/dataSo
 const { RESTDataSource } = require("apollo-datasource-rest");
 
 class HouseRESTDataSource extends RESTDataSource {
-    constructor() {
-        super();
-        if (!process.env.ENDPOINT_GOT_API) {
-            throw new Error(
-                "You have not set the `ENDPOINT_GOT_API` environment variable !"
-            );
-        }
-        this.baseURL = process.env.ENDPOINT_GOT_API;
+    get baseURL() {
+        return this.context.ENDPOINT_GOT_API;
     }
 
     get houses() {
@@ -195,6 +185,8 @@ class HouseRESTDataSource extends RESTDataSource {
 
 module.exports = HouseRESTDataSource;
 ```
+
+La démo [CodeSandbox](https://codesandbox.io/s/github/eleven-labs/article-starter-kit-graphql/tree/step/dataSources).
 
 ## Ajoutons nos resolvers
 
@@ -269,10 +261,11 @@ Une fois vos résolvers terminé vous pouvez les tester dans l'interface `playgr
 
 ```graphql
 query CHARACTERS(
-  $withMother: Boolean = true
-  $withFather: Boolean = true
-  $withSpouse: Boolean = true
-  $withChildrens: Boolean = true
+  $withMother: Boolean = false
+  $withFather: Boolean = false
+  $withSpouse: Boolean = false
+  $withChildrens: Boolean = false
+  $withHouse: Boolean = false
 ) {
   characters {
     ...FullCharacter
@@ -280,9 +273,9 @@ query CHARACTERS(
 }
 
 query HOUSES(
-  $withLord: Boolean = true
-  $witHeirs: Boolean = true
-  $witCharacters: Boolean = true
+  $withLord: Boolean = false
+  $witHeirs: Boolean = false
+  $witCharacters: Boolean = false
 ) {
   houses {
     ...FullHouse
@@ -303,7 +296,7 @@ fragment FullCharacter on Character {
   childrens @include(if: $withChildrens) {
     ...Character
   }
-  house {
+  house @include(if: $withHouse) {
     ...House
   }
 }
@@ -334,10 +327,11 @@ fragment House on House {
   name
   imageUrl
 }
-
 ```
 
 Dans l'exemple de query nous utilisons des `fragment` qui agissent comme des `include` cela permet de ne pas répété plusieurs du code dans des Query. L'utilisation est assez simple une fois votre `fragment` crée vous pouvez l'utilisé dans vos query en utlisant `...`, ça fonctionne de la même manière que l'affectation par décomposition ([https://developer.mozilla.org/fr/docs/Web/JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition)).
+
+La démo [CodeSandbox](https://codesandbox.io/s/github/eleven-labs/article-starter-kit-graphql/tree/step/resolvers).
 
 ## Analyser et optimiser notre API GraphQL
 
@@ -590,7 +584,13 @@ Après avoir activer l'extension on va constater que dans les réponses de chacu
 }
 ```
 
-Comme vous pouvez le constatez nous avons des temps d'exécution un peu long, nous allons donc optimiser nos DataSources en implémentant des DataLoaders:
+Comme vous pouvez le constatez nous avons des temps d'exécution un peu long, dans la prochaine étape nous verrons comment l'optimiser.
+
+La démo [CodeSandbox](https://codesandbox.io/s/github/eleven-labs/article-starter-kit-graphql/tree/step/rest-extension).
+
+## Optimiser notre API GraphQL
+
+Nous allons donc optimiser nos DataSources en implémentant des DataLoaders:
 
 Les Dataloaders sont des utilitaires générique fournit par Facebook sur le projet github suivant
 [https://github.com/facebook/dataloader](https://github.com/facebook/dataloader).  Il permet de gérer la récupération des source de donnée (ici via une ApiRest) en utilisant du cache et de la récupération via `batch` cela permet de gagner en performance.
@@ -598,67 +598,64 @@ Les Dataloaders sont des utilitaires générique fournit par Facebook sur le pro
 On commencera par notre dataSource des personnages, `src/dataSource/CharacterRESTDataSource.js`:
 
 ```js
-const DataLoader = require("dataloader");
 const { compact } = require("lodash");
+const DataLoader = require("dataloader");
 const { RESTDataSource } = require("../dataLayers/rest");
 
 class CharacterRESTDataSource extends RESTDataSource {
-  constructor() {
-    super();
-    if (!process.env.ENDPOINT_GOT_API) {
-      throw new Error(
-        "You have not set the `ENDPOINT_GOT_API` environment variable !"
-      );
-    }
-    this.baseURL = process.env.ENDPOINT_GOT_API;
-    this.limitRequest = process.env.LIMIT_REQUEST || 25;
-  }
-
-  get characters() {
-    return this.get("/characters");
-  }
-
-  findCharacterByKey(key) {
-    return this.dataLoaders.characterByKey.load(key);
-  }
-
-  async filterCharactersByKeys(keys) {
-    let characters = keys.map(key => this.findCharacterByKey(key));
-    return Promise.all(characters).then(([...results]) => compact(results));
-  }
-
-  async filterCharactersByHouseKey(houseKey) {
-    return this.characters.then(characters => characters.filter(character => character.royalHouseKey === houseKey));
-  }
-
-  get dataLoaders() {
-    if (!this._dataLoaders) {
-      this._dataLoaders = {
-        characterByKey: this._characterByKeyDataLoader
-      }
+    get baseURL() {
+        return this.context.ENDPOINT_GOT_API;
     }
 
-    return this._dataLoaders;
-  }
+    get limitRequest() {
+        return this.context.LIMIT_REQUEST || 25;
+    }
 
-  get _characterByKeyDataLoader() {
-    return new DataLoader(keys => {
-      let promise;
-      if (keys.length > this.limitRequest) {
-        promise = this.characters;
-      } else {
-        const promises = keys.map(key => this.get(`/character/${key}`).catch(error => {
-          if (error.extensions.response.status === 404) {
-            return {};
-          }
-          return error;
-        }));
-        promise = Promise.all(promises);
-      }
+    get characters() {
+        return this.get("/characters");
+    }
 
-      return promise.then(items => keys.map(key => items.find(({ key: currentKey }) => currentKey === key)));
-    });
-  }
+    findCharacterByKey(key) {
+        return this.dataLoaders.characterByKey.load(key);
+    }
+
+    async filterCharactersByKeys(keys) {
+        let characters = keys.map(key => this.findCharacterByKey(key));
+        return Promise.all(characters).then(([...results]) => compact(results));
+    }
+
+    async filterCharactersByHouseKey(houseKey) {
+        return this.characters.then(characters => characters.filter(character => character.royalHouseKey === houseKey));
+    }
+
+    get dataLoaders() {
+        if (!this._dataLoaders) {
+            this._dataLoaders = {
+                characterByKey: this._characterByKeyDataLoader
+            }
+        }
+
+        return this._dataLoaders;
+    }
+
+    get _characterByKeyDataLoader() {
+        return new DataLoader(keys => {
+            let promise;
+            if (keys.length > this.limitRequest) {
+                promise = this.characters;
+            } else {
+                const promises = keys.map(key => this.get(`/character/${key}`).catch(error => {
+                    if (error.extensions.response.status === 404) {
+                        return {};
+                    }
+                    return error;
+                }));
+                promise = Promise.all(promises);
+            }
+
+            return promise.then(items => keys.map(key => items.find(({ key: currentKey }) => currentKey === key)));
+        });
+    }
 }
 
 module.exports = CharacterRESTDataSource;
@@ -671,15 +668,12 @@ const DataLoader = require("dataloader");
 const { RESTDataSource } = require("../dataLayers/rest");
 
 class HouseRESTDataSource extends RESTDataSource {
-    constructor() {
-        super();
-        if (!process.env.ENDPOINT_GOT_API) {
-            throw new Error(
-                "You have not set the `ENDPOINT_GOT_API` environment variable !"
-            );
-        }
-        this.baseURL = process.env.ENDPOINT_GOT_API;
-        this.limitRequest = process.env.LIMIT_REQUEST || 25;
+    get baseURL() {
+        return this.context.ENDPOINT_GOT_API;
+    }
+
+    get limitRequest() {
+        return this.context.LIMIT_REQUEST || 25;
     }
 
     get houses() {
@@ -726,7 +720,47 @@ Donc notre cas le Dataloader nous permet de récuperer les `character` de façon
 
 Grace à cela vous pouvez constaté une amélioration des performances de la query.
 
+```json
+{
+    "data": {...},
+    "extensions": {
+        "rest": {
+          "minExecutionTimeRequest": 108.412019,
+          "maxExecutionTimeRequest": 190.706104,
+          "globalExecutionTimeRequest": 1727.125432,
+          "numbersOfRequests": 14,
+          "requests": [
+            {
+              "executionTimeRequest": "187.381987 ms",
+              "request": {
+                "url": "https://game-of-throne-api.appspot.com/api/characters",
+                "method": "GET",
+                "params": {},
+                "headers": {},
+                "status": 200,
+                "statusText": "OK",
+                "error": null
+              }
+            },
+            {
+              "executionTimeRequest": "108.412019 ms",
+              "request": {
+                "url": "https://game-of-throne-api.appspot.com/api/house/L2luZGV4LnBocC9Ib3VzZV9EdXJyYW5kb24=",
+                "method": "GET",
+                "params": {},
+                "headers": {},
+                "status": 200,
+                "statusText": "OK",
+                "error": null
+              }
+            },
+            ...
+        ]
+    }
+}
+```
 
+La démo [CodeSandbox](https://codesandbox.io/s/github/eleven-labs/article-starter-kit-graphql/tree/step/optimization-with-dataLoaders).
 
 ### Conclusion
 
