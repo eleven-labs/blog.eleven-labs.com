@@ -5,7 +5,7 @@ title: Rémy Jardinet
 twitter: Pouz0r
 permalink: /authors/pouzor/
 ---
-Lead développeur chez France TV, je suis specialisé dans les technos back, avec une orientation DATA.
+Software architect chez Eleven Labs, spécialisé dans la DATA et les solutions à fort trafic. <3 IOT
 Vous pouvez me retrouver sur les réseaux sociaux:
 
 Twitter: @Pouz0r
