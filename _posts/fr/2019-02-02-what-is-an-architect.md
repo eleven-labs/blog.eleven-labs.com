@@ -20,23 +20,23 @@ Voila une question que l'on me pose souvent, au sein de mon entourage profession
 Alors comment leurs expliquer ce que je fais, et sans entrer dans des détails trop techniques qui pourraient les perdre. 
 C'est d'autant plus intéressant que c'est dans le rôle quotidien de "l'archi" de vulgariser ses choix, notamment au niveau des responsables "fonctionnels" afin de se faire comprendre, et de faire comprendre les enjeux, le pourquoi et le comment.
 
-J'étais tombé sur cet (article)[https://blogue.genium360.ca/article/actualites/7-techniques-de-communication-en-matiere-de-vulgarisation-scientifique/] il a quelque temps, et je pense qu'il présente très bien la manière dont on doit présenter aux néophytes notre métier. Cette introduction mise à part, je vais à présent vous présenter le métier d'architecte logiciel, sans parler à un seul moment de technologies, et en utilisant l'analogie avec l'architecte/ure (construction/btp) afin que même votre mamie du cantal comprendra ce que vous faites, et l'importance de ce rôle dans la construction de logiciel (web).
+J'étais tombé sur cet [article](https://blogue.genium360.ca/article/actualites/7-techniques-de-communication-en-matiere-de-vulgarisation-scientifique/) il a quelque temps, et je pense qu'il présente très bien la manière dont on doit présenter aux néophytes notre métier. Cette introduction mise à part, je vais à présent vous présenter le métier d'architecte logiciel, sans parler à un seul moment de technologies, et en utilisant l'analogie avec l'architecte/ure (construction/btp) afin que même votre mamie comprenne ce que vous faites, et l'importance de ce rôle dans la construction de logiciel (web).
 
 
 ## Le besoin
 
-En général, comme tout bon projet, cela commence chez le PrOmoteur. Un client arrive, il veut la maison de ses rêves.Mais avec ses rêves, il arrive très souvent avec ses contraintes : son budget, ses délais, son terrain, la localisation géographique (chaud, froid, site protégé ect).C'est à cette première étape que l'architecte entre en action. Son but, dans un premier temps, est d'évaluer la faisabilité du besoin.
+En général, comme tout bon projet, cela commence chez le PrOmoteur. Un client arrive, il veut la maison de ses rêves. Mais avec ses rêves, il arrive auusi très souvent avec ses contraintes : son budget, ses délais, son terrain, sa localisation géographique (chaud, froid, site protégé ect). C'est à cette première étape que l'architecte entre en action. Son but, dans un premier temps, est d'évaluer la faisabilité du besoin.
 
-L'objectif : savoir si le besoin est réalisable au vue des contraintes, le plus simple en général c'est le ratio qualité / coup / délai. On peut challenger sur deux contraintes, jamais sur les trois.
+L'objectif : savoir si le besoin est réalisable au vue des contraintes. Le plus simple en général c'est le ratio qualité / coup / délai. On peut challenger sur deux contraintes, jamais sur les trois.
 ![Trium Vira]({{site.baseurl}}/assets/2019-02-02-what-is-an-architect/triumvira.png)
 
 
 C'est à ce moment que l'architecte a la mission de challenger le besoin. Ce n'est pas rare que le client arrive après avoir visité des maisons témoins : 
-"Je viens de visiter la maison Spotify/Netflix/Blablacar, c'est génial je veux le même chose ! Je veux 3 chambres, 4 SDB et un séjour de 50m2, voici mon terrain et mon budget".
+"Je viens de visiter la maison `Spotify`, `Netflix` ou encore `Blablacar`, c'est génial je veux le même chose ! Je veux 3 chambres, 4 SDB et un séjour de 50m2, voici mon terrain et mon budget".
 
 L'architecte doit alors essayer de faire comprendre que, avoir 4 salles de bain dans un 150m2 c'est pas l'idéal, ou alors qu'avoir un château en plein cœur de Paris, niveau budget ca va être compliqué.
 Les contraintes sont nombreuses: taille et forme du terrain, localisation géographique, équipe de chantier, réglementations locales…. 
-L'objectif est de sortir le vrai besoin, et si possible de s'inspirer de ces maisons témoins pour certain aspect de la maison (le mobilier de Spotify, ou les matériaux de Netflix) tout en respectant le triangle vertueux Qualité/Cout/Delais ainsi que ces contraintes.
+L'objectif est de sortir le vrai besoin, et si possible de s'inspirer de ces maisons témoins pour certains aspects de la maison (le mobilier de Spotify, ou les matériaux de Netflix) tout en respectant le triangle vertueux Qualité/Cout/Delais ainsi que ces contraintes.
 
 
 ## L'architecture
@@ -45,7 +45,7 @@ Une fois le cahier des charges bien définit avec les différents acteurs, l'arc
 
 ### Les fondations
 
-La fondation est l'une des plus importante parties de maison, et ce pour une raison simple : toute la maison va reposer dessus. Donc le choix de la fondation est vitale car il sera quasiment impossible de changer une fois la maison construite. Elle doit être choisie et dimensionner en fonction en fonction de la construction (une tour n'a pas les même fondations qu'une maison plein pied) mais aussi en fonction du terrain. Un terrain en pente, sur un sol sableux ou marécageux ne demandera pas le même type de fondation. Il est aussi intéressant en faisant les plans de la fondation de s'intéresser au futur de la maison : est ce qu'il y aura un garage dans le futur, une terrasse ect… et du coup de prévoir à l'avance ses informations dans le plan, même si ils ne seront réalisés que dans le futur.
+La fondation est l'une des plus importantes parties de maison, et cela pour une raison simple : toute la maison va reposer dessus. Donc le choix de la fondation est vitale car il sera quasiment impossible de changer une fois la maison construite. Elle doit être choisie et dimensionnée en fonction de la construction (une tour n'a pas les mêmes fondations qu'une maison plein pied) mais aussi en fonction du terrain. Un terrain en pente, sur un sol sableux ou marécageux ne demandera pas le même type de fondation. Il est aussi intéressant en faisant les plans de la fondation de s'intéresser au futur de la maison : est ce qu'il y aura un garage dans le futur, une terrasse ect… et du coup de prévoir à l'avance ses informations dans le plan, même si ils ne seront réalisés que dans le futur.
 
 ---
 Vous l'aurez compris, ici la fondation est l'analogie des bases de données. Le choix est structurant, car il est vraiment très difficile de changer de type de BDD (SQL vers NoSQL par exemple) sans interruption de service ou sans changer des grosses parties du projet.  Et surtout en fonction des contraintes et du besoin, quel type de BDD on choisit (SQL, NoSQL, Graph ect…) et comment on la dimensionne (prévoir les usages futurs).
@@ -112,6 +112,6 @@ Certainement la partie la plus difficile, apprenez de vos erreurs, ou des person
 
 ### Être agnostique
 
-Enfin dernier point, ne vous attachez pas (trop) aux technologies. Apprenez les forces et les faiblesses de chacune et choisissez en fonction de ces critères factuels. Evitez la "hype train" voir le (HDD)[https://blog.daftcode.pl/hype-driven-development-3469fc2e9b22]. Formalisez d'abords votre architecture de manière agnostique, puis choisissez chaque brique en fonction des contraintes et des besoins. Si vous souhaitez malgré tout partir sur une nouvelle technologie, mesurez les risques et communiquez dessus avec l'ensemble des acteurs.
+Enfin dernier point, ne vous attachez pas (trop) aux technologies. Apprenez les forces et les faiblesses de chacune et choisissez en fonction de ces critères factuels. Evitez la "hype train" voir le [HDD](https://blog.daftcode.pl/hype-driven-development-3469fc2e9b22). Formalisez d'abords votre architecture de manière agnostique, puis choisissez chaque brique en fonction des contraintes et des besoins. Si vous souhaitez malgré tout partir sur une nouvelle technologie, mesurez les risques et communiquez dessus avec l'ensemble des acteurs.
 
 ![Hype Driven Development]({{site.baseurl}}/assets/2019-02-02-what-is-an-architect/hdd.png)
