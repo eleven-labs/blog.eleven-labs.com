@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C'est quoi le metier d'architecte
+title: Qu'est ce qu'un architecte logiciel ?
 excerpt: Ah tu es architecte c'est cool ça… Mais en fait ça consiste en quoi ?.
 authors:
     - pouzor
@@ -10,7 +10,7 @@ categories:
     - architecture
 tags:
     - architecture
-    - development
+    - développement
     - vulgarisation
 cover: /assets/2019-02-02-what-is-an-architect/cover.jpg   
 ---
@@ -19,22 +19,24 @@ Voila une question que l'on me pose souvent, au sein de mon entourage profession
 
 Alors comment leurs expliquer ce que je fais, et sans entrer dans des détails trop techniques qui pourraient les perdre. 
 C'est d'autant plus intéressant que c'est dans le rôle quotidien de "l'archi" de vulgariser ses choix, notamment au niveau des responsables "fonctionnels" afin de se faire comprendre, et de faire comprendre les enjeux, le pourquoi et le comment.
-J'étais tombé sur cet article il a quelque temps, et je pense qu'il présente très bien la manière dont on doit présenter aux néophytes notre métier.()[]Cette introduction mise à part, je vais à présent vous présenter le métier d'architecte logiciel, sans parler à un seul moment de technologies, et en utilisant l'analogie avec l'architecte/ure (construction/btp) afin que même votre mamie du cantal comprendra ce que vous faites, et l'importance de ce rôle dans la construction de logiciel (web).
+
+J'étais tombé sur cet (article)[https://blogue.genium360.ca/article/actualites/7-techniques-de-communication-en-matiere-de-vulgarisation-scientifique/] il a quelque temps, et je pense qu'il présente très bien la manière dont on doit présenter aux néophytes notre métier. Cette introduction mise à part, je vais à présent vous présenter le métier d'architecte logiciel, sans parler à un seul moment de technologies, et en utilisant l'analogie avec l'architecte/ure (construction/btp) afin que même votre mamie du cantal comprendra ce que vous faites, et l'importance de ce rôle dans la construction de logiciel (web).
 
 
 ## Le besoin
 
-En général, comme tout bon projet, cela commence chez le PrOmoteur. Un client arrive, il veut la maison de ses rêves.Mais avec ses rêves, il arrive très souvent avec ses contraintes : son budget, ses délais, son terrain, la localisation géographique (chaud, froid, site protégé ect).C'est à cette première étape que l'architecte entre en action. Son but, dans un premier temps, est d'évaluer la faisabilité du besoin. 
+En général, comme tout bon projet, cela commence chez le PrOmoteur. Un client arrive, il veut la maison de ses rêves.Mais avec ses rêves, il arrive très souvent avec ses contraintes : son budget, ses délais, son terrain, la localisation géographique (chaud, froid, site protégé ect).C'est à cette première étape que l'architecte entre en action. Son but, dans un premier temps, est d'évaluer la faisabilité du besoin.
+
 L'objectif : savoir si le besoin est réalisable au vue des contraintes, le plus simple en général c'est le ratio qualité / coup / délai. On peut challenger sur deux contraintes, jamais sur les trois.
 ![Trium Vira]({{site.baseurl}}/assets/2019-02-02-what-is-an-architect/triumvira.png)
 
 
 C'est à ce moment que l'architecte a la mission de challenger le besoin. Ce n'est pas rare que le client arrive après avoir visité des maisons témoins : 
-"Je viens de visiter la maison Spotify/Netflix/Blablacar, c'est génial je veux le même chose ! Je veux 3 chambres, 4 SDB et un sejour de 50m2, voici mon terrain et mon budget".
+"Je viens de visiter la maison Spotify/Netflix/Blablacar, c'est génial je veux le même chose ! Je veux 3 chambres, 4 SDB et un séjour de 50m2, voici mon terrain et mon budget".
 
 L'architecte doit alors essayer de faire comprendre que, avoir 4 salles de bain dans un 150m2 c'est pas l'idéal, ou alors qu'avoir un château en plein cœur de Paris, niveau budget ca va être compliqué.
 Les contraintes sont nombreuses: taille et forme du terrain, localisation géographique, équipe de chantier, réglementations locales…. 
-L'objectif est de sortir le vrai besoin, et si possible de s'inspirer de ces maisons témoins pour certain aspect de la maison (le mobilier de Spotify, ou les matériaux de Netflix) tout en respectant le triangle vertueux Qualité/Cout/Delais ainsi que ces containtes.
+L'objectif est de sortir le vrai besoin, et si possible de s'inspirer de ces maisons témoins pour certain aspect de la maison (le mobilier de Spotify, ou les matériaux de Netflix) tout en respectant le triangle vertueux Qualité/Cout/Delais ainsi que ces contraintes.
 
 
 ## L'architecture
@@ -73,11 +75,43 @@ Malgré tout, les nouvelles solutions cloud et serverless apporte du nouveau cot
 
 ## La construction
 
-Une fois les plans terminés et validé avec tous les acteurs, l'architecte va travailler etroitement avec l'equipe eu chantier, notemment avec le chef de chantier afin de s'assurer que les plans soient bien compris par tous. Il interviendra tout au long du chantier jusqu'à la restitution afin de s'assurer que tout se passe correctement et que les plans soient respectés.
+Une fois les plans terminés et validé avec tous les acteurs, l'architecte va travailler étroitement avec l'équipe eu chantier, notamment avec le chef de chantier afin de s'assurer que les plans soient bien compris par tous. Il interviendra tout au long du chantier jusqu'à la restitution afin de s'assurer que tout se passe correctement et que les plans soient respectés.
 
-Il pourra aussi intervenir de maniere ponctuelle en cas de probleme ou de nouvelles demandes au cours du chantier afin de s'assurer de la perennité de celui ci.
+Il pourra aussi intervenir de manière ponctuelle en cas de problème ou de nouvelles demandes au cours du chantier afin de s'assurer de la pérennité de celui ci.
 
 
 ## L'après
 
-L'architecte pourra intervenir dans le futur (une fois la maison terminée) pour de potentiels agrandissements comme ajouter un étage ou une veranda. La, son objectif sera de s'assurer que ces "extensions" à la maison soit en cohérence avec le reste de la construction, comme eviter de changer les materiaux ou les couleurs si le besoin n'y est pas. Il va devoir aussi s'assurer que ces "extensions" ne mettent pas en risque la construction existante. On pourra prendre l'exemple de la construction d'une cave sous la maison, qui pourrait poser un problème d'affaissement de celle ci.
+L'architecte pourra intervenir dans le futur (une fois le chantier terminée) pour de potentiels agrandissements comme ajouter un étage ou une véranda. La, son objectif sera de s'assurer que ces "extensions" soit en cohérence avec le reste de la construction, comme éviter de changer les matériaux ou les couleurs si le besoin n'y est pas. Il va devoir aussi s'assurer que ces "extensions" ne mettent pas en risque la construction existante. On pourra prendre l'exemple de la construction d'une cave sous la maison, qui pourrait poser un problème d'affaissement de celle ci.
+
+## En conclusion
+
+Vous l'aurez compris, l'architecte intervient à de nombreuses étapes de la vie d'un projet, mais son implication au début de celui est la plus importante. Il sera le garant de la viabilité du projet dans le long terme, ainsi que de la cohérence de celui-ci au vue du contexte où celui-ci se déroule.
+
+Il y a d'autres contraintes non abordées dans cette vulgarisation que l'architecte doit garder en tête, comme celles des ressources humaines. Imaginons par exemple une technologie prometteuse pouvant facilité l'exécution d'un projet. L'architecte se devra aussi de calculer le risque d'utiliser cette technologie, si peu de personnes sont disponibles sur le marché pour l'employer.
+
+
+Si vous souhaitez dans le futur exercer ce (fabuleux) métier qu'est celui d'architecte logiciel, voici quelques conseils sorties de ma besace :
+
+
+### La veille
+
+Elle est déjà importante pour les développeurs, indispensable pour les architectes. La différence ici est que cette veille doit être la plus large et cross-domain possible. Le rôle d'un architecte est de cadrer des besoins inexistants jusqu'à maintenant. La veille doit donc est le premier point d'observation du reste du monde, ce qu'il se fait ailleurs et comment. Elle doit dépasser votre domaine de compétence afin d'agrandir vos connaissances et non "juste" les améliorer.
+Elle peut se faire sur internet mais aussi en échangeant avec d'autres personnes, comme lors de meetup.
+
+
+### Le POC
+
+On apprend toujours mieux en pratiquant. C'est aussi valable dans notre domaine. Vous avez découvert une nouvelle pratique ou technologie, alors lancez vous et faites des tests. Ne vous arrêtez pas à un simple `hello world` mais essayez de trouver un use-case concret et mettez le en œuvre. Evitez aussi de faire ça aussi en production, sur un sujet critique ;)
+
+
+### La remise en question
+
+Certainement la partie la plus difficile, apprenez de vos erreurs, ou des personnes meilleurs que vous. Voyez cela comme un challenge, d'être capable de les surpasser et d'ajouter leurs compétences aux vôtres. Et surtout, *sortez de votre zone de confort*.
+
+
+### Être agnostique
+
+Enfin dernier point, ne vous attachez pas (trop) aux technologies. Apprenez les forces et les faiblesses de chacune et choisissez en fonction de ces critères factuels. Evitez la "hype train" voir le (HDD)[https://blog.daftcode.pl/hype-driven-development-3469fc2e9b22]. Formalisez d'abords votre architecture de manière agnostique, puis choisissez chaque brique en fonction des contraintes et des besoins. Si vous souhaitez malgré tout partir sur une nouvelle technologie, mesurez les risques et communiquez dessus avec l'ensemble des acteurs.
+
+![Hype Driven Development]({{site.baseurl}}/assets/2019-02-02-what-is-an-architect/hdd.png)
