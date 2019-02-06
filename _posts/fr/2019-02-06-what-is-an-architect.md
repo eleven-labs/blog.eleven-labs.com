@@ -29,8 +29,9 @@ Cette introduction mise à part, je vais à présent vous présenter le métier 
 
 En général, comme tout bon projet, cela commence chez le Promoteur. Un client arrive, et il veut la maison de ses rêves. Mais avec ses rêves, il arrive aussi très souvent avec ses contraintes : son budget, ses délais, son terrain, sa localisation géographique (chaud, froid, site protégé, ect). C'est à cette première étape que l'architecte entre en action. Son but, dans un premier temps, est d'évaluer la faisabilité du besoin.
 
-L'objectif : savoir si le besoin est réalisable au vu des contraintes. Le plus simple en général est d'utiliser le ratio qualité / coût / délai. Il est important e noter ici, qu'on peut challenger le projet sur deux de ces contraintes, mais jamais sur les trois en même temps. ![Trium Vira]({{site.baseurl}}/assets/2019-02-06-what-is-an-architect/triumvira.png)
+L'objectif : savoir si le besoin est réalisable au vu des contraintes. Le plus simple en général est d'utiliser le ratio qualité / coût / délai. Il est important e noter ici, qu'on peut challenger le projet sur deux de ces contraintes, mais jamais sur les trois en même temps. 
 
+![Trium Vira]({{site.baseurl}}/assets/2019-02-06-what-is-an-architect/triumvira.png)
 
 C'est à ce moment que l'architecte a la mission de challenger le besoin. Il n'est pas rare que le client arrive après avoir visité des maisons témoins : 
 "Je viens de visiter la maison `Spotify`, `Netflix` ou encore `Blablacar`, c'est génial je veux le même chose ! Je veux 3 chambres, 4 Salles de Bain et un séjour de 50m2, voici mon terrain et mon budget".
