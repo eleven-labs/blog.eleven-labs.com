@@ -5,14 +5,14 @@ excerpt: Ah tu es architecte c'est cool ça… Mais en fait ça consiste en quoi
 authors:
     - pouzor
 lang: fr
-permalink: /fr/what-is-an-architect/
+permalink: /fr/c-est-quoi-un-architecte-logiciel/
 categories:
     - architecture
 tags:
     - architecture
     - développement
     - vulgarisation
-cover: /assets/2019-02-02-what-is-an-architect/cover.jpg   
+cover: /assets/2019-02-06-what-is-an-architect/cover.jpg   
 ---
 
 Voilà une question qui m'a souvent été posée dans mon entourage professionnel, mais aussi par ma mamie du cantal, pour qui l'IT se limite à son Windows XP et sa messagerie Orange.
@@ -29,7 +29,7 @@ Cette introduction mise à part, je vais à présent vous présenter le métier 
 
 En général, comme tout bon projet, cela commence chez le PrOmoteur. Un client arrive, et il veut la maison de ses rêves. Mais avec ses rêves, il arrive aussi très souvent avec ses contraintes : son budget, ses délais, son terrain, sa localisation géographique (chaud, froid, site protégé, ect). C'est à cette première étape que l'architecte entre en action. Son but, dans un premier temps, est d'évaluer la faisabilité du besoin.
 
-L'objectif : savoir si le besoin est réalisable au vu des contraintes. Le plus simple en général est d'utiliser le ratio qualité / coût / délai. Il est important e noter ici, qu'on peut challenger le projet sur deux de ces contraintes, mais jamais sur les trois en même temps. ![Trium Vira]({{site.baseurl}}/assets/2019-02-02-what-is-an-architect/triumvira.png)
+L'objectif : savoir si le besoin est réalisable au vu des contraintes. Le plus simple en général est d'utiliser le ratio qualité / coût / délai. Il est important e noter ici, qu'on peut challenger le projet sur deux de ces contraintes, mais jamais sur les trois en même temps. ![Trium Vira]({{site.baseurl}}/assets/2019-02-06-what-is-an-architect/triumvira.png)
 
 
 C'est à ce moment que l'architecte a la mission de challenger le besoin. Il n'est pas rare que le client arrive après avoir visité des maisons témoins : 
@@ -114,4 +114,4 @@ Certainement la partie la plus difficile, apprenez de vos erreurs, mais aussi de
 
 Enfin dernier point, ne vous attachez pas (trop) aux technologies. Apprenez les forces et les faiblesses de chacune et choisissez en fonction de ces critères factuels. Evitez la "hype train" voir le [HDD](https://blog.daftcode.pl/hype-driven-development-3469fc2e9b22). Formalisez d'abord votre architecture de manière agnostique, puis choisissez chaque brique en fonction des contraintes et des besoins. Si vous souhaitez malgré tout partir sur une nouvelle technologie, mesurez les risques et communiquez dessus avec l'ensemble des acteurs.
 
-![Hype Driven Development]({{site.baseurl}}/assets/2019-02-02-what-is-an-architect/hdd.png)
+![Hype Driven Development]({{site.baseurl}}/assets/2019-02-06-what-is-an-architect/hdd.png)
