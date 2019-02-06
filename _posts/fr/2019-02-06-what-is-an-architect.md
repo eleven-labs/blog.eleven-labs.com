@@ -12,7 +12,7 @@ tags:
     - architecture
     - développement
     - vulgarisation
-cover: /assets/2019-02-02-what-is-an-architect/cover.jpg   
+cover: /assets/2019-02-06-what-is-an-architect/cover.jpg   
 ---
 
 Voila une question que l'on me pose souvent, au sein de mon entourage professionnel, mais aussi par ma mamie du cantal où l'IT ne se limite qu'à son Windows XP et sa messagerie Orange.
@@ -28,7 +28,7 @@ J'étais tombé sur cet [article](https://blogue.genium360.ca/article/actualites
 En général, comme tout bon projet, cela commence chez le PrOmoteur. Un client arrive, il veut la maison de ses rêves. Mais avec ses rêves, il arrive aussi très souvent avec ses contraintes : son budget, ses délais, son terrain, sa localisation géographique (chaud, froid, site protégé, ect). C'est à cette première étape que l'architecte entre en action. Son but, dans un premier temps, est d'évaluer la faisabilité du besoin.
 
 L'objectif : savoir si le besoin est réalisable au vue des contraintes. Le plus simple en général c'est le ratio qualité / coup / délai. On peut challenger sur deux contraintes, jamais sur les trois.
-![Trium Vira]({{site.baseurl}}/assets/2019-02-02-what-is-an-architect/triumvira.png)
+![Trium Vira]({{site.baseurl}}/assets/2019-02-06-what-is-an-architect/triumvira.png)
 
 
 C'est à ce moment que l'architecte a la mission de challenger le besoin. Ce n'est pas rare que le client arrive après avoir visité des maisons témoins : 
@@ -113,4 +113,4 @@ Certainement la partie la plus difficile, apprenez de vos erreurs, mais aussi de
 
 Enfin dernier point, ne vous attachez pas (trop) aux technologies. Apprenez les forces et les faiblesses de chacune et choisissez en fonction de ces critères factuels. Evitez la "hype train" voir le [HDD](https://blog.daftcode.pl/hype-driven-development-3469fc2e9b22). Formalisez d'abords votre architecture de manière agnostique, puis choisissez chaque brique en fonction des contraintes et des besoins. Si vous souhaitez malgré tout partir sur une nouvelle technologie, mesurez les risques et communiquez dessus avec l'ensemble des acteurs.
 
-![Hype Driven Development]({{site.baseurl}}/assets/2019-02-02-what-is-an-architect/hdd.png)
+![Hype Driven Development]({{site.baseurl}}/assets/2019-02-06-what-is-an-architect/hdd.png)
