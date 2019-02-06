@@ -25,7 +25,7 @@ J'étais tombé sur cet [article](https://blogue.genium360.ca/article/actualites
 
 ## Le besoin
 
-En général, comme tout bon projet, cela commence chez le PrOmoteur. Un client arrive, il veut la maison de ses rêves. Mais avec ses rêves, il arrive auusi très souvent avec ses contraintes : son budget, ses délais, son terrain, sa localisation géographique (chaud, froid, site protégé ect). C'est à cette première étape que l'architecte entre en action. Son but, dans un premier temps, est d'évaluer la faisabilité du besoin.
+En général, comme tout bon projet, cela commence chez le PrOmoteur. Un client arrive, il veut la maison de ses rêves. Mais avec ses rêves, il arrive aussi très souvent avec ses contraintes : son budget, ses délais, son terrain, sa localisation géographique (chaud, froid, site protégé, ect). C'est à cette première étape que l'architecte entre en action. Son but, dans un premier temps, est d'évaluer la faisabilité du besoin.
 
 L'objectif : savoir si le besoin est réalisable au vue des contraintes. Le plus simple en général c'est le ratio qualité / coup / délai. On peut challenger sur deux contraintes, jamais sur les trois.
 ![Trium Vira]({{site.baseurl}}/assets/2019-02-02-what-is-an-architect/triumvira.png)
@@ -48,7 +48,7 @@ Une fois le cahier des charges bien définit avec les différents acteurs, l'arc
 La fondation est l'une des plus importantes parties de maison, et cela pour une raison simple : toute la maison va reposer dessus. Donc le choix de la fondation est vitale car il sera quasiment impossible de changer une fois la maison construite. Elle doit être choisie et dimensionnée en fonction de la construction (une tour n'a pas les mêmes fondations qu'une maison plein pied) mais aussi en fonction du terrain. Un terrain en pente, sur un sol sableux ou marécageux ne demandera pas le même type de fondation. Il est aussi intéressant en faisant les plans de la fondation de s'intéresser au futur de la maison : est ce qu'il y aura un garage dans le futur, une terrasse ect… et du coup de prévoir à l'avance ses informations dans le plan, même si ils ne seront réalisés que dans le futur.
 
 ---
-Vous l'aurez compris, ici la fondation est l'analogie des bases de données. Le choix est structurant, car il est vraiment très difficile de changer de type de BDD (SQL vers NoSQL par exemple) sans interruption de service ou sans changer des grosses parties du projet.  Et surtout en fonction des contraintes et du besoin, quel type de BDD on choisit (SQL, NoSQL, Graph ect…) et comment on la dimensionne (prévoir les usages futurs).
+Vous l'aurez compris, ici la fondation est l'analogie des bases de données. Le choix est structurant, car il est vraiment très difficile de changer de type de BDD (SQL vers NoSQL par exemple) sans interruption de service ou sans changer des grosses parties du projet. Et surtout en fonction des contraintes et du besoin, quel type de BDD on choisit (SQL, NoSQL, Graph ect…) et comment on la dimensionne (prévoir les usages futurs).
 
 
 ### Les murs
