@@ -58,13 +58,14 @@ Cinq minutes plus tard, deux villes sur les cinq avaient réussi à constituer d
 
 ### Nos impressions
 
-*Maeva* :
+_Maeva_ :
 Être constamment dans l’attente d’une confirmation ou ne pas être notifié d'un refus ont été très frustrant. La plupart du temps nous tablions sur le fait que l'autre équipe allait respecter son engagement. Une bonne cohésion inter-équipe fonctionne uniquement si les gens sont de bonne foi. Nous avons pensé à mentir pour obtenir ce que nous souhaitions, mais cela risquait de dégrader la collaboration et potentiellement mettre en péril notre projet : si nous avions de nouveau besoin de l’autre équipe en question, ils auraient refusé de nous aider.
 
 Le parallèle avec l'agile est assez intéressant, puisque tout dans le processus pousse les équipes à communiquer entre elles et à être transparents.
 
 
-*Jérémy*
+
+_Jérémy_ :
 Très intéressante entrée en matière, cet atelier nous a permis d’expérimenter les affres de la communication inter-équipe. Si cela ressemblait beaucoup à un jeu presque gagné d’avance à l’issu de la première itération de dix minutes, la seconde itération à été beaucoup plus stressante (et frustrante) : impossible de récupérer la dernière carte manquante à notre équipe.
 
 La mise en lumière par cet atelier des difficultés de communication entre les équipes étaient évidente, entre absence de réponse et absence de confirmation, impossible d’avancer.
@@ -85,7 +86,7 @@ Les 7 niveaux définis par le Delegation Board sont les suivants :
  4. S'entendre : prendre des décisions avec l'équipe
  5. Conseiller : influencer mais la décision est prise par l'équipe 
  6. Enquêter : demander des retours suite à la décision de l'équipe 
- 7. 7/ Déléguer : aucune influence, délégation à toute l'équipe
+ 7. Déléguer : aucune influence, délégation à toute l'équipe
 
 L'idée pendant cet atelier a donc été d'effectuer un "Delegation poker" avec son équipe afin de définir, pour chaque membre, les niveaux de délégations souhaités. A main levée, tout le monde a donc voté pour les 5 taches définies.
 Par ailleurs, des [cartes dédiées](https://management30.com/practice/delegation-poker/) existent pour effectuer le chiffrage du Delegation Board.
@@ -93,7 +94,7 @@ Par ailleurs, des [cartes dédiées](https://management30.com/practice/delegatio
 
 ### Nos impressions :
 
-*Maeva*
+_Maeva_ :
 La mise en place d'une Delegation Board au lancement d'un projet est une idée très intéressante. 
 Elle permet de donner une voix égale à tout le monde et d'engager l'équipe complète dans le choix des différents niveaux de délégation alloués aux tâches. Ce qui responsabilise chacun à son niveau sur ses propres actions et facilite la légitimité dans les prises de décision par la suite d'un acteur.
 
@@ -101,7 +102,7 @@ Je pense aussi que cette technique peut permettre à un projet de sortir la têt
 
   
 
-*Jérémy*
+_Jérémy_ :
 Atelier très intéressant à la fois dans son intérêt et dans sa simplicité. Définir précisément les rôles de chacun n’est pas forcément facile, le faire dans des conditions permettant l’échange et le débat encore moins.
 
 Grâce au Delegation Board cependant, il est facile de se concerter pour poser exactement quelles doivent être les responsabilités de chacun et ainsi éviter les verrouillages classique que l’on retrouve régulièrement dans une équipe.
@@ -128,17 +129,20 @@ Au final, ce fut un REX très intéressant, de nombreux développeur dans la sal
 
 ### Nos impressions :
 
-*Jérémy*
+_Jérémy_ :
 En temps que développeur et Scrum Master, cette conférence m’a beaucoup parlé. Le retour d’expérience concernant la transition entre Scrum Master à mi-temps et Scrum Master à plein temps était notamment très intéressant, répondant à des questions que je me posais depuis quelque temps.
 
 Les difficultés que Caroline à exposées étaient elles aussi éclairantes sur ce que peut traverser un futur Scrum Master. Pas d'obstacle infranchissable certes, malgré certaines choses particulièrement troublante. Par exemple les propos de certains de ses collègues, mélangeant moqueries et misogynie, à l’encontre de quelqu’un qui a pourtant changé de coeur de métier pour une fonction qui n’est là que pour les aider...
 
   
 
-*Renaud*
+_Renaud_ :
 Je suis développeur de formation et j’ai un bon moment aspiré à devenir scrum master, je n’y ai d’ailleurs pas renoncé. C'était la présentation la plus attendu pour moi. Ce qui m’a le plus marqué dans cette présentation, hormis son parcours, était justement la fameuse question : "On fait quoi quand on n’a pas de meeting ?".
+
 C’est exactement ce qui m’a toujours bloqué, je me suis toujours dit "tu vas te tourner les pousses et en plus tu vas devoir faire croire à tes collègues que tu travailles". 
+
 Mais en fait le rôle de scrum master ne se réduit pas juste à régler des situations bloquantes ou à organiser les différentes réunions. C’est aussi d'aller à la rencontre des différents services, discuter avec eux pour être bien immergé dans le contexte de l'entreprise, penser à l'amélioration du déroulement d’un projet, etc. 
+
 En bref, elle a évoqué beaucoup de choses auxquelles je n'avais jamais pensé et qui m’ont conforté dans l’idée que "Mais Scrum Master, c’est définitivement un vrai métier !". Et plutôt tentant en plus !
 
 ## Le scrum est une fenêtre (ou bien un mur)
@@ -157,7 +161,7 @@ Effectivement, en conclusion de sa présentation, Baptiste nous montre qu'en eff
 
 ### Nos impressions :
 
-*Jérémy*
+_Jérémy_ :
 Une présentation des plus éclairante sur la mise en place by the book du Scrum, qui pose en définitive plus de problème qu'elle n'apporte de solution.
 
 On pourra aussi noter le ton caustique et plein de suspense de la conférence, qui nous accroche jusqu'au bout, ne laissant deviner que tardivement le “happy-ending”.
@@ -179,7 +183,7 @@ Par groupe de 2-3 personnes nous avons échangé autour des émotions ressenties
  
 ### Nos impressions
 
-*Maeva*
+_Maeva_ :
 J’ai beau avoir eu un intérêt certain pour le sujet de la conférence, je l’ai trouvé relativement éloigné du principe de l’agilité.
 
 Il était tout de même rassurant de se dire qu’être frustrée ou énervée par une situation au travail est le lot commun des mortels. Cependant au lieu de se laisser guider par l’émotion, il est essentiel de savoir recentrer ce sentiment sur le projet et non soi-même, afin d'en discuter et le transformer en action positive. Un peu comme le fonctionnement de l’agile sur le partage et la transparence.
@@ -211,12 +215,12 @@ L’idée est donc de par la compréhension de la peur du risque, et d’un but 
 
 ### Nos impressions :
 
-*Maeva*
+_Maeva_ :
 Malgré la redondance entre la théorie et la mise en pratique qui n’avait pas de valeur ajoutée à mon sens lors de cet atelier, il était intéressant de mettre en lumière le coût que peut avoir la peur de prendre des risques dans un projet à cause d'un potentiel échec. On le voit d’ailleurs tous les jours dans les entreprises qui nous entourent : rester dans sa zone de confort au lieu d’innover porte plus préjudice sur le long terme que de bénéfices.
 
   
 
-*Jérémy*
+_Jérémy_ :
 Beaucoup d’originalité dans cet atelier, traitant d’un sujet qui qui nous impacte tous les jours : la peur et ses conséquence. La gestion du risque et la peur que ce dernier entraîne est bien souvent source de blocage au sein d’un projet, il était très intéressant de pouvoir travailler sur les racines de nos réactions primaires, pourtant bien naturelles, et ainsi viser à les contrôler.
 
 ## Boostez vos Backlog Grooming / Refinement avec l’Example Mapping
@@ -258,7 +262,7 @@ Les différents exemples associés aux règles permettent quant à eux de mieux 
 
 ### Nos impressions :
 
-*Maeva*
+_Maeva_ :
 Nous étions beaucoup trop à participer à cet atelier, ce qui de mon point de vue a gâché l’expérience et ne m’a pas permis à ce moment là d’apprécier la méthodologie proposée et de la comprendre clairement.
 
 Cependant le principe de l’example mapping est intéressant. On a tendance à prendre des raccourcis quand on a la tête dans les sprints qui défilent, et à faire le backlog refinement au même moment que le planning poker par exemple. Ce qui en fait un point de rendez-vous souvent à rallonge et plus pénible que pratique.
