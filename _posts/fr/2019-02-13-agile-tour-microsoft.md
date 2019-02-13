@@ -17,13 +17,11 @@ cover: /assets/2019-02-13-agile-tour-microsoft/cover.jpg
 ---
 
 
-Nous étions plusieurs astronautes de la galaxie Eleven Labs à se rendre le 5 décembre dernier à l'Agile Tour organisé par Microsoft dans ses propres locaux.
+Nous étions plusieurs astronautes de la galaxie Eleven Labs à nous rendre le 5 décembre dernier à l'Agile Tour organisé par Microsoft dans ses propres locaux.
 
 ![Agile tour paris 2018]({{site.baseurl}}/assets/2019-02-13-agile-tour-microsoft/agiletourparis2018_image1.png)
 
-Nous avons donc pu assister à différentes conférences et plusieurs ateliers autour de l'agilité et de ses différentes applications.
-
-Petit résumé des découvertes ci-dessous !
+Nous avons donc pu assister à différentes conférences et plusieurs ateliers autour de l'agilité et de ses différentes applications. Petit résumé des découvertes ci-dessous !
 
 ## SOMMAIRE
 
@@ -249,5 +247,7 @@ D'un autre côté quand on prend un temps dédié à une réunion de backlog ref
 
 Il ne me semble pas intéressant de se servir de l'Example Mapping pour tout un sprint backlog, cela serait beaucoup trop fastidieux car relativement long à dérouler, pour peu de ROI. Mais il reste une excellente méthodologie au cas par cas pour les users stories les plus ambigües.
 
-Voilà pour nos retours sur les conférences auxquelles nous avons pu assister !
+## Conclusion
+
+Voilà pour nos retours sur les conférences auxquelles nous avons pu assister, merci de nous avoir lus !
 On espère que ça vous aura apporté autant qu'à nous :)
