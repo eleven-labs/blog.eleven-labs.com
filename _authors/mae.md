@@ -1,8 +1,8 @@
 ---
 layout: author
-login: Mae
+login: mae
 title: Maeva Charron
 twitter: arrya_c
-permalink: /authors/Mae/
+permalink: /authors/mae/
 ---
 PO Valtus
