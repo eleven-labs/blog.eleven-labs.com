@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Apollojs, mise en place d'une API GraphQL
-excerpt: "Dans cette article nous partageons les bonnes pratiques que nous avons mis en place au sein de nos projets GraphQL. Pour faire simple nous allons metre en place une API GraphQL devant une API Rest existante, l'ensemble des développements utiliserons NodeJS et ApolloJS."
+excerpt: "Dans cet article nous partageons les bonnes pratiques que nous avons mises en place au sein de nos projets GraphQL. Pour faire simple nous allons metre en place une API GraphQL devant une API Rest existante, l'ensemble des développements utiliseront NodeJS et ApolloJS."
 authors:
     - fpasquet
     - captainjojo
@@ -15,11 +15,11 @@ tags:
 cover: /assets/2019-02-05-commencer-avec-apollojs/cover.jpg
 ---
 
-Depuis un an nous utilisons GraphQL dans l'ensemble de nos projets au studio. Nous avons commencé directement avec l'implémentation Nodejs et AppolojS qui était en version 1. Depuis juin la version nous à permis de mettre en place une architecture plus solide et plus simple a maintenir.
+Depuis un an nous utilisons GraphQL dans l'ensemble de nos projets au studio. Nous avons commencé directement avec l'implémentation Nodejs et AppolojS qui était en version 1. Depuis juin la version nous à permis de mettre en place une architecture plus solide et plus simple à maintenir.
 
-La plupart de nos projets n'étant pas "from-scratch" nous avons eu à migrer des API Rest en API GraphQL le plus rapidement possible, il nous arrive aussi de mettre une surcouche GraphQL aux api externes que nous devons utilisés.
+La plupart de nos projets n'étant pas "from-scratch" nous avons eu à migrer des API Rest en API GraphQL le plus rapidement possible. Il nous arrive aussi de mettre une surcouche GraphQL aux api externes que nous devons utiliser.
 
-Dans cette article nous partageons les bonnes pratiques que nous avons mis en place au sein de nos projets GraphQL. Pour faire simple nous allons metre en place une API GraphQL devant une API Rest existante, l'ensemble des développements utiliserons NodeJS et [ApolloJS](https://www.apollographql.com/).
+Dans cet article nous partageons les bonnes pratiques que nous avons mises en place au sein de nos projets GraphQL. Pour faire simple nous allons metre en place une API GraphQL devant une API Rest existante, l'ensemble des développements utiliseront NodeJS et [ApolloJS](https://www.apollographql.com/).
 
 # Serveur Apollo GraphQL
 
@@ -33,11 +33,12 @@ Dans cette article nous partageons les bonnes pratiques que nous avons mis en pl
 
 ## Comment structurer son projet
 
-La premier chose que nous avons optimisé c'est l'arborescence du projet, en tant que développeur nous savons qu'il faut avoir une architecture clair et simple pour permettre à un developpeur de travaillé le plus rapidement possible et de ne pas avoir à chercher où placer son code.
+La première chose que nous avons optimisée c'est l'arborescence du projet, en tant que développeurs nous savons qu'il faut avoir une architecture claire et simple pour permettre à un developpeur de travailler le plus rapidement possible et de ne pas avoir à chercher où placer son code.
 
 Nous allons tout d'abord commencer par cloner le projet starter kit qui se trouve sur notre [GitHub](https://github.com/eleven-labs/apollo-server-starter-kit) ou bien vous pouvez le tester directement sur [CodeSandbox](https://codesandbox.io/s/github/eleven-labs/apollo-server-starter-kit/tree/master).
 
-A quoi ressemble ce starter kit et que contient-il, voici l'arborescence de notre serveur apollo GraphQL:
+À quoi ressemble ce starter kit et que contient-il ? 
+Voici l'arborescence de notre serveur apollo GraphQL :
 
 ```bash
 .
@@ -55,18 +56,18 @@ A quoi ressemble ce starter kit et que contient-il, voici l'arborescence de notr
 Nous retrouvons ici :
 
 - `"src/index.js"` est notre point d'entrée pour notre API GraphQL, il contient la configuration du server GraphQL
-- `"src/definitions/"` comprendra tout nos fichiers définissant notre schéma GraphQL (`Queries`, `Mutations`, `Types`, `Inputs`, `Interfaces`, `Directives`, `Enums` ...)
+- `"src/definitions/"` comprendra tous nos fichiers définissant notre schéma GraphQL (`Queries`, `Mutations`, `Types`, `Inputs`, `Interfaces`, `Directives`, `Enums` ...)
 - `"src/resolvers/"`, `"src/directives/"` et `"src/subscriptions/"` contiendra nos différents résolveurs
 - `"src/dataLayers"` contiendra tout ce qui concerne la couche d'abstractions de données, dans notre exemple nous en aurons deux, une pour le REST et une autre pour le SQL avec `Knex.js`.
-- `"src/dataSources/"` quant à lui incluera les classes encapsulent l'extraction des données. Il peut être lié à une API REST (RESTDataSource), une base de donnée .... Apollo Server implémente une classe qui intégre la mise en cache, la déduplication et le traitement des erreurs. Dans chacune des classes, nous pourrons ajouter des dataLoaders qui optimiserons notre API GraphQL. Les dataLoaders sont des fonctions de déduplication et du traitement par lots d'objets avec un système de cache intégré.
+- `"src/dataSources/"` quant à lui incluera les classes qui encapsulent l'extraction des données. Il peut être lié à une API REST (RESTDataSource), une base de données... Apollo Server implémente une classe qui intégre la mise en cache, la déduplication et le traitement des erreurs. Dans chacune des classes, nous pourrons ajouter des dataLoaders qui optimiserons notre API GraphQL. Les dataLoaders sont des fonctions de déduplication et du traitement par lots d'objets avec un système de cache intégré.
 
 ## Implémenter notre schéma GraphQL
 
-Vous pourrez lire dans de nombreux articles GraphQL que la première chose à faire est définir son schémas, on dit que GraphQL est `schemas first`.
+Vous pourrez lire dans de nombreux articles GraphQL que la première chose à faire est définir son schéma, on dit que GraphQL est `schemas first`.
 
-Petit conseil sur l'implémentation de votre schéma, ne reprenez pas la structure et le nommage de votre API REST, car c'est une chose très importante le nommage en GraphQL, une personne doit comprendre du premier coup d'oeil votre API rien quand regardant votre schéma.
+Petit conseil sur l'implémentation de votre schéma : ne reprenez pas la structure et le nommage de votre API REST. En effet, le nommage est très important en GraphQL. Une personne doit comprendre du premier coup d'oeil votre API rien qu'en regardant votre schéma.
 
-L'API GraphQL sera sur le thème de Game Of Throne, on affichera les différents personnages et les différents maisons. Pour ce faire nous utiliserons l'API REST qui se trouve sur le dépot github de cette [API](https://github.com/fpasquet/got-api).
+L'API GraphQL sera sur le thème de Game Of Throne, on affichera les différents personnages et les différentes maisons. Pour ce faire nous utiliserons l'API REST qui se trouve sur le dépot github de cette [API](https://github.com/fpasquet/got-api).
 
 
 ### Ajoutons les types
