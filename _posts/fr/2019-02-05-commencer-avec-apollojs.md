@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Apollojs, mise en place d'une API GraphQL
-excerpt: "Dans cette article nous partageons les bonnes pratiques que nous avons mis en place au sein de nos projets GraphQL. Pour faire simple nous allons metre en place une API GraphQL devant une API Rest existante, l'ensemble des développements utiliserons NodeJS et ApolloJS."
+excerpt: "Dans cet article nous partageons les bonnes pratiques que nous avons mises en place au sein de nos projets GraphQL. Pour faire simple nous allons mètre en place une API GraphQL devant une API Rest existante, l'ensemble des développements utiliseront NodeJS et ApolloJS."
 authors:
     - fabien
     - captainjojo
@@ -16,11 +16,9 @@ tags:
 cover: /assets/2019-02-05-commencer-avec-apollojs/cover.jpg
 ---
 
-Depuis un an nous utilisons GraphQL dans l'ensemble de nos projets au studio. Nous avons commencé directement avec l'implémentation Nodejs et AppolojS qui était en version 1. Depuis juin la version nous à permis de mettre en place une architecture plus solide et plus simple a maintenir.
+Dans cet article nous partageons les bonnes pratiques que nous avons mises en place au sein de nos projets GraphQL. Pour faire simple nous allons mètre en place une API GraphQL devant une API Rest existante, l'ensemble des développements utiliseront NodeJS et [ApolloJS](https://www.apollographql.com/).
 
-La plupart de nos projets n'étant pas "from-scratch" nous avons eu à migrer des API Rest en API GraphQL le plus rapidement possible, il nous arrive aussi de mettre une surcouche GraphQL aux api externes que nous devons utilisés.
-
-Dans cette article nous partageons les bonnes pratiques que nous avons mis en place au sein de nos projets GraphQL. Pour faire simple nous allons metre en place une API GraphQL devant une API Rest existante, l'ensemble des développements utiliserons NodeJS et [ApolloJS](https://www.apollographql.com/).
+La plupart de nos projets n'étant pas "from-scratch" nous avons eu à migrer des API Rest en API GraphQL le plus rapidement possible, il nous arrive aussi de mettre une sur-couche GraphQL aux api externes que nous devons utiliser nous permettant de faire du "stiching" avec nos autres API.
 
 # Serveur Apollo GraphQL
 
@@ -33,11 +31,11 @@ Dans cette article nous partageons les bonnes pratiques que nous avons mis en pl
 
 ## Comment structurer son projet
 
-La premier chose que nous avons optimisé c'est l'arborescence du projet, en tant que développeur nous savons qu'il faut avoir une architecture clair et simple pour permettre à un developpeur de travaillé le plus rapidement possible et de ne pas avoir à chercher où placer son code.
+La première chose que nous avons optimisé c'est l'arborescence du projet, en tant que développeur nous savons qu'il faut avoir une architecture claire et simple pour permettre à un développeur de travailler le plus rapidement possible et de ne pas avoir à chercher où placer son code.
 
-Nous allons tout d'abord commencer par cloner le projet starter kit qui se trouve sur notre [github](https://github.com/fpasquet/apollo-server-starter-kit) ou bien vous pouvez le tester directement sur [codesandbox](https://codesandbox.io/s/github/fpasquet/apollo-server-starter-kit/tree/feat/master).
+Nous allons tout d'abord commencer par cloner le projet starter kit qui se trouve sur notre [github](https://github.com/fpasquet/apollo-server-starter-kit) ou vous pouvez le tester directement sur [codesandbox](https://codesandbox.io/s/github/fpasquet/apollo-server-starter-kit/tree/feat/master).
 
-A quoi ressemble ce starter kit et que contient-il, voici l'arborescence de notre serveur apollo GraphQL:
+A quoi ressemble ce starter kit et que contient-il ? Voici l'arborescence de notre serveur apollo GraphQL:
 
 ```bash
 .
@@ -54,19 +52,19 @@ A quoi ressemble ce starter kit et que contient-il, voici l'arborescence de notr
 
 Nous retrouvons ici :
 
-- `"src/index.js"` est notre point d'entrée pour notre API GraphQL, il contient la configuration du server GraphQL
+- `"src/index.js"` est notre point d'entré pour notre API GraphQL, il contient la configuration du server GraphQL
 - `"src/definitions/"` comprendra tout nos fichiers définissant notre schéma GraphQL (`Queries`, `Mutations`, `Types`, `Inputs`, `Interfaces`, `Directives`, `Enums` ...)
 - `"src/resolvers/"`, `"src/directives/"` et `"src/subscriptions/"` contiendra nos différents résolveurs
 - `"src/dataLayers"` contiendra tout ce qui concerne la couche d'abstractions de données, dans notre exemple nous en aurons deux, une pour le REST et une autre pour le SQL avec `Knex.js`.
-- `"src/dataSources/"` quant à lui incluera les classes encapsulent l'extraction des données. Il peut être lié à une API REST (RESTDataSource), une base de donnée .... Apollo Server implémente une classe qui intégre la mise en cache, la déduplication et le traitement des erreurs. Dans chacune des classes, nous pourrons ajouter des dataLoaders qui optimiserons notre API GraphQL. Les dataLoaders sont des fonctions de déduplication et du traitement par lots d'objets avec un système de cache intégré.
+- `"src/dataSources/"` quant à lui incluera les classes qui encapsulent l'extraction des données. Il peut être lié à une API REST (RESTDataSource), une base de donnée .... Apollo Server implémente une classe qui intègre la mise en cache, la dé-duplication et le traitement des erreurs. Dans chacune des classes, nous pourrons ajouter des dataLoaders qui optimiseront notre API GraphQL. Les dataLoaders sont des fonctions de dé-duplication et du traitement par lots d'objets avec un système de cache intégré.
 
 ## Implémenter notre schéma GraphQL
 
-Vous pourrez lire dans de nombreux articles GraphQL que la première chose à faire est définir son schémas, on dit que GraphQL est `schemas first`.
+Vous pourrez lire dans de nombreux articles GraphQL que la première chose à faire est de définir son schéma, on dit que GraphQL est `schema first`.
 
-Petit conseil sur l'implémentation de votre schéma, ne reprenez pas la structure et le nommage de votre API REST, car c'est une chose très importante le nommage en GraphQL, une personne doit comprendre du premier coup d'oeil votre API rien quand regardant votre schéma.
+Petit conseil sur l'implémentation de votre schéma, ne reprenez pas la structure et le nommage de votre API REST, car le nommage de votre schéma GraphQL doit être fonctionnel et non technique, une personne non technique doit comprendre du premier coup d'oeil votre API GraphQL rien quand regardant votre schéma.
 
-L'API GraphQL sera sur le thème de Game Of Throne, on affichera les différents personnages et les différents maisons. Pour ce faire nous utiliserons l'API REST qui se trouve sur le dépot github de cette [API](https://github.com/fpasquet/got-api).
+L'API GraphQL sera sur le thème de Game Of Throne, on affichera les différents personnages et les différentes maisons. Pour ce faire nous utiliserons l'API REST qui se trouve sur le dépot [github](https://github.com/fpasquet/got-api).
 
 
 ### Ajoutons les types
@@ -114,7 +112,7 @@ Pour plus de détails sur l'implémentation des types graphQL nous vous invitons
 
 ## Créer un dataSource REST
 
-Les dataSource Apollo permettent d'encapsulés la récupération des données pour un service particulier (Ex: Api Rest, BDD Mysql, etc ...). Les dataSource prennent en compte directement la gestion du cache, la déduplication ainsi que le traitement des erreurs. Vous n'avez donc besoin d'écrire que le code spécifique pour l'intéraction avec votre serveur et ApolloJS s'occupe du reste.
+Les dataSource Apollo permettent d'encapsuler la récupération des données pour un service particulier (Ex: Api Rest, BDD Mysql, etc ...). Les dataSource prennent en compte directement la gestion du cache, la dé-duplication ainsi que le traitement des erreurs. Vous n'avez donc plus besoin d'écrire le code spécifique pour l'interaction avec votre serveur REST, ApolloJS s'occupe de gérer les interactions.
 
 Nous allons donc créer deux dataSource REST un pour les personnages et l'autre pour les maisons.
 
@@ -161,8 +159,6 @@ class CharacterRESTDataSource extends RESTDataSource {
 
 module.exports = CharacterRESTDataSource;
 ```
-Comme vous pouvez le voir le DataSource permet de faire l'ensemble des appels Rest et Apollo gère le cache et les erreurs.
-
 Ajoutons notre deuxième DataSource pour les maisons dans le fichier `src/dataSources/HouseRESTDataSource.js`:
 
 ```js
@@ -198,10 +194,10 @@ module.exports = HouseRESTDataSource;
 
 ## Ajoutons nos resolvers
 
-Les resolvers sont la briques centrale de GraphQL, c'est ici qui vous expliquez à votre serveur comment récupérer chaque Query et Type que vous avez défini dans votre schémas.
+Les resolvers sont la brique centrale de GraphQL, c'est ici que vous expliquez à votre serveur comment récupérer chaque Query et Type que vous avez défini dans votre schéma.
 
 Comme vous le constatez la configuration des resolvers doit suivre votre configuration de typage.
-Ici dans les resolvers vous n'avez plus qu'a appelé votre Datasource qui se chargera de récupérer la donnée.
+Ici dans les resolvers vous n'avez plus qu'a appeler votre Datasource qui se chargera de récupérer les données.
 
 Ajoutons notre premier `resolver` pour les personnages dans le fichier `src/resolvers/character.js`:
 
@@ -265,7 +261,7 @@ const resolvers = {
 module.exports = resolvers;
 ```
 
-Une fois vos résolvers terminé vous pouvez les tester dans l'interface `playground` qui est fournit directement dans Apollo. Il s'agit d'un IDE permettant de lancer des Query et Mutation sur votre API. Vous pouvez aussi voir la documentation qui est autogénéré grâce aux typages fort de votre API GraphQL.
+Une fois vos résolvers terminés vous pouvez les tester dans l'interface `playground` qui est fournit directement dans Apollo. Il s'agit d'un IDE permettant de lancer des Query et Mutation sur votre API. Vous pouvez aussi voir la documentation qui est autogénérée grâce aux typages fort de votre API GraphQL.
 
 ```graphql
 query CHARACTERS(
@@ -337,15 +333,15 @@ fragment House on House {
 
 ```
 
-Dans l'exemple de query nous utilisons des `fragment` qui agissent comme des `include` cela permet de ne pas répété plusieurs du code dans des Query. L'utilisation est assez simple une fois votre `fragment` crée vous pouvez l'utilisé dans vos query en utlisant `...`, ça fonctionne de la même manière que l'affectation par décomposition ([https://developer.mozilla.org/fr/docs/Web/JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition)).
+Dans l'exemple de query nous utilisons des `fragment` qui agissent comme des `include` cela permet de ne pas répéter plusieurs fois  le même code dans des Query. L'utilisation est assez simple une fois votre `fragment` crée vous pouvez l'utiliser dans vos query en utilisant `...`, ça fonctionne de la même manière que l'affectation par décomposition ([https://developer.mozilla.org/fr/docs/Web/JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition)).
 
 ## Analyser et optimiser notre API GraphQL
 
 Maintenant que notre API est prête pour être utilisé, nous devons mettre en place du monitoring. Cela va nous permettre de suivre les performances et d'optimiser les points de congestion.
 
-Pour cela nous allons créer une extension, qui va nous permettre d'analyser notre API GraphQL et par la suite l'optimiser.
+Pour cela nous allons créer une extension, qui va nous permettre d'analyser notre API GraphQL et par la suite de l'optimiser.
 
-Ajoutons un collecteur de donnée pour le Datasource REST dans le fichier `src/dataLayers/restCollector.js`:
+Ajoutons un collecteur de données pour le Datasource REST dans le fichier `src/dataLayers/restCollector.js`:
 
 ```js
 class RestCollector {
@@ -471,7 +467,7 @@ class RESTDataSource extends BaseRESTDataSource {
 
 module.exports = RESTDataSource;
 ```
-Maintenant que chaque `request` nous renvoie des valeurs de performance nous voulons les récupérer pour les ajoutés dans la réponse GraphQL.
+Maintenant que chaque `request` nous renvoie des valeurs de performance nous voulons les récupérer pour les ajouter dans la réponse GraphQL.
 
 Ajoutons une extension dans le fichier `src/dataLayers/restExtension.js` qui permettra d'ajouter les éléments dans notre réponse GraphQL.
 
@@ -521,7 +517,7 @@ module.exports = {
 }
 ```
 
-Et maintenant nous l'activons en modifiant  notre serveur apollo, via le fichier  `index.js`:
+Et maintenant nous l'activons en modifiant notre serveur apollo, via le fichier  `index.js`:
 
 ```js
 ...
@@ -535,7 +531,7 @@ const server = new ApolloServer({
 });
 ```
 
-Et modifier nos deux RESTDataSource en importnant l'extend de notre DataSource.
+Et modifier nos deux RESTDataSource en important l'extend de notre DataSource.
 
 ```js
 const { RESTDataSource } = require("apollo-datasource-rest");
@@ -547,7 +543,7 @@ par
 const { RESTDataSource } = require("../dataLayers/rest");
 ```
 
-Après avoir activer l'extension on va constater que dans les réponses de chacun de nos appels on peut voir apparaître un object extensions qui contient les données de performance:
+Après avoir activé l'extension on va constater que dans les réponses de chacun de nos appels, on peut voir apparaître un objet extensions qui contient les données de performance:
 
 ```json
 {
@@ -590,10 +586,9 @@ Après avoir activer l'extension on va constater que dans les réponses de chacu
 }
 ```
 
-Comme vous pouvez le constatez nous avons des temps d'exécution un peu long, nous allons donc optimiser nos DataSources en implémentant des DataLoaders:
+Comme vous pouvez le constater nous avons des temps d'exécution un peu long, nous allons donc optimiser nos DataSources en implémentant des DataLoaders:
 
-Les Dataloaders sont des utilitaires générique fournit par Facebook sur le projet github suivant
-[https://github.com/facebook/dataloader](https://github.com/facebook/dataloader).  Il permet de gérer la récupération des source de donnée (ici via une ApiRest) en utilisant du cache et de la récupération via `batch` cela permet de gagner en performance.
+Les Dataloaders sont des utilitaires génériques fournit par Facebook sur le projet github suivant [https://github.com/facebook/dataloader](https://github.com/facebook/dataloader). Il permet de gérer la récupération des sources de données (ici via une ApiRest) en utilisant du cache et de la récupération via `batch` cela permet de gagner en performance.
 
 On commencera par notre dataSource des personnages, `src/dataSource/CharacterRESTDataSource.js`:
 
@@ -722,14 +717,12 @@ class HouseRESTDataSource extends RESTDataSource {
 
 module.exports = HouseRESTDataSource;
 ```
-Donc notre cas le Dataloader nous permet de récuperer les `character` de façon optimisé nous permettant d'effectué moins de requête sur notre API.
+Donc notre cas le Dataloader nous permet de récupérer les `character` de façon optimisé nous permettant d'effectuer moins de requête sur notre API.
 
-Grace à cela vous pouvez constaté une amélioration des performances de la query.
+Grace à cela vous pouvez constater une amélioration des performances de la query.
 
 
 
 ### Conclusion
 
-Vous avez ici  un exemple clair et poussé d'une API GraphQL. Nous travaillons actuellement sur la mise en place de tooling pour gérer le monitoring et la mise en cache. Nous vous invitons à suivre notre blog et à participer à la communauté GraphQL.
-
-
+Vous avez ici un exemple clair et poussé d'une API GraphQL. Nous travaillons actullement sur la mise en place de tooling pour gérer le monitoring et la mise en cache. Nous vous invitons à suivre notre blog et à participer à la communauté GraphQL.
