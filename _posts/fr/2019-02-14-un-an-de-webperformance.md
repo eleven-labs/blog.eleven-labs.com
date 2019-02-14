@@ -54,7 +54,7 @@ Prenont quelques exemples de métrique importantes:
 
 Bien sûr il n'est pas possible de suivre l'ensemble des métriques et cela n'aurait pas de sens. Souvent réduire une métrique aura un impact négatif sur une autre et inversement. Nous avons donc besoin de choisir nos KPIs dès le début du projet et de ne plus changer.
 
-Dans le cadre de la mission nous avons choisi cinq KPIs a suivre. L'une des plus importantes est le visuel d'une page seconde par seconde (filmstrips), cela permet de comprendre ce que voit l'utilisateur. Comme la webperformance n'a pas de valeur absolu, il est préférable de faire un benchmark avec vos concurrents. C'est certainement ce qui est le plus important, car Google compare les résultats entre les sites.
+Dans le cadre de la mission nous avons choisi cinq KPIs a suivre. L'une des plus importantes est le visuel d'une page seconde par seconde (filmstrips), cela permet de comprendre ce que voit l'utilisateur. Comme la webperformance n'a pas de valeur absolue, il est préférable de faire un benchmark avec vos concurrents. C'est certainement ce qui est le plus important, car Google compare les résultats entre les sites.
 
 ![filmstrips]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image2.png)
 
@@ -66,7 +66,7 @@ Les métriques doivent être dans plusieurs étapes du développement. Tout d'ab
 
 Il nous faut donc un outil le permettant.
 
-Nous avons choisit [Sitespeed.io](https://www.sitespeed.io/) qui est une suite d'outillage sur Docker que vous pouvez insérer dans votre CI ou installer sur vos postes.
+Nous avons choisi [Sitespeed.io](https://www.sitespeed.io/) qui est une suite d'outillage sur Docker que vous pouvez insérer dans votre CI ou installer sur vos postes.
 
 Sitespeed utilise les résultats de [WebPageTest](https://www.sitespeed.io/documentation/sitespeed.io/webpagetest/) et les pose dans un [ELK](https://www.elastic.co/fr/elk-stack). Cela nous permet de mettre en place des boards personnalisés permettant de voir en un instant nos KPI.
 
@@ -95,7 +95,7 @@ La première chose que nous avons mis en place avec l'équipe c'est un manifeste
 
 Nous avons mis en place avec l'équipe, des vérifications de webperformance lors des builds de l'application. Cela nous permet de valider tout le long du développement que la webperformance est correcte et suit nos KPIs.
 
-Depuis, tout le long du projet je passe du temps avec les équipes pour donner des recommendations selon l'avancement des développements. En effet, le principe de la webperformance c'est de faire étape par étape, il faut que chaque développements suivent les recommandations webperf et que l'ajout de nouvelles fonctionnalités ne cassent pas celle-ci.
+Depuis, tout le long du projet je passe du temps avec les équipes pour donner des recommandations selon l'avancement des développements. En effet, le principe de la webperformance c'est de faire étape par étape, il faut que chaque développements suivent les recommandations webperf et que l'ajout de nouvelles fonctionnalités ne cassent pas celle-ci.
 
 En un an, nous avons mis en place de nombreuses choses permettant d'améliorer la webperformance. Je vais vous donner quelques tips pour vos sites.
 
