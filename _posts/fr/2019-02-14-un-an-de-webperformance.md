@@ -27,7 +27,7 @@ Il n'y a pas que pour l'actu chaude que la performance du site est importante. O
 
 ![thinkwithgoogle]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image1.jpg)
 
-Voici trois points qui vous donneront envi de faire de la webperformance.
+Voici trois points qui vous donneront envie de faire de la webperformance.
 
 - Votre taux de pages vues par visite augmente
     - +1 seconde de temps de chargement = – 11% de pages vues.
@@ -43,7 +43,7 @@ Dans le cadre de la refonte de l'ensemble des sites, France Média Monde voulait
 
 ## Choisir les métriques
 
-Le choix des métriques sont très importantes pour le suivi de la webperformance. Il existe de nombreuses métriques qui permettent de savoir si votre site est performant.
+Le choix des métriques sont très importants pour le suivi de la webperformance. Il existe de nombreuses métriques qui permettent de savoir si votre site est performant.
 
 Prenont quelques exemples de métrique importantes:
 
@@ -54,7 +54,7 @@ Prenont quelques exemples de métrique importantes:
 
 Bien sûr il n'est pas possible de suivre l'ensemble des métriques et cela n'aurait pas de sens. Souvent réduire une métrique aura un impact négatif sur une autre et inversement. Nous avons donc besoin de choisir nos KPIs dès le début du projet et de ne plus changer.
 
-Dans le cadre de la mission nous avons choisi cinq KPIs a suivre. L'une des plus importantes est le visuel d'une page seconde par seconde (filmstrips), cela permettant d'apprécier ce que voit l'utilisateur. Comme la webperformance n'a pas de valeur absolu, il est préférable de faire un benchmark avec vos concurrents. C'est certainement ce qui est le plus important, car Google compare les résultats entre les sites.
+Dans le cadre de la mission nous avons choisi cinq KPIs a suivre. L'une des plus importantes est le visuel d'une page seconde par seconde (filmstrips), cela permet de comprendre ce que voit l'utilisateur. Comme la webperformance n'a pas de valeur absolu, il est préférable de faire un benchmark avec vos concurrents. C'est certainement ce qui est le plus important, car Google compare les résultats entre les sites.
 
 ![filmstrips]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image2.png)
 
