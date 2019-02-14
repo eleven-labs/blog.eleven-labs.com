@@ -41,7 +41,7 @@ Source: [https://www.fasterize.com/fr/blog/15-raisons-de-penser-webperf/](https:
 
 Dans le cadre de la refonte de l'ensemble des sites, France Média Monde voulait donc suivre les indicateurs de performance pour leurs permettre de devenir les numéros un sur le mobile.
 
-## Choisir les metriques
+## Choisir les métriques
 
 Le choix des métriques sont très importantes pour le suivi de la webperformance. Il existe de nombreuses métriques qui permettent de savoir si votre site est performant.
 
@@ -50,11 +50,11 @@ Prenont quelques exemples de métrique importantes:
 - *Page Load* : le temps que met la page à se charger
 - *Fully Loaded* : le temps que met la page pour ne plus avoir d’activités réseaux (2 secondes sans activité)
 - *First Byte* : le temps que met le premier Byte à être récupéré par le navigateur
-- *Speed Index* : métrique calculée qui permet de connaitre la perception de l’affichage pour l’utilisateur (elle utilise plusieurs métriques)
+- *Speed Index* : métrique calculée qui permet de connaître la perception de l’affichage pour l’utilisateur (elle utilise plusieurs métriques)
 
 Bien sûr il n'est pas possible de suivre l'ensemble des métriques et cela n'aurait pas de sens. Souvent réduire une métrique aura un impact négatif sur une autre et inversement. Nous avons donc besoin de choisir nos KPIs dès le début du projet et de ne plus changer.
 
-Dans le cadre de la mission nous avons choisi cinq KPIs a suivre. L'une des plus importantes est le visuel d'une page seconde par seconde (filmstrips), cela permettant d'aprécier ce que voit l'utilisateur. Comme la webperformance n'a pas de valeur absolu, il est préférable de faire un benchmark avec vos concurrents. C'est certainement ce qui est le plus important, car Google compare les résultats entre les sites.
+Dans le cadre de la mission nous avons choisi cinq KPIs a suivre. L'une des plus importantes est le visuel d'une page seconde par seconde (filmstrips), cela permettant d'apprécier ce que voit l'utilisateur. Comme la webperformance n'a pas de valeur absolu, il est préférable de faire un benchmark avec vos concurrents. C'est certainement ce qui est le plus important, car Google compare les résultats entre les sites.
 
 ![filmstrips]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image2.png)
 
@@ -68,7 +68,7 @@ Il nous faut donc un outil le permettant.
 
 Nous avons choisit [Sitespeed.io](https://www.sitespeed.io/) qui est une suite d'outillage sur Docker que vous pouvez insérer dans votre CI ou installer sur vos postes.
 
-Sitespeed utilise les résultats de [WebPageTest](https://www.sitespeed.io/documentation/sitespeed.io/webpagetest/) et les pose dans un [ELK](https://www.elastic.co/fr/elk-stack). Cela nous permet de mettre en place des boards personalisés permettant de voir en un instant nos KPI.
+Sitespeed utilise les résultats de [WebPageTest](https://www.sitespeed.io/documentation/sitespeed.io/webpagetest/) et les pose dans un [ELK](https://www.elastic.co/fr/elk-stack). Cela nous permet de mettre en place des boards personnalisés permettant de voir en un instant nos KPI.
 
 Les équipes de développement peuvent aussi utiliser la console Chrome qui contient de nombreux outils permettant de suivre la webperformance.
 
@@ -83,7 +83,7 @@ Comme par exemple:
 
 ![coverage]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image4.png)
 
-## Travailler avec les equipes
+## Travailler avec les équipes
 
 Une fois l'ensemble des métriques et des outils choisis, il faut travailler avec les équipes sur les sujets de fond.
 
@@ -102,7 +102,7 @@ En un an, nous avons mis en place de nombreuses choses permettant d'améliorer l
 ## Les tips
 
 - Le passage en **HTTPS/HTTP2** est une moyen simple d'améliorer la performance de votre site. Le coût de vos requêtes HTTP sera amélioré
-- **Comprésser** vos réponses HTML en Gzip pour vous permettre de gagner sur le download surtout en 3G
+- **Compresser** vos réponses HTML en Gzip pour vous permettre de gagner sur le download surtout en 3G
 - **Minimize** les CSS et JS toujours dans un souci de gain de place dans vos requêtes HTTP
 - Utiliser les **defer** pour ne plus bloquer l'affichage de la page
 - Mettre en place des **preconnect**, **preload** et **prefetch** pour que votre navigateur se connecte aux ressources externes plus rapidement
