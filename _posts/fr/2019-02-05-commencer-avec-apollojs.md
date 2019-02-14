@@ -66,7 +66,7 @@ Vous pourrez lire dans de nombreux articles GraphQL que la première chose à fa
 
 Petit conseil sur l'implémentation de votre schéma, ne reprenez pas la structure et le nommage de votre API REST, car le nommage de votre schéma GraphQL doit être fonctionnel et non technique, une personne non technique doit comprendre du premier coup d'oeil votre API GraphQL rien quand regardant votre schéma.
 
-L'API GraphQL sera sur le thème de Game Of Throne, on affichera les différents personnages et les différentes maisons. Pour ce faire nous utiliserons l'API REST qui se trouve sur le dépot [github](https://github.com/fpasquet/got-api).
+L'API GraphQL sera sur le thème de Game Of Throne, on affichera les différents personnages et les différentes maisons. Pour ce faire nous utiliserons l'API REST qui se trouve sur le dépôt [github](https://github.com/fpasquet/got-api).
 
 
 ### Ajoutons les types
