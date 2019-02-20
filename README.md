@@ -157,7 +157,7 @@ Si vous avez forké le projet pour la rédaction de l'article, merci de faire la
 
 ```
 git remote add eleven-labs git@github.com:eleven-labs/blog.eleven-labs.com.git
-git push eleven feat/mon-article
+git push eleven-labs feat/mon-article
 ```
 
 N'oubliez pas le tag  `publication`.
