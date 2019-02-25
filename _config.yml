@@ -103,3 +103,6 @@ exclude:
 collections:
   authors:
     output: true
+
+keep_files: 
+    - images

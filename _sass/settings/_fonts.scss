@@ -4,3 +4,17 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Korb';
+  src: url($baseurl + '/fonts/korb.woff2') format('woff2'), url($baseurl + '/fonts/korb.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Worksans-Regular';
+  src: url($baseurl + '/fonts/worksans-regular-webfont.woff2') format('woff2'), url($baseurl + '/fonts/worksans-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,6 +1,9 @@
 // Typography
 $font-family-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 $font-family-headings:'DINPro-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-article-headers: 'Korb';
+$font-family-article-texts: 'Worksans-Regular';
+$font-family-article-btn: 'Worksans-Regular';
 
 $font-size: 19px;
 $font-size-mobile: 16px;
@@ -20,6 +23,14 @@ $shark: #323334;
 $turbo: #fde300;
 $white: #fff;
 $semi-transparent-black: rgba(0, 0, 0, .5);
+
+// Colours in the rework
+$butterscotch: #f8bb4f;
+$kinda-yellow: #f2c437;
+$charcoal-grey: #333541;
+$lightgrey-background: #f9f9f9;
+$article-icons: #a8a8a8;
+$card-border: #d8d8d8;
 
 // Eleven Labs colours
 $brand-yellow: $turbo;
@@ -54,3 +65,7 @@ $breakpoint-large: 1024px;
 $breakpoint-medium: 768px;
 $breakpoint-small: 576px;
 $breakpoint-x-small: 480px;
+
+
+// Sizing in em
+$browser-context: 16px;

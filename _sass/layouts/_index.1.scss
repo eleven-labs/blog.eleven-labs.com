@@ -1,0 +1,109 @@
+// Header text feature
+.call-out {
+  @extend %padding-regular;
+  background-color: $header-desc-background-color;
+  background-size: cover;
+  color: $header-desc-text-color;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.home-logo {
+  display: inline-block;
+  margin: 1rem 0;
+  position: relative;
+  width: 100%;
+
+  svg {
+    fill: $brand-black;
+    max-width: 100%;
+  }
+}
+
+.home-title {
+  bottom: 1vw;
+  color: $brand-black;
+  font-family: $font-family-headings;
+  font-size: 5vw;
+  font-weight: 700;
+  position: absolute;
+  right: 8vw;
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-large) {
+    bottom: 0;
+    right: 6vw;
+  }
+}
+
+// Post listing
+.posts {
+
+  &-title {
+    @extend %h2;
+    margin-bottom: .6rem;
+
+    a {
+      color: $brand-black;
+      text-decoration: none;
+    }
+  }
+
+  &-date {
+    display: inline-block;
+    margin-bottom: 1.2rem;
+  }
+
+  &-button {
+    margin-top: 1.5rem;
+  }
+
+  .excerpt {
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+// Pagination
+.pagination {
+  margin: 3rem 0 6rem;
+  text-align: center;
+
+  .current-page,
+  a {
+    display: inline-block;
+    line-height: 1.8;
+    margin: 0 .1rem .6rem;
+    min-height: 3rem;
+    min-width: 3rem;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .current-page {
+    background-color: $brand-black;
+    color: $white;
+  }
+
+  .button {
+    line-height: normal;
+    min-height: auto;
+    min-width: auto;
+    text-decoration: none;
+
+    i {
+      vertical-align: middle;
+    }
+  }
+
+  .prev {
+    margin-right: 1.2rem;
+  }
+
+  .next {
+    margin-left: 1.2rem;
+  }
+}
