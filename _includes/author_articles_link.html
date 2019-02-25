@@ -1,0 +1,21 @@
+<!-- _includes/author_link.html -->
+{% for author in include.authors %}
+  {% assign isFirstAuthor = forloop.first %}
+  {% assign isLastAuthor = forloop.last %}
+  {% for existingAuthor in site.authors %}
+    {% if existingAuthor.login == author %}
+      {% if isFirstAuthor %}
+        <span class="article-preview__authors">
+          <i class="fas fa-fw fa-pencil-alt" data-fa-transform="flip-h" title="{% translate global.author_by %}"></i>
+      {% elsif isLastAuthor %}
+         {% translate global.and %}
+      {% else %}
+         ,
+      {% endif %}
+          <a class="article-preview__author-link" href="{{ '/authors/:author' | prepend: site.baseurl | replace: '//', '/' | replace: ':author', author }}">{{ existingAuthor.title }}</a>
+      {% if isLastAuthor %}
+        </span>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}

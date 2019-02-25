@@ -3,6 +3,7 @@ $baseurl: '{{ site.baseurl_root }}';
 
 // Settings
 @import 'settings/variables';
+@import 'settings/functions';
 
 // External
 @import 'external/reset';
