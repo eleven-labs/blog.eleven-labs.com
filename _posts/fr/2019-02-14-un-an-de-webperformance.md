@@ -17,13 +17,13 @@ Nous allons revenir sur cette mission d'un an, pour nous permettre de comprendre
 
 ## Brief
 
-France Media Monde c'est trois gros sites public [MCD](https://www.mc-doualiya.com/), [RFI](http://www.rfi.fr/) et [France24](https://www.france24.com/fr/).
+France Media Monde c'est trois gros sites publics [MCD](https://www.mc-doualiya.com/), [RFI](http://www.rfi.fr/) et [France24](https://www.france24.com/fr/).
 
 Les sites sont principalement utilisés en version mobile sur des réseaux 3g voir edge.
 
-Aujourd'hui l'ensemble des sites médias sont en concurrence sur l'infos dit `chaude`, c'est à dire l'info en direct. En effet, tout le monde veut récupérer les utilisateurs lors d'une nouvelle info, pour cela il faut être l'un des premiers à remonter sur Google. On sait aujourd'hui que le calcul de la position dans la recherche Google prend en compte la performance du site en version mobile avec peu de réseaux. Le but est donc d'être meilleurs que les autres site pour être le premier à apparaitre.
+Aujourd'hui l'ensemble des sites médias sont en concurrence sur l'infos dites `chaudes`, c'est à dire l'info en direct. En effet, tout le monde veut récupérer les utilisateurs lors d'une nouvelle info, pour cela il faut être l'un des premiers à remonter sur Google. On sait aujourd'hui que le calcul de la position dans la recherche Google prend en compte la performance du site en version mobile avec peu de réseau. Le but est donc d'être meilleurs que les autres sites pour être le premier à apparaitre.
 
-Il n'y a pas que pour l'actu chaude que la performance du site est importante. On le sait aujourd'hui il existe clairement un impact fort entre le trafic du site et la web performance. Je vous invite à lire [https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/](https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/) provenant d'une source plutôt fiable puisqu'il s'agit de Google.
+Il n'y a pas que pour l'actu chaude que la performance du site est importante. On le sait aujourd'hui, il existe clairement un impact fort entre le trafic du site et la web performance. Je vous invite à lire [https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/](https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/) provenant d'une source plutôt fiable puisqu'il s'agit de Google.
 
 ![thinkwithgoogle]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image1.jpg)
 
@@ -54,11 +54,11 @@ Prenont quelques exemples de métrique importantes:
 
 Bien sûr il n'est pas possible de suivre l'ensemble des métriques et cela n'aurait pas de sens. Souvent réduire une métrique aura un impact négatif sur une autre et inversement. Nous avons donc besoin de choisir nos KPIs dès le début du projet et de ne plus changer.
 
-Dans le cadre de la mission nous avons choisi cinq KPIs a suivre. L'une des plus importantes est le visuel d'une page seconde par seconde (filmstrips), cela permet de comprendre ce que voit l'utilisateur. Comme la webperformance n'a pas de valeur absolue, il est préférable de faire un benchmark avec vos concurrents. C'est certainement ce qui est le plus important, car Google compare les résultats entre les sites.
+Dans le cadre de la mission nous avons choisi cinq KPIs à suivre. L'une des plus importantes est le visuel d'une page seconde par seconde (filmstrips), cela permet de comprendre ce que voit l'utilisateur. Comme la webperformance n'a pas de valeur absolue, il est préférable de faire un benchmark avec vos concurrents. C'est certainement ce qui est le plus important, car Google compare les résultats entre les sites.
 
 ![filmstrips]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image2.png)
 
-Maintenant que nous savons quelles sont les métriques à suivre nous pouvons choisir le ou les outils pour les suivre.
+Maintenant que nous savons quelles sont les métriques à suivre, nous pouvons choisir le ou les outils pour les suivre.
 
 ## Suivre les metriques
 
@@ -68,7 +68,7 @@ Il nous faut donc un outil le permettant.
 
 Nous avons choisi [Sitespeed.io](https://www.sitespeed.io/) qui est une suite d'outillage sur Docker que vous pouvez insérer dans votre CI ou installer sur vos postes.
 
-Sitespeed utilise les résultats de [WebPageTest](https://www.sitespeed.io/documentation/sitespeed.io/webpagetest/) et les pose dans un [ELK](https://www.elastic.co/fr/elk-stack). Cela nous permet de mettre en place des boards personnalisés permettant de voir en un instant nos KPI.
+Sitespeed utilise les résultats de [WebPageTest](https://www.sitespeed.io/documentation/sitespeed.io/webpagetest/) et les pose dans un [ELK](https://www.elastic.co/fr/elk-stack). Cela nous permet de mettre en place des boards personnalisés permettant de voir en un instant nos KPIs.
 
 Les équipes de développement peuvent aussi utiliser la console Chrome qui contient de nombreux outils permettant de suivre la webperformance.
 
@@ -78,7 +78,7 @@ Comme par exemple:
 
 ![audit]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image3.png)
 
-- **network** permettant de voir les bottleneck du réseau
+- **network** permettant de voir les bottlenecks du réseau
 - **coverage** permettant de connaitre le taux d'utilisation du javascript et du css
 
 ![coverage]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image4.png)
@@ -89,9 +89,9 @@ Une fois l'ensemble des métriques et des outils choisis, il faut travailler ave
 
 Nous avons choisi avec France Media Monde de faire cela en plusieurs étapes.
 
-Comme la refonte utilisera Vue.js nous avons tout d'abord travaillé sur l'architecture et la performance de l'application javascript. Dès le début du projet, nous avons donc travaillé avec les équipes pour mettre en place la meilleure architecture possible.
+Comme la refonte utilisera Vue.js, nous avons tout d'abord travaillé sur l'architecture et la performance de l'application javascript. Dès le début du projet, nous avons donc travaillé avec les équipes pour mettre en place la meilleure architecture possible.
 
-La première chose que nous avons mis en place avec l'équipe c'est un manifeste de la webperformance pour l'ensemble des équipes. Ce manifeste est à destination des designers, des développeurs, des product owners et de l'infrastructure. Le but de ce manifest est de prendre les décisions en pensant aussi à la webperformance. Cela permet de ne plus intervenir en mode pompier sur la webperformance, donc ne plus attendre qu'il y est des problèmes de performance , mais suivre la webperformance tout au long du run.
+La première chose que nous avons mis en place avec l'équipe c'est un manifeste de la webperformance pour l'ensemble des équipes. Ce manifeste est à destination des designers, des développeurs, des product owners et de l'infrastructure. Le but de ce manifeste est de prendre les décisions en pensant aussi à la webperformance. Cela permet de ne plus intervenir en mode pompier sur la webperformance, donc ne plus attendre qu'il y ait des problèmes de performance , mais suivre la webperformance tout au long du run.
 
 Nous avons mis en place avec l'équipe, des vérifications de webperformance lors des builds de l'application. Cela nous permet de valider tout le long du développement que la webperformance est correcte et suit nos KPIs.
 
@@ -108,7 +108,7 @@ En un an, nous avons mis en place de nombreuses choses permettant d'améliorer l
 - Mettre en place des **preconnect**, **preload** et **prefetch** pour que votre navigateur se connecte aux ressources externes plus rapidement
 - Etc...
 
-Ce qui est important c'est de suivre les nouveautés en lien avec la webperformance. Google mais très souvent du contenu en ligne pour expliquer les nouveaux outils mise en place pour nous permettre de rendre nos applications toujours plus performante.
+Ce qui est important c'est de suivre les nouveautés en lien avec la webperformance. Google met très souvent du contenu en ligne pour expliquer les nouveaux outils mis en place pour nous permettre de rendre nos applications toujours plus performantes.
 
 Voici un exemple fait à la google I/O 2018
 
@@ -116,7 +116,7 @@ Voici un exemple fait à la google I/O 2018
 
 ## Bilan
 
-Après un an de mission et grâce au travail des équipes MCD et France24 sont maintenant en ligne et sont d'après nos métriques numéro un. Comme un long discours ne sert à rien voici le résultat après la mise en production.
+Après un an de mission et grâce au travail des équipes MCD et France24, sont maintenant en ligne et sont d'après nos métriques numéro un. Comme un long discours ne sert à rien voici le résultat après la mise en production.
 
 ![bilan]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image5.png)
 
@@ -127,4 +127,4 @@ Après un an de mission et grâce au travail des équipes MCD et France24 sont m
 ![bilan]({{site.baseurl}}/assets/2019-02-14-un-an-de-webperformance/image8.png)
 
 
-Si vous aussi vous souhaitez améliorer votre webperformance renseignez vous [ici](https://eleven-labs.com/accompagnement-sur-mesure/audit-et-expertise)
+Si vous aussi vous souhaitez améliorer votre webperformance, renseignez vous [ici](https://eleven-labs.com/accompagnement-sur-mesure/audit-et-expertise)
