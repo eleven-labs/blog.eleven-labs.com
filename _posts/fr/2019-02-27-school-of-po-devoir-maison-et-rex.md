@@ -21,17 +21,15 @@ The place to be pour découvrir, échanger et mettre en pratique de nouvelles te
 
 ## SOMMAIRE
 
- - Maximum Impact, Minimum Effort
- - Maria Montessori : Meilleure PO du Monde
- - Own Your Product As If It Mattered
- - Vanity Metrics
- - L'arbre des Hypothèses
- - Raclette de "Design Sprint"
+ - [Maximum Impact, Minimum Effort](#maximum-impact-minimum-effort)
+ - [Maria Montessori : Meilleure PO du Monde](#maria-montessori-meilleure-po-du-monde)
+ - [Own Your Product As If It Mattered](#own-your-product-as-if-it-mattered)
+ - [Vanity Metrics](#vanity-metrics)
+ - [L'arbre des Hypothèses](#atelier-1-l-arbre-des-hypotheses)
+ - [Raclette de "Design Sprint"](#atelier-2-design-moi-un-sprint)
 
 ## Maximum Impact, Minimum Effort
 L’ouverture de la School of PO s’est faite sur un premier talk : Maximum Impact, minimum effort par [Gojko Adzic](https://en.wikipedia.org/wiki/Gojko_Adzic), un peu le papa de l’Impact Mapping.
-
-![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/maximpact_mineffort.jpg)
 
 ### Moins j’en fais mieux je me porte
 
@@ -47,13 +45,13 @@ Un fonctionnement entre 2 équipes agiles ne sera pas le même, que ce soit dans
 
 Gojko Adzic a fait ici état de trois “grandes” illusions, qui peuvent être communes à tous projets si les parties prenantes du bon développement du produit ne sont pas attentifs.
 
-**1ère illusion** : un effet collatéral des itérations apportées par l’agilité est de perdre de vue ce qui apporte de la valeur à son produit. Ou plus spécifiquement l’illusion est de penser que parce qu’à chaque fin d’itération une nouvelle mise en production est effectuée, elle apporte de la valeur.
+- **1ère illusion** : un effet collatéral des itérations apportées par l’agilité est de perdre de vue ce qui apporte de la valeur à son produit. Ou plus spécifiquement l’illusion est de penser que parce qu’à chaque fin d’itération une nouvelle mise en production est effectuée, elle apporte de la valeur.
 
 Il faut donc garder de vue que chaque itération doit apporter une valeur métier, une valeur à l’utilisateur finale. Et non par exemple une valeur technique, si derrière elle ne peut être traduite en valeur métier.
 
 C’est le meilleur moyen de perdre de vue l’intérêt et l’utilité d’un produit pour son utilisateur.
 
-**2ème illusion** : si quelqu’un d’important hiérarchiquement dans la société demande une feature, c’est qu’elle a de la valeur ajoutée.
+- **2ème illusion** : si quelqu’un d’important hiérarchiquement dans la société demande une feature, c’est qu’elle a de la valeur ajoutée.
 
 Je pense que chaque personne, PO, PM ou chef de projet s’est déjà retrouvé dans ce contexte où un membre de la direction impose son choix comme étant la clé stratégique à une problématique, ou l’idée du siècle dont voudra forcément l’utilisateur final de son produit.
 
@@ -61,7 +59,7 @@ Hors, il s’agit dans la majeur partie des cas seulement de supposition, sans a
 
 Gojko fait d’ailleurs un petit clin d’oeil à Microsoft, où seulement ⅓ de ce qui est produit améliorerait réellement l’expérience de leurs utilisateurs.
 
-**3ème illusion** : nous sommes bons dans l’évaluation de la valeur ajoutée d’une fonctionnalité.
+- **3ème illusion** : nous sommes bons dans l’évaluation de la valeur ajoutée d’une fonctionnalité.
 
 Certaines variables sont imprédictibles, et ne permettent pas de viser toujours juste lorsque l’on décide du développement d’une feature ou même d’un produit dans sa globalité.
 
@@ -70,6 +68,8 @@ Sont évoquées notamment la variable localisation, qui va parfois limiter l’i
 La variable du temps qui peut rendre obsolète le produit (un autre service qui a vu le jour ou ce n’est plus dans les tendances du marché).
 
 Ou encore la variable humaine, qui rend la perception très subjective et qui va faire connaître son avis à son entourage.
+
+![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/maximpact_mineffort.jpg)
 
 ### Besoin d’adaptabilité
 
@@ -112,13 +112,13 @@ Le deuxième talk, présenté par Amélia Matar, founder de [@COLORIeducation](h
 
 Après une présentation de la vie de Maria Montessori, meilleure PO du monde pour notre intervenante, et de tout ce qu’elle a pu apporter à l’éducation dès la petite enfance, 4 grands principes en ressortent :
 
--   la répétition a une importance cruciale dans l’apprentissage
+-   La répétition a une importance cruciale dans l’apprentissage
 
--   laisser son libre arbitre à une personne permet de le responsabiliser
+-   Laisser son libre arbitre à une personne permet de le responsabiliser
 
--   il n’est pas nécessaire d’instaurer un système de punitions et de récompenses pour donner de la motivation quand on propose une activité intéressante et enrichissante
+-   Il n’est pas nécessaire d’instaurer un système de punitions et de récompenses pour donner de la motivation quand on propose une activité intéressante et enrichissante
 
--   un enfant, comme tout être humain, peut se concentrer pendant plusieurs heures sur une problématique si elle est stimulante
+-   Un enfant, comme tout être humain, peut se concentrer pendant plusieurs heures sur une problématique si elle est stimulante
 
 ### Les 7 Qualités du PO
 
@@ -220,33 +220,32 @@ Toutes les décisions que nous prenons aujourd’hui se font sans savoir si elle
 
 Deux types d’hypothèses sont à dissocier :
 
--   celles liées au produit, auxquelles cas le Lean Canvas permet de les mettre en évidence et de les tester
+-   Celles liées au produit, auxquelles cas le Lean Canvas permet de les mettre en évidence et de les tester
 
--   celles liées aux fonctionnalités, qui nous intéressent aujourd’hui, mais qui n’est aujourd’hui pas vraiment formalisé
+-   Celles liées aux fonctionnalités, qui nous intéressent aujourd’hui, mais qui n’est aujourd’hui pas vraiment formalisé
 
 
 ### Marche à suivre
 
-1.  Commencer par une question
+1. Commencer par une question
+2. Laisser libre cours à ses idées pour les formuler
+3. Convertir les idées en hypothèses formalisées et les formuler : si <réalisation>, alors <résultat> car <raison d’y croire >
+4. Formuler une expérimentation pour valider cette hypothèse
 
-2.  Laisser libre cours à ses idées pour les formuler
-
-3.  Convertir les idées en hypothèses formalisées et les formuler : si <réalisation>, alors <résultat> car <raison d’y croire >
-
-4.  Formuler une expérimentation pour valider cette hypothèse
 
 
 ### Expérimentation
 
-![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/arbre-hypotheses.jpg)
-
 Nous nous sommes prêtés à l’exercice par groupe d’environ 6 personnes.
 
- 1. **Question**
+![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/arbre-hypotheses.jpg)
+
+
+ **1. Question**
 
 Nous sommes partis de cette question “Pourquoi seulement 20% des users ont un compte Spotify Family ?”
 
- 2. **Idées**
+ **2. Idées**
 
 Nous avons ensuite émis plusieurs idées qui nous venaient à l’esprit :
  - trop cher
@@ -257,35 +256,41 @@ Nous avons ensuite émis plusieurs idées qui nous venaient à l’esprit :
  - manque de connaissance des CGU
  - peur pour ma vie privée
 
- 3. **Hypothèses formalisées**
+ **3. Hypothèses formalisées**
 
 Nous avons choisi parmi le panel des idées jetées sur le papier 3 d’entre elles afin de formuler des hypothèses :
 
  - Pas envie de payer pour tout le monde :
 
-***Si < je permets aux users de diviser le paiement >
+*Si < je permets aux users de diviser le paiement >
+
 Alors < les users seront moins freinés >
-Car < sur les apps uber & airbnb ça fonctionne bien >***
+
+Car < sur les apps uber & airbnb ça fonctionne bien >*
 
  - Les utilisateurs n’ont pas de famille
 
-***Si < je change le wording “famille” / rename la formule >
+*Si < je change le wording “famille” / rename la formule >
+
 Alors < il y aura un augmentation du nb de compte famille >
-Car < la population utilisant spotify est jeune et à x% célibataire >***
+
+Car < la population utilisant spotify est jeune et à x% célibataire >*
 
  - Impossible de gérer son compte famille depuis l’app spotify
 
-***Si < j’intègre la création de compte famille dans l’app >
+*Si < j’intègre la création de compte famille dans l’app >
+
 Alors < j’aurai plus de users inscrits en compte famille >
-Car < la majeur partie des users sont sur l’app >***
+
+Car < la majeur partie des users sont sur l’app >*
 
 
- 4. **Valider les hypothèses**
+ **4. Valider les hypothèses**
 
 
 Nous avons ensuite imaginé une expérimentation nous permettant de valider l’hypothèse numéro 4, par manque de temps :
 
-- Ajouter un bouton dans l’app qui redirige l’utilisateur vers la page de souscription et la tracker, afin d’avoir une évaluation chiffrée du potentiel intérêt de la formule.
+Ajouter un bouton dans l’app qui redirige l’utilisateur vers la page de souscription et la tracker, afin d’avoir une évaluation chiffrée du potentiel intérêt de la formule.
 
 
 
@@ -375,13 +380,13 @@ Les 5 jours se terminent sur un debrief avec une prise de décision sur les proc
 
 ### 3/ Et comment ça se prépare un design sprint ?
 
-Avant de se lancer dans un design sprint, il faut déjà se poser les bonnes questions et être sûr d’avoir des réponses à chacunes :
+Avant de se lancer dans un design sprint, il faut déjà se poser **les bonnes questions** et être sûr d’avoir des réponses à chacunes :
 
  - Quel est l’objectif ou le challenge à relever ?
  - Est-ce qu’il y a de la data ?
  - Quels seront les moteurs de succès ?
 
-**Constituer la bonne team**
+Constituer la **bonne team**
  - Décideur
  - Sprint master
  - Porteur Projet (PO)
@@ -401,7 +406,7 @@ Avant de se lancer dans un design sprint, il faut déjà se poser les bonnes que
 
 Et après ces 5 jours à se voir tous les jours, comment on gère le retour au quotidien ? L’équipe se perd facilement de vue.
 
-D’où l’importance de
+D’où l’importance de :
 
 -   Tout documenter sur les études préalables et 5 jours passés
 -   Caler un debrief pour avoir un REX
@@ -412,6 +417,8 @@ D’où l’importance de
 ### 5/ Si on essayait ? Time to experiment !
 
 A nos crayons ! On se lance à travers les 6 étapes suivantes pour réaliser en 1h un semblant d’un design sprint de 5 jours. Challenge accepted pour l’équipe !
+
+![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/design_sprint.jpg)
 
 **1/6 : identifier les challenges potentiels**
 
@@ -441,7 +448,7 @@ Dans l’idéal, le mapping d’un parcours cible doit répondre aux questions s
 
 Nous avons ensuite, chacun de notre côté, réalisé des maquettes de ce que l’on imaginait être le service répondant le mieux au parcours cible, à travers un ou plusieurs écrans, sur desktop, mobile ou autre (un frigo connecté ?).
 
-![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/design_sprint.jpg)
+
 
 **5/6 : converger, voter**
 
