@@ -1,12 +1,28 @@
 .site-footer {
-  color: lighten($brand-black, 30%);
+  background: $dark-indigo;
+  color: lighten($brand-black, 50%);
   display: inline-block;
-  font-size: 1.3rem;
-  padding: 3rem 0 5rem;
+  font-family: $font-family-footer-contact;
+  font-size: 1.5rem;
+  padding: 3rem 1.5rem 5rem;
   text-align: center;
   width: 100%;
 
   @media (min-width: $breakpoint-large) {
     padding: 2rem 0;
+  }
+
+  span {
+    line-height: 2.6rem;
+
+    a {
+      color: lighten($brand-black, 50%);
+      text-decoration: none;
+
+      @media (min-width: $breakpoint-large) {
+        pointer-events: none;
+      }
+
+    }
   }
 }

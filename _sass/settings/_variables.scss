@@ -1,6 +1,11 @@
 // Typography
 $font-family-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 $font-family-headings:'DINPro-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-footer-big-text: 'Korb';
+$font-family-footer-subtitle: 'WorkSans-Bold';
+$font-family-footer-title: 'Korb';
+$font-family-button: 'Worksans-Bold';
+$font-family-footer-contact: 'Worksans-Regular';
 
 $font-size: 19px;
 $font-size-mobile: 16px;
@@ -20,18 +25,22 @@ $shark: #323334;
 $turbo: #fde300;
 $white: #fff;
 $semi-transparent-black: rgba(0, 0, 0, .5);
+$dark-indigo: #0d2857;
+$light-grey: rgba(255, 255, 255, .33);
+$blue-gradient: linear-gradient(102deg, #0e3b81, #3a65b4);
 
 // Eleven Labs colours
 $brand-yellow: $turbo;
 $brand-black: $shark;
 
 // Button
-$button-hover: $dusty-gray;
+$button-hover: $shark;
 
 // Brand colours
 $brand-color: $white;
 $background-color: $white;
-$border-color: rgba(0, 0, 0, .1); // rgba recommended if using feature images
+$border-color: $light-grey;
+$footer-background: $blue-gradient;
 
 // Typography colours
 $selection-color: $alto; // visible when highlighting text

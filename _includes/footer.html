@@ -1,9 +1,15 @@
-{% if site.theme_settings.footer_text %}
+{% capture phoneNumber %}tel{{ site.theme_settings.phone_number | replace: " ", "" }}{% endcapture %}
+{% if site.theme_settings.copyright %}
 <footer class="slice site-footer">
     <p class="text container">
-    	<a href="mailto:contact@eleven-labs.com" title="Email" rel="nofollow noreferrer">{% translate global.contact_us %}</a> 
-    	<br />
-    	{{ site.theme_settings.footer_text }}
+		<span>{{ site.theme_settings.copyright }}</span>
+		<br />
+		<span><a class="no-link-style" href="{{ phoneNumber }}">{{ site.theme_settings.phone_number }}</a></span>
+		<br />
+		<span>{{ site.theme_settings.adress }}</span>
+		<br />
+		<span>{{ site.theme_settings.post_code }}</span>
+		<br />
     </p>
 </footer>
 {% endif %}

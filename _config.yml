@@ -32,7 +32,10 @@ theme_settings:
 
     # Header and footer
     header_text_bg_image: /img/bg-header.jpg
-    footer_text: To infinity and beyond !
+    copyright: ElevenLabs © 2019
+    phone_number: +33 1 82 83 11 75
+    adress: 15, avenue de la Grande Armée
+    post_code: 75016 PARIS
 
     # Icons
     rss: /feed.xml
