@@ -108,7 +108,7 @@ Si vous souhaitez apporter votre pierre à l’édifice, Gojko Adzic est toujour
 
 ## Maria Montessori : Meilleure PO du Monde
 
-Le deuxième talk, présenté par Amélia Matar, founder de [@COLORIeducation](https://twitter.com/COLORIeducation) , vient ici nous parler de la pédagogie Montessori dédiée à l’enfant, et de ses parallèles avec le métier de product manager et de product owner.
+Le deuxième talk, présenté par Amélia Matar, founder de [@COLORIeducation](https://twitter.com/COLORIeducation) , nous parle de la pédagogie Montessori dédiée à l’enfant, et de ses parallèles avec le métier de product manager et de product owner.
 
 Après une présentation de la vie de Maria Montessori, meilleure PO du monde pour notre intervenante, et de tout ce qu’elle a pu apporter à l’éducation dès la petite enfance, 4 grands principes en ressortent :
 
@@ -136,9 +136,9 @@ Amélia nous a ensuite proposée une liste de sept qualités chez Maria Montesso
 
 ## Own Your Product as if it Mattered
 
-Olaf Lewitz, troisième intervenants de cette matinée uniquement dédiée aux talks nous présente son sujet de la journée : être bien intentionné ne permet pas de bien faire, pourtant vouloir s’améliorer et se démarquer se fait avec intention.
+Olaf Lewitz, troisième intervenant de cette matinée uniquement dédiée aux talks, nous présente son sujet de la journée : être bien intentionné ne permet pas de bien faire, pourtant vouloir s’améliorer et se démarquer se fait avec intention.
 
-Son idée à travers l’agile et l’impact mapping, et de pouvoir s’améliorer à se démarquer avec les bonnes intentions.
+Son idée à travers l’agile et l’impact mapping est de pouvoir s’améliorer à se démarquer avec les bonnes intentions.
 
 Ces bonnes intentions se traduisent notamment par le fait d’avoir une vision stratégique sur l’engagement, la motivation, et la perte de temps. Et de ne jamais faire quoique ce soit sans en avoir mesurer cet impact.
 
@@ -146,15 +146,15 @@ Ces bonnes intentions se traduisent notamment par le fait d’avoir une vision s
 
 Olaf nous a proposé un planning avec 3 plages d’horizon différentes : semaine prochaine, dans 3 mois et dans 6 mois.
 
-Pour chaque production à entreprendre dans un projet, posons-nous la question des résultats attendus à 1 semaine après la mise en production, diffusion, [ajouter ici l’action souhaitée contextuellement à votre projet], 3 mois et 6 mois après.
+Pour chaque production à entreprendre dans un projet, posons-nous la question des résultats attendus à 1 semaine après la mise en production / diffusion / [ajouter ici l’action souhaitée contextuellement à votre projet], 3 mois et 6 mois après.
 
 Par exemple, la production à réaliser pourrait être l’écriture d’un REX sur la School of PO. Le résultat attendu pourrait être une semaine après d’avoir l’avis de trois personnes ayant lu mon article.
 
-Après 3 mois, le résultat attendu pourrait être d’avoir 100 000 retweets sur Twitter de l’article.
+Après 3 mois, le résultat attendu pourrait être d’avoir 100 000 retweets sur Twitter de mon article (ce rêve bleu).
 
-Après 6 mois, le résultat attendu pourrait être d’être invité à animer une conférence grâce au succès de l’article.
+Après 6 mois, le résultat attendu pourrait être d’être invitée à animer une conférence grâce au succès de l’article.
 
-Un autre exemple au contraire, comme ci-dessous pourrait être de partager une anecdote avec 3 personnes, dans 3 mois d’estimer à seulement 25 personnes le partage de cette anecdote, et donc le résultat prévisionnel attendu à 6 mois sera d’avoir abandonné le projet à la vue de la perte provoquée.
+Un autre exemple, au contraire, pourrait être de partager une anecdote avec 3 personnes, dans 3 mois d’estimer à seulement 25 personnes le partage de cette anecdote, et donc le résultat prévisionnel attendu à 6 mois pourrait être d’avoir abandonné le projet à la vue de la perte provoquée.
 
 
 ### Daily basis ?
@@ -177,7 +177,7 @@ Oussama Ammar, un des fondateurs de l’incubateur TheFamily a clôturé cette m
 
 Sans aucun support pour appuyer son discours, et en captant par son discours et sa présence sur scène toute l’audience, il a introduit la notion de “Vanity Metrics” comme le meilleur moyen de représenter son business de façon arbitraire.
 
-Est-ce pour autant une mauvaise chose ? Pas totalement ! Explications.
+Est-ce pour autant une mauvaise chose ? Pas vraiment ! Explications.
 
 ### Ca fait du biz
 
@@ -189,7 +189,7 @@ Nous avons tendance à croire que tout le monde dit la vérité et s’intéress
 
 Par exemple, en France, nous sommes connus pour être le peuple qui soit disant aime le plus le cinéma d’art et d’essai. Hors dans les faits, nous sommes bien le peuple qui en regardons le moins.
 
-Ce qui n’est par exemple pas du tout le cas aux Etats-Unis, où le vice de la Vanity Metrics permet a bien des entrepreneurs de réussir à se lancer en mettant en avant ce que les incubateurs ou utilisateurs veulent entendre.
+Ce qui n’est pas du tout le cas aux Etats-Unis, où le vice de la Vanity Metrics permet a bien des entrepreneurs de réussir à se lancer en mettant en avant ce que les incubateurs ou utilisateurs veulent entendre.
 
 ### Comprendre sans se voiler la face
 
@@ -197,11 +197,11 @@ Ce qui n’est par exemple pas du tout le cas aux Etats-Unis, où le vice de la 
 
 
 
-Netflix, par exemple, avait intégré à l’époque à son portail un système de notation. Qui ne venait pas alimenter un score pour une série, un épisode ou encore un film, mais un score de recommandation permettant au service de vous recommander des contenus en fonction.
+Netflix, par exemple, avait intégré à l’époque à son portail un système de notation. Qui ne venait pas alimenter un scoring pour une série, un épisode ou encore un film, mais un scoring de recommandation permettant au service de vous proposer des contenus en fonction.
 
 
 
-Cependant, Netflix s’est rendu compte après un certain temps d’utilisation de cette fonctionnalité et en comparant les notes données aux autres contenus visualisés par leurs utilisateurs que ce n’était pas lié. Parce qu’au final, un utilisateur appréciant beaucoup les mangas ou les films d’animation, par pudeur, ne l’indiquera pas. Alors qu’il indiquera toujours aimer les contenus à fort succès dont tout le monde parle.
+Cependant, Netflix s’est rendu compte après un certain temps d’utilisation de cette fonctionnalité et en comparant les notes données aux autres contenus visualisés par leurs utilisateurs que ce n’était pas lié. Car au final, par exemple, un adulte appréciant beaucoup les mangas ou les films d’animation par pudeur ne l’indiquera pas forcément. Alors qu’il indiquera toujours aimer les contenus à fort succès dont tout le monde parle.
 
 Ce qui fausse totalement les contenus essentiels à recommander pour garder son utilisateur actif.
 
