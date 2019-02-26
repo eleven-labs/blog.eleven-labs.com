@@ -1,6 +1,6 @@
 ---
 layout: post
-title: School of PO : devoir maison et retour d'expérience
+title: "School of PO : devoir maison et retour d'expérience"
 lang: fr
 permalink: /fr/school-of-po-devoir-maison-et-retour-dexperience/
 excerpt: AstroPO, AstroDev, ou tout simplement AstroPssionnés par l’agilité se sont donnés rdv sur les bancs de l'école mercredi 13 janvier à la School of PO !
@@ -14,7 +14,7 @@ tags:
     - rex
 ---
 
-AstroPO, AstroDev, ou tout simplement AstroPssionnés par l’agilité se sont donnés rendez-vous sur les bancs de l'école ce mercredi 13 janvier pour assister à la School of PO ! 
+AstroPO, AstroDev, ou tout simplement AstroPassionnés par l’agilité se sont donnés rendez-vous sur les bancs de l'école ce mercredi 13 janvier pour assister à la School of PO ! 
 
 The place to be pour découvrir, échanger et mettre en pratique de nouvelles techniques pour mieux s’organiser, cadrer, définir les tenants et aboutissants d’un produit ou faire face à des situations d’échecs.
 
@@ -24,7 +24,7 @@ The place to be pour découvrir, échanger et mettre en pratique de nouvelles te
  - Maria Montessori : Meilleure PO du Monde 
  - Own Your Product As If It Mattered 
  - Vanity Metrics 
- -  L'arbre des Hypothèses 
+ - L'arbre des Hypothèses 
  - Raclette de "Design Sprint"
 
 ## Maximum Impact, Minimum Effort
