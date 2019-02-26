@@ -30,6 +30,8 @@ The place to be pour découvrir, échanger et mettre en pratique de nouvelles te
 ## Maximum Impact, Minimum Effort
 L’ouverture de la School of PO s’est faite sur un premier talk : Maximum Impact, minimum effort par [Gojko Adzic](https://en.wikipedia.org/wiki/Gojko_Adzic), un peu le papa de l’Impact Mapping.
 
+image : maximpact_mineffort
+
 ### Moins j’en fais mieux je me porte 
 
 Il ouvre sa conférence sur un constat factuel mais assez triste : un milliard de dollars sont perdus dans des échecs de projets IT tous les ans.
@@ -153,9 +155,10 @@ Après 6 mois, le résultat attendu pourrait être d’être invité à animer u
 
 Un autre exemple au contraire, comme ci-dessous pourrait être de partager une anecdote avec 3 personnes, dans 3 mois d’estimer à seulement 25 personnes le partage de cette anecdote, et donc le résultat prévisionnel attendu à 6 mois sera d’avoir abandonné le projet à la vue de la perte provoquée.
 
-IMAGE
 
 ### Daily basis ?
+
+image : own-your-product
 
 La limite de la proposition qu’il faut, je pense, ne pas oublier, est que chaque mesure est basée sur des hypothèses. Et cela peut laisser un grand flou.
 
@@ -233,6 +236,8 @@ Deux types d’hypothèses sont à dissocier :
     
 
 ### Expérimentation
+
+image : arbre-hypotheses
 
 Nous nous sommes prêtés à l’exercice par groupe d’environ 6 personnes.
 
@@ -435,7 +440,7 @@ Dans l’idéal, le mapping d’un parcours cible doit répondre aux questions s
 
 Nous avons ensuite, chacun de notre côté, réalisé des maquettes de ce que l’on imaginait être le service répondant le mieux au parcours cible, à travers un ou plusieurs écrans, sur desktop, mobile ou autre (un frigo connecté ?).
 
-  
+image : design_sprint
 
 **5/6 : converger, voter**
 
