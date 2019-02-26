@@ -11,7 +11,7 @@ categories:
 tags:
     - po
     - agile
-	- rex
+    - rex
 cover: /assets/2019-02-27-school-of-po-devoir-maison-et-rex/school-of-po-cover.jpg
 ---
 
