@@ -2,22 +2,10 @@
   font-size: 1.4rem;
   position: relative;
 
-  @media (min-width: $breakpoint-x-small) {
-    margin-right: 1.5rem;
-  }
-
-  @media (max-width: $breakpoint-x-small) {
-    margin: 1rem auto 1.5rem;
-    max-width: 12rem;
-  }
-
-  @media (min-width: $breakpoint-small) {
-    margin-right: 3rem;
-  }
-
   &-label {
     font-size: 1.1rem;
     letter-spacing: .1em;
+    padding-left: 1rem;
     text-transform: uppercase;
   }
 
@@ -31,7 +19,6 @@
     max-width: 100%;
     min-width: 100%;
     opacity: 0;
-    padding: .4rem;
     position: absolute;
     right: 0;
     top: 0;
@@ -39,7 +26,6 @@
     z-index: 10;
 
     &:focus {
-      border-bottom: 2px solid $brand-black;
       opacity: 1;
       outline: none;
 
