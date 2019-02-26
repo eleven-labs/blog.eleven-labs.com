@@ -11,28 +11,29 @@ categories:
 tags:
     - po
     - agile
-    - rex
+	- rex
+cover: /assets/2019-02-27-school-of-po-devoir-maison-et-rex/school-of-po-cover.jpg
 ---
 
-AstroPO, AstroDev, ou tout simplement AstroPassionnés par l’agilité se sont donnés rendez-vous sur les bancs de l'école ce mercredi 13 janvier pour assister à la School of PO ! 
+AstroPO, AstroDev, ou tout simplement AstroPassionnés par l’agilité se sont donnés rendez-vous sur les bancs de l'école ce mercredi 13 janvier pour assister à la School of PO !
 
 The place to be pour découvrir, échanger et mettre en pratique de nouvelles techniques pour mieux s’organiser, cadrer, définir les tenants et aboutissants d’un produit ou faire face à des situations d’échecs.
 
 ## SOMMAIRE
 
- - Maximum Impact, Minimum Effort 
- - Maria Montessori : Meilleure PO du Monde 
- - Own Your Product As If It Mattered 
- - Vanity Metrics 
- - L'arbre des Hypothèses 
+ - Maximum Impact, Minimum Effort
+ - Maria Montessori : Meilleure PO du Monde
+ - Own Your Product As If It Mattered
+ - Vanity Metrics
+ - L'arbre des Hypothèses
  - Raclette de "Design Sprint"
 
 ## Maximum Impact, Minimum Effort
 L’ouverture de la School of PO s’est faite sur un premier talk : Maximum Impact, minimum effort par [Gojko Adzic](https://en.wikipedia.org/wiki/Gojko_Adzic), un peu le papa de l’Impact Mapping.
 
-image : maximpact_mineffort
+![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/maximpact_mineffort.jpg)
 
-### Moins j’en fais mieux je me porte 
+### Moins j’en fais mieux je me porte
 
 Il ouvre sa conférence sur un constat factuel mais assez triste : un milliard de dollars sont perdus dans des échecs de projets IT tous les ans.
 
@@ -45,7 +46,7 @@ Il est important de prendre conscience que certaines idées préconçues dans la
 Un fonctionnement entre 2 équipes agiles ne sera pas le même, que ce soit dans le déroulé des différentes cérémonies agiles que dans l’objectif donné à chaque itération jusqu’à la livraison finale.
 
 Gojko Adzic a fait ici état de trois “grandes” illusions, qui peuvent être communes à tous projets si les parties prenantes du bon développement du produit ne sont pas attentifs.
-  
+
 **1ère illusion** : un effet collatéral des itérations apportées par l’agilité est de perdre de vue ce qui apporte de la valeur à son produit. Ou plus spécifiquement l’illusion est de penser que parce qu’à chaque fin d’itération une nouvelle mise en production est effectuée, elle apporte de la valeur.
 
 Il faut donc garder de vue que chaque itération doit apporter une valeur métier, une valeur à l’utilisateur finale. Et non par exemple une valeur technique, si derrière elle ne peut être traduite en valeur métier.
@@ -102,8 +103,8 @@ Grand sujet de son prochain livre sur l’Impact Mapping, Gojko Adzic essaye de 
 
 	- ajouter une branche dédiée à la culture d’entreprise et à l’environnement sur l’impact mapping
 
-  
-Si vous souhaitez apporter votre pierre à l’édifice, Gojko Adzic est toujours en demande de nouveaux cas d’école afin de pouvoir répondre de la manière la plus exhaustive possible aux différents contextes et donc conseils à proposer dans son [nouveau livre](impactmappin.org/newbook). 
+
+Si vous souhaitez apporter votre pierre à l’édifice, Gojko Adzic est toujours en demande de nouveaux cas d’école afin de pouvoir répondre de la manière la plus exhaustive possible aux différents contextes et donc conseils à proposer dans son [nouveau livre](impactmappin.org/newbook).
 
 ## Maria Montessori : Meilleure PO du Monde
 
@@ -112,13 +113,13 @@ Le deuxième talk, présenté par Amélia Matar, founder de [@COLORIeducation](h
 Après une présentation de la vie de Maria Montessori, meilleure PO du monde pour notre intervenante, et de tout ce qu’elle a pu apporter à l’éducation dès la petite enfance, 4 grands principes en ressortent :
 
 -   la répétition a une importance cruciale dans l’apprentissage
-    
+
 -   laisser son libre arbitre à une personne permet de le responsabiliser
-    
+
 -   il n’est pas nécessaire d’instaurer un système de punitions et de récompenses pour donner de la motivation quand on propose une activité intéressante et enrichissante
-    
+
 -   un enfant, comme tout être humain, peut se concentrer pendant plusieurs heures sur une problématique si elle est stimulante
-    
+
 ### Les 7 Qualités du PO
 
 Amélia nous a ensuite proposée une liste de sept qualités chez Maria Montessori qu’elle rattache à nos métiers de PM ou de PO sur des projets informatiques :
@@ -131,7 +132,7 @@ Amélia nous a ensuite proposée une liste de sept qualités chez Maria Montesso
  6. Une UX adaptée et poussée
  7. Partager et expliquer
 
-  
+
 
 ## Own Your Product as if it Mattered
 
@@ -158,7 +159,7 @@ Un autre exemple au contraire, comme ci-dessous pourrait être de partager une a
 
 ### Daily basis ?
 
-image : own-your-product
+![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/own-your-product.jpg)
 
 La limite de la proposition qu’il faut, je pense, ne pas oublier, est que chaque mesure est basée sur des hypothèses. Et cela peut laisser un grand flou.
 
@@ -167,7 +168,7 @@ Cependant, là où je trouve cette technique intéressante est de pouvoir l’in
 Quelles différences les échanges et décisions vont avoir ? Cela ne poussera-t-il pas tout le monde à garder à l’esprit un objectif chiffrable, et donc mesurable, à chaque développement d’une nouvelle feature, la mise en place d’un nouveau process d’équipe, ou encore d’une action à mener ?
 
 Cela permettra certainement de pouvoir identifier avec plus de précision les idées ayant une valeur métier, et très probablement ceux un intérêt à plus long terme. Et de mettre de côté les “propositions subjectives de la direction”.
-  
+
 
 ## Vanity Metrics
 
@@ -194,11 +195,11 @@ Ce qui n’est par exemple pas du tout le cas aux Etats-Unis, où le vice de la 
 
 Étudier ces “Vanity Metrics” permet parfois de comprendre ce que nos utilisateurs ne nous disent pas. Pour cela aussi, elles peuvent intéressantes.
 
-  
+
 
 Netflix, par exemple, avait intégré à l’époque à son portail un système de notation. Qui ne venait pas alimenter un score pour une série, un épisode ou encore un film, mais un score de recommandation permettant au service de vous recommander des contenus en fonction.
 
-  
+
 
 Cependant, Netflix s’est rendu compte après un certain temps d’utilisation de cette fonctionnalité et en comparant les notes données aux autres contenus visualisés par leurs utilisateurs que ce n’était pas lié. Parce qu’au final, un utilisateur appréciant beaucoup les mangas ou les films d’animation, par pudeur, ne l’indiquera pas. Alors qu’il indiquera toujours aimer les contenus à fort succès dont tout le monde parle.
 
@@ -206,8 +207,8 @@ Ce qui fausse totalement les contenus essentiels à recommander pour garder son 
 
 Il faut donc avoir conscience de ses metrics réels, qui sont la plus value de son service, produit. Et conscience de ses Vanity Metrics qui peuvent aussi bien être un atout business que comportemental.
 
-  
-  
+
+
 ## Atelier 1 : l’arbre des hypothèses
 
 
@@ -220,24 +221,24 @@ Toutes les décisions que nous prenons aujourd’hui se font sans savoir si elle
 Deux types d’hypothèses sont à dissocier :
 
 -   celles liées au produit, auxquelles cas le Lean Canvas permet de les mettre en évidence et de les tester
-    
+
 -   celles liées aux fonctionnalités, qui nous intéressent aujourd’hui, mais qui n’est aujourd’hui pas vraiment formalisé
-  
+
 
 ### Marche à suivre
 
 1.  Commencer par une question
-    
+
 2.  Laisser libre cours à ses idées pour les formuler
-    
+
 3.  Convertir les idées en hypothèses formalisées et les formuler : si <réalisation>, alors <résultat> car <raison d’y croire >
-    
+
 4.  Formuler une expérimentation pour valider cette hypothèse
-    
+
 
 ### Expérimentation
 
-image : arbre-hypotheses
+![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/arbre-hypotheses.jpg)
 
 Nous nous sommes prêtés à l’exercice par groupe d’environ 6 personnes.
 
@@ -286,22 +287,22 @@ Nous avons ensuite imaginé une expérimentation nous permettant de valider l’
 
 - Ajouter un bouton dans l’app qui redirige l’utilisateur vers la page de souscription et la tracker, afin d’avoir une évaluation chiffrée du potentiel intérêt de la formule.
 
-  
+
 
 ### Conclusion
 
 Cette pratique est devenue un vrai mécanisme chez meilleursagents, de toujours avoir une hypothèse pour chaque US créé. Et même si elle n’est pas toujours formalisée par le processus précédent, car cela peut-être lourd pour un product owner ou manager de produire dans le détail toutes les hypothèses de chaque idée. Une hypothèse accompagne toujours une user story, et la valeur ajoutée de chaque user story pourra être validée, ou non.
 
-  
-  
+
+
 
 ## Atelier 2 : Design moi un Sprint
 
-  
+
 
 Jonathan Litty, fan de fromage, nous propose une raclette de Design Sprint pour finir cette journée sur les bancs de l’école. Back to the basis.
 
-  
+
 
 ### 1/ D’abord, c’est quoi un design sprint ?
 
@@ -309,26 +310,26 @@ Le design sprint est issu du design thinking, et permet factuellement d’accél
 
 Le process tel qu’il est aujourd’hui vient de Google Ventures, et a été retranscrit par un de ses designers, Jake Knapp dans son livre Sprint.
 
-  
+
 
 L’idée est la suivante :
 
 -   Bloquer une équipe dans une salle pendant 5 jours
-    
--   Faire de l’idéation
-    
--   Réaliser quelque chose de concret avec un prototype
-    
--   Avoir des retours utilisateurs qualitatif à la fin de ces 5 jours
-    
--   Pouvoir prendre une décision à la fin GO / NO GO / PIVOT
-    
 
-  
+-   Faire de l’idéation
+
+-   Réaliser quelque chose de concret avec un prototype
+
+-   Avoir des retours utilisateurs qualitatif à la fin de ces 5 jours
+
+-   Pouvoir prendre une décision à la fin GO / NO GO / PIVOT
+
+
+
 
 Le Design sprint permet par la même de savoir en 5 jours si une idée est bonne ou vouée à l’échec, et donc doit être abandonnée par l’équipe.
 
-  
+
 
 ### 2/ Et sinon, on fait quoi pendant un design sprint ?
 
@@ -358,11 +359,11 @@ En fonction de ce qui a été regroupé la veille en fin de journée, un vrai pr
 
 **Jour 5. Tester.**
 
-  
+
 
 Le jour 5 est dédié à la phase de tests. Le mieux est de pouvoir présenter le prototype à des utilisateurs finaux, mais cela peut aussi être des personnes qui vont travailler sur le projet après. Aucune explication n’est donnée sur les écrans présentés aux utilisateurs, afin de pouvoir récolter ses remarques à chaud.
 
-  
+
 
 Un board de tous ces retours est constitué, et va permettre d’orienter le futur backlog.
 
@@ -370,7 +371,7 @@ Les 5 jours se terminent sur un debrief avec une prise de décision sur les proc
 
 → Si bloquer 5 jours une équipe peut poser problème à beaucoup d’entreprises, notamment quand il ne s’agit pas du lancement d’un produit ou d’un projet mais d’une équipe déjà dans l’opérationnel, il est possible d’adapter cette méthodologie sur un sprint de 2 semaines par exemple.
 
-  
+
 
 ### 3/ Et comment ça se prépare un design sprint ?
 
@@ -379,22 +380,22 @@ Avant de se lancer dans un design sprint, il faut déjà se poser les bonnes que
  - Quel est l’objectif ou le challenge à relever ?
  - Est-ce qu’il y a de la data ?
  - Quels seront les moteurs de succès ?
-    
+
 **Constituer la bonne team**
- - Décideur 
- - Sprint master 
- - Porteur Projet (PO) 
+ - Décideur
+ - Sprint master
+ - Porteur Projet (PO)
  - Métier Produit (business)
- -  Technique  
+ -  Technique
  - Designer
  -  UX Writer
-    
+
 
 **Trouver un lieu** propice où passer 5 jours, et assez grand pour permettre de se déplacer
 
 **Du Matériel** est évidemment à prévoir pour pouvoir dessiner et afficher sur les murs de la pièces les créations
 
-  
+
 
 ### 4/ Et après ?
 
@@ -431,33 +432,33 @@ L’idée était d’établir 2 - 3 étapes pour se limiter dans les parcours po
 1.  Quand est ce que Sheila va manquer de viande
 2.  Notification / Alerte quand Sheila doit aller chasser
 3. Sheila peut chasser en amont, sans être dans l’urgence
-   
+
 Dans l’idéal, le mapping d’un parcours cible doit répondre aux questions suivantes : Quoi ? Objectifs & Besoins ? Pense quoi ? Pain Point ? Dit quoi (verbatim) ?
 
-  
+
 
 **4/6 : idéation individuelle**
 
 Nous avons ensuite, chacun de notre côté, réalisé des maquettes de ce que l’on imaginait être le service répondant le mieux au parcours cible, à travers un ou plusieurs écrans, sur desktop, mobile ou autre (un frigo connecté ?).
 
-image : design_sprint
+![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/design_sprint.jpg)
 
 **5/6 : converger, voter**
 
 Nous avons réuni nos dessins au centre de la table à la vue de tous, sans explications (à éviter même sur les dessins), pour que chacun puisse visualiser les idées des autres membres de l’équipe et voter.
 
-  
+
 
 Nous avons ensuite regroupé les features et écrans avec le plus de votes ensemble pour avoir un rendu cohérent et présentable à un utilisateur.
 
-  
+
 
 **6/6 : tester**
 
-Une personne de chaque table s’est rendue ensuite à une autre table pour découvrir les autres prototypes.  
+Une personne de chaque table s’est rendue ensuite à une autre table pour découvrir les autres prototypes.
 Sans donner d’explications sur ce que chaque personne percevait du prototype, nous avons cependant posé des questions, et noté tous les points positifs, négatifs, les questions ou quelques verbatims pertinents.
 
-  
+
 ## Conclusion
 Séchés de la journée, les cerveaux en ébullition, les carnets remplis de notes. On a quand mêmes des étoiles dans les yeux après cette journée folle en rencontres et riche d’idées à mettre en pratique.
 
