@@ -22,11 +22,11 @@ The place to be pour découvrir, échanger et mettre en pratique de nouvelles te
 ## SOMMAIRE
 
  - [Maximum Impact, Minimum Effort](#maximum-impact-minimum-effort)
- - [Maria Montessori : Meilleure PO du Monde](#maria-montessori-meilleure-po-du-monde)
+ - [Maria Montessori : Meilleure PO du Monde](#maria-montessori-:-meilleure-po-du-monde)
  - [Own Your Product As If It Mattered](#own-your-product-as-if-it-mattered)
  - [Vanity Metrics](#vanity-metrics)
- - [L'arbre des Hypothèses](#atelier-1-l-arbre-des-hypotheses)
- - [Raclette de "Design Sprint"](#atelier-2-design-moi-un-sprint)
+ - [L'arbre des Hypothèses](#atelier-1-:-l-'-arbre-des-hypotheses)
+ - [Raclette de "Design Sprint"](#atelier-2-:-design-moi-un-sprint)
 
 ## Maximum Impact, Minimum Effort
 L’ouverture de la School of PO s’est faite sur un premier talk : Maximum Impact, minimum effort par [Gojko Adzic](https://en.wikipedia.org/wiki/Gojko_Adzic), un peu le papa de l’Impact Mapping.
@@ -43,7 +43,7 @@ Il est important de prendre conscience que certaines idées préconçues dans la
 
 Un fonctionnement entre 2 équipes agiles ne sera pas le même, que ce soit dans le déroulé des différentes cérémonies agiles que dans l’objectif donné à chaque itération jusqu’à la livraison finale.
 
-Gojko Adzic a fait ici état de trois “grandes” illusions, qui peuvent être communes à tous projets si les parties prenantes du bon développement du produit ne sont pas attentifs.
+Gojko Adzic a fait ici état de trois “grandes” illusions, qui peuvent être communes à tous projets si les parties prenantes du bon développement du produit ne sont pas attentives.
 
 - **1ère illusion** : un effet collatéral des itérations apportées par l’agilité est de perdre de vue ce qui apporte de la valeur à son produit. Ou plus spécifiquement l’illusion est de penser que parce qu’à chaque fin d’itération une nouvelle mise en production est effectuée, elle apporte de la valeur.
 
@@ -55,7 +55,7 @@ C’est le meilleur moyen de perdre de vue l’intérêt et l’utilité d’un 
 
 Je pense que chaque personne, PO, PM ou chef de projet s’est déjà retrouvé dans ce contexte où un membre de la direction impose son choix comme étant la clé stratégique à une problématique, ou l’idée du siècle dont voudra forcément l’utilisateur final de son produit.
 
-Hors, il s’agit dans la majeur partie des cas seulement de supposition, sans aucuns indicateurs permettant de justifier ce choix, et donc d’apporter une valeur ajoutée à son produit pour son utilisateur.
+Hors, il s’agit dans la majeur partie des cas seulement de suppositions, sans aucuns indicateurs permettant de justifier ce choix.
 
 Gojko fait d’ailleurs un petit clin d’oeil à Microsoft, où seulement ⅓ de ce qui est produit améliorerait réellement l’expérience de leurs utilisateurs.
 
@@ -63,11 +63,11 @@ Gojko fait d’ailleurs un petit clin d’oeil à Microsoft, où seulement ⅓ d
 
 Certaines variables sont imprédictibles, et ne permettent pas de viser toujours juste lorsque l’on décide du développement d’une feature ou même d’un produit dans sa globalité.
 
-Sont évoquées notamment la variable localisation, qui va parfois limiter l’intérêt à certain groupe d'utilisateurs.
+D'abord, la variable **localisation**, qui va parfois limiter l’intérêt à certain groupe d'utilisateurs.
 
-La variable du temps qui peut rendre obsolète le produit (un autre service qui a vu le jour ou ce n’est plus dans les tendances du marché).
+Ensuite, la variable du **temps** qui peut rendre obsolète le produit (un autre service qui a vu le jour ou ce n’est plus dans les tendances du marché).
 
-Ou encore la variable humaine, qui rend la perception très subjective et qui va faire connaître son avis à son entourage.
+Ou encore la variable **humaine**, qui rend la perception très subjective et qui va faire connaître son avis à son entourage.
 
 ![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/maximpact_mineffort.jpg)
 
@@ -75,9 +75,9 @@ Ou encore la variable humaine, qui rend la perception très subjective et qui va
 
 Avoir plusieurs idées de features est devenu essentiel et ces variations permettent de s’adapter en cours de route.
 
-C’est de ce principe que née l’équation : “Variation + Survavibility + Selection”, déterminante pour décider de ce qui doit être gardé, et de ce qui doit être abandonné dans son projet.
+C’est de ce principe que née l’équation : “Variation + Survavibility + Selection”, déterminante pour décider de ce qui doit être gardé et de ce qui doit être abandonné dans son projet.
 
-Ce qui est beau en théorie, mais en pratique, la question se pose assez rapidement : à quelle moment doit on arriver à identifier si une user story US est bonne ou sans valeur ?
+Ce qui est beau en théorie. Mais en pratique, la question se pose assez rapidement : à quelle moment doit on arriver à identifier si une user story est bonne ou sans valeur ?
 
 ### L'importance du contexte
 
@@ -340,17 +340,17 @@ Le Design sprint permet par la même de savoir en 5 jours si une idée est bonne
 
 Chaque jour du design sprint est lui-même dédié à un objectif :
 
-**Jour 1 : Comprendre.**
+#### Jour 1 : Comprendre.
 
 C’est le moment de présenter le research deck (tous les éléments liés au produit, au marché, à la culture, aux équipes) réalisé par le Sprint Master, de lister les challenges à relever et de définir une macro-map du parcours.
 
-**Jour 2 : Générer des idées.**
+#### Jour 2 : Générer des idées.
 
 Chacun revient le jour 2 avec des inspirations de ce qui a été vu sur le marché, dans des articles, sur les réseaux sociaux, et d’alimenter un mur en 3 temps avec ces inspirations de dessin individuel.
 
 D’abord via un draft grossier, puis en réalisant un [crazy 8s](http://blog.thiga.fr/product-management/retour-experience-atelier-crazy-8/) et enfin avec la mise en perspective de la “big picture” du prototype à réaliser.
 
-**Jour 3 : Décider.**
+#### Jour 3 : Décider.
 
 Une galerie d’art sans explications des dessins individuels réalisés la veille est à disposer. Chacun a le droit à un nombre de votes limités, et les attribue soit au dessin dans sa globalité ou à une fonctionnalité sur le dessin appréciée.
 
@@ -358,11 +358,11 @@ Chaque personne présente et explique ensuite ses dessins, et un second vote est
 
 A la fin de la journée, un story board est constitué des dessins ou partie de dessins avec le plus de votes.
 
-**Jour 4. Prototyper.**
+#### Jour 4. Prototyper.
 
 En fonction de ce qui a été regroupé la veille en fin de journée, un vrai prototype est réalisé. Joli ou non, l’important est que chaque fonctionnalité de chaque écran puisse être identifiable et compréhensible.
 
-**Jour 5. Tester.**
+#### Jour 5. Tester.
 
 
 
@@ -420,19 +420,19 @@ A nos crayons ! On se lance à travers les 6 étapes suivantes pour réaliser en
 
 ![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/design_sprint.jpg)
 
-**1/6 : identifier les challenges potentiels**
+#### 1/6 : identifier les challenges potentiels
 
 On nous présente le sujet et son research deck : comment gérer les challenges de Sheila dans Santa Clarita Diet, mère de famille qui devient zombie et se retrouve à devoir tuer des “bad guys” pour survivre, sans que sa fille ni ses voisins le découvre.
 
 Naturellement, une ribambelles de challenges sont soulevés : comment savoir qui tuer ? Qui est bon ou mauvais ? Comment le cacher à ses voisins ? Comment gérer son stock de nourriture pour ne jamais être en manque ? Comment diversifier ses repas ?
 
-**2/6 : méthode du CPO**
+#### 2/6 : méthode du CPO
 
 Afin de choisir un angle sur lequel reposer notre mini “design sprint”, la méthode du CPO se prête très bien à l’exercice : “Comment pourrait-on ?”
 
 Choix de notre équipe : CPO aider Sheila à anticiper et à gérer son stock de nourriture ?
 
-**3/6 : mapper le parcours cible**
+#### 3/6 : mapper le parcours cible
 
 L’idée était d’établir 2 - 3 étapes pour se limiter dans les parcours possibles à prototyper ensuite, voici les nôtres :
 
@@ -444,13 +444,13 @@ Dans l’idéal, le mapping d’un parcours cible doit répondre aux questions s
 
 
 
-**4/6 : idéation individuelle**
+#### 4/6 : idéation individuelle
 
 Nous avons ensuite, chacun de notre côté, réalisé des maquettes de ce que l’on imaginait être le service répondant le mieux au parcours cible, à travers un ou plusieurs écrans, sur desktop, mobile ou autre (un frigo connecté ?).
 
 
 
-**5/6 : converger, voter**
+#### 5/6 : converger, voter
 
 Nous avons réuni nos dessins au centre de la table à la vue de tous, sans explications (à éviter même sur les dessins), pour que chacun puisse visualiser les idées des autres membres de l’équipe et voter.
 
@@ -460,7 +460,7 @@ Nous avons ensuite regroupé les features et écrans avec le plus de votes ensem
 
 
 
-**6/6 : tester**
+#### 6/6 : tester
 
 Une personne de chaque table s’est rendue ensuite à une autre table pour découvrir les autres prototypes.
 Sans donner d’explications sur ce que chaque personne percevait du prototype, nous avons cependant posé des questions, et noté tous les points positifs, négatifs, les questions ou quelques verbatims pertinents.
