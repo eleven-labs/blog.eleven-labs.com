@@ -378,19 +378,19 @@ D’où l’importance de :
 
 ![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/design_sprint.jpg)
 
-#### 1/6 : identifier les challenges potentiels
+**1/6 : identifier les challenges potentiels**
 
 On nous présente le sujet et son research deck : comment gérer les challenges de Sheila dans Santa Clarita Diet, mère de famille qui devient zombie et se retrouve à devoir tuer des “bad guys” pour survivre, sans que sa fille ni ses voisins ne le découvrent.
 
 Naturellement, une ribambelle de challenges sont soulevés : comment savoir qui tuer ? Qui est bon ou mauvais ? Comment le cacher à ses voisins ? Comment gérer son stock de nourriture pour ne jamais être en manque ? Comment diversifier ses repas ?
 
-#### 2/6 : méthode du CPO
+**2/6 : méthode du CPO**
 
 Afin de choisir un angle sur lequel reposer notre mini “design sprint”, la méthode du CPO se prête très bien à l’exercice : “Comment pourrait-on ?”
 
 Choix de notre équipe : CPO aider Sheila à anticiper et à gérer son stock de nourriture ?
 
-#### 3/6 : mapper le parcours cible
+**3/6 : mapper le parcours cible**
 
 L’idée était d’établir 2 - 3 étapes pour se limiter dans les parcours possibles à prototyper ensuite, voici les nôtres :
 
@@ -400,17 +400,17 @@ L’idée était d’établir 2 - 3 étapes pour se limiter dans les parcours po
 
 Dans l’idéal, le mapping d’un parcours cible doit répondre aux questions suivantes : Quoi ? Objectifs & Besoins ? Pense quoi ? Pain Point ? Dit quoi (verbatim) ?
 
-#### 4/6 : idéation individuelle
+**4/6 : idéation individuelle**
 
 Nous avons ensuite, chacun de notre côté, réalisé des maquettes de ce que l’on imaginait être le service répondant le mieux au parcours cible, à travers un ou plusieurs écrans, sur desktop, mobile ou autre (un frigo connecté ?).
 
-#### 5/6 : converger, voter
+**5/6 : converger, voter**
 
 Nous avons réuni nos dessins au centre de la table à la vue de tous, sans explications (à éviter même sur les dessins), pour que chacun puisse visualiser les idées des autres membres de l’équipe et voter.
 
 Nous avons ensuite regroupé les features et écrans avec le plus de votes ensemble pour avoir un rendu cohérent et présentable à un utilisateur.
 
-#### 6/6 : tester
+**6/6 : tester**
 
 Une personne de chaque table s’est rendue ensuite à une autre table pour découvrir les autres prototypes.
 Sans donner d’explications sur ce que chaque personne percevait du prototype, nous avons cependant posé des questions, et noté tous les points positifs, négatifs, les questions ou quelques verbatims pertinents.
