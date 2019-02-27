@@ -85,23 +85,23 @@ Grand sujet de son prochain livre sur l’Impact Mapping, Gojko Adzic essaye de 
 
 1/ Dans le cas d’un contexte projet centré autour de la production de livraisons
 
-	- engager les différents acteurs du projet à écrire chacun  à leur niveau leur objectif des prochaines livraisons
+-   engager les différents acteurs du projet à écrire chacun  à leur niveau leur objectif des prochaines livraisons
 
-	- créer un tableau avec ces différents objectifs
+-   créer un tableau avec ces différents objectifs
 
 2/ Dans le cas d’un contexte projet centré autour du recadrage d’un problème
 
-	- se concentrer sur les impacts des problèmes rencontrés, non sur les acteurs
+-   se concentrer sur les impacts des problèmes rencontrés, non sur les acteurs
 
-	- laisser les acteurs émergés d’eux mêmes pour répondre aux problèmes
+-   laisser les acteurs émergés d’eux mêmes pour répondre aux problèmes
 
 3/ Dans le cas d’un contexte projet où la vision est biaisée par des solutions déjà définies
 
-	- mettre en avant un exemple simplifié d’un impact mapping
+-   mettre en avant un exemple simplifié d’un impact mapping
 
 4/ Dans le cas d’un contexte projet basé sur un changement de business
 
-	- ajouter une branche dédiée à la culture d’entreprise et à l’environnement sur l’impact mapping
+-   ajouter une branche dédiée à la culture d’entreprise et à l’environnement sur l’impact mapping
 
 
 Si vous souhaitez apporter votre pierre à l’édifice, Gojko Adzic est toujours en demande de nouveaux cas d’école afin de pouvoir répondre de la manière la plus exhaustive possible aux différents contextes, et donc de nouveaux conseils à proposer dans son [nouveau livre](impactmappin.org/newbook).
@@ -228,12 +228,12 @@ Nous nous sommes prêtés à l’exercice par groupes d’environ 6 personnes.
 ![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/arbre-hypotheses.jpg)
 
 
- **1. Question**
+ **1. Question**  
+ 
+Nous sommes partis de cette question “Pourquoi seulement 20% des users ont un compte Spotify Family ?”  
 
-Nous sommes partis de cette question “Pourquoi seulement 20% des users ont un compte Spotify Family ?”
-
- **2. Idées**
-
+ **2. Idées**  
+ 
 Nous avons ensuite émis plusieurs idées qui nous venaient à l’esprit :
  - trop cher
  - pas envie de payer pour tout le monde
@@ -241,10 +241,10 @@ Nous avons ensuite émis plusieurs idées qui nous venaient à l’esprit :
  - impossible de gérer son compte famille depuis l’app spotify
  - manque de visibilité
  - manque de connaissance des CGU
- - peur pour leur vie privée
-
- **3. Hypothèses formalisées**
-
+ - peur pour leur vie privée  
+ 
+ **3. Hypothèses formalisées**  
+ 
 Nous avons choisi parmi le panel des idées jetées sur le papier 3 d’entre elles afin de formuler des hypothèses :
 
  - Pas envie de payer pour tout le monde :
@@ -269,10 +269,10 @@ Car < la population utilisant spotify est jeune et à x% célibataire >*
 
 Alors < j’aurai plus de users inscrits en compte famille >
 
-Car < la majeure partie des users sont sur l’app >*
+Car < la majeure partie des users sont sur l’app >*  
 
  **4. Valider les hypothèses**  
- 
+  
 Nous avons ensuite imaginé une expérimentation nous permettant de valider l’hypothèse numéro 4, par manque de temps :
 
 Ajouter un bouton dans l’app qui redirige l’utilisateur vers la page de souscription et la tracker, afin d’avoir une évaluation chiffrée du potentiel intérêt de la formule.
@@ -310,15 +310,15 @@ Le Design sprint permet par là même de savoir en 5 jours si une idée est bonn
 
 Chaque jour du design sprint est lui-même dédié à un objectif :
 
-#### Jour 1 : Comprendre.
+**Jour 1 : Comprendre.**
 
 C’est le moment de présenter le research deck (tous les éléments liés au produit, au marché, à la culture, aux équipes) réalisé par le Sprint Master, de lister les challenges à relever et de définir une macro-map du parcours.
 
-#### Jour 2 : Générer des idées.
+**Jour 2 : Générer des idées.**
 
 Chacun revient le jour 2 avec des inspirations de ce qui a été vu sur le marché (dans des articles, sur les réseaux sociaux...) et alimente un mur en 3 temps avec ces inspirations de dessin individuel. Ce d’abord via un draft grossier, puis en réalisant un [crazy 8s](http://blog.thiga.fr/product-management/retour-experience-atelier-crazy-8/) et enfin avec la mise en perspective de la “big picture” du prototype à réaliser.
 
-#### Jour 3 : Décider.
+**Jour 3 : Décider.**
 
 Une galerie d’art sans explications des dessins individuels réalisés la veille est à disposer. Chacun a le droit à un nombre de votes limités, et les attribue soit au dessin dans sa globalité ou à une fonctionnalité sur le dessin apprécié.
 
@@ -326,11 +326,11 @@ Chaque personne présente et explique ensuite ses dessins, et un second vote est
 
 À la fin de la journée, un story board est constitué des dessins ou partie de dessins avec le plus de votes.
 
-#### Jour 4. Prototyper.
+**Jour 4. Prototyper.**
 
 En fonction de ce qui a été regroupé la veille en fin de journée, un vrai prototype est réalisé. Joli ou non, l’important est que chaque fonctionnalité de chaque écran puisse être identifiable et compréhensible.
 
-#### Jour 5. Tester.
+**Jour 5. Tester.**
 
 Le jour 5 est dédié à la phase de tests. Le mieux est de pouvoir présenter le prototype à des utilisateurs finaux, mais cela peut aussi être des personnes qui vont travailler sur le projet après. Aucune explication n’est donnée sur les écrans présentés aux utilisateurs, afin de pouvoir récolter leurs remarques à chaud.
 
