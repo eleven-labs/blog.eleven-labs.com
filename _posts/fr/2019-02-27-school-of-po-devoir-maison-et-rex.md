@@ -22,11 +22,11 @@ The place to be pour découvrir, échanger et mettre en pratique de nouvelles te
 ## SOMMAIRE
 
  - [Maximum Impact, Minimum Effort](#maximum-impact-minimum-effort)
- - [Maria Montessori : Meilleure PO du Monde](#maria-montessori-:-meilleure-po-du-monde)
+ - [Maria Montessori : Meilleure PO du Monde](#maria-montessori-meilleure-po-du-monde)
  - [Own Your Product As If It Mattered](#own-your-product-as-if-it-mattered)
  - [Vanity Metrics](#vanity-metrics)
- - [L'arbre des Hypothèses](#atelier-1-:-l-'-arbre-des-hypotheses)
- - [Raclette de "Design Sprint"](#atelier-2-:-design-moi-un-sprint)
+ - [L'arbre des Hypothèses](#atelier-1-arbre-des-hypotheses)
+ - [Raclette de "Design Sprint"](#atelier-2-design-moi-un-sprint)
 
 ## Maximum Impact, Minimum Effort
 L’ouverture de la School of PO s’est faite sur un premier talk : Maximum Impact, minimum effort par [Gojko Adzic](https://en.wikipedia.org/wiki/Gojko_Adzic), un peu le papa de l’Impact Mapping.
@@ -106,7 +106,7 @@ Grand sujet de son prochain livre sur l’Impact Mapping, Gojko Adzic essaye de 
 
 Si vous souhaitez apporter votre pierre à l’édifice, Gojko Adzic est toujours en demande de nouveaux cas d’école afin de pouvoir répondre de la manière la plus exhaustive possible aux différents contextes et donc conseils à proposer dans son [nouveau livre](impactmappin.org/newbook).
 
-## Maria Montessori : Meilleure PO du Monde
+## Maria Montessori Meilleure PO du Monde
 
 Le deuxième talk, présenté par Amélia Matar, founder de [@COLORIeducation](https://twitter.com/COLORIeducation) , nous parle de la pédagogie Montessori dédiée à l’enfant, et de ses parallèles avec le métier de product manager et de product owner.
 
@@ -209,7 +209,7 @@ Il faut donc avoir conscience de ses metrics réels, qui sont la plus value de s
 
 
 
-## Atelier 1 : l’arbre des hypothèses
+## Atelier 1 Arbre des hypothèses
 
 
 Christopher Parola, Lead Product Manager chez MeilleursAgents (un site de mise en relation de vendeurs et d’agents immobiliers, 2 partis qui se détestent littéralement) pose les bases de la problématique à laquelle il a été confrontée comme beaucoup d’entre nous : 90% des product owner ont du mal à expérimenter.
@@ -301,7 +301,7 @@ Cette pratique est devenue un vrai mécanisme chez meilleursagents, de toujours 
 
 
 
-## Atelier 2 : Design moi un Sprint
+## Atelier 2 Design moi un Sprint
 
 
 
