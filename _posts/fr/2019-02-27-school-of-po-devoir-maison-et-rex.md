@@ -3,7 +3,7 @@ layout: post
 title: "School of PO : devoir maison et retour d'expérience"
 lang: fr
 permalink: /fr/school-of-po-devoir-maison-et-retour-dexperience/
-excerpt: AstroPO, AstroDev, ou tout simplement AstroPssionnés par l’agilité se sont donnés rdv sur les bancs de l'école mercredi 13 janvier à la School of PO !
+excerpt: AstroPO, AstroDev, ou tout simplement AstroPssionnés par l’agilité se sont donnés rendez-vous sur les bancs de l'école mercredi 13 janvier pour assister à la School of PO !
 authors:
     - mae
 categories:
