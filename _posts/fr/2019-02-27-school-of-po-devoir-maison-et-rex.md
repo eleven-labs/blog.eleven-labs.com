@@ -209,7 +209,7 @@ Il faut donc avoir conscience de ses metrics réels, qui sont la plus value de s
 
 
 
-## Atelier 1 Arbre des hypothèses
+## Atelier 1 Arbre des Hypotheses
 
 
 Christopher Parola, Lead Product Manager chez MeilleursAgents (un site de mise en relation de vendeurs et d’agents immobiliers, 2 partis qui se détestent littéralement) pose les bases de la problématique à laquelle il a été confrontée comme beaucoup d’entre nous : 90% des product owner ont du mal à expérimenter.
