@@ -1,6 +1,36 @@
 .read-also {
+  background: $background-grey;
+
   &-list {
     list-style: none;
+  }
+
+  &-item {
+    background: $white;
+    border: $border;
+    border-radius: 2px;
+    margin: 20px 0;
+    padding: 20px;
+
+    div {
+      margin: 1.3rem 0;
+    }
+  }
+
+  &-meta {
+    color: $butterscotch;
+    display: inline-block;
+
+    .page-heading & {
+      margin-bottom: 1rem;
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      font-size: 1.4rem;
+      margin: 0 .6rem;
+    }
   }
 
   &-title {
@@ -8,15 +38,12 @@
     margin-bottom: 1rem;
   }
 
-  &-item {
-    padding: .8rem 0;
-  }
-
   &-link {
-
-    @media (max-width: $breakpoint-medium) {
-      font-size: 1.6rem;
-    }
+    @extend %h2;
+    color: $shark;
+    font-family: $font-family-post-titles;
+    font-size: 2.2rem;
+    text-decoration: none;
 
     @media (min-width: $breakpoint-medium) {
       font-size: 1.9rem;

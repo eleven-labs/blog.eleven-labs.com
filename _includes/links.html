@@ -10,9 +10,21 @@
                 {% if post.url == page.url %}
                     {% continue %}
                 {% else %}
-                    <li class="read-also-item">
-                        <a class="read-also-link" href='{{ post.url | prepend: site.baseurl_root }}'>{{ post.title }}</a>
-                    </li>
+                    <div class="read-also-item">
+                        <a class="read-also-link no-link-style" href='{{ post.url | prepend: site.baseurl_root }}'>{{ post.title }}</a>
+                        <br/>
+                        <div>
+                            <span class="read-also-meta">
+                                <i class="fa fa-fw fa-calendar-alt"></i>{% include date_translate.html object=page.date %}
+                            </span>
+                            <span class="read-also-meta">|</span>
+                            <span class="read-also-meta">
+                                <i class="fa fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=content %}
+                            </span>
+                        </div>
+
+                        {% include author_link.html authors=post.authors %}
+                    </div>
                     {% assign limit = limit | plus:1 %}
                 {% endif %}
             {% endfor %}

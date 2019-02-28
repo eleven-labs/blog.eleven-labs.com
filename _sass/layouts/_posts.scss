@@ -1,13 +1,12 @@
-.comments {
-  @extend %padding-regular;
-  border-bottom: 1px solid $border-color;
-  float: left;
-  width: 100%;
+h2 {
+  padding-top: 10px;
 }
 
 article {
+  padding: 5px;
+
   header {
-    text-align: center;
+    padding: 1rem 2rem;
   }
 
   .footnotes {
@@ -15,8 +14,14 @@ article {
   }
 }
 
-.feature-image {
+.comments {
+  @extend %padding-regular;
+  border-bottom: 1px solid $border-color;
+  float: left;
+  width: 100%;
+}
 
+.feature-image {
   .post-link {
     color: $feature-image-text-color;
   }

@@ -91,6 +91,11 @@
     &:hover {
       color: $article-icons;
     }
+// Post listing
+// .posts {
+//   &-title {
+//     @extend %h2;
+//     margin-bottom: .6rem;
 
     &:active {
       color: $article-icons;
