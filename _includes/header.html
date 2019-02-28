@@ -1,41 +1,42 @@
-<header class="site-header">
-    <div class="top-header">
-        <div class="logo-blog">
+<header class="header">
+    <div class="header-links">
+        <a class="header-links__logo-blog">
             {% include logo.html %}
-        </div>
-        <div class="title-blog">
+        </a>
+        <a class="header-links__title" href="{{ site.baseurl_root }}">
             {% include title.html %}
+        </a>
+        <div class="header-links__separation">
+            <a class="header-links__codelabs" href="https://codelabs.eleven-labs.com/">{% include codeLabs_access.html %}</a>
+            <a class="header-links__logo-eleven" href="https://eleven-labs.com/">{% include eleven_logo.html %}</a>
         </div>
-        <div class="separation">
-        </div>
-        <a class="eleven-logo" href="https://eleven-labs.com/">{% include eleven_logo.html %}</a>
     </div>
-    <div class="bottom-header">
-        <a class="codelabs-access" href="https://codelabs.eleven-labs.com/">{% include codeLabs_access.html %}</a>
-        <div class="social">
+    <div class="header-bottom">
+        <a class="header-bottom__codelabs" href="https://codelabs.eleven-labs.com/">{% include codeLabs_access.html %}</a>
+        <div class="header-bottom__social">
             {% include icons.html data=site.theme_settings %}
         </div>
-        <div class="enfr">
+        <div id="search" class="header-bottom__headband--not-displayed">
+            <a id="close" href="#" class="header-bottom__close-search">{% include close_search.html %}</a>
+            {% include search.html %}
+        </div>
+        <div class="header-bottom__search-icon" id="search-icon">
+            <div class=" header-bottom__search-label">
+                Rechercher
+            </div>
+            {% include search_mobile_icon.html %}
+        </div>
+        <div class="header-bottom__langs">
             {% for language in site.languages %}
                 {% if language != site.lang %}
                     {% if site.default_lang != language %}
                         {% assign link = language %}
                     {% endif %}
-                    <a href="{{ site.baseurl_root }}/{{ link }}">
+                    <a class="header-bottom__langs__link" href="{{ site.baseurl_root }}/{{ link }}">
                         {{ language }}
                     </a>
                 {% endif %}
             {% endfor %}
-        </div>
-        <a class="search-icon" href="#search">
-            <div class="label-rechercher">
-                Rechercher
-            </div>
-            {% include search_mobile_icon.html %}
-        </a>
-        <div id="search" class="headband">
-            <a href="#" class="close-search">{% include close_search.html %}</a>
-            {% include search.html %}
         </div>
     </div>
 </header>
