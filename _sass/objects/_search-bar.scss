@@ -1,5 +1,5 @@
 .search-bar {
-  font-size: 1.4rem;
+  font-size: 2rem;
   position: relative;
 
   &-label {
@@ -23,6 +23,7 @@
     right: 0;
     top: 0;
     transition: all .2s ease;
+    width: 100%;
     z-index: 10;
 
     &:focus {

@@ -25,6 +25,8 @@ localized_posts_dir: _posts
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
     # Meta
+    site_web_eleven: https://eleven-labs.com/
+    site_code_labs: https://codelabs.eleven-labs.com/
     # title: Eleven Labs - Le Blog
     brand : Eleven Labs
     gravatar:

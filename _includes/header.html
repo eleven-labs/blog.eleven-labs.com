@@ -6,16 +6,15 @@
         <div class="title-blog">
             {% include title.html %}
         </div>
+        <div class="separation">
+        </div>
         <a class="eleven-logo" href="https://eleven-labs.com/">{% include eleven_logo.html %}</a>
     </div>
     <div class="bottom-header">
-
         <a class="codelabs-access" href="https://codelabs.eleven-labs.com/">{% include codeLabs_access.html %}</a>
-
         <div class="social">
             {% include icons.html data=site.theme_settings %}
         </div>
-
         <div class="enfr">
             {% for language in site.languages %}
                 {% if language != site.lang %}
@@ -34,7 +33,7 @@
             </div>
             {% include search_mobile_icon.html %}
         </a>
-        <div id="search" class="search-bar">
+        <div id="search" class="headband">
             <a href="#" class="close-search">{% include close_search.html %}</a>
             {% include search.html %}
         </div>

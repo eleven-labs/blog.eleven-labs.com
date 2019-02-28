@@ -22,6 +22,10 @@
     margin: 68px auto 0;
   }
 
+  .separation {
+    display: none;
+  }
+
   .eleven-logo {
     margin: 15px;
     position: absolute;
@@ -70,42 +74,38 @@
     }
   }
 
-  .search-bar {
+  .headband {
     background-color: $white-grey;
     border-bottom: 1px solid $white;
     color: $dusty-gray;
     height: 39px;
-    line-height: 38px;
+    line-height: 35px;
     margin: 20px auto auto 0;
-    position: fixed;
+    position: absolute;
     width: 100%;
 
     &:not(:target) {
-      right: -100%;
-      transition: right 1s;
+      display: none;
     }
 
     &:target {
-      right: 0;
-      transition: right .5s;
+      display: block;
     }
   }
 
   .close-search {
     color: $white;
     float: right;
-    height: 100%;
-    margin-top: -39px;
+    height: 40%;
+    margin-top: -30px;
     width: 9%;
   }
 }
 
 @media(min-width: $breakpoint-medium) {
-  .site-header {
-    .bottom-header {
-      .enfr {
-        margin: 20px 0 auto 40%;
-      }
+  .bottom-header {
+    .enfr {
+      margin: 20px 0 auto 40%;
     }
   }
 }
