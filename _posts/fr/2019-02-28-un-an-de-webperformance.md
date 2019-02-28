@@ -110,7 +110,7 @@ Voici un exemple fait à la google I/O 2018
 
 ## Bilan
 
-Après un an de mission et grâce au travail des équipes MCD et France24, sont maintenant en ligne et sont d'après nos métriques numéro un. Comme un long discours ne sert à rien voici le résultat après la mise en production.
+Après un an de mission et grâce au travail des équipes MCD et France24, nous sommes maintenant -d'après nos métriques- numéro un. Comme un long discours ne sert à rien voici le résultat après la mise en production.
 
 ![bilan]({{site.baseurl}}/assets/2019-02-28-un-an-de-webperformance/image5.png)
 
