@@ -15,7 +15,7 @@
 
   &-title {
     @extend %h1;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 
     @media (min-width: $breakpoint-large) {
       padding: 0 9rem;

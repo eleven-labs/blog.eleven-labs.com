@@ -1,21 +1,27 @@
-.author-heading {
-  padding-left: 6rem;
-  padding-right: 6rem;
-  text-shadow: none;
-}
-
-.author-social {
-  ul {
-    list-style: none;
+.author {
+  &-heading {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    text-shadow: none;
   }
 
-  li {
-    display: inline;
-    margin: 0 .6rem;
-  }
-
-  a {
-    color: $brand-black;
+  &-link {
     text-decoration: none;
+  }
+
+  &-social {
+    ul {
+      list-style: none;
+    }
+
+    li {
+      display: inline;
+      margin: 0 .6rem;
+    }
+
+    a {
+      color: $brand-black;
+      text-decoration: none;
+    }
   }
 }
