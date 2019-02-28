@@ -2,14 +2,6 @@
 layout: default
 ---
 <div class="home">
-    <div class="call-out" style="background-image: url('{{ site.theme_settings.header_text_bg_image | prepend: site.baseurl_root }}')">
-        <h1 class="home-logo">
-            {% include logo.html %}
-            <span class="home-title">
-                <span class="visually-hidden">{{ site.theme_settings.brand }}</span> {% translate theme_settings.title %}
-            </span>
-        </h1>
-    </div>
     <div class="posts">
     {% for post in paginator.posts %}
         <div class="slice">

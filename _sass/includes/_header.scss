@@ -1,113 +1,111 @@
 .site-header {
-  align-items: center;
-  background: $brand-color;
-  border-bottom: 1px solid $border-color;
+  background: url('/img/astronaut_mobile.png') 100% 100% no-repeat, linear-gradient(to right, $background-gradient1 , $background-gradient2, $background-gradient3);
+  background-position: left top;
+  background-size: auto 170px;
   display: flex;
-  flex-flow: row wrap;
-  padding: 1.25rem 2.5rem;
+  flex-direction: column;
+  height: 241px;
+  width: 100%;
+}
+
+.top-header {
+  display: flex;
+  flex-direction: row;
+  height: 182px;
   width: 100%;
 
-  @media (min-width: $breakpoint-medium) {
-    padding: 2rem 6rem;
+  .logo-blog {
+    display: none;
   }
 
-  .branding-container {
-    flex: auto;
+  .title-blog {
+    margin: 68px auto 0;
   }
 
-  .branding {
-    background-color: transparent;
-    display: inline-block;
-    position: relative;
-    width: 12rem;
-
-    @media (min-width: $breakpoint-medium) {
-      width: 16rem;
-    }
-
-    svg {
-      fill: $brand-black;
-      max-width: 100%;
-    }
-
-    span {
-      bottom: 0;
-      color: $brand-black;
-      font-family: $font-family-headings;
-      font-size: 1.3rem;
-      font-weight: 700;
-      position: absolute;
-      text-transform: uppercase;
-
-      @media (max-width: $breakpoint-medium) {
-        font-size: 1.1rem;
-        line-height: 1.1;
-        right: 1rem;
-      }
-
-      @media (min-width: $breakpoint-medium) {
-        font-size: 1.3rem;
-        right: 1.5rem;
-      }
-    }
+  .separation {
+    display: none;
   }
 
-  a {
-    color: $mine-shaft;
-    display: inline-block;
-    font-size: 1.6rem;
-    text-decoration: none;
+  .eleven-logo {
+    margin: 15px;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.bottom-header {
+  display: flex;
+  flex-direction: row;
+  height: 59px;
+  width: 100%;
+
+  .codelabs-access {
+    height: 19.1px;
+    margin: 23px 0 auto 5%;
+    width: 200px;
   }
 
-  .avatar {
-    border-radius: .2rem;
-    float: left;
-    height: 2rem;
-    margin-right: 1rem;
-    margin-top: -3px;
-    width: 2rem;
+  .social {
+    display: none;
   }
 
-  .site-title {
-    float: left;
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.5;
-  }
+  .enfr {
+    font-family: $language-switch;
+    font-size: 24px;
+    margin: 20px 0 auto 20%;
+    text-transform: capitalize;
 
-  .site-nav {
-    ul {
-      list-style: none;
-      margin-bottom: 0;
-      text-align: center;
+    a {
+      color: $white;
+      text-decoration: none;
     }
 
-    li {
-      display: inline-block;
-    }
-
-    .language {
-      border-left: 1px solid $brand-black;
-      margin-left: .4rem;
-      padding-left: .8rem;
-
-      @media (max-width: $breakpoint-x-small) {
-        margin-right: .4rem;
-      }
-    }
-
-    .corporate-logo {
-      position: relative;
-      top: .3rem;
+    a:visited {
+      color: $white;
+      text-decoration: none;
     }
   }
 
-  .branding-container,
-  .search-bar,
-  .site-nav {
-    @media (max-width: $breakpoint-x-small) {
-      flex: 0 0 100%;
-      text-align: center;
+  .search-icon {
+    margin: 24px auto auto 5%;
+
+    .label-rechercher {
+      display: none;
+    }
+  }
+
+  .headband {
+    background-color: $white-grey;
+    border-bottom: 1px solid $white;
+    color: $dusty-gray;
+    height: 39px;
+    line-height: 35px;
+    margin: 20px auto auto 0;
+    position: absolute;
+    width: 100%;
+
+    &:not(:target) {
+      display: none;
+    }
+
+    &:target {
+      display: block;
+    }
+  }
+
+  .close-search {
+    color: $white;
+    float: right;
+    height: 40%;
+    margin-top: -30px;
+    width: 9%;
+  }
+}
+
+@media(min-width: $breakpoint-medium) {
+  .bottom-header {
+    .enfr {
+      margin: 20px 0 auto 40%;
     }
   }
 }

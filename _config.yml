@@ -25,6 +25,8 @@ localized_posts_dir: _posts
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
     # Meta
+    site_web_eleven: https://eleven-labs.com/
+    site_code_labs: https://codelabs.eleven-labs.com/
     # title: Eleven Labs - Le Blog
     brand : Eleven Labs
     gravatar:
@@ -32,6 +34,7 @@ theme_settings:
 
     # Header and footer
     header_text_bg_image: /img/bg-header.jpg
+    astronaut_mobile: /img/astronaut_mobile.png
     footer_text: To infinity and beyond !
 
     # Icons
@@ -55,7 +58,7 @@ theme_settings:
     twitter: eleven_labs
     wordpress:
     youtube:
-    corporate: https://eleven-labs.com
+    corporate:
     corporate_logo: /img/follow/eleven.svg
 
     # Scripts
