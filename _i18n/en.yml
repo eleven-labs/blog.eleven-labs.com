@@ -1,7 +1,3 @@
-theme_settings:
-    # Meta
-    title: Blog
-
 global:
   also_read: You can also read
   and: and

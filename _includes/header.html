@@ -1,40 +1,41 @@
 <header class="site-header">
-    <div class="branding-container">
-        <a class="branding no-link-style" href="{{ site.baseurl }}/">
+    <div class="top-header">
+        <div class="logo-blog">
             {% include logo.html %}
-            <span class="brand-title">
-                <span class="visually-hidden">{{ site.theme_settings.brand }}</span> {% translate theme_settings.title %}
-            </span>
+        </div>
+        <div class="title-blog">
+            {% include title.html %}
+        </div>
+        <div class="separation">
+        </div>
+        <a class="eleven-logo" href="https://eleven-labs.com/">{% include eleven_logo.html %}</a>
+    </div>
+    <div class="bottom-header">
+        <a class="codelabs-access" href="https://codelabs.eleven-labs.com/">{% include codeLabs_access.html %}</a>
+        <div class="social">
+            {% include icons.html data=site.theme_settings %}
+        </div>
+        <div class="enfr">
+            {% for language in site.languages %}
+                {% if language != site.lang %}
+                    {% if site.default_lang != language %}
+                        {% assign link = language %}
+                    {% endif %}
+                    <a href="{{ site.baseurl_root }}/{{ link }}">
+                        {{ language }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <a class="search-icon" href="#search">
+            <div class="label-rechercher">
+                Rechercher
+            </div>
+            {% include search_mobile_icon.html %}
         </a>
-        <div style="display:inline-flex;position:relative">
-            <a class="branding no-link-style" href="http://codelabs.eleven-labs.com/">
-                <img src="{{ site.baseurl_root }}/img/icons/codelabs.png" style="margin-left:20px" />
-                <img src="{{ site.baseurl_root }}/img/icons/new.png" style="position:absolute;right:-35px;top:-15px;width:70px" />
-            </a>
+        <div id="search" class="headband">
+            <a href="#" class="close-search">{% include close_search.html %}</a>
+            {% include search.html %}
         </div>
     </div>
-    {% include search.html %}
-    <nav class="site-nav">
-        <ul>
-            {% for page in site.pages %} {% if page.title and page.hide != true and page.path contains '_posts' %}
-            <li>
-                <a class="page-link no-link-style" href="{{ page.url | prepend: site.baseurl_root }}">
-                    {{ page.title }}
-                </a>
-            </li>
-            {% endif %} {% endfor %}
-            <!-- Social icons from Font Awesome, if enabled -->
-            {% include icons.html data=site.theme_settings %}
-            <!-- Language switcher -->
-            {% for language in site.languages %} {% if language != site.lang %} {% if site.default_lang != language %} {% assign link
-            = language %} {% endif %}
-            <li class="language">
-                <a class="page-link no-link-style" href="{{ site.baseurl_root }}/{{ link }}">
-                    <img src="{{ site.baseurl_root }}/img/flags/{{ language }}.svg" alt="{% translate global.language_switch_to %}" title="{% translate global.language_switch_to %}"
-                        width="18" height="12" />
-                </a>
-            </li>
-            {% endif %} {% endfor %}
-        </ul>
-    </nav>
 </header>
