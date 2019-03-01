@@ -1,15 +1,14 @@
 {% capture phoneNumber %}tel{{ site.theme_settings.phone_number | replace: " ", "" }}{% endcapture %}
 {% if site.theme_settings.copyright %}
-<footer class="slice site-footer">
-    <p class="text container">
-		<span>{{ site.theme_settings.copyright }}</span>
-		<br />
-		<span><a class="no-link-style" href="{{ phoneNumber }}">{{ site.theme_settings.phone_number }}</a></span>
-		<br />
-		<span>{{ site.theme_settings.adress }}</span>
-		<br />
-		<span>{{ site.theme_settings.post_code }}</span>
-		<br />
+<footer class="slice footer">
+    <p class="footer__container container">
+		<span class="footer__text">{{ site.theme_settings.copyright }}</span>
+		<span class="footer__text">
+			<a class="footer__link no-link-style" href="{{ phoneNumber }}">
+				{{ site.theme_settings.phone_number }}
+			</a>
+		</span>
+		<span class="footer__text">{{ site.theme_settings.adress }} {{ site.theme_settings.post_code }}</span>
     </p>
 </footer>
 {% endif %}

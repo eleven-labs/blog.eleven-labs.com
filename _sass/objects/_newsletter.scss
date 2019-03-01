@@ -4,18 +4,18 @@
   height: 34rem;
   text-align: center;
 
-  .container {
+  &__container {
     padding: 3rem;
   };
 
-  &-subtitle {
+  &__subtitle {
     font-family: $font-family-footer-title;
     font-size: 1.4rem;
     opacity: .5;
     text-transform: uppercase;
   };
 
-  &-title {
+  &__title {
     @extend %h4;
     font-family: $font-family-footer-title;
     font-size: 3.6rem;
