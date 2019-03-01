@@ -6,6 +6,7 @@ $font-family-footer-subtitle: 'WorkSans-Bold';
 $font-family-footer-title: 'Korb';
 $font-family-button: 'Worksans-Bold';
 $font-family-footer-contact: 'Worksans-Regular';
+$language-switch: 'Korb';
 
 $font-size: 19px;
 $font-size-mobile: 16px;
@@ -17,17 +18,21 @@ $padding-x-small: 3%;
 
 // Colours
 $alto: #d4d4d4;
+$white-grey:#f9f9f9;
 $azure-radiance: #0096fb;
 $dusty-gray: #999;
 $gray: #808080;
 $mine-shaft: #383838;
 $shark: #323334;
-$turbo: #fde300;
+$turbo: #ebc137;
 $white: #fff;
 $semi-transparent-black: rgba(0, 0, 0, .5);
 $dark-indigo: #0d2857;
 $light-grey: rgba(255, 255, 255, .33);
 $blue-gradient: linear-gradient(102deg, #0e3b81, #3a65b4);
+$background-gradient1:#edbe4a;
+$background-gradient2:#e6ba3b;
+$background-gradient3:#f5c736;
 
 // Eleven Labs colours
 $brand-yellow: $turbo;

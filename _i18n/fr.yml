@@ -1,7 +1,3 @@
-theme_settings:
-    # Meta
-    title: Le Blog
-
 global:
   also_read: À lire aussi
   and: et
