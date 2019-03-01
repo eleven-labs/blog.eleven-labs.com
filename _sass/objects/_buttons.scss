@@ -1,7 +1,7 @@
 .button {
   color: $brand-black;
   display: inline-block;
-  font-family: $font-family-headings;
+  font-family: $font-family-button;
   font-size: 1.2rem;
   font-weight: lighter;
   letter-spacing: .05em;
@@ -13,8 +13,25 @@
     text-decoration: none;
   }
 
-  &:visited,
-  &:visited:hover {
-    color: $button-hover;
+  &--squared {
+    border: .2rem solid $border-color;
+    color: $white;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    padding: 2rem 10rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color .2s, color .2s;
+
+    @media (min-width: 190rem) {
+      margin-bottom: 10rem;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      color: $shark;
+    }
   }
 }

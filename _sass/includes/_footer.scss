@@ -1,12 +1,40 @@
-.site-footer {
-  color: lighten($brand-black, 30%);
-  display: inline-block;
-  font-size: 1.3rem;
-  padding: 3rem 0 5rem;
+.footer {
+  background: $dark-indigo;
+  color: lighten($brand-black, 50%);
+  font-family: $font-family-footer-contact;
+  font-size: 1.5rem;
+  padding: 3rem 1.5rem 5rem;
   text-align: center;
   width: 100%;
 
   @media (min-width: $breakpoint-large) {
     padding: 2rem 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-medium) {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    line-height: 2.6rem;
+
+    @media (min-width: $breakpoint-medium) {
+      padding: 0 15px;
+    }
+  }
+
+  &__link {
+    color: lighten($brand-black, 50%);
+    text-decoration: none;
+
+    @media (min-width: $breakpoint-medium) {
+      pointer-events: none;
+    }
   }
 }

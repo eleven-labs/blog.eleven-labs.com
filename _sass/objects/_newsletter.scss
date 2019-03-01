@@ -1,8 +1,24 @@
 .newsletter {
-  background: $brand-yellow;
+  background-image: $footer-background;
+  color: $white;
+  height: 34rem;
   text-align: center;
 
-  &-link {
-    @extend %h2;
-  }
+  &__container {
+    padding: 3rem;
+  };
+
+  &__subtitle {
+    font-family: $font-family-footer-title;
+    font-size: 1.4rem;
+    opacity: .5;
+    text-transform: uppercase;
+  };
+
+  &__title {
+    @extend %h4;
+    font-family: $font-family-footer-title;
+    font-size: 3.6rem;
+    padding: .5rem 0 3rem;
+  };
 }
