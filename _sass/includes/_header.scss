@@ -34,16 +34,12 @@
 }
 
 .bottom-header {
+  align-items: center;
   display: flex;
   flex-direction: row;
   height: 59px;
+  justify-content: space-around;
   width: 100%;
-
-  .codelabs-access {
-    height: 19.1px;
-    margin: 23px 0 auto 5%;
-    width: 200px;
-  }
 
   .social {
     display: none;
@@ -52,7 +48,6 @@
   .enfr {
     font-family: $language-switch;
     font-size: 24px;
-    margin: 20px 0 auto 20%;
     text-transform: capitalize;
 
     a {
@@ -67,7 +62,6 @@
   }
 
   .search-icon {
-    margin: 24px auto auto 5%;
 
     .label-rechercher {
       display: none;
