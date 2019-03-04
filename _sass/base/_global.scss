@@ -117,22 +117,6 @@ hr {
   margin: 1em 0;
 }
 
-a:not(.no-link-style) {
-  color: $white;
-  letter-spacing: .05em;
-  text-decoration: underline;
-
-  &:hover {
-    background: $brand-yellow;
-    text-decoration: none;
-  }
-
-  &:visited,
-  &:visited:hover {
-    color: $button-hover;
-  }
-}
-
 .nav {
   list-style: none;
   margin: 0;
