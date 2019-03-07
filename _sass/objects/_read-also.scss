@@ -1,44 +1,24 @@
 .read-also {
   background: $background-grey;
 
-  &-list {
+  &__list {
     list-style: none;
   }
 
-  &-item {
-    background: $white;
-    border: $border;
-    border-radius: 2px;
-    margin: 20px 0;
-    padding: 20px;
-
-    div {
-      margin: 1.3rem 0;
-    }
-  }
-
-  &-meta {
-    color: $butterscotch;
-    display: inline-block;
-
-    .page-heading & {
-      margin-bottom: 1rem;
-    }
-
-    &::after {
-      content: '';
-      display: inline-block;
-      font-size: 1.4rem;
-      margin: 0 .6rem;
-    }
-  }
-
-  &-title {
+  &__title {
     @extend %h3;
-    margin-bottom: 1rem;
+    margin: 3rem 0 1rem;
   }
+}
 
-  &-link {
+.read-art {
+  background: $white;
+  border: $border;
+  border-radius: 2px;
+  margin: 20px 0;
+  padding: 20px;
+
+  &__link {
     @extend %h2;
     color: $shark;
     font-family: $font-family-post-titles;
@@ -47,6 +27,22 @@
 
     @media (min-width: $breakpoint-medium) {
       font-size: 1.9rem;
+    }
+  }
+
+  &__metas {
+    margin: 1.3rem 0;
+  }
+
+  &__meta {
+    color: $butterscotch;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      font-size: 1.4rem;
+      margin: 0 .6rem;
     }
   }
 }

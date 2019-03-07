@@ -1,5 +1,7 @@
 .meta {
-  &-content {
+  padding: 3rem 0;
+
+  &__content {
     display: inline-block;
     line-height: 1.6;
     position: relative;
@@ -7,11 +9,20 @@
     z-index: 1;
   }
 
-  &-author {
+  &__author {
     font-size: 1.6rem;
+    display: inline-block;
 
-    a,
-    svg {
+    &__link {
+      display: inline-block;
+      margin-bottom: .3rem;
+      padding: 0 .6rem;
+      text-decoration: none;
+      text-shadow: none;
+    }
+
+    &__link,
+    &__picto {
       color: $butterscotch;
     }
 

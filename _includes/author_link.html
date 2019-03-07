@@ -3,10 +3,10 @@
   {% assign authorLength = forloop.length %}
   {% for existingAuthor in site.authors %}
     {% if existingAuthor.login == author %}
-      <div class="meta-author">
+      <div class="meta__author">
         <span>
-          <i class="fas fa-fw fa-pencil-alt" data-fa-transform="flip-h" title="{% translate global.author_by %}"></i>
-          <a class="author-link no-link-style" href="{{ '/authors/:author' | prepend: site.baseurl | replace: '//', '/' | replace: ':author', author }}">{{ existingAuthor.title }}</a> </br>
+          <i class="fas fa-fw fa-pencil-alt meta__author__picto" data-fa-transform="flip-h" title="{% translate global.author_by %}"></i>
+          <a class="meta__author__link no-link-style" href="{{ '/authors/:author' | prepend: site.baseurl | replace: '//', '/' | replace: ':author', author }}">{{ existingAuthor.title }}</a> </br>
         </span>
         {% if include.descr %}
           {% if authorLength == 1 %}

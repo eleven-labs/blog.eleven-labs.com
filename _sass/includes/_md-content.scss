@@ -1,10 +1,19 @@
-.post-content {
+.md-content {
   @media (max-width: $breakpoint-medium) {
     padding-top: 1rem;
   }
 
   @media (min-width: $breakpoint-medium) {
     padding-top: 3rem;
+  }
+
+  &__title {
+    @extend %h1;
+    margin-bottom: 5rem;
+
+    @media (min-width: $breakpoint-large) {
+      padding: 0 9rem;
+    }
   }
 
   h1,
@@ -27,13 +36,13 @@
   h2 {
     @extend %h2;
     display: table;
-    margin: 1.5rem 0;
+    margin: 5rem 0 1.5rem;
   }
 
   h3 {
     @extend %h3;
     color: $shark;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin: 3rem 0 2rem;
   }
 
@@ -57,10 +66,40 @@
 
   ul {
     list-style-position: initial;
-    margin-left: 2.25rem;
+    margin: 2rem 0;
   }
 
   li {
     padding-left: .5rem;
+    list-style-type: none;
+    margin: 1rem 0;
+
+    &::before {
+      color: $butterscotch;
+      content: "\2022";
+      font-size: 2rem;
+      padding-right: 1.1225em;
+    }
+  }
+
+  a {
+    color: $mine-shaft;
+    font-weight: bold;
+
+    background: linear-gradient(
+      to bottom,
+      $butterscotch 0%,
+      $butterscotch 100%
+    );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 3px 3px;
+    text-decoration: none;
+    transition: background-size .1s;
+    padding-bottom: 0.3rem;
+
+    &:hover {
+      background-size: 3px 25px;
+    }
   }
 }

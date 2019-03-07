@@ -4,7 +4,7 @@ layout: default
 {% if site.theme_settings.share_button %}
     {% include share.html %}
 {% endif %}
-<article>
+<article class="post">
     <!-- Block Author -->
     <header class="meta">
         {% include author_link.html authors=page.authors descr=true %}
@@ -19,8 +19,8 @@ layout: default
 
     <section class="slice">
         <!-- Content -->
-        <div class="post-content container">
-            <h1 class="page-heading-title">{{ page.title }}</h1>
+        <div class="md-content">
+            <h1 class="md-content__title">{{ page.title }}</h1>
             {{ content }}
         </div>
     </section>
@@ -30,24 +30,28 @@ layout: default
 {% if site.theme_settings.post_navigation %}
 <div id="post-nav" class="post-nav">
     {% if page.previous.url %}
-    <a id="prev-post" href="{{ page.previous.url | prepend: site.baseurl }}">
-        <span class="page-title">{{ page.previous.title }}</span>
-        <span class="nav-label">
+    <a id="prev-post" class="post-nav__prelink" href="{{ page.previous.url | prepend: site.baseurl }}">
+        <span class="post-nav__title">{{ page.previous.title }}</span>
+        <span class="post-nav__label">
             <i class="fas fa-chevron-left"></i> {% translate global.prev %}
         </span>
     </a>
     {% endif %}
     {% if page.next.url %}
-    <a id="next-post" href="{{ page.next.url | prepend: site.baseurl }}">
-        <span class="page-title">{{ page.next.title }}</span>
-        <span class="nav-label">
+    <a id="next-post" class="post-nav__postlink" href="{{ page.next.url | prepend: site.baseurl }}">
+        <span class="post-nav__title">{{ page.next.title }}</span>
+        <span class="post-nav__label">
             {% translate global.next %} <i class="fas fa-chevron-right"></i>
         </span>
     </a>
     {% endif %}
 </div>
 {% endif %}
+
+{% include links.html %}
+
 {% include newsletter_link.html %}
+
 <!-- Disqus -->
 {% if site.theme_settings.disqus_shortname %}
 <section class="slice">
@@ -64,4 +68,3 @@ layout: default
     </div>
 </section>
 {% endif %}
-{% include links.html %}

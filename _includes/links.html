@@ -1,7 +1,7 @@
 <aside class="slice read-also">
     <div class="container">
-        <h3 class="read-also-title">{% translate global.also_read %}</h3>
-        <ul class="read-also-list">
+        <h3 class="read-also__title">{% translate global.also_read %}</h3>
+        <ul class="read-also__list">
             {% assign limit = 0 %}
             {% for post in site.posts %}
                 {% if limit >= 3 %}
@@ -10,15 +10,15 @@
                 {% if post.url == page.url %}
                     {% continue %}
                 {% else %}
-                    <div class="read-also-item">
-                        <a class="read-also-link no-link-style" href='{{ post.url | prepend: site.baseurl_root }}'>{{ post.title }}</a>
+                    <div class="read-art">
+                        <a class="read-art__link no-link-style" href='{{ post.url | prepend: site.baseurl_root }}'>{{ post.title }}</a>
                         <br/>
-                        <div>
-                            <span class="read-also-meta">
+                        <div class="read-art__metas">
+                            <span class="read-art__meta">
                                 <i class="fa fa-fw fa-calendar-alt"></i>{% include date_translate.html object=page.date %}
                             </span>
-                            <span class="read-also-meta">|</span>
-                            <span class="read-also-meta">
+                            <span class="read-art__meta">|</span>
+                            <span class="read-art__meta">
                                 <i class="fa fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=content %}
                             </span>
                         </div>
