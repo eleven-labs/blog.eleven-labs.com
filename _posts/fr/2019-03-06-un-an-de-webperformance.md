@@ -41,7 +41,7 @@ Dans le cadre de la refonte de l'ensemble des sites, France Média Monde voulait
 ## Choisir les métriques
 
 Le choix des métriques est très important pour le suivi de la webperformance.
-Prenont quelques exemples de métriques importantes :
+Prenons quelques exemples de métriques importantes :
 
 - *Page Load* : le temps que met la page à se charger
 - *Fully Loaded* : le temps que met la page pour ne plus avoir d’activités réseaux (2 secondes sans activité)
