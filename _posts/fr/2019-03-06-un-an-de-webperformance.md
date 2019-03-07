@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Un an de webperformance dans un média français"
-excerpt: "Depuis un an je travaille en tant qu'expert webperformance chez France Media Monde dans le cadre de la refonte de l'ensemble des fronts des différents sites web du groupe. Nous allons revenir sur cette mission d'un an, pour nous permettre de comprendre comment réaliser ce genre de mission."
+excerpt: "Depuis un an je travaille en tant qu'expert webperformance chez France Medias Monde dans le cadre de la refonte de l'ensemble des fronts des différents sites web du groupe. Nous allons revenir sur cette expérience, pour nous permettre de comprendre comment réaliser ce genre de mission."
 authors:
     - captainjojo
 lang: fr
@@ -11,11 +11,11 @@ categories:
 cover: /assets/2019-02-28-un-an-de-webperformance/cover.jpg
 ---
 
-Depuis un an je travaille en tant qu'expert webperformance chez France Media Monde dans le cadre de la refonte de l'ensemble des fronts des différents sites web du groupe. Nous allons revenir sur cette mission d'un an, pour nous permettre de comprendre comment réaliser ce genre de mission.
+Depuis un an je travaille en tant qu'expert webperformance chez France Media Monde dans le cadre de la refonte de l'ensemble des fronts des différents sites web du groupe. Nous allons revenir sur cette expérience, pour nous permettre de comprendre comment réaliser ce genre de mission.
 
 ## Brief
 
-France Media Monde c'est trois gros sites publics [MCD](https://www.mc-doualiya.com/), [RFI](http://www.rfi.fr/) et [France24](https://www.france24.com/fr/).
+France Medias Monde c'est trois gros sites publics [MCD](https://www.mc-doualiya.com/), [RFI](http://www.rfi.fr/) et [France24](https://www.france24.com/fr/).
 
 Les sites sont principalement utilisés en version mobile sur des réseaux 3g voire edge.
 
@@ -56,7 +56,7 @@ Dans le cadre de la mission nous avons choisi cinq KPIs à suivre. L'un des plus
 
 Maintenant que nous savons quelles sont les métriques à suivre, nous pouvons choisir le ou les outils pour les suivre.
 
-## Suivre les metriques
+## Suivre les métriques
 
 Les métriques doivent être présentes dans plusieurs étapes du développement. Tout d'abord, nous devons pouvoir suivre les métriques durant le développement, ainsi que dans une CI.
 
