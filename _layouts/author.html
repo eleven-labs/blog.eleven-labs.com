@@ -3,36 +3,50 @@ layout: default
 ---
 <article class="container">
     <header class="author-heading">
-        <div class="author-heading__avatar">
+        <div class="avatar author-heading__avatar">
             <img class="avatar-img" src="{{ '/img/authors/:author.jpg' | prepend: site.baseurl_root | replace: '//', '/' | replace: ':author', page.login }}" alt="{{ page.title }}" />
         </div>
-        <h1 class="page-heading-title">{{ page.title }}</h1>
-        <div class="author-social">
-            <ul>
+        <h1 class="page-heading-title author-heading__name">{{ page.title }}</h1>
+        <div class="author-heading__social">
+            <ul class="article-preview__social-icons-list">
                 {% include icons.html data=page %}
             </ul>
         </div>
     </header>
-    <section class="slice">
+
+    <hr />
+    <section class="slice author__description">
         <div class="post-content">
             {{ content }}
         </div>
     </section>
-    <section class="slice">
-        <div class="read-also container">
-            <h3 class="read-also-title">{% translate global.same_author %}</h3>
-            <ul class="posts read-also-list">
-                {% for post in site.posts %}
-                    {% if post.authors contains page.login %}
-                    <li class="read-also-item">
-                        <a class="read-also-link" href="{{ post.url | prepend: site.baseurl }}">
-                            {{ post.title }}
-                        </a>
-                    </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        </div>
-    </section>
 </article>
+
+<aside class="slice read-also">
+    <div class="container">
+        <h3 class="read-also__title">{% translate global.same_author %}</h3>
+        <ul class="read-also__list">
+            {% for post in site.posts %}
+                {% if post.authors contains page.login %}
+                <li class="read-art">
+                    <a class="read-art__link no-link-style" href='{{ post.url | prepend: site.baseurl_root }}'>{{ post.title }}</a>
+                    <br/>
+                    <div class="read-art__metas">
+                        <span class="read-art__meta">
+                            <i class="fa fa-fw fa-calendar-alt"></i>{% include date_translate.html object=post.date %}
+                        </span>
+                        <span class="read-art__meta">|</span>
+                        <span class="read-art__meta">
+                            <i class="fa fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=content %}
+                        </span>
+                    </div>
+
+                    {% include author_link.html authors=post.authors %}
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</aside>
+
 {% include newsletter_link.html %}
