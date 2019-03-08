@@ -1,105 +1,226 @@
-.site-header {
+.header {
   background: url('/img/astronaut_mobile.png') 100% 100% no-repeat, linear-gradient(to right, $background-gradient1 , $background-gradient2, $background-gradient3);
   background-position: left top;
-  background-size: auto 170px;
+  background-size: auto em(170px);
   display: flex;
   flex-direction: column;
-  height: 241px;
-  width: 100%;
-}
-
-.top-header {
-  display: flex;
-  flex-direction: row;
-  height: 182px;
+  height: em(240px);
   width: 100%;
 
-  .logo-blog {
-    display: none;
+  @media(min-width: $breakpoint-large) {
+    background: url(/img/astronaut_desktop.png) 100% 100% no-repeat,
+    url(/img/halo.png) 100% 100% no-repeat,
+    url(/img/planet.png) 100% 100% no-repeat,
+    linear-gradient(to right, $background-gradient1, $background-gradient2, $background-gradient3);
+    background-position: em(410px) em(105px), center, right em(105px);
+    background-size: auto em(150px), auto 100%;
+    height: em(230px);
   }
 
-  .title-blog {
-    margin: 68px auto 0;
-  }
+  &-links {
+    display: flex;
+    flex-direction: row;
+    height: em(180px);
+    width: 100%;
 
-  .separation {
-    display: none;
-  }
+    @media(min-width: $breakpoint-large) {
+      height: em(170px);
+      justify-content: center;
+    }
 
-  .eleven-logo {
-    margin: 15px;
-    position: absolute;
-    right: 0;
+    &__logo-blog {
+      display: none;
+
+      @media(min-width: $breakpoint-large) {
+        display: flex;
+        font-family: $language-switch;
+        margin: em(40px) 0 0 em(40px);
+      }
+    }
+
+    &__title {
+      margin: em(70px) auto 0;
+      padding-left: em(70px);
+
+      @media(min-width: $breakpoint-large) {
+        margin-top: em(90px);
+        padding-left: em(120px);
+      }
+    }
+
+    &__separation {
+      border: 0;
+      display: flex;
+      flex-direction: row;
+      height: em(25px);
+      justify-content: flex-start;
+
+      @media(min-width: $breakpoint-large) {
+        align-items: center;
+        height: em(100px);
+        width: em(350px);
+      }
+    }
+
+    &__codelabs {
+      display: none;
+
+      @media(min-width: $breakpoint-large) {
+        display: flex;
+        height: em(20px);
+        padding: 0 em(20px);
+        width: em(270px);
+      }
+    }
+
+    &__logo-eleven {
+      margin: em(15px);
+
+      @media(min-width: $breakpoint-large) {
+        display: flex;
+        margin: 0;
+      }
+    }
   }
 }
 
-.bottom-header {
+.header-bottom {
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: 59px;
-  justify-content: space-around;
+  height: em(60px);
+  justify-content: flex-end;
   width: 100%;
 
-  .social {
-    display: none;
+  @media(min-width: $breakpoint-large) {
+    height: em(85px);
   }
 
-  .enfr {
+  &__codelabs {
+    height: em(20px);
+    margin: em(20px) 0 auto em(25px);
+    width: em(200px);
+
+    @media(min-width: $breakpoint-large) {
+      display: none;
+    }
+  }
+
+  &__social {
+    display: none;
+
+    @media(min-width: $breakpoint-large) {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      margin: 0 em(50px) 0 0;
+
+      &__icon {
+        height: em(20px);
+        margin-left: em(35px);
+        width: em(10px);
+      }
+
+      &__link,
+      &__link:visited {
+        color: $white;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  &__langs {
     font-family: $language-switch;
-    font-size: 24px;
+    font-size: em(24px);
+    margin: em(20px) auto em(20px) em(10px);
     text-transform: capitalize;
 
-    a {
-      color: $white;
-      text-decoration: none;
+    @media(min-width: $breakpoint-large) {
+      margin: 0 em(45px) 0 em(10px);
     }
 
-    a:visited {
+    &__link,
+    &__link:visited {
       color: $white;
       text-decoration: none;
     }
   }
 
-  .search-icon {
+  &__search-icon {
+    margin: em(20px) 0 em(20px) em(80px);
 
-    .label-rechercher {
-      display: none;
+    @media(min-width: $breakpoint-medium) {
+      margin: em(20px) 0 em(20px) em(370px);
+    }
+
+    @media(min-width: $breakpoint-large) {
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      margin: 0 em(20px);
+      text-decoration: none;
     }
   }
 
-  .headband {
-    background-color: $white-grey;
-    border-bottom: 1px solid $white;
-    color: $dusty-gray;
-    height: 39px;
-    line-height: 35px;
-    margin: 20px auto auto 0;
-    position: absolute;
-    width: 100%;
+  &__search-label {
+    display: none;
 
-    &:not(:target) {
-      display: none;
+    &:visited {
+      color: $white;
     }
 
-    &:target {
+    @media(min-width: $breakpoint-large) {
+      color: $white;
       display: block;
+      font-family: $language-switch;
+      font-size: em(24px);
+      line-height: .7;
+      margin-right: em(10px);
     }
   }
 
-  .close-search {
+  &__headband {
+
+    &--not-displayed {
+      display: none;
+    }
+
+    &--displayed {
+      background-color: $brand-color;
+      border-bottom: 1px solid $white;
+      color: $dusty-gray;
+      display: block;
+      height: em(50px);
+      line-height: 2.5;
+      margin: em(10px) auto auto 0;
+      position: absolute;
+      width: 100%;
+
+      @media(min-width: $breakpoint-large) {
+        height: em(55px);
+        margin: em(15px) auto auto 0;
+      }
+    }
+  }
+
+  &__close-search {
     color: $white;
     float: right;
-    height: 40%;
-    margin-top: -30px;
-    width: 9%;
-  }
-}
+    height: em(20px);
+    margin-top: em(-35px);
+    width: em(50px);
 
-@media(min-width: $breakpoint-medium) {
-  .bottom-header {
-    .enfr {
-      margin: 20px 0 auto 40%;
+    &:hover {
+      background: transparent;
+    }
+
+    @media(min-width: $breakpoint-large) {
+      color: $white;
+      float: right;
+      height: em(25px);
+      margin-top: em(-50px);
+      width: em(100px);
     }
   }
 }

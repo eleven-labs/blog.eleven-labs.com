@@ -34,7 +34,7 @@ layout: compress-js
     event.preventDefault();
     const eventCategory = `outbound-${anchor.getAttribute('data-tracking')}`;
     const url = anchor.getAttribute('href');
-    const isShareButton = anchor.classList.contains('share-button');
+    const isShareButton = anchor.classList.contains('share-buttons__one');
 
     ga('send', 'event', eventCategory, 'click', url, {
       transport: 'beacon',
