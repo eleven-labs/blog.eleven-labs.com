@@ -18,23 +18,22 @@
 %h1 {
   font-family: $font-family-post-titles;
   font-size: 3.5rem;
-  font-weight: normal;
-  font-style: normal;
   font-stretch: normal;
-  line-height: normal;
+  font-style: normal;
+  font-weight: normal;
   letter-spacing: normal;
-  line-height: 1.2;
+  line-height: normal;
   text-transform: uppercase;
 }
 
 %h2 {
   font-family: $font-family-post-titles;
   font-size: 2.8rem;
-  font-weight: normal;
-  font-style: normal;
   font-stretch: normal;
-  line-height: normal;
+  font-style: normal;
+  font-weight: normal;
   letter-spacing: normal;
+  line-height: normal;
   text-transform: uppercase;
 }
 
@@ -43,21 +42,21 @@
   display: inline-block;
   font-family: $font-family-post-titles;
   font-size: 2.6rem;
-  font-weight: normal;
-  font-style: normal;
   font-stretch: normal;
-  line-height: normal;
+  font-style: normal;
+  font-weight: normal;
   letter-spacing: normal;
+  line-height: normal;
   text-transform: uppercase;
 }
 
 %h4 {
   font-family: $font-family-post-titles;
-  font-weight: normal;
-  font-style: normal;
   font-stretch: normal;
-  line-height: normal;
+  font-style: normal;
+  font-weight: normal;
   letter-spacing: normal;
+  line-height: normal;
 }
 
 // States

@@ -10,8 +10,12 @@
   }
 
   &__author {
-    font-size: 1.6rem;
     display: inline-block;
+
+    @media (min-width: $breakpoint-medium) {
+      display: block;
+      font-size: 2rem;
+    }
 
     &__link {
       display: inline-block;

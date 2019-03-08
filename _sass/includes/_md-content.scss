@@ -10,10 +10,6 @@
   &__title {
     @extend %h1;
     margin-bottom: 5rem;
-
-    @media (min-width: $breakpoint-large) {
-      padding: 0 9rem;
-    }
   }
 
   h1,
@@ -70,21 +66,19 @@
   }
 
   li {
-    padding-left: .5rem;
     list-style-type: none;
     margin: 1rem 0;
+    padding-left: .5rem;
 
     &::before {
       color: $butterscotch;
-      content: "\2022";
+      content: '\2022';
       font-size: 2rem;
       padding-right: 1.1225em;
     }
   }
 
   a {
-    color: $mine-shaft;
-    font-weight: bold;
 
     background: linear-gradient(
       to bottom,
@@ -94,9 +88,11 @@
     background-position: 0 100%;
     background-repeat: repeat-x;
     background-size: 3px 3px;
+    color: $mine-shaft;
+    font-weight: bold;
+    padding-bottom: .3rem;
     text-decoration: none;
     transition: background-size .1s;
-    padding-bottom: 0.3rem;
 
     &:hover {
       background-size: 3px 25px;

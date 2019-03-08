@@ -30,17 +30,17 @@ layout: default
 {% if site.theme_settings.post_navigation %}
 <div id="post-nav" class="post-nav">
     {% if page.previous.url %}
-    <a id="prev-post" class="post-nav__prelink" href="{{ page.previous.url | prepend: site.baseurl }}">
-        <span class="post-nav__title">{{ page.previous.title }}</span>
-        <span class="post-nav__label">
+    <a id="prev-post" href="{{ page.previous.url | prepend: site.baseurl }}">
+        <span>{{ page.previous.title }}</span>
+        <span>
             <i class="fas fa-chevron-left"></i> {% translate global.prev %}
         </span>
     </a>
     {% endif %}
     {% if page.next.url %}
     <a id="next-post" class="post-nav__postlink" href="{{ page.next.url | prepend: site.baseurl }}">
-        <span class="post-nav__title">{{ page.next.title }}</span>
-        <span class="post-nav__label">
+        <span>{{ page.next.title }}</span>
+        <span>
             {% translate global.next %} <i class="fas fa-chevron-right"></i>
         </span>
     </a>

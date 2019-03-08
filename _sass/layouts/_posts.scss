@@ -2,11 +2,9 @@
   padding: 0 3rem;
 
   @media (min-width: $breakpoint-medium) {
+    margin: auto;
+    max-width: $breakpoint-large;
     padding: 0 6rem;
-  }
-
-  &-content {
-
   }
 
   &-link {
@@ -14,10 +12,10 @@
   }
 
   &-title {
+    display: inline-block;
     font-size: 1.2rem;
     margin-bottom: 1rem;
     width: 100%;
-    display: inline-block;
   }
 
   &-nav {
@@ -25,44 +23,5 @@
     display: flex;
     float: left;
     width: 100%;
-
-    &__prelink {
-
-    }
-
-    &__title {
-
-    }
-
-    &__label {
-
-    }
   }
 }
-
-// .comments {
-//   @extend %padding-regular;
-//   border-bottom: 1px solid $border-color;
-//   float: left;
-//   width: 100%;
-// }
-
-// .feature-image {
-//   header {
-//     background-position: center center;
-//     background-size: $feature-image-size;
-//     color: $feature-image-text-color;
-
-//     @media (max-width: $breakpoint-small) {
-//       padding: 6rem 0;
-//     }
-
-//     @media (min-width: $breakpoint-small) {
-//       padding: 12rem 0;
-//     }
-
-//     .meta::before {
-//       background-color: transparent;
-//     }
-//   }
-// }
