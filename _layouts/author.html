@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-<article>
-    <header class="page-heading author-heading">
-        <div class="avatar">
+<article class="container">
+    <header class="author-heading">
+        <div class="author-heading__avatar">
             <img class="avatar-img" src="{{ '/img/authors/:author.jpg' | prepend: site.baseurl_root | replace: '//', '/' | replace: ':author', page.login }}" alt="{{ page.title }}" />
         </div>
         <h1 class="page-heading-title">{{ page.title }}</h1>
@@ -14,7 +14,7 @@ layout: default
         </div>
     </header>
     <section class="slice">
-        <div class="container post-content">
+        <div class="post-content">
             {{ content }}
         </div>
     </section>
@@ -23,13 +23,13 @@ layout: default
             <h3 class="read-also-title">{% translate global.same_author %}</h3>
             <ul class="posts read-also-list">
                 {% for post in site.posts %}
-                {% if post.authors contains page.login %}
-                <li class="read-also-item">
-                    <a class="read-also-link" href="{{ post.url | prepend: site.baseurl }}">
-                        {{ post.title }}
-                    </a>
-                </li>
-                {% endif %}
+                    {% if post.authors contains page.login %}
+                    <li class="read-also-item">
+                        <a class="read-also-link" href="{{ post.url | prepend: site.baseurl }}">
+                            {{ post.title }}
+                        </a>
+                    </li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </div>

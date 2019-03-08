@@ -70,7 +70,7 @@ layout: compress-js
               </h2>
               <p class="excerpt">${hit.excerpt}</p>
               <time class="posts-date meta">
-                <span class="meta-content"><i class="fa fa-fw fa-calendar"></i> ${hitDate.format(dateFormat)}</span>
+                <span class="meta__content"><i class="fa fa-fw fa-calendar"></i> ${hitDate.format(dateFormat)}</span>
               </time>
             </div>
           </div>
