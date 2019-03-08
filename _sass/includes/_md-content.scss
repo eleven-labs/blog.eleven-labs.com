@@ -1,10 +1,15 @@
-.post-content {
+.md-content {
   @media (max-width: $breakpoint-medium) {
     padding-top: 1rem;
   }
 
   @media (min-width: $breakpoint-medium) {
     padding-top: 3rem;
+  }
+
+  &__title {
+    @extend %h1;
+    margin-bottom: 5rem;
   }
 
   h1,
@@ -14,10 +19,6 @@
   h5,
   h6 {
 
-    a {
-      color: $brand-black;
-    }
-
     &:first-child {
       margin-top: 0;
     }
@@ -25,34 +26,19 @@
 
   h1 {
     @extend %h1;
-
-    @media (min-width: $breakpoint-x-small) {
-      margin: 4rem 0 2rem;
-    }
-
-    @media (max-width: $breakpoint-x-small) {
-      margin: 2rem 0 1rem;
-    }
+    margin: 3rem 0;
   }
 
   h2 {
     @extend %h2;
-    background-color: $brand-yellow;
     display: table;
-    padding: .6rem 1.2rem;
-
-    @media (min-width: $breakpoint-x-small) {
-      margin: 4rem 0 2rem -1.2rem;
-    }
-
-    @media (max-width: $breakpoint-x-small) {
-      margin: 2rem 0 1rem -1.2rem;
-    }
+    margin: 5rem 0 1.5rem;
   }
 
   h3 {
     @extend %h3;
-    background-color: lighten($brand-black, 70%);
+    color: $shark;
+    font-size: 2.5rem;
     margin: 3rem 0 2rem;
   }
 
@@ -76,10 +62,39 @@
 
   ul {
     list-style-position: initial;
-    margin-left: 2.25rem;
+    margin: 2rem 0;
   }
 
   li {
+    list-style-type: none;
+    margin: 1rem 0;
     padding-left: .5rem;
+
+    &::before {
+      color: $butterscotch;
+      content: '\2022';
+      font-size: 2rem;
+      padding-right: 1.1225em;
+    }
+  }
+
+  a {
+    background: linear-gradient(
+      to bottom,
+      $butterscotch 0%,
+      $butterscotch 100%
+    );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 3px 3px;
+    color: $mine-shaft;
+    font-weight: bold;
+    padding-bottom: .3rem;
+    text-decoration: none;
+    transition: background-size .1s;
+
+    &:hover {
+      background-size: 3px 25px;
+    }
   }
 }
