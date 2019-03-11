@@ -3,8 +3,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0 em(10px);
+  padding: 0 em(10px) em(10px);
   padding-bottom: em(10px);
+
+  @media(min-width: $breakpoint-medium) {
+    background-color: $white;
+    padding: 0 15%;
+  }
 }
 
 .pagination {
@@ -57,17 +62,32 @@
   padding: 0 em(30px);
   padding-bottom: em(15px);
 
+  @media(min-width: $breakpoint-medium) {
+    border: 0;
+  }
+
   // Top part of the header
   &__header {
     display: flex;
     flex-direction: column;
     margin-top: em(13px);
+
+    @media(min-width: $breakpoint-medium) {
+      align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__social-icons-list {
     display: flex;
     justify-content: flex-end;
     list-style: none;
+
+    @media(min-width: $breakpoint-medium) {
+      margin-bottom: 0;
+      order: 1;
+    }
   }
 
   &__social-icon {
@@ -106,6 +126,11 @@
     letter-spacing: normal;
     line-height: normal;
     margin-top: em(23px);
+
+    @media(min-width: $breakpoint-medium) {
+      flex-basis: 80%;
+      margin-top: 0;
+    }
   }
 
   &__title-link {
@@ -137,6 +162,10 @@
     font-family: $font-family-article-texts;
     font-size: em(16px);
     margin-top: em(13px);
+
+    @media(min-width: $breakpoint-medium) {
+      display: block;
+    }
   }
 
   &__post-date {
@@ -145,11 +174,27 @@
 
   &__read-time {
     color: $butterscotch;
+    margin-left: em(14px);
+
+    &::before {
+      content: '|';
+      margin-right: em(14px);
+    }
   }
 
   &__authors {
     color: $butterscotch;
-    margin-top: 15px;
+    margin-top: em(15px);
+
+    @media(min-width: $breakpoint-medium) {
+      margin-left: em(14px);
+      margin-top: 0;
+
+      &::before {
+        content: '|';
+        margin-right: em(14px);
+      }
+    }
   }
 
   &__author-link {
@@ -176,5 +221,18 @@
   // Excerpt part
   &__excerpt {
     margin-top: 19px;
+  }
+}
+
+.separator-line {
+  background-color: $separator-desktop-articles;
+  border: 0;
+  display: none;
+  height: 1px;
+  margin: em(40px) em(30px);
+  width: 100%;
+
+  @media(min-width: $breakpoint-medium) {
+    display: block;
   }
 }

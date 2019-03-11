@@ -19,10 +19,10 @@ layout: default
             <div class="article-preview__metadatas">
                 <time class="article-preview__post-reading">
                     <span class="article-preview__post-date">
-                        <i class="far fa-fw fa-calendar-alt"></i> {% include date_translate.html object=post.date %} |
+                        <i class="far fa-fw fa-calendar-alt"></i>{% include date_translate.html object=post.date %}
                     </span>
                     <span class="article-preview__read-time">
-                        <i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i> {% include reading_time.html content=post.content %}
+                        <i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=post.content %}
                     </span>
                 </time>
                 {% include author_articles_link.html authors=post.authors %}
@@ -31,6 +31,8 @@ layout: default
                 <p>{{ post.excerpt }}</p>
             </div>
         </div>
+
+        <hr class="separator-line" />
         {% endfor %}
 
         {% if paginator.total_pages > 1 %}
