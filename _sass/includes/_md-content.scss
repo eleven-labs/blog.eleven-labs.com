@@ -71,7 +71,6 @@
     padding-left: .5rem;
 
     &::before {
-      color: $butterscotch;
       content: '\2022';
       font-size: 2rem;
       padding-right: 1.1225em;
@@ -79,14 +78,6 @@
   }
 
   a {
-    background: linear-gradient(
-      to bottom,
-      $butterscotch 0%,
-      $butterscotch 100%
-    );
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 3px 3px;
     color: $mine-shaft;
     font-weight: bold;
     padding-bottom: .3rem;
@@ -95,6 +86,7 @@
 
     &:hover {
       background-size: 3px 25px;
+      text-decoration: underline;
     }
   }
 }
