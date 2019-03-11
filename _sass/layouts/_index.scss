@@ -200,6 +200,10 @@
     color: $butterscotch;
     font-family: $font-family-article-btn;
 
+    @media(min-width: $breakpoint-medium) {
+      text-decoration: none;
+    }
+
     &:link {
       color: $butterscotch;
     }
@@ -210,6 +214,7 @@
 
     &:hover {
       color: $butterscotch;
+      text-decoration: underline;
     }
 
     &:active {
