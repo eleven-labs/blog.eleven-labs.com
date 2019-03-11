@@ -85,8 +85,7 @@
     list-style: none;
 
     @media(min-width: $breakpoint-medium) {
-      margin-bottom: 0;
-      order: 1;
+      display: none;
     }
   }
 
