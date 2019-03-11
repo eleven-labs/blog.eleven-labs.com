@@ -1,5 +1,5 @@
 .search-bar {
-  background: $brand-color;
+  background: $white-grey;
   font-size: em(20px);
   position: relative;
 
@@ -11,13 +11,12 @@
   }
 
   &-input {
-    background: $brand-color;
+    background: $turbo;
     border: 0;
-    border-bottom: 2px solid transparent;
     bottom: 0;
     cursor: pointer;
     display: block;
-    height: 90%;
+    height: 100%;
     max-width: 100%;
     min-width: 100%;
     opacity: 0;
@@ -30,7 +29,7 @@
     z-index: 10;
 
     &:focus {
-      background: $brand-color;
+      background: $white-grey;
       box-sizing: border-box;
       opacity: 1;
       outline: none;

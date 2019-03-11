@@ -1,18 +1,17 @@
 <header class="header">
     <div class="header-links">
-        <a class="header-links__logo-blog">
+        <a class="header-links__logo-blog" href="{{ site.baseurl_root }}">
             {% include logo.html %}
         </a>
         <a class="header-links__title" href="{{ site.baseurl_root }}">
             {% include title.html %}
         </a>
-        <div class="header-links__separation">
-            <a class="header-links__codelabs" href="https://codelabs.eleven-labs.com/">{% include codeLabs_access.html %}</a>
-            <a class="header-links__logo-eleven" href="https://eleven-labs.com/">{% include eleven_logo.html %}</a>
+        <div class="header-links__acces-site">
+            <a class="header-links__logo-eleven" href="{{ site.theme_settings.site_web_eleven }}">{% include eleven_logo.html %}</a>
+            <a class="header-links__site-eleven" href="{{ site.theme_settings.site_web_eleven }}">Le Site</a>
         </div>
     </div>
     <div class="header-bottom">
-        <a class="header-bottom__codelabs" href="https://codelabs.eleven-labs.com/">{% include codeLabs_access.html %}</a>
         <div class="header-bottom__social">
             {% include icons.html data=site.theme_settings %}
         </div>
