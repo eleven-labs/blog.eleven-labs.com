@@ -225,6 +225,11 @@
   // Excerpt part
   &__excerpt {
     margin-top: 19px;
+
+    a {
+      color: $shark;
+    }
+
   }
 }
 
