@@ -56,7 +56,7 @@ layout: compress-js
         if (hit.type !== 'document' || hit.layout === 'author' || hit.lang !== lang) {
           return article;
         }
-        console.log(hit);
+        
         const dateFormat = lang === 'fr' ? 'DD MMMM YYYY' : 'MMMM DD, YYYY';
         const hitDate = moment(hit.date, 'YYYY-MM-DD HH:mm:ss ZZ');
 
