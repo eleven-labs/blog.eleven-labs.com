@@ -124,7 +124,7 @@
   &__langs {
     font-family: $language-switch;
     font-size: em(24px);
-    margin: em(20px) auto em(20px) em(19px);
+    margin: em(20px) em(16px) em(20px) 0;
     text-transform: capitalize;
 
     @media(min-width: $breakpoint-large) {
@@ -139,10 +139,10 @@
   }
 
   &__search-icon {
-    margin: em(20px) 0 em(20px) em(350px);
+    margin: em(20px) em(19px) em(20px) auto;
 
     @media(min-width: $breakpoint-medium) {
-      margin: em(20px) 0 em(20px) em(600px);
+      margin: em(20px) em(19px) em(20px) auto;
     }
 
     @media(min-width: $breakpoint-large) {
