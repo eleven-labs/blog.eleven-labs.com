@@ -7,6 +7,7 @@ layout: default
 <article class="post">
     <!-- Block Author -->
     <header class="meta">
+        <h1 class="md-content__title">{{ page.title }}</h1>
         {% include author_link.html authors=page.authors descr=true %}
         <span class="meta-item">
             <i class="fa fa-fw fa-calendar-alt"></i>{% include date_translate.html object=page.date %}
@@ -20,7 +21,6 @@ layout: default
     <section class="slice">
         <!-- Content -->
         <div class="md-content">
-            <h1 class="md-content__title">{{ page.title }}</h1>
             {{ content }}
         </div>
     </section>
