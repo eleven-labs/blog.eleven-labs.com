@@ -63,12 +63,9 @@ layout: compress-js
         const url = baseurl + hit.url;
 
         return article + `
-          <div class="slice">
-            <div class="container">
+          <div class="article-container">
+            <div class="article-preview">
               <div class="article-preview__header">
-                <ul class="article-preview__social-icons-list">
-                    {/* {% include icons-article.html data=site.theme_settings %} */}
-                </ul>
                 <h2 class="article-preview__title">
                     <a class="article-preview__title-link" href="${url}">
                     ${hit.title}
