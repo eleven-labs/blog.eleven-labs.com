@@ -71,19 +71,15 @@
       }
     }
 
-    &__site-eleven{
+    &__site-eleven {
       display: none;
 
       @media(min-width: $breakpoint-large) {
+        color: $white;
         display: block;
-        color: white;
+        font-size: em(24px);
         margin: auto auto auto em(10px);
         text-decoration: none;
-        font-size: em(24px);
-
-        &__visited{
-          color: white;
-        }
       }
     }
   }
