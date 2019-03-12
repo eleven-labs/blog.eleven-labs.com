@@ -56,7 +56,7 @@ layout: compress-js
         if (hit.type !== 'document' || hit.layout === 'author' || hit.lang !== lang) {
           return article;
         }
-
+        console.log(hit);
         const dateFormat = lang === 'fr' ? 'DD MMMM YYYY' : 'MMMM DD, YYYY';
         const hitDate = moment(hit.date, 'YYYY-MM-DD HH:mm:ss ZZ');
 
@@ -65,13 +65,27 @@ layout: compress-js
         return article + `
           <div class="slice">
             <div class="container">
-              <h2 class="posts-title">
-                <a class="no-link-style" href="${url}">${hit.title}</a>
-              </h2>
-              <p class="excerpt">${hit.excerpt}</p>
-              <time class="posts-date meta">
-                <span class="meta__content"><i class="fa fa-fw fa-calendar"></i> ${hitDate.format(dateFormat)}</span>
-              </time>
+              <div class="article-preview__header">
+                <ul class="article-preview__social-icons-list">
+                    {/* {% include icons-article.html data=site.theme_settings %} */}
+                </ul>
+                <h2 class="article-preview__title">
+                    <a class="article-preview__title-link" href="${url}">
+                    ${hit.title}
+                    </a>
+                </h2>
+              </div>
+              <div class="article-preview__metadatas">
+                  <time class="article-preview__post-reading">
+                      <span class="article-preview__post-date">
+                          <i class="far fa-fw fa-calendar-alt"></i>${hitDate.format(dateFormat)}
+                      </span>
+                  </time>
+              </div>
+              <div class="article-preview__excerpt">
+                  <p>${hit.excerpt}</p>
+              </div>
+              <hr class="separator-line" />
             </div>
           </div>
         `;
