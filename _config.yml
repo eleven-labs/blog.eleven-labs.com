@@ -26,14 +26,12 @@ localized_posts_dir: _posts
 theme_settings:
     # Meta
     site_web_eleven: https://eleven-labs.com/
-    site_code_labs: https://codelabs.eleven-labs.com/
     # title: Eleven Labs - Le Blog
     brand : Eleven Labs
     gravatar:
     description: A website with blog posts and pages
 
     # Header and footer
-    header_text_bg_image: /img/bg-header.jpg
     copyright: ElevenLabs © 2019
     phone_number: +33 1 82 83 11 75
     adress: 15, avenue de la Grande Armée

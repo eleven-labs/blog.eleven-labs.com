@@ -1,7 +1,7 @@
 .header {
-  background: url('/img/astronaut_mobile.png') 100% 100% no-repeat, linear-gradient(to right, $background-gradient1 , $background-gradient2, $background-gradient3);
+  background: url('/img/astronaut_mobile.png') 100% 100% no-repeat, $background-yellow;
   background-position: left top;
-  background-size: auto em(170px);
+  background-size: auto em(190px);
   display: flex;
   flex-direction: column;
   height: em(240px);
@@ -10,9 +10,9 @@
   @media(min-width: $breakpoint-large) {
     background: url(/img/astronaut_desktop.png) 100% 100% no-repeat,
     url(/img/halo.png) 100% 100% no-repeat,
-    url(/img/planet.png) 100% 100% no-repeat,
-    linear-gradient(to right, $background-gradient1, $background-gradient2, $background-gradient3);
-    background-position: em(410px) em(105px), center, right em(105px);
+    url(/img/planet.png) 120% 120% no-repeat,
+    $background-yellow;
+    background-position: 24.8% em(80px), center, right em(105px);
     background-size: auto em(150px), auto 100%;
     height: em(230px);
   }
@@ -48,7 +48,7 @@
       }
     }
 
-    &__separation {
+    &__acces-site {
       border: 0;
       display: flex;
       flex-direction: row;
@@ -62,23 +62,24 @@
       }
     }
 
-    &__codelabs {
-      display: none;
-
-      @media(min-width: $breakpoint-large) {
-        display: flex;
-        height: em(20px);
-        padding: 0 em(20px);
-        width: em(270px);
-      }
-    }
-
     &__logo-eleven {
       margin: em(15px);
 
       @media(min-width: $breakpoint-large) {
         display: flex;
-        margin: 0;
+        margin: 0 0 0 em(170px);
+      }
+    }
+
+    &__site-eleven {
+      display: none;
+
+      @media(min-width: $breakpoint-large) {
+        color: $white;
+        display: block;
+        font-size: em(24px);
+        margin: auto auto auto em(10px);
+        text-decoration: none;
       }
     }
   }
@@ -96,16 +97,6 @@
     height: em(85px);
   }
 
-  &__codelabs {
-    height: em(20px);
-    margin: em(20px) 0 auto em(25px);
-    width: em(200px);
-
-    @media(min-width: $breakpoint-large) {
-      display: none;
-    }
-  }
-
   &__social {
     display: none;
 
@@ -113,7 +104,7 @@
       display: flex;
       flex-direction: row;
       list-style: none;
-      margin: 0 em(50px) 0 0;
+      margin: em(-10px) em(30px) 0 0;
 
       &__icon {
         height: em(20px);
@@ -133,11 +124,11 @@
   &__langs {
     font-family: $language-switch;
     font-size: em(24px);
-    margin: em(20px) auto em(20px) em(10px);
+    margin: em(20px) em(16px) em(20px) 0;
     text-transform: capitalize;
 
     @media(min-width: $breakpoint-large) {
-      margin: 0 em(45px) 0 em(10px);
+      margin: 0 em(45px) 0 em(19px);
     }
 
     &__link,
@@ -148,10 +139,10 @@
   }
 
   &__search-icon {
-    margin: em(20px) 0 em(20px) em(80px);
+    margin: em(20px) em(19px) em(20px) auto;
 
     @media(min-width: $breakpoint-medium) {
-      margin: em(20px) 0 em(20px) em(370px);
+      margin: em(20px) em(19px) em(20px) auto;
     }
 
     @media(min-width: $breakpoint-large) {
@@ -187,19 +178,16 @@
     }
 
     &--displayed {
-      background-color: $brand-color;
-      border-bottom: 1px solid $white;
       color: $dusty-gray;
       display: block;
       height: em(50px);
       line-height: 2.5;
-      margin: em(10px) auto auto 0;
       position: absolute;
       width: 100%;
 
       @media(min-width: $breakpoint-large) {
         height: em(55px);
-        margin: em(15px) auto auto 0;
+        margin: em(16px) auto auto 0;
       }
     }
   }
