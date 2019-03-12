@@ -8,7 +8,7 @@
         </a>
         <div class="header-links__acces-site">
             <a class="header-links__logo-eleven" href="{{ site.theme_settings.site_web_eleven }}">{% include eleven_logo.html %}</a>
-            <a class="header-links__site-eleven" href="{{ site.theme_settings.site_web_eleven }}">Le Site</a>
+            <a class="header-links__site-eleven" href="{{ site.theme_settings.site_web_eleven }}">{% translate global.site %}</a>
         </div>
     </div>
     <div class="header-bottom">
@@ -21,7 +21,7 @@
         </div>
         <div class="header-bottom__search-icon" id="search-icon">
             <div class=" header-bottom__search-label">
-                Rechercher
+                {% translate global.search_input %}
             </div>
             {% include search_mobile_icon.html %}
         </div>
