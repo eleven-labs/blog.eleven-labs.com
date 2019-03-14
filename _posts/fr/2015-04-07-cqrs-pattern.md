@@ -8,10 +8,10 @@ permalink: /fr/cqrs-pattern/
 date: '2015-04-07 16:19:44 +0200'
 date_gmt: '2015-04-07 14:19:44 +0200'
 categories:
-- Non classé
+    - Non classé
 tags:
-- cqrs
-- architecture
+    - cqrs
+    - architecture
 ---
 
 

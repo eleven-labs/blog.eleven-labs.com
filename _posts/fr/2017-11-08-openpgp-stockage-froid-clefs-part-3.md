@@ -3,7 +3,8 @@ layout: post
 title: OpenPGP - Stockage sur le long terme de clefs
 excerpt: Une problématique courante avec les clefs secrètes est leur stockage. Ces clefs doivent être stockées dans un lieu sûr, sur un support durable, tout en restant accessibles en cas de besoin. C'est ce que nous allons voir dans cette article.
 authors:
-- tthuon
+    - tthuon
+lang: fr
 permalink: /fr/openpgp-stockage-froid-clefs-partie-3/
 categories:
     - openpgp

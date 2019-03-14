@@ -5,13 +5,13 @@ lang: fr
 permalink: /fr/unknow-relation-alias-translation/
 excerpt: 'Un petit Bug qui subsiste dans Symfony 1.4, lorsque l''on joue avec l''admin generator avec les éléments i18n.'
 authors:
-  - rjardinet
+    - rjardinet
 date: '2011-11-28 15:06:50 +0100'
 date_gmt: '2011-11-28 15:06:50 +0100'
 categories:
-- Symfony
+    - Symfony
 tags:
-- symfony
+    - symfony
 ---
 
 Hello,

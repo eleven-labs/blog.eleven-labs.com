@@ -14,28 +14,24 @@ install:
     - bundle install --jobs=3 --retry=3 --path=${BUNDLE_PATH:-vendor/bundle}
 
 script:
-    - bundle exec rake
+    - bundle exec rake lint
+    - bundle exec rake test
 
 after_success:
     - ./bin/deploy-pr.sh
 
 before_deploy:
-    - bundle exec jekyll build
     - pip install --user awscli
-    - aws s3 rm s3://blog.eleven-labs.com --recursive
 
 deploy:
-    - provider: s3
-      access_key_id: $AWS_ACCESS_KEY_ID
-      secret_access_key: $AWS_SECRET_ACCESS_KEY
-      region: $AWS_DEFAULT_REGION
-      bucket: blog.eleven-labs.com
-      local_dir: _site
-      skip_cleanup: true
-      on:
-          branch: master
+    provider: script
+    skip_cleanup: true
+    script: aws s3 sync _site/ s3://blog.eleven-labs.com/ --delete
+    on:
+        branch: master
 
 after_deploy:
     - aws configure set preview.cloudfront true
     - aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" --paths "/*"
     - ./bin/notify-slack.sh
+    - bundle exec rake deploy

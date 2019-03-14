@@ -5,15 +5,15 @@ lang: fr
 permalink: /fr/devenez-dr-manhattan-avec-ionic/
 excerpt: Après 14 versions beta et 5 release candidates, la première version stable de Ionic est disponible.
 authors:
- - mehdy
+    - mehdy
 date: '2015-05-18 15:17:20 +0200'
 date_gmt: '2015-05-18 13:17:20 +0200'
 categories:
-- Javascript
+    - Javascript
 tags:
-- AngularJS
-- Ionic
-- Cordova
+    - AngularJS
+    - Ionic
+    - Cordova
 ---
 
 Après 14 versions beta et 5 release candidates, la première version stable de Ionic est disponible.

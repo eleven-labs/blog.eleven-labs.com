@@ -9,11 +9,11 @@ excerpt: "Faisons collaborer les delegates et les closures"
 date: '2017-01-25 14:30:42 +0100'
 date_gmt: '2017-01-25 13:30:42 +0100'
 categories:
-- Mobile
+    - Mobile
 tags:
-- ios
-- delegates
-- closure
+    - ios
+    - delegates
+    - closure
 ---
 #### Introduction
 

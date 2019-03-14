@@ -62,7 +62,7 @@ Veuillez utiliser le template d'auteur suivant. Vous pouvez copier le template d
 ---
 layout: author
 login: votre_login
-name: Prénom Nom
+title: Prénom Nom
 twitter: Compte twitter
 ---
 Votre Bio
@@ -105,6 +105,7 @@ title: TITRE
 excerpt: DESCRIPTION (VISIBLE SUR LA HOME)
 authors:
     - LOGIN
+lang: LANGUE (fr/en)
 permalink: /LANGUE (fr/en)/TITRE SANS ESPACES/
 categories:
     - CATEGORIE 1
@@ -150,6 +151,13 @@ Il vous suffit de faire une pull request avec le nom de branche suivant :
 
 ```bash
 git checkout -b feat/add-article-TITRE
+```
+
+Si vous avez forké le projet pour la rédaction de l'article, merci de faire la PR à partir d'une branche du repository blog.eleven-labs.com
+
+```
+git remote add eleven-labs git@github.com:eleven-labs/blog.eleven-labs.com.git
+git push eleven-labs feat/mon-article
 ```
 
 N'oubliez pas le tag  `publication`.
