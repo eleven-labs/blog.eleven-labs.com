@@ -10,7 +10,7 @@
                 {% if post.url == page.url %}
                     {% continue %}
                 {% else %}
-                    <div class="read-art">
+                    <li class="read-art">
                         <a class="read-art__link no-link-style" href='{{ post.url | prepend: site.baseurl_root }}'>{{ post.title }}</a>
                         <br/>
                         <div class="read-art__metas">
@@ -24,7 +24,7 @@
                         </div>
 
                         {% include author_link.html authors=post.authors %}
-                    </div>
+                    </li>
                     {% assign limit = limit | plus:1 %}
                 {% endif %}
             {% endfor %}

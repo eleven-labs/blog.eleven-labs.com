@@ -1,27 +1,19 @@
 .author {
-  &-heading {
-    padding-left: 6rem;
-    padding-right: 6rem;
-    text-shadow: none;
+  &__description {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
+}
 
-  &-link {
-    text-decoration: none;
-  }
+.author-heading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
 
-  &-social {
-    ul {
-      list-style: none;
-    }
-
-    li {
-      display: inline;
-      margin: 0 .6rem;
-    }
-
-    a {
-      color: $brand-black;
-      text-decoration: none;
-    }
+  &__name {
+    @extend %h1;
+    margin: 2rem 0;
   }
 }
