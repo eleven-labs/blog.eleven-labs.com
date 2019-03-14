@@ -29,7 +29,7 @@ $baseurl: '{{ site.baseurl_root }}';
 @import 'layouts/index';
 
 // Partials
-@import 'includes/header';
+//@import 'includes/header';
 @import 'includes/footer';
 @import 'includes/md-content';
 @import 'includes/author';
