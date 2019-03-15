@@ -38,4 +38,27 @@
             {% endfor %}
         </div>
     </div>
+    <style>
+        .header {
+            background: url("{{ site.baseurl | append: '/img/astronaut_mobile.png'}}") 100% 100% no-repeat, #fdd63b;
+            background-position: left top;
+            background-size: auto 10em;
+            display: flex;
+            flex-direction: column;
+            height: 12.6315789474em;
+            width: 100%;
+        }
+
+        @media(min-width: 1024px) {
+            .header{
+                background: url("{{ site.baseurl | append: '/img/astronaut_desktop.png'}}") 100% 100% no-repeat,
+                url("{{ site.baseurl | append: '/img/halo.png'}}") 100% 100% no-repeat,
+                url("{{ site.baseurl | append: '/img/planet.png'}}") 120% 120% no-repeat,
+                #fdd63b;
+                background-position: 24.8% 4.2105263158em, center, right 5.5263157895em;
+                background-size: auto 7.8947368421em, auto 100%;
+                height: 12.1052631579em;
+            }
+        }
+    </style>
 </header>
