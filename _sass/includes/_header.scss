@@ -25,7 +25,15 @@
 
     @media(min-width: $breakpoint-large) {
       height: em(170px);
-      justify-content: center;
+    }
+  
+    &__logo-eleven {
+      display: none;
+
+      @media(min-width: $breakpoint-large) {
+        display: flex;
+        margin: em(30px) 0 0 em(50px);
+      }
     }
 
     &__logo-blog {
@@ -39,47 +47,27 @@
     }
 
     &__title {
-      margin: em(70px) auto 0;
-      padding-left: em(70px);
+      margin-top: em(70px);
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
 
       @media(min-width: $breakpoint-large) {
         margin-top: em(90px);
-        padding-left: em(120px);
       }
     }
-
-    &__acces-site {
-      border: 0;
-      display: flex;
-      flex-direction: row;
-      height: em(25px);
-      justify-content: flex-start;
-
-      @media(min-width: $breakpoint-large) {
-        align-items: center;
-        height: em(100px);
-        width: em(350px);
-      }
-    }
-
-    &__logo-eleven {
-      margin: em(15px);
-
-      @media(min-width: $breakpoint-large) {
-        display: flex;
-        margin: 0 0 0 em(170px);
-      }
-    }
-
+    
     &__site-eleven {
-      display: none;
+      color: $white;
+      text-decoration: none;
+      float: right;
+      font-size: em(24px);
+      margin: em(1px) em(10px) 0 auto;
 
       @media(min-width: $breakpoint-large) {
-        color: $white;
         display: block;
         font-size: em(24px);
-        margin: auto auto auto em(10px);
-        text-decoration: none;
+        margin: em(30px) em(43px) 0 auto;
       }
     }
   }

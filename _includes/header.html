@@ -1,22 +1,23 @@
 <header class="header">
     <div class="header-links">
-        <a class="header-links__logo-blog" href="{{ site.baseurl_root }}">
-            {% include logo.html %}
+        <a class="header-links__logo-eleven" href="{{ site.baseurl_root }}">
+            {% include eleven_logo.html %}
         </a>
         <a class="header-links__title" href="{{ site.baseurl_root }}">
             {% include title.html %}
         </a>
-        <div class="header-links__acces-site">
-            <a class="header-links__logo-eleven" href="{{ site.theme_settings.site_web_eleven }}">{% include eleven_logo.html %}</a>
-            <a class="header-links__site-eleven" href="{{ site.theme_settings.site_web_eleven }}">{% translate global.site %}</a>
-        </div>
+        <a class="header-links__site-eleven" href="{{ site.theme_settings.site_web_eleven }}">
+            Eleven-Labs {% translate global.site %}
+        </a>
     </div>
     <div class="header-bottom">
         <div class="header-bottom__social">
             {% include icons.html data=site.theme_settings %}
         </div>
         <div id="search" class="header-bottom__headband--not-displayed">
-            <a id="close" href="#" class="header-bottom__close-search">{% include close_search.html %}</a>
+            <a id="close" href="#" class="header-bottom__close-search">
+                {% include close_search.html %}
+            </a>
             {% include search.html %}
         </div>
         <div class="header-bottom__search-icon" id="search-icon">
