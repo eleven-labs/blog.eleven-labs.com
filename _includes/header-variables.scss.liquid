@@ -1,10 +1,24 @@
+@import 'settings/variables';
+@import 'settings/functions';
+
 .header {
+  background: url('{{ site.baseurl | append: "/img/astronaut_mobile.png"  }}');
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-color: $background-yellow;
+  background-size: auto em(190px);
   display: flex;
   flex-direction: column;
   height: em(240px);
   width: 100%;
 
   @media(min-width: $breakpoint-large) {
+    background: url('{{ site.baseurl | append: "/img/astronaut_desktop.png"  }}') 100% 100% no-repeat,
+    url('{{ site.baseurl | append: "/img/halo.png"  }}') 100% 100% no-repeat,
+    url('{{ site.baseurl | append: "/img/planet.png"  }}') 120% 120% no-repeat,
+    $background-yellow;
+    background-position: 24.8% em(80px), center, right em(105px);
+    background-size: auto em(150px), auto 100%;
     height: em(230px);
   }
 
@@ -173,6 +187,7 @@
       display: block;
       height: em(50px);
       line-height: 2.5;
+      margin: em(5px) 0 0;
       position: absolute;
       width: 100%;
 
