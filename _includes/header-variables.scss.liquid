@@ -61,12 +61,12 @@
         margin-top: em(90px);
       }
     }
-    
+
     &__site-eleven {
       color: $white;
-      text-decoration: none;
       font-size: em(24px);
       margin: em(1px) em(10px) 0 auto;
+      text-decoration: none;
 
       @media(min-width: $breakpoint-large) {
         display: block;
@@ -90,25 +90,27 @@
   }
 
   &__social {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0 em(5px) 0 0;
+
+    &__icon {
+      margin-left: em(8px);
+    }
+
+    &__link,
+    &__link:visited {
+      color: $white;
+    }
 
     @media(min-width: $breakpoint-large) {
-      display: flex;
-      flex-direction: row;
-      list-style: none;
       margin: em(-10px) em(30px) 0 0;
 
       &__icon {
         height: em(20px);
         margin-left: em(35px);
         width: em(10px);
-      }
-
-      &__link,
-      &__link:visited {
-        color: $white;
-        height: 100%;
-        width: 100%;
       }
     }
   }
