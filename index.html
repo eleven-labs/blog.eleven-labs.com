@@ -6,9 +6,9 @@ layout: default
         {% for post in paginator.posts %}
         <div class="article-preview">
             <div class="article-preview__header">
-                <ul class="article-preview__social-icons-list">
+                <!-- <ul class="article-preview__social-icons-list">
                     {% include icons.html data=site.theme_settings origin='article' %}
-                </ul>
+                </ul> -->
 
                 <h2 class="article-preview__title">
                     <a class="article-preview__title-link" href="{{ post.url | prepend: site.baseurl }}">
