@@ -7,11 +7,9 @@ layout: default
             <img class="avatar-img" src="{{ '/img/authors/:author.jpg' | prepend: site.baseurl_root | replace: '//', '/' | replace: ':author', page.login }}" alt="{{ page.title }}" />
         </div>
         <h1 class="page-heading-title author-heading__name">{{ page.title }}</h1>
-        <div class="author-heading__social">
-            <ul class="article-preview__social-icons-list">
-                {% include icons.html data=page %}
-            </ul>
-        </div>
+        <ul class="author-heading__social-icons-list">
+            {% include icons.html data=page origin='author' %}
+        </ul>
     </header>
 
     <hr />

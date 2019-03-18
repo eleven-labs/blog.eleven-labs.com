@@ -12,8 +12,25 @@
   flex-direction: column;
   padding-top: 5rem;
 
+  &__social-icons-list {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+  }
+
+  &__social-icon {
+    height: em(14px);
+    margin: 0 em(6px);
+    width: em(14px);
+  }
+
+  &__social-icon-link {
+    color: $article-icons;
+  }
+
   &__name {
     @extend %h1;
     margin: 2rem 0;
   }
+
 }
