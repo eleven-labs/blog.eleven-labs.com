@@ -76,25 +76,27 @@
   }
 
   &__social {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0 em(5px) 0 0;
+
+    &__icon {
+      margin-left: em(8px);
+    }
+
+    &__link,
+    &__link:visited {
+      color: $white;
+    }
 
     @media(min-width: $breakpoint-large) {
-      display: flex;
-      flex-direction: row;
-      list-style: none;
       margin: em(-10px) em(30px) 0 0;
 
       &__icon {
         height: em(20px);
         margin-left: em(35px);
         width: em(10px);
-      }
-
-      &__link,
-      &__link:visited {
-        color: $white;
-        height: 100%;
-        width: 100%;
       }
     }
   }
@@ -160,6 +162,7 @@
       display: block;
       height: em(50px);
       line-height: 2.5;
+      margin: em(5px) 0 0;
       position: absolute;
       width: 100%;
 
