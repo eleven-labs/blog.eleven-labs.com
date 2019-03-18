@@ -199,10 +199,7 @@
   &__author-link {
     color: $butterscotch;
     font-family: $font-family-article-btn;
-
-    @media(min-width: $breakpoint-medium) {
-      text-decoration: none;
-    }
+    text-decoration: underline;
 
     &:link {
       color: $butterscotch;
@@ -214,7 +211,7 @@
 
     &:hover {
       color: $butterscotch;
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     &:active {
