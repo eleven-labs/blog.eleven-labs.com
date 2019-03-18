@@ -26,7 +26,7 @@
     @media(min-width: $breakpoint-large) {
       height: em(170px);
     }
-  
+
     &__logo-eleven {
       display: none;
 
@@ -47,22 +47,21 @@
     }
 
     &__title {
+      left: 50%;
       margin-top: em(70px);
       position: absolute;
-      left: 50%;
       transform: translate(-50%, 0);
 
       @media(min-width: $breakpoint-large) {
         margin-top: em(90px);
       }
     }
-    
+
     &__site-eleven {
       color: $white;
-      text-decoration: none;
-      float: right;
       font-size: em(24px);
       margin: em(1px) em(10px) 0 auto;
+      text-decoration: none;
 
       @media(min-width: $breakpoint-large) {
         display: block;
