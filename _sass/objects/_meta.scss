@@ -21,8 +21,12 @@
       display: inline-block;
       margin-bottom: .3rem;
       padding: 0 .6rem;
-      text-decoration: none;
+      text-decoration: underline;
       text-shadow: none;
+    }
+
+    &__link:hover {
+      text-decoration: none;
     }
 
     &__link,
