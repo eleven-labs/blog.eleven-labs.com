@@ -2,8 +2,10 @@
 @import 'settings/functions';
 
 .header {
-  background: url('{{ site.baseurl | append: "/img/astronaut_mobile.png"  }}') 100% 100% no-repeat $background-yellow;
+  background: url('{{ site.baseurl | append: "/img/astronaut_mobile.png"  }}');
   background-position: left top;
+  background-repeat: no-repeat;
+  background-color: $background-yellow;
   background-size: auto em(190px);
   display: flex;
   flex-direction: column;
