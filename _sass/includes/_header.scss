@@ -185,11 +185,11 @@
     }
 
     @media(min-width: $breakpoint-large) {
-    color: $white;
-    float: right;
-    height: 25px;
-    margin: em(-35px) em(20px);
-    width: 25px;
+      color: $white;
+      float: right;
+      height: 25px;
+      margin: em(-35px) em(20px);
+      width: 25px;
     }
   }
 }
