@@ -28,6 +28,7 @@ theme_settings:
     site_web_eleven: https://eleven-labs.com/
     # title: Eleven Labs - Le Blog
     brand : Eleven Labs
+    le_blog : LE BLOG
     gravatar:
     description: A website with blog posts and pages
 
