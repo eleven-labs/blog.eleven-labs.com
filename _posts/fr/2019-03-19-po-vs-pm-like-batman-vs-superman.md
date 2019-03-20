@@ -27,9 +27,9 @@ Et un petit retour aux origines s’impose avant tout !
 
 - [PM : looking for the SuperProduct](#pm-looking-for-the-superproduct)
 - [PO : leader of the Justice Product](#po-leader-of-the-justice-product)
-- [PM - PO : nothing alike](#pm-po-nothing-alike)
+- [PM / PO : nothing alike](#pm-po-nothing-alike)
 - [PM + PO : dawn of product](#pm-po-dawn-of-product)
-
+- [Conclusion : extrasensory perception](#conclusion-extrasensory-perception)
   
 ## PM, looking for the SuperProduct
 
@@ -98,10 +98,23 @@ Il est aussi évident que toutes les sociétés n’ont pas les moyens de se pay
 ### image
 
 Voici une petite liste des pours et des contres à cette solution : 
+
 ### Pour
-- Un PO trop détaché de la vision utilisateur ne réussira jamais à concevoir le produit le mieux adapté
+- Réduit les intermédiaires avec un unique point d'entrée pour le métier ou les utilisateurs vers les développeurs
+- Partialité en prenant et comprenant autant le métier que l'équipe de développement
+- Vision utilisateur plus présente et ancrée dans la production
+- Meilleure maitrise au fur et à mesure de l'environnement du produit
 
 ### Contre
-- Il est assez rare que le PO ait le temps de se dédier à la conception stratégique d’un produit sur le long terme ou en fonction d’un marché.
+- Manque de temps pour se dédier à la conception stratégique d’un produit sur le long terme ou en fonction d’un marché
+- Ou manque de temps pour améliorer le fonctionnement de l'équipe développement
+- Risque d'adapter le produit à la production plutôt qu'à une vision utilisateur ou stratégique
+- Se renfermer autour de l'équipe de développement en mettant de côté la communication externe (clients, sponsors, utilisateurs)
 
-## Conclusion
+## Conclusion : extrasensory perception
+
+Pour conclure, à l'image de nos supers héros et de leur Justice League, le PM et le PO ont bien chacun leurs spécificités et un rôle différent, mais oeuvrent dans le même but. 
+La communication entre les deux est essentielle et l'union fait leur force.
+
+Cependant, ils peuvent tout aussi bien exister indépendamment et être autonome, en assumant partiellement la charge de l'autre. 
+On peut facilement faire le parallèle avec un développeur qui serait aussi scrum master. Ce n'est pas l'organisation la plus idéale au monde, mais en faisant attention à l'impartialité et au temps à allouer aux différentes casquettes, elle peut également fonctionner.
