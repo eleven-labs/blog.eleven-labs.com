@@ -77,7 +77,7 @@ Le Product Owner doit s’assurer que le produit est développé en fonction de 
 
 Voici un tableau récapitulatif, avec une vision macro, de la répartition des rôles entre le product manager, product owner et toute la team dans un projet agile :
 
- ![]({{site.baseurl}}/assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-po-team-differences.png)
+ ![]({{site.baseurl}}/assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-po-team-differences.png =80%) 
 
 Pour conclure sur ces comparatifs, le PO est défini par SCRUM et l’agilité de manière générale, il n’existe pas sans l’équipe de développement.
 
