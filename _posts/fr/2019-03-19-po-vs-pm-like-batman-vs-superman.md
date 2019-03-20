@@ -12,7 +12,7 @@ tags:
     - po
     - pm
     - agile
-
+cover: /assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-vs-po-cover.jpg
 ---
 
 Dans mon quotidien professionnel, j’entends régulièrement ce genre de phrase : “Toi qui est PM, ou PO… Enfin, c’est pareil quoi”. Alors non. Même si ces deux casquettes peuvent se combiner, un PM et un PO ne sont pas interchangeables et ils ont bien deux jobs différents.
@@ -37,7 +37,7 @@ Le rôle de Product Management est arrivé très tôt dans la gestion de projet 
 
 McElroy ne s’est d’ailleurs pas arrêté là, et à notamment aidé à fonder la NASA et a fortement influencé Bill Hewlett et David Packard, -les créateurs de HP- avec sa vision du product management. Et oui. Rien que ça…
 
-### image
+ ![]({{site.baseurl}}/assets/2019-03-19-po-vs-pm-like-batman-vs-superman/superman_super_product.jpg)
 
 À l’origine, ce rôle n’est donc pas du tout lié à l’agilité. Le Product Manager a pour objectif la réalisation d’un produit dans sa vision globale :
 
@@ -63,7 +63,7 @@ Son rôle, beaucoup plus opérationnel dans le développement d’un produit au 
 -   réduire les risques en définissant des conditions de réalisation
 -   apprendre de ses erreurs et des erreurs de l’équipe en améliorant continuellement les process en place
 
-### image
+ ![]({{site.baseurl}}/assets/2019-03-19-po-vs-pm-like-batman-vs-superman/batman_justice_product.jpg)
 
 Finalement, d’avancer pas à pas vers le produit final souhaité par le client et / ou l’utilisateur, de la manière la plus lisse possible.
 
@@ -77,7 +77,7 @@ Le Product Owner doit s’assurer que le produit est développé en fonction de 
 
 Voici un tableau récapitulatif, avec une vision macro, de la répartition des rôles entre le product manager, product owner et toute la team dans un projet agile :
 
-### image
+ ![]({{site.baseurl}}/assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-po-team-differences.png)
 
 Pour conclure sur ces comparatifs, le PO est défini par SCRUM et l’agilité de manière générale, il n’existe pas sans l’équipe de développement.
 
@@ -95,7 +95,7 @@ Dans un monde idéal, il est évident que ces deux rôles doivent être remplis 
 
 Il est aussi évident que toutes les sociétés n’ont pas les moyens de se payer deux ressources pour mener à bien ces deux rôles, et qu’il incombe au PO+PM de remplir le job pour deux.
 
-### image
+ ![]({{site.baseurl}}/assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-vs-po-justice-league.jpg)
 
 Voici une petite liste des pours et des contres à cette solution : 
 
