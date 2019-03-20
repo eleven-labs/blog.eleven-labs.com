@@ -25,13 +25,13 @@ Et un petit retour aux origines s’impose avant tout !
  
 ## SOMMAIRE
 
-- [PM : looking for the SuperProduct](#pm-looking-for-the-superproduct)
-- [PO : leader of the Justice Product](#po-leader-of-the-justice-product)
-- [PM / PO : nothing alike](#pm-po-nothing-alike)
-- [PM + PO : dawn of product](#pm-po-dawn-of-product)
-- [Conclusion : extrasensory perception](#conclusion-extrasensory-perception)
+- [PM : looking for the SuperProduct](#pm--looking-for-the-superproduct)
+- [PO : leader of the Justice Product](#po--leader-of-the-justice-product)
+- [PM / PO : nothing alike](#pm--po--nothing-alike)
+- [PM + PO : dawn of product](#pm--po--dawn-of-product)
+- [Conclusion : extrasensory perception](#conclusion--extrasensory-perception)
   
-## PM, looking for the SuperProduct
+## PM : looking for the SuperProduct
 
 Le rôle de Product Management est arrivé très tôt dans la gestion de projet des entreprises. Plus précisément en 1931 du côté de chez Procter & Gamble, initié par un certain [Neil H. McElroy](https://www.mindtheproduct.com/2015/10/history-evolution-product-management/), grand visionnaire à l’époque, avec son memo sur le “Brand Man”.
 
