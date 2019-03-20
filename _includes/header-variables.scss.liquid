@@ -52,14 +52,29 @@
     }
 
     &__title {
+      color: $white;
       left: 50%;
       margin-top: em(70px);
       position: absolute;
+      text-align: center;
+      text-decoration: none;
       transform: translate(-50%, 0);
 
       @media(min-width: $breakpoint-large) {
         margin-top: em(90px);
       }
+    }
+
+    &__eleven {
+      font-family: $font-family-header-big-text;
+      font-size: 3.5rem;
+      font-weight: 300;
+      letter-spacing: 4px;
+    }
+
+    &__blog {
+      font-family: $font-family-title-blog;
+      font-size: 3.7rem;
     }
 
     &__site-eleven {
@@ -190,9 +205,9 @@
   &__close-search {
     color: $white;
     float: right;
-    height: em(20px);
-    margin-top: em(-35px);
-    width: em(50px);
+    height: 20px;
+    margin: em(-40px) em(20px);
+    width: 20px;
 
     &:hover {
       background: transparent;
@@ -201,9 +216,9 @@
     @media(min-width: $breakpoint-large) {
       color: $white;
       float: right;
-      height: em(25px);
-      margin-top: em(-50px);
-      width: em(100px);
+      height: 25px;
+      margin: em(-35px) em(20px);
+      width: 25px;
     }
   }
 }
