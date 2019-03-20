@@ -1,0 +1,36 @@
+.back-to-top {
+  flex-direction: row;
+  bottom: em(40px);
+  top: auto;
+  right: em(40px);
+  display: flex;
+  position: fixed;
+  z-index: 1100;
+  opacity: 0;
+  transition: 0.2s ease;
+
+  &--displayed {
+    opacity: 1;
+    transition: 0.2s ease;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    display: none;
+  }
+
+  &__link {
+    background-color: $background-yellow;
+    padding: em(5px) em(10px);
+    border-radius: em(30px);
+    font-size: em(22px);
+    color: $white;
+    text-decoration: none;
+    font-family: $font-family-button;
+    border: 0;
+
+    &:active,
+    &:focus {
+      border: none;
+    }
+  }
+}
