@@ -31,7 +31,7 @@ Et un petit retour aux origines s’impose avant tout !
 - [PM + PO : dawn of product](#pm--po--dawn-of-product)
 - [Conclusion : extrasensory perception](#conclusion--extrasensory-perception)
   
-## PM : looking for the SuperProduct
+## PM: looking for the SuperProduct
 
 Le rôle de Product Management est arrivé très tôt dans la gestion de projet des entreprises. Plus précisément en 1931 du côté de chez Procter & Gamble, initié par un certain [Neil H. McElroy](https://www.mindtheproduct.com/2015/10/history-evolution-product-management/), grand visionnaire à l’époque, avec son memo sur le “Brand Man”.
 
@@ -49,7 +49,7 @@ McElroy ne s’est d’ailleurs pas arrêté là, et à notamment aidé à fonde
 - réaliser la documentation des spécifications des Epics d’un projet
 
 
-## PO : leader of the Justice Product
+## PO: leader of the Justice Product
 
 Le terme Product Owner, à contrario, est arrivé avec le premier manifeste Agile en 2001. Factuellement, dans ce manifeste, le PO est désigné comme une personne “proxy” entre l’utilisateur et l’équipe de développement.
 
@@ -67,15 +67,15 @@ Son rôle, beaucoup plus opérationnel dans le développement d’un produit au 
 
 Finalement, d’avancer pas à pas vers le produit final souhaité par le client et / ou l’utilisateur, de la manière la plus lisse possible.
 
-Le rôle de “Product Owner” a donc très rapidement été confondu avec celui de “Product Manager”. Alors qu’en réalité ce dernier est essentiellement stratégique et très peu opérationnel.
+Le rôle de “Product Owner” a donc très rapidement été confondu avec celui de “Product Manager”. En réalité, ce dernier est essentiellement stratégique et très peu opérationnel.
 
-## PM / PO : nothing alike
+## PM / PO: nothing alike
 
 Le Product Manager doit s’assurer que le produit ou les fonctionnalités imaginées ont de la valeur pour son utilisateur final, prioriser en fonction de cela les objectifs du produit mais aussi réduire les risques qui pourraient faire échouer son produit sur le marché.
 
-Le Product Owner doit s’assurer que le produit est développé en fonction de cette vision et de ces objectifs. Et priorise avec l’appui de l’équipe de développement, donc avec la réalité opérationnelle, ce qui doit être mis en place pour atteindre ces objectifs de la manière la plus efficiente.
+Le Product Owner doit s’assurer que le produit est développé en fonction de cette vision et de ces objectifs. Il priorise avec l’appui de l’équipe de développement, donc avec la réalité opérationnelle, ce qui doit être mis en place pour atteindre ces objectifs de la manière la plus efficiente.
 
-Voici un tableau récapitulatif, avec une vision macro, de la répartition des rôles entre le product manager, product owner et toute la team dans un projet agile :
+Voici un tableau récapitulatif, avec une vision macro, de la répartition des rôles entre le product manager, le product owner, et toute la team dans un projet agile :
 
  ![]({{site.baseurl}}/assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-po-team-differences.png) 
 
@@ -83,13 +83,13 @@ Pour conclure sur ces comparatifs, le PO est défini par SCRUM et l’agilité d
 
 Le PM est défini par le produit lui même et les différents états de la vie du produit, c’est ce qui fait que son travail au jour le jour évolue.
 
-Mais pour que le développement d’un produit fonctionne bien, un PO ne peut se contenter d’écrire des US toute la journée sans réfléchir à quoi ces nouvelles fonctionnalités serviront, ni pourquoi il est nécessaire de le faire de cette manière ou mieux de le faire d’une autre manière.
+Mais pour que le développement d’un produit fonctionne bien, un PO ne peut se contenter d’écrire des US toute la journée sans réfléchir à quoi ces nouvelles fonctionnalités serviront, ni pourquoi il est nécessaire de le faire de cette manière ou mieux, de le faire d’une autre manière.
 
-Il ne pourra pas non plus comprendre les réels besoins de l’utilisateur, le challenger, lui faire tester le produit au fur et à mesure de sa conception, comprendre ses habitudes d’utilisation face à un nouveau produit. Et de ce fait lui proposer les fonctionnalités les plus adaptées, qui sont parfois différentes de ce qu’il pensait initialement vouloir.
+Il ne pourra pas non plus comprendre les réels besoins de l’utilisateur, le challenger, lui faire tester le produit au fur et à mesure de sa conception, comprendre ses habitudes d’utilisation face à un nouveau produit. De ce fait il ne pourra non plus lui proposer les fonctionnalités les plus adaptées, qui sont parfois différentes de ce qu’il pensait initialement vouloir.
 
 D’où l’importance de travailler main dans la main et de se partager la vision produit, différente et complémentaire.
 
-## PM + PO : dawn of product
+## PM + PO: dawn of product
 
 Dans un monde idéal, il est évident que ces deux rôles doivent être remplis par deux personnes différentes, autant par la différence de périmètre que par le poids de l’activité qui incombe à chacun.
 
@@ -103,7 +103,7 @@ Voici une petite liste des pours et des contres à cette solution :
 - Réduit les intermédiaires avec un unique point d'entrée pour le métier ou les utilisateurs vers les développeurs
 - Partialité en prenant et comprenant autant le métier que l'équipe de développement
 - Vision utilisateur plus présente et ancrée dans la production
-- Meilleure maitrise au fur et à mesure de l'environnement du produit
+- Meilleure maîtrise au fur et à mesure de l'environnement du produit
 
 ### Contre
 - Manque de temps pour se dédier à la conception stratégique d’un produit sur le long terme ou en fonction d’un marché
@@ -111,7 +111,7 @@ Voici une petite liste des pours et des contres à cette solution :
 - Risque d'adapter le produit à la production plutôt qu'à une vision utilisateur ou stratégique
 - Se renfermer autour de l'équipe de développement en mettant de côté la communication externe (clients, sponsors, utilisateurs)
 
-## Conclusion : extrasensory perception
+## Conclusion: extrasensory perception
 
 Pour conclure, à l'image de nos supers héros et de leur Justice League, le PM et le PO ont bien chacun leurs spécificités et un rôle différent, mais oeuvrent dans le même but. 
 La communication entre les deux est essentielle et l'union fait leur force.
