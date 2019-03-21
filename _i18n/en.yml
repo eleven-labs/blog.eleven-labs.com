@@ -11,7 +11,6 @@ global:
   share_on: Share this article on
   language_switch_to: Changer vers Français
   next: Next
-  back_to_top: Back
   want_more: Wants to know more?
   find_our_newsletter: Sign up to our Newsletter
   newsletter_subscribe: Subscribe
@@ -20,7 +19,6 @@ global:
   rss_follow: Add us to your watch
   same_author: By the same author
   search_input: Search
-  site: Website
   offline_ready: Site is Ready for Offline Use
   cookie_banner_message: This website uses Google Analytics. By continuing to browse, you authorize us to place a cookie for audience measurement purposes.
   cookie_banner_more: Learn more or disagree

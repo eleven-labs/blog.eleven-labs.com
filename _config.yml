@@ -29,6 +29,7 @@ theme_settings:
     # title: Eleven Labs - Le Blog
     brand : Eleven Labs
     le_blog : LE BLOG
+    le_site : LE SITE
     gravatar:
     description: A website with blog posts and pages
 

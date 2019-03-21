@@ -7,8 +7,12 @@
             <h1 class="header-links__eleven">{{ site.theme_settings.brand }}</h1>
             <h1 class="header-links__blog">{{ site.theme_settings.le_blog }}</h1>
         </a>
-        <a class="header-links__site-eleven" href="{{ site.theme_settings.site_web_eleven }}">
-            Eleven-Labs {% translate global.site %}
+        <a href="{{ site.theme_settings.site_web_eleven }}" class="header-links__site-eleven">
+            <div class="header-links__blocklogo">
+                <div class="header-links__grouplogo"> {% include eleven_logo.html %}</div>
+                <h2 class="header-links__sitetitle">{{ site.theme_settings.brand }}</h2>
+            </div>
+            <h2 class="header-links__lesite">{{ site.theme_settings.le_site }}</h2>
         </a>
     </div>
     <div class="header-bottom">
