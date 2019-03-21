@@ -6,10 +6,10 @@ layout: default
 {% endif %}
 {% include back_to_top.html %}
 <article class="post">
-    <!-- Block Author -->
     <header class="meta">
         <h1 class="md-content__title">{{ page.title }}</h1>
-        {% include author_link.html authors=page.authors descr=true %}
+        {% include author_link.html authors=page.authors descr=false %}
+        <br>
         <span class="meta-item">
             <i class="far fa-fw fa-calendar-plus"></i>{% include date_translate.html object=page.date %}
         </span>
@@ -25,6 +25,12 @@ layout: default
             {{ content }}
         </div>
     </section>
+
+    <!-- Block Author -->
+    <div class="meta post__bottom-author">
+        <h3 class="post__bottom-author__title">{% translate global.author %}</h3>
+        {% include author_link.html authors=page.authors descr=true %}
+    </div>
 </article>
 
 <!-- Post navigation -->

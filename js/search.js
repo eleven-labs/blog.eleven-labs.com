@@ -74,7 +74,7 @@ layout: compress-js
               <div class="article-preview__metadatas">
                   <time class="article-preview__post-reading">
                       <span class="article-preview__post-date">
-                          <i class="far fa-fw fa-calendar-alt"></i>${hitDate.format(dateFormat)}
+                          <i class="far fa-fw fa-calendar-plus"></i> ${hitDate.format(dateFormat)}
                       </span>
                   </time>
               </div>
