@@ -1,5 +1,5 @@
 .article-container {
-  background-color: $lightgrey-background;
+  background-color: $background-lightgrey;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -18,6 +18,7 @@
   flex-basis: 80%;
   flex-wrap: wrap;
   font-family: $font-family-article-pagination;
+  font-weight: 400;
   justify-content: center;
   margin: em(35px) 0;
 
@@ -53,7 +54,7 @@
 
 .article-preview {
   background-color: $white;
-  border: solid 1px $card-border;
+  border: solid 1px $border-card;
   border-radius: 2px;
   display: flex;
   flex-basis: 100%;
@@ -90,29 +91,20 @@
   }
 
   &__social-icon {
-    color: $article-icons;
+    color: $dusty-grey;
     height: em(14px);
     margin: 0 em(6px);
     width: em(14px);
   }
 
   &__social-icon-link {
-    color: $article-icons;
+    color: $dusty-grey;
 
-    &:link {
-      color: $article-icons;
-    }
-
-    &:visited {
-      color: $article-icons;
-    }
-
-    &:hover {
-      color: $article-icons;
-    }
-
+    &:link,
+    &:visited,
+    &:hover,
     &:active {
-      color: $article-icons;
+      color: $dusty-grey;
     }
   }
 
@@ -121,7 +113,7 @@
     font-size: em(28px);
     font-stretch: normal;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     letter-spacing: normal;
     line-height: normal;
     margin-top: em(23px);
@@ -160,6 +152,7 @@
     flex-wrap: nowrap;
     font-family: $font-family-article-texts;
     font-size: em(16px);
+    font-weight: 400;
     margin-top: em(13px);
 
     @media(min-width: $breakpoint-medium) {
@@ -168,11 +161,11 @@
   }
 
   &__post-date {
-    color: $butterscotch;
+    color: $casablanca;
   }
 
   &__read-time {
-    color: $butterscotch;
+    color: $casablanca;
     margin-left: em(14px);
 
     &::before {
@@ -182,7 +175,7 @@
   }
 
   &__authors {
-    color: $butterscotch;
+    color: $casablanca;
     margin-top: em(15px);
 
     @media(min-width: $breakpoint-medium) {
@@ -197,41 +190,30 @@
   }
 
   &__author-link {
-    color: $butterscotch;
+    color: $casablanca;
     font-family: $font-family-article-btn;
+    font-weight: 400;
     text-decoration: underline;
 
-    &:link {
-      color: $butterscotch;
-    }
-
-    &:visited {
-      color: $butterscotch;
+    &:link,
+    &:visited,
+    &:active {
+      color: $casablanca;
     }
 
     &:hover {
-      color: $butterscotch;
+      color: $casablanca;
       text-decoration: none;
-    }
-
-    &:active {
-      color: $butterscotch;
     }
   }
 
-  // Excerpt part
   &__excerpt {
     margin-top: 19px;
-
-    a {
-      color: $shark;
-    }
-
   }
 }
 
 .separator-line {
-  background-color: $separator-desktop-articles;
+  background-color: $scorpion;
   border: 0;
   display: none;
   height: 1px;

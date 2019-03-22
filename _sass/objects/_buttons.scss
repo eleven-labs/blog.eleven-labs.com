@@ -3,7 +3,7 @@
   display: inline-block;
   font-family: $font-family-button;
   font-size: 1.2rem;
-  font-weight: lighter;
+  font-weight: 400;
   letter-spacing: .05em;
   text-decoration: underline;
   text-transform: uppercase;
@@ -14,7 +14,7 @@
   }
 
   &--squared {
-    border: .2rem solid $border-color-white;
+    border: .2rem solid $border-button-light;
     color: $white;
     display: inline-block;
     font-weight: bold;
@@ -31,7 +31,7 @@
     &:hover,
     &:focus {
       background-color: $white;
-      color: $shark;
+      color: $charcoal-grey;
     }
   }
 }

@@ -37,7 +37,7 @@
 
   h3 {
     @extend %h3;
-    color: $shark;
+    color: $charcoal-grey;
     font-size: 2.5rem;
     margin: 3rem 0 2rem;
   }
@@ -78,9 +78,9 @@
   }
 
   a {
-    color: $mine-shaft;
+    color: $scorpion;
     font-family: $font-family-article-link;
-    font-weight: bold;
+    font-weight: 700;
     padding-bottom: .3rem;
     text-decoration: underline;
     transition: background-size .1s;

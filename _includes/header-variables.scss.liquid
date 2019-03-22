@@ -5,7 +5,7 @@
   background: url('{{ site.baseurl | append: "/img/astronaut_mobile.png"  }}');
   background-position: left top;
   background-repeat: no-repeat;
-  background-color: $background-yellow;
+  background-color: $bright-sun;
   background-size: auto em(190px);
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@
     background: url('{{ site.baseurl | append: "/img/astronaut_desktop.png"  }}') 100% 100% no-repeat,
     url('{{ site.baseurl | append: "/img/halo.png"  }}') 100% 100% no-repeat,
     url('{{ site.baseurl | append: "/img/planet.png"  }}') 120% 120% no-repeat,
-    $background-yellow;
+    $bright-sun;
     background-position: 24.8% em(80px), center, right em(105px);
     background-size: auto em(150px), auto 100%;
     height: em(230px);
@@ -48,7 +48,8 @@
 
       @media(min-width: $breakpoint-large) {
         display: flex;
-        font-family: $language-switch;
+        font-family: $font-family-language-switch;
+        font-weight: 400;
         margin: em(40px) 0 0 em(40px);
       }
     }
@@ -70,7 +71,7 @@
     &__eleven {
       font-family: $font-family-header-big-text;
       font-size: 3rem;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: 4px;
 
       @media(min-width: $breakpoint-large) {
@@ -81,6 +82,7 @@
     &__blog {
       font-family: $font-family-title-blog;
       font-size: 2.8rem;
+      font-weight: 700;
 
       @media(min-width: $breakpoint-large) {
         font-size: 3.4rem;
@@ -91,7 +93,11 @@
       color: $white;
       font-size: em(24px);
       height: 80px;
+<<<<<<< HEAD
       margin: em(7px) em(10px) 0 auto;
+=======
+      margin: em(5px) em(10px) 0 auto;
+>>>>>>> Refacto graphic-redo scss + correction of few bugs (go check PR)
       text-align: right;
       text-decoration: none;
 
@@ -111,6 +117,7 @@
       margin-bottom: em(3px);
       margin-left: em(17px);
       width: em(30px);
+<<<<<<< HEAD
 
       @media(min-width: $breakpoint-large) {
         margin: 0;
@@ -119,6 +126,16 @@
 
     &__sitetitle {
       display: none;
+=======
+    }
+
+    &__sitetitle {
+      font-family: $font-family-header-big-text;
+      font-size: 2.1rem;
+      font-weight: 400;
+      letter-spacing: 7px;
+      margin: em(5px) -7px auto  em(10px);
+>>>>>>> Refacto graphic-redo scss + correction of few bugs (go check PR)
 
       @media(min-width: $breakpoint-large) {
         display: block;
@@ -133,6 +150,7 @@
     &__lesite {
       font-family: $font-family-title-blog;
       font-size: 1.5rem;
+      font-weight: 700;
 
       @media(min-width: $breakpoint-large) {
         font-size: 2.5rem;
@@ -180,8 +198,9 @@
   }
 
   &__langs {
-    font-family: $language-switch;
+    font-family: $font-family-language-switch;
     font-size: em(24px);
+    font-weight: 400;
     margin: em(20px) em(16px) em(20px) 0;
     text-transform: capitalize;
 
@@ -198,10 +217,6 @@
 
   &__search-icon {
     margin: em(20px) em(19px) em(20px) auto;
-
-    @media(min-width: $breakpoint-medium) {
-      margin: em(20px) em(19px) em(20px) auto;
-    }
 
     @media(min-width: $breakpoint-large) {
       cursor: pointer;
@@ -222,8 +237,9 @@
     @media(min-width: $breakpoint-large) {
       color: $white;
       display: block;
-      font-family: $language-switch;
+      font-family: $font-family-language-switch;
       font-size: em(24px);
+      font-weight: 400;
       line-height: .7;
       margin-right: em(10px);
     }
@@ -236,7 +252,7 @@
     }
 
     &--displayed {
-      color: $dusty-gray;
+      color: $dusty-grey;
       display: block;
       height: em(50px);
       line-height: 2.5;

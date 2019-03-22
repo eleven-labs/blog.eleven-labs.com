@@ -1,86 +1,52 @@
 // Typography
-$font-family-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-header-big-text: 'Korb', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-headings:'DINPro-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-footer-big-text: 'Korb', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-footer-subtitle: 'Worksans-Bold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-footer-title: 'Korb', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-button: 'Worksans-Bold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-footer-contact: 'Worksans-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-article-headers: 'Korb', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-article-texts: 'Worksans-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-article-btn: 'Worksans-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$language-switch: 'Korb', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-article-pagination-number: 'Worksans-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-article-pagination: 'Worksans-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-post-titles: 'Korb';
-$font-family-article-link: 'Worksans-Bold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-family-title-blog: 'Worksans-Bold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-dinpro: 'Dinpro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-korb: 'Korb', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-worksans: 'Worksans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
+$font-family-main: $font-family-dinpro;
+$font-family-article-headers: $font-family-korb;
+$font-family-footer-title: $font-family-korb;
+$font-family-header-big-text: $font-family-korb;
+$font-family-language-switch: $font-family-korb;
+$font-family-post-titles: $font-family-korb;
+$font-family-article-link: $font-family-worksans;
+$font-family-title-blog: $font-family-worksans;
+$font-family-article-btn: $font-family-worksans;
+$font-family-article-pagination: $font-family-worksans;
+$font-family-article-texts: $font-family-worksans;
+$font-family-button: $font-family-worksans;
+$font-family-footer-contact: $font-family-worksans;
 $font-size: 19px;
 $font-size-mobile: 16px;
 
-// Padding
-$padding-large: 20%;
-$padding-small: 6%;
-$padding-x-small: 3%;
-
 // Colours
-$alto: #d4d4d4;
-$white-grey:#f9f9f9;
-$alto2: #d8d8d8;
-$azure-radiance: #0096fb;
-$dusty-gray: #999;
-$gray: #808080;
-$mine-shaft: #5b5b5b;
-$shark: #323334;
-$turbo: #ebc137;
-$white: #fff;
-$semi-transparent-black: rgba(0, 0, 0, .5);
-$dark-indigo: #0d2857;
-$light-grey: rgba(255, 255, 255, .33);
+$alto: #d8d8d8;
+$alabaster:#f9f9f9;
 $blue-gradient: linear-gradient(102deg, #0e3b81, #3a65b4);
-$background-gradient1:#edbe4a;
-$background-gradient2:#e6ba3b;
-$background-gradient3:#f5c736;
-$background-yellow: #fdd63b;
-
-// Colours in the rework
-$butterscotch: #f8bb4f;
-$kinda-yellow: #f2c437;
+$bright-sun: #fdd63b;
+$casablanca: #f8bb4f;
 $charcoal-grey: #333541;
-$lightgrey-background: #f9f9f9;
-$article-icons: #a8a8a8;
-$card-border: #d8d8d8;
-$butterscotch: #f8bb4f;
-$separator-desktop-articles: #838383;
-$pale-grey: #f6f6f6;
+$dark-indigo: #0d2857;
+$dusty-grey: #999999;
+$scorpion: #5b5b5b;
+$white: #ffffff;
 
-// Eleven Labs colours
-$brand-yellow: $turbo;
-$brand-black: $shark;
-
-// Button
-$button-hover: $shark;
-
-// Brand colours
+$background-footer: $blue-gradient;
+$background-grey: $alabaster;
+$background-lightgrey: $alabaster;
+$background-white: $white;
+$border-card: $alto;
+$border-button-light: $alto;
+$border-color: rgba(0, 0, 0, .1);
+$brand-yellow: $casablanca;
+$brand-black: $scorpion;
 $brand-color: $white;
-$background-color: $white;
-$border-color-white: $light-grey;
-$footer-background: $blue-gradient;
-$border-color: rgba(0, 0, 0, .1); // rgba recommended if using feature images
-$border: solid 1px $alto2;
-$background-grey: $pale-grey;
-
-// Typography colours
-$selection-color: $alto; // visible when highlighting text
 
 // Feature image for articles
 $feature-image-text-color: $white;
-$feature-image-size: cover; // options include "cover", "contain", "auto"
+$feature-image-size: cover;
 
 // Header description box
-$header-desc-background-color: $turbo;
 $header-desc-text-color: $white;
 
 // Layout

@@ -19,12 +19,13 @@
   }
 
   &__link {
-    background-color: $background-yellow;
+    background-color: $bright-sun;
     border: 0;
     border-radius: em(30px);
     color: $white;
     font-family: $font-family-button;
     font-size: em(22px);
+    font-weight: 400;
     padding: em(5px) em(10px);
     text-decoration: none;
   }

@@ -1,10 +1,6 @@
 .page-heading {
   background: $brand-yellow;
 
-  &.with-cover {
-    text-shadow: $gray 1px 1px 1px, $gray -1px 1px 1px, $gray -1px -1px 1px, $gray 1px -1px 1px;
-  }
-
   @media (min-width: $breakpoint-x-small) {
     padding: 6rem 0;
   }
