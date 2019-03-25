@@ -2,7 +2,7 @@
 @import 'settings/functions';
 
 .header {
-  background: url('{{ site.baseurl | append: "/img/astronaut_mobile.png"  }}');
+  background: url('{{ site.baseurl_root | append: "/img/astronaut_mobile.png"  }}');
   background-position: left top;
   background-repeat: no-repeat;
   background-color: $bright-sun;
@@ -13,9 +13,9 @@
   width: 100%;
 
   @media(min-width: $breakpoint-large) {
-    background: url('{{ site.baseurl | append: "/img/astronaut_desktop.png"  }}') 100% 100% no-repeat,
-    url('{{ site.baseurl | append: "/img/halo.png"  }}') 100% 100% no-repeat,
-    url('{{ site.baseurl | append: "/img/planet.png"  }}') 120% 120% no-repeat,
+    background: url('{{ site.baseurl_root | append: "/img/astronaut_desktop.png"  }}') 100% 100% no-repeat,
+    url('{{ site.baseurl_root | append: "/img/halo.png"  }}') 100% 100% no-repeat,
+    url('{{ site.baseurl_root | append: "/img/planet.png"  }}') 120% 120% no-repeat,
     $bright-sun;
     background-position: 24.8% em(80px), center, right em(105px);
     background-size: auto em(150px), auto 100%;
