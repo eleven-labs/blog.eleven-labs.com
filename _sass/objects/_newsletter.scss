@@ -1,5 +1,5 @@
 .newsletter {
-  background-image: $footer-background;
+  background-image: $background-footer;
   color: $white;
   height: 34rem;
   text-align: center;
@@ -11,6 +11,7 @@
   &__subtitle {
     font-family: $font-family-footer-title;
     font-size: 1.4rem;
+    font-weight: 400;
     opacity: .5;
     text-transform: uppercase;
   };
@@ -19,6 +20,7 @@
     @extend %h4;
     font-family: $font-family-footer-title;
     font-size: 3.6rem;
+    font-weight: 400;
     padding: .5rem 0 3rem;
   };
 }

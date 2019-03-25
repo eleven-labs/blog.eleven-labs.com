@@ -1,5 +1,5 @@
 .search-bar {
-  background: $white-grey;
+  background: $alabaster;
   font-size: em(20px);
   position: relative;
 
@@ -11,7 +11,7 @@
   }
 
   &-input {
-    background: $turbo;
+    background: $casablanca;
     border: 0;
     bottom: 0;
     cursor: pointer;
@@ -28,7 +28,7 @@
     z-index: 10;
 
     &:focus {
-      background: $white-grey;
+      background: $alabaster;
       box-sizing: border-box;
       opacity: 1;
       outline: none;

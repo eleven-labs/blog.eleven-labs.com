@@ -15,15 +15,14 @@ figure {
 }
 
 html {
-  background: $background-color;
+  background: $background-white;
   font-size: 62.5%;
 }
 
 // Typography
 body {
   color: $brand-black;
-  font-family: $font-family-headings;
-  font-weight: lighter;
+  font-family: $font-family-main;
   word-wrap: break-word;
 
   @media (max-width: $breakpoint-medium) {

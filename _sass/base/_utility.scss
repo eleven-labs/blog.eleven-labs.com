@@ -1,26 +1,10 @@
 // Mix-ins
-%padding-small {
-  padding: $padding-x-small $padding-x-small * 2;
-
-  @media (max-width: $breakpoint-large) {
-    padding: $padding-x-small;
-  }
-}
-
-%padding-regular {
-  padding: $padding-small $padding-large;
-
-  @media (max-width: $breakpoint-large) {
-    padding: $padding-small * 1.5 $padding-small * 2;
-  }
-}
-
 %h1 {
   font-family: $font-family-post-titles;
   font-size: 3.5rem;
   font-stretch: normal;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   letter-spacing: normal;
   line-height: normal;
   text-transform: uppercase;
@@ -31,20 +15,20 @@
   font-size: 2.8rem;
   font-stretch: normal;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   letter-spacing: normal;
   line-height: normal;
   text-transform: uppercase;
 }
 
 %h3 {
-  color: $butterscotch;
+  color: $casablanca;
   display: inline-block;
   font-family: $font-family-post-titles;
   font-size: 2.6rem;
   font-stretch: normal;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   letter-spacing: normal;
   line-height: normal;
   text-transform: uppercase;
@@ -54,7 +38,7 @@
   font-family: $font-family-post-titles;
   font-stretch: normal;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   letter-spacing: normal;
   line-height: normal;
 }

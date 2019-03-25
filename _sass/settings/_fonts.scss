@@ -1,10 +1,12 @@
+// Dinpro
 @font-face {
-  font-family: 'DINPro-Regular';
+  font-family: 'Dinpro';
   src: url($baseurl + '/fonts/DINPro-Regular.woff2') format('woff2'), url($baseurl + '/fonts/DINPro-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
+// Korb
 @font-face {
   font-family: 'Korb';
   src: url($baseurl + '/fonts/korb.woff2') format('woff2'), url($baseurl + '/fonts/korb.woff') format('woff');
@@ -12,15 +14,15 @@
   font-style: normal;
 }
 
+// Worksans
 @font-face {
-  font-family: 'Worksans-Regular';
+  font-family: 'Worksans';
   src: url($baseurl + '/fonts/worksans-regular-webfont.woff2') format('woff2'), url($baseurl + '/fonts/worksans-regular-webfont.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'Worksans-Bold';
+  font-family: 'Worksans';
   src: url($baseurl + '/fonts/Worksans-Bold.woff2') format('woff2'), url($baseurl + '/fonts/Worksans-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;

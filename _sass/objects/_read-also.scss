@@ -13,16 +13,17 @@
 
 .read-art {
   background: $white;
-  border: $border;
+  border: 1px solid $border-card;
   border-radius: 2px;
   margin: 20px 0;
   padding: 20px;
 
   &__link {
     @extend %h2;
-    color: $shark;
+    color: $charcoal-grey;
     font-family: $font-family-post-titles;
     font-size: 2.2rem;
+    font-weight: 400;
     text-decoration: none;
 
     @media (min-width: $breakpoint-medium) {
@@ -35,7 +36,7 @@
   }
 
   &__meta {
-    color: $butterscotch;
+    color: $casablanca;
     display: inline-block;
 
     &::after {
