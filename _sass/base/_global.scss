@@ -22,7 +22,10 @@ html {
 // Typography
 body {
   color: $brand-black;
+  display: flex;
+  flex-direction: column;
   font-family: $font-family-main;
+  min-height: 100vh;
   word-wrap: break-word;
 
   @media (max-width: $breakpoint-medium) {

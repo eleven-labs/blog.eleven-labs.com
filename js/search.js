@@ -29,7 +29,7 @@ layout: compress-js
   close.addEventListener("click", function(){
     search.className = 'header-bottom__headband--not-displayed';
     contentSearchId.style.display = 'none';
-    contentId.style.display = 'block';
+    contentId.style.display = 'flex';
   });
 
   function onQueryChange(e) {
