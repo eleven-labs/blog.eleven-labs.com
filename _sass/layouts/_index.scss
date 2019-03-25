@@ -1,3 +1,13 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.home {
+  flex-grow: 1;
+}
+
 .article-container {
   background-color: $background-lightgrey;
   display: flex;
