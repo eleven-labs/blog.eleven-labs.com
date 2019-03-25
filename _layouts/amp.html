@@ -6,7 +6,6 @@ layout: amp
     <head>
         <meta charset="utf-8">
         <title>{{ page.title }}</title>
-        <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com">
         <link rel="canonical" href="{{ page.canonical_url | prepend: site.baseurl_root | prepend: site.url }}" />
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <style amp-custom>
@@ -109,11 +108,11 @@ layout: amp
                 {% include author_link.html authors=page.authors descr=false %}
                 <br>
                 <span class="meta-item">
-                    <i class="far fa-fw fa-calendar-plus"></i>{% include date_translate.html object=page.date %}
+                    {% include date_translate.html object=page.date %}
                 </span>
                 <span class="meta-item">|</span>
                 <span class="meta-item">
-                    <i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=content %}
+                    {% include reading_time.html content=content %}
                 </span>
             </header>
             <section class="slice">
