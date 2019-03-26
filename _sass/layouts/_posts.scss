@@ -10,6 +10,7 @@
   &__bottom-author {
     &__title {
       @extend %h3;
+      display: block;
       margin: 3rem 0 1rem;
     }
   }
