@@ -18,6 +18,8 @@ layout: compress-js
   });
 
   document.getElementById('backTopLink').addEventListener(touchEvent, function() {
-    document.documentElement.scrollTop = 0;
+    alert('hello');
+    const el = document.body || document.documentElement;
+    el.scrollTop = 0;
   });
 })();
