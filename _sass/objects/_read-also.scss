@@ -32,12 +32,12 @@
   }
 
   &__metas {
+    display: inline-block;
     margin: 1.3rem 0;
   }
 
   &__meta {
     color: $casablanca;
-    display: inline-block;
 
     &::after {
       content: '';

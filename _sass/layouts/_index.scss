@@ -186,7 +186,7 @@
 
   &__authors {
     color: $casablanca;
-    margin-top: em(15px);
+    display: inline-block;
 
     @media(min-width: $breakpoint-medium) {
       margin-left: em(14px);

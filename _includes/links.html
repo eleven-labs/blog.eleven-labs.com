@@ -22,8 +22,11 @@
                                 <i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=content %}
                             </span>
                         </div>
+                        {% include author_articles_link.html authors=post.authors %}
 
-                        {% include author_link.html authors=post.authors %}
+                        <div >
+                            <p>{{ post.excerpt }}</p>
+                        </div>
                     </li>
                     {% assign limit = limit | plus:1 %}
                 {% endif %}
