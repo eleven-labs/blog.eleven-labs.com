@@ -5,7 +5,7 @@
         </a>
         <a class="header-links__title" href="{{ site.baseurl_root }}">
             <h1 class="header-links__eleven">{{ site.theme_settings.brand }}</h1>
-            <h1 class="header-links__blog">{{ site.theme_settings.le_blog }}</h1>
+            <span class="header-links__blog">{{ site.theme_settings.le_blog }}</span>
         </a>
         <a href="{{ site.theme_settings.site_web_eleven }}" class="header-links__site-eleven">
             <div class="header-links__blocklogo">
@@ -16,9 +16,9 @@
         </a>
     </div>
     <div class="header-bottom">
-        <div class="header-bottom__social">
+        <ul class="header-bottom__social">
             {% include icons.html data=site.theme_settings %}
-        </div>
+        </ul>
         <div id="search" class="header-bottom__headband--not-displayed">
             <a id="close" href="#" class="header-bottom__close-search">
                 {% include close_search.html %}
