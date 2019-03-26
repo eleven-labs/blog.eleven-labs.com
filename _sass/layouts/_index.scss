@@ -230,10 +230,6 @@
   margin: em(10px) em(30px);
   width: 100%;
 
-  &:last-child {
-    display: none;
-  }
-
   @media(min-width: $breakpoint-medium) {
     display: block;
   }
