@@ -10,10 +10,11 @@
   }
 
   &__author {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    margin: em(10px) 0;
 
     @media (min-width: $breakpoint-medium) {
-      display: block;
       font-size: 2rem;
     }
 
