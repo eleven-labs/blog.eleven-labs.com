@@ -13,8 +13,6 @@ tags:
 cover: /assets/2018-06-06-should-you-go-hybrid/cover.jpg
 ---
 
-# Should you go hybrid? Pros and cons for the hybrid cloud
-
 The hybrid cloud is an approach to implementing cloud computing by combining both public cloud (external) and private
 cloud (internal) infrastructure.
 There was a three-fold jump in [hybrid cloud adoption](https://www.forbes.com/consent/?toURL=https://www.forbes.com/sites/louiscolumbus/2017/04/23/2017-state-of-cloud-adoption-and-security/)

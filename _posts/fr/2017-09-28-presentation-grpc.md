@@ -19,8 +19,6 @@ tags:
 cover: /assets/2017-09-28-presentation-grpc/cover.jpg
 ---
 
-### Présentation de gRPC
-
 Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/){:rel="nofollow noreferrer"} si ce n'est pas déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et communiquent via HTTP.
 
 > Et si maintenant on utilisait HTTP/2 pour faire communiquer nos services ?
