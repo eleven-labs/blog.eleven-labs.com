@@ -4,15 +4,13 @@ permalink: /404.html
 hide: true
 ---
 <div class="container not-found">
-	<h1 class="md-content__title">Page non trouvée</h1>
-	<div class="md-content">Toutes nos excuses, mais la page que vous avez demandé n'a pu être trouvée.
-		Vous pouvez utiliser la recherche pour lire un article en particulier ou vous laisser guider par la liste des
-		derniers articles.</div>
+	<h1 class="md-content__title">{% translate global.not_found_title %}</h1>
+	<div class="md-content">{% translate global.not_found_text %}</div>
 </div>
 
 <aside class="slice read-also">
 	<div class="container">
-		<h3 class="read-also__title">Derniers articles :</h3>
+		<h3 class="read-also__title">{% translate global.last_articles %} :</h3>
 		<ul class="read-also__list">
 			{% for post in site.posts limit:5 %}
 				<li class="read-art">
