@@ -26,6 +26,7 @@ $baseurl: '{{ site.baseurl_root }}';
 
 // Posts
 @import 'layouts/posts';
+@import 'layouts/404';
 @import 'layouts/index';
 
 // Partials
