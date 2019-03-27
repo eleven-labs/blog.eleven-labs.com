@@ -223,11 +223,11 @@
 }
 
 .separator-line {
-  background-color: $scorpion;
+  background-color: $alto;
   border: 0;
   display: none;
   height: 1px;
-  margin: em(40px) em(30px);
+  margin: em(10px) em(30px);
   width: 100%;
 
   @media(min-width: $breakpoint-medium) {
