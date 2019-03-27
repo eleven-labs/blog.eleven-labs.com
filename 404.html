@@ -17,18 +17,21 @@ hide: true
 		<ul class="read-also__list">
 			{% for post in site.posts limit:5 %}
 				<li class="read-art">
-					<a class="read-art__link no-link-style"
-						href='{{ post.url | prepend: site.baseurl_root }}'>{{ post.title }}</a>
-					<br />
+					<a class="read-art__link no-link-style" href='{{ post.url | prepend: site.baseurl_root }}'>{{ post.title }}</a>
+					<br/>
 					<div class="read-art__metas">
 						<span class="read-art__meta">
 							<i class="far fa-fw fa-calendar-plus"></i>{% include date_translate.html object=post.date %}
 						</span>
 						<span class="read-art__meta">|</span>
 						<span class="read-art__meta">
-							<i class="far fa-fw fa-clock"
-								title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=post.content %}
+							<i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=post.content %}
 						</span>
+					</div>
+					{% include author_articles_link.html authors=post.authors %}
+
+					<div >
+						<p>{{ post.excerpt }}</p>
 					</div>
 
 					{% include author_link.html authors=post.authors %}
