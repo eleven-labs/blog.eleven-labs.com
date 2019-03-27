@@ -17,7 +17,6 @@ layout: compress-js
   const contentId = document.getElementById('js-content');
   const contentSearchId = document.getElementById('js-content-search');
   const lang = window.site && window.site.lang;
-  moment.locale(lang || 'en');
 
   searchIcon.addEventListener("click", function(){
     if (search.classList.contains('header-bottom__headband--not-displayed')) {
@@ -56,10 +55,10 @@ layout: compress-js
         if (hit.type !== 'document' || hit.layout === 'author' || hit.lang !== lang) {
           return article;
         }
-        const dateFormat = lang === 'fr' ? 'DD MMMM YYYY' : 'MMMM DD, YYYY';
-        const hitDate = moment(hit.date, 'YYYY-MM-DD HH:mm:ss ZZ');
 
         const url = baseurl + hit.url;
+        const locale = lang === 'fr' ? 'fr-FR' : 'en-GB';
+        const hitDate = new Date(hit.date).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
 
         return article + `
           <div class="article-container">
@@ -74,7 +73,7 @@ layout: compress-js
               <div class="article-preview__metadatas">
                   <time class="article-preview__post-reading">
                       <span class="article-preview__post-date">
-                          <i class="far fa-fw fa-calendar-plus"></i> ${hitDate.format(dateFormat)}
+                        <i class="far fa-fw fa-calendar-plus"></i> ${hitDate}
                       </span>
                   </time>
               </div>
