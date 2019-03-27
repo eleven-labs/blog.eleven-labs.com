@@ -24,8 +24,8 @@ layout: default
                     <span class="article-preview__read-time">
                         <i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=post.content %}
                     </span>
+                    {% include author_articles_link.html authors=post.authors %}
                 </time>
-                {% include author_articles_link.html authors=post.authors %}
             </div>
             <div class="article-preview__excerpt">
                 <p>{{ post.excerpt }}</p>

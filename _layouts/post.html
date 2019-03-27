@@ -7,7 +7,6 @@ layout: default
 <article class="post">
     <header class="meta">
         <h1 class="md-content__title">{{ page.title }}</h1>
-        {% include author_link.html authors=page.authors descr=false %}
         <br>
         <span class="meta-item">
             <i class="far fa-fw fa-calendar-plus"></i>{% include date_translate.html object=page.date %}
@@ -16,6 +15,7 @@ layout: default
         <span class="meta-item">
             <i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=content %}
         </span>
+        {% include author_articles_link.html authors=page.authors descr=false %}
     </header>
 
     <section class="slice">
