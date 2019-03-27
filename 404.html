@@ -4,13 +4,16 @@ permalink: /404.html
 hide: true
 ---
 <div class="container not-found">
-	<h1 class="md-content__title">{% translate global.not_found_title %}</h1>
-	<div class="md-content">{% translate global.not_found_text %}</div>
+	<h1 class="md-content__title">Page not found</h1>
+	<div class="md-content">
+		We apologize for any inconvenience, but the page you requested was not found. 
+		You can use the search bar to read a particular article or let the last articles list bellow be your guide.
+	</div>
 </div>
 
 <aside class="slice read-also">
 	<div class="container">
-		<h3 class="read-also__title">{% translate global.last_articles %} :</h3>
+		<h3 class="read-also__title">Last articles :</h3>
 		<ul class="read-also__list">
 			{% for post in site.posts limit:5 %}
 				<li class="read-art">
@@ -19,12 +22,12 @@ hide: true
 					<br />
 					<div class="read-art__metas">
 						<span class="read-art__meta">
-							<i class="far fa-fw fa-calendar-plus"></i>{% include date_translate.html object=page.date %}
+							<i class="far fa-fw fa-calendar-plus"></i>{% include date_translate.html object=post.date %}
 						</span>
 						<span class="read-art__meta">|</span>
 						<span class="read-art__meta">
 							<i class="far fa-fw fa-clock"
-								title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=content %}
+								title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=post.content %}
 						</span>
 					</div>
 

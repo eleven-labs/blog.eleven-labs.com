@@ -28,9 +28,6 @@ global:
   cookie_inform_and_ask_message: Ce site utilise des cookies de Google Analytics. Ces cookies nous aident à identifier le contenu qui vous intéresse le plus ainsi qu'à repérer certains dysfonctionnements. Vos données de navigations sur ce site sont envoyées à Google Inc.
   cookie_inform_and_ask_agree: Accepter
   cookie_inform_and_ask_disagree: S'opposer
-  not_found_title: Page non trouvée
-  not_found_text: Toutes nos excuses, mais la page que vous avez demandé n'a pu être trouvée. Vous pouvez utiliser la recherche pour lire un article en particulier ou vous laisser guider par la liste des derniers articles.
-  last_articles: Derniers articles
 date:
   months:
     january: Janvier
