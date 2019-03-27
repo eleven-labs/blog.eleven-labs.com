@@ -1,27 +1,38 @@
 ---
-layout: page
-title: "Page non trouvée"
+layout: default
 permalink: /404.html
 hide: true
 ---
-<div class="container">
-	<div style="text-align:center;margin-bottom:4em;">Toutes nos excuses, mais la page que vous avez demandé n'a pu être trouvée.
-Vous pouvez utiliser la recherche pour lire un article en particulier ou vous laisser guider par la liste des derniers articles.</div>
-
-
-    <section class="slice">
-	    <div class="read-also container">
-	        <h3 class="read-also-title">Derniers articles :</h3>
-	        <ul class="posts read-also-list">
-			    {% for post in site.posts limit:5 %}
-			    	<li class="read-also-item">
-			            <a class="read-also-link" href="{{ post.url | prepend: site.baseurl_root }}">
-			                {{ post.title }}
-			            </a>
-			        </li>
-			    {% endfor %}
-	        </ul>
-	    </div>
-    </section>
+<div class="container not-found">
+	<h1 class="md-content__title">Page non trouvée</h1>
+	<div class="md-content">Toutes nos excuses, mais la page que vous avez demandé n'a pu être trouvée.
+		Vous pouvez utiliser la recherche pour lire un article en particulier ou vous laisser guider par la liste des
+		derniers articles.</div>
 </div>
 
+<aside class="slice read-also">
+	<div class="container">
+		<h3 class="read-also__title">Derniers articles :</h3>
+		<ul class="read-also__list">
+			{% for post in site.posts limit:5 %}
+				<li class="read-art">
+					<a class="read-art__link no-link-style"
+						href='{{ post.url | prepend: site.baseurl_root }}'>{{ post.title }}</a>
+					<br />
+					<div class="read-art__metas">
+						<span class="read-art__meta">
+							<i class="far fa-fw fa-calendar-plus"></i>{% include date_translate.html object=page.date %}
+						</span>
+						<span class="read-art__meta">|</span>
+						<span class="read-art__meta">
+							<i class="far fa-fw fa-clock"
+								title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=content %}
+						</span>
+					</div>
+
+					{% include author_link.html authors=post.authors %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</aside>
