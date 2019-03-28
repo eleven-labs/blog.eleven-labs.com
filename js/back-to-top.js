@@ -18,7 +18,8 @@ layout: compress-js
   });
 
   document.getElementById('backTopLink').addEventListener(touchEvent, function() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    const scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+
+    scrollTop = 0;
   });
 })();
