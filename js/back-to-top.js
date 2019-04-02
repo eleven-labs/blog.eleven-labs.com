@@ -5,7 +5,6 @@ layout: compress-js
   'use strict';
 
   const screenSize = screen.height * 0.4;
-  const touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
   window.addEventListener('scroll', function() {
     if (document.getElementById('backTop')) {
@@ -17,7 +16,7 @@ layout: compress-js
     }
   });
 
-  document.getElementById('backTopLink').addEventListener(touchEvent, function() {
+  document.getElementById('backTopLink').addEventListener('click', function() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });
