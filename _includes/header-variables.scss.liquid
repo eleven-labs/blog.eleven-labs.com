@@ -73,7 +73,6 @@
       font-size: 3rem;
       font-weight: 400;
       letter-spacing: 4px;
-      margin-bottom: 0;
 
       @media(min-width: $breakpoint-large) {
         font-size: 4rem;
@@ -94,7 +93,7 @@
       color: $white;
       font-size: em(24px);
       height: 80px;
-      margin: em(5px) em(10px) 0 auto;
+      margin: em(7px) em(10px) 0 auto;
       text-align: right;
       text-decoration: none;
 
@@ -112,24 +111,24 @@
     &__grouplogo {
       height: em(30px);
       margin-bottom: em(3px);
-      margin-left: em(17px);
+      margin-left: em(16px);
       width: em(30px);
+
+      @media(min-width: $breakpoint-large) {
+        margin: 0;
+      }
     }
 
     &__sitetitle {
-      font-family: $font-family-header-big-text;
-      font-size: 2.1rem;
-      font-weight: 400;
-      letter-spacing: 4px;
-      margin: em(5px) em(-7px) 0 em(10px);
+      display: none;
 
       @media(min-width: $breakpoint-large) {
         display: block;
         font-family: $font-family-header-big-text;
         font-size: 3.1rem;
         font-weight: 300;
-        letter-spacing: em(7px);
-        margin: em(2px) em(-7px) auto em(10px);
+        letter-spacing: 7px;
+        margin: em(2px) -7px auto em(10px);
       }
     }
 
