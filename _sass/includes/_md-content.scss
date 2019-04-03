@@ -62,19 +62,12 @@
 
   ul {
     list-style-position: initial;
-    margin: 2rem 0;
+    margin-left: 2.25rem;
   }
 
   li {
-    list-style-type: none;
     margin: 1rem 0;
     padding-left: .5rem;
-
-    &::before {
-      content: '\2022';
-      font-size: 2rem;
-      padding-right: 1.1225em;
-    }
   }
 
   a {
