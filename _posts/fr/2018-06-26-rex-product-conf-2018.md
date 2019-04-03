@@ -15,8 +15,6 @@ tags:
 cover: /assets/2018-06-26-rex-product-conf-2018/cover.jpg
 ---
 
-## REX : « La Product Conférence ».
-
 Jeudi 21 Juin a eu lieu la troisième édition de « La Product Conférence ».
 
 C'est LE rendez-vous annuel source d’apprentissage, d’inspiration et de partage pour les professionnels de la création de produit et d'expériences numériques. Que vous soyez CEO, CPO, VP Product, Product Managers, Product Owners… ce rex vous intéressera !

@@ -12,8 +12,6 @@ cover: /assets/2018-12-05-la-retrospective-de-sprint-diversifier-pour-gagner-en-
 ---
 
 
-# La rétrospective de sprint, diversifier pour gagner en qualité - Partie 1
-
 ## Introduction
 
 Si l’on considère l’ensemble des cérémonies préconisées par le framework SCRUM, la rétrospective de sprint est certainement celle qui peut être le principal vecteur d’amélioration continue.

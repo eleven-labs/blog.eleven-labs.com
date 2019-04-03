@@ -19,7 +19,6 @@ tags:
     - Puppeteer
 cover: /assets/2018-10-23-cucumber-for-angular/cover.png
 ---
-# Cucumber for Angular
 
 ## Introduction
 

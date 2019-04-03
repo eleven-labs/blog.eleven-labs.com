@@ -24,8 +24,6 @@ image:
     width: 100
 ---
 
-# Algorithmes symétriques :
-
 La **cryptographie symétrique**, également dite **à clé secrète**, est la plus ancienne forme de chiffrement. Elle permet à la fois de chiffrer et de déchiffrer des messages à l'aide d'un même mot clé.
 
 Nous pouvons citer le chiffre de Jules César, qui consiste en un chiffrement par **décalage**.

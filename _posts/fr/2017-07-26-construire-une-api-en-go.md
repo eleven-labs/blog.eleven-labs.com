@@ -15,9 +15,6 @@ tags:
 cover: /assets/2017-07-26-construire-une-api-en-go/cover.jpg
 ---
 
-CONSTRUIRE UNE API EN GO
-===================
-
 Le langage Go est rapidement devenu très populaire mais beaucoup hésitent encore à l'utiliser pour le développement de leurs nouvelles applications. Nous allons ici voir comment construire une api REST rapidement et facilement. 
 
 ----------
