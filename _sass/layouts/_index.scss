@@ -219,6 +219,20 @@
 
   &__excerpt {
     margin-top: 19px;
+
+    a {
+      color: $scorpion;
+      font-family: $font-family-article-link;
+      font-weight: 700;
+      padding-bottom: .3rem;
+      text-decoration: underline;
+      transition: background-size .1s;
+    }
+
+    a:hover {
+      background-size: 3px 25px;
+      text-decoration: none;
+    }
   }
 }
 
