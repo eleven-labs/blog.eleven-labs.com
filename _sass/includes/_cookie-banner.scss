@@ -1,5 +1,5 @@
 .cookie-banner {
-  background-color: $brand-yellow;
+  background-color: $cookie-banner-color;
   border-bottom: .2rem solid $brand-black;
   color: $brand-black;
   display: none;
@@ -30,7 +30,7 @@
 }
 
 .cookie-inform-and-ask {
-  background-color: $semi-transparent-black;
+  background-color: $charcoal-grey;
   display: none;
   height: 100%;
   left: 0;
@@ -40,7 +40,7 @@
   z-index: 99999;
 
   .cookie-overlay {
-    background-color: $brand-yellow;
+    background-color: $cookie-banner-color;
     border: .3rem solid $brand-black;
     border-radius: 1rem;
     color: $brand-black;

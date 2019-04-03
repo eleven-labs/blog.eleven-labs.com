@@ -15,15 +15,17 @@ figure {
 }
 
 html {
-  background: $background-color;
+  background: $background-white;
   font-size: 62.5%;
 }
 
 // Typography
 body {
   color: $brand-black;
-  font-family: $font-family-headings;
-  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-main;
+  min-height: 100vh;
   word-wrap: break-word;
 
   @media (max-width: $breakpoint-medium) {
@@ -115,22 +117,6 @@ hr {
   border-bottom: 1px solid $brand-color;
   border-top: 1px solid $border-color;
   margin: 1em 0;
-}
-
-a:not(.no-link-style) {
-  color: $brand-black;
-  letter-spacing: .05em;
-  text-decoration: underline;
-
-  &:hover {
-    background: $brand-yellow;
-    text-decoration: none;
-  }
-
-  &:visited,
-  &:visited:hover {
-    color: $button-hover;
-  }
 }
 
 .nav {

@@ -14,8 +14,6 @@ tags:
 cover: /assets/2019-01-14-architecture-hexagonale/hexagone.jpg
 ---
 
-# Architecture hexagonale
-
 L'infrastructure d'une application, les bases de données, les appels API, de même que les frameworks évoluent
 constamment. Mais ce n'est pas forcément le cas du besoin métier.
 

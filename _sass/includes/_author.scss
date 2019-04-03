@@ -1,21 +1,35 @@
-.author-heading {
-  padding-left: 6rem;
-  padding-right: 6rem;
-  text-shadow: none;
+.author {
+  &__description {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.author-social {
-  ul {
+.author-heading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+
+  &__social-icons-list {
+    display: flex;
+    justify-content: flex-end;
     list-style: none;
   }
 
-  li {
-    display: inline;
-    margin: 0 .6rem;
+  &__social-icon {
+    height: em(14px);
+    margin: 0 em(6px);
+    width: em(14px);
   }
 
-  a {
-    color: $brand-black;
-    text-decoration: none;
+  &__social-icon-link {
+    color: $dusty-grey;
+  }
+
+  &__name {
+    @extend %h1;
+    margin: 2rem 0;
   }
 }

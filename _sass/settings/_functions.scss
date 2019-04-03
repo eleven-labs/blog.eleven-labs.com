@@ -1,0 +1,13 @@
+// Functions
+//Converts px values to em values. If the current element's font-size property is different than the browser's font size, use the second argument to specify it.
+//param:
+//pixels -> px value to convert to em (integer)
+//context -> px value of parent context (integer)
+//example :
+//.test {
+//  width: em(32px, 16px);
+//}
+//
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels / $context}em;
+}

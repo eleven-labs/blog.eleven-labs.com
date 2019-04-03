@@ -1,11 +1,9 @@
-theme_settings:
-    # Meta
-    title: Le Blog
-
 global:
   also_read: À lire aussi
   and: et
+  author: Auteur(s)
   author_by: par
+  back_to_top: Haut
   contact_us: Nous contacter
   continue_reading: Lire l'article
   corporate: Découvre Eleven Labs
@@ -15,7 +13,9 @@ global:
   share_on: Partagez cet article sur
   language_switch_to: Switch to English
   next: Suivant
-  newsletter_subscribe: Abonnez-vous à notre newsletter !
+  want_more: Envie d'en savoir plus ?
+  find_our_newsletter: Découvrez notre newsletter
+  newsletter_subscribe: S'abonner
   prev: Précédent
   reading: Lecture
   rss_follow: Ajoutez-nous à votre veille

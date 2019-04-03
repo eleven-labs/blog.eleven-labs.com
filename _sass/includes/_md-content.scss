@@ -1,10 +1,15 @@
-.post-content {
+.md-content {
   @media (max-width: $breakpoint-medium) {
     padding-top: 1rem;
   }
 
   @media (min-width: $breakpoint-medium) {
     padding-top: 3rem;
+  }
+
+  &__title {
+    @extend %h1;
+    margin: 3rem 0 1rem;
   }
 
   h1,
@@ -14,10 +19,6 @@
   h5,
   h6 {
 
-    a {
-      color: $brand-black;
-    }
-
     &:first-child {
       margin-top: 0;
     }
@@ -25,34 +26,19 @@
 
   h1 {
     @extend %h1;
-
-    @media (min-width: $breakpoint-x-small) {
-      margin: 4rem 0 2rem;
-    }
-
-    @media (max-width: $breakpoint-x-small) {
-      margin: 2rem 0 1rem;
-    }
+    margin: 3rem 0;
   }
 
   h2 {
     @extend %h2;
-    background-color: $brand-yellow;
     display: table;
-    padding: .6rem 1.2rem;
-
-    @media (min-width: $breakpoint-x-small) {
-      margin: 4rem 0 2rem -1.2rem;
-    }
-
-    @media (max-width: $breakpoint-x-small) {
-      margin: 2rem 0 1rem -1.2rem;
-    }
+    margin: 5rem 0 1.5rem;
   }
 
   h3 {
     @extend %h3;
-    background-color: lighten($brand-black, 70%);
+    color: $charcoal-grey;
+    font-size: 2.5rem;
     margin: 3rem 0 2rem;
   }
 
@@ -80,6 +66,21 @@
   }
 
   li {
+    margin: 1rem 0;
     padding-left: .5rem;
+  }
+
+  a {
+    color: $scorpion;
+    font-family: $font-family-article-link;
+    font-weight: 700;
+    padding-bottom: .3rem;
+    text-decoration: underline;
+    transition: background-size .1s;
+
+    &:hover {
+      background-size: 3px 25px;
+      text-decoration: none;
+    }
   }
 }

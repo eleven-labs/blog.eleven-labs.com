@@ -19,8 +19,6 @@ tags:
 cover: /assets/2018-02-11-php7-throwable-error-exception/cover.jpg
 ---
 
-# PHP 7 Throwable Exceptions Errors
-
 PHP 7 brings some changes about how errors are reported. 
 From now on, most of the errors are reported through the exception class `Error`.
 

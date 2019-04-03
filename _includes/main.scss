@@ -4,6 +4,7 @@ $baseurl: '{{ site.baseurl_root }}';
 // Settings
 @import 'settings/fonts';
 @import 'settings/variables';
+@import 'settings/functions';
 
 // External
 @import 'external/reset';
@@ -25,13 +26,15 @@ $baseurl: '{{ site.baseurl_root }}';
 
 // Posts
 @import 'layouts/posts';
+@import 'layouts/404';
 @import 'layouts/index';
 
 // Partials
-@import 'includes/header';
+//@import 'includes/header';
 @import 'includes/footer';
 @import 'includes/md-content';
 @import 'includes/author';
 @import 'includes/share';
 @import 'includes/offline-ready-banner';
 @import 'includes/cookie-banner';
+@import 'includes/back-to-top';
