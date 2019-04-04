@@ -1,6 +1,6 @@
 ---
 layout: author
-login: MehdiDr
+login: mehdidr
 title: Mehdi Druon
 twitter: MehdiDru
 ---
