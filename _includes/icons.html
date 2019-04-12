@@ -10,9 +10,17 @@
     {% assign social-icon-link = 'header-bottom__social__link' %}
 {% endcase %}
 
+{% if include.data.rabbit %}
+<li class="{{ social-icon }}" style="width:21px;">
+    <a class="no-link-style tracked-link {{ social-icon-link }}" data-tracking="rabbit" href="{{ include.data.rabbit }}" title="{% translate global.rabbit %}" rel="nofollow noreferrer">
+        <img class="rabbit" src="{{ include.data.rabbit | prepend: site.baseurl_root }}" alt="rabbit" width="20.57" height="19" />
+    </a>
+</li>
+{% endif %}
+
 {% if include.data.rss %}
 <li class="{{ social-icon }}">
-    <a class="no-link-style tracked-link {{ social-icon-link }}" data-tracking="rss" href="{{ "/feed.xml" | prepend: site.baseurl_root | prepend: site.url }}" title="{% translate global.rss_follow %}" rel="nofollow noreferrer">
+    <a class="no-link-style tracked-link {{ social-icon-link }}" data-tracking="rss">
         <i class="fas fa-fw fa-rss"></i>
     </a>
 </li>

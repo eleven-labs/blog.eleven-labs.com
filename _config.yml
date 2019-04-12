@@ -63,6 +63,7 @@ theme_settings:
     youtube:
     corporate:
     corporate_logo: /img/follow/eleven.svg
+    rabbit: /img/rabbit.svg
 
     # Scripts
     google_analytics: UA-99013054-1
