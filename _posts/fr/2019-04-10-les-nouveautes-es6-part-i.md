@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Les nouveautés d'ES6
+title: Les nouveautés d'ES6 Partie I
 excerpt: La première partie d'articles qui vont expliquer les nouveautés apportées par l'ES6 et en quoi elles sont intéressantes !
 authors:
     - mehdidr
 lang: fr
-permalink: /fr/lesnouveauteses6/
+permalink: /fr/lesnouveauteses6parti/
 categories:
     - Javascript
 tags:
@@ -21,18 +21,18 @@ ECMAScript est un ensemble de normes régissant les langages de script tels que 
 
 ## Pourquoi ES6 ?
 
-Cette 6ème édition est créée pour améliorer le langage, notamment dans la création d'applications complexes et de librairies partagées par ces applications. Ce but est atteint notamment par la création des modules (ne vous inquiètez pas si vous ne savez pas ce que c'est, on voit ça plus tard ;) ), mais aussi par l'ajout de features rendant la compilation plus simple (comme par exemple `Math.fround()` ou `Math.imul()`).
+Cette 6ème édition est créée pour améliorer le langage, notamment dans la création d'applications complexes et de librairies partagées par ces applications. Ce but est atteint notamment par la création des modules (ne vous inquiétez pas si vous ne savez pas ce que c'est, on voit ça dans la deuxième partie ;) ), mais aussi par l'ajout de features rendant la compilation plus simple (comme par exemple `Math.fround()` ou `Math.imul()`).
 
 Un autre but affiché était d'améliorer l'interopérabilité, notamment en adoptant des standards lorsque c'est possible.
 Par exemple, l'utilisation des classes, basée sur le constructor des fonctions, ou encore les arrow functions empruntées à CoffeeScript.
 
-Le problème d'une nouvelle implémentation de cette importance, c'est que le web est vaste et qu'il existe toutes sortes de code, dont certains très vieux. Il faut donc que l'upgrade se fasse de manière automatique et surtout imperceptible. C'est pour cela que ES6 est une surcouche d'ES5, c'est-à-dire que rien n'est supprimé.
+Le problème d'une nouvelle implémentation de cette importance, c'est que le Web est vaste et qu'il existe toutes sortes de code, dont certains très vieux. Il faut donc que l'upgrade se fasse de manière automatique et surtout imperceptible. C'est pour cela que ES6 est une surcouche d'ES5, c'est-à-dire que rien n'est supprimé.
 
-Un autre problème se trouve dans les utilisateurs du web : il faut que l'upgrade soit compatible avec tout les ordinateurs utilisés. À ce problème existe deux solutions : soit attendre des années que tout les utilisateurs utilisent un ordinateur capable de le supporter (si cela ne vous paraît pas viable, c'est normal !), soit de [transpiler](https://fr.wikipedia.org/wiki/Compilateur_source_%C3%A0_source) l'ES6 en ES5.
+Un autre problème se trouve dans les navigateurs: il faut que l'upgrade soit compatible avec tout les navigateurs utilisés. À ce problème existe deux solutions : soit attendre des années que tout les utilisateurs utilisent un navigateur capable de le supporter (si cela ne vous paraît pas viable, c'est normal !), soit de [transpiler](https://fr.wikipedia.org/wiki/Compilateur_source_%C3%A0_source) l'ES6 en ES5.
 
 Mais pourquoi vous parler d'ES6 en particulier, et pas des versions précédentes ou suivantes ? car ES6 marque un tournant dans l'histoire du JavaScript. C'est à partir de cette version que les publications d’ECMAscript deviennent annuelles (ce qui est une énorme avancée pour JS, ES5 ayant été publié en 2009, soit 6 ans auparavant !) et sont désormais appelées en fonction de leur année de sortie : ES7 est appelé ES2016, ES8 est appelé ES2017, etc...
 
-Je vais donc vous présenter maintenant certaines des nouveautés apportées par ES6, et vous présenter leurs avantages par rapport à ce qui se faisait auparavant.
+Je vais donc vous présenter certaines des nouveautés apportées par ES6, et vous présenter leurs avantages par rapport à ce qui se faisait auparavant.
 
 ## `const` et `let`
 
@@ -49,7 +49,7 @@ console.log(globalVariable); // output 'I am global !'
 console.log(localVariable); // output undefined
 ```
 
-En ES6, deux nouveaux mots clés ont été rajoutés pour déclarer une variable : `const` et `let`.
+En ES6, deux nouveaux mots clés ont été ajoutés pour déclarer une variable : `const` et `let`.
 
 `const` permet de déclarer une variable à assignation unique bindée lexicalement : c’est-à-dire que l'identifiant utilisé pour déclarer la variable ne peut pas être réaffecté, et sera scopée au niveau du bloc (sa portée est limitée au bloc dans lequel elle est déclarée).
 
@@ -91,7 +91,7 @@ console.log(x) // output 1
 
 ⚠️ Les variables déclarées avec `var` sont affectées par le *hoisting*, un mécanisme qui va lire toute les déclarations et les remonter au début du scope de la fonction lors de l’exécution de code. Plus de détails [ici](http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html).
 
-Lorsqu'une `var` est déclarée,  elle est immédiatement initialisée et sa valeur est à ce moment égale à `undefined`. C'est lorsque l'exécution atteint la déclaration de la variable que sa valeur est spécifiée par l'*initializer* (l'assignement donné à cette variable). S'il n'y a pas d'*initializer*, la variable reste égale à `undefined`.
+Lorsqu'une `var` est déclarée, elle est immédiatement initialisée et sa valeur est à ce moment égale à `undefined`. C'est lorsque l'exécution atteint la déclaration de la variable que sa valeur est spécifiée par l'*initializer* (l'assignement donné à cette variable). S'il n'y a pas d'*initializer*, la variable reste égale à `undefined`.
 
 Les variables `let` et `const` ne fonctionnent pas de la même manière : elles ont une *Temporal Dead Zone* (TDZ). Lorsqu'elles sont déclarées, un espace mémoire est créé au sein du bloc mais la variable n'est pas initialisée. C'est lorsque l'exécution atteint la variable qu'elle est initialisée, avec pour différence entre `let` et `const` que `const` doit obligatoirement avoir un *initializer*.
 
@@ -158,53 +158,11 @@ var sym3 = Symbol("toto");
 Symbol("toto") === Symbol("toto"); // false
 ```
 
-Le principal intérêt des symbols se trouve principalement dans leur utilisation avec les objets : il est possible de les assigner comme clé, ce qui nous permet de créer des clés uniques qui ne conflicteront jamais avec d'autres clés.
+Le principal intérêt des symbols se trouve principalement dans leur utilisation avec les objets : il est possible de les assigner comme clé, ce qui nous permet de créer des clés uniques qui ne rentreront jamais en conflit avec d'autres clés.
 
-## Paramètres rest et spread operator
+## Generators
 
-Les paramètres rest et le spread operator permettent d'effectuer plus simplement des opérations complexes sur les objets itérables.
-
-Les paramètres rest viennent remplacer la variable `arguments`, qui était utilisée pour récupérer les arguments d'une fonction.
-
-## Destructuring
-
-Le destructuring signifie simplement de diviser une structure complexe en structures plus simples en créant une copie de ces structures plus simples. Il consiste à assigner des variables provenant d’un objet ou d’un tableau en reposant sur leur structure, ce qui permet d’extraire plusieurs valeurs simplement.
-
-```javascript
-const myObject = {
-  foo: 1,
-  bar: 2,
-};
-
-// en ES5, il faudrait faire :
-var foo = myObject.foo;
-var bar = myObject.bar;
-
-// en ES6, il suffit de faire :
-const { foo, bar } = myObject;
-```
-
-### Comment ça marche, le destructuring ?
-
-le destructuring ressemble à cette déclaration : «pattern» ← «value».
-Le but est que le "pattern" extraie les données de "value".
-
-En programmation fonctionnelle, cet algorithme est connu sous le nom de *pattern matching* (plus de détails [ici](https://meritis.fr/langage/programmation-fonctionnelle-pattern-matching-demolition-man-intelligent/)). Il est spécifié par des règles récursives.
-
-De plus, cumulé au spread operator, le destructuring permet de gagner en simplicité :
-
-```javascript
-[a, b, ...allThatRemains] = [10, 20, 30, 40, 50];
-console.log(a); // 10
-console.log(b); // 20
-console.log(allThatRemains); // [30, 40, 50]
-```
-
-Le destructuring nous permet aussi d'ajouter un élément.
-
-## Protocole d'itération
-
-Toutes les nouveautés apportées par ES6 ne sont pas que des fonctionnalités. Il y a, parmi ces nouveautés, le protocole d'itération, qui est une nouvelle façon de boucler sur une collection en JavaScript. Le protocole d'itération comprend en réalité deux protocoles :
+Toutes les nouveautés apportées par ES6 ne sont pas que des fonctionnalités. Il y a, parmi ces nouveautés, les generators, qui sont une nouvelle façon de boucler sur une collection en JavaScript. Les generators comprennent en réalité deux protocoles :
 
 - Le protocole itérateur, qui définit une façon standard pour produire une suite de valeurs, ainsi qu'une valeur de retour. Un objet est un itérateur lorsqu'il implémente une fonction `next()` qui retourne un objet avec deux propriétés : la `value` (qui correspond à la valeur courante lors de l'itération), et `done` (un booléen qui indique si on a atteint la fin de l'itération ou non).
 
@@ -219,7 +177,7 @@ iteratorArray.next();
 // -> Object {value: undefined, done: true}
 ```
 
-- Le protocole itérable, qui permet aux objets de définir leur comportement lors d'une itération (car ils n'en ont pas nativement, contrairement aux tableaux). Un objet est un itérable s'il implémente une méthode particulière qui va retourner l'itérateur. Cette méthode doit être définie en utilisant le symbole `[Symbol.iterator]`.
+- Le protocole itérable permet aux objets de définir leur comportement lors d'une itération (car ils n'en ont pas nativement, contrairement aux tableaux). Un objet est un itérable s'il implémente une méthode particulière qui va retourner l'itérateur. Cette méthode doit être définie en utilisant le symbole `[Symbol.iterator]`.
 
     Pour reprendre l'exemple précédent, voici l'itérable d'un tableau :
 
@@ -311,7 +269,7 @@ class Animal {
   }
 }
 
-class Chien extends Animal {
+class Dog extends Animal {
   constructor(name) {
     super(name); // appelle le constructeur parent avec le paramètre
   }
@@ -331,7 +289,7 @@ class Rectangle {}
 
 Voici un [article](https://medium.com/@robertgrosse/how-es6-classes-really-work-and-how-to-build-your-own-fd6085eb326a) (en anglais !) qui pourrait vous intéresser si vous cherchez à comprendre ce qui se passe en coulisses, ou [celui-ci](http://exploringjs.com/es6/ch_classes.html#ch_classes) pour creuser le sujet et voir toutes les subtilités des classes.
 
-## Modules
+## Conclusion
 
-Cet article est loin d'être exhaustif (comme vous pouvez le voir [ici](http://tc39wiki.calculist.org/es6/)), et se concentre sur les nouvelles fonctionnalités les plus utilisées. Il a principalement pour but de donner des premières pistes de compréhension sur les concepts abordés (car il serait possible d'écrire un article entier sur chacune des fonctionnalités), mais n'hésitez pas à vous documenter plus en profondeur !
-Pour plus de détails les différentes fonctionnalités apportées par ES6, vous pouvez aller [ici](http://es6-features.org/#Constants).
+Cet article est loin d'être exhaustif (comme vous pouvez le voir [ici](http://tc39wiki.calculist.org/es6/)), et se concentre sur certaine des nouvelles fonctionnalités les plus utilisées. Il a principalement pour but de donner des premières pistes de compréhension sur les concepts abordés (car il serait possible d'écrire un article entier sur chacune des fonctionnalités), mais n'hésitez pas à vous documenter plus en profondeur !
+Par ailleurs, une deuxième partie arrive bientôt pour parler d'autres fonctionnalités très utilisées, comme le spread operator, le destructuring, ou les modules.
