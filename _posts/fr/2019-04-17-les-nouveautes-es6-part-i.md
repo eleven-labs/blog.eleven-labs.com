@@ -51,6 +51,8 @@ console.log(localVariable); // output undefined
 
 En ES6, deux nouveaux mots clés ont été ajoutés pour déclarer une variable : `const` et `let`.
 
+### À propos de "const" ###
+
 `const` permet de déclarer une variable à assignation unique bindée lexicalement : c’est-à-dire que l'identifiant utilisé pour déclarer la variable ne peut pas être réaffecté, et sera scopé au niveau du bloc (la portée de la variable est limitée au bloc dans lequel elle est déclarée).
 
 ```javascript
@@ -74,6 +76,8 @@ const obj = {};
 obj.prop = 123;
 console.log(obj.prop); // 123
 ```
+
+### Concernant "let" ###
 
 `let` quant à lui fonctionne de la même façon que `const` sans avoir cette assignation unique, et ressemble donc au fonctionnement de `var`, le scope mis à part.
 
@@ -162,9 +166,11 @@ Le principal intérêt des symbols se trouve principalement dans leur utilisatio
 
 ## Generators
 
-Toutes les nouveautés apportées par ES6 ne sont pas que des fonctionnalités. Il y a, parmi ces nouveautés, les generators, qui sont une nouvelle façon de boucler sur une collection en JavaScript. Les generators comprennent en réalité deux protocoles :
+Toutes les nouveautés apportées par ES6 ne sont pas que des fonctionnalités. Il y a, parmi ces nouveautés, les generators, qui sont une nouvelle façon de boucler sur une collection en JavaScript. Les generators comprennent en réalité deux protocoles.
 
-- Le protocole itérateur, qui définit une façon standard pour produire une suite de valeurs, ainsi qu'une valeur de retour. Un objet est un itérateur lorsqu'il implémente une fonction `next()` qui retourne un objet avec deux propriétés : la `value` (qui correspond à la valeur courante lors de l'itération), et `done` (un booléen qui indique si on a atteint la fin de l'itération ou non).
+### Le protocole itérateur ###
+
+Le protocole itérateur définit une façon standard pour produire une suite de valeurs, ainsi qu'une valeur de retour. Un objet est un itérateur lorsqu'il implémente une fonction `next()` qui retourne un objet avec deux propriétés : la `value` (qui correspond à la valeur courante lors de l'itération), et `done` (un booléen qui indique si on a atteint la fin de l'itération ou non).
 
     Ce sont les appels successifs à la méthode `next()` qui permettent donc de traverser et récupérer les valeurs d'un objet, comme montré dans cet exemple d'un tableau qui contiendrait deux valeurs (a et b) :
 
@@ -177,7 +183,9 @@ iteratorArray.next();
 // -> Object {value: undefined, done: true}
 ```
 
-- Le protocole itérable permet aux objets de définir leur comportement lors d'une itération (car ils n'en ont pas nativement, contrairement aux tableaux). Un objet est un itérable s'il implémente une méthode particulière qui va retourner l'itérateur. Cette méthode doit être définie en utilisant le symbole `[Symbol.iterator]`.
+### Le protocole itérable ###
+
+Le protocole itérable permet aux objets de définir leur comportement lors d'une itération (car ils n'en ont pas nativement, contrairement aux tableaux). Un objet est un itérable s'il implémente une méthode particulière qui va retourner l'itérateur. Cette méthode doit être définie en utilisant le symbole `[Symbol.iterator]`.
 
     Pour reprendre l'exemple précédent, voici l'itérable d'un tableau :
 
