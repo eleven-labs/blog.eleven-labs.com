@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Les nouveautés d'ES6 Partie I
-excerpt: Voici la première partie d'une série d'articles qui vont expliquer les nouveautés apportées par l'ES6 et en quoi elles sont intéressantes !
+excerpt: Cet article est le premier d'une série visant à vous présenter les nouveautés apportées par l'ES6 et ce qu'elles comportent d'intéressant.
 authors:
     - mehdidr
 lang: fr
@@ -34,7 +34,7 @@ Mais pourquoi vous parler d'ES6 en particulier, et non des versions précédente
 
 Je vais donc vous présenter certaines des nouveautés apportées par ES6, et vous présenter leurs avantages par rapport à ce qui se faisait auparavant.
 
-## `const` et `let`
+## "const" et "let"
 
 En ES5, la déclaration d’une variable se fait via le mot clé `var`. Le [scope](https://blog.lesieur.name/les-contextes-d-execution/) de ces variables est soit global (si défini en dehors d’une fonction), soit local (si déclaré à l’intérieur d’une fonction), mais ne prend pas en compte les blocs (par exemple une condition, ou une boucle).
 
