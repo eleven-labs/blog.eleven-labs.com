@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Les nouveautés d'ES6 Partie I
-excerpt: La première partie d'articles qui vont expliquer les nouveautés apportées par l'ES6 et en quoi elles sont intéressantes !
+excerpt: Voici la première partie d'une série d'articles qui vont expliquer les nouveautés apportées par l'ES6 et en quoi elles sont intéressantes !
 authors:
     - mehdidr
 lang: fr
@@ -14,10 +14,10 @@ tags:
     - ES6
 ---
 
-Depuis maintenant quelques années, le monde du JavaScript évolue à une vitesse sans pareil. Même le meilleur des développeurs ne peut réussir à suivre toute les évolutions, que ça soit des librairies, des frameworks, ou des mises à jour du langage en lui-même.
+Depuis maintenant quelques années, le monde du JavaScript évolue à une vitesse sans pareille. Même le meilleur des développeurs ne peut réussir à suivre toutes les évolutions, que ce soient des librairies, des frameworks, ou des mises à jour du langage en lui-même.
 Il y a cependant un standard qui évolue chaque année, que chaque développeur JavaScript se doit de connaître : l'ECMAScript.
 
-ECMAScript est un ensemble de normes régissant les langages de script tels que JavaScript, l'implémentation de l'ECMAscript la plus populaire, établie en 1997. Il modifie la façon d'appréhender certaines notions, et certaines façons d'écrire du JS. Nous en sommes actuellement à la 8ème version (sortie en 2017), mais je vais aujourd'hui vous parler d'ES6, de son vrai nom ECMAScript 6.
+ECMAScript est un ensemble de normes régissant les langages de script tels que JavaScript, qui est l'implémentation de l'ECMAscript la plus populaire, établie en 1997. Il modifie la façon d'appréhender certaines notions, et certaines façons d'écrire du JS. Nous en sommes actuellement à la 8ème version (sortie en 2017), mais je vais aujourd'hui vous parler d'ES6, de son vrai nom ECMAScript 6.
 
 ## Pourquoi ES6 ?
 
@@ -28,9 +28,9 @@ Par exemple, l'utilisation des classes, basée sur le constructor des fonctions,
 
 Le problème d'une nouvelle implémentation de cette importance, c'est que le Web est vaste et qu'il existe toutes sortes de code, dont certains très vieux. Il faut donc que l'upgrade se fasse de manière automatique et surtout imperceptible. C'est pour cela que ES6 est une surcouche d'ES5, c'est-à-dire que rien n'est supprimé.
 
-Un autre problème se trouve dans les navigateurs: il faut que l'upgrade soit compatible avec tout les navigateurs utilisés. À ce problème existe deux solutions : soit attendre des années que tout les utilisateurs utilisent un navigateur capable de le supporter (si cela ne vous paraît pas viable, c'est normal !), soit de [transpiler](https://fr.wikipedia.org/wiki/Compilateur_source_%C3%A0_source) l'ES6 en ES5.
+Un autre problème se trouve dans les navigateurs : il faut que l'upgrade soit compatible avec tout les navigateurs utilisés. À ce problème existe deux solutions : soit attendre des années que tous les utilisateurs utilisent un navigateur capable de le supporter (si cela ne vous paraît pas viable, c'est normal !), soit de [transpiler](https://fr.wikipedia.org/wiki/Compilateur_source_%C3%A0_source) l'ES6 en ES5.
 
-Mais pourquoi vous parler d'ES6 en particulier, et pas des versions précédentes ou suivantes ? car ES6 marque un tournant dans l'histoire du JavaScript. C'est à partir de cette version que les publications d’ECMAscript deviennent annuelles (ce qui est une énorme avancée pour JS, ES5 ayant été publié en 2009, soit 6 ans auparavant !) et sont désormais appelées en fonction de leur année de sortie : ES7 est appelé ES2016, ES8 est appelé ES2017, etc...
+Mais pourquoi vous parler d'ES6 en particulier, et non des versions précédentes ou suivantes ? Car ES6 marque un tournant dans l'histoire du JavaScript. C'est à partir de cette version que les publications d’ECMAscript deviennent annuelles (ce qui est une énorme avancée pour JS, ES5 ayant été publié en 2009, soit 6 ans auparavant !) et sont désormais appelées en fonction de leur année de sortie : ES7 est appelé ES2016, ES8 est appelé ES2017, etc...
 
 Je vais donc vous présenter certaines des nouveautés apportées par ES6, et vous présenter leurs avantages par rapport à ce qui se faisait auparavant.
 
@@ -51,7 +51,7 @@ console.log(localVariable); // output undefined
 
 En ES6, deux nouveaux mots clés ont été ajoutés pour déclarer une variable : `const` et `let`.
 
-`const` permet de déclarer une variable à assignation unique bindée lexicalement : c’est-à-dire que l'identifiant utilisé pour déclarer la variable ne peut pas être réaffecté, et sera scopée au niveau du bloc (sa portée est limitée au bloc dans lequel elle est déclarée).
+`const` permet de déclarer une variable à assignation unique bindée lexicalement : c’est-à-dire que l'identifiant utilisé pour déclarer la variable ne peut pas être réaffecté, et sera scopé au niveau du bloc (la portée de la variable est limitée au bloc dans lequel elle est déclarée).
 
 ```javascript
 function example() {
@@ -67,7 +67,7 @@ function example() {
 }
 ```
 
-Cependant, il faut bien faire attention car une variable `const` est constante (seems legit) au niveau référence : les types primitifs (number, string, boolean) bloquent la réassignation de la variable, mais les valeurs à l’intérieur d’un tableau ou d'un objet sont modifiables.
+Cependant, il faut bien faire attention car une variable `const` est constante (seems legit) au niveau référence : les types primitifs (number, string, boolean) bloquent sa réassignation, mais les valeurs à l’intérieur d’un tableau ou d'un objet sont modifiables.
 
 ```javascript
 const obj = {};
@@ -99,8 +99,8 @@ Pour les anglophones, voici un article qui parle plus en détails de la [Tempora
 
 ## Arrow function
 
-L’ES6 apporte une nouvelle façon d’écrire des fonctions, appelées arrow functions (ou fat arrow).
-En dehors du fait que la syntaxe soit plus concise, les arrow functions ne créent pas leur propre valeur pour `this` (contrairement aux fonctions classiques qui ne récupèrent pas le `this` du bloc parent) : elles partagent sa valeur avec leur scope parent, ce qui permet d’éviter d’avoir à binder le « this ».
+L’ES6 apporte une nouvelle façon d’écrire des fonctions, appelée arrow function (ou fat arrow).
+En dehors du fait que la syntaxe soit plus concise, les arrow functions ne créent pas leurs propres valeurs pour `this` (contrairement aux fonctions classiques qui ne récupèrent pas le `this` du bloc parent) : elles partagent leur valeur avec leur scope parent, ce qui permet d’éviter d’avoir à binder le « this ».
 
 ```javascript
 // ES5
@@ -291,5 +291,5 @@ Voici un [article](https://medium.com/@robertgrosse/how-es6-classes-really-work-
 
 ## Conclusion
 
-Cet article est loin d'être exhaustif (comme vous pouvez le voir [ici](http://tc39wiki.calculist.org/es6/)), et se concentre sur certaine des nouvelles fonctionnalités les plus utilisées. Il a principalement pour but de donner des premières pistes de compréhension sur les concepts abordés (car il serait possible d'écrire un article entier sur chacune des fonctionnalités), mais n'hésitez pas à vous documenter plus en profondeur !
+Cet article est loin d'être exhaustif (comme vous pouvez le voir [ici](http://tc39wiki.calculist.org/es6/)), et se concentre sur certaines des nouvelles fonctionnalités les plus utilisées. Il a principalement pour but de donner des premières pistes de compréhension sur les concepts abordés (car il serait possible d'écrire un article entier sur chacune des fonctionnalités), mais n'hésitez pas à vous documenter plus en profondeur !
 Par ailleurs, une deuxième partie arrive bientôt pour parler d'autres fonctionnalités très utilisées, comme le spread operator, le destructuring, ou les modules.
