@@ -4,7 +4,7 @@ login: vbertrand
 title: Vincent Bertrand
 permalink: /authors/vbertrand/
 ---
-Développeur Full Stack chez Eleven Labs, passionné par le Web et la technologie de manière générale.
+Alternant Développeur Full Stack chez Eleven Labs, passionné par le Web et la technologie de manière générale.
 Nouvellement amateur des services Cloud AWS / Google. 
 
 J'aime aussi la musique et le skateboard, et pleins pleins d'autres choses ;D 
