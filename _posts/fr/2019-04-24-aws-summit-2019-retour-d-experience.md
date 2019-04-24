@@ -48,8 +48,8 @@ Chacune d'elle montrait les avantages économiques, logistiques, et autres d'uti
 Voici donc quelques retours sur les conférences auxquelles j'ai assisté, et ce qui m'a marqué.
 
 # Conférence #1
-*"Cloud Economics – Optimisez vos budgets IT en passant sur le cloud" 
-Alexis Dahan (AWS) & Fouad Maach (Veolia)*
+*"Cloud Economics – Optimisez vos budgets IT en passant sur le cloud"  
+Alexis Dahan (AWS) & Fouad Maach (Veolia)*  
 
 L'idée générale du talk était de montrer comment faire des économies en comparant le on-premise (avoir son propre matériel server / data-center) au cloud.
 
@@ -82,8 +82,8 @@ Alexis nous a cité Joy Ito, "Si vous voulez accroître votre innovation, rédui
 
 
 # Conférence #2
-*"Simplifiez vos frontend à l'aide de backend serverless dans le cloud"
-Sébastien Stormacq (AWS) & Aurélien Capedecomme (CTO 20 Minutes)*
+*"Simplifiez vos frontend à l'aide de backend serverless dans le cloud"  
+Sébastien Stormacq (AWS) & Aurélien Capedecomme (CTO 20 Minutes)*  
 
 Ce talk abordait la génération d'une architecture serverless avec un exemple concret, celui de 20 Minutes, et la présentation de l'outil Amplify qui permet d'accélérer grandement le développement d'applications serverless.
 
