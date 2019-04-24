@@ -2,6 +2,11 @@ cache: bundler
 language: ruby
 sudo: false
 
+cache:
+    bundler: true
+    directories:
+        - _site
+
 addons:
     apt:
         packages:

@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
+
+{% assign author-img = '/img/authors/:author.jpg' | prepend: site.baseurl_root | replace: '//', '/' | replace: ':author', page.login %}
 <article class="container">
     <header class="author-heading">
-        <div class="avatar author-heading__avatar">
-            <img class="avatar-img" src="{{ '/img/authors/:author.jpg' | prepend: site.baseurl_root | replace: '//', '/' | replace: ':author', page.login }}" alt="{{ page.title }}" />
-        </div>
+        <img onerror="this.style.display = 'none'" id="author-avatar" class="avatar author-heading__avatar" src="{{ author-img }}" alt="{{ page.title }}" />
+
         <h1 class="page-heading-title author-heading__name">{{ page.title }}</h1>
         <ul class="author-heading__social-icons-list">
             {% include icons.html data=page origin='author' %}
