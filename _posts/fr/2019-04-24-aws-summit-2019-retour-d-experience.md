@@ -70,7 +70,7 @@ Le paiement quant à lui se fait "à la demande" en fonction de l'utilisation et
 
 Alexis nous a expliqué dans cette sous-partie que l'économie passait aussi par l'augmentation très significative de la productivité de l'équipe lors du passage au Cloud, en reprenant l'exemple des bases de données : sur du on-premise il faut s'occuper du matériel, mesurer des KPIs pour faire évoluer son architecture de manière intelligente, et donc ensuite changer le matériel soi-même.
 
-En version Cloud, l'équipe a la possiblité de manager beaucoup plus de machines. Imaginons qu'on ait 2 managers pour 100 machines on-premise, lors du passage en cloud un seul peut souvent s'occuper des 100, ce qui nous permet de réinvestir le temps de la deuxième personne ailleurs.
+En version Cloud, l'équipe a la possibilité de manager beaucoup plus de machines. Imaginons qu'on ait 2 managers pour 100 machines on-premise, lors du passage en cloud un seul peut souvent s'occuper des 100, ce qui nous permet de réinvestir le temps de la deuxième personne ailleurs.
 
 ## Agilité et innovation :
 
@@ -100,7 +100,7 @@ Aurélien nous a ensuite fait une présentation de la nouvelle architecture de 2
 
 Pour commencer, 20 Minutes est depuis 2013 disponible au moins en même temps en version numérique et en version papier. Ils prennent une première approche du serverless avec un bot pour converser sur Messenger en 2016, puis ils sont le premier média à intégrer Alexa en 2017 toujours en serverless. Ils utilisent depuis 2018 de l'IA et du machine learning pour permettre aux rédacteurs de se concentrer sur leur contenu plutôt que d'avoir à gérer des tags et autres.
 
-Aurélien nous a donc présenté le passage de leur frontend monolitique de 2013 fait avec Symfony (PHP) / Mysql / Apache, à quelque chose de serverless et fait à l'aide de microservices en 2018, React (Javascript) / GraphQl / Amazon Aurora (base de données).
+Aurélien nous a donc présenté le passage de leur frontend monolithique de 2013 fait avec Symfony (PHP) / Mysql / Apache, à quelque chose de serverless et fait à l'aide de microservices en 2018, React (Javascript) / GraphQl / Amazon Aurora (base de données).
 
 Voici un résumé du nouveau parcours "technique" de l'application pour une inscription utilisateur :
 
