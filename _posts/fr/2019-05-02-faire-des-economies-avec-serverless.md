@@ -26,8 +26,16 @@ Aujourd'hui, nous allons voir comment optimiser notre facture ServerLess.
 
 ## Lambda : ne pas écrire de log, sauf en cas d'erreur
 
-L'ensemble des outputs de votre lambda iront dans CloudWatch Logs. Cependant, celui-ci a un coût. Et si a chaque exécution vous donnez beaucoup d'informations en log, vous allez vous retrouver avec une facture CloudWatch Log énorme.    
+L'ensemble des outputs de votre lambda iront dans CloudWatch Log. Cependant, celui-ci a un coût. Et si a chaque exécution vous donnez beaucoup d'informations en log, vous allez vous retrouver avec une facture CloudWatch Log énorme.    
 Lors du fonctionnement "normal" de votre API (Code 200), n'écrivez pas de log. Par contre, lors des erreurs, n'hésitez pas être verbeux pour donner le plus d'informations possible et faciliter le débug. 
+
+## Lambda : Bien le configurer 
+Sur lambda, vous êtes facturer par rapport a la mémoire alloué pour votre lambda ainsi que le temps de fonctionnement de celui-ci. 
+Augmenter la mémoire de lambda, alloue aussi un CPU plus performant. 
+Il peut donc être très intéressant d'utiliser une configuration mémoire suppérieur et ainsi réduire le temps de fonctionnement de votre lambda et donc d'en réduire le coût. 
+
+Il faut aussi faire attention au Cold Start, celui-ci est facturé par AWS, et peut être très long sur certain language. 
+Par exemple, si vous avez une lambda en java, celle-ci aura un cold start plus important que la même lambda en Python ou NodeJS. 
 
 ## Api Gateway ou ALB, bien choisir
 
@@ -51,9 +59,10 @@ Lors de notre mise en place d'ALB sur un de nos plus gros projet, nous avons ré
 
 ## CloudFront
 
-Si vous avez la possibilité d'utiliser du cache, faites-le ! L'économie réalisée par celui-ci sera énorme ! Et votre site sera capable de bien mieux tenir la charge. 
+Je vous recommande de créer dès le début un cloudfront devant votre API Gateway ou ALB, ainsi, le passage de l'un a l'autre sera totalement transparent pour vos utilisateur. 
+De plus, vous pourrez configurer du cache sur celui-ci, et ainsi permettre de réduire le nombre d'appel avotre Lambda.
 
 # Conclusion
 
 Vous pouvez faire de grandes économies avec Serverless, mais il ne faut pas oublier les coûts annexes qui tournent au tour de celui-ci ! 
-Le cache peut vous permettre de faire de grandes économies, encore faut-il savoir le configurer correctement :) "
+Surveillez attentivement votre facturation avec [AWS Cost Explorer](https://aws.amazon.com/fr/aws-cost-management/aws-cost-explorer/) ! Ainsi, vous serrez capable de suivre votre facturation et donc les coûts de votre Lambda. 
