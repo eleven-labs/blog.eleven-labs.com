@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Gestion des traductions avec localise.biz
-excerpt: Dans cet article je vais vous présenter localize.biz - un outil de gestion de traduction en SAAS.
+excerpt: Dans cet article je vais vous présenter localise.biz - un outil de gestion de traduction en SaaS.
 authors:
 - marishka
 permalink: /fr/gestion-des-traductions-avec-localise.biz/
@@ -19,7 +19,7 @@ tags:
 
 Dans le cadre de notre projet, nous avions besoin d'un outil de gestion de traduction. Nous avons 3 langues sur notre site, et les traductions sont faites par l'équipe métier (marketing et autre).
 
-[Localise.biz](https://localise.biz/) (Loco pour les familiers) est un service SAAS de gestion de traduction en ligne. Il propose des abonnements gratuits et payants selon les besoins et la taille du projet.
+[Localise.biz](https://localise.biz/) (Loco pour les familiers) est un service SaaS de gestion de traduction en ligne. Il propose des abonnements gratuits et payants selon les besoins et la taille du projet.
 
 ### Mise en place
 
@@ -71,7 +71,7 @@ Lorsque les fichiers de traduction sont stockés au sein d'une application, il n
 
 Lors de la refonte de notre site, nous avons fait le choix de stocker les fichiers de traduction sur un storage en cloud pour dissocier le déploiement de nos applications de la mise à jour des traductions.
 
-Ainsi, nous exportons le contenu de Loco pour le stocker dans un *bucket* sur GCP dans des fichiers au format JSON (un fichier par langue). Nous avons donc mis en place un cron qui tourne régulièrement sur GAE qui s'occupe de ça.
+Ainsi, nous exportons le contenu de Loco pour le stocker dans un *bucket* sur Google Cloud Plateform dans des fichiers au format JSON (un fichier par langue). Nous avons donc mis en place un cron qui tourne régulièrement sur Google AppEngine qui s'occupe de ça.
 
 Voici le code associé :
 
@@ -82,7 +82,7 @@ const Storage = require('@google-cloud/storage');
 
 const app = express();
 const storage = new Storage({
-  projectId: GCLOUD_PROJECT_ID,
+  projectId: "L_ID_DU_PROJET_GOOGLE_CLOUD_PLATEFORM",
 });
 
 
@@ -92,12 +92,12 @@ app.get('/translations/b2cwebsite', (req, res,) => {
   let status = 200;
 
   const client = axios.create({
-    baseURL: LOCALIZE_API_ENDPOINT,
-    headers: {'Authorization': 'Loco ' + LOCALIZE_API_KEY}
+    baseURL: 'https://localise.biz',
+    headers: {'Authorization': 'Loco VOTRE_CLEF_API_LOCO' }
   });
 
   locales.forEach(function(locale) {
-    client.get('/api/export/locale/'  + locale +  '.json?format=i18next3&order=id')
+    client.get('/api/export/locale/'  + locale +  '.json')
       .then(function (response) {
         const file = bucket.file(`messages.${locale}.json`);
         file.save(JSON.stringify(response.data), {
@@ -116,7 +116,7 @@ app.get('/translations/b2cwebsite', (req, res,) => {
         });
       })
       .catch(function (error) {
-        console.error(`Couldn't fetch translations from Localize for locale ${locale}: ${error}`);
+        console.error(`Couldn't fetch translations from Localise for locale ${locale}: ${error}`);
         status = 500;
       });
   });
