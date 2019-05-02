@@ -32,10 +32,17 @@
     color: $dusty-grey;
     cursor: pointer;
     height: em(35px);
-    line-height: 2.2;
+    line-height: 2;
     text-align: center;
     transition: all .25s ease-in-out;
     width: em(40px);
+
+    .eleven-logo {
+      color: $bright-sun;
+      margin-top: 2px;
+      width: em(20px);
+
+    }
 
     &:hover,
     &:visited:hover {
@@ -47,4 +54,4 @@
       color: $brand-black;
     }
   }
-}
+ }
