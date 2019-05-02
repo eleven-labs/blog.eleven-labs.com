@@ -24,12 +24,12 @@ Il y a quelques mois, nous vous avions présenté [ServerLess](https://blog.elev
 
 Aujourd'hui, nous allons voir comment optimiser notre facture ServerLess. 
 
-## Lambda : ne pas écrire de log, sauf en cas d'erreur
+# Lambda : ne pas écrire de log, sauf en cas d'erreur
 
 L'ensemble des outputs de votre lambda iront dans CloudWatch Log. Cependant, celui-ci a un coût. Et si a chaque exécution vous donnez beaucoup d'informations en log, vous allez vous retrouver avec une facture CloudWatch Log énorme.    
 Lors du fonctionnement "normal" de votre API (Code 200), n'écrivez pas de log. Par contre, lors des erreurs, n'hésitez pas être verbeux pour donner le plus d'informations possible et faciliter le débug. 
 
-## Lambda : Bien le configurer 
+# Lambda : Bien le configurer 
 Sur lambda, vous êtes facturer par rapport a la mémoire alloué pour votre lambda ainsi que le temps de fonctionnement de celui-ci. 
 Augmenter la mémoire de lambda, alloue aussi un CPU plus performant. 
 Il peut donc être très intéressant d'utiliser une configuration mémoire suppérieur et ainsi réduire le temps de fonctionnement de votre lambda et donc d'en réduire le coût. 
@@ -37,7 +37,7 @@ Il peut donc être très intéressant d'utiliser une configuration mémoire supp
 Il faut aussi faire attention au Cold Start, celui-ci est facturé par AWS, et peut être très long sur certain language. 
 Par exemple, si vous avez une lambda en java, celle-ci aura un cold start plus important que la même lambda en Python ou NodeJS. 
 
-## Api Gateway ou ALB, bien choisir
+# Api Gateway ou ALB, bien choisir
 
 Voici la définition d'[API GATEWAY](https://aws.amazon.com/fr/api-gateway/) par AWS : ``` Amazon API Gateway est un service entièrement opéré, qui permet aux développeurs de créer, publier, gérer, surveiller et sécuriser facilement des API à n'importe quelle échelle ```.    
 Le service fonctionne très bien dans l'ensemble, propose des options avancées comme des Authorizer, la gestion de la documentation, etc. Cependant, tout le monde n'utilise pas forcément les fonctionnalités d'API Gateway, et le service a un coût qui n'est pas négligeable : 
@@ -57,7 +57,7 @@ ALB ne propose pas toutes les options fournies par API Gateway, mais au niveau d
 
 Lors de notre mise en place d'ALB sur un de nos plus gros projet, nous avons réduit la facture de 50$ / jour par rapport à API Gateway, soit une réduction mensuelle de 1500 $ (pas négligeable).
 
-## CloudFront
+# CloudFront
 
 Je vous recommande de créer dès le début un cloudfront devant votre API Gateway ou ALB, ainsi, le passage de l'un a l'autre sera totalement transparent pour vos utilisateur. 
 De plus, vous pourrez configurer du cache sur celui-ci, et ainsi permettre de réduire le nombre d'appel avotre Lambda.
