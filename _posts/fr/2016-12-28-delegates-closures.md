@@ -3,7 +3,7 @@ layout: post
 title: Delegates vs Closures
 lang: fr
 permalink: /fr/delegates-closures/
-excerpt: "Delegats VS Closures"
+excerpt: "Delegates VS Closures"
 authors:
     - thuchon
 date: '2016-12-28 18:25:24 +0100'
