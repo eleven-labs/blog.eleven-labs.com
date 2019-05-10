@@ -64,6 +64,8 @@ theme_settings:
     youtube:
     corporate:
     corporate_logo: /img/follow/eleven.svg
+    welcome_to_the_jungle: https://www.welcometothejungle.co/fr/companies/eleven-labs
+    welcome_to_the_jungle_logo: /img/follow/welcome_to_the_jungle.svg
 
     # Scripts
     google_analytics: UA-99013054-1
