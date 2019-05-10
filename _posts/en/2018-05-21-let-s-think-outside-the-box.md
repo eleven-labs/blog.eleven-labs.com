@@ -421,7 +421,7 @@ I think that you start to understand, right?<br/>
 All the actions that we defined in the **JSON** file, and that really exist in our modules are then executed.<br/>
 Pretty cool isn't it? :)
 
-## Mais pourquoi faire tout ça ?
+## But why do all this?
 
 You are probably asking yourself, but why do all this?<br/>
 For many reasons.<br/>
