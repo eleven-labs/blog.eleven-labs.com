@@ -115,7 +115,7 @@ plop* make_new_object(char *name) {
 
 **make_new_list** nous sert à créer une nouvelle liste, et **make_new_object** nous sert à créer un nouvel utilisateur. Pour le moment rien de bien compliqué, à part peut-être dans **make_new_object** qui assigne **hello** avec un **hello** qui n'existe pas dans le scope de la fonction, on y reviendra un peu plus tard.
 
-Passons maintenant aux fonctions utilitaires de la liste chainée :
+Let's now go to the toolkit functions for our chained lists : 
 
 **make_new_list** will help us to create a new list and **make_new_object** will help us to create new users. Basic stuff for the moment, expect maybe in **make_new_object** that assigns **hello** with a **hello** that doesn't exist in the scope of the function, but we'll come back to it later on.
 
