@@ -37,7 +37,7 @@ As in the first article, so that everyone is happy I will provide some DUMMY cod
 
 As you may know in the iOS universe, we can use both Delegates and Closures. Usually closure is used for more flexibility and it is also easier to implement. However, in some cases, graphic components for example are just made to work with a delegate or a datasource. Right now I'm thinking about 2 components: UITableView and UICollectionView.
 
-With those 2 components, you cannot use block/closure, and you have to use a goold old delegate. Usually it's not really a big issue and you can just work like that. But let say that you have to work with many of those components on a single screen, in this case the code can start to be really. You'll find yourself with some huge classes, and it really starts to be difficult to produce some beautiful and elegant code. What I would like to show you today is a solution that is my minde is pretty clean, and easy to put in place
+With those 2 components, you cannot use block/closure, and you have to use a good old delegate. Usually it's not really a big issue and you can just work like that. But let say that you have to work with many of those components on a single screen, in this case the code can start to be really. You'll find yourself with some huge classes, and it really starts to be difficult to produce some beautiful and elegant code. What I would like to show you today is a solution that is my mind is pretty clean, and easy to put in place
 
 ### A little setup
 
@@ -150,9 +150,9 @@ Then, we code the method to call our webservice.
 ```
 
 We will have a look altogether of what we just coded.
-- We instantied our **Manager**, that will call the webservice
+- We instantiated our **Manager**, that will call the webservice
 - We defined our two **blocks/closures**
-- We instantied our **Delegate**
+- We instantiated our **Delegate**
 - We assignated our two **blocks/closures**
 - We assignated the **Delegate** to the **Manager**
 - We call the webservice

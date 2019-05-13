@@ -23,7 +23,7 @@ cover: /assets/2018-09-12-faire-du-c-oriente-objet/cover.jpg
 
 Hi Astronauts, happy to see you again on this day, after a while without publishing any article.
 
-The article that I give to you today changes a bit from the ones I have previously written in the past. My goal her is to share my tips/good practices to any developper that is a bit motivated. This is why we are going to see a pretty simple subject, but see it from another point of view.
+The article that I give to you today changes a bit from the ones I have previously written in the past. My goal her is to share my tips/good practices to any developer that is a bit motivated. This is why we are going to see a pretty simple subject, but see it from another point of view.
 
 Let's not waste time, and deep dive into the subject. This article is a dedicated one, we are going to talk about **C**, yes, yes, I really said **C**, you know this procedural language where you need to do all the allocations and frees by yourself.<br/>
 This language is really important, the kernel of your computer is coded in **C**, and even if it's a bit difficult, you can actually do anything with it, and start with this language will allow you to learn any other language really easily.<br/>
@@ -32,7 +32,7 @@ This is why my school (damn, I feel old) teaches it as a first language, and to 
 
 ## A little setup
 
-You are a student, first year and you need to code a little softare that is able to handle many users and you tell yourself, actually that would be good to do some code not too complex to maintain in the future, you never know, you can have some new fields for your users in some time, like the phone number, the zip code, etc... (those are examples).
+You are a student, first year and you need to code a little software that is able to handle many users and you tell yourself, actually that would be good to do some code not too complex to maintain in the future, you never know, you can have some new fields for your users in some time, like the phone number, the zip code, etc... (those are examples).
 
 You have the first solution, that is coding in regular **C**, so it means a lot of code maintenance when some modifications arrive, or you can take 30 minutes, and tell yourself, ok let's try to do things from a different angle. This is where I step in ;)
 
@@ -65,7 +65,7 @@ Let's dig into it.
 
 ## How to proceed :
 
-As always, I will give you some dummy code that will run, and realize a serie of task that will be define in the code, so no real interactions with the user. The idea is to show you the overall idea, then it's your responsability to use it in the real world :)
+As always, I will give you some dummy code that will run, and realize a serie of task that will be define in the code, so no real interactions with the user. The idea is to show you the overall idea, then it's your responsibility to use it in the real world :)
 
 Here my objective is to be able to create "users" and to be able do add/remove them easily, in case my code has to go in run.
 
@@ -80,7 +80,7 @@ struct list
 };
 ```
 
-I create my stucture for my chained list, the idea here is to reproduce an **Array** as you can find them in almost all languages.
+I create my structure for my chained list, the idea here is to reproduce an **Array** as you can find them in almost all languages.
 So, as we can see, we have a pointer that points to the next link of my list (next in the structure) and a pointeur of type void* that can point to any type of "object", because I want to be able to use this chained list for any type of structure I want to store (that's pretty convenient actually).
 
 ```C
@@ -338,7 +338,7 @@ Pretty cool isn't it? :)
 - Hold on, we did all this code just for this result?
 - Yes
 - But hum, where is the magic?
-- Magic is not always visual guys, sometimes it is how it's done behind the curtains. As developpers you need to challenge yourselves to do stuff in many different ways, explore new horizons.
+- Magic is not always visual guys, sometimes it is how it's done behind the curtains. As developers you need to challenge yourselves to do stuff in many different ways, explore new horizons.
 
 ## But why do all this?
 
@@ -349,6 +349,6 @@ Then when you arrive to present your project, with such an architecture, the guy
 Also, it makes the code way more easy to read in my opinion, you just have a few complex functions, and then everything else is easy to understand.
 It also teaches you how to split your code and architecture your project with way less depedencies.
 
-Here we are, as I told you at the beginning, this article is different from the previous ones, it is meant for the news developpers. I hope you liked it. Please give me your feedback in the comments section.
+Here we are, as I told you at the beginning, this article is different from the previous ones, it is meant for the news developers. I hope you liked it. Please give me your feedback in the comments section.
 
 See you space cowboys :)

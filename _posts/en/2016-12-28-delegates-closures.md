@@ -25,8 +25,8 @@ Hi Astronauts, today we are going to talk about mobile programming, et you know 
 **Swift and Objective-C**
 
 For those who don't know, in iOS, you can use two different programming languages : Objective-C and Swift. Everyone is more or less using Swift now, but because of legacy, you can still find some projects made with Objective-C. This is why in this article, every piece of code will be provided as well in Objective-C as in Swift. The two langages have two different syntaxes and in addition to that, even the file structure is different :
-- in Objective-C you have an header (.h file) to declare all the accesible elements, then you will have an implementation file (.m file) that will contain the body of the methods, exactly like in C language.
-- in Swift, you have only one file (.swift file) et the accessibilty will be defined depending on "public" or "private".
+- in Objective-C you have an header (.h file) to declare all the accessible elements, then you will have an implementation file (.m file) that will contain the body of the methods, exactly like in C language.
+- in Swift, you have only one file (.swift file) et the accessibility will be defined depending on "public" or "private".
 
 **Protocol**
 
@@ -35,9 +35,9 @@ In this article, I will use a lot the term: "Protocol" : a protocol is an interf
 
 **Delegates and Closures / Blocks**
 
-In iOS developpment, you will often find 2 principles : ***delegates***, ***closures (Swift) / blocks (Objective-C)***
+In iOS development, you will often find 2 principles : ***delegates***, ***closures (Swift) / blocks (Objective-C)***
 
-We will cover those two points more in detail, but before we go further it is immportant to know that exist ! Here are the basic principles to know ! Were are now done with the introduction, we can finally go deep and have a proper look !
+We will cover those two points more in detail, but before we go further it is important to know that exist ! Here are the basic principles to know ! Were are now done with the introduction, we can finally go deep and have a proper look !
 
 #### Delegates
 
@@ -296,4 +296,4 @@ func get(url: String, successClosure: () -> Void, failureClosure: () -> Void) {
 
 ### Conclusion
 
-So, as before, we just need to call the method callWebServiceWithClosure et we have a callback for the success case and one for the error case. You are going to ask me, what is the advantage ? Easy, you just don't need to inherit from an interface anymore, you maybe don't realise it yet, but it really get easier. For the understanding also, it's easier, you see straight above the different handlings you have instead of having to look in the code in order to find how the callback handle the return of the call. And as I said earlier, if you have many webservices to call, you can easily isolate the code for every single one of them. The goal here is just to present you both principles, if you already are a mobile developper, it is probably something you encountered more than once. But, just a question, wouldn't it be cool to be able to merge the delegates with the blocks/closures? Hum, it seems like an interesting topic right ? Let's do that together in the futur in a new article ? See you space cowboys :)
+So, as before, we just need to call the method callWebServiceWithClosure et we have a callback for the success case and one for the error case. You are going to ask me, what is the advantage ? Easy, you just don't need to inherit from an interface anymore, you maybe don't realise it yet, but it really get easier. For the understanding also, it's easier, you see straight above the different handlings you have instead of having to look in the code in order to find how the callback handle the return of the call. And as I said earlier, if you have many webservices to call, you can easily isolate the code for every single one of them. The goal here is just to present you both principles, if you already are a mobile developer, it is probably something you encountered more than once. But, just a question, wouldn't it be cool to be able to merge the delegates with the blocks/closures? Hum, it seems like an interesting topic right ? Let's do that together in the futur in a new article ? See you space cowboys :)
