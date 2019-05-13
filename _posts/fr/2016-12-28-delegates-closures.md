@@ -37,7 +37,7 @@ Dans cet article je vais beaucoup vous parler de Protocol : un protocol c'est un
 
 Dans le développement iOS, vous allez souvent retrouver deux principes : ***les delegates***, ***les closures (Swift) / blocks (Objective-C)***
 
-Nous allons couvrir ces deux points plus en détails, mais avant même de se lancer c'est important de savoir qu'ils existent ! Voilà les principes de bases à connaître ! C'est fini pour l'intro, on va pouvoir rentrer dans les détails !
+Nous allons couvrir ces deux points plus en détails, mais avant même de se lancer c'est important de savoir qu'ils existent ! Voilà les principes de base à connaître ! C'est fini pour l'intro, on va pouvoir rentrer dans les détails !
 
 #### Les Delegates
 
