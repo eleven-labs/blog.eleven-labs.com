@@ -181,7 +181,7 @@
 {% if include.data.welcome_to_the_jungle %}
 <li class="{{ social-icon }}">
     <a class="no-link-style tracked-link {{ social-icon-link }}" data-tracking="corporate" href="{{ include.data.welcome_to_the_jungle }}" title="{% translate global.follow_us_on %} Welcome to the jungle" rel="nofollow noreferrer">
-        <img class="welcome_to_the_jungle_logo" src="{{ include.data.welcome_to_the_jungle_logo | prepend: site.baseurl_root }}" alt="welcome_to_the_jungle_logo" style="width:1em; margin-bottom: -2px;"/>
+        <img class="welcome_to_the_jungle_logo" src="{{ include.data.welcome_to_the_jungle_logo | prepend: site.baseurl_root }}" alt="welcome_to_the_jungle_logo" style="width:1em; margin-bottom: -2px;max-width:200%;"/>
     </a>
 </li>
 {% endif %}
