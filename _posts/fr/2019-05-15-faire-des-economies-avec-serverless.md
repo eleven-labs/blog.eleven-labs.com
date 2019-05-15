@@ -42,6 +42,11 @@ Vous devez faire attention au cold start que celui-ci vous permettera d'avoir de
 L'ensemble des outputs de votre lambda iront dans CloudWatch Logs. Cependant, celui-ci a un coût. Et si a chaque exécution vous donnez beaucoup d'informations en log, vous allez vous retrouver avec une facture CloudWatch Logs importante.    
 Lors du fonctionnement "normal" de votre API (code 200), n'écrivez pas de log. Par contre, lors des erreurs, n'hésitez pas être verbeux pour donner le plus d'informations possible et faciliter le débug. 
 
+## Attention au coûts de transfert et de stockage
+
+Plus votre lambda sera grosse, plus le cold start augmentera, mais il faut aussi prendre en compte les coûts de stockage de celle-ci ! 
+Si votre lambda réalise aussi beaucoup de données sortante, il faut faire bien prendre en compte que cela sera facturer par AWS.
+
 # Api Gateway
 
 Voici la définition d'[API GATEWAY](https://aws.amazon.com/fr/api-gateway/) par AWS : ``` Amazon API Gateway est un service entièrement opéré, qui permet aux développeurs de créer, publier, gérer, surveiller et sécuriser facilement des API à n'importe quelle échelle ```.    
