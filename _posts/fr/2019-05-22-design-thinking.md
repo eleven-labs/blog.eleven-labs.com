@@ -1,10 +1,11 @@
 ---
+lang: fr
 layout: post
 title: Design thinking
 excerpt: L'art d'identifier des problématiques et des solutions pertinentes grâce au Design Thinking
 authors:
     - jeni
-permalink: /fr/design-thinking/
+permalink: /design-thinking/
 categories:
     - design-thinking
     - po
