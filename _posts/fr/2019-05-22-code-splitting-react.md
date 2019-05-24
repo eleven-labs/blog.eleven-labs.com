@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Débuter le code splitting avec React.
+title: Débuter le code splitting avec React.lazy
 excerpt: Lorsque votre projet React est bien avancé, charger l'application pour un utilisateur peut devenir de plus en plus long. Pour palier a ce problème, React permet depuis ses dernières mises à jour, de faire du Code Splitting.
 authors:
     - rmavillaz
@@ -8,6 +8,7 @@ lang: fr
 permalink: /fr/react-débuter-le-code-splitting/
 categories:
     - React
+    - Javascript
 tags:
     - react
     - loadable
@@ -17,30 +18,29 @@ tags:
     - lazy
     - suspense
     - webpack
-cover: /assets/2019-01-26-apollo-local-state-management-une-alternative-a-redux-contextapi/cover.png
 ---
 
 Lorsque votre projet React est bien avancé, charger l'application pour un utilisateur peut devenir de plus en plus long. Pour palier a ce problème, React permet depuis ses dernières mises à jour, de faire du **Code Splitting**.
-
 
 ## Définition du Code Splitting
 
 Avant toute chose, il est bon de rappeler ce qu'est le code splitting. Comme vous le savez sans doute, **il est aujourd'hui très commun d'utiliser Webpack pour build notre application JS**. C'est lui qui va regrouper le JS en un seul fichier et gérer les différents assets.
 Mais **Webpack peut également découper le code en plusieurs fichiers de manière intelligente**, permettant ainsi de charger la ressource uniquement si nécessaire ou en parallèle.
 
-L'intéret est limité dans un petit projet en React mais peut être nécessaire lorsque celui-ci devient bien avancé. Charger toute l'application peut parfois être fastidieux si l'utilisateur a une très faible connexion, voir même carrément inutile si celui-ci souhaite juste naviguer sur une partie du site.
+L'intérêt est limité dans un petit projet en React mais peut être nécessaire lorsque celui-ci devient bien avancé. Charger toute l'application peut parfois être fastidieux si l'utilisateur a une très faible connexion, voir même carrément inutile si celui-ci souhaite juste naviguer sur une partie du site.
 
-## React à la rescousse
+## Fonctionnement avec React
 
-React n'est pas le premier à faire du Code Splitting, en effet, la librairie [loadable-components](https://github.com/smooth-code/loadable-components) permet déjà de le faire simplement. Mais la team React a commencé à développer son propre module nommé **lazy* que l'on peut importer directement depuis la librairie !
+Avant de débuter, petite parenthèse, la librairie [loadable-components](https://github.com/smooth-code/loadable-components) permet déjà de faire du code splitting mais la team React a commencé à développer son propre module nommé **lazy**.
+Si vous avez initialisé votre projet avec **create-react-app**, vous n'avez rien à faire, sinon, à vous de mettre à jour votre webpack pour le [code splitting](https://webpack.js.org/guides/code-splitting).
 
-Egalement, un composant React est arrivé en même temps, nommé **Suspense**, qui va de pair avec le lazy. Il va permettre de créer un loading pendant que'une ressource est en train de charger avec le **lazy**.
+Un composant React est arrivé en même temps, nommé **Suspense**, qui va de pair avec le `lazy`. Il va permettre de créer un loadeur pendant le chargement d'une ressource avec **lazy**.
 
 ## Utilisation du lazy
 
-Pour débuter dans le code splitting, il vaut d'abord se poser la question suivante:
-- Quelles sont les parties de mon site, ou plus précisement, les composants que je souhaite splitter ?
-Je pars donc du principe que vous avez déjà un projet React qui tourne et nous allons intégrer l'import de composants en mode lazy. Le plus simple et le plus pertinent dans 99% des cas, c'est l'intégrer dans le système de routing de votre application.
+Pour débuter dans le code splitting, il faut d'abord se poser la question suivante:
+- Quelles sont les parties de mon site, ou plus précisément, les composants que je souhaite splitter ?
+Je pars donc du principe que vous avez déjà un projet React qui tourne et nous allons intégrer l'import de composants en mode lazy. Le plus simple et le plus pertinent est souvent de l’intégrer dans le système de routing de votre application.
 
 ```js
 //routing.js
@@ -62,7 +62,7 @@ const Router = () => (
 export default Router;
 ```
 
-Voici un système de routing classique, tous les composants sont chargés au même où l'on arrive sur l'application. On peut même voir que le fichier JS fait 2,49Mo !
+Voici un système de routing classique, tous les composants sont chargés au moment où on arrive sur l'application. On peut même voir que le fichier JS fait 2,49Mo !
 
 ![size_js_app-without_code_splitting]({{site.baseurl}}/assets/2019-05-22-react-code-splitting/js-size-without-code-splitting.png "javascript code size without code splitting")
 
@@ -70,7 +70,7 @@ Voici un système de routing classique, tous les composants sont chargés au mê
 ### Intégration du lazy
 
 ```js
-// on importe la methode lazy
+// on importe la méthode lazy
 import React, { lazy } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
@@ -90,12 +90,12 @@ const Router = () => (
 export default Router;
 ```
 
-Nous avons donc importé directement la methode `lazy` depuis React puis nous avons modifié la façon d'importé les composants nécessaires au routing. La méthode `import()` permet de façon de l'import dynamique, couplé au lazy, celui-ci va se faire uniquement si la ressource est demandé par l'utilisateur.
+Nous avons donc importé directement la methode `lazy` depuis React puis nous avons modifié la façon d'importer les composants nécessaires au routing. La méthode `import()` permet de façon de l'import dynamique, couplé au lazy, celui-ci va se faire uniquement si la ressource est demandé par l'utilisateur.
 
 Dans ce cas précis, le code du composant `Home` et `Projects` ne sera chargé que si l'utilisateur va sur l'url `/` ou `/projects`.
 ![size_js_app-with_code_splitting_1]({{site.baseurl}}/assets/2019-05-22-react-code-splitting/js-size-code-splitting-1.png "javascript code size with code splitting 1")
 
-Lorsque Webpack split le code, il utilise toujours le fichier `bundle.js` contenant le coeur de l'application. Mais le reste sera contenu dans de fichiers à part **chunk**. On voit sur l'image qu'il existe un fichier `0.chunk.js` qui correspond au code du composant `Home` dans notre cas.
+Lorsque Webpack split le code, il utilise toujours le fichier `bundle.js` contenant le coeur de l'application. Le reste sera contenu dans des fichiers à part, nommé des **chunk**. On voit sur l'image qu'il existe un fichier `0.chunk.js` qui correspond au code du composant `Home` dans notre cas.
 
 ![size_js_app-with_code_splitting_2]({{site.baseurl}}/assets/2019-05-22-react-code-splitting/js-size-code-splitting-2.png "javascript code size with code splitting 2")
 
@@ -128,20 +128,22 @@ const Router = () => (
 );
 ```
 
-La props fallback doit être un composant (ici, un loading), **il va s'afficher si un des composants enfants de <Suspense> est en train de charger et s'il n'a pas fait au moins un rendu**. Si vous mettez un delai ou une alerte dans le constructeur d'un enfant, vous verrez obligatoirement le loading s'afficher.
+La props fallback doit être un composant (ici, un loading), **il va s'afficher si un des composants enfants de `<Suspense>` est en train de charger et s'il n'a pas fait au moins un rendu**. Si vous mettez un delai ou une alerte dans le constructeur d'un enfant, vous verrez obligatoirement le loading s'afficher.
 
-Le composant `Suspense` n'est pas indispensable lors du code splitting, mais il reste important afin d'éviter une page blanche temporaire. Celle-ci peut être totalement invisible si vous avez bonne machine et une bonne connexion, mais ce n'est pas le cas de tous vos utilisateurs !
+Le composant `<Suspense>` n'est pas indispensable lors du code splitting, mais il reste important afin d'éviter une page blanche temporaire. Celle-ci peut être totalement invisible si vous avez bonne machine et une bonne connexion, mais ce n'est pas le cas de tous vos utilisateurs !
 
 ## Pour conclure
 
 Grace au lazy, React permet enfin de faire du code splitting de manière extrèmement simple tout en intégrant diverses modules à coté comme le **Suspense** pour rendre votre application vraiment fluide pour l'utilisateur.
 Faire du code splitting nécessite un peu de réflexion pour déterminer ce que vous allez charger en mode lazy, ne le faites pas pour tous vos composants, il faut que ce soit pertinent !
 
-Gardez en tête qu'il s'agit d'un premier pas, et la team React souhaite développer énormément de chose autour de ces sujets en 2019. Par exemple, il n'est pas encore possible en ServerSide Rendering et le Suspense est conseillé uniquement pour du loading de composant en lazy.
+Gardez en tête qu'il s'agit d'un premier pas, et la team React souhaite développer énormément de choses autour de ces sujets en 2019. Par exemple, il n'est pas encore possible en ServerSide Rendering (contrairement à [loadable-components](https://www.smooth-code.com/open-source/loadable-components/docs/loadable-vs-react-lazy/)) et le Suspense est conseillé uniquement pour du loading de composant en lazy. 
 Un autres module nommé `react-cache` actuellement en Alpha, va bientôt voir le jour. Il permettra d'aller fetch une donnée sur une API, ou de charger des images et d'utiliser le composant Suspense pour du loading automatique.
 
 
-Vous pouvez retrouver plus d'informations sur la documentation officielle d'Apollo React :
+Liens utiles :
 - [Code Splitting React](https://reactjs.org/docs/code-splitting.html)
+- [Comparaison React.lazy](https://www.smooth-code.com/open-source/loadable-components/docs/loadable-vs-react-lazy/)
+- [Configuration Webpack](https://webpack.js.org/guides/code-splitting)
 
 
