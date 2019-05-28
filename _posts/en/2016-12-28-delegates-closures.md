@@ -41,7 +41,7 @@ We will cover those two points more in detail, but before we go further it is im
 
 #### Delegates
 
-A delegate is a reference to an object of which we don't know the exact type, but important thing, it inherits a protocol. Because this object inherits a protocol, we then know that we can call the methods defined in the protocol, even if we don"t know in detail the given object. I think that a proper example will help us to understand what I am talking about.<br/>
+A delegate is a reference to an object that we don't know the exact type, but important thing, it inherits a protocol. Because this object inherits a protocol, we then know that we can call the methods defined in the protocol, even if we don"t know in detail the given object. I think that a proper exemple will help us to understand what I am talking about.<br/>
 NB: The code I will provide is just a dummy implementation so that you are able to understand the principles I am talking about, it will not really do any HTTP call on the URL given as a parameter. Let's imagine that I need to do a GET, usually in the mobile development world, we like to handle this with 2 different callbacks for the return of the call. One is for the success case et the other one, is for the error case. Our goal here is to produce a class that will do a GET on a given URL. I want to notify the object that launched this request, if it failed or succeed. In order to avoid a strong dependance, we will use the design pattern of the delegate, thanks to that, I don't need to know the exact type of this object. We will then define a protocol that will contain two methods: onRequestSuccess onRequestFailure. Let's have a look at what it will look like:
 
 ##### Objective-C
@@ -209,7 +209,7 @@ class RequestManager {
 
 **But why do all this?**
 
-We have a light dependency between our different objects. Indeed, RequestManager has no idea of the type of the object of its delegate, all that it cares about is to know that the object contains the two methods defined in the protocol in order to be able to call them. So, It's fine, I was able to call my webservice, I have my callback methods in which I can handle the different cases, everything seems good to me. Yes, everything is well, it works fine and it will cover a lot of cases
+We have a light dependency between our different objects. Indeed, RequestManager has no idea of the type of the object of its delegate, all that it cares about is to know that the object contains the two methods defined in the protocol in order to be able to call them. So, It's good, I was able to call my webservice, I have my callback methods in which I can handle the different cases, everything seems good to me. Yes, everything is good, it works well and it will cover a lot of cases
 
 **Raised Issue**
 
