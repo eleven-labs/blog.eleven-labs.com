@@ -6,8 +6,8 @@ permalink: /delegates-closures/
 excerpt: "Delegates VS Closures"
 authors:
     - thuchon
-date: '2019-05-27 18:25:24 +0100'
-date_gmt: '2019-05-27 17:25:24 +0100'
+date: '2016-12-28 18:25:24 +0100'
+date_gmt: '2016-12-28 17:25:24 +0100'
 categories:
 - Mobile
 tags:
