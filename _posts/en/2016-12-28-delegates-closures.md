@@ -37,7 +37,7 @@ In this article, I will use a lot the term "Protocol": a protocol is an interfac
 
 In iOS development, you will often find 2 principles: ***delegates***, ***closures (Swift) / blocks (Objective-C)***
 
-We will cover those two points more in detail, but before we go further it is important to know that exist! Here are the basic principles to know! Were are now done with the introduction, we can finally go deep and have a proper look!
+We will cover those two points more in detail, but before we go further it is important to know that exist ! Here are the basic principles to know ! Were are now done with the introduction, we can finally go deep and have a proper look !
 
 #### Delegates
 
@@ -227,7 +227,7 @@ In order to solve this issue, there is still the possibility to change a bit the
 
 #### Closures / Blocks
 
-It is really easy, the term "Block" will be used in Objective-C and "Closure" in swift, it really is an anonymous function. For those who are coming from web and who develop in JS, it should ring a bell. Let's have a look? We are going to add one method in both classes that will allow us to use blocks/closures.
+It is really easy, the term "Block" will be used in Objective-C and "Closure" in swift, it really is an anonymous function. For those who are coming from web and who develop in JS, it should ring a bell. Let's have a look ? We are going to add one method in both classes that will allow us to use blocks/closures.
 
 ##### Objective-C
 
@@ -296,4 +296,4 @@ func get(url: String, successClosure: () -> Void, failureClosure: () -> Void) {
 
 ### Conclusion
 
-So, as before, we just need to call the method callWebServiceWithClosure and we have a callback for the success case and one for the error case. You are going to ask me, what is the advantage? Easy, you just don't need to inherit from an interface anymore, you maybe don't realise it yet, but it really gets easier. For the understanding also, it's easier, you see straight above the different handlings you have instead of having to look in the code in order to find how the callback handles the return of the call. And as I said earlier, if you have many webservices to call, you can easily isolate the code for every single one of them. The goal here is just to present you both principles, if you already are a mobile developer, it is probably something you encountered more than once. But, just a question, wouldn't it be cool to be able to merge the delegates with the blocks/closures? Hum, it seems like an interesting topic right? Let's do that together in the future in a new article? See you space cowboys :)
+So, as before, we just need to call the method callWebServiceWithClosure and we have a callback for the success case and one for the error case. You are going to ask me, what is the advantage ? Easy, you just don't need to inherit from an interface anymore, you maybe don't realise it yet, but it really gets easier. For the understanding also, it's easier, you see straight above the different handlings you have instead of having to look in the code in order to find how the callback handles the return of the call. And as I said earlier, if you have many webservices to call, you can easily isolate the code for every single one of them. The goal here is just to present you both principles, if you already are a mobile developer, it is probably something you encountered more than once. But, just a question, wouldn't it be cool to be able to merge the delegates with the blocks/closures? Hum, it seems like an interesting topic right ? Let's do that together in the future in a new article ? See you space cowboys :)
