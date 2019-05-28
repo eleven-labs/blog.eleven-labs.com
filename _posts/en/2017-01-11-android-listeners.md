@@ -1,13 +1,11 @@
 ---
 layout: post
 title: 'Android: Why do I like listeners?'
-authors:
-    - thuchon
 lang: en
 permalink: /android-listeners/
 excerpt: "Let's talk about listeners"
-date: '2017-01-11 18:28:25 +0100'
-date_gmt: '2017-01-11 17:28:25 +0100'
+authors:
+    - thuchon
 categories:
 - Mobile
 tags:
