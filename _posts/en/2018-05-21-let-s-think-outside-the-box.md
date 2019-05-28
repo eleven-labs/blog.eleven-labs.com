@@ -75,7 +75,7 @@ We will then proceed in 3 steps :
 - Load those modules
 - Execute the actions within the modules
 
-### The modules
+### Les modules
 
 Here we will define 3 modules and explain what they do :
 
