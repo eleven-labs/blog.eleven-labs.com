@@ -39,9 +39,9 @@ WTH?<br/>
 But this guy is crazy, he spent too much time in space.<br/>
 
 In order for the remainder of the article to be easier to understand, we will define few keywords together so that you don't get lost in translation.<br/>
-I will use a lot the word "module". A module can be defined as a gathering of features that can be reused easily and that can be developed outside of an app, we can take the **Pod** as an example.<br/>
+I will use a lot the word "module". A module can be defined as a gathering of features that can be reused easily and that can be developped outside of an app, we can take the **Pod** as an example.<br/>
 The next word will be "action", when I say "action" : "Do what I asked you" in my app, for the article being, it will be a console output, an opening of a webpage, that kind of stuff.<br/>
-Now that we enlightened and defined the necessary words in order to understand clearly this article, I think it is time to move forward.<br/>
+Now that we enlightened and defined the necesarry words in order to understand clearly this article, I thinl it is time to move forward.<br/>
 
 **How we will proceed :**
 
@@ -55,9 +55,9 @@ In order to produce what we want, we will have to make 3 langages cohabit togeth
 ## A little setup
 
 Accrochez-vous, c'est là que que tout commence.
-Fasten your seat belt, this is where everything starts.
+Fasten your seatbelt, this is where everything starts.
 
-Our goal is to realize an app that contains features, but does not have a behavior as a structure.<br/>
+Our goald is to realize an app that contains features, but does not have a behavior as a structure.<br/>
 Each feature will be defined as a module, so separated code bases that live their own lives and available without any dependencies when it needs to be used.<br/>
 Once we understood that, we must tell ourselves that what we want to develop will be in three different parts : 
 
