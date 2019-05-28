@@ -133,7 +133,7 @@ We have a light dependency between our different objects. Indeed, RequestManager
 **Raised issue**
 
 In the previous article, I told you about the case where you need to do many calls in the same class. Then you will tell me :
-- There must be something equivalent from closures on Android, like on iOS.
+- There must be something equivalent from closurs on Android, like on iOS.
 - Yes, there is one.
 - So, give it to us then, instead of making us wait for it.
 - Listeners
