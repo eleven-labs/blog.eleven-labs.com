@@ -15,20 +15,18 @@ tags:
     - delegates
     - closure
 ---
-
-### Introduction
+#### Introduction
 
 Salut les Astronautes, aujourd'hui on va continuer dans notre lancée sur le mobile, toujours en NATIF.
 
 Cet article s'inscrit dans la lignée des 2 précédents, et il est impératif de les avoir lu pour comprendre ce dont il s'agit ici :
 
 [Delegates VS Closures](https://blog.eleven-labs.com/fr/delegates-closures/){:rel="nofollow noreferrer"}
-
 [Pourquoi j'aime les listeners](https://blog.eleven-labs.com/fr/android-listeners/){:rel="nofollow noreferrer"}
 
 Si vous avez lu les 2 précédents articles, vous devez vous douter de ce dont celui-ci va parler.
-- Mais oui on sait, allez dépêche-toi là, on veut savoir comment faire un truc aussi sexy que les listeners mais sur iOS cette fois-ci.
-- Ok, juste encore un petit peu de blabla technique et on se lance.
+-Mais oui on sait, allez dépêche-toi là, on veut savoir comment faire un truc aussi sexy que les listeners mais sur iOS cette fois-ci.
+-Ok, juste encore un petit peu de blabla technique et on se lance.
 
 **Comment ça va se passer :**
 
@@ -38,7 +36,7 @@ Dans le monde du développement iOS, comme vous avez pu le comprendre, on peut u
 
 Sur ces 2 composants par exemple, pas possible d'utiliser de blocks/closures, et on doit passer par un bon delegate à l'ancienne. Dans l'absolu, ce n'est pas très gênant, sauf dans le cas où on se retrouve avec plusieurs de ces composants sur le même écran. Les méthodes deviennent alors énormes et cela devient compliqué de faire du code élégant. Ce que je vous propose ici est une petite solution que je trouve assez propre.
 
-### Mise en situation
+#### Mise en situation
 
 Comme dans les deux articles précédents, on va juste faire un Appel GET sur une URL  donnée et avoir un système qui nous prévient en cas de succès comme d'erreur. On va aller un peu plus vite que dans le premier article, car ce sont des notions que vous devez déjà maîtriser.
 
@@ -48,11 +46,11 @@ Notre but ici est de réaliser une classe qui fait un GET sur une URL donnée. J
 
 On va agir en 3 étapes:
 
-- Créer un protocol
-- Créer des blocks/closures
-- Créer une classe qui hérite du protocole et qui a nos 2 blocks/closures en variables.
+-Créer un protocol
+-Créer des blocks/closures
+-Créer une classe qui hérite du protocole et qui a nos 2 blocks/closures en variables.
 
-##### Objective-C
+**- Objective-C**
 
 ```Objective-C
 typedef void (^successBlock)();
@@ -158,7 +156,7 @@ On va un peu regarder ensemble ce que l'on a codé.
 
 Je vous donne le code Swift pour les plus impatients
 
-##### Swift
+**- Swift**
 
 ```Swift
 protocol RequesterDelegateSwift {
@@ -223,25 +221,23 @@ func callWebService() {
 
 Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans le block/closure requestSuccess.
 
-**Mais pourquoi faire tout ça ?**
+#### Mais pourquoi faire tout ça ?
 
 En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un **Delegate** ou des **blocks/closures** comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...
-Comme je vous l'ai dit au début de l'article, cette solution vient pour un besoin assez spécifique. Celui de rendre un **Delegate** plus flexible quand on est obligé de passer par ce design pattern.
+Comme je vous l'ai dit au début de l'article, cette solution vient pour un besoin assez spécifique. Celui de rendre un **Delegate** plus flexible quand on est obligé de passer par ce pattern.
 
 **Problèmes soulevés**
 
-- Si le **Protocol** contient beaucoup de méthodes, on en a beaucoup à ré-implémenter.
-- On doit aussi définir tous les **blocks/closures** correspondants.
-- Il faut redéfinir les **blocks/closures** pour chaque appel.
+-Si le **Protocol** contient beaucoup de méthodes, on en a beaucoup à ré-implémenter.
+-On doit aussi définir tous les **blocks/closures** correspondants.
+-Il faut redéfinir les **blocks/closures** pour chaque appel.
 
 **Gains apportés**
 
-- Des delegates plus flexibles
-- Du code localisé
-- Des méthodes réduites
-- Une gestion plus fine des retours du **Delegate**
-
-### Conclusion
+-Des delegates plus flexibles
+-Du code localisé
+-Des méthodes réduites
+-Une gestion plus fine des retours du **Delegate**
 
 Cette solution n'est pas parfaite, mais reste assez élégante et n'est pas trop lourde à mettre en place.
 Après, je vous laisse tester et me dire ce que vous en pensez dans les commentaires.
