@@ -167,13 +167,66 @@ Tadaaa :
 ![home-assistant gitlab-ci]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/lovelace-gitlabci.png)
 
 
+Dernière étape, nous allons créer une card spécifique pour la branche master afin de suivre spécifiquement cette branche. Pour cela, nous allons utiliser un custom component : [variable](https://github.com/rogro82/hass-variables).
+Il suffit simplement de copier le dossier variable de ce projet dans un repertoire `custom_components` à la racine du projet.
+
+Ensuite, nous allons créer notre variable de status de CI pour master :
+
+```yaml
+#configuration.yaml
+
+variable:
+  master_status:
+    value: "Waiting next commit on master"
+```
+
+
+Puis, il va falloir créer une automation pour mettre à jour le status de la CI sur cette variable uniquement lorsque le pipeline est sur master.
+
+```yaml
+#automation.yaml
+
+- trigger:
+    platform: state
+    entity_id: sensor.test_gitlab_projet_x
+  condition:
+    - condition: template
+      value_template: "{{ is_state('sensor.test_gitlab_projet_x_build_branch', 'master') }}"
+  action:
+      - service: variable.set_variable
+        data:
+          variable: master_status
+          value_template: "{{ states('sensor.test_gitlab_projet_x') }}"
+```
+Ici nous avons : 
+- `trigger`: chaque changement lance cette automation
+- `condition`: il faut que notre entity branch ai la valeur master
+- `action`: si la condition est remplie, nous changeons la valeur de notre variable avec le status de la pipeline
+
+
+Enfin, il nous reste plus qu'a ajouter la card dans lovelace
+
+```yaml
+#ui-lovelace.yaml
+      #...
+      - type: entities
+        title: Gitlab X Project Master
+        entities:
+          - entity: variable.master_status
+```
+
+
+Le résultat :
+
+![home-assistant gitlab-ci]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/master-branch-result.png)
+
+
 Voilà pour la partie design, il y à des dizaines d’amélioration à apporter que nous ne verrons pas dans cet article.
 
 Par exemple : 
-- Afficher une card par branche (master, preprod, prod et dev)
-- Changer la couleur de la card en fonction du test
-- Raccourci vers le résultat de la ci
-- Stats sur les ci
+- Changer la couleur de la card en fonction du test / résultat de la pipeline
+- Raccourci vers le résultat de la CI
+- Stats sur les CI/CD
 - …
 
 
