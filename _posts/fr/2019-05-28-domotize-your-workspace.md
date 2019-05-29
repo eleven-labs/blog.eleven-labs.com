@@ -229,8 +229,10 @@ Par exemple :
 - Stats sur les CI/CD
 - …
 
-
-## Interactions IRL
-
+Pour information, vous pouvez faire la même chose avec [Github](https://www.home-assistant.io/components/github/).
 
 
+Voila pour la première partie de l'article, vous pouvez retrouver le code de cet article sur [Github](https://github.com/eleven-labs/home-assistant)
+
+
+Dans le prochain article, nous verrons comment nous pouvons agir physiquement en fonction des résultats des pipelines dans notre espace de travail, grâce aux Philips Hue ou encore avec GoogleHome.
