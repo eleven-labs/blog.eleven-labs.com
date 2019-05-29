@@ -1,68 +1,64 @@
 .search-bar {
-  font-size: 1.4rem;
+  background: $alabaster;
+  font-size: em(20px);
   position: relative;
 
-  @media (min-width: $breakpoint-x-small) {
-    margin-right: 1.5rem;
-  }
-
-  @media (max-width: $breakpoint-x-small) {
-    margin: 1rem auto 1.5rem;
-    max-width: 12rem;
-  }
-
-  @media (min-width: $breakpoint-small) {
-    margin-right: 3rem;
-  }
-
   &-label {
-    font-size: 1.1rem;
+    font-size: em(12px);
     letter-spacing: .1em;
+    padding-left: em(20px);
     text-transform: uppercase;
   }
 
   &-input {
-    background: $brand-color;
+    background: $casablanca;
     border: 0;
-    border-bottom: 2px solid transparent;
     bottom: 0;
     cursor: pointer;
     display: block;
+    height: 100%;
     max-width: 100%;
     min-width: 100%;
     opacity: 0;
-    padding: .4rem;
+    padding: 0;
     position: absolute;
     right: 0;
     top: 0;
-    transition: all .2s ease;
+    width: 100%;
     z-index: 10;
 
     &:focus {
-      border-bottom: 2px solid $brand-black;
+      background: $alabaster;
+      box-sizing: border-box;
       opacity: 1;
       outline: none;
+      padding: 0 em(30px);
 
       @media (min-width: $breakpoint-small) {
-        min-width: 12rem;
+        min-width: em(120px);
+      }
+
+      @media (min-width: $breakpoint-large) {
+        border: 0;
+        padding-left: em(20px);
       }
     }
   }
 }
 
 .search-logo {
-  font-size: 1.3rem;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  font-size: em(13px);
+  padding-bottom: em(15px);
+  padding-top: em(15px);
   text-align: right;
 
   &-bg {
     background: url($baseurl + '/img/Algolia_logo_bg-white.svg') no-repeat;
     background-size: contain;
     display: inline-block;
-    height: 25px;
-    margin-bottom: -10px;
-    margin-left: 6px;
-    width: 70px;
+    height: em(25px);
+    margin-bottom: em(-10px);
+    margin-left: em(5px);
+    width: em(70px);
   }
 }

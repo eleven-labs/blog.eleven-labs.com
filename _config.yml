@@ -14,6 +14,7 @@ social:
         - https://www.youtube.com/channel/UCt_NukjmUm4whjmbMuZ0MMw
         - https://github.com/eleven-labs
         - https://stackoverflow.com/jobs/companies/eleven-labs
+
 baseurl: ""
 
 # LANGUAGE-SPECIFIC CONFIGURATION
@@ -25,14 +26,20 @@ localized_posts_dir: _posts
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
     # Meta
+    site_web_eleven: https://eleven-labs.com/
+    site_web_eleven_rencontres: https://eleven-labs.com/rencontres
     # title: Eleven Labs - Le Blog
     brand : Eleven Labs
+    le_blog : LE BLOG
+    le_site : LE SITE
     gravatar:
     description: A website with blog posts and pages
 
     # Header and footer
-    header_text_bg_image: /img/bg-header.jpg
-    footer_text: To infinity and beyond !
+    copyright: ElevenLabs © 2019
+    phone_number: +33 1 82 83 11 75
+    adress: 15, avenue de la Grande Armée
+    post_code: 75016 PARIS
 
     # Icons
     rss: /feed.xml
@@ -55,13 +62,14 @@ theme_settings:
     twitter: eleven_labs
     wordpress:
     youtube:
-    corporate: https://eleven-labs.com
+    corporate:
     corporate_logo: /img/follow/eleven.svg
+    welcome_to_the_jungle: https://www.welcometothejungle.co/fr/companies/eleven-labs
+    welcome_to_the_jungle_logo: /img/follow/welcome_to_the_jungle.svg
 
     # Scripts
     google_analytics: UA-99013054-1
     disqus_shortname: blog-eleven-labs
-    muut_community_name:
 
     # Post navigation
     post_navigation: false

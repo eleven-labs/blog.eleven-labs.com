@@ -25,16 +25,24 @@
     bottom: auto;
     flex-direction: column;
     left: 0;
-    top: 22rem;
+    top: em(300px);
   }
 
-  a {
+  &__one {
+    color: $dusty-grey;
     cursor: pointer;
-    height: 4rem;
-    line-height: 4rem;
+    height: em(35px);
+    line-height: 2;
     text-align: center;
     transition: all .25s ease-in-out;
-    width: 4rem;
+    width: em(40px);
+
+    .eleven-logo {
+      color: $bright-sun;
+      margin-top: 2px;
+      width: em(20px);
+
+    }
 
     &:hover,
     &:visited:hover {
@@ -46,4 +54,4 @@
       color: $brand-black;
     }
   }
-}
+ }

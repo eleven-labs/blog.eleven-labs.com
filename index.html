@@ -2,67 +2,67 @@
 layout: default
 ---
 <div class="home">
-    <div class="call-out" style="background-image: url('{{ site.theme_settings.header_text_bg_image | prepend: site.baseurl_root }}')">
-        <h1 class="home-logo">
-            {% include logo.html %}
-            <span class="home-title">
-                <span class="visually-hidden">{{ site.theme_settings.brand }}</span> {% translate theme_settings.title %}
-            </span>
-        </h1>
-    </div>
-    <div class="posts">
-    {% for post in paginator.posts %}
-        <div class="slice">
-            <div class="container">
-                <h2 class="posts-title">
-                    <a class="no-link-style" href="{{ post.url | prepend: site.baseurl }}">
+    {% if site.theme_settings.share_button %}
+        {% include share.html %}
+    {% endif %}
+    <div class="article-container">
+        {% for post in paginator.posts %}
+        <div class="article-preview">
+            <div class="article-preview__header">
+                <!-- <ul class="article-preview__social-icons-list">
+                    {% include icons.html data=site.theme_settings origin='article' %}
+                </ul> -->
+
+                <h2 class="article-preview__title">
+                    <a class="article-preview__title-link" href="{{ post.url | prepend: site.baseurl }}">
                         {{ post.title }}
                     </a>
                 </h2>
-                <span class="meta">
-                    <time class="posts-date">
-                        <span class="meta-content">
-                            <span class="meta-item">
-                                <i class="far fa-fw fa-calendar-alt"></i> {% include date_translate.html object=post.date %}
-                            </span>
-                            <span class="meta-item">
-                                <i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i> {% include reading_time.html content=post.content %}
-                            </span>
-                        </span>
-                    </time>
-                    {% include author_link.html authors=post.authors %}
-                </span>
-                <p class="excerpt">
-                    {{ post.excerpt }}
-                </p>
+            </div>
+            <div class="article-preview__metadatas">
+                <time class="article-preview__post-reading">
+                    <span class="article-preview__post-date">
+                        <i class="far fa-fw fa-calendar-plus"></i>{% include date_translate.html object=post.date %}
+                    </span>
+                    <span class="article-preview__read-time">
+                        <i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=post.content %}
+                    </span>
+                    {% include author_articles_link.html authors=post.authors %}
+                </time>
+            </div>
+            <div class="article-preview__excerpt">
+                <p>{{ post.excerpt }}</p>
             </div>
         </div>
-    {% endfor %}
-    </div>
-    {% if paginator.total_pages > 1 %}
-        <div class="pagination">
-            {% if paginator.previous_page %}
-                <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="button previous">
-                    <i class="fas fa-chevron-left"></i>
-                    {% translate global.prev %}
-                </a>
-            {% endif %}
-            {% for page in (1..paginator.total_pages) %}
-                {% if page == paginator.page %}
-                    <span class="current-page">{{ page }}</span>
-                {% elsif page == 1 %}
-                    <a href="{{ "/" | prepend: site.baseurl }}">{{ page }}</a>
-                {% else %}
-                    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: ':num', page }}">{{ page }}</a>
+
+        <hr class="separator-line" />
+        {% endfor %}
+
+        {% if paginator.total_pages > 1 %}
+            <div class="pagination">
+                {% if paginator.previous_page %}
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="pagination__previous">
+                        <i class="fas fa-chevron-left"></i>
+                        {% translate global.prev %}
+                    </a>
                 {% endif %}
-            {% endfor %}
-            {% if paginator.next_page %}
-                <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="button next">
-                    {% translate global.next %}
-                    <i class="fas fa-chevron-right"></i>
-                </a>
-            {% endif %}
-        </div>
-    {% endif %}
+                {% for page in (1..paginator.total_pages) %}
+                    {% if page == paginator.page %}
+                        <span class="pagination__number pagination__current">{{ page }}</span>
+                    {% elsif page == 1 %}
+                        <a class="pagination__number" href="{{ "/" | prepend: site.baseurl }}">{{ page }}</a>
+                    {% else %}
+                        <a class="pagination__number" href="{{ site.paginate_path | prepend: site.baseurl | replace: ':num', page }}">{{ page }}</a>
+                    {% endif %}
+                {% endfor %}
+                {% if paginator.next_page %}
+                    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="pagination__next">
+                        {% translate global.next %}
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
 </div>
 {% include newsletter_link.html %}

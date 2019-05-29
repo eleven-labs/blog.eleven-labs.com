@@ -15,9 +15,6 @@ tags:
     - symfony live
 ---
 
-Symfony Live, 10 ans déjà !
-===========================
-
 Présentation
 ============
 

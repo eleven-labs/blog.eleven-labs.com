@@ -1,40 +1,47 @@
-<header class="site-header">
-    <div class="branding-container">
-        <a class="branding no-link-style" href="{{ site.baseurl }}/">
-            {% include logo.html %}
-            <span class="brand-title">
-                <span class="visually-hidden">{{ site.theme_settings.brand }}</span> {% translate theme_settings.title %}
-            </span>
+<header class="header header-preprod">
+    <div class="header-links">
+        <a class="header-links__logo-eleven" href="{{ site.baseurl }}/">
+            {% include eleven_logo.html %}
         </a>
-        <div style="display:inline-flex;position:relative">
-            <a class="branding no-link-style" href="http://codelabs.eleven-labs.com/">
-                <img src="{{ site.baseurl_root }}/img/icons/codelabs.png" style="margin-left:20px" />
-                <img src="{{ site.baseurl_root }}/img/icons/new.png" style="position:absolute;right:-35px;top:-15px;width:70px" />
+        <a class="header-links__title" href="{{ site.baseurl }}/">
+            <h1 class="header-links__eleven">{{ site.theme_settings.brand }}</h1>
+            <p class="header-links__blog">{{ site.theme_settings.le_blog }}</p>
+        </a>
+        <a href="{{ site.theme_settings.site_web_eleven }}" class="header-links__site-eleven">
+            <div class="header-links__blocklogo">
+                <div class="header-links__grouplogo"> {% include eleven_logo.html %}</div>
+                <p class="header-links__sitetitle">{{ site.theme_settings.brand }}</p>
+            </div>
+            <h2 class="header-links__lesite">{{ site.theme_settings.le_site }}</h2>
+        </a>
+    </div>
+    <div class="header-bottom">
+        <ul class="header-bottom__social">
+            {% include icons.html data=site.theme_settings %}
+        </ul>
+        <div id="search" class="header-bottom__headband--not-displayed">
+            <a id="close" href="#" class="header-bottom__close-search">
+                {% include close_search.html %}
             </a>
+            {% include search.html %}
+        </div>
+        <div class="header-bottom__search-icon" id="search-icon">
+            <div class=" header-bottom__search-label">
+                {% translate global.search_input %}
+            </div>
+            {% include search_mobile_icon.html %}
+        </div>
+        <div class="header-bottom__langs">
+            {% for language in site.languages %}
+                {% if language != site.lang %}
+                    {% if site.default_lang != language %}
+                        {% assign link = language %}
+                    {% endif %}
+                    <a class="header-bottom__langs__link" href="{{ site.baseurl_root }}/{{ link }}">
+                        {{ language }}
+                    </a>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
-    {% include search.html %}
-    <nav class="site-nav">
-        <ul>
-            {% for page in site.pages %} {% if page.title and page.hide != true and page.path contains '_posts' %}
-            <li>
-                <a class="page-link no-link-style" href="{{ page.url | prepend: site.baseurl_root }}">
-                    {{ page.title }}
-                </a>
-            </li>
-            {% endif %} {% endfor %}
-            <!-- Social icons from Font Awesome, if enabled -->
-            {% include icons.html data=site.theme_settings %}
-            <!-- Language switcher -->
-            {% for language in site.languages %} {% if language != site.lang %} {% if site.default_lang != language %} {% assign link
-            = language %} {% endif %}
-            <li class="language">
-                <a class="page-link no-link-style" href="{{ site.baseurl_root }}/{{ link }}">
-                    <img src="{{ site.baseurl_root }}/img/flags/{{ language }}.svg" alt="{% translate global.language_switch_to %}" title="{% translate global.language_switch_to %}"
-                        width="18" height="12" />
-                </a>
-            </li>
-            {% endif %} {% endfor %}
-        </ul>
-    </nav>
 </header>
