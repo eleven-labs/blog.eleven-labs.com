@@ -27,11 +27,11 @@ Et ce à quoi beaucoup d’équipe aujourd’hui ne pense pas forcément, c’es
 
 ## Sommaire
  1. Does anybody copy my User Story ?
- 2. BDD, INVEST, DOR & DOD : a Wordsmanship Ability
- 3. Business value : why are you even here ?
+ 2. BDD, INVEST, DOR & DOD : a Wordsmanship ability
+ 3. Business value : Why are you even here ?
  4. Risks : willing to take your chances ?
  5. Keep a better line of business value
- 6. Conclusion > make sure your US is safe
+ 6. Conclusion : Make sure your US is safe
  
  ## 1. “Does anybody copy my User Story ?”
  Une “User Story”, ou “Récit Utilisateur” en français, peut se définir dans son explication la plus simple par une phrase décrivant la fonctionnalité d’un produit avec assez de précision pour être comprise par une personne ne maîtrisant pas forcément ni le métier, ni le produit, ni la technique.
@@ -50,7 +50,7 @@ Il est donc de coutume qu’elle soit courte, claire, non technique, et indépen
 
 
 
-## 2. BDD, INVEST, DOR et DOD : “A Wordsmanship Ability”
+## 2. BDD, INVEST, DOR et DOD : a Wordsmanship ability
     
 
 Être adroit pour écrire une User Story ne demande pas seulement du bon sens, mais aussi de suivre certains principes. Hawkeye n’est pas devenu “[the world’s greatest marksman](https://marvelcinematicuniverse.fandom.com/wiki/Hawkeye#Abilities)” sans avoir ses propres techniques bien à lui.
@@ -103,7 +103,7 @@ Dans sa troisième étape de DoR pour le test, l’US est développée, le code 
 Elle est considérée comme “Done” une fois tous les tests fonctionnels ont été validés, la démo effectuée et également validée, ainsi que potentiellement la documentation à jour.
 
 
-## Business value : "Why are you even here ?"
+## Business value : Why are you even here ?
  
 Après avoir fait le point sur la méthodologie de conception de nos Users Stories, découpons le format rédactionnel pour y retrouver notre valeur métier.
 
@@ -122,7 +122,7 @@ Elle lui permet de prioriser par ordre d’importance les US à développer dans
 C’est aussi un bon moyen de ne pas se perdre dans des users stories trop techniques, ou de faire l’erreur de séparer la partie développement front et back en faisant perdre leur valeur ajoutée aux fonctionnalités d’un point de vue produit.
 
 
-## Risks : "Willing to take your chances ?"
+## Risks : Willing to take your chances ?
     
 Mais pourquoi s’embêter avec la valeur métier dans les quelques cas où cela ne semble pas forcément utile ? Quand par exemple une US semble trop courte ou tellement évidente que vous n’en voyez pas l’intérêt ? Ou au contraire quand elle englobe une fonctionnalité complexe ou tellement conséquente qu’il vous semble difficile de pouvoir définir sa valeur en une seule phrase ?
 
@@ -140,7 +140,7 @@ Les premiers risques qui me viennent en tête, et pour n’en citer que quelques
 
 
 
-## "Keep a better line of business value"
+## Keep a better line of business value
     
 Malgré toute la bonne volonté, ce n’est pas toujours évident d’avoir une vision claire de la valeur apportée par certaine user story, et surtout de pouvoir la définir.
 
@@ -160,7 +160,7 @@ Voici quelques idées qui pourraient vous permettre de mieux identifier les rais
 
 anvegers_hawkeye_img3
 
-## Conclusion : "Make sure your User Story is safe"
+## Conclusion : Make sure your User Story is safe
 
 Même s’il vous paraît peu utile de toujours spécifier la valeur ajoutée pour chaque user story et que cette étape est bien trop souvent négligée.
 Même si à côté d'Iron Man, Captain America ou Thor, Hawkeye vous semble insignifiant. 
