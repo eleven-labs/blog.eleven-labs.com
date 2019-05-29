@@ -55,6 +55,8 @@ Il est donc de coutume qu’elle soit courte, claire, non technique, et indépen
 
 Être adroit pour écrire une User Story ne demande pas seulement du bon sens, mais aussi de suivre certains principes. Hawkeye n’est pas devenu “[the world’s greatest marksman](https://marvelcinematicuniverse.fandom.com/wiki/Hawkeye#Abilities)” sans avoir ses propres techniques bien à lui.
 
+hawkeye_img1
+
  1. Independent Negotiable Valuable Estimable Small Testable
  
 
@@ -124,6 +126,8 @@ C’est aussi un bon moyen de ne pas se perdre dans des users stories trop techn
     
 Mais pourquoi s’embêter avec la valeur métier dans les quelques cas où cela ne semble pas forcément utile ? Quand par exemple une US semble trop courte ou tellement évidente que vous n’en voyez pas l’intérêt ? Ou au contraire quand elle englobe une fonctionnalité complexe ou tellement conséquente qu’il vous semble difficile de pouvoir définir sa valeur en une seule phrase ?
 
+ronin_hawkeye_img2
+
 C’est précisément quand vous aurez du mal à définir la valeur métier d’une user story que vous prendrez le plus de risques. Risque de passer à côté de l’intérêt que de la fonctionnalité pourrait avoir pour son utilisateur. Risque de ne pas remettre en cause cette fonctionnalité qui ne sera peut-être pas utile avant que vos équipes de développement ne soient passées par là.
 
 Les premiers risques qui me viennent en tête, et pour n’en citer que quelques uns sont les suivants :
@@ -154,8 +158,7 @@ Voici quelques idées qui pourraient vous permettre de mieux identifier les rais
 
 -   Enfin, n’hésitez pas à demander à vos utilisateurs d’expliquer leur besoin pour pouvoir leur apporter la meilleure réponse possible. Car il n’est autre que la valeur métier que vous insufflez à vos users stories. Si celles-ci sont creuses, votre produit le sera également.
 
-
-    
+anvegers_hawkeye_img3
 
 ## Conclusion : "Make sure your User Story is safe"
 
