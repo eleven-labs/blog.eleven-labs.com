@@ -35,7 +35,10 @@ Toutes les infos sur l’installation sont disponibles [ici](https://www.home-as
 
 
 Et voilà, votre home-assistant tourne maintenant en local, et vous pouvez y accéder ici : 
-http://localhost:8124/
+[http://localhost:8124/](http://localhost:8124/)
+
+![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/connexion-home.png)
+
 
 Il vous suffit maintenant simplement de créer votre login/pass pour accéder à hass.
 Nous allons donc voir maintenant comment activer un [component](https://www.home-assistant.io/components/), en commençant avec [sensor.gitlab_ci](https://www.home-assistant.io/components/sensor.gitlab_ci/).
@@ -71,48 +74,51 @@ sensor:
 
 ```
 
+Pour recuperer votre token gitlab, c'est par [ici](https://gitlab.com/profile/personal_access_tokens)
 
 On va maintenant vérifier que le fichier yaml est correcte, puis relancer home-assistant pour prendre la configuration en compte.
 
-
-
+![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/restart.png)
 
 
 Vous devriez maintenant voir apparaître le dernier statut du build du projet.
 
 
+![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/hass-gitlabci.png)
+
+
 Et si vous cliquez sur le sensor, vous aurez plus d’infos : 
 
-
+![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/details-gitlabci.png)
 
 
 ## Design
 
 Bon c’est bien sympa mais on ne voit pas grand chose et c’est assez minimaliste tout ca. Allons ajouter un coup de template la dessus.
-Je vous propose d’utiliser [lovelace](https://www.home-assistant.io/lovelace/), le nouveau système de templating de hass. Pourquoi ? Parce qu’il dispose d’un mode yaml et donc quitte à faire de la configuration, autant aller jusqu’au bout.
+Hass utilise maintenant [lovelace](https://www.home-assistant.io/lovelace/) par defaut. Nous allons activer le mode yaml de lovelace pour simplifier l'édition.
 
-On va commencer par activer lovelace, et le setter par défaut.
-
-
-
-Apres avoir recharger la page, lorsque vous retournerez sur “Aperçu”, l’url sera maintenant `/lovelace/0` mais le contenue reste pour le moment le même.
-
-Nous allons aussi activer le mode yaml de lovelace.
-
-````yaml
+```yaml
+#configuration.yaml
 lovelace:
   mode: yaml
-``` 
+```
 
 Et créer le fichier de configuration qui va bien dans le répertoire racine.
 
 ```sh
 $ touch ui-lovelace.yaml
 ```
+Comme à chaque modification du fichier `configuration.yaml`, pensez à redémarrer hass.
+
+
 
 Next, nous avons besoin de faire apparaitre les valeurs secondaires du plugin gitlab comme un sensor à part entière, nous allons donc les créer à la mano.
 
 ```yaml
+#configuration.yaml
+sensor:
+  #... ajoutez uniquement ces deux platform sous le noeud sensor
+
   - platform: template
     sensors:
       test_gitlab_projet_x_build_branch: #nom que l’on donne à notre sensor custom
@@ -127,6 +133,8 @@ Next, nous avons besoin de faire apparaitre les valeurs secondaires du plugin gi
     entity_id: test_gitlab_projet_x
 
 ```
+Attention à bien inserer les deux nouveaux sensor sous le noeud `sensor` existant déjà dans le fichier configuration
+
 
 Ici `state_attr` nous permet de récupérer l’attribut 'commit date' du sensor gitlab.
 
@@ -156,6 +164,7 @@ views:
 
 Tadaaa : 
 
+![home-assistant gitlab-ci]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/lovelace-gitlabci.png)
 
 
 Voilà pour la partie design, il y à des dizaines d’amélioration à apporter que nous ne verrons pas dans cet article.
