@@ -1,8 +1,8 @@
 ---
 lang: fr
 layout: post
-title: Déboguer efficacement React / nodeJs sous VSCode ?
-excerpt: Nous avons tous utiliser des console.log() pour déboguer notre code JS. Javacript permet pourtant de faire du débogue pas à pas très simplement. Voyons ensemble à quel point cela sera rapide à mettre en place sur vos projet FRONT / BACK.
+title: Déboguer efficacement React / Node.js sous VSCode ?
+excerpt: Nous avons tous utilisé des console.log() pour déboguer notre code JS. Javacript permet pourtant de faire du débogue pas à pas très simplement. Voyons ensemble à quel point cela sera rapide à mettre en place sur vos projet FRONT / BACK.
 authors:
     - jgreaux
 permalink: /debogue-javascript-vscode/
@@ -16,22 +16,22 @@ tags:
 
 ## Introduction
 
-Il parait souvent ardu de mettre en place des débogues pas à pas sur des projets et qui nous pousse à nous contenter de faire des `console.log()` dans notre code.  
-Nous allons voir qu'avec **VSCode**, nous pouvons facilement déboguer du code **React** tout comme du code **Nodejs**.  
-Ensuite nous verrons comment déboguer un app nodeJS dans un container docker.
-Pour finir je vous donnerai une astuce pour ceux utilisant docker + **nestJS**.
+Il parait souvent ardu de mettre en place des débogues pas à pas sur des projets, ce qui nous pousse à nous contenter de faire des `console.log()` dans notre code.  
+Nous allons voir qu'avec **VSCode**, nous pouvons facilement déboguer du code **React** tout comme du code **Node.js**.  
+Ensuite nous verrons comment déboguer une app Node.JS dans un container Docker.
+Pour finir je vous donnerai une astuce pour ceux utilisant Docker + **NestJS**.
 
 ## Déboguer une application REACT-APP
 
 Commençons par une application front.
-Pour déboguer une application front React, vous avez 2 possibilités de le faire: 
-- Directement depuis la console de votre navigateur (Google/Firefox)
-- Depuis votre éditeur de code comme VSCode ou Webstorm par exemple 
+Pour déboguer une application front React, vous avez 2 possibilités : 
+- Le faire directement depuis la console de votre navigateur (Google/Firefox).
+- Le faire depuis votre éditeur de code comme VSCode ou Webstorm par exemple.
 Ici, nous partirons sur le débogue directement dans l'IDE.
 
 ### 1/ Créer une nouvelle app React create-react-app 
 
-Pour commencer il nous faut une application React, pour cela vous devez créer une application:
+Pour commencer il nous faut une application React, pour cela vous devez créer une application :
 
 ```bash
 npx create-react-app my-app
@@ -42,16 +42,16 @@ yarn start
 ### 2/ Extension Chrome Debugger
 
 Dans la section des extensions de VSCode, installez l'extension nommée 'VSCode Debugger for Chrome'.  
-Une fois l'installation effectuée, relancer VSCode.  
+Une fois l'installation effectuée, relancez VSCode.  
 
 ### 3/ Configurer VSCode
 
-Comme vu ci-dessus, VSCode possède une section pour interpreter le débogue de JS.  
-Sauf que dans l'état aucune configuration n'est encore faite sur le projet React.  
+Comme vu ci-dessus, VSCode possède une section pour interpréter le débogue de JS.  
+Sauf que dans l'état, aucune configuration n'est encore faite sur le projet React.  
 
 Allez dans la section de débogage de VSCode, et cliquez sur la molette puis sélectionnez google chrome.  
 VSCode va vous ouvrir un fichier launch.js, avec une configuration par défaut pour fonctionner avec google Chrome.  
-Yeah, exactement ce qu'il nous faut.  
+Yeah, exactement ce qu'il nous faut !  
 
 Le fichier se nomme `launch.js`, et s'ajoute à la racine de votre projet dans un dossier `.vscode`.  
 
@@ -65,22 +65,22 @@ Le fichier se nomme `launch.js`, et s'ajoute à la racine de votre projet dans u
             "type": "chrome", // On le lance avec chrome, donc le type est chrome
             "request": "launch", 
             "url": "http://localhost:3000", // URL d'acces  
-            "webRoot": "${workspaceRoot}/src" // Ou se situe le point d'entré 
+            "webRoot": "${workspaceRoot}/src" // Où se situe le point d'entrée 
         }
     ]
 }
 ```
 ### 4/ Lancer l'application  
 
-Il ne vous reste plus qu'à mettre un point d'arrêt dans le code et de cliquer sur le bouton play dans la section "déboguer" de VSCode qui va ouvrir un navigateur chrome et lancer votre application front.
+Il ne vous reste plus qu'à mettre un point d'arrêt dans le code et à cliquer sur le bouton play dans la section "déboguer" de VSCode, qui va ouvrir un navigateur chrome et lancer votre application front.
 
-## Débogue une application nodes-js
+## Déboguer une application Node.js
 
-Maintenant que nous avons vu la partie FRONT sous React, passons à la partie BACK avec du nodeJS sous express.
+Maintenant que nous avons vu la partie FRONT sous React, passons à la partie BACK avec du Node.js sous express.
 
-### 1/ Installation d'un projet nodeJs
+### 1/ Installation d'un projet Node.js
 
-Nous allons partir ici sur une application nodejs & express.
+Nous allons partir ici sur une application Node.js & express.
 
 ```bash
 yarn init 
@@ -102,16 +102,16 @@ app.listen(3000, function () {
 })
 ```
 
-Nous sommes prêt, nous pouvons maintenant passer à la configuration de notre fichier launch.js.
+Nous sommes prêts, nous pouvons maintenant passer à la configuration de notre fichier launch.js.
 
 ### 2/ Configurer launch.js 
 
-Avant toute chose, nodejs nous permet de lancer notre code avec un mode debogue.
-Pour cela, il faut ajouter --inspect a notre commande:  
+Avant toute chose, Node.js nous permet de lancer notre code avec un mode debogue.
+Pour cela, il faut ajouter --inspect a notre commande :  
 
 `node --inspect index.js`
 
-Par défaut, nodejs va créer un webSocket sur le port 9229 sur l'adresse 127.0.0.1.
+Par défaut, Node.js va créer un webSocket sur le port 9229 sur l'adresse 127.0.0.1.
 
 Comme pour la partie front, nous avons besoin de créer un fichier `.vscode/launch.js`
 ```json 
@@ -119,8 +119,8 @@ Comme pour la partie front, nous avons besoin de créer un fichier `.vscode/laun
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node", // nous voulons débogue du node 
-            "request": "launch", // nous voulons executer la commande de lancement de node
+            "type": "node", // nous voulons déboguer du node 
+            "request": "launch", // nous voulons exécuter la commande de lancement de node
             "name": "Launch node test", // ajouter un nom a la conf
             "program": "${workspaceFolder}/index.js" // indiquer ici 
         }
@@ -128,16 +128,17 @@ Comme pour la partie front, nous avons besoin de créer un fichier `.vscode/laun
 }
 ```
 
-Executé la configuration, VSCode vous ouvrira une console en lancant cette commande: 
+Executez la configuration, VSCode vous ouvrira une console en lancant cette commande : 
 
 ```bash
 node --inspect-brk=XXXX index.js 
 ```
 
-Vous pouvez maintenant mettre un point d'arrêt 
-## Deboguer une app nodeJs sous docker
+Vous pouvez maintenant mettre un point d'arrêt.   
 
-Reprenez le projet précédent et ajoutez-y les fichiers suivant: 
+## Deboguer une app Node.js sous Docker
+
+Reprenez le projet précédent et ajoutez-y les fichiers suivants : 
 
 **docker-compose.yml**:
 ```yml
@@ -172,7 +173,7 @@ EXPOSE 9229 3000
 CMD [ "yarn", "start:debug-docker"]
 ```
 
-Dans le fichier Dockerfile, nous lançons la commande **start:debug-docker**, nous devons donc la rajouter dans notre fichier package.json:
+Dans le fichier Dockerfile, nous lançons la commande **start:debug-docker**, nous devons donc la rajouter dans notre fichier package.json :
 
 ```javascript 
 {
@@ -184,7 +185,7 @@ Dans le fichier Dockerfile, nous lançons la commande **start:debug-docker**, no
 }
 ```
 
-Enfin, nous devons rajouter une configuration dans le fichier launch.js:
+Enfin, nous devons rajouter une configuration dans le fichier launch.js :
 
 ```json
 {
@@ -206,12 +207,12 @@ Enfin, nous devons rajouter une configuration dans le fichier launch.js:
 
 Vous pouvez maintenant lancer `docker-compose up` et lancer le débogueur 'launch docker node debug'.
 
-## Déboguer une app NestJs sous Docker
+## Déboguer une app NestJS sous Docker
 
-Si vous utilisez nestJs, il faut effectuer une petite modification pour le faire fonctionner sous docker.  
-Comme nodemon est utilisé pour le développement en local sur nestJS, il faut lui ajouter une configuration spécifique.
+Si vous utilisez NestJS, il faut effectuer une petite modification pour le faire fonctionner sous Docker.  
+Comme nodemon est utilisé pour le développement en local sur NestJS, il faut lui ajouter une configuration spécifique.
 
-Ajouter un fichier `nodemon-docker-debug.json` 
+Ajoutez un fichier `nodemon-docker-debug.json` 
 
 ```json 
 {
@@ -221,7 +222,7 @@ Ajouter un fichier `nodemon-docker-debug.json`
   "exec": "tsc && node --inspect=0.0.0.0:2992 ./dist/src/main.js"
 }
 ```
-Dans le package.json il vous suffit de créer une nouvelle commande que votre Dockerfile executera.
+Dans le package.json il vous suffit de créer une nouvelle commande que votre Dockerfile exécutera.
 
 `package.json`
 
@@ -239,8 +240,8 @@ Dans le package.json il vous suffit de créer une nouvelle commande que votre Do
 
 ## Conclusion 
 
-Vous n'avez maintenant plus d'excuse d'utiliser des `console.log()` sur vos projets.  
-Vous trouverez tous les exemples sur mon github à cette adresse: [https://github.com/JeremyGreaux/debug-javascript](https://github.com/JeremyGreaux/debug-javascript)
+Vous n'avez maintenant plus d'excuses pour utiliser des `console.log()` sur vos projets.  
+Vous trouverez tous les exemples sur mon github à cette adresse : [https://github.com/JeremyGreaux/debug-javascript](https://github.com/JeremyGreaux/debug-javascript)
 
 
-N'hésitez pas à partager cet article s'il vous a plu.
+N'hésitez pas à partager cet article s'il vous a plu ! :)
