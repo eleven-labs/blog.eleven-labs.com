@@ -1,7 +1,7 @@
 ---
 layout: author
 login: dim
-title: Dimitri fruit
+title: Dimitri Fruit
 twitter: DimitriFruit
 permalink: /authors/dim/
 ---
