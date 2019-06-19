@@ -32,7 +32,7 @@ Elle fonctionne avec [Predis](https://github.com/nrk/predis) pour le stockage de
 Voici une liste de fonctionnalité que propose la librairie : 
 - Vérification des jetons disponibles pré-tentative d'authentification pour empêcher la [Race_condition](https://en.wikipedia.org/wiki/Race_condition).
 - Pouvoir définir différentes limitations selon les créneaux temporels.  
-- Différents moyens sur lesquels baser sa vérification d'identité : ID, token d'api, addresse IP, etc...
+- Différents moyens sur lesquels baser sa vérification d'identité : ID, token d'api, adresse IP, etc...
 
 
 ## Initialisation
@@ -220,7 +220,7 @@ maba_gentle_force:
 
 Vous pourrez enfin définir deux stratégie propre à recaptcha :
 - `recaptcha_headers` aura le même résultat que headers en renvoyant les credentials recaptcha en vue d'activer le widget (pour une API par exemple)
-- `recaptcha_template` permettra d'envoyer une réponse sous forme de template HTML (necessite l'installation de TWIG) contenant le widget
+- `recaptcha_template` permettra d'envoyer une réponse sous forme de template HTML (nécessite l'installation de TWIG) contenant le widget
 
 ```yaml
     strategies:
@@ -288,5 +288,5 @@ maba_gentle_force:
 # Le mot de la fin
 
 La sécurité est un domaine très vaste et cet outil n'en est qu'un parmi tant d'autres.
-Ce bundle ne protegera votre application par exemple contre de la vérification de combinaison mot de passe / email de manière unitaire comme utilisé récemment dans certaines [attaques]([https://www.numerama.com/tech/458514-dailymotion-reinitialise-des-mots-de-passe-apres-une-attaque-informatique-a-grande-echelle.html](https://www.numerama.com/tech/458514-dailymotion-reinitialise-des-mots-de-passe-apres-une-attaque-informatique-a-grande-echelle.html))
-Peu importe quels outils vous allez selectionner dans votre environnement technique, il convient de rappeller l'importance de prendre en compte l'aspect de la sécurité dans chacun de vos développements.
+Ce bundle ne protègera votre application par exemple contre de la vérification de combinaison mot de passe / email de manière unitaire comme utilisé récemment dans certaines [attaques]([https://www.numerama.com/tech/458514-dailymotion-reinitialise-des-mots-de-passe-apres-une-attaque-informatique-a-grande-echelle.html](https://www.numerama.com/tech/458514-dailymotion-reinitialise-des-mots-de-passe-apres-une-attaque-informatique-a-grande-echelle.html))
+Peu importe quels outils vous allez sélectionner dans votre environnement technique, il convient de rappeler l'importance de prendre en compte l'aspect de la sécurité dans chacun de vos développements.
