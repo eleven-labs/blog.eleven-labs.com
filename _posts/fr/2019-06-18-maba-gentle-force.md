@@ -19,7 +19,7 @@ tags:
 La sécurité est l'affaire de tous, vous avez certainement déjà tous entendu cela au moins une fois.  
 Avec l'arrivée de la RGPD, les fuites de données sont de plus en plus médiatisées et si vous souhaitez éviter d'avoir affaire aux institutions comme la CNIL ou tout simplement que vous souhaitez un outil simple pour protéger contre le brute force votre application Symfony, je vous présente Maba Gentle Force.
   
-# Maba Gentle Force, késaco ?manag
+# Maba Gentle Force, késaco ?
 
 C'est un bundle basé sur la librairie PHP [Gentle Force](https://github.com/mariusbalcytis/gentle-force).
 
