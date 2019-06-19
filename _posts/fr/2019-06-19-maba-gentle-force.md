@@ -288,5 +288,5 @@ maba_gentle_force:
 ## Le mot de la fin
 
 La sécurité est un domaine très vaste et cet outil n'en est qu'un parmi tant d'autres.
-PAr exemple, ce bundle ne protègera pas votre application contre de la vérification de combinaison mot de passe / email de manière unitaire comme utilisé récemment dans certaines [attaques]([https://www.numerama.com/tech/458514-dailymotion-reinitialise-des-mots-de-passe-apres-une-attaque-informatique-a-grande-echelle.html])
+PAr exemple, ce bundle ne protègera pas votre application contre de la vérification de combinaison mot de passe / email de manière unitaire comme utilisé récemment dans certaines [attaques](https://www.numerama.com/tech/458514-dailymotion-reinitialise-des-mots-de-passe-apres-une-attaque-informatique-a-grande-echelle.html).
 Peu importe quels outils vous allez sélectionner dans votre environnement technique, il convient de rappeler l'importance de prendre en compte l'aspect de la sécurité dans chacun de vos développements.
