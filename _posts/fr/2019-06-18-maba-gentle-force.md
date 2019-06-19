@@ -14,24 +14,24 @@ tags:
 ---
 
 
-# Protégez du brute force votre application Symfony avec Maba Gentle Force  
+## Protégez du brute force votre application Symfony avec Maba Gentle Force  
   
 La sécurité est l'affaire de tous, vous avez certainement déjà tous entendu cela au moins une fois.  
-Avec l'arrivée de la RGPD, les fuites de données sont de plus en plus médiatisées et si vous souhaitez éviter d'avoir affaire aux institutions comme la CNIL ou tout simplement que vous souhaitez un outil simple pour protéger contre le brute force votre application Symfony, je vous présente Maba Gentle Force.
+Avec l'arrivée de la RGPD, les fuites de données sont de plus en plus médiatisées et si vous souhaitez éviter d'avoir à faire aux institutions comme la CNIL ou tout simplement si vous souhaitez un outil simple pour protéger contre le brute force votre application Symfony, je vous présente Maba Gentle Force.
   
-# Maba Gentle Force, késaco ?
+## Maba Gentle Force, késaco ?
 
 C'est un bundle basé sur la librairie PHP [Gentle Force](https://github.com/mariusbalcytis/gentle-force).
 
 ## Introduction de Gentle Force
 
 La librairie utilise l’algorithme [Token Bucket](https://en.wikipedia.org/wiki/Token_bucket) :
-L'utilisateur possède des jetons qu'il va pouvoir utiliser pour effectuer ses actions, à chaque tentative, un jeton sera consommé jusqu’à ce qu'il n'en ai plus, il va ensuite pouvoir regagner d'autres jetons au bout d'un certain temps (configurable) pour faire une nouvelle tentative.
-Elle fonctionne avec [Predis](https://github.com/nrk/predis) pour le stockage des jetons.
+L'utilisateur possède des jetons qu'il va pouvoir utiliser pour effectuer ses actions. À chaque tentative, un jeton sera consommé jusqu’à ce qu'il n'y en ait plus. Il va ensuite pouvoir regagner d'autres jetons au bout d'un certain temps (configurable) pour faire une nouvelle tentative.
+Cette librairie fonctionne avec [Predis](https://github.com/nrk/predis) pour le stockage des jetons.
 
-Voici une liste de fonctionnalité que propose la librairie : 
-- Vérification des jetons disponibles pré-tentative d'authentification pour empêcher la [Race_condition](https://en.wikipedia.org/wiki/Race_condition).
-- Pouvoir définir différentes limitations selon les créneaux temporels.  
+Voici une liste de fonctionnalités que propose Gentle Force : 
+- Vérification des jetons disponible pré-tentatives d'authentification pour empêcher la [Race_condition](https://en.wikipedia.org/wiki/Race_condition).
+- Possibilité de définir différentes limitations selon les créneaux temporels.  
 - Différents moyens sur lesquels baser sa vérification d'identité : ID, token d'api, adresse IP, etc...
 
 
@@ -67,7 +67,7 @@ maba_gentle_force:
 
 ### Cas simple
 
-Dans le cas où, dans votre applications, vous permettez à vos utilisateurs d'upload des documents, afin d'éviter que ceux ci ne saturent vos espaces de stockage, vous pouvez par exemple ajouter cette portion dans votre fichier de configuration `maba_gentle_force.yml`.
+Dans le cas où dans votre application vous permettez à vos utilisateurs l'upload de documents, et afin d'éviter que ceux ci ne saturent vos espaces de stockage, vous pouvez par exemple ajouter cette portion dans votre fichier de configuration `maba_gentle_force.yml`.
 
 ```yaml
     limits:
@@ -77,7 +77,7 @@ Dans le cas où, dans votre applications, vous permettez à vos utilisateurs d'u
                 period: 1d
 ```
 
-Pour les cas simples où vous n'avez pas le besoin de faire de vérification spécifiques, vous devez y ajouter également la configuration du listener comprenant :
+Pour les cas simples où vous n'avez pas le besoin de faire de vérification spécifique, vous devez y ajouter également la configuration du listener comprenant :
 - la route concernée.
 - la clé d'identifiant de la configuration.
 - le type de donnée d'entrée servant à la vérification (ici l'IP).
@@ -90,7 +90,7 @@ Pour les cas simples où vous n'avez pas le besoin de faire de vérification sp�
             strategy: headers
 ```
   
-Si votre vérification porte sur une route peu critique, il est également possible de définir une `strategy: log` à la place afin de ne pas bloquer vos utilisateurs tout en assurant une surveillance à travers les logs disponibles.
+Si votre vérification porte sur une route peu critique, il est également possible de définir une `strategy: log` à la place, afin de ne pas bloquer vos utilisateurs tout en assurant une surveillance à travers les logs disponibles.
 Dans ce cas, il vous faudra également ajouter la configuration sur la stratégie de log :  
   
 ```yaml
@@ -139,15 +139,15 @@ if ($form->isSubmitted() && $form->isValid()) {
     } catch (RateLimitReachedException $exception) {
         // Vous pouvez logger ici votre erreur puis retourner une réponse avec le code HTTP 429
     }
-    // Tout va bien, vous pouvez executer votre code permettant de réinitialiser son mot de passe
+    // Tout va bien, vous pouvez exécuter votre code permettant de réinitialiser son mot de passe
     // Vous pouvez ensuite réduire le compteur pour éviter de bloquer inutilement votre utilisateur
     $bucket->decrease();
 }
 ```
 
-### Cas avancé 2 : Authentification
+### Cas avancé 2 : authentification
 
-Certaines fonctionnalités sont plus soumises aux attaques que d'autres, il est donc nécessaire d'augmenter un cran la sécurité de celles-ci, comme par exemple pour l'authentification de votre application.
+Certaines fonctionnalités sont plus soumises aux attaques que d'autres. Il est donc nécessaire d'augmenter d'un cran la sécurité de celles-ci. On parle par exemple de l'authentification de votre application.
 
 Cette fois-ci nous allons nous baser sur plusieurs identifiants de vérification : l'email de l'utilisateur et son IP.
 
@@ -218,7 +218,7 @@ maba_gentle_force:
         secret: my_recaptcha_secret     # this also
 ```
 
-Vous pourrez enfin définir deux stratégie propre à recaptcha :
+Vous pourrez enfin définir deux stratégies propres à recaptcha :
 - `recaptcha_headers` aura le même résultat que headers en renvoyant les credentials recaptcha en vue d'activer le widget (pour une API par exemple)
 - `recaptcha_template` permettra d'envoyer une réponse sous forme de template HTML (nécessite l'installation de TWIG) contenant le widget
 
@@ -285,8 +285,8 @@ maba_gentle_force:
         secret: votre-recaptcha-secret     
 ```
 
-# Le mot de la fin
+## Le mot de la fin
 
 La sécurité est un domaine très vaste et cet outil n'en est qu'un parmi tant d'autres.
-Ce bundle ne protègera votre application par exemple contre de la vérification de combinaison mot de passe / email de manière unitaire comme utilisé récemment dans certaines [attaques]([https://www.numerama.com/tech/458514-dailymotion-reinitialise-des-mots-de-passe-apres-une-attaque-informatique-a-grande-echelle.html](https://www.numerama.com/tech/458514-dailymotion-reinitialise-des-mots-de-passe-apres-une-attaque-informatique-a-grande-echelle.html))
+PAr exemple, ce bundle ne protègera pas votre application contre de la vérification de combinaison mot de passe / email de manière unitaire comme utilisé récemment dans certaines [attaques]([https://www.numerama.com/tech/458514-dailymotion-reinitialise-des-mots-de-passe-apres-une-attaque-informatique-a-grande-echelle.html])
 Peu importe quels outils vous allez sélectionner dans votre environnement technique, il convient de rappeler l'importance de prendre en compte l'aspect de la sécurité dans chacun de vos développements.
