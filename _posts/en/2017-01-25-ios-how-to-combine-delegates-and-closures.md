@@ -9,18 +9,18 @@ excerpt: "Let's make Delegates and Closures work together"
 date: '2017-01-25 14:30:42 +0100'
 date_gmt: '2017-01-25 13:30:42 +0100'
 categories:
-- Mobile
+    - Mobile
 tags:
-- ios
-- delegates
-- closure
+    - ios
+    - delegates
+    - closure
 ---
 
 ### Introduction
 
 Hi Astronauts, today we will keep talking about mobile development, and as always native style.
 
-This article is following up with the 2 previous ones, and it's mandatory that you read them before in order to understand what's going on in this one :
+This article is following up with the 2 previous ones, and it's mandatory that you read them before in order to understand what's going on in this one:
 
 [Delegates VS Closures](https://blog.eleven-labs.com/en/delegates-closures/){:rel="nofollow noreferrer"}
 
@@ -31,7 +31,7 @@ If you have already read the 2 previous articles, I guess you already have an id
 - Yes we already know, so please hurry-up, we want to know how we can make something as sexy as the listeners but on iOS this time.
 - Ok, just a bit of technical chit-chat before, and then were are ready to go.
 
-**How are we going to proceed? :**
+**How are we going to proceed?:**
 
 As in the first article, so that everyone is happy I will provide some DUMMY code for both Objective-C and Swift.
 
