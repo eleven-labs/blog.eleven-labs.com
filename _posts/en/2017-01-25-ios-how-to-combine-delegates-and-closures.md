@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[iOS] How to combine Delegates and Closures ?"
+title: "[iOS] How to combine Delegates and Closures"
 authors:
     - thuchon
 lang: en
@@ -28,7 +28,7 @@ This article is following up with the 2 previous ones, and it's mandatory that y
 
 
 If you have already read the 2 previous articles, I guess you already have an idea about what this one is about.
-- Yes we already know, so please hurry-up, we want to know how we can make something as sexy as the listeners but on iOS this time.
+- Yes we already know, so please hurry up, we want to know how we can make something as sexy as the listeners but on iOS this time.
 - Ok, just a bit of technical chit-chat before, and then were are ready to go.
 
 **How are we going to proceed?:**
@@ -37,13 +37,13 @@ As in the first article, so that everyone is happy I will provide some DUMMY cod
 
 As you may know in the iOS universe, we can use both Delegates and Closures. Usually closure is used for more flexibility and it is also easier to implement. However, in some cases, graphic components for example are just made to work with a delegate or a datasource. Right now I'm thinking about 2 components: UITableView and UICollectionView.
 
-With those 2 components, you cannot use block/closure, and you have to use a good old delegate. Usually it's not really a big issue and you can just work like that. But let say that you have to work with many of those components on a single screen, in this case the code can start to be really. You'll find yourself with some huge classes, and it really starts to be difficult to produce some beautiful and elegant code. What I would like to show you today is a solution that is my mind is pretty clean, and easy to put in place
+With those 2 components, you cannot use block/closure, and you have to use a good old delegate. Usually it's not really a big issue and you can just work like that. But let's say that you have to work with many of those components on a single screen, in this case the code can start to be really messy. You'll find yourself with some huge classes, and it really starts to be difficult to produce some beautiful and elegant code. What I would like to show you today is a solution, that, in my opinion, is pretty clean, and easy to put in place.
 
 ### A little setup
 
-As in the two previous articles, we will proceed with a GET call on a URL et build a system that will notify us as well in success case and an error one. We will go a little bit faster than in the first article, because those are notions that you are already suppose to master.
+As in the two previous articles, we will proceed with a GET call on a URL and build a system that will notify us in case of both success and error. We will go a little bit faster than in the first article, because those are notions that you are already suppose to master.
 
-It's time to talk about code !
+It's time to talk about code!
 
 Our goal is is to realize a class that performs a GET call on URL. I want to notify the object that launched this request if it failed or succeed. To avoid strong dependencies, we will use the delegate pattern, thanks to this I don't need to know the exact type of the object.
 
@@ -153,8 +153,8 @@ We will have a look altogether of what we just coded.
 - We instantiated our **Manager**, that will call the webservice
 - We defined our two **blocks/closures**
 - We instantiated our **Delegate**
-- We assignated our two **blocks/closures**
-- We assignated the **Delegate** to the **Manager**
+- We assigned our two **blocks/closures**
+- We assigned the **Delegate** to the **Manager**
 - We call the webservice
 
 Here is the Swift code for the most excited ones
@@ -224,14 +224,14 @@ func callWebService() {
 
 Now, if I call the method callWebService, considering the dummy code we produced, the result will be a call to the block/closure requestSuccess.
 
-**But why do we bother do all this?**
+**But why do we bother to do all this?**
 
-Indeed, why do all this, especially in our case, we could just have used a **Delegate** or **blocks/closures**, as we did in the first article ? This adds a lot of complexicity in the code, and it looks like we are doing the same things twice...
+Indeed, why do all this, especially in our case, we could just have used a **Delegate** or **Blocks/Closures**, as we did in the first article. This adds a lot of complexity in the code, and it looks like we are doing the same things twice...
 As I told you at the beginning of the article, this solution comes for a specific case. To make a **Delegate** more flexible when you have no other choice that to use this pattern.
 
 **Issues**
 
-- If the **Protocol** contains a lot of method, then we need to re-implement a lot.
+- If the **Protocol** contains a lot of methods, then we need to re-implement a lot.
 - We also must define all **blocks/closures** related.
 - We need to redefine the **blocks/closures** for every call.
 
