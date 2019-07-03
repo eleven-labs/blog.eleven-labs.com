@@ -45,13 +45,13 @@ As in the two previous articles, we will proceed with a GET call on a URL and bu
 
 It's time to talk about code!
 
-Our goal is is to realize a class that performs a GET call on URL. I want to notify the object that launched this request if it failed or succeed. To avoid strong dependencies, we will use the delegate pattern, thanks to this I don't need to know the exact type of the object.
+Our goal is is to realize a class that performs a GET call on a URL. I want to notify the object that launched this request if it failed or succeeded. To avoid strong dependencies, we will use the delegate pattern, thanks to this I don't need to know the exact type of the object.
 
 Let's do this in 3 steps:
 
 - Write the protocol
 - Write the blocks/closures
-- Write a class that will inherits from the protocol and that contains our 2 blocks/closures as attributes.
+- Write a class that will inherit from the protocol and that contains our 2 blocks/closures as attributes.
 
 ##### Objective-C
 
@@ -85,7 +85,7 @@ typedef void (^failureBlock)();
 @end
 ```
 
-We will now implement the class that will inherit from the protocol. It will contain the 2 methods **onRequestSuccess** and **onRequestFailure** and each of it will call the dedicated block/closure.
+We will now implement the class that will inherit from the protocol. It will contain the 2 methods **onRequestSuccess** and **onRequestFailure** and each of them will call the dedicated block/closure.
 
 ```Objective-C
 @implementation RequestManagerObjCDelegateImplementation
@@ -149,13 +149,13 @@ Then, we code the method to call our webservice.
 }
 ```
 
-We will have a look altogether of what we just coded.
+Let's take a look on what we just coded.
 - We instantiated our **Manager**, that will call the webservice
 - We defined our two **blocks/closures**
 - We instantiated our **Delegate**
 - We assigned our two **blocks/closures**
 - We assigned the **Delegate** to the **Manager**
-- We call the webservice
+- We called the webservice
 
 Here is the Swift code for the most excited ones
 
