@@ -153,7 +153,6 @@ Voici quelques idées qui pourraient vous permettre de mieux identifier les rais
 
 Même s’il vous paraît peu utile de toujours spécifier la valeur ajoutée pour chaque user story et que cette étape est bien trop souvent négligée. Même si à côté d'Iron Man, Captain America ou Thor, Hawkeye vous semble insignifiant. 
 
-Elle est en fait essentielle dans la conception du product backlog par le Product Owner. Elle lui donne un sens et fait raisonner le produit.
-Tout comme Hawkeye fait reprendre raison à nos super-héros préférés quand ils se sont perdus eux-mêmes dans [Age of Ultron](https://marvelcinematicuniverse.fandom.com/wiki/Hawkeye#Place_on_the_Avengers). 
+Elle est en fait essentielle dans la conception du product backlog par le Product Owner. Elle lui donne un sens et fait résonner le produit. Tout comme Hawkeye fait reprendre raison à nos super-héros préférés quand ils se sont perdus eux-mêmes dans [Age of Ultron](https://marvelcinematicuniverse.fandom.com/wiki/Hawkeye#Place_on_the_Avengers). 
 
 Enfin, il est important de garder en tête que le retour sur investissement (ROI) n’est pas l’unique facteur de valeur dans un projet, et ne l’est même pas du tout d’un point de vue utilisateur final. Même s’il joue son rôle dans les choix de conception technique, ou plus globalement dans le choix des releases, le ROI n’est pas la valeur métier d’une user story.
