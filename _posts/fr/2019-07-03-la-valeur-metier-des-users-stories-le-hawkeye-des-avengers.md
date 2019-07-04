@@ -33,7 +33,7 @@ Et ce à quoi beaucoup d’équipe aujourd’hui ne pensent pas forcément, c’
  5. Keep a better line of business value
  6. Conclusion: make sure your US is safe
  
-## 1/ Does anybody copy my User Story?
+## 1. Does anybody copy my User Story?
 Une “User Story”, ou “Récit Utilisateur” en français, peut se définir simplement par étant "une phrase décrivant la fonctionnalité d’un produit avec assez de précision pour être comprise par une personne ne maîtrisant pas forcément le métier, le produit, ou la technique".
 
 Dans la pratique, la définition d’une User Story est un peu plus complexe que ça.
@@ -46,14 +46,16 @@ Cette US est accessible à tous et doit surtout être compréhensible par toutes
 
 Il est donc de coutume qu’elle soit courte, claire, non technique, et indépendante vis-à-vis des autres US du product backlog.
 
-## 2/ BDD, INVEST, DOR et DOD: a Wordsmanship ability
+## 2. BDD, INVEST, DOR et DOD: a Wordsmanship ability
     
-Être adroit pour écrire une User Story ne demande pas seulement du bon sens, mais aussi de suivre certains principes. Hawkeye n’est pas devenu “[the world’s greatest marksman](https://marvelcinematicuniverse.fandom.com/wiki/Hawkeye#Abilities)” sans avoir ses propres techniques bien à lui.
+Être adroit pour écrire une User Story ne demande pas seulement du bon sens, mais aussi de suivre certains principes. 
 
-![]({{site.baseurl}}/assets/2019-05-29-la-valeur-metier-des-users-stories-le-hawkeye-des-avengers/hawkeye_img1.jpg)
+![]({{site.baseurl}}/assets/2019-05-29-la-valeur-metier-des-users-stories-le-hawkeye-des-avengers/hawkeye_img1.jpg)  
+
+Hawkeye n’est pas devenu “[the world’s greatest marksman](https://marvelcinematicuniverse.fandom.com/wiki/Hawkeye#Abilities)” sans avoir ses propres techniques bien à lui.
 
  
- ### 1/ Independent Negotiable Valuable Estimable Small Testable
+ ### 1. Independent Negotiable Valuable Estimable Small Testable
  
 
 L’acronyme [INVEST](https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/) a évidemment tout volé de la “Strategic Homeland Intervention Enforcement Logisitcs Decision”, dixit “[S.H.I.E.L.D](https://fr.wikipedia.org/wiki/SHIELD)”.
@@ -71,7 +73,7 @@ Mais c’est la base fondamentale de rédaction d’une User Story.
 
 **Testable**, par n’importe quel membre de l’équipe de développement, et de bout en bout. Ce qui implique que le product owner doit pouvoir se passer de l’équipe de développement pour pouvoir tester une US de son côté.
 
-### 2/ Behavior Driven Development
+### 2. Behavior Driven Development
 
 Comme expliqué précédemment, la base d’une US est de pouvoir être compréhensible par tout un chacun, technique, métier ou encore sponsor.
 
@@ -81,7 +83,7 @@ Par ailleurs, le BDD met au coeur de son principe l’utilisation d’exemples d
 
 En somme, cette façon de construire et d’écrire les US, critères et tests d’acceptance, règles métiers, et tout ce qui va pivoter autour, permet de faire converser toutes les équipes entre elles.
 
-### 3/ Definition of Ready & Definition of Done
+### 3. Definition of Ready & Definition of Done
 
 Il ne s’agit pas tant d’éléments ou de pratiques rédactionnels accompagnant une User Story comme précédemment, mais plutôt de règles à définir en début de projet qui suivront la vie et le déroulement de chaque Sprint.
 
