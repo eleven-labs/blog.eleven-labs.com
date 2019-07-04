@@ -55,7 +55,7 @@ Il est donc de coutume qu’elle soit courte, claire, non technique, et indépen
 Hawkeye n’est pas devenu “[the world’s greatest marksman](https://marvelcinematicuniverse.fandom.com/wiki/Hawkeye#Abilities)” sans avoir ses propres techniques bien à lui.
 
  
- ### 1. Independent Negotiable Valuable Estimable Small Testable
+### 1. Independent Negotiable Valuable Estimable Small Testable
  
 
 L’acronyme [INVEST](https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/) a évidemment tout volé de la “Strategic Homeland Intervention Enforcement Logisitcs Decision”, dixit “[S.H.I.E.L.D](https://fr.wikipedia.org/wiki/SHIELD)”.
