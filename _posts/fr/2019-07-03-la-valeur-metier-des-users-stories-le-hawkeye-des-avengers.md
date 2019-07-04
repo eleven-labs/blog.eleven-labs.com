@@ -55,7 +55,7 @@ Il est donc de coutume qu’elle soit courte, claire, non technique, et indépen
 Hawkeye n’est pas devenu “[the world’s greatest marksman](https://marvelcinematicuniverse.fandom.com/wiki/Hawkeye#Abilities)” sans avoir ses propres techniques bien à lui.
 
  
-### 1. Independent Negotiable Valuable Estimable Small Testable
+### a. Independent Negotiable Valuable Estimable Small Testable
  
 
 L’acronyme [INVEST](https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/) a évidemment tout volé de la “Strategic Homeland Intervention Enforcement Logisitcs Decision”, dixit “[S.H.I.E.L.D](https://fr.wikipedia.org/wiki/SHIELD)”.
@@ -73,7 +73,7 @@ Mais c’est la base fondamentale de rédaction d’une User Story.
 
 **Testable**, par n’importe quel membre de l’équipe de développement, et de bout en bout. Ce qui implique que le product owner doit pouvoir se passer de l’équipe de développement pour pouvoir tester une US de son côté.
 
-### 2. Behavior Driven Development
+### b. Behavior Driven Development
 
 Comme expliqué précédemment, la base d’une US est de pouvoir être compréhensible par tout un chacun, technique, métier ou encore sponsor.
 
@@ -83,7 +83,7 @@ Par ailleurs, le BDD met au coeur de son principe l’utilisation d’exemples d
 
 En somme, cette façon de construire et d’écrire les US, critères et tests d’acceptance, règles métiers, et tout ce qui va pivoter autour, permet de faire converser toutes les équipes entre elles.
 
-### 3. Definition of Ready & Definition of Done
+### c. Definition of Ready & Definition of Done
 
 Il ne s’agit pas tant d’éléments ou de pratiques rédactionnels accompagnant une User Story comme précédemment, mais plutôt de règles à définir en début de projet qui suivront la vie et le déroulement de chaque Sprint.
 
@@ -97,7 +97,7 @@ Dans sa troisième étape de DoR pour le test, l’US est développée, le code 
 
 Elle est considérée comme “Done” une fois tous les tests fonctionnels validés, la démo effectuée et également validée, ainsi que potentiellement la documentation à jour.
 
-## Business value: why are you even here?
+## 3. Business value: why are you even here?
  
 Après avoir fait le point sur la méthodologie de conception de nos Users Stories, découpons le format rédactionnel pour y retrouver notre valeur métier.
 
@@ -115,7 +115,7 @@ Elle lui permet de prioriser par ordre d’importance les US à développer dans
 
 C’est aussi un bon moyen de ne pas se perdre dans des users stories trop techniques, ou de faire l’erreur de séparer la partie développement front et back en faisant perdre leur valeur ajoutée aux fonctionnalités d’un point de vue produit.
 
-## Risks: willing to take your chances?
+## 4. Risks: willing to take your chances?
     
 Mais pourquoi s’embêter avec la valeur métier dans les quelques cas où cela ne semble pas forcément utile ? Quand par exemple une US semble trop courte ou tellement évidente que vous n’en voyez pas l’intérêt ? Ou au contraire quand elle englobe une fonctionnalité complexe ou tellement conséquente qu’il vous semble difficile de pouvoir définir sa valeur en une seule phrase ?
 
@@ -131,7 +131,7 @@ Les premiers risques qui me viennent en tête, et pour n’en citer que quelques
     
 -   Livrer une release ou un produit final qui ne correspondra ni au besoin, ni à la demande, et ne sera au final pas utilisé.
 
-## Keep a better line of business value
+## 5. Keep a better line of business value
     
 Malgré toute la bonne volonté du monde, ce n’est pas toujours évident d'avoir une vision claire de la valeur apportée par certaines user stories.
 
@@ -151,7 +151,7 @@ Voici quelques idées qui pourraient vous permettre de mieux identifier les rais
 
 ![]({{site.baseurl}}/assets/2019-05-29-la-valeur-metier-des-users-stories-le-hawkeye-des-avengers/avengers_hawkeye_img3.png)
 
-## Conclusion: make sure your User Story is safe
+## 6. Conclusion: make sure your User Story is safe
 
 Même s’il vous paraît peu utile de toujours spécifier la valeur ajoutée pour chaque user story et que cette étape est bien trop souvent négligée. Même si à côté d'Iron Man, Captain America ou Thor, Hawkeye vous semble insignifiant. 
 
