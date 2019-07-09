@@ -18,9 +18,9 @@ tags:
 
 ### Introduction
 
-Hi Astronauts, today we will keep talking about mobile development, and as always native style.
+Hi astronauts, today we will keep talking about mobile development, and as always native style.
 
-This article is following up with the 2 previous ones, and it's mandatory that you read them before in order to understand what's going on in this one:
+This article is following the 2 previous ones, and it's mandatory that you read them before, in order to understand what's going on in this one:
 
 [Delegates VS Closures](https://blog.eleven-labs.com/en/delegates-closures/){:rel="nofollow noreferrer"}
 
@@ -33,11 +33,11 @@ If you have already read the 2 previous articles, I guess you already have an id
 
 **How are we going to proceed?:**
 
-As in the first article, so that everyone is happy I will provide some DUMMY code for both Objective-C and Swift.
+As in the first article, so that everyone is happy, I will provide some DUMMY code for both Objective-C and Swift.
 
 As you may know in the iOS universe, we can use both Delegates and Closures. Usually closure is used for more flexibility and it is also easier to implement. However, in some cases, graphic components for example are just made to work with a delegate or a datasource. Right now I'm thinking about 2 components: UITableView and UICollectionView.
 
-With those 2 components, you cannot use block/closure, and you have to use a good old delegate. Usually it's not really a big issue and you can just work like that. But let's say that you have to work with many of those components on a single screen, in this case the code can start to be really messy. You'll find yourself with some huge classes, and it really starts to be difficult to produce some beautiful and elegant code. What I would like to show you today is a solution, that, in my opinion, is pretty clean, and easy to put in place.
+With those 2 components, you cannot use block/closure, and you have to use a good old delegate. Usually it's not really a big issue and you can just work like that. But let's say that you have to work with many of those components on a single screen, in this case the code can start to be really messy. You'll find yourself with some huge classes, and it really starts to be difficult to produce some beautiful and elegant code. What I would like to show you today is a solution, that in my opinion is pretty clean and easy to set up.
 
 ### A little setup
 
@@ -45,7 +45,7 @@ As in the two previous articles, we will proceed with a GET call on a URL and bu
 
 It's time to talk about code!
 
-Our goal is is to realize a class that performs a GET call on a URL. I want to notify the object that launched this request if it failed or succeeded. To avoid strong dependencies, we will use the delegate pattern, thanks to this I don't need to know the exact type of the object.
+Our goal is to realize a class that performs a GET call on a URL. I want to notify the object that launched this request if it failed or succeeded. To avoid strong dependencies, we will use the delegate pattern, thanks to this I don't need to know the exact type of the object.
 
 Let's do this in 3 steps:
 
@@ -226,7 +226,7 @@ Now, if I call the method callWebService, considering the dummy code we produced
 
 **But why do we bother to do all this?**
 
-Indeed, why do all this, especially in our case, we could just have used a **Delegate** or **Blocks/Closures**, as we did in the first article. This adds a lot of complexity in the code, and it looks like we are doing the same things twice...
+Indeed, why do all this, especially in our case? We could just have used a **Delegate** or **Blocks/Closures** as we did in the first article. This adds a lot of complexity in the code, and it looks like we are doing the same things twice...
 As I told you at the beginning of the article, this solution comes for a specific case. To make a **Delegate** more flexible when you have no other choice that to use this pattern.
 
 **Issues**
@@ -240,11 +240,11 @@ As I told you at the beginning of the article, this solution comes for a specifi
 - More flexible delegates
 - Clean code
 - Reduced methods
-- Thinner handling for the the callbacks of the **Delegate**
+- Thinner handling for the callbacks of the **Delegate**
 
 ### Conclusion
 
-This solution is not perfect, but still is quite elegant and is not too heavy to implement.
+This solution is not perfect, but still quite elegant and is not too heavy to implement.
 Then, I'll let you test it and give me some feedback in the comments section.
 
 See you space cowboys :)
