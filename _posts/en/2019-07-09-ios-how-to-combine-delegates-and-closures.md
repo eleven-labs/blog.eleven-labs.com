@@ -29,7 +29,7 @@ If you have already read the 2 previous articles, I guess you already have an id
 - Yes we already know, so please hurry up, we want to know how we can make something as sexy as the listeners but on iOS this time.
 - Ok, just a bit of technical chit-chat before, and then were are ready to go.
 
-**How are we going to proceed?:**
+**How are we going to proceed?**
 
 As in the first article, so that everyone is happy, I will provide some DUMMY code for both Objective-C and Swift.
 
