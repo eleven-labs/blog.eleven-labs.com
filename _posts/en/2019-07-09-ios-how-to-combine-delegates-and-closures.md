@@ -6,8 +6,6 @@ authors:
 lang: en
 permalink: /ios-how-to-combine-delegates-and-closures/
 excerpt: "Let's make Delegates and Closures work together"
-date: '2017-01-25 14:30:42 +0100'
-date_gmt: '2017-01-25 13:30:42 +0100'
 categories:
     - Mobile
 tags:
