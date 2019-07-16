@@ -9,12 +9,12 @@ excerpt: "Let's use the Framework in a way that is not supposed to be"
 date: '2018-05-21 14:30:42 +0100'
 date_gmt: 2018-05-21 13:30:42 +0100'
 categories:
-- Mobile
+    - Mobile
 tags:
-- ios
-- json
-- http
-- behavior
+    - ios
+    - json
+    - http
+    - behavior
 cover: /assets/2018-05-21-let-s-think-outside-the-box/cover.jpg
 ---
 
@@ -54,7 +54,6 @@ In order to produce what we want, we will have to make 3 langages cohabit togeth
 
 ## A little setup
 
-Accrochez-vous, c'est là que que tout commence.
 Fasten your seat belt, this is where everything starts.
 
 Our goal is to realize an app that contains features, but does not have a behavior as a structure.<br/>
@@ -97,7 +96,7 @@ class MyFirstModule: NSObject {
     }
 }
 ```
-This module is really simple, it contains two methods, **sayHello** et **sayGoodBye**. Those two methods will write on the console log the text define within it.
+This module is really simple, it contains two methods, **sayHello** and **sayGoodBye**. Those two methods will write on the console log the text define within it.
 
 
 Second module
@@ -150,18 +149,13 @@ Indeed, as defined above, we will act in 3 steps :<br/>
 
 ### Getting the modules
 
-Pour procéder à cette récupération, nous allons utiliser 2 libs :
-
-- Alamofire pour tout ce qui est appels réseaux
-- Gloss pour la transformation du JSON en objet
-
-Tout d'abord la récupération du fichier JSON présent sur notre serveur.<br/>
-Là, rien de bien méchant, on fait un GET avec la librairie Alamofire et on transforme ce JSON en GenericProtocol (une classe créée spécialement pour récupérer nos infos) via une petite classe perso que j'utilise toujours dans mes projets.
-
 In order to retrieve the modules, we will use 2 libs :
 
 - Alamofire for all network calls
 - Gloss to transform from JSON to object
+
+First of all, getting the JSON file hosted on the server.<br/>
+Here, nothing fancy, we just do a GET call with the library Alamofire and then we transform this JSON into GenericProtocol (a class specially created by us in order to recover our data) with a little class made by me that I use in almost all my projects.
 
 The class for transformation
 ```Swift
@@ -226,7 +220,7 @@ struct GenericProtocol: Glossy {
 }
 ```
 As you can see, I use the Gloss library for the mapping (old habit).<br/>
-Our GenericProtocol has a name, a list of actions, et a realObject. I'll come back later on this realObject.<br/>
+Our GenericProtocol has a name, a list of actions,  and a realObject. I'll come back later on this realObject.<br/>
 And then the transformation from JSON to an object after the HTTP call.<br/>
 
 ```Swift
@@ -237,7 +231,7 @@ func getModules() {
         case .success:
             if let jsonArray = response.value as? [JSON] {
                 if let modules = BinderManager.readValue(json: jsonArray, type: GenericProtocol.self) {
-                        self.useModules(modules: modules)
+                    self.useModules(modules: modules)
                 }
             }
             break
@@ -251,7 +245,7 @@ func getModules() {
 }
 ```
 Above, I told you about the realObject. But what is it?<br/>
-Actually, this realObject is our module, we instanciate it and keep a reference on it, I got the inspiration from the function pointers in C for the idea.
+Actually, this realObject is our module, we instantiate it and keep a reference on it, I got the inspiration from the function pointers in C for the idea.
 
 Let's now move on to the loading/instanciation of our modules.
 
@@ -263,9 +257,9 @@ if let programmingObject = ObjectCreator.create(self.name) {
     self.realObject = programmingObject as AnyObject
 }
 ```
-It helps me to instanciate my module based on its name.<br/>
+It helps me to instantiate my module based on its name.<br/>
 At the beginning of the article, I told you above ***Objective-C***, here we are.<br/>
-I use Objective-C to access a really low level part of the framework in order to instanciate classes based on their names.<br/>
+I use Objective-C to access a really low level part of the framework in order to instantiate classes based on their names.<br/>
 Here is the class that allows us to do this (because it is Objective-C, we need to separate in 2 files, the .h and the .m), then with a Bridging-Header so that the Objective-C code is visible from Swift.
 ```Objective-C
 
@@ -290,7 +284,7 @@ Here is the class that allows us to do this (because it is Objective-C, we need 
 
 @end
 ```
-So, if I sum up, we get our JSON from the HTTP call, transform this JSON in object et instanciate some classes that contain some actions (our modules).<br/>
+So, if I sum up, we get our JSON from the HTTP call, transform this JSON in object and instantiate some classes that contain some actions (our modules).<br/>
 Ok, happy, to know that, but who do we proceed to use those so called modules?<br/>
 In the method **getModules**, we call another method **useModules**, let's check this one out.
 
@@ -426,7 +420,7 @@ Pretty cool isn't it? :)
 You are probably asking yourself, but why do all this?<br/>
 For many reasons.<br/>
 The first one being, it's so much fun. You need from time to time venture on some adventures, try new things, push the language, push the framework or the tools you use on a daily basis.
-Breaking the bones of an app can be really useful, to help you establish new architectures, see issues from different angles et to bring you solutions for some other projects in the future.
+Breaking the bones of an app can be really useful, to help you establish new architectures, see issues from different angles and to bring you solutions for some other projects in the future.
 
 That's it, I hope that this article gave you the motivation to try new stuff, and that it will help you to think "**Outside the box**".
 
