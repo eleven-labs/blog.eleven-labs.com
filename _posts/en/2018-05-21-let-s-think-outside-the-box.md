@@ -5,7 +5,7 @@ authors:
     - thuchon
 lang: en
 permalink: /think-outside-the-box/
-excerpt: "Let's use the Framework in a way that is not supposed to be"
+excerpt: "Let's use the Framework in a way that it is not supposed to be"
 date: '2018-05-21 14:30:42 +0100'
 date_gmt: 2018-05-21 13:30:42 +0100'
 categories:
@@ -20,14 +20,14 @@ cover: /assets/2018-05-21-let-s-think-outside-the-box/cover.jpg
 
 ## Introduction
 
-Hi Astronauts, it's been a while that I didn't write an article, and today I decided to come back with panache with a high technical quality one, like we love them.
+Hi Astronauts,  I haven't written an article in a while, and today I decided to come back with panache with a high technical quality one, like we love them.
 
-Warning, for this one you will need to be focus ! Even if the overall idea is pretty simple, you will see some pretty complex code and we will push the framework and use it in a tricky way, so that it will do things that it is not supposed to do ;)
+Warning, for this one you will need to be focused! Even if the overall idea is pretty simple, you will see some pretty complex code and we will push the framework and use it in a tricky way, so that it will do things that it is not supposed to do ;)
 
 Don't you worry guys, I'll do my best to explain every step and shell every piece of code.
 
 It's been a while now that I have been working on projects in which features must be configurable.<br/>
-Most of the time, I'm asked to develop it in a way that features can enabled or disabled remotely.
+Most of the time, I'm asked to develop it in a way that features can be enabled or disabled remotely.
 
 We can take as an example a burger menu, where each entry represents a feature of the app, and we want to choose which ones are accessibles.<br/>
 It's not that difficult to do, and it's really helpful for the business.<br/>
@@ -380,7 +380,7 @@ Let's move forward !
 
 It is just a JSON array that contains 3 objects (modules).<br/>
 The field **name** is the name of the module, **actions** is the list of methods of the module (**func** being the name of each method and **value** the value of the parameter given to the method).<br/>
-If you look closely, I especially added in the first two modules, some actions that don't exist in the classes. I did that because we want our system to be reliable an be able to handle these kind of cases.
+If you look closely, I especially added in the first two modules, some actions that don't exist in the classes. I did that because we want our system to be reliable an be able to handle these kinds of cases.
 
 ### Let's take a small break
 
@@ -402,7 +402,7 @@ Just test what we did :)
 
 ## It's time to run the APP
 
-So everything is setup, we just have to run our app.
+So everything is set up, we just have to run our app.
 Our beautiful app runs and what's happening?
 
 For what we can see in the simulator, our app launches, displays our dummy screen, then opens Safari and navigates to the website of **Eleven-Labs**.<br/>
@@ -419,12 +419,12 @@ Pretty cool isn't it? :)
 
 You are probably asking yourself, but why do all this?<br/>
 For many reasons.<br/>
-The first one being, it's so much fun. You need from time to time venture on some adventures, try new things, push the language, push the framework or the tools you use on a daily basis.
+The first one being, it's so much fun. You need to venture on some adventures from time to time, try new things, push the language, push the framework or the tools you use on a daily basis.
 Breaking the bones of an app can be really useful, to help you establish new architectures, see issues from different angles and to bring you solutions for some other projects in the future.
 
 That's it, I hope that this article gave you the motivation to try new stuff, and that it will help you to think "**Outside the box**".
 
-I give you the link to download the project with everything already setup.<br/>
+I give you the link to download the project with everything already set up.<br/>
 You just have to clone it, run a pod install and for the rest, you already know it.<br/>
 [The Project](https://github.com/ettibo/GenericProtocols){:rel="nofollow noreferrer"}
 
