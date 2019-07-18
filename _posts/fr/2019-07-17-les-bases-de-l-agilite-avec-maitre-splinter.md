@@ -3,7 +3,7 @@ layout: post
 title: "Les bases de l’agilité avec Maître Splinter"
 lang: fr
 permalink: /fr/les-bases-de-l-agilite-avec-maitre-splinter/
-excerpt: 'Vous entendez parler partout d'agilité mais vous ne comprenez pas vraiment de quoi il en retourne ? Les rumeurs courrent en effet autant que le gruyère sur les pizzas des tortues ninja. Avec l'aide du sage et avisé Maître Splinter, démélons le vrai du faux et revenons aux bases de l'agile-jutsu.'
+excerpt: 'Vous entendez parler partout d'agilité mais vous ne comprenez pas vraiment de quoi il retourne ? Les rumeurs courent en effet autant que le gruyère sur les pizzas des tortues ninja. Avec l'aide du sage et avisé Maître Splinter, démêlons le vrai du faux et revenons aux bases de l'agile-jutsu.'
 authors:
     - mae
 categories:
@@ -15,19 +15,18 @@ tags:
 ---
 
 
-Vous entendez parler partout d'agilité mais vous ne comprenez pas vraiment de quoi il en retourne ? Les rumeurs courrent en effet autant que le gruyère sur les pizzas des tortues ninja. 
-Avec l'aide du sage et avisé Maître Splinter, démélons le vrai du faux et revenons aux bases de l'agile-jutsu.
+Vous entendez parler partout d'agilité mais vous ne comprenez pas vraiment de quoi il retourne ? Les rumeurs courent en effet autant que le gruyère sur les pizzas des tortues ninja. Avec l'aide du sage et avisé Maître Splinter, démêlons le vrai du faux et revenons aux bases de l'agile-jutsu.
 
 # 1. “Maitre Splinter, je suis super Agile moi ! Non ?” - Michelangelo
     
-Avant de parler plus en détail des projets et des types d’organisations adapté à l’agilité, parlons méthodologie de travail basé sur l'adaptabilité.
+Avant de parler plus en détail des projets et des types d’organisations adaptész à l’agilité, parlons méthodologie de travail basée sur l'adaptabilité.
 
 ![]({{site.baseurl}}/assets/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/Splinter.jpg)
 
 ## - Agile-Jutsu
     
 
-Les méthodes agiles font référence à des pratiques de pilotage et de réalisation de projets, initialement IT. Elles ont vu le jour en 2001 avec pour origine le [manifeste Agile](https://fr.wikipedia.org/wiki/Manifeste_Agile) et ont pour fondement un cycle de développement itératif. L’idée étant de s’appuyer sur ces itérations pour adapter l’organisation et le développement dans une optique de constante amélioration. Autant d’un point de vue humain que technique.
+Les méthodes agiles font référence à des pratiques de pilotage et de réalisation de projets, initialement IT. Elles ont vu le jour en 2001 avec pour origine le [manifeste Agile](https://fr.wikipedia.org/wiki/Manifeste_Agile) et ont pour fondement un cycle de développement itératif (basé sur la répétition). L’idée étant de s’appuyer sur ces itérations pour adapter l’organisation et le développement dans une optique de constante amélioration. Autant d’un point de vue humain que technique.
 
 [Quatre valeurs fondamentales](https://fr.wikipedia.org/wiki/Manifeste_agile#Quatre_valeurs) sont prônées par le manifeste Agile :
 
@@ -44,7 +43,7 @@ Ces notions doivent permettre (autant dans le pilotage que dans la réalisation 
 
 Les cycles courts de développement imposés par l’approche agile permettent d’éviter un effet tunnel où les client n’auraient aucune visibilité de ce qui est imaginé par l’équipe de développement, et ainsi de se retrouver avec un rejet du livrable final développé pendant plusieurs mois.
 
-L'adaptabilité défendue par l'Agilité ne doit en aucun cas être assimilée à un manque de rigueur. De nombreuses méthodologies et approches permettent de cadrer jour après jour le développement du produit. La force de l’agilité est justement de pouvoir adapter cette rigueur à tout obstacle ou changement de direction qui pourrait se présenter.
+L'adaptabilité défendue par l'Agilité nécessite une vraie rigueur. De nombreuses méthodologies et approches permettent de cadrer jour après jour le développement du produit. La force de l’agilité est justement de pouvoir adapter cette rigueur à tout obstacle ou changement de direction qui pourrait se présenter.
   
 
 ## -   Frameworks
@@ -52,9 +51,9 @@ L'adaptabilité défendue par l'Agilité ne doit en aucun cas être assimilée �
 
 Pour n’en citer qu’un, Scrum est probablement LE framework le plus utilisé aujourd’hui pour du lean project dans la gestion de projet informatique.
 
-Sans entrer dans le détail des actions menées par chaque membre de l’équipe opérationnelle (PO, Scrum Master, Dev, UX), son principe réside dans le découpage des développements en “sprints”. Un sprint peut aller d’1 à 4 semaines, et commence par une estimation et une planification des développements. Il se termine par une démonstration ainsi qu’une rétrospective. Cette dernière cérémonie a beaucoup d’importance pour l’amélioration continue du projet : il s’agit d’analyser le déroulement du sprint achevé et d’en tirer les leçons pour améliorer ses pratiques.
+Sans entrer dans le détail des actions menées par chaque membre de l’équipe opérationnelle (PO, Scrum Master, Dev, UX), le principe de Scrum réside dans le découpage des développements en “sprints”. Un sprint peut durer d’1 à 4 semaines, et commence par une estimation et une planification des développements. Il se termine par une démonstration ainsi qu’une rétrospective. Cette dernière cérémonie a beaucoup d’importance pour l’amélioration continue du projet : il s’agit d’analyser le déroulement du sprint achevé et d’en tirer les leçons pour améliorer ses pratiques.
 
-Il existe en fait de nombreux autres frameworks agiles. Chacun avec leur particularité et leur méthodologie parfois plus adaptés à certaines structures que d’autres. Mais tous partagent les valeurs de transparence à travers un langage commun entre équipe développement et client, la volonté de détecter les problématiques, et celle de s’adapter pour remettre le processus sur les rails si nécessaire.
+Il existe en fait de nombreux autres frameworks agiles. Chacun avec sa particularité et sa méthodologie, parfois plus adaptées à certaines structures que d’autres. Mais tous partagent les valeurs de transparence à travers un langage commun entre équipe développement et client, la volonté de détecter les problématiques, et celle de s’adapter pour remettre le processus sur les rails si nécessaire.
 
 # 2. “Maître Splinter, l’Agilité, c’est pour quel type de Pizza ?” - Donatello
     
@@ -82,7 +81,7 @@ Si votre projet rentre dans ces cas-là, l’agilité est idéale.
 
 ## - Les incompatibilités à la pizza agile
     
-Cependant, l’agilité n’est pas adaptée à tous types de projets (même si cela se fait de plus en plus avec des adaptations de l'agile), et notamment aux **productions répétitives**.
+Cependant, l’agilité n’est pas adaptée à tous types de projets (même si cela se fait de plus en plus avec des adaptations de l'agile), et en particulier aux **productions répétitives**.
 
 Pour prendre exemple sur le secteur automobile et faire un parallèle avec un pour et un contre à l’approche agile.
 
@@ -92,15 +91,15 @@ Par contre, pour la construction en chaîne de voitures déjà modélisées, dé
 
 Également, le côté trop **simpliste** ou **court** de certains produits limite les apports que pourrait avoir la méthode Agile. On peut penser par exemple à la réalisation d’une nouvelle pièce pour améliorer les performances d’une voiture ou corriger une défaillance, ou encore à l’intégration d’un formulaire de contact sur un site web : ces produits ne nécessitent pas la mise en place d’une méthodologie Agile pour être menés à bien.
 
-Techniquement, les approches agiles peuvent donc s’adapter sans problèmes à tout type de projet répondant aux critères “recommandés”, en passant même par des services plus qu’à des secteurs comme le recrutement, le marketing ou le business. On retrouve aussi de plus en plus de monde s’intéressant à l’agilité et mettant en place des méthodologies pour des projets personnels comme le mariage, l’organisation des tâches ménagères, des activités des enfants, etc...
+Techniquement, les approches agiles peuvent donc s’adapter sans problèmes à tous types de projets répondant aux critères “recommandés”, en passant même par des services plus qu’à des secteurs comme le recrutement, le marketing ou le business. On retrouve aussi de plus en plus de monde s’intéressant à l’agilité et mettant en place des méthodologies pour des projets personnels comme le mariage, l’organisation des tâches ménagères, les activités des enfants, etc...
 
-Cependant le projet s’inscrit dans un environnement organisationnel plus grand que lui même : le métier, le sponsor, les services transverses, les directions des entreprises… Tous ces acteurs qui pivotent autour du projet et composent son environnement sont tout autant de critères de réussite ou d’échec à l’intégration d’une approche Agile.
+Cependant le projet s’inscrit dans un environnement organisationnel plus grand que lui-même : le métier, le sponsor, les services transverses, les directions des entreprises… Tous ces acteurs qui pivotent autour du projet et composent son environnement sont tout autant de critères de réussite ou d’échec à l’intégration d’une approche Agile.
 
 
 # 3.  “Et ça marcherait une Pizzeria Agile ?” - Leonardo
     
 
-Quand on transitionne vers une gestion de projet agile c’est toute l’organisation globale de l’entreprise qui doit être transformée. Et ça… C’est bien loin d’être simple, car on touche à la culture de l’entreprise !
+Quand on transitionne vers une gestion de projet agile c’est toute l’organisation de l’entreprise qui doit être transformée. Et ça… C’est bien loin d’être simple, car on touche à la culture de l’entreprise !
 
 Déjà, il est factuellement plus simple pour une petite organisation d’intégrer l’agilité dans son fonctionnement de A à Z qu’une très grande. Plus il y a d’acteurs, plus il y a de réticences au changement.
 
@@ -125,17 +124,17 @@ Il n’est plus question de pointer du doigt une erreur, un acteur du projet, ou
 
 Dans le fonctionnement d’un projet Agile, les acteurs s’**auto-organisent**. Il n’y a pas de dépendance managériale entre eux à proprement parler. Le Product Owner ne sera en aucun cas manager des développeurs, comme le Scrum Master ne sera en aucun cas manager du reste de l’équipe de développement.
 
-Le Sponsor, le représentant métier ou encore les utilisateurs finaux vont exprimer leurs besoins, et l’équipe de développement va proposer les réponses qui semblent les plus adaptées. Un choix et une orientation sera donnée en accord entre tous les acteurs. Il s’agit d’une collaboration.
+Le Sponsor, le représentant métier ou encore les utilisateurs finaux vont exprimer leurs besoins, et l’équipe de développement va proposer les réponses qui semblent les plus adaptées. Un choix et une orientation seront donnés en accord avec tous les acteurs. Il s’agit d’une collaboration.
 
 Par ailleurs, la **responsabilisation** de chacun dans son champ d’actions permet une plus forte implication. Tout le monde est écouté et apporte une vision pertinente et unique en fonction de sa propre expertise.
 
 ## -   Ne pas avoir peur de l’échec
     
-Autre point très important dans le fonctionnement agile d’une entreprise, et qui souvent fait mouche : c'est d'accepter de se tromper. Il est crucial de ne pas voir l’**échec comme une fin**.
+Autre point très important dans le fonctionnement agile d’une entreprise, c'est d'accepter de se tromper. Il est crucial de ne pas voir l’**échec comme une fin**.
 
 Revenir en arrière sur une décision fonctionnelle ou technique est au contraire un moyen de se rendre compte que ce n’était pas la bonne voie à prendre. Que ça a permis d’avoir une vision plus claire et d’améliorer le produit.
 
-Il en va de même pour l’organisation de l’équipe : quand on a un loupé sur une recette qui n’était parfaite et qui a laissé passer un bug, quand une estimation était totalement à côté de la plaque ou quand on pensait qu’une feature serait géniale pour l’utilisateur alors qu’elle n’a finalement aucune valeur ajoutée, se tromper n’est qu’un moyen de s’améliorer.
+Il en va de même pour l’organisation de l’équipe : quand on a un loupé sur une recette qui n’était pas parfaite et qui a laissé passer un bug, quand une estimation était totalement à côté de la plaque ou quand on pensait qu’une feature serait géniale pour l’utilisateur alors qu’elle n’a finalement aucune valeur ajoutée, se tromper n’est qu’un moyen de s’améliorer.
 
 Une organisation ou un produit ne pourra jamais être parfait dès sa première itération.
 
@@ -165,20 +164,20 @@ Appliquer une **approche Lean UX** pour mettre en place l’agile au sein des é
  ## -   Agile at scale
     
 
-De nombreuses entreprises, petites comme conséquentes, et de secteur totalement différents, se sont prêtés à l’exercice de transformer leur organisation vers une approche agile avec beaucoup de réussite.
+De nombreuses entreprises, petites et grandes et de secteurs totalement différents, se sont prêtées avec succès à l’exercice de transformer leur organisation vers une approche agile.
 
-On peut penser notamment à Revenu Quec, entreprise du secteur public au canada ([https://savoiragile.com/2016/06/13/transformation-agile/](https://savoiragile.com/2016/06/13/transformation-agile/)), à PSA et la Société Générale dans l’automobile et la banque ([https://tech4exec.fr/entreprise-agile-en-2018/](https://tech4exec.fr/entreprise-agile-en-2018/) ) ou encore évidemment à Spotify pour le secteur digital, succès de transformation d’organisation aujourd’hui mondialement connu. Attention tout de même, recopier à l’itération prête ce qui à été mis en place ces sociétés ne pourra vous mener qu’à l’échec, ou à une transformation très mitigée. Comme chaque être humain étant différent, chaque organisation est différente, le fonctionnement de vos équipes sera forcément différente, et aura besoin d’une organisation agile propre et adaptée.
+On peut penser notamment à Revenu Quec, entreprise du secteur public au canada ([https://savoiragile.com/2016/06/13/transformation-agile/](https://savoiragile.com/2016/06/13/transformation-agile/)), à PSA et la Société Générale dans l’automobile et la banque ([https://tech4exec.fr/entreprise-agile-en-2018/](https://tech4exec.fr/entreprise-agile-en-2018/) ) ou encore évidemment à Spotify pour le secteur digital, succès de transformation d’organisation aujourd’hui mondialement connu. Attention tout de même, recopier à l’itération près ce qui à été mis en place dans ces sociétés ne pourra vous mener qu’à l’échec, ou à une transformation très mitigée. Comme chaque être humain est différent, chaque organisation l'est aussi. Le fonctionnement de vos équipes sera forcément différent, et nécessitera une organisation agile propre et adaptée.
 
 La clé de leur succès revient à l’agile à l’échelle, ou “**Agile at scale**”. L’agilité à l’échelle a pour force de pouvoir s’adapter aux fonctionnements des organisations, et non plus avoir à sens unique les organisations qui s’adaptent à l’agilité.
 
-L’idée est de pouvoir **découper** les organisations en plus petites équipes, qui auront chacun un plus petit projet ou produit à réaliser. On parle également de “**Features team**” dans le cadre d’un produit découpé en grosses fonctionnalités, qui même interdépendantes peuvent travailler en autonomie avec leur propre objectif.
+L’idée est de pouvoir **découper** les organisations en plus petites équipes, qui auront chacun un plus petit projet ou produit à réaliser. On parle également de “**Feature teams**” dans le cadre d’un produit découpé en grosses fonctionnalités, qui même interdépendantes peuvent travailler en autonomie avec leur propre objectif.
 
 Évidemment la mise en place de l’agilité à l’échelle nécessite de forts ambassadeurs, et des personnes clés qui permettront l’horizontalisation de l’information à travers toutes les équipes.
 
-De nombreux framework existent pour répondre à l’organisation et la mise en place d’une agilité à l’échelle : Scrum@Scale, Nexus, SAFe, LeSS, ou encore le Kanban présenté précédemment qui s’y prête à merveille.
+De nombreux frameworks existent pour répondre à l’organisation et la mise en place d’une agilité à l’échelle : Scrum@Scale, Nexus, SAFe, LeSS, ou encore le Kanban.
 
 ## Conclusion
 
 Pour conclure, l’agilité est une **approche puissante**, avec pour objectif un gain de productivité passant par la motivation et la responsabilisation des équipes. Elle apporte un engagement fort de bout en bout de la chaîne de l’organisation.
 
-Il est important d’avoir conscience que chaque organisation fait comme elle peut, qu’il n’y a pas de solution miracle, et que c’est sur la durée que cette transformation peut être amenée. Par ailleurs, aujourd'hui, de nombreuses organisations embarquant des projets agiles ne sont en aucun cas des organisations full agiles. Et elles réussissent tout de même à faire fonctionner à l’échelle des projets, l’approche Agile. Ce n’est pas optimal, de nombreuses contraintes et challenges se présentent, mais c’est aussi la **réalité** de la gestion de projet aujourd’hui.
+Il est important d’avoir conscience que chaque organisation fait comme elle peut, qu’il n’y a pas de solution miracle, et que c’est sur la durée que cette transformation peut être menée. Par ailleurs, aujourd'hui, de nombreuses organisations embarquent des projets agiles et ne sont en aucun cas des organisations full agiles. Elles réussissent tout de même à faire fonctionner, à l’échelle des projets, l’approche Agile. Ce n’est pas optimal, de nombreuses contraintes et challenges se présentent, mais c’est aussi la **réalité** de la gestion de projet aujourd’hui.
