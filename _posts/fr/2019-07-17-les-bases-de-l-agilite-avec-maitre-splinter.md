@@ -161,7 +161,7 @@ Appliquer une **approche Lean UX** pour mettre en place l’agile au sein des é
 
 ![]({{site.baseurl}}/assets/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/LeanUX.png)
 
- ## -   Agile at scale
+## -   Agile at scale
     
 
 De nombreuses entreprises, petites et grandes et de secteurs totalement différents, se sont prêtées avec succès à l’exercice de transformer leur organisation vers une approche agile.
