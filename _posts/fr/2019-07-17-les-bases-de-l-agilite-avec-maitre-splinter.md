@@ -17,9 +17,9 @@ tags:
 
 Vous entendez parler partout d'agilité mais vous ne comprenez pas vraiment de quoi il retourne ? Les rumeurs courent en effet autant que le gruyère sur les pizzas des tortues ninja. Avec l'aide du sage et avisé Maître Splinter, démêlons le vrai du faux et revenons aux bases de l'agile-jutsu.
 
-# 1. “Maitre Splinter, je suis super Agile moi ! Non ?” - Michelangelo
+# 1. “Maître Splinter, je suis super Agile moi ! Non ?” - Michelangelo
     
-Avant de parler plus en détail des projets et des types d’organisations adaptész à l’agilité, parlons méthodologie de travail basée sur l'adaptabilité.
+Avant de parler plus en détail des projets et des types d’organisations adaptés à l’agilité, parlons méthodologie de travail basée sur l'adaptabilité.
 
 ![]({{site.baseurl}}/assets/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/Splinter.jpg)
 
