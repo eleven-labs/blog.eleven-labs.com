@@ -31,21 +31,21 @@ Most of the time, I'm asked to develop it in a way that features can be enabled 
 
 We can take as an example a burger menu, where each entry represents a feature of the app, and we want to choose which ones are accessibles.<br/>
 It's not that difficult to do, and it's really helpful for the business.<br/>
-Nevertheless, deep down, I always told to myself, there is something missing, I want to push it further.<br/>
+Nevertheless, deep down, I always told myself, there is something missing, I want to push it further.<br/>
 And so, this is why we are here today...
 
 Today, I'll show you how to "drive" the behavior of an app from a remote JSON file stored on a server.<br/>
 WTH?<br/>
 But this guy is crazy, he spent too much time in space.<br/>
 
-In order for the remainder of the article to be easier to understand, we will define few keywords together so that you don't get lost in translation.<br/>
+In order for the remainder of the article to be easier to understand, we will define a few keywords together so that you don't get lost in translation.<br/>
 I will use a lot the word "module". A module can be defined as a gathering of features that can be reused easily and that can be developed outside of an app, we can take the **Pod** as an example.<br/>
-The next word will be "action", when I say "action" : "Do what I asked you" in my app, for the article being, it will be a console output, an opening of a webpage, that kind of stuff.<br/>
+The next word will be "action", when I say "action": "Do what I asked you" in my app, for the article being, it will be a console output, an opening of a webpage, that kind of stuff.<br/>
 Now that we enlightened and defined the necessary words in order to understand clearly this article, I think it is time to move forward.<br/>
 
-**How we will proceed :**
+**How we will proceed:**
 
-In order to produce what we want, we will have to make 3 langages cohabit together :
+In order to produce what we want, we will have to make 3 languages cohabit together:
 
 - **JSON** for configuration
 - **Objective-C** to reach a really deep level in the framework
@@ -56,9 +56,9 @@ In order to produce what we want, we will have to make 3 langages cohabit togeth
 
 Fasten your seat belt, this is where everything starts.
 
-Our goal is to realize an app that contains features, but does not have a behavior as a structure.<br/>
+Our goal is to create an app that contains features, but does not have a behavior as a structure.<br/>
 Each feature will be defined as a module, so separated code bases that live their own lives and available without any dependencies when it needs to be used.<br/>
-Once we understood that, we must tell ourselves that what we want to develop will be in three different parts : 
+Once we understood that, we must tell ourselves that what we want to develop will be in three different parts: 
 
 - The modules
 - Our app
@@ -68,7 +68,7 @@ I will explain soon each part on its own.
 
 Our goal here is to develop an app that will be able while running to load some modules and make them execute some actions that they own, but without the sequence of those actions defined in the app code base.
 
-We will then proceed in 3 steps :
+We will then proceed in 3 steps:
 
 - Get the list of modules and actions from the server
 - Load those modules
@@ -76,7 +76,7 @@ We will then proceed in 3 steps :
 
 ### The modules
 
-Here we will define 3 modules and explain what they do :
+Here we will define 3 modules and explain what they do:
 
 First module
 ```Swift
@@ -96,7 +96,7 @@ class MyFirstModule: NSObject {
     }
 }
 ```
-This module is really simple, it contains two methods, **sayHello** and **sayGoodBye**. Those two methods will write on the console log the text define within it.
+This module is really simple, it contains two methods, **sayHello** and **sayGoodBye**. Those two methods will write on the console log the text defined within it.
 
 
 Second module
@@ -117,7 +117,7 @@ class MySecondModule: NSObject {
     }
 }
 ```
-This module is a clone of the first one, the only difference is the text in the the two methods.
+This module is a clone of the first one, the only difference is the text in the two methods.
 
 
 Third module
@@ -133,7 +133,7 @@ class MyThirdModule: NSObject {
     }
 }
 ```
-This third module contains only one method, it will open a safari instance and go to url that is given as a paremeter, easy stuff.
+This third module contains only one method, it will open a safari instance and go to a url that is given as a paremeter, easy stuff.
 
 As you can see, the modules don't own any intelligence, they just do what we ask them to do.
 
@@ -141,7 +141,7 @@ As you can see, the modules don't own any intelligence, they just do what we ask
 ### The app
 
 Let's now focus on the app, the core of the project.<br/>
-Indeed, as defined above, we will act in 3 steps :<br/>
+Indeed, as defined above, we will act in 3 steps:
 
 - Get our modules from the server
 - Load the modules
@@ -149,7 +149,7 @@ Indeed, as defined above, we will act in 3 steps :<br/>
 
 ### Getting the modules
 
-In order to retrieve the modules, we will use 2 libs :
+In order to retrieve the modules, we will use 2 libs:
 
 - Alamofire for all network calls
 - Gloss to transform from JSON to object
@@ -284,14 +284,14 @@ Here is the class that allows us to do this (because it is Objective-C, we need 
 
 @end
 ```
-So, if I sum up, we get our JSON from the HTTP call, transform this JSON in object and instantiate some classes that contain some actions (our modules).<br/>
-Ok, happy, to know that, but who do we proceed to use those so called modules?<br/>
+So, if I sum up, we get our JSON from the HTTP call, transform this JSON into an object and instantiate some classes that contain some actions (our modules).<br/>
+Ok, happy to know that, but how do we proceed to use those so called modules?<br/>
 In the method **getModules**, we call another method **useModules**, let's check this one out.
 
 ### Execute the actions within the modules
 
 First of all, I would like to apologize, this method is going to be hard to read.<br/>
-I already hear you coming with yours "but the cyclomatic complexity, it's impossible to read, how do you expect us to maintain this ?!"<br/>
+I already hear you coming with your "but the cyclomatic complexity, it's impossible to read, how do you expect us to maintain this?!"<br/>
 Guys, let's be serious, call some methods on runtime objects, come on, you already know deep down inside that it won't be that clean and it won't be just 2 lines.<br/>
 I just ask you to trust me on this one, and I'll explain you the best I can what it does.<br/>
 
@@ -316,7 +316,7 @@ func useModules(modules: [GenericProtocol]) {
 }
 ```
 
-Let's get ready to rumble !!! And explain this method line by line:
+Let's get ready to rumble!!! And explain this method line by line:
 
 We loop on list of modules.<br/>
 We check that every module has a list of actions.<br/>
@@ -330,7 +330,7 @@ If the action does not have a parameter, we then just execute the action.<br/>
 Wow, that was intense, but I think that was necessary in order that everyone understands everything.<br/>
 
 So, now that's cool, we have an app that can have a behavior driven outside of it, but let's have a look on this behavior actually.<br/>
-Let's move forward !
+Let's move forward!
 
 ### The behavior of our app
 
@@ -341,8 +341,7 @@ Let's move forward !
         "actions": [
             {
                 "func": "sayHello"
-            }
-            ,
+            },
             {
                 "func": "showPopup"
             },
