@@ -49,7 +49,7 @@ L'adaptabilité défendue par l'Agilité nécessite une vraie rigueur. De nombre
 ## -   Frameworks
     
 
-Pour n’en citer qu’un, Scrum est probablement LE framework le plus utilisé aujourd’hui pour du lean project dans la gestion de projet informatique.
+Pour n’en citer qu’un, Scrum est probablement LE framework le plus utilisé aujourd’hui pour du lean project dans la gestion de projet informatique. Pour les non-initiés, le Lean Project est un type de management de projet centré sur le besoin client, et dont le but est de produire le plus de valeur possible avec le moins de perte de temps et de développement possibles.
 
 Sans entrer dans le détail des actions menées par chaque membre de l’équipe opérationnelle (PO, Scrum Master, Dev, UX), le principe de Scrum réside dans le découpage des développements en “sprints”. Un sprint peut durer d’1 à 4 semaines, et commence par une estimation et une planification des développements. Il se termine par une démonstration ainsi qu’une rétrospective. Cette dernière cérémonie a beaucoup d’importance pour l’amélioration continue du projet : il s’agit d’analyser le déroulement du sprint achevé et d’en tirer les leçons pour améliorer ses pratiques.
 
