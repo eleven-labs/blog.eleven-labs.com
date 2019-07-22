@@ -384,7 +384,7 @@ If you look closely, I especially added in the first two modules, some actions t
 ### Let's take a small break
 
 We coded our modules.<br/>
-We realised an app that is able to load and use those modules.<br/>
+We developped an app that is able to load and use those modules.<br/>
 We defined the behavior of our app.<br/>
 What are the next steps?<br/>
 The second to last step is to call our method **getModules** in **viewDidLoad**
