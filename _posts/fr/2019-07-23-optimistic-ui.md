@@ -1,18 +1,23 @@
 ---
 layout: post
-title: Une application React plus réactive - L’Optimistic UI
-excerpt: Dans cet article, nous allons vous présenter l'optimistic UI et de vous montrer comment l'implémenter dans votre application ReactJs facilement grâce à ApolloJS
+title: Une application React plus réactive - L'Optimistic UI
+excerpt: Dans cet article, nous allons vous présenter l'optimistic UI et vous montrer comment l'implémenter dans votre application React facilement grâce à ApolloJS
 authors:
     - kcordier
-permalink: /fr/optimistic-ui/
-date: '2019-07-23 00:00:00 +0100'
-date_gmt: '2019-07-23 00:00:00 +0100'
+permalink: /fr/optimistic-ui-avec-react-et-apollo-js/
+date: '2019-07-30 00:00:00 +0100'
+date_gmt: '2019-07-30 00:00:00 +0100'
 categories:
-    - javascript
+    - Javascript
+    - React
+    - ApolloJS
 tags:
     - javascript
     - react
+    - apollo
     - apolloJS
+    - UX
+    - optimistic UI
 ---
 
 ## Intro
@@ -24,7 +29,7 @@ OK mais si je vous montre ça :
 Ça vous fait grincer des dents ?  
  *\- Ouais mais si le serveur met du temps à réagir je peux rien y faire en tant que dev JS ?*  
 Et c’est là qu'intervient le sujet de notre article : l’**Optimistic UI**.  
-Le but de l’article est de vous présenter cette technique et de vous montrer comment l'implémenter dans votre application ReactJs facilement grâce à ApolloJS. 
+Le but de l’article est de vous présenter cette technique et de vous montrer comment l'implémenter dans votre application React facilement grâce à ApolloJS. 
 
 
 ## Définition
@@ -42,7 +47,7 @@ Ici, le message s’affiche dans la conversation alors que la bar de chargement 
 
 ## Mais la réalité est elle si optimiste ?
 
-Dans la vie, j'essaie de voir le verre à moitié plein, mais malheureusement tout n’est pas rose, et il existe des cas où votre requête serveur vous retournera une erreur. Que la faute soit dûe au serveur ou au client, comment signaler à votre utilisateur que l’action qu’il vient de réaliser n’est pas si un succès que ça ?  
+Dans la vie, j'essaie de voir le verre à moitié plein, mais malheureusement tout n’est pas rose, et il existe des cas où votre requête serveur vous retournera une erreur. Que la faute soit due au serveur ou au client, comment signaler à votre utilisateur que l’action qu’il vient de réaliser n’est pas si un succès que ça ?  
 La méthode la plus facile est de rollback à l'état avant l’action tout en informant l’utilisateur de l’erreur via un message d’erreur.  
 
 ## Mise en place
