@@ -272,7 +272,7 @@ const ArticleComments = ({ articleId }) => (
 );
 ```   
 La problématique dans le cas de l’ajout et que nous ajoutons un objet en cache sans connaître son ‘ID’. L’idée est alors de générer un ID temporaire unique en attendant le retour.  
-La divergence d’ID va poser un problème pour tout appel de mutation nécessitant un identifiant, il faut donc bien vérifier l'intégrité de l’ID avant de donner accès aux autres mutations telles que la modification.  
+La divergence d’ID va poser un problème pour tout appel de mutation nécessitant un identifiant, il faut donc bien vérifier l'intégrité de l’ID avant de donner accès aux autres mutations, comme par exemple la modification.  
 
 Mais “dans quel cas ne pas l'utiliser ?” vous allez me demander. Il est déconseillé d’utiliser l’**optimistic UI** sur des formulaires nécessitant une validation serveur avec les erreurs bind sur les champs, ici le retour est trop important pour ne pas l’attendre.
 Je vois un second cas ou je vous déconseille d’utiliser cette technique. Si l’ajout ou la modification d’un objet à des conséquences sur d’autres objets d’autres queries. La meilleure manière et alors de re render ces différents queries.  
