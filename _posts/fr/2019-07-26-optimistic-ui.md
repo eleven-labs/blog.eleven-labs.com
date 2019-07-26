@@ -5,8 +5,6 @@ excerpt: Dans cet article, nous allons vous présenter l'optimistic UI et vous m
 authors:
     - kcordier
 permalink: /fr/optimistic-ui-avec-react-et-apollo-js/
-date: '2019-07-30 00:00:00 +0100'
-date_gmt: '2019-07-30 00:00:00 +0100'
 categories:
     - Javascript
     - React
