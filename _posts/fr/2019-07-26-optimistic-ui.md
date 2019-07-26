@@ -20,7 +20,7 @@ tags:
 
 ## Intro
 
-Êtes-vous quelqu’un de patient ? Si oui, alors c’est bien, c’est une vertu. Mais êtes-vous prêt à attendre 3 secondes le retour d’un appel api pour avoir une réaction de la part d’une application front ?  
+Êtes-vous quelqu’un de patient ? Si oui, alors c’est bien, c’est une vertu. Mais êtes-vous prêt à attendre 3 secondes le retour d’un appel API pour avoir une réaction de la part d’une application front ?  
  *\- Ça va 3 secondes dans la vie d’une personne.*  
 OK mais si je vous montre ça :  
 ![]({{ site.baseurl }}/assets/2019-07-23-optimistic-ui/no_reactivity.gif)  
@@ -33,7 +33,7 @@ Le but de l’article est de vous présenter cette technique et de vous montrer 
 ## Définition
 
 L’**Optimistic UI** est une technique de développement front permettant d’améliorer la réactivité d’une interface. Elle consiste à simuler l’état le plus optimal lors d’une action utilisateur pouvant prendre du temps.  
-Dans le cas normal nous attendons la fin de l’appel api pour changer l'état de notre interface :  
+Dans le cas normal nous attendons la fin de l’appel API pour changer l'état de notre interface :  
 ![]({{ site.baseurl }}/assets/2019-07-23-optimistic-ui/simple_event_call.png)   
 Si le serveur prend du temps, l’utilisateur peut penser à un dysfonctionnement de l'application.  Il risque alors de cliquer à nouveau sur le bouton et de multiplier les appels au serveur. Pour régler ce problème nous pouvons faire patienter l'utilisateur avec un état “En chargement” grâce à un loader bien connu des utilisateurs de 3G :  
 ![]({{ site.baseurl }}/assets/2019-07-23-optimistic-ui/loading_event_call.png)   
@@ -50,7 +50,7 @@ La méthode la plus facile est de rollback à l'état avant l’action tout en i
 
 ## Mise en place
 Maintenant que vous avez bien compris les tenants et aboutissants de l’**Optimistic UI**, mettons-le en oeuvre dans notre application React.  
-À partir d’ici je présume que votre application React utilise GraphQL et ApolloJS pour la communication avec vos apis. Si ce n’est pas le cas et que vous voulez le mettre en place suivez [cet article](https://blog.eleven-labs.com/fr/commencer-avec-apollojs/).  
+À partir d’ici je présume que votre application React utilise GraphQL et ApolloJS pour la communication avec vos APIs. Si ce n’est pas le cas et que vous voulez le mettre en place suivez [cet article](https://blog.eleven-labs.com/fr/commencer-avec-apollojs/).  
 Pour une meilleure compréhension du code suivant, mettons nous en situation : 
 Imaginons une application permettant de noter des articles via un système de pouce bleu et de pouce rouge. L’idée ici est d'afficher à l’utilisateur la valeur exacte du nombre de pouces vers le haut de l’article précédemment noté.  
 ```jsx
