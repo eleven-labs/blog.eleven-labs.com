@@ -3,7 +3,7 @@ layout: post
 title: "Les Dark Patterns et le Product Ownership"
 lang: fr
 permalink: /fr/les-dark-patterns-et-le-product-ownership/
-excerpt: "Les Darks Patterns sont un ensemble de techniques utilisées sur des sites ou des applications numériques pour vous forcer à faire des choix que vous n'auriez pas fait consciemment. L'objectif de cet article est de faire prendre conscience aux concepteurs de produits numériques, et plus particulièrement les Product Owners et Product Managers, de la puissance qui se cache derrière les dark patterns et qu'un grand pouvoir implique de grandes responsabilités"
+excerpt: "Les Dark Patterns sont un ensemble de techniques utilisées sur des sites ou des applications numériques pour vous forcer à faire des choix que vous n'auriez pas fait consciemment. L'objectif de cet article est de faire prendre conscience aux concepteurs de produits numériques, et plus particulièrement les Product Owners et Product Managers, de la puissance qui se cache derrière les dark patterns et qu'un grand pouvoir implique de grandes responsabilités"
 authors:
     - pbrenot
 categories:
@@ -15,7 +15,7 @@ tags:
 ---
 
 
-Les Darks Patterns (ou "design douteux", pour faire plaisir au -petit- Robert) sont un ensemble de techniques utilisées sur des sites ou des applications numériques pour vous forcer à faire des choix que vous n'auriez pas fait consciemment.
+Les Dark Patterns (ou "designs douteux", pour faire plaisir au -petit- Robert) sont un ensemble de techniques utilisées sur des sites ou des applications numériques pour vous forcer à faire des choix que vous n'auriez pas fait consciemment.
 Le but de cet article n'est pas d'en faire une liste exhaustive, ni même d'aborder comment cela est devenu une norme, et encore moins de fustiger les entreprises et services qui les utilisent consciemment (je laisse cette lourde tache à un expert : [Harry Brignull](https://www.darkpatterns.org/)).
 Mon objectif ici est de faire prendre conscience aux concepteurs de produits numériques, et plus particulièrement les Product Owners et Product Managers, de la puissance qui se cache derrière les dark patterns et "*qu'un grand pouvoir implique de grandes responsabilités*" ;).
 
@@ -39,12 +39,12 @@ Il est très facile de jouer là-dessus, spécialement sur les applications.
 
 ### L' INTERMITENT VARIABLE REWARD
 On l'appelle aussi le concept de la machine à sous. On regarde en moyenne 80 à 150 fois notre téléphone par jour. À partir de là, maximiser l'effet addictif d'une application est simple : il suffit de lier l'action d'un utilisateur (un swipe down, un refresh, un clic, une ouverture de page...) à une variable aléatoire qui aurait un pourcentage de chances d'offrir une récompense. L'effet addictif est immédiat et l'utilisateur s'enferme petit à petit dans un circuit de récompense qui est positif pour le business, certes, mais pas pour lui.
-Un exemple  simple : sur 9gag ou instagram un swipe down (pour rafraîchir) ou une réouverture de l'application a un pourcentage de chance de faire remonter des publications anciennes, vues ou non (plutôt qu'un affichage chronologique simple). Combien de fois avez-vous inconsciemment réouvert ces applications après les avoir fermées 30 secondes auparavant ?
+Un exemple  simple : sur 9gag ou Instagram un swipe down (pour rafraîchir) ou une réouverture de l'application a un pourcentage de chance de faire remonter des publications anciennes, vues ou non (plutôt qu'un affichage chronologique simple). Combien de fois avez-vous inconsciemment réouvert ces applications après les avoir fermées 30 secondes auparavant ?
 
 ### LE SOCIAL APPROVAL ET LES CHOIX INCONSCIENTS
 Notre besoin d'approbation est un des leviers de motivation les plus forts. Par des designs de suggestion, on peut manipuler les gens pour les faire créer des engrenages d’approbation sociale.  
 Un exemple ? Sur Facebook, si je tag un ami dans une photo suite à l’apparition d'une pop-in qui m’interrompt, m'invitant à le faire, est-ce que j’ai fait un choix conscient ? Je réponds plutôt à une suggestion de Facebook... Je ne l'aurais peut être pas fait de moi-même via le bouton de bas de page. Une notification est envoyée à mon ami, c'est bon pour le business.
-Il est très facile de contrôler cela et d'en faire des réactions en chaîne. Linkedin est très bon là-dessus : vous recevez une invitation de quelqu’un, vous l’acceptez, on vous recommande d'ajouter d'autres gens qui sont proches, et qui une fois qu'ils auront accepté rentreront dans le même processus. Est-ce que le choix est conscient ? A-t'il vraiment été souhaité par toutes ces personnes ou se sont elles retrouvées emprisonnées dans un contexte de réciprocité sociale en chaîne ?
+Il est très facile de contrôler cela et d'en faire des réactions en chaîne. Linkedin est très bon là-dessus : vous recevez une invitation de quelqu’un, vous l’acceptez, on vous recommande d'ajouter d'autres gens qui sont proches, et qui une fois qu'ils auront accepté rentreront dans le même processus. Est-ce que le choix est conscient ? A-t-il vraiment été souhaité par toutes ces personnes ou se sont elles retrouvées emprisonnées dans un contexte de réciprocité sociale en chaîne ?
 
 ### LE FOIE GRAS DE CONTENU
 Un seul mot : Youtube.
@@ -74,7 +74,7 @@ Le Product Owner, bien qu'assez loin de la stratégie business, est garant de la
 dans un contexte AGILE, tout est encore possible à ce stade.
 Bien souvent, les dark patterns sont créés dans un contexte où il fallait répondre à une contrainte business basée sur des metrics. Posez-vous la question (et posez leur aussi) : pourquoi chercher à augmenter le temps passé sur tel service de 2% ? Qu'est-ce que cela va générer ? La réponse sera souvent que cela va potentiellement créer plus de revenus (publicité, bien souvent). Mais est-ce que la modification demandée est la bonne (si dark pattern), ne pourrait-on pas améliorer plutôt telle feature de recommandation pour réduire la frustration de l'utilisateur et lui donner envie de rester de lui-même ? Lui donner une nouvelle raison de rester ?
 
-Une autre option pourrait être de revoir les sucess metrics de la feature ou les metrics business. Que vaut vraiment le temps passé d'un utilisateur quand on sait que pendant une grande partie du temps il n'est pas "concentré" sur le service ou le produit ?
+Une autre option pourrait être de revoir les success metrics de la feature ou les metrics business. Que vaut vraiment le temps passé d'un utilisateur quand on sait que pendant une grande partie du temps il n'est pas "concentré" sur le service ou le produit ?
 Il est d'ailleurs de plus en plus commun de penser qu'un business model basé uniquement sur l'engagement des utilisateurs ne survivra pas les prochaines années.
 
 
@@ -88,7 +88,7 @@ Qu'en conclure ? Regardez les grandes dernières actions de Google et Facebook d
 
 Nous sommes tous responsables de ce que nous concevons, chacun à notre échelle.
 Il est vrai que la notion de dark pattern est très liée à l'éthique, et sa vision est donc par conséquent très subjective.
-Cependant, de plus en plus d'utilisateurs délaissent des services et des applications qui bafouent les règles éthiques, et effectuer un retropédalage pour ces grandes entreprises est souvent extrêmement couteux.
+Cependant, de plus en plus d'utilisateurs délaissent des services et des applications qui bafouent les règles éthiques, et effectuer un rétropédalage pour ces grandes entreprises est souvent extrêmement coûteux.
 Ne soyez pas dans la réaction, soyez dans la pro-activité.
 
  
