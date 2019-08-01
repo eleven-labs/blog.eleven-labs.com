@@ -95,7 +95,7 @@ Ne soyez pas dans la réaction, soyez dans la pro-activité.
 
 ## RÉFÉRENCES
 
-- https://humanebydesign.com/
-- https://www.darkpatterns.org/
-- http://www.lefigaro.fr/secteur/high-tech/2018/07/03/32001-20180703ARTFIG00220-les-dark-patterns-comment-les-technologies-nous-manipulent.php
-- https://graphism.fr/mieux-comprendre-et-eviter-les-dark-patterns/
+- [https://humanebydesign.com](https://humanebydesign.com/)
+- [https://www.darkpatterns.org](https://www.darkpatterns.org/)
+- [http://www.lefigaro.fr](http://www.lefigaro.fr/secteur/high-tech/2018/07/03/32001-20180703ARTFIG00220-les-dark-patterns-comment-les-technologies-nous-manipulent.php)
+- [https://graphism.fr](https://graphism.fr/mieux-comprendre-et-eviter-les-dark-patterns/)
