@@ -14,7 +14,7 @@ tags:
     - ES6
 ---
 
-Vous l'attendiez (si si, ne dites pas le contraire), la voici ! La deuxième partie des nouveautés d'ES6 est arrivée (psst, si tu n'as pas lu la partie I, elle se trouve [ici](https://blog.eleven-labs.com/fr/lesnouveauteses6parti) ! Il est conseillé de l'avoir lu pour comprendre plus aisément certaines notions qui ne seront pas réexpliquées ici.
+Vous l'attendiez (si si, ne dites pas le contraire), la voici ! La deuxième partie des nouveautés d'ES6 est arrivée (psst, si tu n'as pas lu la partie I, elle se trouve [ici](https://blog.eleven-labs.com/fr/lesnouveauteses6parti) ! Il est conseillé de l'avoir lue pour comprendre plus aisément certaines notions qui ne seront pas réexpliquées ici.
 
 ## destructuring
 
@@ -94,12 +94,12 @@ Pour creuser le sujet et voir pleins d'exemples différents, je vous conseille d
 
 ## rest parameter & spread operator
 
-Le paramètre du reste et le spread operator font partie du sucre syntaxique apporté par ES6, tout comme le destructuring. Ils consistent tout les deux à effectuer plus simplement des opérations complexes sur les objets itérables en utilisant la syntaxe `...`.
+Le paramètre du reste et le spread operator font partie du sucre syntaxique apporté par ES6, tout comme le destructuring. Ils consistent tous les deux à effectuer plus simplement des opérations complexes sur les objets itérables en utilisant la syntaxe `...`.
 
 ### rest parameters
 
 Le paramètre du reste (appelé ainsi car c'est un paramètre de fonction qui va servir à ramasser les "restes") remplace un mot-clé utilisé par les fonctions appelé `arguments`. Il permettait, comme son nom l'indique, de récupérer les arguments d'une fonction sous forme de tableau, qui ne conserve aucune des propriétés ou méthodes d'un tableau mis à part `length`.
-De plus,  il était impossible de ne mettre qu'une partie des paramètres dans l'objet `arguments`, qui par ailleurs n'est pas disponible dans les arrow function en plus d'être plus gourmand en performances.
+De plus,  il était impossible de ne mettre qu'une partie des paramètres dans l'objet `arguments`, qui par ailleurs n'est pas disponible dans les arrow functions en plus d'être plus gourmand en performances.
 
 Le rest parameter permet donc d'assembler plusieurs valeurs dans un tableau, sans avoir les problèmatiques de l'`arguments`.
 
@@ -148,7 +148,7 @@ console.log.apply(console, ["foo", "bar"]);
 console.log(...["foo", "bar"]); // même résultat
 ```
 
-Le spread operator se marie à merveille avec l'utilisation du destructuring:
+Le spread operator se marie à merveille avec l'utilisation du destructuring :
 
 ```javascript
 const words = ["foo", "bar", "baz"];
@@ -209,7 +209,7 @@ str1 === str2; // => false
 
 ## Maps
 
-Les Maps sont des dictionnaires qui contiennent des clés dont l'ordre d'insertion est mémorisé, auxquelles sont associées des valeurs. Bien qu'ils sont similaires aux objets, il existe certaines différences:
+Les Maps sont des dictionnaires qui contiennent des clés dont l'ordre d'insertion est mémorisé, auxquelles sont associées des valeurs. Bien qu'ils sont similaires aux objets, il existe certaines différences :
 
 - Un objet possède un `prototype`, ce qui n'est pas le cas des maps.
 - Les clés d'un objet sont soit des chaînes de caractères, soit des `Symbols`, alors que celles d'un Map peuvent avoir n'importe quelle valeur. Par exemple:
@@ -227,7 +227,7 @@ myMap.set(NaN, 1);
 myMap.get(NaN); // 1
 ```
 
-- Les clés des Maps sont ordonnées par ordre d'insertion comme dit précédemment, contrairement à celles des objets qui n'ont pas d'ordre particuliers. Il est par ailleurs possible d'itérer sur les clés des Maps (avec un `forEach` par exemple), ce qui est impossible avec un objet car il faut au préalable récupérer les clés pour pouvoir itérer dessus. Cela permet d'obtenir facilement un tableau, par exemple :
+- Les clés des Maps sont ordonnées par ordre d'insertion comme dit précédemment, contrairement à celles des objets qui n'ont pas d'ordre particulier. Il est par ailleurs possible d'itérer sur les clés des Maps (avec un `forEach` par exemple), ce qui est impossible avec un objet car il faut au préalable récupérer les clés pour pouvoir itérer dessus. Cela permet d'obtenir facilement un tableau, par exemple :
 
 ```javascript
 const myEntries = [...myMap]; // […[key, value]]
@@ -242,9 +242,9 @@ const myEntries = [...myMap.entries()];
 
 L'ES6 apporte aussi de nouvelles méthodes pour les tableaux tels que `from`, qui permet de créer un tableau à partir d'un objet itérable (comme une string, un objet, etc), ou `findIndex` ou encore `fill`, etc.
 
-Comme il serait trop long de toute les énumérer ici, je vous renvoie vers cet [article](https://www.hackerearth.com/fr/practice/notes/hemanth12/es6-array-methods/). Si vous êtes anglophobes, n'hésitez pas à lire la [doc de MDN sur les array](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array) ainsi que la [doc de MDN sur les chaînes de caractères](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String) qui vous donnera de nombreux exemples.
+Comme il serait trop long de toutes les énumérer ici, je vous renvoie vers cet [article](https://www.hackerearth.com/fr/practice/notes/hemanth12/es6-array-methods/). Si vous êtes anglophobes, n'hésitez pas à lire la [doc de MDN sur les array](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array) ainsi que la [doc de MDN sur les chaînes de caractères](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String) qui vous donnera de nombreux exemples.
 
-Certaines méthodes sont beaucoup plus utilisées que d'autres, comme par exemple le `map`, le `reduce`, le `push`, ou encore le `join`. Il est cependant utile de connaître (ou du moins de savoir qu'elles existent) toutes les méthodes existantes car elles ont toutes leur utilité dans des cas spécifiques sur lesquels vous tomberez forcément un jour ou l'autre.
+Certaines méthodes sont beaucoup plus utilisées que d'autres, comme par exemple le `map`, le `reduce`, le `push`, ou encore le `join`. Il est cependant utile de connaître (ou du moins de savoir qu'elles existent) toutes les méthodes, car elles ont toutes leur utilité dans des cas spécifiques sur lesquels vous tomberez forcément un jour ou l'autre.
 
 ## Conclusion
 
