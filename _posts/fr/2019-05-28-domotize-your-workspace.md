@@ -15,15 +15,15 @@ tags:
     - domotique
 ---
 
-Alors que la domotique “grand public” s’installe de plus en plus dans les foyers, notamment grâce aux nouveaux assistants personnels (Google Home, Alexa) ou encore aux solutions de domotisation “clefs en main”, elle est plutôt absente dans les environnements pro, et particulièrement dans notre cas celui du développement. Pourtant les choses ont pas mal bougés ces dernières dans ce domaine.
+Alors que la domotique “grand public” s’installe de plus en plus dans les foyers, notamment grâce aux nouveaux assistants personnels (Google Home, Alexa) ou encore aux solutions de domotisation “clefs en main”, elle est plutôt absente dans les environnements pros, et particulièrement dans notre cas celui du développement. Pourtant les choses ont pas mal bougés ces dernières dans ce domaine.
 
-Dans cet article, nous allons voir comment construire un dashboard d’équipe, à l’aide de la solution domotique [home-assistant.io](https://www.home-assistant.io) et de quelques objets connectées (Philips Hue, Google Home).
+Dans cet article, nous allons voir comment construire un dashboard d’équipe à l’aide de la solution domotique [home-assistant.io](https://www.home-assistant.io) et de quelques objets connectés (Philips Hue, Google Home).
 
 ## home-assistant.io
 
-Mais qu’est-ce donc que home assistant ? Home Assistant (hass) est une solution domotique/automatisation open source, privacy-first qui commence à se faire vraiment bien connaître dans le monde de la domotisation. Il est développé en python, basé sur un système événementielle et “packagé” avec l’ensemble des plugins (pas d’installation de plugin à posteriori).
+Mais qu’est-ce donc que Home Assistant ? Home Assistant (hass) est une solution domotique/automatisation open source, privacy-first qui commence à se faire vraiment bien connaître dans le monde de la domotisation. Elle est développée en python, basée sur un système événementiel et “packagé” avec l’ensemble des plugins (pas d’installation de plugin à posteriori).
 
-Nous allons tout d’abord installer hass, et pour se faire, plusieurs choix se portent à nous (Docker, hassbian ou hass.io). Dans le cadre de ce tuto, nous allons le faire tourner sous docker mais je vous invite à tester hassbian qui marche très bien sous raspberry.
+Nous allons tout d’abord installer hass, et pour se faire, plusieurs choix se portent à nous (Docker, hassbian ou hass.io). Dans le cadre de ce tuto, nous allons le faire tourner sous Docker mais je vous invite à tester Hassbian qui marche très bien sous raspberry.
 
 Cela tient en deux commandes (sous linux) : 
 
@@ -40,8 +40,8 @@ Et voilà, votre home-assistant tourne maintenant en local, et vous pouvez y acc
 ![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/connexion-home.png)
 
 
-Il vous suffit maintenant simplement de créer votre login/pass pour accéder à hass.
-Nous allons donc voir maintenant comment activer un [component](https://www.home-assistant.io/components/), en commençant avec [sensor.gitlab_ci](https://www.home-assistant.io/components/sensor.gitlab_ci/).
+Il vous suffit maintenant de créer votre login/pass pour accéder à hass.
+Nous allons voir à présent comment activer un [component](https://www.home-assistant.io/components/), en commençant avec [sensor.gitlab_ci](https://www.home-assistant.io/components/sensor.gitlab_ci/).
 
 ## Components et Sensor Gitlab CI
 
@@ -57,11 +57,11 @@ configuration.yaml   deps                 home-assistant.log   scripts.yaml     
 
 ``` 
 
-Globalement, toute la configuration se passe dans le fichier `configuration.yaml`, les autres .yaml étant inclus dans celui ci.
+Globalement, toute la configuration se passe dans le fichier `configuration.yaml`, les autres .yaml étant inclus dans celui-ci.
 
-Comme vous pouvez le voir, celui-ci est déjà rempli avec un certain nombre d’éléments, éléments qui sont déjà visible sur votre home-assistant (map, plugin jour/nuit et météo).
+Comme vous pouvez le voir, il est déjà rempli d'un certain nombre d’éléments, qui sont visibles sur votre home-assistant (map, plugin jour/nuit et météo).
 
-Pour faire simple, il existe plusieurs types de component installable sur hass, celui qui va nous intéresser ici c’est le type sensor, celui de gitlab-ci :
+Pour faire simple, il existe plusieurs types de components installables sur hass, celui qui va nous intéresser ici c’est le type sensor, celui de gitlab-ci :
 
 Dans la partie sensor du fichier configuration.yaml :
 
@@ -74,9 +74,9 @@ sensor:
 
 ```
 
-Pour recuperer votre token gitlab, c'est par [ici](https://gitlab.com/profile/personal_access_tokens)
+Pour récupérer votre token gitlab, c'est par [ici](https://gitlab.com/profile/personal_access_tokens)
 
-On va maintenant vérifier que le fichier yaml est correcte, puis relancer home-assistant pour prendre la configuration en compte.
+On va maintenant vérifier que le fichier yaml est correct, puis relancer home-assistant pour prendre la configuration en compte.
 
 ![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/restart.png)
 
@@ -94,8 +94,8 @@ Et si vous cliquez sur le sensor, vous aurez plus d’infos :
 
 ## Design
 
-Bon c’est bien sympa mais on ne voit pas grand chose et c’est assez minimaliste tout ca. Allons ajouter un coup de template la dessus.
-Hass utilise maintenant [lovelace](https://www.home-assistant.io/lovelace/) par defaut. Nous allons activer le mode yaml de lovelace pour simplifier l'édition.
+Bon c’est bien sympa mais on ne voit pas grand chose et c’est assez minimaliste tout ca. Allons ajouter un coup de template là-dessus.
+Hass utilise maintenant [lovelace](https://www.home-assistant.io/lovelace/) par défaut. Nous allons activer le mode yaml de lovelace pour simplifier l'édition.
 
 ```yaml
 #configuration.yaml
@@ -108,11 +108,11 @@ Et créer le fichier de configuration qui va bien dans le répertoire racine.
 ```sh
 $ touch ui-lovelace.yaml
 ```
-Comme à chaque modification du fichier `configuration.yaml`, pensez à redémarrer hass.
+Comme à chaque modification du fichier `configuration.yaml`, pensez à redémarrer Hass.
 
 
 
-Next, nous avons besoin de faire apparaitre les valeurs secondaires du plugin gitlab comme un sensor à part entière, nous allons donc les créer à la mano.
+Next, nous avons besoin de faire apparaître les valeurs secondaires du plugin Gitlab comme un sensor à part entière, nous allons donc les créer "à la mano".
 
 ```yaml
 #configuration.yaml
@@ -133,12 +133,12 @@ sensor:
     entity_id: test_gitlab_projet_x
 
 ```
-Attention à bien inserer les deux nouveaux sensor sous le noeud `sensor` existant déjà dans le fichier configuration
+Attention à bien insérer les deux nouveaux sensors sous le noeud `sensor` existant déjà dans le fichier configuration.
 
 
 Ici `state_attr` nous permet de récupérer l’attribut 'commit date' du sensor gitlab.
 
-Enfin, il nous reste plus qu’à configurer notre template pour afficher notre card
+Enfin, il nous reste plus qu’à configurer notre template pour afficher notre card.
 
 ```yaml
 #ui-lovelace.yaml
@@ -200,11 +200,11 @@ Puis, il va falloir créer une automation pour mettre à jour le status de la CI
 ```
 Ici nous avons : 
 - `trigger`: chaque changement lance cette automation
-- `condition`: il faut que notre entity branch ai la valeur master
+- `condition`: il faut que notre entity branch ait la valeur master
 - `action`: si la condition est remplie, nous changeons la valeur de notre variable avec le status de la pipeline
 
 
-Enfin, il nous reste plus qu'a ajouter la card dans lovelace
+Enfin, il nous reste plus qu'à ajouter la card dans lovelace.
 
 ```yaml
 #ui-lovelace.yaml
@@ -221,7 +221,7 @@ Le résultat :
 ![home-assistant gitlab-ci]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/master-branch-result.png)
 
 
-Voilà pour la partie design, il y à des dizaines d’amélioration à apporter que nous ne verrons pas dans cet article.
+Voilà pour la partie design, il y à des dizaines d’améliorations à apporter que nous ne verrons pas dans cet article.
 
 Par exemple : 
 - Changer la couleur de la card en fonction du test / résultat de la pipeline
