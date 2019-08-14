@@ -46,14 +46,14 @@ Mais ce qu’il faut savoir, c’est que c’est OK de ne pas passer par la gran
 
 ## Viser toujours plus loin
 
-Maintenant que tout ça était fait, il fallait passer à la prochaine étape, celle qui était pour d’autres une étape initiale, trouver une entreprise où je serais dans une vraie équipe de développement, avec de vraies problématiques, et un environnement vraiment orienté dev.
+Maintenant que tout ça était fait, il fallait passer à la prochaine étape, celle qui était pour d’autres une étape initiale : trouver une entreprise où je serais dans une vraie équipe de développement, avec de vraies problématiques et un environnement vraiment orienté dév.
 
 
 # HERE COMES THE REAL GAME
 
 
-C’est en plein cours d’agilité (pas le parcours canin), que je reçois un mail d’ Eleven Labs qui me propose de discuter et de voir si j’étais intéressé par une autre expérience professionnelle.
-Et de prime abord, c’était le fait de travailler dans un environnement Agile qui m'a le plus attiré.
+C’est en plein cours d’agilité (pas le parcours canin), que je reçois un mail d’ Eleven Labs qui me propose de discuter et de voir si je suis intéressé par une autre expérience professionnelle.
+Et de prime abord, c’est le fait de travailler dans un environnement Agile qui m'attire le plus.
 
 Passons à l’essentiel, 5 mois après, je suis un astronaute !
 Me voilà dans un milieu très technique, orienté dev, avec des gens extrêmement compétents et expérimentés. Et rapport à l’agilité tiens ! J’allais enfin travailler dans un environnement agile, chose que je n’avais vue jusqu'à présent qu’en cours.
@@ -62,7 +62,7 @@ Mais alors qu’est-ce qu’on apprend lorsqu’on travaille en équipe et avec 
 ## Ce qui rend les seniors “seniors”
 
 Bah première découverte, on apprend pas à coder.
-Alors indirectement si !  mais on apprend que coder est la dernière étape du développement (ou pas loin).
+Alors indirectement si ! Mais on apprend que coder est la dernière étape du développement (ou pas loin).
 Avant, il y a tout un processus de conception, des notions d’architecture...
 On apprend à comprendre pourquoi on fait certains choix techniques, on n’apprend pas à coder de telle manière mais on apprend à comprendre pourquoi on l’a fait comme ça et pas autrement.
 
@@ -75,7 +75,7 @@ Déjà, il y a une forte connaissance du produit.
 Connaître son produit, connaître les règles métiers, et maîtriser son architecture, représentent plus de la moitié du travail.
 C’est pour ça qu’il est important de faire de la conception avant même d’écrire une ligne de code.
 Et puisqu’on y est, plus on lit de code, plus on se rend compte que la lisibilité est importante, plus on fait attention à ce que l’on code par la suite, en se disant qu’il faudra sûrement le relire un jour.
-J’en profite pour glisser une image sur l'unité de mesure du code: 
+J’en profite pour glisser une image sur l'unité de mesure du code : 
 
 ![code_quality]({{ site.baseurl }}/assets/2019-08-13-REX-d-etudiant-a-developpeur-web/code_quality.png)
 
@@ -83,7 +83,7 @@ Il y a aussi la vision à long terme. Il ne faut pas simplement penser à la sol
 Après demain l’application aura très certainement beaucoup changé, et il faut le prendre en compte dès maintenant.
 C’est comme mettre du scotch sur un tuyau qui fuit… c’est une solution, mais ça marche 10 minutes.
 
-Et bien évidemment pour finir, et le plus évident, ils ont de l’expérience, donc ils pensent à des conséquences qu’on aurait même pas imaginées. Mais il faut garder en tête qu’ils ne sont pas devins, ils se sont juste cassés les dents avant dessus. Et ça c’est important pour le moral quand on passe des heures sur un problème, qu'eux solutionnent en 10 minutes.
+Et bien évidemment pour finir, et le plus évident, ils ont de l’expérience, donc ils pensent à des conséquences qu’on aurait même pas imaginées. Mais il faut garder en tête qu’ils ne sont pas devins, ils se sont juste cassés les dents avant dessus. Et ça c’est important pour le moral quand on passe des heures sur un problème qu'eux solutionnent en 10 minutes.
 
 ## Architecture Architecture Architecture
 
@@ -97,13 +97,13 @@ Quelles sont les différences entre les types d'architecture et comment en chois
 L’exemple le plus simple qu’on m’ait exposé, c’est la comparaison avec une ville.
 Choisir une architecture c’est penser à :
 
-_ La taille :  de la cabane à la ville
-_ Les Coûts : de 1€ à des millions
-_ Le temps : de 1 jour à 6 mois
-_ Du process : de l’improvisation à un planning préparé
-_ Des compétences : de l’imprévision à plusieurs métiers qualifiés
-_ Des risques : de l'égratignure à la vie d’une population entière
-_ Des contraintes : de aucune à beaucoup.
+* La taille :  de la cabane à la ville
+* Les Coûts : de 1€ à des millions
+* Le temps : de 1 jour à 6 mois
+* Du process : de l’improvisation à un planning préparé
+* Des compétences : de l’imprévision à plusieurs métiers qualifiés
+* Des risques : de l'égratignure à la vie d’une population entière
+* Des contraintes : de aucune à beaucoup.
 
 
 
