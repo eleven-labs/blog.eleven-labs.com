@@ -111,7 +111,7 @@ Choisir une architecture c’est penser à :
 
 Oui parce que c’est ce qui m’avait un peu motivé à la base.
 Mais c’est très différent de ce qu’on peut vous présenter en cours par exemple.
-On nous présente toujours un côté extrêmement bisounours, ou tout le monde s’aime dans le meilleur des monde, ou ce n’est jamais la faute de personne, et que s'il y en a un qui ne fout rien c’est sûrement qu’il ne se sent pas bien… le pauvre…
+On nous présente toujours un côté extrêmement bisounours, où tout le monde s’aime dans le meilleur des monde, où ce n’est jamais la faute de personne, et que s'il y en a un qui ne fout rien c’est sûrement qu’il ne se sent pas bien… le pauvre…
 Et j’exagère à peine.
 
 En vrai c’est un peu différent bien sûr et heureusement. Mais c’est toujours positif !
@@ -121,11 +121,11 @@ Effectivement les moments de difficultés de chacun deviennent le problème de t
 
 J’ai surtout vu un intérêt d’un côté communication. Les stand-ups notamment permettent de toujours rester d’accord sur qui a fait quoi, qui va faire quoi, et si on ne fait pas fausse route par rapport aux besoins métier.
 
-L’agilité couplée à un emploi du temps d’alternant peut cependant présenter des aspects négatifs. En effet, passer du temps sur une feature, progresser, et ne pas pouvoir la finir car elle aura été récupérée pendant une absence à l’école peut être frustrant. Mais c’est aussi cette organisation de suivi qui permet en cas d’absence, à un autre développeur de pouvoir reprendre le travail et finir le ticket. Ce qui est essentiel d’un point de vue projet.
+L’agilité couplée à un emploi du temps d’alternant peut cependant présenter des aspects négatifs. En effet, passer du temps sur une feature, progresser, et ne pas pouvoir la finir car elle aura été récupérée par un autre membre de l'équipe pendant une absence à l’école peut être frustrant. Mais c’est aussi cette organisation de suivi qui permet en cas d’absence à un autre développeur de pouvoir reprendre le travail et finir le ticket. Ce qui est essentiel d’un point de vue projet.
 
 # CONCLUSION
 
 Bravo vous avez enfin atteint le statut de développeur !
 Finalement c’était pas si dur que ça hein !
 Plus sérieusement, j’espère que ce REX sur le début de mon parcours et les enseignements tirés vous ont plu, vous aideront, ou peut être que vous vous êtes reconnus dedans !
-Rappelez vous que la chose la plus importante pour un développeur et quelque soit son niveau, c’est de savoir qu’il y a des choses que l’on ne sait pas.
+Rappelez vous que la chose la plus importante pour un développeur et quel que soit son niveau, c’est de savoir qu’il y a des choses que l’on ne sait pas.
