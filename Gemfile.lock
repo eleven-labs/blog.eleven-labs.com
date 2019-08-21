@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/eko/jekyll-multiple-languages-plugin.git
+  remote: https://github.com/eko/jekyll-multiple-languages-plugin.git
   revision: ac72749206194a11e2614c9d8e26c77d5fcf560e
   specs:
     jekyll-multiple-languages-plugin (1.5.1)
@@ -120,4 +120,4 @@ DEPENDENCIES
   uglifier (~> 3.2.0)
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
