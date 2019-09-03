@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Domotiser son espace de travail
+title: Domotiser son espace de travail - Partie 1
 excerpt: L'objectif de cet article est de domotiser simplement et efficacement son espace de travail avec home-assistant.
 authors:
     - pouzor
@@ -118,19 +118,16 @@ Next, nous avons besoin de faire apparaître les valeurs secondaires du plugin G
 #configuration.yaml
 sensor:
   #... ajoutez uniquement ces deux platform sous le noeud sensor
-
   - platform: template
     sensors:
       test_gitlab_projet_x_build_branch: #nom que l’on donne à notre sensor custom
         value_template: "{{ state_attr('sensor.test_gitlab_projet_x', 'build branch') }}" # On recupere et affiche l’attribute ‘build branche’
         friendly_name: "Branch"
-    entity_id: test_gitlab_projet_x #Le sensor va écouter cet entity pour changer ses valeurs 
-  - platform: template
-    sensors:
+        entity_id: sensor.test_gitlab_projet_x #Le sensor va écouter cet entity pour changer ses valeurs 
       test_gitlab_projet_x_commit_date:
         value_template: "{{ state_attr('sensor.test_gitlab_projet_x', 'commit date') }}"
         friendly_name: "Date"
-    entity_id: test_gitlab_projet_x
+        entity_id: sensor.test_gitlab_projet_x
 
 ```
 Attention à bien insérer les deux nouveaux sensors sous le noeud `sensor` existant déjà dans le fichier configuration.
@@ -235,4 +232,4 @@ Pour information, vous pouvez faire la même chose avec [Github](https://www.hom
 Voila pour la première partie de l'article, vous pouvez retrouver le code de cet article sur [Github](https://github.com/eleven-labs/home-assistant)
 
 
-Dans le prochain article, nous verrons comment nous pouvons agir physiquement en fonction des résultats des pipelines dans notre espace de travail, grâce aux Philips Hue ou encore avec GoogleHome.
+Dans le prochain [article]({{site.baseurl}}/fr/domotize-your-workspace-part-2/), nous verrons comment nous pouvons agir physiquement en fonction des résultats des pipelines dans notre espace de travail, grâce aux Philips Hue ou encore avec GoogleHome.
