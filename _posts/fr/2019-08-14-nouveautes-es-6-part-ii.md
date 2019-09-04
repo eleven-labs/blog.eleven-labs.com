@@ -14,11 +14,13 @@ tags:
     - ES6
 ---
 
-Vous l'attendiez (si si, ne dites pas le contraire), la voici ! La deuxième partie des nouveautés d'ES6 est arrivée (psst, si tu n'as pas lu la partie I, elle se trouve [ici](https://blog.eleven-labs.com/fr/lesnouveauteses6parti) ! Il est conseillé de l'avoir lue pour comprendre plus aisément certaines notions qui ne seront pas réexpliquées ici.
+Vous l'attendiez (si si, ne dites pas le contraire), la voici ! La deuxième partie des nouveautés d'ES6 est arrivée 
+_Psst, si tu n'as pas lu la partie I, elle se trouve [ici](https://blog.eleven-labs.com/fr/lesnouveauteses6parti !_ 
+Il est conseillé de l'avoir lue pour comprendre plus aisément certaines notions qui ne seront pas réexpliquées ici.
 
 ## destructuring
 
-Le destructuring, ou en français l'affectation par décomposition permet d'extraire (techniquement, en faire une copie) des données d'un tableau ou d'un objet et de les assigner à une variable ou de déclarer une variable grâce à une syntaxe qui ressemble à la structure d'un tableau ou d'un objet.
+Le destructuring, ou en français "l'affectation par décomposition" permet d'extraire (techniquement, en faire une copie) des données d'un tableau ou d'un objet, et de les assigner à une variable ou de déclarer une variable grâce à une syntaxe qui ressemble à la structure d'un tableau ou d'un objet.
 
 ```javascript
 // Exemple avec un tableau
