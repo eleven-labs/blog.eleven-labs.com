@@ -36,11 +36,9 @@ Mais si jamais vous avez du temps et du budget, voici quelques autres idées :
 - ...
 
 
-
 Du coup dans ce tuto, deux use-cases : 
 - Allumer une lampe de bureau, pendant 5 secondes, en fonction du statut de la CI (rouge ou vert).
-- Avoir un message vocale, via la google home, en fonction du statut de la CI (rouge ou vert).
-- Petit bonus blame sur ce même use-case.
+- Avoir un message vocale, via la google home, en fonction du statut de la CI.
 
 
 ## Configuration du scénario Hue
