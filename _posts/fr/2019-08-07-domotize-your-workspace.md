@@ -15,7 +15,7 @@ tags:
     - domotique
 ---
 
-Alors que la domotique “grand public” s’installe de plus en plus dans les foyers, notamment grâce aux nouveaux assistants personnels (Google Home, Alexa) ou encore aux solutions de domotisation “clefs en main”, elle est plutôt absente dans les environnements pros, et particulièrement dans notre cas celui du développement. Pourtant les choses ont pas mal bougés ces dernières dans ce domaine.
+La domotique “grand public” s’installe de plus en plus dans les foyers, notamment grâce aux nouveaux assistants personnels (Google Home, Alexa) ou encore aux solutions de domotisation “clefs en main”. toutefois, elle reste plutôt absente dans les environnements pros et particulièrement dans notre cas, celui du développement. Pourtant les choses ont pas mal bougé ces dernières années dans le domaine.
 
 Dans cet article, nous allons voir comment construire un dashboard d’équipe à l’aide de la solution domotique [home-assistant.io](https://www.home-assistant.io) et de quelques objets connectés (Philips Hue, Google Home).
 
@@ -23,7 +23,7 @@ Dans cet article, nous allons voir comment construire un dashboard d’équipe �
 
 Mais qu’est-ce donc que Home Assistant ? Home Assistant (hass) est une solution domotique/automatisation open source, privacy-first qui commence à se faire vraiment bien connaître dans le monde de la domotisation. Elle est développée en python, basée sur un système événementiel et “packagé” avec l’ensemble des plugins (pas d’installation de plugin à posteriori).
 
-Nous allons tout d’abord installer hass, et pour se faire, plusieurs choix se portent à nous (Docker, hassbian ou hass.io). Dans le cadre de ce tuto, nous allons le faire tourner sous Docker mais je vous invite à tester Hassbian qui marche très bien sous raspberry.
+Nous allons tout d’abord installer hass, et pour se faire, plusieurs choix s'offrent à nous (Docker, hassbian ou hass.io). Dans le cadre de ce tuto, nous allons le faire tourner sous Docker mais je vous invite à tester Hassbian qui marche très bien sous raspberry.
 
 Cela tient en deux commandes (sous linux) : 
 
@@ -61,7 +61,7 @@ Globalement, toute la configuration se passe dans le fichier `configuration.yaml
 
 Comme vous pouvez le voir, il est déjà rempli d'un certain nombre d’éléments, qui sont visibles sur votre home-assistant (map, plugin jour/nuit et météo).
 
-Pour faire simple, il existe plusieurs types de components installables sur hass, celui qui va nous intéresser ici c’est le type sensor, celui de gitlab-ci :
+Pour faire simple, il existe plusieurs types de components installables sur hass. Celui qui va nous intéresser c’est le type sensor, celui de gitlab-ci :
 
 Dans la partie sensor du fichier configuration.yaml :
 
@@ -70,7 +70,7 @@ sensor:
   - platform: gitlab_ci #référence du plugin
     gitlab_id: xxx #ID du projet à monitorer
     token: xxx #token gitlab
-    name: Test gitlab projet X # va etre l'id de votre sensor
+    name: Test gitlab projet X # va être l'id de votre sensor
 
 ```
 
@@ -94,7 +94,7 @@ Et si vous cliquez sur le sensor, vous aurez plus d’infos :
 
 ## Design
 
-Bon c’est bien sympa mais on ne voit pas grand chose et c’est assez minimaliste tout ca. Allons ajouter un coup de template là-dessus.
+Bon c’est bien sympa, mais on ne voit pas grand chose et c’est assez minimaliste tout ca. Allons ajouter un coup de template là-dessus.
 Hass utilise maintenant [lovelace](https://www.home-assistant.io/lovelace/) par défaut. Nous allons activer le mode yaml de lovelace pour simplifier l'édition.
 
 ```yaml
@@ -117,12 +117,12 @@ Next, nous avons besoin de faire apparaître les valeurs secondaires du plugin G
 ```yaml
 #configuration.yaml
 sensor:
-  #... ajoutez uniquement ces deux platform sous le noeud sensor
+  #... ajoutez uniquement ces deux platforms sous le noeud sensor
 
   - platform: template
     sensors:
       test_gitlab_projet_x_build_branch: #nom que l’on donne à notre sensor custom
-        value_template: "{{ state_attr('sensor.test_gitlab_projet_x', 'build branch') }}" # On recupere et affiche l’attribute ‘build branche’
+        value_template: "{{ state_attr('sensor.test_gitlab_projet_x', 'build branch') }}" # On récupère et affiche l’attribute ‘build branche’
         friendly_name: "Branch"
     entity_id: test_gitlab_projet_x #Le sensor va écouter cet entity pour changer ses valeurs 
   - platform: template
