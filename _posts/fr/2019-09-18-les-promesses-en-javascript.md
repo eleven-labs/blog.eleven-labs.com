@@ -17,7 +17,7 @@ tags:
     - asynchrone
 ---
 
-Les promesses ne sont pas récentes. Elles ont commencées à apparaître dans les années 80 dans des langages tels que MultiLisp.
+Les promesses ne sont pas récentes. Elles ont commencé à apparaître dans les années 80 dans des langages tels que MultiLisp.
 Le JS a depuis quelques années une tendance à baser les nouveautés du langage sur des modèles asynchrones, car cela permet au moteur Javascript de gérer plusieurs tâches en même temps (événements, affichage, interrogation de base locale...) et de conserver une interface réactive malgré le fait qu'il soit single thread.
 
 C'est une fonctionnalité qui existe depuis longtemps dans l'écosystème JS, mais qui devient un nouvel objet nommé `Promise` natif grâce à l'ES6.
