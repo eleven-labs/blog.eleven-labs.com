@@ -9,7 +9,8 @@ permalink: /fr/lespromessesenjavascript/
 categories:
     - Javascript
 tags:
-    - promesses
+    - promise
+    - promesse
     - javascript
     - ES6
     - async
@@ -184,13 +185,15 @@ Promise.allSettled(promises).
 // "rejected"
 ```
 
+⚠️ Cette méthode est actuellement en draft au TC39, plus de détails sur la [doc MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled#Specifications)
+
 ## Comment ça marche
 
-Avant d'expliquer comment fonctionnent les promesses dans les coulisses, il est d'abord important d'expliquer comment le runtime JS fonctionne. Le runtime JS est un programme qui exécute du code à la demande. Il est appelé par l'événement `loop` (une boucle infinie de gestion des évènements) du navigateur. Il est appelé en premier lieu pour exécuter le programme contenu dans une balise `<script>`, et en deuxième lieu pour exécuter un callback à l'expiration d'un timer créé par exemple par un `setTimeOut()`.
+Avant d'expliquer comment fonctionnent les promesses dans les coulisses, il est d'abord important d'expliquer comment le runtime JS fonctionne. Le runtime JS est un programme qui exécute du code à la demande. Il est appelé par l'événement `loop` (une boucle infinie de gestion des évènements) du navigateur. Il est appelé en premier lieu pour exécuter le programme contenu dans une balise `<script>`, et en deuxième lieu pour exécuter un callback à l'expiration d'un timer créé par exemple par un `setTimeout()`.
 
 Le runtime utilise un principe nommé "run-to-completion", qui lui impose de ne jamais s'interrompre lors de l'exécution d'une task (qui est le code executé à un instant donné).
 
-Avant l'arrivée de l'ES6, il n'existait pas de possibilités de créer une fonction asynchrone en dehors d'appels à des fonctions telles que `setTimeOUt()` ou `XMLHttpRequest.send()` : ces appels entraînent plus tard la création des événements adéquats pour exécuter une callback.
+Avant l'arrivée de l'ES6, il n'existait pas de possibilités de créer une fonction asynchrone en dehors d'appels à des fonctions telles que `setTimeout()` ou `XMLHttpRequest.send()` : ces appels entraînent plus tard la création des événements adéquats pour exécuter une callback.
 
 L'apparition de l'objet `Promise` apporte avec lui un nouveau concept : celui des `job queue`. Un job queue est une task qui doit être exécutée aussitôt que possible par l'event loop, c'est-à-dire avant la task suivante si elle existe. Il existe une différence de nomenclature entre les auteurs de la spécifiation ECMAScript 2015 (qui font abstraction du contexte dans lequel fonctionne le runtime JS) et les développeurs qui appellent ces job queues des `microtask`.
 
@@ -200,7 +203,7 @@ Pour résumer, les régles au sein du navigateur sont donc :
 - une microtask crée par une task est exécutée après cette task et avant la task suivante.
 - les microtasks sont exécutées les unes après les autres.
 
-⚠️ Les fonctions comme `setTimeOut()`, même avec un délai nul, ne rajoutent pas une microtask mais bien une task.
+⚠️ Les fonctions comme `setTimeout()`, même avec un délai nul, ne rajoutent pas une microtask mais bien une task.
 
 ## Conclusion
 
@@ -208,6 +211,6 @@ Comme nous l'avons vu, les promesses sont devenues un outil indispensable en Jav
 
 Vous pouvez aller voir ce [lien](https://www.ecma-international.org/ecma-262/6.0/#sec-promise-objects) si vous aimez l'anglais et la lecture pour voir les specs des promesses par l'ECMAScript.
 
-Un autre lien utile [ici](http://latentflip.com/loupe), qui vous permettra de jouer avec une sandbox et de visualiser ce qui se passe en arrière-plan, qui vous aidera peut-être à mieux comprendre l'asynchronisme !
+Deux autres liens utiles [ici](http://latentflip.com/loupe) et [ici](https://bevacqua.github.io/promisees/), qui vous permettront de jouer avec une sandbox et de visualiser ce qui se passe en arrière-plan, ce qui vous aidera peut-être à mieux comprendre l'asynchronisme !
 
 Le prochain article portera sur async / await, qui mérite bien un article à lui tout seul !
