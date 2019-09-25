@@ -10,14 +10,6 @@
     {% assign social-icon-link = 'header-bottom__social__link' %}
 {% endcase %}
 
-{% if include.data.rabbit %}
-<li class="{{ social-icon }}" style="width:21px;">
-    <a class="no-link-style tracked-link {{ social-icon-link }}" data-tracking="rabbit" href="{{ include.data.easter-egg }}" title="{% translate global.rabbit %}">
-        <img class="rabbit" src="{{ include.data.rabbit | prepend: site.baseurl_root }}" alt="rabbit"/>
-    </a>
-</li>
-{% endif %}
-
 {% if include.data.rss %}
 <li class="{{ social-icon }}">
     <a class="no-link-style tracked-link {{ social-icon-link }}" data-tracking="rss" href="{{ "/feed.xml" | prepend: site.baseurl_root | prepend: site.url }}" title="{% translate global.rss_follow %}" rel="nofollow noreferrer">
@@ -182,6 +174,14 @@
 <li class="{{ social-icon }}">
     <a class="no-link-style tracked-link {{ social-icon-link }}" data-tracking="corporate" href="{{ include.data.corporate }}" title="{% translate global.corporate %}" rel="nofollow">
         <img class="corporate-logo" src="{{ include.data.corporate_logo | prepend: site.baseurl_root }}" alt="corporate_logo" width="20.57" height="15" />
+    </a>
+</li>
+{% endif %}
+
+{% if include.data.welcome_to_the_jungle %}
+<li class="{{ social-icon }}">
+    <a class="no-link-style tracked-link {{ social-icon-link }}" data-tracking="corporate" href="{{ include.data.welcome_to_the_jungle }}" title="{% translate global.follow_us_on %} Welcome to the jungle" rel="nofollow noreferrer">
+        <img class="welcome_to_the_jungle_logo" src="{{ include.data.welcome_to_the_jungle_logo | prepend: site.baseurl_root }}" alt="welcome_to_the_jungle_logo" style="width:1em; margin-bottom: -2px;max-width:200%;"/>
     </a>
 </li>
 {% endif %}

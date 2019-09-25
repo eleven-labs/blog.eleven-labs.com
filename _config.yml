@@ -27,6 +27,7 @@ localized_posts_dir: _posts
 theme_settings:
     # Meta
     site_web_eleven: https://eleven-labs.com/
+    site_web_eleven_rencontres: https://eleven-labs.com/rencontres
     # title: Eleven Labs - Le Blog
     brand : Eleven Labs
     le_blog : LE BLOG
@@ -42,7 +43,6 @@ theme_settings:
 
     # Icons
     rss: /feed.xml
-    easter-egg: https://blog.eleven-labs.com/fr/easter-egg
     email_address:
     behance:
     bitbucket:
@@ -64,7 +64,8 @@ theme_settings:
     youtube:
     corporate:
     corporate_logo: /img/follow/eleven.svg
-    rabbit: /img/rabbit.svg
+    welcome_to_the_jungle: https://www.welcometothejungle.co/fr/companies/eleven-labs
+    welcome_to_the_jungle_logo: /img/follow/welcome_to_the_jungle.svg
 
     # Scripts
     google_analytics: UA-99013054-1
