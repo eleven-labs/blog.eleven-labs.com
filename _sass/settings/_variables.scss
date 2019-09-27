@@ -1,14 +1,8 @@
 // Typography
-$font-family-dinpro: 'Dinpro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 $font-family-korb: 'Korb', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 $font-family-worksans: 'Worksans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-$font-family-main: $font-family-dinpro;
-$font-family-article-headers: $font-family-korb;
-$font-family-footer-title: $font-family-korb;
-$font-family-header-big-text: $font-family-korb;
-$font-family-language-switch: $font-family-korb;
-$font-family-post-titles: $font-family-korb;
+$font-family-main: $font-family-worksans;
 $font-family-article-link: $font-family-worksans;
 $font-family-title-blog: $font-family-worksans;
 $font-family-article-btn: $font-family-worksans;
@@ -16,8 +10,13 @@ $font-family-article-pagination: $font-family-worksans;
 $font-family-article-texts: $font-family-worksans;
 $font-family-button: $font-family-worksans;
 $font-family-footer-contact: $font-family-worksans;
-$font-size: 19px;
-$font-size-mobile: 16px;
+$font-family-article-headers: $font-family-korb;
+$font-family-footer-title: $font-family-korb;
+$font-family-header-big-text: $font-family-korb;
+$font-family-language-switch: $font-family-korb;
+$font-family-post-titles: $font-family-korb;
+$font-size: 18px;
+$font-size-mobile: 15px;
 
 // Colours
 $alto: #d8d8d8;
