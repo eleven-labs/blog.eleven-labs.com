@@ -28,7 +28,7 @@ L’intérêt de disposer de petites User Stories de qualité est très facileme
  - Pour le Product Owner : outre le côté feedback et réduction du flou, il est plus facile de prioriser des éléments dont la granularité est fine (on ciblera les scénarios générateurs de forte valeur en écartant le reste). Il devient aussi plus facile de changer les priorités en cours de route ou d'effectuer des pivots. Enfin, on s'assure aussi plus facilement que des éléments seront terminés dans le sprint quand on a 6 Users Stories, plutôt que 2 grosses Users Stories.
 
 Convaincu ? On passe à la suite.
-![Mauvaise User Story](\assets\2019-10-09-ecrire-et-decouper-ses-users-stories-comme-un-ninja\2019-10-09-not-sure.png)
+![Mauvaise User Story]({{ site.baseurl }}/assets/2019-10-09-ecrire-et-decouper-ses-users-stories-comme-un-ninja/2019-10-09-not-sure.png)
 
 
 ## LES BONNES PRATIQUES DE LA USER STORY AGILE A GARDER EN TÊTE
