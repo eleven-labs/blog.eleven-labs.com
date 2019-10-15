@@ -114,6 +114,7 @@ Comme à chaque modification du fichier `configuration.yaml`, pensez à redémar
 
 Next, nous avons besoin de faire apparaître les valeurs secondaires du plugin Gitlab comme un sensor à part entière, nous allons donc les créer "à la mano".
 
+{% raw %}
 ```yaml
 #configuration.yaml
 sensor:
@@ -130,6 +131,7 @@ sensor:
         entity_id: sensor.test_gitlab_projet_x
 
 ```
+{% endraw %}
 Attention à bien insérer les deux nouveaux sensors sous le noeud `sensor` existant déjà dans le fichier configuration.
 
 
@@ -180,6 +182,7 @@ variable:
 
 Puis, il va falloir créer une automation pour mettre à jour le status de la CI sur cette variable uniquement lorsque le pipeline est sur master.
 
+{% raw %}
 ```yaml
 #automation.yaml
 
@@ -195,6 +198,7 @@ Puis, il va falloir créer une automation pour mettre à jour le status de la CI
           variable: master_status
           value_template: "{{ states('sensor.test_gitlab_projet_x') }}"
 ```
+{% endraw %}
 Ici nous avons : 
 - `trigger`: chaque changement lance cette automation
 - `condition`: il faut que notre entity branch ait la valeur master
