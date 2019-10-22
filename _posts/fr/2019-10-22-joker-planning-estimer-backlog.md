@@ -35,11 +35,11 @@ Avant tout, il existe de nombreuses manières d’estimer des user stories. Voic
 Méthodologie la plus utilisée en Scrum pour estimer son backlog, elle s'accompagne d’un jeu de cartes reprenant les valeurs de la suite de Fibonacci : 0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100, « ∞ » et « ? ». Ces valeurs ne représentent pas des jours / hommes, mais des valeurs volontairement neutres pour représenter des “story points” ou “point. Les deux dernières options sont utilisées dans le cas d’une user story non estimable : soit parce que trop complexe et nécessitant une étude, soit parce qu’elle n’a pas été comprise par la personne.
  Après un temps d’échanges limités autour de l’explication d’une user story, tous les membres de l’équipe de développement, cartes en main, doivent la chiffrer en même temps en nombre de points. Si une disparité dans les valeurs révélées est trop importante, chacun défend sa proposition, et on relance l’estimation jusqu’à arriver à un consensus.
 
--   **La taille de t-shirt **
+-   **La taille de t-shirt**
 Il s'agit d'une technique plutôt informelle qui se sert des différentes tailles de t-shirt pour estimer les fonctionnalités présentées : XS, S, M, L ou XL. Cette technique peut-être pratique pour chiffrer un grand nombre de user stories en même temps et avoir une estimation du backlog dans sa globalité par exemple. Mais ne permet pas d’avoir une estimation aussi précise qu’avec la suite de Fibonacci, plus adaptée pour estimer les prochaines US à développer plus proches dans le temps et probablement plus complètes.
     
 
--   **Le “Bucket System” **
+-   **Le “Bucket System”**
 Ressemblant quelque peu au planning poker, on ne se sert pas de cartes mais on définit des “buckets” (seaux en français) sous forme de post-it. Chaque bucket possédant une valeur parmi la liste suivante : 0, 1, 2, 3, 4, 5, 8, 13, 20, 30, 50, 100 et 200. Toutes les US sont elles-aussi rédigées sur des post-its ou des fiches.
 Une US est choisie au hasard pour être présentée puis placée sous le bucket “8” afin de faire office de première référence (8 étant le milieu entre le plus petit et le plus grand bucket).
 Une seconde US est lue, puis après échanges, elle est placée sous un bucket choisi en fonction de la première. Le processus est reproduit une troisième fois.
