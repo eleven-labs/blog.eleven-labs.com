@@ -21,25 +21,30 @@ Tirant le Joker de ma manche, je vous laisse en compagnie du master mind de Goth
 
 ## 1. "Estimer c'est faire un choix. Pourquoi cet air si sérieux ?"
  
+![]({{site.baseurl}}/assets/2019-10-22-joker-planning-estimer-backlog/joker.jpg)
+
 Quand on parle d’estimation de son product backlog, on parle de l’estimation en points d’effort des user stories composant le backlog de votre produit.
 
 Avant d’entrer dans le vif du sujet, reprenons le processus de pré-estimation, au cours de sa vie, de votre product backlog.
 
-Vos user stories sont prêtes en termes de spécifications fonctionnelles (ou en tout cas selon l’estimation du Product Owner). Elles ont été présentées au reste de la team pour s’assurer de la compréhension des futures features demandées, mais aussi pour procéder à un redécoupage si nécessaire d’US trop complexes, ou d’en mettre de côté si finalement on se rend compte que des informations sont manquantes.
+Vos US sont prêtes en termes de spécifications fonctionnelles. Elles ont été présentées au reste de la team pour s’assurer de la compréhension des futures features demandées, mais aussi pour procéder à un redécoupage si nécessaire.
 
 Arrive ensuite la phase d’estimation par l’équipe de développement en terme de **points d’effort** pour chacune de ces user stories.
 
-Avant tout, il existe de nombreuses manières d’estimer des user stories. Voici une petite liste pour n’en citer que quelque unes qui me paraît intéressant d’évoquer ici :
+Et avant d'évoquer des méthodologies pour se lancer la première fois dans une estimation, listons d'abord quelques exemples d'ateliers qui me paraissent intéressants d'évoquer ici :
 
 -   **Le “Planning Poker”**
+
 Méthodologie la plus utilisée en Scrum pour estimer son backlog, elle s'accompagne d’un jeu de cartes reprenant les valeurs de la suite de Fibonacci : 0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100, « ∞ » et « ? ». Ces valeurs ne représentent pas des jours / hommes, mais des valeurs volontairement neutres pour représenter des “story points” ou “point. Les deux dernières options sont utilisées dans le cas d’une user story non estimable : soit parce que trop complexe et nécessitant une étude, soit parce qu’elle n’a pas été comprise par la personne.
  Après un temps d’échanges limités autour de l’explication d’une user story, tous les membres de l’équipe de développement, cartes en main, doivent la chiffrer en même temps en nombre de points. Si une disparité dans les valeurs révélées est trop importante, chacun défend sa proposition, et on relance l’estimation jusqu’à arriver à un consensus.
 
 -   **La taille de t-shirt**
+
 Il s'agit d'une technique plutôt informelle qui se sert des différentes tailles de t-shirt pour estimer les fonctionnalités présentées : XS, S, M, L ou XL. Cette technique peut-être pratique pour chiffrer un grand nombre de user stories en même temps et avoir une estimation du backlog dans sa globalité par exemple. Mais ne permet pas d’avoir une estimation aussi précise qu’avec la suite de Fibonacci, plus adaptée pour estimer les prochaines US à développer plus proches dans le temps et probablement plus complètes.
     
 
 -   **Le “Bucket System”**
+
 Ressemblant quelque peu au planning poker, on ne se sert pas de cartes mais on définit des “buckets” (seaux en français) sous forme de post-it. Chaque bucket possédant une valeur parmi la liste suivante : 0, 1, 2, 3, 4, 5, 8, 13, 20, 30, 50, 100 et 200. Toutes les US sont elles-aussi rédigées sur des post-its ou des fiches.
 Une US est choisie au hasard pour être présentée puis placée sous le bucket “8” afin de faire office de première référence (8 étant le milieu entre le plus petit et le plus grand bucket).
 Une seconde US est lue, puis après échanges, elle est placée sous un bucket choisi en fonction de la première. Le processus est reproduit une troisième fois.
@@ -58,6 +63,7 @@ C’est bien beau, toutes ces méthodologies à utiliser pour estimer les user s
 Voici quelques idées pour vous aider :
 
 -   **L'Objectif de sprint**
+
 Fixer un objectif de sprint à atteindre avec l’équipe de développement, qui ne soit pas trop restrictif (l’équipe ne doit pas avoir pieds et poings liés) mais qui ait un sens pour tout le monde, aussi bien côté développement que compréhensible pour un client ou une direction.
     
 Cela doit être des objectifs très simples, comme de prendre en main la stack et l’environnement du produit, très important si une équipe récupère un produit déjà en production par exemple.
@@ -67,23 +73,26 @@ Ou encore de livrer seulement les premiers champs d’un formulaire de connexion
   
 
 -   **Les référentiels**
-Prendre des users stories de référence est une technique très simple, et peut aider toute l’équipe à se lancer plus justement dans cette première réunion d’estimation. L’idée est de choisir une première user story dans le backlog qui est très simple, et qu’on pourra estimer à 1. Puis d’en choisir une autre, cette fois-ci à l'opposé, qui semble à l’équipe bien complexe, et qui pourra être estimée à 8 ou 13.
+
+Prendre des user stories de référence est une technique très simple, et peut aider toute l’équipe à se lancer plus justement dans cette première réunion d’estimation. L’idée est de choisir une première user story dans le backlog qui est très simple, et qu’on pourra estimer à 1. Puis d’en choisir une autre, cette fois-ci à l'opposé, qui semble à l’équipe bien complexe, et qui pourra être estimée à 8 ou 13.
     
-Ces 2 users stories identifiées vont servir de référence pour pouvoir chiffrer toutes les autres user stories de manière relative.
+Ces 2 US identifiées vont servir de référence pour pouvoir chiffrer toutes les autres de manière relative.
 La science infuse n’existant pas, des ajustements seront potentiellement à prendre en compte lors de la seconde réunion d’estimation avec une revue à la hausse ou à la baisse de la valeur du ticket le moins complexe ou du plus complexe.
 Mais cela permettra dans tous les cas et dès le départ, de garder une estimation relative entre vos tickets.
 
 -   **L'Extreme Quotation**
+
 Un lancement de produit implique parfois un premier backlog très chargé à estimer et avec beaucoup d’inconnu pour les développeurs. Pour palier à cette problématique, il existe un atelier très simple à mettre en place : l’Extreme quotation.
 Pour ce faire, prenez votre jeu de planning poker, disposez les cartes sur une grande table puis écrivez vos US sur des post-it.
 Dans cette première phase, invitez les développeurs à choisir tous en même temps une user story, et à la placer sous une estimation. Puis de continuer jusqu’à ce qu’il n’y en ait plus à estimer. L’avantage ici est de ne pas se focaliser user story par user story, mais que chacun avance à son rythme en donnant sa propre estimation.
 
 Commence la seconde phase où chaque développeur, dans le silence, va bouger les post-its si la valeur estimée ne lui semble pas juste.
 Enfin, une fois qu’un consensus silencieux semble avoir été trouvé, on passe en revue les estimations attribuées. Si certaines user stories sont placées entre 2 valeurs, c’est la plus grande qui est choisie.
-L’atelier est terminé et le backlog estimé ! Le chiffrage des users stories est bien relatif et l’équipe a pu avoir un aperçu de ce qui l’attend dans sa globalité.
+L’atelier est terminé et le backlog estimé ! Le chiffrage des US est bien relatif et l’équipe a pu avoir un aperçu de ce qui l’attend dans sa globalité.
 
 
 -   **Le 5 Jours / Homme**
+
 Dernière méthodologie pour vous permettre d’estimer pour la première fois votre backlog : choisir une user story qui pour la team peut-être estimée à environ 5 jours / homme, et la chiffrer à 5. Cette US devient référente et par la suite les estimations se font à plus ou moins de celle-ci, sans plus tenir compte des jours / homme associés au départ.
     
 Personnellement, je ne recommande pas l’utilisation de cette méthode. Par expérience, il est très difficile par la suite pour les développeurs de se détacher de l’association des valeurs à une estimation en jour.
@@ -91,8 +100,10 @@ Mais si vous avez une équipe qui se sent rassurer par ce fonctionnement, ou mê
 
 ## 3. "Introduire une goutte d'anarchie, et tout devient brutalement ... chaotique"
     
- 
 Avant de vous lancer dans l’estimation, balayons quelques points d’attention !
+
+![]({{site.baseurl}}/assets/2019-10-22-joker-planning-estimer-backlog/black-joker.jpg)
+
 
 -   **Points d’effort & points de complexité**
     
