@@ -15,7 +15,7 @@ tags:
 
 ---
 
-C'est un vrai casse-tête pour tout Product Owner et pour la team qui se lancent dans la réalisation d’un nouveau produit : réussir à prendre un engagement en terme de développement dès le premier sprint auprès de son client (externe ou interne) ou de sa direction.
+C'est un vrai casse-tête pour tout Product Owner et pour la team qui se lance dans la réalisation d’un nouveau produit : réussir à prendre un engagement en terme de développement dès le premier sprint auprès de son client (externe ou interne) ou de sa direction.
 
 Tirant le Joker de ma manche, je vous laisse en compagnie du mastermind de Gotham City pour revenir sur la base de l’estimation, les meilleures stratégies à adopter et les pièges à éviter pour se lancer dans le crim… Euh pardon, dans le développement de son produit !
 
@@ -133,10 +133,8 @@ Le plus important est de partir sur de bonnes bases et d’avancer ensuite. Les 
 Au fur et à mesure, une équipe va de mieux en mieux connaître son environnement, le langage technique, et le contexte (d’où l’importance de le partager le plus souvent possible avec sa team dev sans entraver leur routine de développement).  
 **L’estimation évoluera**, et de plus en plus de tâches perçues comme complexes au départ le seront beaucoup moins par la suite.
 
-Cependant -et je vous vois venir d’ici !- n'imaginez pas que cette explication signifie que la vélocité d’une équipe puisse augmenter en terme de points d’effort possibles à embarquer de sprint en sprint.  
-Vous auriez tort, même si dans le fond, ce n'est pas totalement faux pour autant.
-
-La vélocité d’une équipe qui évolue grâce aux connaissances acquises et à l’habitude permettra en réalité de chiffrer à moins de points des US qui auraient pris plus d’effort auparavant.
+Cependant -et je vous vois venir d’ici !- n’imaginez pas que la vélocité d’une équipe puisse augmenter à l'infini de sprint en sprint, vous auriez tort. Passés 3 ou 4 sprints, elle n'est plus amené à être réévaluée.
+En revanche l'efficacité de l'équipe va augmenter. Sa vélocité évolue grâce aux connaissances acquises et à l’habitude. Ce qui permettra de chiffrer à moins de points des US qui auraient pris plus d’effort auparavant. Vous saisissez la nuance ?
 
 Je vous laisse à vos affaires pour retourner aux miennes, Batman m'attend impatiemment. 
 Et n'oubliez pas : l'estimation, c'est comme la gravité, il suffit parfois juste d’un petit coup de pouce ;).
