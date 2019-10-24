@@ -27,9 +27,10 @@ tags:
 
 # Storybook - Créer son premier composant
 
-Le but de cette future série d'article sur Storybook est de présenter une feature de la librairie pour explorer ses possibilités, le tout de la manière la plus concise possible, avec des petits exemples. Si je vous fais rire en plus c'est cadeau.
+Le but de cette future série d'article sur Storybook est de présenter une feature de la librairie pour explorer ses possibilités, le tout de la manière la plus concise possible, avec des petits exemples.
 
-Pour le cas pratique, c'est directement extrait de la documentation officiel de Storybook et ce sera souvent le cas. Comme Gad Elmaleh, c'est pas grave si c'est mieux raconté.
+Pour le cas pratique, c'est directement extrait de la documentation officiel de Storybook et ce sera souvent le cas.  
+Comme Gad Elmaleh, c'est pas grave si c'est mieux raconté.
 
 
 
@@ -72,7 +73,7 @@ Auxquelles s'ajoute l'utilisation:
 
 &nbsp;
 
-Storybook propose donc un cadre où l'on peut tester la réponse d'un composant à une story qui n'est, en soi, qu'un jeu de valeur des props passé au composant.
+Storybook propose donc un cadre où l'on peut tester la réponse d'un composant à une story qui n'est, en soi, qu'un jeu de valeur des props passés au composant.
 
 &nbsp;
 
@@ -112,7 +113,7 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
 
 &nbsp;
 
-[CDD](https://blog.hichroma.com/component-driven-development-ce1109d56c8e) ( Composent-Driven Development ), si on doit la faire courte, c'est comme du TDD mais à la place des test t'utilises des user stories, c'est pour éviter que Michel te fasses reprendre 50 fois ton composant.
+[CDD](https://blog.hichroma.com/component-driven-development-ce1109d56c8e) ( Composent-Driven Development ), si on doit la faire courte, c'est comme du TDD mais à la place des test t'utilises des user stories.
 
 &nbsp;
 
@@ -126,7 +127,7 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
 
 &nbsp;
 
-On va donc appliquer cette belle méthodologie, dans notre environnement tout neuf avec la meilleure application possible, tout le monde la connaît, c'est cette bonne vieille to-do list!
+On va donc appliquer cette belle méthodologie, sur la meilleure application possible, cette bonne vieille to-do list!
 
 Alors on va commencer par se faire un tout petit composant bien gentil qui afficherai une tâche importante comme: *"Prévenir Jeanine".*
 ``` javascript
@@ -252,7 +253,7 @@ Il est un peu suceptible le George.
 
 Et voilà c'est tout pour notre premier article!
 
-> Mais... espèce de salopard, c'est pas une todo list!
+> Mais... espèce de truand, c'est pas une todo list!
 
 En effet, mais, mon lecteur adoré, je sais que tu es une personne adulte et que tu sauras te débrouiller comme un grand. 
 
