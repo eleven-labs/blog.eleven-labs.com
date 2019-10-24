@@ -229,7 +229,7 @@ Bon on crève tous d'envie de voir ce fameux catalogue de composant, LE storyboo
 
 Il ne faut pas oublier de dire à Storybook où sont les stories sinon il va faire la gueule...
 
-Il est un peu suceptible le George. 
+Il est un peu susceptible le George. 
 
 ```javascript
     // .storybook/config.js
