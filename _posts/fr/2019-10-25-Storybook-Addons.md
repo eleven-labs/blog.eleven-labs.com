@@ -181,7 +181,7 @@ Quel coquin ce Jean-Marie, mais il n'a pas tort, on peut simplement se rajouter 
       .add('long titre', () => <Task task={\{ ...task, title: longTitre }} {...actions} />);
 ```
 
-Voilà voilà, c'est déjà finis les copains, mais promis on se revoit vite pour regarder ensemble à travers deux articles qui nous permettrons d'avoir de très beau **Tests structurels** et aussi une très belle **Documentation de composant**, genre documentation de Matérial, mais sans effort.
+Voilà voilà, c'est déjà finis les copains, mais promis on se revoit vite pour regarder ensemble, à travers deux articles, comment qu'on fait pour avoir de très beau **Tests structurels** et aussi une très belle **Documentation de composant**, genre documentation de Material UI, mais sans effort.
 
 Je pense fort à vous, hésitez pas à venir me claquer une bise si ça vous a plu. 
 
