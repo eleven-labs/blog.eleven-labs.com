@@ -91,13 +91,15 @@ plugins:
     - jekyll-paginate
     - jekyll-multiple-languages-plugin
     - jekyll-seo-tag
-    - algoliasearch-jekyll
     - jekyll-feed
     - amp-jekyll
     - uglifier
 exclude:
+    - .sass-cache/
+    - .jekyll-cache/
     - CNAME
     - CODE_OF_CONDUCT.md
+    - gemfiles/
     - Gemfile
     - Gemfile.lock
     - LICENSE
