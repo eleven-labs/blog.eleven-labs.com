@@ -31,7 +31,7 @@ Pour plus d'informations sur l'implémentation de WSL 2, une [vidéo de présent
 
 </div>
 
-WSL premier du nom, est un driver pour Windows implémentant l'API du noyau Linux, qui transforme les appels au noyau en instructions compatibles Windows NT. Ce qui pose de nombreux problèmes de compatibilité notamment avec l'API permettant d'accéder au système de fichier.
+WSL premier du nom, est un driver pour Windows implémentant l'API du noyau Linux, qui transforme les appels au noyau en instructions compatibles Windows NT. Ce qui pose de nombreux problèmes de compatibilité notamment avec l'API permettant d'accéder au système de fichiers.
 
 ![wsl1-architecture]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/wsl1-architecture.png  "Architecture WSL 1")
 
@@ -41,12 +41,12 @@ Pour résoudre les différents problèmes de compatibilité, de performances et 
 
 ## Activation de WSL 2
     
-A la rédaction de ce guide, pour profiter de WSL2, il vous faudra rejoindre le [programme Windows Insider](https://insider.windows.com/fr-fr/getting-started/)
+À la rédaction de ce guide, pour profiter de WSL2, il vous faudra rejoindre le [programme Windows Insider](https://insider.windows.com/fr-fr/getting-started/)
 
 - Ouvrez les paramètres [Windows Insider](ms-settings:windowsinsider "Ouvre les paramètres Windows Insider")
 - Choisir le type de version d'évaluation **"Rapide"**
 - Ouvir [Windows Update](ms-settings:windowsupdate "Ouvre Windows Update")
-- Cliquer sur Rechercher les mises à jour pour télécharger la dernière build
+- Cliquer sur "Rechercher les mises à jour" pour télécharger le dernier build
 
 ![insider]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/insider.png)
 
@@ -56,7 +56,7 @@ Lancer PowerShell en tant qu'administrateur
 - Saisir `powershell`
 - <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>↵ Entrée</kbd>
 
-Activer les fonctionnalités optionnelles nécéssaires
+Activer les fonctionnalités optionnelles nécessaires
 
 ```powershell
 Enable-WindowsOptionalFeature -Online -NoRestart -FeatureName VirtualMachinePlatform
@@ -75,12 +75,12 @@ Votre ordinateur va redémarrer pour activer les fonctionnalités optionnelles d
 
 Vous pouvez obtenir la liste des distribution disponibles [ici](https://aka.ms/wslstore "Lien Microsoft Store")
 
-Dans ce guide nous allons installer Ubuntu, livre à vous d'expérimenter avec d'autres distributions.
+Dans ce guide nous allons installer Ubuntu, libre à vous d'expérimenter avec d'autres distributions.
 
 - Installer Ubuntu puis cliquer sur le bouton **Lancer** _(un terminal s'ouvre alors)_
 - Choisir un nom d'utilisateur et un mot de passe.
 - Quitter le terminal
-- Dans Powershell, lister les distribution Linux installées
+- Dans Powershell, lister les distributions Linux installées
 
 ```powershell
 wsl --list --verbose
@@ -132,17 +132,17 @@ sudo service docker start
 docker run --rm -it -p 80:80 containous/whoami
 ```
 
-Ouvrir votre navigateur est visiter <http://localhost>
+Ouvrir votre navigateur et visiter <http://localhost>
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Note</p>
 
-Les distributions Linux conçues pour tourner dans WSL2 ne sont pas livrées avec des scripts de démarrage telles que System V, Systemd ou encore Upstart, ce qui veut dire qu'il faudra lancer vous-même le démon docker au démarrage d'Ubuntu via `sudo service docker start`.
+Les distributions Linux conçues pour tourner dans WSL2 ne sont pas livrées avec des scripts de démarrage tels que System V, Systemd ou encore Upstart. Ce qui veut dire qu'il faudra lancer vous-même le démon docker au démarrage d'Ubuntu via `sudo service docker start`.
 
 </div>
 
 <div class="admonition info" markdown="1"><p class="admonition-title">À savoir</p>
 
-Par défaut Windows arrête les conteneurs Linux au bout de quelques secondes en l'absence de tâches de fond. Si tel est votre intention, pensez à arrêter le démon docker via `sudo service docker stop` avant d'éxécuter la commande `exit` ou de fermer votre terminal.
+Par défaut Windows arrête les conteneurs Linux au bout de quelques secondes en l'absence de tâches de fond. Si telle est votre intention, pensez à arrêter le démon docker via `sudo service docker stop` avant d'éxécuter la commande `exit` ou de fermer votre terminal.
 
 </div>
 
@@ -198,12 +198,12 @@ Pour éviter de vous retrouver avec des doublements de lignes dans Windows Termi
 
 ![ahk-logo]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/ahk-logo.png  "Logo de AutoHotKey")
 
-On va commencer par ouvrir le répertoire des scripts lancés au démarrage de Windows:
+On va commencer par ouvrir le répertoire des scripts lancés au démarrage de Windows :
 
 - <kbd>⊞ Win</kbd> + <kbd>R</kbd>
-- Saisir `shell:startup` puis <kbd>↵ Entrée</kbd>
-- Créer un fichier `copy-paste-on-windows-terminal.ahk`
-- Éditez-le et ajoutez le script suivant:
+- Saisissez `shell:startup` puis <kbd>↵ Entrée</kbd>
+- Créez un fichier `copy-paste-on-windows-terminal.ahk`
+- Éditez-le, et ajoutez le script suivant :
 
 ```ahk
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
@@ -228,7 +228,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 <div class="admonition info" markdown="1"><p class="admonition-title">Info</p>
 
-Par défaut, dans Windows Terminal, l'opération **coller** se fait via <kbd>🖱️ Droit</kbd> ou la combinaison <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>V</kbd>. Le script les intercepte pour replacer les séquances `\r\n` par `\n`
+Par défaut, dans Windows Terminal, l'opération **coller** se fait via <kbd>🖱️ Droit</kbd> ou la combinaison <kbd>Ctrl</kbd> + <kbd>⇧ Shift</kbd> + <kbd>V</kbd>. Le script les intercepte pour replacer les séquences `\r\n` par `\n`
 
 </div>
 
@@ -240,18 +240,18 @@ Si vous rencontrez un bug d'affichage rendant l'interface complètement noire en
 
 ![windows-terminal-rendering-bug]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/windows-terminal-rendering-bug.png  "Bug de rendu du Windows Terminal")
 
-... Il suffit de renseigner une largeur initiale pour la fenêtre de `110` via l'option `initialCols`. Cela fonctionne aussi avec des valeurs au delà de `130` 🤷 (le mystère reste entier).
+... Il suffit de renseigner une largeur initiale pour la fenêtre de `110` via l'option `initialCols`. Cela fonctionne aussi avec des valeurs au-delà de `130` 🤷 (le mystère reste entier).
 
 ## Lancer des applications graphiques Linux
 
-Commencez par installer un serveur X pour Windows tel que:
+Commencez par installer un serveur X pour Windows tel que :
 
 - [X410](https://www.microsoft.com/fr-fr/p/x410/9nlp712zmn9q) (payant avec version d'essai),
 - ou encore [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/) (open-source).
 
 <div class="admonition tip" markdown="1"><p class="admonition-title">Astuce</p>
 
-Si vous utilisez X410, activer l'option **Allow Public Access**.
+Si vous utilisez X410, activez l'option **Allow Public Access**.
 
 ![x410-public-access]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/x410-public-access.gif  "X410 Allow Public Access")
 
@@ -259,7 +259,7 @@ Si vous utilisez X410, activer l'option **Allow Public Access**.
 
 <div class="admonition tip" markdown="1"><p class="admonition-title">Astuce</p>
 
-Pour VcXsrv, utilisez l'utilitaire Xlaunch, conservez les options par défaut et choisir **Disable Access Control**.
+Pour VcXsrv, utilisez l'utilitaire Xlaunch, conservez les options par défaut et choisissez **Disable Access Control**.
 
 ![vcxsrv-configuration]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/vcxsrv-configuration.gif  "Configuration de VcXsrv")
 
@@ -272,13 +272,13 @@ Pour finir, ajoutez dans le fichier de configuration de votre shell Linux  (ex: 
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 ```
 
-Puis lancer une application graphique
+Puis lancez une application graphique
 
 ```shell
 apt update && apt install -y mesa-utils && glxgears
 ```
 
-Vous pouvez même lancer les applications graphique depuis Docker 🐳.  
+Vous pouvez même lancer les applications graphiques depuis Docker 🐳.  
 [Jess Frazelle](https://github.com/jessfraz "Profil Github de Jess Frazelle"), dans son article [Docker Containers on the Desktop](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/ "Article en anglais: Docker Containers on the Desktop") aborde en détail la marche à suivre. Son dépôt est disponible [ici](https://github.com/jessfraz/dockerfiles "Dépôt Github jessfraz/dockerfiles")
 
 ```shell
@@ -306,7 +306,7 @@ alias xdg-open="open"
 
 <div class="admonition attention" markdown="1"><p class="admonition-title">Précision</p>
 
-Ceci n'est une liste exhaustive, mais de plus en plus de logiciels prévoient le support de WSL 2.
+Ceci n'est pas une liste exhaustive, mais de plus en plus de logiciels prévoient le support de WSL 2.
 
 </div>
 
