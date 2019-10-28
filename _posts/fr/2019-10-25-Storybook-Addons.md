@@ -54,7 +54,7 @@ On pourrait presque être rabat-joie en se disant que c'est juste une mode d'ouv
 
 &nbsp;
 
-Déjà le nombre d'addon est moins important que le nombre de vendeurs de tour eiffel au Trocadéro, on en dénombre 13 officiels et 27 communautaires, ça présage déjà la part belle à la qualité et au besoin, plutôt qu'à la quantité.
+Déjà le nombre d'addon est moins important que le nombre de vendeurs de tour Eiffel au Trocadéro, on en dénombre 13 officiels et 27 communautaires, ça présage déjà la part belle à la qualité et au besoin, plutôt qu'à la quantité.
 
 ![](/assets/2019-10-25-Storybook-Addons/addonlist2.png)
 
@@ -68,9 +68,9 @@ Par example, pour nous les petites mains du code, le but est de tester la réact
 
 &nbsp;
 
-C'est donc tout naturellement que la communauté contribue en fournissant des outils pour permettre de moquer les comportements qu'ils rencontrent au quotidien, permettant ainsi d'intégré à Storybook un composant connecté à un store Redux, soumis à un contexte comme le ThemeProvider de Material-UI, bourré de Query/Mutation GraphQL, de l'internationalisation jusqu'à l'accessibilité. 
+C'est donc tout naturellement que la communauté contribue en fournissant des outils pour permettre de moquer les comportements qu'ils rencontrent au quotidien, permettant ainsi d'intégrer à Storybook un composant connecté à un store Redux, soumis à un contexte comme le ThemeProvider de Material-UI, bourré de Query/Mutation GraphQL, de l'internationalisation jusqu'à l'accessibilité. 
 
-Enfait c'est ce qui fait que Storybook puisse être pertinent, il s'intègre dans l'écosystème de React tout en assumant son rôle.
+En fait, c'est ce qui fait que Storybook puisse être pertinent, il s'intègre dans l'écosystème de React tout en assumant son rôle.
 
 &nbsp;
 
@@ -79,7 +79,7 @@ Bon là je vous sent déjà plus intéressé, est-ce qu'on s'en installerai pas 
 &nbsp;
 &nbsp;
 
-## Un fichier pour les gourverner tous
+## Un fichier pour les gouverner tous
 
 ---
 
