@@ -176,7 +176,7 @@ Pensez au "NON" que doit dire un Juge par exemple : il le fait sur la base de fa
 
 
 ## RÉFÉRENCES
-- https://www.projectmanagement.com/blog-post/2537/How-Project-Managers-Say-No
+- [https://www.projectmanagement.com/blog-post/2537/How-Project-Managers-Say-No](https://www.projectmanagement.com/blog-post/2537/How-Project-Managers-Say-No)
 - https://medium.com/@ogilvydenver/the-seven-deadly-sins-of-project-management-4b219f0c11b6
 - https://medium.com/swlh/project-managers-strategy-to-say-no-constructively-888872fa1c19
 - https://www.managementcentre.co.uk/5-ways-to-say-no-3/
