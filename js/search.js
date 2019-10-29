@@ -58,7 +58,13 @@ layout: compress-js
 
         const url = baseurl + hit.url;
         const locale = lang === 'fr' ? 'fr-FR' : 'en-GB';
-        const hitDate = new Date(hit.date).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+
+        const formatAlgoliaDateString = (dateString) => {
+          const [date, hour, timezone] = dateString.split(' ');
+          return `${date}T${hour}${timezone}`;
+        };
+
+        const hitDate = new Date(formatAlgoliaDateString(hit.date)).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
 
         return article + `
           <div class="article-container">
