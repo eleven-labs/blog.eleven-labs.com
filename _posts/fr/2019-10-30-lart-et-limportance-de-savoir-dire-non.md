@@ -19,9 +19,9 @@ tags:
     - soft skills
 ---
 
-On parle tout le temps de Product Manager "apporteur de solutions" (ou "problem solver" en anglais) qui sont là avant tout pour résoudre des problèmes et faire avancer les choses. Le soucis c'est qu'on a beaucoup trop tendance, à tort, à assimiler ce trait à la capacité de la personne à dire oui plutôt que NON. Un bon Product Manager doit savoir dire NON quand il le faut, et de la manière dont il faut.
+On parle tout le temps de Product Manager "apporteur de solutions" (ou "problem solver" en anglais) qui sont là avant tout pour résoudre des problèmes et faire avancer les choses. Le soucis c'est qu'on a beaucoup trop tendance, à tort, à assimiler ce trait à la capacité de la personne à dire oui plutôt que NON. Un bon Product Manager doit savoir dire NON quand il le faut, et de la manière qu'il faut.
 
-Tout d'abord pourquoi un art ? Par ce que la formulation fait un peu titre p*te à clic  ? Non (enfin si, mais pas que).
+Tout d'abord pourquoi un art ? Parce que la formulation fait un peu titre p*te à clic  ? Non (enfin si, mais pas que).
 Si je parle de "l'art" de dire non, c'est par ce pour moi il n'y a pas de recette miracle, tant les interprétations, les expériences personnelles et les contextes peuvent être différents et impacter la réussite de cet exercice difficile.
 Vous pouvez respecter tous les codes possibles et utiliser toutes les méthodes que vous souhaitez : le résultat sur la personne d'en face ne peut être garanti.
 Vous pouvez influencer une personne mais vous ne pouvez pas la contrôler.
@@ -34,7 +34,7 @@ Deuxième enseignement : un NON n'est pas que négatif et peut vous valoir un gr
 Cet article est plutôt orienté pour un "NON" dans le cadre du Product Management, plutôt qu'une "NON" lié à une demande n'impliquant que vous (par exemple une personne qui vous demanderait de faire une maquette en vitesse pour une urgence non prévue sur votre planning, ou encore une proposition qui ne vous intéresserait pas), mais je pense qu'il peut y avoir des choses à en tirer tout de même en lisant cet article, ne passez pas votre chemin.
 
 
-## POURQUOI ÊTRE CAPABLE DIRE NON ?
+## POURQUOI ÊTRE CAPABLE DE DIRE NON ?
 
 Cela peut paraitre être une question tout bête dont la réponse serait quelque chose comme "par ce que tout n'est pas toujours réalisable". La réponse est bonne mais si on se limitait à cela l'article se terminerait ici. je vous propose de développer un peu le sujet.
 
@@ -43,20 +43,20 @@ Comme les idées étaient souvent données à voix haute, devant tout le reste d
 Dans ce rôle de Product Manager, ce qu'on attend de vous (plus que de savoir faire des mindmapping, des impact mapping et autre _insérez_votre_mot_préféré_suivi_de_mapping_) c'est avant tout d'être un conseiller, un leader. Si vous n'êtes qu'un outil qui dit oui à tout, une sorte de Yes Man (comme le film), alors votre réelle plus-value disparait. Vous qui avez à la fois la vision *big picture* et le nez dans l'opérationnel on attend de vous de véritablement gérer un produit, de le conduire. Arrêtez de ne faire que prendre les ordres du dessus, vous êtes un des seuls à même de pouvoir estimer la valeur et faisabilité d'une demande en fonction des objectifs de l'entreprise.
 Savoir dire NON c'est ce qu'on attend réellement de vous, et c'est pour cela qu'on vous respectera.
 
-Quoi ? Le respect ? qu'est ce que ça a à voir avec savoir dire "NON" ? 
+Quoi ? Le respect ? Qu'est cela a à voir avec savoir dire "NON" ? 
 Je pourrais défendre ce point en 3 arguments. Dire "NON" c'est un moyen de :
 - **asseoir son autorité** (à ne pas confondre avec tyrannie/autoritarisme, qui est toxique) car dire "NON", si on suit mon exemple, c'est oser prendre pleinement sa place et ses responsabilités, dans certain cas c'est même de la bienveillance pour vos collaborateurs (ne pas les envoyer au casse-pipe sur un terrain que vous savez complétement miné).
 - **faire preuve de bon sens et de sincérité**, un "NON" pris en pleine conscience des enjeux est une preuve d'intelligence et d'authenticité. Un "OUI" hypocrite alors que l'on pense "NON", ne fera du bien à personne.
-- **être assertif** (une vérité de fait), vous êtes justes avec vous même et avec vos collaborateurs.
+- **être assertif** (une vérité de fait), vous êtes juste avec vous même et avec vos collaborateurs.
 
 Savoir dire "NON" est donc essentiel pour une position à responsabilité. j'ai même rencontrer un jour un Head of PO qui plaçait la capacité à dire "NON" d'un candidat tout en haut de la liste des compétences qu'il recherchait avant tout.
 
-Savoir dire "NON" est le soft skill à maitriser absolument. OK, mais attention à la façon de le faire car comme on m'a dit un jour (merci oncle Ben) "*Un grand pouvoir implique de grande responsabilités*" et il sera de votre devoir de "bien faire les choses". J’entends par là qu'il y a une éthique à respecter et qu'il faut être certain d'avoir eu toutes les informations nécessaires pour juger correctement de la pertinence de la demande.
+Savoir dire "NON" est le soft skill à maitriser absolument. OK, mais attention à la façon de le faire car comme on m'a dit un jour (merci oncle Ben) "*Un grand pouvoir implique de grandes responsabilités*" et il sera de votre devoir de "bien faire les choses". J’entends par là qu'il y a une éthique à respecter et qu'il faut être certain d'avoir eu toutes les informations nécessaires pour juger correctement de la pertinence de la demande.
 
 
 ## COMMENT DIRE NON (ET COMMENT LE RÉFLÉCHIR CORRECTEMENT)
 
-Avant toutes choses, il convient de rappeler que toute décision doit être prise dans des conditions optimales. J’entends par là qu'il convient que vous soyez assez informé sur la politique de votre entreprise, sa culture, sa stratégie à court et moyen termes, les priorités du management, les travaux en cours etc. Mais aussi de la hiérarchie interne (officielle et officieuse).
+Avant toutes choses, il convient de rappeler que toute décision doit être prise dans des conditions optimales. J’entends par là qu'il convient que vous soyez assez informé sur la politique de votre entreprise, sa culture, sa stratégie à court et moyen terme, les priorités du management, les travaux en cours etc. Mais aussi de la hiérarchie interne (officielle et officieuse).
 Sachez aussi que vous pouvez **vous autoriser à réfléchir**. Dans certains cas ou avec certaines personnes (les "maintenant tout et tout de suite !") il sera parfois difficile à faire entendre que avez besoin de temps pour réfléchir. Qu'importe : on aura du mal à vous le reprocher, alors imposez-vous!
 
 Maintenant cela en tête, mettez vous en condition : On vient vous voir (une personne du marketing, un directeur d'une autre direction, votre n+2...) et vous dire que
@@ -71,19 +71,19 @@ Prêt ? On se lance.
 
 Il vous faut absolument commencer par poser des questions pour avoir plus de détails et comprendre le véritable "pain point" derrière la demande. Effectivement cela peut paraitre un peu évident, mais c'est crucial et cela pour plusieurs raisons :
  - La personne en face de vous aura du mal à accepter un refus si elle estime que vous n'avez pas compris complétement sa demande;
- - On ne vous jugera pas légitime dans votre choix si le demandeur n'est pas convaincu par le fait que vous avez prit le temps de réfléchir à sa demande et peser le pour et le contre, le tout basé sur des chiffres et des faits.
- - Vous obtiendrez des informations sur la motivation réelle de la demande, le besoin fondamentale ce qui vous permettra plus facilement de répondre négativement si vous jugiez cela non pertinent.
+ - On ne vous jugera pas légitime dans votre choix si le demandeur n'est pas convaincu par le fait que vous ayez pris le temps de réfléchir à sa demande et peser le pour et le contre, le tout basé sur des chiffres et des faits.
+ - Vous obtiendrez des informations sur la motivation réelle de la demande, le besoin fondamental ce qui vous permettra plus facilement de répondre négativement si vous jugiez cela non pertinent.
 
 On parlera d'**active listening**, lors de l'explication du besoin par votre  interlocuteur vous devez chercher à comprendre et non pas être passif. Vous devez écouter avec l'intention de répondre.
 
-Une fois le besoin décortiqué et compris, il ne vous reste plus qu'à en évaluer la pertinence selon les axes qui sont propre à votre job : coût, efficience, rationalité vis à vis de la roadmap et de la stratégie, alignement avec le business et l'organisation, les OKR de l'équipe etc. Il faut aussi que vous ayez en tête toutes les alternatives possibles, ce qui pourrait être dé-scopé, re-priorisé et surtout ce que cette demande pourrait avoir comme impacte en termes de dette technique ou de dette produit.
+Une fois le besoin décortiqué et compris, il ne vous reste plus qu'à en évaluer la pertinence selon les axes qui sont propres à votre job : coût, efficience, rationalité vis à vis de la roadmap et de la stratégie, alignement avec le business et l'organisation, les OKR de l'équipe etc. Il faut aussi que vous ayez en tête toutes les alternatives possibles, ce qui pourrait être dé-scopé, re-priorisé et surtout ce que cette demande pourrait avoir comme impacte en termes de dette technique ou de dette produit.
 
 Dans la mesure du possible essayez de le faire en personne, si besoin déplacez vous.
 Vous êtes maintenant prêt à dire "NON", lancez-vous.
 
 ### Le moment crucial : dire "NON"
 
-*NOTE : avant de vous lancer dans votre "NON" gardez en tête que vous pouvez aussi utiliser le système à son avantage. J'entends par là qu'il y a surement un processus de décision en place et que la personne peut l'avoir contourné.*
+*NOTE : avant de vous lancer dans votre "NON" gardez en tête que vous pouvez aussi utiliser le système à son avantage. J'entends par là qu'il y a surement un processus de décision en place et que la personne peut l'avoir contournée.*
 
 ####  > Moi, Je....
  Évitez d'utiliser le "Je" ou le "Moi". Bien que la décision vous appartienne, elle est basée sur une analyse de faits, d'objectifs et de chiffres et cela n'a rien de subjectif. Il est important que votre interlocuteur comprenne cela afin que ce son retour ne soit pas dirigé contre vous, mais contre une stratégie ou des décisions. Ainsi, invoquez plutôt les raisons qui ont conduites à cette décision. 
@@ -94,7 +94,7 @@ Vous pourriez donc dire :
 On a trop tendance à essayer de rendre le "NON" un peu plus doux par timidité, par peur de blesser votre interlocuteur ou avec l'espoir de rendre sa réaction moins violente. Oubliez cela tout de suite. Un manque de fermeté pourrait être perçu comme une faille. Votre interlocuteur aura alors tendance à faire pression pour vous faire changer d'avis (avec plus ou moins de force). Il pourrait aussi revenir à la charge plus tard avec de nouveaux arguments et vous perdriez votre temps tous les deux. 
 La phase de découverte du besoin et d'échanges est déjà passée, votre décision est prise.
 Attention à votre langage, ne soyez pas plus poli qu'il ne le faut (ou qu'à votre habitude) on pourrait interpréter ça pour de la lâcheté, un manque de conviction ou même pas de l'hypocrisie.
-Bien qu'il est toujours bienvenu de proposer des alternatives quand c'est possible, faites attention aux concessions du type "si je fait ça... alors toi tu fais ça pour moi". Certains vous dirons que c'est une bonne stratégie, je n'ai jamais compris pourquoi : vous ne rendez pas service à des gens, vous travaillez sur un produit.
+Bien qu'il est toujours bienvenu de proposer des alternatives quand c'est possible, faites attention aux concessions du type "si je fais ça... alors toi tu fais ça pour moi". Certains vous dirons que c'est une bonne stratégie, je n'ai jamais compris pourquoi : vous ne rendez pas service à des gens, vous travaillez sur un produit.
 
 #### > Restez neutre et humble
 Restez humble et adoptez un ton neutre : une personne vient vous voir avec une demande, en un sens elle a besoin de votre expertise, agissez en tant que tel. Par exemple il serait dommage de détruire le "puits à idées" que peut être cette personne.
@@ -107,13 +107,13 @@ Dans le même esprit : donnez immédiatement les véritables raison du refus, ne
 #### > Soyez responsable
 Prenez en compte l'importance de la demande de votre interlocuteur et donc l'impact émotionnel de votre refus : vous venez peut être de l’empêcher de répondre à un besoin d'un client qui le harcèle depuis des mois ou encore de fragiliser sa place dans l'entreprise. Ne rendez pas votre "NON" plus doux, restez ferme, mais signalez à votre interlocuteur que vous avez conscience de cet impact.
 Vous pourriez par exemple dire :
-> "Je sais que ce n'est pas la réponse que tu espérais c'est donc assez difficile pour moi de te dire que sur la base de ce qu'on a dans le backlog l'équipe ne pourra pas prendre le......"
+> "Je sais que ce n'est pas la réponse que tu espérais mais sur la base de ce qu'on a dans le backlog l'équipe ne pourra pas prendre le......"
 
 #### > Le "Speech convergence" ([Wikipedia](http://en.wikipedia.org/wiki/Communication_Accommodation_Theory))_  
 On a tendance à accepter plus facilement la décision de quelqu'un dont les codes sont les mêmes que nous. Par exemple un Directeur technique aura plus tendance à accepter un refus de quelqu'un de la direction qui a le même jargon technique que lui.
 Plus largement, il s'agit de réduire les potentiels points de friction (linguistiques) avec une personne en adoptant le même langage, codes, paraverbal etc. que la personne en face de vous afin qu'elle vous perçoivent dans le même "cercle".
 C'est un outil bien plus puissant qu'on ne le croit.
-Vous pourriez me dire que vous n'en avez pas besoin, que pour vous c'est juste un petit tour de passe passe qui sert quand on fait du marketing ou de la publicité et que vous préférez vous baser uniquement sur votre expertise et des arguments solides. Vous avez surement raison, cependant la vie est faites d'obstacles et de gens qui ne répondent pas toujours à la logique et au bon sens : vous pourriez avoir besoin de cet outil contre ce "type" de personnes.
+Vous pourriez me dire que vous n'en avez pas besoin, que pour vous c'est juste un petit tour de passe passe qui sert quand on fait du marketing ou de la publicité et que vous préférez vous baser uniquement sur votre expertise et des arguments solides. Vous avez surement raison, cependant la vie est faites d'obstacles et de gens qui ne répondent pas toujours à la logique et au bon sens : vous pourriez avoir besoin de cet outil pour vous sortir de situations complexes.
 
 #### > Invitez les gens à collaborer dans votre réponse si vous ne pouvez pas dire non
 Il n'est pas toujours toujours possible de refuser en utilisant le mot non (vous aurez remarqué que j'ai toujours mis le non entre guillemets et en majuscules, indiquant qu'il s'agit d'une idée plus que d'un mot). Effectivement, s'il s'agit de votre n+3 qui vous "ordonne" de le faire, voir même que vous aimeriez dire "OUI" mais que vous ne pouvez pas à cause des contraintes du projet, utiliser le terme non ne fonctionnera pas toujours.
