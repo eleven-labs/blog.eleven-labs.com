@@ -1,19 +1,19 @@
 ---
 layout: post
 title: Reprenez le contrôle de vos file system avec Flysystem
-excerpt: Cet article vous presente comment intéragire simplement avec vos systèmes de gestion de fichier avec Flysystem.
+excerpt: Cet article vous présente comment interagir simplement avec vos systèmes de gestion de fichier avec Flysystem.
 authors:
     - nicolas
 lang: fr
 permalink: /fr/reprenez-le-controle-de-vos-file-system-avec-Flysystem/
 categories:
     - PHP
-    - bundle
-    - file systeme
+    - Bundle
+    - File system
 tags:
     - PHP
     - Symfony
-    - Flystem
+    - Flysystem
     - File system
 ---
 
@@ -33,12 +33,12 @@ Ca fait du code à maintenir et si un jour on l’on doit changer de solution de
 
  # Voici la solution que je vous propose
 
-La solution est donc d'utiliser une librairie qui vas faire le travail pour vous, Flystème. 
+La solution est donc d'utiliser une librairie qui vas faire le travail pour vous, Flysystem. 
 [Flysystem](https://flysystem.thephpleague.com/docs/) développer par [thephpleague](https://thephpleague.com/fr/), un groupe de développer de bibliothèques PHP. *Flysystem* est une bibliothèque d'abstraction du système de fichier. 
 Cela permet donc de changer du solution de système de fichier rapidement et facilement. 
 Vous pouvez l’utiliser dans une application PHP avec ou sans framework.
 
-Flystème fourni une API permettant de gérer vos ressources sur un grand nombre de système de fichier. D’office, la librairie fournit trois adaptateurs de système de fichier, FTP, Local et NullAdapter. Mais rien ne vous empêche d’ajouter d’autre adaptateur de système de fichier, d’ailleur il en existe un grand nombre.
+Flysystem fourni une API permettant de gérer vos ressources sur un grand nombre de système de fichier. D’office, la librairie fournit trois adaptateurs de système de fichier, FTP, Local et NullAdapter. Mais rien ne vous empêche d’ajouter d’autre adaptateur de système de fichier, d'ailleurs il en existe un grand nombre.
  
 Voici la liste des adaptateurs développés par The PHP league :
 
@@ -65,7 +65,7 @@ PDO Database
 SSH/Shell
 ...
 
-Vous pouvez retrouver la liste complète sur [le README du dépôt officiel](https://github.com/thephpleague/flysystem). Si par malheur vous ne trouvez pas votre bonheur parmis la liste proposée vous pouvez développer le vôtre. Voici le lien pour [créer un adaptateur](https://flysystem.thephpleague.com/docs/advanced/creating-an-adapter/) car je n’en parlerait pas ici.  
+Vous pouvez retrouver la liste complète sur [le README du dépôt officiel](https://github.com/thephpleague/flysystem). Si par malheur vous ne trouvez pas votre bonheur parmi la liste proposée vous pouvez développer le vôtre. Voici le lien pour [créer un adaptateur](https://flysystem.thephpleague.com/docs/advanced/creating-an-adapter/) car je n’en parlerait pas ici.  
 
 # Flysystem pour permuter de système de fichier
 
@@ -82,9 +82,9 @@ flysystem:
         directory: '%kernel.project_dir%/var/storage'
 ```
 
-Ici on peut voir que l’on configure un file system qui ce nome `default.storage`, utilisant l’adaptateur `local` et qu’il y a une option qui cible le répertoir ou seront stockés les ressources: `directory: '%kernel.project_dir%/var/storage'`.
+Ici on peut voir que l’on configure un file system qui ce nome `default.storage`, utilisant l’adaptateur `local` et qu’il y a une option qui cible le répertoire ou seront stockés les ressources: `directory: '%kernel.project_dir%/var/storage'`.
 
-Jusqu'ici rien de compliqué. Mais maintenant on change de système de fichier pour passer sur une solution de stockage sur AWS S3. Pour ce faire nous allons dans un premier temps [créer un Bucket dans la console AWS](https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/user-guide/create-bucket.html). Puis, nous installont l'adaptateur Flysystem AWS S3 via composer comme ceci `composer require league/flysystem-aws-s3-v3`.
+Jusqu'ici rien de compliqué. Mais maintenant on change de système de fichier pour passer sur une solution de stockage sur AWS S3. Pour ce faire nous allons dans un premier temps [créer un Bucket dans la console AWS](https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/user-guide/create-bucket.html). Puis, nous installons l'adaptateur Flysystem AWS S3 via composer comme ceci `composer require league/flysystem-aws-s3-v3`.
 Ensuite nous configurons notre client AWS :
 
 ```yaml
@@ -194,7 +194,7 @@ Et voilà pour la configuration de plusieurs système de fichier.
 # La configuration ça va deux minutes
 
 Nous avons vu comment permuter de système de fichier juste avec quelque lignes de configuration, mais aussi comment configurer plusieurs système de fichier.
-Maintenant nous allons voir comment utiliser nos système de fichier. [l’API Flysystème](https://flysystem.thephpleague.com/docs/usage/filesystem-api/) nous offre plusieur méthode pour manipuler des resources. Voici la liste des méthodes 
+Maintenant nous allons voir comment utiliser nos système de fichier. [l’API Flysystem](https://flysystem.thephpleague.com/docs/usage/filesystem-api/) nous offre plusieurs méthode pour manipuler des resources. Voici la liste des méthodes 
 
 - write
 - writeStream
@@ -258,7 +258,7 @@ $gcpStorage->wirteStream($path, $resource, ['visibility' => AdapterInterface::VI
 
 Un autre exemple d’utilisation. Le déplacement d’un fichier d’un système de fichier à un autre système de fichier. Pour ce faire nous aurons besoin d’utiliser le `MountManager` de Flysystem.
 
-Le `MountManager` permet de faire des manipulation dans plusieur système de fichier préalablement renseigner. Il suffira uniquement de préfixé le paramètre `path` avec le nom du système de fichier à utiliser.
+Le `MountManager` permet de faire des manipulation dans plusieurs système de fichier préalablement renseigner. Il suffira uniquement de préfixé le paramètre `path` avec le nom du système de fichier à utiliser.
 
 Voici l’exemple pour déplacer un fichier d’un système de fichier local vers un Storage Google :
 
@@ -282,7 +282,7 @@ Vous pouvez voir que l’on assigne un clé au système de fichier renseigner au
 
 ## Un plugin pour customiser vos actions
 
-Dernier exemple d’utilisation pour cette article. Dans la liste des méthode vous avez peut être vu cette méthode `addPlugin`. Flystème nous permet de créer nos plugins pour avoir nos propre méthode.
+Dernier exemple d’utilisation pour cette article. Dans la liste des méthode vous avez peut être vu cette méthode `addPlugin`. Flysystem nous permet de créer nos plugins pour avoir nos propre méthode.
 
 Nous allons prendre la problématique suivante :
 > Dans un système de gestion de facture nous voulons que lorsque l’on sauvegarde une facture elle soit placé dans un répertoire à la date du jour dans ce format `Y-m-d`. 
