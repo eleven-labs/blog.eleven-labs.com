@@ -23,11 +23,11 @@ La gestion d’un ou plusieurs système de fichier dans une application peut s�
 
 Pour gérer la connection avec les solutions de stockage en cloud nous pouvons trouver un sdk qui nous simplifiera notre notre code. Seulement pour l'interaction avec nos resource nous seront obligé de créer ce genre de classe :
 
-![Class CRUD AWS S3]({{ site.baseurl }}/assets/2019-10-30-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-class.png){: style="margin: 0 auto; display: block;" }
+![Class CRUD AWS S3]({{ site.baseurl }}/assets/2019-11-20-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-class.png){: style="margin: 0 auto; display: block;" }
 
 Avec des méthodes comme celle-ci :
 
-![Method delete AWS S3]({{ site.baseurl }}/assets/2019-10-30-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-method.png){: style="margin: 0 auto; display: block;" }
+![Method delete AWS S3]({{ site.baseurl }}/assets/2019-11-20-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-method.png){: style="margin: 0 auto; display: block;" }
 
 Ca fait du code à maintenir et si un jour on l’on doit changer de solution de stockage l’on peut avoir des problématiques de compatibilité.
 
@@ -355,7 +355,7 @@ class invoicePlugin implements PluginInterface
 4. Voir le résultat :
 
 
-![result plugin Flysystem]({{ site.baseurl }}/assets/2019-10-30-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-result-plugin.png){: style="margin: 0 auto; display: block;" }
+![result plugin Flysystem]({{ site.baseurl }}/assets/2019-11-20-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-result-plugin.png){: style="margin: 0 auto; display: block;" }
 
 Et voilà pour ce dernier exemple.
 
