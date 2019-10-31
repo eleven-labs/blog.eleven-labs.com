@@ -64,7 +64,7 @@ Dans les faits ces derniers sont rangés par fonctionnalité: Organisation, Test
 
 Ensuite, l'intérêt de ces modules est communautaire, on rappelle que le but de ce projet est de simplifier la vie de ceux qui l'utilises: PO, UX designer, dev. 
 
-Par example, pour nous les petites mains du code, le but est de tester la réaction de notre composant à plusieurs états.
+Par exemple, pour nous les petites mains du code, le but est de tester la réaction de notre composant à plusieurs états.
 
 &nbsp;
 
