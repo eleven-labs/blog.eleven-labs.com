@@ -69,7 +69,7 @@ Cela est possible grâce aux différentes fonctionnalités de Storybook:
 Auxquelles s'ajoute l'utilisation:  
 
 - De snapshot et test unitaire pour les composants
-- Des outils pour générer simplement une page de documentation des composants
+- Des addons (extensions) pour enrichir l'environnement de base de Storybook
 
 &nbsp;
 
@@ -79,7 +79,7 @@ Storybook propose donc un cadre où l'on peut tester la réponse d'un composant 
 
 Qui dit environnement de confiance, dit contremaîtres, et donc vous pourrez inviter PO, Scrum, Designer, QA à votre beau projet pour qu'ils mettent des commentaires partout.
 
-> *"Très joli ton carrousel Eric, maintenant que je le vois, je me dis qu'il faudrait l'enlever"*  
+> *"Très joli ton carrousel Eric, maintenant que je le vois, je me dis qu'il faudrait l'enlever..."*  
 
 &nbsp;
 
@@ -109,7 +109,7 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
 
 ## Avant d'y aller...
 
-Ça y est, une nouvelle vie de développeur front commence, Storybook installé, les étoiles plein les yeux, tu te dis que plus jamais tu n'enverras d'immondes composants , désormais c'est le vrai monde qui t'attends, et le vrai monde il va chez le coiffeur... et fait du CDD.
+Ça y est, une nouvelle vie de développeur front commence, Storybook installé, les étoiles plein les yeux, tu te dis que plus jamais tu n'auras à retoucher 200 fois ton beau composant. Désormais c'est le vrai monde qui t'attends, et le vrai monde il va chez le coiffeur... et fait du CDD.
 
 &nbsp;
 
@@ -127,7 +127,7 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
 
 &nbsp;
 
-On va donc appliquer cette belle méthodologie, sur la meilleure application possible, cette bonne vieille to-do list!
+On va donc appliquer cette belle méthodologie, sur la meilleure application possible: cette bonne vieille to-do list!
 
 Alors on va commencer par se faire un tout petit composant bien gentil qui afficherai une tâche importante comme: *"Prévenir Jeanine".*
 ``` javascript
@@ -171,9 +171,9 @@ On va donc rédiger des jolis cas d'usage pour ce composant, AVANT de coder ses 
     
     // Les stories, c'est ça le truc stylé.
     	 
-    //  storiesOf('NomDuComposant', module)
-    //  .add('nomStory', () => <Composant props onClick toussa />)
-     
+    /*  storiesOf('NomDuComposant', module)
+        .add('nomStory', render() callback) 
+    */ 
     storiesOf('Task', module)
     .add('default', () => <Task task={task} {...actions} />)
     .add('pinned', () => <Task task={/{...task, state: 'TASK_PINNED'}/} {...actions} />)
@@ -181,10 +181,30 @@ On va donc rédiger des jolis cas d'usage pour ce composant, AVANT de coder ses 
 ```
 
 Et là, c'est le déclic, Storybook permet de render facilement ses composants dans différents états.
+Il devient donc facile de wrapper son composant autour de tout un tas de Provider.
+
+```javascript
+  storiesOf('NomDuComposant', module)
+    .add('nomStory', render() callback) 
+    .add('shouldFetchItemList', () => {
+      const GET_TRUC_QUERY = gql``
+      return (
+        <Query query={GET_TRUC_QUERY}>
+          {({data, error, loading}) => {
+              if (loading) return <p>Loading...</p>
+              if (error) return <p>Error: {error}</p>
+              return <ItemList>
+                  {data.items.map(item => <Item item={item} key={item.id}/>)}
+              </ItemList> 
+          }}
+        </Query>
+      )
+    })
+```
 
 > *"Mais ça fait 6 fois que tu nous le dit"*
 
-Oui mais là on le voit.
+Oui mais là on le voit Billy.
 
 &nbsp;
 
@@ -228,7 +248,6 @@ Bon on crève tous d'envie de voir ce fameux catalogue de composant, LE storyboo
 > Stop right there criminal scum
 
 Il ne faut pas oublier de dire à Storybook où sont les stories sinon il va faire la gueule...
-
 Il est un peu susceptible le George. 
 
 ```javascript
