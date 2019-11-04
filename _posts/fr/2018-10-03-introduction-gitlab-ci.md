@@ -387,7 +387,7 @@ stop:demo: # Ce job pourra être visible et exécuté uniquement après le job `
     action: stop
 ```
 
-Voici le lien officiel de la documentation sur les [environments](docs.gitlab.com/ee/ci/environments.html) si vous souhaitez aller plus loin.
+Voici le lien officiel de la documentation sur les [environments](https://docs.gitlab.com/ee/ci/environments.html) si vous souhaitez aller plus loin.
 
 
 ## variables
