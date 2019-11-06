@@ -18,10 +18,10 @@ tags:
 ---
 
 Après avoir vu en profondeur comment fonctionnent les promesses et comment les utiliser, nous allons nous pencher sur une fonctionnalité arrivée avec l'ES7 : `async/await`.
-`Async` await nous permet de résoudre un problème né de l'utilisation de code asynchrone en javascript: le [callback hell](http://callbackhell.com/), récurrent lorsque l'on cherche à faire de l'asynchrone de manière séquentielle.
+`Async` await nous permet de résoudre un problème né de l'utilisation de code asynchrone en javascript : le [callback hell](http://callbackhell.com/), récurrent lorsque l'on cherche à faire de l'asynchrone de manière séquentielle.
 `Async/await` n'est globalement que du sucre syntaxique, qui nous permet de lire du code asynchrone comme s'il était synchrone.
 
-⚠️ Il est important de connaître et de comprendre les promesses pour maitriser `async/await`. Si ce n'est pas votre cas, je vous conseille de lire mon précédent [article](https://blog.eleven-labs.com/fr/lespromessesenjavascript/) qui traite justement des promesses.
+⚠️ Il est important de connaître et de comprendre les promesses pour maîtriser `async/await`. Si ce n'est pas votre cas, je vous conseille de lire mon précédent [article](https://blog.eleven-labs.com/fr/lespromessesenjavascript/) qui traite justement des promesses.
 
 ![]({{ site.baseurl }}/assets/2019-11-06-async-await.jpg)
 
@@ -40,7 +40,7 @@ async function asyncFunction() {
 asyncFunction().then(console.log) // "résultat"
 ```
 
-les fonctions async rendent le code beaucoup plus concis que l'utilisation de promesses normale:
+les fonctions async rendent le code beaucoup plus concis que l'utilisation de promesses normales :
 
 ```javascript
 // Utilisation du then
@@ -77,9 +77,9 @@ const getAsyncAddition = async () => {
 }
 ```
 
-pour avoir le même résultat sans `await`, il faudrait
+Pour avoir le même résultat sans `await`, il faudrait
 
-- soit imbriquer un `then()` dans un autre:
+- soit imbriquer un `then()` dans un autre :
 
 ```javascript
 const getAsyncAddition = () => getAsyncNumber1().then(number1 => getAsyncNumber2().then(number2 => number1 + number2));
@@ -87,7 +87,7 @@ const getAsyncAddition = () => getAsyncNumber1().then(number1 => getAsyncNumber2
 
 Ce qui, vous en conviendrez, est difficile à lire.
 
-- soit déclarer une variable dans le scope de la fonction:
+- soit déclarer une variable dans le scope de la fonction :
 
 ```javascript
 const getAsyncAddition = () => {
@@ -105,9 +105,9 @@ Voici une liste de règles importantes à retenir sur async await :
 
 - les fonctions async retournent une promesse.
 - les fonctions async utilisent une `Promise` implicite pour retourner un résultat. Même si une promesse n'est pas retournée explicitement, la fonction async fait en sorte que le code soit passé par une promesse.
-- `await` bloque l'exécution du code à l'intérieur d'une fonction async. Il permet de s'assurer que la prochaine ligne est exécuté quand la promesse est résolue. Donc si du code asynchrone est déjà en train de s'exécuter, `await` n'aura pas d'effet sur lui.
+- `await` bloque l'exécution du code à l'intérieur d'une fonction async. Il permet de s'assurer que la prochaine ligne soit exécutée quand la promesse est résolue. Donc si du code asynchrone est déjà en train de s'exécuter, `await` n'aura pas d'effet sur lui.
 - il peut y avoir plusieurs `await` à l'intérieur d'une fonction async.
-- Il faut bien faire attention lors de l'utilisation d'`await` dans une boucle, car le code peut facilement s'executer de manière séquentielle au lieu d'être executé en parrallèle.
+- Il faut bien faire attention lors de l'utilisation d'`await` dans une boucle, car le code peut facilement s'exécuter de manière séquentielle au lieu d'être executé en parallèle.
 - `await` est toujours utilisé pour une seule promesse.
 
 ## Pourquoi utiliser async await ?
@@ -150,7 +150,7 @@ const makeRequest = async () => {
 }
 ```
 
-Mais il est aussi possible d'utiliser un catch à l'appel de la fonction avec async/await:
+Mais il est aussi possible d'utiliser un catch à l'appel de la fonction avec async/await :
 
 ```javascript
 const doSomethingAsync = async () => {
@@ -163,7 +163,7 @@ doSomethingAsync().
   .catch(errorHandler);
 ```
 
-- Il arrive assez souvent d'appeler une promesse (qu'on va appeler promesse1) et d'utiliser sa valeur de retour pour appeler une deuxième promesse (qui s'appelle sans surprise promesse2), pour ensuite utiliser le résultat de ces deux promesses pour appeler promesse3. Le code ressemble donc à ceci:
+- Il arrive assez souvent d'appeler une promesse (qu'on va appeler promesse1) et d'utiliser sa valeur de retour pour appeler une deuxième promesse (qui s'appelle sans surprise promesse2), pour ensuite utiliser le résultat de ces deux promesses pour appeler promesse3. Le code ressemble donc à ceci :
 
 ```javascript
 
