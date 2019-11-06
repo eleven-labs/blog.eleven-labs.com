@@ -23,7 +23,7 @@ Après avoir vu en profondeur comment fonctionnent les promesses et comment les 
 
 ⚠️ Il est important de connaître et de comprendre les promesses pour maîtriser `async/await`. Si ce n'est pas votre cas, je vous conseille de lire mon précédent [article](https://blog.eleven-labs.com/fr/lespromessesenjavascript/) qui traite justement des promesses.
 
-![]({{ site.baseurl }}/assets/2019-11-06-async-await.jpg)
+![]({{site.baseurl}}/assets/2019-11-06-async-await.jpg/async-await.jpg)
 
 ## Définition
 
@@ -212,6 +212,36 @@ const makeRequest = async () => {
 
 - Il est possible d'utiliser `await` sur des opérations synchrones et asynchrones. Par exemple, écrire `await 5` revient à écrire `Promise.resolve(5)`.
 
+## Top-level await
+
+Avant de passer à la conclusion, j'aimerais aborder un sujet qui est encore en draft (au stage 3, donc probablement bientôt disponible !) au moment où j'écris ces lignes : le top-level `await`.
+
+Le top-level `await` permet aux modules d'agir comme des fonctions async. Il était possible auparavant d'importer un module dans une fonction async, mais un problème se posait : l'`export` de ce module pouvait être accessible avant que la fonction async soit résolue. Cela pouvait poser problème car si un autre module importe le module présent dans la fonction async, le résultat était potentiellement `undefined`.
+
+Un article écrit par Rich Harris a cependant mis en avant certaines craintes à propos de cette nouvelle proposition, notamment:
+
+- Top-level `await` pourrait bloquer l'exécution du code.
+- Top-level `await` pourrait bloquer le `fetch` des ressources.
+- Top-level `await` pourrait créer des problèmes d'intéropérabilité avec les modules [CommonJS](https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch11s03.html).
+
+Pour résoudre ces problématiques, la version en stage 3 propose ces solutions :
+
+- Top-level `await` ne bloque pas les exécutions en parralèle.
+- Top-level `await` se produit durant la phase d'execution du module (qui correspond à la dernière phase, après l'initialization et la configuration), ce qui signifie qu'il se produit après que les ressources soient `fetch`.
+- Top-level `await` se limite aux modules, il ne supportera pas les scripts ou les modules CommonJS.
+
+Une solution qui permettrait donc d'utiliser dynamiquement les modules en JavaScript mais qui soulève malgré tout plusieurs questions, car les imports impératifs sont plus lents et mauvais pour les performances d'une application que les imports déclaratifs.
+
+Pour ceux qui aimeraient avoir plus d'informations sur ces deux sujets; voici quelques ressources :
+
+- [La proposition top-level await](https://github.com/tc39/proposal-top-level-await)
+
+- [L'article écrit par Rich Harris: Top-level await is a footgun](https://gist.github.com/Rich-Harris/0b6f317657f5167663b493c722647221)
+
+- [Why imperative imports are slower than declarative imports](https://gist.github.com/Rich-Harris/41e8ccc755ea232a5e7b88dee118bcf5)
+
+Ces 3 ressources sont par contre en anglais, mais pour les anglophobes, il n'y a pas à s'inquièter car il est très probable que l'on entendra parler à nouveau du top-level `await`.
+
 ## Conclusion
 
-`async/await` est une fonctionnalité incroyable qui permet d'écrire de l'asynchrone facilement. Il est cependant important que pour le language, `async/await` fonctionne exactement comme une promesse et qu'il ne résoud pas tout les problèmes, comme la gestion de plusieurs appels asynchrones qui sont indépendants. Les fonctions async fonctionnent exactement comme les promesses, mais sont utiles pour gérer les erreurs, éviter d'imbriquer ses promesses, et lire du code asynchrone comme du code synchrone. J'espère que cet article vous aura aidé à y voir plus clair !
+`async/await` est une fonctionnalité incroyable qui permet d'écrire de l'asynchrone facilement. Il est cependant important de comprendre que pour le language, `async/await` fonctionne exactement comme une promesse et qu'il ne résoud pas tout les problèmes, comme la gestion de plusieurs appels asynchrones qui sont indépendants. Les fonctions async fonctionnent exactement comme les promesses, mais sont utiles pour gérer les erreurs, éviter d'imbriquer ses promesses, et lire du code asynchrone comme du code synchrone. J'espère que cet article vous aura aidé à y voir plus clair !
