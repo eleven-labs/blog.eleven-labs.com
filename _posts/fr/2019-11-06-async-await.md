@@ -232,7 +232,7 @@ Pour résoudre ces problématiques, la version en stage 3 propose ces solutions 
 
 Une solution qui permettrait donc d'utiliser dynamiquement les modules en JavaScript mais qui soulève malgré tout plusieurs questions, car les imports impératifs sont plus lents et mauvais pour les performances d'une application que les imports déclaratifs.
 
-Pour ceux qui aimeraient avoir plus d'informations sur ces deux sujets; voici quelques ressources :
+Pour ceux qui aimeraient avoir plus d'informations sur ces deux sujets, voici quelques ressources :
 
 - [La proposition top-level await](https://github.com/tc39/proposal-top-level-await)
 
@@ -244,4 +244,4 @@ Ces 3 ressources sont par contre en anglais, mais pour les anglophobes, il n'y a
 
 ## Conclusion
 
-`async/await` est une fonctionnalité incroyable qui permet d'écrire de l'asynchrone facilement. Il est cependant important de comprendre que pour le language, `async/await` fonctionne exactement comme une promesse et qu'il ne résoud pas tout les problèmes, comme la gestion de plusieurs appels asynchrones qui sont indépendants. Les fonctions async fonctionnent exactement comme les promesses, mais sont utiles pour gérer les erreurs, éviter d'imbriquer ses promesses, et lire du code asynchrone comme du code synchrone. J'espère que cet article vous aura aidé à y voir plus clair !
+`async/await` est une fonctionnalité incroyable qui permet d'écrire de l'asynchrone facilement. Il est cependant important de comprendre que pour le langage, `async/await` fonctionne exactement comme une promesse et qu'il ne résoud pas tout les problèmes, comme la gestion de plusieurs appels asynchrones qui sont indépendants. Les fonctions async fonctionnent exactement comme les promesses, mais sont utiles pour gérer les erreurs, éviter d'imbriquer ses promesses, et lire du code asynchrone comme du code synchrone. J'espère que cet article vous aura aidé à y voir plus clair !
