@@ -136,6 +136,7 @@ Puis on fait un petit tour dans le fichier `.storybook/addon.js` où l'on doit *
 C'est tout! 😏
 
 On va donc immédiatement éditer le code de notre story
+
 ```javascript
     // src/components/Task.stories.js
     
