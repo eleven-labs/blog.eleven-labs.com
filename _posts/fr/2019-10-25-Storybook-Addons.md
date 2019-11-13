@@ -32,7 +32,6 @@ Alors oui, mais vu l'importance de la contribution des addons sur ce sujet, il a
 Pour rappel dans le précédent article, nous avons vu ensemble que Storybook est un environnement de développement de composant, son but est de simplifier cette tâche en fournissant des `stories` qui servent de guidelines/spec pour les composants, améliorant l'exportabilité et la résilience générale.
 
 &nbsp;
-&nbsp;
 
 ## Clique sur la cloche et Addon toi
 
