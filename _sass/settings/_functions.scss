@@ -11,3 +11,10 @@
 @function em($pixels, $context: $browser-context) {
   @return #{$pixels / $context}em;
 }
+
+// Transform pixel values into rem
+// @fixme Our template is not yet fully REM compliant so I had to multiply by 1.7 to fix scaling issues.
+@function px2rem($value) {
+  @return ($value / $font-size) * 1.8rem;
+}
+
