@@ -60,7 +60,7 @@ Ensuite, l'intérêt de ces modules est communautaire, on rappelle que le but de
 Par exemple, pour nous les petites mains du code, le but est de tester la réaction de notre composant à plusieurs états.
 
 
-C'est donc tout naturellement que la communauté contribue en fournissant des outils pour permettre de moquer les comportements qu'ils rencontrent au quotidien, permettant ainsi d'intégrer à Storybook un composant connecté à un store Redux, soumis à un contexte comme le ThemeProvider de Material-UI, bourré de Query/Mutation GraphQL, de l'internationalisation jusqu'à l'accessibilité. 
+C'est donc tout naturellement que la communauté contribue en fournissant des outils pour permettre de moquer les comportements qu'ils rencontrent au quotidien, permettant ainsi d'intégrer à Storybook un composant connecté à un store Redux, soumis à un contexte comme le [ThemeProvider](https://www.styled-components.com/docs/advanced) de [Material-UI](https://material-ui.com/customization/theming/), bourré de Query/Mutation GraphQL, de l'internationalisation jusqu'à l'accessibilité. 
 
 En fait, c'est ce qui fait que Storybook puisse être pertinent, il s'intègre dans l'écosystème de React tout en assumant son rôle.
 
