@@ -52,7 +52,7 @@ Déjà le nombre d'addon est moins important que le nombre de vendeurs de tour E
 
 ![Liste d'addon 2]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/addonlist2.png)
 
-Dans les faits ces derniers sont rangés par fonctionnalité: Organisation, Test, Code, Data & State, Style et pour finir Design.
+Dans les faits ces derniers sont rangés par fonctionnalité: **Organisation**, **Test, Code**, **Data & State**, **Style** et pour finir **Design**.
 
 
 Ensuite, l'intérêt de ces modules est communautaire, on rappelle que le but de ce projet est de simplifier la vie de ceux qui l'utilises: PO, UX designer, dev. 
