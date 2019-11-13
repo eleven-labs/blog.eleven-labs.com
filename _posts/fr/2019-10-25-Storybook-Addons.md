@@ -33,7 +33,6 @@ Pour rappel, dans le précédent article, nous avons vu ensemble que Storybook e
 
 ## Clique sur la cloche et Addon toi
 
----
 
 Bon, je pense qu'on sait tous ce qu'est une extension ou un module complémentaire: 
 
