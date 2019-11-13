@@ -119,6 +119,7 @@ C'est cadeau, c'est l'addon **Knobs** comme on peut voir dans le petit onglet, j
         onArchiveTask: action('onArchiveTask')
     };
 ```
+
 On va donc s'empresser d'ajouter notre nouvel addon **Knobs:**
 
 `yarn add @storybook/addon-knobs`
