@@ -66,7 +66,6 @@ C'est donc tout naturellement que la communauté contribue en fournissant des ou
 
 En fait, c'est ce qui fait que Storybook puisse être pertinent, il s'intègre dans l'écosystème de React tout en assumant son rôle.
 
-&nbsp;
 
 Bon là je vous sent déjà plus intéressé, est-ce qu'on s'en installerai pas un ou deux, comme ça, pour le plaisir?
 
