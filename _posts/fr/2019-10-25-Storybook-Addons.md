@@ -70,7 +70,6 @@ Bon là je vous sent déjà plus intéressé, est-ce qu'on s'en installerai pas 
 
 ## Un fichier pour les gouverner tous
 
----
 
 Bon, la dernière fois, on a vu les possibilités qu'offrait le fichier story pour soumettre notre composant à plusieurs états.
 
