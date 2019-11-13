@@ -106,6 +106,7 @@ Un peu comme ça non?
 ![Storybook knobs addon]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs.gif)
 
 C'est cadeau, c'est l'addon **Knobs** comme on peut voir dans le petit onglet, juste à côté d'**Actions** qui lui aussi est un add-on qu'on a utilisé dans le tutoriel d'avant (celui qui permet de mocker des callbacks type `onClick()` par exemple) et qui est présent déjà présent dans notre fichier story:
+
 ```javascript
     // src/components/Task.stories.js
     (...)
