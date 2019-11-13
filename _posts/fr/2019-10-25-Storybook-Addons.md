@@ -161,6 +161,7 @@ Et là, imaginez vous filez ça à Jean-Marie, qui est en charge de tester votre
 ![Storybook knobs addon 2]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs2.png)
 
 Quel coquin ce Jean-Marie, mais il n'a pas tort, on peut simplement se rajouter une nouvelle story "long titre" pour sauvegarder ce use-case et éviter la régression.
+
 ```javascript
     // src/components/Task.stories.js
     
