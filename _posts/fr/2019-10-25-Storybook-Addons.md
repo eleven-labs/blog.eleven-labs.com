@@ -35,7 +35,7 @@ Pour rappel, dans le précédent article, nous avons vu ensemble que Storybook e
 
 ---
 
-Bon je pense qu'on sait tous ce qu'est une extension ou un module complémentaire: 
+Bon, je pense qu'on sait tous ce qu'est une extension ou un module complémentaire: 
 
 Ce truc qui viens très souvent remplacer une tâche dont t'as bien la flemme au bout d'une semaine, et que tu sacrifies sur l'autel des ralentissements au démarrage.
 
