@@ -50,7 +50,6 @@ Donc on nous promets des supers modules qui viennent enrichir notre expérience,
 
 On pourrait presque être rabat-joie en se disant que c'est juste une mode d'ouvrir son projets aux addons communautaires, mais là, Storybook à vraiment l'air d'avoir pris les choses très au sérieux.
 
-&nbsp;
 
 Déjà le nombre d'addon est moins important que le nombre de vendeurs de tour Eiffel au Trocadéro, on en dénombre 13 officiels et 27 communautaires, ça présage déjà la part belle à la qualité et au besoin, plutôt qu'à la quantité.
 
