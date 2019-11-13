@@ -28,7 +28,7 @@ Coucou les bichons, on se retrouve pour un nouvel article qui porte sur les Addo
 Alors oui, mais vu l'importance de la contribution des addons sur ce sujet, il aurait été bien dommage de ne pas en parler avant! Mais pas de soucis ces 2 sujets sont déjà dans les tuyaux.
 
 
-Pour rappel dans le précédent article, nous avons vu ensemble que Storybook est un environnement de développement de composant, son but est de simplifier cette tâche en fournissant des `stories` qui servent de guidelines/spec pour les composants, améliorant l'exportabilité et la résilience générale.
+Pour rappel, dans le précédent article, nous avons vu ensemble que Storybook est un environnement de développement de composant, son but est de simplifier cette tâche en fournissant des `stories` qui servent de guidelines/spec pour les composants, améliorant l'exportabilité et la résilience générale.
 
 
 ## Clique sur la cloche et Addon toi
