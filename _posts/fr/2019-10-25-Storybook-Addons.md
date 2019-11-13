@@ -160,7 +160,7 @@ On va donc immédiatement éditer le code de notre story
       .add('pinned', () => <Task task={\{ ...task, state: 'TASK_PINNED' }} {...actions} />)
       .add('archived', () => <Task task={\{ ...task, state: 'TASK_ARCHIVED' }} {...actions} />);
 ```
-![](/assets/2019-10-25-Storybook-Addons/knobs1.png)
+![]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs1.png)
 
 Et là, imaginez vous filez ça à Jean-Marie, qui est en charge de tester votre composant, il va s'éclater à voir si vous avez pas fait de la daube pour revenir vers vous, avec une haleine de cendrier et de café froid, en vous beuglant
 
