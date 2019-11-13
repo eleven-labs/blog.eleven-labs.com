@@ -125,6 +125,7 @@ On va donc s'empresser d'ajouter notre nouvel addon **Knobs:**
 `yarn add @storybook/addon-knobs`
 
 Puis on fait un petit tour dans le fichier `.storybook/addon.js` où l'on doit **register** notre addon
+
 ```javascript
     // .storybook/addons.js
     
