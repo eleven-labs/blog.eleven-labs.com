@@ -43,7 +43,7 @@ Avant de cracher davantage dans la soupe, laissons quand même la parole au cuis
 > **Supercharge Storybook**  
 Storybook addons enable advanced functionality and unlock new workflows. Contributed by core maintainers and the amazing developer community.
 
-Donc on nous promets des supers modules qui viennent enrichir notre expérience, maintenus par Storybook et leur communauté? ça transpire pas l'originalité mais ça a le mérite qu'on lui laisse une chance.
+Donc on nous promets des supers modules qui viennent enrichir notre expérience, maintenus par Storybook et leur communauté? ça transpire pas l'originalité, mais ça a le mérite qu'on lui laisse une chance.
 
 On pourrait presque être rabat-joie en se disant que c'est juste une mode d'ouvrir son projets aux addons communautaires, mais là, Storybook à vraiment l'air d'avoir pris les choses très au sérieux.
 
