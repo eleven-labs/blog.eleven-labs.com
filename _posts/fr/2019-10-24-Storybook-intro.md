@@ -92,7 +92,7 @@ Si vous voulez de bons exemples 😉
 
 → Storybook d'un composant Airbnb, celui du choix dans les dates
 
-[![Storybook d'un composant Airbnb](/assets/2019-10-24-Storybook-intro/airbnb.png)](https://airbnb.io/react-dates/?path=/story/daterangepicker-drp--default)
+[![Storybook d'un composant Airbnb]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/airbnb.png)](https://airbnb.io/react-dates/?path=/story/daterangepicker-drp--default)
 
 
 
