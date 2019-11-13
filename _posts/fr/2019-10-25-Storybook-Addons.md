@@ -61,7 +61,6 @@ Ensuite, l'intérêt de ces modules est communautaire, on rappelle que le but de
 
 Par exemple, pour nous les petites mains du code, le but est de tester la réaction de notre composant à plusieurs états.
 
-&nbsp;
 
 C'est donc tout naturellement que la communauté contribue en fournissant des outils pour permettre de moquer les comportements qu'ils rencontrent au quotidien, permettant ainsi d'intégrer à Storybook un composant connecté à un store Redux, soumis à un contexte comme le ThemeProvider de Material-UI, bourré de Query/Mutation GraphQL, de l'internationalisation jusqu'à l'accessibilité. 
 
