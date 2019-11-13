@@ -162,7 +162,7 @@ On va donc immédiatement éditer le code de notre story
 
 Et là, imaginez vous filez ça à Jean-Marie, qui est en charge de tester votre composant, il va s'éclater à voir si vous avez pas fait de la daube pour revenir vers vous, avec une haleine de cendrier et de café froid, en vous beuglant
 
-> Eh mec t'as vu la gueule de ton composant quand j'ai mis un titre un peu long? Non mais je te jure hahaha
+> Eh mec! T'as vu la gueule de ton composant ? Quand j'ai mis un titre un peu long ? Non mais je te jure... hahaha 
 
 ![]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs2.png)
 
