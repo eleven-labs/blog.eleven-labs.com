@@ -268,7 +268,7 @@ Il est un peu susceptible le George.
 2. Wait...
 3. `localhost:9009`
 
-![](/assets/2019-10-24-Storybook-intro/tutobook.gif)
+![]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/tutobook.gif)
 
 Et voilà c'est tout pour notre premier article!
 
