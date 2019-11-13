@@ -152,8 +152,8 @@ Cependant gardez en tête que tout est affaire de contexte et de temporalité (u
 Il s'agit de ce type de projet dont vous savez qu'il ne peut se passer que dans la douleur et qui est voué à l’échec (ou dont les chances de succès sont infimes). Dans une entreprise personne ne sera jamais récompensé pour être un martyr, et vous ne gagnerez aucun points pour avoir accepté ce projet. N'ayez pas peut de dire "NON", sauvez-vous, sauvez vos collaborateurs, et sauvez votre entreprise.
 
 ### Accepter l’échec
-On peut influencer une personne mais vous ne pouvez pas la contrôler (enfin sauf si vous êtes Qui-Gon Jinn et que vous utilisez la force comme dans l’épisode 1 de Star Wars). Vous allez donc vous casser les dents sur certains essais.
-Ce n'est pas grave, vous aurez rempli votre rôle, on ne vous aura juste by-passer. Acceptez votre défaite et tirez-en les enseignements.
+On peut influencer une personne mais vous ne pouvez pas la contrôler (enfin sauf si vous êtes Qui-Gon Jinn et que vous utilisez la force comme dans l’épisode 1 de Star Wars). Par exemple malgré tous vos arguments, votre logique, vos efforts et votre bonne volonté il se peut que vous vous heurtiez à une hierarchie inflexible qui n'accordera aucune souplesse au contenu de ce bon vieux cahier des charges qui vous aura été présenté hier et attendu pour le mois prochain, date du "Séminaire Manager" de l'entreprerise. Preparez vous donc à vous casser les dents sur certains essais.
+Ce n'est pas grave, acceptez votre défaite et tirez-en les bons enseignements.
 
 ### On ne peut pas plaire à tout le monde
 Ce n'est jamais personnel, c'est uniquement du travail. Dites vous bien que si une personne, malgré tous vos efforts, prends votre "NON" comme une attaque personnelle dites-vous que tout le monde n'est pas aussi mature que vous sur le sujet et que vous ne pourrez rien y faire. Pourquoi s’inquiéter de quelque chose sur lequel on a aucun impacte ?
