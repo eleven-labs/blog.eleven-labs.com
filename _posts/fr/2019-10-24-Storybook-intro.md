@@ -292,7 +292,7 @@ Et si tu n'as pas lu l'encart en début d'article, la suite c'est simplement ici
 
 → Documenter son Storybook avec MDX et DocsPage 
 
-![](/assets/2019-10-24-Storybook-intro/docarticle.png)
+![]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/docarticle.png)
 
 &nbsp;
 
