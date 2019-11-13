@@ -87,7 +87,7 @@ Si vous voulez de bons exemples 😉
 
 → Storybook de Carbon: une librairie de composant
 
-[![Storybook d'un composant Airbnb](/assets/2019-10-24-Storybook-intro/carbon.png)](http://react.carbondesignsystem.com/?path=/story/dropdown--default)
+[![Storybook d'un composant Airbnb]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/carbon.png)](http://react.carbondesignsystem.com/?path=/story/dropdown--default)
 
 
 → Storybook d'un composant Airbnb, celui du choix dans les dates
