@@ -132,6 +132,7 @@ Puis on fait un petit tour dans le fichier `.storybook/addon.js` où l'on doit *
     import '@storybook/addon-actions/register';
     import '@storybook/addon-knobs/register';
 ```
+
 C'est tout! 😏
 
 On va donc immédiatement éditer le code de notre story
