@@ -18,9 +18,8 @@ tags:
     - storybook
 
 ---
-# Storybook - Addons
 
-![]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/addonlist.png)
+![Liste d'addon 1]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/addonlist.png)
 
 Coucou les bichons, on se retrouve pour un nouvel article qui porte sur les Addons!
 
@@ -52,7 +51,7 @@ On pourrait presque être rabat-joie en se disant que c'est juste une mode d'ouv
 
 Déjà le nombre d'addon est moins important que le nombre de vendeurs de tour Eiffel au Trocadéro, on en dénombre 13 officiels et 27 communautaires, ça présage déjà la part belle à la qualité et au besoin, plutôt qu'à la quantité.
 
-![]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/addonlist2.png)
+![Liste d'addon 2]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/addonlist2.png)
 
 Dans les faits ces derniers sont rangés par fonctionnalité: Organisation, Test, Code, Data & State, Style et pour finir Design.
 
@@ -69,8 +68,6 @@ En fait, c'est ce qui fait que Storybook puisse être pertinent, il s'intègre d
 
 Bon là je vous sent déjà plus intéressé, est-ce qu'on s'en installerai pas un ou deux, comme ça, pour le plaisir?
 
-&nbsp;
-&nbsp;
 
 ## Un fichier pour les gouverner tous
 
@@ -108,7 +105,7 @@ Comme on est des grosses flemasses, nous on voudrait bien ne pas avoir à édite
 
 Un peu comme ça non?
 
-![]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs.gif)
+![Storybook knobs addon]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs.gif)
 
 C'est cadeau, c'est l'addon **Knobs** comme on peut voir dans le petit onglet, juste à côté d'**Actions** qui lui aussi est un add-on qu'on a utilisé dans le tutoriel d'avant (celui qui permet de mocker des callbacks type `onClick()` par exemple) et qui est présent déjà présent dans notre fichier story:
 ```javascript
@@ -154,13 +151,13 @@ On va donc immédiatement éditer le code de notre story
       .add('pinned', () => <Task task={\{ ...task, state: 'TASK_PINNED' }} {...actions} />)
       .add('archived', () => <Task task={\{ ...task, state: 'TASK_ARCHIVED' }} {...actions} />);
 ```
-![]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs1.png)
+![Storybook knobs addon]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs1.png)
 
 Et là, imaginez vous filez ça à Jean-Marie, qui est en charge de tester votre composant, il va s'éclater à voir si vous avez pas fait de la daube pour revenir vers vous, avec une haleine de cendrier et de café froid, en vous beuglant:
 
 > Eh mec! T'as vu la gueule de ton composant ? Quand j'ai mis un titre un peu long ? Non mais je te jure... hahaha 
 
-![]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs2.png)
+![Storybook knobs addon 2]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs2.png)
 
 Quel coquin ce Jean-Marie, mais il n'a pas tort, on peut simplement se rajouter une nouvelle story "long titre" pour sauvegarder ce use-case et éviter la régression.
 ```javascript
