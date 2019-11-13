@@ -82,6 +82,7 @@ Bon là je vous sent déjà plus intéressé, est-ce qu'on s'en installerai pas 
 Bon, la dernière fois, on a vu les possibilités qu'offrait le fichier story pour soumettre notre composant à plusieurs états.
 
 Je sais que vous en rêvez encore la nuit mais pour les insomniaques, un petit rappel:
+
 ```javascript
     import React from 'react';
     import { storiesOf } from '@storybook/react';
