@@ -56,7 +56,7 @@ On pourrait presque être rabat-joie en se disant que c'est juste une mode d'ouv
 
 Déjà le nombre d'addon est moins important que le nombre de vendeurs de tour Eiffel au Trocadéro, on en dénombre 13 officiels et 27 communautaires, ça présage déjà la part belle à la qualité et au besoin, plutôt qu'à la quantité.
 
-![](/assets/2019-10-25-Storybook-Addons/addonlist2.png)
+![]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/addonlist2.png)
 
 Dans les faits ces derniers sont rangés par fonctionnalité: Organisation, Test, Code, Data & State, Style et pour finir Design.
 
