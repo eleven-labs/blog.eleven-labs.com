@@ -122,7 +122,7 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
 ---
 
 <div align="center">
-  <img src="/assets/2019-10-24-Storybook-intro/pasorcier.png">
+  <img src="{{ site.baseurl }}/assets/2019-10-24-Storybook-intro/pasorcier.png">
 </div>
 
 &nbsp;
