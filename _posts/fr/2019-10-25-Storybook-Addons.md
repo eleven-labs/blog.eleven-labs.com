@@ -20,7 +20,7 @@ tags:
 ---
 # Storybook - Addons
 
-![](/assets/2019-10-25-Storybook-Addons/addonlist.png)
+![]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/addonlist.png)
 
 Coucou les bichons, on se retrouve pour un nouvel article qui porte sur les Addons!
 
