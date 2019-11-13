@@ -21,11 +21,11 @@ tags:
     - UX
     - UI
 ---
-![](/assets/2019-10-24-Storybook-intro/storybooktitle.png)
+![]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/storybooktitle.png)
 
-&nbsp;
 
-# Storybook - Créer son premier composant
+
+## Storybook - Créer son premier composant
 
 Le but de cette future série d'article sur Storybook est de présenter une feature de la librairie pour explorer ses possibilités, le tout de la manière la plus concise possible, avec des petits exemples.
 
@@ -34,9 +34,7 @@ Comme Gad Elmaleh, c'est pas grave si c'est mieux raconté.
 
 
 
-&nbsp;
-&nbsp;
-# Mais qu'est-ce c'est Storybook?
+### Mais qu'est-ce c'est Storybook?
 
 ---
 
@@ -44,7 +42,7 @@ Storybook c'est une librairie open source créée pour le développement de comp
 
 C'est un environnement de développement permettant de naviguer dans un catalogue de composant (book), de voir les différents états d'un composant par use-case (story) tout en apportant des outils de test, de prévisualisation et de documentation du composant.
 
-&nbsp;
+
 
 Storybook fonctionne avec la plupart des frameworks UI, que ce soit le sacro-saint triptyque Vue-React-Angular autant que Svelte, React Native ou même les Web Components 🤙
 
@@ -52,14 +50,14 @@ Storybook fonctionne avec la plupart des frameworks UI, que ce soit le sacro-sai
 
 
 
-&nbsp;
-# Père Castor, raconte-moi une Story
+
+### Père Castor, raconte-moi une Story
 
 ---
 
 L'idée derrière ce service est d'apporter une haute robustesse et maintenabilité aux composants de son interface, permettant de les réutiliser et de les partager dans un 'environnement de confiance' (ça c'est la préface du conte).
 
-&nbsp;
+
 
 Cela est possible grâce aux différentes fonctionnalités de Storybook:
 - Construire des composants en isolation
@@ -71,17 +69,17 @@ Auxquelles s'ajoute l'utilisation:
 - De snapshot et test unitaire pour les composants
 - Des addons (extensions) pour enrichir l'environnement de base de Storybook
 
-&nbsp;
+
 
 Storybook propose donc un cadre où l'on peut tester la réponse d'un composant à une story qui n'est, en soi, qu'un jeu de valeur des props passés au composant.
 
-&nbsp;
+
 
 Qui dit environnement de confiance, dit contremaîtres, et donc vous pourrez inviter PO, Scrum, Designer, QA à votre beau projet pour qu'ils mettent des commentaires partout.
 
 > *"Très joli ton carrousel Eric, maintenant que je le vois, je me dis qu'il faudrait l'enlever..."*  
 
-&nbsp;
+
 
 Si vous voulez de bons exemples 😉
 
@@ -96,28 +94,23 @@ Si vous voulez de bons exemples 😉
 
 
 
-&nbsp;
-&nbsp;
-# Read The Fucking Story
+
+
+## Read The Fucking Story
 
 ---
-## useStorybook()
+### useStorybook()
 
 Après un bon vieux `create-react-app` des familles on peut initialiser Storybook (sb) facilement via npx 
 
 `npx -p @storybook/cli sb init`
 
-## Avant d'y aller...
-
 Ça y est, une nouvelle vie de développeur front commence, Storybook installé, les étoiles plein les yeux, tu te dis que plus jamais tu n'auras à retoucher 200 fois ton beau composant. Désormais c'est le vrai monde qui t'attends, et le vrai monde il va chez le coiffeur... et fait du CDD.
-
-&nbsp;
 
 [CDD](https://blog.hichroma.com/component-driven-development-ce1109d56c8e) ( Composent-Driven Development ), si on doit la faire courte, c'est comme du TDD mais à la place des test t'utilises des user stories.
 
-&nbsp;
 
-## Cas pratique
+### Cas pratique
 
 ---
 
@@ -125,7 +118,7 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
   <img src="{{ site.baseurl }}/assets/2019-10-24-Storybook-intro/pasorcier.png">
 </div>
 
-&nbsp;
+
 
 On va donc appliquer cette belle méthodologie, sur la meilleure application possible: cette bonne vieille to-do list!
 
@@ -206,7 +199,7 @@ Il devient donc facile de wrapper son composant autour de tout un tas de Provide
 
 Oui mais là on le voit Billy.
 
-&nbsp;
+
 
 Maintenant qu'on a ce joli cadre de travail on va pouvoir changer le composant `<Task />` pour qu'il exploite tout ce que l'on souhaite tester avec nos stories
 ```javascript
@@ -280,12 +273,12 @@ Et si tu n'as pas lu l'encart en début d'article, la suite c'est simplement ici
 
 [![Storybook d'un composant Airbnb]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/composite.png)](https://www.learnstorybook.com/intro-to-storybook/react/en/composite-component/)
 
-&nbsp;
+
 
 *À bientôt les bichons* 👋
 
-&nbsp;
-&nbsp;
+
+
 ## Prochains articles
 
 ---
@@ -294,7 +287,7 @@ Et si tu n'as pas lu l'encart en début d'article, la suite c'est simplement ici
 
 ![]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/docarticle.png)
 
-&nbsp;
+
 
 → Test structurel de composant avec Storyshots et Jest
 
