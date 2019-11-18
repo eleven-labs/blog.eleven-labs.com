@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reprenez le contrôle de vos file system avec Flysystem
+title: Reprenez le contrôle de vos filesystem avec Flysystem
 excerpt: Cet article vous présente comment interagir simplement avec vos systèmes de gestion de fichier avec Flysystem.
 authors:
     - nicolas
@@ -9,29 +9,69 @@ permalink: /fr/reprenez-le-controle-de-vos-file-system-avec-Flysystem/
 categories:
     - PHP
     - Bundle
-    - File system
+    - Filesystem
 tags:
     - PHP
     - Symfony
     - Flysystem
-    - File system
+    - Filesystem
 ---
 
-# Introduction
 
-La gestion d’un ou plusieurs système de fichier dans une application peut s’avérer compliqué. Si on utilise une solution distante comme un stockage en cloud ou sur un serveur SFTP il faudra s’occuper de la connection. Et dans tous les cas il faudra créer un système  d’interaction avec nos ressources pour les différentes solution que l’on pourra réutiliser dans toute notre application.
+La gestion d’un ou plusieurs système de fichier dans une application PHP peut s’avérer compliqué. Il est vrai qu'avec les fonctions natives il est assez simple de manipuler des fichiers en local. Si l'on regarde [la documentation officiel](https://www.php.net/manual/en/ref.filesystem.php) on peut faire un sytème rapidement comme ceci: 
 
-Pour gérer la connection avec les solutions de stockage en cloud nous pouvons trouver un sdk qui nous simplifiera notre notre code. Seulement pour l'interaction avec nos resource nous seront obligé de créer ce genre de classe :
+```php
+public function write(string $content, string $path): void
+{
+    if (file_exists($path)) {
+      // throw exception
+    }
 
-![Class CRUD AWS S3]({{ site.baseurl }}/assets/2019-11-20-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-class.png){: style="margin: 0 auto; display: block;" }
+    file_put_contents($path, $content);
+}
+```
 
-Avec des méthodes comme celle-ci :
+C'est faisable mais le jour ou vous allez devoir sur un système de fichier distant comme AWS vous allez devoir tout recommencer. Il vous faudra installer le SDK AWS, le configurer puis redevelopper vorte function comme ceci:
+```php
+use AWS\S3\S3Client
 
-![Method delete AWS S3]({{ site.baseurl }}/assets/2019-11-20-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-method.png){: style="margin: 0 auto; display: block;" }
+private s3Client;
 
-Ca fait du code à maintenir et si un jour on l’on doit changer de solution de stockage l’on peut avoir des problématiques de compatibilité.
+public function __construct()
+{
+    $options = [
+        'region'            => 'us-west-2',
+        'version'           => '2006-03-01',
+        'signature_version' => 'v4',
+    ];
 
- # Voici la solution que je vous propose
+    $this->s3Client = new Aws\S3\S3Client([
+        'region'  => '-- your region --',
+        'version' => 'latest',
+        'credentials' => [
+            'key'    => "-- access key id --",
+            'secret' => "-- secret access key --",
+        ],
+    ]);
+}
+
+
+public function write(string $content, string $path)
+{
+    $this->s3Client->putObject([
+        'Bucket' => '-- bucket name --',
+        'Key'    => $path,
+        'Body'   => $content,
+    ]);
+}
+```
+
+Et le jour ou l'on va vous demande de passer sur Google ? Ou bien qu'il faudra gérer un multitude de système de fichier ? Cela va être lourd à écrire et maintenir, sans parler des tests d'intégrations.
+
+## Mais comment faire ?
+
+Nous pourrions utiliser le patron [`Adaptateur`](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)). Cela nous permetterais d'avoir un interface à utiliser pour tout nos système de fichier.
+
 
 La solution est donc d'utiliser une librairie qui vas faire le travail pour vous, Flysystem. 
 [Flysystem](https://flysystem.thephpleague.com/docs/) développer par [thephpleague](https://thephpleague.com/fr/), un groupe de développer de bibliothèques PHP. *Flysystem* est une bibliothèque d'abstraction du système de fichier. 
@@ -39,35 +79,10 @@ Cela permet donc de changer du solution de système de fichier rapidement et fac
 Vous pouvez l’utiliser dans une application PHP avec ou sans framework.
 
 Flysystem fourni une API permettant de gérer vos ressources sur un grand nombre de système de fichier. D’office, la librairie fournit trois adaptateurs de système de fichier, FTP, Local et NullAdapter. Mais rien ne vous empêche d’ajouter d’autre adaptateur de système de fichier, d'ailleurs il en existe un grand nombre.
- 
-Voici la liste des adaptateurs développés par The PHP league :
-
-AWS S3 V2 et V3
-Azure Blob Storage
-Menory
-PHPCR
-Rackspace Cloud Files
-SFTP
-WebDAV
-Zip
-
-Et quelque uns des adaptateurs développer par la communauté :
-
-Azure File Storage
-Cloudinary
-Dropbox
-Gaufrette
-GitLab
-Google Cloud Storage
-Google Drive
-OneDrive
-PDO Database
-SSH/Shell
-...
 
 Vous pouvez retrouver la liste complète sur [le README du dépôt officiel](https://github.com/thephpleague/flysystem). Si par malheur vous ne trouvez pas votre bonheur parmi la liste proposée vous pouvez développer le vôtre. Voici le lien pour [créer un adaptateur](https://flysystem.thephpleague.com/docs/advanced/creating-an-adapter/) car je n’en parlerait pas ici.  
 
-# Flysystem pour permuter de système de fichier
+## Permuter de système de fichier avec Flysystem
 
 Je vais vous montrer un exemple de permutation de système de fichier avec Flysystem dans une application Symfony 4.
 
@@ -82,7 +97,7 @@ flysystem:
         directory: '%kernel.project_dir%/var/storage'
 ```
 
-Ici on peut voir que l’on configure un file system qui ce nome `default.storage`, utilisant l’adaptateur `local` et qu’il y a une option qui cible le répertoire ou seront stockés les ressources: `directory: '%kernel.project_dir%/var/storage'`.
+Ici on peut voir que l’on configure un système de fichier qui ce nome `default.storage`, utilisant l’adaptateur `local` et qu’il y a une option qui cible le répertoire ou seront stockés les ressources: `directory: '%kernel.project_dir%/var/storage'`.
 
 Jusqu'ici rien de compliqué. Mais maintenant on change de système de fichier pour passer sur une solution de stockage sur AWS S3. Pour ce faire nous allons dans un premier temps [créer un Bucket dans la console AWS](https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/user-guide/create-bucket.html). Puis, nous installons l'adaptateur Flysystem AWS S3 via composer comme ceci `composer require league/flysystem-aws-s3-v3`.
 Ensuite nous configurons notre client AWS :
@@ -118,7 +133,7 @@ flysystem:
 Et voilà on viens de changer de système de fichier juste en changeant la valeur de l’adaptateur de `local` à `aws` et en modifiant les options pour spécifier le client et le bucket à utiliser.
 
 
-# Flysystem pour utiliser plusieurs system de fichier
+##  Utiliser plusieurs system de fichier avec Flysystem
 
 On a vu comment permuter facilement de système de fichier, maintenant nous allons voir comment configurer plusieurs système de fichier. Je vais vous faire un exemple de configuration avec trois solution de stockage. Un système de fichier locale et deux solution cloud (AWS et GCP). 
 
@@ -191,10 +206,10 @@ flysystem:
 
 Et voilà pour la configuration de plusieurs système de fichier.
 
-# La configuration ça va deux minutes
+## La configuration ça va deux minutes
 
 Nous avons vu comment permuter de système de fichier juste avec quelque lignes de configuration, mais aussi comment configurer plusieurs système de fichier.
-Maintenant nous allons voir comment utiliser nos système de fichier. [l’API Flysystem](https://flysystem.thephpleague.com/docs/usage/filesystem-api/) nous offre plusieurs méthode pour manipuler des resources. Voici la liste des méthodes 
+Maintenant nous allons voir comment utiliser nos système de fichier. [l’API Flysystem](https://flysystem.thephpleague.com/docs/usage/filesystem-api/) nous offre plusieurs méthode pour manipuler des resources. Voici la liste des méthodes :
 
 - write
 - writeStream
@@ -280,7 +295,7 @@ public function copToGcp(FilesystemInterface $localStorage, FilesystemInterface 
 
 Vous pouvez voir que l’on assigne un clé au système de fichier renseigner au `MountManager` comme ceci `'local' => $localStorage`. Ensuite, pour spécifier le système de fichier on prefix le `path` par la clé de précédemment défini `local://my_file.txt`.
 
-## Un plugin pour customiser vos actions
+## Un plugin pour personnaliser vos actions
 
 Dernier exemple d’utilisation pour cette article. Dans la liste des méthode vous avez peut être vu cette méthode `addPlugin`. Flysystem nous permet de créer nos plugins pour avoir nos propre méthode.
 
@@ -359,9 +374,9 @@ class invoicePlugin implements PluginInterface
 
 Et voilà pour ce dernier exemple.
 
-# En conclusion
+## Le mot de la fin
 
-Pour conclure, Flysystem est une librairie complète qui va vous permettre de simplifier votre code et de diminuer le temps de développement. 
+Flysystem est une librairie complète qui va vous permettre de simplifier votre code et de diminuer le temps de développement. 
 En plus, vous n’aurait plus de problème en cas de changement de solution de système de fichier au cas où votre nouveau CTO n’aime pas AWS ou qu’il y ai une réduction budgétaire et vous devenez repasser en locale sur vos bon vieux serveur.
 
 Et comme on l’a vu en fin d’article vous pouvais avoir des méthodes qui sont propre à votre métier sans à devoir surcharger des classes. Bon après si vous avez des modifications ou ajouts qui pourrait être utile n'hésitez pas à soumettre une PR sur le [dépôt du projet](https://github.com/thephpleague/flysystem).
@@ -370,3 +385,9 @@ Si vous le souhaitez vous pouvez aller consulter [les autres projet de The PHP l
 
 J'espère que cette article vous a plus et à la prochaine pour un prochain article.
 
+## Resources 
+
+[php.net - filesystem](https://www.php.net/manual/en/ref.filesystem.php)
+[flysystem.thephpleague.com - docs](https://flysystem.thephpleague.com/docs/)
+[github.com - thephpleafue/flysystem](https://github.com/thephpleague/flysystem)
+[fr.wikipedia.org - Adaptateur_(patron_de_conception)](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception))
