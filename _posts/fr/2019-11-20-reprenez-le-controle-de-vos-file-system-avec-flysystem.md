@@ -95,7 +95,7 @@ class FileSystem
 }
 ```
 
-- on créé un interface qui va définir les méthodes qui devront être implémentés dans nos adapteur : 
+- on créé un interface qui va définir les méthodes qui devront être implémentés dans nos adaptateur : 
 
 ```php
 interface AdapterInterface
@@ -104,7 +104,7 @@ interface AdapterInterface
 }
 ```
 
-- On créé nos x adapteur :
+- On créé nos x adaptateur :
 ```php
 class LocalAdapter implements AdapterInterface
 {
