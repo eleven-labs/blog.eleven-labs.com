@@ -95,7 +95,7 @@ class FileSystem
 }
 ```
 
-- on créé un interface qui va définir les méthodes qui devront être implémentés dans nos adaptateur : 
+- Puis, on créé un interface qui va définir les méthodes qui devront être implémentés dans nos adaptateur : 
 
 ```php
 interface AdapterInterface
@@ -104,7 +104,8 @@ interface AdapterInterface
 }
 ```
 
-- On créé nos x adaptateur :
+- Enfin, on créé nos x adaptateur :
+
 ```php
 class LocalAdapter implements AdapterInterface
 {
@@ -151,6 +152,7 @@ class AWSAdapter implements AdapterInterface
 Et voilà !
 
 Si on test notre code ca donne ceci :
+
 ```php
 $localAdapter = new LocalAdapter();
 $localFileSystem = new FileSystem($localAdapter);
