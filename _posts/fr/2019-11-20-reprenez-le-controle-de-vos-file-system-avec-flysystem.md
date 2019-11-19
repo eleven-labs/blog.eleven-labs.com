@@ -31,7 +31,8 @@ public function write(string $content, string $path): void
 }
 ```
 
-C'est faisable mais le jour ou vous allez devoir sur un système de fichier distant comme AWS vous allez devoir tout recommencer. Il vous faudra installer le SDK AWS, le configurer puis redevelopper vorte function comme ceci:
+C'est faisable mais le jour où vous allez devoir sur un système de fichier distant comme AWS vous allez devoir tout recommencer. Il vous faudra installer le SDK AWS, le configurer puis re-développer votre fonction comme ceci:
+
 ```php
 use AWS\S3\S3Client
 
@@ -68,14 +69,110 @@ public function write(string $content, string $path)
 
 Et le jour ou l'on va vous demande de passer sur Google ? Ou bien qu'il faudra gérer un multitude de système de fichier ? Cela va être lourd à écrire et maintenir, sans parler des tests d'intégrations.
 
-## Mais comment faire ?
+Pour eviter trop de complexité on pourrais utiliser le patron de conception [Adaptateur](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)) et là on pourrais faire du code plus propre et plus maintenable. 
 
-Nous pourrions utiliser le patron [`Adaptateur`](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)). Cela nous permetterais d'avoir un interface à utiliser pour tout nos système de fichier.
+Le patron de conception `Adaptateur` permet de convertir l’interface d’un class une autre interface. Cela permet de faire fonctionner des classes qui n’aurait pas pu fonctionner ensemble.
+
+Si l’on prend notre cas de notre système de gestion de système de fichier qui doit utiliser plusieurs clients ou librairies différentes (AWS, SFTP, fonction native) alors nous pourrons faire comme ceci :
+
+- On créé une classe que l’on va instancier pour manipuler nos fichier :
+
+```php
+class FileSystem
+{
+    /** @var AdapterInterface */
+    private $adapter;
+
+    public function __construct(AdapterInterface $adapter)
+    {
+        $this->adapter = $adapter;
+    }
+
+    public function write(string $path, string $content, array $config): bool
+    {
+        return $this->adapter->write($path, $content, $config);
+    }
+}
+```
+
+- on créé un interface qui va définir les méthodes qui devront être implémentés dans nos adapteur : 
+
+```php
+interface AdapterInterface
+{
+    public function write(string $path, string $content, array $config): bool;
+}
+```
+
+- On créé nos x adapteur :
+```php
+class LocalAdapter implements AdapterInterface
+{
+    public function write(string $path, string $content, array $config): bool
+    {
+        print_r("write with local adapter\n");
+
+        return true;
+    }
+}
 
 
-La solution est donc d'utiliser une librairie qui vas faire le travail pour vous, Flysystem. 
-[Flysystem](https://flysystem.thephpleague.com/docs/) développer par [thephpleague](https://thephpleague.com/fr/), un groupe de développer de bibliothèques PHP. *Flysystem* est une bibliothèque d'abstraction du système de fichier. 
-Cela permet donc de changer du solution de système de fichier rapidement et facilement. 
+class AWSAdapter implements AdapterInterface
+{
+    private s3Client;
+
+    public function __construct()
+    {
+        $options = [
+            'region'            => 'us-west-2',
+            'version'           => '2006-03-01',
+            'signature_version' => 'v4',
+        ];
+
+        $this->s3Client = new Aws\S3\S3Client([
+            'region'  => '-- your region --',
+            'version' => 'latest',
+            'credentials' => [
+                'key'    => "-- access key id --",
+                'secret' => "-- secret access key --",
+            ],
+        ]);
+    }
+
+    public function write(string $path, string $content, array $config): bool
+    {
+        print_r("write with aws adapter\n");
+
+        return true;
+    }
+}
+```
+
+Et voilà !
+
+Si on test notre code ca donne ceci :
+```php
+$localAdapter = new LocalAdapter();
+$localFileSystem = new FileSystem($localAdapter);
+$localFileSystem->write('', '', []);
+
+$awsAdapter = new AWSAdapter();
+$awsFileSystem = new FileSystem($awsAdapter);
+$awsFileSystem->write('', '', []);
+```
+
+```bash
+$ php index.php
+write with local adapter
+write with aws adapter
+```
+
+On voit comme nous avons fait abstraction des opérations du système de fichier et on vient adapter les interfaces de chacune des librairies que l'on souhaite utiliser.
+
+Mais bon on doit encore faire du code. En plus en librairie exploite déjà les système de gestion de fichier comme ça.
+
+Je vous persente [Flysystem](https://flysystem.thephpleague.com/docs/) développer par [thephpleague](https://thephpleague.com/fr/), un groupe de développer de bibliothèques PHP. *Flysystem* est une bibliothèque d'abstraction du système de fichier. 
+Cela permet donc de changer du solution de système de fichier rapidement et facilement grâce au patron de conception `Adaptateur`. 
 Vous pouvez l’utiliser dans une application PHP avec ou sans framework.
 
 Flysystem fourni une API permettant de gérer vos ressources sur un grand nombre de système de fichier. D’office, la librairie fournit trois adaptateurs de système de fichier, FTP, Local et NullAdapter. Mais rien ne vous empêche d’ajouter d’autre adaptateur de système de fichier, d'ailleurs il en existe un grand nombre.
@@ -142,7 +239,7 @@ La première étage va être d’installer le bundle et l'adaptateur pour AWS S3
 Maintenant nous allons configurer les clients AWS et GCP. Pour AWS pas de changement, il faire ce que l’on a fait pour la permutation. 
 Pour GCP, il faut [créer un storage](https://cloud.google.com/storage/docs/creating-buckets?hl=fr) et récupère un [fichier json d’authentification ](https://cloud.google.com/video-intelligence/docs/common/auth?hl=fr#set_up_a_service_account).
 
-Une fois que l’on a configurer le Bucket AWS S3 ainsi que le Storage Google et que l’on a récupérer les information de connection il nous avous plus qu'à configurer les clients comme ceci :
+Une fois que l’on a configurer le Bucket AWS S3 ainsi que le Storage Google et que l’on a récupérer les information de connection il nous reste plus qu'à configurer les clients comme ceci :
 
 ```yaml
 # config/services.yaml
@@ -390,4 +487,5 @@ J'espère que cette article vous a plus et à la prochaine pour un prochain arti
 [php.net - filesystem](https://www.php.net/manual/en/ref.filesystem.php)
 [flysystem.thephpleague.com - docs](https://flysystem.thephpleague.com/docs/)
 [github.com - thephpleafue/flysystem](https://github.com/thephpleague/flysystem)
-[fr.wikipedia.org - Adaptateur_(patron_de_conception)](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception))
+[fr.wikipedia.org - patron de conception `Adaptateur`](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception))
+[developpez - Florian Casabianca - Comprendre le design Pattern Adaptateur](https://badger.developpez.com/tutoriels/dotnet/patterns/adaptateur/)
