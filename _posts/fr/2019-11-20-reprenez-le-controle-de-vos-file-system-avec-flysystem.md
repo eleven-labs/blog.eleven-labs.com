@@ -41,16 +41,16 @@ private s3Client;
 public function __construct()
 {
     $options = [
-        'region'            => 'us-west-2',
-        'version'           => '2006-03-01',
+        'region' => 'us-west-2',
+        'version' => '2006-03-01',
         'signature_version' => 'v4',
     ];
 
     $this->s3Client = new Aws\S3\S3Client([
-        'region'  => '-- your region --',
+        'region' => '-- your region --',
         'version' => 'latest',
         'credentials' => [
-            'key'    => "-- access key id --",
+            'key' => "-- access key id --",
             'secret' => "-- secret access key --",
         ],
     ]);
@@ -61,8 +61,8 @@ public function write(string $content, string $path)
 {
     $this->s3Client->putObject([
         'Bucket' => '-- bucket name --',
-        'Key'    => $path,
-        'Body'   => $content,
+        'Key' => $path,
+        'Body' => $content,
     ]);
 }
 ```
@@ -124,16 +124,16 @@ class AWSAdapter implements AdapterInterface
     public function __construct()
     {
         $options = [
-            'region'            => 'us-west-2',
-            'version'           => '2006-03-01',
+            'region' => 'us-west-2',
+            'version' => '2006-03-01',
             'signature_version' => 'v4',
         ];
 
         $this->s3Client = new Aws\S3\S3Client([
-            'region'  => '-- your region --',
+            'region' => '-- your region --',
             'version' => 'latest',
             'credentials' => [
-                'key'    => "-- access key id --",
+                'key' => "-- access key id --",
                 'secret' => "-- secret access key --",
             ],
         ]);
