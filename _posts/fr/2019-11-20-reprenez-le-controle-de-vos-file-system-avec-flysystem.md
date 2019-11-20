@@ -234,7 +234,7 @@ Et voilà, on vient de changer de système de fichiers juste en changeant la val
 
 ##  Utiliser plusieurs system de fichiers avec Flysystem
 
-On a vu comment permuter facilement de système de fichier, maintenant nous allons voir comment configurer plusieurs système de fichier. Je vais vous faire un exemple de configuration avec trois solution de stockage. Un système de fichier locale et deux solution cloud (AWS et GCP). 
+On a vu comment permuter facilement de système de fichiers, maintenant nous allons voir comment configurer plusieurs système de fichiers. Je vais vous faire un exemple de configuration avec trois solution de stockage. Un système de fichiers local et deux solutions cloud (AWS et GCP). 
 
 La première étage va être d’installer le bundle et l'adaptateur pour AWS S3 , ainsi que l'adaptateur pour Google Storage. `composer require league/flysystem-bundle league/flysystem-aws-s3-v3 superbalist/flysystem-google-storage`.
 
