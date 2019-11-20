@@ -368,7 +368,7 @@ $localStorage->wirte($path, $content);
 
 // Écriture sur le Storage Google avec un resource avec un fichier sous forme de ressource. En plus on gère la visibilité du fichier.
 $gcpStorage->wirteStream($path, $resource, ['visibility' => AdapterInterface::VISIBILITY_PRIVATE]);
-``
+```
 
 Un autre exemple d’utilisation. Le déplacement d’un fichier d’un système de fichier à un autre système de fichier. Pour ce faire nous aurons besoin d’utiliser le `MountManager` de Flysystem.
 
@@ -486,8 +486,8 @@ J'espère que cette article vous a plus et à la prochaine pour un prochain arti
 
 ## Resources 
 
-[php.net - filesystem](https://www.php.net/manual/en/ref.filesystem.php)
-[flysystem.thephpleague.com - docs](https://flysystem.thephpleague.com/docs/)
-[github.com - thephpleafue/flysystem](https://github.com/thephpleague/flysystem)
-[fr.wikipedia.org - patron de conception `Adaptateur`](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception))
-[developpez - Florian Casabianca - Comprendre le design Pattern Adaptateur](https://badger.developpez.com/tutoriels/dotnet/patterns/adaptateur/)
+- [php.net - filesystem](https://www.php.net/manual/en/ref.filesystem.php)
+- [flysystem.thephpleague.com - docs](https://flysystem.thephpleague.com/docs/)
+- [github.com - thephpleafue/flysystem](https://github.com/thephpleague/flysystem)
+- [fr.wikipedia.org - patron de conception `Adaptateur`](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception))
+- [developpez - Florian Casabianca - Comprendre le design Pattern Adaptateur](https://badger.developpez.com/tutoriels/dotnet/patterns/adaptateur/)
