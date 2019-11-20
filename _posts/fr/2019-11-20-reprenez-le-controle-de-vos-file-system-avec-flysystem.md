@@ -75,7 +75,7 @@ Le patron de conception `Adaptateur` permet de convertir l’interface d’une c
 
 Si l’on prend le cas de notre système de gestion de système de fichiers qui doit utiliser plusieurs clients ou librairies différentes (AWS, SFTP, fonction native, etc...) alors nous pouvons faire comme ceci :
 
-- On créé une classe que l’on va instancier pour manipuler nos fichier :
+- On créé une classe que l’on va instancier pour manipuler nos fichiers :
 
 ```php
 class FileSystem
