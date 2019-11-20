@@ -286,7 +286,7 @@ flysystem:
         bucket: '%env(string:AWS_BUCKET)%'
 ```
 
-Alors dans c’est exemple je nomme mes systèmes de fichier par rapport à leurs adaptateur mais vous pouvez les nommer par rapport à leur utilité exemple :
+Alors, dans ces exemples, je nomme mes systèmes de fichiers en fonction du nom de l'adaptateur, mais vous pouvez les nommer en fonction de leur utilité, exemple :
 
 ```yaml
 flysystem:
