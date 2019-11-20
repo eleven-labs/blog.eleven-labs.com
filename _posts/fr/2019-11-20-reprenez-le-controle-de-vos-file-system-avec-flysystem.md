@@ -177,7 +177,7 @@ Je vous persente [Flysystem](https://flysystem.thephpleague.com/docs/) développ
 Cela permet donc de changer du solution de système de fichiers rapidement et facilement grâce au patron de conception `Adaptateur`. 
 Vous pouvez l’utiliser dans une application PHP avec ou sans framework.
 
-Flysystem fourni une API permettant de gérer vos ressources sur un grand nombre de système de fichier. D’office, la librairie fournit trois adaptateurs de système de fichier, FTP, Local et NullAdapter. Mais rien ne vous empêche d’ajouter d’autre adaptateur de système de fichier, d'ailleurs il en existe un grand nombre.
+Flysystem fourni une API permettant de gérer vos ressources sur un grand nombre de système de fichiers. D’office, la librairie fournit trois adaptateurs de système de fichier, FTP, Local et NullAdapter. Mais rien ne vous empêche d’ajouter d’autre adaptateur de système de fichier, d'ailleurs, il en existe un grand nombre.
 
 Vous pouvez retrouver la liste complète sur [le README du dépôt officiel](https://github.com/thephpleague/flysystem). Si par malheur vous ne trouvez pas votre bonheur parmi la liste proposée vous pouvez développer le vôtre. Voici le lien pour [créer un adaptateur](https://flysystem.thephpleague.com/docs/advanced/creating-an-adapter/) car je n’en parlerait pas ici.  
 
