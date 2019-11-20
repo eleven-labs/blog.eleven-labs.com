@@ -71,7 +71,7 @@ Et si demain on vous demande de passer sur Google Cloud Storage ou bien de gére
 
 Pour supporter plusieurs systèmes de fichiers on peut éventuellement mettre en œuvre le patron de conception [Adaptateur](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)) ce qui nous permettrai d'abstraire les opérations sur les fichiers et de supporter plusieurs implémentations. 
 
-Le patron de conception `Adaptateur` permet de convertir l’interface d’un class une autre interface. Cela permet de faire fonctionner des classes qui n’aurait pas pu fonctionner ensemble.
+Le patron de conception `Adaptateur` permet de convertir l’interface d’une classe en une autre interface attendue par notre système. Cela permet de faire d'adapter des classes dont nous ne maitrisons pas la signature.
 
 Si l’on prend notre cas de notre système de gestion de système de fichier qui doit utiliser plusieurs clients ou librairies différentes (AWS, SFTP, fonction native) alors nous pourrons faire comme ceci :
 
