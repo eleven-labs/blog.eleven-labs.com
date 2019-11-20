@@ -307,7 +307,7 @@ Et voilà pour la configuration de plusieurs système de fichiers.
 
 ## La configuration ça va deux minutes
 
-Nous avons vu comment permuter de système de fichier juste avec quelque lignes de configuration, mais aussi comment configurer plusieurs système de fichier.
+Nous avons vu comment permuter de système de fichiers juste avec quelque lignes de configuration, mais aussi comment configurer plusieurs système de fichiers.
 Maintenant nous allons voir comment utiliser nos système de fichier. [l’API Flysystem](https://flysystem.thephpleague.com/docs/usage/filesystem-api/) nous offre plusieurs méthode pour manipuler des resources. Voici la liste des méthodes :
 
 - write
