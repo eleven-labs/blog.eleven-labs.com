@@ -95,7 +95,7 @@ class FileSystem
 }
 ```
 
-- Puis, on créé un interface qui va définir les méthodes qui devront être implémentés dans nos adaptateur : 
+- Puis, on créé une interface qui va définir les méthodes qui devront être implémentées dans notre adaptateur : 
 
 ```php
 interface AdapterInterface
