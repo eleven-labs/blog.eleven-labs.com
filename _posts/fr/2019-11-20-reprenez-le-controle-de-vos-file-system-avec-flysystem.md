@@ -31,7 +31,7 @@ public function write(string $content, string $path): void
 }
 ```
 
-C'est faisable mais le jour où vous allez devoir sur un système de fichier distant comme AWS vous allez devoir tout recommencer. Il vous faudra installer le SDK AWS, le configurer puis re-développer votre fonction comme ceci:
+C'est faisable, mais le jour où vous allez migré sur un système de fichier distant comme AWS, vous allez devoir tout recommencer. Il vous faudra installer le SDK AWS, le configurer puis re-développer votre fonction comme ceci:
 
 ```php
 use AWS\S3\S3Client
