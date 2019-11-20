@@ -238,7 +238,7 @@ On a vu comment permuter facilement de système de fichiers, maintenant nous all
 
 La première étape va consiter à installer le bundle et l'adaptateur pour AWS S3 , ainsi que l'adaptateur pour Google Storage. `composer require league/flysystem-bundle league/flysystem-aws-s3-v3 superbalist/flysystem-google-storage`.
 
-Maintenant nous allons configurer les clients AWS et GCP. Pour AWS pas de changement, il faire ce que l’on a fait pour la permutation. 
+Maintenant, nous allons configurer les clients AWS et GCP. Pour AWS pas de changement.
 Pour GCP, il faut [créer un storage](https://cloud.google.com/storage/docs/creating-buckets?hl=fr) et récupérer un [fichier json d’authentification](https://cloud.google.com/video-intelligence/docs/common/auth?hl=fr#set_up_a_service_account).
 
 Une fois que l’on a configurer le Bucket AWS S3 ainsi que le Storage Google et que l’on a récupéré les information de connexion, il ne nous reste plus qu'à configurer les clients comme ceci :
