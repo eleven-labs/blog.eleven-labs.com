@@ -169,7 +169,7 @@ write with local adapter
 write with aws adapter
 ```
 
-On voit comme nous avons fait abstraction des opérations du système de fichier et on vient adapter les interfaces de chacune des librairies que l'on souhaite utiliser.
+Nous avons créé une abstraction pour manipuler un système de fichiers puis nous avons adapter les interfaces de chacune des librairies que l'on souhaitait utiliser.
 
 Mais bon on doit encore faire du code. En plus en librairie exploite déjà les système de gestion de fichier comme ça.
 
