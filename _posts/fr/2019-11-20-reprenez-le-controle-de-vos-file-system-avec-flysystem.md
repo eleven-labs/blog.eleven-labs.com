@@ -232,7 +232,7 @@ flysystem:
 Et voilà, on vient de changer de système de fichiers juste en changeant la valeur de l’adaptateur de `local` à `aws` et en modifiant les options pour spécifier le client et le bucket à utiliser.
 
 
-##  Utiliser plusieurs system de fichier avec Flysystem
+##  Utiliser plusieurs system de fichiers avec Flysystem
 
 On a vu comment permuter facilement de système de fichier, maintenant nous allons voir comment configurer plusieurs système de fichier. Je vais vous faire un exemple de configuration avec trois solution de stockage. Un système de fichier locale et deux solution cloud (AWS et GCP). 
 
