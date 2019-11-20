@@ -69,7 +69,7 @@ public function write(string $content, string $path)
 
 Et le jour ou l'on va vous demande de passer sur Google ? Ou bien qu'il faudra gérer un multitude de système de fichier ? Cela va être lourd à écrire et maintenir, sans parler des tests d'intégrations.
 
-Pour eviter trop de complexité on pourrais utiliser le patron de conception [Adaptateur](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)) et là on pourrais faire du code plus propre et plus maintenable. 
+Pour supporter plusieurs systèmes de fichiers on peut éventuellement mettre en œuvre le patron de conception [Adaptateur](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)) ce qui nous permettrai d'abstraire les opérations sur les fichiers et de supporter plusieurs implémentations. 
 
 Le patron de conception `Adaptateur` permet de convertir l’interface d’un class une autre interface. Cela permet de faire fonctionner des classes qui n’aurait pas pu fonctionner ensemble.
 
