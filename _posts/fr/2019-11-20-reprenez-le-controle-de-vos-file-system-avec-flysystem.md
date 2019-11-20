@@ -173,7 +173,7 @@ Nous avons créé une abstraction pour manipuler un système de fichiers puis no
 
 Mais bon, on doit encore maintenir du code. Heureusement pour nous, il existe déjà une librairie qui s'en charge déjà.
 
-Je vous persente [Flysystem](https://flysystem.thephpleague.com/docs/) développer par [thephpleague](https://thephpleague.com/fr/), un groupe de développer de bibliothèques PHP. *Flysystem* est une bibliothèque d'abstraction du système de fichier. 
+Je vous persente [Flysystem](https://flysystem.thephpleague.com/docs/) développer par [thephpleague](https://thephpleague.com/fr/), un groupe de développeur de bibliothèques PHP. *Flysystem* est une bibliothèque d'abstraction du système de fichiers. 
 Cela permet donc de changer du solution de système de fichier rapidement et facilement grâce au patron de conception `Adaptateur`. 
 Vous pouvez l’utiliser dans une application PHP avec ou sans framework.
 
