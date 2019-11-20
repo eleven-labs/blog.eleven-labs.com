@@ -185,7 +185,7 @@ Vous pouvez retrouver la liste complète sur [le README du dépôt officiel](htt
 
 Je vais vous montrer un exemple de permutation de système de fichier avec Flysystem dans une application Symfony 4.
 
-Dans un premier temps il faut déjà configurer un système de fichier avec Flysystem. Pour ce faire nous allons installer le bundle avec composer comme ceci `composer require league/flysystem-bundle`, puis on édite la configuration de Flysystem dans le fichier `config/packages/flysystem.yaml` avec ces quelques lignes :
+Dans un premier temps, il faut déjà configurer un système de fichiers avec Flysystem. Pour ce faire, nous allons installer le bundle avec composer comme ceci : `composer require league/flysystem-bundle`, puis on édite la configuration de Flysystem dans le fichier `config/packages/flysystem.yaml` avec ces quelques lignes :
 
 ```yaml
 flysystem:
