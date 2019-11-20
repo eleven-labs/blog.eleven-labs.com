@@ -25,7 +25,7 @@ image:
 
 ## Intro
 
-Êtes-vous quelqu’un de pati… ah non je me répète.   
+Êtes-vous quelqu’un de pati… ah non je me [répète](https://blog.eleven-labs.com/fr/optimistic-ui-avec-react-et-apollo-js/).   
 Avez vous déjà réalisé une “one page application” (ou une “application web monopage”, dans la langue de Maître Gims) ?
 Si oui, vous devez être au fait de la problématique du temps de chargement lors d’un changement de page.
 Ce moment de transition ou les blocs statiques de notre application comme le header et le footer sont affichés mais que le contenu, lui, est encore en chargement dû à une mauvaise connexion ou à une API longue à répondre.  
