@@ -104,7 +104,7 @@ interface AdapterInterface
 }
 ```
 
-- Enfin, on créé nos x adaptateur :
+- Enfin, on créé nos _**n**_ adaptateurs :
 
 ```php
 class LocalAdapter implements AdapterInterface
