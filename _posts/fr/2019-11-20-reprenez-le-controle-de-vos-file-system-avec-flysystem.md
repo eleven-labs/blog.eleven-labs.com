@@ -303,7 +303,7 @@ flysystem:
       # ...
 ``` 
 
-Et voilà pour la configuration de plusieurs système de fichier.
+Et voilà pour la configuration de plusieurs système de fichiers.
 
 ## La configuration ça va deux minutes
 
