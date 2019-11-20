@@ -196,7 +196,7 @@ flysystem:
         directory: '%kernel.project_dir%/var/storage'
 ```
 
-Ici on peut voir que l’on configure un système de fichier qui ce nome `default.storage`, utilisant l’adaptateur `local` et qu’il y a une option qui cible le répertoire ou seront stockés les ressources: `directory: '%kernel.project_dir%/var/storage'`.
+Ici on peut voir que l’on configure un système de fichier qui ce nomme `default.storage`, utilisant l’adaptateur `local` et qu’il y a une option qui cible le répertoire où seront stockés les ressources: `directory: '%kernel.project_dir%/var/storage'`.
 
 Jusqu'ici rien de compliqué. Mais maintenant on change de système de fichier pour passer sur une solution de stockage sur AWS S3. Pour ce faire nous allons dans un premier temps [créer un Bucket dans la console AWS](https://docs.aws.amazon.com/fr_fr/AmazonS3/latest/user-guide/create-bucket.html). Puis, nous installons l'adaptateur Flysystem AWS S3 via composer comme ceci `composer require league/flysystem-aws-s3-v3`.
 Ensuite nous configurons notre client AWS :
