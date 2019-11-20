@@ -171,7 +171,7 @@ write with aws adapter
 
 Nous avons créé une abstraction pour manipuler un système de fichiers puis nous avons adapter les interfaces de chacune des librairies que l'on souhaitait utiliser.
 
-Mais bon on doit encore faire du code. En plus en librairie exploite déjà les système de gestion de fichier comme ça.
+Mais bon, on doit encore maintenir du code. Heureusement pour nous, il existe déjà une librairie qui s'en charge déjà.
 
 Je vous persente [Flysystem](https://flysystem.thephpleague.com/docs/) développer par [thephpleague](https://thephpleague.com/fr/), un groupe de développer de bibliothèques PHP. *Flysystem* est une bibliothèque d'abstraction du système de fichier. 
 Cela permet donc de changer du solution de système de fichier rapidement et facilement grâce au patron de conception `Adaptateur`. 
