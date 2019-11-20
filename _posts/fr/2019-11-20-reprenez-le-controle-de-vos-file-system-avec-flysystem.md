@@ -229,7 +229,7 @@ flysystem:
         bucket: '%env(string:AWS_BUCKET)%'
 ```
 
-Et voilà on viens de changer de système de fichier juste en changeant la valeur de l’adaptateur de `local` à `aws` et en modifiant les options pour spécifier le client et le bucket à utiliser.
+Et voilà, on vient de changer de système de fichiers juste en changeant la valeur de l’adaptateur de `local` à `aws` et en modifiant les options pour spécifier le client et le bucket à utiliser.
 
 
 ##  Utiliser plusieurs system de fichier avec Flysystem
