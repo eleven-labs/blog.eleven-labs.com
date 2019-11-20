@@ -215,7 +215,7 @@ services:
             version: "2006-03-01"
 ```
 
-Il faudra récupérer des `credentials` sur la console AWS pour ça je vous laisse regarder la [documentation officiel sur AWS](https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/cli-chap-configure.html).
+Il faudra récupérer des `credentials` sur la console AWS, pour ce faire, je vous laisse consulter la [documentation officiel sur AWS](https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/cli-chap-configure.html).
 
 Une fois le client configurer, il nous reste à permuter de système de fichier. On retourne dans `config/packages/flysystem.yaml` et modifie quelques lignes comme ceci :
 
