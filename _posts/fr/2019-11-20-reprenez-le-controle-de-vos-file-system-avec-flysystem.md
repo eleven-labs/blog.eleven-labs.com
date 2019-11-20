@@ -73,7 +73,7 @@ Pour supporter plusieurs systèmes de fichiers on peut éventuellement mettre en
 
 Le patron de conception `Adaptateur` permet de convertir l’interface d’une classe en une autre interface attendue par notre système. Cela permet de faire d'adapter des classes dont nous ne maitrisons pas la signature.
 
-Si l’on prend notre cas de notre système de gestion de système de fichier qui doit utiliser plusieurs clients ou librairies différentes (AWS, SFTP, fonction native) alors nous pourrons faire comme ceci :
+Si l’on prend le cas de notre système de gestion de système de fichiers qui doit utiliser plusieurs clients ou librairies différentes (AWS, SFTP, fonction native, etc...) alors nous pouvons faire comme ceci :
 
 - On créé une classe que l’on va instancier pour manipuler nos fichier :
 
