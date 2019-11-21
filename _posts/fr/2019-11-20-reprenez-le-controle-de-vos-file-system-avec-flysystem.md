@@ -18,7 +18,7 @@ tags:
 ---
 
 
-La gestion d’un ou plusieurs systèmes de fichiers dans une application PHP peut s’avérer compliqué. Il est vrai qu'avec les fonctions natives il est assez simple de manipuler des fichiers en local. Si l'on regarde [la documentation officielle](https://www.php.net/manual/en/ref.filesystem.php) on peut faire un sytème rapidement comme ceci : 
+La gestion d’un ou plusieurs systèmes de fichiers dans une application PHP peut s’avérer compliqué, même si de prime abord il semble simple de manipuler des fichiers en local grâce aux fonctions natives. Si l'on regarde [la documentation officielle](https://www.php.net/manual/en/ref.filesystem.php) on peut faire un sytème rapidement comme ceci : 
 
 ```php
 public function write(string $content, string $path): void
@@ -31,7 +31,7 @@ public function write(string $content, string $path): void
 }
 ```
 
-C'est faisable, mais le jour où vous allez migrer sur un système de fichiers distant comme AWS, vous allez devoir tout recommencer. Il vous faudra installer le SDK AWS, le configurer puis re-développer votre fonction comme ceci :
+C'est donc faisable, mais le jour où vous allez migrer sur un système de fichiers distant comme AWS, vous allez devoir tout recommencer. Il vous faudra installer le SDK AWS, le configurer puis re-développer votre fonction comme ceci :
 
 ```php
 use AWS\S3\S3Client
@@ -67,7 +67,7 @@ public function write(string $content, string $path)
 }
 ```
 
-Et si demain on vous demande de passer sur Google Cloud Storage ou bien de gérer un multitude de systèmes de fichiers ? Cela va être lourd à écrire et à maintenir, sans parler des tests d'intégration...
+Et si demain on vous demande de passer sur Google Cloud Storage ou bien de gérer une multitude de systèmes de fichiers ? Cela va être lourd à écrire et à maintenir, sans parler des tests d'intégration...
 
 Pour supporter plusieurs systèmes de fichiers on peut éventuellement mettre en œuvre le patron de conception [Adaptateur](https://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)) ce qui nous permettrait d'abstraire les opérations sur les fichiers et de supporter plusieurs implémentations. 
 
