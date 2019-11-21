@@ -404,7 +404,7 @@ Nous allons prendre la problématique suivante :
 
 Voilà comment procéder : 
 
-1. Configuration du système de fichiers
+1/ Configuration du système de fichiers
 
 ```yaml 
 # config/packages/flysystem.yaml
@@ -416,7 +416,7 @@ flysystem:
         directory: '%kernel.project_dir%/var/storage/invoice'
 ```
 
-2. Création du plugin
+2/ Création du plugin
 
 ```php
 <?php
@@ -454,7 +454,7 @@ class invoicePlugin implements PluginInterface
 }
 ```
 
-3. Exemple d'utilisation (Attention ici il y a du fake il faut réadapter pour une vraie utilisation)
+3/ Exemple d'utilisation (Attention ici il y a du fake il faut réadapter pour une vraie utilisation)
 
 ```php
     public function saveInvoice(FilesystemInterface $defaultStorage, FilesystemInterface $invoiceStorage)
@@ -466,7 +466,7 @@ class invoicePlugin implements PluginInterface
     }
 ```
 
-4. Voir le résultat :
+4/ Voir le résultat :
 
 
 ![result plugin Flysystem]({{ site.baseurl }}/assets/2019-11-20-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-result-plugin.png){: style="margin: 0 auto; display: block;" }
