@@ -269,9 +269,7 @@ Et voilà c'est tout pour notre premier article!
 
 En effet, mais, mon lecteur adoré, je sais que tu es une personne adulte et que tu sauras te débrouiller comme un grand. 
 
-Et si tu n'as pas lu l'encart en début d'article, la suite c'est simplement ici:
-
-[![Storybook d'un composant Airbnb]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/composite.png)](https://www.learnstorybook.com/intro-to-storybook/react/en/composite-component/)
+Et si tu n'as pas lu l'encart en début d'article, la suite c'est simplement [ici](https://www.learnstorybook.com/intro-to-storybook/react/en/composite-component/).
 
 
 
