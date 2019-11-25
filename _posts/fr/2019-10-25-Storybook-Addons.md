@@ -176,4 +176,4 @@ Voilà voilà, c'est déjà finis les copains, mais promis on se revoit vite pou
 
 Je pense fort à vous, hésitez pas à venir me claquer une bise si ça vous a plu. 
 
-## À bientôt les bichons 👋
+** À bientôt les bichons 👋 **
