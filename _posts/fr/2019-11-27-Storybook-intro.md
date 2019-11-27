@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Storybook - Créer son premier composant
-excerpt: Storybook c'est le framework open-source qui a été récompensé pendant la dernière React Europe, décrouvrons ce qu'il nous cache dans cet intro!
+excerpt: Storybook c'est le framework open-source qui a été récompensé pendant la dernière React Europe, décrouvrons ce qu'il nous cache dans cette intro !
 authors:
 - manu
 permalink: /fr/Storybook-creer-son-premier-composant/
@@ -27,14 +27,14 @@ tags:
 
 ## Storybook - Créer son premier composant
 
-Le but de cette future série d'article sur Storybook est de présenter une feature de la librairie pour explorer ses possibilités, le tout de la manière la plus concise possible, avec des petits exemples.
+Le but de cette série d'article sur Storybook est de présenter une feature de la librairie pour explorer ses possibilités, le tout de la manière la plus concise possible, avec des petits exemples.
 
-Pour le cas pratique, c'est directement extrait de la documentation officiel de Storybook et ce sera souvent le cas.  
+Pour le cas pratique, c'est directement extrait de la documentation officielle de Storybook et ce sera souvent le cas.  
 Comme Gad Elmaleh, c'est pas grave si c'est mieux raconté.
 
 
 
-### Mais qu'est-ce c'est Storybook?
+### Mais qu'est-ce que c'est Storybook?
 
 ---
 
@@ -59,15 +59,15 @@ L'idée derrière ce service est d'apporter une haute robustesse et maintenabili
 
 
 
-Cela est possible grâce aux différentes fonctionnalités de Storybook:
+Cela est possible grâce aux différentes fonctionnalités de Storybook :
 - Construire des composants en isolation
 - Moquer facilement des états clés du composant difficiles à recréer dans son application (loading, error, disabled, user not logged in, etc.)
 - Créer, documenter, rejouer des use cases en tant que Story pour chaque composant
 
-Auxquelles s'ajoute l'utilisation:  
+Auxquelles s'ajoute l'utilisation :  
 
-- De snapshot et test unitaire pour les composants
-- Des addons (extensions) pour enrichir l'environnement de base de Storybook
+- De snapshots et tests unitaires pour les composants
+- D'add-ons (extensions) pour enrichir l'environnement de base de Storybook
 
 
 
@@ -83,7 +83,7 @@ Qui dit environnement de confiance, dit contremaîtres, et donc vous pourrez inv
 
 Si vous voulez de bons exemples 😉
 
-→ Storybook de Carbon: une librairie de composant
+→ Storybook de Carbon : une librairie de composant
 
 [![Storybook d'un composant Airbnb]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/carbon.png)](http://react.carbondesignsystem.com/?path=/story/dropdown--default)
 
@@ -107,7 +107,7 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
 
 Ça y est, une nouvelle vie de développeur front commence, Storybook installé, les étoiles plein les yeux, tu te dis que plus jamais tu n'auras à retoucher 200 fois ton beau composant. Désormais c'est le vrai monde qui t'attends, et le vrai monde il va chez le coiffeur... et fait du CDD.
 
-[CDD](https://blog.hichroma.com/component-driven-development-ce1109d56c8e) ( Composent-Driven Development ), si on doit la faire courte, c'est comme du TDD mais à la place des test t'utilises des user stories.
+[CDD](https://blog.hichroma.com/component-driven-development-ce1109d56c8e) ( Composent-Driven Development ), si on doit la faire courte, c'est comme du TDD mais à la place des tests t'utilises des user stories.
 
 
 ### Cas pratique
@@ -120,9 +120,9 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
 
 
 
-On va donc appliquer cette belle méthodologie, sur la meilleure application possible: cette bonne vieille to-do list!
+On va donc appliquer cette belle méthodologie, sur la meilleure application possible : cette bonne vieille to-do list!
 
-Alors on va commencer par se faire un tout petit composant bien gentil qui afficherai une tâche importante comme: *"Prévenir Jeanine".*
+Alors on va commencer par se faire un tout petit composant bien gentil qui afficherait une tâche importante comme : *"Prévenir Jeanine".*
 ``` javascript
     // src/components/Task.js
     
@@ -136,7 +136,7 @@ Alors on va commencer par se faire un tout petit composant bien gentil qui affic
       );
     }
 ```
-Cette tâche va pouvoir vivre sa meilleure vie: être normal, être archivée ou être importante.
+Cette tâche va pouvoir vivre sa meilleure vie : être normale, être archivée ou être importante.
 
 On va donc rédiger des jolis cas d'usage pour ce composant, AVANT de coder ses fonctionnalités (comme les tests en TDD)
 ```javascript
@@ -174,7 +174,7 @@ On va donc rédiger des jolis cas d'usage pour ce composant, AVANT de coder ses 
 ```
 
 Et là, c'est le déclic, Storybook permet de render facilement ses composants dans différents états.
-Il devient donc facile de wrapper son composant autour de tout un tas de Provider.
+Il devient donc facile de wrapper son composant autour de tout un tas de Providers.
 
 ```javascript
   storiesOf('NomDuComposant', module)
@@ -201,7 +201,7 @@ Oui mais là on le voit Billy.
 
 
 
-Maintenant qu'on a ce joli cadre de travail on va pouvoir changer le composant `<Task />` pour qu'il exploite tout ce que l'on souhaite tester avec nos stories
+Maintenant qu'on a ce joli cadre de travail on va pouvoir changer le composant `<Task />` pour qu'il exploite tout ce que l'on souhaite tester avec nos stories.
 ```javascript
     // src/components/Task.js
     
@@ -263,9 +263,9 @@ Il est un peu susceptible le George.
 
 ![]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/tutobook.gif)
 
-Et voilà c'est tout pour notre premier article!
+Et voilà c'est tout pour notre premier article !
 
-> Mais... espèce de truand, c'est pas une todo list!
+> Mais... espèce de truand, c'est pas une to do list !
 
 En effet, mais, mon lecteur adoré, je sais que tu es une personne adulte et que tu sauras te débrouiller comme un grand. 
 
