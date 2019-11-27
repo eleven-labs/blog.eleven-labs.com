@@ -21,7 +21,7 @@ tags:
     - UX
     - UI
 ---
-![Storybook banner]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/storybooktitle.png)
+![Storybook banner]({{ site.baseurl }}/assets/2019-10-27-Storybook-intro/storybooktitle.png)
 
 
 Le but de cette série d'article sur Storybook est de présenter une feature de la librairie pour explorer ses possibilités, le tout de la manière la plus concise possible, avec des petits exemples.
@@ -82,12 +82,12 @@ Si vous voulez de bons exemples 😉
 
 → Storybook de Carbon : une librairie de composant
 
-[![Storybook de la librairie Carbon Design]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/carbon.png)](http://react.carbondesignsystem.com/?path=/story/dropdown--default)
+[![Storybook de la librairie Carbon Design]({{ site.baseurl }}/assets/2019-10-27-Storybook-intro/carbon.png)](http://react.carbondesignsystem.com/?path=/story/dropdown--default)
 
 
 → Storybook d'un composant Airbnb, celui du choix dans les dates
 
-[![Storybook d'un composant Airbnb]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/airbnb.png)](https://airbnb.io/react-dates/?path=/story/daterangepicker-drp--default)
+[![Storybook d'un composant Airbnb]({{ site.baseurl }}/assets/2019-10-27-Storybook-intro/airbnb.png)](https://airbnb.io/react-dates/?path=/story/daterangepicker-drp--default)
 
 
 
@@ -96,7 +96,7 @@ Si vous voulez de bons exemples 😉
 ## Read The Fucking Story
 
 ---
-### `useStorybook()`
+### useStorybook()
 
 Après un bon vieux `create-react-app` des familles on peut initialiser Storybook (sb) facilement via npx 
 
@@ -112,7 +112,7 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
 ---
 
 <div align="center">
-  <img src="{{ site.baseurl }}/assets/2019-10-24-Storybook-intro/pasorcier.png">
+  <img src="{{ site.baseurl }}/assets/2019-10-27-Storybook-intro/pasorcier.png">
 </div>
 
 
@@ -260,7 +260,7 @@ Il est un peu susceptible le George.
 2. Wait...
 3. `localhost:9009`
 
-![Storybook web UI]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/tutobook.gif)
+![Storybook web UI]({{ site.baseurl }}/assets/2019-10-27-Storybook-intro/tutobook.gif)
 
 Et voilà c'est tout pour notre premier article !
 
@@ -282,11 +282,11 @@ Et si tu n'as pas lu l'encart en début d'article, la suite c'est simplement [ic
 
 → Documenter son Storybook avec MDX et DocsPage 
 
-![Article Documenter Storybook]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/docarticle.png)
+![Article Documenter Storybook]({{ site.baseurl }}/assets/2019-10-27-Storybook-intro/docarticle.png)
 
 
 
 → Test structurel de composant avec Storyshots et Jest
 
-![Tester ses composants sous Storybook]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/testarticle.png)
+![Tester ses composants sous Storybook]({{ site.baseurl }}/assets/2019-10-27-Storybook-intro/testarticle.png)
 
