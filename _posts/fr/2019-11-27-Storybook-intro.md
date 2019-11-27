@@ -24,9 +24,6 @@ tags:
 ![Storybook banner]({{ site.baseurl }}/assets/2019-10-24-Storybook-intro/storybooktitle.png)
 
 
-
-## Storybook - Créer son premier composant
-
 Le but de cette série d'article sur Storybook est de présenter une feature de la librairie pour explorer ses possibilités, le tout de la manière la plus concise possible, avec des petits exemples.
 
 Pour le cas pratique, c'est directement extrait de la documentation officielle de Storybook et ce sera souvent le cas.  
@@ -99,13 +96,13 @@ Si vous voulez de bons exemples 😉
 ## Read The Fucking Story
 
 ---
-### useStorybook()
+### `useStorybook()`
 
 Après un bon vieux `create-react-app` des familles on peut initialiser Storybook (sb) facilement via npx 
 
 `npx -p @storybook/cli sb init`
 
-Ça y est, une nouvelle vie de développeur front commence, Storybook installé, les étoiles plein les yeux, tu te dis que plus jamais tu n'auras à retoucher 200 fois ton beau composant. Désormais c'est le vrai monde qui t'attends, et le vrai monde il va chez le coiffeur... et fait du CDD.
+Ça y est! Une nouvelle vie de développeur front commence, Storybook installé, les étoiles plein les yeux, tu te dis que plus jamais tu n'auras à retoucher 200 fois ton beau composant. Désormais, c'est le vrai monde qui t'attends, et le vrai monde, il va chez le coiffeur... et fait du CDD.
 
 [CDD](https://blog.hichroma.com/component-driven-development-ce1109d56c8e) ( Composent-Driven Development ), si on doit la faire courte, c'est comme du TDD mais à la place des tests t'utilises des user stories.
 
@@ -123,6 +120,7 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
 On va donc appliquer cette belle méthodologie, sur la meilleure application possible : cette bonne vieille to-do list!
 
 Alors on va commencer par se faire un tout petit composant bien gentil qui afficherait une tâche importante comme : *"Prévenir Jeanine".*
+
 ``` javascript
     // src/components/Task.js
     
@@ -257,6 +255,7 @@ Il est un peu susceptible le George.
     
     configure(loadStories, module);
 ```
+
 1. `yarn storybook`
 2. Wait...
 3. `localhost:9009`
