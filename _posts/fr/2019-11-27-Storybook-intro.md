@@ -21,7 +21,7 @@ tags:
     - UX
     - UI
 ---
-![]({{site.baseurl}}/assets/2019-10-24-Storybook-intro/storybooktitle.png)
+![Storybook banner]({{site.baseurl}}/assets/2019-10-24-Storybook-intro/storybooktitle.png)
 
 
 
@@ -85,7 +85,7 @@ Si vous voulez de bons exemples 😉
 
 → Storybook de Carbon : une librairie de composant
 
-[![Storybook d'un composant Airbnb]({{site.baseurl}}/assets/2019-10-24-Storybook-intro/carbon.png)](http://react.carbondesignsystem.com/?path=/story/dropdown--default)
+[![Storybook de la librairie Carbon Design]({{site.baseurl}}/assets/2019-10-24-Storybook-intro/carbon.png)](http://react.carbondesignsystem.com/?path=/story/dropdown--default)
 
 
 → Storybook d'un composant Airbnb, celui du choix dans les dates
@@ -261,7 +261,7 @@ Il est un peu susceptible le George.
 2. Wait...
 3. `localhost:9009`
 
-![]({{site.baseurl}}/assets/2019-10-24-Storybook-intro/tutobook.gif)
+![Storybook web UI]({{site.baseurl}}/assets/2019-10-24-Storybook-intro/tutobook.gif)
 
 Et voilà c'est tout pour notre premier article !
 
@@ -283,11 +283,11 @@ Et si tu n'as pas lu l'encart en début d'article, la suite c'est simplement [ic
 
 → Documenter son Storybook avec MDX et DocsPage 
 
-![]({{site.baseurl}}/assets/2019-10-24-Storybook-intro/docarticle.png)
+![Article Documenter Storybook]({{site.baseurl}}/assets/2019-10-24-Storybook-intro/docarticle.png)
 
 
 
 → Test structurel de composant avec Storyshots et Jest
 
-![]({{site.baseurl}}/assets/2019-10-24-Storybook-intro/testarticle.png)
+![Tester ses composants sous Storybook]({{site.baseurl}}/assets/2019-10-24-Storybook-intro/testarticle.png)
 
