@@ -27,7 +27,7 @@ Or, depuis l'**avènement de l'agilité**, la modélisation de l'architecte via 
 La solution la plus souvent envisagée est d'utiliser ponctuellement un **tableau blanc**, de dessiner des boites, des flêches, de caler quelques infos, de prendre une photo puis de l'archiver.
 
 [![Vidéo Youtube: UML, Cucumber and modeling reality - MPJ's Musings - Fun Fun Function][fff-image]][fff-video]
-_[UML, Cucumber and modeling reality - MPJ's Musings - Fun Fun Function](fff-video) par [Mattias Petter Johansson (mpj)](mpj-twitter)_
+_[UML, Cucumber and modeling reality - MPJ's Musings - Fun Fun Function][fff-video] par [Mattias Petter Johansson (mpj)][mpj-twitter]_
 
 [fff-image]: {{ site.baseurl }}/assets/2019-12-02-visualiser-l-architecture-de-vos-projets/just-use-a-whiteboard.png
 [fff-video]: https://www.youtube.com/watch?v=4_SvuUYQ5Fo
@@ -237,6 +237,6 @@ Si vous souhaitez décrire un projet Java, Structurizr propose également des ex
 - de faire de l'introspection sur une base de code pour extraire les composants d'architecture ([documentation](https://github.com/structurizr/java-extensions/blob/master/docs/spring-component-finder-strategies.md) et exemples pour [Spring](https://github.com/structurizr/java-extensions/blob/master/structurizr-examples/src/com/structurizr/example/SpringPetClinic.java) et [SpringBoot](https://github.com/structurizr/java-extensions/blob/master/structurizr-examples/src/com/structurizr/example/SpringBootPetClinic.java))
 - d'utiliser des annotations pour déclarer votre modèle d'architecture ([documentation](https://github.com/structurizr/java-extensions/blob/master/docs/structurizr-annotations.md) et [exemple](https://github.com/structurizr/java-extensions/blob/master/structurizr-examples/src/com/structurizr/example/StructurizrAnnotations.java)).
 
-## Dans l'épisode suivant...
+## De la théorie à la pratique
 
-Dans l'article suivant, je vous proposerai différentes astuces de modélisation, en attendant, je vous invite à [consulter la foire aux questions](https://c4model.com/#FAQ) du modèle 4C qui offre déjà pas mal de pistes de réflexions.
+Dans l'article suivant, je vous proposerai différentes astuces de modélisation, en attendant, je vous invite à [consulter la foire aux questions](https://c4model.com/#FAQ) du modèle C4 qui offre déjà pas mal de pistes de réflexions.

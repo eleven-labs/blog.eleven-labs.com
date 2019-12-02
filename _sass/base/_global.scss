@@ -154,3 +154,10 @@ img[align=left] {
 img[align=right] {
   margin-left: 3%;
 }
+
+// @see https://css-tricks.com/scale-svg/
+// @see https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
+img[src$=".svg"] {
+  height: auto;
+  width: 100%;
+}
