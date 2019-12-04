@@ -9,6 +9,7 @@ authors:
     - rcourbo
     - mapo
     - psur
+    - pbrenot
 categories:
     - agile
     - po
@@ -26,10 +27,78 @@ Vous retrouverez donc ci-dessous les différentes chroniques de l’équipe, com
 
 ## SOMMAIRE
 
- - [Dashlane : Technical investment and dual track organization](#)
+ - [Dashlane : Technical investment and dual track organization](#how-to-support-both-business-&-technical-investment-through-a-dual-track-organization)
  - [Le Scrum Master Toolkit](#)
- - [Boostez votre Time to Market en dansant le Limbo](#)
+ - [Boostez votre Time to Market en dansant le Limbo](#boostez-votre-time-to-market-en-dansant-le-limbo)
  - [S’aligner pour réussir : de la stratégie à la Value Stream Map](#)
  - [Booster vos événements Scrum avec les Liberating Structures](#)
  - [Petit guide de CNV à l'usage des honnêtes gens](#)
  - [Quand notre représentation nous empêche d’être agile](#)
+
+
+## "How to support both business & technical investment through a dual track organization"
+
+Guillaume Maron, Co-founder et CTO de chez Dashlane a ouvert la journée avec ce premier talk sur l’investissement technique dans l’agilité et les différentes organisations adoptées par leurs équipes en interne au fur et à mesure du temps et des effectifs.
+
+  
+
+La société **voit le jour** en 2009, et c’est en 2014 que les équipes adoptent **l’agilité “by the book”**. En 2016 sont mis en place des **OKR** afin de se fixer des objectifs business d’entreprise.
+
+En 2017, les **“Feature teams”** voient le jour. Mais très vite, les objectifs étant trop flous et éloignés des équipes de développement vis à vis de leur vision produit, en 2018 l’organisation passe en **“Mission teams”**. Ce qui permet à chacun de se projeter plus facilement.
+
+  
+
+Enfin, en 2019, en complément des ces “Mission teams” est rajoutée par dessus une organisation en **“Dual Track”**, suite au constat de la dette technique qui ne fait qu’augmenter. Il n’est donc plus question de passer 2 jours par-ci ou par-là pour se pencher sur la question, mais clairement de dédier une “Platform team” de 25% des effectifs dev à cette dette technique. Une rotation a été instaurée pour que ces effectifs changent régulièrement et une **“Technical Roadmap”** sur 3 mois leur permet de ne pas tomber dans les travers des tâches qui ne finissent jamais.
+
+Globalement, l’objectif donné n’est pas de la faire baisser, ni de l’augmenter, mais de la rendre **“neutre”**.
+
+  
+Mais pour que tout cela puisse fonctionner il faut avant tout que l’entreprise, dans sa manière de fonctionner et de penser, s’agilise à tous les niveaux :
+
+-   Opérationnel avec des équipements de développement en agile (scrum, kanban, …)
+    
+-   Tactique en adoptant une posture de “Lean” tout au long du développement de vos produits
+    
+-   Stratégique en mettant en place des objectifs (OKR) qui servent le produit et la technique
+    
+-   Culturel en construisant petit à petit une vraie culture de l’innovation
+    
+
+***Mon avis ?** Un sujet très intéressant qu’est la dette technique, bien souvent mis à la trappe par les directions métiers ou les CTO non avertis. Et qui fait pâtir aussi bien le produit que les équipes quand on la laisse faire sa vie. Bien plus compliqué à mettre en place dans des petites équipes, et probablement imparfaite, la dynamique adoptée pour trouver une organisation pouvant répondre le mieux possible à la dette technique - fléau commun à tout produit logiciel - a le mérite de se pencher sur la question.*
+
+## Boostez votre Time to Market en dansant le Limbo - Younes Jaaidi
+
+Younes Jaaidi est venu nous présenter les avantages de l’**Extreme Programming**, dont les principes ont été re-façonnés par Kent Beck. Technique qu’il a lui-même mis en place dans sa société Marmicode.fr.
+
+Il a en effet rapidement fait face au constat que ses développeurs (lui y compris) codaient chacun dans leur coin sur leur propre branche. Perdaient du temps à faire des reviews de code entre eux beaucoup trop longues. Et au moment de merger une semaine de travail, se retrouvaient avec **bien trop de conflits** à gérer.
+
+Ils se sont donc lancés dans l’Extreme Programming : tout le monde sur la même branche et parfois même sur le développement des mêmes features. La volonté étant de favoriser le **pair programming**, le **pair testing** & le **collective ownership**. En soit, l’implication et l’appartenance commune de tous les développeurs dans le même code.
+
+
+Mais comment réussir à travailler avec une seule branche commune ?
+
+En faisant de l’intégration continue, nous a-t-il répondu, qui permet notamment de :
+
+-   Résoudre le problème de symétrie du code
+    
+-   Eviter le Git Spaghetti
+    
+-   Mettre en place un collective ownership plus important
+    
+-   Réduire le work in progress d’une feature (car tout le monde est dessus en même temps)
+    
+
+  
+Ce qui pour autant ne permet tout de même pas d’éviter tous les conflits, notamment en faisant des push sur la même branche et en écrasant le travail de l’autre !
+
+Younes Jaaidi nous a donc présenté le **shared programming** à travers le principe du Limbo : quel est le plus petit commit possible de faire, au même titre que, jusqu’où tu peux te baisser au Limbo ?
+
+
+Dans sa vision du développement, un commit ne doit pas être une feature, mais doit contribuer à une feature. Et l’avantage de ce système est d’embarquer les développeurs dans une communication constante entre eux tout au long de la journée, permettant d’éviter autant les doublons que parfois les erreurs.
+
+
+En poussant encore plus loin, ils se sont d’ailleurs essayés au **“Timeboxed TDD”**. Chaque commit est timeboxé, et si pour le développe cela vous prend plus de 30 min : c’est que c’était probablement une mauvaise idée. HOP, c’est revert.
+
+ 
+***Mon avis ?** Technique un peu drastique qui doit peut-être bien fonctionner dans des petites équipes de développeurs qui se connaissent déjà. Mais je vois d’ores et déjà plusieurs barrières. La première est l’effort constant et au quotidien de communication imposé entre individus. Nous sommes tous humain, il arrivera donc forcément un moment où ce ne sera pas le bon jour et où potentiellement la productivité chutera.
+Je pense également que cela implique parfois de passer plus de temps à échanger machinalement et moins de temps à produire réellement. Pour plus d’efficience par la suite, peut-être, et c’est intéressant dans le cas d’un produit qui se cherche. Mais probablement beaucoup moins dans des équipes où la direction du produit est déjà bien travaillée en amont.*
