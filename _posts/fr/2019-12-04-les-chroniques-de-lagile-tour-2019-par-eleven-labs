@@ -7,8 +7,7 @@ excerpt: "L’escouade agile d’Eleven Labs s’est déplacée le 2 décembre j
 authors:
     - mae
     - rcourbo
-    - mapo
-    - psur
+    - mpeaudecerf
     - pbrenot
 categories:
     - agile
@@ -28,12 +27,12 @@ Vous retrouverez donc ci-dessous les différentes chroniques de l’équipe, com
 ## SOMMAIRE
 
  - [Dashlane : Technical investment and dual track organization](#how-to-support-both-business-&-technical-investment-through-a-dual-track-organization)
- - [Le Scrum Master Toolkit](#)
- - [Boostez votre Time to Market en dansant le Limbo](#boostez-votre-time-to-market-en-dansant-le-limbo)
+ - [Le Scrum Master Toolkit](#scrum-master-toolkit-sweta-mistry)
+ - [Boostez votre Time to Market en dansant le Limbo](#boostez-votre-time-to-market-en-dansant-le-limbo-younes-jaaidi)
  - [S’aligner pour réussir : de la stratégie à la Value Stream Map](#)
  - [Booster vos événements Scrum avec les Liberating Structures](#)
  - [Petit guide de CNV à l'usage des honnêtes gens](#)
- - [Quand notre représentation nous empêche d’être agile](#)
+ - [Quand notre représentation nous empêche d’être agile](#quand-notre-representation-nous-empeche-d-etre-agile-nicolas-delahaye)
 
 
 ## "How to support both business & technical investment through a dual track organization"
@@ -65,6 +64,46 @@ Mais pour que tout cela puisse fonctionner il faut avant tout que l’entreprise
     
 
 ***Mon avis ?** Un sujet très intéressant qu’est la dette technique, bien souvent mis à la trappe par les directions métiers ou les CTO non avertis. Et qui fait pâtir aussi bien le produit que les équipes quand on la laisse faire sa vie. Bien plus compliqué à mettre en place dans des petites équipes, et probablement imparfaite, la dynamique adoptée pour trouver une organisation pouvant répondre le mieux possible à la dette technique - fléau commun à tout produit logiciel - a le mérite de se pencher sur la question.*
+
+## Scrum Master Toolkit - Sweta Mistry 
+
+Sweta Mistry (Agile coach CSM, CSP et CSPO), venue tout droit de New York pour nous former, nous a embarqués dans une session ultra interactive avec pour but d’étoffer notre boîte à outils Scrum.
+
+On a commencé en pratique avec des techniques pour engager l’audience :
+
+- “Stop talking” quand l’oratrice lève la main, tous les participants lève la main et arrête leur discussion jusqu’à ce que tout le monde ait la main levée,
+- “Shout out”, Sweta nous demande d’exprimer notre sentiment sur un concept ou un exercice en criant un mot
+- “Popcorn” une personne se lève et dit un mot, puis une autre personne se lève et dit un mot, comme des petits popcorn qui éclate chacun à leur tour dans la salle !
+- “Pairs”, par groupe de 2 auto-constitués on échange sur nos attentes de la session dans un temps défini.
+
+
+Bien échauffé, on enchaîne sur les Liberating Structures. Des micro-structures qui permettent de faciliter les meetings et les conversations. Il en existe 33 qui sont détaillées dans l’ouvrage que Sweta nous recommande : The Surprising Power of Liberating Structures: Simple Rules to Unleash A Culture of Innovation d’[Henri Lipmanowicz](https://www.amazon.com/Henri-Lipmanowicz/e/B00LT8JGN4/ref=dp_byline_cont_book_1).
+
+On découvre notamment l’”Impromptu Networking”, qui nous permet de créer des liens avec les participants du meetup, et les règles qui s’appliquent à toutes les liberating structures, à savoir :
+
+-   Une invitation structurante de la personne qui lead le meet-up : une consigne claire comme par exemple, partagez une problématique du quotidien et ce que vous attendez du meetup 
+-   Un agencement de l’espace adéquat et le matériel nécessaire
+-   Une distribution des rôles définie : les participants choisissent eux-même leur partenaire dans la salle par exemple 
+-   Une configuration des groupes définie : par pair
+-   Une séquence défini, un temps alloué : 2min par round / 5 rounds
+    
+Sweta nous conseille d’approfondir sans plus attendre les [Liberating Structures](http://www.liberatingstructures.com/) et le concept de [Training from the back of the room](https://bowperson.com/sharons-articles/) de Sharon Bowman's qui consiste en tant que formateur ou animateur à donner les instructions pertinentes aux participants puis à se mettre en retrait pour les laisser apprendre en faisant.
+
+On continue à remplir notre boîte à outils avec les 6 TRUMPS :
+
+-   Faites bouger fréquemment vos participants, toutes les 10 à 20 minutes, ca oxygène le cerveau !
+-   Faites parler vos participants pour les aider à apprendre ;
+-   Faites écrire pour permettre à votre assistance de processer l’information ;
+-   Plus vous ferez court, plus les participants mémoriseront les informations. Ainsi divisez vos contenus en petits segments, faites un networking impromptu puis reprenez une session de partage de contenu ;
+-   Variez les formats, les contenus, les images, notre cerveau remarque le changement et ignore les informations qui semblent similaires ;
+-   Utilisez des visuels ! La mémoire à long terme des images semblent illimitée et le cerveau crée facilement des scénarios à partir d’images !
+    
+
+On parlera enfin d’intelligence émotionnelle qu’Howard Gardner décrit ainsi “Your EQ is the level of your ability to understand other people, what motivates them and how to work cooperatively with them” et contrairement au quotient intellectuel, et bien l’intelligence émotionnelle ca se travaille nous dit Sweta ! On apprend donc qu’on pourra améliorer notre Self-awareness, notre Self-regulation, notre Motivation, notre empathie et nos Social skills.
+
+***Mon avis ?** On repart en effet avec beaucoup de pratiques très concrètes dans notre petit baluchon, que l’on aura pu tester en live ! Pas sur qu’on puisse toutes les mettre en pratique dans nos rétros, démos etc... mais ca nous donne beaucoup d’idées pour engager, faire participer, mieux communiquer, mieux réagir... On est resté un peu sur notre faim car on aurait aimé en savoir plus sur le mind maps, le story mapping, l’impact mapping… Et finalement, ce n’est pas qu’un Toolkit de Scrum Master mais des pratiques qui peuvent aider tous ceux qui animent des événements, des meetups ou une équipe !*
+
+
 
 ## Boostez votre Time to Market en dansant le Limbo - Younes Jaaidi
 
@@ -102,3 +141,26 @@ En poussant encore plus loin, ils se sont d’ailleurs essayés au **“Timeboxe
  
 ***Mon avis ?** Technique un peu drastique qui doit peut-être bien fonctionner dans des petites équipes de développeurs qui se connaissent déjà. Mais je vois d’ores et déjà plusieurs barrières. La première est l’effort constant et au quotidien de communication imposé entre individus. Nous sommes tous humain, il arrivera donc forcément un moment où ce ne sera pas le bon jour et où potentiellement la productivité chutera.
 Je pense également que cela implique parfois de passer plus de temps à échanger machinalement et moins de temps à produire réellement. Pour plus d’efficience par la suite, peut-être, et c’est intéressant dans le cas d’un produit qui se cherche. Mais probablement beaucoup moins dans des équipes où la direction du produit est déjà bien travaillée en amont.*
+
+
+## Quand notre représentation nous empêche d’être agile - Nicolas Delahaye
+
+Nicolas Delahaye, coach professionnel, nous fait débuter notre voyage agile au travers d’une session de talk et d’échanges centrée sur nos mécanismes de perception et comment ils peuvent influencer notre état d’esprit agile.
+
+Il démarre son propos sur l’Allégorie de la caverne de Platon, vous savez cette “demeure” souterraine où des hommes sont enchaînés ! Allez, on revient un peu sur le concept : “ces hommes n'ont jamais vu directement la source de la lumière du jour. Des choses et d'eux-mêmes, ils ne connaissent que les ombres projetées sur les murs de leur caverne.”
+
+Imaginez maintenant que l'un d'entre eux soit libéré de ses chaînes et accompagné de force vers la sortie, il sera d'abord cruellement ébloui et souffrira de tous les changements. S'il persiste, il s'accoutumera et pourra voir “le monde supérieur”, ce que Platon désigne comme “les merveilles du monde intelligibles”. S’ils retournent dans la caverne, on peut imaginer que les autres hommes seront incapables de comprendre ce qui lui est arrivé et refuseront de le croire : “Ne le tueront-ils pas ?”.
+
+Un petit retour en cours de philo pour nous rappeler que notre cerveau est un modeleur de la réalité, que nous avons tous une perception différente du monde et que “la carte n’est pas le territoire” un des présupposés de la PNL (on parle bien ici de Programmation neuro-linguistique) et phrase empruntée à Alfred Korzybski.
+
+Oui mais comment tout ceci s’applique-t-il à l’état d’esprit agile ?
+
+Pour faire le lien, Nicolas Delahaye nous présente le Fixed Mindset et le Growth Mindset de Carol S. Dweck. Une personne ayant un Fixed Mindset aura tendance à éviter les challenges, à abandonner plus rapidement face aux obstacles, à considérer les efforts comme vains, à ignorer les critiques, à se sentir menacé par le succès des autres etc... Une personne ayant un Growth Mindset est plus dans une configuration apprenante qui lui apportera résilience, capacité d’adaptation, volonté d’embrasser les challenges et d’apprendre de ses erreurs...
+
+Dans un contexte Scrum, un Fixed Mindset pourra avoir des biais qui inciteront par exemple à vouloir planifier un backlog sur 10 sprints, à faire un refinement qui servent uniquement au Product Owner pour insister sur un chiffrage, à supprimer les rétros considérées comme “inutiles”, à pointer du doigt les erreurs, ou à considérer que les erreurs viennent de l’extérieur (d’autres parties prenantes) etc…
+
+Vous l’aurez donc compris, l’agile a donc besoin de talents avec un Growth Mindset pour leur permettre de faire face au Monde empirique et complexe dans lequel Scrum a été créé !
+
+***Mon avis ?** Une prise de hauteur intéressante sur l’état d’esprit appliqué à l’agile qui nous amène à questionner notre interprétation et la manière dont nous sommes amenés à résoudre nos problématiques. S’il semble évident qu’un Scrum Master, Product Manager ou Product Owner doivent acquérir le Growth Mindset, comment procéder ? Pour aller plus loin que la théorie, quelques pistes :
+-[Developing a Growth Mindset with Carol Dweck](https://www.youtube.com/watch?v=hiiEeMN7vbQ)
+-[25 Simple Ways To Develop A Growth Mindset](https://www.teachthought.com/learning/25-simple-ways-develop-growth-mindset/)*
