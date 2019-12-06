@@ -24,22 +24,20 @@ L’escouade agile d’Eleven Labs s’est déplacée le 2 décembre jusqu’à 
 
 Vous retrouverez donc ci-dessous les différentes chroniques de l’équipe, composées d’une présentation et d’un avis personnel sur les ateliers qui nous ont le plus marqués au cours de la journée !
 
-## SOMMAIRE
+# SOMMAIRE
 
  - [Dashlane : Technical investment and dual track organization](#how-to-support-both-business-&-technical-investment-through-a-dual-track-organization)
  - [Le Scrum Master Toolkit](#scrum-master-toolkit-sweta-mistry)
  - [Boostez votre Time to Market en dansant le Limbo](#boostez-votre-time-to-market-en-dansant-le-limbo-younes-jaaidi)
- - [S’aligner pour réussir : de la stratégie à la Value Stream Map](#)
+ - [S’aligner pour réussir : de la stratégie à la Value Stream Map](#s-aligner-pour-reussir-de la-strategie-a-la-value-stream-map-guillaume-morin)
  - [Booster vos événements Scrum avec les Liberating Structures](#)
  - [Petit guide de CNV à l'usage des honnêtes gens](#)
  - [Quand notre représentation nous empêche d’être agile](#quand-notre-representation-nous-empeche-d-etre-agile-nicolas-delahaye)
 
 
-## "How to support both business & technical investment through a dual track organization"
+# "How to support both business & technical investment through a dual track organization"
 
 Guillaume Maron, Co-founder et CTO de chez Dashlane a ouvert la journée avec ce premier talk sur l’investissement technique dans l’agilité et les différentes organisations adoptées par leurs équipes en interne au fur et à mesure du temps et des effectifs.
-
-  
 
 La société **voit le jour** en 2009, et c’est en 2014 que les équipes adoptent **l’agilité “by the book”**. En 2016 sont mis en place des **OKR** afin de se fixer des objectifs business d’entreprise.
 
@@ -65,7 +63,7 @@ Mais pour que tout cela puisse fonctionner il faut avant tout que l’entreprise
 
 ***Mon avis ?** Un sujet très intéressant qu’est la dette technique, bien souvent mis à la trappe par les directions métiers ou les CTO non avertis. Et qui fait pâtir aussi bien le produit que les équipes quand on la laisse faire sa vie. Bien plus compliqué à mettre en place dans des petites équipes, et probablement imparfaite, la dynamique adoptée pour trouver une organisation pouvant répondre le mieux possible à la dette technique - fléau commun à tout produit logiciel - a le mérite de se pencher sur la question.*
 
-## Scrum Master Toolkit - Sweta Mistry 
+# Scrum Master Toolkit - Sweta Mistry 
 
 Sweta Mistry (Agile coach CSM, CSP et CSPO), venue tout droit de New York pour nous former, nous a embarqués dans une session ultra interactive avec pour but d’étoffer notre boîte à outils Scrum.
 
@@ -105,7 +103,7 @@ On parlera enfin d’intelligence émotionnelle qu’Howard Gardner décrit ains
 
 
 
-## Boostez votre Time to Market en dansant le Limbo - Younes Jaaidi
+# Boostez votre Time to Market en dansant le Limbo - Younes Jaaidi
 
 Younes Jaaidi est venu nous présenter les avantages de l’**Extreme Programming**, dont les principes ont été re-façonnés par Kent Beck. Technique qu’il a lui-même mis en place dans sa société Marmicode.fr.
 
@@ -142,8 +140,48 @@ En poussant encore plus loin, ils se sont d’ailleurs essayés au **“Timeboxe
 ***Mon avis ?** Technique un peu drastique qui doit peut-être bien fonctionner dans des petites équipes de développeurs qui se connaissent déjà. Mais je vois d’ores et déjà plusieurs barrières. La première est l’effort constant et au quotidien de communication imposé entre individus. Nous sommes tous humain, il arrivera donc forcément un moment où ce ne sera pas le bon jour et où potentiellement la productivité chutera.
 Je pense également que cela implique parfois de passer plus de temps à échanger machinalement et moins de temps à produire réellement. Pour plus d’efficience par la suite, peut-être, et c’est intéressant dans le cas d’un produit qui se cherche. Mais probablement beaucoup moins dans des équipes où la direction du produit est déjà bien travaillée en amont.*
 
+# S’aligner pour réussir : de la stratégie à la Value Stream Map - Guillaume Morin
 
-## Quand notre représentation nous empêche d’être agile - Nicolas Delahaye
+On connait plutôt bien la Customer Journey Map qui consiste à cartographier l’ensemble des actions et interactions qu’un client va avoir avec une entreprise durant le processus d’achat d’un produit ou d’un service. Mais la Value Stream Map, on est moins familier et ça nous intéresse !
+
+Guillaume Morin CEO de Monsieur Guiz et son associé nous ont présenté ce concept issu du Lean Management au travers d’un cas concret : un de leur client dans l’hôtellerie qui a souhaité retirer les comptoirs dans son hôtel pour créer un accueil plus chaleureux.
+
+Le constat après un POC : allongement du temps d’attente, double saisie sur l’application mobile mise à disposition du réceptionniste, difficulté à gérer des demandes particulières pour le réceptionniste… Un accueil donc pas beaucoup plus chaleureux.
+
+
+**Etape 1 : Définition de la valeur client et alignement**
+
+L’équipe de Monsieur Guiz s’est attaquée au problème d’alignement des objectifs en allant interroger les Product Owner et les différentes parties prenantes avec des questions simples :
+
+-   Sur quoi, tu travailles en ce moment ?
+-   Quel est le problème que tu cherches à résoudre ?
+-   Avec quelles équipes collabores-tu ?
+-   Quel segment de clients cela concerne-t-il ?
+-   Est-ce que les features arrivent jusqu’en production ? Si non, pourquoi ?
+
+Un objectif clair est ressorti : Faciliter la vie du réceptionniste et réduire le temps d’attente du client
+
+**Etape 2 : Définir une boussole chiffrée**
+
+Par exemple, le temps de récupération des clefs par le client
+
+**Etape 3 : Créer la value Stream Map Produit**
+
+Ils ont réuni les différentes parties prenantes pour les faire travailler de concert sur leur Value Stream Map. La VSM une technique de design et d’analyse du flow d’informations et des différents process qui permettent de délivrer un produit au client.
+
+Ils ont donc fait mapper aux équipes à l’aide de post-its toutes les étapes nécessaires pour arriver à la création d’un produit ou la livraison d’une feature. Concrètement : qui passe la balle à qui ?
+
+L’objectif : commencer à faire échanger les parties prenantes, cartographier toutes les étapes pour produire une feature/un produit, faire connaître les processus par tous, identifier les étapes qui ralentissent le process et faire s’aligner les équipes pour réussir !
+
+**Etape 4 - Les tops problèmes à régler et les tâches associées**
+
+Ils ont procédé de la même manière pour cartographier les problèmes identifiés tout au long du parcours client et les tâches associées qui apportent le maximum de valeur au client. Ils ont ensuite redyspatché les problèmes et tâches aux différentes étapes identifiées dans la Value Stream map.
+
+Le résultat : une Value Stream Map Produit et Value Stream Map Client alignées !
+
+***Mon avis ?** Une méthode très intéressante quand un besoin de rapprocher le développement des objectifs business se fait sentir. Il semble en effet permettre d’aligner toutes les parties prenantes vers un objectif commun et être un bon point de départ pour faire ouvrir les yeux sur la nécessité de revoir les process et l’implication des différentes parties prenantes aux différentes étapes de développement d’un produit qui a de la valeur pour le client !*
+
+# Quand notre représentation nous empêche d’être agile - Nicolas Delahaye
 
 Nicolas Delahaye, coach professionnel, nous fait débuter notre voyage agile au travers d’une session de talk et d’échanges centrée sur nos mécanismes de perception et comment ils peuvent influencer notre état d’esprit agile.
 
