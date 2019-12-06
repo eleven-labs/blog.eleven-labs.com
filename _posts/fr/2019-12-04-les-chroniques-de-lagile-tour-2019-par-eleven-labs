@@ -28,6 +28,7 @@ Vous retrouverez donc ci-dessous les différentes chroniques de l’équipe, com
  - [Dashlane : Technical investment and dual track organization](#how-to-support-both-business-&-technical-investment-through-a-dual-track-organization)
  - [S’aligner pour réussir : de la stratégie à la Value Stream Map](#s-aligner-pour-reussir-de la-strategie-a-la-value-stream-map-guillaume-morin)
  - [Le Scrum Master Toolkit](#scrum-master-toolkit-sweta-mistry)
+ - [Booster vos événements Scrum avec les Liberating Structures](#booster-vos-evenements-scrum-avec-les-liberating-structures-philippe-pushmann)
  - [KPI vs KBI](#key-performance-indicator-vs-key-business-indicator-jean-sebastien-sladecek)
  - [Boostez votre Time to Market en dansant le Limbo](#boostez-votre-time-to-market-en-dansant-le-limbo-younes-jaaidi)
  - [Quand notre représentation nous empêche d’être agile](#quand-notre-representation-nous-empeche-d-etre-agile-nicolas-delahaye)
@@ -138,19 +139,48 @@ On parlera enfin d’intelligence émotionnelle qu’Howard Gardner décrit ains
 
 ***L'avis de Marion** On repart en effet avec beaucoup de pratiques très concrètes dans notre petit baluchon, que l’on aura pu tester en live ! Pas sur qu’on puisse toutes les mettre en pratique dans nos rétros, démos etc... mais ca nous donne beaucoup d’idées pour engager, faire participer, mieux communiquer, mieux réagir... On est resté un peu sur notre faim car on aurait aimé en savoir plus sur le mind maps, le story mapping, l’impact mapping… Et finalement, ce n’est pas qu’un Toolkit de Scrum Master mais des pratiques qui peuvent aider tous ceux qui animent des événements, des meetups ou une équipe !*
 
+# Booster vos événements Scrum avec les Liberating Structures - Philippe Pushmann
+  
+La journée a commencé par une première présentation de Philippe Pushmann de la société Avanade, un conférencier habitué de l'Agile Tour puisque j'avais déjà eu l'occasion de l'écouter en 2017.
+
+Pour cette session 2019, le sujet était : les liberating structures.
+
+Afin d'animer de manière innovante et stimulante vos réunions, vos process, les liberating structures vous permettent d'optimiser la communication avec vos équipes.
+
+En effet, par l'intermédiaire de petits exercices, vous allez permettre à vos collègues de se sentir investis et, par voie de conséquence, d'améliorer l'efficacité collective.
+
+Théoriquement, le Scrum, c'est génial, on est, pour la plupart, d'accord. Dans la pratique aussi, vous me direz, mais très souvent nous pouvons nous retrouver dans une certaine routine face aux différents meetings qui rend les participants moins alertes et, de fait, moins efficaces.
+
+Afin de casser cette routine, il ne faut pas hésiter à agrémenter vos réunions de ces liberating structures.
+
+Je vais vous vous parler de celle qui m'a paru la plus simple et applicable, selon moi.
+
+Le Triz, que l'on pourrait, par exemple, mettre en place lors d'une rétrospesctive de sprint.
+
+Demandez à vos interlocuteurs ce qui pourrait engendrer le pire résultat vis-à-vis de vos objectifs.
+
+Dans un deuxième temps, faites les réfléchir sur les choses que vous faites actuellement qui pourraient engendrer certains résultats décrits dans la première étape.
+
+Et, enfin, dernière étape, déterminez des actions qui vous permettraient de stopper ces effets néfastes.
+
+Il y a en tout 35 petits ateliers très intéressants que je ne vais pas détailler parce que le but n'est pas de refaire toute la présentation mais vous pouvez les retrouver facilement sur le site liberatingstructures.fr.
+
+
+***L’avis de Renaud :** J'ai vraiment beaucoup aimé cette présentation. Dans mon quotidien de Product owner, je me suis souvent demandé comment sortir de cette routine qui s'était installée et dont je voyais l'impact sur l'efficacité déclinante de nos échanges.
+J'ai enfin trouvé des réponses à ce problème et je vais m'empresser d'expérimenter tout ça !*
 
 
 # Key Performance Indicator vs Key Business Indicator - Jean-Sébastien Sladecek
 
 Jean Sébastien Sladecek, Directeur Services-Conseils chez CGI est venu à l’Agile Tour nous parler d’une manière plus réaliste et surtout plus humaine d’évaluer les performances d’une équipe produit.
 
-Dans les organisations d’aujourd’hui, on pense performance avant tout, et avant de penser humain - un facteur bien en amont de la livraison.
+Dans les organisations d’aujourd’hui, on pense performance avant de penser humain - un facteur bien en amont de la livraison.
 
 Pourquoi de ce fait ne pas être à l’écoute du réel besoin des équipes pour améliorer la performance ? Et surtout, pourquoi ne pas penser les **KPIs (acronyme pour Key Performance Indicators)** au service de l’équipe et non pas au service du manager ?
 
 La première chose importante est de vous posez-vous cette question avant de mettre en place ce type de métriques : que voulez vous réellement savoir à travers les KPIs ?
 
-Si ce que vous faite est pertinent ? Si c’est collaboratif ? Fluide ? A quel moment vous êtes complètement bloqué ?
+Si ce que vous faites est pertinent ? Si c’est collaboratif ? Fluide ? A quel moment vous êtes complètement bloqué ?
 
 Car avant de penser performance, livraison dans les temps et payer le moins cher possible. Il est important de partir d’un constat simple mais vrai : est-ce que chaque membre de l’équipe doit avoir la même performance ?
 
@@ -158,15 +188,15 @@ Dans une équipe de football, par exemple, est-ce qu’on pourrait attendre que 
 
 La réponse est non, évidemment. Pour certains ce seront les buts, pour d’autres les passes décisives, ou encore la défense de son propre but. Mais avant même tout cela, il ne faut pas oublier la collaboration entre chaque joueur, la discipline liée au sport en lui même, et la compréhension et maîtrise des règles qui a permis à chacun d’être dans l’équipe.
 
-Qu’est-que la performance, donc ? Notre intervenant nous l’a traduit de la manière suivante : la performance est une situation optimale afin que les individus qui composent l’équipe puissent s’exprimer à 100% de leur capacité (sénior, comme junior).
+Qu’est-que la performance, donc ? Notre intervenant nous l’a traduite de la manière suivante : la performance est une situation optimale afin que les individus qui composent l’équipe puissent s’exprimer à 100% de leur capacité (sénior, comme junior).
 
 Et cette performance est affectée par plusieurs facteurs non exhaustifs ici, communs à toutes les équipes : la maturité de l’équipe, le niveau d’expérience propre des joueurs, la situation mentale personnelle à instant t, le désir de dépassement de chacun, l’engagement de l’équipe dans le projet.
 
-Quel comportement attendre de l’équipe, est qui pourrait donc faire l’objet de nos désormais **KBIs (acronyme pour Key Business Indicators)** : la motivation, l’engagement, la responsabilité, la confiance entre eux et dans l’équipe, l’amélioration continue, le partage de connaissance, l’écoute et l’empathie, le nombre de rires, etc..
+Quel comportement attendre de l’équipe qui pourrait donc faire l’objet de nos désormais **KBIs (acronyme pour Key Business Indicators)** : la motivation, l’engagement, la responsabilité, la confiance entre eux et dans l’équipe, l’amélioration continue, le partage de connaissance, l’écoute et l’empathie, le nombre de rires, etc..
 
 Pour en savoir plus sur le sujet, une vidéo résume très bien l’ensemble : “[Performance VS Trust](https://www.youtube.com/watch?v=YPDmNaEG8v4)”.
 
-***L'avis de Maeva :** Le sujet n’est pas nouveau dans l’agilité : se tromper pour s’améliorer, éviter de passer plus de temps à estimer qu’à réaliser, ou encore faire comprendre à son client à sa direction qu’il ne sert à rien de courir après les points d’effort et que la capacité de production d’une même équipe mature sera la même. Cela reste cependant très intéressant de pouvoir mettre des indicateurs de performance plus réaliste, plus humain et non plus lié juste à de la production. Et surtout, de pouvoir engager d’une manière plus saine l’équipe dans la volonté d’atteindre des objectifs sans risquer de les démotiver avec des demandes parfois lunaires.*
+***L'avis de Maeva :** Le sujet n’est pas nouveau dans l’agilité : se tromper pour s’améliorer, éviter de passer plus de temps à estimer qu’à réaliser ou encore faire comprendre à son client / sa direction qu’il ne sert à rien de courir après les points d’effort. Cela reste cependant très intéressant de pouvoir mettre des indicateurs de performance plus réalistes, plus humains et non plus liés juste à de la production. Et surtout, de pouvoir engager d’une manière plus saine l’équipe dans la volonté d’atteindre des objectifs sans risquer de les démotiver avec des demandes parfois lunaires. *
 
 
 
