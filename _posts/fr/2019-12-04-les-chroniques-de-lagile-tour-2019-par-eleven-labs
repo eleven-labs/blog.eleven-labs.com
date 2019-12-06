@@ -49,13 +49,13 @@ Globalement, l’objectif donné n’est pas de la faire baisser, ni de l’augm
  
 Mais pour que tout cela puisse fonctionner il faut avant tout que l’entreprise, dans sa manière de fonctionner et de penser, s’agilise à tous les niveaux :
 
--   Opérationnel avec des équipements de développement en agile (scrum, kanban, …)  
+-   Opérationnel avec des équipes de développement en agile (scrum, kanban, …)  
 -   Tactique en adoptant une posture de “Lean” tout au long du développement de vos produits  
 -   Stratégique en mettant en place des objectifs (OKR) qui servent le produit et la technique  
 -   Culturel en construisant petit à petit une vraie culture de l’innovation
     
 
-***L'avis de Maeva :** Un sujet très intéressant qu’est la dette technique, bien souvent mis à la trappe par les directions métiers ou les CTO non avertis. Et qui fait pâtir aussi bien le produit que les équipes quand on la laisse faire sa vie. Bien plus compliqué à mettre en place dans des petites équipes, et probablement imparfaite, la dynamique adoptée pour trouver une organisation pouvant répondre le mieux possible à la dette technique - fléau commun à tout produit logiciel - a le mérite de se pencher sur la question.*
+***L'avis de Maeva :** Un sujet très intéressant qu’est la dette technique, bien souvent mis à la trappe par les directions métiers ou les CTO non avertis. Et qui fait pâtir aussi bien le produit que les équipes quand on la laisse faire sa vie. Bien plus compliquée à mettre en place dans des petites équipes, et probablement imparfaite, la dynamique adoptée pour trouver une organisation pouvant répondre le mieux possible à la dette technique - fléau commun à tout produit logiciel - a le mérite de se pencher sur la question.*
 
 
 
@@ -69,7 +69,7 @@ Le constat après un POC : allongement du temps d’attente, double saisie sur l
 
 **Etape 1 : Définition de la valeur client et alignement**
 
-L’équipe de Monsieur Guiz s’est attaquée au problème d’alignement des objectifs en allant interroger les Product Owner et les différentes parties prenantes avec des questions simples :
+L’équipe de Monsieur Guiz s’est attaqué au problème d’alignement des objectifs en allant interroger les Product Owner et les différentes parties prenantes avec des questions simples :
 
 -   Sur quoi, tu travailles en ce moment ?
 -   Quel est le problème que tu cherches à résoudre ?
@@ -85,7 +85,7 @@ Par exemple, le temps de récupération des clefs par le client
 
 **Etape 3 : Créer la value Stream Map Produit**
 
-Ils ont réuni les différentes parties prenantes pour les faire travailler de concert sur leur Value Stream Map. La VSM une technique de design et d’analyse du flow d’informations et des différents process qui permettent de délivrer un produit au client.
+Ils ont réuni les différentes parties prenantes pour les faire travailler de concert sur leur Value Stream Map. La VSM est une technique de design et d’analyse du flow d’informations et des différents process qui permettent de délivrer un produit au client.
 
 Ils ont donc fait mapper aux équipes à l’aide de post-its toutes les étapes nécessaires pour arriver à la création d’un produit ou la livraison d’une feature. Concrètement : qui passe la balle à qui ?
 
@@ -107,13 +107,13 @@ Sweta Mistry (Agile coach CSM, CSP et CSPO), venue tout droit de New York pour n
 
 On a commencé en pratique avec des techniques pour engager l’audience :
 
-- “Stop talking” quand l’oratrice lève la main, tous les participants lève la main et arrête leur discussion jusqu’à ce que tout le monde ait la main levée,
+- “Stop talking” quand l’oratrice lève la main, tous les participants lèvent la main et arrêtent leur discussion jusqu’à ce que tout le monde ait la main levée,
 - “Shout out”, Sweta nous demande d’exprimer notre sentiment sur un concept ou un exercice en criant un mot
-- “Popcorn” une personne se lève et dit un mot, puis une autre personne se lève et dit un mot, comme des petits popcorn qui éclate chacun à leur tour dans la salle !
+- “Popcorn” une personne se lève et dit un mot, puis une autre personne se lève et dit un mot, comme des petits popcorn qui éclatent chacun à leur tour dans la salle !
 - “Pairs”, par groupe de 2 auto-constitués on échange sur nos attentes de la session dans un temps défini.
 
 
-Bien échauffé, on enchaîne sur les Liberating Structures. Des micro-structures qui permettent de faciliter les meetings et les conversations. Il en existe 33 qui sont détaillées dans l’ouvrage que Sweta nous recommande : The Surprising Power of Liberating Structures: Simple Rules to Unleash A Culture of Innovation d’[Henri Lipmanowicz](https://www.amazon.com/Henri-Lipmanowicz/e/B00LT8JGN4/ref=dp_byline_cont_book_1).
+Bien échauffés, on enchaîne sur les Liberating Structures. Des micro-structures qui permettent de faciliter les meetings et les conversations. Il en existe 33 qui sont détaillées dans l’ouvrage que Sweta nous recommande : The Surprising Power of Liberating Structures: Simple Rules to Unleash A Culture of Innovation d’[Henri Lipmanowicz](https://www.amazon.com/Henri-Lipmanowicz/e/B00LT8JGN4/ref=dp_byline_cont_book_1).
 
 On découvre notamment l’”Impromptu Networking”, qui nous permet de créer des liens avec les participants du meetup, et les règles qui s’appliquent à toutes les liberating structures, à savoir :
 
@@ -121,7 +121,7 @@ On découvre notamment l’”Impromptu Networking”, qui nous permet de créer
 -   Un agencement de l’espace adéquat et le matériel nécessaire
 -   Une distribution des rôles définie : les participants choisissent eux-même leur partenaire dans la salle par exemple 
 -   Une configuration des groupes définie : par pair
--   Une séquence défini, un temps alloué : 2min par round / 5 rounds
+-   Une séquence définie, un temps alloué : 2min par round / 5 rounds
     
 Sweta nous conseille d’approfondir sans plus attendre les [Liberating Structures](http://www.liberatingstructures.com/) et le concept de [Training from the back of the room](https://bowperson.com/sharons-articles/) de Sharon Bowman's qui consiste en tant que formateur ou animateur à donner les instructions pertinentes aux participants puis à se mettre en retrait pour les laisser apprendre en faisant.
 
@@ -132,7 +132,7 @@ On continue à remplir notre boîte à outils avec les 6 TRUMPS :
 -   Faites écrire pour permettre à votre assistance de processer l’information ;
 -   Plus vous ferez court, plus les participants mémoriseront les informations. Ainsi divisez vos contenus en petits segments, faites un networking impromptu puis reprenez une session de partage de contenu ;
 -   Variez les formats, les contenus, les images, notre cerveau remarque le changement et ignore les informations qui semblent similaires ;
--   Utilisez des visuels ! La mémoire à long terme des images semblent illimitée et le cerveau crée facilement des scénarios à partir d’images !
+-   Utilisez des visuels ! La mémoire à long terme des images semble illimitée et le cerveau crée facilement des scénarios à partir d’images !
     
 
 On parlera enfin d’intelligence émotionnelle qu’Howard Gardner décrit ainsi “Your EQ is the level of your ability to understand other people, what motivates them and how to work cooperatively with them” et contrairement au quotient intellectuel, et bien l’intelligence émotionnelle ca se travaille nous dit Sweta ! On apprend donc qu’on pourra améliorer notre Self-awareness, notre Self-regulation, notre Motivation, notre empathie et nos Social skills.
@@ -178,7 +178,7 @@ Dans les organisations d’aujourd’hui, on pense performance avant de penser h
 
 Pourquoi de ce fait ne pas être à l’écoute du réel besoin des équipes pour améliorer la performance ? Et surtout, pourquoi ne pas penser les **KPIs (acronyme pour Key Performance Indicators)** au service de l’équipe et non pas au service du manager ?
 
-La première chose importante est de vous posez-vous cette question avant de mettre en place ce type de métriques : que voulez vous réellement savoir à travers les KPIs ?
+La première chose importante est de vous poser cette question avant de mettre en place ce type de métriques : que voulez vous réellement savoir à travers les KPIs ?
 
 Si ce que vous faites est pertinent ? Si c’est collaboratif ? Fluide ? A quel moment vous êtes complètement bloqué ?
 
@@ -202,7 +202,7 @@ Pour en savoir plus sur le sujet, une vidéo résume très bien l’ensemble : �
 
 # Boostez votre Time to Market en dansant le Limbo - Younes Jaaidi
 
-Younes Jaaidi est venu nous présenter les avantages de l’**Extreme Programming**, dont les principes ont été re-façonnés par Kent Beck. Technique qu’il a lui-même mis en place dans sa société Marmicode.fr.
+Younes Jaaidi est venu nous présenter les avantages de l’**Extreme Programming**, dont les principes ont été re-façonnés par Kent Beck. Technique qu’il a lui-même mise en place dans sa société Marmicode.fr.
 
 Il a en effet rapidement fait face au constat que ses développeurs (lui y compris) codaient chacun dans leur coin sur leur propre branche. Perdaient du temps à faire des reviews de code entre eux beaucoup trop longues. Et au moment de merger une semaine de travail, se retrouvaient avec **bien trop de conflits** à gérer.
 
@@ -231,7 +231,7 @@ Younes Jaaidi nous a donc présenté le **shared programming** à travers le pri
 Dans sa vision du développement, un commit ne doit pas être une feature, mais doit contribuer à une feature. Et l’avantage de ce système est d’embarquer les développeurs dans une communication constante entre eux tout au long de la journée, permettant d’éviter autant les doublons que parfois les erreurs.
 
 
-En poussant encore plus loin, ils se sont d’ailleurs essayés au **“Timeboxed TDD”**. Chaque commit est timeboxé, et si pour le développe cela vous prend plus de 30 min : c’est que c’était probablement une mauvaise idée. HOP, c’est revert.
+En poussant encore plus loin, ils se sont d’ailleurs essayés au **“Timeboxed TDD”**. Chaque commit est timeboxé, et si pour le développer cela vous prend plus de 30 min : c’est que c’était probablement une mauvaise idée. HOP, c’est revert.
 
  
 ***L'avis de Maeva :** Technique un peu drastique qui doit peut-être bien fonctionner dans des petites équipes de développeurs qui se connaissent déjà. Mais je vois d’ores et déjà plusieurs barrières. La première est l’effort constant et au quotidien de communication imposé entre individus. Nous sommes tous humain, il arrivera donc forcément un moment où ce ne sera pas le bon jour et où potentiellement la productivité chutera.
@@ -249,13 +249,13 @@ Un petit retour en cours de philo pour nous rappeler que notre cerveau est un mo
 
 Oui mais comment tout ceci s’applique-t-il à l’état d’esprit agile ?
 
-Pour faire le lien, Nicolas Delahaye nous présente le Fixed Mindset et le Growth Mindset de Carol S. Dweck. Une personne ayant un Fixed Mindset aura tendance à éviter les challenges, à abandonner plus rapidement face aux obstacles, à considérer les efforts comme vains, à ignorer les critiques, à se sentir menacé par le succès des autres etc... Une personne ayant un Growth Mindset est plus dans une configuration apprenante qui lui apportera résilience, capacité d’adaptation, volonté d’embrasser les challenges et d’apprendre de ses erreurs...
+Pour faire le lien, Nicolas Delahaye nous présente le Fixed Mindset et le Growth Mindset de Carol S. Dweck. Une personne ayant un Fixed Mindset aura tendance à éviter les challenges, à abandonner plus rapidement face aux obstacles, à considérer les efforts comme vains, à ignorer les critiques, à se sentir menacée par le succès des autres etc... Une personne ayant un Growth Mindset est plus dans une configuration apprenante qui lui apportera résilience, capacité d’adaptation, volonté d’embrasser les challenges et d’apprendre de ses erreurs...
 
-Dans un contexte Scrum, un Fixed Mindset pourra avoir des biais qui inciteront par exemple à vouloir planifier un backlog sur 10 sprints, à faire un refinement qui servent uniquement au Product Owner pour insister sur un chiffrage, à supprimer les rétros considérées comme “inutiles”, à pointer du doigt les erreurs, ou à considérer que les erreurs viennent de l’extérieur (d’autres parties prenantes) etc…
+Dans un contexte Scrum, un Fixed Mindset pourra avoir des biais qui inciteront par exemple à vouloir planifier un backlog sur 10 sprints, à faire un refinement qui serve uniquement au Product Owner pour insister sur un chiffrage, à supprimer les rétros considérées comme “inutiles”, à pointer du doigt les erreurs, ou à considérer que les erreurs viennent de l’extérieur (d’autres parties prenantes) etc…
 
 Vous l’aurez donc compris, l’agile a donc besoin de talents avec un Growth Mindset pour leur permettre de faire face au Monde empirique et complexe dans lequel Scrum a été créé !
 
-***L'avis de Marion :** Une prise de hauteur intéressante sur l’état d’esprit appliqué à l’agile qui nous amène à questionner notre interprétation et la manière dont nous sommes amenés à résoudre nos problématiques. S’il semble évident qu’un Scrum Master, Product Manager ou Product Owner doivent acquérir le Growth Mindset, comment procéder ? Pour aller plus loin que la théorie, quelques pistes :
+***L'avis de Marion :** Une prise de hauteur intéressante sur l’état d’esprit appliqué à l’agile qui nous amène à questionner notre interprétation et la manière dont nous sommes amenés à résoudre nos problématiques. S’il semble évident que des Scrum Master, Product Manager ou Product Owner doivent acquérir le Growth Mindset, comment procéder ? Pour aller plus loin que la théorie, quelques pistes :
 -[Developing a Growth Mindset with Carol Dweck](https://www.youtube.com/watch?v=hiiEeMN7vbQ)
 -[25 Simple Ways To Develop A Growth Mindset](https://www.teachthought.com/learning/25-simple-ways-develop-growth-mindset/)*
 
@@ -277,4 +277,4 @@ Réfléchissez à comment réagir face à un refus de l'interlocuteur, pensez à
 ***L'avis de Renaud :** Cette méthode s'applique à tous les contextes. Selon nos conférenciers et moi même au sortir de cet atelier, nous avons à faire à un vrai art de vivre !*
 
 # Conclusion 
-C’est sur ces ateliers qui nous ont le plus marqué que se termine nos chroniques de l’Agile Tour 2019 ! Un sentiment partagé d’un événement moins orienté Product Ownership que l’année précédente, mais de plus en plus Agile à tous les niveaux - et particulièrement vers le Scrum Mastering. Ce qui n’en fait pas moins un événement intéressant, et qui peut-être intéressera au fil du temps des profils plus techniques sur l’agilité !
+C’est sur ces ateliers qui nous ont le plus marqués que se terminent nos chroniques de l’Agile Tour 2019 ! Un sentiment partagé d’un événement moins orienté Product Ownership que l’année précédente, mais de plus en plus Agile à tous les niveaux - et particulièrement vers le Scrum Mastering. Ce qui n’en fait pas moins un événement intéressant, et qui peut-être intéressera au fil du temps des profils plus techniques sur l’agilité !
