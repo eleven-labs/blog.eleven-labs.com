@@ -24,15 +24,15 @@ L’escouade agile d’Eleven Labs s’est déplacée le 2 décembre jusqu’à 
 
 Vous retrouverez donc ci-dessous les différentes chroniques de l’équipe, composées d’une présentation et d’un avis personnel sur les ateliers qui nous ont le plus marqués au cours de la journée !
 
-# SOMMAIRE
+# Sommaire
 
  - [Dashlane : Technical investment and dual track organization](#how-to-support-both-business-&-technical-investment-through-a-dual-track-organization)
- - [Le Scrum Master Toolkit](#scrum-master-toolkit-sweta-mistry)
- - [Boostez votre Time to Market en dansant le Limbo](#boostez-votre-time-to-market-en-dansant-le-limbo-younes-jaaidi)
  - [S’aligner pour réussir : de la stratégie à la Value Stream Map](#s-aligner-pour-reussir-de la-strategie-a-la-value-stream-map-guillaume-morin)
- - [Booster vos événements Scrum avec les Liberating Structures](#)
- - [Petit guide de CNV à l'usage des honnêtes gens](#)
+ - [Le Scrum Master Toolkit](#scrum-master-toolkit-sweta-mistry)
+ - [KPI vs KBI](#key-performance-indicator-vs-key-business-indicator-jean-sebastien-sladecek)
+ - [Boostez votre Time to Market en dansant le Limbo](#boostez-votre-time-to-market-en-dansant-le-limbo-younes-jaaidi)
  - [Quand notre représentation nous empêche d’être agile](#quand-notre-representation-nous-empeche-d-etre-agile-nicolas-delahaye)
+ - [Petit guide de CNV à l'usage des honnêtes gens](#petit-guide-de-cnv-a-l-usage-des-honnetes-gens-laetitia-thernier)
 
 
 # "How to support both business & technical investment through a dual track organization"
@@ -43,25 +43,63 @@ La société **voit le jour** en 2009, et c’est en 2014 que les équipes adopt
 
 En 2017, les **“Feature teams”** voient le jour. Mais très vite, les objectifs étant trop flous et éloignés des équipes de développement vis à vis de leur vision produit, en 2018 l’organisation passe en **“Mission teams”**. Ce qui permet à chacun de se projeter plus facilement.
 
-  
-
 Enfin, en 2019, en complément des ces “Mission teams” est rajoutée par dessus une organisation en **“Dual Track”**, suite au constat de la dette technique qui ne fait qu’augmenter. Il n’est donc plus question de passer 2 jours par-ci ou par-là pour se pencher sur la question, mais clairement de dédier une “Platform team” de 25% des effectifs dev à cette dette technique. Une rotation a été instaurée pour que ces effectifs changent régulièrement et une **“Technical Roadmap”** sur 3 mois leur permet de ne pas tomber dans les travers des tâches qui ne finissent jamais.
 
 Globalement, l’objectif donné n’est pas de la faire baisser, ni de l’augmenter, mais de la rendre **“neutre”**.
-
-  
+ 
 Mais pour que tout cela puisse fonctionner il faut avant tout que l’entreprise, dans sa manière de fonctionner et de penser, s’agilise à tous les niveaux :
 
--   Opérationnel avec des équipements de développement en agile (scrum, kanban, …)
-    
--   Tactique en adoptant une posture de “Lean” tout au long du développement de vos produits
-    
--   Stratégique en mettant en place des objectifs (OKR) qui servent le produit et la technique
-    
+-   Opérationnel avec des équipements de développement en agile (scrum, kanban, …)  
+-   Tactique en adoptant une posture de “Lean” tout au long du développement de vos produits  
+-   Stratégique en mettant en place des objectifs (OKR) qui servent le produit et la technique  
 -   Culturel en construisant petit à petit une vraie culture de l’innovation
     
 
-***Mon avis ?** Un sujet très intéressant qu’est la dette technique, bien souvent mis à la trappe par les directions métiers ou les CTO non avertis. Et qui fait pâtir aussi bien le produit que les équipes quand on la laisse faire sa vie. Bien plus compliqué à mettre en place dans des petites équipes, et probablement imparfaite, la dynamique adoptée pour trouver une organisation pouvant répondre le mieux possible à la dette technique - fléau commun à tout produit logiciel - a le mérite de se pencher sur la question.*
+***L'avis de Maeva :** Un sujet très intéressant qu’est la dette technique, bien souvent mis à la trappe par les directions métiers ou les CTO non avertis. Et qui fait pâtir aussi bien le produit que les équipes quand on la laisse faire sa vie. Bien plus compliqué à mettre en place dans des petites équipes, et probablement imparfaite, la dynamique adoptée pour trouver une organisation pouvant répondre le mieux possible à la dette technique - fléau commun à tout produit logiciel - a le mérite de se pencher sur la question.*
+
+
+
+# S’aligner pour réussir : de la stratégie à la Value Stream Map - Guillaume Morin
+
+On connait plutôt bien la Customer Journey Map qui consiste à cartographier l’ensemble des actions et interactions qu’un client va avoir avec une entreprise durant le processus d’achat d’un produit ou d’un service. Mais la Value Stream Map, on est moins familier et ça nous intéresse !
+
+Guillaume Morin CEO de Monsieur Guiz et son associé nous ont présenté ce concept issu du Lean Management au travers d’un cas concret : un de leur client dans l’hôtellerie qui a souhaité retirer les comptoirs dans son hôtel pour créer un accueil plus chaleureux.
+
+Le constat après un POC : allongement du temps d’attente, double saisie sur l’application mobile mise à disposition du réceptionniste, difficulté à gérer des demandes particulières pour le réceptionniste… Un accueil donc pas beaucoup plus chaleureux.
+
+**Etape 1 : Définition de la valeur client et alignement**
+
+L’équipe de Monsieur Guiz s’est attaquée au problème d’alignement des objectifs en allant interroger les Product Owner et les différentes parties prenantes avec des questions simples :
+
+-   Sur quoi, tu travailles en ce moment ?
+-   Quel est le problème que tu cherches à résoudre ?
+-   Avec quelles équipes collabores-tu ?
+-   Quel segment de clients cela concerne-t-il ?
+-   Est-ce que les features arrivent jusqu’en production ? Si non, pourquoi ?
+
+Un objectif clair est ressorti : Faciliter la vie du réceptionniste et réduire le temps d’attente du client
+
+**Etape 2 : Définir une boussole chiffrée**
+
+Par exemple, le temps de récupération des clefs par le client
+
+**Etape 3 : Créer la value Stream Map Produit**
+
+Ils ont réuni les différentes parties prenantes pour les faire travailler de concert sur leur Value Stream Map. La VSM une technique de design et d’analyse du flow d’informations et des différents process qui permettent de délivrer un produit au client.
+
+Ils ont donc fait mapper aux équipes à l’aide de post-its toutes les étapes nécessaires pour arriver à la création d’un produit ou la livraison d’une feature. Concrètement : qui passe la balle à qui ?
+
+L’objectif : commencer à faire échanger les parties prenantes, cartographier toutes les étapes pour produire une feature/un produit, faire connaître les processus par tous, identifier les étapes qui ralentissent le process et faire s’aligner les équipes pour réussir !
+
+**Etape 4 - Les tops problèmes à régler et les tâches associées**
+
+Ils ont procédé de la même manière pour cartographier les problèmes identifiés tout au long du parcours client et les tâches associées qui apportent le maximum de valeur au client. Ils ont ensuite redyspatché les problèmes et tâches aux différentes étapes identifiées dans la Value Stream map.
+
+Le résultat : une Value Stream Map Produit et Value Stream Map Client alignées !
+
+***L'avis de Marion :** Une méthode très intéressante quand un besoin de rapprocher le développement des objectifs business se fait sentir. Il semble en effet permettre d’aligner toutes les parties prenantes vers un objectif commun et être un bon point de départ pour faire ouvrir les yeux sur la nécessité de revoir les process et l’implication des différentes parties prenantes aux différentes étapes de développement d’un produit qui a de la valeur pour le client !*
+
+
 
 # Scrum Master Toolkit - Sweta Mistry 
 
@@ -99,7 +137,37 @@ On continue à remplir notre boîte à outils avec les 6 TRUMPS :
 
 On parlera enfin d’intelligence émotionnelle qu’Howard Gardner décrit ainsi “Your EQ is the level of your ability to understand other people, what motivates them and how to work cooperatively with them” et contrairement au quotient intellectuel, et bien l’intelligence émotionnelle ca se travaille nous dit Sweta ! On apprend donc qu’on pourra améliorer notre Self-awareness, notre Self-regulation, notre Motivation, notre empathie et nos Social skills.
 
-***Mon avis ?** On repart en effet avec beaucoup de pratiques très concrètes dans notre petit baluchon, que l’on aura pu tester en live ! Pas sur qu’on puisse toutes les mettre en pratique dans nos rétros, démos etc... mais ca nous donne beaucoup d’idées pour engager, faire participer, mieux communiquer, mieux réagir... On est resté un peu sur notre faim car on aurait aimé en savoir plus sur le mind maps, le story mapping, l’impact mapping… Et finalement, ce n’est pas qu’un Toolkit de Scrum Master mais des pratiques qui peuvent aider tous ceux qui animent des événements, des meetups ou une équipe !*
+***L'avis de Marion** On repart en effet avec beaucoup de pratiques très concrètes dans notre petit baluchon, que l’on aura pu tester en live ! Pas sur qu’on puisse toutes les mettre en pratique dans nos rétros, démos etc... mais ca nous donne beaucoup d’idées pour engager, faire participer, mieux communiquer, mieux réagir... On est resté un peu sur notre faim car on aurait aimé en savoir plus sur le mind maps, le story mapping, l’impact mapping… Et finalement, ce n’est pas qu’un Toolkit de Scrum Master mais des pratiques qui peuvent aider tous ceux qui animent des événements, des meetups ou une équipe !*
+
+
+
+# Key Performance Indicator vs Key Business Indicator - Jean-Sébastien Sladecek
+
+Jean Sébastien Sladecek, Directeur Services-Conseils chez CGI est venu à l’Agile Tour nous parler d’une manière plus réaliste et surtout plus humaine d’évaluer les performances d’une équipe produit.
+
+Dans les organisations d’aujourd’hui, on pense performance avant tout, et avant de penser humain - un facteur bien en amont de la livraison.
+
+Pourquoi de ce fait ne pas être à l’écoute du réel besoin des équipes pour améliorer la performance ? Et surtout, pourquoi ne pas penser les **KPIs (acronyme pour Key Performance Indicators)** au service de l’équipe et non pas au service du manager ?
+
+La première chose importante est de vous posez-vous cette question avant de mettre en place ce type de métriques : que voulez vous réellement savoir à travers les KPIs ?
+
+Si ce que vous faite est pertinent ? Si c’est collaboratif ? Fluide ? A quel moment vous êtes complètement bloqué ?
+
+Car avant de penser performance, livraison dans les temps et payer le moins cher possible. Il est important de partir d’un constat simple mais vrai : est-ce que chaque membre de l’équipe doit avoir la même performance ?
+
+Dans une équipe de football, par exemple, est-ce qu’on pourrait attendre que tous les joueurs d’une équipe soient évalués selon leur même performance ?
+
+La réponse est non, évidemment. Pour certains ce seront les buts, pour d’autres les passes décisives, ou encore la défense de son propre but. Mais avant même tout cela, il ne faut pas oublier la collaboration entre chaque joueur, la discipline liée au sport en lui même, et la compréhension et maîtrise des règles qui a permis à chacun d’être dans l’équipe.
+
+Qu’est-que la performance, donc ? Notre intervenant nous l’a traduit de la manière suivante : la performance est une situation optimale afin que les individus qui composent l’équipe puissent s’exprimer à 100% de leur capacité (sénior, comme junior).
+
+Et cette performance est affectée par plusieurs facteurs non exhaustifs ici, communs à toutes les équipes : la maturité de l’équipe, le niveau d’expérience propre des joueurs, la situation mentale personnelle à instant t, le désir de dépassement de chacun, l’engagement de l’équipe dans le projet.
+
+Quel comportement attendre de l’équipe, est qui pourrait donc faire l’objet de nos désormais **KBIs (acronyme pour Key Business Indicators)** : la motivation, l’engagement, la responsabilité, la confiance entre eux et dans l’équipe, l’amélioration continue, le partage de connaissance, l’écoute et l’empathie, le nombre de rires, etc..
+
+Pour en savoir plus sur le sujet, une vidéo résume très bien l’ensemble : “[Performance VS Trust](https://www.youtube.com/watch?v=YPDmNaEG8v4)”.
+
+***L'avis de Maeva :** Le sujet n’est pas nouveau dans l’agilité : se tromper pour s’améliorer, éviter de passer plus de temps à estimer qu’à réaliser, ou encore faire comprendre à son client à sa direction qu’il ne sert à rien de courir après les points d’effort et que la capacité de production d’une même équipe mature sera la même. Cela reste cependant très intéressant de pouvoir mettre des indicateurs de performance plus réaliste, plus humain et non plus lié juste à de la production. Et surtout, de pouvoir engager d’une manière plus saine l’équipe dans la volonté d’atteindre des objectifs sans risquer de les démotiver avec des demandes parfois lunaires.*
 
 
 
@@ -137,49 +205,8 @@ Dans sa vision du développement, un commit ne doit pas être une feature, mais 
 En poussant encore plus loin, ils se sont d’ailleurs essayés au **“Timeboxed TDD”**. Chaque commit est timeboxé, et si pour le développe cela vous prend plus de 30 min : c’est que c’était probablement une mauvaise idée. HOP, c’est revert.
 
  
-***Mon avis ?** Technique un peu drastique qui doit peut-être bien fonctionner dans des petites équipes de développeurs qui se connaissent déjà. Mais je vois d’ores et déjà plusieurs barrières. La première est l’effort constant et au quotidien de communication imposé entre individus. Nous sommes tous humain, il arrivera donc forcément un moment où ce ne sera pas le bon jour et où potentiellement la productivité chutera.
+***L'avis de Maeva :** Technique un peu drastique qui doit peut-être bien fonctionner dans des petites équipes de développeurs qui se connaissent déjà. Mais je vois d’ores et déjà plusieurs barrières. La première est l’effort constant et au quotidien de communication imposé entre individus. Nous sommes tous humain, il arrivera donc forcément un moment où ce ne sera pas le bon jour et où potentiellement la productivité chutera.
 Je pense également que cela implique parfois de passer plus de temps à échanger machinalement et moins de temps à produire réellement. Pour plus d’efficience par la suite, peut-être, et c’est intéressant dans le cas d’un produit qui se cherche. Mais probablement beaucoup moins dans des équipes où la direction du produit est déjà bien travaillée en amont.*
-
-# S’aligner pour réussir : de la stratégie à la Value Stream Map - Guillaume Morin
-
-On connait plutôt bien la Customer Journey Map qui consiste à cartographier l’ensemble des actions et interactions qu’un client va avoir avec une entreprise durant le processus d’achat d’un produit ou d’un service. Mais la Value Stream Map, on est moins familier et ça nous intéresse !
-
-Guillaume Morin CEO de Monsieur Guiz et son associé nous ont présenté ce concept issu du Lean Management au travers d’un cas concret : un de leur client dans l’hôtellerie qui a souhaité retirer les comptoirs dans son hôtel pour créer un accueil plus chaleureux.
-
-Le constat après un POC : allongement du temps d’attente, double saisie sur l’application mobile mise à disposition du réceptionniste, difficulté à gérer des demandes particulières pour le réceptionniste… Un accueil donc pas beaucoup plus chaleureux.
-
-
-**Etape 1 : Définition de la valeur client et alignement**
-
-L’équipe de Monsieur Guiz s’est attaquée au problème d’alignement des objectifs en allant interroger les Product Owner et les différentes parties prenantes avec des questions simples :
-
--   Sur quoi, tu travailles en ce moment ?
--   Quel est le problème que tu cherches à résoudre ?
--   Avec quelles équipes collabores-tu ?
--   Quel segment de clients cela concerne-t-il ?
--   Est-ce que les features arrivent jusqu’en production ? Si non, pourquoi ?
-
-Un objectif clair est ressorti : Faciliter la vie du réceptionniste et réduire le temps d’attente du client
-
-**Etape 2 : Définir une boussole chiffrée**
-
-Par exemple, le temps de récupération des clefs par le client
-
-**Etape 3 : Créer la value Stream Map Produit**
-
-Ils ont réuni les différentes parties prenantes pour les faire travailler de concert sur leur Value Stream Map. La VSM une technique de design et d’analyse du flow d’informations et des différents process qui permettent de délivrer un produit au client.
-
-Ils ont donc fait mapper aux équipes à l’aide de post-its toutes les étapes nécessaires pour arriver à la création d’un produit ou la livraison d’une feature. Concrètement : qui passe la balle à qui ?
-
-L’objectif : commencer à faire échanger les parties prenantes, cartographier toutes les étapes pour produire une feature/un produit, faire connaître les processus par tous, identifier les étapes qui ralentissent le process et faire s’aligner les équipes pour réussir !
-
-**Etape 4 - Les tops problèmes à régler et les tâches associées**
-
-Ils ont procédé de la même manière pour cartographier les problèmes identifiés tout au long du parcours client et les tâches associées qui apportent le maximum de valeur au client. Ils ont ensuite redyspatché les problèmes et tâches aux différentes étapes identifiées dans la Value Stream map.
-
-Le résultat : une Value Stream Map Produit et Value Stream Map Client alignées !
-
-***Mon avis ?** Une méthode très intéressante quand un besoin de rapprocher le développement des objectifs business se fait sentir. Il semble en effet permettre d’aligner toutes les parties prenantes vers un objectif commun et être un bon point de départ pour faire ouvrir les yeux sur la nécessité de revoir les process et l’implication des différentes parties prenantes aux différentes étapes de développement d’un produit qui a de la valeur pour le client !*
 
 # Quand notre représentation nous empêche d’être agile - Nicolas Delahaye
 
@@ -199,6 +226,26 @@ Dans un contexte Scrum, un Fixed Mindset pourra avoir des biais qui inciteront p
 
 Vous l’aurez donc compris, l’agile a donc besoin de talents avec un Growth Mindset pour leur permettre de faire face au Monde empirique et complexe dans lequel Scrum a été créé !
 
-***Mon avis ?** Une prise de hauteur intéressante sur l’état d’esprit appliqué à l’agile qui nous amène à questionner notre interprétation et la manière dont nous sommes amenés à résoudre nos problématiques. S’il semble évident qu’un Scrum Master, Product Manager ou Product Owner doivent acquérir le Growth Mindset, comment procéder ? Pour aller plus loin que la théorie, quelques pistes :
+***L'avis de Marion :** Une prise de hauteur intéressante sur l’état d’esprit appliqué à l’agile qui nous amène à questionner notre interprétation et la manière dont nous sommes amenés à résoudre nos problématiques. S’il semble évident qu’un Scrum Master, Product Manager ou Product Owner doivent acquérir le Growth Mindset, comment procéder ? Pour aller plus loin que la théorie, quelques pistes :
 -[Developing a Growth Mindset with Carol Dweck](https://www.youtube.com/watch?v=hiiEeMN7vbQ)
 -[25 Simple Ways To Develop A Growth Mindset](https://www.teachthought.com/learning/25-simple-ways-develop-growth-mindset/)*
+
+# Petit guide de CNV à l'usage des honnêtes gens - Laetitia Thernier
+
+La Communication Non Violente (CNV) : voilà un concept qui valait bien un atelier lors de cet Agile Tour 2019 animé de mains de maître par Laetitia Thernier et Geoffrey Groff.
+
+L'exercice se déroule en six phases, pourquoi six ? Vous allez très vite le savoir.  
+
+**Première étape** : en binôme, commencer par faire connaissance avec votre partenaire du jour. C'est toujours utile de savoir à qui l'on s'adresse !
+**Deuxième étape** : partons sur une situation qui nous crée de l'inconfort.
+**Troisième étape** : la phase d'observation. À tour de rôle, on expose notre situation pendant que notre binôme prend note de ce qui se révèle être des faits, des sentiments et des jugements.
+**Quatrième étape** : les sentiments. Quels sont ceux ressentis lors de cette situation ?
+**Cinquième étape** : quel est mon besoin non satisfait ?
+**Sixième étape** : quelle demande aimeriez vous faire afin de régler ce problème ?
+
+Réfléchissez à comment réagir face à un refus de l'interlocuteur, pensez à remercier et voilà, maintenant, vous savez comment aborder une situation compliquée ! Un problème inconfortable au travail, une situation conflictuelle personnelle...
+
+***L'avis de Renaud :** Cette méthode s'applique à tous les contextes. Selon nos conférenciers et moi même au sortir de cet atelier, nous avons à faire à un vrai art de vivre !*
+
+# Conclusion 
+C’est sur ces ateliers qui nous ont le plus marqué que se termine nos chroniques de l’Agile Tour 2019 ! Un sentiment partagé d’un événement moins orienté Product Ownership que l’année précédente, mais de plus en plus Agile à tous les niveaux - et particulièrement vers le Scrum Mastering. Ce qui n’en fait pas moins un événement intéressant, et qui peut-être intéressera au fil du temps des profils plus techniques sur l’agilité !
