@@ -29,7 +29,7 @@ La solution la plus souvent envisagée est d'utiliser ponctuellement un **tablea
 [![Vidéo Youtube: UML, Cucumber and modeling reality - MPJ's Musings - Fun Fun Function][fff-image]][fff-video]
 _[UML, Cucumber and modeling reality - MPJ's Musings - Fun Fun Function][fff-video] par [Mattias Petter Johansson (mpj)][mpj-twitter]_
 
-[fff-image]: {{ site.baseurl }}/assets/2019-12-02-visualiser-l-architecture-de-vos-projets/just-use-a-whiteboard.png
+[fff-image]: {{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/just-use-a-whiteboard.png
 [fff-video]: https://www.youtube.com/watch?v=4_SvuUYQ5Fo
 [mpj-twitter]: https://twitter.com/mpjme
 
@@ -65,7 +65,7 @@ Le modèle permet de créer une cartographie du code,
 
 Chaque niveau s'adresse à une audience bien définie.
 
-![Illustration des 4 niveaux de zooms du modèle C4]({{ site.baseurl }}/assets/2019-12-02-visualiser-l-architecture-de-vos-projets/c4model-layered.svg)
+![Illustration des 4 niveaux de zooms du modèle C4]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/c4model-layered.svg)
 
 _Illustration des 4 niveaux de détails du modèle C4_
 
