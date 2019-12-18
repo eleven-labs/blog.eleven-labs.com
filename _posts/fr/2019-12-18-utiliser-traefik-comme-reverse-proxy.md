@@ -16,7 +16,7 @@ tags:
 cover: /assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg
 ---
 
-![Cover](/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg)
+![Cover]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg)
 
 ## Introduction
 
@@ -186,7 +186,7 @@ docker-compose up -d
 
 Voici ce que j'obtiens quand j'accède à l'url définie dans ma règle de routage plus haut :
 
-![Dashboard](/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/05-dashboard.jpg)
+![Dashboard]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/05-dashboard.jpg)
 
 
 ## Reverse proxy d'un site accessible sur le réseau local
@@ -441,7 +441,7 @@ docker-compose up -d
 
 Nous pouvons maintenant utiliser Home Assistant, et ce directement en https ;)
 
-![Home Assistant](/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/10-home-assistant.jpg)
+![Home Assistant]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/10-home-assistant.jpg)
 
 J'espère que vous avez apprécié cet article et que vous allez prendre beaucoup de plaisir à jouer avec traefik.
 
