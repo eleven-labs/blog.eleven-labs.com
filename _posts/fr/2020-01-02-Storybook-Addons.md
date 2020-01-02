@@ -21,9 +21,9 @@ tags:
 
 ![Liste d'addon 1]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/addonlist.png)
 
-Coucou les bichons, on se retrouve pour un nouvel article qui porte sur les Addons!
+Coucou les bichons, on se retrouve pour un nouvel article qui porte sur les Addons !
 
-> Attends, attends... Tu devais pas faire un article sur le Testing ou la Documentation?
+> Attends, attends... Tu devais pas faire un article sur le Testing ou la Documentation ?
 
 Alors oui, mais vu l'importance de la contribution des addons sur ce sujet, il aurait été bien dommage de ne pas en parler avant ! Mais pas de soucis, ces 2 sujets sont déjà dans les tuyaux.
 
@@ -65,7 +65,7 @@ C'est donc tout naturellement que la communauté contribue en fournissant des ou
 En fait, c'est ce qui fait que Storybook puisse être pertinent, il s'intègre dans l'écosystème de React tout en assumant son rôle.
 
 
-Bon là je vous sens déjà plus intéressés, est-ce qu'on s'en installerait pas un ou deux, comme ça, pour le plaisir?
+Bon là je vous sens déjà plus intéressés, est-ce qu'on s'en installerait pas un ou deux, comme ça, pour le plaisir ?
 
 
 ## Un fichier pour les gouverner tous
