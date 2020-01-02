@@ -21,9 +21,9 @@ tags:
 
 ![Liste d'addon 1]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/addonlist.png)
 
-Coucou les bichons, on se retrouve pour un nouvel article qui porte sur les Addons!
+Coucou les bichons, on se retrouve pour un nouvel article qui porte sur les Addons !
 
-> Attends, attends... Tu devais pas faire un article sur le Testing ou la Documentation?
+> Attends, attends... Tu devais pas faire un article sur le Testing ou la Documentation ?
 
 Alors oui, mais vu l'importance de la contribution des addons sur ce sujet, il aurait été bien dommage de ne pas en parler avant ! Mais pas de soucis, ces 2 sujets sont déjà dans les tuyaux.
 
