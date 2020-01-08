@@ -6,8 +6,6 @@ authors:
 lang: en
 permalink: /think-outside-the-box/
 excerpt: "Let's use the Framework in a way that it's not supposed to be"
-date: '2018-05-21 14:30:42 +0100'
-date_gmt: 2018-05-21 13:30:42 +0100'
 categories:
     - Mobile
 tags:
