@@ -5,7 +5,7 @@ authors:
     - thuchon
 lang: en
 permalink: /think-outside-the-box/
-excerpt: "Let's use the Framework in a way that it is not supposed to be"
+excerpt: "Let's use the Framework in a way that it's not supposed to be"
 date: '2018-05-21 14:30:42 +0100'
 date_gmt: 2018-05-21 13:30:42 +0100'
 categories:
@@ -22,30 +22,30 @@ cover: /assets/2018-05-21-let-s-think-outside-the-box/cover.jpg
 
 Hi Astronauts,  I haven't written an article in a while, and today I decided to come back with panache with a high technical quality one, like we love them.
 
-Warning, for this one you will need to be focused! Even if the overall idea is pretty simple, you will see some pretty complex code and we will push the framework and use it in a tricky way, so that it will do things that it is not supposed to do ;)
+Warning, for this one you'll need to be focused! Even if the overall idea is pretty simple, you'll see some pretty complex code and we will push the framework and use it in a tricky way, so that it will do things that it's not supposed to ;)
 
-Don't you worry guys, I'll do my best to explain every step and shell every piece of code.
+Don't you worry guys, I'll do my best to explain every step, and shell every piece of code.
 
 It's been a while now that I have been working on projects in which features must be configurable.<br/>
 Most of the time, I'm asked to develop it in a way that features can be enabled or disabled remotely.
 
-We can take as an example a burger menu, where each entry represents a feature of the app, and we want to choose which ones are accessibles.<br/>
+We can take as an example a burger menu, where each entry represents a feature of the app, and we want to choose which ones are available.<br/>
 It's not that difficult to do, and it's really helpful for the business.<br/>
 Nevertheless, deep down, I always told myself, there is something missing, I want to push it further.<br/>
-And so, this is why we are here today...
+And so, this is why we're here today...
 
 Today, I'll show you how to "drive" the behavior of an app from a remote JSON file stored on a server.<br/>
 WTH?<br/>
-But this guy is crazy, he spent too much time in space.<br/>
+But this guy is crazy, he spent too much time in space...<br/>
 
 In order for the remainder of the article to be easier to understand, we will define a few keywords together so that you don't get lost in translation.<br/>
 I will use a lot the word "module". A module can be defined as a gathering of features that can be reused easily and that can be developed outside of an app, we can take the **Pod** as an example.<br/>
 The next word will be "action", when I say "action": "Do what I asked you" in my app, for the article being, it will be a console output, an opening of a webpage, that kind of stuff.<br/>
-Now that we enlightened and defined the necessary words in order to understand clearly this article, I think it is time to move forward.<br/>
+Now that we enlightened and defined the necessary words in order to understand clearly this article, I think it's time to move forward.<br/>
 
 **How we will proceed:**
 
-In order to produce what we want, we will have to make 3 languages cohabit together:
+In order to produce what we want, we'll have to make 3 languages coexist:
 
 - **JSON** for configuration
 - **Objective-C** to reach a really deep level in the framework
@@ -58,7 +58,7 @@ Fasten your seat belt, this is where everything starts.
 
 Our goal is to create an app that contains features, but does not have a behavior as a structure.<br/>
 Each feature will be defined as a module, so separated code bases that live their own lives and available without any dependencies when it needs to be used.<br/>
-Once we understood that, we must tell ourselves that what we want to develop will be in three different parts: 
+Once we understand that, we must tell ourselves that what we want to develop will be in three different parts: 
 
 - The modules
 - Our app
@@ -66,7 +66,7 @@ Once we understood that, we must tell ourselves that what we want to develop wil
 
 I will explain soon each part on its own.
 
-Our goal here is to develop an app that will be able while running to load some modules and make them execute some actions that they own, but without the sequence of those actions defined in the app code base.
+Our goal here is to develop an app that will be able -while running- to load some modules and make them execute some actions that they own, but without the sequence of those actions defined in the app code base.
 
 We will then proceed in 3 steps:
 
@@ -76,7 +76,7 @@ We will then proceed in 3 steps:
 
 ### The modules
 
-Here we will define 3 modules and explain what they do:
+Here, we will define 3 modules and explain what they do:
 
 First module
 ```Swift
@@ -133,7 +133,7 @@ class MyThirdModule: NSObject {
     }
 }
 ```
-This third module contains only one method, it will open a safari instance and go to a url that is given as a paremeter, easy stuff.
+This third module contains only one method, it will open a safari instance and go to an url that is given as a paremeter, easy stuff.
 
 As you can see, the modules don't own any intelligence, they just do what we ask them to do.
 
@@ -257,10 +257,10 @@ if let programmingObject = ObjectCreator.create(self.name) {
     self.realObject = programmingObject as AnyObject
 }
 ```
-It helps me to instantiate my module based on its name.<br/>
-At the beginning of the article, I told you above ***Objective-C***, here we are.<br/>
+It helps me instantiate my module based on its name.<br/>
+At the beginning of the article, I mentionned ***Objective-C***, here we are.<br/>
 I use Objective-C to access a really low level part of the framework in order to instantiate classes based on their names.<br/>
-Here is the class that allows us to do this (because it is Objective-C, we need to separate in 2 files, the .h and the .m), then with a Bridging-Header so that the Objective-C code is visible from Swift.
+Here is the class that allows us to do this (because it's Objective-C, we need to separate in 2 files, the .h and the .m), then with a Bridging-Header so that the Objective-C code is visible from Swift.
 ```Objective-C
 
 #import <Foundation/Foundation.h>
@@ -318,7 +318,7 @@ func useModules(modules: [GenericProtocol]) {
 
 Let's get ready to rumble!!! And explain this method line by line:
 
-We loop on list of modules.<br/>
+We loop on our modules' list.<br/>
 We check that every module has a list of actions.<br/>
 We loop on the list of actions of the module.<br/>
 We check that the action has a method (remember that an action can have a method and a parameter).<br/>
@@ -379,7 +379,7 @@ Let's move forward!
 
 It is just a JSON array that contains 3 objects (modules).<br/>
 The field **name** is the name of the module, **actions** is the list of methods of the module (**func** being the name of each method and **value** the value of the parameter given to the method).<br/>
-If you look closely, I especially added in the first two modules, some actions that don't exist in the classes. I did that because we want our system to be reliable an be able to handle these kinds of cases.
+If you look closely, I especially added in the first two modules some actions that don't exist in the classes. I did that because we want our system to be reliable and be able to handle these kinds of cases.
 
 ### Let's take a small break
 
@@ -418,10 +418,10 @@ Pretty cool isn't it? :)
 
 You are probably asking yourself, but why do all this?<br/>
 For many reasons.<br/>
-The first one being, it's so much fun. You need to venture on some adventures from time to time, try new things, push the language, push the framework or the tools you use on a daily basis.
+The first one being, it's so much fun. You need to venture and try new things from time to time, push the language, push the framework or the tools you use on a daily basis.
 Breaking the bones of an app can be really useful, to help you establish new architectures, see issues from different angles and to bring you solutions for some other projects in the future.
 
-That's it, I hope that this article gave you the motivation to try new stuff, and that it will help you to think "**Outside the box**".
+That's it, I hope that this article gave you the motivation to try new stuff, and that it'll help you to think "**Outside the box**".
 
 I give you the link to download the project with everything already set up.<br/>
 You just have to clone it, run a pod install and for the rest, you already know it.<br/>
