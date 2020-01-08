@@ -20,7 +20,7 @@ cover: /assets/2018-05-21-let-s-think-outside-the-box/cover.jpg
 
 ## Introduction
 
-Hi Astronauts,  I haven't written an article in a while, and today I decided to come back with panache with a high technical quality one, like we love them.
+Hi Astronauts,  I haven't written any article in a while, and today I decided to come back in style with a high technical one, like we love them.
 
 Warning, for this one you'll need to be focused! Even if the overall idea is pretty simple, you'll see some pretty complex code and we will push the framework and use it in a tricky way, so that it will do things that it's not supposed to ;)
 
