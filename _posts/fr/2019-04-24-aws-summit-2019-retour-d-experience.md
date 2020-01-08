@@ -12,7 +12,7 @@ tags:
     - cloud
 ---
 
-# Introduction
+## Introduction
 
 L'AWS Summit Paris s'est tenu le 2 Avril au palais des congrés. C'était l'occasion d'en apprendre plus sur les différents services proposés par AWS via des conférences, tutoriels et discussions sur les stands des différents partenaires de l'événement. Nous sommes plusieurs enthousiastes Cloud d'Eleven Labs à nous être rendus sur place.
 
@@ -20,7 +20,7 @@ Je vais donc vous faire un retour de ce que j'ai pu y voir, je vous recommande p
 
 Autre précision, l'événement est gratuit, il faut simplement se pré-inscrire, et c'est à mon avis une occasion formidable de découvrir les différents services, voire dans certaines conférences d'apprendre de manière basique à les utiliser.
   
-# Keynote d'ouverture
+## Keynote d'ouverture
 
 ![]({{site.baseurl}}/assets/2019-04-16-aws-summit-2019-retour-d-experience/keynote-ouverture.jpg)
 
@@ -47,7 +47,7 @@ Chacune d'elle montrait les avantages économiques, logistiques, et autres d'uti
 
 Voici donc quelques retours sur les conférences auxquelles j'ai assisté, et ce qui m'a marqué.
 
-# Conférence #1
+## Conférence #1
 *"Cloud Economics – Optimisez vos budgets IT en passant sur le cloud"  
 Alexis Dahan (AWS) & Fouad Maach (Veolia)*  
 
@@ -58,7 +58,7 @@ Statistiquement : sur **une moyenne de 125 clients** on obtient une **économie 
 ![]({{site.baseurl}}/assets/2019-04-16-aws-summit-2019-retour-d-experience/onpremise-vs-aws.jpg)
 
 
-## Économie :
+### Économie :
 
 Pour du on-premise le premier point de comparaison est le coût upfront, ce que l'on va débourser avant même de pouvoir utiliser nos serveurs. Le matériel coûte extrêmement cher, mais il faut aussi prendre en compte son entretien, la sécurité de celui-ci et autres, comme les interventions sur les bases de données, les upgrades. C'est beaucoup de choses à gérer qui ne sont pas le coeur de notre métier. AWS propose donc une solution pour nous libérer ce temps et en même temps réduire nos coûts.
 
@@ -66,13 +66,13 @@ Il n'y a (généralement) pas de coûts upfront avec les services AWS, on trouve
 
 Le paiement quant à lui se fait "à la demande" en fonction de l'utilisation et de nos besoins. Pas besoin de payer une grosse machine lorsque l'on a besoin de petites capacités de calcul. Pour une configuration bien faite il n'y même pas besoin de payer lorsque les machines que l'on "loue" ne sont pas utilisées.
 
-## Productivité :
+### Productivité :
 
 Alexis nous a expliqué dans cette sous-partie que l'économie passait aussi par l'augmentation très significative de la productivité de l'équipe lors du passage au Cloud, en reprenant l'exemple des bases de données : sur du on-premise il faut s'occuper du matériel, mesurer des KPIs pour faire évoluer son architecture de manière intelligente, et donc ensuite changer le matériel soi-même.
 
 En version Cloud, l'équipe a la possibilité de manager beaucoup plus de machines. Imaginons qu'on ait 2 managers pour 100 machines on-premise, lors du passage en cloud un seul peut souvent s'occuper des 100, ce qui nous permet de réinvestir le temps de la deuxième personne ailleurs.
 
-## Agilité et innovation :
+### Agilité et innovation :
 
 L'un des autres aspects du cloud qui fait que beaucoup de gens migrent vers celui-ci est la **sécurité**, on trouve des services comme IAM et Cognito qui permettent de gérer les permissions d'accès à tout le parc de manière simplifiée, et de gérer ses utilisateurs, en laissant à Amazon le soin de les stockers et de sécuriser l'information.
 
@@ -81,7 +81,7 @@ Même chose pour la "sécurité du matériel", le cloud permet statistiquement d
 Alexis nous a cité Joy Ito, "Si vous voulez accroître votre innovation, réduisez le coût de votre échec". Et c'est exactement ce que permettent les services d'Amazon.
 
 
-# Conférence #2
+## Conférence #2
 *"Simplifiez vos frontend à l'aide de backend serverless dans le cloud"  
 Sébastien Stormacq (AWS) & Aurélien Capedecomme (CTO 20 Minutes)*  
 
@@ -94,7 +94,7 @@ Le talk commence sur la slide humoristique qui présente la journée typique d'u
 
 Et c'est en fait presque le problème que le Serverless permet de solutionner.
 
-## 20 Minutes
+### 20 Minutes
 
 Aurélien nous a ensuite fait une présentation de la nouvelle architecture de 20 Minutes, qui au fil des années a su rester technologiquement innovante.
 
@@ -115,7 +115,7 @@ Conclusion le frontend est maintenant séparé en différentes briques interchan
 
 Pour vous faire une idée, cette nouvelle architecture qui gère **plus de 22 Millions d'utilisateurs par mois**, en utilisant une **40aine de lambdas**,  avec **84 Millions d'invocations** par mois et **56ms** de temps de réponse, coûte environ **600€ par mois** ce qui semble vraiment peu à cette échelle.
 
-## Amplify
+### Amplify
 
 [Amplify](https://aws-amplify.github.io/docs/) est un outil CLI pour créer nos services plus rapidement. Ajouter une authentification devient un jeu d'enfant :
 - amplify add auth
@@ -124,7 +124,7 @@ Amplify fournit aussi une librairie JS qui permet de se connecter (par exemple e
 
 On peut aussi créer des CI ou déployer sur des environnements différents avec cet outil, je vous laisse regarder la deuxième partie du talk sur le site d'amazon pour voir la démo, elle vaut le coup. ;)
 
-# Conclusion
+## Conclusion
 
 L'événement était vraiment super bien organisé, les talks étaient séparés par niveau de maîtrise permettant d'éviter de se retrouver 45 minutes dans une conférence d'un niveau inaccessible en ayant raté le début d'une autre.
 

@@ -70,6 +70,19 @@ table {
   margin: 1em 0;
 }
 
+kbd {
+  background-color: $gray99;
+  border: .1rem solid $gray79;
+  border-bottom-color: $gray80;
+  border-radius: .3rem;
+  box-shadow: 0 .1rem 0 $gray69;
+  color: $gray40;
+  font-size: 85%;
+  padding: .2rem .3em;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
 h1,
 h2,
 h3,
@@ -140,4 +153,11 @@ img[align=left] {
 
 img[align=right] {
   margin-left: 3%;
+}
+
+// @see https://css-tricks.com/scale-svg/
+// @see https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
+img[src$=".svg"] {
+  height: auto;
+  width: 100%;
 }
