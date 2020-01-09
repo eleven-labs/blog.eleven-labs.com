@@ -18,13 +18,13 @@ cover: /assets/2018-05-21-let-s-think-outside-the-box/cover.jpg
 
 ## Introduction
 
-Hi Astronauts,  I haven't written any article in a while, and today I decided to come back in style with a high technical one, like we love them.
+Hi Astronauts,  I haven't written any article in a while, and today I decided to come back in style with a highly technical one, like we love them.
 
-Warning, for this one you'll need to be focused! Even if the overall idea is pretty simple, you'll see some pretty complex code and we will push the framework and use it in a tricky way, so that it will do things that it's not supposed to ;)
+Warning though, for this one you'll need to be focused! Even if the overall idea is pretty simple, you'll see some pretty complex code and we will push the framework and use it in a tricky way, so that it will do things that it's not supposed to ;)
 
 Don't you worry guys, I'll do my best to explain every step, and shell every piece of code.
 
-It's been a while now that I have been working on projects in which features must be configurable.<br/>
+It's been a while now since I have been working on projects in which features must be configurable.<br/>
 Most of the time, I'm asked to develop it in a way that features can be enabled or disabled remotely.
 
 We can take as an example a burger menu, where each entry represents a feature of the app, and we want to choose which ones are available.<br/>
