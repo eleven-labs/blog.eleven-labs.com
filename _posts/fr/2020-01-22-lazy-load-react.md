@@ -32,7 +32,7 @@ Qu’est ce qui fait en moyenne 50% du poids de votre page (selon [HTTP Archive]
 .
 C’est élémentaire mon cher Wilson… C’est les **images**.
 
-Donc la solution ici est simple, réduire le poids des images de votre page. Pour cela, il existe une multitude de services en ligne, comme par exemple l’outil de google [squoosh.app](http://squoosh.app). Mais on peut aller encore plus loin.
+Donc la solution ici est simple, réduire le poids des images de votre page. Pour cela, il existe une multitude de services en ligne, comme par exemple l'outil de google [squoosh.app](http://squoosh.app). Mais on peut aller encore plus loin.
 
 Et si on afficher aucune images ?
 
