@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Une application React plus réactive - Le lazy load
@@ -23,6 +22,8 @@ image:
     height: 295
     width: 775
 ---
+
+## Intro
 
 Bon ! Vous avez fluidifié les interactions de votre application grâce à [l’optimistic ui](https://blog.eleven-labs.com/fr/optimistic-ui-avec-react-et-apollo-js/), vous avez diminué l'impression d’attente lors du chargement de vos pages grâce au [skeleton screen](https://blog.eleven-labs.com/fr/skeleton-screen-avec-react-et-apollo-js/), et malgré tout ça vos pages mettent encore trop longtemps à s'afficher. J’ai une petite question pour vous :
 
@@ -50,6 +51,7 @@ Maintenant que nous avons la théorie, mettons-la en pratique avec React.
 ## Mise en place du lazy loading
 
 L'idée n'est pas de créer un simple composant image mais de créer un hook qui puisse centraliser la logique du lazy loading et être utilisée dans de multiples exemples :
+
 ```jsx
 // useIntersectionObserver.jsx
 import { useState, useEffect } from 'react';
@@ -105,10 +107,12 @@ const useIntersectionObserver = (ref, { threshold, root, rootMargin } = {}) => {
 
 export default useIntersectionObserver;
 ```
+
 Ici nous utilisons **IntersectionObserver** (ou vous pouvez trouver la doc [ici](https://developer.mozilla.org/fr/docs/Web/API/Intersection_Observer_API)), cette librairie permet de détecter les possibles intersections entre un élément et la ligne de flottaison.
 Ce hook prend en paramètre la référence d'un élément de la page, ainsi que les options de **IntersectionObserver** afin de pouvoir mieux paramétrer au cas par cas. Une fois l’élément détecté dans le champ de vision, nous changeons un state qui est renvoyé aux clients de notre hook, tout en pensant bien à nous déconnecter de l'observer.
 
 Grâce à ce hook nous pouvons ainsi créer notre composant d'image "**lazy loaded**" comme ceci :
+
 ```jsx
 // ImageLazyLoad.jsx
 
@@ -162,6 +166,7 @@ const ImageLazyLoad = ({ className, url, alt, placeholder = null, forcePreloadIm
 
 export default ImageLazyLoad;
 ```
+
 Dans ce composant nous utilisons le retour de **useIntersectionObserver** afin de savoir quand charger l'image. Pour cela nous utilisons l'objet **Image**  et sa fonction **onLoad**  qui nous permet de savoir quand l'image à fini de charger et ainsi quand interchanger le placeholder (par défaut le skeleton item créé dans cet [article](https://blog.eleven-labs.com/fr/skeleton-screen-avec-react-et-apollo-js/) ) et l'image définitive. On n'oublie pas de rajouter une seconde image dans une balise **\<noscript\>** afin de référencer notre image.
 
 Voici le résultat :
@@ -173,6 +178,7 @@ Si vous voulez un effet d'image floue comme le fait le site **Medium**, c'est po
 ![]({{ site.baseurl }}/assets/2020-01-22-lazy-load-react/medium-lazy-load.jpeg)
 
 La technique la plus simple est d'afficher une image de petite taille (et donc moins lourde), et de l’étirer à la taille souhaitée. Dans notre exemple nous pouvons déclarer en paramètre de placeholder l'image que nous adapterons au contenu grâce au CSS.
+
 ```jsx
 <ImgLazyLoad
   url={`https://picsum.photos/200/200/?image=${index}`}
@@ -181,6 +187,7 @@ La technique la plus simple est d'afficher une image de petite taille (et donc m
   placeholder={<img className={'placeholder'} src={`https://picsum.photos/30/30/?image=${index}`} alt={'alt'} />}
 />
 ```
+
 Voici le résultat :
 
 ![]({{ site.baseurl }}/assets/2020-01-22-lazy-load-react/image-lazy-load-blur.gif)
@@ -188,6 +195,7 @@ Voici le résultat :
 Et ceci n'est qu'un exemple parmi tant d'autres.
 
 ## Conclusion
+
 En conclusion nous pouvons dire que le **lazy loading** est un concept très important du web d'aujourd'hui. Que ce soit le besoin de rapidité des applications ou la nécessité d'économiser de la bande passante pour les mobiles, il y a toujours une bonne raison de l'intégrer.
 Pour en finir avec les images de vos applications, il est bon à savoir que si vous êtes "too lazy" pour mettre en place ce que je vous ai proposé plus haut, les navigateurs récents commencent à mettre en place du **lazy loading native** grâce à l’attribut "**loading=lazy**" à intégrer dans vos balises img.
 
