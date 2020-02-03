@@ -2,7 +2,7 @@
 layout: post
 title: "OpenStreetMap - une alternative à Google Map"
 permalink: /fr/open-street-map-une-alternative-a-google-map/
-excerpt: "Ajouter une carte intéractive sans utiliser Google Map"
+excerpt: "Ajouter une carte interactive sans utiliser Google Map"
 authors:
     - talgrin
 categories:
@@ -14,18 +14,17 @@ tags:
 ---
 
 ## Intro
-En tant que développeur, j'ai dû ajouter une carte interactive sur un site.
-Pour ce faire, on avait pris l'habitude d'utiliser Google Maps. Celui-ci avait une partie gratuite, avec une limite de requête par mois et une autre payante avec aucune limite.
-Sauf que, depuis un certain temps, la partie gratuite a totalement disparu.
+En tant que développeur, j'ai un jour dû ajouter une carte interactive sur un site.
+On avait pris l'habitude d'utiliser Google Maps, qui avait une partie gratuite avec une limite de requêtes par mois, et une autre payante avec aucune limite. Sauf que depuis un certain temps la partie gratuite avait totalement disparu.
 
-Ne pouvant pas payer la version payante, je me suis intéressé à une version opensource de Google Map appeler [Open Street Map](https://www.openstreetmap.fr/)
+Ne pouvant pas prendre la version payante, je me suis intéressé à une version open source de Google Map appelée [Open Street Map](https://www.openstreetmap.fr/)
 
-Dans cet article, je vous propose de vous montrer, dans un écosystème Symfony,  l'utilisation de cette solution.
-Ainsi, nous aborderons les points suivants:
+Dans cet article, je vous propose de vous montrer l'utilisation de cette solution dans un écosystème Symfony.
+Ainsi, nous aborderons les points suivants :
 
- - L'installation des différentes librairies
+ - Installer les différentes librairies
  - Chercher une adresse
- - Ajoutons notre positions sur la carte
+ - Ajouter notre position sur la carte
 
 ## La Stack Technique
 
@@ -38,9 +37,9 @@ Ainsi, nous aborderons les points suivants:
 	-   devbridge-autocomplete
 	-   @ansur/leaflet-pulse-icon
 
-## Les bases: affichons une carte
+## Les bases : affichons une carte
 
-Commençons par installer les différentes librairies JS dont nous aurons besoin en lançant la commande suivante:
+Commençons par installer les différentes librairies JS dont nous aurons besoin en lançant la commande suivante :
 ``` bash
 yarn add leaflet leaflet-easybutton @ansur/leaflet-pulse-icon @ansur/leaflet-pulse-icon devbridge-autocomplete
 ```
@@ -104,11 +103,11 @@ Sans oublier le SCSS, sinon la carte ne s'affiche pas
 ![]({{ site.baseurl }}/assets/2020-02-05-open-street-map-une-alternative-a-google-map/init-map.jpeg)
 
 ## Chercher une adresse
-Notre besoin est le suivant, lorsque je commence à entrer une adresse ou le nom de mon bar favoris, je voudrais avoir une liste déroulante qui affiche les différentes propositions sans utiliser Google. Lorsque je clique sur une adresse un marqueur s'affiche sur la carte.
+Notre besoin est le suivant : lorsque je commence à entrer une adresse ou le nom de mon bar favori, je voudrais avoir une liste déroulante qui affiche les différentes propositions sans utiliser Google. Lorsque je clique sur une adresse, un marqueur s'affiche sur la carte.
 
-Pour ce faire, nous allons faire appel à une [API tiers](https://photon.komoot.de), gratuite, qui va convertir une recherche en longitude et latitude
+Pour ce faire, nous allons faire appel à une [API tiers](https://photon.komoot.de), gratuite, qui va convertir une recherche en longitude et latitude.
 
-Pour afficher la liste des suggestion, nous allons utiliser le composant Jquery `autocomplete` comme suit:
+Pour afficher la liste des suggestions, nous allons utiliser le composant Jquery `autocomplete` comme suit :
 ```jsx
 _search () {
      let proprieties = ['name', 'housenumber', 'street', 'suburb', 'hamlet', 'town', 'city', 'state', 'country'];
@@ -121,12 +120,12 @@ _search () {
          onSelect: (suggestion) => {
              let position = suggestion.data.geometry.coordinates;
 
-             // A la selection, on ajoute un marqueur sur la carte et on la recentre
+             // À la selection, on ajoute un marqueur sur la carte et on la recentre
              L.marker([position[1], position[0]]).addTo(this.map);
              this.map.setView([position[1], position[0]], 12);
          },
          transformResult: (response) => {
-             // On reformatte la réponse de l'api afin de respecter le contrat du plugin
+             // On reformate la réponse de l'api afin de respecter le contrat du plugin
              return {
                  suggestions: $.map(response.features, (dataItem) => {
                      return {
@@ -145,7 +144,7 @@ _search () {
 
 ## Afficher notre localisation
 
-Il existe, en HTML 5, un composant natif  ``navigator.geolocation`` pour géolocaliser la personne. Pas de panique, lorsque l'on utilise une pop-in demandant l'autorisation s'affiche:
+Il existe, en HTML 5, un composant natif  ``navigator.geolocation`` pour géolocaliser la personne. Pas de panique, lorsque l'on utilise une pop-in demandant l'autorisation s'affiche :
 
 ![]({{ site.baseurl }}/assets/2020-02-05-open-street-map-une-alternative-a-google-map/pop-in.jpeg)
 
@@ -153,15 +152,15 @@ Il existe, en HTML 5, un composant natif  ``navigator.geolocation`` pour géoloc
 Il faut que le site soit en https pour que la géolocalisation HTML se fasse
 </div>
 
-Nous avons deux situations:
- - l'utilisateur accepte, c'est super on affiche un marqueur sur la carte
- - l'utilisateur refuse, c'est moins cool mais on peut, par exemple, estimer une zone géographique en utilisant son adresse IP
+Nous avons deux situations :
+ - l'utilisateur accepte, c'est super, on affiche un marqueur sur la carte
+ - l'utilisateur refuse, c'est moins cool, mais on peut par exemple estimer une zone géographique en utilisant son adresse IP
 
-### Etape 1: la géolocalisation en JS
+### Étape 1 : la géolocalisation en JS
 
-Comme promis, nous allons utiliser la notion `navigator.geolocation` mais surtout la méthode ``getCurrentPosition``. Elle prend deux callback, respectivement d'une part pour exécuter du code en cas de succès et d'autre part en cas d'échec. La callback d'erreur s'execute si l'utilisateur refuse de donner sa position.
+Comme promis, nous allons utiliser la notion `navigator.geolocation` mais surtout la méthode ``getCurrentPosition``. Elle prend deux callbacks, d'une part pour exécuter du code en cas de succès et d'autre part en cas d'échec. Le callback d'erreur s'exécute si l'utilisateur refuse de donner sa position.
 
-Je suis parti du principe que nous aurions besoin d'utiliser ce code plusieurs fois. Ainsi, j'ai créer un composant `Utils`
+Je suis parti du principe que nous aurions besoin d'utiliser ce code plusieurs fois. Ainsi, j'ai créé un composant `Utils`
 ```jsx
 'use strict';
 
@@ -187,19 +186,19 @@ class Utils {
 export default Utils;
 ```
 
-Vous l'auriez compris, nous allons l'appeler dans notre composant `map`
+Vous l'aurez compris, nous allons l'appeler dans notre composant `map`
 ```jsx
 _getCurrentPosition() {
     Utils.getCurrentPosition((provider, coords) => {
         if (provider === 'js') {
-        //On stock la position de l'utilisateur pour centrer la carte s'il click sur le bouton de position
+        //On stocke la position de l'utilisateur pour centrer la carte s'il clique sur le bouton de position
             this.latitude = coords.latitude;
             this.longitude = coords.longitude;
             // On ajoute un icon différent de nos lieux
             const icon = L.icon.pulse({ color: 'blue', fillColor: 'blue', heartbeat: 3 });
             // On ajoute le marqueur sur la carte
             L.marker([coords.latitude, coords.longitude], { icon: icon }).addTo(this.map);
-            // On créer un nouveau bouton pour localiser l'utilisateur
+            // On crée un nouveau bouton pour localiser l'utilisateur
             L.easyButton({
                 position: 'topright',
                 states: [{
@@ -210,7 +209,7 @@ _getCurrentPosition() {
             }).addTo(this.map);
             this.map.setView(new L.LatLng(this.latitude, this.longitude), 12);
        } else {
-           // On recentre la carte par rapport aux coordonnées récolté en PHP
+           // On recentre la carte par rapport aux coordonnées récoltées en PHP
            this.map.setView(new L.LatLng(coords.lat, coords.lon), 11);
        }
     });
@@ -218,13 +217,12 @@ _getCurrentPosition() {
 ```
 ![]({{ site.baseurl }}/assets/2020-02-05-open-street-map-une-alternative-a-google-map/current-position-js.jpeg)
 
-### Etape 2: Localisation en PHP
+### Étape 2 : Localisation en PHP
 
 Lorsque l'utilisateur refuse la localisation, nous pouvons estimer une zone géographique en utilisant son IP grâce à http://ip-api.com/json
-L'idée est de faire appel, avec - par exemple -  le client HTTP de Symfony, à cette api, de stocker le resultat dans **du cache** afin d'optimiser.
-Et oui c'est pour cela que nous allons utiliser l'éco-système de Symfony; car nous ne pouvons pas le faire en JS car c'est une adresse en HTTP
+L'idée est de faire appel, avec - par exemple -  le client HTTP de Symfony, à cette api, de stocker le résultat dans **du cache** afin d'optimiser. Et oui c'est pour cela que nous allons utiliser l'éco-système de Symfony ; car nous ne pouvons pas le faire en JS car c'est une adresse en HTTP.
 
-Et bien let's go:
+Et bien let's go :
 ```php
 <?php
 
@@ -288,13 +286,13 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
      /** @var CacheItem $item */
      $item = $this->cache->getItem($ip);
 
-     // On vérifie si l'item cache est tjrs valable
+     // On vérifie si l'item cache est toujours valable
      if (!$item->isHit()) {
       $url = sprintf('http://ip-api.com/json/%s', $ip);
       $response = $this->client->request('GET', $url);
       $this->logger->info('User localisation', ['provider' => 'ip', 'url' => $url, 'response' => $response]);
 
-      //On stock la valeur et on ajoute une date d'expiration
+      //On stocke la valeur et on ajoute une date d'expiration
       $item
           ->set($response->toArray())
           ->expiresAfter(3600)
@@ -347,9 +345,8 @@ static getCurrentPositionWithPhp() {
 
 ## Conclusion
 
-En conclusion, nous pouvons dire que l'alternative OpenStreetMap peut réellement rivaliser avec son concurrent le plus célèbre, tout en étant gratuit.
-Ce sera votre porte-monnaie qui sera content.
-J’espère que vous avez apprécié cet article et que vous allez prendre beaucoup de plaisir à jouer avec OpenStreetMap
+En conclusion, nous pouvons dire que l'alternative OpenStreetMap peut réellement rivaliser avec son concurrent le plus célèbre, tout en étant gratuit. C'est votre porte-monnaie qui va être content !
+J’espère que vous avez apprécié cet article et que vous allez prendre beaucoup de plaisir à jouer avec OpenStreetMap.
 
-A bientôt pour de nouvelle aventure ;)
+À bientôt pour de nouvelles aventures ;)
 
