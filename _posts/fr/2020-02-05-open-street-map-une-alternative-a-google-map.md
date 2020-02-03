@@ -13,8 +13,6 @@ tags:
     - Open Street Map
 ---
 
-# OpenStreetMap, une alternative à Google Map
-
 ## Intro
 En tant que développeur, j'ai dû ajouter une carte interactive sur un site.
 Pour ce faire, on avait pris l'habitude d'utiliser Google Maps. Celui-ci avait une partie gratuite, avec une limite de requête par mois et une autre payante avec aucune limite.
@@ -80,18 +78,16 @@ export default Map;
 Comme Google Map, nous devons définir un container HTML
 ```twig
 {# templates/default/index.html.twig #}
-{% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-10">
-                <div id="map"></div>
-            </div>
-            <div class="col-2">
-                <input type="text" name="address" id="address" />
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <div id="map"></div>
+        </div>
+        <div class="col-2">
+            <input type="text" name="address" id="address" />
         </div>
     </div>
-{% endblock body %}
+</div>
 ```
 Sans oublier le SCSS, sinon la carte ne s'affiche pas
 ```css
@@ -189,6 +185,7 @@ class Utils {
 }
 
 export default Utils;
+```
 
 Vous l'auriez compris, nous allons l'appeler dans notre composant `map`
 ```jsx
