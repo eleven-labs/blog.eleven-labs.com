@@ -15,7 +15,7 @@ tags:
 
 ## Intro
 En tant que développeur, j'ai un jour dû ajouter une carte interactive sur un site.
-On avait pris l'habitude d'utiliser Google Maps, qui avait une partie gratuite avec une limite de requêtes par mois, et une autre payante avec aucune limite. Sauf que depuis un certain temps la partie gratuite avait totalement disparu.
+On avait pris l'habitude d'utiliser Google Maps, qui proposait une offre gratuite avec une limite de requêtes par mois. Il existait aussi une autre offre payante, elle sans restrictions. Mais l'offre gratuite a fini par ête supprimée...
 
 Ne pouvant pas prendre la version payante, je me suis intéressé à une version open source de Google Map appelée [Open Street Map](https://www.openstreetmap.fr/)
 
@@ -28,8 +28,8 @@ Ainsi, nous aborderons les points suivants :
 
 ## La Stack Technique
 
- - Symfony 4.4
--   WebpackLibrairie JS:
+- Symfony 4.4
+-   WebpackLibrairie JS :
 	-   Jquery
 	-   Bootstrap
 	-   Leaflet
