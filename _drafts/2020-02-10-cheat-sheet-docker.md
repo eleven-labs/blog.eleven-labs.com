@@ -24,6 +24,6 @@ Nous avons créer pour vous un Cheat Sheet qui vous permet de retrouver rapideme
 
 [![Télécharger le cheat sheet]({{site.baseurl}}/assets/2020-02-10-cheat-sheet-docker/button.png)](http://bit.ly/cheat-sheet-Docker){: .center-image }
 
-Des questions, ou simplement envie d'échanger sur ce sujet ? Contactez-moi : mmaireaux(at)eleven-labs.com  
+Des questions, ou simplement envie d'échanger sur ce sujet ? Contactez-moi : [mmaireaux(at)eleven-labs.com](mailto:mmaireaux@eleven-labs.com)  
 Vous souhaitez partager vos connaissances sur ce sujet (ou un autre) ? Faites-le sur [Codelabs](https://codelabs.eleven-labs.com) !  
-Vous avez besoin d'accompagnement sur un projet ? Contactez-nous : contact(at)eleven-labs.com !
+Vous avez besoin d'accompagnement sur un projet ? Contactez-nous : [wilson(at)eleven-labs.com](mailto:wilson@eleven-labs.com) !
