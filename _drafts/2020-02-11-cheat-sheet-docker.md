@@ -23,8 +23,10 @@ Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais des 
 Nous avons créé pour vous une Cheat Sheet qui vous permettra de retrouver rapidement la commande qu'il vous faut !
 
 <p align="center"> 
+
 [Pour télécharger le livre blanc cliquez-ici](http://bit.ly/cheat-sheet-Docker){: .center-image }
 [![Télécharger le cheat sheet]({{site.baseurl}}/assets/2020-02-11-cheat-sheet-docker/button.png)](http://bit.ly/cheat-sheet-Docker){: .center-image }
+
 </p>
 
 Des questions, ou simplement envie d'échanger sur ce sujet ? Contactez-moi : [mmaireaux(at)eleven-labs.com](mailto:mmaireaux@eleven-labs.com)  
