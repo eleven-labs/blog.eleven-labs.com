@@ -3,7 +3,7 @@ layout: post
 title: "Cheat Sheet : Docker, tout ce que vous devez savoir"
 lang: fr
 permalink: /fr/cheat-sheet-docker-tout-ce-que-vous-devez-savoir/
-excerpt: "Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais des commandes pour créer une image Docker ? Ou encore pour la lancer ? "
+excerpt: "Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais des commandes pour créer une image Docker ? Ou encore pour la lancer ?"
 authors:
     - mmaireaux
 categories:
@@ -20,7 +20,7 @@ cover: /assets/2020-02-11-cheat-sheet-docker/cover.jpg
 ## Présentation
 
 Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais des commandes pour créer une image Docker ? Ou encore pour la lancer ? 
-Nous avons créer pour vous un Cheat Sheet qui vous permet de retrouver rapidement la commande qu'il vous faut !
+Nous avons créé pour vous une Cheat Sheet qui vous permettra de retrouver rapidement la commande qu'il vous faut !
 
 <p align="center"> 
 [Pour télécharger le livre blanc cliquez-ici](http://bit.ly/cheat-sheet-Docker){: .center-image }
