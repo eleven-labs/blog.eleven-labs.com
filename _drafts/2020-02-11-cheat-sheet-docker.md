@@ -22,12 +22,8 @@ cover: /assets/2020-02-11-cheat-sheet-docker/cover.jpg
 Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais des commandes pour créer une image Docker ? Ou encore pour la lancer ? 
 Nous avons créé pour vous une Cheat Sheet qui vous permettra de retrouver rapidement la commande qu'il vous faut !
 
-<p align="center"> 
-
-[Pour télécharger le livre blanc cliquez-ici](http://bit.ly/cheat-sheet-Docker){: .center-image }
-[![Télécharger le cheat sheet]({{site.baseurl}}/assets/2020-02-11-cheat-sheet-docker/button.png)](http://bit.ly/cheat-sheet-Docker){: .center-image }
-
-</p>
+[Pour télécharger le livre blanc cliquez-ici](http://bit.ly/cheat-sheet-Docker)
+[![Télécharger le cheat sheet]({{site.baseurl}}/assets/2020-02-11-cheat-sheet-docker/button.png)](http://bit.ly/cheat-sheet-Docker)
 
 Des questions, ou simplement envie d'échanger sur ce sujet ? Contactez-moi : [mmaireaux(at)eleven-labs.com](mailto:mmaireaux@eleven-labs.com)  
 Vous souhaitez partager vos connaissances sur ce sujet (ou un autre) ? Faites-le sur [Codelabs](https://codelabs.eleven-labs.com) !  
