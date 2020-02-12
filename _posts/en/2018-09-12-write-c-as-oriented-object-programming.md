@@ -23,20 +23,20 @@ cover: /assets/2018-09-12-faire-du-c-oriente-objet/cover.jpg
 
 Hi Astronauts, happy to see you again on this day, after a while without publishing any article.
 
-The article that I give to you today changes a bit from the ones I have previously written in the past. My goal her is to share my tips/good practices to any developer that is a bit motivated. This is why we are going to see a pretty simple subject, but see it from another point of view.
+This article changes a bit from the previous ones. My goal here is to share my tips/good practices to any developer a bit motivated. This is why we are going to see a pretty simple subject, but from another point of view.
 
-Let's not waste time, and deep dive into the subject. This article is a dedicated one, we are going to talk about **C**, yes, yes, I really said **C**, you know this procedural language where you need to do all the allocations and frees by yourself.<br/>
-This language is really important, the kernel of your computer is coded in **C**, and even if it's a bit difficult, you can actually do anything with it, and start with this language will allow you to learn any other language really easily.<br/>
-This is why my school (damn, I feel old) teaches it as a first language, and to be frank I created a lot of softwares with it. The main issue at the time was that I didn't have the experience with programming as I have now. I have to admit that I wish I had someone to guide me and not the do the rookie mistakes that I did.
+Let's not waste time, and dive directly into the subject. We are going to talk about **C**, yes, yes, I really said **C**, you know this procedural language where you need to do all the allocations and frees by yourself.<br/>
+This language is really important, the kernel of your computer is coded in **C**, and even if it's a bit difficult, you can actually do anything with it. Starting with this language will allow you to learn any other language really easily.<br/>
+This is why my school (damn, I feel old) teaches it as a first language, and to be frank I created a lot of softwares with it. The main issue at the time was that I didn't have the experience with programming that I have now. I have to admit that I wish I had someone to guide me and not the do the rookie mistakes I did.
 
 
 ## A little setup
 
-You are a student, first year and you need to code a little software that is able to handle many users and you tell yourself, actually that would be good to do some code not too complex to maintain in the future, you never know, you can have some new fields for your users in some time, like the phone number, the zip code, etc... (those are examples).
+You are a first year student and you need to code a little software that is able to handle many users. So you tell yourself: "actually that would be good to do some code not too complex to maintain in the future, you never know, you can have some new fields for your users in some time, like the phone number, the zip code, etc..." (those are examples).
 
-You have the first solution, that is coding in regular **C**, so it means a lot of code maintenance when some modifications arrive, or you can take 30 minutes, and tell yourself, ok let's try to do things from a different angle. This is where I step in ;)
+You have the first solution, that is coding in regular **C**, so it means a lot of code maintenance when some modifications happen, or you can take 30 minutes, and tell yourself, ok let's try to do things from a different angle. This is where I step in ;)
 
-We need to think oriented programming even if it is procedural code.<br/>
+We need to think oriented programming even if it's procedural code.<br/>
 In order to do this, we will use 4 components of the **C** language :
 
 - **Structures**
@@ -46,28 +46,28 @@ In order to do this, we will use 4 components of the **C** language :
 
 ### Structures
 
-We can associate them to the ancestors of the classes, there is no notion of private/public, everything is public inside of it, there are no methods also, they just contain **properties** that are either primitive types, or pointers.
+We can associate them to the ancestors of the classes, there is no notion of private/public, everything is public inside of it, there are no methods, they just contain **properties** that are either primitive types, or pointers.
 
 ### Pointers
 
-Lately, we use a lot of references when coding, but you also have pointers, it's a variable that points to a specific address in memory. Really useful, and or whole system is going to depend on this.
+Lately, we use a lot of references when coding, but you also have pointers, it's a variable that points to a specific address in memory. Really useful, and a whole system is going to depend on this.
 
 ### Chained lists
 
-We will reuse the 2 previous notions we just saw. A chained list is a collection of structures linked to each others by some pointers.
+We will use again the 2 previous notions. A chained list is a collection of structures linked to each other by some pointers.
 
 ### Function pointers
 
-I think that you might have an idea of what it is based on what I described above, function pointers are not mean to access data, but to access some functions declared in memory.
+I think that you might have an idea of what it's based on, function pointers are not meant to access data, but to access some functions declared in memory.
 
-So, all right chaps, we just covered the big notions, you now know what we are going to realize.<br />
+So we just covered the big notions, now you know what we're going to realize.<br />
 Let's dig into it.
 
-## How to proceed :
+## How to proceed:
 
-As always, I will give you some dummy code that will run, and realize a serie of task that will be define in the code, so no real interactions with the user. The idea is to show you the overall idea, then it's your responsibility to use it in the real world :)
+As always, I will give you some dummy code that will run and realize a serie of tasks that will be defined in the code, so no real interactions with the user. The idea is to show you the overall idea, then it's your responsibility to use it in the real world :)
 
-Here my objective is to be able to create "users" and to be able do add/remove them easily, in case my code has to go in run.
+Here my objective is to be able to create "users" and to be able to add/remove them easily, in case my code has to go in run.
 
 In order to do so, first let's create our data models.
 
@@ -80,8 +80,8 @@ struct list
 };
 ```
 
-I create my structure for my chained list, the idea here is to reproduce an **Array** as you can find them in almost all languages.
-So, as we can see, we have a pointer that points to the next link of my list (next in the structure) and a pointeur of type void* that can point to any type of "object", because I want to be able to use this chained list for any type of structure I want to store (that's pretty convenient actually).
+I create the structure for my chained list, the idea here is to reproduce an **Array** as you can find them in almost all languages.
+So, as we can see, we have a pointer that points to the next link of my list (next in the structure) and a pointer of type void* that can point to any type of "object", because I want to be able to use this chained list for any type of structure I want to store (that's pretty convenient).
 
 ```C
 typedef struct plop plop;
@@ -92,10 +92,10 @@ struct plop
 };
 ```
 
-Then, here comes the real "model" for our user objects. A structure of type **plop** that contains two attributes, **name** for the name of the user et a function pointer **hello** that takes an "object" of type **plop**.
+Then, here comes the real "model" for our user objects. A structure of type **plop** that contains two attributes, **name** for the name of the user and a function pointer **hello** that takes an "object" of type **plop**.
 
 So, we have our data stucture, that's cool, but what do we do now?
-Then chaps, we are going to code our "methods" for the chained list in order to reproduce the **new**, **add**, **remove**, **getObjectAtIndex** that we use on a daily basis in our modern languages.
+We are going to code our "methods" for the chained list in order to reproduce the **new**, **add**, **remove**, **getObjectAtIndex** that we use on a daily basis in our modern languages.
 
 Let's start with the **New** :
 
@@ -113,11 +113,9 @@ plop* make_new_object(char *name) {
 }
 ```
 
-**make_new_list** nous sert à créer une nouvelle liste, et **make_new_object** nous sert à créer un nouvel utilisateur. Pour le moment rien de bien compliqué, à part peut-être dans **make_new_object** qui assigne **hello** avec un **hello** qui n'existe pas dans le scope de la fonction, on y reviendra un peu plus tard.
+**make_new_list** creates a new list, and **make_new_object** creates a new user. Nothing difficult for now, except perhaps in **make_new_object** which assigns **hello** with a **hello** that does not exist in the function's scope. We'll get back to it later.
 
-Let's now go to the toolkit functions for our chained lists : 
-
-**make_new_list** will help us to create a new list and **make_new_object** will help us to create new users. Basic stuff for the moment, expect maybe in **make_new_object** that assigns **hello** with a **hello** that doesn't exist in the scope of the function, but we'll come back to it later on.
+Let's now go to the toolkit functions for our chained lists: 
 
 ```C
 void add_in_list(list* my_list, void* obj) {
@@ -166,9 +164,9 @@ list* get_object_at_index(list* my_list, int index) {
 ```
 
 We create the function **add_in_list** that reproduces the **Add**, the function **remove_in_list** that reproduces **Remove** and the function **get_object_at_index** that reproduces **GetObjectAtIndex**.<br/>
-Please do notice that those 3 methods take as parameters pointers that do not have a type ```C(void*)```, it means that you can use reuse these 3 functions in all your projects, so keep them somewhere :)
+Please do notice that those 3 methods take as parameters pointers that do not have a type ```C(void*)```, it means that you can use again these 3 functions in all your projects, so keep them somewhere :)
 
-- So far so good, we have our "models", our functions to play with it, were are all set I think, isn't it?
+- So far so good, we have our "models", our functions to play with. We're are all set I think, isn't it?
 - Hum, I don't think so pal...
 - What? Did I forget something?
 - Yeah, I think you said something about the **hello** function above...
@@ -197,12 +195,12 @@ void print_list(list* my_list) {
 ```
 
 So actually, it was missing a bit more than the **hello** function.<br/>
-Let's add these 3 functions that in order do :
-- Writes a string on the output console.
-- Takes a **plop** "object" as a parameter and displays it on the console log.
+Let's add these 3 functions that by order:
+- Write a string on the output console.
+- Take a **plop** "object" as a parameter and display it on the console log.
 - Loop on our chained list and call the function **hello** on every "object".
 
-Let's come back on the **hello** function. This function is now declared in our code, and in the function **make_new_object** we assign the function pointer of the structure newly created on this function that already has an address in the memory. We just need to pass the "object" as a parameter because we are not able to call the function straight on it. This idea came to me when I did some **Python**, actually in **Python** the **self** is automatically given as a parameter in every method et then we can do the calls on **self**.
+Let's come back on the **hello** function. This function is now declared in our code, and in the function **make_new_object** we assign the function pointer of the structure newly created on this function that already has an address in the memory. We just need to pass the "object" as a parameter because we are not able to call the function straight on it. This idea came to me when I did some **Python**, actually in **Python** the **self** is automatically given as a parameter in every method and then we can do the calls on **self**.
 
 ## The final look
 
@@ -325,7 +323,7 @@ void print_list(list* my_list) {
 ## It's time to run the code
 
 So everything is setup, you just have to run the code.
-Here not much glamorous stuff, just 3 small outputs : 
+Here not much glamorous stuff, just 3 small outputs: 
 
 ```Shell
 Hello, my name is: Pierre
@@ -338,14 +336,14 @@ Pretty cool isn't it? :)
 - Hold on, we did all this code just for this result?
 - Yes
 - But hum, where is the magic?
-- Magic is not always visual guys, sometimes it is how it's done behind the curtains. As developers you need to challenge yourselves to do stuff in many different ways, explore new horizons.
+- Magic is not always visual guys, sometimes it's how it's done behind the curtains. As developers you need to challenge yourselves to do stuff in many different ways, explore new horizons.
 
 ## But why do all this?
 
 You are probably asking yourself, but why do all this?<br/>
 For many reasons.<br/>
-The first one is that it is really really fun. Imagine that you show this code to your dev partner, and you tell him, hey for once, let's do things like that.<br/>
-Then when you arrive to present your project, with such an architecture, the guy in charge of the review will probably say: Damn Son Where'd You Find This ???!!! Then he will see with you how to push it further and even give you some advices for your futur projects.<br/>
+The first one is that it's really really fun. Imagine that you show this code to your dev partner, and you tell him, hey for once, let's do things like that.<br/>
+Then when you arrive to present your project, with such an architecture, the guy in charge of the review will probably say: Damn Son Where'd Yyou find this???!!! Then he will see with you how to push it further and even give you some advices for your future projects.<br/>
 Also, it makes the code way more easy to read in my opinion, you just have a few complex functions, and then everything else is easy to understand.
 It also teaches you how to split your code and architecture your project with way less depedencies.
 
