@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "OpenStreetMap - une alternative à Google Map"
+title: "OpenStreetMap - une alternative à Google Maps"
 permalink: /fr/open-street-map-une-alternative-a-google-map/
-excerpt: "Ajouter une carte interactive sans utiliser Google Map"
+excerpt: "Ajouter une carte interactive sans utiliser Google Maps"
 authors:
     - talgrin
 categories:
@@ -17,7 +17,7 @@ tags:
 En tant que développeur, j'ai un jour dû ajouter une carte interactive sur un site.
 On avait pris l'habitude d'utiliser Google Maps, qui proposait une offre gratuite avec une limite de requêtes par mois. Il existait aussi une autre offre payante, elle sans restrictions. Mais l'offre gratuite a fini par ête supprimée...
 
-Ne pouvant pas prendre la version payante, je me suis intéressé à une version open source de Google Map appelée [Open Street Map](https://www.openstreetmap.fr/)
+Ne pouvant pas prendre la version payante, je me suis intéressé à une version open source de Google Maps appelée [Open Street Map](https://www.openstreetmap.fr/)
 
 Dans cet article, je vous propose de vous montrer l'utilisation de cette solution dans un écosystème Symfony.
 Ainsi, nous aborderons les points suivants :
