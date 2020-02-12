@@ -5,9 +5,7 @@ authors:
     - thuchon
 lang: en
 permalink: /c-oriented-programming-language/
-excerpt: "Let's write some C as an oriented programming language"
-date: '2018-09-13 14:30:42 +0100'
-date_gmt: 2018-09-13 13:30:42 +0100'
+excerpt: "Let's write some C as an oriented programming language"‡
 categories:
 - Software
 tags:
