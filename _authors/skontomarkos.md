@@ -2,7 +2,7 @@
 layout: author
 login: skontomarkos
 title: Sophie Kontomarkos
-twitter:-
+twitter: -
 permalink: /authors/skontomarkos/
 ---
 Développeur PHP Symfony
