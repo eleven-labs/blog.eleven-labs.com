@@ -19,9 +19,10 @@ Un tel outil je vais vous presenter aujourd'hui.
 
 ## Robo c'est quoi
 
-Robo est un task runner pour des projets PHP. Il nous donne la possibillité d'effectuer des divers tâches comme:
+Robo est un task runner pour des projets PHP. Il nous donne la possibillité d'automatiser des divers tâches du quotidien comme:
 * lancer des tests
 * executer des commandes
+* lancer plusieures tâches en même temps
 
 ## Comment l'installer
 
