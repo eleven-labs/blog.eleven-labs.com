@@ -24,6 +24,15 @@ Robo est un task runner pour des projets PHP. Il nous donne la possibillité d'a
 * lancer des tests
 * exécuter des commandes
 * lancer plusieurs tâches en même temps
+* supeviser notre projet
+
+J'ai decidé d'utiliser car avec des simples commandes je peux m'assurer du code style de mon code,
+que mes tests fonctionnent correctement.
+
+Ses points forts
+* on peut écrire des tâches customisable
+* il est facile à utiliser
+* il simplifie notre interaction avec PHPUNIT, Docker, Git
 
 ## Comment l'installer
 
@@ -62,6 +71,34 @@ Voici un exemple de commande qu'on pourra ajouter dans notre RoboFile :
 <?php
 class RoboFile extends \Robo\Tasks
 {
+
+    /**
+     * Install dependencies
+     */
+    public function composer()
+    {
+        $this->taskExec('composer')
+            ->env(array_merge(
+                $_ENV
+            ))
+            ->arg('install')
+            ->arg('-d')
+            ->arg('../')
+            ->run();
+    }
+
+    /**
+     * Run Unit Tests
+     */
+    public function phpunit()
+    {
+        $this->stopOnFail();
+        $this->taskExec('phpunit')
+            ->arg('--configuration=phpunit.xml')
+            ->arg('--no-coverage')
+            ->run();
+    }
+
      /**
       * cleans cache and log
       */
@@ -86,8 +123,28 @@ class RoboFile extends \Robo\Tasks
                     ->run();
         }
     }
+
+     /**
+      * Check the code style of your project
+      */
+    public function phpcs()
+    {
+        $task = $this->taskExec(self::BIN_PATH . '/phpcs')
+            ->arg('--standard=PSR12')
+            ->arg('--extensions=php')
+            ->arg('--ignore=' . implode(',', $this->excludedPaths));
+        foreach ($this->includedPaths as $path) {
+            $task->arg($path);
+        }
+        $task->run();
+    }
 }
 ```
+Pour pouvoir lancer la dernière commande il faudra d'abord avoir installer code sniffer:
+```
+composer require "squizlabs/php_codesniffer=*"
+```
+
 Pour lancer la tâche développée il suffit juste de faire :
 
 * si on a installé robo en global
@@ -101,10 +158,16 @@ robo nomDeLaCommande
 vendor/bin/robo nomDeLaCommande
 ```
 
-Pour plus d'informations vous pouvez vous rendre aux liens suivants :
+Il existe aussi d'autres task runners pour PHP que je testerai pour vous comme:
+* [Deployer](https://deployer.org/)
+* [Blr](https://bldr.io/)
+* [Task](https://taskphp.github.io/)
 
-[Packagist](https://packagist.org/packages/consolidation/robo)
-[Robo GitHub](https://github.com/consolidation/Robo)
-[Robo](https://robo.li/)
+
+Pour plus d'informations sur vous pouvez vous rendre aux liens suivants :
+
+* [Packagist](https://packagist.org/packages/consolidation/robo)
+* [Robo GitHub](https://github.com/consolidation/Robo)
+* [Robo](https://robo.li/)
 
 
