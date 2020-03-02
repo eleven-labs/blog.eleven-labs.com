@@ -36,7 +36,7 @@ theme_settings:
     description: A website with blog posts and pages
 
     # Header and footer
-    copyright: ElevenLabs © 2019
+    copyright: ElevenLabs
     phone_number: +33 1 82 83 11 75
     adress: 15, avenue de la Grande Armée
     post_code: 75016 PARIS
