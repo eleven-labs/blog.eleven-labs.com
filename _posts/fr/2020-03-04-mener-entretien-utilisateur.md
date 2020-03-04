@@ -5,7 +5,7 @@ lang: fr
 permalink: /fr/mener-entretien-utilisateur-benoit-blanc/
 excerpt: "Faire des entretiens avec ses utilisateurs ne s’improvise pas. C’est un exercice qui se prépare et qui est plus difficile qu’il n’y paraît. Cet article va vous présenter une méthode pour vous aider dans cette tâche"
 authors:
-    - 
+    - psur-eleven
 categories:
     - agile
 tags:
