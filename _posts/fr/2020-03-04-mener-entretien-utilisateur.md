@@ -16,23 +16,29 @@ tags:
 ---
 
 ##Introduction##
-L’entretien utilisateur doit vous aider à prendre de meilleures décisions, en analysant méthodiquement les besoins de vos utilisateurs, au lieu de vous baser sur vos intuitions. Par ailleurs, on évitera l’écueil d’opposer les analyses quantitatives (faites à partir de données) aux analyses qualitatives (comme les entretiens, ici). Les deux complètent les angles morts les unes des autres, et permet d’avoir une vision plus complète et juste des besoins des utilisateurs. 
+L’entretien utilisateur doit vous aider à prendre de meilleures décisions, en analysant méthodiquement les besoins de vos utilisateurs, au lieu de vous baser sur vos intuitions. Par ailleurs, on évitera l’écueil d’opposer les analyses quantitatives (faites à partir de données) aux analyses qualitatives (comme les entretiens, ici). Les deux complètent les angles morts les unes des autres, et permettent d’avoir une vision plus complète et juste des besoins des utilisateurs. 
 
 Faire des entretiens avec ses utilisateurs ne s’improvise pas. C’est un exercice qui se prépare et qui est plus difficile qu’il n’y paraît.
 
-Je vais vous présenter une méthode, séparée en trois parties (avant, pendant et après l’entretien) pour vous aider dans cette tâche. Il faudra faire preuve de rigueur, d’empathie et de la perspicacité de Joseph Rouletabille (pour ce qui ne connaissent pas, c’est par là).
+Je vais vous présenter une méthode, séparée en trois parties (avant, pendant et après l’entretien) pour vous aider dans cette tâche. Il faudra faire preuve de rigueur, d’empathie et de la perspicacité de Benoit Blanc.
+![](https://medias.spotern.com/spots/w640/308/308177-1582796703.jpg)
 
 ##Avant l'entretien##
 ###Composez votre équipe###
+
 Dans l'idéal, composez une équipe de 3 personnes pour cet entretien : 
 L’interrogateur : vous êtes celui qui mène l’entretien et devez être concentré à 100% dessus
 Le scribe : son rôle est de retranscrire l’entretien et de noter tous les petits détails intéressants (comme les réactions de l’utilisateur, ses émotions). En outre
 L'observateur : son rôle, comme son nom l’indique, est d’observer l’entretien, mais avec une certaine distance. Il n’intervient pas, sauf à la fin s’il a des questions supplémentaires (on y reviendra). Je conseille de proposer ce rôle à un profil différent du votre, comme à l’un de vos devs. Je suis persuadé qu’il est important d’inclure les développeurs le plus en amont des projets, pour les impliquer davantage, mais aussi pour qu’ils vous apportent une vision différente et potentiellement de nouvelles solutions auxquelles vous n’auriez pas pensé. 
+
 ###Trouvez les bons utilisateurs###
+
 Essayez de faire au 5-6 entretiens par type d’utilisateurs (ou persona) que vous aurez identifié, vous pourrez déjà commencer à dégager des tendances. Au-delà d’un certain nombre, les entretiens ne vous apporteront plus autant de renseignements et vous perdrez du temps au lieu de vous concentrer sur leur analyse et les actions à mener.
 
 Pour trouver les bons utilisateurs à interviewer, il vous faut d’abord définir les objectifs de vos entretiens, les questions auxquelles il vous faut des réponses. Ensuite, assurez-vous de contacter seulement les utilisateurs qui répondent à vos besoins. Il existe une multitude de moyens pour les trouver : emailing, fans et haters sur les réseaux sociaux, etc. Si vous êtes en manque d’inspiration, je vous mets un lien renvoyant à une liste de 95 idées pour trouver vos utilisateurs.
+
 ###Préparez votre questionnaire###
+
 Réalisez un brainstorming d'une vingtaine de questions avec votre équipe et gardez en une dizaine seulement, celles qui vous paraissent les plus pertinentes.
 
 Quelques critères à respecter pour vous guider. Vos questions doivent:
@@ -50,15 +56,19 @@ Je vous ai également mis quelques exemples de questions ci-dessous :
 Il ne faut pas pas influencer l'utilisateur. Lors de votre entretien, essayez de rester le plus neutre possible, que ce soit dans vos questions, mais aussi dans vos réactions. Au lieu de demander "Quelles difficultés éprouvez-vous à accéder à cette information ?", dites plutôt "Comment accédez-vous à cette information ?"
 
 ##Pendant l'entretien##
+
 ###L'accueil###
+
 Premier réflexe, remerciez toujours l'utilisateur pour le temps accordé, pour avoir fait le déplacement (s'il se déplace dans vos bureaux par exemple). Je sais, ça paraît évident, mais on peut vite oubliez les règles de base si l'on est stressé ou que c'est la première fois que l'on fait ce genre d'entretien.
 
 Demandez à votre interlocuteur s'il vous autorise à enregistrer la conversation. Rassurez-le sur le fait que cela restera anonyme et que cela est destiné à un usage en interne uniquement, et non pas à des fins publicitaires.
 
 ###Mettez votre interlocuteur à l’aise###
+
 Commencez par des questions basiques. En quoi consiste son rôle, avec quelle fréquence utilise-t-il votre produit, comment il en a entendu parler, etc. Le but est de le rassurer et de le mettre en confiance avant d’attaquer les questions à plus forte valeur ajoutée, celles qui vous intéressent vraiment. Essayez de faire passer ce moment comme une conversation informelle, votre interlocuteur sera plus détendu et par conséquent plus enclin à partager ses avis, ses émotions. 
 
 ###Dans le vif du sujet###
+
 **Ouvert d’esprit tu seras**
 Un point important avant d’attaquer les questions que vous vous êtes notées : cette liste n'est pas un script que vous devez suivre à la lettre. Voyez-là plutôt comme un cadre, des points d'ancrage pour recentrer l'entretien si besoin. 
 
@@ -82,6 +92,7 @@ Si vous avez un observateur avec vous, laissez-lui un peu de temps pour qu'il pu
 Une fois cette étape terminée, il est temps d'inverser les rôles et de proposer à votre interlocuteur de vous poser des questions. D'une part cela est plus engageant d'un point de vue client (peut-être l'occasion de sécuriser un beta testeur hehe), d'autre part, il pourrait soulever un point pertinent auquel vous n'aviez pas pensé.
 
 ##Après l'entretien##
+
 Remerciez l’utilisateur pour le temps accordé (super basique, je sais) et passez au débrief avec votre équipe. Est-ce que l’entretien vous a appris de nouvelles choses ? A-t-il confirmé des tendances que vous aviez déjà observées ? Vous pouvez également faire votre autocritique, surtout lors des premiers essais. Est-ce que vous aviez la bonne attitude ? Avez-vous réussi à mettre l’utilisateur à l’aise ? Êtes-vous resté seulement en surface ou êtes-vous parvenu à creuser davantage.
 
 Ensuite ? Ne vous précipitez pas sur votre ordinateur, prenez le temps de réfléchir à cet entretien et laissez mariner. Puis, partagez avec votre équipe ce que vous avez appris, ce qui vous a surpris, les pain points des utilisateurs, ou au contraire, les fonctionnalités les plus utiles. Cela permettra à tous les membres de votre équipe d’avoir une meilleure compréhension des besoins utilisateurs (vous avez une place privilégiée, proche de l’utilisateur, ce qui n’est pas le cas de tout le monde).
@@ -92,6 +103,7 @@ Personas : particulièrement utile pour décrire les différents types d’utili
 Présentation classique : communiquez le rapport que vous avez réalisé, mais incluez si possible des exemples, des citations, des situations concrètes, afin d’engager votre audience
 
 ##Conclusion##
+
 L’entretien utilisateur est un outil très puissant pour définir le besoin de vos utilisateurs, leurs pain points et identifier des opportunités pour orienter vos futurs développement (a.k.a. ne pas faire perdre de temps à vos devs, a.k.a. économiser du temps et de l’argent, a.k.a. se concentrer sur des fonctionnalités qui apporteront de la valeur à vos utilisateurs). 
 
 Faites preuve d’ouverture d’esprit, d’empathie, mais gardez toujours cette âme de détective et cherchez les motifs derrière les motivations de vos utilisateurs.
