@@ -28,6 +28,4 @@ Nous avons créé pour vous une Cheat Sheet qui vous permettra de retrouver rapi
   <img src="{{site.baseurl}}/assets/2020-02-11-cheat-sheet-docker/button.png">
 </p>
 
-Des questions, ou simplement envie d'échanger sur ce sujet ? Contactez-moi : [mmaireaux(at)eleven-labs.com](mailto:mmaireaux@eleven-labs.com)  
-Vous souhaitez partager vos connaissances sur ce sujet (ou un autre) ? Faites-le sur [Codelabs](https://codelabs.eleven-labs.com) !  
-Vous avez besoin d'accompagnement sur un projet ? Contactez-nous : [wilson(at)eleven-labs.com](mailto:wilson@eleven-labs.com) !
+Des questions, ou simplement envie d'échanger sur ce sujet ? N'hésitez pas à laisser un commentaire :)
