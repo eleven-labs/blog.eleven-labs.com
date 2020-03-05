@@ -47,22 +47,22 @@ Pour trouver les bons utilisateurs à interviewer, il vous faut d’abord défin
 Réalisez un brainstorming d'une vingtaine de questions avec votre équipe et gardez-en une dizaine seulement, celles qui vous paraissent les plus pertinentes.
 
 Quelques critères à respecter pour vous guider. Vos questions doivent :
-- être ouvertes, donc impossible de répondre par oui ou par non (d’où le nom de l’article)
-- tourner autour de 3 sujets fondamentaux : la valeur client, les points de frustration (appelés pain points plus souvent) et la motivation
-- challenger vos hypothèses
+- être ouvertes, donc impossible de répondre par oui ou par non (d’où le nom de l’article) ;
+- tourner autour de 3 sujets fondamentaux : la valeur client, les points de frustration (appelés pain points plus souvent) et la motivation ;
+- challenger vos hypothèses.
 
 Je vous ai également mis quelques exemples de questions ci-dessous :
-- “Comment faites-vous cela aujourd’hui ?” Cela vous permettra de savoir quelle fonctionnalité il utilise pour arriver à sa fin, s’il utilise votre produit ou cela d’un compétiteur.
+- “Comment faites-vous cela aujourd’hui ?” Cela vous permettra de savoir quelle fonctionnalité il utilise pour arriver à sa fin, s’il utilise votre produit ou celui d’un compétiteur
 - “Qu’est-ce qui est le plus frustrant dans ce produit/cette fonctionnalité ?”
 - “Si vous aviez une baguette magique, qu’est-ce que vous aimeriez pouvoir faire (sur notre plateforme/avec notre produit/avec cette fonctionnalité) et qui n’est pas possible aujourd’hui ?” 
 - “Est-ce que vous pouvez me donner un exemple ?” 
 - “Si cette fonctionnalité/ce produit était disponible aujourd’hui, est-ce que vous l’utiliseriez/l'acheteriez ?”
 
-Il ne faut pas pas influencer l'utilisateur. Lors de votre entretien, essayez de rester le plus neutre possible, que ce soit dans vos questions, mais aussi dans vos réactions. Au lieu de demander "Quelles difficultés éprouvez-vous à accéder à cette information ?", dites plutôt "Comment accédez-vous à cette information ?"
+Il ne faut pas influencer l'utilisateur. Lors de votre entretien, essayez de rester le plus neutre possible, que ce soit dans vos questions, mais aussi dans vos réactions. Au lieu de demander "Quelles difficultés éprouvez-vous à accéder à cette information ?", dites plutôt "Comment accédez-vous à cette information ?"
 
 ## Pendant l'entretien
 
-![](https://www.klatsch-tratsch.de/wp-content/uploads/2019/12/knives_out__daniel-craig_szenenbilder_18-300dpi.jpg]
+![](https://www.klatsch-tratsch.de/wp-content/uploads/2019/12/knives_out__daniel-craig_szenenbilder_18-300dpi.jpg)
 
 ### L'accueil
 
@@ -72,7 +72,7 @@ Demandez à votre interlocuteur s'il vous autorise à enregistrer la conversatio
 
 ### Mettez votre interlocuteur à l’aise
 
-Commencez par des questions basiques. En quoi consiste son rôle, avec quelle fréquence utilise-t-il votre produit, comment il en a entendu parler, etc. Le but est de le rassurer et de le mettre en confiance avant d’attaquer les questions à plus forte valeur ajoutée, celles qui vous intéressent vraiment. Essayez de faire passer ce moment comme une conversation informelle, votre interlocuteur sera plus détendu et par conséquent plus enclin à partager ses avis, ses émotions. 
+Commencez par des questions basiques. En quoi consiste son rôle, avec quelle fréquence utilise-t-il votre produit, comment il en a entendu parler, etc... Le but est de le rassurer et de le mettre en confiance avant d’attaquer les questions à plus forte valeur ajoutée, celles qui vous intéressent vraiment. Essayez de faire passer ce moment comme une conversation informelle, votre interlocuteur sera plus détendu et par conséquent plus enclin à partager ses avis, ses émotions. 
 
 ### Dans le vif du sujet
 
@@ -91,7 +91,7 @@ Par ailleurs, une personne ne vous livrera pas toutes les informations d'un coup
 
 Exemple : 
 *L’utilisateur :* “J’ai trouvé l’application vraiment facile à utiliser”
-*L’interrogateur :* “Qu’est-ce qui cette application ergonomique ?” 
+*L’interrogateur :* “Qu’est-ce qui rend cette application ergonomique ?” 
 *L’utilisateur :* “Et bien, l’interface n’était pas polluée avec trop d’informations…”
 
 Si vous avez un observateur avec vous, laissez-lui un peu de temps pour qu'il puisse poser ses questions. De par sa position plus distante, il aura peut-être perçu certaines informations que vous n'avez pas relevées et approfondir certains points qu'il juge intéressant de creuser.
@@ -108,7 +108,7 @@ Ensuite ? Ne vous précipitez pas sur votre ordinateur, prenez le temps de réfl
 N’hésitez pas à varier les formats lors de la présentation des résultats de votre analyse. Ci-dessous quelques exemples de supports :
 *User journey map :* cela illustrera toutes les actions menées par votre utilisateur en partant d’un point A pour arriver jusqu’à un point B
 *Personas :* particulièrement utile pour décrire les différents types d’utilisateurs, leurs motivations, frustrations et pour justifier les user stories qui en découlent
-*Présentation classique :* communiquez le rapport que vous avez réalisé, mais incluez si possible des exemples, des citations, des situations concrètes, afin d’engager votre audience
+*Présentation classique :* communiquez le rapport que vous avez réalisé, mais incluez si possible des exemples, des citations, des situations concrètes, afin d’engager votre audience.
 
 ## Conclusion
 
