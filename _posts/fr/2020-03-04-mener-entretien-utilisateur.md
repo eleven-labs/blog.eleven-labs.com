@@ -16,7 +16,7 @@ tags:
 ---
 
 ## Introduction
-L’entretien utilisateur doit vous aider à prendre de meilleures décisions, en analysant méthodiquement les besoins de vos utilisateurs, au lieu de vous baser sur vos intuitions. Nul censé remplacer les analyses quantitatives, il permettre en revanche de combler les angles morts de ces dernères en se concentrant davantage sur la qualité. Vous aurez une vision plus complète et juste des besoins des utilisateurs. 
+L’entretien utilisateur doit vous aider à prendre de meilleures décisions, en analysant méthodiquement les besoins de vos utilisateurs, au lieu de vous baser sur vos intuitions. Nullement censé remplacer les analyses quantitatives, il permettra en revanche de combler les angles morts de ces dernières en se concentrant davantage sur la qualité. Vous aurez une vision plus complète et juste des besoins des utilisateurs. 
 
 Faire des entretiens avec ses utilisateurs ne s’improvise pas. C’est un exercice qui se prépare et qui est plus difficile qu’il n’y paraît.
 
@@ -31,17 +31,17 @@ Dans l'idéal, composez une équipe de 3 personnes pour cet entretien.
 
 *L’interrogateur :* vous êtes celui qui mène l’entretien et devez être concentré à 100% dessus.
 
-*Le scribe :* son rôle est de retranscrire l’entretien et de noter des informations supplémentaires qui lui sembleront pertinentes, telles que les émotions que laisse transparaître l'utilisateur.
+*Le scribe :* son rôle est de retranscrire l’entretien et de noter les informations supplémentaires qui lui sembleront pertinentes, telles que les émotions que laisse transparaître l'utilisateur.
 
 *L'observateur :* son rôle, comme son nom l’indique, est d’observer l’entretien, mais avec une certaine distance. Il n’intervient pas, sauf à la fin s’il a des questions supplémentaires (on y reviendra). Je conseille de proposer ce rôle à un profil différent du vôtre, comme à l’un de vos devs. Il vous apportera une vision différente et pourrait vous proposer des solutions auxquelles vous n’auriez pas pensé.
 
 ### Trouvez les bons utilisateurs
 
-Ciblez d'abord un type d'utilisateur (en fonction de vos personas) qui pourra vous apporter des rensignements utiles en fonction du sujet. Ensuite, il existe une multitude de moyens pour les trouver : emailing, fans et haters sur les réseaux sociaux, etc... Si vous êtes en manque d’inspiration, je vous renvoie vers cet article qui contient 95 idées pour trouver vos utilisateurs.
+Ciblez d'abord un type d'utilisateur (en fonction de vos personas) qui pourra vous apporter des renseignements utiles en fonction du sujet. Ensuite, il existe une multitude de moyens pour les trouver : emailing, fans et haters sur les réseaux sociaux, etc...
 
 Essayez de faire au moins 5-6 entretiens par type d’utilisateurs (ou persona) que vous aurez identifié, vous pourrez déjà commencer à dégager des tendances. Au-delà d’un certain nombre, les entretiens ne vous apporteront plus autant de renseignements et vous perdrez du temps au lieu de vous concentrer sur leur analyse et les actions à mener.
 
-Pour trouver les bons utilisateurs à interviewer, il faut d'abord identifier le type dvous faut d’abord définir les objectifs de vos entretiens, les questions auxquelles il vous faut des réponses. Ensuite, assurez-vous de contacter seulement les utilisateurs qui répondent à vos besoins. Il existe une multitude de moyens pour les trouver : emailing, fans et haters sur les réseaux sociaux, etc... Si vous êtes en manque d’inspiration, je vous mets un lien renvoyant à une liste de [95 idées pour trouver vos utilisateurs](https://jasonevanish.com/2013/08/11/95-ways-to-find-your-first-customers-for-customer-development-or-your-first-sale/).
+Pour trouver les bons utilisateurs à interviewer, il faut d'abord définir les objectifs de vos entretiens, les questions auxquelles il vous faut des réponses. Ensuite, assurez-vous de contacter seulement les utilisateurs qui répondent à vos besoins. Il existe une multitude de moyens pour les trouver : emailing, fans et haters sur les réseaux sociaux, etc... Si vous êtes en manque d’inspiration, je vous mets un lien renvoyant à une liste de [95 idées pour trouver vos utilisateurs](https://jasonevanish.com/2013/08/11/95-ways-to-find-your-first-customers-for-customer-development-or-your-first-sale/).
 
 ### Préparez votre questionnaire
 
@@ -52,17 +52,14 @@ Quelques critères à respecter pour vous guider. Vos questions doivent :
 - tourner autour de 3 sujets fondamentaux : la valeur client, les points de frustration (appelés pain points plus souvent) et la motivation ;
 - challenger vos hypothèses.
 
-
 Il ne faut pas influencer l'utilisateur. Lors de votre entretien, essayez de rester le plus neutre possible, que ce soit dans vos questions, mais aussi dans vos réactions. Au lieu de demander "Quelles difficultés éprouvez-vous à accéder à cette information ?", dites plutôt "Comment accédez-vous à cette information ?"
 
-
-Vous trouvrez ci-dessous quelques exemples de questions types à poser durant votre entretient :
+Vous trouverez ci-dessous quelques exemples de questions types à poser durant votre entretien :
 - “Comment faites-vous cela aujourd’hui ?” Cela vous permettra de savoir quelle fonctionnalité il utilise pour arriver à sa fin, s’il utilise votre produit ou celui d’un compétiteur
 - “Qu’est-ce qui est le plus frustrant dans ce produit/cette fonctionnalité ?”
 - “Si vous aviez une baguette magique, qu’est-ce que vous aimeriez pouvoir faire (sur notre plateforme/avec notre produit/avec cette fonctionnalité) et qui n’est pas possible aujourd’hui ?” 
 - “Est-ce que vous pouvez me donner un exemple ?” 
 - “Si cette fonctionnalité/ce produit était disponible aujourd’hui, est-ce que vous l’utiliseriez/l'acheteriez ?”
-
 
 ## Pendant l'entretien
 
@@ -80,20 +77,16 @@ Commencez par des questions basiques. En quoi consiste son rôle, avec quelle fr
 
 ### Dans le vif du sujet
 
-
 **Ouvert d’esprit tu seras**  
 Un point important avant d’attaquer les questions que vous vous êtes notées : cette liste n'est pas un script que vous devez suivre à la lettre. Voyez-là plutôt comme un cadre, des points d'ancrage pour recentrer l'entretien si besoin. 
 
 Aussi, faites preuve d'ouverture d'esprit. Vous êtes ici pour écouter votre utilisateur, alors montrez-lui que vous vous sentez privilégié et chanceux de pouvoir écouter ce qu'il a à dire, il n’en sera que plus enclin à partager son expérience avec vous. Et surtout (!) on évite de vendre son produit ou son idée "hein, hein elle est bien ma feature !"
 
-
 **L’arsenal du détective**  
 En tant que questionneur, vous devez penser comme un détective et trouver quel motif se cache derrière les réponses de votre utilisateur. Pourquoi éprouve-t-il de la peine à trouver telle information ? Pourquoi veut-il absolument cette fonctionnalité ?
 Une technique directement issue de The Lean Startup d’Eric Ries (un must read, si vous ne l’avez toujours pas lu) et très pratique pour comprendre les motivations profondes de vos utilisateurs est celle des **5 Whys**. Cette technique consiste à demander “Pourquoi” cinq fois d'affilé aux réponses de votre interlocateur. Pour plus d'information sur cette technique, je vous ai mis un lien vers un [article qui détaille les étapes à suivre](https://kanbanize.com/lean-management/improvement/5-whys-analysis-tool/). 
 
-
 Assurez-vous de valider les informations que vous communique l'utilisateur. Pour cela, vous pouvez pratiquer **l’écoute active**. Cela consiste à écouter attentivement l’autre, dans un climat de confiance et de respect et de faire preuve d’empathie. La reformulation, qui fait partie de cette technique, est très utile pour s’assurer que l’on a bien compris le message de notre interlocuteur et le valider avec lui.
-
 
 Par ailleurs, une personne ne vous livrera pas toutes les informations d'un coup généralement. C’est donc votre rôle de lui donner un petit coup de pouce en la **relançant**/lui demandant des spécifications (le fameux “vous avez un exemple ?” vu plus tôt) :
 
