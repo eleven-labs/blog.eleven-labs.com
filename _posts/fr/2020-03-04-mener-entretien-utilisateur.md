@@ -76,12 +76,12 @@ Commencez par des questions basiques. En quoi consiste son rôle, avec quelle fr
 
 ### Dans le vif du sujet
 
-**Ouvert d’esprit tu seras**
+**Ouvert d’esprit tu seras**  
 Un point important avant d’attaquer les questions que vous vous êtes notées : cette liste n'est pas un script que vous devez suivre à la lettre. Voyez-là plutôt comme un cadre, des points d'ancrage pour recentrer l'entretien si besoin. 
 
 Aussi, faites preuve d'ouverture d'esprit. Vous êtes ici pour écouter votre utilisateur, alors montrez-lui que vous vous sentez privilégié et chanceux de pouvoir écouter ce qu'il a à dire, il n’en sera que plus enclin à partager son expérience avec vous. Et surtout (!) on évite de vendre son produit ou son idée "hein, hein elle est bien ma feature !"
 
-**L’arsenal du détective**
+**L’arsenal du détective**  
 En tant que questionneur, vous devez penser comme un détective et trouver quel motif se cache derrière les réponses de votre utilisateur. Pourquoi éprouve-t-il de la peine à trouver telle information ? Pourquoi veut-il absolument cette fonctionnalité ?
 Une technique directement issue de The Lean Startup d’Eric Ries (un must read, si vous ne l’avez toujours pas lu) et très pratique pour comprendre les raisons qui se cachent derrière les réponses de vos utilisateurs est celle des 5 Whys. Cette technique consiste à demander “Pourquoi” cinq fois pour comprendre la nature profonde du problème de votre interlocuteur. 
 
@@ -96,7 +96,7 @@ Exemple :
 
 Si vous avez un observateur avec vous, laissez-lui un peu de temps pour qu'il puisse poser ses questions. De par sa position plus distante, il aura peut-être perçu certaines informations que vous n'avez pas relevées et approfondir certains points qu'il juge intéressant de creuser.
 
-**On échange les rôles**
+**On échange les rôles**  
 Une fois cette étape terminée, il est temps d'inverser les rôles et de proposer à votre interlocuteur de vous poser des questions. D'une part cela est plus engageant d'un point de vue client (peut-être l'occasion de sécuriser un beta testeur héhé), d'autre part, il pourrait soulever un point pertinent auquel vous n'aviez pas pensé.
 
 ## Après l'entretien
