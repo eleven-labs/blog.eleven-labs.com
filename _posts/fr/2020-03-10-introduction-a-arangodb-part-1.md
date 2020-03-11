@@ -17,6 +17,7 @@ tags:
 # ArangoDB c'est quoi?
 ArangoDB est une base de donnée multi-modèle, ce qui veut dire qu'elle prend en charge plusieurs types de données nativement.
 elle supporte les données de type "clé-valeur", "document" ainsi que de type "graphe", et toute ces données peuvent être requêtées avec un seul et même language le AQL (ArangoDB Query Language) tout en assurant aux transactions les propriétés [ACID](https://fr.wikipedia.org/wiki/Propri%C3%A9t%C3%A9s_ACID) (atomicité, cohérence, isolation et durabilité).
+
 ArangoDB est open source (Apache License 2.0) possède une édition gratuite "Community" et un autre payante dite "Enterprise" avec des fonctionnalités en plus répondant à des problèmatiques de projets avancés.
 
 
@@ -49,6 +50,8 @@ Multiples sont les façons d'installer ArangoDB:
   - installation sur tout les systèmes d'exploitations (Ubuntu, Windows, macOS) ou autres distributions serveurs (CentOS, ...)
   - installation Docker avec une image officielle
   - installation Kubernetes (via kubectl ou helm) en local avec miniKube ou Google Cloud, Azure, Amazon (à savoir que ArangoDB a ses propres operator)
+
+Avec [ArangoDB Oasis](https://cloud.arangodb.com/home), il est même possible via leur site de lancer des instances hautement scalable d'ArangoDB déployées automatiquement sur AWS, Google Cloud ou Azure.
 
 Pour une première prise en main on va faire au plus simple c'est à dire une installation Docker:
 ``` bash
