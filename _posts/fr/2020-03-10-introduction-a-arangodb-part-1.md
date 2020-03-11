@@ -51,15 +51,16 @@ Multiples sont les façons d'installer ArangoDB:
   - installation Docker avec une image officielle
   - installation Kubernetes (via kubectl ou helm) en local avec miniKube ou Google Cloud, Azure, Amazon (à savoir que ArangoDB a ses propres operator)
 
-Avec [ArangoDB Oasis](https://cloud.arangodb.com/home), il est même possible via leur site de lancer des instances hautement scalable d'ArangoDB déployées automatiquement sur AWS, Google Cloud ou Azure.
+Avec [ArangoDB Oasis](https://cloud.arangodb.com/home), il est même possible via leur site de lancer des instances hautement scalables d'ArangoDB déployées automatiquement sur AWS, Google Cloud ou Azure.
 
 Pour une première prise en main on va faire au plus simple c'est à dire une installation Docker:
 ``` bash
 docker run -p 8529:8529 -e ARANGO_ROOT_PASSWORD=rocketEleven arangodb/arangodb:3.6.1
 ```
 
+
 # Interface
-Même si Arango de base expose par défaut une API REST pour pouvoir communiquer via le protocole HTTP, une interface graphique est également disponible à l'adresse [http://localhost:8529](http://localhost:8529)
+Même si Arango de base expose par défaut une API REST pour pouvoir communiquer via le protocole HTTP, une interface graphique est également disponible; pour nous ce sera à l'adresse [http://localhost:8529](http://localhost:8529)
 
 ![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/login.webp)
 Le login admin par défaut est "root" et le mot de passe est celui fournit dans la ligne de commande ci dessus, ici "rocketEleven"
@@ -68,10 +69,11 @@ Le login admin par défaut est "root" et le mot de passe est celui fournit dans 
 Chaque serveur par défaut avec un base de donnée "_system", sélectionnez là.
 
 ![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/dashboard.png)
-Nous accédons enfin sur le dashboard de l'instance, qui présente quelques statistiques (le nombre de requête par seconde, le type de requêtes, le nombre de connexions, mémoire, CPU, etc...)
-A savoir que par défaut ArangoDB choisit l'architecture "single instance", si on avait choisit le mode "cluster" nous aurions eu des statistiques sur les noeuds le composant (Coordinator, DB Server, Agency) ainsi que leur endpoint;
 
-De cette Interface nous pouvons créer des utilisteurs, des nouvelles bases de données, des collections de différents types données, mais ce sera le sujet de la partie 2.
+Nous accédons enfin au dashboard de l'instance, qui présente quelques statistiques (le nombre de requêtes par seconde, le type de requête, le nombre de connexions, mémoire, CPU, etc...)
+A savoir que par défaut ArangoDB choisit l'architecture "single instance", si on avait choisit le mode "cluster" nous aurions eu des statistiques sur les noeuds le composant (Coordinator, DB Server, Agency) ainsi que leur endpoint.
+
+De cette Interface nous pouvons créer des utilisteurs, des nouvelles bases de données, des collections de différents types données, mais ce sera le sujet de la deuxième partie.
 
 
 # La suite
