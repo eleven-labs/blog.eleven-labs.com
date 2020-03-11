@@ -21,7 +21,7 @@ ArangoDB est open source (Apache License 2.0) possède une édition gratuite "Co
 
 
 # Performances et architecture
-Du fait que ArangoDB est basé sur des concepts NoSQL, et que tout est en quelque sorte "document", elle est réputé pour être très réactive sur les opérations écriture/lecture mais également pour des requêtes sur les données de type graphe ( pour les plus curieux voici un [lien](https://www.arangodb.com/2018/02/nosql-performance-benchmark-2018-mongodb-postgresql-orientdb-neo4j-arangodb/) vers un benchmark présentant ses résultats avec ceux de bases de données connues et techniquement comparable; ce test ne date pas d'hier, donc à prendre avec des pincettes, mais cela vous donnera une petite idée de ses performances.
+Du fait que ArangoDB est basé sur des concepts NoSQL, et que tout est en quelque sorte "document" avec une indexation des données customisable et poussée, elle est réputé pour être très réactive sur des opérations écriture/lecture mais également pour des requêtes orientées graphe ( pour les plus curieux voici un [lien](https://www.arangodb.com/2018/02/nosql-performance-benchmark-2018-mongodb-postgresql-orientdb-neo4j-arangodb/) vers un benchmark présentant ses résultats avec ceux de bases de données connues et techniquement comparable; ce test ne date pas d'hier, donc à prendre avec des pincettes, mais cela vous donnera une petite idée de ses performances ).
 
 
 ArangoDB vient également avec des notions de réseau et vous laisse choisir entre plusieurs architectures:
@@ -68,6 +68,8 @@ Chaque serveur par défaut avec un base de donnée "_system", sélectionnez là.
 Nous accédons enfin sur le dashboard de l'instance, qui présente quelques statistiques (le nombre de requête par seconde, le type de requêtes, le nombre de connexions, mémoire, CPU, etc...)
 A savoir que par défaut ArangoDB choisit l'architecture "single instance", si on avait choisit le mode "cluster" nous aurions eu des statistiques sur les noeuds le composant (Coordinator, DB Server, Agency) ainsi que leur endpoint;
 
+De cette Interface nous pouvons créer des utilisteurs, des nouvelles bases de données, des collections de différents types données, mais ce sera le sujet de la partie 2.
+
 
 # La suite
-Dans la partie 2 de cette article nous allons créer une base de donnée ArongoDB, avec plusieurs collections de différents types de données (Document, Graphe,..) et commencer à voir comment les requêter via le language AQL.
+Dans la partie 2 de cette article nous allons voir comment créer une base de donnée ArongoDB, avec plusieurs collections de différents types de données (Document, Graphe,..) et voir comment les requêter via le language AQL.
