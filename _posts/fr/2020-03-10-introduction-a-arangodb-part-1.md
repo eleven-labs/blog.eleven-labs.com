@@ -39,11 +39,11 @@ ArangoDB vient également avec des notions de réseau et vous laisse choisir ent
 
 - "Cluster" : architecture la plus intéressante selon moi, qui permet une haute scalabilité devant un fort traffic. Chaque "cluster est composé de différents nœuds ayant des rôles bien définis :
   
- - l'Agence (Agency) : elle est en charge de prioriser les opérations qui arrivent et de gérer les services de synchronisation. Sans elle, les composants ci-dessous ne peuvent pas communiquer.
+    -   l'Agence (Agency) : elle est en charge de prioriser les opérations qui arrivent et de gérer les services de synchronisation. Sans elle, les composants ci-dessous ne peuvent pas communiquer.
 
- - le coordinateur (Coordinator) : ce composant est le point d'entrée entre le client et la donnée, elle coordonne les requêtes entre les différentes instances de base de donnée.
+    -   le coordinateur (Coordinator) : ce composant est le point d'entrée entre le client et la donnée, elle coordonne les requêtes entre les différentes instances de base de donnée.
 
- - l'instance de base de donnée (DB Server) : responsable de l'écriture et lecture des données.
+    -   l'instance de base de donnée (DB Server) : responsable de l'écriture et lecture des données.
 
 ![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/cluster.webp) 
 
