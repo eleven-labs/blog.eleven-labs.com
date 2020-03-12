@@ -29,19 +29,19 @@ Pour les plus curieux voici un [lien](https://www.arangodb.com/2018/02/nosql-per
 
 ArangoDB vient également avec des notions de réseau et vous laisse choisir entre plusieurs architectures :
 
-  - "Single instance" : une unique instance Arango existera sur le serveur.
+- "Single instance" : une unique instance Arango existera sur le serveur.
 
-  - "master/slave" : toutes les opérations se fera sur le "master", pendant que l'instance "slave" effectuera une réplication du "master" de façon asynchrone.
+- "master/slave" : toutes les opérations se fera sur le "master", pendant que l'instance "slave" effectuera une réplication du "master" de façon asynchrone.
 
-  - "Active Failover" : presque le même principe "Master/Slave", sauf que l'instance "Master" est déterminé par un composant de la base de donnée "Agency Supervision" et donne le droit d'écriture et lecture à une instance de façon dynamique.
+- "Active Failover" : presque le même principe "Master/Slave", sauf que l'instance "Master" est déterminé par un composant de la base de donnée "Agency Supervision" et donne le droit d'écriture et lecture à une instance de façon dynamique.
 
-  - "Cluster" : architecture la plus intéressante selon moi, qui permet une haute scalabilité devant un fort traffic. Chaque "cluster est composé de différents nœuds ayant des rôles bien définis :
+- "Cluster" : architecture la plus intéressante selon moi, qui permet une haute scalabilité devant un fort traffic. Chaque "cluster est composé de différents nœuds ayant des rôles bien définis :
+  
+ - l'Agence (Agency) : elle est en charge de prioriser les opérations qui arrivent et de gérer les services de synchronisation. Sans elle, les composants ci-dessous ne peuvent pas communiquer.
 
-             - l'Agence (Agency) : elle est en charge de prioriser les opérations qui arrivent et de gérer les services de synchronisation. Sans elle, les composants ci-dessous ne peuvent pas communiquer.
+ - le coordinateur (Coordinator) : ce composant est le point d'entrée entre le client et la donnée, elle coordonne les requêtes entre les différentes instances de base de donnée.
 
-             - le coordinateur (Coordinator) : ce composant est le point d'entrée entre le client et la donnée, elle coordonne les requêtes entre les différentes instances de base de donnée.
-
-             - l'instance de base de donnée (DB Server) : responsable de l'écriture et lecture des données.
+ - l'instance de base de donnée (DB Server) : responsable de l'écriture et lecture des données.
 
 ![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/cluster.webp) 
 
