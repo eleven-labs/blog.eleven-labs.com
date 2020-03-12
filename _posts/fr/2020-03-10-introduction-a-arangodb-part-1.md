@@ -4,10 +4,12 @@ title: "Introduction à ArangoDB Part 1"
 excerpt: "Dans cet article, nous allons faire un petit tour de cette base de données multi-modèles"
 authors:
     - vdelpeyroux
-permalink: /fr/s/
+permalink: /fr/introduction-a-arangodb-part-1/
 categories:
     - base de données
 tags:
+    - arangodb
+    - NoSQL
     - base de données multi-modèles
     - javascript
     - graphe
