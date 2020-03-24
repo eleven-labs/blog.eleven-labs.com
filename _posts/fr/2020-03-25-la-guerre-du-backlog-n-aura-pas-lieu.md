@@ -1,7 +1,7 @@
 ---
 layout: post
 title: La Guerre du Backlog n'aura pas lieu
-excerpt: Quelques méthodes pour bien prioriser votre backlog
+excerpt: Quelques méthodes de priorisation du Backlog pour gagner des batailles, vous faire des alliés et pacifier le développement du Produit !
 authors:
     - mpeaudecerf
 permalink: /fr/la-guerre-du-backlog-n-aura-pas-lieu
@@ -34,6 +34,8 @@ Voici des éléments déclencheurs parmi tant d’autres d’une guerre du Backl
 
 Et pour vous lancer dans cette véritable course contre la montre, vous faire des alliés et pacifier le développement du Produit, voici quelques méthodes de priorisation du Backlog qui pourront très certainement vous accompagner.
 
+
+![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Scoffield & Blake.jpg)
 
 
 # Tactique numéro 1 : l’oeil de MoSCoW
@@ -68,6 +70,10 @@ N’hésitez pas à inclure l’équipe de développement à cet atelier pour le
 
 Les participants sélectionnent des post-it et viennent les placer dans les différentes catégories, dans un premier temps sans échanger.
 Ils devront dans un second temps échanger sur les post-its qui font débat. Il est important de bien cadrer l’atelier pour équilibrer le nombre de post-its dans les différentes catégories. Si trop de tickets sont encore en Must Have ou Should Have, demandez aux participants de de débattre à nouveau sur les éléments en Must Have pour n’en garder qu’un nombre défini. Répétez l’opération sur les Should Have jusqu’à l’obtention d’un nombre cohérent d’US dans chaque catégorie.
+
+
+![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/MoSCoW.jpg)
+
 
 *Cette méthode peut s’avérer inefficace si les différentes parties prenantes manquent d’objectivité ou si les relations sont très conflictuelles entre les différents services. Elle présente néanmoins l’intérêt d’aligner tous les métiers sur des objectifs communs lors d’un atelier assez simple à mettre en place. Cet atelier pourra être répété à intervalle régulier et est un bon moyen d’engager vos parties prenantes !*
 
@@ -137,12 +143,7 @@ Si la tactique MoSCoW ou la priorisation par la business value ne porte pas ses 
 ### Estimer vos chances de victoire
 
 Le calcul de l’indicateur WSJF tiendra compte des valeurs suivantes :
-```
-|Coût du délai|Complexité|
-|-------------|-------------|-----|----------|
-|Business Value|Niveau d'urgence|Réduction des risques|Taille de la fonctionnalité|
-|0, 1, 2, 3, 5, 8, 13…|0, 1, 2, 3, 5, 8, 13…|0, 1, 2, 3, 5, 8, 13…|0, 1, 2, 3, 5, 8, 13…|
-```
+
 -   **Business value** : la valeur métier de la fonctionnalité estimée avec les parties prenantes
     
 -   **Niveau d’urgence** : la fonctionnalité doit-elle être livrée rapidement ? Quelle criticité pour cette fonctionnalité ?
@@ -152,6 +153,8 @@ Le calcul de l’indicateur WSJF tiendra compte des valeurs suivantes :
 -   **Taille de la fonctionnalité à développer** : points de complexité estimés par l’équipe de développement
 
 Pour chacune des valeurs, vous pourrez utiliser la suite de Fibonacci pour les noter.
+
+![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/WSJF.jpg)
 
 Une fois les différentes valeurs notées, vous voilà prêt pour le grand calcul.
 
@@ -229,6 +232,12 @@ Exemple de réponse utilisateur dans notre exemple du login : “la fonctionnali
 #### Analyse de l’interrogatoire
 
 Chacune des fonctionnalités pourra à la suite des entretiens avec les utilisateurs être située sur la grille suivante :
+
+
+![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/EvalTable-Kano-Model.png)
+Source : © Daniel Zacarias - Folding Burritos
+
+
 Le modèle Kano permet ainsi d’identifier des catégories de fonctionnalités :
 
 -   **M** : les facteurs de base ou "must have" qui génèrent de l'insatisfaction s’ils ne sont pas présents et qui sont attendus dans le produit. Ce ne sont pas forcément des fonctionnalités innovantes mais elles sont nécessaires !
@@ -278,7 +287,7 @@ Les votes pourront être donnés par les différentes parties prenantes en annot
 
 Votre tableau trello peut par exemple contenir les colonnes suivantes : Inbox / Won’t Have / Could Have / Should Have / Must Have / Maquettes / Backlog Jira. Vous pouvez ainsi déplacer les cartes au rythme des remontées client.
 
-A l’aide d’un power up Trello, une intégration automatique des feedbacks peut se faire depuis votre Zendesk, votre Intercom ou autre outil de gestion des remontées clients dans votre Trello de suivi des remontées clients. De même, une fois un élément qualifié, un power up Trello peut vous permettre de créer de manière automatique la carte dans Jira.
+A l’aide d’un power-up, une intégration automatique des feedbacks peut se faire depuis votre Zendesk, votre Intercom ou autre outil de gestion des remontées clients dans votre Trello de suivi des remontées clients. De même, une fois un élément qualifié dans Trello, un power-up peut vous permettre de créer de manière automatique la carte dans Jira.
 
 
 ### Les bénéfices de cette stratégie
@@ -290,12 +299,14 @@ Cela demande certes au PO de faire un suivi régulier d’un second tableau de b
     
 -   Justifier des choix de priorisation et les faire comprendre : “oui les investisseurs sont friands de telle fonctionnalité mais on préfère prioriser la fonctionnalité d’export des rapports en .xls car elle intéresse plus de X prospects et X clients listés sur la carte” ou encore “Non, ta demande de fonctionnalité datant de la semaine dernière ne sera pas développée dans le prochain sprint car ta demande concernant le login via les réseaux sociaux datant d’il y a trois mois vient tout juste d’être intégrée au sprint”.
 
-Le but n’est pas de faire un écran de fumée sur le backlog qui doit rester l’outil central de priorisation du backlog mais d’avoir un espace vous permettant de qualifier les nombreuses remontées clients ou métiers et de communiquer avec vos généraux de guerre !
-  
+Le but n’est pas de faire un écran de fumée sur le backlog qui doit rester l’outil central de priorisation du backlog et des fonctionnalités mais d’avoir un espace vous permettant de qualifier les nombreuses remontées clients ou métiers et de communiquer avec vos généraux de guerre !
+
+
+  ![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Communication-1917.jpg
 
 
 ## CONCLUSION
 
 D’autres méthodes telles que le story mapping, l’impact mapping, le RICE etc… peuvent être utilisées pour prioriser votre backlog qui feront peut être l’objet d’un prochain article. Le plus important est de trouver la méthode qui fonctionne avec vos parties prenantes, votre équipe, votre produit. Alors restez agiles, testez, itérez, changez, mixez les méthodes en fonction de vos objectifs et de la maturité de votre produit !
 
-Et surtout rappelez vous que la communication et l’engagement des différents corps de métier dans la stratégie produit sont clés. En terme de priorisation, il n’y a pas d’ennemis, il faut avant tout faire front avec toutes les parties prenantes pour développer un produit qui apporte une plus grande satisfaction aux utilisateurs !
+Et surtout rappelez-vous que la communication et l’engagement des différents corps de métier dans la stratégie produit sont clés. En terme de priorisation, il n’y a pas d’ennemis, il faut avant tout faire front avec toutes les parties prenantes pour développer un produit qui apporte une plus grande satisfaction aux utilisateurs !
