@@ -19,6 +19,7 @@ tags:
     
 ---
 
+
 Jackpot, vous venez de décrocher un nouveau poste de PO ou PM mais dès vos premiers jours, c’est le drame… le backlog compte bien plus de 150 items, nombre maximum recommandé par le Scrum Guide, et sont tous marqués d’une étiquette rouge Must Have ou d’une Priorité Highly Important…
 
 Les feedbacks et suggestions de nouvelles fonctionnalités de vos utilisateurs pleuvent et la rétention de vos clients est en jeu…
@@ -33,6 +34,8 @@ Voici des éléments déclencheurs parmi tant d’autres d’une guerre du Backl
 
 Et pour vous lancer dans cette véritable course contre la montre, vous faire des alliés et pacifier le développement du Produit, voici quelques méthodes de priorisation du Backlog qui pourront très certainement vous accompagner.
 
+
+
 # Tactique numéro 1 : l’oeil de MoSCoW
 
 Les éléments de votre backlog ne sont pas encore priorisés ou vous voulez rebattre les cartes et vérifier les priorités établies. Une priorisation MoSCoW peut être un premier angle d’attaque simple.
@@ -41,15 +44,14 @@ Il s’agit de classer les éléments de votre backlog dans les catégories suiv
 
 - **M – Must have** : les éléments vitaux pour votre produit
     
-
 - **S – Should have** : les éléments importants, mais pas vitaux pour votre produit
     
 - **C – Could have** : les éléments qui pourront être développés s’ils n’ont pas d’impacts sur les tâches vitales
     
 - **W – Won’t have** : éléments avec moins ou pas de valeur immédiate et qui pourront être réévalués dans une version ultérieure du produit
     
-
 Mais comment procéder pour ne pas obtenir tous les éléments de votre backlog en Must Have ?
+
 
 ### Préparation du conseil de guerre
 
@@ -68,6 +70,8 @@ Les participants sélectionnent des post-it et viennent les placer dans les diff
 Ils devront dans un second temps échanger sur les post-its qui font débat. Il est important de bien cadrer l’atelier pour équilibrer le nombre de post-its dans les différentes catégories. Si trop de tickets sont encore en Must Have ou Should Have, demandez aux participants de de débattre à nouveau sur les éléments en Must Have pour n’en garder qu’un nombre défini. Répétez l’opération sur les Should Have jusqu’à l’obtention d’un nombre cohérent d’US dans chaque catégorie.
 
 *Cette méthode peut s’avérer inefficace si les différentes parties prenantes manquent d’objectivité ou si les relations sont très conflictuelles entre les différents services. Elle présente néanmoins l’intérêt d’aligner tous les métiers sur des objectifs communs lors d’un atelier assez simple à mettre en place. Cet atelier pourra être répété à intervalle régulier et est un bon moyen d’engager vos parties prenantes !*
+
+
 
 ## Tactique numéro 2 : la business value, cheval de Troie du backlog
 
@@ -101,8 +105,8 @@ L’idéal est de prendre en compte l’ensemble de ces éléments lors de l’e
     
 **4.** Si les valeurs choisies divergent, les participants échangent et démarrent ce challenge collectif de prioriser telle ou telle US
     
-
 *Astuce* : si vous êtes à distance, le poker planning ou priority poker est toujours possible sur [Voting Poker](http://www.votingpoker.com/) ou [Planitpoker](https://www.planitpoker.com/)
+
 
 ### Infiltrez le cheval dans l’enceinte du backlog
 
@@ -116,15 +120,19 @@ En tant que PO, la business value vous permettra également de communiquer aupr�
 
 La business value pourra également améliorer la perception de l’équipe de développement qui ne sera plus uniquement un centre de coût mais un centre de création de valeur.
 
+
 ### Le talon d’Achille
 
 Attention la business value doit nécessairement être réévaluée régulièrement, à l’aune de l’arrivée d’un nouveau concurrent sur le marché, à l’aune d’une évolution dans les comportements des utilisateurs, d’une demande de nouvelle fonctionnalité etc… L’indicateur de la business value n’est jamais figé.
 
 Par ailleurs, soyez vigilants à ce que la business value ne devienne pas un indicateur de performance de l’équipe car la vélocité en terme de business value sera forcément amenée à décroître à mesure que vous allez dépiler les éléments du backlog.
 
+
+
 ## Tactique numéro 3 : WSJF, partisan du moindre effort !
 
 Si la tactique MoSCoW ou la priorisation par la business value ne porte pas ses fruits, la méthode WSJF, issue de SaFe, peut faire ressortir des priorités dans la multitude de fonctionnalités en Must Have dans votre backlog ! Le WSJF a pour objectif de faire ressortir les features les plus importantes et les plus courtes / rapides à développer en top de votre backlog. Si vous hésitez donc entre deux fonctionnalités Highly Important pour le business, le WSJF peut vous faire gagner une bataille.
+
 
 ### Estimer vos chances de victoire
 
@@ -147,6 +155,7 @@ Pour chacune des valeurs, vous pourrez utiliser la suite de Fibonacci pour les n
 
 Une fois les différentes valeurs notées, vous voilà prêt pour le grand calcul.
 
+
 ### Calculer vos chances de victoire
 
 On calcule d’abord le coût du délai pour chacune des fonctionnalités : **Coût du délai = Business value + Niveau d’urgence + Réduction des risques**
@@ -160,6 +169,8 @@ Si la criticité ou la réduction du délai est difficile à mesurer sur votre p
 
 *Le WSJF peut vous aider à légitimer vos choix et votre priorisation notamment auprès des équipes dirigeantes, des équipes métier cependant le calcul des différents indicateurs peut se révéler chronophage donc vous pouvez choisir de ne l’utiliser que sur des Epics ou Roadmap Features.*
 
+
+
 ## Tactique numéro 4 : Kano, nous avons les moyens de vous faire parler !
 
 Reprenons notre élément déclencheur : Les feedbacks et suggestions de nouvelles fonctionnalités de vos utilisateurs pleuvent et la rétention de vos clients est en jeu... On change alors d’angle d’attaque en se concentrant sur les utilisateurs du produit avec le modèle Kano !
@@ -167,6 +178,7 @@ Reprenons notre élément déclencheur : Les feedbacks et suggestions de nouvell
 Le modèle créé en 1984 par Noriaki Kano trouve son fondement dans le fait qu'il n'y a pas forcément de symétrie entre la satisfaction et l'insatisfaction d’un utilisateur.
 
 Ainsi certains facteurs peuvent par leur absence influencer fortement l'insatisfaction sans pour autant apporter une satisfaction lorsqu'ils sont présents. De même un facteur de satisfaction client peut ne pas apporter d’insatisfaction par son absence comme le Message de Bienvenue sur une application ou le cadeau envoyé par airbnb après la résolution d’un litige.
+
 
 ### Préparation de l’interrogatoire
 
@@ -178,40 +190,41 @@ Ainsi certains facteurs peuvent par leur absence influencer fortement l'insatisf
 -   Le produit possède cette fonctionnalité (Fonctionnel)
 -   Le produit ne possède pas cette fonctionnalité (Dysfonctionnel)
     
-
 Préparez donc bien vos questions fonctionnelles et dysfonctionnelles. Elles doivent être tournées en terme de bénéfice pour l’utilisateur, par exemple :
 -   Fonctionnel : Vous pouvez vous logger via les réseaux sociaux, qu’en pensez-vous ?
 -   Dysfonctionnel : Vous devez créer un profil utilisateur, login et mdp pour votre première connexion, qu’en pensez-vous ?
     
 N’hésitez pas au besoin à présenter un prototype ou une maquette d’une fonctionnalité pour permettre aux utilisateurs interrogés de se projeter.
 
+
 ### Déroulement du grand interrogatoire
 
 L’utilisateur devra répondre aux deux questions en choisissant parmi les 5 réponses suivantes :
 
-**1.**  **Like it** - J’aime cette fonctionnalité
+**1. Like it** - J’aime cette fonctionnalité
     
-**2.**  **Expect it** - J’attend ou espère cette fonctionnalité
+**2. Expect it** - J’attend ou espère cette fonctionnalité
     
-**3.**  **Don’t Care** - Je suis neutre
+**3. Don’t Care** - Je suis neutre
     
-**4.**  **Live with** - Je fais avec, je m’en contente
+**4. Live with** - Je fais avec, je m’en contente
     
-**5.**  **Dislike** - Je n’aime pas la fonctionnalité, elle me déplaît fortement
+**5. Dislike** - Je n’aime pas la fonctionnalité, elle me déplaît fortement
     
 N’hésitez pas à rephraser pour les questions dysfonctionnelles pour permettre à l’utilisateur de bien exprimer ses sentiments :
 
-**1.**  Cela m’est très utile
+**1. Cela m’est très utile**
     
-**2.** C’est une fonctionnalité nécessaire pour moi
+**2. C’est une fonctionnalité nécessaire pour moi**
     
-**3.**  Cela m’est égal, cela ne m’affecte pas
+**3. Cela m’est égal, cela ne m’affecte pas**
     
-**4.**  C’est un inconvénient mineur
+**4. C’est un inconvénient mineur**
     
-**5.**  C’est un problème majeur
+**5. C’est un problème majeur**
     
 Exemple de réponse utilisateur dans notre exemple du login : “la fonctionnalité de login via les réseaux sociaux m’est très utile, mais cela m’est égal de devoir créer un compte utilisateur lors de ma première connexion”
+
 
 #### Analyse de l’interrogatoire
 
@@ -237,6 +250,8 @@ Pour plus d’information sur l’analyse des résultats, n’hésitez pas à co
 
 *Cette méthode n’est pas forcément adaptée à une priorisation régulière du backlog car elle peut s’avérer chronophage cependant elle est extrêmement efficace pour prioriser des nouvelles features et tester l’appétence des utilisateurs pour ces fonctionnalités, trouver les fonctionnalités d’excitation, inattendues qui vont créer une forte rétention client et vous démarquer potentiellement de la concurrence.*
 
+
+
 ## Tactique numéro 5 : ruse de Sioux
 
 Reprenons deux de nos deux éléments déclencheurs :
@@ -253,15 +268,18 @@ Pour contrer ces risques de défaite Produit, je vous propose non pas une métho
 
 Au lieu d’alimenter votre backlog d’absolument toutes les remontées clients non qualifiées, n’hésitez pas à construire un Trello ou à défaut un Google Sheet, partagé avec vos différentes parties prenantes, dans lequel ils pourront eux-même faire des remontées ou demandes de nouvelles fonctionnalités.
 
+
 ### Etape 2 : Ouvrez un système de votes sur les différentes cartes, features demandées
 
 Les votes pourront être donnés par les différentes parties prenantes en annotant dans la carte Trello le client qui a fait la demande de fonctionnalité.
+
 
 ### Etape 3 : Qualifier les cartes
 
 Votre tableau trello peut par exemple contenir les colonnes suivantes : Inbox / Won’t Have / Could Have / Should Have / Must Have / Maquettes / Backlog Jira. Vous pouvez ainsi déplacer les cartes au rythme des remontées client.
 
 A l’aide d’un power up Trello, une intégration automatique des feedbacks peut se faire depuis votre Zendesk, votre Intercom ou autre outil de gestion des remontées clients dans votre Trello de suivi des remontées clients. De même, une fois un élément qualifié, un power up Trello peut vous permettre de créer de manière automatique la carte dans Jira.
+
 
 ### Les bénéfices de cette stratégie
 Cela demande certes au PO de faire un suivi régulier d’un second tableau de bord que le backlog Jira mais cela permet de :
@@ -274,6 +292,7 @@ Cela demande certes au PO de faire un suivi régulier d’un second tableau de b
 
 Le but n’est pas de faire un écran de fumée sur le backlog qui doit rester l’outil central de priorisation du backlog mais d’avoir un espace vous permettant de qualifier les nombreuses remontées clients ou métiers et de communiquer avec vos généraux de guerre !
   
+
 
 ## CONCLUSION
 
