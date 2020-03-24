@@ -30,9 +30,9 @@ Les investisseurs ne jurent que par cette fonctionnalité et votre big boss vous
 
 Vous vous y perdez entre la priorisation d’un backlog Produit, backlog Tech et backlog bug…
 
-Voici des éléments déclencheurs parmi tant d’autres d’une guerre du Backlog. Vous voilà donc engagé, tels les deux soldats britanniques Schofield et Blake, dans une bataille à proprement parler impossible. Vous êtes investi d’une mission qui pourrait bien empêcher une attaque dévastatrice sur le Produit !
+Voici des éléments déclencheurs parmi tant d’autres d’une **Guerre du Backlog**. Vous voilà donc engagé, tels les deux soldats britanniques Schofield et Blake, dans une bataille à proprement parler impossible. Vous êtes investi d’une mission qui pourrait bien empêcher une attaque dévastatrice sur le Produit !
 
-Et pour vous lancer dans cette véritable course contre la montre, vous faire des alliés et pacifier le développement du Produit, voici quelques méthodes de priorisation du Backlog qui pourront très certainement vous accompagner.
+Et pour vous lancer dans cette véritable course contre la montre, vous faire des alliés et pacifier le développement du Produit, voici quelques **méthodes de priorisation du Backlog** qui pourront très certainement vous accompagner.
 
 
 ![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Scoffield & Blake.jpg)
@@ -57,13 +57,13 @@ Mais comment procéder pour ne pas obtenir tous les éléments de votre backlog 
 
 ### Préparation du conseil de guerre
 
-**1.**  Regroupez vos forces en un seul et même bataillon lors d’un atelier. Equipes métier, Sales, Marketing, Support client… Assurez-vous d’avoir un échantillon représentatif des différentes parties prenantes autour de la table, y compris les décideurs pour ne pas revenir sur les priorités établies quelques jours seulement après l’atelier. 
+**1.**  **Regroupez vos forces en un seul et même bataillon lors d’un atelier**. Equipes métier, Sales, Marketing, Support client… Assurez-vous d’avoir un échantillon représentatif des différentes parties prenantes autour de la table, y compris les décideurs pour ne pas revenir sur les priorités établies quelques jours seulement après l’atelier. 
 
 N’hésitez pas à inclure l’équipe de développement à cet atelier pour leur donner une meilleure vision produit mais également afin qu’ils puissent partager la complexité technique de tel ou tel élément du backlog aux parties prenantes en cas de difficulté d’arbitrage
     
-**2.**  Préparer et afficher sur des post-its les éléments du backlog à prioriser, les post-its doivent être visibles par tous les participants
+**2.**  **Préparer et afficher sur des post-its les éléments du backlog à prioriser**, les post-its doivent être visibles par tous les participants
     
-**3.**  Afficher sur un board les catégories Must, Should, Could et Won't dans lesquelles les participants devront placer les post-its
+**3.**  Afficher sur un board les **catégories Must, Should, Could et Won't** dans lesquelles les participants devront placer les post-its
     
 
 ### Déroulement du conseil de guerre
@@ -86,7 +86,7 @@ Et si la valeur business, l’utilité d’un élément du backlog, devenait un 
 
 ### Business Value : Késako ?
 
-A vous de trouver la définition la plus adaptée à votre produit, il peut s’agir de la valeur :
+A vous de trouver la définition la plus adaptée à votre produit, il peut s’agir de la **valeur** :
 
 - **Commerciale** : acquisition client, upsell, rétention etc...
    
@@ -103,11 +103,11 @@ L’idéal est de prendre en compte l’ensemble de ces éléments lors de l’e
 
 ### Construisez le cheval de Troie
 
-**1.**  Préparez vos éléments de backlog à scorer et votre jeu de carte de poker planning
+**1.**  Préparez vos **éléments de backlog à scorer** et votre jeu de **carte de poker planning
     
-**2.**  Regroupez vos parties prenantes lors d’un atelier
+**2.**  Regroupez vos parties prenantes lors d’un **atelier**
     
-**3.**  1, 2, 3 - Scorez : comme dans une session de poker planning qu’on peut appeler ici priority poker, un élément du backlog est présenté et les participants choisissent une carte numérotée pour estimer la valeur business
+**3.**  1, 2, 3 - Scorez : comme dans une session de poker planning qu’on peut appeler ici **priority poker**, un élément du backlog est présenté et les participants choisissent une carte numérotée pour estimer la valeur business
     
 **4.** Si les valeurs choisies divergent, les participants échangent et démarrent ce challenge collectif de prioriser telle ou telle US
     
@@ -119,18 +119,18 @@ L’idéal est de prendre en compte l’ensemble de ces éléments lors de l’e
 La business value va donner du sens à l’équipe. Pourquoi cette US est prioritaire par rapport à une autre ? Je dois choisir entre deux US à développer dans le sprint en cours, et si je commençais par celle qui a le plus de valeur business ? 
 Vous pouvez ainsi décider de rajouter cet indicateur sur vos US dans Jira à l’aide d’un champs personnalisé (custom fileds).
 
-Cela vous permettra de mesurer la valeur business créée, de l’afficher, de communiquer sur celle-ci. La business value est un indicateur bien plus intéressant que la vélocité qui a d’ailleurs pour vocation à rester interne à l’équipe de développement. Vous pouvez tout à fait créer un burnup Chart dédié à la valeur créé dans le sprint.
+Cela vous permettra de mesurer la valeur business créée, de l’afficher, de communiquer sur celle-ci. La business value est un indicateur bien plus intéressant que la vélocité qui a d’ailleurs pour vocation à rester interne à l’équipe de développement. Vous pouvez tout à fait créer un **burnup Chart dédié à la valeur créé dans le sprint.
 
-*La business value est une méthode de priorisation assez puissante et qui reste somme toute assez simple à mettre en place. Elle permettra au PO ou PM de justifier factuellement la priorisation des fonctionnalités auprès des différentes parties prenantes, acteurs eux-même de la définition de la business value.
+La business value est une méthode de priorisation assez puissante et qui reste somme toute assez simple à mettre en place. Elle permettra au PO ou PM de **justifier factuellement la priorisation des fonctionnalités auprès des différentes parties prenantes, acteurs eux-même de la définition de la business value.
 
-*En tant que PO, la business value vous permettra également de communiquer auprès des différentes parties prenantes sur les tâches techniques qui font partie intégrante des éléments du backlog et qui étaient jusqu’ici obscurs pour eux. “Il faut faire une migration vers telle techno, mais pourquoi ?” Les ateliers de priority poker vous permettront de mettre en lumière l’importance des tâches techniques aux équipes métiers.
+En tant que PO, la business value vous permettra également de **communiquer auprès des différentes parties prenantes sur les tâches techniques** qui font partie intégrante des éléments du backlog et qui étaient jusqu’ici obscurs pour eux. “Il faut faire une migration vers telle techno, mais pourquoi ?” Les ateliers de priority poker vous permettront de mettre en lumière l’importance des tâches techniques aux équipes métiers.
 
-*La business value pourra enfin améliorer la perception de l’équipe de développement qui ne sera plus uniquement un centre de coût mais un centre de création de valeur.
+La business value pourra enfin améliorer la **perception de l’équipe de développement** qui ne sera plus uniquement un centre de coût mais un **centre de création de valeur.
 
 
 ### Le talon d’Achille
 
-Attention la business value doit nécessairement être réévaluée régulièrement, à l’aune de l’arrivée d’un nouveau concurrent sur le marché, à l’aune d’une évolution dans les comportements des utilisateurs, d’une demande de nouvelle fonctionnalité à prioriser etc… L’indicateur de la business value n’est jamais figé !
+Attention la business value doit nécessairement être réévaluée régulièrement, à l’aune de l’arrivée d’un nouveau concurrent sur le marché, à l’aune d’une évolution dans les comportements des utilisateurs, d’une demande de nouvelle fonctionnalité à prioriser etc… **L’indicateur de la business value n’est jamais figé !
 
 Par ailleurs, soyez vigilants à ce que la business value ne devienne pas un indicateur de performance de l’équipe car la vélocité en terme de business value sera forcément amenée à décroître à mesure que vous allez dépiler les éléments du backlog.
 
@@ -138,7 +138,7 @@ Par ailleurs, soyez vigilants à ce que la business value ne devienne pas un ind
 
 ## Tactique numéro 3 : WSJF, partisan du moindre effort !
 
-Si la tactique MoSCoW ou la priorisation par la business value ne porte pas ses fruits, la méthode WSJF, issue de SaFe, peut faire ressortir des priorités dans la multitude de fonctionnalités en Must Have dans votre backlog ! Le WSJF a pour objectif de faire ressortir les features les plus importantes et les plus courtes / rapides à développer en top de votre backlog. Si vous hésitez donc entre plusieurs fonctionnalités Highly Important pour le business, le WSJF peut vous faire gagner une bataille.
+Si la tactique MoSCoW ou la priorisation par la business value ne porte pas ses fruits, **la méthode WSJF**, issue de SaFe, peut faire ressortir des priorités dans la multitude de fonctionnalités en Must Have dans votre backlog ! Le WSJF a pour objectif de faire ressortir les **features les plus importantes et les plus courtes / rapides à développer** en top de votre backlog. Si vous hésitez donc entre plusieurs fonctionnalités Highly Important pour le business, le WSJF peut vous faire gagner une bataille.
 
 
 ### Estimer vos chances de victoire
@@ -188,13 +188,13 @@ Ainsi certains facteurs peuvent par leur absence influencer fortement l'insatisf
 
 ### Préparation de l’interrogatoire
 
-**1.**  Listez les Epics qui font débat en terme de priorisation et qui ont une valeur tangible pour les utilisateurs. Une US pour réduire la dette technique ou une feature de refonte graphique ne pourra pas être sélectionnée par exemple.
+**1.**  **Listez les Epics qui font débat en terme de priorisation et qui ont une valeur tangible pour les utilisateurs**. Une US pour réduire la dette technique ou une feature de refonte graphique ne pourra pas être sélectionnée par exemple.
     
-**2.**  Constituez un panel d’utilisateurs et/ou prospects représentatif. Faites attention à bien sélectionner des représentants de vos différents personae, de situations démographiques et géographiques différentes etc…
+**2.**  **Constituez un panel d’utilisateurs et/ou prospects représentatif**. Faites attention à bien sélectionner des représentants de vos différents personae, de situations démographiques et géographiques différentes etc…
     
 **3.**  La modèle Kano consiste à questionner chacun des utilisateurs sur son sentiment si :
--   Le produit possède cette fonctionnalité (Fonctionnel)
--   Le produit ne possède pas cette fonctionnalité (Dysfonctionnel)
+-   Le produit **possède cette fonctionnalité** (Fonctionnel)
+-   Le produit **ne possède pas cette fonctionnalité** (Dysfonctionnel)
     
 Préparez donc bien vos questions fonctionnelles et dysfonctionnelles. Elles doivent être tournées en termes de bénéfice pour l’utilisateur, par exemple :
 -   Fonctionnel : Vous pouvez vous logger via les réseaux sociaux, qu’en pensez-vous ?
@@ -243,12 +243,12 @@ Source : © Daniel Zacarias - Folding Burritos
 
 Le modèle Kano permet ainsi d’identifier des catégories de fonctionnalités :
 
--   **M** : les facteurs de base ou "must have" qui génèrent de l'insatisfaction s’ils ne sont pas présents et qui sont attendus dans le produit. Ce ne sont pas forcément des fonctionnalités innovantes mais elles sont nécessaires !
+-   **M** : les **facteurs de base ou "must have"** qui génèrent de l'insatisfaction s’ils ne sont pas présents et qui sont attendus dans le produit. Ce ne sont pas forcément des fonctionnalités innovantes mais elles sont nécessaires !
     
--   **P** : les facteurs de performance qui génèrent de la satisfaction si la feature est présente et de l’insatisfaction si non présente. Plus il y en a dans le produit et plus je suis satisfaite ou moins il y en a et plus je suis satisfaite.
+-   **P** : les **facteurs de performance** qui génèrent de la satisfaction si la feature est présente et de l’insatisfaction si non présente. Plus il y en a dans le produit et plus je suis satisfaite ou moins il y en a et plus je suis satisfaite.
 *Exemple : Plus il y a de reporting dans l’outil et plus je suis satisfaite ou moins j’ai d’actions à faire pour créer mon rapport et plus je suis satisfaite
 
--   **A** : les facteurs attractifs qui génèrent une forte satisfaction sans pour autant créer d’insatisfaction s’ils ne sont pas présents
+-   **A** : **les facteurs attractifs** qui génèrent une forte satisfaction sans pour autant créer d’insatisfaction s’ils ne sont pas présents
 *Exemple : le cadeaux de airbnb envoyé suite à la résolution d’un litige
 
 -   **I** : Indifférent    
@@ -259,7 +259,7 @@ Le modèle Kano permet ainsi d’identifier des catégories de fonctionnalités 
     
 Pour plus d’information sur l’analyse des résultats, n’hésitez pas à consulter : [https://foldingburritos.com/kano-model/](https://foldingburritos.com/kano-model/)
 
-*Cette méthode n’est pas forcément adaptée à une priorisation régulière du backlog car elle peut s’avérer chronophage cependant elle est extrêmement efficace pour prioriser des nouvelles features et tester l’appétence des utilisateurs pour ces fonctionnalités, trouver les fonctionnalités d’excitation, inattendues qui vont créer une forte rétention client et vous démarquer potentiellement de la concurrence.
+*Cette méthode n’est pas forcément adaptée à une priorisation régulière du backlog car elle peut s’avérer chronophage cependant elle est extrêmement efficace pour **prioriser des nouvelles features et tester l’appétence des utilisateurs pour ces fonctionnalités, trouver les fonctionnalités d’excitation, inattendues qui vont créer une forte rétention client et vous démarquer potentiellement de la concurrence.
 
 
 
@@ -311,6 +311,6 @@ Le but n’est pas de faire un écran de fumée sur le backlog qui doit rester l
 
 D’autres méthodes telles que le story mapping, l’impact mapping, le RICE etc… peuvent être utilisées pour prioriser votre backlog et elles feront très certainement l’objet d’un nouvel article. 
 
-Le plus important est de trouver la méthode qui fonctionne avec vos parties prenantes, votre équipe, votre produit. Alors restez agiles, testez, itérez, changez, mixez les méthodes en fonction de vos objectifs et de la maturité de votre produit !
+Le plus important est de trouver la méthode qui fonctionne avec vos parties prenantes, votre équipe, votre produit. **Alors restez agiles, testez, changez, mixez les méthodes en fonction de vos objectifs et de la maturité de votre produit !** La priorisation d'un backlog ne se fait pas en un seul plan séquence à la Sam Mendes, alors **itérez !
 
-Et surtout rappelez-vous que la communication et l’engagement des différents corps de métier dans la stratégie produit sont clés. En terme de priorisation, il n’y a pas d’ennemis, il faut avant tout faire front avec toutes les parties prenantes pour développer un produit qui apporte une plus grande satisfaction aux utilisateurs !
+Et surtout rappelez-vous que **la communication et l’engagement des différents corps de métier dans la stratégie produit sont clés**. En terme de priorisation, il n’y a pas d’ennemis, il faut avant tout **faire front avec toutes les parties prenantes** pour développer un produit qui apporte une plus grande satisfaction aux utilisateurs !
