@@ -1,6 +1,6 @@
 ---
 layout: author
-login: mpeaudecerf
+login: mapo
 title: Marion Peaudecerf
 twitter: mpeaudecerf
 permalink: /authors/mpeaudecerf/
