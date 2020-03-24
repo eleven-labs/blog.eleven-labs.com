@@ -90,7 +90,7 @@ A vous de trouver la définition la plus adaptée à votre produit, il peut s’
 
 - **Commerciale** : acquisition client, upsell, rétention etc...
    
-- **Corporate** : Chiffre d’affaires, notoriété, image de marque...
+- **Corporate** : chiffre d’affaires, notoriété, image de marque...
 
 - **Métier** : gain en efficacité, moins de support utilisateur...
     
@@ -117,7 +117,7 @@ L’idéal est de prendre en compte l’ensemble de ces éléments lors de l’e
 ### Infiltrez le cheval dans l’enceinte du backlog
 
 La business value va donner du sens à l’équipe. Pourquoi cette US est prioritaire par rapport à une autre ? Je dois choisir entre deux US à développer dans le sprint en cours, et si je commençais par celle qui a le plus de valeur business ? 
-Vous pouvez ainsi décider de rajouter cet indicateur sur vos US dans Jira à l’aide d’un champs personnalisé (custom fileds).
+Vous pouvez ainsi décider de rajouter cet indicateur sur vos US dans Jira à l’aide d’un champs personnalisé (custom fields).
 
 Cela vous permettra de mesurer la valeur business créée, de l’afficher, de communiquer sur celle-ci. La business value est un indicateur bien plus intéressant que la vélocité qui a d’ailleurs pour vocation à rester interne à l’équipe de développement. Vous pouvez tout à fait créer un **burnup Chart dédié à la valeur créé dans le sprint.
 
@@ -209,7 +209,7 @@ L’utilisateur devra répondre aux deux questions en choisissant parmi les 5 r�
 
 **1. Like it** - J’aime cette fonctionnalité
     
-**2. Expect it** - J’attend ou espère cette fonctionnalité
+**2. Expect it** - J’attends ou espère cette fonctionnalité
     
 **3. Don’t Care** - Je suis neutre
     
