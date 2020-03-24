@@ -304,7 +304,7 @@ Cela demande certes au PO de faire un suivi régulier d’un second tableau de b
 Le but n’est pas de faire un écran de fumée sur le backlog qui doit rester l’outil central de priorisation du backlog mais bien d’avoir un espace vous permettant de qualifier les nombreuses remontées clients ou métiers et de communiquer avec vos généraux de guerre !
 
 
-  ![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Communication-1917.jpg
+  ![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Communication-1917.jpg)
 
 
 ## CONCLUSION
