@@ -139,7 +139,7 @@ Par ailleurs, soyez vigilants à ce que la business value ne devienne pas un ind
 Si la tactique MoSCoW ou la priorisation par la business value ne portent pas leurs fruits, **la méthode WSJF**, issue de SaFe, peut faire ressortir des priorités dans la multitude de fonctionnalités en Must Have de votre backlog ! Le WSJF a pour objectif de faire ressortir les **features les plus importantes et les plus courtes / rapides à développer** en top de votre backlog. Si vous hésitez donc entre plusieurs fonctionnalités Highly Important pour le business, le WSJF peut vous faire gagner une bataille.
 
 
-### Estimer vos chances de victoire
+### Estimez vos chances de victoire
 
 Le calcul de l’indicateur WSJF tiendra compte des valeurs suivantes :
 
@@ -158,7 +158,7 @@ Pour chacune des valeurs, vous pourrez utiliser la suite de Fibonacci pour les n
 Une fois les différentes valeurs notées, vous voilà prêt pour le grand calcul.
 
 
-### Calculer vos chances de victoire
+### Calculez vos chances de victoire
 
 On calcule d’abord le coût du délai pour chacune des fonctionnalités : **Coût du délai = Business value + Niveau d’urgence + Réduction des risques**
 
