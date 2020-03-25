@@ -178,7 +178,7 @@ Cela peut vous permettre de prioriser simplement des User Stories avec des Busin
 
 Les méthodes RICE, KANO et des ruses de Sioux en termes d'organisation feront l'objet d'un second article à découvrir très prochainement ! Le story mapping et l'impact mapping sont également des méthodes très efficaces à explorer.  Mais retenez que le plus important est de trouver la méthode qui fonctionne avec vos parties prenantes, votre équipe, votre produit. **Alors restez agiles, testez, changez, mixez les méthodes en fonction de vos objectifs et de la maturité de votre produit !** La priorisation d'un backlog ne se fait pas en un seul plan séquence à la Sam Mendes, alors **itérez !** et ne manquez pas la suite de la Guerre du Backlog n'aura pas lieu !
 
-Et enfin rappelez-vous que **la communication et l’engagement des différents corps de métier dans la stratégie produit sont clés**. En terme de priorisation, il n’y a pas d’ennemis, il faut avant tout **faire front avec toutes les parties prenantes** pour développer un produit qui apporte une plus grande satisfaction aux utilisateurs !
+Et enfin rappelez-vous que **la communication et l’engagement des différents corps de métier dans la stratégie produit sont clés**. En termes de priorisation, il n’y a pas d’ennemis, il faut avant tout **faire front avec toutes les parties prenantes** pour développer un produit qui apporte une plus grande satisfaction aux utilisateurs !
 
 
 ## RÉFÉRENCES
