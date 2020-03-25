@@ -1,6 +1,6 @@
 ---
 layout: post
-title: La Guerre du Backlog n'aura pas lieu
+title: La Guerre du Backlog n'aura pas lieu (PART I)
 excerpt: Quelques méthodes de priorisation du Backlog pour gagner des batailles, vous faire des alliés et pacifier le développement du Produit !
 authors:
     - mpeaudecerf
@@ -32,7 +32,7 @@ Vous vous y perdez, entre la priorisation d’un backlog Produit, backlog Tech e
 
 Voici des éléments déclencheurs -parmi tant d’autres- d’une **Guerre du Backlog**. Vous voilà donc engagé, tels les deux soldats britanniques Schofield et Blake, dans une bataille à proprement parler impossible. Vous êtes investi d’une mission qui pourrait bien empêcher une attaque dévastatrice sur le Produit !
 
-Et pour vous lancer dans cette véritable course contre la montre, vous faire des alliés et pacifier le développement du Produit, voici quelques **méthodes de priorisation du Backlog** qui pourront très certainement vous accompagner.
+Et pour vous lancer dans cette véritable course contre la montre, vous faire des alliés et pacifier le développement du Produit, voici trois premières **méthodes de priorisation du Backlog** qui pourront très certainement vous accompagner.
 
 
 ![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Scoffield & Blake.jpg)
@@ -75,7 +75,7 @@ Ils devront dans un second temps échanger sur les post-its qui font débat. Il 
 ![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/MoSCoW.jpg)
 
 
-*Cette méthode peut s’avérer inefficace si les différentes parties prenantes manquent d’objectivité ou si les relations sont très conflictuelles entre les différents services. Elle présente néanmoins l’intérêt d’aligner tous les métiers sur des objectifs communs lors d’un atelier assez simple à mettre en place. Cet atelier pourra être répété à intervalle régulier et est un bon moyen d’engager vos parties prenantes !*ç
+*Cette méthode peut s’avérer inefficace si les différentes parties prenantes manquent d’objectivité ou si les relations sont très conflictuelles entre les différents services. Elle présente néanmoins l’intérêt d’aligner tous les métiers sur des objectifs communs lors d’un atelier assez simple à mettre en place. Cet atelier pourra être répété à intervalle régulier et est un bon moyen d’engager vos parties prenantes !*
 
 
 
@@ -174,141 +174,8 @@ Cela peut vous permettre de prioriser simplement des User Stories avec des Busin
 *Pour résumer, la méthode WSJF peut donc vous aider à légitimer vos choix et votre priorisation notamment auprès des équipes dirigeantes, des équipes métier. Cependant le calcul des différents indicateurs peut se révéler chronophage donc vous pouvez choisir de ne l’utiliser que sur des Epics ou Roadmap Features.*
 
 
-
-## Tactique numéro 4 : Kano, nous avons les moyens de vous faire parler !
-
-Reprenons notre élément déclencheur : Les feedbacks et suggestions de nouvelles fonctionnalités de vos utilisateurs pleuvent et la rétention de vos clients est en jeu... On change alors d’angle d’attaque en se concentrant sur les utilisateurs du produit avec le modèle Kano !
-
-Ce modèle créé en 1984 par Noriaki Kano trouve son fondement dans le fait qu'il n'y a pas forcément de symétrie entre la satisfaction et l'insatisfaction d’un utilisateur.
-
-Ainsi certains facteurs peuvent par leur absence influencer fortement l'insatisfaction sans pour autant apporter une satisfaction lorsqu'ils sont présents. De même un facteur de satisfaction client peut ne pas apporter d’insatisfaction par son absence comme le Message de Bienvenue sur une application ou le cadeau envoyé par airbnb après la résolution d’un litige.
-
-
-### Préparation de l’interrogatoire
-
-**1.**  **Listez les Epics qui font débat en terme de priorisation et qui ont une valeur tangible pour les utilisateurs**. Une US pour réduire la dette technique ou une feature de refonte graphique ne pourra pas être sélectionnée par exemple.
-    
-**2.**  **Constituez un panel d’utilisateurs et/ou prospects représentatif**. Faites attention à bien sélectionner des représentants de vos différents personae, de situations démographiques et géographiques différentes etc…
-    
-**3.**  Le modèle Kano consiste à questionner chacun des utilisateurs sur son sentiment si :
--   Le produit **possède cette fonctionnalité** (Fonctionnel)
--   Le produit **ne possède pas cette fonctionnalité** (Dysfonctionnel)
-    
-Préparez donc bien vos questions fonctionnelles et dysfonctionnelles. Elles doivent être tournées en termes de bénéfice pour l’utilisateur, par exemple :
--   Fonctionnel : Vous pouvez vous logger via les réseaux sociaux, qu’en pensez-vous ?
--   Dysfonctionnel : Vous devez créer un profil utilisateur, login et mdp pour votre première connexion, qu’en pensez-vous ?
-    
-N’hésitez pas au besoin à présenter un prototype ou une maquette d’une fonctionnalité pour permettre aux utilisateurs interrogés de se projeter.
-
-
-### Déroulement du grand interrogatoire
-
-L’utilisateur devra répondre aux deux questions en choisissant parmi les 5 réponses suivantes :
-
-**1. Like it** - J’aime cette fonctionnalité
-    
-**2. Expect it** - J’attends ou espère cette fonctionnalité
-    
-**3. Don’t Care** - Je suis neutre
-    
-**4. Live with** - Je fais avec, je m’en contente
-    
-**5. Dislike** - Je n’aime pas la fonctionnalité, elle me déplaît fortement
-    
-N’hésitez pas à rephraser pour les questions dysfonctionnelles pour permettre à l’utilisateur de bien exprimer ses sentiments :
-
-**1. Cela m’est très utile**
-    
-**2. C’est une fonctionnalité nécessaire pour moi**
-    
-**3. Cela m’est égal, cela ne m’affecte pas**
-    
-**4. C’est un inconvénient mineur**
-    
-**5. C’est un problème majeur**
-    
-Exemple de réponse utilisateur dans notre exemple du login : “la fonctionnalité de login via les réseaux sociaux m’est très utile, mais cela m’est égal de devoir créer un compte utilisateur lors de ma première connexion”
-
-
-#### Analyse de l’interrogatoire
-
-Chacune des fonctionnalités pourra à la suite des entretiens avec les utilisateurs être située sur la grille suivante :
-
-
-![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/EvalTable-Kano-Model.png)
-Source : © Daniel Zacarias - Folding Burritos
-
-
-Le modèle Kano permet ainsi d’identifier des catégories de fonctionnalités :
-
--   **M** : les **facteurs de base ou "must have"** qui génèrent de l'insatisfaction s’ils ne sont pas présents et qui sont attendus dans le produit. Ce ne sont pas forcément des fonctionnalités innovantes mais elles sont nécessaires !
-    
--   **P** : les **facteurs de performance** qui génèrent de la satisfaction si la feature est présente et de l’insatisfaction si non présente. Plus il y en a dans le produit et plus je suis satisfaite ou moins il y en a et plus je suis satisfaite.
-*Exemple : Plus il y a de reporting dans l’outil et plus je suis satisfaite ou moins j’ai d’actions à faire pour créer mon rapport et plus je suis satisfaite
-
--   **A** : **les facteurs attractifs** qui génèrent une forte satisfaction sans pour autant créer d’insatisfaction s’ils ne sont pas présents
-*Exemple : le cadeaux de airbnb envoyé suite à la résolution d’un litige
-
--   **I** : Indifférent    
-
--   **Q** : Questionnable
-    
--   **R** : À double-tranchant
-    
-Pour plus d’information sur l’analyse des résultats, n’hésitez pas à consulter : [https://foldingburritos.com/kano-model/](https://foldingburritos.com/kano-model/)
-
-*Cette méthode n’est pas forcément adaptée à une priorisation régulière du backlog car elle peut s’avérer chronophage. Cependant elle est extrêmement efficace pour prioriser des nouvelles features et tester l’appétence des utilisateurs pour ces fonctionnalités, trouver les fonctionnalités d’excitation, inattendues, qui vont créer une forte rétention client et vous démarquer potentiellement de la concurrence.*
-
-
-
-## Tactique numéro 5 : ruse de Sioux
-
-Reprenons deux de nos deux éléments déclencheurs :
-
-**1.**  Les feedbacks et suggestions de nouvelles fonctionnalités de vos utilisateurs pleuvent et la rétention de vos clients est en jeu...
-    
-**2.**  L’équipe commerciale vous abreuve de ces fonctionnalités, qui si elles étaient développées très rapidement, pourraient leur permettre de closer des deals...
- 
-Face à ces exemples de situations, vous pouvez rencontrer plusieurs soucis : un backlog inondé de nouvelles fonctionnalités, une équipe métier ou commerciale agacée de ne pas voir les demandes de nouvelles features sortir, des développeurs découragés par le produit Frankenstein qui en train de se construire etc...
-
-Pour contrer ces risques de défaite Produit, je vous propose non pas une méthode mais une organisation éprouvée.
-
-### Etape 1 : Attaquez les remontées clients par les flancs
-
-Au lieu d’alimenter votre backlog d’absolument toutes les remontées clients non qualifiées, n’hésitez pas à construire un Trello ou à défaut un Google Sheet, partagé avec vos différentes parties prenantes, dans lequel ils pourront eux-même faire des remontées ou demandes de nouvelles fonctionnalités.
-
-
-### Etape 2 : Ouvrez un système de votes sur les différentes cartes, features demandées
-
-Les votes pourront être donnés par les différentes parties prenantes en annotant dans la carte Trello le client qui en a fait la demande.
-
-
-### Etape 3 : Qualifier les cartes
-
-Votre tableau trello peut par exemple contenir les colonnes suivantes : Inbox / Won’t Have / Could Have / Should Have / Must Have / Maquettes / Backlog Jira. Vous pouvez ainsi déplacer les cartes au rythme des remontées client.
-
-À l’aide d’un power-up, une intégration automatique des feedbacks peut se faire depuis votre Zendesk, votre Intercom ou autre outil de gestion du support client dans votre Trello de suivi des remontées clients. De même, une fois un élément qualifié dans Trello, un power-up peut vous permettre de créer de manière automatique la carte dans Jira.
-
-
-### Les bénéfices de cette stratégie
-Cela demande certes au PO de faire un suivi régulier d’un second tableau de bord que le backlog Jira mais cela permet de :
-
--   Consigner l’ensemble des remontées clients qui pourront venir alimenter la roadmap et le backlog à plus long terme
-    
--   Impliquer les parties prenantes et communiquer avec eux en leur assurant un suivi positif ou négatif explicité pour chacune des remontées client
-    
--   Justifier des choix de priorisation et les faire comprendre : “oui les investisseurs sont friands de telle fonctionnalité mais on préfère prioriser la fonctionnalité d’export des rapports en .xls car elle intéresse plus de X prospects et X clients listés sur la carte” ou encore “Non, ta demande de fonctionnalité datant de la semaine dernière ne sera pas développée dans le prochain sprint car ta demande concernant le login via les réseaux sociaux datant d’il y a trois mois vient tout juste d’être intégrée au sprint”.
-
-Le but n’est pas de faire un écran de fumée sur le backlog qui doit rester l’outil central de priorisation mais bien d’avoir un espace vous permettant de qualifier les nombreuses remontées clients ou métiers et de communiquer avec vos généraux de guerre !
-
-
-![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Communication-1917.jpg)
-
-
 ## CONCLUSION
 
-D’autres méthodes telles que le story mapping, l’impact mapping, le RICE etc… peuvent être utilisées pour prioriser votre backlog et elles feront très certainement l’objet d’un nouvel article. 
+Les méthodes RICE, KANO et des ruses de Sioux en termes d'organisation feront l'objet d'un second article à découvrir très prochainement ! Le story mapping et l'impact mapping sont également des méthodes très efficaces à explorer.  Mais retenez que le plus important est de trouver la méthode qui fonctionne avec vos parties prenantes, votre équipe, votre produit. **Alors restez agiles, testez, changez, mixez les méthodes en fonction de vos objectifs et de la maturité de votre produit !** La priorisation d'un backlog ne se fait pas en un seul plan séquence à la Sam Mendes, alors **itérez !** et ne manquez pas la suite de la Guerre du Backlog n'aura pas lieu !
 
-Le plus important est de trouver la méthode qui fonctionne avec vos parties prenantes, votre équipe, votre produit. **Alors restez agiles, testez, changez, mixez les méthodes en fonction de vos objectifs et de la maturité de votre produit !** La priorisation d'un backlog ne se fait pas en un seul plan séquence à la Sam Mendes, alors **itérez !**
-
-Et surtout rappelez-vous que **la communication et l’engagement des différents corps de métier dans la stratégie produit sont clés**. En terme de priorisation, il n’y a pas d’ennemis, il faut avant tout **faire front avec toutes les parties prenantes** pour développer un produit qui apporte une plus grande satisfaction aux utilisateurs !
+Et enfin rappelez-vous que **la communication et l’engagement des différents corps de métier dans la stratégie produit sont clés**. En terme de priorisation, il n’y a pas d’ennemis, il faut avant tout **faire front avec toutes les parties prenantes** pour développer un produit qui apporte une plus grande satisfaction aux utilisateurs !
