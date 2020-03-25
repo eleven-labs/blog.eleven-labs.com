@@ -20,7 +20,7 @@ tags:
 ---
 
 
-Jackpot, vous venez de décrocher un nouveau poste de PO ou PM mais dès vos premiers jours, c’est le drame… le backlog compte bien plus de 150 items, nombre maximum recommandé par le Scrum Guide, et sont tous marqués d’une étiquette rouge Must Have ou d’une Priorité Highly Important…
+Jackpot, vous venez de décrocher un nouveau poste de PO ou PM. Mais dès vos premiers jours, c’est le drame… le backlog compte bien plus de 150 items, nombre maximum recommandé par le Scrum Guide, et sont tous marqués d’une étiquette rouge Must Have ou d’une Priorité Highly Important…
 
 Les feedbacks et suggestions de nouvelles fonctionnalités de vos utilisateurs pleuvent et la rétention de vos clients est en jeu…
 
@@ -28,9 +28,9 @@ L’équipe commerciale vous abreuve de ces fonctionnalités, qui si elles étai
 
 Les investisseurs ne jurent que par cette fonctionnalité et votre big boss vous annonce : “On met tout de côté, il faut absolument prioriser cette feature pour les convaincre d’avancer avec nous !”…
 
-Vous vous y perdez entre la priorisation d’un backlog Produit, backlog Tech et backlog bug…
+Vous vous y perdez, entre la priorisation d’un backlog Produit, backlog Tech et backlog bug…
 
-Voici des éléments déclencheurs parmi tant d’autres d’une **Guerre du Backlog**. Vous voilà donc engagé, tels les deux soldats britanniques Schofield et Blake, dans une bataille à proprement parler impossible. Vous êtes investi d’une mission qui pourrait bien empêcher une attaque dévastatrice sur le Produit !
+Voici des éléments déclencheurs -parmi tant d’autres- d’une **Guerre du Backlog**. Vous voilà donc engagé, tels les deux soldats britanniques Schofield et Blake, dans une bataille à proprement parler impossible. Vous êtes investi d’une mission qui pourrait bien empêcher une attaque dévastatrice sur le Produit !
 
 Et pour vous lancer dans cette véritable course contre la montre, vous faire des alliés et pacifier le développement du Produit, voici quelques **méthodes de priorisation du Backlog** qui pourront très certainement vous accompagner.
 
@@ -57,7 +57,7 @@ Mais comment procéder pour ne pas obtenir tous les éléments de votre backlog 
 
 ### Préparation du conseil de guerre
 
-**1.**  **Regroupez vos forces en un seul et même bataillon lors d’un atelier**. Equipes métier, Sales, Marketing, Support client… Assurez-vous d’avoir un échantillon représentatif des différentes parties prenantes autour de la table, y compris les décideurs pour ne pas revenir sur les priorités établies quelques jours seulement après l’atelier. 
+**1.**  **Regroupez vos forces en un seul et même bataillon lors d’un atelier**. Équipes métier, Sales, Marketing, Support client… Assurez-vous d’avoir un échantillon représentatif des différentes parties prenantes autour de la table, y compris les décideurs pour ne pas revenir sur les priorités établies quelques jours seulement après l’atelier. 
 
 N’hésitez pas à inclure l’équipe de développement à cet atelier pour leur donner une meilleure vision produit mais également afin qu’ils puissent partager la complexité technique de tel ou tel élément du backlog aux parties prenantes en cas de difficulté d’arbitrage
     
@@ -86,7 +86,7 @@ Et si la valeur business, l’utilité d’un élément du backlog, devenait un 
 
 ### Business Value : Késako ?
 
-A vous de trouver la définition la plus adaptée à votre produit, il peut s’agir de la **valeur** :
+À vous de trouver la définition la plus adaptée à votre produit, il peut s’agir de la **valeur** :
 
 - **Commerciale** : acquisition client, upsell, rétention etc...
    
@@ -117,7 +117,7 @@ L’idéal est de prendre en compte l’ensemble de ces éléments lors de l’e
 ### Infiltrez le cheval dans l’enceinte du backlog
 
 La business value va donner du sens à l’équipe. Pourquoi cette US est prioritaire par rapport à une autre ? Je dois choisir entre deux US à développer dans le sprint en cours, et si je commençais par celle qui a le plus de valeur business ? 
-Vous pouvez ainsi décider de rajouter cet indicateur sur vos US dans Jira à l’aide d’un champs personnalisé (custom fields).
+Vous pouvez ainsi décider de rajouter cet indicateur sur vos US dans Jira à l’aide d’un champ personnalisé (custom fields).
 
 Cela vous permettra de mesurer la valeur business créée, de l’afficher, de communiquer sur celle-ci. La business value est un indicateur bien plus intéressant que la vélocité qui a d’ailleurs pour vocation à rester interne à l’équipe de développement. Vous pouvez tout à fait créer un **burnup Chart dédié à la valeur créé dans le sprint.**
 
@@ -130,15 +130,13 @@ La business value pourra enfin améliorer la **perception de l’équipe de dév
 
 ### Le talon d’Achille
 
-Attention la business value doit nécessairement être réévaluée régulièrement, à l’aune de l’arrivée d’un nouveau concurrent sur le marché, à l’aune d’une évolution dans les comportements des utilisateurs, d’une demande de nouvelle fonctionnalité à prioriser etc… **L’indicateur de la business value n’est jamais figé !**
+Attention la business value doit nécessairement être réévaluée régulièrement, à l’aune de l’arrivée d’un nouveau concurrent sur le marché, d’une évolution dans les comportements des utilisateurs, d’une demande de nouvelle fonctionnalité à prioriser etc… **L’indicateur de la business value n’est jamais figé !**
 
 Par ailleurs, soyez vigilants à ce que la business value ne devienne pas un indicateur de performance de l’équipe car la vélocité en terme de business value sera forcément amenée à décroître à mesure que vous allez dépiler les éléments du backlog.
 
-
-
 ## Tactique numéro 3 : WSJF, partisan du moindre effort !
 
-Si la tactique MoSCoW ou la priorisation par la business value ne porte pas ses fruits, **la méthode WSJF**, issue de SaFe, peut faire ressortir des priorités dans la multitude de fonctionnalités en Must Have dans votre backlog ! Le WSJF a pour objectif de faire ressortir les **features les plus importantes et les plus courtes / rapides à développer** en top de votre backlog. Si vous hésitez donc entre plusieurs fonctionnalités Highly Important pour le business, le WSJF peut vous faire gagner une bataille.
+Si la tactique MoSCoW ou la priorisation par la business value ne portent pas leurs fruits, **la méthode WSJF**, issue de SaFe, peut faire ressortir des priorités dans la multitude de fonctionnalités en Must Have de votre backlog ! Le WSJF a pour objectif de faire ressortir les **features les plus importantes et les plus courtes / rapides à développer** en top de votre backlog. Si vous hésitez donc entre plusieurs fonctionnalités Highly Important pour le business, le WSJF peut vous faire gagner une bataille.
 
 
 ### Estimer vos chances de victoire
@@ -171,9 +169,9 @@ Vous y êtes presque, plus qu’une division pour obtenir le résultat : **WSJF 
 
 Si la criticité ou la réduction du délai est difficile à mesurer sur votre produit, vous pouvez tout à fait utiliser uniquement la business value : **Business Value / Taille de la fonctionnalité**
 
-Cela peut vous permettre de prioriser simplement des User Stories avec des Business Value sensiblement proches en fonction de la facilité à développer et rapidité à livrer une feature. 
+Cela peut vous permettre de prioriser simplement des User Stories avec des Business Values sensiblement proches en fonction de la facilité à développer et rapidité à livrer une feature. 
 
-*Pour résumer, la méthode WSJF peut donc vous aider à légitimer vos choix et votre priorisation notamment auprès des équipes dirigeantes, des équipes métier cependant le calcul des différents indicateurs peut se révéler chronophage donc vous pouvez choisir de ne l’utiliser que sur des Epics ou Roadmap Features.*
+*Pour résumer, la méthode WSJF peut donc vous aider à légitimer vos choix et votre priorisation notamment auprès des équipes dirigeantes, des équipes métier. Cependant le calcul des différents indicateurs peut se révéler chronophage donc vous pouvez choisir de ne l’utiliser que sur des Epics ou Roadmap Features.*
 
 
 
@@ -192,7 +190,7 @@ Ainsi certains facteurs peuvent par leur absence influencer fortement l'insatisf
     
 **2.**  **Constituez un panel d’utilisateurs et/ou prospects représentatif**. Faites attention à bien sélectionner des représentants de vos différents personae, de situations démographiques et géographiques différentes etc…
     
-**3.**  La modèle Kano consiste à questionner chacun des utilisateurs sur son sentiment si :
+**3.**  Le modèle Kano consiste à questionner chacun des utilisateurs sur son sentiment si :
 -   Le produit **possède cette fonctionnalité** (Fonctionnel)
 -   Le produit **ne possède pas cette fonctionnalité** (Dysfonctionnel)
     
@@ -259,7 +257,7 @@ Le modèle Kano permet ainsi d’identifier des catégories de fonctionnalités 
     
 Pour plus d’information sur l’analyse des résultats, n’hésitez pas à consulter : [https://foldingburritos.com/kano-model/](https://foldingburritos.com/kano-model/)
 
-*Cette méthode n’est pas forcément adaptée à une priorisation régulière du backlog car elle peut s’avérer chronophage cependant elle est extrêmement efficace pour *prioriser des nouvelles features et tester l’appétence des utilisateurs pour ces fonctionnalités, trouver les fonctionnalités d’excitation, inattendues qui vont créer une forte rétention client et vous démarquer potentiellement de la concurrence.*
+*Cette méthode n’est pas forcément adaptée à une priorisation régulière du backlog car elle peut s’avérer chronophage. Cependant elle est extrêmement efficace pour prioriser des nouvelles features et tester l’appétence des utilisateurs pour ces fonctionnalités, trouver les fonctionnalités d’excitation, inattendues, qui vont créer une forte rétention client et vous démarquer potentiellement de la concurrence.*
 
 
 
@@ -289,7 +287,7 @@ Les votes pourront être donnés par les différentes parties prenantes en annot
 
 Votre tableau trello peut par exemple contenir les colonnes suivantes : Inbox / Won’t Have / Could Have / Should Have / Must Have / Maquettes / Backlog Jira. Vous pouvez ainsi déplacer les cartes au rythme des remontées client.
 
-A l’aide d’un power-up, une intégration automatique des feedbacks peut se faire depuis votre Zendesk, votre Intercom ou autre outil de gestion du support client dans votre Trello de suivi des remontées clients. De même, une fois un élément qualifié dans Trello, un power-up peut vous permettre de créer de manière automatique la carte dans Jira.
+À l’aide d’un power-up, une intégration automatique des feedbacks peut se faire depuis votre Zendesk, votre Intercom ou autre outil de gestion du support client dans votre Trello de suivi des remontées clients. De même, une fois un élément qualifié dans Trello, un power-up peut vous permettre de créer de manière automatique la carte dans Jira.
 
 
 ### Les bénéfices de cette stratégie
@@ -301,10 +299,10 @@ Cela demande certes au PO de faire un suivi régulier d’un second tableau de b
     
 -   Justifier des choix de priorisation et les faire comprendre : “oui les investisseurs sont friands de telle fonctionnalité mais on préfère prioriser la fonctionnalité d’export des rapports en .xls car elle intéresse plus de X prospects et X clients listés sur la carte” ou encore “Non, ta demande de fonctionnalité datant de la semaine dernière ne sera pas développée dans le prochain sprint car ta demande concernant le login via les réseaux sociaux datant d’il y a trois mois vient tout juste d’être intégrée au sprint”.
 
-Le but n’est pas de faire un écran de fumée sur le backlog qui doit rester l’outil central de priorisation du backlog mais bien d’avoir un espace vous permettant de qualifier les nombreuses remontées clients ou métiers et de communiquer avec vos généraux de guerre !
+Le but n’est pas de faire un écran de fumée sur le backlog qui doit rester l’outil central de priorisation mais bien d’avoir un espace vous permettant de qualifier les nombreuses remontées clients ou métiers et de communiquer avec vos généraux de guerre !
 
 
-  ![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Communication-1917.jpg)
+![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Communication-1917.jpg)
 
 
 ## CONCLUSION
