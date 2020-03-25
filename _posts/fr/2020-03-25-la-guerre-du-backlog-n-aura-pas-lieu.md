@@ -103,7 +103,7 @@ L’idéal est de prendre en compte l’ensemble de ces éléments lors de l’e
 
 ### Construisez le cheval de Troie
 
-**1.**  Préparez vos **éléments de backlog à scorer** et votre jeu de **carte de poker planning
+**1.**  Préparez vos **éléments de backlog à scorer** et votre jeu de **carte de poker planning**
     
 **2.**  Regroupez vos parties prenantes lors d’un **atelier**
     
@@ -111,7 +111,7 @@ L’idéal est de prendre en compte l’ensemble de ces éléments lors de l’e
     
 **4.** Si les valeurs choisies divergent, les participants échangent et démarrent ce challenge collectif de prioriser telle ou telle US
     
-*Astuce : si vous êtes à distance, le poker planning ou priority poker est toujours possible sur [Voting Poker](http://www.votingpoker.com/) ou [Planitpoker](https://www.planitpoker.com/)
+*Astuce : si vous êtes à distance, le poker planning ou priority poker est toujours possible sur [Voting Poker](http://www.votingpoker.com/) ou [Planitpoker](https://www.planitpoker.com/)*
 
 
 ### Infiltrez le cheval dans l’enceinte du backlog
@@ -119,18 +119,18 @@ L’idéal est de prendre en compte l’ensemble de ces éléments lors de l’e
 La business value va donner du sens à l’équipe. Pourquoi cette US est prioritaire par rapport à une autre ? Je dois choisir entre deux US à développer dans le sprint en cours, et si je commençais par celle qui a le plus de valeur business ? 
 Vous pouvez ainsi décider de rajouter cet indicateur sur vos US dans Jira à l’aide d’un champs personnalisé (custom fields).
 
-Cela vous permettra de mesurer la valeur business créée, de l’afficher, de communiquer sur celle-ci. La business value est un indicateur bien plus intéressant que la vélocité qui a d’ailleurs pour vocation à rester interne à l’équipe de développement. Vous pouvez tout à fait créer un **burnup Chart dédié à la valeur créé dans le sprint.
+Cela vous permettra de mesurer la valeur business créée, de l’afficher, de communiquer sur celle-ci. La business value est un indicateur bien plus intéressant que la vélocité qui a d’ailleurs pour vocation à rester interne à l’équipe de développement. Vous pouvez tout à fait créer un **burnup Chart dédié à la valeur créé dans le sprint.**
 
-La business value est une méthode de priorisation assez puissante et qui reste somme toute assez simple à mettre en place. Elle permettra au PO ou PM de **justifier factuellement la priorisation des fonctionnalités auprès des différentes parties prenantes, acteurs eux-même de la définition de la business value.
+La business value est une méthode de priorisation assez puissante et qui reste somme toute assez simple à mettre en place. Elle permettra au PO ou PM de **justifier factuellement la priorisation des fonctionnalités auprès des différentes parties prenantes, acteurs eux-même de la définition de la business value.**
 
 En tant que PO, la business value vous permettra également de **communiquer auprès des différentes parties prenantes sur les tâches techniques** qui font partie intégrante des éléments du backlog et qui étaient jusqu’ici obscurs pour eux. “Il faut faire une migration vers telle techno, mais pourquoi ?” Les ateliers de priority poker vous permettront de mettre en lumière l’importance des tâches techniques aux équipes métiers.
 
-La business value pourra enfin améliorer la **perception de l’équipe de développement** qui ne sera plus uniquement un centre de coût mais un **centre de création de valeur.
+La business value pourra enfin améliorer la **perception de l’équipe de développement** qui ne sera plus uniquement un centre de coût mais un **centre de création de valeur.**
 
 
 ### Le talon d’Achille
 
-Attention la business value doit nécessairement être réévaluée régulièrement, à l’aune de l’arrivée d’un nouveau concurrent sur le marché, à l’aune d’une évolution dans les comportements des utilisateurs, d’une demande de nouvelle fonctionnalité à prioriser etc… **L’indicateur de la business value n’est jamais figé !
+Attention la business value doit nécessairement être réévaluée régulièrement, à l’aune de l’arrivée d’un nouveau concurrent sur le marché, à l’aune d’une évolution dans les comportements des utilisateurs, d’une demande de nouvelle fonctionnalité à prioriser etc… **L’indicateur de la business value n’est jamais figé !**
 
 Par ailleurs, soyez vigilants à ce que la business value ne devienne pas un indicateur de performance de l’équipe car la vélocité en terme de business value sera forcément amenée à décroître à mesure que vous allez dépiler les éléments du backlog.
 
@@ -259,7 +259,7 @@ Le modèle Kano permet ainsi d’identifier des catégories de fonctionnalités 
     
 Pour plus d’information sur l’analyse des résultats, n’hésitez pas à consulter : [https://foldingburritos.com/kano-model/](https://foldingburritos.com/kano-model/)
 
-*Cette méthode n’est pas forcément adaptée à une priorisation régulière du backlog car elle peut s’avérer chronophage cependant elle est extrêmement efficace pour **prioriser des nouvelles features et tester l’appétence des utilisateurs pour ces fonctionnalités, trouver les fonctionnalités d’excitation, inattendues qui vont créer une forte rétention client et vous démarquer potentiellement de la concurrence.
+*Cette méthode n’est pas forcément adaptée à une priorisation régulière du backlog car elle peut s’avérer chronophage cependant elle est extrêmement efficace pour *prioriser des nouvelles features et tester l’appétence des utilisateurs pour ces fonctionnalités, trouver les fonctionnalités d’excitation, inattendues qui vont créer une forte rétention client et vous démarquer potentiellement de la concurrence.*
 
 
 
@@ -311,6 +311,6 @@ Le but n’est pas de faire un écran de fumée sur le backlog qui doit rester l
 
 D’autres méthodes telles que le story mapping, l’impact mapping, le RICE etc… peuvent être utilisées pour prioriser votre backlog et elles feront très certainement l’objet d’un nouvel article. 
 
-Le plus important est de trouver la méthode qui fonctionne avec vos parties prenantes, votre équipe, votre produit. **Alors restez agiles, testez, changez, mixez les méthodes en fonction de vos objectifs et de la maturité de votre produit !** La priorisation d'un backlog ne se fait pas en un seul plan séquence à la Sam Mendes, alors **itérez !
+Le plus important est de trouver la méthode qui fonctionne avec vos parties prenantes, votre équipe, votre produit. **Alors restez agiles, testez, changez, mixez les méthodes en fonction de vos objectifs et de la maturité de votre produit !** La priorisation d'un backlog ne se fait pas en un seul plan séquence à la Sam Mendes, alors **itérez !**
 
 Et surtout rappelez-vous que **la communication et l’engagement des différents corps de métier dans la stratégie produit sont clés**. En terme de priorisation, il n’y a pas d’ennemis, il faut avant tout **faire front avec toutes les parties prenantes** pour développer un produit qui apporte une plus grande satisfaction aux utilisateurs !
