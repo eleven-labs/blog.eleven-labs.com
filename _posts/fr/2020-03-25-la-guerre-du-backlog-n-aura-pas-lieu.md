@@ -75,7 +75,7 @@ Ils devront dans un second temps échanger sur les post-its qui font débat. Il 
 ![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/MoSCoW.jpg)
 
 
-*Cette méthode peut s’avérer inefficace si les différentes parties prenantes manquent d’objectivité ou si les relations sont très conflictuelles entre les différents services. Elle présente néanmoins l’intérêt d’aligner tous les métiers sur des objectifs communs lors d’un atelier assez simple à mettre en place. Cet atelier pourra être répété à intervalle régulier et est un bon moyen d’engager vos parties prenantes !
+*Cette méthode peut s’avérer inefficace si les différentes parties prenantes manquent d’objectivité ou si les relations sont très conflictuelles entre les différents services. Elle présente néanmoins l’intérêt d’aligner tous les métiers sur des objectifs communs lors d’un atelier assez simple à mettre en place. Cet atelier pourra être répété à intervalle régulier et est un bon moyen d’engager vos parties prenantes !*ç
 
 
 
