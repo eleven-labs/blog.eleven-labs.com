@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Comment (et pourquoi) j'ai créé ma propre extention navigateur
-excerpt: Dans cet article, nous allons voir comment fonctionne une extension navigateur
+title: Comment (et pourquoi) j'ai créé ma propre extension navigateur
+excerpt: Cet article va vous présenter une extension développée à la suite de l'identification d'un besoin récurrent, et vous expliquer comment procéder si vous souhaitez en faire de même !
 authors:
     - aallier
 lang: fr
