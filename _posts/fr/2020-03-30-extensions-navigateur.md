@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Extensions navigateur
+title: Comment (et pourquoi) j'ai créé ma propre extention navigateur
 excerpt: Dans cet article, nous allons voir comment fonctionne une extension navigateur
 authors:
     - aallier
