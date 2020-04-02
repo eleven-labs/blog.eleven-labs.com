@@ -15,7 +15,7 @@ tags:
     - tools
 ---
 
-Dès le début de l’existence des navigateurs, il était possible de les customiser afin d’y ajouter des fonctionnalités. D'abord presque exclusivement sous la forme de barres d’outils à l'utilité douteuse, puis ensuite avec un véritable gain pour l’utilisateur. On pourra citer pour les plus connues : µBlock, React Developper Tools, DownloadHelper... Certaines extensions ont même été intégrées aux navigateurs.
+Depuis le début de l’existence des navigateurs, il est possible de les customiser afin d’y ajouter des fonctionnalités. Cela se présentait d'abord presque exclusivement sous la forme de barres d’outils à l'utilité douteuse, pour plus tardivement proposer des extensions présentant un véritable gain pour l’utilisateur. On pourra citer pour les plus connues : µBlock, React Developper Tools, DownloadHelper... Certaines dans d'entre elles ont même été intégrées aux navigateurs.
 
 ![]({{ site.baseurl }}/assets/2020-03-30-extensions-navigateur/ie_bar.png)
 
@@ -24,7 +24,7 @@ Tous les principaux navigateurs se sont accordés autour d’une seule et même 
 
 Je vais vous présenter une extension que j’ai développée à la suite de l'identification d'un besoin récurrent...
 Dans beaucoup de projets les différents acteurs sont amenés à jongler entre plusieurs fronts et sur différents environnements. Par exemple pour développer une nouvelle fonctionnalité sur un environnement de développement, et débugger sur un environnement de preprod.
-Bien souvent la différence entre les URLs est minime, je voulais donc ajouter un élément plus ostensible afin d’éviter les confusions. L’extension navigateur me paraissait la meilleure solution car elle n’interfère ni ne dépend du code ou de l’infrastructure, est facile à développer, à mettre à jour et à faire évoluer, il est aussi possible de rajouter des fonctionnalités si besoin.
+Bien souvent la différence entre les URLs est minime, je voulais donc ajouter un élément plus ostensible afin d’éviter les confusions. L’extension navigateur me paraissait la meilleure solution car elle n’interfère avec ni ne dépend du code ou de l’infrastructure, est facile à développer, à mettre à jour et à faire évoluer, il est aussi possible de rajouter des fonctionnalités si besoin.
 
 Concrètement l’extension présentée permet de changer la couleur de la barre du navigateur en fonction de l’URL, à partir d’une configuration simple.
 
@@ -118,7 +118,7 @@ On poura éditer cette configuation dans les propriétés de l'extension dans `a
 ![]({{ site.baseurl }}/assets/2020-03-30-extensions-navigateur/web_extension_config.png)
 
 ## Installation
-Pour installer temporairement son extension il suffit d’ouvrir dans Firefox `about:debugging` et de cliquer sur « Charger un module complémentaire temporaire… » et de sélectionner son fichier manifest.json. Cela nous permet aussi de pouvoir la débuguer.
+Pour installer temporairement son extension il suffit d’ouvrir dans Firefox `about:debugging` et de cliquer sur « Charger un module complémentaire temporaire… » et de sélectionner son fichier manifest.json. Cela nous permet aussi de pouvoir la débuguer.
 Afin de créer son package .xpi, il faudra passer par la [validation de Mozilla](https://extensionworkshop.com/documentation/publish/submitting-an-add-on/) qui contrôlera la validité du code et signera l’extension. Elle pourra ensuite être distribuée ou même ajoutée dans le store.
 
 ![]({{ site.baseurl }}/assets/2020-03-30-extensions-navigateur/web_extension.png)
@@ -134,9 +134,9 @@ Mais surtout, il n’y a que Mozilla qui supporte l’API thème, il faudra trou
 - Ajouter un raccourci pour ajouter l’URL courante à la configuration.
 
 ## Conclusion
-Il suffit d'une bonne idée, d'un peu de javascript et d'une pincé de html pour créer assez rapidement une extension permettant de nous aider dans notre quotidien.
+Il suffit d'une bonne idée, d'un peu de javascript et d'une pincée de HTML pour créer assez rapidement une extension permettant de nous aider dans notre quotidien.
 
-##  Resources
+##  Ressources
 [Colenv github](https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions)
 
 [Colenv branch blog](https://github.com/Ghau/colenv/tree/blog)
