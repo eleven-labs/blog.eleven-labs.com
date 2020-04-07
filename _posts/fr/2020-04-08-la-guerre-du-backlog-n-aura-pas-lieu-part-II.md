@@ -33,10 +33,15 @@ Dans notre [premier article](https://blog.eleven-labs.com/fr/la-guerre-du-backlo
  
 Alors si la guerre du produit est déclarée, voici trois nouvelles méthodologies pour upgrader votre arsenal, “votre stuff”.
 
+![]({{ site.baseurl }}/assets/2020-04-08-la-guerre-du-backlog-n-aura-pas-lieu-part-II/Product Warzone.png)
 
 # Tactique numéro 4 : RICE, la bataille de l’impact
 
 La méthode **RICE** a été créée par l’équipe d’Intercom, plateforme de centralisation des échanges clients, pour ses propres besoins de priorisation produit.
+
+![]({{ site.baseurl }}/assets/2020-04-08-la-guerre-du-backlog-n-aura-pas-lieu-part-II/RICE 4 piliers.png)
+
+Source : Intercom - Illustration: Maddie Edgar
 
 RICE est donc une méthode basée sur le scoring de 4 éléments :
 
@@ -100,6 +105,9 @@ Il s’agit d’estimer un **pourcentage entre 0 et 100% de confiance en la feat
 
 Appliquez la formule suivante pour calculer votre score RICE pour chacune des features.
 
+![]({{ site.baseurl }}/assets/2020-04-08-la-guerre-du-backlog-n-aura-pas-lieu-part-II/RICE Formule de calcul.png)
+
+Source : Intercom - Illustration: Maddie Edgar
 
 ### Etape 6 : Comparez et ré-estimez toujours !
 
@@ -147,7 +155,7 @@ L’utilisateur devra répondre aux deux questions en choisissant parmi les 5 r�
 
 **1.  Like it** - J’aime cette fonctionnalité
     
-**2.  Expect it** - J’attend ou espère cette fonctionnalité
+**2.  Expect it** - J’attends ou espère cette fonctionnalité
     
 **3.  Don’t Care** - Je suis neutre
     
@@ -174,6 +182,8 @@ Exemple de réponse utilisateur dans notre exemple du login : “la fonctionnali
 ### Analyse de l’interrogatoire
 
 Chacune des fonctionnalités pourra à la suite des entretiens avec les utilisateurs être située sur la grille suivante :
+
+![]({{ site.baseurl }}/assets/2020-04-08-la-guerre-du-backlog-n-aura-pas-lieu-part-II/EvalTable-Kano-Model.png)
 
 Source : © Daniel Zacarias - Folding Burritos
 
