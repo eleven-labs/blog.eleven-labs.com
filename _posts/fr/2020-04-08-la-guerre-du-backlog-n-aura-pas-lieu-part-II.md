@@ -86,12 +86,12 @@ Il s’agit de définir l’impact que votre feature aura sur vos utilisateurs s
 **0,25** - la user story aura un impact minime pour les utilisateurs
 
 
-### Etape 3 : L’effort de guerre !
+### Étape 3 : L’effort de guerre !
 
 Il s’agit de l’**effort de développement** pour livrer la feature en question. Ici, plutôt que de reprendre la définition de l’équipe d’Intercom, on préférera nettement utiliser notre classique **suite de Fibonacci** pour estimer l’effort à produire pour développer la feature.
 
 
-### Etape 4 : Tout est une histoire de Confiance
+### Étape 4 : Tout est une histoire de Confiance
 
 Il s’agit d’estimer un **pourcentage entre 0 et 100 de confiance en la feature**. Quelle confiance vous avez dans la portée, l’impact et l’effort demandé pour développer la feature.
 
@@ -101,7 +101,7 @@ Il s’agit d’estimer un **pourcentage entre 0 et 100 de confiance en la featu
 - Ou encore, la Dev Team a déjà réfléchi à cette feature et fait de la conception technique, c’est une feature à 13 points assurés ! et j’ai une étude auprès des utilisateurs qui m’assure d’une excellente portée de mon module d’onboarding. On estime donc la confiance dans cette nouvelle feature à 90%.
   
   
-### Etape 5 : Le calcul épargne le sang !
+### Étape 5 : Le calcul épargne le sang !
 
 Appliquez la formule suivante pour calculer votre score RICE pour chacune des features.
 
@@ -109,7 +109,7 @@ Appliquez la formule suivante pour calculer votre score RICE pour chacune des fe
 
 Source : Intercom - Illustration: Maddie Edgar
 
-### Etape 6 : Comparez et ré-estimez toujours !
+### Étape 6 : Comparez et ré-estimez toujours !
 
 Une fois votre RICE score obtenu pour les différents items de votre backlog, n’hésitez pas à **comparer les différents scores obtenus et à réévaluer** au besoin si un élément semble avoir un score trop faible ou trop élevé. Et surtout **réévaluez le RICE dans le temps**, l’impact, la confiance, la portée et même l’effort nécessaire peuvent évoluer très rapidement.
 
