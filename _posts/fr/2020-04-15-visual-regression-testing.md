@@ -76,7 +76,7 @@ Il existe pléthore d'outil de test de régression visuelle automatisé, c'est p
 -   D'autre part, de regarder la recette pour le faire soi-même avec Puppeteer et Jest parce qu'en fait, on aime pas le travail des autres.
 -   Pour finalement installer le mal absolu (payant): Chromatic, l'environnement de test visuel utilisé par Storybook itself, parce que dans notre métier on joue avec les sous de quelqu'un d'autre.
 
-On recense 8 addons (visible sur cette [liste](<[https://storybook.js.org/docs/testing/automated-visual-testing/#libraries-and-services-with-storybook-integration](https://storybook.js.org/docs/testing/automated-visual-testing/#libraries-and-services-with-storybook-integration)>)) permettant de faire ces tests et qui s'intègre tout seul avec l'environnement Storybook, ça va d'outils en reconnaissance d'image par IA comme [applitools](<[https://applitools.com/storybook](https://applitools.com/storybook)>) assez cher par des plus classiques comme [Happo](<[https://happo.io/](https://happo.io/)>) (plus abordable) ou [Loki](<[https://loki.js.org/](https://loki.js.org/)>) (gratuit)
+On recense 8 addons (visible sur cette [liste](https://storybook.js.org/docs/testing/automated-visual-testing/#libraries-and-services-with-storybook-integration)) permettant de faire ces tests et qui s'intègre tout seul avec l'environnement Storybook, ça va d'outils en reconnaissance d'image par IA comme [applitools](https://applitools.com/storybook) assez cher par des plus classiques comme [Happo](https://happo.io/) (plus abordable) ou [Loki](https://loki.js.org/) (gratuit)
 
 On peut même réutiliser l'addon `Storyshots` et le coupler avec `jest-image-snapshot` qui s'occupera de la comparaison pixel 1:1 (maintenu par American Express babe)
 
@@ -84,7 +84,7 @@ Toutes ces solutions justifient leur coût par les possibilités qu'elles offren
 
 Mais nous on préfère retrousser nos manches, sentir l'huile et mettre la main au package, pas vrai?
 
-Je ne vais pas vous étaler l'installation maison, le lien du guide est [ici](<[https://storybook.js.org/docs/testing/automated-visual-testing/#example-using-puppeteer-and-jest](https://storybook.js.org/docs/testing/automated-visual-testing/#example-using-puppeteer-and-jest)>), mais c'est assez simple à mettre en place et ça permet de bien comprendre comment Jest et Storybook peuvent fonctionner ensemble ainsi que l'API Storybook pour accéder aux pages uniques des composants, qui sait quelles belles idées vous pourriez y trouver!
+Je ne vais pas vous étaler l'installation maison, le lien du guide est [ici](https://storybook.js.org/docs/testing/automated-visual-testing/#example-using-puppeteer-and-jest), mais c'est assez simple à mettre en place et ça permet de bien comprendre comment Jest et Storybook peuvent fonctionner ensemble ainsi que l'API Storybook pour accéder aux pages uniques des composants, qui sait quelles belles idées vous pourriez y trouver!
 
 Ce que je vous propose maintenant c'est d'explorer une des solutions les plus complètes, clés en main, disponible à l'heure actuelle: Chromatic.
 
@@ -139,7 +139,7 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-→ On se connecte sur le site de [Chromatic](<[www.chromaticqa.com/start](http://www.chromaticqa.com/start)>) pour y récupérer notre code d'appli
+→ On se connecte sur le site de [Chromatic](http://www.chromaticqa.com/start) pour y récupérer notre code d'appli
 
 → On se sert du CLI chromatic ou via `npx` pour lancer les tests
 
@@ -149,7 +149,7 @@ configure(loadStories, module);
 
 Juste trop simple en fait.
 
-Je vous laisse le lien pour voir par vous même les possibilités de l'outil sur le [tuto officiel](<[https://www.learnstorybook.com/intro-to-storybook/react/en/test](https://www.learnstorybook.com/intro-to-storybook/react/en/test/)/>) de Storybook.
+Je vous laisse le lien pour voir par vous même les possibilités de l'outil sur le [tuto officiel](https://www.learnstorybook.com/intro-to-storybook/react/en/test/) de Storybook.
 
 Pour résumé, on voit que l'environnement de développement d'une application évolue, plus inclusif sur les travaux des autres pour que chaque étape s'inscrive dans une logique produit ferme tout en réduisant la charge de travail répétitif sans lésiner sur la qualité lorsque le produit grandit.
 
