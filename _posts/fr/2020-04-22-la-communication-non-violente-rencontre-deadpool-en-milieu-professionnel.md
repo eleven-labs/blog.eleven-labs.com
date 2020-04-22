@@ -76,9 +76,9 @@ Assez justement soulevé par Krishnamurti, philosophe promoteur d'une éducation
 ### Le sentiment
 
 Quels émotions, sentiments sont éveillés en moi ?
-Nos sentiments et émotions s’expriment à travers les manifestations de notre corps, et non pas dans notre tête. Ils nous permettent, même quand ils sont négatifs, d’identifier la satisfaction ou la frustration d’un besoin.
+Nos ([sentiments](http://www.cnvsuisse.ch/wp-content/uploads/2016/06/Codex-2.pdf)) (suivez le lien pour la liste) et émotions s’expriment à travers les manifestations de notre corps, et non pas dans notre tête. Ils nous permettent, même quand ils sont négatifs, d’identifier la satisfaction ou la frustration d’un besoin.
 
-A ne pas confondre avec les jugements masqués qui nous enlèvent la responsabilité de ce que nous ressentons.
+A ne pas confondre avec les ([jugements masqués](http://www.cnvsuisse.ch/wp-content/uploads/2016/06/Codex-2.pdf)) (liste disponible également en suivant le lien) qui nous enlèvent la responsabilité de ce que nous ressentons.
 
 Ces mots expriment souvent :
 -   Ce que nous pensons que les autres nous font  
@@ -90,7 +90,7 @@ Un mécanisme de base que nous avons est d’attribuer la responsabilité de nos
 ### Le besoin
 
 Quels besoins chez moi génèrent ces sentiments ?
-Tous les besoins sont universels (vous trouverez ici une liste non exhaustive). Nous avons en effet tous les mêmes et nous pouvons nous reconnaître dedans à un moment donné dans notre vie.
+Tous les besoins sont universels ([(vous trouverez toujours ici une liste non exhaustive)](http://www.cnvsuisse.ch/wp-content/uploads/2016/06/Codex-2.pdf)). Nous avons en effet tous les mêmes et nous pouvons nous reconnaître dedans à un moment donné dans notre vie.
 
 En exprimant nos besoins dans la demande à travers des jugements, des interprétations ou encore des reproches, nous mettons toutes les chances de notre côté pour faire ressentir à l’autre une critique.
 
@@ -192,3 +192,6 @@ Notre cher Wade, malgré son langage fleuri, est une personne qui n’a pas peur
 **Pour conclure** : oui, la CNV est un investissement et demande de la pratique au jour le jour. Et oui, vous allez surement vous tromper en essayant de vous comprendre et de comprendre les autres au début. Vous allez surement être maladroit dans l’expression de vos demandes.
 
 Mais en y voyant plus clair petit à petit, nos objectifs seront alors enfin atteints : nouer des relations basées sur la contribution et être heureux de pouvoir le vivre !
+
+## Formations en Communication Non-Violente
+Si vous souhaitez vous former à la Communication Non-Violente comme il se doit, vous pouvez vous inscrire à ([3 modules de base d'initiation animés par des formateurs certifiés ici](https://www.cnvformations.fr/accueil/les-formations-je-demarre/)) ! Vous y retrouverez aussi des initiations en contexte spécifique : milieu professionnel ou éducation, ainsi que de nombreux modules d'approfondissement : l'auto-empathie, l'empathie, l'expression authentique, dire et entendre non, la colère au service de la relation et transformer la culpabilité, etc. 
