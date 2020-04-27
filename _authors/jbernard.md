@@ -5,4 +5,4 @@ title: Jérémy Bernard
 twitter: bernar_w
 permalink: /authors/jbernard/
 ---
-Développeur Javascript actif. Et d'autre choses aussi.
+Mainly JavaScript and backend stuff.
