@@ -59,16 +59,16 @@ Prenons la fonction suivante simple comme exemple :
 // src/profession.php
 function occupation()
 {
-	$jobs = [
-		'Fireman',
-		'Astronaut',
-		'Super hero',
-		'Pilot',
-		'Professional cook',
-		'Artist',
-	];
+    $jobs = [
+        'Fireman',
+        'Astronaut',
+        'Super hero',
+        'Pilot',
+        'Professional cook',
+        'Artist',
+    ];
 
-	return ['occupation' => $jobs[array_rand($jobs)]];
+    return ['occupation' => $jobs[array_rand($jobs)]];
 }
 ```
 
@@ -105,45 +105,45 @@ require $_ENV['LAMBDA_TASK_ROOT'] . '/vendor/autoload.php';
 
 // Request processing loop => barring unrecoverable failure, this loop runs until the environment shuts down
 do {
-	// Ask the runtime API for a request to handle
-	$request = getNextRequest();
+    // Ask the runtime API for a request to handle
+    $request = getNextRequest();
 
-	// Obtain the function name from the _HANDLER environment variable and ensure the function's code is available
-	list($handlerFile, $handlerFunction) = explode(".", $_ENV['_HANDLER']);
-	require_once $_ENV['LAMBDA_TASK_ROOT'] . '/src/' . $handlerFile . '.php';
+    // Obtain the function name from the _HANDLER environment variable and ensure the function's code is available
+    list($handlerFile, $handlerFunction) = explode(".", $_ENV['_HANDLER']);
+    require_once $_ENV['LAMBDA_TASK_ROOT'] . '/src/' . $handlerFile . '.php';
 
-	// Execute the desired function and obtain the response
-	$response = $handlerFunction($request['payload']);
+    // Execute the desired function and obtain the response
+    $response = $handlerFunction($request['payload']);
 
-	// Submit the response back to the runtime API
-	sendResponse($request['invocationId'], $response);
+    // Submit the response back to the runtime API
+    sendResponse($request['invocationId'], $response);
 } while (true);
 
 function getNextRequest()
 {
-	$client = new \GuzzleHttp\Client();
-	$response = $client->get(sprintf(
-		'http://%s/2018-06-01/runtime/invocation/next',
-		$_ENV['AWS_LAMBDA_RUNTIME_API']
-	));
+    $client = new \GuzzleHttp\Client();
+    $response = $client->get(sprintf(
+        'http://%s/2018-06-01/runtime/invocation/next',
+        $_ENV['AWS_LAMBDA_RUNTIME_API']
+    ));
 
-	return [
-		'invocationId' => $response->getHeader('Lambda-Runtime-Aws-Request-Id')[0],
-		'payload' => json_decode((string) $response->getBody(), true),
-	];
+    return [
+        'invocationId' => $response->getHeader('Lambda-Runtime-Aws-Request-Id')[0],
+        'payload' => json_decode((string) $response->getBody(), true),
+    ];
 }
 
 function sendResponse($invocationId, $response)
 {
-	$client = new \GuzzleHttp\Client();
-	$client->post(
-		sprintf(
-			'http://%s/2018-06-01/runtime/invocation/%s/response',
-			$_ENV['AWS_LAMBDA_RUNTIME_API'],
-			$invocationId
-		),
-		['body' => $response]
-	);
+    $client = new \GuzzleHttp\Client();
+    $client->post(
+        sprintf(
+            'http://%s/2018-06-01/runtime/invocation/%s/response',
+            $_ENV['AWS_LAMBDA_RUNTIME_API'],
+            $invocationId
+        ),
+        ['body' => $response]
+    );
 }
 ```
 
@@ -151,15 +151,15 @@ Pour résumer, nous avons actuellement la structure de fichiers suivante :
 
 ```
 layers/
-	php/
-		bin/
-			php #binary file
-		bootstrap
-		runtime.php
+    php/
+        bin/
+            php #binary file
+        bootstrap
+        runtime.php
 src/
-	profession.php
+    profession.php
 vendor/
-	guzzlehttp/
+    guzzlehttp/
 ```
 
 #### Déploiement
@@ -274,21 +274,21 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController
 {
-	public function index()
-	{
-		$jobs = [
-			'Fireman',
-			'Astronaut',
-			'Super hero',
-			'Pilot',
-			'Professional cook',
-			'Artist',
-		];
+    public function index()
+    {
+        $jobs = [
+            'Fireman',
+            'Astronaut',
+            'Super hero',
+            'Pilot',
+            'Professional cook',
+            'Artist',
+        ];
 
-		return new JsonResponse([
-			'occupation' => $jobs[array_rand($jobs)],
-		]);
-	}
+        return new JsonResponse([
+            'occupation' => $jobs[array_rand($jobs)],
+        ]);
+    }
 }
 ```
 
