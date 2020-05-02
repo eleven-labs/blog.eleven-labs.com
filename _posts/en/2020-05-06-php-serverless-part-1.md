@@ -104,7 +104,8 @@ There is a solution that tries to make all the configurations centralized in one
 The serverless framework includes an open source CLI which avoids the installation of multiple SDKs.
 
 The installation of the servelss framework is very fast and simple:
-```
+
+```bash
 $ npm install -g serverless
 $ serverless -v
 Framework Core: 1.67.3 (standalone)
@@ -115,7 +116,7 @@ Components: 2.29.0
 
 The implementation and configuration of this framework in your application is done via a `serverless.yml` file which looks like this:
 
-```
+```yaml
 # serverless.yml
 service: my-service
 provider:
@@ -143,7 +144,7 @@ Of course, the configuration is not completely agnostic of the provider that you
 
 To deploy and call a function with the serverless framework we use the following commands:
 
-```
+```bash
 $ serverless deploy -v
 $ serverless invoke -f hello -l
 ```

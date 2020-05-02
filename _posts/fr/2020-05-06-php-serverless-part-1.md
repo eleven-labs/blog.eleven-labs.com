@@ -103,7 +103,8 @@ Il existe une solution que essaie de rendre toutes les configurations centralis�
 Le framework serverless comprend un CLI open source qui permet d'éviter l'installation de multiples SDK.
 
 L'installation du framework servelss est très rapide est simple :
-```
+
+```bash
 $ npm install -g serverless
 $ serverless -v
 Framework Core: 1.67.3 (standalone)
@@ -114,7 +115,7 @@ Components: 2.29.0
 
 Le mise en place et le paramétrage de ce framework dans votre application se fait via un fichier `serverless.yml` qui ressemble à ceci :
 
-```
+```yaml
 # serverless.yml
 service: my-service
 provider:
@@ -142,7 +143,7 @@ Bien sûr, la configuration n'est pas complètement agnostique du provider que v
 
 Pour déployer et appeler une fonction avec le framework serverless nous utilisons les commandes suivantes :
 
-```
+```bash
 $ serverless deploy -v
 $ serverless invoke -f hello -l
 ```
