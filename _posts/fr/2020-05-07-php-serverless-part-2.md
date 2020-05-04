@@ -19,8 +19,8 @@ tags:
 
 ---
 
-Cet article est la suite de la première partie qui fait l'introductions sur le serverless.
-Dans cette deuxième partie, nus allons d'abord voir ce que sont les *layers* dans AWS Lambda et comment les implémenter. Ensuite, nous verrons l'utilisation du framework Bref.
+Cet article est la suite de la première partie qui fait l'introduction sur le serverless.
+Dans cette deuxième partie, nous allons d'abord voir ce que sont les *layers* dans AWS Lambda et comment les implémenter. Ensuite, nous verrons l'utilisation du framework Bref.
 
 ## AWS Lambda
 
@@ -43,11 +43,11 @@ On peut implémenter un runtime dans n'importe quel langage. Un runtime est un p
 
 ### Layers
 
-Une fonction Lambda peut être configurée pour télécharger du code et contenu additionnel sous forme d'un layer. Un layer est une archive ZIP qui contient des librairies, un runtime personnalisé ou d'autres dépendances.
+Une fonction Lambda peut être configurée pour télécharger du code et du contenu additionnel sous forme d'un layer. Un layer est une archive ZIP qui contient des librairies, un runtime personnalisé ou d'autres dépendances.
 
 Si vous avez déjà écrit des fonctions serverless en Node.js, vous savez qu'il faut packager tout le dossier `node_modules` pour chacune des fonctions (puisqu'elles sont déployées de façon indépendante les unes des autres). Ceci ralentit le process de déploiement et rend les builds lents.
 
-Mais désormais, il est possible de publier le dossier `node_modules` sous forme d'un Layer partagé et réutilisable pour toutes nos fonctions. Cela veut dire que l'on pourrait avoir un layer pour notre runtime custom, un autre layer qui contient nos dépendances et configurer nos fonctions pour utiliser ces 2 layers. Notez qu'une fonction a une limite de 5 layers.
+Mais désormais il est possible de publier le dossier `node_modules` sous forme d'un Layer partagé et réutilisable pour toutes nos fonctions. Cela veut dire que l'on pourrait avoir un layer pour notre runtime custom, un autre layer qui contient nos dépendances et configurer nos fonctions pour utiliser ces 2 layers. Notez qu'une fonction a une limite de 5 layers.
 
 ### Exemple
 
@@ -91,7 +91,8 @@ cd $LAMBDA_TASK_ROOT
 /opt/bin/php /opt/runtime.php
 ```
 
-Voici un exemple de `runtime.php`  inspiré de l'[article sur le blog AWS](https://aws.amazon.com/blogs/apn/aws-lambda-custom-runtime-for-php-a-practical-example/). Nous allons utiliser `Guzzle` pour faire les appels, par conséquent je vais d'abord exécuter la commande suivante :
+Voici un exemple de `runtime.php`  inspiré de l'[article sur le blog AWS](https://aws.amazon.com/blogs/apn/aws-lambda-custom-runtime-for-php-a-practical-example/).
+Nous allons utiliser `Guzzle` pour faire les appels réseau, par conséquent je vais d'abord exécuter la commande suivante :
 
 ```
 composer require guzzlehttp/guzzle
@@ -240,7 +241,7 @@ REPORT RequestId: d09f2191-7233-47d3-a4fe-8de2a621a608  Duration: 38.15 ms  Bill
 
 Nous venons donc de réaliser un exemple fonctionnel avec un *layer* capable d'exécuter du code PHP.
 
-Maintenant, imaginez que vous avez une grande application, disons une API REST en Symfony, que vous voudriez déployer sur AWS Lambda. Il faudrait développer un runtime beaucoup plus poussé capable de s'intégrer avec le *front controller de Symfony*, et pourquoi pas avec la *console*. Il faudrait également modifier le layer PHP pour ajouter toutes les librairies dont nous aurions besoin et de recompiler le binaire PHP.
+Maintenant, imaginez que vous avez une grande application, disons une API REST en Symfony, que vous voudriez déployer sur AWS Lambda. Il faudrait développer un runtime beaucoup plus poussé capable de s'intégrer avec le *front controller de Symfony*, et pourquoi pas aussi avec la *console*. Il faudrait également modifier le layer PHP pour ajouter toutes les librairies dont nous aurions besoin et de recompiler le binaire PHP.
 
 Heureusement pour nous, une solution *open source* existe pour gérer tout cela : [Bref](https://bref.sh/).
 
@@ -388,4 +389,4 @@ L'URL à la quelle mon application est accessible est indiquée dans les endpoin
 Nous avons terminé. Nous venons de déployer une application Symfony sur AWS Lambda en utilisant Bref.
 Comme vous avez vu, c'est assez simple au final.
 
-Maintenant vous pouvez déployer vos applications PHP sur AWS Lambda :)
+Maintenant vous pouvez déployer vos applications PHP sur des infrastructures serverless :)

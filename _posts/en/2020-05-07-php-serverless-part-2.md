@@ -19,7 +19,7 @@ tags:
 
 ---
 
-This article is the continuation of the first part which introduces serverless computing.
+This article is a follow-up to the first part which introduces serverless computing.
 In this second part, we will first see what the *layers* are in AWS Lambda and how to implement them. Then we will see how to use the Bref framework.
 
 ## AWS Lambda
@@ -29,7 +29,7 @@ In this second part, we will first see what the *layers* are in AWS Lambda and h
 An AWS Lambda environment includes:
 
 - the runtime of the chosen language (Java, Go, PowerShell, Node.js, C #, Python, Ruby by default)
-- the implementation of *Lambda runtime API*, ie the life cycle of the execution of the environment and the invocation of serverless functions
+- the implementation of *Lambda runtime API*, ie the lifecycle of the execution of the environment and the invocation of serverless functions
 
 The lifecycle of a Lambda runtime consists of an initialization phase and several (as many as necessary) invocation phases.
 
@@ -39,13 +39,13 @@ After initialization, the execution environment goes into the invocation phase a
 
 Since November 2018, it is possible to declare your own runtimes for Lambda functions, but also to incorporate reusable components in the form of *Layers*.
 
-You can implement a runtime in any language. A runtime is a program that executes the `handler` of a Lambda function when it is called. A runtime can be included in the function deployment package in the form of an executable file named `bootstrap` (we will see an example below in the article).
+You can implement a runtime in any language. A runtime is a program that executes the `handler` of a Lambda function when it is called. A runtime can be included in the function deployment package in the form of an executable file named `bootstrap` (we will see an example later in this article).
 
 ### Layers
 
 A Lambda function can be configured to download additional code and content as a layer. A layer is a ZIP archive that contains libraries, a custom runtime or other dependencies.
 
-If you have already written serverless functions in Node.js, you know that you must package the entire `node_modules` folder for each of the functions (since they are deployed independently of each other). This slows down the deployment process and makes the builds slow.
+If you have already written serverless functions in Node.js, you know that you must package the entire `node_modules` folder for every function (since they are deployed independently from each other). This slows down the deployment process and makes the builds slow.
 
 But now, it is possible to publish the `node_modules` folder as a shared and reusable Layer for all our functions. This means that we could have a layer for our custom runtime, another layer which contains our dependencies and configure our functions to use these 2 layers. Note that a function has a limit of 5 layers.
 
@@ -74,8 +74,8 @@ function occupation()
 
 #### PHP layer
 
-I will create a `layers/php` folder in my application and I will place my layer there.
-To create a custom runtime, we need a `bootstrap` file which will contain the logic of our runtime responsible for calling our functions.
+I am going to create a `layers/php` folder in my application and I will place my layer there.
+To create a custom runtime, we need a `bootstrap` file which will contain the logic of our runtime in charge of invoking our functions.
 
 We also need a PHP executable capable of interpreting our code. I'm going to create a `bin` folder in my layer folder to place my `php` binary. To generate a binary, I recommend you read [this article](https://aws.amazon.com/blogs/compute/scripting-languages-for-aws-lambda-running-php-ruby-and-go/).
 
@@ -91,7 +91,8 @@ cd $LAMBDA_TASK_ROOT
 /opt/bin/php /opt/runtime.php
 ```
 
-Here is an example of `runtime.php` inspired by the [article on the AWS blog](https://aws.amazon.com/blogs/apn/aws-lambda-custom-runtime-for-php-a-practical-example/). We will use `Guzzle` to make the calls, therefore I will first execute the following command:
+Here is an example of `runtime.php` inspired by the [article on the AWS blog](https://aws.amazon.com/blogs/apn/aws-lambda-custom-runtime-for-php-a-practical-example/).
+We will use `Guzzle` to make HTTP calls, therefore I will first execute the following command:
 
 ```
 composer require guzzlehttp/guzzle
@@ -195,7 +196,7 @@ require_once $_ENV['LAMBDA_TASK_ROOT'] . '/src/' . $handlerFile . '.php';
 $response = $handlerFunction($request['payload']);
 ```
 
-It is therefore up to us to configure the way we name the handlers and the way to execute them in the runtime.
+It is therefore up to us to configure the way we name the handlers and the way to call them in the runtime.
 
 The name of our layer `PhpLambdaLayer` corresponds to its CloudFormation reference. You can read the details [here](https://www.serverless.com/framework/docs/providers/aws/guide/layers/#aws---layers).
 
@@ -248,7 +249,7 @@ Fortunately for us, an *open source* solution exists to manage all of this: [Bre
 
 Bref is an open source Composer package that allows us to deploy PHP applications on AWS Lambda. It is developed by [Matthieu Napoli](https://mnapoli.fr/).
 
-Brief provides:
+Brif provides:
 
 - the documentation
 - PHP runtimes for AWS Lambda
@@ -388,4 +389,4 @@ My application is available on the URL indicated in the endpoints. Here is the r
 That's it. We just deployed a Symfony application to AWS Lambda using Bref.
 As you can see, it is a pretty straight forward process.
 
-You can now enjoy deploying PHP applications to AWS Lambda :)
+You can now enjoy deploying PHP applications to a serverless infrastructure :)
