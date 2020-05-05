@@ -3,7 +3,7 @@ layout: post
 title: "PHP & Serverless with Bref - part 1"
 lang: fr
 permalink: /en/php-serverless-part-1/
-excerpt: "What is serverless architecture how to deploy PHP application to it"
+excerpt: "What is the serverless architecture, and how to deploy a PHP application to it?"
 authors:
     - marishka
 categories:
@@ -19,7 +19,7 @@ tags:
 
 ---
 
-We've been talking about *serverless* architectures for years. But what does that mean precisely and how to develop PHP applications that can be deployed on this architecture.
+We've been talking about *serverless* architectures for years. But what does that mean precisely and how to develop PHP applications that can be deployed on this architecture?
 
 ## Definition and introduction to *serverless*
 
@@ -40,7 +40,7 @@ Serverless architecture can be useful in several cases:
 
 ### Benefits
 
-The first advantage that can be seen is that there is **no infrastructure or resource management** to be carried out. You do not need to provision and upgrade the servers because the cloud provider takes care of it.
+The first advantage is that there is **no infrastructure or resource management** to be carried out. You do not need to provision and upgrade the servers because the cloud provider takes care of it.
 
 Then, you only pay for the resources you actually use, it's called **Pay as you go**. That is, you only pay for resources when they are being used. The containers go out if no function is called for a given time allowing you to save money.
 
@@ -64,7 +64,7 @@ There are also **limitations** related to memory, the maximum size of the packag
 
 Another point to keep in mind is that the **price** of our infrastructure can be **unpredictable**. Since the cloud provider takes care of everything, we therefore have no control over how it manages resources, and in the event of an unforeseen event which places a lot of demand on our serverless functions, the price could rise. Rest assured, it is nevertheless possible to create alerts and be notified by your cloud provider if you exceed a certain amount.
 
-A final drawback is related to **testing** and fixing bugs in your functions. It takes a little getting used to and sometimes the use of additional services, such as [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is -sam.html) for example.
+A final drawback is related to **testing** and fixing bugs in your functions. It takes a little practice and sometimes the use of additional services, such as [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is -sam.html) for example.
 
 ## PHP applications and serverless infrastructures
 
@@ -92,7 +92,7 @@ I make a special mention here to the Apache OpenWhisk platform. It is an open so
 
 - IBM Cloud
 - a Kubernetes implementation that you deploy with any cloud provider that supports it
-- *local* hosting (possible with Kubernetes, docker, ansible, vagrant), that is to say that you would be your own serverless infrastructure provider - this solution is not recommended for production however, it is preferable to favor cloud solutions
+- *local* hosting (possible with Kubernetes, Docker, Ansible, Vagrant), that is to say that you would be your own serverless infrastructure provider - this solution is not recommended for production however, it is preferable to favor cloud solutions
 
 ### The *serverless* framework
 
