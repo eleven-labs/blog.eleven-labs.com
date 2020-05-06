@@ -113,7 +113,7 @@ SDK: 2.3.0
 Components: 2.29.0
 ```
 
-Le mise en place et le paramétrage de ce framework dans votre application se font via un fichier `serverless.yml` qui ressemble à ceci :
+La mise en place et le paramétrage de ce framework dans votre application se font via un fichier `serverless.yml` qui ressemble à ceci :
 
 ```yaml
 # serverless.yml
