@@ -19,8 +19,7 @@ tags:
 
 ---
 
-Cet article est la suite de la première partie qui fait l'introduction sur le serverless.
-Dans cette deuxième partie, nous allons d'abord voir ce que sont les *layers* dans AWS Lambda et comment les implémenter. Ensuite, nous verrons l'utilisation du framework Bref.
+Cet article est la suite d'un ([premier article](https://blog.eleven-labs.com/fr/php-serverless-part-1/) qui fait l'introduction du Serverless. Dans cette deuxième partie, nous allons d'abord voir ce que sont les *layers* dans AWS Lambda et comment les implémenter. Ensuite, nous verrons l'utilisation du framework Bref.
 
 ## AWS Lambda
 
@@ -29,11 +28,11 @@ Dans cette deuxième partie, nous allons d'abord voir ce que sont les *layers* d
 Un environnement AWS Lambda inclut :
 
 -   L'environnement d'exécution (runtime) du langage choisi (Java, Go, PowerShell, Node.js, C#, Python, Ruby par défaut)
--   L'implémentation de *Lambda runtime API*, c'est à dire le cycle de vie de l'exécution de l'environnement et l'invocation des fonctions serverless
+-   L'implémentation de *Lambda runtime API*, c'est à dire le cycle de vie de l'exécution de l'environnement et l'invocation des fonctions Serverless
 
 Le cycle de vie d'un environnement d'exécution Lambda est composé d'une phase d'initialisation et de plusieurs (autant que nécessaire) phases d'invocation.
 
-La phase d'initialisation représente le temps entre le moment où l'environnement démarre le runtime et le moment où le code d'une fonction est exécuté. Cette phase est exécutée une seule fois durant le cycle de vie de l'environnement.
+La phase d'initialisation représente le temps entre le moment où l'environnement démarre le runtime et le moment où le code d'une fonction est exécuté. Cette phase n'est exécutée qu'une seule fois durant le cycle de vie de l'environnement.
 
 Après l'initialisation, l'environnement d'exécution se met dans la phase d'invocation et va sans cesse vérifier et exécuter des tâches, et ce jusqu'à ce que l'environnement s'éteigne.
 
@@ -51,7 +50,7 @@ Mais désormais il est possible de publier le dossier `node_modules` sous forme 
 
 ### Exemple
 
-#### Fonction PHP
+**Fonction PHP**
 
 Prenons la fonction suivante simple comme exemple :
 
@@ -72,7 +71,7 @@ function occupation()
 }
 ```
 
-#### Layer PHP
+**Layer PHP**
 
 Je vais créer un dossier `layers/php` dans mon application et je vais y placer mon layer.
 Pour créer un runtime custom, nous avons besoin d'un fichier `bootstrap` qui contiendra la logique de notre runtime responsable d'appeler nos fonctions.
@@ -163,7 +162,7 @@ vendor/
     guzzlehttp/
 ```
 
-#### Déploiement
+**Déploiement**
 
 Je vais utiliser le framework *serverless* pour le déploiement de mon layer et de ma fonction :
 
@@ -237,7 +236,7 @@ END RequestId: d09f2191-7233-47d3-a4fe-8de2a621a608
 REPORT RequestId: d09f2191-7233-47d3-a4fe-8de2a621a608  Duration: 38.15 ms  Billed Duration: 300 ms  Memory Size: 512 MB  Max Memory Used: 59 MB  Init Duration: 191.10 ms
 ```
 
-#### Récapitulatif
+**Récapitulatif**
 
 Nous venons donc de réaliser un exemple fonctionnel avec un *layer* capable d'exécuter du code PHP.
 
@@ -334,7 +333,7 @@ functions:
 
 La liste des layers mis à disposition par Bref peut être consultée [ici](https://runtimes.bref.sh/). Je vous recommande également de lire la documentation de Bref, elle est très claire et fournit plein d'exemples dont vous pourriez avoir besoin.
 
-Il ne faut pas oublier qu'avec la plupart des fournisserus cloud, le filesystem est disponible de lecture seulement. Ainsi, nous devons changer l'endroit où sont stockés les fichers de `logs` et `cache` :
+Il ne faut pas oublier qu'avec la plupart des fournisseurs Cloud, le filesystem est disponible de lecture seulement. Ainsi, nous devons changer l'endroit où sont stockés les fichers de `logs` et `cache` :
 
 ```php
 public function getLogDir()
@@ -382,11 +381,11 @@ layers:
   None
 ```
 
-L'URL à la quelle mon application est accessible est indiquée dans les endpoints. Voici donc le résultat :
+L'URL à laquelle mon application est accessible est indiquée dans les endpoints. Voici donc le résultat :
 
 ![]({{ site.baseurl }}/assets/2020-05-07-php-serverless-part-2/example.png)
 
-Nous avons terminé. Nous venons de déployer une application Symfony sur AWS Lambda en utilisant Bref.
-Comme vous avez vu, c'est assez simple au final.
+Nous avons terminé ! Nous venons de déployer une application Symfony sur AWS Lambda en utilisant Bref.
+Comme vous avez vu, c'est assez simple au final...
 
 Maintenant vous pouvez déployer vos applications PHP sur des infrastructures serverless :)
