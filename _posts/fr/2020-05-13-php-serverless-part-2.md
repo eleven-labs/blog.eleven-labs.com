@@ -389,3 +389,4 @@ Nous avons terminé ! Nous venons de déployer une application Symfony sur AWS L
 Comme vous avez vu, c'est assez simple au final...
 
 Maintenant vous pouvez déployer vos applications PHP sur des infrastructures serverless :)
+
