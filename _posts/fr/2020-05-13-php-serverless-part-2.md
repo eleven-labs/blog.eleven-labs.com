@@ -19,7 +19,7 @@ tags:
 
 ---
 
-Cet article est la suite d'un ([premier article](https://blog.eleven-labs.com/fr/php-serverless-part-1/) qui fait l'introduction du Serverless. Dans cette deuxième partie, nous allons d'abord voir ce que sont les *layers* dans AWS Lambda et comment les implémenter. Ensuite, nous verrons l'utilisation du framework Bref.
+Cet article est la suite d'un [premier article](https://blog.eleven-labs.com/fr/php-serverless-part-1/) qui fait l'introduction du Serverless. Dans cette deuxième partie, nous allons d'abord voir ce que sont les *layers* dans AWS Lambda et comment les implémenter. Ensuite, nous verrons l'utilisation du framework Bref.
 
 ## AWS Lambda
 
