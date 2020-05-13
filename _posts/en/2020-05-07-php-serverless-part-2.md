@@ -19,8 +19,7 @@ tags:
 
 ---
 
-This article is a follow-up to the first part which introduces serverless computing.
-In this second part, we will first see what the *layers* are in AWS Lambda and how to implement them. Then we will see how to use the Bref framework.
+This article is a follow-up to this (first part)[https://blog.eleven-labs.com/en/en/php-serverless-part-1/] which introduces serverless computing. In this second part, we will first see what the *layers* are in AWS Lambda and how to implement them. Then we will see how to use the Bref framework.
 
 ## AWS Lambda
 
@@ -29,7 +28,7 @@ In this second part, we will first see what the *layers* are in AWS Lambda and h
 An AWS Lambda environment includes:
 
 - the runtime of the chosen language (Java, Go, PowerShell, Node.js, C #, Python, Ruby by default)
-- the implementation of *Lambda runtime API*, ie the lifecycle of the execution of the environment and the invocation of serverless functions
+- the implementation of *Lambda runtime API*, i.e. the lifecycle of the execution of the environment and the invocation of serverless functions
 
 The lifecycle of a Lambda runtime consists of an initialization phase and several (as many as necessary) invocation phases.
 
@@ -47,11 +46,11 @@ A Lambda function can be configured to download additional code and content as a
 
 If you have already written serverless functions in Node.js, you know that you must package the entire `node_modules` folder for every function (since they are deployed independently from each other). This slows down the deployment process and makes the builds slow.
 
-But now, it is possible to publish the `node_modules` folder as a shared and reusable Layer for all our functions. This means that we could have a layer for our custom runtime, another layer which contains our dependencies and configure our functions to use these 2 layers. Note that a function has a limit of 5 layers.
+But now, it is possible to publish the `node_modules` folder as a shared and reusable layer for all our functions. This means that we could have a layer for our custom runtime, another layer which contains our dependencies and configure our functions to use these 2 layers. Note that a function has a limit of 5 layers.
 
 ### Example
 
-#### PHP function
+**PHP function**
 
 Take the following simple function as an example:
 
@@ -72,7 +71,7 @@ function occupation()
 }
 ```
 
-#### PHP layer
+**PHP layer**
 
 I am going to create a `layers/php` folder in my application and I will place my layer there.
 To create a custom runtime, we need a `bootstrap` file which will contain the logic of our runtime in charge of invoking our functions.
@@ -163,7 +162,7 @@ vendor/
     guzzlehttp/
 ```
 
-#### Deployment
+**Deployment**
 
 I will use the *serverless* framework to deploy my layer and my function:
 
@@ -237,7 +236,7 @@ END RequestId: d09f2191-7233-47d3-a4fe-8de2a621a608
 REPORT RequestId: d09f2191-7233-47d3-a4fe-8de2a621a608  Duration: 38.15 ms  Billed Duration: 300 ms  Memory Size: 512 MB  Max Memory Used: 59 MB  Init Duration: 191.10 ms
 ```
 
-#### Summary
+**Summary**
 
 So we just made a working example with a *layer* capable of executing PHP code.
 
@@ -249,7 +248,7 @@ Fortunately for us, an *open source* solution exists to manage all of this: [Bre
 
 Bref is an open source Composer package that allows us to deploy PHP applications on AWS Lambda. It is developed by [Matthieu Napoli](https://mnapoli.fr/).
 
-Brif provides:
+Bref provides:
 
 - the documentation
 - PHP runtimes for AWS Lambda
@@ -260,7 +259,7 @@ I suggest we deploy a Symfony application on AWS Lambda using Bref.
 
 ### Symfony application
 
-To create my application,
+To create my application:
 
 ```bash
 $ composer create-project symfony / skeleton sf-serverless-example
@@ -334,7 +333,7 @@ functions:
 
 The list of layers made available by Bref can be consulted [here](https://runtimes.bref.sh/). I also recommend that you read the Bref documentation, it is very clear and provides plenty of examples that you may need.
 
-We need to keep in mind that with most cloud providers the filesystem is readonly. Hence, we need to change `logs` and `cache` folders of our application:
+We need to keep in mind that with most cloud providers the filesystem is read only. Hence, we need to change the `logs` and `cache` folders of our application:
 
 ```php
 public function getLogDir()
@@ -386,7 +385,7 @@ My application is available on the URL indicated in the endpoints. Here is the r
 
 ![]({{ site.baseurl }}/assets/2020-05-07-php-serverless-part-2/example.png)
 
-That's it. We just deployed a Symfony application to AWS Lambda using Bref.
-As you can see, it is a pretty straight forward process.
+That's it. We just deployed a Symfony application to AWS Lambda using Bref!
+As you can see, it is a pretty straight forward process...
 
 You can now enjoy deploying PHP applications to a serverless infrastructure :)
