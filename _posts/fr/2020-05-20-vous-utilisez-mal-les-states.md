@@ -40,7 +40,7 @@ Maintenant que nous avons rappelé les bases, regardons maintenant ce qui est bi
 
 ## Tu ne muteras point ton état
 
-Bon, comme expliqué dans l’introduction, si vous avez fait le tutoriel sur le site de React alors vous avez déjà entendu parler de l’**immutabilité**. Cette règle si importante, est pourtant tant oubliée par la plupart des développeurs qui mènent leurs projets vers les pires bugs imaginables.
+Bon, comme expliqué dans l’introduction, si vous avez fait le tutoriel sur le site de React alors vous avez déjà entendu parler de l’**immutabilité**. Cette règle si importante est pourtant souvent oubliée par la plupart des développeurs, ce qui mène alors leurs projets vers les pires bugs imaginables.
 
 L'**immutabilité** est par définition la capacité à ne pas être modifié. Et s'il y a bien une chose que les **états** de votre application doivent être, c’est **immutable**.
 
