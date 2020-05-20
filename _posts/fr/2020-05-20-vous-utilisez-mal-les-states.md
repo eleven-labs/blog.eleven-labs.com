@@ -323,6 +323,6 @@ Dans cet exemple nous avons déchargé la responsabilité de l’animation au CS
 ## Conclusion
 Avec ces petits exemples, j'espère vous avoir appris quelques bonnes pratiques ou vous avoir ouvert les yeux sur des erreurs que vous avez pu faire.
 
-La plupart des problèmes soulignés dans cette article sont pas mal répandus car ils ne sont pas traités directement dans la documentation de React, vous ne devriez donc pas avoir honte de faire ce genre de maladresses.
+La plupart des problèmes soulignés dans cet article sont pas mal répandus car ils ne sont pas traités directement dans la documentation de React, il n'y a donc aucune honte à commettre ce genre de maladresses ;)
 
-Et n'oubliez pas que, faire ce type d’erreurs n’est pas tabou, mais on en viendra tous à bout.
+Et n'oubliez pas que, faire ce type d’erreurs n’est pas tabou, et qu'on en viendra tous à bout !
