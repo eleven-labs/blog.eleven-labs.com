@@ -2,7 +2,7 @@
 layout: post
 title: "Vous utilisez mal les states React"
 lang: fr
-excerpt: "Vous n'utilisez peut etre pas les states React de la manière optimal et je vais vous expliquez pourquoi"
+excerpt: "Vous n'utilisez peut être pas les states React de la manière optimal et je vais vous expliquez pourquoi"
 authors:
     - kcordier
 permalink: /fr/vous-utilisez-mal-les-states-react/
@@ -23,7 +23,7 @@ image:
 
 ---
 
-Derrière ce titre à l’allure aguicheur se cache un constat que je remarque de plus en plus. Remetons nous dans le context :
+Derrière ce titre à l’allure aguicheur se cache un constat que je remarque de plus en plus. Remettons nous dans le context :
 Vous êtes jeune et fou, vous venez de découvrir React et avez fait le tuto. Votre morpion est tout beau et vous vous lancez dans votre première one page application. Votre code a pleins d’**états** et quand vous cliquez sur des boutons ca bouge dans tous les sens comme un feu d’artifice. Je regarde votre code et je vous dit :
 
 \- _À vrais dire… c’est pas comme ça que j’aurai fait._
@@ -32,7 +32,7 @@ Et c’est normal. C’est en faisant des erreurs que l’on apprend et cette ar
 
 ## Definition
 
-Un **état** (ou **state** dans la langue de Shakespeare) et un ensemble de variable qui définit un composant à un instant T. En React, le changement d’un **state** résulte automatiquement par le re render du composant où a été déclaré l’état.
+Un **état** (ou **state** dans la langue de Shakespeare) et un ensemble de variable qui définit un composant à un instant T. En React, le changement d’un **state** résulte automatiquement par le re render du composant où a été déclaré l’**état**.
 
 Maintenant que nous avons rappelé les bases, regardons maintenant ce qui est bien et pas bien.
 
@@ -40,15 +40,15 @@ Maintenant que nous avons rappelé les bases, regardons maintenant ce qui est bi
 
 ## Tu ne muteras point ton état
 
-Bon, comme expliqué dans l’intro, si vous avez fait le tutoriel sur le site de React alors vous avez déjà entendu parlé de l’**immutabilité**. Cette règle si important et pourtant si oubliable par la plupart des développeurs qui mène les projets vers les pires bugs imaginables.
+Bon, comme expliqué dans l’introduction, si vous avez fait le tutoriel sur le site de React alors vous avez déjà entendu parlé de l’**immutabilité**. Cette règle si important et pourtant si oubliable par la plupart des développeurs qui mène les projets vers les pires bugs imaginables.
 
 L'**immutabilité** est par définition, la capacité à ne pas être modifié. Et si il a bien une chose que les **états** de votre application doivent être c’est **immutable**.
 
-\- _Mais si on ne change pas l'état des composant, notre application n’est plus qu’un site statique sans saveur._
+\- _Mais si on ne change pas l'**état** des composant, notre application n’est plus qu’un site statique sans saveur._
 
-Ne me faite pas dire ce que je n’ai pas dit. Vous pouvez modifier les **states** de vos composant, mais pas directement. La bonne pratique est de créer un nouvel objet correspondant à votre prochain état.
+Ne me faite pas dire ce que je n’ai pas dit. Vous pouvez modifier les **states** de vos composant, mais pas directement. La bonne pratique est de créer un nouvel objet correspondant à votre prochain **état**.
 
-Utiliser l’immutabilité permet de considérablement aider React à détecter les modifications d’état (ça marche aussi très bien avec les props, mais là n’est pas la question) car, qui dit nouvelle objet dit nouvelle référence et la difference de ref de l’etat A et B et plus facile à comparer que toutes les propriétés une par une.
+Utiliser l’immutabilité permet de considérablement aider React à détecter les modifications d’**état** (ça marche aussi très bien avec les props, mais là n’est pas la question) car, qui dit nouvelle objet dit nouvelle référence et la difference de ref de l’**état** A et B et plus facile à comparer que toutes les propriétés une par une.
 
 ### Pas bien
 
@@ -91,7 +91,7 @@ Ici on créer un nouvel objet grace à la syntaxe ES2018 avant de l’envoyer au
 
 \- _Bon le mec dit tout est son contraire._
 
-Oui mais si je vous dit ca, c’est pour vous rappeler qu’un état et par définition voué à évoluer. Donc si votre but est d’avoir des informations qui ne changes pas dans le temps alors utilisez plutôt des **constants**, c’est plus léger et facile à comprendre.
+Oui mais si je vous dit ca, c’est pour vous rappeler qu’un **état** et par définition voué à évoluer. Donc si votre but est d’avoir des informations qui ne changes pas dans le temps alors utilisez plutôt des **constants**, c’est plus léger et facile à comprendre.
 
 ### Pas bien
 
@@ -117,7 +117,7 @@ C’est peut être bête de le rappeler mais pour l’avoir vu, il fallait que j
 
 ## Tu ne changeras qu’un état à la fois
 
-Dans la vie il arrive que l’on ai plusieur **états** au sein d’un même composant, en soit ce n’est pas une erreur, le problème vient surtout dans le cas où l’on doit mettre à jours 2 **states** en même temps. Comme revue dans la définition, chaque changement d’état re render le composant et donc tout le life cycle. Vous comprenez donc qu’il ne faut pas corrélé vos changement de **states**, sous peine d’avoir plusieur render en parallèle et engendrer des bugs de synchronisation entre 2 **états**.
+Dans la vie il arrive que l’on ai plusieurs **états** au sein d’un même composant, en soit ce n’est pas une erreur, le problème vient surtout dans le cas où l’on doit mettre à jours 2 **states** en même temps. Comme revue dans la définition, chaque changement d’**état** re render le composant et donc tout le life cycle. Vous comprenez donc qu’il ne faut pas corrélé vos changement de **states**, sous peine d’avoir plusieurs render en parallèle et engendrer des bugs de synchronisation entre 2 **états**.
 
 Pour résoudre ce soucie, 2 solutions s'offrent à nous :
 
@@ -181,11 +181,11 @@ const UnComposant = () => {
 };
 ```
 
-Dans cette exemple le changement d'état est bien identifiable et assure qu'il y ait un seul render.
+Dans cette exemple le changement d'**état** est bien identifiable et assure qu'il y ait un seul render.
 
 ## Tu redistribueras tes états
 
-Une erreur très répandue est de mal gérer où déclarer ses **états**. Par exemple, tout mettre, sans réfléchir, dans le parent afin d’avoir uniquement des pure components. Cela result souvent par un composant parent très lourd qui re render toujours la totalité des composants enfants. Ici il n’y a pas de solution toute prête, le seul conseil est de faire remonter l’état partagé dans leur ancêtre **commun le plus proche** et de faire redescendre les données dans les composants enfants. Par contre il existe une manière plus élégante de passer les fonction de callback de parent à enfants :
+Une erreur très répandue est de mal gérer où déclarer ses **états**. Par exemple, tout mettre, sans réfléchir, dans le parent afin d’avoir uniquement des pure components. Cela result souvent par un composant parent très lourd qui re render toujours la totalité des composants enfants. Ici il n’y a pas de solution toute prête, le seul conseil est de faire remonter l’**état** partagé dans leur ancêtre **commun le plus proche** et de faire redescendre les données dans les composants enfants. Par contre il existe une manière plus élégante de passer les fonction de callback de parent à enfants :
 
 ```jsx
 function reducer(state, action) {
@@ -232,7 +232,7 @@ const ComposantEnfant = ({ name, loading }) => {
 
 ## Tu utiliseras les états quand il le faudra
 
-La plus grosse erreur qu’il m'ait été donné de voir est celle de croire que les **states** sont la seul manière de garder en mémoire une donnée entre chaque changement d’état. Il y existe un autre élément de React qui est persistant malgré les changement d’**états** et que peu de développeur utilise, c’est les **références**. De plus elle permettent aussi de garder en mémoire des variables que l’on souhaite modifier sans pour autant vouloir re render le composant
+La plus grosse erreur qu’il m'ait été donné de voir est celle de croire que les **states** sont la seul manière de garder en mémoire une donnée entre chaque changement d’**état**. Il y existe un autre élément de React qui est persistant malgré les changement d’**états** et que peu de développeur utilise, c’est les **références**. De plus elle permettent aussi de garder en mémoire des variables que l’on souhaite modifier sans pour autant vouloir re render le composant
 
 ### Pas bien
 
