@@ -286,6 +286,7 @@ Un autre cas de mauvaise utilisation des **états** est son utilisation pour les
 
 ### Pas bien
 
+{% raw %}
 ```jsx
 const UnComposant = () => {
   const [top, setTop] = useState(0);
@@ -302,6 +303,7 @@ const UnComposant = () => {
   return <div style={{top: top+'px'}}>Je descend en bas</div>;
 };
 ```
+{% endraw %}
 
 ### Bien
 
