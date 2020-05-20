@@ -24,7 +24,7 @@ image:
 ---
 
 Derrière ce titre à l’allure aguicheuse se cache un constat que je fais de plus en plus. Remettons-nous dans le contexte :
-Vous êtes jeune et fou, vous venez de découvrir React et avez fait le tuto. Votre morpion est tout beau et vous vous lancez dans votre première one page application. Votre code a pleins d’**états** et quand vous cliquez sur des boutons ça bouge dans tous les sens comme un feu d’artifice. Je regarde votre code et je vous dit :
+Vous êtes jeune et fou, vous venez de découvrir React et avez fait le tuto. Votre morpion est tout beau et vous vous lancez dans votre première one-page application. Votre code a plein d’**états** et quand vous cliquez sur des boutons ça bouge dans tous les sens comme un feu d’artifice. Je regarde votre code et je vous dit :
 
 \- _À vrai dire… c’est pas comme ça que j’aurais fait._
 
@@ -117,7 +117,7 @@ C’est peut être bête de le rappeler mais pour l’avoir vu, il fallait que j
 
 ## Tu ne changeras qu’un état à la fois
 
-Dans la vie il arrive que l’on ait plusieurs **états** au sein d’un même composant. En soi ce n’est pas une erreur, le problème vient surtout dans le cas où l’on doit mettre à jours 2 **states** en même temps. Comme revu dans la définition, chaque changement d’**état** re-render le composant et donc tout le life cycle. Vous comprenez donc qu’il ne faut pas corréler vos changements de **states**, sous peine d’avoir plusieurs renders en parallèle, et d'engendrer des bugs de synchronisation entre 2 **états**.
+Dans la vie il arrive que l’on ait plusieurs **états** au sein d’un même composant. En soi ce n’est pas une erreur, le problème vient surtout dans le cas où l’on doit mettre à jour 2 **states** en même temps. Comme revu dans la définition, chaque changement d’**état** re-render le composant et donc tout le life cycle. Vous comprenez donc qu’il ne faut pas corréler vos changements de **states**, sous peine d’avoir plusieurs renders en parallèle, et d'engendrer des bugs de synchronisation entre 2 **états**.
 
 Pour résoudre ce souci, 2 solutions s'offrent à nous :
 
