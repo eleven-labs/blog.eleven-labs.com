@@ -24,7 +24,7 @@ image:
 ---
 
 Derrière ce titre à l’allure aguicheuse se cache un constat que je fais de plus en plus. Remettons-nous dans le contexte :
-Vous êtes jeune et fou, vous venez de découvrir React et avez fait le tuto. Votre morpion est tout beau et vous vous lancez dans votre première one-page application. Votre code a plein d’**états** et quand vous cliquez sur des boutons ça bouge dans tous les sens comme un feu d’artifice. Je regarde votre code et je vous dit :
+Vous êtes jeune et fou, vous venez de découvrir React et avez fait le tuto. Votre morpion est tout beau et vous vous lancez dans votre première one-page application. Votre code a plein d’**états** et quand vous cliquez sur des boutons ça bouge dans tous les sens comme un feu d’artifice. Je regarde votre code et je vous dis :
 
 \- _À vrai dire… c’est pas comme ça que j’aurais fait._
 
@@ -163,7 +163,7 @@ function reducer(state, action) {
 }
 
 const UnComposant = () => {
-  const [{ loading, name }], dispatch] = useReducer(reducer, {
+  const [{ loading, name }, dispatch] = useReducer(reducer, {
     name: 'MacGuffin',
     click: 0,
     loading: false,
