@@ -24,7 +24,7 @@ image:
 ---
 
 Behind this seductive-looking title hides an observation that I have been making more and more. Let's put things into context:
-You are young and crazy, you just discovered React and did the tutorial. Your tic-tac-toe is all beautiful and you are launching into your first single page application. Your code has lots of **states** and when you click on buttons things move all over the place like fireworks. I look at your code and I am telling you:
+You are young and crazy, you just discovered React and did the tutorial. Your tic-tac-toe is all beautiful and you are beginning to work on your first single page application. Your code has lots of **states** and when you click on buttons things move all over the place like fireworks. I look at your code and I am telling you:
 
 \- _Truth be told... that's not how I would have done it._
 
@@ -123,7 +123,7 @@ To solve this issue, 2 solutions are available to us:
 
 Putting it all together in one **state** is the quick way to create a catch-all object with all of the component's variables. It’s not aesthetic, not practical and very heavy.
 
-Or ... use a **reducer**. This makes it possible to manage transitions of complex **states**, by mapping the different actions to a transition identifier. This allows you to better control the renders of your components and it is generally recommended when using objects in a **state**.
+Or... use a **reducer**. This makes it possible to manage transitions of complex **states**, by mapping the different actions to a transition identifier. This allows you to better control the renders of your components and it is generally recommended when using objects in a **state**.
 
 ### Not good
 
