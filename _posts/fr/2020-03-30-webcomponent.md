@@ -69,7 +69,7 @@ Comme on peut le voir la classe étend HTMLElement, elle va donc non seulement h
 Certaines méthodes disponibles vont nous être très utiles `connectedCallback`, à la fin de la création de l'élément lorsqu'il est chargé dans la page, `disconnectedCallback` lorsque l'élément est supprimé et `attributeChangedCallback` lorsqu'une propriété est modifiée
 ###shadow DOM
 Le principe du shadow DOM est la création d'un DOM virtuel à l'intérieur même d'un élément html.
-Tout le javascript, html et css fonctionne dans ce shadow DOM mais n'ont aucun impact à l'extérieur de cette élément et inversement.
+Tout le javascript, html et css fonctionnent dans ce shadow DOM mais n'ont aucun impact à l'extérieur de cet élément et inversement.
 Ce qui veux dire qu'on peut nommer une fonction dans la page et dans le shadow DOM sans qu'elles ne se surchargent, cela vaut aussi pour les id et les styles css.
 Pour ajouter un shadow DOM il faut utiliser [attachShadow](https://developer.mozilla.org/fr/docs/Web/API/Element/attachShadow) hérité depuis l'objet [Element](https://developer.mozilla.org/fr/docs/Web/API/Element) avec comme paramètre un objet de configuration avec comme seul clef `mode`, on peut par la suite lui ajouter du html, dans notre cas nous voulons utiliser notre template.
 ```javascript
