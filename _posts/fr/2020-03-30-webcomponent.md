@@ -38,7 +38,7 @@ Le tag **template** permet de définir un block HTML ré-utilisable pouvant cont
 Les balises `template` ne sont pas affichées sur la page, elles doivent être copiées puis ajoutées au DOM grâce à `appendChild`
 La balise `slot` permet d'insérer du html à la place grâce a la propriété `name`
 ###customELement
-L'objet [customElements](https://developer.mozilla.org/fr/docs/Web/API/Window/customElements) posséde la méthode `define` permetant de créer une nouvelle balise, elle a besoin de 2 paramètres :
+L'objet [customElements](https://developer.mozilla.org/fr/docs/Web/API/Window/customElements) possède la méthode `define` permetant de créer une nouvelle balise, elle a besoin de 2 paramètres :
 - le nom de la balise !Attention il est imperatif d'avoir un *-* dans le nom!
 - la class définissant la nouvelle balise
 ```javascript
