@@ -187,7 +187,7 @@ customElements.define('popin-component', class extends HTMLElement {
         }
     }
 
-    // Si l'utilisateur appuye sur la touche échape fermeture de la popin
+    // Si l'utilisateur appuie sur la touche échape fermeture de la popin
     keyUp(e) {
         if (e.key === 'Escape') {
             this.hide();
