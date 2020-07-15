@@ -131,7 +131,7 @@ popinTemplate.innerHTML = `
 </div>
 `;
 ```
-Maintenant construisons notre class, on va considérer que la variable `popinTemplate` a été précédement créé.
+Maintenant construisons notre class, on va considérer que la variable `popinTemplate` a été précédement créée.
 ```javascript
 customElements.define('popin-component', class extends HTMLElement {
     // Obligatoire afin d'écouter les changements sur la propriété modal grace a la méhode attributeChangedCallback
