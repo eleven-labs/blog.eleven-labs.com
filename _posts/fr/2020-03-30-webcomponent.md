@@ -15,7 +15,7 @@ tags:
 
 Les normes liées au web ont beaucoup évolué depuis une dizaine d’années, le cap de l’HTML5 CC3 a été difficile mais a ouvert la porte vers de plus en plus de fonctionnalité.
 Une de ces fonctionnalités est le WebCompponent, la possibilité de pouvoir créer de composant indépendant et ré-utilisable.
-Il ressmble aux composant de React ou Angular mais avec la particularité de n’être dépendant que du navigateur, un webComponent peut donc fonctionner dans une page web indépendamment du framework utilisé.
+Il ressemble aux composants de React ou Angular mais avec la particularité de n’être dépendant que du navigateur, un webComponent peut donc fonctionner dans une page web indépendamment du framework utilisé.
 Nous allons voir comment créer un webComponent simple permetant de gérer un système de popin.
 ##Principe
 Elle se base sur 3 principes :
