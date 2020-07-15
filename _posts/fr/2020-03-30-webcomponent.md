@@ -247,7 +247,7 @@ document.getElementById('popin').show();
 // On la fait disparaitre
 document.getElementById('popin').hide();
 ```
-Nous pouvons connaitre son état grace à la propriété `visible`
+Nous pouvons connaître son état grâce à la propriété `visible`
 ```javascript
 // Renvera true si la popin est visible sinon false
 document.getElementById('popin').visible;
