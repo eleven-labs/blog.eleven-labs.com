@@ -259,7 +259,7 @@ document.getElementById('popin').visible = true;
 ```
 Voilà notre composant popin complètement indépendant et facilement installable et utilisable dans un projet en javascript vanilla, react, angular ou vue.
 Seul petit problème, certain navigateur ne le supporte pas, coucou IE, mais pas de panique il existe un [polyfill](https://github.com/webcomponents/polyfills/tree/master/packages/webcomponentsjs) qu'on espère comme solution temporaire.
-Vous pouvez retrouver un grand nombre de WebComponents disponible sur ce [site](https://www.webcomponents.org/)
+Vous pouvez retrouver un grand nombre de WebComponents disponibles sur ce [site](https://www.webcomponents.org/)
 ## Ressources
 - [Github exemple](https://github.com/Ghau/webcomponent)
 - [MDN WebComponents](https://developer.mozilla.org/fr/docs/Web/Web_Components)
