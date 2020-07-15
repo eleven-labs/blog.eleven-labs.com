@@ -66,7 +66,7 @@ customElements.define('popin-component', class extends HTMLElement {
 }
 ```
 Comme on peut le voir la classe étend HTMLElement, elle va donc non seulement hériter de toutes les méthodes et propriétés d'HTMLElement et être considérée comme tel.
-Certaines méthodes disponibles vont nous être très utile `connectedCallback`, à la fin de la création de l'élément lorsqu'il est chargé dans la page, `disconnectedCallback` lorsque l'élément est supprimé et `attributeChangedCallback` lorsqu'une propriété est modifié
+Certaines méthodes disponibles vont nous être très utiles `connectedCallback`, à la fin de la création de l'élément lorsqu'il est chargé dans la page, `disconnectedCallback` lorsque l'élément est supprimé et `attributeChangedCallback` lorsqu'une propriété est modifiée
 ###shadow DOM
 Le principe du shadow DOM est la création d'un DOM virtuel à l'intérieur même d'un élément html.
 Tout le javascript, html et css fonctionne dans ce shadow DOM mais n'ont aucun impact à l'extérieur de cette élément et inversement.
