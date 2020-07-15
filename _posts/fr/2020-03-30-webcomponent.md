@@ -86,7 +86,7 @@ Elles n'ont aucun effet en dehors d'un shadow DOM.
 - :host-context(<Element>)
     Permet d'appliquer un style lorsque le component est un descendant d'ElementName
 ### implementation
-Pour n'avoir notre composant que dans un seul fichier nous allons déclarer le template en javascript, on va en profiter pour ajouter un peu de css histoire de faire plus jolie.
+Pour n'avoir notre composant que dans un seul fichier nous allons déclarer le template en javascript, on va en profiter pour ajouter un peu de css histoire de faire plus joli.
 Le template n'a pas besoin d'être ajouté au document, nous allons simplement le cloner et l'ajouter au shadowRoot.
 ```javascript
 let popinTemplate = document.createElement('template');
