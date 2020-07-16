@@ -41,7 +41,7 @@ Concrètement ça ressemble à ça :
 Les balises `template` ne sont pas affichées sur la page, elles doivent être copiées puis ajoutées au DOM grâce à `appendChild`.
 La balise `slot` permet d'insérer du HTML à la place grâce a la propriété `name`
 
-### customELement
+### customElement
 
 L'objet [customElements](https://developer.mozilla.org/fr/docs/Web/API/Window/customElements) possède la méthode `define` permettant de créer une nouvelle balise. Elle a besoin de 2 paramètres :
 - le nom de la balise !Attention il est imperatif d'avoir un *-* dans le nom!
