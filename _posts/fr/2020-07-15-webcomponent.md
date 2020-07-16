@@ -42,7 +42,6 @@ Les balises `template` ne sont pas affichées sur la page, elles doivent être c
 La balise `slot` permet d'insérer du HTML à la place grâce a la propriété `name`
 
 ### customElement
-
 L'objet [customElements](https://developer.mozilla.org/fr/docs/Web/API/Window/customElements) possède la méthode `define` permettant de créer une nouvelle balise. Elle a besoin de 2 paramètres :
 - le nom de la balise !Attention il est imperatif d'avoir un *-* dans le nom!
 - la classe définissant la nouvelle balise
