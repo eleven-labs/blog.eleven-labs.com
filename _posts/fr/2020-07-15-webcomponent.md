@@ -1,11 +1,11 @@
 ---
 layout: post
-title: WebComponent
-excerpt: Dans cet article, nous allons apprendre à créer un webcomponent
+title: Créer un Web Component
+excerpt: Dans cet article, nous allons apprendre à créer un Web Component
 authors:
     - aallier
 lang: fr
-permalink: /fr/céer-un-webcomponent/
+permalink: /fr/creer-un-webcomponent/
 categories:
     - javascript
 tags:
@@ -14,11 +14,11 @@ tags:
 ---
 
 Les normes liées au web ont beaucoup évolué depuis une dizaine d’années, le cap de l’HTML5 CSS3 a été difficile mais a ouvert la porte à de plus en plus de fonctionnalités.
-Une de ces fonctionnalités est le WebCompponent, qui permet de créer des composants indépendants et ré-utilisables.
-Le webComponent ressemble aux composants de React ou Angular mais a la particularité de n’être dépendant que du navigateur. Il peut donc fonctionner dans une page web indépendamment du framework utilisé. Nous allons voir comment en créer un simple, permettant de gérer un système de popin.
+Une de ces fonctionnalités est le Web Compponent, qui permet de créer des composants indépendants et ré-utilisables.
+Le Web Component ressemble aux composants de React ou Angular mais a la particularité de n’être dépendant que du navigateur. Il peut donc fonctionner dans une page web indépendamment du framework utilisé. Nous allons voir comment en créer un simple, permettant de gérer un système de popin.
 
 ## Principes
-Le webComponent repose sur 3 principes :
+Le Web Component repose sur 3 principes :
 - [template](https://developer.mozilla.org/fr/docs/Web/HTML/Element/template)
 - [shadowDOM](https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot)
 - [customElements](https://developer.mozilla.org/fr/docs/Web/Web_Components/Using_custom_elements)
