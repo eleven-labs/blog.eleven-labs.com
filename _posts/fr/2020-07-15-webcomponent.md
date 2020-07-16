@@ -40,7 +40,9 @@ Concrètement ça ressemble à ça :
 
 Les balises `template` ne sont pas affichées sur la page, elles doivent être copiées puis ajoutées au DOM grâce à `appendChild`.
 La balise `slot` permet d'insérer du HTML à la place grâce a la propriété `name`
-###customELement
+
+### customELement
+
 L'objet [customElements](https://developer.mozilla.org/fr/docs/Web/API/Window/customElements) possède la méthode `define` permettant de créer une nouvelle balise. Elle a besoin de 2 paramètres :
 - le nom de la balise !Attention il est imperatif d'avoir un *-* dans le nom!
 - la classe définissant la nouvelle balise
@@ -238,6 +240,7 @@ customElements.define('popin-component', class extends HTMLElement {
     }
 });
 ```
+
 ## Utilisation
 On l'utilise exactement de la même manière que les balises standards. On peut utiliser des propriétés communes à tous les éléments comme `id`, `name` ou `style` mais aussi les propriétés que l'on a ajouté `modal`.
 Il y a tout de même une petite différence : l'utilisation de la propriété `slot`. C'est ce qui nous permet de définir un élément qui sera placé dans la balise `slot` du template. Tout ce qui ne sera pas dans un slot géré par le template ne sera pas affiché.
