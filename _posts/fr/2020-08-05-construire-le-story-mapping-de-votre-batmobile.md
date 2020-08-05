@@ -15,6 +15,15 @@ tags:
 
 ---
 
+[]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/EPICS-StoryMapping.PNG)
+
+[]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Features_StoryMapping.PNG)
+
+[]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Global-StoryMapping.PNG)
+
+[]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Release-StoryMapping.PNG)
+
+[]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/US-StoryMapping.PNG)
 
 A n'en pas douter, pour construire aussi bien sa Batmobile et toutes les fonctions qui vont avec, Bruce Wayne s'est servi du Story Mapping ! 
 
