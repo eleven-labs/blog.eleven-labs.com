@@ -15,16 +15,6 @@ tags:
 
 ---
 
-[]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/EPICS-StoryMapping.PNG)
-
-[]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Features_StoryMapping.PNG)
-
-[]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Global-StoryMapping.PNG)
-
-[]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Release-StoryMapping.PNG)
-
-[]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/US-StoryMapping.PNG)
-
 A n'en pas douter, pour construire aussi bien sa Batmobile et toutes les fonctions qui vont avec, Bruce Wayne s'est servi du Story Mapping ! 
 
 Aussi appelé User Story Map, il s'agit d'un atelier qui se met en place initialement au cœur des projets agiles. Mais qui a aussi son utilité dans n’importe quel type de projet ou organisation, et même hors projets informatiques.
@@ -72,7 +62,6 @@ Une fois cela fait, vous allez pouvoir compléter la fiche de votre persona avec
 Pour en savoir plus sur la définition des personae, je vous invite à vous rendre sur le blog de [MyAgilePartner](https://blog.myagilepartner.fr/index.php/2017/07/24/bien-ecrire-son-persona-dans-un-projet-agile/).  
   
 
-  
 
 ## Etape 2 - Sauver Gotham City : écrire son User Journey 
 
@@ -120,17 +109,17 @@ Dans mon exemple précédent, je peux typiquement définir les EPICS suivantes :
     
 Ces EPICS sont à écrire sur des post-its et à placer sur votre axe horizontal, celui de la “timeline”, qui représente le déroulé des actions de votre utilisateur dans le temps.
 
-Image
+![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/EPICS-StoryMapping.PNG)
 
 Pour le moment, celui-ci est très large en terme de scope, et c’est normal. Le but étant maintenant, sous chaque EPIC, de rentrer un peu plus dans le détail.
 
 Nous allons donc rajouter de nouveaux post-it : les “Features”. Qui représentent les fonctionnalités macro à développer dans chaque EPIC.
 
-Image
+![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Features_StoryMapping.PNG)
 
 Puis, sous ces features, nous allons maintenant pouvoir rajouter toutes les tâches - qui seront directement vos user stories - que cet utilisateur va pouvoir y faire !
 
-Image 
+![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/US-StoryMapping.PNG) 
 
 Vous vous demandez surement pourquoi mes post-its “User Stories” sont répartis et séparés par des traits ? Nous y arrivons tout de suite dans la dernière étape !
 
@@ -143,7 +132,8 @@ Il est important que vous définissiez en premier votre MVP (Most Valuable Produ
 Vous pouvez vous servir du [dot voting](https://blog.myagilepartner.fr/index.php/2019/05/08/concept-du-dot-voting/) pour déterminer tous ensemble, parties prenantes du produit, les US (et donc fonctionnalités) qui seront prioritaires vis à vis des autres.
 
 
-Vous arriverez donc à la suite de cette répartition à cela : image
+Vous arriverez donc à la suite de cette répartition à cela : 
+![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Release-StoryMapping.PNG)
 
 De cette manière, vous allez pouvoir laisser en place vos EPICS et Features comme ils le sont, puis regrouper tous vos user stories qui font parties de votre MVP. Tracer ensuite un trait sous ce premier regroupement. Félicitations, vous avez là la constitution de votre premier release !
 
@@ -151,11 +141,11 @@ Faites ensuite le même travaille pour définir les éléments qui sont selon vo
 
 Voici la représentation globale de mon Story Mapping, auquel vous avez également accès ici :
 
+![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Global-StoryMapping.PNG)
   
 
 ## Keep the Story Map Alive
 La Story Map n’a pas pour unique but de vous aider à lancer les développements de votre produit ou de votre nouvelle feature. N’hésitez pas à la garder vivante, à la mettre à jour, à rajouter ou enlever des éléments en fonction des directions que peuvent prendre les développements de votre produit.
 
 Car c’est en effet un excellent outil de suivi tout au long de vos développements qui va vous aider à avoir une représentation très visuelle de votre produit et à le recentrer sur l’essentiel quand vous en aurez besoin !
-
 
