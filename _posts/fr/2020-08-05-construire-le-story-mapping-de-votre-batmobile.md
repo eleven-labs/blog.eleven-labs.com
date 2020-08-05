@@ -129,7 +129,7 @@ De cette manière, vous allez pouvoir laisser en place vos EPICS et Features com
 
 Faites ensuite le même travail pour définir les éléments qui sont selon vous importants mais non essentiels pour définir une priorité 2. Et enfin les éléments qui ne sont que du confort et qui vont constituer une potentielle priorité 3.
 
-Voici la représentation globale de mon Story Mapping, à laquelle vous avez également accès ici :
+Voici la représentation globale de mon Story Mapping, à laquelle vous avez également [accès ici](https://draft.io/7t8hw) :
 
 ![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Global-StoryMapping.PNG)
   
