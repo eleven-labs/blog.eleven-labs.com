@@ -2,11 +2,9 @@
 layout: post
 title: "Deno Vs Node - Top 5 des nouveautés de Deno"
 excerpt: Dans cet article, nous allons voir quelques nouveautés offertes par Deno
+permalink: /fr/deno-vs-node/
 authors:
     - plerouge
-permalink: /fr/deno-vs-node/
-date: '2020-08-12 00:00:00 +0100'
-date_gmt: '2020-08-12 00:00:00 +0100'
 categories:
     - javascript
     - node
@@ -18,7 +16,7 @@ tags:
 ---
 
 Le créateur de NodeJS, Ryan Dahl, a publié un nouveau runtime qui vise à résoudre de nombreuses lacunes de Node.
-Votre première réaction pourrait être «Oh super, un autre framework Javascript? Juste ce dont j'avais besoin… ».
+Votre première réaction pourrait être «Oh super, un autre framework Javascript ? Juste ce dont j'avais besoin… ».
 Ne vous inquiétez pas, j’ai eu la même réaction.
 Après avoir compris les avantages, j'ai également vu pourquoi Deno est exactement ce dont un développeur Javascript back-end a besoin en 2020.
 Jetons un coup d'œil aux 5 principales nouveautés offertes aux développeurs JavaScript en utilisant Deno.
