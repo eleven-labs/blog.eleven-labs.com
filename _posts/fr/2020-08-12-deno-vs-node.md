@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Deno Vs Node - Top 5 des nouveautés de Deno"
-excerpt: Dans cet article, nous allons voir queqlues nouveautés offertes par Deno
+excerpt: Dans cet article, nous allons voir quelques nouveautés offertes par Deno
 authors:
     - plerouge
 permalink: /fr/deno-vs-node/
