@@ -8,7 +8,7 @@ authors:
 categories:
     - javascript
     - node
-    - node
+    - deno
 tags:
     - javascript
     - node
