@@ -45,7 +45,11 @@ Une **Update** est donc la version mise à jour d'un **topic**.
 
 Enfin, on a les **Subscribers** (clients HTTP) et les **Publishers** (par exemple votre API), dont les termes parlent d'eux mêmes : les premiers s'abonnent au **Hub** Mercure, afin de récupérer les **Updates** de certains **topics**, publiés par ... Je vous le donne en mille... Les **Publishers**, exactement !
 
-> Mercure utilise les SSE (Server Sent Events) pour pousser ses Updates
+<div class="admonition note" markdown="1"><p class="admonition-title">Note</p>
+
+Mercure utilise les SSE (Server Sent Events) pour pousser ses Updates
+
+</div>
 
 ![Schéma du fonctionnement de Mercure]({{ site.baseurl }}/assets/2020-08-26-a-la-decouverte-de-mercure/mercure.png)
 
@@ -82,7 +86,11 @@ En effet, il s'attend à ce que vous lui précisiez sur quel topic vous souhaite
 
 Parfait, vous écoutez donc le topic *http://example.com/message/1*.
 
-> Attention à ne pas confondre. Il ne s'agit pas à proprement parler d'une **URL** mais plutôt d'une **URI** (*Uniform Resource Identifier*), qui identifie une ressource. En soi vous pourriez mettre n'importe quel identifiant ici (e.g. juste `messages`, ou `message-1`, mais il est fortement conseillé de préférer indiquer une **URI**.)
+<div class="admonition important" markdown="1"><p class="admonition-title">Important</p>
+
+Attention à ne pas confondre. Il ne s'agit pas à proprement parler d'une **URL** mais plutôt d'une **URI** (*Uniform Resource Identifier*), qui identifie une ressource. En soi vous pourriez mettre n'importe quel identifiant ici (e.g. juste `messages`, ou `message-1`, mais il est fortement conseillé de préférer indiquer une **URI**.)
+
+</div>
 
 Il est temps de publier une Update sur votre Hub Mercure pour voir ce qu'il se passe. Pour cela, nous simulerons notre Publisher avec [Postman](https://www.postman.com/downloads/).
 
@@ -105,13 +113,22 @@ Utilisez un body de type *x-www-form-urlencoded* pour les paramètres, qui sont 
 -   **topic** : Ce paramètre est obligatoire, il identifie la resource à publier. Indiquez le même que celui sur lequel vous écoutez (e.g. *http://example.com/message/1*)
 -   **data** : Le but, c'est d'envoyer une update. C'est dans le paramètre data que vous allez populer votre update avec les données souhaitées. Vous pouvez y mettre ce que vous voulez.
 
-> Il existe d'autres paramètres optionnels possibles, que vous pourrez retrouver sur la [documentation officielle de Mercure](https://mercure.rocks/docs).
+<div class="admonition note" markdown="1"><p class="admonition-title">Note</p>
+
+Il existe d'autres paramètres optionnels possibles, que vous pourrez retrouver sur la [documentation officielle de Mercure](https://mercure.rocks/docs).
+
+</div>
 
 Gardez un oeil sur l'onglet de votre navigateur connecté au Hub, et lancez la requête.
 
 Tadam ! Vous devriez voir un message apparaître. Bravo, vous avez envoyé votre première update avec Mercure.
 
-> Si rien ne s'affiche, rafraichissez la page, et relancez votre requête, Si toujours rien ne s'affiche et que Postman ne vous renvoie pas l'identifiant de l'Update, vérifiez votre JWT.
+<div class="admonition attention" markdown="1"><p class="admonition-title">Attention</p>
+
+Si rien ne s'affiche, rafraichissez la page, et relancez votre requête, Si toujours rien ne s'affiche et que Postman ne vous renvoie pas l'identifiant de l'Update, vérifiez votre JWT.
+
+</div>
+
 
 Et voilà ! Amusez-vous à changer les topics, et savourez l'envoi d'update en temps réel.
 
