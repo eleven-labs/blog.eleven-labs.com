@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: À la découverte de Mercure
-excerpt: Exploration du protocole Mercure. Vous n'aurez plus peur des communications client-server en temps réel à la fin du voyage.
+excerpt: Exploration du protocole Mercure. Vous n'aurez plus peur des communications client-server en temps réel à la fin de ce voyage.
 permalink: /fr/a-la-decouverte-de-mercure/
 authors:
     - ajacquemin
@@ -15,7 +15,8 @@ tags:
     - Docker
 ---
 
-[Mercure](https://mercure.rocks/) est un sérieux concurent aux classiques WebSockets et autres solutions similaires, car il tire parti de nombreuses nouveautés du Web (HTTP/2, SSE, ...) et est supporté nativement par la plupart des navigateurs.
+Aujourd'hui, je vous fait découvrir ce qu'est [Mercure](https://mercure.rocks/), ses principes, puis on apprendra comment le mettre en place simplement avec Docker.
+Mercure est un sérieux concurent aux classiques WebSockets et autres solutions similaires, car il tire parti de nombreuses nouveautés du Web (HTTP/2, SSE, ...) et est supporté nativement par la plupart des navigateurs.
 
 ![Logo de Mercure]({{ site.baseurl }}/assets/2020-08-26-a-la-decouverte-de-mercure/mercure_logo.png)
 
@@ -36,7 +37,7 @@ C'est ce qui m'a traversé l'esprit la première fois que j'ai testé Mercure, t
 
 Alors pour débuter la visite de Mercure, commencons par apprendre ensemble son langage...
 
-Je vous présente tout d'abord le **Hub**, le serveur et le coeur de Mercure.
+Je vous présente tout d'abord le **Hub**, le serveur et le cœur de Mercure.
 C'est vers lui que sont publiées les **Updates**, et lui qui s'occupe ensuite de les dispatcher à tous les clients s'étant abonnés aux ressources souhaitées.
 
 Ces ressources sont définies par des **Topics**. Un topic représente une ressource, à laquelle on peut s'abonner, pour en recevoir les **Updates**.
@@ -69,7 +70,7 @@ docker run \
 dunglas/mercure
 ```
 
-Plusieurs choses à décortiquer. Mercure peut prendre plusieurs variables d'environnement en entrée pour fonctionner, mais voici ici les plus importantes :
+Plusieurs choses à décortiquer. Mercure peut prendre plusieurs variables d'environnement en entrée pour fonctionner, mais voici ici parmi les plus importantes :
 -   **JWT_KEY** : Ce paramètre est obligatoire. Les Publishers et Subscribers l'utilisent pour s'abonner et publier sur le Hub.
 -   **ALLOW_ANONYMOUS** : Définit si les clients non authentifiés (sans JWT) peuvent s'abonner au Hub. On l'autorise pour l'exemple.
 -   **CORS_ALLOWED_ORIGINS** : Définit les règles CORS du serveur Mercure. Pour l'exemple, nous autorisons les clients de tout domaine.
@@ -88,7 +89,7 @@ Parfait, vous écoutez donc le topic *http://example.com/message/1*.
 
 <div class="admonition important" markdown="1"><p class="admonition-title">Important</p>
 
-Attention à ne pas confondre. Il ne s'agit pas à proprement parler d'une **URL** mais plutôt d'une **URI** (*Uniform Resource Identifier*), qui identifie une ressource. En soi vous pourriez mettre n'importe quel identifiant ici (e.g. juste `messages`, ou `message-1`, mais il est fortement conseillé de préférer indiquer une **URI**.)
+Attention à ne pas confondre. Il ne s'agit pas à proprement parler d'une **URL** mais plutôt d'une **URI** (*Uniform Resource Identifier*), qui identifie une ressource. En soi vous pourriez mettre n'importe quel identifiant ici (e.g. juste `messages`, ou `message/1`, mais il est fortement conseillé de préférer indiquer une **URI** complète.)
 
 </div>
 
@@ -105,13 +106,13 @@ Dans la partie Payload, insérer ce tableau :
 }
 ```
 Cette configuration autorise à publier des updates **publiques**.
-Enfin, dans dans la signature, remplacez le secret par la **JWT_KEY** que vous avez renseignée plus tôt dans la commande Docker (e.g. `astronautsKey`). Collez le JWT généré dans la partie autorisation de Postman.
+Enfin, dans la signature, remplacez le secret par la **JWT_KEY** que vous avez renseignée plus tôt dans la commande Docker (e.g. `astronautsKey`). Collez le JWT généré dans la partie autorisation de Postman.
 
 La requête que nous allons faire est de type **POST**, sur l'addresse du hub : *http://localhost:3000/.well-known/mercure* .
 
 Utilisez un body de type *x-www-form-urlencoded* pour les paramètres, qui sont les suivants :
--   **topic** : Ce paramètre est obligatoire, il identifie la resource à publier. Indiquez le même que celui sur lequel vous écoutez (e.g. *http://example.com/message/1*)
--   **data** : Le but, c'est d'envoyer une update. C'est dans le paramètre data que vous allez populer votre update avec les données souhaitées. Vous pouvez y mettre ce que vous voulez.
+-   `topic` : Ce paramètre est obligatoire, il identifie la resource à publier. Indiquez le même que celui sur lequel vous écoutez (e.g. *http://example.com/message/1*)
+-   `data` : Le but, c'est d'envoyer une update. C'est dans le paramètre `data` que vous allez populer votre update avec les données souhaitées. Vous pouvez y mettre ce que vous voulez.
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Note</p>
 
@@ -125,7 +126,7 @@ Tadam ! Vous devriez voir un message apparaître. Bravo, vous avez envoyé votre
 
 <div class="admonition attention" markdown="1"><p class="admonition-title">Attention</p>
 
-Si rien ne s'affiche, rafraichissez la page, et relancez votre requête, Si toujours rien ne s'affiche et que Postman ne vous renvoie pas l'identifiant de l'Update, vérifiez votre JWT.
+Si rien ne s'affiche, rafraichissez la page, et relancez votre requête. Si toujours rien ne s'affiche et que Postman ne vous renvoie pas l'identifiant de l'Update, vérifiez votre JWT.
 
 </div>
 
@@ -139,7 +140,7 @@ Créez vous un simple fichier HTML, et insérez-y ce code dans une balise **scri
 ```javascript
 const url = new URL('http://localhost:3000/.well-known/mercure'); // URL de notre Hub Mercure
 url.searchParams.append('topic', 'http://example.com/message/1'); // On ajoute les topics auxquels on souhaite s'abonner
-url.searchParams.append('topic', 'http://example.com/message/{id}'); // Il est possible d'utilise un topicSlector avant de sélectionner plusieurs topics en même temps
+url.searchParams.append('topic', 'http://example.com/message/{id}'); // Il est possible d'utiliser un topicSelector avant de sélectionner plusieurs topics en même temps
 const eventSource = new EventSource(url);
 
 eventSource.onmessage = ({data}) => {
@@ -153,11 +154,13 @@ Mercure repose sur les SSE, on utilise donc l'API JavaScript **EventSource** pou
 
 ## Conclusion
 
-Voilà qui conclu un très rapide tour d'horizon de Mercure. Ce protocole est beaucoup plus complet qu'il n'y parait, et il y aurait beaucoup d'autres choses à dire, mais je n'en dévoilerai pas plus dans cet article d'introduction.
+Voilà qui conclu un très rapide tour d'horizon de Mercure.
+Vous savez à présent comment il fonctionne, et vous êtes capables de le configurer et l'utiliser simplement dans n'importe laquelle de vos applications.
+Bien évidemment, ce protocole est beaucoup plus complet qu'il n'y parait, et il y aurait beaucoup d'autres choses à dire, mais je n'en dévoilerai pas plus dans cet article d'introduction.
 
 ![GIF Keep your secrets]({{ site.baseurl }}/assets/2020-08-26-a-la-decouverte-de-mercure/keep_your_secrets.gif)
 
-Cependant, un codelabs est prévu très bientôt pour approfondir tout ce qu'on a vu et découvrir pleins d'autres choses. Notamment comment sécuriser les connexions, utiliser Mercure dans une application Symfony, créer un chat minimaliste... Le tout sur la plateforme [Eleven's Codelabs](https://codelabs.eleven-labs.com/).
+Cependant, un codelabs est prévu très bientôt pour approfondir tout cela, et découvrir pleins d'autres choses. Notamment comment sécuriser les connexions, utiliser Mercure dans une application Symfony, ... Le tout sur la plateforme [Eleven's Codelabs](https://codelabs.eleven-labs.com/).
 
 Je vous invite bien entendu à consulter la [documentation officielle de Mercure](https://mercure.rocks/docs) qui est extrêmement bien faite, afin de pousser votre exploration encore un peu plus loin.
 
