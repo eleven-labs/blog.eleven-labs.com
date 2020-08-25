@@ -16,7 +16,7 @@ tags:
 ---
 
 Aujourd'hui, je vous fait découvrir ce qu'est [Mercure](https://mercure.rocks/), ses principes, puis on apprendra comment le mettre en place simplement avec Docker.
-Mercure est un sérieux concurent aux classiques WebSockets et autres solutions similaires, car il tire parti de nombreuses nouveautés du Web (HTTP/2, SSE, ...) et est supporté nativement par la plupart des navigateurs.
+Mercure est un sérieux concurrent aux classiques WebSockets et autres solutions similaires, car il tire parti de nombreuses nouveautés du Web (HTTP/2, SSE, ...) et est supporté nativement par la plupart des navigateurs.
 
 ![Logo de Mercure]({{ site.baseurl }}/assets/2020-08-26-a-la-decouverte-de-mercure/mercure_logo.png)
 
@@ -35,7 +35,7 @@ Vous êtes des adeptes de la nouveauté ? Férus de conquête spatiale ? Fans de
 
 C'est ce qui m'a traversé l'esprit la première fois que j'ai testé Mercure, tant c'est facile d'utilisation. Un magicien ne révèle habituellement pas ses secrets, mais vous m'avez l'air sympa, on va faire une exception.
 
-Alors pour débuter la visite de Mercure, commencons par apprendre ensemble son langage...
+Alors pour débuter la visite de Mercure, commençons par apprendre ensemble son langage...
 
 Je vous présente tout d'abord le **Hub**, le serveur et le cœur de Mercure.
 C'est vers lui que sont publiées les **Updates**, et lui qui s'occupe ensuite de les dispatcher à tous les clients s'étant abonnés aux ressources souhaitées.
@@ -61,7 +61,7 @@ C'est bon, vous avez tout compris.. Plus qu'à mettre en pratique !
 ## 2. Mercure en pratique
 La théorie ça va 5 minutes, mais je sens bien que vous trépignez d'impatience de tester par vous-même. Ça tombe bien, c'est maintenant !
 
-Rien de tel qu'un petit exemple pour dompter la bête. Pour des besoins de reproduisibilité et de facilité, nous allons utiliser [l'image Docker de Mercure](https://hub.docker.com/r/dunglas/mercure).
+Rien de tel qu'un petit exemple pour dompter la bête. Pour des besoins de reproductibilité et de facilité, nous allons utiliser [l'image Docker de Mercure](https://hub.docker.com/r/dunglas/mercure).
 
 ```shell
 docker run \
@@ -108,7 +108,7 @@ Dans la partie Payload, insérer ce tableau :
 Cette configuration autorise à publier des updates **publiques**.
 Enfin, dans la signature, remplacez le secret par la **JWT_KEY** que vous avez renseignée plus tôt dans la commande Docker (e.g. `astronautsKey`). Collez le JWT généré dans la partie autorisation de Postman.
 
-La requête que nous allons faire est de type **POST**, sur l'addresse du hub : *http://localhost:3000/.well-known/mercure* .
+La requête que nous allons faire est de type **POST**, sur l'adresse du hub : *http://localhost:3000/.well-known/mercure* .
 
 Utilisez un body de type *x-www-form-urlencoded* pour les paramètres, qui sont les suivants :
 -   `topic` : Ce paramètre est obligatoire, il identifie la resource à publier. Indiquez le même que celui sur lequel vous écoutez (e.g. *http://example.com/message/1*)
