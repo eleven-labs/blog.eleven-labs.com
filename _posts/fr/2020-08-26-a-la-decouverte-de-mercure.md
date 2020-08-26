@@ -140,7 +140,7 @@ Créez vous un simple fichier HTML, et insérez-y ce code dans une balise **scri
 ```javascript
 const url = new URL('http://localhost:3000/.well-known/mercure'); // URL de notre Hub Mercure
 url.searchParams.append('topic', 'http://example.com/message/1'); // On ajoute les topics auxquels on souhaite s'abonner
-url.searchParams.append('topic', 'http://example.com/message/{id}'); // Il est possible d'utiliser un topicSelector avant de sélectionner plusieurs topics en même temps
+url.searchParams.append('topic', 'http://example.com/message/{id}'); // Il est possible d'utiliser un topicSelector afin de sélectionner plusieurs topics en même temps
 const eventSource = new EventSource(url);
 
 eventSource.onmessage = ({data}) => {
