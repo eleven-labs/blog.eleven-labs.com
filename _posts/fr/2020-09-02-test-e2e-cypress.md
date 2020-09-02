@@ -15,17 +15,17 @@ tags:
 # cover: URL DE L'IMAGE (/assets/....)
 ---
 
-![Logo Cypress]({{ site.baseurl }}/assets/2020-08-19-test-e2e-cypress/cypress-logo.png)
+![Logo Cypress]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/cypress-logo.png)
 
 Les tests sont devenus un aspect essentiel du développement web, pour ces deux raisons : **vérifier** que l’application fonctionne correctement et **garantir** la meilleure expérience utilisateur possible. Il existe différents types de tests mais aujourd’hui nous allons nous concentrer principalement sur les **tests End-to-end** et comment les implémenter avec **[Cypress](https://cypress.io/)**. 
 
 ## qu’est ce que les tests end to end
 
-![Pyramide des couts et quantites selon les tests]({{ site.baseurl }}/assets/2020-08-19-test-e2e-cypress/pyramid.png)
+![Pyramide des couts et quantites selon les tests]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/pyramid.png)
 
 Tout d’abord avant de parler des tests end-to-end, il faut que je vous explique les deux premières couches de cette pyramide (on ne peut pas arriver au sommet sans grimper la montagne).
 
-![GIF Alright]({{ site.baseurl }}/assets/2020-08-19-test-e2e-cypress/alright.gif)
+![GIF Alright]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/alright.gif)
 
 **Les tests unitaires (TU)** constituent le socle des tests d’une application. Les TU permettent de tester uniquement un élément individuel de l’application (classe, fonction…).
 
@@ -44,7 +44,7 @@ Cypress est un framework JS de tests end to end. C’est un outil open source pe
 
 Par rapport à d’autres outils de tests e2e, Cypress n’a pas besoin d’être couplé à une solution ni de driver pour sa mise en place. Sa mission est de rendre l’écriture des tests plus rapide (tests exécutés sur le navigateur), plus facile (écriture des tests en JavaScript avec Mocha, Chai et Sinon) et encore plus fiable (visibilité des tests effectués sur le navigateur, screenshot de l’erreur).
 
-![Schema avant et apres Cypress]({{ site.baseurl }}/assets/2020-08-19-test-e2e-cypress/cypress-details.png)
+![Schema avant et apres Cypress]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/cypress-details.png)
 
 Ce qui m'a poussé à vous parler aujourd'hui de Cypress est le fait que lors d'un projet j'ai eu l'occasion de pouvoir l'utiliser et de voir la simplicité d'installation et d'écriture des tests mais aussi de la robustesse de l'outil.
 
@@ -83,7 +83,7 @@ Une fois l'installation terminée, on va ajouter une commande dans le champ `scr
 ```
 Cette commande va nous permettre de démarrer l'interface d'exécution de tests de Cypress. Comme vous pouvez le voir sur la photo ci-dessous, des fichiers de tests sont affichés sur l'interface de Cypress. Ces fichiers ont été créé lors de l'execution de la commande. Pour tester sur différents navigateurs, Cypress va tenter de trouver tous les navigateurs compatibles sur la machine. A l'heure où je vous écris cet article, Cypress peut effectuer les scénarios de tests sur `Chrome`, `Chromium`, `Electron` et `Firefox`.
 
-![Cypress test runner]({{ site.baseurl }}/assets/2020-08-19-test-e2e-cypress/cypress-test-runner.png)
+![Cypress test runner]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/cypress-test-runner.png)
 
 L'exécution du script `yarn cypress` n'a pas seulement généré des fichiers de tests mais aussi une architecture placés à la racine du code de votre application.
 
@@ -196,11 +196,11 @@ context("Login and buy stuff", () => {
 Lorsque vous souhaitez tester votre scénario, il suffit de cliquer sur le scénario voulu dans l'interface de Cypress et ce dernier lancera le scénario dans le navigateur qui a été sélectionné.
 Chaque ligne du test est répertorié en détails (action, temps ...) sur l'interface de Cypress, la description des tests est séparé comme dans le code (`context`, `describe`, `it`). 
 
-![Cypress tests succeed]({{ site.baseurl }}/assets/2020-08-19-test-e2e-cypress/cypress-test-succeed.png)
+![Cypress tests succeed]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/cypress-succeed.png)
 
 Lorsque le test échoue, l'interface permet de débugger assez rapidement grâce aux messages d'erreurs assez explicites et les snapshots de l'état avant et après au niveau du test qui a échoué.
 
-![Cypress tests failed]({{ site.baseurl }}/assets/2020-08-19-test-e2e-cypress/cypress-test-failed.png)
+![Cypress tests failed]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/cypress-failed.png)
 
 ## Conclusion
 
