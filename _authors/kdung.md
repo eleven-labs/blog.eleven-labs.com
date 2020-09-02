@@ -5,4 +5,4 @@ title: Kevin Dung
 twitter: 
 permalink: /authors/kdung/
 ---
-Developer React / NodeJS
+Développeur React / NodeJS, adepte des bons petits plats bien gras mais aussi du sport pour compenser
