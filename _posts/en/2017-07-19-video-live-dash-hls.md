@@ -17,7 +17,7 @@ tags:
     - video
 ---
 
-Even as they are used by big names like Apple, Microsoft, Youtube or Netflix, video streaming technologies are not among the best known.
+Despite being used by big names like Apple, Microsoft, Youtube or Netflix, video streaming technologies are not among the best known.
 
 ## Introduction
 
@@ -33,12 +33,12 @@ Major streaming platforms use this protocol to serve their live video streams or
 
 ### How does it work ?
 
-A diagram explain it better than a long speech:
+A diagram explains it better than a long speech:
 
 ![Operating diagram- HLS ]({{ site.baseurl }}/assets/2017-07-12-video-live-dash-hls/diagram_HLS.png)
 
 Here we see the workflow that allows the raw audio/video to reach the client as a stream.
-The segmented files, usually in MPEG-2 TS format, are accessed via a "manifest", an index file in M3U format that describes content segments as well as metadata that the client can/must use. This file is basically a URL playlist.
+The segmented files, usually in MPEG-2 TS format, are accessed via a "manifest", an index file in M3U format that describes content segments as well as metadata that the client can/must use. This file is basically an URL playlist.
 
 The example M3U file below is from a live broadcast of the Twitch.tv platform:
 
@@ -71,7 +71,7 @@ Among the most important data are :
 - `#EXT-X-MEDIA-SEQUENCE` : The number of sequences preceding the first URL of the file.
 - `#EXTINF` : Duration of the sequence pointed by the URL located on the next line.
 
-The following example shows an M3U file format for adaptive streaming :
+The following example shows an M3U file format for adaptive streaming:
 ```
 #EXTM3U
 #EXT-X-VERSION:6
@@ -93,7 +93,7 @@ The open-source library [hls.js](https://github.com/video-dev/hls.js) is certain
 
 hls.js has a very complete (and very well documented!) [API](https://github.com/video-dev/hls.js/blob/master/doc/API.md) which allows to manage the video and the stream directly from Javascript.
 
-Here is an example of a basic implementation :
+Here is an example of a basic implementation:
 ```html
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <video id="video"></video>
@@ -123,7 +123,7 @@ DASH, in addition to being ISO-standardized, has several features not found in o
 
 ### How does it works ?
 
-Once again, let's use a good diagram :
+Once again, let's use a good diagram:
 
 ![Operating diagram - DASH ]({{ site.baseurl }}/assets/2017-07-12-video-live-dash-hls/diagram_DASH.png)
 
@@ -131,7 +131,7 @@ The different sequences of content are again of a given size, quality and encodi
 
 The file centralizing all the information of the content is a MPD file (Media Presentation Description). This XML file contains all the data that the client could dream of.
 
-Let's start with a *small* example :
+Let's start with a *small* example:
 
 ```xml
 <MPD xmlns="urn:mpeg:DASH:schema:MPD:2011" mediaPresentationDuration="PT0H3M1.63S" minBufferTime="PT1.5S" profiles="urn:mpeg:dash:profile:isoff-on-demand:2011"
@@ -189,11 +189,11 @@ type="static">
 </MPD>
 ```
 
-So here we have some classic XML, each tag giving specific information. Let's look at the main tags in hierarchical order:
+So here we have some classic XML, each tag giving specific information. Let's look at the main tags by hierarchical order:
 
-- `<MPD>` : Describes the metadata of the file, its version, the version of the DASH used, the total duration of the content...
+- `<MPD>`: Describes the metadata of the file, its version, the version of the DASH used, the total duration of the content...
 - `<AdaptationSet>`: An adaptation is one of the elements of the content, for example video or audio.
-- `<ContentComponent>` : In a similar way, ContentComponent describes exactly the type of adaptation.
+- `<ContentComponent>`: In a similar way, ContentComponent describes exactly the type of adaptation.
 - `<Representation>`: Representation describes a specific version of the sequenced content. It has its own encoding and it is this element that is used by adaptive streaming, described in the HLS section.
 - `<BaseURL>`: The URL of the sequence.
 
@@ -203,7 +203,7 @@ It may be interesting to note that DASH supports DRM to broadcast protected cont
 
 One of the most complete open-source library to implement a DASH client is probably [Rx-Player](https://github.com/canalplus/rx-player){:rel="nofollow noreferrer"}, a library maintained by the french premium TV channel Canal +. It allows to play both live DASH and replay via a very complete [API](https://github.com/canalplus/rx-player/blob/master/doc/api/index.md){:rel="nofollow noreferrer"}
 
-I leave it to them to explain [why](https://github.com/canalplus/rx-player#why-a-new-player){:rel="nofollow noreferrer"} RX is superior when it comes to the delicate task of implementing a DASH player. It also handle Smooth Streaming (a lesser known streaming protocol)if you feel like it.
+I leave it to them to explain [why](https://github.com/canalplus/rx-player#why-a-new-player){:rel="nofollow noreferrer"} RX is superior when it comes to the delicate task of implementing a DASH player. It also handles Smooth Streaming (a lesser known streaming protocol) if you feel like it.
 
 You can have a look at their [demo](http://developers.canal-plus.com/rx-player/){:rel="nofollow noreferrer"}.
 
