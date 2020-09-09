@@ -5,7 +5,7 @@ excerpt: DASH & HLS, two protocols to stream them all.
 authors:
     - jbernard
 lang: en
-permalink: /en/video-live-dash-hls/
+permalink: /video-live-dash-hls/
 date: '2020-09-03 11:00:00 +0100'
 date_gmt: '2020-09-03 11:00:00 +0100'
 categories:
