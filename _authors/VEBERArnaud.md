@@ -3,6 +3,14 @@ layout: author
 login: VEBERArnaud
 title: Arnaud Veber
 twitter: VEBERArnaud
+github: VEBERArnaud
+linkedin: https://www.linkedin.com/in/veberarnaud/
 permalink: /authors/VEBERArnaud/
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nibh urna, auctor sit amet vehicula quis, feugiat eu sem. Duis sed lorem nibh. Nam pretium finibus sodales. Vivamus elementum ultricies magna, sit amet hendrerit ex fringilla eget. Morbi facilisis, lorem nec eleifend malesuada, erat lorem euismod urna, et interdum libero mi at leo. Aliquam erat volutpat. Duis et odio id metus feugiat interdum. Mauris sed elementum sem.
+Cloud Solutions Architect & Fullstack Developer depuis 10 ans.
+
+Je travail aujourd'hui principalement sur des architectures web serverless & event driven hébergées sur AWS.
+
+- AWS Certified Solutions Architect - Associate
+- AWS Certified Developer - Associate
+- AWS Certified SysOps Administrator - Associate
