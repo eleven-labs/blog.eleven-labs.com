@@ -1,9 +1,9 @@
 ---
 layout: post
 title: >
-    Gérer son organisation github avec terraform
+    Gérer son organisation Github avec Terraform
 excerpt: >
-    Apprenons ensemble à scaler la gestion d'une organisation github avec terraform
+    Apprenons ensemble à scaler la gestion d'une organisation Github avec Terraform
 lang: fr
 authors:
     - VEBERArnaud
@@ -16,51 +16,51 @@ tags:
 ---
 
 ## Un peu de contexte
-Avec l'augmentation du nombre de projets et de contributeurs sur notre [organisation github](https://github.com/eleven-labs)
-ont émergés des sujets d'on boarding / out boarding et de gouvernance.
-Jusque là, les dépôts et les contributeurs étaient créés  manuellement par un administrateur de l'organisation,
+Avec l'augmentation du nombre de projets et de contributeurs sur notre [organisation Github](https://github.com/eleven-labs)
+ont émergé des sujets d'onboarding / outboarding et de gouvernance.
+Jusque là, les dépôts et les contributeurs étaient créés manuellement par un administrateur de l'organisation,
 mais le manque de disponibilité de ces administrateurs ne permettait pas une gestion optimale.
 Il devenait évident qu'une autre solution devait être envisagée.
 
-## Comment scaler la gestion d'une organisation github
-Comme expliqué précédemment, notre obstacle sur le chemin d'une gestion optimale se trouve au niveau  des actions
+## Comment scaler la gestion d'une organisation Github
+Comme expliqué précédemment, notre obstacle sur le chemin d'une gestion optimale se trouve au niveau des actions
 manuelles réalisables par un ensemble restreint de personnes.
 
 Pour outrepasser cet obstacle, deux solutions s'offraient à nous
-- Augmenter le nombre d'administrateur et donc la probabilité d'en trouver un de disponible à un instant *t*,
+- Augmenter le nombre d'administrateurs et donc la probabilité d'en trouver un de disponible à un instant *t*,
 - Automatiser ces actions à l'aide d'un projet collaboratif accessible par tout le monde.
 
-La première solution, consistant à augmenter le nombre d'administrateur, à très vite était abandonnée.
-Cette solution soulevant plus de questions qu'elle apporte de réponses (sécurité, gouvernance, perte de l'information).
+La première solution, consistant à augmenter le nombre d'administrateurs, a très vite été abandonnée.
+Elle soulevait plus de questions qu'elle apportait de réponses (sécurité, gouvernance, perte de l'information).
 
-La deuxième solution, au contraire, s'est très vite révélée comme la solution dont nous avions besoin.
+La deuxième solution, au contraire, s'est très vite révélée être la solution dont nous avions besoin.
 
 ## Le projet
 #### Nos besoins:
-- Un projet déclaratif versionné pouvant interagir avec l'api github (pour éviter la perte d'information),
-- Un projet accessible à tout le monde (pour faciliter l'on boarding / out boarding),
+- Un projet déclaratif versionné pouvant interagir avec l'api Github (pour éviter la perte d'information),
+- Un projet accessible à tout le monde (pour faciliter l'onboarding / outboarding),
 - Un workflow de validation simplifié et collaboratif (pour la gouvernance & la sécurité),
-- Un projet permettant l' integration et le déploiement continu (pour automatiser les changements),
+- Un projet permettant l'intégration et le déploiement continus (pour automatiser les changements),
 
 #### Notre solution
 Avec cet ensemble de besoins identifiés, j'ai tout de suite vu une nouvelle occasion d'utiliser un de mes outils
-favoris [terraform](https://www.terraform.io/).
+favoris [Terraform](https://www.terraform.io/).
 
-Terraform nous permet d'avoir un projet déclaratif et open source versionné sur github (*githubception*) pour favoriser
+Terraform nous permet d'avoir un projet déclaratif et open source versionné sur Github (*Githubception*) pour favoriser
 la collaboration, simplifier le process de validation et déclencher automatiquement des actions au merge d'une pull
 request.
 
 ## Passons à la pratique
-### Configuration du provider github
-Commençons par la configuration du provider github pour terraform.
+### Configuration du provider Github
+Commençons par la configuration du provider Github pour Terraform.
 
-> La documentation du provider github pour terraform est disponible sur le
-> [site officiel terraform](https://www.terraform.io/docs/providers/github/index.html).
+> La documentation du provider Github pour Terraform est disponible sur le
+> [site officiel Terraform](https://www.terraform.io/docs/providers/github/index.html).
 
-Pour cela vous allez avoir besoin:
-- du nom de l'organisation github, par exemple `your_organisation_name`
-- d'un [token github](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
-permettant l'administration de l'organisation, par exemple`ff34885...`
+Pour cela vous allez avoir besoin :
+- du nom de l'organisation Github, par exemple `your_organisation_name`
+- d'un [token Github](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
+permettant l'administration de l'organisation, par exemple `ff34885...`
 
 Créons à la racine de notre projet un fichier `terraform.tf` qui contiendra la configuration du provider
 ```hcl
@@ -77,10 +77,10 @@ Vous pouvez maintenant initialiser le projet avec la commande
 terraform init
 ```
 
-Notre projet terraform étant initialisé et prêt a communiquer avec l'api de github, voyons comment créer et récupérer les
+Notre projet Terraform étant initialisé et prêt à communiquer avec l'API de Github, voyons comment créer et récupérer les
 différentes resources et data sources dont nous avons besoin.
 
-### repository
+### Repository
 #### Resource github_repository
 Commençons par un exemple simplifié de gestion de repository avec la resource `github_repository`
 
@@ -98,7 +98,7 @@ resource "github_repository" "example" {
 }
 ```
 
-Vous pouvez maintenant vérifier les changement que terraform apportera à votre organisation avec la commande
+Vous pouvez maintenant vérifier les changements que Terraform apportera à votre organisation avec la commande
 ```sh
 terraform plan
 ```
@@ -108,12 +108,12 @@ Puis appliquez ces changements avec la commande
 terraform apply
 ```
 
-Votre nouveau repository est maintenant disponible dans votre organisation github
+Votre nouveau repository est maintenant disponible dans votre organisation Github
 
-### utilisateur
-Intéressons nous maintenant à la partie utilisateur.
+### Utilisateur
+Intéressons-nous maintenant à la partie utilisateur.
 
-Pour les utilisateurs, notre but n'est pas de créer de nouveaux utilisateurs github mais de récupérer les utilisateurs
+Pour les utilisateurs, notre but n'est pas de créer de nouveaux utilisateurs Github mais de récupérer les utilisateurs
 qui nous intéressent pour ensuite les ajouter à notre organisation.
 Pour cette raison nous utilisons la data source `github_user` pour récupérer les utilisateurs et la resource
 `github_membership` afin de les ajouter à l'organisation.
@@ -133,10 +133,10 @@ data "github_user" "example" {
 
 #### github_membership
 La resource `github_membership` requiert en arguments
-- le username de l'utilisateur à ajouter à l'organisation, nous utilisons ici une interpolation depuis notre data
-source `github_user`
-- le role de cet utilisateur dans l'organisation, deux choix sont possible `member` ou `admin` en fonction des
-permissions que vous souhaitez lui attribuer
+- le username de l'utilisateur à ajouter à l'organisation. Nous utilisons ici une interpolation depuis notre data
+source `github_user`.
+- le rôle de cet utilisateur dans l'organisation. Deux choix sont possibles `member` ou `admin` en fonction des
+permissions que vous souhaitez lui attribuer.
 
 Ajoutons au fichier `user.tf`
 ```hcl
@@ -157,13 +157,13 @@ terraform plan
 terraform apply
 ```
 
-L'utilisateur reçoit alors un mail de github l'invitant à rejoindre votre organisation.
+L'utilisateur reçoit alors un mail de Github l'invitant à rejoindre votre organisation.
 
-### team
-Le dernier domaine que nous verrons dans cet article concerne les teams; incluant la création de teams, l'ajout
-d'utilisateur à ces teams et l'attribution de repositories à ces teams.
+### Team
+Le dernier domaine que nous verrons dans cet article concerne les teams, incluant la création, l'ajout
+d'utilisateurs et l'attribution de repositories à ces teams.
 
-Pour cela nous utiliserons les resources `github_team` pour la création de team, `github_team_membership` pour l'ajout
+Pour cela nous utiliserons les resources `github_team` pour la création de teams, `github_team_membership` pour l'ajout
 d'utilisateurs aux teams et `github_team_repository` pour l'attribution de repositories aux teams.
 
 #### github_team
@@ -181,9 +181,9 @@ resource "github_team" "example" {
 
 #### github_team_membership
 La resource `github_team_membership` requiert en arguments
-- l'id de la team, récupérer par interpolation depuis la resource `github_team`
-- le username de l'utilisateur à ajouter à la team, récupérer par interpolation depuis la data source `github_user`
-- le role de cet utilisateur dans la team, au choix entre `member` et `maintainer`
+- l'id de la team, récupérée par interpolation depuis la resource `github_team`
+- le username de l'utilisateur à ajouter à la team, récupérée par interpolation depuis la data source `github_user`
+- le rôle de cet utilisateur dans la team, au choix entre `member` et `maintainer`
 
 Ajoutons au fichier `team.tf`
 ```hcl
@@ -200,8 +200,8 @@ resource "github_team_membership" "example" {
 
 #### github_team_repository
 La resource `github_team_repository` requiert en arguments
-- l'id de la team, récupérer par interpolation depuis la resource `github_team`
-- le nom du repository à attribuer à la team, récupérer par interpolation depuis la resource `github_repository`
+- l'id de la team, récupérée par interpolation depuis la resource `github_team`
+- le nom du repository à attribuer à la team, récupérée par interpolation depuis la resource `github_repository`
 - les permissions de la team sur ce repository, au choix parmi `pull`, `triage`, `push`, `maintain` or `admin`
 
 Ajoutons au fichier `team.tf`
@@ -225,20 +225,20 @@ terraform plan
 terraform apply
 ```
 
-Votre nouvelle team devrait maintenant exister, contenir votre utilisateur et avoir les droit admin sur votre nouveau
+Votre nouvelle team devrait maintenant exister, contenir votre utilisateur et avoir les droits admin sur votre nouveau
 repository.
 
-### modules
+### Modules
 Maintenant que nous savons gérer les repositories, les utilisateurs et les teams, voyons comment créer des modules
-réutilisable pour abstraire une partie de la complexité.
+réutilisables pour abstraire une partie de la complexité.
 
-Nous en profiterons pour ajouter de nouvelles resource à ces modules afin ajouter les arguments optionnels sur les
+Nous en profiterons pour ajouter de nouvelles resources à ces modules afin d'ajouter les arguments optionnels sur les
 resources ainsi que la création des resources de protection de branches et des webhooks sur les repositories.
 
-![github model]({{site.baseurl}}/assets/2020-09-08-gerer-son-organisation-github-avec-terraform/github_model.png)
+![Github model]({{site.baseurl}}/assets/2020-09-08-gerer-son-organisation-github-avec-terraform/github_model.png)
 
-#### module repository
-Le premier module que nous allons réaliser et le module de gestion de repository que nous nommerons `repository`.
+#### Module repository
+Le premier module que nous allons réaliser est le module de gestion de repository que nous nommerons `repository`.
 
 Ce module est composé des fichiers
 - `./module/repository/variables.tf` pour regrouper les différentes variables du module
@@ -557,7 +557,7 @@ module "my_awesome_blog" {
 ```
 
 #### Module utilisateur
-Intéressons nous maintenant au module de gestion d'utilisateurs que nous nommerons `user`.
+Intéressons-nous maintenant au module de gestion d'utilisateurs que nous nommerons `user`.
 
 Ce module est composé des fichiers
 - `./module/user/variables.tf` pour regrouper les différentes variables du module
@@ -684,7 +684,7 @@ module "VEBERArnaud" {
 }
 ```
 
-#### module team
+#### Module team
 Pour finir avec les modules, regardons la gestion des teams dans un module nommé `team`.
 
 Ce module est composé des fichiers
@@ -826,41 +826,41 @@ module "core" {
 }
 ```
 
-Utilisons maintenant nos commandes terraform pour vérifier les changements qui vont être apportés à notre organisation
-github et les appliquer.
+Utilisons maintenant nos commandes Terraform pour vérifier les changements qui vont être apportés à notre organisation
+Github et les appliquer.
 ```sh
 terraform plan
 terraforn apply
 ```
 
 ## Pour aller plus loin
-### terraform remote state & lock
-Afin de favoriser la collaboration, il est important de partager le state terraform entre les différentes exécutions et
+### Terraform remote state & lock
+Afin de favoriser la collaboration, il est important de partager le state Terraform entre les différentes exécutions et
 garantir qu'une seule exécution se fait à un instant *t*
 
-Pour cela, il est possible de configurer le stockage distant des fichiers de state terraform, plusieurs types de backend
+Pour cela, il est possible de configurer le stockage distant des fichiers de state Terraform, plusieurs types de backend
 sont disponible en fonction de vos préférences.
 
 La documentation pour ces fonctionnalités est disponible sur la
-[documentation terraform](https://www.terraform.io/docs/backends/types/index.html).
+[documentation Terraform](https://www.terraform.io/docs/backends/types/index.html).
 
 ### Intégration / déploiement continue
 La dernière étape pour que notre projet corresponde aux besoins de départ est la mise en place d'une pipeline de CI/CD.
 
-> Pour l'exemple nous utiliserons [travis-ci](https://travis-ci.org/) mais vous pouvez utilisez la techno de votre choix.
+> Pour l'exemple nous utiliserons [travis-ci](https://travis-ci.org/) mais vous pouvez utiliser la techno de votre choix.
 
 Notre pipeline se chargera à chaque run
-- d'initialiser notre projet terraform sur le runner
-- valider la syntaxe de nos déclarations
-- vérifier le formatage de nos fichier terraform
-- exécuter un plan des changements à apporter
-- appliquer les changements
+- d'initialiser notre projet Terraform sur le runner
+- de valider la syntaxe de nos déclarations
+- de vérifier le formatage de nos fichiers Terraform
+- d'exécuter un plan des changements à apporter
+- d'appliquer les changements
 
-> L'application des changements ne devant être exécuter seulement dans le cas d'un merge sur la branche master.
+> L'application des changements ne devant être exécutée que dans le cas d'un merge sur la branche master.
 
 Pour cela nous utilisons la configuration travis suivante
 
-> Pensez à mettre à jour la version de terraform dans la variable d'env globale `TERRAFORM_VERSION` en fonction de votre
+> Pensez à mettre à jour la version de Terraform dans la variable d'env globale `TERRAFORM_VERSION` en fonction de votre
 > installation
 
 ```yml
@@ -896,8 +896,8 @@ deploy:
 ```
 
 ## Conclusion
-Vous avez maintenant toutes les clés pour gérer votre organisation github en collaboratif et scalable, s'adaptant à la
+Vous avez maintenant toutes les clés pour gérer votre organisation Github en collaboratif et scalable, s'adaptant à la
 taille de votre organisation. Un exemple de première Pull Request pour vos nouveaux collaborateurs pourrait être de
-leurs faire gérer leur propre on boarding dans l'organisation.
+leurs faire gérer leur propre onboarding dans l'organisation.
 
 Vous pouvez jeter un oeil à notre [repository](https://github.com/eleven-labs/github) pour voir un "real world example".
