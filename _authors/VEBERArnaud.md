@@ -9,7 +9,7 @@ permalink: /authors/VEBERArnaud/
 ---
 Cloud Solutions Architect & Fullstack Developer depuis 10 ans.
 
-Je travail aujourd'hui principalement sur des architectures web serverless & event driven hébergées sur AWS.
+Je travaille aujourd'hui principalement sur des architectures web serverless & event driven hébergées sur AWS.
 
 - AWS Certified Solutions Architect - Associate
 - AWS Certified Developer - Associate
