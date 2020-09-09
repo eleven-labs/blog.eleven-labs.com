@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 gem 'jekyll', '~> 3.8.5'
-gem 'rouge', '~> 2.2.1'
+gem 'rouge', '~> 3.22.0'
 gem 'uglifier', '~> 3.2.0'
 gem 'sassc'
 gem 'scss_lint', require: false
