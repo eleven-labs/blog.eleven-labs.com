@@ -10,9 +10,9 @@
         </span>
         {% if include.descr %}
           {% if authorLength == 1 %}
-            <p>{{ existingAuthor.content }}</p>
+            <p>{{ existingAuthor.content | markdownify }}</p>
           {% elsif authorLength > 1 %}
-            <p>{{ existingAuthor.content | truncatewords: 12 }}</p>
+            <p>{{ existingAuthor.content | markdownify }}</p>
           {% endif %}
         {% endif %}
       </div>
