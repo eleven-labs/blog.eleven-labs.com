@@ -18,7 +18,7 @@ tags:
 Nouveau projet ? Lancement de produit ? C’est l’heure de la phase de cadrage, autrement dit : le sprint 0 !
 Construction des fondations techniques du produit, de la vision produit et business, mais pas que...
 
-**Comment gérer ce fameux tout premier sprint ? **
+**Comment gérer ce fameux tout premier sprint ?**
 
 Le sprint 0 est la phase de découverte des membres de l’équipe entre eux, mais aussi celle de la vision produit, business et de l’organisation.
 
