@@ -5,4 +5,4 @@ title: Hugo DURAND
 twitter:
 permalink: /authors/HugoDurand/
 ---
-Développeur Web Symfony & ReactJs 
+Développeur Python 
