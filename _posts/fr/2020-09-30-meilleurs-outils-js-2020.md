@@ -30,22 +30,22 @@ image:
     width: 775
 ---
 
-Que serait Batman sans ses Bat-gadgets ? Toujours un détective de génie et un combattant redoutable… mauvais exemple.  \
-Que serait l’homme sans les outils ? Just un Néandertalien, ou pire un Homo erectus.
+Que serait Batman sans ses Bat-gadgets ? Toujours un détective de génie et un combattant redoutable… mauvais exemple...
+Que serait l’homme sans les outils ? Juste un Néandertalien, ou pire un Homo erectus. Ah oui là ça marche.
 
 Tout ça pour dire que depuis la nuit des temps les hommes et femmes développent des outils pour grandement se faciliter la vie.
 
-Le but de cette article est de vous présenter les meilleurs outils pour tous les Homo Reactus appelé aussi les développeurs et développeuses js/React.
+Le but de cette article est de vous présenter les meilleurs outils pour tous les Homo Reactus appelés aussi "développeurs et développeuses JS/React".
 
 ## Un ordinateur, duh !
 
-Je ne vais pas vous faire l'affront de vous dire ce qu’est un ordinateur, mais le mieux est bien sûr de vous équiper de votre bécane adorée avec votre OS favori, car oui il n’y a pas de distribution obligatoire pour travailler avec js et React, même sur windows c'est possible.
+Je ne vais pas vous faire l'affront de vous dire ce qu’est un ordinateur. Mais le mieux est bien sûr de vous équiper de votre bécane adorée avec votre OS favori, car oui il n’y a pas de distribution obligatoire pour travailler avec JS et React. Même sur windows c'est possible...
 
 ## Un IDE
 
-Si d'un point de vue artistique vos lignes de code sont comme des coups de crayons, alors votre **IDE** (Integrated Development Environment) est votre chevalet, votre pinceau, votre toile et votre palette de couleurs.
+Si d'un point de vue artistique vos lignes de code peuvent être considérés comme des coups de crayons, alors votre **IDE** (Integrated Development Environment) est votre chevalet, votre pinceau, votre toile et votre palette de couleurs.
 
-Tout ça pour dire que si vous souhaitez faire de votre code une œuvre d’art alors il est plus facile d’utiliser des boîtes à outils complètes comme les IDE modernes. Ils permettent entre autres :
+Si vous souhaitez faire de votre code une œuvre d’art alors il est plus facile d’utiliser des boîtes à outils complètes comme les IDE modernes. Ils permettent entre autres :
 *   Une navigation rapide et facile dans son code.
 *   Une coloration syntaxique.
 *   Une autocompletion de code.
@@ -64,7 +64,7 @@ Et bien sûr, si vous êtes un fervent utilisateur de vim il faut rappeler que l
 
 ## NVM
 
-La première chose à faire quand on souhaite travailler avec n’importe quel framework/library javascript est sans nul doute d’installer NodeJs. Le problème est de savoir quelle version de Node installer. Selon les librairies il nous sera demandé de travailler avec une version très spécifique, ce qui rend le changement d’un projet à l’autre très compliqué. Pour cela il existe une solution qui est : [NVM](https://github.com/nvm-sh/nvm).
+La première chose à faire quand on souhaite travailler avec n’importe quel framework/library javascript est sans nul doute d’installer NodeJS. Le problème est de savoir quelle version de Node installer. Selon les librairies il nous sera demandé de travailler avec une version très spécifique, ce qui rend le changement d’un projet à l’autre très compliqué. Pour cela il existe une solution qui est : [NVM](https://github.com/nvm-sh/nvm).
 
 Node Version Manager est un logiciel permettant de faire cohabiter plusieurs versions de Node sur une même machine. Il est compatible avec Linux et Mac OS, et une version nvm-windows existe pour l’OS de Microsoft.
 
@@ -78,7 +78,7 @@ Docker permet de faire tourner chaque partie de votre application dans des conte
 
 ## Scripts NPM
 
-Une fois Node installé, nous avons à disposition un fabuleux outil qui est NPM, au delà du fait qu'il permet de récupérer les packages liés à votre application, il vous donne aussi la possibilitée de créer des scripts permettant d’automatiser et de simplifier des tâches qui seraient trop longues ou trop complexes à mémoriser.
+Une fois Node installé, nous avons à disposition un fabuleux outil qui est NPM. Au-delà du fait qu'il permette de récupérer les packages liés à votre application, il vous donne aussi la possibilité de créer des scripts permettant d’automatiser et de simplifier des tâches qui seraient trop longues ou trop complexes à mémoriser.
 
 Ils peuvent nous permettre de lancer notre application sur nos différents environnements, lancer nos tests unitaires et fonctionnels, ou reformater notre code d’une simple ligne dans notre terminal. Pour mettre en place un script, il vous suffit juste d'écrire votre code dans la section “scripts” de votre package.json.
 
@@ -86,7 +86,7 @@ Ils peuvent nous permettre de lancer notre application sur nos différents envir
 
 ![]({{ site.baseurl }}/assets/2020-09-30-meilleurs-outils-js-2020/lint-prettier.jpg)
 
-Quand on fait du travail collaboratif, parler le même langage c’est bien. Mais arriver à lire le les autres c’est encore mieux. Comme il existe autant de manières de coder qu’il y a de développeurs, on a besoin d’un outil qui permette d’uniformiser notre manière d'écrire pour permettre de nous concentrer sur d’autres aspects de notre travail. Ce genre d’outils existe et se nomme “linteur”. Il en existe pour à peu près tous les langages et celui de javascript s'appelle [ESLint](https://eslint.org/). Il marche grâce à un système de “rules” qui peuvent être décrites dans un fichier spécifique inclus à votre projet. Parmis ces “rules” on retrouve des règles de formatage, comme par exemple le nombre de caractères maximum pour une ligne, ou la nomenclature des variables et fonctions. Mais on trouve surtout des règles de bonne pratique régissant la qualité du code qui peuvent nous prévenir d'éventuels bugs.
+Quand on fait du travail collaboratif, parler le même langage c’est bien. Mais arriver à lire les autres c’est encore mieux. Comme il existe autant de manières de coder qu’il y a de développeurs, on a besoin d’un outil qui permette d’uniformiser notre manière d'écrire pour permettre de nous concentrer sur d’autres aspects de notre travail. Ce genre d’outils existe et se nomme “linteur”. Il en existe pour à peu près tous les langages et celui de javascript s'appelle [ESLint](https://eslint.org/). Il marche grâce à un système de “rules” qui peuvent être décrites dans un fichier spécifique inclus à votre projet. Parmis ces “rules” on retrouve des règles de formatage, comme par exemple le nombre de caractères maximum pour une ligne, ou la nomenclature des variables et fonctions. Mais on trouve surtout des règles de bonne pratique régissant la qualité du code qui peuvent nous prévenir d'éventuels bugs.
 
 Couplé à ESLint j’utilise aussi [Prettier](https://github.com/prettier/prettier), qui est une librairie de formatage de fichier très populaire, qui s’occupe d'analyser la forme de notre code pour le rendre plus harmonieux.
 
@@ -96,7 +96,7 @@ Ces outils peuvent facilement être appelés via nos scripts NPM et branchés à
 
 Git est un outil formidable mais il devient encore plus fabuleux quand on utilise des hooks.
 
-Les hooks sont des scripts à lancer lors d'événements particuliers. Pour Git, vous pouvez utiliser la librairie [Husky](https://github.com/typicode/husky). Elle va vous donner la possibilité de déclencher des scripts avant et après chaque commit, push, pull, checkout, merge ou rebase de votre travail. Avec cet outil vous allez pouvoir par exemple, lancer les tests et le fix de lint avant chaque commit afin de ne jamais pousser du contenu de mauvaise qualité ou déclencher l’installation des paquets lors d’un merge de votre package.json pour toujours être à jour en dev.
+Les hooks sont des scripts à lancer lors d'événements particuliers. Pour Git, vous pouvez utiliser la librairie [Husky](https://github.com/typicode/husky). Elle va vous donner la possibilité de déclencher des scripts avant et après chaque commit, push, pull, checkout, merge ou rebase de votre travail. Avec cet outil vous allez pouvoir par exemple lancer les tests et le fix de lint avant chaque commit afin de ne jamais pousser du contenu de mauvaise qualité ou déclencher l’installation des paquets lors d’un merge de votre package.json pour toujours être à jour en dev.
 
 ## Un framework de test
 
@@ -108,17 +108,17 @@ Pour les tests End to End je vous conseille [Cypress](https://www.cypress.io/).
 
 ## Chrome dev tool
 
-Tous les web developers qui travaillent avec le navigateur de Google vous le diront, la console de Chrome est incroyable, que ce soit pour logger, debbuger, analyser le network, etc… il existe un outil inclus. Mais à côté de toutes ces fonctionnalités qui existent aussi sur les autres navigateurs, il y en a une qui nous intéresse particulièrement, c’est Lighthouse.
+Tous les web developers qui travaillent avec le navigateur de Google vous le diront, la console de Chrome est incroyable que ce soit pour logger, debbuger, analyser le network, etc… il existe un outil inclus. Mais à côté de toutes ces fonctionnalités qui existent aussi sur les autres navigateurs, il y en a une qui nous intéresse particulièrement, c’est Lighthouse.
 
 ![]({{ site.baseurl }}/assets/2020-09-30-meilleurs-outils-js-2020/lighthouse.jpg)
 
-Lighthouse est un programme open source qui permet, en un clic, de générer des audits de votre application pour mobile ou desktop et ce sur plusieurs aspects, qui sont:
+Lighthouse est un programme open source qui permet en un clic de générer des audits de votre application pour mobile ou desktop et ce sur plusieurs aspects, qui sont:
 *   Les performances
 *   Les bonnes pratiques
 *   Le SEO
 *   L’accesibilité
 
-C’est donc un outil tout en un qui est disponible en ligne de commandes, en module node ou en service web, pour pouvoir être utilisé de la manière que l’on souhaite, comme par exemple avec votre CI.
+C’est donc un outil tout-en-un qui est disponible en ligne de commandes, en module node ou en service web, pour pouvoir être utilisé de la manière que l’on souhaite, comme par exemple avec votre CI.
 
 ## React developper tools
 
