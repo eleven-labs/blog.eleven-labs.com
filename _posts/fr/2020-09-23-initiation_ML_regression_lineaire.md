@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Initiation au Machine Learning - La Regréssion Linéaire"
-excerpt: "Initiation au Machine Learning - La Regréssion Linéaire"
+excerpt: "Il existe plusieurs types de machine learning, comme l'apprentissage supervisé, l'apprentissage non-supervisé et l'apprentissage semi-supervisé. Chacun utilise des techniques différentes pour établir une prédiction, mais le choix d'une méthode dépendra surtout du format de la donnée. Aujourd'hui nous nous attarderons seulement sur l'apprentissage supervisé et sur un modèle en particulier: la Régression Linéaire."
 lang: fr
 permalink: /fr/initiation-machine-learning-regression-lineaire/
 authors:
@@ -14,9 +14,9 @@ Premièrement, prenons quelques instants pour faire une brève introduction sur 
 
 Partons de la définition de <a href="https://fr.wikipedia.org/wiki/Arthur_Samuel">Arthur Samuel</a> : "Field of study that gives computers the ability to learn without being explicitly programmed".
 
-Traduction (by Google) : "Domaine d\'études qui donne aux ordinateurs la possibilité d\'apprendre sans être explicitement programmé"
+Traduction (by Google) : "Domaine d'études qui donne aux ordinateurs la possibilité d'apprendre sans être explicitement programmé"
 
-En effet le machine learning, faisant partie du concept plus large d'intelligence artificielle, consiste à créer des algorithmes "auto-apprenants" en se basant sur de la donnée ou une expérience.
+En effet le machine learning, faisant partie du concept plus large d'intelligence artificielle, consiste à créer des algorithmes "auto-apprenants" en se basant sur de la donnée, ou une expérience.
 
 Prenons les deux schémas ci-dessous :
 
@@ -36,7 +36,7 @@ Partant de cette introduction, il existe plusieurs types de machine learning com
 
 Chacun utilise des techniques différentes pour établir une prédiction, mais le choix d'une méthode dépendra surtout du format de la donnée.
 
-Aujourd'hui, dans le cadre de cette initiation, nous nous attarderons seulement sur l'apprentissage supervisé et sur un modèle en particulier: la Régression Linéaire.
+Aujourd'hui, dans le cadre de cette initiation, nous nous attarderons seulement sur l'apprentissage supervisé et sur un modèle en particulier : la Régression Linéaire.
 
 On parle d'apprentissage supervisé lorsque la donnée utilisée est labellisée.
 Les variables de sorties, c'est à dire les réponses possibles, sont déjà définies et l'algorithme apportera "la bonne réponse".
@@ -45,8 +45,8 @@ Le but est de trouver une fonction qui fait le lien entre les variables d'entré
 On appelle cela un modèle de prédiction.
 
 La variable de sortie Y peut être de deux types, continue ou discrète.
-Discrète, c'est à dire une valeur finie que l\'on peut énumérer (1,2,3, Vrai, Faux).
-Continue, c'est à dire qui prend n'importe quelle valeur qui est définie dans un interval (entre 0 et 300 secondes ou entre 10 et 20 euros, etc).
+Discrète, c'est à dire une valeur finie que l'on peut énumérer (1,2,3, Vrai, Faux).
+Continue, c'est à dire qui prend n'importe quelle valeur qui est définie dans un intervalle (entre 0 et 300 secondes ou entre 10 et 20 euros, etc.).
 La prédiction de variables continues concerne le plus souvent les modèles de régression, par exemple pour prédire le prix d'une maison, le poids d'un humain, la taille, etc. Pour les variables discrètes, elles relèvent plus de la classification, qui est un autre type d'apprentissage supervisé dont le but est de prédire si la donnée d'entrée appartient à une catégorie.
 
 # La régression Linéaire
@@ -61,15 +61,15 @@ Le but sera de donner une estimation sur une nouvelle donnée qui n'est pas enco
 
 Mettons que nous voulons prédire le prix d'un appartement basé sur une variable qui est sa taille, et que nous avons déjà quelques données existantes et exactes sur lesquelles s'appuyer pour faire cette prédiction
 
-NB: Afin d'illustrer l\'exemple, nous allons commencer par la représentation graphique d'une fonction linéaire.
+N.B. : Afin d'illustrer l'exemple, nous allons commencer par la représentation graphique d'une fonction linéaire.
 
 Ce graphique n'est pas forcément exact, mais il illustrera parfaitement ce que l'on veut expliquer dans notre cas. Le but dans un premier temps est d'en comprendre la logique globale, nous expliquerons le calcul par la suite.
 
-Nous avons donc ce graphique:
+Nous avons donc ce graphique :
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-vide.png" alt="GRAPHIQUE-VIDE" width="800">
 
-sur lequel nous allons pouvoir placer nos données d\'exemple qui correspondent aux prix d'autres appartements par rapport à leurs taille.
+sur lequel nous allons pouvoir placer nos données d'exemple qui correspondent aux prix d'autres appartements par rapport à leur taille.
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-donnees.png" alt="GRAPHIQUE-DONNEES" width="800">
 
@@ -86,7 +86,7 @@ Elle est représentée sur le schéma par une droite qui passe au milieu de ces 
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-lineaire.png" alt="GRAPHIQUE-LINEAIRE" width="800">
 
-Avec cette hypothèse, nous pouvons donc prédire, visuellement tout du moins, qu'un appartement de **40m²** couterait un peu moins de **250k**€
+Avec cette hypothèse, nous pouvons donc prédire - visuellement tout du moins - qu'un appartement de **40m²** couterait un peu moins de **250k**€
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-prediction.png" alt="GRAPHIQUE-PREDICTION" width="800">
 
@@ -100,7 +100,7 @@ C'est en changeant ces paramètres que nous pouvons ajuster notre fonction liné
 
 Le premier représente la valeur sur laquelle la droite croise l'axe des abscisses, soit **0** dans notre cas, et le deuxième représente le **slope**, c'est à dire le coefficient avec lequel la droite est influée par la première valeur.
 
-Pour calculer le coefficient de cette droite, nous pouvons prendre deux points sur la courbe et faire le calcul:
+Pour calculer le coefficient de cette droite, nous pouvons prendre deux points sur la courbe et faire le calcul :
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-slope.png" alt="CALCUL-SLOPE" width="180">
 
@@ -116,26 +116,26 @@ le slope est donc égal à :
 
 Nous pouvons maintenant calculer une prédiction.
 
-L'hypothèse ( qui se note  h<sub>&theta;</sub>(x)) pour prédire une nouvelle valeur se base donc sur ces deux paramètres tels que :
+L'hypothèse (qui se note  h<sub>&theta;</sub>(x)) pour prédire une nouvelle valeur se base donc sur ces deux paramètres tels que :
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-prediction.png" alt="CALCUL-PREDICTION" width="230">
 
-soit:
+soit :
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/detail-calcul-prediction.png" alt="DETAIL-CALCUL-PREDICTION" width="230">
 
 Selon notre modèle de prédiction, un appartement de **40m2** coûterait donc **264k€**.
 Ce qui n'est pas très loin de ce que nous avions observé à l'oeil sur la droite, mais pas exact non plus.
 
-A noter que dans notre cas la droite part de zéro, mais ce n'est pas toujours le cas.
+À noter que dans notre cas la droite part de zéro, mais ce n'est pas toujours le cas.
 
-Nous aurions très bien pu avoir des données disposées différemment et donc une droite avec une position différente:
+Nous aurions très bien pu avoir des données disposées différemment et donc une droite avec une position différente :
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-f-lineaire-2.png" alt="GRAPHIQUE-F-LINEAIRE-2" width="800">
 
 Dans ce cas &theta; aurait été égal à **90** et non pas **0**.
 
-A noter que le coefficient n'aurait pas été le même non plus.
+À noter que le coefficient n'aurait pas été le même non plus.
 
 Je vous invite à recommencer l'exercice avec cet exemple.
 
@@ -156,7 +156,7 @@ La fonction de coût nous indique la marge d'erreur par rapport à nos données 
 
 Il en existe plusieurs mais aujourd'hui nous allons utiliser Root Mean Square Error (RMSE), qui permet de mesurer l'écart **quadratique** (élevé au carré) moyen entre les valeurs prédites et les valeurs observées.
 
-On part donc du set de données X tel que:
+On part donc du set de données X tel que :
 
 | € Taille (𝑥) | K Prix (𝑦) |
 |--------------|:----------:|
@@ -181,7 +181,7 @@ Si l'on prend un exemple concret, nous avons dans notre set de données en <img 
 
 Si on utilise notre modèle de prédiction pour prédire le prix d'un appartement de **10m2**, plus le résultat sera proche de **50**, plus le modèle sera performant.
 
-Nous voulons donc que la valeur **h<sub>&theta;</sub>(x) - 𝑦** soit la plus faible possible
+Nous voulons donc que la valeur **h<sub>&theta;</sub>(x) - 𝑦** soit la plus faible possible.
 
 Cependant, nous ne pouvons pas seulement nous appuyer sur une seule valeur. Notre set de données comporte plusieurs entrées, et ce qui est vrai pour le **30m2** n'est pas forcément vrai pour le **37** et notre but est de trouver un modèle qui conviendra le mieux aux deux.
 
@@ -193,7 +193,7 @@ Voici le calcul du RMSE, que nous allons expliquer:
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-rmse.png" alt="CALCUL-RMSE" width="250">
 
-A la manière d'une boucle for en programmation, qui exécute plusieurs fois des instructions tant que l'index n'est pas égal à une autre valeur, ici on définit **i** à **1** et on fait la somme des carrés des écarts correspondants à l'index courant tant que **i** n'est pas égal a **m**.
+À la manière d'une boucle for en programmation, qui exécute plusieurs fois des instructions tant que l'index n'est pas égal à une autre valeur, ici on définit **i** à **1** et on fait la somme des carrés des écarts correspondants à l'index courant tant que **i** n'est pas égal a **m**.
 
 Un peu plus haut nous avions calculé le coefficient de la droite pour faire une prédiction d'un appartement de **40m2**.
 
@@ -258,7 +258,7 @@ Nous aurions pu faire des sauts plus petits de 0,5 et calculer avec 5,
 5.5, 6, 6.5 etc
 
 En réalité, nous allons utiliser un autre paramètre qui définit la
-taille du pas effectué à chaque itération: le Learning Rate, il se note
+taille du pas effectué à chaque itération : le Learning Rate, il se note
 ⍶.
 
 C'est ce qu'on appelle un hyper-paramètre, car il s'applique au modèle
@@ -272,42 +272,25 @@ fonction convexe, il va devoir calculer la pente de cette fonction. Et
 pour calculer la pente d'une fonction, on calcule sa dérivée.
 
 Nous ne rentrerons pas en profondeur dans ces calculs, mais pour
-information, voici la formule du gradient:
+information, voici la formule du gradient :
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-gradient.png" alt="CALCUL-GRADIENT" width="350">
 
-Dans notre cas, le paramètre **a** est notre coefficient, donc le
-gradient de notre prochain coeff est égal au : coeff actuel moins le
-learning rate multiplié par la dérivée de la fonction.
+Dans notre cas, le paramètre **a** est notre coefficient, donc le gradient de notre prochain coeff est égal au : coeff actuel moins le learning rate multiplié par la dérivée de la fonction. Ce calcul est fait pour trouver la convergence de la courbe. Donc, et c'est ce qu'il faut retenir, nous nous dirigeons toujours vers le point le plus bas peu importe où nous sommes.
 
-Ce calcul est fait pour trouver la convergence de la courbe.
-
-Donc, et c'est ce qu'il faut retenir, nous nous dirigeons toujours vers
-le point le plus bas peu importe où nous sommes.
-
-Attention donc à utiliser un bon learning rate.
-
-En effet, si il est trop grand, alors il risque de ne jamais passer par
-la valeur minimum.
-
-S'il est trop petit, il prendra trop longtemps à l'atteindre.
+Attention donc à utiliser un bon learning rate. En effet, s'il est trop grand, alors il risque de ne jamais passer par la valeur minimum. S'il est trop petit, il prendra trop longtemps à l'atteindre.
 
 <img src="/assets/2020-09-23-initiation_ML_regression_lineaire/learning-rate.png" alt="LEARNING-RATE" width="800">
 
 Même si nous ne sommes pas rentrés dans tous les détails, nous avons
 déjà un bon aperçu de comment fonctionne un modèle machine Learning.
 
-A noter que nous avons pris un exemple simple avec un seul paramètre,
+À noter que nous avons pris un exemple simple avec un seul paramètre,
 mais tout cela peut vite devenir encore plus complexe.
 
-Heureusement pour nous, on ne calcule jamais tout ça par nous même, nous
-avons tous les outils nécessaires en programmation comme par exemple <a href="https://scikit-learn.org/stable/">Scikit-Learn</a> ou <a href="https://www.tensorflow.org/?hl=fr">TensorFlow</a> en Python
+Heureusement pour nous, on ne calcule jamais tout ça par nous même, nous avons tous les outils nécessaires en programmation comme par exemple <a href="https://scikit-learn.org/stable/">Scikit-Learn</a> ou <a href="https://www.tensorflow.org/?hl=fr">TensorFlow</a> en Python
 
-Il existe encore plein d'autres parties du machine learning à découvrir
-comme la classification par exemple, ou bien des modèles d'apprentissage
-non-supervisés comme la clusterisation ou la réduction dimensionnelle.
-
-Ce qui pourra faire l'objet d'autres articles :)
+Il existe encore plein d'autres parties du machine learning à découvrir comme la classification par exemple, ou bien des modèles d'apprentissage non-supervisés comme la clusterisation ou la réduction dimensionnelle. Ce qui pourra faire l'objet d'autres articles :)
 
 <br/>
 
