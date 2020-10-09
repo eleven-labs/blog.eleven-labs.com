@@ -20,7 +20,7 @@ En effet le machine learning, faisant partie du concept plus large d'intelligenc
 
 Prenons les deux schémas ci-dessous :
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/schema-process.png" alt="SCHEMA-PROCESS" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/schema-process.png" alt="SCHEMA-PROCESS" width="800">
 
 Un algorithme répond le plus souvent à une problématique grâce à une suite d'instructions/règles qu'on lui donne.
 Le machine learning définit donc la capacité d'une machine à répondre à une problématique sans qu'on ne définisse les règles.
@@ -67,11 +67,11 @@ Ce graphique n'est pas forcément exact, mais il illustrera parfaitement ce que 
 
 Nous avons donc ce graphique :
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-vide.png" alt="GRAPHIQUE-VIDE" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-vide.png" alt="GRAPHIQUE-VIDE" width="800">
 
 sur lequel nous allons pouvoir placer nos données d'exemple qui correspondent aux prix d'autres appartements par rapport à leur taille.
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-donnees.png" alt="GRAPHIQUE-DONNEES" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-donnees.png" alt="GRAPHIQUE-DONNEES" width="800">
 
 Pour faire nos prédictions nous allons modéliser le prix au m2 avec une fonction linéaire.
 
@@ -79,16 +79,16 @@ Définition :
 
 Une fonction linéaire est une fonction qui traduit une situation de proportionnalité. Soit ***a*** un nombre réel quelconque. La fonction linéaire de coefficient ***a*** est la fonction qui associe à tout nombre réel *x* le produit *a* × *x*.
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-f-lineaire.png" alt="CALCUL-F-LINEAIRE" width="150">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-f-lineaire.png" alt="CALCUL-F-LINEAIRE" width="150">
 
 
 Elle est représentée sur le schéma par une droite qui passe au milieu de ces points de manière à ce que la distance entre chaque point et la droite soit la plus faible possible.
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-lineaire.png" alt="GRAPHIQUE-LINEAIRE" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-lineaire.png" alt="GRAPHIQUE-LINEAIRE" width="800">
 
 Avec cette hypothèse, nous pouvons donc prédire - visuellement tout du moins - qu'un appartement de **40m²** couterait un peu moins de **250k**€
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-prediction.png" alt="GRAPHIQUE-PREDICTION" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-prediction.png" alt="GRAPHIQUE-PREDICTION" width="800">
 
 Mais comme dit précédemment ce n'est que la représentation graphique du modèle de prédiction, et cela ne nous explique pas réellement comment on peut prédire le prix d'un appartement de 40m2.
 
@@ -102,27 +102,27 @@ Le premier représente la valeur sur laquelle la droite croise l'axe des absciss
 
 Pour calculer le coefficient de cette droite, nous pouvons prendre deux points sur la courbe et faire le calcul :
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-slope.png" alt="CALCUL-SLOPE" width="180">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-slope.png" alt="CALCUL-SLOPE" width="180">
 
 prenons ces deux points :
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-slope.png" alt="GRAPHIQUE-SLOPE" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-slope.png" alt="GRAPHIQUE-SLOPE" width="800">
 
 nous avons un premier point avec **10** en abscisse et **50** en ordonnée (environ) et un deuxième en **40** et **250**.
 
 le slope est donc égal à :
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/detail-calcul-slope.png" alt="DETAIL-CALCUL-SLOPE" width="180">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/detail-calcul-slope.png" alt="DETAIL-CALCUL-SLOPE" width="180">
 
 Nous pouvons maintenant calculer une prédiction.
 
 L'hypothèse (qui se note  h<sub>&theta;</sub>(x)) pour prédire une nouvelle valeur se base donc sur ces deux paramètres tels que :
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-prediction.png" alt="CALCUL-PREDICTION" width="230">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-prediction.png" alt="CALCUL-PREDICTION" width="230">
 
 soit :
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/detail-calcul-prediction.png" alt="DETAIL-CALCUL-PREDICTION" width="230">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/detail-calcul-prediction.png" alt="DETAIL-CALCUL-PREDICTION" width="230">
 
 Selon notre modèle de prédiction, un appartement de **40m2** coûterait donc **264k€**.
 Ce qui n'est pas très loin de ce que nous avions observé à l'oeil sur la droite, mais pas exact non plus.
@@ -131,7 +131,7 @@ Ce qui n'est pas très loin de ce que nous avions observé à l'oeil sur la droi
 
 Nous aurions très bien pu avoir des données disposées différemment et donc une droite avec une position différente :
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-f-lineaire-2.png" alt="GRAPHIQUE-F-LINEAIRE-2" width="800">
+<![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-f-lineaire-2.png" alt="GRAPHIQUE-F-LINEAIRE-2" width="800">
 
 Dans ce cas &theta; aurait été égal à **90** et non pas **0**.
 
@@ -191,7 +191,7 @@ Nous allons donc utiliser tout notre set de données et utiliser la notation ave
 
 Voici le calcul du RMSE, que nous allons expliquer:
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-rmse.png" alt="CALCUL-RMSE" width="250">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-rmse.png" alt="CALCUL-RMSE" width="250">
 
 À la manière d'une boucle for en programmation, qui exécute plusieurs fois des instructions tant que l'index n'est pas égal à une autre valeur, ici on définit **i** à **1** et on fait la somme des carrés des écarts correspondants à l'index courant tant que **i** n'est pas égal a **m**.
 
@@ -207,11 +207,11 @@ Par exemple pour le **10m2**, **y = 50**, et notre prédiction est **66**.
 
 On aura donc:
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/detail-calcul-rmse.png" alt="DETAIL-CALCUL-RMSE" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/detail-calcul-rmse.png" alt="DETAIL-CALCUL-RMSE" width="800">
 
 Nous pouvons visualiser ce résultat en l'affichant sur un graphique qui le placerait par rapport au coefficient.
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-err-coef.png" alt="GRAPHIQUE-ERR-COEF" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-err-coef.png" alt="GRAPHIQUE-ERR-COEF" width="800">
 
 Le problème ici, est qu'on ne sait pas si l'erreur est importante ou pas car nous n'avons aucune comparaison.
 
@@ -219,7 +219,7 @@ Nous avons pris le coefficient **6,6** car rappelons le, nous sommes directement
 
 Il conviendra donc d'essayer avec plusieurs paramètres qui peuvent être 5, 6 , 7 ou n'importe quel autre nombre.
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-err-coef-comp.png" alt="GRAPHIQUE-ERR-COEF-COMP" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-err-coef-comp.png" alt="GRAPHIQUE-ERR-COEF-COMP" width="800">
 
 La valeur la plus exacte est donc celle avec l'erreur la plus basse.
 
@@ -227,11 +227,11 @@ Après calcul, le meilleur paramètre pour notre prédiction d'appartement est d
 
 Si nous reprenons le calcul de notre prédiction avec notre nouveau paramètre, un appartement de **40m2** devrait coûter **240K** **€ :**
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-prediction-new-coeff.png" alt="CALCUL-PREDICTION-NEW-COEF" width="250">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-prediction-new-coeff.png" alt="CALCUL-PREDICTION-NEW-COEF" width="250">
 
 La fonction de coût est ce qu'on appelle une fonction convexe. Trouver le minimum de la courbe, c'est trouver le meilleur paramètre.
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-convexe.png" alt="GRAPHIQUE-CONVEXE" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-convexe.png" alt="GRAPHIQUE-CONVEXE" width="800">
 
 Ici nous avons fait plusieurs essais en calculant manuellement, mais il existe des outils qui nous permettent de trouver cette valeur.
 
@@ -248,7 +248,7 @@ fonction convexe.
 Le but de la descente de gradient est de minimiser la fonction de coût,
 et donc d'avoir le meilleur modèle.
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-target-minimum.png" alt="GRAPHIQUE-TARGET-MINIMUM" width="600">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/graphique-target-minimum.png" alt="GRAPHIQUE-TARGET-MINIMUM" width="600">
 
 Plus haut nous avons essayé avec plusieurs valeurs qui étaient 5, 6 , 7.
 
@@ -274,13 +274,13 @@ pour calculer la pente d'une fonction, on calcule sa dérivée.
 Nous ne rentrerons pas en profondeur dans ces calculs, mais pour
 information, voici la formule du gradient :
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-gradient.png" alt="CALCUL-GRADIENT" width="350">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/calcul-gradient.png" alt="CALCUL-GRADIENT" width="350">
 
 Dans notre cas, le paramètre **a** est notre coefficient, donc le gradient de notre prochain coeff est égal au : coeff actuel moins le learning rate multiplié par la dérivée de la fonction. Ce calcul est fait pour trouver la convergence de la courbe. Donc, et c'est ce qu'il faut retenir, nous nous dirigeons toujours vers le point le plus bas peu importe où nous sommes.
 
 Attention donc à utiliser un bon learning rate. En effet, s'il est trop grand, alors il risque de ne jamais passer par la valeur minimum. S'il est trop petit, il prendra trop longtemps à l'atteindre.
 
-<img src="/assets/2020-09-23-initiation_ML_regression_lineaire/learning-rate.png" alt="LEARNING-RATE" width="800">
+![]({{ site.baseurl }}/assets/2020-09-23-initiation_ML_regression_lineaire/learning-rate.png" alt="LEARNING-RATE" width="800">
 
 Même si nous ne sommes pas rentrés dans tous les détails, nous avons
 déjà un bon aperçu de comment fonctionne un modèle machine Learning.
