@@ -12,11 +12,11 @@ tags: []
 cover: /assets/2020-10-13-anemic-domain-model/cover.jpg
 ---
 
-Today I’d like to talk about something that we see quite often in applications : anemic domains. 
+Today I’d like to talk about something that we see quite often in applications: anemic domains. 
 
-What’s that you might ask? It’s simply the fact that objects responsible for modeling your business logic...do not contain any of it. Seems strange reading it like this right? Let’s look at some example to have a better understanding of what I’m saying. 
+What’s that you might ask? It’s simply the fact that objects responsible for modeling your business logic... do not contain any of it. Seems strange reading it like this right? Let’s look at some examples to have a better understanding of what I’m saying. 
 
-Let’s take a simple example: Say you want to create a new post for blog ; in a typical application you’d use your favorite ORM to deal with inserting your shiny new entity into your database. You have a controller handling your HTTP request, and then a service that creates a new Article entity, setting all the right properties for this new stuff. 
+Let’s begin with a simple one: say you want to create a new blog post. In a typical application you’d use your favorite ORM to deal with inserting your shiny new entity into your database. You have a controller handling your HTTP request, and then a service that creates a new Article entity, setting all the right properties for this new stuff. 
 
 ```php
 Class Article
@@ -109,7 +109,7 @@ class ArticleService
 }
 ```
 
-Looking back at our code, you might be thinking « it looks pretty standard to me, what’s wrong with it? ». Well, if you look at it conceptually, does it make sense? Is it logical to create an empty shell `new Article()` with no properties at all at first? Then setting a title? Then a content? I doubt that you'd be cumfortable reading a blank page with nothing in it.
+Looking back at our code, you might be thinking « it looks pretty standard to me, what’s wrong with it? ». Well, if you look at it conceptually, does it make sense? Is it logical to create an empty shell `new Article()` with no properties at all at first? Then setting a title? Then a content? I doubt that you'd be comfortable reading a blank page with nothing in it.
 
 ### Time goes by
 
@@ -130,9 +130,9 @@ You’ll change the publish method in your service like this:
 ```
 
 Your Article object is just a data bag, and not useful at all. The service layer is the one making sure your entity is valid. 
-This is somehow very weird to shift all the responsibility of an object to someone outside itself. An article should be able to protect its invariants, so that you are sure to end up having a valid state in the end. 
+This is somehow very weird to shift all the responsibilities of an object to something outside itself. An article should be able to protect its invariants, so that you are sure to end up having a valid state in the end. 
 
-Having such responsibilities will, in the future, allow you or one of your team member to write things like this:
+Having such responsibilities will, in the future, allow you or one of your team members to write things like this:
 
 ```php
 $article = new Article();
@@ -141,7 +141,7 @@ $article->setContent(‘Today we are going to...’);
 $this->orm->save($article);
 ```
 
-This means that you created an article without a title. In the real world it seems quite odd; so why not translate this real world requirement into an explicit thing? Isn’t it what programming is, translating real processes into code? 
+This means that you created an article without a title. In the real world it seems quite odd, so why not translate this real world requirement into an explicit thing? Isn’t it what programming is about, translating real processes into code? 
 
 Moreover, how would you test this? Again by setting all properties by hand, and asserting that they are all equal. But is it a relevant test? What about change, adding a new business requirement?
 
@@ -151,7 +151,7 @@ A domain object must be responsible for its own state, as opposed to this anemic
 
 ### Mindshift
 
-Shifting from an anemic model to a rich model does not have to be massive effort. It's mostly a change in how we perceive the domain of our application: the heart of your software.
+Shifting from an anemic model to a rich model does not have to be a massive effort. It's mostly a change in how we perceive the domain of our application: the heart of your software.
 From our previous example, we can simply make the following changes:
 
 ```php
@@ -214,15 +214,15 @@ You will also notice that Article has methods with far more descriptive names. `
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Interestingly too, with an Explicit Model there are generally far less lines of code than with an Anemic Model (think client+model). The Explicit Model can be easily tested with confidence. The Anemic Model can have 10,000 tests with doubt.</p>&mdash; Vaughn Vernon (@VaughnVernon) <a href="https://twitter.com/VaughnVernon/status/1009183261866639360?ref_src=twsrc%5Etfw">June 19, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-I think most of this anemia comes from how ORM/framework explain to you how to deal with objects and database, but we lose sight of what really is object oriented design : transposing problems into code ; combining behavior and data.
+I think most of this anemia comes from how ORM/framework explains to you how to deal with objects and database, but we lose sight of what really is object oriented design: transposing problems into code ; combining behavior and data.
 
-Moving from an anemic domain to a rich one is not for every use case, but if you have a certain amount of business logic, you'll be better off.
+Moving from an anemic domain to a rich one is not for every use case, but if you have a certain amount of business logic, you'd better try it.
 
-For sure there are downsides to defining domain objects with actual behavior. For instance, you’ll have to adapt how objects are built by your ORM (if you use one) into objects. But that overhead will quickly be forgotten once you discover the joy of handling domain objects with real behavior, how it changes the way you test and think about your domain model. 
+For sure there are downsides to defining domain objects with actual behaviors. For instance, you’ll have to adapt how objects are built by your ORM (if you use one) into objects. But that will quickly be forgotten once you discover how it changes the way you test and think about your domain model. 
 
 Take a look at this article from Matthias Noback regarding an interesting solution for dealing with database and domain objects: [https://matthiasnoback.nl/2018/03/ormless-a-memento-like-pattern-for-object-persistence/](https://matthiasnoback.nl/2018/03/ormless-a-memento-like-pattern-for-object-persistence/)
 
-Thanks to [Guillem](https://twitter.com/buraitopengin) for the feedbacks!
+Thanks [Guillem](https://twitter.com/buraitopengin) for the feedbacks!
 
 ## Resources
 
