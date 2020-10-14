@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Anémie du domaine"
-excerpt: Souffrez-vous d'anemie métier ? Regardons ce qu'est une anemie du domaine et comment les choses peuvent changer.
+excerpt: Souffrez-vous d'anémie métier ? Regardons ce qu'est une anémie du domaine et comment les choses peuvent changer.
 authors:
     - rpierlot
 lang: en
@@ -12,11 +12,11 @@ tags: []
 cover: /assets/2020-10-13-anemic-domain-model/cover.jpg
 ---
 
-Aujourd'hui j'aimerai parler de quelque chose que l'on voit souvent dans les applications : l'anémie du domaine. 
+Aujourd'hui j'aimerais parler de quelque chose que l'on voit souvent dans les applications : l'anémie du domaine. 
 
-Qu'est-ce donc? C'est simplement le fait que les objects responsables pour la modelisation de votre logique métier... n'en contienne pas. Cela parait étrange de lire cela n'est-ce pas ? Prenons un exemple pour mieux comprendre ce que j'entends par là. 
+Qu'est-ce donc? C'est simplement le fait que les objects responsables de la modélisation de votre logique métier... n'en contienne pas. Cela paraît étrange n'est-ce pas ? Prenons un exemple pour mieux comprendre ce que j'entends par là. 
 
-Imaginons que vous souhaitez ajouter un nouvel article à votre blog ; dans une application classique, vous utiliseriez votre ORM favori pour insérer votre toute nouvelle entité dans votre bas de données. Vous avez un controller gérant votre requête HTTP, et enfin un service qui crééra votre nouvelle entité Article, avec toutes les propriétés qui vont bien. 
+Imaginons que vous souhaitiez ajouter un nouvel article à votre blog. Dans une application classique, vous utiliseriez votre ORM favori pour insérer votre toute nouvelle entité dans votre bas de données. Vous avez un controller gérant votre requête HTTP, et enfin un service qui crééra votre nouvelle entité Article, avec toutes les propriétés qui vont bien. 
 
 ```php
 Class Article
@@ -130,9 +130,9 @@ La méthode `publish` de notre service serait changée par :
 ```
 
 L'objet Article est juste un conteneur de propriétés, pas très utile. La couche service est celle qui s'assure que notre entité est valide. 
-C'est quelque chose d'assez étrange de transposer la responsabilité d'un objet à quelqu'un d'extérieur à lui même. Un article devrait êtr een mesure de protéger ses propriétés, pour être sûr de finir dans un état valide. 
+C'est quelque chose d'assez étrange de transposer la responsabilité d'un objet à quelqu'un d'extérieur à lui-même. Un article devrait être en mesure de protéger ses propriétés, pour être sûr de finir dans un état valide. 
 
-Avoir ces responsabilités vont, dans le future, permettre à vos collègues ou vous-même d'écrire quelque chose comme:
+Avoir ces responsabilités vont, dans le futur, permettre à vos collègues ou vous-même d'écrire quelque chose comme :
 
 ```php
 $article = new Article();
@@ -141,19 +141,19 @@ $article->setContent(‘Today we are going to...’);
 $this->orm->save($article);
 ```
 
-Ce qui veut dire que l'on peut publier un article sans titre. Dans le monde réel, cela parait étrange ; alors pourquoi ne pas traduire ce vrai besoin dans quelque chose d'explicit ? N'est-ce pas ce qu'est la programmation, traduire des vrais process en code ?
+Ce qui veut dire que l'on peut publier un article sans titre. Dans le monde réel, cela parait étrange... Alors pourquoi ne pas traduire ce vrai besoin dans quelque chose d'explicite ? N'est-ce pas ce qu'est la programmation, traduire des vrais process en code ?
 
-De plus, comment testeriez-vous cela ? En définissant toutes les propriétés à la main, et assertant que chacunes sont bien égales à celles définies. Mais est-ce pertinent ? Et l'évolution dans le temps, l'ajout de nouvelles règles métier ?
+De plus, comment testeriez-vous cela ? En définissant toutes les propriétés à la main, et assertant que chacunes sont bien égales à celles définies. Mais est-ce pertinent ? Et quid de l'évolution dans le temps, de l'ajout de nouvelles règles métier ?
 
-C'est ce qu'on appelle un domaine anemic. Une classe avec plein de getters et setters, mais aucun comportement. Elle ne fait rien par elle même.
+C'est ce qu'on appelle un domaine anémique. Une classe avec plein de getters et setters, mais aucun comportement. Elle ne fait rien par elle-même.
 
-Un objet métier devrait être reponsable de son propre état, en contradiction totale à cet Article anemic.
+Un objet métier devrait être reponsable de son propre état, en contradiction totale avec cet Article anémique.
 
-### Change d'état d'esprit
+### Changer d'état d'esprit
 
-Transformer un modèle anemic en un modèle riche n'a pas à être un effort incroyable et douloureux. C'est principalement un changement de la façon dont nous percevons le métier de notre application: comme étant le coeur du logiciel.
+Transformer un modèle anémique en un modèle riche n'a pas à être un effort incroyable et douloureux. C'est principalement un changement de la façon dont nous percevons le métier de notre application : comme étant le coeur du logiciel.
 
-Par rapport à notre exemple précédent, nous pouvons simplement faire les changements suivant :
+Par rapport à notre exemple précédent, nous pouvons simplement faire les changements suivants :
 
 ```php
 class Article
@@ -189,7 +189,7 @@ class Article
 }
 ```
 
-Avec un model du domaine riche, notre service ressemblerait à cela :
+Avec un modèle du domaine riche, notre service ressemblerait à cela :
 
 ```php
 //class ArticleService
@@ -206,22 +206,22 @@ Avec un model du domaine riche, notre service ressemblerait à cela :
     }
 ```
 
-Bien que cet exemple est très basique, nousj pouvons observer une transformation dans la responsabilité de la couche service et des objets métier. Et cela est bien pus compréhensible visuellement. 
+Bien que cet exemple soit très basique, nous pouvons observer une transformation dans la responsabilité de la couche service et des objets métiers. Et cela est bien pus compréhensible visuellement. 
 Les tests peuvent maintenant se concentrer uniquement sur la logique métier, sans avoir à gérér la couche service, qui reste simple et petite.
 
 Des objets du domaine riches permettent d'avoir des états valides, et garantir que ces états le restent, à travers le constructeur de la classe ou en utilisant des constructeurs statiques. 
 
-Vous remarquerez aussi que Article a des noms de méthodes bien plus explicit. `createDraft` et `publish` sont des concepts métiers, liés à des règles business définies et partagées entre tous les acteurs du logiciel. Le langage utilisé dans le code est maintenant aligné avec le métier.
+Vous remarquerez aussi que Article a des noms de méthodes bien plus explicites. `createDraft` et `publish` sont des concepts métiers, liés à des règles business définies et partagées entre tous les acteurs du logiciel. Le langage utilisé dans le code est maintenant aligné avec le métier.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Interestingly too, with an Explicit Model there are generally far less lines of code than with an Anemic Model (think client+model). The Explicit Model can be easily tested with confidence. The Anemic Model can have 10,000 tests with doubt.</p>&mdash; Vaughn Vernon (@VaughnVernon) <a href="https://twitter.com/VaughnVernon/status/1009183261866639360?ref_src=twsrc%5Etfw">June 19, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 Je pense que la plupart de cette anémie vient des différents ORM/framework expliquant comment gérer les objets et bases de donneés, et nous perdons le fil principal de ce qu'est l'architecture orientée objects : transposer des besoins dans le code ; combiner le comportement et les données.
 
-Partir d'un domaine anemic vers une modelisation riche ne convient pas à tous les cas de figure, mais si vous possedez pas mal de logique métier, vous en sortirez gagnant.
+Partir d'un domaine anémique vers une modelisation riche ne convient pas à tous les cas de figure, mais si vous possédez suffisament de logique métier, vous en sortirez gagnant.
 
-Il y a évidemment des incovénients à définir des objets de la sorte. Par exemple, vous devrez adapter comment vos objets sont récupérés ou persistés  par votre ORM (si vous en utilisez un). Mais cette complexité additionnelle sera vite oubliée quand vous decouvrez la joie de manipuler des objets métiers avec des comportements riches, la façon dont vous testez et pensez votre modelisation métier. 
+Il y a évidemment des incovénients à définir des objets de la sorte. Par exemple, vous devrez adapter comment vos objets sont récupérés ou persistés  par votre ORM (si vous en utilisez un). Mais cette complexité additionnelle sera vite oubliée quand vous découvrirez la joie de manipuler des objets métiers avec des comportements riches, la façon dont vous testez et pensez votre modélisation métier. 
 
-Par ailleurs, voici un article de Matthias Noback concernant une solution intéressante pour gérer l'intéraction entre vos objets métier et la base de données: [https://matthiasnoback.nl/2018/03/ormless-a-memento-like-pattern-for-object-persistence/](https://matthiasnoback.nl/2018/03/ormless-a-memento-like-pattern-for-object-persistence/)
+Par ailleurs, voici un article de Matthias Noback concernant une solution intéressante pour gérer l'interaction entre vos objets métiers et la base de données : [https://matthiasnoback.nl/2018/03/ormless-a-memento-like-pattern-for-object-persistence/](https://matthiasnoback.nl/2018/03/ormless-a-memento-like-pattern-for-object-persistence/)
 
 Merci à [Guillem](https://twitter.com/buraitopengin) pour la relecture et les retours!
 
