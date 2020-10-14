@@ -130,7 +130,7 @@ You’ll change the publish method in your service like this:
 ```
 
 Your Article object is just a data bag, and not useful at all. The service layer is the one making sure your entity is valid. 
-This is somehow very weird to shift all the responsibilities of an object to something outside itself. An article should be able to protect its invariants, so that you are sure to end up having a valid state in the end. 
+This is somehow very weird to shift all the responsibilities of an object to someone outside itself. An article should be able to protect its invariants, so that you are sure to end up having a valid state. 
 
 Having such responsibilities will, in the future, allow you or one of your team members to write things like this:
 
@@ -210,7 +210,7 @@ Tests can now focus only on business logic without needing to deal with the serv
 
 Rich domain objects enable you to have valid states and make sure it stays this way, through the class constructor or using static methods to build your objects. 
 
-You will also notice that Article has methods with far more descriptive names. `createDraft` and `publish` are domain concepts, they relate to business requirements. The language is now aligned with the business.
+You will also notice that Article has methods with far more descriptive names. `createDraft` and `publish` are domain concepts, they relate to business requirements shared between all parties of the software. The language used in the code is now aligned with the business.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Interestingly too, with an Explicit Model there are generally far less lines of code than with an Anemic Model (think client+model). The Explicit Model can be easily tested with confidence. The Anemic Model can have 10,000 tests with doubt.</p>&mdash; Vaughn Vernon (@VaughnVernon) <a href="https://twitter.com/VaughnVernon/status/1009183261866639360?ref_src=twsrc%5Etfw">June 19, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
