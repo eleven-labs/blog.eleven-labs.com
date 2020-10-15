@@ -130,7 +130,7 @@ You’ll change the publish method in your service like this:
 ```
 
 Your Article object is just a data bag, and not useful at all. The service layer is the one making sure your entity is valid. 
-This is somehow very weird to shift all the responsibilities of an object to someone outside itself. An article should be able to protect its invariants, so that you are sure to end up having a valid state. 
+This is somehow very weird to shift all the responsibilities of an object to something outside itself. An article should be able to protect its invariants, so that you are sure to end up having a valid state. 
 
 Having such responsibilities will, in the future, allow you or one of your team members to write things like this:
 
