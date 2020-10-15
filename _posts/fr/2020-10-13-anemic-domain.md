@@ -130,7 +130,7 @@ La méthode `publish` de notre service serait changée par :
 ```
 
 L'objet Article est juste un conteneur de propriétés, pas très utile. La couche service est celle qui s'assure que notre entité est valide. 
-C'est quelque chose d'assez étrange de transposer la responsabilité d'un objet à quelqu'un d'extérieur à lui-même. Un article devrait être en mesure de protéger ses propriétés, pour être sûr de finir dans un état valide. 
+C'est quelque chose d'assez étrange de transposer la responsabilité d'un objet à quelque chose d'extérieur à lui-même. Un article devrait être en mesure de protéger ses propriétés, pour être sûr de finir dans un état valide. 
 
 Avoir ces responsabilités vont, dans le futur, permettre à vos collègues ou vous-même d'écrire quelque chose comme :
 
