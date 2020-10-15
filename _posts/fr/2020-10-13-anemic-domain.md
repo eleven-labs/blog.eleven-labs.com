@@ -14,7 +14,7 @@ cover: /assets/2020-10-13-anemic-domain-model/cover.jpg
 
 Aujourd'hui j'aimerais parler de quelque chose que l'on voit souvent dans les applications : l'anémie du domaine. 
 
-Qu'est-ce donc? C'est simplement le fait que les objects responsables de la modélisation de votre logique métier... n'en contienne pas. Cela paraît étrange n'est-ce pas ? Prenons un exemple pour mieux comprendre ce que j'entends par là. 
+Qu'est-ce donc? C'est simplement le fait que les objects responsables de la modélisation de votre logique métier... n'en contiennent pas. Cela paraît étrange n'est-ce pas ? Prenons un exemple pour mieux comprendre ce que j'entends par là. 
 
 Imaginons que vous souhaitiez ajouter un nouvel article à votre blog. Dans une application classique, vous utiliseriez votre ORM favori pour insérer votre toute nouvelle entité dans votre bas de données. Vous avez un controller gérant votre requête HTTP, et enfin un service qui crééra votre nouvelle entité Article, avec toutes les propriétés qui vont bien. 
 
@@ -109,7 +109,7 @@ class ArticleService
 }
 ```
 
-En regardant ce que nous venons d'écrire, on pourrait se dire « cela m'a l'air assez classique, quel est le problème ? ». Si nous observons d'un point du vu plus conceptuel, est-ce que cela a du sens ? Est-ce que c'est logique de créer cet objet vide `new Article()` avec aucune propriété définie en premier lieu ? Puis de définir un titre, puis un contenu ? Je doute que vous seriez confortable avec l'idée de regarder une page d'article vide, sans contenu.
+En regardant ce que nous venons d'écrire, on pourrait se dire « cela m'a l'air assez classique, quel est le problème ? ». Si nous observons d'un point de vue plus conceptuel, est-ce que cela a du sens ? Est-ce que c'est logique de créer cet objet vide `new Article()` avec aucune propriété définie en premier lieu ? Puis de définir un titre, puis un contenu ? Je doute que vous soyez confortable avec l'idée de regarder une page d'article vide, sans contenu.
 
 ### Le temps passe
 
@@ -143,7 +143,7 @@ $this->orm->save($article);
 
 Ce qui veut dire que l'on peut publier un article sans titre. Dans le monde réel, cela parait étrange... Alors pourquoi ne pas traduire ce vrai besoin dans quelque chose d'explicite ? N'est-ce pas ce qu'est la programmation, traduire des vrais process en code ?
 
-De plus, comment testeriez-vous cela ? En définissant toutes les propriétés à la main, et assertant que chacunes sont bien égales à celles définies. Mais est-ce pertinent ? Et quid de l'évolution dans le temps, de l'ajout de nouvelles règles métier ?
+De plus, comment testeriez-vous cela ? En définissant toutes les propriétés à la main, et assertant que toutes soient bien égales à celles définies. Mais est-ce pertinent ? Et quid de l'évolution dans le temps, de l'ajout de nouvelles règles métier ?
 
 C'est ce qu'on appelle un domaine anémique. Une classe avec plein de getters et setters, mais aucun comportement. Elle ne fait rien par elle-même.
 
@@ -206,8 +206,8 @@ Avec un modèle du domaine riche, notre service ressemblerait à cela :
     }
 ```
 
-Bien que cet exemple soit très basique, nous pouvons observer une transformation dans la responsabilité de la couche service et des objets métiers. Et cela est bien pus compréhensible visuellement. 
-Les tests peuvent maintenant se concentrer uniquement sur la logique métier, sans avoir à gérér la couche service, qui reste simple et petite.
+Bien que cet exemple soit très basique, nous pouvons observer une transformation dans la responsabilité de la couche service et des objets métiers. Et cela est bien plus compréhensible visuellement. 
+Les tests peuvent maintenant se concentrer uniquement sur la logique métier, sans avoir à gérer la couche service, qui reste simple et petite.
 
 Des objets du domaine riches permettent d'avoir des états valides, et garantir que ces états le restent, à travers le constructeur de la classe ou en utilisant des constructeurs statiques. 
 
@@ -215,7 +215,7 @@ Vous remarquerez aussi que Article a des noms de méthodes bien plus explicites.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Interestingly too, with an Explicit Model there are generally far less lines of code than with an Anemic Model (think client+model). The Explicit Model can be easily tested with confidence. The Anemic Model can have 10,000 tests with doubt.</p>&mdash; Vaughn Vernon (@VaughnVernon) <a href="https://twitter.com/VaughnVernon/status/1009183261866639360?ref_src=twsrc%5Etfw">June 19, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-Je pense que la plupart de cette anémie vient des différents ORM/framework expliquant comment gérer les objets et bases de donneés, et nous perdons le fil principal de ce qu'est l'architecture orientée objects : transposer des besoins dans le code ; combiner le comportement et les données.
+Je pense que la plupart de cette anémie vient des différents ORMs/frameworks expliquant comment gérer les objets et bases de donneés, et nous perdons le fil principal de ce qu'est l'architecture orientée objects : transposer des besoins dans le code ; combiner le comportement et les données.
 
 Partir d'un domaine anémique vers une modelisation riche ne convient pas à tous les cas de figure, mais si vous possédez suffisament de logique métier, vous en sortirez gagnant.
 
