@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Initiation au Machine Learning - La Regréssion Linéaire"
-excerpt: "Il existe plusieurs types de machine learning, comme l'apprentissage supervisé, l'apprentissage non-supervisé et l'apprentissage semi-supervisé. Chacun utilise des techniques différentes pour établir une prédiction, mais le choix d'une méthode dépendra surtout du format de la donnée. Aujourd'hui nous nous attarderons seulement sur l'apprentissage supervisé et sur un modèle en particulier: la Régression Linéaire."
+title: "Initiation au Machine Learning - La Régression Linéaire"
+excerpt: "Il existe plusieurs types de machine learning, comme l'apprentissage supervisé, l'apprentissage non-supervisé et l'apprentissage semi-supervisé. Chacun utilise des techniques différentes pour établir une prédiction, mais le choix d'une méthode dépendra surtout du format de la donnée. Aujourd'hui nous nous attarderons seulement sur l'apprentissage supervisé et sur un modèle en particulier : la Régression Linéaire."
 lang: fr
 permalink: /fr/initiation-machine-learning-regression-lineaire/
 authors:
