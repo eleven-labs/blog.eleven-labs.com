@@ -6,8 +6,6 @@ lang: fr
 permalink: /fr/initiation-machine-learning-regression-lineaire/
 authors:
     - HugoDurand
-date: '2020-09-23 10:42:47 +0100'
-date_gmt: '2017-09-23 09:42:47 +0100'
 ---
 
 Premièrement, prenons quelques instants pour faire une brève introduction sur ce qu'est le machine learning.
