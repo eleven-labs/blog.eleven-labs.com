@@ -118,17 +118,17 @@ PLATFORMS
 
 DEPENDENCIES
   amp-jekyll!
-  jekyll
-  jekyll-algolia
-  jekyll-feed
+  jekyll (~> 4.1.1)
+  jekyll-algolia (~> 1.6.0)
+  jekyll-feed (~> 0.15.1)
   jekyll-multiple-languages-plugin!
-  jekyll-paginate
-  jekyll-seo-tag
+  jekyll-paginate (~> 1.1.0)
+  jekyll-seo-tag (~> 2.7.1)
   rake
-  rouge
-  sassc
+  rouge (~> 3.25.0)
+  sassc (~> 2.4.0)
   scss_lint
-  uglifier
+  uglifier (~> 4.2.0)
 
 BUNDLED WITH
    2.1.4
