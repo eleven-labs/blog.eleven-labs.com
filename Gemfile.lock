@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/vdelpeyroux/amp-jekyll
+  remote: https://github.com/Vik-Th0r/amp-jekyll
   revision: 4e51a971923a3139bca11c7f7dba432cc5947041
   specs:
     amp-jekyll (1.0.3)
@@ -8,7 +8,7 @@ GIT
       nokogiri (>= 1.6.0)
 
 GIT
-  remote: https://github.com/vdelpeyroux/jekyll-multiple-languages-plugin
+  remote: https://github.com/Vik-Th0r/jekyll-multiple-languages-plugin
   revision: c6f3e14f803cc6a31ef9abca822b28ea29c1fd5f
   specs:
     jekyll-multiple-languages-plugin (1.7.0)
