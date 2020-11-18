@@ -81,6 +81,20 @@ theme_settings:
 paginate: 10
 paginate_path: "/page/:num/"
 
+#TAGS
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_feed_layout: tag_feed
+tag_feed_dir: rss/tag
+
+#CATEGORY
+jekyll-archives:
+  enabled:
+    - categories
+  layout: category
+  permalinks:
+    category: '/category/:name/'
+
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: rouge
@@ -95,6 +109,8 @@ plugins:
     - amp-jekyll
     - uglifier
     - jekyll-algolia
+    - jekyll/tagging
+    - jekyll-archives
 exclude:
     - CNAME
     - CODE_OF_CONDUCT.md
