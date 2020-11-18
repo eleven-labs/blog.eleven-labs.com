@@ -56,7 +56,7 @@ rundir /var/run/munin
 ```
 
 The line we are interested in is the `htmldir`. It is in this folder that the static pages and images of the web interface will be stored. Feel free to configure this path according to your needs, depending on the installation of your web server (Nginx, Apache, ...).
-The second part of the configuration we are interested in is located below, in the same file :
+The second part of the configuration we are interested in is located below, in the same file:
 ```
 [localhost.localdomain]
     address 127.0.0.1
@@ -78,7 +78,7 @@ All that's left to do is to save and close the configuration file then restart t
 sudo service munin-node restart
 ```
 
-The static files of the web interface should now be available in the folder indicated previously in the configuration (line `htmldir`) :
+The static files of the web interface should now be available in the folder indicated previously in the configuration (line `htmldir`):
 
 ![]({{ site.baseurl }}/assets/2020-04-29-munin-monitoring-odin/eleven-master.png)
 
@@ -91,7 +91,7 @@ The monitoring of your "Master" machine is now set up. Now let's see what happen
 The monitoring of your "Master" machine is now in place.
 Munin's major takeaway lies in its ability to manage for you a multitude of machines without effort. On a second machine, you just need to install the `munin-node` package and then perform two small configurations: one on the Node side, the other on the Master side.
 
-The installation of the package first of all :
+The installation of the package first of all:
 
 ```
 sudo apt-get update
@@ -101,12 +101,12 @@ sudo apt-get install munin-node
 
 ### Configuration
 
-You then need to configure the munin-node to authorize the Master to retrieve the required data. This is done in the configuration file `/etc/munin/munin-node.conf`, on the line authorizing the localhost :
+You then need to configure the munin-node to authorize the Master to retrieve the required data. This is done in the configuration file `/etc/munin/munin-node.conf`, on the line authorizing the localhost:
 ```
 allow ^127.0.0.1
 ```
 
-This local IP must be replaced by the public IP of the Master server, in RegExp format, which would give for example :
+This local IP must be replaced by the public IP of the Master server, in RegExp format, which would give for example:
 
 ```
 allow ^145\.78\.309\.444$.
@@ -118,7 +118,7 @@ Now restart the Munin-node service to enable this configuration:
 sudo service munin-node restart
 ```
 
-Back to the Master for the last step: we need to add the Node in the list of monitored machines. In the Master configuration file (`/etc/munin/munin.conf`), add the Node following the Master declaration made previously. You will need to specify a name representing the Node and its IP address. Using our example from earlier :
+Back to the Master for the last step. We need to add the Node in the list of monitored machines. In the Master configuration file (`/etc/munin/munin.conf`), add the Node following the Master declaration made previously. You will need to specify a name representing the Node and its IP address. Using our example from earlier:
 
 ```
 [ElevenMaster]
@@ -129,13 +129,13 @@ Back to the Master for the last step: we need to add the Node in the list of mon
     use_node_name yes
 ```
 
-Save, close the configuration file and once again restart the Munin service to take into account this new Node :
+Save, close the configuration file and once again restart the Munin service to take into account this new Node:
 
 ```
 sudo service munin-node restart
 ```
 
-After a few minutes, by the time Munin retrieves the information from the newly added Node, you should see your second machine appear in the web interface :
+After a few minutes, by the time Munin retrieves the information from the newly added Node, you should see your second machine appear in the web interface:
 
 ![]({{ site.baseurl }}/assets/2020-04-29-munin-monitoring-odin/eleven-node.png)
 
