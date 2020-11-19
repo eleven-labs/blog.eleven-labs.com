@@ -7,10 +7,10 @@ excerpt: "Troisième épisode de cette série, où nous parcourrons les concepts
 authors:
     - manu
 categories:
-    - Storybook
+    -  storybook
     - UX
     - UI
-    - React
+    - react
 tags:
     - react
     - UI

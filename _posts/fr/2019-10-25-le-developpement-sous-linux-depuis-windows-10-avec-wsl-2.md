@@ -4,10 +4,11 @@ title: Le développement sous Linux depuis Windows 10 avec WSL 2
 excerpt: Développer sans contraintes vos applications sous Linux depuis Windows 10 grace à WSL 2
 authors:
     - gcanal
+lang: fr
 permalink: /fr/le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/
 categories:
     - Windows
-    - Linux
+    - linux
 tags:
     - Windows 10
     - WSL2

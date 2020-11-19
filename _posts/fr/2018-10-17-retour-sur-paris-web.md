@@ -8,9 +8,9 @@ authors:
 lang: fr
 permalink: /fr/compte-rendu-paris-web/
 categories:
-    - Conférence
+    - conference
 tags:
-    - Conférence
+    - conference
 cover: /assets/2018-10-16-retour-sur-paris-web/cover.jpg
 ---
 

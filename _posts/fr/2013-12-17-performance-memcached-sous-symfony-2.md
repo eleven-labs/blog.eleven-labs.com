@@ -9,7 +9,7 @@ authors:
 date: '2013-12-17 00:00:35 +0100'
 date_gmt: '2013-12-16 23:00:35 +0100'
 categories:
-    - Symfony
+    - symfony
 tags:
     - symfony2
     - memcached

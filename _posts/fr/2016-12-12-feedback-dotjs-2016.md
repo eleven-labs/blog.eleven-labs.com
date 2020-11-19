@@ -9,11 +9,11 @@ excerpt: La 5ème édition des conférences dotJS a battu un nouveau record d'a
 date: '2016-12-12 17:40:34 +0100'
 date_gmt: '2016-12-12 16:40:34 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - Javascript
-    - AngularJS
-    - dotJS
+    - javascript
+    - angularJS
+    - dotjs
 ---
 La 5ème édition des conférences dotJS a battu un nouveau record d'affluence ce lundi 5 décembre en accueillant environ 1500 personnes. Cette année le rendez-vous était fixé au Dock Pullman à Aubervilliers, en région Parisienne.
 

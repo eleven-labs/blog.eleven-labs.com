@@ -11,7 +11,7 @@ categories:
     - docker
 tags:
     - PhpStorm
-    - Docker
+    - docker
     - Tests Unitaires
     - Xdebug
 

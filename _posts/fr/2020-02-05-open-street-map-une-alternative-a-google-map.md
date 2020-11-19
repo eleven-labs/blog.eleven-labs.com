@@ -5,6 +5,7 @@ permalink: /fr/open-street-map-une-alternative-a-google-map/
 excerpt: "Ajouter une carte interactive sans utiliser Google Maps"
 authors:
     - talgrin
+lang: fr
 categories:
     - javascript
 tags:
@@ -28,7 +29,7 @@ Ainsi, nous aborderons les points suivants :
 
 ## La Stack Technique
 
-- Symfony 4.4
+- symfony 4.4
 -   WebpackLibrairie JS :
 	-   Jquery
 	-   Bootstrap

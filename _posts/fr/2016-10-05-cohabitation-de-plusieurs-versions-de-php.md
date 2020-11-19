@@ -9,7 +9,7 @@ lang: fr
 permalink: /fr/cohabitation-de-plusieurs-version-de-php/
 categories:
     - Php
-tags: []
+tags: ['test']
 ---
 Dans un contexte professionnel, il n'est pas rare de travailler sur divers projets. Sur ces divers projets, il n'est pas rare non plus que ceux-ci ne fonctionnent pas avec les mêmes versions de PHP. C'est d'ailleurs pour cette raison que les IDE vous proposent de sélectionner la version de PHP (et c'est le cas pour de nombreux langages), afin de vous informer si vous utilisez une fonctionnalité qui n'est pas encore supportée, ou à l'inverse dépréciée, ou voire même inexistante.
 

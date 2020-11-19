@@ -4,10 +4,11 @@ title: Une application React plus réactive - L'Optimistic UI
 excerpt: Dans cet article, nous allons vous présenter l'optimistic UI et vous montrer comment l'implémenter dans votre application React facilement grâce à ApolloJS
 authors:
     - kcordier
+lang: fr
 permalink: /fr/optimistic-ui-avec-react-et-apollo-js/
 categories:
-    - Javascript
-    - React
+    - javascript
+    - react
     - ApolloJS
 tags:
     - javascript

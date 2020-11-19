@@ -14,7 +14,7 @@ tags:
     - application mobile
     - mobile
     - dév mobile
-    - Android
+    - android
 ---
 
 ### Introduction

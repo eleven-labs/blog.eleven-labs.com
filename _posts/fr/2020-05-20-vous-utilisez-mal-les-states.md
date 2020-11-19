@@ -7,8 +7,8 @@ authors:
     - kcordier
 permalink: /fr/vous-utilisez-mal-les-states-react/
 categories:
-    - Javascript
-    - React
+    - javascript
+    - react
 tags:
     - javascript
     - react

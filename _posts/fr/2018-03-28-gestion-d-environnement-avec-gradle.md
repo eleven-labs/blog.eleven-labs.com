@@ -7,13 +7,13 @@ excerpt: "Gradle est un outil complexe dont la prise en main permet de faire de 
 authors:
     - babas
 categories:
-    - Android
+    - android
     - Kotlin
     - gradle
     - flavor
     - environnement
 tags:
-    - Android
+    - android
     - Kotlin
     - gradle
     - flavor

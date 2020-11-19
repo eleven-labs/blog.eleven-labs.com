@@ -9,7 +9,7 @@ excerpt: Je vais parler du query builder (constructeur de requête) Doctrine pou
 date: '2015-10-06 16:42:12 +0200'
 date_gmt: '2015-10-06 14:42:12 +0200'
 categories:
-    - Symfony
+    - symfony
     - MongoDB
 tags:
     - doctrine

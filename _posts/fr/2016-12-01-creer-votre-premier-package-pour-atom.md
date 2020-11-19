@@ -8,7 +8,7 @@ authors:
 date: '2016-12-01 12:14:17 +0100'
 date_gmt: '2016-12-01 11:14:17 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
     - atom
     - package

@@ -7,7 +7,7 @@ authors:
 lang: fr
 permalink: /fr/test-unitaire-dun-bundle-symfony2/
 categories:
-    - Symfony
+    - symfony
 tags:
     - symfony2
     - bundle

@@ -7,8 +7,8 @@ authors:
 lang: fr
 permalink: /fr/le-cache-http-votre-meilleur-ami/
 categories:
-    - Symfony
-    - Javascript
+    - symfony
+    - javascript
 tags:
     - cache
     - performance

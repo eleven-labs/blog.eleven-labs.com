@@ -8,10 +8,10 @@ lang: fr
 permalink: /fr/openpgp-paire-clef-presque-parfaite-partie-1/
 categories:
     - openpgp
-    - sécurité
+    - securite
 tags:
     - openpgp
-    - sécurité
+    - securite
 cover: /assets/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
 ---
 

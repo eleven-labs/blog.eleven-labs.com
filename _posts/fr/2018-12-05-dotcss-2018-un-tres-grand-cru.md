@@ -5,12 +5,13 @@ excerpt: Retour sur l'édition 2018 de dotCSS, la plus grande conférence au mon
 authors:
     - seinhorn
 permalink: /fr/dotcss-2018-un-tres-grand-cru/
+lang: fr
 categories:
-    - Conférence
-    - CSS
+    - conference
+    - css
 tags:
-    - Conférence
-    - CSS
+    - conference
+    - css
     - Paris
     - 2018
     - Intégrateur web

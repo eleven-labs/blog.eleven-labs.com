@@ -7,7 +7,7 @@ lang: fr
 permalink: /fr/creer-une-api-avec-api-platform/
 excerpt: "Api Platform se définit comme un « framework PHP pour construire des APIs web modernes ». En effet, cet outil va nous permettre de construire rapidement une API riche et facilement utilisable."
 categories:
-    - PHP
+    - php
 tags:
     - php
 cover: /assets/2017-07-25-api-platform/cover.jpg

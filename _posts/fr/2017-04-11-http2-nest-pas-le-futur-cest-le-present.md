@@ -8,7 +8,7 @@ authors:
 date: '2017-04-11 12:00:00 +0100'
 date_gmt: '2017-04-11 12:00:00 +0100'
 categories:
-    - Javascript
+    - javascript
     - Mobile
     - Php
 tags:

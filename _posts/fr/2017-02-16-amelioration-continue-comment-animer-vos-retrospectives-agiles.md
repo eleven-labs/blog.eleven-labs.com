@@ -11,9 +11,9 @@ date_gmt: '2017-02-16 16:32:11 +0100'
 categories:
     - Agilité
 tags:
-    - SCRUM
-    - Agile
-    - Retrospective
+    - scrum
+    - agile
+    - retrospective
     - Inspect &amp; Adapt
     - Amélioration continue
 cover: /assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-heart-retrospective.jpg

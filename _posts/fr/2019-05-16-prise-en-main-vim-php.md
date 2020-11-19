@@ -7,8 +7,8 @@ authors:
 lang: fr
 permalink: /fr/prise-en-main-vim-php/
 categories:
-    - PHP
-    - Linux
+    - php
+    - linux
     - MacOS
 tags:
     - linux

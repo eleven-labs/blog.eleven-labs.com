@@ -7,7 +7,7 @@ authors:
 lang: fr
 permalink: /fr/lespromessesenjavascript/
 categories:
-    - Javascript
+    - javascript
 tags:
     - promise
     - promesse

@@ -7,13 +7,13 @@ excerpt: "Cette année a eu lieu la deuxième édition de l'Android Maker. Avec 
 authors:
     - babas
 categories:
-    - Android
+    - android
     - Kotlin
-    - Android Maker
+    - android Maker
 tags:
-    - Android
+    - android
     - Kotlin
-    - Android Maker
+    - android Maker
 cover: /img/covers/StockSnap_1S8SVUVUNU.jpg
 ---
 

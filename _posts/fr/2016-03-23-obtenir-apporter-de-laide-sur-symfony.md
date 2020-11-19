@@ -8,7 +8,7 @@ date_gmt: '2016-03-23 15:56:43 +0100'
 lang: fr
 permalink: /fr/obtenir-apporter-de-laide-sur-symfony/
 categories:
-    - Symfony
+    - symfony
 tags:
     - symfony
     - irc

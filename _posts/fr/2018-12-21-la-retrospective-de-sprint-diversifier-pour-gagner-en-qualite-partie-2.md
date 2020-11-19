@@ -4,6 +4,7 @@ title: La rétrospective de sprint, diversifier pour gagner en qualité Partie I
 excerpt: Prêt pour le niveau suivant ? Si vous « masterisez » les principes de base, il est maintenant temps de se pencher sur des versions plus évoluées, qui vous permettront notamment d’aborder des situations différentes et récolter des informations parfois plus pertinentes.
 authors:
 - pbrenot
+lang: fr
 permalink: /fr/retrospective-de-sprint-gagner-en-qualite-partie-II/
 categories:
     - Agilité

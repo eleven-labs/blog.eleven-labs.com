@@ -9,13 +9,13 @@ date_gmt: '2017-03-09 17:24:38 +0100'
 lang: fr
 permalink: /fr/retour-experience-codeception/
 categories:
-    - Symfony
+    - symfony
     - Php
 tags:
     - php
     - symfony
     - mongodb
-    - RabbitMQ
+    - rabbitmq
     - test
     - api
 image:
@@ -97,7 +97,7 @@ Configuration :
 class_name: ApiTester
 modules:
     enabled:
-        - Symfony:
+        - symfony:
             app_path: '../../app'
             var_path: '../../var'
         - REST:
@@ -160,7 +160,7 @@ L'avantage c'est que l'ajout de module se fait très simplement. Imaginons que v
 class_name: ApiTester
 modules:
     enabled:
-        - Symfony:
+        - symfony:
             app_path: '../../app'
             var_path: '../../var'
         - REST:

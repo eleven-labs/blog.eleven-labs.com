@@ -7,12 +7,12 @@ authors:
 lang: fr
 permalink: /fr/storify-de-la-symfony-live-2016-paris/
 categories:
-    - PHP
-    - Symfony
+    - php
+    - symfony
 tags:
     - symfony
     - symfony_live
-    - conférence
+    - conference
     - tweet
 ---
 

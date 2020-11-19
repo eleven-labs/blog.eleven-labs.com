@@ -4,6 +4,7 @@ title: Utiliser traefik comme reverse proxy
 excerpt: Besoin d’exposer facilement des sites et applications web sur Internet avec un certificat SSL valide ? C’est ici :)
 authors:
 - jmoati
+lang: fr
 permalink: /fr/utiliser-traefik-comme-reverse-proxy/
 categories:
     - docker

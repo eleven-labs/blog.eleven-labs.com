@@ -7,7 +7,7 @@ authors:
 lang: fr
 permalink: /fr/react-apollo-le-local-state-management-une-alternative-a-redux-contextapi/
 categories:
-    - React
+    - react
     - GraphQL
 tags:
     - react

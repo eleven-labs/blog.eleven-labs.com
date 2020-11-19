@@ -7,13 +7,13 @@ authors:
 lang: fr
 permalink: /fr/codelabs-under-the-hood/
 categories:
-    - React
+    - react
     - Static site generation
     - Markdown
     - AST
     - App engine
 tags:
-    - React
+    - react
     - Static site generation
     - Markdown
     - AST

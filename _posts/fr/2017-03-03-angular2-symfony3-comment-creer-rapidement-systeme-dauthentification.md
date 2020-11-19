@@ -10,14 +10,14 @@ excerpt: "Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde ve
 date: '2017-03-03 15:38:35 +0100'
 date_gmt: '2017-03-03 14:38:35 +0100'
 categories:
-    - Symfony
-    - Javascript
+    - symfony
+    - javascript
 tags:
     - php
     - symfony
-    - Javascript
-    - Angular2
-    - Angular
+    - javascript
+    - angular2
+    - angular
 ---
 
 Introduction

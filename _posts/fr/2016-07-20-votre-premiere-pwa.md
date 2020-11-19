@@ -7,11 +7,11 @@ excerpt: Le monde du web évolue. Le site web mobile est devenu le plus grand c
 lang: fr
 permalink: /fr/votre-premiere-pwa/
 categories:
-    - Javascript
+    - javascript
 tags:
     - tutoriel
     - cache
-    - Javascript
+    - javascript
     - web
     - pwa
 ---

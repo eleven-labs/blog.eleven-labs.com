@@ -9,9 +9,9 @@ authors:
 date: '2014-09-01 10:26:18 +0200'
 date_gmt: '2014-09-01 08:26:18 +0200'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - Nodejs
+    - nodejs
     - hapi
 ---
 

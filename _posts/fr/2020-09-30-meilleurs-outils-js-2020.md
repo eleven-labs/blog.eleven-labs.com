@@ -9,21 +9,21 @@ authors:
     - kcordier
 permalink: /fr/meilleurs-outils-js-2020/
 categories:
-    - Javascript
-    - React
+    - javascript
+    - react
 tags:
     - javascript
-    - React
+    - react
     - UX
     - Outils
     - Aide
-    - Docker
-    - Chrome
+    - docker
+    -  chrome
     - NPM
-    - Storybook
+    -  storybook
     - Bit
     - BrowserStack
-    - Graphql
+    -  graphql
 image:
     path: /assets/2020-09-30-meilleurs-outils-js-2020/header.jpg
     height: 295

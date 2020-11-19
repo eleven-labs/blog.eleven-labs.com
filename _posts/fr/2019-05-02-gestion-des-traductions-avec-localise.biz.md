@@ -4,6 +4,7 @@ title: Gestion des traductions avec localise.biz
 excerpt: Dans cet article je vais vous présenter localise.biz - un outil de gestion de traduction en SaaS.
 authors:
 - marishka
+lang: fr
 permalink: /fr/gestion-des-traductions-avec-localise.biz/
 categories:
     - traductions

@@ -9,7 +9,7 @@ authors:
 date: '2015-10-26 17:28:08 +0100'
 date_gmt: '2015-10-26 16:28:08 +0100'
 categories:
-    - Symfony
+    - symfony
 tags:
     - symfony
     - phpunit

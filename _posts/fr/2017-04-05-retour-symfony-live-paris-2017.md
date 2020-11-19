@@ -10,10 +10,10 @@ date_gmt: '2017-04-05 18:24:38 +0100'
 lang: fr
 permalink: /fr/retour-symfony-live-paris-2017/
 categories:
-    - Symfony
+    - symfony
     - Php
 tags:
-    - conférence
+    - conference
     - php
     - symfony
     - symfony_live

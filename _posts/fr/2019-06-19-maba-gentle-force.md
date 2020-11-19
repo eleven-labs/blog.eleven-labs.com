@@ -4,13 +4,14 @@ title: Protégez du brute force votre application Symfony avec Maba Gentle Force
 excerpt: Je vous propose de découvrir un bundle très simple à configurer afin de protéger votre application Sympony contre les attaques de brute force
 authors:
 - dim
+lang: fr
 permalink: /fr/symfony-brute-force-protection/
 categories:
-    - Symfony
+    - symfony
 tags:
-    - Sécurité
-    - Symfony
-    - PHP
+    - securite
+    - symfony
+    -  
 ---
 
 

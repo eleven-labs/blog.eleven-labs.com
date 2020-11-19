@@ -9,7 +9,8 @@ lang: fr
 permalink: /fr/php-7-1-pour-les-null/
 categories:
     - Php
-tags: []
+tags:
+    - notag
 ---
 Il y a quelques temps, pour ainsi dire un an (le temps passe vite ! ), je parlais de la sortie de PHP 7.0. Dix mois plus tard, les choses évoluent à nouveau : PHP 7.1 est en RC1.
 

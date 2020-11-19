@@ -9,7 +9,7 @@ lang: fr
 permalink: /fr/docker-symfony-vue/
 categories:
     - docker
-    - Symfony
+    - symfony
     - Vue.js
 tags:
     - php

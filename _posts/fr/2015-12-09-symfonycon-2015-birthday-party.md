@@ -9,14 +9,14 @@ authors:
 date: '2015-12-09 18:21:32 +0100'
 date_gmt: '2015-12-09 17:21:32 +0100'
 categories:
-    - Symfony
+    - symfony
 tags:
     - doctrine
     - symfony
     - form
-    - conférence
+    - conference
     - guard
-    - sécurité
+    - securite
     - symfony con
     - routing
 ---

@@ -8,7 +8,7 @@ authors:
 date: '2016-12-05 17:34:21 +0100'
 date_gmt: '2016-12-05 16:34:21 +0100'
 categories:
-    - Javascript
+    -  javascript
 tags:
     - atom
     - babel

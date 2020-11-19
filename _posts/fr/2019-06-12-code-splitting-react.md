@@ -7,8 +7,8 @@ authors:
 lang: fr
 permalink: /fr/react-débuter-le-code-splitting/
 categories:
-    - React
-    - Javascript
+    - react
+    - javascript
 tags:
     - react
     - loadable

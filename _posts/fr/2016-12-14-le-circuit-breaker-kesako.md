@@ -7,7 +7,7 @@ authors:
 lang: fr
 permalink: /fr/le-circuit-breaker-kesako/
 categories:
-    - Symfony
+    - symfony
     - Php
 tags:
     - symfony

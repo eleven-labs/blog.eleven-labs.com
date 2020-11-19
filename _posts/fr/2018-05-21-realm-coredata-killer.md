@@ -13,7 +13,7 @@ categories:
     - coreData
     - realm
     - database
-    - iOS
+    - ios
 tags:
     - swift
     - mobile
@@ -21,7 +21,7 @@ tags:
     - coreData
     - realm
     - database
-    - iOS
+    - ios
 cover: /assets/2018-02-24-realm-coredata-killer/realm2.jpg
 ---
 

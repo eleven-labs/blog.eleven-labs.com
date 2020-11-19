@@ -8,9 +8,9 @@ permalink: /fr/angularjs-les-directives-12/
 date: '2014-07-11 14:19:25 +0200'
 date_gmt: '2014-07-11 12:19:25 +0200'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - AngularJS
+    - angularJS
 ---
 
 ## Kézako ?

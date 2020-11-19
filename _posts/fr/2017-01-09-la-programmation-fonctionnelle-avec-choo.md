@@ -9,9 +9,9 @@ authors:
 date: '2017-01-09 16:55:06 +0100'
 date_gmt: '2017-01-09 15:55:06 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - Javascript
+    - javascript
     - api
     - framework
     - choo

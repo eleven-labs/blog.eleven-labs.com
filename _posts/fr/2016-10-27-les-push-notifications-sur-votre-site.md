@@ -7,9 +7,9 @@ authors:
 lang: fr
 permalink: /fr/les-push-notifications-sur-votre-site/
 categories:
-    - Javascript
+    - javascript
 tags:
-    - Javascript
+    - javascript
     - pwa
     - firebase
     - mobile
