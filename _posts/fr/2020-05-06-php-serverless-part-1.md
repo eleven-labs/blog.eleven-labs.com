@@ -2,7 +2,7 @@
 layout: post
 title: "PHP & Serverless avec Bref - part 1"
 lang: fr
-permalink: /fr/php-serverless-part-1/
+permalink: /php-serverless-part-1/
 excerpt: "Qu'est-ce qu'une architecture Serverless, et quelles sont les options pour y déployer des applications PHP ?"
 authors:
     - marishka

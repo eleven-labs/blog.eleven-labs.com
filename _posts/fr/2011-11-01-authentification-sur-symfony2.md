@@ -5,7 +5,7 @@ excerpt: Nouveau tuto sur Symfony2, comme pour tous les sites nous avons souvent
 authors:
     - captainjojo
 lang: fr
-permalink: /fr/authentification-sur-symfony2/
+permalink: /authentification-sur-symfony2/
 categories:
     - symfony
 tags:

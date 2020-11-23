@@ -6,7 +6,7 @@ authors:
     - seinhorn
     - martincadoux
 lang: fr
-permalink: /fr/compte-rendu-paris-web/
+permalink: /compte-rendu-paris-web/
 categories:
     - conference
 tags:

@@ -2,7 +2,7 @@
 layout: post
 title: Retour sur les DotCSS 2017
 lang: fr
-permalink: /fr/retour-sur-les-dotcss-2017/
+permalink: /retour-sur-les-dotcss-2017/
 excerpt: "Comme les dotJS l’an dernier, c’est au tour des dotCSS de déménager aux docks d’Aubervilliers pour cette édition 2017 ! On est bien, on a la place d’étendre ses jambes convenablement sans qu’elles ne soient posées sur les épaules de la personne devant soi et on arrête de regretter les dorures du cosy théâtre des variétés. On s’installe donc confortablement dans notre fatboy pour assister à cette cérémonie du langage CSS dont voici les meilleurs moments. Amen !"
 authors:
     - tbrugidou

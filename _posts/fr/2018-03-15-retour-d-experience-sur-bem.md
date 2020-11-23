@@ -2,7 +2,7 @@
 layout: post
 title: Retour d’expérience sur BEM
 lang: fr
-permalink: /fr/retour-d-experience-sur-bem/
+permalink: /retour-d-experience-sur-bem/
 excerpt: "Dans cet article, vous trouverez mon retour d'expérience sur la méthodologie BEM (Block ; Element ; Modifier), choisie dans ma précédente refonte du..."
 authors:
     - kcordier

@@ -5,7 +5,7 @@ excerpt: Dans cet article, nous allons vous présenter le lazy load et comment l
 authors:
     - kcordier
 lang: fr
-permalink: /fr/lazy-load-react/
+permalink: /lazy-load-react/
 categories:
     - javascript
     - react

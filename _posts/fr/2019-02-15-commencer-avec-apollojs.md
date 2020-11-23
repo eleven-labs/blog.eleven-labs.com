@@ -6,7 +6,7 @@ authors:
     - fpasquet
     - captainjojo
 lang: fr
-permalink: /fr/commencer-avec-apollojs/
+permalink: /commencer-avec-apollojs/
 categories:
     - GraphQL
 tags:

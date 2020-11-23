@@ -5,7 +5,7 @@ excerpt: RICE, KANO et ruse de Sioux - Trois nouvelles méthodologies de prioris
 lang: fr
 authors:
     - mapo
-permalink: /fr/la-guerre-du-backlog-n-aura-pas-lieu-part-II/
+permalink: /la-guerre-du-backlog-n-aura-pas-lieu-part-II/
 categories:
     - agile
 tags:

@@ -5,7 +5,7 @@ excerpt: "Vous avez un nouveau projet personnel ou professionnel, vous ne voulez
 authors:
     - flemzord
 lang: fr
-permalink: /fr/debutons-avec-le-serverless/
+permalink: /debutons-avec-le-serverless/
 categories:
     - devops
     - serverless

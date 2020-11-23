@@ -5,7 +5,7 @@ excerpt: Nous allons découvrir un outil qui permet d'automatiser des tâches fa
 authors:
     - ibenichou
 lang: fr
-permalink: /fr/mise-en-place-d-un-workflow-cd-avec-fastlane-pour-ios-ou-android/
+permalink: /mise-en-place-d-un-workflow-cd-avec-fastlane-pour-ios-ou-android/
 categories:
     - ios
     - swift

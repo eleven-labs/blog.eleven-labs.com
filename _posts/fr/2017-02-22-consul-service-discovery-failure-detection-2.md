@@ -2,7 +2,7 @@
 layout: post
 title: 'Consul : Service Discovery et Failure Detection'
 lang: fr
-permalink: /fr/consul-service-discovery-failure-detection-2/
+permalink: /consul-service-discovery-failure-detection-2/
 authors:
     - vcomposieux
 date: '2017-02-22 10:49:25 +0100'

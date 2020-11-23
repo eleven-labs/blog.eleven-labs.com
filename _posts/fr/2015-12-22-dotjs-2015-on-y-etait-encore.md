@@ -2,7 +2,7 @@
 layout: post
 title: 'dotJS 2015 : compte-rendu d''un astronaute'
 lang: fr
-permalink: /fr/dotjs-2015-on-y-etait-encore/
+permalink: /dotjs-2015-on-y-etait-encore/
 excerpt: Cette année encore, Eleven Labs et sa bande d'astronautes étaient partenaires de la http://www.dotjs.io version 2015.
 authors:
     - trughooputh

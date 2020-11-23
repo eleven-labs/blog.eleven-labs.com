@@ -5,7 +5,7 @@ excerpt: Un post court pour vous parler d'une technologie que je viens de trouve
 authors:
     - captainjojo
 lang: fr
-permalink: /fr/sails-js-framework-prometteur/
+permalink: /sails-js-framework-prometteur/
 categories:
     - javascript
 tags:

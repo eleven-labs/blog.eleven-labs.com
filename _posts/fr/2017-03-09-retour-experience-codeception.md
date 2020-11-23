@@ -7,7 +7,7 @@ authors:
 date: '2017-03-09 18:24:38 +0100'
 date_gmt: '2017-03-09 17:24:38 +0100'
 lang: fr
-permalink: /fr/retour-experience-codeception/
+permalink: /retour-experience-codeception/
 categories:
     - symfony
     - Php

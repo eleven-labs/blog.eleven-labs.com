@@ -7,7 +7,7 @@ authors:
 date: '2015-11-12 14:35:21 +0100'
 date_gmt: '2015-11-12 13:35:21 +0100'
 lang: fr
-permalink: /fr/pattern-state/
+permalink: /pattern-state/
 categories:
     - symfony
 tags:

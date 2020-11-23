@@ -5,7 +5,7 @@ excerpt: "React est, à l'heure où j'écris ces lignes, le framework JavaScript
 lang: fr
 authors:
     - mlenglet
-permalink: /fr/optimiser-son-application-react/
+permalink: /optimiser-son-application-react/
 categories:
     - javascript
     - react

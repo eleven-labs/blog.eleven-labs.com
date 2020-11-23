@@ -2,7 +2,7 @@
 layout: post
 title: La programmation fonctionnelle avec Choo
 lang: fr
-permalink: /fr/la-programmation-fonctionnelle-avec-choo/
+permalink: /la-programmation-fonctionnelle-avec-choo/
 excerpt: "Encore un nouveau framework JS?!!?! Ça commence à bien faire! Et oui encore un, mais celui-ci est super mignon ! Vous allez voir !"
 authors:
     - rascarlito

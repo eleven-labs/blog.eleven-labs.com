@@ -5,7 +5,7 @@ excerpt: Dans cet article je vais vous présenter localise.biz - un outil de ges
 authors:
 - marishka
 lang: fr
-permalink: /fr/gestion-des-traductions-avec-localise.biz/
+permalink: /gestion-des-traductions-avec-localise.biz/
 categories:
     - traductions
     - intl

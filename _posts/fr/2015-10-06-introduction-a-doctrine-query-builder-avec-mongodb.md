@@ -2,7 +2,7 @@
 layout: post
 title: Introduction à Doctrine Query Builder avec MongoDB
 lang: fr
-permalink: /fr/introduction-a-doctrine-query-builder-avec-mongodb/
+permalink: /introduction-a-doctrine-query-builder-avec-mongodb/
 authors:
     - tthuon
 excerpt: Je vais parler du query builder (constructeur de requête) Doctrine pour faire des requêtes vers une base de données MongoDB.

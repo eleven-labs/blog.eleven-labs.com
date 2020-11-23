@@ -4,7 +4,7 @@ title: "Téléversement d’un fichier en AJAX"
 authors:
     - tthuon
 lang: fr
-permalink: /fr/televersement-dun-fichier-en-ajax/
+permalink: /televersement-dun-fichier-en-ajax/
 excerpt: "Aujourd’hui, je voudrais partager avec vous une fonctionnalité très souvent demandée dans une application : le téléversement d’un fichier."
 categories:
     - symfony

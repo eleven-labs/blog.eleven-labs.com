@@ -2,7 +2,7 @@
 layout: post
 title: "School of PO 2019 : devoir maison et retour d'expérience"
 lang: fr
-permalink: /fr/school-of-po-devoir-maison-et-retour-dexperience/
+permalink: /school-of-po-devoir-maison-et-retour-dexperience/
 excerpt: AstroPO, AstroDev, ou tout simplement AstroPassionnés par l’agilité se sont donné rendez-vous sur les bancs de l'école mercredi 13 janvier pour assister à la School of PO !
 authors:
     - mae

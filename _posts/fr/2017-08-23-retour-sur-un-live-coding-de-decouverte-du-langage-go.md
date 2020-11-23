@@ -4,7 +4,7 @@ title: Retour sur un live-coding de découverte du langage Go
 authors:
     - vcomposieux
 lang: fr
-permalink: /fr/retour-sur-un-live-coding-de-decouverte-du-langage-go/
+permalink: /retour-sur-un-live-coding-de-decouverte-du-langage-go/
 categories:
     - Go
     - Workshop

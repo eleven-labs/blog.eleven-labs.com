@@ -7,7 +7,7 @@ authors:
     - tthuon
     - cogren
 lang: fr
-permalink: /fr/retour-devfest-nantes/
+permalink: /retour-devfest-nantes/
 categories:
     - conference
 tags:

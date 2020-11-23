@@ -2,7 +2,7 @@
 layout: post
 title: "Storybook - Tester la régression visuelle"
 lang: fr
-permalink: /fr/storybook-visual-regression/
+permalink: /storybook-visual-regression/
 excerpt: "Troisième épisode de cette série, où nous parcourrons les concepts et les différentes solutions autour de la régression visuelle d'une application"
 authors:
     - manu

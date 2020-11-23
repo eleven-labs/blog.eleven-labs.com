@@ -5,7 +5,7 @@ excerpt: Aujourd'hui je vais vous expliquer comment lancer vos tests unitaires e
 authors:
 - rmasclef
 lang: fr
-permalink: /fr/debug-run-phpunit-tests-using-docker-remote-interpreters-with-phpstorm/
+permalink: /debug-run-phpunit-tests-using-docker-remote-interpreters-with-phpstorm/
 categories:
     - php
     - docker

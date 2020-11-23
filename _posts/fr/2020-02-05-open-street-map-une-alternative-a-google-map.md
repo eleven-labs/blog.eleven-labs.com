@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OpenStreetMap - une alternative à Google Maps"
-permalink: /fr/open-street-map-une-alternative-a-google-map/
+permalink: /open-street-map-une-alternative-a-google-map/
 excerpt: "Ajouter une carte interactive sans utiliser Google Maps"
 authors:
     - talgrin

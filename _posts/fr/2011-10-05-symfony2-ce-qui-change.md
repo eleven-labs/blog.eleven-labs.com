@@ -2,7 +2,7 @@
 layout: post
 title: Symfony2 - Ce qui change
 lang: fr
-permalink: /fr/symfony2-ce-qui-change/
+permalink: /symfony2-ce-qui-change/
 excerpt: Si vous êtes courageux, vous aurez dans l'idée de vouloir passer à Symfony2.
 authors:
     - pouzor

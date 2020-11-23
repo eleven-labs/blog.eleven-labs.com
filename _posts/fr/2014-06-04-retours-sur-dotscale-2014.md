@@ -2,7 +2,7 @@
 layout: post
 title: Retours sur dotScale 2014
 lang: fr
-permalink: /fr/retours-sur-dotscale-2014/
+permalink: /retours-sur-dotscale-2014/
 excerpt: Le lundi 19 mai je suis allée à dotScale, conférence technique qui parle de scalabilité, DevOps et systèmes distribués.
 authors:
     - marie

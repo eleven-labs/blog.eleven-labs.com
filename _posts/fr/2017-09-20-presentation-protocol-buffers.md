@@ -4,7 +4,7 @@ title: Présentation de Protocol Buffers
 authors:
     - qneyrat
 lang: fr
-permalink: /fr/presentation-protocol-buffers/
+permalink: /presentation-protocol-buffers/
 categories:
     - Api
     - Go

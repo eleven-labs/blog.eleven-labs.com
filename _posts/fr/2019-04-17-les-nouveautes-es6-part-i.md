@@ -5,7 +5,7 @@ excerpt: Cet article est le premier d'une série visant à vous présenter les n
 authors:
     - mehdidr
 lang: fr
-permalink: /fr/lesnouveauteses6parti/
+permalink: /lesnouveauteses6parti/
 categories:
     - javascript
 tags:

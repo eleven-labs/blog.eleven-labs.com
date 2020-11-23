@@ -3,7 +3,7 @@ layout: post
 title: "Se lancer dans le dév mobile : Partie I"
 excerpt: "Faire du mobile oui, mais par où commencer ?"
 lang: fr
-permalink: /fr/se-lancer-dans-le-dev-mobile-partie1/
+permalink: /se-lancer-dans-le-dev-mobile-partie1/
 authors:
     - ibenichou
 date: '2016-11-10 15:44:34 +0100'

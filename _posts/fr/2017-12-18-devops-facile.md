@@ -2,7 +2,7 @@
 layout: post
 title: Devenir DevOps c'est facile
 lang: fr
-permalink: /fr/devops-facile/
+permalink: /devops-facile/
 excerpt: "Deployer dans le Cloud c'est encore plus simple que de faire un Rsync. En voici la preuve avec ce petit tutoriel."
 authors:
     - captainjojo

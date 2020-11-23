@@ -5,7 +5,7 @@ excerpt: Besoin d’exposer facilement des sites et applications web sur Interne
 authors:
 - jmoati
 lang: fr
-permalink: /fr/utiliser-traefik-comme-reverse-proxy/
+permalink: /utiliser-traefik-comme-reverse-proxy/
 categories:
     - docker
     - ssl

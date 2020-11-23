@@ -2,7 +2,7 @@
 layout: post
 title: Vérifier la qualité du code
 lang: fr
-permalink: /fr/verifier-la-qualite-du-code/
+permalink: /verifier-la-qualite-du-code/
 excerpt: "Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet article, je vais l'aborder sur la partie PHP."
 authors:
    - tthuon

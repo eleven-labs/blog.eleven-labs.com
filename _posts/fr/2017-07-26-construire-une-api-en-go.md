@@ -5,7 +5,7 @@ excerpt: Présentation du package http/net et de la librairie Buffalo
 authors:
     - qneyrat
 lang: fr
-permalink: /fr/construire-une-api-en-go/
+permalink: /construire-une-api-en-go/
 categories:
     - Go
 tags:

@@ -2,11 +2,11 @@
 layout: post
 title: Microdata ou microdonnées
 lang: fr
-permalink: /fr/microdata-ou-microdonnees/
+permalink: /microdata-ou-microdonnees/
 excerpt: Présentation des microdata ou microdonnées, leur implémentation dans les pages web, et leur utilité pour le SEO ou référencement naturel.
 authors:
     - seinhorn
-permalink: /fr/microdata-ou-microdonnees/
+permalink: /microdata-ou-microdonnees/
 categories:
     - blog
 tags:

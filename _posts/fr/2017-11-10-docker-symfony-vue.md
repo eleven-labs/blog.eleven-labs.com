@@ -6,7 +6,7 @@ authors:
     - nicolas
     - jiefmoreno
 lang: fr
-permalink: /fr/docker-symfony-vue/
+permalink: /docker-symfony-vue/
 categories:
     - docker
     - symfony

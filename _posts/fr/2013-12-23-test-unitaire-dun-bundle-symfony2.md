@@ -5,7 +5,7 @@ excerpt: Comment tester unitairement chaque bundle d'un projet Symfony 2 ? Il ex
 authors:
     - captainjojo
 lang: fr
-permalink: /fr/test-unitaire-dun-bundle-symfony2/
+permalink: /test-unitaire-dun-bundle-symfony2/
 categories:
     - symfony
 tags:

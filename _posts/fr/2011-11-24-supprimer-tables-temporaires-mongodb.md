@@ -5,7 +5,7 @@ excerpt: Lors de l’exécution de certain map reduce de MongoDB, il se peut que
 authors:
     - captainjojo
 lang: fr
-permalink: /fr/supprimer-tables-temporaires-mongodb/
+permalink: /supprimer-tables-temporaires-mongodb/
 categories:
     - MongoDB
 tags:

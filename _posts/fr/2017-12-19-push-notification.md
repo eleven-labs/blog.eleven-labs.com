@@ -2,7 +2,7 @@
 layout: post
 title: Recevez nos push notifications
 lang: fr
-permalink: /fr/push-notification/
+permalink: /push-notification/
 excerpt: "Notre retour d'expérience sur la mise en place des push notifications"
 authors:
     - captainjojo

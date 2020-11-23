@@ -2,7 +2,7 @@
 layout: post
 title: De qui je me mock !
 lang: fr
-permalink: /fr/de-qui-je-mock/
+permalink: /de-qui-je-mock/
 excerpt: "Phpunit est un outil de test puissant. Il permet de tester de manière unitaire l'ensemble de son projet. Dans cet article, je vais me concentrer sur les mock et les stub d'objet."
 authors:
     - tthuon

@@ -6,7 +6,7 @@ authors:
 date: '2016-11-23 14:54:12 +0100'
 date_gmt: '2016-11-23 13:54:12 +0100'
 lang: fr
-permalink: /fr/mdbe16-mongodb-europe-a-londres/
+permalink: /mdbe16-mongodb-europe-a-londres/
 categories:
     - MongoDB
 tags:

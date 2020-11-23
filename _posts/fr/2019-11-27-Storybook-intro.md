@@ -5,7 +5,7 @@ excerpt: Storybook c'est le framework open-source qui a été récompensé penda
 authors:
 - manu
 lang: fr
-permalink: /fr/Storybook-creer-son-premier-composant/
+permalink: /Storybook-creer-son-premier-composant/
 categories:
     - angular
     - react

@@ -5,7 +5,7 @@ excerpt: Dans cet article, nous allons apprendre à créer un Web Component
 authors:
     - aallier
 lang: fr
-permalink: /fr/creer-un-webcomponent/
+permalink: /creer-un-webcomponent/
 categories:
     - javascript
 tags:

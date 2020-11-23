@@ -2,7 +2,7 @@
 layout: post
 title: "Joker planning : estimer pour la première fois son product backlog"
 lang: fr
-permalink: /fr/joker-planning-estimer-pour-la-premiere-fois-son-product-backlog/
+permalink: /joker-planning-estimer-pour-la-premiere-fois-son-product-backlog/
 excerpt: "Avec l'aide du mastermind de Gotham City, revenons sur la base de l’estimation, les meilleures stratégies à adopter et les pièges à éviter pour se lancer dans le développement de son produit !"
 authors:
     - mae

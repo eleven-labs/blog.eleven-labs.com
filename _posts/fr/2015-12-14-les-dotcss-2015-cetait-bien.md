@@ -2,7 +2,7 @@
 layout: post
 title: Les dotCSS 2015, c'était bien.
 lang: fr
-permalink: /fr/les-dotcss-2015-cetait-bien/
+permalink: /les-dotcss-2015-cetait-bien/
 excerpt: "C'est en plein coeur du 2e arrondissement de Paris, dans ce monument historique légèrement cossu qu'est le Théâtre des Variétés, que s'est déroulée la deuxième édition de dotCSS le 4 décembre dernier. Ce jour-là, mon compère Elevenien Thibaut et moi-même avons délesté nos clients bien-aimés de notre présence pour nous y rendre, et écouter ce que quelques grands acteurs de la scène CSS voulaient partager avec nous en cette fin d'année. Et pour être franc, c'était très instructif."
 authors:
     - mcadoux

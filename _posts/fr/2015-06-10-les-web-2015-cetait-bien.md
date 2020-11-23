@@ -2,7 +2,7 @@
 layout: post
 title: Les Best of Web 2015, c'était bien.
 lang: fr
-permalink: /fr/les-web-2015-cetait-bien/
+permalink: /les-web-2015-cetait-bien/
 authors:
     - mcadoux
 date: '2015-06-10 16:27:59 +0200'

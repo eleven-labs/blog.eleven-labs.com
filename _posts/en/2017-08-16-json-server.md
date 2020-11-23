@@ -7,12 +7,12 @@ authors:
 lang: en
 permalink: /json-server/
 categories:
-    -  json
-    -  api
+    - json
+    - api
     - NodeJS
 tags:
-    -  json
-    -  api
+    - json
+    - api
     - NodeJS
 cover: /assets/2017-08-16-json-server/cover.jpg
 ---

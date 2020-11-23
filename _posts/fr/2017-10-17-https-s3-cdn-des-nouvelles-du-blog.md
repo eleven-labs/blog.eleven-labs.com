@@ -6,7 +6,7 @@ excerpt: De Github Pages à Amazon Web Services, cet article est un retour d'exp
 lang: fr
 authors:
     - VEBERArnaud
-permalink: /fr/https-s3-cdn-des-nouvelles-du-blog/
+permalink: /https-s3-cdn-des-nouvelles-du-blog/
 categories:
     - blog
     - devops

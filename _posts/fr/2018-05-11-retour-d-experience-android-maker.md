@@ -2,7 +2,7 @@
 layout: post
 title: Retour d'Expérience Android Maker 2018
 lang: fr
-permalink: /fr/retour-d-experience-android-maker/
+permalink: /retour-d-experience-android-maker/
 excerpt: "Cette année a eu lieu la deuxième édition de l'Android Maker. Avec l'astronaute Omar, nous vous proposons un petit retour sur ce qu'on y a vu !"
 authors:
     - babas

@@ -5,7 +5,7 @@ lang: fr
 excerpt: "API Platform se veut être un framework complet permettant de créer des projets web se basant sur des APIs orientées ressource"
 authors:
     - vdelpeyroux
-permalink: /fr/ta-liste-des-courses-avec-api-platform/
+permalink: /ta-liste-des-courses-avec-api-platform/
 categories:
     - framework
     - api

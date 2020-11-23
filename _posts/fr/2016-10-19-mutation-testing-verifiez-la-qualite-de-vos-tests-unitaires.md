@@ -7,7 +7,7 @@ authors:
 date: '2016-10-19 13:28:19 +0100'
 date_gmt: '2016-10-19 14:28:19 +0100'
 lang: fr
-permalink: /fr/mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/
+permalink: /mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/
 categories:
     - test
     - php

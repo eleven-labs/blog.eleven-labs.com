@@ -4,7 +4,7 @@ title: Pour Noël, je configure mon noyau GNU/Linux !
 excerpt: Maintenant que nous avons compris de façon générale comment fonctionnait le noyau Linux dans le précédent article, voyons comment le configurer afin, à terme, de le compiler et l'utiliser.
 authors:
 - aandre
-permalink: /fr/configurer-kernel-linux/
+permalink: /configurer-kernel-linux/
 lang: fr
 categories:
     - linux

@@ -6,7 +6,7 @@ authors:
 date: '2016-04-22 16:30:30 +0200'
 date_gmt: '2016-04-22 14:30:30 +0200'
 lang: fr
-permalink: /fr/kernel-terminate/
+permalink: /kernel-terminate/
 categories:
     -  symfony
     - Php

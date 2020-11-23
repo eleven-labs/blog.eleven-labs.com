@@ -4,7 +4,7 @@ title: 'Android : Pourquoi j''aime les listeners'
 authors:
     - thuchon
 lang: fr
-permalink: /fr/android-listeners/
+permalink: /android-listeners/
 excerpt: "Parlons de Listeners"
 date: '2017-01-11 18:28:25 +0100'
 date_gmt: '2017-01-11 17:28:25 +0100'

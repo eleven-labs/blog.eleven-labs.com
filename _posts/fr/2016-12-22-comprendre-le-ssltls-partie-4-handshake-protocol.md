@@ -3,7 +3,7 @@ layout: post
 title: "Comprendre le SSL/TLS: Partie 4 Handshake Protocol"
 excerpt: "Les protocoles SSL / TLS"
 lang: fr
-permalink: /fr/comprendre-le-ssltls-partie-4-handshake-protocol/
+permalink: /comprendre-le-ssltls-partie-4-handshake-protocol/
 authors:
     - ibenichou
 date: '2016-12-22 11:15:59 +0100'

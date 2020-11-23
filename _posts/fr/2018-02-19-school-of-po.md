@@ -2,7 +2,7 @@
 layout: post
 title: Retour sur la Conf School of PO
 lang: fr
-permalink: /fr/retour-sur-la-conf-school-of-po/
+permalink: /retour-sur-la-conf-school-of-po/
 excerpt: "Mardi 13 Février a eu lieu la première édition de la conférence School of PO dans le 13ème arrondissement de Paris."
 authors:
     - julie

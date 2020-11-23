@@ -5,7 +5,7 @@ excerpt: Dans ce post nous allons voir step-by-step comment créer de zéro un b
 authors:
     - VEBERArnaud
 lang: fr
-permalink: /fr/creer-bundle-symfony-autonome/
+permalink: /creer-bundle-symfony-autonome/
 categories:
     - php
     - symfony

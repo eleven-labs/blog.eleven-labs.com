@@ -4,7 +4,7 @@ title: Introduction Galactique au Domain Driven Design
 authors:
     - rpierlot
 lang: fr
-permalink: /fr/domain-driven-design/
+permalink: /domain-driven-design/
 date: '2016-02-17 15:23:36 +0100'
 date_gmt: '2016-02-17 14:23:36 +0100'
 categories:

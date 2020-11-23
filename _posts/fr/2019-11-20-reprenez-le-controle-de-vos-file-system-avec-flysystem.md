@@ -5,7 +5,7 @@ excerpt: Cet article vous présente comment interagir simplement avec vos systè
 authors:
     - nicolas
 lang: fr
-permalink: /fr/reprenez-le-controle-de-vos-file-system-avec-Flysystem/
+permalink: /reprenez-le-controle-de-vos-file-system-avec-Flysystem/
 categories:
     - php
     - Bundle

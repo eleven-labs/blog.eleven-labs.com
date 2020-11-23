@@ -5,7 +5,7 @@ excerpt: RabbitMQ est un gestionnaire de queue, il permet donc de conserver des 
 authors:
     - captainjojo
 lang: fr
-permalink: /fr/creer-rpc-rabbitmq/
+permalink: /creer-rpc-rabbitmq/
 categories:
     - symfony
 tags:

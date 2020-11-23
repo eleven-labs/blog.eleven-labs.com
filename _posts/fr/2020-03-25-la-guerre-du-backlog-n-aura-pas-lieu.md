@@ -5,7 +5,7 @@ excerpt: Quelques méthodes de priorisation du Backlog pour gagner des batailles
 authors:
     - mapo
 lang: fr
-permalink: /fr/la-guerre-du-backlog-n-aura-pas-lieu/
+permalink: /la-guerre-du-backlog-n-aura-pas-lieu/
 categories:
     - agile
 tags:

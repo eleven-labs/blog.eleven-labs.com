@@ -2,7 +2,7 @@
 layout: post
 title: Soigner ses emails transactionnels
 lang: fr
-permalink: /fr/soigner-ses-emails-transactionnels/
+permalink: /soigner-ses-emails-transactionnels/
 excerpt: "L'année dernière un client nous a demandé que les e-mails envoyés par l'api soient plus esthétiques. N'ayant aucun intégrateur dans l'équipe, personne n'était motivé pour s'occuper de ce genre de ticket. Nous avons donc tiré au sort pour savoir qui s'en chargerait. Bien sûr, c'est tombé sur moi. Le but de la fonctionnalité était d'avoir des emails beaucoup plus soignés et responsives."
 authors:
     - qneyrat

@@ -5,7 +5,7 @@ lang: fr
 excerpt: "Vous n'utilisez peut-être pas les states React de manière optimale et je vais vous expliquer pourquoi"
 authors:
     - kcordier
-permalink: /fr/vous-utilisez-mal-les-states-react/
+permalink: /vous-utilisez-mal-les-states-react/
 categories:
     - javascript
     - react

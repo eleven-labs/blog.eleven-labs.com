@@ -7,7 +7,7 @@ excerpt: >
 lang: fr
 authors:
     - kcordier
-permalink: /fr/meilleurs-outils-js-2020/
+permalink: /meilleurs-outils-js-2020/
 categories:
     - javascript
     - react

@@ -6,7 +6,7 @@ authors:
 date: '2016-10-13 10:43:33 +0200'
 date_gmt: '2016-10-13 08:43:33 +0200'
 lang: fr
-permalink: /fr/mise-en-place-dun-moteur-de-recherche-avec-elasticsearch/
+permalink: /mise-en-place-dun-moteur-de-recherche-avec-elasticsearch/
 categories:
     - Elasticsearch
 tags:

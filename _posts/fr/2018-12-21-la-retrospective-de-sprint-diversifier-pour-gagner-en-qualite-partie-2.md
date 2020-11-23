@@ -5,7 +5,7 @@ excerpt: Prêt pour le niveau suivant ? Si vous « masterisez » les principes d
 authors:
 - pbrenot
 lang: fr
-permalink: /fr/retrospective-de-sprint-gagner-en-qualite-partie-II/
+permalink: /retrospective-de-sprint-gagner-en-qualite-partie-II/
 categories:
     - Agilité
 tags:

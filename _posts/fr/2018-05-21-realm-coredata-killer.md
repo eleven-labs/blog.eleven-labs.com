@@ -3,7 +3,7 @@ layout: post
 title: "Realm, CoreData killer"
 lang: fr
 excerpt: "Realm, CoreData killer"
-permalink: /fr/realm-coredata-killer/
+permalink: /realm-coredata-killer/
 authors:
   - ibenichou
 categories:

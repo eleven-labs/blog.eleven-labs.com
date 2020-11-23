@@ -5,7 +5,7 @@ excerpt: Aujourd'hui les architectures micro-services sont de plus en plus répa
 authors:
     - captainjojo
 lang: fr
-permalink: /fr/le-circuit-breaker-kesako/
+permalink: /le-circuit-breaker-kesako/
 categories:
     - symfony
     - Php

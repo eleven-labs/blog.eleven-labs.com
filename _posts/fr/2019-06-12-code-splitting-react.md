@@ -5,7 +5,7 @@ excerpt: Lorsque votre projet React est bien avancé, charger l'application pour
 authors:
     - rmavillaz
 lang: fr
-permalink: /fr/react-débuter-le-code-splitting/
+permalink: /react-débuter-le-code-splitting/
 categories:
     - react
     - javascript

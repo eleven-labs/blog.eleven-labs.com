@@ -4,7 +4,7 @@ title: Déployer un serveur MongoDB répliqué sur AWS avec Terraform et Ansible
 lang: fr
 authors:
     - vcomposieux
-permalink: /fr/deployer-un-serveur-mongodb-replique-sur-aws-avec-terraform-et-ansible/
+permalink: /deployer-un-serveur-mongodb-replique-sur-aws-avec-terraform-et-ansible/
 categories:
     - mongodb
     - aws

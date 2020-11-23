@@ -5,7 +5,7 @@ excerpt: Cet article vous propose un retour sur le Forum PHP qui s'est tenu les 
 authors:
     - nicolas
 lang: fr
-permalink: /fr/retour-sur-le-php-forum-2018/
+permalink: /retour-sur-le-php-forum-2018/
 categories:
     - conference
     - php

@@ -5,7 +5,7 @@ authors:
     - captainjojo
 excerpt: Le moyen de communication le plus répandu entre un prestataire et son client, c'est l'email. Pourtant, peu de gens prennent soin de les personnaliser. C'est dommage, car il existe de nombreux tips sympas qui permettent de les rendre plus qualitatifs. Bien sûr, tout cela passe par Google... mais qui n'utilise pas Gmail aujourd'hui ?
 lang: fr
-permalink: /fr/prenez-soin-de-vos-emails/
+permalink: /prenez-soin-de-vos-emails/
 categories:
     - javascript
 tags:

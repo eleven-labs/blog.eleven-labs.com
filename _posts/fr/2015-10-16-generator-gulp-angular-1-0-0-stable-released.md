@@ -2,7 +2,7 @@
 layout: post
 title: generator-gulp-angular 1.0.0 stable released
 lang: fr
-permalink: /fr/generator-gulp-angular-1-0-0-stable-released/
+permalink: /generator-gulp-angular-1-0-0-stable-released/
 authors:
     - mehdy
 date: '2015-10-16 11:07:54 +0200'

@@ -2,7 +2,7 @@
 layout: post
 title: Neo4j et Symfony, comment utiliser une BDD graph ?
 lang: fr
-permalink: /fr/neo4j-et-symfony/
+permalink: /neo4j-et-symfony/
 excerpt: "L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes Neo4j."
 authors:
     - captainjojo

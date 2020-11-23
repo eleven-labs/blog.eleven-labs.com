@@ -5,7 +5,7 @@ excerpt: Si vous avez suivi les deux premiers articles sur Google Cloud Platform
 authors:
     - captainjojo
 lang: fr
-permalink: /fr/google-cloud-platform-compute-engine-architecture-complete/
+permalink: /google-cloud-platform-compute-engine-architecture-complete/
 categories:
     - Dev Ops
 tags:

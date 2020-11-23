@@ -7,7 +7,7 @@ authors:
 date: '2017-08-09 22:21:00 +0100'
 date_gmt: '2017-08-09 21:21:00 +0100'
 lang: fr
-permalink: /fr/android-design-pattern/
+permalink: /android-design-pattern/
 categories:
     - mobile
 tags:

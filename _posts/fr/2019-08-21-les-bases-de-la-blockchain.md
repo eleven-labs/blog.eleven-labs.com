@@ -5,7 +5,7 @@ excerpt: Qu'est ce que la Blockchain ? Cet article présente les bases du concep
 authors:
     - katario
 lang: fr
-permalink: /fr/bases-blockchain/
+permalink: /bases-blockchain/
 categories:
     - blockchain
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Débugger avec Git
-permalink: /fr/debugging-with-git/
+permalink: /debugging-with-git/
 excerpt: "Aujourd'hui je souhaite vous présenter un outil vous permettant d'isoler rapidement notre commit frauduleux qui a occasionné un bug dans notre application : git bisect"
 lang: fr
 authors:

@@ -5,7 +5,7 @@ excerpt: Lundi 19 juin et mardi 20 juin 2016 a eu lieu la GoogleDevSummit à Ams
 authors:
     - captainjojo
 lang: fr
-permalink: /fr/progressive-web-apps-au-googledevsummit/
+permalink: /progressive-web-apps-au-googledevsummit/
 categories:
     - javascript
 tags:

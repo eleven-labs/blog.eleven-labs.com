@@ -2,7 +2,7 @@
 layout: post
 title: Monitorer ses containers Docker
 lang: fr
-permalink: /fr/monitorer-ses-containers-docker/
+permalink: /monitorer-ses-containers-docker/
 excerpt: "Les containers sont aujourd'hui largement utilisés du développement jusqu'en production. Cependant un `docker stats` en ssh ne permet pas de gérer correctement son environnement de production. Nous allons donc voir comment répondre à ce besoin de monitoring pour des containers en production."
 authors:
     - qneyrat

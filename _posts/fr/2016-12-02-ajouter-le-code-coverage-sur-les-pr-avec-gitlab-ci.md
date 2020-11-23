@@ -5,7 +5,7 @@ authors:
     - pouzor
 excerpt: Voici un tip qui permet de pouvoir voir en un clin d’œil les répercussions d'une MR sur la couverture de code de votre projet.
 lang: fr
-permalink: /fr/ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci/
+permalink: /ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci/
 date: '2016-12-02 12:15:55 +0100'
 date_gmt: '2016-12-02 11:15:55 +0100'
 categories:

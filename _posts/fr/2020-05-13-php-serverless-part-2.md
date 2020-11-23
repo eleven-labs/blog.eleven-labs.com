@@ -2,7 +2,7 @@
 layout: post
 title: "PHP & Serverless avec Bref - part 2"
 lang: fr
-permalink: /fr/php-serverless-part-2/
+permalink: /php-serverless-part-2/
 excerpt: "Comment déployer des applications PHP sur AWS Lambda avec Bref"
 authors:
     - marishka
