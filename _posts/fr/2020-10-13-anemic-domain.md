@@ -9,7 +9,7 @@ permalink: /fr/domain-anemia/
 categories:
     - Non classé
 tags:
-    - notag
+    - php
 cover: /assets/2020-10-13-anemic-domain-model/cover.jpg
 ---
 
