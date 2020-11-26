@@ -28,6 +28,8 @@ global:
   cookie_inform_and_ask_message: Ce site utilise des cookies de Google Analytics. Ces cookies nous aident à identifier le contenu qui vous intéresse le plus ainsi qu'à repérer certains dysfonctionnements. Vos données de navigations sur ce site sont envoyées à Google Inc.
   cookie_inform_and_ask_agree: Accepter
   cookie_inform_and_ask_disagree: S'opposer
+  tag_page_title: Articles avec le tag
+  tag_cloud: Tout les tags disponibles sur le blog
 date:
   months:
     january: Janvier
