@@ -1,0 +1,25 @@
+---
+layout: default
+permalink: /tag/
+---
+
+<div class="home">
+    {% if site.theme_settings.share_button %} {% include share.html %} {% endif %}
+
+    <div class="article-container">
+        <div class="md-content">
+            <h3 style="margin-bottom: 0">{% translate global.tag_cloud %}</h3>
+        </div>
+        <div class="mdc-chip-set" role="grid">
+            {% assign allTags = site.tags %} {% for tag in allTags %}
+            <a href="{{ tag[0] | tag_url }}">
+                <div class="mdc-chip mdc-ripple-upgraded" role="row">
+                    <div class="mdc-chip__ripple"></div>
+                    <div class="mdc-chip__text">{{ tag | first }}</div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% include newsletter_link.html %}
