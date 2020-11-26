@@ -18,7 +18,7 @@ social:
 baseurl: ""
 
 # LANGUAGE-SPECIFIC CONFIGURATION
-default_lang: fr
+default_lang: "fr"
 languages: ["fr", "en"]
 exclude_from_localizations: ["authors", "css", "fonts", "img", "js"]
 localized_posts_dir: _posts
@@ -82,18 +82,10 @@ paginate: 10
 paginate_path: "/page/:num/"
 
 #TAGS
-tag_page_layout: tag_page
+tag_page_layout: tag
 tag_page_dir: tag
 tag_feed_layout: tag_feed
-tag_feed_dir: rss/tag
-
-#CATEGORY
-jekyll-archives:
-  enabled:
-    - categories
-  layout: category
-  permalinks:
-    category: '/category/:name/'
+tag_feed_dir: tag/feed
 
 # BUILD SETTINGS
 markdown: kramdown
@@ -110,7 +102,6 @@ plugins:
     - uglifier
     - jekyll-algolia
     - jekyll/tagging
-    - jekyll-archives
 exclude:
     - CNAME
     - CODE_OF_CONDUCT.md
