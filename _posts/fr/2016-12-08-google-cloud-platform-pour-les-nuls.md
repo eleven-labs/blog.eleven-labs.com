@@ -5,7 +5,7 @@ excerpt: Aujourd'hui le Cloud c'est le mot à la mode, mais qu'est-ce que c'est 
 authors:
     - captainjojo
 lang: fr
-permalink: /google-cloud-platform-pour-les-nuls/
+permalink: /fr/google-cloud-platform-pour-les-nuls/
 categories:
     - Dev Ops
 tags:

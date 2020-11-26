@@ -2,7 +2,7 @@
 layout: post
 title: Devenez Dr. Manhattan avec Ionic
 lang: fr
-permalink: /devenez-dr-manhattan-avec-ionic/
+permalink: /fr/devenez-dr-manhattan-avec-ionic/
 excerpt: Après 14 versions beta et 5 release candidates, la première version stable de Ionic est disponible.
 authors:
     - mehdy

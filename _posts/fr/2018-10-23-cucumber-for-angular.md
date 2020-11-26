@@ -5,7 +5,7 @@ excerpt: "Comment intégrer Cucumber dans Angular"
 authors:
     - la3roug
 lang: fr
-permalink: /cucumber-for-angular/
+permalink: /fr/cucumber-for-angular/
 categories:
     - e2e
     - BDD

@@ -5,7 +5,7 @@ excerpt: Dans cet article, nous allons vous présenter le skeleton screen et vou
 authors:
     - kcordier
 lang: fr
-permalink: /skeleton-screen-avec-react-et-apollo-js/
+permalink: /fr/skeleton-screen-avec-react-et-apollo-js/
 categories:
     - javascript
     - react

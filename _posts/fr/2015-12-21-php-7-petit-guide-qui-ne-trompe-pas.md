@@ -6,7 +6,7 @@ authors:
 date: '2015-12-21 18:33:37 +0100'
 date_gmt: '2015-12-21 17:33:37 +0100'
 lang: fr
-permalink: /php-7-petit-guide-qui-ne-trompe-pas/
+permalink: /fr/php-7-petit-guide-qui-ne-trompe-pas/
 categories:
     - Php
 tags:

@@ -2,7 +2,7 @@
 layout: post
 title: 'WebRTC : La révolution de la communication'
 lang: fr
-permalink: /webrtc-la-revolution-de-la-communication/
+permalink: /fr/webrtc-la-revolution-de-la-communication/
 authors:
     - rascarlito
 excerpt: "Historiquement, le Web était un outil qui permettait le chargement, l'interprétation et l'exploitation d'interfaces distribuées. Un serveur héberge un contenu (dynamique ou non), l'expose sur le Web via une URL (Uniform Resources Location), puis un navigateur se connecte à cette URL pour télécharger et afficher le contenu en question à l'utilisateur."

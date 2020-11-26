@@ -5,7 +5,7 @@ excerpt: La suite de la partie I est là ! Nous allons voir ensemble d'autres co
 authors:
     - mehdidr
 lang: fr
-permalink: /lesnouveauteses6partii/
+permalink: /fr/lesnouveauteses6partii/
 categories:
     - javascript
 tags:

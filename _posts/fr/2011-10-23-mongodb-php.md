@@ -5,7 +5,7 @@ excerpt: Aujourd'hui, petit tuto pour installer MongoDB pour php5. Pour cela plu
 authors:
     - captainjojo
 lang: fr
-permalink: /mongodb-php/
+permalink: /fr/mongodb-php/
 categories:
     - MongoDB
 tags:

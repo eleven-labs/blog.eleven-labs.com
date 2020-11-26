@@ -5,7 +5,7 @@ excerpt: Accélérez le prototypage de vos applications, en imitant vos APIs ave
 authors:
     - kelfarsaoui
 lang: fr
-permalink: /json-server/
+permalink: /fr/json-server/
 categories:
     - json
     - api

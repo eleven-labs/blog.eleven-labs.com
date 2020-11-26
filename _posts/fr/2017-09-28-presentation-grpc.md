@@ -4,7 +4,7 @@ title: Présentation de gRPC
 authors:
     - qneyrat
 lang: fr
-permalink: /presentation-grpc/
+permalink: /fr/presentation-grpc/
 excerpt: "gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ses nouveautés."
 categories:
     - Api

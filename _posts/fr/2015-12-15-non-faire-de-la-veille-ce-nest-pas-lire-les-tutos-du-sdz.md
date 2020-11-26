@@ -7,7 +7,7 @@ authors:
 date: '2015-12-15 11:54:10 +0100'
 date_gmt: '2015-12-15 10:54:10 +0100'
 lang: fr
-permalink: /non-faire-de-la-veille-ce-nest-pas-lire-les-tutos-du-sdz/
+permalink: /fr/non-faire-de-la-veille-ce-nest-pas-lire-les-tutos-du-sdz/
 categories:
     - Non classé
 tags:

@@ -5,7 +5,7 @@ excerpt: Une petite introduction à la nouvelle fonctionnalité de React, les ho
 authors:
     - mehdidr
 lang: fr
-permalink: /introductionauxhooks/
+permalink: /fr/introductionauxhooks/
 categories:
     - react
     - javascript

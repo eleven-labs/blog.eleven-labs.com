@@ -2,7 +2,7 @@
 layout: post
 title: "La Communication Non-Violente rencontre Deadpool en milieu professionnel"
 lang: fr
-permalink: /la-communication-non-violente-rencontre-deadpool-en-milieu-professionnel/
+permalink: /fr/la-communication-non-violente-rencontre-deadpool-en-milieu-professionnel/
 excerpt: "Un peu à l'image de Wade Wilson a.k.a Deadpool, on va sortir un peu du conventionnel. Nos objectifs pour cette mission si vous le voulez bien : établir des relations professionnelles qui favorisent la collaboration plutôt que la compétition et contribuer avec enthousiasme aux projets pour qu'ils soient satisfaisant pour nous."
 authors:
     - mae

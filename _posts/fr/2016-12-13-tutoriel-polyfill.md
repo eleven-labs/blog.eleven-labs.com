@@ -5,7 +5,7 @@ excerpt: Avec l'avènement du js natif, et la multiplication des navigateurs et
 authors:
     - captainjojo
 lang: fr
-permalink: /tutoriel-polyfill/
+permalink: /fr/tutoriel-polyfill/
 categories:
     - javascript
 tags:

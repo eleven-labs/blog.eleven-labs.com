@@ -4,7 +4,7 @@ title: Pour Noël, je comprends mon noyau GNU/Linux !
 excerpt: Linux n'est rien de plus qu'un noyau, les abus de langages sont trop nombreux et trop fréquents. Apprenons ici à faire la différence entre Linux et une distribution basée sur Linux.
 authors:
 - aandre
-permalink: /comprendre-kernel-linux/
+permalink: /fr/comprendre-kernel-linux/
 lang: fr
 categories:
     - linux

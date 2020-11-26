@@ -7,7 +7,7 @@ authors:
 date: '2016-12-15 14:49:00 +0100'
 date_gmt: '2016-12-15 15:49:00 +0100'
 lang: fr
-permalink: /debugger-avec-xdebug/
+permalink: /fr/debugger-avec-xdebug/
 categories:
     - php
 tags:

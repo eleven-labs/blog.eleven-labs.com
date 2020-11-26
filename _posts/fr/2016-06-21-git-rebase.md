@@ -2,7 +2,7 @@
 layout: post
 title: Git rebase
 lang: fr
-permalink: /git-rebase/
+permalink: /fr/git-rebase/
 excerpt: "Aujourd'hui, nous utilisons tous git pour gérer le code source des projets, que ce soit pour notre usage personnel ou professionnel."
 authors:
     - tthuon

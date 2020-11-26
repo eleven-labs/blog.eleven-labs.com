@@ -2,7 +2,7 @@
 layout: post
 title: DotJs 2013, retour sur les conférences.
 lang: fr
-permalink: /dotjs-2013-retour-sur-les-conferences-2/
+permalink: /fr/dotjs-2013-retour-sur-les-conferences-2/
 authors:
     - mehdy
 date: '2014-01-13 09:17:04 +0100'

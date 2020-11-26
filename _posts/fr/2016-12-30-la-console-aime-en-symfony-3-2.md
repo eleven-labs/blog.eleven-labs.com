@@ -2,7 +2,7 @@
 layout: post
 title: La Console, on aime en Symfony 3.2
 lang: fr
-permalink: /la-console-aime-en-symfony-3-2/
+permalink: /fr/la-console-aime-en-symfony-3-2/
 excerpt: "La console est un composant essentiel pour beaucoup d’applications web. Nous avons pas mal de nouveautés dans cette nouvelle version de Symfony. Je vous présente dans cet article mes préférées et vous mettrai les liens de celles que je ne détaille pas ici à la fin (on est comme ça chez Eleven)."
 authors:
     - jgreaux

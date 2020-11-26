@@ -2,7 +2,7 @@
 layout: post
 title: Agile Tour Microsoft
 lang: fr
-permalink: /agile-tour-microsoft/
+permalink: /fr/agile-tour-microsoft/
 excerpt: "Nous étions plusieurs astronautes de la galaxie Eleven Labs à se rendre le 5 décembre dernier à l'Agile Tour organisé par Microsoft dans ses propres locaux."
 authors:
     - mae

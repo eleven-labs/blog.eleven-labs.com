@@ -2,7 +2,7 @@
 layout: post
 title: Eleven Labs au Symfony Live Paris 2014 !
 lang: fr
-permalink: /eleven-labs-au-symfony-live-paris-2014/
+permalink: /fr/eleven-labs-au-symfony-live-paris-2014/
 excerpt: Nous sommes allés au Symfony Live Paris en force cette année ! En tant que sponsor Gold, nous avions notre stand et avons pu rencontrer plein de symfoniens.
 authors:
     - marie

@@ -5,7 +5,7 @@ excerpt: "Depuis septembre 2018, le groupe Adeo travaille à la mise en place d'
 authors:
     - captainjojo
 lang: fr
-permalink: /rex-le-design-system-leroy-merlin/
+permalink: /fr/rex-le-design-system-leroy-merlin/
 categories:
     - graphql
     - react

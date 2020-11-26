@@ -5,7 +5,7 @@ excerpt: Après avoir décortiqué les promesses, nous allons voir comment utili
 authors:
     - mehdidr
 lang: fr
-permalink: /asyncawait/
+permalink: /fr/asyncawait/
 categories:
     - javascript
 tags:

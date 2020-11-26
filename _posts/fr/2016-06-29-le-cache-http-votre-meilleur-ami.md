@@ -5,7 +5,7 @@ excerpt: e suis actuellement Lead développeur pour un site de presse Français 
 authors:
     - captainjojo
 lang: fr
-permalink: /le-cache-http-votre-meilleur-ami/
+permalink: /fr/le-cache-http-votre-meilleur-ami/
 categories:
     - symfony
     - javascript

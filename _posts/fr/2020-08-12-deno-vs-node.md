@@ -3,7 +3,7 @@ layout: post
 title: "Deno Vs Node - Top 5 des nouveautés de Deno"
 excerpt: Dans cet article, nous allons voir quelques nouveautés offertes par Deno
 lang: fr
-permalink: /deno-vs-node/
+permalink: /fr/deno-vs-node/
 authors:
     - plerouge
 categories:

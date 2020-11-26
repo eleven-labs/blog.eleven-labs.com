@@ -2,7 +2,7 @@
 layout: post
 title: Annuler une fonctionnalité avant une mise en production
 lang: fr
-permalink: /annuler-une-fonctionnalite-avant-une-mise-en-production/
+permalink: /fr/annuler-une-fonctionnalite-avant-une-mise-en-production/
 authors:
     - tthuon
 date: '2016-02-24 17:30:02 +0100'

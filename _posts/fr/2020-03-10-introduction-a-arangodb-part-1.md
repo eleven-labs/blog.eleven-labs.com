@@ -5,7 +5,7 @@ excerpt: "Dans cet article, nous allons faire un petit tour de cette base de don
 authors:
     - vdelpeyroux
 lang: fr
-permalink: /introduction-a-arangodb-part-1/
+permalink: /fr/introduction-a-arangodb-part-1/
 categories:
     - base de données
 tags:

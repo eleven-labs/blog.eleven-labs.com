@@ -2,7 +2,7 @@
 layout: post
 title: Delegates vs Closures
 lang: fr
-permalink: /delegates-closures/
+permalink: /fr/delegates-closures/
 excerpt: "Delegates VS Closures"
 authors:
     - thuchon

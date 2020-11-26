@@ -5,7 +5,7 @@ excerpt: Développer sans contraintes vos applications sous Linux depuis Windows
 authors:
     - gcanal
 lang: fr
-permalink: /le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/
+permalink: /fr/le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/
 categories:
     - Windows
     - linux

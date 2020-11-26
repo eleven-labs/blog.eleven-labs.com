@@ -2,7 +2,7 @@
 layout: post
 title: "Munin, le monitoring des dieux"
 lang: fr
-permalink: /munin-monitoring-oding/
+permalink: /fr/munin-monitoring-oding/
 excerpt: "Certains connaissent Munin, le corbeau de la mythologie nordique. C'est en l'occurrence un lointain cousin que vous allez découvrir dans cet article : L'outil de monitoring Munin."
 authors:
     - jbernard

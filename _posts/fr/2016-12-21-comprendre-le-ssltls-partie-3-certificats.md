@@ -3,7 +3,7 @@ layout: post
 title: "Comprendre le SSL/TLS : Partie 3 Certificats"
 excerpt: "Qu'est-ce qu'un certificat ?"
 lang: fr
-permalink: /comprendre-le-ssltls-partie-3-certificats/
+permalink: /fr/comprendre-le-ssltls-partie-3-certificats/
 authors:
     - ibenichou
 date: '2016-12-21 16:19:21 +0100'

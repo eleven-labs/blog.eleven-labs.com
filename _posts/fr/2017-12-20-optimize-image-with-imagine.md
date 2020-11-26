@@ -4,7 +4,7 @@ title: Optimiser vos images avec Imagine
 excerpt: "L’optimisation d’images est un enjeu très important dans la conception d’une application web et nécessite une attention particulière. Durant le développement d’un jeu en ligne impliquant une gestion importante d’images, nous avons été amenés à les optimiser pour différents devices (desktop et mobile). La suite de cet article sera dédiée à expliquer de manière assez simple notre démarche."
 authors:
   - skpotogbey
-permalink: /optimize-image-with-imagine/
+permalink: /fr/optimize-image-with-imagine/
 lang: fr
 categories:
     - symfony

@@ -5,7 +5,7 @@ excerpt: Après avoir généré les clefs OpenPGP, nous allons voir comment les 
 lang: fr
 authors:
 - tthuon
-permalink: /openpgp-clef-secrete-yubikey-partie-2/
+permalink: /fr/openpgp-clef-secrete-yubikey-partie-2/
 categories:
     - openpgp
     - securite

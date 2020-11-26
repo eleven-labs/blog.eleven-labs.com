@@ -7,7 +7,7 @@ authors:
 date: '2016-04-18 14:48:08 +0200'
 date_gmt: '2016-04-18 12:48:08 +0200'
 lang: fr
-permalink: /securiser-facilement-son-vps-en-quelques-etapes/
+permalink: /fr/securiser-facilement-son-vps-en-quelques-etapes/
 categories:
     - Non classé
 tags:

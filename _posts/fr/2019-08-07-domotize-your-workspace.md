@@ -5,7 +5,7 @@ excerpt: L'objectif de cet article est de domotiser simplement et efficacement s
 authors:
     - pouzor
 lang: fr
-permalink: /domotize-your-workspace/
+permalink: /fr/domotize-your-workspace/
 categories:
     - domotique
     - gitlab

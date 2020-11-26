@@ -5,7 +5,7 @@ excerpt: Cet article va vous présenter une extension développée à la suite d
 authors:
     - aallier
 lang: fr
-permalink: /extensions-navigateur/
+permalink: /fr/extensions-navigateur/
 categories:
     - javascript
 tags:

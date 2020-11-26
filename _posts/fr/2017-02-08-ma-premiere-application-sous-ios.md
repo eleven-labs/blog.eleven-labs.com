@@ -3,7 +3,7 @@ layout: post
 title: "Ma première Application sous IOS"
 excerpt: "Ma première Application sous IOS"
 lang: fr
-permalink: /ma-premiere-application-sous-ios/
+permalink: /fr/ma-premiere-application-sous-ios/
 authors:
     - ibenichou
 date: '2017-02-08 10:42:47 +0100'

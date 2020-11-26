@@ -2,7 +2,7 @@
 layout: post
 title: ParamConverter personnalisé
 lang: fr
-permalink: /paramconverter-personnalise/
+permalink: /fr/paramconverter-personnalise/
 authors:
     - tthuon
 excerpt: "L'article qui suit s'adresse aux développeurs qui ont déjà utilisé le ParamConverter, et qui comprennent le principe de base de son fonctionnement."

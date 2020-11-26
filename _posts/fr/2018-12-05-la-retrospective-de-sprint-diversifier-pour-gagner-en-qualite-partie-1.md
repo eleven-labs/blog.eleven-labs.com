@@ -5,7 +5,7 @@ excerpt: "Si l'on considère l’ensemble des cérémonies préconisées par le 
 authors:
     - pbrenot
 lang: fr
-permalink: /retrospective-de-sprint-gagner-en-qualite/
+permalink: /fr/retrospective-de-sprint-gagner-en-qualite/
 categories:
     - Agilité
 cover: /assets/2018-12-05-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/cover.jpg

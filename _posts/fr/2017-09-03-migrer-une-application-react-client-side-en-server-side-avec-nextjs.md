@@ -4,7 +4,7 @@ title: Migrer une application React client-side en server-side avec Next.JS
 authors:
     - vcomposieux
 lang: fr
-permalink: /migrer-une-application-react-client-side-en-server-side-avec-nextjs/
+permalink: /fr/migrer-une-application-react-client-side-en-server-side-avec-nextjs/
 categories:
     - javascript
     - react

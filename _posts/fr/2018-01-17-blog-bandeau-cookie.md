@@ -5,7 +5,7 @@ excerpt: "Vous avez tous au moins été confrontés une fois, lors de la visite 
 lang: fr
 authors:
     - mlenglet
-permalink: /google-analytics-et-le-bandeau-cookie-cnil/
+permalink: /fr/google-analytics-et-le-bandeau-cookie-cnil/
 categories:
     - blog
     - javascript

@@ -4,7 +4,7 @@ title: Publier, consommer, et réessayer des messages RabbitMQ
 authors:
     - rpierlot
 lang: fr
-permalink: /publier-consommer-reessayer-des-messages-rabbitmq/
+permalink: /fr/publier-consommer-reessayer-des-messages-rabbitmq/
 date: '2017-01-23 12:01:55 +0100'
 date_gmt: '2017-01-23 11:01:55 +0100'
 categories:

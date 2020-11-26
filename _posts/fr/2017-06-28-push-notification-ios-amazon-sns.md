@@ -3,7 +3,7 @@ layout: post
 title: "Envoyer des push notifications via Amazon SNS en Swift 3"
 excerpt: "Envoyer des push notifications via Amazon SNS en Swift 3"
 lang: fr
-permalink: /envoyer-push-notifications-amazon-sns-swift-3/
+permalink: /fr/envoyer-push-notifications-amazon-sns-swift-3/
 authors:
   - ibenichou
 date: '2017-06-28 12:00:00 +0100'

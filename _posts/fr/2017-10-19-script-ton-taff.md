@@ -2,7 +2,7 @@
 layout: post
 title: Script ton taff
 lang: fr
-permalink: /script-ton-taff/
+permalink: /fr/script-ton-taff/
 excerpt: "Parce que l'outil informatique n'est pas réservé qu'aux développeurs, je vous propose un billet de blog qui s'adresse à tous, et qui vous donne quelques pistes afin de gagner en productivité, en supprimant le travail répétitif de vos journées."
 authors:
     - captainjojo

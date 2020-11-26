@@ -3,7 +3,7 @@ layout: post
 title: "Tutoriel Vidéo : CIDetector"
 excerpt: "Tutoriel Vidéo : CIDetector"
 lang: fr
-permalink: /tutoriel-ci-detector/
+permalink: /fr/tutoriel-ci-detector/
 authors:
     - ibenichou
 date: '2016-11-28 18:46:23 +0100'

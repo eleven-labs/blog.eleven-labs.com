@@ -5,7 +5,7 @@ excerpt: L'intérêt d'une PWA, c'est d'agir comme une application mobile, d'êt
 authors:
     - captainjojo
 lang: fr
-permalink: /les-push-notifications-sur-votre-site/
+permalink: /fr/les-push-notifications-sur-votre-site/
 categories:
     - javascript
 tags:

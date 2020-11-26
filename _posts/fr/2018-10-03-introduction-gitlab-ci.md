@@ -5,7 +5,7 @@ excerpt: Cet article présente une partie des possibilités qu’offre GitLab CI
 authors:
     - nicolas
 lang: fr
-permalink: /introduction-gitlab-ci/
+permalink: /fr/introduction-gitlab-ci/
 categories:
     - continuous integration
     - devops

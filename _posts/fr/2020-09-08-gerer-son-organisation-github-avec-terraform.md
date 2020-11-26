@@ -7,7 +7,7 @@ excerpt: >
 lang: fr
 authors:
     - VEBERArnaud
-permalink: /gerer-son-organisation-github-avec-terraform/
+permalink: /fr/gerer-son-organisation-github-avec-terraform/
 categories:
     - devops
 tags:

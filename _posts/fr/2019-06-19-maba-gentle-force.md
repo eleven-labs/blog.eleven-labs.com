@@ -5,7 +5,7 @@ excerpt: Je vous propose de découvrir un bundle très simple à configurer afin
 authors:
 - dim
 lang: fr
-permalink: /symfony-brute-force-protection/
+permalink: /fr/symfony-brute-force-protection/
 categories:
     - symfony
 tags:

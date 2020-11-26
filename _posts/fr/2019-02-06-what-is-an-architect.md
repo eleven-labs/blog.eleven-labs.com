@@ -5,7 +5,7 @@ excerpt: Ah tu es architecte c'est cool ça… Mais en fait ça consiste en quoi
 authors:
     - pouzor
 lang: fr
-permalink: /c-est-quoi-un-architecte-logiciel/
+permalink: /fr/c-est-quoi-un-architecte-logiciel/
 categories:
     - architecture
 tags:

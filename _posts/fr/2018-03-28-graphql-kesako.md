@@ -2,7 +2,7 @@
 layout: post
 title: GraphQL, kesako ?
 lang: fr
-permalink: /graphql-kesako/
+permalink: /fr/graphql-kesako/
 excerpt: "Dans nos architectures micro-services, l'un des nouveaux défis est de réussir à récupérer les données stockées dans les différents micro-services le plus facilement possible. Pour résoudre ce défi, je vous propose d'utiliser GraphQL. Cette technologie qui est devenu un des buzz word du moment est en vrai très simple à mettre en place. Ne voulant pas faire de jaloux je vous propose de réaliser deux serveurs GraphQL l'un en PHP et l'autre en NodeJs."
 authors:
     - captainjojo

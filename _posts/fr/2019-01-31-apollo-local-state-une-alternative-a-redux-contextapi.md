@@ -5,7 +5,7 @@ excerpt: Si vous suivez notre blog ou nos différents meetups, vous avez sans do
 authors:
     - rmavillaz
 lang: fr
-permalink: /react-apollo-le-local-state-management-une-alternative-a-redux-contextapi/
+permalink: /fr/react-apollo-le-local-state-management-une-alternative-a-redux-contextapi/
 categories:
     - react
     - GraphQL

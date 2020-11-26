@@ -5,7 +5,7 @@ excerpt: "Depuis un an je travaille en tant qu'expert webperformance chez France
 authors:
     - captainjojo
 lang: fr
-permalink: /un-an-de-webperformance/
+permalink: /fr/un-an-de-webperformance/
 categories:
     - webperformance
 cover: /assets/2019-02-28-un-an-de-webperformance/cover.jpg

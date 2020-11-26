@@ -2,7 +2,7 @@
 layout: post
 title: "Storybook - Découvrir les addons"
 lang: fr
-permalink: /storybook-addons/
+permalink: /fr/storybook-addons/
 excerpt: "Deuxième épisode de cette série, découvrez les incroyables addons sur Storybook, c'est juste des gamebreakers."
 authors:
     - manu

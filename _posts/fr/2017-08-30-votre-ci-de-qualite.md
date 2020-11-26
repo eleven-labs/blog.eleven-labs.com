@@ -2,7 +2,7 @@
 layout: post
 title: Votre CI de qualité
 lang: fr
-permalink: /votre-ci-de-qualite/
+permalink: /fr/votre-ci-de-qualite/
 excerpt: La qualité est un vaste sujet, surtout quand on l'associe au développement d'applications web. Ce qui est encore plus compliqué, c'est de mettre en place l'environnement d'intégration continue (CI) de suivi de qualité.
 authors:
     - captainjojo

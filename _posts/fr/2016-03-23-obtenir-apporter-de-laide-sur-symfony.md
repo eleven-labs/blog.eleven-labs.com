@@ -6,7 +6,7 @@ authors:
 date: '2016-03-23 16:56:43 +0100'
 date_gmt: '2016-03-23 15:56:43 +0100'
 lang: fr
-permalink: /obtenir-apporter-de-laide-sur-symfony/
+permalink: /fr/obtenir-apporter-de-laide-sur-symfony/
 categories:
     - symfony
 tags:

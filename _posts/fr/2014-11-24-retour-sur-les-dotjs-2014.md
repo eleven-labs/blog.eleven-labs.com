@@ -2,7 +2,7 @@
 layout: post
 title: Retour sur les DotJS 2014 !
 lang: fr
-permalink: /retour-sur-les-dotjs-2014/
+permalink: /fr/retour-sur-les-dotjs-2014/
 authors:
     - mlenglet
 date: '2014-11-24 18:31:51 +0100'

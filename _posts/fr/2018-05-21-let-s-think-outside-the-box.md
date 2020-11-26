@@ -4,7 +4,7 @@ title: "[iOS] Let's think outside the box"
 authors:
     - thuchon
 lang: fr
-permalink: /think-outside-the-box/
+permalink: /fr/think-outside-the-box/
 excerpt: "Utilisons le Framework comme il n'est pas prévu pour"
 date: '2018-05-21 14:30:42 +0100'
 date_gmt: 2018-05-21 13:30:42 +0100'

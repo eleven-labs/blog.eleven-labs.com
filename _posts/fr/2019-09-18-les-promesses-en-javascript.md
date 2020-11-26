@@ -5,7 +5,7 @@ excerpt: Nous allons voir ensemble ce que sont les promesses et comment les util
 authors:
     - mehdidr
 lang: fr
-permalink: /lespromessesenjavascript/
+permalink: /fr/lespromessesenjavascript/
 categories:
     - javascript
 tags:

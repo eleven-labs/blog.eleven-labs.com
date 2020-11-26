@@ -5,7 +5,7 @@ title: 'Angular2 & Symfony3 : Comment créer rapidement un système d''authentif
 authors:
     - glanau
 lang: fr
-permalink: /angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/
+permalink: /fr/angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/
 excerpt: "Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde version du framework : Angular2. Pour me faire la main, j'ai choisi de travailler sur un système d'authentification par token en utilisant Symfony pour la partie back-end, en incluant le bundle Lexik JWT Authentication."
 date: '2017-03-03 15:38:35 +0100'
 date_gmt: '2017-03-03 14:38:35 +0100'

@@ -3,7 +3,7 @@ layout: post
 title: 'dotGo 2015 : parce qu''il n’y a pas que PHP dans la vie'
 excerpt: Parce qu'il n’y a pas que PHP dans la vie, j’ai décidé d’assister au http://www.dotgo.eu/ 2015, la conférence européenne sur le https://golang.org/.
 lang: fr
-permalink: /dotgo-2015-parce-quil-ny-pas-php-dans-la-vie/
+permalink: /fr/dotgo-2015-parce-quil-ny-pas-php-dans-la-vie/
 authors:
     - achaysinh
 date: '2015-11-18 18:34:27 +0100'

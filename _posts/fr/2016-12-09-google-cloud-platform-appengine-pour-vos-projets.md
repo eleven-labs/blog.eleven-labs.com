@@ -5,7 +5,7 @@ excerpt: Vous avez souvent été bloqué dans vos projets parce qu'il est diffic
 authors:
     - captainjojo
 lang: fr
-permalink: /google-cloud-platform-appengine-pour-vos-projets/
+permalink: /fr/google-cloud-platform-appengine-pour-vos-projets/
 categories:
     - javascript
     - Dev Ops

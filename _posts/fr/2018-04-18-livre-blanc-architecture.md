@@ -2,7 +2,7 @@
 layout: post
 title: "Livre blanc : L'architecture logicielle, tout ce que vous devez savoir"
 lang: fr
-permalink: /livre-blanc-architecture-logicielle-tout-ce-que-vous-devez-savoir/
+permalink: /fr/livre-blanc-architecture-logicielle-tout-ce-que-vous-devez-savoir/
 excerpt: "L'évolution des standards du web et de développement, couplée à la multiplication des technologies permettant de développer des applications web, des différents frameworks associés, des outils, ont généré le besoin de définir une architecture claire des projets."
 authors:
     - vcomposieux

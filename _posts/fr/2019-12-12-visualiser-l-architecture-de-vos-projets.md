@@ -5,7 +5,7 @@ excerpt: Visualiser l'architecture de vos projets
 authors:
   - gcanal
 lang: fr
-permalink: /visualiser-l-architecture-de-vos-projets/
+permalink: /fr/visualiser-l-architecture-de-vos-projets/
 categories:
     -  architecture
 tags:

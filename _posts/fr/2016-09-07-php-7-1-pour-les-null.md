@@ -6,7 +6,7 @@ authors:
 date: '2016-09-07 11:39:10 +0200'
 date_gmt: '2016-09-07 09:39:10 +0200'
 lang: fr
-permalink: /php-7-1-pour-les-null/
+permalink: /fr/php-7-1-pour-les-null/
 categories:
     - Php
 tags:

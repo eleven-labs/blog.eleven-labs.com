@@ -5,7 +5,7 @@ excerpt: "DotJS est la plus grande conférence JavaScript en Europe et c'est sou
 lang: fr
 authors:
     - mlenglet
-permalink: /retour-sur-les-dotjs-2017/
+permalink: /fr/retour-sur-les-dotjs-2017/
 categories:
     - javascript
     - conference

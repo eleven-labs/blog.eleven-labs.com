@@ -2,7 +2,7 @@
 layout: post
 title: "Les Dark Patterns et le Product Ownership"
 lang: fr
-permalink: /les-dark-patterns-et-le-product-ownership/
+permalink: /fr/les-dark-patterns-et-le-product-ownership/
 excerpt: "Les Dark Patterns sont un ensemble de techniques utilisées sur des sites ou des applications numériques pour vous forcer à faire des choix que vous n'auriez pas fait consciemment. L'objectif de cet article est de faire prendre conscience aux concepteurs de produits numériques, et plus particulièrement les Product Owners et Product Managers, de la puissance qui se cache derrière les dark patterns et qu'un grand pouvoir implique de grandes responsabilités"
 authors:
     - pbrenot

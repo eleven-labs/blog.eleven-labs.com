@@ -5,7 +5,7 @@ excerpt: Cette année, Eleven Labs a, pour la troisième fois, sponsorisé le Sy
 authors:
     - captainjojo
 lang: fr
-permalink: /la-symfony-live-2016/
+permalink: /fr/la-symfony-live-2016/
 categories:
     - php
     - symfony

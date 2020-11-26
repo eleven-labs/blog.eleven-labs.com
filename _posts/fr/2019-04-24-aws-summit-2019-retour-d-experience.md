@@ -5,7 +5,7 @@ excerpt: "L'AWS Summit Paris s'est tenu le 2 Avril au palais des congrés. C'ét
 authors:
     - vbertrand
 lang: fr
-permalink: /aws-summit-2019-retour-d-experience/
+permalink: /fr/aws-summit-2019-retour-d-experience/
 categories:
     - aws
 tags:

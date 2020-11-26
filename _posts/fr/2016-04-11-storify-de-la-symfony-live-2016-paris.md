@@ -5,7 +5,7 @@ excerpt: Voici un storify avec les nombreux tweets de la Symfony Live 2016 Paris
 authors:
     - captainjojo
 lang: fr
-permalink: /storify-de-la-symfony-live-2016-paris/
+permalink: /fr/storify-de-la-symfony-live-2016-paris/
 categories:
     - php
     - symfony

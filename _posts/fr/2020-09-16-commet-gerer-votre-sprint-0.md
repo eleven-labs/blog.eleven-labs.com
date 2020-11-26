@@ -2,7 +2,7 @@
 layout: post
 title: "Comment gérer votre sprint 0 ?"
 lang: fr
-permalink: /comment-gerer-votre-sprint-0/
+permalink: /fr/comment-gerer-votre-sprint-0/
 excerpt: "Nouveau projet ? Lancement de produit ? Construction des fondations techniques du produit, mais pas que, comment gérer alors son sprint 0 ? On vous en dit plus par ici !"
 authors:
     - mae

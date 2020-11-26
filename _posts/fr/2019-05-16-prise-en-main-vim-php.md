@@ -5,7 +5,7 @@ excerpt: Prenez en main cet éditeur de texte universel et léger pour votre pro
 authors:
     - pvermeil
 lang: fr
-permalink: /prise-en-main-vim-php/
+permalink: /fr/prise-en-main-vim-php/
 categories:
     - php
     - linux

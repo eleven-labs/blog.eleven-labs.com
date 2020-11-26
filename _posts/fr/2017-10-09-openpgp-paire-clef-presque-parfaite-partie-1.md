@@ -5,7 +5,7 @@ excerpt: Guide sur la création de clés OpenPGP presque parfaites
 authors:
     - tthuon
 lang: fr
-permalink: /openpgp-paire-clef-presque-parfaite-partie-1/
+permalink: /fr/openpgp-paire-clef-presque-parfaite-partie-1/
 categories:
     - openpgp
     - securite

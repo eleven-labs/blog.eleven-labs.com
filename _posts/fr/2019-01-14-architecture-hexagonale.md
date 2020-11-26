@@ -5,7 +5,7 @@ lang: fr
 excerpt: L'architecture hexagonale tend à isoler une application en trois couches distinctes
 authors:
 - dsuarez
-permalink: /architecture-hexagonale/
+permalink: /fr/architecture-hexagonale/
 categories:
     - php
 tags:

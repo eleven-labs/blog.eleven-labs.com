@@ -2,7 +2,7 @@
 layout: post
 title: 'Redux : Structurez vos applications front'
 lang: fr
-permalink: /redux-structurez-vos-applications-front/
+permalink: /fr/redux-structurez-vos-applications-front/
 authors:
     - vcomposieux
 date: '2017-01-17 10:09:00 +0100'

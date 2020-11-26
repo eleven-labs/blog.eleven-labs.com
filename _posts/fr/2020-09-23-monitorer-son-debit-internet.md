@@ -7,7 +7,7 @@ excerpt: >
 lang: fr
 authors:
     - VEBERArnaud
-permalink: /monitorer-son-debit-internet/
+permalink: /fr/monitorer-son-debit-internet/
 categories:
     - monitoring
 tags:

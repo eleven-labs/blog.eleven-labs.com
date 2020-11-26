@@ -2,7 +2,7 @@
 layout: post
 title: "Cheat Sheet : Docker, tout ce que vous devez savoir"
 lang: fr
-permalink: /cheat-sheet-docker-tout-ce-que-vous-devez-savoir/
+permalink: /fr/cheat-sheet-docker-tout-ce-que-vous-devez-savoir/
 excerpt: "Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais des commandes pour créer une image Docker ? Ou encore pour la lancer ?"
 authors:
     - flemzord

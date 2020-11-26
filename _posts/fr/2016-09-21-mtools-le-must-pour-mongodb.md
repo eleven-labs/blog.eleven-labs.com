@@ -7,7 +7,7 @@ excerpt: Maintenir une application MongoDB, notamment sur des sujets Datas avec 
 date: '2016-09-21 15:49:44 +0200'
 date_gmt: '2016-09-21 13:49:44 +0200'
 lang: fr
-permalink: /mtools-le-must-have-pour-mongodb/
+permalink: /fr/mtools-le-must-have-pour-mongodb/
 categories:
     - MongoDB
 tags:

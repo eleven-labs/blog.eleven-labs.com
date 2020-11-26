@@ -4,7 +4,7 @@ title: 'AngularJS : Les Directives 1/2'
 authors:
     - denis
 lang: fr
-permalink: /angularjs-les-directives-12/
+permalink: /fr/angularjs-les-directives-12/
 date: '2014-07-11 14:19:25 +0200'
 date_gmt: '2014-07-11 12:19:25 +0200'
 categories:

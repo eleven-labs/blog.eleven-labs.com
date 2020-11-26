@@ -6,7 +6,7 @@ authors:
 date: '2014-07-16 15:41:12 +0200'
 date_gmt: '2014-07-16 13:41:12 +0200'
 lang: fr
-permalink: /phantomjs/
+permalink: /fr/phantomjs/
 excerpt: Petite présentation d'un navigateur webkit appelé PhantomJS
 categories:
     - javascript

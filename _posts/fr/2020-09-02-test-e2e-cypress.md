@@ -5,7 +5,7 @@ excerpt: "Dans cet article nous allons voir comment mettre en place des tests en
 lang: fr
 authors:
 - kdung
-permalink: /test-e2e-avec-cypress/
+permalink: /fr/test-e2e-avec-cypress/
 categories:
     - javascript
     - test

@@ -5,7 +5,7 @@ excerpt: Une problématique courante avec les clefs secrètes est leur stockage.
 authors:
     - tthuon
 lang: fr
-permalink: /openpgp-stockage-froid-clefs-partie-3/
+permalink: /fr/openpgp-stockage-froid-clefs-partie-3/
 categories:
     - openpgp
     - securite

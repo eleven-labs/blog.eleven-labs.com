@@ -2,7 +2,7 @@
 layout: post
 title: Retour sur la Google Cloud Summit 2017
 lang: fr
-permalink: /google-cloud-summit-2017/
+permalink: /fr/google-cloud-summit-2017/
 excerpt: "Jeudi 19 octobre 2017 a eu lieu à Paris au Palais des Congrès, le Google Cloud Summit 2017. Google venait à Paris pour exposer toutes les nouveautés de leur Cloud, les nouvelles API de Machine Learning et les nouveaux outils de collaboration. Bien sûr Eleven était présent et nous avons pu suivre la plupart des conférences."
 authors:
     - captainjojo

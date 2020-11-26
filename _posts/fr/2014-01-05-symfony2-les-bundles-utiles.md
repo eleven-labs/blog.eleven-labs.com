@@ -2,7 +2,7 @@
 layout: post
 title: Symfony2 et les Bundles utiles
 lang: fr
-permalink: /symfony2-les-bundles-utiles/
+permalink: /fr/symfony2-les-bundles-utiles/
 excerpt: Cela fait maintenant plus de 2 ans que Symfony2 est sorti et, comme vous le savez, il fonctionne avec des bundles. Voici une liste non-exhaustive de bundles sympathiques qui s'avèrent très utiles au quotidien.
 authors:
     - marie
