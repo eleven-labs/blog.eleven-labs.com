@@ -2,7 +2,7 @@
 algolia:
     application_id: '5IGTHBX5JS'
     index_name:     'blog_eleven'
-    extensions_to_index:
+    files_to_exclude:
         - index.html
         - amp
         - authors
