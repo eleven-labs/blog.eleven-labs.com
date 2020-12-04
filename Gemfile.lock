@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/Vik-Th0r/amp-jekyll
-  revision: 4e51a971923a3139bca11c7f7dba432cc5947041
+  remote: https://github.com/eleven-labs/amp-jekyll.git
+  revision: 8bdd9bdac1626a53017f7d18ae12037826eb14b4
   specs:
     amp-jekyll (1.0.3)
       fastimage (>= 1.8.0)
@@ -8,8 +8,8 @@ GIT
       nokogiri (>= 1.6.0)
 
 GIT
-  remote: https://github.com/Vik-Th0r/jekyll-multiple-languages-plugin
-  revision: c6f3e14f803cc6a31ef9abca822b28ea29c1fd5f
+  remote: https://github.com/eleven-labs/jekyll-multiple-languages-plugin.git
+  revision: a088e0f4e6360b80ef0fc8a7fb3e8b046f25c04a
   specs:
     jekyll-multiple-languages-plugin (1.7.0)
       jekyll (>= 2.0, < 5.0)
@@ -79,7 +79,7 @@ GEM
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     liquid (4.0.3)
-    listen (3.3.1)
+    listen (3.3.3)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
