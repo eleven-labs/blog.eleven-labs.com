@@ -4,14 +4,15 @@
   flex-wrap: wrap;
   box-sizing: border-box;
   margin-top: 15px;
-}
 
-.mdc-chip-set a {
+  & a {
     text-decoration: none;
-}
+  }
 
-.mdc-chip-set .mdc-chip {
-  margin: 4px;
+  & .mdc-chip {
+    margin: 4px;
+  }
+
 }
 
 .mdc-chip__text {
