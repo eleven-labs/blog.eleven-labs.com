@@ -1,21 +1,24 @@
-.mdc-chip-set {
-  padding: 0 4px;
-  display: flex;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  margin-top: 15px;
+.mdc-chip {
+  &-set {
+    padding: 0 4px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-top: 15px;
 
-  & a {
-    text-decoration: none;
+    & a {
+      text-decoration: none;
+    }
+
+    & .mdc-chip {
+      margin: 4px;
+    }
+
   }
 
-  & .mdc-chip {
-    margin: 4px;
+  &__text {
+    white-space: nowrap;
+    font-size: 1.55rem;
   }
 
-}
-
-.mdc-chip__text {
-  white-space: nowrap;
-  font-size: 1.55rem;
 }
