@@ -2,7 +2,7 @@
 layout: post
 title: Monitor your Docker containers
 lang: en
-permalink: /en/monitor-your-docker-containers/
+permalink: /monitor-your-docker-containers/
 excerpt: "Containers are widely used today from development to production. However, a `docker stats` in ssh does not allow you to correctly assess your production environment. We will therefore see how to meet this monitoring need for containers in production."
 authors:
     - qneyrat
