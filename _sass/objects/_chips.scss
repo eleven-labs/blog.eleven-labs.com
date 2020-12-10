@@ -1,6 +1,6 @@
 .mdc-chip {
   &-set {
-    padding: 0 4px;
+    padding: 0 4px 0 0;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
@@ -20,5 +20,4 @@
     white-space: nowrap;
     font-size: 1.55rem;
   }
-
 }

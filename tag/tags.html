@@ -10,7 +10,7 @@ permalink: /tag/
         <div class="md-content">
             <h3 style="margin-bottom: 0">{% translate global.tag_cloud %}</h3>
         </div>
-        <div class="mdc-chip-set" role="grid" style="margin-bottom: 25px;">
+        <div class="mdc-chip-set all-tag-container " role="grid">
             {% assign allTags = site.tags %} {% for tag in allTags %}
             <a href="{{ tag[0] | tag_url }}">
                 <div class="mdc-chip mdc-ripple-upgraded" role="row">

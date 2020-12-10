@@ -18,7 +18,7 @@ social:
 baseurl: ""
 
 # LANGUAGE-SPECIFIC CONFIGURATION
-default_lang: "fr"
+default_lang: fr
 languages: ["fr", "en"]
 exclude_from_localizations: ["authors", "css", "fonts", "img", "js"]
 localized_posts_dir: _posts
@@ -100,7 +100,6 @@ plugins:
     - jekyll-feed
     - amp-jekyll
     - uglifier
-    - jekyll-algolia
     - jekyll/tagging
 exclude:
     - CNAME
