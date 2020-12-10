@@ -14,7 +14,7 @@ tags:
     - protocols
     - encryption
     - SSL
-    -  tls
+    - tls
 ---
 
 You've certainly heard about SSL or TLS protocols.
@@ -71,7 +71,7 @@ SSL means **Secure Socket Layer.**
 *   The first real SSL version is **2.0**, released in **February, **1995**. It's the first implementation of SSL that was banned in march 2011 ([RFC 6176](https://tools.ietf.org/html/rfc6176)){:rel="nofollow"} ;
 *   In **November, 1996** SSL releases **3.0**, last version to this day, which will inspire **TLS**, its successor. Its specifications were re-edited in august, 2008 in [RFC 6101](https://tools.ietf.org/html/rfc6101)[4](https://fr.wikipedia.org/wiki/Transport_Layer_Security#cite_note-4). The protocol was banned in 2014, following the [POODLE](https://fr.wikipedia.org/wiki/POODLE) breach. The banishment was definitely ratified in June of 2015 ([RFC 7568](https://tools.ietf.org/html/rfc7568)){:rel="nofollow"}.
 
-**B -  tls:**
+**B - tls:**
 
 TLS means **Transport Layer Security**.
 

@@ -10,10 +10,10 @@ date: '2016-12-21 16:19:21 +0100'
 date_gmt: '2016-12-21 15:19:21 +0100'
 categories:
     - tls
-    -  ssl
+    - ssl
 tags:
     - securite
-    -  ssl
+    - ssl
     - tls
     - Algorithmie
     - Protocoles

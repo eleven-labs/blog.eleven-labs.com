@@ -11,7 +11,7 @@ date_gmt: '2016-11-25 16:01:26 +0100'
 categories:
     - Agilité
 tags:
-    - notag
+    - agilite
 ---
 
 Jeudi 17 novembre avait lieu la 9ème édition de l’Agile Tour Paris dans les locaux de Microsoft à Issy les Moulineaux - première édition pour ma part.

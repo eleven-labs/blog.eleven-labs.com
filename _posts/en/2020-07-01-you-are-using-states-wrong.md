@@ -7,8 +7,8 @@ authors:
     - marishka
 permalink: /you-are-using-react-states-wrong/
 categories:
-    -  javascript
-    -  react
+    - javascript
+    - react
 tags:
     - javascript
     - react

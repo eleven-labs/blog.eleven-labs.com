@@ -10,10 +10,10 @@ date: '2016-12-20 10:07:16 +0100'
 date_gmt: '2016-12-20 09:07:16 +0100'
 categories:
     - tls
-    -  ssl
+    - ssl
 tags:
     - securite
-    -  ssl
+    - ssl
     - tls
     - Algorithmie
     - Protocoles
@@ -69,7 +69,7 @@ De plus, ces protocoles se veulent évolutifs,  indépendants des algorithmes d
 
 **Histoire** :
 
-**A -  ssl** :
+**A - SSL** :
 
 SSL signifie **Secure Socket Layer**.
 
@@ -79,7 +79,7 @@ Il s'agit également la première implémentation de SSL bannie, en mars 2011 (
 * En **novembre 1996** SSL sort sa version **3.0**, la dernière version de SSL, qui inspirera son successeur **TLS**. Ses spécifications sont rééditées en août 2008 dans la [RFC 610](https://tools.ietf.org/html/rfc6101){:rel="nofollow noreferrer"}.
 Le protocole est banni en 2014, à la suite de la publication de la faille [POODLE](https://fr.wikipedia.org/wiki/POODLE), ce bannissement est définitivement ratifié en juin 2015 ([RFC 7568](https://tools.ietf.org/html/rfc7568)){:rel="nofollow noreferrer"}.
 
-**B - tls** :
+**B - TLS** :
 
 TLS signifie **Transport Layer Security**.
 

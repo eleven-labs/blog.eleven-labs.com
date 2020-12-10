@@ -10,7 +10,7 @@ date_gmt: '2014-07-11 12:19:25 +0200'
 categories:
     - javascript
 tags:
-    - angularJS
+    - angular
 ---
 
 ## Kézako ?

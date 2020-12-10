@@ -57,11 +57,11 @@ Les PWA obligent le site à être en HTTPS, et Emily Schechter vient pour détru
 
 Tous les sites méritent d'être en HTTPS car cela permet de le sécuriser
 
-- httpS rend le site plus lent
+- HTTPS rend le site plus lent
 
 Il existe plusieurs façons d'améliorer les performances de l'HTTPS, elle nous en donne quelques-unes que je vous invite à découvrir dans la vidéo.
 
-- httpS coûte plus cher
+- HTTPS coûte plus cher
 
 Aujourd'hui, on peut acheter des certificats HTTPS pas chers voire gratuits, ce qui permet de limiter le coût sur votre site web.
 

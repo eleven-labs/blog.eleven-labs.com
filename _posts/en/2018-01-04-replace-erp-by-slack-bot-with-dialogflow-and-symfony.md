@@ -10,12 +10,12 @@ date: '2018-01-04 15:30:00 +0100'
 date_gmt: '2017-01-04 15:30:00 +0100'
 categories:
     - bot
-    -  symfony
+    - symfony
 tags:
     - Slack
     - bot
     - DialogFlow
-    -  symfony
+    - symfony
 cover: /assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/cover.jpg
 ---
 

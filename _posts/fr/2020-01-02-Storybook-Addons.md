@@ -7,7 +7,7 @@ excerpt: "Deuxième épisode de cette série, découvrez les incroyables addons 
 authors:
     - manu
 categories:
-    -  storybook
+    - storybook
     - UX
     - UI
     - react

@@ -8,7 +8,7 @@ date_gmt: '2015-12-21 17:33:37 +0100'
 lang: fr
 permalink: /fr/php-7-petit-guide-qui-ne-trompe-pas/
 categories:
-    - Php
+    - php
 tags:
     - php
     - migration

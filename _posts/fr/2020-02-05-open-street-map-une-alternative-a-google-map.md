@@ -29,7 +29,7 @@ Ainsi, nous aborderons les points suivants :
 
 ## La Stack Technique
 
-- symfony 4.4
+- Symfony 4.4
 -   WebpackLibrairie JS :
 	-   Jquery
 	-   Bootstrap

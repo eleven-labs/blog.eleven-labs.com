@@ -7,9 +7,9 @@ authors:
 lang: en
 permalink: /push-notification-website/
 categories:
-    -  javascript
+    - javascript
 tags:
-    -  javascript
+    - javascript
     - pwa
     - firebase
     - mobile

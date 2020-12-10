@@ -12,7 +12,7 @@ categories:
     - Vue
     - Svelte
     - HTML
-    -  storybook
+    - storybook
 tags:
     - javascript
     - storybook

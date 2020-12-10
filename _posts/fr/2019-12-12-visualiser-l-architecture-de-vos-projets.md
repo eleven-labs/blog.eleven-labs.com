@@ -7,9 +7,9 @@ authors:
 lang: fr
 permalink: /fr/visualiser-l-architecture-de-vos-projets/
 categories:
-    -  architecture
+    - architecture
 tags:
-    -  architecture
+    - architecture
     - C4Model
     - Diagramme
     - Visualisation

@@ -611,7 +611,7 @@ Speedcurve vous renvoie plusieurs indicateurs très sympas :
  - Speed Index
  - Visually Complete
  - Page Load Time
- - css Size
+ - css size
  - Image Size
  - etc ...
 

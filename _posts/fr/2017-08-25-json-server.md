@@ -50,7 +50,7 @@ Cela prendra moins de 5 minutes !
 
 ### Recommandations
 
-- nodejs & `npm`
+- NodeJS & `npm`
 - Un consommateur de l'API (Votre code, `curl`, `postman` ou simplement votre navigateur)
 
 ### Installation

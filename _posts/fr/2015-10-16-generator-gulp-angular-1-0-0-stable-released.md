@@ -10,7 +10,7 @@ date_gmt: '2015-10-16 09:07:54 +0200'
 categories:
     - javascript
 tags:
-    - angularJS
+    - angular
     - Yeoman
     - Gulp
 ---

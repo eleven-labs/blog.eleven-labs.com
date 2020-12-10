@@ -10,7 +10,7 @@ date_gmt: '2015-08-19 12:44:26 +0200'
 categories:
     - javascript
 tags:
-    - angularJS
+    - angular
     - angular
     - directive
 ---

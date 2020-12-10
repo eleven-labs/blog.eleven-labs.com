@@ -7,7 +7,7 @@ excerpt: "Troisième épisode de cette série, où nous parcourrons les concepts
 authors:
     - manu
 categories:
-    -  storybook
+    - storybook
     - UX
     - UI
     - react

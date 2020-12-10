@@ -11,7 +11,7 @@ date_gmt: '2015-05-18 13:17:20 +0200'
 categories:
     - javascript
 tags:
-    - angularJS
+    - angular
     - Ionic
     - Cordova
 ---

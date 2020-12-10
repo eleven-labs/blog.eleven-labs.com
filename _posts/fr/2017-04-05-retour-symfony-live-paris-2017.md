@@ -11,7 +11,7 @@ lang: fr
 permalink: /fr/retour-symfony-live-paris-2017/
 categories:
     - symfony
-    - Php
+    - php
 tags:
     - conference
     - php

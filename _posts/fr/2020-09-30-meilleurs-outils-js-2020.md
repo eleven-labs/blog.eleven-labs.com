@@ -20,10 +20,10 @@ tags:
     - docker
     -  chrome
     - NPM
-    -  storybook
+    - storybook
     - Bit
     - BrowserStack
-    -  graphql
+    - graphql
 image:
     path: /assets/2020-09-30-meilleurs-outils-js-2020/header.jpg
     height: 295

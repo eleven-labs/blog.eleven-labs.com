@@ -8,8 +8,8 @@ date_gmt: '2016-04-22 14:30:30 +0200'
 lang: fr
 permalink: /fr/kernel-terminate/
 categories:
-    -  symfony
-    - Php
+    - symfony
+    - php
 tags:
     - notag
 ---

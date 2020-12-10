@@ -11,7 +11,7 @@ date_gmt: '2016-11-10 14:44:34 +0100'
 categories:
     - Mobile
 tags:
-    - angularJS
+    - angular
     - Ionic
     - Cordova
     - mobile

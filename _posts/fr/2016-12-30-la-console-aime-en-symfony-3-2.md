@@ -10,7 +10,7 @@ date: '2016-12-30 10:40:56 +0100'
 date_gmt: '2016-12-30 09:40:56 +0100'
 categories:
     - symfony
-    - Php
+    - php
 tags:
     - php
     - symfony

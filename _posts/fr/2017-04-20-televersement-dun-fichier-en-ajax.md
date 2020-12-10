@@ -8,7 +8,7 @@ permalink: /fr/televersement-dun-fichier-en-ajax/
 excerpt: "Aujourd’hui, je voudrais partager avec vous une fonctionnalité très souvent demandée dans une application : le téléversement d’un fichier."
 categories:
     - symfony
-    - Php
+    - php
 tags:
     - ajax
 ---

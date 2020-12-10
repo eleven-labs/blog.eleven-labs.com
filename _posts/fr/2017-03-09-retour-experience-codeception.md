@@ -10,7 +10,7 @@ lang: fr
 permalink: /fr/retour-experience-codeception/
 categories:
     - symfony
-    - Php
+    - php
 tags:
     - php
     - symfony

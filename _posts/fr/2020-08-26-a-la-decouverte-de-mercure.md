@@ -10,7 +10,7 @@ categories:
     - Mercure
 tags:
     - Mercure
-    -  server
+    - server
     - Real-time
     - javascript
     - docker

@@ -8,7 +8,7 @@ permalink: /rabbitmq-publish-consume-retry-messages/
 date: '2017-01-31 15:06:22 +0100'
 date_gmt: '2017-01-31 14:06:22 +0100'
 categories:
-    - Php
+    - php
 tags:
     - php
     - Swarrot

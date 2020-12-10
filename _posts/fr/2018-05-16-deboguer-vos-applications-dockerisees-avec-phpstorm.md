@@ -10,7 +10,7 @@ categories:
     - php
     - docker
 tags:
-    - PhpStorm
+    - phpStorm
     - docker
     - Tests Unitaires
     - Xdebug

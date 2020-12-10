@@ -8,7 +8,7 @@ lang: fr
 permalink: /fr/le-circuit-breaker-kesako/
 categories:
     - symfony
-    - Php
+    - php
 tags:
     - symfony
     - microservice

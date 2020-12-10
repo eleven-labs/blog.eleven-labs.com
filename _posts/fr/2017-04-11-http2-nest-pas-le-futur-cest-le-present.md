@@ -10,7 +10,7 @@ date_gmt: '2017-04-11 12:00:00 +0100'
 categories:
     - javascript
     - Mobile
-    - Php
+    - php
 tags:
     - compression
     - header
