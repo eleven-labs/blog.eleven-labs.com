@@ -25,6 +25,8 @@ GEM
     algoliasearch (1.27.5)
       httpclient (~> 2.8, >= 2.8.3)
       json (>= 1.5.1)
+    ansi (1.5.0)
+    ast (2.4.1)
     colorator (1.1.0)
     concurrent-ruby (1.1.7)
     em-websocket (0.5.2)
@@ -64,8 +66,6 @@ GEM
       nokogiri (~> 1.6)
       progressbar (~> 1.9)
       verbal_expressions (~> 0.1.5)
-    jekyll-archives (2.2.1)
-      jekyll (>= 3.6, < 5.0)
     jekyll-feed (0.15.1)
       jekyll (>= 3.7, < 5.0)
     jekyll-paginate (1.1.0)
@@ -92,6 +92,9 @@ GEM
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     nuggets (1.6.0)
+    oga (3.3)
+      ast
+      ruby-ll (~> 2.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     progressbar (1.11.0)
@@ -103,6 +106,9 @@ GEM
       ffi (~> 1.0)
     rexml (3.2.4)
     rouge (3.25.0)
+    ruby-ll (2.1.2)
+      ansi
+      ast
     safe_yaml (1.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -127,12 +133,13 @@ DEPENDENCIES
   amp-jekyll!
   jekyll (~> 4.1.1)
   jekyll-algolia (~> 1.6.0)
-  jekyll-archives
   jekyll-feed (~> 0.15.1)
   jekyll-multiple-languages-plugin!
   jekyll-paginate (~> 1.1.0)
   jekyll-seo-tag (~> 2.7.1)
-  jekyll-tagging
+  jekyll-tagging (~> 1.1.0)
+  kramdown
+  oga
   rake
   rouge (~> 3.25.0)
   sassc (~> 2.4.0)
