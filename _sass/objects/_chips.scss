@@ -1,23 +1,23 @@
 .mdc-chip {
   &-set {
-    padding: 0 4px 0 0;
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    box-sizing: border-box;
     margin-top: 15px;
+    padding: 0 4px 0 0;
 
-    & a {
+    a {
       text-decoration: none;
     }
 
-    & .mdc-chip {
+    .mdc-chip {
       margin: 4px;
     }
 
   }
 
   &__text {
-    white-space: nowrap;
     font-size: 1.55rem;
+    white-space: nowrap;
   }
 }
