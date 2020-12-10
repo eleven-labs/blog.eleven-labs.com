@@ -17,6 +17,7 @@ figure {
 html {
   background: $background-white;
   font-size: 62.5%;
+  --mdc-typography-font-family: 'Worksans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 // Typography
@@ -30,6 +31,7 @@ body {
 
   @media (max-width: $breakpoint-medium) {
     font-size: $font-size-mobile;
+    background-color: $background-lightgrey;
   }
 
   @media (min-width: $breakpoint-medium) {
