@@ -3,8 +3,9 @@ layout: post
 title: Using Traefik as a reverse proxy
 excerpt: In need for exposing websites and applications easily on the internet with a valid SSL certificate ? You're on the right spot ! :)
 authors:
-- jmoati
-permalink: /en/using-traefik-as-a-reverse-proxy/
+- jmoati - dfert
+lang: en
+permalink: /using-traefik-as-a-reverse-proxy/
 categories:
     - docker
     - ssl
@@ -22,19 +23,19 @@ cover: /assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg
 
 At home, I've got a NAS, a Raspberry PI running on Octopi, a server running on Debian, etc. In short, a galaxy of smart devices serving websites and apps, but nonetheless, none of them are easily accessible from outside my place and even less, from a secured connection. 
 
-Making this charming little world accessible from the unique public IP adress in my possesion, leads me to use a reverse proxy system.
+Making this charming little world accessible from the unique public IP adress in my possesion leads me to use a reverse proxy system.
 
 But what actually is a reverse proxy  ? Quoting Wikipedia,
 
 > [...] A reverse proxy is a type of [proxy server](https://en.wikipedia.org/wiki/Proxy_server) that retrieves resources on behalf of a [client](https://en.wikipedia.org/wiki/Client_(computing)) from one or more servers. These resources are then returned to the client, appearing as if they originated from the reverse proxy server itself. Unlike a forward proxy, which is an intermediary for its associated clients to contact any server, a reverse proxy is an intermediary for its associated servers to be contacted by any client. In other words, a proxy is associated with the client(s), while a reverse proxy is associated with the server(s); a reverse proxy is usually an internal-facing proxy used as a 'front-end' to control and protect access to a server on a private network. 
 >
 
-There are loads of reverse proxy on the market, but today's focus will be on Traefik which allows :
+There are loads of reverse proxy on the market, but today's focus will be on Traefik which allows:
 - HTTP and TCP request forwarding
 - Automatic service discovery (featuring Docker for instance)
 - Secured connections via Let's Encrypt certificates
 
-Of course, to make it work, you will need a domain name (_wilson.net_ in my case) and to make sure the different DNS Zones are pointing to your server.
+Of course to make it work you will need a domain name (_wilson.net_ in my case), and to make sure the different DNS Zones are pointing to your server.
 
 ![My DNS zones](/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/11-zones.jpg)
 
@@ -47,7 +48,7 @@ Okay, let's set everything up together now :)
 
 First, you'll need to setup Traefik on a webserver accessible from the internet. 
 
-In my case, that server will be 192.168.0.1 : it is where ports 80 (HTTP) and 443 (HTTPS) of my internet router (freebox) are forwarded to.
+In my case, that server will be 192.168.0.1: it is where ports 80 (HTTP) and 443 (HTTPS) of my internet router (freebox) are forwarded to.
 
 ![Port mapping of my freebox router]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/01-ports.jpg)
 
@@ -76,9 +77,9 @@ Inside the `ports` section, we expose the ports of the reverse proxy service to 
 
 Inside the `volume` section, we share files and/or directories with our service.
 
-Okay, sharing `/srv/traefik.toml` file with our container is all well and good, but maybe we should create it, right ?
+Okay, sharing `/srv/traefik.toml` file with our container is all well and good, but maybe we should create it, right?
 
-We are then going to create Traefik's main configuration file `/srv/traefik.toml` which declares, at least, the 2 endpoints mentionned earlier
+We are then going to create Traefik's main configuration file `/srv/traefik.toml` which declares, at least, the 2 endpoints mentionned earlier:
 
 ``` toml
 [entryPoints]
@@ -88,7 +89,7 @@ We are then going to create Traefik's main configuration file `/srv/traefik.toml
   address = ":443"
 ```
 
-Next, we can start our reverse-proxy service from our `/srv` directory using the following command :
+Next, we can start our reverse-proxy service from our `/srv` directory using the following command:
 
 ``` shell
 docker-compose up -d
@@ -110,7 +111,7 @@ First, we'll add an `[api]` section to enable the dashboard and the API. Also, a
 
 Traefik needs to know Docker's socket path in order to activate its provider.
 
-Our main Traefik configuration file `/srv/traefik.toml` should now be similar to :
+Our main Traefik configuration file `/srv/traefik.toml` should now be similar to:
 
 ``` toml
 [entryPoints]
@@ -143,7 +144,7 @@ Now that we have our hashed password, we'll add a `basicauth` middleware which w
 Define the (http) endpoint with `traefik.http.routers.api.entrypoints=http`.
 
 Declare we want to use the _api_ service provided by the _internal_ provider `traefik.http.routers.api.service=api@internal`:
-Finally, we now have to adapt the `/srv/docker-compose.yaml` file to something similar to that :
+Finally, we now have to adapt the `/srv/docker-compose.yaml` file to something similar to that:
 
 ```yaml
 version: '3'
@@ -166,7 +167,7 @@ services:
     - "traefik.http.middlewares.auth.basicauth.users=wilson:$$apr1$$1eZu7RXg$$Ql9Z5AvZNc0Oe4In900mi0"
 ```
 
-I'd like to highlight, that I had to double the `$` symbols in order to escape the `$` symbols as it tries to reference a variable.
+I'd like to highlight that I had to double the `$` symbols in order to escape the `$` symbols as it tries to reference a variable.
 It is important to stay consistent with names inside routers and middlewares.
 
 Here, the name of my rule is `api`. You could use any name if you like considering that it's not already used for another service and that the name stays the same everywhere.
@@ -177,7 +178,7 @@ We can now ask our service to apply our modifications running the following comm
 docker-compose up -d
 ```
 
-Here's what I see when I browse the URL defined in my routing rule above :
+Here's what I see when I browse the URL defined in my routing rule above:
 
 ![Dashboard]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/05-dashboard.jpg)
 
@@ -190,7 +191,7 @@ Connected to my network, there's my NAS I'd like to reach from outside.
 ![My NAS Synology]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/06-nas-http.jpg)
 
 We'll need to declare it to with the `file` provider as, unlike Docker, it can't be automatically discovered.
-Therefore, we'll create the `/srv/services.toml` file as below :
+Therefore, we'll create the `/srv/services.toml` file as below:
 
 ```toml
 [http]
@@ -202,7 +203,7 @@ Therefore, we'll create the `/srv/services.toml` file as below :
 ```
 `192.168.0.11` is my NAS IP here and it awaits HTTP requests on port 5000   
 
-I'll declare this file provider in `/srv/traefik.toml` in order to load this service file
+I'll declare this file provider in `/srv/traefik.toml` in order to load this service file:
 
 ```toml
 [entryPoints]
@@ -253,13 +254,13 @@ You probably understood this already but, the service name is always in the form
 
 `rule` allows me to define which route let me reach my service. Here, I only match on the domain name which must be `nas.wilson.net` . 
 
-Once again, let's not forget to apply our changes with docker-compose  :
+Once again, let's not forget to apply our changes with docker-compose:
 
 ``` shell
 docker-compose up -d
 ```
 
-_Voilà_, here's what I get now when I reach my NAS using th hostname declared above 
+_Voilà_, here's what I get now when I reach my NAS using th hostname declared above.
 
 ![My reversed nas synology]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/07-nas-reversed.jpg)
 
@@ -275,7 +276,7 @@ In order to generate certificates signed by Let's Encrypt, I need to create a `/
 ```shell
  touch /srv/acme.json
  ```
-Next, add this file insde the volume section `/srv/acme.json:/acme.json` of your `/srv/docker-compose.yaml` file
+Next, add this file insde the volume section `/srv/acme.json:/acme.json` of your `/srv/docker-compose.yaml` file.
 
 Inside `/srv/traefik.toml`, I declare a certificatesResolver allowing me to get certificates.
 
@@ -287,7 +288,7 @@ Inside `/srv/traefik.toml`, I declare a certificatesResolver allowing me to get 
     entryPoint = "http"
 ```
 
-Which would give me a `/srv/traefik.toml` file similar to :
+Which would give me a `/srv/traefik.toml` file similar to:
 
 ```toml
 [entryPoints]
@@ -312,7 +313,7 @@ Which would give me a `/srv/traefik.toml` file similar to :
 ```
 Beware, your email adress is mandatory.
 
-Inside `/srv/docker-compose.yaml` we still need to add labels for generating the SSL certificate of my NAS, that would give  
+Inside `/srv/docker-compose.yaml` we still need to add labels for generating the SSL certificate of my NAS, that would give:  
 
 ```yaml
 version: '3'
@@ -348,7 +349,7 @@ services:
 
 `tls.certresolver` what certresolver I should use.
 
-And let's not forget again to ask docker-compose to apply our new configuration :
+And let's not forget again to ask docker-compose to apply our new configuration:
 
 ``` shell
 docker-compose up -d
@@ -368,7 +369,7 @@ Now that we know how to write different routing rules for a service and how to g
 
 After reading [DOMOTIZE YOUR WORKSPACE (lang. French)](https://blog.eleven-labs.com/fr/domotize-your-workspace/) article, I wanted to setup _Home Assistant_ at home.
 
-_Home Assistant_ can be set up with a Docker container, so we will add the extra lines inside `/srv/docker-compose.yml` which should now look like this :
+_Home Assistant_ can be set up with a Docker container, so we will add the extra lines inside `/srv/docker-compose.yml` which should now look like this:
 
 ```yaml
 version: '3'
@@ -421,7 +422,7 @@ services:
 
 `traefik.http.services.home.loadbalancer.server.port=8123` indicates that the service port I want to expose is 8123.
 
-Once last time, don't forget to ask docker-compose to apply our new configuration :
+Once last time, don't forget to ask docker-compose to apply our new configuration:
 
 ``` shell
 docker-compose up -d
