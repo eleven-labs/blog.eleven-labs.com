@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PHP & Serverless with Bref - part 1"
-lang: fr
+lang: en
 permalink: /en/php-serverless-part-1/
 excerpt: "What is the serverless architecture, and how to deploy a PHP application to it?"
 authors:
