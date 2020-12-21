@@ -5,18 +5,18 @@ excerpt: Souffrez-vous d'anémie métier ? Regardons ce qu'est une anémie du do
 authors:
     - rpierlot
 lang: fr
-permalink: /domain-anemia/
+permalink: /fr/domain-anemia/
 categories:
     - Non classé
 tags: []
 cover: /assets/2020-10-13-anemic-domain-model/cover.jpg
 ---
 
-Aujourd'hui j'aimerais parler de quelque chose que l'on voit souvent dans les applications : l'anémie du domaine. 
+Aujourd'hui j'aimerais parler de quelque chose que l'on voit souvent dans les applications : l'anémie du domaine.
 
-Qu'est-ce donc? C'est simplement le fait que les objects responsables de la modélisation de votre logique métier... n'en contiennent pas. Cela paraît étrange n'est-ce pas ? Prenons un exemple pour mieux comprendre ce que j'entends par là. 
+Qu'est-ce donc? C'est simplement le fait que les objects responsables de la modélisation de votre logique métier... n'en contiennent pas. Cela paraît étrange n'est-ce pas ? Prenons un exemple pour mieux comprendre ce que j'entends par là.
 
-Imaginons que vous souhaitiez ajouter un nouvel article à votre blog. Dans une application classique, vous utiliseriez votre ORM favori pour insérer votre toute nouvelle entité dans votre base de données. Vous avez un controller gérant votre requête HTTP, et enfin un service qui crééra votre nouvelle entité Article, avec toutes les propriétés qui vont bien. 
+Imaginons que vous souhaitiez ajouter un nouvel article à votre blog. Dans une application classique, vous utiliseriez votre ORM favori pour insérer votre toute nouvelle entité dans votre base de données. Vous avez un controller gérant votre requête HTTP, et enfin un service qui crééra votre nouvelle entité Article, avec toutes les propriétés qui vont bien.
 
 ```php
 Class Article

@@ -2,7 +2,7 @@
 layout: post
 title: "PHP & Serverless with Bref - part 2"
 lang: en
-permalink: /en/php-serverless-part-2/
+permalink: /php-serverless-part-2/
 excerpt: "How to deploy PHP applications to AWS Lambda with Bref"
 authors:
     - marishka

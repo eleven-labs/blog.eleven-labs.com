@@ -5,7 +5,7 @@ title: L'art d'identifier des problématiques et des solutions pertinentes grâc
 excerpt: Définir les problématiques à solutionner grâce au Design thinking
 authors:
     - jeni
-permalink: /design-thinking/
+permalink: /fr/design-thinking/
 categories:
     - design-thinking
     - agile
