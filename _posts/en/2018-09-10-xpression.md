@@ -96,9 +96,9 @@ For example, this expression will select the `Raccoon` or the `Schizo` with more
 
 `planet='Raccoon'|name='Schizo'&point>100` is equal to `planet='Raccoon'|(name='Schizo'&point>100)`
 
-But the following expression will select `Raccoon` with more than 100 points or `Schizo` with more than 100 points. 
- 
-`(planet='Raccoon'|name='Schizo')&point>100` 
+But the following expression will select `Raccoon` with more than 100 points or `Schizo` with more than 100 points.
+
+`(planet='Raccoon'|name='Schizo')&point>100`
 
 ## Usage
 
@@ -121,7 +121,7 @@ class Astronaut {
     private $planet;
     private $points;
     private $rank;
-    
+
     public function __construct($name, $planet, $points, $rank)
     {
         $this->name = $name;
@@ -129,7 +129,7 @@ class Astronaut {
         $this->points = $points;
         $this->rank = $rank;
     }
-    
+
     public function getName()
     {
         return $this->name;
@@ -139,12 +139,12 @@ class Astronaut {
     {
         return $this->planet;
     }
-    
+
     public function getPoints()
     {
         return $this->points;
     }
-    
+
     public function getRank()
     {
         return $this->rank;
@@ -269,7 +269,7 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 
 ### ArrayCollection Filter
 
-To filter an ArrayCollection we use the bridge `Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter`. 
+To filter an ArrayCollection we use the bridge `Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter`.
 
 {% raw %}
 ```php
@@ -297,7 +297,7 @@ $filteredAstronauts = $astronauts->matching(new Criteria($expression));
 > To filter `Collection` you can use `ClosureExpressionBuilder` and inject it in `Collection::filter(Closure $p)`.
 
 ### Database filter
- 
+
 #### Doctrine ODM
 
 Now, we will filter some data in the MongoDB database.
@@ -396,7 +396,7 @@ In the following example we prefix all (`*`) fields with `a`.
 ```php
 $parser = new Parser(
     new MapperExpressionBuilder(
-        new ExprAdapter(new Expr()), 
+        new ExprAdapter(new Expr()),
         ['*' => 'a.%s']
     )
 );
@@ -406,11 +406,11 @@ $parser = new Parser(
 ### API endpoint filter
 
 Many solutions are available if you want to filter your API:
- 
+
  - use GraphQL.
- 
-> This is not the lightest one. It is not the best choice to only filter data. 
- 
+
+> This is not the lightest one. It is not the best choice to only filter data.
+
  - manually get request params and manually build the query with a lot of "if" conditions.
 
 > http query params are not readable and can be very heavy for complex query.
@@ -433,7 +433,7 @@ You must activate querystring correction to fix the parsing of reserved char.
 \Symftony\Xpression\QueryStringParser::correctServerQueryString(); // add this line right before Request creation
 $request = Request::createFromGlobals();
 // ...
-``` 
+```
 {% endraw %}
 
 To use it you just need to add annotation `@Xpression(expressionBuilder="odm")` over desired filter controller.
@@ -469,10 +469,10 @@ class AstronautController extends AbstractController
 ```
 {% endraw %}
 
-You can configure the following options: 
+You can configure the following options:
 
  - source (query source (request, query, attributes, cookies, files, server, headers default: query))
- - sourceName (param name, in the source) 
+ - sourceName (param name, in the source)
  - targetName (controller argument name to inject the built expression)
  - expressionBuilder (expressionBuilder used for building query *required*)
 
@@ -492,7 +492,7 @@ To do list :
 - fix usage of query placeholder.
 - add more bridges.
 - refacto lib core to be extensible (easer way to add some syntax).
-- implement a query builder in PHP and JS in order to create directly textual query from the front. 
+- implement a query builder in PHP and JS in order to create directly textual query from the front.
 
 ### Useful resources
 

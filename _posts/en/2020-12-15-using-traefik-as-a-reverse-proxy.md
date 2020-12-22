@@ -22,13 +22,13 @@ cover: /assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg
 
 ## Introduction
 
-At home, I've got a NAS, a Raspberry PI running on Octopi, a server running on Debian, etc. In short, a galaxy of smart devices serving websites and apps, but nonetheless, none of them are easily accessible from outside my place and even less, from a secured connection. 
+At home, I've got a NAS, a Raspberry PI running on Octopi, a server running on Debian, etc. In short, a galaxy of smart devices serving websites and apps, but nonetheless, none of them are easily accessible from outside my place and even less, from a secured connection.
 
 Making this charming little world accessible from the unique public IP adress in my possesion leads me to use a reverse proxy system.
 
 But what actually is a reverse proxy  ? Quoting Wikipedia,
 
-> [...] A reverse proxy is a type of [proxy server](https://en.wikipedia.org/wiki/Proxy_server) that retrieves resources on behalf of a [client](https://en.wikipedia.org/wiki/Client_(computing)) from one or more servers. These resources are then returned to the client, appearing as if they originated from the reverse proxy server itself. Unlike a forward proxy, which is an intermediary for its associated clients to contact any server, a reverse proxy is an intermediary for its associated servers to be contacted by any client. In other words, a proxy is associated with the client(s), while a reverse proxy is associated with the server(s); a reverse proxy is usually an internal-facing proxy used as a 'front-end' to control and protect access to a server on a private network. 
+> [...] A reverse proxy is a type of [proxy server](https://en.wikipedia.org/wiki/Proxy_server) that retrieves resources on behalf of a [client](https://en.wikipedia.org/wiki/Client_(computing)) from one or more servers. These resources are then returned to the client, appearing as if they originated from the reverse proxy server itself. Unlike a forward proxy, which is an intermediary for its associated clients to contact any server, a reverse proxy is an intermediary for its associated servers to be contacted by any client. In other words, a proxy is associated with the client(s), while a reverse proxy is associated with the server(s); a reverse proxy is usually an internal-facing proxy used as a 'front-end' to control and protect access to a server on a private network.
 >
 
 There are loads of reverse proxy on the market, but today's focus will be on Traefik which allows:
@@ -47,7 +47,7 @@ Okay, let's set everything up together now :)
 
 ## Setting-up Traefik
 
-First, you'll need to setup Traefik on a webserver accessible from the internet. 
+First, you'll need to setup Traefik on a webserver accessible from the internet.
 
 In my case, that server will be 192.168.0.1: it is where ports 80 (HTTP) and 443 (HTTPS) of my internet router (freebox) are forwarded to.
 
@@ -74,7 +74,7 @@ services:
 
 If, for any reason, our server must restart, the `restart: always` instruction will allow our reverse-proxy service to restart automatically, on its own.
 
-Inside the `ports` section, we expose the ports of the reverse proxy service to the outside. 
+Inside the `ports` section, we expose the ports of the reverse proxy service to the outside.
 
 Inside the `volume` section, we share files and/or directories with our service.
 
@@ -106,7 +106,7 @@ Of course, we'll have a pretty 404 response if we visit our server's page for th
 ## Configuring the dashboard
 
 We just saw that our reverse-proxy is running but has nothing to display for the moment.
-We'll now plug the dashboard, allowing us to know if our services, endpoints and routing rules are correctly applyied by Traefik. 
+We'll now plug the dashboard, allowing us to know if our services, endpoints and routing rules are correctly applyied by Traefik.
 
 First, we'll add an `[api]` section to enable the dashboard and the API. Also, adding a `[providers.docker]` section will enable Docker provider and watch for its labels.
 
@@ -186,7 +186,7 @@ Here's what I see when I browse the URL defined in my routing rule above:
 
 ## Reverse proxy of a website accessible from local network
 
-Connected to my network, there's my NAS I'd like to reach from outside. 
+Connected to my network, there's my NAS I'd like to reach from outside.
 
 
 ![My NAS Synology]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/06-nas-http.jpg)
@@ -202,7 +202,7 @@ Therefore, we'll create the `/srv/services.toml` file as below:
         [[http.services.nas.loadBalancer.servers]]
           url = "http://192.168.0.11:5000/"
 ```
-`192.168.0.11` is my NAS IP here and it awaits HTTP requests on port 5000   
+`192.168.0.11` is my NAS IP here and it awaits HTTP requests on port 5000
 
 I'll declare this file provider in `/srv/traefik.toml` in order to load this service file:
 
@@ -253,7 +253,7 @@ services:
 ```
 You probably understood this already but, the service name is always in the form of [service name]@[provider.
 
-`rule` allows me to define which route let me reach my service. Here, I only match on the domain name which must be `nas.wilson.net` . 
+`rule` allows me to define which route let me reach my service. Here, I only match on the domain name which must be `nas.wilson.net` .
 
 Once again, let's not forget to apply our changes with docker-compose:
 
@@ -268,11 +268,11 @@ _Voilà_, here's what I get now when I reach my NAS using th hostname declared a
 
 ## Generating SSL certificate
 
-Thanks to Let's Encrypt, we can very easily generate SSL certificates that will be automatically renewed for free. 
+Thanks to Let's Encrypt, we can very easily generate SSL certificates that will be automatically renewed for free.
 
 No more excuses now refraining to embrace HTTP2 and securing the data of your users.
 
-In order to generate certificates signed by Let's Encrypt, I need to create a `/srv/acme.json` file and make it accessible for Traefik to store its aforesaid certificates. 
+In order to generate certificates signed by Let's Encrypt, I need to create a `/srv/acme.json` file and make it accessible for Traefik to store its aforesaid certificates.
 
 ```shell
  touch /srv/acme.json
@@ -314,7 +314,7 @@ Which would give me a `/srv/traefik.toml` file similar to:
 ```
 Beware, your email adress is mandatory.
 
-Inside `/srv/docker-compose.yaml` we still need to add labels for generating the SSL certificate of my NAS, that would give:  
+Inside `/srv/docker-compose.yaml` we still need to add labels for generating the SSL certificate of my NAS, that would give:
 
 ```yaml
 version: '3'
@@ -355,7 +355,7 @@ And let's not forget again to ask docker-compose to apply our new configuration:
 ``` shell
 docker-compose up -d
 ```
-Once done, I have an access to my NAS, secured by HTTPS :D 
+Once done, I have an access to my NAS, secured by HTTPS :D
 
 ![My nas synology https]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/08-nas-https.jpg)
 
@@ -366,7 +366,7 @@ And that I can, of course, see inside my Traefik dashboard:
 
 ## Reverse proxy for services running in Docker containers
 
-Now that we know how to write different routing rules for a service and how to generate SSL certificates, doing such for a Docker service should be a breeze.  
+Now that we know how to write different routing rules for a service and how to generate SSL certificates, doing such for a Docker service should be a breeze.
 
 After reading [DOMOTIZE YOUR WORKSPACE (lang. French)](https://blog.eleven-labs.com/fr/domotize-your-workspace/) article, I wanted to setup _Home Assistant_ at home.
 

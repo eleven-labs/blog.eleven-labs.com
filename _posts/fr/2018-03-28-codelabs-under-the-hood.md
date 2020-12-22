@@ -122,7 +122,7 @@ L'AST est un concept largement répandu dans la génération de code source. Il 
 
 Dans notre contexte, AST est la représentation de la structure du Markdown. Ça fournit un moyen fiable de naviguer à travers les noeuds (Paragraphes, titres, listes...) qui composent un texte en Markdown.
 
-En voici un exemple : 
+En voici un exemple :
 
 ```md
 hello *world*
@@ -206,7 +206,7 @@ const AST_NODES = {
 };
 ```
 
-Le type `Str` est une simple string qui doit être ajoutée à l'HTML en tant que noeud de texte, de srote à ce que nous n'ayons pas de tag name à lui spécifier. 
+Le type `Str` est une simple string qui doit être ajoutée à l'HTML en tant que noeud de texte, de srote à ce que nous n'ayons pas de tag name à lui spécifier.
 
 Nous allons utiliser `createFactory` afin de créer une fonction qui retourne un composant.
 
@@ -233,7 +233,7 @@ const createComponent = ast => React.createFactory(
 
 `createComponent`prend un AST et retourne une usine de composants qui créé à son tour un composant react avec un props et un children vides (pour le moment). Mais comment allons nous remplir les blancs ? L'AST est une arborescence, on doit donc réfléchir en termes de récursivité. `createComponent`sera envoyé vers un loop qui parcourra le document de l'AST principal. On doit donc l'appeler encore à l'intérieur des composants qui ont des children dans le but de maintenir le parsing opérationnel jusqu'à ce qu'il atteigne les leafs (`type === ‘Str’`).
 
-Maintenant jetons un oeil à la fonction walk : 
+Maintenant jetons un oeil à la fonction walk :
 
 ```js
 function* walk(ast) {
@@ -245,7 +245,7 @@ function* walk(ast) {
 }
 ```
 
-C'est un simple loop `for of` qui rend le contenu créé, et quand il atteint un noeud Str, il rend simplement sa valeur. Donc lorsqu'on appelle `createElement`, on peut aussi appeler le walk generator, afin qu'il parse le niveau de composants suivant : 
+C'est un simple loop `for of` qui rend le contenu créé, et quand il atteint un noeud Str, il rend simplement sa valeur. Donc lorsqu'on appelle `createElement`, on peut aussi appeler le walk generator, afin qu'il parse le niveau de composants suivant :
 
 ```js
   ...
@@ -259,7 +259,7 @@ C'est un simple loop `for of` qui rend le contenu créé, et quand il atteint un
   ...
 ```
 
-Comme `createComponent` peut retourner à la fois une fonction (`type !== str`) ou une string (`type === str`), on ne peut pas avoir de fonctions filles d'un composant React, on doit donc les résoudre afin qu'elles puissent extraire les réels composants : 
+Comme `createComponent` peut retourner à la fois une fonction (`type !== str`) ou une string (`type === str`), on ne peut pas avoir de fonctions filles d'un composant React, on doit donc les résoudre afin qu'elles puissent extraire les réels composants :
 
 ```js
 const resolveRenderer = renderer => (
@@ -279,7 +279,7 @@ const resolveRenderer = renderer => (
 #### Comment assembler tout ça
 
 
-On a créé une usine qui génère les composants React depuis du texte en markdown. Cette usine parse ensuite le markdown en utilisant `markdown-to-ast`, et il traverse récursivement l'arbre dans le but de créer un contenu pour chaque composant : 
+On a créé une usine qui génère les composants React depuis du texte en markdown. Cette usine parse ensuite le markdown en utilisant `markdown-to-ast`, et il traverse récursivement l'arbre dans le but de créer un contenu pour chaque composant :
 
 ```js
 import React from 'react';
@@ -334,9 +334,9 @@ ReactDOM.render(
 );
 ```
 
-Ce que vous venez de lire est une version très simplifiée du process de génération dans codelabs. Voyons ce que ça donne : 
+Ce que vous venez de lire est une version très simplifiée du process de génération dans codelabs. Voyons ce que ça donne :
 
-Et voici la représentation React des composants générés : 
+Et voici la représentation React des composants générés :
 
 ![React components result]({{site.baseurl}}/assets/2018-03-28-codelabs-under-the-hood/react-result.png)
 
@@ -346,7 +346,7 @@ Voici le HTML correspondant :
 
 ### Déploiement
 
-Le déploiement d'une application comme Codelab est assez complexe. En effet, la problématique est que les développeurs qui travaillent sur le projet sont dispersés dans tout Paris. Il faut donc avoir un [Continuous Delevery](https://continuousdelivery.com/) simple et rapide. 
+Le déploiement d'une application comme Codelab est assez complexe. En effet, la problématique est que les développeurs qui travaillent sur le projet sont dispersés dans tout Paris. Il faut donc avoir un [Continuous Delevery](https://continuousdelivery.com/) simple et rapide.
 
 Nous avons opté, comme pour notre blog, pour un déploiement lors du merge d'une PR dans Master. Travis permet facilement d'utiliser des scripts de déploiement dans le Cloud lors de cet évènement, notre choix s'est porté sur cette solution.
 
@@ -355,7 +355,7 @@ Le déploiement se fait en deux étapes :
 - d'un coté les assets (Images, mais aussi les différents tutos en markdown) dans un [Bucket Google Cloud](https://cloud.google.com/storage/)
 - de l'autre un serveur Nginx via [AppEngine](https://cloud.google.com/appengine/) qui affiche le React.
 
-Dans la config travis, que vous trouverez [ici](https://github.com/eleven-labs/codelabs/blob/master/.travis.yml). Vous pouvez voir que dans la partie `deploy` nous utilisons les providers `gae` pour Google App Engine, et `gcs` pour Google Cloud Storage. 
+Dans la config travis, que vous trouverez [ici](https://github.com/eleven-labs/codelabs/blob/master/.travis.yml). Vous pouvez voir que dans la partie `deploy` nous utilisons les providers `gae` pour Google App Engine, et `gcs` pour Google Cloud Storage.
 
 C'est assez simple à mettre en place, il suffit de suivre la documentation :
 - [`gae`](https://docs.travis-ci.com/user/deployment/google-app-engine/)

@@ -113,7 +113,7 @@ class File
      *
      * @var string
      */
-    private $path;   
+    private $path;
 ```
 
 I added constraints on the **file** field. It allows me to validate that the file that I will upload is the right type and a maximum size of 1Go.

@@ -96,7 +96,7 @@ app.get('/translations/b2cwebsite', (req, res,) => {
     baseURL: 'https://localise.biz',
     headers: {'Authorization': 'Loco YOUR_LOCALISE_API_KEY'}
   });
-  
+
   locales.forEach(function(locale) {
     client.get('/api/export/locale/'  + locale +  '.json')
       .then(function (response) {

@@ -113,7 +113,7 @@ plop* make_new_object(char *name) {
 
 **make_new_list** creates a new list, and **make_new_object** creates a new user. Nothing difficult for now, except perhaps in **make_new_object** which assigns **hello** with a **hello** that does not exist in the function's scope. We'll get back to it later.
 
-Let's now go to the toolkit functions for our chained lists: 
+Let's now go to the toolkit functions for our chained lists:
 
 ```C
 void add_in_list(list* my_list, void* obj) {
@@ -321,7 +321,7 @@ void print_list(list* my_list) {
 ## It's time to run the code
 
 So everything is setup, you just have to run the code.
-Here not much glamorous stuff, just 3 small outputs: 
+Here not much glamorous stuff, just 3 small outputs:
 
 ```Shell
 Hello, my name is: Pierre

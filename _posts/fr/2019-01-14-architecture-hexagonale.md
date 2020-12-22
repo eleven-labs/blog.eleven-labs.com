@@ -45,7 +45,7 @@ soucier de l'implémentation côté Infrastructure.
 Il est fréquent de parler dans cette couche de Handler mais également de Use Case métier.
 Les Use Cases métier peuvent utiliser le pattern CQRS pour séparer plus finement les besoins métier d'écriture de ceux de
 lecture.
- 
+
 ## Infrastructure
 
 L’architecture hexagonale considère que le Domain se trouve au centre de l’application. De fait, la couche
@@ -71,7 +71,7 @@ Dans une application basée sur l’architecture hexagonale, il est moins pénib
 par exemple on envisage de changer d’une base Oracle vers Cassandra ou lorsque que l’on souhaite faire une montée de
 version de Symfony, le coeur de métier étant le même dans la couche Domain, on ne se préoccupe que de l’Infrastructure.
 
-Bien que l’on comprenne très rapidement son utilité, l’architecture hexagonale peut prêter à confusion au premier abord et 
+Bien que l’on comprenne très rapidement son utilité, l’architecture hexagonale peut prêter à confusion au premier abord et
 elle sera également déconseillée pour les besoins de petit projet.
 Cependant, en travaillant dans une architecture hexagonale, il est plus aisé d’envisager la vie long termiste d’une
 application, de la maintenir, de la tester et de réduire le couplage avec ses sources de données et avec l’exposition à

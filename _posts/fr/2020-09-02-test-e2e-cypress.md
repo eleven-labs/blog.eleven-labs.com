@@ -17,7 +17,7 @@ tags:
 
 ![Logo Cypress]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/cypress-logo.png)
 
-Les tests sont devenus un aspect essentiel du développement web, pour ces deux raisons : **vérifier** que l’application fonctionne correctement et **garantir** la meilleure expérience utilisateur possible. Il existe différents types de tests mais aujourd’hui nous allons nous concentrer principalement sur les **tests End-to-end** et comment les implémenter avec **[Cypress](https://cypress.io/)**. 
+Les tests sont devenus un aspect essentiel du développement web, pour ces deux raisons : **vérifier** que l’application fonctionne correctement et **garantir** la meilleure expérience utilisateur possible. Il existe différents types de tests mais aujourd’hui nous allons nous concentrer principalement sur les **tests End-to-end** et comment les implémenter avec **[Cypress](https://cypress.io/)**.
 
 ## Que sont les tests end to end ?
 
@@ -53,7 +53,7 @@ Ce qui démarque Cypress se décompose en plusieurs points :
  - accès natif : comme Cypress opère au sein même de l’application, cela lui permet d'avoir accès à tout, comme par exemple un élément du DOM, ou bien `window` ou `document`.
  - sa robustesse : Cypress est notifié du chargement d'une page. Comme il exécute la grande majorité de ses commandes à l'intérieur du navigateur, il n'y a donc pas de décalage réseau. Lors de l’exécution du scénario, Cypress attend automatiquement que l’élément du DOM soit visible (grâce aux assertions) avant de passer à la suite
  - débuggabilité : l'interface de Cypress permet facilement de faire du débuggage. Comme nous allons le voir par la suite, l'interface va nous montrer visuellement étape par étape l'exécution des commandes, assertions, requêtes réseaux et les temps de chargements et d'exécutions au sein de votre page. Il existe de nombreux messages d'erreurs décrivant la raison exacte pour laquelle Cypress a échoué sur le test du scénario. De plus, Cypress prend des snapshots de l'application et permet donc de revenir dans le temps à l'état dans lequel elle se trouvait lorsque les commandes ont été exécutées, mais aussi d'utiliser l'outil du développement du navigateur, par exemple pour voir les messages dans la console ou voir les requêtes réseaux.
- 
+
 
 Après ce petit tour des avantages (non-exhaustifs !) de Cypress, voyons comment ca marche.
 
@@ -61,7 +61,7 @@ Après ce petit tour des avantages (non-exhaustifs !) de Cypress, voyons comment
 
 **Installation et configuration**
 
-Comme expliqué plus tôt, Cypress est simple et rapide à prendre en main. Pour installer Cypress sur votre projet JS, il vous suffit juste d'exécuter à la racine de votre projet : 
+Comme expliqué plus tôt, Cypress est simple et rapide à prendre en main. Pour installer Cypress sur votre projet JS, il vous suffit juste d'exécuter à la racine de votre projet :
 
 ```shell
 npm install cypress --save-dev
@@ -116,7 +116,7 @@ Pour cette présentation de la mise en place des tests end-to-end avec Cypress, 
 
 </div>
 
-Un développeur doit savoir comment et quoi tester dans l'application. Écrire des tests sans signification qui augmentent la couverture du code mais ne testent pas la vraie fonctionnalité est une perte de temps. 
+Un développeur doit savoir comment et quoi tester dans l'application. Écrire des tests sans signification qui augmentent la couverture du code mais ne testent pas la vraie fonctionnalité est une perte de temps.
 
 Tout d'abord avant d'écrire ce test il faut avoir le scénario en tête :
  - L'utilisateur arrive sur le site
@@ -144,16 +144,16 @@ context("Login and buy stuff", () => {
     it('should have link to sign in', () => {
       cy.get('[data-cy=signInBtn]').click();
     });
-  
+
     it("Type data and submit form", () => {
       cy.get('[data-cy=email]')
         .type(login.email)
         .should("have.value", login.email);
-  
+
       cy.get('[data-cy=password]')
         .type(login.password)
         .should("have.value", login.password);
-  
+
       cy.get('[data-cy=submit]').click();
     });
   });
@@ -194,7 +194,7 @@ context("Login and buy stuff", () => {
 ```
 
 Lorsque vous souhaitez tester votre scénario, il suffit de cliquer sur le scénario voulu dans l'interface de Cypress et ce dernier le lancera dans le navigateur qui a été sélectionné.
-Chaque ligne du test est répertoriée en détails (action, temps ...) sur l'interface de Cypress, la description des tests est séparée comme dans le code (`context`, `describe`, `it`). 
+Chaque ligne du test est répertoriée en détails (action, temps ...) sur l'interface de Cypress, la description des tests est séparée comme dans le code (`context`, `describe`, `it`).
 
 ![Cypress tests succeed]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/cypress-succeed.png)
 
@@ -205,4 +205,4 @@ Lorsque le test échoue, l'interface permet de débugger assez rapidement grâce
 ## Conclusion
 
 Voilà c'est tout pour aujourd'hui ! J'espère que cet article vous a donné envie d'utiliser Cypress dans vos développments ! Il y a beaucoup de possibilités d'utilisation avec Cypress, comme l'intégration continue avec la commande `cypress run` qui va jouer les tests et retourner les cas de réussite ou d'échecs.
-Si vous souhaitez en savoir plus sur Cypress, je vous invite à regarder la [documentation](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Cypress-Can-Be-Simple-Sometimes/) qui est très bien alimenté. 
+Si vous souhaitez en savoir plus sur Cypress, je vous invite à regarder la [documentation](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html#Cypress-Can-Be-Simple-Sometimes/) qui est très bien alimenté.

@@ -15,12 +15,12 @@ tags:
 
 ---
 
-À n'en pas douter, pour construire aussi bien sa Batmobile et toutes les fonctions qui vont avec, Bruce Wayne s'est servi du Story Mapping ! 
+À n'en pas douter, pour construire aussi bien sa Batmobile et toutes les fonctions qui vont avec, Bruce Wayne s'est servi du Story Mapping !
 
 Aussi appelé User Story Map, il s'agit d'un atelier mis en place initialement au cœur des projets agiles. Mais il a aussi son utilité dans n’importe quel type de projet ou organisation autres que projets informatiques.
 
 Il permet de définir la vision d’un nouveau produit à son lancement ou encore des nouveaux besoins utilisateurs macros de votre produit, à travers une représentation du backlog en 2 dimensions créée collectivement par toutes les parties prenantes à l’atelier.
-  
+
 **Ces parties prenantes, qui sont-elles ?**
 Il peut s’agir de tous les membres opérationnels de votre équipe : product owner, product manager, développeur, UX Designer, mais aussi utilisateur, sponsor ou encore client.
 
@@ -28,7 +28,7 @@ Il est recommandé d’avoir une palette représentative des personnes participa
 
 **Et cette représentation du backlog, qu’apporte-elle de plus que le backlog lui-même ?**
 Cette représentation en deux dimensions permet de prendre de la hauteur sur votre produit et de poser sur un axe horizontal la représentation chronologique des étapes d’un parcours utilisateur donné, puis sur un axe vertical les différentes actions à effectuer lors de ce parcours par l’utilisateur (fonctionnalités), afin de pouvoir les prioriser en fonction de leur caractère essentiel pour votre produit.
- 
+
 En dehors du fait d’être très visuelle et de pouvoir parler à n’importe quel membre de l’organisation, elle vous permet également de pouvoir scinder vos différents parcours utilisateurs si nécessaire. Cela permet donc de distinguer beaucoup plus clairement les actions par parcours (et potentiellement, par type d’utilisateur).
 
 ## Étape 0 - Ne pas oublier les roues : pré-requis et structure globale
@@ -51,12 +51,12 @@ Une fois cela fait, vous allez pouvoir compléter la fiche de votre persona avec
 
 -   une représentation visuelle
 -   les caractéristiques de votre persona tels que son âge, son sexe, son emploi, ou encore son statut social si cela est pertinent
--   son besoin ou son comportement, ce qu’il cherche à atteindre au travers de son parcours sur notre produit  
+-   son besoin ou son comportement, ce qu’il cherche à atteindre au travers de son parcours sur notre produit
 -   comment le produit peut répondre à ce besoin
 
-Pour en savoir plus sur la définition des personae, je vous invite à vous rendre sur le blog de [MyAgilePartner](https://blog.myagilepartner.fr/index.php/2017/07/24/bien-ecrire-son-persona-dans-un-projet-agile/).  
+Pour en savoir plus sur la définition des personae, je vous invite à vous rendre sur le blog de [MyAgilePartner](https://blog.myagilepartner.fr/index.php/2017/07/24/bien-ecrire-son-persona-dans-un-projet-agile/).
 
-## Etape 2 - Sauver Gotham City : écrire son User Journey 
+## Etape 2 - Sauver Gotham City : écrire son User Journey
 
 Après avoir défini les personae de votre produit ou de votre feature, nous allons maintenant écrire leur “User Journey”. Cela va nous aider à poser les premières bases de notre Story Map.
 
@@ -80,14 +80,14 @@ Je vais construire l’User Journey de mon second persona, à savoir le passionn
 -   choisir le montant de sa donation
 -   confirmer le paiement
 -   se déconnecter
-    
+
 Maintenant qu’elle est construite dans les grandes lignes (vous n’avez pas besoin d’être le plus exhaustif possible ici, vous le serez par la suite), nous allons voir dans l’étape suivante comment les regrouper par thème pour poser les premières bases de votre Story Map !
 
 ## Étape 3 - Mille et une features de la Batmobile : alimenter sa Story Map
 
 En repartant de votre User Journey, vous allez pouvoir réunir les différentes actions de votre persona en “thème”. Ces thèmes ne sont d’ailleurs autres que les [EPICS](https://www.atlassian.com/fr/agile/project-management/epics) de votre produit. Vous en saurez plus ici sur le terme s’il ne vous est pas familier, mais il s’agit globalement de User Stories très macro.
 
-  
+
 Dans mon exemple précédent, je peux typiquement définir les EPICS suivantes :
 
 -   “Navigation” qui englobe l’arrivée et la navigation sur la homepage et dans les rubriques du site, ainsi que le clic sur une vidéo (stream) depuis une liste disponible dans une thématique “Navigation”
@@ -96,7 +96,7 @@ Dans mon exemple précédent, je peux typiquement définir les EPICS suivantes :
 -   “Profil” qui va permettre de se relier à d’autres streamer en suivant leurs activités
 -   “Communautaire” avec la possibilité de discuter en direct avec le streamer et les autres internautes
 -   “Paiement” avec évidemment le don, le paiement et la confirmation du paiement
-    
+
 Ces EPICS sont à écrire sur des post-its et à placer sur votre axe horizontal, celui de la “timeline”, qui représente le déroulé des actions de votre utilisateur dans le temps.
 
 ![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/EPICS-StoryMapping.PNG)
@@ -109,7 +109,7 @@ Nous allons donc rajouter de nouveaux post-it : les “Features”. Qui représe
 
 Puis, sous ces features, nous allons maintenant pouvoir rajouter toutes les tâches - qui seront directement vos user stories - que cet utilisateur va pouvoir y faire !
 
-![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/US-StoryMapping.PNG) 
+![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/US-StoryMapping.PNG)
 
 Vous vous demandez sûrement pourquoi mes post-its “User Stories” sont répartis et séparés par des traits ? Nous y arrivons tout de suite dans la dernière étape !
 
@@ -122,7 +122,7 @@ Il est important que vous définissiez en premier votre MVP (Most Valuable Produ
 Vous pouvez vous servir du [dot voting](https://blog.myagilepartner.fr/index.php/2019/05/08/concept-du-dot-voting/) pour déterminer tous ensemble, avec parties prenantes du produit, queles US (et donc fonctionnalités) seront prioritaires vis-à-vis des autres.
 
 
-Vous arriverez donc à la suite de cette répartition à cela : 
+Vous arriverez donc à la suite de cette répartition à cela :
 ![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Release-StoryMapping.PNG)
 
 De cette manière, vous allez pouvoir laisser en place vos EPICS et Features comme ils sont, puis regrouper toutes vos user stories qui font parties de votre MVP. Tracez ensuite un trait sous ce premier regroupement. Félicitations, vous avez là la constitution de votre premier release !
@@ -132,7 +132,7 @@ Faites ensuite le même travail pour définir les éléments qui sont selon vous
 Voici la représentation globale de mon Story Mapping, à laquelle vous avez également accès ici :
 
 ![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Global-StoryMapping.PNG)
-  
+
 
 ## Keep the Story Map Alive
 La Story Map n’a pas pour unique but de vous aider à lancer les développements de votre produit ou de votre nouvelle feature. N’hésitez pas à la garder vivante, à la mettre à jour, à rajouter ou enlever des éléments en fonction des directions que peuvent prendre les développements de votre produit.

@@ -1,33 +1,33 @@
---- 
-layout: post  
-title: "PHP Stream : wrappers, filters... un allié méconnu"   
-lang: fr  
-permalink: /fr/php-stream-wrappers-filters/  
-excerpt: "Bien que très puissant et présent dans PHP depuis la version 4.3, ce composant est souvent méconnu, sous-exploité, voire mal utilisé."  
-authors:  
-    - amoutte  
+---
+layout: post
+title: "PHP Stream : wrappers, filters... un allié méconnu"
+lang: fr
+permalink: /fr/php-stream-wrappers-filters/
+excerpt: "Bien que très puissant et présent dans PHP depuis la version 4.3, ce composant est souvent méconnu, sous-exploité, voire mal utilisé."
+authors:
+    - amoutte
 categories:
     - php
-    - stream 
+    - stream
     - flux
-    - protocol  
+    - protocol
     - wrappers
     - transports
     - filters
 tags:
     - php
-    - stream 
+    - stream
     - flux
-    - protocol  
+    - protocol
     - wrappers
     - transports
     - filters
-cover: /assets/2018-05-11-php-stream-wrappers-filters/cover.jpg  
---- 
+cover: /assets/2018-05-11-php-stream-wrappers-filters/cover.jpg
+---
 
 ## Définition
 
-La définition du [manuel](http://php.net/intro.stream) étant déjà très claire, je me contente simplement de vous la partager. 
+La définition du [manuel](http://php.net/intro.stream) étant déjà très claire, je me contente simplement de vous la partager.
 > La gestion des flux a été introduite en PHP 4.3.0. comme méthode de généralisation des fichiers, sockets, connexions réseau, données compressées et autres opérations du même type, qui partagent des opérations communes. Dans sa définition la plus simple, un flux est une ressource qui présente des capacités de flux. C'est-à-dire que ces objets peuvent être lus ou recevoir des écritures de manière linéaire, et disposent aussi de moyens d'accéder à des positions arbitraires dans le flux.
 
 ## Protocoles
@@ -121,9 +121,9 @@ Les contextes de flux sont une autre notion importante de la gestion des flux. L
 $context = stream_context_create(
     [
         'http' => [
-            'protocol_version' => '1.1', 
-            'timeout' => 10, 
-            'user_agent' => 'Wilson Browser', 
+            'protocol_version' => '1.1',
+            'timeout' => 10,
+            'user_agent' => 'Wilson Browser',
             'method' => 'GET',
         ],
     ],
@@ -139,7 +139,7 @@ Vous pouvez également utiliser `stream_context_set_default` afin de configurer 
 ```php
 stream_context_set_default([
     'http' => [
-        'timeout' => 10, 
+        'timeout' => 10,
         'user_agent' => 'Wilson Browser',
     ],
     'ftp' => [...]
@@ -192,18 +192,18 @@ file_put_contents('php://filter/string.toupper/resource=php://output', 'Code de 
 Voici un petit filtre geek.
 
 ```php
-class l33t_filter extends php_user_filter {  
-    function filter($in, $out, &$consumed, $closing)  
+class l33t_filter extends php_user_filter {
+    function filter($in, $out, &$consumed, $closing)
     {
         $common = ["a", "e", "s", "S", "A", "o", "O", "t", "l", "ph", "y", "H", "W", "M", "D", "V", "x"];
-        $leet = ["4", "3", "z", "Z", "4", "0", "0", "+", "1", "f", "j", "|-|", "\\/\\/", "|\\/|", "|)", "\\/", "><"];  
-  
-        while ($bucket = stream_bucket_make_writeable($in)) {  
-            $bucket->data = str_replace($common, $leet, $bucket->data);  
-            $consumed += $bucket->datalen;  
-            stream_bucket_append($out, $bucket);  
-        }  
-        return PSFS_PASS_ON;  
+        $leet = ["4", "3", "z", "Z", "4", "0", "0", "+", "1", "f", "j", "|-|", "\\/\\/", "|\\/|", "|)", "\\/", "><"];
+
+        while ($bucket = stream_bucket_make_writeable($in)) {
+            $bucket->data = str_replace($common, $leet, $bucket->data);
+            $consumed += $bucket->datalen;
+            stream_bucket_append($out, $bucket);
+        }
+        return PSFS_PASS_ON;
     }
 }
 stream_filter_register('l33t_filter', 'l33t_filter') or die('Failed to register filter Markdown');
@@ -218,17 +218,17 @@ On peut imaginer des filtres html>markdown,  un emoji converter, un dictionnaire
 
 ## Les flux I/O
 
-PHP met également à notre disposition des flux d'`Input`/`Output`. 
+PHP met également à notre disposition des flux d'`Input`/`Output`.
 
-### php://stdin 
+### php://stdin
 C'est le flux d'entrée standard (ligne de commande)
 > ℹ️ stdin: est en lecture seule
 
 Exemple
 ```php
 //index.php
-copy(  
-    'php://stdin',  
+copy(
+    'php://stdin',
     'php://filter/string.toupper/resource=php://stdout'
 );
 ```
@@ -246,7 +246,7 @@ Exemple
 ```php
 //error.php
 error_reporting(E_ALL);
-ini_set("display_errors", 0);  
+ini_set("display_errors", 0);
 echo 'Hello '.$_GET['user'];
 ```
 Avec ce script nous allons reporter toutes les erreurs (E_ALL) mais ne pas les afficher aux visiteurs.
@@ -354,7 +354,7 @@ Maintenant si l'on change légèrement le code on obtient :
 DO
 ```php
 copy(
-    'http://.../textfile.txt', 
+    'http://.../textfile.txt',
     __DIR__.'/downloaded_textfile.txt'
 );
 ```
@@ -362,7 +362,7 @@ copy(
 
 ```php
 stream_copy_to_stream(
-    fopen('http://.../textfile.txt', 'r'), 
+    fopen('http://.../textfile.txt', 'r'),
     fopen(__DIR__.'/downloaded_textfile.txt', 'w+')
 );
 ```
@@ -381,7 +381,7 @@ La différence de consommation mémoire est due au fait que `copy` et `stream_co
 ---
 ```php
 copy(
-    'http://.../image.jpg', 
+    'http://.../image.jpg',
     'ssh2.scp://user:pass@server:22/home/download/image.jpg'
 );
 ```
@@ -394,7 +394,7 @@ Un autre exemple fréquemment rencontré lors de la création de fichier tempora
 ```php
 $tmpFile = tempnam(sys_get_temp_dir(), 'php' . rand());
 ```
-⚠️ Ici le script va créer un **fichier** dans le **dossier temporaire** de php. 
+⚠️ Ici le script va créer un **fichier** dans le **dossier temporaire** de php.
 - Ce qui veut dire qu'il vous faudra supprimer vous-même ce fichier.
 - La fonction `tempnam()` retourne le `path` et non la ressource.
 

@@ -267,13 +267,13 @@ Parfait, vous avez votre liste de courses en react/redux qui va bien :
 
 
 ## Pour conclure
- 
+
 Ce framework est vraiment des plus complets. Ce que l'on vient d'aborder ne couvre même pas le quart de ce que propose API Platform dans sa globalité, et toutes ces possibilités se basent sur de bonnes pratiques.
 
-Le seul point négatif que l'on peut lui trouver c'est son architecture qui est orientée événement, se basant sur le système des events kernel de Symfony. L'avantage est que cela donne une grande liberté pour développer de nouvelles fonctionnalités.  
+Le seul point négatif que l'on peut lui trouver c'est son architecture qui est orientée événement, se basant sur le système des events kernel de Symfony. L'avantage est que cela donne une grande liberté pour développer de nouvelles fonctionnalités.
 
 Cela devient un inconvénient sur de gros projet où l'historique du code produit par moult développeurs, sûrement très bien attentionnés, devient un peu trop conséquent. Cela peut très vite partir dans tout les sens, et au final être un enfer à débugger.
 
 ## À venir
-  
+
 J'aurais aimé vous parler de l'intégration de FOSuser bundle avec l'autentification JWT, des tests en Behat, PHPUnit, déployer son projet API Platform sur un cluster Kubernetes en quelques lignes de commande mais le temps me manque, je vous réserve donc cela pour la prochaine fois.

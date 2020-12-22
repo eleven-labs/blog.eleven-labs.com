@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Symfony Messenger"   
+title: "Symfony Messenger"
 lang: fr
-permalink: /fr/symfony-messenger/  
+permalink: /fr/symfony-messenger/
 excerpt: "Nous allons voir comment utiliser le nouveau composant Messenger de Symfony"
-authors:  
+authors:
     - amoutte
 categories:
     - php
@@ -43,7 +43,7 @@ $loggingMiddleware = function (callable $handler) {
     return function ($string) use ($handler) {
         $result = $handler($string);
         file_put_contents('dev.log', sprintf('Info: Input "%s" with output "%s".', $string, $result));
-        
+
         return $result;
     };
 };
@@ -89,7 +89,7 @@ Reportez-vous à la [documentation](https://symfony.com/doc/current/messenger.ht
 
 ## Réception de message
 
-Un message entre dans le système de manière synchrone (endpoint API/controlleur) ou asynchrone (via worker/queue). 
+Un message entre dans le système de manière synchrone (endpoint API/controlleur) ou asynchrone (via worker/queue).
 Le message reçu est donc encapsulé avec une enveloppe `ReceivedMessage` avant d'être dispatché dans le message bus.
 
 > L'enveloppe `ReceivedMessage` permet d'éviter au bus de renvoyer le message au sender (boucle infinie).
@@ -151,29 +151,29 @@ use Symfony\Component\Messenger\Envelope;
 class APIMeteoReceiver implements ReceiverInterface
 {
     /**
-     * Last API result 
+     * Last API result
      */
     private $result;
     private $shouldStop;
-    
+
     public function receive(callable $handler): void
     {
         while (!$this->shouldStop) {
             $result = file_get_contents("{URL d'une API de meteo}");
-            
-            // si le résultat est le même que le précédent on attend une seconde avant de recommencer 
+
+            // si le résultat est le même que le précédent on attend une seconde avant de recommencer
             if ($this->result === $result) {
                 sleep(1);
                 continue;
             }
-            
+
             $this->result = $result;
-            
+
             // Si la météo a changé on dispatche la nouvelle météo dans le bus
             $handler(new Envelope($this->result));
         }
     }
-    
+
     public function stop(): void
     {
         $this->shouldStop = true;
@@ -185,13 +185,13 @@ Dans l'exemple précédent on ne dispatche que lorsque la météo change
 
 ## Conclusion
 
-Voila un premier tour d'horizon du composant Messenger. 
-Bien que le concept du message bus soit assez simple, l'implémentation du composant ne l'est pas autant. 
-Et étant donné que le composant est encore expérimental et que la documentation s'étoffe petit à petit c'est donc encore un composant mal connu et peu utilisé pour le moment.  
+Voila un premier tour d'horizon du composant Messenger.
+Bien que le concept du message bus soit assez simple, l'implémentation du composant ne l'est pas autant.
+Et étant donné que le composant est encore expérimental et que la documentation s'étoffe petit à petit c'est donc encore un composant mal connu et peu utilisé pour le moment.
 Par ailleurs le composant Messenger nous apporte plein d'outils et nous laisse un grand niveau de personnalisation.
 C'est pourquoi une bonne compréhension du concept et une bonne prise en main sont préférables pour une exploitation maximum du potentiel.
 
-Sachez qu'il est également possible d'implémenter vos propres `Transport` `Middleware` `Sender` `Receiver`. 
+Sachez qu'il est également possible d'implémenter vos propres `Transport` `Middleware` `Sender` `Receiver`.
 Vous avez en plus de cela la possibilité de créer plusieurs bus dans l'application afin de bien compartimenter votre logique.
 
 ### Liens utiles

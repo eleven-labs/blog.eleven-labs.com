@@ -88,7 +88,7 @@ Après avoir exécuté `pod install`, vous pouvez ouvrir votre projet `*.xcworks
 
 ## Configuration
 
-Il est préférable de configurer Realm avant de l'utiliser en créant une instance de `Realm.Configuration`. 
+Il est préférable de configurer Realm avant de l'utiliser en créant une instance de `Realm.Configuration`.
 Cette configuration permet :
 
 * De donner le chemin sur le disque du fichier de configuration ;
@@ -137,7 +137,7 @@ Realm.Configuration.defaultConfiguration = config
 
 ```swift
 var config = Realm.Configuration()
-// Définir ceci changera le comportement de gestion des exceptions de migration. Au lieu de lancer une exception 
+// Définir ceci changera le comportement de gestion des exceptions de migration. Au lieu de lancer une exception
 // RealmMigrationNeededException, Realm sur disque sera effacé et recréé avec le nouveau schéma.
 config.deleteRealmIfMigrationNeeded = true
 config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("PRODUCT.realm")
@@ -409,7 +409,7 @@ Les résultats d'une requête ne sont pas des copies de vos données. La modific
 
 ```swift
 // Vous savez déjà écrire une query :)
-let users = realm.objects(User.self) 
+let users = realm.objects(User.self)
 ```
 
 L'exécution d'une requête est différée jusqu'à ce que les résultats soient utilisés. Cela signifie que l'enchaînement de plusieurs `Results` temporaires pour trier et filtrer vos données n'effectue pas de travail supplémentaire pour traiter l'état intermédiaire.
@@ -489,7 +489,7 @@ let config = Realm.Configuration(
     // Si vous n'avez jamais défini de version de schéma auparavant, la version est 0
     schemaVersion: 1,
 
-    // Définir le bloc qui sera appelé automatiquement lors de l'ouverture de Realm 
+    // Définir le bloc qui sera appelé automatiquement lors de l'ouverture de Realm
     // avec une version de schéma inférieure à celle définie ci-dessus
     migrationBlock: { migration, oldSchemaVersion in
         // Nous n'avons encore rien migré, alors oldSchemaVersion == 0
@@ -511,7 +511,7 @@ Realm.Configuration.defaultConfiguration = Realm.Configuration(
     schemaVersion: 1,
     migrationBlock: { migration, oldSchemaVersion in
         if (oldSchemaVersion < 1) {
-            // La méthode enumerateObjects(ofType:_:) itère 
+            // La méthode enumerateObjects(ofType:_:) itère
             // sur chaque objet User stocké dans le fichier Realm
             migration.enumerateObjects(ofType: User.className()) { oldObject, newObject in
                 // combiner les champs dans un seul champ
@@ -623,8 +623,8 @@ class TestCaseBase: XCTestCase {
         super.setUp()
 
         // Utilisez Realm en mémoire via le nom du test en cours.
-        // Cela garantit que chaque test ne peut pas accidentellement accéder ou modifier les données 
-        // d'autres tests ou de l'application elle-même, et parce qu'ils sont en mémoire, 
+        // Cela garantit que chaque test ne peut pas accidentellement accéder ou modifier les données
+        // d'autres tests ou de l'application elle-même, et parce qu'ils sont en mémoire,
         // il n'y a rien à nettoyer.
         Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
     }

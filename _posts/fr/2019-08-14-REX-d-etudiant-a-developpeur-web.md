@@ -75,11 +75,11 @@ Déjà, il y a une forte connaissance du produit.
 Connaître son produit, connaître les règles métiers, et maîtriser son architecture, représentent plus de la moitié du travail.
 C’est pour ça qu’il est important de faire de la conception avant même d’écrire une ligne de code.
 Et puisqu’on y est, plus on lit de code, plus on se rend compte que la lisibilité est importante, plus on fait attention à ce que l’on code par la suite, en se disant qu’il faudra sûrement le relire un jour.
-J’en profite pour glisser une image sur l'unité de mesure du code : 
+J’en profite pour glisser une image sur l'unité de mesure du code :
 
 ![code_quality]({{ site.baseurl }}/assets/2019-08-13-REX-d-etudiant-a-developpeur-web/code_quality.png)
 
-Il y a aussi la vision à long terme. Il ne faut pas simplement penser à la solution qui résout le problème a l’instant T. Il faut que la solution soit viable aujourd’hui, demain, et après demain ! 
+Il y a aussi la vision à long terme. Il ne faut pas simplement penser à la solution qui résout le problème a l’instant T. Il faut que la solution soit viable aujourd’hui, demain, et après demain !
 Après demain l’application aura très certainement beaucoup changé, et il faut le prendre en compte dès maintenant.
 C’est comme mettre du scotch sur un tuyau qui fuit… c’est une solution, mais ça marche 10 minutes.
 
@@ -89,7 +89,7 @@ Et bien évidemment pour finir, et le plus évident, ils ont de l’expérience,
 
 Il y a une dernière chose sur laquelle je voudrais revenir, c’est l’architecture.
 Je n’avais aucune notion d’architecture avant, et j’ai vite compris qu’il fallait que je m’y mette car c’était très important.
-En tant que profil junior, on y pense très peu, et c’est pas si évident que ça à comprendre ou à mettre en place. Et pourtant, c’est l’une des choses les plus importantes. Il y a toujours une architecture évidemment, mais ça veut pas forcément dire qu’on la maîtrise. 
+En tant que profil junior, on y pense très peu, et c’est pas si évident que ça à comprendre ou à mettre en place. Et pourtant, c’est l’une des choses les plus importantes. Il y a toujours une architecture évidemment, mais ça veut pas forcément dire qu’on la maîtrise.
 Pourquoi l’architecture est importante ?
 Elle permet de gérer le changement, d’anticiper les évolutions, de définir les contraintes d’implémentation et de mieux gérer les imprévus (liste non exhaustive, on pourrait encore en écrire 30 lignes).
 
@@ -107,7 +107,7 @@ Choisir une architecture c’est penser à :
 
 
 
-## Et l’agilité dans tout ça ? 
+## Et l’agilité dans tout ça ?
 
 Oui parce que c’est ce qui m’avait un peu motivé à la base.
 Mais c’est très différent de ce qu’on peut vous présenter en cours par exemple.

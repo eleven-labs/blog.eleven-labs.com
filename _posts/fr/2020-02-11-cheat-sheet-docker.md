@@ -19,7 +19,7 @@ cover: /assets/2020-02-11-cheat-sheet-docker/cover.jpg
 
 ## Présentation
 
-Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais des commandes pour créer une image Docker ? Ou encore pour la lancer ? 
+Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais des commandes pour créer une image Docker ? Ou encore pour la lancer ?
 Nous avons créé pour vous une Cheat Sheet qui vous permettra de retrouver rapidement la commande qu'il vous faut !
 
 <p align="center">

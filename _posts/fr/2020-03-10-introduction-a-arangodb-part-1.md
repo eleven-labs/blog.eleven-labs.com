@@ -38,14 +38,14 @@ ArangoDB vient également avec des notions de réseau et vous laisse choisir ent
 - "Active Failover" : presque le même principe "Master/Slave", sauf que l'instance "Master" est déterminée par un composant de la base de données "Agency Supervision" et donne le droit d'écriture et lecture à une instance de façon dynamique.
 
 - "Cluster" : architecture la plus intéressante selon moi, qui permet une haute scalabilité devant un fort trafic. Chaque "cluster" est composé de différents nœuds ayant des rôles bien définis :
-  
+
     -   l'Agence (Agency) : elle est en charge de prioriser les opérations qui arrivent et de gérer les services de synchronisation. Sans elle, les composants ci-dessous ne peuvent pas communiquer.
 
     -   le coordinateur (Coordinator) : ce composant est le point d'entrée entre le client et la donnée, il coordonne les requêtes entre les différentes instances de base de données.
 
     -   l'instance de base de données (DB Server) : responsable de l'écriture et lecture des données.
 
-![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/cluster.webp) 
+![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/cluster.webp)
 
 
 # Installation
