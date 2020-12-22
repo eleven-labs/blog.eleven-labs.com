@@ -106,6 +106,7 @@ exclude:
     - bin
     - vendor
     - docker-compose.yml
+    - .jekyll-cache
 
 collections:
   authors:
