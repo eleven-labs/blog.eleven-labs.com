@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/eleven-labs/amp-jekyll.git
-  revision: 8bdd9bdac1626a53017f7d18ae12037826eb14b4
+  revision: 2bd0b8336959c72b25bf363358f8df0bbc4aeb87
   specs:
     amp-jekyll (1.0.3)
       fastimage (>= 1.8.0)
