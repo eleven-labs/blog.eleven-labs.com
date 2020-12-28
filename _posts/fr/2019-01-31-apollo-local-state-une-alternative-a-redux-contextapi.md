@@ -72,7 +72,7 @@ export  const typeDefs =  `
     error
     warning
   }
-  
+
   type Notification {
     header: String
     content: String
@@ -87,7 +87,7 @@ export  const typeDefs =  `
   type Query {
     Notification: Notification
   }
- 
+
   input NotificationInput {
     header: String
     content: String

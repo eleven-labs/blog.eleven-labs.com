@@ -2,7 +2,7 @@
 layout: post
 title: 'LE SYMFONY LIVE PARIS 2017'
 excerpt: 'Récapitulatif des différentes présentations du sflive 2017'
-authors: 
+authors:
     - nkania
     - aandre
 date: '2017-04-05 18:24:38 +0100'
@@ -25,7 +25,7 @@ image:
 
 Tout comme l’année dernière (et les 3 années précédentes) Eleven Labs était présent cette année au Symfony Live ! On a mangé des Schokobons, bu des bières, mais aussi et surtout : suivi les conférences. Voilà donc notre r>etour sur l’événement en tweets, images, et résumés de ces deux jours :
 
-Symfony 4 
+Symfony 4
 -------
 
 Ouverture des conférences avec une présentation de Symfony 4 par Fabien Potencier.
@@ -48,7 +48,7 @@ Grégoire Poineau prend le relai pour nous parler de la remise à niveau du comp
 Grâce aux tags Varnish, j'ai switché ma prod sur Raspberry Pi
 -------
 
-Au tour de Jérémy DERUSSÉ. 
+Au tour de Jérémy DERUSSÉ.
 
 Cette conférence nous démontre qu’il est possible de faire fonctionner sa prod sur une machine telle qu’un raspberry PI si on gère correctement notre cache.
 
@@ -88,12 +88,12 @@ JWT est un standard qui repose sur une RFC qui fournit un moyen d'authentificati
 Le token se sépare en 3 parties :
 
 - le header (qui contient l'algorithme)>>
-- le payload : qui contient des propriétés qui peuvent être : 
+- le payload : qui contient des propriétés qui peuvent être :
  * réservées (user_id, expiration, ndf,...)
  * privées : c’est à dire avec un nom non défini (rôles,...)
 - la signature (base64 du header + payload) chiffré avec un algo (HMAC + SHA, RSA + SHA, ECDSA + SHA)
 
-Fonctionne en 2 étapes : 
+Fonctionne en 2 étapes :
 
 - 1 call (ex : /login) pour récupérer le token
 - à chaque call utiliser le token en header Authorization (bearer)

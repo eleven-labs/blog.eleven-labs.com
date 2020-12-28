@@ -56,7 +56,7 @@ Fasten your seat belt, this is where everything starts.
 
 Our goal is to create an app that contains features, but does not have a behavior as a structure.<br/>
 Each feature will be defined as a module, so separated code bases that live their own lives and available without any dependencies when it needs to be used.<br/>
-Once we understand that, we must tell ourselves that what we want to develop will be in three different parts: 
+Once we understand that, we must tell ourselves that what we want to develop will be in three different parts:
 
 - The modules
 - Our app
@@ -82,12 +82,12 @@ import Foundation
 @objc
 
 class MyFirstModule: NSObject {
-    
+
     func sayHello() {
         let name = String(describing: type(of: self))
         print("Hello My name is \(name)")
     }
-    
+
     func sayGoodBye() {
         let name = String(describing: type(of: self))
         print("GoodBye My name was \(name)")
@@ -103,12 +103,12 @@ import Foundation
 @objc
 
 class MySecondModule: NSObject {
-    
+
     func sayHello() {
         let name = String(describing: type(of: self))
         print("What's up? My name is \(name)")
     }
-    
+
     func sayGoodBye() {
         let name = String(describing: type(of: self))
         print("See you, My name was \(name)")
@@ -124,7 +124,7 @@ import UIKit
 
 @objc
 class MyThirdModule: NSObject {
-    
+
     func openUrl(url: String) {
         let uri = URL(string: url)!
         UIApplication.shared.open(uri, options: [:], completionHandler: nil)
@@ -161,14 +161,14 @@ import Foundation
 import Gloss
 
 class BinderManager {
-    
+
     static func readValue<T: Glossy>(json: JSON, type: T.Type) -> T? {
         if let result = T.init(json: json) {
             return result
         }
         return nil
     }
-    
+
     static func readValue<T: Glossy>(json: [JSON], type: T.Type) -> [T]? {
         if let result = [T].from(jsonArray: json) {
             return result
@@ -185,33 +185,33 @@ import Gloss
 struct GenericAction: Glossy {
     var method: String?
     var value: String?
-    
+
     init?(json: JSON) {
         self.method = "func" <~~ json
         self.value = "value" <~~ json
     }
-    
+
     func toJSON() -> JSON? {
         return nil
     }
 }
 
 struct GenericProtocol: Glossy {
-    
+
     var name: String?
     var realObject: AnyObject?
     var actions: [GenericAction]?
-    
+
     init?(json: JSON) {
         self.name = "name" <~~ json
-        
+
         if let programmingObject = ObjectCreator.create(self.name) {
             self.realObject = programmingObject as AnyObject
         }
-        
+
         self.actions = "actions" <~~ json
     }
-    
+
     func toJSON() -> JSON? {
         return nil
     }
@@ -266,14 +266,14 @@ Here is the class that allows us to do this (because it's Objective-C, we need t
 @interface ObjectCreator : NSObject
 
 + (id)create:(NSString *)className;
-    
+
 @end
 
 
 #import "ObjectCreator.h"
 
 @implementation ObjectCreator
-    
+
 + (Class)create:(NSString *)className
 {
     Class daClass = NSClassFromString(className);

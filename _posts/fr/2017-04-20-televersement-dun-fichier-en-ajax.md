@@ -114,7 +114,7 @@ class File
      *
      * @var string
      */
-    private $path;   
+    private $path;
 ```
 
 J’ai ajouté des contraintes sur le champ **file**. Il me permet de valider que le fichier que je vais téléverser est bien du bon type et d’une taille maximale de 1Go.

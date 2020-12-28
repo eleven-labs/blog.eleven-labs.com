@@ -14,7 +14,7 @@ tags:
     - concepts
 ---
 
-On entend beaucoup parler de la Blockchain comme étant l'une des futures révolutions technologiques, au même titre que l'intelligence artificielle. Pour autant, le concept est encore souvent mal compris, tant par le grand public que par les férus de technologies que nous sommes. Alors, qu'est ce que c'est ? A quoi ça sert, et comment on peut s'en servir ? On va tenter de trouver des pistes de réponses dans cet article en essayant d'en comprendre les concepts (et le vocabulaire qui va avec !) et en jetant un oeil sur ce qui se fait aujourd'hui dans le milieu. C'est parti ! 
+On entend beaucoup parler de la Blockchain comme étant l'une des futures révolutions technologiques, au même titre que l'intelligence artificielle. Pour autant, le concept est encore souvent mal compris, tant par le grand public que par les férus de technologies que nous sommes. Alors, qu'est ce que c'est ? A quoi ça sert, et comment on peut s'en servir ? On va tenter de trouver des pistes de réponses dans cet article en essayant d'en comprendre les concepts (et le vocabulaire qui va avec !) et en jetant un oeil sur ce qui se fait aujourd'hui dans le milieu. C'est parti !
 
 
 ![]({{site.baseurl}}/assets/2019-08-21-les-bases-de-la-blockchain/cat-ready.gif)
@@ -35,7 +35,7 @@ Pour revenir à notre sujet, chaque bloc contient un hash du bloc précédent (q
 
 Comme dit précédemment, chaque bloc consiste en un paquet de données structurées, disposant d'une position dans la chaîne. Le bloc contient au minimum un body, contenant les informations que l'on souhaite stocker dans la blockchain, comme des transactions entre deux utilisateurs, par exemple. Il contient aussi un header composé des métadonnées comme l'index (la position du bloc dans la chaîne), un hash (le hash du bloc en cours), un previous hash (le hash du bloc précédent) ou un timestamp (la date de création du bloc).
 
-Selon les blockchains, d'autres éléments, comme la taille d'un bloc, le nombre de transactions contenus dans le bloc, le Nounce (nous verrons dans un autre article l'intérêt de ce bidule) peuvent être également présent. 
+Selon les blockchains, d'autres éléments, comme la taille d'un bloc, le nombre de transactions contenus dans le bloc, le Nounce (nous verrons dans un autre article l'intérêt de ce bidule) peuvent être également présent.
 
 
 ![]({{site.baseurl}}/assets/2019-08-21-les-bases-de-la-blockchain/block.png)

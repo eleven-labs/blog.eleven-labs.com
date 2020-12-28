@@ -767,17 +767,17 @@ Enfin, pour finaliser notre application, il ne reste plus qu'à lui appliquer un
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" 
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous">
-  </script>   
+  </script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="container">
   	<app-root><div class="text-center loading">Loading...</div></app-root>
   </div>
-  
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

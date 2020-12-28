@@ -24,7 +24,7 @@ Le Web Component repose sur 3 principes :
 - [customElements](https://developer.mozilla.org/fr/docs/Web/Web_Components/Using_custom_elements)
 
 ### Template
-Le tag **template** permet de définir un bloc HTML ré-utilisable pouvant contenir des sous-blocs `slot` surchargés lors de son utilisation. 
+Le tag **template** permet de définir un bloc HTML ré-utilisable pouvant contenir des sous-blocs `slot` surchargés lors de son utilisation.
 Concrètement ça ressemble à ça :
 
 ```html
@@ -91,7 +91,7 @@ Elles n'ont aucun effet en dehors d'un shadow DOM.
     Permet d'appliquer un style lorsque la class en paramètre est définie sur le component
 - :host-context(<Element>)
     Permet d'appliquer un style lorsque le component est un descendant d'ElementName
-    
+
 ### Implementation
 Pour n'avoir notre composant que dans un seul fichier nous allons déclarer le template en javascript. On va en profiter pour ajouter un peu de CSS histoire de faire plus joli.
 Le template n'a pas besoin d'être ajouté au document, nous allons simplement le cloner et l'ajouter au shadowRoot.

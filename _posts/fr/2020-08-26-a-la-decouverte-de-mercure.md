@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: À la découverte de Mercure
 excerpt: Exploration du protocole Mercure. Vous n'aurez plus peur des communications client-server en temps réel à la fin de ce voyage.

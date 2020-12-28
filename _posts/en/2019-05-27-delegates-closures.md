@@ -39,18 +39,18 @@ We will cover those two points more in detail, but before we go further it's imp
 
 ### Delegates
 
-A delegate is a reference to an object that we don't know the exact type of. Important thing though, it inherits a protocol. Because this object inherits a protocol, we then know that we can call the methods defined in the protocol, even if we don't know in detail the given object. I think that a proper example will help you to figure out what I'm talking about.  
+A delegate is a reference to an object that we don't know the exact type of. Important thing though, it inherits a protocol. Because this object inherits a protocol, we then know that we can call the methods defined in the protocol, even if we don't know in detail the given object. I think that a proper example will help you to figure out what I'm talking about.
 
-NB: The code I'll provide is just a dummy implementation so that you're able to understand the principles of which I'm talking about, it will not really do any HTTP call on the URL given as a parameter.  
+NB: The code I'll provide is just a dummy implementation so that you're able to understand the principles of which I'm talking about, it will not really do any HTTP call on the URL given as a parameter.
 
-Let's imagine that I need to do a GET. Usually, in the mobile development world, we like to handle this with 2 different callbacks for the return of the call. One is for the success case and the other one is for the error case. Our goal here is to produce a class that will do a GET on a given URL. I want to notify the object that launched this request, if it failed or succeed.  
+Let's imagine that I need to do a GET. Usually, in the mobile development world, we like to handle this with 2 different callbacks for the return of the call. One is for the success case and the other one is for the error case. Our goal here is to produce a class that will do a GET on a given URL. I want to notify the object that launched this request, if it failed or succeed.
 
 In order to avoid a strong dependance, we will use the design pattern of the delegate. Thanks to that, I don't need to know the exact type of this object. We'll then define a protocol that will contain two methods: onRequestSuccess onRequestFailure. Let's have a look at what it will look like:
 
 #### Objective-C
 
 ```Objective-C
-@protocol RequesterDelegateObjc 
+@protocol RequesterDelegateObjc
 
 - (void)onRequestSuccess;
 - (void)onRequestFailure;
@@ -61,7 +61,7 @@ In order to avoid a strong dependance, we will use the design pattern of the del
 We inherit it in the header file (.h)
 
 ```Objective-C
-@interface MyClassObjC : UIViewController <RequesterDelegateObjc> 
+@interface MyClassObjC : UIViewController <RequesterDelegateObjc>
 
 @end
 ```
@@ -105,7 +105,7 @@ class MyClassSwift: UIViewController, RequesterDelegateSwift {
 }
 ```
 
-So, we have our Class MyClass that inherits the Protocol RequesterDelegate and that implements 2 methods (onRequestSuccess, onRequestFailure). We're going to do a dummy implementation so that you have an idea of how this works: 
+So, we have our Class MyClass that inherits the Protocol RequesterDelegate and that implements 2 methods (onRequestSuccess, onRequestFailure). We're going to do a dummy implementation so that you have an idea of how this works:
 
 #### Objective-C
 
@@ -223,7 +223,7 @@ We have a light dependency between our different objects. Indeed, RequestManager
 
 **Solution**
 
-In order to solve this issue, there is still the possibility to change a bit the method, add a unique id when we launch the request and receive it when the request is done and they identify to which request it belongs to. Yes it's true, we can do that, but it will quickly become "verbose" and not so easy to handle. One thing I like to do when I program is to avoid strong dependency (Yes, the delegate already helps with that), but even more, I like when I can move some code really easily.  
+In order to solve this issue, there is still the possibility to change a bit the method, add a unique id when we launch the request and receive it when the request is done and they identify to which request it belongs to. Yes it's true, we can do that, but it will quickly become "verbose" and not so easy to handle. One thing I like to do when I program is to avoid strong dependency (Yes, the delegate already helps with that), but even more, I like when I can move some code really easily.
 
 But here, If I want to move my code, I need to re-implement the protocol in another class.
 - Maybe there is something easier right?
@@ -301,6 +301,6 @@ func get(url: String, successClosure: () -> Void, failureClosure: () -> Void) {
 
 ## Conclusion
 
-So, like before, we just need to call the method callWebServiceWithClosure and we have a callback for the success case and one for the error case. You're going to ask me, what is the advantage? Easy, you just don't need to inherit from an interface anymore, you maybe don't realise it yet, but it really gets easier. For the understanding also, it's easier, you see straight above the different handlings you have instead of having to look in the code in order to find how the callback handles the return of the call.  
+So, like before, we just need to call the method callWebServiceWithClosure and we have a callback for the success case and one for the error case. You're going to ask me, what is the advantage? Easy, you just don't need to inherit from an interface anymore, you maybe don't realise it yet, but it really gets easier. For the understanding also, it's easier, you see straight above the different handlings you have instead of having to look in the code in order to find how the callback handles the return of the call.
 
 And as I said earlier, if you have many webservices to call, you can easily isolate the code for every single one of them. The goal here is just to present you both principles, if you already are a mobile developer, it's probably something you encountered more than once. But, just a question, wouldn't it be cool to be able to merge the delegates with the blocks/closures? Hum, it seems like an interesting topic right? Let's do that together in the future in a new article? See you space cowboys :)

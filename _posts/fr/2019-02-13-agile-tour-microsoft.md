@@ -13,7 +13,7 @@ categories:
     - scrum
     - product owner
     - scrum master
-cover: /assets/2019-02-13-agile-tour-microsoft/cover.jpg   
+cover: /assets/2019-02-13-agile-tour-microsoft/cover.jpg
 ---
 
 
@@ -33,10 +33,10 @@ Nous avons donc pu assister à différentes conférences et plusieurs ateliers a
  6. The cost of Fear: how to make brave decisions
  7. Boostez vos Backlog Grooming / Refinement avec l’Example Mapping
 
-  
-  
-  
-  
+
+
+
+
 
 ## COM en entreprise
 
@@ -78,12 +78,12 @@ L'idée du Delegation Board est d'inscrire sur un tableau les grandes actions de
 
 Les 7 niveaux définis par le Delegation Board sont les suivants :
 
- 1. Dire : prendre la décision et le dire à l'équipe 
- 2. Vendre : convaincre les gens sur la décision à prendre 
- 3. Consulter : consulter l'équipe avant de prendre la décision 
+ 1. Dire : prendre la décision et le dire à l'équipe
+ 2. Vendre : convaincre les gens sur la décision à prendre
+ 3. Consulter : consulter l'équipe avant de prendre la décision
  4. S'entendre : prendre des décisions avec l'équipe
- 5. Conseiller : influencer mais la décision est prise par l'équipe 
- 6. Enquêter : demander des retours suite à la décision de l'équipe 
+ 5. Conseiller : influencer mais la décision est prise par l'équipe
+ 6. Enquêter : demander des retours suite à la décision de l'équipe
  7. Déléguer : aucune influence, délégation à toute l'équipe
 
 L'idée pendant cet atelier a donc été d'effectuer un "Delegation poker" avec son équipe afin de définir, pour chaque membre, les niveaux de délégations souhaités. À main levée, tout le monde a donc voté pour les 5 tâches définies.
@@ -93,19 +93,19 @@ Par ailleurs, des [cartes dédiées](https://management30.com/practice/delegatio
 ### Nos impressions :
 
 __Maeva__ :
-La mise en place d'une Delegation Board au lancement d'un projet est une idée très intéressante. 
+La mise en place d'une Delegation Board au lancement d'un projet est une idée très intéressante.
 Elle permet de donner une voix égale à tout le monde et d'engager l'équipe complète dans le choix des différents niveaux de délégation alloués aux tâches. Ce qui responsabilise chacun à son niveau sur ses propres actions et facilite la légitimité dans les prises de décision par la suite d'un acteur.
 
-Je pense aussi que cette technique peut permettre à un projet de sortir la tête de l'eau si celui-ci arrive à un moment critique où plus personne n'est d'accord sur les prochains jalons à poser. 
+Je pense aussi que cette technique peut permettre à un projet de sortir la tête de l'eau si celui-ci arrive à un moment critique où plus personne n'est d'accord sur les prochains jalons à poser.
 
-  
+
 
 __Jérémy__ :
 Atelier très intéressant à la fois dans son intérêt et dans sa simplicité. Définir précisément les rôles de chacun n’est pas forcément facile, le faire dans des conditions permettant l’échange et le débat encore moins.
 
 Grâce au Delegation Board cependant, il est facile de se concerter pour poser exactement quelles doivent être les responsabilités de chacun et ainsi éviter les verrouillages classique que l’on retrouve régulièrement dans une équipe.
 
-  
+
 
 ## De développeur à Scrum Master, une transition évidente ?
 
@@ -115,15 +115,15 @@ Les différences avec le métier de développeur sont nombreuses et apportent be
 
 Les réponses à ces question peuvent sembler évidentes pour ceux qui auraient le recul de l'expérience, elles le sont beaucoup moins pour un Scrum Master junior.
 
-  
+
 
 Outre les différences évidentes avec son métier, Caroline nous a exposé les difficultés qu’elle a pu rencontrer. Les petites phrases bien senties de certains collègues, les passages à vide à se demander quoi faire et comment se former pour s'améliorer à pratiquer le Scrum Mastering.
 
-  
+
 
 Au final, ce fut un REX très intéressant, de nombreux développeurs dans la salle se sont identifiés aux expériences partagées.
 
-  
+
 
 ### Nos impressions :
 
@@ -132,29 +132,29 @@ En temps que développeur et Scrum Master, cette conférence m’a beaucoup parl
 
 Les difficultés que Caroline a exposées étaient elles aussi éclairantes sur ce que peut traverser un futur Scrum Master. Pas d'obstacle infranchissable certes, malgré certaines choses particulièrement troublantes. Par exemple les propos de certains de ses collègues, mélangeant moqueries et misogynie, à l’encontre de quelqu’un qui a pourtant changé de coeur de métier pour une fonction qui n’est là que pour les aider...
 
-  
+
 __Renaud__ :
 Je suis développeur de formation et j’ai un bon moment aspiré à devenir scrum master, je n’y ai d’ailleurs pas renoncé. C'était la présentation la plus attendue pour moi. Ce qui m’a le plus marqué dans cette présentation, hormis son parcours, était justement la fameuse question : "On fait quoi quand on n’a pas de meeting ?".
 
-C’est exactement ce qui m’a toujours bloqué, je me suis toujours dit "tu vas te tourner les pouces et en plus tu vas devoir faire croire à tes collègues que tu travailles". 
+C’est exactement ce qui m’a toujours bloqué, je me suis toujours dit "tu vas te tourner les pouces et en plus tu vas devoir faire croire à tes collègues que tu travailles".
 
-Mais en fait le rôle de scrum master ne se réduit pas juste à régler des situations bloquantes ou à organiser les différentes réunions. C’est aussi d'aller à la rencontre des différents services, discuter avec eux pour être bien immergé dans le contexte de l'entreprise, penser à l'amélioration du déroulement d’un projet, etc. 
+Mais en fait le rôle de scrum master ne se réduit pas juste à régler des situations bloquantes ou à organiser les différentes réunions. C’est aussi d'aller à la rencontre des différents services, discuter avec eux pour être bien immergé dans le contexte de l'entreprise, penser à l'amélioration du déroulement d’un projet, etc.
 
 En bref, elle a évoqué beaucoup de choses auxquelles je n'avais jamais pensé et qui m’ont conforté dans l’idée que "Mais Scrum Master, c’est définitivement un vrai métier !". Et plutôt tentant en plus !
 
 ## Le scrum est une fenêtre (ou bien un mur)
 
-  
-Baptiste LeCOCQ nous a présenté dans cette conférence un retour d'expérience sur la mise en œuvre du Scrum dans son équipe de développement. 
 
-Il a pu nous expliquer que dans un premier temps, leur implémentation "à la lettre" de la célèbre méthode Scrum a certes apporté son lot d'avantages, mais aussi avec quelques inconvénients au passage. 
-Augmentation de la dette technique, évolutions trop complexes à mettre en place… Le temps de la remise en question vient donc au bout d'un an et une solution semble se dessiner : le Scrum en feature-team. 
-Malheureusement, la sub-division en plus petite équipe n'a visiblement pas résolu leurs différentes problématiques. Ils se lancent alors dans la conception de “LEUR organisation”. 
+Baptiste LeCOCQ nous a présenté dans cette conférence un retour d'expérience sur la mise en œuvre du Scrum dans son équipe de développement.
 
-Groupe de pair-programming, communication entre les développeurs et avec le client en continu. Bref, un manifesto des plus simples qui semble bien loin de la rigidité du Scrum… en apparence. 
+Il a pu nous expliquer que dans un premier temps, leur implémentation "à la lettre" de la célèbre méthode Scrum a certes apporté son lot d'avantages, mais aussi avec quelques inconvénients au passage.
+Augmentation de la dette technique, évolutions trop complexes à mettre en place… Le temps de la remise en question vient donc au bout d'un an et une solution semble se dessiner : le Scrum en feature-team.
+Malheureusement, la sub-division en plus petite équipe n'a visiblement pas résolu leurs différentes problématiques. Ils se lancent alors dans la conception de “LEUR organisation”.
+
+Groupe de pair-programming, communication entre les développeurs et avec le client en continu. Bref, un manifesto des plus simples qui semble bien loin de la rigidité du Scrum… en apparence.
 Effectivement, en conclusion de sa présentation, Baptiste nous montre qu'en effet, chaque élément important de leur nouvelle organisation se rapproche des pierres angulaires du Scrum. Ainsi, sous des formes légèrement différentes, son équipe pratiquait le Daily meeting et autres rétrospectives de fin de sprint.
 
-  
+
 ### Nos impressions :
 
 __Jérémy__ :
@@ -176,7 +176,7 @@ Petit fun fact en chiffres, il apparait qu'aujourd’hui en France, 69% des sala
 
 Par groupe de 2-3 personnes nous avons échangé autour des émotions ressenties à la suite d’une réunion où la collaboration s’est mal passée, puis sur une récente situation professionnelle qui a déclenché chez nous une émotion inconfortable. Que peut-on apprendre de cette émotion et comment la transformer pour la rendre plus confortable et surtout, constructive ?
 
- 
+
 ### Nos impressions
 
 __Maeva__ :
@@ -184,7 +184,7 @@ J’ai beau avoir eu un intérêt certain pour le sujet de la conférence, je l�
 
 Il était tout de même rassurant de se dire qu’être frustrée ou énervée par une situation au travail est le lot commun des mortels. Cependant au lieu de se laisser guider par l’émotion, il est essentiel de savoir recentrer ce sentiment sur le projet et non soi-même, afin d'en discuter et le transformer en action positive. Un peu comme le fonctionnement de l’agile sur le partage et la transparence.
 
-  
+
 
 ## The cost of Fear : how to make brave decisions
 
@@ -199,7 +199,7 @@ Dans nos projets, c’est un peu la même chose : nous utilisons régulièrement
 
 À cause de cette peur instaurée, nous n’allons pas prendre de risques, ou alors être sûrs de contrôler ces derniers avant de se lancer. Ce qui empêche créativité ou innovation de s’exprimer.
 
-L’idée est donc de concilier compréhension de la peur du risque, et but commun entre les différentes équipes, afin de pouvoir arriver à l'enchainement suivant : 
+L’idée est donc de concilier compréhension de la peur du risque, et but commun entre les différentes équipes, afin de pouvoir arriver à l'enchainement suivant :
 - Identifier le risque business ;
 - Lister cinq raisons pour lesquelles ce risque nous fait peur ;
 - Trouver des idées pour répondre à ces peurs ;
@@ -229,7 +229,7 @@ Nous nous sommes donc retrouvés avec quatre bloc-notes de couleurs différentes
 -   Un pour les questions qui ont été posées mais qui n’ont pas pu avoir de réponses de la part de l’équipe
 
 Nous sommes ensuite partis d’une US donnée dans un contexte, pour en définir ce que nous estimions être la ou les règles, puis les différents exemples pour chaque règle.
-  
+
 Cette technique permet de mettre en lumière quand une US soulève beaucoup de questions sans réponses, et donc qu'elle n’est potentiellement pas prête à être embarquée.
 
 Elle permet également de se rendre compte qua'une US est trop complexe et pourrait être découpée en plusieurs stories, car elle embarque trop de règles et de contraintes à la fois.

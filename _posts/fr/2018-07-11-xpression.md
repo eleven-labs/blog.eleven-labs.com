@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Présentation de la librairie PHP Xpression"   
+title: "Présentation de la librairie PHP Xpression"
 lang: fr
-permalink: /fr/presentation-php-xpression/  
+permalink: /fr/presentation-php-xpression/
 excerpt: "En tant que développeur nous avons tous déjà eu besoin de filtrer un jeu de donnés (array, collection, API etc...). Nous allons découvrir la librairie Xpression qui va nous permettre de filtrer différents contenus avec une syntaxe simplifiée."
-authors:  
-    - amoutte  
+authors:
+    - amoutte
 categories:
     - php
     - library
@@ -95,10 +95,10 @@ Pour gérer correctement vos expressions vous pouvez utiliser les parenthèses `
 Par exemple, cette expression sélectionnera les `Raccoon` ou les `Schizo` qui ont plus de 100 points.
 
 `planet='Raccoon'|name='Schizo'&point>100` est identique à `planet='Raccoon'|(name='Schizo'&point>100)`
- 
-Alors que l'expression suivante sélectionnera les astronautes `Raccoon` qui ont plus de 100 points ou les `Schizo` qui on plus de 100 points. 
- 
-`(planet='Raccoon'|name='Schizo')&point>100` 
+
+Alors que l'expression suivante sélectionnera les astronautes `Raccoon` qui ont plus de 100 points ou les `Schizo` qui on plus de 100 points.
+
+`(planet='Raccoon'|name='Schizo')&point>100`
 
 ## Utilisation
 
@@ -121,7 +121,7 @@ class Astronaut {
     private $planet;
     private $points;
     private $rank;
-    
+
     public function __construct($name, $planet, $points, $rank)
     {
         $this->name = $name;
@@ -129,7 +129,7 @@ class Astronaut {
         $this->points = $points;
         $this->rank = $rank;
     }
-    
+
     public function getName()
     {
         return $this->name;
@@ -139,12 +139,12 @@ class Astronaut {
     {
         return $this->planet;
     }
-    
+
     public function getPoints()
     {
         return $this->points;
     }
-    
+
     public function getRank()
     {
         return $this->rank;
@@ -269,7 +269,7 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 
 ### Filtrer une ArrayCollection
 
-Pour filtrer une ArrayCollection il suffit d'utiliser le bridge `Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter`. 
+Pour filtrer une ArrayCollection il suffit d'utiliser le bridge `Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter`.
 
 {% raw %}
 ```php
@@ -297,7 +297,7 @@ $filteredAstronauts = $astronauts->matching(new Criteria($expression));
 > Pour filtrer une `Collection` vous pouvez utiliser `ClosureExpressionBuilder` vu précédemment et l'injecter dans `Collection::filter(Closure $p)`.
 
 ### Filtrer des données stockées en base
- 
+
 #### Doctrine ODM
 
 Bien, maintenant imaginons que ces données soient dans une base de données MongoDB.
@@ -396,7 +396,7 @@ Dans l'exemple suivant on indique que tous les champs (`*`) de la query sont pr�
 ```php
 $parser = new Parser(
     new MapperExpressionBuilder(
-        new ExprAdapter(new Expr()), 
+        new ExprAdapter(new Expr()),
         ['*' => 'a.%s']
     )
 );
@@ -406,11 +406,11 @@ $parser = new Parser(
 ### Filtrer un endpoint d'API
 
 Actuellement si vous voulez filtrer votre API vous pouvez :
- 
+
  - utiliser GraphQL.
- 
-> Ce n'est pas la solution la plus légère à implementer. N'est pas forcément adaptée pour faire uniquement du filtrage de données. 
- 
+
+> Ce n'est pas la solution la plus légère à implementer. N'est pas forcément adaptée pour faire uniquement du filtrage de données.
+
  - récupérer les paramètres de requête manuellement et fabriquer votre query avec tous un tas de condition
 
 > la syntaxe http des paramètres n'est pas lisible et peut devenir très lourde pour des requêtes complexes.
@@ -433,7 +433,7 @@ Il faut également activer la correction de querystring pour que les caractères
 \Symftony\Xpression\QueryStringParser::correctServerQueryString(); // ajoutez cette ligne juste avant la création de la Requete
 $request = Request::createFromGlobals();
 // ...
-``` 
+```
 {% endraw %}
 
 Pour l'utiliser il vous suffit uniquement d'ajouter l'annotation `@Xpression(expressionBuilder="odm")` au-dessus du controller que vous souhaitez filtrer.
@@ -469,10 +469,10 @@ class AstronautController extends AbstractController
 ```
 {% endraw %}
 
-Vous pouvez également configurer les options suivantes : 
+Vous pouvez également configurer les options suivantes :
 
  - source (la source de la query (request, query, attributes, cookies, files, server, headers default: query))
- - sourceName (le nom du param, dans la source, qui contient l'expression default:query) 
+ - sourceName (le nom du param, dans la source, qui contient l'expression default:query)
  - targetName (le nom de l'argument a injecter dans le controller default:query)
  - expressionBuilder (le nom de l'expressionBuilder à utiliser *requis*)
 
@@ -494,7 +494,7 @@ Voici une petite liste des futures ajouts dans la librairie :
 - fixer l'utilisation des paramètres de query (placeholder).
 - créer d'autre bridges.
 - refacto le coeur de la librairie afin d'être extensible (pouvoir ajouter des syntaxes).
-- implémenter un builder de query en PHP et JS afin de pouvoir créer directement le query textuel. 
+- implémenter un builder de query en PHP et JS afin de pouvoir créer directement le query textuel.
 
 ### Liens utiles
 
