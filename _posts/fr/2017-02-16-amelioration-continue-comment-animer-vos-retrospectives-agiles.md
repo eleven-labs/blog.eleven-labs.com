@@ -14,8 +14,6 @@ tags:
     - scrum
     - agile
     - retrospective
-    - Inspect &amp; Adapt
-    - Amélioration continue
 cover: /assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-heart-retrospective.jpg
 ---
 

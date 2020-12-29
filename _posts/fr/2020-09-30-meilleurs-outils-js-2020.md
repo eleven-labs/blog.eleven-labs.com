@@ -18,7 +18,7 @@ tags:
     - Outils
     - Aide
     - docker
-    -  chrome
+    - chrome
     - NPM
     - storybook
     - Bit

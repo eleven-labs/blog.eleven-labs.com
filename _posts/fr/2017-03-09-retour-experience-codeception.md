@@ -97,7 +97,7 @@ Configuration :
 class_name: ApiTester
 modules:
     enabled:
-        - symfony:
+        - Symfony:
             app_path: '../../app'
             var_path: '../../var'
         - REST:

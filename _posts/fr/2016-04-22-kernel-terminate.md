@@ -11,7 +11,8 @@ categories:
     - symfony
     - php
 tags:
-    - notag
+    - php
+    - symfony
 ---
 Symfony 2 c'est plusieurs composants -dont le domaine d'application est spécifique- qui forment les parpaings d'une maison ; pour assembler tout ça, un autre composant existe, à la fois le parpaing et le ciment : l'EventDispatcher. Son rôle est de distribuer des événements qui seront traités par les divers composants.
 

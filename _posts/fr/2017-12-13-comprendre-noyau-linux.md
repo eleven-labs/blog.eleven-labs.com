@@ -167,7 +167,7 @@ Voilà qui conclut cette première approche du noyau Linux et de quelques géné
 
 Une petite rubrique pour conclure cette introduction à la compilation d'un Kernel avant de rentrer dans le vif du sujet.
 
- - linux 4.9 (2016) contient environ 22 million de lignes de code pour 56 000 fichiers ;
+ - Linux 4.9 (2016) contient environ 22 million de lignes de code pour 56 000 fichiers ;
  - Le fait pour le noyau d'être open source permet de gérer très rapidement de nombreux devices tels que des Raspberry Pi dernière génération, grâce aux contributions de la communauté ;
  - Il est possible d'avoir plusieurs entrées dans son bootloader (grub/lilo) pour booter sur divers kernels ;
  - Toute la configuration d'un kernel (à compiler/compilé) est disponible dans /usr/src/linux/.config ;
