@@ -209,7 +209,7 @@ $ curl --data-urlencode "title=GraphQL" http://localhost:3000/authors/3/articles
 
 **Filtering** is done using query parameters: `GET http://localhost:3000/articles?title=GraphQL`.
 
-**Sort** is as easy as adding `_sort` & `_order` (`asc` & `desc`) query parameters: 
+**Sort** is as easy as adding `_sort` & `_order` (`asc` & `desc`) query parameters:
 
 `GET http://localhost:3000/articles?_sort=likes`
 
@@ -556,7 +556,7 @@ Connection: keep-alive
 Here is what Mozilla Developer Network tells about it:
 
 > The `WWW-Authenticate` and `Proxy-Authenticate` response headers define the authentication method that should be used to gain access to a resource. They need to specify which authentication scheme is used so that the client that wishes to authorize knows how to provide the credentials.
-> 
+>
 > <cite>[HTTP authentication : `WWW-Authenticate` and `Proxy-Authenticate` headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#WWW-Authenticate_and_Proxy-Authenticate_headers){:rel="nofollow noreferrer"}</cite>
 
 Then we test again, and this time we add credentials to our request (Notice: `curl`'s `--user` option is not restricted to basic authentication, we can do other types of authentication, [see here](https://ec.haxx.se/http-auth.html)){:rel="nofollow noreferrer"}:

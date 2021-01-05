@@ -44,7 +44,7 @@ Tout à fait. Je pense que [tout développeur se doit de s’intéresser à d’
 >
 > — Micha Mazaheri (@mittsh) [9 Novembre 2015](https://twitter.com/mittsh/status/663663348312092672){:rel="nofollow noreferrer"}
 >
->  
+>
 
 **Mais le Golang, c’est demandé/utilisé ?** En France, à part MailJet qui était un ambassadeur de la conférence, je n’ai jamais entendu parler de sociétés qui le mettent en avant. Même les entreprises de formation n’ont pas l’air de s’en soucier. \#dotgoeu a été très “influent” sur Twitter ce jour là vers San Francisco.
 

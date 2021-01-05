@@ -10,7 +10,7 @@ authors:
     - mpeaudecerf
 categories:
     - agile
-    - product owner 
+    - product owner
 tags:
     - agile
     - event
@@ -46,14 +46,14 @@ En 2017, les **“Feature teams”** voient le jour. Mais très vite, les object
 Enfin, en 2019, en complément de ces “Mission teams” est ajoutée une organisation en **“Dual Track”**, suite au constat de la dette technique qui ne fait qu’augmenter. Il n’est donc plus question de passer 2 jours par-ci par-là pour se pencher sur la question, mais clairement de dédier une “Platform team” de 25% des effectifs dev à cette dette technique. Une rotation a été instaurée pour que ces effectifs changent régulièrement et une **“Technical Roadmap”** sur 3 mois leur permet de ne pas tomber dans les travers des tâches qui ne finissent jamais.
 
 Globalement, l’objectif donné n’est pas de la faire baisser, ni de l’augmenter, mais de la rendre **“neutre”**.
- 
+
 Mais pour que tout cela puisse fonctionner il faut avant tout que l’entreprise, dans sa manière de fonctionner et de penser, s’agilise à tous les niveaux :
 
--   Opérationnel avec des équipes de développement en agile (scrum, kanban…)  
--   Tactique en adoptant une posture de “Lean” tout au long du développement des produits  
--   Stratégique en mettant en place des objectifs (OKR) qui servent le produit et la technique  
+-   Opérationnel avec des équipes de développement en agile (scrum, kanban…)
+-   Tactique en adoptant une posture de “Lean” tout au long du développement des produits
+-   Stratégique en mettant en place des objectifs (OKR) qui servent le produit et la technique
 -   Culturel en construisant petit à petit une vraie culture de l’innovation
-    
+
 
 ***L'avis de Maeva :** Sujet très intéressant que ceui de la dette technique, bien souvent mis à la trappe par les directions métiers ou les CTO non avertis. Et qui fait pâtir aussi bien le produit que les équipes quand on la laisse faire sa vie. Bien plus compliquée à mettre en place dans des petites équipes, et probablement imparfaite, la dynamique adoptée pour trouver une organisation pouvant répondre le mieux possible à la dette technique - fléau commun à tout produit logiciel - a le mérite de se pencher sur la question.*
 
@@ -100,7 +100,7 @@ Le résultat : une Value Stream Map Produit et Value Stream Map Client alignées
 ***L'avis de Marion :** Une méthode très intéressante quand un besoin de rapprocher le développement des objectifs business se fait sentir. Il semble en effet permettre d’aligner toutes les parties prenantes vers un objectif commun et être un bon point de départ pour faire ouvrir les yeux sur la nécessité de revoir les process et l’implication des différentes parties prenantes aux différentes étapes de développement d’un produit qui a de la valeur pour le client !*
 
 
-## Scrum Master Toolkit - Sweta Mistry 
+## Scrum Master Toolkit - Sweta Mistry
 
 Sweta Mistry (Agile coach CSM, CSP et CSPO), venue tout droit de New York pour nous former, nous a embarqués dans une session ultra interactive avec pour but d’étoffer notre boîte à outils Scrum.
 
@@ -118,10 +118,10 @@ On découvre notamment l’”Impromptu Networking”, qui nous permet de créer
 
 -   Une invitation structurante de la personne qui lead le meet-up : une consigne claire comme par exemple, "partagez une problématique du quotidien et ce que vous attendez du meetup"
 -   Un agencement de l’espace adéquat et le matériel nécessaire
--   Une distribution des rôles définie : les participants choisissent eux-même leur partenaire dans la salle par exemple 
+-   Une distribution des rôles définie : les participants choisissent eux-même leur partenaire dans la salle par exemple
 -   Une configuration des groupes définie : par pair
 -   Une séquence définie, un temps alloué : 2 mins par round / 5 rounds
-    
+
 Sweta nous conseille d’approfondir sans plus attendre les [Liberating Structures](http://www.liberatingstructures.com/) et le concept de [Training from the back of the room](https://bowperson.com/sharons-articles/) de Sharon Bowman's qui consiste en tant que formateur ou animateur à donner les instructions pertinentes aux participants puis à se mettre en retrait pour les laisser apprendre en faisant.
 
 On continue à remplir notre boîte à outils avec les 6 TRUMPS :
@@ -132,14 +132,14 @@ On continue à remplir notre boîte à outils avec les 6 TRUMPS :
 -   Plus vous ferez court, plus les participants mémoriseront les informations. Ainsi, divisez vos contenus en petits segments, faites un networking impromptu puis reprenez une session de partage de contenu ;
 -   Variez les formats, les contenus, les images. Notre cerveau remarque le changement et ignore les informations qui semblent similaires ;
 -   Utilisez des visuels ! La mémoire à long terme des images semble illimitée et le cerveau crée facilement des scénarios à partir d’images !
-    
+
 
 On parlera enfin d’intelligence émotionnelle qu’Howard Gardner décrit ainsi “Your EQ is the level of your ability to understand other people, what motivates them and how to work cooperatively with them” et contrairement au quotient intellectuel, eh bien l’intelligence émotionnelle ça se travaille nous dit Sweta ! On apprend donc qu’on pourra améliorer notre Self-awareness, notre Self-regulation, notre Motivation, notre empathie et nos Social skills.
 
 ***L'avis de Marion** On repart en effet avec beaucoup de pratiques très concrètes dans notre petit baluchon, que l’on aura pu tester en live ! Pas sûr qu’on puisse toutes les mettre en pratique dans nos rétros, démos etc... mais ca nous donne beaucoup d’idées pour engager, faire participer, mieux communiquer, mieux réagir... On est resté un peu sur notre faim car on aurait aimé en savoir plus sur le mind maps, le story mapping, l’impact mapping… Et finalement, ce n’est pas qu’un Toolkit de Scrum Master mais des pratiques qui peuvent aider tous ceux qui animent des événements, des meetups ou une équipe !*
 
 ## Booster vos événements Scrum avec les Liberating Structures - Philippe Pushmann
-  
+
 La journée a commencé par une première présentation de Philippe Pushmann de la société Avanade, un conférencier habitué de l'Agile Tour puisque j'avais déjà eu l'occasion de l'écouter en 2017.
 
 Pour cette session 2019, le sujet était : les liberating structures.
@@ -213,15 +213,15 @@ Mais comment réussir à travailler avec une seule branche commune ?
 En faisant de l’intégration continue, nous a-t-il répondu, qui permet notamment de :
 
 -   Résoudre le problème de symétrie du code
-    
--   Eviter le Git Spaghetti
-    
--   Mettre en place un collective ownership plus important
-    
--   Réduire le work in progress d’une feature (car tout le monde est dessus en même temps)
-    
 
-  
+-   Eviter le Git Spaghetti
+
+-   Mettre en place un collective ownership plus important
+
+-   Réduire le work in progress d’une feature (car tout le monde est dessus en même temps)
+
+
+
 Ce qui pour autant ne permet tout de même pas d’éviter tous les conflits, notamment en faisant des push sur la même branche et en écrasant le travail de l’autre !
 
 Younes Jaaidi nous a donc présenté le **shared programming** à travers le principe du Limbo : quel est le plus petit commit qu'il soit possible de faire, au même titre que, jusqu’où est-il possible de se baisser au Limbo ?
@@ -232,7 +232,7 @@ Dans sa vision du développement, un commit ne doit pas être une feature, mais 
 
 En poussant encore plus loin, ils se sont d’ailleurs essayés au **“Timeboxed TDD”**. Chaque commit est timeboxé, et si pour le développer cela vous prend plus de 30 mins : c’est que c’était probablement une mauvaise idée. HOP, c’est revert.
 
- 
+
 ***L'avis de Maeva :** Technique un peu drastique qui doit peut-être bien fonctionner dans des petites équipes de développeurs qui se connaissent déjà. Mais je vois d’ores et déjà plusieurs barrières. La première est l’effort constant et au quotidien de communication imposé entre individus. Nous sommes tous humain, il arrivera donc forcément un moment où ce ne sera pas le bon jour et où potentiellement la productivité chutera.
 Je pense également que cela implique parfois de passer plus de temps à échanger machinalement et moins de temps à produire réellement, pPour plus d’efficience par la suite, peut-être, et c’est intéressant dans le cas d’un produit qui se cherche. Mais probablement beaucoup moins dans des équipes où la direction du produit est déjà bien travaillée en amont.*
 
@@ -262,7 +262,7 @@ Vous l’aurez compris, l’Aile a donc besoin de talents avec un Growth Mindset
 
 La Communication Non Violente (CNV) : voilà un concept qui valait bien un atelier lors de cet Agile Tour 2019 animé de mains de maître par Laetitia Thernier et Geoffrey Groff.
 
-L'exercice se déroule en six phases, pourquoi six ? Vous allez très vite le savoir.  
+L'exercice se déroule en six phases, pourquoi six ? Vous allez très vite le savoir.
 
 **Première étape** : en binôme, commencer par faire connaissance avec votre partenaire du jour. C'est toujours utile de savoir à qui l'on s'adresse !
 **Deuxième étape** : partons sur une situation qui nous crée de l'inconfort.
@@ -275,5 +275,5 @@ Réfléchissez à comment réagir face à un refus de l'interlocuteur, pensez à
 
 ***L'avis de Renaud :** Cette méthode s'applique à tous les contextes. Selon nos conférenciers et moi-même au sortir de cet atelier, nous avons à faire à un vrai art de vivre !*
 
-## Conclusion 
+## Conclusion
 C’est sur ces ateliers qui nous ont le plus marqués que se terminent nos chroniques de l’Agile Tour 2019 ! Un sentiment partagé d’un événement moins orienté Product Ownership que l’année précédente, mais de plus en plus Agile à tous les niveaux - et particulièrement vers le Scrum Mastering. Ce qui n’en fait pas moins un événement intéressant, et qui peut-être intéressera au fil du temps des profils plus techniques sur l’agilité !

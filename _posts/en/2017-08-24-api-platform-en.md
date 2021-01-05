@@ -14,7 +14,7 @@ cover: /assets/2017-07-25-api-platform/cover.jpg
 ---
 
 API Platform defines itself as a « PHP framework to build modern web APIs ». Indeed, this tool will help us rapidly build a rich and easily usable API.
-Why reinvent the wheel? API Platform comes with a bunch of _features_ like an automatic documentation, filters, sorts, and many more.  
+Why reinvent the wheel? API Platform comes with a bunch of _features_ like an automatic documentation, filters, sorts, and many more.
 
 In this article, we're going to build an API using API Platform, and talk about some of the features that comes with it. I will assume that API platform has already been installed in your project.
 
@@ -100,7 +100,7 @@ class Movie
 // ...
 }
 ```
-You can now query your API with the following URL: `movies?name=O&order[name]=desc`  
+You can now query your API with the following URL: `movies?name=O&order[name]=desc`
 Very simple to implement right?
 
 Obviously, you can create your own [API Platform filters](https://api-platform.com/docs/core/filters#creating-custom-filters){:rel="nofollow noreferrer"}.

@@ -16,7 +16,7 @@ tags:
 date: 2015-05-11 10:05:07 +0200
 date_gmt: 2015-05-11 08:05:07 +0200
 
-cover: 
+cover:
 ---
 
 A l’heure où tout le monde ne parle que de Big data, je vais tenter de vous présenter les microdata.

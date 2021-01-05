@@ -103,6 +103,7 @@
     ) {
       $tint: nth($appearance, 1);
       $icon: nth($appearance, 2);
+      $name: nth($names, 1);
 
       // Define base class
       &%#{nth($names, 1)},
@@ -125,8 +126,8 @@
       // Define synonyms for base class
       @if length($names) > 1 {
         @for $n from 2 through length($names) {
-          &.#{nth($names, $n)} {
-            @extend .admonition%#{nth($names, 1)};
+          .#{nth($names, $n)} {
+            @extend .#{$name};
           }
         }
       }

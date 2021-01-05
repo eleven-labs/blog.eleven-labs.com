@@ -40,7 +40,7 @@ Pour résoudre les différents problèmes de compatibilité, de performances et 
 ![wsl2-architecture]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/wsl2-architecture.png  "Architecture WSL 2")
 
 ## Activation de WSL 2
-    
+
 À la rédaction de ce guide, pour profiter de WSL2, il vous faudra rejoindre le [programme Windows Insider](https://insider.windows.com/fr-fr/getting-started/)
 
 - Ouvrez les paramètres [Windows Insider](ms-settings:windowsinsider "Ouvre les paramètres Windows Insider")
@@ -94,7 +94,7 @@ Passer Ubuntu en WSL2
 wsl --set-version Ubuntu 2
 ```
 
-Lancer Ubuntu et se positionner dans le répertoire de l'utilisateur courant. 
+Lancer Ubuntu et se positionner dans le répertoire de l'utilisateur courant.
 
 ```powershell
 wsl ~ -d Ubuntu
@@ -118,7 +118,7 @@ sudo usermod -aG docker $USER
 ```
 
 ```bash
-# On se reconnecte avec l'utilisateur courant pour appliquer les droits  
+# On se reconnecte avec l'utilisateur courant pour appliquer les droits
 su - $USER
 ```
 
@@ -164,7 +164,7 @@ Dans les grande lignes, l'astuce consiste à remplacer le shell de l'utilisateur
 
 ## Windows Terminal
 
-![Windows Terminal]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/windows-terminal.png  "Windows Terminal") 
+![Windows Terminal]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/windows-terminal.png  "Windows Terminal")
 
 [Windows Terminal](https://www.microsoft.com/fr-fr/p/windows-terminal-preview/9n0dx20hk701) ([source](https://github.com/microsoft/terminal)) est un terminal moderne, configurable et personnalisable qui centralise PowerShell, Cmd, Azure Cloud Shell et vos shells Linux en une seule application.
 
@@ -191,8 +191,8 @@ Des thèmes pour Windows Terminal sont disponibles dans le dépôt Github [mbado
 
 ### Copier/Coller
 
-Windows identifie les fins de lignes avec la séquence CRLF `\r\n`.  
-Sous Linux, les fins de lignes n'utilisent que le caractère LF `\n`.  
+Windows identifie les fins de lignes avec la séquence CRLF `\r\n`.
+Sous Linux, les fins de lignes n'utilisent que le caractère LF `\n`.
 
 Pour éviter de vous retrouver avec des doublements de lignes dans Windows Terminal quand vous collez du texte, je vous suggère d'utiliser [AutoHotKey](https://www.autohotkey.com/), _(qui est un utilitaire permettant d'automatiser des tâches sous Windows)_.
 
@@ -217,7 +217,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
         Clipboard := RegExReplace(Var, "\r\n?|\n\r?", "`n")
         return
     }
-    
+
     RButton::
     ^+v::
         RemoveCrlfFromClipBoard()
@@ -278,7 +278,7 @@ Puis lancez une application graphique
 apt update && apt install -y mesa-utils && glxgears
 ```
 
-Vous pouvez même lancer les applications graphiques depuis Docker 🐳.  
+Vous pouvez même lancer les applications graphiques depuis Docker 🐳.
 [Jess Frazelle](https://github.com/jessfraz "Profil Github de Jess Frazelle"), dans son article [Docker Containers on the Desktop](https://blog.jessfraz.com/post/docker-containers-on-the-desktop/ "Article en anglais: Docker Containers on the Desktop") aborde en détail la marche à suivre. Son dépôt est disponible [ici](https://github.com/jessfraz/dockerfiles "Dépôt Github jessfraz/dockerfiles")
 
 ```shell
@@ -319,6 +319,6 @@ Ceci n'est pas une liste exhaustive, mais de plus en plus de logiciels prévoien
 
 ### PHPStorm
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The 2019.3 Early Access Program gets close to the finish line. But we have something new for you in the fresh build – WSL Support! <a href="https://t.co/PgVZbyYoAU">https://t.co/PgVZbyYoAU</a> <a href="https://t.co/wvzdEOrYAo">pic.twitter.com/wvzdEOrYAo</a></p>&mdash; JetBrains PhpStorm (@phpstorm) <a href="https://twitter.com/phpstorm/status/1187633307896430592?ref_src=twsrc%5Etfw">October 25, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The 2019.3 Early Access Program gets close to the finish line. But we have something new for you in the fresh build – WSL Support! <a href="https://t.co/PgVZbyYoAU">https://t.co/PgVZbyYoAU</a> <a href="https://t.co/wvzdEOrYAo">pic.twitter.com/wvzdEOrYAo</a></p>&mdash; JetBrains PhpStorm (@phpstorm) <a href="https://twitter.com/phpstorm/status/1187633307896430592?ref_src=twsrc%5Etfw">October 25, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 L'[Early Access 2019.3 de PHPStorm](https://blog.jetbrains.com/phpstorm/tag/2019-3/) pour Windows ajoute le support de WSL et la fonctionnalité ne tardera pas à rejoindre la version stable de L'IDE.

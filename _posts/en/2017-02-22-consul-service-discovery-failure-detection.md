@@ -3,7 +3,7 @@ layout: post
 title: 'Consul: Service Discovery and Failure Detection'
 lang: en
 permalink: /consul-service-discovery-failure-detection/
-authors: 
+authors:
     - vcomposieux
 date: '2017-02-22 10:50:16 +0100'
 date_gmt: '2017-02-22 09:50:16 +0100'

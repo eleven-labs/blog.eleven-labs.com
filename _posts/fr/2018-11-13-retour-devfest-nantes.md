@@ -17,21 +17,21 @@ tags:
 cover: /assets/2018-10-23-retour-devfest-nantes/cover.jpg
 ---
 
-## Le devfest en quelques mots  
+## Le devfest en quelques mots
 
 Le DevFest est un évènement sur deux jours qui réunit toute la communauté de développeurs autour de conférences orientées sur le web et le cloud computing. Les sujets sont variés. Cela passe par du Web, Mobile et par toutes les technologies back avec du Cloud, Big Data, Machine Learning, DevOps, et enfin des sujets plus ouverts à la découverte.
 
 Chaque année un nouveau thème est choisi. Cette année c'était le thème de l'espace. C'est donc tout naturellement que la fusée Eleven Labs et les astronautes nantais ont assisté au DevFest.
 
-## L'équipe  
+## L'équipe
 
 Trois astonautes étaient présents : Marie, Thierry et Carl. Chacun a pu assister à différents talks, selon leur intérêt pour les sujets présentés. Voici leurs retours !
 
-## Hacker les catastrophes naturelles par Gaël Musquet  
+## Hacker les catastrophes naturelles par Gaël Musquet
 
-La Cybersécurité est souvent associée aux failles et attaques, à la confidentialité, et à la disponibilité des infrastructures. Mais les catastrophes naturelles restent négligées comme risques majeurs dans nos métiers.  
+La Cybersécurité est souvent associée aux failles et attaques, à la confidentialité, et à la disponibilité des infrastructures. Mais les catastrophes naturelles restent négligées comme risques majeurs dans nos métiers.
 
-Cette conférence, qui était orientée sur la sécurité et l'alerte aux populations m'a beaucoup intéressé puisque qu'elle parlait de scénarios catastrophe qui pourraient arriver n'importe quand. Le problème est que nous ne sommes pas préparés, ni même informés.  
+Cette conférence, qui était orientée sur la sécurité et l'alerte aux populations m'a beaucoup intéressé puisque qu'elle parlait de scénarios catastrophe qui pourraient arriver n'importe quand. Le problème est que nous ne sommes pas préparés, ni même informés.
 
 Cela m'a permis de découvrir le monde de la radio amateure et des moyens simples pour commencer à expérimenter. Par exemple, avec un récepteur TNT en USB il est possible d'écouter les avions, d'intercepter des messages en clair, etc.. C'est donc bien du hacking au sens premier et non celui qui est médiatisé. Un autre exemple de hack, c'est l'ajout d'un récepteur FM pour diffuser une alerte dans les détecteurs d'incendie.
 
@@ -49,7 +49,7 @@ La conférence m'a beaucoup intéressé car elle n'a pas fait qu'une liste de co
 {% endraw %}
 
 Voici quelques commandes et concepts que j'ai appris :
- 
+
 Fix du commit A au milieu de la branche
 - `git commit --fixup A` crée un commit de fixup
 - `git rebase -i A~ --autosquash` git rebase avec le commit de fixup
@@ -87,7 +87,7 @@ Retrouvez la présentation [ici](https://www.youtube.com/watch?v=wk2uOJmzNVY) et
 
 ## Highway to Elm! par Jordane Grenat
 
-Cette présentation nous a donné envie de tester ELM. Vous imaginez ? Finies les exceptions runtime, les problèmes de compatibilité entre navigateurs, etc. !  
+Cette présentation nous a donné envie de tester ELM. Vous imaginez ? Finies les exceptions runtime, les problèmes de compatibilité entre navigateurs, etc. !
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">Say goodbye to runtime exceptions with ELM by <a href="https://twitter.com/JoGrenat?ref_src=twsrc%5Etfw">@JoGrenat</a> <a href="https://twitter.com/hashtag/DevFestNantes?src=hash&amp;ref_src=twsrc%5Etfw">#DevFestNantes</a> <a href="https://t.co/zFNUniPWfz">pic.twitter.com/zFNUniPWfz</a></p>&mdash; Marie Gautier (@marie_minasyan) <a href="https://twitter.com/marie_minasyan/status/1052913477017329664?ref_src=twsrc%5Etfw">18 octobre 2018</a></blockquote>

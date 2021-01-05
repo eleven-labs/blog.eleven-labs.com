@@ -75,7 +75,7 @@ Schéma sur le fonctionnement sur device / simulateur.
 
 Le framework Calabash fournit un petit serveur HTTP intégré qui permet aux tests de communiquer et de contrôler l'application pendant qu'elle s'exécute sur le périphérique. Cependant, le framework Calabash ne doit pas être inclus dans les versions Release de l'IPA.
 
-## Installation  
+## Installation
 
 ### Dépendances Ruby
 
@@ -157,7 +157,7 @@ end
 
 target 'calabashCucumber-cal' do
   use_frameworks!
-  
+
   pod 'SwiftMessages'
   pod 'Calabash'
 end
@@ -195,7 +195,7 @@ Magique, non ? :)
 ## Gherkin - Cucumber
 
 Nous allons partir du principe que vous travaillez avec un PO exceptionnel qui connaît le Gherkin !
-Il rédige donc les scénarios d'acceptation de test de chaque écran dans des fichiers `.features` 
+Il rédige donc les scénarios d'acceptation de test de chaque écran dans des fichiers `.features`
 
 Aide :
 
@@ -427,7 +427,7 @@ Given(/^the app has launched$/) do
       !query("*").empty?
     end
 end
-  
+
 When(/^I do nothing$/) do # Ne fait rien.
 end
 
@@ -509,7 +509,7 @@ func isValidEmail(email: String) -> Bool {
 
     return emailTest.evaluate(with: email)
 }
-``` 
+```
 
 ### Inscription Validation
 
@@ -547,7 +547,7 @@ func isValidEmail(email: String) -> Bool {
 
     return emailTest.evaluate(with: email)
 }
-``` 
+```
 
 ### Message
 
@@ -624,7 +624,7 @@ Sur la page de la console Device Farm, entrez un nom pour votre projet.
 ![createProject](https://docs.aws.amazon.com/fr_fr/devicefarm/latest/developerguide/images/aws-device-farm-create-project.png)
 
 Si le bouton `Create a new run` s'affiche, choisissez-le.
-  
+
 
 **Step 2 - Uploader votre ipa**
 

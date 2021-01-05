@@ -3,7 +3,7 @@ layout: post
 title: Utiliser le composant Workflow de Symfony
 lang: fr
 permalink: /fr/utiliser-le-composant-workflow-de-symfony/
-authors: 
+authors:
     - vcomposieux
 date: '2016-09-27 11:05:28 +0200'
 date_gmt: '2016-09-27 09:05:28 +0200'

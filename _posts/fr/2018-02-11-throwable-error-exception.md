@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PHP 7 Throwable Errors Exceptions 
+title: PHP 7 Throwable Errors Exceptions
 lang: fr
 permalink: /fr/php7-throwable-error-exception/
 excerpt: "Les erreurs sont présentes dans notre code, dans le code des librairies externes, ou même en cas de défaillance matérielle. C'est pourquoi la maîtrise des Throwable est indispensable afin d'avoir une gestion d'erreurs de qualité."
@@ -19,7 +19,7 @@ tags:
 cover: /assets/2018-02-11-php7-throwable-error-exception/cover.jpg
 ---
 
-PHP 7 apporte un changement à la façon dont les erreurs sont rapportées. 
+PHP 7 apporte un changement à la façon dont les erreurs sont rapportées.
 Désormais la plupart des erreurs sont rapportées en lançant des exceptions `Error`.
 
 Les `Throwable` vont remonter la pile d'exécution (bubble up) jusqu'à rencontrer un des cas suivants :
@@ -27,9 +27,9 @@ Les `Throwable` vont remonter la pile d'exécution (bubble up) jusqu'à rencontr
  - si un gestionnaire d'exception est configuré via `set_exception_handler()` ;
  - sinon l'exception sera convertie en erreur FATAL et sera traitée par le système traditionnel.
 
-Nous allons donc, plus en détails, définir et voir comment utiliser `Throwable`, `Error` et `Exception`. 
+Nous allons donc, plus en détails, définir et voir comment utiliser `Throwable`, `Error` et `Exception`.
 
-## Définition  
+## Définition
 
 ### Throwable
 
@@ -85,8 +85,8 @@ interface Throwable
           |- UnexpectedValueException extends RuntimeException
 ```
 
-> ⚠ Attention ! Vous ne pouvez implémenter `Throwable` qu'à travers `Error` et `Exception`. 
-> Sinon vous obtiendrez une erreur FATAL 
+> ⚠ Attention ! Vous ne pouvez implémenter `Throwable` qu'à travers `Error` et `Exception`.
+> Sinon vous obtiendrez une erreur FATAL
 > `PHP Fatal error:  Class MyClass cannot implement interface Throwable, extend Exception or Error instead`
 > Il est quand même possible d'étendre cette interface dans le domaine utilisateur.
 
@@ -118,10 +118,10 @@ Ou si vous avez une fonction avec un nombre de paramètres variable et que le no
 
 `Exception` est la classe de base de toutes les exceptions utilisateurs.
 
-Il est très fréquent de lancer ou créer des `Exception`. 
-C'est d'ailleurs sur le fonctionnement et l'utilisation des `Exception` que nous allons nous concentrer. 
+Il est très fréquent de lancer ou créer des `Exception`.
+C'est d'ailleurs sur le fonctionnement et l'utilisation des `Exception` que nous allons nous concentrer.
 
-## Utilisation  
+## Utilisation
 
 ### Lancer une exception
 
@@ -152,7 +152,7 @@ try {
 > sinon il affichera le message d'erreur comme quoi il est obligatoire.
 
 Vous pouvez également effectuer de multiple `catch` afin de séparer les différents types d'`Exception`.
-Il faut placer les `catch` dans l'ordre du plus précis au moins précis.  
+Il faut placer les `catch` dans l'ordre du plus précis au moins précis.
 
 ```php
 try {
@@ -180,7 +180,7 @@ try {
 } catch (OutOfBoundsException | LogicException $e) {
     echo '⚠ Une exception est survenue : ' . $e->getMessage();
 }
-``` 
+```
 
 __⚠ Il est très important de bien choisir l'`Exception` que l'on veut lancer ou attraper, sinon la gestion d'erreur ne sera pas consistante.__
 
@@ -189,7 +189,7 @@ __⚠ Il est très important de bien choisir l'`Exception` que l'on veut lancer 
 La `LogicException` référence une erreur de code qui devrait, la plupart du temps, mener à un correctif sur le code.
 Attraper une `LogicException` a généralement pour but d'afficher une page d'erreur et de logger en vue d'informer le développeur.
 
-La `RuntimeException` représente une erreur survenue durant l'exécution (donnée invalide, erreur d'une source de données). 
+La `RuntimeException` représente une erreur survenue durant l'exécution (donnée invalide, erreur d'une source de données).
 Attraper une `RuntimeException` est très utile pour exécuter un code alternatif qui permettra au script de finir son exécution.
 
 ℹ️ _Il est très fortement recommandé d'avoir un exception handler afin d'afficher une page d'erreur au visiteur.
@@ -208,10 +208,10 @@ set_exception_handler(function($exception){
 
 Le code d'erreur est un `integer` qui peut être utilisé pour codifier/identifier l'erreur.
 
-> Il permet par exemple d'afficher le code de l'erreur plutôt que le message de l'`Exception` au visiteur. 
-> Il permet de masquer la raison de l'erreur, qui peut dans certains cas contenir des informations sensibles. 
+> Il permet par exemple d'afficher le code de l'erreur plutôt que le message de l'`Exception` au visiteur.
+> Il permet de masquer la raison de l'erreur, qui peut dans certains cas contenir des informations sensibles.
 
-## Utilisation avancée  
+## Utilisation avancée
 
 ### Créer une exception personalisée
 
@@ -247,7 +247,7 @@ class MyObjectException extends RuntimeException
 ```
 
 > Quand `MyObjectException` est attrapée, on peut récupérer l'objet `MyObject` via la méthode `getMyObject()`
-> ce qui permet de gérer encore plus précisément les erreurs. 
+> ce qui permet de gérer encore plus précisément les erreurs.
 
 ### Relancer une exception
 
@@ -273,28 +273,28 @@ use Psr\Log\NullLogger;
 class UserFactory implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
-    
+
     private $passwordGenerator;
-    
+
     public function construct(PasswordGeneratorInterface $passwordGenerator)
     {
         $this->passwordGenerator = $passwordGenerator;
         $this->logger = new NullLogger();
     }
-    
-    public function create() 
+
+    public function create()
     {
         try {
             $user = new User();
             $password = $this->passwordGenerator->generatePassword();
             $user->setPassword($password);
-            
+
             return $user;
         } catch (Exception $exception) {
             $this->logger->error('Une erreur est survenue pendant la creation d\'un utilisateur. Raison: ' . $exception->getMessage());
-            
+
             throw $exception;
-        } 
+        }
     }
 }
 
@@ -330,23 +330,23 @@ Exemple concret
 class UserFactory
 {
     private $passwordGenerator;
-    
+
     public function construct(PasswordGeneratorInterface $passwordGenerator)
     {
         $this->passwordGenerator = $passwordGenerator;
     }
-    
-    public function create() 
+
+    public function create()
     {
         try {
             $user = new User();
             $password = $this->passwordGenerator->generatePassword();
             $user->setPassword($password);
-            
+
             return $user;
         } catch (RuntimeException $exception) {
             throw new UserFactoryException('Une erreur est survenue pendant la creation d\'un utilisateur.', 0, $exception);
-        } 
+        }
     }
 }
 
@@ -359,7 +359,7 @@ interface PasswordGeneratorInterface
 ```
 
 > On peut voir ici que peu importe la `RuntimeException` qui se produit dans `$this->passwordGenerator->generatePassword()`
-> l'`Exception` qui sera remontée est une `UserFactoryException` qui nous informe que la création a échouée. 
+> l'`Exception` qui sera remontée est une `UserFactoryException` qui nous informe que la création a échouée.
 > La séparation des couches logicielles est respectée.
 
 ## Conclusion
@@ -376,7 +376,7 @@ Les points positifs :
  - Facilite le débogage ;
  - Un meilleur découpage des responsabilités logicielles (SOLID) ;
  - L'utilisation des codes d'erreurs, qui permet de masquer la réelle raison aux visiteurs ;
- 
+
 Les points négatifs
  - Il faut savoir quand encapsuler/relancer une exception ;
  - La lecture/mise en forme de la stack trace peut être complexe ;

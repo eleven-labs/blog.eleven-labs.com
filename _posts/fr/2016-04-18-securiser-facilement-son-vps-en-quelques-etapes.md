@@ -2,7 +2,7 @@
 layout: post
 title: Sécuriser facilement son serveur linux en quelques étapes
 excerpt: Quelques commandes de bases qui permettent de sécuriser facilement et rapidement un serveur linux (protection ssh, iptables, fail2ban,...)
-authors: 
+authors:
     - nkania
 date: '2016-04-18 14:48:08 +0200'
 date_gmt: '2016-04-18 12:48:08 +0200'
@@ -28,7 +28,7 @@ Les commandes présentées ci-dessous sont basées sur une Debian, elles convien
 ```
 
  **Mettre à jour le serveur**
- 
+
 ```bash
  # apt-get update && apt-get upgrade
 ```
@@ -136,7 +136,7 @@ Remarque : votre configuration sera remise à zéro si vous redémarrez votre se
 
 /!\ Attention, si votre hébergeur vous a fourni une ipv6 pensez à appliquer ces règles dans l'iptables réservé aux ipv6 : ip6tables ! (rejouez les commandes ci-dessus en changeant iptables par ip6tables et pensez à les rendre persistent si vous le souhaitez).
 
-**Fail2ban : éviter de vous faire bruteforce** 
+**Fail2ban : éviter de vous faire bruteforce**
 
 ```bash
 # apt-get install fail2ban

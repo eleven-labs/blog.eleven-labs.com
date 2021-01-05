@@ -37,13 +37,13 @@ Cette initialisation du backlog va permettre à l’équipe de développement de
 Mais aussi de les éclairer sur un des premiers enjeux plus macro de ce sprint 0 : établir les fondations architecturales du produit.
 
 -   C’est bien à cette occasion que l’[architecture technique](https://blog.eleven-labs.com/fr/livre-blanc-architecture-logicielle-tout-ce-que-vous-devez-savoir/) du produit doit être posée, et conçue de manière à pouvoir répondre aux spécifications fonctionnelles qui auront pu être approchées lors de l’initialisation du backlog. Elle doit prendre en compte les différentes communications et interactions de l’app avec d’autres services, internes comme externes dont l’équipe dont elle à connaissance à ce moment-là.
-    
+
 -   Dans la même veine technique, c’est aussi le moment tout choisi pour mettre en place la [CI / CD](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/). De manière très simplifiée, il s’agit d'un processus d’automatisation d’intégration et de déploiement de code en continu, afin de pouvoir livrer sur différents environnements (de dév, de recette ou de production) le plus fluidement possible et à plusieurs développeurs. Attention, cela ne permet cependant pas de livrer "plus vite", mais surtout de le faire de manière plus sécurisé.
-    
+
 -   Le sprint 0 n’est pas juste une question de socle technique, mais aussi de fondation visuelle ! Le product designer va pouvoir rencontrer le métier, mettre en place des ateliers avec les utilisateurs, commencer à produire un [design system](https://blog.eleven-labs.com/fr/rex-le-design-system-leroy-merlin/) et pourquoi pas de premières ébauches de votre futur produit. Tout un travail en amont qui va permettre d'embarquer par la suite des développements sur une base saine et déjà validée !
-    
+
 -   L'écriture, en accord avec toute l’équipe, de la Défintion of ready (DOR) et de la Definition of done (DOD) des US de votre backlog est aussi un élément idéal à intégrer dans ce premier sprint. Tout le monde doit pouvoir ajouter ce qui lui semble pertinent, les éléments contraignants compris, dans chacune des deux définitions. Leur but commun est d’améliorer la qualité des livraisons à chaque itération du produit. Elles ne sont d’ailleurs pas figées dans le temps et peuvent (doivent) être améliorées par la suite pour mieux correspondre à l’organisation de l’équipe.
-    
+
 -   Enfin, le dernier élément qui se fera naturellement au cours de ce sprint, et qui selon moi a beaucoup d’importance sur le long terme, est qu’il va permettre au groupe de personnes impliquées sur le projet à devenir un équipe.
 Ce temps de cadrage et de découverte est aussi idéal et permet à chacun de pouvoir se former sur un environnement inconnu, de se connaître mutuellement, de comprendre les forces et les faiblesses au sein de l'équipe, et d' apprendre à travailler ensemble. Il pose aussi les bases du fonctionnement agile à adopter.
 
@@ -56,17 +56,17 @@ Ce temps de cadrage et de découverte est aussi idéal et permet à chacun de po
 ## Qu'est-ce qu'on aime moins dans le sprint 0 ?
 
 -   Il n’a pas toujours de valeur métier immédiate dans le sens où le sprint 0 n’a pas forcément de livraison à sa clôture.
-    
--   Ce sprint a lieu, comme son nom l'indique, à l'initialisation du projet. Ce qui implique que les équipes doivent prendre les bonnes décisions au moment où la connaissance de l'environnement, des utilisateurs, de l’organisation projet et de chaque membre de l’équipe est au plus bas.
-C’est également à ce moment que les engagements sont pris sur des mois, parfois même des années, notamment à travers la construction des “fondations techniques” du produit. 
 
-Comment dans ce cas pallier au mieux ces problématiques ? 
+-   Ce sprint a lieu, comme son nom l'indique, à l'initialisation du projet. Ce qui implique que les équipes doivent prendre les bonnes décisions au moment où la connaissance de l'environnement, des utilisateurs, de l’organisation projet et de chaque membre de l’équipe est au plus bas.
+C’est également à ce moment que les engagements sont pris sur des mois, parfois même des années, notamment à travers la construction des “fondations techniques” du produit.
+
+Comment dans ce cas pallier au mieux ces problématiques ?
 
 ## Conclusion
 
-De mon point de vue, le sprint 0 représente un investissement essentiel et nécessaire pour que le produit puisse voir le jour dans les meilleures conditions possibles. Autant en terme de choix fonctionnels et techniques que pour souder l'équipe à travers la connaissance des points forts et points faibles de chacun de ses membres. 
+De mon point de vue, le sprint 0 représente un investissement essentiel et nécessaire pour que le produit puisse voir le jour dans les meilleures conditions possibles. Autant en terme de choix fonctionnels et techniques que pour souder l'équipe à travers la connaissance des points forts et points faibles de chacun de ses membres.
 
-Nous pourrions penser qu'une fois la phase de cadrage terminée et que le produit commence à être développé, le sprint 0 n'aurait plus lieu d'être. 
+Nous pourrions penser qu'une fois la phase de cadrage terminée et que le produit commence à être développé, le sprint 0 n'aurait plus lieu d'être.
 
 Il me semble pourtant pertinent que chacun puisse remettre en question l'architecture, les choix du design, la vision produit, l'organisation de l'équipe ou encore les DOD et DOR à tout moment du cycle de vie du produit.
 

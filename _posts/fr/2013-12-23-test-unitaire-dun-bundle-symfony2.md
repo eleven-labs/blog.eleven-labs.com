@@ -2,7 +2,7 @@
 layout: post
 title: Test unitaire d'un bundle Symfony 2
 excerpt: Comment tester unitairement chaque bundle d'un projet Symfony 2 ? Il existe Jenkins qui  permet de tester unitairement son projet dans sa globalité.  Néanmoins, si votre projet contient 10 à 20 bundles et que vous en avez seulement modifié un, pourquoi lancer les tests sur l'ensemble du projet et attendre des heures.
-authors: 
+authors:
     - captainjojo
 lang: fr
 permalink: /fr/test-unitaire-dun-bundle-symfony2/

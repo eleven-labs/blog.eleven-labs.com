@@ -19,10 +19,10 @@ Dans mon quotidien professionnel, j’entends régulièrement ce genre de phrase
 
 Ça ne viendrait à l’esprit de personne de dire que Superman et Batman sont la même personne et font la même chose.
 
-Ce qui m’a donné envie de faire une petite mise au point là-dessus, autant pour moi-même que pour vous autres.  
+Ce qui m’a donné envie de faire une petite mise au point là-dessus, autant pour moi-même que pour vous autres.
 Et un petit retour aux origines s’impose avant tout !
 
- 
+
 ## SOMMAIRE
 
 - [PM : looking for the SuperProduct](#pm--looking-for-the-superproduct)
@@ -30,7 +30,7 @@ Et un petit retour aux origines s’impose avant tout !
 - [PM / PO : nothing alike](#pm--po--nothing-alike)
 - [PM + PO : dawn of product](#pm--po--dawn-of-product)
 - [Conclusion : extrasensory perception](#conclusion--extrasensory-perception)
-  
+
 ## PM: looking for the SuperProduct
 
 Le rôle de Product Management est arrivé très tôt dans la gestion de projet des entreprises. Plus précisément en 1931 du côté de chez Procter & Gamble, initié par un certain [Neil H. McElroy](https://www.mindtheproduct.com/2015/10/history-evolution-product-management/), grand visionnaire à l’époque, avec son memo sur le “Brand Man”.
@@ -77,7 +77,7 @@ Le Product Owner doit s’assurer que le produit est développé en fonction de 
 
 Voici un tableau récapitulatif, avec une vision macro, de la répartition des rôles entre le product manager, le product owner, et toute la team dans un projet agile :
 
- ![]({{site.baseurl}}/assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-po-team-differences.png) 
+ ![]({{site.baseurl}}/assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-po-team-differences.png)
 
 Pour conclure sur ces comparatifs, le PO est défini par SCRUM et l’agilité de manière générale, il n’existe pas sans l’équipe de développement.
 
@@ -97,7 +97,7 @@ Il est aussi évident que toutes les sociétés n’ont pas les moyens de se pay
 
  ![]({{site.baseurl}}/assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-vs-po-justice-league.jpg)
 
-Voici une petite liste des pours et des contres à cette solution : 
+Voici une petite liste des pours et des contres à cette solution :
 
 ### Pour
 - Réduit les intermédiaires avec un unique point d'entrée pour le métier ou les utilisateurs vers les développeurs
@@ -113,8 +113,8 @@ Voici une petite liste des pours et des contres à cette solution :
 
 ## Conclusion: extrasensory perception
 
-Pour conclure, à l'image de nos supers héros et de leur Justice League, le PM et le PO ont bien chacun leurs spécificités et un rôle différent, mais oeuvrent dans le même but. 
+Pour conclure, à l'image de nos supers héros et de leur Justice League, le PM et le PO ont bien chacun leurs spécificités et un rôle différent, mais oeuvrent dans le même but.
 La communication entre les deux est essentielle et l'union fait leur force.
 
-Cependant, ils peuvent tout aussi bien exister indépendamment et être autonome, en assumant partiellement la charge de l'autre. 
+Cependant, ils peuvent tout aussi bien exister indépendamment et être autonome, en assumant partiellement la charge de l'autre.
 On peut facilement faire le parallèle avec un développeur qui serait aussi scrum master. Ce n'est pas l'organisation la plus idéale au monde, mais en faisant attention à l'impartialité et au temps à allouer aux différentes casquettes, elle peut également fonctionner.

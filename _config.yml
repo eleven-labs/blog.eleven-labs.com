@@ -91,7 +91,6 @@ plugins:
     - jekyll-paginate
     - jekyll-multiple-languages-plugin
     - jekyll-seo-tag
-    - algoliasearch-jekyll
     - jekyll-feed
     - amp-jekyll
     - uglifier
@@ -107,6 +106,7 @@ exclude:
     - bin
     - vendor
     - docker-compose.yml
+    - .jekyll-cache
 
 collections:
   authors:

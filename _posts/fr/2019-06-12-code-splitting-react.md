@@ -106,7 +106,7 @@ Au passage, **notez bien que vous n'êtes pas obligé de TOUT importer en mode l
 
 ## Et le composant Suspense
 
-En début d'article, je vous ai parlé du composant **Suspense** de React, implémentons-le. 
+En début d'article, je vous ai parlé du composant **Suspense** de React, implémentons-le.
 
 ```js
 // on importe le composant Suspense
@@ -137,7 +137,7 @@ Le composant `<Suspense>` n'est pas indispensable lors du code splitting, mais i
 Grace au lazy, React permet enfin de faire du code splitting de manière extrêmement simple tout en intégrant divers modules à coté comme le **Suspense** pour rendre votre application vraiment fluide pour l'utilisateur.
 Faire du code splitting nécessite un peu de réflexion pour déterminer ce que vous allez charger en mode lazy, ne le faites pas pour tous vos composants, il faut que ce soit pertinent !
 
-Gardez en tête qu'il s'agit d'un premier pas, et la team React souhaite développer énormément de choses autour de ces sujets en 2019. Par exemple, il n'est pas encore possible en ServerSide Rendering (contrairement à [loadable-components](https://www.smooth-code.com/open-source/loadable-components/docs/loadable-vs-react-lazy/)) et le Suspense est conseillé uniquement pour du loading de composants en lazy. 
+Gardez en tête qu'il s'agit d'un premier pas, et la team React souhaite développer énormément de choses autour de ces sujets en 2019. Par exemple, il n'est pas encore possible en ServerSide Rendering (contrairement à [loadable-components](https://www.smooth-code.com/open-source/loadable-components/docs/loadable-vs-react-lazy/)) et le Suspense est conseillé uniquement pour du loading de composants en lazy.
 Un autres module nommé `react-cache`, actuellement en Alpha, va bientôt voir le jour. Il permettra d'aller fetch une donnée sur une API, ou de charger des images et d'utiliser le composant Suspense pour du loading automatique.
 
 

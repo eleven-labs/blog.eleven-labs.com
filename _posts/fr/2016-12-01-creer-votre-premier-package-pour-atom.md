@@ -3,7 +3,7 @@ layout: post
 title: Créer votre premier package pour Atom
 lang: fr
 permalink: /fr/creer-votre-premier-package-pour-atom/
-authors: 
+authors:
     - vcomposieux
 date: '2016-12-01 12:14:17 +0100'
 date_gmt: '2016-12-01 11:14:17 +0100'

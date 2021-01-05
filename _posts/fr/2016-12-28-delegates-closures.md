@@ -47,7 +47,7 @@ N.B. : Le code que je vais vous fournir est juste une dummy implementation pour 
 ##### Objective-C
 
 ```Objective-C
-@protocol RequesterDelegateObjc 
+@protocol RequesterDelegateObjc
 
 - (void)onRequestSuccess;
 - (void)onRequestFailure;
@@ -58,7 +58,7 @@ N.B. : Le code que je vais vous fournir est juste une dummy implementation pour 
 On va l'hériter dans le ficher .h
 
 ```Objective-C
-@interface MyClassObjC : UIViewController <RequesterDelegateObjc> 
+@interface MyClassObjC : UIViewController <RequesterDelegateObjc>
 
 @end
 ```

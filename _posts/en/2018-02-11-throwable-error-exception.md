@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PHP 7 Throwable Errors Exceptions 
+title: PHP 7 Throwable Errors Exceptions
 lang: en
 permalink: /fr/php7-throwable-error-exception/
 excerpt: "Errors exist in our code, in external library, and also when hardware fail. That's why understanding Throwable is essential to handle these errors cleverly."
@@ -19,7 +19,7 @@ tags:
 cover: /assets/2018-02-11-php7-throwable-error-exception/cover.jpg
 ---
 
-PHP 7 brings some changes about how errors are reported. 
+PHP 7 brings some changes about how errors are reported.
 From now on, most of the errors are reported through the exception class `Error`.
 
 All `Throwable` will bubble up through the execution stack until they meet one of these cases:
@@ -27,13 +27,13 @@ All `Throwable` will bubble up through the execution stack until they meet one o
  - if an exception handler is configured via `set_exception_handler()`;
  - or else, the exception will be converted into FATAL error and will be processed by the traditional system.
 
-We are going to first define, and then see how to use  `Throwable`, `Error` and `Exception`. 
+We are going to first define, and then see how to use  `Throwable`, `Error` and `Exception`.
 
-## Definition  
+## Definition
 
 ### Throwable
 
-`Throwable` is a PHP 7 interface which represents an error. 
+`Throwable` is a PHP 7 interface which represents an error.
 
 ```php
 interface Throwable
@@ -85,7 +85,7 @@ interface Throwable
           |- UnexpectedValueException extends RuntimeException
 ```
 
-> ⚠ Caution! You can only implement `Throwable` through `Error` and `Exception`. 
+> ⚠ Caution! You can only implement `Throwable` through `Error` and `Exception`.
 > Else you get a FATAL error
 > `PHP Fatal error:  Class MyClass cannot implement interface Throwable, extend Exception or Error instead`
 > But you can extend this interface in user space
@@ -119,7 +119,7 @@ _Sometimes you have the right to throw `Error` in your code, for example if you 
 
 Very often you have to throw or create one, se we are going to see how it works and how use to it properly.
 
-## Usage  
+## Usage
 
 ### Throw exception
 
@@ -170,7 +170,7 @@ try {
 
 > `RuntimeException` extends `Exception`, then you must catch `RuntimeException` before `Exceptions`.
 
-In PHP 7.1 you can specify multiple `Exception` types with `|` char. 
+In PHP 7.1 you can specify multiple `Exception` types with `|` char.
 
 ```php
 try {
@@ -178,16 +178,16 @@ try {
 } catch (OutOfBoundsException | LogicException $e) {
     echo '⚠ Exception appear: ' . $e->getMessage();
 }
-``` 
+```
 
 __⚠ It's very important to correctly choose the `Exception` type to preserve error handler consistency.__
 
 **Need to know**
 
 Most of `LogicException` usually leads to a code correction.
-To catch `LogicException` is going to show an error page and log information in order to inform the developer. 
+To catch `LogicException` is going to show an error page and log information in order to inform the developer.
 
-`RuntimeException` represents errors that appear during the execution (invalide data, data source error). 
+`RuntimeException` represents errors that appear during the execution (invalide data, data source error).
 You can catch `RuntimeException` in order to execute an alternative code for finishing the process correctly.
 
 ℹ️ _You must have an exception handler to render a nice error page to visitors.
@@ -208,7 +208,7 @@ the error code is an `integer` which can be used to codify/identify the error.
 
 > You can show the error code instead of the message of the real `Exception` to the visitor, and prevent him to potentially be confronted to sensitive data.
 
-## Advanced use  
+## Advanced use
 
 ### Customize an exception
 
@@ -244,7 +244,7 @@ class MyObjectException extends RuntimeException
 ```
 
 > When `MyObjectException` is caught, you can get back `MyObject` with the method `getMyObject()`
-> You can use this object to run alternative processes, that will provide you more information than with the regular `Exception`. 
+> You can use this object to run alternative processes, that will provide you more information than with the regular `Exception`.
 
 ### Rethrow an exception
 
@@ -270,28 +270,28 @@ use Psr\Log\NullLogger;
 class UserFactory implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
-    
+
     private $passwordGenerator;
-    
+
     public function construct(PasswordGeneratorInterface $passwordGenerator)
     {
         $this->passwordGenerator = $passwordGenerator;
         $this->logger = new NullLogger();
     }
-    
-    public function create() 
+
+    public function create()
     {
         try {
             $user = new User();
             $password = $this->passwordGenerator->generatePassword();
             $user->setPassword($password);
-            
+
             return $user;
         } catch (Exception $exception) {
             $this->logger->error('Error appear during user creation. Reason: ' . $exception->getMessage());
-            
+
             throw $exception;
-        } 
+        }
     }
 }
 
@@ -326,23 +326,23 @@ Here's a concrete example:
 class UserFactory
 {
     private $passwordGenerator;
-    
+
     public function construct(PasswordGeneratorInterface $passwordGenerator)
     {
         $this->passwordGenerator = $passwordGenerator;
     }
-    
-    public function create() 
+
+    public function create()
     {
         try {
             $user = new User();
             $password = $this->passwordGenerator->generatePassword();
             $user->setPassword($password);
-            
+
             return $user;
         } catch (Exception $exception) {
             throw new UserFactoryException('Error appear during user creation.', 0, $exception);
-        } 
+        }
     }
 }
 
@@ -355,7 +355,7 @@ interface PasswordGeneratorInterface
 ```
 
 > UserFactory::create() always tyhrows an `UserFactoryException`.
-> The first information we need to know is what is going wrong? -> We can't create a user. Why ? -> exception->getPrevious() 
+> The first information we need to know is what is going wrong? -> We can't create a user. Why ? -> exception->getPrevious()
 > Layer separation is preserved.
 
 ## Conclusion
@@ -371,7 +371,7 @@ Pros
  - Easy to debug
  - Better split software responsibility (SOLID)
  - Error code can hide the real error reason
- 
+
 Cons
  - Need to know how to wrap/rethrow exception
  - Render/read stack trace can be complex

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Présentation de gRPC
-authors: 
+authors:
     - qneyrat
 lang: fr
 permalink: /fr/presentation-grpc/
@@ -25,7 +25,7 @@ Avant toute chose je vous invite à lire [la première partie](https://blog.elev
 
 Parce qu'un client HTTP/1 c'est bien mais un client HTTP/2 c'est mieux.
 
-> HTTP/2 c'est quoi ? 
+> HTTP/2 c'est quoi ?
 
 Je vous invite à lire [cet article de Vincent](https://blog.eleven-labs.com/fr/http2-nest-pas-le-futur-cest-le-present/){:rel="nofollow noreferrer"} pour y voir plus clair.
 

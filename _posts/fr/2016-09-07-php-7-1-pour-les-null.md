@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PHP 7.1 - Pour les null
-authors: 
+authors:
     - aandre
 date: '2016-09-07 11:39:10 +0200'
 date_gmt: '2016-09-07 09:39:10 +0200'

@@ -35,13 +35,13 @@ Pour rappel dans le précédent article, nous avons vu ensemble que Storybook es
 
 ---
 
-Bon je pense qu'on sait tous ce qu'est une extension ou un module complémentaire: 
+Bon je pense qu'on sait tous ce qu'est une extension ou un module complémentaire:
 
 Ce truc qui viens très souvent remplacer une tâche dont t'as bien la flemme au bout d'une semaine, et que tu sacrifies sur l'autel des ralentissements au démarrage.
 
 Avant de cracher davantage dans la soupe, laissons quand même la parole au cuisinier, car qui mieux que Storybook pour vendre sa propre came?
 
-> **Supercharge Storybook**  
+> **Supercharge Storybook**
 Storybook addons enable advanced functionality and unlock new workflows. Contributed by core maintainers and the amazing developer community.
 
 Donc on nous promets des supers modules qui viennent enrichir notre expérience, maintenus par Storybook et leur communauté? ça transpire pas l'originalité mais ça a le mérite qu'on lui laisse une chance.
@@ -56,12 +56,12 @@ Déjà le nombre d'addon est moins important que le nombre de vendeurs de tour E
 Dans les faits ces derniers sont rangés par fonctionnalité: Organisation, Test, Code, Data & State, Style et pour finir Design.
 
 
-Ensuite, l'intérêt de ces modules est communautaire, on rappelle que le but de ce projet est de simplifier la vie de ceux qui l'utilises: PO, UX designer, dev. 
+Ensuite, l'intérêt de ces modules est communautaire, on rappelle que le but de ce projet est de simplifier la vie de ceux qui l'utilises: PO, UX designer, dev.
 
 Par exemple, pour nous les petites mains du code, le but est de tester la réaction de notre composant à plusieurs états.
 
 
-C'est donc tout naturellement que la communauté contribue en fournissant des outils pour permettre de moquer les comportements qu'ils rencontrent au quotidien, permettant ainsi d'intégrer à Storybook un composant connecté à un store Redux, soumis à un contexte comme le ThemeProvider de Material-UI, bourré de Query/Mutation GraphQL, de l'internationalisation jusqu'à l'accessibilité. 
+C'est donc tout naturellement que la communauté contribue en fournissant des outils pour permettre de moquer les comportements qu'ils rencontrent au quotidien, permettant ainsi d'intégrer à Storybook un composant connecté à un store Redux, soumis à un contexte comme le ThemeProvider de Material-UI, bourré de Query/Mutation GraphQL, de l'internationalisation jusqu'à l'accessibilité.
 
 En fait, c'est ce qui fait que Storybook puisse être pertinent, il s'intègre dans l'écosystème de React tout en assumant son rôle.
 
@@ -81,21 +81,21 @@ Je sais que vous en rêvez encore la nuit mais pour les insomniaques, un petit r
     import React from 'react';
     import { storiesOf } from '@storybook/react';
     import { action } from '@storybook/addon-actions';
-    
+
     import Task from './Task';
-    
+
     export const task = {
         id: '1',
         title: 'Prévenir Jeanine',
         state: 'TASK_INBOX',
         updatedAt: new Date(2018, 0, 1, 9, 0)
     };
-    
+
     export const actions = {
         onPinTask: action('onPinTask'),
         onArchiveTask: action('onArchiveTask')
     };
-    
+
     storiesOf('Task', module)
     .add('default', () => <Task task={task} {...actions} />)
     .add('pinned', () => <Task task={\{...task, state: 'TASK_PINNED'}} {...actions} />)
@@ -112,9 +112,9 @@ C'est cadeau, c'est l'addon **Knobs** comme on peut voir dans le petit onglet, j
     // src/components/Task.stories.js
     (...)
     import { action } from '@storybook/addon-actions';
-    
+
     (...)
-    
+
     export const actions = {
         onPinTask: action('onPinTask'),
         onArchiveTask: action('onArchiveTask')
@@ -127,7 +127,7 @@ On va donc s'empresser d'ajouter notre nouvel addon **Knobs:**
 Puis on fait un petit tour dans le fichier `.storybook/addon.js` où l'on doit **register** notre addon
 ```javascript
     // .storybook/addons.js
-    
+
     import '@storybook/addon-actions/register';
     import '@storybook/addon-knobs/register';
 ```
@@ -136,12 +136,12 @@ C'est tout! 😏
 On va donc immédiatement éditer le code de notre story
 ```javascript
     // src/components/Task.stories.js
-    
+
     (...)
     import { withKnobs, object } from '@storybook/addon-knobs/react';
-    
+
     (...)
-    
+
     storiesOf('Task', module)
       .addDecorator(withKnobs) // on passe withKnobs en argument à addDecorator()
     	// On passe object('knobName', props) pour trigger l'addon sur l'UI Storybook
@@ -155,16 +155,16 @@ On va donc immédiatement éditer le code de notre story
 
 Et là, imaginez vous filez ça à Jean-Marie, qui est en charge de tester votre composant, il va s'éclater à voir si vous avez pas fait de la daube pour revenir vers vous, avec une haleine de cendrier et de café froid, en vous beuglant:
 
-> Eh mec! T'as vu la gueule de ton composant ? Quand j'ai mis un titre un peu long ? Non mais je te jure... hahaha 
+> Eh mec! T'as vu la gueule de ton composant ? Quand j'ai mis un titre un peu long ? Non mais je te jure... hahaha
 
 ![Storybook knobs addon 2]({{ site.baseurl }}/assets/2019-10-25-Storybook-Addons/knobs2.png)
 
 Quel coquin ce Jean-Marie, mais il n'a pas tort, on peut simplement se rajouter une nouvelle story "long titre" pour sauvegarder ce use-case et éviter la régression.
 ```javascript
     // src/components/Task.stories.js
-    
+
     const longTitre = "Une phrase bien longue, du genre, que tu ne mettras jamais dans une tâche à faire, mais là Charles Edouard il tiens un truc t'inquiètes"
-    
+
     storiesOf('Task', module)
       .add('default', () => <Task task={task} {...actions} />)
       .add('pinned', () => <Task task={\{ ...task, state: 'TASK_PINNED' }} {...actions} />)
@@ -174,6 +174,6 @@ Quel coquin ce Jean-Marie, mais il n'a pas tort, on peut simplement se rajouter 
 
 Voilà voilà, c'est déjà finis les copains, mais promis on se revoit vite pour regarder ensemble, à travers deux articles, comment qu'on fait pour avoir de très beau **Tests structurels** et aussi une très belle **Documentation de composant**, genre documentation de Material UI, mais sans effort.
 
-Je pense fort à vous, hésitez pas à venir me claquer une bise si ça vous a plu. 
+Je pense fort à vous, hésitez pas à venir me claquer une bise si ça vous a plu.
 
 ** À bientôt les bichons 👋 **
