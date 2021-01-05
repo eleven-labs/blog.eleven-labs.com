@@ -6,7 +6,7 @@ authors:
     - nicolas
     - marishka
 lang: en
-permalink: /en/introduction-gitlab-ci/
+permalink: /introduction-gitlab-ci/
 categories:
     - continuous integration
     - devops
@@ -23,30 +23,28 @@ cover: /assets/2018-09-19-introduction-gitlab-ci/cover.png
 ---
 Today if you want to set up a CI/CD on GitHub you need to “link” your repositories with Travis-ci, Circle-ci, Codeship... But did you know that GitLab integrates a CI/CD solution? This is the subject of today's article.
 
-In this article I will just show you the possibilities that GitLab CI/CD offers you. But to go further, I also offer two tutorials on [Eleven Labs codelabs](https://codelabs.eleven-labs.com):
-- Set up a CI on a symfony project - in progress
-- [Set up a CI on a javascript project](https://codelabs.eleven-labs.com/course/fr/gitlab-ci-js/)
+In this article I will just show you the possibilities that GitLab CI/CD offers to you. But if you want to dig further in the subject, I've also created a tutorial on [Eleven Labs codelabs](https://codelabs.eleven-labs.com) on how to [set up a CI on a javascript project](https://codelabs.eleven-labs.com/course/fr/gitlab-ci-js/)
 
 # CI/CD what is that?
 
-I'm not going to redo a definition for you, but here is what Wikipedia tells us for CI and CD:
+I'm not going to write yet another definition for you, beecause there exist plenty already. So here is what Wikipedia tells us for CI and CD:
 
 ## CI: Continuous Integration
 > “Continuous integration is a set of practices used in software engineering consisting in verifying with each modification of source code that the result of the modifications does not produce a regression in the developed application. [...] The main goal of this practice is to detect integration problems as early as possible during development. In addition, it allows you to automate the execution of test suites and see the evolution of software development.”
 
 ## CD: Continuous Delivery
-> "Continuous delivery is a software engineering approach in which teams produce software in short cycles, allowing it to be made available anytime. The goal is to build, test and distribute software faster.
+> "Continuous delivery is a software engineering approach in which teams produce software in short cycles, allowing it to be made available anytime. The goal is to build, test, and distribute software faster.
 The approach helps reduce the cost, time and risk associated with delivering change by taking a more incremental approach to changes in production. A simple, repeatable deployment process is key."
 
 # GitLab in a nutshell
 So Gitlab is :
 - **Gitlab inc**: the company that manages the development of GitLab products
-- **Gitlab**: it is a version that you can install on your machine, server or in the cloud easily with the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/B071RFCJZK)
+- **Gitlab**: it is a version that you can install on your machine, server, or in the cloud easily with the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/B071RFCJZK)
 - **GitLab.com**: it's a web version like GitHub or BitBucket
 
 GitLab and GitLab.com are web-based git repository managers with features like:
  - wiki,
- - issue tracked,
+ - issues tracking,
  - docker registry,
 - code tracking,
 - code review
@@ -372,7 +370,7 @@ By declaring `environments` you can, from the GitLab web interface, deploy / red
 
 The `undo` button allows you to redeploy, the `external link` button allows you to go to the application and the `remove` button allows you to remove the environment.
 
-`on_stop` and` action` will be used to add an action at the end of the deployment, if you want to stop your application on command. Useful for demonstration environments.
+`on_stop` and `action` will be used to add an action at the end of the deployment, if you want to stop your application on command. Useful for demonstration environments.
 
 ```yaml
 ...
@@ -458,7 +456,7 @@ We find five possible sub-directives:
   - paths: mandatory, it allows you to specify the list of files and / or folders to put in `artifact`
   - name: optional, it allows giving a name to the `artifact`. By default it will be named `artifacts.zip`
   - untracked: optional, it allows to ignore the files defined in the `.gitignore` file
-  - when: optional, it allows to define when the`artifact` must be created. Three possible choices `on_success`,` on_failure`, `always`. The `on_success` value is the default.
+  - when: optional, it allows to define when the`artifact` must be created. Three possible choices: `on_success`,` on_failure`, and `always`. The `on_success` value is the default.
   - expire_in: optional, it allows you to define an expiration time
 
 ```yaml
@@ -512,8 +510,6 @@ The code coverage will be visible in the `job` information in the GitLab web int
 
 ![CI Coverage]({{site.baseurl}}/assets/2018-09-19-introduction-gitlab-ci/ci-coverage.png)
 
-> If you wish, here is another article from our blog written by astronaut [Pouzor](https://blog.eleven-labs.com/authors/pouzor/) on code coverage: [Add code coverage on MR avec avec GitLab-CI](https://blog.eleven-labs.com/fr/ajout-le-code-coverage-sur-les-pr-avec-gitlab-ci/)
-
 ## retry
 This declaration allows to re-execute the `job` in case of failure. You must indicate the number of times you want to re-run the `job`.
 
@@ -525,7 +521,7 @@ job:retry:
 
 ## include
 For this functionality you will need a premium account. This functionality allows you to include "templates".
-The "templates" can be locally in your project or remotely.
+The "templates" can be local in your project or remotely.
 
 Files are always evaluated first and merged recursively. You can override or replace "template" declarations.
 
