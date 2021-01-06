@@ -4,6 +4,7 @@ title: "Introduction à ArangoDB Part 1"
 excerpt: "Dans cet article, nous allons faire un petit tour de cette base de données multi-modèles"
 authors:
     - vdelpeyroux
+lang: fr
 permalink: /fr/introduction-a-arangodb-part-1/
 categories:
     - base de données

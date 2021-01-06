@@ -7,7 +7,7 @@ authors:
 lang: fr
 permalink: /fr/lesnouveauteses6partii/
 categories:
-    - Javascript
+    - javascript
 tags:
     - ecmascript
     - javascript

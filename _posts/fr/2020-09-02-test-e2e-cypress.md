@@ -2,6 +2,7 @@
 layout: post
 title: "Tester son application avec Cypress"
 excerpt: "Dans cet article nous allons voir comment mettre en place des tests end-to-end avec Cypress"
+lang: fr
 authors:
 - kdung
 permalink: /fr/test-e2e-avec-cypress/

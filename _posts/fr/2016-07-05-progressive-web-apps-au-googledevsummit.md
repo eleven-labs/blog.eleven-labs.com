@@ -7,10 +7,10 @@ authors:
 lang: fr
 permalink: /fr/progressive-web-apps-au-googledevsummit/
 categories:
-    - Javascript
+    - javascript
 tags:
     - Google
-    - conférence
+    - conference
     - web
     - pwa
     - service worker

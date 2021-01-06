@@ -11,7 +11,7 @@ date_gmt: '2015-11-18 17:34:27 +0100'
 categories:
     - Non classé
 tags:
-    - conférence
+    - conference
     - go
 ---
 

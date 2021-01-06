@@ -9,7 +9,7 @@ excerpt: "Bonjour à tous ! Aujourd'hui je voudrais vous parler d'un sujet peu a
 date: '2016-11-16 15:28:19 +0100'
 date_gmt: '2016-11-16 14:28:19 +0100'
 categories:
-    - Php
+    - php
 tags:
     - php
     - exception

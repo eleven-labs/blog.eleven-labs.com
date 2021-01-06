@@ -2,6 +2,7 @@
 layout: post
 title: La Guerre du Backlog n'aura pas lieu (PART II)
 excerpt: RICE, KANO et ruse de Sioux - Trois nouvelles méthodologies de priorisation produit centrées sur vos utilisateurs !
+lang: fr
 authors:
     - mapo
 permalink: /fr/la-guerre-du-backlog-n-aura-pas-lieu-part-II/

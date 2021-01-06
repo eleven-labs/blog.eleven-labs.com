@@ -9,7 +9,7 @@ date_gmt: '2015-11-12 13:35:21 +0100'
 lang: fr
 permalink: /fr/pattern-state/
 categories:
-    - Symfony
+    - symfony
 tags:
     - architecture
     - design pattern

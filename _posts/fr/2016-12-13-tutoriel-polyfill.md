@@ -7,10 +7,10 @@ authors:
 lang: fr
 permalink: /fr/tutoriel-polyfill/
 categories:
-    - Javascript
+    - javascript
 tags:
     - tutoriel
-    - Javascript
+    - javascript
     - web
 ---
 

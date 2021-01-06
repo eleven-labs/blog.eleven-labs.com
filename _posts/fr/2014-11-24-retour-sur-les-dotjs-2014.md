@@ -8,10 +8,10 @@ authors:
 date: '2014-11-24 18:31:51 +0100'
 date_gmt: '2014-11-24 17:31:51 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - dotJS
-    - conférence
+    - dotjs
+    - conference
 ---
 
 ![wilsononstagedotjs](/assets/2014-11-24-retour-sur-les-dotjs-2014/wilsononstagedotjs.jpg)

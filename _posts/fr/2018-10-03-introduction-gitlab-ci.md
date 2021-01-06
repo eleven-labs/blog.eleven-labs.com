@@ -10,14 +10,14 @@ categories:
     - continuous integration
     - devops
 tags:
-    - GitLab
-    - GitLab-CI
+    - gitlab
+    - gitlab-ci
     - git
     - Continuous Integration
     - CI
     - Continuous deployment
     - CD
-    - DevOps
+    - devops
 cover: /assets/2018-09-19-introduction-gitlab-ci/cover.png
 ---
 Aujourd’hui si vous voulez mettre en place une CI/CD sur GitHub il vous faut “linker” vos dépôts avec Travis-ci, Circle-ci, Codeship... Mais savez-vous que GitLab intègre une solution de CI/CD ? C'est l'objet de l'article d'aujourd'hui.

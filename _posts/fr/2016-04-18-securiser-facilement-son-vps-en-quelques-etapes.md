@@ -11,7 +11,7 @@ permalink: /fr/securiser-facilement-son-vps-en-quelques-etapes/
 categories:
     - Non classé
 tags:
-    - sécurité
+    - securite
     - linux
     - vps
     - serveur

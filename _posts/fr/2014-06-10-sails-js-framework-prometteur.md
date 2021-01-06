@@ -7,11 +7,11 @@ authors:
 lang: fr
 permalink: /fr/sails-js-framework-prometteur/
 categories:
-    - Javascript
+    - javascript
 tags:
     - Sails.js
-    - Nodejs
-    - Javascript
+    - nodejs
+    - javascript
 ---
 
 Un post court pour vous parler d'une technologie que je viens de trouver, il s'agit d'un framework js pour nodejs, sails.js.

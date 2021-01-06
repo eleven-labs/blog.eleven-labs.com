@@ -7,8 +7,8 @@ authors:
 lang: fr
 permalink: /fr/introductionauxhooks/
 categories:
-    - React
-    - Javascript
+    - react
+    - javascript
 tags:
     - hooks
     - react

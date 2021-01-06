@@ -7,14 +7,14 @@ excerpt: "Les policies, le retry (dead letter, poison message)... en avant pour 
 authors:
     - amoutte
 categories:
-    - rabbitMQ
+    - rabbitmq
     - broker
     - queuing
     - retry
     - dead letter
     - poison message
 tags:
-    - rabbitMQ
+    - rabbitmq
     - broker
     - queuing
     - retry

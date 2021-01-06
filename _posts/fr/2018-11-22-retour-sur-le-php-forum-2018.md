@@ -7,17 +7,17 @@ authors:
 lang: fr
 permalink: /fr/retour-sur-le-php-forum-2018/
 categories:
-    - Conférence
-    - PHP
+    - conference
+    - php
 tags:
-    - Conférence
-    - PHP
-    - Linux
+    - conference
+    - php
+    - linux
     - Paris
     - 2018
     - MySQL
-    - Agile
-    - DevOps
+    - agile
+    - devops
 cover: /assets/2018-11-15-retour-sur-le-php-forum-2018/cover.png
 ---
 

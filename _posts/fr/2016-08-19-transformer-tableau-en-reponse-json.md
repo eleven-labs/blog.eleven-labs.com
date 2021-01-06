@@ -9,8 +9,8 @@ excerpt: Dans le contexte d'une API REST, intéressons nous particulièrement à
 date: '2016-08-19 14:54:40 +0200'
 date_gmt: '2016-08-19 12:54:40 +0200'
 categories:
-    - Symfony
-    - Php
+    - symfony
+    - php
 tags:
     - php
     - symfony

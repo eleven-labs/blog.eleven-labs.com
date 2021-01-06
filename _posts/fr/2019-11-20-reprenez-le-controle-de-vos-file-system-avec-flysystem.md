@@ -7,12 +7,12 @@ authors:
 lang: fr
 permalink: /fr/reprenez-le-controle-de-vos-file-system-avec-Flysystem/
 categories:
-    - PHP
+    - php
     - Bundle
     - Filesystem
 tags:
-    - PHP
-    - Symfony
+    - php
+    - symfony
     - Flysystem
     - Filesystem
 ---

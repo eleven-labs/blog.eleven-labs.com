@@ -2,6 +2,7 @@
 layout: post
 title: À la découverte de Mercure
 excerpt: Exploration du protocole Mercure. Vous n'aurez plus peur des communications client-server en temps réel à la fin de ce voyage.
+lang: fr
 permalink: /fr/a-la-decouverte-de-mercure/
 authors:
     - ajacquemin
@@ -9,10 +10,10 @@ categories:
     - Mercure
 tags:
     - Mercure
-    - Server
+    - server
     - Real-time
-    - Javascript
-    - Docker
+    - javascript
+    - docker
 ---
 
 Aujourd'hui, je vous fais découvrir ce qu'est [Mercure](https://mercure.rocks/), ses principes, puis on apprendra comment le mettre en place simplement avec Docker.

@@ -7,12 +7,12 @@ excerpt: "Rabbitmq est un message broker très complet et robuste, c'est pourquo
 authors:
     - amoutte
 categories:
-    - rabbitMQ
+    - rabbitmq
     - broker
     - queuing
     - retry
 tags:
-    - rabbitMQ
+    - rabbitmq
     - broker
     - queuing
     - retry

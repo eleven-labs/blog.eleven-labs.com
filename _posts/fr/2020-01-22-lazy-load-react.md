@@ -4,10 +4,11 @@ title: Une application React plus réactive - Le lazy load
 excerpt: Dans cet article, nous allons vous présenter le lazy load et comment l’implémenter dans un projet React pour optimiser le chargement de vos pages.
 authors:
     - kcordier
+lang: fr
 permalink: /fr/lazy-load-react/
 categories:
-    - Javascript
-    - React
+    - javascript
+    - react
     - Lazy load
 tags:
     - javascript

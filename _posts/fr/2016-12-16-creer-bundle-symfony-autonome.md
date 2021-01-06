@@ -7,11 +7,11 @@ authors:
 lang: fr
 permalink: /fr/creer-bundle-symfony-autonome/
 categories:
-    - PHP
-    - Symfony
+    - php
+    - symfony
 tags:
-    - PHP
-    - Symfony
+    - php
+    - symfony
     - tutorial
 ---
 Dans ce post nous allons voir step-by-step comment créer de zéro un bundle symfony autonome.

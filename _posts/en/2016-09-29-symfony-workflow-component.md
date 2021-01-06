@@ -8,8 +8,8 @@ authors:
 date: '2016-09-29 10:04:20 +0200'
 date_gmt: '2016-09-29 08:04:20 +0200'
 categories:
-    - Symfony
-    - Php
+    - symfony
+    - php
 tags:
     - symfony
     - php

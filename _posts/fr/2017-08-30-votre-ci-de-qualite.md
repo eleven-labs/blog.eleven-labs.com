@@ -7,7 +7,7 @@ excerpt: La qualité est un vaste sujet, surtout quand on l'associe au développ
 authors:
     - captainjojo
 categories:
-    - Symfony
+    - symfony
     - javascript
 tags:
     - php
@@ -611,7 +611,7 @@ Speedcurve vous renvoie plusieurs indicateurs très sympas :
  - Speed Index
  - Visually Complete
  - Page Load Time
- - CSS Size
+ - css size
  - Image Size
  - etc ...
 

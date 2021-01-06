@@ -9,9 +9,9 @@ lang: fr
 permalink: /fr/phantomjs/
 excerpt: Petite présentation d'un navigateur webkit appelé PhantomJS
 categories:
-    - Javascript
+    - javascript
 tags:
-    - Javascript
+    - javascript
     - PhantomJS
 image:
   path: /assets/2014-07-16-phantomjs/phantomjs-logo.png

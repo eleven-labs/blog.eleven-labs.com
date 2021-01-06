@@ -9,7 +9,7 @@ permalink: /fr/symfony-2-cache-http-esi/
 date: '2013-12-08 19:11:17 +0100'
 date_gmt: '2013-12-08 18:11:17 +0100'
 categories:
-    - Symfony
+    - symfony
 tags:
     - symfony2
     - cache

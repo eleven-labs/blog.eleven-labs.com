@@ -3,6 +3,8 @@ gem 'jekyll', '~> 4.1.1'
 gem 'rouge', '~> 3.25.0'
 gem 'uglifier', '~> 4.2.0'
 gem 'sassc', '~> 2.4.0'
+gem 'kramdown'
+gem 'oga'
 gem 'scss_lint', require: false
 
 group :jekyll_plugins do
@@ -12,6 +14,7 @@ group :jekyll_plugins do
   gem 'jekyll-multiple-languages-plugin', :git => 'https://github.com/eleven-labs/jekyll-multiple-languages-plugin.git'
   gem 'jekyll-paginate', '~> 1.1.0'
   gem 'jekyll-seo-tag', '~> 2.7.1'
+  gem 'jekyll-tagging', '~> 1.1.0'
 end
 
 group :test do

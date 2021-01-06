@@ -16,7 +16,6 @@ tags:
     - aws
     - bref
     - lambda
-
 ---
 
 We've been talking about *serverless* architectures for years. But what does that mean precisely and how to develop PHP applications that can be deployed on this architecture?

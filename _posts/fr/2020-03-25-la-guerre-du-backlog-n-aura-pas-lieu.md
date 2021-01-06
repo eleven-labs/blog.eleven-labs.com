@@ -4,6 +4,7 @@ title: La Guerre du Backlog n'aura pas lieu (PART I)
 excerpt: Quelques méthodes de priorisation du Backlog pour gagner des batailles, vous faire des alliés et pacifier le développement du Produit !
 authors:
     - mapo
+lang: fr
 permalink: /fr/la-guerre-du-backlog-n-aura-pas-lieu/
 categories:
     - agile

@@ -8,10 +8,10 @@ lang: fr
 permalink: /fr/openpgp-stockage-froid-clefs-partie-3/
 categories:
     - openpgp
-    - sécurité
+    - securite
 tags:
     - openpgp
-    - sécurité
+    - securite
     - yubikey
 cover: /assets/2017-11-08-openpgp-stockage-froid-clefs-part-3/cover.jpg
 ---

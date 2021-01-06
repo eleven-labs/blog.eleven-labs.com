@@ -9,9 +9,9 @@ authors:
 date: '2014-04-10 09:14:51 +0200'
 date_gmt: '2014-04-10 07:14:51 +0200'
 categories:
-    - Symfony
+    - symfony
 tags:
-    - conférence
+    - conference
     - symfony live
 ---
 

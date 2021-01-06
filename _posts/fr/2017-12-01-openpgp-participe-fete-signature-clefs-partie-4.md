@@ -8,10 +8,10 @@ lang: fr
 permalink: /fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/
 categories:
     - openpgp
-    - sécurité
+    - securite
 tags:
     - openpgp
-    - sécurité
+    - securite
     - confiance
 cover: /assets/2017-12-01-openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/cover.jpg
 ---

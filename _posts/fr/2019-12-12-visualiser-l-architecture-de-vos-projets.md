@@ -3,12 +3,13 @@ layout: 'post'
 title: Visualiser l'architecture de vos projets
 excerpt: Visualiser l'architecture de vos projets
 authors:
-- gcanal
+  - gcanal
+lang: fr
 permalink: /fr/visualiser-l-architecture-de-vos-projets/
 categories:
-    - Architecture
+    - architecture
 tags:
-    - Architecture
+    - architecture
     - C4Model
     - Diagramme
     - Visualisation

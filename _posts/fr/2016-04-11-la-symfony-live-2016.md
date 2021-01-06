@@ -7,11 +7,11 @@ authors:
 lang: fr
 permalink: /fr/la-symfony-live-2016/
 categories:
-    - PHP
-    - Symfony
+    - php
+    - symfony
 tags:
-    - PHP
-    - Symfony
+    - php
+    - symfony
     - tutorial
 ---
 

@@ -9,9 +9,9 @@ authors:
 lang: fr
 permalink: /fr/retour-devfest-nantes/
 categories:
-    - Conférence
+    - conference
 tags:
-    - Conférence
+    - conference
     - devfest
     - nantes
 cover: /assets/2018-10-23-retour-devfest-nantes/cover.jpg

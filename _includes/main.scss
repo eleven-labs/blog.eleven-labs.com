@@ -23,6 +23,7 @@ $baseurl: '{{ site.baseurl_root }}';
 @import 'objects/search-bar';
 @import 'objects/avatar';
 @import 'objects/newsletter';
+@import 'objects/chips';
 
 // Posts
 @import 'layouts/posts';

@@ -7,8 +7,8 @@ lang: en
 permalink: /upload-file-ajax/
 excerpt: "Today, I would like to share with you a feature often requested in an application: uploading a file."
 categories:
-    - Symfony
-    - Php
+    - symfony
+    - php
 tags:
     - ajax
 ---

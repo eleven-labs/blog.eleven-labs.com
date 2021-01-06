@@ -8,9 +8,9 @@ authors:
 date: '2015-10-16 11:07:54 +0200'
 date_gmt: '2015-10-16 09:07:54 +0200'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - AngularJS
+    - angular
     - Yeoman
     - Gulp
 ---
