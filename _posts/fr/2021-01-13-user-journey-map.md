@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Customer Journey Map : votre arme secrète pour cartographier votre Parcours client
-excerpt: Créez une représentation visuelle et partagée de vos Parcours Client afin d'identifier les nouvelles fonctionnalités à développer sur votre site ou application
+excerpt: Créez une représentation visuelle et partagée de votre Parcours Client afin d'identifier les nouvelles fonctionnalités à développer sur votre site ou application
 authors:
     - mapo
 permalink: /fr/customer-journey-map-votre-arme-secrète-pour-cartographier-votre-parcours-client/
@@ -38,7 +38,7 @@ On entend invariablement parler de User Journey Map, Customer Journey Map ou enc
 
 **Étape 1 : Déterminez le persona dont vous souhaitez étudier le parcours**
 
-Afin de réaliser votre Customer Journey Map, il vous faudra dans un premier temps **déterminer le persona principal**, votre client ou utilisateur type dont vous souhaitez cartographier le parcours ainsi que ses caractéristiques principales (âge, catégorie socio-professionnelle, maturité digitale, intérêts etc…). Vous pouvez utiliser un [template gratuit](https://xtensio.com/user-persona/) pour vous guider dans la construction de votre persona.
+Afin de réaliser votre Customer Journey Map, il vous faudra dans un premier temps **déterminer le persona principal**, votre client ou utilisateur type dont vous souhaitez cartographier le parcours, ainsi que ses caractéristiques principales (âge, catégorie socio-professionnelle, maturité digitale, intérêts etc…). Vous pouvez utiliser un [template gratuit](https://xtensio.com/user-persona/) pour vous guider dans la construction de votre persona.
 
 *Prenons l’exemple d’un site d’annonces immobilières, il vous faudra, par exemple, décider si vous souhaitez réaliser le parcours de l’annonceur ou de l’acquéreur en recherche d’un bien car leurs interactions avec votre site web font l’objet de deux parcours bien distincts. Vous pourriez également décider d’axer votre Customer Journey Map sur une catégorie d’utilisateurs que vous souhaitez attirer sur votre site web ou application, par exemple la tranche des 25-35, primo-accédants, qui utilisent à ce jour majoritairement des applications concurrentes. Vous pourriez enfin décider de conscrire votre Customer Journey Map aux nouveaux clients ou aux clients existants.*
 
@@ -50,7 +50,7 @@ Vous pouvez **définir un objectif précis** à la construction de votre Custome
 
 L’idéal est de **réunir lors d’un atelier, un panel de clients/utilisateurs** représentatif de votre persona principal afin de construire en séance votre Customer Journey Map. Prévoyez à minima 2h d’atelier pour vous permettre de recueillir un maximum d’informations.
 
-Toutefois, s’il est assez aisé de réunir les utilisateurs d’un produit SaaS par exemple, il peut vous être plus difficile de réunir des clients de votre site e-commerce, lors d’un atelier.
+Toutefois, s’il est assez aisé de réunir les utilisateurs d’un produit SaaS par exemple, il peut vous être plus difficile de réunir des clients de votre site e-commerce lors d’un atelier.
 
 Vous pourrez alors :
 
@@ -83,7 +83,7 @@ Il vous faudra faire lister par les participants, qui pourront les rédiger sur 
 
 **-   Les Sentiments & Frustrations**
     
-**Les utilisateurs décrivent ensuite leurs sentiments, perception globale à chaque étape** et se mettent d’accord sur une notation positive, négative ou neutre qui pourra être représentée visuellement par des smiley. Il convient également de recueillir à cette étape, les verbatims et les frustrations exprimées en atelier. 
+**Les utilisateurs décrivent ensuite leurs sentiments, perception globale à chaque étape** et se mettent d’accord sur une notation positive, négative ou neutre qui pourra être représentée visuellement par des smiley. Il convient également de recueillir à cette étape, les verbatims et frustrations exprimés en atelier. 
 
 *Ex : “Sur mobile, les filtres sont difficilement utilisables, j’ai du mal à sélectionner une valeur dans les listes déroulantes”*
 
