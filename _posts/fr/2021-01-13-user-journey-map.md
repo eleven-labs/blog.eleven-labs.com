@@ -23,9 +23,9 @@ tags:
 
 image:
   path: /assets/2021-01-13-user-journey-map/User Journey Map Template.png
-  height: 970
-  width: 450
-  
+  height: 904
+  width: 700
+
 ---
 
 # Customer Journey Map : votre arme secrète pour cartographier votre parcours client
@@ -36,7 +36,7 @@ Si vous recherchez un point de départ pour identifier les frustrations de vos u
 
 La Customer Journey Map est une **représentation visuelle du parcours de vos clients et de l’ensemble de leurs interactions avec votre produit ou service**. Les objectifs de cette cartographie sont d’identifier les points de friction, les besoins non satisfaits, les étapes de l’expérience non optimales pour l’utilisateur (perte de temps, actions non disponibles, ...) et ainsi déterminer les actions à mener ainsi que les fonctionnalités prioritaires à développer sur votre site pour améliorer l’expérience de vos clients.
 
-On entend invariablement parler de User Journey Map, Customer Journey Map ou encore Buyer Journey Map, mais quelle est la différence ? 
+On entend invariablement parler de User Journey Map, Customer Journey Map ou encore Buyer Journey Map, mais quelle est la différence ?
 
 Dans la construction et représentation du parcours : aucune. La **Customer et la Buyer Journey Map**, notions issues du marketing, désignent simplement la représentation visuelle du **parcours d’un client** lors de l’achat d'un produit ou service, sur un site e-commerce par exemple. La **User Journey Map** désigne de manière plus générale, le **parcours d'un utilisateur** d’un produit ou service qui peut être non-marchand, par exemple la consultation d’un site web ou encore l’utilisation d’un produit SaaS.
 
@@ -71,7 +71,7 @@ Vous pourrez alors :
 Nous conseillons cependant de toujours construire votre Customer Journey Map en atelier, si ce n’est avec les utilisateurs, **en réunissant les différentes parties prenantes au sein de l’entreprise** qui disposent d’informations sur le parcours de vos utilisateurs (Services Commercial, Marketing, Produit, Customer Success, Support...). Le format atelier vous permet de gagner en objectivité mais également de vous accorder sur un parcours représentatif qui pourra être partagé et endossé au sein de l’entreprise par les différents ambassadeurs présents lors de l’atelier.
 
 **Étape 4 : Déroulé de l’atelier Customer Journey Map**
- 
+
 **- Les Phases**
 
 Commencez par **déterminer**, conjointement avec les parties prenantes de l’atelier, **les grandes phases et étapes du parcours utilisateur** que vous afficherez tout en haut de votre board par ordre chronologique. L’idéal est de définir de 3 à 10 phases maximum.
@@ -81,14 +81,14 @@ Commencez par **déterminer**, conjointement avec les parties prenantes de l’a
 Notez bien que **la Customer Journey Map vise à représenter la totalité du parcours de vos utilisateurs** et ce en prenant également en compte les interactions en amont et aval de la consultation de votre site ou utilisation de votre application. Ainsi, une recherche web menant à votre site, une visite en magasin, la livraison du produit physique, l’interaction avec le service après-vente... peuvent faire partie des étapes de votre parcours client.
 
 **- Les Actions**
-    
+
 Il vous faudra faire lister par les participants, qui pourront les rédiger sur des posts-its, **les actions réalisées à chacune des phases établies précédemment**.
 
 *Par exemple, à l’étape "Accès au site" : *je sélectionne mon profil acheteur ou annonceur. Je peux me connecter ou créer un profil. À l’étape de la recherche, je filtre les biens (secteur de recherche, type de bien, budget…), je consulte une annonce, je retourne au listing des annonces filtré*...*
 
 **- Les Sentiments & Frustrations**
-    
-**Les utilisateurs décrivent ensuite leurs sentiments, perception globale à chaque étape** et se mettent d’accord sur une notation positive, négative ou neutre qui pourra être représentée visuellement par des smiley. Il convient également de recueillir à cette étape, les verbatims et frustrations exprimés en atelier. 
+
+**Les utilisateurs décrivent ensuite leurs sentiments, perception globale à chaque étape** et se mettent d’accord sur une notation positive, négative ou neutre qui pourra être représentée visuellement par des smiley. Il convient également de recueillir à cette étape, les verbatims et frustrations exprimés en atelier.
 
 *Ex : “Sur mobile, les filtres sont difficilement utilisables, j’ai du mal à sélectionner une valeur dans les listes déroulantes”*
 
@@ -103,14 +103,14 @@ En partant des sentiments et frustrations décrites à l’étape précédente, 
 Il convient enfin d’**identifier quel est le support privilégié pour chaque phase** (desktop, mobile, tablette, mail, téléphone) ou encore si les actions à cette étape sont effectuées en physique, en magasin, à domicile ou dans un tiers-lieu pour une livraison par exemple.
 
 **- Customisez votre Customer Journey Map**
-    
+
 Vous pouvez **ajouter tout autre élément utile à la qualification du parcours de vos clients**. Par exemple, pour un service de dématérialisation de documents, vous pourriez ajouter une ligne pour préciser quel document est reçu par le client à chacune des étapes. Plus votre parcours est personnalisé et plus il vous fera gagner en compréhension et efficacité !
 
 **- Designez votre Customer Journey Map**
-    
-N’oubliez pas de prendre des photos de votre parcours réalisé en atelier et **mettez-le au propre sur un format web** pour pouvoir le diffuser facilement au sein de votre entreprise. [Miro](https://miro.com/), par exemple, propose des templates gratuits à adapter pour transposer votre Customer Journey Map. 
 
-  
+N’oubliez pas de prendre des photos de votre parcours réalisé en atelier et **mettez-le au propre sur un format web** pour pouvoir le diffuser facilement au sein de votre entreprise. [Miro](https://miro.com/), par exemple, propose des templates gratuits à adapter pour transposer votre Customer Journey Map.
+
+
 ![Exemple de customer Journey Map sur un site d'annonces immobilières]({{ site.baseurl }}/assets/2021-01-13-user-journey-map/User Journey Map Exemple.png)
 
 
