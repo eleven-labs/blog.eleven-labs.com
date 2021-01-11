@@ -89,9 +89,9 @@ Il vous faudra faire lister par les participants, qui pourront les rédiger sur 
 
 **-   Les opportunités d’améliorations**
 
-En partant des opportunités et frustrations décrites à l’étape précédente, identifiez les opportunités d’améliorations du parcours utilisateur, les nouvelles fonctionnalités qui pourraient être proposées. Avancez des solutions fonctionnelles pour tester la compréhension du besoin exprimé par vos clients mais soyez également à l’écoute de toute autre idée d’évolutions venant des participants à l’atelier.
+En partant des opportunités et frustrations décrites à l’étape précédente, identifiez les opportunités d’améliorations du parcours utilisateur, les nouvelles fonctionnalités qui pourraient être proposées. Avancez des solutions fonctionnelles pour tester la compréhension du besoin exprimé par vos clients mais soyez également à l’écoute de toutes autres idées d’évolutions venant des participants à l’atelier.
 
-*Dans notre exemple, une des frustrations exprimée est "Il est fastidieux de devoir créer un profil ou se connecter à son profil pour pouvoir sauvegarder une annonce", une des opportunités pourrait être de proposer de renseigner son adresse email à laquelle un mail récap des annonces sauvegardées sera envoyée à la fin de la session sur le site web.*
+*Dans notre exemple, une des frustrations exprimée est "Il est fastidieux de devoir créer un profil ou se connecter à son profil pour pouvoir sauvegarder une annonce", une des opportunités pourrait être de proposer de renseigner son adresse email à laquelle un mail récap des annonces sauvegardées sera envoyé à la fin de la session sur le site web.*
 
 **-   Les points de contact**
 
