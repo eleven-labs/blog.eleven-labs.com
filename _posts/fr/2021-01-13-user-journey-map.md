@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Customer Journey Map : votre arme secrète pour cartographier votre parcours client
+title: 'Customer Journey Map : votre arme secrète pour cartographier votre parcours client'
 excerpt: Créez une représentation visuelle et partagée de votre parcours client afin d'identifier les nouvelles fonctionnalités à développer sur votre site ou application
 lang: fr
 authors:
@@ -118,4 +118,3 @@ Le parcours de vos utilisateurs est vivant, ainsi vous pouvez le mettre à jour 
 La représentation du parcours de vos utilisateurs peut vous permettre d’**identifier les actions prioritaires à mettre en place**, qu’elles soient commerciales, marketing, produit... C’est un bon point de départ pour **aboutir à une liste de fonctionnalités à développer sur votre site web**. Vous pourrez également utiliser votre Customer Journey Map pour **prioriser certaines fonctionnalités** en ciblant par exemple les étapes du parcours sur lesquelles la satisfaction exprimée est la plus faible.
 
 La réalisation de l’atelier Customer Journey Map vous permettra également de **mobiliser les utilisateurs et de fédérer les différentes parties prenantes au sein de l’entreprise** autour d’une vision commune du parcours de vos utilisateurs. Tous les services partagent ainsi une **représentation claire de l’ensemble du parcours et des interactions client avec le produit/site web** au sein de l’entreprise. À vous de jouer maintenant !
-
