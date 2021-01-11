@@ -34,6 +34,8 @@ On entend invariablement parler de User Journey Map, Customer Journey Map ou enc
 
 ## Comment construire votre Customer Journey Map ?
 
+![]({{ site.baseurl }}/assets/2021-01-13-user-journey-map/User Journey Map Template.png)
+
 **Étape 1 : Déterminez le persona dont vous souhaitez étudier le parcours**
 
 Afin de réaliser votre Customer Journey Map, il vous faudra dans un premier temps **déterminer le persona principal**, votre client ou utilisateur type dont vous souhaitez cartographier le parcours ainsi que ses caractéristiques principales (âge, catégorie socio-professionnelle, maturité digitale, intérêts etc…). Vous pouvez utiliser un [template gratuit](https://xtensio.com/user-persona/) pour vous guider dans la construction de votre persona.
@@ -104,7 +106,7 @@ Vous pouvez **ajouter tout autre élément utile à la qualification du parcours
 N’oubliez pas de prendre des photos de votre parcours réalisé en atelier et **mettez le au propre sur un format web** pour pouvoir le diffuser facilement au sein de votre entreprise. [Miro](https://miro.com/), par exemple, propose des templates gratuits à adapter pour transposer votre Customer Journey Map. 
 
   
-
+![]({{ site.baseurl }}/assets/2021-01-13-user-journey-map/User Journey Map Exemple.png)
 
 
 Votre Customer Journey map est prête à être exploitée ! N’hésitez pas à la transmettre aux participants de l’atelier pour leur permettre de rectifier certaines remontées ou verbatims et de compléter leurs propos.
