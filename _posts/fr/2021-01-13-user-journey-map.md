@@ -11,14 +11,12 @@ categories:
 tags:
     - agilité
     - marketing
-    - po
-    - pm
     - product owner
     - product manager
     - customer journey
     - parcours clients
     - parcours utilisateurs
-    - user experience
+    - user journey
     - priorisation
 
 image:
