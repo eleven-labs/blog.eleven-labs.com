@@ -95,7 +95,7 @@ En partant des opportunités et frustrations décrites à l’étape précédent
 
 **-   Les points de contact**
 
-Il convient enfin d’**identifier quel est le support privilégié pour chaque phase** (desktop, mobile, tablette, mail, téléphone) ou encore si les actions à cette étape sont effectuées en physique, en magasin, à domicile ou dans un tierce lieu pour une livraison par exemple.
+Il convient enfin d’**identifier quel est le support privilégié pour chaque phase** (desktop, mobile, tablette, mail, téléphone) ou encore si les actions à cette étape sont effectuées en physique, en magasin, à domicile ou dans un tiers-lieu pour une livraison par exemple.
 
 **-   Customisez votre Customer Journey Map**
     
