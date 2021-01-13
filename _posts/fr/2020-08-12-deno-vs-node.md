@@ -8,8 +8,6 @@ authors:
     - plerouge
 categories:
     - javascript
-    - node
-    - deno
 tags:
     - javascript
     - node
