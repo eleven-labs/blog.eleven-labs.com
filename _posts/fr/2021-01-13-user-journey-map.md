@@ -5,7 +5,7 @@ excerpt: Créez une représentation visuelle et partagée de votre parcours clie
 lang: fr
 authors:
     - mapo
-permalink: /fr/customer-journey-map-votre-arme-secrète-pour-cartographier-votre-parcours-client/
+permalink: /fr/customer-journey-map-votre-arme-secrete-pour-cartographier-votre-parcours-client/
 categories:
     - agile
 tags:
