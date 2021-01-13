@@ -8,7 +8,6 @@ authors:
 permalink: /fr/vous-utilisez-mal-les-states-react/
 categories:
     - javascript
-    - react
 tags:
     - javascript
     - react
