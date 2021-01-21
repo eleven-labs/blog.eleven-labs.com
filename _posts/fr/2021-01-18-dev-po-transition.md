@@ -9,9 +9,10 @@ categories:
     - metier
     - product owner
 tags:
-    - developpeur
+    - développement
     - product owner
-    - transition
+    - soft skills
+    - rex
 cover: 
 ---
 
