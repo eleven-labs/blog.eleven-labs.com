@@ -1,4 +1,4 @@
-﻿---
+---
 lang: fr
 layout: post
 title: Les 4 Questions à se poser pour comprendre mieux son Leadership dans un monde Agile, afin de créer un environnement motivant et sécurisant
