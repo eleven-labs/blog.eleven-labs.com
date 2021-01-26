@@ -7,7 +7,7 @@ excerpt: "Certains connaissent Munin, le corbeau de la mythologie nordique. C'es
 authors:
     - jbernard
 categories:
-    - monitoring
+    - devops
 tags:
     - serveur
     - master

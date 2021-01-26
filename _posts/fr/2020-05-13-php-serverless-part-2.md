@@ -8,8 +8,6 @@ authors:
     - marishka
 categories:
     - php
-    - serverless
-    - bref
 tags:
     - php
     - serverless
