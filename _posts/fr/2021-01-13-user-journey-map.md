@@ -26,8 +26,6 @@ image:
 
 ---
 
-# Customer Journey Map : votre arme secrète pour cartographier votre parcours client
-
 Si vous recherchez un point de départ pour identifier les frustrations de vos utilisateurs et trouver les opportunités d’améliorations de votre parcours client sur votre site web... Votre première mission sera de construire votre Customer Journey Map afin de cartographier l’expérience vécue par vos clients.
 
 ## Customer Journey Map : Késako ?
