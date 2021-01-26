@@ -10,7 +10,6 @@ authors:
 permalink: /fr/meilleurs-outils-js-2020/
 categories:
     - javascript
-    - react
 tags:
     - javascript
     - react
