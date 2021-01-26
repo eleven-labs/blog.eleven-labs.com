@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Customer Journey Map : votre arme secrète pour cartographier votre parcours client'
+title: 'Une solution pour cartographier et optimiser votre parcours client : la Customer Journey Map'
 excerpt: Créez une représentation visuelle et partagée de votre parcours client afin d'identifier les nouvelles fonctionnalités à développer sur votre site ou application
 lang: fr
 authors:
