@@ -7,7 +7,7 @@ permalink: /fr/a-la-decouverte-de-mercure/
 authors:
     - ajacquemin
 categories:
-    - Mercure
+    - architecture
 tags:
     - Mercure
     - server
