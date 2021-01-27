@@ -155,3 +155,6 @@ Il existe quatre émotions primaires :
 [Connaître nos émotions, chez les autres et chez soi, permet de nous aider à les réguler pour mieux les comprendre](https://presse.inserm.fr/les-neurosciences-apportent-de-nouvelles-pistes-pour-comprendre-lorigine-de-nos-emotions/41511/), et donc améliorer notre communication dans les moments difficiles. Par exemple, comptez dans une journée le nombre de fois où vous souhaitez interrompre une personne (= écoute passive) plutôt que de l'écouter réellement (= écoute active), et fixez-vous pour objectif de diminuer ces interruptions.
 
 En conclusion, après avoir lu cet article : entraînez-vous ! Co-créez des objectifs positifs à impacts et mettez-les à jour, questionnez-vous sur comment devenir un meilleur hôte pour vos équipes, et écoutez vos émotions car elles sont là pour chercher à vous adapter aux situations. N'est-ce pas là l'essence de l'agilité ?
+
+Pour aller plus loin, vous pouvez participer au meetup "Les forces du manager Agile : Comment développer votre Leadership Agile ?" qui aura lieu le 18 février à 12h.
+https://www.meetup.com/fr-FR/eleven-labs/events/276001996/
