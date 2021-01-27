@@ -16,8 +16,6 @@ tags:
 cover: 
 ---
 
-# De développeur à product owner, mes conseils pour une transition en terrain connu
-
 Chers développeurs, vous trouvez le métier de PO (product owner) plutôt cool ? Vous vous dites : “est-ce que c’est fait pour moi ? Mais comment faire ?”
 Je vais vous raconter tout ce que je sais à travers mon expérience.
 Pendant 7 ans, j’ai roulé ma bosse à travers différentes expériences de développeur. Depuis quelque temps, j’avais des envies de changement, j’en ai parlé autour de moi et, un jour, mon supérieur m’a proposé de prendre un poste de PO vacant. J’ai tout de suite accepté et, deux ans plus tard, me voilà devant mon écran en train de vous expliquer mon parcours.
