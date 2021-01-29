@@ -545,7 +545,7 @@ module "my_awesome_blog" {
   # webhooks
   webhooks = [
     {
-      url          = "https://notify.travis-ci.org"
+      url          = "https://notify.travis-ci.com"
       secret       = null
       content_type = "form"
       insecure_ssl = false
@@ -847,7 +847,7 @@ La documentation pour ces fonctionnalités est disponible sur la
 ### Intégration / déploiement continue
 La dernière étape pour que notre projet corresponde aux besoins de départ est la mise en place d'une pipeline de CI/CD.
 
-> Pour l'exemple nous utiliserons [travis-ci](https://travis-ci.org/) mais vous pouvez utiliser la techno de votre choix.
+> Pour l'exemple nous utiliserons [travis-ci](https://travis-ci.com/) mais vous pouvez utiliser la techno de votre choix.
 
 Notre pipeline se chargera à chaque run
 - d'initialiser notre projet Terraform sur le runner
