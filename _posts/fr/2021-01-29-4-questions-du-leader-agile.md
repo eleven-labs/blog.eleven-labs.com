@@ -156,5 +156,4 @@ Il existe quatre émotions primaires :
 
 En conclusion, après avoir lu cet article : entraînez-vous ! Co-créez des objectifs positifs à impacts et mettez-les à jour, questionnez-vous sur comment devenir un meilleur hôte pour vos équipes, et écoutez vos émotions car elles sont là pour chercher à vous adapter aux situations. N'est-ce pas là l'essence de l'agilité ?
 
-Pour aller plus loin, vous pouvez participer au meetup "Les forces du manager Agile : Comment développer votre Leadership Agile ?" qui aura lieu le 18 février à 12h.
-https://www.meetup.com/fr-FR/eleven-labs/events/276001996/
+Pour aller plus loin, vous pouvez participer au meetup "Les forces du manager Agile : Comment développer votre Leadership Agile ?" qui aura lieu le 18 février à 12h. [Cliquez ici pour vous inscrire](https://www.meetup.com/fr-FR/eleven-labs/events/276001996/)
