@@ -8,7 +8,6 @@ authors:
 permalink: /fr/test-e2e-avec-cypress/
 categories:
     - javascript
-    - test
 tags:
     - javascript
     - test

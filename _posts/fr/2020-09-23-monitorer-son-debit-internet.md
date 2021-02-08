@@ -9,7 +9,7 @@ authors:
     - VEBERArnaud
 permalink: /fr/monitorer-son-debit-internet/
 categories:
-    - monitoring
+    - bonnes pratiques
 tags:
     - monitoring
     - raspberry pi
