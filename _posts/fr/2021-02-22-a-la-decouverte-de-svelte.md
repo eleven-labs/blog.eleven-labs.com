@@ -1,7 +1,7 @@
 ---
 layout: post
 title: À la découverte de Svelte
-excerpt: Svelte veut dire "mince et élégant", un nom adapté pour ce jeune framework qui boulverse quelques paradigmes du développement web.
+excerpt: Svelte veut dire "mince et élégant", un nom adapté pour ce jeune framework qui bouleverse quelques paradigmes du développement web.
 authors:
     - romaindurand
 lang: fr
@@ -154,7 +154,7 @@ En fait il parle plus exactement de SvelteKit, car [il n’y aura pas de version
 
 ## Conclusion
 
-Suite à cette preuve de concept, nous avons comme nos collègues choisi Svelte et Sapper pour la refonte technique de France Bleu. Le gain de performances, notamment en terme de temps avant interraction, étaient trop importantes pour être négligées. C’est un framework vraiment très accessible pour qui connaît les bases du développement web, alors que React nécessite souvent en plus un bagage assez solide en Javascript.
+Suite à cette preuve de concept, nous avons comme nos collègues choisi Svelte et Sapper pour la refonte technique de France Bleu. Le gain de performances, notamment en terme de temps avant interaction, étaient trop importantes pour être négligées. C’est un framework vraiment très accessible pour qui connaît les bases du développement web, alors que React nécessite souvent en plus un bagage assez solide en Javascript.
 
 Le framework, parce qu’il est aussi un compilateur, offre plein de fonctionnalités, comme un système natif d’animations, de transitions, de stores, et ne se fixe qu’assez peu de limite de ce côté puisque ne sera compilé et envoyé au client que le code strictement nécessaire.
 
@@ -177,7 +177,7 @@ Une chose est sûre, c’est que j’utiliserai Svelte (et Sapper si besoin) pou
 <img src="/assets/2021-02-22-a-la-decouverte-de-svelte/Marx.png" width="45px" alt="Marx"/>
 )*
 *   [Svelte REPL](https://svelte.dev/repl/hello-world?version=3.32.3), un outil très pratique qui permet de développer avec Svelte directement dans son navigateur, de créer un projet, de voir le code compilé, et plein d'autres fonctionnalités très pratiques.
-*   [The return of Write Less, Do More](https://www.youtube.com/watch?v=BzX4aTRPzno), une autre conférence (et très drôle) de Rich Harris, qui explique l'état d'esprit qu'il y a derièrre la conception de Svelte.
+*   [The return of Write Less, Do More](https://www.youtube.com/watch?v=BzX4aTRPzno), une autre conférence (et très drôle) de Rich Harris, qui explique l'état d'esprit qu'il y a derrière la conception de Svelte.
 *   [La conférence d'Alexis Jacomy au DevFest Nantes 2019](https://www.youtube.com/watch?v=FY0VkYFZb3k), qui rentre un peu dans les détails de la compilation avec Svelte. Très intéressant même si je suis pas totalement d'accord avec sa conclusion.
 *   [Le podcast Svelte Radio](https://www.svelteradio.com/), un format hebdomadaire qui permet de se tenir informé de ce qui se passe dans cet écosystème, pour ceux qui consomment ce genre de format.
 *   [L’équivalent d’une awesome-list](https://svelte-community.netlify.app/code), maintenue par la communauté, et plus généralement [ce site](https://svelte-community.netlify.app/), qui contient tout un tas d’autres ressources utiles.
