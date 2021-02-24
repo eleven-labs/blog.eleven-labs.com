@@ -32,12 +32,12 @@ Connaissez-vous [Svelte](https://svelte.dev/), le framework Javascript qui monte
 
 # Présentation
 
-Svelte est en fait un framework _et_ un compilateur, et c’est la principale différence qu’il propose par rapport à ses concurrents. Comme React ou Vue, il suit une approche par composants, organisés dans une arborescence où la donnée ne circule que dans un sens. En revanche, React ou Vue livrent au client leur propre code en plus de votre code transpilé, puis l’essentiel du travail se passe dans le navigateur. Svelte lui transfère ce travail au moment de la compilation en ajoutant à votre code, là où c’est nécessaire, des instructions qui vont directement lier l’état de votre application à l’état du DOM. Résultat, on livre des fichiers Javascript beaucoup plus légers, et qui ressemblent beaucoup au code que vous avez écrit. Donc on gagne en performances sur l’activité réseau et l’interprétation des fichiers par le navigateur.
+Svelte est en fait un framework _et_ un compilateur, et c’est la principale différence qu’il propose par rapport à ses concurrents. Comme React ou Vue, il suit une approche par composants, organisés dans une arborescence où la donnée ne circule que dans un sens. En revanche, React ou Vue livrent au client leur propre code en plus de votre code transpilé, puis l’essentiel du travail se passe dans le navigateur. Svelte transfère ce travail au moment de la compilation en ajoutant à votre code, là où c’est nécessaire, des instructions qui vont directement lier l’état de votre application à l’état du DOM. Résultat, on livre des fichiers Javascript beaucoup plus légers, et qui ressemblent beaucoup au code que vous avez écrit. Donc on gagne en performances sur l’activité réseau et l’interprétation des fichiers par le navigateur.
 
 Avec cette approche, plus besoin de DOM virtuel ! On se passe également de l’étape de [calcul des différences de DOM virtuel](https://fr.reactjs.org/docs/reconciliation.html) (réconciliation) quand l’état de l'application change... encore des gains de performances !
 
 <div style="text-align: center;">
-    <img src="/assets/2021-02-22-a-la-decouverte-de-svelte/entendement.gif" width="300px" alt="Mais enfin Jérome, ça dépasserait l'entendement !" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2021-02-22-a-la-decouverte-de-svelte/entendement.gif" width="300px" alt="Mais enfin Jérome, ça dépasserait l'entendement !" style="display: block; margin: auto;"/>
     <i>Gagner en performance en se passant du DOM virtuel ??</i>
 </div>
 
@@ -138,14 +138,14 @@ L’idée principale était de copier le code du middleware de Sapper dans un no
 C’est donc une solution qui fonctionne, mais assez peu satisfaisante puisque l’on duplique du code déjà présent dans le framework. J’ai tout de même proposé notre solution [ici](https://github.com/sveltejs/sapper/issues/1008#issuecomment-751300133). Le point positif étant que nous avons reçu une réponse de la part d’un des contributeurs de Sapper nous disant que que les pages AMP seraient supportées dans la prochaine version majeure de Sapper !
 
 <div style="text-align: center;">
-    <img src="/assets/2021-02-22-a-la-decouverte-de-svelte/yes.gif" width="300px" style="display: block; margin: auto;" alt="phoque yeah"/>
+    <img src="{{ site.baseurl }}/assets/2021-02-22-a-la-decouverte-de-svelte/yes.gif" width="300px" style="display: block; margin: auto;" alt="phoque yeah"/>
 </div>
 
 En fait il parle plus exactement de SvelteKit, car [il n’y aura pas de version 1.0 de Sapper](https://youtu.be/qSfdtmcZ4d0?t=76). En effet, plutôt que de proposer deux templates de projets (un pour Svelte, l’autre pour Sapper), l’équipe de Svelte souhaite offrir une solution unique qui permette de tout faire. On a encore assez peu de détails sur SvelteKit, mais l’équipe qui travaille dessus a montré la volonté de fournir un processus de migration d’un projet Sapper vers SvelteKit aussi indolore que possible.
 
 
 <div>
-    <img src="/assets/2021-02-22-a-la-decouverte-de-svelte/soulagement.gif" width="300px" alt="soulagement" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2021-02-22-a-la-decouverte-de-svelte/soulagement.gif" width="300px" alt="soulagement" style="display: block; margin: auto;"/>
 </div>
 
 
@@ -172,7 +172,7 @@ Une chose est sûre, c’est que j’utiliserai Svelte (et Sapper si besoin) pou
 *   [La FAQ du Svelte Society Day 2020](https://www.youtube.com/watch?v=luM5uobewhA), qui évoque à la fin la notion de maximum local, en quoi elle pourrait s’appliquer au développement web, et en quoi Svelte pourrait être une piste pour s’en sortir. Mais aussi à quels autres domaines cette notion pourrait également s’appliquer.
 
     *(sifflote 
-<img src="/assets/2021-02-22-a-la-decouverte-de-svelte/Marx.png" width="45px" alt="Marx"/>
+<img src="{{ site.baseurl }}/assets/2021-02-22-a-la-decouverte-de-svelte/Marx.png" width="45px" alt="Marx"/>
 )*
 *   [Svelte REPL](https://svelte.dev/repl/hello-world?version=3.32.3), un outil très pratique qui permet de développer avec Svelte directement dans son navigateur, de créer un projet, de voir le code compilé, et plein d'autres fonctionnalités très pratiques.
 *   [The return of Write Less, Do More](https://www.youtube.com/watch?v=BzX4aTRPzno), une autre conférence (et très drôle) de Rich Harris, qui explique l'état d'esprit qu'il y a derrière la conception de Svelte.
