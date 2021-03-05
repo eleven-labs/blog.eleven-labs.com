@@ -12,11 +12,10 @@ categories:
     - teamwork
 tags:
     - teamwork
-    - equite
-    - organisation
+    - égalité
 ---
 
-Aujourd'hui, c'est la journée internationale des droits de la femme, et nous avons voulu en profiter pour vous parler d'un sujet qui nous tient à cœur : les femmes dans l'informatique. Attendez, attendez ! Ne partez pas tout de suite. Le but de cet article est de vous raconter notre expérience pour vous donner une meilleure vision de pourquoi on n'est pas si nombreuses, pourquoi certaines abandonnent, et, surtout, comment faire pour que ça change. Alors, si vous aussi vous voulez plus de collègues femmes, lis la suite.
+Aujourd'hui, c'est la journée internationale des droits de la femme, et nous avons voulu en profiter pour vous parler d'un sujet qui nous tient à cœur : les femmes dans l'informatique. Attendez, attendez ! Ne partez pas tout de suite. Le but de cet article est de vous raconter notre expérience pour vous donner une meilleure vision de pourquoi on n'est pas si nombreuses, pourquoi certaines abandonnent, et, surtout, comment faire pour que ça change. Alors, si vous aussi vous voulez plus de collègues femmes, lisez la suite.
 
 
 ## Le constat
@@ -31,7 +30,9 @@ Sur 15, au moins 6 ont abandonné l'informatique pendant les études ou dans les
 
 A ma connaissance, on n'est plus que deux à faire encore du développement logiciel.
 
-Mais comment est-ce qu'on en est arrivé là ? Pour vous donner une idée, nous avons sélectionné le top 10 des réflexions que l'on a pu avoir dans nos carrières de développeuses (nous-même ou nos amies développeuses).
+Mais comment est-ce qu'on en est arrivé là ?
+
+Pour vous donner une idée, nous avons sélectionné le top 10 des réflexions que l'on a pu avoir dans nos carrières de développeuses (nous-même ou nos amies développeuses).
 
 ## Le Top 10
 1. Elle passe un entretien technique pour une mission en régie (*suivi d'un clin d’œil*) :
@@ -41,7 +42,7 @@ Mais comment est-ce qu'on en est arrivé là ? Pour vous donner une idée, nous 
 > *T'es une femme et tu es plus jeune que moi, tu n'as pas à me dire quoi faire.*
 
 3. Elle fait passer un entretien technique à un candidat :
-> *T'es une femme, je ne sais pas si tu connais les principes SOLID.*
+> *T'es une femme, je ne sais pas si toi tu connais les principes SOLID.*
 
 4. Elle discute avec le collègue A de la meilleure solution technique à un problème. Le collègue B, qui ne connait ni le language de programmation ni le framework en question, lui propose une solution (inadaptée), elle le remercie et dit qu'ils gardent sa proposition en tête, mais peuvent peut-être trouver mieux (*et non, il ne rigolait pas*):
 > *Non mais, moi je suis un homme, toi t'es une femme, tu te tais et tu fais ce que je te dis.*
@@ -58,13 +59,10 @@ Mais comment est-ce qu'on en est arrivé là ? Pour vous donner une idée, nous 
 ...
 
 ## Le changement
-Vous avez pu constater dans ce top 10 que les situations discriminantes arrivent aux femmes à différents moments et dans différents contextes. Mais que peut-on faire au quotidien pour que cela change ?
+Vous avez pu constater dans ce top 10 que les situations discriminantes arrivent aux femmes à différents moments et dans différents contextes. Des fois on les sent venir, des fois elles nous prennent par surprise. Mais la bonne nouvelle, c'est qu'on peut tous contribuer au changement.
 
-### Qui ne dit mot, consent
-Il vous arrive de témoigner un collègue qui fait une réflexion ou une blague désobligeante. Les autres membres de l'équipe en rigolent plus ou moins. La remarque vous gène, mais vous n'avez pas envie de lui faire signaler son manque de tact pour x raison.
+...
 
-Cela parait anodin, mais cela crée un précédent pour le collègue en question : il a l'impression d'être drôle et personne ne lui dit l'inverse.
-
-Il recommencera. Et peut-être que d'autres le suivront.
-
-Que se passe-t-il quand une femme rejoint l'équipe ?
+## Le mot de la fin
+Le changement ne viendra pas demain, mais chaque contribution compte.
+Essayons d'être conscients de nos comportements, et ensemble nous y arriverons.
