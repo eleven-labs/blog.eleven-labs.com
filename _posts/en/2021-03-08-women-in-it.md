@@ -7,7 +7,7 @@ excerpt: >
 authors:
     - marishka
     - marianne
-permalink: /en/women-in-it/
+permalink: /women-in-it/
 categories:
     - teamwork
     - equality
