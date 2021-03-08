@@ -31,7 +31,7 @@ On ne sait pas exactement pourquoi cette tendance a brusquement changé, mais la
 
 ### Et aujourd'hui ?
 
-Aujourd'hui, en France les femmes représentent [23%](https://femmes-numerique.fr/les-chiffres-cles/) des salariés dans les métiers du numérique, et seulement 17% en développement.
+Aujourd'hui, en France les femmes représentent [23%](https://femmes-numerique.fr/les-chiffres-cles/) des salariés dans les métiers du numérique, et seulement 17% dans le développement.
 
 Dans ma promotion à l’université, on était une quinzaine de femmes pour 200 étudiants.
 
@@ -71,7 +71,7 @@ Tout ceci a contribué à créer des stéréotypes sociaux et de genre qui influ
 Ces stéréotypes sont à l'origine d'attentes variées concernant le comportement social et la réussite scolaire des femmes et des hommes. Et ils sont transmis aux enfants dès le plus jeune âge, que ce soit par les familles ou les enseignants, souvent inconsciemment.
 Je vous invite à lire [cette étude](https://link.springer.com/article/10.1007/s11218-020-09551-5) si vous souhaitez en savoir plus.
 
-L'informatique est un monde vu comme masculin. Ainsi, de nos jours, dès le lycée (pour ne pas dire collège), il y a peu de filles qui choisissent et s'intéressent aux filières scientifiques.
+L'informatique est un monde vu comme masculin. Ainsi, de nos jours, dès le lycée (pour ne pas dire collège), il y a peu de filles qui s'intéressent aux filières scientifiques.
 
 **_Celles qui abandonnent_**
 
@@ -82,7 +82,7 @@ Parmi les raisons qui les poussent à prendre cette décision, on peut voir ceci
 
 ![Les raisons pour lesquelles les femmes abandonnent l'informatique]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/second.png)
 
-Il y a des femmes qui subissent une grande pression au travail liée à la [gentrification des tâches](https://hbr.org/2018/11/the-subtle-stressors-making-women-want-to-leave-engineering).
+Il y a des femmes qui subissent une grande pression au travail liée à [l'association de certaines tâches à un genre donné".](https://hbr.org/2018/11/the-subtle-stressors-making-women-want-to-leave-engineering).
 Par exemple, il existe toujours l'idée que les femmes sont plus douées que les hommes dans l'organisation et la communication.
 Or, il n'y a, à l'heure actuelle, [aucune étude](https://www.apa.org/action/resources/research-in-action/share) qui aurait démontré que les femmes ou les hommes soient naturellement plus disposés à un type de tâche donné.
 
@@ -97,7 +97,7 @@ Cette situation crée une pression, ajoute du stress au quotidien, et empiète �
 Par ailleurs, les femmes sont encouragées par leurs supérieurs à monter en compétences sur des postes qui leur font abandonner le développement.
 Et voici le constat :
 
-![Principaux métiers numériques par sexe]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/third.png)
+![Principaux métiers numériques par genre]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/third.png)
 
 Les femmes sont donc parfois insatisfaites de leurs perspectives de carrière. Elles ont le sentiment de ne pas pouvoir évoluer de la façon dont elles voudraient, et finissent par abandonner l'informatique.
 
@@ -128,7 +128,7 @@ Vous pourriez leur raconter par où commencer, où trouver des ressources pertin
 Il existe des centaines de MOOCs sur internet, disponibles gratuitement sur des sites comme [Coursera.org](https://www.coursera.org/), [Edx.org](https://www.edx.org/), [Udemy.com](https://www.udemy.com/).
 C'est un format d'apprentissage qui permet d'aller à son rythme, et qui donne accès à une communauté où les étudiants peuvent chercher ou donner de l'aide.
 
-Ou pourquoi pas ne pas les inviter à faire un stage dans l'informatique si vous en avez la possibilité ?
+Ou pourquoi pas les inviter à faire un stage dans l'informatique si vous en avez la possibilité ?
 
 ### Avoir des femmes mentors
 
@@ -136,7 +136,7 @@ Une autre approche pour donner envie aux jeunes femmes de s'intéresser à l'inf
 
 Et [ce n'est pas ce qui manque](https://www.nytimes.com/2019/02/13/magazine/women-coding-computer-programming.html). Vous pourriez leur parler de Grace Hopper, Margaret Hamilton, Katherine Johnson, Shafi Goldwasser et tant d'autres.
 Vous pourriez aussi leur montrer le film *Hidden Figures* par exemple.
-Faites les rencontrer vos collègues femmes qui pourraient les encourager à poursuivre une carrière dans l'informatique.
+Faites-les rencontrer vos collègues femmes qui pourraient les encourager à poursuivre une carrière dans l'informatique.
 
 ### Un environnement plus sain pour les femmes
 
@@ -156,13 +156,13 @@ Pour éviter ce genre de comportements, il faut adopter une nouvelle gymnastique
 
 De la même manière, en tant que supérieur hiérarchique, il faut être attentif aux envies de progression de ses équipes, et éviter d'allouer les tâches à une personne en se basant sur des stigmatismes sociaux et des idées reçues.
 
-Concernant les remarques sexistes qui peuvent avoir lieu au travail, même si vous en n'êtes pas l'auteur, vous pouvez intervenir.
-Faire remarquer à l'auteur qu'un propos est déplacé et soutenir la ou les femmes qui vous entourent permet d'assainir l'environnement, et de s'assurer que, progressivement, ces situations ne se répètent plus.
+Concernant les remarques sexistes qui peuvent avoir lieu au travail, même si vous n'en n'êtes pas l'auteur, vous pouvez intervenir.
+Faire remarquer à l'auteur qu'un propos est déplacé et soutenir la ou les femmes qui vous entourent permet d'assainir l'environnement, et de s'assurer que progressivement ces situations ne se répètent plus.
 Si vos collègues femmes se sentent soutenues, elles auront moins peur de signaler des situations inadaptées, se sentiront mieux de façon générale dans l'équipe et pourront mieux y contribuer.
 
 ## Le mot de la fin
 
-Les femmes dans l'IT ne peuvent pas améliorer la situation seules, et même si le gouvernement met en place des actions pour l'égalité homme/femme, c'est à chacun et chacune d'entre nous de promouvoir ces merveilleux métiers, en mettant plus l'accent pour les jeunes filles pour casser les idées reçues.
+Les femmes dans l'IT ne peuvent pas améliorer la situation seules, et même si le gouvernement met en place des actions pour l'égalité homme/femme, c'est à chacun et chacune d'entre nous de promouvoir ces merveilleux métiers, en cassant les idées reçues au près des jeunes filles.
 Vous pouvez faire bouger les lignes : améliorer le quotidien, faire confiance et donner confiance aux femmes qui travaillent autour de vous, comme vous le feriez pour n'importe quel collègue.
 
 On compte sur vous pour que dans quelques années on puisse faire un article sur l'augmentation du nombre de femmes dans l'IT :)
