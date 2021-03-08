@@ -3,7 +3,7 @@ lang: en
 layout: post
 title: Women in IT
 excerpt: >
-    Today is International Women's Rights Day, and we wanted to take the opportunity to talk to you about a subject that is close to our hearts: women in IT. The purpose of this article is to tell you about our experience to give you a better vision of why there aren't many of us, why some give up, and, above all, how to make that change.
+    Today is the International Women's Rights Day, and we wanted to take the opportunity to talk to you about a subject that is close to our hearts: women in IT. The purpose of this article is to tell you about our experience to give you a better vision of why there aren't many of us, why some give up, and, above all, how to make that change.
 authors:
     - marishka
     - marianne
@@ -18,7 +18,7 @@ tags:
     - history
 ---
 
-Today is International Women's Rights Day, and we wanted to take the opportunity to talk to you about a subject that is close to our hearts: women in IT. Wait, wait! Don't leave right away. The purpose of this article is to tell you about our experience to give you a better vision of why there aren't many of us, why some give up, and, above all, how to make that change. So, if you too want more female colleagues, read on.
+Today is the International Women's Rights Day, and we wanted to take the opportunity to talk to you about a subject that is close to our hearts: women in IT. Wait, wait! Don't leave right away. The purpose of this article is to tell you about our experience to give you a better vision of why there aren't many of us, why some give up, and, above all, how to make that change. So, if you too want more female colleagues, read on.
 
 ## The finding
 
@@ -43,7 +43,7 @@ To my knowledge, there are only two of us still doing software development.
 
 Today still, and even in developed countries, [women are less likely than men to lead an active life, especially full time](https://www.insee.fr/fr/statistiques/4277649?sommaire=4318291#:~:text=En%202018%2C%20les%20femmes%20qui,%2C8%20%25%20pour%20les%20hommes.) - this is related to the place of women in society, which is a broader subject, but which plays a role here too.
 
-According to [this study](https://journals.sagepub.com/doi/abs/10.1177/0956797617741719?journalCode=pssa), paradoxically, the more egalitarian a country, the less women orient themselves towards scientific studies.
+According to [this study](https://journals.sagepub.com/doi/abs/10.1177/0956797617741719?journalCode=pssa), paradoxically, the more egalitarian a country is, the less women orient themselves towards scientific studies.
 In countries less well off in terms of gender equality, they engage in scientific studies to ensure a stable and lucrative career.
 Conversely, in more egalitarian countries, women have more career choices, so they can leave room for their preferencies.
 This indicates a real lack of attraction of the profession for women.
@@ -55,7 +55,7 @@ Several factors contribute to the lack of women in IT.
 First, from the 1960s onwards, IT professions were constantly gaining prestige, salaries were attractive, and many men turned to them.
 Men were also favored during [selections in universities](https://digital-society-forum.orange.com/fr/les-actus/1134-comment-l39informatique-a-exclu-les-femmes).
 
-Then, [the appearance of personal computers has widened this gap even more](https://www.ritimo.org/Les-femmes-et-l-informatique-histoire-d-une-exclusion-enjeux-de-la ). Computers were expensive, more men worked and knew how to use them, so he bought them for themselves and for their sons.
+Then, [the appearance of personal computers widened this gap even more](https://www.ritimo.org/Les-femmes-et-l-informatique-histoire-d-une-exclusion-enjeux-de-la ). Computers were expensive, more men worked and knew how to use them, so they bought them for themselves and for their sons.
 In addition, as mentioned above, the commercials helped reinforce the idea that computers were primarily intended for men and young boys.
 As a result, the computer was seen as a male tool. In households, girls spent little or no time familiarizing themselves with it.
 
@@ -84,7 +84,7 @@ Among the reasons that push them to make this decision, we can see this:
 
 There are women who experience great pressure at work related to [associating certain tasks with a given gender.](Https://hbr.org/2018/11/the-subtle-stressors-making-women-want-to-leave-engineering).
 For example, there is always the idea that women are better than men in organization and communication skills.
-However, there is, at present, [no study](https://www.apa.org/action/resources/research-in-action/share) which would have shown that women or men are naturally more talented for a given type of task.
+However, there is, at present, [no study](https://www.apa.org/action/resources/research-in-action/share) that would show that women or men are naturally more talented for a given type of task.
 
 However, in some companies, people still tend to ask women to take care of such tasks.
 Women do well, so they are given more and more time for these other tasks.
@@ -99,7 +99,7 @@ And here is the observation:
 
 ![Main IT jobs by gender]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/third.png)
 
-Women are therefore sometimes dissatisfied with their career prospects. They feel that they cannot evolve the way they would like, and eventually give up IT and choose another career path.
+Women are therefore sometimes dissatisfied with their career prospects. They feel that they cannot evolve the way they would like to, and they eventually give up IT and choose another career path.
 
 Another reason why women quit their IT profession is sexism. Unfortunately it is still very present in our society in general, and not only in IT.
 At work, it can range from a little awkward remark once in a while to a hostile environment where women don't feel safe.
@@ -119,7 +119,7 @@ We must therefore intervene earlier, as soon as possible actually, to prevent re
 Here are some ideas of what you could do yourself.
 
 For younger children, exposing them to science in general is a good start.
-You are going to spend a few days with your family? Take the opportunity to do a little [simple experiment](https://www.educatout.com/activites/sciences/index.html) while playing with your nieces and nephews.
+You are going to spend a few days with your family? Take the opportunity to do a [simple experiment](https://www.educatout.com/activites/sciences/index.html) while playing with your nieces and nephews.
 
 If you have 12+ year old girls around you, you can introduce them to computer sciences.
 Try to help them take an interest in it, accompany them in their first steps.
@@ -152,7 +152,7 @@ To avoid this kind of behavior, you have to adopt a certain amount of mental gym
 - Did I listen to my female colleague?
 - Does she have more experience than me on the subject?
 - Did I check for myself before intervening?
-- Do I have real reasons to question here statements?
+- Do I have real reasons to question her statements?
 
 In the same way, as a supervisor, you need to pay attention to the desires of progress of your team members, and to avoid allocating tasks to a person based on social stigmatisms and received ideas.
 
