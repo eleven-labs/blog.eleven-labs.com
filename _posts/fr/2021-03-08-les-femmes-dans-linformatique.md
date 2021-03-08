@@ -82,7 +82,7 @@ Parmi les raisons qui les poussent à prendre cette décision, on peut voir ceci
 
 ![Les raisons pour lesquelles les femmes abandonnent l'informatique]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/second.png)
 
-Il y a des femmes qui subissent une grande pression au travail liée à [l'association de certaines tâches à un genre donné".](https://hbr.org/2018/11/the-subtle-stressors-making-women-want-to-leave-engineering).
+Il y a des femmes qui subissent une grande pression au travail liée à [l'association de certaines tâches à un genre donné.](https://hbr.org/2018/11/the-subtle-stressors-making-women-want-to-leave-engineering).
 Par exemple, il existe toujours l'idée que les femmes sont plus douées que les hommes dans l'organisation et la communication.
 Or, il n'y a, à l'heure actuelle, [aucune étude](https://www.apa.org/action/resources/research-in-action/share) qui aurait démontré que les femmes ou les hommes soient naturellement plus disposés à un type de tâche donné.
 
@@ -162,7 +162,7 @@ Si vos collègues femmes se sentent soutenues, elles auront moins peur de signal
 
 ## Le mot de la fin
 
-Les femmes dans l'IT ne peuvent pas améliorer la situation seules, et même si le gouvernement met en place des actions pour l'égalité homme/femme, c'est à chacun et chacune d'entre nous de promouvoir ces merveilleux métiers, en cassant les idées reçues au près des jeunes filles.
+Les femmes dans l'IT ne peuvent pas améliorer la situation seules, et même si le gouvernement met en place des actions pour l'égalité homme/femme, c'est à chacun et chacune d'entre nous de promouvoir ces merveilleux métiers, en cassant les idées reçues auprès des jeunes filles.
 Vous pouvez faire bouger les lignes : améliorer le quotidien, faire confiance et donner confiance aux femmes qui travaillent autour de vous, comme vous le feriez pour n'importe quel collègue.
 
 On compte sur vous pour que dans quelques années on puisse faire un article sur l'augmentation du nombre de femmes dans l'IT :)
