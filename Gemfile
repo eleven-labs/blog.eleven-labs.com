@@ -3,7 +3,7 @@ gem 'jekyll', '~> 4.1.1'
 gem 'rouge', '~> 3.25.0'
 gem 'uglifier', '~> 4.2.0'
 gem 'sassc', '~> 2.4.0'
-gem 'kramdown'
+gem 'kramdown', '>= 2.3.1'
 gem 'oga'
 gem 'scss_lint', require: false
 
