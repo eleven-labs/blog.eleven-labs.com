@@ -25,16 +25,16 @@ Mais qu’est-ce donc que Home Assistant ? Home Assistant (hass) est une solutio
 
 Nous allons tout d’abord installer hass, et pour se faire, plusieurs choix s'offrent à nous (Docker, hassbian ou hass.io). Dans le cadre de ce tuto, nous allons le faire tourner sous Docker mais je vous invite à tester Hassbian qui marche très bien sous raspberry.
 
-Cela tient en deux commandes (sous linux) : 
+Cela tient en deux commandes (sous linux) :
 
 ```sh
 $ mkdir home-assistant
 $ docker run -d --name="home-assistant" -v /PATH_TO_YOUR_FOLDER_HASS:/config -e "TZ=Europe/Paris" -p 8123:8123 homeassistant/home-assistant
 ```
-Toutes les infos sur l’installation sont disponibles [ici](https://www.home-assistant.io/docs/installation/docker/) 
+Toutes les infos sur l’installation sont disponibles [ici](https://www.home-assistant.io/docs/installation/docker/)
 
 
-Et voilà, votre home-assistant tourne maintenant en local, et vous pouvez y accéder ici : 
+Et voilà, votre home-assistant tourne maintenant en local, et vous pouvez y accéder ici :
 [http://localhost:8124/](http://localhost:8124/)
 
 ![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/connexion-home.png)
@@ -47,7 +47,7 @@ Nous allons voir à présent comment activer un [component](https://www.home-ass
 
 Tout d’abord, un petit laïus sur comment fonctionne home-assistant.
 
-Si vous regardez dans le répertoire home-assistant que vous avez créé dans la première étape, vous devriez voir ceci : 
+Si vous regardez dans le répertoire home-assistant que vous avez créé dans la première étape, vous devriez voir ceci :
 
 ```sh
 $ ls home-assistant
@@ -55,7 +55,7 @@ $ ls home-assistant
 automations.yaml     customize.yaml       groups.yaml          home-assistant_v2.db secrets.yaml
 configuration.yaml   deps                 home-assistant.log   scripts.yaml         tts
 
-``` 
+```
 
 Globalement, toute la configuration se passe dans le fichier `configuration.yaml`, les autres .yaml étant inclus dans celui-ci.
 
@@ -87,7 +87,7 @@ Vous devriez maintenant voir apparaître le dernier statut du build du projet.
 ![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/hass-gitlabci.png)
 
 
-Et si vous cliquez sur le sensor, vous aurez plus d’infos : 
+Et si vous cliquez sur le sensor, vous aurez plus d’infos :
 
 ![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/details-gitlabci.png)
 
@@ -124,7 +124,7 @@ sensor:
       test_gitlab_projet_x_build_branch: #nom que l’on donne à notre sensor custom
         value_template: "{{ state_attr('sensor.test_gitlab_projet_x', 'build branch') }}" # On récupère et affiche l’attribute ‘build branche’
         friendly_name: "Branch"
-        entity_id: test_gitlab_projet_x #Le sensor va écouter cette entity pour changer ses valeurs 
+        entity_id: test_gitlab_projet_x #Le sensor va écouter cette entity pour changer ses valeurs
       test_gitlab_projet_x_commit_date:
         value_template: "{{ state_attr('sensor.test_gitlab_projet_x', 'commit date') }}"
         friendly_name: "Date"
@@ -161,7 +161,7 @@ views:
 
 ```
 
-Tadaaa : 
+Tadaaa :
 
 ![home-assistant gitlab-ci]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/lovelace-gitlabci.png)
 
@@ -199,7 +199,7 @@ Puis, il va falloir créer une automation pour mettre à jour le status de la CI
           value_template: "{{ states('sensor.test_gitlab_projet_x') }}"
 ```
 {% endraw %}
-Ici nous avons : 
+Ici nous avons :
 - `trigger`: chaque changement lance cette automation
 - `condition`: il faut que notre entity branch ait la valeur master
 - `action`: si la condition est remplie, nous changeons la valeur de notre variable avec le status de la pipeline
@@ -224,7 +224,7 @@ Le résultat :
 
 Voilà pour la partie design, il y à des dizaines d’améliorations à apporter que nous ne verrons pas dans cet article.
 
-Par exemple : 
+Par exemple :
 - Changer la couleur de la card en fonction du test / résultat de la pipeline
 - Raccourci vers le résultat de la CI
 - Stats sur les CI/CD

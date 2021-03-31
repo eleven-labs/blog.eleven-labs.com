@@ -10,14 +10,14 @@ excerpt: "Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde ve
 date: '2017-03-03 15:38:35 +0100'
 date_gmt: '2017-03-03 14:38:35 +0100'
 categories:
-    - Symfony
-    - Javascript
+    - symfony
+    - javascript
 tags:
     - php
     - symfony
-    - Javascript
-    - Angular2
-    - Angular
+    - javascript
+    - angular2
+    - angular
 ---
 
 Introduction
@@ -767,17 +767,17 @@ Enfin, pour finaliser notre application, il ne reste plus qu'à lui appliquer un
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" 
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous">
-  </script>   
+  </script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="container">
   	<app-root><div class="text-center loading">Loading...</div></app-root>
   </div>
-  
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

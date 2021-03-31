@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<div class="home">
+    {% if site.theme_settings.share_button %}
+        {% include share.html %}
+    {% endif %}
+
+    <div class="article-container tag-container">
+      <h1 class="md-content-tag__title">{% translate global.tag_page_title %} <strong>{{ page.tag }}</strong></h1>
+        {% for post in page.posts %}
+        <div class="article-preview">
+            <div class="article-preview__header">
+
+                <h2 class="article-preview__title">
+                    <a class="article-preview__title-link" href="{{ post.url | prepend: site.baseurl }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+            </div>
+            <div class="article-preview__metadatas">
+                <time class="article-preview__post-reading">
+                    <span class="article-preview__post-date">
+                        <i class="far fa-fw fa-calendar-plus"></i>{% include date_translate.html object=post.date %}
+                    </span>
+                    <span class="article-preview__read-time">
+                        <i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=post.content %}
+                    </span>
+                    {% include author_articles_link.html authors=post.authors %}
+                </time>
+            </div>
+            <div class="article-preview__excerpt">
+                <p>{{ post.excerpt }}</p>
+            </div>
+        </div>
+
+        <hr class="separator-line" />
+        {% endfor %}
+    </div>
+</div>
+{% include newsletter_link.html %}

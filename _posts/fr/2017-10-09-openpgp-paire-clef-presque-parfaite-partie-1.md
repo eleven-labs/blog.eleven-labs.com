@@ -8,10 +8,10 @@ lang: fr
 permalink: /fr/openpgp-paire-clef-presque-parfaite-partie-1/
 categories:
     - openpgp
-    - sécurité
+    - securite
 tags:
     - openpgp
-    - sécurité
+    - securite
 cover: /assets/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
 ---
 
@@ -83,8 +83,8 @@ s2k-count 65011712
 Lors de la création d'une clé OpenPGP dans son mode de base, gpg va créer une paire de clés qui permet de signer et de certifier.
 Pour augmenter la sécurité de notre clé, nous allons utiliser une particularité d'OpenPGP : les sous-clés.
 
-OpenPGP permet de créer des sous-clés avec un usage spécifique : signer, chiffrer et authentifier. Un autre avantage à l'utilisation 
-des sous-clés est qu'en cas de perte ou vol des clés secrètes des sous-clés, il suffira de révoquer la sous-clé 
+OpenPGP permet de créer des sous-clés avec un usage spécifique : signer, chiffrer et authentifier. Un autre avantage à l'utilisation
+des sous-clés est qu'en cas de perte ou vol des clés secrètes des sous-clés, il suffira de révoquer la sous-clé
 sans avoir à révoquer la clé principale (celle qui permet de certifier d'autres clés).
 
 Commençons par créer la clé principale, celle qui va détenir notre identité. Puis ensuite, créons des sous-clés pour signer, chiffrer et authentifier.
@@ -150,11 +150,11 @@ Your selection? q
 
 Nous avons configuré les capacités de cette premiere clé pour n'autoriser que la certification.
 Passons ensuite à la taille de la clé : il est recommandé d'avoir une clé
-d'une taille minimale de 2048. À ce jour, cette longueur est encore résistante, mais il est 
-préférable de prendre la taille maximale : 4096. 
+d'une taille minimale de 2048. À ce jour, cette longueur est encore résistante, mais il est
+préférable de prendre la taille maximale : 4096.
 
-Pour la durée de vie de la clé, il est toujours recommandé d'en mettre une. En cas de perte de cette clé, et si elle 
-a été envoyée sur un serveur de clé, elle y restera à jamais valide. Mettez une durée d'au maximum 2 ans. Ici je vais mettre 1 an. 
+Pour la durée de vie de la clé, il est toujours recommandé d'en mettre une. En cas de perte de cette clé, et si elle
+a été envoyée sur un serveur de clé, elle y restera à jamais valide. Mettez une durée d'au maximum 2 ans. Ici je vais mettre 1 an.
 Cela permet de réviser les commandes chaque année :) .
 
 ```bash
@@ -190,7 +190,7 @@ disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 ```
 
-Une fenêtre va s'afficher. Elle va vous demander de renseigner un pass-phrase pour protéger les clés secrètes. 
+Une fenêtre va s'afficher. Elle va vous demander de renseigner un pass-phrase pour protéger les clés secrètes.
 Choisissez-en un assez long que vous pouvez mémoriser facilement.
 
 ```bash
@@ -240,7 +240,7 @@ There is NO WARRANTY, to the extent permitted by law.
 Secret key is available.
 
 sec  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
@@ -304,10 +304,10 @@ disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 
 sec  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
 gpg>
@@ -320,14 +320,14 @@ La clé avec l'empreinte B73A9C79 a bien été créée. Répétez l'opération p
 
 ```bash
 sec  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
 gpg> save
@@ -339,9 +339,9 @@ Avant de pouvoir pleinement utiliser cette clé, sauvegardons-la.
 
 ### Exporter la clé principale
 
-La clé PGP ne doit pas être utilisée telle quelle. En cas de vol de la clé principale et du mot de passe, 
-le détenteur de cette clé peut usurper l'identitié numérique et signer des messages à la place de la vraie personne. 
-Il est donc primordial de séparer la clé principale des sous-clés. La cleé principale, celle qui permet de certifier, 
+La clé PGP ne doit pas être utilisée telle quelle. En cas de vol de la clé principale et du mot de passe,
+le détenteur de cette clé peut usurper l'identitié numérique et signer des messages à la place de la vraie personne.
+Il est donc primordial de séparer la clé principale des sous-clés. La cleé principale, celle qui permet de certifier,
 sera conservée dans un espace de stockage à froid et totalement déconnectée du réseau.
 
 Tout d'abord, créons un certificat de révocation en cas de vol de la clé principale.
@@ -397,10 +397,10 @@ Tous les fichiers que nous avons créés seront à conserver sur un média déco
 
 À travers cet article, nous avons créé une clé PGP avec un ensemble de sous-clés dédié à une tâche particulière. L'avantage d'utiliser OpenPGP par rapport à une simple clé asymétrique ce sont les sous-clés. Si une des clés est compromise, il suffira de la révoquer et d'en regénérer une nouvelle. Il ne sera pas nécessaire de révoquer la clé principale, celle qui détient notre identité numérique. Cette stratégie offre un niveau de sécurité beaucoup plus élevé.
 
-Vous pouvez dès à présent signer vos emails et en recevoir des chiffrés, signer vos commit git, utiliser keybase.io et 
+Vous pouvez dès à présent signer vos emails et en recevoir des chiffrés, signer vos commit git, utiliser keybase.io et
 même vous authentifier sur un serveur en SSH.
 
-Par ailleurs, le 2 novembre, il y aura [une fête de la signature des clés](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris) (key signing party){:rel="nofollow noreferrer"} dans les locaux de Mozilla France. 
+Par ailleurs, le 2 novembre, il y aura [une fête de la signature des clés](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris) (key signing party){:rel="nofollow noreferrer"} dans les locaux de Mozilla France.
 Cet évévenement est l'occasion de rencontrer d'autres adeptes d'OpenPGP et surtout, il permettra de faire certifier votre clé nouvellement créée.
 
 ### Article en relation

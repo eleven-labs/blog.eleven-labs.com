@@ -12,15 +12,15 @@ tags:
     - architecture
     - développement
     - vulgarisation
-cover: /assets/2019-02-06-what-is-an-architect/cover.jpg   
+cover: /assets/2019-02-06-what-is-an-architect/cover.jpg
 ---
 
 Voilà une question qui m'a souvent été posée par mon entourage professionnel, mais aussi par ma mamie du cantal, pour qui l'IT se limite à son Windows XP et sa messagerie Orange.
 
-Alors comment expliquer ce que je fais, sans entrer dans des détails trop techniques qui pourraient perdre mon interlocuteur ? 
+Alors comment expliquer ce que je fais, sans entrer dans des détails trop techniques qui pourraient perdre mon interlocuteur ?
 C'est d'autant plus intéressant que c'est le rôle quotidien de "l'archi" de vulgariser l'explication de ses choix, notamment pour les présenter aux responsables "fonctionnels". L'objectif de cette démarche de vulgarisation est de se faire comprendre, de faire comprendre les enjeux, le pourquoi et le comment.
 
-J'étais tombé sur cet [article](https://blogue.genium360.ca/article/actualites/7-techniques-de-communication-en-matiere-de-vulgarisation-scientifique/) il y a quelques temps, et je pense qu'il présente très bien la manière dont on doit présenter aux néophytes notre métier.  
+J'étais tombé sur cet [article](https://blogue.genium360.ca/article/actualites/7-techniques-de-communication-en-matiere-de-vulgarisation-scientifique/) il y a quelques temps, et je pense qu'il présente très bien la manière dont on doit présenter aux néophytes notre métier.
 
 Cette introduction mise à part, je vais à présent vous présenter le métier d'architecte logiciel, mais sans parler à un seul moment de technologies. À la place je vous propose une analogie avec l'architecture construction/btp. Comme ça, même votre mamie pourra comprendre ce que vous faites, et saisir l'importance de ce rôle dans la construction de logiciels (web).
 
@@ -29,16 +29,16 @@ Cette introduction mise à part, je vais à présent vous présenter le métier 
 
 En général, comme tout bon projet, cela commence chez le Promoteur. Un client arrive, et il veut la maison de ses rêves. Mais avec ses rêves, il arrive aussi très souvent avec ses contraintes : son budget, ses délais, son terrain, sa localisation géographique (chaud, froid, site protégé...). C'est à cette première étape que l'architecte entre en action. Son but, dans un premier temps, est d'évaluer la faisabilité du besoin.
 
-L'objectif : savoir si le besoin est réalisable au vu des contraintes. Le plus simple en général est d'utiliser le ratio qualité / coût / délai. Il est important de noter ici qu'on peut challenger le projet sur deux de ces contraintes, mais jamais sur les trois en même temps.  
+L'objectif : savoir si le besoin est réalisable au vu des contraintes. Le plus simple en général est d'utiliser le ratio qualité / coût / délai. Il est important de noter ici qu'on peut challenger le projet sur deux de ces contraintes, mais jamais sur les trois en même temps.
 
 ![Trium Vira]({{site.baseurl}}/assets/2019-02-06-what-is-an-architect/triumvira.png)
 
 
-C'est à ce moment que l'architecte a la mission de challenger le besoin. Il n'est pas rare que le client arrive après avoir visité des maisons témoins : 
+C'est à ce moment que l'architecte a la mission de challenger le besoin. Il n'est pas rare que le client arrive après avoir visité des maisons témoins :
 "Je viens de visiter la maison `Spotify`, `Netflix` ou encore `Blablacar`, c'est génial je veux le même chose ! Je veux 3 chambres, 4 Salles de Bain et un séjour de 50m2, voici mon terrain et mon budget".
 
 L'architecte doit alors essayer de faire comprendre que, avoir 4 salles de bain dans un 150m2 c'est pas l'idéal, ou alors qu'avoir un château en plein cœur de Paris, niveau budget ca va être compliqué.
-Les contraintes sont nombreuses : taille et forme du terrain, localisation géographique, équipe de chantier, réglementations locales... 
+Les contraintes sont nombreuses : taille et forme du terrain, localisation géographique, équipe de chantier, réglementations locales...
 L'objectif est de cerner le vrai besoin, et si possible de s'inspirer de ces maisons témoins pour certains aspects de la maison (le mobilier de Spotify, ou les matériaux de Netflix) tout en respectant le triangle vertueux Qualité/Coût/Délais ainsi que ces contraintes.
 
 
@@ -71,7 +71,7 @@ Ici, on fait le rapprochement entre les murs et pièces de la maison et les tech
 Dernière partie de l'architecture, la toiture. Là on est moins soumis aux contraintes climatiques. C'est plus souvent l'harmonisation que l'on cherche, avec son quartier, ses voisins... Au final les choix se limitent à quelques "détails". Ici l'architecte doit simplement s'assurer que le toit soit à la bonne taille, ni trop grand, ce qui coûterait plus cher mais qui ne servirait à rien, ni trop petit. Il y a néanmoins une évolution dans l'architecture, grâce aux toits plats, ou "tuileless" qui permettent contrairement aux toits en pente de pouvoir agrandir sa maison dans n'importe quel sens, contrairement aux toits en pente où seul l'agrandissement dans la longueur est possible. Cela reste pour le moment moins répandu même si on voit de plus en plus d'architecture de ce style avec le temps.
 
 ---
-Je pense que vous l'avez, ici la toiture c'est notre infrastructure. Globalement, on travaille depuis le début sur du "on-premise". Les impacts entre telle ou telle technologie sont négligeables, tant que cette infrastructure est à l'échelle du besoin actuel et des besoins à moyen terme.  
+Je pense que vous l'avez, ici la toiture c'est notre infrastructure. Globalement, on travaille depuis le début sur du "on-premise". Les impacts entre telle ou telle technologie sont négligeables, tant que cette infrastructure est à l'échelle du besoin actuel et des besoins à moyen terme.
 Malgré tout, les nouvelles solutions cloud et serverless apportent du nouveau coté infra avec plus de flexibilité, afin de ne pas sur-approvisionner son infrastructure (et donc faire exploser ses coûts) avant d'avoir le nombre d'utilisateurs cible.
 
 

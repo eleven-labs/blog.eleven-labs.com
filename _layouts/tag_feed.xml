@@ -1,0 +1,23 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>feed for tag {{ page.tag }}</title>
+    <link href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" rel="self"/>
+    <link href="{{ site.url }}{{ site.baseurl }}/tag/{{ page.tag }}.html"/>
+    <updated>{{ site.time | date_to_rfc822 }}</updated>
+    <id>{{ site.url }}{{ site.baseurl }}/tag/{{ page.tag }}.html</id>
+    {% for post in page.posts %}
+      <item>
+        <title>{{ post.title | xml_escape }}</title>
+        <link>{{ post.url | prepend: site.baseurl_root | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl_root | prepend: site.url }}</guid>
+        <id>{{ site.url }}{{ site.baseurl }}/{{ post.id }}</id>
+        <description>{{ post.content | xml_escape }}</description>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

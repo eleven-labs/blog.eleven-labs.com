@@ -8,10 +8,10 @@ authors:
 date: '2014-01-13 09:17:04 +0100'
 date_gmt: '2014-01-13 08:17:04 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - Javascript
-    - dotJS
+    - javascript
+    - dotjs
 ---
 
 DotJs 2013

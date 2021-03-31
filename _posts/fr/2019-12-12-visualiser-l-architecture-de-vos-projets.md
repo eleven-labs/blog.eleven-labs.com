@@ -3,12 +3,13 @@ layout: 'post'
 title: Visualiser l'architecture de vos projets
 excerpt: Visualiser l'architecture de vos projets
 authors:
-- gcanal
+  - gcanal
+lang: fr
 permalink: /fr/visualiser-l-architecture-de-vos-projets/
 categories:
-    - Architecture
+    - architecture
 tags:
-    - Architecture
+    - architecture
     - C4Model
     - Diagramme
     - Visualisation
@@ -33,7 +34,7 @@ _[UML, Cucumber and modeling reality - MPJ's Musings - Fun Fun Function][fff-vid
 [fff-video]: https://www.youtube.com/watch?v=4_SvuUYQ5Fo
 [mpj-twitter]: https://twitter.com/mpjme
 
-L'approche semble valable de prime abord, malheureusement, on peut aboutir rapidement à ce résultat : 
+L'approche semble valable de prime abord, malheureusement, on peut aboutir rapidement à ce résultat :
 
 ![Exemple de diagramme d'architecture problématique]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/diagramme-bordelique.jpg)
 
@@ -56,11 +57,11 @@ Ce sont les problématiques que tente d'adresser le [modèle C4](https://c4model
 
 ## Le Modèle C4 _(C4 Model)_
 
-Le modèle C4, créé par [Simon Brown](https://simonbrown.je/), vise a aider les équipes à **décrire** et **communiquer** l'architecture logicielle, 
-lors des sessions de conception _(up-front design)_, 
+Le modèle C4, créé par [Simon Brown](https://simonbrown.je/), vise a aider les équipes à **décrire** et **communiquer** l'architecture logicielle,
+lors des sessions de conception _(up-front design)_,
 ainsi que rétrospectivement, pendant les phases de documentation, grâce à une notation semi-formelle accessible au plus grand nombre.
 
-Le modèle permet de créer une cartographie du code, 
+Le modèle permet de créer une cartographie du code,
 à **différents niveaux de détails**, à l'image d'une carte interactive qui permet de zoomer sur une zone d'intérêt.
 
 Chaque niveau s'adresse à une audience bien définie.
@@ -75,11 +76,11 @@ Avant de plonger dans les formalismes du modèle C4 commençons par...
 
 Utiliser des outils généralistes comme [draw.io](https://www.draw.io/), [lucidchart](https://www.lucidchart.com) ou encore un tableau blanc comme indiqué plus haut pour vos diagrammes apparaît en premier lieu comme une solution pertinente. Vous investissez du temps dans la réalisation de diagrammes pour exposer l'architecture de vos projets à votre audience.
 
-**Sans formalisme**, on aboutit la plupart du temps, à des ensembles de boites et de flêches difficilement compréhensibles comme nous l'avons vu dans le préambule de cet article. 
+**Sans formalisme**, on aboutit la plupart du temps, à des ensembles de boites et de flêches difficilement compréhensibles comme nous l'avons vu dans le préambule de cet article.
 
 Cependant, même en introduisant un formalisme, il vous sera parfois difficile de ré-exploiter vos travaux et de les maintenir.
 
-**Concrètement, quand vous utilisez ce genre d'outils, que faites-vous ?** 
+**Concrètement, quand vous utilisez ce genre d'outils, que faites-vous ?**
 
 **Vous couchez sur un support visuel ce que vous savez de l'architecture de vos projets**. Ce **savoir**, la plupart du temps **imparfait**, vous l'avez acquis en vous basant sur vos contributions personnelles, sur le code que vous avez lu, en interrogant les différentes personnes qui participent à la conception des applications, en somme, vous avez construit un **modèle mental** de l'architecture de vos projets.
 
@@ -97,7 +98,7 @@ L'avantage de maintenir un modèle, est qu'il est possible de l'interroger progr
 
 - Quelle est la liste des applications maintenues par notre société ?
 - Quelles personnes utilisent telles applications ?
-- Quel protocole d'échange utilise-t-on entre ces deux applications ? 
+- Quel protocole d'échange utilise-t-on entre ces deux applications ?
 - Quels sont les services externes utilisés par telle application ?
 - Sur quelles technologies repose mon application BackOffice ?
 - Quels sont les composants métiers de telle application ?
@@ -109,9 +110,9 @@ L'idée ici et de **séparer le fond de la forme** et d'accorder plus d'importan
 
 ## Formalisme
 
-Le modèle s'appuie sur un ensemble d'abstractions utilisées pour décrire la structure d'un ou de plusieurs systèmes logiciels. 
+Le modèle s'appuie sur un ensemble d'abstractions utilisées pour décrire la structure d'un ou de plusieurs systèmes logiciels.
 
-Le modèle C4 s'intéresse à représenter des **systèmes logiciels** 
+Le modèle C4 s'intéresse à représenter des **systèmes logiciels**
 composés de **conteneurs**, scindés en **composants** qui s'expriment par du **code**. On matérialise également les **personnes** utilisant ces systèmes et les différentes **relations** qu'entretiennent les élements de l'architecture.
 
 ![Hiérarchie des éléments d'architecture du modèle C4]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/hierarchy.png)
@@ -138,15 +139,15 @@ Ce diagramme permet d'obtenir la vision d'ensemble d'un système.
 
 La boîte centrale matérialise un système logiciel, entouré des ses utilisateurs et des systèmes avec lesquels il interagit.
 
-**Element principal**: Un système logiciel.  
-**Elements de support**: Des personnes, des systèmes en relation avec le système observé.  
+**Element principal**: Un système logiciel.
+**Elements de support**: Des personnes, des systèmes en relation avec le système observé.
 **Audience**: Tout le monde.
 
 ### **Niveau 2**: **Container** _(Conteneur)_
 
 ![Modèle C4: Vue Conteneur]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/containers.png)
 
-Une fois que l'on situe un système dans son environnement, la prochaine étape est de zoomer 
+Une fois que l'on situe un système dans son environnement, la prochaine étape est de zoomer
 dans les frontières de ce dernier _(system boundaries)_ pour matérialiser les conteneurs qui le composent.
 
 Un conteneur est un élément qui peut être exécuté/déployé individuellement comme :
@@ -160,8 +161,8 @@ Un conteneur est un élément qui peut être exécuté/déployé individuellemen
 - un **Système de Fichiers**,
 - etc...
 
-**Éléments principaux**: Des conteneurs au sein d'un système logiciel.  
-**Éléments de support**: Des personnes, des systèmes en relation avec les conteneurs observés.  
+**Éléments principaux**: Des conteneurs au sein d'un système logiciel.
+**Éléments de support**: Des personnes, des systèmes en relation avec les conteneurs observés.
 **Audience**: Intervenants techniques.
 
 ### **Niveau 3** : **Component** _(Composant)_
@@ -176,7 +177,7 @@ On y retrouve :
 - les services métiers (email, sécurité, gestionnaire d'équipements, etc...),
 - et les couches d'accès à la donnée (repositories, message bus, api clients, etc...).
 
-**Elements principaux**: Des composants à l'intérieur des frontières d'un conteneur.  
+**Elements principaux**: Des composants à l'intérieur des frontières d'un conteneur.
 **Elements de support**: Des personnes, des conteneurs, et des systèmes externes directement attachés aux composants observés.
 **Audience**: Architectes et développeurs.
 
@@ -192,7 +193,7 @@ Pour les traitements jugés triviaux (exemple: un CRUD), il est inutile de desce
 
 Il est par contre utile pour visualiser des algorithmes ou des flux de travaux _(workflow)_ complexes.
 
-Vous n'êtes pas obligé pour ce niveau d'utiliser systématiquement des diagrammes de classes, vous pouvez tout aussi bien utiliser [un diagramme d'activité](https://fr.wikipedia.org/wiki/Diagramme_d%27activit%C3%A9) ou encore un [logigramme _(flowchart)_](https://fr.wikipedia.org/wiki/Organigramme_de_programmation). 
+Vous n'êtes pas obligé pour ce niveau d'utiliser systématiquement des diagrammes de classes, vous pouvez tout aussi bien utiliser [un diagramme d'activité](https://fr.wikipedia.org/wiki/Diagramme_d%27activit%C3%A9) ou encore un [logigramme _(flowchart)_](https://fr.wikipedia.org/wiki/Organigramme_de_programmation).
 
 ## Les Diagrammes Secondaires
 
@@ -225,7 +226,7 @@ _Édition des styles via l'interface Structurizr_
 ![Structurizr: éditeur de styles]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/structurizr-edit-views.png)
 _Création de vues via l'interface Structurizr_
 
-Le workflow de l'outil est le suivant : 
+Le workflow de l'outil est le suivant :
 
 1. Vous renseignez votre **modèle d'architecture** _(éléments d'architectures, personnes et relations)_,
 2. vous configurez des **règles de styles** qui s'appliquent en fonction du type d'un élément ou de leurs tags,

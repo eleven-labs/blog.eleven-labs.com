@@ -238,7 +238,7 @@ There is NO WARRANTY, to the extent permitted by law.
 Secret key is available.
 
 sec  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
@@ -302,10 +302,10 @@ disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 
 sec  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
 gpg>
@@ -318,14 +318,14 @@ In the end, you must have these keys:
 
 ```bash
 sec  rsa4096/1A8132B1
-     created: 2017-10-05  expires: 2018-10-05  usage: C   
+     created: 2017-10-05  expires: 2018-10-05  usage: C
      trust: ultimate      validity: ultimate
 ssb  rsa4096/B73A9C79
-     created: 2017-10-05  expires: 2018-10-05  usage: E   
+     created: 2017-10-05  expires: 2018-10-05  usage: E
 ssb  rsa4096/9CC8B2FB
-     created: 2017-10-05  expires: 2018-10-05  usage: S   
+     created: 2017-10-05  expires: 2018-10-05  usage: S
 ssb  rsa4096/8047B454
-     created: 2017-10-05  expires: 2018-10-05  usage: A   
+     created: 2017-10-05  expires: 2018-10-05  usage: A
 [ultimate] (1). Wilson Eleven <wilson.eleven@labs.com>
 
 gpg> save

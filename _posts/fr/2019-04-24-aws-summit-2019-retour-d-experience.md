@@ -19,7 +19,7 @@ L'AWS Summit Paris s'est tenu le 2 Avril au palais des congrés. C'était l'occa
 Je vais donc vous faire un retour de ce que j'ai pu y voir, je vous recommande par ailleurs fortement l'événement (PS: Google le fait aussi et ça se passe en juin : [Google Summit](https://inthecloud.withgoogle.com/summit-par-19/home.html). ). Vous pouvez trouver l'ENSEMBLE des conférences et ressources données sur place en suivant ce [lien](https://aws.amazon.com/fr/events/summits/paris/contenu/).
 
 Autre précision, l'événement est gratuit, il faut simplement se pré-inscrire, et c'est à mon avis une occasion formidable de découvrir les différents services, voire dans certaines conférences d'apprendre de manière basique à les utiliser.
-  
+
 ## Keynote d'ouverture
 
 ![]({{site.baseurl}}/assets/2019-04-16-aws-summit-2019-retour-d-experience/keynote-ouverture.jpg)
@@ -48,8 +48,8 @@ Chacune d'elle montrait les avantages économiques, logistiques, et autres d'uti
 Voici donc quelques retours sur les conférences auxquelles j'ai assisté, et ce qui m'a marqué.
 
 ## Conférence #1
-*"Cloud Economics – Optimisez vos budgets IT en passant sur le cloud"  
-Alexis Dahan (AWS) & Fouad Maach (Veolia)*  
+*"Cloud Economics – Optimisez vos budgets IT en passant sur le cloud"
+Alexis Dahan (AWS) & Fouad Maach (Veolia)*
 
 L'idée générale du talk était de montrer comment faire des économies en comparant le on-premise (avoir son propre matériel server / data-center) au cloud.
 
@@ -82,14 +82,14 @@ Alexis nous a cité Joy Ito, "Si vous voulez accroître votre innovation, rédui
 
 
 ## Conférence #2
-*"Simplifiez vos frontend à l'aide de backend serverless dans le cloud"  
-Sébastien Stormacq (AWS) & Aurélien Capedecomme (CTO 20 Minutes)*  
+*"Simplifiez vos frontend à l'aide de backend serverless dans le cloud"
+Sébastien Stormacq (AWS) & Aurélien Capedecomme (CTO 20 Minutes)*
 
 Ce talk abordait la génération d'une architecture serverless avec un exemple concret, celui de 20 Minutes, et la présentation de l'outil Amplify qui permet d'accélérer grandement le développement d'applications serverless.
 
 Je vous encourage fortement à aller jeter un oeil au talk. Vous le retrouverez sur la page de ressources que j'ai mise en introduction en cherchant le titre ("Simplifiez vos frontend [...]").
 
-Le talk commence sur la slide humoristique qui présente la journée typique d'un développeur, avec son Chef de projet/Scrum Master qui lui demande : 
+Le talk commence sur la slide humoristique qui présente la journée typique d'un développeur, avec son Chef de projet/Scrum Master qui lui demande :
 - "Notre client a besoin d'une app, notre concurrent vient de lancer la sienne nous en avons donc besoin rapidement, je n'ai pas de budget, je ne veux pas payer si ça ne marche pas, elle doit fonctionner pour des millions d'utilisateurs et être simple à gérer au quotidien, TU ES TOUT SEUL SUR CE PROJET DÉSOLÉ" :')
 
 Et c'est en fait presque le problème que le Serverless permet de solutionner.

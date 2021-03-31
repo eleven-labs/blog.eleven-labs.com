@@ -1,24 +1,25 @@
 ---
 layout: post
-title: Protégez du brute force votre application Symfony avec Maba Gentle Force 
-excerpt: Je vous propose de découvrir un bundle très simple à configurer afin de protéger votre application Sympony contre les attaques de brute force 
+title: Protégez du brute force votre application Symfony avec Maba Gentle Force
+excerpt: Je vous propose de découvrir un bundle très simple à configurer afin de protéger votre application Sympony contre les attaques de brute force
 authors:
 - dim
+lang: fr
 permalink: /fr/symfony-brute-force-protection/
 categories:
-    - Symfony
+    - symfony
 tags:
-    - Sécurité
-    - Symfony
-    - PHP
+    - securite
+    - symfony
+    - php
 ---
 
 
-## Protégez du brute force votre application Symfony avec Maba Gentle Force  
-  
-La sécurité est l'affaire de tous, vous avez certainement déjà tous entendu cela au moins une fois.  
+## Protégez du brute force votre application Symfony avec Maba Gentle Force
+
+La sécurité est l'affaire de tous, vous avez certainement déjà tous entendu cela au moins une fois.
 Avec l'arrivée de la RGPD, les fuites de données sont de plus en plus médiatisées et si vous souhaitez éviter d'avoir à faire aux institutions comme la CNIL ou tout simplement si vous souhaitez un outil simple pour protéger contre le brute force votre application Symfony, je vous présente Maba Gentle Force.
-  
+
 ## Maba Gentle Force, késaco ?
 
 C'est un bundle basé sur la librairie PHP [Gentle Force](https://github.com/mariusbalcytis/gentle-force).
@@ -29,26 +30,26 @@ La librairie utilise l’algorithme [Token Bucket](https://en.wikipedia.org/wiki
 L'utilisateur possède des jetons qu'il va pouvoir utiliser pour effectuer ses actions. À chaque tentative, un jeton sera consommé jusqu’à ce qu'il n'y en ait plus. Il va ensuite pouvoir regagner d'autres jetons au bout d'un certain temps (configurable) pour faire une nouvelle tentative.
 Cette librairie fonctionne avec [Predis](https://github.com/nrk/predis) pour le stockage des jetons.
 
-Voici une liste de fonctionnalités que propose Gentle Force : 
+Voici une liste de fonctionnalités que propose Gentle Force :
 - Vérification des jetons disponible pré-tentatives d'authentification pour empêcher la [Race_condition](https://en.wikipedia.org/wiki/Race_condition).
-- Possibilité de définir différentes limitations selon les créneaux temporels.  
+- Possibilité de définir différentes limitations selon les créneaux temporels.
 - Différents moyens sur lesquels baser sa vérification d'identité : ID, token d'api, adresse IP, etc...
 
 
 ## Initialisation
-  
+
 ```sh
-composer require maba/gentle-force-bundle  
+composer require maba/gentle-force-bundle
 ```
-  
-Ajouter le bundle dans votre AppKernel si vous n'utilisez pas flex :  
-  
+
+Ajouter le bundle dans votre AppKernel si vous n'utilisez pas flex :
+
 ```php
-new \Maba\Bundle\GentleForceBundle\MabaGentleForceBundle(),  
+new \Maba\Bundle\GentleForceBundle\MabaGentleForceBundle(),
 ```
-  
+
 Importez ensuite les routes dans votre routing.yml.
-  
+
 ```yaml
 gentle_force:
     resource: '@MabaGentleForceBundle/Resources/config/routing.xml'
@@ -56,11 +57,11 @@ gentle_force:
 
 Vous trouverez dans l'arborescence `App/config/packages/` un fichier de configuration `maba_gentle_force.yml`.
 Dans ce fichier vous allez tout d'abord devoir déclarer votre Predis :
-  
+
 ```yaml
-maba_gentle_force:  
-    redis:  
-        service_id: votre service client redis  
+maba_gentle_force:
+    redis:
+        service_id: votre service client redis
 ```
 
 ## Utilisation
@@ -89,10 +90,10 @@ Pour les cas simples où vous n'avez pas le besoin de faire de vérification sp�
             identifiers: [ip]
             strategy: headers
 ```
-  
+
 Si votre vérification porte sur une route peu critique, il est également possible de définir une `strategy: log` à la place, afin de ne pas bloquer vos utilisateurs tout en assurant une surveillance à travers les logs disponibles.
-Dans ce cas, il vous faudra également ajouter la configuration sur la stratégie de log :  
-  
+Dans ce cas, il vous faudra également ajouter la configuration sur la stratégie de log :
+
 ```yaml
       strategies:
         default:    headers
@@ -168,7 +169,7 @@ La configuration est similaire à celle du cas précédent, on retrouve nos limi
                 # Autorise uniquement 30 erreurs par jour
             -   max_usages: 30
                 period: 1d
-                
+
         authentication_ip:
             # Autorise uniquement 120 erreurs par heure par IP
             -   max_usages: 60
@@ -237,7 +238,7 @@ Vous pourrez enfin définir deux stratégies propres à recaptcha :
 ```yaml
 maba_gentle_force:
     redis:
-        service_id: votre service client redis  
+        service_id: votre service client redis
 
     limits:
         authentication_email:
@@ -279,10 +280,10 @@ maba_gentle_force:
             unlock_url_header:    your-url-to-unlock
         recaptcha_template:
             template:             your-template-including-google-widget
-            
+
     recaptcha:
         site_key: votre-recaptcha-site-key
-        secret: votre-recaptcha-secret     
+        secret: votre-recaptcha-secret
 ```
 
 ## Le mot de la fin

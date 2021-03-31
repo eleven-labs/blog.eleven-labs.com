@@ -1,14 +1,14 @@
 ---
 layout: post
 title: PHP 7 - Le petit guide qui ne trompe pas
-authors: 
+authors:
     - aandre
 date: '2015-12-21 18:33:37 +0100'
 date_gmt: '2015-12-21 17:33:37 +0100'
 lang: fr
 permalink: /fr/php-7-petit-guide-qui-ne-trompe-pas/
 categories:
-    - Php
+    - php
 tags:
     - php
     - migration
@@ -19,7 +19,7 @@ Les frameworks sont indispensables au monde des entreprises, mais occultent parf
 
 # PHP 6
 
-En premier lieu, évoquons le fait que nous soyons passés de PHP 5 à PHP 7.  
+En premier lieu, évoquons le fait que nous soyons passés de PHP 5 à PHP 7.
 PHP 6 a existé de 2005 à 2014.
 
 Parmi les fonctionnalités prévues dans cette version on peut évoquer :
@@ -87,7 +87,7 @@ $foo = $bar ?? $baz;
 
 ## Les classes anonymes
 
-Largement inspiré de Java, les classes anonymes font leur entrée en PHP 7\. Une suite logique à l'introduction des fonctions anonymes en PHP 5.3\. Tout comme les classes définies, elle acceptent l'héritage, l'implémentation et l'usage des traits. L'avantage est multiple mais reste spécifique.  
+Largement inspiré de Java, les classes anonymes font leur entrée en PHP 7\. Une suite logique à l'introduction des fonctions anonymes en PHP 5.3\. Tout comme les classes définies, elle acceptent l'héritage, l'implémentation et l'usage des traits. L'avantage est multiple mais reste spécifique.
 On peut évoquer une simplification des mocks dans les tests unitaires, ou une alternative à la lourdeur de la norme PSR (qui recommande la création d'un fichier par classe) dans certains cas :
 
 ```php
@@ -149,7 +149,7 @@ function bar($a, $b) : int
 
 ## Throwable
 
-Enfin, dernière modification majeure, le changement du système d'exceptions.  
+Enfin, dernière modification majeure, le changement du système d'exceptions.
 Jusqu'ici tout était géré par exceptions, en PHP 7, le mécanisme a été scindé en deux : exceptions d'un côté (Exception), erreur de l'autre (Error), les deux implémentant l'interface Throwable. Le but étant de pouvoir _catcher_ certaines erreurs propres au moteur, par exemple une division par 0, ou encore un problème de typage comme nous avons pu le voir plus haut. On peut donc faire l'hypothèse que la plupart des exceptions relèveront du code métier.
 
 Un point important est qu'il est impossible d'implémenter directement l'interface Throwable, il faudra impérativement hériter d'Exception, mais il sera possible d'utiliser l'interface lors du typage, pour _catcher_ les erreurs et les exceptions de la même manière. Vous pouvez consulter la liste des erreurs prédéfinies [ici](http://php.net/manual/en/reserved.exceptions.php){:rel="nofollow noreferrer"}.

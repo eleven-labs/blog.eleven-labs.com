@@ -9,7 +9,7 @@ authors:
 date: '2011-11-28 15:06:50 +0100'
 date_gmt: '2011-11-28 15:06:50 +0100'
 categories:
-    - Symfony
+    - symfony
 tags:
     - symfony
 ---

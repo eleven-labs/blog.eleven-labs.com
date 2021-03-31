@@ -7,13 +7,13 @@ authors:
 lang: fr
 permalink: /fr/json-server/
 categories:
-    - JSON
-    - API
-    - NodeJS
+    - json
+    - api
+    - nodejs
 tags:
-    - JSON
-    - API
-    - NodeJS
+    - json
+    - api
+    - nodejs
 cover: /assets/2017-08-16-json-server/cover.jpg
 ---
 

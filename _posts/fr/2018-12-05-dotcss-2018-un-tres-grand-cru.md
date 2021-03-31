@@ -1,16 +1,17 @@
 ---
 layout: post
 title: dotCSS 2018, un très grand cru !
-excerpt: Retour sur l'édition 2018 de dotCSS, la plus grande conférence au monde sur le CSS. 
+excerpt: Retour sur l'édition 2018 de dotCSS, la plus grande conférence au monde sur le CSS.
 authors:
     - seinhorn
 permalink: /fr/dotcss-2018-un-tres-grand-cru/
+lang: fr
 categories:
-    - Conférence
-    - CSS
+    - conference
+    - css
 tags:
-    - Conférence
-    - CSS
+    - conference
+    - css
     - Paris
     - 2018
     - Intégrateur web
@@ -104,8 +105,8 @@ Pour ce faire, voici à quoi ressemble le code :
  <filter id="monFiltre">
   <!-- Mettre ici les opérations de filtrage -->
  </filter>
- <image xlink:href=".Mon Image." 
-       width="100%" height="100%" x="0" y="0" 
+ <image xlink:href=".Mon Image."
+       width="100%" height="100%" x="0" y="0"
        filter="url(#monFiltre)">
  </image>
 </svg>

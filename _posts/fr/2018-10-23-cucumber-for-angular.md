@@ -12,8 +12,8 @@ categories:
 tags:
     - e2e
     - BDD
-    - Angular
-    - AngularCLI
+    - angular
+    - angularCLI
     - Cucumber
     - Gherkin
     - Puppeteer

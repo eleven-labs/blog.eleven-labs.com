@@ -7,7 +7,7 @@ authors:
 lang: fr
 permalink: /fr/react-apollo-le-local-state-management-une-alternative-a-redux-contextapi/
 categories:
-    - React
+    - react
     - GraphQL
 tags:
     - react
@@ -72,7 +72,7 @@ export  const typeDefs =  `
     error
     warning
   }
-  
+
   type Notification {
     header: String
     content: String
@@ -87,7 +87,7 @@ export  const typeDefs =  `
   type Query {
     Notification: Notification
   }
- 
+
   input NotificationInput {
     header: String
     content: String

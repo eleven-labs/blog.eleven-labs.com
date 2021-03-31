@@ -7,7 +7,7 @@ authors:
 lang: fr
 permalink: /fr/google-cloud-platform-appengine-pour-vos-projets/
 categories:
-    - Javascript
+    - javascript
     - Dev Ops
 tags:
     - Google

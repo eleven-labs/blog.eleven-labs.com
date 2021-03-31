@@ -7,11 +7,11 @@ lang: fr
 permalink: /fr/amp-le-futur-du-web/
 excerpt: Google, leader incontesté des services web (recherche, pub, analytics...), propose depuis plus d'un an une nouvelle façon d'afficher vos pages, désignée sous le nom AMP project
 categories:
-    - Javascript
+    - javascript
 tags:
     - tutoriel
     - cache
-    - Javascript
+    - javascript
     - web
 ---
 Google, leader incontesté des services web (recherche, pub, analytics...), propose depuis plus d'un an une nouvelle façon d'afficher vos pages, désignée sous le nom [AMP](https://www.ampproject.org/){:rel="nofollow noreferrer"} project.

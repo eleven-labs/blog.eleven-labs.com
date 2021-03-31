@@ -8,10 +8,10 @@ authors:
 date: '2015-06-10 16:27:59 +0200'
 date_gmt: '2015-06-10 14:27:59 +0200'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - Javascript
-    - conférence
+    - javascript
+    - conference
     - bestofweb
 ---
 

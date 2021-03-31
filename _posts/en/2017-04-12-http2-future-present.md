@@ -3,14 +3,14 @@ layout: post
 title: "HTTP/2 is not future. It's present."
 lang: en
 permalink: /http2-future-present/
-authors: 
+authors:
     - vcomposieux
 date: '2017-04-12 12:00:00 +0100'
 date_gmt: '2017-04-12 12:00:00 +0100'
 categories:
-    - Javascript
+    - javascript
     - Mobile
-    - Php
+    - php
 tags:
     - compression
     - header

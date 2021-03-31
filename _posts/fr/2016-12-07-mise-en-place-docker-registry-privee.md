@@ -10,7 +10,8 @@ date: '2016-12-07 15:24:16 +0100'
 date_gmt: '2016-12-07 14:24:16 +0100'
 categories:
     - Dev Ops
-tags: []
+tags:
+    - devops
 ---
 
 Dans cet article, nous allons détailler, étape par étape, la mise en place d'une Docker Registry.

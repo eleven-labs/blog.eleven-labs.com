@@ -9,7 +9,7 @@ authors:
 date: '2017-06-28 12:00:00 +0100'
 date_gmt: '2017-06-28 12:00:00 +0100'
 categories:
-    - Swift
+    - swift
     - Mobile
 tags:
     - swift

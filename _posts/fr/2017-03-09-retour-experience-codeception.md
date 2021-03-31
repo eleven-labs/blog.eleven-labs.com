@@ -2,20 +2,20 @@
 layout: post
 title: Codeception, Retour d'expérience
 excerpt: Retour d'expérience sur le framework de test Codeception, présentation et exemples d'implémentations dans une application Symfony
-authors: 
+authors:
     - nkania
 date: '2017-03-09 18:24:38 +0100'
 date_gmt: '2017-03-09 17:24:38 +0100'
 lang: fr
 permalink: /fr/retour-experience-codeception/
 categories:
-    - Symfony
-    - Php
+    - symfony
+    - php
 tags:
     - php
     - symfony
     - mongodb
-    - RabbitMQ
+    - rabbitmq
     - test
     - api
 image:
@@ -87,7 +87,7 @@ Notre utilisation
 --------
 
  Je vais maintenant vous parler de l'utilisation que nous en faisons et donc aller un peu plus dans le détail. Nous avons besoin de couvrir notre code unitairement, pour cela pas de miracle, on utilise Phpunit (à travers Codeception) mais qui reste du test Phpunit classique (ça suffit largement). Le point le plus intéressant est donc la couverture de nos API et Crons fonctionnellement.
- 
+
 Test sur un GET /endpoint (nous utilisons mongodb mais vous pouvez bien entendu utiliser n'importe quelle database !) :
 
 Configuration :
@@ -160,7 +160,7 @@ L'avantage c'est que l'ajout de module se fait très simplement. Imaginons que v
 class_name: ApiTester
 modules:
     enabled:
-        - Symfony:
+        - symfony:
             app_path: '../../app'
             var_path: '../../var'
         - REST:

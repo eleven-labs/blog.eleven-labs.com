@@ -9,7 +9,7 @@ authors:
 date: '2014-08-04 11:38:49 +0200'
 date_gmt: '2014-08-04 09:38:49 +0200'
 categories:
-    - Symfony
+    - symfony
 tags:
     - doctrine
     - symfony2

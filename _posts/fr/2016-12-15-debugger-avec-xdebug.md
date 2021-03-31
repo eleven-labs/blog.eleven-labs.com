@@ -2,7 +2,7 @@
 layout: post
 title: Débugger avec xDebug
 excerpt: Dans cet article je vais tenter de vous familiariser avec xDebug, cet outil d'une incroyable utilité, qui vous fera gagner un temps fou pour débugger vos applications.
-authors: 
+authors:
     - rgraillon
 date: '2016-12-15 14:49:00 +0100'
 date_gmt: '2016-12-15 15:49:00 +0100'

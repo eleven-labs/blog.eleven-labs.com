@@ -9,7 +9,7 @@ authors:
 date: '2015-12-14 09:00:20 +0100'
 date_gmt: '2015-12-14 08:00:20 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
     - dotcss
 ---

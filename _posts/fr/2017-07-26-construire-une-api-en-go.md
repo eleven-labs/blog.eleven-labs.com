@@ -15,7 +15,7 @@ tags:
 cover: /assets/2017-07-26-construire-une-api-en-go/cover.jpg
 ---
 
-Le langage Go est rapidement devenu très populaire mais beaucoup hésitent encore à l'utiliser pour le développement de leurs nouvelles applications. Nous allons ici voir comment construire une api REST rapidement et facilement. 
+Le langage Go est rapidement devenu très populaire mais beaucoup hésitent encore à l'utiliser pour le développement de leurs nouvelles applications. Nous allons ici voir comment construire une api REST rapidement et facilement.
 
 ----------
 
@@ -66,7 +66,7 @@ type Handler interface {
 }
 ```
 
-Un handler a besoin d’un objet de type `ResponseWriter` et de la requête. Nous allons créer une méthode `handler`. Ici, pour une api REST, la réponse doit être au format JSON. Nous allons donc ajouter au header le content-type JSON et retourner du contenu JSON. La méthode `Write` de `ResponseWriter` prend en paramètre un tableau de byte. Donc on ‘caste’ notre string contenant du JSON vers le format bytes avec la méthode `byte[](string)`. 
+Un handler a besoin d’un objet de type `ResponseWriter` et de la requête. Nous allons créer une méthode `handler`. Ici, pour une api REST, la réponse doit être au format JSON. Nous allons donc ajouter au header le content-type JSON et retourner du contenu JSON. La méthode `Write` de `ResponseWriter` prend en paramètre un tableau de byte. Donc on ‘caste’ notre string contenant du JSON vers le format bytes avec la méthode `byte[](string)`.
 
 ```go
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -94,9 +94,9 @@ func main() {
 
 ```
 
-Cette fois-ci, si on lance le serveur et que l’on fait une requête http sur `127.0.0.1:8001`, le serveur répond bien un code 200 avec notre message en JSON. 
+Cette fois-ci, si on lance le serveur et que l’on fait une requête http sur `127.0.0.1:8001`, le serveur répond bien un code 200 avec notre message en JSON.
 
-Ce package est très bas niveau et assez pénible à utiliser. La communauté a donc mis à disposition différentes surcouches notamment au niveau du routing pour faciliter le développement. 
+Ce package est très bas niveau et assez pénible à utiliser. La communauté a donc mis à disposition différentes surcouches notamment au niveau du routing pour faciliter le développement.
 
 Présentation de Buffalo
 -------------
@@ -112,7 +112,7 @@ go get -u -v github.com/gobuffalo/buffalo/buffalo
 Une fois buffalo installé,
 
 ```
-> $ buffalo help new                                                                                                                                                                                                                          
+> $ buffalo help new
 Buffalo version v0.9.0
 
 Creates a new Buffalo application
@@ -140,10 +140,10 @@ La commande `new` permet de générer un nouveau projet. On va donc créer un pr
 ```
 buffalo new api --api --skip-pop
 ```
-                                                  
+
 Cette commande a créé le dossier `api`. Celui-ci comprend :
 * le fichier `main.go`, il s’agit de l’entrée de l'application ;
-* le dossier `actions/` il s’agit du dossier contenant nos handlers ; 
+* le dossier `actions/` il s’agit du dossier contenant nos handlers ;
 * le dossier `grifts/` il s’agit du dossier contenant les commandes
 
 Le reste des fichiers ne nous intéresse pas.
@@ -152,7 +152,7 @@ Lancez le serveur :
 
 ```
 buffalo dev
-``` 
+```
 
 Ceci va compiler votre projet et démarrer le serveur.
 
@@ -173,7 +173,7 @@ func main() {
 	log.Fatal(app.Start(port))
 }
 
-``` 
+```
 
 Nous allons regarder ce que fait la méthode `app.start()`.
 
@@ -211,7 +211,7 @@ La function `App()` va attacher à l'instance de `*buffalo.App` les handlers de 
 type Handler func(Context) error
 ```
 
-Handler prend en paramètre un `Context`.  
+Handler prend en paramètre un `Context`.
 
 ```go
 // Context holds on to information as you
@@ -330,7 +330,7 @@ func (ur UserResource) Create(c buffalo.Context) error {
 	}
 	// on l'ajoute à notre base de données
 	db[user.ID] = *user
-	
+
 	return c.Render(201, r.JSON(user))
 }
 
@@ -348,20 +348,20 @@ Pour finir, nous allons maintenant faire un handler pour afficher un utilisateur
 
 ```go
 func (ur UserResource) Show(c buffalo.Context) error {
-	// on récupère l'id de la requête qu'on formate en uuid	
+	// on récupère l'id de la requête qu'on formate en uuid
 	id, err := uuid.FromString(c.Param("id"))
 	if err != nil {
-		// si l'id n'est pas un uuid on génère une erreur	
+		// si l'id n'est pas un uuid on génère une erreur
 		return c.Render(500, r.String("id is not uuid v4"))
 	}
-	
+
 	// on récupère notre utilisateur dans notre base de données
 	user, ok := db[id]
 	if ok {
 		// si il existe, on le retourne
 		return c.Render(200, r.JSON(user))
 	}
-	
+
 	// si il n'existe pas, on retourne une erreur 404
 	return c.Render(404, r.String("user not found"))
 }

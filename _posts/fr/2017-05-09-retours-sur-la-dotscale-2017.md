@@ -3,7 +3,7 @@ layout: post
 title: "Retours sur la dotScale 2017"
 lang: fr
 permalink: /fr/retours-sur-la-dotscale-2017/
-authors: 
+authors:
     - vcomposieux
 date: '2017-05-09 12:00:00 +0100'
 date_gmt: '2017-05-09 12:00:00 +0100'

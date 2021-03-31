@@ -6,6 +6,7 @@ cache:
     bundler: true
     directories:
         - _site
+        - .jekyll-cache
 
 addons:
     apt:

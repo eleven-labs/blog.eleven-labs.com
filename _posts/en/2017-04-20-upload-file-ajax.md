@@ -7,8 +7,8 @@ lang: en
 permalink: /upload-file-ajax/
 excerpt: "Today, I would like to share with you a feature often requested in an application: uploading a file."
 categories:
-    - Symfony
-    - Php
+    - symfony
+    - php
 tags:
     - ajax
 ---
@@ -113,7 +113,7 @@ class File
      *
      * @var string
      */
-    private $path;   
+    private $path;
 ```
 
 I added constraints on the **file** field. It allows me to validate that the file that I will upload is the right type and a maximum size of 1Go.

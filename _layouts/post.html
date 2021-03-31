@@ -16,6 +16,19 @@ layout: default
             <i class="far fa-fw fa-clock" title="{% translate global.estimated_reading_time %}"></i>{% include reading_time.html content=content %}
         </span>
         {% include author_articles_link.html authors=page.authors descr=false %}
+
+        <div class="mdc-chip-set" role="grid">
+            {% for tag in page.tags %} {% capture tag_name %}{{ tag }}{% endcapture %}
+            <a href="{{ tag | tag_url }}">
+                <div class="mdc-chip mdc-ripple-upgraded" role="row">
+                    <div class="mdc-chip__ripple"></div>
+
+                    <div class="mdc-chip__text">{{ tag_name }}</div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
     </header>
 
     <section class="slice">

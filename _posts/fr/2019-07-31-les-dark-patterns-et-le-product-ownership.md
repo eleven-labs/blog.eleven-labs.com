@@ -42,7 +42,7 @@ On l'appelle aussi le concept de la machine à sous. On regarde en moyenne 80 à
 Un exemple  simple : sur 9gag ou Instagram un swipe down (pour rafraîchir) ou une réouverture de l'application a un pourcentage de chance de faire remonter des publications anciennes, vues ou non (plutôt qu'un affichage chronologique simple). Combien de fois avez-vous inconsciemment réouvert ces applications après les avoir fermées 30 secondes auparavant ?
 
 ### LE SOCIAL APPROVAL ET LES CHOIX INCONSCIENTS
-Notre besoin d'approbation est un des leviers de motivation les plus forts. Par des designs de suggestion, on peut manipuler les gens pour les faire créer des engrenages d’approbation sociale.  
+Notre besoin d'approbation est un des leviers de motivation les plus forts. Par des designs de suggestion, on peut manipuler les gens pour les faire créer des engrenages d’approbation sociale.
 Un exemple ? Sur Facebook, si je tag un ami dans une photo suite à l’apparition d'une pop-in qui m’interrompt, m'invitant à le faire, est-ce que j’ai fait un choix conscient ? Je réponds plutôt à une suggestion de Facebook... Je ne l'aurais peut être pas fait de moi-même via le bouton de bas de page. Une notification est envoyée à mon ami, c'est bon pour le business.
 Il est très facile de contrôler cela et d'en faire des réactions en chaîne. Linkedin est très bon là-dessus : vous recevez une invitation de quelqu’un, vous l’acceptez, on vous recommande d'ajouter d'autres gens qui sont proches, et qui une fois qu'ils auront accepté rentreront dans le même processus. Est-ce que le choix est conscient ? A-t-il vraiment été souhaité par toutes ces personnes ou se sont elles retrouvées emprisonnées dans un contexte de réciprocité sociale en chaîne ?
 
@@ -52,7 +52,7 @@ Qui n'a pas passé des heures à vagabonder sur Youtube sans presque toucher son
 Un autre exemple est celui de l'infinite scroll sur les sites internet de news : l'utilisateur ne sait pas quand s’arrêter, et tombe facilement dans du "zombie scrolling".
 
 ### INDISSOCIABILITÉ
-C'est le fait de lier toutes les raisons de venir sur l’application ou le service avec la raison du business. Il s'agit en quelque sorte de  maximiser votre consommation de contenu.  
+C'est le fait de lier toutes les raisons de venir sur l’application ou le service avec la raison du business. Il s'agit en quelque sorte de  maximiser votre consommation de contenu.
 Par exemple sur Facebook, quand on veut regarder l’événement de ce soir, on est presque toujours obligé de passer par le feed des notifications ou par le feed d’actualité. Il y a de grandes chances pour que vous restiez sur ces pages pour consommer du contenu avant d'aller finalement voir cet événement.
 
 ### L'OPT-IN
@@ -82,7 +82,7 @@ Il est d'ailleurs de plus en plus commun de penser qu'un business model basé un
 On a tous en tête le "Price, Product, Promotion, Place". Sachez que des Licornes (les start-up valorisées à plus de 1 milliards de $) sont en train de revoir ces principes et commencent à penser en : "People, Promise, Purpose, Principles".
 Bien que j’entende tout le temps parler de "User Centered design", c'est encore bien trop souvent des designs non pas basés sur l'utilisateur, mais sur la valeur générée par l'utilisateur (à son propre détriment).
 Qu'en conclure ? Regardez les grandes dernières actions de Google et Facebook du côté de la re-considération de la place de l'utilisateur et de son respect. Même les GAFA se posent les bonnes questions (suivies ou non d'actions, bien entendu), c'est le signe d'un changement à venir.
- 
+
 
 ## CONCLUSION
 
@@ -91,7 +91,7 @@ Il est vrai que la notion de dark pattern est très liée à l'éthique, et sa v
 Cependant, de plus en plus d'utilisateurs délaissent des services et des applications qui bafouent les règles éthiques, et effectuer un rétropédalage pour ces grandes entreprises est souvent extrêmement coûteux.
 Ne soyez pas dans la réaction, soyez dans la pro-activité.
 
- 
+
 
 ## RÉFÉRENCES
 

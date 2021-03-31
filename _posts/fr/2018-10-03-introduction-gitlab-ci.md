@@ -10,14 +10,14 @@ categories:
     - continuous integration
     - devops
 tags:
-    - GitLab
-    - GitLab-CI
+    - gitlab
+    - gitlab-ci
     - git
     - Continuous Integration
     - CI
     - Continuous deployment
     - CD
-    - DevOps
+    - devops
 cover: /assets/2018-09-19-introduction-gitlab-ci/cover.png
 ---
 Aujourd’hui si vous voulez mettre en place une CI/CD sur GitHub il vous faut “linker” vos dépôts avec Travis-ci, Circle-ci, Codeship... Mais savez-vous que GitLab intègre une solution de CI/CD ? C'est l'objet de l'article d'aujourd'hui.
@@ -62,7 +62,7 @@ Chaque tâche est exécutée grâce à des `runners`, qui fonctionnent grâce à
 Vous pouvez avoir vos propres `runners` directement sur votre machine ou serveur. Pour plus d'information je vous laisse lire la documentation officielle :
  - [Page du projet GitLab Runner](https://docs.gitlab.com/runner/)
  - [Configuration de GitLab Runner](https://docs.gitlab.com/runner/configuration/)
- - [Configuration avancée de GitLab Runner](https://docs.gitlab.com/runner/configuration/advanced-configuration.html)  
+ - [Configuration avancée de GitLab Runner](https://docs.gitlab.com/runner/configuration/advanced-configuration.html)
 
 GitLab propose aussi des runners publics, qui vous épargnent une installation, mais attention, il y a des quotas suivant le type de compte dont vous diposez. En compte gratuit, vous avez le droit à 2000 minutes de temps de pipeline par mois. Les runners publics de gitlab.com sont exécutés sur AWS.
 
@@ -455,7 +455,7 @@ Les fichiers sont sauvegardés uniquement si le `job` réussit.
 Nous y retrouvons cinq sous-directives possibles :
  - paths : obligatoire, elle permet de spécifier la liste des fichiers et/ou dossiers à mettre en `artifact`
  - name: facultative, elle permet de donner un nom à l'`artifact`. Par défaut elle sera nommée `artifacts.zip`
- - untracked : facultative, elle permet d'ignorer les fichiers définis dans le fichier `.gitignore`  
+ - untracked : facultative, elle permet d'ignorer les fichiers définis dans le fichier `.gitignore`
  - when : facultative, elle permet de définir quand l'`artifact` doit être créé. Trois choix possibles `on_success`, `on_failure`, `always`. La valeur `on_success` est la valeur par défaut.
  - expire_in : facultative, elle permet de définir un temps d'expiration
 

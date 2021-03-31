@@ -223,12 +223,12 @@ En faisant ça je m'assure que l'initrd ne pourra jamais être utilisé, ce qui 
 
 Dans mon cas je sais que mon driver graphique est l'i915, une nouvelle recherche sur `i915` m'indique que plusieurs options sont disponibles :
 ```
-Symbol: DRM_I915 [=m]                                                                                                                                                                
-Type  : tristate                                                                                                                                                                     
-Prompt: Intel 8xx/9xx/G3x/G4x/HD Graphics                                                                                                                                              
+Symbol: DRM_I915 [=m]
+Type  : tristate
+Prompt: Intel 8xx/9xx/G3x/G4x/HD Graphics
   Location:
     -> Device Drivers
-      -> Graphics support                                                                                                                                                             
+      -> Graphics support
 Defined at drivers/gpu/drm/i915/Kconfig:1
 Depends on: HAS_IOMEM [=y] && DRM [=m] && X86 [=y] && PCI [=y]
 Selects: INTEL_GTT [=y] && INTERVAL_TREE [=y] && SHMEM [=y] && TMPFS [=y] && DRM_KMS_HELPER [=m] && DRM_PANEL [=y] && DRM_MIPI_DSI [=y] && RELAY [=y] && BACKLIGHT_LCD_SUPPORT [=y]
