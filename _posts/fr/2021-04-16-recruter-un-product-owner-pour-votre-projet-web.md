@@ -31,6 +31,8 @@ Vous rencontrez des difficultés à faire l’interface entre les besoins émis 
 
 Vous recherchez très certainement votre futur Product Owner et on vous en dit plus sur son métier !
 
+![Le product Owner en action]({{ site.baseurl }}/assets/2021-04-16-recruter-un-product-owner-pour-votre-projet-web/Product Owner.jpg)
+
 ## Quel est le rôle du Product Owner ?
 
 Le Product Owner, détenteur du produit, a pour rôle de définir votre futur site ou application web et de vous aider à construire un produit qui apporte le maximum de valeur à vos clients ou utilisateurs avec un minimum d'effort de développement dans le temps et le budget définis pour votre projet.
