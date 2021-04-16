@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Recruter un Product Owner pour votre projet web : tout ce que vous devriez savoir !'
-excerpt: Créez une représentation visuelle et partagée de votre parcours client afin d'identifier les nouvelles fonctionnalités à développer sur votre site ou application
+excerpt: Découvrez le rôle du Product Owner, ses compétences incontournables et son positionnement au sein de l'organisation
 lang: fr
 authors:
     - mapo
@@ -14,9 +14,8 @@ tags:
     - product manager
     - recrutement
 
-
 image:
-  path: /assets/2021-01-13-user-journey-map/User Journey Map Template.png
+  path: /assets/2021-04-16-recruter-un-product-owner-pour-votre-projet-web/Product Owner.png
   height: 904
   width: 700
 
