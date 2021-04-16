@@ -39,7 +39,7 @@ Le Product Owner, détenteur du produit, a pour rôle de définir votre futur si
 
 Dans le cadre du démarrage de votre projet de développement de site/application ou d’évolutions à apporter sur un de vos produits, le Product Owner aura plusieurs casquettes incontournables :
 
-**1.  Il est l’interprète des besoins utilisateurs**
+**1.  Il est l’analyste des besoins utilisateurs**
     
 
 Il est tout d’abord un atout clé pour vous aider à structurer le démarrage du projet au travers de la mise en place d’ateliers avec les utilisateurs pour :
