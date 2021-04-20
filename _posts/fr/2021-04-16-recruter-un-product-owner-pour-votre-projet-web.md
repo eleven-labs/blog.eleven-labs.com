@@ -83,7 +83,7 @@ Le Product Owner est également un profil qui doit savoir parler technique pour 
 
 Le Product Owner vous apporte également son savoir-être. Il se doit d’être à l’écoute, d’aider à la formulation des besoins, et de parfois canaliser les échanges avec les clients, en sachant dire non quand il le faut pour permettre de prioriser les fonctionnalités à développer.
 
-Il sera amené à échanger avec l’ensemble des parties prenantes (Marketing, Commercial, Data, Communication etc.). Il est donc impératif qu’il soit un bon communiquant pour traduire les besoins, donner de la visibilité sur la feuille de route, communiquer sur les blocages, faire des démonstrations produits aux utilisateurs...
+Il sera amené à échanger avec l’ensemble des parties prenantes (Marketing, Commercial, Data, Communication etc.). Il est donc impératif qu’il soit un bon communicant pour traduire les besoins, donner de la visibilité sur la feuille de route, communiquer sur les blocages, faire des démonstrations produits aux utilisateurs...
 
 S'il présente donc un profil *caméléon* pour s’adapter à ses différents interlocuteurs, il doit également avoir des capacités fortes d’adaptation dans sa gestion du produit car les attentes des utilisateurs et les priorités de votre futur site web ou application ne seront jamais gravées dans le marbre.
 
