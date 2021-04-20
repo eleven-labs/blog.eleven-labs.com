@@ -75,9 +75,11 @@ Cette méthodologie est intéressante car elle permet de structurer le contexte 
 
 L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux individus et entreprises ont pu expérimenter les pratiques à favoriser et à éviter, et ainsi permis de constituer des premières recommandations globales d’écriture. Bien que nombreuses, nous verrons ici **5 points principaux** qui vous permettront de concevoir des contenus rédactionnels davantage adaptés à vos utilisateurs.
 
+
 #### **Commencez par le plus important**
 - Positionner les informations principales dans les 2 premiers paragraphes permet de [favoriser l’accès aux informations recherchées par les utilisateurs](https://www.nngroup.com/articles/website-reading/)
 - Au sein des paragraphes aussi, commencez par les informations principales puis présenter le détail afin de leur permettre d’identifier rapidement les informations essentielles à votre discours 
+
 
 ![Illustration de la règle d'ordre]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationOrdre.png)
 
@@ -86,6 +88,7 @@ L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux 
 #### **Divisez les contenu en sous-groupes**
 - La division en sous-groupe [facilite le scanning ainsi que la mémorisation d’information](https://www.nngroup.com/articles/chunking/)
 - Chaque sous-groupe d’information doit contenir un ensemble limité de concepts, distincts les uns des autres
+
 
 ![Illustration de la règle de catégorisation]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationSeparation.png)
 
@@ -99,6 +102,7 @@ L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux 
     - Distinct : Distinguez suffisamment vos titres et sous-titres afin qu'ils reflètent uniquement le contenu du texte qu’ils intègrent et pas le contenu d’autres groupes
     - Clair : Utilisez un langage simple pour favoriser la compréhension et la satisfaction des utilisateurs 
 
+
 ![Illustration de la règle de label]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationTitre.png)
 
 
@@ -106,6 +110,7 @@ L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux 
 #### **Soyez concis**
 - Les textes doivent être rédigés de façon concise pour être mieux compris, lus plus rapidement et plus appréciés par les utilisateurs (cf. Morkes & Nielse, 1997, cités précédemment)
 - Une règle de pouce est d’[éviter les phrases au-delà de 14 mots](https://medium.com/@scottydocs/what-is-the-perfect-sentence-length-4690ce8d5048) - attention toutefois, ne faites pas que des phrases de 14mots pour éviter un ton trop monotone
+
 
 ![Illustration de la règle de concision]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationConcis.png)
 
@@ -115,8 +120,8 @@ L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux 
 - Il est important de conserver une même façon de s’adresser à l’utilisateur, mais aussi de réemployer les mêmes termes pour parler d’une fonctionnalité ou d’un objet pour [faciliter la reconnaissance et le rappel de ces éléments](https://www.nngroup.com/articles/recognition-and-recall/) durant l'exploration
 - La communication avec l’utilisateur doit être cohérente sur l’ensemble du produit 
 
-![Illustration de la règle d'homogénéité]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationHomogeneite.png)
 
+![Illustration de la règle d'homogénéité]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationHomogeneite.png)
 
 
 ## En conclusion
