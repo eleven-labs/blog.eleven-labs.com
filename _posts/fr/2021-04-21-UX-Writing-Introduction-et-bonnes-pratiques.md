@@ -33,8 +33,10 @@ Cette communication est construite au travers de la rédaction des différents c
 
 Pour remplir son objectif, l’UX Writer participe à la définition de l’expérience utilisateur au travers du langage, grâce à sa compréhension des utilisateurs. De cette façon, l’UX Writing n’est pas distincte de l’UX Design et de l’UX Research, mais complémentaire. En effet, l’UX Writer se nourrira de la compréhension utilisateur pour concevoir la hiérarchie de l’information ou encore le contenu même de ces informations. Une fois rédigés, ses textes pourront ensuite être testés et évolueront à partir des retours utilisateurs, par itération.
 
+
 ![Illustration des interactions entre UX Writer, UX Designer et UX Researcher]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationUXWriting.png)
 
+(Image tirée de l'article de G. Ligertwood (2017) [sur l'UX Writing](https://uxplanet.org/ux-writing-how-to-do-it-like-google-with-this-powerful-checklist-e263cc37f5f1))
 
 
 ### 2.  Quel est l’intérêt de la démarche ?
@@ -73,21 +75,23 @@ Cette méthodologie est intéressante car elle permet de structurer le contexte 
 
 L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux individus et entreprises ont pu expérimenter les pratiques à favoriser et à éviter, et ainsi permis de constituer des premières recommandations globales d’écriture. Bien que nombreuses, nous verrons ici **5 points principaux** qui vous permettront de concevoir des contenus rédactionnels davantage adaptés à vos utilisateurs.
 
-#### Commencez par le plus important 
+#### **Commencez par le plus important**
 - Positionner les informations principales dans les 2 premiers paragraphes permet de [favoriser l’accès aux informations recherchées par les utilisateurs](https://www.nngroup.com/articles/website-reading/)
 - Au sein des paragraphes aussi, commencez par les informations principales puis présenter le détail afin de leur permettre d’identifier rapidement les informations essentielles à votre discours 
 
 ![Illustration de la règle d'ordre]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationOrdre.png)
 
 
-#### Divisez les contenu en sous-groupes
+
+#### **Divisez les contenu en sous-groupes**
 - La division en sous-groupe [facilite le scanning ainsi que la mémorisation d’information](https://www.nngroup.com/articles/chunking/)
 - Chaque sous-groupe d’information doit contenir un ensemble limité de concepts, distincts les uns des autres
 
 ![Illustration de la règle de catégorisation]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationSeparation.png)
 
 
-#### Utilisez des titres et sous-titres
+
+#### **Utilisez des titres et sous-titres**
 - Les titres et sous-titres doivent être utilisés pour [faciliter l'identification de vos groupes d’informations](https://www.nngroup.com/articles/layer-cake-pattern-scanning/) 
 - Pour être les plus efficaces, ils doivent être :
     - Visibles : Faites ressortir vos titres et sous-titres par rapport au corps de texte, mais pas trop pour éviter d’être perçu comme une bannière publicitaire
@@ -98,18 +102,21 @@ L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux 
 ![Illustration de la règle de label]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationTitre.png)
 
 
-#### Soyez concis
+
+#### **Soyez concis**
 - Les textes doivent être rédigés de façon concise pour être mieux compris, lus plus rapidement et plus appréciés par les utilisateurs (cf. Morkes & Nielse, 1997, cités précédemment)
 - Une règle de pouce est d’[éviter les phrases au-delà de 14 mots](https://medium.com/@scottydocs/what-is-the-perfect-sentence-length-4690ce8d5048) - attention toutefois, ne faites pas que des phrases de 14mots pour éviter un ton trop monotone
 
 ![Illustration de la règle de concision]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationConcis.png)
 
 
-#### Homogénéisez l’expérience
+
+#### **Homogénéisez l’expérience**
 - Il est important de conserver une même façon de s’adresser à l’utilisateur, mais aussi de réemployer les mêmes termes pour parler d’une fonctionnalité ou d’un objet pour [faciliter la reconnaissance et le rappel de ces éléments](https://www.nngroup.com/articles/recognition-and-recall/) durant l'exploration
 - La communication avec l’utilisateur doit être cohérente sur l’ensemble du produit 
 
 ![Illustration de la règle d'homogénéité]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationHomogeneite.png)
+
 
 
 ## En conclusion
