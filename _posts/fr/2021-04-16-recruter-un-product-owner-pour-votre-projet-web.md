@@ -21,8 +21,6 @@ image:
 
 ---
 
-# Recruter un Product Owner pour votre projet web : tout ce que vous devriez savoir !
-
 Vous vous lancez dans un projet de développement d’un site ou d’une application web et vous vous interrogez sur le profil à recruter pour vous accompagner ?
 
 Vous souhaitez construire un produit qui réponde aux attentes de vos utilisateurs mais ne savez pas par où commencer ?
