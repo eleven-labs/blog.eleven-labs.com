@@ -18,8 +18,6 @@ tags:
     - storybook
 ---
 
-# Storybook - Visual Regression
-
 Hello les petits loups!
 
 On se retrouve déjà pour mon 3ème article sur Storybook, maintenant que nous avons pu apercevoir comment créer ses composants dans Storybook et la toute puissance de ses addons dans les 2 précédents articles, on va pouvoir commencer à vraiment s'amuser.
