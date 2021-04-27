@@ -16,8 +16,6 @@ tags:
 
 ---
 
-# UX Writing : Introduction et bonnes pratiques
-
 Rédiger un texte n’est pas une activité neutre, vos textes ont un impact sur l’expérience utilisateur (UX) de votre produit. L’UX Writing est une spécialité de l'UX Design qui a pour objet la conception de la communication entre les utilisateurs et votre produit et, donc, la création de vos contenus rédactionnels. 
 
 Au cours de cet article, nous reviendrons sur la définition et l'intérêt de l’UX Writing, mais aussi sur sa méthodologie. Pour finir, nous verrons différents conseils pratiques pour la conception de vos contenus rédactionnels. Prêt•e•s ? Alors, allons-y !
