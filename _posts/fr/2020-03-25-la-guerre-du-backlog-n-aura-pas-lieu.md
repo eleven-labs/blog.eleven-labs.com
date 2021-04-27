@@ -39,7 +39,7 @@ Et pour vous lancer dans cette véritable course contre la montre, vous faire de
 ![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Scoffield & Blake.jpg)
 
 
-# Tactique numéro 1 : l’oeil de MoSCoW
+## Tactique numéro 1 : l’oeil de MoSCoW
 
 Les éléments de votre backlog ne sont pas encore priorisés ou vous voulez rebattre les cartes et vérifier les priorités établies. Une priorisation MoSCoW peut être un premier angle d’attaque simple.
 
