@@ -16,7 +16,7 @@ cover: /assets/2018-01-29-neo4j-et-symfony/cover.png
 
 L'architecture et les données que nous stockons sont de plus en plus complexes. Il faut savoir choisir la bonne technologie pour le bon use case. L'une des technologies qui peut vous être utile, c'est la base de données graphes Neo4j.
 
-# Neo4j c'est quoi ?
+## Neo4j c'est quoi ?
 
 Neo4j c'est une base de données graphes. Elle permet de stocker vos données dans un format de graphe.
 
@@ -38,7 +38,7 @@ Les bases de données type graphe permettent de gérer des données très liées
 
 Alors là non !!! GraphQL n'est pas une base de données graphe, GraphQL n'est même pas une base de données. Neo4J est réellement une base de données et permet de stocker vos données dans un format graphe, tandis que GraphQL est une convention de requêtage.
 
-# Installation d'un Neo4J
+## Installation d'un Neo4J
 
 L'installation d'un serveur Neo4j est assez simple, il suffit de suivre les indications sur le site [neo4j](https://neo4j.com/). Vous pouvez aussi utiliser la machine docker disponible [ici](https://store.docker.com/images/neo4j).
 
@@ -48,7 +48,7 @@ Une fois l'installation terminée, vous aurez accès à l'interface web qui est 
 
 ![Interface]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/interface.png)
 
-# Cypher, le requêtage simple
+## Cypher, le requêtage simple
 
 Pour requêter votre base de données, il faut apprendre à faire du Cypher. Cypher c'est le langage de requêtage pour Neo4J. Il est assez simple car très visuel. Vous pouvez lancer directement vos requêtes dans l'interface de Neo4j.
 
@@ -125,16 +125,16 @@ WHERE ee.name = "Emil" RETURN ee, friends
 
 La requête est assez simple. Vous faites un `MATCH` sur les relations qui ont comme noeud dans un des sens `ee`.
 
-# Utiliser Symfony et Neo4J
+## Utiliser Symfony et Neo4J
 
 
-## Use Case
+### Use Case
 
 Dans notre use case, nous allons créer un système d'arborescence pour un site web.
 Un noeud sera donc une rubrique avec comme propriété `title`, et les noeuds seront en relation afin de créer l'arborescence de votre site.
 
 
-## Installation
+### Installation
 
 L'architecture du projet est un Symfony 4 avec Twig et la gestion des annotations.
 
@@ -155,7 +155,7 @@ Vous devez aussi ajouter la librairie suivante :
 Disponible [ici](https://github.com/graphaware/neo4j-php-ogm). Cette librairie permet de récupérer un entityManager pour Neo4j.
 
 
-## Controller
+### Controller
 
 Nous allons créer un controller avec deux actions :
 
@@ -269,7 +269,7 @@ public function createNode($title, $startTitle)
 
 On crée d'abord la nouvelle rubrique, puis on récupère chaque noeud et on crée la relation.
 
-## FormType
+### FormType
 
 Rien de compliqué. Le formulaire prend deux paramètres, le `title` du nouveau noeud, et le `title` du noeud parent.
 
@@ -289,7 +289,7 @@ class NodeType extends AbstractType
 }
 ```
 
-## Twig
+### Twig
 
 Et pour terminer nous allons mettre en place une extension twig qui permet d'afficher l'arborescence.
 
@@ -360,7 +360,7 @@ Il ne vous reste plus qu'à afficher la page complète !
 
 ![arbo]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/arbo.png)
 
-# Conclusion
+## Conclusion
 
 Voilà ! Vous avez un exemple assez simple de l'utilisation d'une base de données Neo4J.
 Il existe de nombreux uses cases qui donnent tout l'intérêt à Neo4j. L'idée n'est jamais de faire un site qui n'utilise que Neo4j, mais dans nos architectures micro-service, pourquoi ne pas faire un service avec Neo4j ?
