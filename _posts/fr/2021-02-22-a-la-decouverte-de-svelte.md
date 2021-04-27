@@ -56,12 +56,7 @@ Avec Svelte.JS, c’est un changement complet de paradigme, puisque c’est le c
 
 \
 Maintenant que les présentations sont faites, et plutôt que de continuer à paraphraser l'excellente conférence de Rich Harris, je vais vous détailler mon expérience avec Svelte.
-
-
-<div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/AdNJ3fydeao" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block; margin: auto;"></iframe>
-    <i>Mais allez voir cette conférence dès que vous avez un peu de temps, elle est vraiment passionnante !</i>
-</div>
+Aussi, si vous avez un peu de temps, je vous conseille d'aller voir [cette conférence](https://www.youtube.com/watch?v=AdNJ3fydeao).
 
 ## Retour d’expérience
 
