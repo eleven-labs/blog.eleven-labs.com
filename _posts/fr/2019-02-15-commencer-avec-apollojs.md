@@ -21,8 +21,6 @@ La plupart de nos projets n'étant pas "from scratch" nous avons eu à migrer de
 
 Dans cet article nous partageons les bonnes pratiques que nous avons mis en place au sein de nos projets GraphQL. Pour faire simple nous allons mettre en place une API GraphQL devant une API Rest existante, l'ensemble des développements se fera en `Node.js` avec [`Apollo GraphQL`](https://www.apollographql.com/).
 
-# Serveur Apollo GraphQL
-
 ## Sommaire
 
 - [Comment structurer son projet](#comment-structurer-son-projet)
