@@ -22,7 +22,7 @@ J’avais abordé dans un précédent article (https://blog.eleven-labs.com/fr/r
 Prêt pour le niveau suivant ? Si vous « masterisez » les principes de base, il est maintenant temps de se pencher sur des versions plus évoluées, qui vous permettront notamment d’aborder des situations différentes et récolter des informations parfois plus pertinentes.
 
 
-# TOUT COMME LES POKÉMONS, LES MÉTHODES DOIVENT ÉVOLUER
+**"TOUT COMME LES POKÉMONS, LES MÉTHODES DOIVENT ÉVOLUER"**
 
 ## LA LISTE D'INGRÉDIENTS POUR CHANGER DE RECETTE, PARTIE II
 

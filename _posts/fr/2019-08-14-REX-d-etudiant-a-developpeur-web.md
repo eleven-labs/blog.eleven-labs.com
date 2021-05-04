@@ -12,8 +12,6 @@ Cet article, j’aurais personnellement aimé le lire quelques années plus tôt
 Le but n’est pas juste de raconter une expérience, mais c'est surtout d’en sortir des idées qui aideront peut-être à devenir ou être un meilleur développeur (le niveau est relatif bien sûr).
 Ce n’est pas un tuto non plus, mais ce sont les enseignements acquis au fil de mon expérience pro qui ne fait d’ailleurs que commencer au final...
 
-# JUST THE START (OR KIND OF)
-
 ## La première partie de mon parcours : résumé
 
 Commençons en faisant brièvement une passe par mon parcours scolaire.

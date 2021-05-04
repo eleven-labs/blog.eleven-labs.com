@@ -34,7 +34,7 @@ Ainsi avec le temps, les membres de l’équipe vont se lasser, seront de moins 
 > **« Diversifiez et adaptez votre rétrospective de sprint, gardez-la vivante ! »**
 
 
-# Une méthode c'est comme un T-shirt, il faut en changer de temps en temps
+**"UNE MÉTHODE C'EST COMME UN T-SHIRT, IL FAUT EN CHANGER DE TEMPS EN TEMPS"**
 
 ## La base de la base
 
