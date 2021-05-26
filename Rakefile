@@ -1,10 +1,10 @@
-task :default => [:lint, :test, :deploy]
+task :default => [:lint, :build, :deploy]
 
 # lint
-task :lint => [:scss_lint, :check_spelling]
+task :lint => [:scss_lint]
 
-# testsuite
-task :test => [:jekyll_build]
+# build
+task :build => [:jekyll_build]
 
 # deploy task
 task :deploy => [:algolia_push]
@@ -14,11 +14,7 @@ task :scss_lint do
   sh 'scss-lint _sass/'
 end
 
-task :check_spelling do
-  sh './bin/check-spelling.sh'
-end
-
-# test jekyll build
+# jekyll build
 task :jekyll_build do
   jekyll('build')
 end
