@@ -204,7 +204,7 @@ dans la vente d'ordinateurs quantiques, mais d'autres acteurs comme IBM Q, Micro
 
 Le fameux D-wave a donné aux chercheurs la possibilité d'utiliser (cloud) certains de leurs ordinateurs quantiques pour les
 aider à la modélisation de protéines (comme dans le domaine médical), ou plancher sur les
-[problématiques de distribution de vaccin] (https://medium.com/@dwave/what-we-learned-this-past-year-from-the-quantum-computing-for-covid-19-program-85bdd99aa628)
+[problématiques de distribution de vaccin](https://medium.com/@dwave/what-we-learned-this-past-year-from-the-quantum-computing-for-covid-19-program-85bdd99aa628)
 entre autres.
 
 ## Si je veux faire de l'informatique quantique, je fais comment ?
