@@ -5,4 +5,4 @@ title: Younes Diouri
 twitter: youyou_dev
 permalink: /authors/youyou/
 ---
-Youyou aime le PHP!
+Youyou aime le PHP !
