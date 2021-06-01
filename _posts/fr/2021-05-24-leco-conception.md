@@ -53,9 +53,12 @@ Green IT détaille par catégorie quels sont les plus gros consommateurs de ress
 2. les réseaux : **5 à 21 %** de la consommation
 3. les data centers : **4 à 15 %** de la consommation
 
-Avoir des applications numériques peu gourmandes permettrait de garder plus longtemps les équipements et ainsi éviter l’obsolescence programmée.
+La fabrication de nos équipements, (smartphone, tablettes, desktop...) représente donc l'axe majeur sur lequel travailler pour réduire l'impact écologique du numérique.
+À notre niveau, concevoir des applications numériques moins gourmandes ou encore rationnaliser l'intégration de fonctionnalités qui nécessitent des équipements dernier cri (Touch ID par exemple) peut y contribuer. 
 
-**Les services numériques peuvent aider à la diminution de ces impacts écologiques par différentes recommandations.**
+Les utilisateurs de nos sites, applications et services numériques peuvent garder plus longtemps leurs équipements et sont moins incités à investir dans un matériel plus performant tous les ans. C'est un effort collectif de longue haleine à produire, challengeant dans la complexité à maintenir d'anciennes versions par exemple, mais qui peut permettre de réduire le phénomène d’obsolescence programmée de nos équipements tout en favorisant l'inclusion numérique !
+
+**Les services numériques peuvent donc aider à la diminution de leurs propres impacts écologiques par différentes recommandations que l'on vous livre dans la suite de cet article.**
 
 ## Comment éco-concevoir 🔨 ? 
 ### Challengez vos fonctionnalités et leur mise en oeuvre 📝
