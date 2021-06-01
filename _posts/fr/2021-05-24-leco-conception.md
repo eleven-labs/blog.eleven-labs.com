@@ -8,7 +8,7 @@ authors:
     - mapo
 permalink: /fr/leco-conception/
 categories:
-    - éco-conception
+    - bonnes pratiques
 tags:
     - éco-conception
     - conception
