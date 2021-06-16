@@ -5,8 +5,6 @@ excerpt: Découverte et prise en main de n8n.io, outil low-code open-source pour
 authors:
     - marianne
 permalink: /fr/outil-low-code-automatisation-workflow-n8n/
-date: '2021-06-13 00:00:00 +0100'
-date_gmt: '2017-06-13 00:00:00 +0100'
 categories:
     - low-code
     - outils
