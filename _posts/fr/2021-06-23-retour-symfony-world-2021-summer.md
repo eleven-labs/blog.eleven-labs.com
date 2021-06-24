@@ -3,7 +3,7 @@ layout: post
 title: Retours sur la conférence Symfony World 2021 Summer edition
 excerpt: La semaine dernière se tenait la conférence Symfony World 2021 Summer edition et nous y avons assisté. Voici un récapitulatif de l'événement.
 authors:
-    - marianne
+    - marishka
 permalink: /fr/symfony-world-2021-summer-edition/
 categories:
     - conference
@@ -41,13 +41,21 @@ Enfin, Nicolas décrit pourquoi ce composant a été créé. Je vous laisse déc
 
 J'ai apprécié ce talk car il s'agît d'un composant Symfony qu'on n'a pas souvent l'occasion de voir, il est bien présenté et très informatif.
 
-### Can your code live without the Symfony Framework?
+### You're not in IT
 
-Hiromi Hishida, une développeuse japonaise avec plus de 10 ans d'expérience, a parlé de comment découpler au maximum le code métier d'une application de son intégration avec un framework, dans le but d'étendre la durée de vie de l'application et de ne pas se retrouver prisonnier d'une version donnée d'une dépendance ou de subir des montées de versions douloureuses.
+Stefan Koopmanschap, développeur PHP depuis PHP3, a parlé du métier du développeur. Et son point de vue est très intéressant : nous ne travaillons pas dans l'informatique, mais dans l'apprentissage.
 
-Alors, comment étendre la durée de vie du code d'une application ? Hiromi nous dit qu'il faut le rendre "portatif". Pour faire cela, elle préconise d'ajouter des couches d'abstraction à nos dépendances en passant par des interfaces pour assurer une compatibilité avec plusieurs intégrations et pour simplifier les mises à jour. Ou encore, d'utiliser des services et des Design Patterns tels que le _UseCase_ pour implémenter notre logique métier.
+Au début de nos carrières, à l'image d'un jeu vidéo, notre personnage n'a ni équipements ni skills. Au fur et à mesure que nous avançons, nous découvrons de nouvelles choses, acquérons des compétences, et ainsi apprenons à maîtriser les bases de PHP.
 
-Ce talk nous fait un bon rappel des bases, avec un exemple simple pour illustrer l'importance des _best practices_.
+En travaillant avec des outils disponibles, nous sommes amenés à y contribuer, que ce soit par de la traduction de documentation, de l'aide sur des forums, des articles de blog, de l'organisation des événements, etc. De ce fait, nous contribuons à l'open source. Contribuer à l'open source ce n'est pas seulement écrire du code et faire des pull requests, toutes les contributions ont leur importance. Et c'est le deuxième accomplissement dans le jeu - contribuer à l'open source.
+
+Avec l'arrivée de PHP4 & PHP5, la programmation orientée objet est arrivée dans le PHP. Cela a impliqué beaucoup de changements dans la façon de travailler et a demandé aux gens de s'adapter à nouveau. Pour cela, Stefan s'est tourné vers son manager, qui est devenu son mentor et qui l'a accompagné dans cette transition. Stefan à son tour a ensuite lui-même été mentor pour d'autres personnes.
+
+Le temps passant, Symfony est arrivé. Après une journée de POC en pair programming, Stefan s'est rendu compte de l'avantage du framework. Et cela a changé sa vision du développement : le framework fournissant un cadre de travail intégrant les bases pour une application, on peut se concentrer sur les besoins métier. Stefan a aussi réalisé le pouvoir du pair programming.
+
+En s'impliquant dans la communauté Symfony, Stefan en est arrivé à faire sa première présentation publique en 2007. Ceci lui a permis d'apprendre de nouvelles choses : comment expliquer des notions de programmation devant un public en un temps limité. Il a ainsi développé des compétences en communication, dont l'importance est souvent sous-estimée dans le développement.
+
+La conclusion de cette présentation est que tout au long de notre carrière nous ne cessons d'apprendre. Les choses évoluent très vite et nous devons nous adapter continuellement. Finalement, notre métier ne serait-il pas l'apprentissage continu plutôt que le développement à proprement parler ?
 
 ### Towards Digital Sustainability
 
@@ -70,3 +78,9 @@ Un autre moyen de réduire l'empreinte carbone de nos applications est d'utilise
 Enfin, nous pouvons choisir un hébergeur qui utilise de l'énergie renouvelable. The site [The green web foundation](https://www.thegreenwebfoundation.org/) peut nous aider à faire un choix en ce sens, même si certains herbergeurs manquent encore de transparence.
 
 La présentation de François Zaninotto est très motivante et encourageante ! Armés de ces informations, nous savons quoi faire pour contribuer au changement.
+
+## Conclusion
+
+Voici les 3 présentations qui m'ont le plus marqué lors de la conférence. Je vous conseille néanmoins de regarder toutes celles qui vous paraissent pertinentes lorsque le replay sera disponible, elle valent toutes le détour.
+
+A bientôt !
