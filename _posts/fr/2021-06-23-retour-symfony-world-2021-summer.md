@@ -65,7 +65,7 @@ Mais alors, comment pouvons-nous réduire l'impact carbone de nos applications ?
 
 En utilisant _docker_ et _docker-compose_ on peut avoir un container _cypress_ avec un navigateur headless, et on peut obtenir des métriques grâce à la commande `docker stats` (CPU, mémoire, etc.). On peut ensuite convertir ces métriques en Watt/heure, et en utilisant le site _Electricity Map_ on peut convertir les Watt/heure en émissions CO2.
 
-En se basant sur ce modèle, François et son équipe ont publié l'outil [Greenframe.io](Greenframe.io), bientôt open source. Voici quelques chiffres intéressants qui ressortent après un an et demi d'évaluations d'applications web. L'écran du visiteur d'un site web consomme plus de 30% des ressources, ainsi, plus un utilisateur va passer de temps sur votre application, plus elle sera polluante. Le CPU et les appels réseau arrivent après l'écran. Le serveur quant à lui ne consomme que 5% des ressources.
+En se basant sur ce modèle, François et son équipe ont publié l'outil [Greenframe.io](https://Greenframe.io), bientôt open source. Voici quelques chiffres intéressants qui ressortent après un an et demi d'évaluations d'applications web. L'écran du visiteur d'un site web consomme plus de 30% des ressources, ainsi, plus un utilisateur va passer de temps sur votre application, plus elle sera polluante. Le CPU et les appels réseau arrivent après l'écran. Le serveur quant à lui ne consomme que 5% des ressources.
 
 Quelles sont les mesures à prendre face à ce constat ? Voici les conseils de François pour réduire l'empreinte carbone de nos applications.
 
