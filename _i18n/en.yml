@@ -30,6 +30,7 @@ global:
   cookie_inform_and_ask_disagree: Disagree
   tag_page_title: Articles with the tag
   tag_cloud: All tags available on the blog
+  blog: The blog
 date:
   months:
     january: January

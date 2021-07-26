@@ -1,64 +1,56 @@
 .search-bar {
-  background: $alabaster;
-  font-size: em(20px);
-  position: relative;
+  width: 600px;
+  flex-direction: row;
+  position: absolute;
+  width: 40%;
+  top: 33px;
+  left: 55%;
 
-  &-label {
-    font-size: em(12px);
-    letter-spacing: .1em;
-    padding-left: em(20px);
-    text-transform: uppercase;
-  }
-
-  &-input {
-    background: $casablanca;
-    border: 0;
-    bottom: 0;
-    cursor: pointer;
-    display: block;
-    height: 100%;
-    max-width: 100%;
-    min-width: 100%;
-    opacity: 0;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-
+  &__input {
+    outline: none;
+    padding: 10px;
+    font-family: Worksans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #7A7A7A;
+    border: 1px solid white;
+    float: left;
+    width: 600px;
+    background-color: white;
+    border-radius: 29px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
     &:focus {
-      background: $alabaster;
-      box-sizing: border-box;
-      opacity: 1;
       outline: none;
-      padding: 0 em(30px);
-
-      @media (min-width: $breakpoint-small) {
-        min-width: em(120px);
-      }
-
-      @media (min-width: $breakpoint-large) {
-        border: 0;
-        padding-left: em(20px);
-      }
     }
   }
-}
 
-.search-logo {
-  font-size: em(13px);
-  padding-bottom: em(15px);
-  padding-top: em(15px);
-  text-align: right;
-
-  &-bg {
-    background: url($baseurl + '/img/Algolia_logo_bg-white.svg') no-repeat;
-    background-size: contain;
-    display: inline-block;
-    height: em(25px);
-    margin-bottom: em(-10px);
-    margin-left: em(5px);
-    width: em(70px);
+  &__button {
+    float: left;
+    width: 5%;
+    padding: 1px;
+    color: #7A7A7A;
+    font-size: 17px;
+    margin-left: -45px;
+    margin-top: 6px;
+    border-left: 1px solid #DD3156;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    background-color: white;
+    cursor: pointer;
+    border-top-right-radius: 29px;
+    border-bottom-right-radius: 29px;
+    &:hover {
+      background: #ffffff;
+    }
   }
+
+  &__icon {
+    color: #DD3156;
+    margin-left: 10px;
+    margin-top: 2px;
+  }
+
 }

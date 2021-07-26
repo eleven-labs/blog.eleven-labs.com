@@ -7,29 +7,16 @@ layout: compress-js
   const client = algoliasearch('5IGTHBX5JS', '7f7511d659569fcede7653d568b3206c');
   const index = client.initIndex('blog_eleven');
 
-  const searchIcon = document.getElementById('search-icon');
-  const search = document.getElementById('search');
-  const close = document.getElementById('close');
-
   const searchInput = document.getElementById('js-algolia__input');
   const searchForm = document.getElementById('js-algolia__form');
+
+  console.log(searchInput, searchForm);
   const baseurl = window.site && window.site.baseurl;
   const contentId = document.getElementById('js-content');
   const contentSearchId = document.getElementById('js-content-search');
   const lang = window.site && window.site.lang;
 
-  searchIcon.addEventListener("click", function(){
-    if (search.classList.contains('header-bottom__headband--not-displayed')) {
-      search.className = 'header-bottom__headband--displayed';
-      document.getElementById('js-algolia__input').focus();
-    }
-  });
-
-  close.addEventListener("click", function(){
-    search.className = 'header-bottom__headband--not-displayed';
-    contentSearchId.style.display = 'none';
-    contentId.style.display = 'flex';
-  });
+  document.getElementById('js-algolia__input').focus();
 
   function onQueryChange(e) {
     e.preventDefault();
