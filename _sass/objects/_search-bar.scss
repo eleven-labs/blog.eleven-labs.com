@@ -1,56 +1,57 @@
 .search-bar {
-  width: 600px;
   flex-direction: row;
-  position: absolute;
-  width: 40%;
-  top: 33px;
   left: 55%;
+  position: absolute;
+  top: 33px;
+  width: 600px;
 
   &__input {
-    outline: none;
-    padding: 10px;
+    background-color: $white;
+    border: 1px solid $white;
+    border-radius: 29px;
+    // scss-lint:disable ColorVariable
+    box-shadow: 0 4px 30px rgba(0, 0, 0, .06);
+    color: $dark-gray;
+    float: left;
     font-family: Worksans;
+    font-size: 14px;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
     line-height: 16px;
-    color: #7A7A7A;
-    border: 1px solid white;
-    float: left;
+    outline: none;
+    padding: 10px;
     width: 600px;
-    background-color: white;
-    border-radius: 29px;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
+
     &:focus {
       outline: none;
     }
   }
 
   &__button {
+    background-color: $white;
+    border-bottom: 1px solid $white;
+    border-bottom-right-radius: 29px;
+    border-left: 1px solid $red-light;
+    border-right: 1px solid $white;
+    border-top: 1px solid $white;
+    border-top-right-radius: 29px;
+    color: $dark-gray;
+    cursor: pointer;
     float: left;
-    width: 5%;
-    padding: 1px;
-    color: #7A7A7A;
     font-size: 17px;
     margin-left: -45px;
     margin-top: 6px;
-    border-left: 1px solid #DD3156;
-    border-right: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
-    border-top: 1px solid #ffffff;
-    background-color: white;
-    cursor: pointer;
-    border-top-right-radius: 29px;
-    border-bottom-right-radius: 29px;
+    padding: 1px;
+    width: 5%;
+
     &:hover {
-      background: #ffffff;
+      background: $white;
     }
   }
 
   &__icon {
-    color: #DD3156;
+    color: $red-light;
     margin-left: 10px;
     margin-top: 2px;
   }
-
 }
