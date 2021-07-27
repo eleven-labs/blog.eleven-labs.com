@@ -1,27 +1,69 @@
 .newsletter {
-  background-image: $background-footer;
-  color: $white;
+  background-image: $white;
   height: 34rem;
   margin-top: auto;
   text-align: center;
 
   &__container {
-    padding: 3rem;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    height: 246px;
+    background: rgba(225, 234, 249, 0.5);
+    backdrop-filter: blur(30px);	
+    border-radius: 20px;
+    padding: 30px;
   };
 
-  &__subtitle {
-    font-family: $font-family-footer-title;
-    font-size: 1.4rem;
-    font-weight: 400;
-    opacity: .5;
+  &__img {
+    width: 171px;
+    height: 181px;
+    margin-left: 150px;
+    float: left;
+  };
+
+  &__button {
+    position: relative;
+    top: 50px;
+    left: 72px;
+    background-color: $red-light;
+    color: $white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    width: 171px;
+    height: 37px;
+    font-family: WorkSans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: $white;
     text-transform: uppercase;
   };
 
   &__title {
-    @extend %h4;
-    font-family: $font-family-footer-title;
-    font-size: 3.6rem;
-    font-weight: 400;
-    padding: .5rem 0 3rem;
+    float: left;
+    width: 400px;
+    text-align: left;
+    padding-left: 38px;
+
+    &__light {
+      font-family: WorkSans;
+      font-style: normal;
+      color: $black;
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 26px;
+    }
+
+    &__bold {
+      font-family: WorkSans;
+      font-style: normal;
+      color: $black;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 125.5%;
+    }
   };
 }
