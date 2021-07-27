@@ -10,7 +10,6 @@ layout: compress-js
   const searchInput = document.getElementById('js-algolia__input');
   const searchForm = document.getElementById('js-algolia__form');
 
-  console.log(searchInput, searchForm);
   const baseurl = window.site && window.site.baseurl;
   const contentId = document.getElementById('js-content');
   const contentSearchId = document.getElementById('js-content-search');
