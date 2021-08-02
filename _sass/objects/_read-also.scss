@@ -7,6 +7,7 @@
 
   &__title {
     @extend %h3;
+    color: $red-light;
     margin: 3rem 0 1rem;
   }
 }
@@ -20,7 +21,7 @@
 
   &__link {
     @extend %h2;
-    color: $charcoal-grey;
+    color: $red-light;
     font-family: $font-family-post-titles;
     font-size: 2.2rem;
     font-weight: 400;
@@ -34,10 +35,11 @@
   &__metas {
     display: inline-block;
     margin: 1.3rem 0;
+
   }
 
   &__meta {
-    color: $casablanca;
+    color: $charcoal-grey;
 
     &::after {
       content: '';

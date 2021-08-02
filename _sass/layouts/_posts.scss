@@ -10,6 +10,7 @@
   &__bottom-author {
     &__title {
       @extend %h3;
+      color: $red-light;
       display: block;
     }
   }

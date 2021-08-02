@@ -19,6 +19,7 @@
     }
 
     &__link {
+      color: $red-light;
       display: inline-block;
       margin-bottom: .3rem;
       padding: 0 .6rem;
@@ -32,7 +33,7 @@
 
     &__link,
     &__picto {
-      color: $casablanca;
+      color: $red-light;
     }
 
     .fa {

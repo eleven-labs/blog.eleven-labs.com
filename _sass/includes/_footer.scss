@@ -1,42 +1,178 @@
 .footer {
-  background-color: $dark-indigo;
-  color: lighten($brand-black, 50%);
-  font-family: $font-family-footer-contact;
+  background-color: $bright-blue;
+  color: $white;
+  font-family: $font-family-main;
   font-size: 1.5rem;
   font-weight: 400;
+  height: 238px;
   margin-top: auto;
-  padding: 3rem 1.5rem 5rem;
-  text-align: center;
+  padding-left: 120px;
+  padding-top: 60px;
   width: 100%;
-
-  @media (min-width: $breakpoint-large) {
-    padding: 2rem 0;
-  }
 
   &__container {
     display: flex;
     flex-direction: column;
+    width: 25%;
+
+    @media (min-width: $breakpoint-medium) {
+      flex-direction: column;
+      float: left;
+      width: 25%;
+    }
+  }
+
+  &__container-contact {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 25%;
+
+    @media (min-width: $breakpoint-medium) {
+      flex-direction: column;
+      float: left;
+      padding: 5px;
+      width: 25%;
+    }
+  }
+
+  &__container-infos {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    width: 25%;
+
+    @media (min-width: $breakpoint-medium) {
+      flex-direction: column;
+      float: left;
+      padding-top: 30px;
+      width: 25%;
+    }
+  }
+
+  &__logo-eleven {
+    color: $white;
+    display: flex;
+    height: em(40px);
+    margin: 0 0 0 0;
+    width: em(40px);
+  }
+
+  &__logo-title {
+    color: $white;
+    font-family: $font-family-korb;
+    font-size: 3.1rem;
+    font-weight: 300;
+    height: em(40px);
+    margin: 0 0 0 120px;
+    position: absolute;
+    transform: translate(-50%, 0);
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    width: 100%;
+  }
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 3px;
+    width: 100%;
+  }
+
+  &__content {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 3px;
+    width: 100%;
+  }
+
+  &__button {
+    background-color: $red-light;
+    border-radius: 4px;
+    color: $white;
+    font-family: $font-family-main;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    height: 32px;
+    margin-top: 10px;
+    padding: 8px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 113px;
+  }
+
+  &__social-link {
+    float: left;
+    height: 22px;
+    margin-right: 16px;
+    margin-top: 10px;
+    text-decoration: none;
+    width: 22px;
+  }
+}
+
+.footer-locale {
+  background-color: $bright-blue;
+  border-top: solid 1px $white;
+  color: $white;
+  font-family: $font-family-main;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 600;
+  height: 58px;
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 20px;
+    width: 25%;
 
     @media (min-width: $breakpoint-medium) {
       flex-direction: row;
-      justify-content: center;
+      margin: auto;
+      padding: 20px;
+      width: 25%;
     }
   }
 
-  &__text {
-    line-height: 1.8;
-
-    @media (min-width: $breakpoint-medium) {
-      padding: 0 em(15px);
-    }
+  &__logo {
+    display: flex;
+    height: em(40px);
+    margin: 3px 0 0 0;
+    width: em(40px);
   }
 
-  &__link {
-    color: lighten($brand-black, 50%);
+  &__content {
+    color: $white;
+    font-family: $font-family-main;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125.5%;
+    line-height: 16px;
+    padding-top: 3px;
     text-decoration: none;
+    width: 120px;
+  }
 
-    @media (min-width: $breakpoint-medium) {
-      pointer-events: none;
-    }
+  &__separator {
+    display: flex;
+    height: em(40px);
+    margin: 8px 0 0 0;
+    width: em(12px);
   }
 }

@@ -27,14 +27,14 @@
     background-color: $red-light;
     border-radius: 4px;
     color: $white;
-    font-family: WorkSans;
+    font-family: $font-family-main;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
     height: 37px;
     left: 72px;
     line-height: 21px;
-    padding: 15px 25px;
+    padding: 8px 24px;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -50,7 +50,7 @@
 
     &__light {
       color: $black;
-      font-family: WorkSans;
+      font-family: $font-family-main;
       font-size: 22px;
       font-style: normal;
       font-weight: normal;
@@ -59,7 +59,7 @@
 
     &__bold {
       color: $black;
-      font-family: WorkSans;
+      font-family: $font-family-main;
       font-size: 24px;
       font-style: normal;
       font-weight: 600;
