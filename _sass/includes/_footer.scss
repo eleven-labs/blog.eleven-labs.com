@@ -54,7 +54,7 @@
     color: $white;
     display: flex;
     height: em(40px);
-    margin: 0 0 0 0;
+    margin: 0;
     width: em(40px);
   }
 
@@ -70,26 +70,26 @@
   }
 
   &__title {
+    font-size: 22px;
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
     line-height: 26px;
     width: 100%;
   }
 
   &__subtitle {
+    font-size: 14px;
     font-style: normal;
     font-weight: bold;
-    font-size: 14px;
     line-height: 16px;
     padding-top: 3px;
     width: 100%;
   }
 
   &__content {
+    font-size: 14px;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
     line-height: 16px;
     padding-top: 3px;
     width: 100%;
@@ -126,8 +126,8 @@
   border-top: solid 1px $white;
   color: $white;
   font-family: $font-family-main;
-  font-style: normal;
   font-size: 16px;
+  font-style: normal;
   font-weight: 600;
   height: 58px;
   margin-top: auto;
@@ -152,17 +152,16 @@
   &__logo {
     display: flex;
     height: em(40px);
-    margin: 3px 0 0 0;
+    margin: 3px 0 0;
     width: em(40px);
   }
 
   &__content {
     color: $white;
     font-family: $font-family-main;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 125.5%;
     line-height: 16px;
     padding-top: 3px;
     text-decoration: none;
@@ -172,7 +171,7 @@
   &__separator {
     display: flex;
     height: em(40px);
-    margin: 8px 0 0 0;
+    margin: 8px 0 0;
     width: em(12px);
   }
 }
