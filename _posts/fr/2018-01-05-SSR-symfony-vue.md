@@ -7,7 +7,7 @@ excerpt: "Nous travaillons de plus en plus avec à la fois un framework serveur 
 authors:
     - captainjojo
 categories:
-    -
+    - javascript
 tags:
     - javascript
 cover: /assets/2018-01-05-SSR-symfony-vue/cover.jpg

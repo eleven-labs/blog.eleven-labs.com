@@ -33,7 +33,7 @@ Nos objectifs pour cette mission si vous le voulez bien : déterminer comment é
 
 ## 1. "Je suis Pool, Deadpool" : CNV, Communication Non-Violente
 Pour reprendre rapidement les bases et le principe même de la Communication Non-Violente, il s’agit d’un processus qui favorise l’empathie afin de se mettre en relation authentique avec soi-même et les autres. Il a été créé par Marshall B. Rosenberg dans les années 1970, et selon son auteur : *“Ce sont le langage et les interactions qui renforcent notre aptitude à donner avec bienveillance et à inspirer aux autres le désir d'en faire autant”*.
- 
+
 Quand on parle de CNV et d’échanges bienveillants, il n’est pas question de changer de personnalité, de vous mettre à aimer les personnes qui vous nuisent ou encore de tendre l’autre joue à celui qui vous porte un premier coup.
 
 Il est question d’apprendre à vous écouter vous-même, pour comprendre ce qui se passe chez vous : pourquoi vous vous mettez en colère dès que votre collègue vous demande un service, pourquoi vous êtes stressé dès qu’une demande client arrive ou encore pourquoi vous vous sentez rabaissé dès que votre chef de projet vous fait une remarque.
@@ -60,7 +60,7 @@ Si on prend pour exemple la colère, elle n’est en réalité synonyme ni de vi
 Pour conclure cette partie, l’erreur est donc un droit, quelque chose de constructif sur lequel se baser pour s’améliorer et trouver petit à petit la bonne marche à suivre.
 L'idée est de supprimer la punition de nos relations, afin de ne plus avoir de sentiments de culpabilité ou de honte, plus de concept d'obligation ou de devoir. Seulement de l'élan de contribution.
 
-## 3. "Vous allez prendre votre pied" : le processus en 4 étapes 
+## 3. "Vous allez prendre votre pied" : le processus en 4 étapes
 Rentrons dans le coeur du sujet ! Le processus de Communication Non-Violente se découpe en 4 composantes clefs : l’observation, le sentiment, le besoin et enfin, la demande. Quelques explications.
 
 ### L’observation
@@ -72,7 +72,7 @@ Il est important de rester le plus factuel et neutre possible, votre observation
 Attention donc de bien différencier les faits, des interprétations ou des jugements, qui ne vous permettent pas de continuer à appliquer la suite du processus.
 
 Assez justement soulevé par Krishnamurti, philosophe promoteur d'une éducation alternative : *“La plus haute forme de l’intelligence humaine est la capacité d’observer sans évaluer”*
- 
+
 ### Le sentiment
 
 Quelles émotions, quels sentiments sont éveillés en moi ?
@@ -81,8 +81,8 @@ Nos ([sentiments](http://www.cnvsuisse.ch/wp-content/uploads/2016/06/Codex-2.pdf
 À ne pas confondre avec les ([jugements masqués](http://www.cnvsuisse.ch/wp-content/uploads/2016/06/Codex-2.pdf)) (liste disponible également en suivant le lien) qui nous enlèvent la responsabilité de ce que nous ressentons.
 
 Ces mots expriment souvent :
--   Ce que nous pensons que les autres nous font  
--   Nos jugements sur nous-même et ce que nous pensons être  
+-   Ce que nous pensons que les autres nous font
+-   Nos jugements sur nous-même et ce que nous pensons être
 -   Les jugements que nous imaginons que les autres portent sur nous
 
 Un mécanisme de base que nous avons est d’attribuer la responsabilité de nos sentiments aux autres, et de favoriser dans notre demande (la 4ème étape du processus) la motivation par la culpabilisation. Tout ce que nous souhaitons éviter !
@@ -140,7 +140,7 @@ Et ce quelle que soit la manière choisie par l'autre pour s’exprimer : nous d
 
 Maintenir l’empathie demande de continuer l’échange en ré-exprimant ce que nous avons compris, en le laissant s’expliquer de nouveau si besoin. Puis en portant notre attention sur la recherche de solutions à la problématique qui conviendraient à chacun.
 
-Attention cependant : au lieu de témoigner de l’empathie, nous avons souvent tendance à donner des conseils, des avis, ou à chercher à réconforter l’autre. Ce n'est peut être absolument pas ce qu'il recherche à travers son besoin d'expression. Parfois, une oreille attentive est tout ce qui est nécessaire pour rebooster le moral d'un collègue ou lui permettre de relâcher la tension. 
+Attention cependant : au lieu de témoigner de l’empathie, nous avons souvent tendance à donner des conseils, des avis, ou à chercher à réconforter l’autre. Ce n'est peut être absolument pas ce qu'il recherche à travers son besoin d'expression. Parfois, une oreille attentive est tout ce qui est nécessaire pour rebooster le moral d'un collègue ou lui permettre de relâcher la tension.
 
 **Et si je fais face à une personne hostile ?**
 
@@ -177,12 +177,12 @@ Si vous vous rendez compte que c’est le cas, c'est que vous avez besoin encore
 Mais comment savoir si la personne qui nous a fait une requête est portée par l’élan de contribution ou s'il s’agit d'une exigence ?
 
 À la manière dont la personne nous traite quand on ne fait pas ce qu'elle a demandé.
-Notre manière de réagir par habitude est en effet inscrite dans notre mémoire : la joie disparaît quand nous ne nous sentons pas libre de donner. Si c'est le cas, c'est que l'autre essaye de nous imposer son exigence. 
+Notre manière de réagir par habitude est en effet inscrite dans notre mémoire : la joie disparaît quand nous ne nous sentons pas libre de donner. Si c'est le cas, c'est que l'autre essaye de nous imposer son exigence.
 Quand nous prenons la responsabilité de demander à l'autre ce que l'on veut, nous devons aller jusqu’au bout de la démarche. C’est à dire potentiellement accepter le refus de notre requête. Être déçu est un sentiment légitime, mais nous ne devons pas être déçue par quelqu’un ou quelque chose.
 
 
 ## 8. “L'amour est aveugle Wade” “Non, c'est toi qui est aveugle” : Conclusion
-  
+
 Plus on investit d'énergie dans son travail, par envie de contribution, de coopération, de donner du sens, plus nous sommes exposés aux émotions fortes lorsque quelque chose ne va pas.
 
 Et l’expression de ces émotions est souvent vue comme de la fragilité et de la vulnérabilité. Non, au contraire. Plus nous sommes investit, plus nous avons une énergie et un élan de contribution venant du coeur qui est fort : c'est ça, l'authenticité.
@@ -194,4 +194,4 @@ Notre cher Wade, malgré son langage fleuri, est une personne qui n’a pas peur
 Mais en y voyant plus clair petit à petit, nos objectifs seront alors enfin atteints : nouer des relations basées sur la contribution et être heureux de pouvoir le vivre !
 
 ## Formations en Communication Non-Violente
-Si vous souhaitez vous former à la Communication Non-Violente comme il se doit, vous pouvez vous inscrire à [3 modules de base d'initiation animés par des formateurs certifiés ici](https://www.cnvformations.fr/accueil/les-formations-je-demarre/) ! Vous y retrouverez aussi des initiations en contexte spécifique : milieu professionnel ou éducation, ainsi que de nombreux modules d'approfondissement : l'auto-empathie, l'empathie, l'expression authentique, dire et entendre non, la colère au service de la relation et transformer la culpabilité, etc. 
+Si vous souhaitez vous former à la Communication Non-Violente comme il se doit, vous pouvez vous inscrire à [3 modules de base d'initiation animés par des formateurs certifiés ici](https://www.cnvformations.fr/accueil/les-formations-je-demarre/) ! Vous y retrouverez aussi des initiations en contexte spécifique : milieu professionnel ou éducation, ainsi que de nombreux modules d'approfondissement : l'auto-empathie, l'empathie, l'expression authentique, dire et entendre non, la colère au service de la relation et transformer la culpabilité, etc.

@@ -10,7 +10,7 @@ date: '2017-02-08 10:42:47 +0100'
 date_gmt: '2017-02-08 09:42:47 +0100'
 categories:
     - Mobile
-    - Ios
+    - ios
 tags:
     - swift
     - xcode

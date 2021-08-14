@@ -8,10 +8,10 @@ authors:
 permalink: /fr/openpgp-clef-secrete-yubikey-partie-2/
 categories:
     - openpgp
-    - sécurité
+    - securite
 tags:
     - openpgp
-    - sécurité
+    - securite
     - yubikey
 cover: /assets/2017-10-24-openpgp-clef-secrete-yubikey-partie-2/cover.jpg
 ---

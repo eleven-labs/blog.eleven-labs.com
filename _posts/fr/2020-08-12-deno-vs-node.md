@@ -2,13 +2,12 @@
 layout: post
 title: "Deno Vs Node - Top 5 des nouveautés de Deno"
 excerpt: Dans cet article, nous allons voir quelques nouveautés offertes par Deno
+lang: fr
 permalink: /fr/deno-vs-node/
 authors:
     - plerouge
 categories:
     - javascript
-    - node
-    - deno
 tags:
     - javascript
     - node
@@ -112,7 +111,7 @@ Et ce n'est qu'alors que nous pouvons faire un appel de récupération.
 Deno a nativement accès à l'objet window, ce qui signifie que vous pouvez simplement appeler *fetch ("https://something.com")*
 ainsi que tout autre élément dans l'API du navigateur sans installer de librairies.
 
-Lorsqu'il est combiné avec l'avantage top level d'*await*, 
+Lorsqu'il est combiné avec l'avantage top level d'*await*,
 vous pouvez maintenant voir à quel point le code Deno est plus simple que le code Node :
 
 ![]({{ site.baseurl }}/assets/2020-08-12-deno-vs-node/api.jpeg)
@@ -121,7 +120,7 @@ vous pouvez maintenant voir à quel point le code Deno est plus simple que le co
 
 Deno a de nombreux autres avantages, comme être plus sécurisé par défaut. Vous pouvez exécuter des binaires WebAssembly, il a de nombreuses librairies intégrées... et la liste est longue.
 
-Tous les points mentionnés dans cet article sont interconnectés, se réunissant pour former un runtime javascript back-end 2020 plus moderne. 
+Tous les points mentionnés dans cet article sont interconnectés, se réunissant pour former un runtime javascript back-end 2020 plus moderne.
 
 Deno remplacera-t-il finalement Node ? Peut-être, peut-être pas. Cela prendra probablement plusieurs années.
 L'écosystème NodeJS est énorme, il faudra du temps à Deno pour le rattraper.

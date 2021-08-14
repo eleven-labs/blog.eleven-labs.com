@@ -4,7 +4,11 @@
             {% include eleven_logo.html %}
         </a>
         <a class="header-links__title" href="{{ site.baseurl }}/">
+            {% if page.url == "/" %}
             <h1 class="header-links__eleven">{{ site.theme_settings.brand }}</h1>
+            {% else %}
+            <span class="header-links__eleven">{{ site.theme_settings.brand }}</span>
+            {% endif %}
             <p class="header-links__blog">{{ site.theme_settings.le_blog }}</p>
         </a>
         <a href="{{ site.theme_settings.site_web_eleven }}" class="header-links__site-eleven">

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "PHP & Serverless with Bref - part 2"
-lang: fr
-permalink: /en/php-serverless-part-2/
+lang: en
+permalink: /php-serverless-part-2/
 excerpt: "How to deploy PHP applications to AWS Lambda with Bref"
 authors:
     - marishka
@@ -16,7 +16,6 @@ tags:
     - aws
     - bref
     - lambda
-
 ---
 
 This article is a follow-up to this [first part](https://blog.eleven-labs.com/en/en/php-serverless-part-1/) which introduces serverless computing. In this second part, we will first see what the *layers* are in AWS Lambda and how to implement them. Then we will see how to use the Bref framework.

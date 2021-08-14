@@ -2,7 +2,7 @@
 layout: post
 title: Non, faire de la veille ce n'est pas que lire les tutos du SdZ
 excerpt: Retour d'expérience sur une manière de faire sa veille technique notamment via les flux RSS avec exemples d'outils + liste de flux pour un développeur php
-authors: 
+authors:
     - nkania
 date: '2015-12-15 11:54:10 +0100'
 date_gmt: '2015-12-15 10:54:10 +0100'
@@ -47,7 +47,7 @@ Une fois ses centres d'intérêts définis, il faut savoir comment faire cette v
 - Twitter: beaucoup utilisé depuis quelques temps, Twitter a l'avantage d'être concis (via sa limitation de 140 caractères) lors de la présentation d'un lien. Il permet aussi de partager des informations très rapidement ce qui fait qu'il est aussi prisé. Je ne m'étalerai pas plus sur ce support car je ne l'utilise personnellement pas pour réaliser ma veille, je vous laisse donc chercher plus d'informations par vous même.
  * Avantages: Information très rapide, beaucoup de liens, comptes qui agrègent en amont différentes sources
  *  Inconvénients: Information parfois trop rapide, difficile de trier les sources, demande beaucoup de temps si l'on ne veut rien louper
- 
+
 - Flux RSS: signifie Really Simple Syndication. Ce format est une norme qui permet de gérer du contenu (le plus souvent au format XML). Il est beaucoup utilisé dans le monde de l'information en général car il permet de gérer la nouveauté. Ce fichier est généralement mis à jour automatiquement dès qu'un nouveau contenu est posté (article par exemple). Il existe une multitude d'outils permettant d'agréger ces flux qu'ils soient des clients lourds, web, ou des applications mobiles,...
 
 > **Utiliser les flux RSS pour faire sa veille**
@@ -62,17 +62,17 @@ Quel outil utiliser pour faire sa veille du coup? Cela dépendra de votre utilis
 - Application web: pour pouvoir accéder à vos flux peu importe où vous vous trouvez. Ici on retrouve 2 grosses catégories d'application:
  *   Service: [Feedly](https://feedly.com/i/welcome), [The Old Reader](https://theoldreader.com/){:rel="nofollow noreferrer"},...
  *   Open-source: [Tiny Tiny RSS](https://tt-rss.org/gitlab/fox/tt-rss/wikis/home), [KrISS Feed](https://github.com/tontof/kriss_feed), [FreshRSS](http://freshrss.org/){:rel="nofollow noreferrer"},....
- 
+
 - Application mobile: lisez vos flux directement depuis votre mobile:
  *  Android: [RSS Reader](https://play.google.com/store/apps/details?id=com.madsvyat.simplerssreader&amp;hl=fr), [Feedly](https://play.google.com/store/apps/details?id=com.devhd.feedly&amp;hl=fr){:rel="nofollow noreferrer"},...
  *  iOS: [Newsify](https://itunes.apple.com/fr/app/newsify-your-news-blog-rss/id510153374?mt=8), [Byline](https://itunes.apple.com/fr/app/byline/id284946773?mt=8){:rel="nofollow noreferrer"},...
  *  Firefox Os: [Tfe RSS](https://marketplace.firefox.com/app/tfe-rss/), [FeedSpider](http://www.feedspider.net/){:rel="nofollow noreferrer"},...
- 
+
 - Plugin pour navigateur web: si vous ne souhaitez pas utiliser un site en particulier mais avoir vos flux directement intégrés dans votre navigateur:
  *  Chrome: [RSS Feed Reader](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp), [The RSS Aggregator](https://chrome.google.com/webstore/detail/the-rss-aggregator/ffhafkagcdhnhamiaecajogjcfgienom){:rel="nofollow noreferrer"},...
  *   Firefox: [RSS Ticker](https://addons.mozilla.org/fr/firefox/addon/rss-ticker/), [Simple RSS Reader](https://addons.mozilla.org/fr/firefox/addon/simple-rss-reader-srr/){:rel="nofollow noreferrer"},...
  *  Opéra: [Smart RSS](https://addons.opera.com/fr/extensions/details/smart-rss/?display=en), [Rss Zing](https://addons.opera.com/fr/extensions/details/rss-zing/?display=en){:rel="nofollow noreferrer"},...
- 
+
 Comme vous pouvez le constater le format RSS est supporté par beaucoup d'applications dans une multitude de domaines. Cela est notamment dû à sa simplicité d'utilisation. On remarque aussi que certains produits comme Feedly se sont implantés dans le maximum de domaines possible. Cela étant, il reste un service "fermé". Tout comme [Google Reader](http://alternativeto.net/software/google-reader/){:rel="nofollow noreferrer"}, si celui-ci est amené à fermer vous n'aurez donc plus accès à vos flux. Contrairement à un application open-souce que vous pouvez héberger n'importe où.
 
 > **Comment trouver des flux?**

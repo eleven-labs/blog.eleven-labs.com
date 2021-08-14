@@ -9,7 +9,7 @@ authors:
 date: '2014-02-10 09:32:03 +0100'
 date_gmt: '2014-02-10 08:32:03 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
     - chrome
     - extension

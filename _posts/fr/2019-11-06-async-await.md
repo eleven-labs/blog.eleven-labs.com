@@ -7,7 +7,7 @@ authors:
 lang: fr
 permalink: /fr/asyncawait/
 categories:
-    - Javascript
+    - javascript
 tags:
     - promise
     - promesse

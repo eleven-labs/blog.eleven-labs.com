@@ -1,18 +1,18 @@
 ---
 layout: post
-title: RabbitMQ, des bases à la maîtrise (Partie 1) 
+title: RabbitMQ, des bases à la maîtrise (Partie 1)
 lang: fr
 permalink: /fr/rabbitmq-partie-1-les-bases/
 excerpt: "Rabbitmq est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utiliser est assez simple, en revanche, le maîtriser l'est un peu moins..."
 authors:
     - amoutte
 categories:
-    - rabbitMQ
+    - rabbitmq
     - broker
     - queuing
     - retry
 tags:
-    - rabbitMQ
+    - rabbitmq
     - broker
     - queuing
     - retry
@@ -31,7 +31,7 @@ En voici quelques-uns :
 
 - Utilise AMQP (courante: 0.9.1)
 - Développé en `Erlang` ce qui en fait un logiciel très robuste
-- Système de *clustering* pour la haute disponibilité et la scalabilité 
+- Système de *clustering* pour la haute disponibilité et la scalabilité
 - Un système de [plugins](https://www.rabbitmq.com/plugins.html) qui permet d'apporter d'autre fonctionnalités (management, ldap, shovel, mqtt, stomp, tracing, AMQP 1.0)
 - Les vhost permettent de cloisonner des environnements (mutualiser le serveur, env dev/preprod/prod)
 - *Quality Of Service* (QOS) permet de prioriser les messages
@@ -44,8 +44,8 @@ Afin de pouvoir utiliser efficacement RabbitMQ il faut comprendre le fonctionnem
 
 ### Le Broker
 
-RabbitMQ est un message broker, son rôle est de transporter et router les messages depuis les publishers vers les consumers. 
-Le broker utilise les `exchanges` et `bindings` pour savoir si il doit délivrer, ou non, le message dans la queue. 
+RabbitMQ est un message broker, son rôle est de transporter et router les messages depuis les publishers vers les consumers.
+Le broker utilise les `exchanges` et `bindings` pour savoir si il doit délivrer, ou non, le message dans la queue.
 
 Voici le fonctionnement global du `broker` :
 
@@ -61,8 +61,8 @@ Nous allons donc détailler les différents éléments qui composent le `broker`
 Le message est comme une requête HTTP, il contient des `attributs` ainsi qu'un `payload`.
 Parmi les `attributs` du protocol vous pouvez y ajouter des `headers` depuis votre publisher.
 
-> Liste des properties du protocol 
-> content_type, content_encoding, priority, correlation_id, reply_to, expiration, message_id, timestamp, type, user_id, app_id, cluster_id  
+> Liste des properties du protocol
+> content_type, content_encoding, priority, correlation_id, reply_to, expiration, message_id, timestamp, type, user_id, app_id, cluster_id
 
 Les `headers` seront disponibles dans `attributes[headers]`.
 
@@ -84,7 +84,7 @@ Un `exchange` est un routeur de message. Il existe différents types de routages
 
 > Important à savoir : l'`exchange` `amq.default` est l'`exchange` par défaut de rabbit. Vous ne pouvez ni le supprimer ni vous binder dessus.
 
-*Cet exchange est auto bindé avec toutes les `queues` avec une `routing key` égale au nom de la queue.*  
+*Cet exchange est auto bindé avec toutes les `queues` avec une `routing key` égale au nom de la queue.*
 
 ![RabbitMQ Exchange default]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-default.jpg)
 
@@ -102,7 +102,7 @@ L'`exchange` `direct` n'autorise que le binding utilisant strictement la `routin
 
 Si la `routing_key` du message est strictement égale à la `routing_key` spécifiée dans le binding alors le message sera délivré à la queue.
 
-> binding.routing_key == message.routing_key 
+> binding.routing_key == message.routing_key
 
 ### L'exchange type topic
 
@@ -114,7 +114,7 @@ Une `routing key` est composé de plusieurs segments séparés par des `.`. Il y
 
 `*` n'importe quelle valeur de segment
 
-`#` n'importe quelle valeur de segment une ou plusieurs fois 
+`#` n'importe quelle valeur de segment une ou plusieurs fois
 
 Par exemple pour la `routing key` `foo.bar.baz`
 
@@ -128,7 +128,7 @@ Par exemple pour la `routing key` `foo.bar.baz`
 - `#` match
 - `foo.*` **non trouvé**
 
-> match(binding.routing_key, message.routing_key) 
+> match(binding.routing_key, message.routing_key)
 
 ### L'exchange type headers
 
@@ -140,16 +140,16 @@ L'option `x-match` dans le binding permet de définir si **un seul** header ou *
 
 ### x-match = any
 
-Avec le `x-match = any` le message sera délivré si un seul des headers du binding correspond à un header du message. 
+Avec le `x-match = any` le message sera délivré si un seul des headers du binding correspond à un header du message.
 
 > binding.headers[attrName1] == message.headers[attrName1] `OU` binding.headers[attrName2] == message.headers[attrName2]
 
-*Le message sera délivré si le header `attrName1` (configuré au moment du binding) est égal au header `attrName1` du message* 
+*Le message sera délivré si le header `attrName1` (configuré au moment du binding) est égal au header `attrName1` du message*
 
 OU
 
 *si le header `attrName2` est égal au header `attrName2` du message.*
- 
+
 ### x-match = all
 
 Avec le `x-match = all` le message sera délivré si **tous** les headers du binding correspondent aux headers du message.
@@ -175,7 +175,7 @@ Quelques options :
 
 Le rôle du `consumer` est d'exécuter un traitement après avoir récupéré un ou plusieurs `messages`.
 
-Pour ce faire il va réserver (prefetching) un ou plusieurs `messages` depuis la `queue`, avant d'exécuter un traitement. 
+Pour ce faire il va réserver (prefetching) un ou plusieurs `messages` depuis la `queue`, avant d'exécuter un traitement.
 Généralement si le traitement s'est correctement déroulé le consumer va acquitter le message avec succès (basic.ack).
 En cas d'erreur le `consumer` peut également acquitter négativement le `message` (basic.nack).
 Si le `message` n'est pas acquitté, il restera à sa place dans la queue et sera re fetch un peu plus tard.

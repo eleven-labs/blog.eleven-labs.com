@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "You are using React states wrong"
-lang: fr
+lang: en
 excerpt: "You may not be using the React states optimally and I'll explain why"
 authors:
     - marishka
-permalink: /en/you-are-using-react-states-wrong/
+permalink: /you-are-using-react-states-wrong/
 categories:
-    - Javascript
-    - React
+    - javascript
+    - react
 tags:
     - javascript
     - react

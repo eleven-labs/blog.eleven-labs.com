@@ -12,6 +12,18 @@
     margin: 3rem 0 1rem;
   }
 
+  &-tag {
+    &__title {
+      @extend %h1;
+      margin: 3rem 0 1rem;
+
+      @media (max-width: $breakpoint-small) {
+        margin: 3rem 1rem 1rem;
+        text-align: center;
+      }
+    }
+  }
+
   h1,
   h2,
   h3,

@@ -4,6 +4,7 @@ title: La Guerre du Backlog n'aura pas lieu (PART I)
 excerpt: Quelques méthodes de priorisation du Backlog pour gagner des batailles, vous faire des alliés et pacifier le développement du Produit !
 authors:
     - mapo
+lang: fr
 permalink: /fr/la-guerre-du-backlog-n-aura-pas-lieu/
 categories:
     - agile
@@ -16,7 +17,7 @@ tags:
     - product manager
     - backlog
     - priorisation
-    
+
 ---
 
 
@@ -38,33 +39,33 @@ Et pour vous lancer dans cette véritable course contre la montre, vous faire de
 ![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Scoffield & Blake.jpg)
 
 
-# Tactique numéro 1 : l’oeil de MoSCoW
+## Tactique numéro 1 : l’oeil de MoSCoW
 
 Les éléments de votre backlog ne sont pas encore priorisés ou vous voulez rebattre les cartes et vérifier les priorités établies. Une priorisation MoSCoW peut être un premier angle d’attaque simple.
 
 Il s’agit de classer les éléments de votre backlog dans les catégories suivantes :
 
 - **M – Must have** : les éléments vitaux pour votre produit
-    
+
 - **S – Should have** : les éléments importants, mais pas vitaux pour votre produit
-    
+
 - **C – Could have** : les éléments qui pourront être développés s’ils n’ont pas d’impacts sur les tâches vitales
-    
+
 - **W – Won’t have** : éléments avec moins ou pas de valeur immédiate et qui pourront être réévalués dans une version ultérieure du produit
-    
+
 Mais comment procéder pour ne pas obtenir tous les éléments de votre backlog en Must Have ?
 
 
 ### Préparation du conseil de guerre
 
-**1.**  **Regroupez vos forces en un seul et même bataillon lors d’un atelier**. Équipes métier, Sales, Marketing, Support client… Assurez-vous d’avoir un échantillon représentatif des différentes parties prenantes autour de la table, y compris les décideurs pour ne pas revenir sur les priorités établies quelques jours seulement après l’atelier. 
+**1.**  **Regroupez vos forces en un seul et même bataillon lors d’un atelier**. Équipes métier, Sales, Marketing, Support client… Assurez-vous d’avoir un échantillon représentatif des différentes parties prenantes autour de la table, y compris les décideurs pour ne pas revenir sur les priorités établies quelques jours seulement après l’atelier.
 
 N’hésitez pas à inclure l’équipe de développement à cet atelier pour leur donner une meilleure vision produit mais également afin qu’ils puissent partager la complexité technique de tel ou tel élément du backlog aux parties prenantes en cas de difficulté d’arbitrage
-    
+
 **2.**  **Préparer et afficher sur des post-its les éléments du backlog à prioriser**, les post-its doivent être visibles par tous les participants
-    
+
 **3.**  Afficher sur un board les **catégories Must, Should, Could et Won't** dans lesquelles les participants devront placer les post-its
-    
+
 
 ### Déroulement du conseil de guerre
 
@@ -89,34 +90,34 @@ Et si la valeur business, l’utilité d’un élément du backlog, devenait un 
 À vous de trouver la définition la plus adaptée à votre produit, il peut s’agir de la **valeur** :
 
 - **Commerciale** : acquisition client, upsell, rétention etc...
-   
+
 - **Corporate** : chiffre d’affaires, notoriété, image de marque...
 
 - **Métier** : gain en efficacité, moins de support utilisateur...
-    
+
 - **Utilisateur** (Customer Value) : le produit est plus friendly, présente les fonctionnalités clés pour son utilisation au quotidien, la satisfaction utilisateur est bonne...
-    
+
 - **Client** : valeur du produit pour celui qui achète le produit ou service qui n’est pas forcément le end-user comme par exemple les tableaux de bord, le ROI de l’outil etc…
-    
+
 L’idéal est de prendre en compte l’ensemble de ces éléments lors de l’estimation de la business value d’un élément du backlog et ce en réunissant bien les différentes parties prenantes.
 
 
 ### Construisez le cheval de Troie
 
 **1.**  Préparez vos **éléments de backlog à scorer** et votre jeu de **carte de poker planning**
-    
+
 **2.**  Regroupez vos parties prenantes lors d’un **atelier**
-    
+
 **3.**  1, 2, 3 - Scorez : comme dans une session de poker planning qu’on peut appeler ici **priority poker**, un élément du backlog est présenté et les participants choisissent une carte numérotée pour estimer la valeur business
-    
+
 **4.** Si les valeurs choisies divergent, les participants échangent et démarrent ce challenge collectif de prioriser telle ou telle US
-    
+
 *Astuce : si vous êtes à distance, le poker planning ou priority poker est toujours possible sur [Voting Poker](http://www.votingpoker.com/) ou [Planitpoker](https://www.planitpoker.com/)*
 
 
 ### Infiltrez le cheval dans l’enceinte du backlog
 
-La business value va donner du sens à l’équipe. Pourquoi cette US est prioritaire par rapport à une autre ? Je dois choisir entre deux US à développer dans le sprint en cours, et si je commençais par celle qui a le plus de valeur business ? 
+La business value va donner du sens à l’équipe. Pourquoi cette US est prioritaire par rapport à une autre ? Je dois choisir entre deux US à développer dans le sprint en cours, et si je commençais par celle qui a le plus de valeur business ?
 Vous pouvez ainsi décider de rajouter cet indicateur sur vos US dans Jira à l’aide d’un champ personnalisé (custom fields).
 
 Cela vous permettra de mesurer la valeur business créée, de l’afficher, de communiquer sur celle-ci. La business value est un indicateur bien plus intéressant que la vélocité qui a d’ailleurs pour vocation à rester interne à l’équipe de développement. Vous pouvez tout à fait créer un **burnup Chart dédié à la valeur créé dans le sprint.**
@@ -144,11 +145,11 @@ Si la tactique MoSCoW ou la priorisation par la business value ne portent pas le
 Le calcul de l’indicateur WSJF tiendra compte des valeurs suivantes :
 
 -   **Business value** : la valeur métier de la fonctionnalité estimée avec les parties prenantes
-    
+
 -   **Niveau d’urgence** : la fonctionnalité doit-elle être livrée rapidement ? Quelle criticité pour cette fonctionnalité ?
-    
+
 -   **Réduction des risques / Facilitation des développements** : sécurisation de l'application, système de déploiement qui n'implique aucune interruption de service par exemple
-    
+
 -   **Taille de la fonctionnalité à développer** : points de complexité estimés par l’équipe de développement
 
 Pour chacune des valeurs, vous pourrez utiliser la suite de Fibonacci pour les noter.
@@ -169,7 +170,7 @@ Vous y êtes presque, plus qu’une division pour obtenir le résultat : **WSJF 
 
 Si la criticité ou la réduction du délai est difficile à mesurer sur votre produit, vous pouvez tout à fait utiliser uniquement la business value : **Business Value / Taille de la fonctionnalité**
 
-Cela peut vous permettre de prioriser simplement des User Stories avec des Business Values sensiblement proches en fonction de la facilité à développer et rapidité à livrer une feature. 
+Cela peut vous permettre de prioriser simplement des User Stories avec des Business Values sensiblement proches en fonction de la facilité à développer et rapidité à livrer une feature.
 
 *Pour résumer, la méthode WSJF peut donc vous aider à légitimer vos choix et votre priorisation notamment auprès des équipes dirigeantes, des équipes métier. Cependant le calcul des différents indicateurs peut se révéler chronophage donc vous pouvez choisir de ne l’utiliser que sur des Epics ou Roadmap Features.*
 

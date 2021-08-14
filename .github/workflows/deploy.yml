@@ -1,0 +1,70 @@
+name: Deploy
+
+on:
+   push:
+     branches:
+       - master
+   pull_request:
+
+env:
+  AWS_DEFAULT_REGION: eu-west-2
+  CLOUDFRONT_DISTRIBUTION: E1LGTLFSNFBYPG
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: setup ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+
+    - name: configure
+      if: github.event_name == 'pull_request'
+      run: |
+        sed -i "/^url:/c\url: http:\/\/dev.blog.eleven-labs.com.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com" _config.yml
+        sed -i "/^baseurl:/c\baseurl: \/${{ github.head_ref }}" _config.yml
+
+    - name: lint
+      run: bundle exec rake lint
+
+    - name: build with draft
+      if: github.event_name == 'pull_request'
+      run: bundle exec jekyll build --drafts --future
+
+    - name: build
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: bundle exec rake build
+
+    - name: setup aws
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_DEFAULT_REGION }}
+
+    - name: deploy
+      if: github.event_name == 'pull_request'
+      run: aws s3 sync "_site/" "s3://dev.blog.eleven-labs.com/${{ github.head_ref }}/" --delete
+
+    - name: deploy
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: aws s3 sync "_site/" "s3://blog.eleven-labs.com/" --delete
+
+    - name: clear caches
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: |
+        aws configure set preview.cloudfront true
+        aws cloudfront create-invalidation --distribution-id "${{ env.CLOUDFRONT_DISTRIBUTION }}" --paths "/*"
+
+    #- name: notify
+    #  if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    #  run:
+
+    #- name: algolia
+    #  if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    #  run: bundle exec rake deploy

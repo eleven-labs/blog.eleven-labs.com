@@ -6,8 +6,8 @@ authors:
 lang: fr
 permalink: /fr/migrer-une-application-react-client-side-en-server-side-avec-nextjs/
 categories:
-    - Javascript
-    - React
+    - javascript
+    - react
     - Frontend
 tags:
     - javascript

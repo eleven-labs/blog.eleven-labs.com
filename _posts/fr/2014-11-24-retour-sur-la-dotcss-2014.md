@@ -9,9 +9,9 @@ authors:
 date: '2014-11-24 10:50:57 +0100'
 date_gmt: '2014-11-24 09:50:57 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - conférence
+    - conference
     - dotcss
 ---
 

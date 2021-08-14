@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/eleven-labs/blog.eleven-labs.com.svg?branch=master)](https://travis-ci.org/eleven-labs/blog.eleven-labs.com)
-
 Participer à notre blog
 ===================
 

@@ -9,10 +9,10 @@ authors:
 date: '2015-12-22 16:44:57 +0100'
 date_gmt: '2015-12-22 15:44:57 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - dotJS
-    - conférence
+    - dotjs
+    - conference
     - http
     - async
     - hyperdrive

@@ -4,6 +4,7 @@ title: Gestion des traductions avec localise.biz
 excerpt: Dans cet article je vais vous présenter localise.biz - un outil de gestion de traduction en SaaS.
 authors:
 - marishka
+lang: fr
 permalink: /fr/gestion-des-traductions-avec-localise.biz/
 categories:
     - traductions
@@ -128,6 +129,6 @@ app.get('/translations/b2cwebsite', (req, res,) => {
 Comme vous pouvez le constater, en quelques lignes seulement nous obtenons nos fichiers de traduction.
 Il suffit de les charger dans notre application et le tour est joué !
 
-# Conclusion
+## Conclusion
 
 Si vous travaillez sur un site multi-langues et cherchez une solution qui permettrait de satisfaire aussi bien les devs que les traducteurs, Localise.biz pourrait vous convenir. Cette solution offre une grande souplesse, que ce soit dans la façon de gérer et exporter les traductions, que dans la façon de gérer les traductions au quotidien pour le métier.

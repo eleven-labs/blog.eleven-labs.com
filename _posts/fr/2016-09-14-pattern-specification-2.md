@@ -8,7 +8,7 @@ permalink: /fr/pattern-specification-2/
 date: '2016-09-14 16:36:55 +0200'
 date_gmt: '2016-09-14 14:36:55 +0200'
 categories:
-    - Php
+    - php
 tags:
     - php
     - architecture

@@ -7,14 +7,14 @@ authors:
 lang: fr
 permalink: /fr/mise-en-place-d-un-workflow-cd-avec-fastlane-pour-ios-ou-android/
 categories:
-    - Ios
-    - Swift
-    - Xcode
+    - ios
+    - swift
+    - xcode
 tags:
-    - Ios
-    - Swift
-    - Xcode
-    - Tutorial
+    - ios
+    - swift
+    - xcode
+    - tutorial
     - CI
     - Fastlane
 image:

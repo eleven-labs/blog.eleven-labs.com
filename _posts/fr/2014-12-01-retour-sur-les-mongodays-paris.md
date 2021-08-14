@@ -8,7 +8,7 @@ authors:
     - pouzor
 date: '2014-12-01 15:35:50 +0100'
 date_gmt: '2014-12-01 14:35:50 +0100'
-categories: 
+categories:
     - MongoDB
 tags:
     - mongodb

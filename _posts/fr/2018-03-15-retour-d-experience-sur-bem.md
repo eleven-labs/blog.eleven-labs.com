@@ -20,16 +20,16 @@ cover: /assets/2018-03-15-retour-d-experience-sur-bem/cover.jpg
 ---
 
 Dans cet article, vous trouverez mon retour d'expérience sur la méthodologie BEM (**Block** ; **Element** ; **Modifier**) choisie dans ma précédente refonte du site RueDuCommerce, et chez mes différents clients.
-  
-## Pourquoi vous faites ça ?  
-  
+
+## Pourquoi vous faites ça ?
+
 Dans le cas de mon dernier client, l’objectif était de refondre le site en plusieurs services renvoyant leur propre vue. Chaque service étant géré par une équipe différente, il était nécessaire pour chacun de mettre en place des bonnes pratiques et des méthodologies pour être tous sur la même longueur d’onde, même pour le HTML et le CSS. Les projets back-end et front-end étaient réalisés en Symfony et Javascript purs (le mot d’ordre étant d’avoir le moins de librairies externes que possible).
-  
+
 ## Comment est votre HTML/CSS/JS ?
 
-Avant de vous donner mon avis sur cette méthodologie, un peu d’explication s’impose. Comme introduit plus haut, le BEM est une méthodologie. Elle définit une convention de structuration, de nommage et d’organisation pour vos assets web. Les conventions de structuration sont simples dans la théorie (expliquée en détail [ici](https://en.bem.info)). Rapidement, vos pages HTML peuvent être définies en plusieurs “**Blocks**”. Dans ces “**Blocks**”, vous avez des “**Elements**“. Tout cela peut varier grâce à des “**Modifiers**”, d’où le nom BEM. 
+Avant de vous donner mon avis sur cette méthodologie, un peu d’explication s’impose. Comme introduit plus haut, le BEM est une méthodologie. Elle définit une convention de structuration, de nommage et d’organisation pour vos assets web. Les conventions de structuration sont simples dans la théorie (expliquée en détail [ici](https://en.bem.info)). Rapidement, vos pages HTML peuvent être définies en plusieurs “**Blocks**”. Dans ces “**Blocks**”, vous avez des “**Elements**“. Tout cela peut varier grâce à des “**Modifiers**”, d’où le nom BEM.
 
-### Nommage des classes 
+### Nommage des classes
 
 À partir de là on nomme nos classes de la manière suivante :
 
@@ -66,7 +66,7 @@ project
     common.blocks/
         block-name/
             _modifier/
-                block-name_modifier.css                     
+                block-name_modifier.css
             __element/
                 _modifier/
                    block-name__element_modifier.css
@@ -77,24 +77,24 @@ project
 ```
  - **Flat** : Une structure plus simple car ici tout est dans le dossier de définition, et libre au développeur de séparer les classes dans des fichiers ou de tout mettre dans le fichier principal du **Block** :
 ```
-project 
+project
     common.blocks/
-        block-name1_modifier.css                     
+        block-name1_modifier.css
         block-name1__element_modifier.css
         block-name1__element.css
         block-name1__element.js
         block-name1.css
-        block-name1.js        
+        block-name1.js
         block-name2.css
-        block-name2.js       
+        block-name2.js
 ```
  - **Flex** : Cette approche est la plus flexible car elle combine les 2 structures citées plus haut, libre à vous de découper vos **Block** dans plusieurs fichiers, tant que c’est rangé dans un dossier correspondant au **Block**
 ```
-project 
+project
     common.blocks/
         block-name/
             _modifier/
-                block-name_modifier.css                     
+                block-name_modifier.css
             __element/
                 _modifier/
                    block-name__element_modifier.css

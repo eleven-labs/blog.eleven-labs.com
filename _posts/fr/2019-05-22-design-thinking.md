@@ -5,7 +5,7 @@ title: L'art d'identifier des problématiques et des solutions pertinentes grâc
 excerpt: Définir les problématiques à solutionner grâce au Design thinking
 authors:
     - jeni
-permalink: /design-thinking/
+permalink: /fr/design-thinking/
 categories:
     - design-thinking
     - agile
@@ -26,7 +26,7 @@ Lorsque l’on a pointé les problématiques à solutionner, il est parfois diff
 
 ### Comment pratiquer le design thinking ?
 
-Au-delà d’être une méthode de travail, le design thinking est un **état d’esprit**. Certaines notions sont primordiales pour que l’utilisation de celui-ci soit un succès. Ainsi l’**empathie** permettra de s’approprier le projet quel qu’il soit. Appréhender le sujet, se mettre à la place des acteurs majeurs, comprendre leurs motivations profondes, prendre en considération les contraintes et anticiper les obstacles, assurera la pertinence des solutions proposées. L’**absence de jugement**, au sein de l’équipe, assurera une délivrance de l’esprit et une libération du potentiel créatif menant à la divergence, souvent nécessaire pour atteindre des objectifs ambitieux. Il est donc important que l’idéation et le débriefing ne soit pas simultanés. Accorder **un temps pour chaque étape** permettra une optimisation de ces étapes. 
+Au-delà d’être une méthode de travail, le design thinking est un **état d’esprit**. Certaines notions sont primordiales pour que l’utilisation de celui-ci soit un succès. Ainsi l’**empathie** permettra de s’approprier le projet quel qu’il soit. Appréhender le sujet, se mettre à la place des acteurs majeurs, comprendre leurs motivations profondes, prendre en considération les contraintes et anticiper les obstacles, assurera la pertinence des solutions proposées. L’**absence de jugement**, au sein de l’équipe, assurera une délivrance de l’esprit et une libération du potentiel créatif menant à la divergence, souvent nécessaire pour atteindre des objectifs ambitieux. Il est donc important que l’idéation et le débriefing ne soit pas simultanés. Accorder **un temps pour chaque étape** permettra une optimisation de ces étapes.
 
 Une autre notion qu’il est parfois plus difficile à intégrer, c’est le rapport à l’**erreur**. Il est important de comprendre que dans ce genre de démarche, l’erreur n’est pas l’atteinte d’un point de non-retour mais une opportunité d’**apprentissage** et de **capitalisation**.
 
@@ -56,14 +56,14 @@ Considérons le cas d’une start-up, présente sur un marché très concurrenti
 
 Après la définition d’un groupe de travail avec les profils pertinents pour brainstormer sur les leviers à activer, le programme peut commencer.
 
-Tout d’abord il s’agit de faire en sorte que tout le monde soit bien imprégné de la culture et de la vision de la start-up afin d’assurer un flux de réflexion pertinent et en phase avec elle. On peut imaginer un petit quiz qui remettra les valeurs de la structure en avant, incluant des anecdotes drôles et marquantes de son histoire pour rappeler son âme, la timeline, l’origine et la destination souhaitée. Une fois que tout le monde est détendu et sur la même longueur d’onde avec un objectif commun bien identifié, on constitue des binômes qui vont fonctionner par interviews courtes.  
+Tout d’abord il s’agit de faire en sorte que tout le monde soit bien imprégné de la culture et de la vision de la start-up afin d’assurer un flux de réflexion pertinent et en phase avec elle. On peut imaginer un petit quiz qui remettra les valeurs de la structure en avant, incluant des anecdotes drôles et marquantes de son histoire pour rappeler son âme, la timeline, l’origine et la destination souhaitée. Une fois que tout le monde est détendu et sur la même longueur d’onde avec un objectif commun bien identifié, on constitue des binômes qui vont fonctionner par interviews courtes.
 
-À tour de rôle les participants se posent des questions visant à permettre l’expression d’une vision, identifier ce qui existe déjà et mériterait d’être amélioré, imaginer de nouvelles idées… Il s’agit alors de laisser libre cours à l’expression. Lors de ces interviews l’idée est d’avoir un échange enrichissant favorisant la réflexion vers l’objectif commun. Toutes les idées exprimées lors des interviews sont notées sur des post-it.  
+À tour de rôle les participants se posent des questions visant à permettre l’expression d’une vision, identifier ce qui existe déjà et mériterait d’être amélioré, imaginer de nouvelles idées… Il s’agit alors de laisser libre cours à l’expression. Lors de ces interviews l’idée est d’avoir un échange enrichissant favorisant la réflexion vers l’objectif commun. Toutes les idées exprimées lors des interviews sont notées sur des post-it.
 
-Suite aux interviews chaque binôme reprend les post-it et les regroupe en fonction des similitudes. Ces regroupements vont permettre d’identifier des idées principales correspondant à des leviers d’action. Chaque binôme choisit deux leviers en fonction de l’importance et de la pertinence par rapport à l’objectif commun. Ensuite chaque binôme présente les leviers choisis, en 3 minutes, aux autres binômes. 
+Suite aux interviews chaque binôme reprend les post-it et les regroupe en fonction des similitudes. Ces regroupements vont permettre d’identifier des idées principales correspondant à des leviers d’action. Chaque binôme choisit deux leviers en fonction de l’importance et de la pertinence par rapport à l’objectif commun. Ensuite chaque binôme présente les leviers choisis, en 3 minutes, aux autres binômes.
 
-Suite à la présentation de tous les binômes, les leviers sont regroupés dans la mesure du possible avant de procéder à un dot voting. 
-L’idée qui recevra le plus de votes sera celle sur laquelle le groupe va travailler pour aboutir en fin de session à un prototype testable.  
+Suite à la présentation de tous les binômes, les leviers sont regroupés dans la mesure du possible avant de procéder à un dot voting.
+L’idée qui recevra le plus de votes sera celle sur laquelle le groupe va travailler pour aboutir en fin de session à un prototype testable.
 
 Prenons pour hypothèse que le groupe a choisi comme levier la refonte du website afin d’améliorer la visibilité, présenter l’offre de manière claire et attractive et de permettre la mise en place d’une stratégie d’inbound marketing visant à faciliter le recrutement et à réduire le temps de prospection.
 

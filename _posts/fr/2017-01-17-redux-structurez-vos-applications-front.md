@@ -8,9 +8,9 @@ authors:
 date: '2017-01-17 10:09:00 +0100'
 date_gmt: '2017-01-17 09:09:00 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - Javascript
+    - javascript
     - react
     - redux
     - vuejs

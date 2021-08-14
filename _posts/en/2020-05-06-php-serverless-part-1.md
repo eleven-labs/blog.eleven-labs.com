@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "PHP & Serverless with Bref - part 1"
-lang: fr
-permalink: /en/php-serverless-part-1/
+lang: en
+permalink: /php-serverless-part-1/
 excerpt: "What is the serverless architecture, and how to deploy a PHP application to it?"
 authors:
     - marishka
@@ -16,7 +16,6 @@ tags:
     - aws
     - bref
     - lambda
-
 ---
 
 We've been talking about *serverless* architectures for years. But what does that mean precisely and how to develop PHP applications that can be deployed on this architecture?

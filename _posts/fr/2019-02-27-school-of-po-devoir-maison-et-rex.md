@@ -228,12 +228,12 @@ Nous nous sommes prêtés à l’exercice par groupes d’environ 6 personnes.
 ![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/arbre-hypotheses.jpg)
 
 
- **1. Question**  
- 
-Nous sommes partis de cette question “Pourquoi seulement 20% des users ont un compte Spotify Family ?”  
+ **1. Question**
 
- **2. Idées**  
- 
+Nous sommes partis de cette question “Pourquoi seulement 20% des users ont un compte Spotify Family ?”
+
+ **2. Idées**
+
 Nous avons ensuite émis plusieurs idées qui nous venaient à l’esprit :
  - trop cher
  - pas envie de payer pour tout le monde
@@ -241,10 +241,10 @@ Nous avons ensuite émis plusieurs idées qui nous venaient à l’esprit :
  - impossible de gérer son compte famille depuis l’app spotify
  - manque de visibilité
  - manque de connaissance des CGU
- - peur pour leur vie privée  
- 
- **3. Hypothèses formalisées**  
- 
+ - peur pour leur vie privée
+
+ **3. Hypothèses formalisées**
+
 Nous avons choisi parmi le panel des idées jetées sur le papier 3 d’entre elles afin de formuler des hypothèses :
 
  - Pas envie de payer pour tout le monde :
@@ -269,10 +269,10 @@ Car < la population utilisant spotify est jeune et à x% célibataire >*
 
 Alors < j’aurai plus de users inscrits en compte famille >
 
-Car < la majeure partie des users sont sur l’app >*  
+Car < la majeure partie des users sont sur l’app >*
 
- **4. Valider les hypothèses**  
-  
+ **4. Valider les hypothèses**
+
 Nous avons ensuite imaginé une expérimentation nous permettant de valider l’hypothèse numéro 4, par manque de temps :
 
 Ajouter un bouton dans l’app qui redirige l’utilisateur vers la page de souscription et la tracker, afin d’avoir une évaluation chiffrée du potentiel intérêt de la formule.

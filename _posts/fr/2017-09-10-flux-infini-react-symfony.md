@@ -7,7 +7,7 @@ excerpt: "Pour rendre l'expérience utilisateur de nos applications web toujours
 authors:
     - captainjojo
 categories:
-    - Symfony
+    - symfony
     - javascript
 tags:
     - php

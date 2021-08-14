@@ -9,12 +9,12 @@ authors:
 date: '2016-12-23 12:00:01 +0100'
 date_gmt: '2016-12-23 11:00:01 +0100'
 categories:
-    - TLS
-    - SSL
+    - tls
+    - ssl
 tags:
-    - sécurité
-    - SSL
-    - TLS
+    - securite
+    - ssl
+    - tls
     - Algorithmie
     - Protocoles
 image:

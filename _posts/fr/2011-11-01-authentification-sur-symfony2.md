@@ -7,7 +7,7 @@ authors:
 lang: fr
 permalink: /fr/authentification-sur-symfony2/
 categories:
-    - Symfony
+    - symfony
 tags:
     - php
     - symfony2

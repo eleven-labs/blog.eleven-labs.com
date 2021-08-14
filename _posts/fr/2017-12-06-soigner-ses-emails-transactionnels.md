@@ -61,7 +61,7 @@ On écrit donc des balises du type `mj-*` qui vont ensuite permettre de génére
       </mj-section>
     </mj-container>
   </mj-body>
-</mjml> 
+</mjml>
 ```
 
 Vous pouvez essayer ce template ici : [https://mjml.io/try-it-live](https://mjml.io/try-it-live)

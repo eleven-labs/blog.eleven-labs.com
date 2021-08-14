@@ -1,17 +1,20 @@
 source "https://rubygems.org"
-gem 'jekyll', '~> 3.8.5'
-gem 'rouge', '~> 3.22.0'
-gem 'uglifier', '~> 3.2.0'
-gem 'sassc'
+gem 'jekyll', '~> 4.1.1'
+gem 'rouge', '~> 3.25.0'
+gem 'uglifier', '~> 4.2.0'
+gem 'sassc', '~> 2.4.0'
+gem 'kramdown', '>= 2.3.1'
+gem 'oga'
 gem 'scss_lint', require: false
 
 group :jekyll_plugins do
-  gem 'algoliasearch-jekyll', '~> 0.9.0'
-  gem 'elevenlabs-amp-jekyll', '~> 1.1.0'
-  gem 'jekyll-feed', '~> 0.9.2'
-  gem 'jekyll-multiple-languages-plugin', :git => 'https://github.com/eko/jekyll-multiple-languages-plugin.git'
+  gem 'jekyll-algolia', '~> 1.6.0'
+  gem 'amp-jekyll', :git => 'https://github.com/eleven-labs/amp-jekyll.git'
+  gem 'jekyll-feed', '~> 0.15.1'
+  gem 'jekyll-multiple-languages-plugin', :git => 'https://github.com/eleven-labs/jekyll-multiple-languages-plugin.git'
   gem 'jekyll-paginate', '~> 1.1.0'
-  gem 'jekyll-seo-tag', '~> 2.3.0'
+  gem 'jekyll-seo-tag', '~> 2.7.1'
+  gem 'jekyll-tagging', '~> 1.1.0'
 end
 
 group :test do

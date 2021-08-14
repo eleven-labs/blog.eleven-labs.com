@@ -9,9 +9,9 @@ lang: fr
 permalink: /fr/phantomjs/
 excerpt: Petite présentation d'un navigateur webkit appelé PhantomJS
 categories:
-    - Javascript
+    - javascript
 tags:
-    - Javascript
+    - javascript
     - PhantomJS
 image:
   path: /assets/2014-07-16-phantomjs/phantomjs-logo.png
@@ -49,7 +49,7 @@ Phantomjs supporte trois formats d'export: PNG, JPEG et PDF.
 Commencez par créer un fichier javascript que j’appellerai phantomjs.js et mettez-y le code suivant :
 ```js
 var page = require('webpage').create(),
-system = require('system'), 
+system = require('system'),
 address, output, size;
 
 address = system.args[1];

@@ -4,6 +4,7 @@ title: La rétrospective de sprint, diversifier pour gagner en qualité Partie I
 excerpt: Prêt pour le niveau suivant ? Si vous « masterisez » les principes de base, il est maintenant temps de se pencher sur des versions plus évoluées, qui vous permettront notamment d’aborder des situations différentes et récolter des informations parfois plus pertinentes.
 authors:
 - pbrenot
+lang: fr
 permalink: /fr/retrospective-de-sprint-gagner-en-qualite-partie-II/
 categories:
     - Agilité
@@ -21,7 +22,7 @@ J’avais abordé dans un précédent article (https://blog.eleven-labs.com/fr/r
 Prêt pour le niveau suivant ? Si vous « masterisez » les principes de base, il est maintenant temps de se pencher sur des versions plus évoluées, qui vous permettront notamment d’aborder des situations différentes et récolter des informations parfois plus pertinentes.
 
 
-# TOUT COMME LES POKÉMONS, LES MÉTHODES DOIVENT ÉVOLUER
+**"TOUT COMME LES POKÉMONS, LES MÉTHODES DOIVENT ÉVOLUER"**
 
 ## LA LISTE D'INGRÉDIENTS POUR CHANGER DE RECETTE, PARTIE II
 
@@ -52,7 +53,7 @@ Passons maintenant à des versions un peu plus « fun » où l’échange peut �
 **#Etape 1 :**
 Le Scrum master va détailler les 5 espaces du tableau et demander aux différents participants d’écrire ce qu’ils pensent dans chacun de ces espaces (une idée par post-it). On prendra 10 minutes pour que l’équipe puisse écrire ce qu’elle pense en collant ses post-it sur le tableau. Les 5 espaces sont : less, start, stop, keep, more. Le découpage est en forme d’étoile de mer.
 
-  
+
 
 >- **« Less »**, ce que le membre de l’équipe pense qui est toujours fait et est négatif au sein de l’équipe.
 
@@ -72,7 +73,7 @@ Le Scrum master va détailler les 5 espaces du tableau et demander aux différen
 
 > - **« Keep »**, ce que le membre pense qui ne doit pas être changé.
 
-  
+
 
 **#Etape 2 :**
 Le Scrum master va maintenant réorganiser les post-it (si certains sont identiques), les lire, et demander si besoin des informations à la personne qui l’a écrit. On se gardera 10 minutes pour cette partie.
@@ -85,13 +86,13 @@ On terminera par un dot voting afin de voter pour les 3 axes d’améliorations 
 
 Une fois les 3 axes sélectionnés, on définira des responsables pour chacun des axes, afin de s’assurer qu’ils seront implémentés au cours du prochain sprint.
 
-  
+
 
 **Mon avis**
 On pourrait tout aussi bien le considérer comme un classique, mais de par sa forme et par le nombre de rubriques qu’il contient, j’ai l’impression qu’il est moins souvent utilisé. On pourra recueillir ici un mix entre le ressenti de l’équipe et identifier des gains de productivité.
 
-  
-  
+
+
 
 ### TURN ON THE TABLE
 
@@ -100,7 +101,7 @@ On pourrait tout aussi bien le considérer comme un classique, mais de par sa fo
 
 - Un stylo par personne
 
-  
+
 
 **Déroulement de Turn on the table**
 
@@ -112,24 +113,24 @@ Le Scrum master va ensuite demander aux différents participants de donner le po
 
 Chacun devra à tour de rôle expliquer les deux post-it qu’il a en main. Les rédacteurs des post-it pourront bien entendu, à la fin, donner leur avis sur l’interprétation du post-it.
 
-  
+
 
 **#Etape 3 :**
 Le Scrum master va maintenant demander aux membres de l’équipe de prendre 5 minutes pour noter des axes d’améliorations, avec toujours une idée par post-it.
 
-  
+
 
 **#Etape 4 :**
 On terminera par un dot voting afin de choisir les 3 axes d’améliorations les plus importants qui devront être mis en action pour le prochain sprint. On donnera donc à chacun des membres 5 points qu’ils devront répartir sur les tickets.
 
 Une fois les 3 axes sélectionnés, on définira des responsables pour chacun des axes, afin de s’assurer qu’ils seront implémentés au cours du prochain sprint.
 
-  
+
 
 **Mon avis**
 C’est une variante extrêmement intéressante, car on peut voir comment les différents membres interprètent les post-it des autres et voir si tout est cohérent, s’ils discutent bien entre eux. On mettra donc en valeur les interactions entre les membres de l’équipe.
 
-  
+
 
 ### SPEED BOAT
 
@@ -149,14 +150,14 @@ C’est une variante extrêmement intéressante, car on peut voir comment les di
 
 - Un feutre
 
-  
+
 
 **Déroulement du speed boat**
 
 **#Etape 1 :**
 Le Scrum master va commencer par dessiner sur le tableau les images de bateau, de rocher, d’ancre, d’ile, de vent et de soleil et en expliquera le sens à l’équipe. Les participants devront ensuite écrire en dessous de chacun des dessins, sur des post-it, leurs idées et ressentis (une idée par post-it, vous devriez l’avoir compris) qu’ils soient positifs ou négatifs.
 
-  
+
 
 > - **« le bateau »**, il représente l’équipe
 
@@ -178,7 +179,7 @@ Le Scrum master va commencer par dessiner sur le tableau les images de bateau, d
 
 **#Etape 2 :**
 Le Scrum master va maintenant demander aux différents membres de l’équipe d’expliquer leurs post-it
-  
+
 **#Etape 3 :**
 Le Scrum master va maintenant demander aux membres de l’équipe de prendre 5 minutes pour noter des axes d’améliorations sur des post-it, avec toujours une idée par post-it.
 
@@ -190,7 +191,7 @@ Une fois les 3 axes sélectionnés, on définira des responsables pour chacun de
 **Mon avis**
 Ce type de rétrospective a un énorme avantage par rapport aux autres : en plus d’être ludique, il permet de mettre en lumière de futurs obstacles, mais aussi les forces de l’équipe. En fonction du nombre de post-it négatif, on pourrait aussi avoir une idée de l’état d’esprit et du ressenti du projet de l’équipe.
 
-  
+
 
 ### LES 3 PETITS COCHONS
 
@@ -206,7 +207,7 @@ Ce type de rétrospective a un énorme avantage par rapport aux autres : en plus
 
 - Un feutre
 
-  
+
 
 **Déroulement des 3 petits cochons**
 
@@ -237,7 +238,7 @@ Une fois les 3 axes sélectionnés, on définira des responsables pour chacun de
 **Mon avis**
 Bien que ce type de rétrospective fasse un focus important sur les faiblesses et le négatif, c’est une variante à considérer dans la mesure où elle est simple et rapide et propose des axes de réflexion assez novateurs.
 
-  
+
 ## LES SITUATIONNELS
 Je n’en présenterai que 3 ici, que j’aime particulièrement, car ils diffèrent totalement des précédents et ne pourront convenir qu'à des équipes spécifiques ou des « moments » dans la vie du projet. Ils ne fonctionnent qu’avec des équipes habituées à ce type de rétrospectives et souvent après plusieurs sprints.
 
@@ -256,7 +257,7 @@ Je n’en présenterai que 3 ici, que j’aime particulièrement, car ils diffè
 
 - Si possible une feuille imprimée avec les 6 chapeaux de couleurs représentés.
 
-  
+
 
 **Déroulement des Six chapeaux**
 
@@ -285,19 +286,19 @@ Le Scrum master va expliquer à l’équipe la signification de chacun des chape
 
 >- **« chapeau bleu » (Organisation)**, c’est en quelques sortes la conclusion, le membre d’équipe abordera les solutions à mettre en place.
 
-  
+
 
 **#Etape 2 :**
 On terminera par un dot voting afin de voter pour les 3 axes d’améliorations (chapeau bleu) les plus importants et qui devront être mis en action pour le prochain sprint. On donnera donc à chacun des membres 5 points qu’ils devront répartir sur les tickets.
 Une fois les 3 axes sélectionnés, on définira des responsables pour chacun des axes, afin de s’assurer qu’ils seront implémentés au cours du prochain sprint.
 
-  
+
 
 **Mon avis**
 Le découpage en 6 thématiques de natures différentes aide bien à se focaliser et à se mettre dans un « mood » de pensée que l’on retrouve rarement dans les autres types de rétrospectives.
 
-  
-  
+
+
 
 ### LE LOTUS
 **Préparation**
@@ -308,7 +309,7 @@ Le découpage en 6 thématiques de natures différentes aide bien à se focalise
 
 - Un tableau blanc, ou un paper-board
 
-  
+
 
 **Déroulement du Lotus**
 
@@ -325,7 +326,7 @@ Le Scrum master va maintenant demander aux membres de l’équipe de prendre 5 m
 **#Etape 4 :**
 Si possible, le Scrum master va diviser l’équipe en sous-équipe ayant chacune un sous-problème à solutionner. La restitution des idées se fera sur un tableau de 9 cases avec le sous-problème au centre, puis les solutions envisagées tout autour.
 
-  
+
 
 **#Etape 5 :**
 On terminera par une restitution orale des solutions par chacune des sous-équipes puis on définira des responsables de suivi de mise en place des solutions, afin de s’assurer qu’elles seront implémentés au cours du prochain sprint.
@@ -333,7 +334,7 @@ On terminera par une restitution orale des solutions par chacune des sous-équip
 **Mon avis**
 Très particulière, cette rétrospective permet de solutionner un problème de grande ampleur quand ce dernier est identifié en amont, ce qui permet de vraiment creuser un problème sans que le format de la rétrospective ne vienne entraver ce travail (en dispersant les idées).
 
-  
+
 
 ### JEOPARDY
 
@@ -345,7 +346,7 @@ Très particulière, cette rétrospective permet de solutionner un problème de 
 
 - Un tableau blanc, ou un paper-board
 
-  
+
 
 **Déroulement de Jeopardy**
 
@@ -362,18 +363,18 @@ Dès qu’il n’y a plus de questions proposées, la personne qui en a écrit l
 **#Etape 4 :**
 Le Scrum master demandera aux membres de l’équipe de prendre 5 minutes pour noter des axes d’amélioration sur des post-it.
 
-  
+
 
 **#Etape 5 :**
 On terminera par un dot voting des 3 axes d’améliorations les plus importants et qui devront être mis en action pour le prochain sprint. On donnera donc à chacun des membres 5 points qu’ils devront répartir sur les tickets.
 
 Une fois les 3 axes sélectionnés, on définira des responsables pour chacun des axes, afin de s’assurer qu’ils seront implémentés au cours du prochain sprint.
 
-  
+
 **Mon avis**
 Le format est totalement différent des rétrospectives classiques, son côté « gamifié » peut ajouter un peu de fun dans une cérémonie qui peut se retrouver assez répétitive. Il faudra cependant faire attention à son utilisation car il ne se focalise que sur les problèmes et pas du tout sur le positif ou les sentiments de l’équipe.
 
-  
+
 
 ## CONCLUSION
 
@@ -385,7 +386,7 @@ Bien que nous nous soyions exclusivement concentrés sur du recueil de données 
 
 Essayez-vous à ces différents formats et venez partager en commentaire vos REX et suggestions de type de rétrospectives !
 
-  
+
 
 ## RÉFÉRENCES
 

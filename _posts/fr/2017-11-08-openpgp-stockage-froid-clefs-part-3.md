@@ -8,10 +8,10 @@ lang: fr
 permalink: /fr/openpgp-stockage-froid-clefs-partie-3/
 categories:
     - openpgp
-    - sécurité
+    - securite
 tags:
     - openpgp
-    - sécurité
+    - securite
     - yubikey
 cover: /assets/2017-11-08-openpgp-stockage-froid-clefs-part-3/cover.jpg
 ---
@@ -79,7 +79,7 @@ Prenons la première ligne en exemple. De gauche à droite :
 * la somme de contrôle de la valeur ASCII
 * la longueur de la chaine de caractère ASCII.
 
-Imprimer le fichier 1A8132B1.priv.asc et 1A8132B1.txt. Et c'est tout. 
+Imprimer le fichier 1A8132B1.priv.asc et 1A8132B1.txt. Et c'est tout.
 
 ### Testons
 
@@ -91,13 +91,13 @@ Installons un outil de reconnaissance de caractères : tesseract-ocr. Il est lib
 
 `for i in *.jpg ; do tesseract $i >> private_key.txt; done;`
 
-Si vous êtes chanceux, importez la clef directement dans gpg avec `gpg2 --import private_key.txt`. S'il y a une erreur, c'est qu'un caractère n'a pas été reconnu. Utilisez la commande qui a permis de générer le dump hexadécimal et comparez-la avec la copie en papier. 
+Si vous êtes chanceux, importez la clef directement dans gpg avec `gpg2 --import private_key.txt`. S'il y a une erreur, c'est qu'un caractère n'a pas été reconnu. Utilisez la commande qui a permis de générer le dump hexadécimal et comparez-la avec la copie en papier.
 
 `cat private_key.txt | hd | while read n; do echo -e -n "${n}\t"; echo "${n}" |  cut --delimiter="|" -f2 | cksum; done > dprivate_key.dump.txt`
 
 Parcourez chaque ligne du fichier à la recherche du caractère et corrigez le fichier `private_key.txt` au fur et à mesure.
 
-Cette étape est nécessaire pour assurer une bonne sauvegarde des clefs privées sur papier. 
+Cette étape est nécessaire pour assurer une bonne sauvegarde des clefs privées sur papier.
 
 ## Conclusion
 

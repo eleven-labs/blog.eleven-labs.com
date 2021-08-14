@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Renforcer la confidentialité d'une API avec sapient-bundle"   
+title: "Renforcer la confidentialité d'une API avec sapient-bundle"
 lang: fr
-permalink: /fr/renforcer-confidentialite-api-sapient-bundle/  
+permalink: /fr/renforcer-confidentialite-api-sapient-bundle/
 excerpt: "Avec la popularisation et la simplicité de la mise en place du protocole HTTPS, la sécurisation de données sur internet apparaît comme à la portée de tous. Il reste néanmoins critique d’être conscient des failles qui existent encore. Avec libsodium, nous allons renforcer la confidentialité des échanges de données en toute simplicité."
-authors:  
-    - tthuon  
+authors:
+    - tthuon
 categories:
     - php
     - bundle
@@ -23,7 +23,7 @@ cover: /assets/2018-08-16-renforcer-confidentialite-api-sapient-bundle/cover.jpg
 ---
 
 ## Le web de tous les dangers
-En tant que développeurs, la sécurisation de nos applications web est devenu un enjeu majeur. Dans un monde où la data vaut de de l’or, il est capital de la maintenir secrète. Let’s Encrypt, qui permet de générer des certificat SSL gratuitement, et Google qui augmente le ranking des sites sécurisés, ont favorisé la mise en place progressive du protocole HTTPS sur une bonne partie des applications web. 
+En tant que développeurs, la sécurisation de nos applications web est devenu un enjeu majeur. Dans un monde où la data vaut de de l’or, il est capital de la maintenir secrète. Let’s Encrypt, qui permet de générer des certificat SSL gratuitement, et Google qui augmente le ranking des sites sécurisés, ont favorisé la mise en place progressive du protocole HTTPS sur une bonne partie des applications web.
 
 HTTPS permet de chiffrer le canal de transmission ainsi que son contenu indirectement. Mais il y a un maillon faible dans ce processus : l’autorité de certification. Cet organisme en charge de la fourniture des certificats peut être attaqué, et de faux certificats peuvent être générés pour détourner le trafic vers le serveur de l’attaquant.
 
@@ -37,16 +37,16 @@ Dans cet article, je vais vous présenter un exemple d’implémentation qui per
 
 Depuis PHP 7.2, une nouvelle librairie cryptographique est directement intégrée au coeur de PHP : libsodium. Elle permet de remplacer la très vieille extension mcrypt. Elle se base sur une librairie qui n'est plus maintenue depuis 2007. Il reste l'extension openssl mais elle ne supporte pas les derniers algorithmes de chiffrement et de signature.
 
-libsodium est à la base du [bundle sapient](https://github.com/lepiaf/sapient-bundle). Mais le bundle ne va pas utiliser directement les fonctions de cette libraire, elle va s'appuyer sur une autre : Sapient. Cette librairie intermédiaire va utiliser les fonctions libsodium et exposer des méthodes simples à utiliser. Il est donc possible de mettre en place notre cas d'usage en dehors de Symfony. 
+libsodium est à la base du [bundle sapient](https://github.com/lepiaf/sapient-bundle). Mais le bundle ne va pas utiliser directement les fonctions de cette libraire, elle va s'appuyer sur une autre : Sapient. Cette librairie intermédiaire va utiliser les fonctions libsodium et exposer des méthodes simples à utiliser. Il est donc possible de mettre en place notre cas d'usage en dehors de Symfony.
 
-Le but de ce bundle est d'intégrer la librairie Sapient dans l'écosystème Symfony. Il permet de : 
+Le but de ce bundle est d'intégrer la librairie Sapient dans l'écosystème Symfony. Il permet de :
  - créer une paire de clef via une commande Symfony
  - configurer le bundle en YAML
  - utiliser des middlewares Guzzle et activables en une ligne de configuration
 
 Il y a également des écouteurs Symfony pour déchiffrer et chiffrer les réponses directement. Dans le cas où vous avec des besoins avancés, la librairie Sapient est directement accessible en tant que service.
 
-Comme vous pouvez le voir, ce bundle s'appuie sur les composants revus par des experts en cryptographie. Et comme le dit l'adage : "Don't roll your own crypto" (Ne faites pas votre propre crypto), sinon c'est la porte ouverte à tous les problèmes. 
+Comme vous pouvez le voir, ce bundle s'appuie sur les composants revus par des experts en cryptographie. Et comme le dit l'adage : "Don't roll your own crypto" (Ne faites pas votre propre crypto), sinon c'est la porte ouverte à tous les problèmes.
 
 ## Chiffrer et signer les réponses de l'API
 
@@ -95,7 +95,7 @@ sapient:
     seal:
         public: 'tquhje8C_hNdd85R-CzVq7n7MOLqc5h11GJv7Vo7fgc='
         private: 'NoxnlCvhxl8NRfCgIhuxm95IE1Y9QFUHMuvDkrWrnQ4='
-    sealing_public_keys: 
+    sealing_public_keys:
       -
         host: 'client-b'
         key: 'M2SMMPHg9NOXoX3NgzlWY8iTheyu8qSovnTZpAlIGB0='
@@ -142,11 +142,11 @@ q6KSHArUnD0sEa-KWpBCYLka805gdA6lVG2mbeM9kq82_
 
 Il y a une en-tête avec la signature de la réponse. Client B va lire cet en-tête. Ensuite, le corps de la réponse est déchiffré.
 
-Il est possible de pousser ce cas d'usage plus loin avec le chiffrement et la signature des requêtes envoyés par le client B. Ainsi, seule l'API A est en mesure de comprendre les requêtes. Cet exemple est disponible dans la [documentation](https://sapient-bundle.readthedocs.io/en/latest/configuration.html#sign-and-seal-request). 
+Il est possible de pousser ce cas d'usage plus loin avec le chiffrement et la signature des requêtes envoyés par le client B. Ainsi, seule l'API A est en mesure de comprendre les requêtes. Cet exemple est disponible dans la [documentation](https://sapient-bundle.readthedocs.io/en/latest/configuration.html#sign-and-seal-request).
 
 ## Conclusion
 
-Le bundle s'installe et se configure simplement. Il rend accessible un domaine jusque là réservé à des personnes expérimentées. L'introduction d'une librairie cryptographique dans le coeur de PHP rend le langage plus fort. Cela va permettre de sécuriser davantage les applications présentes et futures, et effacer petit à petit cette image de langage plein de trous de sécurité. 
+Le bundle s'installe et se configure simplement. Il rend accessible un domaine jusque là réservé à des personnes expérimentées. L'introduction d'une librairie cryptographique dans le coeur de PHP rend le langage plus fort. Cela va permettre de sécuriser davantage les applications présentes et futures, et effacer petit à petit cette image de langage plein de trous de sécurité.
 
 La sécurité et la protection des données doivent être au coeur du métier de développeur. Avec ce bundle, votre application passe à un niveau de sécurité supplémentaire tout en étant simple à mettre en oeuvre.
 
@@ -156,15 +156,15 @@ L'une des forces de la librairie Sapient est de reposer sur un composant de séc
 
 La libraire Sapient va utiliser et assembler plusieurs méthodes pour n'en former qu'une avec un but précis.
 
-Dans l'exemple plus haut, l'API A va chiffrer et signer la réponse. 
+Dans l'exemple plus haut, l'API A va chiffrer et signer la réponse.
 
-Pour la signature, l'algorithme est Ed25519. Le processus est assez simple car il prend le corps du message et applique la fonction de signature avec la clef privée d'API A. Cette signature est ensuite attachée à l'en-tête de la réponse PSR-7. Cette étape de signature permet de s'assurer de l'expéditeur du message. Le client B doit rejeter le message si la signature est incorrecte. 
+Pour la signature, l'algorithme est Ed25519. Le processus est assez simple car il prend le corps du message et applique la fonction de signature avec la clef privée d'API A. Cette signature est ensuite attachée à l'en-tête de la réponse PSR-7. Cette étape de signature permet de s'assurer de l'expéditeur du message. Le client B doit rejeter le message si la signature est incorrecte.
 
-Pour le chiffrement, le processus est un peu plus complexe. Un des pré-requis est la confidentialité persistence (_forward secrecy_). Sans cette fonctionnalité, si un attaquant vient à enregistrer les échanges et parvient à dérober la clef privée (par exemple via un commit github), il pourra déchiffrer tous les messages. C'est ce qui est reproché au protocole PGP. 
+Pour le chiffrement, le processus est un peu plus complexe. Un des pré-requis est la confidentialité persistence (_forward secrecy_). Sans cette fonctionnalité, si un attaquant vient à enregistrer les échanges et parvient à dérober la clef privée (par exemple via un commit github), il pourra déchiffrer tous les messages. C'est ce qui est reproché au protocole PGP.
 
 Pour contrer ce problème, il faut créer des clefs éphémères. Elles sont uniques à chaque message.
 
-Il est possible de décomposer le processus de cette façon : 
+Il est possible de décomposer le processus de cette façon :
  - un objet _Response_ PSR-7 est créé
  - il passe dans la fonction de chiffrement
  - une paire de clefs asymétriques est créée avec l'algorithme X25519
@@ -183,10 +183,10 @@ Ensuite côté client B, le processus inverse est effectué :
  - un échange de clefs est effectué pour obtenir une clef partagée avec l'algorithme X25519
  - le corps de la réponse est déchiffré avec cette clef partagée en utilisant l'algorithme XChaCha20-Poly1305
  - le message déchiffré est de nouveau encapsulé dans un objet _Response_ PSR-7
-   
+
 Lors du déchiffrement, l'algorithme vérifie que le message n'a pas été altéré. Si c'est le cas, une exception _\SodiumException_ est levée avec le message _Invalid MAC_ (MAC = Message Authenticated Cipher).
 
-Ce focus permet de mieux comprendre le fonctionnement de la libraire ainsi que le but de chaque algorithme. 
+Ce focus permet de mieux comprendre le fonctionnement de la libraire ainsi que le but de chaque algorithme.
 
 ### Référence
 - [sapient-bundle](https://github.com/lepiaf/sapient-bundle)

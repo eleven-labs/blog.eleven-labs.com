@@ -7,7 +7,7 @@ excerpt: Le moyen de communication le plus répandu entre un prestataire et son
 lang: fr
 permalink: /fr/prenez-soin-de-vos-emails/
 categories:
-    - Javascript
+    - javascript
 tags:
     - mail
 ---

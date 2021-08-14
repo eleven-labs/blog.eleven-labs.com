@@ -2,7 +2,7 @@
 layout: post
 title: Should you go hybrid? Pros and cons for the hybrid cloud
 lang: en
-permalink: /fr/should-you-go-hybrid/
+permalink: /should-you-go-hybrid/
 excerpt: "Relevance of the hybrid cloud to the enterprise is growing. There was a three-fold jump in hybrid cloud adoption between 2016 and 2017, reflecting the attractiveness of such a setup for enterprises looking to leverage the benefits of cloud computing. Here are some key pros and cons of the hybrid cloud, to help you decide if such a setup is best for your business."
 authors:
     - limor.wainstein

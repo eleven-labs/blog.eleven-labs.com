@@ -15,6 +15,16 @@
   });
 </script>
 
+<!-- Required Material Web JavaScript library -->
+<script src="https://unpkg.com/material-components-web@v9.0.0/dist/material-components-web.min.js"></script>
+<!-- Instantiate matterial component rendered in the document -->
+<script>
+  if(document.querySelector('.mdc-chip-set')) {
+    const chipSetEl = document.querySelector('.mdc-chip-set');
+    window.mdc.chips.MDCChipSet.attachTo(chipSetEl);
+  };
+</script>
+
 <!-- Font Awesome -->
 <script src="{{ "/js/lib/fontawesome/svg-with-js/js/fontawesome.min.js" | prepend: site.baseurl_root }}" defer></script>
 <script src="{{ "/js/lib/fontawesome/svg-with-js/js/fa-solid.min.js" | prepend: site.baseurl_root }}" defer></script>

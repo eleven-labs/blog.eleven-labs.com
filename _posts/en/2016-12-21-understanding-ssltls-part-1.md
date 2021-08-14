@@ -14,7 +14,7 @@ tags:
     - protocols
     - encryption
     - SSL
-    - TLS
+    - tls
 ---
 
 You've certainly heard about SSL or TLS protocols.

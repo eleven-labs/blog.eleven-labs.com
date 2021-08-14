@@ -7,10 +7,10 @@ excerpt: "Deuxième épisode de cette série, découvrez les incroyables addons 
 authors:
     - manu
 categories:
-    - Storybook
+    - storybook
     - UX
     - UI
-    - React
+    - react
 tags:
     - react
     - UI
@@ -36,7 +36,7 @@ Ce truc qui viens très souvent remplacer une tâche dont t'as bien la flemme au
 
 Avant de cracher davantage dans la soupe, laissons quand même la parole au cuisinier, car qui mieux que Storybook pour vendre sa propre came ?
 
-> **Supercharge Storybook**  
+> **Supercharge Storybook**
 > Storybook addons enable advanced functionality and unlock new workflows. Contributed by core maintainers and the amazing developer community.
 
 Donc on nous promet des supers modules qui viennent enrichir notre expérience, maintenus par Storybook et leur communauté ? Ça transpire pas l'originalité, mais ça a le mérite qu'on lui laisse une chance.

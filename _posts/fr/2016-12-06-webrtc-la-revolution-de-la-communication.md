@@ -9,13 +9,13 @@ excerpt: "Historiquement, le Web était un outil qui permettait le chargement, l
 date: '2016-12-06 14:44:19 +0100'
 date_gmt: '2016-12-06 13:44:19 +0100'
 categories:
-    - Javascript
+    - javascript
 tags:
-    - Javascript
+    - javascript
     - RTC
     - Real Time Communication
     - P2P
-    - Vidéo
+    - video
 ---
 
  Le **WebRTC** (aka **Web** **R**eal-**T**ime **C**ommunication) apporte la communication en temps réel au Web.

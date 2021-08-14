@@ -3,13 +3,13 @@ layout: post
 title: 'Behat : structurez vos tests fonctionnels'
 lang: fr
 permalink: /fr/behat-structurez-vos-tests-fonctionnels/
-authors: 
+authors:
     - vcomposieux
 date: '2016-07-19 10:16:11 +0200'
 date_gmt: '2016-07-19 08:16:11 +0200'
 categories:
-    - Symfony
-    - Php
+    - symfony
+    - php
 tags:
     - symfony
     - php

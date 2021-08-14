@@ -2,20 +2,20 @@
 layout: post
 title: '2018 new year resolution: Replace my ERP by a Slack bot implemented with DialogFlow and Symfony'
 excerpt: "The purpose of this post is to show the power of a Slack bot that can be used to ease everyday life in your company, and how to implement it using DialoFlow and Symfony"
-lang: fr
-permalink: /en/replace-erp-by-slack-bot-with-dialogflow-and-symfony/
+lang: en
+permalink: /replace-erp-by-slack-bot-with-dialogflow-and-symfony/
 authors:
     - charles-eric
 date: '2018-01-04 15:30:00 +0100'
 date_gmt: '2017-01-04 15:30:00 +0100'
 categories:
     - bot
-    - Symfony
+    - symfony
 tags:
     - Slack
     - bot
     - DialogFlow
-    - Symfony
+    - symfony
 cover: /assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/cover.jpg
 ---
 
