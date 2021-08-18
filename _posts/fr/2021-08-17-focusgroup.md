@@ -91,11 +91,11 @@ Les 5 étapes présentées ci-après reflètent l’organisation classique d’u
 3. **Brise-glace** (10 minutes)  
 
 - Activité ludique permettant de créer du lien et favoriser l’interaction sociale entre les participants. Il existe de nombreuses activités brise-glace mais le principe reste le même, se présenter et créer une cohésion de groupe.  
-    
+
 4. **Questions et activité supports si besoin** (60-70 minutes)  
 
 - Le cœur de l’entretien dans lequel les questions du guide d’entretien vont être posées et les activités prévues réalisées. L’animateur doit s’assurer que les règles sont bien comprises et que la parole est bien distribuée.  
-    
+
 5. **Synthèse et conclusion** (10 minutes)  
 
 - Revenir sur les principaux points abordés pendant la session.    
@@ -128,7 +128,7 @@ L’entretien ne se limitant pas aux questions, vous pouvez prévoir des activit
 - **Le tri de cartes**  
 Écrire sur des post-its des fonctionnalités souhaitées et les classer selon l’importance subjective qu’elles ont pour les utilisateurs.
 
-- **La complétion de phrases**  C
+- **La complétion de phrases**   
 Chaque participant complète les mêmes phrases et les participants débattent ensuite de leur réponse.
     
 - **Un jeu de rôle**  
