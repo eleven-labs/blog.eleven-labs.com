@@ -80,23 +80,23 @@ Cette planification est essentielle afin que l’atelier porte ses fruits. Voici
 
 Les 5 étapes présentées ci-après reflètent l’organisation classique d’un focus group, mais vous êtes libre de l’adapter en fonction de vos besoins et de votre expérience.
 
- 1. **Accueil des participants** (5 minutes)
- 2. **Explication de l’atelier** (5 minutes)
+1. **Accueil des participants** (5 minutes)
+2. **Explication de l’atelier** (5 minutes)
     
 - Explication par l’animateur du sujet de l’atelier, de ses objectifs et des activités prévues.    
 - Comment vont être utilisées les informations recueillies?    
 - Signature du formulaire de consentement s’il y a lieu (en cas d’enregistrement notamment).    
-- Les participants sont libres de refuser et de partir à tout moment.
-    
-  3. **Brise-glace** (10 minutes)
+- Les participants sont libres de refuser et de partir à tout moment.  
 
-- Activité ludique permettant de créer du lien et favoriser l’interaction sociale entre les participants. Il existe de nombreuses activités brise-glace mais le principe reste le même, se présenter et créer une cohésion de groupe.
-    
- 4. **Questions et activité supports si besoin** (60-70 minutes)
+3. **Brise-glace** (10 minutes)  
 
-- Le cœur de l’entretien dans lequel les questions du guide d’entretien vont être posées et les activités prévues réalisées. L’animateur doit s’assurer que les règles sont bien comprises et que la parole est bien distribuée.
+- Activité ludique permettant de créer du lien et favoriser l’interaction sociale entre les participants. Il existe de nombreuses activités brise-glace mais le principe reste le même, se présenter et créer une cohésion de groupe.  
     
- 5. **Synthèse et conclusion** (10 minutes)
+4. **Questions et activité supports si besoin** (60-70 minutes)  
+
+- Le cœur de l’entretien dans lequel les questions du guide d’entretien vont être posées et les activités prévues réalisées. L’animateur doit s’assurer que les règles sont bien comprises et que la parole est bien distribuée.  
+    
+5. **Synthèse et conclusion** (10 minutes)  
 
 - Revenir sur les principaux points abordés pendant la session.    
 - Demander aux participants s’ils ont des choses à rajouter.    
@@ -125,14 +125,14 @@ Les questions du guide d’entretien doivent être ouvertes (les réponses ne pe
 
 L’entretien ne se limitant pas aux questions, vous pouvez prévoir des activités de groupes comme par exemple :
 
-- **Le tri de cartes**
+- **Le tri de cartes**  
 Écrire sur des post-its des fonctionnalités souhaitées et les classer selon l’importance subjective qu’elles ont pour les utilisateurs.
 
-- **La complétion de phrases**
-    Chaque participant complète les mêmes phrases et les participants débattent ensuite de leur réponse.
+- **La complétion de phrases**  C
+Chaque participant complète les mêmes phrases et les participants débattent ensuite de leur réponse.
     
-- **Un jeu de rôle**
-    On fait vivre différentes situations aux participants qui doivent jouer un rôle donné et on demande au groupe de réagir ensuite à la situation jouée.
+- **Un jeu de rôle**  
+On fait vivre différentes situations aux participants qui doivent jouer un rôle donné et on demande au groupe de réagir ensuite à la situation jouée.
     
 Il existe beaucoup d’activités pouvant être utilisées dans un focus group, le choix dépend pleinement de ce que vous souhaitez explorer avec cet atelier.
 
@@ -169,7 +169,7 @@ Voici un rapide rappel des avantages et inconvénients de cette méthode.
 - L'implication des utilisateurs dans la conception du produit augmentant la satisfaction et facilitant l’acceptation du produit final (particulièrement intéressant dans le cas d’un produit destiné à une utilisation interne à l’entreprise).
     
 
-  **Inconvénients**
+**Inconvénients**
 
 - Certaines personnalités trop fortes peuvent influencer les discussions avec des participants plus timides ou discrets qui risquent de se conformer aux idées de la majorité.    
 - L'organisation peut être difficile car il faut recruter plusieurs participants en évitant autant que possible des gens qui se connaissent trop bien et trouver un moment où tout le monde est disponible pour une séance de 90 minutes.    
