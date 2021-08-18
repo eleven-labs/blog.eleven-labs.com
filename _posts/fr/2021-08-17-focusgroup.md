@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Focus group : Introduction à cette méthode de recueil de données
+title: "Focus group : Introduction à cette méthode de recueil de données"
 excerpt: Résumé à rédiger
 authors:
     - sbessoudo
-    Lang: fr
+lang: fr
 permalink: /fr/focus-group/
 categories:
     - bonnes pratiques
