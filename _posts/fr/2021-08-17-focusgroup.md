@@ -80,7 +80,7 @@ Cette planification est essentielle afin que l’atelier porte ses fruits. Voici
 
 Les 5 étapes présentées ci-après reflètent l’organisation classique d’un focus group, mais vous êtes libre de l’adapter en fonction de vos besoins et de votre expérience.
 
-1/ **Accueil des participants** (5 minutes)
+1/ **Accueil des participants** (5 minutes)     
 2/ **Explication de l’atelier** (5 minutes)
     
 - Explication par l’animateur du sujet de l’atelier, de ses objectifs et des activités prévues.    
