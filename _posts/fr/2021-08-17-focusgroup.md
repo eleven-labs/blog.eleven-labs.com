@@ -54,8 +54,8 @@ Cette planification est essentielle afin que l’atelier porte ses fruits. Voici
 
 - Les points à aborder pendant l’atelier sont définis en amont par l’équipe projet et le type de résultats qu’elle souhaite obtenir. C’est sur cette base que sera créé le guide d’entretien composé d’environ 8 thèmes/questions.  
 - Écrire le guide d’entretien, prévoir les activités associées, les questions et les thèmes abordés.    
-- Pré-testez le guide d’entretien si vous en avez la possibilité pour vérifier qu’il fonctionne bien et qu’il ne manque rien.
-    
+- Pré-testez le guide d’entretien si vous en avez la possibilité pour vérifier qu’il fonctionne bien et qu’il ne manque rien.   
+
 **Étape 2** : Trouvez les personnes adéquates pour les rôles cadres de l’atelier.
     
 - Un animateur, si possible expérimenté, qui va guider l’atelier en posant les questions, recentrer le débat et être le maître du temps.    
