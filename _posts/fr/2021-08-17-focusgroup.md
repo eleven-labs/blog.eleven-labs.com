@@ -80,23 +80,23 @@ Cette planification est essentielle afin que l’atelier porte ses fruits. Voici
 
 Les 5 étapes présentées ci-après reflètent l’organisation classique d’un focus group, mais vous êtes libre de l’adapter en fonction de vos besoins et de votre expérience.
 
-1. **Accueil des participants** (5 minutes)
-2. **Explication de l’atelier** (5 minutes)
+1/ **Accueil des participants** (5 minutes)
+2/ **Explication de l’atelier** (5 minutes)
     
 - Explication par l’animateur du sujet de l’atelier, de ses objectifs et des activités prévues.    
 - Comment vont être utilisées les informations recueillies?    
 - Signature du formulaire de consentement s’il y a lieu (en cas d’enregistrement notamment).    
 - Les participants sont libres de refuser et de partir à tout moment.  
 
-3. **Brise-glace** (10 minutes)  
+3/ **Brise-glace** (10 minutes)  
 
 - Activité ludique permettant de créer du lien et favoriser l’interaction sociale entre les participants. Il existe de nombreuses activités brise-glace mais le principe reste le même, se présenter et créer une cohésion de groupe.  
 
-4. **Questions et activité supports si besoin** (60-70 minutes)  
+4/ **Questions et activité supports si besoin** (60-70 minutes)  
 
 - Le cœur de l’entretien dans lequel les questions du guide d’entretien vont être posées et les activités prévues réalisées. L’animateur doit s’assurer que les règles sont bien comprises et que la parole est bien distribuée.  
 
-5. **Synthèse et conclusion** (10 minutes)  
+5/ **Synthèse et conclusion** (10 minutes)  
 
 - Revenir sur les principaux points abordés pendant la session.    
 - Demander aux participants s’ils ont des choses à rajouter.    
