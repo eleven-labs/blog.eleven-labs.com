@@ -66,6 +66,10 @@ theme_settings:
     corporate_logo: /img/follow/eleven.svg
     welcome_to_the_jungle: https://www.welcometothejungle.co/fr/companies/eleven-labs
     welcome_to_the_jungle_logo: /img/follow/welcome_to_the_jungle.svg
+    link_facebook: https://www.facebook.com/11Labs
+    link_twitter: https://www.twitter.com/eleven_labs/
+    link_linkedin: https://fr.linkedin.com/company/eleven-labs
+    link_wttj: https://www.welcometothejungle.com/fr/companies/eleven-labs
 
     # Scripts
     google_analytics: UA-99013054-1

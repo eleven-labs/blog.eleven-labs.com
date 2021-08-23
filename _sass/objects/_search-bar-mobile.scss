@@ -1,0 +1,30 @@
+.search-bar-mobile {
+  display: none;
+  flex-direction: row;
+  left: 80px;
+  position: absolute;
+  top: 23px;
+  width: 260px;
+
+  &__input {
+    background-color: $white;
+    border: 1px solid $white;
+    border-radius: 29px;
+    // scss-lint:disable ColorVariable
+    box-shadow: 0 4px 30px rgba(0, 0, 0, .06);
+    color: $dark-gray;
+    float: left;
+    font-family: $font-family-main;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    outline: none;
+    padding: 10px;
+    width: 260px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
