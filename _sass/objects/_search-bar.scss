@@ -3,7 +3,11 @@
   left: 55%;
   position: absolute;
   top: 33px;
-  width: 600px;
+  width: 350px;
+
+  @media(min-width: $breakpoint-large) {
+    width: 600px;
+  }
 
   &__input {
     background-color: $white;
@@ -20,7 +24,11 @@
     line-height: 16px;
     outline: none;
     padding: 10px;
-    width: 600px;
+    width: 350px;
+
+    @media(min-width: $breakpoint-large) {
+      width: 600px;
+    }
 
     &:focus {
       outline: none;

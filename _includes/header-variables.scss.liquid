@@ -7,22 +7,25 @@
   background-size: auto em(190px);
   display: flex;
   flex-direction: row;
-  height: em(250px);
+  height: 90px;
   width: 100%;
 
   @media(min-width: $breakpoint-large) {
+    background-repeat: no-repeat;
     background-color: $bright-blue;
-    background-position: 24.8% em(80px), center, right em(105px);
-    background-size: auto em(150px), auto 100%;
-    height: em(230px);
+    background-size: auto em(190px);
+    display: flex;
+    flex-direction: row;
+    height: em(250px);
+    width: 100%;
   }
 
   &-text {
     height: 158px;
     border-top: 1px solid $white;
     color: $white;
-    position: relative;
     margin-top: 95px;
+    position: relative;
     width: 100%;
 
     &__title {
@@ -30,11 +33,23 @@
       font-style: normal;
       font-weight: normal;
       font-size: 24px;
+      left: 6%;
       line-height: 28px;
       position: relative;
-      width: 100%;
-      left: 20%;
       top: 10px;
+      width: 100%;
+
+      @media(min-width: $breakpoint-large) {
+        font-family: $font-family-main;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        left: 17%;
+        line-height: 28px;
+        position: relative;
+        top: 10px;
+        width: 100%;
+      }
     }
 
     &__content {
@@ -42,11 +57,24 @@
       font-style: normal;
       font-weight: bold;
       font-size: 32px;
+      left: -40%;
       line-height: 125.5%;
       position: relative;
-      width: 100%;
-      left: 8%;
       top: 53px;
+      width: 100%;
+      top: 53px;
+
+      @media(min-width: $breakpoint-large) {
+        font-family: $font-family-main;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        left: 5%;
+        line-height: 125.5%;
+        position: relative;
+        top: 53px;
+        width: 100%;
+      }
     }
   }
 
@@ -62,8 +90,20 @@
     text-decoration: none;
     transform: translate(-50%, 0);
 
-    @media(min-width: $breakpoint-large) {
-      height: em(170px);
+    &__search-icon {
+      color: $white;
+      display: none;
+      height: em(40px);
+      margin: 28px 0 0 340px;
+      width: em(40px);
+    }
+
+    &__back-icon {
+      color: $white;
+      display: none;
+      height: em(40px);
+      margin: 36px 0 0 30px;
+      width: em(40px);
     }
 
     &__logo-eleven {
@@ -77,13 +117,25 @@
     &__title {
       color: $white;
       position: absolute;
-      text-align: center;
       text-decoration: none;
       transform: translate(-50%, 0);
       text-align: left;
       height: em(40px);
       margin: em(30px) 0 0 em(160px);
       width: em(130px);
+    }
+
+    &__brand {
+      color: $white;
+      text-decoration: none;
+      transform: translate(-50%, 0);
+    }
+
+    &__blog {
+      color: $white;
+      font-weight: bold;
+      text-decoration: none;
+      transform: translate(-50%, 0);
     }
   }
 }
@@ -144,75 +196,4 @@
     }
   }
 
-  &__search-icon {
-    margin: em(20px) em(19px) em(20px) auto;
-
-    @media(min-width: $breakpoint-large) {
-      cursor: pointer;
-      display: flex;
-      flex-direction: row;
-      margin: 0 em(20px);
-      text-decoration: none;
-    }
-  }
-
-  &__search-label {
-    display: none;
-
-    &:visited {
-      color: $white;
-    }
-
-    @media(min-width: $breakpoint-large) {
-      color: $white;
-      display: block;
-      font-family: $font-family-language-switch;
-      font-size: em(24px);
-      font-weight: 400;
-      line-height: .7;
-      margin-right: em(10px);
-    }
-  }
-
-  &__headband {
-
-    &--not-displayed {
-      display: none;
-    }
-
-    &--displayed {
-      color: $dusty-grey;
-      display: block;
-      height: em(50px);
-      line-height: 2.5;
-      margin: em(5px) 0 0;
-      position: absolute;
-      width: 100%;
-
-      @media(min-width: $breakpoint-large) {
-        height: em(55px);
-        margin: em(16px) auto auto 0;
-      }
-    }
-  }
-
-  &__close-search {
-    color: $white;
-    float: right;
-    height: 20px;
-    margin: em(-40px) em(20px);
-    width: 20px;
-
-    &:hover {
-      background: transparent;
-    }
-
-    @media(min-width: $breakpoint-large) {
-      color: $white;
-      float: right;
-      height: 25px;
-      margin: em(-35px) em(20px);
-      width: 25px;
-    }
-  }
 }

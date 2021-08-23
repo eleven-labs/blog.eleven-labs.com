@@ -4,20 +4,33 @@
   font-family: $font-family-main;
   font-size: 1.5rem;
   font-weight: 400;
-  height: 238px;
   margin-top: auto;
-  padding-left: 120px;
   padding-top: 60px;
   width: 100%;
+
+  @media(min-width: $breakpoint-large) {
+    background-color: $bright-blue;
+    color: $white;
+    font-family: $font-family-main;
+    font-size: 1.5rem;
+    font-weight: 400;
+    height: 238px;
+    margin-top: auto;
+    padding-left: 120px;
+    padding-top: 60px;
+    width: 100%;
+  }
 
   &__container {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    text-align: center;
+    width: 100%;
 
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-large) {
       flex-direction: column;
       float: left;
+      text-align: left;
       width: 25%;
     }
   }
@@ -25,13 +38,16 @@
   &__container-contact {
     display: flex;
     flex-direction: column;
-    padding: 5px;
-    width: 25%;
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
 
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-large) {
       flex-direction: column;
       float: left;
+      margin-top: 0;
       padding: 5px;
+      text-align: left;
       width: 25%;
     }
   }
@@ -39,13 +55,16 @@
   &__container-infos {
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
-    width: 25%;
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
 
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-large) {
       flex-direction: column;
       float: left;
+      margin-top: 0;
       padding-top: 30px;
+      text-align: left;
       width: 25%;
     }
   }
@@ -54,8 +73,18 @@
     color: $white;
     display: flex;
     height: em(40px);
-    margin: 0;
+    left: 95px;
+    position: absolute;
     width: em(40px);
+
+    @media (min-width: $breakpoint-large) {
+      color: $white;
+      display: flex;
+      height: em(40px);
+      left: 8%;
+      margin: 0;
+      width: em(40px);
+    }
   }
 
   &__logo-title {
@@ -63,10 +92,19 @@
     font-family: $font-family-korb;
     font-size: 3.1rem;
     font-weight: 300;
-    height: em(40px);
-    margin: 0 0 0 120px;
-    position: absolute;
-    transform: translate(-50%, 0);
+    height: 42px;
+    margin: 0 0 0 50px;
+
+    @media (min-width: $breakpoint-large) {
+      color: $white;
+      font-family: $font-family-korb;
+      font-size: 3.1rem;
+      font-weight: 300;
+      height: 33px;
+      margin: 0 0 0 132px;
+      position: relative;
+      transform: translate(-50%, 0);
+    }
   }
 
   &__title {
@@ -95,6 +133,26 @@
     width: 100%;
   }
 
+  &__content-links {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    padding-left: 90px;
+    padding-top: 10px;
+    width: 100%;
+
+    @media (min-width: $breakpoint-large) {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 16px;
+      padding-left: 0;
+      padding-top: 3px;
+      width: 100%;
+    }
+  }
+
   &__button {
     background-color: $red-light;
     border-radius: 4px;
@@ -104,11 +162,29 @@
     font-style: normal;
     font-weight: 600;
     height: 32px;
-    margin-top: 10px;
+    margin-left: 126px;
+    margin-top: 23px;
     padding: 8px 24px;
     text-decoration: none;
     text-transform: uppercase;
     width: 113px;
+
+    @media (min-width: $breakpoint-large) {
+      background-color: $red-light;
+      border-radius: 4px;
+      color: $white;
+      font-family: $font-family-main;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      height: 32px;
+      margin-left: 0;
+      margin-top: 10px;
+      padding: 8px 24px;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: 113px;
+    }
   }
 
   &__social-link {
@@ -118,6 +194,14 @@
     margin-top: 10px;
     text-decoration: none;
     width: 22px;
+  }
+
+  &__social-link-rss {
+    float: left;
+    height: 32px;
+    margin-right: 7px;
+    margin-top: 13px;
+    text-decoration: none;
   }
 }
 
@@ -129,19 +213,19 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  height: 58px;
-  margin-top: auto;
+  padding-top: 10px;
   text-align: center;
   width: 100%;
 
   &__container {
     display: flex;
     flex-direction: row;
-    margin: auto;
+    margin-top: 10px;
     padding: 20px;
+    text-align: center;
     width: 25%;
 
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-large) {
       flex-direction: row;
       margin: auto;
       padding: 20px;
@@ -163,15 +247,36 @@
     font-style: normal;
     font-weight: 600;
     line-height: 16px;
+    padding-left: 5px;
     padding-top: 3px;
     text-decoration: none;
     width: 120px;
+
+    @media (min-width: $breakpoint-large) {
+      color: $white;
+      font-family: $font-family-main;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+      padding-left: 0;
+      padding-top: 3px;
+      text-decoration: none;
+      width: 120px;
+    }
   }
 
   &__separator {
     display: flex;
     height: em(40px);
-    margin: 8px 0 0;
+    margin: 8px 0 0 5px;
     width: em(12px);
+
+    @media (min-width: $breakpoint-large) {
+      display: flex;
+      height: em(40px);
+      margin: 8px 0 0;
+      width: em(12px);
+    }
   }
 }

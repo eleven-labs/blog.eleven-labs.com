@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+{% if site.theme_settings.share_button %}
+    {% include share.html %}
+{% endif %}
 <article class="post">
     <header class="meta">
         <h1 class="md-content__title">{{ page.title }}</h1>

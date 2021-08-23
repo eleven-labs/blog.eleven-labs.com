@@ -21,6 +21,7 @@ $baseurl: '{{ site.baseurl_root }}';
 @import 'objects/page-heading';
 @import 'objects/read-also';
 @import 'objects/search-bar';
+@import 'objects/search-bar-mobile';
 @import 'objects/avatar';
 @import 'objects/newsletter';
 @import 'objects/chips';
