@@ -1,14 +1,67 @@
-{% capture phoneNumber %}tel{{ site.theme_settings.phone_number | replace: " ", "" }}{% endcapture %}
-{% if site.theme_settings.copyright %}
 <footer class="slice footer">
-    <p class="footer__container container">
-		<span class="footer__text">{{ site.theme_settings.copyright }} © {{ 'now' | date: "%Y" }}</span>
-		<span class="footer__text">
-			<a class="footer__link no-link-style" href="{{ phoneNumber }}">
-				{{ site.theme_settings.phone_number }}
+    <div class="footer__container">
+			<a class="footer__logo-eleven" href="{{ site.baseurl }}/">
+					{% include eleven_logo.html %}
 			</a>
-		</span>
-		<span class="footer__text">{{ site.theme_settings.adress }} {{ site.theme_settings.post_code }}</span>
-    </p>
+			<span class="footer__logo-title" href="{{ site.baseurl }}/" >
+					{{ site.theme_settings.brand }}
+			</span>
+			<span class="footer__content">
+				{% translate global.discover_eleven %}
+			</span>
+			<span class="footer__subtitle">
+				{% translate global.know_us %}
+			</span>
+			<a class="footer__button" target="_blank" href="{{ site.theme.site_web_eleven }}/">
+				{% translate global.go_website %}
+			</a>
+		</div>
+		<div class="footer__container-contact">
+			<span class="footer__title">
+				{% translate global.contact %}
+			</span>
+			<span class="footer__subtitle">
+				{% translate global.eleven_paris %}
+			</span>
+			<span class="footer__content">
+				{% translate global.eleven_address_paris %}
+			</span>
+			<div class="footer__content">
+				<a class="footer__social-link" target="_blank" href="{{ site.theme.site_web_eleven }}/">
+					{% include rss_logo.html %}
+				</a>
+			</div>
+		</div>
+		<div class="footer__container-infos">
+			<span class="footer__subtitle">
+				{% translate global.eleven_nantes %}
+			</span>
+			<span class="footer__content">
+				{% translate global.eleven_address_nantes %}
+			</span>
+		</div>
+		<div class="footer__container-infos">
+			<span class="footer__subtitle">
+				{% translate global.eleven_business_email %}
+			</span>
+			<span class="footer__content">
+				{% translate global.eleven_business_tel %}
+			</span>
+		</div>
 </footer>
-{% endif %}
+<footer class="slice footer-locale">
+	<div class="footer-locale__container">
+		<p class="footer-locale__logo"">
+			{% include locale_logo.html %}
+		</p>
+		<a class="footer-locale__content" href="{{ site.baseurl_root }}/fr">
+			{% translate global.french %}
+		</a>
+		<p class="footer-locale__separator"">
+			{% include separator.html %}
+		</p>
+		<a class="footer-locale__content" href="{{ site.baseurl_root }}/en">
+			{% translate global.english %}
+		</a>
+	</div>
+</footer>

@@ -1,64 +1,57 @@
 .search-bar {
-  background: $alabaster;
-  font-size: em(20px);
-  position: relative;
+  flex-direction: row;
+  left: 55%;
+  position: absolute;
+  top: 33px;
+  width: 600px;
 
-  &-label {
-    font-size: em(12px);
-    letter-spacing: .1em;
-    padding-left: em(20px);
-    text-transform: uppercase;
-  }
-
-  &-input {
-    background: $casablanca;
-    border: 0;
-    bottom: 0;
-    cursor: pointer;
-    display: block;
-    height: 100%;
-    max-width: 100%;
-    min-width: 100%;
-    opacity: 0;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 10;
+  &__input {
+    background-color: $white;
+    border: 1px solid $white;
+    border-radius: 29px;
+    // scss-lint:disable ColorVariable
+    box-shadow: 0 4px 30px rgba(0, 0, 0, .06);
+    color: $dark-gray;
+    float: left;
+    font-family: $font-family-main;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    outline: none;
+    padding: 10px;
+    width: 600px;
 
     &:focus {
-      background: $alabaster;
-      box-sizing: border-box;
-      opacity: 1;
       outline: none;
-      padding: 0 em(30px);
-
-      @media (min-width: $breakpoint-small) {
-        min-width: em(120px);
-      }
-
-      @media (min-width: $breakpoint-large) {
-        border: 0;
-        padding-left: em(20px);
-      }
     }
   }
-}
 
-.search-logo {
-  font-size: em(13px);
-  padding-bottom: em(15px);
-  padding-top: em(15px);
-  text-align: right;
+  &__button {
+    background-color: $white;
+    border-bottom: 1px solid $white;
+    border-bottom-right-radius: 29px;
+    border-left: 1px solid $red-light;
+    border-right: 1px solid $white;
+    border-top: 1px solid $white;
+    border-top-right-radius: 29px;
+    color: $dark-gray;
+    cursor: pointer;
+    float: left;
+    font-size: 17px;
+    margin-left: -45px;
+    margin-top: 6px;
+    padding: 1px;
+    width: 5%;
 
-  &-bg {
-    background: url($baseurl + '/img/Algolia_logo_bg-white.svg') no-repeat;
-    background-size: contain;
-    display: inline-block;
-    height: em(25px);
-    margin-bottom: em(-10px);
-    margin-left: em(5px);
-    width: em(70px);
+    &:hover {
+      background: $white;
+    }
+  }
+
+  &__icon {
+    color: $red-light;
+    margin-left: 10px;
+    margin-top: 2px;
   }
 }

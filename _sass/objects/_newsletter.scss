@@ -1,27 +1,69 @@
 .newsletter {
-  background-image: $background-footer;
-  color: $white;
+  background-image: $white;
   height: 34rem;
   margin-top: auto;
   text-align: center;
 
   &__container {
-    padding: 3rem;
+    backdrop-filter: blur(30px);
+    // scss-lint:disable ColorVariable
+    background: rgba(225, 234, 249, .5);
+    border-radius: 20px;
+    height: 246px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 30px;
+    width: 80%;
   };
 
-  &__subtitle {
-    font-family: $font-family-footer-title;
-    font-size: 1.4rem;
-    font-weight: 400;
-    opacity: .5;
+  &__img {
+    float: left;
+    height: 181px;
+    margin-left: 150px;
+    width: 171px;
+  };
+
+  &__button {
+    background-color: $red-light;
+    border-radius: 4px;
+    color: $white;
+    font-family: $font-family-main;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    height: 37px;
+    left: 72px;
+    line-height: 21px;
+    padding: 8px 24px;
+    position: relative;
+    text-decoration: none;
     text-transform: uppercase;
+    top: 50px;
+    width: 171px;
   };
 
   &__title {
-    @extend %h4;
-    font-family: $font-family-footer-title;
-    font-size: 3.6rem;
-    font-weight: 400;
-    padding: .5rem 0 3rem;
+    float: left;
+    padding-left: 38px;
+    text-align: left;
+    width: 400px;
+
+    &__light {
+      color: $black;
+      font-family: $font-family-main;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 26px;
+    }
+
+    &__bold {
+      color: $black;
+      font-family: $font-family-main;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 125.5%;
+    }
   };
 }
