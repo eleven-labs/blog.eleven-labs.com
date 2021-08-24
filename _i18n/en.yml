@@ -31,7 +31,7 @@ global:
   cookie_inform_and_ask_disagree: Disagree
   tag_page_title: Articles with the tag
   tag_cloud: All tags available on the blog
-  blog: Le blog
+  blog: The blog
   contact: Contact
   see_you: Welcome
   explore_skills: Let's explore new knowledge
@@ -41,11 +41,13 @@ global:
   eleven_address_paris: 15 Avenue de la Grande armée 75016 Paris
   eleven_address_nantes: 24 mail des chantiers 44200 Nantes
   eleven_business_email: business@eleven-labs.com
-  eleven_business_tel: 01 82 83 11 75
+  eleven_business_tel: +33 1 82 83 11 75
   know_us: To learn more, visit our website
-  go_website: Go
+  go_website: Let's go!
   french: Français
   english: English
+  search_placeholder: Search by article or author name
+
 date:
   months:
     january: January

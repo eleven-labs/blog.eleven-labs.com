@@ -7,11 +7,13 @@
       {% if isFirstAuthor %}
         <span class="article-preview__authors">
           <i class="fas fa-fw fa-pencil-alt" data-fa-transform="flip-h" title="{% translate global.author_by %}"></i>
+        </span>
       {% elsif isLastAuthor %}
          {% translate global.and %}
       {% else %}
          ,
       {% endif %}
+        <span class="article-preview__authors">
           <a class="article-preview__author-link" href="{{ '/authors/:author' | prepend: site.baseurl | replace: '//', '/' | replace: ':author', author }}">{{ existingAuthor.title }}</a>
       {% if isLastAuthor %}
         </span>
