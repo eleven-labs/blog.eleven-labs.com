@@ -93,9 +93,10 @@
     width: 243px;
 
     @media(min-width: $breakpoint-large) {
+      display: grid;
       float: left;
       padding-left: 38px;
-      text-align: left;
+      text-align: center;
       width: 400px;
     }
 

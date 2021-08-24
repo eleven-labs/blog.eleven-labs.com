@@ -83,6 +83,7 @@
       height: em(40px);
       left: 119px;
       margin: 0;
+      position: unset;
       width: em(40px);
     }
   }
@@ -101,9 +102,8 @@
       font-size: 3.1rem;
       font-weight: 300;
       height: 33px;
-      margin: 0 0 0 135px;
+      margin: -31px 0 0 38px;
       position: relative;
-      transform: translate(-50%, 0);
     }
   }
 
