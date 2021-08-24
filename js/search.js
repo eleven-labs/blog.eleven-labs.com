@@ -38,7 +38,7 @@ layout: compress-js
     searchBarMobile.style.display = 'none';
   } else {
     searchIcon.style.display = 'none';
-    headerText.style.display = 'block';
+    headerText.style.display = 'flex';
     searchBarMobile.style.display = 'none';
     searchBar.style.display = 'block';
   }

@@ -21,6 +21,10 @@
   }
 
   &-text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 244px;
+    padding-top: 29px;
     height: 158px;
     border-top: 1px solid $white;
     color: $white;
@@ -33,9 +37,7 @@
       font-style: normal;
       font-weight: normal;
       font-size: 24px;
-      left: 6%;
       line-height: 28px;
-      position: relative;
       top: 10px;
       width: 100%;
 
@@ -44,9 +46,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 24px;
-        left: 216px;
         line-height: 28px;
-        position: relative;
         top: 10px;
         width: 100%;
       }
@@ -57,9 +57,7 @@
       font-style: normal;
       font-weight: bold;
       font-size: 32px;
-      left: -40%;
       line-height: 125.5%;
-      position: relative;
       top: 53px;
       width: 100%;
       top: 53px;
@@ -69,9 +67,7 @@
         font-style: normal;
         font-weight: bold;
         font-size: 32px;
-        left: 42px;
         line-height: 125.5%;
-        position: relative;
         top: 53px;
         width: 100%;
       }
@@ -109,9 +105,9 @@
     &__logo-eleven {
       color: $white;
       display: flex;
-      height: em(37px);
+      height: em(40px);
       margin: em(30px) 0 0 em(38px);
-      width: em(40px);
+      width: em(35px);
 
       @media(min-width: $breakpoint-large) {
         color: $white;
