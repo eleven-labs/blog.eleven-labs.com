@@ -45,7 +45,8 @@ global:
   go_website: J'y vais !
   french: Français
   english: English
-  search_placeholder: Recherchez par nom d'article ou d'auteur
+  search_placeholder: Rechercher par nom d'article ou d'auteur
+
 date:
   months:
     january: Janvier

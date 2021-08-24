@@ -10,6 +10,7 @@ layout: compress-js
   const searchInput = document.getElementById('js-algolia__input');
   const searchInputMobile = document.getElementById('js-algolia__inputMobile');
   const searchForm = document.getElementById('js-algolia__form');
+  const searchFormMobile = document.getElementById('js-algolia__formMobile');
 
   const baseurl = window.site && window.site.baseurl;
   const contentId = document.getElementById('js-content');
@@ -49,6 +50,7 @@ layout: compress-js
     searchIcon.style.display = 'none';
     headerLinks.style.display = 'none';
     backIcon.addEventListener('click', closeSearch);
+    searchFormMobile.addEventListener('submit', onQueryChange);
     searchInputMobile.addEventListener('keyup', onQueryChange);
   }
 

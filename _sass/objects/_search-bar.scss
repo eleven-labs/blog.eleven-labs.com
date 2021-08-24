@@ -1,4 +1,6 @@
 .search-bar {
+  // scss-lint:disable ColorVariable
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
   flex-direction: row;
   left: 55%;
   position: absolute;
@@ -6,6 +8,8 @@
   width: 350px;
 
   @media(min-width: $breakpoint-large) {
+    // scss-lint:disable ColorVariable
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
     width: 600px;
   }
 
@@ -39,7 +43,7 @@
     background-color: $white;
     border-bottom: 1px solid $white;
     border-bottom-right-radius: 29px;
-    border-left: 1px solid $red-light;
+    border-left: 1px solid $black;
     border-right: 1px solid $white;
     border-top: 1px solid $white;
     border-top-right-radius: 29px;

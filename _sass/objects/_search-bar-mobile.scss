@@ -1,4 +1,6 @@
 .search-bar-mobile {
+  // scss-lint:disable ColorVariable
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .06);
   display: none;
   flex-direction: row;
   left: 80px;

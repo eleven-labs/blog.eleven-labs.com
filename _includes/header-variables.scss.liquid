@@ -101,17 +101,25 @@
     &__back-icon {
       color: $white;
       display: none;
-      height: em(40px);
+      height: em(45px);
       margin: 36px 0 0 30px;
-      width: em(40px);
+      width: em(44px);
     }
 
     &__logo-eleven {
       color: $white;
       display: flex;
-      height: em(40px);
+      height: em(37px);
       margin: em(30px) 0 0 em(38px);
       width: em(40px);
+
+      @media(min-width: $breakpoint-large) {
+        color: $white;
+        display: flex;
+        height: em(45px);
+        margin: em(30px) 0 0 em(38px);
+        width: em(43px);
+      }
     }
 
     &__title {

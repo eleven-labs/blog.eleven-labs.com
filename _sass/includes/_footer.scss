@@ -81,7 +81,7 @@
       color: $white;
       display: flex;
       height: em(40px);
-      left: 8%;
+      left: 119px;
       margin: 0;
       width: em(40px);
     }
@@ -101,7 +101,7 @@
       font-size: 3.1rem;
       font-weight: 300;
       height: 33px;
-      margin: 0 0 0 132px;
+      margin: 0 0 0 135px;
       position: relative;
       transform: translate(-50%, 0);
     }
@@ -167,7 +167,7 @@
     padding: 8px 24px;
     text-decoration: none;
     text-transform: uppercase;
-    width: 113px;
+    width: 114px;
 
     @media (min-width: $breakpoint-large) {
       background-color: $red-light;
@@ -183,7 +183,7 @@
       padding: 8px 24px;
       text-decoration: none;
       text-transform: uppercase;
-      width: 113px;
+      width: 114px;
     }
   }
 
