@@ -7,43 +7,78 @@ layout: compress-js
   const client = algoliasearch('5IGTHBX5JS', '7f7511d659569fcede7653d568b3206c');
   const index = client.initIndex('blog_eleven');
 
-  const searchIcon = document.getElementById('search-icon');
-  const search = document.getElementById('search');
-  const close = document.getElementById('close');
-
   const searchInput = document.getElementById('js-algolia__input');
+  const searchInputMobile = document.getElementById('js-algolia__inputMobile');
   const searchForm = document.getElementById('js-algolia__form');
+  const searchFormMobile = document.getElementById('js-algolia__formMobile');
+
   const baseurl = window.site && window.site.baseurl;
   const contentId = document.getElementById('js-content');
   const contentSearchId = document.getElementById('js-content-search');
   const lang = window.site && window.site.lang;
 
-  searchIcon.addEventListener("click", function(){
-    if (search.classList.contains('header-bottom__headband--not-displayed')) {
-      search.className = 'header-bottom__headband--displayed';
-      document.getElementById('js-algolia__input').focus();
-    }
-  });
+  document.getElementById('js-algolia__input').focus();
 
-  close.addEventListener("click", function(){
-    search.className = 'header-bottom__headband--not-displayed';
-    contentSearchId.style.display = 'none';
-    contentId.style.display = 'flex';
-  });
+  const headerText = document.getElementById('header-text');
+  const headerLinks = document.getElementById('header-links');
+  const searchIcon = document.getElementById('search-icon');
+  const searchBar = document.getElementById('search-bar');
+  const searchBarMobile = document.getElementById('search-bar-mobile');
+  const backIcon = document.getElementById('back-icon');
+
+  function mobileCheck() {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) return true;
+    return false;
+  }
+
+  if (mobileCheck()) { 
+    searchIcon.style.display = 'block';
+    headerText.style.display = 'none';
+    searchBar.style.display = 'none';
+    searchBarMobile.style.display = 'none';
+  } else {
+    searchIcon.style.display = 'none';
+    headerText.style.display = 'flex';
+    searchBarMobile.style.display = 'none';
+    searchBar.style.display = 'block';
+  }
+
+  function openSearch(e) {
+    e.preventDefault();
+    searchBarMobile.style.display = 'block';
+    backIcon.style.display = 'block';
+    searchIcon.style.display = 'none';
+    headerLinks.style.display = 'none';
+    backIcon.addEventListener('click', closeSearch);
+    searchFormMobile.addEventListener('submit', onQueryChange);
+    searchInputMobile.addEventListener('keyup', onQueryChange);
+  }
+
+  function closeSearch(e) {
+    e.preventDefault();
+    searchBarMobile.style.display = 'none';
+    backIcon.style.display = 'none';
+    searchIcon.style.display = 'block';
+    headerLinks.style.display = 'flex';
+    backIcon.removeEventListener('click', closeSearch);
+    document.location.reload();
+  }
 
   function onQueryChange(e) {
     e.preventDefault();
 
+    const searchInputActive = mobileCheck() ? searchInputMobile : searchInput;
+
     contentId.style.display = 'none';
     contentSearchId.style.display = 'block';
 
-    if (!searchInput.value) {
+    if (!searchInputActive.value) {
       contentId.style.display = 'block';
       contentSearchId.style.display = 'none';
       return;
     }
 
-    index.search(searchInput.value, (err, content) => {
+    index.search(searchInputActive.value, (err, content) => {
       if (err) {
         console.error(err.message);
         return;
@@ -107,4 +142,5 @@ layout: compress-js
 
   searchForm.addEventListener('submit', onQueryChange);
   searchInput.addEventListener('keyup', onQueryChange);
+  searchIcon.addEventListener('click', openSearch);
 })();
