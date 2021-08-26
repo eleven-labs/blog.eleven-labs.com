@@ -13,9 +13,10 @@ global:
   share_on: Share this article on
   language_switch_to: Changer vers Français
   next: Next
-  want_more: Wants to know more?
   find_our_newsletter: Sign up to our Newsletter
   newsletter_subscribe: Subscribe
+  search_tool_newsletter: Want to know more?   
+  lets_subscribe_newsletter: Sign up to our Newsletter
   prev: Previous
   reading: Reading time
   rss_follow: Add us to your watch
@@ -30,6 +31,23 @@ global:
   cookie_inform_and_ask_disagree: Disagree
   tag_page_title: Articles with the tag
   tag_cloud: All tags available on the blog
+  blog: Le blog
+  contact: Contact
+  see_you: Welcome
+  explore_skills: Let's explore new knowledge
+  discover_eleven: Discover ElevenLabs
+  eleven_paris: ElevenLabs - Paris
+  eleven_nantes: ElevenLabs - Nantes
+  eleven_address_paris: 15 Avenue de la Grande armée, 75016 Paris
+  eleven_address_nantes: 24 mail des chantiers, 44200 Nantes
+  eleven_business_email: business@eleven-labs.com
+  eleven_business_tel: +33 1 82 83 11 75
+  know_us: To learn more, visit our website
+  go_website: Let's go!
+  french: Français
+  english: English
+  search_placeholder: Search by article or author name
+
 date:
   months:
     january: January
