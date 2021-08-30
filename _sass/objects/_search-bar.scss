@@ -7,7 +7,7 @@
   top: 33px;
   width: 350px;
 
-  @media(min-width: $breakpoint-large) {
+  @media(min-width: $breakpoint-xx-large) {
     // scss-lint:disable ColorVariable
     box-shadow: 0 4px 30px rgba(0, 0, 0, .14);
     width: 600px;
@@ -30,7 +30,7 @@
     padding: 10px;
     width: 350px;
 
-    @media(min-width: $breakpoint-large) {
+    @media(min-width: $breakpoint-xx-large) {
       width: 600px;
     }
 
