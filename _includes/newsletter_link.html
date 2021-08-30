@@ -1,13 +1,14 @@
 <footer class="slice newsletter">
     <div class="newsletter__container container">
-        <p class="newsletter__subtitle">
-            {% translate global.want_more %}
-        </p>
-        <p class="newsletter__title">
-            {% translate global.find_our_newsletter %}
-        </p>
-        <a class="button--squared no-link-style tracked-link" target="_blank" data-tracking="newsletter" rel="nofollow noreferrer" href="http://eepurl.com/cOuOIf">
-            {% translate global.newsletter_subscribe %}
-        </a>
+        <div class="newsletter__img">
+            {% include satellite.html %}
+        </div>
+        <div class="newsletter__title">
+            <span class="newsletter__title__light">{% translate global.search_tool_newsletter %}</span>
+            <span class="newsletter__title__bold">{% translate global.lets_subscribe_newsletter %}</span>
+            <a class="newsletter__button" target="_blank" data-tracking="newsletter" rel="nofollow noreferrer" href="{{ site.theme_settings.newsletter_redirect_url }}">
+                {% translate global.newsletter_subscribe %}
+            </a>
+        </div>
     </div>
 </footer>
