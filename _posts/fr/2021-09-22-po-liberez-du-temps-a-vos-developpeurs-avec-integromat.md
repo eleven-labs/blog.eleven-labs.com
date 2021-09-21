@@ -12,7 +12,7 @@ tags:
     - No-code
     - outils
     - automatisation
-cover: /assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
+cover: /assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
 ---
 
 En tant que PO ou chef de produit, vous pouvez faire vous-mêmes certaines fonctionnalités qui peuvent être répétitives et peu motivantes pour vos développeurs et qui ont peu de valeur ajoutée. Cela permet aux équipes de se concentrer sur des vrais plus-values pour le produit et donner plus de temps pour réfléchir à l’architecture et aux différents challenges techniques. Pour tester une nouvelle idée, un marché sans trop investir, un outil NoCode est une solution.
@@ -25,13 +25,13 @@ Je vais proposer des fonctionnalités qu’on retrouve régulièrement dans un p
 
 ## Présentation de l’interface
 
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/homepage.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/homepage.png)
 
 On peut noter que integromat a fait attention aux utilisateurs ayant un profil non technique en proposant une interface facile d’utilisation et assez intuitive.
 
 Sur la page de fabrication d’un scénario, chaque noeud est représenté par une bulle : l’ajout et la configuration se font directement sur la page. Integromat permet de créer des structures de données (Data structures) et de stocker des données (Data Stores) que vous pouvez préparer en amont dans leurs propres menus pour ensuite les utiliser dans les scénarios.
 Grâce à ces fonctionnalités, vous pouvez traiter et manipuler des données sans avoir besoin de base de données spécifique.
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/interface-noeud.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/interface-noeud.png)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OExHVQ9CRCw" frameborder="0" allowfullscreen></iframe>
 
@@ -41,9 +41,9 @@ Grâce à ces fonctionnalités, vous pouvez traiter et manipuler des données sa
 Vous commencez un nouveau site from scratch qui demande une inscription, et vous souhaitez envoyer l’email de confirmation.
 
 Le scénario est assez simple : un webhook sur lequel l’application devra envoyer des données, et un serveur d’envoi d’emails.
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-scenario.png)
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-webhook.png)
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-mail.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-scenario.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-webhook.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-mail.png)
 
 > Dans les points positifs, c’est que vous êtes autonomes pour changer le template : pas besoin de développement supplémentaire et donc pas de mise en production à prévoir.
 
@@ -71,7 +71,7 @@ Vous venez de créer votre site e-commerce, que ce soit Shopify ou Prestashop. P
 
 Pour l’exemple, je vais plutôt utiliser un webhook que directement un noeud de site e-commerce qui permet de récupérer l’information dès qu’il y a un nouvel événement.
 
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas2-scenario.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas2-scenario.png)
 
 > Comme pour le template d’email, vous êtes autonome pour le changer.
 
@@ -88,7 +88,7 @@ Sans trop rentrer dans le détail, il y a plusieurs manières de créer une imag
 #### Envoyer cette image pour par email
 
 En plus de stocker l’image, vous pouvez en même temps l’envoyer par email.
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas2-aller-plus-loin.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas2-aller-plus-loin.png)
 
 #### L’impression
 
@@ -100,18 +100,18 @@ Ce scénario permet d’aller plus loin dans integromat avec l’utilisation des
 On veut traiter un CSV pour le spliter en plusieurs CSV pour être traités par des micro-services différents.
 Vous pouvez brancher le trigger sur un *FTP* comme sur un *Google Drive*.
 
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-scenario.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-scenario.png)
 
 Entre les liens, il est possible de rajouter des filtres. Pour ne pas avoir d’erreur lors du traitement, j’ai rajouté la condition pour accepter que les documents CSV pour la suite.
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-filter-csv.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-filter-csv.png)
 
 
 Après avoir téléchargé le document, pour être sûr du modèle et pour enregistrer les données pour potentiellement être utilisé dans un autre scénario, j’utilise le noeud *Data Store* qui va permettre de mapper chaque entrée du CSV en une entrée en base de données.
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-mapping-csv-data-store.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-mapping-csv-data-store.png)
 
 
 Pour mon besoin, j’ai besoin de créer 3 CSV différents en se reposant sur des Data Structures et de les enregistrer dans un dossier. Le noeud *Router* permet de paralléliser le travail.
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-create-data-structure-product.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-create-data-structure-product.png)
 
 > Dans les points positifs, il y a l’autonomie sur les modèles : si l’entrée ou la/les sorties changent, vous pouvez mettre à jour facilement.
 
@@ -137,7 +137,7 @@ Vous avez besoin de rajouter l’id de la marque ou un trigramme de couleur, mai
 Il existe plein de noeuds pour permettre la communication : à chaque traitement de nouveau fichier, un message slack sera envoyé pour prévenir.
 Il est même possible de prévoir le chemin en cas d’erreur lors d’un noeud.
 
-![]({{ site.baseurl }}/assets/2021-09-05-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-add-error-handler.png)
+![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-add-error-handler.png)
 
 
 ## Conclusion
