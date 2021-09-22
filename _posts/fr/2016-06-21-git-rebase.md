@@ -9,19 +9,18 @@ authors:
 date: '2016-06-21 17:56:42 +0200'
 date_gmt: '2016-06-21 15:56:42 +0200'
 categories:
-    - Non classé
+    - Bonnes pratiques
 tags:
     - git
 ---
 
 Aujourd'hui, nous utilisons tous git pour gérer le code source des projets, que ce soit pour notre usage personnel ou professionnel.
-
 Nous savons tous commiter ou tirer des modifications. Mais il y a un problème assez récurrent dans les projets à plusieurs collaborateurs : les conflits.
-
 Pour mieux les gérer et les éviter, je vous propose d'aborder une commande git : rebase.
 
-Le problème
-===========
+*Notez qu'après lecture de ces quelques lignes, un autre article sera susceptible de vous intéresser aussi, intitulé [Introduction à Gitlab CI/CD](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/) (qui comme son nom l'indique vous initie au fonctionnement de Gitlab CI/CD). N'hésitez pas à aller y jeter un oeil :)* 
+
+## Le problème
 
 Git permet d'avoir un historique complet des modifications du code source. Pour réaliser une fonctionnalité, chaque contributeur va créer une branche depuis la branche *master*.
 
@@ -31,8 +30,7 @@ Nous avons Jean qui a terminé le développement d'une fonctionnalité. Elle est
 
 Marc a également terminé son développement, mais il a modifié les même fichiers que Jean. Si la branche de marc est fusionnée à ce moment, il y aura des **conflits**.
 
-La solution
-===========
+## La solution
 
 Il est donc nécessaire de mettre à jour sa branche avant de pousser ses modifications. Cette mise à jour va inclure toutes les modifications de Jean dans la branche de Marc. Ça s'appelle un *rebase*.
 
@@ -44,8 +42,7 @@ Cette commande va prendre tous les commits de la branche en cours pour les appli
 
 Il est important de voir l'historique git comme un empilement d'éléments (*commit*).
 
-Exemple
-=======
+## Exemple
 
 J'ai une branche *master* avec le code source de mon application.
 
@@ -245,7 +242,7 @@ Git va marquer les sections en conflit avec des chevrons.
 <<<<<<< HEAD
 ```
 
-## Commit
+### Commit
 
 To commit a change:
 
@@ -253,7 +250,7 @@ To commit a change:
 git commit -m "my message"
 ```
 
-## Cherry pick
+### Cherry pick
 
 To cherry-pick a commit
 
@@ -265,7 +262,7 @@ D'un côté il y a le HEAD qui correspond au master, de l'autre la branche en co
 
 Dans notre cas, je veux garder les deux modifications et les fusionner. J'édite le fichier en supprimant les chevrons.
 
-## Commit
+### Commit
 
 To commit a change:
 
@@ -273,7 +270,7 @@ To commit a change:
 git commit -m "my message"
 ```
 
-## Cherry pick
+### Cherry pick
 
 To cherry-pick a commit
 
