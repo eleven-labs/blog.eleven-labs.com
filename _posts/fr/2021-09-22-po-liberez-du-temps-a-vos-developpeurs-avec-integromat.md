@@ -32,7 +32,7 @@ Grâce à ces fonctionnalités, vous pouvez traiter et manipuler des données sa
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OExHVQ9CRCw" frameborder="0" allowfullscreen></iframe>
 
 
-## Cas 1 : Envoi d’ un email pour activer une inscription
+## Cas 1 : Envoi d’un email pour activer une inscription
 
 Vous commencez un nouveau site from scratch qui demande une inscription, et vous souhaitez envoyer l’email de confirmation.
 
@@ -140,7 +140,7 @@ Il est même possible de prévoir le chemin en cas d’erreur lors d’un noeud.
 
 Contrairement à n8n, integromat est un outil que vous pouvez essayer tout de suite, avec une prise en main facile et accessible même si vous n’êtes pas "technique".
 
-En temps que développeuse, je suis pour le No/Low Code : ça me décharge de fonctionnalités peu intéressantes et me permet de ne me concentrer que sur celles qui demandent de la réflexion avec une forte valeur ajoutée.
+En tant que développeuse, je suis pour le No/Low Code : ça me décharge de fonctionnalités peu intéressantes et me permet de ne me concentrer que sur celles qui demandent de la réflexion avec une forte valeur ajoutée.
 
 
 ## Source :
