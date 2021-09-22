@@ -32,7 +32,7 @@ Grâce à ces fonctionnalités, vous pouvez traiter et manipuler des données sa
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OExHVQ9CRCw" frameborder="0" allowfullscreen></iframe>
 
 
-## Cas 1 : Envoi d’ un email pour activer une inscription
+## Cas 1 : Envoi d’un email pour activer une inscription
 
 Vous commencez un nouveau site from scratch qui demande une inscription, et vous souhaitez envoyer l’email de confirmation.
 
