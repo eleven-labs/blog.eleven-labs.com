@@ -6,8 +6,6 @@ permalink: /fr/git-rebase/
 excerpt: "Aujourd'hui, nous utilisons tous git pour gérer le code source des projets, que ce soit pour notre usage personnel ou professionnel."
 authors:
     - tthuon
-date: '2016-06-21 17:56:42 +0200'
-date_gmt: '2016-06-21 15:56:42 +0200'
 categories:
     - Bonnes pratiques
 tags:
