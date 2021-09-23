@@ -127,7 +127,7 @@ Date:   Sun Jun 12 16:32:19 2016 +0200
     initialize tutorial
 ```
 
-![gitrebase-anotherfe-commit](({{site.baseurl}}/assets/2016-06-21-git-rebase/gitrebase-anotherfe-commit.png)
+![gitrebase-anotherfe-commit]({{site.baseurl}}/assets/2016-06-21-git-rebase/gitrebase-anotherfe-commit.png)
 
 Si je fusionne cette branche avec *master*, je vais avoir des problèmes car j'ai modifié le même fichier. Je vais d'abord faire un rebase depuis master pour appliquer mes modifications à la suite des modifications de *master*.
 
@@ -139,7 +139,7 @@ Application : add title level 2
 
 Je vois que le commit "c3" est bien appliqué après les modification "c1" et "c2".
 
-![gitrebase-anotherfe-rebase](({{site.baseurl}}/assets/2016-06-21-git-rebase/gitrebase-anotherfe-rebase.png)
+![gitrebase-anotherfe-rebase]({{site.baseurl}}/assets/2016-06-21-git-rebase/gitrebase-anotherfe-rebase.png)
 
 Ici, le *rebase* s'est bien déroulé car il n'y a pas eu de modification au même endroit.
 
@@ -167,7 +167,7 @@ Date:   Sun Jun 12 16:32:19 2016 +0200
 
 Je vois que master contient bien les modifications de *myfeat* et *anotherfe*.
 
-![gitrebase-master-final](({{site.baseurl}}/assets/2016-06-21-git-rebase/gitrebase-master-final-1.png)
+![gitrebase-master-final]({{site.baseurl}}/assets/2016-06-21-git-rebase/gitrebase-master-final-1.png)
 
 ### Gestion des conflits
 
@@ -285,6 +285,6 @@ git rebase --continue
 
 Le rebase est terminé. L'historique de *master* est propre.
 
-Pour référence: [git-rebase](({{site.baseurl}}https://git-scm.com/docs/git-rebase) et [Git branching - rebasing](({{site.baseurl}}https://git-scm.com/book/en/v2/Git-Branching-Rebasing){:rel="nofollow noreferrer"}
+Pour référence: [git-rebase]({{site.baseurl}}https://git-scm.com/docs/git-rebase) et [Git branching - rebasing]({{site.baseurl}}https://git-scm.com/book/en/v2/Git-Branching-Rebasing){:rel="nofollow noreferrer"}
 
 Images créées avec <http://learngitbranching.js.org/?NODEMO>
