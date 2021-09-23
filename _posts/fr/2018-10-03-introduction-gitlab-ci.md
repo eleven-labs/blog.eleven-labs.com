@@ -1,14 +1,13 @@
 ---
 layout: post
 title: Introduction à Gitlab CI/CD
-excerpt: Cet article présente une partie des possibilités qu’offre GitLab CI/CD. Vous retrouverez sur la plateforme Codelabs deux tutoriels liés à cet article, qui vous montreront deux cas d'utilisation.
+excerpt: Cet article présente une partie des possibilités qu’offre GitLab CI/CD. Vous retrouverez aussi sur la plateforme Codelabs deux tutoriels liés à cet article, qui vous montreront deux cas d'utilisation.
 authors:
     - nicolas
 lang: fr
 permalink: /fr/introduction-gitlab-ci/
 categories:
-    - continuous integration
-    - devops
+    - Bonnes pratiques
 tags:
     - gitlab
     - gitlab-ci
@@ -22,9 +21,12 @@ cover: /assets/2018-09-19-introduction-gitlab-ci/cover.png
 ---
 Aujourd’hui si vous voulez mettre en place une CI/CD sur GitHub il vous faut “linker” vos dépôts avec Travis-ci, Circle-ci, Codeship... Mais savez-vous que GitLab intègre une solution de CI/CD ? C'est l'objet de l'article d'aujourd'hui.
 
-Dans cet article je vais juste vous présenter les possibilités que vous offre GitLab CI/CD. Mais pour aller plus loin je vous propose aussi deux tutos sur le [codelabs d'Eleven Labs](https://codelabs.eleven-labs.com) :
-- Mettre en place une CI sur un projet symfony - En cours de rédaction
+Dans cet article je vais juste vous présenter les possibilités que vous offre GitLab CI/CD. Mais pour aller plus loin vous pourrez retrouver deux tutos sur le [codelabs d'Eleven Labs](https://codelabs.eleven-labs.com) :
 - [Mettre en place une Ci sur un projet js](https://codelabs.eleven-labs.com/course/fr/gitlab-ci-js/)
+- [Gestion d'environnement avec Google Cloud Storage et GitlabCI](https://codelabs.eleven-labs.com/course/fr/react-env-variable-gcp-gitlabci/)
+
+Sinon, si vous cherchez une alternative à GitlabCI, vous pouvez aussi vous pencher sur l'article qui vous présente GithubActions :
+- [Introduction à Github Actions](
 
 ## CI/CD c'est quoi ?
 
