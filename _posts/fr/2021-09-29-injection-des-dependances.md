@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "L'injection des dépendances dans Symfony"
-excerpt: Vous travaillez avec Symfony, mais l'injection des dépendances reste un peu flou pour vous ? Décovrez son fonctionnement et apprenez comment en tirer profit au maximum.
+excerpt: Vous travaillez avec Symfony, mais l'injection des dépendances reste un peu flou pour vous ? Découvrez son fonctionnement et apprenez comment en tirer profit au maximum.
 authors:
     - marishka
 permalink: /fr/injection-des-dependances/
@@ -13,11 +13,11 @@ categories:
 ---
 
 ## Injection de dépendances
-L'injection de dépendances est un mécanisme qui permet d'implémenter le principe de l'inversion de contrôle, un des principes [SOLID](https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design).
+L'injection de dépendances est un mécanisme qui permet d'implémenter le principe de l'inversion de contrôle.
 L'idée est de créer dynamiquement (_injecter_) les dépendances d'une classe en utilisant une description (un fichier de configuration par exemple).
 Cette méthode va nous permettre de ne plus exprimer les dépendances entre les composants dans le code de manière statique, mais de les déterminer dynamiquement à l'exécution.
 
-Prenenos un exemple pour illustrer. Imaginons que nous avons une classe _A_, qui dépend des classes _B_ et _C_.
+Prenons un exemple pour illustrer. Imaginons que nous avons une classe _A_, qui dépend des classes _B_ et _C_.
 Dans mon code, j'aurai besoin de faire ceci :
 
 ```php
@@ -74,6 +74,24 @@ class A {
     {
         $this->b = $b;
         $this->c = $c;
+    }
+
+    // ...
+}
+```
+
+Encore mieux, depuis PHP 8, je peux faire simplement ceci :
+
+```php
+<?php
+
+namespace App\Services;
+
+class A {
+    public function __construct(
+        private InterfaceB $b,
+        private InterfaceC $c,
+    ) {
     }
 
     // ...
@@ -187,11 +205,11 @@ Tous les services tagués `kernel.event_listener` sont chargés par le `Framewor
 Il existe une [multitude de tags disponibles dans Symfony](https://symfony.com/doc/current/reference/dic_tags.html), et chacun a une fonction bien précise.
 Ainsi, vous pouvez agir sur des évènements comme ci-dessus, mais aussi ajouter une extension Twig, intervenir au moment de sérialisation d'une entité, etc.
 
-## Tags personnalisé et Compiler pass
+## Tags personnalisés et Compiler pass
 Imaginons maintenant que dans mon application j'ai un système de génération de documents.
 Je voudrais implementer une solution propre et facilement maintenable, avec un service central qui, en fonction du type de document souhaité, va déléguer la génération du document au bon service.
 
-Pour ceci, je vais créer un generateur par type de document souhaité, les taguer avec un tag personnalisé, et ensuite les injecter à mon service principal de génération de documents.
+Pour ceci, je vais créer un générateur par type de document souhaité, les taguer avec un tag personnalisé, et ensuite les injecter à mon service principal de génération de documents.
 
 Au départ, je crée une interface pour mes générateurs, pour m'assurer qu'ils ont tous le même comportement :
 
