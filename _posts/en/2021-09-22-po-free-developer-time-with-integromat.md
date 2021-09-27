@@ -14,15 +14,13 @@ cover: /assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat
 
 As a PO or product manager, you can develop yourself some features that may be repetitive and uninspiring for your developers, without much added value. This allows teams to focus on the essentials, while leaving more time available to think about the architecture and the various technical challenges. To test a new idea and/or market without investing too much, a NoCode tool is a real solution.
 
-I already showcased here open-source projet [n8n](https://blog.eleven-labs.com/fr/outil-low-code-automatisation-workflow-n8n/) (post in french), a tool dedicated to make Low Code automation. [Integromat](https://www.integromat.com/) aim to go even further with plain NoCode, thus even usable wihout any technical
+I already showcased here open-source projet [n8n](https://blog.eleven-labs.com/fr/outil-low-code-automatisation-workflow-n8n/) (post in french), a tool dedicated to make Low Code automation. [Integromat](https://www.integromat.com/) aim to go even further with plain NoCode, thus even usable wihout any technical.
 
-To try Integromat a freeplan is available to create your first scenarios. After that, affordable
-
-With first plans at affordable prices, it is easy to go from PoC to a professional use.
+To try Integromat a freeplan is available to create your first scenarios. After that, it is easy to go from PoC to a professional use, using their affordable plans.
 
 I will propose some features that are regularly found in a project, and make a comparison between developer and no-code Integromat tool.
 
-## Présentation de l’interface
+## Interface presentation
 
 ![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/homepage.png)
 
@@ -98,7 +96,7 @@ Instead of storing the image on your server, you can print it directly with an a
 
 This scenario allows to go further in Integromat with the use of Data Stores and Data Structures.
 We want to process a CSV to split it into several CSV to be then processed by different microservices.
-You can connect the trigger on a *FTP* service  as well as on a *Google Drive*.
+You can connect the trigger on a *FTP* service as well as on a *Google Drive*.
 
 ![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-scenario.png)
 
@@ -117,7 +115,7 @@ For my need, I need to create 3 different CSV based Data Structures and save the
 
 ### If developers had to do it
 
-Le traitement de fichiers CSV peut vite devenir fastidieux : connexion à un drive, téléchargement du fichier sur le serveur, lecture du fichier et de chaque entrée, vérification des données, enregistrement en base de données, création de chaque CSV et dépôt sur le drive. À vue d’oeil, on pourrait en faire un micro-service.
+CSV files processing can quickly become tedious: connecting to a drive-like service, uploading to a server, reading the file and each entry, checking the data, saving to the database, creating each CSV and dropping it on the drive... At first glance, it could be a micro-service of its own.
 
 ### To go further
 
