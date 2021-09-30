@@ -4,7 +4,7 @@ title: "PO : Free some developer time by doing some NoCode with Integromat"
 excerpt: You're part of a small team with a lot of features to release quickly and a PoC needed to test a product but you only have little to no tech skills ? NoCode is what you're looking for !
 authors:
     - marianne
-permalink: /en/po-free-developer-time-with-integromat/
+permalink: /po-free-developer-time-with-integromat/
 categories:
     - best practice
     - nocode
