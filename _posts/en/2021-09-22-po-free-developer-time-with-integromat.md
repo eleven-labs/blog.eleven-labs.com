@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PO : Free some developer time by doing some NoCode with Integromat"
-excerpt: You're part of a small team with a lot of feature to release quickly and a PoC to test a product but you only have little to no tech skills ? NoCode is what you're looking for !
+excerpt: You're part of a small team with a lot of features to release quickly and a PoC needed to test a product but you only have little to no tech skills ? NoCode is what you're looking for !
 authors:
     - marianne
 permalink: /en/po-free-developer-time-with-integromat/
@@ -14,9 +14,9 @@ cover: /assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat
 
 As a PO or product manager, you can develop yourself some features that may be repetitive and uninspiring for your developers, without much added value. This allows teams to focus on the essentials, while leaving more time available to think about the architecture and the various technical challenges. To test a new idea and/or market without investing too much, a NoCode tool is a real solution.
 
-I already showcased here open-source projet [n8n](https://blog.eleven-labs.com/fr/outil-low-code-automatisation-workflow-n8n/) (post in french), a tool dedicated to make Low Code automation. [Integromat](https://www.integromat.com/) aim to go even further with plain NoCode, thus even usable wihout any technical.
+I already showcased here the open-source projet [n8n](https://blog.eleven-labs.com/fr/outil-low-code-automatisation-workflow-n8n/) (post in french), a tool dedicated to make Low Code automation. [Integromat](https://www.integromat.com/) aims to go even further with plain NoCode, even usable wihout any technical background.
 
-To try Integromat a freeplan is available to create your first scenarios. After that, it is easy to go from PoC to a professional use, using their affordable plans.
+To try Integromat, a freeplan is available to create your first scenarios. After that, it is easy to go from a PoC to a professional use, using their affordable plans.
 
 I will propose some features that are regularly found in a project, and make a comparison between developer and no-code Integromat tool.
 
@@ -24,7 +24,7 @@ I will propose some features that are regularly found in a project, and make a c
 
 ![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/homepage.png)
 
-It is worth mentioning that Integromat did paid attention to users with a non-technical profile by proposing an easy to use and quite intuitive interface.
+It is worth mentioning that Integromat did pay attention to users with a non-technical profile by proposing an easy to use and quite intuitive interface.
 
 On the scenario building page, each node is represented by a bubble: adding and configuring is done directly on the page. Integromat allows you to create "Data Structures" and to store data ("Data Stores") that you can prepare in advance in their own menus and then use them in the scenarios.
 With these features, you can process and manipulate data without needing a specific database.
@@ -61,13 +61,13 @@ After sending the email, it can be interesting to store this information in  dat
 
 #### Statistics
 
-You need to know how many people signed up per day : instead of asking your developers to pull up the numbers, you can integrate the data into a Google Sheet. Then thanks to the built-in functions you can add a +1 in a cell.
+You need to know how many people signed up per day: instead of asking your developers to pull up the numbers, you can integrate the data into a Google Sheet. Then thanks to the built-in functions you can add a +1 in a cell.
 
 ## Case 2: Create and print personalized flyers
 
 You have just created your e-commerce site, either via Shopify or Prestashop. To stand out from the competition, you would like to add a custom flyer to put in the package with [BannerBear](https://www.bannerbear.com/).
 
-For the example, I will use a webhook rather than directly an e-commerce site node that retrieves the information as soon as there is a new event.
+For this example, I will use a webhook rather than directly an e-commerce site node that retrieves the information as soon as there is a new event.
 
 ![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas2-scenario.png)
 
@@ -79,7 +79,7 @@ For each client, you would have to open an image processing software, copy/paste
 
 ### If developers had to do it
 
-Without going into too much detail, there are several ways to create an image, but this requires installing libraries on your project. If you have to save the image on a goole drive like server, you still have to install and configure the appropriate library.
+Without going into too much detail, there are several ways to create an image, but this requires installing libraries on your project. If you have to save the image on a Google Drive-like server, you still have to install and configure the appropriate library.
 
 ### To go further
 
@@ -108,10 +108,10 @@ To be sure of uploaded document pattern and to save the data to potentially use 
 ![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-mapping-csv-data-store.png)
 
 
-For my need, I need to create 3 different CSV based Data Structures and save them in a folder. The *Router* node allows to parallelize the work.
+For my need, I have to create 3 different CSV based Data Structures and save them in a folder. The *Router* node allows to parallelize the work.
 ![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-create-data-structure-product.png)
 
-> On the plus side, you have complete autonomy on the models: if the input or output(s) change, you can update them easily.
+> On the plus side, you have complete autonomy on the models: if the input(s) or output(s) change, you can update them easily.
 
 ### If developers had to do it
 
