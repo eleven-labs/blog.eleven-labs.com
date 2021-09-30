@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Dependency injection in Symfony"
-excerpt: You work with Symfony, but the dependency injection is a little foggy for you? Find out how to take advantage of the component.
+excerpt: You work with Symfony, but the concept of dependency injection is a little blurry for you? Find out how to take advantage of the component reading this article.
 authors:
     - marishka
-permalink: /en/dependency-injection/
+permalink: /dependency-injection/
 categories:
     - best practices
     - symfony
@@ -59,7 +59,7 @@ class A {
 }
 ```
 
-With dependency injection, I will no longer need to create instances of classes _B_ and _C_ manually, I will inject them instead :
+With dependency injection, I will no longer need to create instances of classes _B_ and _C_ manually, I will inject them instead:
 
 ```php
 <?php
@@ -118,7 +118,7 @@ Once the compilation is done, a cached version of the _Container_ will be _dumpe
 To learn more about this process, you can [read the documentation](https://symfony.com/doc/current/components/dependency_injection/workflow.html).
 
 ### Service declaration
-Let's go back to our previous example, add learn how to declare our classes as services:
+Let's go back to our previous example, and learn how to declare our classes as services:
 
 ```yaml
 # config/services.yaml
@@ -224,7 +224,7 @@ interface DocumentGeneratorInterface {
 }
 ```
 
-Next, I prepare my main document generation service - only it will be injected into services in my application where I will need to generate a document:
+Next, I prepare my main document generation service. Only it will be injected into services in my application where I will need to generate a document:
 
 ```php
 <?php
