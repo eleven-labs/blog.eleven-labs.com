@@ -25,7 +25,7 @@ Dans cet article je vais juste vous présenter les possibilités que vous offre 
 - [Mettre en place une Ci sur un projet js](https://codelabs.eleven-labs.com/course/fr/gitlab-ci-js/)
 - [Gestion d'environnement avec Google Cloud Storage et GitlabCI](https://codelabs.eleven-labs.com/course/fr/react-env-variable-gcp-gitlabci/)
 
-Sinon, si vous cherchez une alternative à GitlabCI, un article sortira très prochaine sur GithubActions !
+Sinon, si vous cherchez une alternative à GitlabCI, un article sur GithubActions sortira très prochainement !
 
 ## CI/CD c'est quoi ?
 
