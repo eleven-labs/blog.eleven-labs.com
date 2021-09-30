@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "L'injection des dépendances dans Symfony"
-excerpt: Vous travaillez avec Symfony, mais l'injection des dépendances reste un peu flou pour vous ? Découvrez son fonctionnement et apprenez comment en tirer profit au maximum.
+excerpt: Vous travaillez avec Symfony, mais l'injection de dépendances reste un peu floue pour vous ? Découvrez son fonctionnement et apprenez comment en tirer profit au maximum.
 authors:
     - marishka
 permalink: /fr/injection-des-dependances/
@@ -98,16 +98,16 @@ class A {
 }
 ```
 
-Les instances les classes _B_ et _C_ seront créées par une classe dont la responsabilité est de lire les fichiers de configuration et de créer des objets.
+Les instances des classes _B_ et _C_ seront créées par une classe dont la responsabilité est de lire les fichiers de configuration et de créer des objets.
 
-L'intérêt principal de l'injection des dépendances est de séparer la création des objects de leur utilisation.
+L'intérêt principal de l'injection de dépendances est de séparer la création des objects de leur utilisation.
 De plus, en injectant nos dépendances, nous pouvons utiliser des interfaces au lieu des classes et ainsi éviter un couplage fort entre nos classes.
 
 ## Dans Symfony
 Dans le framework Symfony, l'injection de dépendances est réalisée via le _Container_ de services, qui est construit par le _ContainerBuilder_. Celui-ci est initialisé par le _Kernel_.
 
 ### Service Container
-En environnement de production, le kernel va d'abord chercher une version cachée du _Container_ par soucis de performances.
+En environnement de production, le kernel va d'abord chercher une version cachée du _Container_ par souci de performances.
 Si elle existe, c'est la version cachée qui est utilisée. Sinon, le kernel va en construire une en se basant sur la configuration de l'application.
 
 Comme vous le savez, la configuration d'une application Symfony est faite dans le dossier _config_.
@@ -185,7 +185,7 @@ services:
             $adminEmail: 'admin@example.com'
 ```
 
-Ce sont des exemples basiques pour vous donner un aperçu de l'injection des dépendances.
+Ce sont des exemples basiques pour vous donner un aperçu de l'injection de dépendances.
 Je vous invite à lire la [documentation Symfony sur l'injection de dépendances](https://symfony.com/doc/current/service_container.html) pour une vision complète de ce qu'il est possible de faire avec ce composant, qui est très puissant !
 
 ## Services tagués
@@ -203,7 +203,7 @@ services:
 
 Tous les services tagués `kernel.event_listener` sont chargés par le `FrameworkBundle` et sont appelés en fonction de l'évènement auquel ils sont liés.
 Il existe une [multitude de tags disponibles dans Symfony](https://symfony.com/doc/current/reference/dic_tags.html), et chacun a une fonction bien précise.
-Ainsi, vous pouvez agir sur des évènements comme ci-dessus, mais aussi ajouter une extension Twig, intervenir au moment de sérialisation d'une entité, etc.
+Ainsi, vous pouvez agir sur des évènements comme ci-dessus, mais aussi ajouter une extension Twig, intervenir au moment de la sérialisation d'une entité, etc.
 
 ## Tags personnalisés et Compiler pass
 Imaginons maintenant que dans mon application j'ai un système de génération de documents.
@@ -224,7 +224,7 @@ interface DocumentGeneratorInterface {
 }
 ```
 
-Ensuite, je prépare mon service principal de génération de documents - uniquement lui sera injecté dans les endroits de mon application où j'aurai besoin de générer un document :
+Ensuite, je prépare mon service principal de génération de documents, qui sera uniquement injecté dans les endroits de mon application où j'aurai besoin de générer un document :
 
 ```php
 <?php
@@ -353,11 +353,11 @@ class Kernel extends BaseKernel
 }
 ```
 
-Grâce à mon tag personnalisé, je peux très facilement ajouter un nouveau type de document à générer dans application, sans devoir modifier le reste de l'application.
+Grâce à mon tag personnalisé, je peux très facilement ajouter un nouveau type de document à générer dans l'application, sans devoir modifier le reste de l'application.
 
 ### Pour aller plus loin
 Nous venons de parcourir ensemble en grandes lignes l'injection de dépendances dans Symfony.
 C'est un composant très puissant et central au framework.
 Si vous voulez en savoir plus, n'hésitez pas à parcourir la [documentation très bien faite](https://symfony.com/doc/current/service_container.html#learn-more).
 
-A bientôt !
+À bientôt !
