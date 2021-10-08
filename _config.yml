@@ -74,7 +74,6 @@ theme_settings:
 
     # Scripts
     google_analytics: UA-99013054-1
-    disqus_shortname: blog-eleven-labs
 
     # Post navigation
     post_navigation: false
