@@ -7,13 +7,8 @@ authors:
 lang: fr
 permalink: /fr/le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/
 categories:
-    - Windows
-    - linux
-tags:
-    - Windows 10
-    - WSL2
-    - Hyper-V
-    - Windows Terminal
+    - bonnes pratiques
+
 ---
 
 <!--
