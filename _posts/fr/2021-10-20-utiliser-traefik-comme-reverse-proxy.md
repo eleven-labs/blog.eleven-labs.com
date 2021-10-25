@@ -7,14 +7,8 @@ authors:
 lang: fr
 permalink: /fr/utiliser-traefik-comme-reverse-proxy/
 categories:
-    - docker
-    - ssl
-    - reverse-proxy
-tags:
-    - docker
-    - ssl
-    - reverse-proxy
-cover: /assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg
+    - DevOps
+
 ---
 
 ![Cover]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg)

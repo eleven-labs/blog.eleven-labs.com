@@ -3,25 +3,18 @@ layout: post
 title: RabbitMQ, des bases à la maîtrise (Partie 1)
 lang: fr
 permalink: /fr/rabbitmq-partie-1-les-bases/
-excerpt: "Rabbitmq est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utiliser est assez simple, en revanche, le maîtriser l'est un peu moins..."
+excerpt: "Rabbitmq est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utiliser est assez simple. En revanche, le maîtriser l'est un peu moins..."
 authors:
     - amoutte
 categories:
-    - rabbitmq
-    - broker
-    - queuing
-    - retry
-tags:
-    - rabbitmq
-    - broker
-    - queuing
-    - retry
-cover: /assets/2018-03-11-rabbitmq-partie-1-les-bases/cover.jpg
+    - bonnes pratiques
+
 ---
 
-RabbitMQ est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utiliser est assez simple, en revanche, le maîtriser l'est un peu moins...
+RabbitMQ est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utiliser est assez simple. en revanche, le maîtriser l'est un peu moins...
+C'est pourquoi je vous propose cette série de deux articles. Vous pouvez retrouver la partie 2 en [cliquant ici](https://blog.eleven-labs.com/fr/rabbitmq-partie-2-la-maitrise/).
 
-> Donc avant de manger du pâté de lapin il va falloir bouffer des carottes !
+> Bref, pour commencer, avant de manger du pâté de lapin il va falloir bouffer des carottes !
 
 ## Introduction
 
@@ -182,7 +175,7 @@ Si le `message` n'est pas acquitté, il restera à sa place dans la queue et ser
 
 > Vous voila maintenant fin prêts à récolter vos carottes !
 
-> Dans la partie 2 (maîtrise) nous verrons comment attraper les lapins, et comment préparer le pâté. 😜
+> Vous pouvez maintenant [consulter la partie 2 (maîtrise)](https://blog.eleven-labs.com/fr/rabbitmq-partie-2-la-maitrise/), dans laquelle nous verrons comment attraper les lapins, et comment préparer le pâté. 😜
 
 ## Liens utiles
 

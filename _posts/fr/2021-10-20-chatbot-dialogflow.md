@@ -3,24 +3,19 @@ layout: post
 title: DialogFlow, votre chatbot facile
 lang: fr
 permalink: /fr/dialogflow-votre-chatbot-facile/
-excerpt: "La communication avec l'utilisateur est cruciale pour le fidéliser. Il est alors naturel que les ChatBots conversationnels fassent leur apparition et deviennent un point important dans nos applications.
-Il existe aujourd'hui de nombreuses aides à la mise en place des ChatBots conversationnels dits intelligents. On parlera aujourd'hui spécifiquement de DialogFlow, anciennement Api.ai de Google."
+excerpt: "Il existe aujourd'hui de nombreuses aides à la mise en place des ChatBots conversationnels dits intelligents. On parlera aujourd'hui spécifiquement de DialogFlow, anciennement Api.ai de Google."
 authors:
     - captainjojo
 categories:
-    - google
-    - dialogflow
-tags:
-    - bot
-    - javascript
-cover: /assets/2017-11-06-chatbot-dialogflow/cover.png
+    - bonnes pratiques
+
 ---
 
 La communication avec l'utilisateur est cruciale pour le fidéliser. Il est alors naturel que les ChatBots conversationnels fassent leur apparition et deviennent un point important dans nos applications.
 
 Il existe aujourd'hui de nombreuses aides à la mise en place des ChatBots conversationnels dits intelligents. On parlera aujourd'hui spécifiquement de DialogFlow, anciennement Api.ai de Google.
 
-### J'écris un chatbot sans code
+## J'écris un chatbot sans code
 
 DialogFlow c'est avant tout une interface qui va vous permettre d'utiliser l'intelligence de Google. Ce que DialogFlow contient est assez simple, il s'agit de [l'API Cloud Natural Language](https://cloud.google.com/natural-language/?hl=fr){:rel="nofollow noreferrer"} qui permet de reconnaître des phrases envoyées par l'utilisateur. Avec les phrases récupérées et un peu de machine learning, Google reconnaît la phrase, et lance en adéquation une action proposée par votre configuration.
 
@@ -130,7 +125,7 @@ Vous pouvez le tester ici :
 
 Il ne vous reste plus qu'à trouver une conversation.
 
-### Mettons une petite intelligence
+## Mettons une petite intelligence
 
 C'est bien, nous avons un chatBot qui permet de faire une conversation avec vos utilisateurs, mais il ne contient aucune intelligence métier.
 
@@ -192,7 +187,7 @@ Vous pouvez faire beaucoup de choses avec vos webhooks, l'entrée du webhook c'e
 
 La sortie c'est un objet json que vous pouvez retrouver [ici](https://dialogflow.com/docs/fulfillment#response){:rel="nofollow noreferrer"}.
 
-### Déployons sur un outil de chat
+## Déployons sur un outil de chat
 
 Maintenant que nous avons terminé notre chatbot, nous allons le déployer et c'est aussi là que DialogFlow est bien utile car il contient déjà pas mal d'intégrations avec des systèmes de Chat existants.
 
