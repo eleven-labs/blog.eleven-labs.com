@@ -6,12 +6,9 @@ permalink: /fr/mise-en-place-docker-registry-privee/
 excerpt: "Dans cet article, nous allons détailler, étape par étape, la mise en place d'une Docker Registry. Une Docker Registry est une application qui permet de distribuer des images Docker au sein de votre organisation."
 authors:
     - gcanal
-date: '2016-12-07 15:24:16 +0100'
-date_gmt: '2016-12-07 14:24:16 +0100'
 categories:
-    - Dev Ops
-tags:
-    - devops
+    - Architecture
+    
 ---
 
 Dans cet article, nous allons détailler, étape par étape, la mise en place d'une Docker Registry.
@@ -49,7 +46,7 @@ Nous aurons besoin d’un nom de domaine, d’un serveur et d’un terminal.
 
 Pour ce guide, je vais utiliser une instance [OVH Public Cloud](https://www.ovh.com/fr/cloud/){:rel="nofollow noreferrer"} et un nom de domaine géré par OVH. Dans les grandes lignes, toutes les étapes critiques peuvent être reproduite sur n’importe quel environnement.
 
-### Configuration du serveur
+## Configuration du serveur
 
 Partons d'une distribution récente, une Ubuntu 16.04 qui a le bon goût d'avoir dans ces dépôts une version de Docker à jour :
 
@@ -68,7 +65,7 @@ On se déconnecte du serveur, puis on se reconnecte pour initialiser Docker Swar
 docker swarm init
 ```
 
-### Installation de Traefik
+## Installation de Traefik
 
 Traefik va nous permettre d'associer un domaine au conteneur dans lequel tournera la registry. Le gros avantage, c'est qu'il permet d'obtenir automatiquement un certificat TLS délivré par [Let's Encrypt](https://letsencrypt.org/){:rel="nofollow noreferrer"}.
 
@@ -182,7 +179,7 @@ Sur le port **8080** de votre serveur vous devez trouver l'interface de contrôl
 
 ![enter image description here](https://lh3.googleusercontent.com/-7OVJ1TQ-U80/WEeRgAfxt_I/AAAAAAAAAaM/-CFecYhSv-AQRsQxuVBAJ-tj0MG5wyTMQCLcB/s0/Capture+d%25E2%2580%2599e%25CC%2581cran+2016-12-07+a%25CC%2580+05.32.37.png "Traefik Web"){:rel="nofollow noreferrer"}
 
-### Configuration du domaine
+## Configuration du domaine
 
 Avant de lancer la registry sur notre environnement, nous allons créer deux sous-domaines pointant vers notre serveur web :
 
@@ -202,7 +199,7 @@ Puis nous ajoutons un pointage DNS de type **A** pour les sous-domaines :
 
 > **Important**: Remplacez **domain.tld** par votre domaine et **xxx.xxx.xxx.xxx** par l'adresse IPv4 de votre serveur.
 
-### Serveur d’authentification
+## Serveur d’authentification
 
 Docker registry permet d'utiliser des services tiers pour gérer l'authentification et les contrôles d'accès des utilisateurs.
 
@@ -336,7 +333,7 @@ curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/d
 
 Et on vérifie que le service **docker-auth** est bien lancé en utilisant la commande **docker service ls**.
 
-#### Mise en place de la registry
+### Mise en place de la registry
 
 Il ne nous reste plus qu'à mettre en place la registry.
 
@@ -418,7 +415,7 @@ curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/r
 
 Et on vérifie que le service **docker-registry** est bien lancé en utilisant la commande **docker service ls**.
 
-### Tests
+## Tests
 
 Sur le port **8080** de votre serveur, vous devez avoir quelque chose d'équivalent à ceci :
 

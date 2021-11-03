@@ -9,18 +9,6 @@ permalink: /fr/a-la-decouverte-de-sveltejs/
 categories:
     - javascript
 
-tags:
-    - javascript
-    - svelte
-    - sapper
-    - webperformance
-    - framework
-    - component
-    - compilation
-image:
-  path: /assets/2021-02-22-a-la-decouverte-de-svelte/svelte-logo.png
-  height: 308
-  width: 720
 ---
 
 ![Logo Svelte]({{ site.baseurl }}/assets/2021-02-22-a-la-decouverte-de-svelte/svelte-logo.png)

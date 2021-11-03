@@ -7,16 +7,8 @@ lang: fr
 permalink: /fr/presentation-grpc/
 excerpt: "gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ses nouveautés."
 categories:
-    - Api
-    - Go
-    - gRPC
-    - http2
-tags:
-    - api
-    - go
-    - grpc
-    - http2
-cover: /assets/2017-09-28-presentation-grpc/cover.jpg
+    - Bonnes pratiques
+    
 ---
 
 Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/){:rel="nofollow noreferrer"} si ce n'est pas déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et communiquent via HTTP.
@@ -83,7 +75,7 @@ Nous allons voir pour cet article uniquement le troisième mode `streaming côt�
 
 Vous pouvez retrouver l'ensemble du code de [l'exemple sur mon github](https://github.com/qneyrat/go-grpc-example){:rel="nofollow noreferrer"}.
 
-### Installation
+## Installation
 
 Assurez-vous avant de commencer l'installation d'avoir bien installé Go en version supérieure à 1.5 et Protocol Buffers en version 3.
 
@@ -93,7 +85,7 @@ Récupérez gRPC pour Go :
 go get google.golang.org/grpc
 ```
 
-### Protobuf
+## Protobuf
 
 Nous allons commencer par récupérer le fichier proto du [précédent article](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/){:rel="nofollow noreferrer"}.
 
@@ -134,7 +126,7 @@ service PostService {
 
 ```
 
-### Serveur
+## Serveur
 
 On va commencer par générer le code source depuis le fichier protobuf.
 
@@ -334,7 +326,7 @@ func main() {
 }
 ```
 
-### Conclusion
+## Conclusion
 ---
 
 gRPC permet de profiter de toutes les nouveautés de HTTP/2 et la puissance de Protocol Buffers. Indispensable pour la communication entre micro-services.

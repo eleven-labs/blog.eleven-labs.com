@@ -7,20 +7,8 @@ authors:
 lang: fr
 permalink: /fr/Storybook-creer-son-premier-composant/
 categories:
-    - angular
-    - react
-    - Vue
-    - Svelte
-    - HTML
-    - storybook
-tags:
-    - javascript
-    - storybook
-    - react
-    - vue
-    - angular
-    - UX
-    - UI
+    - Javascript
+    
 ---
 ![Storybook banner]({{ site.baseurl }}/assets/2019-11-27-Storybook-intro/storybooktitle.png)
 
@@ -32,7 +20,7 @@ Comme Gad Elmaleh, c'est pas grave si c'est mieux raconté.
 
 
 
-### Mais qu'est-ce que c'est Storybook?
+## Mais qu'est-ce que c'est Storybook ?
 
 ---
 
@@ -49,7 +37,7 @@ Storybook fonctionne avec la plupart des frameworks UI, que ce soit le sacro-sai
 
 
 
-### Père Castor, raconte-moi une Story
+## Père Castor, raconte-moi une Story
 
 ---
 
@@ -277,7 +265,7 @@ Et si tu n'as pas lu l'encart en début d'article, la suite c'est simplement [ic
 
 
 
-## Prochains articles
+## Autres articles sur Storybook
 
 ---
 
