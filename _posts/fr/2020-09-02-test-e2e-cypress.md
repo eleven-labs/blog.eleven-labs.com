@@ -8,11 +8,7 @@ authors:
 permalink: /fr/test-e2e-avec-cypress/
 categories:
     - javascript
-tags:
-    - javascript
-    - test
-    - cypress
-# cover: URL DE L'IMAGE (/assets/....)
+
 ---
 
 ![Logo Cypress]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/cypress-logo.png)
@@ -35,7 +31,7 @@ Tout d’abord avant de parler des tests end-to-end, il faut que je vous expliqu
 
 Ces tests ignorent généralement la structure interne de l'ensemble de l’application et prennent le contrôle du navigateur comme un utilisateur allant sur votre application.
 
-## Qu'est ce que Cypress ?
+## Qu'est-ce que Cypress ?
 Il existe de nombreux outils de test de bout-en-bout pour les applications Web, tels que TestCafe, Puppeteer et Selenium. Chacun a ses avantages et ses inconvénients. **Donc pourquoi utiliser Cypress ?**
 
 Cypress est un framework JS de tests end-to-end. C’est un outil open source permettant de mettre facilement en place ces tests d’applications utilisant React ou des frameworks JavaScript comme Vue, Angular, Elm et bien d’autres.
