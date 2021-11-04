@@ -8,13 +8,7 @@ lang: fr
 permalink: /fr/asyncawait/
 categories:
     - javascript
-tags:
-    - promise
-    - promesse
-    - javascript
-    - ES6
-    - async
-    - await
+
 ---
 
 Après avoir vu en profondeur comment fonctionnent les promesses et comment les utiliser, nous allons nous pencher sur une fonctionnalité arrivée avec l'ES7 : `async/await`.
