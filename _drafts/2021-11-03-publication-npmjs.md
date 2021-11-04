@@ -23,7 +23,7 @@ Avant toute chose, vous aurez besoin pour commencer d’un compte npmjs, que vou
 
 **Note très importante :** confirmez votre compte en cliquant sur le lien du mail de npmjs sinon vous ne pourrez pas publier votre paquet.
 
-NodeJs : pour vérifier que node est bien installé, lancez la commande suivante)
+NodeJs : pour vérifier que node est bien installé, lancez la commande suivante.
 
 - `node -v`
 
@@ -53,16 +53,16 @@ PARTIE 5 : **Conclusion**
 ### a/ Rappel des notions de base
 
 Npm permet d’automatiser la gestion des dépendances et des paquets dans les projets javascript.
-Un “package” ou “paquet” ou encore “librarie” est un bloc de code composé de fonctions/classes qui permettent d’effectuer des tâches.
+Un “package” ou “paquet” ou encore “librairie” est un bloc de code composé de fonctions/classes qui permettent d’effectuer des tâches.
 Utiliser un paquet permet de ne pas avoir à réinventer la roue et ne pas coder tout soi-même. Quand d’autres développeurs ont déjà développé une fonctionnalité, pourquoi ne pas la réutiliser ?
-Un paquet est généralement accompagné d’une documentation afin que les utilisateurs s’y retrouvent. 
+Un paquet est généralement accompagné d’une documentation afin que les utilisateurs s’y retrouvent.
 Ça, c'était pour la partie théorique, passons maintenant à la partie pratique.
 
 ### b/ Développer son paquet
 
 #### Étape 1 :
 
-Créez un dossier avec le nom « tutorial-paquet-npm » et placez-vous dans le dossier
+Créez un dossier avec le nom « tutorial-paquet-npm » et placez-vous dans le dossier.
 Prenez votre terminal et lancez les commandes suivantes :
 
 Créez le dossier : `mkdir tutorial-paquet-npm`
@@ -204,7 +204,9 @@ Dans votre console vous devriez avoir un user généré aléatoirement.
 
 Si c’est le cas vous pouvez publier votre paquet avec la certitude qu’il est fonctionnel ☺
 
-### Partie 3 : Publier son paquet sur npmjs
+### Partie 3 : Publication du paquet
+
+#### **a/ Publication**
 
 Une fois que vous avez vérifié votre paquet en local, nous allons passer à l’étape cruciale, : la publication sur npmjs ☺
 Dans votre fichier package.json, nous allons ajouter des métadonnées pour que sur npmjs l’utilisateur dispose de multiples informations concernant votre paquet.
@@ -220,7 +222,7 @@ Si vous n’avez pas créé votre compte sur npm, veuillez le faire maintenant e
 
 https://www.npmjs.com/signup
 
-Une fois votre compte créé  rendez-vous à la racine de votre projet et lancez la commande :
+Une fois votre compte créé, rendez-vous à la racine de votre projet et lancez la commande :
 
 `npm login` (Vous allez devoir entrer votre username, password et mail)
 
@@ -237,18 +239,17 @@ Maintenant vous pouvez lancer la commande suivante qui permet de publier votre p
 
 Votre paquet est maintenant publié ! Vous pouvez aller le vérifier dans vos paquets via votre compte sur https://www.npmjs.com/
 
-
-Publier une maj de son paquet
+#### **b/ Publier une maj de son paquet**
 
 Après avoir corrigé un bug ou implémenté une fonctionnalité et si vous souhaitez publier vos modifications, c’est très simple.
 
 Il vous suffit simplement de changer la version de votre paquet qui se situe dans le fichier package.json.
 
-Pour comprendre la gestion des versions, je vous laisse passer à l’étape 5.
+Pour comprendre la gestion des versions, je vous laisse passer à la partie 4.
 
 
 
-### Partie 4 : Incrémentation des versions sémantiques dans les packages publiés
+### Partie 4 : Versioning
 
 La version de votre paquet se situe dans votre fichier package.json
 
@@ -263,7 +264,7 @@ Pour aider les développeurs qui s'appuient sur votre code, nous vous recommando
 |---|---|---|---|
 |Sortie de produit|Nouveau produit|La première version du produit commence par 1.0.0|1.0.0|
 |Correction de bug|Correctif|Incrémenter le troisième chiffre|1.0.1|
-|Implémentation d’une nouvelle fonctionnalité|Version mineur|Incrémenter le chiffre du milieu et remettre le dernier chiffre à zéro|1.1.0|
+|Implémentation d’une nouvelle fonctionnalité|Version mineure|Incrémenter le chiffre du milieu et remettre le dernier chiffre à zéro|1.1.0|
 |Modifications qui rompent la compatibilité descendante|Version majeure|Incrémenter le premier chiffre et réinitialisez les autres à zéro|2.0.0|
 
 **source**: https://docs.npmjs.com/about-semantic-versioning
