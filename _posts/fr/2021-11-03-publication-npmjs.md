@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tutoriel: Développer et publier un paquet sur npmjs
+title: Développer et publier un paquet sur npmjs
 excerpt: Dans cet article, nous allors voir ensemble comment développer et publier un paquet sur npmjs.
 authors:
 - ygherbi
@@ -9,8 +9,10 @@ permalink: /fr/publication-npmjs/
 categories:
   - Javascript
 ---
-
-De nos jours, en tant que développeur front nous sommes constamment confrontés au fait d’utiliser des librairies.
+![logo-npm]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/npm-logo.png)  
+  
+  
+De nos jours, en tant que développeurs front nous sommes constamment confrontés au fait d’utiliser des librairies.
 Une librairie publiée sur npmjs se nomme un paquet, et nous les installons au moyen de npm.
 Ils sont principalement là pour nous faciliter le quotidien : un paquet répond à un besoin, ce qui évite d'avoir à sans cesse réinventer la roue.
 
