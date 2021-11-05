@@ -29,7 +29,7 @@ NodeJs : pour vérifier que node est bien installé, lancez la commande suivante
 
 Vous devriez avoir ce résultat (pas forcément la même version)
 
-![node-v capture](/assets/2021-11-03-publication-npmjs/node-version.png)
+![node-v capture]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/node-version.png)
 
 L'usage de Git est quant à lui optionnel.
 
@@ -84,7 +84,7 @@ Ajoutez ceci dans votre package.json
 
 Votre package.json devrait ressembler à ceci :
 
-![paquet package.json init](/assets/2021-11-03-publication-npmjs/paquet-package-init.png)
+![paquet package.json init]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/paquet-package-init.png)
 
 Si vous ne souhaitez pas publier votre paquet sur github/gitlab passez à l’étape 4.
 
@@ -100,7 +100,7 @@ Ajoutez la ligne suivante dans votre fichier :
 
 `node_modules/`
 
-![paquet .gitignore capture](/assets/2021-11-03-publication-npmjs/paquet-add-gitignore.png)
+![paquet .gitignore capture]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/paquet-add-gitignore.png)
 
 
 Cela permettra lors du versioning de ne pas envoyer le dossier “node_modules” sur git.
@@ -117,7 +117,7 @@ Si vous atterrissez sur une 404, BRAVO le nom est disponible, sinon trouvez-en u
 
 Maintenant que vous avez trouvé un nom de paquet, veuillez le modifier dans le fichier package.json.
 
-![packahe.json maj](/assets/2021-11-03-publication-npmjs/paquet-package-maj-name.png)
+![packahe.json maj]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/paquet-package-maj-name.png)
 
 
 #### Étape 5 :
@@ -141,7 +141,7 @@ import fetch from "node-fetch";
 export const getRandomUser = async () => (await fetch('https://randomuser.me/api/')).json();
 ````
 
-![paquet index.js](/assets/2021-11-03-publication-npmjs/paquet-index.png)
+![paquet index.js]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/paquet-index.png)
 
 
 Nous exportons getRandomUser pour qu’elle puisse être appelée par nos futurs utilisateurs.
@@ -187,7 +187,7 @@ Exemple : npm link tutorial-paquet-npm
 
 Dans notre fichier index.js, ajoutez ceci :
 
-![index.js test](/assets/2021-11-03-publication-npmjs/test-index.png)
+![index.js test]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/test-index.png)
 
 
 Nous importons le paquet que nous avons développé.
@@ -215,7 +215,7 @@ Nous allons ajouter homepage, repository et keywords qui sont optionnels.
 Note : Ajoutez homepage et repository seulement si vous avez publié votre paquet sur Gitlab/Github.
 Dans le champ _author_ mettre votre nom et prénom pour informer que c’est vous le développeur du paquet.
 
-![package.json paquet finish](/assets/2021-11-03-publication-npmjs/paquet-maj-package-data-finish.png)
+![package.json paquet finish]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/paquet-maj-package-data-finish.png)
 
 
 Si vous n’avez pas créé votre compte sur npm, veuillez le faire maintenant et n’oubliez pas de valider votre compte via l’email reçu.
@@ -226,7 +226,7 @@ Une fois votre compte créé, rendez-vous à la racine de votre projet et lancez
 
 `npm login` (Vous allez devoir entrer votre username, password et mail)
 
-![Login-npmjs-capture](/assets/2021-11-03-publication-npmjs/login-npmjs.png)
+![Login-npmjs-capture]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/login-npmjs.png)
 
 
 Maintenant vous pouvez lancer la commande suivante qui permet de publier votre paquet :
@@ -234,7 +234,7 @@ Maintenant vous pouvez lancer la commande suivante qui permet de publier votre p
 
 `npm publish`
 
-![Npm publish capture](/assets/2021-11-03-publication-npmjs/npm-publish.png)
+![Npm publish capture]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/npm-publish.png)
 
 
 Votre paquet est maintenant publié ! Vous pouvez aller le vérifier dans vos paquets via votre compte sur https://www.npmjs.com/
