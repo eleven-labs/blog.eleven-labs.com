@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tutoriel « Développer et publier un paquet sur npmjs »
+title: Tutoriel: Développer et publier un paquet sur npmjs
 excerpt: Dans cet article, nous allors voir ensemble comment développer et publier un paquet sur npmjs.
 authors:
 - ygherbi
