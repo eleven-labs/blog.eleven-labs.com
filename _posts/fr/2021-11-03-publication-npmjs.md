@@ -56,8 +56,11 @@ PARTIE 5 : **Conclusion**
 
 Npm permet d’automatiser la gestion des dépendances et des paquets dans les projets javascript.
 Un “package” ou “paquet” ou encore “librairie” est un bloc de code composé de fonctions/classes qui permettent d’effectuer des tâches.
+
 Utiliser un paquet permet de ne pas avoir à réinventer la roue et ne pas coder tout soi-même. Quand d’autres développeurs ont déjà développé une fonctionnalité, pourquoi ne pas la réutiliser ?
+
 Un paquet est généralement accompagné d’une documentation afin que les utilisateurs s’y retrouvent.
+
 Ça, c'était pour la partie théorique, passons maintenant à la partie pratique.
 
 ### b/ Développer son paquet
@@ -202,7 +205,7 @@ Cela va nous permettre de voir ce que nous renvoie notre paquet.
 
 Dans votre console vous devriez avoir un user généré aléatoirement.
 
-![node index.js capture](/assets/2021-11-03-publication-npmjs/test-log-node.png)
+![node index.js capture]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/test-log-node.png)
 
 Si c’est le cas vous pouvez publier votre paquet avec la certitude qu’il est fonctionnel ☺
 
