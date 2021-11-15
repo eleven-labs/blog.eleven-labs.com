@@ -4,16 +4,16 @@ title: "Que faire en cas de fuite de données ?"
 excerpt: Les récentes fuites de données chez Twitch et Facebook rappellent aux entreprises qu'elles ont des obligations envers les utilisateurs.
 authors:
     - marianne
-permalink: /fr/que-faire-en-cas-de-leak-de-donnees/
+permalink: /fr/que-faire-en-cas-de-fuite-de-donnees/
 categories:
     - RGPD
     - CNIL
     - bonnes pratiques
 
-cover: /assets/2021-11-17-que-faire-en-cas-de-leak-de-donnees/dataleak.png
+cover: /assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/dataleak.png
 ---
 
-Après la fuite des données de Twitch en octobre 2021, on se rappelle de [la fuite chez Facebook de 533 millions d’utilisateurs qui est sortie en avril 2021](https://www.francetvinfo.fr/internet/reseaux-sociaux/facebook/facebook-cinq-questions-sur-la-fuite-de-donnees-de-533-millions-d-utilisateurs-a-travers-le-monde_4362885.html) et de d’autres leaks qui ont valu à [Mark Zuckerberg d’être entendu au Capitol américain en 2018](https://www.forbes.fr/business/facebook-mark-zuckerberg-au-capitol/), on est tous exposé dans notre entreprise à ce risque. On peut aussi être individuellement visé pour un hacker pour récupérer nos informations personnelles pour pouvoir accéder frauduleusement au système de données.
+Après la fuite des données de Twitch en octobre 2021, on se rappelle de [la fuite chez Facebook de 533 millions d’utilisateurs qui est sortie en avril 2021](https://www.francetvinfo.fr/internet/reseaux-sociaux/facebook/facebook-cinq-questions-sur-la-fuite-de-donnees-de-533-millions-d-utilisateurs-a-travers-le-monde_4362885.html) et de d’autres fuites qui ont valu à [Mark Zuckerberg d’être entendu au Capitol américain en 2018](https://www.forbes.fr/business/facebook-mark-zuckerberg-au-capitol/), on est tous exposé dans notre entreprise à ce risque. On peut aussi être individuellement visé pour un hacker pour récupérer nos informations personnelles pour pouvoir accéder frauduleusement au système de données.
 
 La violation de données n’inclut pas uniquement la fuite, d’après l’article 4.12 du RGPD définit comme
 
@@ -26,11 +26,11 @@ La violation de données n’inclut pas uniquement la fuite, d’après l’arti
 Cela peut être la perte d’une clé USB ayant une copie de la base de données ou l'intrusion frauduleuse dans le système de données.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2021-11-17-que-faire-en-cas-de-leak-de-donnees/dataleak.png" width="300px" alt="Mais enfin Jérome, ça dépasserait l'entendement !" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/dataleak.png" width="300px" alt="Mais enfin Jérome, ça dépasserait l'entendement !" style="display: block; margin: auto;"/>
 </div>
 
 ## Comment les données peuvent-elles fuiter ?
-Les gros cas de leaks nous permettent de faire une liste plutôt exhaustive :
+Les gros cas de fuites nous permettent de faire une liste plutôt exhaustive :
 -   exploitation d’une faille (Facebook)
 -   personne en interne mal-intentionnée qui dump (récupère) les données (Twitch)
 -   récupération d’accès en hackant des employés (fishing et cheval de troie chez TV5 MONDE)
@@ -58,7 +58,7 @@ Quand vous êtes au courant d’une fuite de données, voici ce que dit le droit
 Vous pouvez aussi faire en interne un manuel d’intervention en cas d’incident : cela va vous permettre d’être plus efficace lors de la prise en charge et de moins faire le pompier.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2021-11-17-que-faire-en-cas-de-leak-de-donnees/law_legal_terms.png" width="300px" alt="Mais enfin Jérome, ça dépasserait l'entendement !" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/law_legal_terms.png" width="300px" alt="Mais enfin Jérome, ça dépasserait l'entendement !" style="display: block; margin: auto;"/>
 </div>
 
 ### Comment créer un manuel d’intervention ?
