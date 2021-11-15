@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Que faire en cas de leak de données ?"
+title: "Que faire en cas de fuite de données ?"
 excerpt: Les récentes fuites de données chez Twitch et Facebook rappellent aux entreprises qu'elles ont des obligations envers les utilisateurs.
 authors:
     - marianne
