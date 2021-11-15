@@ -30,7 +30,7 @@ Cela peut être la perte d’une clé USB ayant une copie de la base de données
 ## Comment les données peuvent-elles fuiter ?
 Les gros cas de fuites nous permettent de faire une liste plutôt exhaustive :
 -   exploitation d’une faille (Facebook)
--   personne en interne mal-intentionnée qui dump (récupère) les données (exemple de Twitch)
+-   personne en interne mal-intentionnée qui récupère les données (exemple de Twitch)
 -   récupération d’accès en hackant des employés (par exemple fishing et cheval de troie chez TV5 MONDE)
 -   négligence, de type laisser un post-it avec un mot de passe lors d’une interview télévisée (toujours chez [TV5 MONDE](https://tvmag.lefigaro.fr/le-scan-tele/insolite/2015/04/10/28009-20150410ARTFIG00214-les-mots-de-passe-de-tv5-monde-devoiles-sur-france-2.php))
 
