@@ -196,6 +196,7 @@ layout: compress-js
     cookieBanner.classList.add('active');
     cookieMoreButton.addEventListener('click', onMoreButtonClick, false);
     document.addEventListener('click', onDocumentClick, false);
+    startGoogleAnalyticsAnon();
   }
 
   processCookieConsent();
