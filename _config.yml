@@ -74,7 +74,7 @@ theme_settings:
 
     # Scripts
     google_analytics: UA-99013054-1
-    google_analytics_anon: G-7DSY54V6QG
+    google_analytics_anon: UA-99013054-9
 
     # Post navigation
     post_navigation: false
