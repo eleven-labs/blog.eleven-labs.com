@@ -9,6 +9,7 @@ layout: compress-js
   'use strict';
 
   const GA_PROPERTY = '{{ site.theme_settings.google_analytics }}'
+  const GA_PROPERTY_ANON = '{{ site.theme_settings.google_analytics_anon }}'
   const GA_COOKIE_NAMES = ['__utma', '__utmb', '__utmc', '__utmz', '_ga', '_gat'];
   const COOKIE_EXPIRES = 395 // 395 days = 13 months = max legal duration
 
@@ -66,6 +67,29 @@ layout: compress-js
     }
   }
 
+    /**
+   * Start Google Analytics in Anon mode
+   */
+  function startGoogleAnalyticsAnon() {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', GA_PROPERTY_ANON, {
+       'storage': 'none'
+    });
+    ga('set', 'anonymizeIp', true);
+    ga('send', 'pageview');
+
+    const anchors = document.getElementsByClassName('tracked-link');
+    if (anchors) {
+      for (let i = 0; i < anchors.length; i++) {
+        anchors[i].addEventListener('click', trackOutboundLink, false);
+      }
+    }
+  }
+  
   /**
    * Reject GA exec, set cookies to save choice, remove GA cookies
    */
@@ -74,6 +98,7 @@ layout: compress-js
     Cookies.set('hasConsent', false, { expires: COOKIE_EXPIRES });
     window[`ga-disable-${GA_PROPERTY}`] = true;
     GA_COOKIE_NAMES.forEach(cookieName => Cookies.remove(cookieName));
+    startGoogleAnalyticsAnon();
   }
 
   /**
@@ -171,6 +196,7 @@ layout: compress-js
     cookieBanner.classList.add('active');
     cookieMoreButton.addEventListener('click', onMoreButtonClick, false);
     document.addEventListener('click', onDocumentClick, false);
+    startGoogleAnalyticsAnon();
   }
 
   processCookieConsent();
