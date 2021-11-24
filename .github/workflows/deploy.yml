@@ -55,12 +55,6 @@ jobs:
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       run: aws s3 sync "_site/" "s3://blog.eleven-labs.com/" --delete --cache-control=86400
 
-    - name: clear caches
-      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-      run: |
-        aws configure set preview.cloudfront true
-        aws cloudfront create-invalidation --distribution-id "${{ env.CLOUDFRONT_DISTRIBUTION }}" --paths "/*"
-
     #- name: notify
     #  if: github.ref == 'refs/heads/master' && github.event_name == 'push'
     #  run:
