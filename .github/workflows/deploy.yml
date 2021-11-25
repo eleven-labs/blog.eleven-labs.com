@@ -65,6 +65,6 @@ jobs:
     #  if: github.ref == 'refs/heads/master' && github.event_name == 'push'
     #  run:
 
-    #- name: algolia
-    #  if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-    #  run: bundle exec rake deploy
+    - name: algolia
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: bundle exec rake deploy
