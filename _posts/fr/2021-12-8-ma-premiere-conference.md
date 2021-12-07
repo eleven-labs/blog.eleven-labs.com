@@ -97,7 +97,7 @@ J'espère avoir l'opportunité de créer un design system au sein d'un projet fu
 
 _Par Stéphanie Moallic_
 
-Je n'ai pas d'enfants, et j'étais pourtant très curieux à l'idée de voir le _talk_ de Stéphanie. Jusqu'alors, je n'avais aucune idée de comment aborder la programmation avec les plus jeunes. Stéphanie, elle, a une fille.
+Je n'ai pas d'enfant, et j'étais pourtant très curieux à l'idée de voir le _talk_ de Stéphanie. Jusqu'alors, je n'avais aucune idée de comment aborder la programmation avec les plus jeunes. Stéphanie, elle, a une fille.
 
 "Maman, c'est quoi ton travail ?" est une question qui lui a donc déjà été posée, et elle a entreprit de répondre à sa fille en la faisant participer à la programmation de jouets !
 
