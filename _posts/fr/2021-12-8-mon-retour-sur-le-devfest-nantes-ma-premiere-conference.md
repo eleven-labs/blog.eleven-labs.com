@@ -1,25 +1,24 @@
 ---
 layout: post
-title: Ma première conférence
-excerpt: "Enfin ! Après 4 ans à pratiquer le métier de développeur, j'ai assisté pour la première fois à une conférence liée à mon métier et ma passion : le [DevFest Nantes](https://devfest2021.gdgnantes.com)."
+title: Mon retour sur le DevFest Nantes 2021, ma première conférence
+excerpt: "Enfin ! Après 4 ans à pratiquer le métier de développeur, j'ai assisté pour la première fois à une conférence liée à mon métier et ma passion : le DevFest Nantes"
 authors:
     - jbberthet
-permalink: /fr/ma-premiere-conference/
+permalink: /fr/mon-retour-sur-le-devfest-nantes-ma-premiere-conference/
 categories:
-    - Conference
-    - Talks
+    - conference
 tags:
     - conference
-    - talk
-    - dev fest
-cover: /assets/2021-12-08-ma-premiere-conference/devfest-logo.jpeg
+    - devfest
+    - nantes
+cover: /assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/devfest-logo.jpeg
 ---
 
 Enfin ! Après 4 ans à pratiquer le métier de développeur, j'ai assisté pour la première fois à une conférence liée à mon métier et ma passion : le [DevFest Nantes](https://devfest2021.gdgnantes.com).
 
 Pour la 9ème édition, qui s'est déroulée les 21 et 22 octobre, le thème était le _street art_. Le GDG (Google Developer Group) de Nantes et ses partenaires pour l'événement se sont donnés à fond et le rendu était splendide ! Des graffitis en veux-tu en voilà, des paniers de basket, des bières, des jeux vidéos et une cabine photo ont occupé le _lounge_ tout au long de l'événement.
 
-# Qu'est-ce que le DevFest ?
+## Qu'est-ce que le DevFest ?
 
 Depuis 2012, le GDG de Nantes organise un festival dédié aux développeurs où plusieurs speakers parlent de sujets liés au monde du développement et de la technologie en général (_cloud_, système & réseaux, _data_, développement web et mobile, _soft skills_, etc...).
 
@@ -29,13 +28,13 @@ C'est aussi l'occasion de rencontrer et échanger avec des passionnés du numér
 
 Cette année le DevFest a accueilli un peu plus de 2000 personnes par jour pendants 2 jours (incluant les _speakers_, les journalistes, les développeurs, etc...).
 
-# Les talks auxquels j'ai assisté
+## Les talks auxquels j'ai assisté
 
-## La keynote d'ouverture
+### La keynote d'ouverture
 
 _Par Antonin Fourneau_
 
-![Waterlight Graffiti]({{ site.baseurl }}/assets/2021-12-08-ma-premiere-conference/waterlight-graffiti.jpeg)
+![Waterlight Graffiti]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waterlight-graffiti.jpeg)
 
 <center><i><small>Credits: Antonin Fourneau</small></i></center>
 
@@ -47,7 +46,7 @@ Il nous a parlé de plusieurs de ses projets mais principalement de [Waterlight 
 
 Le travail d'Antonin est surprenant et fabuleux, vous pourrez trouver ses autres projets [sur son site](https://www.antoninfourneau.com).
 
-## Tips pour combattre le syndrome de l'imposteur
+### Tips pour combattre le syndrome de l'imposteur
 
 _Par Aurélie Vache_
 
@@ -61,11 +60,11 @@ Elle nous donne plusieurs astuces pour passer outre ce syndrome: lister nos acco
 
 Pour résumer, Aurélie nous a fait comprendre que la majorité des développeurs sont atteints par le syndrome de l'imposteur, qu'on peut le prendre en main et que **c'est normal de ne pas tout savoir**.
 
-## Comment créer des jeux en pur CSS
+### Comment créer des jeux en pur CSS
 
 _Par Elad Schechter_
 
-![Coronavirus Invaders]({{ site.baseurl }}/assets/2021-12-08-ma-premiere-conference/coronavirus-invaders.jpeg)
+![Coronavirus Invaders]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/coronavirus-invaders.jpeg)
 
 Quand le confinement a commencé, Elad a préparé son appartement pour en faire un endroit où il se sent bien, où il pourrait rester enfermé toute la journée. Pendant un week-end entier, c'est exactement ce qu'il a fait et il s'est lancé dans la création d'un jeu lié à la situation sanitaire: Coronavirus Invaders. Le jeu et son code source sont [disponibles sur CodePen](https://codepen.io/elad2412/pen/wvabjXy).
 
@@ -79,7 +78,7 @@ Pour développer son jeu, il a utilisé plusieurs astuces HTML et CSS grâce aux
 
 J'ai trouvé ce _talk_ très inspirant. Il m'a rappelé à quel point le développement est fun et que la seule limite à ce qu'on peut faire est notre imagination.
 
-## Petit guide pratique pour commencer un design system
+### Petit guide pratique pour commencer un design system
 
 _Par Cecile Freyd-Foucault_
 
@@ -93,7 +92,7 @@ Il faudra ensuite faire un inventaire, prioriser, documenter puis créer de l'en
 
 J'espère avoir l'opportunité de créer un design system au sein d'un projet futur, c'est un de mes objectifs en tant que développeur. Quand le jour viendra, je sais déjà que je pourrai ressortir mes notes et appliquer les précieux conseils de Cécile !
 
-## Et si vous appreniez à programmer à vos enfants
+### Et si vous appreniez à programmer à vos enfants
 
 _Par Stéphanie Moallic_
 
@@ -105,7 +104,7 @@ Stéphanie nous explique comment rendre la programmation ludique, grâce à du m
 
 Durant son _talk_, Stéphanie me fait me sentir comme un grand enfant et au final, j'ai très envie d'essayer tout ça. Et elle finira par l'avouer, c'est bien elle qui joue le plus avec tous ces jouets !
 
-## React Query, le server state facile pour React
+### React Query, le server state facile pour React
 
 _Par Olivier Thierry_
 
@@ -117,7 +116,7 @@ Des fonctionnalités plus avancées sont également disponibles, comme les requ�
 
 Olivier a eu le temps de nous présenter les fonctionnalités principales avec du code et de nous énoncer les fonctionnalités avancées intéressantes, le tout en 15 minutes ! Chapeau à lui, car en si peu de temps, il m'a donné envie d'essayer React Query dans mon prochain side-project...
 
-## Next.js à la rescousse de mon frontend
+### Next.js à la rescousse de mon frontend
 
 _Par Nordwin Hoff_
 
@@ -129,7 +128,7 @@ Je ne vais pas entrer dans le détail car c'est assez spécifique. Cela dit, sa 
 
 Pour moi qui ne connait pas du tout Next.js, c'était un _talk_ très intéressant. Pour couronner le tout, Nordwin est un très bon orateur.
 
-## Vue 3 et son écosystème
+### Vue 3 et son écosystème
 
 _Par Nicolas Frizzarin_
 
@@ -139,7 +138,7 @@ Vue 3 semble s'inspirer de certains concepts de React pour optimiser son expéri
 
 La _Composition API_, les _reactive refs_, les _proxy handlers_, la _Suspense API_, les composants asynchrones, les librairies, etc... Tout y passe ! Nicolas donne tout son savoir sur un plateau, son _talk_ est très riche en informations. Seul problème pour moi, ça ressemble beaucoup à un comparatif Vue 2/Vue 3, mais mon peu de connaissances sur Vue 2 m'empêche de percevoir toutes les avancées effectuées. Un petit rappel m'aurait vraiment aidé à mieux apprécier le _talk_ qui m'a paru encore une fois hyper complet !
 
-## Art & entropie: Du chaos dans ton front-end
+### Art & entropie: Du chaos dans ton front-end
 
 _Par Thibaud Courtoison_
 
@@ -158,11 +157,11 @@ Aujourd’hui, le _chaos engineering_ est utilisé principalement côté infrast
 
 C'est la proposition de Thibaud pour mettre en place du _chaos engineering_ dans un _front-end_. Il le pousse dans ses retranchements, regarde comment celui-ci réagit, puis corrige.
 
-# Ce que je retiens de cette première conf'
+## Ce que je retiens de cette première conf'
 
-![Waouh]({{ site.baseurl }}/assets/2021-12-08-ma-premiere-conference/waouh.jpeg)
+![Waouh]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waouh.jpeg)
 
-D'un côté, j'ai ressenti une ferveur lors de ces 2 journées dans laquelle je me suis engouffrée et qui me faisait un peu regarder partout avec des yeux émerveillés. Tout me paraissait incroyable et tout le monde me paraissait accessible et bienveillant.
+D'un côté, j'ai ressenti une ferveur lors de ces 2 journées dans laquelle je me suis engouffré et qui me faisait un peu regarder partout avec des yeux émerveillés. Tout me paraissait incroyable et tout le monde me paraissait accessible et bienveillant.
 
 De l'autre, j'ai retrouvé lors des _talks_ le genre de présentations que j'avais déjà vu en vidéo, et que je trouvais super cool. De là où je bossais avant (nord-ouest Bretagne), j'avais le sentiment que ce monde était à part et très loin de moi. Je sais maintenant que c'est un monde accessible et carrément pas fictif !
 
