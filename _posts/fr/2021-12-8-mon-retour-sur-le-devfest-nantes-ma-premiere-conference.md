@@ -13,7 +13,7 @@ tags:
     - nantes
 ---
 
-![Logo du DevFest Nantes 2021]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/devfest-logo.jpeg)
+![Logo du DevFest Nantes 2021]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/devfest-logo.png)
 
 Enfin ! Après 4 ans à pratiquer le métier de développeur, j'ai assisté pour la première fois à une conférence liée à mon métier et ma passion : le [DevFest Nantes](https://devfest2021.gdgnantes.com).
 
