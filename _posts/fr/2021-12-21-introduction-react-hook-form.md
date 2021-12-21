@@ -3,13 +3,13 @@ layout: post
 title: Introduction à React Hook Form
 excerpt: Dans cet article vous apprendrez à contrôler vos formulaires avec React-hook-form.
 authors:
-- dduval
-permalink: /fr/commencer-a-controller-les-formulaire-avec-react-hook-form
+    - dduval
+permalink: /fr/introduction-react-hook-form/
 categories:
     - Javascript
 ---
 
-# Commencer à contrôler les formulaire avec React-hook-form
+## Commencer à contrôler les formulaire avec React-hook-form
 
 Le but de cet article est de vous présenter simplement react-hook-form. Nous n'allons pas ici parler de la manière dont React-hook-form permet de gérer les composants incontrollés maisnous allons plutôt nous attarder sur les outils que cette librairie nous donne pour gérer les composants controlés externes comme ceux de React-Select ou Material-UI.
 
