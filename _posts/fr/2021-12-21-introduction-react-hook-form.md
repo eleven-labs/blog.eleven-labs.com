@@ -6,7 +6,7 @@ authors:
 - dduval
 permalink: /fr/commencer-a-controller-les-formulaire-avec-react-hook-form
 categories:
-    - ReactJS
+    - Javascript
 ---
 
 # Commencer à contrôler les formulaire avec React-hook-form
