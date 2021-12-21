@@ -9,9 +9,9 @@ categories:
     - Javascript
 ---
 
-## Commencer à contrôler les formulaire avec React-hook-form
+## Commencer à contrôler les formulaires avec React-hook-form
 
-Le but de cet article est de vous présenter simplement react-hook-form. Nous n'allons pas ici parler de la manière dont React-hook-form permet de gérer les composants incontrollés maisnous allons plutôt nous attarder sur les outils que cette librairie nous donne pour gérer les composants controlés externes comme ceux de React-Select ou Material-UI.
+Le but de cet article est de vous présenter simplement react-hook-form. Nous n'allons pas ici parler de la manière dont React-hook-form permet de gérer les composants incontrollés mais nous allons plutôt nous attarder sur les outils que cette librairie nous donne pour gérer les composants controlés externes comme ceux de React-Select ou Material-UI.
 
 ## Allez ! Commençons.
 
@@ -76,13 +76,12 @@ Controller utilise un certain nombre de props :
  - "control" que l'on a vu plus haut
  - "render" qui a lui besoin d'un composant et qui servira à "rendre" correctement notre input
 
-Analysons render en detail :
-3 props vont etre passés à notre composant de rendu (ici on en utilise seulement 2) :
+Analysons render en details. 3 props vont etre passés à notre composant de rendu (ici on en utilise seulement 2) :
 - field qui est un object qui va contenir les proprietés et méthodes du champ (onChange, onBlur, value, name, ref)
 - fieldState qui est un object qui va contenir des proprietés qui définissent l'état du champ (invalid, isTouched, isDirty, error)
 - formState qui est la même que celle renvoyée par le hook useForm
 
-  Il n'est pas indispensable de forward la référence du champ à notre input mais c'est nécessaire pour gérer le focus lorsqu'il y a une erreur par exemple.
+  Il n'est pas indispensable de forward la référence du champ à notre input mais c'est nécessaire pour gérer le focus, lorsqu'il y a une erreur par exemple.
   Par contre bind "field.onChange" à la proprieté "onChange" de l'input est indispensable pour que la valeur de l'input soit remontée correctement.
 
-  C'est tout pour cette introduction au formulaire avec React Hook Form, dans le prochain article on abordera la gestion des erreurs et la validation du formulaire !
+  C'est tout pour cette introduction au formulaire avec React Hook Form ! Dans le prochain article on abordera la gestion des erreurs et la validation du formulaire.
