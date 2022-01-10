@@ -16,7 +16,7 @@ tags:
     - git
     - Continuous Integration
     - CI
-    - Continuous deployment
+    - Continuous Deployment
     - CD
     - DevOps
 cover: /assets/2018-09-19-introduction-gitlab-ci/cover.png
