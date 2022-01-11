@@ -234,6 +234,8 @@ Voici donc les différentes étapes :
 - On vérifie que les fichiers Terraform soient bien formatés
     - `run: terraform fmt -check -recursive -diff -no-color .`
 
+![Premier job: lint]({{ site.baseurl }}/assets/2022-01-12-et-si-on-passait-a-github-actions/github-actions-lint.png)
+
 Voici donc la définition YAML de notre premier `job` :
 
 ```yaml
@@ -269,6 +271,8 @@ Voici donc les différentes étapes pour le second :
     - `run: terraform init -no-color`
 - On fait un plan pour visualiser les changements.
     - `run: terraform plan -input=false -no-color -compact-warnings`
+
+![Second job: plan]({{ site.baseurl }}/assets/2022-01-12-et-si-on-passait-a-github-actions/github-actions-plan.png)
 
 Voici donc la définition YAML de notre second `job`
 
