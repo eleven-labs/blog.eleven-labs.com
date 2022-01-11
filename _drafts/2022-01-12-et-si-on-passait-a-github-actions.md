@@ -146,7 +146,7 @@ jobs:
 
 Maintenant que nous avons définit comment nos _jobs_ vont être exécuté, il est temps de définir ce qu'ils vont exécuter au travers des `steps`.
 
-## Les `steps`
+## Les steps
 
 Un `step` n'est rien d'autre qu'une tâche unitaire nécessaire pour effectuer le _job_. Ça peut être du code shell ou du python, mais également des `actions` ; c'est là la force de _Github Actions_.
 
@@ -160,7 +160,7 @@ Cependant, les `actions` viennent également avec leurs lots de contraintes. La 
 La seconde, qui résulte de la première, est un risque pour la sécurité. Du fait qu'il y ait de l'abstraction et que les `actions` soient créées et gérées par des personnes externes ajoute un risque de sécurité supplémentaire, comme la fuite de code source ou l'injection de faille lors de la compilation. Ce risque est notamment accru si on les utilise à tort et à travers.
 Bien heureusement, il existe des moyens de mitiger au mieux ce problème en suivant quelques bonnes pratiques.
 
-### Définitions des `steps` avec les `actions`
+### Définitions des steps avec les _actions_
 
 Comme pour les `jobs` il y a quelques champs requis pour exécuter une action au sein d'un _step_ :
 
@@ -180,7 +180,7 @@ En voici quelques exemples :
     terraform_version: 1.1.2
 ```
 
-### Définitions des `steps` sans les `actions`
+### Définitions des steps sans les _actions_
 
 Dans certains cas, nous n'avons pas vraiment besoin d'utiliser des `actions` pour arriver à nos fins. Dans ces cas-là, nous pouvons directement exécuter du code shell ou python. Pour cela, il suffit d'utiliser `run` dans la définition du `step`.
 
@@ -203,7 +203,7 @@ L'accès à ces informations se fait au travers de la syntaxe `${{ context }}`. 
 - Les contextes : [https://docs.github.com/en/actions/learn-github-actions/contexts](https://docs.github.com/en/actions/learn-github-actions/contexts)
 - La syntaxe et les outils associés avec : [https://docs.github.com/en/actions/learn-github-actions/expressions](https://docs.github.com/en/actions/learn-github-actions/expressions)
 
-### Définitions des `steps`
+### Définitions des steps
 
 On a vu précédemment les deux façons d'écrire des `step` ; il est donc temps de revenir sur notre workflow. Mais juste avant, tout comme les `workflows` et les `jobs`, les `steps` on quelques champs optionnels que voici :
 
@@ -216,7 +216,7 @@ Il y en quelques autres qu'on ne verra pas dans cet article. Mais comme toujours
 
 Commençons par notre premier job : `lint`
 
-#### Définition des steps pour le premier `job` (`lint`)
+#### Définition des steps pour le premier job _(lint)_
 
 Comme définit précédemment, notre premier `job` est chargé de vérifier la syntaxe et le formatage des fichiers Terraform. Pour cela, nous allons utiliser deux commandes incluses dans le CLI de Terraform : `terraform fmt` et `terraform validate`.
 
@@ -234,7 +234,7 @@ Voici donc les différentes étapes :
 - On vérifie que les fichiers Terraform soient bien formatés
     - `run: terraform fmt -check -recursive -diff -no-color .`
 
-Voici donc la définition YAML de notre premier `job`
+Voici donc la définition YAML de notre premier `job` :
 
 ```yaml
 lint:
@@ -255,7 +255,7 @@ lint:
 
 Passons maintenant au second `job` : `plan`
 
-#### Définition des steps pour le second `job` (`plan`)
+#### Définition des steps pour le second job _(plan)_
 
 La seule différence avec le premier est l'utilisation de `terraform plan`.
 
