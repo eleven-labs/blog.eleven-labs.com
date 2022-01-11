@@ -102,22 +102,21 @@ Maintenant qu'on a determiné quand déclencher le `workflow`, il est temps d'en
 
 ## Les `jobs`
 
-Il faut visualiser le workflow comme une suite d'actions ; une action en appelle une ou plusieurs, qui peuvent en appeler d'autres, et ainsi de suite jusqu'à ce que l'objectif du workflow soit atteint.
-Ce sont ces suites d'actions (`steps`) qu'on appelle des `jobs`.
+Il faut visualiser un workflow comme un graphe ; nous avons une suite d'action que l'on appelle un `job` qui peut en appeller d'autre à la fin de son exécution, qui à leur tour peuvent en exécuter d'autres, jusqu'à ce que l'objectif du workflow soit atteint.
 
-Par exemple, nous pouvons voir notre workflow `Terraform CI` comme 2 suites d'actions distinctes :
+Par exemple, nous pouvons voir notre workflow `Terraform CI` comme 2 suites d'actions (ou `jobs`) distinctes :
 
 - Vérifier que les fichiers soient normalisés et qu'ils ne contiennent pas d'erreur de syntaxe (`lint`)
 - Générer un plan d'exécution des modifications Terraform (https://www.terraform.io/cli/commands/plan#command-plan)
 
 Pour chacun de ces _jobs_, il y a quelques champs obligatoires à définir :
 
-- Le nom du dit _job_ (`name`) _(optionnel, mais je conseille fortement de quand même de le définir)_
 - Définir sur quelle machine les actions vont être exécutées (ces `runners` sont soit [des machines fournies par Github](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#github-hosted-runners) soit nos propres machines) (`runs-on`)
-- La liste des actions (`steps`)
+- La liste des actions à exécuter (`steps`)
 
 Il existe également d'autres champs pour permettre une configuration plus approfondie, dont en voici une liste non exhaustive :
 
+- Le nom du dit _job_ (`name`) _(bien qu'optionnel, je conseille fortement de quand même de le définir)_
 - De possibles dépendances vers d'autres `jobs` (`needs`)
 - Des conditions (`if`)
 - Différentes strategies d'exécution en parallèle (`strategy` et `concurrency`). Ce sont d'ailleurs ces stratégies qui nous permettent d'utiliser ce qu'on appelle des matrices de build (générer plusieurs fois le même `job` avec un ou plusieurs paramètres changeant)
@@ -141,7 +140,7 @@ jobs:
     name: Generates a speculative execution plan
     runs-on: ubuntu-latest
     needs: [lint] # on exécute ce job uniquement si le précédent a réussi
-    concurrency: tf-plan # on fait en sorte d'éviter toute concurrence lors du Terraform plan
+    concurrency: tf-plan # nous définissons la clé `tf-plan` afin d'éviter de lancer en parallèle tout autre job utilisant cette même clé (ici, le job `plan`)
     steps: []
 ```
 
@@ -176,7 +175,7 @@ En voici quelques exemples :
 - name: Checkout repository code
   uses: actions/checkout@v2
 - name: Setup Terraform 1.1.2
-  uses: hashicorp/setup-terraform@v1
+  uses: hashicorp/setup-terraform@3d8debd658c92063839bc97da5c2427100420dec # nous pouvons également utiliser le SHA d'un commit en particulier (ici, celui de la v1.3.2)
   with:
     terraform_version: 1.1.2
 ```
@@ -190,12 +189,6 @@ En voici quelques exemples:
 ```yaml
 - name: Debug environment
   run: env
-  shell: bash # par default, le shell est `bash` (`pwsh` sous Windows) donc pas besoin de le préciser
-- name: Debug environment (with Python)
-  run: |
-    import os
-    print(os.environ)
-  shell: python # on souhaite utiliser du python ici (liste des shells disponible https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idstepsshell)
 - name: Rewrites all Terraform configuration files to a canonical format
   run: terraform fmt .
 ```
@@ -230,9 +223,9 @@ Comme définit précédemment, notre premier `job` est chargé de vérifier la s
 Voici donc les différentes étapes :
 
 - On clone le repository sur la branche correspondant à la PR
-    - `uses: actions/checkout@v2`
+    - `uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579`
 - On installe la commande `terraform` pour pouvoir l'utilser dans les étapes suivantes
-    - `uses: hashicorp/setup-terraform@v1` _(on ne précise pas la version de Terraform pour utiliser par dernière par défaut)_
+    - `uses: hashicorp/setup-terraform@3d8debd658c92063839bc97da5c2427100420dec`
 - On initialise Terraform (requis pour le terraform validate)
     - `run: terraform init -no-color -backend=false`
         - On utilise `-backend=false` ici, car on ne fait le `init` ici que pour télécharger toutes les dépendances requises pour le `terraform validate`
@@ -249,9 +242,9 @@ lint:
   runs-on: ubuntu-latest
   steps:
     - name: Checkout repository code
-      uses: actions/checkout@v2
+      uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
     - name: Setup Terraform 1.1.2
-      uses: hashicorp/setup-terraform@v1
+      uses: hashicorp/setup-terraform@3d8debd658c92063839bc97da5c2427100420dec
     - name: Initialize Terraform working directory
       run: terraform init -no-color -backend=false
     - name: Validate the configuration files
@@ -269,9 +262,9 @@ La seule différence avec le premier est l'utilisation de `terraform plan`.
 Voici donc les différentes étapes pour le second :
 
 - On clone le repository sur la branche correspondant à la PR
-    - `uses: actions/checkout@v2`
+    - `uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579`
 - On configure la CI pour utiliser Terraform
-    - `uses: hashicorp/setup-terraform@v1` _(on ne précise pas la version de Terraform pour utiliser par dernière par défaut)_
+    - `uses: hashicorp/setup-terraform@3d8debd658c92063839bc97da5c2427100420dec`
 - On initialise Terraform (requis pour le terraform validate)
     - `run: terraform init -no-color`
 - On fait un plan pour visualiser les changements.
@@ -287,9 +280,9 @@ plan:
   concurrency: tf-plan # on fait en sorte d'éviter toute concurrence lors du Terraform plan
   steps:
     - name: Checkout repository code
-      uses: actions/checkout@v2
+      uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
     - name: Setup Terraform 1.1.2
-      uses: hashicorp/setup-terraform@v1
+      uses: hashicorp/setup-terraform@3d8debd658c92063839bc97da5c2427100420dec
     - name: Initialize Terraform working directory
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -320,9 +313,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
       - name: Setup Terraform 1.1.2
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@3d8debd658c92063839bc97da5c2427100420dec
       - name: Initialize Terraform working directory
         run: terraform init -no-color -backend=false
       - name: Validate the configuration files
@@ -337,9 +330,9 @@ jobs:
     concurrency: tf-plan # on fait en sorte d'éviter toute concurrence lors du Terraform plan
     steps:
       - name: Checkout repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
       - name: Setup Terraform 1.1.2
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@3d8debd658c92063839bc97da5c2427100420dec
       - name: Initialize Terraform working directory
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -383,15 +376,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
       - name: Setup Terraform 1.1.2
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@3d8debd658c92063839bc97da5c2427100420dec
 
       - name: Initialize Terraform working directory
         id: init
         run: terraform init -no-color -backend=false
       - name: Annotate the PR if the previous step fail
         if: failure() && steps.init.outcome == 'failure' # on commente uniquement si le step avec l'id `init` échoue
+        uses: marocchino/sticky-pull-request-comment@39c5b5dc7717447d0cba270cd115037d32d28443
         with:
           recreate: true
           message: |
@@ -410,6 +404,7 @@ jobs:
         run: terraform validate -no-color
       - name: Annotate the PR if the previous step fail
         if: failure() && steps.validate.outcome == 'failure' # on commente uniquement si le step avec l'id `validate` échoue
+        uses: marocchino/sticky-pull-request-comment@39c5b5dc7717447d0cba270cd115037d32d28443
         with:
           recreate: true
           message: |
@@ -427,6 +422,7 @@ jobs:
         run: terraform fmt -check -recursive -diff -no-color
       - name: Annotate the PR if the previous step fail
         if: failure() && steps.fmt.outcome == 'failure' # on commente uniquement si le step avec l'id `fmt` échoue
+        uses: marocchino/sticky-pull-request-comment@39c5b5dc7717447d0cba270cd115037d32d28443
         with:
           recreate: true
           message: |
@@ -447,9 +443,9 @@ jobs:
     concurrency: tf-plan # on fait en sorte d'éviter toute concurrence lors du Terraform plan
     steps:
       - name: Checkout repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
       - name: Setup Terraform 1.1.2
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@3d8debd658c92063839bc97da5c2427100420dec
 
       - name: Initialize Terraform working directory
         env:
@@ -459,6 +455,7 @@ jobs:
         run: terraform init -no-color
       - name: Annotate the PR if the previous step fail
         if: failure() && steps.init.outcome == 'failure' # on commente uniquement si le step avec l'id `init` échoue
+        uses: marocchino/sticky-pull-request-comment@39c5b5dc7717447d0cba270cd115037d32d28443
         with:
           recreate: true
           message: |
@@ -478,6 +475,7 @@ jobs:
         run: terraform plan -input=false -no-color -compact-warnings
       - name: Annotate the PR if the previous step fail
         if: failure() && steps.plan.outcome == 'failure' # on commente uniquement si le step avec l'id `plan` échoue
+        uses: marocchino/sticky-pull-request-comment@39c5b5dc7717447d0cba270cd115037d32d28443
         with:
           recreate: true
           message: |
@@ -494,6 +492,7 @@ jobs:
 
       - name: Annotate the PR if the plan step succeed
         if: success() # on commente uniquement tout a réussi
+        uses: marocchino/sticky-pull-request-comment@39c5b5dc7717447d0cba270cd115037d32d28443
         with:
           recreate: true
           message: |
