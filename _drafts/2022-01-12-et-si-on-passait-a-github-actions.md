@@ -100,7 +100,7 @@ on:
 
 Maintenant qu'on a determiné quand déclencher le `workflow`, il est temps d'en venir au corps du workflow : les `jobs`.
 
-## Les `jobs`
+## Les jobs
 
 Il faut visualiser un workflow comme un graphe ; nous avons une suite d'action que l'on appelle un `job` qui peut en appeller d'autre à la fin de son exécution, qui à leur tour peuvent en exécuter d'autres, jusqu'à ce que l'objectif du workflow soit atteint.
 
