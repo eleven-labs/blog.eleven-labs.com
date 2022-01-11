@@ -31,7 +31,7 @@ Mais avant toute chose, qu'est-ce que la CI/CD ?
 
 Commençons avec une notion indispensable, celle de CI/CD. Tout comme pour notre précédent article *[Introduction à Gitlab CI](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/)*, je ne vais pas vous faire une énième définition de ce qu'est la *CI/CD* mais utiliser à la place deux définitions, de chez Atlassian :
 
-> **TLDR;**
+> **TLDR;**  
 > **Intégration continue** : ensemble de tests et procédures lancées automatiquement à la suite de changement de la base de code.  
 > **Déploiement continu** : ensemble de procédures lancées automatiquement dans le but de déployer la base de code en production.
 
@@ -56,7 +56,7 @@ Maintenant que nous nous sommes un peu plus familiarisés avec le concept de CI/
 
 Comme expliqué précédemment, **Github Action** est l'outil de CI/CD directement intégré à Github, sorti en fin 2019. Là où il fallait avant utiliser des services externes comme _Drone.io_ ou _TravisCI_ pour ne citer qu'eux, Github Action est directement intégrée à la plateforme Github.
 
-De plus, du fait de son integration complete avec Github, il peut également vous aider à automatiser certains de vos workflows directement au sein de Github. La liste des évènements permettant de déclencher un workflow est longue, mais en voici quelques exemples :
+De plus, du fait de son integration complète avec Github, il peut également vous aider à automatiser certains de vos workflows directement au sein de Github. La liste des évènements permettant de déclencher un workflow est longue, mais en voici quelques exemples :
 
 - Création ou modification d'une PR (nouveau commentaire par exemple)
 - Push sur une branche précise
@@ -64,7 +64,7 @@ De plus, du fait de son integration complete avec Github, il peut également vou
 - Déclenchement manuel
 - Modification quelconque d'un ticket sur un _projet board_ dans Github
 
-Cependant, pour moi, la vraie force des _Github Actions_ provient de son mécanisme de composants réutilisables ; les **Actions**.
+Cependant, pour moi, la vraie force des _Github Actions_ provient de son mécanisme de composants réutilisables : les **Actions**.
 
 Il s'agit de composants logiques, souvent avec du code en amont, permettant d'effectuer certaines tâches. Là où on devait intégrer Terraform dans son image de CI ou l'installer depuis un script, on peut désormais utiliser [l'action officielle](https://github.com/hashicorp/setup-terraform) avec un simple `uses: hashicorp/setup-terraform@v1`.
 
@@ -72,11 +72,11 @@ Et depuis début Octobre 2021 (voir leur [blog post](https://github.blog/changel
 
 On en a souvent parlé dans ce début d'article, mais qu'est-ce qu'un workflow ?
 
-## Les `workflows`
+## Les workflows
 
-Un workflow, c'est une procédure automatisée composée d'une ou plusieurs étapes. C'est un peu la définition complète de ce que l'on cherche à accomplir, écrite en YAML.
+Un workflow est une procédure automatisée composée d'une ou plusieurs étapes. C'est un peu la définition complète de ce que l'on cherche à accomplir écrite en YAML.
 
-La syntaxe de l'objet racine est relativement simple:
+La syntaxe de l'objet racine est la suivante :
 
 - `name` : nom du workflow, qui sera également visible sur l'interface Github
   (comme dans https://github.com/actions/runner/actions)
@@ -98,7 +98,7 @@ on:
   # types: [opened, synchronize, reopened] # valeur par défaut, qu'on peut donc omettre
 ```
 
-Maintenant qu'on a determiné quand déclencher le `workflow`, il est temps d'en venir au corps du workflows : les `jobs`.
+Maintenant qu'on a determiné quand déclencher le `workflow`, il est temps d'en venir au corps du workflow : les `jobs`.
 
 ## Les `jobs`
 
@@ -108,8 +108,7 @@ Ce sont ces suites d'actions (`steps`) qu'on appelle des `jobs`.
 Par exemple, nous pouvons voir notre workflow `Terraform CI` comme 2 suites d'actions distinctes :
 
 - Vérifier que les fichiers soient normalisés et qu'ils ne contiennent pas d'erreur de syntaxe (`lint`)
-- Générer un plan d'exécution des modifications Terraform faites (https://www.terraform.io/cli/commands/plan#command-plan)
-  uniquement
+- Générer un plan d'exécution des modifications Terraform (https://www.terraform.io/cli/commands/plan#command-plan)
 
 Pour chacun de ces _jobs_, il y a quelques champs obligatoires à définir :
 
@@ -123,7 +122,7 @@ Il existe également d'autres champs pour permettre une configuration plus appro
 - Des conditions (`if`)
 - Différentes strategies d'exécution en parallèle (`strategy` et `concurrency`). Ce sont d'ailleurs ces stratégies qui nous permettent d'utiliser ce qu'on appelle des matrices de build (générer plusieurs fois le même `job` avec un ou plusieurs paramètres changeant)
 
-Bien évidemment, la liste complète est définie dans la documentation.
+La liste complète est définie dans la documentation.
 
 Concernant notre workflow, découpons un peu ces deux `jobs`:
 
@@ -152,7 +151,7 @@ Maintenant que nous avons définit comment nos _jobs_ vont être exécuté, il e
 
 Un `step` n'est rien d'autre qu'une tâche unitaire nécessaire pour effectuer le _job_. Ça peut être du code shell ou du python, mais également des `actions` ; c'est là la force de _Github Actions_.
 
-### Les `actions`
+## Les actions
 
 Les `actions` sont des _applications_ pour _Github Actions_ exécutant des tâches complexes, mais répétitives. Là où l'on devait avant créer du code personnalisé pour effectuer des étapes répétitives (comme Jenkins) ou importer des blocks d'exécutions non paramétrables (`include` + `extends` sous Gitlab CI/CD), les `actions` permettent cela nativement et facilement.
 
@@ -208,8 +207,8 @@ Les contextes sont un moyen d'accéder à des informations à propos du workflow
 
 L'accès à ces informations se fait au travers de la syntaxe `${{ context }}`. Je ne vais pas en parler directement dans cet article, car la documentation en parlera probablement mieux que moi et qu'il y a beaucoup de chose à dire dessus. Voici les deux pages de documentation que je vous conseille si vous voulez approfondir ce sujet :
 
-- Les contextes : https://docs.github.com/en/actions/learn-github-actions/contexts
-- La syntaxe et les outils associés avec : https://docs.github.com/en/actions/learn-github-actions/expressions
+- Les contextes : [https://docs.github.com/en/actions/learn-github-actions/contexts](https://docs.github.com/en/actions/learn-github-actions/contexts)
+- La syntaxe et les outils associés avec : [https://docs.github.com/en/actions/learn-github-actions/expressions](https://docs.github.com/en/actions/learn-github-actions/expressions)
 
 ### Définitions des `steps`
 
@@ -232,7 +231,7 @@ Voici donc les différentes étapes :
 
 - On clone le repository sur la branche correspondant à la PR
     - `uses: actions/checkout@v2`
-- On configure la CI pour utiliser Terraform
+- On installe la commande `terraform` pour pouvoir l'utilser dans les étapes suivantes
     - `uses: hashicorp/setup-terraform@v1` _(on ne précise pas la version de Terraform pour utiliser par dernière par défaut)_
 - On initialise Terraform (requis pour le terraform validate)
     - `run: terraform init -no-color -backend=false`
@@ -275,7 +274,6 @@ Voici donc les différentes étapes pour le second :
     - `uses: hashicorp/setup-terraform@v1` _(on ne précise pas la version de Terraform pour utiliser par dernière par défaut)_
 - On initialise Terraform (requis pour le terraform validate)
     - `run: terraform init -no-color`
-      Il est possible qu'on ait besoin de variables d'environnement pour pouvoir se connecter au backend _(là où est stocké l'état actuel de l'infrastructure)_. Pour cela, on peut utiliser `env` comme vu précédemment.
 - On fait un plan pour visualiser les changements.
     - `run: terraform plan -input=false -no-color -compact-warnings`
 
@@ -304,7 +302,7 @@ plan:
       run: terraform plan -input=false -no-color -compact-warnings
 ```
 
-> Nous reviendrons plus tard sur `${{ secrets.AWS_ACCESS_KEY_ID }}`.
+> `${{ secrets.AWS_ACCESS_KEY_ID }}` permet d'utiliser des variables donc le contenu peut être sensible. Ce valeurs sont configurables directement dans Github et leur valeur ne seront jamais affichées dans les logs de la CI.
 
 #### Définition de notre workflow
 
@@ -361,8 +359,8 @@ Avant de conclure cet article, j'aimerais partager avec vous ces quelques bonnes
 1. Toujours utiliser un SHA de commit au lieu d'une version lors de l'utilisation d'actions.
    Par exemple, au lieu de faire `uses: actions/checkout@v2`, faites plutôt `uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579`.
    Cela permet d'être toujours sûr de savoir quelle version du code on utilise et ainsi de faciliter l'audit dessus.
-2. Si possible, vérifier le code source d'une action avant de l'utiliser, toujours pour réduire au mieux les possibles risques de sécurités
-3. Bien évidemment, ne pas utiliser de secret en clair dans la définition des workflows. À la place, il faut utiliser la gestion de secret dans Github en utilisant la syntaxe `${{ secret.NOM_DU_SECRET }}`. La définition des secrets se fait dans la configuration du repository ou dans celle de l'organisation (pour des secrets partagés entre plusieurs repos d'une organisation)
+2. Si possible, vérifier le code source d'une action avant de l'utiliser, toujours pour réduire au mieux les possibles risques de sécurité.
+3. Ne pas utiliser de secret en clair dans la définition des workflows. À la place, il faut utiliser la gestion de secret dans Github en utilisant la syntaxe `${{ secret.NOM_DU_SECRET }}`. La définition des secrets se fait dans la configuration du repository ou dans celle de l'organisation (pour des secrets partagés entre plusieurs repos d'une organisation)
 
 ## Conclusion
 
@@ -476,9 +474,6 @@ jobs:
             > _Report based on commit ${{ github.sha }} (authored by **@${{ github.actor }}**).  See [`actions#${{ github.run_id }}`](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) for more details._
 
       - name: Generate a speculative execution plan
-        # S'il y a besoin d'utiliser des variables, c'est faisable via les variables d'environnement
-        # env:
-        #   TF_VARS_...: ...
         id: plan
         run: terraform plan -input=false -no-color -compact-warnings
       - name: Annotate the PR if the previous step fail
@@ -520,6 +515,6 @@ C'est très verbeux, mais cela facilite grandement la review de PRs car on sait 
 
 - [Github Actions](https://github.com/features/actions)
 - [Github Actions syntaxe](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions)
-- [Github Actions déclancheurs](https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows)
+- [Github Actions déclencheurs](https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows)
 - [Blog Github](https://github.blog/)
 
