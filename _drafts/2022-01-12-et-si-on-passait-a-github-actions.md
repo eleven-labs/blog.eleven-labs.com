@@ -7,16 +7,6 @@ authors:
 lang: fr
 permalink: /fr/et-si-on-passait-a-github-actions/
 categories:
-  - continuous integration
-  - devops
-tags:
-  - github
-  - github-actions
-  - git
-  - Continuous Integration
-  - CI
-  - Continuous Deployment
-  - CD
   - devops
 ---
 {% raw %}
