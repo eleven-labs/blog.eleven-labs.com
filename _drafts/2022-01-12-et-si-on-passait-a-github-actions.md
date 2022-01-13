@@ -10,7 +10,7 @@ categories:
   - devops
 ---
 {% raw %}
-Pendant presque une décennie, Gitlab à sû s'imposer comme forge logicielle, notamment grâce à sa CI _(ou Continuous Integration)_ performante, flexible et facile d'utilisation. Cependant, en fin d'année 2019, Github a lancé sa propre CI/CD avec une intégration unique à la plateforme : les _Github Actions_.
+Pendant presque une décennie, Gitlab a su s'imposer comme forge logicielle, notamment grâce à sa CI _(ou Continuous Integration)_ performante, flexible et facile d'utilisation. Cependant, en fin d'année 2019, Github a lancé sa propre CI/CD avec une intégration unique à la plateforme : les _Github Actions_.
 
 Dans cet article, nous allons survoler la syntaxe des Github Actions en construisant au fur et à mesure notre premier _workflow_. Le but de ce dernier sera de valider une modification sur des fichiers Terraform lors d'une _pull request_ (ou _PR_).
 
