@@ -224,7 +224,7 @@ Voici donc les différentes étapes :
     - `run: terraform fmt -check -recursive -diff -no-color .`
 
 {% endraw %}
-![Premier job: lint]({{ site.baseurl }}/assets/2022-01-12-et-si-on-passait-a-github-actions/github-actions-lint.png)
+![Premier job: lint]({{ site.baseurl }}/assets/2022-01-13-et-si-on-passait-a-github-actions/github-actions-lint.png)
 {% raw %}
 
 Voici donc la définition YAML de notre premier `job` :
@@ -264,7 +264,7 @@ Voici donc les différentes étapes pour le second :
     - `run: terraform plan -input=false -no-color -compact-warnings`
 
 {% endraw %}
-![Second job: plan]({{ site.baseurl }}/assets/2022-01-12-et-si-on-passait-a-github-actions/github-actions-plan.png)
+![Second job: plan]({{ site.baseurl }}/assets/2022-01-13-et-si-on-passait-a-github-actions/github-actions-plan.png)
 {% raw %}
 
 Voici donc la définition YAML de notre second `job`
