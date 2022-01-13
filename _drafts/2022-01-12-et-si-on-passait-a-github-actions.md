@@ -10,11 +10,11 @@ categories:
   - devops
 ---
 {% raw %}
-Pendant presque une décennie, Gitlab à sû s'imposer comme forge logicielle, notamment grâce à sa CI _(ou Continuous Integration)_ performante, flexible et facile d'utilisation. Cependant, en fin d'année 2019, Github lança sa propre CI/CD avec une intégration unique à la plateforme : les _Github Actions_.
+Pendant presque une décennie, Gitlab à sû s'imposer comme forge logicielle, notamment grâce à sa CI _(ou Continuous Integration)_ performante, flexible et facile d'utilisation. Cependant, en fin d'année 2019, Github a lancé sa propre CI/CD avec une intégration unique à la plateforme : les _Github Actions_.
 
 Dans cet article, nous allons survoler la syntaxe des Github Actions en construisant au fur et à mesure notre premier _workflow_. Le but de ce dernier sera de valider une modification sur des fichiers Terraform lors d'une _pull request_ (ou _PR_).
 
-> NOTE : je vais utiliser quelques termes qui font référence Terraform. Leur compréhension n'est pas nécessaire pour comprendre cet article.
+> NOTE : je vais utiliser quelques termes qui font référence à Terraform. Leur compréhension n'est pas nécessaire pour comprendre cet article.
 
 Mais avant toute chose, qu'est-ce que la CI/CD ?
 
@@ -23,15 +23,13 @@ Mais avant toute chose, qu'est-ce que la CI/CD ?
 Commençons avec une notion indispensable, celle de CI/CD. Tout comme pour notre précédent article *[Introduction à Gitlab CI](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/)*, je ne vais pas vous faire une énième définition de ce qu'est la *CI/CD* mais utiliser à la place deux définitions, de chez Atlassian :
 
 > **TLDR;**  
-> **Intégration continue** : ensemble de tests et procédures lancées automatiquement à la suite de changement de la base de code.  
+> **Intégration continue** : ensemble de tests et procédures lancées automatiquement à la suite de changements de la base de code.  
 > **Déploiement continu** : ensemble de procédures lancées automatiquement dans le but de déployer la base de code en production.
 
 ### Continuous Integration (CI)
 
-> L'intégration continue (CI) désigne la pratique qui consiste à **automatiser l'intégration des changements de code** réalisés par plusieurs contributeurs dans un seul et même projet
-> de développement.  
-> Il s'agit d'une bonne pratique DevOps principale, permettant aux développeurs de logiciels de **merger fréquemment des changements de code** dans un dépôt central où les builds et
-> les tests s'exécutent ensuite.  
+> L'intégration continue (CI) désigne la pratique qui consiste à **automatiser l'intégration des changements de code** réalisés par plusieurs contributeurs dans un seul et même projet de développement.  
+> Il s'agit d'une bonne pratique DevOps principale, permettant aux développeurs de logiciels de **merger fréquemment des changements de code** dans un dépôt central où les builds et les tests s'exécutent ensuite.  
 > *Atlassian, https://www.atlassian.com/fr/continuous-delivery/continuous-integration*
 
 ### Continuous Deployment (CD)
@@ -45,9 +43,9 @@ Maintenant que nous nous sommes un peu plus familiarisés avec le concept de CI/
 
 ## Qu'est-ce que Github Actions ?
 
-Comme expliqué précédemment, **Github Action** est l'outil de CI/CD directement intégré à Github, sorti en fin 2019. Là où il fallait avant utiliser des services externes comme _Drone.io_ ou _TravisCI_ pour ne citer qu'eux, Github Action est directement intégrée à la plateforme Github.
+Comme expliqué précédemment, **Github Action** est l'outil de CI/CD directement intégré à Github, sorti fin 2019. Là où il fallait avant utiliser des services externes comme _Drone.io_ ou _TravisCI_ pour ne citer qu'eux, Github Action est directement intégré à la plateforme Github.
 
-De plus, du fait de son integration complète avec Github, il peut également vous aider à automatiser certains de vos workflows directement au sein de Github. La liste des évènements permettant de déclencher un workflow est longue, mais en voici quelques exemples :
+De plus, du fait de son intégration complète avec Github, il peut également vous aider à automatiser certains de vos workflows directement au sein de Github. La liste des évènements permettant de déclencher un workflow est longue, mais en voici quelques exemples :
 
 - Création ou modification d'une PR (nouveau commentaire par exemple)
 - Push sur une branche précise
@@ -93,7 +91,7 @@ Maintenant qu'on a determiné quand déclencher le `workflow`, il est temps d'en
 
 ## Les jobs
 
-Il faut visualiser un workflow comme un graphe ; nous avons une suite d'action que l'on appelle un `job` qui peut en appeller d'autre à la fin de son exécution, qui à leur tour peuvent en exécuter d'autres, jusqu'à ce que l'objectif du workflow soit atteint.
+Il faut visualiser un workflow comme un graphe ; nous avons une suite d'actions que l'on appelle un `job` qui peut en appeller d'autres à la fin de son exécution, qui à leur tour peuvent en exécuter d'autres, jusqu'à ce que l'objectif du workflow soit atteint.
 
 Par exemple, nous pouvons voir notre workflow `Terraform CI` comme 2 suites d'actions (ou `jobs`) distinctes :
 
@@ -105,12 +103,12 @@ Pour chacun de ces _jobs_, il y a quelques champs obligatoires à définir :
 - Définir sur quelle machine les actions vont être exécutées (ces `runners` sont soit [des machines fournies par Github](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#github-hosted-runners) soit nos propres machines) (`runs-on`)
 - La liste des actions à exécuter (`steps`)
 
-Il existe également d'autres champs pour permettre une configuration plus approfondie, dont en voici une liste non exhaustive :
+Il existe également d'autres champs pour permettre une configuration plus approfondie, dont voici une liste non exhaustive :
 
-- Le nom du dit _job_ (`name`) _(bien qu'optionnel, je conseille fortement de quand même de le définir)_
+- Le nom dudit _job_ (`name`) _(bien qu'optionnel, je conseille fortement de quand même de le définir)_
 - De possibles dépendances vers d'autres `jobs` (`needs`)
 - Des conditions (`if`)
-- Différentes strategies d'exécution en parallèle (`strategy` et `concurrency`). Ce sont d'ailleurs ces stratégies qui nous permettent d'utiliser ce qu'on appelle des matrices de build (générer plusieurs fois le même `job` avec un ou plusieurs paramètres changeant)
+- Différentes stratégies d'exécution en parallèle (`strategy` et `concurrency`). Ce sont d'ailleurs ces stratégies qui nous permettent d'utiliser ce qu'on appelle des matrices de build (générer plusieurs fois le même `job` avec un ou plusieurs paramètres changeant)
 
 La liste complète est définie dans la documentation.
 
@@ -119,7 +117,7 @@ Concernant notre workflow, découpons un peu ces deux `jobs`:
 - Le premier, `lint` permettra de valider le format et la syntaxe de nos modifications Terraform. Le plus commun et de faire tourner ces actions sur le _runner_ `ubuntu-latest`.
 - Concernant le second, le `plan`, ça sera un peu plus complexe. On souhaite le faire tourner uniquement si le _job_ `lint` a réussi. De plus, pour éviter tout problème de concurrence entre deux `plan` Terraform, il faudrait éviter d'en lancer deux en même temps. Enfin, tout comme le premier, on souhaiterait le lancer sur `ubuntu-latest`
 
-Ces besoins se traduisent ainsi
+Ces besoins se traduisent ainsi :
 
 ```yaml
 jobs:
@@ -157,7 +155,7 @@ Comme pour les `jobs` il y a quelques champs requis pour exécuter une action au
 
 - La description de l'étape (`name`). Comme pour les `jobs`, c'est optionnel, mais ça facilite grandement la lecture des logs dans Github. C'est pourquoi je vous le conseille vivement dans la majorité des cas.
 - L'action qu'on souhaite utiliser, en précisant sa version (`uses`). Par exemple, pour cloner le repo sur la bonne branche, on va utiliser généralement [`actions/checkout@v2`](https://github.com/actions/checkout).
-- Les paramètres si l'action en a besoin (`with`). Cela n'est pas toujours requis ; par exemple `actions/checkout@v2` va utiliser le contexte fourni par Github pour determiner quel repo cloner et quelle branche utiliser.
+- Les paramètres si l'action en a besoin (`with`). Cela n'est pas toujours requis ; par exemple `actions/checkout@v2` va utiliser le contexte fourni par Github pour déterminer quel repo cloner et quelle branche utiliser.
   _Nous reparlerons du contexte plus tard._
 
 En voici quelques exemples :
@@ -175,7 +173,7 @@ En voici quelques exemples :
 
 Dans certains cas, nous n'avons pas vraiment besoin d'utiliser des `actions` pour arriver à nos fins. Dans ces cas-là, nous pouvons directement exécuter du code shell ou python. Pour cela, il suffit d'utiliser `run` dans la définition du `step`.
 
-En voici quelques exemples:
+En voici quelques exemples :
 
 ```yaml
 - name: Debug environment
@@ -187,7 +185,7 @@ En voici quelques exemples:
 ### Les contextes
 
 Les contextes sont un moyen d'accéder à des informations à propos du workflow en cours, de l'environnement d'exécution ou des précédents `jobs` et `steps` exécutés.
-> Attention, comme précisé dans la documentation, les contextes **peuvent être manipulés et doivent être traités comme sources d'information pouvant contenir des informations malicieuses**
+> Attention, comme précisé dans la documentation, les contextes **peuvent être manipulés et doivent être traités comme sources pouvant contenir des informations malicieuses**
 
 L'accès à ces informations se fait au travers de la syntaxe `${{ context }}`. Je ne vais pas en parler directement dans cet article, car la documentation en parlera probablement mieux que moi et qu'il y a beaucoup de chose à dire dessus. Voici les deux pages de documentation que je vous conseille si vous voulez approfondir ce sujet :
 
@@ -196,12 +194,12 @@ L'accès à ces informations se fait au travers de la syntaxe `${{ context }}`. 
 
 ### Définitions des steps
 
-On a vu précédemment les deux façons d'écrire des `step` ; il est donc temps de revenir sur notre workflow. Mais juste avant, tout comme les `workflows` et les `jobs`, les `steps` on quelques champs optionnels que voici :
+On a vu précédemment les deux façons d'écrire des `step` ; il est donc temps de revenir sur notre workflow. Mais juste avant, tout comme les `workflows` et les `jobs`, les `steps` ont quelques champs optionnels que voici :
 
 - Des conditions (`if`)
 - Ajouter des variables d'environnement (`env`).
   _Je ne l'ai pas précisé avant, mais il est également possible de faire ça au niveau d'un `job` complet ou même du workflow._
-- Ajouter un identifiant à un `step` (`id`). Cela permet de pouvoir utiliser les retours d'un `action` depuis le contexte, ou d'avoir une condition sur l'état d'exécution d'un `step` précédent.
+- Ajouter un identifiant à un `step` (`id`). Cela permet de pouvoir utiliser les retours d'une `action` depuis le contexte, ou d'avoir une condition sur l'état d'exécution d'un `step` précédent.
 
 Il y en quelques autres qu'on ne verra pas dans cet article. Mais comme toujours, la documentation officielle est très bien fournie.
 
@@ -220,9 +218,9 @@ Voici donc les différentes étapes :
 - On initialise Terraform (requis pour le terraform validate)
     - `run: terraform init -no-color -backend=false`
         - On utilise `-backend=false` ici, car on ne fait le `init` ici que pour télécharger toutes les dépendances requises pour le `terraform validate`
-- On vérifie que la syntaxe des fichiers Terraform soit bonne
+- On vérifie que la syntaxe des fichiers Terraform est bonne
     - `run: terraform validate -no-color`
-- On vérifie que les fichiers Terraform soient bien formatés
+- On vérifie que les fichiers Terraform sont bien formatés
     - `run: terraform fmt -check -recursive -diff -no-color .`
 
 {% endraw %}
@@ -352,11 +350,11 @@ Avant de conclure cet article, j'aimerais partager avec vous ces quelques bonnes
    Par exemple, au lieu de faire `uses: actions/checkout@v2`, faites plutôt `uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579`.
    Cela permet d'être toujours sûr de savoir quelle version du code on utilise et ainsi de faciliter l'audit dessus.
 2. Si possible, vérifier le code source d'une action avant de l'utiliser, toujours pour réduire au mieux les possibles risques de sécurité.
-3. Ne pas utiliser de secret en clair dans la définition des workflows. À la place, il faut utiliser la gestion de secret dans Github en utilisant la syntaxe `${{ secret.NOM_DU_SECRET }}`. La définition des secrets se fait dans la configuration du repository ou dans celle de l'organisation (pour des secrets partagés entre plusieurs repos d'une organisation)
+3. Ne pas utiliser de secret en clair dans la définition des workflows. À la place, il faut utiliser la gestion de secrets dans Github en utilisant la syntaxe `${{ secret.NOM_DU_SECRET }}`. La définition des secrets se fait dans la configuration du repository ou dans celle de l'organisation (pour des secrets partagés entre plusieurs repos d'une organisation)
 
 ## Conclusion
 
-Nous avons pu construire notre premier workflow tout au long de cet article, en voyant les différents concepts que sont les `workflows`, les `jobs` ainsi que les `steps`. Nous avons fait un tour rapide de la syntaxe de chacun et parlé des quelques bonnes pratiques. Mais malgré cela, nous n'avons qu'effleuré la surface des possibilités (et de la complexité) des Github Actions et il reste tant de choses à voir, comme son utilisation pour la gestion des tickets par exemple (attribuer des étiquettes automatiquement, fermer des issues/PRs trop anciennes, …).
+Nous avons pu construire notre premier workflow tout au long de cet article, en voyant les différents concepts que sont les `workflows`, les `jobs` ainsi que les `steps`. Nous avons fait un tour rapide de la syntaxe de chacun et parlé des quelques bonnes pratiques. Mais malgré cela, nous n'avons qu'effleuré la surface des possibilités (et de la complexité) des Github Actions et il reste tant de choses à voir, comme son utilisation pour la gestion des tickets par exemple (attribuer des étiquettes automatiquement, fermer des issues/PRs trop anciennes...).
 
 ## BONUS : un petit commentaire dans la PR ?
 
