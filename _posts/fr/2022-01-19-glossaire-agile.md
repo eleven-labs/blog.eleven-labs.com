@@ -19,5 +19,5 @@ Débutant ou expert, il est toujours utile de l'avoir à disposition, pour appre
 <p align="center">
   <a href="https://bit.ly/glossaire-agile">Pour télécharger le glossaire, cliquez ici</a>
   <br>
-  <img src="{{site.baseurl}}/assets/2021-09-22-glossaire-agile/glossaireagile.jpg">
+  <img src="{{site.baseurl}}/assets/2022-01-19-glossaire-agile/glossaireagile.jpg">
 </p>
