@@ -14,14 +14,15 @@ tags:
     - JamStack
 ---
 
-This post is about the NextJS basics and a guide to building a simple website with this framework.
+This post is about the NextJS basics and a guide to build a simple website with this framework.
 
 ## What is NextJS
 
-NextJS is a production-grade React framework. It permits the creation of all kinds of React applications. Especially its support for hybrid static (SSG) and server-side components rendering (SSR). Finally, it is hostable on multiple hosting types from a simple web server (for SSG) or serves your app with NextJS server for server-side rendering (SSR).
-But this framework is for building a web application with some user interfaces. Why create a website with NextJS?
+NextJS is a production-grade React framework. It permits the creation of all kinds of React applications, especially hybrid ones with static (SSG) and server-side components rendering (SSR). It is hostable on multiple hosting types, from a simple web server (for SSG) to a Node.js server for server-side rendering (SSR).
 
-## Why you should construct your website with NextJS
+A questio come, Why should I use NextJS to create my website?
+
+## Why you should build your website with NextJS
 
 Let’s see a few pros on why construct a website with the NextJS framework:
 
@@ -41,16 +42,14 @@ First, install NextJS and start the project.
 
 To create a project, use the create-next-app package.
 
-* install NextJS project:
-
 ```shell
 npx create-next-app astroteams
 ```
 
-* Or clone the git repo example and checkout the get-started branch:
+* You can also clone the git repository of this tutorial:
 
 ```shell
-git clone <repo>
+git clone https://gitlab.com/Tonypunisher/astroteams.git
 git checkout get-started
 ```
 
@@ -58,13 +57,10 @@ git checkout get-started
 
 ### Create the index page
 
-First, create the index page of the website, like a static website the index page is in `src/pages/index.js.
+To start, delete the `src/pages/index.js` content, to start from a blank page and not with the NextJS welcome page.
+Now, we need to build our website layout, let's create a reusable React component and integrate it in the global NextJS App component to see it in each generated pages.
 
 > **Note**: all website pages are in the `src/pages` folder.
-
-To start, delete the index.js content, to start from a blank page and not with the NextJS welcome page.
-
-Now, we need to build our website layout, let's create a reusable React component and integrate it in the global NextJS App component to see it in each generated pages.
 
 ### Construct a layout
 
@@ -83,7 +79,7 @@ touch src/components/index.js
 touch src/components/Layout.module.css
 ```
 
-* Let's add the Layout HTML code and add some styling to it:
+Let's add the Layout HTML code and add some styling to it:
 
 `src/components/Layout.js`
 ```js
@@ -169,11 +165,11 @@ Now, each page generated from the pages folder, add the Layout, we can see it in
 
 ![astro teams layout](assets/2022-01-26-build-website-with-nextjs/website-layout.png)
 
-Now, just add the HTML content for the index page.
+Now, we will add the HTML content for the index page.
 
 ### Create the index page content
 
-* Just add HTML content with a JSX template to have the page content:
+Just add HTML content with a JSX template to have the page content:
 
 ```js
 // Libs
@@ -233,7 +229,7 @@ export default function Home() {
 
 ![Website Home Page](assets/2022-01-26-build-website-with-nextjs/homepage.png)
 
-The index.js and Layout.js components contain redirections to other website pages, but they don't exist yet. Let's learn how to create these pages NextJS.
+The `src/pages/index.js` and `src/components/Layout.js` components contain redirections to other website pages, but they don't exist yet. Let's learn how to create these pages NextJS.
 
 ### Create a simple static page
 
@@ -280,11 +276,11 @@ export default function Contact() {
 
 ![Contact Page](assets/2022-01-26-build-website-with-nextjs/contactpage.png)
 
-Now we have a contact page. The website needs one page for each astronaut's team. To do that, create a route with the team name as a parameter.
+Now we have a contact page. The website needs one page for each astronaut's team. To do that, we will create a route with the team name as a parameter.
 
 ### Create a page/route with a parameter
 
-The NextJS router permits the creation of routes with parameters, like react-router. To do that, we have to create a file with a specific name pattern. To create a `/<teamname>` route, we need create a `src/pages/[team].js` file.
+The NextJS router permits the creation of routes with parameters, like react-router. To do that, we have to create a file with a specific name pattern. To create a `/<teamname>` route, we need to create a `src/pages/[team].js` file.
 
 Now we have our page with the team name as a parameter. To parse this parameter and pass it as a prop of the page/container, we need to create two functions:
 
@@ -352,14 +348,14 @@ We pass our props to a component to render the page content. Now if you click on
 
 ![Team Page](assets/2022-01-26-build-website-with-nextjs/teampage.png)
 
-Now we have a website ready to be published. Now, let's have a return of experience about building this website.
+Now we have a website ready to be published. Now, let's sum up feedback about building this website.
 
-## Return of experience
+## Feedback
 
-Let's see some comments about building this website example:
+ere's what we learned building this small website:
 
-* * Easy to init: the project is super easy to init with create-next-app and, it is ready to construct, build and deploy with any additional configurations.
-Comes with tooling: the project comes with some tooling like pre-configured Eslint configurations or some pre-configured npm scripts. The Eslint configuration can be better but, it is a good starting point.
-* React: It is easy to construct with the power of React components if you know it for sure. Moreover, you can construct a lot of reusable things across your website. Finally, if you need it, you can also take some React components from npm and use them on your website.
+* Easy to init: the project is super easy to init with create-next-app and is ready to be built and deployed without any additional configurations.
+* Comes with tooling: the project comes with some tooling like pre-configured Eslint configurations or some pre-configured npm scripts. The Eslint configuration can be better but, it is a good starting point.
+* React: It is easy to build with the power of React components if you know it for sure. Moreover, you can build a lot of reusable things across your website. Finally, if you need it, you can also take some React components from npm and use them on your website.
 * Build and deploy: it is easy to build and deploy because with SSG you can deploy your website on any simple HTTP server.
 * Optimization: NextJS automatically make some optimizations on your website loading and your assets to improve performance and also SEO.
