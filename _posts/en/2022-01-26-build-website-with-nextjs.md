@@ -20,7 +20,7 @@ This post is about the NextJS basics and a guide to build a simple website with 
 
 NextJS is a production-grade React framework. It permits the creation of all kinds of React applications, especially hybrid ones with static (SSG) and server-side components rendering (SSR). It is hostable on multiple hosting types, from a simple web server (for SSG) to a Node.js server for server-side rendering (SSR).
 
-A questio come, Why should I use NextJS to create my website?
+A question come: Why should I use NextJS to create my website?
 
 ## Why you should build your website with NextJS
 
@@ -34,7 +34,7 @@ Now, we will learn how to build a website with NextJS. We’ll see the basics of
 
 ## Project example: AstroTeams
 
-Let’s build a website about the astronauts' teams of eleven labs.
+Let’s build a website about the astronauts' teams of Eleven Labs.
 
 First, install NextJS and start the project.
 
@@ -229,7 +229,7 @@ export default function Home() {
 
 ![Website Home Page](assets/2022-01-26-build-website-with-nextjs/homepage.png)
 
-The `src/pages/index.js` and `src/components/Layout.js` components contain redirections to other website pages, but they don't exist yet. Let's learn how to create these pages NextJS.
+The `src/pages/index.js` and `src/components/Layout.js` components contain redirections to other website pages, but they don't exist yet. Let's learn how to create these pages with NextJS.
 
 ### Create a simple static page
 
@@ -352,7 +352,7 @@ Now we have a website ready to be published. Now, let's sum up feedback about bu
 
 ## Feedback
 
-ere's what we learned building this small website:
+Here's what we learned building this small website:
 
 * Easy to init: the project is super easy to init with create-next-app and is ready to be built and deployed without any additional configurations.
 * Comes with tooling: the project comes with some tooling like pre-configured Eslint configurations or some pre-configured npm scripts. The Eslint configuration can be better but, it is a good starting point.
