@@ -40,48 +40,50 @@ First, install NextJS and start the project.
 
 ### NextJS Installation
 
-To create a project, use the create-next-app package.
+To follow this tutorial, you need to clone the git example repository. We will construct the website page and learn how NextJS works. We will not construct the website pages content.
 
-```shell
-npx create-next-app astroteams
-```
+The repo contains all the components needed to construct the pages content. All reusable components are in `components` folder.
 
-* You can also clone the git repository of this tutorial:
+Clone the repo and checkout to the get-started branch:
 
 ```shell
 git clone https://gitlab.com/Tonypunisher/astroteams.git
 git checkout get-started
 ```
 
-> **Note**: the branch contains all the components needed to construct the pages. All reusable components are in the src/components folder.
+
+> **Note**: To create a project from scratch, use the create-next-app package.
+> ```shell
+> npx create-next-app astroteams
+> ```
 
 ### Create the index page
 
-To start, delete the `src/pages/index.js` content, to start from a blank page and not with the NextJS welcome page.
+To start, delete the `pages/index.js` content, to start from a blank page and not with the NextJS welcome page.
 Now, we need to build our website layout, let's create a reusable React component and integrate it in the global NextJS App component to see it in each generated pages.
 
-> **Note**: all website pages are in the `src/pages` folder.
+> **Note**: all website pages are in the `pages` folder.
 
 ### Construct a layout
 
-First, create a components folder in the `src` folder:
+First, create a components folder in the root folder:
 
 ```shell
-mkdir src/components
+mkdir components
 ```
 
 Create the Layout component folder tree:
 
 ```shell
-mkdir src/components/Layout
-touch src/components/Layout/Layout.js
-touch src/components/index.js
-touch src/components/Layout.module.css
+mkdir components/Layout
+touch components/Layout/Layout.js
+touch components/index.js
+touch components/Layout.module.css
 ```
 
 Let's add the Layout HTML code and add some styling to it:
 
-`src/components/Layout.js`
+`components/Layout.js`
 ```js
 // Libs
 import PropTypes from "prop-types"
@@ -145,7 +147,7 @@ Layout.propTypes = {
 
 > **Note**: don't forget to add the styling in the CSS module. Also, export your component in the index.js.
 
-Now, add the component to the `src/pages/_app.js`:
+Now, add the component to the `pages/_app.js`:
 
 ```js
 // Components
@@ -225,21 +227,21 @@ export default function Home() {
 }
 ```
 
-> **Note**: don't forget to add the CSS rules. They are in the `src/styles/Home.module.css. All CSS modules for pages are in this folder.
+> **Note**: don't forget to add the CSS rules. They are in the `styles/Home.module.css. All CSS modules for pages are in this folder.
 
 ![Website Home Page](assets/2022-01-26-build-website-with-nextjs/homepage.png)
 
-The `src/pages/index.js` and `src/components/Layout.js` components contain redirections to other website pages, but they don't exist yet. Let's learn how to create these pages with NextJS.
+The `pages/index.js` and `components/Layout.js` components contain redirections to other website pages, but they don't exist yet. Let's learn how to create these pages with NextJS.
 
 ### Create a simple static page
 
 First, we need a static page for contact. Static means the page/container doesn't receive any parameter. To create a `/contact` page, add a contact.js file with a React component returning an empty div. NextJS router will automatically create the page:
 
 ```shell
-touch src/pages/contact.js
+touch pages/contact.js
 ```
 
-`src/pages/contact.js`:
+`pages/contact.js`:
 ```js
 // Components
 import { PageCard } from "../components/PageCard"
@@ -280,7 +282,7 @@ Now we have a contact page. The website needs one page for each astronaut's team
 
 ### Create a page/route with a parameter
 
-The NextJS router permits the creation of routes with parameters, like react-router. To do that, we have to create a file with a specific name pattern. To create a `/<teamname>` route, we need to create a `src/pages/[team].js` file.
+The NextJS router permits the creation of routes with parameters, like react-router. To do that, we have to create a file with a specific name pattern. To create a `/<teamname>` route, we need to create a `pages/[team].js` file.
 
 Now we have our page with the team name as a parameter. To parse this parameter and pass it as a prop of the page/container, we need to create two functions:
 
@@ -289,7 +291,7 @@ Now we have our page with the team name as a parameter. To parse this parameter 
 
 Before adding these functions, let’s add the dynamic content for each page into a JSON file for our example:
 
-`src/pages/api/teams.json`:
+`pages/api/teams.json`:
 ```json
 [
     { "name": "schizo-cats", "teamName": "Schizo Cats", "teamDescription": "Crazy cats from the kitty planet.", "teamImagePath": "/cats-logo.png", "teamPlanetPath": "/planet-skizo.png", "teamCounter": 25, "teamPosition": "3rd" },
@@ -301,7 +303,7 @@ Before adding these functions, let’s add the dynamic content for each page int
 
 Let’s implement the getStaticPath based on the JSON data:
 
-`src/pages/[team].js`:
+`pages/[team].js`:
 ```js
 export async function getStaticPaths() {
     const paths = teamsData.map(team => {
@@ -318,7 +320,7 @@ This function parses an array of pathnames based on the teams' names and returns
 
 Now we can parse the props for the team page:
 
-`src/pages/[team].js`
+`pages/[team].js`
 ```js
 export function getStaticProps({ params }) {
     const { teamName, teamDescription, teamImagePath, teamPlanetPath, teamCounter, teamPosition } = teamsData.find(team => team.name === params.team)
@@ -329,7 +331,7 @@ export function getStaticProps({ params }) {
 
 We find the content from the JSON file and construct the page props. Now let's create the page content:
 
-`src/pages/[team].js`:
+`pages/[team].js`:
 ```js
 export default function Team({ teamName, teamDescription, teamImagePath, teamPlanetPath, teamCounter, teamPosition }) {
     return <TeamCard
