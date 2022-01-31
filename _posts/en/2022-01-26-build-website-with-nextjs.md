@@ -3,15 +3,10 @@ layout: post
 title: How To Build Your Website With NextJS
 excerpt: Tutorial on the basics of NextJS for building a website.
 authors:
-- aamara
-permalink: /en/how-to-build-your-website-with-nextjs
+    - aamara
+permalink: /en/how-to-build-your-website-with-nextjs/
 categories:
     - Javascript
-    - React
-tags:
-    - React
-    - NextJS
-    - JamStack
 ---
 
 This post is about the NextJS basics and a guide to build a simple website with this framework.
@@ -24,11 +19,11 @@ A question come: Why should I use NextJS to create my website?
 
 ## Why you should build your website with NextJS
 
-Let’s see a few pros on why construct a website with the NextJS framework:
+Let’s see a few pros of constructing a website with the NextJS framework:
 
 * React: it is a powerful component-oriented framework to construct a great UI or website. Moreover, if you are a React developer, you will not be lost and be productive on the website development.
 * You can generate static assets and easily host them on a simple HTTP server or in a static host like AWS S3.
-* It is easy to install. It comes with all tools to develop already configured. You can quickly start your development.
+* It is easy to install. All the included developing tools are already configured. You can quickly start your development.
 
 Now, we will learn how to build a website with NextJS. We’ll see the basics of the framework.
 
@@ -59,7 +54,7 @@ git checkout get-started
 
 ### Create the index page
 
-To start, delete the `pages/index.js` content, to start from a blank page and not with the NextJS welcome page.
+First of all, delete the `pages/index.js` content, to start from a blank page and not with the NextJS welcome page.
 Now, we need to build our website layout, let's create a reusable React component and integrate it in the global NextJS App component to see it in each generated pages.
 
 > **Note**: all website pages are in the `pages` folder.
@@ -163,11 +158,11 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 ```
 
-Now, each page generated from the pages folder, add the Layout, we can see it in our index page:
+Now, each page generated from the pages folder uses the Layout, as we can see in our index page:
 
 ![astro teams layout](assets/2022-01-26-build-website-with-nextjs/website-layout.png)
 
-Now, we will add the HTML content for the index page.
+Let's add the HTML content for the index page.
 
 ### Create the index page content
 
@@ -253,7 +248,7 @@ export default function Contact() {
 }
 ```
 
-Now we have an empty page for `/contact`. Just add the content and, it is done:
+Now we have an empty page for `/contact`. Just add the content and it is done:
 
 ```js
 // Components
@@ -350,14 +345,14 @@ We pass our props to a component to render the page content. Now if you click on
 
 ![Team Page](assets/2022-01-26-build-website-with-nextjs/teampage.png)
 
-Now we have a website ready to be published. Now, let's sum up feedback about building this website.
+Our website is finally ready to be published. To conclude this article, let's sum up some feedback about building this website.
 
 ## Feedback
 
-Here's what we learned building this small website:
+Here's what we've learned building this small website:
 
 * Easy to init: the project is super easy to init with create-next-app and is ready to be built and deployed without any additional configurations.
-* Comes with tooling: the project comes with some tooling like pre-configured Eslint configurations or some pre-configured npm scripts. The Eslint configuration can be better but, it is a good starting point.
+* Comes with tooling: the project comes with some tooling like pre-configured ESLint configurations or some pre-configured npm scripts. The ESLint configuration can be better but, it is a good starting point.
 * React: It is easy to build with the power of React components if you know it for sure. Moreover, you can build a lot of reusable things across your website. Finally, if you need it, you can also take some React components from npm and use them on your website.
 * Build and deploy: it is easy to build and deploy because with SSG you can deploy your website on any simple HTTP server.
 * Optimization: NextJS automatically make some optimizations on your website loading and your assets to improve performance and also SEO.
