@@ -4,7 +4,7 @@ title: How To Build Your Website With NextJS
 excerpt: Tutorial on the basics of NextJS for building a website.
 authors:
     - aamara
-permalink: /en/how-to-build-your-website-with-nextjs/
+permalink: /how-to-build-your-website-with-nextjs/
 categories:
     - Javascript
 ---
