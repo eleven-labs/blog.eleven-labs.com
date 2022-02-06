@@ -160,7 +160,7 @@ export default MyApp
 
 Chaque page générée utilise notre Layout. On peut le constater sur la page d'accueil :
 
-![astro teams layout](assets/2022-01-26-build-website-with-nextjs/website-layout.png)
+![astro teams layout]({{ site.baseurl }}/assets/2022-01-26-build-website-with-nextjs/website-layout.png)
 
 Il nous reste à ajouter le contenu de la page d'accueil.
 
@@ -224,7 +224,7 @@ export default function Home() {
 
 > **Note** : Ne pas oublier d'ajouter les règles CSS. Le fichier correspondant est `styles/home.module Css`. L'ensemble des modules CSS pour les pages est stocké dans ce dossier.
 
-![Website Home Page](assets/2022-01-26-build-website-with-nextjs/homepage.png)
+![Website Home Page]({{ site.baseurl }}/assets/2022-01-26-build-website-with-nextjs/homepage.png)
 
 Les composants `pages/index js` et `components/Layout js` contiennent des redirections vers d'autres pages, qui n'existent pas pour l'instant. Nous allons apprendre comment créer ces pages avec NextJS.
 
@@ -271,7 +271,7 @@ export default function Contact() {
 }
 ```
 
-![Contact Page](assets/2022-01-26-build-website-with-nextjs/contactpage.png)
+![Contact Page]({{ site.baseurl }}/assets/2022-01-26-build-website-with-nextjs/contactpage.png)
 
 Maintenant que nous avons une page de contact, il nous faut une page par équipe. Pour ça, on va créer une seule page avec le nom de l'équipe en paramètre.
 
@@ -341,7 +341,7 @@ export default function Team({ teamName, teamDescription, teamImagePath, teamPla
 ```
 Ici on passe nos propos à un composant qui rend les éléments de la page. Dorénavant, si on clique sur le bouton "read more", on verra la page de détails d'une équipe.
 
-![Team Page](assets/2022-01-26-build-website-with-nextjs/teampage.png)
+![Team Page]({{ site.baseurl }}/assets/2022-01-26-build-website-with-nextjs/teampage.png)
 
 Nous avons maintenant un site web prêt à être mis en production.
 
