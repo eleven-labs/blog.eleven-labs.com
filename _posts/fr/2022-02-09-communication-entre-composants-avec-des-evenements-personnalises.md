@@ -5,7 +5,7 @@ excerpt: Besoin de travailler avec différents Framework JS et donc de faire com
 authors:
     - fpasquet
 lang: fr
-permalink: /fr/communication-entre-composants-avec-des-evenements-personnalises
+permalink: /fr/communication-entre-composants-avec-des-evenements-personnalises/
 categories:
     - javascript
 tags:
