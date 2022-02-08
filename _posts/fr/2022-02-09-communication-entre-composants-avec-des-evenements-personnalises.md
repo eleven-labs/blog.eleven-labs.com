@@ -136,7 +136,7 @@ Ce hook expose la liste des produits dans le panier ainsi que son prix total mai
 - La mise à jour du panier (`updateCart`)
 
 Pour cela, l'événement `updateCart` est écouté via le `useEffect` qui déclenche la méthode `onUpdateCart`.
-Cette méthode ajoute ou modifie la quantité d'un produit dans le panier. Il est préférable de mémoïsée la fonction à l'aide de `useCallback` pour éviter des rendus superflus.
+Cette méthode ajoute ou modifie la quantité d'un produit dans le panier. Il est préférable de [mémoïser](https://fr.wikipedia.org/wiki/M%C3%A9mo%C3%AFsation) la fonction à l'aide de `useCallback` pour éviter des rendus superflus.
 A noter que dans le `useEffect`, l'écouteur est supprimé à chaque changement de la méthode `onUpdateCart`. Ceci est appliqué à tous les `useEffect` de l'exemple.
 
 - La suppression du panier (`clearCart`)  
