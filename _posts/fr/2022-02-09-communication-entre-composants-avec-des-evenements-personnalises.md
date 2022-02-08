@@ -8,26 +8,19 @@ lang: fr
 permalink: /fr/communication-entre-composants-avec-des-evenements-personnalises/
 categories:
     - javascript
-tags:
-    - javascript
-    - typescript
-    - react
-    - custom event
-    - event bus
 ---
 
 Besoin de travailler avec différents Framework JS et donc de faire communiquer l'ensemble des composants d'une application ?
-
 Une des solutions qui s'offre à vous est de faire appel aux événements personnalisés, natifs aux navigateurs. À découvrir dans cet article.
 
 ---
 
 ## Événements personnalisés, kesako ?
 
-Ils sont identiques aux événements classiques tels que `click`, `submit`, `focus` ..., sauf qu'ils sont créés manuellement.
+Ils sont identiques aux événements classiques tels que `click`, `submit`, `focus`..., sauf qu'ils sont créés manuellement.
 Il existe deux possibilités pour créer un événement personnalisé, soit en utilisant [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) (si besoin de passer des données) soit en faisant simplement appel à `Event`.
 
-Dans l'exemple ci-dessous, la fonction permet de créer l'événement personnalisé:
+Dans l'exemple ci-dessous, la fonction permet de créer l'événement personnalisé :
 ```ts
 const createCustomEvent = function <TData = { [key: string]: string }>(
   eventName: string,
@@ -55,7 +48,7 @@ if (customEventCount) {
 }
 ```
 
-Et dernière étape, il faudra écouter ces événements et implémenter la logique:
+Et dernière étape, il faudra écouter ces événements et implémenter la logique :
 ```tsx
 const open = () => {};
 const count = ({ detail: { count } }: CustomEvent<{ count: number }>): void => {};
@@ -63,13 +56,13 @@ document.addEventListener("open", open);
 document.addEventListener("count", count as EventListener);
 ```
 
-Il faut bien penser à nettoyer et supprimer les écouteurs d'événements quand cela est nécessaire, voir exemple ci-dessous:
+Il faut bien penser à nettoyer et supprimer les écouteurs d'événements quand cela est nécessaire, voir exemple ci-dessous :
 ```ts
 document.removeEventListener("open", open);
 document.removeEventListener("count", count as EventListener);
 ```
 
-Par ailleurs, une façon de s'assurer que les écouteurs d'événements soient bien présents et qu'ils n'aient pas été attachés plusieurs fois à la page web est de vérifier cela à l'aide des outils de développement Chrome. Voici à quoi cela peut ressembler:
+Par ailleurs, une façon de s'assurer que les écouteurs d'événements sont bien présents et qu'ils n'ont pas été attachés plusieurs fois à la page web est de vérifier cela à l'aide des outils de développement Chrome. Voici à quoi cela peut ressembler :
 
 ![Outils de développement pour événements personnalisé sur Chrome]({{ site.baseurl }}/assets/2022-02-09-communication-entre-composants-avec-des-evenements-personnalises/event-listeners-on-chrome.png)
 
@@ -131,13 +124,13 @@ export const App: React.FC = () => {
 
 Tous ces conteneurs sont totalement indépendants et communiquent via un système de bus d'événements par le biais du hook `useCart`.
 
-Ce hook expose la liste des produits dans le panier ainsi que son prix total mais aussi les trois méthodes et événements personnalisés:
+Ce hook expose la liste des produits dans le panier ainsi que son prix total mais aussi les trois méthodes et événements personnalisés :
 
 - La mise à jour du panier (`updateCart`)
 
 Pour cela, l'événement `updateCart` est écouté via le `useEffect` qui déclenche la méthode `onUpdateCart`.
 Cette méthode ajoute ou modifie la quantité d'un produit dans le panier. Il est préférable de [mémoïser](https://fr.wikipedia.org/wiki/M%C3%A9mo%C3%AFsation) la fonction à l'aide de `useCallback` pour éviter des rendus superflus.
-A noter que dans le `useEffect`, l'écouteur est supprimé à chaque changement de la méthode `onUpdateCart`. Ceci est appliqué à tous les `useEffect` de l'exemple.
+À noter que dans le `useEffect`, l'écouteur est supprimé à chaque changement de la méthode `onUpdateCart`. Ceci est appliqué à tous les `useEffect` de l'exemple.
 
 - La suppression du panier (`clearCart`)  
 - Et l'ouverture de ce panier (`openCart`)
@@ -289,7 +282,5 @@ export const CartContainer: React.FC = () => {
 ```
 
 Cette logique peut être appliquée à tout type de projet, peu importe le framework JS. 
-
 Le rendu final de l'application, est disponible [ici](https://example-react-app-with-custom-events-fpasquet.vercel.app/).
-
-Et le code est accessible [ici](https://github.com/fpasquet/example-react-app-with-custom-events).
+Le code est accessible [ici](https://github.com/fpasquet/example-react-app-with-custom-events).
