@@ -48,6 +48,8 @@ if (customEventCount) {
 }
 ```
 
+> `document` est utilisé comme gestionnaire d'événements unique pour tous les événements personnalisés, car il centralise toutes les méthodes d'événement et dissocie les événements personnalisés des nœuds spécifiques de la page.
+
 Et dernière étape, il faudra écouter ces événements et implémenter la logique :
 ```tsx
 const open = () => {};
@@ -281,6 +283,9 @@ export const CartContainer: React.FC = () => {
 }
 ```
 
-Cette logique peut être appliquée à tout type de projet, peu importe le framework JS. 
 Le rendu final de l'application, est disponible [ici](https://example-react-app-with-custom-events-fpasquet.vercel.app/).
 Le code est accessible [ici](https://github.com/fpasquet/example-react-app-with-custom-events).
+
+Les événements personnalisés sont très appréciés des feature teams mais aussi des projets ayant une architecture micro frontend, car ils peuvent être indépendants les uns des autres et aussi agnostiques au framework JS.
+
+À bientôt !
