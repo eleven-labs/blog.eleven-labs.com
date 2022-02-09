@@ -34,7 +34,7 @@ const createCustomEvent = function <TData = { [key: string]: string }>(
 };
 ```
 
-A présent, il suffit simplement d'envoyer les événements personnalisés:
+À présent, il suffit simplement d'envoyer les événements personnalisés:
 ```ts
 const customEvenOpen = createCustomEvent("open");
 const customEventCount = createCustomEvent<{ count: number }>("count", {
