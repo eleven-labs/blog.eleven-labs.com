@@ -181,7 +181,7 @@ Nous allons créer et ajouter un Groupes de sécurité réseau. C'est l'équival
    7. Vous avez ici les règles par défaut affichées **(1)**
    8. Cliquez sur 'Règle de sécurité de trafic entrant **(2)**
 
-   ![NSG rules]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSGR.png)
+   ![NSG rules]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSGRR.png)
 
    9. Cliquez sur 'Ajouter'**(1)**
    10. Entrez en source 'Any'**(2)**
