@@ -192,7 +192,7 @@ Nous allons créer et ajouter un Groupes de sécurité réseau. C'est l'équival
 
  1. Dans l'onglet de recherche, entrez 'machine virtuelle'**(1)**
  2. Selectionnez 'Machines Virtuelles' **(2)**
- 3. Cliquez sur 'Créer' (3) **(3)**
+ 3. Cliquez sur 'Créer' **(3)**
 
    ![VM]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/MV.png)
 
@@ -231,11 +231,14 @@ Pour terminer ce tutoriel, supprimez vos ressources
 3. Entrez vos information de connections. 
 4. Utiliser le script pour supprimer vos ressources une par une. (par exemple ici une machine virtuelle)
 ```
-az resource delete \ --resource-group eleven_article \ --name eleven-article-vm \ --resource-type  "Microsoft.Compute/virtualMachines"
+az resource delete  
+ --resource-group article_eleven 
+ --name article-eleven-vm  
+ --resource-type  "Microsoft.Compute/virtualMachines"
 ```
 5. Supprimer maintenant votre Groupe de ressource.
 ```
-az group delete --name eleven_article
+az group delete --name article_eleven
 ```
 > Le nom 'azureuser' est le nom par défault de l'utilisateur de machine virtuelle Azure. Comme nous ne l'avons pas changé pendant notre installation, nous l'utilisons donc.
 
