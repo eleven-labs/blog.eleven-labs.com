@@ -114,26 +114,18 @@ Nous avons donc :
 
 Voici un **schéma** qui résume l'ensemble : 
 
-```mermaid
-graph TD; 
-A(Groupe de management) --> B[Abonnement];
-A --> C[Abonnement];
-B --> D[Groupe de ressource];
-B --> E[Groupe de ressource];
-C --> F[Groupe de ressource];
-F --> G[Application Web];
-F --> H[Machine virtuelle];
-```
+![Organisation]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/ORG.png)
+
 #### Votre première machine virtuelle
 
 Pour ce premier tutoriel, nous allons  effectuer les étapes suivantes : 
 
    - Vérifier la présence d'un abonnement,
-    - Créer votre premier groupe de ressource,
-    - Créer votre premier Groupes de sécurité réseau,
-    - Créer votre première machine virtuelle,
-    - Tester la connexion,
-    - Supprimer les ressources.
+   - Créer votre premier groupe de ressource,
+   - Créer votre premier Groupes de sécurité réseau,
+   - Créer votre première machine virtuelle,
+   - Tester la connexion,
+   - Supprimer les ressources.
 
 Reprenons notre compte fraîchement crée. 
 
@@ -173,23 +165,22 @@ Nous allons créer et ajouter un Groupes de sécurité réseau. C'est l'équival
    ![NSG]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSG.png)
    
  4. Entre le nom du groupes de sécurité réseau **(1)**
- 5. Vérifier que la région est bien en 'France'. **(1)**
- 6. Cliquez sur 'Vérifier + Créer' **(3)**
+ 5. Cliquez sur 'Vérifier + Créer' **(2)**
 
    ![NSG configuration]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSGC.png)
 
-   7. Vous avez ici les règles par défaut affichées **(1)**
-   8. Cliquez sur 'Règle de sécurité de trafic entrant **(2)**
+ 6. Vous avez ici les règles par défaut affichées **(1)**
+ 7. Cliquez sur 'Règle de sécurité de trafic entrant **(2)**
 
    ![NSG rules]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSGRR.png)
 
-   9. Cliquez sur 'Ajouter'**(1)**
-   10. Entrez en source 'Any'**(2)**
-   11. Entrez en plage de port source **(3)**
-   12. Entrez en destination 'Any'**(4)**
-   13. Entrez en Service 'SSH' **(5)**
-   14. Cochez 'Autoriser' **(6)**
-   15. Entrez le nombre pour la priorité **(7)** 
+ 8. Cliquez sur 'Ajouter'**(1)**
+ 9. Entrez en source 'Any'**(2)**
+ 10. Entrez en plage de port source **(3)**
+ 11. Entrez en destination 'Any'**(4)**
+ 12. Entrez en Service 'SSH' **(5)**
+ 13. Cochez 'Autoriser' **(6)**
+ 14. Entrez le nombre pour la priorité **(7)** 
  
  ![NSG add port]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSGM.png)
 
@@ -230,7 +221,7 @@ Nous allons maintenant vérifier la connexion à la machine virtuelle.
 1. Lors de la création, Azure vous créera une clé. Enregistrez celle ci et placer là dans votre répertoire de clé.
 2.  Allez sur 'machine virtuelle' comme vu plus haut, vous verrez votre nouvelle machine. 
 3. Selectionner votre machine, et copiez votre adresse IP.
-4. Entrez la commande : _ssh -i [votre-clé].pem [votre-user]@[votre-IP]_
+4. Entrez la commande : _ssh -i [votre-clé].pem azureuser@[votre-IP]_
 
 ##### Suppresion des ressources
 
@@ -240,12 +231,13 @@ Pour terminer ce tutoriel, supprimez vos ressources
 3. Entrez vos information de connections. 
 4. Utiliser le script pour supprimer vos ressources une par une. (par exemple ici une machine virtuelle)
 ```
-az resource delete \ --resource-group ExampleResourceGroup \ --name ExampleVM \ --resource-type  "Microsoft.Compute/virtualMachines"
+az resource delete \ --resource-group eleven_article \ --name eleven-article-vm \ --resource-type  "Microsoft.Compute/virtualMachines"
 ```
 5. Supprimer maintenant votre Groupe de ressource.
 ```
-az group delete --name ExampleResourceGroup
+az group delete --name eleven_article
 ```
+> Le nom 'azureuser' est le nom par défault de l'utilisateur de machine virtuelle Azure. Comme nous ne l'avons pas changé pendant notre installation, nous l'utilisons donc.
 
 ## Le mot de la fin 
 
