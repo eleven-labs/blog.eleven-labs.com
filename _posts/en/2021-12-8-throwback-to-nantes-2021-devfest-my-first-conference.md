@@ -12,7 +12,7 @@ categories:
 
 ![DevFest Nantes 2021's logo]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/devfest-logo.png)
 
-Finally! After 4 years of working as a web developer, I finally attended a conference linked to my job & passion: the [\*DevFest Nantes](https://devfest2021.gdgnantes.com).
+Finally! After 4 years of working as a web developer, I finally attended a conference linked to my job & passion: the [DevFest Nantes](https://devfest2021.gdgnantes.com).
 
 For the 9th edition, which took place on 21 & 22 of October, the theme was street art. Both the Google Developer Group (GDG) of Nantes and his partners on the event did a great job and the final result was stunning ! Graffiti everywhere, basketball hoops, beers, video games and a photo booth were styling the lounge all along the event.
 
