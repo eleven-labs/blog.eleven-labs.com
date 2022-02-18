@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction à Microsoft Azure
-excerpt: Si vous avez lu Microsoft et que vous n’avez pas fuit, bienvenue sur cette introduction à la solution de Cloud Microsoft.
+excerpt: Si vous avez lu Microsoft et que vous n’avez pas fui, bienvenue sur cette introduction à la solution de Cloud Microsoft.
 authors:
     - gthibault2
 lang: fr
@@ -13,13 +13,9 @@ categories:
 ![Dark Vador Cookie]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/COOKIE.jpg)
 
 Si vous avez lu **“Microsoft”** et que vous n’avez pas fui, bienvenue sur cette
-introduction à la solution de **Cloud Microsoft** !
-Ayant travaillé deux ans sur la solution, j’ai eu envie de partager ce que j’avais pu apprendre sur **Azure** et livrer mes astuces et mon ressenti sur cet outil.
+introduction à la solution de **Cloud Microsoft** ! Ayant travaillé deux ans sur **Azure**, j’ai eu envie de partager ce que j’avais pu apprendre et livrer mes astuces et mon ressenti sur cet outil.
 
-La star de cet article est **Microsoft Azure**. C’est la solution de **cloud computing** fournie par Microsoft.
-Cet article a pour objectif de faire une brève **introduction de la solution**, son écosystème et permettre de faire ses **premiers** pas sur la solution.
-
-Pour commencer, nous allons voir ce qu’est Azure, puis je donnerais un avis personnel sur la solution et nous finirons sur un premier tutoriel. 
+Pour commencer, nous allons voir ce qu’est Azure, puis je donnerai un avis personnel sur la solution et nous finirons sur un premier tutoriel. 
 
 Toujours présent ? Let’s go ! 
 
@@ -47,7 +43,7 @@ Les **services Microsoft Azure principaux** sont :
    - Identité (Active directories, etc.),
    - Réseau (route, dns, gateway, etc.),
    - Stockage (bases de données, différents types de stockage en fonction des besoins, etc.),
-   - IOT (API, Azure Cosmos DB, etc ...)
+   - IOT (API, Azure Cosmos DB, etc.)
 
 Cependant, si vous souhaitez la **liste exhaustive**, voici le lien vers la page du **site de Microsoft** qui détaille l’ensemble : [Liste des services Azure](https://azure.microsoft.com/fr-fr/services/)
 
@@ -59,12 +55,12 @@ Azure est déjà une plate-forme applicative cloud complète, mais elle possède
 
 **Azure DevOps** qui est une **boite à outils pour DevOps** assez complète. Elle permet via une seule interface de : 
   - Gérer des items “agiles” (Epics, User stories, sprint, etc.),
-  - Synchroniser un github et y avoir accès via l’interface,
+  - Synchroniser un Github et y avoir accès via l’interface,
   - Gérer les builds, les artéfacts,
   - Gérer les pipelines,
   - Gérer la création et l’application de tests automatisés.
   
-Pour plus d’information, vous pouvez jeter un œil ici : [Documentation Azure Devops](https://azure.microsoft.com/fr-fr/services/devops/)
+Pour plus d’informations, vous pouvez jeter un œil ici : [Documentation Azure Devops](https://azure.microsoft.com/fr-fr/services/devops/)
 
 **Office365** qui est un service de **gestion de postes utilisateurs** (en terme 'plus barbare', moderne workplace). Il permet la gestion de ce dont un poste Windows doit avoir besoin. Par exemple les mails, les logiciels. 
 
@@ -74,20 +70,19 @@ Pour plus d’information, vous pouvez jeter un œil ici : [Documentation Azure 
 
 ### Les forces d’Azure
 
-La **force principale d’Azure** (et ce ne sera pas une surprise), est sa **compatibilité avec les services Microsoft**. En effet, il est **simple** de coupler son infrastructure cloud Azure avec celle que l’on a en local. 
-Il en est de même avec Office365 vue plus haut et qui est un service qui occupe une place importante chez Microsoft.
+La **force principale d’Azure** (et ce ne sera pas une surprise), est sa **compatibilité avec les services Microsoft**. En effet, il est **simple** de coupler son infrastructure cloud Azure avec celle que l’on a en local. Il en est de même avec Office365 vu plus haut et qui est un service qui occupe une place importante chez Microsoft.
 
 Sa seconde force selon moi est son service Azure DevOps. Il permet la mise en place d’une première démarche DevOps assez facilement, avec une administration simplifiée et un côté graphique qui peut être rassurant. 
 
 ### Ses faiblesses
 
-La force principale d’Azure est aussi sa plus grosse faiblesse : Le fait qu’il soit aussi bien intégré avec tout ce qui touche à Microsoft et favorise l’accès au service Microsoft, peut gêner pour la mise en place de solutions externes. De plus cela créer une dépendance à Microsoft.
+La force principale d’Azure est aussi sa plus grosse faiblesse : le fait qu’il soit aussi bien intégré avec tout ce qui touche à Microsoft et favorise l’accès au service Microsoft peut gêner pour la mise en place de solutions externes. De plus cela crée une dépendance à Microsoft.
 
 Le second mauvais point reste dans le thème. Les **licences Microsoft** sont très/trop compliquées par rapport à ses concurrents directs comme AWS.
 
 Maintenant que la partie théorique est terminée, passons aux choses sérieuses.
 
-## Commençons à utiliser
+## Commençons à l'utiliser
 
 ### Accès à une version de test de la plateforme.
 
@@ -98,7 +93,7 @@ Microsoft fournit un accès pour tester sa solution. Il suffit d'effectuer les �
 	  ![Interface free azure]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/FREE.png)
 	  _**Image 1:** interface d'accès à l'abonnement gratuit_
 4. Connectez-vous via le portail Microsoft. (si vous n’avez pas de compte, créez-en un)
-5. Remplissez le formulaire avec vos informations. À la fin de la procédure, vos informations bancaires vous seront demandés. C’est une sécurité pour éviter de créer plusieurs comptes gratuits. 
+5. Remplissez le formulaire avec vos informations. À la fin de la procédure, vos informations bancaires vous seront demandées. C’est une sécurité pour éviter de créer plusieurs comptes gratuits. 
 
 ### Votre première Infrastructure
 
@@ -108,9 +103,9 @@ Dans ce chapitre, nous verrons ensemble quelques notions importantes complétée
 
 La compréhension de l'arborescence des ressources sur Azure permet de mieux organiser ses ressources et vous simplifiera la vie pour l'administration et la gestion des coûts.
 Nous avons donc : 
-  - le groupe de management, qui peut gérer plusieurs Abonnements.
+  - le groupe de management, qui peut gérer plusieurs abonnements.
   - l'abonnement qui contient plusieurs groupes de ressources.
-  - les groupes de ressources qui peuvent contenir plusieurs ressources Azure (machines virtuelles, applications, …). 
+  - les groupes de ressources qui peuvent contenir plusieurs ressources Azure (machines virtuelles, applications…). 
 
 Voici un **schéma** qui résume l'ensemble : 
 
@@ -127,11 +122,11 @@ Pour ce premier tutoriel, nous allons  effectuer les étapes suivantes :
    - Tester la connexion,
    - Supprimer les ressources.
 
-Reprenons notre compte fraîchement crée. 
+Reprenons notre compte fraîchement créé. 
 
 ##### Vérfier l'abonnement 
 
-Nous allons commencer par vérifier que nous possédons bien un abonnement de disponible.
+Nous allons commencer par vérifier que nous possédons bien un abonnement.
 
  1. Dans l'onglet de recherche, entrez 'abonnement' **(1)**
  2. Selectionnez 'Abonnement' **(2)**
@@ -139,12 +134,12 @@ Nous allons commencer par vérifier que nous possédons bien un abonnement de di
 
    ![Abonnement]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/ABO.png)
   
-##### La création du Groupe de ressource
+##### La création du groupe de ressources
 
-Nous avons un abonnement fonctionnel , nous allons ajouter un 'Groupe de ressource' dans laquelle mettre notre machine Virtuelle
+Nous avons un abonnement fonctionnel, nous allons ajouter un 'Groupe de ressources' dans laquelle mettre notre machine Virtuelle
 
- 1. Dans l'onglet de recherche, entrez 'Groupe de ressource'  **(1)**
- 2. Selectionnez 'Groupe de Ressource' **(2)**
+ 1. Dans l'onglet de recherche, entrez 'Groupe de ressources'  **(1)**
+ 2. Selectionnez 'Groupe de ressources' **(2)**
  3. Cliquez sur 'Créer'  **(3)**
 
    ![Ressource groupe]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/RG.png)
@@ -154,23 +149,23 @@ Nous avons un abonnement fonctionnel , nous allons ajouter un 'Groupe de ressour
 
 ![Ressource group configuration]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/RGC.png)
 
-#####  Groupes de sécurité réseau
+#####  Groupe de sécurité réseau
 
-Nous allons créer et ajouter un Groupes de sécurité réseau. C'est l'équivalant du 'pare-feu' version Azure.
+Nous allons créer et ajouter un Groupe de sécurité réseau. C'est l'équivalant du 'pare-feu' version Azure.
 
- 1. Dans l'interface de recherche, entrez 'Groupes de sécurité réseau' **(1)**
- 2. Sélectionnez 'Groupes de sécurité réseau' **(2)**
+ 1. Dans l'interface de recherche, entrez 'Groupe de sécurité réseau' **(1)**
+ 2. Sélectionnez 'Groupe de sécurité réseau' **(2)**
  3. Cliquez sur 'Créer' **(3)**
 
    ![NSG]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSG.png)
    
- 4. Entre le nom du groupes de sécurité réseau **(1)**
+ 4. Entrez le nom du groupe de sécurité réseau **(1)**
  5. Cliquez sur 'Vérifier + Créer' **(2)**
 
    ![NSG configuration]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSGC.png)
 
  6. Vous avez ici les règles par défaut affichées **(1)**
- 7. Cliquez sur 'Règle de sécurité de trafic entrant **(2)**
+ 7. Cliquez sur 'Règles de sécurité de trafic entrant **(2)**
 
    ![NSG rules]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSGRR.png)
 
@@ -205,7 +200,7 @@ Nous allons créer et ajouter un Groupes de sécurité réseau. C'est l'équival
 
    ![VM configuration]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/MVC11.png)
 
-11. Selectionner le type de disque qui vous intéresse **(2)**
+11. Sélectionnez le type de disque qui vous intéresse **(2)**
 
    ![VM configuration disk]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/MVCD.png)
 
@@ -218,9 +213,9 @@ Nous allons créer et ajouter un Groupes de sécurité réseau. C'est l'équival
 #####  Connexion à la machine virtuelle
 
 Nous allons maintenant vérifier la connexion à la machine virtuelle.
-1. Lors de la création, Azure vous créera une clé. Enregistrez celle ci et placer là dans votre répertoire de clé.
+1. Lors de la création, Azure vous créera une clé. Enregistrez celle-ci et placez-la dans votre répertoire de clé.
 2.  Allez sur 'machine virtuelle' comme vu plus haut, vous verrez votre nouvelle machine. 
-3. Selectionner votre machine, et copiez votre adresse IP.
+3. Sélectionnez votre machine, et copiez votre adresse IP.
 4. Entrez la commande : _ssh -i [votre-clé].pem azureuser@[votre-IP]_
 
 ##### Suppresion des ressources
@@ -228,24 +223,23 @@ Nous allons maintenant vérifier la connexion à la machine virtuelle.
 Pour terminer ce tutoriel, supprimez vos ressources 
 1. Lancez 'Powershell'
 2. Entrez _Az login_
-3. Entrez vos information de connections. 
-4. Utiliser le script pour supprimer vos ressources une par une. (par exemple ici une machine virtuelle)
+3. Entrez vos informations de connexion. 
+4. Utilisez le script pour supprimer vos ressources une par une (par exemple ici une machine virtuelle).
 ```
 az resource delete  
  --resource-group article_eleven 
  --name article-eleven-vm  
  --resource-type  "Microsoft.Compute/virtualMachines"
 ```
-5. Supprimer maintenant votre Groupe de ressource.
+5. Supprimez maintenant votre Groupe de ressources.
 ```
 az group delete --name article_eleven
 ```
-> Le nom 'azureuser' est le nom par défault de l'utilisateur de machine virtuelle Azure. Comme nous ne l'avons pas changé pendant notre installation, nous l'utilisons donc.
+> Le nom 'azureuser' est le nom par défaut de l'utilisateur de machine virtuelle Azure. Comme nous ne l'avons pas changé pendant notre installation, nous l'utilisons donc.
 
 ## Le mot de la fin 
 
-Voici un **premier aperçu** de la solution Azure. Nous avons pu voir rapidement l’utilité de la solution, et en quoi elle et son écosystème peuvent être intéressants. Vous avez aussi fait vos premiers pas sur la solution.
-Si vous cherchez plus d’information, je ne peux que vous rediriger vers la documentation Microsoft sur le sujet. 
-Dans de prochains articles, nous irons plus loin dans la configuration de la solution et nous verrons les services plus en détail.
+Voici un **premier aperçu** de la solution Azure. Nous avons pu voir rapidement l’utilité de la solution, et en quoi elle et son écosystème peuvent être intéressants. Vous avez aussi fait vos premiers pas sur la solution. Si vous cherchez plus d’information, je ne peux que vous rediriger vers la documentation Microsoft sur le sujet. 
+Dans de prochains articles, nous irons plus loin dans la configuration de la solution et nous verrons les services plus en détail !
 
 
