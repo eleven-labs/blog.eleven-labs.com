@@ -40,7 +40,7 @@ To open the DevFest, Antonin Fourneau has been introduced to talk about his "des
 
 Antonin is an artist that creates pieces of art from old technology and objects. His goal is to make these objects alive thanks to technology, but at a low cost.
 
-He told us about his projects, mainly [Waterlight's graffiti](https://www.antoninfourneau.com/2020/09/10/waterlight-graffiti/), which is the reason why he was invited. This work is inspired from ephemeral street calligraphy with water he had the chance to see during a trip to China. By the sun’s heat, the water dry and the artwork evaporates in seconds. He then reproduced the idea with led lights that turn on when wet and off when dried, to create Waterlight Graffiti.
+He told us about his projects, mainly [Waterlight's graffiti](https://www.antoninfourneau.com/2020/09/10/waterlight-graffiti/), which is the reason why he was invited. This work is inspired by ephemeral street calligraphy with water he had the chance to see during a trip to China. By the sun’s heat, the water dries and the artwork evaporates in seconds. He then reproduced the idea with led lights that turn on when wet and off when dried, to create Waterlight Graffiti.
 
 Antonin's work is curiously awesome, you can find his other projects on [his website](https://www.antoninfourneau.com/).
 
@@ -55,7 +55,7 @@ Aurélie reassured us. She basically explained that the imposter syndrome is lin
 
 _SPOILER ALERT_: we are wrong.
 
-She gave us many tips to bypass the syndrome: list our successes, find communities, share and contribute, ask for feedback, do some pair programming and stay positive !
+She gave us many tips to bypass the syndrome: list our successes, find communities, share and contribute, ask for feedback, do some pair programming and stay positive!
 
 To summarize, she made us understand that a majority of developers have this syndrome, that we can handle it and that this is normal not to know everything.
 
@@ -85,7 +85,7 @@ When and how should you start a design system?
 
 This is the question Cecile answered, giving us a ton of tips to start. It’s clear she had a lot of experiences about it, whether good or bad. She was able to learn from her mistakes and explain to us how to succeed building our design system.
 
-What seems primary for her is to start a design system for the good reasons and in a team (at least a designer and a developer). You have to explain why its’ necessary and convince the persons in charge while being totally transparent (pros, cons, workload & organization).
+What seems primary for her is to start a design system for good reasons and in a team (at least a designer and a developer). You have to explain why it's necessary and convince the persons in charge while being totally transparent (pros, cons, workload & organization).
 
 Then you’ll have to do an inventory, prioritize, document and engage people around the design system, both internally and externally.
 
@@ -95,7 +95,7 @@ I personally hope to have the opportunity to create a design system in a future 
 
 _By Stéphanie Moallic_
 
-I don’t have children, but I was strangely curious about Stéphanie’s talk. Until then, I had no idea how to introduce programming to kids. Stéphanie has a daughter. “Mom, what is your job?” is a question she often has been asked, so decided out to answer her daughter involving her in toys programming!
+I don’t have children, but I was strangely curious about Stéphanie’s talk. Until then, I had no idea how to introduce programming to kids. Stéphanie has a daughter. “Mom, what is your job?” is a question she often has been asked, so decided to answer her daughter involving her in toys programming!
 
 Stéphanie explain us how to make programming playful, thanks to equipment and technologies linked to each other that allow one to animate toys, robots, etc... Thanks, for instance, to the [micro:bit](https://en.wikipedia.org/wiki/Micro_Bit) card. She even demonstrated it with her own robots, cars, and a Lego connected house!
 
@@ -111,13 +111,13 @@ The main features of React Query are front-end/back-end synchronization, REST/Gr
 
 Advanced features are also available, like paginated queries, “See more”, infinite scroll, query canceling, etc...
 
-Olivier had the time to show us main features with source code and tell us about advanced ones in 15 minutes! Hats off to him, because in this short amount of time, he made me want to use it in my next side project...
+Olivier had the time to show us the main features with source code and tell us about advanced ones in 15 minutes! Hats off to him, because in this short amount of time, he made me want to use it in my next side project...
 
 ### Next.js to the rescue of my front-end
 
 _By Nordwin Hoff_
 
-Next.js slowly becomes the future of the fast front-end development giving React a Node.js server that allow it doing some server side rendering.
+Next.js slowly becomes the future of the fast front-end development giving React a Node.js server that allows it doing some server side rendering.
 
 Nordwin does a little reminder of what is Next.js and what does it bring to a project (he talks about rendering modes, lazy loading, integrated component, etc...) before he explains how he added it to an existing codebase.
 
@@ -131,7 +131,7 @@ _By Nicolas Firzzarin_
 
 I’ve always been interested in Vue.js but never went through it. I did the “Hello world” of the first versions, but I never took the time to study advanced concepts of Vue, and that’s why I attended this talk.
 
-Vue 3 seems to be inspired from some React concepts to optimize the developer experience keeping its strength: performance.
+Vue 3 seems to be inspired by some React concepts to optimize the developer experience keeping its strength: performance.
 
 The Composition API, reactive refs, proxy handlers, Suspense API, asynchronous components, libraries, etc... Everything is covered! Nicolas serves us all his knowledge on a plate, his talk is very consistent. The only issue for me was that he was comparing Vue 2 and Vue 3, but my lack of knowledge on Vue 2 did not allow me to observe the improvement made on Vue 3. A little reminder about Vue 2 would have been welcomed to help me appreciate the talk that seemed to me very complete!
 
