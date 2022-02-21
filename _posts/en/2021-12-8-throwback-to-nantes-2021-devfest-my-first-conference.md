@@ -14,13 +14,13 @@ categories:
 
 Finally! After 4 years of working as a web developer, I finally attended a conference linked to my job & passion: the [DevFest Nantes](https://devfest2021.gdgnantes.com).
 
-For the 9th edition, which took place on 21 & 22 of October, the theme was street art. Both the Google Developer Group (GDG) of Nantes and his partners on the event did a great job and the final result was stunning ! Graffiti everywhere, basketball hoops, beers, video games and a photo booth were styling the lounge all along the event.
+For the 9th edition, which took place on 21 & 22 of October, the theme was street art. Both the Google Developer Group (GDG) of Nantes and his partners on the event did a great job and the final result was stunning! Graffiti everywhere, basketball hoops, beers, video games and a photo booth were styling the lounge all along the event.
 
 ## What is the DevFest ?
 
 Since 2012, the GDG of Nantes organises a festival dedicated to developers where speakers talk about many topics from the tech world (cloud, systems & networks, data, web & mobile development, soft skills, etc...).
 
-During 2 days, speakers share their tech watch or experience with passionated people to let them know about the last technology they tried, or tips they want to share.
+During 2 days, speakers share their tech watch or experience with passionate people to let them know about the last technology they tried or tips they want to share.
 
 It is also an opportunity to meet and share with tech lovers that work in a different environment and to extend one's professional network.
 
@@ -38,7 +38,7 @@ _By Antonin Fourneau_
 
 To open the DevFest, Antonin Fourneau has been introduced to talk about his "designer, artist, developer, maker, teacher" work.
 
-Antonin is an artist that creates pieces of art from old technology and objects. His goal is to make these objects alive thanks to the technology, but at low cost.
+Antonin is an artist that creates pieces of art from old technology and objects. His goal is to make these objects alive thanks to technology, but at a low cost.
 
 He told us about his projects, mainly [Waterlight's graffiti](https://www.antoninfourneau.com/2020/09/10/waterlight-graffiti/), which is the reason why he was invited. This work is inspired from ephemeral street calligraphy with water he had the chance to see during a trip to China. By the sun’s heat, the water dry and the artwork evaporates in seconds. He then reproduced the idea with led lights that turn on when wet and off when dried, to create Waterlight Graffiti.
 
@@ -133,7 +133,7 @@ I’ve always been interested in Vue.js but never went through it. I did the “
 
 Vue 3 seems to be inspired from some React concepts to optimize the developer experience keeping its strength: performance.
 
-The Composition API, reactive refs, proxy handlers, Suspense API, asynchronous components, libraries, etc... Everything is covered! Nicolas serves us all its knowledge on a plate, his talk is very consistent. The only issue for me was that he was comparing Vue 2 and Vue 3, but my lack of knowledge on Vue 2 did not allow me to observe the improvement made on Vue 3. A little reminder about Vue 2 would have been welcomed to really help me appreciate the talk that seemed to me very complete!
+The Composition API, reactive refs, proxy handlers, Suspense API, asynchronous components, libraries, etc... Everything is covered! Nicolas serves us all his knowledge on a plate, his talk is very consistent. The only issue for me was that he was comparing Vue 2 and Vue 3, but my lack of knowledge on Vue 2 did not allow me to observe the improvement made on Vue 3. A little reminder about Vue 2 would have been welcomed to help me appreciate the talk that seemed to me very complete!
 
 ### Art & entropy: Chaos in your front-end
 
@@ -143,7 +143,7 @@ I have to admit, the title of the talk attracts me, but means nothing to me. Wha
 
 What a great decision! I discover chaos engineering, as he explains the origins (Netflix, 2011), which consists - to be short - of breaking things to look at the behaviour of the infrastructure, the application, etc...
 
-Today, chaos engineering is mainly used in the infrastructure and back-end side. Thibaud bring us with him in his front-end chaos engineering experiments:
+Today, chaos engineering is mainly used in the infrastructure and back-end side. Thibaud brings us with him in his front-end chaos engineering experiments:
 
 -   Disturbing HTTP queries (what will happen if the CDN that hosts the style files is down?)
 -   Disturbing localization disturbing (what if the language has to be read from right to left, or is verbose?)
@@ -158,9 +158,9 @@ This is Thibaud’s proposal to set up chaos engineering in the front-end. He pu
 
 ![Waouh]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waouh.jpeg)
 
-On one hand, I felt a fervour during this two days that made me watch everywhere with amazed eyes. Everything seemed awesome to me and everyone looked accessible & nice.
+On one hand, I felt a fervour during these two days that made me watch everywhere with amazed eyes. Everything seemed awesome to me and everyone looked accessible & nice.
 
-On the other hand, I found during the talks the type of informations I had already seen in videos, and that I thought was cool. From where I used to work (north-west of Brittany, France), I had the feeling that this world was apart and far from me. I now know that it’s an accessible world thus not fictive at all!
+On the other hand, I found during the talks the type of information I had already seen in videos, and that I thought was cool. From where I used to work (north-west of Brittany, France), I had the feeling that this world was apart and far from me. I now know that it’s an accessible world thus not fictive at all!
 
 All these great knowledge mixed to the great mates I had all along the event - from the talks to the aperitifs - made me have two very enriching days professionally and personally.
 
