@@ -14,11 +14,11 @@ categories:
 
 Finally! After 4 years of working as a web developer, I finally attended a conference linked to my job & passion: the [DevFest Nantes](https://devfest2021.gdgnantes.com).
 
-For the 9th edition, which took place on 21 & 22 of October, the theme was street art. Both the Google Developer Group (GDG) of Nantes and his partners on the event did a great job and the final result was stunning! Graffiti everywhere, basketball hoops, beers, video games and a photo booth were styling the lounge all along the event.
+For the 9th edition, which took place on October 21 and 22, 2021, the theme was street art. Both the Google Developer Group (GDG) of Nantes and his partners on the event did a great job and the final result was stunning! Graffiti everywhere, basketball hoops, beers, video games and a photo booth were styling the lounge all along the event.
 
-## What is the DevFest ?
+## What is the DevFest?
 
-Since 2012, the GDG of Nantes organises a festival dedicated to developers where speakers talk about many topics from the tech world (cloud, systems & networks, data, web & mobile development, soft skills, etc...).
+Since 2012, the GDG of Nantes organises a festival dedicated to developers where speakers talk about many topics from the tech world (cloud, systems & networks, data, web & mobile development, soft skills, etc.).
 
 During 2 days, speakers share their tech watch or experience with passionate people to let them know about the last technology they tried or tips they want to share.
 
@@ -48,16 +48,15 @@ Antonin's work is curiously awesome, you can find his other projects on [his web
 
 _By Aurélie Vache_
 
-The imposter syndrome is a subject I feel concerned about. At my worst times, when I’m facing difficulties, I usually hear a little voice reminding me that things would be easier for others. The thing is that I'm not alone: this was also the case of numbers of people that attended the talk. What struck me was that I wasn’t the only one feeling that way : many of us in the talk felt
-the same about it.
+The imposter syndrome is a subject I feel concerned about. At my worst times, when I’m facing difficulties, I usually hear a little voice reminding me that things would be easier for others. The thing is that I'm not alone, this was also the case of numbers of people that attended the talk. What struck me was that I wasn’t the only one feeling that way: many of us in the talk felt the same about it.
 
 Aurélie reassured us. She basically explained that the imposter syndrome is linked to the feeling not to be legit. She proved us that it’s a matter of point of view: we think that we know less than others, and that our successes are due to luck.
 
 _SPOILER ALERT_: we are wrong.
 
-She gave us many tips to bypass the syndrome: list our successes, find communities, share and contribute, ask for feedback, do some pair programming and stay positive!
+She gave us many tips to bypass the syndrome, like list our successes, find communities, share and contribute, ask for feedback, do some pair programming and stay positive!
 
-To summarize, she made us understand that a majority of developers have this syndrome, that we can handle it and that this is normal not to know everything.
+To summarize, she made us understand that a majority of developers have this syndrome, that we can handle it and that it is normal not to know everything.
 
 ### How to create a pure CSS game
 
@@ -73,9 +72,9 @@ To do it, he used multiple HTML & CSS tricks to avoid using JavaScript:
 -   HTML `label` & `input:checkbox` to navigate from page to page
 -   The CSS `counter` feature to make the countdown
 -   A form with a `input:reset` to return to the main menu from the game
--   etc...
+-   etc.
 
-I found this talk very inspiring, it helped me to remember how awesome our job is as we can do anything we want using code, the only barrier being our imagination.
+I found this talk very inspiring, it helped me remember how awesome our job is as we can do anything we want using code, the only barrier being our imagination.
 
 ### Quick guide to start a design system
 
@@ -95,9 +94,9 @@ I personally hope to have the opportunity to create a design system in a future 
 
 _By Stéphanie Moallic_
 
-I don’t have children, but I was strangely curious about Stéphanie’s talk. Until then, I had no idea how to introduce programming to kids. Stéphanie has a daughter. “Mom, what is your job?” is a question she often has been asked, so decided to answer her daughter involving her in toys programming!
+I don’t have children, but I was strangely curious about Stéphanie’s talk. Until then, I had no idea how to introduce programming to kids. Stéphanie has a daughter. “Mom, what is your job?” is a question she often has been asked, so she decided to answer her daughter by involving her in toys programming!
 
-Stéphanie explain us how to make programming playful, thanks to equipment and technologies linked to each other that allow one to animate toys, robots, etc... Thanks, for instance, to the [micro:bit](https://en.wikipedia.org/wiki/Micro_Bit) card. She even demonstrated it with her own robots, cars, and a Lego connected house!
+Stéphanie explain us how to make programming playful, thanks to equipment and technologies linked to each other that allows one to animate toys, robots, etc. Thanks, for instance, to the [micro:bit](https://en.wikipedia.org/wiki/Micro_Bit) card. She even demonstrated it with her own robots, cars, and a Lego connected house!
 
 During her talk, Stéphanie made me feel like a kid and in the end, I would really like to try this out. She will admit it, she’s the one playing most with all these toys!
 
@@ -109,7 +108,7 @@ As a React developer, I was looking forward to this “quickie”. Olivier showc
 
 The main features of React Query are front-end/back-end synchronization, REST/GraphQL fetching, the query state management, cache management and cached data update. To enjoy these features, the library give us many hooks (`useQuery`, `useMutation` and `useQueryClient`).
 
-Advanced features are also available, like paginated queries, “See more”, infinite scroll, query canceling, etc...
+Advanced features are also available, like paginated queries, “See more”, infinite scroll, query canceling, etc.
 
 Olivier had the time to show us the main features with source code and tell us about advanced ones in 15 minutes! Hats off to him, because in this short amount of time, he made me want to use it in my next side project...
 
@@ -119,11 +118,11 @@ _By Nordwin Hoff_
 
 Next.js slowly becomes the future of the fast front-end development giving React a Node.js server that allows it doing some server side rendering.
 
-Nordwin does a little reminder of what is Next.js and what does it bring to a project (he talks about rendering modes, lazy loading, integrated component, etc...) before he explains how he added it to an existing codebase.
+Nordwin does a little reminder of what is Next.js and what does it bring to a project (he talks about rendering modes, lazy loading, integrated component, etc.) before he explains how he added it to an existing codebase.
 
 I will not give you details as it’s very specific. That being said, his methodology to show us Next.js features worked well because it’s applied to a real case to which it’s easy to identify.
 
-For me that does not know Next.js, it was a very interesting talk. To make it even better, Nordwin is a very fluent speaker.
+For me, who does not know Next.js, it was a very interesting talk. To make it even better, Nordwin is a very fluent speaker.
 
 ### Vue 3 and its ecosystem
 
@@ -133,7 +132,7 @@ I’ve always been interested in Vue.js but never went through it. I did the “
 
 Vue 3 seems to be inspired by some React concepts to optimize the developer experience keeping its strength: performance.
 
-The Composition API, reactive refs, proxy handlers, Suspense API, asynchronous components, libraries, etc... Everything is covered! Nicolas serves us all his knowledge on a plate, his talk is very consistent. The only issue for me was that he was comparing Vue 2 and Vue 3, but my lack of knowledge on Vue 2 did not allow me to observe the improvement made on Vue 3. A little reminder about Vue 2 would have been welcomed to help me appreciate the talk that seemed to me very complete!
+The Composition API, reactive refs, proxy handlers, Suspense API, asynchronous components, libraries... Everything is covered! Nicolas serves us all his knowledge on a plate, his talk is very consistent. The only issue for me was that he was comparing Vue 2 and Vue 3, but my lack of knowledge on Vue 2 did not allow me to observe the improvement made on Vue 3. A little reminder about Vue 2 would have been welcomed to help me appreciate the talk that seemed to me very complete!
 
 ### Art & entropy: Chaos in your front-end
 
@@ -141,7 +140,7 @@ _By Thibaud Courtoison_
 
 I have to admit, the title of the talk attracts me, but means nothing to me. What will Thibaud talk about? I don’t know. Yet, I will attend his talk.
 
-What a great decision! I discover chaos engineering, as he explains the origins (Netflix, 2011), which consists - to be short - of breaking things to look at the behaviour of the infrastructure, the application, etc...
+What a great decision! I discover chaos engineering, as he explains the origins (Netflix, 2011), which consists - to be short - of breaking things to look at the behaviour of the infrastructure and the application.
 
 Today, chaos engineering is mainly used in the infrastructure and back-end side. Thibaud brings us with him in his front-end chaos engineering experiments:
 
