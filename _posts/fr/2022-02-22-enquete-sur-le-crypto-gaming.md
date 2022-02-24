@@ -53,7 +53,7 @@ D’où vient le boom si ces jeux datent de quelques années ? Tout simplement d
 
 ### Context
 
-Je n’ai essayé que des crypto-games que je qualifierai de “sérieux” : ils sont sur le marché depuis longtemps, sont des éditeurs de confiance et ne sont pas des “click-to-ear” (des “jeux” où il suffit de cliquer pour gagner des tokens grâce à jeu d’entrée dont le cours varie ).
+Je n’ai essayé que des crypto-games que je qualifierai de “sérieux” : ils sont sur le marché depuis longtemps, sont des éditeurs de confiance et ne sont pas des “click-to-ear” (des “jeux” où il suffit de cliquer pour gagner des tokens grâce à jeton d’entrée dont le cours varie ).
 
 La présentation que je vais faire n’est pas forcément le même business model pour chaque jeu, et cela vient de ma compréhension. J’ai joué personnellement à Axie Infinity et à Sorare.
 
@@ -104,6 +104,7 @@ En fonction du cours, il sera ou non intéressant de les revendre, comme à la b
 </div>
 
 *<center>Moins il y a d’acheteurs et plus il y a d’intentions d’achat, le cours monte.</center>*
+
 
 Concernant les NFT, il y a plusieurs façons.
 
