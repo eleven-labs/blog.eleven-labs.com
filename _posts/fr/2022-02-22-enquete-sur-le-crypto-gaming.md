@@ -1,23 +1,24 @@
 ---
 layout: post
 title: "Enquête sur le crypto-gaming"
-excerpt: Les récentes fuites de données chez Twitch et Facebook rappellent aux entreprises qu'elles sont vulnérables, et qu'elles ont des obligations envers les utilisateurs. Si ça vous arrivait aussi, sauriez-vous quoi faire ?
+excerpt: "Jeux vidéo, crypto, blockchain et NFT : au coeur du nouveau business."
 authors:
     - marianne
-permalink: /fr/que-faire-en-cas-de-fuite-de-donnees/
+permalink: /fr/enquete-sur-le-crypto-gaming/
 categories:
     - crypto-gaming
     - blockchain
 
-cover: /assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/dataleak.png
+cover: /assets/2022-03-02-enquete-sur-le-crypto-gaming/enquete-crypto.png
 ---
-
-Jeux vidéo, crypto, blockchain et NFT : au coeur du nouveau business.
 
 ## Introduction
 
 Le [crypto-gaming](https://en.wikipedia.org/wiki/Blockchain_game) fait rage sur les internets, quelle est cette nouvelle passion chez les jeunes ? Peut-on réellement faire de l’argent en jouant aux jeux vidéo ?
 
+<div style="text-align: center;">
+    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/enquete-crypto.png" width="300px" alt="Carte Haaland sur Sorare à 600k" style="display: block; margin: auto;"/>
+</div>
 
 ## Les bases
 
@@ -27,9 +28,12 @@ La [crypto-monnaie](https://fr.wikipedia.org/wiki/Cryptomonnaie) est une monnaie
 
 Vous en avez peut-être déjà entendu parlé dans le monde artistique et surtout sportif, le NFT remplace les cartes de collections Panini. Le [NFT](https://fr.wikipedia.org/wiki/Jeton_non_fongible) pour _Non-Fungible Token_ (en français _Jeton non fongible_) est, souvent, un objet numérique qui va être certifié via la blockchain comme appartenant à une identité numérique ( = un propriétaire).
 
--image-
+<div style="text-align: center;">
+    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/sorare-nft.png" width="233px" alt="Carte Haaland sur Sorare à 600k" style="display: block; margin: auto;"/>
+</div>
 
-_Sur [Sorare](https://sorare.com/), la carte unique de Erling Haaland vaut 600k, alors que la carte hors NFT ne vaut rien._
+*<center>Sur Sorare, la carte unique de Erling Haaland vaut 600k, alors que la carte hors NFT ne vaut rien.</center>*
+
 
 La différence entre un token “normal” et un NFT, c’est que le token est interchangeable : 1 jeton de Bitcoin vaut la même valeur qu’un autre jeton, comme dans le commerce, une pièce d’1 euro vaut une autre pièce d’1 euro.
 
@@ -44,7 +48,7 @@ Cela permet d’inciter les gamers à jouer encore plus, à permettre qu’une c
 D’où vient le boom si ces jeux datent de quelques années ? Tout simplement des suites de la pandémie de Covid-19 : les gens étaient enfermés chez eux et potentiellement sans travail, le crypto-gaming est devenu une source de revenu.
 
 
-## Comment peut-on gagner de l’argent avec du jeu vidéo ?
+## 💰 Comment peut-on gagner de l’argent avec du jeu vidéo ?
 
 
 ### Context
@@ -60,7 +64,10 @@ Lorsqu’un éditeur va lancer son jeu, il va mettre en vente des NFT (ou jetons
 
 L’éditeur va avoir une rentrée d’argent en vendant ses jetons en nombre limité. Pourquoi en nombre limité ? Tout simplement pour éviter que le prix du jeton baisse s’il y en a trop en circulation, et donc décourager des joueurs/investisseurs.
 
--schema-
+<div style="text-align: center;">
+    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/crypto-gaming-start.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
+</div>
+
 
 ### Vie du jeu
 
@@ -68,25 +75,35 @@ L’éditeur va proposer aux utilisateurs de gagner des objets sous forme de jet
 
 Dans beaucoup de cas, plus le jeu offrira des avantages à jouer, plus le jeu sera attractif, plus il y aura de joueurs. Et les joueurs ayant investis rendront le jeu attractif pour ceux qui veulent se développer ou les nouveaux : ce sont eux qui achètent leurs jetons, et qui vont leur permettre de gagner de l’argent.
 
--schema-
+<div style="text-align: center;">
+    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/business-nft-token.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
+</div>
 
 ### Enfin, l’argent !
 
 Comme pour la crypto-monnaie classique, les tokens possèdent leur propre cours boursier.
 
--image-
+<div style="text-align: center;">
+    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/axie-slp.png" width="700px" alt="Cours de l'objet SLP du jeu Axie Infinity" style="display: block; margin: auto;"/>
+</div>
 
-_Sur Axie, on peut gagner en combat des objets SLP qui permettent de faire de la reproduction._
+*<center>Sur Axie, on peut gagner en combat des objets SLP qui permettent de faire de la reproduction.</center>*
+
 
 En fonction du cours, il sera ou non intéressant de les revendre, comme à la bourse.
 
--schema-
+<div style="text-align: center;">
+    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/speculation-down.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
+</div>
 
-_Plus il y a d’acheteurs et moins il y a d’intentions d’achat, le cours descend._
+*<center>Plus il y a d’acheteurs et moins il y a d’intentions d’achat, le cours descend.</center>*
 
--schema-
 
-_Moins il y a d’acheteurs et plus il y a d’intentions d’achat, le cours monte._
+<div style="text-align: center;">
+    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/speculation-up.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
+</div>
+
+*<center>Moins il y a d’acheteurs et plus il y a d’intentions d’achat, le cours monte.</center>*
 
 Concernant les NFT, il y a plusieurs façons.
 
@@ -100,7 +117,7 @@ Dans tous les cas, on peut faire un parallèle avec la possession matérielle : 
 ## Critique d’un système
 
 
-### Une pyramide de Ponzi ?
+### 💸 Une pyramide de Ponzi ?
 
 Pour ceux qui ne connaissent pas la [pyramide de Ponzi](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_Ponzi) de nom, vous en connaissez l’application : il s’agit d’un montage financier frauduleux qui permet de faire financer les investissements des clients par les nouveaux entrants. Le système s’écroule quand les clients ne se font plus rémunérer car il n’y a pas assez de nouveaux investisseurs.  Une des affaires les plus connues de ses dernières années est celle de Bernard Madoff.
 
@@ -112,7 +129,7 @@ Dans l’univers du crypto-gaming, le jeton ou NFT n’a, pour l’instant, de f
 
 
 
-### Une aberration écologique
+### 🌱 Une aberration écologique
 
 Ce n’est pas la première fois que je parle d’écologie sur ce blog avec l’article sur [l’éco-conception](https://blog.eleven-labs.com/fr/leco-conception/). Les transactions de jetons et NFT sont calculées via de la blockchain, comme pour la crypto-monnaie. Cela demande des ressources considérables : terres rares et de l’énergie qui est souvent d’origine fossile.
 
