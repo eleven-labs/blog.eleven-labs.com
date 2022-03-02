@@ -35,14 +35,14 @@ Vous en avez peut-être déjà entendu parlé dans le monde artistique et surtou
 *<center>Sur Sorare, la carte unique de Erling Haaland vaut 600k, alors que la carte hors NFT ne vaut rien.</center>*
 
 
-La différence entre un token “normal” et un NFT, c’est que le token est interchangeable : 1 jeton de Bitcoin vaut la même valeur qu’un autre jeton, comme dans le commerce, une pièce d’1 euro vaut une autre pièce d’1 euro.
+La différence entre un token “normal” et un NFT, c’est que le token est interchangeable : 1 jeton de Bitcoin vaut la même valeur qu’un autre Bitcoin, comme dans le commerce, une pièce d’1 euro vaut une autre pièce d’1 euro.
 
 On peut comparer le NFT avec les pièces de monnaie en édition limitée ou rare, la valeur peut augmenter tant qu’il y a des acheteurs.
 
 
 ## Que vient faire le jeu vidéo là-dedans ?
 
-Même si le boom est récent, le premier crypto-game date de 2017 avec [CryptoKitties](https://fr.wikipedia.org/wiki/CryptoKitties) où on pouvait acheter, vendre, élever et reproduire des CryptoKitties. En 2018 sort [Axie Infinity](https://axieinfinity.com/) qui est un play-to-earn (jouer pour gagner) où il faut aussi avoir des créatures comme les CryptoKitties, mais on peut aussi les faire combattre en équipe ou farmer pour gagner des objets qui peuvent être ensuite être revendus à d’autres joueurs.  \
+Même si le boom est récent, le premier crypto-game date de 2017 avec [CryptoKitties](https://fr.wikipedia.org/wiki/CryptoKitties) où on pouvait acheter, vendre, élever et reproduire des CryptoKitties. En 2018 sort [Axie Infinity](https://axieinfinity.com/) qui est un play-to-earn (jouer pour gagner par le travail) où il faut aussi avoir des créatures comme les CryptoKitties, mais on peut aussi les faire combattre en équipe ou farmer pour gagner des objets qui peuvent être ensuite être revendus à d’autres joueurs.  \
 Cela permet d’inciter les gamers à jouer encore plus, à permettre qu’une communauté se créer et que le jeu perdure à travers les années.
 
 D’où vient le boom si ces jeux datent de quelques années ? Tout simplement des suites de la pandémie de Covid-19 : les gens étaient enfermés chez eux et potentiellement sans travail, le crypto-gaming est devenu une source de revenu.
@@ -53,7 +53,7 @@ D’où vient le boom si ces jeux datent de quelques années ? Tout simplement d
 
 ### Context
 
-Je n’ai essayé que des crypto-games que je qualifierai de “sérieux” : ils sont sur le marché depuis longtemps, sont des éditeurs de confiance et ne sont pas des “click-to-ear” (des “jeux” où il suffit de cliquer pour gagner des tokens grâce à jeton d’entrée dont le cours varie ).
+Je n’ai essayé que des crypto-games que je qualifierai de “sérieux” : ils sont sur le marché depuis longtemps, sont des éditeurs de confiance et ne sont pas des “click-to-earn” (des “jeux” où il suffit de cliquer pour gagner des tokens).
 
 La présentation que je vais faire n’est pas forcément le même business model pour chaque jeu, et cela vient de ma compréhension. J’ai joué personnellement à Axie Infinity et à Sorare.
 
@@ -112,7 +112,7 @@ Il peut y avoir un cours et le NFT est indexé dessus. Par exemple une créature
 
 Il y a aussi, comme sur Sorare, les vendeurs qui fixent leur prix ou proposent des objets en enchères, et ce sont les acheteurs qui valident le montant.
 
-Dans tous les cas, on peut faire un parallèle avec la possession matérielle : quand vous voulez acheter un appartement, il n’a pas le même prix que celui d’à côté car il n’a pas les mêmes caractéristiques, que le vendeur a mis son propre prix, et que ce n’est qu’à vous de valider ou non la valeur du bien.
+Dans tous les cas, on peut faire un parallèle avec la possession matérielle : quand vous voulez acheter un appartement, il n’a pas le même prix que celui d’à côté car il n’a pas les mêmes caractéristiques, le vendeur a fixé son propre prix, et ce n’est qu’à vous de valider ou non la valeur du bien.
 
 
 ## Critique d’un système
