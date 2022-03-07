@@ -47,21 +47,116 @@ Il s'agit d'un parcours plutôt exhaustif d'une requête, mais la seule étape r
 Comme vous pouvez le constater, une requête, avant d'en arriver au **Controller**, peut passer par 4 premières couches qui sont dans l'ordre : **Middleware** -> **Guard** -> **Interceptor** -> **Pipe**.
 Puis, libre à votre **Controller** d'appeler tout **Service** (où par convention repose votre logique métier) ou **Repository** (pour les appels à la base de données) pour traiter la requête.
 Enfin, le **Controller** renverra une réponse qui, comme vous le constatez, peut à nouveau passer par un **Intercepteur**, puis par les **Exception Filters**.
+Nous allons dans cet article expliquer à quoi correspondent chacune de ces étapes.
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
-On pourrait en réalité découper certaines étapes en 2 ou 3 sous couches. Par exemple on distingue 3 niveaux de déclaration d'intercepteurs :
- 
--   Intercepteurs déclarés globalement
--   Intercepteurs déclarés au niveau du controller
--   Intercepteurs déclarés au niveau de la route
+Mais avant ça ... Rendez-vous dans la section suivante pour vous rendre compte que le schéma ci-dessus vous a un peu menti en simplifiant les choses.
+</div>
 
-Ces 3 intercepteurs ne seraient pas appelés au même moment.
-Lors d'une requête, l'ordre de passage est toujours : 
+## Niveaux de déclaration
+
+Et oui, avant d'entrer le vif du sujet, il me semblait important de parler des *niveaux de déclation*.
+En réalité, chacune de ces étapes que traverse la requête peut se diviser en 1 ou plusieurs sous-étapes. Pas de panique, rien de très compliqué ici, voyons par l'exemple.
+
+Tout d'abord, il existe 5 niveaux de déclarations :
+
+- Déclaration globale
+- Déclaration au niveau Module
+- Déclaration au niveau Controller
+- Déclaration au niveau Route
+- Déclaration au niveau paramètre de route
+
+Par exemple, un Intercepteur peut être déclaré à 3 niveaux :
+
+- Globalement
+- Au niveau d'un controller
+- Au niveau d'un route
+
+Ces 3 niveaux d'intrercepteurs ne seraient pas traversés au même moment. Un intercepteur global intercepte toutes les requêtes, tandis qu'un intrecepteur placé au niveau d'un Controller / d'une route intercepte seulement les requêtes qui passent par ce Controller / cette route.
+
+Ainsi, sachez que lors d’une requête, au sein de chaque couche, l’ordre de passage est toujours :
 
 Niveau **global** => Niveau **module** => Niveau **controller** => Niveau **route** => Niveau **paramètre de route**.
 
-Lors de la réponse, il s'agit de l'ordre inverse.
+<div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
+Cet ordre n'est vrai qu'à l'intérieur de **chaque couche**. Par exemple, un **Intercepteur** déclaré globalement sera toujours appelé **APRÈS** un **Guard** appliqué au niveau d'une route; car l'ordre dans lequel est appelé chacune de ces couches prévaut et est immuable.
 </div>
+
+Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour chaque niveau.
+
+Voilà comment déclarer un Guard **globalement** :
+
+```javascript
+// app.module.ts
+
+// ...
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: UserGuard,
+    },
+  ],
+// ...
+```
+
+=> Ce Guard est appliqué globalement = à toute l'application (quelque soit le module où il est déclaré). Cf plus bas la section sur les Guards.
+
+Voilà comment déclarer un Middleware depuis un **Module** :
+
+```javascript
+// app.module.ts
+
+configure(consumer: MiddlewareConsumer): void {
+    consumer
+      .apply(LoggerMiddleware)
+      .forRoutes(SomeController);
+}
+```
+
+=> Ce Middleware est déclaré au niveau d'un module, il est donc appelé après tout éventuel Middleware déclaré globalement. Cela étant dit, un Middleware déclaré comme ci-dessus s'applique sur toutes les routes de l'application grâce au wildcard `*`.
+
+Voilà comment déclarer un Intercepteur au niveau d'un **Controller** :
+
+```javascript
+@UseInterceptors(LoggingInterceptor)
+export class SomeController {}
+```
+
+Cet intercepteur sera appliqué à toutes les routes de ce Controller.
+
+Voyons à présent comment déclarer un Guard au niveau d'une **route** :
+
+```javascript
+// some-controller.ts
+
+// ...
+@UseGuards(new RolesGuard())
+@Get()
+async someRoute() {
+  // ...
+}
+// ...
+```
+
+Enfin, voilà l'exemple d'un pipe déclaré sur un **paramètre de route** :
+
+```javascript
+// some-controller.ts
+
+// ...
+@UseGuards(new RolesGuard())
+@Get(':id')
+async someRoute(@Param('id', ParseIntPipe) id: number) {
+  // ...
+}
+// ...
+```
+
+<div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+L'annotation `@Param` permet de sélectionner un paramètre de l'URL, ici `:id`.
+</div>
+
+Passons maintenant à l'explication de chacun de ces concepts que nous survolons depuis le début. Pour chacun, en début de section, je mettrai une petite note indiquant à quel(s) niveau(x) il est déclarable.
 
 ## Les Middlewares
 
@@ -206,15 +301,10 @@ Voilà l'utilisation de ce Pipe, associé à un paramètre d'une route :
 
 ```javascript
 @Get(':id')
-async findOne(@Param('id', ParseIntPipe) id: number) {
+async findOne(@Param('id', ParseIntPipe) id: number): Cat {
   return this.catsService.findOne(id);
 }
 ```
-
-<div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-L'annotation `@Param` permet de sélectionner un paramètre de l'URL, ici `:id`.
-</div>
-
 
 ## Le Controller
 
@@ -225,7 +315,7 @@ Mais voilà un exemple d'un Controller appelé dans la lignée de nos exemples p
 ```javascript
 @Get('admin/some-secret-route')
 @UseGuards(AdminRoleGuard)
-async findOne() {
+async findOne(): User {
   return this.adminService.somePrivateData();
 }
 ```
@@ -254,7 +344,7 @@ C'est-à-dire que vous pouvez par exemple faire ceci dans un Controller :
 
 ```javascript
 @Get('some-admin-route')
-async adminRoute() {
+async adminRoute(): any {
   throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
 }
 ```
