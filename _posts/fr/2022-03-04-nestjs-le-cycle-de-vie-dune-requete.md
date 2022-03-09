@@ -66,25 +66,27 @@ Tout d'abord, il existe 5 niveaux de déclarations :
 - Déclaration au niveau Route
 - Déclaration au niveau paramètre de route
 
+<div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 Par exemple, un Intercepteur peut être déclaré à 3 niveaux :
 
 - Globalement
 - Au niveau d'un controller
 - Au niveau d'un route
 
-Ces 3 niveaux d'intrercepteurs ne seraient pas traversés au même moment. Un intercepteur global intercepte toutes les requêtes, tandis qu'un intrecepteur placé au niveau d'un Controller / d'une route intercepte seulement les requêtes qui passent par ce Controller / cette route.
+Un intercepteur global intercepte toutes les requêtes, tandis qu'un intercepteur placé au niveau d'un Controller / d'une route intercepte seulement les requêtes qui passent par ce Controller / cette route.
+</div>
 
 Ainsi, sachez que lors d’une requête, au sein de chaque couche, l’ordre de passage est toujours :
 
 Niveau **global** => Niveau **module** => Niveau **controller** => Niveau **route** => Niveau **paramètre de route**.
 
-<div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
-Cet ordre n'est vrai qu'à l'intérieur de **chaque couche**. Par exemple, un **Intercepteur** déclaré globalement sera toujours appelé **APRÈS** un **Guard** appliqué au niveau d'une route; car l'ordre dans lequel est appelé chacune de ces couches prévaut et est immuable.
-</div>
+Voici donc une partie du schéma ci-dessus, mis à jour :
+
+![]({{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/updated-lifecycle-schema.png)
 
 Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour chaque niveau.
 
-Voilà comment déclarer un Guard **globalement** :
+**Déclaration globale**, exemple avec un Guard :
 
 ```javascript
 // app.module.ts
@@ -101,7 +103,8 @@ Voilà comment déclarer un Guard **globalement** :
 
 => Ce Guard est appliqué globalement = à toute l'application (quelque soit le module où il est déclaré). Cf plus bas la section sur les Guards.
 
-Voilà comment déclarer un Middleware depuis un **Module** :
+
+**Déclaration niveau module**, exemple avec un Middleware :
 
 ```javascript
 // app.module.ts
@@ -115,16 +118,19 @@ configure(consumer: MiddlewareConsumer): void {
 
 => Ce Middleware est déclaré au niveau d'un module, il est donc appelé après tout éventuel Middleware déclaré globalement. Cela étant dit, un Middleware déclaré comme ci-dessus s'applique sur toutes les routes de l'application grâce au wildcard `*`.
 
-Voilà comment déclarer un Intercepteur au niveau d'un **Controller** :
+
+**Déclaration niveau Controller**, exemple avec un Intercepteur :
 
 ```javascript
+// some-controller.ts
+
 @UseInterceptors(LoggingInterceptor)
 export class SomeController {}
 ```
 
 Cet intercepteur sera appliqué à toutes les routes de ce Controller.
 
-Voyons à présent comment déclarer un Guard au niveau d'une **route** :
+**Déclaration niveau route**, exemple avec un Guard :
 
 ```javascript
 // some-controller.ts
@@ -132,21 +138,20 @@ Voyons à présent comment déclarer un Guard au niveau d'une **route** :
 // ...
 @UseGuards(new RolesGuard())
 @Get()
-async someRoute() {
+async someRoute(): any {
   // ...
 }
 // ...
 ```
 
-Enfin, voilà l'exemple d'un pipe déclaré sur un **paramètre de route** :
+**Déclaration niveau paramètre de route**, exemple avec un Pipe :
 
 ```javascript
 // some-controller.ts
 
 // ...
-@UseGuards(new RolesGuard())
 @Get(':id')
-async someRoute(@Param('id', ParseIntPipe) id: number) {
+async someRoute(@Param('id', ParseIntPipe) id: number): any {
   // ...
 }
 // ...
@@ -213,6 +218,7 @@ Le Guard est une classe dont la mission est le plus souvent l'autorisation. Un G
 Il peut par exemple vérifier quels sont les rôles nécessaires pour accéder au Controller qui sera appelé dans la foulée, et avorter la requête si elle ne contient pas le rôle requis.
 
 Prenons l'exemple d'un Guard appelé à la suite du Middleware que nous avons écrit plus haut. Voilà ce qu'on pourrait faire :
+
 ```javascript
 @Injectable()
 export class AdminRoleGuard implements CanActivate {
