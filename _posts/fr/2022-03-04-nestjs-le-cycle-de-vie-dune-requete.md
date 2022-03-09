@@ -60,18 +60,18 @@ En réalité, chacune de ces étapes que traverse la requête peut se diviser en
 
 Tout d'abord, il existe 5 niveaux de déclarations :
 
-- Déclaration globale
-- Déclaration au niveau Module
-- Déclaration au niveau Controller
-- Déclaration au niveau Route
-- Déclaration au niveau paramètre de route
+- Déclaration **globale**
+- Déclaration au niveau **Module**
+- Déclaration au niveau **Controller**
+- Déclaration au niveau **Route**
+- Déclaration au niveau **paramètre de route**
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 Par exemple, un Intercepteur peut être déclaré à 3 niveaux :
 
 - Globalement
 - Au niveau d'un controller
-- Au niveau d'un route
+- Au niveau d'une route
 
 Un intercepteur global intercepte toutes les requêtes, tandis qu'un intercepteur placé au niveau d'un Controller / d'une route intercepte seulement les requêtes qui passent par ce Controller / cette route.
 </div>
@@ -80,13 +80,13 @@ Ainsi, sachez que lors d’une requête, au sein de chaque couche, l’ordre de 
 
 Niveau **global** => Niveau **module** => Niveau **controller** => Niveau **route** => Niveau **paramètre de route**.
 
-Voici donc une partie du schéma ci-dessus, mis à jour :
+Reprenons donc une partie de notre schéma vu plus haut, mais mis à jour. Cela donnerait  :
 
 ![]({{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/updated-lifecycle-schema.png)
 
-Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour chaque niveau.
+Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour chaque niveau. Rendez-vous dans les prochaines sections pour les présentations plus poussées de toutes nos couches (Middlewares, Intercepteurs, ...).
 
-**Déclaration globale**, exemple avec un Guard :
+**Déclaration globale**. Exemple avec un Guard :
 
 ```javascript
 // app.module.ts
@@ -101,14 +101,17 @@ Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour 
 // ...
 ```
 
-=> Ce Guard est appliqué globalement = à toute l'application (quelque soit le module où il est déclaré). Cf plus bas la section sur les Guards.
+=> Ce Guard est appliqué globalement = à toute l'application (quelque soit le module où il est déclaré).
 
 
-**Déclaration niveau module**, exemple avec un Middleware :
+**Déclaration niveau module**. Exemple avec un Middleware :
 
 ```javascript
 // app.module.ts
 
+// ...
+
+// Style de déclaration spécifique aux Middlewares
 configure(consumer: MiddlewareConsumer): void {
     consumer
       .apply(LoggerMiddleware)
@@ -119,7 +122,7 @@ configure(consumer: MiddlewareConsumer): void {
 => Ce Middleware est déclaré au niveau d'un module, il est donc appelé après tout éventuel Middleware déclaré globalement. Cela étant dit, un Middleware déclaré comme ci-dessus s'applique sur toutes les routes de l'application grâce au wildcard `*`.
 
 
-**Déclaration niveau Controller**, exemple avec un Intercepteur :
+**Déclaration niveau Controller**. Exemple avec un Intercepteur :
 
 ```javascript
 // some-controller.ts
@@ -128,9 +131,9 @@ configure(consumer: MiddlewareConsumer): void {
 export class SomeController {}
 ```
 
-Cet intercepteur sera appliqué à toutes les routes de ce Controller.
+=> Cet intercepteur sera appliqué à toutes les routes de ce Controller.
 
-**Déclaration niveau route**, exemple avec un Guard :
+**Déclaration niveau route**. Exemple avec un Guard :
 
 ```javascript
 // some-controller.ts
@@ -144,7 +147,7 @@ async someRoute(): any {
 // ...
 ```
 
-**Déclaration niveau paramètre de route**, exemple avec un Pipe :
+**Déclaration niveau paramètre de route**. Exemple avec un Pipe :
 
 ```javascript
 // some-controller.ts
@@ -165,7 +168,7 @@ Passons maintenant à l'explication de chacun de ces concepts que nous survolons
 
 ## Les Middlewares
 
-<div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles :</p>
+<div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
 - Global
 - Module
 </div>
@@ -207,7 +210,7 @@ De plus, il doit se terminer par un appel à la fonction `next()` pour pouvoir p
 
 ## Les Guards
 
-<div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles :</p>
+<div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
 - Global
 - Controller
 - Route
@@ -238,7 +241,7 @@ Un Guard doit implémenter la fonction  `canActivate()`, qui retourne un boolée
 
 ## Les Intercepteurs
 
-<div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles :</p>
+<div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
 - Global
 - Controller
 - Route
@@ -275,7 +278,7 @@ L'interface `CallHandler` implémente la méthode `handle()`, qui retourne un Ob
 
 ## Les Pipes
 
-<div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles :</p>
+<div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
 - Global
 - Controller
 - Route
@@ -336,7 +339,7 @@ Nous n'irons pas plus loin dans le traitement de la **requête**, sachez juste q
 
 ## Les Exception filters
 
-<div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles :</p>
+<div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
 - Global
 - Controller
 - Route
