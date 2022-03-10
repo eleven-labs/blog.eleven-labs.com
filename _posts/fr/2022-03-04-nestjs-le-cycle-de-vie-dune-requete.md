@@ -46,7 +46,7 @@ Il s'agit d'un parcours plutôt exhaustif d'une requête, mais la seule étape r
 
 Comme vous pouvez le constater, une requête, avant d'en arriver au **Controller**, peut passer par 4 premières couches qui sont dans l'ordre : **Middleware** -> **Guard** -> **Interceptor** -> **Pipe**.
 Puis, libre à votre **Controller** d'appeler tout **Service** (où par convention repose votre logique métier) ou **Repository** (pour les appels à la base de données) pour traiter la requête.
-Enfin, le **Controller** renverra une réponse qui, comme vous le constatez, peut à nouveau passer par un **Intercepteur**, puis par les **Exception Filters**.
+Enfin, le **Controller** renverra une réponse qui, comme vous le constatez, peut à nouveau passer par un **Interceptor**, puis par les **Exception Filters**.
 Nous allons dans cet article expliquer à quoi correspondent chacune de ces étapes.
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
@@ -55,7 +55,7 @@ Mais avant ça ... Rendez-vous dans la section suivante pour vous rendre compte 
 
 ## Niveaux de déclaration
 
-Et oui, avant d'entrer le vif du sujet, il me semblait important de parler des *niveaux de déclation*.
+Et oui, avant d'entrer le vif du sujet, il me semblait important de parler des *niveaux de déclaration*.
 En réalité, chacune de ces étapes que traverse la requête peut se diviser en 1 ou plusieurs sous-étapes. Pas de panique, rien de très compliqué ici, voyons par l'exemple.
 
 Tout d'abord, il existe 5 niveaux de déclarations :
