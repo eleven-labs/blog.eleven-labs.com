@@ -41,7 +41,7 @@ Rien de tel qu'un schéma que je vous ai concocté pour entrer dans le vif du su
 ![]({{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/nest-lifecycle-schema.png)
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-Il s'agit d'un parcours plutôt exhaustif d'une requête, mais la seule étape réellement essentielle ici est le **Controller**, qui a pour rôle de recevoir votre requête, la traiter, et renvoyer une réponse. Tout le reste est facultatif.
+Il s'agit d'un parcours plutôt exhaustif d'une requête, mais la seule étape réellement essentielle ici est le **Controller**. Il a pour rôle de recevoir votre requête, la traiter, et renvoyer une réponse. Tout le reste est facultatif.
 </div>
 
 Comme vous pouvez le constater, une requête, avant d'en arriver au **Controller**, peut passer par 4 premières couches qui sont dans l'ordre : **Middleware** -> **Guard** -> **Interceptor** -> **Pipe**.
@@ -49,13 +49,11 @@ Puis, libre à votre **Controller** d'appeler tout **Service** (où par conventi
 Enfin, le **Controller** renverra une réponse qui, comme vous le constatez, peut à nouveau passer par un **Interceptor**, puis par les **Exception Filters**.
 Nous allons dans cet article expliquer à quoi correspondent chacune de ces étapes.
 
-<div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
-Mais avant ça ... Rendez-vous dans la section suivante pour vous rendre compte que le schéma ci-dessus vous a un peu menti en simplifiant les choses.
-</div>
+Chacune de ces couches peut être déclarée sur un ou plusieurs niveaux, rendez-vous dans la section suivante pour les découvrir.
 
 ## Niveaux de déclaration
 
-Et oui, avant d'entrer le vif du sujet, il me semblait important de parler des *niveaux de déclaration*.
+Avant de définir plus en détail chacune des couches vues précédemment, il me semblait important de parler des *niveaux de déclaration*.
 En réalité, chacune de ces étapes que traverse la requête peut se diviser en 1 ou plusieurs sous-étapes. Pas de panique, rien de très compliqué ici, voyons par l'exemple.
 
 Tout d'abord, il existe 5 niveaux de déclarations :
@@ -67,13 +65,13 @@ Tout d'abord, il existe 5 niveaux de déclarations :
 - Déclaration au niveau **paramètre de route**
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-Par exemple, un Intercepteur peut être déclaré à 3 niveaux :
+Par exemple, un Interceptor peut être déclaré à 3 niveaux :
 
 - Globalement
 - Au niveau d'un controller
 - Au niveau d'une route
 
-Un intercepteur global intercepte toutes les requêtes, tandis qu'un intercepteur placé au niveau d'un Controller / d'une route intercepte seulement les requêtes qui passent par ce Controller / cette route.
+Un Interceptor global intercepte toutes les requêtes, tandis qu'un Interceptor placé au niveau d'un Controller / d'une route intercepte seulement les requêtes qui passent par ce Controller / cette route.
 </div>
 
 Ainsi, sachez que lors d’une requête, au sein de chaque couche, l’ordre de passage est toujours :
@@ -84,9 +82,11 @@ Reprenons donc une partie de notre schéma vu plus haut, mais mis à jour. Cela 
 
 ![]({{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/updated-lifecycle-schema.png)
 
-Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour chaque niveau. Rendez-vous dans les prochaines sections pour les présentations plus poussées de toutes nos couches (Middlewares, Intercepteurs, ...).
+Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour chaque niveau. Rendez-vous dans les prochaines sections pour les présentations plus poussées de toutes nos couches (Middlewares, Interceptors, ...).
 
-**Déclaration globale**. Exemple avec un Guard :
+### Déclaration globale
+
+Exemple avec un Guard :
 
 ```javascript
 // app.module.ts
@@ -104,7 +104,9 @@ Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour 
 => Ce Guard est appliqué globalement = à toute l'application (quelque soit le module où il est déclaré).
 
 
-**Déclaration niveau module**. Exemple avec un Middleware :
+### Déclaration niveau module
+
+Exemple avec un Middleware :
 
 ```javascript
 // app.module.ts
@@ -115,14 +117,16 @@ Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour 
 configure(consumer: MiddlewareConsumer): void {
     consumer
       .apply(LoggerMiddleware)
-      .forRoutes(SomeController);
+      .forRoutes('*');
 }
 ```
 
 => Ce Middleware est déclaré au niveau d'un module, il est donc appelé après tout éventuel Middleware déclaré globalement. Cela étant dit, un Middleware déclaré comme ci-dessus s'applique sur toutes les routes de l'application grâce au wildcard `*`.
 
 
-**Déclaration niveau Controller**. Exemple avec un Intercepteur :
+### Déclaration niveau Controller
+
+Exemple avec un Interceptor :
 
 ```javascript
 // some-controller.ts
@@ -131,9 +135,11 @@ configure(consumer: MiddlewareConsumer): void {
 export class SomeController {}
 ```
 
-=> Cet intercepteur sera appliqué à toutes les routes de ce Controller.
+=> Cet Interceptor sera appliqué à toutes les routes de ce Controller.
 
-**Déclaration niveau route**. Exemple avec un Guard :
+### Déclaration niveau route
+
+Exemple avec un Guard :
 
 ```javascript
 // some-controller.ts
@@ -147,7 +153,9 @@ async someRoute(): any {
 // ...
 ```
 
-**Déclaration niveau paramètre de route**. Exemple avec un Pipe :
+### Déclaration niveau paramètre de route
+
+Exemple avec un Pipe :
 
 ```javascript
 // some-controller.ts
@@ -239,7 +247,7 @@ Ici, on vérifie si l'utilisateur stocké plus tôt dans la requête a le rôle 
 Un Guard doit implémenter la fonction  `canActivate()`, qui retourne un booléen, de manière synchrone ou dans une Promesse ou un Observable. 
 </div>
 
-## Les Intercepteurs
+## Les Interceptors
 
 <div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
 - Global
@@ -247,13 +255,13 @@ Un Guard doit implémenter la fonction  `canActivate()`, qui retourne un boolée
 - Route
 </div>
 
-On compare souvent les intercepteurs avec les Middlewares. Leurs différences sont nombreuses mais en voici quelques unes :
+On compare souvent les Interceptors avec les Middlewares. Leurs différences sont nombreuses mais en voici quelques unes :
 
-- Un intercepteur est appelé à la fois lors de la **requête**, mais aussi lors de la **réponse**.
-- Comme le Guard, l'Intercepteur a accès au **contexte d'exécution** (qui contient la requête), contrairement au Middleware qui a accès à la requête, mais pas au contexte d'exécution.
-- Comme vous le savez maintenant, l'Intercepteur est appelé **après** le Guard. Le Middleware est lui appelé **avant**.
+- Un Interceptor est appelé à la fois lors de la **requête**, mais aussi lors de la **réponse**.
+- Comme le Guard, l'Interceptor a accès au **contexte d'exécution** (qui contient la requête), contrairement au Middleware qui a accès à la requête, mais pas au contexte d'exécution.
+- Comme vous le savez maintenant, l'Interceptor est appelé **après** le Guard. Le Middleware est lui appelé **avant**.
 
-Souvent, les intercepteurs sont utilisés pour *serializer* les réponses renvoyées par le Controller, par exemple :
+Souvent, les Interceptors sont utilisés pour *serializer* les réponses renvoyées par le Controller, par exemple :
 
 ```javascript
 class UserSerializerInterceptor implements NestInterceptor {
@@ -267,13 +275,13 @@ class UserSerializerInterceptor implements NestInterceptor {
 }
 ```
 
-L'intercepteur doit implémenter la fonction `intercept()` qui prend 2 arguments, représentant respectivement :
+L'Interceptor doit implémenter la fonction `intercept()` qui prend 2 arguments, représentant respectivement :
 
 - Un **ExecutionContext**, contenant notamment la requête.
 - un **CallHandler**, qui donne accès à la réponse.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Comment ça marche ?</p>
-L'interface `CallHandler` implémente la méthode `handle()`, qui retourne un Observable. C'est ainsi que l'intercepteur reste à l'écoute de la réponse. Réponse que vous pouvez ensuite manipuler comme n'importe quel Observable classique. Ici on utilise la fonction `plainToInstance()` de la librairie *class-transformer*, qui serialize un objet Javascript selon une classe donnée; ici un hypothétique UserDto.
+L'interface `CallHandler` implémente la méthode `handle()`, qui retourne un Observable. C'est ainsi que l'Interceptor reste à l'écoute de la réponse. Réponse que vous pouvez ensuite manipuler comme n'importe quel Observable classique. Ici on utilise la fonction `plainToInstance()` de la librairie *class-transformer*, qui serialize un objet Javascript selon une classe donnée; ici un hypothétique UserDto.
 </div>
 
 ## Les Pipes
