@@ -33,7 +33,21 @@ Bienvenue dans cet article ayant pour but de faire un tour d'horizon du cycle de
 Le but ici sera de donner une représentation précise de chaque étape que peut rencontrer une requête, dans l'ordre, et avec des exemples. Une fois lu une première fois, gardez cet article dans un coin, à la manière d'un **pense-bête**. 
 Ainsi, en cas de confusion ou d'esprit embrumé le lendemain d'un jeudi soir un peu arrosé, il sera votre meilleur allié pour que votre gueule de bois passe inaperçue.
 
+Voilà d'ailleurs un **sommaire** pour retrouver rapidement la partie qui vous intéresse :
+
+- [Présentation globale du cycle de vie requête / réponse](#cycle-de-vie--vue-globale)
+- [Les niveaux de déclaration](#niveaux-de-déclaration)
+- [Présentation des Middlewares](#les-middlewares)
+- [Présentation des Guards](#les-guards)
+- [Présentation des Interceptors](#les-interceptors)
+- [Présentation des Pipes](#les-pipes)
+- [Présentation du Controller](#le-controller)
+- [Présentation des Exception Filters](#les-exception-filters)
+- [Conclusion](#conclusion)
+
+<div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 Vous pouvez totalement être débutant en NestJS pour être en mesure de lire cet article. C'est peut-être même recommandé.
+</div>
 
 ## Cycle de vie : vue globale
 Rien de tel qu'un schéma que je vous ai concocté pour entrer dans le vif du sujet. Je vous laisse vous en imprégner.
