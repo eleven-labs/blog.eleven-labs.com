@@ -389,4 +389,4 @@ Le deuxième argument de la fonction `catch()` est un objet de type `ArgumentHos
 
 Vous savez à présent à peu près tout sur le cycle de vie d'une requête en NestJS. Le but était surtout de donner une meilleure vue d'ensemble de ces différentes étapes, de leur **ordre** d'exécution, et de leur utilité. Mais si vous voulez en savoir plus sur **comment** les implémenter, à différents niveaux (module, controller, route...), n'hésitez pas à vous référez à la [documentation officielle de NestJS](https://docs.nestjs.com).
 
-À très bientôt :)
+À très bientôt 👋
