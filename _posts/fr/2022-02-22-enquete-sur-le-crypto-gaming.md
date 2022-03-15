@@ -9,7 +9,7 @@ categories:
     - crypto-gaming
     - blockchain
 
-cover: /assets/2022-03-02-enquete-sur-le-crypto-gaming/enquete-crypto.png
+cover: /assets/2022-03-16-enquete-sur-le-crypto-gaming/enquete-crypto.png
 ---
 
 ## Introduction
@@ -17,7 +17,7 @@ cover: /assets/2022-03-02-enquete-sur-le-crypto-gaming/enquete-crypto.png
 Le [crypto-gaming](https://en.wikipedia.org/wiki/Blockchain_game) fait rage sur les internets, quelle est cette nouvelle passion chez les jeunes ? Peut-on réellement faire de l’argent en jouant aux jeux vidéo ?
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/enquete-crypto.png" width="300px" alt="Carte Haaland sur Sorare à 600k" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/enquete-crypto.png" width="300px" alt="Carte Haaland sur Sorare à 600k" style="display: block; margin: auto;"/>
 </div>
 
 ## Les bases
@@ -29,15 +29,15 @@ La [crypto-monnaie](https://fr.wikipedia.org/wiki/Cryptomonnaie) est une monnaie
 Vous en avez peut-être déjà entendu parlé dans le monde artistique et surtout sportif, le NFT remplace les cartes de collections Panini. Le [NFT](https://fr.wikipedia.org/wiki/Jeton_non_fongible) pour _Non-Fungible Token_ (en français _Jeton non fongible_) est, souvent, un objet numérique qui va être certifié via la blockchain comme appartenant à une identité numérique ( = un propriétaire).
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/sorare-nft.png" width="233px" alt="Carte Haaland sur Sorare à 600k" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/sorare-nft.png" width="233px" alt="Carte Haaland sur Sorare à 600k" style="display: block; margin: auto;"/>
 </div>
 
 *<center>Sur Sorare, la carte unique de Erling Haaland vaut 600k, alors que la carte hors NFT ne vaut rien.</center>*
 
 
-La différence entre un token “normal” et un NFT, c’est que le token est interchangeable : 1 jeton de Bitcoin vaut la même valeur qu’un autre Bitcoin, comme dans le commerce, une pièce d’1 euro vaut une autre pièce d’1 euro.
+La différence entre un token “normal” et un NFT, c’est que le token est interchangeable : 1 jeton de Bitcoin vaut la même valeur qu’un autre Bitcoin, comme dans le commerce, une pièce d’1 euro vaut une autre pièce d’1 euro. Le NFT est quand à lui unique.
 
-On peut comparer le NFT avec les pièces de monnaie en édition limitée ou rare, la valeur peut augmenter tant qu’il y a des acheteurs.
+On peut comparer le NFT avec des cartes Pokémon : édition limitée, la carte la plus chère c'est vendu [900.000$](https://gaming.gentside.com/pokemon/pokemon-les-10-cartes-les-plus-cheres-de-l-histoire-du-jeu_art24621.html) en février 2022.
 
 
 ## Que vient faire le jeu vidéo là-dedans ?
@@ -53,38 +53,42 @@ D’où vient le boom si ces jeux datent de quelques années ? Tout simplement d
 
 ### Context
 
-Je n’ai essayé que des crypto-games que je qualifierai de “sérieux” : ils sont sur le marché depuis longtemps, sont des éditeurs de confiance et ne sont pas des “click-to-earn” (des “jeux” où il suffit de cliquer pour gagner des tokens).
+Pour cet article, j'ai testé des crypto-games que je qualifierai de “sérieux” : ils sont sur le marché depuis longtemps, sont des éditeurs de confiance et ne sont pas des “click-to-earn” (des “jeux” où il suffit de cliquer pour gagner des tokens qui sont pour moi des escroqueries).
 
-La présentation que je vais faire n’est pas forcément le même business model pour chaque jeu, et cela vient de ma compréhension. J’ai joué personnellement à Axie Infinity et à Sorare.
+J'ai testé et discuté des crypto-games avec des personnes à fond dedans, mais n'ayant pas le budget, il est possible que cet article soit incomplet. J’ai joué personnellement à Axie Infinity et à Sorare.
 
 
 ### Démarrage d’un jeu
 
-Lorsqu’un éditeur va lancer son jeu, il va mettre en vente des NFT (ou jetons) pour que les joueurs puissent accéder au jeu. Certains peuvent être en free-to-play (gratuit pour jouer), mais vous ne pourrez pas (ou rarement) gagner des objets revendables.
+Lorsqu’un éditeur va lancer son jeu, il va mettre en vente des NFT (ou jetons) pour que les joueurs puissent accéder au jeu. Certains peuvent être en free-to-play (gratuit pour jouer), mais vous ne pourrez pas, ou rarement, gagner des objets revendables.
 
-L’éditeur va avoir une rentrée d’argent en vendant ses jetons en nombre limité. Pourquoi en nombre limité ? Tout simplement pour éviter que le prix du jeton baisse s’il y en a trop en circulation, et donc décourager des joueurs/investisseurs.
+L’éditeur va déjà gagner de l'argent en vendant ses jetons. Parfois à l'infini, parfois en nombre limité, surtout pour les NFT. Pourquoi en nombre limité ? Tout simplement pour éviter que le prix du jeton baisse s’il y en a trop en circulation, et donc décourager des joueurs/investisseurs.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/crypto-gaming-start.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/crypto-gaming-start.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
 </div>
 
 
 ### Vie du jeu
 
-L’éditeur va proposer aux utilisateurs de gagner des objets sous forme de jetons en jouant : combat, pronostique, farming, élevage etc… Et les objets peuvent permettre d’améliorer ses compétences, de farmer plus vite, faire de la reproduction etc…
+L’éditeur va proposer aux utilisateurs de gagner des objets sous forme de jetons en jouant : combat, pronostique, farming ou élevage par exemple. Et les objets peuvent permettre d’améliorer ses compétences, de farmer plus vite, faire de la reproduction etc…
 
 Dans beaucoup de cas, plus le jeu offrira des avantages à jouer, plus le jeu sera attractif, plus il y aura de joueurs. Et les joueurs ayant investis rendront le jeu attractif pour ceux qui veulent se développer ou les nouveaux : ce sont eux qui achètent leurs jetons, et qui vont leur permettre de gagner de l’argent.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/business-nft-token.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/business.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
 </div>
+
+Une question me taraudait, et je le voyais dans Axie : Comment les jetons, surtout en nombre infini, sont créés ?
+
+La réponse ne me plait pas : un jeton est créé à partir rien, il n'a de la valeur que pour les gens qui les utilisent.
 
 ### Enfin, l’argent !
 
 Comme pour la crypto-monnaie classique, les tokens possèdent leur propre cours boursier.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/axie-slp.png" width="700px" alt="Cours de l'objet SLP du jeu Axie Infinity" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/axie-slp.png" width="700px" alt="Cours de l'objet SLP du jeu Axie Infinity" style="display: block; margin: auto;"/>
 </div>
 
 *<center>Sur Axie, on peut gagner en combat des objets SLP qui permettent de faire de la reproduction.</center>*
@@ -93,14 +97,14 @@ Comme pour la crypto-monnaie classique, les tokens possèdent leur propre cours 
 En fonction du cours, il sera ou non intéressant de les revendre, comme à la bourse.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/speculation-down.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/speculation-down.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
 </div>
 
 *<center>Plus il y a d’acheteurs et moins il y a d’intentions d’achat, le cours descend.</center>*
 
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-02-enquete-sur-le-crypto-gaming/speculation-up.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/speculation-up.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
 </div>
 
 *<center>Moins il y a d’acheteurs et plus il y a d’intentions d’achat, le cours monte.</center>*
@@ -114,6 +118,7 @@ Il y a aussi, comme sur Sorare, les vendeurs qui fixent leur prix ou proposent d
 
 Dans tous les cas, on peut faire un parallèle avec la possession matérielle : quand vous voulez acheter un appartement, il n’a pas le même prix que celui d’à côté car il n’a pas les mêmes caractéristiques, le vendeur a fixé son propre prix, et ce n’est qu’à vous de valider ou non la valeur du bien.
 
+Dans tous les cas, l'éditeur du jeu va gagner un petit pourcentage sur la transaction et les mineurs de blockchains vont aussi prendre leur part du gâteau.
 
 ## Critique d’un système
 
@@ -146,5 +151,6 @@ Je savais déjà que du point de vue de l’écologie, j’étais déjà contre.
 Je vais continuer à jouer quelque temps par curiosité, car une question reste encore sans réponse : Combien de temps faut-il pour rentabiliser son investissement ?
 
 
-## Sources
+## Pour aller plus loin
 * [Are Play To Earn Crypto Games a Ponzi Scam?](https://www.youtube.com/watch?v=W4W3wsz5uYc) par On Chain Gaming
+* [Les NFT prolifèrent, malgré leur impact catastrophique pour l'environnement](https://www.francetvinfo.fr/culture/arts-expos/art-contemporain/les-nft-proliferent-malgre-leur-impact-catastrophique-pour-l-environnement_5007331.html) sur Franceinfo Culture
