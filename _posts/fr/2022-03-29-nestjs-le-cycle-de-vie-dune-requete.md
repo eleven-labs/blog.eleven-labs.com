@@ -1,22 +1,13 @@
 ---
 layout: post
 title: "NestJS : le cycle de vie d'une requête"
-excerpt: Explication précise de chaque étape par laquelle passe une requête puis une réponse dans une application NestJS.
+excerpt: Cet article vous expliquera précisemment chaque étape par laquelle passent une requête et une réponse dans une application NestJS.
 lang: fr
 permalink: /fr/nestjs-le-cycle-de-vie-dune-requete/
 authors:
     - ajacquemin
 categories:
-    - nestjs
     - javascript
-    - typescript
-tags:
-    - nestjs
-    - javascript
-    - typescript
-    - node
-    - request
-    - lifecycle
 ---
 
 Bienvenue dans cet article ayant pour but de faire un tour d'horizon du cycle de vie d'une requête puis d'une réponse dans un environnement NestJS !
@@ -46,7 +37,7 @@ Voilà d'ailleurs un **sommaire** pour retrouver rapidement la partie qui vous i
 - [Conclusion](#conclusion)
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-Vous pouvez totalement être débutant en NestJS pour être en mesure de lire cet article. C'est peut-être même recommandé.
+Vous pouvez être totalement débutant en NestJS et quand même lire cet article. C'est peut-être même recommandé.
 </div>
 
 ## Cycle de vie : vue globale
@@ -58,10 +49,10 @@ Rien de tel qu'un schéma que je vous ai concocté pour entrer dans le vif du su
 Il s'agit d'un parcours plutôt exhaustif d'une requête, mais la seule étape réellement essentielle ici est le **Controller**. Il a pour rôle de recevoir votre requête, la traiter, et renvoyer une réponse. Tout le reste est facultatif.
 </div>
 
-Comme vous pouvez le constater, une requête, avant d'en arriver au **Controller**, peut passer par 4 premières couches qui sont dans l'ordre : **Middleware** -> **Guard** -> **Interceptor** -> **Pipe**.
+Comme vous pouvez le constater, une requête, avant d'arriver au **Controller**, peut passer par 4 premières couches qui sont dans l'ordre : **Middleware** -> **Guard** -> **Interceptor** -> **Pipe**.
 Puis, libre à votre **Controller** d'appeler tout **Service** (où par convention repose votre logique métier) ou **Repository** (pour les appels à la base de données) pour traiter la requête.
 Enfin, le **Controller** renverra une réponse qui, comme vous le constatez, peut à nouveau passer par un **Interceptor**, puis par les **Exception Filters**.
-Nous allons dans cet article expliquer à quoi correspondent chacune de ces étapes.
+Nous allons dans cet article expliquer à quoi correspond chacune de ces étapes.
 
 Chacune de ces couches peut être déclarée sur un ou plusieurs niveaux, rendez-vous dans la section suivante pour les découvrir.
 
@@ -96,7 +87,7 @@ Reprenons donc une partie de notre schéma vu plus haut, mais mis à jour. Cela 
 
 ![]({{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/updated-lifecycle-schema.png)
 
-Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour chaque niveau. Rendez-vous dans les prochaines sections pour les présentations plus poussées de toutes nos couches (Middlewares, Interceptors, ...).
+Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour chaque niveau. Rendez-vous dans les prochaines sections pour les présentations plus poussées de toutes nos couches (Middlewares, Interceptors...).
 
 ### Déclaration globale
 
@@ -115,7 +106,7 @@ Exemple avec un Guard :
 // ...
 ```
 
-=> Ce Guard est appliqué globalement = à toute l'application (quelque soit le module où il est déclaré).
+=> Ce Guard est appliqué globalement = à toute l'application (quel que soit le module où il est déclaré).
 
 
 ### Déclaration niveau module
@@ -167,7 +158,7 @@ async someRoute(): any {
 // ...
 ```
 
-### Déclaration niveau paramètre de route
+### Déclaration niveau paramètres de route
 
 Exemple avec un Pipe :
 
@@ -195,8 +186,8 @@ Passons maintenant à l'explication de chacun de ces concepts que nous survolons
 - Module
 </div>
 
-Vous êtes peut-être déjà familier du concept si vous avez déjà fait du développement en NodeJS.
-Le Middleware est toujours appelé avant le Controller, et il a accès à la requête, ainsi qu'à la réponse (par conséquent pas encore peuplée par le retour du Controller).
+Vous êtes peut-être déjà familiers du concept si vous avez déjà fait du développement en NodeJS.
+Le Middleware est toujours appelé avant le Controller et il a accès à la requête ainsi qu'à la réponse (par conséquent pas encore peuplée par le retour du Controller).
 
 Voilà un exemple de Middleware en Nest :
 
@@ -221,8 +212,7 @@ export class CurrentUserMiddleware implements NestMiddleware {
 }
 ```
 
-Dans cet exemple, nous récupérons un potentiel objet `session` dans la requête, puis nous peuplons la requête avec un *user* complet, à l'aide de l'id trouvé dans la `session`.
-Enfin, nous n'oublions pas d'appeler `next()` pour continuer l'exécution.
+Dans cet exemple, nous récupérons un potentiel objet `session` dans la requête, puis nous peuplons la requête avec un *user* complet, à l'aide de l'id trouvé dans la `session`. Enfin, nous n'oublions pas d'appeler `next()` pour continuer l'exécution.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 Un Middleware doit implémenter la fonction `use()`.
@@ -307,7 +297,7 @@ L'interface `CallHandler` implémente la méthode `handle()`, qui retourne un Ob
 - Paramètre de route
 </div>
 
-Les Pipes ont 2 cas d'usage : La **validation** des données, et la **transformation**.
+Les Pipes ont 2 cas d'usage : la **validation** des données, et la **transformation**.
 
 Voici un exemple tiré cette fois de la [documentation de NestJS](https://docs.nestjs.com/pipes) :
 
@@ -326,7 +316,7 @@ export class ParseIntPipe implements PipeTransform<string, number> {
 }
 ```
 
-Ici on récupère une chaîne de caractère que nous tentons de **transformer** en nombre. Si la chaîne de caractère contient autre chose que des chiffres, on fait échouer la **validation**.
+Ici on récupère une chaîne de caractères que nous tentons de **transformer** en nombre. Si la chaîne de caractères contient autre chose que des chiffres, on fait échouer la **validation**.
 
 Voilà l'utilisation de ce Pipe, associé à un paramètre d'une route :
 
@@ -357,7 +347,7 @@ Avec l'annotation `@UseGuards()`, on utilise également un Guard (celui que nous
 
 Nous n'irons pas plus loin dans le traitement de la **requête**, sachez juste qu'habituellement un Controller appelle un service, à l'intérieur duquel se trouve la logique métier, et les appels éventuels aux Repositories, où résident la connexion à la base de données.
 
-> Votre mantra : Quoiqu'il arrive, votre Controller doit récupérer une requête, et retourner une réponse.
+> Votre mantra : quoiqu'il arrive, votre Controller doit récupérer une requête, et retourner une réponse.
 
 ## Les Exception filters
 
@@ -368,7 +358,7 @@ Nous n'irons pas plus loin dans le traitement de la **requête**, sachez juste q
 </div>
 
 
-Les Exception Filter permettent de `catch` les exceptions que vous déclenchez dans votre code, pour les transformer en messages d'erreur lisibles dans la réponse du serveur.
+Les Exception Filters permettent de `catch` les exceptions que vous déclenchez dans votre code, pour les transformer en messages d'erreur lisibles dans la réponse du serveur.
 NestJS fournit par défaut un Exception Filter **global** qui récupère toutes les Exceptions de type `HttpException`. 
 
 C'est-à-dire que vous pouvez par exemple faire ceci dans un Controller :
@@ -382,7 +372,7 @@ async adminRoute(): any {
 
 Et par défaut, NestJS génèrera une réponse JSON reprenant le code d'erreur `403` d'une exception Forbidden.
 
-La plupart du temps vous n'avez donc par à créer d'Exception Filter custom, vu qu'il est une bonne pratique de renvoyer des erreurs HTTP pour des applications REST ou encore GraphQL; et donc Nest s'en occupera pour vous.
+La plupart du temps vous n'avez donc par à créer d'Exception Filter custom, vu qu'une bonne pratique est de renvoyer des erreurs HTTP pour des applications REST ou encore GraphQL ; et donc Nest s'en occupera pour vous.
 
 Mais voici tout de même un court exemple de ce à quoi ressemble la définition d'un Exception Filter :
 
@@ -397,10 +387,10 @@ export class CustomExceptionFilter implements ExceptionFilter {
 
 L'annotation `@Catch()` permet de spécifier quelle exception vous souhaitez "écouter".
 
-Le deuxième argument de la fonction `catch()` est un objet de type `ArgumentHost`. Cet objet contient tout le contexte d'exécution; vous pouvez y retrouver notamment la **requête** et la **réponse**. C'est surtout cette dernière qui vous intéresse, pour par exemple y ajouter un message relatif à l'exception récupérée.
+Le deuxième argument de la fonction `catch()` est un objet de type `ArgumentHost`. Cet objet contient tout le contexte d'exécution ; vous pouvez y retrouver notamment la **requête** et la **réponse**. C'est surtout cette dernière qui vous intéresse, pour par exemple y ajouter un message relatif à l'exception récupérée.
 
 ## Conclusion
 
-Vous savez à présent à peu près tout sur le cycle de vie d'une requête en NestJS. Le but était surtout de donner une meilleure vue d'ensemble de ces différentes étapes, de leur **ordre** d'exécution, et de leur utilité. Mais si vous voulez en savoir plus sur **comment** les implémenter, à différents niveaux (module, controller, route...), n'hésitez pas à vous référez à la [documentation officielle de NestJS](https://docs.nestjs.com).
+Vous savez à présent à peu près tout sur le cycle de vie d'une requête en NestJS. Le but était surtout de donner une meilleure vue d'ensemble de ces différentes étapes, de leur **ordre** d'exécution, et de leur utilité. Mais si vous voulez en savoir plus sur **comment** les implémenter, à différents niveaux (module, controller, route...), n'hésitez pas à vous référer à la [documentation officielle de NestJS](https://docs.nestjs.com).
 
 À très bientôt 👋
