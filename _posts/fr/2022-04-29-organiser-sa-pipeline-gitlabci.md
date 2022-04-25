@@ -1,28 +1,28 @@
 ---
 layout: post
-title: Organiser sa pipeline Gitlab CI avec les templates
-excerpt: Organiser sa pipeline Gitlab CI avec les templates
+title: Organiser son pipeline Gitlab CI avec les templates
+excerpt: Organiser son pipeline Gitlab CI avec les templates
 lang: fr
-permalink: /fr/organiser-sa-pipeline-gitlab-ci-avec-les-templates/
+permalink: /fr/organiser-son-pipeline-gitlab-ci-avec-les-templates/
 authors:
     - tthuon
 categories:
     - devops
 ---
 
-Lors de ma mission chez Maisons du Monde en tant que SRE, j'ai découvert une façon d'organiser le code de la pipeline GitLab.
+Lors de ma mission chez Maisons du Monde en tant que SRE, j'ai découvert une façon d'organiser le code du pipeline GitLab.
 
 Lorsqu'il y a plusieurs services à maintenir et à déployer, le code des pipelines des différents
 services est très souvent copié-collé. Ce n'est pas DRY (Don't Repeat Yourself).
 
 Il est nécessaire de mutualiser le code. Il existe plusieurs façons de le regrouper et de la partager.
 
-## Une pipeline Gitlab CI
+## Un pipeline Gitlab CI
 
 Prenons cet exemple de pipeline Gitlab CI. Elle se lance au moment d'une merge-request
 et lors d'un merge dans la branche par défault.
 
-La pipeline construit les dépendances, lance les tests et construit l'application.
+Le pipeline construit les dépendances, lance les tests et construit l'application.
 
 ```yaml
 workflow:
@@ -67,11 +67,11 @@ build:
 
 ## Le concept du template off-the-shelf
 
-Je pourrais mettre cette pipeline complète en tant que template et la réutiliser partout. Cependant, si
+Je pourrais mettre cet pipeline complète en tant que template et la réutiliser partout. Cependant, si
 une équipe veut gérer sa pipeline différement, ou qu'elle veut ajouter des outils supplémentaires tel que
 gosec, elle ne pourra pas le faire simplement.
 
-Le principe est de créer des templates pour chaque job. Ainsi l'équipe responsable de la pipeline est libre
+Le principe est de créer des templates pour chaque job. Ainsi l'équipe responsable du pipeline est libre
 de les utiliser ou non. Elle peut également en décider l'ordre. C'est le concept du template off-the-shelf
 (cela peut être traduit littéralement par "patron sur étagère" ou "livre sur étagère").
 
@@ -138,11 +138,11 @@ En plus de mutualiser en un seul endroit le code des jobs des pipelines, il est 
 des options pour les rendre configurable. Par exemple, le dossier où sera stocker le rapport peut être
 changé sans impacter la fonctionnalité.
 
-Tous les templates dont nous avons besoin pour transformer la pipeline seront inclus via le mot clef `include`.
+Tous les templates dont nous avons besoin pour transformer le pipeline seront inclus via le mot clef `include`.
 Avec l'option `ref`, les templates sont versionnés. Un outil tel que [renovate](https://docs.renovatebot.com/)
 pourra faire des MR de mise à jour de la version.
 
-Ci-dessous la nouvelle pipeline avec l'inclusion des templates.
+Ci-dessous le nouvequ pipeline avec l'inclusion des templates.
 
 ```yaml
 include:
@@ -180,10 +180,10 @@ build:
     - test
 ```
 
-Cette nouvelle pipeline est plus lisible. Le développeur s'affranchit de la complexité des jobs. Il se concentre sur
-l'ordre et les fonctionnalités de la pipeline. Il pourra ajouter un job de code lint plus tard par exemple.
+Ce nouveau pipeline est plus lisible. Le développeur s'affranchit de la complexité des jobs. Il se concentre sur
+l'ordre et les fonctionnalités du pipeline. Il pourra ajouter un job de code lint plus tard par exemple.
 
-Dans une autre équipe qui gère un autre service, la pipeline pourrait ressembler à ça par exemple.
+Dans une autre équipe qui gère un autre service, le pipeline pourrait ressembler à ça par exemple.
 
 ```yaml
 include:
@@ -221,7 +221,7 @@ Le nom des stages est différent. La version de go est différente. Et pourtant,
 ## Conclusion
 
 Cette organisation du code permet de mutualiser le code à un seul endroit. Le développeur choisi et configure les templates
-qui vont lui permettre de créer sa pipeline. Il en garde ainsi la pleine maîtrise car il connait les besoins de son application.
+qui vont lui permettre de créer son pipeline. Il en garde ainsi la pleine maîtrise car il connait les besoins de son application.
 
 Du côté SRE, cette organisation permet de répondre aux besoins de toutes les applications sans devoir à répéter le code.
 Chaque template est générique dans son fonctionnement, mais pleinement configurable.
