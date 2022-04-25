@@ -10,7 +10,7 @@ categories:
     - devops
 ---
 
-Lors d'une de mes missions en tant que SRE, j'ai découvert une façon d'organiser le code de la pipeline GitLab.
+Lors de ma mission chez Maisons du Monde en tant que SRE, j'ai découvert une façon d'organiser le code de la pipeline GitLab.
 
 Lorsqu'il y a plusieurs services à maintenir et à déployer, le code des pipelines des différents
 services est très souvent copié-collé. Ce n'est pas DRY (Don't Repeat Yourself).
