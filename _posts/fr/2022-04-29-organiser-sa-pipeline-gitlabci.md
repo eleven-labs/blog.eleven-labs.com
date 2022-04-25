@@ -22,7 +22,7 @@ Il est nécessaire de mutualiser le code. Il existe plusieurs façons de le regr
 Prenons cet exemple de pipeline Gitlab CI. Elle se lance au moment d'une merge-request
 et lors d'un merge dans la branche par défault.
 
-La pipeline excécute construit les dépendances, lance les tests et construit l'application.
+La pipeline construit les dépendances, lance les tests et construit l'application.
 
 ```yaml
 workflow:
