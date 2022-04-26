@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Organiser son pipeline Gitlab CI avec les templates
-excerpt: Lorsqu'il y a plusieurs services à maintenir et à déployer, le code des pipelines des différents
-services est très souvent copié-collé. Nous verrons dans cet article comment mutualiser le code !
+excerpt: "Lorsqu'il y a plusieurs services à maintenir et à déployer, le code des pipelines des différents
+services est très souvent copié-collé. Nous verrons dans cet article comment mutualiser le code !"
 lang: fr
 permalink: /fr/organiser-son-pipeline-gitlab-ci-avec-les-templates/
 authors:
