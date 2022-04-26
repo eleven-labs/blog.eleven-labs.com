@@ -16,7 +16,7 @@ Lors de ma mission chez Maisons du Monde en tant que SRE, j'ai découvert une no
 Lorsqu'il y a plusieurs services à maintenir et à déployer, le code des pipelines des différents
 services est très souvent copié-collé. Ce n'est pas DRY (Don't Repeat Yourself).
 
-Il est nécessaire de mutualiser le code. Il existe plusieurs façons de le regrouper et de le partager.
+Il est donc recommandé dans ce cas de mutualiser le code. Il existe plusieurs façons de procéder, mais nous nous attarderons dans cet article sur la façon suivante.
 
 ## Un pipeline Gitlab CI
 
