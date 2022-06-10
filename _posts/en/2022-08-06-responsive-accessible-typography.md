@@ -48,12 +48,12 @@ For **heavy-text pages, even 18px or >20px** could even be suitable for a comfor
 ### Should typography be smaller in mobile?
 
 <div style="display: flex; align-items: center;">
- <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/zoom-front-color.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%"/>
+ <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/girl-phone.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%"/>
  <div style="display: flex; flex-direction: column;">
  <p>
 Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite…That the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
 
-<p>However, the answer is quite simple. **The size of the font in the body of the text is the same on desktop, tablet or mobile**. The companies that manufacture mobile devices have already solved this point by themselves. As front-end developers, our most critical practice is the way the font-size is implemented.</p>
+<p>However, the answer is quite simple.<strong>The size of the font in the body of the text is usually the same on desktop, tablet or mobile</strong>. The companies that manufacture mobile devices have already solved this point by themselves. As front-end developers, our most critical practice is the way the font-size is implemented.</p>
 </div>
 </div>
 
@@ -101,12 +101,11 @@ This practice has even been promoted by CSS-tricks last May on Twitter... and it
 <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/css-tricks.png" width="400px" alt="Researcher going for adventure" style="display: block; margin: auto;"/>
 </a>
 
-<div style="display: flex">
+<div style="display: flex; align-items: center">
 <p>
 Changing the font size in the root is generally not great. It will either overwrite custom values or break any other usage of rem outside the typography. It is possible, but it will bring many changes regarding scalability.
-
+<br>
 Let's check a better way. Or two.
-
 </p>
 <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto; width: 50%"/>
 </div>
@@ -174,6 +173,7 @@ h1 {
 How does this sorcery work? The `vw` unit is 1% of the viewport width, and the rem unit depends on the font-size set in the browser. For example, in an 800px width viewport, this value would be: **32 + 16 = 48px**.
 
 However, fluid typography should not replace responsive typography and it is not recommended for body text by [many authors](https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/). On the other hand, headings are clear visual keys ordering content at a glance, and they are great candidates for using this technique. Headings are great, and they should not be underestimated.
+<br>
 
 -   ### Line height
     Line height is also a key points in accessible typography. Just check this two paragraphs with the exact same content:
@@ -215,9 +215,11 @@ body {
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 Please make sure to really test through your full app before considering it a victory! You can also use this [very cool line-height calculator](https://www.thegoodlineheight.com/) made by Fran Perez.
+<br>
 
 -   ### More than words: how many characters per line?
-    Another **readability** point is the line-length, or how many character should you fit in one line. On this point, WCAG addresses a maximum of [80 characters](https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html) per line. And yes, **characters include white spaces**. Unfortunately, this does not ensure a comfortable reading experience since there is still many factors to consider, such as the font type and the space between characters.
+
+Another **readability** point is the line-length, or how many character should you fit in one line. On this point, WCAG addresses a maximum of [80 characters](https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html) per line. And yes, **characters include white spaces**. Unfortunately, this does not ensure a comfortable reading experience since there is still many factors to consider, such as the font type and the space between characters.
 
 On the bright CSS side, there's another unit that can help with this subject: `ch`. As MDN states [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units), `ch` is an advanced measure (width) of the glyph "0" of the element's font. Along with `max-width`, it is possible to set an amount of maximum space available for each character:
 
@@ -231,31 +233,33 @@ The magic range to aim here is between 50 - 75 characters per line. Ignoring thi
 
 Wikipedia is a great (bad) exemple. Even using a way greater amount of characters than recommended, the difference is easily visible in this [two extraits](https://fr.wikipedia.org/wiki/Wikip%C3%A9dia):
 
-<div style="text-align: center;">
+<div style="text-align: left;">
 <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/wiki2.png" width="800px" alt="Wikipedia entry with 88 characters" style="display: block; margin: auto;"/>
 <figcaption>
 Wikipedia entry with 88 characters
   </figcaption>
     </div>
-<div style="text-align: center;">
+<div style="text-align: left;">
 <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/wiki1.png" width="800px" alt="Wikipedia entry with 148 characters" style="display: block; margin: auto;"/>
 <figcaption>
 Wikipedia entry with 148 characters
 </figcaption>
 </div>
-
+<br>
 Let's jump to the last readability point of this article!
+<br>
 
 -   ### How to choose the right contrast for typography?
-    High contrast between the font and the background ensure good readability. This is a quite basic concept and might even feel like an intuitive principle. Nevertheless, it still happens (quite often).
 
-<div style="text-align: center;">
+High contrast between the font and the background ensure good readability. This is a quite basic concept and might even feel like an intuitive principle. Nevertheless, it still happens (quite often).
+
+<div style="text-align: left;">
 <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/color-contrast.png" width="800px" alt="Two examples of color contrast" style="display: block; margin: auto;"/>
 <figcaption>
 Do you think both texts have enough contrast?
 </figcaption>
 </div>
-
+<br>
 In fact, no. The text on the left has a score of 8.21 with a _very good_ rating, meanwhile the text on the right has a score of 2.21 points - which means it is not even enough for the minimum contrast ratio asked by WCAG (4:5:1 for normal text).
 
 This might be good advice for designers: it is worth to take some time checking the contrast ratio when choosing an app's palette (specially on font colors!). Fortunately, there is plenty of tools that make this job way easier, such as [coolors.co](https://coolors.co) and [webaim.org](https://webaim.org/resources/contrastchecker/).
