@@ -1,6 +1,6 @@
 ---
 layout: author
-login: Eugenia
+login: meugeniatr
 title: Maria Eugenia Trapani
 github: https://github.com/meugeniatr/
 linkedin: https://www.linkedin.com/in/meugeniat/
