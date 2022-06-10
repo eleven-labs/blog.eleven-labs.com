@@ -4,6 +4,6 @@ login: meugeniatr
 title: Maria Eugenia Trapani
 github: https://github.com/meugeniatr/
 linkedin: https://www.linkedin.com/in/meugeniat/
-permalink: /authors/Eugenia/
+permalink: /authors/mugeniatr/
 ---
 Dev Front-End & SEO enthousiast
