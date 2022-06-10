@@ -34,7 +34,8 @@ Readability and legibility are two typography concepts that relate to how easy i
 There is an incredibly extended and wonderful documentation about typography, but readability sometimes-forgotten concepts can give some clues about responsiveness and accessibility.
 
 -   ### Type size 🔍
-    The first readability factor to consider is the type size. The WCAG (Web Content Accessibility Guidelines) states that **accessible text should be resizable up to 200 percent without loss of content or functionality**.
+
+The first readability factor to consider is the type size. The WCAG (Web Content Accessibility Guidelines) states that **accessible text should be resizable up to 200 percent without loss of content or functionality**.
 
 Smaller text can be challenging for seniors, children or visually impaired people. Even if there is no official recommendation through this point nor WCAG directives, there is a growing consensus about **body text being at least 16px**.
 
@@ -48,10 +49,12 @@ For **heavy-text pages, even 18px or >20px** could even be suitable for a comfor
 
 <div style="display: flex; align-items: center;">
  <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/zoom-front-color.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%"/>
+ <div style="display: flex; flex-direction: column;>
  <p>
 Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite…That the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
 
 <p>However, the answer is quite simple. **The size of the font in the body of the text is the same on desktop, tablet or mobile**. The companies that manufacture mobile devices have already solved this point by themselves. As front-end developers, our most critical practice is the way the font-size is implemented.</p>
+</div>
 </div>
 
 ### Font units: why px can be accessibility enemies
@@ -93,11 +96,13 @@ html {
 }
 ```
 
+This practice has even been promoted by CSS-tricks last May on Twitter... and it received little love from their followers:
+<a href="https://twitter.com/css/status/1523700789083996160?s=20&t=CC56aWixbiPV7R_pqUOGcw" rel="nofollow, noreferrer" target="_blank">
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/css-tricks.png" width="400px" alt="Researcher going for adventure" style="display: block; margin: auto;"/>
+</a>
+
 <div style="display: flex">
 <p>
-This practice has even been promoted by CSS-tricks last May on Twitter... and it received little love from their followers:
-https://twitter.com/css/status/1523700789083996160?s=20&t=CC56aWixbiPV7R_pqUOGcw
-
 Changing the font size in the root is generally not great. It will either overwrite custom values or break any other usage of rem outside the typography. It is possible, but it will bring many changes regarding scalability.
 
 Let's check a better way. Or two.
@@ -106,7 +111,7 @@ Let's check a better way. Or two.
 <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto; width: 50%"/>
 </div>
 
-#### #1 - Use calc(): yes, but wait and see!
+### #1 - Use calc(): yes, but wait and see!
 
 There's good news in this world of darkness. CSS has evolved through the years, and it has incorporated solving mathematical operations (+, -, /, \*).
 
@@ -122,7 +127,7 @@ p {
 
 Ok, this is quite practical. But you can take this magic to another level.
 
-#### #2 - calc() + CSS variables: the winner !
+### #2 - calc() + CSS variables: the winner !
 
 As Joshua W. Comeau wonderfully explains in his article "The Surprising Truth About Pixels and Accessibility", it is possible to take out the most of calc() **by storing the calculated values in CSS variables**.
 
@@ -141,7 +146,7 @@ html {
 
 Yes, it is almost the same. But in terms of scalability and practicity, this approach has it all!
 
-#### Ok, great... but what about fluid typography?
+### Ok, great... but what about fluid typography?
 
 <div style="text-align: center;">
     <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto;"/>
