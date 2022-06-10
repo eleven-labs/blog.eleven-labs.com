@@ -49,7 +49,7 @@ For **heavy-text pages, even 18px or >20px** could even be suitable for a comfor
 
 <div style="display: flex; align-items: center;">
  <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/zoom-front-color.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%"/>
- <div style="display: flex; flex-direction: column;>
+ <div style="display: flex; flex-direction: column;">
  <p>
 Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite…That the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
 
@@ -107,7 +107,7 @@ Changing the font size in the root is generally not great. It will either overwr
 
 Let's check a better way. Or two.
 
-<p>
+</p>
 <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto; width: 50%"/>
 </div>
 
