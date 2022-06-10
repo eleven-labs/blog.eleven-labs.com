@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Responsive typography and why you should care
+title: Responsive and accessible typography and why you should care
 excerpt: DESCRIPTION (VISIBLE SUR LA HOME)
 authors:
     - meugeniatr
-permalink: /en/responsive-typography-why-you-should-care/
+permalink: /en/responsive-accessible-typography/
 categories:
     - css
     - ux
@@ -13,7 +13,7 @@ tags:
     - css
     - ux
     - front-end
-cover: /assets/2022-08-06-responsive-typography/books.jpg
+cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
 ---
 
 How many times have you been aware of text's different shapes and sizes while browsing the web lately? Probably not many, unless you found an extremely uncomfortable typography that pushed you to quickly flee the website.
@@ -23,7 +23,7 @@ Typography is a silent tool that UX designers and developers can sometimes take 
 Let’s find out about a few key concepts to succeed at a responsive and accessible typography as a front-end developer as well as UX designers.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-typography/books.jpg" width="800px" alt="Open book displayed among many closed books" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/books.jpg" width="800px" alt="Open book displayed among many closed books" style="display: block; margin: auto;"/>
     <a href="https://www.freepik.com/photos/books-study">Books study photo created by mamewmy - www.freepik.com</a>
 </div>
 
@@ -41,13 +41,13 @@ Smaller text can be challenging for seniors, children or visually impaired peopl
 For **heavy-text pages, even 18px or >20px** could even be suitable for a comfortable reading. Does it sound ridiculous? Check the body text on any medium.com article, such as [this one](https://kantrowitz.medium.com/face-to-face-with-dall-e-the-ai-artist-that-might-change-the-world-e9057e9e89a).
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-typography/medium-example.jpg" width="800px" alt="Post on medium with detail on font-size" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/medium-example.jpg" width="800px" alt="Post on medium with detail on font-size" style="display: block; margin: auto;"/>
 </div>
 
 ### Should typography be smaller in mobile?
 
 <div style="display: flex">
- <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-typography/zoom-front-color.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px;"/>
+ <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/zoom-front-color.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px;"/>
  <p>
 Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite…That the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
 </div>
@@ -101,7 +101,7 @@ Changing the font size in the root is generally not great. It will either overwr
 Let's check a better way. Or two.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto;"/>
 </div>
 
 #### #1 - Use calc(): yes, but wait and see!
@@ -142,7 +142,7 @@ Yes, it is almost the same. But in terms of scalability and practicity, this app
 #### Ok, great... but what about fluid typography?
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-typography/fluid-typography.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto;"/>
 </div>
 
 Fluid typography is a CSS enhacement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: **vw units**, which stands for _viewport width_.
@@ -171,7 +171,7 @@ However, fluid typography should not replace responsive typography and it is not
 -   ### Line height
     Line height is also a key points in accessible typography. Just check this two paragraphs with the exact same content:
     <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-typography/line-height.png" width="800px" alt="Line height example" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/line-height.png" width="800px" alt="Line height example" style="display: block; margin: auto;"/>
     </div>
 
 By default, most browsers set the line-height to 1.2. But what does 1.2 even mean? Spoiler: it's not pixels. An accessibility-focused line-height uses nothing less but unitless values (numbers) that are multiplied by the element's own font size. Yes, it is also possible to use `percentages`, `em` as well as global values, but this might lead to [unexpected results](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#prefer_unitless_numbers_for_line-height_values).
@@ -225,13 +225,13 @@ The magic range to aim here is between 50 - 75 characters per line. Ignoring thi
 Wikipedia is a great (bad) exemple. Even using a way greater amount of characters than recommended, the difference is easily visible in this [two extraits](https://fr.wikipedia.org/wiki/Wikip%C3%A9dia):
 
 <div style="text-align: center;">
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-typography/wiki2.png" width="800px" alt="Wikipedia entry with 88 characters" style="display: block; margin: auto;"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/wiki2.png" width="800px" alt="Wikipedia entry with 88 characters" style="display: block; margin: auto;"/>
 <figcaption>
 Wikipedia entry with 88 characters
   </figcaption>
     </div>
 <div style="text-align: center;">
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-typography/wiki1.png" width="800px" alt="Wikipedia entry with 148 characters" style="display: block; margin: auto;"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/wiki1.png" width="800px" alt="Wikipedia entry with 148 characters" style="display: block; margin: auto;"/>
 <figcaption>
 Wikipedia entry with 148 characters
 </figcaption>
@@ -243,7 +243,7 @@ Let's jump to the last readability point of this article!
     High contrast between the font and the background ensure good readability. This is a quite basic concept and might even feel like an intuitive principle. Nevertheless, it still happens (quite often).
 
 <div style="text-align: center;">
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-typography/color-contrast.png" width="800px" alt="Two examples of color contrast" style="display: block; margin: auto;"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/color-contrast.png" width="800px" alt="Two examples of color contrast" style="display: block; margin: auto;"/>
 <figcaption>
 Do you think both texts have enough contrast?
 </figcaption>
@@ -260,7 +260,7 @@ Web typography is a beautiful and a little bit messy world. In this article we j
 In my point of view, it is a responsability as creators to care about having inclusive products. Even if accessibility is a wide topic and we can struggle putting all its principles in practice, I think this can be a good start. Caring is always the first step.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-typography/rocket.png" width="800px" alt="Woman on a rocket heading to the sky" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/rocket.png" width="800px" alt="Woman on a rocket heading to the sky" style="display: block; margin: auto;"/>
 </div>
 
 ## Ressources
