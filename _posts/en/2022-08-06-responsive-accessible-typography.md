@@ -282,7 +282,12 @@ In my point of view, it is a responsability as creators to care about having inc
 -   Text resizing according to WCAG:
     [https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html](https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html)
 -   The Surprising Truth About Pixels and Accessibility: [https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/)
--   Saly illustrations:
-    [https://www.uistore.design/items/saly-free-3d-illustration-pack-for-figma/](https://www.uistore.design/items/saly-free-3d-illustration-pack-for-figma/)
 -   Using calc to figure out optimal line-height:
     [https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/](https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/)
+
+## Illustrations and icons
+
+-   3D icons by Vijay Verma
+    [https://3dicons.co/](https://3dicons.co/)
+-   Saly illustrations:
+    [https://www.uistore.design/items/saly-free-3d-illustration-pack-for-figma/](https://www.uistore.design/items/saly-free-3d-illustration-pack-for-figma/)
