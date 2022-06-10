@@ -147,17 +147,23 @@ Yes, it is almost the same. But in terms of scalability and practicity, this app
 
 ### Ok, great... but what about fluid typography?
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto;"/>
+<div style="display: flex">
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="400px" alt="Researcher going for adventure" style="display: block; margin: auto; width: 60%"/>
+<div style="display: flex; flex-direction: column">
+<p>
+Fluid typography is a CSS enhacement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: <b>vw units</b>, which stands for <i>viewport width</i>.
+<br>
+Even if is possible to make this happen using <code>calc</code>, it is better to use the CSS function <code>clamp</code> that takes three values:
+<br>
+</p>
+
+<ul>
+<li>Minimum value,</li>
+<li>referred value,</li>
+<li>Maxim value,</li>
+</ul>
 </div>
-
-Fluid typography is a CSS enhacement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: **vw units**, which stands for _viewport width_.
-
-Even if is possible to make this happen using `calc`, it is better to use the CSS function `clamp` that takes three values:
-
--   Minimum value,
--   Preferred value,
--   Maxim value,
+</div>
 
 This CSS function comes with two treats: it can solve operations without the use of `calc` and also allows mixing different CSS units, such as `rem` and `vw`.
 
