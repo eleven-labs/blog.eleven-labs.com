@@ -6,13 +6,7 @@ authors:
     - meugeniatr
 permalink: /en/responsive-accessible-typography/
 categories:
-    - css
-    - ux
-    - front-end
-tags:
-    - css
-    - ux
-    - front-end
+    - bonnes pratiques
 cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
 ---
 
