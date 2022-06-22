@@ -12,14 +12,14 @@ categories:
 - python
 ---
 
-Lors de l'acquisition d'un bien immobilier, il faut se souscrire à un fournisseur d'électricité. Une fois le fournisseur
+Lors de l'acquisition d'un bien immobilier, il faut souscrire à un fournisseur d'électricité. Une fois le fournisseur
 d'électricité
 sélectionné, il existe deux types d'offres généralement : tarif de base ou tarif heure creuse / heure pleine (
 généralement abbrégé HC-HP). En plus de ces offres,
 il existe des déclinaisons pour les véhicules électriques, ou avec de l'électricité produite à partir de sources
-renouvelable.
+renouvelables.
 
-La tarification heure creuse propose un prix assez bas du kilowatt-heure inférieure. En contre-partie, l'abonnement et
+La tarification heure creuse propose un prix assez bas du kilowatt-heure. En contre-partie, l'abonnement et
 le prix du kilowatt-heure
 en heure pleine est plus cher. Les périodes d'heure creuse/pleine sont déterminées par le gestionnaire du réseau Enedis.
 Ces périodes correspondent à des moments de faible charge du réseau.
@@ -90,7 +90,7 @@ Par ailleurs, lors de l'analyse, il est nécessaire de tenir compte du coût de 
 
 ### Les données de consommations
 
-Avec le déploiement des compteurs Linky, la consommation (et la production) d'électricité est remonté quotidiennement
+Avec le déploiement des compteurs Linky, la consommation (et la production) d'électricité est remontée quotidiennement
 chez le gestionnaire
 de réseau Enedis. Les fournisseurs d'électricité demande à Enedis la consommation électrique de chaque Point De
 Livraison (PDL) pour ainsi
