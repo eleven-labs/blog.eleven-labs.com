@@ -84,9 +84,13 @@ Cependant, pour faciliter leurs ingestions il faut garder une uniformité dans l
 | 15  | 21,58      | 22,35        | 15,21        | 15,21         |
 | 18  | 24,52      | 22,35        | 15,21        | 15,21         |
 
-Point d'attention sur les unités : il est important de veiller à leur uniformité et être vigilant. La tarification est
-donnée en centimes d'euros par kilowatt-heure.
-Par ailleurs, lors de l'analyse, il est nécessaire de tenir compte du coût de l'abonnement. Il est mensuel.
+La première colonne est la puissance maximale qu'il est possible de soutirer.
+La puissance est mesurée en kilo-voltampère (kVA).
+Au dela, le contacteur du compteur Linky s'ouvre pour couper l'alimentation de l'abonné.
+
+En seconde colonne, c'est le prix de l'abonnement mensuel en euro.
+
+Enfin, les autres colonnes sont les tarifs du kWh en centimes d'euros.
 
 ### Les données de consommations
 
@@ -139,7 +143,9 @@ Donc la colonne `EAS F1` correspond à la consommation en `Heures Pleines`.
 Au final, ce sont les colonnes `EAS F1`, `EAS F2`, `EAS F3` qui correspondent à la consommation en heures pleines,
 heures creuses et weekend.
 
-Dans un premier temps je supprimes les lignes qui ne m'intéressent pas.
+Dans un premier temps je supprimes les deux premières lignes d'en-tête et les deux dernières lignes.
+Je veux conserver uniquement la données concernant la consommation.
+Je ne veux pas de métadonnées dans le fichier final.
 
 ```python
 BASE_PATH = "datalake/"
@@ -153,12 +159,10 @@ with open(f"{BASE_PATH}{RAW_DATA_FILENAME}", "r+") as fp:
         fpclean.writelines(lines[2: len(lines) - 2])
 ```
 
-Je relis le fichier avec Pandas. Je vais effectuer quelques calcul de bases comme le différentiel par jour et la
-consommation totale de la journée.
+Je charge ce nouveau fichier avec Pandas pour effectuer quelques calcul de bases comme le différentiel par jour et la consommation totale de la journée.
 
-Avec Pandas, le travail sur les données s'effectue en colonne et non en ligne. Ce fonctionnement est un peu déroutant
-lorsque l'on utilise
-courament des bases de données tel que MySQL ou PostgreSQL.
+Avec Pandas, le travail sur les données s'effectue en colonne et non en ligne.
+Ce fonctionnement est un peu déroutant lorsque l'on utilise courament des bases de données tel que MySQL ou PostgreSQL.
 
 ```python
 import pandas as pd
@@ -188,9 +192,25 @@ df_work["Différence journalier Weekend"] = df_work["Quantité Weekend en wh"].d
 df_work.to_parquet(f"{BASE_PATH}{CLEANED_DATA_FILENAME}")
 ```
 
-J'ai choisi de stocker le résultat dans un format Apache Parquet car je voulais essayer ce format. Ce format est adapté
-aux données de type colonne
-et permet un stockage efficace (compression).
+Cela nous donne ce tableau.
+
+| Horodate                  | Quantité Heure Creuse en wh | Quantité Heure Pleine en wh | Quantité Weekend en wh | Total Consommation | Différence journalier Total Consommation | Différence journalier Heure Creuse | Différence journalier Heure Pleine | Différence journalier Weekend |
+|---------------------------|-----------------------------|-----------------------------|------------------------|--------------------|------------------------------------------|------------------------------------|------------------------------------|-------------------------------|
+| 2021-04-01T01:00:00+02:00 | 11538434                    | 12944147                    | 3668104                | 28150685           | NaN                                      | NaN                                | NaN                                | NaN                           |
+| 2021-04-02T01:00:00+02:00 | 11543332                    | 12948970                    | 3668104                | 28160406           | 9721.0                                   | 4898.0                             | 4823.0                             | 0.0                           |
+| 2021-04-03T01:00:00+02:00 | 11550420                    | 12954810                    | 3668104                | 28173334           | 12928.0                                  | 7088.0                             | 5840.0                             | 0.0                           |
+| 2021-04-04T01:00:00+02:00 | 11550420                    | 12954810                    | 3683924                | 28189154           | 15820.0                                  | 0.0                                | 0.0                                | 15820.0                       |
+| 2021-04-05T01:00:00+02:00 | 11550420                    | 12954810                    | 3700863                | 28206093           | 16939.0                                  | 0.0                                | 0.0                                | 16939.0                       |
+| 2021-04-06T01:00:00+02:00 | 11550420                    | 12954810                    | 3715235                | 28220465           | 14372.0                                  | 0.0                                | 0.0                                | 14372.0                       |
+
+Il est a noter que les colonnes qui contiennent le calcul de la différence journalier sur la première ligne contiennent la valeur NaN.
+Couramment, la valeur NaN signifie "Not A Number" surtout lorsque le typage de la colonne est un nombre floattant (float64).
+Mais avec Pandas, cela signifie qu'il manque une valeur.
+Ici c'est tout à fait normal, car il n'y a rien à comparer avant.
+Cela ne gêne pas pour la suite des calculs.
+
+Pour finir, je choisi de stocker le résultat dans un format Apache Parquet car je voulais essayer ce format.
+Ce format est adapté aux données de type colonne et permet un stockage efficace (compression).
 
 Nos données sont prêtes pour l'analyse.
 
@@ -302,3 +322,5 @@ Ainsi il sera possible d'exploiter le tarif bleu hc-hp.
 * [https://www.enedis.fr/jaccede-mes-donnees-de-consommation-et-de-production-delectricite](https://www.enedis.fr/jaccede-mes-donnees-de-consommation-et-de-production-delectricite)
 * [https://fr.wikipedia.org/wiki/Voltamp%C3%A8re](https://fr.wikipedia.org/wiki/Voltamp%C3%A8re)
 * [Code de l'analyse]({{ site.baseurl }}/assets/2022-06-30-analyse-cout-electricite/code.zip)
+* [https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#values-considered-missing](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#values-considered-missing)
+* [https://chartio.com/resources/tutorials/how-to-check-if-any-value-is-nan-in-a-pandas-dataframe/](https://chartio.com/resources/tutorials/how-to-check-if-any-value-is-nan-in-a-pandas-dataframe/)
