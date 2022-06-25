@@ -24,15 +24,18 @@ cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
     }
 </style>
 
+<div style="display: flex; align-items: center;" id="responsive">
+ <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/read-me.png" width="300px" alt="Man holding a note saying 'Read me if you can'" style="display: block; margin-right: 20px; width: 60%" />
+ <div style="display: flex; flex-direction: column;">
+ <p>
 How many times have you been aware of text's different shapes and sizes while browsing the web lately? Probably not many, unless you found an extremely uncomfortable typography that pushed you to quickly flee the website.
-
-Typography is a silent tool that UX designers and developers can sometimes take for granted. **There is much noise around this topic**. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all?
-
+</p>
+<p>
+Typography is a silent tool that UX designers and developers can sometimes take for granted. **There is much noise around this topic**. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all?</p>
+<p>
 Let’s find out about a few key concepts to succeed at a responsive and accessible typography as a front-end developer as well as UX designers.
-
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/books.jpg" width="800px" alt="Open book displayed among many closed books" style="display: block; margin: auto;"/>
-    <a href="https://www.freepik.com/photos/books-study">Books study photo created by mamewmy - www.freepik.com</a>
+</p>
+</div>
 </div>
 
 ## How does readability impact web accessibility?
@@ -188,6 +191,7 @@ How does this sorcery work? The `vw` unit is 1% of the viewport width, and the r
 
 However, fluid typography should not replace responsive typography and it is not recommended for body text by [many authors](https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/). On the other hand, headings are clear visual keys ordering content at a glance, and they are great candidates for using this technique. Headings are great, and they should not be underestimated.
 <br>
+<br>
 
 -   ### Line height
     Line height is also a key points in accessible typography. Just check this two paragraphs with the exact same content:
@@ -230,6 +234,7 @@ body {
 
 Please make sure to really test through your full app before considering it a victory! You can also use this [very cool line-height calculator](https://www.thegoodlineheight.com/) made by Fran Perez.
 <br>
+<br>
 
 -   ### More than words: how many characters per line?
 
@@ -263,6 +268,7 @@ Wikipedia entry with 148 characters
 <br>
 Let's jump to the last readability point of this article!
 <br>
+<br>
 
 -   ### How to choose the right contrast for typography?
 
@@ -274,6 +280,7 @@ High contrast between the font and the background ensure good readability. This 
 Do you think both texts have enough contrast?
 </figcaption>
 </div>
+<br>
 <br>
 In fact, no. The text on the left has a score of 8.21 with a _very good_ rating, meanwhile the text on the right has a score of 2.21 points - which means it is not even enough for the minimum contrast ratio asked by WCAG (4:5:1 for normal text).
 
