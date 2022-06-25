@@ -6,13 +6,7 @@ authors:
     - meugeniatr
 permalink: /en/responsive-accessible-typography/
 categories:
-    - css
-    - ux
-    - front-end
-tags:
-    - css
-    - ux
-    - front-end
+    - bonnes pratiques
 cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
 ---
 
@@ -24,7 +18,7 @@ How many times have you been aware of text's different shapes and sizes while br
 
 Typography is a silent tool that UX designers and developers can sometimes take for granted. **There is much noise around this topic**. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all?
 
-Let’s find out about a few key concepts to succeed at a responsive and accessible typography as a front-end developer as well as UX designers.
+Let’s find out about a few key concepts to succeed at a responsive and accessible typography as a front-end developer or as a UX designer as well.
 
 <div style="text-align: center;">
     <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/books.jpg" width="800px" alt="Open book displayed among many closed books" style="display: block; margin: auto;"/>
@@ -33,7 +27,7 @@ Let’s find out about a few key concepts to succeed at a responsive and accessi
 
 ## How does readability impact web accessibility?
 
-Readability and legibility are two typography concepts that relate to how easy it is to read a text. As readability can be more linked to implementation (such as font-size, line-height, amount of characters per line, etc.), legibility concerns mostly design choices (font type, weight or width [among others](https://creativepro.com/legibility-and-readability-whats-the-difference/)). In this article we will focus on **readability** in order to achieve responsive & accesible typography.
+Readability and legibility are two typography concepts that relate to how easy it is to read a text. As readability can be more linked to implementation (such as font-size, line-height, amount of characters per line, etc.), legibility concerns mostly design choices (font type, weight or width [among others](https://creativepro.com/legibility-and-readability-whats-the-difference/)). In this article we will focus on **readability** in order to achieve responsive and accessible typography.
 
 There is an incredibly extended and wonderful documentation about typography, but readability sometimes-forgotten concepts can give some clues about responsiveness and accessibility.
 
@@ -55,7 +49,7 @@ For **heavy-text pages, even 18px or >20px** could even be suitable for a comfor
  <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/girl-phone.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%"/>
  <div style="display: flex; flex-direction: column;">
  <p>
-Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite…That the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
+Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite… that the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
 
 <p>However, the answer is quite simple.<strong>The size of the font in the body of the text is usually the same on desktop, tablet or mobile</strong>. The companies that manufacture mobile devices have already solved this point by themselves. As front-end developers, our most critical practice is the way the font-size is implemented.</p>
 </div>
@@ -80,9 +74,9 @@ You probably know at this point that **rem** is not the only relative unit in CS
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-### How and why to implement rem units for type size?
+### How and why implement rem units for type size?
 
-There a few different ways of implementing accessible font-size for body text. Take a few minutes to enumerate the possible ways this can be achieved. Did you think about tweaking the value from the HTML document ?
+There are a few different ways of implementing accessible font-size for body text. Take a few minutes to enumerate the possible ways this can be achieved. Did you think about tweaking the value from the HTML document?
 
 ```css
 /* Bad practice! It overrides any changes made by the user on the browser font-size. */
@@ -91,7 +85,7 @@ html {
 }
 ```
 
-This is a completely not-to-do. Applying a base font-size will override any change the user had done in the browser's settings. Maybe you have seen this trick that intends to make the math behind the usage of rem units easier by downsizing the equivalence of 1rem = 10px:
+This is a complete not-to-do. Applying a base font-size will override any change the user had done in the browser's settings. Maybe you have seen this trick that intends to make the math behind the usage of rem units easier by downsizing the equivalence of 1rem = 10px:
 
 ```css
 /* Not recommended! It breaks the by-default convention 1rem = 16px*/
@@ -120,7 +114,7 @@ There's good news in this world of darkness. CSS has evolved through the years, 
 
 This CSS function takes a [single expression as parameter and returns a value](https://developer.mozilla.org/en-US/docs/Web/CSS/calc). **The most powerful asset of calc() is the fact that it can mix different CSS units, and also supports CSS variables!**.
 
-calc() can become handy when calculating typography size using rem units. It is possible to getting the proportional value in a single line:
+calc() can come in handy when calculating typography size using rem units. It is possible to getting the proportional value in a single line:
 
 ```css
 p {
@@ -130,7 +124,7 @@ p {
 
 Ok, this is quite practical. But you can take this magic to another level.
 
-### #2 - calc() + CSS variables: the winner !
+### #2 - calc() + CSS variables: the winner!
 
 As Joshua W. Comeau wonderfully explains in his article "The Surprising Truth About Pixels and Accessibility", it is possible to take out the most of calc() **by storing the calculated values in CSS variables**.
 
@@ -157,7 +151,7 @@ Yes, it is almost the same. But in terms of scalability and practicity, this app
 <p>
 Fluid typography is a CSS enhacement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: <b>vw units</b>, which stands for <i>viewport width</i>.
 <br>
-Even if is possible to make this happen using <code>calc</code>, it is better to use the CSS function <code>clamp</code> that takes three values:
+Even if it is possible to make this happen using <code>calc</code>, it is better to use the CSS function <code>clamp</code> that takes three values:
 <br>
 </p>
 
@@ -186,7 +180,7 @@ However, fluid typography should not replace responsive typography and it is not
 <br>
 
 -   ### Line height
-    Line height is also a key points in accessible typography. Just check this two paragraphs with the exact same content:
+    Line height is also a key point in accessible typography. Just check this two paragraphs with the exact same content:
     <div style="text-align: center;">
     <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/line-height.png" width="800px" alt="Line height example" style="display: block; margin: auto;"/>
     </div>
@@ -229,7 +223,7 @@ Please make sure to really test through your full app before considering it a vi
 
 -   ### More than words: how many characters per line?
 
-Another **readability** point is the line-length, or how many character should you fit in one line. On this point, WCAG addresses a maximum of [80 characters](https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html) per line. And yes, **characters include white spaces**. Unfortunately, this does not ensure a comfortable reading experience since there is still many factors to consider, such as the font type and the space between characters.
+Another **readability** point is the line-length, or how many characters should you fit in one line. On this point, WCAG addresses a maximum of [80 characters](https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html) per line. And yes, **characters include white spaces**. Unfortunately, this does not ensure a comfortable reading experience since there is still many factors to consider, such as the font type and the space between characters.
 
 On the bright CSS side, there's another unit that can help with this subject: `ch`. As MDN states [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units), `ch` is an advanced measure (width) of the glyph "0" of the element's font. Along with `max-width`, it is possible to set an amount of maximum space available for each character:
 
@@ -239,7 +233,7 @@ p {
 }
 ```
 
-The magic range to aim here is between 50 - 75 characters per line. Ignoring this point has many negative effects and troubles speccialy vision impaired or dyslexic people. Users will not engage with the content or even not be able to access important information such as FAQ.
+The magic range to aim here is between 50 - 75 characters per line. Ignoring this point has many negative effects and especially troubles vision impaired or dyslexic people. Users will not engage with the content or might even not be able to access important information such as FAQs.
 
 Wikipedia is a great (bad) exemple. Even using a way greater amount of characters than recommended, the difference is easily visible in this [two extraits](https://fr.wikipedia.org/wiki/Wikip%C3%A9dia):
 
@@ -273,11 +267,11 @@ Do you think both texts have enough contrast?
 <br>
 In fact, no. The text on the left has a score of 8.21 with a _very good_ rating, meanwhile the text on the right has a score of 2.21 points - which means it is not even enough for the minimum contrast ratio asked by WCAG (4:5:1 for normal text).
 
-This might be good advice for designers: it is worth to take some time checking the contrast ratio when choosing an app's palette (specially on font colors!). Fortunately, there is plenty of tools that make this job way easier, such as [coolors.co](https://coolors.co) and [webaim.org](https://webaim.org/resources/contrastchecker/).
+This might be good advice for designers: it is worth taking some time to check the contrast ratio when choosing an app's palette (especially on font colors!). Fortunately, there is plenty of tools that make this job way easier, such as [coolors.co](https://coolors.co) and [webaim.org](https://webaim.org/resources/contrastchecker/).
 
 ## Keep it simple (and accessible)
 
-Web typography is a beautiful and a little bit messy world. In this article we just saw the merely basics about how can we set strong basis on our code and design in order to have the best result as possible. There might be a ton of other techniques and points that could not fit in a single blog entry. People even wrote books about it (e.g.: [On web typography by Jason Santa Maria](https://www.goodreads.com/en/book/show/13608106-on-web-typography)) and you can even read this [case study](https://www.imarc.com/blog/case-study-in-readable-typography) about it.
+Web typography is a beautiful and a little bit messy world. In this article we just merely saw the basics of how can we set strong basis on our code and design in order to have the best possible result. There might be a ton of other techniques and points that could not fit in a single blog entry. People even wrote books about it (e.g.: [On web typography by Jason Santa Maria](https://www.goodreads.com/en/book/show/13608106-on-web-typography)) and you can even read this [case study](https://www.imarc.com/blog/case-study-in-readable-typography) about it.
 
 In my point of view, it is a responsability as creators to care about having inclusive products. Even if accessibility is a wide topic and we can struggle putting all its principles in practice, I think this can be a good start. Caring is always the first step.
 
