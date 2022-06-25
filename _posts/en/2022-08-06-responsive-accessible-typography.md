@@ -109,7 +109,7 @@ html {
 
 This practice has even been promoted by CSS-tricks last May on Twitter... and it received little love from their followers:
 <a href="https://twitter.com/css/status/1523700789083996160?s=20&t=CC56aWixbiPV7R_pqUOGcw" rel="nofollow, noreferrer" target="_blank">
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/css-tricks.png" width="400px" alt="Researcher going for adventure" style="display: block; margin: auto; margin-right: 10px"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/css-tricks.png" width="400px" alt="Researcher going for adventure" style="display: block; margin: auto; margin-right: 10px;"/>
 </a>
 
 <div style="display: flex; align-items: center" id="responsive">
@@ -160,7 +160,7 @@ Yes, it is almost the same. But in terms of scalability and practicity, this app
 ### Ok, great... but what about fluid typography?
 
 <div style="display: flex; align-items: center;" id="responsive">
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="400px" alt="Researcher going for adventure" style="display: block; margin-right: 20px; margin-bottom: 10px; width: 80%; height: 80%; max-width: 145px"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="400px" alt="Researcher going for adventure" style="display: block; margin-right: 20px; margin-bottom: 10px; width: 80%; height: 80%; max-width: 145px;"/>
 <div style="display: flex; flex-direction: column">
 <p>
 Fluid typography is a CSS enhacement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: <b>vw units</b>, which stands for <i>viewport width</i>.
@@ -295,7 +295,7 @@ Web typography is a beautiful and a little bit messy world. In this article we j
 In my point of view, it is a responsability as creators to care about having inclusive products. Even if accessibility is a wide topic and we can struggle putting all its principles in practice, I think this can be a good start. <b>Caring is always the first step.</b>
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/rocket.png" width="800px" alt="Woman on a rocket heading to the sky" style="display: block; margin: auto; width: 50%"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/rocket.png" width="800px" alt="Woman on a rocket heading to the sky" style="display: block; margin: auto; width: 50%;"/>
 </div>
 
 ## Ressources
