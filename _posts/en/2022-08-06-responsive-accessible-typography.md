@@ -17,9 +17,9 @@ cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
 ---
 
 <style>
-    #responsive{
-        @media screen and (max-width: 500px) {
-        flex-direction: column;
+    @media screen and (max-width: 500px) {
+        #responsive{
+            flex-direction: column;
         }
     }
 </style>
