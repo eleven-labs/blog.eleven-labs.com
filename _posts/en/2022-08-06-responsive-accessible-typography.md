@@ -16,9 +16,13 @@ tags:
 cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
 ---
 
-<script>
-    document.head.insertAdjacentHTML("beforeend", `<style>@media only screen (max-width: 600px){#responsive {width: 100%; border: 2px solid red}}</style>`)
-</script>
+<style>
+    #responsive{
+        @media screen and (max-width: 500px) {
+        flex-direction: column;
+        }
+    }
+</style>
 
 How many times have you been aware of text's different shapes and sizes while browsing the web lately? Probably not many, unless you found an extremely uncomfortable typography that pushed you to quickly flee the website.
 
@@ -46,13 +50,13 @@ Smaller text can be challenging for seniors, children or visually impaired peopl
 For **heavy-text pages, even 18px or >20px** could even be suitable for a comfortable reading. Does it sound ridiculous? Check the body text on any medium.com article, such as [this one](https://kantrowitz.medium.com/face-to-face-with-dall-e-the-ai-artist-that-might-change-the-world-e9057e9e89a).
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/medium-example.jpg" width="800px" alt="Post on medium with detail on font-size" style="display: block; margin: auto;" id="responsive"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/medium-example.jpg" width="800px" alt="Post on medium with detail on font-size" style="display: block; margin: auto;"/>
 </div>
 
 ### Should typography be smaller in mobile?
 
-<div style="display: flex; align-items: center;">
- <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/girl-phone.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%" id="responsive"/>
+<div style="display: flex; align-items: center;" id="responsive">
+ <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/girl-phone.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%" />
  <div style="display: flex; flex-direction: column;">
  <p>
 Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite…That the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
