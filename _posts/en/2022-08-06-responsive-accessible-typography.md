@@ -25,8 +25,8 @@ cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
 </style>
 
 <div style="display: flex; align-items: center;" id="responsive">
- <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/read-me.png" width="300px" alt="Man holding a note saying 'Read me if you can'" style="display: block; margin-right: 20px; width: 80%; max-width: 145px;  />
- <div style="display: flex; flex-direction: column;">
+ <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/read-me.png" width="300px" alt="Man holding a note saying 'Read me if you can'" style="display: block; margin-right: 20px; width: 80%; max-width: 145px" />
+ <div style="display: flex; flex-direction: column">
  <p>
 How many times have you been aware of text's different shapes and sizes while browsing the web lately? Probably not many, unless you found an extremely uncomfortable typography that pushed you to quickly flee the website.
 </p>
