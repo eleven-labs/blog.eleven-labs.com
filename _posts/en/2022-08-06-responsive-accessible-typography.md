@@ -109,7 +109,7 @@ html {
 
 This practice has even been promoted by CSS-tricks last May on Twitter... and it received little love from their followers:
 <a href="https://twitter.com/css/status/1523700789083996160?s=20&t=CC56aWixbiPV7R_pqUOGcw" rel="nofollow, noreferrer" target="_blank">
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/css-tricks.png" width="400px" alt="Researcher going for adventure" style="display: block; margin: auto; margin-right: 10px;"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/css-tricks.png" width="400px" alt="Tweet from CSS tricks suggesting to set the font-size to 62.5% in the root element" style="display: block; margin: auto;"/>
 </a>
 
 <div style="display: flex; align-items: center" id="responsive">
@@ -119,7 +119,7 @@ Changing the font size in the root is generally not great. It will either overwr
 <br>
 Let's check a better way. Or two.
 </p>
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto; width: 50%; max-width: 145px;"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto; width: 50%; max-width: 145px; margin-right: 10px"/>
 </div>
 
 ### #1 - Use calc(): yes, but wait and see!
