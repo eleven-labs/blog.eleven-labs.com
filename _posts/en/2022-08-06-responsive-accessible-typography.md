@@ -322,7 +322,5 @@ In my point of view, it is a responsability as creators to care about having inc
 
 ## Illustrations and icons
 
--   3D icons by Vijay Verma
-    [https://3dicons.co/](https://3dicons.co/)
 -   Saly illustrations:
     [https://www.uistore.design/items/saly-free-3d-illustration-pack-for-figma/](https://www.uistore.design/items/saly-free-3d-illustration-pack-for-figma/)
