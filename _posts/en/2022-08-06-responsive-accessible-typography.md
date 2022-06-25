@@ -232,8 +232,9 @@ body {
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
+<p>
 Please make sure to really test through your full app before considering it a victory! You can also use this [very cool line-height calculator](https://www.thegoodlineheight.com/) made by Fran Perez.
+</p>
 <br>
 <br>
 
