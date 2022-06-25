@@ -25,13 +25,13 @@ cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
 </style>
 
 <div style="display: flex; align-items: center;" id="responsive">
- <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/read-me.png" width="300px" alt="Man holding a note saying 'Read me if you can'" style="display: block; margin-right: 20px; width: 60%" />
+ <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/read-me.png" width="300px" alt="Man holding a note saying 'Read me if you can'" style="display: block; margin-right: 20px; width: 80%" />
  <div style="display: flex; flex-direction: column;">
  <p>
 How many times have you been aware of text's different shapes and sizes while browsing the web lately? Probably not many, unless you found an extremely uncomfortable typography that pushed you to quickly flee the website.
 </p>
 <p>
-Typography is a silent tool that UX designers and developers can sometimes take for granted. **There is much noise around this topic**. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all?</p>
+Typography is a silent tool that UX designers and developers can sometimes take for granted. <b>There is much noise around this topic</b>. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all?</p>
 <p>
 Let’s find out about a few key concepts to succeed at a responsive and accessible typography as a front-end developer as well as UX designers.
 </p>
@@ -115,6 +115,7 @@ This practice has even been promoted by CSS-tricks last May on Twitter... and it
 <div style="display: flex; align-items: center" id="responsive">
 <p>
 Changing the font size in the root is generally not great. It will either overwrite custom values or break any other usage of rem outside the typography. It is possible, but it will bring many changes regarding scalability.
+<br>
 <br>
 Let's check a better way. Or two.
 </p>
@@ -277,10 +278,10 @@ High contrast between the font and the background ensure good readability. This 
 <div style="text-align: left;">
 <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/color-contrast.png" width="800px" alt="Two examples of color contrast" style="display: block; margin: auto;"/>
 <figcaption>
+<br>
 Do you think both texts have enough contrast?
 </figcaption>
 </div>
-<br>
 <br>
 In fact, no. The text on the left has a score of 8.21 with a _very good_ rating, meanwhile the text on the right has a score of 2.21 points - which means it is not even enough for the minimum contrast ratio asked by WCAG (4:5:1 for normal text).
 
