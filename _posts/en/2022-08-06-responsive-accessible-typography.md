@@ -25,7 +25,7 @@ cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
 </style>
 
 <div style="display: flex; align-items: center;" id="responsive">
- <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/read-me.png" width="300px" alt="Man holding a note saying 'Read me if you can'" style="display: block; margin-right: 20px; width: 80%" />
+ <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/read-me.png" width="300px" alt="Man holding a note saying 'Read me if you can'" style="display: block; margin-right: 20px; width: 80%; max-width: 145px;  />
  <div style="display: flex; flex-direction: column;">
  <p>
 How many times have you been aware of text's different shapes and sizes while browsing the web lately? Probably not many, unless you found an extremely uncomfortable typography that pushed you to quickly flee the website.
@@ -59,7 +59,7 @@ For **heavy-text pages, even 18px or >20px** could even be suitable for a comfor
 ### Should typography be smaller in mobile?
 
 <div style="display: flex; align-items: center;" id="responsive">
- <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/girl-phone.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%" />
+ <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/girl-phone.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%; max-width: 145px;" />
  <div style="display: flex; flex-direction: column;">
  <p>
 Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite…That the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
@@ -98,7 +98,7 @@ html {
 }
 ```
 
-This is a completely not-to-do. Applying a base font-size will override any change the user had done in the browser's settings. Maybe you have seen this trick that intends to make the math behind the usage of rem units easier by downsizing the equivalence of 1rem = 10px:
+**This is a completely not-to-do.** Applying a base font-size will override any change the user had done in the browser's settings. Maybe you have seen this trick that intends to make the math behind the usage of rem units easier by downsizing the equivalence of 1rem = 10px:
 
 ```css
 /* Not recommended! It breaks the by-default convention 1rem = 16px*/
@@ -119,7 +119,7 @@ Changing the font size in the root is generally not great. It will either overwr
 <br>
 Let's check a better way. Or two.
 </p>
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto; width: 50%"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto; width: 50%; max-width: 145px;"/>
 </div>
 
 ### #1 - Use calc(): yes, but wait and see!
@@ -160,7 +160,7 @@ Yes, it is almost the same. But in terms of scalability and practicity, this app
 ### Ok, great... but what about fluid typography?
 
 <div style="display: flex; align-items: center;" id="responsive">
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="400px" alt="Researcher going for adventure" style="display: block; margin-right: 20px; margin-bottom: 10px; width: 80%; height: 80%"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="400px" alt="Researcher going for adventure" style="display: block; margin-right: 20px; margin-bottom: 10px; width: 80%; height: 80%; max-width: 145px;"/>
 <div style="display: flex; flex-direction: column">
 <p>
 Fluid typography is a CSS enhacement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: <b>vw units</b>, which stands for <i>viewport width</i>.
