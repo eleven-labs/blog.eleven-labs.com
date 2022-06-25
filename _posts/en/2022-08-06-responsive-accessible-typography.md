@@ -160,7 +160,7 @@ Yes, it is almost the same. But in terms of scalability and practicity, this app
 ### Ok, great... but what about fluid typography?
 
 <div style="display: flex; align-items: center;" id="responsive">
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="400px" alt="Researcher going for adventure" style="display: block; margin-right: 20px; margin-bottom: 10px; width: 80%; height: 80%; max-width: 145px;"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="400px" alt="Researcher going for adventure" style="display: block; margin-right: 20px; margin-bottom: 10px; width: 80%; height: 80%; max-width: 145px"/>
 <div style="display: flex; flex-direction: column">
 <p>
 Fluid typography is a CSS enhacement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: <b>vw units</b>, which stands for <i>viewport width</i>.
