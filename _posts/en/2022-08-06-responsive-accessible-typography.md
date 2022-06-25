@@ -16,6 +16,10 @@ tags:
 cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
 ---
 
+<script>
+    document.head.insertAdjacentHTML("beforeend", `<style>@media only screen (min-width: 768px){.responsive {width: 100%; border: 2px solid red}}</style>`)
+</script>
+
 How many times have you been aware of text's different shapes and sizes while browsing the web lately? Probably not many, unless you found an extremely uncomfortable typography that pushed you to quickly flee the website.
 
 Typography is a silent tool that UX designers and developers can sometimes take for granted. **There is much noise around this topic**. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all?
@@ -42,7 +46,7 @@ Smaller text can be challenging for seniors, children or visually impaired peopl
 For **heavy-text pages, even 18px or >20px** could even be suitable for a comfortable reading. Does it sound ridiculous? Check the body text on any medium.com article, such as [this one](https://kantrowitz.medium.com/face-to-face-with-dall-e-the-ai-artist-that-might-change-the-world-e9057e9e89a).
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/medium-example.jpg" width="800px" alt="Post on medium with detail on font-size" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/medium-example.jpg" width="800px" alt="Post on medium with detail on font-size" style="display: block; margin: auto;" className="responsive"/>
 </div>
 
 ### Should typography be smaller in mobile?
@@ -189,7 +193,7 @@ However, fluid typography should not replace responsive typography and it is not
 
 By default, most browsers set the line-height to 1.2. But what does 1.2 even mean? Spoiler: it's not pixels. An accessibility-focused line-height uses nothing less but unitless values (numbers) that are multiplied by the element's own font size. Yes, it is also possible to use `percentages`, `em` as well as global values, but this might lead to [unexpected results](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#prefer_unitless_numbers_for_line-height_values).
 
-#### A CSS reset
+### A CSS reset
 
 Sometimes, the browsers' default values in properties such as line-height are just not great. The [WCAG](https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html) specifies that line-height should be 1.5 **at least** for body text, and this means that we should tweak this default value for ensuring accessibility.
 
@@ -244,7 +248,8 @@ Wikipedia is a great (bad) exemple. Even using a way greater amount of character
 <figcaption>
 Wikipedia entry with 88 characters
   </figcaption>
-    </div>
+  <br>
+</div>
 <div style="text-align: left;">
 <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/wiki1.png" width="800px" alt="Wikipedia entry with 148 characters" style="display: block; margin: auto;"/>
 <figcaption>
