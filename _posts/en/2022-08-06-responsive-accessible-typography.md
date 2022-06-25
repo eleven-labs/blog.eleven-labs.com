@@ -59,7 +59,7 @@ For **heavy-text pages, even 18px or >20px** could even be suitable for a comfor
 ### Should typography be smaller in mobile?
 
 <div style="display: flex; align-items: center;" id="responsive">
- <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/girl-phone.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%; max-width: 145px;" />
+ <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/girl-phone.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%; max-width: 140px;" />
  <div style="display: flex; flex-direction: column;">
  <p>
 Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite…That the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
@@ -109,7 +109,7 @@ html {
 
 This practice has even been promoted by CSS-tricks last May on Twitter... and it received little love from their followers:
 <a href="https://twitter.com/css/status/1523700789083996160?s=20&t=CC56aWixbiPV7R_pqUOGcw" rel="nofollow, noreferrer" target="_blank">
-<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/css-tricks.png" width="400px" alt="Researcher going for adventure" style="display: block; margin: auto;"/>
+<img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/css-tricks.png" width="400px" alt="Researcher going for adventure" style="display: block; margin: auto; margin-right: 10px"/>
 </a>
 
 <div style="display: flex; align-items: center" id="responsive">
