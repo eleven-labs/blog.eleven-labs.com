@@ -13,7 +13,8 @@ tags:
     - css
     - ux
     - front-end
-cover: /assets/2022-08-06-responsive-accessible-typography/books.jpg
+    - bonnes pratiques
+cover: /assets/2022-08-06-responsive-accessible-typography/read-me.png
 ---
 
 <style>
