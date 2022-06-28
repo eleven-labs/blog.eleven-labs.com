@@ -4,7 +4,7 @@ title: Responsive and accessible typography and why you should care
 excerpt: Typography is a silent tool that UX designers and developers can sometimes take for granted. There is much noise around this topic. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all?
 authors:
     - meugeniatr
-permalink: /en/responsive-accessible-typography/
+permalink: /responsive-accessible-typography/
 categories:
     - css
     - ux
