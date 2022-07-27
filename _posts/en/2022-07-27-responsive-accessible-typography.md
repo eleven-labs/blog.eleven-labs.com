@@ -38,7 +38,7 @@ Readability and legibility are two typography concepts that relate to how easy i
 
 There is an incredibly extended and wonderful documentation about typography, but readability sometimes-forgotten concepts can give some clues about responsiveness and accessibility.
 
--   ### Type size 🔍
+### Type size 🔍
 
 The first readability factor to consider is the type size. The WCAG (Web Content Accessibility Guidelines) states that **accessible text should be resizable up to 200 percent without loss of content or functionality**.
 
@@ -116,7 +116,7 @@ Let's check a better way. Or two.
 <img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto; width: 50%; max-width: 145px; margin-right: 10px"/>
 </div>
 
-### #1 - Use calc(): yes, but wait and see!
+#### #1 - Use calc(): yes, but wait and see!
 
 There's good news in this world of darkness. CSS has evolved through the years, and it has incorporated solving mathematical operations (+, -, /, \*).
 
@@ -132,7 +132,7 @@ p {
 
 Ok, this is quite practical. But you can take this magic to another level.
 
-### #2 - calc() + CSS variables: the winner!
+#### #2 - calc() + CSS variables: the winner!
 
 As Joshua W. Comeau wonderfully explains in his article "The Surprising Truth About Pixels and Accessibility", it is possible to take out the most of calc() **by storing the calculated values in CSS variables**.
 
@@ -188,7 +188,7 @@ However, fluid typography should not replace responsive typography and it is not
 <br>
 <br>
 
--   ### Line height
+#### Line height
 Line height is also a key point in accessible typography. Just check this two paragraphs with the exact same content:
     <div style="text-align: center;">
     <img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/line-height.png" width="800px" alt="Line height example" style="display: block; margin: auto;"/>
@@ -232,7 +232,7 @@ Please make sure to really test through your full app before considering it a vi
 <br>
 <br>
 
--   ### More than words: how many characters per line?
+#### More than words: how many characters per line?
 
 Another **readability** point is the line-length, or how many characters should you fit in one line. On this point, WCAG addresses a maximum of [80 characters](https://www.w3.org/WAI/WCAG21/Understanding/visual-presentation.html) per line. And yes, **characters include white spaces**. Unfortunately, this does not ensure a comfortable reading experience since there is still many factors to consider, such as the font type and the space between characters.
 
@@ -266,7 +266,7 @@ Let's jump to the last readability point of this article!
 <br>
 <br>
 
--   ### How to choose the right contrast for typography?
+#### How to choose the right contrast for typography?
 
 High contrast between the font and the background ensure good readability. This is a quite basic concept and might even feel like an intuitive principle. Nevertheless, it still happens (quite often).
 
