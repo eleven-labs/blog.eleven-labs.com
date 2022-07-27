@@ -6,13 +6,6 @@ authors:
     - meugeniatr
 permalink: /responsive-accessible-typography/
 categories:
-    - css
-    - ux
-    - front-end
-tags:
-    - css
-    - ux
-    - front-end
     - bonnes pratiques
 cover: /assets/2022-08-06-responsive-accessible-typography/read-me.png
 ---
@@ -34,7 +27,7 @@ How many times have you been aware of text's different shapes and sizes while br
 <p>
 Typography is a silent tool that UX designers and developers can sometimes take for granted. <b>There is much noise around this topic</b>. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all?</p>
 <p>
-Let’s find out about a few key concepts to succeed at a responsive and accessible typography as a front-end developer or as a UX designer as well.
+Let’s find out about a few key concepts to succeed at a responsive and accessible typography as a front-end developer or as a UX designer.
 </p>
 </div>
 </div>
@@ -65,7 +58,7 @@ For **heavy-text pages, even 18px or >20px** could even be suitable for a comfor
  <p>
 Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite… that the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
 
-<p>However, the answer is quite simple.<strong>The size of the font in the body of the text is usually the same on desktop, tablet or mobile</strong>. The companies that manufacture mobile devices have already solved this point by themselves. As front-end developers, our most critical practice is the way the font-size is implemented.</p>
+<p>However, the answer is quite simple. <strong>The size of the font in the body of the text is usually the same on desktop, tablet or mobile</strong>. The companies that manufacture mobile devices have already solved this point by themselves. As front-end developers, our most critical practice is the way the font-size is implemented.</p>
 </div>
 </div>
 
@@ -129,7 +122,7 @@ There's good news in this world of darkness. CSS has evolved through the years, 
 
 This CSS function takes a [single expression as parameter and returns a value](https://developer.mozilla.org/en-US/docs/Web/CSS/calc). **The most powerful asset of calc() is the fact that it can mix different CSS units, and also supports CSS variables!**.
 
-calc() can come in handy when calculating typography size using rem units. It is possible to getting the proportional value in a single line:
+calc() can come in handy when calculating typography size using rem units. It is possible to get the proportional value in a single line:
 
 ```css
 p {
@@ -164,7 +157,7 @@ Yes, it is almost the same. But in terms of scalability and practicity, this app
 <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/fluid-typography.png" width="400px" alt="Researcher going for adventure" style="display: block; margin-right: 20px; margin-bottom: 10px; width: 80%; height: 80%; max-width: 145px;"/>
 <div style="display: flex; flex-direction: column">
 <p>
-Fluid typography is a CSS enhacement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: <b>vw units</b>, which stands for <i>viewport width</i>.
+Fluid typography is a CSS enhancement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: <b>vw units</b>, which stands for <i>viewport width</i>.
 <br>
 Even if it is possible to make this happen using <code>calc</code>, it is better to use the CSS function <code>clamp</code> that takes three values:
 <br>
@@ -291,9 +284,9 @@ This might be good advice for designers: it is worth taking some time to check t
 
 ## Keep it simple (and accessible)
 
-Web typography is a beautiful and a little bit messy world. In this article we just merely saw the basics of how can we set strong basis on our code and design in order to have the best possible result. There might be a ton of other techniques and points that could not fit in a single blog entry. People even wrote books about it (e.g.: [On web typography by Jason Santa Maria](https://www.goodreads.com/en/book/show/13608106-on-web-typography)) and you can even read this [case study](https://www.imarc.com/blog/case-study-in-readable-typography) about it.
+Web typography is a beautiful and a little bit messy world. In this article we just merely saw the basics of how we can set strong basis on our code and design in order to have the best possible result. There might be a ton of other techniques and points that could not fit in a single blog entry. People even wrote books about it (e.g.: [On web typography by Jason Santa Maria](https://www.goodreads.com/en/book/show/13608106-on-web-typography)) and you can even read this [case study](https://www.imarc.com/blog/case-study-in-readable-typography) about it.
 
-In my point of view, it is a responsability as creators to care about having inclusive products. Even if accessibility is a wide topic and we can struggle putting all its principles in practice, I think this can be a good start. <b>Caring is always the first step.</b>
+From my point of view, it is a responsability as creators to care about having inclusive products. Even if accessibility is a wide topic and we can struggle putting all its principles in practice, I think this can be a good start. <b>Caring is always the first step.</b>
 
 <div style="text-align: center;">
     <img src="{{ site.baseurl }}/assets/2022-08-06-responsive-accessible-typography/rocket.png" width="800px" alt="Woman on a rocket heading to the sky" style="display: block; margin: auto; width: 50%;"/>
