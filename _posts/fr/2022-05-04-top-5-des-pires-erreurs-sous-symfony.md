@@ -16,31 +16,31 @@ Au fur et à mesure de mes missions, j’ai pû tester, expérimenter et voir di
 
 Et j’en ai fait mon top 5 des pires erreurs sous Symfony qu’il faut à tout prix éviter !
 
-## #5 Faire une librairie alors qu’il s’agit d’un bundle
+## #5 Faire une library alors qu’il s’agit d’un bundle
 
 <div style="text-align: center;">
     <img src="{{ site.baseurl }}/assets/2022-05-04-top-5-des-pires-erreurs-sous-symfony/libraryvsbundle.png" width="300px" alt="Library vs Bundle" style="display: block; margin: auto;"/>
 </div>
 
-Quelle est la différence entre une librairie et un bundle ? Il arrive que certains développeurs se trompent sur cette question.
+Quelle est la différence entre une library et un bundle ? Il arrive que certains développeurs se trompent sur cette question.
 
-Depuis la version 4 de Symfony, il n’est plus recommandé d’organiser son code en bundle (comme indiqué dans la [documentation](https://symfony.com/doc/current/bundles.html)). Malheureusement, certains développeurs se sont arrêtés à ça : on ne crée plus de bundle, alors on doit faire des librairies.
+Depuis la version 4 de Symfony, il n’est plus recommandé d’organiser son code en bundle (comme indiqué dans la [documentation](https://symfony.com/doc/current/bundles.html)). Malheureusement, certains développeurs se sont arrêtés à ça : on ne crée plus de bundle, alors on doit faire des libraries.
 
-Il faut savoir que dans l’écosystème Symfony, il y a les composants et les bundles mais il n’y a pas de librairie.
-Mais vous pouvez créer une librairie PHP : il s’agit d’un ensemble de code destiné à être réutilisé qui fournit des outils pour réduire le temps de développement.
+Il faut savoir que dans l’écosystème Symfony, il y a les composants et les bundles mais il n’y a pas de library.
+Mais vous pouvez créer une library PHP : il s’agit d’un ensemble de code destiné à être réutilisé qui fournit des outils pour réduire le temps de développement.
 Le bundle va intégrer des composants Symfony et pourra donc utiliser toutes les possibilités qu’offrent le framework comme [gérer la configuration](https://symfony.com/doc/current/bundles/configuration.html) ou utiliser directement les services sans avoir besoin de les déclarer.
 
-Alors faire une librairie qui embarque des composants Symfony, c’est une hérésie.
+Alors faire une library qui embarque des composants Symfony, c’est une hérésie.
 
-## #4 Les librairies partagées
+## #4 Les libraries partagées
 On pourrait croire que c’est une bonne idée quand, dans plusieurs projets, nous avons les mêmes classes. On se dit que la duplication de code c’est mal, on a la même unicité sur tous les projets et qu’on n’a qu’à tester qu’une seule fois le code.
 
 Sur le papier, ça passe. Dans les faits, si on n’est pas rigoureux, cela peut vite ressembler à l’enfer.
 
-Prenons un exemple concret : vous avez plusieurs services qui utilisent la même librairie, celle-ci n’a pas de release.
-Un développeur travaille sur le Service A qui utilise la librairie Tools pour la feature 01. Il a eu besoin de modifier cette librairie, et la branche qu’il a créé pour la librairie a été mergée.
-Mais ce développeur ne savait pas que sa modification avait créé un break change inintentionnel sur le Service B, mais comme la librairie n’avait pas été mise à jour sur celui-ci, ça a été invisible.
-Un autre développeur travaille en parallèle sur, justement, ce Service B et a aussi besoin de modifier cette librairie. Quand il va faire sa branche sur la librairie, cela sera à partir de la branche principale, avec la modification pour la feature 01. Quand la librairie sera mise à jour pour tester la branche spécifique, il y aura une erreur, mais le développeur ne sait pas pourquoi.
+Prenons un exemple concret : vous avez plusieurs services qui utilisent la même library, celle-ci n’a pas de release.
+Un développeur travaille sur le Service A qui utilise la library Tools pour la feature 01. Il a eu besoin de modifier cette library, et ce code a été mergée sur la branche principale.
+Mais ce développeur ne savait pas que sa modification avait créé un break change inintentionnel sur le Service B, mais comme la library n’avait pas été mise à jour sur celui-ci, ça a été invisible.
+Un autre développeur travaille en parallèle sur, justement, ce Service B et a aussi besoin de modifier cette library. Quand il va faire sa branche sur la library, cela sera à partir de la branche principale, avec la modification pour la feature 01. Quand la library sera mise à jour pour tester la branche spécifique, il y aura une erreur, mais le développeur ne sera pas pourquoi.
 
 <div style="text-align: center;">
     <img src="{{ site.baseurl }}/assets/2022-05-04-top-5-des-pires-erreurs-sous-symfony/librairies-partagees.png" width="600px" alt="Example problème librairies partagées" style="display: block; margin: auto;"/>
