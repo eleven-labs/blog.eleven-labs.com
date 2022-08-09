@@ -12,16 +12,13 @@ categories:
 cover: /assets/2022-05-04-top-5-des-pires-erreurs-sous-symfony/logo.png
 ---
 
-Au fur et à mesure de mes missions, j’ai pû tester, expérimenter et voir différentes architectures et design patterns en entreprises.
-
-Et j’en ai fait mon top 5 des pires erreurs sous Symfony qu’il faut à tout prix éviter !
+Je suis développeuse PHP/Symfony depuis près de 10 ans, et au cours de mes missions j’ai pu tester, expérimenter et découvrir différentes architectures et design patterns en entreprise. J'ai vu du bon, j'ai vu du pasable, et j'ai aussi parfois ouvert les portes de l'enfer. De ces expériences, j'ai décidé d'en recenser le pire, et je vous propose dans cet article le top 5 des erreurs qu’il faut à tout prix éviter sous Symfony !
 
 ## #5 Faire une library alors qu’il s’agit d’un bundle
 
 <div style="text-align: center;">
     <img src="{{ site.baseurl }}/assets/2022-05-04-top-5-des-pires-erreurs-sous-symfony/libraryvsbundle.png" width="300px" alt="Library vs Bundle" style="display: block; margin: auto;"/>
 </div>
-
 Quelle est la différence entre une library et un bundle ? Il arrive que certains développeurs se trompent sur cette question.
 
 Depuis la version 4 de Symfony, il n’est plus recommandé d’organiser son code en bundle (comme indiqué dans la [documentation](https://symfony.com/doc/current/bundles.html)). Malheureusement, certains développeurs se sont arrêtés à ça : on ne crée plus de bundle, alors on doit faire des libraries.
@@ -71,7 +68,7 @@ Mais ça peut vite devenir une usine à gaz et difficilement maintenable pour un
 
 Heureusement avec la commande `bin/console debug:event-dispatcher` ou dans le profiler, il est facile d’avoir la liste des classes et de debugger.
 
-## #1 Utiliser API Platform
+## #1 Utiliser API Platform aveuglément
 
 <div style="text-align: center;">
     <img src="{{ site.baseurl }}/assets/2022-05-04-top-5-des-pires-erreurs-sous-symfony/no-api-platform.png" width="200px" alt="No API Platform" style="display: block; margin: auto;"/>
