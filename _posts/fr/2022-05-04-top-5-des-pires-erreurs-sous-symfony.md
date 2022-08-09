@@ -19,15 +19,19 @@ Je suis développeuse PHP/Symfony depuis près de 10 ans, et au cours de mes mis
 <div style="text-align: center;">
     <img src="{{ site.baseurl }}/assets/2022-05-04-top-5-des-pires-erreurs-sous-symfony/libraryvsbundle.png" width="300px" alt="Library vs Bundle" style="display: block; margin: auto;"/>
 </div>
-Quelle est la différence entre une library et un bundle ? Il arrive que certains développeurs se trompent sur cette question.
 
-Depuis la version 4 de Symfony, il n’est plus recommandé d’organiser son code en bundle (comme indiqué dans la [documentation](https://symfony.com/doc/current/bundles.html)). Malheureusement, certains développeurs se sont arrêtés à ça : on ne crée plus de bundle, alors on doit faire des libraries.
+Combien de fois ai-je vu des soi-disant libraries qui, n'en étant pas, posaient des soucis de maintenabilité sur les projets Symfony ? (la réponse étant beaucoup trop)
 
-Il faut savoir que dans l’écosystème Symfony, il y a les composants et les bundles mais il n’y a pas de library.
-Mais vous pouvez créer une library PHP : il s’agit d’un ensemble de code destiné à être réutilisé qui fournit des outils pour réduire le temps de développement.
-Le bundle va intégrer des composants Symfony et pourra donc utiliser toutes les possibilités qu’offrent le framework comme [gérer la configuration](https://symfony.com/doc/current/bundles/configuration.html) ou utiliser directement les services sans avoir besoin de les déclarer.
+Revenons sur le vocabulaire : une library est un ensemble de code destiné à être réutilisé qui fournit des outils pour réduire le temps de développement.
+Il peut être normal, vu cette définition, de vouloir en faire avec des composants Symfony.
 
-Alors faire une library qui embarque des composants Symfony, c’est une hérésie.
+Mais dans l’écosystème Symfony, il y a les composants et les bundles, les librairies dites Symfony sont inexistantes, il s'agit uniquement des librairies PHP.
+
+Si on fait une library qui utilise des composants Symfony (qui aura sûrement besoin d'une configuration), lors d'une mise à jour de la library sur le projet cela peut gérer des bugs difficilement identifiables ainsi que de rendre la configuration beaucoup plus illisible.
+Alors que faire un bundle permet d'utiliser toutes les possibilités qu’offrent le framework comme [gérer la configuration](https://symfony.com/doc/current/bundles/configuration.html) ou utiliser directement les services sans avoir besoin de les déclarer.
+
+Que ce soit à cause de la sémantique ou de la pratique, faîtes des bundles si vous avez de composants Symfony !
+
 
 ## #4 Les libraries partagées
 On pourrait croire que c’est une bonne idée quand, dans plusieurs projets, nous avons les mêmes classes. On se dit que la duplication de code c’est mal, on a la même unicité sur tous les projets et qu’on n’a qu’à tester qu’une seule fois le code.
@@ -64,9 +68,11 @@ Même si de nos jours les releases Symfony sont globalement stables, attendre un
 
 Je suis la première à aimer utiliser les listeners : ça me permet de mettre en place une action commune pour un événement particulier assez facilement.
 
-Mais ça peut vite devenir une usine à gaz et difficilement maintenable pour une nouvelle personne arrivant sur le projet. Les risques sont d’avoir des listeners se marchant sur les pieds ou d’impacter les performances.
+Mais ça peut vite devenir une usine à gaz et difficilement maintenable pour une nouvelle personne arrivant sur le projet.
+Les listeners sont souvent invisibles dans le code, dispersés entre le code source et les bundles, pouvant être déclenché très facilement si l'événement est récurrent.
+Les risques sont d’avoir des listeners se marchant sur les pieds (par exemple un listener pouvant impacter le comportement d'un deuxième) ou de plomber les performances par des appels trop fréquents. Blackfire peut être votre ami dans ce cas-là avec le metric `symfony.events`.
 
-Heureusement avec la commande `bin/console debug:event-dispatcher` ou dans le profiler, il est facile d’avoir la liste des classes et de debugger.
+Grâce à la commande `bin/console debug:event-dispatcher` ou dans le profiler, il est facile d’avoir la liste des classes, de vérifier qu'un listener existant ne peut pas être enrichi avant d'en créer un autre et surtout de debugger.
 
 ## #1 Utiliser API Platform aveuglément
 
@@ -80,7 +86,7 @@ Si votre besoin est très spécifique et demande plus que des CRUD basiques, cel
 
 API Platform propose régulièrement des mises à jour pour améliorer sa performance, pourtant je reste convaincue de ne pas l’utiliser si le projet est un peu plus complexe.
 
-Faire son API avec [FOSRestBundle](https://github.com/FriendsOfSymfony/FOSRestBundle) vous permettra d’être indépendant sur les actions que doivent faire vos routes, sans code magique, ce qui vous permettra de maîtriser la résilience et la performance de votre application.
+En fonction de votre besoin, il faut réfléchir entre utiliser cet outil ou faire soi-même son API. Avec [FOSRestBundle](https://github.com/FriendsOfSymfony/FOSRestBundle) vous permettra d’être indépendant sur les actions que doivent faire vos routes, sans code magique, ce qui vous permettra de maîtriser la résilience et la performance de votre application.
 
 ## Conclusion
 Ce top est propre à mon expérience, et avec de la chance, je n’ai sûrement pas tout vu.
