@@ -9,7 +9,7 @@ categories:
     - symfony
     - architecture
 
-cover: /assets/2022-05-04-top-5-des-pires-erreurs-sous-symfony/logo.png
+cover: /assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/logo.png
 ---
 
 Je suis développeuse PHP/Symfony depuis près de 10 ans, et au cours de mes missions j’ai pu tester, expérimenter, et découvrir différentes architectures et design patterns en entreprise. J'ai vu du bon, j'ai vu du passable, et j'ai aussi parfois ouvert les portes de l'enfer. De ces expériences, j'ai décidé de recenser le pire, et je vous propose dans cet article le top 5 des erreurs qu’il faut à tout prix éviter sous Symfony !
@@ -17,7 +17,7 @@ Je suis développeuse PHP/Symfony depuis près de 10 ans, et au cours de mes mis
 ## #5 Faire une librairie, alors qu’il s’agit d’un bundle
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-05-04-top-5-des-pires-erreurs-sous-symfony/libraryvsbundle.png" width="300px" alt="Library vs Bundle" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/libraryvsbundle.png" width="300px" alt="Library vs Bundle" style="display: block; margin: auto;"/>
 </div>
 
 Combien de fois ai-je vu des soi-disant librairies qui, n'en étant pas (vous allez comprendre ce que j'entends par là très vite), posaient des soucis de maintenabilité sur les projets Symfony ? La réponse est : beaucoup trop.
@@ -43,7 +43,7 @@ Mais ce développeur n'a pas détecté que sa modification a créé un break cha
 Un autre développeur travaille en parallèle sur, justement, ce Service B et a aussi besoin de modifier cette librairie. Quand il va faire sa branche sur la librairie, cela sera à partir de la branche principale, avec la modification pour la feature 01. Quand la librairie sera mise à jour pour tester la branche spécifique, il y aura une erreur, dont la raison demeurera complètement opaque pour le deuxième développeur...
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-05-04-top-5-des-pires-erreurs-sous-symfony/librairies-partagees.png" width="600px" alt="Example problème librairies partagées" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/librairies-partagees.png" width="600px" alt="Example problème librairies partagées" style="display: block; margin: auto;"/>
 </div>
 
 Cela fait perdre du temps pour débugger, car ça implique de solliciter toute son équipe, pour identifier le développeur responsable du break change et corriger ce qui doit l'être.
@@ -75,7 +75,7 @@ Grâce à la commande `bin/console debug:event-dispatcher` ou dans le profiler, 
 ## #1 Utiliser API Platform aveuglément
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-05-04-top-5-des-pires-erreurs-sous-symfony/no-api-platform.png" width="200px" alt="No API Platform" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/no-api-platform.png" width="200px" alt="No API Platform" style="display: block; margin: auto;"/>
 </div>
 
 API Platform permet de créer rapidement des APIs et cela permet de gagner un temps incroyable en début de projet. Malheureusement, le coût de développement et de maintien vient plus tard et peut être faramineux.
