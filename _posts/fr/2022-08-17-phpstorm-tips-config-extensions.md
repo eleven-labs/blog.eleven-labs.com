@@ -13,7 +13,7 @@ categories:
     - tool
 ---
 
-Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité sur un IDE de la suite JetBrains (ici PhpStorm), en vous parlant de mes extensions préférées ainsi que de certains points de configuration méconnus mais très utiles. Prêts ? C'est parti !
+Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité sur l'IDE [PhpStorm](https://www.jetbrains.com/fr-fr/phpstorm/) de la suite JetBrains, en vous parlant de mes extensions préférées ainsi que de certains points de configuration méconnus mais très utiles. Prêts ? C'est parti !
 
 <br />
 
@@ -28,7 +28,7 @@ Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité
 Nous irons crescendo dans cet article, du tips le plus au moins connu, le meilleur se trouvant à la fin, donc restez bien jusqu'au bout (oui, j'optimise mon readtime).
 </div>
 
-Commençons par les extensions très utiles que je possède.
+# Mes extensions les plus utiles
 
 ## Key promoter
 
@@ -73,7 +73,9 @@ Très pratique, on s'en rend compte surtout à l'utilisation, rapidement on ne p
 Comme vous l'avez remarqué, oui je suis dans un mood light theme en ce moment. Le dark mode c'est classe, mais pas si vous voulez prendre soin de vos yeux. cf [Which colour scheme is better according to science ?](https://stitcher.io/blog/why-light-themes-are-better-according-to-science)
 </div>
 
-Dans la suite de cet article, nous parlerons de configuration d'IDE. Il s'agit donc de préférences subjectives qui peuvent ne pas vous correspondre, mais je me suis efforcé de selectionner celles que je trouve réellement utiles et qui me font, je crois, gagner en productivité.
+Dans la suite de cet article, nous parlerons de configuration d'IDE. Il s'agit donc de préférences subjectives qui peuvent ne pas vous correspondre, mais je me suis efforcé de sélectionner celles que je trouve réellement utiles et qui me font, je crois, gagner en productivité.
+
+# Optimiser sa configuration
 
 ## Cachez ces taskbars que je ne saurais voir
 
@@ -115,7 +117,7 @@ Ouvrir un nouveau fichier / projet ? **Ctrl + Maj + A** => "Open...".
 
 Etc... Pour **TOUTES** les actions auxquelles vous pensez dont vous ne vous souvenez plus du raccourci ou qui n'en ont tout simplement pas, il suffit d'ouvrir votre menu d'actions avec **Ctrl + Maj + A** et d'écrire ce que vous voulez faire. 
 
-L'utilisation de ce menu prend tout son sens quand on est débarrassé de toutes nos taskbars. Je trouve son utilisation même plus rapide que les barres de tâches : Plutôt que de fouiller dans une arborescence d'options ou même de ne plus savoir où chercher, le menu d'actions trouve votre option en quelques caractères tapés au clavier.
+L'utilisation de ce menu prend tout son sens quand on est débarrassé de toutes nos taskbars. Je trouve son utilisation même plus rapide que les barres de tâches : plutôt que de fouiller dans une arborescence d'options ou même de ne plus savoir où chercher, le menu d'actions trouve votre option en quelques caractères tapés au clavier.
 
 ## Distraction free mode, aka le boss de fin
 
@@ -158,3 +160,8 @@ Votre mantra : "Un esprit sain dans un corps sain se doit d'utiliser un IDE sain
 Prenez soin de votre PhpStorm, et très bon été à tous !
 
 À très bientôt 👋
+
+### Sources
+
+- [How to set up PhpStorm](https://www.youtube.com/watch?v=jVTk-F3g9XM)
+- [Which colour scheme is better according to science ?](https://stitcher.io/blog/why-light-themes-are-better-according-to-science)
