@@ -75,7 +75,7 @@ D'ailleurs, ces solutions Saas utilisent un autre format que celui proposé de b
 ## Qu'est-ce que le format ICU ?
 Le format ICU (International Components for Unicode) est un format de message largement utilisé dans de nombreux systèmes logiciels de traduction tels que localize.biz (et vous pouvez en apprendre plus sur son utilisation sur l’article [Gestion des traductions avec localise.biz](https://blog.eleven-labs.com/fr/gestion-des-traductions-avec-localise.biz/)), [phrase](https://phrase.com/), [lokalise](https://lokalise.com) ou encore [crowdin](https://crowdin.com/). Ce format permet de gérer des patterns tels que le pluriel.
 
-Il ne varie pas sur l'utilisation et l'ordonnancement des clés des fichiers de traduction, mais les fichiers doivent être renommés messages.{locale}+intl-icu.yaml et sur l’utilisation des fameux patterns.
+Le format ne fait pas varier l'utilisation et l'ordonnancement des clés des fichiers de traduction, mais les fichiers doivent être renommés messages.{locale}+intl-icu.yaml et les patterns modifiés.
 
 Reprenons l’exemple plus haut d’une traduction incluant le pluriel :
 ```yaml
