@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Symfony, Javascript et traduction : BazingaJSTranslationBundle, comment l'utiliser avec le format ICU ?"
-excerpt: ""
+excerpt: "Même si de plus en plus d'architectes séparent le back et le front pour qu'ils puissent évoluer indépendamment, certaines applications (souvent du legacy) implémentent le front dans l'application Symfony avec twig et du javascript. Nous allons refaire le point sur le fonctionnement des traductions et sur le formattage ICU."
 authors:
     - marianne
 permalink: /fr/2022-08-24-symfony-javascript-traduction-bazinga-js-translation-bundle-icu/
