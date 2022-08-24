@@ -6,8 +6,8 @@ authors:
     - marianne
 permalink: /fr/2022-08-24-symfony-javascript-traduction-bazinga-js-translation-bundle-icu/
 categories:
-    - symfony
-    - javascript
+    - PHP
+    - Javascript
 
 ---
 
