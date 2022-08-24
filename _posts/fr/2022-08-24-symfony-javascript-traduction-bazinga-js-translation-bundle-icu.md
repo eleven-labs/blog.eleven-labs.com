@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Symfony, Javascript et traduction : BazingaJSTranslationBundle, comment l'utiliser avec le format ICU ?"
-excerpt: "Même si de plus en plus d'architectes séparent le back et le front pour qu'ils puissent évoluer indépendamment, certaines applications (souvent du legacy) implémentent le front dans l'application Symfony avec twig et du javascript. Nous allons refaire le point sur le fonctionnement des traductions et sur le formattage ICU."
+excerpt: "Même si de plus en plus d'architectes séparent le back et le front pour qu'ils puissent évoluer indépendamment, certaines applications (souvent du legacy) implémentent le front dans l'application Symfony avec Twig et du Javascript. Nous allons refaire le point sur le fonctionnement des traductions et sur le formattage ICU."
 authors:
     - marianne
 permalink: /fr/2022-08-24-symfony-javascript-traduction-bazinga-js-translation-bundle-icu/
@@ -10,10 +10,7 @@ categories:
     - Javascript
 
 ---
-
-# Symfony, Javascript et traduction : BazingaJSTranslationBundle, comment l'utiliser avec le format ICU ?
-
-Même si de plus en plus d'architectes séparent le back et le front pour qu'ils puissent évoluer indépendamment, certaines applications (souvent du legacy) implémentent le front dans l'application Symfony avec twig et du javascript. Nous allons refaire le point sur le fonctionnement des traductions et sur le formattage ICU.
+Même si de plus en plus d'architectes séparent le back et le front pour qu'ils puissent évoluer indépendamment, certaines applications (souvent du legacy) implémentent le front dans l'application Symfony avec Twig et du Javascript. Nous allons refaire le point sur le fonctionnement des traductions et sur le formattage ICU.
 
 ## Comment sont gérés les traductions dans Symfony ?
 Dans les nombreux composants proposés par Symfony, il y a celui qui permet de gérer les traductions : [translation](https://symfony.com/doc/current/translation.html).
