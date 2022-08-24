@@ -18,7 +18,7 @@ Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité
 <br />
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-17-phpstorm-tips-config-extensions/PhpStorm_Icon.png" width="300px" alt="PhpStorm Logo" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/PhpStorm_Icon.png" width="300px" alt="PhpStorm Logo" style="display: block; margin: auto;"/>
     <i>PhpStorm</i>
 </div>
 
@@ -39,7 +39,7 @@ Cependant il peut être compliqué de se rappeler de tous les raccourcis qui exi
 <br />
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-17-phpstorm-tips-config-extensions/key-promoter-notification.png" width="450px" alt="Key Promoter notif" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/key-promoter-notification.png" width="450px" alt="Key Promoter notif" style="display: block; margin: auto;"/>
     <i>Key Promoter</i>
 </div>
 
@@ -61,7 +61,7 @@ Heureusement, PhpStorm possède une extension pour cela, j'ai nommé *CodeGlance
 <br />
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-17-phpstorm-tips-config-extensions/code-glance-example.png" width="300px" alt="Codeglance Map" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/code-glance-example.png" width="300px" alt="Codeglance Map" style="display: block; margin: auto;"/>
     <i>Code Glance</i>
 </div>
 
@@ -88,7 +88,7 @@ Vous voilà à présent dans cette situation :
 <br />
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-17-phpstorm-tips-config-extensions/clean-phpstorm.png" width="500px" height="400px" alt="PhpStorm Clean" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/clean-phpstorm.png" width="500px" height="400px" alt="PhpStorm Clean" style="display: block; margin: auto;"/>
     <i>PhpStorm, the clean way</i>
 </div>
 
@@ -126,7 +126,7 @@ Nous voilà arrivés à la dernière fonctionnalité que je vais vous présenter
 <br />
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-17-phpstorm-tips-config-extensions/distraction-free-mode.png" alt="distraction free mode" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/distraction-free-mode.png" alt="distraction free mode" style="display: block; margin: auto;"/>
     <i>Distraction free mode</i>
 </div>
 
