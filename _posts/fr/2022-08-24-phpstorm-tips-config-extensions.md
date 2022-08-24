@@ -7,13 +7,10 @@ permalink: /fr/phpstorm-tips-config-extensions/
 authors:
     - ajacquemin
 categories:
-    - phpstorm
     - php
-    - ide
-    - tool
 ---
 
-Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité sur l'IDE [PhpStorm](https://www.jetbrains.com/fr-fr/phpstorm/) de la suite JetBrains, en vous parlant de mes extensions préférées ainsi que de certains points de configuration méconnus mais très utiles. Prêts ? C'est parti !
+Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité sur l'IDE [PhpStorm](https://www.jetbrains.com/fr-fr/phpstorm/) de la suite JetBrains. Je vais vous parler de mes extensions préférées ainsi que de certains points de configuration méconnus mais très utiles. Prêts ? C'est parti !
 
 <br />
 
@@ -25,7 +22,7 @@ Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité
 <br />
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-Nous irons crescendo dans cet article, du tips le plus au moins connu, le meilleur se trouvant à la fin, donc restez bien jusqu'au bout (oui, j'optimise mon readtime).
+Nous irons crescendo dans cet article, du plus populaire des tips à celui le moins connu. Le meilleur se trouvant à la fin, restez bien jusqu'au bout (oui, j'optimise mon readtime).
 </div>
 
 # Mes extensions les plus utiles
@@ -115,7 +112,7 @@ Besoin de changer les onglets de place ? **Ctrl + Maj + A** => "Tab placement".
 
 Ouvrir un nouveau fichier / projet ? **Ctrl + Maj + A** => "Open...".
 
-Etc... Pour **TOUTES** les actions auxquelles vous pensez dont vous ne vous souvenez plus du raccourci ou qui n'en ont tout simplement pas, il suffit d'ouvrir votre menu d'actions avec **Ctrl + Maj + A** et d'écrire ce que vous voulez faire. 
+Etc. Pour **TOUTES** les actions auxquelles vous pensez dont vous ne vous souvenez plus du raccourci ou qui n'en ont tout simplement pas, il suffit d'ouvrir votre menu d'actions avec **Ctrl + Maj + A** et d'écrire ce que vous voulez faire. 
 
 L'utilisation de ce menu prend tout son sens quand on est débarrassé de toutes nos taskbars. Je trouve son utilisation même plus rapide que les barres de tâches : plutôt que de fouiller dans une arborescence d'options ou même de ne plus savoir où chercher, le menu d'actions trouve votre option en quelques caractères tapés au clavier.
 
@@ -138,7 +135,7 @@ Pour l'activer, je vous le donne en mille : un petit coup de **Ctrl + Maj + A** 
 
 Si vous avez préféré ne pas vous séparer de vos taskbars et menus, le *distraction free mode* vous les enlevera **uniquement** pour le temps où vous souhaitez rester focus. C'est donc un bon compromis si vous ne souhaitez travailler ainsi que quelques instants. Dès que vous voulez retrouver vos menus et le layout de PhpStorm de base, il vous suffit d'utiliser votre menu d'action pour quitter ce mode.
 
-Autre avantage, le distraction free mode va quelque peut centrer votre code plutôt que de le laisser tout collé à gauche comme il l'est habituellement quand on se contente de fermer l'arborescence de fichiers, et c'est très agréable (et oui, cette marge à gauche est personnalisable à vos souhaits).
+Autre avantage, le distraction free mode va quelque peu centrer votre code plutôt que le laisser tout collé à gauche comme il l'est habituellement quand on se contente de fermer l'arborescence de fichiers, et c'est très agréable (et oui, cette marge à gauche est personnalisable à vos souhaits).
 
 Le distraction free mode retire beaucoup de choses, mais vous pouvez le personnaliser si besoin.
 
@@ -149,7 +146,7 @@ Vous commencez à connaître la chanson !
 
 ## Conclusion
 
-Avez toutes ces astuces, libre à vous de piocher dans celles qui vous intéresse le plus, et surtout, adaptez les à vos besoins en changeant des éléments de config ou de layout selon vos préférences, le plus important, c'est que votre IDE vous ressemble et soit agréable à utiliser pour VOUS.
+Avez toutes ces astuces, libre à vous de piocher dans celles qui vous intéresse le plus. Surtout : adaptez-les à vos besoins en changeant des éléments de config ou de layout selon vos préférences. Le plus important, c'est que votre IDE vous ressemble et soit agréable à utiliser pour VOUS.
 
 Enfin, n'oubliez pas de vérifiez régulièrement les mises à jour de votre IDE <b>ET</b> de vos extensions.
 
