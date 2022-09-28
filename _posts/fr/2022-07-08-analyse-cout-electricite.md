@@ -1,16 +1,23 @@
 ---
 layout: post
-title: Analyse du coût de l'électricité en fonction du tarif choisi
-excerpt: "Lors de la souscription chez un fournisseur d'électricité, il est possible de choisir entre différents tarif.
-Il existe un tarif moins cher durant les périodes creuses. Est-ce vraiment intéressant ? Nous allons en faire l'analyse
-dans cet article."
+title: Explorer la donnée pour optimiser ses coûts d'électricité
+excerpt: "Et si on mettait en pratique quelques réflexes d'analyse de données,
+pour faire de meilleurs choix au quotidien ? On pourrait peut-être ainsi mieux sélectionner
+son forfait chez notre fournisseur d'électricité"
 lang: fr
-permalink: /fr/analyse-du-cout-de-l-electricite-en-fonction-du-tarif-choisi/
+permalink: /fr/explorer-la-donnee-pour-optimiser-ses-couts-d-electricite/
 authors:
 - tthuon
 categories:
 - python
 ---
+
+Dans cet article, je vous propose de vous mettre dans la peau d'un Data Analyste. Dans ce cas pratique,
+nous allons répondre à des questions en nous aidant d'outil d'analyse de données.
+
+Avant de vous expliquer comment j'ai procédé, je vous donne un peu de contexte.
+
+## Contexte
 
 Lors de l'acquisition d'un bien immobilier, il faut souscrire à un fournisseur d'électricité. Une fois le fournisseur
 d'électricité
@@ -37,22 +44,32 @@ consommer le plus possible durant la période creuse. Cela signifie par exemple,
 
 La question que l'on peut se poser : **est-ce que la tarification HC-HP est vraiment avantageuse ?**
 
+Voyons les outils que nous allons utiliser.
+
+## Outils utilisés
+
 Dans ce cas pratique, en tant qu'analyste de données (ou en anglais "Data Analyst"), je vais faire l'analyse du problème
 et y répondre.
 Je vais m'appuyer sur des outils tel que [Pandas](https://pandas.pydata.org/about/) pour la manipulation des données
 et [plotly](https://plotly.com/python/) pour la création de visualisation de données. Tout cela en Python et dans un
 [notebook Jupyter]({{ site.baseurl }}/fr/decouverte-ipython-un-shell-interactif-avance-pour-python/).
 
-Il est tout à fait possible d'utiliser une feuille de calcul tel que LibreOffice Calc ou Microsoft Excel, mais le
-but de ce cas d'étude est d'utiliser des outils spéciques à la manipulation des données en Python
-(et parce que nous sommes des dev :D).
+J'ai sélectionné ces outils car ce sont les plus utilisé dans ce domaine. Il est tout à fait possible d'utiliser
+une feuille de calcul tel que LibreOffice Calc ou Microsoft Excel, mais le but de ce cas pratique est d'utiliser
+des outils spéciques à la manipulation des données en Python.
+
+Maintenant que vous avez le contexte, on met les main dedans et on rentre le sujet. Je vais tout d'abord commencer
+par trouver les sources de données.
 
 ## Trouver les sources de données
 
+Pour effectuer mon analyse, j'ai besoin de données. Dans un premier temps, il me faut les données sur les différents
+tarifs et ensuite il me faut les données sur ma consommation.
+
+Allons tout d'abord récupérer les données sur les tarifs de l'électricités.
+
 ### Les tarifs de l'électricités
 
-Pour effectuer mon analyse, j'ai besoin de données. Dans un premier temps, il me faut les données sur les différents
-tarifs.
 Pour faire simple, je vais sélectionner EDF comme fournisseur d'électricité. Il est tout à fait possible d'en ajouter d'
 avantage pour comparer.
 
@@ -92,24 +109,26 @@ En seconde colonne, c'est le prix de l'abonnement mensuel en euro.
 
 Enfin, les autres colonnes sont les tarifs du kWh en centimes d'euros.
 
+Une fois que j'ai les données sur la tarification de l'électricité, je peux aller chercher les données sur la
+consommation.
+
 ### Les données de consommations
 
 Avec le déploiement des compteurs Linky, la consommation (et la production) d'électricité est remontée quotidiennement
-chez le gestionnaire
-de réseau Enedis. Les fournisseurs d'électricité demande à Enedis la consommation électrique de chaque Point De
-Livraison (PDL) pour ainsi
-facturer au client final.
+chez le gestionnaire de réseau Enedis. Les fournisseurs d'électricité demande à Enedis la consommation électrique
+de chaque Point De Livraison (PDL) pour ainsi facturer au client final.
 
-Enedis permet au client de consulter ses données quotidiennes. Il est possible d'activer une option pour consulter sa
-consommation par tranche de 30 minutes.
-
-Je vous renvoi vers un article Enedis pour récupérer les données de
+Enedis permet au client de consulter ses données quotidiennes. Je vous renvoi vers un article Enedis pour récupérer les données de
 consommation [https://www.enedis.fr/jaccede-mes-donnees-de-consommation-et-de-production-delectricite](https://www.enedis.fr/jaccede-mes-donnees-de-consommation-et-de-production-delectricite)
-.
+. Pour notre étude, j'ai pris les données sur 1 mois.
 
-Pour notre étude, j'ai pris 1 mois.
+Nous avons les données sur les tarifs de l'électricités et les données sur la consommation. Cependant, la données sur
+la consommation à un format difficile à exploiter. Nous devons la nettoyer. C'est ce que nous allons faire dans la partie suivante.
 
-## Nettoyage des données
+## Nettoyage des données de consommation
+
+Les données de consommation récupéré auprès d'Enedis est assez chaotique. Il n'est pas possible de fournir ce fichier à Pandas
+car il ne saura pas l'organiser.
 
 Ci-dessous un extrait du fichier fournis par Enedis.
 
@@ -123,12 +142,14 @@ Du 2021-04-12T00:00:00+01:00 au;AA000000;Option Heures Creuses + Week-End;HC;Heu
 ```
 
 Les données de consommation ont une structure spécifique. Les deux premières lignes sont des en-tête qui décrivent la
-nature
-des données. Un élément doit attirer notre attention : la consommation est en watt-heure et c'est du cumulatif
+nature des données. Un élément doit attirer notre attention : la consommation est en watt-heure et c'est du cumulatif
 (comme un compteur kilométrique d'une voiture).
 
 La troisième ligne ce sont les noms de colonnes. Ces noms sont des index de colonnes. Les labels plus détails sont dans
 les 2 dernières lignes du tableau.
+
+Ce sont des metadonnées qui donnent des informations supplémentaire à la données en elle-même. Elles ne sont pas utile
+pour exploiter les informations.
 
 Par exemple, pour la colonne `EAS F1` j'ai la valeur `11538434`. En regardant les deux dernière lignes du tableau, je
 vois
@@ -159,7 +180,9 @@ with open(f"{BASE_PATH}{RAW_DATA_FILENAME}", "r+") as fp:
         fpclean.writelines(lines[2: len(lines) - 2])
 ```
 
-Je charge ce nouveau fichier avec Pandas pour effectuer quelques calcul de bases comme le différentiel par jour et la consommation totale de la journée.
+Un nouveau fichier nettoyé est généré : enedis_conso_clean.csv.
+Ensuite, je charge ce nouveau fichier avec Pandas pour effectuer quelques calcul de bases
+comme le différentiel par jour et la consommation totale de la journée.
 
 Avec Pandas, le travail sur les données s'effectue en colonne et non en ligne.
 Ce fonctionnement est un peu déroutant lorsque l'on utilise courament des bases de données tel que MySQL ou PostgreSQL.
@@ -209,12 +232,20 @@ Mais avec Pandas, cela signifie qu'il manque une valeur.
 Ici c'est tout à fait normal, car il n'y a rien à comparer avant.
 Cela ne gêne pas pour la suite des calculs.
 
-Pour finir, je choisi de stocker le résultat dans un format Apache Parquet car je voulais essayer ce format.
+Pour finir, je choisi de stocker le résultat dans un format Apache Parquet car il permet de stocker le schéma des données.
 Ce format est adapté aux données de type colonne et permet un stockage efficace (compression).
 
 Nos données sont prêtes pour l'analyse.
 
 ## Analyse des données
+
+Pour rappel, le but de notre analyse est de répondre à la question suivante : **est-ce que la tarification HC-HP est vraiment avantageuse ?**
+
+Pour cela, je vais procéder en deux étapes :
+- Répartition de la consommation
+- Calcul du coût en fonction du tarif
+
+Effectuons le calcul pour obtenir la répartition de la consommation.
 
 ### Répartition de la consommation
 
@@ -254,11 +285,16 @@ La lecture du tableau ne permet pas de se rendre compte de cette répartition. A
 
 C'est mieux :)
 
+Cela me permet de voir que ~69% de ma consommation électrique est dans la tarification creuse (le weekend c'est la tarification heure creuse qui est utilisé).
+
+Maintenant, appliquons le prix de l'électricité à la consommation électrique. Cela va nous donner le coût total.
+
 ### Calcul du coût en fonction du tarif
 
-Ensuite je fais l'analyse avec les tarifs. Dans la grille tarifaire, chaque ligne correspond à une puissance
-électrique apparente maximale mesuré en kilovoltampère (kVA). Je vous renvoi à Wikipédia pour plus
-d'explication [https://fr.wikipedia.org/wiki/Voltamp%C3%A8re](https://fr.wikipedia.org/wiki/Voltamp%C3%A8re).
+Je vais faire l'analyse avec les tarifs de l'électricité que j'ai récupéré auprès de mon fournisseur.
+Dans la grille tarifaire, chaque ligne correspond à une puissance électrique apparente maximale mesuré en
+kilovoltampère (kVA). Je vous renvoi à Wikipédia pour plus d'explication
+[https://fr.wikipedia.org/wiki/Voltamp%C3%A8re](https://fr.wikipedia.org/wiki/Voltamp%C3%A8re).
 
 Pour notre cas, ça sera 9 kVA.
 
@@ -289,6 +325,8 @@ Cela me permet de tracer ce graphique avec plotly.
     <img src="{{ site.baseurl }}/assets/2022-07-08-analyse-cout-electricite/calcul-cout-electricite.png" alt="coût de l'électricité en fonction du tarif" style="display: block; margin: auto;"/>
 </div>
 
+Ce graphique nous donne les informations nécessaire pour répondre à notre question initiale. Faisons son interprétation.
+
 ## Interprétation
 
 En comparant le tarif vert de base et tarif vert weekend HC-HP, il y a bien une différence de 2,25 euros (soit une différence de 2,44%).
@@ -297,21 +335,19 @@ Cela représente 27 euros par an.
 Donc pour répondre à la question initiale : **oui**, la tarification HC-HP est avantageuse par rapport à une tarification de base.
 
 Cependant, cette interprétation est à nuancer.
-- L'analyse est effectué pour une répartition de la consommation. Si la répartition est différente, le résultat pourrait être différent.
-- Si je compare la tarification vert weekend HC-HP et le tarif bleu de base, la réponse à la question est inversée.
-Mais la comparaison n'est pas rigoureuse car le coût de production de l'électricité dite "verte" est supérieure à celle du tarif bleu.
 
-## Conclusion
+L'analyse est effectué pour une répartition de la consommation donnée. Chaque foyer à une consommation différente,
+donc la répartition de la consommation est différente.
 
-Le code n'est pas très jolie, il y a beaucoup de répétition. En tant qu'analyste de données, je chercher avant tout le
-résultat et à donner du sens aux données.
+Si je compare la tarification vert weekend HC-HP et le tarif bleu de base, la réponse à la question est inversée.
+En observant la grille tarifaire, le tarif vert est plus cher que la bleu. On peut alors se demander pourquoi ?
+Je laisse cette question ouverte car elle dépasse notre cas d'étude.
 
-L'étape suivant consiste à automatiser ce processus via d'autres outils tel qu'Apache Workflow et Apache Spark.
-Ce travaille est effectué par un ingénieur en données (en anglais Data Engineer).
-Il pourra s'aider d'un Data Ops pour la mise en place d'une infrastructure robuste.
+Pour conclure, ce cas d'étude m'a permis de mettre en pratique des outils utilisé dans le domaine de la Data.
+L'utilisation d'un notebook IPython ainsi que la bibliothèque Pandas sont un incourtournable qu'il est nécessaire de maitriser.
 
-Enfin, le Data Analyst pourra s'appuyer d'un scientifique en données (en anglais Data Scientist) pour prédire la proportion d'heure creuse et d'heure pleine durant la période du weekend.
-Ainsi il sera possible d'exploiter le tarif bleu hc-hp.
+Sur cette base d'analyse, il est possible d'approfondir le sujet en appliquant une modèle prédictif à l'aide du machine learning par exemple.
+Tout est possible, la donnée est disponible, il ne reste plus qu'a l'exploiter.
 
 ## Ressources
 
