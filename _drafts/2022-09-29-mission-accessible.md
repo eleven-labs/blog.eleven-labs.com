@@ -2,10 +2,11 @@
 layout: post
 title: Mission accessible, une introduction
 excerpt: Cet article est une introduction au sujet de l’accessibilité, son approche en tant que diversité des situations d’usage et son application dans la conception de produits numériques.
+lang: fr
 authors:
     - meugeniatr
     - fverneuil
-permalink: /mission-accessible-introduction/
+permalink: /fr/mission-accessible-introduction/
 categories:
     - bonnes pratiques
 cover: /assets/2022-09-29-mission-accessible/accessibility_cover.png
