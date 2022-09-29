@@ -8,7 +8,7 @@ authors:
 permalink: /mission-accessible-introduction/
 categories:
     - bonnes pratiques
-cover: /assets/2022-07-27-responsive-accessible-typography/read-me.png
+cover: /assets/2022-09-29-mission-accessible/accessibility_cover.png
 ---
 
 Le Web et les outils numériques sont présents dans toutes les sphères du quotidien, de l’achat de produits de première nécessité jusqu’à la recherche d’emploi et aux démarches administratives. Ils nous concernent toutes et tous et doivent donc être accessibles qu’importe la situation et nos capacités sensorielles, motrices ou cognitives.
@@ -24,7 +24,8 @@ La notion d’usages est au cœur de l’idée d’accessibilité. Opposé à l�
 Concevoir un outil accessible c’est donc penser un outil pour les utilisatrices et utilisateurs tels qu’ils sont réellement, dans leur diversité (voir les [travaux d’accessibilité de Google](https://m3.material.io/foundations/accessible-design/overview) et de [Microsoft](https://www.microsoft.com/design/inclusive/) pour en savoir plus).
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/libraryvsbundle.png" width="300px" alt="Library vs Bundle" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/disabilities.jpg" width="300px" alt="Exemple de situation d’handicap permanent, temporaire et situationnel" style="display: block; margin: auto;"/>
+    <figcaption>Source <cite><a href="https://uxdesign.cc/accessibility-guidelines-for-a-ux-designer-c3ba775539be" target="_blank" rel="nofollow, noreferrer">Accessibility Guidelines de Avinash Kaur</a></cite></figcaption>
 </div>
 
 ## Pourquoi _faire_ de l’accessibilité ?
@@ -34,7 +35,8 @@ Intégrer une démarche d’accessibilité dans votre produit est **bénéfique 
 Tout d’abord, concevoir une expérience utilisateur accessible est **bénéfique pour l’ensemble de vos utilisateurs**. Par exemple, alors que le sous-titrage de messages peut servir pour les individus avec une déficience auditive, cela permet aussi de faire passer un message dans une situation bruyante (voir illustration ci-dessous). Ainsi, la démarche d’accessibilité permet d’inclure les individus atteints d’un handicap permanent, qui représentent [près d’1 adulte français sur 7](https://www.cnsa.fr/documentation/cnsa_chiffres_cles_2021_interactif.pdf), mais aussi d’offrir une expérience plus adaptée à **l’ensemble de vos utilisateurs**.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/libraryvsbundle.png" width="300px" alt="Library vs Bundle" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/group.png" width="300px" alt="Exemple de situation d’handicap permanent, temporaire et situationnel" style="display: block; margin: auto;"/>
+     <figcaption>Source <cite><a href="https://uxdesign.cc/accessibility-guidelines-for-a-ux-designer-c3ba775539be" target="_blank" rel="nofollow, noreferrer">Accessibility Guidelines de Avinash Kaur</a></cite></figcaption>
 </div>
 
 Enfin, concevoir votre produit dans une démarche d’accessibilité est aussi [bénéfique pour votre business](https://www.w3.org/standards/webdesign/accessibility). Parmi d’autres bénéfices pour votre entreprise, un produit “accessible” est un produit qui:
@@ -72,22 +74,47 @@ Cela dit, les critères pour atteindre le niveau A s'additionnent à ceux du niv
 
 Le premier niveau est le plus simple où les choix de conception, tels que le contraste des couleurs, ne sont pas fortement impliqués. Il comporte 30 critères et son objectif est que la plupart des utilisateurs soient capables d'utiliser un site avec succès.
 
-Comme perceptible (P), tout contenu non textuel, comme les images ou le son entre autres, doit avoir un équivalent textuel. Dans le cas d'images, cela peut être facilement réalisé en utilisant la propriété html alt :
-<EXEMPLE UTILISANT ALT>
+Comme perceptible (P), tout contenu non textuel, comme les images ou le son entre autres, doit avoir un équivalent textuel. Il s'agit d'un exemple très simple qui est très facile à mettre en place. Dans le cas d'images, cela peut être facilement réalisé en utilisant la attribut html `alt` :
 
-Dans le cas de vidéos, des sous-titres ou un contenu écrit alternatif doivent être fournis. De plus, une hiérarchie claire dans la structure du site est nécessaire jusqu'au niveau de conformité A. C'est l'un des nombreux cas où le code et l'UX se chevauchent nécessairement. Voici un exemple de mise en page de site Web prototype :
+```html
+<img src="cat.png" alt="Chat : un petit mammifère à quatre pattes très populaire comme animal de compagnie" />
+```
 
-<IMAGE D'EXEMPLE DE MISE EN PAGE -- SVP FLORIAN>
+Une autre alternative est d'utiliser l'attribut aria-labelledby, qui permet de faire correspondre un ou plusieurs éléments avec une description par un identifiant. On peut aussi utiliser l'attribut HTML `aria-labelledby`, qui permet de faire correspondre un ou plusieurs éléments avec une description par un identifiant.
+
+```html
+<img src="cat.png" aria-labelledby="catto-label" />
+
+<p id="catto-label">Chat : un petit mammifère à quatre pattes très populaire comme animal de compagnie"</p>
+```
+
+Il est important de comprendre que ces desctiptions doivent etre objectives et concises, une vraie description de l'image utilisée. Si l'image est purement décorative, il est préférable de laisser ces informations vides, afin que les lecteurs d'écran puissent simplement les ignorer. Dans le cas de vidéos, des sous-titres ou un contenu écrit alternatif doivent être fournis. Ce n'est qu'un début. Vous pouvez en savoir plus sur les alternatives de texte dans [ce lien](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#text_alternatives).
+
+De plus, une hiérarchie claire dans la structure du site est nécessaire jusqu'au niveau de conformité A. C'est l'un des nombreux cas où le code et l'UX se chevauchent nécessairement. Voici un exemple de mise en page de site Web prototype :
+
+<div style="text-align: center;">
+    <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/layout.png" width="300px" alt="HTML structuré de manière sémantique et prévisible en utilisant les éléments tels que Menu, en-tête, titre, sous-titre, article, image, etc." style="display: block; margin: auto;"/>
+    <figcaption>Image de <cite><a href="https://digital.com/how-to-create-a-website/how-to-properly-structure-your-html-for-web-accessibility/" target="_blank" rel="nofollow, noreferrer">How to structure your HTML properly for Web Accessibility</a></cite></figcaption>
+</div>
 
 Afin de respecter les critères d'accessibilité, la mise en page doit suivre un balisage sémantique. Oui, `<h1>` sera le premier et le plus pertinent entête, et honnêtement, nous ne voyons aucune raison d'en avoir plus d'un dans la même page. Les données tabulaires doivent être affichées à l'aide de la balise `<table>` et chaque élément `<input>` doit être lié à une étiquette. C'est le moment de se débarrasser de la maladie `<div>` et d'accueillir `<fieldset>` et `<legend>` dans votre code.
 
-C'est une excellente occasion de mentionner que les couleurs qui fournissent des informations à l'utilisateur ne doivent jamais etre la seule source des informations contextuelles. Souvent, les designers oublient l’etat "focus" d’un élément, ce qui finit généralement par les développeurs écrivant cette ligne CSS :
+C'est une excellente occasion de mentionner que les couleurs qui fournissent des informations à l'utilisateur ne doivent jamais etre la seule source des informations contextuelles. Cela peut sembler un point assez simple, mais la vérité est qu'en tant que développeur front-end, j'ai vu ce code appliqué à plusieurs reprises. La pseudo-classe CSS ":focus" indique qu'un élément a reçu le focus en cliquant ou en sélectionnant à l'aide de la touche de `tab`. Souvent, les designers oublient l’etat "focus" d’un élément, ce qui finit généralement par les développeurs écrivant cette ligne de code :
 
 ```css
-outline: none;
+:focus {
+    outline: none;
+}
 ```
 
-Si nous ne fournissons qu'un changement de couleur lors du focus sur un élément (ex : un bouton, un input), il est probable qu'un utilisateur malvoyant n'aura pas accès à cette information. Même la navigation au clavier peut devenir une tâche fastidieuse sans l'etat focus visible. C'est pourquoi l’outline ne doit jamais être configuré par none, à moins qu'un autre élément ne fournisse cette information en plus de la couleur. Il est vrai que le focus par défaut sur les navigateurs n'est généralement pas très attrayant, mais consultez cette page pour voir comment le personnaliser.
+Si nous ne fournissons qu'un changement dans l'interface lors du focus sur un élément (ex : un bouton, un input), il est probable qu'un utilisateur malvoyant n'aura pas accès à cette information. **C'est pourquoi l’outline ne doit jamais être enleve**, à moins qu'un autre élément ne fournisse cette information. Il peut etre vrai que le focus par défaut sur les navigateurs n'est généralement pas très attrayant, mais consultez [cette page](https://developer.mozilla.org/en-US/docs/Web/CSS/outline) pour voir comment le personnaliser. A vous de jouer !
+
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="OJmqVxm" data-user="seyedi" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/seyedi/pen/OJmqVxm">
+  outline-style</a> by Mojtaba Seyedi (<a href="https://codepen.io/seyedi">@seyedi</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 ### \*Niveau AA, le challenge
 
@@ -103,9 +130,19 @@ Le niveau AAA, avec 28 critères de plus que le niveau précédent, est très re
 
 Une dynamique parfaitement compréhensible et flexible est nécessaire pour se conformer à ce niveau. Le point unique en (O) indique que l'application peut être entièrement naviguée au clavier sans exception, mais il existe de nombreuses spécifications autour de la section Compréhensible (U) pour gérer, par exemple, la soumission de données dans un formulaire : il doit être modifiable , appliquer une vérification lors de l'achèvement de la saisie afin de fournir la possibilité de corriger les erreurs et également d'afficher une confirmation avant la soumission.
 
+### Vers quel niveau viser ?
+
+Tout d'abord, le fait que tous les critères doivent être réunis pour atteindre un niveau ne doit décourager aucun produit web. Les efforts doivent être mesurés en fonction du public cible et du type de site Web. Parfois, il y aura des lois qui peuvent pénaliser l'institution ou l'entreprise si elles ne sont pas respectées. Parfois, les frontières sont moins définies et la rigueur est plus lâche.
+
+D'autre part, de nombreux critères d'accessibilité ne font que suivre les bonnes pratiques. Cela rend notre code plus propre et plus performant. Cela rend notre conception plus claire et améliore énormément notre UX. Ensuite, et probablement le plus important de tout, un Web plus accessible rend l'Internet plus démocratique et plus juste. Alors pourquoi minimiser l'effort ?
+
 ## Comment évaluer son produit ?
 
 Une fois les principes appliqués se pose la question de l’évaluation. Est-ce que votre produit est effectivement davantage accessible pour les contextes d’usages que vous envisagiez ?
+
+<div style="text-align: center;">
+    <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/guidelines.png" width="300px" alt="Illustration of a guidelines book" style="display: block; margin: auto;"/>
+</div>
 
 ### Outils d’audit
 
@@ -146,10 +183,18 @@ Pour récapituler, nous avons vu que :
 
 Le chemin déblayé il ne reste plus qu’à se demander: On commence quand ?
 
+<div style="text-align: center;">
+    <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/accessibility_cover.png" width="300px" alt="Woman in a wheelchair using a computer" style="display: block; margin: auto;"/>
+</div>
+
 ### Ressources
 
--   Understanding the Web Content Accessibility Guidelines: https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG
--   Accessibility Toolkit for Open Educational Resources (OER): Accessibility Principles https://guides.cuny.edu/accessibility/whyitmatters
--   Developing for Web Accessibility: https://www.w3.org/WAI/tips/developing/
--   What is the difference between WCAG A, AA and AAA?: https://ialabs.ie/what-is-the-difference-between-wcag-a-aa-and-aaa/
--   Outline, accessibility concerns: https://developer.mozilla.org/en-US/docs/Web/CSS/outline#accessibility_concerns
+-   Understanding the Web Content Accessibility Guidelines: [https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG)
+-   Accessibility Toolkit for Open Educational Resources (OER): Accessibility Principles: [https://guides.cuny.edu/accessibility/whyitmatters](https://guides.cuny.edu/accessibility/whyitmatters)
+-   Developing for Web Accessibility: [https://www.w3.org/WAI/tips/developing/](https://www.w3.org/WAI/tips/developing/)
+-   What is the difference between WCAG A, AA and AAA?: [https://ialabs.ie/what-is-the-difference-between-wcag-a-aa-and-aaa/](https://ialabs.ie/what-is-the-difference-between-wcag-a-aa-and-aaa/)
+-   Outline, accessibility concerns: [https://developer.mozilla.org/en-US/docs/Web/CSS/outline#accessibility_concerns](https://developer.mozilla.org/en-US/docs/Web/CSS/outline#accessibility_concerns)
+-   How to structure your HTML properly for Web Accessibility: [https://digital.com/how-to-create-a-website/how-to-properly-structure-your-html-for-web-accessibility/](https://digital.com/how-to-create-a-website/how-to-properly-structure-your-html-for-web-accessibility/)
+-   Never remove CSS outlines [https://www.a11yproject.com/posts/never-remove-css-outlines/](https://www.a11yproject.com/posts/never-remove-css-outlines/)
+-   Outline style [https://css-tricks.com/almanac/properties/o/outline-style/](https://css-tricks.com/almanac/properties/o/outline-style/)
+-   Cover image [by vectorjuice](https://www.freepik.com/free-vector/web-accessibility-program-abstract-concept-illustration_12291244.htm#query=web%20accessibility&position=1&from_view=search) on FreePik
