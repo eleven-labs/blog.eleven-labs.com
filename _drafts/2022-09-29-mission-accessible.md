@@ -71,11 +71,11 @@ C'est un point très important qui peut même avoir des conséquences juridiques
 
 Cela dit, les critères pour atteindre le niveau A s'additionnent à ceux du niveau AA, et il en va de même pour atteindre une conformité AAA. Même si cela n'inclut pas une explication exhaustive sur chaque critère de chaque niveau, n'hésitez pas à lire la documentation existante soit sur la page WCAG ou même MDN. Entre les critères, nous pouvons trouver des **implémentations pour la conception et l'implémentation du code**. Voyons quelques exemples suivant les principes POUR. Voyons de quoi on parle.
 
-### \* Niveau A, que l'accessibilité commence
+### - Niveau A, que l'accessibilité commence
 
 Le premier niveau est le plus simple où les choix de conception, tels que le contraste des couleurs, ne sont pas fortement impliqués. Il comporte 30 critères et son objectif est que la plupart des utilisateurs soient capables d'utiliser un site avec succès.
 
-Comme perceptible (P), tout contenu non textuel, comme les images ou le son entre autres, doit avoir un équivalent textuel. Il s'agit d'un exemple très simple qui est très facile à mettre en place. Dans le cas d'images, cela peut être facilement réalisé en utilisant la attribut html `alt` :
+Comme _Perceivable_ (perceptible), tout contenu non textuel, comme les images ou le son entre autres, doit avoir un équivalent textuel. Il s'agit d'un exemple très simple qui est très facile à mettre en place. Dans le cas d'images, cela peut être facilement réalisé en utilisant la attribut html `alt` :
 
 ```html
 <img src="cat.png" alt="Chat : un petit mammifère à quatre pattes très populaire comme animal de compagnie" />
@@ -117,25 +117,25 @@ Si nous ne fournissons qu'un changement dans l'interface lors du focus sur un é
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-### \*Niveau AA, le challenge
+### - Niveau AA, le challenge
 
 La catégorie AA ajoute 20 critères à ceux déjà inclus dans le niveau A. Honnêtement, peu de sites respectent un niveau AA... mais cela ne veut pas dire qu'il faut renoncer aux questions d'accessibilité !
 
-Suivant le principe d'opérabilité (O), **ce niveau propose d'avoir plusieurs façons de naviguer sur un site web**. Par exemple, ajouter un champ de recherche et des liens entre les pages offre une navigation moins rigide. Outre ce point, la relation sémantique entre les en-têtes et les étiquettes est également pertinente pour une conformité AA. Compte tenu des recherches sur la façon dont les utilisateurs lisent sur le web, des messages clairs et concis sont une clé de l'accessibilité. Imaginez un formulaire où l'étiquette ne dit que "nom et nom de famille" mais il y a deux entrées disponibles... laquelle est le nom et laquelle est le nom de famille si elle n'est pas clairement indiquée à chaque côté ?
+Suivant le principe d'opérabilité (_Operable_), **ce niveau propose d'avoir plusieurs façons de naviguer sur un site web**. Par exemple, ajouter un champ de recherche et des liens entre les pages offre une navigation moins rigide. Outre ce point, la relation sémantique entre les en-têtes et les étiquettes est également pertinente pour une conformité AA. Compte tenu des recherches sur la façon dont les utilisateurs lisent sur le web, des messages clairs et concis sont une clé de l'accessibilité. Imaginez un formulaire où l'étiquette ne dit que "nom et nom de famille" mais il y a deux entrées disponibles... laquelle est le nom et laquelle est le nom de famille si elle n'est pas clairement indiquée à chaque côté ?
 
-Pour le principe compréhensible (U), **ce niveau se concentre également sur la disponibilité de la langue de l'utilisateur et les éventuelles variations qui pourraient apparaître**. Par exemple, si un mot étranger se trouve dans le contenu de la page, les informations traduites doivent être fournies sur la page. Même un sélecteur de langue est pertinent pour cette catégorie.
+Pour le principe compréhensible (_Understandable_), **ce niveau se concentre également sur la disponibilité de la langue de l'utilisateur et les éventuelles variations qui pourraient apparaître**. Par exemple, si un mot étranger se trouve dans le contenu de la page, les informations traduites doivent être fournies sur la page. Même un sélecteur de langue est pertinent pour cette catégorie.
 
-### \*Niveau AAA, le véritable engagement
+### - Niveau AAA, le véritable engagement
 
-Le niveau AAA, avec 28 critères de plus que le niveau précédent, est très restrictif et n'est atteint que sur des sites hautement spécialisés. Du point de vue de la perception (P), **il permet une très petite gamme de nuances de couleurs avec un contraste très élevé**, les options de conception sont donc assez limitées.
+Le niveau AAA, avec 28 critères de plus que le niveau précédent, est très restrictif et n'est atteint que sur des sites hautement spécialisés. Du point de vue de la perception (_Perceivable_), **il permet une très petite gamme de nuances de couleurs avec un contraste très élevé**, les options de conception sont donc assez limitées.
 
-Une dynamique parfaitement compréhensible et flexible est nécessaire pour se conformer à ce niveau. Le point unique en (O) indique que l'application peut être entièrement naviguée au clavier sans exception, mais il existe de nombreuses spécifications autour de la section Compréhensible (U) pour gérer, par exemple, la soumission de données dans un formulaire : il doit être modifiable , appliquer une vérification lors de l'achèvement de la saisie afin de fournir la possibilité de corriger les erreurs et également d'afficher une confirmation avant la soumission.
+Une dynamique parfaitement compréhensible et flexible est nécessaire pour se conformer à ce niveau. Le point unique en (O) indique que l'application peut être entièrement naviguée au clavier sans exception, mais il existe de nombreuses spécifications autour de la section Compréhensible (_Understandable_) pour gérer, par exemple, la soumission de données dans un formulaire : il doit être modifiable , appliquer une vérification lors de l'achèvement de la saisie afin de fournir la possibilité de corriger les erreurs et également d'afficher une confirmation avant la soumission.
 
 ### Vers quel niveau viser ?
 
-Tout d'abord, le fait que tous les critères doivent être réunis pour atteindre un niveau ne doit décourager aucun produit web. Les efforts doivent être mesurés en fonction du public cible et du type de site Web. Parfois, il y aura des lois qui peuvent pénaliser l'institution ou l'entreprise si elles ne sont pas respectées. Parfois, les frontières sont moins définies et la rigueur est plus lâche.
+Tout d'abord, le fait que tous les critères doivent être réunis pour atteindre un niveau **ne doit décourager aucun produit web**. Les efforts doivent être mesurés en fonction du public cible et du type de site Web. Parfois, il y aura des lois qui peuvent pénaliser l'institution ou l'entreprise si elles ne sont pas respectées. Parfois, les frontières sont moins définies et la rigueur est plus lâche.
 
-D'autre part, de nombreux critères d'accessibilité ne font que suivre les bonnes pratiques. Cela rend notre code plus propre et plus performant. Cela rend notre conception plus claire et améliore énormément notre UX. Ensuite, et probablement le plus important de tout, un Web plus accessible rend l'Internet plus démocratique et plus juste. Alors pourquoi minimiser l'effort ?
+D'autre part, de nombreux critères d'accessibilité ne font que suivre les bonnes pratiques. Cela rend notre code plus propre et plus performant. Cela rend notre conception plus claire et améliore énormément notre UX. Ensuite, et probablement le plus important de tout, **un Web plus accessible rend l'Internet plus démocratique et plus juste**. Alors pourquoi minimiser l'effort ?
 
 ## Comment évaluer son produit ?
 
@@ -161,7 +161,7 @@ Il est intéressant d’essayer d’utiliser votre propre produit à l’aide d�
 
 ### Tests utilisateurs
 
-Enfin, il est intéressant d’adopter une démarche d’accessibilité pour vos tests utilisateurs.
+Enfin, il est intéressant **d’adopter une démarche d’accessibilité pour vos tests utilisateurs.**
 
 Cette démarche passe par le recrutement de personnes atteintes de handicap en cohérence avec la population et les contextes cibles de votre produit ou encore la prise en compte des différents contextes d’usages réels dans vos protocoles de test, par exemple tester le produit avec une connexion internet instable ou avec une lumière extérieure éclairant le téléphone.
 
