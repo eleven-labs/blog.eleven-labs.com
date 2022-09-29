@@ -24,8 +24,8 @@ La notion d’usages est au cœur de l’idée d’accessibilité. Opposé à l�
 
 Concevoir un outil accessible c’est donc penser un outil pour les utilisatrices et utilisateurs tels qu’ils sont réellement, dans leur diversité (voir les [travaux d’accessibilité de Google](https://m3.material.io/foundations/accessible-design/overview) et de [Microsoft](https://www.microsoft.com/design/inclusive/) pour en savoir plus).
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/disabilities.jpg" width="300px" alt="Exemple de situation d’handicap permanent, temporaire et situationnel" style="display: block; margin: auto;"/>
+<div style="text-align: center; margin: 2rem 0;">
+    <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/disabilities.jpg" width="450px" alt="Exemple de situation d’handicap permanent, temporaire et situationnel" style="display: block; margin: auto;"/>
     <figcaption>Source <cite><a href="https://uxdesign.cc/accessibility-guidelines-for-a-ux-designer-c3ba775539be" target="_blank" rel="nofollow, noreferrer">Accessibility Guidelines de Avinash Kaur</a></cite></figcaption>
 </div>
 
@@ -35,8 +35,8 @@ Intégrer une démarche d’accessibilité dans votre produit est **bénéfique 
 
 Tout d’abord, concevoir une expérience utilisateur accessible est **bénéfique pour l’ensemble de vos utilisateurs**. Par exemple, alors que le sous-titrage de messages peut servir pour les individus avec une déficience auditive, cela permet aussi de faire passer un message dans une situation bruyante (voir illustration ci-dessous). Ainsi, la démarche d’accessibilité permet d’inclure les individus atteints d’un handicap permanent, qui représentent [près d’1 adulte français sur 7](https://www.cnsa.fr/documentation/cnsa_chiffres_cles_2021_interactif.pdf), mais aussi d’offrir une expérience plus adaptée à **l’ensemble de vos utilisateurs**.
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/group.png" width="300px" alt="Exemple de situation d’handicap permanent, temporaire et situationnel" style="display: block; margin: auto;"/>
+<div style="text-align: center; margin: 2rem 0;">
+    <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/group.png" width="450px" alt="Exemple de situation d’handicap permanent, temporaire et situationnel" style="display: block; margin: auto;"/>
      <figcaption>Source <cite><a href="https://uxdesign.cc/accessibility-guidelines-for-a-ux-designer-c3ba775539be" target="_blank" rel="nofollow, noreferrer">Accessibility Guidelines de Avinash Kaur</a></cite></figcaption>
 </div>
 
@@ -93,7 +93,7 @@ Il est important de comprendre que ces desctiptions doivent etre objectives et c
 
 De plus, une hiérarchie claire dans la structure du site est nécessaire jusqu'au niveau de conformité A. C'est l'un des nombreux cas où le code et l'UX se chevauchent nécessairement. Voici un exemple de mise en page de site Web prototype :
 
-<div style="text-align: center;">
+<div style="text-align: center; margin: 2rem 0;">
     <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/layout.png" width="300px" alt="HTML structuré de manière sémantique et prévisible en utilisant les éléments tels que Menu, en-tête, titre, sous-titre, article, image, etc." style="display: block; margin: auto;"/>
     <figcaption>Image de <cite><a href="https://digital.com/how-to-create-a-website/how-to-properly-structure-your-html-for-web-accessibility/" target="_blank" rel="nofollow, noreferrer">How to structure your HTML properly for Web Accessibility</a></cite></figcaption>
 </div>
@@ -141,7 +141,7 @@ D'autre part, de nombreux critères d'accessibilité ne font que suivre les bonn
 
 Une fois les principes appliqués se pose la question de l’évaluation. Est-ce que votre produit est effectivement davantage accessible pour les contextes d’usages que vous envisagiez ?
 
-<div style="text-align: center;">
+<div style="text-align: center; margin: 2rem 0;">
     <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/guidelines.png" width="300px" alt="Illustration of a guidelines book" style="display: block; margin: auto;"/>
 </div>
 
