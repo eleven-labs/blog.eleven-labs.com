@@ -42,9 +42,9 @@ Tout d’abord, concevoir une expérience utilisateur accessible est **bénéfiq
  
 Enfin, concevoir votre produit dans une démarche d’accessibilité est aussi [bénéfique pour votre business](https://www.w3.org/standards/webdesign/accessibility). Parmi d’autres bénéfices pour votre entreprise, un produit “accessible” est un produit qui:
  
--   Atteint une audience plus grande;
--   Est plus utilisable;
--   Est moins coûteux à maintenir;
+-   Atteint une audience plus grande ;
+-   Est plus utilisable ;
+-   Est moins coûteux à maintenir ;
 -   Apparaît davantage dans les moteurs de recherche.
  
 Bénéfique pour vos utilisateurs et votre business, il n’y a plus qu’à se lancer !
@@ -54,7 +54,7 @@ Mais par où commencer…
  
 Le célèbre W3C a conçu les Web Content Accessibility Guidelines (WCAG pour référence) afin d'établir des moyens pour que le contenu web soit accessible aux personnes ayant différents handicaps. Ces directives ont été largement acceptées dans le monde entier. C'est un point très important qui peut même avoir des conséquences juridiques dans des pays dans lesquels l'accessibilité web [est requise par la loi](https://www.w3.org/WAI/policies/).
  
-Les critères WCAG ont été déterminés dans quatre grands domaines: perceivable, operable, understandable et robust sous l’acronyme POUR. Mais qu'est-ce que cela signifie ? Heureusement, la réponse est assez simple.
+Les critères WCAG ont été déterminés dans quatre grands domaines : perceivable, operable, understandable et robust sous l’acronyme POUR. Mais qu'est-ce que cela signifie ? Heureusement, la réponse est assez simple.
  
 -   Tous les critères qui correspondent à la catégorie _Perceivable_ (perceptible) sont liés à **l'accès à l'information**. Cela signifie que chaque information sur l'application doit être perceptible par l'utilisateur en utilisant “un ou plusieurs de ses sens” ([MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable)).
 -   Le principe _Operable_ (opérable) décrit les directives de **navigation dans l'application et dans les composants d'interface**. Par exemple, cela inclut la navigation par clavier, voix, écran tactile ou même les appareils par mouvement, entre autres.
@@ -63,7 +63,7 @@ Les critères WCAG ont été déterminés dans quatre grands domaines: perceivab
  
 Ces quatre principes ont été classés en trois niveaux de conformité : A, AA et AAA, le dernier étant le plus performant en matière d'accessibilité. Un site web ne peut accomplir l'un de ces niveaux que s'il a atteint tous les critères : cela signifie que les niveaux ne peuvent pas être partiellement atteints.
  
-## Comment est fait l'évaluation A/AA/AAA ?
+## Comment est faite l'évaluation A/AA/AAA ?
  
 L'accessibilité Web peut être délicate pour les concepteurs, les développeurs et même les gestionnaires. Ainsi, W3 a organisé trois niveaux d'accompagnement en matière d'accessibilité pour organiser et classer les applications Web. D'autre part, chaque niveau ajoute une nouvelle couche de complexité qui doit être soigneusement élaborée.
  
@@ -106,7 +106,7 @@ C'est une excellente occasion de mentionner que les couleurs qui fournissent des
 }
 ```
  
-Si nous ne fournissons qu'un changement dans l'interface lors du focus sur un élément (ex : un bouton, un input), il est probable qu'un utilisateur malvoyant n'aura pas accès à cette information. **C'est pourquoi l’outline ne doit jamais être enlevé**, à moins qu'un autre élément ne fournisse cette information. Il peut être vrai que le focus par défaut sur les navigateurs n'est généralement pas très attrayant, mais consultez [cette page](https://developer.mozilla.org/en-US/docs/Web/CSS/outline) pour voir comment le personnaliser. A vous de jouer !
+Si nous ne fournissons qu'un changement dans l'interface lors du focus sur un élément (ex : un bouton, un input), il est probable qu'un utilisateur malvoyant n'aura pas accès à cette information. **C'est pourquoi l’outline ne doit jamais être enlevé**, à moins qu'un autre élément ne fournisse cette information. Il peut être vrai que le focus par défaut sur les navigateurs n'est généralement pas très attrayant, mais consultez [cette page](https://developer.mozilla.org/en-US/docs/Web/CSS/outline) pour voir comment le personnaliser. À vous de jouer !
  
 <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="OJmqVxm" data-user="seyedi" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
  <span>See the Pen <a href="https://codepen.io/seyedi/pen/OJmqVxm">
@@ -145,13 +145,13 @@ Une fois les principes appliqués se pose la question de l’évaluation. Est-ce
  
 ### Outils d’audit
  
-Il existe de nombreux outils qui peuvent être utiles pour évaluer le niveau d’accessibilité de votre produit. Parmi eux, nous pouvons citer les outils suivant qui permettent d’évaluer:
+Il existe de nombreux outils qui peuvent être utiles pour évaluer le niveau d’accessibilité de votre produit. Parmi eux, nous pouvons citer les outils suivants qui permettent d’évaluer :
  
 -   L’accessibilité globale de votre produit et d’identifier les éventuels problèmes d’accessibilité avec [CodeSniffer](https://github.com/squizlabs/HTML_CodeSniffer), [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) ou [Accessibility Insights](https://accessibilityinsights.io/);
 -   L’utilisation de vos tags HTML en retirant le CSS de votre page avec [Naked Styles](https://gist.github.com/estudiobold/4181e56129ed5cbd0b6cf40c73787a56);
 -   ou encore l’accessibilité de vos couleurs avec [WhoCanUse](https://whocanuse.com/) et [Contrast Grid](http://contrast-grid.eightshapes.com).
  
-Cette liste ne représente qu’une fine partie de l’ensemble des outils d’audit d’accessibilité existants, vous pouvez retrouver une liste plus détaillée d’outils recommandés par le W3 via [ce lien](https://www.w3.org/WAI/ER/tools/).
+Cette liste ne représente qu’une petite partie de l’ensemble des outils d’audit d’accessibilité existants, vous pouvez retrouver une liste plus détaillée d’outils recommandés par le W3 via [ce lien](https://www.w3.org/WAI/ER/tools/).
  
 ### Tests manuels
  
@@ -163,10 +163,10 @@ Enfin, il est intéressant **d’adopter une démarche d’accessibilité pour v
  
 Cette démarche passe par le recrutement de personnes atteintes de handicap en cohérence avec la population et les contextes cibles de votre produit ou encore la prise en compte des différents contextes d’usages réels dans vos protocoles de test, par exemple tester le produit avec une connexion internet instable ou avec une lumière extérieure éclairant le téléphone.
  
-Ces tests utilisateurs vous permettront de:
+Ces tests utilisateurs vous permettront de :
  
--   Évaluer l’utilisation de votre produit en condition plus écologique;
--   Évaluer le niveau d’accessibilité de votre produit pour les populations et contextes visés;
+-   Évaluer l’utilisation de votre produit en condition plus écologique ;
+-   Évaluer le niveau d’accessibilité de votre produit pour les populations et contextes visés ;
 -   Montrer les problématiques d’accessibilité réelles de votre produit à l’ensemble de votre équipe afin de les sensibiliser et les engager sur le sujet.
  
 Pour plus d’informations, [Pernice et Nielsen ont rédigé un rapport détaillé sur les tests utilisateur d'accessibilité](https://www.nngroup.com/reports/how-to-conduct-usability-studies-accessibility/) qui regroupe un ensemble très riche de conseils et de méthodes pour la mise en place de ces tests.
@@ -175,12 +175,12 @@ Pour plus d’informations, [Pernice et Nielsen ont rédigé un rapport détaill
  
 Pour récapituler, nous avons vu que :
  
--   L’accessibilité est la promesse d’un outil utilisable par toutes et tous;
--   Non seulement bénéfique pour vos utilisateurs, la démarche est aussi bénéfique pour votre business;
--   Il existe un ensemble de principes pour travailler l’accessibilité de vos produits;
+-   L’accessibilité est la promesse d’un outil utilisable par toutes et tous ;
+-   Non seulement bénéfique pour vos utilisateurs, la démarche est aussi bénéfique pour votre business ;
+-   Il existe un ensemble de principes pour travailler l’accessibilité de vos produits ;
 -   Il existe un ensemble d’outils et méthodes pour évaluer le niveau d’accessibilité de votre produit et engager votre équipe sur le sujet.
  
-Le chemin déblayé il ne reste plus qu’à se demander: On commence quand ?
+Le chemin déblayé, il ne reste plus qu’à se demander : on commence quand ?
  
 <div style="text-align: center;">
    <img src="{{ site.baseurl }}/assets/2022-09-29-mission-accessible/accessibility_cover.png" width="300px" alt="Woman in a wheelchair using a computer" style="display: block; margin: auto;"/>
