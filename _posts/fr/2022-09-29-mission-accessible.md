@@ -9,7 +9,6 @@ authors:
 permalink: /fr/mission-accessible-introduction/
 categories:
     - bonnes pratiques
-cover: /assets/2022-09-29-mission-accessible/accessibility_cover.png
 ---
 
 Le Web et les outils numériques sont présents dans toutes les sphères du quotidien, de l’achat de produits de première nécessité jusqu’à la recherche d’emploi et aux démarches administratives. Ils nous concernent toutes et tous et doivent donc être accessibles qu’importe la situation et nos capacités sensorielles, motrices ou cognitives.
