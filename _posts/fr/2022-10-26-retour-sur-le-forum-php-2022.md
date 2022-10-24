@@ -25,7 +25,7 @@ Certains astronautes étaient présents sur place pour assister aux différents 
 <br />
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-10-17-retour-sur-le-forum-php-2022/afup2022.png" width="300px" alt="Afup2022 Logo" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-10-26-retour-sur-le-forum-php-2022/afup2022.png" width="300px" alt="Afup2022 Logo" style="display: block; margin: auto;"/>
     <i>AFUP 2022</i>
 </div>
 
