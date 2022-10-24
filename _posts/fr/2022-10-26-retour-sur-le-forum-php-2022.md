@@ -197,7 +197,7 @@ Et pour finir, le site de [FrankenPHP](https://frankenphp.dev/), et ci-dessous n
 
 ## Conclusion
 
-Ce fut un ForumPHP encore riche en partage, qui a atteint le nombre record de **774 participants**. De quoi faire taire ceux qui pensent que le PHP est mort. Les évolutions et acquis récents de notre langages préféré prouvent qu'il a encore de belles années devant lui, et c'était un plaisir de partager le même état d'esprit et la même philosophie avec autant d'homologues.
+Ce fut un ForumPHP encore riche en partage, qui a atteint le nombre record de **774 participants**. De quoi faire taire ceux qui pensent que le PHP est mort. Les évolutions et acquis récents de notre langage préféré prouvent qu'il a encore de belles années devant lui, et c'était un plaisir de partager le même état d'esprit et la même philosophie avec autant d'homologues.
 
 Je ne pouvais pas vous partager toutes les conférences de manière exhaustive, mais restez connectés sur youtube pour accéder aux replays des talks qui seront partagés bientôt.
 
