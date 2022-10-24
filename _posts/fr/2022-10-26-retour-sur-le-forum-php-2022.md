@@ -129,7 +129,7 @@ Pourquoi est-ce si compliqué de tester des dates ?
 C'est surtout parce que les fonctions comme `time()` qui nous renvoient l'heure actuelle ne sont pas des *fonctions pures*, c'est-à-dire que la valeur de retour de la fonction n'est pas prédictible, quelque soit l'argument passé, même en utilisant un **DateTimeImmutable**.
 
 Pour solutionner cela, Andreas nous présente la [**PSR-20**](https://github.com/php-fig/fig-standards/blob/master/proposed/clock.md) qui est actuellement en Draft, et est bien nommée *Clock*.
-Ce standard fournit une *ClockInterface* qui permet une intéroperabilité avec les tests. Elle expose une méthode `now()` qui renvoie un `DateTimeImmutable`.
+Ce standard fournit une *ClockInterface* qui permet une interopérabilité avec les tests. Elle expose une méthode `now()` qui renvoie un `DateTimeImmutable`.
 
 À partir de là, il suffit d'implémenter l'interface avec différents types de `Clock`, dont une pourrait par exemple renvoyer **toujours** la même date, et donc être utilisée pour les tests. Ainsi, vous pouvez utilisez un objet `RegularClock` au comportement habituel dans votre code. Et grâce à l'interface, vous pouvez maintenant utiliser votre `MockClock` dans vos tests, et enfin accéder au bonheur du test unitaire de date sans bug inattendu.
 
@@ -139,7 +139,7 @@ En attendant que cette PSR soit validée, sachez que vous pouvez tout de même e
 composer require psr/clock
 ```
 
-Cependant, après une petite recherche de mon côté, sachez que Symfony à créé son propore **[composant Clock](https://symfony.com/components/Clock)** qui sera disponible dès la version 6.2.
+Cependant, après une petite recherche de mon côté, sachez que Symfony à créé son propre **[composant Clock](https://symfony.com/components/Clock)** qui sera disponible dès la version 6.2.
 
 Elle vous permettera d'accéder à ces différentes implémentations de la `ClockInterface` :
 
@@ -197,7 +197,7 @@ Et pour finir, le site de [FrankenPHP](https://frankenphp.dev/), et ci-dessous n
 
 ## Conclusion
 
-Ce fut un ForumPHP encore riche en partage, qui a atteint le nombre record de **774 participants**. De quoi faire taire ceux qui pensent que le PHP est mort. Les évolutions et acquis récents de notre langages préférés prouvent qu'il a encore de belles années devant lui, et c'était un plaisir de partager le même état d'esprit et la même philosophie avec autant d'homologues.
+Ce fut un ForumPHP encore riche en partage, qui a atteint le nombre record de **774 participants**. De quoi faire taire ceux qui pensent que le PHP est mort. Les évolutions et acquis récents de notre langages préféré prouvent qu'il a encore de belles années devant lui, et c'était un plaisir de partager le même état d'esprit et la même philosophie avec autant d'homologues.
 
 Je ne pouvais pas vous partager toutes les conférences de manière exhaustive, mais restez connectés sur youtube pour accéder aux replays des talks qui seront partagés bientôt.
 
