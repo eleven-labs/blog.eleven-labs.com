@@ -181,7 +181,7 @@ Pour la config ? Plus qu'à éditer votre **Caddyfile** pour la partie Web serve
 
 Le tout étant bâti sur Caddy et donc Go, votre application peut à présent supporter la puissance des **Early Hints**.
 
-Mais une des killer features de FrankenPHP, c'est son **Worker Mode**. Grâce à ce mode, Franken construit votre application une seule fois au démarrage, et la garde en mémoire, ce qui permet de traiter toutes les futures requêtes sans avoir à redémarrer l'application à chaque fois, comme le voudrait le comportement de base de PHP.
+Mais une des killers features de FrankenPHP, c'est son **Worker Mode**. Grâce à ce mode, Franken construit votre application une seule fois au démarrage, et la garde en mémoire, ce qui permet de traiter toutes les futures requêtes sans avoir à redémarrer l'application à chaque fois, comme le voudrait le comportement de base de PHP.
 
 Ce comportement est compatible avec Symfony et Laravel, et permet d'atteindre des performances assez dingues, d'après le benchmark que Kévin nous présente.
 
