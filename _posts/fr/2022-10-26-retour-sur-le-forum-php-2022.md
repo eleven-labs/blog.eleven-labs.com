@@ -8,9 +8,6 @@ authors:
     - ajacquemin
 categories:
     - php
-    - forum
-    - conference
-    - afup
 ---
 
 Les 13 & 14 octobre 2022 a eu lieu le mythique Forum PHP 2022 organisé par l'AFUP, dans un lieu non moins mythique : DisneyLand Paris.
@@ -20,7 +17,7 @@ C'est la première fois que l'AFUP vient poser ses valises dans ce lieu magique,
 <blockquote class="twitter-tweet"><p lang="fr" dir="ltr">Et vous, il est comment votre vendredi ? <a href="https://t.co/SFMqKjIGfb">pic.twitter.com/SFMqKjIGfb</a></p>&mdash; AFUP (@afup) <a href="https://twitter.com/afup/status/1578341478518362112?ref_src=twsrc%5Etfw">October 7, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
-Certains astronautes étaient présents sur place pour assister aux différents talks proposés. Impossible d'assister à tout de manière exhaustive, mais entre rappels et nouveaux apprentissages, voici un retour pêle-mêle sur certains de ces talks qui nous ont marqués.
+Les astronautes étaient présents pour assister aux différents talks proposés. Impossible bien entendu d'assister à tout, mais entre rappels et nouveaux apprentissages, voici un retour pêle-mêle sur les talks qui nous ont marqués !
 
 <br />
 
@@ -35,11 +32,11 @@ Certains astronautes étaient présents sur place pour assister aux différents 
 
 On commence fort car ce n'est pas n'importe qui qui monte sur scène pour ce premier talk. Il s'agit tout simplement de Sebastian Bergmann, notamment créateur de **PHPUnit**. Il est accompagné de Roman Pronskiy, product marketing manager chez JetBrains.
 
-Ils sont venus nous présenter la [**PHP Foundation**](https://opencollective.com/phpfoundation), qu'ils ont créé il y a tout juste un an. Le but ? Réduire le *bus factor* de l'écosystème PHP.
+Ils sont venus nous présenter la [**PHP Foundation**](https://opencollective.com/phpfoundation), qu'ils ont créée il y a tout juste un an. Le but ? Réduire le *bus factor* de l'écosystème PHP.
 
-Rembobinons, qu'est-ce qu'un *Bus Factor* ? Et bien c'est simple, ce principe part du postulat que nous allons **tous mourir** (oui, PHP y compris).
+Rembobinons, qu'est-ce qu'un *Bus Factor* ? Eh bien c'est simple, ce principe part du postulat que nous allons **tous mourir** (oui, PHP y compris).
 
-Or, imaginez un bus transportant une poignée de personnes, rassemblant à elles seules 80% de la connaissance sur PHP (le fonctionnement de son moteur, son interpréteur, toutes les zend functions utilisées en C, etc...). Si ce bus se crash, on perd instantanément toute la connaissance.
+Or, imaginez un bus transportant une poignée de personnes, rassemblant à elles seules 80% de la connaissance sur PHP (le fonctionnement de son moteur, son interpréteur, toutes les zend functions utilisées en C, etc.). Si ce bus se crashe, on perd instantanément toute la connaissance.
 
 La solution à ce problème est de réduire le plus possible le Bus Factor, en partageant au maximum la connaissance sur le **développement et la maintenance** du langage PHP.
 
@@ -54,23 +51,22 @@ Pour retrouver le support de présentation de ce talk :
 ## Comprenez comment PHP fonctionne, vos applications marcheront mieux
 
 Le premier rappel et le plus important, qui a d'ailleurs été évoqué à de nombreuses reprises durant ce Forum PHP, c'est l'aspect **shared-nothing** du langage lui-même.
-Entre 2 requêtes distinctes, PHP oublie tout, ce qui est un avantage pour nous développeurs. Il est plus facile de coder sans se soucier de potentielles fuites mémoire entre deux requêtes.
-Mais c'est également un coût en performance : à chaque requête, on ré-alloue la mémoire nécessaire, on ré-ouvre des connexions, etc... 
+Entre 2 requêtes distinctes, PHP oublie tout, ce qui est un avantage pour nous développeurs. Il est plus facile de coder sans se soucier de potentielles fuites mémoire entre deux requêtes, mais c'est également un coût en performance : à chaque requête, on ré-alloue la mémoire nécessaire, on ré-ouvre des connexions, etc. 
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 Plutôt que d'utiliser les traditionnels `malloc` & `mfree` natifs du langage C, PHP utilise son propre gestionnaire de mémoire ZMM (pour Zend Memory Manager) afin d'optimiser l'allocation de mémoire en PHP, qui s'effectue à chaque requête. 
 </div>
 
 Le SAPI PHP-FPM est très bien optimisé, certes, mais cela ne suffit pas toujours à avoir une application qui fonctionne parfaitement.
-De plus, il n'existe pas de **multi-threading** en PHP. On peut cumuler plusieurs processus avec PHP-FPM, mais ce n'est pas une solution illimitée; chaque nouveau processus va consommer du CPU et de la RAM. Il ne s'agit donc pas d'en rajouter dès que l'application connaît des lenteurs.
+De plus, il n'existe pas de **multi-threading** en PHP. On peut cumuler plusieurs processus avec PHP-FPM, mais ce n'est pas une solution illimitée ; chaque nouveau processus va consommer du CPU et de la RAM. Il ne s'agit donc pas d'en rajouter dès que l'application connaît des lenteurs.
 
-Des problèmes des problèmes, mais où sont les solutions alors ?
+Des problèmes, des problèmes, mais où sont les solutions alors ?
 
 Eh bien, au risque de vous décevoir, il n'y a pas de solution magique (auquel cas, vous le sauriez déjà), mais on peut rappeler quelques pistes à prendre en compte lorsque l'on projette d'améliorer nos performances :
 - Ne pas hésiter à mettre des **timeouts** sur les appels API au sein de notre application. PHP est un langage qui attend la fin de l'exécution de chaque instruction, faisons tout pour lui simplifier la tâche en offrant ce genre de portes de sortie.
-- Dans la lignée du point ci-dessus et de manière générale; **optimiser** son code.
+- Dans la lignée du point ci-dessus et de manière générale, **optimiser** son code.
 - Vérifier que **OPCache** est bien activé.
-- Penser à la **scalabilité** des serveurs (mais attention aux **coûts**)
+- Penser à la **scalabilité** des serveurs (mais attention aux **coûts**).
 - Bien comprendre le fichier de configuration de PHP et travailler de pair avec les DevOps pour en fournir un qui soit à la fois **compatible** avec votre infrastructure, et **optimisé** pour votre application.
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
@@ -85,12 +81,12 @@ J'en profite pour vous présenter le super compte Twitter de @mdesnouveaux, déc
 
 ## Design Pattern Rules Engine
 
-Une de mes conférences préférées, merci à Thibault Richard pour ce talk. La présentation de ce design pattern en application dans un cas concret, c'était la meilleure manière d'en prouver l'efficacité et la simplicité.
+Une de mes conférences préférées, merci à Thibault Richard pour ce talk. La présentation de ce design patterns en application dans un cas concret, c'était la meilleure manière d'en prouver l'efficacité et la simplicité.
 
 Ce design pattern implémente un système qui évalue un ensemble de **règles** pour définir les **actions** à mener.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-C'est un design pattern avant tout indiqué dans un projet comprenant beaucoup de règles métier à vérifier. Si vous constatez une armée de `if (...)` qui commence à s'entasser dans votre code pour vérifier chacune d'entre elle, impactant la lisibilité et la testabilité de votre application, alors le Rules engine est fait pour vous.
+C'est un design pattern avant tout indiqué dans un projet comprenant beaucoup de règles métier à vérifier. Si vous constatez une armée de `if (...)` qui commence à s'entasser dans votre code pour vérifier chacune d'entre elles, impactant la lisibilité et la testabilité de votre application, alors le Rules engine est fait pour vous.
 </div>
 
 Il vous faudra dans un premier temps créer 1 fichier par règle métier. Ce fichier devra faire 2 choses :
@@ -100,7 +96,7 @@ Il vous faudra dans un premier temps créer 1 fichier par règle métier. Ce fic
 Ces 2 actions peuvent être dans 2 fonctions différentes ou non, selon votre préférence.
 
 Il ne vous reste plus qu'à créer votre fichier principal, le **système**. 
-Dans une boucle, on appelera chacune de ces règles, pour en exécuter ou non le contenu, si la condition est préalablement vérifiée.
+Dans une boucle, on appelera chacune de ces règles pour en exécuter ou non le contenu si la condition est préalablement vérifiée.
 
 Votre code est à présent bien mieux découpé, et beaucoup plus facilement **testable** : une règle = 1 fichier = 1 test unitaire.
 
@@ -109,7 +105,7 @@ De plus, avec un framework comme Symfony, implémenter ce design pattern peut ê
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 Vous pouvez même ajouter un attribut `priority` sur votre tag si vous souhaitez que vos règles soient appelées dans un ordre particulier, très pratique !
 
-Si des exemples des code seraient plus parlants pour vous, retrouvez-en dans les [slides de Thibault](https://speakerdeck.com/trichard/un-moteur-bien-huile-forum-php-2022).
+Si des exemples de code sont plus parlant pour vous, retrouvez-en dans les [slides de Thibault](https://speakerdeck.com/trichard/un-moteur-bien-huile-forum-php-2022).
 </div>
 
 <div style="display: flex; justify-content: center;">
@@ -118,7 +114,7 @@ Si des exemples des code seraient plus parlants pour vous, retrouvez-en dans les
 
 ## Watch the clock
 
-Ahhh, les dates... Ne partez pas tout de suite ! Je sais que c'est la némésis de beaucoup d'entre vous. Notamment lorsqu'il s'agit d'écrire des tests.
+Ahhh, les dates... Ne partez pas tout de suite ! Je sais que c'est la némésis de beaucoup d'entre vous,  notamment lorsqu'il s'agit d'écrire des tests.
 Pour venir à bout de ce problème, Andreas Heigl est là pour nous aiguiller.
 
 <div  class="admonition question"  markdown="1"><p  class="admonition-title">Question</p>
@@ -126,12 +122,11 @@ Pourquoi est-ce si compliqué de tester des dates ?
 </div>
 
 
-C'est surtout parce que les fonctions comme `time()` qui nous renvoient l'heure actuelle ne sont pas des *fonctions pures*, c'est-à-dire que la valeur de retour de la fonction n'est pas prédictible, quelque soit l'argument passé, même en utilisant un **DateTimeImmutable**.
+C'est surtout parce que les fonctions comme `time()` qui nous renvoient l'heure actuelle ne sont pas des *fonctions pures*, c'est-à-dire que la valeur de retour de la fonction n'est pas prédictible, quel que soit l'argument passé, même en utilisant un **DateTimeImmutable**.
 
-Pour solutionner cela, Andreas nous présente la [**PSR-20**](https://github.com/php-fig/fig-standards/blob/master/proposed/clock.md) qui est actuellement en Draft, et est bien nommée *Clock*.
-Ce standard fournit une *ClockInterface* qui permet une interopérabilité avec les tests. Elle expose une méthode `now()` qui renvoie un `DateTimeImmutable`.
+Pour solutionner cela, Andreas nous présente la [**PSR-20**](https://github.com/php-fig/fig-standards/blob/master/proposed/clock.md) qui est actuellement en Draft, et est bien nommée *Clock*. Ce standard fournit une *ClockInterface* qui permet une interopérabilité avec les tests. Elle expose une méthode `now()` qui renvoie un `DateTimeImmutable`.
 
-À partir de là, il suffit d'implémenter l'interface avec différents types de `Clock`, dont une pourrait par exemple renvoyer **toujours** la même date, et donc être utilisée pour les tests. Ainsi, vous pouvez utilisez un objet `RegularClock` au comportement habituel dans votre code. Et grâce à l'interface, vous pouvez maintenant utiliser votre `MockClock` dans vos tests, et enfin accéder au bonheur du test unitaire de date sans bug inattendu.
+À partir de là, il suffit d'implémenter l'interface avec différents types de `Clock`, dont une pourrait par exemple renvoyer **toujours** la même date, et donc être utilisée pour les tests. Ainsi, vous pouvez utiliser un objet `RegularClock` au comportement habituel dans votre code. Et grâce à l'interface, vous pouvez maintenant utiliser votre `MockClock` dans vos tests et enfin accéder au bonheur du test unitaire de date sans bug inattendu.
 
 En attendant que cette PSR soit validée, sachez que vous pouvez tout de même en installer une implémentation :
 
@@ -139,7 +134,7 @@ En attendant que cette PSR soit validée, sachez que vous pouvez tout de même e
 composer require psr/clock
 ```
 
-Cependant, après une petite recherche de mon côté, sachez que Symfony à créé son propre **[composant Clock](https://symfony.com/components/Clock)** qui sera disponible dès la version 6.2.
+Cependant, après une petite recherche de mon côté, sachez que Symfony a créé son propre **[composant Clock](https://symfony.com/components/Clock)** qui sera disponible dès la version 6.2.
 
 Elle vous permettera d'accéder à ces différentes implémentations de la `ClockInterface` :
 
@@ -167,13 +162,13 @@ On se retrouve donc rapidement avec une architecture complexe juste pour avoir u
 
 La solution est double :
 
-Premièrement, partir d'une base **Caddy** pour le serveur. Nginx fait partie des serveurs web les plus populaires aujourd'hui, mais depuis que Caddy a pointé le bout de son nez, il lui vole la vedette. Une configuration plus intuitive et plus simple, une résolution automatique de certificat pour le HTTPS, une extensibilité par modules, le support des  HTTP 103 (Early Hint), ... Tout ça, c'est la modernité de Caddy, le serveur web écrit en Go.
+Premièrement, partir d'une base **Caddy** pour le serveur. Nginx fait partie des serveurs web les plus populaires aujourd'hui, mais depuis que Caddy a pointé le bout de son nez, il lui vole la vedette. Une configuration plus intuitive et plus simple, une résolution automatique de certificat pour le HTTPS, une extensibilité par modules, le support des  HTTP 103 (Early Hint)... Tout ça, c'est la modernité de Caddy, le serveur web écrit en Go.
 
-Ensuite, il y a **FrankenPHP** en lui-même, un **SAPI** (Serveur Application Programming Interface), lui-même écrit en Go, qui fonctionne directement par dessus Caddy.
+Ensuite, il y a **FrankenPHP** en lui-même, un **SAPI** (Serveur Application Programming Interface), lui-même écrit en Go, qui fonctionne directement par-dessus Caddy.
 
 L'avantage ? Plus besoin de dockeriser plusieurs containers pour notre serveur web d'un côté, et notre SAPI (PHP-FPM) de l'autre, qui doivent communiquer ensemble.
 
-À présent, vous avez un seul service. One service to rule them all, and in docker, bind them. On parle de Docker, mais FrankenPHP est tout autant facile d'utilisation sans.
+À présent, vous avez un seul service. One service to rule them all, and in docker, bind them. On parle de Docker, mais FrankenPHP est tout aussi facile d'utilisation sans.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 Pour la config ? Plus qu'à éditer votre **Caddyfile** pour la partie Web server, et votre **php.ini** pour la partie applicative. FrankenPHP vient également avec une intégration spéciale Symfony pour en facilité l'interopérabilité.
@@ -181,7 +176,7 @@ Pour la config ? Plus qu'à éditer votre **Caddyfile** pour la partie Web serve
 
 Le tout étant bâti sur Caddy et donc Go, votre application peut à présent supporter la puissance des **Early Hints**.
 
-Mais une des killers features de FrankenPHP, c'est son **Worker Mode**. Grâce à ce mode, Franken construit votre application une seule fois au démarrage, et la garde en mémoire, ce qui permet de traiter toutes les futures requêtes sans avoir à redémarrer l'application à chaque fois, comme le voudrait le comportement de base de PHP.
+Mais une des killers features de FrankenPHP, c'est son **Worker Mode**. Grâce à ce mode, Franken construit votre application une seule fois au démarrage et la garde en mémoire, ce qui permet de traiter toutes les futures requêtes sans avoir à redémarrer l'application à chaque fois, comme le voudrait le comportement de base de PHP.
 
 Ce comportement est compatible avec Symfony et Laravel, et permet d'atteindre des performances assez dingues, d'après le benchmark que Kévin nous présente.
 
@@ -199,6 +194,6 @@ Et pour finir, le site de [FrankenPHP](https://frankenphp.dev/), et ci-dessous n
 
 Ce fut un ForumPHP encore riche en partage, qui a atteint le nombre record de **774 participants**. De quoi faire taire ceux qui pensent que le PHP est mort. Les évolutions et acquis récents de notre langage préféré prouvent qu'il a encore de belles années devant lui, et c'était un plaisir de partager le même état d'esprit et la même philosophie avec autant d'homologues.
 
-Je ne pouvais pas vous partager toutes les conférences de manière exhaustive, mais restez connectés sur youtube pour accéder aux replays des talks qui seront partagés bientôt.
+Je ne pouvais pas vous partager toutes les conférences de manière exhaustive, mais restez connectés sur youtube pour accéder aux replays des talks qui seront partagés bientôt !
 
 Merci aux conférenciers, aux participants, et surtout, merci au PHP.
