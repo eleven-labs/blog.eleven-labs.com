@@ -9,7 +9,7 @@ permalink: /fr/explorer-la-donnee-pour-optimiser-ses-couts-d-electricite/
 authors:
 - tthuon
 categories:
-- python
+- Autres
 ---
 
 Dans cet article, je vous propose de vous mettre dans la peau d'un Data Analyste. Sous forme de cas pratique,
