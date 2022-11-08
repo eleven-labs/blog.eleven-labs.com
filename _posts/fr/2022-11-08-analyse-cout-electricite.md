@@ -74,7 +74,7 @@ J'ai copié chaque valeur dans un tableau et sauvegardé dans un fichier OpenDoc
 
 La première colonne est la puissance maximale qu'il est possible de soutirer. Cette puissance est mesurée en kilo-voltampère (kVA).Au-delà, le contacteur du compteur Linky s'ouvre pour couper l'alimentation de l'abonné.
 
-En seconde colonne, c'est le prix de l'abonnement mensuel en euro. 
+En seconde colonne, c'est le prix de l'abonnement mensuel en euro.
 Enfin, les autres colonnes sont les tarifs du kWh en centimes d'euros.
 
 Une fois que j'ai les données sur la tarification de l'électricité, je peux aller chercher les données sur la consommation.
@@ -223,7 +223,7 @@ Cela me donne le tableau suivant.
 La lecture du tableau ne permet pas de se rendre compte de cette répartition. Ajoutons un graphique en camembert.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-11-11-analyse-cout-electricite/repartition-consommation.png" alt="répartition de la consommation entre les différentes périodes" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/repartition-consommation.png" alt="répartition de la consommation entre les différentes périodes" style="display: block; margin: auto;"/>
 </div>
 
 C'est mieux :)
@@ -262,7 +262,7 @@ Je répète cette opération pour tous les tarifs que j'ai sélectionnés.
 Cela me permet de tracer ce graphique avec Plotly.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-11-11-analyse-cout-electricite/calcul-cout-electricite.png" alt="coût de l'électricité en fonction du tarif" style="display: block; margin: auto;"/>
+    <img src="{{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/calcul-cout-electricite.png" alt="coût de l'électricité en fonction du tarif" style="display: block; margin: auto;"/>
 </div>
 
 Il nous donne les informations nécessaires pour répondre à notre question initiale, à nous de l'interpréter.
@@ -289,6 +289,6 @@ Sur cette base d'analyse, il est possible d'approfondir le sujet en appliquant u
 * [https://particulier.edf.fr/fr/accueil/electricite-gaz/offres-electricite/offres-marche.html](https://particulier.edf.fr/fr/accueil/electricite-gaz/offres-electricite/offres-marche.html)
 * [https://www.enedis.fr/jaccede-mes-donnees-de-consommation-et-de-production-delectricite](https://www.enedis.fr/jaccede-mes-donnees-de-consommation-et-de-production-delectricite)
 * [https://fr.wikipedia.org/wiki/Voltamp%C3%A8re](https://fr.wikipedia.org/wiki/Voltamp%C3%A8re)
-* [Code de l'analyse]({{ site.baseurl }}/assets/2022-11-11-analyse-cout-electricite/code.zip)
+* [Code de l'analyse]({{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/code.zip)
 * [https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#values-considered-missing](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#values-considered-missing)
 * [https://chartio.com/resources/tutorials/how-to-check-if-any-value-is-nan-in-a-pandas-dataframe/](https://chartio.com/resources/tutorials/how-to-check-if-any-value-is-nan-in-a-pandas-dataframe/)
