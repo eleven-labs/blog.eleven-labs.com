@@ -1,8 +1,8 @@
 ---
 layout: author
 login: tthuon
-title: Thierry Thuon
+title: Thierry T.
 github: lepiaf
 permalink: /authors/tthuon/
 ---
-Couteau Suisse
+Super Data Boy
