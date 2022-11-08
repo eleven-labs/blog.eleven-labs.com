@@ -12,8 +12,7 @@ categories:
 - Autres
 ---
 
-Dans cet article, je vous propose de vous mettre dans la peau d'un Data Analyste. Sous forme de cas pratique,
-nous allons répondre à des questions en nous aidant d'outils d'analyse de données.
+Dans cet article, je vous propose de vous mettre dans la peau d'un Data Analyst. Sous forme de cas pratique, nous allons répondre à des questions en nous aidant d'outils d'analyse de données.
 
 Avant de vous expliquer comment j'ai procédé, je vous donne un peu de contexte.
 
