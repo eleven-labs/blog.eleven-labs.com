@@ -64,7 +64,7 @@ Ces quatre principes ont été classés en trois niveaux de conformité : A, AA 
  
 ## Comment est faite l'évaluation A, AA et AAA ?
  
-L'accessibilité Web peut être délicate pour les concepteurs, les développeurs et même les gestionnaires. Ainsi, la W3 a organisé trois niveaux d'accompagnement en matière d'accessibilité pour organiser et classer les applications Web. D'autre part, chaque niveau ajoute une nouvelle couche de complexité qui doit être soigneusement élaborée.
+L'accessibilité Web peut être délicate pour les concepteurs, les développeurs et même les gestionnaires. Ainsi, la W3C a organisé trois niveaux d'accompagnement en matière d'accessibilité pour organiser et classer les applications Web. D'autre part, chaque niveau ajoute une nouvelle couche de complexité qui doit être soigneusement élaborée.
  
 Cela dit, les critères pour atteindre le niveau A s'additionnent à ceux du niveau AA, et il en va de même pour atteindre une conformité AAA. Même si dans cet article on n'inclut pas une explication exhaustive de chaque critère de chaque niveau, n'hésitez pas à lire la documentation existante soit sur la page WCAG ou même MDN. Voyons quelques exemples suivant les principes POUR.
  
