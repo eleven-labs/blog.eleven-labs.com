@@ -53,7 +53,7 @@ Mais par où commencer…
  
 Le célèbre W3C a conçu les Web Content Accessibility Guidelines (WCAG pour référence) afin d'établir des moyens pour que le contenu web soit accessible aux personnes ayant différents handicaps. Ces directives ont été largement acceptées dans le monde entier. C'est un point très important qui peut même avoir des conséquences juridiques dans des pays dans lesquels l'accessibilité web [est requise par la loi](https://www.w3.org/WAI/policies/).
  
-Les critères WCAG ont été déterminés dans quatre grands domaines : perceivable, operable, understandable et robust sous l’acronyme POUR. Mais qu'est-ce que cela signifie ? Heureusement, la réponse est assez simple.
+Les critères WCAG ont été déterminés dans quatre grands domaines : _Perceivable_, _Operable_, _Understandable_ et _Robust_ sous l’acronyme POUR. Mais qu'est-ce que cela signifie ? Heureusement, la réponse est assez simple.
  
 -   Tous les critères qui correspondent à la catégorie _Perceivable_ (perceptible) sont liés à **l'accès à l'information**. Cela signifie que chaque information sur l'application doit être perceptible par l'utilisateur en utilisant “un ou plusieurs de ses sens” ([MDN documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable)).
 -   Le principe _Operable_ (opérable) décrit les directives de **navigation dans l'application et dans les composants d'interface**. Par exemple, cela inclut la navigation par clavier, voix, écran tactile ou même les appareils par mouvement, entre autres.
@@ -62,9 +62,9 @@ Les critères WCAG ont été déterminés dans quatre grands domaines : perceiva
  
 Ces quatre principes ont été classés en trois niveaux de conformité : A, AA et AAA, le dernier étant le plus performant en matière d'accessibilité. Un site web ne peut accomplir l'un de ces niveaux que s'il a atteint tous les critères : cela signifie que les niveaux ne peuvent pas être partiellement atteints.
  
-## Comment est faite l'évaluation A/AA/AAA ?
+## Comment est faite l'évaluation A, AA et AAA ?
  
-L'accessibilité Web peut être délicate pour les concepteurs, les développeurs et même les gestionnaires. Ainsi, W3 a organisé trois niveaux d'accompagnement en matière d'accessibilité pour organiser et classer les applications Web. D'autre part, chaque niveau ajoute une nouvelle couche de complexité qui doit être soigneusement élaborée.
+L'accessibilité Web peut être délicate pour les concepteurs, les développeurs et même les gestionnaires. Ainsi, la W3 a organisé trois niveaux d'accompagnement en matière d'accessibilité pour organiser et classer les applications Web. D'autre part, chaque niveau ajoute une nouvelle couche de complexité qui doit être soigneusement élaborée.
  
 Cela dit, les critères pour atteindre le niveau A s'additionnent à ceux du niveau AA, et il en va de même pour atteindre une conformité AAA. Même si dans cet article on n'inclut pas une explication exhaustive de chaque critère de chaque niveau, n'hésitez pas à lire la documentation existante soit sur la page WCAG ou même MDN. Voyons quelques exemples suivant les principes POUR.
  
@@ -86,7 +86,7 @@ On peut aussi utiliser l'attribut HTML `aria-labelledby`, qui permet de faire co
 <p id="catto-label">Chat : un petit mammifère à quatre pattes très populaire comme animal de compagnie"</p>
 ```
  
-Il est important de comprendre que ces descriptions doivent être objectives et concises, une vraie description de l'image utilisée. Si l'image est purement décorative, il est préférable de laisser ces informations vides, afin que les lecteurs d'écran puissent simplement les ignorer. Dans le cas de vidéos, des sous-titres ou un contenu écrit alternatif doivent être fournis. Ce n'est qu'un début. Vous pouvez en savoir plus sur les alternatives de texte dans [ce lien](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#text_alternatives).
+Il est important de comprendre que ces descriptions doivent être objectives et concises, une vraie description de l'image utilisée. Si l'image est purement décorative, il est préférable de laisser ces informations vides afin que les lecteurs d'écran puissent simplement les ignorer. Dans le cas de vidéos, par example, il est indispensable de fournir des sous-titres ou une transcription. Ce n'est qu'un début. Vous pouvez en savoir plus sur les textes alternatifs dans [ce lien](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#text_alternatives).
  
 De plus, une hiérarchie claire dans la structure du site est nécessaire jusqu'au niveau de conformité A. C'est l'un des nombreux cas où le code et l'UX se chevauchent nécessairement. Voici un exemple de mise en page de site Web prototype :
  
@@ -120,13 +120,13 @@ La catégorie AA ajoute 20 critères à ceux déjà inclus dans le niveau A. Hon
  
 Suivant le principe d'opérabilité (_Operable_), **ce niveau propose d'avoir plusieurs façons de naviguer sur un site web**. Par exemple, ajouter un champ de recherche et des liens entre les pages offre une navigation moins rigide. Outre ce point, la relation sémantique entre les en-têtes et les étiquettes est également pertinente pour une conformité AA. Compte tenu des recherches sur la façon dont les utilisateurs lisent sur le web, des messages clairs et concis sont une clé de l'accessibilité. Imaginez un formulaire où l'étiquette ne dit que "nom et nom de famille" mais il y a deux entrées disponibles... laquelle est le nom et laquelle est le nom de famille si elle n'est pas clairement indiquée à chaque côté de chaque entrée ?
  
-Pour le principe compréhensible (_Understandable_), **ce niveau se concentre également sur la disponibilité de la langue de l'utilisateur et les éventuelles variations qui pourraient apparaître**. Par exemple, si un mot étranger se trouve dans le contenu de la page, les informations traduites doivent être fournies sur la page. Même un sélecteur de langue est pertinent pour cette catégorie.
+Pour le principe de compréhensibilité (_Understandable_), **ce niveau se concentre également sur la disponibilité de la langue de l'utilisateur et les éventuelles variations qui pourraient apparaître**. Par exemple, si un mot étranger se trouve dans le contenu de la page, les informations traduites doivent être fournies sur la page. Même un sélecteur de langue est pertinent pour cette catégorie.
  
 ### - Niveau AAA, le véritable engagement
  
 Le niveau AAA, avec 28 critères de plus que le niveau précédent, est très restrictif et n'est atteint que sur des sites hautement spécialisés. Du point de vue de la perception (_Perceivable_), **il permet une très petite gamme de nuances de couleurs avec un contraste très élevé**, les options de conception sont donc assez limitées.
  
-Une dynamique parfaitement compréhensible et flexible est nécessaire pour se conformer à ce niveau. Le point unique en (O) indique que l'application peut être entièrement naviguée au clavier sans exception, mais il existe de nombreuses spécifications autour de la section Compréhensible (_Understandable_) pour gérer, par exemple, la soumission de données dans un formulaire : il doit être modifiable , appliquer une vérification lors de l'achèvement de la saisie afin de fournir la possibilité de corriger les erreurs et également d'afficher une confirmation avant la soumission.
+Une dynamique parfaitement compréhensible et flexible est nécessaire pour se conformer à ce niveau. Le point unique en opérabilité (_Operable_) indique que l'application peut être entièrement naviguée au clavier sans exception, mais il existe de nombreuses spécifications autour de la section Compréhensible (_Understandable_) pour gérer, par exemple, la soumission de données dans un formulaire : il doit être modifiable , appliquer une vérification lors de l'achèvement de la saisie afin de fournir la possibilité de corriger les erreurs et également d'afficher une confirmation avant la soumission.
  
 ### Vers quel niveau viser ?
  
@@ -147,10 +147,10 @@ Une fois les principes appliqués se pose la question de l’évaluation. Est-ce
 Il existe de nombreux outils qui peuvent être utiles pour évaluer le niveau d’accessibilité de votre produit. Parmi eux, nous pouvons citer les outils suivants qui permettent d’évaluer :
  
 -   L’accessibilité globale de votre produit et d’identifier les éventuels problèmes d’accessibilité avec [CodeSniffer](https://github.com/squizlabs/HTML_CodeSniffer), [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) ou [Accessibility Insights](https://accessibilityinsights.io/);
--   L’utilisation de vos tags HTML en retirant le CSS de votre page avec [Naked Styles](https://gist.github.com/estudiobold/4181e56129ed5cbd0b6cf40c73787a56);
+-   L’utilisation de vos balises HTML en retirant le CSS de votre page avec [Naked Styles](https://gist.github.com/estudiobold/4181e56129ed5cbd0b6cf40c73787a56);
 -   ou encore l’accessibilité de vos couleurs avec [WhoCanUse](https://whocanuse.com/) et [Contrast Grid](http://contrast-grid.eightshapes.com).
  
-Cette liste ne représente qu’une petite partie de l’ensemble des outils d’audit d’accessibilité existants, vous pouvez retrouver une liste plus détaillée d’outils recommandés par le W3 via [ce lien](https://www.w3.org/WAI/ER/tools/).
+Cette liste ne représente qu’une petite partie de l’ensemble des outils d’audit d’accessibilité existants, vous pouvez retrouver une liste plus détaillée d’outils recommandés par le W3C via [ce lien](https://www.w3.org/WAI/ER/tools/).
  
 ### Tests manuels
  
@@ -175,7 +175,7 @@ Pour plus d’informations, [Pernice et Nielsen ont rédigé un rapport détaill
 Pour récapituler, nous avons vu que :
  
 -   L’accessibilité est la promesse d’un outil utilisable par toutes et tous ;
--   Non seulement bénéfique pour vos utilisateurs, la démarche est aussi bénéfique pour votre business ;
+-   Non seulement bénéfique pour vos utilisateurs, la démarche est aussi bénéfique pour votre entreprise ;
 -   Il existe un ensemble de principes pour travailler l’accessibilité de vos produits ;
 -   Il existe un ensemble d’outils et méthodes pour évaluer le niveau d’accessibilité de votre produit et engager votre équipe sur le sujet.
  
