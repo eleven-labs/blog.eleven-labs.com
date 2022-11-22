@@ -1,23 +1,23 @@
 ---
 layout: post
 title: Mission accessible, une introduction
-excerpt: Cet article est une introduction au sujet de l’accessibilité, son approche en tant que diversité des situations d’usage et son application dans la conception de produits numériques.
+excerpt: Cet article est une introduction à l’accessibilité, son approche en tant que diversité des situations d’usage et son application dans la conception de produits numériques.
 lang: fr
 authors:
     - meugeniatr
     - fverneuil
 permalink: /fr/mission-accessible-introduction/
 categories:
-    - bonnes pratiques
+
 ---
 
-Le Web et les outils numériques sont présents dans toutes les sphères du quotidien, de l’achat de produits de première nécessité jusqu’à la recherche d’emploi et aux démarches administratives. Ils nous concernent toutes et tous et doivent donc être accessibles qu’importe la situation et nos capacités sensorielles, motrices ou cognitives.
+Le Web et les outils numériques sont présents dans toutes les sphères du quotidien, de l’achat de produits de première nécessité à la recherche d’emploi et aux démarches administratives. Ils nous concernent toutes et tous et doivent donc être accessibles qu’importe la situation et nos capacités sensorielles, motrices ou cognitives.
 
 Cet article est une **introduction au sujet de l’accessibilité**, son approche en tant que diversité des situations d’usage et son application dans la conception de produits numériques.
 
 ## Qu’est-ce que l’accessibilité ?
 
-L’accessibilité est la promesse de rendre compréhensible, utilisable et agréable le web pour toutes et tous, qu’importe les capacités de la personne qui l’utilise, son âge, son lieu de résidence ou son contexte d’usage.
+L’accessibilité c'est la promesse de rendre compréhensible, utilisable et agréable le web pour toutes et tous, qu’importe les capacités de la personne qui l’utilise, son âge, son lieu de résidence ou son contexte d’usage.
 
 La notion d’usages est au cœur de l’idée d’accessibilité. Opposé à l’idée d’un design par défaut qui conviendrait supposément à tous, un design accessible prend en compte **les différents contextes d’usage possibles**. En effet, notre expérience numérique peut être amenée à changer dans une même journée ou plus largement dans notre vie. Ainsi, une application peut devenir difficile d’utilisation en situation de **handicap permanent, temporaire**, mais aussi **situationnel** : lorsqu’on doit garder un bébé dans les bras, lorsque l’écran est exposé à une forte lumière ou lorsque l’on se retrouve dans un lieu faiblement connecté à internet. Il est donc important de penser aux différents contextes d’usage d’un site ou d’une application.
 
@@ -30,7 +30,7 @@ Concevoir un outil accessible c’est donc penser un outil pour les utilisatrice
  
 ## Pourquoi _faire_ de l’accessibilité ?
  
-Intégrer une démarche d’accessibilité dans votre produit est **bénéfique pour vos utilisateurs et pour votre business**.
+Intégrer une démarche d’accessibilité à votre produit est **bénéfique pour vos utilisateurs et pour votre business**.
  
 Tout d’abord, concevoir une expérience utilisateur accessible est **bénéfique pour l’ensemble de vos utilisateurs**. Par exemple, alors que le sous-titrage de messages peut servir pour les individus avec une déficience auditive, cela permet aussi de faire passer un message dans une situation bruyante (voir illustration ci-dessous). Ainsi, la démarche d’accessibilité permet d’inclure les individus atteints d’un handicap permanent, qui représentent [près d’1 adulte français sur 7](https://www.cnsa.fr/documentation/cnsa_chiffres_cles_2021_interactif.pdf), mais aussi d’offrir une expérience plus adaptée à **l’ensemble de vos utilisateurs**.
  
@@ -39,7 +39,7 @@ Tout d’abord, concevoir une expérience utilisateur accessible est **bénéfiq
     <figcaption>Source <cite><a href="https://uxdesign.cc/accessibility-guidelines-for-a-ux-designer-c3ba775539be" target="_blank" rel="nofollow, noreferrer">Accessibility Guidelines de Avinash Kaur</a></cite></figcaption>
 </div>
  
-Enfin, concevoir votre produit dans une démarche d’accessibilité est aussi [bénéfique pour votre business](https://www.w3.org/standards/webdesign/accessibility). Parmi d’autres bénéfices pour votre entreprise, un produit “accessible” est un produit qui:
+Enfin, concevoir votre produit dans une démarche d’accessibilité est aussi [bénéfique pour votre business](https://www.w3.org/standards/webdesign/accessibility). Parmi d’autres bénéfices pour votre entreprise, un produit “accessible” est un produit qui :
  
 -   Atteint une audience plus grande ;
 -   Est plus utilisable ;
@@ -72,7 +72,7 @@ Cela dit, les critères pour atteindre le niveau A s'additionnent à ceux du niv
  
 Le premier niveau est le plus simple où les choix de conception, tels que le contraste des couleurs, ne sont pas fortement impliqués. Il comporte 30 critères et son objectif est que la plupart des utilisateurs soient capables d'utiliser un site avec succès.
  
-Comme _Perceivable_ (perceptible), tout contenu non textuel, comme les images ou le son entre autres, doit avoir un équivalent textuel. Il s'agit d'un exemple très simple qui est très facile à mettre en place. Dans le cas d'images, cela peut être facilement réalisé en utilisant l'attribut HTML `alt` :
+Pour être _Perceivable_ (perceptible), tout contenu non textuel, comme les images ou le son entre autres, doit avoir un équivalent textuel. Il s'agit d'un exemple très simple qui est très facile à mettre en place. Dans le cas d'images, cela peut être facilement réalisé en utilisant l'attribut HTML `alt` :
  
 ```html
 <img src="cat.png" alt="Chat : un petit mammifère à quatre pattes très populaire comme animal de compagnie" />
@@ -86,7 +86,7 @@ On peut aussi utiliser l'attribut HTML `aria-labelledby`, qui permet de faire co
 <p id="catto-label">Chat : un petit mammifère à quatre pattes très populaire comme animal de compagnie"</p>
 ```
  
-Il est important de comprendre que ces descriptions doivent être objectives et concises, une vraie description de l'image utilisée. Si l'image est purement décorative, il est préférable de laisser ces informations vides afin que les lecteurs d'écran puissent simplement les ignorer. Dans le cas de vidéos, par example, il est indispensable de fournir des sous-titres ou une transcription. Ce n'est qu'un début. Vous pouvez en savoir plus sur les textes alternatifs dans [ce lien](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#text_alternatives).
+Il est important de comprendre que ces descriptions doivent être objectives et concises, une vraie description de l'image utilisée. Si l'image est purement décorative, il est préférable de laisser ces informations vides afin que les lecteurs d'écran puissent simplement les ignorer. Dans le cas de vidéos, par exemple, il est indispensable de fournir des sous-titres ou une transcription. Ce n'est qu'un début. Vous pouvez en savoir plus sur les textes alternatifs dans [ce lien](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#text_alternatives).
  
 De plus, une hiérarchie claire dans la structure du site est nécessaire jusqu'au niveau de conformité A. C'est l'un des nombreux cas où le code et l'UX se chevauchent nécessairement. Voici un exemple de mise en page de site Web prototype :
  
@@ -146,8 +146,8 @@ Une fois les principes appliqués se pose la question de l’évaluation. Est-ce
  
 Il existe de nombreux outils qui peuvent être utiles pour évaluer le niveau d’accessibilité de votre produit. Parmi eux, nous pouvons citer les outils suivants qui permettent d’évaluer :
  
--   L’accessibilité globale de votre produit et d’identifier les éventuels problèmes d’accessibilité avec [CodeSniffer](https://github.com/squizlabs/HTML_CodeSniffer), [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) ou [Accessibility Insights](https://accessibilityinsights.io/);
--   L’utilisation de vos balises HTML en retirant le CSS de votre page avec [Naked Styles](https://gist.github.com/estudiobold/4181e56129ed5cbd0b6cf40c73787a56);
+-   l’accessibilité globale de votre produit et d’identifier les éventuels problèmes d’accessibilité avec [CodeSniffer](https://github.com/squizlabs/HTML_CodeSniffer), [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) ou [Accessibility Insights](https://accessibilityinsights.io/) ;
+-   l’utilisation de vos balises HTML en retirant le CSS de votre page avec [Naked Styles](https://gist.github.com/estudiobold/4181e56129ed5cbd0b6cf40c73787a56) ;
 -   ou encore l’accessibilité de vos couleurs avec [WhoCanUse](https://whocanuse.com/) et [Contrast Grid](http://contrast-grid.eightshapes.com).
  
 Cette liste ne représente qu’une petite partie de l’ensemble des outils d’audit d’accessibilité existants, vous pouvez retrouver une liste plus détaillée d’outils recommandés par le W3C via [ce lien](https://www.w3.org/WAI/ER/tools/).
@@ -164,9 +164,9 @@ Cette démarche passe par le recrutement de personnes atteintes de handicap en c
  
 Ces tests utilisateurs vous permettront de :
  
--   Évaluer l’utilisation de votre produit en condition plus écologique ;
--   Évaluer le niveau d’accessibilité de votre produit pour les populations et contextes visés ;
--   Montrer les problématiques d’accessibilité réelles de votre produit à l’ensemble de votre équipe afin de les sensibiliser et les engager sur le sujet.
+-   évaluer l’utilisation de votre produit en condition plus écologique ;
+-   évaluer le niveau d’accessibilité de votre produit pour les populations et contextes visés ;
+-   montrer les problématiques d’accessibilité réelles de votre produit à l’ensemble de votre équipe afin de les sensibiliser et les engager sur le sujet.
  
 Pour plus d’informations, [Pernice et Nielsen ont rédigé un rapport détaillé sur les tests utilisateur d'accessibilité](https://www.nngroup.com/reports/how-to-conduct-usability-studies-accessibility/) qui regroupe un ensemble très riche de conseils et de méthodes pour la mise en place de ces tests.
  
@@ -174,10 +174,10 @@ Pour plus d’informations, [Pernice et Nielsen ont rédigé un rapport détaill
  
 Pour récapituler, nous avons vu que :
  
--   L’accessibilité est la promesse d’un outil utilisable par toutes et tous ;
--   Non seulement bénéfique pour vos utilisateurs, la démarche est aussi bénéfique pour votre entreprise ;
--   Il existe un ensemble de principes pour travailler l’accessibilité de vos produits ;
--   Il existe un ensemble d’outils et méthodes pour évaluer le niveau d’accessibilité de votre produit et engager votre équipe sur le sujet.
+-   l’accessibilité est la promesse d’un outil utilisable par toutes et tous ;
+-   non seulement bénéfique pour vos utilisateurs, la démarche est aussi bénéfique pour votre entreprise ;
+-   il existe un ensemble de principes pour travailler l’accessibilité de vos produits ;
+-   il existe un ensemble d’outils et méthodes pour évaluer le niveau d’accessibilité de votre produit et engager votre équipe sur le sujet.
  
 Le chemin déblayé, il ne reste plus qu’à se demander : on commence quand ?
  
