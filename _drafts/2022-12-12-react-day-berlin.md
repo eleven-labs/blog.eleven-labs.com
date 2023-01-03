@@ -1,0 +1,72 @@
+---
+layout: post
+title: Un retour en douceur à la présentialité avec React Day Berlin, qu'attendre des conférences ?
+excerpt: Avec une reprise progressive des conférences dev depuis la crise de COVID, le React Day Berlin a eu lieu cette année le 2 et 5 décembre en modalité mixte. J’y suis allée pour la première fois. Continuez à lire pour connaître mon expérience complète !
+lang: fr
+authors:
+    - meugeniatr
+permalink: /fr/react-day-berlin/
+categories:
+
+---
+
+Avec une reprise progressive des conférences depuis la crise de COVID, le React Day Berlin a eu lieu cette année le 2 et 5 décembre en modalité mixte: un jour en présentiel et un jour en distanciel. Le vendredi s’est passé dans **l’espace Kosmos**, un théâtre des années 1960 avec une capacité de plus de 800 personnes et deux salles principales. J’y suis allée pour la première fois. Continuez à lire pour connaître mon expérience complète !
+
+ <img src="{{ site.baseurl }}/assets/2023-01-03-react-day-berlin/react-day-berlin-1.jpg" width="300px" alt="" style="display: block" />
+
+## Le chemin vers la conference
+Le voyage a commencé mercredi 30 novembre à 19 heures depuis Gare de l'Est, Paris, avec destination Berlin. J'avoue que je n'ai pas eu énormément de chance avec les trains cette fois. Avec une heure d'arrivée originelle estimée à 6:34 a.m., j'ai descendu à Berlin hbf qu'à 11:15 a.m à cause d’une panne de train qui m’a obligée à me rendre jusqu'à Hambourg et puis Berlin. Et pourquoi arriver jeudi et pas vendredi ? Eh bien, c'est parce que **j'ai participé à la organisation de l'événement comme volontaire**.
+
+<div  class="admonition info"  markdown="1"><p  class="admonition-title">Volontaire ? Qu'est-ce-que ça ?</p>
+Les meetups de GitNation sont ouverts à recevoir des volontaires. Il suffit de remplir un formulaire en ligne normalement disponible sur le site web de la conférence et attendre leur réponse. J'ai postulé fin octobre et j’ai reçu la convocation une semaine après par mail. La communication a été fluide, avec des réponses plutôt claires du côté des organisateurs. Une semaine avant le React Day Berlin on a eu un videocall avec tous les participants choisis ou on a été assignés les tâches pour le 2 décembre. 
+
+Participer en tant que volontaire implique la présentialité la veille de la conférence pour préparer le lieu et participer aussi en des activités d’organisation le jour de l'événement. En échange, les volontaires peuvent avoir accès à l'intégralité de l'événement gratuitement, les enregistrements des expositions inclus, et 6 mois d'accès Multipass aux événements de GiNation. Il vaut mieux savoir que le billet d'entrée en full remote avait un prix d’environ 80 EUR et le billet hybride 480 EUR, et le Multipass avec une duration annuelle, plus de 900 EUR.
+</div>
+
+Finalement à Berlin, je devais être sur place le jeudi à 12h. J’ai déposé mes affaires chez mon host d’Airbnb, heureusement qu'à 10' à pied du complexe Kosmos dans le quartier Friedrichshain. Une fois là, j’ai pu rencontrer une dizaine des gens qui étaient aussi des volontaires. La plupart d’eux étaient aussi devs, mais à la différence de moi, tous habitaient à Berlin. Ceci dit, et malgré d'être dans la capitale allemande, la communication de tout le voyage s’est passée entièrement en anglais. 
+
+ <img src="{{ site.baseurl }}/assets/2023-01-03-react-day-berlin/kosmos.jpg" width="300px" alt="" style="display: block" />
+
+La première journée était guidée par Veronika, chargée de l'organisation des événements de GitNation, qui a divisé l'équipe de volontaires en squads. Les tâches étaient assez simples et on était nombreux à les faire, ce qui a été énormément d’aide pour passer le temps plus rapidement étant donné que je n’avais pas dormi le soir. Un squad était chargé de mettre en place les signalisations des salles, l'autre de monter les décors, d'autres à ordonner les badges d'accès alphabétiquement, et le mien qui a pris l'activité de goodie bags. Avec plein des cartons sur le sol et un déjeuner complet offert, on s'est engagé à remplir plus de 450 sacs avec le swag des sponsors. Etonnant, mais c'était plutôt drôle à faire ! On s’est divisés en stations ou chacun était chargé d’un des éléments. Les sacs étaient plutôt classiques: une tote bag en coton, avec quelques stickers, des dessous verre JS et TS, une cache camera, cartes postales et un mystérieux boomerang. A 18h on était déjà prêts pour partir chez nous. Dehors il avait commencé à neiger, une situation atypique pour une argentine habitant à Paris après quelques années.
+
+## L'événement: goodies, nourriture et plein de gens
+Le lendemain, c'était la journée la plus importante de la conférence, avec plus de 25 speakers et plusieurs workshops gratuits. Dans le salon principal il y a eu lieu les conférences du track Blade Runner, et dans le secondaire celles du track appelé Mnemonic. 
+ 
+ <img src="{{ site.baseurl }}/assets/2023-01-03-react-day-berlin/mnemonic.jpg" width="300px" alt="" style="display: block" />
+
+L'équipe des volontaires devait être sur place à 7h. pour inscrire, guider ou donner des goodie bags aux participants qui ont commencé à arriver à 8h. Le matin a donc commencé avec l'accueil des participants et un petit déjeuner avec du café et des viennoiseries dans les deux buffets disponibles à côté de chaque salon. On a donné un carton jeune ou un carton bleu avec l'esprit de diviser de la façon la plus homogène dans les deux endroits la quantité des gens pendant l'heure de déjeuner. Il y avait aussi un open bar avec des bouteilles d'eau en libre service pour tous les assistants de la conférence. 
+
+Cette fois en binôme, j’ai été assignée aux tâches dans le track Blade Runner, qui a été finalement une belle surprise des conférences enchaînées. On devait s'assurer que les speakers soient dans la salle à l'heure stipulée dans le chronogramme, les guider aux épreuves du son et aux sections de Q&A après leurs talks. On devait, bien-sûr, répondre aux questions générales des assistantes comme le mot de passe du Wi-Fi ou le garde-robe. C’est important à éclaircir que les organisateurs de GitNation étaient disponibles tout le temps et qu’on avait une communication ouverte dans un channel spécial en Discord. 
+
+## Les conférences du track Bladerunner le plus étoilés (selon moi)
+
+ <img src="{{ site.baseurl }}/assets/2023-01-03-react-day-berlin/blade-runner-track.jpg" width="300px" alt="" style="display: block" />
+
+### L'ouverture de Nik Graf
+L'ouverture a été en charge de Nik Graf, le créateur de Serenity notes. Sa présentation "The weird things about React" a été la plus visitée (à mon avis). Il a donné plusieurs des bonnes conseils, peut être le plus évident c’est la recommandation sur le suivi des documentations informels de la libraire par des chaînes non officiels, comme par exemple dans les comptes Twitter de Dan Abramov (créateur de Redux et actuellement en ReactJS); Sebastian Markbåge (Vercel) et Andrew Clark (core team de ReactJS). 
+
+Pour illustrer le point d’importance d'être au courant des changements ‘hors normes’, il a mentionné la possibilité de remount un composant juste… en changeant la propriété “key”! Même si c’est un usage marginal et pas recommandé dans les documentations officielles, c’est une notion qui peut être utile en travaillant avec du legacy code ou des useEffects problématiques. 
+
+Graf a exposé un long chemin vers les évolutions de React par rapport à la composition, les types, l'interprétation des Warnings, et même sur l'importance du strict-mode. Un parcours très intéressant avec plein d' informations et un grand clin d'œil au beta-docs et les échanges dans les réseaux sociaux.
+
+### Tobias Koppers sur l'évolution de Webpack a Turbopack
+Probablement la deuxième présentation plus attendue de la première journée du React Day Berlin, l’allemand Tobias Kopper, qui a créé Webpack et qui travaille actuellement chez Vercel, a fait une introduction très complète sur Turbopack.
+
+Dans les mots de Kopper, **Turbopack est le "successeur de Webpack”**. Cela veut dire que les objectifs sont les mêmes que dans l’ancien module bundler, avec un horizon open source et agnostique. La première motivation de la création de Turbopack vient répondre à une nouvelle demande sur le développement en JS: **la performance**. C’est pour ça que le cœur de ce nouveau projet prend l’enjeu des problématiques courantes comme l’invalidation de cache, des builds incrémentielles et watch mode. Avec un système fait en plusieurs couches, l'équipe de Vercel s’est éloignée du langage JavaScript pour choisir Rust grâce à sa performance prévisible, sécurité, et surtout car cela permet d’utiliser le parser SWC. Toutefois, les plugins pourraient être développés en JS ou Rust pour améliorer l'expérience de l’application par des développeurs qui ne travaillent pas en Rust.
+
+La couche suivante est le Turbo engine, peut être le concept plus intéressant présenté par Koppers. **La puissance de Turbo engine est la possibilité d’avoir la mémorisation ou cache des fonctions**, ce qui permet que si la fonction est appelée deux fois, elle ne sera calculée que une. Au-dessus de tout cela, Turbopack est construit. Avec des gros changements comme l’optimisation inter-environnement entre autres, cet outil semblerait ne pas tarder a arriver dans les projets des prochaines annees. 
+
+### L'abordage des projets interculturelles selon Emma Bostian
+Emma Bostian (Spotify) a mis sur le tapis le sujet de **l’interculturalité dans les équipes de développement**. Faire des demandes, donner ou recevoir du feedback, et même la quotidienneté n’est pas du tout évidente quand on travaille avec des gens dans tout le monde. J'étais touchée très rapidement par cette présentation car j’ai ressenti des shocks dans ce sens plusieurs fois au travail. 
+
+Bostian a exposé que l’expression et la communication par rapport aux différentes cultures n’est que la reconnaissance de l'individualité de chaque être humain, et l’effet de nier ou s'éloigner de ce fait provoque une lecture des interactions envahie par notre propre culture. Elle a basé sa présentation selon **deux types de communication: celle de basse contexte, et celle de haut context**. La première correspondrait à une communication très claire, directe et indépendante du contexte, alors que la deuxième est absolument opposée car on a besoin de connaître le contexte pour bien comprendre le message.
+
+Par la suite, Bostian exprimait que selon la culture d’origine on peut être plus ou moins éloignés de nos interlocuteurs, et que nos compétences communicatives peuvent être très fortes avec les gens avec qui on partage la culture mais pas autant avec ceux autres. Elle a aussi remarqué que la plupart des conflits s’originent dans des interlocuteurs avec un type de communication très liée au contexte mais qui appartiennent à différentes cultures. Les conseils proposés incluent une **écoute active** dans les cas de communication avec des gens qui correspondent plutôt aux cultures plus dépendantes du contexte et **la priorité sur la clarté dans les processus du travail**, entre autres.
+
+A vrai dire, la conception et la façon du sujet par Bostian ont été profondement marquées par la bibliographie américaine ([The cultural map par Erin Meyer](https://erinmeyer.com/books/the-culture-map/)), donnant comme résultat une perspective pas suffisamment large et des données pas totalement précises à mon avis. Je voudrais bien quand même reconnaître cette intention d’**ouvrir un débat** dont la plupart des connaissances sont tenues pour acquises et vous recommander de voir sa présentation [ici](https://portal.gitnation.org/contents/building-high-performing-cross-cultural-teams) si vous travaillez dans des équipes internationales ou interculturelles.
+
+### Retour d'experience
+
+ <img src="{{ site.baseurl }}/assets/2023-01-03-react-day-berlin/swag-bag.jpg" width="300px" alt="" style="display: block" />
+
+
