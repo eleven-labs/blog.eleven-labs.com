@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Un retour en douceur à la présentialité avec React Day Berlin, qu'attendre des conférences ?
+title: Chronique d'un retour en douceur à la présentialité avec React Day Berlin, qu'attendre des conférences ?
 excerpt: Avec une reprise progressive des conférences dev depuis la crise de COVID, le React Day Berlin a eu lieu cette année le 2 et 5 décembre en modalité mixte. J’y suis allée pour la première fois. Continuez à lire pour connaître mon expérience complète !
 lang: fr
 authors:
