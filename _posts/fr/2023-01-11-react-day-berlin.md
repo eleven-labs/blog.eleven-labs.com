@@ -94,7 +94,7 @@ Cette fois en binôme, j’ai été assignée aux tâches dans le track Blade Ru
 </figure>
 
 ### L'ouverture de Nik Graf
-L'ouverture a été en charge de Nik Graf, le créateur de Serenity notes. Sa présentation "The weird things about React" a été la plus visitée (à mon avis). Il a donné plusieurs des bonnes conseils, peut être le plus évident c’est **la recommandation sur le suivi des documentations informels de la libraire par des chaînes non officiels, comme par exemple dans les comptes Twitter de Dan Abramov (créateur de Redux et actuellement en ReactJS); Sebastian Markbåge (Vercel) et Andrew Clark (core team de ReactJS).** 
+L'ouverture a été en charge de Nik Graf, le créateur de Serenity notes. Sa présentation "The weird things about React" a été la plus visitée (à mon avis). Il a donné plusieurs des bonnes conseils, peut être le plus évident c’est **la recommandation sur le suivi des documentations informels de la libraire par des chaînes non officiels, comme par exemple dans les comptes [Twitter de Dan Abramov](https://twitter.com/dan_abramov) (créateur de Redux et actuellement en ReactJS); [Sebastian Markbåge](https://twitter.com/sebmarkbage) (Vercel) et [Andrew Clark](https://twitter.com/acdlite) (core team de ReactJS).**
 
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
