@@ -15,7 +15,7 @@ Avec une reprise progressive des conférences depuis la crise de COVID, le React
 <figure style="text-align: center; margin: 2rem 0;">
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/kosmos-place.jpg" width="800px" alt="" style="display: block; margin: auto;" />
    <figcaption>
-    <span >Le site Kosmos prêt pour le premier jour du React Day Berlin.</span>
+    <span>Le site Kosmos prêt pour le premier jour du React Day Berlin.</span>
     <i>Photo gracieuseté de GitNation.</i>
   </figcaption>
 </figure>
@@ -33,7 +33,7 @@ _Participer en tant que volontaire implique la présentialité la veille de la c
 <figure style="text-align: center; margin: 2rem 0;">
     <figcaption>
      <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/react-day-berlin-1.jpg" width="800px" alt="Un conteneur avec plusieurs articles de courtoisie avec le logo React Day tels que des autocollants et des épingles." style="display: block; margin: auto;" />
-    <span >Autocollants, épingles et badges prêts.</span>
+    <span>Autocollants, épingles et badges prêts.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -43,7 +43,7 @@ Finalement à Berlin, je devais être sur place le jeudi à 12h. J’ai déposé
 <figure style="text-align: center; margin: 2rem 0;">
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/kosmos.jpg" width="800px" alt="Mur en pierre blanche et détails en jaune, noir, vert et rouge avec des lettres bleues." style="display: block; margin: auto;" />
-    <span >Intérieur de la salle principale de Blade Runner.</span>
+    <span>Intérieur de la salle principale de Blade Runner.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -53,7 +53,7 @@ La première journée était guidée par Veronika, chargée de l'organisation de
 <figure style="text-align: center; margin: 2rem 0;">
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/sous-verre.jpg" width="800px" alt="Trois sous-verre avec le logo d'Internet Explorer, JavaScript et TypeScript" style="display: block; margin: auto;" />
-     <span >Sous-verres thématiques pour les participants.</span>
+     <span>Sous-verres thématiques pour les participants.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -67,7 +67,7 @@ Le lendemain, c'était la journée la plus importante de la conférence, avec pl
 <figure style="text-align: center; margin: 2rem 0;">
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/breakfast.jpg" width="800px" alt="Trois plateaux en métal avec de la nourriture sur une table blanche." style="display: block; margin: auto;" />
-      <span >Pâtisseries du petit-déjeuner.</span>
+      <span>Pâtisseries du petit-déjeuner.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -77,7 +77,7 @@ L'équipe des volontaires devait être sur place à 7h. pour inscrire, guider ou
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/mnemonic.jpg" width="800px" alt="Salle avec plusieurs sièges bleus et une scène avec le logo React Day Berlin" style="display: block; margin: auto;" />
-       <span >Intérieur de la deuxième salle Mnemonic.</span>
+       <span>Intérieur de la deuxième salle Mnemonic.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -88,7 +88,7 @@ Cette fois en binôme, j’ai été assignée aux tâches dans le track Blade Ru
 <figure style="text-align: center; margin: 2rem 0;">
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/blade-runner-track.jpg" width="800px" alt="Porte en métal avec un panneau bleu" style="display: block" />
-        <span >Extérieur de la salle principale.</span>
+        <span>Extérieur de la salle principale.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -99,7 +99,7 @@ L'ouverture a été en charge de Nik Graf, le créateur de Serenity notes. Sa pr
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/graf.jpg" width="800px" alt="Homme en pull blanc parlant sur une scène avec un écran géant" style="display: block; margin: auto;" />
-         <span >Nik Graf lors de sa présentation.</span>
+         <span>Nik Graf lors de sa présentation.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -112,7 +112,7 @@ Graf a exposé un long chemin vers les évolutions de React par rapport à la co
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/koppers.jpg" width="800px" alt="Salle avec vue sur l'écran d'information, le présentateur avec une t-shirt noire à gauche sur scène prenant la parole." style="display: block; margin: auto;" />
-          <span >Tobias Kopper lors de sa présentation.</span>
+          <span>Tobias Kopper lors de sa présentation.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -124,7 +124,7 @@ Dans les mots de Kopper, **Turbopack est le "successeur de Webpack”**. Cela ve
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/koppers2.jpg" width="800px" alt="Salle pleine illuminée de lumière bleue et le présentateur sur scène." style="display: block; margin: auto;" />
-           <span >La situation de Webpack selon Tobias Kopper.</span>
+           <span>La situation de Webpack selon Tobias Kopper.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -135,7 +135,7 @@ La couche suivante est le Turbo engine, peut être le concept plus intéressant 
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/bostian.jpg" width="800px" alt="Femme en longue robe noire sur podium donnant la présentation." style="display: block; margin: auto;" />
-            <span >Emma Bostian lors de sa présentation.</span>
+            <span>Emma Bostian lors de sa présentation.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -160,7 +160,7 @@ Après cette dernière présentation, l’after party a eu lieu. Plusieurs acces
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/after-party.jpg" width="800px" alt="Trois hommes discutant et dansant dans la chambre noire avec des accessoires lumineux." style="display: block; margin: auto;" />
-               <span >Lunettes et accessoires lumineux au rythme de la musique techno et des jeux de société.</span>
+               <span>Accessoires, musique techno et des jeux de société.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>  
@@ -171,7 +171,7 @@ Le lundi 5 décembre c'était la deuxième partie de cette conférence. Cette fo
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/team.jpg" width="800px" alt="L'équipe sur scène saluant et souriant à la caméra." style="display: block; margin: auto;" />
-              <span >L'équipe GitNation, les présentateurs et les participants sur la photo finale.</span>
+              <span>L'équipe GitNation, speakers et assistants sur la photo finale.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
@@ -183,7 +183,7 @@ Dans cet article, je n'ai mentionné que certaines des présentations les plus i
 <figure style="text-align: center; margin: 2rem 0;">
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/swag-bag.jpg" width="800px" alt="Sac en tissu bleu avec un imprimé blanc" style="display: block; margin: auto;" />
-               <span >La phrase du React Day Berlin "Build code not walls".</span>
+               <span>La phrase du React Day Berlin "Build code not walls".</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
