@@ -13,19 +13,21 @@ categories:
 Avec une reprise progressive des conférences depuis la crise de COVID, le React Day Berlin a eu lieu cette année le 2 et 5 décembre en modalité mixte: un jour en présentiel et un jour en distanciel. Le vendredi s’est passé dans **l’espace Kosmos**, un théâtre des années 1960 avec une capacité de plus de 800 personnes et deux salles principales. J’y suis allée pour la première fois. Continuez à lire pour connaître mon expérience complète !
 
 <div style="text-align: center; margin: 2rem 0;">
- <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/react-day-berlin-1.jpg" width="800px" alt="" style="display: block; margin: auto;" />
+ <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/kosmos-place.jpg" width="800px" alt="" style="display: block; margin: auto;" />
 </div>
 
 ## Le chemin vers la conference
 Le voyage a commencé mercredi 30 novembre à 19 heures depuis Gare de l'Est, Paris, avec destination Berlin. J'avoue que je n'ai pas eu énormément de chance avec les trains cette fois. Avec une heure d'arrivée originelle estimée à 6:34 a.m., j'ai descendu à Berlin hbf qu'à 11:15 a.m à cause d’une panne de train qui m’a obligée à me rendre jusqu'à Hambourg et puis Berlin. Et pourquoi arriver jeudi et pas vendredi ? Eh bien, c'est parce que **j'ai participé à la organisation de l'événement comme volontaire**.
 
 <div  class="admonition info"  markdown="1"><p  class="admonition-title">Volontaire ? Qu'est-ce-que ça ?</p>
-Les meetups de GitNation sont ouverts à recevoir des volontaires. Il suffit de remplir un formulaire en ligne normalement disponible sur le site web de la conférence et attendre leur réponse. J'ai postulé fin octobre et j’ai reçu la convocation une semaine après par mail. La communication a été fluide, avec des réponses plutôt claires du côté des organisateurs. Une semaine avant le React Day Berlin on a eu un videocall avec tous les participants choisis ou on a été assignés les tâches pour le 2 décembre. 
 
-Participer en tant que volontaire implique la présentialité la veille de la conférence pour préparer le lieu et participer aussi en des activités d’organisation le jour de l'événement. En échange, les volontaires peuvent avoir accès à l'intégralité de l'événement gratuitement, les enregistrements des expositions inclus, et 6 mois d'accès Multipass aux événements de GiNation. Il vaut mieux savoir que le billet d'entrée en full remote avait un prix d’environ 80 EUR et le billet hybride 480 EUR, et le Multipass avec une duration annuelle, plus de 900 EUR.
+__Les meetups de GitNation sont ouverts à recevoir des volontaires. Il suffit de remplir un formulaire en ligne normalement disponible sur le site web de la conférence et attendre leur réponse. J'ai postulé fin octobre et j’ai reçu la convocation une semaine après par mail. La communication a été fluide, avec des réponses plutôt claires du côté des organisateurs. Une semaine avant le React Day Berlin on a eu un videocall avec tous les participants choisis ou on a été assignés les tâches pour le 2 décembre.__
+
+__Participer en tant que volontaire implique la présentialité la veille de la conférence pour préparer le lieu et participer aussi en des activités d’organisation le jour de l'événement. En échange, les volontaires peuvent avoir accès à l'intégralité de l'événement, les enregistrements des expositions inclus, et 6 mois d'accès Multipass aux événements de GiNation. Il vaut mieux savoir que le billet d'entrée en full remote avait un prix d’environ 80 EUR et le billet hybride 480 EUR, et le Multipass avec une duration annuelle, plus de 900 EUR.__
 </div>
+
 <div style="text-align: center; margin: 2rem 0;">
- <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/kosmos-place.jpg" width="800px" alt="" style="display: block; margin: auto;" />
+ <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/react-day-berlin-1.jpg" width="800px" alt="" style="display: block; margin: auto;" />
 </div>
 
 Finalement à Berlin, je devais être sur place le jeudi à 12h. J’ai déposé mes affaires chez mon host d’Airbnb, heureusement qu'à 10' à pied du complexe Kosmos dans le quartier Friedrichshain. Une fois là, j’ai pu rencontrer une dizaine des gens qui étaient aussi des volontaires. La plupart d’eux étaient aussi devs, mais à la différence de moi, tous habitaient à Berlin. Ceci dit, et malgré d'être dans la capitale allemande, la communication de tout le voyage s’est passée entièrement en anglais. 
@@ -34,7 +36,14 @@ Finalement à Berlin, je devais être sur place le jeudi à 12h. J’ai déposé
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/kosmos.jpg" width="800px" alt="" style="display: block; margin: auto;" />
 </div>
 
-La première journée était guidée par Veronika, chargée de l'organisation des événements de GitNation, qui a divisé l'équipe de volontaires en squads. Les tâches étaient assez simples et on était nombreux à les faire, ce qui a été énormément d’aide pour passer le temps plus rapidement étant donné que je n’avais pas dormi le soir. Un squad était chargé de mettre en place les signalisations des salles, l'autre de monter les décors, d'autres à ordonner les badges d'accès alphabétiquement, et le mien qui a pris l'activité de goodie bags. Avec plein des cartons sur le sol et un déjeuner complet offert, on s'est engagé à remplir plus de 450 sacs avec le swag des sponsors. Etonnant, mais c'était plutôt drôle à faire ! On s’est divisés en stations ou chacun était chargé d’un des éléments. Les sacs étaient plutôt classiques: une tote bag en coton, avec quelques stickers, des dessous verre JS et TS, une cache camera, cartes postales et un mystérieux boomerang. A 18h on était déjà prêts pour partir chez nous. Dehors il avait commencé à neiger, une situation atypique pour une argentine habitant à Paris après quelques années.
+La première journée était guidée par Veronika, chargée de l'organisation des événements de GitNation, qui a divisé l'équipe de volontaires en squads. Les tâches étaient assez simples et on était nombreux à les faire, ce qui a été énormément d’aide pour passer le temps plus rapidement étant donné que je n’avais pas dormi le soir. Un squad était chargé de mettre en place les signalisations des salles, l'autre de monter les décors, d'autres à ordonner les badges d'accès alphabétiquement, et le mien qui a pris l'activité de goodie bags. Avec plein des cartons sur le sol et un déjeuner complet offert, on s'est engagé à remplir plus de 450 sacs avec le swag des sponsors. 
+
+<div style="text-align: center; margin: 2rem 0;">
+ <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/sous-verre.jpg" width="800px" alt="" style="display: block; margin: auto;" />
+</div>
+
+Etonnant, mais c'était plutôt drôle à faire ! On s’est divisés en stations ou chacun était chargé d’un des éléments. Les sacs étaient plutôt classiques: une tote bag en coton, avec quelques stickers, des dessous verre JS et TS, une cache camera, cartes postales et un mystérieux boomerang. A 18h on était déjà prêts pour partir chez nous. 
+
 
 ## L'événement: goodies, nourriture et plein de gens
 Le lendemain, c'était la journée la plus importante de la conférence, avec plus de 25 speakers et plusieurs workshops gratuits. Dans le salon principal il y a eu lieu les conférences du track Blade Runner, et dans le secondaire celles du track appelé Mnemonic. 
@@ -99,7 +108,8 @@ Le lundi 5 décembre c'était la deuxième partie de cette conférence. Cette fo
 <div style="text-align: center; margin: 2rem 0;"> 
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/team.jpg" width="800px" alt="" style="display: block; margin: auto;" />
 </div>
-L'expérience comme volontaire était très intéressante et c’est une très bonne façon de rencontrer du monde et de découvrir des nouveautés techniques. React Day Berlin nous rappelle l'***enrichissement unique de la rencontre en personne et comment le partage des connaissances dans la conversation avec le public n'est pas seulement un moyen d'apprendre mais aussi de rendre cette information interactive et engageante**. La ville gelée de Berlin était un point de ralliement pour les développeurs du monde entier et un point de découverte. 
+
+L'expérience comme volontaire était très intéressante et c’est une très bonne façon de rencontrer du monde et de découvrir des nouveautés techniques. React Day Berlin nous rappelle **l'enrichissement unique de la rencontre en personne et comment le partage des connaissances dans la conversation avec le public n'est pas seulement un moyen d'apprendre mais aussi de rendre cette information interactive et engageante**. La ville gelée de Berlin était un point de ralliement pour les développeurs du monde entier et un point de découverte. 
 
 Dans cet article, je n'ai mentionné que certaines des présentations les plus intéressantes, mais il y en avait beaucoup d'autres comme le ["The Sorcery of Building a Cross Platform Design System Architecture" par Kamlesh Chandnani](https://portal.gitnation.org/contents/the-sorcery-of-building-a-cross-platform-design-system-architecture) ou ["Staying Safe In a Concurrent World" par Andreas Roth](https://portal.gitnation.org/contents/staying-safe-in-a-concurrent-world-1014). Tout le contenu est accessible depuis le site GitNation à [ce lien](https://portal.gitnation.org/events/react-day-berlin-2022).
 
