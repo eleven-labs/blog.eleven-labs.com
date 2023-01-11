@@ -112,19 +112,19 @@ Graf a exposé un long chemin vers les évolutions de React par rapport à la co
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/koppers.jpg" width="800px" alt="Salle avec vue sur l'écran d'information, le présentateur avec une t-shirt noire à gauche sur scène prenant la parole." style="display: block; margin: auto;" />
-          <span>Tobias Kopper lors de sa présentation.</span>
+          <span>Tobias Koppers lors de sa présentation.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
 
-Probablement la deuxième présentation plus attendue de la première journée du React Day Berlin, l’allemand Tobias Kopper, qui a créé Webpack et qui travaille actuellement chez Vercel, a fait une introduction très complète sur Turbopack.
+Probablement la deuxième présentation plus attendue de la première journée du React Day Berlin, l’allemand Tobias Koppers, qui a créé Webpack et qui travaille actuellement chez Vercel, a fait une introduction très complète sur Turbopack.
 
-Dans les mots de Kopper, **Turbopack est le "successeur de Webpack”**. Cela veut dire que les objectifs sont les mêmes que dans l’ancien module bundler, avec un horizon open source et agnostique. La première motivation de la création de Turbopack vient répondre à une nouvelle demande sur le développement en JS: **la performance**. C’est pour ça que le cœur de ce nouveau projet prend l’enjeu des problématiques courantes comme l’invalidation de cache, des builds incrémentielles et watch mode. Avec un système fait en plusieurs couches, l'équipe de Vercel s’est éloignée du langage JavaScript pour choisir Rust grâce à sa performance prévisible, sécurité, et surtout car cela permet d’utiliser le parser SWC. Toutefois, les plugins pourraient être développés en JS ou Rust pour améliorer l'expérience de l’application par des développeurs qui ne travaillent pas en Rust.
+Dans les mots de Koppers, **Turbopack est le "successeur de Webpack”**. Cela veut dire que les objectifs sont les mêmes que dans l’ancien module bundler, avec un horizon open source et agnostique. La première motivation de la création de Turbopack vient répondre à une nouvelle demande sur le développement en JS: **la performance**. C’est pour ça que le cœur de ce nouveau projet prend l’enjeu des problématiques courantes comme l’invalidation de cache, des builds incrémentielles et watch mode. Avec un système fait en plusieurs couches, l'équipe de Vercel s’est éloignée du langage JavaScript pour choisir Rust grâce à sa performance prévisible, sécurité, et surtout car cela permet d’utiliser le parser SWC. Toutefois, les plugins pourraient être développés en JS ou Rust pour améliorer l'expérience de l’application par des développeurs qui ne travaillent pas en Rust.
 
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
  <img src="{{ site.baseurl }}/assets/2023-01-11-react-day-berlin/koppers2.jpg" width="800px" alt="Salle pleine illuminée de lumière bleue et le présentateur sur scène." style="display: block; margin: auto;" />
-           <span>La situation de Webpack selon Tobias Kopper.</span>
+           <span>La situation de Webpack selon Tobias Koppers.</span>
     <i>Photo gracieuseté de GitNation.</i>
     </figcaption>
 </figure>
