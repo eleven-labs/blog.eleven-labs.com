@@ -23,11 +23,11 @@ Avec une reprise progressive des conférences depuis la crise de COVID, le React
 ## Le chemin vers la conférence
 Le voyage a commencé mercredi 30 novembre à 19 heures depuis Gare de l'Est, Paris, avec destination Berlin. J'avoue que je n'ai pas eu énormément de chance avec les trains cette fois. Avec une heure d'arrivée originelle estimée à 6:34 a.m., je ne suis descendue à Berlin hbf qu'à 11:15 a.m à cause d’une panne de train qui m’a obligée à me rendre jusqu'à Hambourg et puis Berlin. Et pourquoi arriver jeudi et pas vendredi ? Eh bien, c'est parce que **j'ai participé à l'organisation de l'événement en tant que bénévole**.
 
-<div  class="admonition info"  markdown="1"><p  class="admonition-title">Volontaire ? Qu'est-ce-que ça ?</p>
+<div  class="admonition info"  markdown="1"><p  class="admonition-title">Bénévole ? Qu'est-ce-que c'est ?</p>
 
-_Les meetups de GitNation sont ouverts aux volontaires. Il suffit de remplir un formulaire en ligne normalement disponible sur le site web de la conférence et attendre leur réponse. J'ai postulé fin octobre et j’ai reçu la convocation une semaine après par mail. La communication a été fluide, avec des réponses plutôt claires du côté des organisateurs. Une semaine avant le React Day Berlin on a eu un videocall avec tous les participants choisis, et pendant lequel les tâches nous ont été assignées pour le 2 décembre._
+_Les meetups de GitNation sont ouverts aux bénévoles. Il suffit de remplir un formulaire en ligne normalement disponible sur le site web de la conférence et attendre leur réponse. J'ai postulé fin octobre et j’ai reçu la convocation une semaine après par mail. La communication a été fluide, avec des réponses plutôt claires du côté des organisateurs. Une semaine avant le React Day Berlin on a eu un videocall avec tous les participants choisis, et pendant lequel les tâches nous ont été assignées pour le 2 décembre._
 
-_Participer en tant que volontaire implique d'être présent la veille de la conférence pour préparer le lieu et bien entendu de se rendre disponible pour l’organisation le jour de l'événement. En échange, les volontaires peuvent avoir accès à l'intégralité de l'événement, les enregistrements des expositions inclus, et 6 mois d'accès Multipass aux événements de GitNation. Il vaut mieux savoir que le billet d'entrée en full remote coûtait environ 80 EUR, le billet hybride 480 EUR, et le Multipass annuel plus de 900 EUR._
+_Participer en tant que bénévole implique d'être présent la veille de la conférence pour préparer le lieu et bien entendu de se rendre disponible pour l’organisation le jour de l'événement. En échange, les bénévoles peuvent avoir accès à l'intégralité de l'événement, les enregistrements des expositions inclus, et 6 mois d'accès Multipass aux événements de GitNation. Il vaut mieux savoir que le billet d'entrée en full remote coûtait environ 80 EUR, le billet hybride 480 EUR, et le Multipass annuel plus de 900 EUR._
 </div>
 
 <figure style="text-align: center; margin: 2rem 0;">
@@ -38,7 +38,7 @@ _Participer en tant que volontaire implique d'être présent la veille de la con
     </figcaption>
 </figure>
 
-Finalement à Berlin, je devais être sur place le jeudi à 12h. J’ai déposé mes affaires au Airbnb, qui n'était heureusement qu'à 10 minutes à pied du complexe Kosmos dans le quartier Friedrichshain. Une fois là, j’ai pu rencontrer une dizaine des gens, tous volontaires eux aussi. La plupart d’entre eux étaient aussi devs, mais tous habitaient à Berlin. Ceci dit, malgré le fait d'être dans la capitale allemande, la communication de tout le voyage s’est passée entièrement en anglais. 
+Finalement à Berlin, je devais être sur place le jeudi à 12h. J’ai déposé mes affaires au Airbnb, qui n'était heureusement qu'à 10 minutes à pied du complexe Kosmos dans le quartier Friedrichshain. Une fois là, j’ai pu rencontrer une dizaine des gens, tous bénévoles eux aussi. La plupart d’entre eux étaient aussi devs, mais tous habitaient à Berlin. Ceci dit, malgré le fait d'être dans la capitale allemande, la communication de tout le voyage s’est passée entièrement en anglais. 
 
 <figure style="text-align: center; margin: 2rem 0;">
      <figcaption>
@@ -48,7 +48,7 @@ Finalement à Berlin, je devais être sur place le jeudi à 12h. J’ai déposé
     </figcaption>
 </figure>
 
-La première journée était guidée par Veronika, chargée de l'organisation des événements de GitNation, qui a divisé l'équipe de volontaires en squads. Les tâches étaient assez simples et on était nombreux à les faire, ce qui a été très appréciable pour passer le temps plus rapidement étant donné que je n’avais pas dormi le soir. Une équipe était chargéé de mettre en place les signalisations des salles, une autre de monter les décors, d'autres devaient ordonner les badges d'accès alphabétiquement, et la mienne étaient en charge des goodie bags. Avec plein des cartons sur le sol et un déjeuner complet offert, nous avons rempli plus de 450 sacs avec les goodies des sponsors. 
+La première journée était guidée par Veronika, chargée de l'organisation des événements de GitNation, qui a divisé l'équipe de bénévoles en squads. Les tâches étaient assez simples et on était nombreux à les faire, ce qui a été très appréciable pour passer le temps plus rapidement étant donné que je n’avais pas dormi le soir. Une équipe était chargéé de mettre en place les signalisations des salles, une autre de monter les décors, d'autres devaient ordonner les badges d'accès alphabétiquement, et la mienne étaient en charge des goodie bags. Avec plein des cartons sur le sol et un déjeuner complet offert, nous avons rempli plus de 450 sacs avec les goodies des sponsors. 
 
 <figure style="text-align: center; margin: 2rem 0;">
      <figcaption>
@@ -72,7 +72,7 @@ Le lendemain, c'était la journée la plus importante de la conférence, avec pl
     </figcaption>
 </figure>
 
-L'équipe des volontaires devait être sur place à 7h pour inscrire, guider ou donner des goodie bags aux participants qui ont commencé à arriver à 8h. Le matin a donc commencé avec l'accueil des participants et un petit déjeuner avec du café et des viennoiseries dans les deux buffets disponibles à côté de chaque salon. On remettait à chacun un carton jaune ou un carton bleu dans le but de diviser les visiteurs de la façon la plus homogène possible sur les deux endroits pendant l'heure de déjeuner. Il y avait aussi un open bar avec des bouteilles d'eau en libre service pour tous les assistants de la conférence. 
+L'équipe des bénévoles devait être sur place à 7h pour inscrire, guider ou donner des goodie bags aux participants qui ont commencé à arriver à 8h. Le matin a donc commencé avec l'accueil des participants et un petit déjeuner avec du café et des viennoiseries dans les deux buffets disponibles à côté de chaque salon. On remettait à chacun un carton jaune ou un carton bleu dans le but de diviser les visiteurs de la façon la plus homogène possible sur les deux endroits pendant l'heure de déjeuner. Il y avait aussi un open bar avec des bouteilles d'eau en libre service pour tous les assistants de la conférence. 
 
 <figure style="text-align: center; margin: 2rem 0;"> 
      <figcaption>
