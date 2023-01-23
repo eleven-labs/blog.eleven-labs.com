@@ -8,7 +8,6 @@ lang: fr
 permalink: /fr/dedoublonnez-vos-photos/
 categories:
   - php
-  - bonnes pratiques
 
 ---
 
@@ -17,9 +16,7 @@ categories:
 ## Introduction
 
 Le dédoublonnage de photos est un processus qui vise à détecter et supprimer les images en double d'une collection.
-
 Il est utilisé pour nettoyer des albums photos ou des bases de données d'images et pour améliorer la qualité des résultats de recherche d'images.
-
 Il existe différentes méthodes pour le dédoublonnage, comme la comparaison de pixels, des caractéristiques d'image, des métadonnées et des signatures d'image, chacune ayant des avantages et inconvénients.
 
 Dans cet article, nous combinerons plusieurs de ces techniques afin d'identifier des doublons.
@@ -27,23 +24,16 @@ Dans cet article, nous combinerons plusieurs de ces techniques afin d'identifier
 ### 0. Avertissement ###
 
 Il est important de noter que le dédoublonnage de photos peut entraîner la perte de données, il est donc important de sauvegarder les images avant de les supprimer.
-
 Il est également recommandé de vérifier manuellement les images supprimées afin de s'assurer qu'elles sont en effet des doublons et non des images uniques.
 
 ### I. Savoir à coup sûr si un fichier est déjà présent dans ma collection d'image
 
 La première méthode que nous utiliserons est de générer une somme de contrôle SHA-1 à partir du contenu du fichier puis de vérifier dans un registre si celle-ci s'y trouve déjà.
 
-La somme SHA-1 (Secure Hash Algorithm 1) est un algorithme de hachage cryptographique qui permet de créer une empreinte numérique (ou "somme de contrôle") d'un fichier.
-
-Cette empreinte est générée en transformant les données du fichier en un code à 160 bits (40 caractères hexadecimal), qui est unique pour chaque fichier.
-
+La somme SHA-1 (Secure Hash Algorithm 1) est un algorithme de hachage cryptographique qui permet de créer une empreinte numérique (ou "somme de contrôle") d'un fichier. Cette empreinte est générée en transformant les données du fichier en un code à 160 bits (40 caractères hexadecimal), qui est unique pour chaque fichier.
 Si un fichier change, même de façon minime, sa somme SHA-1 sera complètement différente.
 
-Les sommes SHA-1 sont souvent utilisées pour vérifier l'intégrité des fichiers téléchargés sur internet, pour s'assurer qu'ils n'ont pas été altérés pendant leur transfert.
-
-On peut comparer la somme SHA-1 d'un fichier téléchargé avec la somme SHA-1 d'un fichier original pour vérifier qu'ils sont identiques.
-
+Les sommes SHA-1 sont souvent utilisées pour vérifier l'intégrité des fichiers téléchargés sur internet, pour s'assurer qu'ils n'ont pas été altérés pendant leur transfert. On peut comparer la somme SHA-1 d'un fichier téléchargé avec la somme SHA-1 d'un fichier original pour vérifier qu'ils sont identiques.
 De cette manière, on peut être sûr que le fichier téléchargé est le même que celui qui a été diffusé par son auteur ou son éditeur.
 
 Il est important de noter que même si la somme SHA-1 est encore utilisée, il y a des algorithmes de hachage plus récents qui sont considérés plus sécurisés (comme SHA-256, SHA-3, etc).
@@ -63,9 +53,7 @@ Ce qui nous donnera le résultat suivant :
 8ffe297f8e88d5573d375cd12536e33db8d49c54
 ```
 
-Si deux fichiers ont le même hash, alors on peut être sûr (ou presque ...), que ces derniers sont identiques en tout point et que nous pouvons archiver n'importe lequel des deux.
-
-Toutefois, cela ne fonctionne que si notre fichier n'a jamais été importé dans un logiciel (qui ajoutera des métadonnées sur le fichier) ou que nous n'avons pas fait de post traitement dessus.
+Si deux fichiers ont le même hash, alors on peut être sûr (ou presque...), que ces derniers sont identiques en tous points et que nous pouvons archiver n'importe lequel des deux. Toutefois, cela ne fonctionne que si notre fichier n'a jamais été importé dans un logiciel (qui ajoutera des métadonnées sur le fichier) ou que nous n'avons pas fait de post traitement dessus.
 
 Si on refait la même opération sur la photo qui s'est affichée, dans votre navigateur (et qui a été redimensionnée pour prendre moins de place) :
 
@@ -81,31 +69,21 @@ Le résultat ne sera pas du tout le même :
 fbde9cebfa1522b7489c2e5360bf114f203d7c62'
 ```
 
-En effet, comme dit précédemment, modifier un seul bit de notre fichier aura pour effet de complétement changer la somme de contrôle de celle-ci.
-
-Aussi pour trouver les doublons, nous allons devoir avoir recours à d'autres techniques plus permissives.
+En effet, comme dit précédemment, modifier un seul bit de notre fichier aura pour effet de complétement changer la somme de contrôle de celle-ci. Aussi pour trouver les doublons, nous allons devoir avoir recours à d'autres techniques plus permissives.
 
 ### II. Savoir si une image a le même aspect visuel qu'une autre
 
-Nous ne pouvons donc pas seulement utiliser la somme de contrôle afin de trouver tous les doublons d'une même photo.
+Nous ne pouvons donc pas seulement utiliser la somme de contrôle afin de trouver tous les doublons d'une même photo. Nous pouvons toutefois nous reposer sur un deuxième type de hash dans le but d'identifier d'éventuels candidats : le perceptual hash.
 
-Nous pouvons toutefois nous reposer sur un deuxième type de hash dans le but d'identifier d'éventuels candidats : le perceptual hash.
+Le perceptual hash, ou "empreinte perceptuelle", est un algorithme de hachage utilisé pour identifier les images similaires. Il fonctionne en créant un hash (ou une empreinte numérique) unique pour chaque image en comparant les caractéristiques visuelles de l'image plutôt que les données binaires de l'image elle-même.
 
-Le perceptual hash, ou "empreinte perceptuelle", est un algorithme de hachage utilisé pour identifier les images similaires.
+Il compare les caractéristiques de l'image telles que les niveaux de luminosité, les contours et les textures, pour créer un hash qui est sensible aux différences subtiles entre les images. Cela permet de détecter les images similaires même si elles ont subi des modifications mineures, comme une rotation ou un redimensionnement.
 
-Il fonctionne en créant un hash (ou une empreinte numérique) unique pour chaque image en comparant les caractéristiques visuelles de l'image plutôt que les données binaires de l'image elle-même.
+Le perceptual hash est souvent utilisé pour l'analyse d'image, la reconnaissance d'images et la détection de contenu dupliqué, comme dans la vérification de contenu copyright ou, comme dans notre cas, dans la suppression de duplicat d'images. Il est également utilisé dans les systèmes de surveillance vidéo pour détecter des intrusions ou pour des applications de reconnaissance faciale pour identifier les personnes.
 
-Il compare les caractéristiques de l'image telles que les niveaux de luminosité, les contours et les textures, pour créer un hash qui est sensible aux différences subtiles entre les images.
+Afin de calculer simplement un perceptual hash, on peut utiliser une librairie PHP tel que l'excellente [jenssegers/imagehash](https://github.com/jenssegers/imagehash).
 
-Cela permet de détecter les images similaires même si elles ont subi des modifications mineures, comme une rotation ou un redimensionnement.
-
-Le perceptual hash est souvent utilisé pour l'analyse d'image, la reconnaissance d'images et la détection de contenu dupliqué, comme dans la vérification de contenu copyright ou, comme dans notre cas, dans la suppression de duplicat d'images.
-
-Il est également utilisé dans les systèmes de surveillance vidéo pour détecter des intrusions ou pour des applications de reconnaissance faciale pour identifier les personnes.
-
-Afin de calculer simplement un perceptual hash, on peut utiliser une librairie php tel que l'excellente [jenssegers/imagehash](https://github.com/jenssegers/imagehash).
-
-Après l'avoir installé à l'aide de la commande `composer require jenssegers/imagehash`, on pourra utiliser le morceau de code suivant :
+Après l'avoir installée à l'aide de la commande `composer require jenssegers/imagehash`, on pourra utiliser le morceau de code suivant :
 
 ```php
 <?php
@@ -152,12 +130,7 @@ a3d7d5f2e22489b3
 ```
 
 Vous avez bien lu : nous avons toujours le même perceptual hash !
-
-Même si les couleurs de l'image ont été modifiées, la donnée visuelle est toujours la même, et donc le hash de même.
-
-Pour avoir un hash différent il va falloir faire des modifications beaucoup plus aggressive.
-
-Je vais donc maintenant changer réellement l'aspect d'une zone entière de l'image en mettant un smiley par-dessus la tête de mon chat :
+Même si les couleurs de l'image ont été modifiées, la donnée visuelle est toujours la même, et donc le hash de même. Pour avoir un hash différent il va falloir faire des modifications beaucoup plus aggressive. Je vais donc maintenant changer réellement l'aspect d'une zone entière de l'image en mettant un smiley par-dessus la tête de mon chat :
 
 ![Pilou avec un emoji à la place de la tête]({{ site.baseurl }}/assets/2023-01-18-dedoublonnez-vos-photos/IMG_0546_emoji.jpg)
 
@@ -195,11 +168,7 @@ _Une grande image détaillée comporte beaucoup de hautes fréquences. Une très
 
 #### 1. Réduire la taille ####
 
-Le moyen le plus rapide de supprimer les hautes fréquences et les détails est de réduire la taille de l'image.
-
-Dans ce cas, réduisez-la à 8x8 de façon à ce qu'il y ait 64 pixels au total.
-
-Ne prenez pas la peine de conserver le rapport hauteur/largeur, réduisez simplement l'image pour qu'elle tienne dans un carré de 8x8.
+Le moyen le plus rapide de supprimer les hautes fréquences et les détails est de réduire la taille de l'image. Dans ce cas, réduisez-la à 8x8 de façon à ce qu'il y ait 64 pixels au total. Ne prenez pas la peine de conserver le rapport hauteur/largeur, réduisez simplement l'image pour qu'elle tienne dans un carré de 8x8.
 
 De cette façon, le hachage correspondra à toute variation de l'image, indépendamment de l'échelle ou du rapport d'aspect.
 
@@ -209,9 +178,7 @@ De cette façon, le hachage correspondra à toute variation de l'image, indépen
 
 #### 2. Réduire la couleur ####
 
-La petite image 8x8 est convertie en niveaux de gris.
-
-Cela fait passer le hachage de 64 pixels (64 rouges, 64 verts et 64 bleus) à 64 couleurs au total.
+La petite image 8x8 est convertie en niveaux de gris. Cela fait passer le hachage de 64 pixels (64 rouges, 64 verts et 64 bleus) à 64 couleurs au total.
 
 ![Pilou en 8x8 et qreyscale]({{ site.baseurl }}/assets/2023-01-18-dedoublonnez-vos-photos/IMG_0546_8x8_greyscale.jpg) <-- résultat en taille réelle
 
@@ -223,44 +190,29 @@ Calculer la valeur moyenne des 64 couleurs.
 
 #### 4. Calculer les bits ####
 
-C'est la partie la plus amusante.
-
-Chaque bit est simplement défini selon que la valeur de la couleur est supérieure ou inférieure à la moyenne.
+C'est la partie la plus amusante. Chaque bit est simplement défini selon que la valeur de la couleur est supérieure ou inférieure à la moyenne.
 
 #### 5. Construire le hachage ####
 
-Placez les 64 bits dans un entier de 64 bits.
-
-L'ordre n'a pas d'importance, du moment que vous êtes cohérent.
+Placez les 64 bits dans un entier de 64 bits. L'ordre n'a pas d'importance, du moment que vous êtes cohérent.
 
 #### 6. Résultat ####
 
 0xa3d7d5f2e22489b3
 
-
 #### 7. Conclusion ####
 
-Le hachage résultant ne changera pas si l'image est mise à l'échelle ou si le rapport d'aspect change.
+Le hachage résultant ne changera pas si l'image est mise à l'échelle ou si le rapport d'aspect change. L'augmentation ou la diminution de la luminosité ou du contraste, ou même l'altération des couleurs, ne modifieront pas de façon spectaculaire la valeur de hachage.
 
-L'augmentation ou la diminution de la luminosité ou du contraste, ou même l'altération des couleurs, ne modifieront pas de façon spectaculaire la valeur de hachage.
+Si nous voulons comparer deux images, nous construirons le hachage de chaque image et on comptera le nombre de positions de bits qui sont différentes : il s'agit de la distance de Hamming. Une distance de zéro indique qu'il s'agit probablement d'une image très similaire (ou d'une variation de la même image).
 
-Si nous voulons comparer deux images, nous construirons le hachage de chaque image et on comptera le nombre de positions de bits qui sont différentes : il s'agit de la distance de Hamming.
-
-Une distance de zéro indique qu'il s'agit probablement d'une image très similaire (ou d'une variation de la même image).
-
-Cette méthode nous permet donc d'identifier des images très proches visuellement, mais attention, elle ne sont pas pour autant identique aussi il faudra nous baser sur d'autres critères avant de prendre une décision.
+Cette méthode nous permet donc d'identifier des images très proches visuellement, mais attention, elle ne sont pas pour autant identiques aussi il faudra nous baser sur d'autres critères avant de prendre une décision.
 
 ### III. Identifier les metadata d'une photo ###
 
-Afin de trouver des doublons, nous pouvons aussi utiliser Exiftool.
+Afin de trouver des doublons, nous pouvons aussi utiliser Exiftool. Exiftool est un outil en ligne de commande qui permet de lire, écrire et éditer les métadonnées dans les fichiers images. Il peut également être utilisé pour détecter les images en double en comparant les métadonnées de ces images.
 
-Exiftool est un outil en ligne de commande qui permet de lire, écrire et éditer les métadonnées dans les fichiers images.
-
-Il peut également être utilisé pour détecter les images en double en comparant les métadonnées de ces images.
-
-L'un des avantages d'utiliser Exiftool pour le dédoublonnage de photos est qu'il peut lire les métadonnées de nombreux formats d'images différents, y compris JPEG, TIFF, PNG, et RAW.
-
-Il peut également être utilisé pour lire les métadonnées des images stockées sur des appareils photo numériques, comme les informations de prise de vue, les réglages d'exposition, etc.
+L'un des avantages d'utiliser Exiftool pour le dédoublonnage de photos est qu'il peut lire les métadonnées de nombreux formats d'images différents, y compris JPEG, TIFF, PNG, et RAW. Il peut également être utilisé pour lire les métadonnées des images stockées sur des appareils photo numériques, comme les informations de prise de vue, les réglages d'exposition, etc.
 
 Pour utiliser Exiftool pour détecter les images en double, il suffit de lancer la commande suivante :
 
@@ -272,17 +224,13 @@ Cette commande va parcourir tous les fichiers dans le répertoire spécifié (et
 
 Vous pouvez également utiliser des options pour spécifier les métadonnées à utiliser pour la comparaison, comme la date de prise de vue, la résolution, etc.
 
-Il est important de noter que Exiftool ne peut pas identifier les images en double basé sur le contenu de l'image, comme le fait le perceptual hash, il utilise uniquement les métadonnées pour identifier les images en double.
+Il est important de noter qu'Exiftool ne peut pas identifier les images en double basé sur le contenu de l'image, comme le fait le perceptual hash, il utilise uniquement les métadonnées pour identifier les images en double.
 
-Il peut donc y avoir des faux positifs ou des images manquantes si les métadonnées ont été modifiées ou sont absentes.
+Il peut donc y avoir des faux positifs ou des images manquantes si les métadonnées ont été modifiées ou sont absentes. Il est donc important de vérifier manuellement les résultats pour s'assurer de la précision. Dans mon cas, je préfère ainsi utiliser Exiftool uniquement afin d'extraire les métadonnées d'un fichier.
 
-Il est donc important de vérifier manuellement les résultats pour s'assurer de la précision.
+C'est dans ce but que j'ai écrit la librairie PHP suivante : [jmoati/exiftool](https://packagist.org/packages/jmoati/exiftool).
 
-Dans mon cas, je préfère ainsi utiliser Exiftool uniquement afin d'extraire les métadonnées d'un fichier.
-
-C'est dans ce but que j'ai écrit la librairie php suivante : [jmoati/exiftool](https://packagist.org/packages/jmoati/exiftool).
-
-Après un rapide `composer require jmoati/exiftool` et avoir installé `exiftool` dans un conteneur docker ou sur votre système, vous pourrez utiliser le code suivant :
+Après un rapide `composer require jmoati/exiftool` et avoir installé `exiftool` dans un conteneur Docker ou sur votre système, vous pourrez utiliser le code suivant :
 
 ```php
 <?php
@@ -453,11 +401,7 @@ Ce qui nous donnera le résultat suivant :
 }
 ```
 
-Voici une quantité monstre d'informations plus intéressantes les unes que les autres.
-
-Ne les utilisez pas pour trouver des doublons !
-
-Mais utilisez-les plutôt comme discriminent afin d'identifier les "double légitime".
+Voici une quantité monstre d'informations plus intéressantes les unes que les autres. Ne les utilisez pas pour trouver des doublons ! Utilisez-les plutôt comme discriminant afin d'identifier les "doubles légitimes".
 
 Même si une image a le même perceptual hash, si la date de prise de vue n'est pas exactement la même (Exif.DateTimeOriginal) ou que l'identifiant de média (Exif.MakerNotes.ContentIdentifier) est différent ou que le temps écoulé depuis lequel l'appareil est allumé (Exif.Composite.RunTimeSincePowerUp) n'est pas identique alors, ce n'est pas un doublon !
 
@@ -465,12 +409,10 @@ Cette méthode est donc à coupler avec la précédente.
 
 ## Conclusion ##
 
-Un fichier qui a la même somme de control (MD5, SHA-1, etc.) peut-être considéré comme un doublon. Car la chance que deux photos partagent le même hash est relativement faible.
-
-Dans le cas où deux photos ont le même perceptual hash, cela ne veux pas forcément dire que nous avons un doublon.
+Un fichier qui a la même somme de contrôle (MD5, SHA-1, etc.) peut-être considéré comme un doublon, car la chance que deux photos partagent le même hash est relativement faible. Dans le cas où deux photos ont le même perceptual hash, cela ne veux pas forcément dire que nous avons un doublon.
 
 Pour savoir si la suppression de l'un ou de l'autre est légitime, il nous faut confronter les métadonnées de celles-ci.
 
 Enfin, afin de savoir quelle image garder, écrivez-vous un petit algorithme de scoring dans le but de valoriser par exemple les photos en RAW, ayant une position GPS, n'étant pas passé par un logiciel de retouche, etc.
 
-Bonne chance, et que la force soit avec vous dans cette dangereuse entreprise.
+Bonne chance, et que la force soit avec vous dans cette dangereuse entreprise !
