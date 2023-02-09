@@ -30,6 +30,16 @@ jobs:
           sed -i "/^url:/c\url: http:\/\/dev.blog.eleven-labs.com.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com" _config.yml
           sed -i "/^baseurl:/c\baseurl: \/${{ github.head_ref }}" _config.yml
 
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          bundler-cache: true
+
+      - name: Validate markdown authors and posts
+        run: |
+          yarn
+          yarn validate-and-format-markdown
+
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
