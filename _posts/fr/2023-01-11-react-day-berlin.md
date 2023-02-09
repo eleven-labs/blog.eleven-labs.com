@@ -1,13 +1,21 @@
 ---
 layout: post
-title: Chronique d'un retour en douceur au présentiel avec React Day Berlin, qu'attendre des conférences ?
-excerpt: Avec une reprise progressive des conférences dev depuis la crise COVID, le React Day Berlin a eu lieu cette année le 2 et 5 décembre en modalité mixte. J’y suis allée pour la première fois, et je vous propose dans cet article mon expérience complète !
 lang: fr
+date: '2023-01-11'
+categories: []
 authors:
-    - meugeniatr
+  - meugeniatr
+excerpt: >-
+  Avec une reprise progressive des conférences dev depuis la crise COVID, le
+  React Day Berlin a eu lieu cette année le 2 et 5 décembre en modalité mixte.
+  J’y suis allée pour la première fois, et je vous propose dans cet article mon
+  expérience complète !
+title: >-
+  Chronique d'un retour en douceur au présentiel avec React Day Berlin,
+  qu'attendre des conférences ?
+slug: react-day-berlin
+oldCategoriesAndTags: []
 permalink: /fr/react-day-berlin/
-categories:
-
 ---
 
 Avec une reprise progressive des conférences depuis la crise de COVID, le React Day Berlin a eu lieu cette année le 2 et 5 décembre en modalité mixte : un jour en présentiel et un jour en distanciel. Le vendredi s’est passé dans **l’espace Kosmos**, un théâtre des années 1960 avec une capacité de plus de 800 personnes et deux salles principales. J’y suis allée pour la première fois, et vous propose dans les lignes qui suivent un retour de mon expérience.

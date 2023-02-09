@@ -1,18 +1,24 @@
 ---
 layout: post
-title: Symfony Live, 10 ans déjà !
 lang: fr
-permalink: /fr/symfony-live-10-ans-deja/
-excerpt: "Le Symfony Live est une journée de conférences autour du framework Symfony. Les conférences présentées sont d'un bon niveau technique. Il y a également des retours d'expériences, sur des cas concrets et avec des problématiques que l'on peut rencontrer au quotidien."
-authors:
-    - tthuon
-date: '2015-04-10 12:33:59 +0200'
-date_gmt: '2015-04-10 10:33:59 +0200'
+date: '2015-04-10'
 categories:
-    - symfony
-tags:
-    - conference
-    - symfony live
+  - php
+authors:
+  - tthuon
+excerpt: >-
+  Le Symfony Live est une journée de conférences autour du framework Symfony.
+  Les conférences présentées sont d'un bon niveau technique. Il y a également
+  des retours d'expériences, sur des cas concrets et avec des problématiques que
+  l'on peut rencontrer au quotidien.
+title: 'Symfony Live, 10 ans déjà !'
+slug: symfony-live-10-ans-deja
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - conference
+  - symfony live
+permalink: /fr/symfony-live-10-ans-deja/
 ---
 
 Présentation

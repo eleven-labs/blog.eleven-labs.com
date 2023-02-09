@@ -1,14 +1,19 @@
 ---
 layout: post
-title: DialogFlow, votre chatbot facile
 lang: fr
-permalink: /fr/dialogflow-votre-chatbot-facile/
-excerpt: "Il existe aujourd'hui de nombreuses aides à la mise en place des ChatBots conversationnels dits intelligents. On parlera aujourd'hui spécifiquement de DialogFlow, anciennement Api.ai de Google."
+date: '2021-10-20'
+categories: []
 authors:
-    - captainjojo
-categories:
-    - bonnes pratiques
-
+  - captainjojo
+excerpt: >-
+  Il existe aujourd'hui de nombreuses aides à la mise en place des ChatBots
+  conversationnels dits intelligents. On parlera aujourd'hui spécifiquement de
+  DialogFlow, anciennement Api.ai de Google.
+title: 'DialogFlow, votre chatbot facile'
+slug: dialogflow-votre-chatbot-facile
+oldCategoriesAndTags:
+  - bonnes pratiques
+permalink: /fr/dialogflow-votre-chatbot-facile/
 ---
 
 La communication avec l'utilisateur est cruciale pour le fidéliser. Il est alors naturel que les ChatBots conversationnels fassent leur apparition et deviennent un point important dans nos applications.

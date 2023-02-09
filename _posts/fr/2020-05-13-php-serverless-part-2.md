@@ -1,20 +1,21 @@
 ---
 layout: post
-title: "PHP & Serverless avec Bref - part 2"
 lang: fr
-permalink: /fr/php-serverless-part-2/
-excerpt: "Comment déployer des applications PHP sur AWS Lambda avec Bref"
-authors:
-    - marishka
+date: '2020-05-13'
 categories:
-    - php
-tags:
-    - php
-    - serverless
-    - aws
-    - bref
-    - lambda
-
+  - php
+authors:
+  - marishka
+excerpt: Comment déployer des applications PHP sur AWS Lambda avec Bref
+title: PHP & Serverless avec Bref - part 2
+slug: php-serverless-part-2
+oldCategoriesAndTags:
+  - php
+  - serverless
+  - aws
+  - bref
+  - lambda
+permalink: /fr/php-serverless-part-2/
 ---
 
 Cet article est la suite d'un [premier article](https://blog.eleven-labs.com/fr/php-serverless-part-1/) qui fait l'introduction du Serverless. Dans cette deuxième partie, nous allons d'abord voir ce que sont les *layers* dans AWS Lambda et comment les implémenter. Ensuite, nous verrons l'utilisation du framework Bref.

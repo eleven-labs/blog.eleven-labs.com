@@ -1,12 +1,19 @@
 ---
 layout: post
-title: Mon retour sur le DevFest Nantes 2021, ma première conférence
-excerpt: "Enfin ! Après 4 ans à pratiquer le métier de développeur, j'ai assisté pour la première fois à une conférence liée à mon métier et ma passion : le DevFest Nantes. Retour sur ces deux journées."
+lang: fr
+date: '2021-12-08'
+categories: []
 authors:
-    - jbberthet
+  - jbberthet
+excerpt: >-
+  Enfin ! Après 4 ans à pratiquer le métier de développeur, j'ai assisté pour la
+  première fois à une conférence liée à mon métier et ma passion : le DevFest
+  Nantes. Retour sur ces deux journées.
+title: 'Mon retour sur le DevFest Nantes 2021, ma première conférence'
+slug: mon-retour-sur-le-devfest-nantes-ma-premiere-conference
+oldCategoriesAndTags:
+  - bonnes pratiques
 permalink: /fr/mon-retour-sur-le-devfest-nantes-ma-premiere-conference/
-categories: 
-    - bonnes pratiques
 ---
 
 ![Logo du DevFest Nantes 2021]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/devfest-logo.png)

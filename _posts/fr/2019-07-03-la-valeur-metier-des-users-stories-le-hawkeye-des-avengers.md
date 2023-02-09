@@ -1,19 +1,24 @@
 ---
 layout: post
-title: "La valeur métier des Users Stories, le Hawkeye des Avengers"
 lang: fr
-permalink: /fr/la-valeur-metier-des-users-stories-le-hawkeye-des-avengers/
-excerpt: 'Clairement, quand on vous parle des Avengers, Clint “Hawkeye” Barton est probablement l’un des derniers membres auxquels vous allez penser. Quand on vous parle de User Story, ce à quoi beaucoup d’équipes ne pensent pas, c’est à la valeur métier, qui va déterminer sa pertinence et sa priorité.'
-authors:
-    - mae
+date: '2019-07-03'
 categories:
-    - agile
-tags:
-    - po
-    - backlog
-    - us
-    - agile
-
+  - agile
+authors:
+  - mae
+excerpt: >-
+  Clairement, quand on vous parle des Avengers, Clint “Hawkeye” Barton est
+  probablement l’un des derniers membres auxquels vous allez penser. Quand on
+  vous parle de User Story, ce à quoi beaucoup d’équipes ne pensent pas, c’est à
+  la valeur métier, qui va déterminer sa pertinence et sa priorité.
+title: 'La valeur métier des Users Stories, le Hawkeye des Avengers'
+slug: la-valeur-metier-des-users-stories-le-hawkeye-des-avengers
+oldCategoriesAndTags:
+  - agile
+  - po
+  - backlog
+  - us
+permalink: /fr/la-valeur-metier-des-users-stories-le-hawkeye-des-avengers/
 ---
 
 ...On l’oublie bien trop souvent !

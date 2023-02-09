@@ -1,12 +1,18 @@
 ---
 layout: post
-title: About the Agile Tour Paris 2016 by a Product Owner
-excerpt: "On November 17th took place the 9th edition of the Agile Tour Paris in Microsoft's offices in Issy les Moulineaux - first edition for me."
-authors:
-    - julie
 lang: en
-permalink: /about-agile-tour-paris-2016/
+date: '2017-09-21'
+categories: []
+authors:
+  - julie
 cover: /assets/2017-09-21-about-agile-tour-paris-2016/cover.jpg
+excerpt: >-
+  On November 17th took place the 9th edition of the Agile Tour Paris in
+  Microsoft's offices in Issy les Moulineaux - first edition for me.
+title: About the Agile Tour Paris 2016 by a Product Owner
+slug: about-agile-tour-paris-2016
+oldCategoriesAndTags: []
+permalink: /en/about-agile-tour-paris-2016/
 ---
 
 On November 17th took place the 9th edition of the Agile Tour Paris in Microsoft's offices in Issy les Moulineaux - first edition for me.

@@ -1,26 +1,20 @@
 ---
 layout: post
-title: "Comprendre le SSL/TLS: Partie 5 Record Protocol"
-excerpt: "Record protocol"
 lang: fr
-permalink: /fr/comprendre-ssl-tls-partie-5-record-protocol/
+date: '2016-12-23'
+categories: []
 authors:
-    - ibenichou
-date: '2016-12-23 12:00:01 +0100'
-date_gmt: '2016-12-23 11:00:01 +0100'
-categories:
-    - tls
-    - ssl
-tags:
-    - securite
-    - ssl
-    - tls
-    - Algorithmie
-    - Protocoles
-image:
-    path: /assets/2016-12-23-comprendre-ssl-tls-partie-5-record-protocol/record.jpg
-    height: 100
-    width: 100
+  - ibenichou
+excerpt: Record protocol
+title: 'Comprendre le SSL/TLS: Partie 5 Record Protocol'
+slug: comprendre-ssl-tls-partie-5-record-protocol
+oldCategoriesAndTags:
+  - tls
+  - ssl
+  - securite
+  - algorithmie
+  - protocoles
+permalink: /fr/comprendre-ssl-tls-partie-5-record-protocol/
 ---
 
 # Record protocol

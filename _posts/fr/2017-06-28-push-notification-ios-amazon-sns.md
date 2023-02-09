@@ -1,25 +1,20 @@
 ---
 layout: post
-title: "Envoyer des push notifications via Amazon SNS en Swift 3"
-excerpt: "Envoyer des push notifications via Amazon SNS en Swift 3"
 lang: fr
-permalink: /fr/envoyer-push-notifications-amazon-sns-swift-3/
+date: '2017-06-28'
+categories: []
 authors:
   - ibenichou
-date: '2017-06-28 12:00:00 +0100'
-date_gmt: '2017-06-28 12:00:00 +0100'
-categories:
-    - swift
-    - Mobile
-tags:
-    - swift
-    - xcode
-    - push
-    - aws
-image:
-    path: /assets/2017-06-28-push-notification-ios-amazon-sns/banniere-article-ilan.png
-    height: 100
-    width: 100
+excerpt: Envoyer des push notifications via Amazon SNS en Swift 3
+title: Envoyer des push notifications via Amazon SNS en Swift 3
+slug: envoyer-push-notifications-amazon-sns-swift-3
+oldCategoriesAndTags:
+  - swift
+  - mobile
+  - xcode
+  - push
+  - aws
+permalink: /fr/envoyer-push-notifications-amazon-sns-swift-3/
 ---
 
 Aujourd’hui, nous allons nous intéresser aux push notifications sur iOS à partir d’Amazon SNS en swift 3.

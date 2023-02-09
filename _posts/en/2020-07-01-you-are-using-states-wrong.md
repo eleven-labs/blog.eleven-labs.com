@@ -1,26 +1,22 @@
 ---
 layout: post
-title: "You are using React states wrong"
 lang: en
-excerpt: "You may not be using the React states optimally and I'll explain why"
-authors:
-    - marishka
-permalink: /you-are-using-react-states-wrong/
+date: '2020-07-01'
 categories:
-    - javascript
-    - react
-tags:
-    - javascript
-    - react
-    - images
-    - state
-    - reducer
-    - best practice
-image:
-    path: /assets/2020-05-20-vous-utilisez-mal-les-states/bien-pas-bien.gif
-    height: 295
-    width: 775
-
+  - javascript
+authors:
+  - marishka
+excerpt: You may not be using the React states optimally and I'll explain why
+title: You are using React states wrong
+slug: you-are-using-react-states-wrong
+oldCategoriesAndTags:
+  - javascript
+  - react
+  - images
+  - state
+  - reducer
+  - best practice
+permalink: /en/you-are-using-react-states-wrong/
 ---
 
 Behind this seductive-looking title hides an observation that I have been making more and more. Let's put things into context:

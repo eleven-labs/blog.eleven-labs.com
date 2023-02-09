@@ -1,32 +1,31 @@
 ---
 layout: post
-title: >
-    Les meilleurs outils du développeur en Js/React en 2020
-excerpt: >
-    Laissez-moi vous présenter quelques outils très pratiques, qui amélioreront grandement votre vie de développeur Js/React
 lang: fr
-authors:
-    - kcordier
-permalink: /fr/meilleurs-outils-js-2020/
+date: '2020-09-30'
 categories:
-    - javascript
-tags:
-    - javascript
-    - react
-    - UX
-    - Outils
-    - Aide
-    - docker
-    - chrome
-    - NPM
-    - storybook
-    - Bit
-    - BrowserStack
-    - graphql
-image:
-    path: /assets/2020-09-30-meilleurs-outils-js-2020/header.jpg
-    height: 295
-    width: 775
+  - javascript
+authors:
+  - kcordier
+excerpt: >
+  Laissez-moi vous présenter quelques outils très pratiques, qui amélioreront
+  grandement votre vie de développeur Js/React
+title: |
+  Les meilleurs outils du développeur en Js/React en 2020
+slug: meilleurs-outils-js-2020
+oldCategoriesAndTags:
+  - javascript
+  - react
+  - ux
+  - outils
+  - aide
+  - docker
+  - chrome
+  - npm
+  - storybook
+  - bit
+  - browserstack
+  - graphql
+permalink: /fr/meilleurs-outils-js-2020/
 ---
 
 Que serait Batman sans ses Bat-gadgets ? Toujours un détective de génie et un combattant redoutable… mauvais exemple...

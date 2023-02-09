@@ -1,13 +1,20 @@
 ---
 layout: post
-title: Et si on passait à Github Actions ?
-excerpt: On parle souvent de Gitlab CI ou Drone CI, mais qu'en est-il de Github Actions ? Petit retour sur ce qu'on peut faire avec et comment l'utiliser.
-authors:
-- larcheops
 lang: fr
-permalink: /fr/et-si-on-passait-a-github-actions/
+date: '2022-01-13'
 categories:
+  - architecture
+authors:
+  - larcheops
+excerpt: >-
+  On parle souvent de Gitlab CI ou Drone CI, mais qu'en est-il de Github Actions
+  ? Petit retour sur ce qu'on peut faire avec et comment l'utiliser.
+title: Et si on passait à Github Actions ?
+slug: et-si-on-passait-a-github-actions
+oldCategoriesAndTags:
+  - architecture
   - devops
+permalink: /fr/et-si-on-passait-a-github-actions/
 ---
 {% raw %}
 Pendant presque une décennie, Gitlab a su s'imposer comme forge logicielle, notamment grâce à sa CI _(ou Continuous Integration)_ performante, flexible et facile d'utilisation. Cependant, en fin d'année 2019, Github a lancé sa propre CI/CD avec une intégration unique à la plateforme : les _Github Actions_.

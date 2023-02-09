@@ -1,18 +1,21 @@
 ---
 layout: post
-title: Recevez nos push notifications
 lang: fr
-permalink: /fr/push-notification/
-excerpt: "Notre retour d'expérience sur la mise en place des push notifications"
-authors:
-    - captainjojo
+date: '2017-12-19'
 categories:
-    - google
-    - firebase
-    - notification
-tags:
-    - javascript
+  - javascript
+authors:
+  - captainjojo
 cover: /assets/2017-12-19-push-notification/cover.jpg
+excerpt: Notre retour d'expérience sur la mise en place des push notifications
+title: Recevez nos push notifications
+slug: push-notification
+oldCategoriesAndTags:
+  - javascript
+  - google
+  - firebase
+  - notification
+permalink: /fr/push-notification/
 ---
 
 Parce que nous voulons toujours améliorer notre blog, et parce que ce dernier est la vitrine de notre expertise technique, aujourd'hui nous avons mis en place les notifications.

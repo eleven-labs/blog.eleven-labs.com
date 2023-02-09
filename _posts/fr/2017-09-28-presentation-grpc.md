@@ -1,14 +1,19 @@
 ---
 layout: post
-title: Présentation de gRPC
-authors:
-    - qneyrat
 lang: fr
+date: '2017-09-28'
+categories: []
+authors:
+  - qneyrat
+excerpt: >-
+  gRPC a été développé initialement par Google puis rendu open source. Il permet
+  de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ses
+  nouveautés.
+title: Présentation de gRPC
+slug: presentation-grpc
+oldCategoriesAndTags:
+  - bonnes pratiques
 permalink: /fr/presentation-grpc/
-excerpt: "gRPC a été développé initialement par Google puis rendu open source. Il permet de réaliser des clients et serveurs rpc via HTTP/2 et donc de profiter de ses nouveautés."
-categories:
-    - Bonnes pratiques
-    
 ---
 
 Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/){:rel="nofollow noreferrer"} si ce n'est pas déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et communiquent via HTTP.

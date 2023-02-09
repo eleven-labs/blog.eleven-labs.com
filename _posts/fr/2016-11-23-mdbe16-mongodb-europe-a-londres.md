@@ -1,19 +1,22 @@
 ---
 layout: post
-title: "#MDBE16 - MongoDB Europe à Londres"
-authors:
-    - pouzor
-date: '2016-11-23 14:54:12 +0100'
-date_gmt: '2016-11-23 13:54:12 +0100'
 lang: fr
+date: '2016-11-23'
+categories: []
+authors:
+  - pouzor
+excerpt: >-
+  Cette Année, j'ai eu l'occasion de participer à l’événement MongoDB Europe qui
+  s'est déroulé à Londres le 15 Novembre dernier. Voici un retour non exhaustif
+  sur les tracks et les annonces intéressantes de la journée !
+title: '#MDBE16 - MongoDB Europe à Londres'
+slug: mdbe16-mongodb-europe-a-londres
+oldCategoriesAndTags:
+  - mongodb
+  - mongodays
+  - '#mdbe16'
+  - conference
 permalink: /fr/mdbe16-mongodb-europe-a-londres/
-categories:
-    - MongoDB
-tags:
-    - mongodb
-    - mongodays
-    - "#MDBE16"
-    - conference
 ---
 
 

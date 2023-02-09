@@ -3,5 +3,6 @@ layout: author
 login: martincadoux
 title: Martin Cadoux
 twitter: MartinCadoux
-permalink: /authors/MartinCadoux/
+permalink: /authors/martincadoux/
 ---
+

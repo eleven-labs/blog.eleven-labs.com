@@ -1,18 +1,20 @@
 ---
 layout: post
-title: AMP le futur du web ?
-authors:
-    - captainjojo
 lang: fr
-permalink: /fr/amp-le-futur-du-web/
-excerpt: Google, leader incontesté des services web (recherche, pub, analytics...), propose depuis plus d'un an une nouvelle façon d'afficher vos pages, désignée sous le nom AMP project
+date: '2017-05-29'
 categories:
-    - javascript
-tags:
-    - tutoriel
-    - cache
-    - javascript
-    - web
+  - javascript
+authors:
+  - captainjojo
+excerpt: "Google, leader incontesté des services\_web (recherche, pub, analytics...), propose depuis plus d'un an une nouvelle façon d'afficher vos pages, désignée sous le nom AMP project"
+title: AMP le futur du web ?
+slug: amp-le-futur-du-web
+oldCategoriesAndTags:
+  - javascript
+  - tutoriel
+  - cache
+  - web
+permalink: /fr/amp-le-futur-du-web/
 ---
 Google, leader incontesté des services web (recherche, pub, analytics...), propose depuis plus d'un an une nouvelle façon d'afficher vos pages, désignée sous le nom [AMP](https://www.ampproject.org/){:rel="nofollow noreferrer"} project.
 

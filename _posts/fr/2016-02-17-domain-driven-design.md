@@ -1,18 +1,25 @@
 ---
 layout: post
-title: Introduction Galactique au Domain Driven Design
-authors:
-    - rpierlot
 lang: fr
-permalink: /fr/domain-driven-design/
-date: '2016-02-17 15:23:36 +0100'
-date_gmt: '2016-02-17 14:23:36 +0100'
+date: '2016-02-17'
 categories:
-    - Non classé
-tags:
-    - php
-    - architecture
-    - DDD
+  - php
+  - architecture
+authors:
+  - rpierlot
+excerpt: >-
+  Le Domain Driven Design, décrit dans le livre d’Eric Evans “_Domain Driven
+  Design, Tackling Complexity in the Heart of Software_”, permet de mieux
+  appréhender la complexité d’un projet en partageant une approche et un langage
+  communs par tous les membres impliqués dans la construction d’une application.
+title: Introduction Galactique au Domain Driven Design
+slug: domain-driven-design
+oldCategoriesAndTags:
+  - php
+  - architecture
+  - non classé
+  - ddd
+permalink: /fr/domain-driven-design/
 ---
 Le Domain Driven Design, décrit dans le livre d’Eric Evans “_Domain Driven Design, Tackling Complexity in the Heart of Software_”, permet de mieux appréhender la complexité d’un projet en partageant une approche et un langage communs par tous les membres impliqués dans la construction d’une application.
 

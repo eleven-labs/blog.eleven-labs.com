@@ -1,19 +1,21 @@
 ---
 layout: post
-title: 'Behat: structure your functional tests'
 lang: en
-permalink: /behat-structure-functional-tests/
-authors:
-    - vcomposieux
-date: '2016-07-19 14:15:31 +0200'
-date_gmt: '2016-07-19 12:15:31 +0200'
+date: '2016-07-19'
 categories:
-    - symfony
-    - php
-tags:
-    - symfony
-    - php
-    - behat
+  - php
+authors:
+  - vcomposieux
+excerpt: >-
+  In order to ensure that your application is running well, it's important to
+  write functional tests.
+title: 'Behat: structure your functional tests'
+slug: behat-structure-functional-tests
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - behat
+permalink: /en/behat-structure-functional-tests/
 ---
 In order to ensure that your application is running well, it's important to write functional tests.
 

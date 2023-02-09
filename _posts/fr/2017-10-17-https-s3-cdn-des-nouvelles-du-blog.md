@@ -1,20 +1,25 @@
 ---
 layout: post
-title: >
-    HTTPS, S3, CDN: des nouvelles du blog
-excerpt: De Github Pages à Amazon Web Services, cet article est un retour d'expérience/tutorial de notre changement d'hébergement pour le blog.
 lang: fr
-authors:
-    - VEBERArnaud
-permalink: /fr/https-s3-cdn-des-nouvelles-du-blog/
+date: '2017-10-17'
 categories:
-    - blog
-    - devops
-tags:
-    - blog
-    - aws
-    - github
+  - architecture
+authors:
+  - VEBERArnaud
 cover: /assets/2017-10-17-https-s3-cdn-des-nouvelles-du-blog/cover.jpg
+excerpt: >-
+  De Github Pages à Amazon Web Services, cet article est un retour
+  d'expérience/tutorial de notre changement d'hébergement pour le blog.
+title: |
+  HTTPS, S3, CDN: des nouvelles du blog
+slug: https-s3-cdn-des-nouvelles-du-blog
+oldCategoriesAndTags:
+  - architecture
+  - blog
+  - devops
+  - aws
+  - github
+permalink: /fr/https-s3-cdn-des-nouvelles-du-blog/
 ---
 
 En Juillet dernier nous vous annoncions la

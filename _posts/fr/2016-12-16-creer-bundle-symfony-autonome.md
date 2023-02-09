@@ -1,18 +1,21 @@
 ---
 layout: post
-title: Créer un bundle Symfony autonome
-excerpt: Dans ce post nous allons voir step-by-step comment créer de zéro un bundle symfony autonome.
-authors:
-    - VEBERArnaud
 lang: fr
-permalink: /fr/creer-bundle-symfony-autonome/
+date: '2016-12-16'
 categories:
-    - php
-    - symfony
-tags:
-    - php
-    - symfony
-    - tutorial
+  - php
+authors:
+  - VEBERArnaud
+excerpt: >-
+  Dans ce post nous allons voir step-by-step comment créer de zéro un bundle
+  symfony autonome.
+title: Créer un bundle Symfony autonome
+slug: creer-bundle-symfony-autonome
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - tutorial
+permalink: /fr/creer-bundle-symfony-autonome/
 ---
 Dans ce post nous allons voir step-by-step comment créer de zéro un bundle symfony autonome.
 Ce bundle n'aura aucune responsabilité fonctionnelle, il servira simplement à dérouler les étapes de création d'un

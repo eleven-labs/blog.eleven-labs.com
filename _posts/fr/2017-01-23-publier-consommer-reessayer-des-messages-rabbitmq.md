@@ -1,17 +1,21 @@
 ---
 layout: post
-title: Publier, consommer, et réessayer des messages RabbitMQ
-authors:
-    - rpierlot
 lang: fr
-permalink: /fr/publier-consommer-reessayer-des-messages-rabbitmq/
-date: '2017-01-23 12:01:55 +0100'
-date_gmt: '2017-01-23 11:01:55 +0100'
+date: '2017-01-23'
 categories:
-    - symfony
-    - php
-tags:
-    - rabbitmq
+  - php
+authors:
+  - rpierlot
+excerpt: >-
+  ![Swarrot
+  Logo](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
+title: 'Publier, consommer, et réessayer des messages RabbitMQ'
+slug: publier-consommer-reessayer-des-messages-rabbitmq
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - rabbitmq
+permalink: /fr/publier-consommer-reessayer-des-messages-rabbitmq/
 ---
 
 ![Swarrot Logo](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)

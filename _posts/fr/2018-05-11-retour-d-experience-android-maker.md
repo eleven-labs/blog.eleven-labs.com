@@ -1,20 +1,21 @@
 ---
 layout: post
-title: Retour d'Expérience Android Maker 2018
 lang: fr
-permalink: /fr/retour-d-experience-android-maker/
-excerpt: "Cette année a eu lieu la deuxième édition de l'Android Maker. Avec l'astronaute Omar, nous vous proposons un petit retour sur ce qu'on y a vu !"
+date: '2018-05-11'
+categories: []
 authors:
-    - babas
-categories:
-    - android
-    - Kotlin
-    - android Maker
-tags:
-    - android
-    - Kotlin
-    - android Maker
+  - babas
 cover: /img/covers/StockSnap_1S8SVUVUNU.jpg
+excerpt: >-
+  Cette année a eu lieu la deuxième édition de l'Android Maker. Avec
+  l'astronaute Omar, nous vous proposons un petit retour sur ce qu'on y a vu !
+title: Retour d'Expérience Android Maker 2018
+slug: retour-d-experience-android-maker
+oldCategoriesAndTags:
+  - android
+  - kotlin
+  - android maker
+permalink: /fr/retour-d-experience-android-maker/
 ---
 
 Du 23 au 24 Avril 2018 s'est déroulée la deuxième édition de l'Android Maker à Montrouge.

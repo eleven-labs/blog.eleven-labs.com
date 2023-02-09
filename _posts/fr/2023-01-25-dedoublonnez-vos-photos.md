@@ -1,14 +1,19 @@
 ---
 layout: post
-title: Dédoublonnez vos photos
-excerpt: Comme moi vous avez sur vos disques dur des copies, de copie, de copie de photos et vous souhaiteriez faire un peu de ménage ? C'est par ici.
-authors:
-  - jmoati
 lang: fr
-permalink: /fr/dedoublonnez-vos-photos/
+date: '2023-01-25'
 categories:
   - php
-
+authors:
+  - jmoati
+excerpt: >-
+  Comme moi vous avez sur vos disques dur des copies, de copie, de copie de
+  photos et vous souhaiteriez faire un peu de ménage ? C'est par ici.
+title: Dédoublonnez vos photos
+slug: dedoublonnez-vos-photos
+oldCategoriesAndTags:
+  - php
+permalink: /fr/dedoublonnez-vos-photos/
 ---
 
 ![Cover]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/cover.jpg)

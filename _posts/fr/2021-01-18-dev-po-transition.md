@@ -1,19 +1,26 @@
 ---
 layout: post
-title: De développeur à product owner, mes conseils pour une transition en terrain connu
-excerpt: Je suis développeur, je souhaite devenir product owner, comment réussir ma transition ?
+lang: fr
+date: '2021-01-18'
+categories: []
 authors:
-    - rcourbo
-permalink: /fr/de-developpeur-a-product-owner-mes-conseils-pour-une-transition-en-terrain-connu/
-categories:
-    - metier
-    - product owner
-tags:
-    - développement
-    - product owner
-    - soft skills
-    - rex
-cover: 
+  - rcourbo
+excerpt: >-
+  Je suis développeur, je souhaite devenir product owner, comment réussir ma
+  transition ?
+title: >-
+  De développeur à product owner, mes conseils pour une transition en terrain
+  connu
+slug: >-
+  de-developpeur-a-product-owner-mes-conseils-pour-une-transition-en-terrain-connu
+oldCategoriesAndTags:
+  - metier
+  - product owner
+  - développement
+  - soft skills
+  - rex
+permalink: >-
+  /fr/de-developpeur-a-product-owner-mes-conseils-pour-une-transition-en-terrain-connu/
 ---
 
 Chers développeurs, vous trouvez le métier de PO (product owner) plutôt cool ? Vous vous dites : “est-ce que c’est fait pour moi ? Mais comment faire ?”

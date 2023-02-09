@@ -1,8 +1,8 @@
 ---
 layout: author
 login: ygherbi
-github: YAMIN350
 title: Yamin Gherbi
+github: YAMIN350
 permalink: /authors/ygherbi/
 ---
 

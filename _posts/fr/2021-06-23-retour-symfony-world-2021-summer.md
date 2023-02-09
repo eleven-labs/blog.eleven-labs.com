@@ -1,18 +1,24 @@
 ---
 layout: post
-title: Retour sur la conférence SymfonyWorld Online 2021 Summer Edition
-excerpt: La semaine dernière se tenait la conférence SymfonyWorld Online 2021 Summer Edition et j'y ai assisté. Voici un récapitulatif de l'événement !
-authors:
-    - marishka
-permalink: /fr/symfony-world-2021-summer-edition/
+lang: fr
+date: '2021-06-23'
 categories:
-    - conference
-    - symfony
-tags:
-    - Symfony
-    - Conférence
-    - Veille
+  - php
+authors:
+  - marishka
 cover: /assets/2021-06-23-symfony-world/logo.png
+excerpt: >-
+  La semaine dernière se tenait la conférence SymfonyWorld Online 2021 Summer
+  Edition et j'y ai assisté. Voici un récapitulatif de l'événement !
+title: Retour sur la conférence SymfonyWorld Online 2021 Summer Edition
+slug: symfony-world-2021-summer-edition
+oldCategoriesAndTags:
+  - php
+  - conference
+  - symfony
+  - conférence
+  - veille
+permalink: /fr/symfony-world-2021-summer-edition/
 ---
 
 La semaine dernière se tenait la conférence SymfonyWorld Online 2021 Summer Edition et j'y ai assisté. Je vais partager avec vous dans cet article le Best of des conférences de l'événement selon moi.

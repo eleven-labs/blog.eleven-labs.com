@@ -1,17 +1,22 @@
 ---
 layout: post
-title: "Les bases de l’agilité avec Maître Splinter"
 lang: fr
-permalink: /fr/les-bases-de-l-agilite-avec-maitre-splinter/
-excerpt: "Vous entendez parler partout d'agilité mais vous ne comprenez pas vraiment de quoi il retourne ? Les rumeurs courent en effet autant que le gruyère sur les pizzas des tortues ninja. Avec l'aide du sage et avisé Maître Splinter, démêlons le vrai du faux et revenons aux bases de l'agile-jutsu."
-authors:
-    - mae
+date: '2019-07-17'
 categories:
-    - agile
-tags:
-    - agile
-    - organisation
-
+  - agile
+authors:
+  - mae
+excerpt: >-
+  Vous entendez parler partout d'agilité mais vous ne comprenez pas vraiment de
+  quoi il retourne ? Les rumeurs courent en effet autant que le gruyère sur les
+  pizzas des tortues ninja. Avec l'aide du sage et avisé Maître Splinter,
+  démêlons le vrai du faux et revenons aux bases de l'agile-jutsu.
+title: Les bases de l’agilité avec Maître Splinter
+slug: les-bases-de-l-agilite-avec-maitre-splinter
+oldCategoriesAndTags:
+  - agile
+  - organisation
+permalink: /fr/les-bases-de-l-agilite-avec-maitre-splinter/
 ---
 
 

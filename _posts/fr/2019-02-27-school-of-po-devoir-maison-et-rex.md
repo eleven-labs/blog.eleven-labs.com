@@ -1,18 +1,23 @@
 ---
 layout: post
-title: "School of PO 2019 : devoir maison et retour d'expérience"
 lang: fr
-permalink: /fr/school-of-po-devoir-maison-et-retour-dexperience/
-excerpt: AstroPO, AstroDev, ou tout simplement AstroPassionnés par l’agilité se sont donné rendez-vous sur les bancs de l'école mercredi 13 janvier pour assister à la School of PO !
-authors:
-    - mae
+date: '2019-02-27'
 categories:
-    - agile
-tags:
-    - po
-    - agile
-    - rex
+  - agile
+authors:
+  - mae
 cover: /assets/2019-02-27-school-of-po-devoir-maison-et-rex/school-of-po-cover.jpg
+excerpt: >-
+  AstroPO, AstroDev, ou tout simplement AstroPassionnés par l’agilité se sont
+  donné rendez-vous sur les bancs de l'école mercredi 13 janvier pour assister à
+  la School of PO !
+title: 'School of PO 2019 : devoir maison et retour d''expérience'
+slug: school-of-po-devoir-maison-et-retour-dexperience
+oldCategoriesAndTags:
+  - agile
+  - po
+  - rex
+permalink: /fr/school-of-po-devoir-maison-et-retour-dexperience/
 ---
 
 AstroPO, AstroDev, ou tout simplement AstroPassionnés par l’agilité se sont donné rendez-vous sur les bancs de l'école ce mercredi 13 janvier pour assister à la School of PO !

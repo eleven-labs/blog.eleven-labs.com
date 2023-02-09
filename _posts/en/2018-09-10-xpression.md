@@ -1,36 +1,31 @@
 ---
 layout: post
-title: "Presentation of the PHP library Xpression"
 lang: en
-permalink: /presentation-php-xpression/
-excerpt: "As developers, all of us already had to filter dataset (array, collection, API, etc...). Let's focus on the Xpression library, wich allows us to filter different content sources with a simplified query syntax."
-authors:
-    - amoutte
+date: '2018-09-10'
 categories:
-    - php
-    - library
-    - symfony
-    - query
-    - filter
-    - querybuilder
-    - doctrine
-    - orm
-    - odm
-    - expression
-    - collection
-tags:
-    - php
-    - library
-    - symfony
-    - query
-    - filter
-    - doctrine
-    - querybuilder
-    - orm
-    - odm
-    - expression
-    - collection
+  - php
+authors:
+  - amoutte
 cover: /assets/2018-07-11-xpression/cover.jpg
+excerpt: >-
+  As developers, all of us already had to filter dataset (array, collection,
+  API, etc...). Let's focus on the Xpression library, wich allows us to filter
+  different content sources with a simplified query syntax.
+title: Presentation of the PHP library Xpression
+slug: presentation-php-xpression
+oldCategoriesAndTags:
+  - php
+  - library
+  - symfony
+  - query
+  - filter
+  - querybuilder
+  - doctrine
+  - orm
+  - odm
+  - expression
+  - collection
+permalink: /en/presentation-php-xpression/
 ---
 
 ## Presentation of Xpression

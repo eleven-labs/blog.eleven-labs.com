@@ -1,16 +1,21 @@
 ---
 layout: post
-title: "Domain anemia"
-excerpt: Are you suffering from domain anemia? Let's look at what an anemic domain model is and how things can change.
-authors:
-    - rpierlot
 lang: en
-permalink: /domain-anemia/
+date: '2020-10-13'
 categories:
-    - Non classé
-tags:
-    - php
+  - php
+authors:
+  - rpierlot
 cover: /assets/2020-10-13-anemic-domain-model/cover.jpg
+excerpt: >-
+  Are you suffering from domain anemia? Let's look at what an anemic domain
+  model is and how things can change.
+title: Domain anemia
+slug: domain-anemia
+oldCategoriesAndTags:
+  - php
+  - non classé
+permalink: /en/domain-anemia/
 ---
 
 Today I’d like to talk about something that we see quite often in applications: anemic domains.

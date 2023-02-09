@@ -1,16 +1,18 @@
 ---
 layout: post
-title: Créer un Web Component
-excerpt: Dans cet article, nous allons apprendre à créer un Web Component
-authors:
-    - aallier
 lang: fr
-permalink: /fr/creer-un-webcomponent/
+date: '2020-07-15'
 categories:
-    - javascript
-tags:
-    - javascript
-    - web
+  - javascript
+authors:
+  - aallier
+excerpt: 'Dans cet article, nous allons apprendre à créer un Web Component'
+title: Créer un Web Component
+slug: creer-un-webcomponent
+oldCategoriesAndTags:
+  - javascript
+  - web
+permalink: /fr/creer-un-webcomponent/
 ---
 
 Les normes liées au web ont beaucoup évolué depuis une dizaine d’années, le cap de l’HTML5 CSS3 a été difficile mais a ouvert la porte à de plus en plus de fonctionnalités.

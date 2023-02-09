@@ -1,18 +1,20 @@
 ---
 layout: post
-title: generator-gulp-angular 1.0.0 stable released
 lang: fr
-permalink: /fr/generator-gulp-angular-1-0-0-stable-released/
-authors:
-    - mehdy
-date: '2015-10-16 11:07:54 +0200'
-date_gmt: '2015-10-16 09:07:54 +0200'
+date: '2015-10-16'
 categories:
-    - javascript
-tags:
-    - angular
-    - Yeoman
-    - Gulp
+  - javascript
+authors:
+  - mehdy
+excerpt: Intro
+title: generator-gulp-angular 1.0.0 stable released
+slug: generator-gulp-angular-1-0-0-stable-released
+oldCategoriesAndTags:
+  - javascript
+  - angular
+  - yeoman
+  - gulp
+permalink: /fr/generator-gulp-angular-1-0-0-stable-released/
 ---
 
 Intro

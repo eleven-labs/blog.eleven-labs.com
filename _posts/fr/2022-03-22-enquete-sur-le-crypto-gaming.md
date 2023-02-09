@@ -1,15 +1,18 @@
 ---
 layout: post
-title: "Enquête sur le crypto-gaming"
-excerpt: "Jeux vidéo, crypto, blockchain et NFT : au coeur du nouveau business."
+lang: fr
+date: '2022-03-22'
+categories: []
 authors:
-    - marianne
-permalink: /fr/enquete-sur-le-crypto-gaming/
-categories:
-    - crypto-gaming
-    - blockchain
-
+  - marianne
 cover: /assets/2022-03-16-enquete-sur-le-crypto-gaming/enquete-crypto.png
+excerpt: 'Jeux vidéo, crypto, blockchain et NFT : au coeur du nouveau business.'
+title: Enquête sur le crypto-gaming
+slug: enquete-sur-le-crypto-gaming
+oldCategoriesAndTags:
+  - crypto-gaming
+  - blockchain
+permalink: /fr/enquete-sur-le-crypto-gaming/
 ---
 
 ## Introduction

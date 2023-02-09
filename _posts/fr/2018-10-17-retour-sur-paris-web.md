@@ -1,17 +1,18 @@
 ---
 layout: post
-title: "Mission Paris Web 2018 : compte-rendu de trois astronautes"
-excerpt: "Mission Paris Web 2018 : compte-rendu de trois astronautes"
-authors:
-    - seinhorn
-    - martincadoux
 lang: fr
-permalink: /fr/compte-rendu-paris-web/
-categories:
-    - conference
-tags:
-    - conference
+date: '2018-10-17'
+categories: []
+authors:
+  - seinhorn
+  - martincadoux
 cover: /assets/2018-10-16-retour-sur-paris-web/cover.jpg
+excerpt: 'Mission Paris Web 2018 : compte-rendu de trois astronautes'
+title: 'Mission Paris Web 2018 : compte-rendu de trois astronautes'
+slug: compte-rendu-paris-web
+oldCategoriesAndTags:
+  - conference
+permalink: /fr/compte-rendu-paris-web/
 ---
 
 ## Introduction

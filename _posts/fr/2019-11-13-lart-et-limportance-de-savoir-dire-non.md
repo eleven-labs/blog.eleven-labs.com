@@ -1,20 +1,27 @@
 ---
 layout: post
-title: "L'art et l'importance de savoir dire non"
 lang: fr
-permalink: /fr/lart-et-limportance-de-savoir-dire-non/
-excerpt: >-
-    On parle tout le temps de Product Managers "apporteurs de solutions" (ou "problem solvers" en anglais) qui sont là avant tout pour résoudre des problèmes et faire avancer les choses. Le souci c'est qu'on a beaucoup trop tendance, à assimiler ce trait à la capacité de la personne à dire oui plutôt que NON. Un bon Product Manager doit savoir dire NON quand il le faut, et de la bonne manière.
-authors:
-    - pbrenot
+date: '2019-11-13'
 categories:
-    - agile
-    - communication
-    - product management
-tags:
-    - agile
-    - organisation
-    - soft skills
+  - agile
+authors:
+  - pbrenot
+excerpt: >-
+  On parle tout le temps de Product Managers "apporteurs de solutions" (ou
+  "problem solvers" en anglais) qui sont là avant tout pour résoudre des
+  problèmes et faire avancer les choses. Le souci c'est qu'on a beaucoup trop
+  tendance, à assimiler ce trait à la capacité de la personne à dire oui plutôt
+  que NON. Un bon Product Manager doit savoir dire NON quand il le faut, et de
+  la bonne manière.
+title: L'art et l'importance de savoir dire non
+slug: lart-et-limportance-de-savoir-dire-non
+oldCategoriesAndTags:
+  - agile
+  - communication
+  - product management
+  - organisation
+  - soft skills
+permalink: /fr/lart-et-limportance-de-savoir-dire-non/
 ---
 
 On parle tout le temps de Product Managers "apporteurs de solutions" (ou "problem solvers" en anglais) qui sont là avant tout pour résoudre des problèmes et faire avancer les choses. Le souci c'est qu'on a beaucoup trop tendance, à assimiler ce trait à la capacité de la personne à dire oui plutôt que NON. Un bon Product Manager doit savoir dire NON quand il le faut, et de la bonne manière.
