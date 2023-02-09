@@ -10,7 +10,7 @@ categories:
 
 ---
 
-## Qu'est ce qu'un monolithe ?
+## Qu'est-ce qu'un monolithe ?
 
 Ces dernières années, l'architecture de microservices est devenue un moyen de plus en plus populaire pour les organisations de créer et de déployer des applications logicielles. Contrairement à une architecture monolithique, dans laquelle tous les composants d'une application sont regroupés et déployés comme une seule unité, une architecture de microservices consiste en un ensemble de petits services indépendants qui peuvent être développés, testés et déployés indépendamment les uns des autres.
 
@@ -38,16 +38,16 @@ Identification du **périmètre** de chaque microservice : l'une des étapes les
 
 Gestion des **dépendances** : un autre défi de la migration vers les microservices est la gestion des dépendances entre les services. Cela peut être particulièrement difficile lorsque vous travaillez avec une base de code volumineuse et complexe, car il peut être difficile d'identifier toutes les dépendances entre les différents composants.
 
-**L'hétérogénéïté** du code : parfois une migration vers une architecture microservices s'accompagne par l'introduction des nouvelles technologies ou versions de dépendances utilisées. Cela peut se traduire par une hérérogénéïté des process et outils qu'il faut savoir gérer au quotidien.
+**L'hétérogénéité** du code : parfois une migration vers une architecture microservices s'accompagne par l'introduction des nouvelles technologies ou versions de dépendances utilisées. Cela peut se traduire par une hérérogénéité des process et outils qu'il faut savoir gérer au quotidien.
 
-**La compléxification de la stack technique** : la migration vers une architecture microservices va nécessiter d'introduire  de nouvelles technologies pour faire communiquer les services entre eux. Cela va donc rajouter de la compléxité à la stack technique et nécessiter une montée en compétences de la part de l'équipe de développement.
+**La complexification de la stack technique** : la migration vers une architecture microservices va nécessiter d'introduire  de nouvelles technologies pour faire communiquer les services entre eux. Cela va donc rajouter de la complexité à la stack technique et nécessiter une montée en compétences de la part de l'équipe de développement.
 
 ## Étapes de la migration vers les microservices
 
 Alors, comment procédez-vous pour migrer d'un monolithe vers des microservices ? Voici les étapes clés à suivre.
 
 1. **Identifiez le périmètre fonctionnel** pour chaque microservice : comme mentionné ci-dessus, il s'agit de la première et de la plus importante étape du processus. Utilisez des outils tels que l'analyse des dépendances pour identifier les composants du monolithe candidats à la migration vers les microservices.
-2. **Extraire la base de code** : une fois la première étape terminée, il sera nécessaire d'extraire la base de code pour séparer les composants pertinents dans leurs propres services. Cela peut impliquer de diviser la base de code monolithique en éléments plus petits et plus modulaires, et peut également nécessiter des modifications du modèle de données et du schéma de base de données de l'application. Qu'il s'agisse d'une réécriture complète (refactorisation) ou d'une simple extraction du code, le monolith devra être adapté pour communiquer avec le nouveau service.
+2. **Extraire la base de code** : une fois la première étape terminée, il sera nécessaire d'extraire la base de code pour séparer les composants pertinents dans leurs propres services. Cela peut impliquer de diviser la base de code monolithique en éléments plus petits et plus modulaires, et peut également nécessiter des modifications du modèle de données et du schéma de base de données de l'application. Qu'il s'agisse d'une réécriture complète (refactorisation) ou d'une simple extraction du code, le monolithe devra être adapté pour communiquer avec le nouveau service.
 3. **Déployer les microservices** : une fois la base de code refactorisée, l'étape suivante consiste à déployer les microservices. Cela peut impliquer le déploiement des services sur différents serveurs ou conteneurs, et peut également nécessiter des modifications de l'infrastructure de l'application, telles que des load balancers ou des outils de découverte de services.
 4. **Tester et surveiller** les microservices : une fois les microservices déployés, il est important de les tester minutieusement pour s'assurer qu'ils fonctionnent correctement et qu'ils répondent aux normes de performance et de fiabilité requises. Il est également important de mettre en place des outils de surveillance et d'alerte pour s'assurer que les microservices peuvent être gérés rapidement et efficacement en production.
 
