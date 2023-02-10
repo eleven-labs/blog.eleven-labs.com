@@ -1,6 +1,6 @@
 ---
 layout: post
-title: D'un monolithe vers une architecture microservices : les étapes pour y arriver
+title: "D'un monolithe vers une architecture microservices : les étapes pour y arriver"
 excerpt: Cet article va vous présenter les étapes pour passer d'un monolithe vers une architecture microservices.
 lang: fr
 authors:
