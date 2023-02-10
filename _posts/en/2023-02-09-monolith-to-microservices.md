@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Migrating from a Monolith to Microservices: A Step-by-Step Guide
+title: "Migrating from a Monolith to Microservices: A Step-by-Step Guide"
 excerpt: This article is a step-by-step guide on how to migrate from a Monolith to Microservices
 lang: fr
 authors:
