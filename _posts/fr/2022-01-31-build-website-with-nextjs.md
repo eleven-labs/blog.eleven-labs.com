@@ -1,13 +1,19 @@
 ---
 layout: post
-title: "Comment construire son site web avec NextJS ?"
-excerpt: Dans cet article, vous apprendrez les basiques de NextJS requis pour construire un site web !
-authors:
-    - aamara
-permalink: /fr/comment-construire-site-web-avec-nextjs/
+lang: fr
+date: '2022-01-31'
 categories:
-    - Javascript
-
+  - javascript
+authors:
+  - aamara
+excerpt: >-
+  Dans cet article, vous apprendrez les basiques de NextJS requis pour
+  construire un site web !
+title: Comment construire son site web avec NextJS ?
+slug: comment-construire-site-web-avec-nextjs
+oldCategoriesAndTags:
+  - javascript
+permalink: /fr/comment-construire-site-web-avec-nextjs/
 ---
 
 Ce post aborde les bases de NextJS. 

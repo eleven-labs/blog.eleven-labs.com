@@ -1,9 +1,18 @@
 ---
 layout: post
-title: REX, d'étudiant à developpeur web
-authors:
-    - HugoDurand
 lang: fr
+date: '2019-08-14'
+categories: []
+authors:
+  - HugoDurand
+excerpt: >-
+  Cet article, j’aurais personnellement aimé le lire quelques années plus tôt
+  quand je pensais que savoir écrire du code était le but ultime du développeur.
+  Et peut être qu’il rendra service à d’autres personnes qui sont actuellement
+  dans cette situation.
+title: 'REX, d''étudiant à developpeur web'
+slug: rex_d_etudiant_a_developpeur_web
+oldCategoriesAndTags: []
 permalink: /fr/rex_d_etudiant_a_developpeur_web/
 ---
 

@@ -1,22 +1,25 @@
 ---
 layout: post
-title: "HTTP/2 is not future. It's present."
 lang: en
-permalink: /http2-future-present/
-authors:
-    - vcomposieux
-date: '2017-04-12 12:00:00 +0100'
-date_gmt: '2017-04-12 12:00:00 +0100'
+date: '2017-04-12'
 categories:
-    - javascript
-    - Mobile
-    - php
-tags:
-    - compression
-    - header
-    - encryption
-    - protocol
-    - tls
+  - javascript
+  - php
+authors:
+  - vcomposieux
+excerpt: "Remember, in\_`may 1996`, the very first HTTP protocol version (HTTP/1.0) was born."
+title: HTTP/2 is not future. It's present.
+slug: http2-future-present
+oldCategoriesAndTags:
+  - javascript
+  - php
+  - mobile
+  - compression
+  - header
+  - encryption
+  - protocol
+  - tls
+permalink: /en/http2-future-present/
 ---
 Remember, in `may 1996`, the very first HTTP protocol version (HTTP/1.0) was born.
 This protocol is described as a [RFC 1945](https://tools.ietf.org/html/rfc1945){:rel="nofollow"}.

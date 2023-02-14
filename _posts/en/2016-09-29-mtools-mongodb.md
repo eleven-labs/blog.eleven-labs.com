@@ -1,16 +1,20 @@
 ---
 layout: post
-title: mTools - A must have for MongoDB
 lang: en
-permalink: /mtools-le-pour-mongodb/
+date: '2016-09-29'
+categories: []
 authors:
-    - rjardinet
-excerpt: "Maintain an application using MongoDB can be painful, especially when you either have a large amount of data, or a lot of writing operations. This is even more true if, as a developer, you don't have access to production servers, oftenly allowed to few."
-date: '2016-09-29 14:10:41 +0200'
-date_gmt: '2016-09-29 12:10:41 +0200'
-categories:
-    - Non classé
-tags: []
+  - pouzor
+excerpt: >-
+  Maintain an application using MongoDB can be painful, especially when you
+  either have a large amount of data, or a lot of writing operations. This is
+  even more true if, as a developer, you don't have access to production
+  servers, oftenly allowed to few.
+title: mTools - A must have for MongoDB
+slug: mtools-le-pour-mongodb
+oldCategoriesAndTags:
+  - non classé
+permalink: /en/mtools-le-pour-mongodb/
 ---
 
 Maintain an application using MongoDB can be painful, especially when you either have a large amount of data, or a lot of writing operations. This is even more true if, as a developer, you don't have access to production servers, oftenly allowed to few.

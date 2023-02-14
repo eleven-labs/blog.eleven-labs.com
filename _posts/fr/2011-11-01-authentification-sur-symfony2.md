@@ -1,20 +1,22 @@
 ---
 layout: post
-title: Authentification sur Symfony2
-excerpt: Nouveau tuto sur Symfony2, comme pour tous les sites nous avons souvent besoin de rendre une partie de ce dernier non visible pour le public. Pour cela, nous allons mettre en place le système d'authentification de Symfony.
-authors:
-    - captainjojo
 lang: fr
-permalink: /fr/authentification-sur-symfony2/
+date: '2011-11-01'
 categories:
-    - symfony
-tags:
-    - php
-    - symfony2
-image:
-  path: /assets/2011-10-23-mongodb-php/mongo_logo.png
-  height: 160
-  width: 160
+  - php
+authors:
+  - captainjojo
+excerpt: >-
+  Nouveau tuto sur Symfony2, comme pour tous les sites nous avons souvent besoin
+  de rendre une partie de ce dernier non visible pour le public. Pour cela, nous
+  allons mettre en place le système d'authentification de Symfony.
+title: Authentification sur Symfony2
+slug: authentification-sur-symfony2
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - symfony2
+permalink: /fr/authentification-sur-symfony2/
 ---
 
 Attention ce code date du début de Symfony2 un nouveau tuto est en cours

@@ -1,13 +1,19 @@
 ---
 layout: post
-title: Communication entre composants avec des événements personnalisés
-excerpt: Besoin de travailler avec différents Framework JS et donc de faire communiquer l'ensemble des composants d'une application ?
-authors:
-    - fpasquet
 lang: fr
-permalink: /fr/communication-entre-composants-avec-des-evenements-personnalises/
+date: '2022-02-09'
 categories:
-    - javascript
+  - javascript
+authors:
+  - fpasquet
+excerpt: >-
+  Besoin de travailler avec différents Framework JS et donc de faire communiquer
+  l'ensemble des composants d'une application ?
+title: Communication entre composants avec des événements personnalisés
+slug: communication-entre-composants-avec-des-evenements-personnalises
+oldCategoriesAndTags:
+  - javascript
+permalink: /fr/communication-entre-composants-avec-des-evenements-personnalises/
 ---
 
 Besoin de travailler avec différents Framework JS et donc de faire communiquer l'ensemble des composants d'une application ?

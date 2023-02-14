@@ -1,20 +1,22 @@
 ---
 layout: post
-title: "Write C as oriented programming language"
-authors:
-    - thuchon
 lang: en
-permalink: /c-oriented-programming-language/
-excerpt: "Let's write some C as an oriented programming language"
-categories:
-- Software
-tags:
-- C
-- procedural
-- OOP
-- structure
-- pointers
+date: '2020-02-12'
+categories: []
+authors:
+  - thuchon
 cover: /assets/2018-09-12-faire-du-c-oriente-objet/cover.jpg
+excerpt: Let's write some C as an oriented programming language
+title: Write C as oriented programming language
+slug: c-oriented-programming-language
+oldCategoriesAndTags:
+  - software
+  - c
+  - procedural
+  - oop
+  - structure
+  - pointers
+permalink: /en/c-oriented-programming-language/
 ---
 
 ## Introduction

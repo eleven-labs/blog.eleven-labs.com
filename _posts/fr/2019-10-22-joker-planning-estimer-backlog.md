@@ -1,18 +1,22 @@
 ---
 layout: post
-title: "Joker planning : estimer pour la première fois son product backlog"
 lang: fr
-permalink: /fr/joker-planning-estimer-pour-la-premiere-fois-son-product-backlog/
-excerpt: "Avec l'aide du mastermind de Gotham City, revenons sur la base de l’estimation, les meilleures stratégies à adopter et les pièges à éviter pour se lancer dans le développement de son produit !"
-authors:
-    - mae
+date: '2019-10-22'
 categories:
-    - agile
-tags:
-    - agile
-    - estimation
-    - planning
-
+  - agile
+authors:
+  - mae
+excerpt: >-
+  Avec l'aide du mastermind de Gotham City, revenons sur la base de
+  l’estimation, les meilleures stratégies à adopter et les pièges à éviter pour
+  se lancer dans le développement de son produit !
+title: 'Joker planning : estimer pour la première fois son product backlog'
+slug: joker-planning-estimer-pour-la-premiere-fois-son-product-backlog
+oldCategoriesAndTags:
+  - agile
+  - estimation
+  - planning
+permalink: /fr/joker-planning-estimer-pour-la-premiere-fois-son-product-backlog/
 ---
 
 C'est un vrai casse-tête pour tout Product Owner et pour la team qui se lance dans la réalisation d’un nouveau produit : réussir à prendre un engagement en terme de développement dès le premier sprint auprès de son client (externe ou interne) ou de sa direction.

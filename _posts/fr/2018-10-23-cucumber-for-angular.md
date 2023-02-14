@@ -1,23 +1,25 @@
 ---
 layout: post
-title: "Cucumber for Angular"
-excerpt: "Comment intégrer Cucumber dans Angular"
-authors:
-    - la3roug
 lang: fr
-permalink: /fr/cucumber-for-angular/
+date: '2018-10-23'
 categories:
-    - e2e
-    - BDD
-tags:
-    - e2e
-    - BDD
-    - angular
-    - angularCLI
-    - Cucumber
-    - Gherkin
-    - Puppeteer
+  - javascript
+authors:
+  - la3roug
 cover: /assets/2018-10-23-cucumber-for-angular/cover.png
+excerpt: Comment intégrer Cucumber dans Angular
+title: Cucumber for Angular
+slug: cucumber-for-angular
+oldCategoriesAndTags:
+  - javascript
+  - e2e
+  - bdd
+  - angular
+  - angularcli
+  - cucumber
+  - gherkin
+  - puppeteer
+permalink: /fr/cucumber-for-angular/
 ---
 
 ## Introduction

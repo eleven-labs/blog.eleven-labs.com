@@ -1,17 +1,23 @@
 ---
 layout: post
-title: Présentation de Protocol Buffers
-authors:
-    - qneyrat
 lang: fr
-permalink: /fr/presentation-protocol-buffers/
-categories:
-    - Api
-    - Go
-tags:
-    - api
-    - go
+date: '2017-09-20'
+categories: []
+authors:
+  - qneyrat
 cover: /assets/2017-09-20-presentation-protocol-buffers/cover.jpg
+excerpt: >-
+  Une problématique assez récurrente dans nos applications est la manière de
+  rendre notre donnée, qu'elle soit transmise ou stockée. Le format qu'on
+  utilise souvent aujourd'hui est le `JSON`. Cependant certains langages le
+  gèrent très mal tel que Java et Go. Google a donc développé un système pour
+  palier à ce problème : `Protocol Buffers`.
+title: Présentation de Protocol Buffers
+slug: presentation-protocol-buffers
+oldCategoriesAndTags:
+  - api
+  - go
+permalink: /fr/presentation-protocol-buffers/
 ---
 
 Une problématique assez récurrente dans nos applications est la manière de rendre notre donnée, qu'elle soit transmise ou stockée. Le format qu'on utilise souvent aujourd'hui est le `JSON`. Cependant certains langages le gèrent très mal tel que Java et Go. Google a donc développé un système pour palier à ce problème : `Protocol Buffers`.

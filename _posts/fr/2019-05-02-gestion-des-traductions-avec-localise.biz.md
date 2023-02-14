@@ -1,19 +1,22 @@
 ---
 layout: post
-title: Gestion des traductions avec localise.biz
-excerpt: Dans cet article je vais vous présenter localise.biz - un outil de gestion de traduction en SaaS.
-authors:
-- marishka
 lang: fr
+date: '2019-05-02'
+categories: []
+authors:
+  - marishka
+excerpt: >-
+  Dans cet article je vais vous présenter localise.biz - un outil de gestion de
+  traduction en SaaS.
+title: Gestion des traductions avec localise.biz
+slug: gestion-des-traductions-avec-localise.biz
+oldCategoriesAndTags:
+  - traductions
+  - intl
+  - outils
+  - multilangue
+  - saas
 permalink: /fr/gestion-des-traductions-avec-localise.biz/
-categories:
-    - traductions
-    - intl
-    - outils
-tags:
-    - traductions
-    - multilangue
-    - saas
 ---
 
 ## Introduction

@@ -1,19 +1,22 @@
 ---
 layout: post
-title: 'RabbitMQ: Publish, Consume, and Retry Messages'
-authors:
-    - rpierlot
 lang: en
-permalink: /rabbitmq-publish-consume-retry-messages/
-date: '2017-01-31 15:06:22 +0100'
-date_gmt: '2017-01-31 14:06:22 +0100'
+date: '2017-01-31'
 categories:
-    - php
-tags:
-    - php
-    - Swarrot
-    - RabbitMQ
-    - symfony
+  - php
+authors:
+  - rpierlot
+excerpt: >-
+  ![Swarrot
+  Logo](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
+title: 'RabbitMQ: Publish, Consume, and Retry Messages'
+slug: rabbitmq-publish-consume-retry-messages
+oldCategoriesAndTags:
+  - php
+  - swarrot
+  - rabbitmq
+  - symfony
+permalink: /en/rabbitmq-publish-consume-retry-messages/
 ---
 ![Swarrot Logo](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 

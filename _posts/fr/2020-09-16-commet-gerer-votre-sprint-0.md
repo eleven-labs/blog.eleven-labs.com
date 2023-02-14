@@ -1,18 +1,22 @@
 ---
 layout: post
-title: "Comment gérer votre sprint 0 ?"
 lang: fr
-permalink: /fr/comment-gerer-votre-sprint-0/
-excerpt: "Nouveau projet ? Lancement de produit ? Construction des fondations techniques du produit, mais pas que, comment gérer alors son sprint 0 ? On vous en dit plus par ici !"
-authors:
-    - mae
+date: '2020-09-16'
 categories:
-    - agile
-tags:
-    - agile
-    - sprint
-    - backlog
-
+  - agile
+authors:
+  - mae
+excerpt: >-
+  Nouveau projet ? Lancement de produit ? Construction des fondations techniques
+  du produit, mais pas que, comment gérer alors son sprint 0 ? On vous en dit
+  plus par ici !
+title: Comment gérer votre sprint 0 ?
+slug: comment-gerer-votre-sprint-0
+oldCategoriesAndTags:
+  - agile
+  - sprint
+  - backlog
+permalink: /fr/comment-gerer-votre-sprint-0/
 ---
 
 Nouveau projet ? Lancement de produit ? C’est l’heure de la phase de cadrage, autrement dit : le sprint 0 !

@@ -33,12 +33,6 @@
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@v9.0.0/dist/material-components-web.min.css">
 
     {% if page.path contains '_posts' %}
-        <!-- AMP -->
-        {% if site.lang == 'fr' %}
-            <link rel="amphtml" href="{{ page.url | prepend: '/amp' | prepend: site.baseurl_root | prepend: site.url }}">
-        {% elsif site.lang == 'en' %}
-            <link rel="amphtml" href="{{ page.url | prepend: '/en/amp' | prepend: site.baseurl_root | prepend: site.url }}">
-        {% endif %}
     {% endif %}
 
     <!-- CSS -->

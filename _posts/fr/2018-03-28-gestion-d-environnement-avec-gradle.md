@@ -1,24 +1,23 @@
 ---
 layout: post
-title: Gestion d'environnement avec Gradle
 lang: fr
-permalink: /fr/gestion-d-environnement-avec-gradle/
-excerpt: "Gradle est un outil complexe dont la prise en main permet de faire de super choses. Ici, je vous offre un petit aperçu de toutes ces possibilités..."
+date: '2018-03-28'
+categories: []
 authors:
-    - babas
-categories:
-    - android
-    - Kotlin
-    - gradle
-    - flavor
-    - environnement
-tags:
-    - android
-    - Kotlin
-    - gradle
-    - flavor
-    - environnement
+  - babas
 cover: /assets/2018-03-28-gestion-d-environnement-avec-gradle/cover.jpg
+excerpt: >-
+  Gradle est un outil complexe dont la prise en main permet de faire de super
+  choses. Ici, je vous offre un petit aperçu de toutes ces possibilités...
+title: Gestion d'environnement avec Gradle
+slug: gestion-d-environnement-avec-gradle
+oldCategoriesAndTags:
+  - android
+  - kotlin
+  - gradle
+  - flavor
+  - environnement
+permalink: /fr/gestion-d-environnement-avec-gradle/
 ---
 
 

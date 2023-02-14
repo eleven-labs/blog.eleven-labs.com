@@ -1,20 +1,27 @@
 ---
 layout: post
-title: Retour sur les DotJS 2017
-excerpt: "DotJS est la plus grande conférence JavaScript en Europe et c'est souvent l'occasion de parler des nouvelles technologies à notre disposition et découvrir ce que nous réserve le futur de ECMAScript. Cette année, elle se déroulait pour la deuxième fois aux docks d'Aubervilliers, au nord de Paris. Ce qui nous a permis de profiter d'un confort digne d'une salle de cinéma ! Petit résumé de ce qu'il s'y est passé..."
 lang: fr
-authors:
-    - mlenglet
-permalink: /fr/retour-sur-les-dotjs-2017/
+date: '2017-12-08'
 categories:
-    - javascript
-    - conference
-    - dotjs
-tags:
-    - javascript
-    - nodejs
-    - dotjs
+  - javascript
+authors:
+  - mlenglet
 cover: /assets/2017-12-08-dotjs-2017/cover.jpg
+excerpt: >-
+  DotJS est la plus grande conférence JavaScript en Europe et c'est souvent
+  l'occasion de parler des nouvelles technologies à notre disposition et
+  découvrir ce que nous réserve le futur de ECMAScript. Cette année, elle se
+  déroulait pour la deuxième fois aux docks d'Aubervilliers, au nord de Paris.
+  Ce qui nous a permis de profiter d'un confort digne d'une salle de cinéma !
+  Petit résumé de ce qu'il s'y est passé...
+title: Retour sur les DotJS 2017
+slug: retour-sur-les-dotjs-2017
+oldCategoriesAndTags:
+  - javascript
+  - conference
+  - dotjs
+  - nodejs
+permalink: /fr/retour-sur-les-dotjs-2017/
 ---
 ![DotJS logo]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/logo.png){:class="center-image"}
 

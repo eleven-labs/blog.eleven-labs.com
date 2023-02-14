@@ -1,19 +1,21 @@
 ---
 layout: post
-title: "[iOS] Let's think outside the box"
-authors:
-    - thuchon
 lang: en
-permalink: /think-outside-the-box/
-excerpt: "Let's use the Framework in a way that it's not supposed to be"
-categories:
-    - Mobile
-tags:
-    - ios
-    - json
-    - http
-    - behavior
+date: '2020-01-08'
+categories: []
+authors:
+  - thuchon
 cover: /assets/2018-05-21-let-s-think-outside-the-box/cover.jpg
+excerpt: Let's use the Framework in a way that it's not supposed to be
+title: '[iOS] Let''s think outside the box'
+slug: think-outside-the-box
+oldCategoriesAndTags:
+  - mobile
+  - ios
+  - json
+  - http
+  - behavior
+permalink: /en/think-outside-the-box/
 ---
 
 ## Introduction

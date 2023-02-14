@@ -1,18 +1,19 @@
 ---
 layout: post
-title: 'AngularJS : Les Directives 2/2'
-authors:
-    - denis
 lang: fr
-permalink: /fr/angularjs-les-directives-22/
-date: '2015-08-19 14:44:26 +0200'
-date_gmt: '2015-08-19 12:44:26 +0200'
+date: '2015-08-19'
 categories:
-    - javascript
-tags:
-    - angular
-    - angular
-    - directive
+  - javascript
+authors:
+  - denis
+excerpt: '## Préambule'
+title: 'AngularJS : Les Directives 2/2'
+slug: angularjs-les-directives-22
+oldCategoriesAndTags:
+  - javascript
+  - angular
+  - directive
+permalink: /fr/angularjs-les-directives-22/
 ---
 
 ## Préambule

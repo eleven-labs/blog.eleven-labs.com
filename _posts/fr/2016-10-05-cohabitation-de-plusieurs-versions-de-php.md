@@ -1,16 +1,17 @@
 ---
 layout: post
-title: Cohabitation de plusieurs versions de PHP
-authors:
-    - aandre
-date: '2016-10-05 10:23:54 +0200'
-date_gmt: '2016-10-05 08:23:54 +0200'
 lang: fr
-permalink: /fr/cohabitation-de-plusieurs-version-de-php/
+date: '2016-10-05'
 categories:
-    - php
-tags:
-    - php
+  - php
+authors:
+  - aandre
+excerpt: "Dans un contexte professionnel, il n'est pas rare de travailler sur divers projets. Sur ces divers projets, il n'est pas rare non plus que ceux-ci ne fonctionnent pas avec les mêmes versions de PHP. C'est d'ailleurs pour cette raison que les IDE vous proposent de sélectionner la version de PHP (et c'est le cas pour de nombreux langages), afin de vous informer si vous utilisez une fonctionnalité qui n'est pas encore\_supportée, ou à l'inverse dépréciée, ou voire même\_inexistante."
+title: Cohabitation de plusieurs versions de PHP
+slug: cohabitation-de-plusieurs-version-de-php
+oldCategoriesAndTags:
+  - php
+permalink: /fr/cohabitation-de-plusieurs-version-de-php/
 ---
 Dans un contexte professionnel, il n'est pas rare de travailler sur divers projets. Sur ces divers projets, il n'est pas rare non plus que ceux-ci ne fonctionnent pas avec les mêmes versions de PHP. C'est d'ailleurs pour cette raison que les IDE vous proposent de sélectionner la version de PHP (et c'est le cas pour de nombreux langages), afin de vous informer si vous utilisez une fonctionnalité qui n'est pas encore supportée, ou à l'inverse dépréciée, ou voire même inexistante.
 

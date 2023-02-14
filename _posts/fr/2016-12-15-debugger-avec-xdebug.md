@@ -1,21 +1,20 @@
 ---
 layout: post
-title: Débugger avec xDebug
-excerpt: Dans cet article je vais tenter de vous familiariser avec xDebug, cet outil d'une incroyable utilité, qui vous fera gagner un temps fou pour débugger vos applications.
-authors:
-    - rgraillon
-date: '2016-12-15 14:49:00 +0100'
-date_gmt: '2016-12-15 15:49:00 +0100'
 lang: fr
-permalink: /fr/debugger-avec-xdebug/
+date: '2016-12-15'
 categories:
-    - php
-tags:
-    - php
-image:
-    path: /assets/2016-12-15-debugger-avec-xdebug/php-bug.jpg
-    height: 100
-    width: 100
+  - php
+authors:
+  - rgraillon
+excerpt: >-
+  Dans cet article je vais tenter de vous familiariser avec xDebug, cet outil
+  d'une incroyable utilité, qui vous fera gagner un temps fou pour débugger vos
+  applications.
+title: Débugger avec xDebug
+slug: debugger-avec-xdebug
+oldCategoriesAndTags:
+  - php
+permalink: /fr/debugger-avec-xdebug/
 ---
 
 Bien que la plupart des développeurs PHP connaissent l'existence de xDebug, je me rends compte que bien peu l'utilisent réellement, et souvent se laissent tenter par la méthode « à l'ancienne » du `var_dump(); die;`.

@@ -1,18 +1,18 @@
 ---
 layout: post
-title: OpenPGP - Une paire de clés presque parfaite
-excerpt: Guide sur la création de clés OpenPGP presque parfaites
-authors:
-    - tthuon
 lang: fr
-permalink: /fr/openpgp-paire-clef-presque-parfaite-partie-1/
-categories:
-    - openpgp
-    - securite
-tags:
-    - openpgp
-    - securite
+date: '2017-10-09'
+categories: []
+authors:
+  - tthuon
 cover: /assets/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
+excerpt: Guide sur la création de clés OpenPGP presque parfaites
+title: OpenPGP - Une paire de clés presque parfaite
+slug: openpgp-paire-clef-presque-parfaite-partie-1
+oldCategoriesAndTags:
+  - openpgp
+  - securite
+permalink: /fr/openpgp-paire-clef-presque-parfaite-partie-1/
 ---
 
 Dans cet article, je voudrais créer un petit guide sur la création d'une clé PGP parfaite. Pour ceux qui ne connaissent pas,

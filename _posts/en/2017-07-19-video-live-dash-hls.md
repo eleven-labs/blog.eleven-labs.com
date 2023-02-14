@@ -1,20 +1,22 @@
 ---
 layout: post
-title: "DASH & HLS : The two main video stream protocols"
-excerpt: DASH & HLS, two protocols to stream them all.
-authors:
-    - jbernard
 lang: en
-permalink: /video-live-dash-hls/
-date: '2020-09-03 11:00:00 +0100'
-date_gmt: '2020-09-03 11:00:00 +0100'
+date: '2017-07-19'
 categories:
-    - JS
-    - Video Stream
-tags:
-    - live
-    - streaming
-    - video
+  - php
+authors:
+  - jbernard
+excerpt: 'DASH & HLS, two protocols to stream them all.'
+title: 'DASH & HLS : The two main video stream protocols'
+slug: video-live-dash-hls
+oldCategoriesAndTags:
+  - php
+  - js
+  - video stream
+  - live
+  - streaming
+  - video
+permalink: /en/video-live-dash-hls/
 ---
 
 Despite being used by big names like Apple, Microsoft, Youtube or Netflix, video streaming technologies are not among the best known.

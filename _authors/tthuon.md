@@ -1,9 +1,8 @@
 ---
 layout: author
 login: tthuon
-title: Thierry Thuon
-twitter: piaf_
+title: Thierry T.
 github: lepiaf
 permalink: /authors/tthuon/
 ---
-Astronaute adepte de Symfony.
+Super Data Boy

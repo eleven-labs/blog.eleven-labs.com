@@ -1,19 +1,21 @@
 ---
 layout: post
-title: 'Behat : structurez vos tests fonctionnels'
 lang: fr
-permalink: /fr/behat-structurez-vos-tests-fonctionnels/
-authors:
-    - vcomposieux
-date: '2016-07-19 10:16:11 +0200'
-date_gmt: '2016-07-19 08:16:11 +0200'
+date: '2016-07-19'
 categories:
-    - symfony
-    - php
-tags:
-    - symfony
-    - php
-    - behat
+  - php
+authors:
+  - vcomposieux
+excerpt: >-
+  Il est important de mettre en place des tests fonctionnels sur les projets
+  afin de s'assurer du bon fonctionnement de l'application.
+title: 'Behat : structurez vos tests fonctionnels'
+slug: behat-structurez-vos-tests-fonctionnels
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - behat
+permalink: /fr/behat-structurez-vos-tests-fonctionnels/
 ---
 Il est important de mettre en place des tests fonctionnels sur les projets afin de s'assurer du bon fonctionnement de l'application.
 

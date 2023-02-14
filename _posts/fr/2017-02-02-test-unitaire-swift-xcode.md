@@ -1,25 +1,21 @@
 ---
 layout: post
-title: "Des tests unitaires en Swift avec Xcode"
-excerpt: "Des tests unitaires en Swift avec Xcode"
 lang: fr
-permalink: /fr/test-unitaire-swift-xcode/
+date: '2017-02-02'
+categories: []
 authors:
-    - ibenichou
-date: '2017-02-02 10:29:51 +0100'
-date_gmt: '2017-02-02 09:29:51 +0100'
-categories:
-    - Mobile
-    - ios
-tags:
-    - swift
-    - xcode
-    - tests
-    - xctest
-image:
-    path: /assets/2017-02-02-test-unitaire-swift-xcode/logo_xcode.png
-    height: 100
-    width: 100
+  - ibenichou
+excerpt: Des tests unitaires en Swift avec Xcode
+title: Des tests unitaires en Swift avec Xcode
+slug: test-unitaire-swift-xcode
+oldCategoriesAndTags:
+  - mobile
+  - ios
+  - swift
+  - xcode
+  - tests
+  - xctest
+permalink: /fr/test-unitaire-swift-xcode/
 ---
 
 Bonjour à vous les astronautes !!! :)

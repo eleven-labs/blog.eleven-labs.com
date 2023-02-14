@@ -1,16 +1,21 @@
 ---
 layout: post
-title: "Téléversement d’un fichier en AJAX"
-authors:
-    - tthuon
 lang: fr
-permalink: /fr/televersement-dun-fichier-en-ajax/
-excerpt: "Aujourd’hui, je voudrais partager avec vous une fonctionnalité très souvent demandée dans une application : le téléversement d’un fichier."
+date: '2017-04-20'
 categories:
-    - symfony
-    - php
-tags:
-    - ajax
+  - php
+authors:
+  - tthuon
+excerpt: >-
+  Aujourd’hui, je voudrais partager avec vous une fonctionnalité très souvent
+  demandée dans une application : le téléversement d’un fichier.
+title: Téléversement d’un fichier en AJAX
+slug: televersement-dun-fichier-en-ajax
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - ajax
+permalink: /fr/televersement-dun-fichier-en-ajax/
 ---
 
 Aujourd’hui, je voudrais partager avec vous une fonctionnalité très souvent demandée dans une application : le téléversement d’un fichier.

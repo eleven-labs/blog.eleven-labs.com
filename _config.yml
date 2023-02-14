@@ -103,7 +103,6 @@ plugins:
     - jekyll-multiple-languages-plugin
     - jekyll-seo-tag
     - jekyll-feed
-    - amp-jekyll
     - uglifier
     - jekyll/tagging
 exclude:

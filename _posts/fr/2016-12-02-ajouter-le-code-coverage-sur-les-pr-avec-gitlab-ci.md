@@ -1,20 +1,20 @@
 ---
 layout: post
-title: Ajouter le code coverage sur les MR avec Gitlab-CI
-authors:
-    - pouzor
-excerpt: Voici un tip qui permet de pouvoir voir en un clin d’œil les répercussions d'une MR sur la couverture de code de votre projet.
 lang: fr
+date: '2016-12-02'
+categories: []
+authors:
+  - pouzor
+excerpt: "Voici un tip qui permet de pouvoir voir en un clin d’œil les répercussions\_d'une MR\_sur la couverture de code de votre projet."
+title: Ajouter le code coverage sur les MR avec Gitlab-CI
+slug: ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci
+oldCategoriesAndTags:
+  - non classé
+  - test
+  - gitlab
+  - code-coverage
+  - gitlab-ci
 permalink: /fr/ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci/
-date: '2016-12-02 12:15:55 +0100'
-date_gmt: '2016-12-02 11:15:55 +0100'
-categories:
-    - Non classé
-tags:
-    - test
-    - gitlab
-    - code-coverage
-    - gitlab-ci
 ---
 
 

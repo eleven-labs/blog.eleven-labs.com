@@ -1,18 +1,25 @@
 ---
 layout: post
-title: Soigner ses emails transactionnels
 lang: fr
-permalink: /fr/soigner-ses-emails-transactionnels/
-excerpt: "L'année dernière un client nous a demandé que les e-mails envoyés par l'api soient plus esthétiques. N'ayant aucun intégrateur dans l'équipe, personne n'était motivé pour s'occuper de ce genre de ticket. Nous avons donc tiré au sort pour savoir qui s'en chargerait. Bien sûr, c'est tombé sur moi. Le but de la fonctionnalité était d'avoir des emails beaucoup plus soignés et responsives."
+date: '2017-12-06'
+categories: []
 authors:
-    - qneyrat
-categories:
-    - html
-    - front
-    - mjml
-tags:
-    - mjml
+  - qneyrat
 cover: /assets/2017-12-06-soigner-ses-emails-transactionnels/cover.png
+excerpt: >-
+  L'année dernière un client nous a demandé que les e-mails envoyés par l'api
+  soient plus esthétiques. N'ayant aucun intégrateur dans l'équipe, personne
+  n'était motivé pour s'occuper de ce genre de ticket. Nous avons donc tiré au
+  sort pour savoir qui s'en chargerait. Bien sûr, c'est tombé sur moi. Le but de
+  la fonctionnalité était d'avoir des emails beaucoup plus soignés et
+  responsives.
+title: Soigner ses emails transactionnels
+slug: soigner-ses-emails-transactionnels
+oldCategoriesAndTags:
+  - html
+  - front
+  - mjml
+permalink: /fr/soigner-ses-emails-transactionnels/
 ---
 
 L'année dernière un client nous a demandé que les e-mails envoyés par l'api soient plus esthétiques. N'ayant aucun intégrateur dans l'équipe, personne n'était motivé pour s'occuper de ce genre de ticket. Nous avons donc tiré au sort pour savoir qui s'en chargerait.

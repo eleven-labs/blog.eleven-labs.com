@@ -1,24 +1,22 @@
 ---
-layout: 'post'
-title: Visualiser l'architecture de vos projets
-excerpt: Visualiser l'architecture de vos projets
+layout: post
+lang: fr
+date: '2019-12-12'
+categories:
+  - architecture
 authors:
   - gcanal
-lang: fr
+excerpt: Visualiser l'architecture de vos projets
+title: Visualiser l'architecture de vos projets
+slug: visualiser-l-architecture-de-vos-projets
+oldCategoriesAndTags:
+  - architecture
+  - c4model
+  - diagramme
+  - visualisation
+  - modélisation
+  - structurizr
 permalink: /fr/visualiser-l-architecture-de-vos-projets/
-categories:
-    - architecture
-tags:
-    - architecture
-    - C4Model
-    - Diagramme
-    - Visualisation
-    - Modélisation
-    - Structurizr
-image:
-  path: /assets/2019-12-12-visualiser-l-architecture-de-vos-projets/cover.jpg
-  height: 970
-  width: 450
 ---
 
 Quand il s'agit de visualiser l'architecture d'un projet, une équipe peut décider d'utiliser un formalisme bien connu : l'[UML](https://fr.wikipedia.org/wiki/Diagramme_de_composants) _(Language de Modélisation Unifié)_.

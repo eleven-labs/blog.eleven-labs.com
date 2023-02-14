@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "Rex : La Product Conf"
 lang: fr
-permalink: /fr/rex-product-conf-18/
-excerpt: "Je vous propose un court retour d'expérience de la Product Conf' 3ème edition"
+date: '2018-06-26'
+categories: []
 authors:
-    - kagiri
-categories:
-    - product management
-    - UX
-tags:
-    - product management
-    - UX
+  - kagiri
 cover: /assets/2018-06-26-rex-product-conf-2018/cover.jpg
+excerpt: Je vous propose un court retour d'expérience de la Product Conf' 3ème edition
+title: 'Rex : La Product Conf'
+slug: rex-product-conf-18
+oldCategoriesAndTags:
+  - product management
+  - ux
+permalink: /fr/rex-product-conf-18/
 ---
 
 Jeudi 21 Juin a eu lieu la troisième édition de « La Product Conférence ».

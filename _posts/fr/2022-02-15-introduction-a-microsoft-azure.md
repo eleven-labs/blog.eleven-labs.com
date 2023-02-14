@@ -1,13 +1,20 @@
 ---
 layout: post
-title: Introduction à Microsoft Azure
-excerpt: Si vous avez lu Microsoft et que vous n’avez pas fui, bienvenue sur cette introduction à la solution de Cloud Microsoft.
-authors:
-    - gthibault2
 lang: fr
-permalink: /fr/introduction-a-microsoft-azure/
+date: '2022-02-15'
 categories:
-    - DevOps
+  - architecture
+authors:
+  - gthibault2
+excerpt: >-
+  Si vous avez lu Microsoft et que vous n’avez pas fui, bienvenue sur cette
+  introduction à la solution de Cloud Microsoft.
+title: Introduction à Microsoft Azure
+slug: introduction-a-microsoft-azure
+oldCategoriesAndTags:
+  - architecture
+  - devops
+permalink: /fr/introduction-a-microsoft-azure/
 ---
 
 ![Dark Vador Cookie]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/COOKIE.jpg)

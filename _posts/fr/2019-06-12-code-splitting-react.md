@@ -1,23 +1,28 @@
 ---
 layout: post
-title: Débuter le code splitting avec React.lazy
-excerpt: Lorsque votre projet React est bien avancé, charger l'application pour un utilisateur peut devenir de plus en plus long. Pour pallier ce problème, React permet depuis ses dernières mises à jour de faire du Code Splitting.
-authors:
-    - rmavillaz
 lang: fr
-permalink: /fr/react-débuter-le-code-splitting/
+date: '2019-06-12'
 categories:
-    - react
-    - javascript
-tags:
-    - react
-    - loadable
-    - code splitting
-    - component
-    - import
-    - lazy
-    - suspense
-    - webpack
+  - javascript
+authors:
+  - rmavillaz
+excerpt: >-
+  Lorsque votre projet React est bien avancé, charger l'application pour un
+  utilisateur peut devenir de plus en plus long. Pour pallier ce problème, React
+  permet depuis ses dernières mises à jour de faire du Code Splitting.
+title: Débuter le code splitting avec React.lazy
+slug: react-débuter-le-code-splitting
+oldCategoriesAndTags:
+  - javascript
+  - react
+  - loadable
+  - code splitting
+  - component
+  - import
+  - lazy
+  - suspense
+  - webpack
+permalink: /fr/react-débuter-le-code-splitting/
 ---
 
 Lorsque votre projet React est bien avancé, charger l'application pour un utilisateur peut devenir de plus en plus long. Pour pallier ce problème, React permet depuis ses dernières mises à jour, de faire du **Code Splitting**.

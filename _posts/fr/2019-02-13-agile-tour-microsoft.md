@@ -1,19 +1,26 @@
 ---
 layout: post
-title: Agile Tour Microsoft
 lang: fr
-permalink: /fr/agile-tour-microsoft/
-excerpt: "Nous étions plusieurs astronautes de la galaxie Eleven Labs à se rendre le 5 décembre dernier à l'Agile Tour organisé par Microsoft dans ses propres locaux."
-authors:
-    - mae
-    - jbernard
-    - rcourbo
+date: '2019-02-13'
 categories:
-    - agile
-    - scrum
-    - product owner
-    - scrum master
+  - agile
+authors:
+  - mae
+  - jbernard
+  - rcourbo
 cover: /assets/2019-02-13-agile-tour-microsoft/cover.jpg
+excerpt: >-
+  Nous étions plusieurs astronautes de la galaxie Eleven Labs à se rendre le 5
+  décembre dernier à l'Agile Tour organisé par Microsoft dans ses propres
+  locaux.
+title: Agile Tour Microsoft
+slug: agile-tour-microsoft
+oldCategoriesAndTags:
+  - agile
+  - scrum
+  - product owner
+  - scrum master
+permalink: /fr/agile-tour-microsoft/
 ---
 
 

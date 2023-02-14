@@ -1,20 +1,26 @@
 ---
 layout: post
-title: Démarrer avec Docker, Symfony et Vue.js
-excerpt: Dans cet article nous allons vous décrire comment configurer un projet Docker, Symfony et Vue.js
-authors:
-    - nicolas
-    - jiefmoreno
 lang: fr
-permalink: /fr/docker-symfony-vue/
+date: '2017-11-10'
 categories:
-    - docker
-    - symfony
-    - Vue.js
-tags:
-    - php
-    - javascript
+  - php
+  - javascript
+authors:
+  - nicolas
+  - jiefmoreno
 cover: /assets/2017-11-10-docker-symfony-vue/cover.jpg
+excerpt: >-
+  Dans cet article nous allons vous décrire comment configurer un projet Docker,
+  Symfony et Vue.js
+title: 'Démarrer avec Docker, Symfony et Vue.js'
+slug: docker-symfony-vue
+oldCategoriesAndTags:
+  - php
+  - javascript
+  - docker
+  - symfony
+  - vue.js
+permalink: /fr/docker-symfony-vue/
 ---
 
 Dans cet article nous allons vous montrer comment mettre en place une application web avec symfony et Vue.js dans un environnement docker. À la fin de cet article vous aurez un projet prêt au développement. Vous pouvez également retrouver le projet sur le github d’Eleven-labs sur ce dépôt [eleven-labs/docker-symfony-vue](https://github.com/eleven-labs/docker-symfony-vue){:rel="nofollow noreferrer"}

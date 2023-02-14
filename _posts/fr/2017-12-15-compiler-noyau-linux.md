@@ -1,19 +1,22 @@
 ---
 layout: post
-title: Pour Noël, je compile mon noyau GNU/Linux !
-excerpt: "Le moment tant attendu est finalement arrivé, il est tant de : compiler, installer, tester (kernel-paniquer, recompiler, réinstaller, retester)."
-authors:
-- aandre
-permalink: /fr/compiler-kernel-linux/
 lang: fr
-categories:
-    - linux
-tags:
-    - linux
-    - kernel
-    - compilation
-    - gentoo
+date: '2017-12-15'
+categories: []
+authors:
+  - aandre
 cover: /assets/2017-12-15-compiling-linux-kernel/cover.jpg
+excerpt: >-
+  Le moment tant attendu est finalement arrivé, il est tant de : compiler,
+  installer, tester (kernel-paniquer, recompiler, réinstaller, retester).
+title: 'Pour Noël, je compile mon noyau GNU/Linux !'
+slug: compiler-kernel-linux
+oldCategoriesAndTags:
+  - linux
+  - kernel
+  - compilation
+  - gentoo
+permalink: /fr/compiler-kernel-linux/
 ---
 
 Cette article fait suite à un article intitulé [Je configure mon noyau GNU/Linux (partie 2)]({{site.baseurl}}/fr/configurer-kernel-linux/) et en dépend. Si vous ne l'avez pas lu, je vous invite à le faire.
