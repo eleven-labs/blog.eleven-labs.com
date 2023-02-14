@@ -1,21 +1,20 @@
 ---
 layout: post
-title: Delegates vs Closures
 lang: fr
-permalink: /fr/delegates-closures/
-excerpt: "Delegates VS Closures"
+date: '2016-12-28'
+categories: []
 authors:
-    - thuchon
-date: '2016-12-28 18:25:24 +0100'
-date_gmt: '2016-12-28 17:25:24 +0100'
-categories:
-    - Mobile
-tags:
-    - mobile
-    - ios
-    - delegates
-    - block
-    - closure
+  - thuchon
+excerpt: Delegates VS Closures
+title: Delegates vs Closures
+slug: delegates-closures
+oldCategoriesAndTags:
+  - mobile
+  - ios
+  - delegates
+  - block
+  - closure
+permalink: /fr/delegates-closures/
 ---
 
 ### Introduction

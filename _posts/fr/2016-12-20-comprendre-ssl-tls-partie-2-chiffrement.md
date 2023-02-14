@@ -1,27 +1,21 @@
 ---
 layout: post
-title: "Comprendre le SSL/TLS : Partie 2 Chiffrement"
-excerpt: "Algorithmes symétriques"
 lang: fr
-permalink: /fr/comprendre-ssl-tls-partie-2-chiffrement/
+date: '2016-12-20'
+categories: []
 authors:
-    - ibenichou
-date: '2016-12-20 14:15:41 +0100'
-date_gmt: '2016-12-20 13:15:41 +0100'
-categories:
-    - tls
-    - ssl
-tags:
-    - securite
-    - ssl
-    - tls
-    - Algorithmie
-    - Protocoles
-    - Chiffrement
-image:
-    path: /assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/cryptage.jpg
-    height: 100
-    width: 100
+  - ibenichou
+excerpt: Algorithmes symétriques
+title: 'Comprendre le SSL/TLS : Partie 2 Chiffrement'
+slug: comprendre-ssl-tls-partie-2-chiffrement
+oldCategoriesAndTags:
+  - tls
+  - ssl
+  - securite
+  - algorithmie
+  - protocoles
+  - chiffrement
+permalink: /fr/comprendre-ssl-tls-partie-2-chiffrement/
 ---
 
 La **cryptographie symétrique**, également dite **à clé secrète**, est la plus ancienne forme de chiffrement. Elle permet à la fois de chiffrer et de déchiffrer des messages à l'aide d'un même mot clé.

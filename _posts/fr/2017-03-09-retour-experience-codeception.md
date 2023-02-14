@@ -1,27 +1,24 @@
 ---
 layout: post
-title: Codeception, Retour d'expérience
-excerpt: Retour d'expérience sur le framework de test Codeception, présentation et exemples d'implémentations dans une application Symfony
-authors:
-    - nkania
-date: '2017-03-09 18:24:38 +0100'
-date_gmt: '2017-03-09 17:24:38 +0100'
 lang: fr
-permalink: /fr/retour-experience-codeception/
+date: '2017-03-09'
 categories:
-    - symfony
-    - php
-tags:
-    - php
-    - symfony
-    - mongodb
-    - rabbitmq
-    - test
-    - api
-image:
-    path: /assets/2017-03-09-retour-experience-codeception/codeception.png
-    height: 276
-    width: 400
+  - php
+authors:
+  - nkania
+excerpt: >-
+  Retour d'expérience sur le framework de test Codeception, présentation et
+  exemples d'implémentations dans une application Symfony
+title: 'Codeception, Retour d''expérience'
+slug: retour-experience-codeception
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - mongodb
+  - rabbitmq
+  - test
+  - api
+permalink: /fr/retour-experience-codeception/
 ---
 
 ![Logo Codeception](/assets/2017-03-09-retour-experience-codeception/codeception-logo.png)

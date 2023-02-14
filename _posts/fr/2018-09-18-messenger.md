@@ -1,20 +1,20 @@
 ---
 layout: post
-title: "Symfony Messenger"
 lang: fr
-permalink: /fr/symfony-messenger/
-excerpt: "Nous allons voir comment utiliser le nouveau composant Messenger de Symfony"
-authors:
-    - amoutte
+date: '2018-09-18'
 categories:
-    - php
-    - symfony
-    - messenger
-tags:
-    - php
-    - symfony
-    - messenger
+  - php
+authors:
+  - amoutte
 cover: /assets/2018-09-11-messenger/cover.jpg
+excerpt: Nous allons voir comment utiliser le nouveau composant Messenger de Symfony
+title: Symfony Messenger
+slug: symfony-messenger
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - messenger
+permalink: /fr/symfony-messenger/
 ---
 
 ## Présentation générale

@@ -1,14 +1,20 @@
 ---
 layout: post
-title: "Le Glossaire Agile"
 lang: fr
-permalink: /fr/glossaire-agile/
-excerpt: "Ce glossaire regroupe tous les principaux termes utilisés au quotidien en équipe Agile. Débutant ou expert, il est toujours utile de l'avoir à disposition, pour apprendre ou se rafraîchir la mémoire !"
-authors:
-    - poleagile
+date: '2022-01-31'
 categories:
-    - Agile
-
+  - agile
+authors:
+  - poleagile
+excerpt: >-
+  Ce glossaire regroupe tous les principaux termes utilisés au quotidien en
+  équipe Agile. Débutant ou expert, il est toujours utile de l'avoir à
+  disposition, pour apprendre ou se rafraîchir la mémoire !
+title: Le Glossaire Agile
+slug: glossaire-agile
+oldCategoriesAndTags:
+  - agile
+permalink: /fr/glossaire-agile/
 ---
 
 ## Présentation

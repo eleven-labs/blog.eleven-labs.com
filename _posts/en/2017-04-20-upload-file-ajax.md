@@ -1,16 +1,21 @@
 ---
 layout: post
-title: "Upload file with AJAX"
-authors:
-    - tthuon
 lang: en
-permalink: /upload-file-ajax/
-excerpt: "Today, I would like to share with you a feature often requested in an application: uploading a file."
+date: '2017-04-20'
 categories:
-    - symfony
-    - php
-tags:
-    - ajax
+  - php
+authors:
+  - tthuon
+excerpt: >-
+  Today, I would like to share with you a feature often requested in an
+  application: uploading a file.
+title: Upload file with AJAX
+slug: upload-file-ajax
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - ajax
+permalink: /en/upload-file-ajax/
 ---
 
 Today, I would like to share with you a feature often requested in an application: uploading a file.

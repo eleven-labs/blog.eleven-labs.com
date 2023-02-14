@@ -1,17 +1,20 @@
 ---
 layout: post
-title: Retour sur les DotJS 2014 !
 lang: fr
-permalink: /fr/retour-sur-les-dotjs-2014/
-authors:
-    - mlenglet
-date: '2014-11-24 18:31:51 +0100'
-date_gmt: '2014-11-24 17:31:51 +0100'
+date: '2014-11-24'
 categories:
-    - javascript
-tags:
-    - dotjs
-    - conference
+  - javascript
+authors:
+  - mlenglet
+excerpt: >-
+  ![wilsononstagedotjs](/assets/2014-11-24-retour-sur-les-dotjs-2014/wilsononstagedotjs.jpg)
+title: Retour sur les DotJS 2014 !
+slug: retour-sur-les-dotjs-2014
+oldCategoriesAndTags:
+  - javascript
+  - dotjs
+  - conference
+permalink: /fr/retour-sur-les-dotjs-2014/
 ---
 
 ![wilsononstagedotjs](/assets/2014-11-24-retour-sur-les-dotjs-2014/wilsononstagedotjs.jpg)

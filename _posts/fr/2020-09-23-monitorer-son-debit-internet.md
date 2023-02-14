@@ -1,18 +1,20 @@
 ---
 layout: post
-title: >
-    Monitorer son débit internet
-excerpt: >
-    Voyons ensemble comment monitorer son débit internet avec un Raspberry Pi
 lang: fr
+date: '2020-09-23'
+categories: []
 authors:
-    - VEBERArnaud
+  - VEBERArnaud
+excerpt: |
+  Voyons ensemble comment monitorer son débit internet avec un Raspberry Pi
+title: |
+  Monitorer son débit internet
+slug: monitorer-son-debit-internet
+oldCategoriesAndTags:
+  - bonnes pratiques
+  - monitoring
+  - raspberry pi
 permalink: /fr/monitorer-son-debit-internet/
-categories:
-    - bonnes pratiques
-tags:
-    - monitoring
-    - raspberry pi
 ---
 
 ## Le projet

@@ -1,13 +1,22 @@
 ---
 layout: post
-title: Migration du blog
-authors:
-    - captainjojo
-    - VEBERArnaud
-excerpt: "Depuis 2013, les astronautes d'Eleven-labs partagent leurs connaissances techniques avec plaisir. Notre blog est devenu un élément indissociable de notre effort vers l'open-source. Pour aller plus loin dans cette démarche nous avons donc décidé de changer radicalement de technologie. Mais pourquoi ? Comment ? Quelle est la suite ?"
 lang: fr
-permalink: /fr/migration-du-blog/
+date: '2017-07-11'
+categories: []
+authors:
+  - captainjojo
+  - VEBERArnaud
 cover: /assets/2017-07-11-migration-du-blog/cover.png
+excerpt: >-
+  Depuis 2013, les astronautes d'Eleven-labs partagent leurs connaissances
+  techniques avec plaisir. Notre blog est devenu un élément indissociable de
+  notre effort vers l'open-source. Pour aller plus loin dans cette démarche nous
+  avons donc décidé de changer radicalement de technologie. Mais pourquoi ?
+  Comment ? Quelle est la suite ?
+title: Migration du blog
+slug: migration-du-blog
+oldCategoriesAndTags: []
+permalink: /fr/migration-du-blog/
 ---
 
 Depuis 2013, les astronautes d'Eleven-labs partagent leurs connaissances techniques avec plaisir. Notre blog est devenu un élément indissociable de notre effort vers l'open-source. Pour aller plus loin dans cette démarche nous avons donc décidé de changer radicalement de technologie. Mais pourquoi ? Comment ? Quelle est la suite ?

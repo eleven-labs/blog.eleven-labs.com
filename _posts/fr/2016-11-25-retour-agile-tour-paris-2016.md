@@ -1,17 +1,21 @@
 ---
 layout: post
-title: Retour sur l'Agile Tour Paris par une Pico PO
 lang: fr
-permalink: /fr/retour-agile-tour-paris-2016/
-excerpt: "Jeudi 17 novembre avait lieu la 9ème édition de l’Agile Tour Paris dans les locaux de Microsoft à Issy les Moulineaux - première édition pour ma part."
-authors:
-    - julie
-date: '2016-11-25 17:01:26 +0100'
-date_gmt: '2016-11-25 16:01:26 +0100'
+date: '2016-11-25'
 categories:
-    - Agilité
-tags:
-    - agilite
+  - agile
+authors:
+  - julie
+excerpt: >-
+  Jeudi 17 novembre avait lieu la 9ème édition de l’Agile Tour Paris dans les
+  locaux de Microsoft à Issy les Moulineaux - première édition pour ma part.
+title: Retour sur l'Agile Tour Paris par une Pico PO
+slug: retour-agile-tour-paris-2016
+oldCategoriesAndTags:
+  - agile
+  - agilité
+  - agilite
+permalink: /fr/retour-agile-tour-paris-2016/
 ---
 
 Jeudi 17 novembre avait lieu la 9ème édition de l’Agile Tour Paris dans les locaux de Microsoft à Issy les Moulineaux - première édition pour ma part.

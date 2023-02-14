@@ -1,18 +1,23 @@
 ---
 layout: post
-title: Comment (et pourquoi) j'ai créé ma propre extension navigateur
-excerpt: Cet article va vous présenter une extension développée à la suite de l'identification d'un besoin récurrent, et vous expliquer comment procéder si vous souhaitez en faire de même !
-authors:
-    - aallier
 lang: fr
-permalink: /fr/extensions-navigateur/
+date: '2020-03-30'
 categories:
-    - javascript
-tags:
-    - javascript
-    - firefox
-    - webExtention
-    - tools
+  - javascript
+authors:
+  - aallier
+excerpt: >-
+  Cet article va vous présenter une extension développée à la suite de
+  l'identification d'un besoin récurrent, et vous expliquer comment procéder si
+  vous souhaitez en faire de même !
+title: Comment (et pourquoi) j'ai créé ma propre extension navigateur
+slug: extensions-navigateur
+oldCategoriesAndTags:
+  - javascript
+  - firefox
+  - webextention
+  - tools
+permalink: /fr/extensions-navigateur/
 ---
 
 Depuis le début de l’existence des navigateurs, il est possible de les customiser afin d’y ajouter des fonctionnalités. Cela se présentait d'abord presque exclusivement sous la forme de barres d’outils à l'utilité douteuse, pour plus tardivement proposer des extensions présentant un véritable gain pour l’utilisateur. On pourra citer pour les plus connues : µBlock, React Developper Tools, DownloadHelper... Certaines dans d'entre elles ont même été intégrées aux navigateurs.

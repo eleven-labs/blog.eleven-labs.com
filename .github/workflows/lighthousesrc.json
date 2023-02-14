@@ -1,0 +1,20 @@
+{
+  "ci": {
+    "collect": {
+      "settings": {
+        "configPath": "./.github/workflows/lighthouse-config.js"
+      }
+    },
+    "assert": {
+      "assertions": {
+        "first-contentful-paint": ["warn", {"maxNumericValue": 1800}],
+        "largest-contentful-paint": ["warn", {"maxNumericValue": 2500}],
+        "speed-index": ["warn", {"maxNumericValue": 3400}],
+        "interactive": ["warn", {"maxNumericValue": 3800}],
+        "total-blocking-time": ["warn", {"maxNumericValue": 200}],
+        "cumulative-layout-shift": ["warn", {"maxNumericValue": 0.1}]
+      },
+      "includePassedAssertions": true
+    }
+  }
+}

@@ -1,18 +1,21 @@
 ---
 layout: post
-title: Domotiser son espace de travail - Partie 1
-excerpt: L'objectif de cet article est de domotiser simplement et efficacement son espace de travail avec home-assistant.
-authors:
-    - pouzor
 lang: fr
+date: '2019-08-07'
+categories: []
+authors:
+  - pouzor
+excerpt: >-
+  L'objectif de cet article est de domotiser simplement et efficacement son
+  espace de travail avec home-assistant.
+title: Domotiser son espace de travail - Partie 1
+slug: domotize-your-workspace
+oldCategoriesAndTags:
+  - domotique
+  - gitlab
+  - homeassistant
+  - gitlab-ci
 permalink: /fr/domotize-your-workspace/
-categories:
-    - domotique
-    - gitlab
-tags:
-    - homeassistant
-    - gitlab-ci
-    - domotique
 ---
 
 La domotique “grand public” s’installe de plus en plus dans les foyers, notamment grâce aux nouveaux assistants personnels (Google Home, Alexa) ou encore aux solutions de domotisation “clefs en main”. toutefois, elle reste plutôt absente dans les environnements pros et particulièrement dans notre cas, celui du développement. Pourtant les choses ont pas mal bougé ces dernières années dans le domaine.

@@ -1,19 +1,22 @@
 ---
 layout: post
-title: 'Redux : Structurez vos applications front'
 lang: fr
-permalink: /fr/redux-structurez-vos-applications-front/
-authors:
-    - vcomposieux
-date: '2017-01-17 10:09:00 +0100'
-date_gmt: '2017-01-17 09:09:00 +0100'
+date: '2017-01-17'
 categories:
-    - javascript
-tags:
-    - javascript
-    - react
-    - redux
-    - vuejs
+  - javascript
+authors:
+  - vcomposieux
+excerpt: >-
+  L'écosystème Javascript est très riche, beaucoup de développeurs mais aussi de
+  frameworks et d'outils sont disponibles.
+title: 'Redux : Structurez vos applications front'
+slug: redux-structurez-vos-applications-front
+oldCategoriesAndTags:
+  - javascript
+  - react
+  - redux
+  - vuejs
+permalink: /fr/redux-structurez-vos-applications-front/
 ---
 L'écosystème Javascript est très riche, beaucoup de développeurs mais aussi de frameworks et d'outils sont disponibles.
 Lorsque vous souhaitez développer une application, quel que soit son framework de rendu, vous allez vite être amené à vouloir architecturer votre projet afin de différencier et d'organiser les données des vues. C'est particulièrement le cas lorsque vous utilisez des frameworks de rendu de composants comme `React` ou `VueJS`.

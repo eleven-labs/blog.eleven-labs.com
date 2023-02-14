@@ -1,24 +1,25 @@
 ---
 layout: post
-title: 'Recruter un Product Owner pour votre projet web : tout ce que vous devriez savoir !'
-excerpt: Découvrez le rôle du Product Owner, ses compétences incontournables et son positionnement au sein de l'organisation
 lang: fr
-authors:
-    - mapo
-permalink: /fr/recruter-un-product-owner-pour-votre-projet-web/
+date: '2021-04-16'
 categories:
-    - agile
-tags:
-    - agilité
-    - product owner
-    - product manager
-    - recrutement
-
-image:
-  path: /assets/2021-04-16-recruter-un-product-owner-pour-votre-projet-web/Product Owner.png
-  height: 904
-  width: 700
-
+  - agile
+authors:
+  - mapo
+excerpt: >-
+  Découvrez le rôle du Product Owner, ses compétences incontournables et son
+  positionnement au sein de l'organisation
+title: >-
+  Recruter un Product Owner pour votre projet web : tout ce que vous devriez
+  savoir !
+slug: recruter-un-product-owner-pour-votre-projet-web
+oldCategoriesAndTags:
+  - agile
+  - agilité
+  - product owner
+  - product manager
+  - recrutement
+permalink: /fr/recruter-un-product-owner-pour-votre-projet-web/
 ---
 
 Vous vous lancez dans un projet de développement d’un site ou d’une application web et vous vous interrogez sur le profil à recruter pour vous accompagner ?

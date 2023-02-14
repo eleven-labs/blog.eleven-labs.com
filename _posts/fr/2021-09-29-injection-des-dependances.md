@@ -1,15 +1,23 @@
 ---
 layout: post
-title: "L'injection des dépendances dans Symfony"
-excerpt: Vous travaillez avec Symfony, mais l'injection de dépendances reste un peu floue pour vous ? Découvrez son fonctionnement et apprenez comment en tirer profit au maximum.
-authors:
-    - marishka
-permalink: /fr/injection-des-dependances/
+lang: fr
+date: '2021-09-29'
 categories:
-    - bonnes pratiques
-    - symfony
-    - di
-
+  - php
+authors:
+  - marishka
+excerpt: >-
+  Vous travaillez avec Symfony, mais l'injection de dépendances reste un peu
+  floue pour vous ? Découvrez son fonctionnement et apprenez comment en tirer
+  profit au maximum.
+title: L'injection des dépendances dans Symfony
+slug: injection-des-dependances
+oldCategoriesAndTags:
+  - php
+  - bonnes pratiques
+  - symfony
+  - di
+permalink: /fr/injection-des-dependances/
 ---
 
 ## Injection de dépendances

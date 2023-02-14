@@ -1,28 +1,23 @@
 ---
 layout: post
-title: "Realm, CoreData killer"
 lang: fr
-excerpt: "Realm, CoreData killer"
-permalink: /fr/realm-coredata-killer/
+date: '2018-05-21'
+categories: []
 authors:
   - ibenichou
-categories:
-    - swift
-    - mobile
-    - xcode
-    - coreData
-    - realm
-    - database
-    - ios
-tags:
-    - swift
-    - mobile
-    - xcode
-    - coreData
-    - realm
-    - database
-    - ios
 cover: /assets/2018-02-24-realm-coredata-killer/realm2.jpg
+excerpt: 'Realm, CoreData killer'
+title: 'Realm, CoreData killer'
+slug: realm-coredata-killer
+oldCategoriesAndTags:
+  - swift
+  - mobile
+  - xcode
+  - coredata
+  - realm
+  - database
+  - ios
+permalink: /fr/realm-coredata-killer/
 ---
 
 Realm Mobile Database est une alternative à SQLite et à Core Data pour iOS.

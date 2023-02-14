@@ -1,20 +1,24 @@
 ---
 layout: post
-title: "Munin, Odin's own monitoring"
 lang: en
-permalink: /munin-monitoring-oding/
-excerpt: "Some people know Munin, the raven from northern mythology. It is in this case a distant cousin that you will discover in this article: Munin, the monitoring tool."
+date: '2020-11-18'
+categories: []
 authors:
-    - jbernard
-categories:
-    - monitoring
-tags:
-    - server
-    - master
-    - nodes
-    - munin
-    - opensource
-
+  - jbernard
+excerpt: >-
+  Some people know Munin, the raven from northern mythology. It is in this case
+  a distant cousin that you will discover in this article: Munin, the monitoring
+  tool.
+title: 'Munin, Odin''s own monitoring'
+slug: munin-monitoring-oding
+oldCategoriesAndTags:
+  - monitoring
+  - server
+  - master
+  - nodes
+  - munin
+  - opensource
+permalink: /en/munin-monitoring-oding/
 ---
 
 For lovers of Nordic mythology, Munin and Hunin are Odin's two ravens. They watch over every corner of Midgard and then report back to their master. The application we are interested in today bears its name well because it allows monitoring and reporting of the constants of your various servers, and is called Munin as well.

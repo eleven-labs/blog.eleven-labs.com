@@ -1,18 +1,23 @@
 ---
 layout: post
-title: Architecture hexagonale
 lang: fr
-excerpt: L'architecture hexagonale tend à isoler une application en trois couches distinctes
-authors:
-- dsuarez
-permalink: /fr/architecture-hexagonale/
+date: '2019-01-14'
 categories:
-    - php
-tags:
-    - php 1
-    - hexagonal architecture
-    - onion architecture
+  - php
+authors:
+  - dsuarez
 cover: /assets/2019-01-14-architecture-hexagonale/hexagone.jpg
+excerpt: >-
+  L'architecture hexagonale tend à isoler une application en trois couches
+  distinctes
+title: Architecture hexagonale
+slug: architecture-hexagonale
+oldCategoriesAndTags:
+  - php
+  - php 1
+  - hexagonal architecture
+  - onion architecture
+permalink: /fr/architecture-hexagonale/
 ---
 
 L'infrastructure d'une application, les bases de données, les appels API, de même que les frameworks évoluent

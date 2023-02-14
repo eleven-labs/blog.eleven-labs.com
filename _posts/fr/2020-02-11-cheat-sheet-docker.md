@@ -1,20 +1,23 @@
 ---
 layout: post
-title: "Cheat Sheet : Docker, tout ce que vous devez savoir"
 lang: fr
-permalink: /fr/cheat-sheet-docker-tout-ce-que-vous-devez-savoir/
-excerpt: "Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais des commandes pour créer une image Docker ? Ou encore pour la lancer ?"
-authors:
-    - flemzord
+date: '2020-02-11'
 categories:
-    - cheat-sheet
-    - devops
-    - docker
-tags:
-    - cheat-sheet
-    - docker
-    - devops
+  - architecture
+authors:
+  - flemzord
 cover: /assets/2020-02-11-cheat-sheet-docker/cover.jpg
+excerpt: >-
+  Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais
+  des commandes pour créer une image Docker ? Ou encore pour la lancer ?
+title: 'Cheat Sheet : Docker, tout ce que vous devez savoir'
+slug: cheat-sheet-docker-tout-ce-que-vous-devez-savoir
+oldCategoriesAndTags:
+  - architecture
+  - cheat-sheet
+  - devops
+  - docker
+permalink: /fr/cheat-sheet-docker-tout-ce-que-vous-devez-savoir/
 ---
 
 ## Présentation

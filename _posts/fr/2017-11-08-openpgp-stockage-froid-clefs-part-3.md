@@ -1,19 +1,23 @@
 ---
 layout: post
-title: OpenPGP - Stockage sur le long terme de clefs
-excerpt: Une problématique courante avec les clefs secrètes est leur stockage. Ces clefs doivent être stockées dans un lieu sûr, sur un support durable, tout en restant accessibles en cas de besoin. C'est ce que nous allons voir dans cette article.
-authors:
-    - tthuon
 lang: fr
-permalink: /fr/openpgp-stockage-froid-clefs-partie-3/
-categories:
-    - openpgp
-    - securite
-tags:
-    - openpgp
-    - securite
-    - yubikey
+date: '2017-11-08'
+categories: []
+authors:
+  - tthuon
 cover: /assets/2017-11-08-openpgp-stockage-froid-clefs-part-3/cover.jpg
+excerpt: >-
+  Une problématique courante avec les clefs secrètes est leur stockage. Ces
+  clefs doivent être stockées dans un lieu sûr, sur un support durable, tout en
+  restant accessibles en cas de besoin. C'est ce que nous allons voir dans cette
+  article.
+title: OpenPGP - Stockage sur le long terme de clefs
+slug: openpgp-stockage-froid-clefs-partie-3
+oldCategoriesAndTags:
+  - openpgp
+  - securite
+  - yubikey
+permalink: /fr/openpgp-stockage-froid-clefs-partie-3/
 ---
 
 Nous avons vu dans le premier article que la clef privée principale ne doit pas être divulguée publiquement. Elle doit être conservée et stockée sur un espace de stockage complètement déconnecté du réseau. Mais alors, comment stocker cette clef privée ?

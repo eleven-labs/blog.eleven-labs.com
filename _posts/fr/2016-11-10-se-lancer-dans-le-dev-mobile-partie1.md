@@ -1,30 +1,27 @@
 ---
 layout: post
-title: "Se lancer dans le dév mobile : Partie I"
-excerpt: "Faire du mobile oui, mais par où commencer ?"
 lang: fr
-permalink: /fr/se-lancer-dans-le-dev-mobile-partie1/
-authors:
-    - ibenichou
-date: '2016-11-10 15:44:34 +0100'
-date_gmt: '2016-11-10 14:44:34 +0100'
+date: '2016-11-10'
 categories:
-    - Mobile
-tags:
-    - angular
-    - Ionic
-    - Cordova
-    - mobile
-    - ios
-    - swift
-    - objective-c
-    - react
-    - react-native
-    - application
-image:
-    path: /assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/ios-vs-android.jpg
-    height: 100
-    width: 100
+  - javascript
+authors:
+  - ibenichou
+excerpt: 'Faire du mobile oui, mais par où commencer ?'
+title: 'Se lancer dans le dév mobile : Partie I'
+slug: se-lancer-dans-le-dev-mobile-partie1
+oldCategoriesAndTags:
+  - javascript
+  - mobile
+  - angular
+  - ionic
+  - cordova
+  - ios
+  - swift
+  - objective-c
+  - react
+  - react-native
+  - application
+permalink: /fr/se-lancer-dans-le-dev-mobile-partie1/
 ---
 
 # Faire du mobile oui, mais par où commencer ?

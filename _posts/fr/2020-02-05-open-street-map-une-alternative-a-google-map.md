@@ -1,17 +1,19 @@
 ---
 layout: post
-title: "OpenStreetMap - une alternative à Google Maps"
-permalink: /fr/open-street-map-une-alternative-a-google-map/
-excerpt: "Ajouter une carte interactive sans utiliser Google Maps"
-authors:
-    - talgrin
 lang: fr
+date: '2020-02-05'
 categories:
-    - javascript
-tags:
-    - javascript
-    - ES6
-    - Open Street Map
+  - javascript
+authors:
+  - talgrin
+excerpt: Ajouter une carte interactive sans utiliser Google Maps
+title: OpenStreetMap - une alternative à Google Maps
+slug: open-street-map-une-alternative-a-google-map
+oldCategoriesAndTags:
+  - javascript
+  - es6
+  - open street map
+permalink: /fr/open-street-map-une-alternative-a-google-map/
 ---
 
 ## Intro

@@ -2,8 +2,8 @@
 layout: author
 login: talgrin
 title: Thibaut ALGRIN
-twitter: Thibaut_ALGRIN
 github: ThibautAlgrin
+twitter: Thibaut_ALGRIN
 permalink: /authors/talgrin/
 ---
 Développeur Senior Symfony

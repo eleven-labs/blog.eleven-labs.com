@@ -1,17 +1,23 @@
 ---
 layout: post
-title: Notre blog en AMP
 lang: fr
-permalink: /fr/notre-blog-en-amp/
-excerpt: "Notre blog est à l'image d'Eleven-labs, on aime partager et suivre les dernières tendances. À la fois pour notre blog et pour nos lecteurs nous voulons ce qu'il y a de meilleur et de plus confortable. C'est pour cela qu'aujourd'hui notre blog est AMP compliant."
-authors:
-    - captainjojo
+date: '2017-09-27'
 categories:
-    - javascript
-tags:
-    - amp
-    - javascript
+  - javascript
+authors:
+  - captainjojo
 cover: /assets/2017-09-27-notre-blog-amp/cover.jpg
+excerpt: >-
+  Notre blog est à l'image d'Eleven-labs, on aime partager et suivre les
+  dernières tendances. À la fois pour notre blog et pour nos lecteurs nous
+  voulons ce qu'il y a de meilleur et de plus confortable. C'est pour cela
+  qu'aujourd'hui notre blog est AMP compliant.
+title: Notre blog en AMP
+slug: notre-blog-en-amp
+oldCategoriesAndTags:
+  - javascript
+  - amp
+permalink: /fr/notre-blog-en-amp/
 ---
 Notre blog est à l'image d'Eleven-labs, on aime partager et suivre les dernières tendances. À la fois pour notre blog et pour nos lecteurs nous voulons ce qu'il y a de meilleur et de plus confortable. C'est pour cela qu'aujourd'hui notre blog est **AMP compliant**.
 

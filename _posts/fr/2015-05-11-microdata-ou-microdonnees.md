@@ -1,22 +1,20 @@
 ---
 layout: post
-title: Microdata ou microdonnées
 lang: fr
-permalink: /fr/microdata-ou-microdonnees/
-excerpt: Présentation des microdata ou microdonnées, leur implémentation dans les pages web, et leur utilité pour le SEO ou référencement naturel.
+date: '2015-05-11'
+categories: []
 authors:
-    - seinhorn
+  - seinhorn
+excerpt: >-
+  Présentation des microdata ou microdonnées, leur implémentation dans les pages
+  web, et leur utilité pour le SEO ou référencement naturel.
+title: Microdata ou microdonnées
+slug: microdata-ou-microdonnees
+oldCategoriesAndTags:
+  - blog
+  - microdata
+  - seo
 permalink: /fr/microdata-ou-microdonnees/
-categories:
-    - blog
-tags:
-    - microdata
-    - seo
-
-date: 2015-05-11 10:05:07 +0200
-date_gmt: 2015-05-11 08:05:07 +0200
-
-cover:
 ---
 
 A l’heure où tout le monde ne parle que de Big data, je vais tenter de vous présenter les microdata.

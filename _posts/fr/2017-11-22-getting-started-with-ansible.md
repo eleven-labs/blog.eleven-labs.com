@@ -1,19 +1,23 @@
 ---
 layout: post
-title: Commencer avec Ansible, cas concret pour initialiser un VPS
-excerpt: Découvrons Ansible en créant un script qui permet d'initialiser un VPS (appliquer les règles de base + sécurité)
-authors:
-    - nkania
-permalink: /fr/getting-start-with-ansible/
 lang: fr
-categories:
-    - Non classé
-tags:
-    - linux
-    - vps
-    - serveur
-    - ansible
+date: '2017-11-22'
+categories: []
+authors:
+  - nkania
 cover: /assets/2017-11-22-getting-started-with-ansible/cover.jpg
+excerpt: >-
+  Découvrons Ansible en créant un script qui permet d'initialiser un VPS
+  (appliquer les règles de base + sécurité)
+title: 'Commencer avec Ansible, cas concret pour initialiser un VPS'
+slug: getting-start-with-ansible
+oldCategoriesAndTags:
+  - non classé
+  - linux
+  - vps
+  - serveur
+  - ansible
+permalink: /fr/getting-start-with-ansible/
 ---
 
 ## Commencer avec Ansible
