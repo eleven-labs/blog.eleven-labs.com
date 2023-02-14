@@ -9,7 +9,6 @@ gem 'scss_lint', require: false
 
 group :jekyll_plugins do
   gem 'jekyll-algolia', '~> 1.6.0'
-  gem 'amp-jekyll', :git => 'https://github.com/eleven-labs/amp-jekyll.git'
   gem 'jekyll-feed', '~> 0.15.1'
   gem 'jekyll-multiple-languages-plugin', :git => 'https://github.com/eleven-labs/jekyll-multiple-languages-plugin.git'
   gem 'jekyll-paginate', '~> 1.1.0'

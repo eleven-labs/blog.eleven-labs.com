@@ -1,20 +1,26 @@
 ---
 layout: post
-title: Bien gérer ses exceptions
 lang: fr
-permalink: /fr/php_bien-gerer-ses-exceptions/
-authors:
-    - tthuon
-excerpt: "Bonjour à tous ! Aujourd'hui je voudrais vous parler d'un sujet peu abordé en php : les exceptions. Une exception est une alerte lancée lors de l'exécution du code, pour indiquer que quelque chose ne s'est pas passé comme prévu. Cela peut être un mauvais identifiant de connexion à la base de données, ou bien une opération sur un fichier qui n'est pas autorisée, ou encore une division par zéro par exemple."
-date: '2016-11-16 15:28:19 +0100'
-date_gmt: '2016-11-16 14:28:19 +0100'
+date: '2016-11-16'
 categories:
-    - php
-tags:
-    - php
-    - exception
-    - best practice
-    - error
+  - php
+authors:
+  - tthuon
+excerpt: >-
+  Bonjour à tous ! Aujourd'hui je voudrais vous parler d'un sujet peu abordé en
+  php : les exceptions. Une exception est une alerte lancée lors de l'exécution
+  du code, pour indiquer que quelque chose ne s'est pas passé comme prévu. Cela
+  peut être un mauvais identifiant de connexion à la base de données, ou bien
+  une opération sur un fichier qui n'est pas autorisée, ou encore une division
+  par zéro par exemple.
+title: Bien gérer ses exceptions
+slug: php_bien-gerer-ses-exceptions
+oldCategoriesAndTags:
+  - php
+  - exception
+  - best practice
+  - error
+permalink: /fr/php_bien-gerer-ses-exceptions/
 ---
 
 Bonjour à tous ! Aujourd'hui je voudrais vous parler d'un sujet peu abordé en php : les exceptions. Une exception est une alerte lancée lors de l'exécution du code, pour indiquer que quelque chose ne s'est pas passé comme prévu. Cela peut être un mauvais identifiant de connexion à la base de données, ou bien une opération sur un fichier qui n'est pas autorisée, ou encore une division par zéro par exemple.

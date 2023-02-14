@@ -1,17 +1,23 @@
 ---
-lang: fr
 layout: post
-title: 4 Questions à se poser pour créer un environnement motivant et sécurisant pour vos équipes
-excerpt: L'objectif de cet article est d'améliorer votre Leadership en vous sensibilisant à l'état d'esprit Agile
-authors:
-    - bfeireisen
-permalink: /fr/4-questions-du-leader-agile/
+lang: fr
+date: '2021-01-29'
 categories:
-    - agile
-tags:
-    - agile
-    - soft skills
-    - scrum master
+  - agile
+authors:
+  - bfeireisen
+excerpt: >-
+  L'objectif de cet article est d'améliorer votre Leadership en vous
+  sensibilisant à l'état d'esprit Agile
+title: >-
+  4 Questions à se poser pour créer un environnement motivant et sécurisant pour
+  vos équipes
+slug: 4-questions-du-leader-agile
+oldCategoriesAndTags:
+  - agile
+  - soft skills
+  - scrum master
+permalink: /fr/4-questions-du-leader-agile/
 ---
 
 Dans un contexte qui évolue vite, où le télétravail a commencé à être la norme, il est capital en tant que manager de réussir à mettre en place de manière concrète un environnement relationnel sécurisant pour vos équipes. Et pour y parvenir, il me semble capital de se poser les 4 questions suivantes.

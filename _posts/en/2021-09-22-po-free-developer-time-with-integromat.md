@@ -1,15 +1,22 @@
 ---
 layout: post
-title: "PO : Free some developer time by doing some NoCode with Integromat"
-excerpt: You're part of a small team with a lot of features to release quickly and a PoC needed to test a product but you only have little to no tech skills ? NoCode is what you're looking for !
+lang: en
+date: '2021-09-22'
+categories: []
 authors:
-    - marianne
-permalink: /po-free-developer-time-with-integromat/
-categories:
-    - best practice
-    - nocode
-
-cover: /assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
+  - marianne
+cover: >-
+  /assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
+excerpt: >-
+  You're part of a small team with a lot of features to release quickly and a
+  PoC needed to test a product but you only have little to no tech skills ?
+  NoCode is what you're looking for !
+title: 'PO : Free some developer time by doing some NoCode with Integromat'
+slug: po-free-developer-time-with-integromat
+oldCategoriesAndTags:
+  - best practice
+  - nocode
+permalink: /en/po-free-developer-time-with-integromat/
 ---
 
 As a PO or product manager, you can develop yourself some features that may be repetitive and uninspiring for your developers, without much added value. This allows teams to focus on the essentials, while leaving more time available to think about the architecture and the various technical challenges. To test a new idea and/or market without investing too much, a NoCode tool is a real solution.

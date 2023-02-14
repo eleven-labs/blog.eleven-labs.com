@@ -1,29 +1,33 @@
 ---
 layout: post
-title: 'Une solution pour cartographier et optimiser votre parcours client : la Customer Journey Map'
-excerpt: Créez une représentation visuelle et partagée de votre parcours client afin d'identifier les nouvelles fonctionnalités à développer sur votre site ou application
 lang: fr
-authors:
-    - mapo
-permalink: /fr/customer-journey-map-votre-arme-secrete-pour-cartographier-votre-parcours-client/
+date: '2021-01-13'
 categories:
-    - agile
-tags:
-    - agilité
-    - marketing
-    - product owner
-    - product manager
-    - customer journey
-    - parcours clients
-    - parcours utilisateurs
-    - user journey
-    - priorisation
-
-image:
-  path: /assets/2021-01-13-user-journey-map/User Journey Map Template.png
-  height: 904
-  width: 700
-
+  - agile
+authors:
+  - mapo
+excerpt: >-
+  Créez une représentation visuelle et partagée de votre parcours client afin
+  d'identifier les nouvelles fonctionnalités à développer sur votre site ou
+  application
+title: >-
+  Une solution pour cartographier et optimiser votre parcours client : la
+  Customer Journey Map
+slug: >-
+  customer-journey-map-votre-arme-secrete-pour-cartographier-votre-parcours-client
+oldCategoriesAndTags:
+  - agile
+  - agilité
+  - marketing
+  - product owner
+  - product manager
+  - customer journey
+  - parcours clients
+  - parcours utilisateurs
+  - user journey
+  - priorisation
+permalink: >-
+  /fr/customer-journey-map-votre-arme-secrete-pour-cartographier-votre-parcours-client/
 ---
 
 Si vous recherchez un point de départ pour identifier les frustrations de vos utilisateurs et trouver les opportunités d’améliorations de votre parcours client sur votre site web... Votre première mission sera de construire votre Customer Journey Map afin de cartographier l’expérience vécue par vos clients.

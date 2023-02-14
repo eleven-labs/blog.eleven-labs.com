@@ -1,16 +1,20 @@
 ---
 layout: post
-title: PHP 7.1 - For dummies candidates
-authors:
-    - aandre
-date: '2016-09-08 15:00:05 +0200'
-date_gmt: '2016-09-08 13:00:05 +0200'
 lang: en
-permalink: /php-7-1-dummies-candidates/
+date: '2016-09-08'
 categories:
-    - Non classé
-tags:
-    - php
+  - php
+authors:
+  - aandre
+excerpt: >-
+  Some time ago, well almost one year ago (time just flies!), I wrote about PHP
+  7.0\. Ten months later, things are moving again: PHP 7.1 is in RC1 stage.
+title: PHP 7.1 - For dummies candidates
+slug: php-7-1-dummies-candidates
+oldCategoriesAndTags:
+  - php
+  - non classé
+permalink: /en/php-7-1-dummies-candidates/
 ---
 Some time ago, well almost one year ago (time just flies!), I wrote about PHP 7.0\. Ten months later, things are moving again: PHP 7.1 is in RC1 stage.
 

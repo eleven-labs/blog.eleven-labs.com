@@ -1,20 +1,26 @@
 ---
 layout: post
-title: "Munin, le monitoring des dieux"
 lang: fr
-permalink: /fr/munin-monitoring-oding/
-excerpt: "Certains connaissent Munin, le corbeau de la mythologie nordique. C'est en l'occurrence un lointain cousin que vous allez découvrir dans cet article : L'outil de monitoring Munin."
-authors:
-    - jbernard
+date: '2020-04-29'
 categories:
-    - devops
-tags:
-    - serveur
-    - master
-    - nodes
-    - munin
-    - opensource
-
+  - architecture
+authors:
+  - jbernard
+excerpt: >-
+  Certains connaissent Munin, le corbeau de la mythologie nordique. C'est en
+  l'occurrence un lointain cousin que vous allez découvrir dans cet article :
+  L'outil de monitoring Munin.
+title: 'Munin, le monitoring des dieux'
+slug: munin-monitoring-oding
+oldCategoriesAndTags:
+  - architecture
+  - devops
+  - serveur
+  - master
+  - nodes
+  - munin
+  - opensource
+permalink: /fr/munin-monitoring-oding/
 ---
 
 Pour les amateurs de mythologie nordique, Munin et Hunin sont les deux corbeaux d’Odin. Ils surveillent les moindres recoins de Midgard et rapportent ensuite à leur maître. L’application qui nous intéresse aujourd’hui porte donc bien son nom car elle permet le monitoring et le reporting des constantes de vos différents serveurs, et est baptisée Munin.

@@ -1,21 +1,22 @@
 ---
 layout: post
-title: Using Traefik as a reverse proxy
-excerpt: In need for exposing websites and applications easily on the internet with a valid SSL certificate ? You're on the right spot ! :)
-authors:
-    - jmoati
-    - dfert
 lang: en
-permalink: /using-traefik-as-a-reverse-proxy/
-categories:
-    - docker
-    - ssl
-    - reverse-proxy
-tags:
-    - docker
-    - ssl
-    - reverse-proxy
+date: '2020-12-15'
+categories: []
+authors:
+  - jmoati
+  - dfert
 cover: /assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg
+excerpt: >-
+  In need for exposing websites and applications easily on the internet with a
+  valid SSL certificate ? You're on the right spot ! :)
+title: Using Traefik as a reverse proxy
+slug: using-traefik-as-a-reverse-proxy
+oldCategoriesAndTags:
+  - docker
+  - ssl
+  - reverse-proxy
+permalink: /en/using-traefik-as-a-reverse-proxy/
 ---
 
 ![Cover]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg)

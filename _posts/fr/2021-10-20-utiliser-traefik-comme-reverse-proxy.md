@@ -1,14 +1,20 @@
 ---
 layout: post
-title: Utiliser traefik comme reverse proxy
-excerpt: Besoin d’exposer facilement des sites et applications web sur Internet avec un certificat SSL valide ? C’est ici :)
-authors:
-- jmoati
 lang: fr
-permalink: /fr/utiliser-traefik-comme-reverse-proxy/
+date: '2021-10-20'
 categories:
-    - DevOps
-
+  - architecture
+authors:
+  - jmoati
+excerpt: >-
+  Besoin d’exposer facilement des sites et applications web sur Internet avec un
+  certificat SSL valide ? C’est ici :)
+title: Utiliser traefik comme reverse proxy
+slug: utiliser-traefik-comme-reverse-proxy
+oldCategoriesAndTags:
+  - architecture
+  - devops
+permalink: /fr/utiliser-traefik-comme-reverse-proxy/
 ---
 
 ![Cover]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg)

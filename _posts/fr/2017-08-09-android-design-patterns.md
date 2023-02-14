@@ -1,24 +1,25 @@
 ---
 layout: post
-title: Android et les Design Patterns
-excerpt: Nous allons voir à travers cet article jusqu'à quel point on peut appliquer les principaux Design Patterns dans un projet Android
-authors:
-    - obennouna
-date: '2017-08-09 22:21:00 +0100'
-date_gmt: '2017-08-09 21:21:00 +0100'
 lang: fr
-permalink: /fr/android-design-pattern/
-categories:
-    - mobile
-tags:
-    - mobile
-    - android
-    - applications mobile
-    - mvc
-    - mvp
-    - mvvm
-    - databinding
+date: '2017-08-09'
+categories: []
+authors:
+  - obennouna
 cover: /assets/2017-08-02-android-design-pattern/cover.jpg
+excerpt: >-
+  Nous allons voir à travers cet article jusqu'à quel point on peut appliquer
+  les principaux Design Patterns dans un projet Android
+title: Android et les Design Patterns
+slug: android-design-pattern
+oldCategoriesAndTags:
+  - mobile
+  - android
+  - applications mobile
+  - mvc
+  - mvp
+  - mvvm
+  - databinding
+permalink: /fr/android-design-pattern/
 ---
 Aujourd'hui nous allons voir jusqu'à quel point on peut implémenter le plus rigoureusement possible certains Design Patterns. En effet nous allons les séparer en deux catégories :
  - Design Patterns structurants

@@ -1,13 +1,4 @@
 GIT
-  remote: https://github.com/eleven-labs/amp-jekyll.git
-  revision: 2bd0b8336959c72b25bf363358f8df0bbc4aeb87
-  specs:
-    amp-jekyll (1.0.3)
-      fastimage (>= 1.8.0)
-      jekyll (>= 3.0, < 5.0)
-      nokogiri (>= 1.6.0)
-
-GIT
   remote: https://github.com/eleven-labs/jekyll-multiple-languages-plugin.git
   revision: a088e0f4e6360b80ef0fc8a7fb3e8b046f25c04a
   specs:
@@ -34,7 +25,6 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
     execjs (2.7.0)
-    fastimage (2.2.1)
     ffi (1.14.2)
     filesize (0.2.0)
     forwardable-extended (2.6.0)
@@ -87,9 +77,9 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    mini_portile2 (2.5.0)
-    nokogiri (1.11.0)
-      mini_portile2 (~> 2.5.0)
+    mini_portile2 (2.8.0)
+    nokogiri (1.13.8)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     nuggets (1.6.0)
     oga (3.3)
@@ -99,7 +89,7 @@ GEM
       forwardable-extended (~> 2.6)
     progressbar (1.11.0)
     public_suffix (4.0.6)
-    racc (1.5.2)
+    racc (1.6.0)
     rake (13.0.3)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
@@ -130,7 +120,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  amp-jekyll!
   jekyll (~> 4.1.1)
   jekyll-algolia (~> 1.6.0)
   jekyll-feed (~> 0.15.1)

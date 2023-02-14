@@ -1,26 +1,20 @@
 ---
 layout: post
-title: "Comprendre le SSL/TLS: Partie 4 Handshake Protocol"
-excerpt: "Les protocoles SSL / TLS"
 lang: fr
-permalink: /fr/comprendre-le-ssltls-partie-4-handshake-protocol/
+date: '2016-12-22'
+categories: []
 authors:
-    - ibenichou
-date: '2016-12-22 11:15:59 +0100'
-date_gmt: '2016-12-22 10:15:59 +0100'
-categories:
-    - tls
-    - ssl
-tags:
-    - securite
-    - ssl
-    - tls
-    - Algorithmie
-    - Protocoles
-image:
-    path: /assets/2016-12-22-comprendre-le-ssltls-partie-4-handshake-protocol/handshake-1.jpg
-    height: 100
-    width: 100
+  - ibenichou
+excerpt: Les protocoles SSL / TLS
+title: 'Comprendre le SSL/TLS: Partie 4 Handshake Protocol'
+slug: comprendre-le-ssltls-partie-4-handshake-protocol
+oldCategoriesAndTags:
+  - tls
+  - ssl
+  - securite
+  - algorithmie
+  - protocoles
+permalink: /fr/comprendre-le-ssltls-partie-4-handshake-protocol/
 ---
 
 Les protocoles SSL / TLS peuvent être divisés en 2 couches.

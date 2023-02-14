@@ -1,27 +1,26 @@
 ---
 layout: post
-title: Une application React plus réactive - Le skeleton screen
-excerpt: Dans cet article, nous allons vous présenter le skeleton screen et vous montrer comment l'implémenter dans votre application React facilement grâce à ApolloJS
-authors:
-    - kcordier
 lang: fr
-permalink: /fr/skeleton-screen-avec-react-et-apollo-js/
+date: '2019-10-16'
 categories:
-    - javascript
-    - react
-    - ApolloJS
-tags:
-    - javascript
-    - react
-    - apollo
-    - apolloJS
-    - UX
-    - skeleton screen
-    - squelette
-image:
-    path: /assets/2019-10-16-skeleton-screen/skeleton.jpg
-    height: 295
-    width: 775
+  - javascript
+authors:
+  - kcordier
+excerpt: >-
+  Dans cet article, nous allons vous présenter le skeleton screen et vous
+  montrer comment l'implémenter dans votre application React facilement grâce à
+  ApolloJS
+title: Une application React plus réactive - Le skeleton screen
+slug: skeleton-screen-avec-react-et-apollo-js
+oldCategoriesAndTags:
+  - javascript
+  - react
+  - apollojs
+  - apollo
+  - ux
+  - skeleton screen
+  - squelette
+permalink: /fr/skeleton-screen-avec-react-et-apollo-js/
 ---
 
 ## Intro

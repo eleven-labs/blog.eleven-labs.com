@@ -4,7 +4,6 @@ algolia:
     index_name:     'blog_eleven'
     files_to_exclude:
         - index.html
-        - amp
         - authors
         - page
 

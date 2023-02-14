@@ -1,26 +1,24 @@
 ---
 layout: post
-title: RabbitMQ des bases à la maîtrise (Partie 2)
 lang: fr
-permalink: /fr/rabbitmq-partie-2-la-maitrise/
-excerpt: "Les policies, le retry (dead letter, poison message)... en avant pour l'utilisation avancée de RabbitMQ."
+date: '2018-04-11'
+categories: []
 authors:
-    - amoutte
-categories:
-    - rabbitmq
-    - broker
-    - queuing
-    - retry
-    - dead letter
-    - poison message
-tags:
-    - rabbitmq
-    - broker
-    - queuing
-    - retry
-    - dead letter
-    - poison message
+  - amoutte
 cover: /assets/2018-04-11-rabbitmq-partie-2-la-maitrise/cover.jpg
+excerpt: >-
+  Les policies, le retry (dead letter, poison message)... en avant pour
+  l'utilisation avancée de RabbitMQ.
+title: RabbitMQ des bases à la maîtrise (Partie 2)
+slug: rabbitmq-partie-2-la-maitrise
+oldCategoriesAndTags:
+  - rabbitmq
+  - broker
+  - queuing
+  - retry
+  - dead letter
+  - poison message
+permalink: /fr/rabbitmq-partie-2-la-maitrise/
 ---
 
 Les policies, le retry (dead letter, poison message)... en avant pour l'utilisation avancée de RabbitMQ.

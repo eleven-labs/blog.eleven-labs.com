@@ -1,14 +1,21 @@
 ---
 layout: post
-title: "La rétrospective de sprint : diversifier pour gagner en qualité - partie 1"
-excerpt: "Si l'on considère l’ensemble des cérémonies préconisées par le framework SCRUM, la rétrospective de sprint est certainement celle qui peut être le principal vecteur d’amélioration continue."
-authors:
-    - pbrenot
 lang: fr
+date: '2018-12-05'
+categories: []
+authors:
+  - pbrenot
+cover: >-
+  /assets/2018-12-05-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/cover.jpg
+excerpt: >-
+  Si l'on considère l’ensemble des cérémonies préconisées par le framework
+  SCRUM, la rétrospective de sprint est certainement celle qui peut être le
+  principal vecteur d’amélioration continue.
+title: 'La rétrospective de sprint : diversifier pour gagner en qualité - partie 1'
+slug: retrospective-de-sprint-gagner-en-qualite
+oldCategoriesAndTags:
+  - agilité
 permalink: /fr/retrospective-de-sprint-gagner-en-qualite/
-categories:
-    - Agilité
-cover: /assets/2018-12-05-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-1/cover.jpg
 ---
 
 

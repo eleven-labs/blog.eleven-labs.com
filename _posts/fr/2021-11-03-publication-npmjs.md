@@ -1,13 +1,19 @@
 ---
 layout: post
-title: Développer et publier un paquet sur npmjs
-excerpt: Dans cet article, nous allors voir ensemble comment développer et publier un paquet sur npmjs.
-authors:
-- ygherbi
 lang: fr
-permalink: /fr/publication-npmjs/
+date: '2021-11-03'
 categories:
-  - Javascript
+  - javascript
+authors:
+  - ygherbi
+excerpt: >-
+  Dans cet article, nous allors voir ensemble comment développer et publier un
+  paquet sur npmjs.
+title: Développer et publier un paquet sur npmjs
+slug: publication-npmjs
+oldCategoriesAndTags:
+  - javascript
+permalink: /fr/publication-npmjs/
 ---
 ![logo-npm]({{ site.baseurl }}/assets/2021-11-03-publication-npmjs/npm-logo.png)  
   

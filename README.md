@@ -134,7 +134,7 @@ Votre article doit être écrit en [markdown](https://guides.github.com/features
  Si vous avez besoin de mettre des images dans votre article il faut d'abord les ajouter dans le dossier suivant `assets/AAAA-MM-DD-titre/`, puis les insérer dans votre article.
 
 ```md
-![DESCRIPTION](/assets/AAAA-MM-DD-titre/MON IMAGE)
+![DESCRIPTION]({{ site.baseurl }}/assets/AAAA-MM-DD-titre/MON IMAGE)
 ```
 
 **4 - Demandez la publication**
@@ -187,4 +187,4 @@ Ne mettez pas d'image ayant une résolution trop grande sur vos articles. Cela e
 **2 - Optimiser vos images**
 
 Toujours afin de garder des performances satisfaisantes, optimisez vos images à l'aide de logiciels adaptés.
-Des logiciels comme [ImageOptim](https://imageoptim.com/) sur Mac, [Trimage](https://trimage.org/) sur Lisnux ou [FileOptimizer](http://nikkhokkho.sourceforge.net/static.php?page=FileOptimizer) sur Windows offrent des interfaces très faciles d'utilisation et des compressions efficaces.
+Des logiciels comme [ImageOptim](https://imageoptim.com/) sur Mac, [Trimage](https://trimage.org/) sur Linux ou [FileOptimizer](http://nikkhokkho.sourceforge.net/static.php?page=FileOptimizer) sur Windows offrent des interfaces très faciles d'utilisation et des compressions efficaces.

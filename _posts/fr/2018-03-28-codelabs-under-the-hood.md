@@ -1,24 +1,23 @@
 ---
 layout: post
-title: Codelabs under the hood
-excerpt: À propos d'Eleven Codelabs
-authors:
-    - kelfarsaoui
 lang: fr
-permalink: /fr/codelabs-under-the-hood/
+date: '2018-03-28'
 categories:
-    - react
-    - Static site generation
-    - Markdown
-    - AST
-    - App engine
-tags:
-    - react
-    - Static site generation
-    - Markdown
-    - AST
-    - App engine
+  - javascript
+authors:
+  - kelfarsaoui
 cover: /assets/2018-03-29-codelabs-under-the-hood/cover.jpg
+excerpt: À propos d'Eleven Codelabs
+title: Codelabs under the hood
+slug: codelabs-under-the-hood
+oldCategoriesAndTags:
+  - javascript
+  - react
+  - static site generation
+  - markdown
+  - ast
+  - app engine
+permalink: /fr/codelabs-under-the-hood/
 ---
 
 Après plusieurs mois de travail acharné, nous avons le plaisir de vous annoncer la sortie d'Eleven Codelabs !

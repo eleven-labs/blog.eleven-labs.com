@@ -1,20 +1,20 @@
 ---
 layout: post
-title: Prise en main de VIM configuré pour PHP
-excerpt: Prenez en main cet éditeur de texte universel et léger pour votre projet web !
-authors:
-    - pvermeil
 lang: fr
-permalink: /fr/prise-en-main-vim-php/
+date: '2019-05-16'
 categories:
-    - php
-    - linux
-    - MacOS
-tags:
-    - linux
-    - vim
-    - php
-    - macos
+  - php
+authors:
+  - pvermeil
+excerpt: Prenez en main cet éditeur de texte universel et léger pour votre projet web !
+title: Prise en main de VIM configuré pour PHP
+slug: prise-en-main-vim-php
+oldCategoriesAndTags:
+  - php
+  - linux
+  - macos
+  - vim
+permalink: /fr/prise-en-main-vim-php/
 ---
 
  ![]({{site.baseurl}}/assets/2019-05-06-prise-en-main-vim-php/vim-logo-en.png)

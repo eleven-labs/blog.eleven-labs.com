@@ -1,15 +1,16 @@
 ---
 layout: post
-title: Pattern Specification
-authors:
-    - rpierlot
 lang: en
-permalink: /pattern-specification/
-date: '2016-09-16 11:24:46 +0200'
-date_gmt: '2016-09-16 09:24:46 +0200'
-categories:
-    - Non classé
-tags: []
+date: '2016-09-16'
+categories: []
+authors:
+  - rpierlot
+excerpt: "Through my different professional experiences, I had to set a lot of business rules in rich web apps. One day, I\_stumbled upon a different way to deal with those: using the\_specification pattern. This method has proven to be structuring and deserves some attention if you do not know what it is."
+title: Pattern Specification
+slug: pattern-specification
+oldCategoriesAndTags:
+  - non classé
+permalink: /en/pattern-specification/
 ---
 
 Through my different professional experiences, I had to set a lot of business rules in rich web apps. One day, I stumbled upon a different way to deal with those: using the specification pattern. This method has proven to be structuring and deserves some attention if you do not know what it is.

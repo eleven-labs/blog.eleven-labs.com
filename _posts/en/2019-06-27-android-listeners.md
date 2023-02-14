@@ -1,18 +1,19 @@
 ---
 layout: post
-title: 'Android: Why do I like listeners?'
 lang: en
-permalink: /android-listeners/
-excerpt: "Let's talk about listeners"
+date: '2019-06-27'
+categories: []
 authors:
-    - thuchon
-categories:
-    - Mobile
-tags:
-    - mobile application
-    - mobile
-    - dev mobile
-    - Android
+  - thuchon
+excerpt: Let's talk about listeners
+title: 'Android: Why do I like listeners?'
+slug: android-listeners
+oldCategoriesAndTags:
+  - mobile
+  - mobile application
+  - dev mobile
+  - android
+permalink: /en/android-listeners/
 ---
 ## Introduction
 

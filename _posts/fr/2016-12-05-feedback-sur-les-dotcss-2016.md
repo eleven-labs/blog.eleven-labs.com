@@ -1,19 +1,25 @@
 ---
 layout: post
-title: Feedback sur les DotCSS 2016
 lang: fr
-permalink: /fr/feedback-sur-les-dotcss-2016/
-excerpt: "Pour cette 3ème édition des DotCSS consacrée à la partie stylée de la Force, le menu était alléchant : 8 conférenciers de qualité dont quelques pointures de la profession, avec comme cerise sur le gâteau un talk de Dieu le père, aka Håkon Wium Lie, le créateur de CSS en personne. Comme d’habitude aux Dot Conférences, l’accueil était princier et l’ambiance chaleureuse dans un théâtre des variétés plein à craquer."
+date: '2016-12-05'
+categories: []
 authors:
-    - tbrugidou
-date: '2016-12-05 16:32:25 +0100'
-date_gmt: '2016-12-05 15:32:25 +0100'
-categories:
-    - Non classé
-tags:
-    - css
-    - w3c
-    - html
+  - tbrugidou
+excerpt: >-
+  Pour cette 3ème édition des DotCSS consacrée à la partie stylée de la Force,
+  le menu était alléchant : 8 conférenciers de qualité dont quelques pointures
+  de la profession, avec comme cerise sur le gâteau un talk de Dieu le père, aka
+  Håkon Wium Lie, le créateur de CSS en personne. Comme d’habitude aux Dot
+  Conférences, l’accueil était princier et l’ambiance chaleureuse dans un
+  théâtre des variétés plein à craquer.
+title: Feedback sur les DotCSS 2016
+slug: feedback-sur-les-dotcss-2016
+oldCategoriesAndTags:
+  - non classé
+  - css
+  - w3c
+  - html
+permalink: /fr/feedback-sur-les-dotcss-2016/
 ---
 
 Pour cette 3ème édition des DotCSS consacrée à la partie stylée de la Force, le menu était alléchant : 8 conférenciers de qualité dont quelques pointures de la profession, avec comme cerise sur le gâteau un talk de Dieu le père, aka Håkon Wium Lie, le créateur de CSS en personne. Comme d’habitude aux Dot Conférences, l’accueil était princier et l’ambiance chaleureuse dans un théâtre des variétés plein à craquer.

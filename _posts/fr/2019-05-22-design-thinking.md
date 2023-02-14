@@ -1,17 +1,20 @@
 ---
-lang: fr
 layout: post
-title: L'art d'identifier des problématiques et des solutions pertinentes grâce au Design Thinking
-excerpt: Définir les problématiques à solutionner grâce au Design thinking
-authors:
-    - jeni
-permalink: /fr/design-thinking/
+lang: fr
+date: '2019-05-22'
 categories:
-    - design-thinking
-    - agile
-tags:
-    - design-thinking
-    - agile
+  - agile
+authors:
+  - jeni
+excerpt: Définir les problématiques à solutionner grâce au Design thinking
+title: >-
+  L'art d'identifier des problématiques et des solutions pertinentes grâce au
+  Design Thinking
+slug: design-thinking
+oldCategoriesAndTags:
+  - agile
+  - design-thinking
+permalink: /fr/design-thinking/
 ---
 
 ## Design thinking

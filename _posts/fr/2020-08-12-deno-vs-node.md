@@ -1,17 +1,19 @@
 ---
 layout: post
-title: "Deno Vs Node - Top 5 des nouveautés de Deno"
-excerpt: Dans cet article, nous allons voir quelques nouveautés offertes par Deno
 lang: fr
-permalink: /fr/deno-vs-node/
-authors:
-    - plerouge
+date: '2020-08-12'
 categories:
-    - javascript
-tags:
-    - javascript
-    - node
-    - deno
+  - javascript
+authors:
+  - plerouge
+excerpt: 'Dans cet article, nous allons voir quelques nouveautés offertes par Deno'
+title: Deno Vs Node - Top 5 des nouveautés de Deno
+slug: deno-vs-node
+oldCategoriesAndTags:
+  - javascript
+  - node
+  - deno
+permalink: /fr/deno-vs-node/
 ---
 
 Le créateur de NodeJS, Ryan Dahl, a publié un nouveau runtime qui vise à résoudre de nombreuses lacunes de Node.

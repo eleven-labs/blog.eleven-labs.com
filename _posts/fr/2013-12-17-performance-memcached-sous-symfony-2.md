@@ -1,18 +1,23 @@
 ---
 layout: post
-title: Performance et Memcached sous Symfony 2
 lang: fr
-permalink: /fr/performance-memcached-sous-symfony-2/
-excerpt: Dans tout (gros) projet, à un moment avancé de votre développement/exploitation, vous serez amené à rencontrer divers problèmes de performance.
-authors:
-    - rjardinet
-date: '2013-12-17 00:00:35 +0100'
-date_gmt: '2013-12-16 23:00:35 +0100'
+date: '2013-12-17'
 categories:
-    - symfony
-tags:
-    - symfony2
-    - memcached
+  - php
+authors:
+  - pouzor
+excerpt: >-
+  Dans tout (gros) projet, à un moment avancé de votre
+  développement/exploitation, vous serez amené à rencontrer divers problèmes de
+  performance.
+title: Performance et Memcached sous Symfony 2
+slug: performance-memcached-sous-symfony-2
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - symfony2
+  - memcached
+permalink: /fr/performance-memcached-sous-symfony-2/
 ---
 
 Dans tout (gros) projet, à un moment avancé de votre développement/exploitation, vous serez amené à rencontrer divers problèmes de performance.

@@ -1,15 +1,22 @@
 ---
 layout: post
-title: "AWS Summit 2019 - Retour d'expérience"
-excerpt: "L'AWS Summit Paris s'est tenu le 2 Avril au palais des congrés. C'était l'occasion d'en apprendre plus sur les différents services proposés par AWS via des conférences, tutoriels et discussions sur les stands des différents partenaires de l'événement. Nous sommes plusieurs enthousiastes Cloud d'Eleven Labs à nous être rendus sur place."
-authors:
-    - vbertrand
 lang: fr
+date: '2019-04-24'
+categories: []
+authors:
+  - vbertrand
+excerpt: >-
+  L'AWS Summit Paris s'est tenu le 2 Avril au palais des congrés. C'était
+  l'occasion d'en apprendre plus sur les différents services proposés par AWS
+  via des conférences, tutoriels et discussions sur les stands des différents
+  partenaires de l'événement. Nous sommes plusieurs enthousiastes Cloud d'Eleven
+  Labs à nous être rendus sur place.
+title: AWS Summit 2019 - Retour d'expérience
+slug: aws-summit-2019-retour-d-experience
+oldCategoriesAndTags:
+  - aws
+  - cloud
 permalink: /fr/aws-summit-2019-retour-d-experience/
-categories:
-    - aws
-tags:
-    - cloud
 ---
 
 ## Introduction

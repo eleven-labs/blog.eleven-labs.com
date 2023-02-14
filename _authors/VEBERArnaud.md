@@ -2,9 +2,9 @@
 layout: author
 login: VEBERArnaud
 title: Arnaud Veber
-twitter: VEBERArnaud
 github: VEBERArnaud
-linkedin: https://www.linkedin.com/in/veberarnaud/
+twitter: VEBERArnaud
+linkedin: 'https://www.linkedin.com/in/veberarnaud/'
 permalink: /authors/VEBERArnaud/
 ---
 Cloud Solutions Architect & Fullstack Developer depuis 10 ans.

@@ -1,20 +1,20 @@
 ---
 layout: post
-title: Mise en place d'un moteur de recherche avec Elasticsearch
-authors:
-    - cmoncade
-date: '2016-10-13 10:43:33 +0200'
-date_gmt: '2016-10-13 08:43:33 +0200'
 lang: fr
+date: '2016-10-13'
+categories: []
+authors:
+  - cmoncade
+excerpt: >-
+  Vous avez une application qui possède des millions de données, votre site
+  commence à ramer ou vous voulez simplement mettre en place un moteur de
+  recherche rapide et efficace sans vous prendre la tête : Elasticsearch est
+  fait pour vous.
+title: Mise en place d'un moteur de recherche avec Elasticsearch
+slug: mise-en-place-dun-moteur-de-recherche-avec-elasticsearch
+oldCategoriesAndTags:
+  - elasticsearch
 permalink: /fr/mise-en-place-dun-moteur-de-recherche-avec-elasticsearch/
-categories:
-    - Elasticsearch
-tags:
-    - elasticsearch
-image:
-  path: /assets/2016-10-13-mise-en-place-dun-moteur-de-recherche-avec-elasticsearch/elasticsearch-icon.png
-  height: 160
-  width: 160
 ---
 Vous avez une application qui possède des millions de données, votre site commence à ramer ou vous voulez simplement mettre en place un moteur de recherche rapide et efficace sans vous prendre la tête : Elasticsearch est fait pour vous.
 

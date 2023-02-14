@@ -1,17 +1,27 @@
 ---
-lang: fr
 layout: post
-title: Bien préparer l'arrivée de l'équipe de développement d'un prestataire sur son produit
-excerpt: Suivant le cycle de vie du produit et de l'ambition de l'entreprise, il est courant de faire appel à une équipe de développement externe pour réaliser tout ou partie de la prochaine version du produit. La préparation de l'arrivée de la nouvelle équipe est souvent négligée mais pourtant cruciale. Cet article a pour objectif de tracer les grandes lignes de cette préparation en amont.
-authors:
-    - pbrenot
-permalink: /fr/bien-preparer-arrivee-de-equipe-de-developpement-prestataire-sur-son-produit/
+lang: fr
+date: '2021-03-04'
 categories:
-    - agile
-tags:
-    - agile
-    - product management
-    - organisation
+  - agile
+authors:
+  - pbrenot
+excerpt: >-
+  Suivant le cycle de vie du produit et de l'ambition de l'entreprise, il est
+  courant de faire appel à une équipe de développement externe pour réaliser
+  tout ou partie de la prochaine version du produit. La préparation de l'arrivée
+  de la nouvelle équipe est souvent négligée mais pourtant cruciale. Cet article
+  a pour objectif de tracer les grandes lignes de cette préparation en amont.
+title: >-
+  Bien préparer l'arrivée de l'équipe de développement d'un prestataire sur son
+  produit
+slug: bien-preparer-arrivee-de-equipe-de-developpement-prestataire-sur-son-produit
+oldCategoriesAndTags:
+  - agile
+  - product management
+  - organisation
+permalink: >-
+  /fr/bien-preparer-arrivee-de-equipe-de-developpement-prestataire-sur-son-produit/
 ---
 
 La vie d’un produit est rythmée par de nombreuses phases de développement (et parfois de refonte partielle) en fonction de l'ambition de l’entreprise et de son succès auprès du marché.

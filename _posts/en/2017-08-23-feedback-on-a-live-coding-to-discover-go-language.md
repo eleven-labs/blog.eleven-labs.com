@@ -1,18 +1,23 @@
 ---
 layout: post
-title: Feedback on a live-coding to discover Go language
-authors:
-    - vcomposieux
 lang: en
-permalink: /feedback-on-a-live-coding-to-discover-go-language/
-categories:
-    - Go
-    - Workshop
-tags:
-    - golang
-    - worker
-    - workshop
-cover: /assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/cover.jpg
+date: '2017-08-23'
+categories: []
+authors:
+  - vcomposieux
+cover: >-
+  /assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/cover.jpg
+excerpt: >-
+  This blog post follows a workshop / live-coding session I organized at Eleven
+  Labs for an initiation to Go language.
+title: Feedback on a live-coding to discover Go language
+slug: feedback-on-a-live-coding-to-discover-go-language
+oldCategoriesAndTags:
+  - go
+  - workshop
+  - golang
+  - worker
+permalink: /en/feedback-on-a-live-coding-to-discover-go-language/
 ---
 
 This blog post follows a workshop / live-coding session I organized at Eleven Labs for an initiation to Go language.

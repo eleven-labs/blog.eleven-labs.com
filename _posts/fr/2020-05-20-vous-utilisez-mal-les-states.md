@@ -1,25 +1,24 @@
 ---
 layout: post
-title: "Vous utilisez mal les states React"
 lang: fr
-excerpt: "Vous n'utilisez peut-être pas les states React de manière optimale et je vais vous expliquer pourquoi"
-authors:
-    - kcordier
-permalink: /fr/vous-utilisez-mal-les-states-react/
+date: '2020-05-20'
 categories:
-    - javascript
-tags:
-    - javascript
-    - react
-    - images
-    - state
-    - reducer
-    - bonne pratique
-image:
-    path: /assets/2020-05-20-vous-utilisez-mal-les-states/bien-pas-bien.gif
-    height: 295
-    width: 775
-
+  - javascript
+authors:
+  - kcordier
+excerpt: >-
+  Vous n'utilisez peut-être pas les states React de manière optimale et je vais
+  vous expliquer pourquoi
+title: Vous utilisez mal les states React
+slug: vous-utilisez-mal-les-states-react
+oldCategoriesAndTags:
+  - javascript
+  - react
+  - images
+  - state
+  - reducer
+  - bonne pratique
+permalink: /fr/vous-utilisez-mal-les-states-react/
 ---
 
 Derrière ce titre à l’allure aguicheuse se cache un constat que je fais de plus en plus. Remettons-nous dans le contexte :

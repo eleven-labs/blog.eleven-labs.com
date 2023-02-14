@@ -1,14 +1,21 @@
 ---
 layout: post
-title: "PO : Libérez du temps à vos développeurs en faisant du NoCode avec Integromat"
-excerpt: Vous faites partie d’une petite équipe, avec des features à sortir très rapidement et un PoC pour tester un produit, mais vous n'avez pas ou peu de connaissances techniques ? Le NoCode est fait pour vous !
+lang: fr
+date: '2021-09-22'
+categories: []
 authors:
-    - marianne
+  - marianne
+cover: >-
+  /assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
+excerpt: >-
+  Vous faites partie d’une petite équipe, avec des features à sortir très
+  rapidement et un PoC pour tester un produit, mais vous n'avez pas ou peu de
+  connaissances techniques ? Le NoCode est fait pour vous !
+title: 'PO : Libérez du temps à vos développeurs en faisant du NoCode avec Integromat'
+slug: po-liberez-du-temps-a-vos-developpeurs-avec-integromat
+oldCategoriesAndTags:
+  - bonnes pratiques
 permalink: /fr/po-liberez-du-temps-a-vos-developpeurs-avec-integromat/
-categories:
-    - bonnes pratiques
-
-cover: /assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
 ---
 
 En tant que PO ou chef de produit, vous pouvez développer vous-même certaines fonctionnalités qui peuvent être répétitives et peu motivantes pour vos développeurs et qui ont peu de valeur ajoutée. Cela permet aux équipes de se concentrer sur l'essentiel, tout en laissant plus de temps disponible pour réfléchir à l’architecture et aux différents challenges techniques. Pour tester une nouvelle idée et/ou un marché sans trop investir, un outil NoCode est une vraie solution.

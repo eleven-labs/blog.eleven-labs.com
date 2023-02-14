@@ -1,16 +1,22 @@
 ---
 layout: post
-title: "Introduction au Focus Group : recueillez efficacement des données qualitatives"
-excerpt: "Vous avez besoin de recueillir beaucoup de données qualitatives dans le cadre de vos projets et vous trouvez qu’il est trop chronophage de mettre en place des dizaines d’entretiens individuels ? Il existe une méthode UX qui pourrait vous simplifier la tâche : le focus group." 
-authors:
-    - sbessoudo
 lang: fr
+date: '2021-08-17'
+categories: []
+authors:
+  - sbessoudo
+excerpt: >-
+  Vous avez besoin de recueillir beaucoup de données qualitatives dans le cadre
+  de vos projets et vous trouvez qu’il est trop chronophage de mettre en place
+  des dizaines d’entretiens individuels ? Il existe une méthode UX qui pourrait
+  vous simplifier la tâche : le focus group.
+title: 'Introduction au Focus Group : recueillez efficacement des données qualitatives'
+slug: focus-group
+oldCategoriesAndTags:
+  - bonnes pratiques
+  - ux
+  - méthodologie
 permalink: /fr/focus-group/
-categories:
-    - bonnes pratiques
-tags:
-    - UX
-    - Méthodologie
 ---
 
 ## Introduction
