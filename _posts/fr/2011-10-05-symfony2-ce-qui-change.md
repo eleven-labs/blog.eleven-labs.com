@@ -1,18 +1,19 @@
 ---
 layout: post
-title: Symfony2 - Ce qui change
 lang: fr
-permalink: /fr/symfony2-ce-qui-change/
-excerpt: Si vous êtes courageux, vous aurez dans l'idée de vouloir passer à Symfony2.
-authors:
-    - pouzor
-date: '2011-10-05 15:43:21 +0200'
-date_gmt: '2011-10-05 15:43:21 +0200'
+date: '2011-10-05'
 categories:
-    - symfony
-tags:
-    - php
-    - symfony2
+  - php
+authors:
+  - pouzor
+excerpt: 'Si vous êtes courageux, vous aurez dans l''idée de vouloir passer à Symfony2.'
+title: Symfony2 - Ce qui change
+slug: symfony2-ce-qui-change
+oldCategoriesAndTags:
+  - php
+  - symfony
+  - symfony2
+permalink: /fr/symfony2-ce-qui-change/
 ---
 
 Si vous êtes courageux, vous aurez dans l'idée de vouloir passer à Symfony2.

@@ -1,19 +1,23 @@
 ---
 layout: post
-title: Pour Noël, je configure mon noyau GNU/Linux !
-excerpt: Maintenant que nous avons compris de façon générale comment fonctionnait le noyau Linux dans le précédent article, voyons comment le configurer afin, à terme, de le compiler et l'utiliser.
-authors:
-- aandre
-permalink: /fr/configurer-kernel-linux/
 lang: fr
-categories:
-    - linux
-tags:
-    - linux
-    - kernel
-    - compilation
-    - gentoo
+date: '2017-12-14'
+categories: []
+authors:
+  - aandre
 cover: /assets/2017-12-14-configuring-linux-kernel/cover.jpg
+excerpt: >-
+  Maintenant que nous avons compris de façon générale comment fonctionnait le
+  noyau Linux dans le précédent article, voyons comment le configurer afin, à
+  terme, de le compiler et l'utiliser.
+title: 'Pour Noël, je configure mon noyau GNU/Linux !'
+slug: configurer-kernel-linux
+oldCategoriesAndTags:
+  - linux
+  - kernel
+  - compilation
+  - gentoo
+permalink: /fr/configurer-kernel-linux/
 ---
 
 Cette article fait suite à un article intitulé [Je comprends mon noyau GNU/Linux (partie 1)]({{site.baseurl}}/fr/comprendre-kernel-linux/) et en dépend. Si vous ne l'avez pas lu, je vous invite à le faire.

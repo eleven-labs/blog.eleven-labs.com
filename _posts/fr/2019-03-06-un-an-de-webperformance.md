@@ -1,14 +1,21 @@
 ---
 layout: post
-title: "Un an de webperformance dans un média français"
-excerpt: "Depuis un an je travaille en tant qu'expert webperformance chez France Medias Monde dans le cadre de la refonte de l'ensemble des fronts des différents sites web du groupe. Nous allons revenir sur cette expérience, pour nous permettre de comprendre comment réaliser ce genre de mission."
-authors:
-    - captainjojo
 lang: fr
-permalink: /fr/un-an-de-webperformance/
-categories:
-    - webperformance
+date: '2019-03-06'
+categories: []
+authors:
+  - captainjojo
 cover: /assets/2019-02-28-un-an-de-webperformance/cover.jpg
+excerpt: >-
+  Depuis un an je travaille en tant qu'expert webperformance chez France Medias
+  Monde dans le cadre de la refonte de l'ensemble des fronts des différents
+  sites web du groupe. Nous allons revenir sur cette expérience, pour nous
+  permettre de comprendre comment réaliser ce genre de mission.
+title: Un an de webperformance dans un média français
+slug: un-an-de-webperformance
+oldCategoriesAndTags:
+  - webperformance
+permalink: /fr/un-an-de-webperformance/
 ---
 
 Depuis un an je travaille en tant qu'expert webperformance chez France Media Monde dans le cadre de la refonte de l'ensemble des fronts des différents sites web du groupe. Nous allons revenir sur cette expérience, pour nous permettre de comprendre comment réaliser ce genre de mission.

@@ -1,17 +1,24 @@
 ---
 layout: post
-title: Retour sur la Google Cloud Summit 2017
 lang: fr
-permalink: /fr/google-cloud-summit-2017/
-excerpt: "Jeudi 19 octobre 2017 a eu lieu à Paris au Palais des Congrès, le Google Cloud Summit 2017. Google venait à Paris pour exposer toutes les nouveautés de leur Cloud, les nouvelles API de Machine Learning et les nouveaux outils de collaboration. Bien sûr Eleven était présent et nous avons pu suivre la plupart des conférences."
+date: '2017-10-20'
+categories: []
 authors:
-    - captainjojo
-categories:
-    - google
-    - conference
-tags:
-    - cloud
+  - captainjojo
 cover: /assets/2017-10-20-google-cloud-summit-2017/cover.png
+excerpt: >-
+  Jeudi 19 octobre 2017 a eu lieu à Paris au Palais des Congrès, le Google Cloud
+  Summit 2017. Google venait à Paris pour exposer toutes les nouveautés de leur
+  Cloud, les nouvelles API de Machine Learning et les nouveaux outils de
+  collaboration. Bien sûr Eleven était présent et nous avons pu suivre la
+  plupart des conférences.
+title: Retour sur la Google Cloud Summit 2017
+slug: google-cloud-summit-2017
+oldCategoriesAndTags:
+  - google
+  - conference
+  - cloud
+permalink: /fr/google-cloud-summit-2017/
 ---
 
 Jeudi 19 octobre 2017 a eu lieu à Paris au Palais des Congrès, le Google Cloud Summit 2017. Google venait à Paris pour exposer toutes les nouveautés de leur Cloud, les nouvelles API de Machine Learning et les nouveaux outils de collaboration. Bien sûr Eleven était présent et nous avons pu suivre la plupart des conférences.

@@ -1,20 +1,22 @@
 ---
 layout: post
-title: MongoDB pour PHP
-excerpt: Aujourd'hui, petit tuto pour installer MongoDB pour php5. Pour cela plusieurs étapes sont nécessaires aussi bien sur le serveur que sur la partie software. Sur ce tuto nous travaillons sur un ubuntu 10.10 lors de l'installation des différents softwares.
-authors:
-    - captainjojo
 lang: fr
-permalink: /fr/mongodb-php/
+date: '2011-10-23'
 categories:
-    - MongoDB
-tags:
-    - php
-    - mongodb
-image:
-  path: /assets/2011-10-23-mongodb-php/mongo_logo.png
-  height: 160
-  width: 160
+  - php
+authors:
+  - captainjojo
+excerpt: >-
+  Aujourd'hui, petit tuto pour installer MongoDB pour php5. Pour cela plusieurs
+  étapes sont nécessaires aussi bien sur le serveur que sur la partie software.
+  Sur ce tuto nous travaillons sur un ubuntu 10.10 lors de l'installation des
+  différents softwares.
+title: MongoDB pour PHP
+slug: mongodb-php
+oldCategoriesAndTags:
+  - php
+  - mongodb
+permalink: /fr/mongodb-php/
 ---
 Aujourd'hui, petit tuto pour installer MongoDB pour php5. Pour cela plusieurs étapes sont nécessaires aussi bien sur le serveur que sur la partie software.
 Sur ce tuto nous travaillons sur un ubuntu 10.10 lors de l'installation des différents softwares.

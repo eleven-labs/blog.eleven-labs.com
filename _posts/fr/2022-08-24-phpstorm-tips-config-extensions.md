@@ -1,13 +1,19 @@
 ---
 layout: post
-title: "PhpStorm tips : config & extensions"
-excerpt: Les meilleurs tips de configs et extensions pour profiter pleinement de PhpStorm.
 lang: fr
-permalink: /fr/phpstorm-tips-config-extensions/
-authors:
-    - ajacquemin
+date: '2022-08-24'
 categories:
-    - php
+  - php
+authors:
+  - ajacquemin
+excerpt: >-
+  Les meilleurs tips de configs et extensions pour profiter pleinement de
+  PhpStorm.
+title: 'PhpStorm tips : config & extensions'
+slug: phpstorm-tips-config-extensions
+oldCategoriesAndTags:
+  - php
+permalink: /fr/phpstorm-tips-config-extensions/
 ---
 
 Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité sur l'IDE [PhpStorm](https://www.jetbrains.com/fr-fr/phpstorm/) de la suite JetBrains. Je vais vous parler de mes extensions préférées ainsi que de certains points de configuration méconnus mais très utiles. Prêts ? C'est parti !

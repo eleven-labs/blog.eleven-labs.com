@@ -1,19 +1,22 @@
 ---
 layout: post
-title: 'Dive into mobile development: where to start'
-excerpt: "These days more than ever before mobile applications have become essential in the lives of millions of people. If you are reading this article, it means that you too are interested in this subject. I'll try to make a series of articles to share with you as much as I can on it."
 lang: en
-permalink: /mobile-development-start/
+date: '2017-01-12'
+categories: []
 authors:
-    - ibenichou
-date: '2017-01-12 11:06:36 +0100'
-date_gmt: '2017-01-12 10:06:36 +0100'
-categories:
-    - Mobile
-tags:
-    - mobile app
-    - Android
-    - mobile
+  - ibenichou
+excerpt: >-
+  These days more than ever before mobile applications have become essential in
+  the lives of millions of people. If you are reading this article, it means
+  that you too are interested in this subject. I'll try to make a series of
+  articles to share with you as much as I can on it.
+title: 'Dive into mobile development: where to start'
+slug: mobile-development-start
+oldCategoriesAndTags:
+  - mobile
+  - mobile app
+  - android
+permalink: /en/mobile-development-start/
 ---
 
 ## Mobile development: where to start?

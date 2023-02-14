@@ -1,18 +1,20 @@
 ---
 layout: post
-title: 'Build an api with Go and Buffalo'
-excerpt: Presentation of http/net package and Buffalo.
-authors:
-- qneyrat
 lang: en
-permalink: /build-an-api-with-go-and-buffalo/
-categories:
-    - Go
-tags:
-    - api
-    - golang
-    - rest
+date: '2017-11-09'
+categories: []
+authors:
+  - qneyrat
 cover: /assets/2017-07-26-construire-une-api-en-go/cover.jpg
+excerpt: Presentation of http/net package and Buffalo.
+title: Build an api with Go and Buffalo
+slug: build-an-api-with-go-and-buffalo
+oldCategoriesAndTags:
+  - go
+  - api
+  - golang
+  - rest
+permalink: /en/build-an-api-with-go-and-buffalo/
 ---
 
 The Go language has quickly become very popular, but there are still some people reluctant to use it for the development of their new apps. We will see here how to build a REST API quickly and easily.

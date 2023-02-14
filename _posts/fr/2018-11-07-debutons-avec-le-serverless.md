@@ -1,18 +1,23 @@
 ---
 layout: post
-title: "Débutons avec le Serverless"
-excerpt: "Vous avez un nouveau projet personnel ou professionnel, vous ne voulez pas vous prendre la tête avec l’infrastructure, et vous souhaitez payer seulement pour les ressources utilisées ? Serverless est fait pour vous !"
-authors:
-    - flemzord
 lang: fr
-permalink: /fr/debutons-avec-le-serverless/
+date: '2018-11-07'
 categories:
-    - devops
-    - serverless
-tags:
-    - devops
-    - serverless
+  - architecture
+authors:
+  - flemzord
 cover: /assets/2018-10-24-debutons-avec-le-serverless/cover.jpg
+excerpt: >-
+  Vous avez un nouveau projet personnel ou professionnel, vous ne voulez pas
+  vous prendre la tête avec l’infrastructure, et vous souhaitez payer seulement
+  pour les ressources utilisées ? Serverless est fait pour vous !
+title: Débutons avec le Serverless
+slug: debutons-avec-le-serverless
+oldCategoriesAndTags:
+  - architecture
+  - devops
+  - serverless
+permalink: /fr/debutons-avec-le-serverless/
 ---
 
 Vous avez un nouveau projet personnel ou professionnel, vous ne voulez pas vous prendre la tête avec l’infrastructure, et vous souhaitez payer seulement pour les ressources utilisées ? Serverless est fait pour vous !

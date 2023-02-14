@@ -1,18 +1,21 @@
 ---
 layout: post
-title: n8n, outil low-code d'automatisation de workflow
-excerpt: Découverte et prise en main de n8n.io, outil low-code open-source pour automatiser facilement des workflows.
+lang: fr
+date: '2021-06-13'
+categories: []
 authors:
-    - marianne
-permalink: /fr/outil-low-code-automatisation-workflow-n8n/
-categories:
-    - low-code
-    - outils
-tags:
-    - Low-code
-    - Outils
-    - tutorial
+  - marianne
 cover: /assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/n8n.png
+excerpt: >-
+  Découverte et prise en main de n8n.io, outil low-code open-source pour
+  automatiser facilement des workflows.
+title: 'n8n, outil low-code d''automatisation de workflow'
+slug: outil-low-code-automatisation-workflow-n8n
+oldCategoriesAndTags:
+  - low-code
+  - outils
+  - tutorial
+permalink: /fr/outil-low-code-automatisation-workflow-n8n/
 ---
 
 Vous souvenez-vous de l'époque des premières versions de Dreamweaver ou de Frontpage dans les années 2000 ? Ces logiciels qui permettaient de faire des sites internet sans faire une ligne de code ? Le code généré était dégueulasse, et c'est tombé en désuétude.

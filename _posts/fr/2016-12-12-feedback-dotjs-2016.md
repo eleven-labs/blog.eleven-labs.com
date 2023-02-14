@@ -1,19 +1,19 @@
 ---
 layout: post
-title: 'Feedback dotJS 2016'
 lang: fr
-permalink: /fr/feedback-dotjs-2016/
-authors:
-    - damien
-excerpt: La 5ème édition des conférences dotJS a battu un nouveau record d'affluence ce lundi 5 décembre en accueillant environ 1500 personnes. Cette année le rendez-vous était fixé au Dock Pullman à Aubervilliers, en région Parisienne.
-date: '2016-12-12 17:40:34 +0100'
-date_gmt: '2016-12-12 16:40:34 +0100'
+date: '2016-12-12'
 categories:
-    - javascript
-tags:
-    - javascript
-    - angular
-    - dotjs
+  - javascript
+authors:
+  - damien
+excerpt: "La 5ème édition des conférences dotJS a battu un nouveau\_record d'affluence ce lundi 5 décembre en\_accueillant environ 1500 personnes. Cette année le rendez-vous était fixé au\_Dock Pullman à Aubervilliers, en région Parisienne."
+title: Feedback dotJS 2016
+slug: feedback-dotjs-2016
+oldCategoriesAndTags:
+  - javascript
+  - angular
+  - dotjs
+permalink: /fr/feedback-dotjs-2016/
 ---
 La 5ème édition des conférences dotJS a battu un nouveau record d'affluence ce lundi 5 décembre en accueillant environ 1500 personnes. Cette année le rendez-vous était fixé au Dock Pullman à Aubervilliers, en région Parisienne.
 

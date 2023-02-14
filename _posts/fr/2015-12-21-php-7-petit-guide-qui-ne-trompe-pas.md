@@ -1,17 +1,18 @@
 ---
 layout: post
-title: PHP 7 - Le petit guide qui ne trompe pas
-authors:
-    - aandre
-date: '2015-12-21 18:33:37 +0100'
-date_gmt: '2015-12-21 17:33:37 +0100'
 lang: fr
-permalink: /fr/php-7-petit-guide-qui-ne-trompe-pas/
+date: '2015-12-21'
 categories:
-    - php
-tags:
-    - php
-    - migration
+  - php
+authors:
+  - aandre
+excerpt: "> Dans la vie, il n'y a pas que Symfony\_— Un collègue"
+title: PHP 7 - Le petit guide qui ne trompe pas
+slug: php-7-petit-guide-qui-ne-trompe-pas
+oldCategoriesAndTags:
+  - php
+  - migration
+permalink: /fr/php-7-petit-guide-qui-ne-trompe-pas/
 ---
 > Dans la vie, il n'y a pas que Symfony — Un collègue
 

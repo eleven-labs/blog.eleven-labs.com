@@ -1,18 +1,24 @@
 ---
 layout: post
-title: "PO vs PM, like Batman vs Superman"
 lang: fr
-permalink: /fr/po-vs-pm-like-batman-vs-superman/
-excerpt: 'Dans mon quotidien professionnel, j’entends régulièrement ce genre de phrase : "Toi qui est PM, ou PO… Enfin, c’est pareil quoi". Alors non. Même si ces deux casquettes peuvent se combiner, un PM et un PO ne sont pas interchangeables et ils ont bien deux jobs différents.'
-authors:
-    - mae
+date: '2019-03-19'
 categories:
-    - agile
-tags:
-    - po
-    - pm
-    - agile
+  - agile
+authors:
+  - mae
 cover: /assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-vs-po-cover.jpg
+excerpt: >-
+  Dans mon quotidien professionnel, j’entends régulièrement ce genre de phrase :
+  "Toi qui est PM, ou PO… Enfin, c’est pareil quoi". Alors non. Même si ces deux
+  casquettes peuvent se combiner, un PM et un PO ne sont pas interchangeables et
+  ils ont bien deux jobs différents.
+title: 'PO vs PM, like Batman vs Superman'
+slug: po-vs-pm-like-batman-vs-superman
+oldCategoriesAndTags:
+  - agile
+  - po
+  - pm
+permalink: /fr/po-vs-pm-like-batman-vs-superman/
 ---
 
 Dans mon quotidien professionnel, j’entends régulièrement ce genre de phrase : “Toi qui est PM, ou PO… Enfin, c’est pareil quoi”. Alors non. Même si ces deux casquettes peuvent se combiner, un PM et un PO ne sont pas interchangeables et ils ont bien deux jobs différents.

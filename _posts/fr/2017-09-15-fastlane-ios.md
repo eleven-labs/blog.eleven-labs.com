@@ -1,27 +1,26 @@
 ---
 layout: post
-title: Mise en place d'un Workflow Continuous Delivery avec Fastlane pour IOS ou Android
-excerpt: Nous allons découvrir un outil qui permet d'automatiser des tâches fastidieuses en mobile.
-authors:
-    - ibenichou
 lang: fr
-permalink: /fr/mise-en-place-d-un-workflow-cd-avec-fastlane-pour-ios-ou-android/
-categories:
-    - ios
-    - swift
-    - xcode
-tags:
-    - ios
-    - swift
-    - xcode
-    - tutorial
-    - CI
-    - Fastlane
-image:
-  path: /assets/2017-07-17-fastlane-ios/fastlane_logo.png
-  height: 100
-  width: 100
+date: '2017-09-15'
+categories: []
+authors:
+  - ibenichou
 cover: /assets/2017-07-17-fastlane-ios/cover.jpg
+excerpt: >-
+  Nous allons découvrir un outil qui permet d'automatiser des tâches
+  fastidieuses en mobile.
+title: >-
+  Mise en place d'un Workflow Continuous Delivery avec Fastlane pour IOS ou
+  Android
+slug: mise-en-place-d-un-workflow-cd-avec-fastlane-pour-ios-ou-android
+oldCategoriesAndTags:
+  - ios
+  - swift
+  - xcode
+  - tutorial
+  - ci
+  - fastlane
+permalink: /fr/mise-en-place-d-un-workflow-cd-avec-fastlane-pour-ios-ou-android/
 ---
 
 # Qu'est-ce que "Fastlane"

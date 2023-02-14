@@ -1,20 +1,21 @@
 ---
 layout: post
-title: JSON Server
-excerpt: Accelerate your prototyping process by mocking your APIs using JSON Server
-authors:
-    - kelfarsaoui
 lang: en
-permalink: /json-server/
+date: '2017-08-16'
 categories:
-    - json
-    - api
-    - NodeJS
-tags:
-    - json
-    - api
-    - NodeJS
+  - javascript
+authors:
+  - kelfarsaoui
 cover: /assets/2017-08-16-json-server/cover.jpg
+excerpt: Accelerate your prototyping process by mocking your APIs using JSON Server
+title: JSON Server
+slug: json-server
+oldCategoriesAndTags:
+  - javascript
+  - json
+  - api
+  - nodejs
+permalink: /en/json-server/
 ---
 
 Hello, Today I’m going to talk about [json-server](https://github.com/typicode/json-server){:rel="nofollow noreferrer"}, what is it? why use it? and especially how to use it?

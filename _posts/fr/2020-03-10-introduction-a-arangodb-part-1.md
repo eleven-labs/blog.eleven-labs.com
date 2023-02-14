@@ -1,19 +1,24 @@
 ---
 layout: post
-title: "Introduction à ArangoDB Part 1"
-excerpt: "Dans cet article, nous allons faire un petit tour de cette base de données multi-modèles"
-authors:
-    - vdelpeyroux
 lang: fr
-permalink: /fr/introduction-a-arangodb-part-1/
+date: '2020-03-10'
 categories:
-    - base de données
-tags:
-    - arangodb
-    - NoSQL
-    - base de données multi-modèles
-    - javascript
-    - graphe
+  - javascript
+authors:
+  - vdelpeyroux
+excerpt: >-
+  Dans cet article, nous allons faire un petit tour de cette base de données
+  multi-modèles
+title: Introduction à ArangoDB Part 1
+slug: introduction-a-arangodb-part-1
+oldCategoriesAndTags:
+  - javascript
+  - base de données
+  - arangodb
+  - nosql
+  - base de données multi-modèles
+  - graphe
+permalink: /fr/introduction-a-arangodb-part-1/
 ---
 ![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/ArangoDB_logo.webp)
 

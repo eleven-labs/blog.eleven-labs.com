@@ -1,21 +1,23 @@
 ---
 layout: post
-title: "Storybook - Tester la régression visuelle"
 lang: fr
-permalink: /fr/storybook-visual-regression/
-excerpt: "Troisième épisode de cette série, où nous parcourrons les concepts et les différentes solutions autour de la régression visuelle d'une application"
-authors:
-    - manu
+date: '2020-04-15'
 categories:
-    - storybook
-    - UX
-    - UI
-    - react
-tags:
-    - react
-    - UI
-    - UX
-    - storybook
+  - javascript
+authors:
+  - manu
+excerpt: >-
+  Troisième épisode de cette série, où nous parcourrons les concepts et les
+  différentes solutions autour de la régression visuelle d'une application
+title: Storybook - Tester la régression visuelle
+slug: storybook-visual-regression
+oldCategoriesAndTags:
+  - javascript
+  - storybook
+  - ux
+  - ui
+  - react
+permalink: /fr/storybook-visual-regression/
 ---
 
 Hello les petits loups!

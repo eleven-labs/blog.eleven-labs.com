@@ -1,16 +1,21 @@
 ---
 layout: post
-title: "Anémie du domaine"
-excerpt: Souffrez-vous d'anémie métier ? Regardons ce qu'est une anémie du domaine et comment les choses peuvent changer.
-authors:
-    - rpierlot
 lang: fr
-permalink: /fr/domain-anemia/
+date: '2020-10-13'
 categories:
-    - bonnes pratiques
-tags:
-    - php
+  - php
+authors:
+  - rpierlot
 cover: /assets/2020-10-13-anemic-domain-model/cover.jpg
+excerpt: >-
+  Souffrez-vous d'anémie métier ? Regardons ce qu'est une anémie du domaine et
+  comment les choses peuvent changer.
+title: Anémie du domaine
+slug: domain-anemia
+oldCategoriesAndTags:
+  - php
+  - bonnes pratiques
+permalink: /fr/domain-anemia/
 ---
 
 Aujourd'hui j'aimerais parler de quelque chose que l'on voit souvent dans les applications : l'anémie du domaine.

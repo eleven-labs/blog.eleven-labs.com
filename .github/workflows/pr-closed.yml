@@ -21,10 +21,10 @@ jobs:
       - name: Remove to S3
         run: aws s3 rm "s3://dev.blog.eleven-labs.com/${{ github.head_ref }}/" --recursive
 
-      - name: Delete environment
+      - name: Deactivate environment
         uses: bobheadxi/deployments@v1
         with:
-          step: delete-env
+          step: deactivate-env
           token: ${{ secrets.GITHUB_TOKEN }}
           env: "dev-${{ github.head_ref }}"
-          desc: Environment was deleted
+          desc: Environment was pruned

@@ -1,22 +1,22 @@
 ---
 layout: post
-title: "Faire du C orienté Objet"
-authors:
-    - thuchon
 lang: fr
-permalink: /fr/c-oriente-objet/
-excerpt: "Faisons du C comme s'il s'agissait d'un langage Objet"
-date: '2018-09-13 14:30:42 +0100'
-date_gmt: 2018-09-13 13:30:42 +0100'
-categories:
-- Software
-tags:
-- C
-- procédural
-- POO
-- structure
-- pointeurs
+date: '2018-09-12'
+categories: []
+authors:
+  - thuchon
 cover: /assets/2018-09-12-faire-du-c-oriente-objet/cover.jpg
+excerpt: Faisons du C comme s'il s'agissait d'un langage Objet
+title: Faire du C orienté Objet
+slug: c-oriente-objet
+oldCategoriesAndTags:
+  - software
+  - c
+  - procédural
+  - poo
+  - structure
+  - pointeurs
+permalink: /fr/c-oriente-objet/
 ---
 
 ## Introduction

@@ -1,17 +1,21 @@
 ---
 layout: post
-title: Les nouveautés d'ES6 Partie I
-excerpt: Cet article est le premier d'une série visant à vous présenter les nouveautés apportées par l'ES6 et ce qu'elles comportent d'intéressant.
-authors:
-    - mehdidr
 lang: fr
-permalink: /fr/lesnouveauteses6parti/
+date: '2019-04-17'
 categories:
-    - javascript
-tags:
-    - ecmascript
-    - javascript
-    - ES6
+  - javascript
+authors:
+  - mehdidr
+excerpt: >-
+  Cet article est le premier d'une série visant à vous présenter les nouveautés
+  apportées par l'ES6 et ce qu'elles comportent d'intéressant.
+title: Les nouveautés d'ES6 Partie I
+slug: lesnouveauteses6parti
+oldCategoriesAndTags:
+  - javascript
+  - ecmascript
+  - es6
+permalink: /fr/lesnouveauteses6parti/
 ---
 
 Depuis maintenant quelques années, le monde du JavaScript évolue à une vitesse sans pareille. Même le meilleur des développeurs ne peut réussir à suivre toutes les évolutions, que ce soient des librairies, des frameworks, ou des mises à jour du langage en lui-même.

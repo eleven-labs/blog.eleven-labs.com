@@ -1,19 +1,22 @@
 ---
 layout: post
-title: 'Redux: Structure your frontend applications'
 lang: en
-permalink: /redux-structure-frontend-applications/
-authors:
-    - vcomposieux
-date: '2017-01-20 12:12:34 +0100'
-date_gmt: '2017-01-20 11:12:34 +0100'
+date: '2017-01-20'
 categories:
-    - javascript
-tags:
-    - Facebook
-    - javascript
-    - react
-    - redux
+  - javascript
+authors:
+  - vcomposieux
+excerpt: >-
+  Javascript ecosystem is really rich: full of developers but also full of
+  frameworks and libraries.
+title: 'Redux: Structure your frontend applications'
+slug: redux-structure-frontend-applications
+oldCategoriesAndTags:
+  - javascript
+  - facebook
+  - react
+  - redux
+permalink: /en/redux-structure-frontend-applications/
 ---
 Javascript ecosystem is really rich: full of developers but also full of frameworks and libraries.
 

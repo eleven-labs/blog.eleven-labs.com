@@ -1,21 +1,26 @@
 ---
 layout: post
-title: Vérifier la qualité du code
 lang: fr
-permalink: /fr/verifier-la-qualite-du-code/
-excerpt: "Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet article, je vais l'aborder sur la partie PHP."
-authors:
-   - tthuon
-date: '2016-01-26 15:09:19 +0100'
-date_gmt: '2016-01-26 14:09:19 +0100'
+date: '2016-01-26'
 categories:
-    - Non classé
-tags:
-    - php
-    - psr
-    - qualité
-    - code
-    - scrutinizer
+  - php
+  - architecture
+authors:
+  - tthuon
+excerpt: >-
+  Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet
+  article, je vais l'aborder sur la partie PHP.
+title: Vérifier la qualité du code
+slug: verifier-la-qualite-du-code
+oldCategoriesAndTags:
+  - php
+  - architecture
+  - non classé
+  - psr
+  - qualité
+  - code
+  - scrutinizer
+permalink: /fr/verifier-la-qualite-du-code/
 ---
 
 Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet article, je vais l'aborder sur la partie PHP.

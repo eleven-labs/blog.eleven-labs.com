@@ -1,20 +1,22 @@
 ---
 layout: post
-title: Sécuriser facilement son serveur linux en quelques étapes
-excerpt: Quelques commandes de bases qui permettent de sécuriser facilement et rapidement un serveur linux (protection ssh, iptables, fail2ban,...)
-authors:
-    - nkania
-date: '2016-04-18 14:48:08 +0200'
-date_gmt: '2016-04-18 12:48:08 +0200'
 lang: fr
+date: '2016-04-18'
+categories: []
+authors:
+  - nkania
+excerpt: >-
+  Quelques commandes de bases qui permettent de sécuriser facilement et
+  rapidement un serveur linux (protection ssh, iptables, fail2ban,...)
+title: Sécuriser facilement son serveur linux en quelques étapes
+slug: securiser-facilement-son-vps-en-quelques-etapes
+oldCategoriesAndTags:
+  - non classé
+  - securite
+  - linux
+  - vps
+  - serveur
 permalink: /fr/securiser-facilement-son-vps-en-quelques-etapes/
-categories:
-    - Non classé
-tags:
-    - securite
-    - linux
-    - vps
-    - serveur
 ---
 
 Lorsque vous recevez votre serveur (vps/serveur dédié/...), il est important d'effectuer quelques actions afin de disposer d'un minimum de sécurité. Cet article n'est pas exhaustif et n'est pas forcément la meilleure manière de faire, il s'agit simplement des étapes que j'effectue à chaque fois que j'initialise un nouveau serveur ! Si vous avez des remarques/questions n'hésitez pas à m'en faire part en commentaire :)

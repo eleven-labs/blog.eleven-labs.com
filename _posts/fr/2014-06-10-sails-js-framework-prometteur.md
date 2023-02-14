@@ -1,17 +1,21 @@
 ---
 layout: post
-title: Sails.js un Framework prometteur ???
-excerpt: Un post court pour vous parler d'une technologie que je viens de trouver, il s'agit d'un framework js pour nodejs, sails.js.
-authors:
-    - captainjojo
 lang: fr
-permalink: /fr/sails-js-framework-prometteur/
+date: '2014-06-10'
 categories:
-    - javascript
-tags:
-    - Sails.js
-    - nodejs
-    - javascript
+  - javascript
+authors:
+  - captainjojo
+excerpt: >-
+  Un post court pour vous parler d'une technologie que je viens de trouver, il
+  s'agit d'un framework js pour nodejs, sails.js.
+title: Sails.js un Framework prometteur ???
+slug: sails-js-framework-prometteur
+oldCategoriesAndTags:
+  - javascript
+  - sails.js
+  - nodejs
+permalink: /fr/sails-js-framework-prometteur/
 ---
 
 Un post court pour vous parler d'une technologie que je viens de trouver, il s'agit d'un framework js pour nodejs, sails.js.

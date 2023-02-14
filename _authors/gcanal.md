@@ -2,8 +2,8 @@
 layout: author
 login: gcanal
 title: Guillem Canal
-twitter: buraitopengin
 github: guillemcanal
+twitter: buraitopengin
 permalink: /authors/gcanal/
 ---
 

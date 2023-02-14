@@ -1,21 +1,26 @@
 ---
 layout: post
-title: 'WebRTC : La révolution de la communication'
 lang: fr
-permalink: /fr/webrtc-la-revolution-de-la-communication/
-authors:
-    - rascarlito
-excerpt: "Historiquement, le Web était un outil qui permettait le chargement, l'interprétation et l'exploitation d'interfaces distribuées. Un serveur héberge un contenu (dynamique ou non), l'expose sur le Web via une URL (Uniform Resources Location), puis un navigateur se connecte à cette URL pour télécharger et afficher le contenu en question à l'utilisateur."
-date: '2016-12-06 14:44:19 +0100'
-date_gmt: '2016-12-06 13:44:19 +0100'
+date: '2016-12-06'
 categories:
-    - javascript
-tags:
-    - javascript
-    - RTC
-    - Real Time Communication
-    - P2P
-    - video
+  - javascript
+authors:
+  - rascarlito
+excerpt: >-
+  Historiquement, le Web était un outil qui permettait le chargement,
+  l'interprétation et l'exploitation d'interfaces distribuées. Un serveur
+  héberge un contenu (dynamique ou non), l'expose sur le Web via une URL
+  (Uniform Resources Location), puis un navigateur se connecte à cette URL pour
+  télécharger et afficher le contenu en question à l'utilisateur.
+title: 'WebRTC : La révolution de la communication'
+slug: webrtc-la-revolution-de-la-communication
+oldCategoriesAndTags:
+  - javascript
+  - rtc
+  - real time communication
+  - p2p
+  - video
+permalink: /fr/webrtc-la-revolution-de-la-communication/
 ---
 
  Le **WebRTC** (aka **Web** **R**eal-**T**ime **C**ommunication) apporte la communication en temps réel au Web.
