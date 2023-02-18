@@ -22,11 +22,11 @@ Google, leader incontesté des services web (recherche, pub, analytics...), pro
 
 Si vous suivez à fond l'ensemble des actualités médiatiques et que vous utilisez énormément la recherche google, vous avez sûrement vu apparaître les "cartes" suivantes lors de vos recherches mobile :
 
-![](/assets/2017-05-29-amp-est-le-futur/croped-1.png)
+![](/_assets/posts/2017-05-29-amp-est-le-futur/croped-1.png)
 
 Et oui, c'est cela AMP. Une place de choix dans la recherche Google, mais aussi une nouvelle façon de naviguer entre les sites. En effet, si vous cliquez sur une des cartes vous ne serez pas sur le site qui a envoyé le contenu (on comprendra pourquoi plus tard) mais vous resterez chez Google, qui vous permettra de "slider" entre chaque page de la recherche :
 
-![](/assets/2017-05-29-amp-est-le-futur/capture-decran-2017-05-29-a-10.38.18.png)
+![](/_assets/posts/2017-05-29-amp-est-le-futur/capture-decran-2017-05-29-a-10.38.18.png)
 
 Intéressant non ? Mais ce n'est pas tout, si vous regardez plus attentivement vous vous rendrez compte que le site AMP est énormément plus rapide que votre site lui-même.
 

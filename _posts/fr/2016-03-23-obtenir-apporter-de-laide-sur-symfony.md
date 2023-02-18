@@ -25,7 +25,7 @@ Toute bonne recherche d’informations commence par une recherche en anglais sur
 
 Aucune excuse n’est à trouver, les recherches tout comme le code se font en anglais. Symfony comme de nombreux projets Open Source regroupent de nombreuses nationalités tant dans leur développeurs, la communauté proche, que nous autres utilisateurs de Symfony 2. Le standard, c’est l’anglais. Et de surcroît, sur Google, c’est primordial, leur système d’indexation et algos ne sont plus à prouver, que ce soit à court, moyen ou long terme. En d’autres termes “Google, English, Deal with it”.
 
-[![dealwithit](/assets/2016-03-23-obtenir-apporter-de-laide-sur-symfony/dealwithit.gif)
+[![dealwithit](/_assets/posts/2016-03-23-obtenir-apporter-de-laide-sur-symfony/dealwithit.gif)
 
 Je ne peux que retourner le couteau dans la plaie pour ceux qui n’utilisent pas cette méthode en citant les différents intervenants de Symfony.
 

@@ -8,7 +8,7 @@ authors:
   - rpierlot
 excerpt: >-
   ![Swarrot
-  Logo](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
+  Logo](/_assets/posts/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 title: 'Publier, consommer, et réessayer des messages RabbitMQ'
 slug: publier-consommer-reessayer-des-messages-rabbitmq
 oldCategoriesAndTags:
@@ -18,7 +18,7 @@ oldCategoriesAndTags:
 permalink: /fr/publier-consommer-reessayer-des-messages-rabbitmq/
 ---
 
-![Swarrot Logo](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
+![Swarrot Logo](/_assets/posts/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 
 RabbitMQ est un gestionnaire de queues, permettant d'asynchroniser différents traitements. Si vous n'êtes pas familier avec cet outil, un [article](https://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/){:rel="nofollow noreferrer"} traitant du sujet a déjà été écrit précédemment, je vous invite donc à le lire.
 
@@ -79,11 +79,11 @@ Create binding between exchange default and queue send_astronaut_to_space (with 
 
 En vous connectant sur votre interface RabbitMQ management (ex: http://127.0.0.1:15672/), plusieurs choses apparaissent :
 
-![Capture of exchanges created](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_exchanges.png)
+![Capture of exchanges created](/_assets/posts/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_exchanges.png)
 
 En cliquant sur l'onglet _Exchanges_, un exchange _default_ a été créé avec un _binding_ avec notre _queue_, comme indiqué dans la console.
 
-![Capture of queues created](/assets/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_queues.png)
+![Capture of queues created](/_assets/posts/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_queues.png)
 
 Si l'on clique maintenant sur _Queues_, _send_astronaut_to_space_ est également présente. Jusqu'à présent, pas de problèmes.
 

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@storybook-decorators": [
+        ".storybook/decorators"
+      ]
+    }
+  }
+}

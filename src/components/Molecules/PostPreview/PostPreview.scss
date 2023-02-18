@@ -1,0 +1,52 @@
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
+@mixin multi-line-ellipsis($line-height: 1.2em, $line-count: 1, $bg-color: var(--color-white)) {
+  overflow: hidden;
+  position: relative;
+  line-height: $line-height;
+  max-height: $line-height * $line-count;
+  text-align: justify;
+  padding-right: 1em;
+
+  &::before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bg-color;
+  }
+}
+
+.post-preview {
+  --max-height-post-preview-mask: 44px;
+
+  &--mask {
+    max-height: var(--max-height-post-preview-mask);
+
+    @include create-media-queries('md') {
+      --max-height-post-preview-mask: 24px;
+    }
+
+    mask-image: linear-gradient(#000, transparent);
+  }
+
+  &--related {
+    padding: var(--spacing-s);
+    background-color: var(--color-white);
+    border-radius: 4px;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 20%);
+  }
+
+  &__excerpt {
+    @include multi-line-ellipsis(1.5em, 3);
+  }
+}

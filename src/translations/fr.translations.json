@@ -1,0 +1,70 @@
+{
+  "categories": {
+    "all": "Tous",
+    "javascript": "JavaScript",
+    "php": "PHP",
+    "agile": "Agile",
+    "architecture": "Architecture",
+    "best_practices": "Bonnes pratiques"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English"
+  },
+  "common": {
+    "back": "retour"
+  },
+  "header": {
+    "title": "Eleven Labs",
+    "subtitle": "Le blog",
+    "intro_block": {
+      "title": "Ravi de te voir",
+      "description": "Explorons de nouveaux savoirs"
+    },
+    "choice_category_label": "Quels articles veux-tu lire ?"
+  },
+  "footer": {
+    "intro_block": {
+      "title": "Découvrez Eleven Labs",
+      "description": "Notre site pour mieux nous connaître"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "link_to_eleven_labs_site": "J'y vais"
+  },
+  "autocomplete": {
+    "placeholder": "Rechercher par nom d’article ou d’auteur",
+    "see_all_search_label": "Voir tous les résultats"
+  },
+  "search_not_found": {
+    "title": "Aucun résultat en vue...",
+    "description": "Vérifiez les termes de votre recherche avant de réessayer"
+  },
+  "newsletter": {
+    "title": "En quête d’un outil de veille ?",
+    "description": "Abonne-toi à notre newsletter",
+    "button_label": "Je m'abonne"
+  },
+  "pages": {
+    "post_list": {
+      "post_preview_list_title": "Tous nos articles",
+      "post_preview_list_category_title": "Nos articles {{ categoryName }}",
+      "number_of_posts_displayed_label": "{{ numberOfPosts }}/{{ maxNumberOfPosts }} affichés",
+      "load_more_button_label": "Afficher plus"
+    },
+    "post": {
+      "related_post_list_title": "Articles sur le même thème",
+      "post_footer_title": "écrit par"
+    },
+    "author": {
+      "post_preview_list_title": "Article de l'auteur"
+    },
+    "search": {
+      "number_of_search_label": "{{ numberOfHits }} résultats",
+      "description": "triés par pertinence",
+      "search_not_found_title": "Aucun résultat en vue...",
+      "search_not_found_description": "Vérifiez les termes de votre recherche avant de réessayer"
+    }
+  }
+}

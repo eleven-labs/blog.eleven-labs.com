@@ -24,7 +24,7 @@ permalink: /fr/feedback-sur-les-dotcss-2016/
 
 Pour cette 3ème édition des DotCSS consacrée à la partie stylée de la Force, le menu était alléchant : 8 conférenciers de qualité dont quelques pointures de la profession, avec comme cerise sur le gâteau un talk de Dieu le père, aka Håkon Wium Lie, le créateur de CSS en personne. Comme d’habitude aux Dot Conférences, l’accueil était princier et l’ambiance chaleureuse dans un théâtre des variétés plein à craquer.
 
-![dot2016](/assets/2016-12-05-feedback-sur-les-dotcss-2016/dot2016.jpg)
+![dot2016](/_assets/posts/2016-12-05-feedback-sur-les-dotcss-2016/dot2016.jpg)
 
 **VARYA STEPANOVA – PatternLibraries**
 

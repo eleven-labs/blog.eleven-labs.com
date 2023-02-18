@@ -1,5 +1,6 @@
 import { readdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+
 import { markdownAuthorCleaning, markdownPostCleaning } from './markdownCleaning';
 
 const rootDir = process.cwd();
@@ -30,7 +31,7 @@ const validateAndFormatAuthors = async (): Promise<string[]> => {
   return authorsLogin;
 };
 
-const validateAndFormatPosts = async (authorsLogin: string[]) => {
+const validateAndFormatPosts = async (authorsLogin: string[]): Promise<void> => {
   const postByLangDir = resolve(rootDir, '_posts');
   const postByLangDirs = readdirSync(postByLangDir);
 
@@ -59,7 +60,7 @@ const validateAndFormatPosts = async (authorsLogin: string[]) => {
   }
 };
 
-(async () => {
+(async (): Promise<void> => {
   const authorsLogin = await validateAndFormatAuthors();
   await validateAndFormatPosts(authorsLogin);
 })();

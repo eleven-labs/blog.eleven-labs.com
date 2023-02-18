@@ -44,7 +44,7 @@ L'idée est simple :
 
 Avant de rentrer dans les détails, voici un schéma expliquant le fonctionnement de notre librairie :
 
-![WorkMQ Schema](/assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/schema.jpg)
+![WorkMQ Schema](/_assets/posts/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/schema.jpg)
 
 Comme vous pouvez le voir sur ce diagramme, nous avons ici quatre `Queues` de définies, et chacune d'entre elles dispose de trois `Workers`.
 
@@ -357,7 +357,7 @@ Nous avons ici bouclé sur toutes les queues et affichons les données des compt
 
 Pour vous aider à visualiser le résultat, voici la sortie HTTP :
 
-![HTTP Output](/assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/output.gif)
+![HTTP Output](/_assets/posts/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/output.gif)
 
 Conclusion
 ----------

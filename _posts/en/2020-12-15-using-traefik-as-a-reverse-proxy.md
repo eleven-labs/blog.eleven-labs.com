@@ -39,7 +39,7 @@ There are loads of reverse proxy on the market, but today's focus will be on Tra
 
 Of course to make it work you will need a domain name (_wilson.net_ in my case), and to make sure the different DNS Zones are pointing to your server.
 
-![My DNS zones](/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/11-zones.jpg)
+![My DNS zones](/_assets/posts/2019-12-18-utiliser-traefik-comme-reverse-proxy/11-zones.jpg)
 
 You could also emulate a domain name through your local `/etc/hosts` file, but in such case the generation of a SSL certificate won't be possible.
 

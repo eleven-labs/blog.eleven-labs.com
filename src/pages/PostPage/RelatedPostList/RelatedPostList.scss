@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
+.related-post-list {
+  background-color: #{rgba(map.get($variables, 'color', 'greyscale', 'ultra-light-grey'), .8)};
+  backdrop-filter: blur(17px);
+  border-radius: 5px;
+}

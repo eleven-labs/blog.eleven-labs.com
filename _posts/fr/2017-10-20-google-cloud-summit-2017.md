@@ -51,7 +51,7 @@ C'est d'ailleurs en s'inspirant d'un citation de Larry Page que Sébastien Marot
 
 Puis laissons place à Ulku Rowe.
 
-![Ulku Rowe](/assets/2017-10-20-google-cloud-summit-2017/ulku.jpg)
+![Ulku Rowe](/_assets/posts/2017-10-20-google-cloud-summit-2017/ulku.jpg)
 
 Qui va nous présenter pourquoi le cloud Google est le meilleur.  Elle commence par nous montrer ce que doit être le futur des sociétés.
 
@@ -96,8 +96,8 @@ Puis La Redoute avec la blague de la Google Summit.
 
 Première conférence et premiers défis : comment récupérer, stocker et comprendre l'ensemble des données. Pour commencer Google nous présente deux outils de visualisation, DataLab et DataStudio.
 
-![DataLab](/assets/2017-10-20-google-cloud-summit-2017/image5.jpg)
-![DataStudio](/assets/2017-10-20-google-cloud-summit-2017/image6.jpg)
+![DataLab](/_assets/posts/2017-10-20-google-cloud-summit-2017/image5.jpg)
+![DataStudio](/_assets/posts/2017-10-20-google-cloud-summit-2017/image6.jpg)
 
 Datalab est un outil orienté développeur qui permet de suivre les données que vous ingérez dans votre Cloud Google.
 
@@ -119,7 +119,7 @@ La suite fut les étapes de la conception du système de recommandation, tout d'
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endraw %}
 
-![Architecture](/assets/2017-10-20-google-cloud-summit-2017/image7.jpg)
+![Architecture](/_assets/posts/2017-10-20-google-cloud-summit-2017/image7.jpg)
 
 Puis de créer une architecture permettant avec du machine learning de faire ce fameux système.
 
@@ -148,7 +148,7 @@ Guillaume Laforge s'attardera sur 3 exemples :
 
 La chose importante à retenir ici, c'est que Google a pensé à tout et a créer un emulator pour vous permettre de développer facilement.
 
-![Local](/assets/2017-10-20-google-cloud-summit-2017/image8.jpg)
+![Local](/_assets/posts/2017-10-20-google-cloud-summit-2017/image8.jpg)
 
 ### Introduction au Machine Learning
 
@@ -196,7 +196,7 @@ Aujourd'hui l'API permet de définir dans des phrases, l'utilité de chaque mot 
 
 Vous trouverez des exemples [ici](https://cloud.google.com/natural-language/){:rel="nofollow noreferrer"}.
 
-![Syntax](/assets/2017-10-20-google-cloud-summit-2017/image0.png)
+![Syntax](/_assets/posts/2017-10-20-google-cloud-summit-2017/image0.png)
 
 #### API CLOUD SPEECH
 
@@ -210,15 +210,15 @@ L'API permet de reconnaître ce qu'il y a sur des images. On peut l'utiliser de 
 
 La première, c'est de tagger ce qu'il y a sur l'image :
 
-![Labels](/assets/2017-10-20-google-cloud-summit-2017/image1.png)
+![Labels](/_assets/posts/2017-10-20-google-cloud-summit-2017/image1.png)
 
 La seconde permet de reconnaître des visages et de connaître le sentiment des personnes :
 
-![Visage](/assets/2017-10-20-google-cloud-summit-2017/image2.png)
+![Visage](/_assets/posts/2017-10-20-google-cloud-summit-2017/image2.png)
 
 La dernière permet de reconnaître des caractères et grâce à l'API de natural language d'identifier ce qu'il se dit :
 
-![Mot](/assets/2017-10-20-google-cloud-summit-2017/image3.png)
+![Mot](/_assets/posts/2017-10-20-google-cloud-summit-2017/image3.png)
 
 L'API est vraiment impressionnante et demande à être prise en main.
 
@@ -232,7 +232,7 @@ Cette API permet de tagger chaque partie de la video en prenant ce qui se passe 
 
 Cette API est en bêta mais vous pouvez trouvez les exemples [ici](https://cloud.google.com/video-intelligence/){:rel="nofollow noreferrer"}.
 
-![Labels](/assets/2017-10-20-google-cloud-summit-2017/image4.png)
+![Labels](/_assets/posts/2017-10-20-google-cloud-summit-2017/image4.png)
 
 ### Conclusion
 

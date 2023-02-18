@@ -1,0 +1,17 @@
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
+.post-footer {
+  --avatar-img-post-footer: 52px;
+
+  &__author {
+    @include create-media-queries('md') {
+      max-width: 380px;
+    }
+  }
+
+  &__avatar_img {
+    height: var(--avatar-img-post-footer);
+    width: var(--avatar-img-post-footer);
+    border-radius: 100%;
+  }
+}

@@ -27,7 +27,7 @@ sur une feuille. Cette feuille est ensuite distribuée à chaque participant. Le
 
 Cela paraît simple, mais il faut une bonne organisation. Lors de cette rencontre, nous étions 20 personnes.
 
-![key signing party](/assets/2017-12-01-openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/key_signing_party.jpg)
+![key signing party](/_assets/posts/2017-12-01-openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/key_signing_party.jpg)
 
 Il y a deux rangées de 10 personnes qui se font face. À tour de rôle, les personnes posent des questions pour vérifier l'identité de leur interlocuteur. Prenons un exemple avec Bob et Alice.
 
@@ -41,7 +41,7 @@ Bob: _vérifie le nom, prénom et la photo_. Ok je valide ton identité.
 
 Ensuite Bob met une croix pour dire que l'empreinte de la clef est bonne et que l'identité est vérifiée. Ce dialogue est inversé puis reproduit avec les 19 autres personnes.
 
-![key signing party list](/assets/2017-12-01-openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/keysigning_list.png)
+![key signing party list](/_assets/posts/2017-12-01-openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/keysigning_list.png)
 
 Une fois l'événement terminé, il faut certifier les clefs des personnes que l'on a vérifié. Certifier une clef, c'est donner sa confiance à la personne rencontrée. Cette action n'est pas anodine car elle sera retranscrite dans la clef que je vais certifier. Par exemple, je n'ai pas certifié de clefs dont le nom et prénom incrit dans la clef PGP ne correspond pas à ce qui a été vérifié avec la pièce d'identité.
 

@@ -39,7 +39,7 @@ Il existe beaucoup de solutions de reverse proxy sur le marché mais nous allons
 
 Bien sûr pour que tout fonctionne, vous devez disposer d'un nom de domaine (dans mon cas wilson.net) et faire pointer les différentes zones dns sur votre serveur.
 
-![Mes zones dns](/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/11-zones.jpg)
+![Mes zones dns](/_assets/posts/2019-12-18-utiliser-traefik-comme-reverse-proxy/11-zones.jpg)
 
 Sinon vous pouvez aussi simuler un nom de domaine dans votre fichier `/etc/hosts` mais dans ce cas la génération d'un certificat SSL ne sera pas possible.
 

@@ -32,7 +32,7 @@ Concrètement, le rôle du contrôleur est de prendre un objet _Request_ en entr
 
 Ce qui a été décrit plus haut peut se résumer en une image ci-dessous.
 
-[![Symfony kernel event](/assets/2016-08-19-transformer-tableau-en-reponse-json/10-kernel-view.png)
+[![Symfony kernel event](/_assets/posts/2016-08-19-transformer-tableau-en-reponse-json/10-kernel-view.png)
 
 Le cœur de Symfony tourne autour d'un composant en particulier : _HttpKernel_. Tout au long de sa vie, la requête va passer par plusieurs étapes successives dans le noyau de Symfony.
 

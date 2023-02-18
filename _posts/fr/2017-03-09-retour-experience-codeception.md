@@ -21,7 +21,7 @@ oldCategoriesAndTags:
 permalink: /fr/retour-experience-codeception/
 ---
 
-![Logo Codeception](/assets/2017-03-09-retour-experience-codeception/codeception-logo.png)
+![Logo Codeception](/_assets/posts/2017-03-09-retour-experience-codeception/codeception-logo.png)
 
 Dans cet article je vous propose un retour d'expérience sur le framework de test Codeception, outil choisi par mon équipe au sein de France Télévisions lors de la refonte de notre stack !
 

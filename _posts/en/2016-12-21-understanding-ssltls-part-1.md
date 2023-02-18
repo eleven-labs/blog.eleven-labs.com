@@ -46,7 +46,7 @@ SSL and TLS are invisible to the user, and don't require a usage of protocol of 
 
 _OSI Model with SSL/TLS_
 
-![tls-in-osi](/assets/2016-12-21-understanding-ssltls-part-1/tls-in-osi.png)
+![tls-in-osi](/_assets/posts/2016-12-21-understanding-ssltls-part-1/tls-in-osi.png)
 
 _Bottom line:_
 

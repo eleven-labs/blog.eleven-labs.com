@@ -47,16 +47,16 @@ Je vous invite à aller sur cette url [https://cloud.google.com/](https://cloud
 
 En haut du dashboard, vous devez alors créer un projet.
 
-![Création d'un projet - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.09.13.png)
+![Création d'un projet - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.09.13.png)
 
 Vous devez choisir un nom de projet, celui-ci sera alors considéré comme l'id du projet pour le reste du tutoriel.
 
-![Création du projet - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.11.57.png)
+![Création du projet - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.11.57.png)
 
 Vous êtes alors redirigé sur le dashboard du projet, vous y verrez toutes les infos de votre projet.
 
 
-![Création du projet - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.15.47.png)
+![Création du projet - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.15.47.png)
 
 ### Etape 3,  on va mettre un budget :
 
@@ -64,38 +64,38 @@ Vous avez peur de payer trop cher lors des différents tutoriels, nous allons do
 
 Dans le menu, vous devez sélectionner "Facturation".
 
-![Facturation - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.20.16.png)
+![Facturation - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.20.16.png)
 
 Puis cliquez sur "budgets et alertes", vous pouvez alors créer un budget.
 
-![Créer un budget - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.22.21.png)
+![Créer un budget - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.22.21.png)
 
 Il ne vous reste plus qu'a remplir le formulaire de création de budget.
 
-![Créer un budget - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.24.38.png)
+![Créer un budget - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.24.38.png)
 
 ### Etape 4, Jenkins en 5 minutes :
 
 Dirigez vous dans le menu "Cloud launcher", vous arrivez dans l'interface du choix des technologies disponibles pour être préinstallé.
 
-![Cloud Launcher - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.28.09.png)
+![Cloud Launcher - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.28.09.png)
 
 Vous n'avez plus qu'à chercher la solution Jenkins, vous arrivez alors sur l'interface de lancement de configuration.
 
-![Configuration Jenkins - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.30.33.png)
+![Configuration Jenkins - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.30.33.png)
 
 Vous devez cliquer sur "Lancer sur Compute Engine", comme vous le voyez si vous laissez la configuration par défaut le coût estimé est de 14,20 dollars/mois. Je vous invite à jouer avec les options pour voir le prix changer.
 
-![Deployer - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.35.43.png)
+![Deployer - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.35.43.png)
 
 Il ne vous reste plus qu'à "déployer", cela peut prendre un peu de temps. Lorsque tout est terminé vous trouverez les éléments essentiels pour accéder à votre Jenkins fraîchement installé.
 
-![Accéder à Jenkins - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.38.53.png)
+![Accéder à Jenkins - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.38.53.png)
 
 Si tout est bon, cliquez sur "Visit the site", entrez les informations utilisateur disponibles sur l'interface précédente.
 Félicitations : Jenkins est installé.
 
-![Jenkins - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.42.19.png)
+![Jenkins - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.42.19.png)
 
 Maintenant que vous savez faire du Cloud, nous allons passer à l'étape suivante dans le tutoriel 2.
 
@@ -103,4 +103,4 @@ Maintenant que vous savez faire du Cloud, nous allons passer à l'étape suivant
 
 N'oubliez pas de supprimer le projet Jenkins, pour ne pas payer pour rien.
 
-![Supprimer Jenkins - Google Cloud Platform](/assets/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.51.59.png)
+![Supprimer Jenkins - Google Cloud Platform](/_assets/posts/2016-12-08-google-cloud-platform-pour-les-nuls/capture-decran-2016-11-30-a-11.51.59.png)

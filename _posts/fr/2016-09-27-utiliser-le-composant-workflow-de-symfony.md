@@ -123,7 +123,7 @@ $ bin/console workflow:dump pull_request
 
 Celle-ci va vous générer un code Graphviz qui donne le schéma suivant :
 
-![Workflow Graphviz](/assets/2016-09-29-symfony-workflow-component/workflow.png)
+![Workflow Graphviz](/_assets/posts/2016-09-29-symfony-workflow-component/workflow.png)
 
 Celui-ci permet vraiment de donner une vision claire de son workflow, à tous les niveaux (développeurs, product owners, clients, ...).
 Le composant Workflow implémente des méthodes permettant d'effectuer une transition, vérifier si une transition peut être effectuée avec l'état actuel et lister les transitions possibles avec l'état actuel.

@@ -37,7 +37,7 @@ Après une première étape menée en 2009 par Google avec le protocole `SPDY`, 
 
 Aujourd'hui, le protocole HTTP/2 est supporté par la plupart des navigateurs. Au moment de l'écriture de cet article, seul Opera Mini se fait encore désirer :
 
-![Can I use HTTP/2?](/assets/2017-04-12-http2-future-present/caniuse.jpg)
+![Can I use HTTP/2?](/_assets/posts/2017-04-12-http2-future-present/caniuse.jpg)
 
 Il est donc possible d'envisager dès maintenant de passer vos applications web à HTTP/2 et ainsi offrir des performances de navigation accrues à vos visiteurs.
 
@@ -55,13 +55,13 @@ Si vous souhaitez plus d'informations sur la configuration du protocole TLS afin
 
 Si HTTP/1 chargeait les ressources les unes après les autres, comme en décrit la cascade de chargement des ressources d'une application ci-dessous, HTTP/2 va vous permettre de gagner du temps au niveau des états d'attente car plusieurs ressources pourront être directement déchargées dans le même flux de réponse HTTP.
 
-![Waterfall HTTP](/assets/2017-04-12-http2-future-present/waterfall_http.jpg)
+![Waterfall HTTP](/_assets/posts/2017-04-12-http2-future-present/waterfall_http.jpg)
 
 Ici, le temps passé en vert correspond au temps d'attente avant le chargement de la ressource, le temps passé en violet correspond au temps d'attente de chargement de la ressource (TTFB - Time To First Byte) et enfin le temps en gris correspond au temps de réception de la ressource.
 
 Voici à quoi ressemble le chargement des ressources sous le protocole HTTP/2 :
 
-![Waterfall HTTP/2?](/assets/2017-04-12-http2-future-present/waterfall_http2.jpg)
+![Waterfall HTTP/2?](/_assets/posts/2017-04-12-http2-future-present/waterfall_http2.jpg)
 
 Nous voyons clairement ici que le temps alloué à attendre les ressources (le temps en vert) a complètement disparu et que toutes les ressources sont bien chargées "en même temps", en utilisant le même flux.
 

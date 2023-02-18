@@ -21,9 +21,9 @@ permalink: /fr/la-symfony-live-2016/
 
 Cette année, Eleven Labs a, pour la troisième fois, sponsorisé le Symfony Live 2016, qui s’est déroulé à la Cité Universitaire. Nous étions présents avec nos brand new Wilson Black Edition, notre borne d’arcade et nos astrobeers.
 
-![](/assets/2016-04-11-la-symfony-live-2016/astrobeer.jpg)
-![](/assets/2016-04-11-la-symfony-live-2016/stand-eleven.jpg)
-![](/assets/2016-04-11-la-symfony-live-2016/tomgregbox.jpg)
+![](/_assets/posts/2016-04-11-la-symfony-live-2016/astrobeer.jpg)
+![](/_assets/posts/2016-04-11-la-symfony-live-2016/stand-eleven.jpg)
+![](/_assets/posts/2016-04-11-la-symfony-live-2016/tomgregbox.jpg)
 
 Après notre Storify de ce matin, voici un retour détaillé en mode live tweet de l’astronaute Captain Jojo !
 

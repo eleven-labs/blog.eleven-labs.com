@@ -1,0 +1,18 @@
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
+
+.newsletter-block {
+  background: rgb(225 234 249 / 50%);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+
+  &__img {
+    margin: var(--img-margin-newsletter-block, 0 auto);
+    width: var(--img-width-newsletter-block, 106px);
+
+    @include create-media-queries('md') {
+      --img-width-newsletter-block: 171px;
+      --img-margin-newsletter-block: 0 var(--spacing-xl);
+    }
+  }
+}

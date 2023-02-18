@@ -54,7 +54,7 @@ Last but not least, we need to update the database to be able to play with our m
 bin/console do:sche:update --force vendor/bin/schema generate-types src/ app/config/schema.yml
 ```
 
-![](/assets/2017-07-25-api-platform/api_platform_movies.png)
+![](/_assets/posts/2017-07-25-api-platform/api_platform_movies.png)
 Accessing documentation, you see that the _Movie_ resource is here, with all operations like creating, updating, and deleting.
 You can play with the interface and the auto-generated documentation before we go on and see another feature used many times in API: filters.
 

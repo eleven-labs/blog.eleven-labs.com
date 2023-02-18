@@ -19,7 +19,7 @@ La 5ème édition des conférences dotJS a battu un nouveau record d'affluence 
 
 Bien que le charme du théâtre parisien des années passées n'y était plus, il était beaucoup plus agréable de suivre une journée entière de conférence dotJS dans cette salle de bon volume, bien ventilée et avec de bons sièges :)
 
-[![dotjs-1](/assets/2016-12-12-feedback-dotjs-2016/dotjs-1-300x224.jpg)](/assets/2016-12-12-feedback-dotjs-2016/dotjs-1.jpg)
+[![dotjs-1](/_assets/posts/2016-12-12-feedback-dotjs-2016/dotjs-1-300x224.jpg)](/_assets/posts/2016-12-12-feedback-dotjs-2016/dotjs-1.jpg)
 
 La journée est composée de dix regular talks (sujets de 30 min présentés par des personnalités) et de huit lightning talks (sujets de 5 min présentés par des courageux ;)). Quatre sessions au total temporisent la journée, intercalées par des temps de pauses suffisamment long pour se ressourcer. Ce fût très enrichissant tout en étant très agréable.
 

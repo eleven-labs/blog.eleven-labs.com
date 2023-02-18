@@ -29,7 +29,7 @@ Chez Eleven Labs, notre méthodologie agile repose principalement sur la méthod
 
 Dans cet article, on parlera plus particulièrement d’une rétrospective de sprint SCRUM dans le cadre d’un projet informatique mais la plupart des outils mentionnés ici sont utilisables pour n’importe quelle méthodologie agile et la majorité des projets.
 
-[![Rétrospective de fin d'un Sprint SCRUM](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/eleven-labs-scrum-sprint-focus-retrospective.png)](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/eleven-labs-scrum-sprint-focus-retrospective.png){: .center-image .no-link-style}
+[![Rétrospective de fin d'un Sprint SCRUM](/_assets/posts/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/eleven-labs-scrum-sprint-focus-retrospective.png)](/_assets/posts/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/eleven-labs-scrum-sprint-focus-retrospective.png){: .center-image .no-link-style}
 
 *<center>Rétrospective de fin d'un Sprint SCRUM</center>*
 
@@ -104,7 +104,7 @@ Si l’équipe n’est globalement pas suffisamment à l’aise pour discuter de
 
 De la même façon, les 5 notes du Safety Check précédent peuvent être représentées de manières plus ludiques à l’aide d’images, de personnages ou smileys plus ou moins confiants.
 
-[![](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/astronauts-mood-board.jpg)](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/astronauts-mood-board.jpg){: .center-image .no-link-style}
+[![](/_assets/posts/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/astronauts-mood-board.jpg)](/_assets/posts/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/astronauts-mood-board.jpg){: .center-image .no-link-style}
 
 *<center>Mood Board des astronautes Eleven Labs</center>*
 
@@ -123,7 +123,7 @@ La manière la plus courante, et aussi souvent la plus efficace, est de demander
 -   ou variante métaphorique du bateau, symbolisant l’équipe : le facilitateur dessine sur un paper board ou tableau un bateau à moitié sous l’eau et à moitié à la surface, avec sa voile qui lui permet d’avancer, son ancre qui le ralentit et le tire vers le fond, et le vent qui permettrait de faire encore accélérer le bateau.
 -   Il est aussi possible de laisser l’équipe inventer ses propres catégories. Chez Eleven Labs, on aime bien celles-ci : **“⊕ Points positifs”, “⊖ Points négatifs”, “✨ Idées d’amélioration”, “❤ Remerciements personnalisés”**
 
-[![](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-retrospective.jpg)](/assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-retrospective.jpg){: .center-image .no-link-style}
+[![](/_assets/posts/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-retrospective.jpg)](/_assets/posts/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-retrospective.jpg){: .center-image .no-link-style}
 
 *<center>Post-it catégorisés lors de nos rétrospectives chez Eleven Labs</center>*
 
