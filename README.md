@@ -38,7 +38,7 @@ docker run --rm --label=jekyll --volume=$(pwd):/srv/jekyll -it -p 127.0.0.1:4000
 ```
 ou
 ```bash
-docker-compose up
+docker compose up
 ```
 Vous devriez avoir le blog qui s'affiche dans votre navigateur préféré à l'adresse suivante http://localhost:4000
 
