@@ -25,11 +25,13 @@ permalink: /fr/symfony-et-mongodb-retour-aux-sources/
 </div>
 
 
-Sur ce blog, nous avons déjà [quelques articles](https://blog.eleven-labs.com/tag/mongodb.html) autour de MongoDB, et même s’ils sont encore d’actualité, il n’y en avait pas sur MongoDB dans Symfony.
+Sur ce blog, nous avons déjà quelques articles autour de MongoDB, et même s’ils sont encore d’actualité, il n’y en avait pas sur MongoDB dans Symfony.
 
 ## Qu’est-ce que MongoDB ?
 
-MongoDB est une base de données orientée documents en NoSQL. On a souvent plus l’habitude de base de données relationnelles comme MySQL pour enregistrer les entités sous Symfony, alors que quand c’est orientée Document, c’est pour un besoin différent : stocker des contenus comme des articles de journaux/blogs ou des catalogues de produits pour le e-commerce. Cela permet d’y accéder plus rapidement et il n’y a pas besoin de relationnelle : toutes les informations sont enregistrées dans un json ou xml dans une structure souple.
+MongoDB est une base de données orientée documents en NoSQL.
+On a plus souvent l’habitude de base de données relationnelles comme MySQL pour enregistrer les entités sous Symfony, alors que quand c’est orientée Document, c’est pour un besoin différent : stocker directement un objet complet, sans relation ou repartition sur plusieurs tables (par exemple des contenus comme des articles de journaux/blogs ou des catalogues de produits).
+Cela permet d’y accéder plus rapidement et il n’y a pas besoin de relationnelle : toutes les informations sont enregistrées dans un json ou xml dans une structure souple.
 
 ## Installer une base MongoDB pour un projet Symfony dans Docker
 
