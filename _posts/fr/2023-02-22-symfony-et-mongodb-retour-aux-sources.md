@@ -25,17 +25,17 @@ permalink: /fr/symfony-et-mongodb-retour-aux-sources/
 </div>
 
 
-Sur ce blog, nous avons déjà quelques articles autour de MongoDB, et même s’ils sont encore d’actualité, il n’y en avait pas sur MongoDB dans Symfony.
+Sur ce blog, nous avons déjà quelques articles autour de MongoDB, et même s’ils sont encore d’actualité, il n’y en avait pas sur MongoDB dans Symfony, d'où cet article !
 
 ## Qu’est-ce que MongoDB ?
 
-MongoDB est une base de données orientée documents en NoSQL.
-On a plus souvent l’habitude de base de données relationnelles comme MySQL pour enregistrer les entités sous Symfony, alors que quand c’est orientée Document, c’est pour un besoin différent : stocker directement un objet complet, sans relation ou repartition sur plusieurs tables (par exemple des contenus comme des articles de journaux/blogs ou des catalogues de produits).
-Cela permet d’y accéder plus rapidement et il n’y a pas besoin de relationnelle : toutes les informations sont enregistrées dans un json ou xml dans une structure souple.
+MongoDB est une base de données en NoSQL orientée documents.
+On a plus souvent l’habitude de bases de données relationnelles comme MySQL pour enregistrer les entités sous Symfony. Les Bases orientées Document elles, sont pensées pour un besoin différent : stocker directement un objet complet, sans relation ou répartition sur plusieurs tables (par exemple des contenus comme des articles de journaux/blogs ou des catalogues de produits).
+Cela permet d’y accéder plus rapidement et il n’y a pas besoin de relationnelle : toutes les informations sont enregistrées dans un JSON ou XML dans une structure souple.
 
 ## Installer une base MongoDB pour un projet Symfony dans Docker
 
-Avant de l’utiliser dans votre projet sous Symfony, il faut installer dans votre docker-compose l’image de MongoDB et de le configurer.
+Avant de l’utiliser dans votre projet sous Symfony, il faut installer dans votre docker-compose l’image de MongoDB et le configurer.
 
 On reste sur une configuration simple où les paramètres sont stockés dans le .env.
 
@@ -71,12 +71,12 @@ DATABASE_VERSION=x.x.xx
 
 Pour l’implémentation dans Symfony, je vais proposer deux approches : avec Doctrine, et comme c’est dans l’air du temps, SANS Doctrine !
 
-Pourquoi proposer sans Doctrine ? Il y a certes du Doctrine Bashing depuis quelques années, mais pour MongoDB, comme ce n’est pas du relationnel, et si vous n’avez pas besoin de l’utiliser comme un objet lors de la récupération, pourquoi s’embêter avec un modèle ?
+Pourquoi proposer sans Doctrine ? Il y a certes du Doctrine Bashing depuis quelques années, mais comme MongoDB n’est pas du relationnel, et si vous n’avez pas besoin de l’utiliser comme un objet lors de la récupération, alors pourquoi s’embêter avec un modèle ?
 
 ## Avec [DoctrineMongoDBBundle](https://www.doctrine-project.org/projects/doctrine-mongodb-bundle/en/4.4/index.html)
 ### Installation
 
-Je ne vais pas répéter la documentation du Bundle qui est bien fait sur [l’installation](https://www.doctrine-project.org/projects/doctrine-mongodb-bundle/en/4.4/installation.html#install-the-bundle-with-composer), je vais préciser pour la configuration pour être cohérent avec celle pour docker-compose.
+Je ne vais pas répéter la documentation du Bundle qui est bien fait sur [l’installation](https://www.doctrine-project.org/projects/doctrine-mongodb-bundle/en/4.4/installation.html#install-the-bundle-with-composer), mais je vais préciser la configuration pour être cohérent avec celle de docker-compose.
 
 ```bash
 # config/packages/doctrine_mongodb.yaml
@@ -248,7 +248,7 @@ mongo_db_bundle:
 ### Utilisation
 #### Insérer un document
 
-Contrairement à la précédente solution, ici, pas besoin d'objet à persister : on utilise un tableau avec les données. A vous de voir si vous voulez vérifier le format et les données dedans.
+Contrairement à la précédente solution, ici, pas besoin d'objet à persister : on utilise un tableau avec les données. À vous de voir si vous voulez vérifier le format et les données dedans.
 
 Ensuite, pour insérer les données, il faut sélectionner la collection (ici `article` pour rester sur le thème) et tout simplement insérer le tableau.
 ```php
