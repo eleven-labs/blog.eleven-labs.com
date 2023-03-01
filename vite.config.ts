@@ -13,7 +13,8 @@ export const markdownPlugin = (): PluginOption => {
       const attributes = matterResult.data;
       const content = matterResult.content
           .replaceAll('{{ site.baseurl }}/assets/', `${process.env.BASE_URL || '/'}imgs/posts/`)
-          .replaceAll('/_assets/posts/', `${process.env.BASE_URL || '/'}imgs/posts/`);
+          .replaceAll('/_assets/posts/', `${process.env.BASE_URL || '/'}imgs/posts/`)
+          .replace(/({% raw %}|{% endraw %})/g, '');
 
       return {
         code: [

@@ -1,0 +1,17 @@
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
+.header {
+  &__logo {
+    font-size: var(--header-logo-size, 2rem);
+
+    @include create-media-queries('md') {
+    --header-logo-size: 2.75rem;
+    }
+  }
+
+  &__icon-button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+}

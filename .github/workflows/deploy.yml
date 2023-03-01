@@ -16,19 +16,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Sets env vars for dev
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "ENV=dev-${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "ENV_URL=http://dev.blog.eleven-labs.com.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "BASE_URL=/${{ github.head_ref }}/" >> $GITHUB_ENV
+          echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
+          echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_DEV }}" >> $GITHUB_ENV
+          echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_DEV }}" >> $GITHUB_ENV
+          echo "ALGOLIA_API_SEARCH_KEY=${{ secrets.ALGOLIA_API_SEARCH_KEY_DEV }}" >> $GITHUB_ENV
+
       - name: Sets env vars for production
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |
           echo "ENV=production" >> $GITHUB_ENV
           echo "ENV_URL=https://blog.eleven-labs.com" >> $GITHUB_ENV
           echo "BASE_URL=/" >> $GITHUB_ENV
-
-      - name: Sets env vars for dev and configure website
-        if: github.event_name == 'pull_request'
-        run: |
-          echo "ENV=dev-${{ github.head_ref }}" >> $GITHUB_ENV
-          echo "ENV_URL=http://dev.blog.eleven-labs.com.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
-          echo "BASE_URL=/${{ github.head_ref }}/" >> $GITHUB_ENV
+          echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
+          echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_PRODUCTION }}" >> $GITHUB_ENV
+          echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_PRODUCTION }}" >> $GITHUB_ENV
+          echo "ALGOLIA_API_SEARCH_KEY=${{ secrets.ALGOLIA_API_SEARCH_KEY_PRODUCTION }}" >> $GITHUB_ENV
 
       - name: Setup node
         uses: actions/setup-node@v3
@@ -80,6 +88,9 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_URL: ${{ env.BASE_URL }}
+          VITE_ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
+          VITE_ALGOLIA_API_KEY: ${{ env.ALGOLIA_API_SEARCH_KEY }}
+          VITE_ALGOLIA_INDEX: ${{ env.ALGOLIA_INDEX }}
 
       - name: Setup aws
         uses: aws-actions/configure-aws-credentials@v1
@@ -97,7 +108,7 @@ jobs:
           ref: ${{ github.head_ref }}
           env: ${{ env.ENV }}
 
-      - name: Deploy to S3 for staging
+      - name: Deploy to S3 for dev
         if: github.event_name == 'pull_request'
         run: aws s3 sync "dist/public/" "s3://dev.blog.eleven-labs.com/${{ github.head_ref }}/" --delete
 
@@ -112,10 +123,12 @@ jobs:
           aws cloudfront create-invalidation --distribution-id "${{ secrets.CLOUDFRONT_DISTRIBUTION }}" --paths "/*"
 
       - name: Indexing on Algolia
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: bundle exec rake deploy
+        run: yarn indexation:algolia
         env:
-          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
+          ALGOLIA_API_INDEXING_KEY: ${{ env.ALGOLIA_API_INDEXING_KEY }}
+          ALGOLIA_INDEX: ${{ env.ALGOLIA_INDEX }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update deployment status
         uses: bobheadxi/deployments@v1

@@ -1,5 +1,5 @@
 import { AsProps, Box, Flex, Heading, Icon, Link } from '@eleven-labs/design-system';
-import * as React from 'react';
+import React from 'react';
 
 export interface PostHeaderProps {
   title: React.ReactNode;

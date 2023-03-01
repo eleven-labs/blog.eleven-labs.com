@@ -84,6 +84,11 @@ export const routes: RouteObject[] = [
           {
             path: PATHS.SEARCH,
             element: <SearchPageContainer />,
+            loader: async ({ request, params }) =>
+              getPostListDataPage({
+                request,
+                params,
+              }),
           },
         ],
       },

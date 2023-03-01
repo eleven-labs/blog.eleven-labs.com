@@ -2,7 +2,7 @@ import { Box, Flex } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { Footer, FooterProps } from './Footer/Footer';
-import { Header, HeaderProps } from './Header';
+import { Header, HeaderProps } from './Header/Header';
 
 export type LayoutTemplateProps = {
   header: HeaderProps;

@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
-import NewsletterBlockStories from '@/components/Molecules/NewsletterBlock/NewsletterBlock.stories';
+import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
 import { PostPage } from '@/pages/PostPage/PostPage';
 
 export default {

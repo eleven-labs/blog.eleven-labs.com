@@ -61,10 +61,16 @@
       "post_preview_list_title": "Author's article"
     },
     "search": {
-      "number_of_search_label": "{{ numberOfHits }} hits",
+      "title": "{{ numberOfHits }} hits",
       "description": "sorted by relevance",
-      "search_not_found_title": "No results in sight...",
-      "search_not_found_description": "Check your search terms before trying again"
+      "not_found": {
+        "title": "No results in sight...",
+        "description": "Check your search terms before trying again"
+      }
+    },
+    "not_found": {
+      "title": "Page not found",
+      "description": "We apologize for any inconvenience, but the page you requested was not found."
     }
   }
 }

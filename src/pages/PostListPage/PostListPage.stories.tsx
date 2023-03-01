@@ -2,9 +2,10 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
-import NewsletterBlockStories from '@/components/Molecules/NewsletterBlock/NewsletterBlock.stories';
-import * as PostPreviewListStories from '@/components/Organisms/PostPreviewList/PostPreviewList.stories';
-import { PostListPage } from '@/pages/PostListPage/PostListPage';
+import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
+import * as PostPreviewListStories from '@/components/PostPreviewList/PostPreviewList.stories';
+
+import { PostListPage } from './PostListPage';
 
 export default {
   title: 'Pages/PostList',
@@ -25,6 +26,7 @@ export default {
         { label: 'Bonnes pratiques' },
       ],
     },
+    title: 'Tous nos articles',
     postPreviewList: {
       ...PostPreviewListStories.default.args,
       ...PostPreviewListStories.PostPreviewListWithPagination.args,

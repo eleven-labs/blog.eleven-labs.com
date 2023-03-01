@@ -2,8 +2,8 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
-import NewsletterBlockStories from '@/components/Molecules/NewsletterBlock/NewsletterBlock.stories';
-import * as PostPreviewListStories from '@/components/Organisms/PostPreviewList/PostPreviewList.stories';
+import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
+import * as PostPreviewListStories from '@/components/PostPreviewList/PostPreviewList.stories';
 import { AuthorPage } from '@/pages/AuthorPage/AuthorPage';
 
 export default {
@@ -20,10 +20,10 @@ export default {
       avatarImageUrl: 'https://api.dicebear.com/5.x/avataaars/svg?seed=Felix',
       description: 'Astronaute John Doe @ ElevenLabs_\uD83D\uDE80',
     },
+    title: `Article de l'auteur`,
     postPreviewList: {
       ...PostPreviewListStories.default.args,
       ...PostPreviewListStories.PostPreviewListWithPagination.args,
-      title: `Article de l'auteur`,
     },
     newsletterBlock: NewsletterBlockStories.args,
   },

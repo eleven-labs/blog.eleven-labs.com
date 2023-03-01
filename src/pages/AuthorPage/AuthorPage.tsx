@@ -20,6 +20,7 @@ export type AuthorPageProps = {
     avatarImageUrl?: string;
     description: string;
   };
+  title: React.ReactNode;
   postPreviewList: PostPreviewListProps;
   newsletterBlock: NewsletterBlockProps;
 };
@@ -27,6 +28,7 @@ export type AuthorPageProps = {
 export const AuthorPage: React.FC<AuthorPageProps> = ({
   backLink: { label, ...backLinkProps },
   author,
+  title,
   postPreviewList,
   newsletterBlock,
 }) => (
@@ -52,6 +54,9 @@ export const AuthorPage: React.FC<AuthorPageProps> = ({
       </Box>
     </Flex>
     <Divider mt="m" bg="light-grey" className="author-page__divider" />
+    <Text size="m" my="m" fontWeight="medium">
+      {title}
+    </Text>
     <PostPreviewList {...postPreviewList} />
     <NewsletterBlock my={{ xs: 'xl', md: 'xxl' }} {...newsletterBlock} />
   </Container>

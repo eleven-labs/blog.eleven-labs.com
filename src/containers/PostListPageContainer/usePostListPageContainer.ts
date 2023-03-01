@@ -31,8 +31,8 @@ export const usePostListPageContainer = (): PostListPageProps => {
         isActive: currentCategoryName === categoryName ? true : Boolean(!categoryName && currentCategoryName === 'all'),
       })),
     },
+    title: t('pages.post_list.post_preview_list_title'),
     postPreviewList: {
-      title: t('pages.post_list.post_preview_list_title'),
       ...postPreviewList,
     },
     newsletterBlock,

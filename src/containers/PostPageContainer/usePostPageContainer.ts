@@ -4,12 +4,14 @@ import { useLoaderData } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
 import { getPostDataPage } from '@/helpers/apiHelper';
+import { useBackLink } from '@/hooks/useBackLink';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { PostPageProps } from '@/pages/PostPage';
 
 export const usePostPageContainer = (): PostPageProps | undefined => {
   const { t, i18n } = useTranslation();
   const post = useLoaderData() as Awaited<ReturnType<typeof getPostDataPage>>;
+  const backLink = useBackLink();
   const newsletterBlock = useNewsletterBlock();
 
   if (!post) {
@@ -27,11 +29,7 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
   );
 
   return {
-    backLink: {
-      as: Link,
-      label: t('common.back'),
-      to: generatePath(PATHS.HOME, { lang: i18n.language }),
-    } as PostPageProps['backLink'],
+    backLink,
     header: {
       title: post.title,
       date: post.date,

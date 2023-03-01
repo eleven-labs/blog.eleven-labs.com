@@ -1,7 +1,10 @@
 import { Box, Text } from '@eleven-labs/design-system';
+import { action } from '@storybook/addon-actions';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
+import { AutocompleteFieldProps } from '@/components';
+import * as AutocompleteFieldStories from '@/components/AutocompleteField/AutocompleteField.stories';
 import { LayoutTemplate } from '@/templates/LayoutTemplate';
 
 export default {
@@ -12,6 +15,8 @@ export default {
       homeLink: {
         href: '#',
       },
+      autocomplete: AutocompleteFieldStories.default.args,
+      onToggleSearch: action('toggleSearch'),
     },
     footer: {
       introBlock: {
@@ -85,7 +90,7 @@ export default {
       ],
     },
     children: (
-      <Box textAlign="center" p="l" flex="1">
+      <Box textAlign="center" p="l" flex="1" style={{ minHeight: '250px' }}>
         Content
       </Box>
     ),
@@ -101,3 +106,25 @@ export default {
 const Template: StoryFn<typeof LayoutTemplate> = (args) => <LayoutTemplate {...args} />;
 
 export const Overview = Template.bind({});
+
+export const LayoutTemplateWithAutocompleteIsOpen = Template.bind({});
+LayoutTemplateWithAutocompleteIsOpen.args = {
+  header: {
+    homeLink: {
+      href: '#',
+    },
+    autocompleteIsDisplayed: true,
+    autocomplete: AutocompleteFieldStories.AutocompleteFieldWithResult.args as AutocompleteFieldProps,
+  },
+};
+
+export const LayoutTemplateWithAutocompleteAndResultNotFound = Template.bind({});
+LayoutTemplateWithAutocompleteAndResultNotFound.args = {
+  header: {
+    homeLink: {
+      href: '#',
+    },
+    autocompleteIsDisplayed: true,
+    autocomplete: AutocompleteFieldStories.AutocompleteFieldWithNoResult.args as AutocompleteFieldProps,
+  },
+};

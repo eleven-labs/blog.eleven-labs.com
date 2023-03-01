@@ -5,3 +5,4 @@ export const NUMBER_OF_ITEMS_PER_PAGE = 6;
 
 export * from './paths';
 export * from './categories';
+export * from './algolia';

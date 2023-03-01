@@ -1,9 +1,10 @@
 import React from 'react';
-import { useRouteError } from 'react-router-dom';
+
+import { useNotFoundPageContainer } from '@/containers/NotFoundPageContainer/useNotFoundPageContainer';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 
 export const NotFoundPageContainer: React.FC = () => {
-  const error = useRouteError();
-  console.log({ error });
+  const notFoundPageProps = useNotFoundPageContainer();
 
-  return <>Not Found Page</>;
+  return <NotFoundPage {...notFoundPageProps} />;
 };

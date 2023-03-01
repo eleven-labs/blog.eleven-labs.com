@@ -2,12 +2,11 @@ import { Heading, HeadingProps, Link, Text } from '@eleven-labs/design-system';
 import * as HTMLReactParser from 'html-react-parser';
 import parse, { HTMLReactParserOptions } from 'html-react-parser';
 import MarkdownIt from 'markdown-it';
-import * as React from 'react';
+import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import githubGist from 'react-syntax-highlighter/dist/cjs/styles/hljs/github-gist';
 
 import { Reminder, VariantReminderType } from '@/components';
-import { getPathFile } from '@/helpers/assetHelper';
 
 export const md = MarkdownIt({ html: true });
 
@@ -199,10 +198,8 @@ export const htmlReactParserOptions: HTMLReactParser.HTMLReactParserOptions = {
       }
 
       if (domNode.tagName === 'img') {
-        const src = !props.src.match(/^http(s)?:\/\//) ? getPathFile(props.src) : props.src;
         return React.createElement('img', {
           ...props,
-          src,
           style: {
             display: 'block',
             maxWidth: '100%',
