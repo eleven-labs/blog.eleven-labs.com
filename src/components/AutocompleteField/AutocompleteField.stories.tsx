@@ -8,15 +8,13 @@ export default {
   title: 'Components/AutocompleteField',
   component: AutocompleteField,
   args: {
-    input: {
-      placeholder: 'Rechercher par nom d’article ou d’auteur',
-    },
-    buttonSearch: {
-      onClick: action('onSearch'),
+    placeholder: 'Rechercher par nom d’article ou d’auteur',
+    searchLink: {
+      label: 'Voir tous les résultats',
+      onClick: action('search'),
     },
   },
   parameters: {
-    layout: 'centered',
     backgrounds: {
       default: 'ultra-light-grey',
     },
@@ -29,17 +27,7 @@ export const Overview = Template.bind({});
 
 export const AutocompleteFieldWithResult = Template.bind({});
 AutocompleteFieldWithResult.args = {
-  isOpen: true,
-  input: {
-    placeholder: 'Rechercher par nom d’article ou d’auteur',
-    value: 'React',
-  },
-  buttonClose: {
-    onClick: action('onClose'),
-  },
-  buttonSearch: {
-    onClick: action('onSearch'),
-  },
+  defaultValue: 'React',
   items: [
     {
       title: 'React SSR',
@@ -67,24 +55,11 @@ AutocompleteFieldWithResult.args = {
         'Suspendisse potenti. Etiam egestas lacus velit, et tempor metus mollis react. Donec ut vulputate leo',
     },
   ],
-  seeAllSearchLink: {
-    label: 'Voir tous les résultats',
-  },
 };
 
 export const AutocompleteFieldWithNoResult = Template.bind({});
 AutocompleteFieldWithNoResult.args = {
-  isOpen: true,
-  input: {
-    placeholder: 'Rechercher par nom d’article ou d’auteur',
-    value: 'React',
-  },
-  buttonClose: {
-    onClick: action('onClose'),
-  },
-  buttonSearch: {
-    onClick: action('onSearch'),
-  },
+  defaultValue: 'React',
   items: [],
   searchNotFound: {
     title: 'Aucun résultat en vue...',

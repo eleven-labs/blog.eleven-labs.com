@@ -39,4 +39,17 @@ export const parameters = {
   viewport: {
     viewports: customViewports,
   },
+  backgrounds: {
+    default: 'white',
+    values: [
+      {
+        name: 'white',
+        value: '#FFF'
+      },
+      {
+        name: 'ultra-light-grey',
+        value: '#EDEDED'
+      }
+    ],
+  },
 }

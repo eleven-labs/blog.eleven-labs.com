@@ -12,9 +12,10 @@ export interface AutocompleteItem {
 }
 
 export type AutocompleteResultOptions = {
+  isOpen?: boolean;
   items: (AsProps<'a'> & AutocompleteItem)[];
   searchValue?: string;
-  seeAllSearchLink?: AsProps<'a'> & { label: string };
+  searchLink?: AsProps<'a'> & { label: string };
   searchNotFound?: {
     title: string;
     description: string;
@@ -27,16 +28,17 @@ export type AutocompleteResultProps = BoxProps & AutocompleteResultOptions;
 export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
   (
     {
+      isOpen = false,
       items,
       searchValue,
-      seeAllSearchLink: { label: seeAllSearchLinkLabel, ...seeAllSearchLinkProps } = {},
+      searchLink: { label: searchLinkLabel, ...searchLinkProps } = {},
       searchNotFound,
       highlightedIndex = 0,
       ...props
     },
     ref
   ) => (
-    <Box className={classNames('autocomplete-result', props.className)} ref={ref}>
+    <Box className={classNames('autocomplete-result', props.className)} ref={ref} hidden={!isOpen}>
       {items.length > 0 && (
         <>
           {items.map(({ title, description, ...itemProps }, index) => {
@@ -58,7 +60,7 @@ export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
               </React.Fragment>
             );
           })}
-          {seeAllSearchLinkProps && seeAllSearchLinkLabel && (
+          {searchLinkProps && searchLinkLabel && (
             <Box
               pt={{ xs: 's', md: 'm' }}
               pb={{ xs: 'm', md: 'l' }}
@@ -66,7 +68,7 @@ export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
               fontWeight="medium"
               textAlign="center"
             >
-              <Link {...seeAllSearchLinkProps}>{seeAllSearchLinkLabel}</Link>
+              <Link {...searchLinkProps}>{searchLinkLabel}</Link>
             </Box>
           )}
         </>
