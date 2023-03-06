@@ -59,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({
               <Text fontWeight="bold" mb="xxs-2">
                 {currentContact.title}
               </Text>
-              <Text>{currentContact.description}</Text>
+              {currentContact.description}
             </Box>
           ))}
         </Flex>

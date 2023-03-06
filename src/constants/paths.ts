@@ -5,6 +5,6 @@ export const PATHS = {
   POST: '/:lang/:slug',
   AUTHOR: '/:lang/authors/:authorUsername',
   CATEGORY: '/:lang/categories/:categoryName',
-  SEARCH: '/:lang/search/:search',
+  SEARCH: '/:lang/search',
   NOT_FOUND: '/404',
 };

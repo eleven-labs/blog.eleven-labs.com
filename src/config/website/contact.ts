@@ -4,19 +4,15 @@ export const contact = {
   addressList: [
     {
       name: 'Eleven Labs - Paris',
-      address: {
-        streetLine: '15 avenue de la grande armée',
-        zipCode: '75116',
-        city: 'Paris',
-      },
+      address: ['102, rue du Faubourg Saint Honoré', '75008 Paris'],
     },
     {
       name: 'Eleven Labs - Nantes',
-      address: {
-        streetLine: '24 mail des chantiers',
-        zipCode: '844200',
-        city: 'Nantes',
-      },
+      address: [`42, rue la Tour d'Auvergne`, '44200 Nantes'],
+    },
+    {
+      name: 'Eleven Labs - Montréal',
+      address: ['1155, Metcalfe St Suite 1500', 'Montréal, QC H3B 2V6, Canada'],
     },
   ],
 };

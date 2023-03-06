@@ -1,6 +1,7 @@
+import { Text } from '@eleven-labs/design-system';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { generatePath, Link, useLocation, useParams } from 'react-router-dom';
+import { generatePath, Link, To, useLocation, useParams } from 'react-router-dom';
 
 import { AutocompleteFieldProps } from '@/components';
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
@@ -17,6 +18,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
 
   const [autocompleteIsDisplayed, setAutocompleteIsDisplayed] = React.useState<boolean>(false);
   const [search, setSearch] = useState<string>(defaultSearch || '');
+  const [searchLinkPath, setSearchLinkPath] = useState<To>(generatePath(PATHS.SEARCH, { lang: i18n.language }));
   const debouncedSearch = useDebounce<string>(search, 500);
   const [searchHits, setSearchHits] = useState<{ objectID: string; slug: string; title: string; excerpt: string }[]>(
     []
@@ -32,6 +34,10 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
 
   const handleChange: AutocompleteFieldProps['onInputValueChange'] = ({ inputValue }): void => {
     setSearch(inputValue || '');
+    setSearchLinkPath({
+      pathname: generatePath(PATHS.SEARCH, { lang: i18n.language }),
+      search: `search=${inputValue}`,
+    });
   };
 
   useEffect(() => {
@@ -80,7 +86,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
         searchLink: {
           label: t('autocomplete.see_all_search_label'),
           as: Link,
-          to: generatePath(PATHS.SEARCH, { lang: i18n.language, search: debouncedSearch }),
+          to: searchLinkPath,
         },
         searchNotFound: {
           title: t('search_not_found.title'),
@@ -106,9 +112,9 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
             title: name,
             description: (
               <>
-                {address.streetLine}
-                <br />
-                {address.zipCode} {address.city.toLocaleUpperCase()}
+                {address.map((line, index) => (
+                  <Text key={index}>{line}</Text>
+                ))}
               </>
             ),
           })),

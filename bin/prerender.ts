@@ -35,10 +35,11 @@ const prerender = async (): Promise<void> => {
         scripts,
       });
 
+      const is404 = /\/404/.test(url);
       const filePath = resolve(
         rootDir,
         'dist/public',
-        `${url.length > 1 ? `${url.substring(1)}/` : ''}index.html`
+        is404 ? '404.html' : `${url.length > 1 ? `${url.substring(1)}/` : ''}index.html`
       ).replace(baseUrl, '/');
 
       const dirPath = dirname(filePath);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useSearchParams } from 'react-router-dom';
 
 import { getPostListDataPage } from '@/helpers/apiHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
@@ -11,7 +11,7 @@ import { SearchPageProps } from '@/pages/SearchPage';
 
 export const useSearchPageContainer = (): SearchPageProps => {
   const { t, i18n } = useTranslation();
-  const { search } = useParams<{ search?: string }>();
+  const [searchParams] = useSearchParams();
   const { posts } = useLoaderData() as Awaited<ReturnType<typeof getPostListDataPage>>;
   const algoliaSearchIndex = useAlgoliaSearchIndex();
   const backLink = useBackLink();
@@ -21,7 +21,7 @@ export const useSearchPageContainer = (): SearchPageProps => {
 
   useEffect(() => {
     algoliaSearchIndex
-      .search<{ slug: string; title: string; excerpt: string }>(search as string, {
+      .search<{ slug: string; title: string; excerpt: string }>(searchParams?.get('search') as string, {
         hitsPerPage: 1000,
         facetFilters: [`lang:${i18n.language}`],
       })
@@ -30,7 +30,7 @@ export const useSearchPageContainer = (): SearchPageProps => {
         const currentPostBySearch = posts.filter((post) => slugs.includes(post.slug));
         setPostsBySearch(currentPostBySearch);
       });
-  }, [i18n.language, search]);
+  }, [i18n.language, searchParams?.get('search')]);
 
   return {
     backLink,

@@ -21,6 +21,10 @@ export const getUrlsByLang = (options: { baseUrl?: string }): { lang: string; ur
         lang,
         url: generatePath(PATHS.HOME, { lang }),
       },
+      {
+        lang,
+        url: generatePath(PATHS.SEARCH, { lang }),
+      },
       ...CATEGORIES.filter((categoryName) =>
         data.postsByLang[lang].find((post) => post?.categories?.includes(categoryName))
       ).map<ReturnType<typeof getUrlsByLang>[0]>((categoryName) => ({
@@ -55,6 +59,10 @@ export const getUrlsByLang = (options: { baseUrl?: string }): { lang: string; ur
   );
 
   return [
+    {
+      lang: DEFAULT_LANGUAGE,
+      url: PATHS.NOT_FOUND,
+    },
     {
       lang: DEFAULT_LANGUAGE,
       url: PATHS.ROOT,
