@@ -45,7 +45,16 @@ git clone git@github.com:eleven-labs/blog.eleven-labs.com.git
 **2 - Run the project locally**
 ```bash
 nvm install
-yarn start
+npx concurrently "yarn start:storybook" "yarn ts-node bin/dev"
+```
+
+Urls:
+- Storybook: http://localhost:6006
+- Website: http://localhost:5173
+
+**3 - Run the project with docker**
+```bash
+docker-compose up -d
 ```
 
 Urls:
