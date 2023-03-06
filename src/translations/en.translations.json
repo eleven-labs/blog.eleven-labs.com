@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "title": "Tech news"
+  },
   "categories": {
     "all": "Tous",
     "javascript": "JavaScript",

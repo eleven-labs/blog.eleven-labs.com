@@ -1,8 +1,8 @@
 {
   "name": "Blog Eleven Labs",
   "short_name": "Blog",
-  "theme_color": "#fbe300",
-  "background_color": "#323334",
+  "theme_color": "#3767B6",
+  "background_color": "#224579",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",

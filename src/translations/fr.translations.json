@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "title": "L'actualité tech"
+  },
   "categories": {
     "all": "Tous",
     "javascript": "JavaScript",

@@ -14,6 +14,7 @@ export type DividerProps = AsProps<'hr'> & MarginSystemProps & Pick<ColorSystemP
 
 export const Divider: React.FC<DividerProps> = ({ size = 's', ...props }) => (
   <Box
+    {...props}
     as="hr"
     className={classNames(
       'divider',
@@ -22,6 +23,5 @@ export const Divider: React.FC<DividerProps> = ({ size = 's', ...props }) => (
       },
       props.className
     )}
-    {...props}
   />
 );

@@ -8,3 +8,6 @@ export * from './PostPreview';
 export * from './PostPreviewList';
 export * from './AutocompleteField';
 export * from './NotFoundBlock';
+export * from './Blockquote';
+export * from './SyntaxHighlighter';
+export * from './Script';

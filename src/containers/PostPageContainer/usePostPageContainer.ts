@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
 import { getPostDataPage } from '@/helpers/apiHelper';
+import { decodeBase64 } from '@/helpers/base64Helper';
 import { useBackLink } from '@/hooks/useBackLink';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { PostPageProps } from '@/pages/PostPage';
@@ -36,7 +37,7 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
       readingTime: post.readingTime,
       authors,
     },
-    content: post.content,
+    content: decodeBase64(post.contentBase64),
     footer: {
       title: t('pages.post.post_footer_title'),
       authors,

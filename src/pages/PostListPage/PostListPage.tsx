@@ -15,7 +15,7 @@ export type PostListPageProps = {
 export const PostListPage: React.FC<PostListPageProps> = ({ subHeader, title, postPreviewList, newsletterBlock }) => (
   <>
     <SubHeader {...subHeader} />
-    <Container as="main" className="post-list-page">
+    <Container as="main">
       <Text size="m" my="m" fontWeight="medium">
         {title}
       </Text>

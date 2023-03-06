@@ -2,6 +2,7 @@ import fetch from 'cross-fetch';
 import { Params } from 'react-router';
 
 import { BASE_URL } from '@/constants';
+import { encodeBase64 } from '@/helpers/base64Helper';
 import type { getData } from '@/helpers/dataHelper';
 import { intersection } from '@/helpers/objectHelper';
 
@@ -116,12 +117,12 @@ export const getPostDataPage = async (options: {
   params: Params<'lang' | 'slug'>;
 }): Promise<
   Omit<Awaited<ReturnType<typeof getPostsByLang>>[0], 'authors'> & {
-    content: string;
+    contentBase64: string;
     authors: Awaited<ReturnType<typeof getAuthors>>;
     relatedPosts: ReturnType<typeof transformPost>[];
   }
 > => {
-  const [postsByLang, authors, post] = await Promise.all([
+  const [postsByLang, authors, { content, ...post }] = await Promise.all([
     getPostsByLang({ request: options.request, params: options.params }),
     getAuthors({ request: options.request }),
     getPost({ request: options.request, params: options.params }),
@@ -147,7 +148,7 @@ export const getPostDataPage = async (options: {
   return {
     ...post,
     authors: authors.filter((author) => post.authors.includes(author.username)),
-    content: post.content,
+    contentBase64: encodeBase64(content),
     relatedPosts: relatedPosts.map((relatedPost) => transformPost({ post: relatedPost, authors })),
   };
 };
