@@ -28,6 +28,7 @@ Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité
 <br />
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 Nous irons crescendo dans cet article, du plus populaire des tips à celui le moins connu. Le meilleur se trouvant à la fin, restez bien jusqu'au bout (oui, j'optimise mon readtime).
 </div>
 
@@ -53,6 +54,7 @@ Comme vous le voyez, dès que vous exécuterez une action pour laquelle il exist
 Si vous trouvez que certains raccourcis clavier sont inutiles pour vous et que vous en avez marre que Key Promoter vous les rappelle, vous pouvez cliquez sur le bouton **Action** de la notification et demander à l'extension de ne plus vous rappeler ce raccourci en particulier. Il est possible de spécifier ce comportement également directement dans la config de l'extension. 
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 De plus, si Key Promoter vous surprend à faire plusieurs fois la même action qui n'est liée à aucun raccourci, il vous proposera d'en créer un. On dit merci qui ?
 </div>
 
@@ -73,6 +75,7 @@ Heureusement, PhpStorm possède une extension pour cela, j'ai nommé *CodeGlance
 Très pratique, on s'en rend compte surtout à l'utilisation, rapidement on ne peut plus s'en passer.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 Comme vous l'avez remarqué, oui je suis dans un mood light theme en ce moment. Le dark mode c'est classe, mais pas si vous voulez prendre soin de vos yeux. cf [Which colour scheme is better according to science ?](https://stitcher.io/blog/why-light-themes-are-better-according-to-science)
 </div>
 
@@ -100,6 +103,7 @@ Vous voilà à présent dans cette situation :
 Je trouve ça toujours émouvant de voir ce beau désert blanc épuré.
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
+
 Pour afficher / faire disparaître votre arborescence de fichier, utilisez **Alt + 1**.
 Et pas de panique si vous pensez avoir perdu tout accès à votre **Main Menu**, j'y arrive dans un instant.
 </div>
@@ -136,6 +140,7 @@ Nous voilà arrivés à la dernière fonctionnalité que je vais vous présenter
 <br />
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
+
 Pour l'activer, je vous le donne en mille : un petit coup de **Ctrl + Maj + A** => "Distraction free mode"
 </div>
 
@@ -157,6 +162,7 @@ Avez toutes ces astuces, libre à vous de piocher dans celles qui vous intéress
 Enfin, n'oubliez pas de vérifiez régulièrement les mises à jour de votre IDE <b>ET</b> de vos extensions.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Quote</p>
+
 Votre mantra : "Un esprit sain dans un corps sain se doit d'utiliser un IDE sain".
 </div>
 

@@ -58,6 +58,7 @@ Le premier rappel et le plus important, qui a d'ailleurs été évoqué à de no
 Entre 2 requêtes distinctes, PHP oublie tout, ce qui est un avantage pour nous développeurs. Il est plus facile de coder sans se soucier de potentielles fuites mémoire entre deux requêtes, mais c'est également un coût en performance : à chaque requête, on ré-alloue la mémoire nécessaire, on ré-ouvre des connexions, etc. 
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 Plutôt que d'utiliser les traditionnels `malloc` & `mfree` natifs du langage C, PHP utilise son propre gestionnaire de mémoire ZMM (pour Zend Memory Manager) afin d'optimiser l'allocation de mémoire en PHP, qui s'effectue à chaque requête. 
 </div>
 
@@ -74,6 +75,7 @@ Eh bien, au risque de vous décevoir, il n'y a pas de solution magique (auquel c
 - Bien comprendre le fichier de configuration de PHP et travailler de pair avec les DevOps pour en fournir un qui soit à la fois **compatible** avec votre infrastructure, et **optimisé** pour votre application.
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
+
 En ce qui concerne l'OPCache, l'activer ne suffit pas, le configurer CORRECTEMENT est un point central, au risque d'être totalement contre-productif.
 </div>
 
@@ -90,6 +92,7 @@ Une de mes conférences préférées, merci à Thibault Richard pour ce talk. La
 Ce design pattern implémente un système qui évalue un ensemble de **règles** pour définir les **actions** à mener.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 C'est un design pattern avant tout indiqué dans un projet comprenant beaucoup de règles métier à vérifier. Si vous constatez une armée de `if (...)` qui commence à s'entasser dans votre code pour vérifier chacune d'entre elles, impactant la lisibilité et la testabilité de votre application, alors le Rules engine est fait pour vous.
 </div>
 
@@ -107,6 +110,7 @@ Votre code est à présent bien mieux découpé, et beaucoup plus facilement **t
 De plus, avec un framework comme Symfony, implémenter ce design pattern peut être plus rapide, grâce aux annotations `AutoconfigureTag` et `TaggedIterator`.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 Vous pouvez même ajouter un attribut `priority` sur votre tag si vous souhaitez que vos règles soient appelées dans un ordre particulier, très pratique !
 
 Si des exemples de code sont plus parlant pour vous, retrouvez-en dans les [slides de Thibault](https://speakerdeck.com/trichard/un-moteur-bien-huile-forum-php-2022).
@@ -122,6 +126,7 @@ Ahhh, les dates... Ne partez pas tout de suite ! Je sais que c'est la némésis 
 Pour venir à bout de ce problème, Andreas Heigl est là pour nous aiguiller.
 
 <div  class="admonition question"  markdown="1"><p  class="admonition-title">Question</p>
+
 Pourquoi est-ce si compliqué de tester des dates ?
 </div>
 
@@ -157,6 +162,7 @@ Pour retrouver les slides d'Andreas :
 Une fois n'est pas coutume, Kévin Dunglas a quelque chose sous la main à nous montrer. Et une fois n'est pas coutume, c'est un outil **expérimental** qu'il a créé lui-même qu'il nous présente. Voici FrankenPHP.
 
 <div  class="admonition question"  markdown="1"><p  class="admonition-title">Question</p>
+
 Quel est le problème de base ?
 </div>
 
@@ -175,6 +181,7 @@ L'avantage ? Plus besoin de dockeriser plusieurs containers pour notre serveur w
 À présent, vous avez un seul service. One service to rule them all, and in docker, bind them. On parle de Docker, mais FrankenPHP est tout aussi facile d'utilisation sans.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 Pour la config ? Plus qu'à éditer votre **Caddyfile** pour la partie Web server, et votre **php.ini** pour la partie applicative. FrankenPHP vient également avec une intégration spéciale Symfony pour en facilité l'interopérabilité.
 </div>
 
@@ -185,7 +192,8 @@ Mais une des killers features de FrankenPHP, c'est son **Worker Mode**. Grâce �
 Ce comportement est compatible avec Symfony et Laravel, et permet d'atteindre des performances assez dingues, d'après le benchmark que Kévin nous présente.
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
-S'il est <b>découragé</b> d'utiliser FrankenPHP en production pour le moment, c'est d'autant plus le cas pour son Worker Mode. Vous pouvez être sûr de faire face à des bugs en vous y essayant. Préférez plutôt tester l'outil en local et remonter les bugs à Kévin (voire de faire une PR, FrankenPHP est open source !) pour le faire grandir en maturité.
+
+S'il est **découragé** d'utiliser FrankenPHP en production pour le moment, c'est d'autant plus le cas pour son Worker Mode. Vous pouvez être sûr de faire face à des bugs en vous y essayant. Préférez plutôt tester l'outil en local et remonter les bugs à Kévin (voire de faire une PR, FrankenPHP est open source !) pour le faire grandir en maturité.
 </div>
 
 Et pour finir, le site de [FrankenPHP](https://frankenphp.dev/), et ci-dessous notre habituel sketchnote :

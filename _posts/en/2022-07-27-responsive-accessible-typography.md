@@ -77,6 +77,7 @@ The **px unit** is a very popular unit in the front-end development world. Even 
 This is why body text has a better result when using the **rem unit, which is relative to the font size of the root element**. All major browsers set a default font size of 16px, so this is the value that developers use as reference in their CSS code.
 
 <div  class="admonition info"  markdown="1"><p  class="admonition-title">What is the root element? </p>
+
 As the [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html) documentation states, the root is the top-level element in an HTML document.
 </div>
 
@@ -145,6 +146,7 @@ Ok, this is quite practical. But you can take this magic to another level.
 As Joshua W. Comeau wonderfully explains in his article "The Surprising Truth About Pixels and Accessibility", it is possible to take out the most of calc() **by storing the calculated values in CSS variables**.
 
 <div  class="admonition info"  markdown="1"><p  class="admonition-title">What are CSS variables? </p>
+
 [CSS variables are custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) that store specific values that are reused several times through an app. They are written in a specific notation (e.g., `font-size: --font-size-xs`) and are accessed using the `var()` function.
 </div>
 

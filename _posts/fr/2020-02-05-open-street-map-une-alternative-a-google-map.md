@@ -152,6 +152,7 @@ Il existe, en HTML 5, un composant natif  ``navigator.geolocation`` pour géoloc
 ![]({{ site.baseurl }}/assets/2020-02-05-open-street-map-une-alternative-a-google-map/pop-in.jpeg)
 
 <div class="admonition important" markdown="1"><p class="admonition-title">Important</p>
+
 Il faut que le site soit en https pour que la géolocalisation HTML se fasse
 </div>
 
