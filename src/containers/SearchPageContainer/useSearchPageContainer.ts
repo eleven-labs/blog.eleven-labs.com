@@ -21,7 +21,7 @@ export const useSearchPageContainer = (): SearchPageProps => {
 
   useEffect(() => {
     algoliaSearchIndex
-      .search<{ slug: string; title: string; excerpt: string }>(searchParams?.get('search') as string, {
+      .search<{ slug: string; title: string; excerpt: string }>((searchParams?.get('search') as string) || '', {
         hitsPerPage: 1000,
         facetFilters: [`lang:${i18n.language}`],
       })

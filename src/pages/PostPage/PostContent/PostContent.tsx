@@ -6,6 +6,7 @@ import rehypeRewrite, { RehypeRewriteOptions } from 'rehype-rewrite';
 
 import { Blockquote, Reminder, ReminderVariantType, SyntaxHighlighter } from '@/components';
 import { Script } from '@/components/Script/Script';
+import { getPathFile } from '@/helpers/assetHelper';
 import { intersection } from '@/helpers/objectHelper';
 
 export type PostContentOptions = {
@@ -148,6 +149,18 @@ export const PostContent: React.FC<PostContentProps> = ({ content, ...props }) =
                 {children}
               </Box>
             );
+          },
+          img: ({ node, ...props }): JSX.Element => {
+            const src = !(props.src as string).match(/^http(s)?:\/\//) ? getPathFile(props.src as string) : props.src;
+            return React.createElement('img', {
+              src,
+              style: {
+                display: 'block',
+                maxWidth: '100%',
+                margin: 'var(--spacing-xs) auto',
+              },
+              ...props,
+            });
           },
           script: ({ node, ...props }): JSX.Element => <Script {...props} />,
         }}

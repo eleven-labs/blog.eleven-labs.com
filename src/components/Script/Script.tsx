@@ -5,9 +5,9 @@ export const Script: React.FC<React.ComponentProps<'script'>> = (props) => {
   React.useEffect(() => {
     if (ref?.current) {
       const script = Object.assign(document.createElement('script'), props);
-      ref?.current?.replaceWith(script);
+      ref.current.replaceWith(script);
     }
-  }, []);
+  }, [ref?.current, props]);
 
   return <script ref={ref} {...props} />;
 };

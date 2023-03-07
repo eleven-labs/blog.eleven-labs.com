@@ -17,6 +17,12 @@
   "common": {
     "back": "back"
   },
+  "cookie_consent": {
+    "title": "This website uses cookies from Google Analytics",
+    "description": "These cookies help us to identify the content you are most interested in and to identify certain malfunctions. Your browsing data is sent to Google Inc.",
+    "button_decline_label": "Decline",
+    "button_accept_label": "Accept"
+  },
   "header": {
     "title": "Eleven Labs",
     "subtitle": "The blog",

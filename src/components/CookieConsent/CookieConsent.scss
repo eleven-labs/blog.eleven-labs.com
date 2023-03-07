@@ -1,0 +1,11 @@
+.cookie-consent {
+  position: fixed;
+  z-index: 1;
+  padding: var(--spacing-m);
+  bottom: var(--spacing-s);
+  left: var(--spacing-s);
+  background-color: var(--color-lavender);
+  box-shadow: 0 4px 4px rgb(0 0 0 / 20%);
+  border-radius: 20px;
+  max-width: 350px;
+}

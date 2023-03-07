@@ -2,6 +2,7 @@ import { Box, Flex } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { CookieConsent, CookieConsentProps } from '@/components/CookieConsent';
 import { useSeo } from '@/hooks/useSeo';
 
 import { Footer, FooterProps } from './Footer/Footer';
@@ -11,12 +12,13 @@ export type LayoutTemplateProps = {
   header: HeaderProps;
   footer: FooterProps;
   children: React.ReactNode;
+  cookieConsent?: CookieConsentProps;
 };
 
-export const LayoutTemplate: React.FC<LayoutTemplateProps> = ({ header, footer, children }) => {
+export const LayoutTemplate: React.FC<LayoutTemplateProps> = ({ header, footer, cookieConsent, children }) => {
   const { t } = useTranslation();
   useSeo({
-    title: t('meta.title') as string,
+    title: t<string>('meta.title'),
   });
 
   return (
@@ -26,6 +28,7 @@ export const LayoutTemplate: React.FC<LayoutTemplateProps> = ({ header, footer, 
         {children}
       </Box>
       <Footer {...footer} />
+      {cookieConsent && <CookieConsent {...cookieConsent} />}
     </Flex>
   );
 };

@@ -1,6 +1,18 @@
 import './Footer.scss';
 
-import { AsProps, Box, Button, Flex, Heading, Icon, IconNameType, Link, Logo, Text } from '@eleven-labs/design-system';
+import {
+  As,
+  AsProps,
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Icon,
+  IconNameType,
+  Link,
+  Logo,
+  Text,
+} from '@eleven-labs/design-system';
 import React from 'react';
 
 export interface FooterProps {
@@ -14,6 +26,7 @@ export interface FooterProps {
     list: { title: React.ReactNode; description: React.ReactNode }[];
   };
   socialLinks: ({
+    as?: As;
     iconName: Extract<IconNameType, 'rss' | 'facebook' | 'twitter' | 'linkedin' | 'welcometothejungle'>;
   } & Pick<React.ComponentProps<'a'>, 'href'>)[];
   languageLinks: ({
@@ -64,10 +77,10 @@ export const Footer: React.FC<FooterProps> = ({
           ))}
         </Flex>
         <Flex gapY="s">
-          {socialLinks.map(({ iconName, ...linkProps }, socialLinkIndex) => (
-            <a key={socialLinkIndex} target="_blank" {...linkProps}>
+          {socialLinks.map(({ as: As = 'a', iconName, ...linkProps }, socialLinkIndex) => (
+            <As key={socialLinkIndex} target="_blank" {...linkProps}>
               <Icon name={iconName} size="2.5em" color="white" mx="xxs-2" />
-            </a>
+            </As>
           ))}
         </Flex>
       </Box>
