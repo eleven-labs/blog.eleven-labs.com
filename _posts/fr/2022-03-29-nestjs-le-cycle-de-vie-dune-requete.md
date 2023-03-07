@@ -43,6 +43,7 @@ Voilà d'ailleurs un **sommaire** pour retrouver rapidement la partie qui vous i
 - [Conclusion](#conclusion)
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 Vous pouvez être totalement débutant en NestJS et quand même lire cet article. C'est peut-être même recommandé.
 </div>
 
@@ -52,6 +53,7 @@ Rien de tel qu'un schéma que je vous ai concocté pour entrer dans le vif du su
 ![]({{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/nest-lifecycle-schema.png)
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 Il s'agit d'un parcours plutôt exhaustif d'une requête, mais la seule étape réellement essentielle ici est le **Controller**. Il a pour rôle de recevoir votre requête, la traiter, et renvoyer une réponse. Tout le reste est facultatif.
 </div>
 
@@ -76,6 +78,7 @@ Tout d'abord, il existe 5 niveaux de déclarations :
 - Déclaration au niveau **paramètre de route**
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 Par exemple, un Interceptor peut être déclaré à 3 niveaux :
 
 - Globalement
@@ -180,6 +183,7 @@ async someRoute(@Param('id', ParseIntPipe) id: number): any {
 ```
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 L'annotation `@Param` permet de sélectionner un paramètre de l'URL, ici `:id`.
 </div>
 
@@ -188,6 +192,7 @@ Passons maintenant à l'explication de chacun de ces concepts que nous survolons
 ## Les Middlewares
 
 <div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
+
 - Global
 - Module
 </div>
@@ -221,6 +226,7 @@ export class CurrentUserMiddleware implements NestMiddleware {
 Dans cet exemple, nous récupérons un potentiel objet `session` dans la requête, puis nous peuplons la requête avec un *user* complet, à l'aide de l'id trouvé dans la `session`. Enfin, nous n'oublions pas d'appeler `next()` pour continuer l'exécution.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 Un Middleware doit implémenter la fonction `use()`.
 
 De plus, il doit se terminer par un appel à la fonction `next()` pour pouvoir passer à la suite des étapes d'exécution. Sans le `next()`, la requête est suspendue.
@@ -229,6 +235,7 @@ De plus, il doit se terminer par un appel à la fonction `next()` pour pouvoir p
 ## Les Guards
 
 <div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
+
 - Global
 - Controller
 - Route
@@ -254,12 +261,14 @@ export class AdminRoleGuard implements CanActivate {
 Ici, on vérifie si l'utilisateur stocké plus tôt dans la requête a le rôle **ADMIN**. 
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+
 Un Guard doit implémenter la fonction  `canActivate()`, qui retourne un booléen, de manière synchrone ou dans une Promesse ou un Observable. 
 </div>
 
 ## Les Interceptors
 
 <div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
+
 - Global
 - Controller
 - Route
@@ -291,12 +300,14 @@ L'Interceptor doit implémenter la fonction `intercept()` qui prend 2 arguments,
 - un **CallHandler**, qui donne accès à la réponse.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Comment ça marche ?</p>
+
 L'interface `CallHandler` implémente la méthode `handle()`, qui retourne un Observable. C'est ainsi que l'Interceptor reste à l'écoute de la réponse. Réponse que vous pouvez ensuite manipuler comme n'importe quel Observable classique. Ici on utilise la fonction `plainToInstance()` de la librairie *class-transformer*, qui serialize un objet Javascript selon une classe donnée; ici un hypothétique UserDto.
 </div>
 
 ## Les Pipes
 
 <div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
+
 - Global
 - Controller
 - Route
@@ -348,6 +359,7 @@ async findOne(): User {
 ```
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
+
 Avec l'annotation `@UseGuards()`, on utilise également un Guard (celui que nous avons écrit plus haut) au niveau de la route. Ainsi, nous sommes sûrs que l'utilisateur qui appelle cette route est bien un administrateur.
 </div>
 
@@ -358,6 +370,7 @@ Nous n'irons pas plus loin dans le traitement de la **requête**, sachez juste q
 ## Les Exception filters
 
 <div  class="admonition info"  markdown="1"><p  class="admonition-title">Niveaux de déclaration possibles</p>
+
 - Global
 - Controller
 - Route
