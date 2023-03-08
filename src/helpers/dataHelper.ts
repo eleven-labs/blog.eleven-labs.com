@@ -1,6 +1,3 @@
-import { format } from 'date-fns';
-import localeDateEn from 'date-fns/locale/en-US';
-import localeDateFr from 'date-fns/locale/fr';
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { dirname, resolve } from 'node:path';
@@ -8,11 +5,6 @@ import { dirname, resolve } from 'node:path';
 import { AUTHORIZED_LANGUAGES, CATEGORIES } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
 import { AuthorType, PostType } from '@/types';
-
-const postDateToString = (postDate: string, lang: string): string =>
-  format(new Date(postDate), 'PP', {
-    locale: lang === 'fr' ? localeDateFr : localeDateEn,
-  });
 
 const readingTimeToString = (numberOfWords: number): string => {
   const readingTimeInMinutes = numberOfWords < 360 ? 1 : Math.round(numberOfWords / 180);
@@ -37,7 +29,7 @@ const getPosts = (): (Pick<PostType, 'lang' | 'slug' | 'date' | 'title' | 'excer
         {
           lang: attributes.lang,
           slug: attributes.slug,
-          date: attributes.date,
+          date: new Date(attributes.date).toISOString(),
           title: attributes.title,
           excerpt: attributes.excerpt,
           readingTime: readingTimeToString(numberOfWords),
@@ -47,11 +39,7 @@ const getPosts = (): (Pick<PostType, 'lang' | 'slug' | 'date' | 'title' | 'excer
         },
       ];
     }, [])
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .map((post) => ({
-      ...post,
-      date: postDateToString(post.date, post.lang),
-    }));
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 };
 
 const getAuthors = (): (Pick<AuthorType, 'github' | 'twitter'> & {
@@ -81,7 +69,9 @@ const getAuthors = (): (Pick<AuthorType, 'github' | 'twitter'> & {
         name: attributes.title,
         github: attributes?.github,
         twitter: attributes?.twitter,
-        avatarImageUrl: avatarImageExist ? getPathFile(`/imgs/authors/${attributes.login}.jpg`) : undefined,
+        avatarImageUrl: avatarImageExist
+          ? getPathFile(`/imgs/authors/${attributes.login}.jpg`)
+          : getPathFile('/imgs/astronaut.png'),
         description: content,
       });
 

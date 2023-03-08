@@ -61,7 +61,7 @@ const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): Remin
 
 export const PostContent: React.FC<PostContentProps> = ({ content, ...props }) => {
   return (
-    <section>
+    <Box as="section" textSize="s">
       <ReactMarkdown
         rehypePlugins={[
           rehypeRaw,
@@ -118,34 +118,32 @@ export const PostContent: React.FC<PostContentProps> = ({ content, ...props }) =
               {children}
             </Heading>
           ),
-          p: ({ children }): JSX.Element => (
-            <Text as="p" size="s" mb="xxs" {...(props as AsProps)}>
-              {children}
-            </Text>
-          ),
+          p: ({ node, ...props }): JSX.Element => <Text as="p" mb="xxs" {...(props as AsProps)} />,
+          li: ({ node, ordered, ...props }): JSX.Element => <Text as="li" mb="xxs" {...(props as AsProps)} />,
           strong: ({ children }): JSX.Element => (
-            <Text as="span" size="s" fontWeight="bold">
+            <Text as="span" fontWeight="bold">
               {children}
             </Text>
           ),
           em: ({ children }): JSX.Element => (
-            <Text as="span" size="s" italic={true}>
+            <Text as="span" italic={true}>
               {children}
             </Text>
           ),
           i: ({ children }): JSX.Element => (
-            <Text as="span" size="s" italic={true}>
+            <Text as="span" italic={true}>
               {children}
             </Text>
           ),
           a: ({ node, ...props }): JSX.Element => <Link {...props} />,
           blockquote: ({ node, ...props }): JSX.Element => <Blockquote {...props} />,
+          pre: ({ node, ...props }): JSX.Element => <Box as="pre" textSize="xs" {...(props as AsProps)} />,
           code: ({ node, inline, className, children, ...props }): JSX.Element => {
             const match = /language-(\w+)/.exec(className || '');
             return !inline && match ? (
               <SyntaxHighlighter children={String(children).replace(/\n$/, '')} language={match[1]} {...props} />
             ) : (
-              <Box as="code" px="xxs-2" bg="ultra-light-grey" textSize="xs" color="ultra-dark-grey">
+              <Box as="code" px="xxs-2" bg="ultra-light-grey" color="ultra-dark-grey" textSize="xs">
                 {children}
               </Box>
             );
@@ -165,6 +163,6 @@ export const PostContent: React.FC<PostContentProps> = ({ content, ...props }) =
           script: ({ node, ...props }): JSX.Element => <Script {...props} />,
         }}
       />
-    </section>
+    </Box>
   );
 };

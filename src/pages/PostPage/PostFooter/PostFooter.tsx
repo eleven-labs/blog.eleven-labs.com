@@ -3,8 +3,6 @@ import './PostFooter.scss';
 import { AsProps, Box, Flex, Link, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { getPathFile } from '@/helpers/assetHelper';
-
 export interface PostFooterProps {
   title: React.ReactNode;
   authors: {
@@ -23,11 +21,7 @@ export const PostFooter: React.FC<PostFooterProps> = ({ title, authors }) => (
     <Flex flexDirection={{ xs: 'column', md: 'row' }} gapY={{ md: 'xxl' }} gap="s">
       {authors.map((author, authorIndex) => (
         <Flex key={authorIndex} mb="s" className="post-footer__author">
-          <img
-            src={author.avatarImageUrl ? author.avatarImageUrl : getPathFile('/imgs/astronaut.png')}
-            alt={author.name}
-            className="post-footer__avatar_img"
-          />
+          <img src={author.avatarImageUrl} alt={author.name} className="post-footer__avatar_img" />
           <Box ml="xxs">
             <Link weight="medium" {...author.link}>
               {author.name}

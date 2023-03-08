@@ -61,7 +61,7 @@ export const getUrlsByLang = (options: { baseUrl?: string }): { lang: string; ur
   return [
     {
       lang: DEFAULT_LANGUAGE,
-      url: PATHS.NOT_FOUND,
+      url: '/404',
     },
     {
       lang: DEFAULT_LANGUAGE,

@@ -1,16 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { generatePath, Link, To, useParams } from 'react-router-dom';
+import { generatePath, To, useParams } from 'react-router-dom';
 
 import { AutocompleteFieldProps } from '@/components';
 import { PATHS } from '@/constants';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useDebounce } from '@/hooks/useDebounce';
+import { useLink } from '@/hooks/useLink';
 import { LayoutTemplateProps } from '@/templates/LayoutTemplate';
 
 export const useHeaderContainer = (): LayoutTemplateProps['header'] => {
   const { t, i18n } = useTranslation();
   const { search: defaultSearch } = useParams<{ search?: string }>();
+  const { getLink } = useLink();
 
   const [autocompleteIsDisplayed, setAutocompleteIsDisplayed] = React.useState<boolean>(false);
   const [search, setSearch] = React.useState<string>(defaultSearch || '');
@@ -56,17 +58,17 @@ export const useHeaderContainer = (): LayoutTemplateProps['header'] => {
         id: hit.objectID,
         title: hit.title,
         description: hit.excerpt,
-        as: Link,
-        to: generatePath(PATHS.POST, { lang: i18n.language, slug: hit.slug }),
+        ...getLink({
+          to: generatePath(PATHS.POST, { lang: i18n.language, slug: hit.slug }),
+        }),
       })),
     [i18n.language, searchHits]
   );
 
   return {
-    homeLink: {
-      as: Link,
+    homeLink: getLink({
       to: generatePath(PATHS.HOME, { lang: i18n.language }),
-    } as LayoutTemplateProps['header']['homeLink'],
+    }),
     autocompleteIsDisplayed,
     onToggleSearch,
     autocomplete: {
@@ -75,9 +77,10 @@ export const useHeaderContainer = (): LayoutTemplateProps['header'] => {
       onInputValueChange: handleChange,
       items,
       searchLink: {
+        ...getLink({
+          to: searchLinkPath,
+        }),
         label: t('autocomplete.see_all_search_label'),
-        as: Link,
-        to: searchLinkPath,
       },
       searchNotFound: {
         title: t('search_not_found.title'),

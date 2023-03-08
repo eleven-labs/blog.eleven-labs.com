@@ -40,7 +40,6 @@
     "downshift": "^7.2.2",
     "express": "^4.18.2",
     "hoofd": "^1.5.2",
-    "html-react-parser": "^3.0.9",
     "i18next": "^22.4.9",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-middleware": "^3.2.2",

@@ -1,13 +1,17 @@
 import React from 'react';
 
-export const Script: React.FC<React.ComponentProps<'script'>> = (props) => {
-  const ref = React.useRef<HTMLScriptElement>(null);
-  React.useEffect(() => {
-    if (ref?.current) {
-      const script = Object.assign(document.createElement('script'), props);
-      ref.current.replaceWith(script);
-    }
-  }, [ref?.current, props]);
+import { useScript } from '@/hooks/useScript';
 
-  return <script ref={ref} {...props} />;
+export const Script: React.FC<React.ComponentProps<'script'>> = (props) => {
+  const status = useScript(props.src as string, {
+    removeOnUnmount: false,
+  });
+
+  React.useEffect((): void => {
+    if (status === 'ready' && /twitter/.test(props.src as string)) {
+      (window as any).twttr.widgets.load(); //eslint-disable-line @typescript-eslint/no-explicit-any
+    }
+  }, [status, props.src]);
+
+  return null;
 };

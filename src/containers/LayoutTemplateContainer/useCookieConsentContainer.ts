@@ -20,13 +20,10 @@ export const useCookieConsentContainer = (): LayoutTemplateProps['cookieConsent'
           gaOptions: {
             storage: 'none',
           },
-          debug: true,
         });
         ReactGA.ga('set', 'anonymizeIp', true);
       } else {
-        ReactGA.initialize(googleAnalytics.trackingCode, {
-          debug: true,
-        });
+        ReactGA.initialize(googleAnalytics.trackingCode);
       }
       ReactGA.pageview(location.pathname + location.search);
     },
@@ -62,12 +59,12 @@ export const useCookieConsentContainer = (): LayoutTemplateProps['cookieConsent'
     setCookie('hasConsent', false, { maxAge: googleAnalytics.cookieExpires });
     (window as any)[`ga-disable-${googleAnalytics.trackingCode}`] = true; //eslint-disable-line @typescript-eslint/no-explicit-any
     googleAnalytics.cookieNames.forEach((cookieName) => removeCookie(cookieName));
-    startGoogleAnalytics({ isAnonymous: true });
+    /*startGoogleAnalytics({ isAnonymous: true });*/
   };
 
   const acceptCookieConsent = (): void => {
     setCookie('hasConsent', true, { maxAge: googleAnalytics.cookieExpires });
-    startGoogleAnalytics({ isAnonymous: false });
+    /*startGoogleAnalytics({ isAnonymous: false });*/
   };
 
   return cookieConsent;

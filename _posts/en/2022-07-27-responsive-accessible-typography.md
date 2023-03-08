@@ -83,12 +83,11 @@ As the [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html) doc
 
 You probably know at this point that **rem** is not the only relative unit in CSS. There is also **em** units, which take the parent's font-size for calculating its value. Using rem is a more consistent approach for setting the size of your body text, since it has a fixed value that will scale predictably. I strongly recommend you to read this [article about px and accessibility](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#unit-summaries) if you need to dive deeper in these waters.
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="dyWZVgV" data-user="amirtaqiabadi" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/amirtaqiabadi/pen/dyWZVgV">
+<iframe height="300" style="width: 100%;" scrolling="no" title="px vs rem" src="https://codepen.io/amirtaqiabadi/embed/dyWZVgV?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/amirtaqiabadi/pen/dyWZVgV">
   px vs rem</a> by amir taqiabadi (<a href="https://codepen.io/amirtaqiabadi">@amirtaqiabadi</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ### How and why implement rem units for type size?
 
@@ -230,17 +229,13 @@ body {
 }
 ```
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="vYNjaem" data-user="supersimplenet" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/supersimplenet/pen/vYNjaem">
+<iframe height="300" style="width: 100%;" scrolling="no" title="calc line-height: demo 2" src="https://codepen.io/supersimplenet/embed/vYNjaem?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/supersimplenet/pen/vYNjaem">
   calc line-height: demo 2</a> by super-simple.net (<a href="https://codepen.io/supersimplenet">@supersimplenet</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-<br>
-<br>
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
 Please make sure to really test through your full app before considering it a victory! You can also use this [very cool line-height calculator](https://www.thegoodlineheight.com/) made by Fran Perez.
-<br>
-<br>
 
 #### More than words: how many characters per line?
 

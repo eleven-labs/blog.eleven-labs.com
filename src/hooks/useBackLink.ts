@@ -1,28 +1,19 @@
 import { AsProps } from '@eleven-labs/design-system';
-import React, { useCallback } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { generatePath, Link, useNavigate } from 'react-router-dom';
+import { generatePath, Link, useLocation } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
 
-export const useBackLink = (): { label: React.ReactNode } & AsProps<'a'> => {
+export type UseBackLink = { label: React.ReactNode } & AsProps<'a'>;
+
+export const useBackLink = (): UseBackLink => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
-  const history: { state?: { idx?: number } } = typeof window !== 'undefined' ? window.history : {};
-
-  const onBack = useCallback(() => {
-    const blankNavigation = history?.state?.idx === 0;
-    if (blankNavigation) {
-      return navigate(generatePath(PATHS.HOME, { lang: i18n.language }));
-    }
-
-    navigate(-1);
-  }, [history?.state]);
+  const location = useLocation();
 
   return {
     as: Link,
     label: t('common.back'),
-    to: generatePath(PATHS.HOME, { lang: i18n.language }),
-    onClick: onBack,
+    to: location?.state?.from || generatePath(PATHS.HOME, { lang: i18n.language }),
   } as ReturnType<typeof useBackLink>;
 };

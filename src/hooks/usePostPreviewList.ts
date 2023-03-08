@@ -1,18 +1,23 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { generatePath, Link } from 'react-router-dom';
+import { generatePath } from 'react-router-dom';
 
 import { PostPreviewListProps } from '@/components';
 import { NUMBER_OF_ITEMS_PER_PAGE, PATHS } from '@/constants';
+import { getPostListDataPage } from '@/helpers/apiHelper';
+import { useDateToString } from '@/hooks/useDateToString';
+import { useLink } from '@/hooks/useLink';
 
 export interface UsePostPreviewListOptions {
-  allPosts: ({ slug: string } & PostPreviewListProps['posts'][0])[];
+  allPosts: Awaited<ReturnType<typeof getPostListDataPage>>['posts'];
 }
 
 export const usePostPreviewList = ({ allPosts }: UsePostPreviewListOptions): Omit<PostPreviewListProps, 'title'> => {
   const { t, i18n } = useTranslation();
+  const { getLink } = useLink();
+  const { getDateToString } = useDateToString();
 
-  const [posts, setPosts] = React.useState<UsePostPreviewListOptions['allPosts']>(
+  const [posts, setPosts] = React.useState<Awaited<ReturnType<typeof getPostListDataPage>>['posts']>(
     allPosts.slice(0, NUMBER_OF_ITEMS_PER_PAGE + 1)
   );
   const numberOfPosts = posts.length;
@@ -56,13 +61,12 @@ export const usePostPreviewList = ({ allPosts }: UsePostPreviewListOptions): Omi
       slug: post.slug,
       title: post.title,
       excerpt: post.excerpt,
-      date: post.date,
+      date: getDateToString({ date: post.date }),
       readingTime: post.readingTime,
       authors: post.authors,
-      link: {
-        as: Link,
+      link: getLink({
         to: generatePath(PATHS.POST, { lang: i18n.language, slug: post.slug }),
-      },
+      }),
     })),
     pagination,
   };

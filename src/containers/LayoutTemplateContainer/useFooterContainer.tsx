@@ -2,14 +2,16 @@ import { Text } from '@eleven-labs/design-system';
 import React from 'react';
 import ReactGA from 'react-ga';
 import { useTranslation } from 'react-i18next';
-import { generatePath, Link } from 'react-router-dom';
+import { generatePath } from 'react-router-dom';
 
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
 import { AUTHORIZED_LANGUAGES, PATHS } from '@/constants';
+import { useLink } from '@/hooks/useLink';
 import { LayoutTemplateProps } from '@/templates/LayoutTemplate';
 
 export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
   const { t, i18n } = useTranslation();
+  const { getLink } = useLink();
 
   return {
     introBlock: {
@@ -49,12 +51,11 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
     })),
     languageLinks: AUTHORIZED_LANGUAGES.map((currentLang) => {
       const isActive = currentLang === i18n.language;
-      const languageLinkProps = {
+      const languageLinkProps = getLink({
         to: generatePath(PATHS.HOME, { lang: currentLang }),
         onClick: () => i18n.changeLanguage(currentLang),
-      };
+      });
       return {
-        as: Link,
         isActive,
         label: t(`languages.${currentLang}`),
         ...(!isActive ? languageLinkProps : {}),

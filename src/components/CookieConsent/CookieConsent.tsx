@@ -24,7 +24,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({
       <Text mt="xs" size="s">
         {description}
       </Text>
-      <Flex mt="m" gap="m">
+      <Flex mt="m" gap="m" justifyContent="center">
         <Button variant="secondary" {...declineButtonProps}>
           {declineButtonLabel}
         </Button>

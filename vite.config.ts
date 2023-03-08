@@ -1,4 +1,4 @@
-import { defineConfig, PluginOption } from 'vite';
+import { BuildOptions, defineConfig, PluginOption } from 'vite';
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import matter from 'gray-matter';
@@ -28,15 +28,29 @@ export const markdownPlugin = (): PluginOption => {
 }
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    react(),
-    tsconfigPaths(),
-    markdownPlugin(),
-  ],
-  build: {
-    rollupOptions: {
-      input: './src/entry-client.tsx',
+export default defineConfig(({ ssrBuild}) => {
+  let rollupOptions: BuildOptions['rollupOptions'] = {};
+  if (!ssrBuild) {
+    rollupOptions = {
+      output: {
+        manualChunks: {
+          postContent: ['react-markdown', 'react-syntax-highlighter', 'rehype-raw', 'rehype-rewrite'],
+        },
+      },
+    }
+  }
+
+  return {
+    plugins: [
+      react(),
+      tsconfigPaths(),
+      markdownPlugin(),
+    ],
+    build: {
+      rollupOptions: {
+        input: './src/entry-client.tsx',
+        ...rollupOptions,
+      }
     }
   }
 });
