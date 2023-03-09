@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({
         <Flex gapY="s">
           {socialLinks.map(({ as: As = 'a', iconName, ...linkProps }, socialLinkIndex) => (
             <As key={socialLinkIndex} target="_blank" {...linkProps}>
-              <Icon name={iconName} size="2.5em" color="white" mx="xxs-2" />
+              <Icon name={iconName} size="2.5em" color="white" mx="xxs-2" className="footer__social-icon" />
             </As>
           ))}
         </Flex>

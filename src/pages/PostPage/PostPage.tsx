@@ -2,8 +2,8 @@ import { AsProps, Link } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { Container, Divider, NewsletterBlock, NewsletterBlockProps } from '@/components';
+import { MarkdownToHtml } from '@/components/MarkdownToHtml';
 
-import { PostContent } from './PostContent';
 import { PostFooter, PostFooterProps } from './PostFooter';
 import { PostHeader, PostHeaderProps } from './PostHeader';
 import { RelatedPostList, RelatedPostListProps } from './RelatedPostList';
@@ -31,7 +31,7 @@ export const PostPage: React.FC<PostPageProps> = ({
     </Link>
     <PostHeader {...header} />
     <Divider mt="xs" bg="light-grey" />
-    <PostContent content={content} />
+    <MarkdownToHtml as="section" content={content} />
     <Divider mt="xs" bg="light-grey" />
     <PostFooter {...footer} />
     <NewsletterBlock my={{ xs: 'l' }} {...newsletterBlock} />

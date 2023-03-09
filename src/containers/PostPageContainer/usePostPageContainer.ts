@@ -55,6 +55,7 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
       relatedPostListTitle: t('pages.post.related_post_list_title'),
       posts: post.relatedPosts.map((relatedPost) => ({
         ...relatedPost,
+        date: getDateToString({ date: relatedPost.date }),
         link: getLink({
           to: generatePath(PATHS.POST, { lang: i18n.language, slug: relatedPost.slug }),
         }),

@@ -15,7 +15,7 @@
     "en": "English"
   },
   "common": {
-    "back": "retour"
+    "back": "Retour"
   },
   "cookie_consent": {
     "title": "Ce site web utilise des cookies de Google Analytics",
@@ -67,7 +67,7 @@
       "post_footer_title": "écrit par"
     },
     "author": {
-      "post_preview_list_title": "Article de l'auteur"
+      "post_preview_list_title": "Article(s) de l'auteur"
     },
     "search": {
       "title": "{{ numberOfHits }} résultats",

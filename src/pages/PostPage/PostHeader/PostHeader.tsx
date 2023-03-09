@@ -18,20 +18,20 @@ export const PostHeader: React.FC<PostHeaderProps> = ({ title, date, readingTime
     </Heading>
     <Flex flexDirection={{ xs: 'column', md: 'row' }} mt={{ md: 'xxs-3' }}>
       <Flex mt={{ xs: 'xxs', md: '0' }} color="dark-grey" alignItems="center">
-        <Box>
+        <Flex alignItems="center">
           <Icon name="calendar" size="24px" />
           <Box as="span" ml={{ xs: 'xxs-3' }}>
             {date}
           </Box>
-        </Box>
-        <Box ml={{ xs: 's' }}>
+        </Flex>
+        <Flex alignItems="center" ml={{ xs: 's' }}>
           <Icon name="access-time" size="24px" />
           <Box as="span" ml={{ xs: 'xxs-3' }}>
             {readingTime}
           </Box>
-        </Box>
+        </Flex>
       </Flex>
-      <Box mt={{ xs: 'xxs-2', md: '0' }} ml={{ md: 'xxs-3' }} color="dark-grey">
+      <Flex alignItems="center" mt={{ xs: 'xxs-2', md: '0' }} ml={{ md: 'xxs-3' }} color="dark-grey">
         <Icon name="person" size="24px" />
         {authors.map((author, index) => (
           <React.Fragment key={index}>
@@ -41,7 +41,7 @@ export const PostHeader: React.FC<PostHeaderProps> = ({ title, date, readingTime
             {authors.length - 1 !== index && <Box as="span"> & </Box>}
           </React.Fragment>
         ))}
-      </Box>
+      </Flex>
     </Flex>
   </Box>
 );

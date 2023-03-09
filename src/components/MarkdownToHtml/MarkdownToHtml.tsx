@@ -1,4 +1,4 @@
-import { AsProps, Box, Heading, Link, Text } from '@eleven-labs/design-system';
+import { As, AsProps, Box, BoxProps, Heading, Link, Text } from '@eleven-labs/design-system';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -9,10 +9,10 @@ import { Script } from '@/components/Script/Script';
 import { getPathFile } from '@/helpers/assetHelper';
 import { intersection } from '@/helpers/objectHelper';
 
-export type PostContentOptions = {
+export type MarkdownToHtmlOptions = {
   content: string;
 };
-export type PostContentProps = PostContentOptions;
+export type MarkdownToHtmlProps<T extends As = 'div'> = BoxProps<T> & MarkdownToHtmlOptions;
 
 const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): ReminderVariantType => {
   switch (admonitionVariant) {
@@ -59,9 +59,9 @@ const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): Remin
   }
 };
 
-export const PostContent: React.FC<PostContentProps> = ({ content, ...props }) => {
+export const MarkdownToHtml: React.FC<MarkdownToHtmlProps> = ({ content, ...props }) => {
   return (
-    <Box as="section" textSize="s">
+    <Box {...props} textSize="s">
       <ReactMarkdown
         rehypePlugins={[
           rehypeRaw,
