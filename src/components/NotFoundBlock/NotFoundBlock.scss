@@ -1,0 +1,9 @@
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
+.not-found-block {
+  min-height: var(--min-height-not-found-search-page, 350px);
+
+  @include create-media-queries('md') {
+    --min-height-not-found-search-page: 450px;
+  }
+}

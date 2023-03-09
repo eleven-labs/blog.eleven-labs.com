@@ -46,7 +46,7 @@ Sommaire
     5.  Protéger les routes authentifiées avec AuthGuard
 3.  **Conclusion**
 
-![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/sf-blog-2.png)
+![](/_assets/posts/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/sf-blog-2.png)
 
 ---
 
@@ -297,7 +297,7 @@ Si tout va bien, vous devriez recevoir un token d'authentification.
 
 C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)
 
-![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/ng-blog.png)
+![](/_assets/posts/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/ng-blog.png)
 
 ---
 
@@ -769,7 +769,7 @@ Enfin, pour finaliser notre application, il ne reste plus qu'à lui appliquer un
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="../../public/favicon.ico">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous">
@@ -805,9 +805,9 @@ body {
 
 Et voilà le travail !
 
-![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-01.58.49.png)
+![](/_assets/posts/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-01.58.49.png)
 
-![](/assets/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-13.28.40.png)
+![](/_assets/posts/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-13.28.40.png)
 
 ### 3 Conclusion
 

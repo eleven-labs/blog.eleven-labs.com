@@ -53,7 +53,7 @@ Enfin, il nous reste à mettre à jour la base de données pour pouvoir jouer av
 bin/console do:sche:update --force vendor/bin/schema generate-types src/ app/config/schema.yml
 ```
 
-![](/assets/2017-07-25-api-platform/api_platform_movies.png)
+![](/_assets/posts/2017-07-25-api-platform/api_platform_movies.png)
 En accédant à la documentation, vous apercevrez que la ressource _Movie_ est maintenant là, accompagnée de toutes les opérations de création, modification, suppression.
 Je vous laisse jouer avec l’interface et la documentation auto-générée avant de passer à une fonctionnalité très utilisée dans les API de listing : les filtres.
 

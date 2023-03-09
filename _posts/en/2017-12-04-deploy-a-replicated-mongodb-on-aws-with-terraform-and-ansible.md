@@ -38,7 +38,7 @@ What is important to note is that only the `primary` server will be able to read
 
 This is the target infrastructure we are looking for, for this replication:
 
-![MongoDB Replication](/assets/2017-11-01-deployer-un-mongodb-replique-sur-aws-avec-terraform-et-ansible/replication.svg)
+![MongoDB Replication](/_assets/posts/2017-11-01-deployer-un-mongodb-replique-sur-aws-avec-terraform-et-ansible/replication.svg)
 
 
 As you can see on this diagram, only the primary node is used for read/write, the other two replicas are there to synchronize the updated data of the primary server in real time as well as for the purpose of eventually becoming primary in turn, in case the current primary server would become unavailable.

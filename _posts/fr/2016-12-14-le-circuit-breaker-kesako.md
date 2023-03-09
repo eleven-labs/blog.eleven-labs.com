@@ -33,23 +33,23 @@ Mais quel parallèle avec notre architecture micro-services ? Il faut se représ
 
 Un service A fait appel à un service B.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-1.png)
+![](/_assets/posts/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-1.png)
 
 Si le service B tombe ou est ralenti, sans circuit breaker la communication entre le service A et le service B continue.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-1-1.png)
+![](/_assets/posts/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-1-1.png)
 
 Le service A peut alors être ralenti ou même tomber.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-2.png)
+![](/_assets/posts/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-2.png)
 
 Mais si vous avez un circuit-breaker, quand le service B tombe ou est ralenti, le circuit-breaker s'ouvre et stoppe la communication entre A et B.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-3.png)
+![](/_assets/posts/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-3.png)
 
 Ce qui permet au service A de prendre en charge la panne, et d'attendre que le service B soit relancé. Dans ce cas là le circuit-breaker se ferme et la communication recommence.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-5.png)
+![](/_assets/posts/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-5.png)
 
 ***Bonus***: L'intérêt est encore plus présent quand votre architecture est dans le cloud et que vous avez choisi un système d'autoscalling. Quand un service tombe ou est ralenti cela peut entraîner une plus forte demande du service, ce qui par effet de levier peut faire des demandes de création de machine et ne ferrons que sur-alimenter le cloud. Cela peut vite coûter cher !
 
@@ -58,7 +58,7 @@ Vous êtes désormais convaincu d'avoir besoin d'avoir un circuit-breaker, mais 
 ### Implémentation en Symfony 3 :
 Nous allons suivre le pattern suivant.
 
-![](/assets/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-6.png)
+![](/_assets/posts/2016-12-14-le-circuit-breaker-kesako/untitled-drawing-6.png)
 
 Ce dont nous avons besoin :
 

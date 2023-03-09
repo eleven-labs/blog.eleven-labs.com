@@ -24,7 +24,7 @@ A command is defined as a method that changes state. On the contrary, a query on
 
 The following schema shows a basic implementation of the CQRS pattern inside an application. All messages are sent through commands and events. Let's take a closer look at this.
 
-![Example of implementation of CQRS pattern](/assets/2015-04-07-cqrs-pattern/cqrs_pattern.png)
+![Example of implementation of CQRS pattern](/_assets/posts/2015-04-07-cqrs-pattern/cqrs_pattern.png)
 *Example of implementation of CQRS pattern*
 
 We can clearly see the separation between writing parts and reading ones: the user does a modification on his page, resulting in a command being executed. Once this command is fully handled, an event is dispatched to signal a modification.

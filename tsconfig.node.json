@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "composite": true,
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "lib": ["es2021"],
     "allowSyntheticDefaultImports": true,
@@ -9,9 +9,5 @@
     "resolveJsonModule": true,
     "downlevelIteration": true
   },
-  "include": ["vite.config.ts", "typings.d.ts"],
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
+  "include": ["vite.config.ts", "typings.d.ts"]
 }

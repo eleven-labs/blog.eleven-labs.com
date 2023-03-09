@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Tech news"
+  },
+  "categories": {
+    "all": "Tous",
+    "javascript": "JavaScript",
+    "php": "PHP",
+    "agile": "Agile",
+    "architecture": "Architecture",
+    "best_practices": "Best Practices"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English"
+  },
+  "common": {
+    "back": "Back"
+  },
+  "cookie_consent": {
+    "title": "This website uses cookies from Google Analytics",
+    "description": "These cookies help us to identify the content you are most interested in and to identify certain malfunctions. Your browsing data is sent to Google Inc.",
+    "button_decline_label": "Decline",
+    "button_accept_label": "Accept"
+  },
+  "header": {
+    "title": "Eleven Labs",
+    "subtitle": "The blog",
+    "intro_block": {
+      "title": "Nice to see you",
+      "description": "Let's explore new knowledge"
+    },
+    "choice_category_label": "Which articles do you want to read ?"
+  },
+  "footer": {
+    "intro_block": {
+      "title": "Discover Eleven Labs",
+      "description": "To learn more, visit our website"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "link_to_eleven_labs_site": "Let's go"
+  },
+  "autocomplete": {
+    "placeholder": "Search by article or author name",
+    "see_all_search_label": "See all results"
+  },
+  "search_not_found": {
+    "title": "No results in sight...",
+    "description": "Check your search terms before trying again"
+  },
+  "newsletter": {
+    "title": "Want to know more ?",
+    "description": "Sign up to our Newsletter",
+    "button_label": "Subscribe"
+  },
+  "pages": {
+    "post_list": {
+      "post_preview_list_title": "All our articles",
+      "post_preview_list_category_title": "Our articles {{ categoryName }}",
+      "number_of_posts_displayed_label": "{{ numberOfPosts }}/{{ maxNumberOfPosts }} displayed",
+      "load_more_button_label": "Show more"
+    },
+    "post": {
+      "related_post_list_title": "Related articles",
+      "post_footer_title": "write by"
+    },
+    "author": {
+      "post_preview_list_title": "Author's article(s)"
+    },
+    "search": {
+      "title": "{{ numberOfHits }} hits",
+      "description": "sorted by relevance",
+      "not_found": {
+        "title": "No results in sight...",
+        "description": "Check your search terms before trying again"
+      }
+    },
+    "not_found": {
+      "title": "Page not found",
+      "description": "We apologize for any inconvenience, but the page you requested was not found."
+    }
+  }
+}

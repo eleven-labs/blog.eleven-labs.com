@@ -277,7 +277,7 @@ Tous ces outils, une fois en place, permettent de surveiller et de maintenir la 
 
 Avec Jenkins, il est possible de lancer ces commandes de manière automatisée. Il suffit de créer un "job" et de le programmer. Chacune des commandes abordées dans cet article permettent de produire un rapport au format jUnit.
 
-![rapport jenkins](/assets/2016-01-26-verifier-la-qualite-du-code/Capture-decran-2016-01-25-a-21.35.56.png)
+![rapport jenkins](/_assets/posts/2016-01-26-verifier-la-qualite-du-code/Capture-decran-2016-01-25-a-21.35.56.png)
 
 ### SonarQube
 

@@ -1,0 +1,16 @@
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
+.container {
+  position: relative;
+  z-index: 1;
+  margin: var(--margin-container-main, 0 auto);
+  width: var(--width-container-main, auto);
+  padding-top: var(--padding-top-container-main, var(--spacing-l));
+  padding-left: var(--spacing-m);
+  padding-right: var(--spacing-m);
+
+  @include create-media-queries('md') {
+    --width-container-main: 864px;
+    --padding-top-container-main: var(--spacing-xl);
+  }
+}

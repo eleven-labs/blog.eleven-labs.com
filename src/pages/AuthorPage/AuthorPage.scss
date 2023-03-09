@@ -1,0 +1,20 @@
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
+.author-page {
+  --avatar-img-author-page: 120px;
+
+  &__avatar_img {
+    background-color: var(--color-light-grey);
+    height: var(--avatar-img-author-page);
+    width: var(--avatar-img-author-page);
+    border-radius: 100%;
+  }
+
+  &__divider {
+    width: var(--divider-width-author-page, 120px);
+
+    @include create-media-queries('md', 'min') {
+      --divider-width-author-page: 300px;
+    }
+  }
+}

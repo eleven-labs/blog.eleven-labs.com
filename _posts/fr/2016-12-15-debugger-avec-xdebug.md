@@ -65,28 +65,28 @@ Ensuite, configurons PHPStorm :
 On va dans **Run > Edit configurations**, puis cliquer sur le symbole « + »
 Dans la liste on clique sur « **PHP Remote Debug** ».
 
-![](/assets/2016-12-15-debugger-avec-xdebug/my_app_remote.png)
+![](/_assets/posts/2016-12-15-debugger-avec-xdebug/my_app_remote.png)
 
 Nommez votre configuration et renseignez l'idekey, ici « idekey » comme configuré dans le php.ini.
 On ajoute ensuite un serveur en cliquent sur le bouton « ... »
 
-![](/assets/2016-12-15-debugger-avec-xdebug/remote_host.png)
+![](/_assets/posts/2016-12-15-debugger-avec-xdebug/remote_host.png)
 
 Dans cet exemple je fais tourner un server en local, mon host distant est en fait localhost. On laisse le port **80** et on sélectionne évidemment « **xDebug** ». Il faut également mapper les fichiers PHP locaux avec ceux qui se trouvent sur le serveur (pour que l'IDE reconnaisse les fichiers que xDebug lui communique). Ici mon projet se trouve dans **/var/www** sur le serveur distant.
 
-Maintenant il ne nous reste plus qu'à poser un point d'arrêt dans le code et d'écouter les connections de xDebug (bouton à droite sur l'image) : ![](/assets/2016-12-15-debugger-avec-xdebug/configuration_dropdown.png)
+Maintenant il ne nous reste plus qu'à poser un point d'arrêt dans le code et d'écouter les connections de xDebug (bouton à droite sur l'image) : ![](/_assets/posts/2016-12-15-debugger-avec-xdebug/configuration_dropdown.png)
 
-![](/assets/2016-12-15-debugger-avec-xdebug/my_controller.png)
+![](/_assets/posts/2016-12-15-debugger-avec-xdebug/my_controller.png)
 
 Pour déclencher la session de debug, nous devons passer la variable `XDEBUG_SESSION_START` en query string avec comme valeur notre idekey.
 
-![](/assets/2016-12-15-debugger-avec-xdebug/browser.png)
+![](/_assets/posts/2016-12-15-debugger-avec-xdebug/browser.png)
 > Il est également possible de passer par un cookie, mais le plus simple est d'utiliser un plugin sur votre navigateur ([Xdebug helper](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc) pour chrome, [The easiest debug](https://addons.mozilla.org/fr/firefox/addon/the-easiest-xdebug/) pour firefox){:rel="nofollow noreferrer"} qui vous permet en un clic d'activer le debugging.
 
 Et HOP ! PHPStorm surgit tout à coup et nous montre tout ce qui se passe à l'endroit de notre point d'arrêt !
 On peut même avancer l'exécution au pas à pas !
 
-![](/assets/2016-12-15-debugger-avec-xdebug/debugging.png)
+![](/_assets/posts/2016-12-15-debugger-avec-xdebug/debugging.png)
 
 ## Debugger les scripts CLI
 
@@ -115,7 +115,7 @@ Ou encore :
 XDEBUG_CONFIG="remote_enable=1" php bin/console xdebug:test
 ```
 
-![](/assets/2016-12-15-debugger-avec-xdebug/debugging_cli.png)
+![](/_assets/posts/2016-12-15-debugger-avec-xdebug/debugging_cli.png)
 
 Pour débugger en mode CLI sur un serveur distant, vous devez simplement changer la valeur de `xdebug.remote_host` dans le php.ini par votre IP.
 

@@ -38,7 +38,7 @@ In order to clarify the rest of the article, here are the ports used by Consul:
 
 Next, we'll focus on service discovery and failure detection. To do that, we'll create a Docker Swarm cluster with the following architecture:
 
-![Consul Infrastructure Schema](/assets/2017-02-22-consul-service-discovery-failure/schema.png)
+![Consul Infrastructure Schema](/_assets/posts/2017-02-22-consul-service-discovery-failure/schema.png)
 
 As you can see, we'll have 3 Docker machines:
 
@@ -266,7 +266,7 @@ $ docker run -d \
 
 You can do the same thing on your node 02 (by paying attention to modify the `node-01`  values to `node-02` ) and you should now visualize these checks on the Consul web UI:
 
-![Consul Infrastructure Schema](/assets/2017-02-22-consul-service-discovery-failure/checks.png)
+![Consul Infrastructure Schema](/_assets/posts/2017-02-22-consul-service-discovery-failure/checks.png)
 
 You can also use the Consul API in order to verify the good health of your services:
 

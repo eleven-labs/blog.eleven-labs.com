@@ -37,7 +37,7 @@ Posons le décor : nous avons une branche *master* qui sera utilisée pour la mi
 
 Ça donne ceci :
 
-![git workflow](/assets/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/init_git.png)
+![git workflow](/_assets/posts/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/init_git.png)
 
 Un développeur créé une nouvelle fonctionnalité. Il va créer sa branche depuis *develop et* la nommer "*feat-my-awesome-feature*". Des fichiers sont créés, il y a un commit et la branche est poussée.
 
@@ -50,7 +50,7 @@ git commit -m "create some awesome code"
 git push origin feat-my-awesome-feature
 ```
 
-![GIT feature](/assets/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_feature.png)
+![GIT feature](/_assets/posts/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_feature.png)
 
 La *code review* est ok, les tests passent, la branche est *fusionnée* dans *develop* pour être déployée en environnement d'intégration. Lors d'une *pull request*, le *merge* est fait en no-ff (*no fast forward*). Cela signifie qu'il y a un *commit* de *merge* dans l'historique. C'est important car il sera utilisé plus tard.
 
@@ -60,7 +60,7 @@ git merge --no-ff feat-my-awesome-feature
 git push origin develop
 ```
 
-![Git Awesome Feature](/assets/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_awesome_feature.png)
+![Git Awesome Feature](/_assets/posts/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_awesome_feature.png)
 
 Je refais de même avec une seconde fonctionnalité : *feat-killer-feature*
 
@@ -73,7 +73,7 @@ git commit -m "create killer code"
 git push origin feat-killer-feature
 ```
 
-![Git Killer Feat](/assets/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_killer_feat.png)
+![Git Killer Feat](/_assets/posts/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_killer_feat.png)
 
 Et je *merge*.
 
@@ -83,18 +83,18 @@ git merge --no-ff feat-killer-feature
 git push origin develop
 ```
 
-![Git merge killer feat](/assets/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_merge_killer_feat.png)
+![Git merge killer feat](/_assets/posts/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_merge_killer_feat.png)
 
 Voilà, mon décor est posé. Petite vue en mode terminal.
 
-![Git log](/assets/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_log.png)
+![Git log](/_assets/posts/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_log.png)
 
 Préparation de la branche release
 ---------------------------------
 
 Notre *sprint* va bientôt s'achever, préparons la branche de *release*. Mais au dernier moment, un *product owner* affolé voit que la fonctionnalité n'est pas valide. Il ne faut pas passer cette fonctionnalité en production.
 
-![seriously](/assets/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/seriously.png)
+![seriously](/_assets/posts/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/seriously.png)
 
 Il faut gérer cette situation !
 
@@ -107,7 +107,7 @@ git merge develop --no-ff
 
 Il est important de faire un *merge --no-ff* car cela va permettre de garder une trace dans l'historique sur cette annulation.
 
-![Git release](/assets/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_release.png)
+![Git release](/_assets/posts/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_release.png)
 
 Annuler la branche "feat-my-awesome-feature"
 ============================================

@@ -1,10 +1,13 @@
-version: '2'
+version: '3'
 services:
-  jekyll:
-    build: ./docker
-    command: sh -c "bundle install && bundle exec jekyll serve --destination /tmp --host 0.0.0.0"
+  node:
+    image: node:18-alpine
+    user: node:node
+    working_dir: /var/www/app
     volumes:
-      - ".:/usr/src/app"
+      - .:/var/www/app
+    command: ['sh', '-c', 'yarn --production=false --frozen-lockfile && npx --yes concurrently "yarn start:storybook" "yarn start:dev"']
     ports:
-      - "4000:4000"
-    working_dir: "/usr/src/app"
+      - 6009:6009
+      - 5173:5173
+    tty: true

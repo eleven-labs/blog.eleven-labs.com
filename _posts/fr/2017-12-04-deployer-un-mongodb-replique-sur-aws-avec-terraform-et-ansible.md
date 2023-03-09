@@ -38,7 +38,7 @@ Ce qu'il est important de noter est que seul le serveur `primaire` pourra lire o
 
 Voici donc l'infrastructure cible que nous cherchons à obtenir pour cette réplication :
 
-![MongoDB Replication](/assets/2017-11-01-deployer-un-mongodb-replique-sur-aws-avec-terraform-et-ansible/replication.svg)
+![MongoDB Replication](/_assets/posts/2017-11-01-deployer-un-mongodb-replique-sur-aws-avec-terraform-et-ansible/replication.svg)
 
 
 Comme vous pouvez le voir sur ce schéma, seul le noeud primaire est utilisé pour la lecture/écriture, les deux autres réplicas sont là pour la synchronisation des données à jour du serveur primaire en temps réel ainsi que dans le but d'éventuellement devenir primaire à leur tour, dans le cas ou le serveur primaire actuel deviendrait indisponible.

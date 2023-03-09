@@ -16,45 +16,81 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Sets env vars for dev
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "ENV=dev-${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "ENV_URL=http://dev.blog.eleven-labs.com.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "BASE_URL=/${{ github.head_ref }}/" >> $GITHUB_ENV
+          echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
+          echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_DEV }}" >> $GITHUB_ENV
+          echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_DEV }}" >> $GITHUB_ENV
+          echo "ALGOLIA_API_SEARCH_KEY=${{ secrets.ALGOLIA_API_SEARCH_KEY_DEV }}" >> $GITHUB_ENV
+
       - name: Sets env vars for production
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |
           echo "ENV=production" >> $GITHUB_ENV
           echo "ENV_URL=https://blog.eleven-labs.com" >> $GITHUB_ENV
-
-      - name: Sets env vars for dev and configure website
-        if: github.event_name == 'pull_request'
-        run: |
-          echo "ENV=dev-${{ github.head_ref }}" >> $GITHUB_ENV
-          echo "ENV_URL=http://dev.blog.eleven-labs.com.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
-          sed -i "/^url:/c\url: http:\/\/dev.blog.eleven-labs.com.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com" _config.yml
-          sed -i "/^baseurl:/c\baseurl: \/${{ github.head_ref }}" _config.yml
+          echo "BASE_URL=/" >> $GITHUB_ENV
+          echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
+          echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_PRODUCTION }}" >> $GITHUB_ENV
+          echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_PRODUCTION }}" >> $GITHUB_ENV
+          echo "ALGOLIA_API_SEARCH_KEY=${{ secrets.ALGOLIA_API_SEARCH_KEY_PRODUCTION }}" >> $GITHUB_ENV
 
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           bundler-cache: true
+          node-version: 16
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install modules
+        run: |
+          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
+          yarn install --frozen-lockfile
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Validate markdown authors and posts
-        run: |
-          yarn
-          yarn validate-and-format-markdown
+        run: yarn validate-and-format-markdown
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
+      - name: Run ESLint
+        run: yarn lint:es
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Lint
-        run: bundle exec rake lint
+      - name: Run Stylelint
+        run: yarn lint:style
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build with draft
-        if: github.event_name == 'pull_request'
-        run: bundle exec jekyll build --drafts --future
+      - name: Run Compile TypeScript
+        run: yarn tsc
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: bundle exec rake build
+        run: yarn prerender
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_URL: ${{ env.BASE_URL }}
+          VITE_ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
+          VITE_ALGOLIA_API_KEY: ${{ env.ALGOLIA_API_SEARCH_KEY }}
+          VITE_ALGOLIA_INDEX: ${{ env.ALGOLIA_INDEX }}
 
       - name: Setup aws
         uses: aws-actions/configure-aws-credentials@v1
@@ -72,13 +108,13 @@ jobs:
           ref: ${{ github.head_ref }}
           env: ${{ env.ENV }}
 
-      - name: Deploy to S3
+      - name: Deploy to S3 for dev
         if: github.event_name == 'pull_request'
-        run: aws s3 sync "_site/" "s3://dev.blog.eleven-labs.com/${{ github.head_ref }}/" --delete
+        run: aws s3 sync "dist/public/" "s3://dev.blog.eleven-labs.com/${{ github.head_ref }}/" --delete
 
-      - name: Deploy to S3
+      - name: Deploy to S3 for production
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: aws s3 sync "_site/" "s3://blog.eleven-labs.com/" --delete
+        run: aws s3 sync "dist/public/" "s3://blog.eleven-labs.com/" --delete
 
       - name: Clear caches
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
@@ -87,10 +123,12 @@ jobs:
           aws cloudfront create-invalidation --distribution-id "${{ secrets.CLOUDFRONT_DISTRIBUTION }}" --paths "/*"
 
       - name: Indexing on Algolia
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: bundle exec rake deploy
+        run: yarn indexation:algolia
         env:
-          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
+          ALGOLIA_API_INDEXING_KEY: ${{ env.ALGOLIA_API_INDEXING_KEY }}
+          ALGOLIA_INDEX: ${{ env.ALGOLIA_INDEX }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update deployment status
         uses: bobheadxi/deployments@v1
@@ -109,7 +147,7 @@ jobs:
         with:
           urls: |
             ${{ env.ENV_URL }}/
-            ${{ env.ENV_URL }}/authors/ajacquemin/
+            ${{ env.ENV_URL }}/fr/authors/ajacquemin/
             ${{ env.ENV_URL }}/fr/comment-construire-site-web-avec-nextjs/
             ${{ env.ENV_URL }}/fr/nestjs-le-cycle-de-vie-dune-requete/
           configPath: ./.github/workflows/lighthousesrc.json
@@ -123,7 +161,7 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           script: |
-            const lighthouseCommentMaker = require('./.github/workflows/lighthouseCommentMaker.js');
+            const lighthouseCommentMaker = require('./.github/workflows/lighthouseCommentMaker.cjs');
             const lighthouseOutputs = {
               manifest: ${{ steps.lighthouse_audit.outputs.manifest }},
               links: ${{ steps.lighthouse_audit.outputs.links }},

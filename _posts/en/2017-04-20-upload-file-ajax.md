@@ -271,7 +271,7 @@ A **ProgressEvent** object passed to the **onUploadProgress** callback function.
 
 Small demo in GIF  and full code here [https://github.com/lepiaf/file-upload](https://github.com/lepiaf/file-upload){:rel="nofollow"}
 
-![](/assets/2017-04-20-upload-file-ajax/upload.gif)
+![](/_assets/posts/2017-04-20-upload-file-ajax/upload.gif)
 
 
 ### To conclude

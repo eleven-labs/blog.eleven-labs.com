@@ -199,8 +199,8 @@ protected function execute(
 
 Pour les objets, la méthode de calcul est un peu différente. On ne peut pas leur appliquer une taille par défaut comme pour les pièces. En effet ils n'ont pas tous la même taille (On ne peut pas redimensionner une table et un écran de la même manière)!
 
-![une table](/assets/2017-12-20-optimize-image-with-imagine/table.png)
-![un écran](/assets/2017-12-20-optimize-image-with-imagine/imac.png).
+![une table](/_assets/posts/2017-12-20-optimize-image-with-imagine/table.png)
+![un écran](/_assets/posts/2017-12-20-optimize-image-with-imagine/imac.png).
 
 Nous avons décidé de calculer la taille maximale des images de nos objets lorsqu'elles sont au maximum zoomées dans les pièces.
 

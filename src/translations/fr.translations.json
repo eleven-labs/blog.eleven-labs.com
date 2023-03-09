@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "L'actualité tech"
+  },
+  "categories": {
+    "all": "Tous",
+    "javascript": "JavaScript",
+    "php": "PHP",
+    "agile": "Agile",
+    "architecture": "Architecture",
+    "best_practices": "Bonnes pratiques"
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English"
+  },
+  "common": {
+    "back": "Retour"
+  },
+  "cookie_consent": {
+    "title": "Ce site web utilise des cookies de Google Analytics",
+    "description": "Ces cookies nous aident à identifier le contenu qui vous intéresse le plus ainsi qu'à repérer certains dysfonctionnements. Vos données de navigations sont envoyées à Google Inc.",
+    "button_decline_label": "Refuser",
+    "button_accept_label": "Accepter"
+  },
+  "header": {
+    "title": "Eleven Labs",
+    "subtitle": "Le blog",
+    "intro_block": {
+      "title": "Ravi de te voir",
+      "description": "Explorons de nouveaux savoirs"
+    },
+    "choice_category_label": "Quels articles veux-tu lire ?"
+  },
+  "footer": {
+    "intro_block": {
+      "title": "Découvrez Eleven Labs",
+      "description": "Notre site pour mieux nous connaître"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "link_to_eleven_labs_site": "J'y vais"
+  },
+  "autocomplete": {
+    "placeholder": "Rechercher par nom d’article ou d’auteur",
+    "see_all_search_label": "Voir tous les résultats"
+  },
+  "search_not_found": {
+    "title": "Aucun résultat en vue...",
+    "description": "Vérifiez les termes de votre recherche avant de réessayer"
+  },
+  "newsletter": {
+    "title": "En quête d’un outil de veille ?",
+    "description": "Abonne-toi à notre newsletter",
+    "button_label": "Je m'abonne"
+  },
+  "pages": {
+    "post_list": {
+      "post_preview_list_title": "Tous nos articles",
+      "post_preview_list_category_title": "Nos articles {{ categoryName }}",
+      "number_of_posts_displayed_label": "{{ numberOfPosts }}/{{ maxNumberOfPosts }} affichés",
+      "load_more_button_label": "Afficher plus"
+    },
+    "post": {
+      "related_post_list_title": "Articles sur le même thème",
+      "post_footer_title": "écrit par"
+    },
+    "author": {
+      "post_preview_list_title": "Article(s) de l'auteur"
+    },
+    "search": {
+      "title": "{{ numberOfHits }} résultats",
+      "description": "triés par pertinence",
+      "not_found": {
+        "title": "Aucun résultat en vue...",
+        "description": "Vérifiez les termes de votre recherche avant de réessayer"
+      }
+    },
+    "not_found": {
+      "title": "Page non trouvé",
+      "description": "Nous nous excusons pour le désagrément, mais la page que vous avez demandée n'a pas été trouvée."
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.divider {
+  border: none;
+
+  &--s {
+    height: 1px;
+  }
+
+  &--m {
+    height: 2px;
+  }
+
+  &--l {
+    height: 16px;
+    width: 80px;
+  }
+}

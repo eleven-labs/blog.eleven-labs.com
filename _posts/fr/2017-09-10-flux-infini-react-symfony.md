@@ -305,7 +305,7 @@ Ajoutez la ligne suivante dans votre `/etc/hosts`
 
 Si vous lancez un `docker-compose up` puis allez sur la page suivante [infinite.dev](infinite.dev), vous devriez voir la page suivante vous indiquant que votre site est bien configuré.
 
-![Configuration](/assets/2017-09-10-flux-infini-react-symfony/image1.png)
+![Configuration](/_assets/posts/2017-09-10-flux-infini-react-symfony/image1.png)
 
 Une partie de la configuration est tirée de l'article de Maxence Poutord disponible [ici](http://www.maxpou.fr/docker-pour-symfony/){:rel="nofollow noreferrer"}.
 

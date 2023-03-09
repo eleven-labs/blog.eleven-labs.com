@@ -44,7 +44,7 @@ The idea is pretty simple:
 
 Before going into details, here is a diagram representing the features of our library:
 
-![WorkMQ Diagram](/assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/schema.jpg)
+![WorkMQ Diagram](/_assets/posts/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/schema.jpg)
 
 As you can see on this diagram, we have four `Queues` defined and each of them has three `Workers`.
 
@@ -357,7 +357,7 @@ In this code, we loop over each queue to display counters data on output.
 
 In order to let you have a better visualization of the output, here is a sample:
 
-![HTTP Output](/assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/output.gif)
+![HTTP Output](/_assets/posts/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/output.gif)
 
 Conclusion
 ----------
