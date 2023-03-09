@@ -59,12 +59,12 @@ export const useCookieConsentContainer = (): LayoutTemplateProps['cookieConsent'
     setCookie('hasConsent', false, { maxAge: googleAnalytics.cookieExpires });
     (window as any)[`ga-disable-${googleAnalytics.trackingCode}`] = true; //eslint-disable-line @typescript-eslint/no-explicit-any
     googleAnalytics.cookieNames.forEach((cookieName) => removeCookie(cookieName));
-    /*startGoogleAnalytics({ isAnonymous: true });*/
+    startGoogleAnalytics({ isAnonymous: true });
   };
 
   const acceptCookieConsent = (): void => {
     setCookie('hasConsent', true, { maxAge: googleAnalytics.cookieExpires });
-    /*startGoogleAnalytics({ isAnonymous: false });*/
+    startGoogleAnalytics({ isAnonymous: false });
   };
 
   return cookieConsent;
