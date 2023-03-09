@@ -112,7 +112,7 @@ C'est une excellente occasion de mentionner que les couleurs qui fournissent des
  
 Si nous ne fournissons qu'un changement dans l'interface lors du focus sur un élément (ex : un bouton, un input), il est probable qu'un utilisateur malvoyant n'aura pas accès à cette information. **C'est pourquoi l’outline ne doit jamais être enlevé**, à moins qu'un autre élément ne fournisse cette information. Il peut être vrai que le focus par défaut sur les navigateurs n'est généralement pas très attrayant, mais consultez [cette page](https://developer.mozilla.org/en-US/docs/Web/CSS/outline) pour voir comment le personnaliser. À vous de jouer !
  
-<iframe height="300" style="width: 100%;" scrolling="no" title="outline-style" src="https://codepen.io/seyedi/embed/OJmqVxm?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="300" style="width: 100%;" scrolling="no" title="outline-style" src="https://codepen.io/seyedi/embed/OJmqVxm?default-tab=html%2Cresult" frameborder="no" loading="lazy">
   See the Pen <a href="https://codepen.io/seyedi/pen/OJmqVxm">
   outline-style</a> by Mojtaba Seyedi (<a href="https://codepen.io/seyedi">@seyedi</a>)
   on <a href="https://codepen.io">CodePen</a>.

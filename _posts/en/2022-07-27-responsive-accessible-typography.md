@@ -83,7 +83,7 @@ As the [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html) doc
 
 You probably know at this point that **rem** is not the only relative unit in CSS. There is also **em** units, which take the parent's font-size for calculating its value. Using rem is a more consistent approach for setting the size of your body text, since it has a fixed value that will scale predictably. I strongly recommend you to read this [article about px and accessibility](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#unit-summaries) if you need to dive deeper in these waters.
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="px vs rem" src="https://codepen.io/amirtaqiabadi/embed/dyWZVgV?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="300" style="width: 100%;" scrolling="no" title="px vs rem" src="https://codepen.io/amirtaqiabadi/embed/dyWZVgV?default-tab=html%2Cresult" frameborder="no" loading="lazy">
   See the Pen <a href="https://codepen.io/amirtaqiabadi/pen/dyWZVgV">
   px vs rem</a> by amir taqiabadi (<a href="https://codepen.io/amirtaqiabadi">@amirtaqiabadi</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -229,7 +229,7 @@ body {
 }
 ```
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="calc line-height: demo 2" src="https://codepen.io/supersimplenet/embed/vYNjaem?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="300" style="width: 100%;" scrolling="no" title="calc line-height: demo 2" src="https://codepen.io/supersimplenet/embed/vYNjaem?default-tab=html%2Cresult" frameborder="no" loading="lazy">
   See the Pen <a href="https://codepen.io/supersimplenet/pen/vYNjaem">
   calc line-height: demo 2</a> by super-simple.net (<a href="https://codepen.io/supersimplenet">@supersimplenet</a>)
   on <a href="https://codepen.io">CodePen</a>.

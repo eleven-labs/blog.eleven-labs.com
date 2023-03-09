@@ -135,7 +135,7 @@ export const PostContent: React.FC<PostContentProps> = ({ content, ...props }) =
               {children}
             </Text>
           ),
-          a: ({ node, ...props }): JSX.Element => <Link {...props} />,
+          a: ({ node, ...props }): JSX.Element => <Link {...props} style={{ overflowWrap: 'anywhere' }} />,
           blockquote: ({ node, ...props }): JSX.Element => <Blockquote {...props} />,
           pre: ({ node, ...props }): JSX.Element => <Box as="pre" textSize="xs" {...(props as AsProps)} />,
           code: ({ node, inline, className, children, ...props }): JSX.Element => {
@@ -152,12 +152,12 @@ export const PostContent: React.FC<PostContentProps> = ({ content, ...props }) =
             const src = !(props.src as string).match(/^http(s)?:\/\//) ? getPathFile(props.src as string) : props.src;
             return React.createElement('img', {
               src,
+              ...props,
               style: {
                 display: 'block',
                 maxWidth: '100%',
                 margin: 'var(--spacing-xs) auto',
               },
-              ...props,
             });
           },
           script: ({ node, ...props }): JSX.Element => <Script {...props} />,

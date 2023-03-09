@@ -45,11 +45,10 @@ export const Footer: React.FC<FooterProps> = ({
   <Box as="footer" bg="navy" color="white" textAlign={{ xs: 'center', md: 'left' }} textSize="s" className="footer">
     <Flex
       flexDirection={{ xs: 'column', md: 'row' }}
-      justifyContent="center"
+      justifyContent="around"
       alignItems="center"
       pt={{ md: 'xl' }}
       pb={{ md: 'xl' }}
-      gap={{ md: 'xxl-3' }}
       mb="xl"
     >
       <Box mb="xl">
