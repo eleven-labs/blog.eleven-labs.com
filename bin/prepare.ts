@@ -11,9 +11,9 @@ const copyImgs = (): void => {
   fs.cpSync(srcDir, outputDir, { recursive: true });
 };
 
-const generateData = async (): Promise<void> => {
+const generateDataAndFeeds = async (): Promise<void> => {
   const baseUrl = process.env.BASE_URL || '/';
-  const rootDir = resolve(process.cwd(), 'public', 'data');
+  const rootDir = resolve(process.cwd(), 'public');
   const vite = await createViteServer({
     server: { middlewareMode: true },
     base: baseUrl,
@@ -21,8 +21,9 @@ const generateData = async (): Promise<void> => {
   });
 
   try {
-    const { generateDataFiles } = await vite.ssrLoadModule('/src/helpers/dataHelper.ts');
-    generateDataFiles({ rootDir });
+    const { generateDataFiles, generateFeedFile } = await vite.ssrLoadModule('/src/helpers/dataHelper.ts');
+    generateDataFiles({ rootDir: resolve(rootDir, 'data') });
+    generateFeedFile({ rootDir });
   } catch (e) {
     console.error(e);
   } finally {
@@ -32,7 +33,7 @@ const generateData = async (): Promise<void> => {
 
 const prepare = (): void => {
   copyImgs();
-  generateData();
+  generateDataAndFeeds();
 };
 
 prepare();
