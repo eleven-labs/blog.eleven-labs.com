@@ -4,10 +4,10 @@ export const socialNetworks: {
   iconName: Extract<IconNameType, 'rss' | 'facebook' | 'twitter' | 'linkedin' | 'welcometothejungle'>;
   url: string;
 }[] = [
-  /*{
+  {
     iconName: 'rss',
     url: 'https://blog.eleven-labs.com/feed.xml',
-  },*/
+  },
   {
     iconName: 'facebook',
     url: 'https://www.facebook.com/11Labs',

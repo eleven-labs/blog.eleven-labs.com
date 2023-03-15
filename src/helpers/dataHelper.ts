@@ -1,8 +1,13 @@
+import { generatePath } from '@remix-run/router';
+import { Feed } from 'feed';
+import MarkdownIt from 'markdown-it';
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { dirname, resolve } from 'node:path';
+import sanitizeHtml from 'sanitize-html';
 
-import { AUTHORIZED_LANGUAGES, CATEGORIES } from '@/constants';
+import { blogUrl } from '@/config/website';
+import { AUTHORIZED_LANGUAGES, CATEGORIES, PATHS } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
 import { AuthorType, PostType } from '@/types';
 
@@ -145,4 +150,38 @@ export const generateDataFiles = (options: { rootDir: string }): void => {
       data: post,
     });
   }
+};
+
+export const generateFeedFile = (options: { rootDir: string }): void => {
+  const { posts } = getData();
+  const parser = new MarkdownIt();
+
+  const feed = new Feed({
+    title: 'Blog Eleven Labs',
+    description: `L'actualité tech`,
+    id: blogUrl,
+    link: blogUrl,
+    image: `${blogUrl}/imgs/logo.png`,
+    favicon: `${blogUrl}/favicon.ico`,
+    copyright: `All rights reserved ${new Date().getFullYear()}, Blog Eleven Labs`,
+    generator: 'awesome',
+    author: {
+      name: 'Eleven Labs',
+      email: 'contact@eleven-labs.com',
+    },
+  });
+
+  for (const { lang, slug, ...post } of posts.slice(0, 15)) {
+    const url = `${blogUrl}${generatePath(PATHS.POST, { lang, slug })}`;
+    feed.addItem({
+      title: post.title,
+      id: url,
+      link: url,
+      date: new Date(post.date),
+      description: post.excerpt,
+      content: sanitizeHtml(parser.render(post.content)),
+    });
+  }
+
+  writeFileSync(resolve(options.rootDir, `feed.xml`), feed.rss2());
 };

@@ -27,3 +27,4 @@ dist-ssr
 public/data
 public/imgs/posts
 public/imgs/authors
+public/feed.xml
