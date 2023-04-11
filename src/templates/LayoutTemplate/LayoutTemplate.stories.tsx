@@ -3,21 +3,20 @@ import { action } from '@storybook/addon-actions';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
-import { AutocompleteFieldProps } from '@/components';
 import * as AutocompleteFieldStories from '@/components/AutocompleteField/AutocompleteField.stories';
-import { LayoutTemplate } from '@/templates/LayoutTemplate';
+import { Header, HeaderProps, LayoutTemplate } from '@/templates/LayoutTemplate';
 
 export default {
   title: 'Templates/LayoutTemplate',
   component: LayoutTemplate,
   args: {
-    header: {
+    header: React.createElement<HeaderProps>(Header, {
       homeLink: {
         href: '#',
       },
-      autocomplete: AutocompleteFieldStories.default.args,
+      autocomplete: AutocompleteFieldStories.default.args as HeaderProps['autocomplete'],
       onToggleSearch: action('toggleSearch'),
-    },
+    }),
     footer: {
       introBlock: {
         title: 'Découvrez Eleven Labs',
@@ -109,22 +108,22 @@ export const Overview = Template.bind({});
 
 export const LayoutTemplateWithAutocompleteIsOpen = Template.bind({});
 LayoutTemplateWithAutocompleteIsOpen.args = {
-  header: {
+  header: React.createElement<HeaderProps>(Header, {
     homeLink: {
       href: '#',
     },
     autocompleteIsDisplayed: true,
-    autocomplete: AutocompleteFieldStories.AutocompleteFieldWithResult.args as AutocompleteFieldProps,
-  },
+    autocomplete: AutocompleteFieldStories.AutocompleteFieldWithResult.args as HeaderProps['autocomplete'],
+  }),
 };
 
 export const LayoutTemplateWithAutocompleteAndResultNotFound = Template.bind({});
 LayoutTemplateWithAutocompleteAndResultNotFound.args = {
-  header: {
+  header: React.createElement<HeaderProps>(Header, {
     homeLink: {
       href: '#',
     },
     autocompleteIsDisplayed: true,
-    autocomplete: AutocompleteFieldStories.AutocompleteFieldWithNoResult.args as AutocompleteFieldProps,
-  },
+    autocomplete: AutocompleteFieldStories.AutocompleteFieldWithNoResult.args as HeaderProps['autocomplete'],
+  }),
 };

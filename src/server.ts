@@ -17,17 +17,17 @@ const createServer = async (): Promise<void> => {
   if (isProd) {
     const { dirname, resolve } = await import('node:path');
     const { fileURLToPath } = await import('node:url');
-    const { getLinksAndScripts } = await import('./helpers/ssrHelper');
+    const { getHtmlTemplatePropsByManifest } = await import('./helpers/ssrHelper');
     const { default: serveStatic } = await import('serve-static');
 
     const __filename = fileURLToPath(import.meta.url);
-    const __dirname = dirname(__filename);
-    const { links, scripts } = getLinksAndScripts({
+    const __dirname = resolve(dirname(__filename), 'public');
+    const { links, scripts } = getHtmlTemplatePropsByManifest({
       baseUrl,
       dirname: __dirname,
     });
 
-    app.use(baseUrl, serveStatic(resolve(__dirname, 'public'), { index: false }));
+    app.use(baseUrl, serveStatic(__dirname, { index: false }));
 
     app.use('*', async (req, res, next) => {
       try {

@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { generatePath, useLocation } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
-import { getPostDataPage } from '@/helpers/apiHelper';
+import { getPostDataPage } from '@/helpers/loaderDataHelper';
 
 export type UseSeoOptions = {
   title: string;
-  post?: Awaited<ReturnType<typeof getPostDataPage>>;
+  post?: ReturnType<typeof getPostDataPage>;
 };
 
 export const useSeo = ({ title, post }: UseSeoOptions): void => {

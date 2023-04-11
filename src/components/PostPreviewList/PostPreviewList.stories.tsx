@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
-import { PostPreviewList } from './PostPreviewList';
+import { PostPreviewList } from '@/components';
 
 export default {
   title: 'Components/PostPreviewList',
@@ -17,6 +17,7 @@ export default {
       excerpt:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit vel tellus in molestie. Curabitur malesuada sodales consectetur. Aliquam convallis nec lacus in euismod. Vestibulum id eros vitae tellus sodales ultricies eget eu ipsum.',
     })),
+    isLoading: false,
   },
   parameters: {
     layout: 'full',
@@ -34,6 +35,14 @@ export default {
 } as Meta<typeof PostPreviewList>;
 
 const Template: StoryFn<typeof PostPreviewList> = (args) => <PostPreviewList {...args} />;
+
+export const PostPreviewListWithData = Template.bind({});
+
+export const PostPreviewListIsLoading = Template.bind({});
+PostPreviewListIsLoading.args = {
+  isLoading: true,
+  posts: Array.from({ length: 6 }),
+};
 
 export const PostPreviewListWithPagination = Template.bind({});
 PostPreviewListWithPagination.args = {

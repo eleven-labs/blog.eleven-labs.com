@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
-import { PostPreview } from './PostPreview';
+import { PostPreview } from '@/components';
 
 export default {
   title: 'Components/PostPreview',
@@ -13,6 +13,7 @@ export default {
     authors: ['J. Doe'],
     excerpt:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit vel tellus in molestie. Curabitur malesuada sodales consectetur. Aliquam convallis nec lacus in euismod. Vestibulum id eros vitae tellus sodales ultricies eget eu ipsum.',
+    isLoading: false,
   },
   parameters: {
     viewport: {
@@ -23,7 +24,12 @@ export default {
 
 const Template: StoryFn<typeof PostPreview> = (args) => <PostPreview {...args} />;
 
-export const Overview = Template.bind({});
+export const PostPreviewWithData = Template.bind({});
+
+export const PostPreviewIsLoading = Template.bind({});
+PostPreviewIsLoading.args = {
+  isLoading: true,
+};
 
 export const PostPreviewHasMask = Template.bind({});
 PostPreviewHasMask.args = {

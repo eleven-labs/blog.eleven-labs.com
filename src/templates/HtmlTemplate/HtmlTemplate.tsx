@@ -1,54 +1,63 @@
-import { StaticPayload } from 'hoofd/dist/dispatcher';
-import React from 'react';
+import * as React from 'react';
 
-import { googleSiteVerificationKey, themeColor } from '@/config/website';
 import { getPathFile } from '@/helpers/assetHelper';
 
 export interface HtmlTemplateProps {
-  staticPayload: StaticPayload;
+  lang: string;
+  title: string;
   content: string;
-  links?: StaticPayload['links'];
-  scripts?: StaticPayload['scripts'];
+  metas?: Array<React.MetaHTMLAttributes<HTMLMetaElement>>;
+  links?: Array<React.LinkHTMLAttributes<HTMLLinkElement>>;
+  styles?: Array<React.StyleHTMLAttributes<HTMLStyleElement> & { text: string }>;
+  scripts?: Array<React.ScriptHTMLAttributes<HTMLScriptElement> & { critical?: boolean; text?: string }>;
 }
 
-export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ staticPayload, content, links, scripts }) => (
-  <html lang={staticPayload.lang}>
+const renderScripts = (scripts: HtmlTemplateProps['scripts']): JSX.Element[] | undefined =>
+  scripts?.map<JSX.Element>((script, index) => (
+    <script
+      key={index}
+      {...script}
+      dangerouslySetInnerHTML={
+        script.text
+          ? {
+              __html: script.text,
+            }
+          : undefined
+      }
+    />
+  ));
+
+export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ lang, title, content, metas, links, styles, scripts }) => (
+  <html lang={lang}>
     <head>
       <meta charSet="UTF-8" />
       <meta name="robots" content="index, follow, noarchive" />
-      <meta name="google-site-verification" content={googleSiteVerificationKey} />
-
-      {/* SEO */}
-      {staticPayload?.metas?.map((meta, index) => (
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      {metas?.map((meta, index) => (
         <meta key={index} {...meta} />
       ))}
-      {[...(scripts || []), ...(staticPayload?.scripts || [])]
-        .filter((script) => script.type === 'application/ld+json' && script.text)
-        .map((script, index) => (
-          <script key={index} type={script.type} dangerouslySetInnerHTML={{ __html: script.text as string }} />
-        ))}
-
-      {/* Allow installing the app to the homescreen */}
-      <link rel="manifest" href={getPathFile('/manifest.json')} />
-      <meta name="mobile-web-app-capable" content="yes" />
-
-      {/* iOS home screen icons */}
-      <meta name="apple-mobile-web-app-title" content="Blog Eleven Labs" />
-      {[
-        { sizes: '120x120', path: '/imgs/icons/apple-icon-120x120.png' },
-        { sizes: '120x120', path: '/imgs/icons/apple-icon-152x152.png' },
-        { sizes: '120x120', path: '/imgs/icons/apple-icon-180x180.png' },
-      ].map((appleTouchIcon, index) => (
-        <link key={index} rel="apple-touch-icon" sizes={appleTouchIcon.sizes} href={getPathFile(appleTouchIcon.path)} />
-      ))}
-      <meta name="theme-color" content={themeColor} />
       <link rel="shortcut icon" type="image/x-icon" href={getPathFile('/favicon.ico')} />
-
-      {[...(links || []), ...(staticPayload?.links || [])].map((link, index) => (
+      <link rel="manifest" href={getPathFile('/web-app-manifest.json')} />
+      {links?.map((link, index) => (
         <link key={index} {...link} />
       ))}
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>{staticPayload.title}</title>
+      {styles?.map(({ text, ...props }, index) => (
+        <style
+          key={index}
+          {...props}
+          dangerouslySetInnerHTML={
+            text
+              ? {
+                  __html: text,
+                }
+              : undefined
+          }
+        />
+      ))}
+      {renderScripts(scripts?.filter((script) => script.critical))}
+      <title>{title}</title>
     </head>
     <body>
       <div
@@ -57,16 +66,7 @@ export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ staticPayload, conte
           __html: content,
         }}
       />
-      {[...(scripts || []), ...(staticPayload?.scripts || [])]
-        .filter((script) => script.type !== 'application/ld+json' && script.text)
-        .map((script, index) => (
-          <script key={index} type={script.type} dangerouslySetInnerHTML={{ __html: script.text as string }} />
-        ))}
-      {[...(scripts || []), ...(staticPayload?.scripts || [])]
-        .filter((script) => script.type === 'module')
-        .map((script, index) => (
-          <script key={index} defer {...script} />
-        ))}
+      {renderScripts(scripts?.filter((script) => !script.critical))}
     </body>
   </html>
 );

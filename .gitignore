@@ -24,7 +24,8 @@ dist-ssr
 *.sw?
 
 # Custom
-public/data
+reports/*
+storybook-static
 public/imgs/posts
 public/imgs/authors
 public/feed.xml
