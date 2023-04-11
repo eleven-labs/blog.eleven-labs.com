@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -9,5 +10,5 @@
     "resolveJsonModule": true,
     "downlevelIteration": true
   },
-  "include": ["vite.config.ts", "typings.d.ts"]
+  "include": ["vite.config.ts",  "plugins"]
 }

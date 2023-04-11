@@ -1,24 +1,18 @@
-import { AsProps, Link } from '@eleven-labs/design-system';
+import { Box } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { Container, NotFoundBlock } from '@/components';
 
 export type NotFoundPageProps = {
-  backLink: AsProps<'a'> & { label: React.ReactNode };
+  backLink: React.ReactNode;
   title: React.ReactNode;
   description: React.ReactNode;
 };
 
-export const NotFoundPage: React.FC<NotFoundPageProps> = ({
-  backLink: { label, ...backLinkProps },
-  title,
-  description,
-}) => (
+export const NotFoundPage: React.FC<NotFoundPageProps> = ({ backLink, title, description }) => (
   <>
-    <Container as="main">
-      <Link {...backLinkProps} icon="arrow-back" size="m">
-        {label}
-      </Link>
+    <Container>
+      <Box partial-hydrate="back-link-container">{backLink}</Box>
       <NotFoundBlock title={title} description={description} />
     </Container>
   </>

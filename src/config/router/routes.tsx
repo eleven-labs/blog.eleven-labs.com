@@ -1,5 +1,6 @@
+import { Box } from '@eleven-labs/design-system';
 import React from 'react';
-import { Params, RouteObject } from 'react-router';
+import { RouteObject } from 'react-router';
 import { Outlet } from 'react-router-dom';
 
 import { AUTHORIZED_LANGUAGES, PATHS } from '@/constants';
@@ -9,7 +10,7 @@ import { NotFoundPageContainer } from '@/containers/NotFoundPageContainer';
 import { PostListPageContainer } from '@/containers/PostListPageContainer';
 import { PostPageContainer } from '@/containers/PostPageContainer';
 import { SearchPageContainer } from '@/containers/SearchPageContainer';
-import { getAuthorDataPage, getPostDataPage, getPostListDataPage } from '@/helpers/apiHelper';
+import { getAuthorDataPage, getPostDataPage, getPostListDataPage } from '@/helpers/loaderDataHelper';
 
 export const routes: RouteObject[] = [
   {
@@ -28,13 +29,7 @@ export const routes: RouteObject[] = [
         index: true,
         path: PATHS.ROOT,
         element: <PostListPageContainer />,
-        loader: async ({ request }) =>
-          getPostListDataPage({
-            request,
-            params: {
-              lang: 'fr',
-            } as Params,
-          }),
+        loader: () => getPostListDataPage({ lang: 'fr' }),
       },
       {
         path: '/:lang',
@@ -48,47 +43,46 @@ export const routes: RouteObject[] = [
           {
             path: PATHS.HOME,
             element: <PostListPageContainer />,
-            loader: async ({ request, params }) =>
+            loader: ({ params }) =>
               getPostListDataPage({
-                request,
-                params,
+                lang: params.lang as string,
+                categoryName: params.categoryName as string,
               }),
           },
           {
             path: PATHS.POST,
             element: <PostPageContainer />,
-            loader: async ({ request, params }) =>
+            loader: ({ params }) =>
               getPostDataPage({
-                request,
-                params,
+                lang: params.lang as string,
+                slug: params.slug as string,
               }),
           },
           {
             path: PATHS.AUTHOR,
             element: <AuthorPageContainer />,
-            loader: async ({ request, params }) =>
+            loader: ({ params }) =>
               getAuthorDataPage({
-                request,
-                params,
+                lang: params.lang as string,
+                authorUsername: params.authorUsername as string,
               }),
           },
           {
             path: PATHS.CATEGORY,
             element: <PostListPageContainer />,
-            loader: async ({ request, params }) =>
+            loader: async ({ params }) =>
               getPostListDataPage({
-                request,
-                params,
+                lang: params.lang as string,
+                categoryName: params.categoryName as string,
               }),
           },
           {
             path: PATHS.SEARCH,
-            element: <SearchPageContainer />,
-            loader: async ({ request, params }) =>
-              getPostListDataPage({
-                request,
-                params,
-              }),
+            element: (
+              <Box partial-hydrate="search-page-container">
+                <SearchPageContainer />
+              </Box>
+            ),
           },
         ],
       },

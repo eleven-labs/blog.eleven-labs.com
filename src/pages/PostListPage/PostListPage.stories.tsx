@@ -2,10 +2,10 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
+import { PostPreviewList, PostPreviewListProps } from '@/components';
 import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
 import * as PostPreviewListStories from '@/components/PostPreviewList/PostPreviewList.stories';
-
-import { PostListPage } from './PostListPage';
+import { PostListPage } from '@/pages';
 
 export default {
   title: 'Pages/PostList',
@@ -27,10 +27,10 @@ export default {
       ],
     },
     title: 'Tous nos articles',
-    postPreviewList: {
+    postPreviewList: React.createElement<PostPreviewListProps>(PostPreviewList, {
       ...PostPreviewListStories.default.args,
       ...PostPreviewListStories.PostPreviewListWithPagination.args,
-    },
+    } as PostPreviewListProps),
     newsletterBlock: NewsletterBlockStories.args,
   },
   parameters: {

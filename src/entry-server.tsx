@@ -14,7 +14,7 @@ import { HtmlTemplate, HtmlTemplateProps } from '@/templates/HtmlTemplate';
 export type RenderOptions = {
   request: Request;
   i18n: i18n;
-} & Pick<HtmlTemplateProps, 'links' | 'scripts'>;
+} & Pick<HtmlTemplateProps, 'links' | 'styles' | 'scripts'>;
 
 export const render = async (options: RenderOptions): Promise<string> => {
   const dispatcher = createDispatcher();
@@ -30,16 +30,37 @@ export const render = async (options: RenderOptions): Promise<string> => {
     <React.StrictMode>
       <HoofdProvider value={dispatcher}>
         <RootContainer i18n={options.i18n}>
-          <StaticRouterProvider router={router} context={context} nonce="the-nonce" />
+          <StaticRouterProvider router={router} context={context} nonce="the-nonce" hydrate={false} />
         </RootContainer>
       </HoofdProvider>
     </React.StrictMode>
   );
 
   const staticPayload = dispatcher.toStatic();
-  return ReactDOMServer.renderToString(
+  const html = ReactDOMServer.renderToString(
     <React.StrictMode>
-      <HtmlTemplate staticPayload={staticPayload} content={content} scripts={options.scripts} links={options.links} />
+      <HtmlTemplate
+        lang={staticPayload.lang ?? options.i18n.language}
+        title={staticPayload.title ?? ''}
+        content={content}
+        metas={staticPayload.metas?.map(({ charset: charSet, ...meta }) => ({ charSet, ...meta }))}
+        styles={options.styles}
+        scripts={[
+          ...(options.scripts ?? []),
+          ...(staticPayload.scripts?.map(({ crossorigin: crossOrigin, ...script }) => ({ crossOrigin, ...script })) ??
+            []),
+        ]}
+        links={[
+          ...(options.links ?? []),
+          ...(staticPayload.links?.map(({ crossorigin: crossOrigin, hreflang: hrefLang, ...link }) => ({
+            crossOrigin,
+            hrefLang,
+            ...link,
+          })) ?? []),
+        ]}
+      />
     </React.StrictMode>
   );
+
+  return `<!DOCTYPE html>${html}`;
 };
