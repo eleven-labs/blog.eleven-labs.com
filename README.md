@@ -92,13 +92,13 @@ Some description about me...
 
 **3 - Add your avatar**
 
-Add your avatar to the `_assets/authors/username.jpg` folder.
+Add your avatar to the `_assets/authors/mypseudo.jpg` folder.
 
 **4 - Add your pull request**
 
 Create your branch and add your pull request with the label `publication`. 
 ```bash
-git checkout -b feat/add-author-username
+git checkout -b feat/add-author-mypseudo
 ```
 
 ----------
