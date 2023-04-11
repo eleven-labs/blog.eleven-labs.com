@@ -1,15 +1,14 @@
-import { AsProps, Link } from '@eleven-labs/design-system';
+import { Box } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { Container, Divider, NewsletterBlock, NewsletterBlockProps } from '@/components';
-import { MarkdownToHtml } from '@/components/MarkdownToHtml';
 
 import { PostFooter, PostFooterProps } from './PostFooter';
 import { PostHeader, PostHeaderProps } from './PostHeader';
 import { RelatedPostList, RelatedPostListProps } from './RelatedPostList';
 
 export interface PostPageProps {
-  backLink: AsProps<'a'> & { label: React.ReactNode };
+  backLink: React.ReactNode;
   header: PostHeaderProps;
   content: string;
   footer: PostFooterProps;
@@ -18,20 +17,18 @@ export interface PostPageProps {
 }
 
 export const PostPage: React.FC<PostPageProps> = ({
-  backLink: { label, ...backLinkProps },
+  backLink,
   header,
   content,
   footer,
   relatedPostList,
   newsletterBlock,
 }) => (
-  <Container as="main">
-    <Link {...backLinkProps} icon="arrow-back" size="m">
-      {label}
-    </Link>
+  <Container>
+    {backLink}
     <PostHeader {...header} />
     <Divider mt="xs" bg="light-grey" />
-    <MarkdownToHtml as="section" content={content} />
+    <Box as="section" textSize="s" dangerouslySetInnerHTML={{ __html: content }} />
     <Divider mt="xs" bg="light-grey" />
     <PostFooter {...footer} />
     <NewsletterBlock my={{ xs: 'l' }} {...newsletterBlock} />

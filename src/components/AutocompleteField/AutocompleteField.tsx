@@ -15,6 +15,7 @@ export type AutocompleteFieldOptions = {
   placeholder: string;
   searchLink: Exclude<AutocompleteResultOptions['searchLink'], undefined>;
   defaultValue?: string;
+  onEnter?: (value: string) => void;
 };
 
 export type AutocompleteFieldProps = BoxProps &
@@ -32,10 +33,17 @@ export const AutocompleteField = forwardRef<AutocompleteFieldProps, 'div'>(
       searchNotFound,
       onInputValueChange,
       onSelectedItemChange,
+      onEnter,
       ...props
     },
     ref
   ) => {
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+      if (onEnter && event.key === 'Enter') {
+        onEnter(event.currentTarget.value);
+      }
+    };
+
     const { getInputProps, getMenuProps, getItemProps, selectItem, toggleMenu, isOpen, inputValue, highlightedIndex } =
       useCombobox<AutocompleteItem>({
         defaultInputValue: defaultValue,
@@ -57,7 +65,7 @@ export const AutocompleteField = forwardRef<AutocompleteFieldProps, 'div'>(
     return (
       <Box className={classNames('autocomplete-field', props.className)} ref={ref}>
         <SearchField
-          input={getInputProps({ placeholder })}
+          input={getInputProps({ placeholder, onKeyDown: handleKeyDown })}
           buttonSearch={searchLinkProps as AsProps<'button'>}
           buttonClose={{ onClick: onClose }}
           className="autocomplete-field__input"

@@ -9,7 +9,7 @@ import { NotFoundPageContainer } from '@/containers/NotFoundPageContainer';
 import { PostListPageContainer } from '@/containers/PostListPageContainer';
 import { PostPageContainer } from '@/containers/PostPageContainer';
 import { SearchPageContainer } from '@/containers/SearchPageContainer';
-import { getAuthorDataPage, getPostDataPage, getPostListDataPage } from '@/helpers/apiHelper';
+import { getDataFromAuthorPage, getDataFromPostListPage, getDataFromPostPage } from '@/helpers/loaderDataHelper';
 
 export const routes: RouteObject[] = [
   {
@@ -29,7 +29,7 @@ export const routes: RouteObject[] = [
         path: PATHS.ROOT,
         element: <PostListPageContainer />,
         loader: async ({ request }) =>
-          getPostListDataPage({
+          getDataFromPostListPage({
             request,
             params: {
               lang: 'fr',
@@ -37,7 +37,7 @@ export const routes: RouteObject[] = [
           }),
       },
       {
-        path: '/:lang',
+        path: '/:lang/',
         loader: ({ params }): Record<string, unknown> => {
           if (params.lang && !AUTHORIZED_LANGUAGES.includes(params.lang as (typeof AUTHORIZED_LANGUAGES)[number])) {
             throw new Error('Lang not Found');
@@ -48,47 +48,26 @@ export const routes: RouteObject[] = [
           {
             path: PATHS.HOME,
             element: <PostListPageContainer />,
-            loader: async ({ request, params }) =>
-              getPostListDataPage({
-                request,
-                params,
-              }),
+            loader: getDataFromPostListPage,
           },
           {
             path: PATHS.POST,
             element: <PostPageContainer />,
-            loader: async ({ request, params }) =>
-              getPostDataPage({
-                request,
-                params,
-              }),
+            loader: getDataFromPostPage,
           },
           {
             path: PATHS.AUTHOR,
             element: <AuthorPageContainer />,
-            loader: async ({ request, params }) =>
-              getAuthorDataPage({
-                request,
-                params,
-              }),
+            loader: getDataFromAuthorPage,
           },
           {
             path: PATHS.CATEGORY,
             element: <PostListPageContainer />,
-            loader: async ({ request, params }) =>
-              getPostListDataPage({
-                request,
-                params,
-              }),
+            loader: getDataFromPostListPage,
           },
           {
             path: PATHS.SEARCH,
             element: <SearchPageContainer />,
-            loader: async ({ request, params }) =>
-              getPostListDataPage({
-                request,
-                params,
-              }),
           },
         ],
       },

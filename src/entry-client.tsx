@@ -1,4 +1,4 @@
-import '@eleven-labs/design-system/style.css';
+import './styles';
 
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -24,4 +24,10 @@ if (container) {
       <RouterProvider router={router} />
     </RootContainer>
   );
+}
+
+if (import.meta.hot) {
+  import.meta.hot.on('markdown-update', () => {
+    window.location.reload();
+  });
 }

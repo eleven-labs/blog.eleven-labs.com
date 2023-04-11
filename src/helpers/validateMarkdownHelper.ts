@@ -6,11 +6,11 @@ import { fromZodError } from 'zod-validation-error';
 
 import { AUTHORS_DIR, POSTS_DIR } from '@/app-paths';
 import { AUTHORIZED_LANGUAGES, CATEGORIES } from '@/constants';
-import { AuthorType, PostType } from '@/types';
+import { AuthorData, PostData } from '@/types';
 
 export const validateAuthor = (options: {
   markdownFilePath: string;
-}): Omit<AuthorType, 'layout' | 'permalink'> & { content: string } => {
+}): Omit<AuthorData, 'layout' | 'permalink'> & { content: string } => {
   const AuhorValidationSchema = z.object({
     login: z.string(),
     title: z.string(),
@@ -32,7 +32,7 @@ export const validateAuthor = (options: {
 export const validatePost = (options: {
   authors: [string, ...string[]];
   markdownFilePath: string;
-}): Omit<PostType, 'layout' | 'permalink' | 'date'> & { date: Date; content: string } => {
+}): Omit<PostData, 'layout' | 'permalink' | 'date'> & { date: Date; content: string } => {
   const PostValidationSchema = z.object({
     lang: z.enum(AUTHORIZED_LANGUAGES),
     date: z.coerce.date(),

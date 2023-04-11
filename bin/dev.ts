@@ -8,6 +8,7 @@ const dev = async (): Promise<void> => {
       host: '0.0.0.0',
     },
   });
+
   await vite.ssrLoadModule('/src/server.ts');
 };
 

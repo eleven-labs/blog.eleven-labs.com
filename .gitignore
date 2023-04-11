@@ -24,6 +24,8 @@ dist-ssr
 *.sw?
 
 # Custom
+reports
+storybook-static
 public/data
 public/imgs/posts
 public/imgs/authors
