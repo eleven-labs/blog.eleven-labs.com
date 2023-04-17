@@ -3,10 +3,10 @@ import i18next from 'i18next';
 import i18nextHttpMiddleware from 'i18next-http-middleware';
 
 import { i18nConfig } from '@/config/i18n';
+import { BASE_URL } from '@/constants';
 import { createRequestByExpressRequest } from '@/helpers/requestHelper';
 
 const isProd: boolean = process.env.NODE_ENV === 'production';
-const baseUrl: string = import.meta.env.BASE_URL;
 
 const createServer = async (): Promise<void> => {
   i18next.use(i18nextHttpMiddleware.LanguageDetector).init(i18nConfig);
@@ -17,17 +17,17 @@ const createServer = async (): Promise<void> => {
   if (isProd) {
     const { dirname, resolve } = await import('node:path');
     const { fileURLToPath } = await import('node:url');
-    const { getLinksAndScripts } = await import('./helpers/ssrHelper');
+    const { getHtmlTemplatePropsByManifest } = await import('./helpers/ssrHelper');
     const { default: serveStatic } = await import('serve-static');
 
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = dirname(__filename);
-    const { links, scripts } = getLinksAndScripts({
-      baseUrl,
+    const { links, scripts } = getHtmlTemplatePropsByManifest({
+      baseUrl: BASE_URL,
       dirname: __dirname,
     });
 
-    app.use(baseUrl, serveStatic(resolve(__dirname, 'public'), { index: false }));
+    app.use(BASE_URL, serveStatic(resolve(__dirname, 'public'), { index: false }));
 
     app.use('*', async (req, res, next) => {
       try {
@@ -49,7 +49,7 @@ const createServer = async (): Promise<void> => {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'custom',
-      base: baseUrl,
+      base: BASE_URL,
     });
 
     app.use(vite.middlewares);

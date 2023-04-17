@@ -64,7 +64,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Validate markdown authors and posts
-        run: yarn validate-and-format-markdown
+        run: yarn validate-markdown
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -80,6 +80,11 @@ jobs:
 
       - name: Run Compile TypeScript
         run: yarn tsc
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run Test
+        run: yarn test
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

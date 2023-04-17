@@ -1,7 +1,7 @@
 import fetch from 'cross-fetch';
 import { Params } from 'react-router';
 
-import { BASE_URL } from '@/constants';
+import { BASE_URL, IS_PRERENDER, IS_SSR } from '@/constants';
 import { encodeBase64 } from '@/helpers/base64Helper';
 import type { getData } from '@/helpers/dataHelper';
 import { intersection } from '@/helpers/objectHelper';
@@ -18,7 +18,7 @@ const fetchWithCache = async <TData>(options: { request: Request; path: string }
   }
 
   let data: TData;
-  if (import.meta.env.SSR && import.meta.env.MODE === 'prerender') {
+  if (IS_SSR && IS_PRERENDER) {
     const { readFileSync } = await import('node:fs');
     const { resolve } = await import('node:path');
     const rootDir = resolve(process.cwd(), 'public', 'data');
