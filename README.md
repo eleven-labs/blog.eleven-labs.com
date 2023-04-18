@@ -70,7 +70,7 @@ Create your author page
 
 In the `_authors` folder add a markdown file with your username.
 ```bash
-cd _authors && touch john.md
+cd _authors && touch mypseudo.md
 ```
 
 **2 - Add content to the file**
@@ -79,21 +79,26 @@ Here is the template of the file.
 
 ```md
 ---
-username: john
-name: John Doe
+layout: author
+login: mypseudo
+title: Name Lastname
+github: https://github.com/mypseudogithub/
+linkedin: https://www.linkedin.com/in/mylinkedin/
+permalink: /authors/mypseudo/
 ---
-Your description
+
+Some description about me...
 ```
 
 **3 - Add your avatar**
 
-Add your avatar to the `_assets/authors/username.jpg` folder.
+Add your avatar to the `_assets/authors/mypseudo.jpg` folder.
 
 **4 - Add your pull request**
 
 Create your branch and add your pull request with the label `publication`. 
 ```bash
-git checkout -b feat/add-author-username
+git checkout -b feat/add-author-mypseudo
 ```
 
 ----------
