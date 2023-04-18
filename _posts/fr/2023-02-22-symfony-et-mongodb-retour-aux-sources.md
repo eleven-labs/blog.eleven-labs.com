@@ -4,9 +4,6 @@ lang: fr
 date: '2023-02-22'
 categories:
   - php
-  - symfony
-  - mongodb
-  - doctrine
 authors:
   - marianne
 cover: /assets/2023-02-22-symfony-et-mongodb-retour-aux-sources/logo.png

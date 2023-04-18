@@ -39,7 +39,7 @@ export const routes: RouteObject[] = [
       {
         path: '/:lang',
         loader: ({ params }): Record<string, unknown> => {
-          if (!AUTHORIZED_LANGUAGES.includes(params.lang as string)) {
+          if (params.lang && !AUTHORIZED_LANGUAGES.includes(params.lang as (typeof AUTHORIZED_LANGUAGES)[number])) {
             throw new Error('Lang not Found');
           }
           return {};

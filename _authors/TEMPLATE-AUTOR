@@ -1,8 +1,8 @@
 ---
-layout: author
 login: votre_login
 title: Prénom Nom
+github: Compte github
 twitter: Compte twitter
-permalink: /authors/votre_login/
+linkedin: Compte LinkedIn
 ---
 Votre Bio

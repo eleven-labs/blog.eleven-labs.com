@@ -1,17 +1,13 @@
 ---
-layout: post
+lang: en | fr
+date: 2022-01-01
+slug: TITRE AVEC DES TIRETS ET SANS ESPACES
 title: TITRE
 excerpt: DESCRIPTION (VISIBLE SUR LA HOME)
 authors:
 - LOGIN
-permalink: /LANGUE (fr/en)/TITRE SANS ESPACES/
 categories:
-    - CATEGORIE 1
-    - CATEGORIE 2
-    - ...
-tags:
-    - TAG 1
-    - TAG 2
+    - javascript | php | agile | architecture
     - ...
 cover: URL DE L'IMAGE (/assets/....)
 ---
