@@ -1,0 +1,2 @@
+import{j as a}from"./jsx-runtime-670450c2.js";import{N as s}from"./index.es-b01cda33.js";import{c as t}from"./index-2e4736b8.js";const o=e=>a(s,{...e,as:"blockquote",className:t("blockquote",e.className)});try{o.displayName="Blockquote",o.__docgenInfo={description:"",displayName:"Blockquote",props:{as:{defaultValue:null,description:"",name:"as",required:!1,type:{name:"As<any>"}}}}}catch{}export{o as B};
+//# sourceMappingURL=Blockquote-342637d7.js.map

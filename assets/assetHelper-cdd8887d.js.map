@@ -1,0 +1,1 @@
+{"version":3,"file":"assetHelper-cdd8887d.js","sources":["../../src/helpers/assetHelper.ts"],"sourcesContent":["export const getPathFile = (path: string): string => `${import.meta.env.BASE_URL}${path.slice(1)}`;\n"],"names":["getPathFile","path"],"mappings":"AAAa,MAAAA,EAAeC,GAAyB,yBAA8BA,EAAK,MAAM,CAAC"}
