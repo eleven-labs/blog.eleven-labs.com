@@ -17,7 +17,6 @@ permalink: /fr/comment-choisir-parmi-scrum-kanban-et-safe/
 L'agilité est devenue un choix populaire pour les entreprises qui cherchent à améliorer la flexibilité et l'efficacité de leur processus de développement de logiciels. Cependant, il existe une grande variété de méthodologies agiles différentes, et choisir la bonne pour votre projet et votre organisation peut être difficile. Dans cet article, nous allons examiner les différentes méthodologies agiles disponibles et comment choisir la bonne pour votre projet et votre entreprise.
 
 ## Scrum
-
 ### Description
 
 L'approche SCRUM est une méthode agile de gestion de projet. Son objectif principal est d'améliorer la productivité de son équipe tout en permettant l'optimisation des produits grâce à des retours réguliers du marché. Cette méthodologie est l'une des plus populaires et des plus utilisées dans les projets de développement de logiciels. Scrum est basé sur des sprints, de courtes périodes de travail d'une durée de deux semaines à un mois, au cours desquelles une équipe de développement se concentre sur un objectif précis. Scrum utilise des réunions quotidiennes pour suivre l'avancement du projet et des réunions de sprint pour planifier et évaluer chaque sprint.
@@ -71,7 +70,6 @@ Mission : Société Générale, Mettre en place un paiement instantané pour les
 
 
 ## Kanban
-
 ### Description
 
 Kanban est une méthode de gestion de projet visuelle axée sur la gestion du flux de travail par une visualisation claire et accessible à tous. Les membres de l'équipe travaillent sur des tâches individuelles qui sont affichées sur un tableau de Kanban, qui est utilisé pour suivre le flux de travail et identifier les problèmes de performance. Le Kanban limite également la quantité de travail en cours, permettant ainsi à l'équipe de se concentrer sur les tâches les plus prioritaires. 
@@ -133,7 +131,6 @@ Nous avons continué à améliorer notre tableau Kanban chaque jour, en modifian
 
 
 ## Safe
-
 ### Description
 
 SAFe (Scaled Agile Framework) est une expansion du framework Scrum pour la gestion de projet Agile à grande échelle. Elle est principalement utilisée pour la gestion de projets d'entreprise complexes qui s’intègrent les uns dans les autres. SAFe utilise les principes et les pratiques Agile pour coordonner les efforts d'équipe à travers des projets complexes et les intégrer avec des projets parallèles. 
