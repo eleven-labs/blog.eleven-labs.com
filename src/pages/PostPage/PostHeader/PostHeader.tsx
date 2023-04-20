@@ -35,10 +35,14 @@ export const PostHeader: React.FC<PostHeaderProps> = ({ title, date, readingTime
         <Icon name="person" size="24px" />
         {authors.map((author, index) => (
           <React.Fragment key={index}>
-            <Link ml={index === 0 ? { xs: 'xxs-3' } : undefined} {...author.link}>
+            <Link {...author.link} ml="xxs-3">
               {author.name}
             </Link>
-            {authors.length - 1 !== index && <Box as="span"> & </Box>}
+            {authors.length - 1 !== index && (
+              <Box as="span" ml="xxs-3">
+                &
+              </Box>
+            )}
           </React.Fragment>
         ))}
       </Flex>
