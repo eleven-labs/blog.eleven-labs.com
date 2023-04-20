@@ -80,8 +80,8 @@ Kanban est une méthode de gestion de projet visuelle axée sur la gestion du fl
 Le tableau Kanban est complètement personnalisable en fonction de vos besoins. Par exemple, vous pouvez utiliser le tableau le plus commun composé de 3 colonnes (image de gauche) : to do (tickets priorisés par ordre d’importance), work in progress (tickets en cours de développement) et done (tickets terminés ou livrés). Vous pouvez aussi personnaliser votre Kanban, comme l’un de nos projets Studio, en rajoutant une colonne pour les tickets en cours de définition fonctionnelle, ou ceux qui sont à tester par l’équipe technique ou fonctionnelle (image de droite).
 
 <figure style="text-align: center; margin: 2rem 0;">
- <img src="{{ site.baseurl }}/assets/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/kanban1.jpg" width="300px" alt="" style="display: block; margin: auto;" />
-    <img src="{{ site.baseurl }}/assets/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/kanban_jira.png" width="500px" alt="" style="display: block; margin: auto;" /> 
+ <img src="{{ site.baseurl }}/assets/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/kanban1.jpg" width="300px" alt="" style="margin: auto;max-width:40%" />
+    <img src="{{ site.baseurl }}/assets/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/kanban_jira.png" width="500px" alt="" style="margin: auto;max-width:60%" /> 
 </figure>
 
 ### Avantages
