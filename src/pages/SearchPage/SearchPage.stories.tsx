@@ -2,30 +2,25 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
+import { BackLink, BackLinkProps, PostPreviewList, PostPreviewListProps } from '@/components';
+import BackLinkStories from '@/components/BackLink/BackLink.stories';
 import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
 import * as PostPreviewListStories from '@/components/PostPreviewList/PostPreviewList.stories';
-
-import { SearchPage } from './SearchPage';
+import { SearchPage } from '@/pages';
 
 export default {
   title: 'Pages/Search',
   component: SearchPage,
   args: {
-    backLink: {
-      label: 'Retour',
-      href: '/',
-    },
+    backLink: React.createElement<BackLinkProps>(BackLink, BackLinkStories.args as BackLinkProps),
     title: '26 résultats',
     description: 'triés par pertinence',
-    postPreviewList: {
+    postPreviewList: React.createElement<PostPreviewListProps>(PostPreviewList, {
       ...PostPreviewListStories.default.args,
       ...PostPreviewListStories.PostPreviewListWithPagination.args,
-    },
+    } as PostPreviewListProps),
     newsletterBlock: NewsletterBlockStories.args,
-    searchNotFound: {
-      title: 'Aucun résultat en vue...',
-      description: 'Vérifiez les termes de votre recherche avant de réessayer',
-    },
+    isLoading: false,
   },
   parameters: {
     layout: 'full',
@@ -38,11 +33,25 @@ export default {
 
 const Template: StoryFn<typeof SearchPage> = (args) => <SearchPage {...args} />;
 
-export const Overview = Template.bind({});
+export const SearchPageWithData = Template.bind({});
+
+export const SearchPageIsLoading = Template.bind({});
+SearchPageIsLoading.args = {
+  isLoading: true,
+  postPreviewList: React.createElement<PostPreviewListProps>(PostPreviewList, {
+    posts: Array.from({ length: 6 }),
+    isLoading: true,
+  }),
+};
 
 export const SearchPageWithNoResult = Template.bind({});
 SearchPageWithNoResult.args = {
-  postPreviewList: {
-    posts: [],
+  isLoading: false,
+  searchNotFound: {
+    title: 'Aucun résultat en vue...',
+    description: 'Vérifiez les termes de votre recherche avant de réessayer',
   },
+  postPreviewList: React.createElement<PostPreviewListProps>(PostPreviewList, {
+    posts: [],
+  }),
 };

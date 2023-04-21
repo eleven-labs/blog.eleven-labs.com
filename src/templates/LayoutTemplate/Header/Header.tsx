@@ -34,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({
         {isNotTablet || autocompleteIsDisplayed ? (
           <AutocompleteField {...autocomplete} />
         ) : (
-          <Box as="button" className="header__icon-button" onClick={onToggleSearch}>
+          <Box as="button" className="header__icon-button" onClick={onToggleSearch} aria-label="Open search">
             <Icon name="search" color="white" size="28px" />
           </Box>
         )}

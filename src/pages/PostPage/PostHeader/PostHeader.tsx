@@ -6,6 +6,7 @@ export interface PostHeaderProps {
   date: string;
   readingTime: string;
   authors: {
+    username: string;
     name: string;
     link: AsProps<'a'>;
   }[];
@@ -34,7 +35,7 @@ export const PostHeader: React.FC<PostHeaderProps> = ({ title, date, readingTime
       <Flex alignItems="center" mt={{ xs: 'xxs-2', md: '0' }} ml={{ md: 'xxs-3' }} color="dark-grey">
         <Icon name="person" size="24px" />
         {authors.map((author, index) => (
-          <React.Fragment key={index}>
+          <React.Fragment key={author.username}>
             <Link {...author.link} ml="xxs-3">
               {author.name}
             </Link>

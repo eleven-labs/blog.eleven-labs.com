@@ -6,21 +6,23 @@ import { generatePath } from 'react-router-dom';
 import { i18nConfig } from '@/config/i18n';
 import { AUTHORIZED_LANGUAGES, CATEGORIES, DEFAULT_LANGUAGE, PATHS } from '@/constants';
 import { render } from '@/entry-server';
-import { getData } from '@/helpers/dataHelper';
+import { getPostsByLangAndAuthors } from '@/helpers/contentHelper';
 import { createRequestByUrl } from '@/helpers/requestHelper';
 import { getHtmlTemplatePropsByManifest } from '@/helpers/ssrHelper';
 
-export const getI18nInstanceByLang = (lang: string): i18n => {
+const { postsByLang, authors } = getPostsByLangAndAuthors();
+
+const getI18nInstanceByLang = (lang: string): i18n => {
   const i18n = i18next.createInstance();
   i18n.init(i18nConfig);
   i18n.changeLanguage(lang);
   return i18n;
 };
 
-export const getUrlsByLang = (options: { baseUrl?: string }): { lang: string; url: string }[] => {
-  const data = getData();
-  const urlsByLang = AUTHORIZED_LANGUAGES.reduce<ReturnType<typeof getUrlsByLang>>(
-    (currentUrls, lang) => [
+const getUrlsByLang = (options: { baseUrl?: string }): { lang: string; url: string }[] => {
+  const urlsByLang = AUTHORIZED_LANGUAGES.reduce<ReturnType<typeof getUrlsByLang>>((currentUrls, lang) => {
+    const posts = postsByLang[lang];
+    return [
       ...currentUrls,
       {
         lang,
@@ -30,24 +32,24 @@ export const getUrlsByLang = (options: { baseUrl?: string }): { lang: string; ur
         lang,
         url: generatePath(PATHS.SEARCH, { lang }),
       },
-      ...CATEGORIES.filter((categoryName) =>
-        data.postsByLang[lang].find((post) => post?.categories?.includes(categoryName))
-      ).map<ReturnType<typeof getUrlsByLang>[0]>((categoryName) => ({
+      ...CATEGORIES.filter((categoryName) => posts.find((post) => post?.categories?.includes(categoryName))).map<
+        ReturnType<typeof getUrlsByLang>[0]
+      >((categoryName) => ({
         lang,
         url: generatePath(PATHS.CATEGORY, {
           lang,
           categoryName,
         }),
       })),
-      ...data.postsByLang[lang].map<ReturnType<typeof getUrlsByLang>[0]>((post) => ({
+      ...posts.map<ReturnType<typeof getUrlsByLang>[0]>((post) => ({
         lang: lang,
         url: generatePath(PATHS.POST, {
           lang: lang,
           slug: post.slug,
         }),
       })),
-      ...data.authors.reduce<ReturnType<typeof getUrlsByLang>>((currentAuthorUrls, author) => {
-        const authorHasPosts = Boolean(data.postsByLang[lang].find((post) => post.authors.includes(author.username)));
+      ...authors.reduce<ReturnType<typeof getUrlsByLang>>((currentAuthorUrls, author) => {
+        const authorHasPosts = Boolean(posts.find((post) => post.authors.includes(author.username)));
         if (authorHasPosts) {
           currentAuthorUrls.push({
             lang,
@@ -59,20 +61,19 @@ export const getUrlsByLang = (options: { baseUrl?: string }): { lang: string; ur
         }
         return currentAuthorUrls;
       }, []),
-    ],
-    []
-  );
+    ];
+  }, []);
 
   return [
-    {
-      lang: DEFAULT_LANGUAGE,
-      url: '/404',
-    },
     {
       lang: DEFAULT_LANGUAGE,
       url: PATHS.ROOT,
     },
     ...urlsByLang,
+    {
+      lang: DEFAULT_LANGUAGE,
+      url: '/404',
+    },
   ].map((param) => ({
     lang: param.lang,
     url: param.url.replace(/^\//, options.baseUrl || '/'),

@@ -7,7 +7,7 @@ export interface PostFooterProps {
   title: React.ReactNode;
   authors: {
     name: string;
-    description: string;
+    content: string;
     link: AsProps<'a'>;
     avatarImageUrl?: string;
   }[];
@@ -26,7 +26,7 @@ export const PostFooter: React.FC<PostFooterProps> = ({ title, authors }) => (
             <Link weight="medium" {...author.link}>
               {author.name}
             </Link>
-            <Text as="div" size="xs" dangerouslySetInnerHTML={{ __html: author.description }} />
+            <Text as="div" size="xs" dangerouslySetInnerHTML={{ __html: author.content }} />
           </Box>
         </Flex>
       ))}

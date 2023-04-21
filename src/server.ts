@@ -1,9 +1,15 @@
+import chokidar from 'chokidar';
 import express from 'express';
+import { statSync } from 'fs';
 import i18next from 'i18next';
 import i18nextHttpMiddleware from 'i18next-http-middleware';
+import { cpSync } from 'node:fs';
+import { resolve } from 'node:path';
 
+import { ASSETS_DIR, AUTHORS_DIR, IMGS_DIR, POSTS_DIR } from '@/app-paths';
 import { i18nConfig } from '@/config/i18n';
 import { BASE_URL } from '@/constants';
+import { writeJsonDataFiles } from '@/helpers/contentHelper';
 import { createRequestByExpressRequest } from '@/helpers/requestHelper';
 
 const isProd: boolean = process.env.NODE_ENV === 'production';
@@ -21,13 +27,13 @@ const createServer = async (): Promise<void> => {
     const { default: serveStatic } = await import('serve-static');
 
     const __filename = fileURLToPath(import.meta.url);
-    const __dirname = dirname(__filename);
+    const __dirname = resolve(dirname(__filename), 'public');
     const { links, scripts } = getHtmlTemplatePropsByManifest({
       baseUrl: BASE_URL,
       dirname: __dirname,
     });
 
-    app.use(BASE_URL, serveStatic(resolve(__dirname, 'public'), { index: false }));
+    app.use(BASE_URL, serveStatic(__dirname, { index: false }));
 
     app.use('*', async (req, res, next) => {
       try {
@@ -50,6 +56,24 @@ const createServer = async (): Promise<void> => {
       server: { middlewareMode: true },
       appType: 'custom',
       base: BASE_URL,
+    });
+
+    const assetsWatcher = chokidar.watch(ASSETS_DIR, { cwd: ASSETS_DIR });
+    assetsWatcher.on('all', (event, filePath) => {
+      cpSync(resolve(ASSETS_DIR, filePath), resolve(IMGS_DIR, filePath), { recursive: true });
+    });
+
+    writeJsonDataFiles();
+
+    const markdownWatcher = chokidar.watch([POSTS_DIR, AUTHORS_DIR]);
+    markdownWatcher.on('change', (filePath) => {
+      if (statSync(filePath).isFile()) {
+        writeJsonDataFiles({ markdownFilePaths: [filePath] });
+      }
+      vite.ws.send({
+        type: 'custom',
+        event: 'markdown-update',
+      });
     });
 
     app.use(vite.middlewares);

@@ -1,42 +1,32 @@
 import './AuthorPage.scss';
 
-import { AsProps, Box, Flex, Link, Text } from '@eleven-labs/design-system';
+import { Box, Flex, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
-import {
-  Container,
-  Divider,
-  NewsletterBlock,
-  NewsletterBlockProps,
-  PostPreviewList,
-  PostPreviewListProps,
-} from '@/components';
-import { MarkdownToHtml } from '@/components/MarkdownToHtml';
+import { Container, Divider, NewsletterBlock, NewsletterBlockProps } from '@/components';
 
 export type AuthorPageProps = {
-  backLink: { label: React.ReactNode } & AsProps<'a'>;
+  backLink: React.ReactNode;
   author: {
     username: string;
     name: string;
     avatarImageUrl?: string;
-    description: string;
+    content: string;
   };
   title: React.ReactNode;
-  postPreviewList: PostPreviewListProps;
+  postPreviewList: React.ReactNode;
   newsletterBlock: NewsletterBlockProps;
 };
 
 export const AuthorPage: React.FC<AuthorPageProps> = ({
-  backLink: { label, ...backLinkProps },
+  backLink,
   author,
   title,
   postPreviewList,
   newsletterBlock,
 }) => (
-  <Container as="main" className="author-page">
-    <Link {...backLinkProps} icon="arrow-back" size="m">
-      {label}
-    </Link>
+  <Container className="author-page">
+    {backLink}
     <Flex
       flexDirection={{ xs: 'column', md: 'row' }}
       justifyContent="center"
@@ -49,14 +39,14 @@ export const AuthorPage: React.FC<AuthorPageProps> = ({
         <Text size="m" fontWeight="medium" color="amaranth">
           {author.name}
         </Text>
-        <MarkdownToHtml content={author.description} />
+        <Box dangerouslySetInnerHTML={{ __html: author.content }} />
       </Box>
     </Flex>
     <Divider mt="m" bg="light-grey" className="author-page__divider" />
     <Text size="m" my="m" fontWeight="medium">
       {title}
     </Text>
-    <PostPreviewList {...postPreviewList} />
+    {postPreviewList}
     <NewsletterBlock my={{ xs: 'xl', md: 'xxl' }} {...newsletterBlock} />
   </Container>
 );

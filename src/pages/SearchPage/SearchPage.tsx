@@ -1,4 +1,4 @@
-import { AsProps, Heading, Link, Text } from '@eleven-labs/design-system';
+import { Heading, Skeleton, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
 import {
@@ -8,42 +8,44 @@ import {
   NewsletterBlockProps,
   NotFoundBlock,
   NotFoundBlockProps,
-  PostPreviewList,
-  PostPreviewListProps,
 } from '@/components';
 
 export type SearchPageProps = {
-  backLink: AsProps<'a'> & { label: React.ReactNode };
+  backLink: React.ReactNode;
   title: React.ReactNode;
   description: React.ReactNode;
-  postPreviewList: PostPreviewListProps;
+  postPreviewList: React.ReactNode;
   newsletterBlock: NewsletterBlockProps;
   searchNotFound?: NotFoundBlockProps;
+  isLoading?: boolean;
 };
 
 export const SearchPage: React.FC<SearchPageProps> = ({
-  backLink: { label, ...backLinkProps },
+  backLink,
   title,
   description,
   postPreviewList,
   newsletterBlock,
   searchNotFound,
+  isLoading = false,
 }) => (
   <>
     <Container as="main" className="search-page">
-      <Link {...backLinkProps} icon="arrow-back" size="m">
-        {label}
-      </Link>
-      {postPreviewList.posts.length === 0 && searchNotFound ? (
+      {backLink}
+      {!isLoading && searchNotFound ? (
         <NotFoundBlock {...searchNotFound} />
       ) : (
         <>
-          <Heading mt="s" size="l">
-            {title}
-          </Heading>
-          <Text size="s">{description}</Text>
+          <Skeleton isLoading={isLoading}>
+            <Heading mt="s" size="l">
+              {title}
+            </Heading>
+          </Skeleton>
+          <Skeleton isLoading={isLoading}>
+            <Text size="s">{description}</Text>
+          </Skeleton>
           <Divider mt="xs" mb="l" size="l" mx="0" bg="yellow" />
-          <PostPreviewList {...postPreviewList} />
+          {postPreviewList}
           <NewsletterBlock my={{ xs: 'xl', md: 'xxl' }} {...newsletterBlock} />
         </>
       )}

@@ -5,3 +5,7 @@ jest.mock('./src/constants', () => ({
   AUTHORIZED_LANGUAGES: ['fr', 'en'],
   CATEGORIES: ['javascript', 'php', 'agile', 'architecture'],
 }));
+
+jest.mock('./src/helpers/getEnvHelper', () => ({
+  getEnv: (): object => ({}),
+}));

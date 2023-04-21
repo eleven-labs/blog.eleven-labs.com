@@ -1,19 +1,23 @@
 import { SearchIndex } from 'algoliasearch';
 
 import { getAlgoliaSearchClient, getAlgoliaSearchIndex } from '@/helpers/algoliaHelper';
-import { getData } from '@/helpers/dataHelper';
+import { getPostsByLangAndAuthors } from '@/helpers/contentHelper';
 
 const savePosts = async (options: {
-  data: ReturnType<typeof getData>;
+  postsByLangAndAuthors: ReturnType<typeof getPostsByLangAndAuthors>;
   algoliaSearchIndex: SearchIndex;
 }): Promise<string[]> => {
-  const objects = options.data.posts.reduce<
+  const { postsByLang, authors } = options.postsByLangAndAuthors;
+  const posts = Object.values(postsByLang).flat();
+
+  const objects = posts.reduce<
     Record<
       string,
       {
         objectID: string;
         lang: string;
         slug: string;
+        readingTime: string;
         title: string;
         date: string;
         excerpt: string;
@@ -24,11 +28,12 @@ const savePosts = async (options: {
     >
   >((currentPosts, post) => {
     const objectID = `${post.slug}-${post.lang}`;
-    const authorsByPost = options.data.authors.filter((author) => post.authors.includes(author.username));
+    const authorsByPost = authors.filter((author) => post.authors.includes(author.username));
     currentPosts[objectID] = {
       objectID,
       lang: post.lang,
       slug: post.slug,
+      readingTime: post.readingTime,
       title: post.title,
       date: post.date,
       excerpt: post.excerpt,
@@ -56,11 +61,11 @@ export const indexationAlglolia = async (options: {
   apiIndexingKey: string;
   index: string;
 }): Promise<void> => {
-  const data = getData();
+  const postsByLangAndAuthors = getPostsByLangAndAuthors();
   const algoliaSearchClient = getAlgoliaSearchClient({ appId: options.appId, apiKey: options.apiIndexingKey });
   const algoliaSearchIndex = getAlgoliaSearchIndex({ algoliaSearchClient, index: options.index });
 
-  const objectIDs = await savePosts({ data, algoliaSearchIndex });
+  const objectIDs = await savePosts({ postsByLangAndAuthors, algoliaSearchIndex });
   console.info(`Number of posts indexed on algolia: ${objectIDs.length}`);
 
   await saveSettings({ algoliaSearchIndex });

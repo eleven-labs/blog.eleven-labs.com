@@ -2,6 +2,8 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
+import { BackLink, BackLinkProps } from '@/components';
+import BackLinkStories from '@/components/BackLink/BackLink.stories';
 import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
 import { PostPage } from '@/pages/PostPage/PostPage';
 
@@ -9,22 +11,21 @@ export default {
   title: 'Pages/Post',
   component: PostPage,
   args: {
-    backLink: {
-      label: 'Retour',
-      href: '/',
-    },
+    backLink: React.createElement<BackLinkProps>(BackLink, BackLinkStories.args as BackLinkProps),
     header: {
       title: 'Refonte du blog',
       date: '08 fév. 2021',
       readingTime: '24mn',
       authors: [
         {
+          username: 'jdoe',
           name: 'J. Doe',
           link: {
             href: '/fr/authors/jdoe',
           },
         },
         {
+          username: 'jdupont',
           name: 'J. Dupont',
           link: {
             href: '/fr/authors/jdupont',
@@ -75,7 +76,7 @@ export default {
         {
           name: 'John Doe',
           avatarImageUrl: 'https://api.dicebear.com/5.x/avataaars/svg?seed=Felix',
-          description: 'Astronaute John Doe @ ElevenLabs_\uD83D\uDE80',
+          content: 'Astronaute John Doe @ ElevenLabs_\uD83D\uDE80',
           link: {
             href: '/fr/authors/jdoe',
           },
@@ -83,7 +84,7 @@ export default {
         {
           name: 'Jeane Dupont',
           avatarImageUrl: 'https://api.dicebear.com/5.x/avataaars/svg?seed=Lola',
-          description: 'Astronaute Jeane Dupont @ ElevenLabs_\uD83D\uDE80',
+          content: 'Astronaute Jeane Dupont @ ElevenLabs_\uD83D\uDE80',
           link: {
             href: '/fr/authors/jdupont',
           },
@@ -98,7 +99,7 @@ export default {
         title: `Titre de l'article ${index}`,
         date: '09 fév. 2021',
         readingTime: '24mn',
-        authors: ['J. Doe'],
+        authors: [{ username: 'jdoe', name: 'J. Doe' }],
         excerpt:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit vel tellus in molestie. Curabitur malesuada sodales consectetur. Aliquam convallis nec lacus in euismod. Vestibulum id eros vitae tellus sodales ultricies eget eu ipsum.',
       })),
