@@ -1,0 +1,2 @@
+import{a as n,o as i}from"./index.es-3d2914ad.js";const a=({label:e,...r})=>n(i,{...r,icon:"arrow-back",size:"m",children:e});try{a.displayName="BackLink",a.__docgenInfo={description:"",displayName:"BackLink",props:{as:{defaultValue:null,description:"",name:"as",required:!1,type:{name:"As<any>"}},label:{defaultValue:null,description:"",name:"label",required:!0,type:{name:"ReactNode"}}}}}catch{}export{a as B};
+//# sourceMappingURL=BackLink-e5f3ec9c.js.map
