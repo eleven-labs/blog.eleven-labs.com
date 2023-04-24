@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 
 import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
+import { getPathFile } from '@/helpers/assetHelper';
 import { type getDataFromAuthorPage } from '@/helpers/contentHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { AuthorPageProps } from '@/pages/AuthorPage';
@@ -20,6 +21,7 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
   return {
     backLink: <BackLinkContainer />,
     author: resultAuthorPage.author,
+    emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
     title: t('pages.author.post_preview_list_title'),
     postPreviewList: <PostPreviewListContainer allPosts={resultAuthorPage.posts} />,
     newsletterBlock,

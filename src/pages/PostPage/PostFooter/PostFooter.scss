@@ -9,10 +9,12 @@
     }
   }
 
-  &__avatar_img {
-    background-color: var(--color-light-grey);
+  &__empty-avatar-img, &__avatar-img {
     height: var(--avatar-img-post-footer);
     width: var(--avatar-img-post-footer);
+  }
+  &__avatar-img {
     border-radius: 100%;
+    background-color: var(--color-light-grey);
   }
 }

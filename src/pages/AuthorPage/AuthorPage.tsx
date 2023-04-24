@@ -13,6 +13,7 @@ export type AuthorPageProps = {
     avatarImageUrl?: string;
     content: string;
   };
+  emptyAvatarImageUrl: string;
   title: React.ReactNode;
   postPreviewList: React.ReactNode;
   newsletterBlock: NewsletterBlockProps;
@@ -21,6 +22,7 @@ export type AuthorPageProps = {
 export const AuthorPage: React.FC<AuthorPageProps> = ({
   backLink,
   author,
+  emptyAvatarImageUrl,
   title,
   postPreviewList,
   newsletterBlock,
@@ -34,7 +36,11 @@ export const AuthorPage: React.FC<AuthorPageProps> = ({
       textAlign={{ xs: 'center', md: 'left' }}
       mt={{ xs: 'm' }}
     >
-      <img src={author.avatarImageUrl} alt={author.name} className="author-page__avatar_img" />
+      <img
+        src={author.avatarImageUrl ?? emptyAvatarImageUrl}
+        alt={author.name}
+        className={author.avatarImageUrl ? 'author-page__avatar-img' : 'author-page__empty-avatar-img'}
+      />
       <Box mt={{ xs: 's' }} ml={{ xs: 'm' }}>
         <Text size="m" fontWeight="medium" color="amaranth">
           {author.name}

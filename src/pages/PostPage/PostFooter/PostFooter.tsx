@@ -11,9 +11,10 @@ export interface PostFooterProps {
     link: AsProps<'a'>;
     avatarImageUrl?: string;
   }[];
+  emptyAvatarImageUrl: string;
 }
 
-export const PostFooter: React.FC<PostFooterProps> = ({ title, authors }) => (
+export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, emptyAvatarImageUrl }) => (
   <Box className="post-footer" color="dark-grey" mt="m">
     <Text mb="xxs" size="xs" fontWeight="bold" textTransform="uppercase">
       {title}
@@ -21,7 +22,11 @@ export const PostFooter: React.FC<PostFooterProps> = ({ title, authors }) => (
     <Flex flexDirection={{ xs: 'column', md: 'row' }} gapY={{ md: 'xxl' }} gap="s">
       {authors.map((author, authorIndex) => (
         <Flex key={authorIndex} mb="s" className="post-footer__author">
-          <img src={author.avatarImageUrl} alt={author.name} className="post-footer__avatar_img" />
+          <img
+            src={author.avatarImageUrl ?? emptyAvatarImageUrl}
+            alt={author.name}
+            className={author.avatarImageUrl ? 'post-footer__avatar-img' : 'post-footer__empty-avatar-img'}
+          />
           <Box ml="xxs">
             <Link weight="medium" {...author.link}>
               {author.name}
