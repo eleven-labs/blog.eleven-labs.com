@@ -52,7 +52,7 @@ const transformAuthor = ({ data, content }: { data: AuthorData; content: string 
     name: data.title,
     github: data?.github,
     twitter: data?.twitter,
-    avatarImageUrl: existsSync(path.resolve(IMGS_DIR, 'authors', `${data}.jpg`))
+    avatarImageUrl: existsSync(path.resolve(IMGS_DIR, 'authors', `${data.login}.jpg`))
       ? getPathFile(`/imgs/authors/${data.login}.jpg`)
       : undefined,
     content,
