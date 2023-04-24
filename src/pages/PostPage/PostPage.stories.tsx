@@ -75,7 +75,6 @@ export default {
       authors: [
         {
           name: 'John Doe',
-          avatarImageUrl: 'https://api.dicebear.com/5.x/avataaars/svg?seed=Felix',
           content: 'Astronaute John Doe @ ElevenLabs_\uD83D\uDE80',
           link: {
             href: '/fr/authors/jdoe',
@@ -83,13 +82,13 @@ export default {
         },
         {
           name: 'Jeane Dupont',
-          avatarImageUrl: 'https://api.dicebear.com/5.x/avataaars/svg?seed=Lola',
           content: 'Astronaute Jeane Dupont @ ElevenLabs_\uD83D\uDE80',
           link: {
             href: '/fr/authors/jdupont',
           },
         },
       ],
+      emptyAvatarImageUrl: '/imgs/astronaut.png',
     },
     newsletterBlock: NewsletterBlockStories.args,
     relatedPostList: {

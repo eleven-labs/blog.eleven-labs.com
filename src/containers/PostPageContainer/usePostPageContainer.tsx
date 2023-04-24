@@ -6,6 +6,7 @@ import { useLoaderData } from 'react-router-dom';
 import { PATHS } from '@/constants';
 import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { LinkContainer } from '@/containers/LinkContainer';
+import { getPathFile } from '@/helpers/assetHelper';
 import { type getDataFromPostPage } from '@/helpers/contentHelper';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
@@ -59,6 +60,7 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
     footer: {
       title: t('pages.post.post_footer_title'),
       authors,
+      emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
     },
     newsletterBlock,
     relatedPostList: {

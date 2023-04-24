@@ -47,16 +47,14 @@ const transformPost = (options: { data: PostData; rawContent: string; content: s
 });
 
 const transformAuthor = ({ data, content }: { data: AuthorData; content: string }): TransformedAuthor => {
-  const avatarImagePath = path.resolve(IMGS_DIR, 'authors', `${data}.jpg`);
-  const avatarImageUrl = existsSync(avatarImagePath)
-    ? getPathFile(`/imgs/authors/${data.login}.jpg`)
-    : getPathFile('/imgs/astronaut.png');
   return {
     username: data.login,
     name: data.title,
     github: data?.github,
     twitter: data?.twitter,
-    avatarImageUrl,
+    avatarImageUrl: existsSync(path.resolve(IMGS_DIR, 'authors', `${data}.jpg`))
+      ? getPathFile(`/imgs/authors/${data.login}.jpg`)
+      : undefined,
     content,
   };
 };

@@ -16,9 +16,9 @@ export default {
     author: {
       username: 'jdoe',
       name: 'John Doe',
-      avatarImageUrl: 'https://api.dicebear.com/5.x/avataaars/svg?seed=Felix',
       content: 'Astronaute John Doe @ ElevenLabs_\uD83D\uDE80',
     },
+    emptyAvatarImageUrl: '/imgs/astronaut.png',
     title: `Article de l'auteur`,
     postPreviewList: React.createElement<PostPreviewListProps>(PostPreviewList, {
       ...PostPreviewListStories.default.args,
