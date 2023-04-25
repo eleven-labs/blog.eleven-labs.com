@@ -34,14 +34,14 @@ export const AuthorPage: React.FC<AuthorPageProps> = ({
       justifyContent="center"
       alignItems="center"
       textAlign={{ xs: 'center', md: 'left' }}
-      mt={{ xs: 'm' }}
+      mt="m"
     >
       <img
         src={author.avatarImageUrl ?? emptyAvatarImageUrl}
         alt={author.name}
         className={author.avatarImageUrl ? 'author-page__avatar-img' : 'author-page__empty-avatar-img'}
       />
-      <Box mt={{ xs: 's' }} ml={{ xs: 'm' }}>
+      <Box mt="s" ml="s">
         <Text size="m" fontWeight="medium" color="amaranth">
           {author.name}
         </Text>
