@@ -1,7 +1,8 @@
+import { globSync } from 'glob';
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import path, { dirname, resolve } from 'node:path';
 
-import { DATA_DIR, IMGS_DIR, MARKDOWN_FILE_PATHS } from '@/app-paths';
+import { ASSETS_DIR, DATA_DIR, MARKDOWN_FILE_PATHS } from '@/app-paths';
 import { CATEGORIES } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
 import { markdownToHtml } from '@/helpers/markdownHelper';
@@ -47,14 +48,14 @@ const transformPost = (options: { data: PostData; rawContent: string; content: s
 });
 
 const transformAuthor = ({ data, content }: { data: AuthorData; content: string }): TransformedAuthor => {
+  const avatarImageFileNames = globSync(`${data.login}.*`, { cwd: path.resolve(ASSETS_DIR, 'authors') });
   return {
     username: data.login,
     name: data.title,
     github: data?.github,
     twitter: data?.twitter,
-    avatarImageUrl: existsSync(path.resolve(IMGS_DIR, 'authors', `${data.login}.jpg`))
-      ? getPathFile(`/imgs/authors/${data.login}.jpg`)
-      : undefined,
+    avatarImageUrl:
+      avatarImageFileNames.length > 0 ? getPathFile(`/imgs/authors/${avatarImageFileNames[0]}`) : undefined,
     content,
   };
 };
