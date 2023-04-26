@@ -1,11 +1,12 @@
 import { AsProps } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { generatePath, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { AutocompleteFieldProps } from '@/components';
 import { IS_SSR, NUMBER_OF_ITEMS_PER_PAGE, PATHS } from '@/constants';
 import { LinkContainer } from '@/containers/LinkContainer';
+import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useDebounce } from '@/hooks/useDebounce';
 import { HeaderProps } from '@/templates/LayoutTemplate';

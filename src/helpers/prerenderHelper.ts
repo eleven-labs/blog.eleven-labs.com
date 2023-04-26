@@ -1,13 +1,13 @@
 import i18next, { i18n } from 'i18next';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
-import { generatePath } from 'react-router-dom';
 
 import { i18nConfig } from '@/config/i18n';
 import { AUTHORIZED_LANGUAGES, CATEGORIES, DEFAULT_LANGUAGE, PATHS } from '@/constants';
 import { render } from '@/entry-server';
 import { getPostsByLangAndAuthors } from '@/helpers/contentHelper';
 import { createRequestByUrl } from '@/helpers/requestHelper';
+import { generatePath } from '@/helpers/routerHelper';
 import { getHtmlTemplatePropsByManifest } from '@/helpers/ssrHelper';
 
 const { postsByLang, authors } = getPostsByLangAndAuthors();
