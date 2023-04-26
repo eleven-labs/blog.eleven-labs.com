@@ -1,16 +1,15 @@
 ---
-layout: post
 lang: fr
 date: '2019-09-11'
-categories: []
-authors:
-  - pouzor
+slug: domotize-your-workspace-part-2
+title: Domotiser son espace de travail - Partie 2
 excerpt: >-
   L'objectif de cet article est de domotiser simplement et efficacement son
   espace de travail avec home-assistant (partie 2).
-title: Domotiser son espace de travail - Partie 2
-slug: domotize-your-workspace-part-2
-oldCategoriesAndTags:
+authors:
+  - pouzor
+categories: []
+keywords:
   - domotique
   - gitlab
   - homeassistant
@@ -18,7 +17,6 @@ oldCategoriesAndTags:
   - ifttt
   - hue
   - google home
-permalink: /fr/domotize-your-workspace-part-2/
 ---
 
 Nous avons vu dans le précédent [article]({{site.baseurl}}/fr/domotize-your-workspace/) comment configurer HA, avec le plugin Gitlab afin de créer notre premier dashboard. Cependant, nous n'avons pas vu encore grand chose en relation avec la domotique... Il est temps de s'y mettre.

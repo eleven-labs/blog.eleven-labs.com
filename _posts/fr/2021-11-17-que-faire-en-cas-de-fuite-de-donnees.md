@@ -1,20 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2021-11-17'
-categories: []
-authors:
-  - marianne
-cover: /assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/dataleak.png
+slug: que-faire-en-cas-de-fuite-de-donnees
+title: Que faire en cas de fuite de données ?
 excerpt: >-
   Les récentes fuites de données chez Twitch et Facebook rappellent aux
   entreprises qu'elles sont vulnérables, et qu'elles ont des obligations envers
   les utilisateurs. Si ça vous arrivait aussi, sauriez-vous quoi faire ?
-title: Que faire en cas de fuite de données ?
-slug: que-faire-en-cas-de-fuite-de-donnees
-oldCategoriesAndTags:
+cover: /assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/dataleak.png
+authors:
+  - marianne
+categories: []
+keywords:
   - bonnes pratiques
-permalink: /fr/que-faire-en-cas-de-fuite-de-donnees/
 ---
 
 Après la fuite de données de Twitch en octobre 2021, on se rappelle de [la fuite chez Facebook de 533 millions d’utilisateurs qui est sortie en avril 2021](https://www.francetvinfo.fr/internet/reseaux-sociaux/facebook/facebook-cinq-questions-sur-la-fuite-de-donnees-de-533-millions-d-utilisateurs-a-travers-le-monde_4362885.html) et d’autres encore qui ont valu à [Mark Zuckerberg d’être entendu au Capitol américain en 2018](https://www.forbes.fr/business/facebook-mark-zuckerberg-au-capitol/). En bref on est tous dans la vie privée comme dans notre entreprise exposés à ce risque, notamment lorsque des hackers accèdent frauduleusement à un système de données.

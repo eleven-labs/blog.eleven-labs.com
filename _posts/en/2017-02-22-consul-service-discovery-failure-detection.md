@@ -1,14 +1,13 @@
 ---
-layout: post
 lang: en
 date: '2017-02-22'
-categories: []
+slug: consul-service-discovery-failure-detection
+title: 'Consul: Service Discovery and Failure Detection'
+excerpt: '# Introduction'
 authors:
   - vcomposieux
-excerpt: '# Introduction'
-title: 'Consul: Service Discovery and Failure Detection'
-slug: consul-service-discovery-failure-detection
-oldCategoriesAndTags:
+categories: []
+keywords:
   - dev ops
   - service
   - consul
@@ -17,7 +16,6 @@ oldCategoriesAndTags:
   - detection
   - health
   - check
-permalink: /en/consul-service-discovery-failure-detection/
 ---
 # Introduction
 Consul is a product developed in Go language by the HashiCorp company and was born in 2013.

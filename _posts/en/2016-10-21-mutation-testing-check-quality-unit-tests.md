@@ -1,20 +1,17 @@
 ---
-layout: post
 lang: en
 date: '2016-10-21'
-categories: []
-authors:
-  - rgraillon
+slug: mutation-testing-check-quality-unit-tests
+title: Mutation Testing - Check the quality of your unit tests
 excerpt: >-
   It is well established : unit tests are mandatory when developing an
   application. They allow to highlight possible regressions when code is
   modified, so the developer gets a certain confidence when shipping his code to
   production : If tests do pass, everything works correctly.
-title: Mutation Testing - Check the quality of your unit tests
-slug: mutation-testing-check-quality-unit-tests
-oldCategoriesAndTags:
-  - non classé
-permalink: /en/mutation-testing-check-quality-unit-tests/
+authors:
+  - rgraillon
+categories: []
+keywords: []
 ---
 
 ## Unit tests and trust

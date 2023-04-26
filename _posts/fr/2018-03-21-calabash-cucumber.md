@@ -1,23 +1,21 @@
 ---
-layout: post
 lang: fr
 date: '2018-03-21'
-categories: []
-authors:
-  - ibenichou
-cover: /assets/2018-03-01-calabash-cucumber/cover.jpg
+slug: calabash-cucumber-ecrire-des-tests-fonctionnels-pour-mobile
+title: Calabash / Cucumber - Ecrire des tests fonctionnels pour Mobile
 excerpt: >-
   Rendez plus robuste votre application mobile en ajoutant des tests
   fonctionnels
-title: Calabash / Cucumber - Ecrire des tests fonctionnels pour Mobile
-slug: calabash-cucumber-ecrire-des-tests-fonctionnels-pour-mobile
-oldCategoriesAndTags:
+cover: /assets/2018-03-01-calabash-cucumber/cover.jpg
+authors:
+  - ibenichou
+categories: []
+keywords:
   - ios
   - swift
   - xcode
   - test-unitaire
   - gherkins
-permalink: /fr/calabash-cucumber-ecrire-des-tests-fonctionnels-pour-mobile/
 ---
 
 Nous allons voir aujourd'hui comment mettre en place des tests fonctionnels sur votre application.

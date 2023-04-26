@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2014-04-10'
-categories:
-  - php
-authors:
-  - marishka
+slug: eleven-labs-au-symfony-live-paris-2014
+title: Eleven Labs au Symfony Live Paris 2014 !
 excerpt: >-
   Nous sommes allés au Symfony Live Paris en force cette année ! En tant que
   sponsor Gold, nous avions notre stand et avons pu rencontrer plein de
   symfoniens.
-title: Eleven Labs au Symfony Live Paris 2014 !
-slug: eleven-labs-au-symfony-live-paris-2014
-oldCategoriesAndTags:
+authors:
+  - marishka
+categories:
   - php
+keywords:
   - symfony
   - conference
   - symfony live
-permalink: /fr/eleven-labs-au-symfony-live-paris-2014/
 ---
 
 Nous sommes allés au Symfony Live Paris en force cette année ! En tant que sponsor Gold, nous avions notre stand et avons pu rencontrer plein de symfoniens.

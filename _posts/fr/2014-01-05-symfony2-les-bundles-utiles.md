@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2014-01-05'
-categories:
-  - php
-authors:
-  - marishka
+slug: symfony2-les-bundles-utiles
+title: Symfony2 et les Bundles utiles
 excerpt: >-
   Cela fait maintenant plus de 2 ans que Symfony2 est sorti et, comme vous le
   savez, il fonctionne avec des bundles. Voici une liste non-exhaustive de
   bundles sympathiques qui s'avèrent très utiles au quotidien.
-title: Symfony2 et les Bundles utiles
-slug: symfony2-les-bundles-utiles
-oldCategoriesAndTags:
+authors:
+  - marishka
+categories:
   - php
+keywords:
   - symfony
   - symfony2
   - bundle
-permalink: /fr/symfony2-les-bundles-utiles/
 ---
 
 Cela fait maintenant plus de 2 ans que Symfony2 est sorti et, comme vous le savez, il fonctionne avec des bundles. Voici une liste non-exhaustive de bundles sympathiques qui s'avèrent très utiles au quotidien.

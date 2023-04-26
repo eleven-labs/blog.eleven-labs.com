@@ -1,19 +1,15 @@
 ---
-layout: post
 lang: fr
 date: '2015-04-07'
-categories:
-  - architecture
+slug: cqrs-pattern
+title: CQRS pattern
+excerpt: "CQRS, qui signifie\__Command Query Responsibility Segregation_, est issu du CQS (_Command Query Separation_) introduit par Bertrand Meyer dans son ouvrage\__Object Oriented Software Construction_. Meyer soumet le principe que les classes d'une méthode doivent être soit des\__queries_ soit des\__commands_."
 authors:
   - rpierlot
-excerpt: "CQRS, qui signifie\__Command Query Responsibility Segregation_, est issu du CQS (_Command Query Separation_) introduit par Bertrand Meyer dans son ouvrage\__Object Oriented Software Construction_. Meyer soumet le principe que les classes d'une méthode doivent être soit des\__queries_ soit des\__commands_."
-title: CQRS pattern
-slug: cqrs-pattern
-oldCategoriesAndTags:
+categories:
   - architecture
-  - non classé
+keywords:
   - cqrs
-permalink: /fr/cqrs-pattern/
 ---
 
 

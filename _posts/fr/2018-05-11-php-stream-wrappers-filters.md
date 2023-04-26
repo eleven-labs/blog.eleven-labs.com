@@ -1,26 +1,23 @@
 ---
-layout: post
 lang: fr
 date: '2018-05-11'
-categories:
-  - php
-authors:
-  - amoutte
-cover: /assets/2018-05-11-php-stream-wrappers-filters/cover.jpg
+slug: php-stream-wrappers-filters
+title: 'PHP Stream : wrappers, filters... un allié méconnu'
 excerpt: >-
   Bien que très puissant et présent dans PHP depuis la version 4.3, ce composant
   est souvent méconnu, sous-exploité, voire mal utilisé.
-title: 'PHP Stream : wrappers, filters... un allié méconnu'
-slug: php-stream-wrappers-filters
-oldCategoriesAndTags:
+cover: /assets/2018-05-11-php-stream-wrappers-filters/cover.jpg
+authors:
+  - amoutte
+categories:
   - php
+keywords:
   - stream
   - flux
   - protocol
   - wrappers
   - transports
   - filters
-permalink: /fr/php-stream-wrappers-filters/
 ---
 
 ## Définition

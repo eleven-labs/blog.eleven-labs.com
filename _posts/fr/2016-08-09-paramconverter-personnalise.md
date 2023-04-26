@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2016-08-09'
-categories:
-  - php
-authors:
-  - tthuon
+slug: paramconverter-personnalise
+title: ParamConverter personnalisé
 excerpt: >-
   L'article qui suit s'adresse aux développeurs qui ont déjà utilisé le
   ParamConverter, et qui comprennent le principe de base de son fonctionnement.
-title: ParamConverter personnalisé
-slug: paramconverter-personnalise
-oldCategoriesAndTags:
+authors:
+  - tthuon
+categories:
   - php
+keywords:
   - symfony
   - paramconverter
-permalink: /fr/paramconverter-personnalise/
 ---
 
 Introduction

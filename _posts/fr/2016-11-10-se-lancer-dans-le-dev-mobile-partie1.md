@@ -1,16 +1,14 @@
 ---
-layout: post
 lang: fr
 date: '2016-11-10'
-categories:
-  - javascript
+slug: se-lancer-dans-le-dev-mobile-partie1
+title: 'Se lancer dans le dév mobile : Partie I'
+excerpt: 'Faire du mobile oui, mais par où commencer ?'
 authors:
   - ibenichou
-excerpt: 'Faire du mobile oui, mais par où commencer ?'
-title: 'Se lancer dans le dév mobile : Partie I'
-slug: se-lancer-dans-le-dev-mobile-partie1
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - mobile
   - angular
   - ionic
@@ -21,7 +19,6 @@ oldCategoriesAndTags:
   - react
   - react-native
   - application
-permalink: /fr/se-lancer-dans-le-dev-mobile-partie1/
 ---
 
 # Faire du mobile oui, mais par où commencer ?

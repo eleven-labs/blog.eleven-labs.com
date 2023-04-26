@@ -1,25 +1,22 @@
 ---
-layout: post
 lang: fr
 date: '2018-02-11'
-categories:
-  - php
-authors:
-  - amoutte
-cover: /assets/2018-02-11-php7-throwable-error-exception/cover.jpg
+slug: php7-throwable-error-exception
+title: PHP 7 Throwable Errors Exceptions
 excerpt: >-
   Les erreurs sont présentes dans notre code, dans le code des librairies
   externes, ou même en cas de défaillance matérielle. C'est pourquoi la maîtrise
   des Throwable est indispensable afin d'avoir une gestion d'erreurs de qualité.
-title: PHP 7 Throwable Errors Exceptions
-slug: php7-throwable-error-exception
-oldCategoriesAndTags:
+cover: /assets/2018-02-11-php7-throwable-error-exception/cover.jpg
+authors:
+  - amoutte
+categories:
   - php
+keywords:
   - throwable
   - exception
   - error
   - php7
-permalink: /fr/php7-throwable-error-exception/
 ---
 
 PHP 7 apporte un changement à la façon dont les erreurs sont rapportées.

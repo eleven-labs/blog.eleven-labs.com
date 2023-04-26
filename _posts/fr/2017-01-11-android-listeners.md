@@ -1,19 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2017-01-11'
-categories: []
+slug: android-listeners
+title: 'Android : Pourquoi j''aime les listeners'
+excerpt: Parlons de Listeners
 authors:
   - thuchon
-excerpt: Parlons de Listeners
-title: 'Android : Pourquoi j''aime les listeners'
-slug: android-listeners
-oldCategoriesAndTags:
+categories: []
+keywords:
   - mobile
   - application mobile
   - dév mobile
   - android
-permalink: /fr/android-listeners/
 ---
 
 ### Introduction

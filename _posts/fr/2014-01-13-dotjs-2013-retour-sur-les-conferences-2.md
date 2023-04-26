@@ -1,18 +1,15 @@
 ---
-layout: post
 lang: fr
 date: '2014-01-13'
-categories:
-  - javascript
+slug: dotjs-2013-retour-sur-les-conferences-2
+title: 'DotJs 2013, retour sur les conférences.'
+excerpt: DotJs 2013
 authors:
   - mehdy
-excerpt: DotJs 2013
-title: 'DotJs 2013, retour sur les conférences.'
-slug: dotjs-2013-retour-sur-les-conferences-2
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - dotjs
-permalink: /fr/dotjs-2013-retour-sur-les-conferences-2/
 ---
 
 DotJs 2013

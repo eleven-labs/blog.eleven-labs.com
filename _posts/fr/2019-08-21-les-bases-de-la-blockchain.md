@@ -1,20 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2019-08-21'
-categories: []
-authors:
-  - katario
+slug: bases-blockchain
+title: Les bases de la Blockchain
 excerpt: >-
   Qu'est ce que la Blockchain ? Cet article présente les bases du concept de la
   blockchain et explique les différentes propriétés de celle-ci.
-title: Les bases de la Blockchain
-slug: bases-blockchain
-oldCategoriesAndTags:
+authors:
+  - katario
+categories: []
+keywords:
   - blockchain
   - hash
   - concepts
-permalink: /fr/bases-blockchain/
 ---
 
 On entend beaucoup parler de la Blockchain comme étant l'une des futures révolutions technologiques, au même titre que l'intelligence artificielle. Pour autant, le concept est encore souvent mal compris, tant par le grand public que par les férus de technologies que nous sommes. Alors, qu'est ce que c'est ? A quoi ça sert, et comment on peut s'en servir ? On va tenter de trouver des pistes de réponses dans cet article en essayant d'en comprendre les concepts (et le vocabulaire qui va avec !) et en jetant un oeil sur ce qui se fait aujourd'hui dans le milieu. C'est parti !

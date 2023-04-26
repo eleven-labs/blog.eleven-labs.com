@@ -1,17 +1,15 @@
 ---
-layout: post
 lang: fr
 date: '2018-10-23'
-categories:
-  - javascript
+slug: cucumber-for-angular
+title: Cucumber for Angular
+excerpt: Comment intégrer Cucumber dans Angular
+cover: /assets/2018-10-23-cucumber-for-angular/cover.png
 authors:
   - la3roug
-cover: /assets/2018-10-23-cucumber-for-angular/cover.png
-excerpt: Comment intégrer Cucumber dans Angular
-title: Cucumber for Angular
-slug: cucumber-for-angular
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - e2e
   - bdd
   - angular
@@ -19,7 +17,6 @@ oldCategoriesAndTags:
   - cucumber
   - gherkin
   - puppeteer
-permalink: /fr/cucumber-for-angular/
 ---
 
 ## Introduction

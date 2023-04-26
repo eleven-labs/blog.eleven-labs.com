@@ -7,7 +7,6 @@ export type AuthorData = {
 };
 
 export type PostData = {
-  layout: 'post';
   lang: string;
   date: string;
   slug: string;
@@ -16,7 +15,7 @@ export type PostData = {
   cover?: string;
   authors: string[];
   categories?: string[];
-  permalink: string;
+  keywords?: string[];
 };
 
 export interface TransformedPost

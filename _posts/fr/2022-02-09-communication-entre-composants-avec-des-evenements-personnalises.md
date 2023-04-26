@@ -1,19 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2022-02-09'
-categories:
-  - javascript
-authors:
-  - fpasquet
+slug: communication-entre-composants-avec-des-evenements-personnalises
+title: Communication entre composants avec des événements personnalisés
 excerpt: >-
   Besoin de travailler avec différents Framework JS et donc de faire communiquer
   l'ensemble des composants d'une application ?
-title: Communication entre composants avec des événements personnalisés
-slug: communication-entre-composants-avec-des-evenements-personnalises
-oldCategoriesAndTags:
+authors:
+  - fpasquet
+categories:
   - javascript
-permalink: /fr/communication-entre-composants-avec-des-evenements-personnalises/
+keywords: []
 ---
 
 Besoin de travailler avec différents Framework JS et donc de faire communiquer l'ensemble des composants d'une application ?

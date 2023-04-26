@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: en
 date: '2016-09-29'
-categories:
-  - php
-authors:
-  - vcomposieux
+slug: symfony-workflow-component
+title: Use the Symfony Workflow component
 excerpt: >-
   Since Symfony 3.2, a new useful component was born: the [Workflow
   component](http://symfony.com/blog/new-in-symfony-3-2-workflow-component){:rel="nofollow"}.
-title: Use the Symfony Workflow component
-slug: symfony-workflow-component
-oldCategoriesAndTags:
+authors:
+  - vcomposieux
+categories:
   - php
+keywords:
   - symfony
   - workflow
-permalink: /en/symfony-workflow-component/
 ---
 Since Symfony 3.2, a new useful component was born: the [Workflow component](http://symfony.com/blog/new-in-symfony-3-2-workflow-component){:rel="nofollow"}.
 It is indeed really convenient and can simplify greatly your developments when you have to manage status workflows in your application, that occurs a lot.

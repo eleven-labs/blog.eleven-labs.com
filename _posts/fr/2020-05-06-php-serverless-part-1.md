@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2020-05-06'
-categories:
-  - php
-authors:
-  - marishka
+slug: php-serverless-part-1
+title: PHP & Serverless avec Bref - part 1
 excerpt: >-
   Qu'est-ce qu'une architecture Serverless, et quelles sont les options pour y
   déployer des applications PHP ?
-title: PHP & Serverless avec Bref - part 1
-slug: php-serverless-part-1
-oldCategoriesAndTags:
+authors:
+  - marishka
+categories:
   - php
+keywords:
   - serverless
   - aws
   - bref
   - lambda
-permalink: /fr/php-serverless-part-1/
 ---
 
 Voilà maintenant des années que l'on parle des architectures *Serverless*. Mais qu'est-ce que cela veut dire précisément ? Et comment développer des applications PHP que l'on peut déployer sur cette architecture ?

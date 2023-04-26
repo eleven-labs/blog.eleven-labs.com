@@ -1,19 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2016-07-05'
-categories:
-  - javascript
-authors:
-  - captainjojo
+slug: progressive-web-apps-au-googledevsummit
+title: Progressive Web Apps au GoogleDevSummit
 excerpt: >-
   Lundi 19 juin et mardi 20 juin 2016 a eu lieu la GoogleDevSummit à Amsterdam
   pour une présentation en grande pompe d'une nouvelle façon de faire des sites
   mobiles, les progressives web apps.
-title: Progressive Web Apps au GoogleDevSummit
-slug: progressive-web-apps-au-googledevsummit
-oldCategoriesAndTags:
+authors:
+  - captainjojo
+categories:
   - javascript
+keywords:
   - google
   - conference
   - web
@@ -21,7 +19,6 @@ oldCategoriesAndTags:
   - service worker
   - webperformance
   - application mobile
-permalink: /fr/progressive-web-apps-au-googledevsummit/
 ---
 
 Lundi 19 juin et mardi 20 juin 2016 a eu lieu la GoogleDevSummit à Amsterdam pour une présentation en grande pompe d'une nouvelle façon de faire des sites mobiles : les progressives web apps.

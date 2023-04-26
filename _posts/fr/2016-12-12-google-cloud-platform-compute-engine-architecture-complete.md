@@ -1,24 +1,22 @@
 ---
-layout: post
 lang: fr
 date: '2016-12-12'
-categories: []
-authors:
-  - captainjojo
+slug: google-cloud-platform-compute-engine-architecture-complete
+title: 'Google Cloud Platform (3/3) - Compute Engine, une architecture complete'
 excerpt: >-
   Si vous avez suivi les deux premiers articles sur Google Cloud Platform, vous
   êtes capable de mettre en production un site rapidement et êtes capable de
   scaler automatiquement selon le trafic. Mais tout cela n'est possible qu'avec
   les éléments pré-installés de Google Cloud Platform. Comment créer sa propre
   configuration ? Réinstaller un serveur facilement ? Scaler automatiquement ?
-title: 'Google Cloud Platform (3/3) - Compute Engine, une architecture complete'
-slug: google-cloud-platform-compute-engine-architecture-complete
-oldCategoriesAndTags:
+authors:
+  - captainjojo
+categories: []
+keywords:
   - dev ops
   - tutoriel
   - web
   - cloud
-permalink: /fr/google-cloud-platform-compute-engine-architecture-complete/
 ---
 
 Si vous avez suivi les deux premiers articles sur Google Cloud Platform, vous êtes capable de mettre en production un site rapidement et êtes capable de scaler automatiquement selon le trafic. Mais tout cela n'est possible qu'avec les éléments pré-installés de Google Cloud Platform. Comment créer sa propre configuration ? Réinstaller un serveur facilement ? Scaler automatiquement ?

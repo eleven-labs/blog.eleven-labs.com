@@ -1,23 +1,21 @@
 ---
-layout: post
 lang: fr
 date: '2017-12-12'
-categories: []
-authors:
-  - qneyrat
-cover: /assets/2017-12-12-monitorer-ses-containers-docker/cover.jpeg
+slug: monitorer-ses-containers-docker
+title: Monitorer ses containers Docker
 excerpt: >-
   Les containers sont aujourd'hui largement utilisés du développement jusqu'en
   production. Cependant un `docker stats` en ssh ne permet pas de gérer
   correctement son environnement de production. Nous allons donc voir comment
   répondre à ce besoin de monitoring pour des containers en production.
-title: Monitorer ses containers Docker
-slug: monitorer-ses-containers-docker
-oldCategoriesAndTags:
+cover: /assets/2017-12-12-monitorer-ses-containers-docker/cover.jpeg
+authors:
+  - qneyrat
+categories: []
+keywords:
   - monitoring
   - docker
   - prometheus
-permalink: /fr/monitorer-ses-containers-docker/
 ---
 
 Les containers sont aujourd'hui largement utilisés du développement jusqu'en production. Cependant un `docker stats` en ssh ne permet pas de gérer correctement son environnement de production. Nous allons donc voir comment répondre à ce besoin de monitoring pour des containers en production.

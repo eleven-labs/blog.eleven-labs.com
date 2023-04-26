@@ -1,20 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2016-12-23'
-categories: []
+slug: comprendre-ssl-tls-partie-5-record-protocol
+title: 'Comprendre le SSL/TLS: Partie 5 Record Protocol'
+excerpt: Record protocol
 authors:
   - ibenichou
-excerpt: Record protocol
-title: 'Comprendre le SSL/TLS: Partie 5 Record Protocol'
-slug: comprendre-ssl-tls-partie-5-record-protocol
-oldCategoriesAndTags:
+categories: []
+keywords:
   - tls
   - ssl
   - securite
   - algorithmie
   - protocoles
-permalink: /fr/comprendre-ssl-tls-partie-5-record-protocol/
 ---
 
 # Record protocol

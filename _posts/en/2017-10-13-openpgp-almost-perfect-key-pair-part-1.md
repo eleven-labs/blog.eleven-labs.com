@@ -1,18 +1,16 @@
 ---
-layout: post
 lang: en
 date: '2017-10-13'
-categories: []
+slug: openpgp-almost-perfect-key-pair-part-1
+title: OpenPGP - The almost perfect key pair
+excerpt: Guide to create the almost perfect OpenPGP keys
+cover: /assets/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
 authors:
   - tthuon
-cover: /assets/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
-excerpt: Guide to create the almost perfect OpenPGP keys
-title: OpenPGP - The almost perfect key pair
-slug: openpgp-almost-perfect-key-pair-part-1
-oldCategoriesAndTags:
+categories: []
+keywords:
   - openpgp
   - security
-permalink: /en/openpgp-almost-perfect-key-pair-part-1/
 ---
 
 In this article, I would like to create a small guide on creating a perfect PGP key. For those who do not know,

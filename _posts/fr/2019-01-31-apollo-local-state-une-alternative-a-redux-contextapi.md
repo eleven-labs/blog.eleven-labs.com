@@ -1,31 +1,28 @@
 ---
-layout: post
 lang: fr
 date: '2019-01-31'
-categories:
-  - javascript
-authors:
-  - rmavillaz
-cover: >-
-  /assets/2019-01-26-apollo-local-state-management-une-alternative-a-redux-contextapi/cover.png
+slug: react-apollo-le-local-state-management-une-alternative-a-redux-contextapi
+title: >-
+  React, le local state management d'Apollo, une alternative à Redux /
+  ContextApi?
 excerpt: >-
   Si vous suivez notre blog ou nos différents meetups, vous avez sans doute
   entendu parler de la librairie React Apollo afin de gérer une API GraphQL.
   Depuis peu, celle-ci offre une autre manière de gérer le state de votre
   application afin de ne pas avoir à gérer un Redux, il est temps de voir ça
   d'un peu plus près !
-title: >-
-  React, le local state management d'Apollo, une alternative à Redux /
-  ContextApi?
-slug: react-apollo-le-local-state-management-une-alternative-a-redux-contextapi
-oldCategoriesAndTags:
+cover: >-
+  /assets/2019-01-26-apollo-local-state-management-une-alternative-a-redux-contextapi/cover.png
+authors:
+  - rmavillaz
+categories:
   - javascript
+keywords:
   - react
   - graphql
   - redux
   - apollo
   - contextapi
-permalink: /fr/react-apollo-le-local-state-management-une-alternative-a-redux-contextapi/
 ---
 
 Si vous suivez notre blog ou nos différents meetups, vous avez sans doute entendu parler de la librairie React Apollo afin de gérer une API GraphQL. Depuis peu, **celle-ci propose une autre manière de gérer le state de votre application React afin de ne pas avoir à gérer un Redux**, il est temps de voir ça d'un peu plus près !

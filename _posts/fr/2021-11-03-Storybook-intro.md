@@ -1,19 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2021-11-03'
-categories:
-  - javascript
-authors:
-  - manu
+slug: Storybook-creer-son-premier-composant
+title: Storybook - Créer son premier composant
 excerpt: >-
   Storybook c'est le framework open-source qui a été récompensé pendant la
   dernière React Europe, décrouvrons ce qu'il nous cache dans cette intro !
-title: Storybook - Créer son premier composant
-slug: Storybook-creer-son-premier-composant
-oldCategoriesAndTags:
+authors:
+  - manu
+categories:
   - javascript
-permalink: /fr/Storybook-creer-son-premier-composant/
+keywords: []
 ---
 ![Storybook banner]({{ site.baseurl }}/assets/2019-11-27-Storybook-intro/storybooktitle.png)
 

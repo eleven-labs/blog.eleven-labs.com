@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2017-10-19'
-categories:
-  - javascript
-authors:
-  - captainjojo
-cover: /assets/2017-10-19-script-ton-taff/cover.jpg
+slug: script-ton-taff
+title: Script ton taff
 excerpt: >-
   Parce que l'outil informatique n'est pas réservé qu'aux développeurs, je vous
   propose un billet de blog qui s'adresse à tous, et qui vous donne quelques
   pistes afin de gagner en productivité, en supprimant le travail répétitif de
   vos journées.
-title: Script ton taff
-slug: script-ton-taff
-oldCategoriesAndTags:
+cover: /assets/2017-10-19-script-ton-taff/cover.jpg
+authors:
+  - captainjojo
+categories:
   - javascript
+keywords:
   - chrome
-permalink: /fr/script-ton-taff/
 ---
 
 Parce que l'outil informatique n'est pas réservé qu'aux développeurs, je vous propose un billet de blog qui s'adresse à tous, et qui vous donne quelques pistes afin de gagner en productivité, en supprimant le travail répétitif de vos journées.

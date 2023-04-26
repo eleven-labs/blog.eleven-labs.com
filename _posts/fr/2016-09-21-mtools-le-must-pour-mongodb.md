@@ -1,25 +1,22 @@
 ---
-layout: post
 lang: fr
 date: '2016-09-21'
-categories:
-  - architecture
-authors:
-  - pouzor
+slug: mtools-le-must-have-pour-mongodb
+title: mTools - Le must have pour MongoDB
 excerpt: >-
   Maintenir une application MongoDB, notamment sur des sujets Datas avec
   beaucoup de volumétrie et/ou d’opérations peut vite devenir un supplice,
   surtout si, comme la plupart des Devs, vous n'avez pas accès aux machines de
   productions qui sont généralement réservées aux exploitants.
-title: mTools - Le must have pour MongoDB
-slug: mtools-le-must-have-pour-mongodb
-oldCategoriesAndTags:
+authors:
+  - pouzor
+categories:
   - architecture
+keywords:
   - mongodb
   - tools
   - devops
   - logs
-permalink: /fr/mtools-le-must-have-pour-mongodb/
 ---
 
 Maintenir une application MongoDB, notamment sur des sujets Datas avec beaucoup de volumétrie et/ou d’opérations peut vite devenir un supplice, surtout si, comme la plupart des Devs, vous n'avez pas accès aux machines de productions qui sont généralement réservées aux exploitants.

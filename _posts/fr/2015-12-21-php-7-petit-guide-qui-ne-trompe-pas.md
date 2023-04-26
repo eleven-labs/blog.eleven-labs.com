@@ -1,18 +1,15 @@
 ---
-layout: post
 lang: fr
 date: '2015-12-21'
-categories:
-  - php
+slug: php-7-petit-guide-qui-ne-trompe-pas
+title: PHP 7 - Le petit guide qui ne trompe pas
+excerpt: "> Dans la vie, il n'y a pas que Symfony\_— Un collègue"
 authors:
   - aandre
-excerpt: "> Dans la vie, il n'y a pas que Symfony\_— Un collègue"
-title: PHP 7 - Le petit guide qui ne trompe pas
-slug: php-7-petit-guide-qui-ne-trompe-pas
-oldCategoriesAndTags:
+categories:
   - php
+keywords:
   - migration
-permalink: /fr/php-7-petit-guide-qui-ne-trompe-pas/
 ---
 > Dans la vie, il n'y a pas que Symfony — Un collègue
 

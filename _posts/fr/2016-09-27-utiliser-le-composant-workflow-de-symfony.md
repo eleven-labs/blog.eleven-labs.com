@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2016-09-27'
-categories:
-  - php
-authors:
-  - vcomposieux
+slug: utiliser-le-composant-workflow-de-symfony
+title: Utiliser le composant Workflow de Symfony
 excerpt: >-
   Depuis Symfony 3.2, un nouveau composant très utile a vu le jour : [le
   composant
   Workflow](http://symfony.com/blog/new-in-symfony-3-2-workflow-component){:rel="nofollow
   noreferrer"}.
-title: Utiliser le composant Workflow de Symfony
-slug: utiliser-le-composant-workflow-de-symfony
-oldCategoriesAndTags:
+authors:
+  - vcomposieux
+categories:
   - php
+keywords:
   - symfony
   - workflow
-permalink: /fr/utiliser-le-composant-workflow-de-symfony/
 ---
 Depuis Symfony 3.2, un nouveau composant très utile a vu le jour : [le composant Workflow](http://symfony.com/blog/new-in-symfony-3-2-workflow-component){:rel="nofollow noreferrer"}.
 Celui-ci est en effet très pratique et peut très largement simplifier vos développements lorsque vous avez, par exemple, à gérer des workflows de statut dans votre application.

@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2015-12-15'
-categories: []
-authors:
-  - nkania
+slug: non-faire-de-la-veille-ce-nest-pas-lire-les-tutos-du-sdz
+title: 'Non, faire de la veille ce n''est pas que lire les tutos du SdZ'
 excerpt: >-
   Retour d'expérience sur une manière de faire sa veille technique notamment via
   les flux RSS avec exemples d'outils + liste de flux pour un développeur php
-title: 'Non, faire de la veille ce n''est pas que lire les tutos du SdZ'
-slug: non-faire-de-la-veille-ce-nest-pas-lire-les-tutos-du-sdz
-oldCategoriesAndTags:
-  - non classé
+authors:
+  - nkania
+categories: []
+keywords:
   - tuto
   - tutorial
   - tutoriel
   - veille
-permalink: /fr/non-faire-de-la-veille-ce-nest-pas-lire-les-tutos-du-sdz/
 ---
 
 

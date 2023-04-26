@@ -1,20 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2016-12-20'
-categories: []
+slug: comprendre-ssl-tls-partie-1
+title: 'Comprendre le SSL/TLS : Partie 1 On parle de quoi ?'
+excerpt: 'Vous avez sans doute entendu parler des protocoles SSL ou TLS, non, oui ?'
 authors:
   - ibenichou
-excerpt: 'Vous avez sans doute entendu parler des protocoles SSL ou TLS, non, oui ?'
-title: 'Comprendre le SSL/TLS : Partie 1 On parle de quoi ?'
-slug: comprendre-ssl-tls-partie-1
-oldCategoriesAndTags:
+categories: []
+keywords:
   - tls
   - ssl
   - securite
   - algorithmie
   - protocoles
-permalink: /fr/comprendre-ssl-tls-partie-1/
 ---
 
 

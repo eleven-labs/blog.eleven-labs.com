@@ -1,24 +1,22 @@
 ---
-layout: post
 lang: en
 date: '2020-12-09'
-categories: []
-authors:
-  - qneyrat
-  - marishka
-cover: /assets/2017-12-12-monitorer-ses-containers-docker/cover.jpeg
+slug: monitor-your-docker-containers
+title: Monitor your Docker containers
 excerpt: >-
   Containers are widely used today from development to production. However, a
   `docker stats` in ssh does not allow you to correctly assess your production
   environment. We will therefore see how to meet this monitoring need for
   containers in production.
-title: Monitor your Docker containers
-slug: monitor-your-docker-containers
-oldCategoriesAndTags:
+cover: /assets/2017-12-12-monitorer-ses-containers-docker/cover.jpeg
+authors:
+  - qneyrat
+  - marishka
+categories: []
+keywords:
   - monitoring
   - docker
   - prometheus
-permalink: /en/monitor-your-docker-containers/
 ---
 
 Containers are widely used today from development to production. However, a `docker stats` in ssh does not allow you to correctly assess your production environment. We will therefore see how to meet this monitoring need for containers in production.

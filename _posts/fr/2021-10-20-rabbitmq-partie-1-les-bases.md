@@ -1,19 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2021-10-20'
-categories: []
-authors:
-  - amoutte
+slug: rabbitmq-partie-1-les-bases
+title: 'RabbitMQ, des bases à la maîtrise (Partie 1)'
 excerpt: >-
   Rabbitmq est un message broker très complet et robuste, c'est pourquoi le
   comprendre et l'utiliser est assez simple. En revanche, le maîtriser l'est un
   peu moins...
-title: 'RabbitMQ, des bases à la maîtrise (Partie 1)'
-slug: rabbitmq-partie-1-les-bases
-oldCategoriesAndTags:
+authors:
+  - amoutte
+categories: []
+keywords:
   - bonnes pratiques
-permalink: /fr/rabbitmq-partie-1-les-bases/
 ---
 
 RabbitMQ est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utiliser est assez simple. en revanche, le maîtriser l'est un peu moins...

@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2015-05-18'
-categories:
-  - javascript
-authors:
-  - mehdy
+slug: devenez-dr-manhattan-avec-ionic
+title: Devenez Dr. Manhattan avec Ionic
 excerpt: >-
   Après 14 versions beta et 5 release candidates, la première version stable de
   Ionic est disponible.
-title: Devenez Dr. Manhattan avec Ionic
-slug: devenez-dr-manhattan-avec-ionic
-oldCategoriesAndTags:
+authors:
+  - mehdy
+categories:
   - javascript
+keywords:
   - angular
   - ionic
   - cordova
-permalink: /fr/devenez-dr-manhattan-avec-ionic/
 ---
 
 Après 14 versions beta et 5 release candidates, la première version stable de Ionic est disponible.

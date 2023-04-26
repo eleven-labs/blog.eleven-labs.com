@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2014-02-10'
-categories:
-  - javascript
-authors:
-  - laurent
+slug: chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive
+title: 'Chrome Screencast : Déboguer le rendu mobile d''un site responsive'
 excerpt: >-
   Depuis quelques mois, le navigateur Google Chrome permet, dans ses
   fonctionnalités expérimentales, de profiter des DevTools pour les téléphones
   et tablettes Android.
-title: 'Chrome Screencast : Déboguer le rendu mobile d''un site responsive'
-slug: chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive
-oldCategoriesAndTags:
+authors:
+  - laurent
+categories:
   - javascript
+keywords:
   - chrome
   - extension
   - responsive
-permalink: /fr/chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/
 ---
 
 Depuis quelques mois, le navigateur Google Chrome permet, dans ses fonctionnalités expérimentales, de profiter des DevTools pour les téléphones et tablettes Android.

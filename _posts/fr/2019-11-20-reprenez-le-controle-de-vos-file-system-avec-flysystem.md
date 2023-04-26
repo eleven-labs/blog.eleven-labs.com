@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2019-11-20'
-categories:
-  - php
-authors:
-  - nicolas
+slug: reprenez-le-controle-de-vos-file-system-avec-Flysystem
+title: Reprenez le contrôle de vos filesystem avec Flysystem
 excerpt: >-
   Cet article vous présente comment interagir simplement avec vos systèmes de
   gestion de fichiers grâce à Flysystem.
-title: Reprenez le contrôle de vos filesystem avec Flysystem
-slug: reprenez-le-controle-de-vos-file-system-avec-Flysystem
-oldCategoriesAndTags:
+authors:
+  - nicolas
+categories:
   - php
+keywords:
   - bundle
   - filesystem
   - symfony
   - flysystem
-permalink: /fr/reprenez-le-controle-de-vos-file-system-avec-Flysystem/
 ---
 
 

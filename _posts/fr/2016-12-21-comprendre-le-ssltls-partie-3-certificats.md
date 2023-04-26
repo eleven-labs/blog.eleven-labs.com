@@ -1,14 +1,13 @@
 ---
-layout: post
 lang: fr
 date: '2016-12-21'
-categories: []
+slug: comprendre-le-ssltls-partie-3-certificats
+title: 'Comprendre le SSL/TLS : Partie 3 Certificats'
+excerpt: Qu'est-ce qu'un certificat ?
 authors:
   - ibenichou
-excerpt: Qu'est-ce qu'un certificat ?
-title: 'Comprendre le SSL/TLS : Partie 3 Certificats'
-slug: comprendre-le-ssltls-partie-3-certificats
-oldCategoriesAndTags:
+categories: []
+keywords:
   - tls
   - ssl
   - securite
@@ -16,7 +15,6 @@ oldCategoriesAndTags:
   - protocoles
   - chiffrement
   - certificats
-permalink: /fr/comprendre-le-ssltls-partie-3-certificats/
 ---
 
 # Qu'est-ce qu'un certificat ?

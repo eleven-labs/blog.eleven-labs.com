@@ -1,18 +1,15 @@
 ---
-layout: post
 lang: en
 date: '2016-09-01'
-categories: []
-authors:
-  - tthuon
+slug: custom-paramconverter
+title: Custom ParamConverter
 excerpt: >-
   The following article is aimed at developers who have already used the
   ParamConverter, and who understand its basic principles.
-title: Custom ParamConverter
-slug: custom-paramconverter
-oldCategoriesAndTags:
-  - non classé
-permalink: /en/custom-paramconverter/
+authors:
+  - tthuon
+categories: []
+keywords: []
 ---
 
 Introduction

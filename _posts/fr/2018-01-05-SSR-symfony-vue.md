@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2018-01-05'
-categories:
-  - javascript
-authors:
-  - captainjojo
-cover: /assets/2018-01-05-SSR-symfony-vue/cover.jpg
+slug: ssr-symfony-vue
+title: SSR avec Symfony et Vue.js
 excerpt: >-
   Nous travaillons de plus en plus avec à la fois un framework serveur type
   Symfony et un framework client type Vue.js. D'ailleurs on trouve énormément
   d'articles sur le sujet. La question que l'on se pose le plus souvent, c'est
   comment rendre ces choix technologiques performants.
-title: SSR avec Symfony et Vue.js
-slug: ssr-symfony-vue
-oldCategoriesAndTags:
+cover: /assets/2018-01-05-SSR-symfony-vue/cover.jpg
+authors:
+  - captainjojo
+categories:
   - javascript
-permalink: /fr/ssr-symfony-vue/
+keywords: []
 ---
 
 Nous travaillons de plus en plus avec à la fois un framework serveur type Symfony et un framework client type Vue.js. D'ailleurs on trouve énormément d'articles sur le sujet. La question que l'on se pose le plus souvent, c'est comment rendre ces choix technologiques performants.

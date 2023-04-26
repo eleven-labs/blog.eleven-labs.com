@@ -1,24 +1,21 @@
 ---
-layout: post
 lang: fr
 date: '2013-12-08'
-categories:
-  - php
-authors:
-  - cmoncade
+slug: symfony-2-cache-http-esi
+title: 'Symfony 2 : Cache HTTP  et ESI'
 excerpt: >-
   Voici un petit tuto orienté performance avec l'utilisation du cache dans
   Symfony. On y abordera aussi l'utilisation des ESI pour mettre en cache une
   partie de la page.
-title: 'Symfony 2 : Cache HTTP  et ESI'
-slug: symfony-2-cache-http-esi
-oldCategoriesAndTags:
+authors:
+  - cmoncade
+categories:
   - php
+keywords:
   - symfony
   - symfony2
   - cache
   - esi
-permalink: /fr/symfony-2-cache-http-esi/
 ---
 Lorsque l’on développe un site, en particulier un site à fort trafic, on est forcément amené à se poser la question des ressources consommées par ce dernier afin d’optimiser son temps de réponse. En effet, une page qui met plus de 3-4 secondes à s’afficher rend vite désagréable la navigation et découragera plus d’une personne à venir sur votre site.
 

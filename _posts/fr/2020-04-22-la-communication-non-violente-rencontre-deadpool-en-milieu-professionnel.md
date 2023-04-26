@@ -1,23 +1,21 @@
 ---
-layout: post
 lang: fr
 date: '2020-04-22'
-categories: []
-authors:
-  - mae
+slug: la-communication-non-violente-rencontre-deadpool-en-milieu-professionnel
+title: La Communication Non-Violente rencontre Deadpool en milieu professionnel
 excerpt: >-
   Un peu à l'image de Wade Wilson a.k.a Deadpool, on va sortir un peu du
   conventionnel. Nos objectifs pour cette mission si vous le voulez bien :
   établir des relations professionnelles qui favorisent la collaboration plutôt
   que la compétition et contribuer avec enthousiasme aux projets pour qu'ils
   soient satisfaisant pour nous.
-title: La Communication Non-Violente rencontre Deadpool en milieu professionnel
-slug: la-communication-non-violente-rencontre-deadpool-en-milieu-professionnel
-oldCategoriesAndTags:
+authors:
+  - mae
+categories: []
+keywords:
   - communication
   - organisation
   - cnv
-permalink: /fr/la-communication-non-violente-rencontre-deadpool-en-milieu-professionnel/
 ---
 
 Un peu à l'image de Wade Wilson a.k.a Deadpool, on va sortir un peu du conventionnel aujourd’hui pour parler de la Communication Non-Violente en milieu professionnel.

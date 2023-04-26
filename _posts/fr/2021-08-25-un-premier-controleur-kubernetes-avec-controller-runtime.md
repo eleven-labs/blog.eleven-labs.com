@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2021-08-25'
-categories:
-  - architecture
-authors:
-  - dfert
+slug: un-premier-controleur-kubernetes-avec-controller-runtime
+title: Écrire un contrôleur Kubernetes en Go avec controller-runtime
 excerpt: >-
   J'ai récemment écrit mon premier contrôleur pour Kubernetes. Kubernetes était
   relativement nouveau pour moi, et le concept de contrôleur complètement flou.
   J'ai eu envie d'écrire cet article pour tenter de démystifier le concept tel
   que j'aurais aimé le découvrir quand j'ai commencé à m'y interesser.
-title: Écrire un contrôleur Kubernetes en Go avec controller-runtime
-slug: un-premier-controleur-kubernetes-avec-controller-runtime
-oldCategoriesAndTags:
+authors:
+  - dfert
+categories:
   - architecture
+keywords:
   - devops
   - kubernetes
-permalink: /fr/un-premier-controleur-kubernetes-avec-controller-runtime/
 ---
 
 ![Gopher sailing]({{ site.baseurl }}/assets/2021-08-25-un-premier-controleur-kubernetes-avec-controller-runtime/gopher-logo.png)

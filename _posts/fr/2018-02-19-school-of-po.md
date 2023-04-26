@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2018-02-19'
-categories:
-  - agile
-authors:
-  - julie
-cover: /assets/2018-02-19-school-of-po/cover.jpg
+slug: retour-sur-la-conf-school-of-po
+title: Retour sur la Conf School of PO
 excerpt: >-
   Mardi 13 Février a eu lieu la première édition de la conférence School of PO
   dans le 13ème arrondissement de Paris.
-title: Retour sur la Conf School of PO
-slug: retour-sur-la-conf-school-of-po
-oldCategoriesAndTags:
+cover: /assets/2018-02-19-school-of-po/cover.jpg
+authors:
+  - julie
+categories:
   - agile
+keywords:
   - po
   - scrum
   - conference
-permalink: /fr/retour-sur-la-conf-school-of-po/
 ---
 
 Mardi 13 Février a eu lieu la première édition de la conférence School of PO dans le 13ème arrondissement de Paris.

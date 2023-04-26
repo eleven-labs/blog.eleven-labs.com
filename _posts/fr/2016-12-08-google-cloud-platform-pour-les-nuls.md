@@ -1,23 +1,21 @@
 ---
-layout: post
 lang: fr
 date: '2016-12-08'
-categories: []
-authors:
-  - captainjojo
+slug: google-cloud-platform-pour-les-nuls
+title: Google Cloud Platform (1/3) - Le cloud pour les nuls
 excerpt: >-
   Aujourd'hui le Cloud c'est le mot à la mode, mais qu'est-ce que c'est ?
   Comment ça marche ? Et comment en faire ?
-title: Google Cloud Platform (1/3) - Le cloud pour les nuls
-slug: google-cloud-platform-pour-les-nuls
-oldCategoriesAndTags:
+authors:
+  - captainjojo
+categories: []
+keywords:
   - dev ops
   - tuto
   - tutoriel
   - google
   - web
   - cloud
-permalink: /fr/google-cloud-platform-pour-les-nuls/
 ---
 
 Aujourd'hui le Cloud c'est le mot à la mode, mais qu'est-ce que c'est ?

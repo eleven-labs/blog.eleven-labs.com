@@ -1,19 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2016-12-13'
-categories:
-  - javascript
+slug: tutoriel-polyfill
+title: 'Papa, c''est quoi un Polyfill ?'
+excerpt: "Avec l'avènement du js natif, et la multiplication des\_navigateurs et des environnements (mobile, desktop, tablette), on entend de plus en plus dans nos open-spaces «-Dis, tu connaîtrais pas un polyfill ?»"
 authors:
   - captainjojo
-excerpt: "Avec l'avènement du js natif, et la multiplication des\_navigateurs et des environnements (mobile, desktop, tablette), on entend de plus en plus dans nos open-spaces «-Dis, tu connaîtrais pas un polyfill ?»"
-title: 'Papa, c''est quoi un Polyfill ?'
-slug: tutoriel-polyfill
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - tutoriel
   - web
-permalink: /fr/tutoriel-polyfill/
 ---
 
 Avec l'avènement du js natif, et la multiplication des navigateurs et des environnements (mobile, desktop, tablette), on entend de plus en plus dans nos open-spaces :

@@ -1,24 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2016-06-29'
+slug: le-cache-http-votre-meilleur-ami
+title: 'Le cache HTTP, votre meilleur ami'
+excerpt: "e suis actuellement Lead développeur pour un site de presse Français à très fort trafic (lemonde.fr). Au cours de mes expériences précédentes, j'ai pu développer sur plusieurs autres sites\_à forte volumétrie."
+authors:
+  - captainjojo
 categories:
   - php
   - javascript
-authors:
-  - captainjojo
-excerpt: "e suis actuellement Lead développeur pour un site de presse Français à très fort trafic (lemonde.fr). Au cours de mes expériences précédentes, j'ai pu développer sur plusieurs autres sites\_à forte volumétrie."
-title: 'Le cache HTTP, votre meilleur ami'
-slug: le-cache-http-votre-meilleur-ami
-oldCategoriesAndTags:
-  - php
-  - javascript
+keywords:
   - symfony
   - cache
   - performance
   - http
   - web
-permalink: /fr/le-cache-http-votre-meilleur-ami/
 ---
 
 Je suis actuellement Lead développeur pour un site de presse Français à très fort trafic ([lemonde.fr](http://www.lemonde.fr)){:rel="nofollow noreferrer"}. Au cours de mes expériences précédentes, j'ai pu développer sur plusieurs autres sites à forte volumétrie.

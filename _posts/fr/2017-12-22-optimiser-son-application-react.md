@@ -1,26 +1,23 @@
 ---
-layout: post
 lang: fr
 date: '2017-12-22'
-categories:
-  - javascript
-authors:
-  - mlenglet
-cover: /assets/2017-12-22-optimiser-son-application-react/cover.jpg
+slug: optimiser-son-application-react
+title: Optimiser son application React
 excerpt: >-
   React est, à l'heure où j'écris ces lignes, le framework JavaScript le plus
   utilisé du marché. Grâce à son DOM virtuel, il a montré qu'il était l'un des
   plus performant. Mais à cause d'exemples peut-être trop simples et d'une
   croyance aveugle en la toute puissance de React, il peut en résulter de
   sérieux problèmes de performance.
-title: Optimiser son application React
-slug: optimiser-son-application-react
-oldCategoriesAndTags:
+cover: /assets/2017-12-22-optimiser-son-application-react/cover.jpg
+authors:
+  - mlenglet
+categories:
   - javascript
+keywords:
   - react
   - performance
   - optimisation
-permalink: /fr/optimiser-son-application-react/
 ---
 
 [React](https://reactjs.org/){:rel="nofollow"} est, à l'heure où j'écris ces lignes, le framework JavaScript le plus utilisé du marché. Grâce à son DOM virtuel, il a montré qu'il était l'un des plus performant. Mais à cause d'exemples peut-être trop simples et d'une croyance aveugle en la "toute puissance" de React (Amen), il peut en résulter de sérieux problèmes de performance.

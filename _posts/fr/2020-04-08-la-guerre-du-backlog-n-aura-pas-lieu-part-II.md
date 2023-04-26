@@ -1,18 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2020-04-08'
-categories:
-  - agile
-authors:
-  - mapo
+slug: la-guerre-du-backlog-n-aura-pas-lieu-part-II
+title: La Guerre du Backlog n'aura pas lieu (PART II)
 excerpt: >-
   RICE, KANO et ruse de Sioux - Trois nouvelles méthodologies de priorisation
   produit centrées sur vos utilisateurs !
-title: La Guerre du Backlog n'aura pas lieu (PART II)
-slug: la-guerre-du-backlog-n-aura-pas-lieu-part-II
-oldCategoriesAndTags:
+authors:
+  - mapo
+categories:
   - agile
+keywords:
   - agilité
   - po
   - pm
@@ -20,7 +18,6 @@ oldCategoriesAndTags:
   - product manager
   - backlog
   - priorisation
-permalink: /fr/la-guerre-du-backlog-n-aura-pas-lieu-part-II/
 ---
 
 Dans notre [premier article](https://blog.eleven-labs.com/fr/la-guerre-du-backlog-n-aura-pas-lieu/), nous avons détaillé trois méthodes de priorisation assez classiques du backlog : MoSCoW, WSJF, priorisation par la business value. Mais dans la bataille quotidienne de priorisation de votre produit, vous pouvez faire face à d’autres biais qui peuvent impacter négativement votre stratégie produit :

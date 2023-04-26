@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2020-03-04'
-categories:
-  - agile
-authors:
-  - psur-eleven
+slug: mener-entretien-utilisateur-benoit-blanc
+title: 'Entretien utilisateur, mène ton enquête comme Benoit Blanc'
 excerpt: >-
   Faire des entretiens avec ses utilisateurs ne s’improvise pas. C’est un
   exercice qui se prépare et qui est plus difficile qu’il n’y paraît. Cet
   article va vous présenter une méthode pour vous aider dans cette tâche
-title: 'Entretien utilisateur, mène ton enquête comme Benoit Blanc'
-slug: mener-entretien-utilisateur-benoit-blanc
-oldCategoriesAndTags:
+authors:
+  - psur-eleven
+categories:
   - agile
+keywords:
   - entretien
   - utilisateur
-permalink: /fr/mener-entretien-utilisateur-benoit-blanc/
 ---
 
 ## Introduction

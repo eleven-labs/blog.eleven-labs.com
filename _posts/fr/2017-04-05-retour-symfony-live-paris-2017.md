@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2017-04-05'
-categories:
-  - php
+slug: retour-symfony-live-paris-2017
+title: LE SYMFONY LIVE PARIS 2017
+excerpt: Récapitulatif des différentes présentations du sflive 2017
 authors:
   - nkania
   - aandre
-excerpt: Récapitulatif des différentes présentations du sflive 2017
-title: LE SYMFONY LIVE PARIS 2017
-slug: retour-symfony-live-paris-2017
-oldCategoriesAndTags:
+categories:
   - php
+keywords:
   - symfony
   - conference
   - symfony_live
-permalink: /fr/retour-symfony-live-paris-2017/
 ---
 
 Tout comme l’année dernière (et les 3 années précédentes) Eleven Labs était présent cette année au Symfony Live ! On a mangé des Schokobons, bu des bières, mais aussi et surtout : suivi les conférences. Voilà donc notre r>etour sur l’événement en tweets, images, et résumés de ces deux jours :

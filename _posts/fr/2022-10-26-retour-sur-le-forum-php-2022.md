@@ -1,17 +1,14 @@
 ---
-layout: post
 lang: fr
 date: '2022-10-26'
-categories:
-  - php
+slug: retour-sur-le-forum-php-2022
+title: Retour sur le Forum PHP 2022
+excerpt: Un REX sur les différentes confs qui ont été données cette année au Forum PHP.
 authors:
   - ajacquemin
-excerpt: Un REX sur les différentes confs qui ont été données cette année au Forum PHP.
-title: Retour sur le Forum PHP 2022
-slug: retour-sur-le-forum-php-2022
-oldCategoriesAndTags:
+categories:
   - php
-permalink: /fr/retour-sur-le-forum-php-2022/
+keywords: []
 ---
 
 Les 13 & 14 octobre 2022 a eu lieu le mythique Forum PHP 2022 organisé par l'AFUP, dans un lieu non moins mythique : DisneyLand Paris.

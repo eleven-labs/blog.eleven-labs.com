@@ -1,26 +1,23 @@
 ---
-layout: post
 lang: fr
 date: '2016-08-19'
-categories:
-  - php
-authors:
-  - tthuon
+slug: transformer-tableau-en-reponse-json
+title: Transformer un tableau en réponse JSON
 excerpt: >-
   Dans le contexte d'une API REST, intéressons nous particulièrement à la donnée
   rendue par le contrôleur. Je vous emmène découvrir le mécanisme qui permet
   l'affichage de la donnée en format compréhensible par d'autres systèmes, JSON
   dans cet exemple.
-title: Transformer un tableau en réponse JSON
-slug: transformer-tableau-en-reponse-json
-oldCategoriesAndTags:
+authors:
+  - tthuon
+categories:
   - php
+keywords:
   - symfony
   - httpkernel
   - api
   - rest
   - json
-permalink: /fr/transformer-tableau-en-reponse-json/
 ---
 ## Introduction
 

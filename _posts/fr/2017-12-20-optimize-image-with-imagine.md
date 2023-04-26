@@ -1,11 +1,8 @@
 ---
-layout: post
 lang: fr
 date: '2017-12-20'
-categories:
-  - php
-authors:
-  - skpotogbey
+slug: optimize-image-with-imagine
+title: Optimiser vos images avec Imagine
 excerpt: >-
   L’optimisation d’images est un enjeu très important dans la conception d’une
   application web et nécessite une attention particulière. Durant le
@@ -13,13 +10,13 @@ excerpt: >-
   nous avons été amenés à les optimiser pour différents devices (desktop et
   mobile). La suite de cet article sera dédiée à expliquer de manière assez
   simple notre démarche.
-title: Optimiser vos images avec Imagine
-slug: optimize-image-with-imagine
-oldCategoriesAndTags:
+authors:
+  - skpotogbey
+categories:
   - php
+keywords:
   - symfony
   - letscreate
-permalink: /fr/optimize-image-with-imagine/
 ---
 
 L’optimisation d’images est un enjeu très important dans la conception d’une application web et nécessite une attention particulière.

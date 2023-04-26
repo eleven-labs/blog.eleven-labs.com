@@ -1,19 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2017-01-25'
-categories: []
+slug: ios-comment-coupler-les-delegates-les-closures
+title: '[iOS] Comment coupler les delegates et les closures ?'
+excerpt: Faisons collaborer les delegates et les closures
 authors:
   - thuchon
-excerpt: Faisons collaborer les delegates et les closures
-title: '[iOS] Comment coupler les delegates et les closures ?'
-slug: ios-comment-coupler-les-delegates-les-closures
-oldCategoriesAndTags:
+categories: []
+keywords:
   - mobile
   - ios
   - delegates
   - closure
-permalink: /fr/ios-comment-coupler-les-delegates-les-closures/
 ---
 
 ### Introduction

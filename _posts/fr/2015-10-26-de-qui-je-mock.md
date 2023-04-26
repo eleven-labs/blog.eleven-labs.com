@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2015-10-26'
-categories:
-  - php
-authors:
-  - tthuon
+slug: de-qui-je-mock
+title: De qui je me mock !
 excerpt: >-
   Phpunit est un outil de test puissant. Il permet de tester de manière unitaire
   l'ensemble de son projet. Dans cet article, je vais me concentrer sur les mock
   et les stub d'objet.
-title: De qui je me mock !
-slug: de-qui-je-mock
-oldCategoriesAndTags:
+authors:
+  - tthuon
+categories:
   - php
+keywords:
   - symfony
   - phpunit
-permalink: /fr/de-qui-je-mock/
 ---
 
 [PHPUnit](https://phpunit.de/){:rel="nofollow noreferrer"} est un outil de test puissant. Il permet de tester de manière unitaire l'ensemble de son projet.

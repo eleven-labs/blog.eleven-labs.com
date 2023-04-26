@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2018-04-05'
-categories:
-  - php
-  - javascript
-authors:
-  - vdelpeyroux
-cover: /assets/2018-04-05-api-platform/cover.jpg
+slug: ta-liste-des-courses-avec-api-platform
+title: Ta liste des courses avec API Platform
 excerpt: >-
   API Platform se veut être un framework complet permettant de créer des projets
   web se basant sur des APIs orientées ressource
-title: Ta liste des courses avec API Platform
-slug: ta-liste-des-courses-avec-api-platform
-oldCategoriesAndTags:
+cover: /assets/2018-04-05-api-platform/cover.jpg
+authors:
+  - vdelpeyroux
+categories:
   - php
   - javascript
+keywords:
   - framework
   - api
   - symfony
@@ -23,7 +20,6 @@ oldCategoriesAndTags:
   - react
   - redux
   - api platform
-permalink: /fr/ta-liste-des-courses-avec-api-platform/
 ---
 Dans la continuité de l'article de notre très cher confrère Romain Pierlot sur [Api Platfrom](https://blog.eleven-labs.com/fr/creer-une-api-avec-api-platform/), nous allons essayer de faire le tour des nouvelles fonctionnalités de ce framework, et par la même occasion,  mettre en place une application web, comportant une api `REST Hydra` / `Graphql` avec un backend et un client full Javascript.
 

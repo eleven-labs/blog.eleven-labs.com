@@ -1,26 +1,22 @@
 ---
-layout: post
 lang: fr
 date: '2017-08-30'
-categories:
-  - php
-  - javascript
-authors:
-  - captainjojo
-cover: /assets/2017-08-30-votre-ci-de-qualite/cover.jpg
+slug: votre-ci-de-qualite
+title: Votre CI de qualité
 excerpt: >-
   La qualité est un vaste sujet, surtout quand on l'associe au développement
   d'applications web. Ce qui est encore plus compliqué, c'est de mettre en place
   l'environnement d'intégration continue (CI) de suivi de qualité.
-title: Votre CI de qualité
-slug: votre-ci-de-qualite
-oldCategoriesAndTags:
+cover: /assets/2017-08-30-votre-ci-de-qualite/cover.jpg
+authors:
+  - captainjojo
+categories:
   - php
   - javascript
+keywords:
   - symfony
   - symfony2
   - webperformance
-permalink: /fr/votre-ci-de-qualite/
 ---
 
 La qualité est un vaste sujet, surtout quand on l'associe au développement d'application web.

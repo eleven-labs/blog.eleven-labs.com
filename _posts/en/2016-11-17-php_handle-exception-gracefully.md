@@ -1,25 +1,21 @@
 ---
-layout: post
 lang: en
 date: '2016-11-17'
-categories:
-  - php
-authors:
-  - tthuon
+slug: php_handle-exception-gracefully
+title: Handle exceptions gracefully
 excerpt: >-
   Hello everyone! Today I would like to speak about a subject too little
   discussed in php: the exceptions. An exception is an alert issued when the
   code is executed, to indicate that something has not happened as expected. It
   can be a bad connection identifier to the database, or an operation on a file
   that is not allowed, or a division by zero for example.
-title: Handle exceptions gracefully
-slug: php_handle-exception-gracefully
-oldCategoriesAndTags:
+authors:
+  - tthuon
+categories:
   - php
-  - non classé
+keywords:
   - best practice
   - exception
-permalink: /en/php_handle-exception-gracefully/
 ---
 
 Hello everyone! Today I would like to speak about a subject too little discussed in php: the exceptions. An exception is an alert issued when the code is executed, to indicate that something has not happened as expected. It can be a bad connection identifier to the database, or an operation on a file that is not allowed, or a division by zero for example.
