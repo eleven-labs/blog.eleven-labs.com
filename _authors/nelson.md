@@ -1,7 +1,5 @@
 ---
-layout: author
-login: nelson
-title: Nelson Da Costa
-permalink: /authors/nelson/
+username: nelson
+name: Nelson Da Costa
 ---
 Developer @ Eleven-labs

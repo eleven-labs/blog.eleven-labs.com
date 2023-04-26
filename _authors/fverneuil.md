@@ -1,8 +1,6 @@
 ---
-layout: author
-login: fverneuil
-title: Florian Verneuil
-permalink: /authors/fverneuil/
+username: fverneuil
+name: Florian Verneuil
 ---
 
 UX Designer : Grande passion pour la recherche utilisateur !

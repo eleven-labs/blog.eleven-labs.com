@@ -1,9 +1,7 @@
 ---
-layout: author
-login: flemzord
-title: Maxence Maireaux
-github: flemzord
+username: flemzord
+name: Maxence Maireaux
 twitter: flemzord
-permalink: /authors/flemzord/
+github: flemzord
 ---
 DevOps, Kubernetes, Terraform, AWS, Ansible = <3

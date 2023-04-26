@@ -1,7 +1,5 @@
 ---
-layout: author
-login: nkania
-title: Noel Kania
-permalink: /authors/nkania/
+username: nkania
+name: Noel Kania
 ---
 PHP, Symfony2, auto-hébergement, vps, bières...

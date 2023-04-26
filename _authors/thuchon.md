@@ -1,8 +1,6 @@
 ---
-layout: author
-login: thuchon
-title: Thibaud Huchon
+username: thuchon
+name: Thibaud Huchon
 twitter: ettibo
-permalink: /authors/thuchon/
 ---
 Plop

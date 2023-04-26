@@ -1,9 +1,7 @@
 ---
-layout: author
-login: talgrin
-title: Thibaut ALGRIN
-github: ThibautAlgrin
+username: talgrin
+name: Thibaut ALGRIN
 twitter: Thibaut_ALGRIN
-permalink: /authors/talgrin/
+github: ThibautAlgrin
 ---
 Développeur Senior Symfony

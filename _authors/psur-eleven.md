@@ -1,7 +1,5 @@
 ---
-layout: author
-login: psur-eleven
-title: Pierre Sur
-permalink: /authors/psur-eleven/
+username: psur-eleven
+name: Pierre Sur
 ---
 Product Owner de l'espace

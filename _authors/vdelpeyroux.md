@@ -1,7 +1,5 @@
 ---
-layout: author
-login: vdelpeyroux
-title: Victor Delpeyroux
-permalink: /authors/vdelpeyroux/
+username: vdelpeyroux
+name: Victor Delpeyroux
 ---
 j'aime le back, j'aime le front, et la clarinette

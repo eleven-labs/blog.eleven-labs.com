@@ -1,9 +1,7 @@
 ---
-layout: author
-login: larcheops
-title: Alexandre NICOLAIE
+username: larcheops
+name: Alexandre NICOLAIE
 github: xunleii
-permalink: /authors/larcheops/
 ---
 SpaceArcheoDevOps _(ou un truc du style qui fini en Ops)_ @ _ElevenLabs_ 🦝
 

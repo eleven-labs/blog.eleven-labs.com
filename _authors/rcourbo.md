@@ -1,7 +1,5 @@
 ---
-layout: author
-login: rcourbo
-title: Renaud Courbo
-permalink: /authors/rcourbo/
+username: rcourbo
+name: Renaud Courbo
 ---
 Astronaute Product Owner, ancien développeur devenu PO pour le meilleur et pour le pire...

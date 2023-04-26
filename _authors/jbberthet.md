@@ -1,9 +1,7 @@
 ---
-layout: author
-login: jbberthet
-title: Jean-Baptiste Berthet
+username: jbberthet
+name: Jean-Baptiste Berthet
 twitter: Jibehh
-permalink: /authors/jbberthet/
 ---
 
 Astronaute Schizo Cat @ElevenLabs 🚀 & Dev full-stack JavaScript @TheFork 🍴

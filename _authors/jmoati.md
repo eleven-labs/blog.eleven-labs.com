@@ -1,8 +1,6 @@
 ---
-layout: author
-login: jmoati
-title: Jacques Moati
+username: jmoati
+name: Jacques Moati
 github: Jmoati
-permalink: /authors/jmoati/
 ---
 Développeur Señor PHP / Symfony

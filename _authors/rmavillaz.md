@@ -1,8 +1,6 @@
 ---
-layout: author
-login: rmavillaz
-title: Rémi Mavillaz
+username: rmavillaz
+name: Rémi Mavillaz
 github: kizeremi
-permalink: /authors/rmavillaz/
 ---
 Développeur Symfony / NodeJS / React / GraphQL

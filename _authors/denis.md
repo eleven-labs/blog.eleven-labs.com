@@ -1,7 +1,5 @@
 ---
-layout: author
-login: denis
-title: Denis Schneider
-permalink: /authors/denis/
+username: denis
+name: Denis Schneider
 ---
 

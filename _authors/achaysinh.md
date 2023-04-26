@@ -1,7 +1,5 @@
 ---
-layout: author
-login: achaysinh
-title: Alix Chaysinh
-permalink: /authors/achaysinh/
+username: achaysinh
+name: Alix Chaysinh
 ---
 Developer @ Eleven-labs

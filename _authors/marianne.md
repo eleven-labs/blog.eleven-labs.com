@@ -1,7 +1,5 @@
 ---
-layout: author
-login: marianne
-title: Marianne Joseph-Géhannin
-permalink: /authors/marianne/
+username: marianne
+name: Marianne Joseph-Géhannin
 ---
 Développeuse PHP/Symfony 🦝

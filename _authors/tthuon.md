@@ -1,8 +1,6 @@
 ---
-layout: author
-login: tthuon
-title: Thierry T.
+username: tthuon
+name: Thierry T.
 github: lepiaf
-permalink: /authors/tthuon/
 ---
 Super Data Boy

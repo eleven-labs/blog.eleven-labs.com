@@ -1,7 +1,5 @@
 ---
-layout: author
-login: arubal
-title: Amador Rubal
-permalink: /authors/arubal/
+username: arubal
+name: Amador Rubal
 ---
 Developer @ Eleven-labs

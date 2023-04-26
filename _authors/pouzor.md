@@ -1,9 +1,7 @@
 ---
-layout: author
-login: pouzor
-title: Rémy Jardinet
+username: pouzor
+name: Rémy Jardinet
 twitter: Pouz0r
-permalink: /authors/pouzor/
 ---
 IT architect @ Eleven Labs. Écosystème data/cloud et high-performance solution. I <3 IOT
 

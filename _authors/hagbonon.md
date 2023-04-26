@@ -1,7 +1,5 @@
 ---
-layout: author
-login: hagbonon
-title: Hugo Agbonon
-permalink: /authors/hagbonon/
+username: hagbonon
+name: Hugo Agbonon
 ---
 Developer @ Eleven-labs

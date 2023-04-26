@@ -1,7 +1,5 @@
 ---
-layout: author
-login: la3roug
-title: Chaouki SAKHRAOUI
-permalink: /authors/la3roug/
+username: la3roug
+name: Chaouki SAKHRAOUI
 ---
 Dev JS : Angular, TypeScript, NodeJS

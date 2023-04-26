@@ -1,7 +1,5 @@
 ---
-layout: author
-login: HugoDurand
-title: Hugo DURAND
-permalink: /authors/HugoDurand/
+username: HugoDurand
+name: Hugo DURAND
 ---
 Développeur Web Symfony & ReactJs 

@@ -1,8 +1,6 @@
 ---
-layout: author
-login: vbertrand
-title: Vincent Bertrand
-permalink: /authors/vbertrand/
+username: vbertrand
+name: Vincent Bertrand
 ---
 Alternant Développeur Full Stack chez Eleven Labs, passionné par le Web et la technologie de manière générale.
 Nouvellement amateur des services Cloud AWS / Google. 

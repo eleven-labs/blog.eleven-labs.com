@@ -1,7 +1,5 @@
 ---
-layout: author
-login: sofany
-title: Sofany Ong
-permalink: /authors/sofany/
+username: sofany
+name: Sofany Ong
 ---
 Developer @ Eleven-labs

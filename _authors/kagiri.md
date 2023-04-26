@@ -1,8 +1,6 @@
 ---
-layout: author
-login: kagiri
-title: Kevin Agiri
-permalink: /authors/kagiri/
+username: kagiri
+name: Kevin Agiri
 ---
 
 Product owner chez Eleven-Labs. 
