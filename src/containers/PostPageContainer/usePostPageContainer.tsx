@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { generatePath } from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
@@ -8,6 +7,7 @@ import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContai
 import { LinkContainer } from '@/containers/LinkContainer';
 import { getPathFile } from '@/helpers/assetHelper';
 import { type getDataFromPostPage } from '@/helpers/contentHelper';
+import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useSeo } from '@/hooks/useSeo';

@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { generatePath } from 'react-router-dom';
 
 import { PostPreviewListProps } from '@/components';
 import { NUMBER_OF_ITEMS_PER_PAGE, PATHS } from '@/constants';
 import { LinkContainer } from '@/containers/LinkContainer';
 import { type getDataFromPostListPage } from '@/helpers/contentHelper';
+import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
 
 export interface UsePostPreviewListContainerOptions {

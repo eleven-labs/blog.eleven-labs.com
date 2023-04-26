@@ -1,4 +1,3 @@
-import { generatePath } from '@remix-run/router';
 import { Feed } from 'feed';
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -7,6 +6,7 @@ import sanitizeHtml from 'sanitize-html';
 import { blogUrl } from '@/config/website';
 import { PATHS } from '@/constants';
 import { getPostsByLangAndAuthors } from '@/helpers/contentHelper';
+import { generatePath } from '@/helpers/routerHelper';
 
 export const generateFeedFile = (options: { rootDir: string }): void => {
   const { postsByLang } = getPostsByLangAndAuthors();
