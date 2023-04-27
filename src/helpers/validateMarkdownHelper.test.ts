@@ -6,7 +6,7 @@ import { validateAuthor, validateMarkdown, validatePost } from './validateMarkdo
 describe('validateAuthor', () => {
   it('should throw an error if markdown is invalid', () => {
     jest.spyOn(fs, 'readFileSync').mockReturnValueOnce(`---
-login: jdoe
+username: jdoe
 github: account-github
 twitter: account-twitter
 linkedin: account-Linkedin
@@ -14,14 +14,14 @@ linkedin: account-Linkedin
 This is some valid content`);
     const options = { markdownFilePath: 'invalidAuthor.md' };
     expect(() => validateAuthor(options)).toThrowError(
-      'The markdown of the file "invalidAuthor.md" is invalid ! Validation error: Required at "title"'
+      'The markdown of the file "invalidAuthor.md" is invalid ! Validation error: Required at "name"'
     );
   });
 
   it('should return valid data and content if markdown is valid', () => {
     jest.spyOn(fs, 'readFileSync').mockReturnValueOnce(`---
-login: jdoe
-title: John Doe
+username: jdoe
+name: John Doe
 github: account-github
 twitter: account-twitter
 linkedin: account-linkedin
@@ -30,8 +30,8 @@ This is some valid content`);
     const options = { markdownFilePath: 'validAuthor.md' };
     const author = validateAuthor(options);
     expect(author).toEqual({
-      login: 'jdoe',
-      title: 'John Doe',
+      username: 'jdoe',
+      name: 'John Doe',
       github: 'account-github',
       twitter: 'account-twitter',
       linkedin: 'account-linkedin',
@@ -102,8 +102,8 @@ describe('validateMarkdown', () => {
       .mockReturnValueOnce(['path/to/fake-author-1.md', 'path/to/fake-author-2.md'])
       .mockReturnValueOnce(['path/to/fake-post-1.md', 'path/to/fake-post-2.md']);
     jest.spyOn(fs, 'readFileSync').mockReturnValue(`---
-login: jdoe
-title: John Doe 1
+username: jdoe
+name: John Doe 1
 ---
 Some content`);
 
@@ -116,8 +116,8 @@ Some content`);
       .mockReturnValueOnce(['path/to/fake-author-1.md'])
       .mockReturnValueOnce(['path/to/fake-post-1.md', 'path/to/fake-post-2.md']);
     jest.spyOn(fs, 'readFileSync').mockReturnValueOnce(`---
-login: jdoe
-title: John Doe 1
+username: jdoe
+name: John Doe 1
 ---
 Some content`).mockReturnValue(`---
 lang: en

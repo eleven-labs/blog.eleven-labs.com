@@ -1,7 +1,5 @@
 ---
-layout: author
-login: peter
-title: Peter Nola
-permalink: /authors/peter/
+username: peter
+name: Peter Nola
 ---
 Developer @ Eleven-labs

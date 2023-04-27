@@ -1,11 +1,9 @@
 export type AuthorData = {
-  layout: 'author';
-  login: string;
-  title: string;
+  username: string;
+  name: string;
   github?: string;
   twitter?: string;
   linkedin?: string;
-  permalink: string;
 };
 
 export type PostData = {
@@ -27,9 +25,7 @@ export interface TransformedPost
   content: string;
 }
 
-export interface TransformedAuthor extends Pick<AuthorData, 'github' | 'twitter'> {
-  username: string;
-  name: string;
+export interface TransformedAuthor extends AuthorData {
   avatarImageUrl?: string;
   content: string;
 }

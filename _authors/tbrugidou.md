@@ -1,7 +1,5 @@
 ---
-layout: author
-login: tbrugidou
-title: Thibaut Brugidou
-permalink: /authors/tbrugidou/
+username: tbrugidou
+name: Thibaut Brugidou
 ---
 Développeur front-end

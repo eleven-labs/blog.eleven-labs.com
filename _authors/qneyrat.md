@@ -1,9 +1,7 @@
 ---
-layout: author
-login: qneyrat
-title: Quentin Neyrat
+username: qneyrat
+name: Quentin Neyrat
 twitter: qneyrat
-permalink: /authors/qneyrat/
 ---
 
 Back-end developer @ Eleven Labs

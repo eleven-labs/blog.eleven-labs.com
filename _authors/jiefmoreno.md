@@ -1,8 +1,6 @@
 ---
-layout: author
-login: jiefmoreno
-title: Jean-François Moreno
+username: jiefmoreno
+name: Jean-François Moreno
 twitter: jiefmo
-permalink: /authors/jiefmoreno/
 ---
 Développeur Javascript

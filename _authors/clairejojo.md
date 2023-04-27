@@ -1,8 +1,6 @@
 ---
-layout: author
-login: clairejojo
-title: Claire Jaunasse
+username: clairejojo
+name: Claire Jaunasse
 github: 'https://github.com/clairejojo/'
-permalink: /authors/clairejojo/
 ---
 Product Owner

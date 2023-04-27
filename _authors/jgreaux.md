@@ -1,8 +1,6 @@
 ---
-layout: author
-login: jgreaux
-title: Jérémy GRÉAUX
+username: jgreaux
+name: Jérémy GRÉAUX
 github: jeremygreaux
-permalink: /authors/jgreaux/
 ---
 Développeur PHP.

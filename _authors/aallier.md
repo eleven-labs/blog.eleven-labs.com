@@ -1,7 +1,5 @@
 ---
-layout: author
-login: aallier
-title: Alexandre Allier
-permalink: /authors/aallier/
+username: aallier
+name: Alexandre Allier
 ---
 PHP, Javascript, GOTO++

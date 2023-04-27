@@ -1,7 +1,5 @@
 ---
-layout: author
-login: trughooputh
-title: Thomas Rughooputh
-permalink: /authors/trughooputh/
+username: trughooputh
+name: Thomas Rughooputh
 ---
 Developer @ Eleven-labs

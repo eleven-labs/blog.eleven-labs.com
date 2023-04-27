@@ -1,10 +1,8 @@
 ---
-layout: author
-login: mlenglet
-title: Martin Lenglet
-github: ulrik59
+username: mlenglet
+name: Martin Lenglet
 twitter: MartinUlrik
-permalink: /authors/mlenglet/
+github: ulrik59
 ---
 Développeur JavaScript passioné de nouvelles technologies.
 Actuellement un "React-addict", je travaille aussi bien sur du front-end que sur du back-end.

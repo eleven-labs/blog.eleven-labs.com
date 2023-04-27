@@ -1,8 +1,6 @@
 ---
-layout: author
-login: youyou
-title: Younes Diouri
+username: youyou
+name: Younes Diouri
 twitter: youyou_dev
-permalink: /authors/youyou/
 ---
 Youyou aime le PHP !

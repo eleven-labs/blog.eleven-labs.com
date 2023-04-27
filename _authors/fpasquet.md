@@ -1,7 +1,5 @@
 ---
-layout: author
-login: fpasquet
-title: Fabien PASQUET
-permalink: /authors/fpasquet/
+username: fpasquet
+name: Fabien PASQUET
 ---
 Développeur Full Stack JS @ElevenLabs. Technologies de prédilection : Typescript, GraphQL, NodeJS et React

@@ -1,8 +1,6 @@
 ---
-layout: author
-login: martincadoux
-title: Martin Cadoux
+username: martincadoux
+name: Martin Cadoux
 twitter: MartinCadoux
-permalink: /authors/martincadoux/
 ---
 

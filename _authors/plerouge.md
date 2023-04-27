@@ -1,8 +1,6 @@
 ---
-layout: author
-login: plerouge
-title: Pierre Lerouge
-permalink: /authors/plerouge/
+username: plerouge
+name: Pierre Lerouge
 ---
 Astro Lead développeur @ ElevenLabs_🚀 & Duck Invaders.
 Skills : NodeJs // React // GraphQL // Symfony // DevOps

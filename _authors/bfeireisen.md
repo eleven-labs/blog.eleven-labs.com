@@ -1,8 +1,6 @@
 ---
-layout: author
-login: bfeireisen
-title: Benjamin Feireisen
-permalink: /authors/bfeireisen/
+username: bfeireisen
+name: Benjamin Feireisen
 ---
 Coach Agile Orga et Produit naviguant dans un monde complexe
 

@@ -1,9 +1,7 @@
 ---
-layout: author
-login: jelhaouchi
-title: Jawad Elhaouchi
-github: jelhaouchi
+username: jelhaouchi
+name: Jawad Elhaouchi
 twitter: jelhaouchi
-permalink: /authors/jelhaouchi/
+github: jelhaouchi
 ---
 Curious Geek. Interests in open source, containers, microservices. Passionate about technology and startups. Climber and Surfer.

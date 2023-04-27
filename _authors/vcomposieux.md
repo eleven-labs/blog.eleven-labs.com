@@ -1,9 +1,7 @@
 ---
-layout: author
-login: vcomposieux
-title: Vincent Composieux
-github: eko
+username: vcomposieux
+name: Vincent Composieux
 twitter: vcomposieux
-permalink: /authors/vcomposieux/
+github: eko
 ---
 Architecte passionné par les technologies web depuis de longues années, je pratique principalement du PHP (Symfony) / Javascript mais aussi du Python ou Golang.
