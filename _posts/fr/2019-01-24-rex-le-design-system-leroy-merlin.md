@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2019-01-24'
-categories:
-  - javascript
-authors:
-  - captainjojo
-cover: /assets/2019-01-23-rex-le-design-system-leroy-merlin/cover.png
+slug: rex-le-design-system-leroy-merlin
+title: Retour d'expérience sur la mise en place d'un Design System chez Adeo
 excerpt: >-
   Depuis septembre 2018, le groupe Adeo travaille à la mise en place d'un design
   system complet, permettant à l'ensemble des sites E-commerce de Leroy Merlin
   du monde entier d'utiliser une identité visuelle commune.
-title: Retour d'expérience sur la mise en place d'un Design System chez Adeo
-slug: rex-le-design-system-leroy-merlin
-oldCategoriesAndTags:
+cover: /assets/2019-01-23-rex-le-design-system-leroy-merlin/cover.png
+authors:
+  - captainjojo
+categories:
   - javascript
+keywords:
   - graphql
   - react
-permalink: /fr/rex-le-design-system-leroy-merlin/
 ---
 
 Depuis septembre 2018, le groupe Adeo travaille à la mise en place d'un design system complet, permettant à l'ensemble des sites E-commerce de Leroy Merlin du monde entier d'utiliser une identité visuelle commune.

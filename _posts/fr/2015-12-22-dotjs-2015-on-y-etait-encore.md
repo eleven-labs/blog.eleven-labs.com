@@ -1,18 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2015-12-22'
-categories:
-  - javascript
-authors:
-  - trughooputh
+slug: dotjs-2015-on-y-etait-encore
+title: 'dotJS 2015 : compte-rendu d''un astronaute'
 excerpt: >-
   Cette année encore, Eleven Labs et sa bande d'astronautes étaient partenaires
   de la http://www.dotjs.io version 2015.
-title: 'dotJS 2015 : compte-rendu d''un astronaute'
-slug: dotjs-2015-on-y-etait-encore
-oldCategoriesAndTags:
+authors:
+  - trughooputh
+categories:
   - javascript
+keywords:
   - dotjs
   - conference
   - http
@@ -23,7 +21,6 @@ oldCategoriesAndTags:
   - reaction
   - angular
   - node
-permalink: /fr/dotjs-2015-on-y-etait-encore/
 ---
 
 Cette année encore, Eleven Labs et sa bande d'astronautes étaient partenaires de la [dotJS](http://www.dotjs.io/){:rel="nofollow noreferrer"} version 2015.

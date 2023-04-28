@@ -1,11 +1,8 @@
 ---
-layout: post
 lang: fr
 date: '2019-10-09'
-categories:
-  - agile
-authors:
-  - pbrenot
+slug: ecrire-et-decouper-ses-users-stories-comme-un-ninja
+title: Ecrire et découper ses Users Stories comme un ninja
 excerpt: >-
   Écrire une User Story efficace n'est pas un exercice simple et cela nécessite
   de l'entraînement, même si à première vue "il ne s'agit que d'une petite
@@ -13,12 +10,12 @@ excerpt: >-
   Dans le cadre d'un projet AGILE vos Users Stories sont la transcription du
   besoin des différentes parties prenantes, découpées en incréments
   fonctionnels.
-title: Ecrire et découper ses Users Stories comme un ninja
-slug: ecrire-et-decouper-ses-users-stories-comme-un-ninja
-oldCategoriesAndTags:
+authors:
+  - pbrenot
+categories:
   - agile
+keywords:
   - organisation
-permalink: /fr/ecrire-et-decouper-ses-users-stories-comme-un-ninja/
 ---
 
 

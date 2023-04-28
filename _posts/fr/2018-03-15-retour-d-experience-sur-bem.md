@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2018-03-15'
-categories:
-  - javascript
-authors:
-  - kcordier
-cover: /assets/2018-03-15-retour-d-experience-sur-bem/cover.jpg
+slug: retour-d-experience-sur-bem
+title: Retour d’expérience sur BEM
 excerpt: >-
   Dans cet article, vous trouverez mon retour d'expérience sur la méthodologie
   BEM (Block ; Element ; Modifier), choisie dans ma précédente refonte du...
-title: Retour d’expérience sur BEM
-slug: retour-d-experience-sur-bem
-oldCategoriesAndTags:
+cover: /assets/2018-03-15-retour-d-experience-sur-bem/cover.jpg
+authors:
+  - kcordier
+categories:
   - javascript
+keywords:
   - bem
   - html
   - css
-permalink: /fr/retour-d-experience-sur-bem/
 ---
 
 Dans cet article, vous trouverez mon retour d'expérience sur la méthodologie BEM (**Block** ; **Element** ; **Modifier**) choisie dans ma précédente refonte du site RueDuCommerce, et chez mes différents clients.

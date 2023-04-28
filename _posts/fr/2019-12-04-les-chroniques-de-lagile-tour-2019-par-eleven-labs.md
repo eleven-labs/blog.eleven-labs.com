@@ -1,27 +1,24 @@
 ---
-layout: post
 lang: fr
 date: '2019-12-04'
-categories:
-  - agile
-authors:
-  - mae
-  - rcourbo
-  - mapo
+slug: les-chroniques-de-l-agile-tour-2019-par-eleven-labs
+title: Les Chroniques de l’Agile Tour 2019 par Eleven Labs
 excerpt: >-
   L’escouade agile d’Eleven Labs s’est déplacée le 2 décembre jusqu’à Porte de
   Charenton pour assister aux différents talks et workshops de l’Agile Tour
   2019.
-title: Les Chroniques de l’Agile Tour 2019 par Eleven Labs
-slug: les-chroniques-de-l-agile-tour-2019-par-eleven-labs
-oldCategoriesAndTags:
+authors:
+  - mae
+  - rcourbo
+  - mapo
+categories:
   - agile
+keywords:
   - product owner
   - event
   - rex
   - agile tour
   - scrum master
-permalink: /fr/les-chroniques-de-l-agile-tour-2019-par-eleven-labs/
 ---
 
 L’escouade agile d’Eleven Labs s’est déplacée le 2 décembre jusqu’à Porte de Charenton pour assister aux différents talks et workshops de l’Agile Tour 2019.

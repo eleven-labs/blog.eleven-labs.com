@@ -1,14 +1,13 @@
 ---
-layout: post
 lang: fr
 date: '2017-02-22'
-categories: []
+slug: consul-service-discovery-failure-detection-2
+title: 'Consul : Service Discovery et Failure Detection'
+excerpt: '# Introduction'
 authors:
   - vcomposieux
-excerpt: '# Introduction'
-title: 'Consul : Service Discovery et Failure Detection'
-slug: consul-service-discovery-failure-detection-2
-oldCategoriesAndTags:
+categories: []
+keywords:
   - dev ops
   - service
   - consul
@@ -17,7 +16,6 @@ oldCategoriesAndTags:
   - detection
   - health
   - check
-permalink: /fr/consul-service-discovery-failure-detection-2/
 ---
 # Introduction
 

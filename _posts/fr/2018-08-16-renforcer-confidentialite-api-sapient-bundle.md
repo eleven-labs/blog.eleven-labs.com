@@ -1,29 +1,26 @@
 ---
-layout: post
 lang: fr
 date: '2018-08-16'
-categories:
-  - php
-authors:
-  - tthuon
-cover: /assets/2018-08-16-renforcer-confidentialite-api-sapient-bundle/cover.jpg
+slug: renforcer-confidentialite-api-sapient-bundle
+title: Renforcer la confidentialité d'une API avec sapient-bundle
 excerpt: >-
   Avec la popularisation et la simplicité de la mise en place du protocole
   HTTPS, la sécurisation de données sur internet apparaît comme à la portée de
   tous. Il reste néanmoins critique d’être conscient des failles qui existent
   encore. Avec libsodium, nous allons renforcer la confidentialité des échanges
   de données en toute simplicité.
-title: Renforcer la confidentialité d'une API avec sapient-bundle
-slug: renforcer-confidentialite-api-sapient-bundle
-oldCategoriesAndTags:
+cover: /assets/2018-08-16-renforcer-confidentialite-api-sapient-bundle/cover.jpg
+authors:
+  - tthuon
+categories:
   - php
+keywords:
   - bundle
   - symfony
   - security
   - confidentiality
   - api
   - libsodium
-permalink: /fr/renforcer-confidentialite-api-sapient-bundle/
 ---
 
 ## Le web de tous les dangers

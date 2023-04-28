@@ -1,27 +1,24 @@
 ---
-layout: post
 lang: fr
 date: '2017-05-09'
-categories:
-  - architecture
-authors:
-  - vcomposieux
+slug: retours-sur-la-dotscale-2017
+title: Retours sur la dotScale 2017
 excerpt: >-
   Nous avons assisté à la 5ème édition de la dotScale (2017) qui se tenait cette
   année à Paris. Cette édition se déroulait dans le Théâtre de Paris et nous
   tenons à saluer les partenaires et volontaires pour l’organisation de cette
   conférence qui s’est très bien déroulée.
-title: Retours sur la dotScale 2017
-slug: retours-sur-la-dotscale-2017
-oldCategoriesAndTags:
+authors:
+  - vcomposieux
+categories:
   - architecture
+keywords:
   - dev ops
   - conferences
   - devops
   - dot
   - dotccale
   - scalability
-permalink: /fr/retours-sur-la-dotscale-2017/
 ---
 Nous avons assisté à la 5ème édition de la dotScale (2017) qui se tenait cette année à Paris. Cette édition se déroulait dans le Théâtre de Paris et nous tenons à saluer les partenaires et volontaires pour l’organisation de cette conférence qui s’est très bien déroulée.
 

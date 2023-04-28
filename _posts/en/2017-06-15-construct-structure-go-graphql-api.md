@@ -1,19 +1,17 @@
 ---
-layout: post
 lang: en
 date: '2017-06-15'
-categories: []
+slug: construct-structure-go-graphql-api
+title: Construct and structure a Go GraphQL API
+excerpt: GraphQL was released 2 years ago and applications that use it are still rare.
 authors:
   - vcomposieux
-excerpt: GraphQL was released 2 years ago and applications that use it are still rare.
-title: Construct and structure a Go GraphQL API
-slug: construct-structure-go-graphql-api
-oldCategoriesAndTags:
+categories: []
+keywords:
   - go
   - api
   - golang
   - graphql
-permalink: /en/construct-structure-go-graphql-api/
 ---
 GraphQL was released 2 years ago and applications that use it are still rare.
 However, this implementation proposed by Facebook offers many possibilities that are not available in REST APIs.

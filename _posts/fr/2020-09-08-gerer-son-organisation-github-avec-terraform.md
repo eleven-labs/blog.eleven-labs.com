@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2020-09-08'
-categories:
-  - architecture
-authors:
-  - VEBERArnaud
+slug: gerer-son-organisation-github-avec-terraform
+title: |
+  Gérer son organisation Github avec Terraform
 excerpt: >
   Apprenons ensemble à scaler la gestion d'une organisation Github avec
   Terraform
-title: |
-  Gérer son organisation Github avec Terraform
-slug: gerer-son-organisation-github-avec-terraform
-oldCategoriesAndTags:
+authors:
+  - VEBERArnaud
+categories:
   - architecture
+keywords:
   - devops
   - github
   - terraform
-permalink: /fr/gerer-son-organisation-github-avec-terraform/
 ---
 
 ## Un peu de contexte

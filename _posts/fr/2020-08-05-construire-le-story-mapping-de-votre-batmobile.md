@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2020-08-05'
-categories:
-  - agile
-authors:
-  - mae
+slug: construire-le-story-mapping-de-votre-batmobile
+title: Construire le Story Mapping de votre Batmobile
 excerpt: >-
   À n'en pas douter, pour construire aussi bien sa Batmobile et toutes les
   fonctions qui vont avec, Bruce Wayne s'est servi du Story Mapping ! Pourquoi
   ne pas nous y mettre également en apprenant étape par étape comment procéder ?
-title: Construire le Story Mapping de votre Batmobile
-slug: construire-le-story-mapping-de-votre-batmobile
-oldCategoriesAndTags:
+authors:
+  - mae
+categories:
   - agile
+keywords:
   - story map
   - atelier
-permalink: /fr/construire-le-story-mapping-de-votre-batmobile/
 ---
 
 À n'en pas douter, pour construire aussi bien sa Batmobile et toutes les fonctions qui vont avec, Bruce Wayne s'est servi du Story Mapping !

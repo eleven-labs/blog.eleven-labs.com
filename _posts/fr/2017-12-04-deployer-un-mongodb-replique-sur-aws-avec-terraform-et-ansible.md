@@ -1,25 +1,23 @@
 ---
-layout: post
 lang: fr
 date: '2017-12-04'
-categories: []
-authors:
-  - vcomposieux
-cover: >-
-  /assets/2017-09-03-migrer-une-application-react-client-side-en-server-side-avec-nextjs/cover.jpg
+slug: deployer-un-serveur-mongodb-replique-sur-aws-avec-terraform-et-ansible
+title: Déployer un serveur MongoDB répliqué sur AWS avec Terraform et Ansible
 excerpt: >-
   J'ai récemment eu l'occasion de déployer un serveur MongoDB sur Amazon Web
   Services (AWS). Afin de limiter les problèmes de crash et de perte de données,
   celui-ci est également répliqué avec deux autres serveurs, idéalement dans une
   zone géographique différente pour assurer de la haute disponibilité.
-title: Déployer un serveur MongoDB répliqué sur AWS avec Terraform et Ansible
-slug: deployer-un-serveur-mongodb-replique-sur-aws-avec-terraform-et-ansible
-oldCategoriesAndTags:
+cover: >-
+  /assets/2017-09-03-migrer-une-application-react-client-side-en-server-side-avec-nextjs/cover.jpg
+authors:
+  - vcomposieux
+categories: []
+keywords:
   - mongodb
   - aws
   - terraform
   - ansible
-permalink: /fr/deployer-un-serveur-mongodb-replique-sur-aws-avec-terraform-et-ansible/
 ---
 
 J'ai récemment eu l'occasion de déployer un serveur MongoDB sur Amazon Web Services (AWS). Afin de limiter les problèmes de crash et de perte de données, celui-ci est également répliqué avec deux autres serveurs, idéalement dans une zone géographique différente pour assurer de la haute disponibilité.

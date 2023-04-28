@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: en
 date: '2016-12-05'
-categories:
-  - javascript
+slug: create-atom-package
+title: Create your first Atom package
+excerpt: "# Introduction to\_Atom"
 authors:
   - vcomposieux
-excerpt: "# Introduction to\_Atom"
-title: Create your first Atom package
-slug: create-atom-package
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - atom
   - babel
   - jasmine
   - package
-permalink: /en/create-atom-package/
 ---
 # Introduction to Atom
 [Atom](https://atom.io) is an open-source text editor (mostly used by developers){:rel="nofollow"} which is multi-platform and developed by GitHub company. It is based on <a href="http://electron.atom.io/">Electron</a>, the Github-developed framework, which allows developers to build native desktop applications for any operating systems by writing Javascript code.

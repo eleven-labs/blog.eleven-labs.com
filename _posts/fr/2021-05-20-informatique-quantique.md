@@ -1,21 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2021-05-20'
-categories: []
-authors:
-  - youyou
+slug: informatique-quantique
+title: L'informatique quantique
 excerpt: >-
   L'objectif de cet article est de vulgariser certains principes de la mécanique
   quantique, puis de se concentrer sur ce qu'est le Qubit et quelles sont ses
   différentes utilisations.
-title: L'informatique quantique
-slug: informatique-quantique
-oldCategoriesAndTags:
+authors:
+  - youyou
+categories: []
+keywords:
   - culture
   - quantique
   - qubit
-permalink: /fr/informatique-quantique/
 ---
 ![Informatique quantique]({{ site.baseurl }}/assets/2021-05-20-informatique-quantique/informatique-quantique.jpg)
 

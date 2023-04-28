@@ -1,28 +1,25 @@
 ---
-layout: post
 lang: fr
 date: '2017-12-21'
-categories:
-  - php
-authors:
-  - charles-eric
-cover: >-
-  /assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/cover.jpg
+slug: remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony
+title: >-
+  Pour Noël, je remplace mon ERP par un Slack bot implémenté avec DialogFlow et
+  Symfony
 excerpt: >-
   Le but de cet article est de montrer la puissance d'un Slack bot pour
   simplifier la vie en entreprise, et comment le mettre en place avec DialogFlow
   et Symfony
-title: >-
-  Pour Noël, je remplace mon ERP par un Slack bot implémenté avec DialogFlow et
-  Symfony
-slug: remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony
-oldCategoriesAndTags:
+cover: >-
+  /assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/cover.jpg
+authors:
+  - charles-eric
+categories:
   - php
+keywords:
   - bot
   - symfony
   - slack
   - dialogflow
-permalink: /fr/remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/
 ---
 
 Je suis sûr que vous rencontrez tous cette problématique : vous êtes obligés d'utiliser les outils ERP de votre entreprise pour faire vos demandes de congés, faire vos comptes-rendus d'activité, vos notes de frais, etc... Et avouez le, ça vous emm$#de ! Pourquoi ? Car ces outils ne sont pas ergonomiques, pas compatibles sur mobile...

@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: en
 date: '2021-09-29'
-categories:
-  - php
-authors:
-  - marishka
+slug: dependency-injection
+title: Dependency injection in Symfony
 excerpt: >-
   You work with Symfony, but the concept of dependency injection is a little
   blurry for you? Find out how to take advantage of the component reading this
   article.
-title: Dependency injection in Symfony
-slug: dependency-injection
-oldCategoriesAndTags:
+authors:
+  - marishka
+categories:
   - php
+keywords:
   - best practices
   - symfony
   - di
-permalink: /en/dependency-injection/
 ---
 
 ## Dependency injection

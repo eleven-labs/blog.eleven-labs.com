@@ -1,17 +1,15 @@
 ---
-layout: post
 lang: en
 date: '2023-02-09'
-categories: []
-authors:
-  - marishka
+slug: monolith-to-microservices
+title: 'Migrating from a Monolith to Microservices: A Step-by-Step Guide'
 excerpt: >-
   This article is a step-by-step guide on how to migrate from a Monolith to
   Microservices
-title: 'Migrating from a Monolith to Microservices: A Step-by-Step Guide'
-slug: monolith-to-microservices
-oldCategoriesAndTags: []
-permalink: /en/monolith-to-microservices/
+authors:
+  - marishka
+categories: []
+keywords: []
 ---
 
 ## What is a monolith ?

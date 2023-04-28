@@ -1,20 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2023-02-22'
-categories:
-  - php
+slug: symfony-et-mongodb-retour-aux-sources
+title: 'Symfony et MongoDB, retour aux bases'
+excerpt: 'Faire du MongoDB avec Symfony, c''est facile, mais avec ou sans Doctrine ?'
+cover: /assets/2023-02-22-symfony-et-mongodb-retour-aux-sources/logo.png
 authors:
   - marianne
-cover: /assets/2023-02-22-symfony-et-mongodb-retour-aux-sources/logo.png
-excerpt: "Faire du MongoDB avec Symfony, c'est facile, mais avec ou sans Doctrine ?"
-title: Symfony et MongoDB, retour aux bases
-slug: symfony-et-mongodb-retour-aux-sources
-oldCategoriesAndTags:
+categories:
   - php
+keywords:
   - mongodb
   - symfony
-permalink: /fr/symfony-et-mongodb-retour-aux-sources/
 ---
 
 <div style="text-align: center;">

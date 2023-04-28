@@ -1,17 +1,15 @@
 ---
-layout: post
 lang: en
 date: '2017-10-04'
-categories:
-  - javascript
+slug: ecmascript-asynchronicity-dynamic-import
+title: ECMAScript Asynchronicity - dynamic import
+excerpt: Optimize your production code by splitting and lazy loading modules
+cover: /assets/2017-10-04-ecmascript-asynchronicity-dynamic-import/cover.jpg
 authors:
   - kelfarsaoui
-cover: /assets/2017-10-04-ecmascript-asynchronicity-dynamic-import/cover.jpg
-excerpt: Optimize your production code by splitting and lazy loading modules
-title: ECMAScript Asynchronicity - dynamic import
-slug: ecmascript-asynchronicity-dynamic-import
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - ecmascript
   - asynchronous
   - dynamic import
@@ -20,7 +18,6 @@ oldCategoriesAndTags:
   - lazy loading
   - webpack
   - modules
-permalink: /en/ecmascript-asynchronicity-dynamic-import/
 ---
 
 ECMAScript came up with some awesome features that demystify the concept of asynchronous programming. These features vary from promises, through asynchronous functions —and soon iterations— to lazy loading modules. Today I'm going to talk about one of the promising features in Javascript's Asynchronicity: ECMAScript's dynamic import.

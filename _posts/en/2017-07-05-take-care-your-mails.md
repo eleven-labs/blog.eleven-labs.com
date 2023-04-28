@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: en
 date: '2017-07-05'
-categories:
-  - javascript
-authors:
-  - captainjojo
+slug: take-care-emails
+title: Take care of your emails
 excerpt: >-
   The most common mean of communication between a provider and its customer is
   the email. Yet, few people care enough to customize it. And that's a shame,
   because there are many nice tips that make them more qualitative. Of course,
   many of them implies Google.. but who does not use Gmail today?
-title: Take care of your emails
-slug: take-care-emails
-oldCategoriesAndTags:
+authors:
+  - captainjojo
+categories:
   - javascript
+keywords:
   - mail
-permalink: /en/take-care-emails/
 ---
 
 

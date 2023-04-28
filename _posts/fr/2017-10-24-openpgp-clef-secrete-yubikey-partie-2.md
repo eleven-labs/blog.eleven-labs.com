@@ -1,22 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2017-10-24'
-categories: []
-authors:
-  - tthuon
-cover: /assets/2017-10-24-openpgp-clef-secrete-yubikey-partie-2/cover.jpg
+slug: openpgp-clef-secrete-yubikey-partie-2
+title: OpenPGP - Exporter les clefs secrètes sur une Yubikey
 excerpt: >-
   Après avoir généré les clefs OpenPGP, nous allons voir comment les stocker sur
   une clef USB comme la Yubikey. Cela va nous permettre de sécuriser d'avantage
   nos clefs secrètes.
-title: OpenPGP - Exporter les clefs secrètes sur une Yubikey
-slug: openpgp-clef-secrete-yubikey-partie-2
-oldCategoriesAndTags:
+cover: /assets/2017-10-24-openpgp-clef-secrete-yubikey-partie-2/cover.jpg
+authors:
+  - tthuon
+categories: []
+keywords:
   - openpgp
   - securite
   - yubikey
-permalink: /fr/openpgp-clef-secrete-yubikey-partie-2/
 ---
 
 Nous avons vu dans l'article précedent [la génération de clefs OpenPGP](/fr/openpgp-paire-clef-presque-parfaite-partie-1/).

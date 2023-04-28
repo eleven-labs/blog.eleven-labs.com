@@ -1,24 +1,22 @@
 ---
-layout: post
 lang: fr
 date: '2017-08-18'
-categories: []
-authors:
-  - charles-eric
-cover: >-
-  /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/typing.jpg
+slug: comment-verifier-l-orthographe-de-vos-docs-depuis-travis-ci
+title: Comment vérifier l'orthographe de vos docs depuis Travis CI ?
 excerpt: >-
   Nous allons montrer dans cet article comment vérifier l'orthographe
   automatiquement dans vos documents markdown, modifiés dans vos pull requests,
   simplement avec Aspell et Travis CI
-title: Comment vérifier l'orthographe de vos docs depuis Travis CI ?
-slug: comment-verifier-l-orthographe-de-vos-docs-depuis-travis-ci
-oldCategoriesAndTags:
+cover: >-
+  /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/typing.jpg
+authors:
+  - charles-eric
+categories: []
+keywords:
   - ci
   - travis
   - aspell
   - orthographe
-permalink: /fr/comment-verifier-l-orthographe-de-vos-docs-depuis-travis-ci/
 ---
 
 Notre blog est basé sur Jekyll et hébergé sur Github Pages : [plus de détails ici](/fr/migration-du-blog/). Donc pour publier un article de blog, chaque auteur doit ouvrir une pull request sur Github pour soumettre ses fichiers markdown.

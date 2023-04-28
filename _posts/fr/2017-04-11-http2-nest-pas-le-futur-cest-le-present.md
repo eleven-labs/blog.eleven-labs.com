@@ -1,20 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2017-04-11'
-categories:
-  - javascript
-  - php
-authors:
-  - vcomposieux
+slug: http2-nest-pas-le-futur-cest-le-present
+title: HTTP/2 n'est pas le futur. C'est le présent.
 excerpt: >-
   Souvenez-vous, en `mai 1996`, la première version du protocole HTTP (HTTP/1.0)
   voit le jour.
-title: HTTP/2 n'est pas le futur. C'est le présent.
-slug: http2-nest-pas-le-futur-cest-le-present
-oldCategoriesAndTags:
+authors:
+  - vcomposieux
+categories:
   - javascript
   - php
+keywords:
   - mobile
   - compression
   - header
@@ -22,7 +19,6 @@ oldCategoriesAndTags:
   - http2
   - protocole
   - tls
-permalink: /fr/http2-nest-pas-le-futur-cest-le-present/
 ---
 Souvenez-vous, en `mai 1996`, la première version du protocole HTTP (HTTP/1.0) voit le jour.
 Ce protocole est décrit sous forme de RFC et plus particulièrement sous la [RFC 1945](https://tools.ietf.org/html/rfc1945){:rel="nofollow noreferrer"}.

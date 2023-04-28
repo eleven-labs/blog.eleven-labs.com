@@ -1,10 +1,8 @@
 ---
-layout: post
 lang: fr
 date: '2021-04-21'
-categories: []
-authors:
-  - fverneuil
+slug: UX-Writing-Introduction-et-bonnes-pratiques
+title: 'UX Writing : Introduction et bonnes pratiques'
 excerpt: >-
   Rédiger un texte n’est pas une activité neutre, vos textes ont un impact sur
   l’expérience utilisateur (UX) de votre produit. L’UX Writing est une
@@ -14,14 +12,14 @@ excerpt: >-
   l'intérêt de l’UX Writing, mais aussi sur sa méthodologie. Pour finir, nous
   verrons différents conseils pratiques pour la conception de vos contenus
   rédactionnels. Prêt•e•s ? Alors, allons-y !
-title: 'UX Writing : Introduction et bonnes pratiques'
-slug: UX-Writing-Introduction-et-bonnes-pratiques
-oldCategoriesAndTags:
+authors:
+  - fverneuil
+categories: []
+keywords:
   - ux
   - design
   - rédaction
   - projet
-permalink: /fr/UX-Writing-Introduction-et-bonnes-pratiques/
 ---
 
 Rédiger un texte n’est pas une activité neutre, vos textes ont un impact sur l’expérience utilisateur (UX) de votre produit. L’UX Writing est une spécialité de l'UX Design qui a pour objet la conception de la communication entre les utilisateurs et votre produit et, donc, la création de vos contenus rédactionnels. 

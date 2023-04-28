@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2017-08-25'
-categories:
-  - javascript
-authors:
-  - kelfarsaoui
-cover: /assets/2017-08-16-json-server/cover.jpg
+slug: json-server
+title: JSON Server
 excerpt: >-
   Accélérez le prototypage de vos applications, en imitant vos APIs avec JSON
   Server.
-title: JSON Server
-slug: json-server
-oldCategoriesAndTags:
+cover: /assets/2017-08-16-json-server/cover.jpg
+authors:
+  - kelfarsaoui
+categories:
   - javascript
+keywords:
   - json
   - api
   - nodejs
-permalink: /fr/json-server/
 ---
 
 Bonjour, aujourd'hui, je vais parler de `json-server`, de la motivation qui pousse à l'utiliser, et surtout comment l'utiliser ?

@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: en
 date: '2017-08-03'
-categories:
-  - agile
-authors:
-  - charles-eric
+slug: continuous-improvement-how-to-run-agile-retrospective
+title: 'Continuous improvement: how to run your Agile retrospective?'
+excerpt: "We usually share\_on this blog our technical expertise around web and mobile development or\_architecture. Today, I would like to address another expertise, equally important: our methodology."
 cover: >-
   /assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-heart-retrospective.jpg
-excerpt: "We usually share\_on this blog our technical expertise around web and mobile development or\_architecture. Today, I would like to address another expertise, equally important: our methodology."
-title: 'Continuous improvement: how to run your Agile retrospective?'
-slug: continuous-improvement-how-to-run-agile-retrospective
-oldCategoriesAndTags:
+authors:
+  - charles-eric
+categories:
   - agile
+keywords:
   - scrum
   - retrospective
   - inspect &amp; adapt
   - continuous improvement
-permalink: /en/continuous-improvement-how-to-run-agile-retrospective/
 ---
 
 We usually share on this blog our technical expertise around web and mobile development or architecture. Today, I would like to address another expertise, equally important: **our methodology**.

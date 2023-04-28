@@ -1,18 +1,16 @@
 ---
-layout: post
 lang: en
 date: '2022-02-22'
-categories: []
-authors:
-  - jbberthet
+slug: throwback-to-nantes-2021-devfest-my-first-conference
+title: 'Throwback to Nantes'' 2021 DevFest, my first conference'
 excerpt: >-
   Finally! After 4 years of working as a web developer, I finally attended a
   conference linked to my job & passion: the DevFest Nantes.
-title: 'Throwback to Nantes'' 2021 DevFest, my first conference'
-slug: throwback-to-nantes-2021-devfest-my-first-conference
-oldCategoriesAndTags:
+authors:
+  - jbberthet
+categories: []
+keywords:
   - conference
-permalink: /en/throwback-to-nantes-2021-devfest-my-first-conference/
 ---
 
 ![DevFest Nantes 2021's logo]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/devfest-logo.png)

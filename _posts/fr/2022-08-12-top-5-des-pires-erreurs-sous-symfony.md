@@ -1,21 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2022-08-12'
+slug: top-5-des-pires-erreurs-sous-symfony
+title: Mon top 5 des PIRES erreurs sous Symfony
+excerpt: "La numéro 2 va vous surprendre \U0001F631"
+cover: /assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/logo.png
+authors:
+  - marianne
 categories:
   - php
   - architecture
-authors:
-  - marianne
-cover: /assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/logo.png
-excerpt: "La numéro 2 va vous surprendre \U0001F631"
-title: Mon top 5 des PIRES erreurs sous Symfony
-slug: top-5-des-pires-erreurs-sous-symfony
-oldCategoriesAndTags:
-  - php
-  - architecture
+keywords:
   - symfony
-permalink: /fr/top-5-des-pires-erreurs-sous-symfony/
 ---
 
 Je suis développeuse PHP/Symfony depuis près de 10 ans, et au cours de mes missions j’ai pu tester, expérimenter, et découvrir différentes architectures et design patterns en entreprise. J'ai vu du bon, j'ai vu du passable, et j'ai aussi parfois ouvert les portes de l'enfer. De ces expériences, j'ai décidé de recenser le pire, et je vous propose dans cet article le top 5 des erreurs qu’il faut à tout prix éviter sous Symfony !

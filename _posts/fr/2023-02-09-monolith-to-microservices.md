@@ -1,17 +1,15 @@
 ---
-layout: post
 lang: fr
 date: '2023-02-09'
-categories: []
-authors:
-  - marishka
+slug: monolithe-a-microservices
+title: 'D''un monolithe vers une architecture microservices : les étapes pour y arriver'
 excerpt: >-
   Cet article va vous présenter les étapes pour passer d'un monolithe vers une
   architecture microservices.
-title: 'D''un monolithe vers une architecture microservices : les étapes pour y arriver'
-slug: monolithe-a-microservices
-oldCategoriesAndTags: []
-permalink: /fr/monolithe-a-microservices/
+authors:
+  - marishka
+categories: []
+keywords: []
 ---
 
 ## Qu'est ce qu'un monolithe ?

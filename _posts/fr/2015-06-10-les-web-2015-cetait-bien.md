@@ -1,11 +1,8 @@
 ---
-layout: post
 lang: fr
 date: '2015-06-10'
-categories:
-  - javascript
-authors:
-  - martincadoux
+slug: les-web-2015-cetait-bien
+title: 'Les Best of Web 2015, c''était bien.'
 excerpt: >-
   Le 5 juin dernier, tandis que la France entière affrontait vaillamment sa
   première canicule de l’année avec du courage, de la sueur et les jambes à
@@ -15,13 +12,13 @@ excerpt: >-
   développeurs et intégrateurs de tout bord étaient présents dans la salle pour
   assister à une douzaine de conférences, chacune portant sur un sujet très
   différent de la précédente.
-title: 'Les Best of Web 2015, c''était bien.'
-slug: les-web-2015-cetait-bien
-oldCategoriesAndTags:
+authors:
+  - martincadoux
+categories:
   - javascript
+keywords:
   - conference
   - bestofweb
-permalink: /fr/les-web-2015-cetait-bien/
 ---
 
 Le 5 juin dernier, tandis que la France entière affrontait vaillamment sa première canicule de l’année avec du courage, de la sueur et les jambes à l'air, les organisateurs du Best of Web ont eu la bonne idée de réunir une petite tranche de notre communauté bien au frais - ou pas - dans la Grande Crypte du 16e arrondissement de Paris. Salariés, freelance, étudiants… Des développeurs et intégrateurs de tout bord étaient présents dans la salle pour assister à une douzaine de conférences, chacune portant sur un sujet très différent de la précédente.

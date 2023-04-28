@@ -1,26 +1,23 @@
 ---
-layout: post
 lang: fr
 date: '2016-10-27'
-categories:
-  - javascript
-authors:
-  - captainjojo
+slug: les-push-notifications-sur-votre-site
+title: Les push notifications sur votre site
 excerpt: >-
   L'intérêt d'une PWA, c'est d'agir comme une application mobile, d'être
   installé sur le téléphone, de gérer le off-line et surtout d'envoyer des push
   notifications. Les notifications sont un élément essentiel de l'engagement de
   l'utilisateur, elles permettent de faire un rappel et de communiquer avec nos
   utilisateurs
-title: Les push notifications sur votre site
-slug: les-push-notifications-sur-votre-site
-oldCategoriesAndTags:
+authors:
+  - captainjojo
+categories:
   - javascript
+keywords:
   - pwa
   - firebase
   - mobile
   - notification
-permalink: /fr/les-push-notifications-sur-votre-site/
 ---
 
 Lors d'un article précédent nous avons créé [notre première PWA](https://blog.eleven-labs.com/fr/votre-premiere-pwa/), mais nous n'avons pas été jusqu'au bout du concept. L'intérêt du [PWA](https://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/){:rel="nofollow noreferrer"}, c'est d'agir comme une application mobile, d'être installé sur le téléphone, de gérer le off-line et surtout d'envoyer des push notifications. Les notifications sont un élément essentiel de l'engagement de l'utilisateur, elles permettent de faire un rappel et de communiquer avec nos utilisateurs. Nous allons donc finaliser le dernier tutoriel en mettant en place un système simple de push notification, en utilisant

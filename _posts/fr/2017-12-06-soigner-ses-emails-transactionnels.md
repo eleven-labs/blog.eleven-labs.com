@@ -1,11 +1,8 @@
 ---
-layout: post
 lang: fr
 date: '2017-12-06'
-categories: []
-authors:
-  - qneyrat
-cover: /assets/2017-12-06-soigner-ses-emails-transactionnels/cover.png
+slug: soigner-ses-emails-transactionnels
+title: Soigner ses emails transactionnels
 excerpt: >-
   L'année dernière un client nous a demandé que les e-mails envoyés par l'api
   soient plus esthétiques. N'ayant aucun intégrateur dans l'équipe, personne
@@ -13,13 +10,14 @@ excerpt: >-
   sort pour savoir qui s'en chargerait. Bien sûr, c'est tombé sur moi. Le but de
   la fonctionnalité était d'avoir des emails beaucoup plus soignés et
   responsives.
-title: Soigner ses emails transactionnels
-slug: soigner-ses-emails-transactionnels
-oldCategoriesAndTags:
+cover: /assets/2017-12-06-soigner-ses-emails-transactionnels/cover.png
+authors:
+  - qneyrat
+categories: []
+keywords:
   - html
   - front
   - mjml
-permalink: /fr/soigner-ses-emails-transactionnels/
 ---
 
 L'année dernière un client nous a demandé que les e-mails envoyés par l'api soient plus esthétiques. N'ayant aucun intégrateur dans l'équipe, personne n'était motivé pour s'occuper de ce genre de ticket. Nous avons donc tiré au sort pour savoir qui s'en chargerait.

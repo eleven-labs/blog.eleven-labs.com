@@ -1,11 +1,8 @@
 ---
-layout: post
 lang: fr
 date: '2021-03-08'
-categories: []
-authors:
-  - marishka
-  - marianne
+slug: les-femmes-dans-l-informatique
+title: Les femmes dans l'informatique
 excerpt: >
   Aujourd'hui, c'est la journée internationale des droits de la femme, et nous
   avons voulu en profiter pour vous parler d'un sujet qui nous tient à cœur :
@@ -13,15 +10,16 @@ excerpt: >
   notre expérience pour vous donner une meilleure vision de pourquoi on n'est
   pas si nombreuses, pourquoi certaines abandonnent, et, surtout, comment faire
   pour que ça change.
-title: Les femmes dans l'informatique
-slug: les-femmes-dans-l-informatique
-oldCategoriesAndTags:
+authors:
+  - marishka
+  - marianne
+categories: []
+keywords:
   - teamwork
   - égalités
   - women
   - égalité
   - histoire
-permalink: /fr/les-femmes-dans-l-informatique/
 ---
 
 Aujourd'hui, c'est la journée internationale des droits de la femme, et nous avons voulu en profiter pour vous parler d'un sujet qui nous tient à cœur : les femmes dans l'informatique. Attendez, attendez ! Ne partez pas tout de suite. Le but de cet article est de vous raconter notre expérience pour vous donner une meilleure vision de pourquoi on n'est pas si nombreuses, pourquoi certaines abandonnent, et, surtout, comment faire pour que ça change. Alors, si vous aussi vous voulez plus de collègues femmes, lisez la suite.

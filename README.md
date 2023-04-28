@@ -125,6 +125,8 @@ title: Title of the post
 excerpt: Description of the post (Visible on the list pages)
 categories:
     - javascript | php | agile | architecture
+keywords:
+- keyword (limited to 10, must not be identical to the categories, used for SEO and search)
 authors:
     - author's username
 ---

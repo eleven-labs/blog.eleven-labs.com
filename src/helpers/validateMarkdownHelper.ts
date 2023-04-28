@@ -6,6 +6,7 @@ import { fromZodError } from 'zod-validation-error';
 
 import { AUTHORS_DIR, POSTS_DIR } from '@/app-paths';
 import { AUTHORIZED_LANGUAGES, CATEGORIES } from '@/constants';
+import { intersection } from '@/helpers/objectHelper';
 import { AuthorData, PostData } from '@/types';
 
 export const validateAuthor = (options: { markdownFilePath: string }): AuthorData & { content: string } => {
@@ -31,7 +32,7 @@ export const validateAuthor = (options: { markdownFilePath: string }): AuthorDat
 export const validatePost = (options: {
   authors: [string, ...string[]];
   markdownFilePath: string;
-}): Omit<PostData, 'layout' | 'permalink' | 'date'> & { date: Date; content: string } => {
+}): Omit<PostData, 'date'> & { date: Date; content: string } => {
   const PostValidationSchema = z.object({
     lang: z.enum(AUTHORIZED_LANGUAGES),
     date: z.coerce.date(),
@@ -44,13 +45,20 @@ export const validatePost = (options: {
     keywords: z
       .array(z.string())
       .superRefine((val, ctx) => {
-        if (val.length > 5) {
+        if (intersection(val, CATEGORIES).length) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'Must not include a category.',
+          });
+        }
+
+        if (val.length > 10) {
           ctx.addIssue({
             code: z.ZodIssueCode.too_big,
-            maximum: 3,
+            maximum: 10,
             type: 'array',
             inclusive: true,
-            message: 'Too many items 😡',
+            message: 'Too many items 😡.',
           });
         }
 
@@ -67,10 +75,12 @@ export const validatePost = (options: {
   const markdownContent = readFileSync(options.markdownFilePath, { encoding: 'utf-8' });
   const matterResult = matter(markdownContent);
   const result = PostValidationSchema.safeParse(matterResult.data);
+
   if (!result.success) {
     const validationError = fromZodError(result.error);
     throw new Error(`The markdown of the file "${options.markdownFilePath}" is invalid ! ${validationError.message}`);
   }
+
   return { ...result.data, content: matterResult.content };
 };
 

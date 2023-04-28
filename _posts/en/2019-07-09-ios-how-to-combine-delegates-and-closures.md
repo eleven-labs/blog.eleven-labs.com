@@ -1,19 +1,17 @@
 ---
-layout: post
 lang: en
 date: '2019-07-09'
-categories: []
+slug: ios-how-to-combine-delegates-and-closures
+title: '[iOS] How to combine Delegates and Closures'
+excerpt: Let's make Delegates and Closures work together
 authors:
   - thuchon
-excerpt: Let's make Delegates and Closures work together
-title: '[iOS] How to combine Delegates and Closures'
-slug: ios-how-to-combine-delegates-and-closures
-oldCategoriesAndTags:
+categories: []
+keywords:
   - mobile
   - ios
   - delegates
   - closure
-permalink: /en/ios-how-to-combine-delegates-and-closures/
 ---
 
 ### Introduction

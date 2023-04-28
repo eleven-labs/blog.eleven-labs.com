@@ -1,20 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2022-06-13'
-categories: []
-authors:
-  - tthuon
+slug: decouverte-ipython-un-shell-interactif-avance-pour-python
+title: 'Découverte de IPython, un shell interactif avancé pour Python'
 excerpt: >-
   IPython est un shell interactif pour Python, qui permet d'avoir des
   fonctionnalités plus avancées que le shell par défaut. Il est également au
   coeur des notebooks Jupyter qui sont des outils très utilisés dans l'analyse
   de données (BigData)
-title: 'Découverte de IPython, un shell interactif avancé pour Python'
-slug: decouverte-ipython-un-shell-interactif-avance-pour-python
-oldCategoriesAndTags:
+authors:
+  - tthuon
+categories: []
+keywords:
   - python
-permalink: /fr/decouverte-ipython-un-shell-interactif-avance-pour-python/
 ---
 
 ## IPython, qu'est-ce que c'est ?

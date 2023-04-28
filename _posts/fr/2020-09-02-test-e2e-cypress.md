@@ -1,19 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2020-09-02'
-categories:
-  - javascript
-authors:
-  - kdung
+slug: test-e2e-avec-cypress
+title: Tester son application avec Cypress
 excerpt: >-
   Dans cet article nous allons voir comment mettre en place des tests end-to-end
   avec Cypress
-title: Tester son application avec Cypress
-slug: test-e2e-avec-cypress
-oldCategoriesAndTags:
+authors:
+  - kdung
+categories:
   - javascript
-permalink: /fr/test-e2e-avec-cypress/
+keywords: []
 ---
 
 ![Logo Cypress]({{ site.baseurl }}/assets/2020-09-02-test-e2e-cypress/cypress-logo.png)

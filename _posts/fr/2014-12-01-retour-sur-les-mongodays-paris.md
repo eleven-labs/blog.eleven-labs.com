@@ -1,22 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2014-12-01'
-categories: []
-authors:
-  - pouzor
+slug: retour-sur-les-mongodays-paris
+title: Retour sur les MongoDays @Paris
 excerpt: >-
   Ayant eu la chance de pouvoir participer a la version Française MongoDB Days
   qui s'est tenue le 18 Novembre, je vais vous présenter en quelques lignes le
   déroulement de la journée. Je m'attarderai un peu plus sur les présentations
   qui selon moi étaient intéressantes techniquement. Vous trouverez aussi le
   lien vers toutes les présentations des speakers.
-title: Retour sur les MongoDays @Paris
-slug: retour-sur-les-mongodays-paris
-oldCategoriesAndTags:
+authors:
+  - pouzor
+categories: []
+keywords:
   - mongodb
   - mongodays
-permalink: /fr/retour-sur-les-mongodays-paris/
 ---
 
 Ayant eu la chance de pouvoir participer a la version Française MongoDB Days qui s'est tenue le 18 Novembre, je vais vous présenter en quelques lignes le déroulement de la journée. Je m'attarderai un peu plus sur les présentations qui selon moi étaient intéressantes techniquement. Vous trouverez aussi le lien vers toutes les présentations des speakers.

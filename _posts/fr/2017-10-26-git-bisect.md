@@ -1,25 +1,21 @@
 ---
-layout: post
 lang: fr
 date: '2017-10-26'
-categories:
-  - javascript
-  - php
-authors:
-  - rpierlot
-cover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
+slug: debugging-with-git
+title: Débugger avec Git
 excerpt: >-
   Aujourd'hui je souhaite vous présenter un outil vous permettant d'isoler
   rapidement notre commit frauduleux qui a occasionné un bug dans notre
   application : git bisect
-title: Débugger avec Git
-slug: debugging-with-git
-oldCategoriesAndTags:
+cover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
+authors:
+  - rpierlot
+categories:
   - javascript
   - php
+keywords:
   - git
   - amp
-permalink: /fr/debugging-with-git/
 ---
 
 Des risques de régressions existent lors de la mise en production de nouvelles fonctionnalités. Notamment sur les grosses applications ayant beaucoup de code non testé.

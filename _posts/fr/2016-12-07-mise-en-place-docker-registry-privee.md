@@ -1,20 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2016-12-07'
-categories:
-  - architecture
-authors:
-  - gcanal
+slug: mise-en-place-docker-registry-privee
+title: Mise en place d'une Docker Registry privée
 excerpt: >-
   Dans cet article, nous allons détailler, étape par étape, la mise en place
   d'une Docker Registry. Une Docker Registry est une application qui permet de
   distribuer des images Docker au sein de votre organisation.
-title: Mise en place d'une Docker Registry privée
-slug: mise-en-place-docker-registry-privee
-oldCategoriesAndTags:
+authors:
+  - gcanal
+categories:
   - architecture
-permalink: /fr/mise-en-place-docker-registry-privee/
+keywords: []
 ---
 
 Dans cet article, nous allons détailler, étape par étape, la mise en place d'une Docker Registry.
