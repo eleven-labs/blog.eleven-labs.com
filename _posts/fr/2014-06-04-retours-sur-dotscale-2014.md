@@ -1,19 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2014-06-04'
-categories: []
-authors:
-  - marishka
+slug: retours-sur-dotscale-2014
+title: Retours sur dotScale 2014
 excerpt: >-
   Le lundi 19 mai je suis allée à dotScale, conférence technique qui parle de
   scalabilité, DevOps et systèmes distribués.
-title: Retours sur dotScale 2014
-slug: retours-sur-dotscale-2014
-oldCategoriesAndTags:
-  - non classé
+authors:
+  - marishka
+categories: []
+keywords:
   - dotscale
-permalink: /fr/retours-sur-dotscale-2014/
 ---
 
 Le lundi 19 mai je suis allée à dotScale, conférence technique qui parle de scalabilité, DevOps et systèmes distribués.

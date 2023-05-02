@@ -1,19 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2021-02-22'
-categories:
-  - javascript
-authors:
-  - romaindurand
+slug: a-la-decouverte-de-sveltejs
+title: À la découverte de Svelte.JS
 excerpt: >-
   Svelte veut dire "mince et élégant", un nom adapté pour ce jeune framework qui
   bouleverse quelques paradigmes du développement web.
-title: À la découverte de Svelte.JS
-slug: a-la-decouverte-de-sveltejs
-oldCategoriesAndTags:
+authors:
+  - romaindurand
+categories:
   - javascript
-permalink: /fr/a-la-decouverte-de-sveltejs/
+keywords: []
 ---
 
 ![Logo Svelte]({{ site.baseurl }}/assets/2021-02-22-a-la-decouverte-de-svelte/svelte-logo.png)

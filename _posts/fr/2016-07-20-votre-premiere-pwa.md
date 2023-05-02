@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2016-07-20'
-categories:
-  - javascript
+slug: votre-premiere-pwa
+title: Votre première PWA
+excerpt: "Le monde du web évolue. Le site web mobile est devenu le plus grand\_concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps"
 authors:
   - captainjojo
-excerpt: "Le monde du web évolue. Le site web mobile est devenu le plus grand\_concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps"
-title: Votre première PWA
-slug: votre-premiere-pwa
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - tutoriel
   - cache
   - web
   - pwa
-permalink: /fr/votre-premiere-pwa/
 ---
 
 Le monde du web évolue. Le site web mobile est devenu le plus grand concurrent aux applications natives, et Google l'a bien compris. Si vous avez suivi la conférence de Google à Amsterdam , vous savez que l'avenir des sites web mobiles sont les Progressive Web Apps (le cas contraire, je vous invite à lire mon précédent article sur cet événement, disponible [ici](https://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/)){:rel="nofollow noreferrer"}. Ça tombe bien, cet article va vous permettre de mettre en place votre première "PWA".

@@ -1,11 +1,8 @@
 ---
-layout: post
 lang: fr
 date: '2016-11-16'
-categories:
-  - php
-authors:
-  - tthuon
+slug: php_bien-gerer-ses-exceptions
+title: Bien gérer ses exceptions
 excerpt: >-
   Bonjour à tous ! Aujourd'hui je voudrais vous parler d'un sujet peu abordé en
   php : les exceptions. Une exception est une alerte lancée lors de l'exécution
@@ -13,14 +10,14 @@ excerpt: >-
   peut être un mauvais identifiant de connexion à la base de données, ou bien
   une opération sur un fichier qui n'est pas autorisée, ou encore une division
   par zéro par exemple.
-title: Bien gérer ses exceptions
-slug: php_bien-gerer-ses-exceptions
-oldCategoriesAndTags:
+authors:
+  - tthuon
+categories:
   - php
+keywords:
   - exception
   - best practice
   - error
-permalink: /fr/php_bien-gerer-ses-exceptions/
 ---
 
 Bonjour à tous ! Aujourd'hui je voudrais vous parler d'un sujet peu abordé en php : les exceptions. Une exception est une alerte lancée lors de l'exécution du code, pour indiquer que quelque chose ne s'est pas passé comme prévu. Cela peut être un mauvais identifiant de connexion à la base de données, ou bien une opération sur un fichier qui n'est pas autorisée, ou encore une division par zéro par exemple.

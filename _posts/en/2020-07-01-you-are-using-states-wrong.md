@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: en
 date: '2020-07-01'
-categories:
-  - javascript
+slug: you-are-using-react-states-wrong
+title: You are using React states wrong
+excerpt: You may not be using the React states optimally and I'll explain why
 authors:
   - marishka
-excerpt: You may not be using the React states optimally and I'll explain why
-title: You are using React states wrong
-slug: you-are-using-react-states-wrong
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - react
   - images
   - state
   - reducer
   - best practice
-permalink: /en/you-are-using-react-states-wrong/
 ---
 
 Behind this seductive-looking title hides an observation that I have been making more and more. Let's put things into context:

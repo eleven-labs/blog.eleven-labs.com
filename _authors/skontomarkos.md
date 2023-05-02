@@ -1,7 +1,5 @@
 ---
-layout: author
-login: skontomarkos
-title: Sophie Kontomarkos
-permalink: /authors/skontomarkos/
+username: skontomarkos
+name: Sophie Kontomarkos
 ---
 Développeur PHP Symfony

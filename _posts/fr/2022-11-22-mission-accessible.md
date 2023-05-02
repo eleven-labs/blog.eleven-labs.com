@@ -1,19 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2022-11-22'
-categories: []
-authors:
-  - meugeniatr
-  - fverneuil
+slug: mission-accessible-introduction
+title: 'Mission accessible, une introduction'
 excerpt: >-
   Cet article est une introduction à l’accessibilité, son approche en tant que
   diversité des situations d’usage et son application dans la conception de
   produits numériques.
-title: 'Mission accessible, une introduction'
-slug: mission-accessible-introduction
-oldCategoriesAndTags: []
-permalink: /fr/mission-accessible-introduction/
+authors:
+  - meugeniatr
+  - fverneuil
+categories: []
+keywords: []
 ---
 
 Le Web et les outils numériques sont présents dans toutes les sphères du quotidien, de l’achat de produits de première nécessité à la recherche d’emploi et aux démarches administratives. Ils nous concernent toutes et tous et doivent donc être accessibles qu’importe la situation et nos capacités sensorielles, motrices ou cognitives.

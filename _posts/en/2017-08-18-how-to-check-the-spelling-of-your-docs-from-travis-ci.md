@@ -1,23 +1,21 @@
 ---
-layout: post
 lang: en
 date: '2017-08-18'
-categories: []
-authors:
-  - charles-eric
-cover: >-
-  /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/typing.jpg
+slug: how-to-check-the-spelling-of-your-docs-from-travis-ci
+title: How to check the spelling of your docs from Travis CI?
 excerpt: >-
   We will show you how to check the spelling in your markdown documents, changed
   in your pull requests, very easily using Aspell and Travis CI
-title: How to check the spelling of your docs from Travis CI?
-slug: how-to-check-the-spelling-of-your-docs-from-travis-ci
-oldCategoriesAndTags:
+cover: >-
+  /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/typing.jpg
+authors:
+  - charles-eric
+categories: []
+keywords:
   - ci
   - travis
   - aspell
   - spelling
-permalink: /en/how-to-check-the-spelling-of-your-docs-from-travis-ci/
 ---
 
 Our blog is built with Jekyll and Github Pages: [more details there (in French)](/fr/migration-du-blog/). So to publish any blog post, each author has to open a new pull request on Github to submit his new markdown files.

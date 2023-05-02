@@ -1,19 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2021-09-22'
-categories: []
-authors:
-  - tthuon
+slug: git-rebase
+title: Git rebase
 excerpt: >-
   Aujourd'hui, nous utilisons tous git pour gérer le code source des projets,
   que ce soit pour notre usage personnel ou professionnel.
-title: Git rebase
-slug: git-rebase
-oldCategoriesAndTags:
+authors:
+  - tthuon
+categories: []
+keywords:
   - bonnes pratiques
   - git
-permalink: /fr/git-rebase/
 ---
 
 Aujourd'hui, nous utilisons tous git pour gérer le code source des projets, que ce soit pour notre usage personnel ou professionnel.

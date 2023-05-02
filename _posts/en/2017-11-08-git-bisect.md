@@ -1,24 +1,20 @@
 ---
-layout: post
 lang: en
 date: '2017-11-08'
-categories:
-  - javascript
-  - php
-authors:
-  - rpierlot
-cover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
+slug: debugging-with-git
+title: Debugging with Git
 excerpt: >-
   Today I'd like to talk about a tool that will allow us to rapidly isolate an
   incorrect commit, that caused a bug in our application: git bisect
-title: Debugging with Git
-slug: debugging-with-git
-oldCategoriesAndTags:
+cover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
+authors:
+  - rpierlot
+categories:
   - javascript
   - php
+keywords:
   - git
   - amp
-permalink: /en/debugging-with-git/
 ---
 
 When deploying new features to a production environment, risks of regression exist. Especially in big applications with a lot of untested code. We are never safe from negative behaviour, or impacts that need our immediate attention.

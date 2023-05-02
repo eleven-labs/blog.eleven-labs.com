@@ -1,7 +1,5 @@
 ---
-layout: author
-login: babas
-title: Bastien Calone
-permalink: /authors/babas/
+username: babas
+name: Bastien Calone
 ---
 Android Developper

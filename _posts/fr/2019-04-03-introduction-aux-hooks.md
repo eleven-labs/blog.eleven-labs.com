@@ -1,19 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2019-04-03'
-categories:
-  - javascript
+slug: introductionauxhooks
+title: Introduction aux hooks
+excerpt: 'Une petite introduction à la nouvelle fonctionnalité de React, les hooks !'
 authors:
   - mehdidr
-excerpt: 'Une petite introduction à la nouvelle fonctionnalité de React, les hooks !'
-title: Introduction aux hooks
-slug: introductionauxhooks
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - react
   - hooks
-permalink: /fr/introductionauxhooks/
 ---
 
 Les **hooks** arrivent avec la release de la version 16.8 de React (sans breaking changes !), et amènent avec eux la solution à de nombreux problèmes causés par certains patterns.

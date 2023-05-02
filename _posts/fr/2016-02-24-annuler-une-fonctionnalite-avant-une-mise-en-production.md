@@ -1,18 +1,15 @@
 ---
-layout: post
 lang: fr
 date: '2016-02-24'
-categories: []
+slug: annuler-une-fonctionnalite-avant-une-mise-en-production
+title: Annuler une fonctionnalité avant une mise en production
+excerpt: Git workflow
 authors:
   - tthuon
-excerpt: Git workflow
-title: Annuler une fonctionnalité avant une mise en production
-slug: annuler-une-fonctionnalite-avant-une-mise-en-production
-oldCategoriesAndTags:
-  - non classé
+categories: []
+keywords:
   - git
   - workflow
-permalink: /fr/annuler-une-fonctionnalite-avant-une-mise-en-production/
 ---
 
 Git workflow

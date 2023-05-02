@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2016-03-23'
-categories:
-  - php
+slug: obtenir-apporter-de-laide-sur-symfony
+title: Obtenir et apporter de l'aide sur Symfony
+excerpt: "Aujourd'hui, je vous propose un article -qui\_s'adresse plutôt aux débutants- sur les mécaniques pour obtenir et apporter de l’aide sur Symfony. Une grande partie des informations sont applicables à n'importe quel framework ou\_librairie."
 authors:
   - aandre
-excerpt: "Aujourd'hui, je vous propose un article -qui\_s'adresse plutôt aux débutants- sur les mécaniques pour obtenir et apporter de l’aide sur Symfony. Une grande partie des informations sont applicables à n'importe quel framework ou\_librairie."
-title: Obtenir et apporter de l'aide sur Symfony
-slug: obtenir-apporter-de-laide-sur-symfony
-oldCategoriesAndTags:
+categories:
   - php
+keywords:
   - symfony
   - irc
   - stackoverflow
   - opensource
-permalink: /fr/obtenir-apporter-de-laide-sur-symfony/
 ---
 Aujourd'hui, je vous propose un article -qui s'adresse plutôt aux débutants- sur les mécaniques pour obtenir et apporter de l’aide sur Symfony. Une grande partie des informations sont applicables à n'importe quel framework ou librairie.
 

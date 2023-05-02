@@ -1,8 +1,6 @@
 ---
-layout: author
-login: ajacquemin
-title: Arthur Jacquemin
-permalink: /authors/ajacquemin/
+username: ajacquemin
+name: Arthur Jacquemin
 ---
 Développeur de contenu + ou - pertinent @ ElevenLabs_🚀
 

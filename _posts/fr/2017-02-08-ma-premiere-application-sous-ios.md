@@ -1,20 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2017-02-08'
-categories: []
+slug: ma-premiere-application-sous-ios
+title: Ma première Application sous IOS
+excerpt: Ma première Application sous IOS
 authors:
   - ibenichou
-excerpt: Ma première Application sous IOS
-title: Ma première Application sous IOS
-slug: ma-premiere-application-sous-ios
-oldCategoriesAndTags:
+categories: []
+keywords:
   - mobile
   - ios
   - swift
   - xcode
   - sketchapp
-permalink: /fr/ma-premiere-application-sous-ios/
 ---
 
 Je voulais partager avec vous un retour d’expérience sur ma première application IOS. Personnellement, j’apprécie ce genre d’article car je peux facilement m’identifier à celui-ci.

@@ -1,8 +1,6 @@
 ---
-layout: author
-login: gthibault2
-title: Guillaume THIBAULT
-permalink: /authors/gthibault2/
+username: gthibault2
+name: Guillaume THIBAULT
 ---
 
 DevOps Astronaut:  Azure, Kubernetes, Terraform

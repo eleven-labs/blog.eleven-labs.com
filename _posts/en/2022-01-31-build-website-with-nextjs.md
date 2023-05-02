@@ -1,17 +1,14 @@
 ---
-layout: post
 lang: en
 date: '2022-01-31'
-categories:
-  - javascript
+slug: how-to-build-your-website-with-nextjs
+title: How To Build Your Website With NextJS
+excerpt: Tutorial on the basics of NextJS for building a website.
 authors:
   - aamara
-excerpt: Tutorial on the basics of NextJS for building a website.
-title: How To Build Your Website With NextJS
-slug: how-to-build-your-website-with-nextjs
-oldCategoriesAndTags:
+categories:
   - javascript
-permalink: /en/how-to-build-your-website-with-nextjs/
+keywords: []
 ---
 
 This post is about the NextJS basics and a guide to build a simple website with this framework.

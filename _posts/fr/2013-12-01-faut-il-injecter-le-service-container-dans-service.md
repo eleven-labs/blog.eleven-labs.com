@@ -1,11 +1,8 @@
 ---
-layout: post
 lang: fr
 date: '2013-12-01'
-categories:
-  - php
-authors:
-  - marishka
+slug: faut-il-injecter-le-service-container-dans-service
+title: Faut-il injecter le service container dans un service ?
 excerpt: >-
   La documentation de Symfony2 explique très bien ce que c'est qu'un service et
   le conteneur de dépendances. Mais dans une application on a souvent besoin
@@ -13,13 +10,13 @@ excerpt: >-
   c'était plus simple d'injecter le container de service directement plutôt que
   d'injecter toutes les dépendances les unes après les autres ? Voici les "pour"
   et les "contre".
-title: Faut-il injecter le service container dans un service ?
-slug: faut-il-injecter-le-service-container-dans-service
-oldCategoriesAndTags:
+authors:
+  - marishka
+categories:
   - php
+keywords:
   - symfony
   - symfony2
-permalink: /fr/faut-il-injecter-le-service-container-dans-service/
 ---
 
 La documentation de Symfony2 explique très bien ce que c'est qu'un [service et le conteneur de dépendances](http://symfony.com/fr/doc/current/book/service_container.html){:rel="nofollow noreferrer"}. Mais dans une application on a souvent besoin d'injecter plusieurs services ou paramètres. Vous vous êtes déjà dit que c'était plus simple d'injecter le container de service directement plutôt que d'injecter toutes les dépendances les unes après les autres ? Voici les "pour" et les "contre".

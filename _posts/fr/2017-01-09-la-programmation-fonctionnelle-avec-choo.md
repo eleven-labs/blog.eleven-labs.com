@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2017-01-09'
-categories:
-  - javascript
-authors:
-  - rascarlito
+slug: la-programmation-fonctionnelle-avec-choo
+title: La programmation fonctionnelle avec Choo
 excerpt: >-
   Encore un nouveau framework JS?!!?! Ça commence à bien faire! Et oui encore
   un, mais celui-ci est super mignon ! Vous allez voir !
-title: La programmation fonctionnelle avec Choo
-slug: la-programmation-fonctionnelle-avec-choo
-oldCategoriesAndTags:
+authors:
+  - rascarlito
+categories:
   - javascript
+keywords:
   - api
   - framework
   - choo
-permalink: /fr/la-programmation-fonctionnelle-avec-choo/
 ---
 
 Bonjour ! je vais vous parler d'un nouveau framework JavaScript qui s'appelle [Choo](https://github.com/yoshuawuyts/choo) (ou ChooChoo pour les intimes).

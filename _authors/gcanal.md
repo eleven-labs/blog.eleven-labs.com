@@ -1,10 +1,8 @@
 ---
-layout: author
-login: gcanal
-title: Guillem Canal
-github: guillemcanal
+username: gcanal
+name: Guillem Canal
 twitter: buraitopengin
-permalink: /authors/gcanal/
+github: guillemcanal
 ---
 
 Architecte Technique. _Collaboration over competition_ 🖖

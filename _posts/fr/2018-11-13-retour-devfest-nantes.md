@@ -1,24 +1,22 @@
 ---
-layout: post
 lang: fr
 date: '2018-11-13'
-categories: []
-authors:
-  - marishka
-  - tthuon
-  - rascarlito
-cover: /assets/2018-10-23-retour-devfest-nantes/cover.jpg
+slug: retour-devfest-nantes
+title: Retour sur la mission spatiale au devfest Nantes
 excerpt: >-
   Retour sur la mission spatiale au devfest Nantes. Trois astronautes ont pu
   assister à différents talks, selon leur intérêt pour les sujets présentés.
   Voici leurs retours !
-title: Retour sur la mission spatiale au devfest Nantes
-slug: retour-devfest-nantes
-oldCategoriesAndTags:
+cover: /assets/2018-10-23-retour-devfest-nantes/cover.jpg
+authors:
+  - marishka
+  - tthuon
+  - rascarlito
+categories: []
+keywords:
   - conference
   - devfest
   - nantes
-permalink: /fr/retour-devfest-nantes/
 ---
 
 ## Le devfest en quelques mots

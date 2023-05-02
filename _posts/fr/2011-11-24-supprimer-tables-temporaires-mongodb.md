@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2011-11-24'
-categories:
-  - php
-authors:
-  - captainjojo
+slug: supprimer-tables-temporaires-mongodb
+title: Supprimer tables temporaires MongoDB
 excerpt: >-
   Lors de l’exécution de certain map reduce de MongoDB, il se peut que des
   tables temporaires ne se drop pas. Voici la ligne de commande magique pour les
   supprimer.
-title: Supprimer tables temporaires MongoDB
-slug: supprimer-tables-temporaires-mongodb
-oldCategoriesAndTags:
+authors:
+  - captainjojo
+categories:
   - php
+keywords:
   - mongodb
-permalink: /fr/supprimer-tables-temporaires-mongodb/
 ---
 
 Lors de l’exécution de certain map reduce de MongoDB, il se peut que des tables temporaires ne se drop pas.Voici la ligne de commande magique pour les supprimer.

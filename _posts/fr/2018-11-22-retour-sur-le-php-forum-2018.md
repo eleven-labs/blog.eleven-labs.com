@@ -1,30 +1,25 @@
 ---
-layout: post
 lang: fr
 date: '2018-11-22'
+slug: retour-sur-le-php-forum-2018
+title: Retour sur le Forum PHP 2018
+excerpt: >-
+  Cet article vous propose un retour sur le Forum PHP qui s'est tenu les 25 et
+  26 octobre derniers
+cover: /assets/2018-11-15-retour-sur-le-php-forum-2018/cover.png
+authors:
+  - nicolas
 categories:
   - php
   - agile
   - architecture
-authors:
-  - nicolas
-cover: /assets/2018-11-15-retour-sur-le-php-forum-2018/cover.png
-excerpt: >-
-  Cet article vous propose un retour sur le Forum PHP qui s'est tenu les 25 et
-  26 octobre derniers
-title: Retour sur le Forum PHP 2018
-slug: retour-sur-le-php-forum-2018
-oldCategoriesAndTags:
-  - php
-  - agile
-  - architecture
+keywords:
   - conference
   - linux
   - paris
   - '2018'
   - mysql
   - devops
-permalink: /fr/retour-sur-le-php-forum-2018/
 ---
 
 ## Introduction

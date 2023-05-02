@@ -6,14 +6,13 @@ import { fromZodError } from 'zod-validation-error';
 
 import { AUTHORS_DIR, POSTS_DIR } from '@/app-paths';
 import { AUTHORIZED_LANGUAGES, CATEGORIES } from '@/constants';
+import { intersection } from '@/helpers/objectHelper';
 import { AuthorData, PostData } from '@/types';
 
-export const validateAuthor = (options: {
-  markdownFilePath: string;
-}): Omit<AuthorData, 'layout' | 'permalink'> & { content: string } => {
+export const validateAuthor = (options: { markdownFilePath: string }): AuthorData & { content: string } => {
   const AuhorValidationSchema = z.object({
-    login: z.string(),
-    title: z.string(),
+    username: z.string(),
+    name: z.string(),
     twitter: z.string().optional(),
     github: z.string().optional(),
     linkedin: z.string().optional(),
@@ -26,13 +25,14 @@ export const validateAuthor = (options: {
     const validationError = fromZodError(result.error);
     throw new Error(`The markdown of the file "${options.markdownFilePath}" is invalid ! ${validationError.message}`);
   }
+
   return { ...result.data, content: matterResult.content };
 };
 
 export const validatePost = (options: {
   authors: [string, ...string[]];
   markdownFilePath: string;
-}): Omit<PostData, 'layout' | 'permalink' | 'date'> & { date: Date; content: string } => {
+}): Omit<PostData, 'date'> & { date: Date; content: string } => {
   const PostValidationSchema = z.object({
     lang: z.enum(AUTHORIZED_LANGUAGES),
     date: z.coerce.date(),
@@ -42,15 +42,45 @@ export const validatePost = (options: {
     cover: z.string().optional(),
     authors: z.array(z.enum(options.authors)),
     categories: z.array(z.enum(CATEGORIES)),
+    keywords: z
+      .array(z.string())
+      .superRefine((val, ctx) => {
+        if (intersection(val, CATEGORIES).length) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'Must not include a category.',
+          });
+        }
+
+        if (val.length > 10) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.too_big,
+            maximum: 10,
+            type: 'array',
+            inclusive: true,
+            message: 'Too many items 😡.',
+          });
+        }
+
+        if (val.length !== new Set(val).size) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'No duplicates allowed.',
+          });
+        }
+      })
+      .optional(),
   });
 
   const markdownContent = readFileSync(options.markdownFilePath, { encoding: 'utf-8' });
   const matterResult = matter(markdownContent);
   const result = PostValidationSchema.safeParse(matterResult.data);
+
   if (!result.success) {
     const validationError = fromZodError(result.error);
     throw new Error(`The markdown of the file "${options.markdownFilePath}" is invalid ! ${validationError.message}`);
   }
+
   return { ...result.data, content: matterResult.content };
 };
 
@@ -62,10 +92,10 @@ export const validateMarkdown = (): boolean => {
 
   for (const markdownFilePath of authorMarkdownFilePaths) {
     const author = validateAuthor({ markdownFilePath });
-    if (authors.includes(author.login)) {
+    if (authors.includes(author.username)) {
       throw new Error('This author already exists with the same username !');
     }
-    authors.push(author.login);
+    authors.push(author.username);
   }
 
   const postIds: string[] = [];

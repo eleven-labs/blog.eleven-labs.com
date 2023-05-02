@@ -1,15 +1,13 @@
 ---
-layout: post
 lang: en
 date: '2016-07-13'
-categories: []
+slug: how-to-be-best-friend-with-the-http-cache
+title: How to be best friend with the HTTP Cache ?
+excerpt: "I am currently lead developer for a French press website with very high traffic. Along\_my previous work experiences, I was able to perform development on several other high volumetry sites as well."
 authors:
   - captainjojo
-excerpt: "I am currently lead developer for a French press website with very high traffic. Along\_my previous work experiences, I was able to perform development on several other high volumetry sites as well."
-title: How to be best friend with the HTTP Cache ?
-slug: how-to-be-best-friend-with-the-http-cache
-oldCategoriesAndTags: []
-permalink: /en/how-to-be-best-friend-with-the-http-cache/
+categories: []
+keywords: []
 ---
 I am currently lead developer for a French press website with very high traffic. Along my previous work experiences, I was able to perform development on several other high volumetry sites as well.
 

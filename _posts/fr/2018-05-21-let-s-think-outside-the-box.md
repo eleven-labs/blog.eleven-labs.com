@@ -1,21 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2018-05-21'
-categories: []
+slug: think-outside-the-box
+title: '[iOS] Let''s think outside the box'
+excerpt: Utilisons le Framework comme il n'est pas prévu pour
+cover: /assets/2018-05-21-let-s-think-outside-the-box/cover.jpg
 authors:
   - thuchon
-cover: /assets/2018-05-21-let-s-think-outside-the-box/cover.jpg
-excerpt: Utilisons le Framework comme il n'est pas prévu pour
-title: '[iOS] Let''s think outside the box'
-slug: think-outside-the-box
-oldCategoriesAndTags:
+categories: []
+keywords:
   - mobile
   - ios
   - json
   - http
   - behavior
-permalink: /fr/think-outside-the-box/
 ---
 
 ## Introduction

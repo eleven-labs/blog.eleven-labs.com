@@ -1,11 +1,8 @@
 ---
-layout: post
 lang: fr
 date: '2015-12-14'
-categories:
-  - javascript
-authors:
-  - martincadoux
+slug: les-dotcss-2015-cetait-bien
+title: 'Les dotCSS 2015, c''était bien.'
 excerpt: >-
   C'est en plein coeur du 2e arrondissement de Paris, dans ce monument
   historique légèrement cossu qu'est le Théâtre des Variétés, que s'est déroulée
@@ -14,12 +11,12 @@ excerpt: >-
   présence pour nous y rendre, et écouter ce que quelques grands acteurs de la
   scène CSS voulaient partager avec nous en cette fin d'année. Et pour être
   franc, c'était très instructif.
-title: 'Les dotCSS 2015, c''était bien.'
-slug: les-dotcss-2015-cetait-bien
-oldCategoriesAndTags:
+authors:
+  - martincadoux
+categories:
   - javascript
+keywords:
   - dotcss
-permalink: /fr/les-dotcss-2015-cetait-bien/
 ---
 
 C'est en plein coeur du 2e arrondissement de Paris, dans ce monument historique légèrement cossu qu'est le Théâtre des Variétés, que s'est déroulée la deuxième édition de dotCSS le 4 décembre dernier. Ce jour-là, mon compère Elevenien Thibaut et moi-même avons délesté nos clients bien-aimés de notre présence pour nous y rendre, et écouter ce que quelques grands acteurs de la scène CSS voulaient partager avec nous en cette fin d'année. Et pour être franc, c'était très instructif.

@@ -1,19 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2022-11-08'
-categories: []
-authors:
-  - tthuon
+slug: explorer-la-donnee-pour-optimiser-ses-couts-d-electricite
+title: Explorer la donnée pour optimiser ses coûts d'électricité
 excerpt: >-
   Et si on mettait en pratique quelques réflexes d'analyse de données, pour
   faire de meilleurs choix au quotidien ? On pourrait peut-être ainsi mieux
   sélectionner son forfait chez notre fournisseur d'électricité par exemple...
-title: Explorer la donnée pour optimiser ses coûts d'électricité
-slug: explorer-la-donnee-pour-optimiser-ses-couts-d-electricite
-oldCategoriesAndTags:
-  - autres
-permalink: /fr/explorer-la-donnee-pour-optimiser-ses-couts-d-electricite/
+authors:
+  - tthuon
+categories: []
+keywords: []
 ---
 
 Dans cet article, je vous propose de vous mettre dans la peau d'un Data Analyst. Sous forme de cas pratique, nous allons répondre à des questions en nous aidant d'outils d'analyse de données.

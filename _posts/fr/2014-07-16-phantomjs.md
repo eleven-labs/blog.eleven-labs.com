@@ -1,18 +1,15 @@
 ---
-layout: post
 lang: fr
 date: '2014-07-16'
-categories:
-  - javascript
+slug: phantomjs
+title: PhantomJS
+excerpt: Petite présentation d'un navigateur webkit appelé PhantomJS
 authors:
   - cmoncade
-excerpt: Petite présentation d'un navigateur webkit appelé PhantomJS
-title: PhantomJS
-slug: phantomjs
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - phantomjs
-permalink: /fr/phantomjs/
 ---
 PhantomJS est un navigateur webkit en ligne de commande. Il vous permet entre autres :
 

@@ -1,9 +1,7 @@
 ---
-layout: author
-login: romaindurand
-title: Romain Durand
-github: romaindurand
+username: romaindurand
+name: Romain Durand
 twitter: romaindurand
-permalink: /authors/romaindurand/
+github: romaindurand
 ---
 Développeur web spécialisé en Javascript

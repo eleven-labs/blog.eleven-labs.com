@@ -1,18 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2020-03-25'
-categories:
-  - agile
-authors:
-  - mapo
+slug: la-guerre-du-backlog-n-aura-pas-lieu
+title: La Guerre du Backlog n'aura pas lieu (PART I)
 excerpt: >-
   Quelques méthodes de priorisation du Backlog pour gagner des batailles, vous
   faire des alliés et pacifier le développement du Produit !
-title: La Guerre du Backlog n'aura pas lieu (PART I)
-slug: la-guerre-du-backlog-n-aura-pas-lieu
-oldCategoriesAndTags:
+authors:
+  - mapo
+categories:
   - agile
+keywords:
   - agilité
   - po
   - pm
@@ -20,7 +18,6 @@ oldCategoriesAndTags:
   - product manager
   - backlog
   - priorisation
-permalink: /fr/la-guerre-du-backlog-n-aura-pas-lieu/
 ---
 
 

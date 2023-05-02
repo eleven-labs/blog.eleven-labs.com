@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2019-09-18'
-categories:
-  - javascript
+slug: lespromessesenjavascript
+title: Les promesses en Javascript
+excerpt: Nous allons voir ensemble ce que sont les promesses et comment les utiliser.
 authors:
   - mehdidr
-excerpt: Nous allons voir ensemble ce que sont les promesses et comment les utiliser.
-title: Les promesses en Javascript
-slug: lespromessesenjavascript
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - promise
   - promesse
   - es6
   - async
   - asynchrone
-permalink: /fr/lespromessesenjavascript/
 ---
 
 Les promesses ne sont pas récentes. Elles ont commencé à apparaître dans les années 80 dans des langages tels que MultiLisp.

@@ -1,7 +1,5 @@
 ---
-layout: author
-login: kdung
-title: Kevin Dung
-permalink: /authors/kdung/
+username: kdung
+name: Kevin Dung
 ---
 Développeur React / NodeJS, adepte des bons petits plats bien gras mais aussi du sport pour compenser

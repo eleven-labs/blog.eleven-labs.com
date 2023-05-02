@@ -1,12 +1,8 @@
 ---
-layout: post
 lang: fr
 date: '2018-03-28'
-categories:
-  - javascript
-authors:
-  - captainjojo
-cover: /assets/2018-03-28-graphql-kesako/cover.jpeg
+slug: graphql-kesako
+title: 'GraphQL, kesako ?'
 excerpt: >-
   Dans nos architectures micro-services, l'un des nouveaux défis est de réussir
   à récupérer les données stockées dans les différents micro-services le plus
@@ -14,12 +10,13 @@ excerpt: >-
   GraphQL. Cette technologie qui est devenu un des buzz word du moment est en
   vrai très simple à mettre en place. Ne voulant pas faire de jaloux je vous
   propose de réaliser deux serveurs GraphQL l'un en PHP et l'autre en NodeJs.
-title: 'GraphQL, kesako ?'
-slug: graphql-kesako
-oldCategoriesAndTags:
+cover: /assets/2018-03-28-graphql-kesako/cover.jpeg
+authors:
+  - captainjojo
+categories:
   - javascript
+keywords:
   - graphql
-permalink: /fr/graphql-kesako/
 ---
 Dans nos architectures micro-services, l'un des nouveaux défis est de réussir à récupérer les données stockées dans les différents micro-services le plus facilement possible.
 

@@ -1,20 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2011-11-28'
-categories:
-  - php
-authors:
-  - pouzor
+slug: unknow-relation-alias-translation
+title: Unknow relation alias Translation
 excerpt: >-
   Un petit Bug qui subsiste dans Symfony 1.4, lorsque l'on joue avec l'admin
   generator avec les éléments i18n.
-title: Unknow relation alias Translation
-slug: unknow-relation-alias-translation
-oldCategoriesAndTags:
+authors:
+  - pouzor
+categories:
   - php
+keywords:
   - symfony
-permalink: /fr/unknow-relation-alias-translation/
 ---
 
 Hello,

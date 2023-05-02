@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: en
 date: '2017-04-20'
-categories:
-  - php
-authors:
-  - tthuon
+slug: upload-file-ajax
+title: Upload file with AJAX
 excerpt: >-
   Today, I would like to share with you a feature often requested in an
   application: uploading a file.
-title: Upload file with AJAX
-slug: upload-file-ajax
-oldCategoriesAndTags:
+authors:
+  - tthuon
+categories:
   - php
+keywords:
   - symfony
   - ajax
-permalink: /en/upload-file-ajax/
 ---
 
 Today, I would like to share with you a feature often requested in an application: uploading a file.

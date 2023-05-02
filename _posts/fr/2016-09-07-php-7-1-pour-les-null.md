@@ -1,17 +1,14 @@
 ---
-layout: post
 lang: fr
 date: '2016-09-07'
-categories:
-  - php
+slug: php-7-1-pour-les-null
+title: PHP 7.1 - Pour les null
+excerpt: "Il y a quelques temps, pour ainsi dire un an (le temps passe vite ! ), je parlais de la sortie de PHP 7.0. Dix mois plus tard,\_les choses évoluent à nouveau : PHP 7.1 est en RC1."
 authors:
   - aandre
-excerpt: "Il y a quelques temps, pour ainsi dire un an (le temps passe vite ! ), je parlais de la sortie de PHP 7.0. Dix mois plus tard,\_les choses évoluent à nouveau : PHP 7.1 est en RC1."
-title: PHP 7.1 - Pour les null
-slug: php-7-1-pour-les-null
-oldCategoriesAndTags:
+categories:
   - php
-permalink: /fr/php-7-1-pour-les-null/
+keywords: []
 ---
 Il y a quelques temps, pour ainsi dire un an (le temps passe vite ! ), je parlais de la sortie de PHP 7.0. Dix mois plus tard, les choses évoluent à nouveau : PHP 7.1 est en RC1.
 

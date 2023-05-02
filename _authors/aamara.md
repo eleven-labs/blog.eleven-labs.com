@@ -1,7 +1,5 @@
 ---
-layout: author
-login: aamara
-title: Antoine AMARA
-permalink: /authors/aamara/
+username: aamara
+name: Antoine AMARA
 ---
 Open source lover and Fullstack javascript developer @ElevenLabs🚀

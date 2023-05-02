@@ -1,8 +1,6 @@
 ---
-layout: author
-login: damien
-title: Damien Saillard
+username: damien
+name: Damien Saillard
 twitter: daemon1981
-permalink: /authors/damien/
 ---
 

@@ -1,27 +1,24 @@
 ---
-layout: post
 lang: fr
 date: '2018-01-17'
-categories:
-  - javascript
-authors:
-  - mlenglet
-cover: /assets/2018-01-17-cookie-banner/cover.jpg
+slug: google-analytics-et-le-bandeau-cookie-cnil
+title: Google Analytics et le bandeau cookie CNIL
 excerpt: >-
   Vous avez tous au moins été confrontés une fois, lors de la visite d'un site,
   à un message précisant que ce dernier utilise des cookies. Ce message parfois
   agaçant est dû à une loi passée il y a quelques années par la commission
   européenne. Profitons donc de l'intégration récente de ce bandeau sur ce blog
   pour en parler.
-title: Google Analytics et le bandeau cookie CNIL
-slug: google-analytics-et-le-bandeau-cookie-cnil
-oldCategoriesAndTags:
+cover: /assets/2018-01-17-cookie-banner/cover.jpg
+authors:
+  - mlenglet
+categories:
   - javascript
+keywords:
   - blog
   - cnil
   - vie privée
   - cookie
-permalink: /fr/google-analytics-et-le-bandeau-cookie-cnil/
 ---
 
 Vous avez tous au moins été confrontés une fois, lors de la visite d'un site, à un message précisant que ce dernier utilise des cookies. Ce message parfois agaçant (jetez un coup d'oeil à _[I don't care about cookies](https://www.i-dont-care-about-cookies.eu/){:rel="nofollow"}_) est dû à une loi passée il y a quelques années par la commission européenne. Profitons donc de l'intégration récente de ce bandeau sur ce blog pour en parler.

@@ -1,7 +1,5 @@
 ---
-layout: author
-login: laurent
-title: Laurent Ghirardotti
-permalink: /authors/laurent/
+username: laurent
+name: Laurent Ghirardotti
 ---
 Developer @ Eleven-labs

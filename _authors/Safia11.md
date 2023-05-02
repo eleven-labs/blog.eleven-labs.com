@@ -1,7 +1,5 @@
 ---
-layout: author
-login: Safia11
-title: Safia CHMITI
-permalink: /authors/Safia11/
+username: Safia11
+name: Safia CHMITI
 ---
 iOS Developer

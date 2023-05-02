@@ -1,18 +1,15 @@
 ---
-layout: post
 lang: fr
 date: '2014-07-11'
-categories:
-  - javascript
+slug: angularjs-les-directives-12
+title: 'AngularJS : Les Directives 1/2'
+excerpt: '## Kézako ?'
 authors:
   - denis
-excerpt: '## Kézako ?'
-title: 'AngularJS : Les Directives 1/2'
-slug: angularjs-les-directives-12
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - angular
-permalink: /fr/angularjs-les-directives-12/
 ---
 
 ## Kézako ?

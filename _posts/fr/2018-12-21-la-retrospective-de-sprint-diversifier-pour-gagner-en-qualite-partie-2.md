@@ -1,26 +1,23 @@
 ---
-layout: post
 lang: fr
 date: '2018-12-21'
-categories:
-  - agile
-authors:
-  - pbrenot
-cover: >-
-  /assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/cover.jpg
+slug: retrospective-de-sprint-gagner-en-qualite-partie-II
+title: 'La rétrospective de sprint, diversifier pour gagner en qualité Partie II'
 excerpt: >-
   Prêt pour le niveau suivant ? Si vous « masterisez » les principes de base, il
   est maintenant temps de se pencher sur des versions plus évoluées, qui vous
   permettront notamment d’aborder des situations différentes et récolter des
   informations parfois plus pertinentes.
-title: 'La rétrospective de sprint, diversifier pour gagner en qualité Partie II'
-slug: retrospective-de-sprint-gagner-en-qualite-partie-II
-oldCategoriesAndTags:
+cover: >-
+  /assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/cover.jpg
+authors:
+  - pbrenot
+categories:
   - agile
+keywords:
   - agilité
   - scrum
   - retrospective
-permalink: /fr/retrospective-de-sprint-gagner-en-qualite-partie-II/
 ---
 ## INTRODUCTION
 

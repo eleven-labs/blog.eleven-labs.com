@@ -1,7 +1,5 @@
 ---
-layout: author
-login: sbessoudo
-title: Sébastien Bessoudo
-permalink: /authors/sbessoudo/
+username: sbessoudo
+name: Sébastien Bessoudo
 ---
 Product Owner/Scrum Master

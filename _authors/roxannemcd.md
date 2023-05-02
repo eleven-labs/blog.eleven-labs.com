@@ -1,10 +1,8 @@
 ---
-layout: author
-login: roxannemcd
-title: Roxanne Marchand
-github: https://github.com/roxannemcd/
-linkedin: https://www.linkedin.com/in/r-marchand/
-permalink: /authors/roxannemcd/
+username: roxannemcd
+name: Roxanne Marchand
+github: 'https://github.com/roxannemcd/'
+linkedin: 'https://www.linkedin.com/in/r-marchand/'
 ---
 
 Product Owner / Manager

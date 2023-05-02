@@ -1,20 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2019-02-06'
-categories:
-  - architecture
+slug: c-est-quoi-un-architecte-logiciel
+title: Qu'est-ce qu'un architecte logiciel ?
+excerpt: Ah tu es architecte c'est cool ça… Mais en fait ça consiste en quoi ?
+cover: /assets/2019-02-06-what-is-an-architect/cover.jpg
 authors:
   - pouzor
-cover: /assets/2019-02-06-what-is-an-architect/cover.jpg
-excerpt: Ah tu es architecte c'est cool ça… Mais en fait ça consiste en quoi ?
-title: Qu'est-ce qu'un architecte logiciel ?
-slug: c-est-quoi-un-architecte-logiciel
-oldCategoriesAndTags:
+categories:
   - architecture
+keywords:
   - développement
   - vulgarisation
-permalink: /fr/c-est-quoi-un-architecte-logiciel/
 ---
 
 Voilà une question qui m'a souvent été posée par mon entourage professionnel, mais aussi par ma mamie du cantal, pour qui l'IT se limite à son Windows XP et sa messagerie Orange.

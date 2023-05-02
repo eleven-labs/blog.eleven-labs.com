@@ -1,26 +1,23 @@
 ---
-layout: post
 lang: fr
 date: '2017-02-16'
-categories:
-  - agile
-authors:
-  - charles-eric
-cover: >-
-  /assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-heart-retrospective.jpg
+slug: amelioration-continue-comment-animer-vos-retrospectives-agiles
+title: 'Amélioration continue : comment animer vos rétrospectives agiles ?'
 excerpt: >-
   Nous partageons très régulièrement sur ce blog notre expertise technique
   autour du développement et de l’architecture web et mobile. Aujourd’hui,
   j’aimerais aborder un autre sujet, tout aussi important : notre expertise
   méthodologique.
-title: 'Amélioration continue : comment animer vos rétrospectives agiles ?'
-slug: amelioration-continue-comment-animer-vos-retrospectives-agiles
-oldCategoriesAndTags:
+cover: >-
+  /assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-heart-retrospective.jpg
+authors:
+  - charles-eric
+categories:
   - agile
+keywords:
   - agilité
   - scrum
   - retrospective
-permalink: /fr/amelioration-continue-comment-animer-vos-retrospectives-agiles/
 ---
 
 Nous partageons très régulièrement sur ce blog notre expertise technique autour du développement et de l’architecture web et mobile. Aujourd’hui, j’aimerais aborder un autre sujet, tout aussi important : notre **expertise méthodologique**.

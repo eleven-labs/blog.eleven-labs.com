@@ -1,20 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2018-10-03'
-categories:
-  - architecture
-authors:
-  - nicolas
-cover: /assets/2018-09-19-introduction-gitlab-ci/cover.png
+slug: introduction-gitlab-ci
+title: Introduction à Gitlab CI/CD
 excerpt: >-
   Cet article présente une partie des possibilités qu’offre GitLab CI/CD. Vous
   retrouverez aussi sur la plateforme Codelabs deux tutoriels liés à cet
   article, qui vous montreront deux cas d'utilisation.
-title: Introduction à Gitlab CI/CD
-slug: introduction-gitlab-ci
-oldCategoriesAndTags:
+cover: /assets/2018-09-19-introduction-gitlab-ci/cover.png
+authors:
+  - nicolas
+categories:
   - architecture
+keywords:
   - bonnes pratiques
   - gitlab
   - gitlab-ci
@@ -24,7 +22,6 @@ oldCategoriesAndTags:
   - continuous deployment
   - cd
   - devops
-permalink: /fr/introduction-gitlab-ci/
 ---
 Aujourd’hui si vous voulez mettre en place une CI/CD sur GitHub il vous faut “linker” vos dépôts avec Travis-ci, Circle-ci, Codeship... Mais savez-vous que GitLab intègre une solution de CI/CD ? C'est l'objet de l'article d'aujourd'hui.
 

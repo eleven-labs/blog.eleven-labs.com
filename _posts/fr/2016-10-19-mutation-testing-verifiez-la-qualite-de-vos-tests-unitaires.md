@@ -1,20 +1,17 @@
 ---
-layout: post
 lang: fr
 date: '2016-10-19'
-categories:
-  - php
-authors:
-  - rgraillon
+slug: mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires
+title: Mutation Testing – Vérifiez la qualité de vos tests unitaires
 excerpt: >-
   Vos tests unitaires sont-ils fiables ? Dans cet article nous allons voir
   comment s’en assurer
-title: Mutation Testing – Vérifiez la qualité de vos tests unitaires
-slug: mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires
-oldCategoriesAndTags:
+authors:
+  - rgraillon
+categories:
   - php
+keywords:
   - test
-permalink: /fr/mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/
 ---
 
 ## Les Tests Unitaires et la confiance

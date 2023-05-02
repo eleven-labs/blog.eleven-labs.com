@@ -6,7 +6,7 @@ import { validateAuthor, validateMarkdown, validatePost } from './validateMarkdo
 describe('validateAuthor', () => {
   it('should throw an error if markdown is invalid', () => {
     jest.spyOn(fs, 'readFileSync').mockReturnValueOnce(`---
-login: jdoe
+username: jdoe
 github: account-github
 twitter: account-twitter
 linkedin: account-Linkedin
@@ -14,14 +14,14 @@ linkedin: account-Linkedin
 This is some valid content`);
     const options = { markdownFilePath: 'invalidAuthor.md' };
     expect(() => validateAuthor(options)).toThrowError(
-      'The markdown of the file "invalidAuthor.md" is invalid ! Validation error: Required at "title"'
+      'The markdown of the file "invalidAuthor.md" is invalid ! Validation error: Required at "name"'
     );
   });
 
   it('should return valid data and content if markdown is valid', () => {
     jest.spyOn(fs, 'readFileSync').mockReturnValueOnce(`---
-login: jdoe
-title: John Doe
+username: jdoe
+name: John Doe
 github: account-github
 twitter: account-twitter
 linkedin: account-linkedin
@@ -30,8 +30,8 @@ This is some valid content`);
     const options = { markdownFilePath: 'validAuthor.md' };
     const author = validateAuthor(options);
     expect(author).toEqual({
-      login: 'jdoe',
-      title: 'John Doe',
+      username: 'jdoe',
+      name: 'John Doe',
       github: 'account-github',
       twitter: 'account-twitter',
       linkedin: 'account-linkedin',
@@ -102,8 +102,8 @@ describe('validateMarkdown', () => {
       .mockReturnValueOnce(['path/to/fake-author-1.md', 'path/to/fake-author-2.md'])
       .mockReturnValueOnce(['path/to/fake-post-1.md', 'path/to/fake-post-2.md']);
     jest.spyOn(fs, 'readFileSync').mockReturnValue(`---
-login: jdoe
-title: John Doe 1
+username: jdoe
+name: John Doe 1
 ---
 Some content`);
 
@@ -116,8 +116,8 @@ Some content`);
       .mockReturnValueOnce(['path/to/fake-author-1.md'])
       .mockReturnValueOnce(['path/to/fake-post-1.md', 'path/to/fake-post-2.md']);
     jest.spyOn(fs, 'readFileSync').mockReturnValueOnce(`---
-login: jdoe
-title: John Doe 1
+username: jdoe
+name: John Doe 1
 ---
 Some content`).mockReturnValue(`---
 lang: en
@@ -133,5 +133,103 @@ categories:
 Some content`);
 
     expect(() => validateMarkdown()).toThrow('This article already exists with the same slug and the same language !');
+  });
+
+  it('should throw an error if an article has a keyword included in the categories', () => {
+    jest
+      .spyOn(glob, 'globSync')
+      .mockReturnValueOnce(['path/to/fake-author-1.md'])
+      .mockReturnValueOnce(['path/to/fake-post-1.md', 'path/to/fake-post-2.md']);
+    jest.spyOn(fs, 'readFileSync').mockReturnValueOnce(`---
+username: jdoe
+name: John Doe 1
+---
+Some content`).mockReturnValue(`---
+lang: en
+date: 2022-04-01
+slug: my-post
+title: My Post
+excerpt: Some excerpt
+authors:
+  - jdoe
+categories:
+  - javascript
+keywords:
+  - javascript
+---
+Some content`);
+
+    expect(() => validateMarkdown()).toThrow(
+      'The markdown of the file "path/to/fake-post-1.md" is invalid ! Validation error: Must not include a category. at "keywords"'
+    );
+  });
+
+  it('should throw an error if an article has more than 10 keywords', () => {
+    jest
+      .spyOn(glob, 'globSync')
+      .mockReturnValueOnce(['path/to/fake-author-1.md'])
+      .mockReturnValueOnce(['path/to/fake-post-1.md', 'path/to/fake-post-2.md']);
+    jest.spyOn(fs, 'readFileSync').mockReturnValueOnce(`---
+username: jdoe
+name: John Doe 1
+---
+Some content`).mockReturnValue(`---
+lang: en
+date: 2022-04-01
+slug: my-post
+title: My Post
+excerpt: Some excerpt
+authors:
+  - jdoe
+categories:
+  - javascript
+keywords:
+  - keyword1
+  - keyword2
+  - keyword3
+  - keyword4
+  - keyword5
+  - keyword6
+  - keyword7
+  - keyword8
+  - keyword9
+  - keyword10
+  - keyword11
+---
+Some content`);
+
+    expect(() => validateMarkdown()).toThrow(
+      'The markdown of the file "path/to/fake-post-1.md" is invalid ! Validation error: Too many items 😡. at "keywords"'
+    );
+  });
+
+  it('should throw an error if an article has a duplicate keyword', () => {
+    jest
+      .spyOn(glob, 'globSync')
+      .mockReturnValueOnce(['path/to/fake-author-1.md'])
+      .mockReturnValueOnce(['path/to/fake-post-1.md', 'path/to/fake-post-2.md']);
+    jest.spyOn(fs, 'readFileSync').mockReturnValueOnce(`---
+username: jdoe
+name: John Doe 1
+---
+Some content`).mockReturnValue(`---
+lang: en
+date: 2022-04-01
+slug: my-post
+title: My Post
+excerpt: Some excerpt
+authors:
+  - jdoe
+categories:
+  - javascript
+keywords:
+  - keyword1
+  - keyword1
+---
+Some content`);
+
+    expect(() => validateMarkdown()).toThrow(
+      'The markdown of the file "path/to/fake-post-1.md" is invalid ! Validation error: No duplicates allowed. at "keywords"'
+    );
   });
 });

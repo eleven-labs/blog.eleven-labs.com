@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2019-07-17'
-categories:
-  - agile
-authors:
-  - mae
+slug: les-bases-de-l-agilite-avec-maitre-splinter
+title: Les bases de l’agilité avec Maître Splinter
 excerpt: >-
   Vous entendez parler partout d'agilité mais vous ne comprenez pas vraiment de
   quoi il retourne ? Les rumeurs courent en effet autant que le gruyère sur les
   pizzas des tortues ninja. Avec l'aide du sage et avisé Maître Splinter,
   démêlons le vrai du faux et revenons aux bases de l'agile-jutsu.
-title: Les bases de l’agilité avec Maître Splinter
-slug: les-bases-de-l-agilite-avec-maitre-splinter
-oldCategoriesAndTags:
+authors:
+  - mae
+categories:
   - agile
+keywords:
   - organisation
-permalink: /fr/les-bases-de-l-agilite-avec-maitre-splinter/
 ---
 
 

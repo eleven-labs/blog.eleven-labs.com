@@ -1,24 +1,22 @@
 ---
-layout: post
 lang: fr
 date: '2018-12-05'
-categories: []
-authors:
-  - seinhorn
-cover: /assets/2018-12-05-dotcss-2018-un-tres-grand-cru/dotcss-2018.jpg
+slug: dotcss-2018-un-tres-grand-cru
+title: 'dotCSS 2018, un très grand cru !'
 excerpt: >-
   Retour sur l'édition 2018 de dotCSS, la plus grande conférence au monde sur le
   CSS.
-title: 'dotCSS 2018, un très grand cru !'
-slug: dotcss-2018-un-tres-grand-cru
-oldCategoriesAndTags:
+cover: /assets/2018-12-05-dotcss-2018-un-tres-grand-cru/dotcss-2018.jpg
+authors:
+  - seinhorn
+categories: []
+keywords:
   - conference
   - css
   - paris
   - '2018'
   - intégrateur web
   - designer web
-permalink: /fr/dotcss-2018-un-tres-grand-cru/
 ---
 
 [DotCSS](https://www.dotcss.io/), la plus grande conférence sur le CSS au monde, a eu lieu le 8 novembre 2018 à Paris... plus précisément au Dock Pullman à Aubervilliers.

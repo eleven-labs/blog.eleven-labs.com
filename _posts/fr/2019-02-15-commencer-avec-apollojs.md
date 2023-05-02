@@ -1,25 +1,22 @@
 ---
-layout: post
 lang: fr
 date: '2019-02-15'
-categories:
-  - javascript
-authors:
-  - fpasquet
-  - captainjojo
-cover: /assets/2019-02-05-commencer-avec-apollojs/cover.jpg
+slug: commencer-avec-apollojs
+title: 'Apollojs, mise en place d''une API GraphQL'
 excerpt: >-
   Dans cet article nous partageons les bonnes pratiques que nous avons mis en
   place au sein de nos projets GraphQL. Pour faire simple nous allons mettre en
   place une API GraphQL devant une API Rest existante, l'ensemble des
   développements se fera en Node.js avec Apollo GraphQL.
-title: 'Apollojs, mise en place d''une API GraphQL'
-slug: commencer-avec-apollojs
-oldCategoriesAndTags:
+cover: /assets/2019-02-05-commencer-avec-apollojs/cover.jpg
+authors:
+  - fpasquet
+  - captainjojo
+categories:
   - javascript
+keywords:
   - graphql
   - apollo
-permalink: /fr/commencer-avec-apollojs/
 ---
 
 Depuis un an nous utilisons GraphQL dans l'ensemble de nos projets au studio. Nous avons commencé directement avec l'implémentation Node.js et AppoloJS qui était en version 1. Depuis juin la version nous a permis de mettre en place une architecture plus solide et plus simple à maintenir.

@@ -48,12 +48,9 @@ const transformPost = (options: { data: PostData; rawContent: string; content: s
 });
 
 const transformAuthor = ({ data, content }: { data: AuthorData; content: string }): TransformedAuthor => {
-  const avatarImageFileNames = globSync(`${data.login}.*`, { cwd: path.resolve(ASSETS_DIR, 'authors') });
+  const avatarImageFileNames = globSync(`${data.username}.*`, { cwd: path.resolve(ASSETS_DIR, 'authors') });
   return {
-    username: data.login,
-    name: data.title,
-    github: data?.github,
-    twitter: data?.twitter,
+    ...data,
     avatarImageUrl:
       avatarImageFileNames.length > 0 ? getPathFile(`/imgs/authors/${avatarImageFileNames[0]}`) : undefined,
     content,

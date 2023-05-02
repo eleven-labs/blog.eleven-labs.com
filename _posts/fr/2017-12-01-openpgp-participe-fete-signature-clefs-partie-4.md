@@ -1,22 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2017-12-01'
-categories: []
-authors:
-  - tthuon
-cover: >-
-  /assets/2017-12-01-openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/cover.jpg
+slug: openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs
+title: OpenPGP - J'ai participé à une fête de la signature des clefs
 excerpt: >-
   OpenPGP ne s'appuie pas sur une autorité de certification pour certifier les
   personnes, mais sur la confiance.
-title: OpenPGP - J'ai participé à une fête de la signature des clefs
-slug: openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs
-oldCategoriesAndTags:
+cover: >-
+  /assets/2017-12-01-openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/cover.jpg
+authors:
+  - tthuon
+categories: []
+keywords:
   - openpgp
   - securite
   - confiance
-permalink: /fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/
 ---
 
 Le 2 novembre 2017, Ludovic Hirlimann, qui est membre du staff technique chez Mozilla, a organisé une rencontre pour que les détenteurs

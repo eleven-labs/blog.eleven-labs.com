@@ -1,19 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2019-11-06'
-categories:
-  - javascript
-authors:
-  - mehdidr
+slug: asyncawait
+title: Async / await
 excerpt: >-
   Après avoir décortiqué les promesses, nous allons voir comment utiliser async
   await.
-title: Async / await
-slug: asyncawait
-oldCategoriesAndTags:
+authors:
+  - mehdidr
+categories:
   - javascript
-permalink: /fr/asyncawait/
+keywords: []
 ---
 
 Après avoir vu en profondeur comment fonctionnent les promesses et comment les utiliser, nous allons nous pencher sur une fonctionnalité arrivée avec l'ES7 : `async/await`.

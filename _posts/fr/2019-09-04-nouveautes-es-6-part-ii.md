@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2019-09-04'
-categories:
-  - javascript
-authors:
-  - mehdidr
+slug: lesnouveauteses6partii
+title: Les nouveautés d'ES6 Partie II
 excerpt: >-
   La suite de la partie I est là ! Nous allons voir ensemble d'autres concepts
   apportés par ES6.
-title: Les nouveautés d'ES6 Partie II
-slug: lesnouveauteses6partii
-oldCategoriesAndTags:
+authors:
+  - mehdidr
+categories:
   - javascript
+keywords:
   - ecmascript
   - es6
-permalink: /fr/lesnouveauteses6partii/
 ---
 
 Vous l'attendiez (si si, ne dites pas le contraire), la voici ! La deuxième partie des nouveautés d'ES6 est arrivée

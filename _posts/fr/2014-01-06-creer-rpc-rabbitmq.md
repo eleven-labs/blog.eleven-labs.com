@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2014-01-06'
-categories:
-  - php
-authors:
-  - captainjojo
+slug: creer-rpc-rabbitmq
+title: Créer un RPC via RabbitMQ
 excerpt: >-
   RabbitMQ est un gestionnaire de queue, il permet donc de conserver des
   messages et de les lire via une autre tâche. Une présentation plus approfondie
   sera faite dans un autre article
-title: Créer un RPC via RabbitMQ
-slug: creer-rpc-rabbitmq
-oldCategoriesAndTags:
+authors:
+  - captainjojo
+categories:
   - php
+keywords:
   - symfony
   - rabbitmq
-permalink: /fr/creer-rpc-rabbitmq/
 ---
 
 RabbitMQ est un gestionnaire de queue, il permet donc de conserver des messages et de les lire via une autre tâche. Une présentation plus approfondie sera faite dans un autre article. Dans cet article, nous allons nous intéresser à un concept important dans RabbitMQ : le RPC.

@@ -1,21 +1,19 @@
 ---
-layout: post
 lang: en
 date: '2022-07-27'
-categories: []
-authors:
-  - meugeniatr
-cover: /assets/2022-07-27-responsive-accessible-typography/read-me.png
+slug: responsive-accessible-typography
+title: Responsive and accessible typography and why you should care
 excerpt: >-
   Typography is a silent tool that UX designers and developers can sometimes
   take for granted. There is much noise around this topic. Pixels? Are
   breakpoints enough to switch sizes across devices? Do we even need breakpoints
   at all?
-title: Responsive and accessible typography and why you should care
-slug: responsive-accessible-typography
-oldCategoriesAndTags:
+cover: /assets/2022-07-27-responsive-accessible-typography/read-me.png
+authors:
+  - meugeniatr
+categories: []
+keywords:
   - bonnes pratiques
-permalink: /en/responsive-accessible-typography/
 ---
 
 <style>

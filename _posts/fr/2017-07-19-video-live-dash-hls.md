@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2017-07-19'
-categories:
-  - php
+slug: video-live-dash-hls
+title: Les principaux formats de flux video live DASH et HLS
+excerpt: 'Le HLS et le DASH, deux protocoles pour les streamer tous.'
+cover: /assets/2017-07-12-video-live-dash-hls/cover.jpg
 authors:
   - jbernard
-cover: /assets/2017-07-12-video-live-dash-hls/cover.jpg
-excerpt: 'Le HLS et le DASH, deux protocoles pour les streamer tous.'
-title: Les principaux formats de flux video live DASH et HLS
-slug: video-live-dash-hls
-oldCategoriesAndTags:
+categories:
   - php
+keywords:
   - js
   - stream video
   - live
   - streaming
   - video
-permalink: /fr/video-live-dash-hls/
 ---
 
 Bien qu'elles soient utilisées par des grands noms comme Apple, Microsoft, Youtube ou bien Netflix, les technologies de streaming video ne sont pas parmi les plus connues.

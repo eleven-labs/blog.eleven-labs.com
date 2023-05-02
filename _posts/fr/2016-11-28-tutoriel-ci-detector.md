@@ -1,18 +1,16 @@
 ---
-layout: post
 lang: fr
 date: '2016-11-28'
-categories: []
+slug: tutoriel-ci-detector
+title: 'Tutoriel Vidéo : CIDetector'
+excerpt: 'Tutoriel Vidéo : CIDetector'
 authors:
   - ibenichou
-excerpt: 'Tutoriel Vidéo : CIDetector'
-title: 'Tutoriel Vidéo : CIDetector'
-slug: tutoriel-ci-detector
-oldCategoriesAndTags:
+categories: []
+keywords:
   - mobile
   - ios
   - swift
-permalink: /fr/tutoriel-ci-detector/
 ---
 
 Techno : IOS

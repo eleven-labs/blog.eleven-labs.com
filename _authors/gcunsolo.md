@@ -1,10 +1,8 @@
 ---
-layout: author
-login: gcunsolo
-title: Giuseppe Cunsolo
+username: gcunsolo
+name: Giuseppe Cunsolo
 github: gcunsolo
 linkedin: 'https://www.linkedin.com/in/giuseppe-cunsolo-peqpe/'
-permalink: /authors/gcunsolo/
 ---
 Développeur JS @ Eleven-Labs
 

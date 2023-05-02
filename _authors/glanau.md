@@ -1,8 +1,6 @@
 ---
-layout: author
-login: glanau
-title: Grégory Lanau
+username: glanau
+name: Grégory Lanau
 twitter: Greg_Essenceweb
-permalink: /authors/glanau/
 ---
 Developer @ Eleven-labs

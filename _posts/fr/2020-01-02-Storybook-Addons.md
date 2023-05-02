@@ -1,23 +1,20 @@
 ---
-layout: post
 lang: fr
 date: '2020-01-02'
-categories:
-  - javascript
-authors:
-  - manu
+slug: storybook-addons
+title: Storybook - Découvrir les addons
 excerpt: >-
   Deuxième épisode de cette série, découvrez les incroyables addons sur
   Storybook. C'est JUSTE des gamebreakers.
-title: Storybook - Découvrir les addons
-slug: storybook-addons
-oldCategoriesAndTags:
+authors:
+  - manu
+categories:
   - javascript
+keywords:
   - storybook
   - ux
   - ui
   - react
-permalink: /fr/storybook-addons/
 ---
 
 ![Liste d'addon 1]({{ site.baseurl }}/assets/2020-01-02-Storybook-Addons/addonlist.png)

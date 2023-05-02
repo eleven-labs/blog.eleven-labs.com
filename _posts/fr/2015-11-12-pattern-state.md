@@ -1,23 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2015-11-12'
-categories:
-  - php
-  - architecture
-authors:
-  - nkania
+slug: pattern-state
+title: Pattern State
 excerpt: >-
   Explication du design pattern State et exemple d'implémentation dans une
   application Symfony via winzou/state-machine-bundle
-title: Pattern State
-slug: pattern-state
-oldCategoriesAndTags:
+authors:
+  - nkania
+categories:
   - php
   - architecture
+keywords:
   - symfony
   - design pattern
-permalink: /fr/pattern-state/
 ---
 
 > **- Qu'est-ce que c'est ?**

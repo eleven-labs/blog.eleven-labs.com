@@ -1,23 +1,21 @@
 ---
-layout: post
 lang: fr
 date: '2017-12-13'
-categories: []
-authors:
-  - aandre
-cover: /assets/2017-12-13-understanding-linux-kernel/cover.jpg
+slug: comprendre-kernel-linux
+title: 'Pour Noël, je comprends mon noyau GNU/Linux !'
 excerpt: >-
   Linux n'est rien de plus qu'un noyau, les abus de langages sont trop nombreux
   et trop fréquents. Apprenons ici à faire la différence entre Linux et une
   distribution basée sur Linux.
-title: 'Pour Noël, je comprends mon noyau GNU/Linux !'
-slug: comprendre-kernel-linux
-oldCategoriesAndTags:
+cover: /assets/2017-12-13-understanding-linux-kernel/cover.jpg
+authors:
+  - aandre
+categories: []
+keywords:
   - linux
   - kernel
   - compilation
   - gentoo
-permalink: /fr/comprendre-kernel-linux/
 ---
 
 Pourquoi compiler son noyau alors qu'on a tous au moins 8 Go de mémoire vive me direz vous ? Pourquoi aller optimiser son Kernel alors que l'on peut exploiter la mémoire vive à fond ?

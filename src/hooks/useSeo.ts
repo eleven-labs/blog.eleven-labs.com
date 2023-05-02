@@ -1,9 +1,10 @@
 import { HeadObject, useHead, useScript } from 'hoofd';
 import { useTranslation } from 'react-i18next';
-import { generatePath, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
 import { type getDataFromPostPage } from '@/helpers/contentHelper';
+import { generatePath } from '@/helpers/routerHelper';
 
 export type UseSeoOptions = {
   title: string;

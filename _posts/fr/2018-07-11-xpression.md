@@ -1,21 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2018-07-11'
-categories:
-  - php
-authors:
-  - amoutte
-cover: /assets/2018-07-11-xpression/cover.jpg
+slug: presentation-php-xpression
+title: Présentation de la librairie PHP Xpression
 excerpt: >-
   En tant que développeur nous avons tous déjà eu besoin de filtrer un jeu de
   donnés (array, collection, API etc...). Nous allons découvrir la librairie
   Xpression qui va nous permettre de filtrer différents contenus avec une
   syntaxe simplifiée.
-title: Présentation de la librairie PHP Xpression
-slug: presentation-php-xpression
-oldCategoriesAndTags:
+cover: /assets/2018-07-11-xpression/cover.jpg
+authors:
+  - amoutte
+categories:
   - php
+keywords:
   - library
   - symfony
   - query
@@ -26,7 +24,6 @@ oldCategoriesAndTags:
   - odm
   - expression
   - collection
-permalink: /fr/presentation-php-xpression/
 ---
 
 ## Présentation de Xpression

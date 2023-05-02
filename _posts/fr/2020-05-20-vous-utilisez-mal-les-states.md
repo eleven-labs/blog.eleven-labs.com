@@ -1,24 +1,21 @@
 ---
-layout: post
 lang: fr
 date: '2020-05-20'
-categories:
-  - javascript
-authors:
-  - kcordier
+slug: vous-utilisez-mal-les-states-react
+title: Vous utilisez mal les states React
 excerpt: >-
   Vous n'utilisez peut-être pas les states React de manière optimale et je vais
   vous expliquer pourquoi
-title: Vous utilisez mal les states React
-slug: vous-utilisez-mal-les-states-react
-oldCategoriesAndTags:
+authors:
+  - kcordier
+categories:
   - javascript
+keywords:
   - react
   - images
   - state
   - reducer
   - bonne pratique
-permalink: /fr/vous-utilisez-mal-les-states-react/
 ---
 
 Derrière ce titre à l’allure aguicheuse se cache un constat que je fais de plus en plus. Remettons-nous dans le contexte :

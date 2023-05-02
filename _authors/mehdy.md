@@ -1,7 +1,5 @@
 ---
-layout: author
-login: mehdy
-title: Mehdy Dara
-permalink: /authors/mehdy/
+username: mehdy
+name: Mehdy Dara
 ---
 Developer @ Eleven-labs

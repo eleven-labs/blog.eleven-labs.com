@@ -2,11 +2,11 @@ import { Text } from '@eleven-labs/design-system';
 import React from 'react';
 import ReactGA from 'react-ga';
 import { useTranslation } from 'react-i18next';
-import { generatePath } from 'react-router-dom';
 
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
 import { AUTHORIZED_LANGUAGES, PATHS } from '@/constants';
 import { LinkContainer } from '@/containers/LinkContainer';
+import { generatePath } from '@/helpers/routerHelper';
 import { LayoutTemplateProps } from '@/templates/LayoutTemplate';
 
 export const useFooterContainer = (): LayoutTemplateProps['footer'] => {

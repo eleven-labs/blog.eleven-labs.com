@@ -1,7 +1,5 @@
 ---
-layout: author
-login: seinhorn
-title: Stéphane Einhorn
-permalink: /authors/seinhorn/
+username: seinhorn
+name: Stéphane Einhorn
 ---
 Développeur front-end @ Eleven Labs, and SEO lover...

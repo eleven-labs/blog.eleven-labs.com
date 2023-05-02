@@ -1,25 +1,23 @@
 ---
-layout: post
 lang: en
 date: '2021-03-08'
-categories: []
-authors:
-  - marishka
-  - marianne
+slug: women-in-it
+title: Women in IT
 excerpt: >
   Today is the International Women's Rights Day, and we wanted to take the
   opportunity to talk to you about a subject that is close to our hearts: women
   in IT. The purpose of this article is to tell you about our experience to give
   you a better vision of why there aren't many of us, why some give up, and,
   above all, how to make that change.
-title: Women in IT
-slug: women-in-it
-oldCategoriesAndTags:
+authors:
+  - marishka
+  - marianne
+categories: []
+keywords:
   - teamwork
   - equality
   - women
   - history
-permalink: /en/women-in-it/
 ---
 
 Today is the International Women's Rights Day, and we wanted to take the opportunity to talk to you about a subject that is close to our hearts: women in IT. Wait, wait! Don't leave right away. The purpose of this article is to tell you about our experience to give you a better vision of why there aren't many of us, why some give up, and, above all, how to make that change. So, if you too want more female colleagues, read on.

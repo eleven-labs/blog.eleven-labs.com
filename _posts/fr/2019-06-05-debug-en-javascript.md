@@ -1,22 +1,19 @@
 ---
-layout: post
 lang: fr
 date: '2019-06-05'
-categories:
-  - javascript
-authors:
-  - jgreaux
+slug: debogue-javascript-vscode
+title: Déboguer efficacement React / Node.js sous VSCode ?
 excerpt: >-
   Nous avons tous utilisé des console.log() pour déboguer notre code JS.
   Javacript permet pourtant de faire du débogue pas à pas très simplement.
   Voyons ensemble à quel point cela sera rapide à mettre en place sur vos projet
   FRONT / BACK.
-title: Déboguer efficacement React / Node.js sous VSCode ?
-slug: debogue-javascript-vscode
-oldCategoriesAndTags:
+authors:
+  - jgreaux
+categories:
   - javascript
+keywords:
   - vscode
-permalink: /fr/debogue-javascript-vscode/
 ---
 
 ## Introduction

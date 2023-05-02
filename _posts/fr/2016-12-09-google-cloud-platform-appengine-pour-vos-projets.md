@@ -1,25 +1,22 @@
 ---
-layout: post
 lang: fr
 date: '2016-12-09'
-categories:
-  - javascript
-authors:
-  - captainjojo
+slug: google-cloud-platform-appengine-pour-vos-projets
+title: Google Cloud Platform (2/3) - AppEngine pour vos projets
 excerpt: >-
   Vous avez souvent été bloqué dans vos projets parce qu'il est difficile de
   mettre en production. En effet, il faut des serveurs, les installer, les
   configurer et installer votre projet. Comment rendre cela plus simple ?
-title: Google Cloud Platform (2/3) - AppEngine pour vos projets
-slug: google-cloud-platform-appengine-pour-vos-projets
-oldCategoriesAndTags:
+authors:
+  - captainjojo
+categories:
   - javascript
+keywords:
   - dev ops
   - google
   - node
   - cloud
   - express
-permalink: /fr/google-cloud-platform-appengine-pour-vos-projets/
 ---
 
 Vous avez souvent été bloqué dans vos projets parce qu'il est difficile de mettre en production.

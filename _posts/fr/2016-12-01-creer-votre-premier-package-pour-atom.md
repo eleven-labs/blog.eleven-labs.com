@@ -1,21 +1,18 @@
 ---
-layout: post
 lang: fr
 date: '2016-12-01'
-categories:
-  - javascript
+slug: creer-votre-premier-package-pour-atom
+title: Créer votre premier package pour Atom
+excerpt: '# Introduction à Atom'
 authors:
   - vcomposieux
-excerpt: '# Introduction à Atom'
-title: Créer votre premier package pour Atom
-slug: creer-votre-premier-package-pour-atom
-oldCategoriesAndTags:
+categories:
   - javascript
+keywords:
   - atom
   - package
   - babel
   - jasmine
-permalink: /fr/creer-votre-premier-package-pour-atom/
 ---
 
 # Introduction à Atom
