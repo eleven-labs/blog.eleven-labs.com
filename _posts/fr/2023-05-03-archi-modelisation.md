@@ -1,16 +1,15 @@
 ---
-layout: post
 lang: fr
 date: '2023-05-03'
-categories:
-  - architecture
+slug: archi-l-outil-de-modelisation-qui-vous-veut-du-bien
+title: >-
+  Archi - L’outil de modélisation qui vous veut du bien
+excerpt: >-
+  Quand il s’agit de faire des schémas d’architectures, en projection ou en documentation, il y a une pléthore d’outils disponibles, disponible en client lourd, web, SaaS… Et avec eux, une multitude de “template”, presque propre à chaque outil, et des problématiques de passage à l’échelle dès que l’on commence à avoir plusieurs contributeurs sur ces documents.
 authors:
   - pouzor
-excerpt: "Quand il s’agit de faire des schémas d’architectures, en projection ou en documentation, il y a une pléthore d’outils disponibles, disponible en client lourd, web, SaaS… Et avec eux, une multitude de “template”, presque propre à chaque outil, et des problématiques de passage à l’échelle dès que l’on commence à avoir plusieurs contributeurs sur ces documents."
-title: "Archi - L’outil de modélisation qui vous veut du bien"
-slug: archi-l-outil-de-modelisation-qui-vous-veut-du-bien
-
-permalink: /fr/archi-l-outil-de-modelisation-qui-vous-veut-du-bien/
+categories:
+  - architecture
 ---
 
 Quand il s’agit de faire des schémas d’architectures, en projection ou en documentation, il y a une pléthore d’outils disponibles, disponible en client lourd, web, SaaS… Et avec eux, une multitude de “template”, presque propre à chaque outil, et des problématiques de passage à l’échelle dès que l’on commence à avoir plusieurs contributeurs sur ces documents.
