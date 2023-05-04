@@ -5,20 +5,20 @@ slug: archi-l-outil-de-modelisation-qui-vous-veut-du-bien
 title: >-
   Archi - L’outil de modélisation qui vous veut du bien
 excerpt: >-
-  Quand il s’agit de faire des schémas d’architectures, en projection ou en documentation, il y a une pléthore d’outils disponibles, disponible en client lourd, web, SaaS… Et avec eux, une multitude de “template”, presque propre à chaque outil, et des problématiques de passage à l’échelle dès que l’on commence à avoir plusieurs contributeurs sur ces documents.
+  Quand il s’agit de faire des schémas d’architectures en projection ou en documentation, il y a pléthore d’outils disponibles, que ce soit en client lourd, web, SaaS… Et avec eux, une multitude de “templates”, presque propres à chaque outil, avec des problématiques de passage à l’échelle dès que l’on commence à avoir plusieurs contributeurs sur ces documents.
 authors:
   - pouzor
 categories:
   - architecture
 ---
 
-Quand il s’agit de faire des schémas d’architectures, en projection ou en documentation, il y a une pléthore d’outils disponibles, disponible en client lourd, web, SaaS… Et avec eux, une multitude de “template”, presque propre à chaque outil, et des problématiques de passage à l’échelle dès que l’on commence à avoir plusieurs contributeurs sur ces documents.
-Aujourd’hui, je vais vous faire une présentation d’ARCHI, un outil de modélisation Open Source qui pour moi réponds à beaucoup de problématiques.
+Quand il s’agit de faire des schémas d’architectures en projection ou en documentation, il y a pléthore d’outils disponibles, que ce soit en client lourd, web, SaaS… Et avec eux, une multitude de “templates”, presque propres à chaque outil, avec des problématiques de passage à l’échelle dès que l’on commence à avoir plusieurs contributeurs sur ces documents.
+Aujourd’hui, je vais vous faire une présentation d’ARCHI, un outil de modélisation Open Source qui pour moi répond bien à ces problématiques.
 
 
 ## Norme et Urbanisation
 
-Avant de parler de l’outil, parlons un peu d’urbanisation. En tant qu’architecte, notre préoccupation première est, à mon sens, faciliter la communication et le partage d’informations entre les différentes parties prenantes d’un projet, d’une équipe ou d’une entreprise. Et cela passe par un langage commun. J’ai souvent cherché le bon compromis entre représentation technique et fonctionnelle sans trouver forcement chaussure à mon pied. Et quand on ajoute la notion de pérennité dans l’équation, celui devient impossible. Certain framework de modélisation sont trop orienté dev (à mon sens) comme C4 ou BPMN et ne sont pas facilement compréhensible pour des personnes hors de la cible première.
+Avant de parler de l’outil, parlons un peu d’urbanisation. En tant qu’architecte, notre préoccupation première est, à mon sens, faciliter la communication et le partage d’informations entre les différentes parties prenantes d’un projet, d’une équipe ou d’une entreprise, ce qui implique de trouver un langage commun. J’ai souvent cherché le bon compromis entre représentation technique et fonctionnelle sans trouver forcément chaussure à mon pied. Quand on ajoute la notion de pérennité à cette équation déjà complexe, cela devient impossible. Certain frameworks de modélisation sont trop orientés dev (à mon sens) comme C4 ou BPMN et ne sont pas facilement compréhensibles pour des personnes hors de la cible première.
 Dans le cas de C4 que j’ai beaucoup utilisé, même s’il existe des éditeurs maintenant, le coté “implémentation” de la documentation limite très souvent l’utilisation par rapport à un [draw.io](http://draw.io) ou solution équivalente.
 
 À l’inverse, [draw.io](http://draw.io) est un super outil mais n’offre pas beaucoup de cadre et, même avec des templates prédéfinis, vous aurez beaucoup de mal à avoir un rendu homogène entre les utilisateurs.
@@ -29,7 +29,7 @@ ArchiMate offre un langage commun pour décrire la construction et le fonctionne
 
 ### ArchiMate Framework
 
-Les principaux concepts et éléments du langage ArchiMate sont présentés sous le nom d'ArchiMate Core Framework, qui se compose de trois “layer” et de trois “aspects”. Cela crée une matrice de combinaisons. Chaque couche à ses aspects “Passive Structure”, “Behavior” et “Active Structure”.
+Les principaux concepts et éléments du langage ArchiMate sont présentés sous le nom d'ArchiMate Core Framework, qui se compose de trois “layers” et de trois “aspects”. Cela crée une matrice de combinaisons. Chaque couche à ses aspects “Passive Structure”, “Behavior” et “Active Structure”.
 
 <figure style="text-align: center; margin: 2rem 0;">
   <img src="{{ site.baseurl }}/assets/2023-05-03-archi-modelisation/core_framework_archimate.jpeg" width="800px" alt="Matrice Archimate" style="display: block; margin: auto;" />
@@ -59,7 +59,7 @@ Cette matrice accompagnée des différentes représentations et des différents 
 Parlons maintenant de l’outil, et de ce qui le rend puissant.
 Au delà d’un fonctionnement classique de modélisation comme draw.io, sa puissance vient de sa gestion des objets.
 
-Tout élément dans Archi est un objet (boite, relation, étiquette, …), possédant des attributs descriptifs (au delà des types dans Archimate) et sont sauvegardés dans un référentiel. L’intérêt me direz vous ?
+Tout élément dans Archi est un objet (boite, relation, étiquette, …), possédant des attributs descriptifs (au-delà des types dans Archimate) et sont sauvegardés dans un référentiel. L’intérêt me direz-vous ?
 
 Prenons comme exemple ce schéma simple, décrivant le parcours de création d’un utilisateur.
 
@@ -67,16 +67,16 @@ Prenons comme exemple ce schéma simple, décrivant le parcours de création d�
   <img src="{{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_1.png" width="800px" alt="Matrice Archimate" style="display: block; margin: auto;" />
 </figure>
 
-Ce que l’on peut voir immédiatement, c’est que l’ensemble des éléments sont référencés dans le Model Archi, que ça soit les éléments business (en jaune), les applications techniques et les interfaces d’API (en bleu) et même les relations. Ce vous permet d’avoir un référentiel documentaire entre les différents schémas, et de réutiliser les mêmes éléments dans des schémas différents.
+Ce que l’on peut voir immédiatement, c’est que l’ensemble des éléments sont référencés dans le Model Archi, que ça soit les éléments business (en jaune), les applications techniques et les interfaces d’API (en bleu) et même les relations. Cela vous permet d’avoir un référentiel documentaire entre les différents schémas, et de réutiliser les mêmes éléments dans des schémas différents.
 
 
-Dans cet exemple ci dessous, l’application “MS Client” est le même objet que dans le premier schéma.
+Dans l'exemple ci-dessous, l’application “MS Client” est le même objet que dans le premier schéma.
 <figure style="text-align: center; margin: 2rem 0;">
   <img src="{{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_2.png" width="800px" alt="Matrice Archimate" style="display: block; margin: auto;" />
 </figure>
 
 
-Cela permet notamment d’avoir une documentation unique sur l’ensemble de model et de faciliter cette documentation.
+Cela permet notamment d’avoir une documentation unique sur l’ensemble de models et de faciliter cette documentation.
 <figure style="text-align: center; margin: 2rem 0;">
   <img src="{{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_3.png" width="800px" alt="Matrice Archimate" style="display: block; margin: auto;" />
 </figure>
@@ -90,13 +90,13 @@ Exemple ici quand je tente d’ajouter un component “test” dans l’API Gate
 </figure>
 
 
-D’ailleurs maintenant, si je veux sortir cette boite de l’API G, la relation va rester et apparaitre explicitement.
+D’ailleurs maintenant, si je veux sortir cette boite de l’API G, la relation va rester et apparaître explicitement.
 <figure style="text-align: center; margin: 2rem 0;">
   <img src="{{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_5.png" width="800px" alt="Matrice Archimate" style="display: block; margin: auto;" />
 </figure>
 
 
-Mais le plus avantage à cette gestion des “objets” dans Archi, c’est la possibilité de générer en un clic une vue, à partir d’un élément du référentiel, avec l’ensemble des objets qui lui sont attachés. Idéal pour comprendre la place d’un objet dans l’ensemble de notre eco-système, y compris sur des schémas gérés par d’autres personnes.
+Mais le plus gros avantage à cette gestion des “objets” dans Archi, c’est la possibilité de générer en un clic une vue, à partir d’un élément du référentiel, avec l’ensemble des objets qui lui sont attachés. Idéal pour comprendre la place d’un objet dans l’ensemble de notre ecosystème, y compris sur des schémas gérés par d’autres personnes.
 
 Exemple :
 <figure style="text-align: center; margin: 2rem 0;">
@@ -104,16 +104,16 @@ Exemple :
 </figure>
 
 
-Enfin, un dernier gros avantage de ce référentiel, l’outil permet de rechercher dans l’ensemble des objets (et des attributs des objets) !!!
+Enfin, dernier gros avantage de ce référentiel, l’outil permet de rechercher dans l’ensemble des objets (et des attributs des objets) !
 
-Dans les autres points forts d'Archi, on trouve une organisation libre via des dossiers dans la gestion des “Views” (des schémas à proprement parlé) qui vous permet d’organiser le travail par type de schéma (business, applicatif, infra …) ou encore par équipe, fonctionnement qui était assez pratique avec l’utilisation de Lucidchart (payant) par exemple.
+Dans les autres points forts d'Archi, on trouve une organisation libre via des dossiers dans la gestion des “Views” (des schémas à proprement parler) qui vous permet d’organiser le travail par type de schéma (business, applicatif, infra…) ou encore par équipe, fonctionnement qui était assez pratique avec l’utilisation de Lucidchart (payant) par exemple.
 
 D’un point de vue collaboratif, il peut s’intégrer (via un plugin) à une configuration GIT afin de versionner le travail, ou encore exporter la documentation en format HTML, PDF, image...
 
 
 ## Conclusion
 
-[Archi](https://www.archimatetool.com/) a vraiment été pour moi un gros level up dans la gestion de la documentation d’architecture, notamment sur ses aspects outil collaboratif et centralisation des connaissances. Le fait de construire de nouveaux schémas, en utilisant l’outil permet de faire croitre au fur et à mesure du temps la connaissance global du projet, et construit de manière empirique ce qui est assez rare dans ce genre d’outil.
-C’est un outil assez complet, pas très compliqué à prendre en main et Open Source. Pour moi il devient un Must Have dès qu’il y a plusieurs contributeurs sur les modélisations.
+[Archi](https://www.archimatetool.com/) a vraiment été pour moi un gros "level up" dans la gestion de la documentation d’architecture, notamment sur ses aspects outil collaboratif et centralisation des connaissances. Le fait de construire de nouveaux schémas en utilisant l’outil permet de faire croître au fur et à mesure du temps la connaissance globale du projet, et construit de manière empirique la connaissance, ce qui est assez rare dans ce genre d’outil.
+En bref c’est un outil assez complet, pas très compliqué à prendre en main et Open Source. Pour moi il devient un Must Have dès qu’il y a plusieurs contributeurs sur les modélisations.
 
 Je vous le recommande fortement !
