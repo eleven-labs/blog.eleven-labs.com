@@ -42,7 +42,7 @@ Pour l’occasion j’ai préparé une page web qui nous dit la vérité sur ce 
  <img alt="La fausse vérité sur l'instruction debugger" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/screenshot1.png" width="800px" style="margin: auto" />
 </figure>
 
-Euh… ok… Je ne m’attendais pas à ça…
+Euh… ok… Je ne m’attendais pas à ça…<br>
 Bon, on va dire que ça tombe bien, on va déboguer tout ça !
 
 Le code qui donne ce rendu est en VueJs, très basique pour que n’importe qui puisse y trouver ses marques, et il ressemble à ça :
@@ -82,7 +82,8 @@ Mais tu sais quoi ? Je ne vais pas me prendre la tête, je vais rajouter ma peti
      return theTruth;
    },
 ```
-L’instruction `debugger` ne fait rien d’autre que créer un **point d’arrêt** (**breakpoint**) pour qu’on puisse arrêter l'exécution de notre script et prendre le temps d'analyser ce qui s'y passe.<br>
+L’instruction `debugger` ne fait rien d’autre que créer un **point d’arrêt** (**breakpoint**) pour qu’on puisse arrêter l'exécution de notre script et prendre le temps d'analyser ce qui s'y passe.
+
 C’est une façon d'arrêter le temps à un instant T et fouiller dans le code, un véritable bullet time à la Matrix pendant lequel on peut trouver et buter Le Grand Méchant Bug.
 
 <figure style="text-align: center; margin: 2rem 0;">
@@ -94,6 +95,7 @@ Si on rafraîchit simplement notre page web, on ne verra rien de nouveau… mais
 <video width="800" controls>
   <source src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/001.webm" type="video/webm">
 </video>
+
 
 Ça y est, le temps s’est arrêté, la console nous montre l’onglet “Sources”, qui contient différents outils pour analyser le code, se déplacer dans l’espace-temps et comprendre d’où vient réellement le problème.
 
@@ -200,6 +202,7 @@ Essayons:
   <source src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/002.webm" type="video/webm">
 </video>
 
+
 Intéressant : `theWholeTruth()` a l’air de faire un simple `join` sur un array qui semblerait venir d'une autre fonction : `nothingButTheTruth()`.
 
 On sait ce qu’il faut faire, n’est-ce pas ? ;-)
@@ -209,6 +212,7 @@ Let’s go!
 <video width="800" controls>
   <source src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/003.webm" type="video/webm">
 </video>
+
 
 Voilà… on a trouvé le responsable du bug.
 Autant de suspense, et finalement, il s'agissait juste d’un array de mensonges…
@@ -232,5 +236,5 @@ Le temps à notre disposition est fini, j’ai un bug à résoudre qui me casse 
 
 …heureusement je sais exactement quoi faire pour le dénicher :-)
 
-Goodbye `console.log(‘toto’)`
+Goodbye `console.log(‘toto’)`<br>
 Welcome `debugger`
