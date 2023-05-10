@@ -119,19 +119,19 @@ Résumé des épisodes précédents : le temps s’est arrêté, on est comme *D
 
 Le panel de débogage est notre *Oeil d'Agamotto*, voici un aperçu de ses principaux buttons :
 
-<img alt="Boutton reprendre l'execution du script" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-1.gif" width="45px" style="margin: auto" /> **Reprendre l'exécution du script.**<br>
+<img alt="Boutton reprendre l'execution du script" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-1.gif" width="45px" style="display: inline; vertical-align: text-bottom; margin: 0 1em 0 0" /> **Reprendre l'exécution du script.**<br>
 Une façon de décongeler l'exécution du script, l’application reprendra son cycle naturel, sauf s'il y a d'autres points d'arrêt, auquel cas l'exécution s'arrêtera à nouveau.
 
-<img alt="Boutton passer à l’appel de fonction suivant" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-2.gif" width="45px" style="margin: auto" /> **Passer à l’appel de fonction suivant.**<br>
+<img alt="Boutton passer à l’appel de fonction suivant" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-2.gif" width="45px" style="display: inline; vertical-align: text-bottom; margin: 0 1em 0 0" /> **Passer à l’appel de fonction suivant.**<br>
 Lui, il nous permet d’avancer jusqu'au prochain appel d’une fonction.
 
-<img alt="Boutton rentrer dans la fonction actuelle" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-3.gif" width="45px" style="margin: auto" /> **Rentrer dans la fonction actuelle.**<br>
+<img alt="Boutton rentrer dans la fonction actuelle" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-3.gif" width="45px" style="display: inline; vertical-align: text-bottom; margin: 0 1em 0 0" /> **Rentrer dans la fonction actuelle.**<br>
 Si la ligne sur laquelle on s’est arrêté contient un appel à fonction, en cliquant sur ce bouton on sera magiquement téléporté à l'intérieur de cette fonction. Vous allez adorer.
 
-<img alt="Boutton quitter la fonction actuelle" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-4.gif" width="45px" style="margin: auto" /> **Quitter la fonction actuelle.**<br>
+<img alt="Boutton quitter la fonction actuelle" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-4.gif" width="45px" style="display: inline; vertical-align: text-bottom; margin: 0 1em 0 0" /> **Quitter la fonction actuelle.**<br>
 À l'inverse, ce bouton nous permet de sortir de la fonction dans laquelle on s’est téléporté.
 
-<img alt="Boutton etape" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-5.gif" width="45px" style="margin: auto" /> **Étape.**<br>
+<img alt="Boutton etape" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-5.gif" width="45px" style="display: inline; vertical-align: text-bottom; margin: 0 1em 0 0" /> **Étape.**<br>
 Notre meilleur ami, en cliquant dessus il nous fera avancer dans notre script d’une ligne à la fois, *step by step*.
 
 Plus en bas dans le panel de débogage, on retrouve plusieurs sections, on va se focaliser sur les sections **Scope** et **Call stack**.
