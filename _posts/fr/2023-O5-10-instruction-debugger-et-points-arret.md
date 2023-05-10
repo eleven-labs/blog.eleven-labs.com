@@ -92,10 +92,9 @@ C’est une façon d'arrêter le temps à un instant T et fouiller dans le code,
 
 Si on rafraîchit simplement notre page web, on ne verra rien de nouveau… mais si avant de rafraîchir la page on ouvre notre console… *it’s bullet time, baby!*
 
-<video width="800" controls>
+<video style="text-align: center; margin: 2rem 0;" width="800" controls>
   <source src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/001.webm" type="video/webm">
 </video>
-
 
 Ça y est, le temps s’est arrêté, la console nous montre l’onglet “Sources”, qui contient différents outils pour analyser le code, se déplacer dans l’espace-temps et comprendre d’où vient réellement le problème.
 
@@ -198,10 +197,9 @@ Je vais utiliser les actions du panel de débogage pour :
 
 Essayons:
 
-<video width="800" controls>
+<video style="text-align: center; margin: 2rem 0;" width="800" controls>
   <source src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/002.webm" type="video/webm">
 </video>
-
 
 Intéressant : `theWholeTruth()` a l’air de faire un simple `join` sur un array qui semblerait venir d'une autre fonction : `nothingButTheTruth()`.
 
@@ -209,10 +207,9 @@ On sait ce qu’il faut faire, n’est-ce pas ? ;-)
 
 Let’s go!
 
-<video width="800" controls>
+<video style="text-align: center; margin: 2rem 0;" width="800" controls>
   <source src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/003.webm" type="video/webm">
 </video>
-
 
 Voilà… on a trouvé le responsable du bug.
 Autant de suspense, et finalement, il s'agissait juste d’un array de mensonges…
