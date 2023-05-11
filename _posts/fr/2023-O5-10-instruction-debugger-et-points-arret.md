@@ -92,7 +92,7 @@ C’est une façon d'arrêter le temps à un instant T et fouiller dans le code,
 
 Si on rafraîchit simplement notre page web, on ne verra rien de nouveau… mais si avant de rafraîchir la page on ouvre notre console… *it’s bullet time, baby!*
 
-<video style="text-align: center; margin: 2rem 0;" width="800" controls>
+<video style="text-align: center; margin: 2rem 0; max-width: 100%;" width="800" controls>
   <source src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/001.webm" type="video/webm">
 </video>
 
@@ -177,7 +177,7 @@ Je vais utiliser les actions du panel de débogage pour :
 
 Essayons:
 
-<video style="text-align: center; margin: 2rem 0;" width="800" controls>
+<video style="text-align: center; margin: 2rem 0; max-width: 100%;" width="800" controls>
   <source src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/002.webm" type="video/webm">
 </video>
 
@@ -187,7 +187,7 @@ On sait ce qu’il faut faire, n’est-ce pas ? ;-)
 
 Let’s go!
 
-<video style="text-align: center; margin: 2rem 0;" width="800" controls>
+<video style="text-align: center; margin: 2rem 0; max-width: 100%;" width="800" controls>
   <source src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/003.webm" type="video/webm">
 </video>
 
