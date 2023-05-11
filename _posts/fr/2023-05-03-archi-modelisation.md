@@ -90,7 +90,7 @@ Exemple ici quand je tente d’ajouter un component “test” dans l’API Gate
 </figure>
 
 
-D’ailleurs maintenant, si je veux sortir cette boite de l’API G, la relation va rester et apparaître explicitement.
+D’ailleurs maintenant, si je veux sortir cette boite de l’API Gateway, la relation va rester et apparaître explicitement.
 <figure style="text-align: center; margin: 2rem 0;">
   <img src="{{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_5.png" width="800px" alt="Matrice Archimate" style="display: block; margin: auto;" />
 </figure>
