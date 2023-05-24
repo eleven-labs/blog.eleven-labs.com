@@ -406,7 +406,7 @@ Notre belle application se lance et que se passe-t-il ?
 
 Pour ce qui est visible dans le simulateur, on va voir notre application s'ouvrir, afficher notre dummy screen, puis ouvrir Safari et aller sur le site d'**Eleven-Labs**.<br/>
 Hum, c'est étrange ça, ça me rappelle l'action que l'on avait définie dans le 3ème module.<br/><br/>
-![AppVideo]({{ site.baseurl }}/assets/2018-05-21-let-s-think-outside-the-box/appvideo.gif){:height="1104px" width="621px"}<br/><br/>
+![AppVideo]({{ site.baseurl }}/assets/2018-05-21-let-s-think-outside-the-box/appvideo.gif)<br/><br/>
 Si on se penche maintenant sur la console, on va pouvoir observer des outputs.<br/>
 Mais dis-donc, ces outputs là, ce ne seraient pas ceux que l'on a définis pour nos deux premiers modules ?!.<br/><br/>
 ![ConsoleOutput]({{ site.baseurl }}/assets/2018-05-21-let-s-think-outside-the-box/console-output.png)<br/><br/>
@@ -425,6 +425,6 @@ Voilà, j'espère que cet article vous a donné envie d'essayer de nouvelles cho
 
 Je vous donne un lien pour télécharger le projet déjà tout fait.<br/>
 Il suffit de le cloner, faire un pod install et la suite vous la connaissez.<br/>
-[Le Projet](https://github.com/ettibo/GenericProtocols){:rel="nofollow noreferrer"}
+[Le Projet](https://github.com/ettibo/GenericProtocols)
 
 Allez, salut les astronautes :)

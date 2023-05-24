@@ -205,7 +205,7 @@ On revient sur la fonction **hello**, cette fonction est maintenant déclarée d
 
 ## Le rendu final
 
-Comme je vous ai dit, ce code a pour vocation de vous donner des idées et n'interagit pas vraiment avec l'utilisateur. Je vais donc vous dumper tout le code d'un coup, comme ça rien de plus simple pour vous, vous avez juste à le tester (par exemple sur [ideone](https://ideone.com/){:rel="nofollow noreferrer"})
+Comme je vous ai dit, ce code a pour vocation de vous donner des idées et n'interagit pas vraiment avec l'utilisateur. Je vais donc vous dumper tout le code d'un coup, comme ça rien de plus simple pour vous, vous avez juste à le tester (par exemple sur [ideone](https://ideone.com/))
 
 ```C
 #include <stdlib.h>

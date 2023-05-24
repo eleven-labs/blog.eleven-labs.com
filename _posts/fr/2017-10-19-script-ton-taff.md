@@ -42,35 +42,35 @@ Aujourd'hui il existe plein d'outils faits par des développeurs (fainéants com
 #### Excel
 
 Et oui excel fait partie de la liste. Le but est simple : faire plein de calculs à votre place.
-Ce que je vous conseille c'est d'utiliser Google Sheet, car les formules sont en français (et oui ça aide un peu) et que la [documentation](https://support.google.com/docs/table/25273?hl=fr){:rel="nofollow noreferrer"} est très bien faite.
+Ce que je vous conseille c'est d'utiliser Google Sheet, car les formules sont en français (et oui ça aide un peu) et que la [documentation](https://support.google.com/docs/table/25273?hl=fr) est très bien faite.
 
 #### IFTTT
 
 Le concept est simple, pour un évènement donné sur une de vos applications préférées, vous pouvez interagir avec une autre application.
-Exemple,  pour conserver tous vos tweets dans un Excel c'est [ici](https://ifttt.com/applets/rEwKaV8X-archive-tweets-you-like-to-a-google-spreadsheet){:rel="nofollow noreferrer"}, utile pour un Community Manager !
+Exemple,  pour conserver tous vos tweets dans un Excel c'est [ici](https://ifttt.com/applets/rEwKaV8X-archive-tweets-you-like-to-a-google-spreadsheet), utile pour un Community Manager !
 
-Je vous laisse faire un tour sur le [Discover](https://ifttt.com/discover){:rel="nofollow noreferrer"}.
+Je vous laisse faire un tour sur le [Discover](https://ifttt.com/discover).
 
 #### Zapier
 
 Aussi simple que IFTTT, Zapier permet de faire parler plusieurs API ensemble. Vous pouvez donc lors d'un ajout de tâche dans votre Trello mettre un message dans Slack.
 
-Comme IFTTT le mieux c'est d'aller sur le site [ici](https://zapier.com/zapbook/){:rel="nofollow noreferrer"}.
+Comme IFTTT le mieux c'est d'aller sur le site [ici](https://zapier.com/zapbook/).
 
 #### Extensions navigateur
 
-Votre navigateur est votre ami ! Il existe énormément d'extensions qui peuvent vous faire gagner du temps. Un exemple c'est ce [scraper](https://chrome.google.com/webstore/detail/scraper/mbigbapnjcgaffohmbkdlecaccepngjd){:rel="nofollow noreferrer"} qui permet facilement de récupérer dans un excel le contenu d'un site web.
-Je vous invite à faire un tour sur le [Chrome Web Store](https://chrome.google.com/webstore/category/extensions){:rel="nofollow noreferrer"}
+Votre navigateur est votre ami ! Il existe énormément d'extensions qui peuvent vous faire gagner du temps. Un exemple c'est ce [scraper](https://chrome.google.com/webstore/detail/scraper/mbigbapnjcgaffohmbkdlecaccepngjd) qui permet facilement de récupérer dans un excel le contenu d'un site web.
+Je vous invite à faire un tour sur le [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)
 
 Et voilà vous êtes un développeur !
 
 ### Et si je suis développeur ?
 
-Bien sûr, quand on est développeur on peut aller plus loin. Pour ma part j'utilise beaucoup les [Google Script](https://developers.google.com/apps-script/){:rel="nofollow noreferrer"} que l'on peut utiliser dans Google Drive.
+Bien sûr, quand on est développeur on peut aller plus loin. Pour ma part j'utilise beaucoup les [Google Script](https://developers.google.com/apps-script/) que l'on peut utiliser dans Google Drive.
 
 Cela vous permet de créer des petits scripts simples (ou pas) qui vous permettent de créer des interactions avec des API extérieures, des données utilisateurs etc...
 
-Vous pouvez aussi faire vos propres extensions Chrome en suivant le [guide](https://developer.chrome.com/extensions/devguide){:rel="nofollow noreferrer"}. Cela vous permet de faire ce que vous voulez et même de le partager après.
+Vous pouvez aussi faire vos propres extensions Chrome en suivant le [guide](https://developer.chrome.com/extensions/devguide). Cela vous permet de faire ce que vous voulez et même de le partager après.
 
 Et bien sûr, vous pouvez créer des applications plus compliquées dans le langage que vous voulez.
 

@@ -29,9 +29,9 @@ autorité qui va contrôler l'identité. Ce sont les utilisateurs qui vont véri
 Que vous soyez sur Linux, Mac ou Windows, tout pourra être fait en lignes de commande.
 
 Tout d'abord, installons les outils :
-* Windows:  [GPG4Win](https://www.gpg4win.org/){:rel="nofollow noreferrer"}
-* Mac:  [GPGtools](https://gpgtools.org/){:rel="nofollow noreferrer"}
-* Linux:  [gnupg.org](https://gnupg.org/download/) (déjà intégré dans Ubuntu par exemple){:rel="nofollow noreferrer"}
+* Windows:  [GPG4Win](https://www.gpg4win.org/)
+* Mac:  [GPGtools](https://gpgtools.org/)
+* Linux:  [gnupg.org](https://gnupg.org/download/) (déjà intégré dans Ubuntu par exemple)
 
 Pour cet article, je vais me baser sur Ubuntu 16.04 et GnuPG v2.1.11. Il s'agit de la nouvelle version moderne de gnupg qui va
 remplacer la v1.4 et la v2.0.
@@ -398,7 +398,7 @@ Tous les fichiers que nous avons créés seront à conserver sur un média déco
 Vous pouvez dès à présent signer vos emails et en recevoir des chiffrés, signer vos commit git, utiliser keybase.io et
 même vous authentifier sur un serveur en SSH.
 
-Par ailleurs, le 2 novembre, il y aura [une fête de la signature des clés](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris) (key signing party){:rel="nofollow noreferrer"} dans les locaux de Mozilla France.
+Par ailleurs, le 2 novembre, il y aura [une fête de la signature des clés](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris) (key signing party) dans les locaux de Mozilla France.
 Cet évévenement est l'occasion de rencontrer d'autres adeptes d'OpenPGP et surtout, il permettra de faire certifier votre clé nouvellement créée.
 
 ### Article en relation
@@ -408,11 +408,11 @@ Cet évévenement est l'occasion de rencontrer d'autres adeptes d'OpenPGP et sur
 * [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)](/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
 
 ### Resources
-* [GPG : création de votre première paire de clefs et chiffrement d'un fichier](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm){:rel="nofollow noreferrer"}
-* [GPG : comment créer une paire de clefs presque parfaite](https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm){:rel="nofollow noreferrer"}
-* [Creating the perfect GPG keypair](https://alexcabal.com/creating-the-perfect-gpg-keypair/){:rel="nofollow noreferrer"}
-* [Ma nouvelle clé PGP](http://www.bortzmeyer.org/nouvelle-cle-pgp.html){:rel="nofollow noreferrer"}
-* [OpenPGP Best Practices](https://riseup.net/en/security/message-security/openpgp/best-practices){:rel="nofollow noreferrer"}
-* [Using OpenPGP subkeys in Debian development](https://wiki.debian.org/Subkeys){:rel="nofollow noreferrer"}
-* [PGP Key signing party](https://www.eventbrite.com/e/pgp-key-signing-party-tickets-37092612001){:rel="nofollow noreferrer"}
-* [Se rencontrer pour échanger ses clefs le 2 novembre à Paris](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris){:rel="nofollow noreferrer"}
+* [GPG : création de votre première paire de clefs et chiffrement d'un fichier](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm)
+* [GPG : comment créer une paire de clefs presque parfaite](https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm)
+* [Creating the perfect GPG keypair](https://alexcabal.com/creating-the-perfect-gpg-keypair/)
+* [Ma nouvelle clé PGP](http://www.bortzmeyer.org/nouvelle-cle-pgp.html)
+* [OpenPGP Best Practices](https://riseup.net/en/security/message-security/openpgp/best-practices)
+* [Using OpenPGP subkeys in Debian development](https://wiki.debian.org/Subkeys)
+* [PGP Key signing party](https://www.eventbrite.com/e/pgp-key-signing-party-tickets-37092612001)
+* [Se rencontrer pour échanger ses clefs le 2 novembre à Paris](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris)

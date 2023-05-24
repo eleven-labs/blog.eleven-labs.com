@@ -102,10 +102,10 @@ class Movie
 You can now query your API with the following URL: `movies?name=O&order[name]=desc`
 Very simple to implement right?
 
-Obviously, you can create your own [API Platform filters](https://api-platform.com/docs/core/filters#creating-custom-filters){:rel="nofollow noreferrer"}.
+Obviously, you can create your own [API Platform filters](https://api-platform.com/docs/core/filters#creating-custom-filters).
 
 Many other features exist like :
-* [pagination](https://api-platform.com/docs/core/pagination){:rel="nofollow noreferrer"}
+* [pagination](https://api-platform.com/docs/core/pagination)
 * a rich event system
 * a cache invalidation system (coming in version 2.1)
 
@@ -119,4 +119,4 @@ Finally, the documentation is a very nice thing. You have plenty of examples and
 
 ## To come
 
-Version 2.1 of API platform will soon be released, and comes with new features such as: an admin system developed in React, new filters... Details [here](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/){:rel="nofollow noreferrer"}
+Version 2.1 of API platform will soon be released, and comes with new features such as: an admin system developed in React, new filters... Details [here](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/)

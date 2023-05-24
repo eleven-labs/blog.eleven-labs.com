@@ -14,7 +14,7 @@ keywords:
   - web
 ---
 
-La gestion des "tags" javascript externe peut très vite devenir un vrai calvaire. Si vous regardez les grands sites de médias avec l'extension [Ghostery](https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij?hl=fr){:rel="nofollow noreferrer"} vous remarquerez que chaque site charge environ 20 mouchards, ce qui donne autant de tags javascript. Mais comment contrôler les différentes versions, la publication, les changements ? C'est là que Google Tag Manager intervient.
+La gestion des "tags" javascript externe peut très vite devenir un vrai calvaire. Si vous regardez les grands sites de médias avec l'extension [Ghostery](https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij?hl=fr) vous remarquerez que chaque site charge environ 20 mouchards, ce qui donne autant de tags javascript. Mais comment contrôler les différentes versions, la publication, les changements ? C'est là que Google Tag Manager intervient.
 
 ### Pour quoi faire ?
 
@@ -22,7 +22,7 @@ Vous l'aurez compris, Google Tag Manager va vous servir à contrôler vos tags j
 
 ### Comment l'utiliser ?
 
-Vous pouvez vous rendre sur le site de [Google Tag Manager](https://tagmanager.google.com){:rel="nofollow noreferrer"}. Il faut alors configurer votre site.
+Vous pouvez vous rendre sur le site de [Google Tag Manager](https://tagmanager.google.com). Il faut alors configurer votre site.
 
 
 ![](/_assets/posts/2017-05-30-google-tag-manager-configuration-js/capture-decran-2017-05-26-a-10.49.46.png)

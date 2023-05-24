@@ -32,7 +32,7 @@ Néanmoins, aucune version stable n'est jamais sortie, même si de nombreux li
 
 Afin de comprendre l'origine de PHP 7, il est nécessaire de parler des problèmes de performance de l'interpréteur PHP. Clairement orienté pour le web, le langage souffre néanmoins de nombreux défauts, notamment lorsqu'il est question de performance et de rapidité d'exécution.
 
-Confrontés à ces problèmes, la société Facebook ; reposant sur PHP ; lance en 2008 l'initiative d'un projet basé sur PHP avec plusieurs améliorations, autant situées au niveau des paradigmes du langage, que sur son exécution. Le projet viendra finalement à terme sous le nom de HHVM, et sera utilisé en production par la société, en multipliant par deux la vitesse d'exécution du langage, via une transformation en [bytecode](https://en.wikipedia.org/wiki/Bytecode){:rel="nofollow noreferrer"} du code source.
+Confrontés à ces problèmes, la société Facebook ; reposant sur PHP ; lance en 2008 l'initiative d'un projet basé sur PHP avec plusieurs améliorations, autant situées au niveau des paradigmes du langage, que sur son exécution. Le projet viendra finalement à terme sous le nom de HHVM, et sera utilisé en production par la société, en multipliant par deux la vitesse d'exécution du langage, via une transformation en [bytecode](https://en.wikipedia.org/wiki/Bytecode) du code source.
 
 Étant distribué librement, HHVM fait son chemin depuis quelques années comme alternative non-officielle au moteur PHP, employé ça et là par quelques sociétés, mais également cité dans de nombreux benchmarks.
 
@@ -150,7 +150,7 @@ function bar($a, $b) : int
 Enfin, dernière modification majeure, le changement du système d'exceptions.
 Jusqu'ici tout était géré par exceptions, en PHP 7, le mécanisme a été scindé en deux : exceptions d'un côté (Exception), erreur de l'autre (Error), les deux implémentant l'interface Throwable. Le but étant de pouvoir _catcher_ certaines erreurs propres au moteur, par exemple une division par 0, ou encore un problème de typage comme nous avons pu le voir plus haut. On peut donc faire l'hypothèse que la plupart des exceptions relèveront du code métier.
 
-Un point important est qu'il est impossible d'implémenter directement l'interface Throwable, il faudra impérativement hériter d'Exception, mais il sera possible d'utiliser l'interface lors du typage, pour _catcher_ les erreurs et les exceptions de la même manière. Vous pouvez consulter la liste des erreurs prédéfinies [ici](http://php.net/manual/en/reserved.exceptions.php){:rel="nofollow noreferrer"}.
+Un point important est qu'il est impossible d'implémenter directement l'interface Throwable, il faudra impérativement hériter d'Exception, mais il sera possible d'utiliser l'interface lors du typage, pour _catcher_ les erreurs et les exceptions de la même manière. Vous pouvez consulter la liste des erreurs prédéfinies [ici](http://php.net/manual/en/reserved.exceptions.php).
 
 ## Sortie
 

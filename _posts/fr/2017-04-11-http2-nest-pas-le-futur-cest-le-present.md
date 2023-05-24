@@ -21,13 +21,13 @@ keywords:
   - tls
 ---
 Souvenez-vous, en `mai 1996`, la première version du protocole HTTP (HTTP/1.0) voit le jour.
-Ce protocole est décrit sous forme de RFC et plus particulièrement sous la [RFC 1945](https://tools.ietf.org/html/rfc1945){:rel="nofollow noreferrer"}.
+Ce protocole est décrit sous forme de RFC et plus particulièrement sous la [RFC 1945](https://tools.ietf.org/html/rfc1945).
 
 Mais le temps a passé et les applications web ont énormément évoluées. Nous avons maintenant des applications front qui apportent de plus en plus de logique dans le navigateur et avons donc également de plus en plus d'assets à charger : de plus en plus de CSS avec des règles d'animations, parfois des opérations complexes définies en CSS, de plus en plus de fichiers Javascript, et enfin de plus en plus d'images.
 
 Si `HTTP/1.1` est sorti et nous a permis l'utilisation des nouvelles technologies que nous avons connues ces dernières années, l'usage de plus en plus intensif des smartphones et appareils connectés nécessite désormais d'améliorer les performances de chargement de nos applications HTTP.
 
-Après une première étape menée en 2009 par Google avec le protocole `SPDY`, c'est finalement dans ce sens que va `HTTP/2` et sa [RFC 7540](https://tools.ietf.org/html/rfc7540){:rel="nofollow noreferrer"}.
+Après une première étape menée en 2009 par Google avec le protocole `SPDY`, c'est finalement dans ce sens que va `HTTP/2` et sa [RFC 7540](https://tools.ietf.org/html/rfc7540).
 
 # Introduction à HTTP/2
 
@@ -45,7 +45,7 @@ Si le chiffrement n'est `pas obligatoire`, certains navigateurs ne supportent HT
 
 Si vous n'utilisez pas le chiffrement, le diminutif donné au protocole est `h2c` . Ce sera  `h2`  si vous utilisez le chiffrement.
 
-Si vous souhaitez plus d'informations sur la configuration du protocole TLS afin d'[améliorer la sécurité des échanges SSL](https://vincent.composieux.fr/article/ameliorer-la-securite-des-echanges-ssl-effectues-par-votre-serveur){:rel="nofollow noreferrer"}, je vous invite à lire mon article sur le sujet.
+Si vous souhaitez plus d'informations sur la configuration du protocole TLS afin d'[améliorer la sécurité des échanges SSL](https://vincent.composieux.fr/article/ameliorer-la-securite-des-echanges-ssl-effectues-par-votre-serveur), je vous invite à lire mon article sur le sujet.
 
 ## Multiplexage de flux
 
@@ -65,8 +65,8 @@ De plus, étant donné que les moteurs de recherche se basent de plus en plus su
 
 Pour bien vous rendre compte de la vitesse de chargement des ressources, je vous propose la démo suivante :
 
-* Chargement avec `HTTP/1.1` : [http://http2.golang.org/gophertiles?latency=0](http://http2.golang.org/gophertiles?latency=0){:rel="nofollow noreferrer"}
-* Chargement avec `HTTP/2` : [https://http2.golang.org/gophertiles?latency=0](https://http2.golang.org/gophertiles?latency=0){:rel="nofollow noreferrer"}
+* Chargement avec `HTTP/1.1` : [http://http2.golang.org/gophertiles?latency=0](http://http2.golang.org/gophertiles?latency=0)
+* Chargement avec `HTTP/2` : [https://http2.golang.org/gophertiles?latency=0](https://http2.golang.org/gophertiles?latency=0)
 
 ## HPACK : Compression des headers
 
@@ -86,7 +86,7 @@ accept-encoding: gzip, deflate, sdch, br
 Lors de ma prochaine requête, les headers `:authority` , `:method` , `:scheme` , `accept`  et `accept-encoding` ne vont potentiellement pas changer.
 HTTP/2 effectuera alors une compression sur ceux-ci.
 
-Pour vous rendre compte de la compression des headers, je vous invite à utiliser l'outil [h2load](https://nghttp2.org/documentation/h2load-howto.html){:rel="nofollow noreferrer"} permettant d'effectuer un benchmark des appels HTTP/2, en effectuant ici deux requêtes sur votre application :
+Pour vous rendre compte de la compression des headers, je vous invite à utiliser l'outil [h2load](https://nghttp2.org/documentation/h2load-howto.html) permettant d'effectuer un benchmark des appels HTTP/2, en effectuant ici deux requêtes sur votre application :
 
 ```bash
 $ h2load https://vincent.composieux.fr -n 2 | grep traffic
@@ -116,7 +116,7 @@ Il est également possible d'utiliser le markup HTML pour précharger vos ressou
 ```
 
 
-Aussi, si vous utilisez le framework PHP [Symfony](https://www.symfony.com){:rel="nofollow noreferrer"}, notez que celui-ci a intégré le push d'assets dans sa version 3.3. Pour se faire, il vous suffit de spécifier dans Twig :
+Aussi, si vous utilisez le framework PHP [Symfony](https://www.symfony.com), notez que celui-ci a intégré le push d'assets dans sa version 3.3. Pour se faire, il vous suffit de spécifier dans Twig :
 
 {% raw %}
 ```html
@@ -124,9 +124,9 @@ Aussi, si vous utilisez le framework PHP [Symfony](https://www.symfony.com){:rel
 ```
 {% endraw %}
 
-Pour plus d'informations, rendez-vous sur : [http://symfony.com/blog/new-in-symfony-3-3-asset-preloading-with-http-2-push](http://symfony.com/blog/new-in-symfony-3-3-asset-preloading-with-http-2-push){:rel="nofollow noreferrer"}
+Pour plus d'informations, rendez-vous sur : [http://symfony.com/blog/new-in-symfony-3-3-asset-preloading-with-http-2-push](http://symfony.com/blog/new-in-symfony-3-3-asset-preloading-with-http-2-push)
 
-Notez également qu'un nouveau composant Symfony est à l'étude sur [cette Pull Request](https://github.com/symfony/symfony/pull/22273) afin de gérer tous les types de liens disponibles afin d'effectuer du pré-chargement ou du push (preload, preset, prerender, ...){:rel="nofollow noreferrer"}.
+Notez également qu'un nouveau composant Symfony est à l'étude sur [cette Pull Request](https://github.com/symfony/symfony/pull/22273) afin de gérer tous les types de liens disponibles afin d'effectuer du pré-chargement ou du push (preload, preset, prerender, ...).
 
 ## Server Hints (prefetch)
 
@@ -159,7 +159,7 @@ Afin de vous assurer que HTTP/2 est bien activé sur votre serveur, je vous invi
 
 Côté Apache, les `versions 2.4.12` et supérieures supportent également le protocole.
 
-Globalement, l'activation du protocole HTTP/2 est assez simple. Si vous venez du monde Javascript, un package [http2](https://www.npmjs.com/package/http2){:rel="nofollow noreferrer"} est également disponible afin d'instancier un serveur `express` avec la nouvelle version du protocole.
+Globalement, l'activation du protocole HTTP/2 est assez simple. Si vous venez du monde Javascript, un package [http2](https://www.npmjs.com/package/http2) est également disponible afin d'instancier un serveur `express` avec la nouvelle version du protocole.
 
 # Conclusion
 

@@ -32,7 +32,7 @@ Le troisième jour est quant à lui dédié à des ateliers, qui se sont déroul
 Au menu de cette année, on comptait pas moins d’une trentaine de sujets différents. Pour faire tenir ce programme sur deux jours, les conférences étaient réparties dans deux auditoriums. On ne pouvait donc pas assister à toutes les présentations en un seul coup, et comme chaque année il a fallu faire des choix difficiles, mais il est heureusement toujours possible de se rattraper avec les vidéos en ligne. Ci-dessous un petit échantillon des conférences que nous avons retenues.
 
 
-## [Tempêtes de boulettes géantes](https://www.paris-web.fr/2018/conferences/tempete-de-boulettes-geantes.php){:rel="nofollow noreferrer"} par Agnès Haasser
+## [Tempêtes de boulettes géantes](https://www.paris-web.fr/2018/conferences/tempete-de-boulettes-geantes.php) par Agnès Haasser
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">On démarre <a href="https://twitter.com/hashtag/parisweb?src=hash&amp;ref_src=twsrc%5Etfw">#parisweb</a> avec <a href="https://twitter.com/tut_tuuut?ref_src=twsrc%5Etfw">@tut_tuuut</a> qui nous fait un retour sur nos boulettes de dev en prod avec de l&#39;humour de haut de vol. :) <a href="https://t.co/uaHLONCC3E">pic.twitter.com/uaHLONCC3E</a></p>&mdash; David Rousset (@davrous) <a href="https://twitter.com/davrous/status/1047755108073783296?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -58,7 +58,7 @@ L’erreur fait partie de l’apprentissage et doit permettre d’améliorer son
 Dès le commencement, le ton est donné. En effet, qui n’a jamais fait une grosse erreur en production ? Présentation d’un palmarès des plus belles boulettes 2018, et conseils pratiques pour se sortir au mieux de cette situation de crise et éviter de la reproduire, articulèrent la démonstration.
 
 
-## [UX en Terre Inconnue](https://www.paris-web.fr/2018/conferences/ux-en-terre-inconnue.php){:rel="nofollow noreferrer"} par Sébastien Desbenoit
+## [UX en Terre Inconnue](https://www.paris-web.fr/2018/conferences/ux-en-terre-inconnue.php) par Sébastien Desbenoit
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Conf suivante, l&#39;UX en Terra Incognita par Sébastien Desbenoit <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <a href="https://t.co/tovhn8P2hs">pic.twitter.com/tovhn8P2hs</a></p>&mdash; Catherine Denos (@cath2nos) <a href="https://twitter.com/cath2nos/status/1047763114161328128?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -69,10 +69,10 @@ Dès le commencement, le ton est donné. En effet, qui n’a jamais fait une gro
 
 La présentation était axée sur les méthodologies utilisées au quotidien en expérience utilisateur qui permettent également de débloquer des situations, et de faire avancer des projets dans un contexte que l’on ne connaît pas et un périmètre inhabituel. L’orateur a évoqué les actions à mener en cas de difficultés, voire de conflits entre différents intervenants d’un projet. En résumé, un sujet ancré dans la réalité, et une ode à l’adaptabilité.
 
-Un [tweet de Marjorie Delrieu](https://twitter.com/MarjorieDelrieu/status/1047807455084916737){:rel="nofollow noreferrer"} présente une synthèse visuelle de cette conférence.
+Un [tweet de Marjorie Delrieu](https://twitter.com/MarjorieDelrieu/status/1047807455084916737) présente une synthèse visuelle de cette conférence.
 
 
-## [History of Web Security](https://www.paris-web.fr/2018/conferences/mozilla-observatory-a-history-of-web-security-standards.php){:rel="nofollow noreferrer"} par April King
+## [History of Web Security](https://www.paris-web.fr/2018/conferences/mozilla-observatory-a-history-of-web-security-standards.php) par April King
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">On est à <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> et ça parle histoire de la sécurité des navigateurs web. Merci <a href="https://twitter.com/hashtag/AprilKing?src=hash&amp;ref_src=twsrc%5Etfw">#AprilKing</a> pour cet envers du décor de la politique de sécurité des sites... et ses solutions. <a href="https://twitter.com/mozilla?ref_src=twsrc%5Etfw">@mozilla</a> advisory en fait partie <a href="https://twitter.com/hashtag/girlzinweb?src=hash&amp;ref_src=twsrc%5Etfw">#girlzinweb</a> <a href="https://twitter.com/hashtag/letstalkinenglish?src=hash&amp;ref_src=twsrc%5Etfw">#letstalkinenglish</a> <a href="https://twitter.com/hashtag/websafety?src=hash&amp;ref_src=twsrc%5Etfw">#websafety</a> <a href="https://t.co/LeDtkvhUZU">pic.twitter.com/LeDtkvhUZU</a></p>&mdash; Girlz in Web (@GirlzInWeb) <a href="https://twitter.com/GirlzInWeb/status/1047776189191016448?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -90,7 +90,7 @@ Et je ne suis pas ressorti totalement bredouille de l’expérience. J’ai ains
 Il y a quelque chose de véritablement impressionnant dans le fait de faire face à des personnes qui ne se contentent pas d’utiliser à la perfection les divers outils ou protocoles mis à notre disposition mais sont payés pour participer à leur création.
 
 
-## [Les WebExtensions, du rêve et du cauchemar](https://www.paris-web.fr/2018/conferences/les-webextensions-du-reve-et-du-cauchemar.php){:rel="nofollow noreferrer"} par Daniel Glazman
+## [Les WebExtensions, du rêve et du cauchemar](https://www.paris-web.fr/2018/conferences/les-webextensions-du-reve-et-du-cauchemar.php) par Daniel Glazman
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">En direct de <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> : conférence de Daniel Glazman |<a href="https://twitter.com/glazou?ref_src=twsrc%5Etfw">@glazou</a>| qui nous présente son retour d&#39;expérience sur les <a href="https://twitter.com/hashtag/WebExtensions?src=hash&amp;ref_src=twsrc%5Etfw">#WebExtensions</a> et le développement d&#39;une extension Chrome/Firefox/Edge/Safari <a href="https://twitter.com/hashtag/UX?src=hash&amp;ref_src=twsrc%5Etfw">#UX</a> <a href="https://t.co/cDGoWGoXaL">pic.twitter.com/cDGoWGoXaL</a></p>&mdash; Agence LunaWeb (@agencelunaweb) <a href="https://twitter.com/agencelunaweb/status/1047792528991313920?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -114,7 +114,7 @@ Aujourd’hui, la spécification semble être tombée dans le coma. Sa dernière
 Le sujet était vraiment intéressant, surtout le petit cours d’histoire sur les add-ons qui ont longtemps fait le succès de Firefox (Mozilla). Mais difficile d’en ressortir du positif tant la présentation était orientée principalement sur les problèmes rencontrés, et non sur les perspectives d’avenir et les évolutions possibles.
 
 
-## [UX du futur : au-delà des buzzwords](https://www.paris-web.fr/2018/conferences/ux-du-futur-au-dela-des-buzzwords.php){:rel="nofollow noreferrer"} par Amélie Boucher
+## [UX du futur : au-delà des buzzwords](https://www.paris-web.fr/2018/conferences/ux-du-futur-au-dela-des-buzzwords.php) par Amélie Boucher
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">L&#39;enfer des enceintes connectées. <a href="https://twitter.com/hashtag/cacophonie?src=hash&amp;ref_src=twsrc%5Etfw">#cacophonie</a>  <a href="https://twitter.com/amelieboucher?ref_src=twsrc%5Etfw">@amelieboucher</a> nous parle des enjeux et des frictions de technologies du futur  <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <a href="https://t.co/0qhdQ07PZ0">pic.twitter.com/0qhdQ07PZ0</a></p>&mdash; benoit poulain (@bpoulain) <a href="https://twitter.com/bpoulain/status/1047785225038835712?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -126,7 +126,7 @@ Le sujet était vraiment intéressant, surtout le petit cours d’histoire sur l
 Un talk qui s’annonçait déjà plus léger me suis-je dit. Et je n’ai pas été déçu en matière de légèreté... Près de 40 minutes ont été consacrées par **Amélie Boucher** aux « dangers » des interfaces vocales. L’assistance a ainsi été sensibilisée aux risques pour la santé de remplacer le classique interrupteur par une commande vocale pour allumer la lumière chez soi. « Parce qu’après, on ne se déplace plus, on devient gros, et on doit faire du cross-fit. » J’exagère à peine les propos. Et si le second degré ne m’échappe pas, une heure à écouter des réflexions ne volant pas particulièrement plus haut m’a fait me questionner sur la pertinence de ce talk.
 
 
-## [Se construire en construisant l'open source](https://www.paris-web.fr/2018/conferences/se-construire-en-construisant-lopen-source.php){:rel="nofollow noreferrer"} par JB Audras
+## [Se construire en construisant l'open source](https://www.paris-web.fr/2018/conferences/se-construire-en-construisant-lopen-source.php) par JB Audras
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Nouvelle conf pour apporter sa pierre à l’édifice <a href="https://twitter.com/hashtag/opensource?src=hash&amp;ref_src=twsrc%5Etfw">#opensource</a>, @jb_audras partage son expérience de collaboration sur WordPress ou comment étendre le champ des possibles avec la contribution de tous <a href="https://twitter.com/hashtag/parisweb?src=hash&amp;ref_src=twsrc%5Etfw">#parisweb</a> <a href="https://twitter.com/hashtag/wordpress?src=hash&amp;ref_src=twsrc%5Etfw">#wordpress</a> <a href="https://twitter.com/hashtag/benevolat?src=hash&amp;ref_src=twsrc%5Etfw">#benevolat</a> <a href="https://twitter.com/hashtag/inclusion?src=hash&amp;ref_src=twsrc%5Etfw">#inclusion</a> <a href="https://twitter.com/hashtag/evolution?src=hash&amp;ref_src=twsrc%5Etfw">#evolution</a> <a href="https://twitter.com/hashtag/girlzinweb?src=hash&amp;ref_src=twsrc%5Etfw">#girlzinweb</a> <a href="https://twitter.com/hashtag/worldwide?src=hash&amp;ref_src=twsrc%5Etfw">#worldwide</a> <a href="https://t.co/EmaYfQiZWD">pic.twitter.com/EmaYfQiZWD</a></p>&mdash; Girlz in Web (@GirlzInWeb) <a href="https://twitter.com/GirlzInWeb/status/1047823942533222400?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -138,7 +138,7 @@ Un talk qui s’annonçait déjà plus léger me suis-je dit. Et je n’ai pas �
 **JB Audras**, contributeur prolifique de la communauté WordPress, m’a donné l’envie de contribuer. À quoi ? Où ? Sous quelle forme ? *No lo sé* (ça veut dire « aucune idée » pour les moins hispanophones d’entre vous). Mais son retour d’expérience sur son parcours depuis sa première contribution à sa position de co-lead sur la sortie d’une version mineure de WordPress était inspirante. En très peu de temps il a réussi à démontrer que participer à l’effort de l’open source est à la portée de tous et que c’est une expérience potentiellement très gratifiante.
 
 
-## [Le W3C pour les développeurs Web](https://www.paris-web.fr/2018/conferences/le-w3c-pour-les-developeurs-web.php){:rel="nofollow noreferrer"} par Dominique Hazael-Massieux
+## [Le W3C pour les développeurs Web](https://www.paris-web.fr/2018/conferences/le-w3c-pour-les-developeurs-web.php) par Dominique Hazael-Massieux
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Après une petite pause déjeuner entre collègues, sous le soleil de Paname ☀️ reprise des conférences à <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> ! Nous démarrons l&#39;après-midi avec Dominique Hazael-Massieux |<a href="https://twitter.com/dontcallmeDOM?ref_src=twsrc%5Etfw">@dontcallmeDOM</a>| qui nous parle des actions du <a href="https://twitter.com/w3c?ref_src=twsrc%5Etfw">@w3c</a> pour les développeurs et développeuses Web <a href="https://t.co/p2ahPY1qU8">pic.twitter.com/p2ahPY1qU8</a></p>&mdash; Agence LunaWeb (@agencelunaweb) <a href="https://twitter.com/agencelunaweb/status/1047826692000153600?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -150,7 +150,7 @@ Un talk qui s’annonçait déjà plus léger me suis-je dit. Et je n’ai pas �
 Présentation sous forme de dialogue entre le W3C et Paris Web, pour exposer les différentes actions du W3C et des outils mis en place pour interagir avec la communauté des développeurs Web dans le processus de standardisation.
 
 
-## [L’IA et la fin du Silicium : introduction aux ordinateurs quantiques](https://www.paris-web.fr/2018/conferences/lia-et-la-fin-du-silicium-introduction-aux-ordinateurs-quantiques.php){:rel="nofollow noreferrer"} par David Rousset
+## [L’IA et la fin du Silicium : introduction aux ordinateurs quantiques](https://www.paris-web.fr/2018/conferences/lia-et-la-fin-du-silicium-introduction-aux-ordinateurs-quantiques.php) par David Rousset
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Les ordinateurs quantiques, tout un programme ! 🤓 <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <br>&quot;L’IA et la fin du Silicium : introduction aux ordinateurs quantiques&quot; par David Rousset |<a href="https://twitter.com/davrous?ref_src=twsrc%5Etfw">@davrous</a>| <a href="https://twitter.com/hashtag/IA?src=hash&amp;ref_src=twsrc%5Etfw">#IA</a> <a href="https://t.co/wW4yU4hg9t">pic.twitter.com/wW4yU4hg9t</a></p>&mdash; Agence LunaWeb (@agencelunaweb) <a href="https://twitter.com/agencelunaweb/status/1047838332498206721?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -167,7 +167,7 @@ Et non, je ne résumerai pas les bases de la physique quantique dans ce paragrap
 À la lecture du titre de cette conférence, je me demandais réellement si j’avais fait le bon choix en y assistant. Le sujet m’était complètement inconnu. Mais l’orateur m’a rapidement mis à l’aise puisqu’il a avoué lui-même ne pas en être un spécialiste. Bravo à lui car sa présentation fut passionnante, avec des passages historiques, ludiques, et drôles.
 
 
-## [La donnée graphique avec HTML et CSS](https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php){:rel="nofollow noreferrer"} par Gaël Poupard
+## [La donnée graphique avec HTML et CSS](https://www.paris-web.fr/2018/conferences/la-donnee-graphique-avec-html-et-css.php) par Gaël Poupard
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Journée forte intéressante avec <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> ! On fait le plein de bonnes pratiques et d&#39;échanges 😀 <a href="https://twitter.com/hashtag/web?src=hash&amp;ref_src=twsrc%5Etfw">#web</a> <a href="https://twitter.com/hashtag/html?src=hash&amp;ref_src=twsrc%5Etfw">#html</a> <a href="https://twitter.com/hashtag/css?src=hash&amp;ref_src=twsrc%5Etfw">#css</a> <a href="https://t.co/zOdMkN29Xu">pic.twitter.com/zOdMkN29Xu</a></p>&mdash; Anaïs Andreosso (@AnaisAndreosso) <a href="https://twitter.com/AnaisAndreosso/status/1047842325710471169?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -185,7 +185,7 @@ La conférence est ponctuée de bouts de codes et d’exemples visuels qui guide
 Comment présenter des données sous forme de graphique uniquement avec HTML et CSS, sans utiliser de librairie JavaScript ? Le sujet et la démonstration étaient au niveau de mes attentes en tant qu’intégrateur. Mais j’étais un peu déçu sur la forme car cela ressemblait à une explication de code.
 
 
-## [Dear developer, the Web isn’t about you](https://www.paris-web.fr/2018/conferences/dear-developer-the-web-isnt-about-you.php){:rel="nofollow noreferrer"} par Charlie Owen
+## [Dear developer, the Web isn’t about you](https://www.paris-web.fr/2018/conferences/dear-developer-the-web-isnt-about-you.php) par Charlie Owen
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">Dear Developer, the Web Isn&#39;t About You <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <a href="https://t.co/TUDODnL36G">pic.twitter.com/TUDODnL36G</a></p>&mdash; Erwan Carriou (@ecarriou) <a href="https://twitter.com/ecarriou/status/1047858662922960896?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -219,7 +219,7 @@ Comme l'a précisé clairement l’oratrice, si on code avec empathie, simplemen
 Cette présentation m’a réellement conforté dans ma vision de mon métier.
 
 
-## [L’accessibilité au-delà des spécifications](https://www.paris-web.fr/2018/conferences/L-accessibilite-au-dela-des-specifications.php){:rel="nofollow noreferrer"} par Hugo Giraudel
+## [L’accessibilité au-delà des spécifications](https://www.paris-web.fr/2018/conferences/L-accessibilite-au-dela-des-specifications.php) par Hugo Giraudel
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Pour terminer la journée, on parle accessibilité au-delà des specs avec <a href="https://twitter.com/HugoGiraudel?ref_src=twsrc%5Etfw">@HugoGiraudel</a> <a href="https://twitter.com/hashtag/a11y?src=hash&amp;ref_src=twsrc%5Etfw">#a11y</a> <a href="https://twitter.com/hashtag/parisweb?src=hash&amp;ref_src=twsrc%5Etfw">#parisweb</a> <a href="https://t.co/DKVlammnNc">pic.twitter.com/DKVlammnNc</a></p>&mdash; Catherine Denos (@cath2nos) <a href="https://twitter.com/cath2nos/status/1047872673882284033?ref_src=twsrc%5Etfw">4 octobre 2018</a></blockquote>
@@ -231,7 +231,7 @@ Cette présentation m’a réellement conforté dans ma vision de mon métier.
 Comment prendre en compte l’accessibilité dès le démarrage d’un projet et son rapport au design inclusif ? Sujet intéressant mais trop vaste pour une présentation de courte durée.
 
 
-## [Les jeux vidéos sont-ils des logiciels comme les autres ?](https://www.paris-web.fr/2018/conferences/les-jeux-video-sont-ils-des-logiciels-comme-les-autres.php){:rel="nofollow noreferrer"} par Jérôme Dupire
+## [Les jeux vidéos sont-ils des logiciels comme les autres ?](https://www.paris-web.fr/2018/conferences/les-jeux-video-sont-ils-des-logiciels-comme-les-autres.php) par Jérôme Dupire
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Et c&#39;est parti pour J2 de <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> : Les jeux vidéos sont-ils des logiciels comme les autres ? <a href="https://t.co/0987Dh2uw8">pic.twitter.com/0987Dh2uw8</a></p>&mdash; Emmanuelle (@eaboaf_) <a href="https://twitter.com/eaboaf_/status/1048107104605822976?ref_src=twsrc%5Etfw">5 octobre 2018</a></blockquote>
@@ -253,7 +253,7 @@ Et d’un point de vue matériel, des appareils existent pour répondre aux beso
 À l’instar du Web, un référentiel d’accessibilité existe pour les jeux vidéo intitulé Game accessibility guidelines : http://gameaccessibilityguidelines.com. Les jeux vidéo ont également été inclus dans la loi américaine pour l’accessibilité des nouvelles technologies, le CVAA (21st Century Communications and Video Accessibility Act).
 
 
-## [The past, present, and future of resource loading](https://www.paris-web.fr/2018/conferences/the-past-present-and-future-of-resource-loading.php){:rel="nofollow noreferrer"} par Yoav Weiss
+## [The past, present, and future of resource loading](https://www.paris-web.fr/2018/conferences/the-past-present-and-future-of-resource-loading.php) par Yoav Weiss
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Première conférence du jour : on parle performance avec Yoav Weiss <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> <a href="https://t.co/fsWQE49o8b">pic.twitter.com/fsWQE49o8b</a></p>&mdash; Catherine Denos (@cath2nos) <a href="https://twitter.com/cath2nos/status/1048120183926267904?ref_src=twsrc%5Etfw">5 octobre 2018</a></blockquote>
@@ -270,7 +270,7 @@ En vrac la règle des [14ko](https://www.sitepoint.com/premium/books/lean-websit
 Une expérience aussi intimidante que motivante. À la question « Qui a implémenté HTTP/2 sur son site ? », très peu de mains se lèvent. « Pas assez. Clairement pas assez. » Ça avait une sorte d’aspect rassurant de se souvenir que tout le monde n’est pas à la pointe. Loin de là.
 
 
-## [Les objets connectés liés à la santé portent-ils atteinte à la vie privée ?](https://www.paris-web.fr/2018/conferences/les-objets-connectes-lies-a-la-sante-portent-ils-atteinte-a-la-vie-privee.php){:rel="nofollow noreferrer"} par Emmanuelle Aboaf
+## [Les objets connectés liés à la santé portent-ils atteinte à la vie privée ?](https://www.paris-web.fr/2018/conferences/les-objets-connectes-lies-a-la-sante-portent-ils-atteinte-a-la-vie-privee.php) par Emmanuelle Aboaf
 
 ### Avis de l'astronaute Martin
 
@@ -279,7 +279,7 @@ L’année dernière, **Emmanuelle Aboaf** a reçu la greffe de son deuxième im
 L’exemple d’Emmanuelle n’en est qu’un parmi d’autres. Elle nous explique qu’aujourd’hui, presque tous les implants sont devenus des objets connectés, géolocalisés et synchronisés à distance. Il y a de vrais avantages, comme la possibilité pour un pacemaker de rapporter une anomalie cardiaque à distance pour anticiper une crise, mais ils s’obtiennent au prix de la vie privée. Un problème d’autant plus grave que les porteurs d’implants sont généralement dépendants de leur appareillage. La moindre des choses serait donc d’informer le patient de l’usage de ses données, de leur appartenance, et lui permettre de donner son consentement avant l’opération.
 
 
-## [L’UX du X](https://www.paris-web.fr/2018/conferences/lux-du-x.php){:rel="nofollow noreferrer"} par Quentin Bouissou
+## [L’UX du X](https://www.paris-web.fr/2018/conferences/lux-du-x.php) par Quentin Bouissou
 
 {% raw %}
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Il fait chaud à <a href="https://twitter.com/hashtag/ParisWeb?src=hash&amp;ref_src=twsrc%5Etfw">#ParisWeb</a> 😅 la température montre d&#39;un cran avec la conférence de Quentin Bouissou |<a href="https://twitter.com/Vaucanson?ref_src=twsrc%5Etfw">@Vaucanson</a>| qui nous parle de &quot;LUX du X&quot; <a href="https://twitter.com/hashtag/UX?src=hash&amp;ref_src=twsrc%5Etfw">#UX</a> <a href="https://twitter.com/hashtag/VR?src=hash&amp;ref_src=twsrc%5Etfw">#VR</a> <a href="https://t.co/87Gh6cYi19">pic.twitter.com/87Gh6cYi19</a></p>&mdash; Agence LunaWeb (@agencelunaweb) <a href="https://twitter.com/agencelunaweb/status/1048219895413047296?ref_src=twsrc%5Etfw">5 octobre 2018</a></blockquote>

@@ -39,7 +39,7 @@ Il a aussi évoqué la toute nouvelle propriété `display : contents;` inaugur�
 
 ### Jackie Balzer
 
-Retour d’expérience de Jackie Balzer sur le projet MyPortfolio de chez Adobe qui permet aux artistes de générer en ligne des portfolios personnalisés via une interface WYSIWYG : les configurations définies sur l’éditeur sont stockées à travers un fichier JSON qui servira ensuite à générer le CSS final du portfolio. Voici la bête :[https://www.myportfolio.com/](https://www.myportfolio.com/){:rel="nofollow noreferrer"}.
+Retour d’expérience de Jackie Balzer sur le projet MyPortfolio de chez Adobe qui permet aux artistes de générer en ligne des portfolios personnalisés via une interface WYSIWYG : les configurations définies sur l’éditeur sont stockées à travers un fichier JSON qui servira ensuite à générer le CSS final du portfolio. Voici la bête :[https://www.myportfolio.com/](https://www.myportfolio.com/).
 
 ### Adam Detrick
 
@@ -51,7 +51,7 @@ Florian Rivoal, membre du CSS Working Group, a évoqué les modifications à ven
 
 ### Laurence Penney
 
-Laurence Penney nous a aussi ouvert une fenêtre vers le futur, mais sur le futur des fonts cette fois, avec les fonts variables. Ces fonts pourront varier suivant différents axes de façon progressive avec interpolation. Laurence Penney a créé un [bac à sable](http://www.axis-praxis.org){:rel="nofollow noreferrer"} pour jouer avec ces nouvelles fonts. Comme d’habitude avec les innovations, le support navigateur est à ce jour assez pauvre… Patience est mère de vertu !
+Laurence Penney nous a aussi ouvert une fenêtre vers le futur, mais sur le futur des fonts cette fois, avec les fonts variables. Ces fonts pourront varier suivant différents axes de façon progressive avec interpolation. Laurence Penney a créé un [bac à sable](http://www.axis-praxis.org) pour jouer avec ces nouvelles fonts. Comme d’habitude avec les innovations, le support navigateur est à ce jour assez pauvre… Patience est mère de vertu !
 
 ### Jonathan Snook
 

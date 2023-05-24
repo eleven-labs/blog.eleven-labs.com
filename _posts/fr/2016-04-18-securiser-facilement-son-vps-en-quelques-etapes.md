@@ -72,7 +72,7 @@ Puis se déconnecter afin de se reconnecter avec son user créé précédemment.
 
 **Utiliser des clés ssh pour renforcer la sécurité**
 
-Vous pouvez aussi utiliser des clés ssh afin de ne plus utiliser de mot de passe, un exemple ici : [https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2){:rel="nofollow noreferrer"}
+Vous pouvez aussi utiliser des clés ssh afin de ne plus utiliser de mot de passe, un exemple ici : [https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
 
 **Iptables : bloquer les ports non utilisés (DROP policy)**
 
@@ -131,7 +131,7 @@ On autorise les connexions web (ports 80 et 443), si vous en avez besoin bien en
 # iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 ```
 
-Remarque : votre configuration sera remise à zéro si vous redémarrez votre serveur ! Pour faire en sorte qu'elle soit persistente vous pouvez utiliser iptables-persistent, un exemple ici : [https://serversforhackers.com/video/firewall-persisting-iptables-rules](https://serversforhackers.com/video/firewall-persisting-iptables-rules){:rel="nofollow noreferrer"}
+Remarque : votre configuration sera remise à zéro si vous redémarrez votre serveur ! Pour faire en sorte qu'elle soit persistente vous pouvez utiliser iptables-persistent, un exemple ici : [https://serversforhackers.com/video/firewall-persisting-iptables-rules](https://serversforhackers.com/video/firewall-persisting-iptables-rules)
 
 /!\ Attention, si votre hébergeur vous a fourni une ipv6 pensez à appliquer ces règles dans l'iptables réservé aux ipv6 : ip6tables ! (rejouez les commandes ci-dessus en changeant iptables par ip6tables et pensez à les rendre persistent si vous le souhaitez).
 

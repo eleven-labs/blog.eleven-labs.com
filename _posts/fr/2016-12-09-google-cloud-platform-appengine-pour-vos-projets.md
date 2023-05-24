@@ -25,12 +25,12 @@ Comment rendre cela plus simple ?
 
 Avant de commencer ce tutoriel, il faut suivre les 2 premières étapes du tutoriel Google Cloud Platform (1/3).
 
-Dans le tutoriel d'aujourd'hui, nous allons utiliser la solution [AppEngine](https://console.cloud.google.com/appengine){:rel="nofollow noreferrer"}, qui vous permet de déployer facilement et directement depuis votre ordinateur votre application dans le Cloud.
+Dans le tutoriel d'aujourd'hui, nous allons utiliser la solution [AppEngine](https://console.cloud.google.com/appengine), qui vous permet de déployer facilement et directement depuis votre ordinateur votre application dans le Cloud.
 Par défaut AppEngine permet d'installer du Java, du Php, du Go et du Python, mais il permet aussi d'installer du Node, c'est d'ailleurs sur cette technologie que nous allons partir.
 
 ### Etape 1, installer le sdk Google Cloud Platform
 
-Je vous invite à suivre les instructions disponibles [ici](https://cloud.google.com/sdk/docs/?hl=fr){:rel="nofollow noreferrer"}. Une fois l'installation terminée vous devriez pouvoir lancer la commande suivante dans votre terminal :
+Je vous invite à suivre les instructions disponibles [ici](https://cloud.google.com/sdk/docs/?hl=fr). Une fois l'installation terminée vous devriez pouvoir lancer la commande suivante dans votre terminal :
 
 ```sh
 gcloud -help
@@ -39,7 +39,7 @@ Si ce n'est pas le cas, vérifiez votre installation.
 
 ### Etape 2, créer votre projet node.js
 
-Pour continuer nous allons faire simple en mettant en place un petit "Hello Word",  avec [Express.js](http://expressjs.com/fr/){:rel="nofollow noreferrer"}.
+Pour continuer nous allons faire simple en mettant en place un petit "Hello Word",  avec [Express.js](http://expressjs.com/fr/).
 
 Créez un nouveau dossier, ajoutez le fichier package.json :
 
@@ -79,11 +79,11 @@ Si vous lancez dans votre terminal :
 npm install && npm start
 ```
 
-Normalement si vous suivez le lien [http://localhost:8080/](http://localhost:8080/){:rel="nofollow noreferrer"} un joli "Hello World!" s'affiche.
+Normalement si vous suivez le lien [http://localhost:8080/](http://localhost:8080/) un joli "Hello World!" s'affiche.
 
 ### Etape 3, mettons du Cloud
 
-Nous allons ajouter le fichier app.yaml qui permet de configurer votre AppEngine. Vous trouverez la documentation complète [ici](https://cloud.google.com/appengine/docs){:rel="nofollow noreferrer"}. Dans le fichier, nous allons mettre en place la configuration de base pour un environnement node.
+Nous allons ajouter le fichier app.yaml qui permet de configurer votre AppEngine. Vous trouverez la documentation complète [ici](https://cloud.google.com/appengine/docs). Dans le fichier, nous allons mettre en place la configuration de base pour un environnement node.
 
 ```yaml
 runtime: nodejs
@@ -104,7 +104,7 @@ L'option --version vous permet de donner un nom à votre version et de pouvoir l
 
 ### Etape 5, allons dans l'interface
 
-Allez dans la console Cloud dans l'onglet [AppEngine](https://console.cloud.google.com/appengine){:rel="nofollow noreferrer"}.
+Allez dans la console Cloud dans l'onglet [AppEngine](https://console.cloud.google.com/appengine).
 Puis dans "versions" vous devriez voir la version de votre projet apparaître.
 
 

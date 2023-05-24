@@ -131,7 +131,7 @@ On voit que le script est séparé en plusieurs parties :
 
 Cela reste minimaliste, on peut bien entendu étoffer le playbook afin de changer le port ssh, rajouter des règles fail2ban, etc. Mais le but ici est simplement de vous présenter l'outil et son fonctionnement.
 
-Je vous ai mis un exemple concret de répertoire Ansible ici : [github.com/snroki/ansible](https://github.com/snroki/ansible){:rel="nofollow noreferrer"}
+Je vous ai mis un exemple concret de répertoire Ansible ici : [github.com/snroki/ansible](https://github.com/snroki/ansible)
 
 Le répertoire possède plusieurs fichiers :
 

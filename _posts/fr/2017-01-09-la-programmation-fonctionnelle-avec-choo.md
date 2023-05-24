@@ -155,7 +155,7 @@ function mainView (state, prev, send) {
 }
 ```
 
-Toutes les vues Choo sont tout simplement des fonctions qui retournent du DOM. Un peu comme en React, on va écrire le HTML dans nos fichiers JavaScript mais simplement dans une [template string ES2015](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals). Pour transformer cette string en DOM, Choo se repose sur la librairie [bel](https://github.com/shama/bel){:rel="nofollow noreferrer"}. La vue va également s'occuper d'écouter les événements utilisateur pour réagir en exécutant les effects ou reducers des modèles pour mettre à jour le state de l'application.
+Toutes les vues Choo sont tout simplement des fonctions qui retournent du DOM. Un peu comme en React, on va écrire le HTML dans nos fichiers JavaScript mais simplement dans une [template string ES2015](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals). Pour transformer cette string en DOM, Choo se repose sur la librairie [bel](https://github.com/shama/bel). La vue va également s'occuper d'écouter les événements utilisateur pour réagir en exécutant les effects ou reducers des modèles pour mettre à jour le state de l'application.
 
 Le routeur
 ==========
@@ -169,7 +169,7 @@ app.router({ default: '/404' }, [
 
 Tous les frameworks front-end se doivent d'avoir un bon routeur. Celui de Choo est très simple et efficace. Il suffit de lui donner une liste couple url/vue en forme d'Array. On peut également lui dire quelle route exécuter par défaut si la route demandée n'est pas trouvée.
 
-Le routeur va s'occuper d'écouter les clics sur les liens dans les vues pour rediriger automatiquement sur la bonne route en utilisant l'[API HTML5 pushState](https://developer.mozilla.org/en-US/docs/Web/API/History_API){:rel="nofollow noreferrer"}.
+Le routeur va s'occuper d'écouter les clics sur les liens dans les vues pour rediriger automatiquement sur la bonne route en utilisant l'[API HTML5 pushState](https://developer.mozilla.org/en-US/docs/Web/API/History_API).
 
 Commencer le voyage !
 =====================
@@ -181,6 +181,6 @@ document.body.appendChild(tree)
 
 C'est le début de l'aventure ! Il ne reste plus qu'à demander à Choo d'exécuter le premier rendu de l'application et de rattacher le DOM généré au document et voilà !
 
-Pour plus d'informations, d'exemples, et de petits trains mignons rendez-vous sur la [page github de Choo](https://github.com/yoshuawuyts/choo) ou sur sa [page de démonstration](https://choo.io/){:rel="nofollow noreferrer"}.
+Pour plus d'informations, d'exemples, et de petits trains mignons rendez-vous sur la [page github de Choo](https://github.com/yoshuawuyts/choo) ou sur sa [page de démonstration](https://choo.io/).
 
 Bon voyage !

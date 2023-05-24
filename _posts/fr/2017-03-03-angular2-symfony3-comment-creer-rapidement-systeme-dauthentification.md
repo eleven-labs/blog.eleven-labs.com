@@ -87,7 +87,7 @@ app:
     prefix: /api
 ```
 
-**[+ d'information sur la documentation](http://symfony.com/doc/current/bundles/FOSRestBundle/index.html){:rel="nofollow noreferrer"}**
+**[+ d'information sur la documentation](http://symfony.com/doc/current/bundles/FOSRestBundle/index.html)**
 
 ##### **NelmioCorsBundle**
 
@@ -111,7 +111,7 @@ Ce bundle va nous permettre de sérialiser les données renvoyées par notre API
 
 ##### **LexikJWTAuthenticationBundle**
 
-Enfin,  last but not least, le bundle qui va nous servir à sécuriser l'accès à nos données Symfony via un token d'authentification. Je vous laisse lire la **[documentation](https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#getting-started){:rel="nofollow noreferrer"}** officielle qui est très claire. Il vous suffit vraiment de suivre les étapes point par point.
+Enfin,  last but not least, le bundle qui va nous servir à sécuriser l'accès à nos données Symfony via un token d'authentification. Je vous laisse lire la **[documentation](https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#getting-started)** officielle qui est très claire. Il vous suffit vraiment de suivre les étapes point par point.
 
 *Note : J'ai ajouté deux petites lignes sous l'index "form\_login" du security.yml de façon à pouvoir envoyer username & password au lieu de \_username et \_password pour nous authentifier auprès de notre API. Je vous invite à en faire de même :*
 

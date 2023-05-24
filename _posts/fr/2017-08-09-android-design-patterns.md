@@ -31,7 +31,7 @@ Concernant les Design Patterns structurants, nous allons voir en détail les tro
 Enfin concernant les non structurants, nous n'allons en survoler que quelques-uns car nous allons surtout nous intéresser à la première catégorie.
 
 > **Petit rappel :**
-> Android est l'OS mobile développé par Google utilisant le langage JAVA (et Kotlin récemment mais nous en parlerons une autre fois) pour la partie développement. Pour en savoir plus il n'y a pas mieux que la [documentation officielle](https://developer.android.com/index.html){:rel="nofollow noreferrer"}.
+> Android est l'OS mobile développé par Google utilisant le langage JAVA (et Kotlin récemment mais nous en parlerons une autre fois) pour la partie développement. Pour en savoir plus il n'y a pas mieux que la [documentation officielle](https://developer.android.com/index.html).
 
 Néanmoins Android a une particularité par rapport au JAVA : le SDK est déjà structurant.
 
@@ -181,7 +181,7 @@ La présentation, c'est-à-dire celle qui va indiquer quel contenu mettre dans q
 ----------
  - Les mêmes point positifs que le MVC
  - Il supprime une des grosses contraintes du MVC (à savoir le lien entre la vue et le modèle) et épouse beaucoup plus l'architecture de base d'Android
- - Il peut amener à respecter encore plus les principes [SOLID](https://fr.wikipedia.org/wiki/SOLID_(informatique)){:rel="nofollow noreferrer"}
+ - Il peut amener à respecter encore plus les principes [SOLID](https://fr.wikipedia.org/wiki/SOLID_(informatique))
 
 <span style="color:red">-</span>
 ----------
@@ -287,7 +287,7 @@ L'un des avantages de cette approche est de proposer du code plus clair et lisib
 ----------
  - Notre .XML est bien plus intelligent et clair
  - Moins de code Boiler Plate avec l'absence des `findViewById`.
- - Il permet l'utilisation des [Binding Adapter](https://developer.android.com/reference/android/databinding/BindingAdapter.html){:rel="nofollow noreferrer"}
+ - Il permet l'utilisation des [Binding Adapter](https://developer.android.com/reference/android/databinding/BindingAdapter.html)
  - Grâce à l'utilisation de `BaseObservable`, on peut rafraîchir la vue dès que le ViewModel subit un changement, ce qui évite toute gestion manuelle du rafraîchissement.
 
 <span style="color:red">-</span>
@@ -302,7 +302,7 @@ Les Design Pattern qui ne sont pas structurants, c'est-à-dire qui ne façonnent
 
 Par exemple, le Singleton est implémenté exactement de la même manière que sur une autre plateforme. Il en va de même pour la Factory.
 
-Concernant le Design Pattern Observer, il est très répandu grâce à la profusion des listeners (Cf. [Android : Pourquoi j'aime les Listeners](https://blog.eleven-labs.com/fr/android-listeners/)), mais aussi et surtout aux librairies tels qu'[Otto](http://square.github.io/otto/) de Square, [EventBus](https://github.com/greenrobot/EventBus) de GreenRobot ou même encore [Guava](https://github.com/google/guava/wiki/EventBusExplained){:rel="nofollow noreferrer"} de Google.
+Concernant le Design Pattern Observer, il est très répandu grâce à la profusion des listeners (Cf. [Android : Pourquoi j'aime les Listeners](https://blog.eleven-labs.com/fr/android-listeners/)), mais aussi et surtout aux librairies tels qu'[Otto](http://square.github.io/otto/) de Square, [EventBus](https://github.com/greenrobot/EventBus) de GreenRobot ou même encore [Guava](https://github.com/google/guava/wiki/EventBusExplained) de Google.
 
 # Conclusion
 
@@ -310,7 +310,7 @@ Android nous offre énormément de possibilités quant aux moyens de bien struct
 
 Ensuite il est tout à fait possible de faire cohabiter plusieurs Design Pattern, je pense notamment au MVC/MVP et MVVM. Si l'on rajoute un élément extérieur à notre trio qui va s'occuper, par exemple, de générer des ViewModels, il peut être considéré comme un pseudo-Presenter ou pseudo-Controller, car il va se charger d'ajouter ou de modifier des données à afficher (en interagissant avec les ViewModels).
 
-Pour terminer, je n'ai pas souhaité parler de librairies d'injection tel que [Dagger 2](https://github.com/google/dagger) (car ça s'assimile à de la Factory) ou encore de librairies très structurantes tel que [RxJava](https://github.com/ReactiveX/RxJava) (qui apporte la notion de React Programming certes, mais qui dans certains cas essaye aussi de contourner certains comportements de base d'Android){:rel="nofollow noreferrer"}.
+Pour terminer, je n'ai pas souhaité parler de librairies d'injection tel que [Dagger 2](https://github.com/google/dagger) (car ça s'assimile à de la Factory) ou encore de librairies très structurantes tel que [RxJava](https://github.com/ReactiveX/RxJava) (qui apporte la notion de React Programming certes, mais qui dans certains cas essaye aussi de contourner certains comportements de base d'Android).
 
 > Embrace Android do not fight it
 

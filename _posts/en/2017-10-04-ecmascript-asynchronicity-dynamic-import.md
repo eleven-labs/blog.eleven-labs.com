@@ -27,7 +27,7 @@ Imagine you are developing a large scale web application, with several thousands
 
 Why is that? Your bundle, my friend, is nothing less than a massive file which requires too much time in order to be loaded in your page. Given some, not so glorifying, browsers performance, you're gonna need to address the situation.
 
-Fortunately for you, there are some good folks out there working on stuff that can help you, stuff like code splitting. They make sure your app is loaded in several chunks, as small as possible, in order to accelerate the loading. The tools that provide this kind of features are: [RequireJS](https://requirejs.org), [SystemJS](https://github.com/systemjs/systemjs), [Webpack](https://github.com/webpack/webpack), [Rollup](https://rollupjs.org/) and [curl](https://github.com/cujojs/curl){:rel="nofollow noreferrer"}. They are capable of bundling your app and generating your bundle chunks, and especially lazy loading them, so you can load only the one that you need at a given time.
+Fortunately for you, there are some good folks out there working on stuff that can help you, stuff like code splitting. They make sure your app is loaded in several chunks, as small as possible, in order to accelerate the loading. The tools that provide this kind of features are: [RequireJS](https://requirejs.org), [SystemJS](https://github.com/systemjs/systemjs), [Webpack](https://github.com/webpack/webpack), [Rollup](https://rollupjs.org/) and [curl](https://github.com/cujojs/curl). They are capable of bundling your app and generating your bundle chunks, and especially lazy loading them, so you can load only the one that you need at a given time.
 
 Therefore, the use of dynamic import is necessary. Its main purpose is to optimize the amount of loaded code by lazy loading modules.
 
@@ -67,12 +67,12 @@ import myService from `../services/${myServiceName}`;
 
 The static aspect of ES6 modules comes up with some great benefits:
 
-- It makes it easy for bundlers to eliminate unused modules and de-duplicate redundant ones when bundling. This is called Tree Shaking —which was made popular by the module bundler [Rollup](https://rollupjs.org/){:rel="nofollow noreferrer"}.
+- It makes it easy for bundlers to eliminate unused modules and de-duplicate redundant ones when bundling. This is called Tree Shaking —which was made popular by the module bundler [Rollup](https://rollupjs.org/).
 - Allows cyclic dependencies between modules.
 - Provides variable checking that we can think of as a "shallow type checking", which will give us the opportunity to early catch common errors.
 - Gives the possibility to add static type checking in future versions of ECMAScript.
 
-For further reading on modules, check Dr. Axel Rauschmayer's [online book](http://exploringjs.com/es6/ch_modules.html){:rel="nofollow noreferrer"} on modules.
+For further reading on modules, check Dr. Axel Rauschmayer's [online book](http://exploringjs.com/es6/ch_modules.html) on modules.
 
 ### Code splitting with Webpack
 
@@ -115,7 +115,7 @@ export default {
 };
 ```
 
-After building our app, Webpack generates only one bundle, `main.js`, with its source map `main.js.map`. And, thanks to the [`compression-webpack-plugin`](https://www.npmjs.com/package/compression-webpack-plugin){:rel="nofollow noreferrer"}, we have also those files "gzip"ed.
+After building our app, Webpack generates only one bundle, `main.js`, with its source map `main.js.map`. And, thanks to the [`compression-webpack-plugin`](https://www.npmjs.com/package/compression-webpack-plugin), we have also those files "gzip"ed.
 
 ```bash
 $ NODE_ENV=production webpack -p
@@ -135,7 +135,7 @@ main.js.map.gz     803 kB          [emitted]  [big]
 Done in 13.48s.
 ```
 
-One of the ways you can split your bundle is by defining entry points in Webpack config. These entry points represent the chunks that will be generated. Another way is by using [CommonsChunkPlugin](https://webpack.js.org/plugins/commons-chunk-plugin/){:rel="nofollow noreferrer"}. In the following example, we’re going to use both ways.
+One of the ways you can split your bundle is by defining entry points in Webpack config. These entry points represent the chunks that will be generated. Another way is by using [CommonsChunkPlugin](https://webpack.js.org/plugins/commons-chunk-plugin/). In the following example, we’re going to use both ways.
 
 How to choose your entry points is totally up to you. In our case, we will adopt a strategy that will help us isolate vendor libraries in a single chunk. Then, we create another chunk only for our app’s code.
 
@@ -312,9 +312,9 @@ There is, however, some restrictions to this approach. The `require.ensure` meth
 ---
 #### `import()`
 
-The dynamic import is a pretty awesome feature ECMAScript came up with. It offers the possibility to handle cases like: computed module specifiers, conditional loading of modules, accessing exports and default exports, and many more. The [dynamic import proposal](https://github.com/tc39/proposal-dynamic-import){:rel="nofollow noreferrer"} is in stage 3 at the time of this writing.
+The dynamic import is a pretty awesome feature ECMAScript came up with. It offers the possibility to handle cases like: computed module specifiers, conditional loading of modules, accessing exports and default exports, and many more. The [dynamic import proposal](https://github.com/tc39/proposal-dynamic-import) is in stage 3 at the time of this writing.
 
-Like `require.ensure`, `import()` relies on `Promise`. This implies that you have to use some polyfills like [es6-promise](https://www.npmjs.com/package/es6-promise) or [promise-polyfill](https://www.npmjs.com/package/promise-polyfill) in order to make it work. You're gonna need `babel` support too, using the [Syntax Dynamic Import](https://babeljs.io/docs/plugins/syntax-dynamic-import/) plugin that allows the parsing of `import(){:rel="nofollow noreferrer"}`.
+Like `require.ensure`, `import()` relies on `Promise`. This implies that you have to use some polyfills like [es6-promise](https://www.npmjs.com/package/es6-promise) or [promise-polyfill](https://www.npmjs.com/package/promise-polyfill) in order to make it work. You're gonna need `babel` support too, using the [Syntax Dynamic Import](https://babeljs.io/docs/plugins/syntax-dynamic-import/) plugin that allows the parsing of `import()`.
 
 ```json
 // .babelrc
@@ -409,7 +409,7 @@ At compile time, ECMAScript cannot resolve the `module` argument. It's going to 
 
 Wait, what the heck is a context module?
 
-A context module is a kind of bundle that Webpack generates for a given directory, in order to make it possible to **dynamically** load any file in that directory. Take for example Webpack's [`require.context`](https://webpack.js.org/api/module-methods/#require-context){:rel="nofollow noreferrer"} function:
+A context module is a kind of bundle that Webpack generates for a given directory, in order to make it possible to **dynamically** load any file in that directory. Take for example Webpack's [`require.context`](https://webpack.js.org/api/module-methods/#require-context) function:
 
 ```js
 const context = require.context('./editors/', true, /\.jsx?$/);

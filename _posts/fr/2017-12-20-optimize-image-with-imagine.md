@@ -21,12 +21,12 @@ keywords:
 
 L’optimisation d’images est un enjeu très important dans la conception d’une application web et nécessite une attention particulière.
 Durant le développement d’un jeu en ligne impliquant une gestion importante d’images, nous avons été amenés à les optimiser pour différents devices (desktop et mobile).
-La suite de cet article sera dédiée à expliquer notre démarche en créant une version simplifiée que vous retrouverez [ici](https://github.com/shalomaku/resize-with-imagine){:rel="nofollow"}.
+La suite de cet article sera dédiée à expliquer notre démarche en créant une version simplifiée que vous retrouverez [ici](https://github.com/shalomaku/resize-with-imagine).
 
 ## Pré-requis :
 * php7
 * SYMFONY3
-* [GD](http://php.net/manual/fr/book.image.php){:rel="nofollow"}, [Imagick](http://php.net/manual/fr/book.imagick.php){:rel="nofollow"} ou [GMagick](http://php.net/manual/fr/book.gmagick.php){:rel="nofollow"}
+* [GD](http://php.net/manual/fr/book.image.php), [Imagick](http://php.net/manual/fr/book.imagick.php) ou [GMagick](http://php.net/manual/fr/book.gmagick.php)
 
 ## Definition du projet
 Notre projet est un jeu dont le but est de placer des objets (par drag and drop en Javascript) dans une pièce.
@@ -55,7 +55,7 @@ Dans cette partie, on parlera brièvement de la mise en place de la bibliothèqu
 #### Imagine
 
 Nous utilisons la librairie **Imagine** parce qu'elle permet notamment :
-* d'unifier les méthodes des bibliothèques [GD](http://php.net/manual/fr/book.image.php){:rel="nofollow"}, [Imagick](http://php.net/manual/fr/book.imagick.php){:rel="nofollow"} et [GMagick](http://php.net/manual/fr/book.gmagick.php){:rel="nofollow"},
+* d'unifier les méthodes des bibliothèques [GD](http://php.net/manual/fr/book.image.php), [Imagick](http://php.net/manual/fr/book.imagick.php) et [GMagick](http://php.net/manual/fr/book.gmagick.php),
 * simplifier les tests.
 
 ```bash

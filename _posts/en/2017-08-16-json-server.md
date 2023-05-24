@@ -15,9 +15,9 @@ keywords:
   - nodejs
 ---
 
-Hello, Today I’m going to talk about [json-server](https://github.com/typicode/json-server){:rel="nofollow noreferrer"}, what is it? why use it? and especially how to use it?
+Hello, Today I’m going to talk about [json-server](https://github.com/typicode/json-server), what is it? why use it? and especially how to use it?
 
-`json-server` is a cool `npm` module, that provides an [Express](https://github.com/expressjs/express){:rel="nofollow noreferrer"} server that serves a JSON API.
+`json-server` is a cool `npm` module, that provides an [Express](https://github.com/expressjs/express) server that serves a JSON API.
 
 ## Why use it?
 
@@ -68,7 +68,7 @@ $ mkdir blog && cd $_
 $ touch db.json
 ```
 
-To fill it in, we can either do it by hand or use a random json generator (my favorite is [json-generator](http://json-generator.com)){:rel="nofollow noreferrer"}
+To fill it in, we can either do it by hand or use a random json generator (my favorite is [json-generator](http://json-generator.com))
 
 ```json
 {
@@ -337,7 +337,7 @@ Until now, we've seen only the routes part of `json-server`, there are a lot mor
 
 ### Randomly generated data
 
-The [basic example in Typicode's docs](https://github.com/typicode/json-server#generate-random-data) presents a simple script that generates the `users` endpoint. Here we are going to write endpoints that serve randomly generated data using a data faker module. Personally, I use [faker.js](https://github.com/Marak/faker.js), but there are others that you can explore like [Chance](https://github.com/chancejs/chancejs) and [Casual](https://github.com/boo1ean/casual){:rel="nofollow noreferrer"}.
+The [basic example in Typicode's docs](https://github.com/typicode/json-server#generate-random-data) presents a simple script that generates the `users` endpoint. Here we are going to write endpoints that serve randomly generated data using a data faker module. Personally, I use [faker.js](https://github.com/Marak/faker.js), but there are others that you can explore like [Chance](https://github.com/chancejs/chancejs) and [Casual](https://github.com/boo1ean/casual).
 
 The random aspect of the generation occurs only once, and that's when we run the script. This means that `json-server` won't give us a different response for each request. Eventually, we have to install our fake data tool, then write the generation script:
 
@@ -555,9 +555,9 @@ Here is what Mozilla Developer Network tells about it:
 
 > The `WWW-Authenticate` and `Proxy-Authenticate` response headers define the authentication method that should be used to gain access to a resource. They need to specify which authentication scheme is used so that the client that wishes to authorize knows how to provide the credentials.
 >
-> <cite>[HTTP authentication : `WWW-Authenticate` and `Proxy-Authenticate` headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#WWW-Authenticate_and_Proxy-Authenticate_headers){:rel="nofollow noreferrer"}</cite>
+> <cite>[HTTP authentication : `WWW-Authenticate` and `Proxy-Authenticate` headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#WWW-Authenticate_and_Proxy-Authenticate_headers)</cite>
 
-Then we test again, and this time we add credentials to our request (Notice: `curl`'s `--user` option is not restricted to basic authentication, we can do other types of authentication, [see here](https://ec.haxx.se/http-auth.html)){:rel="nofollow noreferrer"}:
+Then we test again, and this time we add credentials to our request (Notice: `curl`'s `--user` option is not restricted to basic authentication, we can do other types of authentication, [see here](https://ec.haxx.se/http-auth.html)):
 
 ```bash
 $ curl --user kamal:secret http://localhost:3000/api/groups/ducks/stats
@@ -584,7 +584,7 @@ GET /api/groups/ducks/stats 200 4.609 ms - 94
 
 `json-server` is an `express` application, which means that we can use it in an existing node/express app to achieve special behaviors. Here is a simple example that shows how to customize the logger:
 
-`json-server` uses [`morgan`](https://github.com/expressjs/morgan) for logs, and the default format that it uses is the [`dev`](https://github.com/expressjs/morgan#dev) log format, which doesn't expose all the info that we want, we need to use the [standard Apache combined log outpout format](https://github.com/expressjs/morgan#combined){:rel="nofollow noreferrer"} instead:
+`json-server` uses [`morgan`](https://github.com/expressjs/morgan) for logs, and the default format that it uses is the [`dev`](https://github.com/expressjs/morgan#dev) log format, which doesn't expose all the info that we want, we need to use the [standard Apache combined log outpout format](https://github.com/expressjs/morgan#combined) instead:
 
 ```js
 // server.js
@@ -649,6 +649,6 @@ $ curl --user kamal:secret http://localhost:9001/api/groups/ducks/stats
 
 `json-server` has drastically decreased the time of scaffolding an API. Amongst the possibilities that we've seen, there are lots of use cases you can explore in order to use json-server, like logging customization, testing, reconciliation between micro-services, serverless applications ...etc.
 
-I hope this post did shed some light on how we can use json-server. I tried to bring some useful use cases we encounter every day. If you still want to learn more about using it or even its inner working, I recommend exploring its [github project](https://github.com/typicode/json-server){:rel="nofollow noreferrer"}.
+I hope this post did shed some light on how we can use json-server. I tried to bring some useful use cases we encounter every day. If you still want to learn more about using it or even its inner working, I recommend exploring its [github project](https://github.com/typicode/json-server).
 
 Thanks for reading!

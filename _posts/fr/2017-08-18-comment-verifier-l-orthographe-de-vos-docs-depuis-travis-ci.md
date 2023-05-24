@@ -108,8 +108,8 @@ Nous ne voulons pas que ce script bloque ceux qui souhaitent merger la pull requ
 La façon la plus simple d'envoyer les résultats des précédentes commandes est donc de les poster dans un commentaire sur la pull request Github.
 
 Premièrement vous devrez choisir un utilisateur Github qui sera utilisé pour ajouter un commentaire, et configurer un token d'accès pour cet utilisateur :
-- Connectez vous sur [https://github.com](https://github.com){:rel="nofollow noreferrer"} avec cet utilisateur
-- Allez sur [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new){:rel="nofollow noreferrer"}
+- Connectez vous sur [https://github.com](https://github.com) avec cet utilisateur
+- Allez sur [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)
 - Ajoutez un nom/description au token que vous créez et cochez bien le scope `public_repo` seulement, si votre repository Github est public.
 
 Ensuite, depuis le script exécuté sur Travis, une fois que vous avez les résultats de la commande `aspell`, vous pouvez utiliser `curl` pour appeler l'API Github avec le token précédemment créé :
@@ -121,16 +121,16 @@ curl -i -H "Authorization: token $GITHUB_TOKEN" \
     https://api.github.com/repos/eleven-labs/blog.eleven-labs.com/issues/$TRAVIS_PULL_REQUEST/comments
 ```
 
-- Le token Github doit être caché et non pas en dur dans votre script, vous devez donc ajouter une variable d'environnement dans les paramètres Travis. Pour cela, allez sur cette page : [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings){:rel="nofollow noreferrer"}
+- Le token Github doit être caché et non pas en dur dans votre script, vous devez donc ajouter une variable d'environnement dans les paramètres Travis. Pour cela, allez sur cette page : [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings)
 - La variable d'environnement `$TRAVIS_PULL_REQUEST` est automatiquement disponible sur le container Travis et correspond au numéro de la pull request liée au build en cours sur Travis.
 
 Conclusion
 ==========
 
-Si vous voulez voir le script entier qui nous utilisons pour notre blog, c'est par [ici](https://github.com/eleven-labs/blog.eleven-labs.com/blob/master/bin/check-spelling.sh){:rel="nofollow noreferrer"}.
+Si vous voulez voir le script entier qui nous utilisons pour notre blog, c'est par [ici](https://github.com/eleven-labs/blog.eleven-labs.com/blob/master/bin/check-spelling.sh).
 
 J'espère que ces astuces vous aideront ! Notez que vous pouvez aussi utiliser ce même process pour vérifier vos doc blocks dans votre code, ou vos fichiers de documentation.
 
-Nous améliorerons très certainement ces scripts et vérifications automatiques lors des prochaines semaines, suivez donc [le repository de notre blog sur Github](https://github.com/eleven-labs/blog.eleven-labs.com){:rel="nofollow noreferrer"}, pour voir les prochaines mises à jour.
+Nous améliorerons très certainement ces scripts et vérifications automatiques lors des prochaines semaines, suivez donc [le repository de notre blog sur Github](https://github.com/eleven-labs/blog.eleven-labs.com), pour voir les prochaines mises à jour.
 
 Vos idées d'améliorations sont également les bienvenues : vous pouvez ajouter des commentaires ci-dessous ;)

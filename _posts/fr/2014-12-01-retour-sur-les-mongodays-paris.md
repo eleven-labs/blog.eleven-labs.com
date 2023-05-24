@@ -39,7 +39,7 @@ Enfin, les nouveautés de la futur version 2.8(http://docs.mongodb.org/manual/re
 **Socialite, the Open Source Status Feed**
 10h-11h par Asya Kamsky, Principal Solutions Architect, MongoDB
 
-La présentation a tourné autour de l'étude d'un cas pratique, en l'occurrence "[Socialite](https://github.com/10gen-labs/socialite){:rel="nofollow noreferrer"}" un réseau social proposant des fonctionnalités proches de Twitter.
+La présentation a tourné autour de l'étude d'un cas pratique, en l'occurrence "[Socialite](https://github.com/10gen-labs/socialite)" un réseau social proposant des fonctionnalités proches de Twitter.
 
 De la gestion des Index, du mapping ou du Sharding, en passant par l'architecture même de l'application, tout est passé au crible afin de développer une application scalable et correspondant aux besoins.
 
@@ -48,7 +48,7 @@ De la gestion des Index, du mapping ou du Sharding, en passant par l'architectur
 Présentation intéréssante, repassant sur les bases d'une application Mongo fullstack. Malgré tout, plusieurs pro-tips sont sortis de cette présentation.
 Par exemple, saviez vous que l'objet ObjectId contient une methode getTimestamp() renvoyant le timestamp de l'insertion de la donnée dans la collection (si celui ci na pas été forcé bien evidemment).
 
-[Lien de la présentation](http://fr.slideshare.net/mongodb/socialite-the-open-source-status-feed){:rel="nofollow noreferrer"}
+[Lien de la présentation](http://fr.slideshare.net/mongodb/socialite-the-open-source-status-feed)
 
 ------------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ Ce talk, présenté par Pierre-Alban Dewitte, a présenté la refonte de l'outil
 
 Présentation très interéssante, d'autant plus que travaillant dans un contexte et sur un produit similaire, la possibilité de pouvoir échanger avec eux à été très enrichissante. Surtout quand on sait qu'ils n'avaient aucune connaissance de mongoDB lorsqu'ils ont commencé le poke de la solution, les chiffres annoncés sont impressionnants !
 
-[Lien vers les slides](http://fr.slideshare.net/mongodb/plus-de-flexibilit-et-de-scalabilit-chez-bouygues-tlcom-grce-mongodb){:rel="nofollow noreferrer"}
+[Lien vers les slides](http://fr.slideshare.net/mongodb/plus-de-flexibilit-et-de-scalabilit-chez-bouygues-tlcom-grce-mongodb)
 
 ------------------------------------------------------------------------
 
@@ -92,7 +92,7 @@ Quelques concepts clés :
 
 *- Retours personnels*
 
-Ce fut la présentation qui sur le planning m'interessait le plus et ce fut la plus intéressante. L'axe de présentation correspond à l'évolution nécessaire d'une application mongoDB, en partant des "petites optimisations" mais quand bien même nécessaire jusqu'à comment construire une architecture a +100 noeuds mongo. Je vous invite à consulter les slides [ici](http://fr.slideshare.net/mongodb/scalabilit-de-mongodb){:rel="nofollow noreferrer"} .
+Ce fut la présentation qui sur le planning m'interessait le plus et ce fut la plus intéressante. L'axe de présentation correspond à l'évolution nécessaire d'une application mongoDB, en partant des "petites optimisations" mais quand bien même nécessaire jusqu'à comment construire une architecture a +100 noeuds mongo. Je vous invite à consulter les slides [ici](http://fr.slideshare.net/mongodb/scalabilit-de-mongodb) .
 
 
 
@@ -103,7 +103,7 @@ Ce fut la présentation qui sur le planning m'interessait le plus et ce fut la p
 
 Présentation detaillée sur l'utilisation d'une couche d'application supplémentaire afin de donner une vision 360 sur certains types de données. De la même manière, le speaker a présenté de nombreux cas où l'utilisation des outils comme Hadoop, Spark sont nécessaires et comment les faire interagir avec notre application mongoDB.
 
-[Lien vers les slides](http://fr.slideshare.net/mongodb/mongodb-day-paris2014hadooptgrall-1){:rel="nofollow noreferrer"}
+[Lien vers les slides](http://fr.slideshare.net/mongodb/mongodb-day-paris2014hadooptgrall-1)
 
 
 
@@ -120,7 +120,7 @@ Speak des sponsors de l’événement par Teradata et Zenika
 
 Dernier speak technique de la journée. La nouvelle version de l'outil en ligne MMS a été présenté. En plus de la partie classique de monitoring et de gestion de cluster, cette version intègre la possibilité de provisionner directement grâce a Amazon S3 des clusters de machine et de les configurer.
 
-[Lien de la présentation](http://fr.slideshare.net/mongodb/mongo-db-days-paris-2014-mms-fr){:rel="nofollow noreferrer"}
+[Lien de la présentation](http://fr.slideshare.net/mongodb/mongo-db-days-paris-2014-mms-fr)
 
 ------------------------------------------------------------------------
 
@@ -149,4 +149,4 @@ Ce fut une journée très instructive. Au-delà d'une mise au point sur les capa
 
 A noter qu'en parallèle des différentes présentations, les architectes et spécialistes mongoDB étaient présents toute la journée pour des entretiens personnels afin de répondre aux questions ou aux problématiques que l'on peut avoir dans nos projets personnels ou professionnels. J'ai trouvé cette initiative très agréable, de pouvoir se rendre disponible aux 'clients' de leurs solutions, surtout que la plupart de ces solutions sont gratuites.
 
-Vous pouvez aussi trouver toutes les speaks des précédents événements à cette [adresse](http://www.mongodb.com/presentations/){:rel="nofollow noreferrer"}
+Vous pouvez aussi trouver toutes les speaks des précédents événements à cette [adresse](http://www.mongodb.com/presentations/)

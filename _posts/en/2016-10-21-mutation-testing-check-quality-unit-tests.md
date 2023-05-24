@@ -96,7 +96,7 @@ Before we go deeper, let's see some vocabulary :
 
 ## Case study : Humbug
 
-We are going to see [Humbug](https://github.com/padraic/humbug){:rel="nofollow"}, a framework that allows us to do mutation tests in PHP.
+We are going to see [Humbug](https://github.com/padraic/humbug), a framework that allows us to do mutation tests in PHP.
 
 As we execute the Humbug binary, we get the following output :
 
@@ -200,7 +200,7 @@ Humbug is capable of generating a whole set of mutations :
 -   Binary operator subsctirution (**&**, **|**, **%**, etc...)
 -   Return values substitution
 
-I'm not going to detail everything here, if wou want to know more about this, I invite you to check the [GitHub project page](https://github.com/padraic/humbug){:rel="nofollow"}.
+I'm not going to detail everything here, if wou want to know more about this, I invite you to check the [GitHub project page](https://github.com/padraic/humbug).
 
 ## Conclusion
 

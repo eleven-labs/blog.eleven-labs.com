@@ -19,7 +19,7 @@ Connaissez-vous le "git workflow" ? Si ce n'est pas le cas, je vous invite à li
 
 Je vais mettre ci-dessous l'image pour bien l'avoir en tête :
 
-![Git workflow](http://nvie.com/img/git-model@2x.png){:rel="nofollow noreferrer"}
+![Git workflow](http://nvie.com/img/git-model@2x.png)
 
 > "Git workflow. source: http://nvie.com/posts/a-successful-git-branching-model"
 

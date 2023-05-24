@@ -15,7 +15,7 @@ keywords:
 ---
 ## Introduction
 
-Hi Astronauts! Today again, I will keep talking about native mobile development, and this time it is about Android. As my previous article, this one is for beginners, so it means that we will spend a small amount of time to discover a few technical terms together before going deeper in the subject. If you did not read my last article Closures VS Delegates, I invite you to do it, it's a prerequisite in order to understand this one. [Delegates VS Closures](https://blog.eleven-labs.com/en/delegates-closures/){:rel="nofollow noreferrer"}<br />
+Hi Astronauts! Today again, I will keep talking about native mobile development, and this time it is about Android. As my previous article, this one is for beginners, so it means that we will spend a small amount of time to discover a few technical terms together before going deeper in the subject. If you did not read my last article Closures VS Delegates, I invite you to do it, it's a prerequisite in order to understand this one. [Delegates VS Closures](https://blog.eleven-labs.com/en/delegates-closures/)<br />
 For those who don't know, in order to code for Android, you must use Java. So, for the code samples, it will be faster, because it means only one language to produce, one syntax and one file structure. The important notion in this article is: Listeners.
 
 ## Listeners ##

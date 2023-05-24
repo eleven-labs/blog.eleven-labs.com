@@ -287,6 +287,6 @@ git rebase --continue
 
 Le rebase est terminé. L'historique de *master* est propre.
 
-Pour référence: [git-rebase]({{site.baseurl}}https://git-scm.com/docs/git-rebase) et [Git branching - rebasing]({{site.baseurl}}https://git-scm.com/book/en/v2/Git-Branching-Rebasing){:rel="nofollow noreferrer"}
+Pour référence: [git-rebase]({{site.baseurl}}https://git-scm.com/docs/git-rebase) et [Git branching - rebasing]({{site.baseurl}}https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 
 Images créées avec <http://learngitbranching.js.org/?NODEMO>

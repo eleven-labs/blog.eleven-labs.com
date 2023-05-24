@@ -25,9 +25,9 @@ Voyons ensemble comment nous nous y sommes pris.
 
 ## Etape 1 : le service worker
 
-Tout d'abord, nous avons mis en place un service worker. Le service worker est un script Javascript qui tourne directement sur votre navigateur sans que le site soit activé. Pour plus d'explications, vous pouvez lire ce super document [ici](https://developers.google.com/web/fundamentals/primers/service-workers/){:rel="nofollow noreferrer"}.
+Tout d'abord, nous avons mis en place un service worker. Le service worker est un script Javascript qui tourne directement sur votre navigateur sans que le site soit activé. Pour plus d'explications, vous pouvez lire ce super document [ici](https://developers.google.com/web/fundamentals/primers/service-workers/).
 
-Le service worker est la base pour faire de votre site une [PWA](https://developers.google.com/web/progressive-web-apps/){:rel="nofollow noreferrer"}.  Tout d'abord cela nous permet d'avoir le site offline (d'ailleurs testé dès maintenant).
+Le service worker est la base pour faire de votre site une [PWA](https://developers.google.com/web/progressive-web-apps/).  Tout d'abord cela nous permet d'avoir le site offline (d'ailleurs testé dès maintenant).
 
 Pour cela, lors de la première visite sur le site, le service worker s'enregistre et met en cache les assets et les pages d'articles.
 
@@ -35,7 +35,7 @@ Vous pouvez voir cela directement dans votre console de développement dans l'on
 
 ![Console Chrome]({{site.baseurl}}/assets/2017-12-19-push-notification/image1.png)
 
-La mise en place d'un service worker est assez simple. Il faut dire au navigateur compatible avec les service workers où se dernier se trouve. Voici la liste des navigateurs actuellement compatibles ([CanIUse](https://caniuse.com/#search=service%20workers){:rel="nofollow noreferrer"}).
+La mise en place d'un service worker est assez simple. Il faut dire au navigateur compatible avec les service workers où se dernier se trouve. Voici la liste des navigateurs actuellement compatibles ([CanIUse](https://caniuse.com/#search=service%20workers)).
 
 ![Can I Use]({{site.baseurl}}/assets/2017-12-19-push-notification/image2.png)
 
@@ -118,7 +118,7 @@ La première chose à faire dans la mise en place des web notifications, c'est d
 
 Il faut ensuite enregistrer le token des utilisateurs qui acceptent de recevoir les notifications.
 
-Nous avons choisi d'enregistrer les tokens dans une base [Firebase](https://firebase.google.com/){:rel="nofollow noreferrer"}. Cela nous permet d'avoir une base de données en temps réel à moindre coût. De plus, l'utilisation de Firebase est super facile en Javascript via le SDK disponible [ici](https://firebase.google.com/docs/web/setup){:rel="nofollow noreferrer"}.
+Nous avons choisi d'enregistrer les tokens dans une base [Firebase](https://firebase.google.com/). Cela nous permet d'avoir une base de données en temps réel à moindre coût. De plus, l'utilisation de Firebase est super facile en Javascript via le SDK disponible [ici](https://firebase.google.com/docs/web/setup).
 
 L'enregistrement du token utilisateur se fait au même endroit que celui du service worker. Il suffit d'y ajouter le code suivant :
 
@@ -230,9 +230,9 @@ Votre clé serveur est disponible au même endroit que votre `gcm_sender_id` dan
 
 Alors oui c'est simple mais comment faire pour faire un envoi à toute ma base de données de tokens ?
 
-Comme je suis fan du serverless, et que Firebase le propose, nous avons choisi d'utiliser [Functions](https://firebase.google.com/products/functions/?authuser=0){:rel="nofollow noreferrer"} de Firebase.
+Comme je suis fan du serverless, et que Firebase le propose, nous avons choisi d'utiliser [Functions](https://firebase.google.com/products/functions/?authuser=0) de Firebase.
 
-Pour créer votre Functions, il vous suffit de suivre le tutoriel de Google disponible [ici](https://firebase.google.com/docs/functions/get-started){:rel="nofollow noreferrer"}.
+Pour créer votre Functions, il vous suffit de suivre le tutoriel de Google disponible [ici](https://firebase.google.com/docs/functions/get-started).
 
 Ce qui est pratique c'est que vous pouvez utiliser la librairie Firebase pour tester en local votre code.
 
@@ -306,4 +306,4 @@ Si tout est ok, vous devriez voir la notification apparaître sur votre écran.
 
 Nous avons maintenant une PWA permettant d'envoyer des notifications lors d'un nouvel article. La suite c'est d'avoir des notifications personnalisées. Pour cela, lors de la réception du push par le service workers nous allons faire un call sur une api pour récupérer l'information à afficher.
 
-Vous pouvez nous aider à améliorer le blog en allant sur le [Github](https://github.com/eleven-labs/blog.eleven-labs.com){:rel="nofollow noreferrer"}.
+Vous pouvez nous aider à améliorer le blog en allant sur le [Github](https://github.com/eleven-labs/blog.eleven-labs.com).

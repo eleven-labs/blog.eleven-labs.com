@@ -93,13 +93,13 @@ ncurses-dev n'est pas obligatoire mais dans ce cas, vous devrez répondre à aut
 
 Sans ncurses-dev, `make config` :
 
-![Vue make config]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/make_config.png){:class="center-image"}
+![Vue make config]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/make_config.png)
 
 *Have fun ! On se revoit dans 10 jours quand vous aurez fini de configurer votre kernel :troll:*
 
 Avec ncurses-dev, `make menuconfig` (ou `make nconfig` pour un style plus épuré) :
 
-![Vue make menuconfig]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/make_menuconfig.png){:class="center-image"}
+![Vue make menuconfig]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/make_menuconfig.png)
 
 *Bien plus user-friendly*
 
@@ -216,7 +216,7 @@ Kernel hacking, security options, cryptographic API, Virtualization, library rou
 #### Désactiver initrd
 
 Dans notre cas, nous voulions nous passer de l'initrd. Une brève recherche m'indique que je peux trouver cette option dans le menu general setup :
-![Recherche initrd]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/search_initrd.png){:class="center-image"}
+![Recherche initrd]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/search_initrd.png)
 
 Il me suffit de m'y rendre pour le désactiver.
 En faisant ça je m'assure que l'initrd ne pourra jamais être utilisé, ce qui m'oblige à avoir un noyau très épuré, avec les drivers nécessaires au boot compilés en dur dans le Kernel.
@@ -237,13 +237,13 @@ Selects: INTEL_GTT [=y] && INTERVAL_TREE [=y] && SHMEM [=y] && TMPFS [=y] && DRM
 ```
 C'est donc dans le sous-menu graphics support que je vais aller activer l'option si ce n'est pas déjà fait, et désactiver ce qui me semble inutile (c'est à dire d'autres pilotes graphiques).
 
-![Menu graphics]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/graphics.png){:class="center-image"}
+![Menu graphics]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/graphics.png)
 
 Comme vous le voyez, tout est compilé en modules, et quasiment toutes les cartes sont supportées ! Faisons un peu de ménage.
 
-![Twelve seconds later]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/12s.jpg){:class="center-image"}
+![Twelve seconds later]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/12s.jpg)
 
-![Menu graphics propre]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/clean_graphics.png){:class="center-image"}
+![Menu graphics propre]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/clean_graphics.png)
 
 C'est beaucoup plus digeste !
 

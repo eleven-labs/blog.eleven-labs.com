@@ -170,7 +170,7 @@ La conférence prouve que le machine learning est essentiel pour l'avenir de nos
 
 **C'est là qu'il faut faire du machine learning.**
 
-La conférence se termine par l'intervention de [Deeptomatic](https://www.deepomatic.com/){:rel="nofollow noreferrer"} qui permet à tout le monde de faire du machine learning simplement gràce à une interface claire et simple. Avec derrière, encore une fois, la puissance du Cloud Google qui permet de réaliser des choses avec une simplicité déconcertante.
+La conférence se termine par l'intervention de [Deeptomatic](https://www.deepomatic.com/) qui permet à tout le monde de faire du machine learning simplement gràce à une interface claire et simple. Avec derrière, encore une fois, la puissance du Cloud Google qui permet de réaliser des choses avec une simplicité déconcertante.
 
 ### Les APIs de Machine Learning par l'exemple
 
@@ -182,7 +182,7 @@ Nous aurons droit à la démonstration des 5 APIs de machine learning de Google.
 
 Api très connue de Google, elle permet de traduire des textes en de nombreuses langues.
 
-Vous trouverez des exemples [ici](https://cloud.google.com/translate/){:rel="nofollow noreferrer"}.
+Vous trouverez des exemples [ici](https://cloud.google.com/translate/).
 
 Aujourd'hui, l'API est encore plus pertinente car Google utilise du machine learning pour améliorer ses traductions.
 
@@ -192,7 +192,7 @@ C'est l'API utilisée dans DataDialog qui permet aujourd'hui d'avoir des Google 
 
 Aujourd'hui l'API permet de définir dans des phrases, l'utilité de chaque mot et de comprendre à quoi ce dernier sert. Vous pouvez aussi connaître la catégorie de la conversation, les sentiments de la phrase et de chaque mot. Et pour finir elle vous donne la syntaxe de la phrase.
 
-Vous trouverez des exemples [ici](https://cloud.google.com/natural-language/){:rel="nofollow noreferrer"}.
+Vous trouverez des exemples [ici](https://cloud.google.com/natural-language/).
 
 ![Syntax](/_assets/posts/2017-10-20-google-cloud-summit-2017/image0.png)
 
@@ -200,7 +200,7 @@ Vous trouverez des exemples [ici](https://cloud.google.com/natural-language/){:r
 
 Comme l'API cloud natural language, elle est utilisée dans Google Home pour transformer l'audio en texte et permettre ensuite d'être analysé.
 
-Vous trouverez des exemples [ici](https://cloud.google.com/speech/){:rel="nofollow noreferrer"}
+Vous trouverez des exemples [ici](https://cloud.google.com/speech/)
 
 #### API CLOUD VISION
 
@@ -220,7 +220,7 @@ La dernière permet de reconnaître des caractères et grâce à l'API de natura
 
 L'API est vraiment impressionnante et demande à être prise en main.
 
-Vous pouvez vous amuser [ici](https://cloud.google.com/vision/){:rel="nofollow noreferrer"}.
+Vous pouvez vous amuser [ici](https://cloud.google.com/vision/).
 
 #### CLOUD VIDEO INTELLIGENCE
 
@@ -228,7 +228,7 @@ Maintenant que Google sait faire tellement de choses avec les images, il s'attaq
 
 Cette API permet de tagger chaque partie de la video en prenant ce qui se passe dedans et même de suivre des visages dans une vidéo.
 
-Cette API est en bêta mais vous pouvez trouvez les exemples [ici](https://cloud.google.com/video-intelligence/){:rel="nofollow noreferrer"}.
+Cette API est en bêta mais vous pouvez trouvez les exemples [ici](https://cloud.google.com/video-intelligence/).
 
 ![Labels](/_assets/posts/2017-10-20-google-cloud-summit-2017/image4.png)
 
