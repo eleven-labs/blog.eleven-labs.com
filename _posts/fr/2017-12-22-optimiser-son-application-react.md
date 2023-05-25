@@ -20,7 +20,7 @@ keywords:
   - optimisation
 ---
 
-[React](https://reactjs.org/){:rel="nofollow"} est, à l'heure où j'écris ces lignes, le framework JavaScript le plus utilisé du marché. Grâce à son DOM virtuel, il a montré qu'il était l'un des plus performant. Mais à cause d'exemples peut-être trop simples et d'une croyance aveugle en la "toute puissance" de React (Amen), il peut en résulter de sérieux problèmes de performance.
+[React](https://reactjs.org/) est, à l'heure où j'écris ces lignes, le framework JavaScript le plus utilisé du marché. Grâce à son DOM virtuel, il a montré qu'il était l'un des plus performant. Mais à cause d'exemples peut-être trop simples et d'une croyance aveugle en la "toute puissance" de React (Amen), il peut en résulter de sérieux problèmes de performance.
 
 ## Le problème
 
@@ -221,7 +221,7 @@ export default DatagridBody;
 
 Cela a l'avantage de faire gagner du temps mais il faut faire attention à son implémentation :
 - Son utilisation n'est pas toujours justifiée, dans le cas de l'exemple ci-dessus (un tri de table), `resource` et `children` ne seraient pas concernés. Effectuer un test sur ces `props` serait donc inutile et une implémentation manuelle de `shouldComponentUpdate` plus appropriée.
-- Du fait de l'égalité stricte (`===`), vous ne pourrez pas utiliser efficacement `PureComponent` si vos `props` sont des objets ou des tableaux. La comparaison se faisant en adresse pour ces structures, il faudrait tester via une implémentation manuelle de `shouldComponentUpdate`. Une solution alternative et beaucoup plus intelligente est de ne plus utiliser d'objets et tableaux JavaScript mais d'utiliser à la place des structures [Immutable.js](https://facebook.github.io/immutable-js/){:rel='nofollow'}.
+- Du fait de l'égalité stricte (`===`), vous ne pourrez pas utiliser efficacement `PureComponent` si vos `props` sont des objets ou des tableaux. La comparaison se faisant en adresse pour ces structures, il faudrait tester via une implémentation manuelle de `shouldComponentUpdate`. Une solution alternative et beaucoup plus intelligente est de ne plus utiliser d'objets et tableaux JavaScript mais d'utiliser à la place des structures [Immutable.js](https://facebook.github.io/immutable-js/).
 
 ### Se servir du workflow
 
@@ -326,7 +326,7 @@ Eh bien... non. C'est prévu mais à l'heure où j'écris ces lignes, rien n'a �
 ![Commentaire sur github confirmant le problème des stateless functions]({{site.baseurl}}/assets/2017-12-22-optimiser-son-application-react/stateless-function-github.png)
 
 Ainsi il est plutôt conseillé d'utiliser des `Component` ou `PureComponent`, car vous pouvez y maîtriser le workflow.
-Vous pouvez jeter un coup d'oeil à cet article pour de plus amples informations : ["7 reasons to outlaw React's functional components"](https://medium.freecodecamp.org/7-reasons-to-outlaw-reacts-functional-components-ff5b5ae09b7c){:rel="nofollow"}
+Vous pouvez jeter un coup d'oeil à cet article pour de plus amples informations : ["7 reasons to outlaw React's functional components"](https://medium.freecodecamp.org/7-reasons-to-outlaw-reacts-functional-components-ff5b5ae09b7c)
 
 Ainsi si vous vouliez réaliser un composant "statique" qui rend systématiquement la même chose, vous devrez transformer cette fonction :
 
@@ -364,13 +364,13 @@ Si vous avez une application React de taille importante dans laquelle aucune de 
 
 ### Extension React pour Chrome et Firefox
 
-React-Developer-Tools, disponible pour [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi){:rel="nofollow"} et [Firefox](https://addons.mozilla.org/fr/firefox/addon/react-devtools/){:rel="nofollow"} permet de débugger efficacement une application React. Elle permet d'afficher notamment dynamiquement les éléments de la page qui sont redessinés au fur et à mesure de vos interactions.
+React-Developer-Tools, disponible pour [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) et [Firefox](https://addons.mozilla.org/fr/firefox/addon/react-devtools/) permet de débugger efficacement une application React. Elle permet d'afficher notamment dynamiquement les éléments de la page qui sont redessinés au fur et à mesure de vos interactions.
 
 ### ReactOpt
 
-[ReactOpt](https://github.com/reactopt/reactopt){:rel="nofollow"} est un outil d'audit puissant qui affichera un compte-rendu détaillé des performances de votre application.
+[ReactOpt](https://github.com/reactopt/reactopt) est un outil d'audit puissant qui affichera un compte-rendu détaillé des performances de votre application.
 
 ## Conclusion
 
 L'ensemble des techniques présentées dans cet article sont indispensables à la réalisation d'une application React rapide et réactive.
-[Redux](https://redux.js.org/){:rel="nofollow"} ou encore [reselect](https://github.com/reactjs/reselect){:rel="nofollow"} sont aussi des pistes que vous pouvez explorer afin d'améliorer encore cette optimisation. Mais n'oubliez pas que nous n'avons optimisé que la partie "update" de votre application, c'est-à-dire uniquement lorsque l'application est déjà chargée. Le premier chargement est tout aussi important si ce n'est plus, et la solution à ce problème est le SSR (Server Side Rendering). Je vous redirige donc vers l'excellent article de [Vincent](/authors/vcomposieux/) sur ce sujet : ["Migrer une application React Client-Side en Server-Side avec NextJS"](/fr/migrer-une-application-react-client-side-en-server-side-avec-nextjs/).
+[Redux](https://redux.js.org/) ou encore [reselect](https://github.com/reactjs/reselect) sont aussi des pistes que vous pouvez explorer afin d'améliorer encore cette optimisation. Mais n'oubliez pas que nous n'avons optimisé que la partie "update" de votre application, c'est-à-dire uniquement lorsque l'application est déjà chargée. Le premier chargement est tout aussi important si ce n'est plus, et la solution à ce problème est le SSR (Server Side Rendering). Je vous redirige donc vers l'excellent article de [Vincent](/authors/vcomposieux/) sur ce sujet : ["Migrer une application React Client-Side en Server-Side avec NextJS"](/fr/migrer-une-application-react-client-side-en-server-side-avec-nextjs/).

@@ -37,7 +37,7 @@ Déjà assurez-vous que votre processeur n'est pas trop utilisé par d'autres t�
 Par exemple évitez de miner de la crypto-monnaie sur votre processeur en même temps.
 Et pour répondre, pendant que ça compile on fait autre chose :
 
-![On attend...]({{site.baseurl}}/assets/2017-12-15-compiling-linux-kernel/wait.gif){:class="center-image"}
+![On attend...]({{site.baseurl}}/assets/2017-12-15-compiling-linux-kernel/wait.gif)
 
 ### Si ça plante ?
 
@@ -171,11 +171,11 @@ La réponse est simple, l'entrée ajoutée à grub ajoute le initrd avec, sauf q
 
 Il n'y a plus qu'à rebooter et sélectionner notre nouvelle entrée :
 
-![grub]({{site.baseurl}}/assets/2017-12-15-compiling-linux-kernel/grub.png){:class="center-image"}
+![grub]({{site.baseurl}}/assets/2017-12-15-compiling-linux-kernel/grub.png)
 
 Puis le moment tant attendu arriva... Le saint Graal de toute personne qui compile son Kernel ! Le Mother Fucking Kernel Panic
 
-![Kernel Panic]({{site.baseurl}}/assets/2017-12-15-compiling-linux-kernel/kernel_panic.png){:class="center-image"}
+![Kernel Panic]({{site.baseurl}}/assets/2017-12-15-compiling-linux-kernel/kernel_panic.png)
 
 Bon dans mon cas précis j'ai vite fait trouvé l'erreur, je l'ai fait sur une VM (c'est plus simple pour les screenshots) sauf que j'ai désactivé le support des systèmes de fichiers virtuels (VFS). L'erreur est en général beaucoup plus parlante que sur un BSOD Windows !
 

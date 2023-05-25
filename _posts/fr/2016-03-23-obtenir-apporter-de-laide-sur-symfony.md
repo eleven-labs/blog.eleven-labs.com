@@ -34,13 +34,13 @@ Je ne peux que retourner le couteau dans la plaie pour ceux qui n’utilisent pa
 *   Sebastian Bergmann : lead dev PHPUnit (allemand)
 *   j’en passe…
 
-Sans langue commune, les projets ne seraient pas ce qu’ils sont ! Qui sait, bientôt peut-être serez-vous porteur d’un projet à vocation internationale, ne négligez donc pas votre anglais, ni la portée de celui-ci sur vos recherches. À noter par ailleurs que les traductions de la documentation Symfony dans d'autres langues que l'anglais ne sont officiellement plus supportées depuis [octobre 2015](http://symfony.com/blog/discontinuing-the-symfony-community-translations){:rel="nofollow noreferrer"}.
+Sans langue commune, les projets ne seraient pas ce qu’ils sont ! Qui sait, bientôt peut-être serez-vous porteur d’un projet à vocation internationale, ne négligez donc pas votre anglais, ni la portée de celui-ci sur vos recherches. À noter par ailleurs que les traductions de la documentation Symfony dans d'autres langues que l'anglais ne sont officiellement plus supportées depuis [octobre 2015](http://symfony.com/blog/discontinuing-the-symfony-community-translations).
 
 # La documentation officielle
 
 Pour ma part, quand mes recherches sont assez simples, je tombe bien souvent sur la même chose : la documentation de Symfony. Les faits sont là, les documentations encadrant Symfony 2 sont relativement complètes, à jour, couvrent de nombreux sujets et son généralement assez bien faites. Pour des oublis typiques, c’est souvent le point qui suit la recherche Google. J’ai en favoris les différents types de form Symfony 2 existants, ainsi que le basic-mapping doctrine, chose que je ne tiens pas à connaître par coeur, et pourtant parmi les choses que j’utilise très souvent. Notez par ailleurs, que la documentation officielle de Symfony est versionnée, ça peut paraître anodin, mais ça vous évitera peut-être 15mn de debug sur une doc qui ne correspond pas à la version de Symfony que vous utilisez :)
 
-La documentation répond donc à de nombreuses questions, il suffit de se donner les moyens de chercher. Outre cette doc, de nombreuses news Sf2 concernant les changelogs entre versions sont très intéressants à lire (j’ai en tête la news concernant le changement du security component, avec [la nouvelle implémentation des voters](http://symfony.com/blog/new-in-symfony-2-6-simpler-security-voters)){:rel="nofollow noreferrer"}.
+La documentation répond donc à de nombreuses questions, il suffit de se donner les moyens de chercher. Outre cette doc, de nombreuses news Sf2 concernant les changelogs entre versions sont très intéressants à lire (j’ai en tête la news concernant le changement du security component, avec [la nouvelle implémentation des voters](http://symfony.com/blog/new-in-symfony-2-6-simpler-security-voters)).
 
 # Le cas de StackOverflow
 
@@ -62,15 +62,15 @@ Lorsque même parcourir le code n’a fait que vous rendre fou, ou lorsque vous 
 
 Pour résumer, vous venez sur IRC pour obtenir de l’aide, mais ne lésinez pas sur l’aide que vous pouvez apporter en retour. L’échange et le partage sont à la base de tous les projets open-source et sont à la portée de tout le monde.
 
-Pour les détails, c'est par ici : [http://symfony.com/irc](http://symfony.com/irc){:rel="nofollow noreferrer"}
+Pour les détails, c'est par ici : [http://symfony.com/irc](http://symfony.com/irc)
 
 # Recevoir c'est bien mais donner c'est mieux
 
 Un bug qui traîne ? Ne négligez jamais votre capacité à comprendre ou ne pas comprendre quelque chose ! On peut tous contribuer, pas uniquement sur symfony, mais sur tout l'écosystème autour (les bundles sont nombreux). Et c’est grâce à cela que la communauté se forme et anticipe des besoins, chacun amenant sa pierre à l’édifice. En bref, c’est comme cela que Symfony (et tout projet open source) avance. Certains se démarquent des autres par leur volonté et leur attachement et finissent core-dev, mais pour les autres (utilisateurs du framework au final), nous soulevons des points qui permettent aux projets d’avancer et d'évoluer.
 
-Symfony propose par ailleurs des Virtual Hacking Days, des jours dédiés à la correction de bug. Certains sont triviaux, d'autres moins, et certains sont [carrément prémachés](https://github.com/symfony/symfony/issues/18088){:rel="nofollow noreferrer"} grâce au travail de Javier Eguiluz. Vous n'avez plus d'excuse :D
+Symfony propose par ailleurs des Virtual Hacking Days, des jours dédiés à la correction de bug. Certains sont triviaux, d'autres moins, et certains sont [carrément prémachés](https://github.com/symfony/symfony/issues/18088) grâce au travail de Javier Eguiluz. Vous n'avez plus d'excuse :D
 
-Contribuer c'est aussi améliorer la doc ([https://github.com/symfony/symfony-docs/commit/8a0297ffe50c213c50bd4d1ef267765696cc86ad](https://github.com/symfony/symfony-docs/commit/8a0297ffe50c213c50bd4d1ef267765696cc86ad)){:rel="nofollow noreferrer"}, c'est aussi faire des articles sur un blog, ou des tutoriels pour partager votre savoir.
+Contribuer c'est aussi améliorer la doc ([https://github.com/symfony/symfony-docs/commit/8a0297ffe50c213c50bd4d1ef267765696cc86ad](https://github.com/symfony/symfony-docs/commit/8a0297ffe50c213c50bd4d1ef267765696cc86ad)), c'est aussi faire des articles sur un blog, ou des tutoriels pour partager votre savoir.
 
 # Conclusion
 

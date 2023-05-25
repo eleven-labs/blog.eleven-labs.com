@@ -53,11 +53,11 @@ Le **WebRTC** est exploitable dans le navigateur au travers de plusieurs nouvell
 
 Le *WebRTC* ne se limite pas à ces trois API mais nous allons nous concentrer sur celles-ci pour commencer.
 
-Une liste plus exhaustive peut être trouvée [sur MDN](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API){:rel="nofollow noreferrer"}.
+Une liste plus exhaustive peut être trouvée [sur MDN](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API).
 
-### [navigator.getUserMedia()](https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia){:rel="nofollow noreferrer"}
+### [navigator.getUserMedia()](https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia)
 
-L'API navigator.getUserMedia() sert à prendre le contrôle sur les équipements médias de l'utilisateur, c.à.d. la webcam et le micro. On pourra alors manipuler ou transférer les flux émis par ces différents médias sous la forme d'une instance de [MediaStream()](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream){:rel="nofollow noreferrer"}. Le navigateur s'occupera de normaliser les protocoles audio/vidéo utilisés pour encoder ces flux. L'utilisateur devra néanmoins autoriser l'application à accéder à ses équipements.
+L'API navigator.getUserMedia() sert à prendre le contrôle sur les équipements médias de l'utilisateur, c.à.d. la webcam et le micro. On pourra alors manipuler ou transférer les flux émis par ces différents médias sous la forme d'une instance de [MediaStream()](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream). Le navigateur s'occupera de normaliser les protocoles audio/vidéo utilisés pour encoder ces flux. L'utilisateur devra néanmoins autoriser l'application à accéder à ses équipements.
 
 ```js
 // Ask for permission to access user webcam and microphone
@@ -75,9 +75,9 @@ function failure (err) {
 }
 ```
 
-La spécification *WebRTC* n'étant pas finalisée, la façon d'appeler cette API diffère selon le navigateur et sa version. Un [adaptateur](https://github.com/webrtc/adapter) développé et maintenu par le groupe de développement [*WebRTC*](https://webrtc.org){:rel="nofollow noreferrer"} existe pour uniformiser l'exploitation de cette API.
+La spécification *WebRTC* n'étant pas finalisée, la façon d'appeler cette API diffère selon le navigateur et sa version. Un [adaptateur](https://github.com/webrtc/adapter) développé et maintenu par le groupe de développement [*WebRTC*](https://webrtc.org) existe pour uniformiser l'exploitation de cette API.
 
-Sur la documentation de [MDN](https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia) on peut voir que cette méthode est obsolète, et remplacée par la nouvelle version de la spécification [mediaDevices.getUserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) qui dorénavant renvoie une [Promise()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise){:rel="nofollow noreferrer"} :
+Sur la documentation de [MDN](https://developer.mozilla.org/en/docs/Web/API/Navigator/getUserMedia) on peut voir que cette méthode est obsolète, et remplacée par la nouvelle version de la spécification [mediaDevices.getUserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) qui dorénavant renvoie une [Promise()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise) :
 
 ```js
 navigator.mediaDevices.getUserMedia({ audio: true, video: true })
@@ -88,7 +88,7 @@ navigator.mediaDevices.getUserMedia({ audio: true, video: true })
   });
 ```
 
-### [RTCPeerConnection()](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection) / [RTCIceCandidate()](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate){:rel="nofollow noreferrer"}
+### [RTCPeerConnection()](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection) / [RTCIceCandidate()](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate)
 
 L'API RTCPeerConnection() nous sert à établir une connexion réseau *P2P* (tunnel) pour envoyer des données entre deux clients. Pour réussir à l'établir, ce n'est pas aussi simple que d'entrer une *URL* dans un navigateur, la plupart des clients existants n'ayant pas d'adresse publique accessible.
 
@@ -165,7 +165,7 @@ signalingChannel.onmessage = function (evt) {
 };
 ```
 
-On voit que cela devient légèrement plus complexe d'arriver à ses fins, et cela sans compter les polyfills nécessaires pour les différents navigateurs. Heureusement, comme l'adaptateur de l'API navigator.getUserMedia(), il existe de très bonnes librairies open-source qui s'occupent de gérer cette complexité pour vous ([Twilio](https://www.twilio.com/), [EasyRTC](https://www.easyrtc.com/)){:rel="nofollow noreferrer"}.
+On voit que cela devient légèrement plus complexe d'arriver à ses fins, et cela sans compter les polyfills nécessaires pour les différents navigateurs. Heureusement, comme l'adaptateur de l'API navigator.getUserMedia(), il existe de très bonnes librairies open-source qui s'occupent de gérer cette complexité pour vous ([Twilio](https://www.twilio.com/), [EasyRTC](https://www.easyrtc.com/)).
 
 ### STUN/ICE
 
@@ -180,15 +180,15 @@ Serait-ce enfin ce qu'on pourrait appeler le *Web 3.0* ? Ce qui est sûr c'est q
 
 Beaucoup d'applications se basent déjà sur cette nouvelle technologie :
 
--   [Twilio](https://twilio.com){:rel="nofollow noreferrer"}
--   [Bistri](https://bistri.com/){:rel="nofollow noreferrer"}
--   [Ottspott](http://ottspott.co/){:rel="nofollow noreferrer"}
+-   [Twilio](https://twilio.com)
+-   [Bistri](https://bistri.com/)
+-   [Ottspott](http://ottspott.co/)
 
 Les grands noms de la visio-conférence se basent également dessus :
 
 -   Skype
 -   Facebook
 
-Dans une série d'articles, j'entrerai dans le vif du sujet avec des exemples concrets des possibilités que fournit le **WebRTC**. En attendant, renseignez-vous sur le site officiel [webrtc.org](https://webrtc.org), ou sur la très bonne documentation du [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API){:rel="nofollow noreferrer"}
+Dans une série d'articles, j'entrerai dans le vif du sujet avec des exemples concrets des possibilités que fournit le **WebRTC**. En attendant, renseignez-vous sur le site officiel [webrtc.org](https://webrtc.org), ou sur la très bonne documentation du [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API)
 
 Et surtout, Happy Coding !

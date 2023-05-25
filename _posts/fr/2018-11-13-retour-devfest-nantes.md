@@ -98,7 +98,7 @@ Cette présentation nous a donné envie de tester ELM. Vous imaginez ? Finies le
 
 Le speaker commence par nous raconter son histoire sur le JavaScript, pour expliquer comment le language a évolué. Et il dit qu'ELM réunit tous les avantages du JS moderne. ELM est un language fonctionnel qui complile le code en JavaScript. Jordane fait ensuite une démo d'une application simple 'Pile ou Face', développée sous nous yeux. Et c'est très réussi.
 
-Nous vous invitons à regarder la vidéo de [cette présentation](https://www.youtube.com/watch?v=pjeXbKXSiVs){:rel="nofollow noreferrer"} sur youtube.
+Nous vous invitons à regarder la vidéo de [cette présentation](https://www.youtube.com/watch?v=pjeXbKXSiVs) sur youtube.
 
 ## Conclusion
 

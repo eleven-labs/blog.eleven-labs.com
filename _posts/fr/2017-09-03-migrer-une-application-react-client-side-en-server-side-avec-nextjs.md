@@ -24,7 +24,7 @@ La plupart des applications front utilisant React sur lesquelles j'ai pu travail
 
 Cependant, en fonction des outils que vous utilisez, il se peut que celles-ci ne soient pas visibles par les moteurs de recherche et empêchent donc une bonne indexation de vos contenus (SEO).
 
-Afin de palier à ce problème, des frameworks ont vu le jour afin de permettre de rendre des applications React côté serveur (server-side). C'est le cas de [Next.JS](https://github.com/zeit/next.js){:rel="nofollow noreferrer"}{:target="blank"} que nous allons étudier dans cet article.
+Afin de palier à ce problème, des frameworks ont vu le jour afin de permettre de rendre des applications React côté serveur (server-side). C'est le cas de [Next.JS](https://github.com/zeit/next.js) que nous allons étudier dans cet article.
 
 Je disposais en effet d'une application React rendue côté client et l'ai migrée vers un rendu côté serveur en quelques heures seulement grâce au framework.
 L'objectif de cet article est de partager avec vous mon expérience technique sur cette migration.
@@ -34,12 +34,12 @@ Premiers pas
 
 Avant tout, il nous faut regarder ce que propose Next.JS afin de voir si ce framework correspond à nos besoins :
 
-* Une [installation simple](https://github.com/zeit/next.js#setup){:rel="nofollow noreferrer"},
-* Rendu de [fichiers statiques](https://github.com/zeit/next.js#static-file-serving-eg-images){:rel="nofollow noreferrer"} tel que des images et fichiers CSS dans un répertoire `static`,
+* Une [installation simple](https://github.com/zeit/next.js#setup),
+* Rendu de [fichiers statiques](https://github.com/zeit/next.js#static-file-serving-eg-images) tel que des images et fichiers CSS dans un répertoire `static`,
 * Des URLs (routing) pré-définies à partir des noms des fichiers JS présents dans le répertoire `pages`,
-* Possibilité de définir des [routes personnalisées/paramétrisées](https://github.com/zeit/next.js/#custom-server-and-routing){:rel="nofollow noreferrer"} (mais j'ai utilisé [next-routes](https://github.com/fridays/next-routes){:rel="nofollow noreferrer"} pour cela, plus simple d'utilisation){:rel="nofollow noreferrer"},
-* Exécuter des [actions côté serveur seulement](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle){:rel="nofollow noreferrer"},
-* Une intégration simple avec Redux grâce à [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper){:rel="nofollow noreferrer"}.
+* Possibilité de définir des [routes personnalisées/paramétrisées](https://github.com/zeit/next.js/#custom-server-and-routing) (mais j'ai utilisé [next-routes](https://github.com/fridays/next-routes) pour cela, plus simple d'utilisation),
+* Exécuter des [actions côté serveur seulement](https://github.com/zeit/next.js#fetching-data-and-component-lifecycle),
+* Une intégration simple avec Redux grâce à [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper).
 
 À priori, vous devriez donc avoir tout ce dont vous avez besoin pour migrer votre projet. Commençons !
 

@@ -17,7 +17,7 @@ keywords:
   - web
 ---
 
-Je suis actuellement Lead développeur pour un site de presse Français à très fort trafic ([lemonde.fr](http://www.lemonde.fr)){:rel="nofollow noreferrer"}. Au cours de mes expériences précédentes, j'ai pu développer sur plusieurs autres sites à forte volumétrie.
+Je suis actuellement Lead développeur pour un site de presse Français à très fort trafic ([lemonde.fr](http://www.lemonde.fr)). Au cours de mes expériences précédentes, j'ai pu développer sur plusieurs autres sites à forte volumétrie.
 
 Quand avec seulement une dizaine de serveurs vous devez contenir des pics de trafic entre 100 000 et 300 000 visiteurs instantanés, le cache n'est plus optionnel. Il devient une véritable nécessité. Votre application peut avoir les meilleures performances, vous serez toujours limités par vos machines physiques -même si ce n'est plus vrai dans le cloud (avec un budget illimité)- le cache doit donc devenir votre ami.
 Avec l'expérience que j'ai pu accumuler sur le sujet et les nombreux pièges dans lesquels je suis tombé, je vais tenter de vous donner les meilleurs solutions d'utilisation des différents caches.
@@ -126,7 +126,7 @@ Etag: home560
 ```
 
 Attention, le calcul de l'etag doit être très réfléchi puisqu'il régit le temps de cache de la page, il doit donc être calculé avec les données dynamiques de la page.
-Comme expliqué dans le premier chapitre, la clé du cache HTTP est l'url de la page. Cela peut être gênant si votre page est dynamique selon l'utilisateur car l'url sera la même, mais le contenu sera différent. Il faut donc cacher plusieurs contenus pour une url. Heureusement, [Tim Berners-Le](https://fr.wikipedia.org/wiki/Tim_Berners-Lee){:rel="nofollow noreferrer"}, l'inventeur du protocole HTTP a prévu le cas en ajoutant le header :
+Comme expliqué dans le premier chapitre, la clé du cache HTTP est l'url de la page. Cela peut être gênant si votre page est dynamique selon l'utilisateur car l'url sera la même, mais le contenu sera différent. Il faut donc cacher plusieurs contenus pour une url. Heureusement, [Tim Berners-Le](https://fr.wikipedia.org/wiki/Tim_Berners-Lee), l'inventeur du protocole HTTP a prévu le cas en ajoutant le header :
 
 ```
 Vary: Cookie User-agent
@@ -251,7 +251,7 @@ sub vcl_backend_response {
 ### Les ESI
 
 Vous êtes désormais un expert dans l'utilisation du cache HTTP, il ne reste plus qu'une chose à comprendre : les ESI.
-Edge Side Include (ESI) permet d'utiliser toute la puissance de varnish. Comme indiqué plus haut, cette technologie fut inventée par [Akamai](https://www.akamai.com/fr/){:rel="nofollow noreferrer"}, l'un des plus célèbres CDN.
+Edge Side Include (ESI) permet d'utiliser toute la puissance de varnish. Comme indiqué plus haut, cette technologie fut inventée par [Akamai](https://www.akamai.com/fr/), l'un des plus célèbres CDN.
 
 > À quoi ça sert ?
 
@@ -271,5 +271,5 @@ Test
 
 Varnish va reconnaître l'utilisation d'un ESI et va donc cacher deux objets, l'un pour la page complète avec les informations de cache de la page et l'un pour ESI avec d'autres informations de cache. Vous pouvez alors décacher seulement l'ESI et varnish va mettre à jour un seul objet (une seule demande au serveur), l'utilisateur a tout de même toutes les pages mises à jour.
 
-Pour plus d'informations, je vous invite à aller voir un ancien [article](https://blog.eleven-labs.com/symfony-2-cache-http-esi/){:rel="nofollow noreferrer"} , qui explique une implémentation pour Symfony.
-Vous pouvez aussi retrouver une présentation sur le cache HTTP et Symfony [ici](https://docs.google.com/presentation/d/1RVr_JfpFKVRXdg4hy6war3OfiSJtdeYzFsdxhn2t0NY/edit?usp=sharing){:rel="nofollow noreferrer"}.
+Pour plus d'informations, je vous invite à aller voir un ancien [article](https://blog.eleven-labs.com/symfony-2-cache-http-esi/) , qui explique une implémentation pour Symfony.
+Vous pouvez aussi retrouver une présentation sur le cache HTTP et Symfony [ici](https://docs.google.com/presentation/d/1RVr_JfpFKVRXdg4hy6war3OfiSJtdeYzFsdxhn2t0NY/edit?usp=sharing).

@@ -20,11 +20,11 @@ keywords:
   - notification
 ---
 
-Lors d'un article précédent nous avons créé [notre première PWA](https://blog.eleven-labs.com/fr/votre-premiere-pwa/), mais nous n'avons pas été jusqu'au bout du concept. L'intérêt du [PWA](https://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/){:rel="nofollow noreferrer"}, c'est d'agir comme une application mobile, d'être installé sur le téléphone, de gérer le off-line et surtout d'envoyer des push notifications. Les notifications sont un élément essentiel de l'engagement de l'utilisateur, elles permettent de faire un rappel et de communiquer avec nos utilisateurs. Nous allons donc finaliser le dernier tutoriel en mettant en place un système simple de push notification, en utilisant
+Lors d'un article précédent nous avons créé [notre première PWA](https://blog.eleven-labs.com/fr/votre-premiere-pwa/), mais nous n'avons pas été jusqu'au bout du concept. L'intérêt du [PWA](https://blog.eleven-labs.com/fr/progressive-web-apps-au-googledevsummit/), c'est d'agir comme une application mobile, d'être installé sur le téléphone, de gérer le off-line et surtout d'envoyer des push notifications. Les notifications sont un élément essentiel de l'engagement de l'utilisateur, elles permettent de faire un rappel et de communiquer avec nos utilisateurs. Nous allons donc finaliser le dernier tutoriel en mettant en place un système simple de push notification, en utilisant
 
-[Firebase](https://firebase.google.com/){:rel="nofollow noreferrer"} pour stocker nos tokens utilisateurs.
+[Firebase](https://firebase.google.com/) pour stocker nos tokens utilisateurs.
 
-Pour aller plus vite, nous vous invitons à récupérer le projet [https://github.com/CaptainJojo/pwa-parisjs](https://github.com/CaptainJojo/pwa-parisjs){:rel="nofollow noreferrer"} qui contient une PWA prête à l'emploi.
+Pour aller plus vite, nous vous invitons à récupérer le projet [https://github.com/CaptainJojo/pwa-parisjs](https://github.com/CaptainJojo/pwa-parisjs) qui contient une PWA prête à l'emploi.
 
 ```sh
 git clone https://github.com/CaptainJojo/pwa-parisjs
@@ -34,9 +34,9 @@ npm install
 npm start
 ```
 
-A partir de la vous devez avoir accès à votre PWA à l'adresse suivante [localhost:8080](localhost:8080). Si ce n'est pas fait, vous devez  installer [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk){:rel="nofollow noreferrer"}, ce qui vous permettra de valider que vous avez bien une PWA.
+A partir de la vous devez avoir accès à votre PWA à l'adresse suivante [localhost:8080](localhost:8080). Si ce n'est pas fait, vous devez  installer [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk), ce qui vous permettra de valider que vous avez bien une PWA.
 Avant de se lancer dans l'envoi d'une push notification, nous allons passer par la configuration. Et oui ! Ce n'est pas magique, nous allons demander à Google l'autorisation.
-Nous allons sur [Firebase](https://console.firebase.google.com/){:rel="nofollow noreferrer"} pour créer un projet.
+Nous allons sur [Firebase](https://console.firebase.google.com/) pour créer un projet.
 
 ![Firebase - créer un projet](/_assets/posts/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-11.19.54.png)
 
@@ -339,4 +339,4 @@ Si tout est bon, quand vous relancez le serveur et que vous allez sur / puis /se
 ![Firebase - Autorisation](/_assets/posts/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-17.46.23.png)
 
 
-Encore une fois ce code est vraiment un tutoriel, je vous invite donc à faire des issues pour la moindre question. Le code final est [ici](https://github.com/CaptainJojo/pwa-parisjs/tree/push){:rel="nofollow noreferrer"}.
+Encore une fois ce code est vraiment un tutoriel, je vous invite donc à faire des issues pour la moindre question. Le code final est [ici](https://github.com/CaptainJojo/pwa-parisjs/tree/push).

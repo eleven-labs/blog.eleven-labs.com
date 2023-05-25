@@ -46,7 +46,7 @@ Avant de rentrer dans les détails, voici un schéma expliquant le fonctionnemen
 
 Comme vous pouvez le voir sur ce diagramme, nous avons ici quatre `Queues` de définies, et chacune d'entre elles dispose de trois `Workers`.
 
-Notre librairie (`WorkMQ`, ici le point central), fournira un [Channel (au sens du langage Go)](https://golang.org/ref/spec#Channel_types){:rel="nofollow noreferrer"} dans lequel seront stockés les messages de la queue correspondante qui seront dépilés par le premier worker disponible.
+Notre librairie (`WorkMQ`, ici le point central), fournira un [Channel (au sens du langage Go)](https://golang.org/ref/spec#Channel_types) dans lequel seront stockés les messages de la queue correspondante qui seront dépilés par le premier worker disponible.
 
 Configuration
 -------------
@@ -360,7 +360,7 @@ Pour vous aider à visualiser le résultat, voici la sortie HTTP :
 Conclusion
 ----------
 
-Avant tout, le code de la librairie est disponible en open-source ici : [https://github.com/unikorp/workmq](https://github.com/unikorp/workmq){:rel="nofollow noreferrer"}.
+Avant tout, le code de la librairie est disponible en open-source ici : [https://github.com/unikorp/workmq](https://github.com/unikorp/workmq).
 
 Pour ce live-coding / workshop, j'avais deux objectifs :
 * Permettre à mes participants de ressortir de la session en ayant écrit une librairie open-source complète et fonctionnelle,

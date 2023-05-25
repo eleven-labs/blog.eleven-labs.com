@@ -30,7 +30,7 @@ Vous l'avez compris, cet outil va changer votre vie.
 
 Voici la liste des libs à disposition avec Fastlane :
 
-![Fastlane tools]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_tools.png){:width="400px"}
+![Fastlane tools]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_tools.png)
 
 * **Deliver**: Télécharge des captures d'écran, des métadonnées et votre application sur l'App Store en utilisant une seule commande.
 * **Snapshot**: Automatise la prise des captures d'écran localisées de votre application iOS sur tous les périphériques.
@@ -50,7 +50,7 @@ Se rajoute également à cette liste :
 
 *Schéma de lanes fastlane*
 
-![Fastlane tree]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane-tree.png){:width="400px"}
+![Fastlane tree]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane-tree.png)
 
 Personnellement, quand j'ai vu ce que Fastlane était capable de faire j'ai limite versé une petite larmichette !
 Fini le temps de tout faire à la main !
@@ -87,7 +87,7 @@ On vous demandera votre Apple ID, mot de passe et dans mon cas un digit code via
 Fastlane vous récapitulera vos informations dans  `Summary for produce` et créera votre application dans Itunes Connect et Dev Center.
 Il générera également une configuration pour vous, en fonction des informations fournies.
 
-![Fastlane files]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastline-files.png){:width="400px"}
+![Fastlane files]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastline-files.png)
 
 **Appfile**: L'Appfile stocke des informations utiles qui sont utilisées dans toutes les libs Fastlane comme votre Apple ID ou le Bundle Identifier, pour déployer vos **lanes** (voies) plus rapidement, adaptées aux besoins de votre projet.
 
@@ -140,7 +140,7 @@ $ bundle exec fastlane test
 
 Il lance alors tous les unit/ui tests de votre projet. Bien évidemment, Scan peut générer des rapports au format HTML, JSON et JUnit.
 
-![CLI scan]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/cli-scan.png){:width="900px"}
+![CLI scan]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/cli-scan.png)
 
 Magique non ?
 
@@ -150,12 +150,12 @@ Heureusement Fastlane nous met à disposition **Match**.
 
 # Match
 
-Match implémente le concept de [codesigning guide](https://codesigning.guide){:rel="nofollow noreferrer"}.
+Match implémente le concept de [codesigning guide](https://codesigning.guide).
 Il permet de créer tous vos certificats et profils de provisionnement dans un compte Git distinct.
 Chaque membre de l'équipe ayant accès au repo peut utiliser ces credentials pour la signature de code.
 
 Match répare également automatiquement les credentials brisés et expirés.
-Ceci est bien évidement [sécurisé](https://github.com/fastlane/fastlane/tree/master/match#is-this-secure){:rel="nofollow noreferrer"}.
+Ceci est bien évidement [sécurisé](https://github.com/fastlane/fastlane/tree/master/match#is-this-secure).
 
 *Note* : L'implémentation de match vous oblige à révoquer vos certificats existants.
 
@@ -170,7 +170,7 @@ Si vous ne voulez pas révoquer vos certificats existants, mais souhaitez toujou
 $ bundle exec fastlane match init
 ```
 
-![](https://github.com/fastlane/fastlane/raw/master/match/assets/match_init.gif){:rel="nofollow noreferrer"}
+![](https://github.com/fastlane/fastlane/raw/master/match/assets/match_init.gif)
 
 Cela vous demandera d'entrer l'url de votre repo Git. Vous pouvez aussi utiliser un lien git@ si votre machine peut se connecter en SSH sur ce repo.
 
@@ -198,7 +198,7 @@ match(git_branch: "team2", username: "user@team2.com")
 ```
 
 
-Avant d'exécuter match pour la première fois, vous devriez envisager de supprimer vos profils et certificats existants à l'aide de la commande [match nuke](https://github.com/fastlane/fastlane/tree/master/match#nuke){:rel="nofollow noreferrer"}.
+Avant d'exécuter match pour la première fois, vous devriez envisager de supprimer vos profils et certificats existants à l'aide de la commande [match nuke](https://github.com/fastlane/fastlane/tree/master/match#nuke).
 
 Exécuter match :
 
@@ -206,7 +206,7 @@ Exécuter match :
 $ bundle exec fastlane match appstore
 ```
 
-![](https://github.com/fastlane/fastlane/raw/master/match/assets/match_appstore_small.gif){:rel="nofollow noreferrer"}
+![](https://github.com/fastlane/fastlane/raw/master/match/assets/match_appstore_small.gif)
 
 Cela créera un nouveau certificat et un profil de provisionnement (si nécessaire) et les stockera dans votre repo Git.
 Si vous avez précédemment exécuté match, il installera automatiquement les profils existants à partir du repo Git.
@@ -216,7 +216,7 @@ Les provisioning profiles sont installés dans ~ / Library / MobileDevice / Prov
 **Comment faire si vous devez ajouter un nouveau device ?**
 
 Non on ne va pas se connecter et le faire à la main !
-On va utiliser l'action [register_devices](https://docs.fastlane.tools/actions/#register_devices){:rel="nofollow noreferrer"} en combinaison avec match.
+On va utiliser l'action [register_devices](https://docs.fastlane.tools/actions/#register_devices) en combinaison avec match.
 
 ```ruby
 lane :recette do
@@ -245,7 +245,7 @@ De cette manière, vous n'aurez pas à mettre à jour Xcode à chaque fois que v
 
 Vous pouvez spécifier quel profil de provisionnement utiliser dans `General` tab après avoir désactivé `Automatically manage signing`.
 
-![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_xcode_sign.png){:width="600px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_xcode_sign.png)
 
 On vient de voir avec quelle facilité on gère les certificats et profils de provisionnement. Maintenant on va s'attaquer au push notification profile.
 
@@ -347,8 +347,8 @@ end
 
 *Résultat sur Slack*
 
-![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_scan_success.png){:width="180px"}
-![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_scan_error.png){:width="200px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_scan_success.png)
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_scan_error.png)
 
 # Snapshot - Frameit
 
@@ -471,7 +471,7 @@ Bon c'est le moment d'aller prendre un café ou de manger une pomme ! (Oui les p
 
 Fastlane vous crée une page HTML récapitulant tous les devices par langues.
 
-![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_snapshot_success.png){:width="200px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_snapshot_success.png)
 ![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/fastlane_snapshot.png)
 
 Cool non ?
@@ -505,7 +505,7 @@ Bon, maintenant qu'on a nos beaux screenshots, on va rajouter de beaux cadres no
 
 *Prérequis*
 
-Pour utiliser `Frameit`, il faut avoir sur votre machine [ImageMagick](https://www.imagemagick.org/script/index.php){:rel="nofollow noreferrer"}.
+Pour utiliser `Frameit`, il faut avoir sur votre machine [ImageMagick](https://www.imagemagick.org/script/index.php).
 
 Sur mac, il suffit de faire :
 
@@ -522,7 +522,7 @@ $ bundle exec fastlane frameit
 
 Vous avez normalement de nouvelles images qui sont arrivées telles que :
 
-![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6Plus-02CarDetail-d41d8cd98f00b204e9800998ecf8427e_framed.png){:height="600px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6Plus-02CarDetail-d41d8cd98f00b204e9800998ecf8427e_framed.png)
 
 Et si vous avez envie d'avoir l'iphone rose on fait comment ?
 
@@ -533,9 +533,9 @@ $ bundle exec fastlane frameit download_frames
 $ bundle exec fastlane frameit rose_gold
 ```
 
-![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6-01CarList-d41d8cd98f00b204e9800998ecf8427e_framed.png){:height="600px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6-01CarList-d41d8cd98f00b204e9800998ecf8427e_framed.png)
 
-Vous trouverez la liste des frames [ici](https://github.com/fastlane/frameit-frames/tree/gh-pages/latest){:rel="nofollow noreferrer"}.
+Vous trouverez la liste des frames [ici](https://github.com/fastlane/frameit-frames/tree/gh-pages/latest).
 
 Bon, c'est pas mal mais on peut encore faire mieux. Comment ? En rajoutant un titre à ce beau screenshot.
 
@@ -575,8 +575,8 @@ Créer un fichier `Framefile.json` dans le dossier screenshots.
 }
 ```
 
-![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6-01CarList-d41d8cd98f00b204e9800998ecf8427e_framed_custom.png){:height="600px"}
-![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6-02CarDetail-d41d8cd98f00b204e9800998ecf8427e_framed_custom.png){:height="600px"}
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6-01CarList-d41d8cd98f00b204e9800998ecf8427e_framed_custom.png)
+![]({{ site.baseurl }}/assets/2017-07-17-fastlane-ios/iPhone6-02CarDetail-d41d8cd98f00b204e9800998ecf8427e_framed_custom.png)
 
 Avouez c'est bad ass ? :)
 
@@ -649,7 +649,7 @@ Cela recherchera automatiquement un ipa dans votre répertoire courant et tenter
 de connexion à partir de votre configuration Fastlane.
 
 *Note* : Pensez bien à créer votre application sur Itunes Connect avant.
-(ou utilisez la lib [produce](https://github.com/fastlane/fastlane/tree/master/produce)){:rel="nofollow noreferrer"}
+(ou utilisez la lib [produce](https://github.com/fastlane/fastlane/tree/master/produce))
 
 Nous pouvons reprendre notre **lane** précédement créée et y rajouter l'instruction `pilot`
 
@@ -667,7 +667,7 @@ end
 $ bundle exec fastlane buildTestFlight
 ```
 *Note*:
-1. Si comme moi vous avez une double identification via votre téléphone, il suffit de se connecter [ici](https://appleid.apple.com/account/manage){:rel="nofollow noreferrer"} et de générer un password dans la section Security > APP-SPECIFIC PASSWORDS
+1. Si comme moi vous avez une double identification via votre téléphone, il suffit de se connecter [ici](https://appleid.apple.com/account/manage) et de générer un password dans la section Security > APP-SPECIFIC PASSWORDS
 2. Vérifiez sur votre Itunes Connect le bundle identifier renseigné.
 
 # Deliver
@@ -692,7 +692,7 @@ deliver(force: true) # Force: true pour skip le repport HTML de verification
 
 Vous devriez avoir un nouveau folder metadata qui vient d'apparaître.
 
-![](https://raw.githubusercontent.com/fastlane/fastlane/master/deliver/assets/metadata.png){:rel="nofollow noreferrer"}
+![](https://raw.githubusercontent.com/fastlane/fastlane/master/deliver/assets/metadata.png)
 
 À vous maintenant de mettre à jour ces metadata.
 

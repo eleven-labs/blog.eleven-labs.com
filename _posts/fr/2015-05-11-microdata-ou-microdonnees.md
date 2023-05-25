@@ -129,7 +129,7 @@ dans les locaux de
 
 ### Autre exemple
 
-Voici un exemple d’offre d’emploi issu du site [eleven-labs.com](http://www.eleven-labs.com){:rel="nofollow noreferrer"} :
+Voici un exemple d’offre d’emploi issu du site [eleven-labs.com](http://www.eleven-labs.com) :
 
 Version HTML
 
@@ -195,7 +195,7 @@ Pour finir, je ne sais pas de quoi le web sera fait à l'avenir : le Big data, l
 
 ### Quelques ressources
 
-- [Schema.org](http://schema.org){:rel="nofollow noreferrer"}
-- [Introduction to Structured Data](https://developers.google.com/structured-data/){:rel="nofollow noreferrer"}
+- [Schema.org](http://schema.org)
+- [Introduction to Structured Data](https://developers.google.com/structured-data/)
 
-Google propose également un [outil d'analyse](http://www.google.com/webmasters/tools/richsnippets){:rel="nofollow noreferrer"} de vos pages à la recherche qui détecte le schéma utilisé et vous fait un rapport sur les données trouvées, leur formatage ainsi que les éventuelles erreurs rencontrées.
+Google propose également un [outil d'analyse](http://www.google.com/webmasters/tools/richsnippets) de vos pages à la recherche qui détecte le schéma utilisé et vous fait un rapport sur les données trouvées, leur formatage ainsi que les éventuelles erreurs rencontrées.

@@ -232,4 +232,31 @@ Some content`);
       'The markdown of the file "path/to/fake-post-1.md" is invalid ! Validation error: No duplicates allowed. at "keywords"'
     );
   });
+
+  it('should throw an error if an article has bad syntax on markdown', () => {
+    jest
+      .spyOn(glob, 'globSync')
+      .mockReturnValueOnce(['path/to/fake-author-1.md'])
+      .mockReturnValueOnce(['path/to/fake-post-1.md', 'path/to/fake-post-2.md']);
+    jest.spyOn(fs, 'readFileSync').mockReturnValueOnce(`---
+username: jdoe
+name: John Doe 1
+---
+Some content`).mockReturnValue(`---
+lang: en
+date: 2022-04-01
+slug: my-post
+title: My Post
+excerpt: Some excerpt
+authors:
+  - jdoe
+categories:
+  - javascript
+---
+[Eleven Labs Link](https://eleven-labs.com/){:rel="nofollow noreferrer"}`);
+
+    expect(() => validateMarkdown()).toThrow(
+      'The markdown of the file "path/to/fake-post-1.md" is not compliant, it contains a syntax that is not allowed !'
+    );
+  });
 });

@@ -53,7 +53,7 @@ $channel->basic_publish($msg, '', 'rpc_queue');
 ```
 
 Vous pouvez trouver toutes les options disponibles pour le protocole AMQP dans la library suivante
-[https://github.com/videlalvaro/php-amqplib](https://github.com/videlalvaro/php-amqplib){:rel="nofollow noreferrer"}
+[https://github.com/videlalvaro/php-amqplib](https://github.com/videlalvaro/php-amqplib)
 
 Le code ci-dessus fait que tous les messages publiés dans la queue auront une réponse dans la queue de callback. Un problème demeure : comment reconnaître chaque message dans la queue de callback? L'idée est de mettre sur chaque message une clé unique qui permet de le reconnaitre ensuite.
 

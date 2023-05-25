@@ -29,7 +29,7 @@ Sur mon ordinateur, après avoir activé le Chrome Screencast, je peux faire de 
 
 Pour activer ces fonctionnalités :
 
--   Sur votre ordinateur, allez sur [chrome://flags/](//flags/){:rel="nofollow noreferrer"} et cliquez :
+-   Sur votre ordinateur, allez sur [chrome://flags/](//flags/) et cliquez :
     -   *Activer le débogage à distance sur USB* et
     -   *Activer les expérimentations dans les outils de développement*.
 -   Sur la tablette, il faut avoir le *Débogage USB activé*. Pour ce faire :
@@ -38,13 +38,13 @@ Pour activer ces fonctionnalités :
 -   Ensuite, connectez votre tablette ou téléphone en USB, et ouvrez Google Chrome.
 -   Sur la tablette, il faut accepter votre ordinateur en validant la fenêtre d'alerte.
 
-Et c'est bon ! Il ne vous reste plus qu'à aller sur [chrome://inspect/](//inspect/){:rel="nofollow noreferrer"} pour voir apparaitre les pages ouvertes sur le périphérique :
+Et c'est bon ! Il ne vous reste plus qu'à aller sur [chrome://inspect/](//inspect/) pour voir apparaitre les pages ouvertes sur le périphérique :
 
 ![Google inspect screencast](/_assets/posts/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/google-inspect-screencast.jpg)
 
 ![Google-toggle-screencast](/_assets/posts/2014-02-10-chrome-screencast-deboguer-le-rendu-mobile-dun-site-responsive/google-toggle-screencast.jpg)
 Et à cliquer sur *inspect*. Vous trouverez en bas à gauche de de la fenètre DevTools qui s'ouvre un bouton *Toggle Screencast *:
 
-Retrouvez encore plus de fonctionnalités avancées dans cet excellent article de Paul Irish pour HTML5Rocks : [Chrome DevTools for Mobile: Screencast and Emulation](http://www.html5rocks.com/en/tutorials/developertools/mobile/ "Chrome DevTools for Mobile: Screencast and Emulation by Paul Irish"){:rel="nofollow noreferrer"}
+Retrouvez encore plus de fonctionnalités avancées dans cet excellent article de Paul Irish pour HTML5Rocks : [Chrome DevTools for Mobile: Screencast and Emulation](http://www.html5rocks.com/en/tutorials/developertools/mobile/ "Chrome DevTools for Mobile: Screencast and Emulation by Paul Irish")
 
 Ce site n'a pas été évalué

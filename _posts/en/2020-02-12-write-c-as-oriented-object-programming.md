@@ -202,7 +202,7 @@ Let's come back on the **hello** function. This function is now declared in our 
 
 ## The final look
 
-As I told you before, this code is meant to be a demo in order to let you think about this way of coding, it does not really interact with the user. I will then dump all the code at once, so like that nothing more easy for you, you just have to test it (for exemple on ideone](https://ideone.com/){:rel="nofollow noreferrer"})
+As I told you before, this code is meant to be a demo in order to let you think about this way of coding, it does not really interact with the user. I will then dump all the code at once, so like that nothing more easy for you, you just have to test it (for exemple on ideone](https://ideone.com/))
 
 ```C
 #include <stdlib.h>

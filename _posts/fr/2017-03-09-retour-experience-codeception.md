@@ -41,16 +41,16 @@ Dans le cadre de la refonte d'une autre partie de notre SI nous avons donc déci
 
 Nous avons cherché ce qui se faisait dans le domaine du test fonctionnel. Nos critères étaient d'avoir un outil qui n'est pas forcément "human friendly" mais qui ne constitue pas une difficulté pour les devs (PHP en l'occurence). On a de fait écarté tous les outils dans un langage tierce, à cause du temps d'apprentissage.
 
-On a fini par découvrir Codeception ([http://codeception.com/](http://codeception.com/)) qui est une solution de test écrit en PHP et qui possède beaucoup de modules (AMQP, Doctrine2, Filesystem, MongoDb, REST, Symfony,...){:rel="nofollow noreferrer"}.
+On a fini par découvrir Codeception ([http://codeception.com/](http://codeception.com/)) qui est une solution de test écrit en PHP et qui possède beaucoup de modules (AMQP, Doctrine2, Filesystem, MongoDb, REST, Symfony,...).
 
 Présentation
 --------
 
 Codeception permet de couvrir votre application entièrement, en effet ils intègrent tout type de tests :
 
-- Acceptance [http://codeception.com/docs/03-AcceptanceTests](http://codeception.com/docs/03-AcceptanceTests){:rel="nofollow noreferrer"}
-- Functional [http://codeception.com/docs/04-FunctionalTests](http://codeception.com/docs/04-FunctionalTests){:rel="nofollow noreferrer"}
-- Unit [http://codeception.com/docs/05-UnitTests](http://codeception.com/docs/05-UnitTests){:rel="nofollow noreferrer"}
+- Acceptance [http://codeception.com/docs/03-AcceptanceTests](http://codeception.com/docs/03-AcceptanceTests)
+- Functional [http://codeception.com/docs/04-FunctionalTests](http://codeception.com/docs/04-FunctionalTests)
+- Unit [http://codeception.com/docs/05-UnitTests](http://codeception.com/docs/05-UnitTests)
 
 **Les tests unitaires **
 
@@ -211,7 +211,7 @@ class EndpointCest
 }
 ```
 
-Je vous invite à aller lire la [doc de codeception](http://codeception.com/docs/), elle est assez complète et vous pourrez voir qu'ils supportent pas mal de modules :){:rel="nofollow noreferrer"}
+Je vous invite à aller lire la [doc de codeception](http://codeception.com/docs/), elle est assez complète et vous pourrez voir qu'ils supportent pas mal de modules :)
 
 Je ne rentre pas plus dans le détail pour le moment, le but était plus de vous faire un retour d'expérience, si vous êtes intéressé pour un article plus poussé sur son utilisation n'hésitez pas à me l'indiquer.
 

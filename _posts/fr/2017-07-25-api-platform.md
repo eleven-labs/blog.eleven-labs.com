@@ -14,7 +14,7 @@ keywords: []
 
 Api Platform se définit comme un « framework PHP pour construire des APIs web modernes ». En effet, cet outil va nous permettre de construire rapidement une API riche et facilement utilisable.
 Pourquoi réinventer la roue ? Cet outil est accompagné de tout un tas de _features_ comme une documentation automatisée, la gestion des filtres et des tris, et bien d’autres encore.
-Dans cet article, nous allons voir ensemble la création d’une API avec Api Platform, en parlant de certaines fonctionnalités. Je pars du principe que vous avez déjà installé [Api Platform](https://api-platform.com/docs/){:rel="nofollow noreferrer"}.
+Dans cet article, nous allons voir ensemble la création d’une API avec Api Platform, en parlant de certaines fonctionnalités. Je pars du principe que vous avez déjà installé [Api Platform](https://api-platform.com/docs/).
 
 ## Créons notre API
 
@@ -101,10 +101,10 @@ class Movie
 Vous avez maintenant la possibilité de requêter votre API avec l’url suivante : `movies?name=O&order[name]=desc`
 Simple à mettre en place non ?
 
-Il est bien évidemment possible de créer ses propres [filtres Api Platform](https://api-platform.com/docs/core/filters#creating-custom-filters){:rel="nofollow noreferrer"}.
+Il est bien évidemment possible de créer ses propres [filtres Api Platform](https://api-platform.com/docs/core/filters#creating-custom-filters).
 
 De nombreuses autres fontionnalités détaillées dans la documentation existent notamment :
-* la [pagination](https://api-platform.com/docs/core/pagination){:rel="nofollow noreferrer"}
+* la [pagination](https://api-platform.com/docs/core/pagination)
 * un système d'événements riche
 * un système d'invalidation de cache (à venir dans la version 2.1)
 
@@ -118,4 +118,4 @@ Enfin la documentation est un gros point positif. Étant très riche, elle conti
 
 ## À venir
 
-La version 2.1 d'API Platform va bientot sortir, et nous réserve de nombreuses nouvelles fonctionnalités, notamment un système d'administration développé en _React_, de nouveaux filtres... Les détails [ici](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/){:rel="nofollow noreferrer"}
+La version 2.1 d'API Platform va bientot sortir, et nous réserve de nombreuses nouvelles fonctionnalités, notamment un système d'administration développé en _React_, de nouveaux filtres... Les détails [ici](https://dunglas.fr/2017/06/api-platform-2-1-feature-walkthrough-create-blazing-fast-hypermedia-apis-generate-js-apps/)

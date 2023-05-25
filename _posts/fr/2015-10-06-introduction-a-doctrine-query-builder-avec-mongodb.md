@@ -20,7 +20,7 @@ Bonjour à tous,
 
 Je vais parler du query builder (constructeur de requête) Doctrine pour faire des requêtes vers une base de données MongoDB.
 
-Si vous voulez suivre les exemples et les tester, il est nécessaire d'installer le bundle [DoctrineMongoDBBundle.](http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html){:rel="nofollow noreferrer"}
+Si vous voulez suivre les exemples et les tester, il est nécessaire d'installer le bundle [DoctrineMongoDBBundle.](http://symfony.com/doc/current/bundles/DoctrineMongoDBBundle/index.html)
 
 ## Qu'est-ce que c'est ?
 

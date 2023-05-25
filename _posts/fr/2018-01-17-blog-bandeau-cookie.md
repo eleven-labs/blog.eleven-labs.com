@@ -21,7 +21,7 @@ keywords:
   - cookie
 ---
 
-Vous avez tous au moins été confrontés une fois, lors de la visite d'un site, à un message précisant que ce dernier utilise des cookies. Ce message parfois agaçant (jetez un coup d'oeil à _[I don't care about cookies](https://www.i-dont-care-about-cookies.eu/){:rel="nofollow"}_) est dû à une loi passée il y a quelques années par la commission européenne. Profitons donc de l'intégration récente de ce bandeau sur ce blog pour en parler.
+Vous avez tous au moins été confrontés une fois, lors de la visite d'un site, à un message précisant que ce dernier utilise des cookies. Ce message parfois agaçant (jetez un coup d'oeil à _[I don't care about cookies](https://www.i-dont-care-about-cookies.eu/)_) est dû à une loi passée il y a quelques années par la commission européenne. Profitons donc de l'intégration récente de ce bandeau sur ce blog pour en parler.
 
 ## Se conformer à la loi
 
@@ -43,10 +43,10 @@ Lorsque des manquements à la loi sont portés à sa connaissance, la formation 
 - **Un avertissement, qui peut être rendu public.** Dans l'hypothèse où le Président de la CNIL a, au préalable, prononcé une mise en demeure, et que le responsable de traitement ne s'y est pas conformé, la formation restreinte peut prononcer, à l'issue d'une procédure contradictoire :
 - **Une sanction pécuniaire** (sauf pour les traitements de l’État) d’un montant maximal de 150.000€, et, en cas de récidive, jusqu’à 300.000 €. Cette sanction peut être rendue publique ; la formation restreinte peut également ordonner l'insertion de sa décision dans la presse, aux frais de l'organisme sanctionné. Le montant des amendes est perçu par le Trésor Public et non par la CNIL.
 - **Une injonction de cesser le traitement.**
-- **Un retrait de l’autorisation accordée par la CNIL** en application de [l’article 25 de la loi](https://www.cnil.fr/fr/loi-78-17-du-6-janvier-1978-modifiee#Article25){:rel="nofollow"}
+- **Un retrait de l’autorisation accordée par la CNIL** en application de [l’article 25 de la loi](https://www.cnil.fr/fr/loi-78-17-du-6-janvier-1978-modifiee#Article25)
 
-![saline]({{site.baseurl}}/assets/2018-01-17-cookie-banner/brouette-sel.jpg){:class="center-image"}
-_Chargement de sel pour une entreprise ayant été sanctionné par la CNIL_{:style="text-align:center;display:block;"}
+![saline]({{site.baseurl}}/assets/2018-01-17-cookie-banner/brouette-sel.jpg)
+_Chargement de sel pour une entreprise ayant été sanctionné par la CNIL_
 
 ### Cas de Google Analytics
 
@@ -61,18 +61,18 @@ Pour en faire partie, les outils de mesure d'audience doivent respecter les cond
 - L’adresse IP permettant de géolocaliser l’internaute ne doit pas être plus précise que l’échelle de la ville. Concrètement les deux derniers octets de l’adresse IP doivent être supprimés ;
 - Les cookies permettant la traçabilité des internautes et les adresses IP ne doivent pas être conservés au-delà de 13 mois à compter de la première visite.
 
-Certains outils respectent l'ensemble de ces critères comme [Matomo](https://matomo.org/){:rel="nofollow"} (anciennement Piwik) ou [Xiti](https://www.xiti.com/){:rel="nofollow"}. Malheureusement, Google Analytics n'en fait pas partie, notamment car les cookies posés par ce dernier ont une durée de vie supérieure à 13 mois.
+Certains outils respectent l'ensemble de ces critères comme [Matomo](https://matomo.org/) (anciennement Piwik) ou [Xiti](https://www.xiti.com/). Malheureusement, Google Analytics n'en fait pas partie, notamment car les cookies posés par ce dernier ont une durée de vie supérieure à 13 mois.
 Étant l'outil que nous avons choisi pour ce blog, nous devions donc intégrer un "bandeau cookie".
 
 ## L'implémentation sur notre blog
 
-Nous avons développé cette fonctionnalité récemment sur ce blog. Les seuls cookies posés par ce site sont ceux de Google Analytics, c'est pourquoi la solution a été orientée vers celle-ci. Elle s'inspire d'un [code d'exemple disponible directement sur le compte Github de la CNIL](https://github.com/LINCnil/Cookie-consent_Google-Analytics){:rel="nofollow"}.
+Nous avons développé cette fonctionnalité récemment sur ce blog. Les seuls cookies posés par ce site sont ceux de Google Analytics, c'est pourquoi la solution a été orientée vers celle-ci. Elle s'inspire d'un [code d'exemple disponible directement sur le compte Github de la CNIL](https://github.com/LINCnil/Cookie-consent_Google-Analytics).
 
 ### Le HTML/CSS
 
 Comme la CNIL le recommande, on part sur un bandeau avertissant l'utilisateur avec un bouton/lien lui permettant d'avoir plus d'informations et de s'opposer à l'utilisation des cookies. Si l'utilisateur clique sur le site n'importe où en dehors de ce bandeau, il sera considéré que l'utilisateur a approuvé l'utilisation des cookies.
 
-![Bandeau Cookie - learn the difference]({{site.baseurl}}/assets/2018-01-17-cookie-banner/learn-the-difference.jpg){:class="center-image"}
+![Bandeau Cookie - learn the difference]({{site.baseurl}}/assets/2018-01-17-cookie-banner/learn-the-difference.jpg)
 
 Le choix final de l'utilisateur (après clic sur le bouton dans le bandeau) sera affiché dans une boite de dialogue contenant une explication détaillée de pourquoi les cookies sont nécessaires et deux boutons permettant d'accepter ou de refuser l'utilisation des cookies.
 Cette boite de dialogue comportera un "overlay" obligeant l'utilisateur à faire son choix avant de continuer à utiliser le site.
@@ -137,13 +137,13 @@ Cette boite de dialogue comportera un "overlay" obligeant l'utilisateur à faire
 
 ### Le JavaScript
 
-Le code utilisé est du JavaScript natif. La seule librairie utilisée est [JS-Cookie](https://github.com/js-cookie/js-cookie){:rel="nofollow"} qui nous permet de faciliter la manipulation des cookies.
+Le code utilisé est du JavaScript natif. La seule librairie utilisée est [JS-Cookie](https://github.com/js-cookie/js-cookie) qui nous permet de faciliter la manipulation des cookies.
 Le but du code sera triple :
 - Gérer les choix et actions utilisateurs
 - Gérer les cookies (création, suppression, vérification)
-- Gérer la fonctionnalité _[doNotTrack](https://fr.wikipedia.org/wiki/Do_Not_Track){:rel="nofollow"}_ des navigateurs
+- Gérer la fonctionnalité _[doNotTrack](https://fr.wikipedia.org/wiki/Do_Not_Track)_ des navigateurs
 
-Nous créons d'abord une fonction spécifique pour démarrer Google Analytics. C'est le code basique fourni par Google sur sa [documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/){:rel="nofollow"} :
+Nous créons d'abord une fonction spécifique pour démarrer Google Analytics. C'est le code basique fourni par Google sur sa [documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/) :
 ```js
 function startGoogleAnalytics() {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -203,10 +203,10 @@ function processCookieConsent() {
 
 Lorsque l'utilisateur a décidé de s'opposer à l'utilisation des cookies, il faut... poser des cookies...
 
-![Ironic]({{site.baseurl}}/assets/2018-01-17-cookie-banner/ironic.jpg){:class="center-image"}
+![Ironic]({{site.baseurl}}/assets/2018-01-17-cookie-banner/ironic.jpg)
 
 Le but est d'enregistrer le choix de l'utilisateur pendant la durée maximum légale (13 mois).
-Dans cette fonction, on créera aussi des cookies spécifiques à Google Analytics pour l'empêcher de fonctionner (voir la [documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out){:rel="nofollow"}).
+Dans cette fonction, on créera aussi des cookies spécifiques à Google Analytics pour l'empêcher de fonctionner (voir la [documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out)).
 On créera donc la fonction suivante (utilisée dans le workflow ci-dessus) :
 ```js
 const GA_PROPERTY = 'UA-XXXXX-Y'
@@ -314,4 +314,4 @@ Si vous avez bien suivi cet article et si vous l'avez adapté aux besoins de vot
 Évidemment un site comme celui-ci (un simple blog) est un cas simple où il y a peu voire pas de cookies posés du tout. En réalité, votre site est déjà quasiment prêt pour la future mise en application de la RGPD à quelques ajustements près.
 Si vous ne savez pas ce qu'est la RGPD, c'est en gros une évolution de la directive européenne dont nous avons parlé précédemment vers une version XXL. Pour de plus amples informations, je vous invite à lire l'excellent article de mon collègue [Pouzor](/authors/pouzor/) : [RGPD - Ce qu'il va changer](/fr/rgpd-ce-qu-il-va-changer/).
 
-![Cookie Monster]({{site.baseurl}}/assets/2018-01-17-cookie-banner/cookie-monster.jpg){:class="center-image"}
+![Cookie Monster]({{site.baseurl}}/assets/2018-01-17-cookie-banner/cookie-monster.jpg)

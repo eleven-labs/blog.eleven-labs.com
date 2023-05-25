@@ -95,7 +95,7 @@ Mais avant de voir ça de plus près, voici un peu de vocabulaire :
 
 ## Mise en pratique avec Humbug
 
-Ici nous utiliserons [Humbug](https://github.com/padraic/humbug){:rel="nofollow noreferrer"}, un framework parmi d’autres qui permet de faire des tests de mutation en PHP.
+Ici nous utiliserons [Humbug](https://github.com/padraic/humbug), un framework parmi d’autres qui permet de faire des tests de mutation en PHP.
 
 Lorsque nous lançons Humbug avec notre exemple de tout à l’heure, nous obtenons :
 
@@ -197,7 +197,7 @@ Pour parvenir à ses fins, Humbug est capable de générer tout un éventail de 
 - Remplacement des opérateurs logiques (`&&`, `||`, etc…)
 - Remplacement des opérateurs binaires (`&`, `|`, `%`, etc…)
 - Remplacement des valeurs de retour d’une fonction
-Je ne vais pas tout détailler ici, si vous voulez en savoir plus je vous invite à consulter la [page GitHub du projet](https://github.com/padraic/humbug){:rel="nofollow noreferrer"}.
+Je ne vais pas tout détailler ici, si vous voulez en savoir plus je vous invite à consulter la [page GitHub du projet](https://github.com/padraic/humbug).
 
 ## Conclusion
 

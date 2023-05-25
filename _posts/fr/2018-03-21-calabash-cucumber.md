@@ -64,11 +64,11 @@ Cette architecture permet d'écrire des tests Cucumber pour presque n'importe qu
 
 Schéma Cucumber / Calabash:
 
-![stackCucumberCalabash]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/image-01.png){:height="600px"}
+![stackCucumberCalabash]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/image-01.png)
 
 Schéma sur le fonctionnement sur device / simulateur.
 
-![iosCalabash]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/calabash-ios-stack.png){:height="500px"}
+![iosCalabash]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/calabash-ios-stack.png)
 
 Le framework Calabash fournit un petit serveur HTTP intégré qui permet aux tests de communiquer et de contrôler l'application pendant qu'elle s'exécute sur le périphérique. Cependant, le framework Calabash ne doit pas être inclus dans les versions Release de l'IPA.
 
@@ -196,7 +196,7 @@ Il rédige donc les scénarios d'acceptation de test de chaque écran dans des f
 
 Aide :
 
-![Gerhkins]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/gherkincheat.png){:height="600px"}
+![Gerhkins]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/gherkincheat.png)
 
 > Les scripts Gherkins ci-dessous peuvent être optimisés mais j'ai préféré vous présenter quelque chose de simple :)
 
@@ -443,7 +443,7 @@ end
 
 Si vous lancez votre test `bundle exec cucumber -n Home` pour `home.feature` vous devriez obtenir quelque chose comme ça.
 
-![homeFeatureCli]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/screen_home_feature.png){:width="900px"}
+![homeFeatureCli]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/screen_home_feature.png)
 
 Cool non ? :)
 
@@ -455,12 +455,12 @@ Pour cet article j'ai mis sur [github](https://github.com/Prims47/CalabashCucumb
 
 ### Screenshots
 
-![appHome]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/simuHome.png){:height="500px"}
-![appLogin]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimuLogin.png){:height="500px"}
-![appLoginError]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimoLoginError.png){:height="500px"}
-![appRegister]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimuRegister.png){:height="500px"}
-![appRegisterError]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimuRegisterError.png){:height="500px"}
-![appHome2]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SmuHome2.png){:height="500px"}
+![appHome]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/simuHome.png)
+![appLogin]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimuLogin.png)
+![appLoginError]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimoLoginError.png)
+![appRegister]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimuRegister.png)
+![appRegisterError]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimuRegisterError.png)
+![appHome2]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SmuHome2.png)
 
 ### Login Validation
 

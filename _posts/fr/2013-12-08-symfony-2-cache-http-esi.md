@@ -31,7 +31,7 @@ Pour revenir au cache http, expliquons en un peu le principe. Le rôle de la mé
 
 
 <br/>
-[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/reverse_proxy.png)](/assets/2013-12-08-symfony-2-cache-http-esi/reverse_proxy.png){: .center-image .no-link-style}
+[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/reverse_proxy.png)](/assets/2013-12-08-symfony-2-cache-http-esi/reverse_proxy.png)
 
 
 # 2) Le Cache dans Symfony
@@ -134,19 +134,19 @@ Enfin, votre template cache.html.twig situé dans MyBundle/Resources/views/Cache
 Et voilà le résultat:
 
 <br/>
-[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/hello1.png)](/assets/2013-12-08-symfony-2-cache-http-esi/hello1.png){: .center-image .no-link-style}
+[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/hello1.png)](/assets/2013-12-08-symfony-2-cache-http-esi/hello1.png)
 
 Maintenant pour s’assurer que le cache est bien inactif, ouvrez firebug.
 
 Allez dans l’onglet Réseau (ou Network pour ceux qu’ils l’ont en anglais),
 
 <br/>
-[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/firebug1.png)](/assets/2013-12-08-symfony-2-cache-http-esi/firebug1.png){: .center-image .no-link-style}
+[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/firebug1.png)](/assets/2013-12-08-symfony-2-cache-http-esi/firebug1.png)
 
 Et dépliez le get correspondant à votre route:
 
 <br/>
-[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/response1.png)](/assets/2013-12-08-symfony-2-cache-http-esi/response1.png){: .center-image .no-link-style}
+[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/response1.png)](/assets/2013-12-08-symfony-2-cache-http-esi/response1.png)
 
 On voit donc bien ici la valeur du Cache-Control qui est à no-cache.
 
@@ -181,7 +181,7 @@ L’objet Response va nous permettre de manipuler les différents éléments d�
 Maintenant, si on jette à nouveau un œil à notre firebug:
 
 <br/>
-[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/response2.png)](/assets/2013-12-08-symfony-2-cache-http-esi/response2.png){: .center-image .no-link-style}
+[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/response2.png)](/assets/2013-12-08-symfony-2-cache-http-esi/response2.png)
 
 On constate que le système de cache est bien activé. Pour aller plus loin avec les différentes options possibles de l’en-tête, je vous invite fortement, si ce n’est pas déjà fait, à lire la doc sur le site officiel de <a href="http://symfony.com/doc/master/http_cache.html" rel="nofollow noreferrer" style="color:#0000ff;">Symfony</a>.
 
@@ -255,17 +255,17 @@ J’ai ici simplifié l’action cacheAction() pour n’activer le cache que pou
 Actualiser votre page et vous devez obtenir ceci:
 
 <br/>
-[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/hello2.png)](/assets/2013-12-08-symfony-2-cache-http-esi/hello2.png){: .center-image .no-link-style}
+[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/hello2.png)](/assets/2013-12-08-symfony-2-cache-http-esi/hello2.png)
 
 Maintenant, si on repart voir ce que nous dit notre bon vieil ami firebug, on voit:
 
 <br/>
-[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/response3.png)](/assets/2013-12-08-symfony-2-cache-http-esi/response3.png){: .center-image .no-link-style}
+[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/response3.png)](/assets/2013-12-08-symfony-2-cache-http-esi/response3.png)
 
 Une ligne X-Symfony-Cache est apparu. Si on se concentre sur la fin de la ligne, on lit: «…EsiCache: stale, invalid, store». En gros, le cache de ce fragment n’était pas valide (normal vu qu’on vient de le créer :) ). Mais si vous faite un petit F5, vous aurez le message suivant:
 
 <br/>
-[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/response4.png)](/assets/2013-12-08-symfony-2-cache-http-esi/response4.png){: .center-image .no-link-style}
+[![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/response4.png)](/assets/2013-12-08-symfony-2-cache-http-esi/response4.png)
 
 Aahhhh, ça a l’air d’être «fresh» :)
 

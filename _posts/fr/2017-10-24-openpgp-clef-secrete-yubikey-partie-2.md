@@ -58,10 +58,10 @@ Celui qui va nous intéresser est OpenPGP.
 
 ### Comment s'en procurer une
 
-Je vous recommande de passer par [la boutique officielle](https://www.yubico.com/product/yubikey-4-series/){:rel="nofollow noreferrer"}
+Je vous recommande de passer par [la boutique officielle](https://www.yubico.com/product/yubikey-4-series/)
 pour s'assurer de la provenance du produit. Nous sommes sur des produits liés à la sécurité, il est important de savoir d'où provient le produit acheté.
 
-Pour ceux qui ont un compte Github, il y a une [offre promotionelle qui permet d'avoir -10%](https://www.yubico.com/github-special-offer/) sur le panier. Intéressant :){:rel="nofollow noreferrer"}.
+Pour ceux qui ont un compte Github, il y a une [offre promotionelle qui permet d'avoir -10%](https://www.yubico.com/github-special-offer/) sur le panier. Intéressant :).
 Par contre, elle n'est valable qu'une seule fois. Je vous recommande d'en commander au moins 2. La deuxième sera utile pour faire une sauvegarde en cas de perte de la première.
 
 Dernier point important, notre clef OpenPGP a été générée avec une taille de 4096 bits. Seule la version 4 de la Yubikey permet
@@ -424,7 +424,7 @@ Ici, nous avons le numéro de série de la Yubikey `card-no: 0006 06476495`. Ce 
 
 À travers ces deux premiers articles, nous avons couvert la création d'une clef OpenPGP et l'exportation des secrets sur une carte à puce. L'utilisation d'une carte à puce permet une protection supplémentaire contre le vol des clefs secrètes. Il ne suffira pas de pirater l'ordinateur pour les voler, mais il sera nécessaire de voler physiquement la clef et le code PIN associé pour utiliser les clefs secrètes. De plus, comme vu en introduction, la clef secrète ne peut être extraite. Notre clef est bien protégée, sauf contre le facteur humain qui reste la seule menace.
 
-Par ailleurs, vous pouvez diffuser votre clef publique sur [un serveur de clefs](https://pgp.mit.edu/) et d'autre services (GitHub, Kraken, keybase.io). Cela vous permet de recevoir des messages chiffrés, et de [signer vos commits](https://help.github.com/articles/signing-commits-using-gpg/) sur GitHub (exemple sur ce commit [31dd621](https://github.com/eleven-labs/blog.eleven-labs.com/commit/31dd621db58a7ee1428bc9615c23e74d5ac98c3f)){:rel="nofollow noreferrer"}.
+Par ailleurs, vous pouvez diffuser votre clef publique sur [un serveur de clefs](https://pgp.mit.edu/) et d'autre services (GitHub, Kraken, keybase.io). Cela vous permet de recevoir des messages chiffrés, et de [signer vos commits](https://help.github.com/articles/signing-commits-using-gpg/) sur GitHub (exemple sur ce commit [31dd621](https://github.com/eleven-labs/blog.eleven-labs.com/commit/31dd621db58a7ee1428bc9615c23e74d5ac98c3f)).
 
 Dans un prochain article, nous allons mettre en place une stratégie de sauvegarde en cas de perte des clefs secrètes. Une erreur peut vite arriver, comme formater son ordinateur suite à un ransonware (ce qui est d'actualité en ce moment).
 
@@ -435,19 +435,19 @@ Dans un prochain article, nous allons mettre en place une stratégie de sauvegar
 * [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)](/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
 
 ### Resources
-- [wikipedia - Universal 2nd Factor](https://en.wikipedia.org/wiki/Universal_2nd_Factor){:rel="nofollow noreferrer"}
-- [fidoalliance -Universal 2nd Factor (U2F) Overview](https://fidoalliance.org/specs/fido-u2f-overview-ps-20150514.pdf){:rel="nofollow noreferrer"}
-- [YubiKey 4 series](https://www.yubico.com/products/yubikey-hardware/yubikey4/){:rel="nofollow noreferrer"}
-- [Yubico Expands FIPS Security Certification ](https://www.yubico.com/2016/05/yubikey-gains-support-for-higher-levels-of-federal-crypto-standards/){:rel="nofollow noreferrer"}
-- [wikipedia - FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140-2#Level_1){:rel="nofollow noreferrer"}
-- [Cryptographic Module Validation Program](https://csrc.nist.gov/projects/cryptographic-module-validation-program/Certificate/2267){:rel="nofollow noreferrer"}
-- [Guide to using YubiKey as a SmartCard for GPG and SSH](https://github.com/drduh/YubiKey-Guide){:rel="nofollow noreferrer"}
-- [RFC4880](https://tools.ietf.org/html/rfc4880){:rel="nofollow noreferrer"}
-- [Nitrokey Storage Got Great Results in a 3rd Party Security Audit](https://www.nitrokey.com/news/2015/nitrokey-storage-got-great-results-3rd-party-security-audit){:rel="nofollow noreferrer"}
-- [Secure Hardware vs. Open Source ](https://www.yubico.com/2016/05/secure-hardware-vs-open-source/){:rel="nofollow noreferrer"}
-- [Yubico has replaced all open-source components](https://www.reddit.com/r/linux/comments/4ls94a/yubico_has_replaced_all_opensource_components/){:rel="nofollow noreferrer"}
-- [Cover image source](https://www.yubico.com/press/images/){:rel="nofollow noreferrer"}
+- [wikipedia - Universal 2nd Factor](https://en.wikipedia.org/wiki/Universal_2nd_Factor)
+- [fidoalliance -Universal 2nd Factor (U2F) Overview](https://fidoalliance.org/specs/fido-u2f-overview-ps-20150514.pdf)
+- [YubiKey 4 series](https://www.yubico.com/products/yubikey-hardware/yubikey4/)
+- [Yubico Expands FIPS Security Certification ](https://www.yubico.com/2016/05/yubikey-gains-support-for-higher-levels-of-federal-crypto-standards/)
+- [wikipedia - FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140-2#Level_1)
+- [Cryptographic Module Validation Program](https://csrc.nist.gov/projects/cryptographic-module-validation-program/Certificate/2267)
+- [Guide to using YubiKey as a SmartCard for GPG and SSH](https://github.com/drduh/YubiKey-Guide)
+- [RFC4880](https://tools.ietf.org/html/rfc4880)
+- [Nitrokey Storage Got Great Results in a 3rd Party Security Audit](https://www.nitrokey.com/news/2015/nitrokey-storage-got-great-results-3rd-party-security-audit)
+- [Secure Hardware vs. Open Source ](https://www.yubico.com/2016/05/secure-hardware-vs-open-source/)
+- [Yubico has replaced all open-source components](https://www.reddit.com/r/linux/comments/4ls94a/yubico_has_replaced_all_opensource_components/)
+- [Cover image source](https://www.yubico.com/press/images/)
 
 ### Remarques
 Ce tutoriel utilise une Yubikey pour le stockage des secrets. La Yubikey est la clef la plus répandue dans le grand public, notamment
-pour la fonctionnalité de second facteur d'authentification. Il existe d'autre clefs supportant OpenPGP comme la [NitroKey](https://www.nitrokey.com/){:rel="nofollow noreferrer"}. Contrairement à la Yubikey, la NitroKey est open-source. Une sécurité avec du matériel fermé et propriétaire n'est pas une solution viable sur le long terme. C'est également contraire à l'esprit OpenPGP qui se veut être ouvert. Cepedant, j'ai fait le choix de la Yubikey pour sa facilité de mise en oeuvre et sa capacité à faire de la double authentification.
+pour la fonctionnalité de second facteur d'authentification. Il existe d'autre clefs supportant OpenPGP comme la [NitroKey](https://www.nitrokey.com/). Contrairement à la Yubikey, la NitroKey est open-source. Une sécurité avec du matériel fermé et propriétaire n'est pas une solution viable sur le long terme. C'est également contraire à l'esprit OpenPGP qui se veut être ouvert. Cepedant, j'ai fait le choix de la Yubikey pour sa facilité de mise en oeuvre et sa capacité à faire de la double authentification.

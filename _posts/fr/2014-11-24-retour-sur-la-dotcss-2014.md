@@ -43,7 +43,7 @@ Résumé rapide des différentes présentations :
 
 A suivi une série de lightning talks:
 
--   **Maxime Thirouin** a résumé ce qui a été l'idée générale de la conférence entière : "Nous aimons le CSS, mais c'est un langage frustrant". Frustrant, car il n'y a toujours pas (sans préprocesseurs) de variables, de math, de customisation... c'est pour cela qu'il travaille sur [cssnext](https://github.com/cssnext/cssnext){:rel="nofollow noreferrer"}, un projet permettant de récupérer d'utiliser immédiatement les futures features CSS
+-   **Maxime Thirouin** a résumé ce qui a été l'idée générale de la conférence entière : "Nous aimons le CSS, mais c'est un langage frustrant". Frustrant, car il n'y a toujours pas (sans préprocesseurs) de variables, de math, de customisation... c'est pour cela qu'il travaille sur [cssnext](https://github.com/cssnext/cssnext), un projet permettant de récupérer d'utiliser immédiatement les futures features CSS
 -   **Victor Brito** a demandé à tous les développeurs web de faire des efforts pour rendre le web accessible
 -   **Gregor Adams** a parlé de fonctionnalités en CSS pour styler des éléments de manière dynamique (http://slides.pixelass.com/dotcss2014/assets/player/KeynoteDHTMLPlayer.html)
 -   **Guido Boman** a parlé de la manière de coder correctement le parallax scrolling en CSS, et d'une implémentation faite par Keith Clark (Détails : http://keithclark.co.uk/articles/pure-css-parallax-websites/)
@@ -55,18 +55,18 @@ Les présentations des invités ont ensuite repris !
     Il a présenté des principes à suivre pour développer avec Sass:
     -   KYSS - Keep Your Sass Simple(, Smart & Straightforward), extending KISS (Keep It Simple, Stupid)
     -   Ne pas tout faire avec Sass
-    -   Suivre des guidelines ([cssguidelin.es](http://cssguidelin.es)), utiliser scss-lint, [px-to-rem](http://github.com/songawee/px_to_rem), [autoprefixer](http://github.com/postcss/autoprefixer){:rel="nofollow noreferrer"}
+    -   Suivre des guidelines ([cssguidelin.es](http://cssguidelin.es)), utiliser scss-lint, [px-to-rem](http://github.com/songawee/px_to_rem), [autoprefixer](http://github.com/postcss/autoprefixer)
     -   Nettoyer le code inutilisé
     -   Tester
     -   Documenter
 
--   **Estelle Weyl** a parlé de features moins connues de CSS, comme compter des éléments, puis a parlé des spécificités des sélectures dans sa présentation *[CSS? WTF!](http://estelle.github.io/doyouknowcss/indexjs.html){:rel="nofollow noreferrer"}*, qui s'est terminée avec son explication d'astuces en CSS pour éviter !important, ou même l'overrider avec des animations CSS.
+-   **Estelle Weyl** a parlé de features moins connues de CSS, comme compter des éléments, puis a parlé des spécificités des sélectures dans sa présentation *[CSS? WTF!](http://estelle.github.io/doyouknowcss/indexjs.html)*, qui s'est terminée avec son explication d'astuces en CSS pour éviter !important, ou même l'overrider avec des animations CSS.
 
 -   **Nicolas Gallagher** a parlé de CSS scalable et de comment dans une large société comme Twitter penser les différents éléments pour que le développement ne demande pas à se poser des questions, de penser directement en termes de design d'interface utilisateur.
 
 -   **Bert Bos**, le co-createur de CSS, a parlé de typographie, donnant des examples clair au sujet des difficultés qui y sont liées, qui ne peuvent potentiellement pas toutes être réglées avec CSS. Par exemple, les guillemets sont différents en français, anglais, néerlandais. De même, la ponctuation peut être différente (un espace avant ! et ? en français mais pas en anglais), il est donc dififcile de penser à comment faire du markup logique pour ces éléments.
 
--   **Ana Tudor** (@thebabydino), la dernière invitée de la journée, a montré une série de démos impressionnantes ayant pour sujet la distribution. [Les examples sont sur Codepen](http://codepen.io/thebabydino/){:rel="nofollow noreferrer"}.
+-   **Ana Tudor** (@thebabydino), la dernière invitée de la journée, a montré une série de démos impressionnantes ayant pour sujet la distribution. [Les examples sont sur Codepen](http://codepen.io/thebabydino/).
 
 Et voilà comment dotCSS s'est terminé. Une fort bonne conférence donc, et on regrettera que l'expérience ne semble visiblement pas avoir vocation à être renouvelée l'an prochain.
 

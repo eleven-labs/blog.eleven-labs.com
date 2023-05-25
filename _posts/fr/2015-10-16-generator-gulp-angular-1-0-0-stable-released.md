@@ -17,9 +17,9 @@ keywords:
 Intro
 =====
 
-It has now been more than a year since I ([@Swiip](https://twitter.com/Swiip)), quickly followed by [@zckrs](https://twitter.com/Zckrs), started working on our Yeoman generator. Today we’re celebrating the release of our first major and stable version : [generator-gulp-angular 1.0.0](https://www.npmjs.com/package/generator-gulp-angular){:rel="nofollow noreferrer"}.
+It has now been more than a year since I ([@Swiip](https://twitter.com/Swiip)), quickly followed by [@zckrs](https://twitter.com/Zckrs), started working on our Yeoman generator. Today we’re celebrating the release of our first major and stable version : [generator-gulp-angular 1.0.0](https://www.npmjs.com/package/generator-gulp-angular).
 
-At first we simply wanted to make a good merge of [generator-gulp-webapp](https://github.com/yeoman/generator-gulp-webapp) and [generator-angular](https://github.com/yeoman/generator-angular){:rel="nofollow noreferrer"} as I worked on Angular and got tired of Grunt's verbosity. Then, the project popularity started to increase and so did its ambition.
+At first we simply wanted to make a good merge of [generator-gulp-webapp](https://github.com/yeoman/generator-gulp-webapp) and [generator-angular](https://github.com/yeoman/generator-angular) as I worked on Angular and got tired of Grunt's verbosity. Then, the project popularity started to increase and so did its ambition.
 
 Philosophy
 ==========
@@ -58,8 +58,8 @@ We integrated many optimizations for your web application using some Gulp plugin
 2.0.0 on the road...
 ====================
 
-But the v1 is not the end of the road. While maintaining the v1 branch, we started a new Github organization called [FountainJS](https://github.com/FountainJS){:rel="nofollow noreferrer"} targeting a futuristic v2 version. As the context of the build tools has greatly evolved over a year, it will be a reboot of the code base.
+But the v1 is not the end of the road. While maintaining the v1 branch, we started a new Github organization called [FountainJS](https://github.com/FountainJS) targeting a futuristic v2 version. As the context of the build tools has greatly evolved over a year, it will be a reboot of the code base.
 The major selling point will be to use Yeoman's generators composition, to upgrade to Gulp 4 and to write it in ES6. Finally, I hope to open new horizons in terms of options: dependency management for sure, but also, why not Web frameworks (someone talked about React?) and also a backend.
 
-Go try out [generator-gulp-angular](https://www.npmjs.com/package/generator-gulp-angular) v1.0.0 release! Any feedbacks, issues, or investment on the new  [FountainJS](https://github.com/FountainJS) project will always be appreciated. [generator-gulp-angular-logo](https://www.npmjs.com/package/generator-gulp-angular){:rel="nofollow noreferrer"}
+Go try out [generator-gulp-angular](https://www.npmjs.com/package/generator-gulp-angular) v1.0.0 release! Any feedbacks, issues, or investment on the new  [FountainJS](https://github.com/FountainJS) project will always be appreciated. [generator-gulp-angular-logo](https://www.npmjs.com/package/generator-gulp-angular)
 

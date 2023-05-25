@@ -76,10 +76,10 @@ _Event sourcing_ completes theCQRS pattern by saving the history that determin
 
 ### To go further
 
-[CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf "CQRS Documents"){:rel="nofollow"}, _Greg Young_
+[CQRS Documents](https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf "CQRS Documents"), _Greg Young_
 
-[CQRS Journey](https://msdn.microsoft.com/en-us/library/jj554200.aspx "Exploring CQRS and Event Sourcing"){:rel="nofollow"}, _Dominic Betts, Julián Domínguez, Grigori Melnik, Fernando Simonazzi, Mani Subramanian_
+[CQRS Journey](https://msdn.microsoft.com/en-us/library/jj554200.aspx "Exploring CQRS and Event Sourcing"), _Dominic Betts, Julián Domínguez, Grigori Melnik, Fernando Simonazzi, Mani Subramanian_
 
-[Clarified CQRS](http://www.udidahan.com/2009/12/09/clarified-cqrs/){:rel="nofollow"}, _Udi Dahan_
+[Clarified CQRS](http://www.udidahan.com/2009/12/09/clarified-cqrs/), _Udi Dahan_
 
-[CQRS and Event Sourcing - Code on the Beach 2014](https://www.youtube.com/watch?v=JHGkaShoyNs){:rel="nofollow"}, _Greg Young_
+[CQRS and Event Sourcing - Code on the Beach 2014](https://www.youtube.com/watch?v=JHGkaShoyNs), _Greg Young_
