@@ -1,4 +1,4 @@
-jest.mock('./src/constants', () => ({
+vi.mock('./src/constants', () => ({
   IS_SSR: false,
   IS_PRERENDER: false,
   BASE_URL: '/',
@@ -6,6 +6,6 @@ jest.mock('./src/constants', () => ({
   CATEGORIES: ['javascript', 'php', 'agile', 'architecture'],
 }));
 
-jest.mock('./src/helpers/getEnvHelper', () => ({
+vi.mock('./src/helpers/getEnvHelper', () => ({
   getEnv: (): object => ({}),
 }));

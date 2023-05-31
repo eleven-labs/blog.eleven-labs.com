@@ -23,7 +23,8 @@
       "@storybook-decorators": [
         ".storybook/decorators"
       ]
-    }
+    },
+    "types": ["vitest/globals"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],

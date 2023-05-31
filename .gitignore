@@ -25,6 +25,7 @@ dist-ssr
 
 # Custom
 reports
+coverage
 storybook-static
 public/data
 public/imgs/posts
