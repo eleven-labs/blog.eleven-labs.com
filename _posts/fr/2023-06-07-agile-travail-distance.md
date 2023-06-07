@@ -3,7 +3,7 @@ lang: fr
 date: 2023-06-07
 slug: -agile-travail-distance
 title: Optimisez votre travail à distance : Conseils pour une équipe agile 100% remote
-excerpt: De plus en plus d'entreprises optent pour le travail à distance depuis la période COVID, tandis que d'autres préfèrent revenir au présentiel. Chez Eleven Labs, nous avons contribué au lancement d'un outil commercial pour un GIE entièrement en télétravail pendant trois ans, travaillant avec des équipes de développement, des PO, des PM et des clients à distance. Fort de cette expérience, voici ci-dessous un récapitulatif des actions qui ont été mises en places. Ces actions se basent sur deux principes Agiles : la collaboration et la transparence.
+excerpt: Retours d’expérience de gestion de projet agile en télétravail avec une équipe de production importante et plusieurs clients répartis dans toute la France. Ce rapport présente les défis rencontrés ainsi que des conseils pour améliorer la communication et la transparence dans votre projet.
 categories:
     - agile
 keywords:
