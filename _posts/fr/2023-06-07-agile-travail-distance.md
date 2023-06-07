@@ -11,7 +11,7 @@ categories:
 keywords:
   - agile, travail, distance, remote, organisation
 authors:
-  - Roxannemcd
+  - roxannemcd
 ---
 
 ## **Introduction**
