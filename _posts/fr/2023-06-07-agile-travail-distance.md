@@ -24,7 +24,7 @@ De plus en plus d'entreprises optent pour le travail à distance depuis la péri
 
 Pendant ces 3 ans de projets, nous avons mis en place des méthodes pour améliorer les processus de travail à distance. Voici ce que nous avons réalisé dans les deux domaines clés impactés par la distance des équipes : la collaboration et la transparence.
 
-**Collaboration entre l’équipe et les parties prenantes**
+**Collaboration entre l’équipe et les parties prenantes**  
 Au cours de cette expérience, nous avons constaté qu'en raison du télétravail et de la situation où chaque partie prenante se trouvait dans des bureaux séparés, la communication avec l'équipe de production (PO, développeurs, UX) était difficile.
 
 En effet, étant donné que chacun gérait sa propre entreprise, le projet était perçu comme une utilisation de temps qui empiétait sur la gestion de leurs activités individuelles.
@@ -43,7 +43,7 @@ Pour la communication externe, toutes les réunions avec les parties prenantes s
 
 Pour finir, afin de maintenir la motivation de nos clients lors des démonstrations nous avons travaillé pour rendre les sessions **interactives et engageantes**. On communiquait en amont sur les fonctionnalités qui allaient être présentées afin que seuls les clients concernés assistent à la démonstration.
 
-**Collaboration entre les membres de l’équipe de production**
+**Collaboration entre les membres de l’équipe de production**  
 En ce qui concerne l'équipe de production, nous étions composés de plusieurs profils différents (PPO, UX, PO, PM, développeurs) chacun ayant sa propre façon de travailler. Cependant, en raison du nombre élevé de membres, certaines informations se perdaient lors des discussions, ce qui entraînait des réponses répétitives aux questions et une confusion dans les processus de communication, rendant le travail plus complexe.
 
 Afin de simplifier la communication entre tous les membres et de faciliter la collaboration, nous avons mis en place les actions suivantes :
@@ -58,7 +58,7 @@ Afin de simplifier la communication entre tous les membres et de faciliter la co
 
   - La mise en place d'un système de **mentorat** pour aider les nouveaux membres de l'équipe à s'adapter au travail à distance et à s'intégrer rapidement. Nous avons organisé des séances de coaching régulières pour répondre aux questions et résoudre les éventuels blocages.
 
-**Transparence entre l’équipe et les parties prenantes**
+**Transparence entre l’équipe et les parties prenantes**  
 Au cours de ce projet, nous avons identifié un véritable manque de transparence entre l'équipe de production et les parties prenantes. Ce manque s'est principalement manifesté par une incompréhension de l'intérêt commercial du produit de la part de l'équipe de production, ainsi qu'un manque de retour sur les utilisations réelles des clients. Du côté des parties prenantes, il s'agissait de l'un de leurs premiers projets numériques d'une telle envergure, et nous avons constaté une méconnaissance des difficultés techniques de certaines fonctionnalités, ce qui a entraîné une incompréhension du temps nécessaire pour répondre aux demandes exprimées.
 
 Afin d'améliorer ces aspects, nous avons mis en œuvre les actions suivantes :
@@ -71,7 +71,7 @@ Afin d'améliorer ces aspects, nous avons mis en œuvre les actions suivantes :
 
 - L’établissement d’une méthode de **suivi hebdomadaire pour la partie commerciale**, en identifiant les blocages et en informant efficacement l'équipe des avancements et des défis à relever.
 
-**Transparence entre les membres de l’équipe de développement**
+**Transparence entre les membres de l’équipe de développement**  
 Enfin, nous avons constaté que de nombreuses informations et outils n'étaient pas utilisés par l'équipe, ce qui entraînait des demandes répétées d'informations et une perte de temps dans les activités opérationnelles. De plus, en travaillant de manière isolée, certaines actions étaient réalisées en double, ce qui n'était pas optimal pour les processus de travail. Afin de garantir l'accès à des informations pertinentes pour tous et de simplifier les processus, nous avons mis en place les mesures suivantes :
 
   - Communication **transparente sur l'objectif du produit,** son avancement et les retours utilisateurs en intégrant toutes les informations dans l'outil de gestion de projet et en organisant des communications régulières avec l'équipe.
