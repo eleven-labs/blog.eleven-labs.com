@@ -84,15 +84,20 @@ export const validatePost = (options: {
     );
   }
 
-  const matterResult = matter(markdownContent);
-  const result = PostValidationSchema.safeParse(matterResult.data);
+  try {
+    const matterResult = matter(markdownContent);
 
-  if (!result.success) {
-    const validationError = fromZodError(result.error);
-    throw new Error(`The markdown of the file "${options.markdownFilePath}" is invalid ! ${validationError.message}`);
+    const result = PostValidationSchema.safeParse(matterResult.data);
+
+    if (!result.success) {
+      const validationError = fromZodError(result.error);
+      throw new Error(`The markdown of the file "${options.markdownFilePath}" is invalid ! ${validationError.message}`);
+    }
+
+    return { ...result.data, content: matterResult.content };
+  } catch (error) {
+    throw new Error(`The markdown of the file "${options.markdownFilePath}" is invalid ! ${String(error)}`);
   }
-
-  return { ...result.data, content: matterResult.content };
 };
 
 export const validateMarkdown = (): boolean => {

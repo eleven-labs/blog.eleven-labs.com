@@ -9,9 +9,10 @@ import { createServer as createViteServer } from 'vite';
   try {
     const { validateMarkdown } = await vite.ssrLoadModule('/src/helpers/validateMarkdownHelper.ts');
     validateMarkdown();
+    vite.close();
   } catch (e) {
     console.error(e);
-  } finally {
     vite.close();
+    process.exit(1);
   }
 })();
