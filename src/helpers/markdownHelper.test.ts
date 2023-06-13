@@ -1,11 +1,41 @@
 import * as glob from 'glob';
 import { vi } from 'vitest';
+import { z } from 'zod';
 
-import { validateAuthor, validateMarkdown, validatePost } from './validateMarkdownHelper';
+import { frontmatter, getDataInMarkdownFile, validateAuthor, validateMarkdown, validatePost } from './markdownHelper';
 
 vi.mock('node:fs', () => ({
   readFileSync: vi.fn().mockImplementation((path: string) => {
     switch (path) {
+      case '/path/to/dir/valid-file.md':
+        return `---
+title: Example Title
+slug: example-title
+---
+This is the content`;
+      case '/path/to/dir/invalid-file-with-markdown-contains-disallowed-syntax.md':
+        return `---
+title: Example Title
+date: 2023-06-13
+---
+
+This is the content with a disallowed syntax {:{key}}`;
+      case '/path/to/dir/invalid-file-with-validation-schema.md':
+        return `---
+title: Example Title
+date: invalid-date
+---
+
+This is the content`;
+      case '/path/to/dir/invalid-file-syntax.md':
+        return `---
+title: Example Title
+slug: example-title
+description: -> 
+'lorem ipsum'
+---
+
+This is the content`;
       case '/path/to/dir/invalid-author.md':
         return `---
 username: jdoe
@@ -124,11 +154,91 @@ This is some valid content`;
 }));
 vi.mock('glob');
 
+describe('frontmatter', () => {
+  it('should extract frontmatter data and remove it from the content', () => {
+    const content = `---
+title: Example Title
+slug: example-title
+---
+This is the content`;
+
+    const expectedResult = {
+      data: {
+        title: 'Example Title',
+        slug: 'example-title',
+      },
+      content: 'This is the content',
+    };
+
+    const result = frontmatter(content);
+    expect(result).toMatchObject(expectedResult);
+  });
+});
+
+describe('getDataInMarkdownFile', () => {
+  const ValidationSchema = z.object({
+    title: z.string(),
+    slug: z.string(),
+  });
+
+  it('should parse markdown file and validate frontmatter data', () => {
+    const result = getDataInMarkdownFile({
+      ValidationSchema,
+      markdownFilePath: '/path/to/dir/valid-file.md',
+    });
+
+    expect(result).toMatchObject({
+      title: 'Example Title',
+      slug: 'example-title',
+      content: 'This is the content',
+    });
+  });
+
+  it('should throw an error if markdown contains disallowed syntax', () => {
+    const markdownFilePath = '/path/to/dir/invalid-file-with-markdown-contains-disallowed-syntax.md';
+    expect(() => {
+      getDataInMarkdownFile({
+        ValidationSchema,
+        markdownFilePath,
+      });
+    }).toThrow(
+      `The markdown of the file "${markdownFilePath}" is invalid ! Is not compliant, it contains a syntax that is not allowed !`
+    );
+  });
+
+  it('should throw an error if frontmatter data is invalid', () => {
+    const markdownFilePath = '/path/to/dir/invalid-file-with-validation-schema.md';
+    expect(() => {
+      getDataInMarkdownFile({
+        ValidationSchema: z.object({
+          title: z.string(),
+          date: z.coerce.date(),
+        }),
+        markdownFilePath,
+      });
+    }).toThrow(
+      `The markdown of the file "/path/to/dir/invalid-file-with-validation-schema.md" is invalid ! Invalid date at "date"`
+    );
+  });
+
+  it('should throw an error if an error occurs during parsing or validation', () => {
+    const markdownFilePath = '/path/to/dir/invalid-file-syntax.md';
+    expect(() => {
+      getDataInMarkdownFile({
+        ValidationSchema,
+        markdownFilePath,
+      });
+    }).toThrow(
+      `The markdown of the file "${markdownFilePath}" is invalid ! Can not read an implicit mapping pair; a colon is missed at line 5, column 14`
+    );
+  });
+});
+
 describe('validateAuthor', () => {
   it('should throw an error if markdown is invalid', () => {
     const options = { markdownFilePath: '/path/to/dir/invalid-author.md' };
     expect(() => validateAuthor(options)).toThrowError(
-      'The markdown of the file "/path/to/dir/invalid-author.md" is invalid ! Validation error: Required at "name"'
+      'The markdown of the file "/path/to/dir/invalid-author.md" is invalid ! Required at "name"'
     );
   });
 
@@ -153,7 +263,7 @@ describe('validatePost', () => {
       markdownFilePath: '/path/to/dir/invalid-post.md',
     };
     expect(() => validatePost(options)).toThrowError(
-      'The markdown of the file "/path/to/dir/invalid-post.md" is invalid ! Validation error: Required at "title"'
+      'The markdown of the file "/path/to/dir/invalid-post.md" is invalid ! Required at "title"'
     );
   });
 
@@ -164,7 +274,7 @@ describe('validatePost', () => {
     };
 
     expect(() => validatePost(options)).toThrow(
-      'The markdown of the file "/path/to/dir/invalid-post-keyword-includes-in-categories.md" is invalid ! Validation error: Must not include a category. at "keywords"'
+      'The markdown of the file "/path/to/dir/invalid-post-keyword-includes-in-categories.md" is invalid ! Must not include a category. at "keywords"'
     );
   });
 
@@ -175,7 +285,7 @@ describe('validatePost', () => {
     };
 
     expect(() => validatePost(options)).toThrow(
-      'The markdown of the file "/path/to/dir/invalid-post-too-many-keywords.md" is invalid ! Validation error: Too many items 😡. at "keywords"'
+      'The markdown of the file "/path/to/dir/invalid-post-too-many-keywords.md" is invalid ! Too many items 😡. at "keywords"'
     );
   });
 
@@ -186,7 +296,7 @@ describe('validatePost', () => {
     };
 
     expect(() => validatePost(options)).toThrow(
-      'The markdown of the file "/path/to/dir/invalid-post-duplicates-keywords.md" is invalid ! Validation error: No duplicates allowed. at "keywords"'
+      'The markdown of the file "/path/to/dir/invalid-post-duplicates-keywords.md" is invalid ! No duplicates allowed. at "keywords"'
     );
   });
 
@@ -197,7 +307,7 @@ describe('validatePost', () => {
     };
 
     expect(() => validatePost(options)).toThrow(
-      'The markdown of the file "/path/to/dir/invalid-post-bad-syntax-on-markdown.md" is not compliant, it contains a syntax that is not allowed !'
+      'The markdown of the file "/path/to/dir/invalid-post-bad-syntax-on-markdown.md" is invalid ! Is not compliant, it contains a syntax that is not allowed !'
     );
   });
 
