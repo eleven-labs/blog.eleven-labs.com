@@ -11,7 +11,7 @@ import { createServer as createViteServer } from 'vite';
     validateMarkdown();
     vite.close();
   } catch (e) {
-    console.log(`::set-output name=result::${String(e)}`)
+    console.log(`::set-output name=result::${String(e)}`);
     vite.close();
     process.exit(1);
   }

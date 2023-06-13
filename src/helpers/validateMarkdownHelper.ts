@@ -1,11 +1,9 @@
 import { globSync } from 'glob';
-import matter from 'gray-matter';
-import { readFileSync } from 'node:fs';
 import { z } from 'zod';
-import { fromZodError } from 'zod-validation-error';
 
 import { AUTHORS_DIR, POSTS_DIR } from '@/app-paths';
 import { AUTHORIZED_LANGUAGES, CATEGORIES } from '@/constants';
+import { getDataInMarkdownFile } from '@/helpers/markdownHelper';
 import { intersection } from '@/helpers/objectHelper';
 import { AuthorData, PostData } from '@/types';
 
@@ -20,15 +18,10 @@ export const validateAuthor = (options: { markdownFilePath: string }): AuthorDat
     })
     .strict();
 
-  const markdownContent = readFileSync(options.markdownFilePath, { encoding: 'utf-8' });
-  const matterResult = matter(markdownContent);
-  const result = AuhorValidationSchema.safeParse(matterResult.data);
-  if (!result.success) {
-    const validationError = fromZodError(result.error);
-    throw new Error(`The markdown of the file "${options.markdownFilePath}" is invalid ! ${validationError.message}`);
-  }
-
-  return { ...result.data, content: matterResult.content };
+  return getDataInMarkdownFile({
+    markdownFilePath: options.markdownFilePath,
+    ValidationSchema: AuhorValidationSchema,
+  });
 };
 
 export const validatePost = (options: {
@@ -76,28 +69,10 @@ export const validatePost = (options: {
     })
     .strict();
 
-  const markdownContent = readFileSync(options.markdownFilePath, { encoding: 'utf-8' });
-
-  if (markdownContent.match(/{:[^}]+}/)) {
-    throw new Error(
-      `The markdown of the file "${options.markdownFilePath}" is not compliant, it contains a syntax that is not allowed !`
-    );
-  }
-
-  try {
-    const matterResult = matter(markdownContent);
-
-    const result = PostValidationSchema.safeParse(matterResult.data);
-
-    if (!result.success) {
-      const validationError = fromZodError(result.error);
-      throw new Error(`The markdown of the file "${options.markdownFilePath}" is invalid ! ${validationError.message}`);
-    }
-
-    return { ...result.data, content: matterResult.content };
-  } catch (error) {
-    throw new Error(`The markdown of the file "${options.markdownFilePath}" is invalid ! ${String(error)}`);
-  }
+  return getDataInMarkdownFile({
+    markdownFilePath: options.markdownFilePath,
+    ValidationSchema: PostValidationSchema,
+  });
 };
 
 export const validateMarkdown = (): boolean => {

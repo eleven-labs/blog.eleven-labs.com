@@ -7,7 +7,10 @@ excerpt: Retours d’expérience de gestion de projet agile en télétravail ave
 categories:
   - agile
 keywords:
-  - agile
+  - travail
+  - distance
+  - remote
+  - organisation
 authors:
   - roxannemcd
 ---

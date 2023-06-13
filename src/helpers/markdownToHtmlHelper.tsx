@@ -9,7 +9,6 @@ import {
   SyntaxHighlighter,
   Text,
 } from '@eleven-labs/design-system';
-import matter from 'gray-matter';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import rehypeRaw from 'rehype-raw';
@@ -19,6 +18,7 @@ import remarkParse from 'remark-parse';
 import remark2rehype from 'remark-rehype';
 import { unified } from 'unified';
 
+import { frontmatter } from '@/helpers/markdownHelper';
 import { intersection } from '@/helpers/objectHelper';
 
 const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): ReminderVariantType => {
@@ -75,7 +75,7 @@ const cleanMarkdown = (markdownContent: string): string =>
 export const markdownToHtml = function <TData = Record<string, unknown>>(
   markdownContent: string
 ): { data: TData; html: string } {
-  const matterResult = matter(markdownContent);
+  const frontmatterResult = frontmatter<TData>(markdownContent);
 
   const reactComponent = unified()
     .use(remarkParse)
@@ -186,10 +186,10 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
         },
       },
     })
-    .processSync(cleanMarkdown(matterResult.content)).result;
+    .processSync(cleanMarkdown(frontmatterResult.content)).result;
 
   return {
-    data: matterResult.data as TData,
+    data: frontmatterResult.data,
     html: String(ReactDOMServer.renderToStaticMarkup(reactComponent)),
   };
 };
