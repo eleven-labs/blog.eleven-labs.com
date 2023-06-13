@@ -64,9 +64,32 @@ jobs:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Validate markdown authors and posts
+        id: validate_markdown
         run: yarn validate-markdown
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment MR when Markdown validate has fail
+        uses: actions/github-script@v6
+        if: always()
+        with:
+          script: |
+            const output = `#### Markdown validate 🖌
+
+            <details>
+
+            \`\`\`${{ steps.validate_markdown.outputs.result }}\`\`\`
+
+            </details>
+
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Workflow: \`${{ github.workflow }}\`*`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
 
       - name: Run ESLint
         run: yarn lint:es
