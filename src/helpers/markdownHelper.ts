@@ -12,7 +12,7 @@ import { intersection } from '@/helpers/objectHelper';
 import { capitalize } from '@/helpers/stringHelper';
 import { AuthorData, PostData } from '@/types';
 
-class MarkdownInvalidError extends Error {
+export class MarkdownInvalidError extends Error {
   markdownFilePathRelative: string;
   reason: string;
   line?: number;
