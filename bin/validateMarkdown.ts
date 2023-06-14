@@ -7,12 +7,12 @@ import { createServer as createViteServer } from 'vite';
   });
 
   try {
-    const { validateMarkdown } = await vite.ssrLoadModule('/src/helpers/validateMarkdownHelper.ts');
+    const { validateMarkdown } = await vite.ssrLoadModule('/src/helpers/markdownHelper.ts');
     validateMarkdown();
     vite.close();
   } catch (e) {
-    console.log(`::set-output name=result::${String(e)}`);
     vite.close();
+    console.log(`::set-output name=result::${String(e)}`);
     process.exit(1);
   }
 })();

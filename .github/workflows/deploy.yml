@@ -71,7 +71,7 @@ jobs:
 
       - name: Comment MR when Markdown validate has fail
         uses: actions/github-script@v6
-        if: always()
+        if: failure()
         with:
           script: |
             const output = `#### Markdown validate 🖌
@@ -160,7 +160,7 @@ jobs:
 
       - name: Update deployment status
         uses: bobheadxi/deployments@v1
-        if: always()
+        if: success()
         with:
           step: finish
           token: ${{ secrets.GITHUB_TOKEN }}
