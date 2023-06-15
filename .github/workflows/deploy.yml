@@ -65,42 +65,42 @@ jobs:
 
       - name: Validate markdown authors and posts
         id: validate_markdown
-        run: yarn validate-markdown --ci
-        env:
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn validate-markdown-and-create-pull-comment
+#        env:
+#          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Add annotation to PR after markdown validation fails
-        id: annotation_to_pr_after_failed_to_markdown_validation
-        uses: actions/github-script@v5
-        if: github.event_name == 'pull_request' && failure()
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const filePath = "${{ steps.validate_markdown.outputs.filePath }}";
-            const annotationMessage = `${{ steps.validate_markdown.outputs.reason }}`;
-            const line = ${{ steps.validate_markdown.outputs.line }};
-            const column = ${{ steps.validate_markdown.outputs.column }};
-
-            github.rest.checks.create({
-              ...context.repo,
-              name: 'markdown-validation',
-              head_sha: context.sha,
-              status: 'completed',
-              conclusion: 'failure',
-              output: {
-                title: 'Markdown validation',
-                summary: annotationMessage,
-                annotations: [{
-                  path: filePath,
-                  start_line: line,
-                  end_line: line,
-                  start_column: column,
-                  end_column: column,
-                  annotation_level: 'failure',
-                  message: annotationMessage,
-                }]
-              },
-            });
+#      - name: Add annotation to PR after markdown validation fails
+#        id: annotation_to_pr_after_failed_to_markdown_validation
+#        uses: actions/github-script@v5
+#        if: github.event_name == 'pull_request' && failure()
+#        with:
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          script: |
+#            const filePath = "${{ steps.validate_markdown.outputs.filePath }}";
+#            const annotationMessage = `${{ steps.validate_markdown.outputs.reason }}`;
+#            const line = ${{ steps.validate_markdown.outputs.line }};
+#            const column = ${{ steps.validate_markdown.outputs.column }};
+#
+#            github.rest.checks.create({
+#              ...context.repo,
+#              name: 'markdown-validation',
+#              head_sha: context.sha,
+#              status: 'completed',
+#              conclusion: 'failure',
+#              output: {
+#                title: 'Markdown validation',
+#                summary: annotationMessage,
+#                annotations: [{
+#                  path: filePath,
+#                  start_line: line,
+#                  end_line: line,
+#                  start_column: column,
+#                  end_column: column,
+#                  annotation_level: 'failure',
+#                  message: annotationMessage,
+#                }]
+#              },
+#            });
 
       - name: Run ESLint
         run: yarn lint:es
