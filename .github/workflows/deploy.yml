@@ -92,7 +92,7 @@ jobs:
                 summary: annotationMessage,
                 annotations: [{
                   path: filePath,
-                  start_line: line,
+                  start_line: line + 1,
                   end_line: line,
                   start_column: 0,
                   end_column: column,
