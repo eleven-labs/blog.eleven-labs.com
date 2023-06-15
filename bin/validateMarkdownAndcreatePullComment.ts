@@ -35,10 +35,10 @@ const octokit = new Octokit({
         // const github_ref = process.env.GITHUB_REF
         // const pull_request_id = Array.from(github_ref.matchAll('refs\/pull\/(.*)\/merge'))[0][1]
 
-        await octokit.request(`POST /repos/${process.env.GITHUB_REPOSITORY}/pulls/948/comments`, {
+        await octokit.request(`POST /repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.GITHUB_REF}/comments`, {
             owner: process.env.GITHUB_REPOSITORY_OWNER,
             repo: process.env.GITHUB_REPOSITORY,
-            pull_number: '948',
+            pull_number: process.env.GITHUB_REF,
             body: markdownInvalidError.reason,
             commit_id: process.env.GITHUB_SHA,
             path: markdownInvalidError.markdownFilePathRelative,
