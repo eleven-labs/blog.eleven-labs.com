@@ -66,8 +66,8 @@ jobs:
       - name: Validate markdown authors and posts
         id: validate_markdown
         run: yarn validate-markdown-and-create-pull-comment
-#        env:
-#          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 #      - name: Add annotation to PR after markdown validation fails
 #        id: annotation_to_pr_after_failed_to_markdown_validation
