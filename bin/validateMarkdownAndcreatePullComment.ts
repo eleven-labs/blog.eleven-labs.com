@@ -31,7 +31,8 @@ const octokit = new Octokit({
         // console.log(`::set-output name=line::${markdownInvalidError.line}`);
         // console.log(`::set-output name=column::${markdownInvalidError.column}`);
 
-        const pull_request_id = Array.from(process.env.GITHUB_REF.matchAll('refs\/pull\/(.*)\/merge'))[0][1]
+        const github_ref = process.env.GITHUB_REF
+        const pull_request_id = Array.from(github_ref.matchAll('refs\/pull\/(.*)\/merge'))[0][1]
 
         await octokit.request(`POST /repos/${process.env.GITHUB_REPOSITORY}/pulls/${pull_request_id}/comments`, {
             owner: process.env.GITHUB_REPOSITORY_OWNER,
