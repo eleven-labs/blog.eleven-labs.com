@@ -94,7 +94,7 @@ jobs:
                   path: filePath,
                   start_line: line,
                   end_line: line,
-                  start_column: column,
+                  start_column: 0,
                   end_column: column,
                   annotation_level: 'failure',
                   message: annotationMessage,
