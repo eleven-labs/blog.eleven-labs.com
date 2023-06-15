@@ -92,9 +92,9 @@ jobs:
                 summary: annotationMessage,
                 annotations: [{
                   path: filePath,
-                  start_line: line + 1,
+                  start_line: line,
                   end_line: line,
-                  start_column: 0,
+                  start_column: column,
                   end_column: column,
                   annotation_level: 'failure',
                   message: annotationMessage,
