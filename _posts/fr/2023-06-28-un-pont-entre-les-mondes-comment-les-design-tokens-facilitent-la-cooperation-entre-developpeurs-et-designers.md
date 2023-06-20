@@ -57,25 +57,25 @@ Ainsi, les Design Tokens jouent un rôle essentiel en facilitant la collaboratio
 
 ## Mise en pratique des Design Tokens
 
-Maintenant que vous êtes convaincu de l'incroyable pouvoir des Design Tokens, il est temps de les mettre en pratique ! Voici quelques étapes pour y parvenir:
+Maintenant que vous êtes convaincu de l'incroyable pouvoir des Design Tokens, il est temps de les mettre en pratique ! Voici quelques étapes pour y parvenir :
 
-### Identification des éléments visuels récurrents:
+### Identification des éléments visuels récurrents :
 
 Analysez l'interface pour repérer les attributs de conception qui se répètent, tels que les couleurs, les typographies, les espacements, etc. Ces éléments seront les candidats parfaits pour être transformés en Design Tokens.
 
-### Création de la bibliothèque de Design Tokens:
+### Création de la bibliothèque de Design Tokens :
 
 Regroupez les valeurs des Design Tokens dans une bibliothèque centrale. Cela peut prendre la forme d'un fichier JSON ou d'un outil de gestion de Design Tokens. Assurez-vous de bien documenter chaque token pour faciliter sa compréhension et son utilisation.
 
-### Implémentation dans le workflow:
+### Implémentation dans le workflow :
 
 Intégrez l'utilisation des Design Tokens dans le workflow de conception et de développement. Encouragez les designers à utiliser les tokens lors de la création des maquettes et assurez-vous que les développeurs les intègrent correctement dans le code.
 
-### Outils de gestion:
+### Outils de gestion :
 
 Utilisez des outils dédiés pour gérer les Design Tokens. Il existe des outils spécifiques qui permettent de centraliser, de documenter et de partager facilement les tokens au sein de l'équipe. Ces outils facilitent la collaboration et garantissent la cohérence entre les différentes parties prenantes.
 
-### Communication et collaboration:
+### Communication et collaboration :
 
 Établissez une communication ouverte entre développeurs et designers. Favorisez les échanges sur l'utilisation des Design Tokens, partagez les retours d'expérience et encouragez la collaboration pour affiner et améliorer le système de Design Tokens au fil du temps.
 
@@ -83,7 +83,7 @@ En suivant ces étapes, vous serez en mesure de mettre en pratique les Design To
 
 ## Outils pour la Gestion des Design Tokens
 
-Lorsqu'il s'agit de gérer efficacement les Design Tokens, il existe une panoplie d'outils disponibles pour les designers et les développeurs. Ces outils offrent des fonctionnalités avancées pour la création, la documentation et l'intégration des Design Tokens dans vos flux de travail. Voici quelques-uns des outils les plus populaires utilisés:
+Lorsqu'il s'agit de gérer efficacement les Design Tokens, il existe une panoplie d'outils disponibles pour les designers et les développeurs. Ces outils offrent des fonctionnalités avancées pour la création, la documentation et l'intégration des Design Tokens dans vos flux de travail. Voici quelques-uns des outils les plus populaires utilisés :
 
 ### Tokens Studio
 
