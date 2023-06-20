@@ -20,4 +20,10 @@
       --divider-width-author-page: 300px;
     }
   }
+
+  &__social_networks {
+    .icon {
+      border-radius: 6px;
+    }
+  }
 }

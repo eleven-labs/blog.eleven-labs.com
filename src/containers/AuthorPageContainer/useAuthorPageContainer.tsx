@@ -7,7 +7,7 @@ import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer'
 import { getPathFile } from '@/helpers/assetHelper';
 import { type getDataFromAuthorPage } from '@/helpers/contentHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
-import { AuthorPageProps } from '@/pages/AuthorPage';
+import { AuthorPageProps, SocialNetworkName } from '@/pages/AuthorPage';
 
 export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
   const { t } = useTranslation();
@@ -18,12 +18,40 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
     return;
   }
 
+  const { author, posts } = resultAuthorPage;
   return {
     backLink: <BackLinkContainer />,
-    author: resultAuthorPage.author,
+    author: {
+      username: author.username,
+      name: author.name,
+      avatarImageUrl: author.avatarImageUrl,
+      socialNetworks: Object.entries(author.socialNetworks || {}).map(([name, username]) => {
+        const socialNetworkName = name as SocialNetworkName;
+        let url: string;
+
+        switch (socialNetworkName) {
+          case 'github':
+            url = `https://github.com/${username}/`;
+            break;
+          case 'linkedin':
+            url = `https://www.linkedin.com/in/${username}/`;
+            break;
+          case 'twitter':
+            url = `https://twitter.com/${username}/`;
+            break;
+        }
+
+        return {
+          name: socialNetworkName,
+          url,
+          username: socialNetworkName === 'twitter' ? `@${username}` : username,
+        };
+      }),
+      content: author.content,
+    },
     emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
     title: t('pages.author.post_preview_list_title'),
-    postPreviewList: <PostPreviewListContainer allPosts={resultAuthorPage.posts} />,
+    postPreviewList: <PostPreviewListContainer allPosts={posts} />,
     newsletterBlock,
   };
 };
