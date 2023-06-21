@@ -5,7 +5,7 @@ import path, { dirname, resolve } from 'node:path';
 import { ASSETS_DIR, DATA_DIR, MARKDOWN_FILE_PATHS } from '@/app-paths';
 import { CATEGORIES } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
-import { markdownToHtml } from '@/helpers/markdownHelper';
+import { markdownToHtml } from '@/helpers/markdownToHtmlHelper';
 import { intersection } from '@/helpers/objectHelper';
 import {
   AuthorData,

@@ -64,6 +64,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Validate markdown authors and posts
+        id: validate_markdown
         run: yarn validate-markdown
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -137,7 +138,7 @@ jobs:
 
       - name: Update deployment status
         uses: bobheadxi/deployments@v1
-        if: always()
+        if: success()
         with:
           step: finish
           token: ${{ secrets.GITHUB_TOKEN }}
