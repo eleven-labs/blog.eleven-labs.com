@@ -107,6 +107,6 @@ Ces outils offrent des fonctionnalités avancées pour la gestion des Design Tok
 
 Nous voici à la fin de cette aventure à travers les Design Tokens. Vous comprenez maintenant leur rôle essentiel dans la collaboration entre les développeurs et les designers. Ils sont les piliers d'une communication claire, d'une flexibilité créative et d'une cohérence visuelle à grande échelle.
 
-Alors, pourquoi attendre ? Explorez le monde des Design Tokens et commencez à bénéficier de tous les avantages qu'ils offrent. Faites de vos projets une symphonie harmonieuse entre développeurs et designers, où la créativité et la cohérence se rencontrent pour créer des expériences extraordinaires. Enchantement, collaboration et cohérence vous attendent !
+Alors, pourquoi attendre ? Explorez le monde des Design Tokens et commencez à bénéficier de tous les avantages qu'ils offrent.
 
 Et saviez-vous que notre propre Design System est conçu sur la base des Design Tokens ? Il est utilisé sur ce blog. Découvrez notre Design System ici: [Documentation Design System](https://eleven-labs.github.io/design-system/). Restez à l'affût de notre prochain article où nous explorerons le processus d'industrialisation des Design Tokens avec Style Dictionary.
