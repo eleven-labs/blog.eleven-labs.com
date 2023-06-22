@@ -29,13 +29,13 @@ export const SearchPage: React.FC<SearchPageProps> = ({
   searchNotFound,
   isLoading = false,
 }) => (
-  <>
-    <Container as="main" className="search-page">
-      {backLink}
-      {!isLoading && searchNotFound ? (
-        <NotFoundBlock {...searchNotFound} />
-      ) : (
-        <>
+  <Container variant="global">
+    {!isLoading && searchNotFound ? (
+      <NotFoundBlock {...searchNotFound} />
+    ) : (
+      <>
+        <Container variant="content" className="search-page">
+          {backLink}
           <Skeleton isLoading={isLoading}>
             <Heading mt="s" size="l">
               {title}
@@ -46,9 +46,11 @@ export const SearchPage: React.FC<SearchPageProps> = ({
           </Skeleton>
           <Divider mt="xs" mb="l" size="l" mx="0" bg="yellow" />
           {postPreviewList}
+        </Container>
+        <Container>
           <NewsletterBlock my={{ xs: 'xl', md: 'xxl' }} {...newsletterBlock} />
-        </>
-      )}
-    </Container>
-  </>
+        </Container>
+      </>
+    )}
+  </Container>
 );

@@ -24,14 +24,18 @@ export const PostPage: React.FC<PostPageProps> = ({
   relatedPostList,
   newsletterBlock,
 }) => (
-  <Container>
-    {backLink}
-    <PostHeader {...header} />
-    <Divider mt="xs" bg="light-grey" />
-    <Box as="section" textSize="s" dangerouslySetInnerHTML={{ __html: content }} />
-    <Divider mt="xs" bg="light-grey" />
-    <PostFooter {...footer} />
-    <NewsletterBlock my={{ xs: 'l' }} {...newsletterBlock} />
-    {relatedPostList.posts.length > 0 && <RelatedPostList mb={{ xs: 'xl', md: 'xxl' }} {...relatedPostList} />}
+  <Container variant="global">
+    <Container variant="content">
+      {backLink}
+      <PostHeader {...header} />
+      <Divider mt="xs" bg="light-grey" />
+      <Box as="section" textSize="s" dangerouslySetInnerHTML={{ __html: content }} />
+      <Divider mt="xs" bg="light-grey" />
+      <PostFooter {...footer} />
+    </Container>
+    <Container>
+      <NewsletterBlock mb={{ xs: 'l' }} {...newsletterBlock} />
+      {relatedPostList.posts.length > 0 && <RelatedPostList mb={{ xs: 'xl', md: 'xxl' }} {...relatedPostList} />}
+    </Container>
   </Container>
 );
