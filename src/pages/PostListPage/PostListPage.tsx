@@ -15,12 +15,16 @@ export type PostListPageProps = {
 export const PostListPage: React.FC<PostListPageProps> = ({ subHeader, title, postPreviewList, newsletterBlock }) => (
   <>
     <SubHeader {...subHeader} />
-    <Container>
-      <Text size="m" my="m" fontWeight="medium">
-        {title}
-      </Text>
-      {postPreviewList}
-      <NewsletterBlock my={{ xs: 'xl', md: 'xxl' }} {...newsletterBlock} />
+    <Container variant="global" mt={{ xs: 'l', md: 'xl' }}>
+      <Container variant="content">
+        <Text size="m" my="m" fontWeight="medium">
+          {title}
+        </Text>
+        {postPreviewList}
+      </Container>
+      <Container>
+        <NewsletterBlock my={{ xs: 'xl', md: 'xxl' }} {...newsletterBlock} />
+      </Container>
     </Container>
   </>
 );

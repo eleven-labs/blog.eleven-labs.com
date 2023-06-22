@@ -3,14 +3,30 @@
 .container {
   position: relative;
   z-index: 1;
-  margin: var(--margin-container-main, 0 auto);
-  width: var(--width-container-main, auto);
-  padding-top: var(--padding-top-container-main, var(--spacing-l));
-  padding-left: var(--spacing-m);
-  padding-right: var(--spacing-m);
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--width-container, auto);
 
-  @include create-media-queries('md') {
-    --width-container-main: 864px;
-    --padding-top-container-main: var(--spacing-xl);
+
+  &--global {
+    margin-top: var(--margin-top-container, var(--spacing-l));
+    padding-left: var(--spacing-m);
+    padding-right: var(--spacing-m);
+
+    @include create-media-queries('md') {
+      --margin-top-container: var(--spacing-xl);
+    }
+  }
+
+  &--common {
+    @include create-media-queries('md') {
+      --width-container: 1120px;
+    }
+  }
+
+  &--content {
+    @include create-media-queries('md') {
+      --width-container: 864px;
+    }
   }
 }

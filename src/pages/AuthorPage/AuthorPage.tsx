@@ -34,53 +34,57 @@ export const AuthorPage: React.FC<AuthorPageProps> = ({
   postPreviewList,
   newsletterBlock,
 }) => (
-  <Container className="author-page">
-    {backLink}
-    <Flex
-      flexDirection={{ xs: 'column', md: 'row' }}
-      justifyContent="center"
-      alignItems="center"
-      textAlign={{ xs: 'center', md: 'left' }}
-      mt="m"
-    >
-      <img
-        src={author.avatarImageUrl ?? emptyAvatarImageUrl}
-        alt={author.name}
-        className={author.avatarImageUrl ? 'author-page__avatar-img' : 'author-page__empty-avatar-img'}
-      />
-      <Box mt="s" ml="s">
-        <Text size="m" fontWeight="medium" color="amaranth">
-          {author.name}
-        </Text>
-        <Box dangerouslySetInnerHTML={{ __html: author.content }} />
-        {author.socialNetworks && (
-          <Flex
-            flexDirection={{ xs: 'column', sm: 'row' }}
-            mt="s"
-            alignItems="center"
-            justifyContent={{ xs: 'center', md: 'start' }}
-            className="author-page__social_networks"
-          >
-            {author.socialNetworks.map((socialNetwork, index) => (
-              <React.Fragment key={socialNetwork.name}>
-                <Text>
-                  <Icon name={socialNetwork.name} size="24px" />{' '}
-                  <Link href={socialNetwork.url} target="_blank">
-                    {socialNetwork.username}
-                  </Link>
-                </Text>
-                {index !== (author.socialNetworks?.length ?? 0) - 1 && <SeparatorCircle />}
-              </React.Fragment>
-            ))}
-          </Flex>
-        )}
-      </Box>
-    </Flex>
-    <Divider mt="m" bg="light-grey" className="author-page__divider" />
-    <Text size="m" my="m" fontWeight="medium">
-      {title}
-    </Text>
-    {postPreviewList}
-    <NewsletterBlock my={{ xs: 'xl', md: 'xxl' }} {...newsletterBlock} />
+  <Container variant="global" className="author-page">
+    <Container variant="content">
+      {backLink}
+      <Flex
+        flexDirection={{ xs: 'column', md: 'row' }}
+        justifyContent="center"
+        alignItems="center"
+        textAlign={{ xs: 'center', md: 'left' }}
+        mt="m"
+      >
+        <img
+          src={author.avatarImageUrl ?? emptyAvatarImageUrl}
+          alt={author.name}
+          className={author.avatarImageUrl ? 'author-page__avatar-img' : 'author-page__empty-avatar-img'}
+        />
+        <Box mt="s" ml="s">
+          <Text size="m" fontWeight="medium" color="amaranth">
+            {author.name}
+          </Text>
+          <Box dangerouslySetInnerHTML={{ __html: author.content }} />
+          {author.socialNetworks && (
+            <Flex
+              flexDirection={{ xs: 'column', sm: 'row' }}
+              mt="s"
+              alignItems="center"
+              justifyContent={{ xs: 'center', md: 'start' }}
+              className="author-page__social_networks"
+            >
+              {author.socialNetworks.map((socialNetwork, index) => (
+                <React.Fragment key={socialNetwork.name}>
+                  <Text>
+                    <Icon name={socialNetwork.name} size="24px" />{' '}
+                    <Link href={socialNetwork.url} target="_blank">
+                      {socialNetwork.username}
+                    </Link>
+                  </Text>
+                  {index !== (author.socialNetworks?.length ?? 0) - 1 && <SeparatorCircle />}
+                </React.Fragment>
+              ))}
+            </Flex>
+          )}
+        </Box>
+      </Flex>
+      <Divider mt="m" bg="light-grey" className="author-page__divider" />
+      <Text size="m" my="m" fontWeight="medium">
+        {title}
+      </Text>
+      {postPreviewList}
+    </Container>
+    <Container>
+      <NewsletterBlock my={{ xs: 'xl', md: 'xxl' }} {...newsletterBlock} />
+    </Container>
   </Container>
 );
