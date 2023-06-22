@@ -2,6 +2,14 @@ import './PostFooter.scss';
 
 import { AsProps, Box, Flex, Link, Text } from '@eleven-labs/design-system';
 import React from 'react';
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+} from 'react-share';
 
 export interface PostFooterProps {
   title: React.ReactNode;
@@ -13,6 +21,8 @@ export interface PostFooterProps {
   }[];
   emptyAvatarImageUrl: string;
 }
+
+const shareUrl = 'https://blog.eleven-labs.com/fr/agile-travail-distance/';
 
 export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, emptyAvatarImageUrl }) => (
   <Box className="post-footer" color="dark-grey" mt="m">
@@ -36,5 +46,14 @@ export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, emptyAva
         </Flex>
       ))}
     </Flex>
+    <FacebookShareButton url={shareUrl}>
+      <FacebookIcon />
+    </FacebookShareButton>
+    <TwitterShareButton url={shareUrl}>
+      <TwitterIcon />
+    </TwitterShareButton>
+    <LinkedinShareButton url={shareUrl}>
+      <LinkedinIcon />
+    </LinkedinShareButton>
   </Box>
 );

@@ -2,7 +2,7 @@
 username: gcunsolo
 name: Giuseppe Cunsolo
 github: gcunsolo
-linkedin: 'https://www.linkedin.com/in/giuseppe-cunsolo-peqpe/'
+linkedin: giuseppe-cunsolo-peqpe
 ---
 Développeur JS @ Eleven-Labs
 

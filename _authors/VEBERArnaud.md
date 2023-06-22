@@ -3,7 +3,7 @@ username: VEBERArnaud
 name: Arnaud Veber
 twitter: VEBERArnaud
 github: VEBERArnaud
-linkedin: 'https://www.linkedin.com/in/veberarnaud/'
+linkedin: veberarnaud
 ---
 Cloud Solutions Architect & Fullstack Developer depuis 10 ans.
 

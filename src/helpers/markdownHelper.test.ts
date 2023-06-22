@@ -44,6 +44,15 @@ twitter: account-twitter
 linkedin: account-Linkedin
 ---
 This is some valid content`;
+      case '/path/to/dir/invalid-author-social-networks.md':
+        return `---
+username: jdoe
+name: John Doe
+github: https://github.com/account-github
+twitter: '@account-twitter'
+linkedin: https://www.linkedin.com/in/account-Linkedin/
+---
+This is some valid content`;
       case '/path/to/dir/valid-author.md':
         return `---
 username: jdoe
@@ -239,6 +248,13 @@ describe('validateAuthor', () => {
     const options = { markdownFilePath: '/path/to/dir/invalid-author.md' };
     expect(() => validateAuthor(options)).toThrowError(
       'The markdown of the file "/path/to/dir/invalid-author.md" is invalid ! Required at "name"'
+    );
+  });
+
+  it('should throw an error if markdown is invalid because of social networking', () => {
+    const options = { markdownFilePath: '/path/to/dir/invalid-author-social-networks.md' };
+    expect(() => validateAuthor(options)).toThrowError(
+      'The markdown of the file "/path/to/dir/invalid-author-social-networks.md" is invalid ! No need to set the "@" for twitter, just the username. at "twitter"; No need to define the complete url of github, just give the user name at "github"; No need to define the complete url of linkedin, just give the user name at "linkedin"'
     );
   });
 

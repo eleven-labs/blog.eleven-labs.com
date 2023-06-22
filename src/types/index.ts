@@ -24,9 +24,10 @@ export interface TransformedPost
   content: string;
 }
 
-export interface TransformedAuthor extends AuthorData {
+export interface TransformedAuthor extends Pick<AuthorData, 'username' | 'name'> {
   avatarImageUrl?: string;
   content: string;
+  socialNetworks?: Pick<AuthorData, 'github' | 'linkedin' | 'twitter'>;
 }
 
 type TransformedPostAuthors = Pick<TransformedAuthor, 'username' | 'name'>[];

@@ -1,9 +1,11 @@
 import './AuthorPage.scss';
 
-import { Box, Flex, Text } from '@eleven-labs/design-system';
+import { Box, Flex, Icon, Link, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { Container, Divider, NewsletterBlock, NewsletterBlockProps } from '@/components';
+import { Container, Divider, NewsletterBlock, NewsletterBlockProps, SeparatorCircle } from '@/components';
+
+export type SocialNetworkName = 'github' | 'twitter' | 'linkedin';
 
 export type AuthorPageProps = {
   backLink: React.ReactNode;
@@ -12,6 +14,11 @@ export type AuthorPageProps = {
     name: string;
     avatarImageUrl?: string;
     content: string;
+    socialNetworks?: {
+      name: SocialNetworkName;
+      url: string;
+      username: string;
+    }[];
   };
   emptyAvatarImageUrl: string;
   title: React.ReactNode;
@@ -46,6 +53,27 @@ export const AuthorPage: React.FC<AuthorPageProps> = ({
           {author.name}
         </Text>
         <Box dangerouslySetInnerHTML={{ __html: author.content }} />
+        {author.socialNetworks && (
+          <Flex
+            flexDirection={{ xs: 'column', sm: 'row' }}
+            mt="s"
+            alignItems="center"
+            justifyContent={{ xs: 'center', md: 'start' }}
+            className="author-page__social_networks"
+          >
+            {author.socialNetworks.map((socialNetwork, index) => (
+              <React.Fragment key={socialNetwork.name}>
+                <Text>
+                  <Icon name={socialNetwork.name} size="24px" />{' '}
+                  <Link href={socialNetwork.url} target="_blank">
+                    {socialNetwork.username}
+                  </Link>
+                </Text>
+                {index !== (author.socialNetworks?.length ?? 0) - 1 && <SeparatorCircle />}
+              </React.Fragment>
+            ))}
+          </Flex>
+        )}
       </Box>
     </Flex>
     <Divider mt="m" bg="light-grey" className="author-page__divider" />

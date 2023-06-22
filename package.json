@@ -32,7 +32,7 @@
     "node": ">= 16.0"
   },
   "dependencies": {
-    "@eleven-labs/design-system": "^0.6.0",
+    "@eleven-labs/design-system": "^0.6.2",
     "@remix-run/router": "^1.5.0",
     "algoliasearch": "^4.14.3",
     "classnames": "^2.3.2",
@@ -50,6 +50,7 @@
     "react-ga": "^3.3.1",
     "react-i18next": "^12.1.5",
     "react-router-dom": "^6.10.0",
+    "react-share": "^4.4.1",
     "serve-static": "^1.15.0"
   },
   "devDependencies": {

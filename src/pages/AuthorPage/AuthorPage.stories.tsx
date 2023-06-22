@@ -17,6 +17,23 @@ export default {
       username: 'jdoe',
       name: 'John Doe',
       content: 'Astronaute John Doe @ ElevenLabs_\uD83D\uDE80',
+      socialNetworks: [
+        {
+          name: 'github',
+          url: 'https://github.com/mytwitter/',
+          username: 'mygithub',
+        },
+        {
+          name: 'twitter',
+          url: 'https://twitter.com/mytwitter/',
+          username: 'mytwitter',
+        },
+        {
+          name: 'linkedin',
+          url: 'https://www.linkedin.com/in/mylinkedin/',
+          username: 'mylinkedin',
+        },
+      ],
     },
     emptyAvatarImageUrl: '/imgs/astronaut.png',
     title: `Article de l'auteur`,
