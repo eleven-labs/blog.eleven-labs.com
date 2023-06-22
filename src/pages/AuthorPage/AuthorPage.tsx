@@ -15,7 +15,7 @@ export type AuthorPageProps = {
     avatarImageUrl?: string;
     content: string;
     socialNetworks?: {
-      name: 'github' | 'twitter' | 'linkedin';
+      name: SocialNetworkName;
       url: string;
       username: string;
     }[];
@@ -26,7 +26,6 @@ export type AuthorPageProps = {
   newsletterBlock: NewsletterBlockProps;
 };
 
-// @ts-ignore
 export const AuthorPage: React.FC<AuthorPageProps> = ({
   backLink,
   author,
