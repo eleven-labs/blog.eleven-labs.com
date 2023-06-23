@@ -22,8 +22,10 @@ import { getArgs } from './binHelper';
     if (args.ci) {
       console.log(`::set-output name=filePath::${markdownInvalidError.markdownFilePathRelative}`);
       console.log(`::set-output name=reason::${markdownInvalidError.reason}`);
-      console.log(`::set-output name=line::${markdownInvalidError.line}`);
-      console.log(`::set-output name=column::${markdownInvalidError.column}`);
+      if (markdownInvalidError.line && markdownInvalidError.column) {
+        console.log(`::set-output name=line::${markdownInvalidError.line}`);
+        console.log(`::set-output name=column::${markdownInvalidError.column}`);
+      }
       process.exit(1);
     }
 
