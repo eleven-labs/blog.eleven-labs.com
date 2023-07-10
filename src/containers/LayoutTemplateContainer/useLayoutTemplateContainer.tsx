@@ -8,6 +8,7 @@ import { CookieConsentContainer } from '@/containers/CookieConsentContainer';
 import { HeaderContainer } from '@/containers/HeaderContainer';
 import { useFooterContainer } from '@/containers/LayoutTemplateContainer/useFooterContainer';
 import { getPathFile } from '@/helpers/assetHelper';
+import { useSeo } from '@/hooks/useSeo';
 import { LayoutTemplateProps } from '@/templates/LayoutTemplate';
 
 export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'children'> => {
@@ -15,8 +16,9 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   const location = useLocation();
   const footer = useFooterContainer();
 
+  const title = t<string>('meta.title');
   useHead({
-    title: t<string>('meta.title'),
+    title,
     metas: [
       {
         name: 'google-site-verification',
@@ -32,6 +34,9 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
       },
     ],
     language: i18n.language,
+  });
+  useSeo({
+    title: title,
   });
   useLink({ rel: 'apple-touch-icon', sizes: '120x120', href: getPathFile('/imgs/icons/apple-icon-120x120.png') });
   useLink({ rel: 'apple-touch-icon', sizes: '152x152', href: getPathFile('/imgs/icons/apple-icon-152x152.png') });

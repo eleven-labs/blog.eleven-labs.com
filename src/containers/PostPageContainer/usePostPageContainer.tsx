@@ -10,13 +10,17 @@ import { type getDataFromPostPage } from '@/helpers/contentHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
-import { useSeo } from '@/hooks/useSeo';
+import { useSeoPost } from '@/hooks/useSeoPost';
 import { PostPageProps } from '@/pages/PostPage';
 
 export const usePostPageContainer = (): PostPageProps | undefined => {
   const { t, i18n } = useTranslation();
   const { getDateToString } = useDateToString();
   const post = useLoaderData() as ReturnType<typeof getDataFromPostPage>;
+  useSeoPost({
+    title: post?.title || '',
+    post,
+  });
   const newsletterBlock = useNewsletterBlock();
 
   useEffect(() => {
@@ -27,11 +31,6 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
       twitterTweetElements[0].appendChild(script);
     }
   }, []);
-
-  useSeo({
-    title: post?.title || '',
-    post,
-  });
 
   if (!post) {
     return;

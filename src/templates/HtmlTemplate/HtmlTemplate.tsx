@@ -12,15 +12,17 @@ export interface HtmlTemplateProps {
   scripts?: Array<React.ScriptHTMLAttributes<HTMLScriptElement> & { critical?: boolean; text?: string }>;
 }
 
+const ldJsonType = 'application/ld+json';
+
 const renderScripts = (scripts: HtmlTemplateProps['scripts']): JSX.Element[] | undefined =>
-  scripts?.map<JSX.Element>((script, index) => (
+  scripts?.map<JSX.Element>(({ text, ...script }, index) => (
     <script
       key={index}
       {...script}
       dangerouslySetInnerHTML={
-        script.text
+        text
           ? {
-              __html: script.text,
+              __html: text,
             }
           : undefined
       }
@@ -56,8 +58,9 @@ export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ lang, title, content
           }
         />
       ))}
-      {renderScripts(scripts?.filter((script) => script.critical))}
+      {renderScripts(scripts?.filter((script) => script.critical && ![ldJsonType].includes(script.type as string)))}
       <title>{title}</title>
+      {renderScripts(scripts?.filter((script) => ldJsonType === (script.type as string)))}
     </head>
     <body>
       <div
@@ -66,7 +69,7 @@ export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ lang, title, content
           __html: content,
         }}
       />
-      {renderScripts(scripts?.filter((script) => !script.critical))}
+      {renderScripts(scripts?.filter((script) => !script.critical && ![ldJsonType].includes(script.type as string)))}
     </body>
   </html>
 );
