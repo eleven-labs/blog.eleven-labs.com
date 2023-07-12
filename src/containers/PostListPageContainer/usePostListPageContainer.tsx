@@ -8,12 +8,14 @@ import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer'
 import { type getDataFromPostListPage } from '@/helpers/contentHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { PostListPageProps } from '@/pages/PostListPage/PostListPage';
+import { useTitle } from '@/hooks/useTitle';
 
 export const usePostListPageContainer = (): PostListPageProps => {
   const { categoryName } = useParams<{ categoryName?: string }>();
   const { t, i18n } = useTranslation();
   const { categories, posts } = useLoaderData() as ReturnType<typeof getDataFromPostListPage>;
   const newsletterBlock = useNewsletterBlock();
+  useTitle(categoryName ? t('seo.category.title', { categoryName }) : t('seo.home.title'));
 
   return {
     subHeader: {

@@ -1,6 +1,20 @@
 {
-  "meta": {
-    "title": "Tech news"
+  "seo": {
+    "home": {
+      "title": "Tech news"
+    },
+    "category": {
+      "title": "Article(s) from category {{ categoryName }}"
+    },
+    "author": {
+      "title": "Author's article(s) {{ authorName }}"
+    },
+    "search": {
+      "title": "Search"
+    },
+    "not_found": {
+      "title": "Page not found"
+    }
   },
   "categories": {
     "all": "Tous",

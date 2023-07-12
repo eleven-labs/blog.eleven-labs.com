@@ -10,8 +10,8 @@ export type NotFoundPageProps = {
 
 export const NotFoundPage: React.FC<NotFoundPageProps> = ({ backLink, title, description }) => (
   <>
-    <Container>
-      {backLink}
+    <Container variant="global">
+      <Container variant="content">{backLink}</Container>
       <NotFoundBlock title={title} description={description} />
     </Container>
   </>

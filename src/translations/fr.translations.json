@@ -1,6 +1,20 @@
 {
-  "meta": {
-    "title": "L'actualité tech"
+  "seo": {
+    "home": {
+      "title": "L'actualité tech"
+    },
+    "category": {
+      "title": "Article(s) de la catégorie {{ categoryName }}"
+    },
+    "author": {
+      "title": "Article(s) de l'auteur {{ authorName }}"
+    },
+    "search": {
+      "title": "Recherche"
+    },
+    "not_found": {
+      "title": "Page non trouvé"
+    }
   },
   "categories": {
     "all": "Tous",
