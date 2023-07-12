@@ -7,12 +7,14 @@ import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer'
 import { getPathFile } from '@/helpers/assetHelper';
 import { type getDataFromAuthorPage } from '@/helpers/contentHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
+import { useTitle } from '@/hooks/useTitle';
 import { AuthorPageProps, SocialNetworkName } from '@/pages/AuthorPage';
 
 export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
   const { t } = useTranslation();
   const resultAuthorPage = useLoaderData() as ReturnType<typeof getDataFromAuthorPage>;
   const newsletterBlock = useNewsletterBlock();
+  useTitle(t('seo.author.title', { authorName: resultAuthorPage?.author.name }));
 
   if (!resultAuthorPage) {
     return;

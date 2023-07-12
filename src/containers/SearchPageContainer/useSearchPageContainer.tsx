@@ -8,6 +8,7 @@ import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer'
 import { UsePostPreviewListContainerOptions } from '@/containers/PostPreviewListContainer/usePostPreviewListContainer';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
+import { useTitle } from '@/hooks/useTitle';
 import { SearchPageProps } from '@/pages/SearchPage';
 
 export const useSearchPageContainer = (): SearchPageProps => {
@@ -18,6 +19,7 @@ export const useSearchPageContainer = (): SearchPageProps => {
   const newsletterBlock = useNewsletterBlock();
   const search = new URLSearchParams(!IS_SSR ? location.search : '').get('search') || '';
   const [postsBySearch, setPostsBySearch] = useState<UsePostPreviewListContainerOptions['allPosts']>([]);
+  useTitle(t('seo.search.title'));
 
   useEffect(() => {
     const searchData = async (currentSearch: string): Promise<void> => {
