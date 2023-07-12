@@ -8,8 +8,8 @@ import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer'
 import { UsePostPreviewListContainerOptions } from '@/containers/PostPreviewListContainer/usePostPreviewListContainer';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
-import { SearchPageProps } from '@/pages/SearchPage';
 import { useTitle } from '@/hooks/useTitle';
+import { SearchPageProps } from '@/pages/SearchPage';
 
 export const useSearchPageContainer = (): SearchPageProps => {
   const { t, i18n } = useTranslation();

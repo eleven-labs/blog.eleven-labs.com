@@ -7,8 +7,8 @@ import { LinkContainer } from '@/containers/LinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
 import { type getDataFromPostListPage } from '@/helpers/contentHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
-import { PostListPageProps } from '@/pages/PostListPage/PostListPage';
 import { useTitle } from '@/hooks/useTitle';
+import { PostListPageProps } from '@/pages/PostListPage/PostListPage';
 
 export const usePostListPageContainer = (): PostListPageProps => {
   const { categoryName } = useParams<{ categoryName?: string }>();

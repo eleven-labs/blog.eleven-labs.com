@@ -7,8 +7,8 @@ import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer'
 import { getPathFile } from '@/helpers/assetHelper';
 import { type getDataFromAuthorPage } from '@/helpers/contentHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
-import { AuthorPageProps, SocialNetworkName } from '@/pages/AuthorPage';
 import { useTitle } from '@/hooks/useTitle';
+import { AuthorPageProps, SocialNetworkName } from '@/pages/AuthorPage';
 
 export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
   const { t } = useTranslation();
