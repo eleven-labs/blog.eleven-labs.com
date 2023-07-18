@@ -1,6 +1,5 @@
 import { Text } from '@eleven-labs/design-system';
 import React from 'react';
-import ReactGA from 'react-ga';
 import { useTranslation } from 'react-i18next';
 
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
@@ -43,10 +42,10 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
       ],
     },
     socialLinks: socialNetworks.map((socialNetwork) => ({
-      as: ReactGA.OutboundLink,
-      eventLabel: socialNetwork.iconName,
+      as: 'a',
       iconName: socialNetwork.iconName,
-      to: socialNetwork.url,
+      href: socialNetwork.url,
+      target: '_blank',
       'aria-label': socialNetwork.label,
     })),
     languageLinks: AUTHORIZED_LANGUAGES.map((currentLang) => {

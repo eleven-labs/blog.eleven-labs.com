@@ -1,18 +1,6 @@
 import './Footer.scss';
 
-import {
-  As,
-  AsProps,
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Icon,
-  IconNameType,
-  Link,
-  Logo,
-  Text,
-} from '@eleven-labs/design-system';
+import { AsProps, Box, Button, Flex, Heading, Icon, IconNameType, Link, Logo, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
 export interface FooterProps {
@@ -26,9 +14,8 @@ export interface FooterProps {
     list: { title: React.ReactNode; description: React.ReactNode }[];
   };
   socialLinks: ({
-    as?: As;
     iconName: Extract<IconNameType, 'rss' | 'facebook' | 'twitter' | 'linkedin' | 'welcometothejungle'>;
-  } & Pick<React.ComponentProps<'a'>, 'href'>)[];
+  } & AsProps<'a'>)[];
   languageLinks: ({
     label: React.ReactNode;
     isActive?: boolean;
