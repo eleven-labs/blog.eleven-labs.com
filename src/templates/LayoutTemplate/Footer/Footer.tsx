@@ -62,7 +62,7 @@ export const Footer: React.FC<FooterProps> = ({
         <Button {...(elevenLabsSiteLinkProps as typeof Button)}>{elevenLabsSiteLinkLabel}</Button>
       </Box>
       <Box>
-        <Heading size="l" mb="s">
+        <Heading as="p" size="l" mb="s">
           {contact.title}
         </Heading>
         <Flex flexDirection={{ xs: 'column', md: 'row' }} gap={{ md: 'xl' }}>

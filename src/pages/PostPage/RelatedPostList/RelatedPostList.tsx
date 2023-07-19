@@ -12,7 +12,7 @@ export interface RelatedPostListProps extends BoxProps {
 
 export const RelatedPostList: React.FC<RelatedPostListProps> = ({ relatedPostListTitle, posts, ...boxProps }) => (
   <Box {...boxProps} p="m" className="related-post-list">
-    <Heading mb="m" size="m">
+    <Heading as="p" mb="m" size="m">
       {relatedPostListTitle}
     </Heading>
     {posts.map((post, index) => (

@@ -14,7 +14,7 @@ export interface PostHeaderProps {
 
 export const PostHeader: React.FC<PostHeaderProps> = ({ title, date, readingTime, authors }) => (
   <Box mt={{ xs: 's', md: 'xl' }} textSize="xs">
-    <Heading as="h2" size="xl">
+    <Heading as="h1" size="xl">
       {title}
     </Heading>
     <Flex flexDirection={{ xs: 'column', md: 'row' }} mt={{ md: 'xxs-3' }}>

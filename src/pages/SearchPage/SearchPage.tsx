@@ -37,7 +37,7 @@ export const SearchPage: React.FC<SearchPageProps> = ({
         <Container variant="content" className="search-page">
           {backLink}
           <Skeleton isLoading={isLoading}>
-            <Heading mt="s" size="l">
+            <Heading as="p" mt="s" size="l">
               {title}
             </Heading>
           </Skeleton>
