@@ -1,9 +1,10 @@
 import { useHead, useLink, useMeta, useScript } from 'hoofd';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
+import { matchPath, useLocation } from 'react-router-dom';
 
 import { googleSiteVerificationKey, themeColor } from '@/config/website';
+import { PATHS } from '@/constants';
 import { CookieConsentContainer } from '@/containers/CookieConsentContainer';
 import { HeaderContainer } from '@/containers/HeaderContainer';
 import { useFooterContainer } from '@/containers/LayoutTemplateContainer/useFooterContainer';
@@ -14,6 +15,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   const { i18n } = useTranslation();
   const location = useLocation();
   const footer = useFooterContainer();
+  const isHomePage = Boolean(matchPath(PATHS.ROOT, location.pathname));
 
   useHead({
     metas: [
@@ -42,6 +44,18 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
       '@type': 'WebSite',
       name: 'Blog Eleven Labs',
       url: 'https://blog.eleven-labs.com/',
+      ...(isHomePage
+        ? {
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: {
+                '@type': 'EntryPoint',
+                urlTemplate: 'https://blog.eleven-labs.com/fr/search/?search={search_term_string}',
+              },
+              'query-input': 'required name=search_term_string',
+            },
+          }
+        : {}),
     }),
   });
 

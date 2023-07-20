@@ -33,7 +33,9 @@ export const NewsletterBlock: React.FC<NewsletterBlockProps> = ({
       <Text size="s" mt={{ xs: 's', md: '0' }}>
         {title}
       </Text>
-      <Heading size="l">{description}</Heading>
+      <Heading as="p" size="l">
+        {description}
+      </Heading>
       <Button {...(subscribeButtonProps as ButtonProps)} mt={{ xs: 'm', md: 'l' }}>
         {subscribeButtonLabel}
       </Button>

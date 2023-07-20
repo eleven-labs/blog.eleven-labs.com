@@ -1,7 +1,7 @@
 export const blogUrl = 'https://blog.eleven-labs.com';
 export const websiteUrl = 'https://eleven-labs.com';
 export const newsletterFormUrl = 'http://eepurl.com/cOuOIf';
-export const googleSiteVerificationKey = 'google-site-verification';
+export const googleSiteVerificationKey = 'KJe_sMzZb1SHlPfw4dQjwOw2lFJAJysJP27bRKT7Zxk';
 export const googleAnalytics = {
   trackingCode: 'UA-99013054-1',
   trackingCodeAnonymized: 'UA-99013054-9',

@@ -29,7 +29,7 @@ export const SubHeader: React.FC<SubHeaderProps> = ({ introBlock, choiceCategory
           <Heading as="p" size="m">
             {introBlock.title}
           </Heading>
-          <Heading mt="xxs-3" size="xl" className="sub-header__description">
+          <Heading as="p" mt="xxs-3" size="xl" className="sub-header__description">
             {introBlock.description}
           </Heading>
           <Heading as="p" mt={{ xs: 's', md: 'l' }} size="m">

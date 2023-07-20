@@ -1,11 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { generatePath, useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
 import { LinkContainer } from '@/containers/LinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
 import { type getDataFromPostListPage } from '@/helpers/contentHelper';
+import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useTitle } from '@/hooks/useTitle';
 import { PostListPageProps } from '@/pages/PostListPage/PostListPage';

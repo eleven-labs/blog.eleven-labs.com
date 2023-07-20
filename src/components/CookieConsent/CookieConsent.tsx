@@ -20,7 +20,9 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({
 }) => {
   return (
     <Box className="cookie-consent">
-      <Heading size="s">{title}</Heading>
+      <Heading as="p" size="s">
+        {title}
+      </Heading>
       <Text mt="xs" size="s">
         {description}
       </Text>
