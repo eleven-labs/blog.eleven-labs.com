@@ -1,7 +1,7 @@
 ---
 lang: fr
 date: '2019-05-02'
-slug: gestion-des-traductions-avec-localise.biz
+slug: gestion-des-traductions-avec-localise-biz
 title: Gestion des traductions avec localise.biz
 excerpt: >-
   Dans cet article je vais vous présenter localise.biz - un outil de gestion de

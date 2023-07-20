@@ -1,11 +1,14 @@
+import { useLink } from 'hoofd';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
-import { IS_SSR } from '@/constants';
+import { blogUrl } from '@/config/website';
+import { DEFAULT_LANGUAGE, IS_SSR, PATHS } from '@/constants';
 import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
 import { UsePostPreviewListContainerOptions } from '@/containers/PostPreviewListContainer/usePostPreviewListContainer';
+import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useTitle } from '@/hooks/useTitle';
@@ -20,6 +23,10 @@ export const useSearchPageContainer = (): SearchPageProps => {
   const search = new URLSearchParams(!IS_SSR ? location.search : '').get('search') || '';
   const [postsBySearch, setPostsBySearch] = useState<UsePostPreviewListContainerOptions['allPosts']>([]);
   useTitle(t('seo.search.title'));
+  useLink({
+    rel: 'canonical',
+    href: `${blogUrl}${generatePath(PATHS.SEARCH, { lang: DEFAULT_LANGUAGE })}`,
+  });
 
   useEffect(() => {
     const searchData = async (currentSearch: string): Promise<void> => {

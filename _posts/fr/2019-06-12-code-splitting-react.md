@@ -1,7 +1,7 @@
 ---
 lang: fr
 date: '2019-06-12'
-slug: react-débuter-le-code-splitting
+slug: react-debuter-le-code-splitting
 title: Débuter le code splitting avec React.lazy
 excerpt: >-
   Lorsque votre projet React est bien avancé, charger l'application pour un

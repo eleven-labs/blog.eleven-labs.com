@@ -82,7 +82,7 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
 export const validateAuthor = (options: { markdownFilePath: string }): AuthorData & { content: string } => {
   const AuhorValidationSchema = z
     .object({
-      username: z.string(),
+      username: z.string().regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/, 'Kebab case format not respected'),
       name: z.string(),
       twitter: z
         .string()
@@ -143,7 +143,7 @@ export const validatePost = (options: {
     .object({
       lang: z.enum(AUTHORIZED_LANGUAGES),
       date: z.coerce.date(),
-      slug: z.string(),
+      slug: z.string().regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/, 'Kebab case format not respected'),
       title: z.string(),
       excerpt: z.string(),
       cover: z.string().optional(),
@@ -151,21 +151,12 @@ export const validatePost = (options: {
       categories: z.array(z.enum(CATEGORIES)),
       keywords: z
         .array(z.string())
+        .max(10, 'Too many items 😡.')
         .superRefine((val, ctx) => {
           if (intersection(val, CATEGORIES).length) {
             ctx.addIssue({
               code: z.ZodIssueCode.custom,
               message: 'Must not include a category.',
-            });
-          }
-
-          if (val.length > 10) {
-            ctx.addIssue({
-              code: z.ZodIssueCode.too_big,
-              maximum: 10,
-              type: 'array',
-              inclusive: true,
-              message: 'Too many items 😡.',
             });
           }
 

@@ -1,7 +1,7 @@
 ---
 lang: fr
 date: '2019-04-03'
-slug: introductionauxhooks
+slug: introduction-aux-hooks
 title: Introduction aux hooks
 excerpt: 'Une petite introduction à la nouvelle fonctionnalité de React, les hooks !'
 authors:

@@ -1,7 +1,7 @@
 ---
 lang: fr
 date: '2021-04-21'
-slug: UX-Writing-Introduction-et-bonnes-pratiques
+slug: ux-writing-introduction-et-bonnes-pratiques
 title: 'UX Writing : Introduction et bonnes pratiques'
 excerpt: >-
   Rédiger un texte n’est pas une activité neutre, vos textes ont un impact sur
