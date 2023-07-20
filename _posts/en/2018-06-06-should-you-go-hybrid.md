@@ -11,7 +11,7 @@ excerpt: >-
   cloud, to help you decide if such a setup is best for your business.
 cover: /assets/2018-06-06-should-you-go-hybrid/cover.jpg
 authors:
-  - limor.wainstein
+  - limor-wainstein
 categories: []
 keywords:
   - cloud

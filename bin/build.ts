@@ -25,9 +25,7 @@ const writeJsonDataFilesAndFeedFile = async (): Promise<void> => {
 
   try {
     const { writeJsonDataFiles } = await vite.ssrLoadModule('/src/helpers/contentHelper.ts');
-    const { generateFeedFile } = await vite.ssrLoadModule('/src/helpers/feedHelper.ts');
     writeJsonDataFiles();
-    generateFeedFile({ rootDir: OUT_PUBLIC_DIR });
   } catch (e) {
     console.error(e);
   } finally {

@@ -1,7 +1,7 @@
 ---
 lang: en
 date: '2016-11-17'
-slug: php_handle-exception-gracefully
+slug: php-handle-exception-gracefully
 title: Handle exceptions gracefully
 excerpt: >-
   Hello everyone! Today I would like to speak about a subject too little

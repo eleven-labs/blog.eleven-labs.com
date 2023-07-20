@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://blog.eleven-labs.com/sitemap.xml

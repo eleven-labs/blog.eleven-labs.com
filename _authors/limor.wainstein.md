@@ -1,5 +1,5 @@
 ---
-username: limor.wainstein
+username: limor-wainstein
 name: Limor Wainstein
 ---
 Limor is a technical writer and editor at Agile SEO, a boutique digital marketing agency focused on technology and SaaS

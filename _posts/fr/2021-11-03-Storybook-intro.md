@@ -1,7 +1,7 @@
 ---
 lang: fr
 date: '2021-11-03'
-slug: Storybook-creer-son-premier-composant
+slug: storybook-creer-son-premier-composant
 title: Storybook - Créer son premier composant
 excerpt: >-
   Storybook c'est le framework open-source qui a été récompensé pendant la

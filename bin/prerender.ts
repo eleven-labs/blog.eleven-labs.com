@@ -11,8 +11,8 @@ const prerender = async (): Promise<void> => {
   });
 
   try {
-    const { generateHtmlFiles } = await vite.ssrLoadModule('/src/helpers/prerenderHelper.ts');
-    generateHtmlFiles({
+    const { generateFiles } = await vite.ssrLoadModule('/src/helpers/prerenderHelper');
+    generateFiles({
       rootDir: resolve(process.cwd(), 'dist'),
       baseUrl,
     });

@@ -1,8 +1,10 @@
+import { useLink } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
-import { PATHS } from '@/constants';
+import { blogUrl } from '@/config/website';
+import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
 import { LinkContainer } from '@/containers/LinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
 import { type getDataFromPostListPage } from '@/helpers/contentHelper';
@@ -17,6 +19,13 @@ export const usePostListPageContainer = (): PostListPageProps => {
   const { categories, posts } = useLoaderData() as ReturnType<typeof getDataFromPostListPage>;
   const newsletterBlock = useNewsletterBlock();
   useTitle(categoryName ? t('seo.category.title', { categoryName }) : t('seo.home.title'));
+  useLink({
+    rel: 'canonical',
+    href: `${blogUrl}${generatePath(categoryName ? PATHS.CATEGORY : PATHS.ROOT, {
+      lang: DEFAULT_LANGUAGE,
+      categoryName: categoryName,
+    })}`,
+  });
 
   return {
     subHeader: {

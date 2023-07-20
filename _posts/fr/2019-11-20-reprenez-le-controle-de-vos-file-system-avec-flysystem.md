@@ -1,7 +1,7 @@
 ---
 lang: fr
 date: '2019-11-20'
-slug: reprenez-le-controle-de-vos-file-system-avec-Flysystem
+slug: reprenez-le-controle-de-vos-file-system-avec-flysystem
 title: Reprenez le contrôle de vos filesystem avec Flysystem
 excerpt: >-
   Cet article vous présente comment interagir simplement avec vos systèmes de

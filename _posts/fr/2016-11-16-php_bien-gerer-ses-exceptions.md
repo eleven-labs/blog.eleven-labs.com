@@ -1,7 +1,7 @@
 ---
 lang: fr
 date: '2016-11-16'
-slug: php_bien-gerer-ses-exceptions
+slug: php-bien-gerer-ses-exceptions
 title: Bien gérer ses exceptions
 excerpt: >-
   Bonjour à tous ! Aujourd'hui je voudrais vous parler d'un sujet peu abordé en

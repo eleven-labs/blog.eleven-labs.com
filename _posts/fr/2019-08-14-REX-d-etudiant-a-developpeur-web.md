@@ -1,8 +1,8 @@
 ---
 lang: fr
 date: '2019-08-14'
-slug: rex_d_etudiant_a_developpeur_web
-title: 'REX, d''étudiant à developpeur web'
+slug: rex-etudiant-a-developpeur-web
+title: REX, d'étudiant à developpeur web
 excerpt: >-
   Cet article, j’aurais personnellement aimé le lire quelques années plus tôt
   quand je pensais que savoir écrire du code était le but ultime du développeur.
