@@ -1,0 +1,6 @@
+import{U as p}from"./index.es-c887dfb7.js";import{g as f}from"./_commonjsHelpers-de833af9.js";import{R as m}from"./index-76fb7be0.js";var u={exports:{}};/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/(function(s){(function(){var r={}.hasOwnProperty;function t(){for(var a=[],i=0;i<arguments.length;i++){var e=arguments[i];if(e){var n=typeof e;if(n==="string"||n==="number")a.push(e);else if(Array.isArray(e)){if(e.length){var l=t.apply(null,e);l&&a.push(l)}}else if(n==="object"){if(e.toString!==Object.prototype.toString&&!e.toString.toString().includes("[native code]")){a.push(e.toString());continue}for(var o in e)r.call(e,o)&&e[o]&&a.push(o)}}}return a.join(" ")}s.exports?(t.default=t,s.exports=t):window.classNames=t})()})(u);var d=u.exports;const v=f(d);const c=({size:s="s",...r})=>m.createElement(p,{...r,as:"hr",className:v("divider",{[`divider--${s}`]:s},r.className)});try{c.displayName="Divider",c.__docgenInfo={description:"",displayName:"Divider",props:{as:{defaultValue:null,description:"",name:"as",required:!1,type:{name:"As<any>"}},size:{defaultValue:{value:"s"},description:"",name:"size",required:!1,type:{name:"enum",value:[{value:'"m"'},{value:'"s"'},{value:'"l"'}]}}}}}catch{}export{c as D,v as c};
+//# sourceMappingURL=Divider-a6467a3d.js.map
