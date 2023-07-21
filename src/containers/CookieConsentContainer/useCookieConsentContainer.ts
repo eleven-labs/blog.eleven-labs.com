@@ -50,14 +50,14 @@ export const useCookieConsentContainer = (): CookieConsentProps | undefined => {
   React.useEffect((): void => {
     if (cookies.hasConsent === undefined) {
       setCookieConsent({
-        title: t<string>('cookie_consent.title'),
-        description: t<string>('cookie_consent.description'),
+        title: t('cookie_consent.title'),
+        description: t('cookie_consent.description'),
         declineButton: {
-          label: t<string>('cookie_consent.button_decline_label'),
+          label: t('cookie_consent.button_decline_label'),
           onClick: declineCookieConsent,
         },
         acceptButton: {
-          label: t<string>('cookie_consent.button_accept_label'),
+          label: t('cookie_consent.button_accept_label'),
           onClick: acceptCookieConsent,
         },
       });
