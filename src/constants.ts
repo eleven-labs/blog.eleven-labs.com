@@ -24,3 +24,26 @@ export const ALGOLIA_CONFIG = {
   API_KEY: getEnv<string>('VITE_ALGOLIA_API_KEY'),
   INDEX: getEnv<string>('VITE_ALGOLIA_INDEX'),
 };
+
+export const AVAILABLE_SHARE_LINKS = [
+  {
+    name: 'copyLink',
+    isVisible: true,
+  },
+  {
+    name: 'twitter',
+    isVisible: true,
+  },
+  {
+    name: 'facebook',
+    isVisible: true,
+  },
+  {
+    name: 'linkedIn',
+    isVisible: true,
+  },
+  {
+    name: 'reddit',
+    isVisible: false,
+  },
+] as const;

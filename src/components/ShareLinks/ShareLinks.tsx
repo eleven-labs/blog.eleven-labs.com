@@ -1,44 +1,67 @@
-import { Flex, MarginSystemProps } from '@eleven-labs/design-system';
+import './ShareLinks.scss';
+
+import { Flex, Icon, MarginSystemProps } from '@eleven-labs/design-system';
 import React from 'react';
 import {
   FacebookIcon,
   FacebookShareButton,
   LinkedinIcon,
   LinkedinShareButton,
+  RedditIcon,
+  RedditShareButton,
   TwitterIcon,
   TwitterShareButton,
 } from 'react-share';
 
+import { AVAILABLE_SHARE_LINKS } from '@/constants';
+import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
+
 export type ShareLinkOptions = {
   urlToShare: string;
-  socialMedias: {
-    name: 'copy' | 'linkedIn' | 'facebook' | 'twitter';
-    isVisible: boolean;
-  }[];
 };
 
 export type ShareLinksProps = MarginSystemProps & ShareLinkOptions;
 
-export const ShareLinks: React.FC<ShareLinksProps> = ({ socialMedias, urlToShare, ...flexProps }) => {
-  const getSocialMediaLink = (socialMedia: ShareLinkOptions['socialMedias'][0]['name']): JSX.Element | undefined => {
-    switch (socialMedia) {
+export const ShareLinks: React.FC<ShareLinksProps> = ({ urlToShare, ...flexProps }) => {
+  const [_, copy] = useCopyToClipboard();
+  const getShareLinkIcon = (linkName: string, index: number): JSX.Element | undefined => {
+    switch (linkName) {
+      case 'copyLink':
+        return (
+          <Icon
+            key={index}
+            name="link"
+            size="26"
+            color="black"
+            className="share-links__copy-icon"
+            onClick={(): Promise<boolean> => copy(urlToShare)}
+            tabIndex={0}
+            role="button"
+          />
+        );
       case 'twitter':
         return (
-          <TwitterShareButton url={urlToShare}>
+          <TwitterShareButton key={index} url={urlToShare}>
             <TwitterIcon size={26} />
           </TwitterShareButton>
         );
       case 'facebook':
         return (
-          <FacebookShareButton url={urlToShare}>
+          <FacebookShareButton key={index} url={urlToShare}>
             <FacebookIcon size={26} />
           </FacebookShareButton>
         );
       case 'linkedIn':
         return (
-          <LinkedinShareButton url={urlToShare}>
+          <LinkedinShareButton key={index} url={urlToShare}>
             <LinkedinIcon size={26} />
           </LinkedinShareButton>
+        );
+      case 'reddit':
+        return (
+          <RedditShareButton key={index} url={urlToShare}>
+            <RedditIcon size={26} />
+          </RedditShareButton>
         );
       default:
         return;
@@ -46,8 +69,8 @@ export const ShareLinks: React.FC<ShareLinksProps> = ({ socialMedias, urlToShare
   };
 
   return (
-    <Flex {...flexProps} gap="s" className="share-links">
-      {socialMedias.map((socialMedia) => socialMedia.isVisible && getSocialMediaLink(socialMedia.name))}
+    <Flex {...flexProps} gap="xs" className="share-links">
+      {AVAILABLE_SHARE_LINKS.map((link, index) => link.isVisible && getShareLinkIcon(link.name, index))}
     </Flex>
   );
 };

@@ -8,20 +8,6 @@ export default {
   component: ShareLinks,
   args: {
     urlToShare: 'https://eleven-labs.com/',
-    socialMedias: [
-      {
-        name: 'twitter',
-        isVisible: true,
-      },
-      {
-        name: 'facebook',
-        isVisible: true,
-      },
-      {
-        name: 'linkedIn',
-        isVisible: true,
-      },
-    ],
   },
 } as Meta<typeof ShareLinks>;
 
