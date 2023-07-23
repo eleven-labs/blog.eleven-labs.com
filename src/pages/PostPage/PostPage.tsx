@@ -1,7 +1,7 @@
 import { Box } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { Container, Divider, NewsletterBlock, NewsletterBlockProps } from '@/components';
+import { Container, Divider, NewsletterBlock, NewsletterBlockProps, ShareLinks } from '@/components';
 
 import { PostFooter, PostFooterProps } from './PostFooter';
 import { PostHeader, PostHeaderProps } from './PostHeader';
@@ -29,7 +29,9 @@ export const PostPage: React.FC<PostPageProps> = ({
       {backLink}
       <PostHeader {...header} />
       <Divider mt="xs" bg="light-grey" />
+      <ShareLinks urlToShare={window.location.href} />
       <Box as="section" textSize="s" dangerouslySetInnerHTML={{ __html: content }} />
+      <ShareLinks urlToShare={window.location.href} />
       <Divider mt="xs" bg="light-grey" />
       <PostFooter {...footer} />
     </Container>

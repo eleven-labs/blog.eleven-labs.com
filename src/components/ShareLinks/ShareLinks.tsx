@@ -23,6 +23,7 @@ export type ShareLinkOptions = {
 export type ShareLinksProps = MarginSystemProps & ShareLinkOptions;
 
 export const ShareLinks: React.FC<ShareLinksProps> = ({ urlToShare, ...flexProps }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, copy] = useCopyToClipboard();
   const getShareLinkIcon = (linkName: string, index: number): JSX.Element | undefined => {
     switch (linkName) {
@@ -69,7 +70,7 @@ export const ShareLinks: React.FC<ShareLinksProps> = ({ urlToShare, ...flexProps
   };
 
   return (
-    <Flex {...flexProps} gap="xs" className="share-links">
+    <Flex {...flexProps} justifyContent="end" my="m" gap="xs" className="share-links">
       {AVAILABLE_SHARE_LINKS.map((link, index) => link.isVisible && getShareLinkIcon(link.name, index))}
     </Flex>
   );
