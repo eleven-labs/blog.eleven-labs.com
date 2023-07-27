@@ -24,7 +24,7 @@ authors:
 [//]: # (![baleine]&#40;/assets\cover.jpg "baleine"&#41;)
 ![cover]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/cover.jpg)
 
-# Comprendre et Personnaliser ses Docker
+# Comprendre et Personnaliser son environnement Docker
 
 ## Introduction
 
@@ -187,7 +187,7 @@ Nous pouvons ensuite commencer la création de nos services.
 ### Service Database MySql
 
 Notre premier service s'appelle "db" et nous utilisons une image officielle de MySQL 8.0.
-Nous allons stocker cette base de données dans un volume afin de la conserver en mémoire quelque part.
+Nous allons stocker cette base de données dans un volume afin de pouvoir la conserver.
 Nous l'assignons au port 3306.
 Puis nous décidons que la base de données s'appelle "mydb" et qu'elle aura comme mot de passe "root".
 N'oubliez pas de déclarer le volume à la fin du docker-compose.
@@ -213,7 +213,7 @@ N'oubliez pas de déclarer le volume à la fin du docker-compose.
 
 En ce qui concerne notre application serveur, nous utilisons la commande "build: ." afin de la construire depuis notre Dockerfile courant.
 Le service sera disponible sur le port 80.
-Et nous utiliserons le bind mount pour transmettre les changements en temps réel entre l'application virtuelle et notre dossier local.
+Et nous utiliserons le bind mount pour le volume afin de faire transiter les changements en temps réel entre l'application virtuelle et notre dossier local.
 
     ...
 
@@ -230,7 +230,7 @@ Et nous utiliserons le bind mount pour transmettre les changements en temps rée
 
 Nous utilisons une image [phpmyadmin](https://hub.docker.com/_/phpmyadmin).
 Nous allons mettre ce service sur le port 88.
-Ensuite, nous paramétrons les identifiants de connexion dans l'environnement.
+Ensuite, nous paramétrons les identifiants de connexion dans "environnement".
 
     ...
 
