@@ -1,27 +1,32 @@
-import { useState } from 'react';
+import copyToClipboard from 'copy-to-clipboard';
+import { useCallback, useState } from 'react';
 
-type CopiedValue = string | null;
-type CopyFn = (text: string) => Promise<boolean>;
+export type Content = React.RefObject<HTMLElement | HTMLInputElement> | number | string;
+export type Timeout = number;
+export type useCopyTextReturn = [() => void, boolean];
 
-export function useCopyToClipboard(): [CopiedValue, CopyFn] {
-  const [copiedText, setCopiedText] = useState<CopiedValue>(null);
+export function useCopyText(content: Content, timeout: Timeout): useCopyTextReturn {
+  const [copied, setCopied] = useState<boolean>(false);
 
-  const copy: CopyFn = async (text) => {
-    if (!navigator?.clipboard) {
-      console.warn('Clipboard not supported');
-      return false;
+  const copy = useCallback(() => {
+    let value;
+    if (typeof content === 'number' || typeof content === 'string') {
+      value = content.toString();
+    } else if (content.current instanceof HTMLInputElement) {
+      value = content.current.value;
+    } else if (content.current instanceof HTMLElement) {
+      value = content.current.textContent;
     }
 
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedText(text);
-      return true;
-    } catch (error) {
-      console.warn('Copy failed', error);
-      setCopiedText(null);
-      return false;
+    if (value) {
+      const copiedString = copyToClipboard(value);
+      setCopied(copiedString);
     }
-  };
 
-  return [copiedText, copy];
+    if (timeout) {
+      setTimeout(setCopied, timeout);
+    }
+  }, [content, timeout]);
+
+  return [copy, copied];
 }

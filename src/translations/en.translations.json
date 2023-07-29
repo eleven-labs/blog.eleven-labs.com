@@ -94,6 +94,9 @@
     "not_found": {
       "title": "Page not found",
       "description": "We apologize for any inconvenience, but the page you requested was not found."
+    },
+    "share_links": {
+      "copied_label": "Copied!"
     }
   }
 }
