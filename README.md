@@ -81,9 +81,9 @@ Here is the template of the file.
 ---
 username: myusername
 name: Name Lastname
-github: https://github.com/mygithub/
-linkedin: https://www.linkedin.com/in/mylinkedin/
-twitter: @mytwitter
+github: mygithub
+linkedin: mylinkedin
+twitter: mytwitter
 ---
 
 Some description about me...
@@ -93,12 +93,9 @@ Some description about me...
 
 Add your avatar to the `_assets/authors/myusername.jpg` folder.
 
-**4 - Add your pull request**
+**4 -Then add your post**
 
-Create your branch and add your pull request with the label `publication`. 
-```bash
-git checkout -b feat/add-author-username
-```
+> You can't do a pull request just with your author markdown, because the deployment doesn't allow an author file without any associated posts
 
 ----------
 
@@ -140,13 +137,15 @@ You can use one of the solutions:
 - [StackEdit](https://stackedit.io)
 - [Dillinger](http://dillinger.io)
 
-To add images to your post, you will need to create the folder `_assets/imgs/posts/YYYY-MM-DD-slug/` and add your images there.
+To add images to your post, you will need to create the folder `_assets/posts/YYYY-MM-DD-slug/` and add your images there.
 Then in the markdown content, insert the tag:
 ```md
-![alt of image]({{ site.baseurl }}/imgs/posts/YYYY-MM-DD-slug/image-name.png)
+![alt of image]({{ site.baseurl }}/_assets/posts/YYYY-MM-DD-slug/image-name.png)
 ```
 
-To add a cover image to your post, you will need to place an image with the name `cover` in the `_assets/imgs/posts/YYYY-MM-DD-slug/` folder. (The extension does not matter)
+To add a cover image to your post, you will need to place an image with the name `cover` in the `_assets/posts/YYYY-MM-DD-slug/` folder. (The extension does not matter)
+
+> Warning: Don't add html in your markdown, you don't have to override the blog template in the markdown.
 
 **4 - Add your pull request**
 
@@ -155,4 +154,4 @@ Create your branch and add your pull request.
 git checkout -b feat/add-post-slug
 ```
 
-Once your post is finished and you want it to be published, set the isDraft value to false and add the label `publication` to your PR.
+Once your post is finished and you want it to be published and add the label `publication` to your pull request.
