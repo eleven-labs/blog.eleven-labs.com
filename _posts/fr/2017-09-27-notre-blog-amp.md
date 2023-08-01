@@ -37,7 +37,6 @@ Pour commencer nous avons installé le plugin [AMP-jekyll](https://github.com/ju
 
 Il nous a donc fallu créer le layout pour nos pages AMP. Le principe est simple : pas d'import de fichier js ou css, et l'utilisation de certaines balises interdite.
 
-{% raw %}
 ```html
 ---
 layout: amp
@@ -81,7 +80,6 @@ layout: amp
 </body>
 </html>
 ```
-{% endraw %}
 
 Maintenant que la base est posée nous devons mettre notre CSS. Comme nous ne pouvons pas importer le fichier existant, nous devons inliner le css directement dans la balise `<style amp-custom>`
 
@@ -123,13 +121,11 @@ Nous avons choisi de continuer d'utiliser Saas, nous avons donc créé un fichie
 
 Une fois cette étape réalisée, il suffit de l'appeler dans notre layout en ajoutant dans la balise `head` :
 
-{% raw %}
 ```html
 <style amp-custom>
 	{% capture include_to_sassify %}{% include amp.scss %}{% endcapture %}{{ include_to_sassify | scssify }}
 </style>
 ```
-{% endraw %}
 
 Comme nous n'importons aucun javascript, nous n'avons plus de tag Google Analytics mais heureusement AMP y a pensé. D'abord il faut ajouter le script javascript :
 
@@ -140,7 +136,6 @@ Comme nous n'importons aucun javascript, nous n'avons plus de tag Google Analyti
 
 Ce qui nous permet d'utiliser la balise `<amp-analytics>` et d'y intégrer le code javascript. Juste avant la fermeture de la balise `body`, il faut ajouter :
 
-{% raw %}
 ```html
 <amp-analytics type="googleanalytics">
 <script type="application/json">
@@ -161,19 +156,16 @@ Ce qui nous permet d'utiliser la balise `<amp-analytics>` et d'y intégrer le co
 </script>
 </amp-analytics>
 ```
-{% endraw %}
 
 Une dernière étape nécessaire pour que Google voie nos pages AMP est de laisser une balise `link` dans nos pages non AMP avec l'url des nouvelles pages.
 
 Dans notre layout principal nous ajoutons le code suivant dans le `head` :
 
-{% raw %}
 ```html
 {% if page.path contains '_posts' %}
      <link rel="amphtml" href="{{ page.id | prepend: '/amp' | prepend: site.baseurl_root | prepend: site.url }}">
 {% endif %}
 ```
-{% endraw %}
 
 Si vous le souhaitez, vous pouvez voir la pull request [ici](https://github.com/eleven-labs/blog.eleven-labs.com/pull/211).
 

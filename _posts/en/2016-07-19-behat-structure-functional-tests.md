@@ -107,7 +107,6 @@ So for instance, we will have the following scenario:
 
 File: `features/registration/register.feature`:
 
-{% raw %}
 ```
 Feature: Register
   In order to create an account
@@ -120,7 +119,6 @@ Scenario: I register when I fill my username and password only
   When I submit the form
   Then I should see the registration confirmation</pre>
 ```
-{% endraw %}
 
 # Integration tests
 
@@ -130,7 +128,6 @@ To do so, we will create a new integration context that concerns the registratio
 
 File: `features/context/registration/IntegrationRegisterContext`:
 
-{% raw %}
 ```php
 <?php
 
@@ -206,7 +203,6 @@ class IntegrationRegisterContext implements Context
     }
 }
 ```
-{% endraw %}
 
 Integration test for this part is now done for our feature. Let's write the interface test now!
 
@@ -218,7 +214,6 @@ So let's create that context that will be used for interface test (prefixed by M
 
 File: `features/context/registration/MinkRegisterContext`:
 
-{% raw %}
 ```php
 <?php
 
@@ -268,7 +263,6 @@ class MinkRegisterContext extends MinkContext
     }
 }
 ```
-{% endraw %}
 
 We just implemented an interface test based on the same scenario that the one we used for integration test so this class has exactly the same four methods with the same Behat annotations that we have implemented in our integration test class.
 The only difference here is that in this context we ask Mink to ask to Selenium to do actions on the interface of our application by executing a browser instead of testing the code itself.
@@ -277,7 +271,6 @@ The only difference here is that in this context we ask Mink to ask to Selenium 
 
 One more thing now, we have to add previously created contexts in our `suites` section in the `behat.yml` configuration file.
 
-{% raw %}
 ```yaml
 suites:
         integration:
@@ -293,7 +286,6 @@ suites:
                 - Behat\MinkExtension\Context\MinkContext: []
                 - Acme\Tests\Behat\Context\Registration\MinkRegisterContext: []
 ```
-{% endraw %}
 
 It is important to see here that we can clearly split these kind of tests into two distinct parts `integration` and `interface`: each one will be executed with its own contexts.
 
@@ -315,7 +307,6 @@ In this new step `IntegrationProfileContext`, you need some information obtained
 This can be achieved thanks to the `@BeforeScenario` Behat annotation.
 File: `features/context/registration/IntegrationProfileContext`:
 
-{% raw %}
 ```php
 <?php
 
@@ -347,7 +338,6 @@ class IntegrationProfileContext implements Context
     }
 }
 ```
-{% endraw %}
 
 You now have an accessible property **$registerContext** and can access informations from this context.
 

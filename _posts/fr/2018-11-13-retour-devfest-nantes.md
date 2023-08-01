@@ -45,10 +45,10 @@ Git est l'outil de versionning le plus utilisé dans le monde. Mais bien souvent
 
 La conférence m'a beaucoup intéressé car elle n'a pas fait qu'une liste de commandes git. Elle a fait la démonstration d'un projet fictif très proche du réel. Il y a eu des explications et des schémas simples et faciles à comprendre.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Excellent talk Git Dammit, quelques bonnes commandes pour un repo propre. <a href="https://twitter.com/hashtag/DevFestNantes?src=hash&amp;ref_src=twsrc%5Etfw">#DevFestNantes</a> <a href="https://t.co/Etsf7kTFFT">pic.twitter.com/Etsf7kTFFT</a></p>&mdash; Anthony Manach (@tonicfx) <a href="https://twitter.com/tonicfx/status/1053196563907010561?ref_src=twsrc%5Etfw">19 octobre 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Voici quelques commandes et concepts que j'ai appris :
 
@@ -91,10 +91,10 @@ Retrouvez la présentation [ici](https://www.youtube.com/watch?v=wk2uOJmzNVY) et
 
 Cette présentation nous a donné envie de tester ELM. Vous imaginez ? Finies les exceptions runtime, les problèmes de compatibilité entre navigateurs, etc. !
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">Say goodbye to runtime exceptions with ELM by <a href="https://twitter.com/JoGrenat?ref_src=twsrc%5Etfw">@JoGrenat</a> <a href="https://twitter.com/hashtag/DevFestNantes?src=hash&amp;ref_src=twsrc%5Etfw">#DevFestNantes</a> <a href="https://t.co/zFNUniPWfz">pic.twitter.com/zFNUniPWfz</a></p>&mdash; Marie Gautier (@marie_minasyan) <a href="https://twitter.com/marie_minasyan/status/1052913477017329664?ref_src=twsrc%5Etfw">18 octobre 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Le speaker commence par nous raconter son histoire sur le JavaScript, pour expliquer comment le language a évolué. Et il dit qu'ELM réunit tous les avantages du JS moderne. ELM est un language fonctionnel qui complile le code en JavaScript. Jordane fait ensuite une démo d'une application simple 'Pile ou Face', développée sous nous yeux. Et c'est très réussi.
 
@@ -108,9 +108,9 @@ La mission spaciale est accomplie !
 
 La fusée Eleven-Labs a également posé son camp de base à cet évènement.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr"><a href="https://twitter.com/hashtag/EXPEDITION?src=hash&amp;ref_src=twsrc%5Etfw">#EXPEDITION</a> 🚀<br>Les portes sont ouvertes : Nos astronautes sont à bord du <a href="https://twitter.com/hashtag/DevFestNantes?src=hash&amp;ref_src=twsrc%5Etfw">#DevFestNantes</a> ! Nous sommes prêts pour 2 journées de conférences, rencontres &amp; échanges.<a href="https://twitter.com/hashtag/Cloud?src=hash&amp;ref_src=twsrc%5Etfw">#Cloud</a> <a href="https://twitter.com/hashtag/DevOps?src=hash&amp;ref_src=twsrc%5Etfw">#DevOps</a> <a href="https://twitter.com/hashtag/Web?src=hash&amp;ref_src=twsrc%5Etfw">#Web</a> <a href="https://twitter.com/hashtag/Mobile?src=hash&amp;ref_src=twsrc%5Etfw">#Mobile</a> <a href="https://twitter.com/hashtag/BigData?src=hash&amp;ref_src=twsrc%5Etfw">#BigData</a> <a href="https://t.co/RiQ6mIAapR">pic.twitter.com/RiQ6mIAapR</a></p>&mdash; Eleven Labs (@Eleven_Labs) <a href="https://twitter.com/Eleven_Labs/status/1052834386259955712?ref_src=twsrc%5Etfw">18 octobre 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Vous pouvez retrouver toutes les conférences en vidéo sur [Playlist Youtube DevFest Nantes](https://www.youtube.com/playlist?list=PLuZ_sYdawLiXyaSnyRinPKvPXQIsNaJFz).

@@ -28,7 +28,7 @@ Lorsque nous parlons de "tests fonctionnels", nous entendons bien souvent vouloi
 
 Or, il est important d'écrire les cas de tests suivants afin de couvrir le périmètre fonctionnel :
 * `tests d'interface` : il s'agit de réaliser des contrôles d'interface pour s'assurer que le comportement de l'application web réagit correctement,
-* Les `tests d'intégration` : il s'agit de s'assurer que le code (testé unitairement) qui fait tourner l'application réagit bien comme il le devrait lorsque tous les éléments sont assemblés.
+* Les `tests d'intégration` : il s'agit de s'assurer que le code (testé unitairement) qui fait tourner l'application réagit bien comme il le devrait lorsque tous les éléments sont assemblés.
 
 Il conviendra alors de lancer à la fois les tests d'intégration et les tests d'interface avec Behat.
 
@@ -41,7 +41,6 @@ Pour être clair sur l'architecture, voici un schéma qui résume le rôle de ch
 
 La première étape est d'installer Behat et ses extensions en tant que dépendance dans notre fichier `composer.json` :
 
-{% raw %}
 ```json
 "require-dev": {
     "behat/behat": "~3.1",
@@ -52,11 +51,9 @@ La première étape est d'installer Behat et ses extensions en tant que dépenda
     "emuse/behat-html-formatter": "dev-master"
 }
 ```
-{% endraw %}
 
 Afin que vos futurs contextes soient autoloadés, nous allons également ajouter la section `PSR-4` suivante :
 
-{% raw %}
 ```json
 "autoload-dev": {
     "psr-4": {
@@ -64,13 +61,11 @@ Afin que vos futurs contextes soient autoloadés, nous allons également ajouter
     }
 }
 ```
-{% endraw %}
 
 Maintenant, créons le fichier de configuration `behat.yml` à la racine de notre projet afin d'architecturer nos tests.
 
 Voici le fichier de configuration à partir duquel nous allons débuter :
 
-{% raw %}
 ```json
 <pre class="theme:github lang:yaml decode:true">n{% raw %}ndefault:
     suites: ~
@@ -94,7 +89,6 @@ Voici le fichier de configuration à partir duquel nous allons débuter :
         html:
             output_path: %paths.base%/web/reports/behat
 ```
-{% endraw %}
 
 Si nous prenons les sections dans leur ordre, nous avons avant tout une section `suites` pour le moment vide mais que nous allons alimenter par la suite de cet article.
 
@@ -117,7 +111,6 @@ Nous devons avant tout écrire nos scénarios de tests fonctionnels (fichier **.
 Nous allons donc avoir, par exemple, le scénario suivant :
 
 Fichier : `features/registration/register.feature` :
-{% raw %}
 ```
 Feature: Register
     In order to create an account
@@ -130,7 +123,6 @@ Scenario: I register when I fill my username and password only
     When I submit the form
     Then I should see the registration confirmation
 ```
-{% endraw %}
 
 ## Tests d'intégration
 
@@ -140,7 +132,6 @@ Nous allons donc créer un contexte d'intégration propre à l'inscription sous 
 
 Fichier : `features/context/registration/IntegrationRegisterContext` :
 
-{% raw %}
 ```php
 <?php
 
@@ -216,7 +207,6 @@ class IntegrationRegisterContext implements Context
     }
 }
 ```
-{% endraw %}
 
 L'implémentation du test d'intégration est terminé pour cette feature !
 Passons maintenant au test d'interface !
@@ -229,7 +219,6 @@ Créons donc le contexte qui sera utilisé pour le test d'interface (préfixé p
 
 Fichier : `features/context/registration/MinkRegisterContext` :
 
-{% raw %}
 ```php
 <?php
 
@@ -279,7 +268,6 @@ class MinkRegisterContext extends MinkContext
     }
 }
 ```
-{% endraw %}
 
 Nous venons d'implémenter un test d'interface basé sur le même scénario que celui que nous avons utilisé pour notre test d'intégration, reprenant exactement les quatre méthodes implémentées précédemment avec les mêmes annotations Behat.
 
@@ -289,7 +277,6 @@ La seule différence est que dans ce contexte, Mink va demander à Selenium d'ef
 
 Il ne nous reste plus qu'à ajouter les contextes créés précédemment sous notre section **suites** dans le fichier de configuration `behat.yml` :
 
-{% raw %}
 ```yaml
     suites:
         integration:
@@ -305,7 +292,6 @@ Il ne nous reste plus qu'à ajouter les contextes créés précédemment sous no
                 - Behat\MinkExtension\Context\MinkContext: []
                 - Acme\Tests\Behat\Context\Registration\MinkRegisterContext: []
 ```
-{% endraw %}
 
 Il est important de voir ici que nous découpons clairement les tests en deux suites distinctes : `integration` et `interface` : chacune d'entre elles sera exécutée avec les contextes qui lui sont propres.
 
@@ -328,7 +314,6 @@ Ceci est possible grâce à l'annotation `@BeforeScenario` de Behat.
 
 Fichier : `features/context/registration/IntegrationProfileContext` :
 
-{% raw %}
 ```php
 <?php
 
@@ -360,7 +345,6 @@ class IntegrationProfileContext implements Context
     }
 }
 ```
-{% endraw %}
 
 Vous avez maintenant à disposition une propriété `$registerContext` et pouvez accéder à des informations qui proviennent du contexte précédent.
 

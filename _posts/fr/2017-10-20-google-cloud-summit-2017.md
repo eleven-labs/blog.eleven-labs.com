@@ -21,31 +21,31 @@ keywords:
 
 Jeudi 19 octobre 2017 a eu lieu à Paris au Palais des Congrès, le Google Cloud Summit 2017. Google venait à Paris pour exposer toutes les nouveautés de leur Cloud, les nouvelles API de Machine Learning et les nouveaux outils de collaboration. Bien sûr Eleven était présent et nous avons pu suivre la plupart des conférences.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/GoogleCloudSummit?src=hash&amp;ref_src=twsrc%5Etfw">#GoogleCloudSummit</a> with <a href="https://twitter.com/CaptainJojo42?ref_src=twsrc%5Etfw">@CaptainJojo42</a> &amp; <a href="https://twitter.com/Pouz0r?ref_src=twsrc%5Etfw">@Pouz0r</a> <a href="https://t.co/GYCxUddFB2">pic.twitter.com/GYCxUddFB2</a></p>&mdash; VEBER Arnaud (@VEBERArnaud) <a href="https://twitter.com/VEBERArnaud/status/921026062200516608?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
 
-{% raw %}
+
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr"><a href="https://twitter.com/Eleven_Labs?ref_src=twsrc%5Etfw">@Eleven_Labs</a> en force au <a href="https://twitter.com/hashtag/GoogleCloudSummit?src=hash&amp;ref_src=twsrc%5Etfw">#GoogleCloudSummit</a> <a href="https://twitter.com/hashtag/paris?src=hash&amp;ref_src=twsrc%5Etfw">#paris</a> avec <a href="https://twitter.com/VEBERArnaud?ref_src=twsrc%5Etfw">@VEBERArnaud</a> <a href="https://twitter.com/Pouz0r?ref_src=twsrc%5Etfw">@Pouz0r</a> <a href="https://twitter.com/alexvndre?ref_src=twsrc%5Etfw">@alexvndre</a> <a href="https://t.co/ifge71wj7Q">pic.twitter.com/ifge71wj7Q</a></p>&mdash; Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/920912205700325377?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 ### La plenière
 
 Sebastien Marotte ouvre le bal, en expliquant que même si le cloud Google n'est pas le leader du marché, il devient de plus en plus fort et continue à avancer vers le futur.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Ouverture de la keynote avec Sébastien Marotte, vice-président de Google Cloud EMEA. <a href="https://twitter.com/hashtag/Googlesummit17?src=hash&amp;ref_src=twsrc%5Etfw">#Googlesummit17</a> <a href="https://twitter.com/hashtag/cloud?src=hash&amp;ref_src=twsrc%5Etfw">#cloud</a> <a href="https://t.co/73ncb4lzjd">pic.twitter.com/73ncb4lzjd</a></p>&mdash; Sopra Steria France (@SopraSteria_fr) <a href="https://twitter.com/SopraSteria_fr/status/920928469084770305?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 C'est d'ailleurs en s'inspirant d'un citation de Larry Page que Sébastien Marotte commence à nous exposer les bases du Cloud Google.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">Merci Sébastien Marotte for hosting <a href="https://twitter.com/hashtag/googlesummit17?src=hash&amp;ref_src=twsrc%5Etfw">#googlesummit17</a> it&#39;s exciting to see you &amp; SIs do 10x projects with <a href="https://twitter.com/googlecloud?ref_src=twsrc%5Etfw">@googlecloud</a> <a href="https://t.co/39ZU109d5q">pic.twitter.com/39ZU109d5q</a></p>&mdash; Gard Little (@GardLittle) <a href="https://twitter.com/GardLittle/status/921003932381532162?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Puis laissons place à Ulku Rowe.
 
@@ -53,10 +53,10 @@ Puis laissons place à Ulku Rowe.
 
 Qui va nous présenter pourquoi le cloud Google est le meilleur.  Elle commence par nous montrer ce que doit être le futur des sociétés.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Les clés de la réussite des sociétés <a href="https://twitter.com/hashtag/GoogleCloudSummit?src=hash&amp;ref_src=twsrc%5Etfw">#GoogleCloudSummit</a> <a href="https://twitter.com/hashtag/paris?src=hash&amp;ref_src=twsrc%5Etfw">#paris</a> <a href="https://t.co/RiYDcjCaQZ">pic.twitter.com/RiYDcjCaQZ</a></p>&mdash; Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/920918792628301825?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Ulku Rowe insistera longuement sur la sécurité des services Cloud, sur leurs performances, sur la collaboration et sur les liens avec les partenaires.
 
@@ -66,10 +66,10 @@ Puis, on y reviendra plus tard, une présentation de la Cloud Vision API, assez 
 
 La conférence continuera avec un chiffre effrayant.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">La dure réalité. Trop de maintenance pas assez d’insights. <a href="https://twitter.com/Eleven_Labs?ref_src=twsrc%5Etfw">@Eleven_Labs</a> <a href="https://twitter.com/hashtag/GoogleSummit17?src=hash&amp;ref_src=twsrc%5Etfw">#GoogleSummit17</a> <a href="https://twitter.com/hashtag/paris?src=hash&amp;ref_src=twsrc%5Etfw">#paris</a> <a href="https://t.co/mhCpoqCVk8">pic.twitter.com/mhCpoqCVk8</a></p>&mdash; Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/920930721300189184?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 On passe tous beaucoup trop de temps à faire de la maintenance et non dans les insights pour nos clients. C'est pour cela que le Cloud Google est parfait, car il n' y a pas besoin de faire maintenance, Google le fait pour vous, et vous pouvez passer votre temps de travail à trouver les insights pour vos clients. Mais Google ne s'arrête pas là, l'avenir est pour eux la Data, et comment comprendre celle-ci est l'avenir. C'est pour cela que Google met en place énormément d'outils pour aider les sociétés à comprendre la données qu'ils ont à disposition.
 
@@ -77,17 +77,17 @@ La plénière se terminera par plusieurs exemples clients, sur comment travaille
 
 D'abord Dailymotion
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">Our cousins from dailymotion spekaing datas @ <a href="https://twitter.com/hashtag/googlesummit17?src=hash&amp;ref_src=twsrc%5Etfw">#googlesummit17</a> <a href="https://t.co/QBi3BiHYLu">pic.twitter.com/QBi3BiHYLu</a></p>&mdash; Gilles Chervy (@gilles_chervy) <a href="https://twitter.com/gilles_chervy/status/920935649271861248?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Puis La Redoute avec la blague de la Google Summit.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="in" dir="ltr">Introducing Google Big Kiri <a href="https://twitter.com/hashtag/googlesummit17?src=hash&amp;ref_src=twsrc%5Etfw">#googlesummit17</a> <a href="https://t.co/l4j6IFQwh8">pic.twitter.com/l4j6IFQwh8</a></p>&mdash; Olivier LOVERDE (@loverdeolivier) <a href="https://twitter.com/loverdeolivier/status/920938851270610944?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 
 ### Introduction au Big Data : outils et insights
@@ -105,17 +105,17 @@ La conférence continue avec l'exemple client de Dailymotion et SFEIR qui ont tr
 
 Ce qu'il faut retenir c'est qu'une stack compliquée il y a quelques années devient simple aujourd'hui avec Google.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Le présent et le futur de la <a href="https://twitter.com/hashtag/bigdata?src=hash&amp;ref_src=twsrc%5Etfw">#bigdata</a> au <a href="https://twitter.com/hashtag/googlesummit17?src=hash&amp;ref_src=twsrc%5Etfw">#googlesummit17</a> <a href="https://twitter.com/hashtag/paris?src=hash&amp;ref_src=twsrc%5Etfw">#paris</a>. <a href="https://twitter.com/dailymotion?ref_src=twsrc%5Etfw">@dailymotion</a> <a href="https://twitter.com/sfeir?ref_src=twsrc%5Etfw">@sfeir</a> <a href="https://twitter.com/Eleven_Labs?ref_src=twsrc%5Etfw">@Eleven_Labs</a> <a href="https://t.co/vRBqKT5XHl">pic.twitter.com/vRBqKT5XHl</a></p>&mdash; Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/920952785314766849?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 La suite fut les étapes de la conception du système de recommandation, tout d'abord en faisant un ETL permettant de prendre l'ensemble des données necessaires au système.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="eu" dir="ltr"><a href="https://twitter.com/hashtag/datawarehouse?src=hash&amp;ref_src=twsrc%5Etfw">#datawarehouse</a> etape 1 <a href="https://twitter.com/hashtag/googlesummit17?src=hash&amp;ref_src=twsrc%5Etfw">#googlesummit17</a> <a href="https://twitter.com/hashtag/paris?src=hash&amp;ref_src=twsrc%5Etfw">#paris</a> <a href="https://twitter.com/Eleven_Labs?ref_src=twsrc%5Etfw">@eleven_labs</a> <a href="https://twitter.com/hashtag/pubsub?src=hash&amp;ref_src=twsrc%5Etfw">#pubsub</a> <a href="https://twitter.com/hashtag/dataflow?src=hash&amp;ref_src=twsrc%5Etfw">#dataflow</a> <a href="https://twitter.com/hashtag/bigquery?src=hash&amp;ref_src=twsrc%5Etfw">#bigquery</a> <a href="https://t.co/VEFhGxmOk3">pic.twitter.com/VEFhGxmOk3</a></p>&mdash; Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/920954099545321472?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 ![Architecture](/_assets/posts/2017-10-20-google-cloud-summit-2017/image7.jpg)
 
@@ -129,10 +129,10 @@ Guillaume Laforge est venu nous parler de Google Functions. Google Functions est
 
 Il commence par un petit historique desdites technologies.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr"><a href="https://twitter.com/googlecloud?ref_src=twsrc%5Etfw">@googlecloud</a> petite frise chronologique <a href="https://twitter.com/hashtag/googlesummit17?src=hash&amp;ref_src=twsrc%5Etfw">#googlesummit17</a> <a href="https://twitter.com/hashtag/paris?src=hash&amp;ref_src=twsrc%5Etfw">#paris</a> <a href="https://twitter.com/glaforge?ref_src=twsrc%5Etfw">@glaforge</a> <a href="https://twitter.com/Eleven_Labs?ref_src=twsrc%5Etfw">@Eleven_Labs</a> <a href="https://t.co/HWNJH3vDBC">pic.twitter.com/HWNJH3vDBC</a></p>&mdash; Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/920963257665511424?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Puis il rentre dans le concret avec des exemples. D'ailleurs toute la journée les speakers utiliseront les functions pour faire leurs démos.
 
@@ -156,10 +156,10 @@ Google depuis plusieurs années utilise le machine learning dans l'ensemble de s
 
 Le machine learning en 3 images c'est...
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr"><a href="https://twitter.com/hashtag/MachineLearning?src=hash&amp;ref_src=twsrc%5Etfw">#MachineLearning</a> en 3 images  <a href="https://twitter.com/hashtag/googlesummit17?src=hash&amp;ref_src=twsrc%5Etfw">#googlesummit17</a> <a href="https://twitter.com/Eleven_Labs?ref_src=twsrc%5Etfw">@Eleven_Labs</a> <a href="https://t.co/JipEYaowx4">pic.twitter.com/JipEYaowx4</a></p>&mdash; Jonathan (@CaptainJojo42) <a href="https://twitter.com/CaptainJojo42/status/920986647273066503?ref_src=twsrc%5Etfw">19 octobre 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 
 Google a même créé ses propres Processeurs et TPU pour augmenter les performances dans les DataCenters, pour faire du machine learning.

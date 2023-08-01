@@ -53,7 +53,6 @@ Maintenant que vous avez bien compris les tenants et aboutissants de l’**Optim
 À partir d’ici je présume que votre application React utilise GraphQL et ApolloJS pour la communication avec vos APIs. Si ce n’est pas le cas et que vous voulez le mettre en place suivez [cet article](https://blog.eleven-labs.com/fr/commencer-avec-apollojs/).
 Pour une meilleure compréhension du code suivant, mettons nous en situation :
 Imaginons une application permettant de noter des articles via un système de pouce bleu et de pouce rouge. L’idée ici est d'afficher à l’utilisateur la valeur exacte du nombre de pouces vers le haut de l’article précédemment noté.
-{% raw %}
 ```jsx
 //article.jsx
 const ADD_THUMB_UP = gql`
@@ -87,9 +86,7 @@ const Article = ({ articleId }) => (
     </Query>
 );
 ```
-{% endraw %}
 Une première solution est d’effectuer un **refetch** de la query récupérant les articles afin d’avoir la nouvelle valeur de pouces.
-{% raw %}
 ```jsx
 //article.jsx
 const ADD_THUMB_UP = gql`
@@ -123,11 +120,9 @@ const Article = ({ articleId }) => (
     </Query>
 );
 ```
-{% endraw %}
 La solution est facile à mettre en place, mais elle nécessite d’attendre la fin de la mutation puis la récupération de tous les articles (même de possibles nouveaux) afin de voir la modification. C’est lent, pas optimisé, et ce n’est pas le sujet de l’article.
 Une deuxième solution serait de manuellement incrémenter la valeur, mais cela nécessite de garder la valeur initiale dans un ‘state’. La difficulté ici est de gérer les erreurs et le rollback de manière propre.
 La dernière solution (et je pense, la meilleure, sinon je ne ferais pas cet article) est d’utiliser l’option **optimisticResponse** de votre mutation pour simuler une réponse la plus proche de l’état souhaité (sans oublier les **\_\_typename**) et d’utiliser l’option **update** pour modifier directement dans le cache apollo avec les valeurs envoyées par notre fake response.
-{% raw %}
 ```jsx
 //article.jsx
 const ADD_THUMB_UP = gql`
@@ -178,13 +173,11 @@ const Article = ({ articleId }) => (
 );
 
 ```
-{% endraw %}
 Une fois le cache Apollo mis à jour, c’est toute la query qui va se re render avec les valeurs mises à jour.
 Le plus beau dans tout ça, c’est que dans le cas d’un retour en erreur, Apollo se charge de rollback les modifications réalisées dans la fonction d’update, et le catch se chargera de gérer l’erreur. Encore mieux, à la fin de la mutation le même traitement sera réalisé, mais cette fois-ci avec les vraies données de la réponse et dans notre exemple nous afficherons la valeur de pouces bleus la plus à jour.
 
 ## Génial ! Mettez-en moi 2 caisses de 12
 Mais calmez vous ! Je sais que l’**optimistic UI** est génial, mais il n’est pas à utiliser dans tous les cas. C’est très utile dans le cas de modifications simples comme ceci.
-{% raw %}
 ```jsx
 //comment.jsx
 const UPDATE_COMMENT = gql`
@@ -232,10 +225,8 @@ const ArticleComments = ({ articleId }) => (
 );
 
 ```
-{% endraw %}
 Ici, nous effectuons la modification de l’entièreté d’un objet. Si vous avez bien remarqué, nous n’utilisons pas l’option ‘update’. La raison est que notre mutation nous renvoie un objet complet avec le même ‘__typename’ et ‘id’ que la query a initialement retourné. Grâce à ces deux informations Apollo peut directement retrouver et modifier l’objet dans le cache, car elles forment le ‘dataIdFromObject’ par défaut. Il va sans dire que si vous avez changé votre définition du ‘dataIdFromObject’ dans les paramètres de cache alors vous ne pouvez plus utiliser cette méthode telle quelle.
 Traitons le cas de l’ajout :
-{% raw %}
 ```jsx
 //comment.jsx
 const ADD_COMMENT = gql`
@@ -295,7 +286,6 @@ const ArticleComments = ({ articleId }) => (
     </Query>
 );
 ```
-{% endraw %}
 La problématique est que nous ajoutons un objet en cache sans connaître son ‘ID’. L’idée est alors de générer un ID temporaire unique en attendant le retour.
 La divergence d’ID va poser un problème pour tout appel de mutation nécessitant un identifiant, il faut donc bien vérifier l'intégrité de l’ID avant de donner accès aux autres mutations, comme par exemple la modification.
 

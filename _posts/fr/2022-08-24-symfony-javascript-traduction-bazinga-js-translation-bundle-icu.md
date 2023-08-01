@@ -34,13 +34,11 @@ public function index(TranslatorInterface $translator)
     $translatedByKey = $translator->trans('home.welcome'); // phrase
 }
 ```
-{% raw %}
 ```text
 {# Twig #}
 {% trans %}Symfony is great{% endtrans %}
 {{ welcome.home|trans }}
 ```
-{% endraw %}
 ```yaml
 # translations/messages.fr.yaml
 Symfony is great: J'aime Symfony
@@ -57,13 +55,11 @@ Pour cela, on peut rajouter des paramÃ¨tres dans les fonctions, et Symfony possÃ
 $translatedWithName = $translator->trans('home.welcome', ['%name%' => $name]);
 $translatedWithCount = $translator->trans('home.notification.message', ['%count%' => $count]);
 ```
-{% raw %}
 ```text
 {# Twig #}
 {{ welcome.home|trans({'%name%': name}) }}
 {{ home.notification.message|trans({'%count%': count}) }}
 ```
-{% endraw %}
 ```yaml
 # translation
 home:

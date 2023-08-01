@@ -693,7 +693,6 @@ Il faut donc dans votre fichier template Twig ajouter cet `id`.
 
 Dans la page `app/Resources/views/default/index.html.twig` changez le `block` body avec le code suivant.
 
-{% raw %}
 ```twig
 {% extends 'base.html.twig' %}
 
@@ -708,7 +707,6 @@ Dans la page `app/Resources/views/default/index.html.twig` changez le `block` bo
 {% block stylesheets %}
 {% endblock %}
 ```
-{% endraw %}
 
 Si vous lancez votre site il ne se passe rien... Et oui, il manque les appels javascript.
 
@@ -730,7 +728,6 @@ Il nous faut maintenant ajouter les balises `scripts` dans votre page `twig`. La
 
 Cela n'est pas très pratique car vous devez changer vos balises à chaque changement de javascript. Nous voulons donc utiliser la fonction `asset` de twig comme pour tout autre javascript.  Vous pouvez mettre dans votre `block javascript` les deux balises suivantes :
 
-{% raw %}
 ```twig
 {% block javascripts %}
 <script src="{{ asset('inlined.js', 'js') }}" defer></script>
@@ -738,7 +735,6 @@ Cela n'est pas très pratique car vous devez changer vos balises à chaque chang
 <script src="{{ asset('home.js', 'js') }}" defer></script>
 {% endblock  %}
 ```
-{% endraw %}
 
 Si vous testez maintenant vous avez deux 404. Effectivement `asset`ne prend pas en compte le cache busting mais nous allons l'aider.
 
@@ -880,7 +876,6 @@ Vous n'avez normalement plus de 404, mais une erreur javascript signalant que vo
 
 Nous allons donc le configurer dans votre fichier Twig, en ajoutant une valeur par défaut.
 
-{% raw %}
 ```twig
 {% block javascripts %}
 {% set initial_state = {latestNews: {}} %}
@@ -890,7 +885,6 @@ Nous allons donc le configurer dans votre fichier Twig, en ajoutant une valeur p
 <script src="{{ asset('home.js', 'js') }}" defer></script>
 {% endblock  %}
 ```
-{% endraw %}
 
 Vous pouvez aussi retrouver le code directement dans le projet [Infinite github](https://github.com/CaptainJojo/infinite) dans la branche [communication](https://github.com/CaptainJojo/infinite/tree/communication).
 
@@ -1269,7 +1263,6 @@ class DefaultController extends Controller
 
 Dernières choses : faire afficher les articles et initialiser votre React. Il vous faut changer votre fichier `app/Resources/views/default/index.html.twig`
 
-{% raw %}
 ```twig
 {% extends 'base.html.twig' %}
 
@@ -1302,7 +1295,6 @@ Dernières choses : faire afficher les articles et initialiser votre React. Il v
 {% block stylesheets %}
 {% endblock %}
 ```
-{% endraw %}
 
 Si vous affichez votre site, vous devez voir les trois premiers contenus mais le `voir plus` ne marchera pas, normal nous n'avons pas fini notre React.
 

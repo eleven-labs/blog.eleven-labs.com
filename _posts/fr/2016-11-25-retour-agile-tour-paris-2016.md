@@ -19,10 +19,10 @@ Jeudi 17 novembre avait lieu la 9ème édition de l’Agile Tour Paris dans les 
 
 Les slides n’étant pas toutes en ligne, cet article sera mis à jour quand elles seront à disposition.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">En direct de l&#39; <a href="https://twitter.com/hashtag/agiletourparis?src=hash">#agiletourparis</a> ! <a href="https://t.co/k2Jd3Fazix">pic.twitter.com/k2Jd3Fazix</a></p>&mdash; Julie Morvan (@JulieMorvan) <a href="https://twitter.com/JulieMorvan/status/799166945077710848">17 novembre 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Sur les 250 participants, il y avait environ 30% de coachs agile formateurs, et 50% de gens se considérant comme très bons voire excellents en terme d’agilité. Le niveau général des participants était donc très haut.
 La majeure partie des conférences et ateliers de la journée portait sur le coaching Agile ou sur des techniques poussées d’Agilité.
@@ -32,10 +32,10 @@ Dans ce billet, je vais revenir sur les quatre conférences qui m’ont le plus 
 
 ## "Le code de la Route Agile" par Virgile Delécolle et Gérard Danièle
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Examen du code de la route agile, check ! <a href="https://twitter.com/hashtag/agiletourparis?src=hash">#agiletourparis</a> <a href="https://t.co/8czWw3gcRh">pic.twitter.com/8czWw3gcRh</a></p>&mdash; Julie Morvan (@JulieMorvan) <a href="https://twitter.com/JulieMorvan/status/799180740126736384">17 novembre 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 La première conférence portait sur le Code de la route agile présenté par Virgile Delécolle et Gérard Danièle, avec 30 questions sur le thème de l’agilité.
 
@@ -47,10 +47,10 @@ J’ai été classée 22/52 \\o/
 
 ## « CoP Agile…. quelques clés »par Jean-Claude Grosjean
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">On parle maintenant des communautés de pratiques en entreprise avec Jean-Claude Grosjean <a href="https://twitter.com/hashtag/agiletourparis?src=hash">#agiletourparis</a> <a href="https://t.co/wyDRdHQxLj">pic.twitter.com/wyDRdHQxLj</a></p>&mdash; Julie Morvan (@JulieMorvan) <a href="https://twitter.com/JulieMorvan/status/799182142714560512">17 novembre 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Une CoP, Communauty of Practices - Communauté de Pratiques - est un groupe dont les membres s'engagent régulièrement dans des activités de partage de connaissances et d'apprentissage à partir d'intérêts communs" (Etienne Wenger)
 La présentation s’est orientée sur deux parties, le POURQUOI et le COMMENT
@@ -62,10 +62,10 @@ Vous pouvez trouver ses slides [ici](http://www.slideshare.net/jcgrosjean/une-co
 
 ## "Kata des représentations systémiques", par Arnaud Gervais
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">&quot;Si tu comprends pas le titre, ça veut dire que ça va être intéressant&quot; <a href="https://t.co/9LKorQBreT">pic.twitter.com/9LKorQBreT</a></p>&mdash; Julie Morvan (@JulieMorvan) <a href="https://twitter.com/JulieMorvan/status/799198169317961728">17 novembre 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Si j’ai retenu une chose pendant cette journée, c’est « Si tu ne sais pas quelle conférence choisir, choisis celle dont tu ne comprends pas le titre ». Cette conférence a été ma préférée de la journée.
 Arnaud Gervais est Coach Agile. Il a commencé sa présentation avec quelques quotes - ‘plus ça change, plus c’est la même chose’ - , puis il est rentré dans le vif du sujet.
@@ -73,10 +73,10 @@ Arnaud Gervais est Coach Agile. Il a commencé sa présentation avec quelques qu
 Il a pris l'exemple d’un animateur qui prend trop de temps de parole pendant l’animation d’une réunion et toutes les conséquences de cela. Il parlait de causalité circulaire et de boucle amplificatrice.
 Dans la mise en pratique, nous avons pris l’exemple d’un membre d’équipe « star », qui prend toutes les tâches intéressantes, puis nous avons travaillé sur les conséquences de ce comportement et sur des leviers d'actions, afin de résoudre les problèmes causés.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Super atelier sur les représentations systémique <a href="https://twitter.com/hashtag/AgileTourParis?src=hash">#AgileTourParis</a> <a href="https://t.co/9sJZgJqin2">pic.twitter.com/9sJZgJqin2</a></p>&mdash; Julie Morvan (@JulieMorvan) <a href="https://twitter.com/JulieMorvan/status/799221821711192064">17 novembre 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Ce workshop était très intéressant car il nous a permis de mapper des problèmes, et de travailler directement sur ces derniers, de les dédramatiser et d’éviter les conflits d’opinion, comme l’a très bien dit Arnaud Gervais à la suite de ce workshop. On se rend ainsi compte de l’étendue qu’un petit problème peut avoir sur l’ensemble d’un projet ou d’une structure juste en mappant ces problèmes.
 
@@ -84,10 +84,10 @@ Vous pouvez trouver ses slides [ici](http://www.slideshare.net/ArnaudGervais/prg
 
 ## "JTBD", par Ricardo Tome
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">&quot;Agile Innovation with Jobs to Be Done&quot;, really interesting workshop ! <a href="https://twitter.com/hashtag/AgileTourParis?src=hash">#AgileTourParis</a> <a href="https://t.co/vPpUwrWCJw">pic.twitter.com/vPpUwrWCJw</a></p>&mdash; Julie Morvan (@JulieMorvan) <a href="https://twitter.com/JulieMorvan/status/799258833063448577">17 novembre 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Ce workshop a été présenté par Ricardo Tome, qui est Lean Enterprise Coach chez HSBC Londres et Coach Agile dans une startup londonienne, et Speaker "Where people want him".
 Le JTBD est l'acronyme de Job To Be Done. C'est une technique très poussée, qui dit qu'il ne faut pas penser au besoin, mais au 'job'. La subtilité n'a pas été très simple à saisir au départ !
@@ -100,24 +100,24 @@ Le JTBD est une technique très avancée, très difficile à mettre en place, su
 
 J'aurais bien entendu aimé participer à plus de conférences et ateliers, comme "Building Trust inside a Team" de Silvana Wasitova ou "l'art d'avoir tort" de Christophe Heral, tous avaient l'air enrichissants et très amusants.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Nous avons construit un pont très classe en k&#39;nex entre dev et ops au <a href="https://twitter.com/hashtag/agiletourparis?src=hash">#agiletourparis</a> voilà voilà <a href="https://t.co/d7uEr8jgEe">pic.twitter.com/d7uEr8jgEe</a></p>&mdash; Richard HANNA (@richardhanna) <a href="https://twitter.com/richardhanna/status/799317292009955328">17 novembre 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
 
-{% raw %}
+
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">SPÉCIAL AGILE TOUR : pour plus de fun dans vos sprint, intégrez des avatars et des smileys <a href="https://twitter.com/hashtag/agileparis?src=hash">#agileparis</a> <a href="https://twitter.com/hashtag/agiletour?src=hash">#agiletour</a> <a href="https://twitter.com/hashtag/agiletourparis?src=hash">#agiletourparis</a> <a href="https://t.co/F72i93DGtY">pic.twitter.com/F72i93DGtY</a></p>&mdash; Agilbee (@agilbee) <a href="https://twitter.com/agilbee/status/799182876843667456">17 novembre 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
 
-{% raw %}
+
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">&quot;Augmenter sa créativité en activant sa pensée latérale&quot; - atelier en cours <a href="https://twitter.com/AgileTourParis">@AgileTourParis</a> <a href="https://twitter.com/KisioDigital">@KisioDigital</a> <a href="https://t.co/RTB5w48J95">pic.twitter.com/RTB5w48J95</a></p>&mdash; Maxime Henon (@MaxHenon) <a href="https://twitter.com/MaxHenon/status/799244236428296196">17 novembre 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
 
-{% raw %}
+
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Découvrez les techniques de Thomas Wallet pour une journée &quot;slow&quot; <a href="https://t.co/FQfn1SsGuP">https://t.co/FQfn1SsGuP</a> <a href="https://twitter.com/hashtag/agiletour2016?src=hash">#agiletour2016</a> <a href="https://twitter.com/hashtag/agiletourparis?src=hash">#agiletourparis</a> <a href="https://t.co/QZJ0aKT6bE">pic.twitter.com/QZJ0aKT6bE</a></p>&mdash; Agilbee (@agilbee) <a href="https://twitter.com/agilbee/status/799293416001585152">17 novembre 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Cette journée a été riche en connaissances et en rencontres, j'espère y retourner l'année prochaine !

@@ -119,7 +119,6 @@ class ExampleController extends Controller {
 ```
 
 Enfin, votre template cache.html.twig situé dans MyBundle/Resources/views/Cache/cache.html.twig:
-{% raw %}
 ```
 {% extends "@MyBundle/layout.html.twig" %}
 
@@ -129,7 +128,6 @@ Enfin, votre template cache.html.twig situé dans MyBundle/Resources/views/Cache
 
 {% endblock %}
 ```
-{% endraw %}
 
 Et voilà le résultat:
 
@@ -202,7 +200,6 @@ Maintenant créez un deuxième template. Moi je l’appellerai esi.html.twig et 
 ```
 
 Modifiez le premier template:
-{% raw %}
 ```
 {% extends "@ MyBundle/layout.html.twig" %}
 
@@ -214,7 +211,6 @@ Modifiez le premier template:
 
 {% endblock %}
 ```
-{% endraw %}
 
 Et enfin votre controlleur:
 ```php
