@@ -27,10 +27,10 @@ Les 25 et 26 octobre s'est tenue l'édition 2018 du [Forum PHP]({{site.baseurl}}
 
 ## Reprenez le contrôle de PostgreSQL grâce à POMM - Mikael Paris - SISMIC
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Reprenez le contrôle de <a href="https://twitter.com/postgresql?ref_src=twsrc%5Etfw">@postgresql</a> grâce à <a href="https://twitter.com/PommProject?ref_src=twsrc%5Etfw">@PommProject</a> <a href="https://twitter.com/hashtag/forumphp?src=hash&amp;ref_src=twsrc%5Etfw">#forumphp</a> <a href="https://t.co/s7twFk4rKf">pic.twitter.com/s7twFk4rKf</a></p>&mdash; Mathieu MARCHOIS (@mmarchois) <a href="https://twitter.com/mmarchois/status/1055391172930297857?ref_src=twsrc%5Etfw">25 octobre 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Mickal Paris est venu nous parler de POMM, un outil qui va nous aider à "reprendre le contrôle de PostgreSQL".
 Aujourd'hui, dans nos applications, nous utilisons un ORM pour communiquer avec nos bases de données. C'est utile pour faire abstraction du langage SQL.
@@ -49,10 +49,10 @@ Voici le lien de la vidéo de la présentation de Mickal Paris sur POMM : [afup.
 
 ## MySQL 8.0 : quoi de neuf ? - Olivier Dasini - Oracle
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Présentation disponible: <a href="https://t.co/h4lYEeZkbt">https://t.co/h4lYEeZkbt</a> <a href="https://twitter.com/hashtag/MySQL?src=hash&amp;ref_src=twsrc%5Etfw">#MySQL</a> <a href="https://twitter.com/hashtag/forumphp?src=hash&amp;ref_src=twsrc%5Etfw">#forumphp</a></p>&mdash; Olivier DASINI (@freshdaz) <a href="https://twitter.com/freshdaz/status/1056860033437388800?ref_src=twsrc%5Etfw">29 octobre 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Olivier Dasini est venu nous parler de MySQL 8.0 et de ses nouveautés. ALors il y a eu beaucoup de nouvelles fonctionnalités sur MySQL 8.8. Mais les plus notables sont :
     -l'apparition de NoSQL documentaire
@@ -70,10 +70,10 @@ Voici le lien des slides et de la vidéo de la présentation d'Olivier Dasini su
 
 ## Cessons les estimations ! - Frédéric Leguédois - Cloud Temple
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">&quot;Le retard c&#39;est la différence entre le rêve et la réalité&quot;<br>Cette conférence est quasi un one-man-show 🤣 Merci à <a href="https://twitter.com/f_leguedois?ref_src=twsrc%5Etfw">@f_leguedois</a> au <a href="https://twitter.com/hashtag/forumphp?src=hash&amp;ref_src=twsrc%5Etfw">#forumphp</a> <a href="https://twitter.com/afup?ref_src=twsrc%5Etfw">@afup</a> <a href="https://twitter.com/GroupeSmile?ref_src=twsrc%5Etfw">@GroupeSmile</a> <a href="https://t.co/6nELF2YkRk">pic.twitter.com/6nELF2YkRk</a></p>&mdash; Jérémy Villard (@jevillard) <a href="https://twitter.com/jevillard/status/1055814278341672965?ref_src=twsrc%5Etfw">26 octobre 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 
 Frédéric Leguédois est venu nous parler des estimations dans la gestion de projet. En plus d’avoir fait un one man show surprenant, Frédéric Leguédois nous a démontré rapidement que les estimations étaient une fausse bonne pratique dans la gestion de projet. Avec un argumentaire plus que préparé et une conviction sans bornes Frédéric Leguédois à sans doute fait changer d’avis la quasi-totalité de son auditoire du PHP Forum.
@@ -88,10 +88,10 @@ De mémoire cela fait neuf an que Frédéric Leguédois travaille sans estimatio
 
 ## Binary Brain - Thomas Jarrand
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Merci à tous pour vos retours et vos questions ! &lt;3<br>Pour (re)tester la démo et lire un IRM sur votre téléphone c&#39;est ici : <a href="https://t.co/4aQSGHAX6t">https://t.co/4aQSGHAX6t</a> <br>Le code est open-sourcé ici : <a href="https://t.co/TA7knR7qlN">https://t.co/TA7knR7qlN</a><a href="https://twitter.com/hashtag/forumphp?src=hash&amp;ref_src=twsrc%5Etfw">#forumphp</a> <a href="https://twitter.com/hashtag/EtOuiJamy?src=hash&amp;ref_src=twsrc%5Etfw">#EtOuiJamy</a></p>&mdash; Thomas Jarrand (@Tom32i) <a href="https://twitter.com/Tom32i/status/1055456802559668224?ref_src=twsrc%5Etfw">25 octobre 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 En travaillant à la conception d’un jeu de type « serious game » pour l’université de Bordeaux et la Harvard Medical School, Thomas Jarrand a été confronté à des problématiques intéressantes telles que :
 - comment afficher un format de donnée binaire dans un navigateur ?
@@ -131,10 +131,10 @@ Ou encore la démo navigateur :
 
 ## Sécurité et Bug Bounty - Xavier Leune
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Et on reprend avec <a href="https://twitter.com/beoneself?ref_src=twsrc%5Etfw">@beoneself</a> pour un retour sur des programmes de bug bounty et comment combattre les failles de sécurité <a href="https://twitter.com/hashtag/forumphp?src=hash&amp;ref_src=twsrc%5Etfw">#forumphp</a> <a href="https://t.co/Xqtm0PQtD7">pic.twitter.com/Xqtm0PQtD7</a></p>&mdash; Darkmira (@Darkmira1) <a href="https://twitter.com/Darkmira1/status/1055465744316710912?ref_src=twsrc%5Etfw">25 octobre 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Xavier Leune (directeur technique adjoint chez CCMBenchmark, et ex-president de l’AFUP) est venu pour nous faire un retour d’expérience sur la sécurité des applications de manière générale, le coût moyen de la première année, mais aussi une démonstration de quelques failles, inconnues dans son entreprise avant de les subir.
 
@@ -159,10 +159,10 @@ Je vous laisse le constater par vous même avec sa démonstration que vous pourr
 
 ## Les bases de la cryptographie - Julien Pauli
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Comment fonctionne la cryptographie par <a href="https://twitter.com/julienPauli?ref_src=twsrc%5Etfw">@julienPauli</a> <a href="https://twitter.com/sensiolabs?ref_src=twsrc%5Etfw">@sensiolabs</a> <a href="https://twitter.com/hashtag/forumphp?src=hash&amp;ref_src=twsrc%5Etfw">#forumphp</a> <a href="https://t.co/ENENNfPFAE">pic.twitter.com/ENENNfPFAE</a></p>&mdash; Mathieu MARCHOIS (@mmarchois) <a href="https://twitter.com/mmarchois/status/1055448640981004288?ref_src=twsrc%5Etfw">25 octobre 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Julien Pauli est venu nous faire un rappel des « bases » de la cryptographie. Ces bases sont en réalité en pratique assez complexes, je vous conseille donc grandement de voir le talk de Julien, qui donne de très bonne explications passionnées dessus.
 

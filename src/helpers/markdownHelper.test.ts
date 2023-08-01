@@ -93,14 +93,41 @@ This is the content`);
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
-  it('should throw an error if markdown contains disallowed syntax', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+  test.each([
+    {
+      content: `---
 title: Example Title
 date: 2023-06-13
 ---
 
-This is the content with a disallowed syntax {:{key}}`);
+This is the content with a disallowed syntax {:{key}}`,
+      syntaxInvalid: '{:{key}}',
+    },
+    {
+      content: `---
+title: Example Title
+date: 2023-06-13
+---
+
+[Eleven Labs Link](https://eleven-labs.com/){:rel="nofollow noreferrer"}`,
+      syntaxInvalid: '{:rel="nofollow noreferrer"}',
+    },
+    {
+      content: `---
+title: Example Title
+date: 2023-06-13
+---
+
+{% raw %}
+\`\`\`js
+const world = 'hello';
+\`\`\`
+{% endraw %}`,
+      syntaxInvalid: '{% raw %}',
+    },
+  ])('should throw an error if markdown contains disallowed syntax', ({ content, syntaxInvalid }) => {
+    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
+    readFileSyncSpy.mockReturnValueOnce(content);
 
     const markdownFilePath = '/path/to/dir/invalid-file-with-markdown-contains-disallowed-syntax.md';
     expect(() =>
@@ -109,7 +136,32 @@ This is the content with a disallowed syntax {:{key}}`);
         markdownFilePath,
       })
     ).toThrow(
-      `The markdown of the file "${markdownFilePath}" is invalid ! Is not compliant, it contains a syntax that is not allowed !`
+      `The markdown of the file "${markdownFilePath}" is invalid ! The syntax isn't allowed, please use valid markdown syntax ! ${syntaxInvalid}`
+    );
+    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+  });
+
+  it('should not throw an error if markdown contains disallowed syntax in code', () => {
+    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
+    readFileSyncSpy.mockReturnValueOnce(`---
+title: Example Title
+date: 2023-06-13
+---
+
+\`\`\`js
+const world = 'hello';
+{% raw %}test{% endraw %}
+\`\`\`
+contient | \`{% raw %}{{{% endraw %}\` \`{% raw %}}}{% endraw %}\` | \`{% raw %}param{{value}}{% endraw %}\` | X | X |  | X |`);
+
+    const markdownFilePath = '/path/to/dir/valid-file-with-markdown.md';
+    expect(() =>
+      getDataInMarkdownFile({
+        ValidationSchema,
+        markdownFilePath,
+      })
+    ).not.toThrow(
+      `The markdown of the file "${markdownFilePath}" is invalid ! The syntax isn't allowed, please use valid markdown syntax ! {% raw %}`
     );
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
@@ -328,33 +380,6 @@ Some content`);
         markdownFilePath,
       })
     ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! No duplicates allowed. at "keywords"`);
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
-  });
-
-  it('should throw an error if an article has bad syntax on markdown', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
-lang: en
-date: 2022-04-01
-slug: my-post
-title: My Post
-excerpt: Some excerpt
-authors:
-  - jdoe
-categories:
-  - javascript
----
-[Eleven Labs Link](https://eleven-labs.com/){:rel="nofollow noreferrer"}`);
-
-    const markdownFilePath = '/path/to/dir/invalid-post-bad-syntax-on-markdown.md';
-    expect(() =>
-      validatePost({
-        authors: ['jdoe', 'jdupont'],
-        markdownFilePath,
-      })
-    ).toThrow(
-      `The markdown of the file "${markdownFilePath}" is invalid ! Is not compliant, it contains a syntax that is not allowed !`
-    );
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 

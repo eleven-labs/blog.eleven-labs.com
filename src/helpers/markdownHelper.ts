@@ -42,11 +42,16 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
 }): TData & { content: string } => {
   const markdownContent = readFileSync(options.markdownFilePath, { encoding: 'utf-8' });
 
-  if (markdownContent.match(/{:[^}]+}/)) {
-    throw new MarkdownInvalidError({
-      markdownFilePath: options.markdownFilePath,
-      reason: 'is not compliant, it contains a syntax that is not allowed !',
-    });
+  const invalidSyntaxMatches = markdownContent.match(/`{1,3}[\s\S]*?`{1,3}|{% raw %}|{% endraw %}|{:[^}]+}}?/g);
+  if (invalidSyntaxMatches) {
+    for (const invalidSyntaxMatch of invalidSyntaxMatches) {
+      if (!/^`{1,3}/.test(invalidSyntaxMatch)) {
+        throw new MarkdownInvalidError({
+          markdownFilePath: options.markdownFilePath,
+          reason: `The syntax isn't allowed, please use valid markdown syntax ! ${invalidSyntaxMatch}`,
+        });
+      }
+    }
   }
 
   try {

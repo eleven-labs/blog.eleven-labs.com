@@ -118,11 +118,9 @@ Il est également possible d'utiliser le markup HTML pour précharger vos ressou
 
 Aussi, si vous utilisez le framework PHP [Symfony](https://www.symfony.com), notez que celui-ci a intégré le push d'assets dans sa version 3.3. Pour se faire, il vous suffit de spécifier dans Twig :
 
-{% raw %}
 ```html
 <link href="{{ preload(asset('/fonts/myfont.woff2'), { as: 'font' }) }}">
 ```
-{% endraw %}
 
 Pour plus d'informations, rendez-vous sur : [http://symfony.com/blog/new-in-symfony-3-3-asset-preloading-with-http-2-push](http://symfony.com/blog/new-in-symfony-3-3-asset-preloading-with-http-2-push)
 

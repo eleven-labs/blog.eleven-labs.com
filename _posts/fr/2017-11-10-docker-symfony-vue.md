@@ -479,7 +479,6 @@ export const vm = new Vue({
 ```
 
 Puis nous appelons notre application dans la page Twig :
-{% raw %}
 ```twig
 /* src/AppBundle/Resources/views/App/index.html.twig */
 
@@ -490,7 +489,6 @@ Puis nous appelons notre application dans la page Twig :
 <script type="text/javascript" src="{{ asset('bundles/app/js/page1.js') }}"></script>
 {% endblock %}
 ```
-{% endraw %}
 
 Nous faisons de même pour la page 2 :
 
@@ -531,7 +529,6 @@ export const vm = new Vue({
 });
 ```
 
-{% raw %}
 ```twig
 /* src/AppBundle/Resources/views/App/page2.html.twig */
 
@@ -542,7 +539,6 @@ export const vm = new Vue({
 <script type="text/javascript" src="{{ asset('bundles/app/js/page2.js') }}"></script>
 {% endblock %}
 ```
-{% endraw %}
 
 
 ## COMMUNICATION
@@ -552,7 +548,6 @@ Commençons par le Data Layout. Le Data Layout est un objet déclaré globalemen
 
 Nous allons d’abord définir un objet dataLayout au niveau le plus haut de nos templates Twig :
 
-{% raw %}
 ```twig
 /* app/Resources/views/app.html.twig */
 
@@ -580,7 +575,6 @@ Nous allons d’abord définir un objet dataLayout au niveau le plus haut de nos
     </body>
 </html>
 ```
-{% endraw %}
 
 Veillez à bien respecter l’ordre d’appel des scripts : en premier le dataLayout et ensuite l’application Vue.js. Sinon vous n’aurez pas accès à l’objet global dataLayout, car il ne sera pas encore créé.
 Ensuite nous allons envoyer des données depuis Symfony, et les récupérer dans notre Twig :
@@ -598,7 +592,6 @@ public function indexAction(): Response
 // ...
 ```
 
-{% raw %}
 ```twig
 /* src/AppBundle/Resources/views/App/index.html.twig */
 
@@ -612,7 +605,6 @@ public function indexAction(): Response
 
 // ...
 ```
-{% endraw %}
 
 Il faut maintenant récupérer le message depuis Vue.js. Modifions notre index.vue de la page 1 :
 

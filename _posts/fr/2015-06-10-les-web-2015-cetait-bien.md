@@ -32,20 +32,20 @@ Comme nous l’a expliqué brièvement son géniteur Cyril Balit en ouverture de
 
 L’objectif du Best of Web consiste donc à donner à certains orateurs une seconde opportunité d’effectuer leur présentation devant un public un peu plus large. Et comme son nom l’indique, la sélection se veut basée sur la crème de la crème des talks parisiens, avec des sujets touchants aux technos les plus hot du moment. Huit meetups parisiens ont été scrutés, de Paris JS à Cordova Paris, pour établir cette compilation par conséquent très diversifiée.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">C&#39;est parti ! <a href="https://twitter.com/cbalit">@cbalit</a> lance la première édition du @bestofweb2015  <a href="https://twitter.com/hashtag/bestofweb2015?src=hash">#bestofweb2015</a> ! <a href="http://t.co/Ix2tjD3yFc">pic.twitter.com/Ix2tjD3yFc</a></p>&mdash; SFΞIR (@sfeir) <a href="https://twitter.com/sfeir/status/606720389134340096">5 juin 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 De quoi ça parlait ?
 ====================
 
 De plein de choses ! Best of oblige, les sujets abordés touchaient différents frameworks, API et langages. En premier lieu, il faut mentionner l’excellente introduction de Christophe Porteneuve, qui en quarante minutes a retracé l’histoire du Web, fait un point sur sa situation présente, et suggéré ce à quoi il pourrait servir dans le futur. L’occasion de rappeler des choses positives - l’évolution plutôt considérable des outils et du respect des standards en vingt ans - et des choses qui le sont un peu moins, comme le fait que l’éducation est totalement à la ramasse lorsqu’il s’agit de former des développeurs Web.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr"><a href="https://twitter.com/porteneuve">@porteneuve</a> pour la keynote, ça fait bien plaisir<a href="https://twitter.com/hashtag/bestofweb2015?src=hash">#bestofweb2015</a> <a href="http://t.co/4ECXmTDJaD">pic.twitter.com/4ECXmTDJaD</a></p>&mdash; Antoine Le Taxin (@ModuloM) <a href="https://twitter.com/ModuloM/status/606720824662458368">5 juin 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Puis les talks se sont enchaînés : Virginie Bardales a fait un point complet sur la conception et l’utilisation d’une API REST, Martin Gorner a passionnément expliqué les principes du Material Design et son implémentation dans une application avec Polymer, Jacopo Daeli nous a montré comment faire du streaming vidéo avec NodeWebkit… Je ne vais pas tous les mentionner un par un, la liste des sujets et les diaporamas associés étant déjà disponibles sur **[le site de l'événement](http://bestofweb.paris/#schedule)**. Sachez juste que les sujets étaient particulièrement variés et qu’il y en avait pour à peu près tous les goûts.
 
@@ -53,10 +53,10 @@ Parmi les moments forts de la journée, on retiendra le duo Samuel Goldszmidt et
 
 Un mauvais point en revanche pour Mickael Dumand qui nous a fait du teasing pour une appli de lingerie basée sur Kinect sans pouvoir nous la montrer, gnnhhhhh… Du coup, il a manipulé une voiture.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Manipulation d&#39;une scène à la main avec une kinect <a href="https://twitter.com/hashtag/bestofweb2015?src=hash">#bestofweb2015</a> <a href="http://t.co/Io4oSEpgIA">pic.twitter.com/Io4oSEpgIA</a></p>&mdash; Loïc Knuchel (@loicknuchel) <a href="https://twitter.com/loicknuchel/status/606753873806684160">5 juin 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Ca valait le coup d'y être ?
 ============================
@@ -65,19 +65,19 @@ Oui, complètement. Parce qu’on a tous nos petites préférences et nos opinio
 
 Ceci étant dit, on aurait tort de ne pas mentionner un autre aspect capital de cette journée.
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr"><a href="https://twitter.com/hashtag/bestofweb2015?src=hash">#bestofweb2015</a> quand l&#39;alarme sonne, les gens se ruent sur le buffet : bouffe &gt; survie <a href="http://t.co/oaOtrvHarK">pic.twitter.com/oaOtrvHarK</a></p>&mdash; Thibault Dln (@Fitz_Lucassen) <a href="https://twitter.com/Fitz_Lucassen/status/606773812525432832">5 juin 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 Impossible de fermer ce billet sans signaler la qualité du buffet qui nous était servi. Du rosbif en tranche super moelleux à la tarte au saumon fort goûtue, la pause du midi fut un moment de liesse pour nos estomacs. Autant dire que même l'alarme incendie a eu du mal à nous tirer de là. Un big-up également aux bonnes gens de SFEIR qui ont pensé à ramener de la bière.
 
 Et bien entendu, Eleven Labs était dans la place avec sa vaillante armée de Wilson et son saladier de schoko-bons ! Mais surtout, grâce à nous, vous n'avez pas eu besoin de choisir entre votre amour du Web et celui de la balle jaune puisque vous pouviez assister en direct au match de Jo depuis notre stand. Elle est pas belle la vie ?
 
-{% raw %}
+
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Même à <a href="https://twitter.com/hashtag/bestofweb2015?src=hash">#bestofweb2015</a> on soutient Jo grâce à <a href="https://twitter.com/Eleven_Labs">@Eleven_Labs</a> ! <a href="https://twitter.com/hashtag/RG15?src=hash">#RG15</a> <a href="http://t.co/3ri0RsuROV">pic.twitter.com/3ri0RsuROV</a></p>&mdash; Johnathan MEUNIER (@JohnathanSUP) <a href="https://twitter.com/JohnathanSUP/status/606808800973230080">5 juin 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-{% endraw %}
+
 
 A quand un prochain événement ?
 ===============================

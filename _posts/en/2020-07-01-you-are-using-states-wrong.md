@@ -279,7 +279,6 @@ Another case of misuse of **states** is its use for animations. Most animations 
 
 ### Not good
 
-{% raw %}
 ```jsx
 const AComponent = () => {
   const [top, setTop] = useState(0);
@@ -296,7 +295,6 @@ const AComponent = () => {
   return <div style={{top: top+'px'}}>I am scrolling down</div>;
 };
 ```
-{% endraw %}
 
 ### Good
 

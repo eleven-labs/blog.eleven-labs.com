@@ -126,11 +126,9 @@ Petite chose à vous rappeler dans votre template twig, vos données sont access
 
 Ex :
 
-{% raw %}
 ```twig
 {{ eleve["nom"] }} {# remplace {{ eleve.getNom }} #}
 ```
-{% endraw %}
 
 PART III : "Time to Cache"
 ==========================
