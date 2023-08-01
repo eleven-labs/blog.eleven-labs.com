@@ -1,12 +1,12 @@
 import { globSync } from 'glob';
 import matter from 'gray-matter';
 import { YAMLException } from 'js-yaml';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import * as path from 'path';
 import { z, ZodSchema } from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
-import { AUTHORS_DIR, POSTS_DIR } from '@/app-paths';
+import { ASSETS_DIR, AUTHORS_DIR, POSTS_DIR } from '@/app-paths';
 import { AUTHORIZED_LANGUAGES, CATEGORIES } from '@/constants';
 import { intersection } from '@/helpers/objectHelper';
 import { capitalize } from '@/helpers/stringHelper';
@@ -79,6 +79,25 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
   }
 };
 
+export const validateMarkdownContent = (options: { markdownFilePath: string; content: string }): string => {
+  const assetMatches = options.content.match(/{{ site.baseurl }}[^)"'\s]+/g);
+
+  if (assetMatches) {
+    for (const assetMatch of assetMatches) {
+      const assetPath = assetMatch.replace(/{{\s*?site.baseurl\s*?}}\/assets/g, `${ASSETS_DIR}/posts`);
+
+      if (!existsSync(assetPath)) {
+        throw new MarkdownInvalidError({
+          markdownFilePath: options.markdownFilePath,
+          reason: `The file does not exist "${assetPath}"!`,
+        });
+      }
+    }
+  }
+
+  return options.content;
+};
+
 export const validateAuthor = (options: { markdownFilePath: string }): AuthorData & { content: string } => {
   const AuhorValidationSchema = z
     .object({
@@ -129,10 +148,18 @@ export const validateAuthor = (options: { markdownFilePath: string }): AuthorDat
     })
     .strict();
 
-  return getDataInMarkdownFile({
+  const { content, ...data } = getDataInMarkdownFile<z.infer<typeof AuhorValidationSchema>>({
     markdownFilePath: options.markdownFilePath,
     ValidationSchema: AuhorValidationSchema,
   });
+
+  return {
+    ...data,
+    content: validateMarkdownContent({
+      markdownFilePath: options.markdownFilePath,
+      content,
+    }),
+  };
 };
 
 export const validatePost = (options: {
@@ -171,10 +198,18 @@ export const validatePost = (options: {
     })
     .strict();
 
-  return getDataInMarkdownFile({
+  const { content, ...data } = getDataInMarkdownFile<z.infer<typeof PostValidationSchema>>({
     markdownFilePath: options.markdownFilePath,
     ValidationSchema: PostValidationSchema,
   });
+
+  return {
+    ...data,
+    content: validateMarkdownContent({
+      markdownFilePath: options.markdownFilePath,
+      content,
+    }),
+  };
 };
 
 export const validateMarkdown = (): boolean => {

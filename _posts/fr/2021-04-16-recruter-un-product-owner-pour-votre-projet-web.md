@@ -27,7 +27,7 @@ Vous rencontrez des difficultés à faire l’interface entre les besoins émis 
 
 Vous recherchez très certainement votre futur Product Owner et on vous en dit plus sur son métier !
 
-![Le product Owner en action]({{ site.baseurl }}/assets/2021-04-16-recruter-un-product-owner-pour-votre-projet-web/Product Owner.jpg)
+![Le product Owner en action]({{ site.baseurl }}/assets/2021-04-16-recruter-un-product-owner-pour-votre-projet-web/product-owner.jpg)
 
 ## Quel est le rôle du Product Owner ?
 

@@ -34,7 +34,7 @@ Voyons les outils que nous allons utiliser.
 ## Outils utilisés
 
 Dans ce cas pratique, en tant qu'analyste de données (ou en anglais "Data Analyst"), je vais faire l'analyse du problème et y répondre.
-Je vais m'appuyer sur des outils tel que [Pandas](https://pandas.pydata.org/about/) pour la manipulation des données et [plotly](https://plotly.com/python/) pour la création de visualisation de données. Tout cela en Python et dans un [notebook Jupyter]({{ site.baseurl }}/fr/decouverte-ipython-un-shell-interactif-avance-pour-python/).
+Je vais m'appuyer sur des outils tel que [Pandas](https://pandas.pydata.org/about/) pour la manipulation des données et [plotly](https://plotly.com/python/) pour la création de visualisation de données. Tout cela en Python et dans un [notebook Jupyter](/fr/decouverte-ipython-un-shell-interactif-avance-pour-python/).
 
 J'ai sélectionné ces outils car ce sont les plus utilisés dans ce domaine. Il est tout à fait possible d'utiliser une feuille de calcul tel que LibreOffice Calc ou Microsoft Excel, mais le but de ce cas pratique est d'utiliser des outils spéciques à la manipulation des données en Python.
 

@@ -38,7 +38,7 @@ Dans la construction et représentation du parcours : aucune. La **Customer et l
 
 ## Comment construire votre Customer Journey Map ?
 
-![Template de Customer Journey Map]({{ site.baseurl }}/assets/2021-01-13-user-journey-map/User Journey Map Template.png)
+![Template de Customer Journey Map]({{ site.baseurl }}/assets/2021-01-13-user-journey-map/user-journey-map-template.png)
 
 **Étape 1 : Déterminez le persona dont vous souhaitez étudier le parcours**
 
@@ -107,7 +107,7 @@ Vous pouvez **ajouter tout autre élément utile à la qualification du parcours
 N’oubliez pas de prendre des photos de votre parcours réalisé en atelier et **mettez-le au propre sur un format web** pour pouvoir le diffuser facilement au sein de votre entreprise. [Miro](https://miro.com/), par exemple, propose des templates gratuits à adapter pour transposer votre Customer Journey Map.
 
 
-![Exemple de customer Journey Map sur un site d'annonces immobilières]({{ site.baseurl }}/assets/2021-01-13-user-journey-map/User Journey Map Exemple.png)
+![Exemple de customer Journey Map sur un site d'annonces immobilières]({{ site.baseurl }}/assets/2021-01-13-user-journey-map/user-journey-map-exemple.png)
 
 
 Votre Customer Journey map est prête à être exploitée ! N’hésitez pas à la transmettre aux participants de l’atelier pour leur permettre de rectifier certaines remontées ou verbatims et compléter leurs propos.
