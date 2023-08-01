@@ -38,9 +38,7 @@ Un exemple va nous aider à comprendre l’utilisation et les avantages de cette
 
 Pour l’occasion j’ai préparé une page web qui nous dit la vérité sur ce fameux `debugger`, la voici :
 
-<figure style="text-align: center; margin: 2rem 0;">
- <img alt="La fausse vérité sur l'instruction debugger" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/screenshot1.png" width="800px" style="margin: auto" />
-</figure>
+![La fausse vérité sur l'instruction debugger]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/screenshot1.png)
 
 Euh… ok… Je ne m’attendais pas à ça…<br>
 Bon, on va dire que ça tombe bien, on va déboguer tout ça !
@@ -86,9 +84,7 @@ L’instruction `debugger` ne fait rien d’autre que créer un **point d’arr�
 
 C’est une façon d'arrêter le temps à un instant T et fouiller dans le code, un véritable bullet time à la Matrix pendant lequel on peut trouver et buter Le Grand Méchant Bug.
 
-<figure style="text-align: center; margin: 2rem 0;">
- <img alt="Neo - Bullet time" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/bullet-time.jpg" width="800px" style="margin: auto" />
-</figure>
+![Neo - Bullet time]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/bullet-time.jpg)
 
 Si on rafraîchit simplement notre page web, on ne verra rien de nouveau… mais si avant de rafraîchir la page on ouvre notre console… *it’s bullet time, baby!*
 
@@ -100,9 +96,7 @@ Si on rafraîchit simplement notre page web, on ne verra rien de nouveau… mais
 
 ## L’onglet Sources en deux mots
 
-<figure style="text-align: center; margin: 2rem 0;">
- <img alt="L'onglet Source dans Google Chrome" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/onglet-source.png" width="800px" style="margin: auto" />
-</figure>
+![L'onglet Source dans Google Chrome]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/onglet-source.png)
 
 **Sources** nous présente trois sections :
 1. À gauche on retrouve tous les fichiers qui ont été chargés sur la page, y compris les fichiers CSS et HTML, très utile pour naviguer dans la structure de notre application et visualiser/modifier en temps réel chaque fichier.
@@ -113,40 +107,39 @@ Si on rafraîchit simplement notre page web, on ne verra rien de nouveau… mais
 
 Résumé des épisodes précédents : le temps s’est arrêté, on est comme *Doctor Strange* sur une page web qui est totalement congelée et qui ne répond plus.
 
-<figure style="text-align: center; margin: 2rem 0;">
- <img alt="Doctor Strange - Oeil d'Agamotto" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/Eye-of-Agamotto.jpg" width="800px" style="margin: auto" />
-</figure>
+![Doctor Strange - Oeil d'Agamotto]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/Eye-of-Agamotto.jpg)
 
 Le panel de débogage est notre *Oeil d'Agamotto*, voici un aperçu de ses principaux buttons :
 
-<img alt="Boutton reprendre l'execution du script" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-1.gif" width="45px" style="display: inline; vertical-align: text-bottom; margin: 0 1em 0 0" /> **Reprendre l'exécution du script.**<br>
+![Boutton reprendre l'execution du script]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-1.gif?width=45) **Reprendre l'exécution du script.**
+
 Une façon de décongeler l'exécution du script, l’application reprendra son cycle naturel, sauf s'il y a d'autres points d'arrêt, auquel cas l'exécution s'arrêtera à nouveau.
 
-<img alt="Boutton passer à l’appel de fonction suivant" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-2.gif" width="45px" style="display: inline; vertical-align: text-bottom; margin: 0 1em 0 0" /> **Passer à l’appel de fonction suivant.**<br>
+![Boutton passer à l’appel de fonction suivant]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-2.gif?width=45) **Passer à l’appel de fonction suivant.**
+
 Lui, il nous permet d’avancer jusqu'au prochain appel d’une fonction.
 
-<img alt="Boutton rentrer dans la fonction actuelle" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-3.gif" width="45px" style="display: inline; vertical-align: text-bottom; margin: 0 1em 0 0" /> **Rentrer dans la fonction actuelle.**<br>
+![Boutton rentrer dans la fonction actuelle]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-3.gif?width=45) **Rentrer dans la fonction actuelle.**
+
 Si la ligne sur laquelle on s’est arrêté contient un appel à fonction, en cliquant sur ce bouton on sera magiquement téléporté à l'intérieur de cette fonction. Vous allez adorer.
 
-<img alt="Boutton quitter la fonction actuelle" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-4.gif" width="45px" style="display: inline; vertical-align: text-bottom; margin: 0 1em 0 0" /> **Quitter la fonction actuelle.**<br>
+![Boutton quitter la fonction actuelle]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-4.gif?width=45) **Quitter la fonction actuelle.**
+
 À l'inverse, ce bouton nous permet de sortir de la fonction dans laquelle on s’est téléporté.
 
-<img alt="Boutton etape" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-5.gif" width="45px" style="display: inline; vertical-align: text-bottom; margin: 0 1em 0 0" /> **Étape.**<br>
+![Boutton etape]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/boutton-5.gif?width=45) **Étape.**
+
 Notre meilleur ami, en cliquant dessus il nous fera avancer dans notre script d’une ligne à la fois, *step by step*.
 
 Plus en bas dans le panel de débogage, on retrouve plusieurs sections, on va se focaliser sur les sections **Scope** et **Call stack**.
 
-<figure style="text-align: center; margin: 2rem 0;">
- <img alt="Scope" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/scope.gif" width="449px" style="margin: auto" />
-</figure>
+![Scope]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/scope.gif?width=450)
 
 La section **Scope** contient la liste des variables et des fonctions disponibles dans le contexte d'exécution actuel de votre code.
 
 Intéressant de voir que le hoisting de javascript fait que la variable `theTruth` est déjà disponible dans le scope Local, malgré le fait qu’elle n’ait pas encore été initialisée. *Mathemagical!*
 
-<figure style="text-align: center; margin: 2rem 0;">
- <img alt="Call stack" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/call-stack.gif" width="449px" style="margin: auto" />
-</figure>
+![Call stack]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/call-stack.gif?width=449)
 
 La section **Call stack** contient la “pile d’appels”, autrement dit l’historique des fonctions appelées qui font qu’on en est là.
 La fonction la plus récente est toujours au sommet de la pile.
@@ -160,9 +153,7 @@ Ok, on a toutes les armes pour tacler notre bug, on arrête le blah blah et on y
 
 Essayons de faire avancer notre script jusqu’à la ligne 19 pour observer les changements de notre panel de débogage.
 
-<figure style="text-align: center; margin: 2rem 0;">
- <img alt="L'onglet Source dans Google Chrome - Breakpoint" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/onglet-source-2.png" width="800px" style="margin: auto" />
-</figure>
+![L'onglet Source dans Google Chrome - Breakpoint]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/onglet-source-2.png)
 
 C’est intéressant de voir que la valeur de la variable `theTruth` dans la section Scope => Local du panel de débogage est passée de `undefined` à `“ne sert à rien”` (super, merci…).
 
@@ -196,9 +187,7 @@ Autant de suspense, et finalement, il s'agissait juste d’un array de mensonges
 
 Il ne me reste plus qu'à revenir à mon IDE, dénoncer l’array en question pour faux et usage de faux, rétablir l’ordre dans l’univers et…
 
-<figure style="text-align: center; margin: 2rem 0;">
- <img alt="La vérité sur l'instruction debugger" src="{{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/screenshot2.png" width="800px" style="margin: auto" />
-</figure>
+![La vérité sur l'instruction debugger]({{ site.baseurl }}/assets/2023-05-10-instruction-debugger-et-points-arret/screenshot2.png)
 
 ## Conclusion
 

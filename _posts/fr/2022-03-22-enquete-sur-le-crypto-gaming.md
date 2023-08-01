@@ -18,7 +18,7 @@ keywords:
 Le [crypto-gaming](https://en.wikipedia.org/wiki/Blockchain_game) est en plein essor sur les internets, quelle est cette nouvelle passion ? Peut-on réellement gagner de l’argent en jouant aux jeux vidéo ?
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/enquete-crypto.png" width="300px" alt="Carte Haaland sur Sorare à 600k" style="display: block; margin: auto;"/>
+    ![]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/enquete-crypto.png) width="300px" alt="Carte Haaland sur Sorare à 600k" style="display: block; margin: auto;"/>
 </div>
 
 ## Les bases
@@ -30,7 +30,7 @@ La [crypto-monnaie](https://fr.wikipedia.org/wiki/Cryptomonnaie) est une monnaie
 Vous en avez peut-être déjà entendu parler dans le monde artistique et surtout sportif, le NFT remplace les cartes de collections Panini. Le [NFT](https://fr.wikipedia.org/wiki/Jeton_non_fongible) pour _Non-Fungible Token_ (en français _Jeton non fongible_) est souvent un objet numérique qui va être certifié via la blockchain comme appartenant à une identité numérique ( = un propriétaire).
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/sorare-nft.png" width="233px" alt="Carte Haaland sur Sorare à 600k" style="display: block; margin: auto;"/>
+    ![]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/sorare-nft.png) width="233px" alt="Carte Haaland sur Sorare à 600k" style="display: block; margin: auto;"/>
 </div>
 
 *<center>Sur Sorare, la carte unique de Erling Haaland vaut 600k, alors que la carte hors NFT ne vaut rien.</center>*
@@ -66,7 +66,7 @@ Lorsqu’un éditeur lance son jeu, il va mettre en vente des NFT (ou jetons) po
 L’éditeur va déjà gagner de l'argent en vendant ces premiers jetons générés parfois à l'infini, parfois en nombre limité (surtout pour les NFT). Pourquoi en nombre limité ? Tout simplement pour éviter que le prix du jeton baisse s’il y en a trop en circulation, et donc décourager des joueurs/investisseurs.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/crypto-gaming-start.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
+    ![]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/crypto-gaming-start.png) width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
 </div>
 
 
@@ -77,7 +77,7 @@ L’éditeur va ensuite proposer aux utilisateurs de gagner des objets sous form
 Dans beaucoup de cas, plus le jeu offrira des avantages à jouer, plus le jeu sera attractif, plus il y aura de joueurs. Et les joueurs ayant investis rendront le jeu attractif pour ceux qui veulent se développer ou les nouveaux : ce sont eux qui achètent leurs jetons, et qui vont leur permettre de gagner de l’argent.
 
 <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/business.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
+    ![]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/business.png) width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
 </div>
 
 Une question me taraudait, et je le voyais dans Axie : comment les jetons, surtout en nombre infini, sont créés ?
@@ -87,25 +87,19 @@ La réponse ne me plaît pas : un jeton est créé à partir de rien, il n'a de 
 
 Comme pour la crypto-monnaie classique, les tokens possèdent leur propre cours boursier.
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/axie-slp.png" width="700px" alt="Cours de l'objet SLP du jeu Axie Infinity" style="display: block; margin: auto;"/>
-</div>
+![Cours de l'objet SLP du jeu Axie Infinity]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/axie-slp.png)
 
 *<center>Sur Axie, on peut gagner en combat des objets SLP qui permettent de faire de l'élevage.</center>*
 
 
 En fonction du cours, il sera ou non intéressant de les revendre, comme à la bourse.
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/speculation-down.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
-</div>
+![Starting game project Up]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/speculation-down.png)
 
 *<center>Plus il y a d’acheteurs et moins il y a d’intentions d’achat, plus le cours chute.</center>*
 
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/speculation-up.png" width="700px" alt="Starting game project" style="display: block; margin: auto;"/>
-</div>
+![Starting game project Down]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/speculation-up.png)
 
 *<center>Moins il y a d’acheteurs et plus il y a d’intentions d’achat, plus le cours monte.</center>*
 

@@ -15,14 +15,8 @@ keywords: []
 
 Bienvenue dans cet article ayant pour but de faire un tour d'horizon du cycle de vie d'une requête puis d'une réponse dans un environnement NestJS !
 
-<br />
-
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/nest-logo.png" width="300px" alt="NestJS logo" style="display: block; margin: auto;"/>
-    <i>NestJS Framework</i>
-</div>
-
-<br />
+![NestJS logo]({{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/nest-logo.png?width=300)
+Figure: *NestJS Framework*
 
 Le but ici sera de donner une représentation précise de chaque étape que peut rencontrer une requête, dans l'ordre, et avec des exemples. Une fois lu une première fois, gardez cet article dans un coin, à la manière d'un **pense-bête**. 
 Ainsi, en cas de confusion ou d'esprit embrumé le lendemain d'un jeudi soir un peu arrosé, il sera votre meilleur allié pour que votre gueule de bois passe inaperçue.
