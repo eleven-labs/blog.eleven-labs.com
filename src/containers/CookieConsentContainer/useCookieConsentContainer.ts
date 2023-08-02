@@ -9,7 +9,6 @@ export const useCookieConsentContainer = (): CookieConsentProps | undefined => {
   const { t } = useTranslation();
   const [cookies, setCookie] = useCookies([cookieConsentConfig.name]);
   const cookieConsent = cookies[cookieConsentConfig.name];
-  const [cookieConsentProps, setCookieConsentProps] = React.useState<CookieConsentProps>();
 
   const declineCookieConsent = React.useCallback((): void => {
     setCookie(cookieConsentConfig.name, '{ad_storage:false,analytics_storage:false}', {
@@ -29,9 +28,9 @@ export const useCookieConsentContainer = (): CookieConsentProps | undefined => {
     });
   }, [setCookie]);
 
-  React.useEffect((): void => {
+  return React.useMemo<CookieConsentProps | undefined>(() => {
     if (cookieConsent === undefined) {
-      setCookieConsentProps({
+      return {
         title: t('cookie_consent.title'),
         description: t('cookie_consent.description'),
         declineButton: {
@@ -42,11 +41,7 @@ export const useCookieConsentContainer = (): CookieConsentProps | undefined => {
           label: t('cookie_consent.button_accept_label'),
           onClick: acceptCookieConsent,
         },
-      });
-      return;
+      };
     }
-    setCookieConsentProps(undefined);
   }, [acceptCookieConsent, cookieConsent, declineCookieConsent, t]);
-
-  return cookieConsentProps;
 };

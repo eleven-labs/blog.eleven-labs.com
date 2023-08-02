@@ -26,7 +26,7 @@ jobs:
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_DEV }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_DEV }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_SEARCH_KEY=${{ secrets.ALGOLIA_API_SEARCH_KEY_DEV }}" >> $GITHUB_ENV
-          echo "GTM_ID==${{ secrets.GTM_ID_DEV }}" >> $GITHUB_ENV
+          echo "GTM_ID=${{ secrets.GTM_ID_DEV }}" >> $GITHUB_ENV
 
       - name: Sets env vars for production
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
@@ -38,7 +38,7 @@ jobs:
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_PRODUCTION }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_PRODUCTION }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_SEARCH_KEY=${{ secrets.ALGOLIA_API_SEARCH_KEY_PRODUCTION }}" >> $GITHUB_ENV
-          echo "GTM_ID==${{ secrets.GTM_ID_PRODUCTION }}" >> $GITHUB_ENV
+          echo "GTM_ID=${{ secrets.GTM_ID_PRODUCTION }}" >> $GITHUB_ENV
           echo "GOOGLE_SITE_VERIFICATION==${{ secrets.GOOGLE_SITE_VERIFICATION }}" >> $GITHUB_ENV
 
       - name: Setup node
