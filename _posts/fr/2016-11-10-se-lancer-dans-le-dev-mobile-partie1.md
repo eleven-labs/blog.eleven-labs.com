@@ -93,7 +93,7 @@ Mais Ionic dispose de points faibles :
 *Tableau compatibilité sous Cordova* :
 
 
-![]({{ site.baseurl }}/assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/platform-support.png) width="300" height="232" />
+![]({{ site.baseurl }}/assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/platform-support.png?width=300)
 
 
 **Conclusion :**

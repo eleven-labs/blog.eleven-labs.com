@@ -32,7 +32,7 @@ ArchiMate offre un langage commun pour décrire la construction et le fonctionne
 Les principaux concepts et éléments du langage ArchiMate sont présentés sous le nom d'ArchiMate Core Framework, qui se compose de trois “layers” et de trois “aspects”. Cela crée une matrice de combinaisons. Chaque couche à ses aspects “Passive Structure”, “Behavior” et “Active Structure”.
 
 <figure style="text-align: center; margin: 2rem 0;">
-  ![]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/core_framework_archimate.jpeg) width="800px" alt="Matrice Archimate" style="display: block; margin: auto;" />
+  ![Matrice Archimate]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/core_framework_archimate.jpeg)
 </figure>
 
 D'après Wikipedia : 
