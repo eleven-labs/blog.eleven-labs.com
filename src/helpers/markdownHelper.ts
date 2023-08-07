@@ -85,11 +85,23 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
 };
 
 export const validateMarkdownContent = (options: { markdownFilePath: string; content: string }): string => {
-  const assetMatches = options.content.match(/{{ site.baseurl }}[^)"'\s]+/g);
+  const imgTagMatches = options.content.match(/`{3}[\s\S]*?`{3}|`{1}[\s\S]*?`{1}|<img[^>]*>/g);
+  if (imgTagMatches) {
+    for (const imgTagMatch of imgTagMatches) {
+      if (!/^`{1,3}/.test(imgTagMatch)) {
+        console.log(`The img tag are no longer allowed, please use markdown syntax ! ${imgTagMatch}`);
+        throw new MarkdownInvalidError({
+          markdownFilePath: options.markdownFilePath,
+          reason: `The img tag are no longer allowed, please use markdown syntax ! ${imgTagMatch}`,
+        });
+      }
+    }
+  }
 
+  const assetMatches = options.content.match(/{{ site.baseurl }}[^)"'\s]+/g);
   if (assetMatches) {
     for (const assetMatch of assetMatches) {
-      const assetPath = assetMatch.replace(/{{\s*?site.baseurl\s*?}}\/assets/g, `${ASSETS_DIR}/posts`);
+      const assetPath = assetMatch.replace(/{{\s*?site.baseurl\s*?}}\/assets/g, `${ASSETS_DIR}/posts`).split('?')?.[0];
 
       if (!existsSync(assetPath)) {
         throw new MarkdownInvalidError({

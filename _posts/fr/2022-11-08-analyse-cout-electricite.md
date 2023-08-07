@@ -222,9 +222,7 @@ Cela me donne le tableau suivant.
 
 La lecture du tableau ne permet pas de se rendre compte de cette répartition. Ajoutons un graphique en camembert.
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/repartition-consommation.png" alt="répartition de la consommation entre les différentes périodes" style="display: block; margin: auto;"/>
-</div>
+![répartition de la consommation entre les différentes périodes]({{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/repartition-consommation.png)
 
 C'est mieux :)
 
@@ -261,9 +259,7 @@ Je répète cette opération pour tous les tarifs que j'ai sélectionnés.
 
 Cela me permet de tracer ce graphique avec Plotly.
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/calcul-cout-electricite.png" alt="coût de l'électricité en fonction du tarif" style="display: block; margin: auto;"/>
-</div>
+![coût de l'électricité en fonction du tarif]({{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/calcul-cout-electricite.png)
 
 Il nous donne les informations nécessaires pour répondre à notre question initiale, à nous de l'interpréter.
 
