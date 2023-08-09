@@ -146,6 +146,4 @@ N’oubliez pas que les tests sont aussi là pour vous aider même si c’est ba
 Maintenant, vous avez quelques clés pour éviter de faire de la dette technique dès le début d’un projet ! Avec votre expérience, souvenez-vous de ce code imbitable qui vous a donné des cauchemars, et rappelez-vous de tout ça pour éviter de refaire les mêmes erreurs.
 
 Car comme le disait Albert Einstein :
-<div style="text-align: center; font-style: italic">
-« La folie, c'est de faire toujours la même chose et de s'attendre à un résultat différent ».
-</div>
+>La folie, c'est de faire toujours la même chose et de s'attendre à un résultat différent
