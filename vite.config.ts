@@ -7,15 +7,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 // https://vitejs.dev/config/
 export default defineConfig(({ mode, ssrBuild }) => ({
   plugins: [
-    replace({
-      preventAssignment: true,
-      'process.env.NODE_ENV': JSON.stringify(mode),
-    }),
-    mode === 'production'
-      ? react({
-          jsxRuntime: 'classic',
-        })
-      : react(),
+    react(),
     tsconfigPaths(),
     visualizer({ filename: `reports/bundle-${ssrBuild ? 'ssr' : 'client'}-${mode}-stats.html`, gzipSize: true }),
   ],

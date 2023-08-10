@@ -165,15 +165,13 @@ Choisissez "Variable Javascript" et  donnez un nom à votre variable puis sauve
 
 ![](/_assets/posts/2017-05-30-google-tag-manager-configuration-js/capture-decran-2017-05-27-a-18.25.42.png)
 
-Retournez dans la configuration de votre tag, et changez l'HTML personnalisé en mettant le {% raw %}```{{NOM DE VOTRE VARIABLE}}```{% endraw %} à la place du message. Sauvegardez votre tag et faites un "refresh" de votre "preview".
+Retournez dans la configuration de votre tag, et changez l'HTML personnalisé en mettant le ```{{NOM DE VOTRE VARIABLE}}``` à la place du message. Sauvegardez votre tag et faites un "refresh" de votre "preview".
 
-{% raw %}
 ```html
 <script>
   alert("{{Message Alert}}");
 </script>
 ```
-{% endraw %}
 
 Il faut maintenant mettre en place votre "data layer" dans vos pages HTML,  et ajouter vos variables avant l'appel du script Google Tag Manager.
 

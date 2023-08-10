@@ -37,7 +37,6 @@ Dans notre exemple, nous allons créer une partie admin dans le projet, cette pa
 Tout ce passe dans le fichier app/config/security.yml, qui va nous permettre de mettre en place les pages que nous voulons protéger ainsi que la page de login.
 Tout d'abord, nous allons ajouter un firewall en donnant le type d'authentificaiton que nous souhaitons, ici, c'est un formulaire de login qui aura pour accès l'url /login, pour la vérification du formulaire il aura comme url /login_check et enfin l'url de logout.
 
-{% raw %}
 ```yaml
 security:
     firewalls:
@@ -52,7 +51,6 @@ security:
                 path: /logout
                 target: /
 ```
-{% endraw %}
 
 Il faut alors ajouter les zone d'access des utilisateurs, pour cela il faut ajouter access_control et mettre les rôles pour une serie d'url. Comme nous l'avons dit, nous voulons que la partie admin de notre site soit visible seulement pour les administrateurs.
 
@@ -165,7 +163,6 @@ class ClycksController extends Controller
 Comme vous pouvez le voir, nous n'avons pas de code dans l'action logout à vous de mettre ce que vous souhaitez :)
 Maintenant nous allons afficher le formulaire dans le fichier login.html.twig.
 
-{% raw %}
 ```twig
 {% if error %}
     <div>{{ error.message }}</div>
@@ -181,6 +178,5 @@ Maintenant nous allons afficher le formulaire dans le fichier login.html.twig.
     <input type="submit" name="login" />
 </form>
 ```
-{% endraw %}
 
 Voila maintenant votre partie admin est protégée, dans un prochain tuto j'expliquerai comment créer son propre provider.

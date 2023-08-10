@@ -36,19 +36,15 @@ There is some expression examples:
 
 Age must be equal to `26`.
 
-{% raw %}
 ```
 age=26
 ```
-{% endraw %}
 
 Age must be greater than or equal to `20` (included) and less than `30` (excluded).
 
-{% raw %}
 ```
 age≥20&age<30
 ```
-{% endraw %}
 
 Operators supported by bridges:
 
@@ -101,7 +97,6 @@ Let's see with which cases we should use this library.
 In order to have a specification we will use `ClosureExpressionBuilder`.
 In fact, this class builds a callback with the input expression.
 
-{% raw %}
 ```php
 <?php
 use Symftony\Xpression\Expr\ClosureExpressionBuilder;
@@ -159,7 +154,6 @@ $specification(['name' => 'Arnaud', 'planet' => 'Duck Invaders', 'points' => 785
 $specification($astronaut1);// true
 $specification(new Astronaut('Ilan', 'Donut Factory', 1325, 'Commodore')); // true
 ```
-{% endraw %}
 
 As you see, the specification can be called with an associative array, an object with public properties and an object with getters.
 
@@ -170,7 +164,6 @@ We use again `ClosureExpressionBuilder`.
 
 This is the dataset we use for the following examples:
 
-{% raw %}
 ```php
 <?php
 $astronauts = [
@@ -196,11 +189,9 @@ $astronauts = [
     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 ];
 ```
-{% endraw %}
 
 I want to get a 'Raccoons' astronaut.
 
-{% raw %}
 ```php
 <?php
 use Symftony\Xpression\Expr\ClosureExpressionBuilder;
@@ -222,13 +213,11 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 //     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 // ];
 ```
-{% endraw %}
 
 > Tips: here we use the `$expression` with `array_filter`.
 
 Now, I'd like to select astronauts with more than 1000 points but `Raccoons` too.
 
-{% raw %}
 ```php
 <?php
 use Symftony\Xpression\Expr\ClosureExpressionBuilder;
@@ -257,13 +246,11 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 //     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 // ];
 ```
-{% endraw %}
 
 ### ArrayCollection Filter
 
 To filter an ArrayCollection we use the bridge `Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter`.
 
-{% raw %}
 ```php
 <?php
 use Doctrine\Common\Collections\ArrayCollection;
@@ -282,7 +269,6 @@ $parser = new Parser(new ExpressionBuilderAdapter(new ExpressionBuilder()));
 $expression = $parser->parse($query);
 $filteredAstronauts = $astronauts->matching(new Criteria($expression));
 ```
-{% endraw %}
 
 > ℹ️ `ArrayCollection` are used by doctrine to manage relations (oneToMany, manyToMany etc...).
 
@@ -296,7 +282,6 @@ Now, we will filter some data in the MongoDB database.
 
 > Brace yourselves, it's gonna be tough!
 
-{% raw %}
 ```php
 <?php
 use Doctrine\Common\EventManager;
@@ -330,7 +315,6 @@ $astronauts = $collection->createQueryBuilder()->setQueryArray($queryBuilder->ge
 //     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 // ];
 ```
-{% endraw %}
 
 > Pretty simple in the end!
 
@@ -338,7 +322,6 @@ $astronauts = $collection->createQueryBuilder()->setQueryArray($queryBuilder->ge
 
 And doctrine/orm then?
 
-{% raw %}
 ```php
 <?php
 use Doctrine\ORM\Tools\Setup;
@@ -374,7 +357,6 @@ $astronauts = $qb->where($expression)->getQuery()->execute();
 //     ['name' => 'Romain', 'planet' => 'Raccoons of Asgard', 'points' => 550, 'rank' => 'Captain'],
 // ];
 ```
-{% endraw %}
 
 ⚠️ When we create queryBuilder with ORM we have to specifiy an alias `EntityRepository::createQueryBuilder($alias)`. That's why it can't identify query field `planet`.
 
@@ -384,7 +366,6 @@ The second solution is to use `MapperExpressionBuilder`. This class will decorat
 
 In the following example we prefix all (`*`) fields with `a`.
 
-{% raw %}
 ```php
 $parser = new Parser(
     new MapperExpressionBuilder(
@@ -393,7 +374,6 @@ $parser = new Parser(
     )
 );
 ```
-{% endraw %}
 
 ### API endpoint filter
 
@@ -417,7 +397,6 @@ Install it with `composer require symftony/xpression-bundle` then add it in symf
 
 You must activate querystring correction to fix the parsing of reserved char.
 
-{% raw %}
 ```php
 <?php
 // public/index.php or web/app.php (web/app_dev.php)
@@ -426,11 +405,9 @@ You must activate querystring correction to fix the parsing of reserved char.
 $request = Request::createFromGlobals();
 // ...
 ```
-{% endraw %}
 
 To use it you just need to add annotation `@Xpression(expressionBuilder="odm")` over desired filter controller.
 
-{% raw %}
 ```php
 <?php
 namespace App\Controller;
@@ -459,7 +436,6 @@ class AstronautController extends AbstractController
     }
 }
 ```
-{% endraw %}
 
 You can configure the following options:
 
@@ -470,11 +446,9 @@ You can configure the following options:
 
 Now you can go to your endpoint url and add `query`.
 
-{% raw %}
 ```
 http://localhost/astronauts/list?query={planet{{Raccoons}}|points≥1000}
 ```
-{% endraw %}
 
 ### Conclusion
 

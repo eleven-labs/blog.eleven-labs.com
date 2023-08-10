@@ -206,7 +206,6 @@ export default MovieItem;
 ```
 
 Pour réaliser sa version **skeleton** nous allons garder la structure HTML et garder uniquement l’image, le titre, et une ligne de description. Pour donner un peu plus de contraste, nous avons donné une couleur plus sombre à notre image.
-{% raw %}
 ```jsx
 // MovieItemSkeleton.jsx
 import React, { useRef } from "react";
@@ -238,7 +237,6 @@ const MovieItemSkeleton = () => {
 
 export default MovieItemSkeleton;
 ```
-{% endraw %}
 Et voila son rendu final :
 
 ![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/item_skeleton.gif)
@@ -248,7 +246,6 @@ C’est beau tout ça, mais comment savoir où et quand afficher nos squelettes 
 Pour cela nous allons utiliser le retour des queries Apollo de notre application.
 (Pour en savoir plus sur apollo et comment le mettre en place, je vous invite à aller voir [cet article](https://blog.eleven-labs.com/fr/commencer-avec-apollojs/)).
 Continuons dans notre exemple avec cette page comprenant une liste d'items récupérée via une Query graphQL :
-{% raw %}
 ```jsx
 //MoviesPageList.jsx
 import React from "react";
@@ -277,10 +274,8 @@ const MovieList = () => (
 
 export default MovieList;
 ```
-{% endraw %}
 Parmi les variables retournées par le composant Query, nous avons la variable **‘loading’**. C’est un booléen qui est vrai tout au long du chargement, pour au final être faux lorsque les données ont fini d’être récupérées.
 Ainsi nous pouvons afficher notre squelette dans la condition suivante :
-{% raw %}
 ```jsx
 //MoviesPageList.jsx
 import React from "react";
@@ -314,7 +309,6 @@ const MovieList = () => (
 
 export default MovieList;
 ```
-{% endraw %}
 Et le rendu est…
 
 ![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/list_skeleton_fail.gif)
@@ -352,7 +346,6 @@ export default MovieListSeleton;
 
 Ici, au lieu de boucler sur un tableau de données, je boucle sur un tableau de quatre cases vides (à adapter selon votre design) afin d'afficher quatre fois le squelette créé plus haut.
 Le tout assemblé, regardons à quoi ça ressemble :
-{% raw %}
 ```jsx
 //MoviesPageList.jsx
 import React from "react";
@@ -386,7 +379,6 @@ const MovieList = () => (
 
 export default MovieList;
 ```
-{% endraw %}
 ![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/list_skeleton.gif)
 
 En bonus la version de notre liste avec apollo hook :

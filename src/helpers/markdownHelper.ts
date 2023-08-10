@@ -1,12 +1,12 @@
 import { globSync } from 'glob';
 import matter from 'gray-matter';
 import { YAMLException } from 'js-yaml';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import * as path from 'path';
 import { z, ZodSchema } from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
-import { AUTHORS_DIR, POSTS_DIR } from '@/app-paths';
+import { ASSETS_DIR, AUTHORS_DIR, POSTS_DIR } from '@/app-paths';
 import { AUTHORIZED_LANGUAGES, CATEGORIES } from '@/constants';
 import { intersection } from '@/helpers/objectHelper';
 import { capitalize } from '@/helpers/stringHelper';
@@ -42,11 +42,16 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
 }): TData & { content: string } => {
   const markdownContent = readFileSync(options.markdownFilePath, { encoding: 'utf-8' });
 
-  if (markdownContent.match(/{:[^}]+}/)) {
-    throw new MarkdownInvalidError({
-      markdownFilePath: options.markdownFilePath,
-      reason: 'is not compliant, it contains a syntax that is not allowed !',
-    });
+  const invalidSyntaxMatches = markdownContent.match(/`{1,3}[\s\S]*?`{1,3}|{% raw %}|{% endraw %}|{:[^}]+}}?/g);
+  if (invalidSyntaxMatches) {
+    for (const invalidSyntaxMatch of invalidSyntaxMatches) {
+      if (!/^`{1,3}/.test(invalidSyntaxMatch)) {
+        throw new MarkdownInvalidError({
+          markdownFilePath: options.markdownFilePath,
+          reason: `The syntax isn't allowed, please use valid markdown syntax ! ${invalidSyntaxMatch}`,
+        });
+      }
+    }
   }
 
   try {
@@ -77,6 +82,37 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
       column: yamlException?.mark?.column,
     });
   }
+};
+
+export const validateMarkdownContent = (options: { markdownFilePath: string; content: string }): string => {
+  const imgTagMatches = options.content.match(/`{3}[\s\S]*?`{3}|`{1}[\s\S]*?`{1}|<img[^>]*>/g);
+  if (imgTagMatches) {
+    for (const imgTagMatch of imgTagMatches) {
+      if (!/^`{1,3}/.test(imgTagMatch)) {
+        console.log(`The img tag are no longer allowed, please use markdown syntax ! ${imgTagMatch}`);
+        throw new MarkdownInvalidError({
+          markdownFilePath: options.markdownFilePath,
+          reason: `The img tag are no longer allowed, please use markdown syntax ! ${imgTagMatch}`,
+        });
+      }
+    }
+  }
+
+  const assetMatches = options.content.match(/{{ site.baseurl }}[^)"'\s]+/g);
+  if (assetMatches) {
+    for (const assetMatch of assetMatches) {
+      const assetPath = assetMatch.replace(/{{\s*?site.baseurl\s*?}}\/assets/g, `${ASSETS_DIR}/posts`).split('?')?.[0];
+
+      if (!existsSync(assetPath)) {
+        throw new MarkdownInvalidError({
+          markdownFilePath: options.markdownFilePath,
+          reason: `The file does not exist "${assetPath}"!`,
+        });
+      }
+    }
+  }
+
+  return options.content;
 };
 
 export const validateAuthor = (options: { markdownFilePath: string }): AuthorData & { content: string } => {
@@ -129,10 +165,18 @@ export const validateAuthor = (options: { markdownFilePath: string }): AuthorDat
     })
     .strict();
 
-  return getDataInMarkdownFile({
+  const { content, ...data } = getDataInMarkdownFile<z.infer<typeof AuhorValidationSchema>>({
     markdownFilePath: options.markdownFilePath,
     ValidationSchema: AuhorValidationSchema,
   });
+
+  return {
+    ...data,
+    content: validateMarkdownContent({
+      markdownFilePath: options.markdownFilePath,
+      content,
+    }),
+  };
 };
 
 export const validatePost = (options: {
@@ -171,10 +215,18 @@ export const validatePost = (options: {
     })
     .strict();
 
-  return getDataInMarkdownFile({
+  const { content, ...data } = getDataInMarkdownFile<z.infer<typeof PostValidationSchema>>({
     markdownFilePath: options.markdownFilePath,
     ValidationSchema: PostValidationSchema,
   });
+
+  return {
+    ...data,
+    content: validateMarkdownContent({
+      markdownFilePath: options.markdownFilePath,
+      content,
+    }),
+  };
 };
 
 export const validateMarkdown = (): boolean => {

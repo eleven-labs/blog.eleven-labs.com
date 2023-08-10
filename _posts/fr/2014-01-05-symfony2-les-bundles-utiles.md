@@ -21,13 +21,11 @@ Cela fait maintenant plus de 2 ans que Symfony2 est sorti et, comme vous le save
 
 **JMSSerializerBundle** utilise la librairie Serializer du même auteur, et vous permet de sérialiser vos données dans un format de sortie demandé, tel que JSON, XML ou YAML, et inversement. En twig cela donne ça :
 
-{% raw %}
 ```twig
 {{ data | serialize }} {# serializes to JSON #}
 {{ data | serialize('json') }}
 {{ data | serialize('xml') }}
 ```
-{% endraw %}
 
 Les possibilités sont illimitées, plus d'informations [ici](http://jmsyst.com/bundles/JMSSerializerBundle).
 
@@ -100,12 +98,10 @@ $.ajax({
 
 N'oubliez pas d'inclure les fichiers JS du bundle dans votre layout :
 
-{% raw %}
 ```twig
 <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
 <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
 ```
-{% endraw %}
 
 Plus d'informations sur le [site du projet](https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/blob/master/Resources/doc/README.markdown).
 
@@ -135,11 +131,9 @@ class Builder extends ContainerAware
 
 Et vous l'appelez dans votre layout :
 
-{% raw %}
 ```twig
 {{ knp_menu_render('DemoMyBundle:Builder:mainMenu') }}
 ```
-{% endraw %}
 
 Faites un tour [ici](https://github.com/KnpLabs/KnpMenuBundle/blob/master/Resources/doc/index.md#first-menu) pour lire toutes les informations.
 
@@ -166,7 +160,6 @@ public function listAction()
 
 Et dans le template twig :
 
-{% raw %}
 ```twig
 {# total items count #}
 <div class="count">
@@ -192,7 +185,6 @@ Et dans le template twig :
     {{ knp_pagination_render(pagination) }}
 </div>
 ```
-{% endraw %}
 
 Visitez la [page du bundle](https://github.com/KnpLabs/KnpPaginatorBundle) pour de plus amples informations.
 

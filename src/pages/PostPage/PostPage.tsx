@@ -1,7 +1,7 @@
 import { Box } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { Container, Divider, NewsletterBlock, NewsletterBlockProps } from '@/components';
+import { Container, Divider, NewsletterBlock, NewsletterBlockProps, ShareLinks } from '@/components';
 
 import { PostFooter, PostFooterProps } from './PostFooter';
 import { PostHeader, PostHeaderProps } from './PostHeader';
@@ -23,19 +23,25 @@ export const PostPage: React.FC<PostPageProps> = ({
   footer,
   relatedPostList,
   newsletterBlock,
-}) => (
-  <Container variant="global">
-    <Container variant="content">
-      {backLink}
-      <PostHeader {...header} />
-      <Divider mt="xs" bg="light-grey" />
-      <Box as="section" textSize="s" dangerouslySetInnerHTML={{ __html: content }} />
-      <Divider mt="xs" bg="light-grey" />
-      <PostFooter {...footer} />
+}) => {
+  const currentUrl = typeof window !== 'undefined' && window.location.href;
+
+  return (
+    <Container variant="global">
+      <Container variant="content">
+        {backLink}
+        <PostHeader {...header} />
+        <Divider mt="xs" bg="light-grey" />
+        <ShareLinks urlToShare={currentUrl as string} />
+        <Box as="section" textSize="s" dangerouslySetInnerHTML={{ __html: content }} />
+        <ShareLinks urlToShare={currentUrl as string} />
+        <Divider mt="xs" bg="light-grey" />
+        <PostFooter {...footer} />
+      </Container>
+      <Container>
+        <NewsletterBlock mb={{ xs: 'l' }} {...newsletterBlock} />
+        {relatedPostList.posts.length > 0 && <RelatedPostList mb={{ xs: 'xl', md: 'xxl' }} {...relatedPostList} />}
+      </Container>
     </Container>
-    <Container>
-      <NewsletterBlock mb={{ xs: 'l' }} {...newsletterBlock} />
-      {relatedPostList.posts.length > 0 && <RelatedPostList mb={{ xs: 'xl', md: 'xxl' }} {...relatedPostList} />}
-    </Container>
-  </Container>
-);
+  );
+};

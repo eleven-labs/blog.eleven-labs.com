@@ -8,3 +8,4 @@ export * from './PostPreviewList';
 export * from './ProgressBar';
 export * from './SeparatorCircle';
 export * from './BackLink';
+export * from './ShareLinks';

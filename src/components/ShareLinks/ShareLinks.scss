@@ -1,0 +1,11 @@
+.share-links {
+  &__copy-icon {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__social-media-icon {
+    border-radius: 2px;
+  }
+}

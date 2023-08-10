@@ -328,7 +328,6 @@ class ArboExtension extends AbstractExtension
 
 Puis ajoutons l'affichage qui appelle récursivement l'extension twig :
 
-{% raw %}
 ```twig
 <!-- /templates/node.html.twig ->
 <ul>
@@ -342,11 +341,9 @@ Puis ajoutons l'affichage qui appelle récursivement l'extension twig :
     </li>
 </ul>
 ```
-{% endraw %}
 
 Il ne vous reste plus qu'à afficher la page complète !
 
-{% raw %}
 ```
 <!-- /templates/arbo.html.twig ->
 {% extends 'base.html.twig' %}
@@ -360,7 +357,6 @@ Il ne vous reste plus qu'à afficher la page complète !
 {% endblock %}
 
 ```
-{% endraw %}
 
 ![arbo]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/arbo.png)
 

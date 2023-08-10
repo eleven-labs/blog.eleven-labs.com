@@ -111,9 +111,8 @@ Cela permet également de documenter avec du markdown. Ainsi, le code peut être
 L'interface Jupyter est quasiment identique à IPython. Il y a des cellules dans laquelle le code est lu, interprété et affiché.
 Tout est enregistré dans un fichier `.ipynb`.
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-06-13-decouverte-ipython/jupyter.png" alt="Interface Jupyter" style="display: block; margin: auto;"/>
-</div>
+
+![Interface Jupyter]({{ site.baseurl }}/assets/2022-06-13-decouverte-ipython/jupyter.png)
 
 Github met en forme les notebooks Jupyter pour en faciliter la lecture. Par exemple : [https://github.com/jdwittenauer/ipython-notebooks/blob/master/notebooks/ml/ML-Exercise1.ipynb](https://github.com/jdwittenauer/ipython-notebooks/blob/master/notebooks/ml/ML-Exercise1.ipynb)
 

@@ -36,7 +36,7 @@ Voici des éléments déclencheurs -parmi tant d’autres- d’une **Guerre du B
 Et pour vous lancer dans cette véritable course contre la montre, vous faire des alliés et pacifier le développement du Produit, voici trois premières **méthodes de priorisation du Backlog** qui pourront très certainement vous accompagner.
 
 
-![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/Scoffield & Blake.jpg)
+![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/scoffield-and-blake.jpg)
 
 
 ## Tactique numéro 1 : l’oeil de MoSCoW

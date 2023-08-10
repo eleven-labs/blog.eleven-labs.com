@@ -256,7 +256,6 @@ Manipulation des templates
 
 Dans les templates de vos composants React, vous pouvez déclarer des liens vers vos routes de cette façon, en important le composant `Link` disponible via votre fichier `routes.js` puis :
 
-{% raw %}
 ```js
 import { Link } from '../routes';
 
@@ -264,7 +263,6 @@ import { Link } from '../routes';
     Go to hello-world category
 </Link>
 ```
-{% endraw %}
 
 Notez que vous pouvez également utiliser la notation suivante :
 

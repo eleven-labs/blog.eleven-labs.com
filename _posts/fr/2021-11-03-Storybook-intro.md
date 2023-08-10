@@ -102,11 +102,7 @@ Après un bon vieux `create-react-app` des familles on peut initialiser Storyboo
 
 ---
 
-<div align="center">
-  <img src="{{ site.baseurl }}/assets/2019-11-27-Storybook-intro/pasorcier.png">
-</div>
-
-
+![c'est pas sorcier]({{ site.baseurl }}/assets/2019-11-27-Storybook-intro/pasorcier.png)
 
 On va donc appliquer cette belle méthodologie, sur la meilleure application possible : cette bonne vieille to-do list!
 

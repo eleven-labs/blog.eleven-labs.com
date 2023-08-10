@@ -286,7 +286,6 @@ This replication will work only if the servers are able to communicate with each
 
 It is also important to secure these exchanges, which is why we will create a key to authenticate the servers discussing with one another:
 
-{% raw %}
 ```yaml
 - name: Prepare authorization key file
   local_action: shell openssl rand -base64 756 > {{ playbook_dir }}/passwords/{{ env }}/mongodb-key
@@ -318,7 +317,6 @@ It is also important to secure these exchanges, which is why we will create a ke
     backrefs: yes
   when: database_replica_type != false
 ```
-{% endraw %}
 
 We create here the necessary key with `openssl`, copy it on the servers and specify it in the configuration file (a restart of MongoDB will be necessary to take this key into account).
 

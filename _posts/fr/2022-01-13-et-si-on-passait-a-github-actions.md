@@ -13,7 +13,7 @@ categories:
 keywords:
   - devops
 ---
-{% raw %}
+
 Pendant presque une décennie, Gitlab a su s'imposer comme forge logicielle, notamment grâce à sa CI _(ou Continuous Integration)_ performante, flexible et facile d'utilisation. Cependant, en fin d'année 2019, Github a lancé sa propre CI/CD avec une intégration unique à la plateforme : les _Github Actions_.
 
 Dans cet article, nous allons survoler la syntaxe des Github Actions en construisant au fur et à mesure notre premier _workflow_. Le but de ce dernier sera de valider une modification sur des fichiers Terraform lors d'une _pull request_ (ou _PR_).
@@ -227,9 +227,9 @@ Voici donc les différentes étapes :
 - On vérifie que les fichiers Terraform sont bien formatés
     - `run: terraform fmt -check -recursive -diff -no-color .`
 
-{% endraw %}
+
 ![Premier job: lint]({{ site.baseurl }}/assets/2022-01-13-et-si-on-passait-a-github-actions/github-actions-lint.png)
-{% raw %}
+
 
 Voici donc la définition YAML de notre premier `job` :
 
@@ -267,9 +267,9 @@ Voici donc les différentes étapes pour le second :
 - On fait un plan pour visualiser les changements.
     - `run: terraform plan -input=false -no-color -compact-warnings`
 
-{% endraw %}
+
 ![Second job: plan]({{ site.baseurl }}/assets/2022-01-13-et-si-on-passait-a-github-actions/github-actions-plan.png)
-{% raw %}
+
 
 Voici donc la définition YAML de notre second `job`
 
@@ -517,4 +517,4 @@ C'est très verbeux, mais cela facilite grandement la review de PRs car on sait 
 - [Github Actions syntaxe](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions)
 - [Github Actions déclencheurs](https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows)
 - [Blog Github](https://github.blog/)
-{% endraw %}
+

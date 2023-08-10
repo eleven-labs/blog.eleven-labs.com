@@ -34,7 +34,7 @@ Voyons les outils que nous allons utiliser.
 ## Outils utilisés
 
 Dans ce cas pratique, en tant qu'analyste de données (ou en anglais "Data Analyst"), je vais faire l'analyse du problème et y répondre.
-Je vais m'appuyer sur des outils tel que [Pandas](https://pandas.pydata.org/about/) pour la manipulation des données et [plotly](https://plotly.com/python/) pour la création de visualisation de données. Tout cela en Python et dans un [notebook Jupyter]({{ site.baseurl }}/fr/decouverte-ipython-un-shell-interactif-avance-pour-python/).
+Je vais m'appuyer sur des outils tel que [Pandas](https://pandas.pydata.org/about/) pour la manipulation des données et [plotly](https://plotly.com/python/) pour la création de visualisation de données. Tout cela en Python et dans un [notebook Jupyter](/fr/decouverte-ipython-un-shell-interactif-avance-pour-python/).
 
 J'ai sélectionné ces outils car ce sont les plus utilisés dans ce domaine. Il est tout à fait possible d'utiliser une feuille de calcul tel que LibreOffice Calc ou Microsoft Excel, mais le but de ce cas pratique est d'utiliser des outils spéciques à la manipulation des données en Python.
 
@@ -222,9 +222,7 @@ Cela me donne le tableau suivant.
 
 La lecture du tableau ne permet pas de se rendre compte de cette répartition. Ajoutons un graphique en camembert.
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/repartition-consommation.png" alt="répartition de la consommation entre les différentes périodes" style="display: block; margin: auto;"/>
-</div>
+![répartition de la consommation entre les différentes périodes]({{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/repartition-consommation.png)
 
 C'est mieux :)
 
@@ -261,9 +259,7 @@ Je répète cette opération pour tous les tarifs que j'ai sélectionnés.
 
 Cela me permet de tracer ce graphique avec Plotly.
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/calcul-cout-electricite.png" alt="coût de l'électricité en fonction du tarif" style="display: block; margin: auto;"/>
-</div>
+![coût de l'électricité en fonction du tarif]({{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/calcul-cout-electricite.png)
 
 Il nous donne les informations nécessaires pour répondre à notre question initiale, à nous de l'interpréter.
 
