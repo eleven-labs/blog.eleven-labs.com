@@ -3,7 +3,7 @@ lang: fr
 date: 2023-08-09
 slug: comprendre-et-personnaliser-son-environnement-docker
 title: Comprendre et Personnaliser son environnement Docker
-excerpt: Comprendre comment fonctionne Docker et être capable de créer son environnement sur mesure.
+excerpt: Comprendre comment fonctionne Docker et être capable de créer son environnement sur mesure
 categories:
     - architecture
 keywords:
