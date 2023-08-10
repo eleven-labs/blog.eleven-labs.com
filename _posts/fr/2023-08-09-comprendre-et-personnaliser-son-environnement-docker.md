@@ -155,11 +155,11 @@ Cela nous donne la possibilité d'avoir une application avec un service pour la 
 Nous allons d'abord sélectionner notre [version de docker](https://docs.docker.com/compose/compose-file/compose-versioning/) et l'inscrire dans notre docker compose, le Compose file format.
 
 
-![docker-v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-v.png)
+![docker -v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-v.png)
 
 Dans mon cas, la version 20.10.24 de Docker correspond à la version 3.8 du fichier.
 
-![-v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/-v.png)
+![docker compose -v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-compose-v.png)
 
 
 Nous pouvons ensuite commencer la création de nos services.
@@ -279,7 +279,7 @@ Nous pouvons utiliser ces variables depuis le docker compose avec la syntaxe `${
 
 L'ordre de priorité des variables :
 
-1 - Le fichier .yml.
+1 - Le fichier `docker-compose.yml`.
 
 2 - Les variables d'environnement de votre shell.
 
