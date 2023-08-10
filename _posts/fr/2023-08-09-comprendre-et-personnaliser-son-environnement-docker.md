@@ -109,41 +109,41 @@ Si à une étape le contenu n'est plus le même,  Docker ne pourra pas utiliser 
 Voici un exemple de Dockerfile permettant de créer une image avec une application Symfony :
 
 ```dockerfile
-    # On part d'une image officielle php 8.1.3
-    FROM php:8.1.3
+# On part d'une image officielle php 8.1.3
+FROM php:8.1.3
 
-    # Nous allons déplacer le php.ini
-    RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+# Nous allons déplacer le php.ini
+RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
-    # Installation de Composer
-    RUN curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
-    # Installation du CLI de Symfony
-    RUN curl -sS https://get.symfony.com/cli/installer | bash
-    # On deplace l'executable symfony dans le dossier user/local/bin pour que la commande soit reconnu
-    RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
-    # Met à jour apt
-    RUN apt-get update
+# Installation de Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
+# Installation du CLI de Symfony
+RUN curl -sS https://get.symfony.com/cli/installer | bash
+# On deplace l'executable symfony dans le dossier user/local/bin pour que la commande soit reconnu
+RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
+# Met à jour apt
+RUN apt-get update
 
-    # Installation de plusieurs librairies
-    RUN apt-get install -y libzip-dev libicu-dev git locales
-    RUN docker-php-ext-install zip intl opcache pdo_mysql
+# Installation de plusieurs librairies
+RUN apt-get install -y libzip-dev libicu-dev git locales
+RUN docker-php-ext-install zip intl opcache pdo_mysql
 
-    # Créer la locale FR
-    RUN locale-gen fr_FR.UTF-8
+# Créer la locale FR
+RUN locale-gen fr_FR.UTF-8
 
-    # On se déplace dans le dossier /app
-    WORKDIR /app
-    # À partir d'ici tout les commandes seront exécutées dans /app
+# On se déplace dans le dossier /app
+WORKDIR /app
+# À partir d'ici tout les commandes seront exécutées dans /app
 
-    # Une fois tout l'environnement prêt on copie le composer.json
-    COPY ./composer.json .
-    # On l'exécute
-    RUN composer install
-    # Puis ensuite on copie le projet dans l'image et plus précisement dans /app
-    COPY . .
+# Une fois tout l'environnement prêt on copie le composer.json
+COPY ./composer.json .
+# On l'exécute
+RUN composer install
+# Puis ensuite on copie le projet dans l'image et plus précisement dans /app
+COPY . .
 
-    # La commande qui sera éxécutée au demarrage d'un container
-    CMD ["symfony", "serve"]
+# La commande qui sera éxécutée au demarrage d'un container
+CMD ["symfony", "serve"]
 ```
 
 ## Créer son docker-compose
@@ -173,22 +173,22 @@ Puis nous décidons que la base de données s'appelle "mydb" et qu'elle aura com
 N'oubliez pas de déclarer le volume à la fin du docker-compose.
 
 ```yaml
-    version: '3.8'
-    services:
-      db:
-        image: mysql:8.0
-        volumes:
-          - db-volume:/var/lib/mysql
-        ports:
-          - "3306:3306"
-        environment:
-          MYSQL_DATABASE: mydb
-          MYSQL_ROOT_PASSWORD: root
-
-    ...
-
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
     volumes:
-      db-volume:
+      - db-volume:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_ROOT_PASSWORD: root
+
+...
+
+volumes:
+  db-volume:
 ```
 
 ### Service PHP
@@ -217,55 +217,55 @@ Nous allons mettre ce service sur le port 88.
 Ensuite, nous paramétrons les identifiants de connexion dans "environnement".
 
 ```yaml
-    ...
+...
 
-    phpmyadmin:
-      image: phpmyadmin
-      ports:
-        - "88:80"
-      environment:
-        - PMA_ARBITRARY=1
-        - PMA_HOST=db
-        - PMA_USER=root
-        - PMA_PASSWORD=root
+phpmyadmin:
+  image: phpmyadmin
+  ports:
+    - "88:80"
+  environment:
+    - PMA_ARBITRARY=1
+    - PMA_HOST=db
+    - PMA_USER=root
+    - PMA_PASSWORD=root
 
-    ...
+...
 ```
 
 ### En résumé voila à quoi ressemble notre docker-compose
 
 ```yaml
-    version: '3.8'
-    services:
-      db:
-        image: mysql:8.0
-        volumes:
-          - db-volume:/var/lib/mysql
-        ports:
-          - "3306:3306"
-        environment:
-          MYSQL_DATABASE: mydb
-          MYSQL_ROOT_PASSWORD: root
-
-    client:
-      build: .
-      ports:
-        - "80:8000"
-      volumes:
-        - .:/app
-
-    phpmyadmin:
-      image: phpmyadmin
-      ports:
-        - "88:80"
-      environment:
-        - PMA_ARBITRARY=1
-        - PMA_HOST=db
-        - PMA_USER=root
-        - PMA_PASSWORD=root
-
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
     volumes:
-      db-volume:
+      - db-volume:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_ROOT_PASSWORD: root
+
+client:
+  build: .
+  ports:
+    - "80:8000"
+  volumes:
+    - .:/app
+
+phpmyadmin:
+  image: phpmyadmin
+  ports:
+    - "88:80"
+  environment:
+    - PMA_ARBITRARY=1
+    - PMA_HOST=db
+    - PMA_USER=root
+    - PMA_PASSWORD=root
+
+volumes:
+  db-volume:
 ```
 
 ## Personaliser Mes Services
@@ -294,11 +294,11 @@ Pour ce faire, il suffit d'utiliser "ports".
 Le format est toujours HOTE:CONTAINER puis par défaut TCP. Vous pouvez préciser UDP avec /udp :
 
 ```yaml
-    client:
-    ...
-      ports:
-        - "80:8000"
-        - "80:9000"
+client:
+...
+  ports:
+    - "80:8000"
+    - "80:9000"
 ```
 
 #### Les networks
@@ -308,17 +308,17 @@ En plus du réseau par défaut, il est possible de définir d'autres réseaux.
 Dans ce cas, il faut les déclarer au plus haut niveau comme pour les volumes nommés, puis les utiliser dans les services.
 
 ```yaml
-    client:
-    ...
-      # J'utilise mon réseau mynetwork1
-      networks:
-        - mynetwork1
+client:
+...
+  # J'utilise mon réseau mynetwork1
+  networks:
+    - mynetwork1
 
-    ...
-    # Je déclare mes réseaux
-    networks:
-      mynetwork1:
-      mynetwork2:
+...
+# Je déclare mes réseaux
+networks:
+  mynetwork1:
+  mynetwork2:
 ```
 
 #### Les Images, context et dockerfile
@@ -328,10 +328,12 @@ Il est aussi possible de partir de notre Dockerfile en utilisant "build" ou "con
 Nous pouvons utiliser "build" et spécifier où se trouve le Dockerfile, comme nous l'avons fait pour notre service PHP.
 Il est aussi possible d'entrer plus en détail avec un contexte qui sera le chemin d'accès et un "dockerfile" comme dans l'exemple suivant :
 
-    client:
-      build:
-        context: ./mesdockerfiles
-        dockerfile: MonDockerfile.dev
+```yaml
+client:
+  build:
+    context: ./mesdockerfiles
+    dockerfile: MonDockerfile.dev
+```
 
 #### Volume External
 
@@ -339,23 +341,23 @@ Si vous ne souhaitez pas que Docker Compose crée un nouveau volume mais qu'il u
 `external: true` dans la configuration, comme dans l'exemple suivant :
 
 ```yaml
-    version: '3.8'
-    services:
-      db:
-        image: mysql:8.0
-        volumes:
-          - db-volume:/var/lib/mysql
-        ports:
-          - "3306:3306"
-        environment:
-          MYSQL_DATABASE: mydb
-          MYSQL_ROOT_PASSWORD: root
-
-    ...
-
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
     volumes:
-      db-volume:
-        external: true
+      - db-volume:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_ROOT_PASSWORD: root
+
+...
+
+volumes:
+  db-volume:
+    external: true
 ```
 
 ## Quelques commandes docker-compose
@@ -363,54 +365,54 @@ Si vous ne souhaitez pas que Docker Compose crée un nouveau volume mais qu'il u
 Vérifier la version de docker-compose :
 
 ```bash
-    docker-compose version
+docker-compose version
 ``` 
 
 Build les containers :
 
 ```bash
-    docker-compose build
+docker-compose build
 ```
 
 Pour lancer les containers :
 
 ```bash
-    docker-compose up
-    docker-compose up -d // En mode detach
+docker-compose up
+docker-compose up -d // En mode detach
 ```
 
 Stopper les containers :
 
 ```bash
-    docker-compose stop
-    docker compose down
-    docker compose down -v // Supprime les volumes aussi
+docker-compose stop
+docker compose down
+docker compose down -v // Supprime les volumes aussi
 ```
 
 Pour entrer dans l'application avec le terminal vous pouvez exécuter :
 
 ```bash
-    docker exec -ti {nom du container} bash
+docker exec -ti {nom du container} bash
 ```
 
 Lister tout les containers actifs lancés par docker-compose :
 
 ```bash
-    docker compose ps
+docker compose ps
 ```
 
 Afficher les réseaux disponibles :
 
 ```bash
-    docker network ls
+docker network ls
 ```
 
 Pour voir les options disponibles vous pouvez ajouter --help à la fin de la commande.
 Exemples :
 
 ```bash
-    docker-compose up --help
-    docker-compose buil --help
+docker-compose up --help
+docker-compose buil --help
 ```
 
 ## En Conclusion
