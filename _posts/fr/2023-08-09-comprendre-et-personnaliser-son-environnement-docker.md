@@ -159,7 +159,7 @@ Nous allons d'abord sélectionner notre [version de docker](https://docs.docker.
 
 Dans mon cas, la version 20.10.24 de Docker correspond à la version 3.8 du fichier.
 
-![docker-compose-v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-compose-v.png)
+![-v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/-v.png)
 
 
 Nous pouvons ensuite commencer la création de nos services.
@@ -279,7 +279,7 @@ Nous pouvons utiliser ces variables depuis le docker compose avec la syntaxe `${
 
 L'ordre de priorité des variables :
 
-1 - Le fichier docker-compose.yml.
+1 - Le fichier .yml.
 
 2 - Les variables d'environnement de votre shell.
 
@@ -360,31 +360,31 @@ volumes:
     external: true
 ```
 
-## Quelques commandes docker-compose
+## Quelques commandes docker compose
 
-Vérifier la version de docker-compose :
+Vérifier la version de docker compose :
 
 ```bash
-docker-compose version
+docker compose version
 ``` 
 
 Build les containers :
 
 ```bash
-docker-compose build
+docker compose build
 ```
 
 Pour lancer les containers :
 
 ```bash
-docker-compose up
-docker-compose up -d // En mode detach
+docker compose up
+docker compose up -d // En mode detach
 ```
 
 Stopper les containers :
 
 ```bash
-docker-compose stop
+docker compose stop
 docker compose down
 docker compose down -v // Supprime les volumes aussi
 ```
@@ -395,7 +395,7 @@ Pour entrer dans l'application avec le terminal vous pouvez exécuter :
 docker exec -ti {nom du container} bash
 ```
 
-Lister tout les containers actifs lancés par docker-compose :
+Lister tout les containers actifs lancés par docker compose :
 
 ```bash
 docker compose ps
@@ -411,8 +411,8 @@ Pour voir les options disponibles vous pouvez ajouter --help à la fin de la com
 Exemples :
 
 ```bash
-docker-compose up --help
-docker-compose build --help
+docker compose up --help
+docker compose build --help
 ```
 
 ## En Conclusion
