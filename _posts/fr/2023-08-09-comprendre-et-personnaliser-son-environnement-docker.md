@@ -21,18 +21,11 @@ authors:
 
 ## Introduction
 
-Docker s'est imposé comme un incontournable.
-Il permet d'empaqueter des applications et leurs dépendances dans des containers légers et portables, offrant ainsi une flexibilité et une cohérence accrues lors du déploiement sur différentes plateformes.
+Docker a été créé il y a maintenant un peu plus de 10 ans, et s'est très vite imposé comme un incontournable. Il permet d'empaqueter des applications et leurs dépendances dans des containers légers et portables, offrant ainsi une flexibilité et une cohérence accrues lors du déploiement sur différentes plateformes.
 
-En première partie, nous allons découvrir l'écosystème docker.
+Si vous n'êtes pas encore familier avec cet ecosystème ou si c'est un sujet que vous souhaitez creuser, cet article a justement pour but de vous transmettre toutes les connaissances de base pour enfin appréhender pleinement cet outil.
 
-Ensuite, nous expliquerons comment créer ses propres images docker à l'aide de Dockerfile.
-
-Puis, nous explorerons Docker Compose, un outil qui vient compléter Docker en permettant la gestion d'applications multi-containers.
-Avec Docker Compose, vous pourrez définir et orchestrer vos services en un seul fichier.
-
-Que vous soyez un débutant cherchant à comprendre les bases de Docker ou un utilisateur chevronné souhaitant améliorer ses compétences avec
-Docker Compose, cet article vous fournira les connaissances nécessaires pour en tirer pleinement parti.
+Vous découvrirez au cours des lignes qui suivent comment créer ses propres images Docker à l'aide de Dockerfile, ou bien encore en quoi consiste "Docker Compose", un outil qui vient compléter Docker en permettant la gestion d'applications multi-containers, et qui permet de définir et orchestrer vos services en un seul fichier.
 
 ## L'écosystème Docker
 
@@ -41,16 +34,16 @@ Docker Compose, cet article vous fournira les connaissances nécessaires pour en
 
 ### Une Image
 
-Une image Docker est un modèle de système, qui contient tous ce qui est nécessaires pour exécuter une application, y compris le code, les dépendances, les bibliothèques système et les fichiers de configuration.
+Une image Docker est un modèle de système, qui contient tous ce qui est nécessaire pour exécuter une application, y compris le code, les dépendances, les bibliothèques système et les fichiers de configuration.
 
-Nous pouvons utiliser une image fournit sur [docker hub](https://hub.docker.com/) ou créer notre propre image sur mesure.
+Nous pouvons utiliser une image fournie sur [docker hub](https://hub.docker.com/) ou créer notre propre image sur mesure.
 Dans le cas de l'utilisation d'une image existante, il est conseillé d'utiliser des images officielles.
 
-Commandes pour manipuler les images:
+Commandes pour manipuler les images :
 
 - Voir les commandes : `docker image --help`
 - Lister les images : `docker image ls -a`
-- Supprimer les image non utilisées : `docker image prune`
+- Supprimer les images non utilisées : `docker image prune`
 
 ### Un Container
 
@@ -59,9 +52,11 @@ Il s'agit d'un environnement isolé et autonome qui encapsule une application ou
 
 Chaque container Docker est créé à partir d'une image Docker et peut être lancé, arrêté, supprimé et déplacé facilement d'un système à un autre.
 
+Commandes pour manipuler les containers :
+
 - Voir les commandes : `docker container --help`
-- Lister les images : `docker container ls -a`
-- Supprimer les image non utilisées : `docker container prune`
+- Lister les containers : `docker container ls -a`
+- Supprimer les containers non utilisés : `docker container prune`
 
 ### Un Volume
 
@@ -69,19 +64,19 @@ Les volumes permettent aux containers de stocker des données et de les persiste
 Ils sont initialisés lors de la création d'un container.
 Ils permettent de conserver des données même si un container est supprimé, mis à jour ou rechargé.
 
+Commandes pour manipuler les volumes :
+
 - Voir les commandes : `docker volume --help`
 - Lister les volumes : `docker volume ls -a`
 - Supprimer les volumes non utilisées : `docker volume prune`
-- Creer un volume : `docker volume create myvolume`
+- Créer un volume : `docker volume create myvolume`
 
 Il existe 3 type de volumes.
 
 #### Type Volume
 
-Les volumes type "volume" sont stockés dans docker et ne dépendent pas de la machine hôte.
-Ils peuvent être partagés entre plusieurs containers, sont faciles à sauvegarder, restaurer et déplacer.
-Ils peuvent être sécurisés avec des options de chiffrement et d'authentification.
-C'est le type de volume le plus utilisé.
+Les volumes type "volume" sont stockés dans Docker et ne dépendent pas de la machine hôte. Ils peuvent être partagés entre plusieurs containers, sont faciles à sauvegarder, restaurer et déplacer.
+Ils peuvent être sécurisés avec des options de chiffrement et d'authentification. C'est le type de volume le plus utilisé.
 
 #### Type Bind Mount
 
@@ -100,9 +95,8 @@ Nous l'utiliserons principalement pour des données secrètes ou des données d'
 
 En Docker, une image est constituée de plusieurs couches (layers) de fichiers en lecture seule qui sont empilées les unes sur les autres pour former l'image finale.
 Chaque couche représente un état particulier de l'image et contient un ensemble de modifications apportées à la couche précédente.
-A chaques étape de votre build un layer est créé et docker le garde en mémoire.
-Ce qui permet lors d'un nouveau build de ne pas répéter les actions déjà faites car elles sont en mémoire.
-Si à une étape le contenu n'est plus le même docker ne pourra pas utiliser un layer déjà existant et devra en créer de nouveaux pour la suite.
+À chaque étape de votre build un layer est créé et Docker le garde en mémoire, ce qui permet lors d'un nouveau build de ne pas répéter les actions déjà faites.
+Si à une étape le contenu n'est plus le même,  Docker ne pourra pas utiliser un layer déjà existant et devra en créer de nouveaux pour la suite.
 
 ### Les instructions Dockerfile
 
@@ -110,10 +104,10 @@ Si à une étape le contenu n'est plus le même docker ne pourra pas utiliser un
 - WORKDIR : Permet de modifier le répertoire de travail en cours.
 - RUN : Permet d'exécuter une commande.
 - COPY : Permet de copier des fichiers et des dossiers depuis l'hôte et de les ajouter au système de fichiers de l'image.
-- ADD : Permet de copier des fichiers, des dossiers ou des fichiers distants en utilisant des URL et de les ajouter au système de fichiers de l'image.
-- CMD : Permet de définir la commande par défaut qui sera executé lors du lancement du container.
+- ADD : Permet de copier des fichiers, des dossiers ou des fichiers distants en utilisant des URLs et de les ajouter au système de fichiers de l'image.
+- CMD : Permet de définir la commande par défaut qui sera executée lors du lancement du container.
 - ENTRYPOINT : Permet de configurer un container qui sera lancé comme un exécutable.
-- ARG : Permet de définir des variables qui seront utilisables par l'utilisateur depuis sont container.
+- ARG : Permet de définir des variables qui seront utilisables par l'utilisateur depuis son container.
 - ENV : Permet de définir des variables d'environnement.
 - LABEL : Permet d'ajouter des métadonnées à une image.
 
@@ -127,7 +121,7 @@ Voici un exemple de Dockerfile permettant de créer une image avec une applicati
 
     # Installation de Composer
     RUN curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
-    # Installation du CLI de symfony
+    # Installation du CLI de Symfony
     RUN curl -sS https://get.symfony.com/cli/installer | bash
     # On deplace l'executable symfony dans le dossier user/local/bin pour que la commande soit reconnu
     RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
@@ -141,9 +135,9 @@ Voici un exemple de Dockerfile permettant de créer une image avec une applicati
     # Créer la locale FR
     RUN locale-gen fr_FR.UTF-8
 
-    # On ce déplace dans le dossier /app
+    # On se déplace dans le dossier /app
     WORKDIR /app
-    # A partir d'ici tout les commandes seront exécutées dans /app
+    # À partir d'ici tout les commandes seront exécutées dans /app
 
     # Une fois tout l'environnement prêt on copie le composer.json
     COPY ./composer.json .
@@ -152,7 +146,7 @@ Voici un exemple de Dockerfile permettant de créer une image avec une applicati
     # Puis ensuite on copie le projet dans l'image et plus précisement dans /app
     COPY . .
 
-    # La commande qui sera éxécuté au demarrage d'un container
+    # La commande qui sera éxécutée au demarrage d'un container
     CMD ["symfony", "serve"]
 
 ## Créer son docker-compose
@@ -322,9 +316,9 @@ Dans ce cas, il faut les déclarer au plus haut niveau comme pour les volumes no
 #### Les Images, context et dockerfile
 
 Nous pouvons utiliser "image" et sélectionner une image déjà prête sur le Docker Hub, comme nous l'avons déjà fait pour notre image phpMyAdmin.
-Ou partir de notre Dockerfile en utilisant "build" ou "context".
+Il est aussi possible de partir de notre Dockerfile en utilisant "build" ou "context".
 Nous pouvons utiliser "build" et spécifier où se trouve le Dockerfile, comme nous l'avons fait pour notre service PHP.
-Ou entrer plus en détail avec un contexte qui sera le chemin d'accès et un "dockerfile" comme dans l'exemple suivant.
+Il est aussi possible d'entrer plus en détail avec un contexte qui sera le chemin d'accès et un "dockerfile" comme dans l'exemple suivant :
 
     client:
       build:
@@ -360,34 +354,34 @@ Vérifier la version de docker-compose :
 
     docker-compose version
 
-Build les container :
+Build les containers :
 
     docker-compose build
 
-Pour lancer les container :
+Pour lancer les containers :
 
     docker-compose up
     docker-compose up -d // En mode detach
 
-Stopper les container :
+Stopper les containers :
 
     docker-compose stop
     docker compose down
     docker compose down -v // Supprime les volumes aussi
 
-Pour entrer dans l'application avec le terminal vous pouvez executer :
+Pour entrer dans l'application avec le terminal vous pouvez exécuter :
 
     docker exec -ti {nom du container} bash
 
-Lister tout les container actif lancés par docker-compose
+Lister tout les containers actifs lancés par docker-compose :
 
     docker compose ps
 
-Afficher les reseaux disponible :
+Afficher les réseaux disponibles :
 
     docker network ls
 
-Pour voir les options disponible vous pouvez ajouter --help a la fin de la commande.
+Pour voir les options disponibles vous pouvez ajouter --help à la fin de la commande.
 Exemples :
 
     docker-compose up --help
@@ -395,9 +389,9 @@ Exemples :
 
 ## En Conclusion
 
-En somme, Docker Compose est un outil essentiel pour simplifier le déploiement d'applications multi-containers.
+Docker Compose est un outil essentiel pour simplifier le déploiement d'applications multi-containers.
 Grâce à un simple fichier de configuration, vous pouvez définir tous les services nécessaires à votre application, les orchestrer et les gérer efficacement.
 Cela favorise la portabilité, la scalabilité et vous offre une plus grande flexibilité dans la création d'environnements de développement et de production cohérents.
 En utilisant Docker Compose, vous pouvez tirer pleinement parti de l'écosystème des containers et simplifier votre workflow de développement.
 
-Avec toutes ces informations vous devriez être capable de comprendre qu'est ce que Docker, comment ca fonctionne, et créer vos images ou environnement de travail sur mesure.
+J'espère que cet article vous aura permis de mieux comprendre ce qu'est Docker, comment ca fonctionne, et que vous êtes maintenant en mesure de créer vos images ou votre environnement de travail sur mesure !
