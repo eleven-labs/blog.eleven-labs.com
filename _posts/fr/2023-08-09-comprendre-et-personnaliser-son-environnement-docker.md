@@ -12,12 +12,8 @@ keywords:
     - docker-compose
 authors:
     - kadorais
+cover: /assets/2023-07-25-comprendre-et-personnaliser-ses-docker/cover.jpg
 ---
-
-[//]: # (![baleine]&#40;/assets\cover.jpg "baleine"&#41;)
-![cover]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/cover.jpg)
-
-# Comprendre et Personnaliser son environnement Docker
 
 ## Introduction
 
@@ -29,7 +25,6 @@ Vous découvrirez au cours des lignes qui suivent comment créer ses propres ima
 
 ## L'écosystème Docker
 
-[//]: # (![ecosystem docker]&#40;/assets\ecosystem.png "ecosystem docker"&#41;)
 ![ecosystem]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/ecosystem.png)
 
 ### Une Image
@@ -113,6 +108,7 @@ Si à une étape le contenu n'est plus le même,  Docker ne pourra pas utiliser 
 
 Voici un exemple de Dockerfile permettant de créer une image avec une application Symfony :
 
+```dockerfile
     # On part d'une image officielle php 8.1.3
     FROM php:8.1.3
 
@@ -148,6 +144,7 @@ Voici un exemple de Dockerfile permettant de créer une image avec une applicati
 
     # La commande qui sera éxécutée au demarrage d'un container
     CMD ["symfony", "serve"]
+```
 
 ## Créer son docker-compose
 
@@ -157,12 +154,11 @@ Nous pourrons donc lancer tous les services de l'application en une commande `do
 Cela nous donne la possibilité d'avoir une application avec un service pour la base de données, un pour l'application serveur, puis un pour phpMyAdmin ou d'autres services.
 Nous allons d'abord sélectionner notre [version de docker](https://docs.docker.com/compose/compose-file/compose-versioning/) et l'inscrire dans notre docker-compose, le Compose file format.
 
-[//]: # (![docker-v]&#40;/assets\docker-v.png "docker-v"&#41;)
+
 ![docker-v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-v.png)
 
 Dans mon cas, la version 20.10.24 de Docker correspond à la version 3.8 du fichier.
 
-[//]: # (![docker-compose-v]&#40;/assets/docker-compose-v.png "docker-compose-v"&#41;)
 ![docker-compose-v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-compose-v.png)
 
 
@@ -176,6 +172,7 @@ Nous l'assignons au port 3306.
 Puis nous décidons que la base de données s'appelle "mydb" et qu'elle aura comme mot de passe "root".
 N'oubliez pas de déclarer le volume à la fin du docker-compose.
 
+```yaml
     version: '3.8'
     services:
       db:
@@ -192,6 +189,7 @@ N'oubliez pas de déclarer le volume à la fin du docker-compose.
 
     volumes:
       db-volume:
+```
 
 ### Service PHP
 
@@ -199,6 +197,7 @@ En ce qui concerne notre application serveur, nous utilisons la commande `build:
 Le service sera disponible sur le port 80.
 Et nous utiliserons le bind mount pour le volume afin de faire transiter les changements en temps réel entre l'application virtuelle et notre dossier local.
 
+```yaml
     ...
 
     client:
@@ -209,6 +208,7 @@ Et nous utiliserons le bind mount pour le volume afin de faire transiter les cha
         - .:/app
 
     ...
+```
 
 ### Service PHPMyAdmin
 
@@ -216,6 +216,7 @@ Nous utilisons une image [phpmyadmin](https://hub.docker.com/_/phpmyadmin).
 Nous allons mettre ce service sur le port 88.
 Ensuite, nous paramétrons les identifiants de connexion dans "environnement".
 
+```yaml
     ...
 
     phpmyadmin:
@@ -229,9 +230,11 @@ Ensuite, nous paramétrons les identifiants de connexion dans "environnement".
         - PMA_PASSWORD=root
 
     ...
+```
 
 ### En résumé voila à quoi ressemble notre docker-compose
 
+```yaml
     version: '3.8'
     services:
       db:
@@ -263,15 +266,16 @@ Ensuite, nous paramétrons les identifiants de connexion dans "environnement".
 
     volumes:
       db-volume:
+```
 
 ## Personaliser Mes Services
 
 #### Les Variables d'environnement
 
 Il est possible d'utiliser un fichier d'environnement avec Docker (.env).
-Nous pouvons y mettre le nom du projet avec la variable ``COMPOSE_PROJECT_NAME=monprojet``.
+Nous pouvons y mettre le nom du projet avec la variable `COMPOSE_PROJECT_NAME=monprojet`.
 Ou d'autres variables personnalisées en utilisant la même syntaxe.
-Nous pouvons utiliser ces variables depuis le docker-compose avec la syntaxe ``${NOM_DE_MA_VAR}``.
+Nous pouvons utiliser ces variables depuis le docker-compose avec la syntaxe `${NOM_DE_MA_VAR}`.
 
 L'ordre de priorité des variables :
 
@@ -289,11 +293,13 @@ Il est possible de définir un ou plusieurs ports.
 Pour ce faire, il suffit d'utiliser "ports".
 Le format est toujours HOTE:CONTAINER puis par défaut TCP. Vous pouvez préciser UDP avec /udp :
 
+```yaml
     client:
     ...
       ports:
         - "80:8000"
         - "80:9000"
+```
 
 #### Les networks
 
@@ -301,6 +307,7 @@ Il faut savoir que Docker Compose crée un réseau par défaut nommé "nomduproj
 En plus du réseau par défaut, il est possible de définir d'autres réseaux.
 Dans ce cas, il faut les déclarer au plus haut niveau comme pour les volumes nommés, puis les utiliser dans les services.
 
+```yaml
     client:
     ...
       # J'utilise mon réseau mynetwork1
@@ -312,6 +319,7 @@ Dans ce cas, il faut les déclarer au plus haut niveau comme pour les volumes no
     networks:
       mynetwork1:
       mynetwork2:
+```
 
 #### Les Images, context et dockerfile
 
@@ -328,8 +336,9 @@ Il est aussi possible d'entrer plus en détail avec un contexte qui sera le chem
 #### Volume External
 
 Si vous ne souhaitez pas que Docker Compose crée un nouveau volume mais qu'il utilise un volume déjà existant, vous pouvez préciser
-``external: true`` dans la configuration, comme dans l'exemple suivant :
+`external: true` dans la configuration, comme dans l'exemple suivant :
 
+```yaml
     version: '3.8'
     services:
       db:
@@ -347,45 +356,62 @@ Si vous ne souhaitez pas que Docker Compose crée un nouveau volume mais qu'il u
     volumes:
       db-volume:
         external: true
+```
 
 ## Quelques commandes docker-compose
 
 Vérifier la version de docker-compose :
 
+```bash
     docker-compose version
+``` 
 
 Build les containers :
 
+```bash
     docker-compose build
+```
 
 Pour lancer les containers :
 
+```bash
     docker-compose up
     docker-compose up -d // En mode detach
+```
 
 Stopper les containers :
 
+```bash
     docker-compose stop
     docker compose down
     docker compose down -v // Supprime les volumes aussi
+```
 
 Pour entrer dans l'application avec le terminal vous pouvez exécuter :
 
+```bash
     docker exec -ti {nom du container} bash
+```
 
 Lister tout les containers actifs lancés par docker-compose :
 
+```bash
     docker compose ps
+```
 
 Afficher les réseaux disponibles :
 
+```bash
     docker network ls
+```
 
 Pour voir les options disponibles vous pouvez ajouter --help à la fin de la commande.
 Exemples :
 
+```bash
     docker-compose up --help
     docker-compose buil --help
+```
 
 ## En Conclusion
 
