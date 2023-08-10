@@ -9,7 +9,7 @@ categories:
 keywords:
     - docker
     - dockerfile
-    - docker-compose
+    - docker compose
 authors:
     - kadorais
 cover: /assets/2023-07-25-comprendre-et-personnaliser-ses-docker/cover.jpg
@@ -146,13 +146,13 @@ COPY . .
 CMD ["symfony", "serve"]
 ```
 
-## Créer son docker-compose
+## Créer son docker compose
 
 Docker Compose est l'outil Docker permettant de définir et de lancer des applications multi-containers.
 Nous avons simplement à utiliser un fichier de configuration pour définir les services de l'application.
-Nous pourrons donc lancer tous les services de l'application en une commande `docker-compose up -d`.
+Nous pourrons donc lancer tous les services de l'application en une commande `docker compose up -d`.
 Cela nous donne la possibilité d'avoir une application avec un service pour la base de données, un pour l'application serveur, puis un pour phpMyAdmin ou d'autres services.
-Nous allons d'abord sélectionner notre [version de docker](https://docs.docker.com/compose/compose-file/compose-versioning/) et l'inscrire dans notre docker-compose, le Compose file format.
+Nous allons d'abord sélectionner notre [version de docker](https://docs.docker.com/compose/compose-file/compose-versioning/) et l'inscrire dans notre docker compose, le Compose file format.
 
 
 ![docker-v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-v.png)
@@ -170,7 +170,7 @@ Notre premier service s'appelle "db" et nous utilisons une image officielle de M
 Nous allons stocker cette base de données dans un volume afin de pouvoir la conserver.
 Nous l'assignons au port 3306.
 Puis nous décidons que la base de données s'appelle "mydb" et qu'elle aura comme mot de passe "root".
-N'oubliez pas de déclarer le volume à la fin du docker-compose.
+N'oubliez pas de déclarer le volume à la fin du docker compose.
 
 ```yaml
 version: '3.8'
@@ -232,7 +232,7 @@ phpmyadmin:
 ...
 ```
 
-### En résumé voila à quoi ressemble notre docker-compose
+### En résumé voila à quoi ressemble notre docker compose
 
 ```yaml
 version: '3.8'
@@ -275,7 +275,7 @@ volumes:
 Il est possible d'utiliser un fichier d'environnement avec Docker (.env).
 Nous pouvons y mettre le nom du projet avec la variable `COMPOSE_PROJECT_NAME=monprojet`.
 Ou d'autres variables personnalisées en utilisant la même syntaxe.
-Nous pouvons utiliser ces variables depuis le docker-compose avec la syntaxe `${NOM_DE_MA_VAR}`.
+Nous pouvons utiliser ces variables depuis le docker compose avec la syntaxe `${NOM_DE_MA_VAR}`.
 
 L'ordre de priorité des variables :
 
@@ -412,7 +412,7 @@ Exemples :
 
 ```bash
 docker-compose up --help
-docker-compose buil --help
+docker-compose build --help
 ```
 
 ## En Conclusion
