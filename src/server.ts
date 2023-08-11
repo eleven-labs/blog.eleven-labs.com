@@ -5,6 +5,7 @@ import i18next from 'i18next';
 import i18nextHttpMiddleware from 'i18next-http-middleware';
 import { cpSync } from 'node:fs';
 import { resolve } from 'node:path';
+import cookiesMiddleware from 'universal-cookie-express';
 
 import { ASSETS_DIR, AUTHORS_DIR, IMGS_DIR, POSTS_DIR } from '@/app-paths';
 import { i18nConfig } from '@/config/i18n';
@@ -18,7 +19,7 @@ const createServer = async (): Promise<void> => {
   i18next.use(i18nextHttpMiddleware.LanguageDetector).init(i18nConfig);
 
   const app = express();
-  app.use(i18nextHttpMiddleware.handle(i18next));
+  app.use(cookiesMiddleware()).use(i18nextHttpMiddleware.handle(i18next));
 
   if (isProd) {
     const { dirname, resolve } = await import('node:path');
@@ -39,8 +40,10 @@ const createServer = async (): Promise<void> => {
       try {
         const { render } = await import('./entry-server.js');
         const request = createRequestByExpressRequest(req);
+        const cookies = (req as unknown as { universalCookies: Record<string, string> }).universalCookies;
         const html = await render({
           request,
+          cookies,
           i18n: req.i18n,
           links,
           scripts,
@@ -84,8 +87,10 @@ const createServer = async (): Promise<void> => {
       try {
         const { render } = await vite.ssrLoadModule('/src/entry-server.tsx');
         const request = createRequestByExpressRequest(req);
+        const cookies = (req as unknown as { universalCookies: Record<string, string> }).universalCookies;
         const html = await render({
           request,
+          cookies,
           i18n: req.i18n,
           scripts: [
             {
