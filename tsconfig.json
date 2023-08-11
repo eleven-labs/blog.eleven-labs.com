@@ -27,9 +27,5 @@
     "types": ["vitest/globals", "@types/gtag.js"]
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }],
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

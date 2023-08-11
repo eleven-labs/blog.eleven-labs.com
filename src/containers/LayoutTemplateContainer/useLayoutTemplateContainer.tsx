@@ -1,4 +1,4 @@
-import { useHead, useLink, useMeta, useScript } from 'hoofd';
+import { useLink, useMeta, useScript } from 'hoofd';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { matchPath, useLocation } from 'react-router-dom';
@@ -18,23 +18,9 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   const footer = useFooterContainer();
   const isHomePage = Boolean(matchPath(PATHS.ROOT, location.pathname));
 
-  useHead({
-    metas: [
-      {
-        name: 'google-site-verification',
-        content: GOOGLE_SITE_VERIFICATION,
-      },
-      {
-        name: 'apple-mobile-web-app-title',
-        content: 'Blog Eleven Labs',
-      },
-      {
-        name: 'theme-color',
-        content: themeColor,
-      },
-    ],
-    language: i18n.language,
-  });
+  useMeta({ name: 'google-site-verification', content: GOOGLE_SITE_VERIFICATION });
+  useMeta({ name: 'apple-mobile-web-app-title', content: 'Blog Eleven Labs' });
+  useMeta({ name: 'theme-color', content: themeColor });
   useMeta({ property: 'og:locale', content: i18n.language });
   useMeta({ property: 'og:site_name', content: 'Blog Eleven Labs' });
   useMeta({ property: 'og:url', content: location.pathname + location.search });

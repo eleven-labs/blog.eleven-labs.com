@@ -10,5 +10,5 @@
     "resolveJsonModule": true,
     "downlevelIteration": true
   },
-  "include": ["vite.config.ts",  "plugins"]
+  "include": ["vite.config.ts"]
 }

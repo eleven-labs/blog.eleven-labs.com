@@ -9,3 +9,5 @@ export const MARKDOWN_FILE_PATHS = globSync([`${POSTS_DIR}/**/*.md`, `${AUTHORS_
 export const PUBLIC_DIR = resolve(ROOT_DIR, 'public');
 export const IMGS_DIR = resolve(PUBLIC_DIR, 'imgs');
 export const DATA_DIR = resolve(PUBLIC_DIR, 'data');
+export const OUT_DIR = resolve(ROOT_DIR, 'dist');
+export const OUT_PUBLIC_DIR = resolve(OUT_DIR, 'public');

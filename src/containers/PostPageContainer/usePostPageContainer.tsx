@@ -17,10 +17,7 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
   const { t, i18n } = useTranslation();
   const { getDateToString } = useDateToString();
   const post = useLoaderData() as ReturnType<typeof getDataFromPostPage>;
-  useSeoPost({
-    title: post.title,
-    post,
-  });
+  useSeoPost(post);
   const newsletterBlock = useNewsletterBlock();
 
   useEffect(() => {

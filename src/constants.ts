@@ -1,8 +1,8 @@
 import { getEnv } from '@/helpers/getEnvHelper';
 
-export const IS_SSR = import.meta.env.SSR;
-export const IS_PRERENDER = import.meta.env.MODE === 'prerender';
-export const BASE_URL = getEnv<string>('BASE_URL') || '/';
+export const IS_SSR = import.meta.env?.SSR ?? false;
+export const IS_PRERENDER = import.meta.env?.MODE === 'prerender' ?? false;
+export const BASE_URL = getEnv<string>('BASE_URL');
 export const AUTHORIZED_LANGUAGES = ['fr', 'en'] as const;
 export const DEFAULT_LANGUAGE = 'fr';
 export const NUMBER_OF_ITEMS_PER_PAGE = 6;

@@ -9,7 +9,7 @@ const dev = async (): Promise<void> => {
     },
   });
 
-  await vite.ssrLoadModule('/src/server.ts');
+  await vite.ssrLoadModule('/src/server');
 };
 
 dev();

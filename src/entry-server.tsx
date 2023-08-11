@@ -42,6 +42,7 @@ export const render = async (options: RenderOptions): Promise<string> => {
   );
 
   const staticPayload = dispatcher.toStatic();
+
   const html = ReactDOMServer.renderToString(
     <React.StrictMode>
       <HtmlTemplate

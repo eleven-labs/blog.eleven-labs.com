@@ -6,14 +6,9 @@ import { type getDataFromPostPage } from '@/helpers/contentHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useTitle } from '@/hooks/useTitle';
 
-export type UseSeoOptions = {
-  title: string;
-  post: ReturnType<typeof getDataFromPostPage>;
-};
-
-export const useSeoPost = ({ title, post }: UseSeoOptions): void => {
+export const useSeoPost = (post: ReturnType<typeof getDataFromPostPage>): void => {
   const { i18n } = useTranslation();
-  useTitle(title);
+  useTitle(post.title);
   useMeta({ name: 'author', content: post.authors.map((author) => author.name).join(', ') });
   useMeta({ name: 'description', content: post.excerpt });
   useMeta({ property: 'og:type', content: 'article' });

@@ -4,12 +4,11 @@
   "type": "module",
   "scripts": {
     "postinstall": "husky install",
-    "ts-node": "ts-node -r dotenv/config",
-    "validate-markdown": "yarn ts-node bin/validateMarkdown",
-    "indexation:algolia": "yarn ts-node bin/indexationAlgolia",
-    "build": "yarn ts-node bin/build",
-    "prerender": "yarn build && yarn ts-node bin/prerender",
-    "start:dev": "yarn ts-node bin/dev",
+    "validate-markdown": "tsx bin/validateMarkdown",
+    "indexation:algolia": "tsx bin/indexationAlgolia",
+    "build": "tsx bin/build",
+    "prerender": "yarn build && tsx bin/prerender",
+    "start:dev": "tsx bin/dev",
     "start:prod": "NODE_ENV=production node dist/server",
     "start:static": "npx serv --path dist/public",
     "lint:es": "eslint --ext .ts,.tsx src bin",
@@ -107,13 +106,13 @@
     "storybook": "^7.1.0",
     "stylelint": "^15.2.0",
     "stylelint-config-standard-scss": "^7.0.1",
-    "ts-node": "^10.9.1",
     "typescript": "^4.7.4",
     "unified": "^10.1.2",
     "vite": "^4.4.5",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.33.0",
     "zod": "^3.21.4",
-    "zod-validation-error": "^1.3.1"
+    "zod-validation-error": "^1.3.1",
+    "tsx": "^3.12.7"
   }
 }

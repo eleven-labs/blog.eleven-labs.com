@@ -1,14 +1,12 @@
 import { cpSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { build as buildVite } from 'vite';
-import { createServer as createViteServer } from 'vite';
+
+import { ASSETS_DIR, OUT_DIR, OUT_PUBLIC_DIR } from '@/app-paths';
+import { writeJsonDataFiles } from '@/helpers/contentHelper';
 
 const BASE_URL = process.env.BASE_URL || '/';
 const MODE = process.env.NODE_ENV || 'production';
-const ROOT_DIR = process.cwd();
-const ASSETS_DIR = resolve(ROOT_DIR, '_assets');
-const OUT_DIR = resolve(ROOT_DIR, 'dist');
-const OUT_PUBLIC_DIR = resolve(OUT_DIR, 'public');
 
 const args = process.argv.slice(2).reduce<Record<string, string | number | boolean>>((currentArgs, currentArg) => {
   const [key, value] = currentArg.replace('--', '').split('=');
@@ -16,26 +14,9 @@ const args = process.argv.slice(2).reduce<Record<string, string | number | boole
   return currentArgs;
 }, {});
 
-const writeJsonDataFilesAndFeedFile = async (): Promise<void> => {
-  const vite = await createViteServer({
-    server: { middlewareMode: true },
-    base: BASE_URL,
-    appType: 'custom',
-  });
-
-  try {
-    const { writeJsonDataFiles } = await vite.ssrLoadModule('/src/helpers/contentHelper.ts');
-    writeJsonDataFiles();
-  } catch (e) {
-    console.error(e);
-  } finally {
-    vite.close();
-  }
-};
-
 const build = async (): Promise<void> => {
   cpSync(ASSETS_DIR, resolve(OUT_PUBLIC_DIR, 'imgs'), { recursive: true });
-  await writeJsonDataFilesAndFeedFile();
+  await writeJsonDataFiles();
 
   if (args.ssr) {
     await buildVite({
