@@ -1,1 +1,0 @@
-{"version":3,"file":"assetHelper-e2020dce.js","sources":["../../src/helpers/assetHelper.ts"],"sourcesContent":["import { BASE_URL } from '@/constants';\n\nexport const getPathFile = (path: string): string => `${BASE_URL}${path.slice(1)}`;\n"],"names":["getPathFile","path","BASE_URL"],"mappings":"4CAEa,MAAAA,EAAeC,GAAyB,GAAGC,CAAQ,GAAGD,EAAK,MAAM,CAAC,CAAC"}
