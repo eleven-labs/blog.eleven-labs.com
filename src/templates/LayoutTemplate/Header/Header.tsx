@@ -23,7 +23,13 @@ export const Header: React.FC<HeaderProps> = ({
     <Box as="header" bg="azure" className="header">
       <Flex justifyContent="between" alignItems="center" py="s" px={{ xs: 'm', md: 'l' }}>
         {!isNotTablet && autocompleteIsDisplayed ? (
-          <Box as="button" className="header__icon-button" color="white" onClick={onToggleSearch}>
+          <Box
+            as="button"
+            className="header__icon-button"
+            color="white"
+            onClick={onToggleSearch}
+            data-internal-link="home"
+          >
             <Icon name="arrow-back" color="white" size="28px" />
           </Box>
         ) : (

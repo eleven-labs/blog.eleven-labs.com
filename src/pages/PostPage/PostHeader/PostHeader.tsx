@@ -36,7 +36,7 @@ export const PostHeader: React.FC<PostHeaderProps> = ({ title, date, readingTime
         <Icon name="person" size="24px" />
         {authors.map((author, index) => (
           <React.Fragment key={author.username}>
-            <Link {...author.link} ml="xxs-3">
+            <Link {...author.link} ml="xxs-3" data-internal-link="author">
               {author.name}
             </Link>
             {authors.length - 1 !== index && (

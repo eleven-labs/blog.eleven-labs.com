@@ -64,7 +64,18 @@ export const Footer: React.FC<FooterProps> = ({
         </Flex>
         <Flex gapY="s">
           {socialLinks.map(({ as: As = 'a', iconName, ...linkProps }, socialLinkIndex) => (
-            <As key={socialLinkIndex} target="_blank" {...linkProps}>
+            <As
+              key={socialLinkIndex}
+              {...linkProps}
+              target="_blank"
+              {...(iconName === 'rss'
+                ? {
+                    'data-rss-link': true,
+                  }
+                : {
+                    'data-social-link': iconName,
+                  })}
+            >
               <Icon name={iconName} size="2.5em" color="white" mx="xxs-2" className="footer__social-icon" />
             </As>
           ))}
@@ -77,7 +88,13 @@ export const Footer: React.FC<FooterProps> = ({
       </Box>
       {languageLinks.map(({ label, isActive, ...linkProps }, index) => (
         <React.Fragment key={index}>
-          {isActive ? <Text fontWeight="bold">{label}</Text> : <Link {...linkProps}>{label}</Link>}
+          {isActive ? (
+            <Text fontWeight="bold">{label}</Text>
+          ) : (
+            <Link {...linkProps} data-internal-link="home">
+              {label}
+            </Link>
+          )}
           {languageLinks.length - 1 !== index && <Box mx="s" />}
         </React.Fragment>
       ))}
