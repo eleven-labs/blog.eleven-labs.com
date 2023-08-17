@@ -158,7 +158,6 @@ export const handleClickEventListener = (event: MouseEvent): void => {
       break;
   }
 
-  console.log(dataLayerEvent);
   window.dataLayer.push(dataLayerEvent);
 };
 
