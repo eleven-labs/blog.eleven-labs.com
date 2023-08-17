@@ -50,6 +50,7 @@ export const SubHeader: React.FC<SubHeaderProps> = ({ introBlock, choiceCategory
               isChoiceChip={true}
               variant={isActive ? 'primary' : 'secondary'}
               {...(choiceCategoryProps as ButtonProps)}
+              data-internal-link="category"
             >
               {label}
             </Button>

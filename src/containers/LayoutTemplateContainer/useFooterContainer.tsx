@@ -21,7 +21,8 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
       label: t('footer.link_to_eleven_labs_site'),
       target: '_blank',
       href: websiteUrl,
-    },
+      'data-website-link': true,
+    } as LayoutTemplateProps['footer']['elevenLabsSiteLink'],
     contact: {
       title: t('footer.contact.title'),
       list: [

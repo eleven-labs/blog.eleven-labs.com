@@ -1,5 +1,6 @@
 import { useHead, useLink, useMeta, useScript } from 'hoofd';
-import React, { useEffect } from 'react';
+import React, { ReactPortal, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { matchPath, useLocation } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ import { CookieConsentContainer } from '@/containers/CookieConsentContainer';
 import { HeaderContainer } from '@/containers/HeaderContainer';
 import { useFooterContainer } from '@/containers/LayoutTemplateContainer/useFooterContainer';
 import { getPathFile } from '@/helpers/assetHelper';
+import { getClickEventElements, handleClickEventListener } from '@/helpers/dataLayerHelper';
 import { LayoutTemplateProps } from '@/templates/LayoutTemplate';
 
 export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'children'> => {
@@ -17,6 +19,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   const location = useLocation();
   const footer = useFooterContainer();
   const isHomePage = Boolean(matchPath(PATHS.ROOT, location.pathname));
+  const [cookieConsent, setCookieConstent] = useState<ReactPortal | null>(null);
 
   useHead({
     metas: [
@@ -65,12 +68,28 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   useLink({ rel: 'apple-touch-icon', sizes: '180x180', href: getPathFile('/imgs/icons/apple-icon-180x180.png') });
 
   useEffect(() => {
+    setCookieConstent(createPortal(<CookieConsentContainer />, document.body));
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
+
+    const clickEventElements = getClickEventElements();
+
+    clickEventElements.forEach((element) => {
+      element.addEventListener('click', handleClickEventListener);
+    });
+
+    return () => {
+      clickEventElements.forEach((element) => {
+        element.removeEventListener('click', handleClickEventListener);
+      });
+    };
   }, [location]);
 
   return {
     header: <HeaderContainer />,
     footer,
-    cookieConsent: <CookieConsentContainer />,
+    cookieConsent,
   };
 };

@@ -28,7 +28,7 @@ export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, emptyAva
             className={author.avatarImageUrl ? 'post-footer__avatar-img' : 'post-footer__empty-avatar-img'}
           />
           <Box ml="xxs">
-            <Link weight="medium" {...author.link}>
+            <Link {...author.link} weight="medium" data-internal-link="author">
               {author.name}
             </Link>
             <Text as="div" size="xs" dangerouslySetInnerHTML={{ __html: author.content }} />
