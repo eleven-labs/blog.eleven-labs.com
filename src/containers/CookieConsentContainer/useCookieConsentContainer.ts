@@ -1,55 +1,36 @@
 import React from 'react';
 import { useCookies } from 'react-cookie';
-import ReactGA from 'react-ga';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 
 import { CookieConsentProps } from '@/components/CookieConsent';
-import { googleAnalytics } from '@/config/website';
+import { cookieConsentConfig } from '@/config/website';
 
 export const useCookieConsentContainer = (): CookieConsentProps | undefined => {
   const { t } = useTranslation();
-  const location = useLocation();
-  const [cookies, setCookie, removeCookie] = useCookies();
-  const [cookieConsent, setCookieConsent] = React.useState<CookieConsentProps>();
-
-  const startGoogleAnalytics = React.useCallback(
-    (options: { isAnonymous: boolean }): void => {
-      if (options.isAnonymous) {
-        ReactGA.initialize(googleAnalytics.trackingCodeAnonymized, {
-          gaOptions: {
-            storage: 'none',
-          },
-        });
-        ReactGA.ga('set', 'anonymizeIp', true);
-      } else {
-        ReactGA.initialize(googleAnalytics.trackingCode);
-      }
-      ReactGA.pageview(location.pathname + location.search);
-    },
-    [location.pathname, location.search]
-  );
+  const [cookies, setCookie] = useCookies([cookieConsentConfig.name]);
+  const cookieConsent = cookies[cookieConsentConfig.name];
 
   const declineCookieConsent = React.useCallback((): void => {
-    setCookie(`ga-disable-${googleAnalytics.trackingCode}`, true, { maxAge: googleAnalytics.cookieExpires });
-    setCookie('hasConsent', false, { maxAge: googleAnalytics.cookieExpires });
-    (window as any)[`ga-disable-${googleAnalytics.trackingCode}`] = true; //eslint-disable-line @typescript-eslint/no-explicit-any
-    googleAnalytics.cookieNames.forEach((cookieName) => removeCookie(cookieName));
-    startGoogleAnalytics({ isAnonymous: true });
-  }, [removeCookie, setCookie, startGoogleAnalytics]);
+    setCookie(cookieConsentConfig.name, '{ad_storage:false,analytics_storage:false}', {
+      maxAge: cookieConsentConfig.cookieExpires,
+      path: '/',
+    });
+  }, [setCookie]);
 
   const acceptCookieConsent = React.useCallback((): void => {
-    setCookie('hasConsent', true, { maxAge: googleAnalytics.cookieExpires });
-    startGoogleAnalytics({ isAnonymous: false });
-  }, [setCookie, startGoogleAnalytics]);
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      analytics_storage: 'granted',
+    });
+    setCookie(cookieConsentConfig.name, '{ad_storage:true,analytics_storage:true}', {
+      maxAge: cookieConsentConfig.cookieExpires,
+      path: '/',
+    });
+  }, [setCookie]);
 
-  React.useEffect((): void => {
-    ReactGA.pageview(location.pathname + location.search);
-  }, [location.pathname, location.search]);
-
-  React.useEffect((): void => {
-    if (cookies.hasConsent === undefined) {
-      setCookieConsent({
+  return React.useMemo<CookieConsentProps | undefined>(() => {
+    if (cookieConsent === undefined) {
+      return {
         title: t('cookie_consent.title'),
         description: t('cookie_consent.description'),
         declineButton: {
@@ -60,12 +41,7 @@ export const useCookieConsentContainer = (): CookieConsentProps | undefined => {
           label: t('cookie_consent.button_accept_label'),
           onClick: acceptCookieConsent,
         },
-      });
-      return;
+      };
     }
-    setCookieConsent(undefined);
-    startGoogleAnalytics({ isAnonymous: !cookies.hasConsent });
-  }, [acceptCookieConsent, cookies.hasConsent, declineCookieConsent, startGoogleAnalytics, t]);
-
-  return cookieConsent;
+  }, [acceptCookieConsent, cookieConsent, declineCookieConsent, t]);
 };

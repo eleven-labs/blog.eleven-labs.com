@@ -24,7 +24,7 @@ C’est à dire que le texte chiffré s'obtient en remplaçant chaque lettre du 
 
 *Chiffre de Jules César*
 
-<img src="{{ site.baseurl }}/assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/caesar3.jpg" />
+![]({{ site.baseurl }}/assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/caesar3.jpg)
 
 Bien évidemment, nous parlons ici d'un algorithme enfantin pour notre époque, mais si vous avez compris le principe qui s'applique ici, alors vous avez compris la cryptographie symétrique.
 
@@ -53,17 +53,17 @@ Les deux algorithmes asymétriques les plus connus sont :
 Le serveur crée deux clés (privée et public). Il envoie sa clé publique au client et garde bien secrètement sa clé privée.
 
 <!--  @todo add image -->
-<img src="{{ site.baseurl }}/assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/schema_base_asymetrique.jpg" />
+![]({{ site.baseurl }}/assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/schema_base_asymetrique.jpg)
 
 Si le serveur souhaite envoyer des données, il chiffre celles-ci via la clé privée. Le client pourra alors déchiffrer les données via la clé publique.
 
 <!--  @todo add image -->
-<img src="{{ site.baseurl }}/assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/schema_base_asymetrique_v2.jpg" />
+![]({{ site.baseurl }}/assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/schema_base_asymetrique_v2.jpg)
 
 Inversement, pour envoyer des données au serveur, le client utilise la clé publique fournie par le serveur afin de chiffrer ses données. Le serveur utilise la clé privée afin de déchiffrer lesdites données.
 
 <!--  @todo add image -->
-<img src="{{ site.baseurl }}/assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/schema_base_asymetrique_v3.jpg" />
+![]({{ site.baseurl }}/assets/2016-12-20-comprendre-ssl-tls-partie-2-chiffrement/schema_base_asymetrique_v3.jpg)
 
 Le serveur est le seul à pouvoir déchiffrer les messages chiffrés par la clé publique grâce à la clé privé.
 

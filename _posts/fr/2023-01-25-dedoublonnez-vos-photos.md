@@ -174,17 +174,17 @@ Le moyen le plus rapide de supprimer les hautes fréquences et les détails est 
 
 De cette façon, le hachage correspondra à toute variation de l'image, indépendamment de l'échelle ou du rapport d'aspect.
 
-![Pilou en 8x8]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8.jpg) <-- résultat en taille réelle
+![Pilou en 8x8 taille réelle]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8.jpg) <-- résultat en taille réelle
 
-<img height="512" src="{{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8.jpg" width="512"/>
+![Pilou en 8x8 grande taille]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8.jpg?height=512&width=512)
 
 #### 2. Réduire la couleur ####
 
 La petite image 8x8 est convertie en niveaux de gris. Cela fait passer le hachage de 64 pixels (64 rouges, 64 verts et 64 bleus) à 64 couleurs au total.
 
-![Pilou en 8x8 et greyscale]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8_greyscale.jpg) <-- résultat en taille réelle
+![Pilou en 8x8 et greyscale taille réelle]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8_greyscale.jpg) <-- résultat en taille réelle
 
-<img height="512" src="{{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8_greyscale.jpg" width="512"/>
+![Pilou en 8x8 et greyscale en 8x8 grande taille]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8_greyscale.jpg?height=512&width=512)
 
 #### 3. Moyenne des couleurs ####
 

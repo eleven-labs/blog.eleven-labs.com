@@ -24,19 +24,11 @@ keywords:
     }
 </style>
 
-<div style="display: flex; align-items: center;" id="responsive">
- <img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/read-me.png" width="300px" alt="Man holding a note saying 'Read me if you can'" style="display: block; margin-right: 20px; width: 80%; max-width: 145px" />
- <div style="display: flex; flex-direction: column">
- <p>
+![Man holding a note saying 'Read me if you can']({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/read-me.png?width=300)
+
 How many times have you been aware of text's different shapes and sizes while browsing the web lately? Probably not many, unless you found an extremely uncomfortable typography that pushed you to quickly flee the website.
-</p>
-<p>
-Typography is a silent tool that UX designers and developers can sometimes take for granted. <b>There is much noise around this topic</b>. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all?</p>
-<p>
+Typography is a silent tool that UX designers and developers can sometimes take for granted. **There is much noise around this topic**. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all ?
 Let’s find out about a few key concepts to succeed at a responsive and accessible typography as a front-end developer or as a UX designer.
-</p>
-</div>
-</div>
 
 ## How does readability impact web accessibility?
 
@@ -52,21 +44,16 @@ Smaller text can be challenging for seniors, children or visually impaired peopl
 
 For **heavy-text pages, even 18px or >20px** could even be suitable for a comfortable reading. Does it sound ridiculous? Check the body text on any medium.com article, such as [this one](https://kantrowitz.medium.com/face-to-face-with-dall-e-the-ai-artist-that-might-change-the-world-e9057e9e89a).
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/medium-example.jpg" width="800px" alt="Post on medium with detail on font-size" style="display: block; margin: auto;"/>
-</div>
+![Post on medium with detail on font-size]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/medium-example.jpg)
 
 ### Should typography be smaller in mobile?
 
-<div style="display: flex; align-items: center;" id="responsive">
- <img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/girl-phone.png" width="300px" alt="Magnifier glass" style="display: block; margin-right: 20px; width: 60%; max-width: 140px;" />
- <div style="display: flex; flex-direction: column;">
- <p>
-Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite… that the text should be larger to achieve a more comfortable experience when reading on a smaller screen!</p>
 
-<p>However, the answer is quite simple. <strong>The size of the font in the body of the text is usually the same on desktop, tablet or mobile</strong>. The companies that manufacture mobile devices have already solved this point by themselves. As front-end developers, our most critical practice is the way the font-size is implemented.</p>
-</div>
-</div>
+![Magnifier glass]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/girl-phone.png?width=300)
+
+Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite… that the text should be larger to achieve a more comfortable experience when reading on a smaller screen!
+
+However, the answer is quite simple. <strong>The size of the font in the body of the text is usually the same on desktop, tablet or mobile</strong>. The companies that manufacture mobile devices have already solved this point by themselves. As front-end developers, our most critical practice is the way the font-size is implemented.
 
 ### Font units: why px can be accessibility enemies
 
@@ -108,19 +95,14 @@ html {
 ```
 
 This practice has even been promoted by CSS-tricks last May on Twitter... and it received little love from their followers:
-<a href="https://twitter.com/css/status/1523700789083996160?s=20&t=CC56aWixbiPV7R_pqUOGcw" rel="nofollow, noreferrer" target="_blank">
-<img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/css-tricks.png" width="400px" alt="Tweet from CSS tricks suggesting to set the font-size to 62.5% in the root element" style="display: block; margin: auto;"/>
-</a>
 
-<div style="display: flex; align-items: center" id="responsive">
-<p>
+[![Tweet from CSS tricks suggesting to set the font-size to 62.5% in the root element]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/css-tricks.png?width=400)](https://twitter.com/css/status/1523700789083996160?s=20&t=CC56aWixbiPV7R_pqUOGcw)
+
 Changing the font size in the root is generally not great. It will either overwrite custom values or break any other usage of rem outside the typography. It is possible, but it will bring many changes regarding scalability.
-<br>
-<br>
+
 Let's check a better way. Or two.
-</p>
-<img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/research-illustration.png" width="800px" alt="Researcher going for adventure" style="display: block; margin: auto; width: 50%; max-width: 145px; margin-right: 10px"/>
-</div>
+
+![Researcher going for adventure]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/research-illustration.png?width=300)
 
 #### #1 - Use calc(): yes, but wait and see!
 
@@ -160,23 +142,17 @@ Yes, it is almost the same. But in terms of scalability and practicity, this app
 
 ### Ok, great... but what about fluid typography?
 
-<div style="display: flex; align-items: center;" id="responsive">
-<img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/fluid-typography.png" width="400px" alt="Researcher going for adventure" style="display: block; margin-right: 20px; margin-bottom: 10px; width: 80%; height: 80%; max-width: 145px;"/>
-<div style="display: flex; flex-direction: column">
-<p>
-Fluid typography is a CSS enhancement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: <b>vw units</b>, which stands for <i>viewport width</i>.
-<br>
-Even if it is possible to make this happen using <code>calc</code>, it is better to use the CSS function <code>clamp</code> that takes three values:
-<br>
-</p>
 
-<ul>
-<li>Minimum value,</li>
-<li>referred value,</li>
-<li>Maxim value,</li>
-</ul>
-</div>
-</div>
+![Researcher going for adventure]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/fluid-typography.png?width=400)
+
+
+
+Fluid typography is a CSS enhancement that smoothly scales the font-size depending on the viewport width. In order to achieve this, a new CSS unit comes into play: <b>vw units</b>, which stands for <i>viewport width</i>.
+Even if it is possible to make this happen using <code>calc</code>, it is better to use the CSS function <code>clamp</code> that takes three values:
+
+- Minimum value
+- referred value
+- Maxim value
 
 This CSS function comes with two treats: it can solve operations without the use of `calc` and also allows mixing different CSS units, such as `rem` and `vw`.
 
@@ -197,9 +173,8 @@ However, fluid typography should not replace responsive typography and it is not
 
 #### Line height
 Line height is also a key point in accessible typography. Just check this two paragraphs with the exact same content:
-    <div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/line-height.png" width="800px" alt="Line height example" style="display: block; margin: auto;"/>
-    </div>
+
+![Line height example]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/line-height.png)
 
 By default, most browsers set the line-height to 1.2. But what does 1.2 even mean? Spoiler: it's not pixels. An accessibility-focused line-height uses nothing less but unitless values (numbers) that are multiplied by the element's own font size. Yes, it is also possible to use `percentages`, `em` as well as global values, but this might lead to [unexpected results](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#prefer_unitless_numbers_for_line-height_values).
 
@@ -251,36 +226,22 @@ The magic range to aim here is between 50 - 75 characters per line. Ignoring thi
 
 Wikipedia is a great (bad) exemple. Even using a way greater amount of characters than recommended, the difference is easily visible in this [two extraits](https://fr.wikipedia.org/wiki/Wikip%C3%A9dia):
 
-<div style="text-align: left;">
-<img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/wiki2.png" width="800px" alt="Wikipedia entry with 88 characters" style="display: block; margin: auto;"/>
-<figcaption>
-Wikipedia entry with 88 characters
-  </figcaption>
-  <br>
-</div>
-<div style="text-align: left;">
-<img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/wiki1.png" width="800px" alt="Wikipedia entry with 148 characters" style="display: block; margin: auto;"/>
-<figcaption>
-Wikipedia entry with 148 characters
-</figcaption>
-</div>
-<br>
+![Wikipedia entry with 88 characters]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/wiki2.png)
+Figure: Wikipedia entry with 88 characters
+
+![Wikipedia entry with 148 characters]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/wiki1.png)
+Figure: Wikipedia entry with 148 characters
+
 Let's jump to the last readability point of this article!
-<br>
-<br>
 
 #### How to choose the right contrast for typography?
 
 High contrast between the font and the background ensure good readability. This is a quite basic concept and might even feel like an intuitive principle. Nevertheless, it still happens (quite often).
 
-<div style="text-align: left;">
-<img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/color-contrast.png" width="800px" alt="Two examples of color contrast" style="display: block; margin: auto;"/>
-<figcaption>
-<br>
+![Two examples of color contrast]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/color-contrast.png)
+
 Do you think both texts have enough contrast?
-</figcaption>
-</div>
-<br>
+
 In fact, no. The text on the left has a score of 8.21 with a _very good_ rating, meanwhile the text on the right has a score of 2.21 points - which means it is not even enough for the minimum contrast ratio asked by WCAG (4:5:1 for normal text).
 
 This might be good advice for designers: it is worth taking some time to check the contrast ratio when choosing an app's palette (especially on font colors!). Fortunately, there is plenty of tools that make this job way easier, such as [coolors.co](https://coolors.co) and [webaim.org](https://webaim.org/resources/contrastchecker/).
@@ -291,9 +252,7 @@ Web typography is a beautiful and a little bit messy world. In this article we j
 
 From my point of view, it is a responsability as creators to care about having inclusive products. Even if accessibility is a wide topic and we can struggle putting all its principles in practice, I think this can be a good start. <b>Caring is always the first step.</b>
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/rocket.png" width="800px" alt="Woman on a rocket heading to the sky" style="display: block; margin: auto; width: 50%;"/>
-</div>
+![Woman on a rocket heading to the sky]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/rocket.png?width=300)
 
 ## Ressources
 

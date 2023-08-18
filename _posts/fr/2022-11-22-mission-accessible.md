@@ -26,22 +26,18 @@ La notion d’usages est au cœur de l’idée d’accessibilité. Opposé à l�
 
 Concevoir un outil accessible c’est donc penser un outil pour les utilisatrices et utilisateurs tels qu’ils sont réellement, dans leur diversité (voir les [travaux d’accessibilité de Google](https://m3.material.io/foundations/accessible-design/overview) et de [Microsoft](https://www.microsoft.com/design/inclusive/) pour en savoir plus).
 
-<div style="text-align: center; margin: 2rem 0;">
-   <img src="{{ site.baseurl }}/assets/2022-11-22-mission-accessible/disabilities.jpg" width="600px" alt="Exemple de situation d’handicap permanent, temporaire et situationnel" style="display: block; margin: auto;"/>
-   <figcaption>Source <cite><a href="https://uxdesign.cc/accessibility-guidelines-for-a-ux-designer-c3ba775539be" target="_blank" rel="nofollow, noreferrer">Accessibility Guidelines de Avinash Kaur</a></cite></figcaption>
-</div>
- 
+![Exemple de situation d’handicap permanent, temporaire et situationnel]({{ site.baseurl }}/assets/2022-11-22-mission-accessible/disabilities.jpg?width=600)
+Figure: Source [Accessibility Guidelines de Avinash Kaur](https://uxdesign.cc/accessibility-guidelines-for-a-ux-designer-c3ba775539be)
+
 ## Pourquoi _faire_ de l’accessibilité ?
  
 Intégrer une démarche d’accessibilité à votre produit est **bénéfique pour vos utilisateurs et pour votre business**.
  
 Tout d’abord, concevoir une expérience utilisateur accessible est **bénéfique pour l’ensemble de vos utilisateurs**. Par exemple, alors que le sous-titrage de messages peut servir pour les individus avec une déficience auditive, cela permet aussi de faire passer un message dans une situation bruyante (voir illustration ci-dessous). Ainsi, la démarche d’accessibilité permet d’inclure les individus atteints d’un handicap permanent, qui représentent [près d’1 adulte français sur 7](https://www.cnsa.fr/documentation/cnsa_chiffres_cles_2021_interactif.pdf), mais aussi d’offrir une expérience plus adaptée à **l’ensemble de vos utilisateurs**.
- 
-<div style="text-align: center; margin: 2rem 0;">
-   <img src="{{ site.baseurl }}/assets/2022-11-22-mission-accessible/group.png" width="600px" alt="Exemple de situation d’handicap permanent, temporaire et situationnel" style="display: block; margin: auto;"/>
-    <figcaption>Source <cite><a href="https://uxdesign.cc/accessibility-guidelines-for-a-ux-designer-c3ba775539be" target="_blank" rel="nofollow, noreferrer">Accessibility Guidelines de Avinash Kaur</a></cite></figcaption>
-</div>
- 
+
+![Exemple de situation d’handicap permanent, temporaire et situationnel]({{ site.baseurl }}/assets/2022-11-22-mission-accessible/group.png?width=600)
+Figure: Source [Accessibility Guidelines de Avinash Kaur](https://uxdesign.cc/accessibility-guidelines-for-a-ux-designer-c3ba775539be)
+
 Enfin, concevoir votre produit dans une démarche d’accessibilité est aussi [bénéfique pour votre business](https://www.w3.org/standards/webdesign/accessibility). Parmi d’autres bénéfices pour votre entreprise, un produit “accessible” est un produit qui :
  
 -   Atteint une audience plus grande ;
@@ -92,11 +88,10 @@ On peut aussi utiliser l'attribut HTML `aria-labelledby`, qui permet de faire co
 Il est important de comprendre que ces descriptions doivent être objectives et concises, une vraie description de l'image utilisée. Si l'image est purement décorative, il est préférable de laisser ces informations vides afin que les lecteurs d'écran puissent simplement les ignorer. Dans le cas de vidéos, par exemple, il est indispensable de fournir des sous-titres ou une transcription. Ce n'est qu'un début. Vous pouvez en savoir plus sur les textes alternatifs dans [ce lien](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#text_alternatives).
  
 De plus, une hiérarchie claire dans la structure du site est nécessaire jusqu'au niveau de conformité A. C'est l'un des nombreux cas où le code et l'UX se chevauchent nécessairement. Voici un exemple de mise en page de site Web prototype :
- 
-<div style="text-align: center; margin: 2rem 0;">
-   <img src="{{ site.baseurl }}/assets/2022-11-22-mission-accessible/layout.png" width="600px" alt="HTML structuré de manière sémantique et prévisible en utilisant les éléments tels que Menu, en-tête, titre, sous-titre, article, image, etc." style="display: block; margin: auto;"/>
-   <figcaption>Image de <cite><a href="https://digital.com/how-to-create-a-website/how-to-properly-structure-your-html-for-web-accessibility/" target="_blank" rel="nofollow, noreferrer">How to structure your HTML properly for Web Accessibility</a></cite></figcaption>
-</div>
+
+![HTML structuré de manière sémantique et prévisible en utilisant les éléments tels que Menu, en-tête, titre, sous-titre, article, image, etc.]({{ site.baseurl }}/assets/2022-11-22-mission-accessible/layout.png?width=600)
+Figure: Source [How to structure your HTML properly for Web Accessibility](https://digital.com/how-to-create-a-website/how-to-properly-structure-your-html-for-web-accessibility/)
+
  
 Afin de respecter les critères d'accessibilité, la mise en page doit suivre un balisage sémantique. Oui, `<h1>` sera le premier et le plus pertinent en tête, et honnêtement, nous ne voyons aucune raison d'en avoir plus d'un dans la même page. Les données tabulaires doivent être affichées à l'aide de la balise `<table>` et chaque élément `<input>` doit être lié à une étiquette. C'est le moment de se débarrasser de la maladie `<div>` et d'accueillir `<fieldset>` et `<legend>` dans votre code.
  
@@ -139,10 +134,8 @@ D'autre part, de nombreux critères d'accessibilité ne font que suivre les bonn
 ## Comment évaluer son produit ?
  
 Une fois les principes appliqués se pose la question de l’évaluation. Est-ce que votre produit est effectivement davantage accessible pour les contextes d’usages que vous envisagiez ?
- 
-<div style="text-align: center; margin: 2rem 0;">
-   <img src="{{ site.baseurl }}/assets/2022-11-22-mission-accessible/guidelines.png" width="300px" alt="Illustration of a guidelines book" style="display: block; margin: auto;"/>
-</div>
+
+![Illustration of a guidelines book]({{ site.baseurl }}/assets/2022-11-22-mission-accessible/guidelines.png?width=300)
  
 ### Outils d’audit
  
@@ -182,10 +175,9 @@ Pour récapituler, nous avons vu que :
 -   il existe un ensemble d’outils et méthodes pour évaluer le niveau d’accessibilité de votre produit et engager votre équipe sur le sujet.
  
 Le chemin déblayé, il ne reste plus qu’à se demander : on commence quand ?
- 
-<div style="text-align: center;">
-   <img src="{{ site.baseurl }}/assets/2022-11-22-mission-accessible/accessibility_cover.png" width="300px" alt="Woman in a wheelchair using a computer" style="display: block; margin: auto;"/>
-</div>
+
+
+![Woman in a wheelchair using a computer]({{ site.baseurl }}/assets/2022-11-22-mission-accessible/accessibility_cover.png?width=300)
  
 ### Ressources
  

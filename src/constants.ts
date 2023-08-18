@@ -47,3 +47,7 @@ export const AVAILABLE_SHARE_LINKS = [
     isVisible: false,
   },
 ] as const;
+
+export const GTM_ID = getEnv<string>('VITE_GTM_ID');
+
+export const GOOGLE_SITE_VERIFICATION = getEnv<string>('VITE_GOOGLE_SITE_VERIFICATION');

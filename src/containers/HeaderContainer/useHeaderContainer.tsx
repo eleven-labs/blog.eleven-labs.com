@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { AutocompleteFieldProps } from '@/components';
 import { IS_SSR, NUMBER_OF_ITEMS_PER_PAGE, PATHS } from '@/constants';
 import { LinkContainer } from '@/containers/LinkContainer';
+import { trackContentSearchEvent } from '@/helpers/dataLayerHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useDebounce } from '@/hooks/useDebounce';
@@ -45,6 +46,7 @@ export const useHeaderContainer = (): HeaderProps => {
 
   React.useEffect(() => {
     if (debouncedSearch.length > 0) {
+      trackContentSearchEvent(debouncedSearch);
       setAutocompleteIsDisplayed(true);
       algoliaSearchIndex
         .search<{ slug: string; title: string; excerpt: string }>(debouncedSearch, {
