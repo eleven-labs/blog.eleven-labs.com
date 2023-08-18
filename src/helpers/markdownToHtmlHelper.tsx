@@ -20,6 +20,7 @@ import { unified } from 'unified';
 
 import { frontmatter } from '@/helpers/markdownHelper';
 import { intersection } from '@/helpers/objectHelper';
+import { remarkFigurePlugin } from '@/helpers/remarkPlugins/remarkFigurePlugin';
 
 const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): ReminderVariantType => {
   switch (admonitionVariant) {
@@ -78,6 +79,7 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
 
   const reactComponent = unified()
     .use(remarkParse)
+    .use(remarkFigurePlugin)
     .use(remark2rehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeRewrite, {
@@ -167,12 +169,24 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
             </Box>
           );
         },
+        figure: ({ node, ...props }): JSX.Element => {
+          return React.createElement('figure', {
+            ...props,
+            style: {
+              textAlign: 'center',
+            },
+          });
+        },
         img: ({ node, ...props }): JSX.Element => {
+          const urlParams = new URLSearchParams(props.src?.split('?')?.[1] ?? '');
           return React.createElement('img', {
             ...props,
             style: {
               display: 'block',
-              maxWidth: '100%',
+              maxWidth: urlParams.get('maxWidth') ? `${urlParams.get('maxWidth')}px` : '100%',
+              maxHeight: urlParams.get('maxHeight') ? `${urlParams.get('maxHeight')}px` : undefined,
+              width: urlParams.get('width') ? `${urlParams.get('width')}px` : undefined,
+              height: urlParams.get('height') ? `${urlParams.get('height')}px` : undefined,
               margin: 'var(--spacing-xs) auto',
             },
           });

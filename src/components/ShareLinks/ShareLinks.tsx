@@ -24,7 +24,7 @@ export const ShareLinks: React.FC<ShareLinksProps> = ({ urlToShare, ...flexProps
   const { t } = useTranslation();
   const [copy, copied] = useCopyText(urlToShare, 2000);
 
-  const getShareLinkIcon = (linkName: string, index: number): JSX.Element | undefined => {
+  const getShareLinkIcon = (linkName: string, index: number): React.JSX.Element | undefined => {
     switch (linkName) {
       case 'copyLink':
         return copied ? (
@@ -41,29 +41,30 @@ export const ShareLinks: React.FC<ShareLinksProps> = ({ urlToShare, ...flexProps
             onClick={copy}
             tabIndex={0}
             role="button"
+            data-button="copyLink"
           />
         );
       case 'twitter':
         return (
-          <TwitterShareButton key={index} url={urlToShare}>
+          <TwitterShareButton key={index} url={urlToShare} data-share-link data-sharing="twitter">
             <Icon name="twitter" size={26} className="share-links__social-media-icon" />
           </TwitterShareButton>
         );
       case 'facebook':
         return (
-          <FacebookShareButton key={index} url={urlToShare}>
+          <FacebookShareButton key={index} url={urlToShare} data-share-link data-sharing="facebook">
             <Icon name="facebook" size={26} className="share-links__social-media-icon" />
           </FacebookShareButton>
         );
       case 'linkedIn':
         return (
-          <LinkedinShareButton key={index} url={urlToShare}>
+          <LinkedinShareButton key={index} url={urlToShare} data-share-link data-sharing="linkedIn">
             <Icon name="linkedin" size={26} className="share-links__social-media-icon" />
           </LinkedinShareButton>
         );
       case 'reddit':
         return (
-          <RedditShareButton key={index} url={urlToShare}>
+          <RedditShareButton key={index} url={urlToShare} data-share-link data-sharing="reddit">
             <RedditIcon size={26} className="share-links__social-media-icon" />
           </RedditShareButton>
         );

@@ -143,7 +143,17 @@ Then in the markdown content, insert the tag:
 ![alt of image]({{ site.baseurl }}/_assets/posts/YYYY-MM-DD-slug/image-name.png)
 ```
 
-To add a cover image to your post, you will need to place an image with the name `cover` in the `_assets/posts/YYYY-MM-DD-slug/` folder. (The extension does not matter)
+To add an image with a figure and a figcaption you just need to write this syntax:
+
+```md
+![alt of image]({{ site.baseurl }}/_assets/posts/YYYY-MM-DD-slug/image-name.png)
+Figure: *Source Github*
+```
+
+And to specify a size on the image, you can add the arguments (`width`, `height`, `maxWidth`, `maxHeight`) after the url:
+```md
+![alt of image]({{ site.baseurl }}/_assets/posts/YYYY-MM-DD-slug/image-name.png?width=500)
+```
 
 > Warning: Don't add html in your markdown, you don't have to override the blog template in the markdown.
 

@@ -39,7 +39,13 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
   >
     <Skeleton isLoading={isLoading}>
       <Heading as="h2" color="amaranth" size="s" mb={{ xs: 'xxs-3', md: 'xxs' }}>
-        {hasMask ? title : <Link {...link}>{title}</Link>}
+        {hasMask ? (
+          title
+        ) : (
+          <Link {...link} data-internal-link={isRelated ? 'relatedPost' : 'post'}>
+            {title}
+          </Link>
+        )}
       </Heading>
     </Skeleton>
     <Skeleton isLoading={isLoading} style={{ height: 75 }}>

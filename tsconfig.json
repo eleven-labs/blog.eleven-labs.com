@@ -24,7 +24,7 @@
         ".storybook/decorators"
       ]
     },
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "@types/gtag.js"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],

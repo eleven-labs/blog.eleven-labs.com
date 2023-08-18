@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import { GTM_ID } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
 
 export interface HtmlTemplateProps {
@@ -10,6 +11,7 @@ export interface HtmlTemplateProps {
   links?: Array<React.LinkHTMLAttributes<HTMLLinkElement>>;
   styles?: Array<React.StyleHTMLAttributes<HTMLStyleElement> & { text: string }>;
   scripts?: Array<React.ScriptHTMLAttributes<HTMLScriptElement> & { critical?: boolean; text?: string }>;
+  consent?: { ad_storage: boolean; analytics_storage: boolean };
 }
 
 const ldJsonType = 'application/ld+json';
@@ -29,7 +31,16 @@ const renderScripts = (scripts: HtmlTemplateProps['scripts']): JSX.Element[] | u
     />
   ));
 
-export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ lang, title, content, metas, links, styles, scripts }) => (
+export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({
+  lang,
+  title,
+  content,
+  metas,
+  links,
+  styles,
+  scripts,
+  consent,
+}) => (
   <html lang={lang}>
     <head>
       <meta charSet="UTF-8" />
@@ -61,8 +72,32 @@ export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ lang, title, content
       {renderScripts(scripts?.filter((script) => script.critical && ![ldJsonType].includes(script.type as string)))}
       <title>{title}</title>
       {renderScripts(scripts?.filter((script) => ldJsonType === (script.type as string)))}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': '${consent?.ad_storage ? 'granted' : 'denied'}',
+  'analytics_storage': '${consent?.analytics_storage ? 'granted' : 'denied'}',
+});`,
+        }}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`,
+        }}
+      />
     </head>
     <body>
+      <noscript
+        dangerouslySetInnerHTML={{
+          __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+        }}
+      />
       <div
         id="root"
         dangerouslySetInnerHTML={{

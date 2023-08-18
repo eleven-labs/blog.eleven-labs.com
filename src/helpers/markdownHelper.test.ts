@@ -456,17 +456,32 @@ describe('validateMarkdownContent', () => {
   });
 
   it('should throw an error when an asset file does not exist', () => {
-    const options = {
-      markdownFilePath: '/path/to/some/file.md',
-      content: 'This is a test post content with an asset reference {{ site.baseurl }}/assets/test.png',
-    };
-
+    const markdownFilePath = '/path/to/some/file.md';
     const assetPath = `_assets/posts/test.png`;
 
     const existsSyncSpy = vi.spyOn(fs, 'existsSync');
     existsSyncSpy.mockReturnValueOnce(false);
 
-    expect(() => validateMarkdownContent(options)).toThrow(`The file does not exist "${assetPath}"!`);
+    expect(() =>
+      validateMarkdownContent({
+        markdownFilePath,
+        content: 'This is a test post content with an asset reference {{ site.baseurl }}/assets/test.png',
+      })
+    ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! The file does not exist "${assetPath}"!`);
     expect(existsSyncSpy).toHaveBeenCalledWith(assetPath);
+  });
+
+  it('should generate an error when an img tag is used', () => {
+    const markdownFilePath = '/path/to/some/file.md';
+    const contentInvalid = `<img src="{{ site.baseurl }}/assets/posts/test.png" width="300px" alt="title image" />`;
+
+    expect(() =>
+      validateMarkdownContent({
+        markdownFilePath,
+        content: contentInvalid,
+      })
+    ).toThrow(
+      `The markdown of the file "${markdownFilePath}" is invalid ! The img tag are no longer allowed, please use markdown syntax ! ${contentInvalid}`
+    );
   });
 });

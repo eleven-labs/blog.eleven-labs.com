@@ -15,14 +15,10 @@ keywords: []
 
 Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité sur l'IDE [PhpStorm](https://www.jetbrains.com/fr-fr/phpstorm/) de la suite JetBrains. Je vais vous parler de mes extensions préférées ainsi que de certains points de configuration méconnus mais très utiles. Prêts ? C'est parti !
 
-<br />
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/PhpStorm_Icon.png" width="300px" alt="PhpStorm Logo" style="display: block; margin: auto;"/>
-    <i>PhpStorm</i>
-</div>
+![PhpStorm Logo]({{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/PhpStorm_Icon.png?width=300)
+Figure: *PhpStorm*
 
-<br />
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 
@@ -37,14 +33,10 @@ Comme vous le savez certainement si vous utilisez PhpStorm, les raccourcis clavi
 
 Cependant il peut être compliqué de se rappeler de tous les raccourcis qui existent, et de prendre l'habitude de les utiliser. Il faudrait que quelqu'un nous rabache à longueur de journée que ce que nous faisons aurait pu être effectué en un clic avec un raccourci. Devinez quoi ? C'est exactement ce que Key Promoter va faire pour vous.
 
-<br />
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/key-promoter-notification.png" width="450px" alt="Key Promoter notif" style="display: block; margin: auto;"/>
-    <i>Key Promoter</i>
-</div>
+![Key Promoter notif]({{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/key-promoter-notification.png?width=450)
+Figure: *Key Promoter*
 
-<br />
 
 Comme vous le voyez, dès que vous exécuterez une action pour laquelle il existe un raccourci clavier, Key Promoter va vous afficher une petite notification ennuyeuse en bas à droite de votre IDE. Pour vous rappeler que vous êtes nuls car vous avez manuellement copié un fichier au lieu de faire un *Ctrl+c* par exemple.
 
@@ -60,12 +52,10 @@ De plus, si Key Promoter vous surprend à faire plusieurs fois la même action q
 Une des fonctionnalités qui m'a manqué quand j'ai quitté VSCode pour PhpStorm, c'est cette minimap à droite d'un fichier de code qui vous donne un aperçu du fichier dans sa globalité, ainsi que la possibilité de cliquer dessus pour scroller rapidement dans votre fichier et s'arrêter exactement à la ligne souhaitée.
 Heureusement, PhpStorm possède une extension pour cela, j'ai nommé *CodeGlance*.
 
-<br />
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/code-glance-example.png" width="300px" alt="Codeglance Map" style="display: block; margin: auto;"/>
-    <i>Code Glance</i>
-</div>
+
+![Codeglance Map]({{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/code-glance-example.png?width=300)
+Figure: *Code Glance*
 
 <br />
 
@@ -88,12 +78,9 @@ La solution ? Cliquez sur l'onglet *View* => *Appearance*. La liste des menus s'
 
 Vous voilà à présent dans cette situation :
 
-<br />
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/clean-phpstorm.png" width="500px" height="400px" alt="PhpStorm Clean" style="display: block; margin: auto;"/>
-    <i>PhpStorm, the clean way</i>
-</div>
+![PhpStorm Clean]({{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/clean-phpstorm.png?width=500)
+Figure: *PhpStorm, the clean way*
 
 <br />
 
@@ -127,14 +114,10 @@ L'utilisation de ce menu prend tout son sens quand on est débarrassé de toutes
 
 Nous voilà arrivés à la dernière fonctionnalité que je vais vous présenter aujourd'hui. Elle devrait en particulier vous intéresser si vous avez du mal à vous passer des taskbars 100% du temps. Voici le Distraction free mode.
 
-<br />
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/distraction-free-mode.png" alt="distraction free mode" style="display: block; margin: auto;"/>
-    <i>Distraction free mode</i>
-</div>
+![distraction free mode]({{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/distraction-free-mode.png)
+Figure: Distraction free mode
 
-<br />
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
 

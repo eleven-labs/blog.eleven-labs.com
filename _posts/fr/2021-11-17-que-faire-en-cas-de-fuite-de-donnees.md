@@ -27,9 +27,7 @@ Mais la violation de données n’inclut pas uniquement la fuite. D’après l�
 
 Cela peut être la perte d’une clé USB ayant une copie de la base de données autant qu'une intrusion frauduleuse dans le système de données.
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/dataleak.png" width="300px" alt="Mais enfin Jérome, ça dépasserait l'entendement !" style="display: block; margin: auto;"/>
-</div>
+![Mais enfin Jérome, ça dépasserait l'entendement !]({{ site.baseurl }}/assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/dataleak.png?width=300)
 
 ## Comment les données peuvent-elles fuiter ?
 Les gros cas de fuites nous permettent de faire une liste plutôt exhaustive :
@@ -59,9 +57,7 @@ Quand vous êtes au courant d’une fuite de données, voici ce que dit le droit
 
 Vous pouvez aussi faire en interne un manuel d’intervention en cas d’incident : cela vous permettra d’être plus efficace lors de la prise en charge et de moins jouer les pompiers.
 
-<div style="text-align: center;">
-    <img src="{{ site.baseurl }}/assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/law_legal_terms.png" width="300px" alt="Mais enfin Jérome, ça dépasserait l'entendement !" style="display: block; margin: auto;"/>
-</div>
+![Mais enfin Jérome, ça dépasserait l'entendement !]({{ site.baseurl }}/assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/law_legal_terms.png?width=300)
 
 ### Comment créer un manuel d’intervention ?
 

@@ -7,7 +7,7 @@ export type BackLinkOptions = {
 export type BackLinkProps = AsProps<'a'> & BackLinkOptions;
 
 export const BackLink: React.FC<BackLinkProps> = ({ label, ...props }) => (
-  <Link {...props} icon="arrow-back" size="m">
+  <Link {...props} icon="arrow-back" size="m" data-internal-link="back">
     {label}
   </Link>
 );

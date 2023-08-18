@@ -26,6 +26,7 @@ jobs:
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_DEV }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_DEV }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_SEARCH_KEY=${{ secrets.ALGOLIA_API_SEARCH_KEY_DEV }}" >> $GITHUB_ENV
+          echo "GTM_ID=${{ secrets.GTM_ID_DEV }}" >> $GITHUB_ENV
 
       - name: Sets env vars for production
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
@@ -37,6 +38,8 @@ jobs:
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_PRODUCTION }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_PRODUCTION }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_SEARCH_KEY=${{ secrets.ALGOLIA_API_SEARCH_KEY_PRODUCTION }}" >> $GITHUB_ENV
+          echo "GTM_ID=${{ secrets.GTM_ID_PRODUCTION }}" >> $GITHUB_ENV
+          echo "GOOGLE_SITE_VERIFICATION==${{ secrets.GOOGLE_SITE_VERIFICATION }}" >> $GITHUB_ENV
 
       - name: Setup node
         uses: actions/setup-node@v3
@@ -104,6 +107,7 @@ jobs:
           VITE_ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
           VITE_ALGOLIA_API_KEY: ${{ env.ALGOLIA_API_SEARCH_KEY }}
           VITE_ALGOLIA_INDEX: ${{ env.ALGOLIA_INDEX }}
+          VITE_GTM_ID: ${{ env.GTM_ID }}
 
       - name: Setup aws
         uses: aws-actions/configure-aws-credentials@v1

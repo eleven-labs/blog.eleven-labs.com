@@ -33,7 +33,7 @@ export const PostPreviewList: React.FC<PostPreviewListProps> = ({ posts, paginat
         <Flex flexDirection="column" justifyContent="center" alignItems="center">
           <Text size="s">{pagination.textNumberOfPosts}</Text>
           <ProgressBar mt="xxs" value={pagination.numberOfPosts} max={pagination.maxNumberOfPosts} />
-          <Button my="s" onClick={pagination.onLoadMore}>
+          <Button my="s" onClick={pagination.onLoadMore} data-button="loadMore">
             {pagination.loadMoreButtonLabel}
           </Button>
         </Flex>
