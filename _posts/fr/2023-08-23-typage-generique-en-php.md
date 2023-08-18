@@ -24,7 +24,9 @@ $users = new Collection<User>();
 ```
 
 Cela signifie que notre instance de collection `$users` ne peut accepter que des objets de type `User`.
-Nous aurions alors, notamment grâce à nos IDE intelligents, des informations plus strictes sur le type de données admises par une instance de Collection, sans avoir à simplement le déduire de par le nom de la variable. L'analyse statique de notre code serait encore plus performante, ce qui est important en PHP, qui ne possède pas d'étape de compilation à proprement parlé. Pour de nombreux langages, cette étape de compilation permet de soulever des erreurs dans le code, voire même de parser ces types génériques.
+Nous aurions alors, notamment grâce à nos IDE intelligents, des informations plus strictes sur le type de données admises par une instance de Collection, sans avoir à simplement le déduire de par le nom de la variable. L'analyse statique de notre code serait encore plus performante, ce qui est important en PHP, qui ne possède pas d'étape de compilation à proprement parlé.
+
+Pour de nombreux langages, cette étape de compilation permet de soulever des erreurs dans le code, voire même de parser ces types génériques.
 
 Alors, pourquoi ces types ce sont-ils pas déjà disponibles dans notre langage préféré ?
 
@@ -33,6 +35,7 @@ Alors, pourquoi ces types ce sont-ils pas déjà disponibles dans notre langage 
 Comme dit plus haut, PHP n'est pas un langage que l'on compile pour envoyer ensuite un exécutable sur le serveur. PHP est interprété; lorsque le serveur reçoit une requête, le code PHP est converti en OPCODE, lui-même ensuite éxécuté par une machine virtuelle. Si une erreur s'est glissée dans le code, alors le programme plantera à l'exécution.
 
 Or, c'est donc justement au runtime que se font toutes le assertions de type. Rajouter des étapes de vérification de types génériques serait une atteinte à la performmance. Encore une fois, aujourd'hui pour la majorité des langages, toutes ces assertions de type sont effectuées à la compilation, avant que le code ne soit exécuté.
+
 De plus, on estime que rajouter cette gestion des types génériques dans le coeur de PHP demanderait un effort de refactoring très ambitieux, à tel point que le rapport ***bénéfice*** / ***temps passé à l'implémentation*** n'en valerait pas la peine dans le contexte actuel.
 
 PHP a beaucoup évolué ces derniers temps, mais il reste beaucoup de choses à faire, et le nombre de développeurs qui maintiennent le coeur de PHP n'est pas mirobolant; il y a donc également un problème de ressource.
@@ -40,6 +43,9 @@ PHP a beaucoup évolué ces derniers temps, mais il reste beaucoup de choses à 
 Enfin, proposer une RFC pour les types génériques n'est pas si simple : il faut se mettre d'accord parmi les nombreuses possibilités d'implémentation possibles, trouver la meilleure, puis prendre le temps de l'implémenter. Des débats sans fin sont à prévoir.
 
 Pour toutes ces raisons, allant du design même du langage à la complexité d'implémentation, les génériques ne sont pas d'actualité pour le moment.
+
+![pikachu crying](https://media.giphy.com/media/L95W4wv8nnb9K/giphy.gif)
+
 Mais, ne jamais dire jamais...
 
 ### Typage générique statique, la solution ?
@@ -51,6 +57,7 @@ En effet, nous avons la chance en PHP d'avoir pléthore d'*analyseurs statiques*
 
 Grâce à eux, notre IDE favori (PhpStorm bien entendu) est en mesure de nous crier dessus à la moindre erreur décelable avant l'exécution. 
 Problème de typage ? Argument oublié dans une fonction ? Variable inutilisée ? Condition toujours vraie ? Accolade ou point virgule oublié ? Et j'en passe ...
+
 Créez même vos propres règles de lint, de bonnes pratiques à suivre dans votre équipe. Ces outils, comme PHPCs ou PHPStan, ... permettent tout cela.
 
 Et bien bonne nouvelle, certains de ces outils vous permettent de définir puis vérifier vos *types génériques*.
