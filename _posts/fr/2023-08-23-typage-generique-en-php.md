@@ -24,23 +24,23 @@ $users = new Collection<User>();
 ```
 
 Cela signifie que notre instance de collection `$users` ne peut accepter que des objets de type `User`.
-Nous aurions alors, notamment grâce à nos IDE intelligents, des informations plus strictes sur le type de données admises par une instance de Collection, sans avoir à simplement le déduire de par le nom de la variable. L'analyse statique de notre code serait encore plus performante, ce qui est important en PHP, qui ne possède pas d'étape de compilation à proprement parlé.
+Nous aurions alors, notamment grâce à nos IDE intelligents, des informations plus strictes sur le type de données admises par une instance de Collection, sans avoir à simplement le déduire de par le nom de la variable. L'analyse statique de notre code serait encore plus performante, ce qui est important en PHP, qui ne possède pas d'étape de compilation à proprement parler.
 
-Pour de nombreux langages, cette étape de compilation permet de soulever des erreurs dans le code, voire même de parser ces types génériques.
+Pour de nombreux langages, cette étape de compilation permet de soulever des erreurs dans le code, voire de parser ces types génériques.
 
 Alors, pourquoi ces types ne sont-ils pas déjà disponibles dans notre langage préféré ?
 
 ### Pourquoi c'est impossible en pratique
 
-Comme dit plus haut, PHP n'est pas un langage que l'on compile pour envoyer ensuite un exécutable sur le serveur. PHP est interprété; lorsque le serveur reçoit une requête, le code PHP est converti en OPCODE, lui-même ensuite éxécuté par une machine virtuelle. Si une erreur s'est glissée dans le code, alors le programme plantera à l'exécution.
+Comme dit plus haut, PHP n'est pas un langage que l'on compile pour envoyer ensuite un exécutable sur le serveur. PHP est interprété ; lorsque le serveur reçoit une requête, le code PHP est converti en OPCODE, lui-même ensuite éxécuté par une machine virtuelle. Si une erreur s'est glissée dans le code, alors le programme plantera à l'exécution.
 
-Or, c'est donc justement au runtime que se font toutes le assertions de type. Rajouter des étapes de vérification de types génériques serait une atteinte à la performance. Encore une fois, aujourd'hui pour la majorité des langages proposant le typage générique, toutes ces assertions de type sont effectuées à la compilation, avant que le code ne soit exécuté. La perfomance à l'exécution n'est donc pas un problème comme en PHP.
+Or, c'est donc justement au runtime que se font toutes les assertions de type. Rajouter des étapes de vérification de types génériques serait une atteinte à la performance. Encore une fois, aujourd'hui pour la majorité des langages proposant le typage générique, toutes ces assertions de type sont effectuées à la compilation, avant que le code ne soit exécuté. La perfomance à l'exécution n'est donc pas un problème comme en PHP.
 
 De plus, on estime que rajouter cette gestion des types génériques dans le coeur de PHP demanderait un effort de refactoring très ambitieux, à tel point que le rapport ***bénéfice*** / ***temps passé à l'implémentation*** n'en valerait pas la peine dans le contexte actuel.
 
-PHP a beaucoup évolué ces derniers temps, mais il reste beaucoup de choses à faire, et le nombre de développeurs qui maintiennent le coeur de PHP n'est pas mirobolant; il y a donc également un problème de ressource.
+PHP a beaucoup évolué ces derniers temps, mais il reste beaucoup de choses à faire, et le nombre de développeurs qui maintiennent le coeur de PHP n'est pas mirobolant, il y a donc également un problème de ressource.
 
-Enfin, proposer une RFC pour les types génériques n'est pas si simple : il faut se mettre d'accord parmi les nombreuses possibilités d'implémentation possibles, trouver la meilleure, puis prendre le temps de l'implémenter. Des débats sans fin sont à prévoir.
+Enfin, proposer une RFC pour les types génériques n'est pas si simple : il faut se mettre d'accord parmi les nombreuses possibilités d'implémentation envisageables, trouver la meilleure, puis prendre le temps de l'implémenter. Des débats sans fin sont à prévoir.
 
 Pour toutes ces raisons, allant du design même du langage à la complexité d'implémentation, les génériques ne sont pas d'actualité pour le moment.
 
@@ -52,7 +52,7 @@ Mais, ne jamais dire jamais...
 
 Alors, que fait-on maintenant ? On se roule en boule dans un coin et on regrette d'avoir choisi PHP ?
 
-... Ou alors, on se tourne vers un des super pouvoirs de PHP; son écosystème d'anlyseurs statiques.
+... Ou alors, on se tourne vers un des super pouvoirs de PHP : son écosystème d'analyseurs statiques.
 En effet, nous avons la chance en PHP d'avoir pléthore d'*analyseurs statiques*, tous extrêmement bien développés.
 
 Grâce à eux, notre IDE favori (PhpStorm bien entendu) est en mesure de nous crier dessus à la moindre erreur décelable avant l'exécution. 
@@ -181,7 +181,7 @@ class Collection
 }
 ```
 
-Que se passe-t-il si vous souhaitez une `Collection` qui ne contient uniquement des objets de type `Astronaut` ?
+Que se passe-t-il si vous souhaitez une `Collection` qui contient uniquement des objets de type `Astronaut` ?
 
 Et bien comme vous avez ajouté du typage générique à votre classe, vous pouvez faire cela :
 
@@ -195,7 +195,7 @@ public function foo(Collection $astronauts): void
 
 Peut-être avez vous déjà vu cette notation avec les chevrons : `Collection<Astronaut>`, notamment si vous avez déjà fait du TypeScript. 
 
-Ici, indique simplement qu'il faut remplacer le type générique `T`, par celui précisé entre les chevrons. Ainsi pour toutes la fois où le type `T` est utilisé dans la classe `Collection` (ici, une fois sur la fonction `add`), c'est en réalité un autre type (ici, `Astronaut`), qui sera utilisé.
+Ici, on indique simplement qu'il faut remplacer le type générique `T` par celui précisé entre les chevrons. Ainsi pour toutes les fois où le type `T` est utilisé dans la classe `Collection` (ici, une fois sur la fonction `add`), c'est en réalité un autre type (ici, `Astronaut`), qui sera utilisé.
 
 Il faut vraiment voir `T` comme un type de substitution qui sera écrasé par un nouveau type, dès que cela est indiqué dans le code.
 
@@ -229,7 +229,7 @@ abstract class BaseRepository
 ```
 
 Cette classe est censée être étendue par nos Repository métiers, par exemple un `PostRepository` ou encore un `UserRepository`.
-Or, elles étendrons nos fonctions `store` et `find`, qui sont typés `object`, car on ne sait pas à l'avance quel Repository va les utiliser.
+Or, elles étendrons nos fonctions `store` et `find`, qui sont typées `object`, car on ne sait pas à l'avance quel Repository va les utiliser.
 
 La solution est de faire un type `T of object`, que l'on a déjà vu plus haut dans cet article. Puis on type les méthodes de la classe, jusqu'ici, tout devrait vous paraître clair comme de l'eau de roche.
 
@@ -274,6 +274,6 @@ Oui, ce serait génial si dans le futur, PHP trouvait un moyen d'introduire les 
 
 Sachez que d'autres outils que PHPStan permettent d'interpréter ces annotations de la même manière, tel que Psalm.
 
-Il y aurait bien d'autrez choses à voir sur les types génériques, en particulier le tag `@template-covariant`, mais ce sera pour une partie 2, pourquoi pas ! En attendant, vous avez tout le nécessaire pour vous en sortir dans la grande majorité des situations.
+Il y aurait bien d'autres choses à voir sur les types génériques, en particulier le tag `@template-covariant`, mais ce sera pour une partie 2, pourquoi pas ! En attendant, vous avez tout le nécessaire pour vous en sortir dans la grande majorité des situations.
 
 N'oubliez pas d'aller jeter un oeil à notre Codelabs, amusez-vous bien avec ces outils, développez-bien, et à la prochaine !
