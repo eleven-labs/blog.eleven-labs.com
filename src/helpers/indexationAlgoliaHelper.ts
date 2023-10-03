@@ -20,6 +20,7 @@ const savePosts = async (options: {
         readingTime: string;
         title: string;
         date: string;
+        date_timestamp: number;
         excerpt: string;
         categories: string[];
         authorUsernames: string[];
@@ -36,6 +37,7 @@ const savePosts = async (options: {
       readingTime: post.readingTime,
       title: post.title,
       date: post.date,
+      date_timestamp: new Date(post.date).getTime(),
       excerpt: post.excerpt,
       categories: post.categories || [],
       authorUsernames: authorsByPost.map((author) => author.username),
@@ -53,6 +55,7 @@ const saveSettings = async (options: { algoliaSearchIndex: SearchIndex }): Promi
   await options.algoliaSearchIndex.setSettings({
     searchableAttributes: ['title', 'categories', 'authorUsernames', 'authorNames', 'excerpt'],
     attributesForFaceting: ['lang'],
+    ranking: ['desc(date_timestamp)'],
   });
 };
 
