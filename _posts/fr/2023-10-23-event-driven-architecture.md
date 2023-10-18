@@ -1,6 +1,6 @@
 ---
 lang: fr
-date: '2023-02-09'
+date: '2023-10-23'
 slug: event-driven-architecture
 title: 'L''architecture orientée événements : définition et cas concret'
 excerpt: >-
@@ -15,10 +15,10 @@ keywords: []
 
 ## Qu'est ce que l'architecture orientée événements ?
 
-L'architecture orientée événements utilise des événements pour déclencher et communiquer entre des services découplés.
+L'architecture orientée événements (Event Driven Design) utilise des événements pour déclencher et communiquer entre des services découplés.
 Elle est courante dans les applications modernes construites avec des microservices.
-Un événement correspond à un changement d'état, ou une mise à jour : un utilisateur qui paie une commande, par exemple.
-Les événements peuvent transmettre un état (le numéro de transaction, le montant et le numéro de commande), ou alors être des identifiants (une notification indiquant qu'une commande a été payée).
+Un événement correspond à un changement d'état, ou une mise à jour : commande payée, ou utilisateur créé, par exemple.
+Les événements transmettent un état à un instant T (le numéro de transaction, le montant et le numéro de commande).
 
 Les architectures orientées événements comportent trois composants clés : les émetteurs (_producers_), les transmetteurs (_routers_) et les consommateurs (_consumers_).
 Un _producer_ publie un événement sur le routeur, qui filtre et transmet les événements aux _consumers_.
@@ -28,14 +28,17 @@ Les services producteurs et les services consommateurs sont découplés, ce qui 
 
 **Découplage** : en découplant vos services, ils ne connaissent que le routeur d'événements, ils ne dépendent pas directement les uns les autres.
 Cela signifie que vos services sont interopérables, mais si un service tombe en panne, les autres continueront de fonctionner.
+Le découplage simplifie le processus d'ajout, de mise à jour ou de suppression de producers et de consumers, permettant des ajustements rapides pour répondre aux nouveaux besoins.
+Le découplage permet également de mettre en place et de respecter les principes [SOLID](https://simple.wikipedia.org/wiki/SOLID_(object-oriented_design)), notamment le _Single Responsability principle_.
 
-**L'évolutivité** : vous n'avez pas besoin d'écrire du code custom pour gérer les événements, le routeur d'événements filtrera et transmettra automatiquement les événements aux consumers.
+**La maintenabilité** : vous n'avez pas besoin d'écrire du code custom pour gérer les événements, le routeur d'événements filtrera et transmettra automatiquement les événements aux consumers.
 Le routeur s'occupe également de la coordination entre les producers et consumers.
+Ainsi, chaque consumer possède son scope précis. Différentes équipes peuvent maintenir chaque consumer indépendamment, sur des stacks et timelines différentes.
 
 **Immutabilité** : une fois créés, les événements ne peuvent pas être modifiés, ils peuvent donc être partagés avec plusieurs services sans risque qu'un service modifie ou supprime des informations que d'autres services consommeraient ensuite.
 
-**Scalabilité** : un événement déclenche plusieurs actions chez différents consumers, améliorant ainsi les performances.
-Le découplage simplifie le processus d'ajout, de mise à jour ou de suppression de producers et de consumers, permettant des ajustements rapides pour répondre aux nouvelles exigences ou demandes.
+**Scalabilité** : un événement déclenche plusieurs actions en parallèle chez différents consumers, améliorant ainsi les performances.
+Chaque consumer est indépendant, potentiellement sur une infrastructure différente des autres, et peut scale sans impacter le reste.
 
 **Réponses en temps quasi-réel** : les événements sont consommés au fur et à mesure qu'ils se produisent, fournissant des réponses en temps quasi-réel aux interactions importantes avec votre platefrome.
 Cette agilité garantit que les clients reçoivent toujours les informations au plus vite sans pour autant être bloqués dans leur expérience utilisateur.
@@ -54,8 +57,11 @@ Cela signifie aussi qu'un client peut s'abonner à tout moment et avoir accès a
 
 ## Cas concret
 
-Voyons un cas concret en PHP avec RabbitMQ.
+Voyons un cas concret en PHP/Symfony avec RabbitMQ.
 Imaginons une architecture avec plusieurs microservices qui ont besoin de communiquer entre eux dans le cas de validation d'une commande.
+Le service _Purchase_ valide un paiement et publie le message associé.
+Le service _Mailer_ envoie un email de confirmation de commande.
+Le service _Catalog_ réduit le stock disponible pour les produits concernés.
 
 Reprenons ensemble le fonctionnement du modèle AMQP 0-9-1 (vous pouvez trouver la documentation [ici](https://www.rabbitmq.com/tutorials/amqp-concepts.html)) :
 
@@ -63,17 +69,19 @@ Reprenons ensemble le fonctionnement du modèle AMQP 0-9-1 (vous pouvez trouver 
 
 Les messages sont publiés sur des _exchanges_, voyez ça comme une boîte aux lettres.
 Les exchanges distribuent ensuite des copies des messages aux _queues_ à l'aide des _bindings_.
-Ensuite, le broker transmet les messages aux consumers abonnés aux queues ou les consumers récupèrent les messages des queues à la demande.
+Ensuite, les consumers récupèrent les messages des queues à la demande.
 
 Nous allons utiliser Swarrot Bundle pour la suite de l'exemple.
 Vous pouvez lire un article sur son fonctionnement [ici](https://blog.eleven-labs.com/fr/publier-consommer-reessayer-des-messages-rabbitmq/).
+Vous pouvez, bien sûr, utiliser le composant Messenger de Symfony aussi.
 
-Définissons ensemble quelques règles à respecter.
+Je vous propose de convenir ensemble de quelques conventions à respecter pour mettre en place un Event Driven Design.
 
 ### Exchange
 
 Chaque application a son propre exchange, et elle ne peut publier que dans son exchange.
 Cela nous permet d'assurer une séparation des responsabilités de chaque application pour respecter les principes SOLID.
+Nous allons utiliser des exchanges de type _topic_ pour permettre l'utilisation des wildcards dans les routing keys.
 
 ### Message
 
@@ -85,17 +93,20 @@ La donnée principale sera contenue dans la propriété `data` du message, et to
 Un message est associé à une _routing key_.
 Dans l'architecture orientée événement, elle va correspondre à l'événement qui a eu lieu.
 Pour assurer l'unicité d'une routing key, et étant donné que le nom d'une entité peut figurer dans plusieurs microservices, nous allons nommer nos routing key de la façon suivante : `app.entity.{id}.event`.
-Par exemple `purchase.order.42.payed` voudrait dire que dans l'application _Purchase_, l'objet _Order_ avec l'identifiant 42 vient de passer en état "payé".
+Par exemple `purchase.order.42.paid` voudrait dire que dans l'application _Purchase_, l'objet _Order_ avec l'identifiant 42 vient de passer en état "payé".
 Notez que les événements doivent représenter des événements métier en premier, bien que parfois les événements du cycle de vie de vos entités puissent aussi être utiles (`session.exam.42.created`).
 
 ### Publisher
 
 Chaque object qui sera communiqué via Rabbitmq aura son publisher, par exemple l'entité Order aura son _OrderPublisher_.
-Chaque événement publié correspondra à une fonction qui porte le nom de l'événement :
+Chaque événement publié correspondra à une fonction qui porte le nom de l'événement.
+Le publisher pourra être appelé depuis un Event Subscriber Doctrine par exemple.
+Attention, cependant, les publishers doivent être appelés **après** l'enregistrement du changement d'état dans le service émetteur (la sauvegarde du statut _paid_ de la commande dans cet exemple).
+Même si le consumer est asynchrone, RabbitMQ est très rapide, et le consumer pourrait recevoir le message avant enregistrement en base de données (ou avant erreur d'enregistrement potentielle).
 
 ```php
 // class OrderPublisher
-public function payed(Order $order, bool $isAnonymous): void
+public function paid(Order $order, bool $isAnonymous): void
 {
     $this->publisher->publish(
         self::MESSAGE_TYPE,
@@ -110,7 +121,7 @@ public function payed(Order $order, bool $isAnonymous): void
             SerializationContext::create()->setGroups('publish-order')
         ),
         ['content_type' => 'application/json'],
-        ['routing_key' => sprintf('purchase.order.%d.payed', $business->getId())]
+        ['routing_key' => sprintf('purchase.order.%d.paid', $business->getId())]
     );
 }
 ```
@@ -152,14 +163,13 @@ Ainsi, notre configuration de queue ressemblera à ceci :
 queues:
     mailer_send_order_confirmation:
         durable: true
-        arguments:
-            ###
         bindings:
             - exchange: "purchase" # the application that published the message
-              routing_key: "purchase.order.*.payed" # named after the published event
+              routing_key: "purchase.order.*.paid" # named after the published event
 ```
 
 ## Conclusion
 
 Avec ces règles simples, nous pouvons facilement implémenter l'architecture orientée événements.
 Nous devons placer les événements au centre de notre refléxion pour construire les échanges de notre plateforme autour de ceux-ci.
+Au sein du studio Eleven Labs, nous utilisons cette architecture comme moyen privilégié de communiquer entre microservices pour tous les avantages mentionnés plus haut.
