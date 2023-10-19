@@ -46,6 +46,11 @@
     left: 0;
     right: 0;
     top: -12px;
+    width: fit-content;
+
+    @include create-media-queries('md') {
+      width: auto;
+    }
   }
 
   &__number {

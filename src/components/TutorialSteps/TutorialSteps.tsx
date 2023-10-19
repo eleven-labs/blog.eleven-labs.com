@@ -20,7 +20,12 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
     p="s"
     className={classNames('tutorial-steps', className)}
   >
-    <TutoTag justifyContent="center" mx="s" className="tutorial-steps__tag" label="Progression" />
+    <TutoTag
+      justifyContent={{ xs: 'start', md: 'center' }}
+      mx="s"
+      className="tutorial-steps__tag"
+      label="Progression"
+    />
     {steps.map(({ name, label, ...stepLink }, index) => (
       <Box
         className={classNames('tutorial-steps__step', {
