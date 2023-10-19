@@ -2,7 +2,7 @@
 lang: fr
 date: '2023-10-23'
 slug: event-driven-architecture
-title: 'L''architecture orientée événements : définition et cas concret'
+title: 'L'architecture orientée événements : définition et cas concret'
 excerpt: >-
   Voyons ensemble ce qu'est l'architecture orientée événements et comment l'implémenter dans vos projets avec un cas concret
 authors:
@@ -13,9 +13,9 @@ categories:
 keywords: []
 ---
 
-## Qu'est ce que l'architecture orientée événements ?
+## Qu'est-ce que l'architecture orientée événements ?
 
-L'architecture orientée événements (Event Driven Design) utilise des événements pour déclencher et communiquer entre des services découplés.
+L'architecture orientée événements (Event Driven Design) utilise des événements pour déclencher des services découplés et leur permettre de communiquer.
 Elle est courante dans les applications modernes construites avec des microservices.
 Un événement correspond à un changement d'état, ou une mise à jour : commande payée, ou utilisateur créé, par exemple.
 Les événements transmettent un état à un instant T (le numéro de transaction, le montant et le numéro de commande).
@@ -26,8 +26,8 @@ Les services producteurs et les services consommateurs sont découplés, ce qui 
 
 ## Avantages
 
-**Découplage** : en découplant vos services, ils ne connaissent que le routeur d'événements, ils ne dépendent pas directement les uns les autres.
-Cela signifie que vos services sont interopérables, mais si un service tombe en panne, les autres continueront de fonctionner.
+**Découplage** : en découplant vos services, ils ne connaissent que le routeur d'événements, ils ne dépendent pas directement les uns des autres.
+Cela signifie que vos services sont interopérables : mais si un service tombe en panne, les autres continueront de fonctionner.
 Le découplage simplifie le processus d'ajout, de mise à jour ou de suppression de producers et de consumers, permettant des ajustements rapides pour répondre aux nouveaux besoins.
 Le découplage permet également de mettre en place et de respecter les principes [SOLID](https://simple.wikipedia.org/wiki/SOLID_(object-oriented_design)), notamment le _Single Responsability principle_.
 
@@ -92,9 +92,9 @@ La donnée principale sera contenue dans la propriété `data` du message, et to
 
 Un message est associé à une _routing key_.
 Dans l'architecture orientée événement, elle va correspondre à l'événement qui a eu lieu.
-Pour assurer l'unicité d'une routing key, et étant donné que le nom d'une entité peut figurer dans plusieurs microservices, nous allons nommer nos routing key de la façon suivante : `app.entity.{id}.event`.
+Pour assurer l'unicité d'une routing key, et étant donné que le nom d'une entité peut figurer dans plusieurs microservices, nous allons nommer nos routing keys de la façon suivante : `app.entity.{id}.event`.
 Par exemple `purchase.order.42.paid` voudrait dire que dans l'application _Purchase_, l'objet _Order_ avec l'identifiant 42 vient de passer en état "payé".
-Notez que les événements doivent représenter des événements métier en premier, bien que parfois les événements du cycle de vie de vos entités puissent aussi être utiles (`session.exam.42.created`).
+Notez que les événements doivent représenter des événements métiers en premier, bien que parfois les événements du cycle de vie de vos entités puissent aussi être utiles (`session.exam.42.created`).
 
 ### Publisher
 
@@ -155,7 +155,7 @@ La queue s'abonne à un événement (subscribe) via les bindings à l'exchange e
 Elle va suivre le schéma `app_action`, par exemple `mailer_send_order_confirmation` nous indique que l'application _Mailer_ va envoyer un email de confirmation.
 
 Le consumer va porter le nom de l'action à réaliser, sans mentionner l'événement qui va déclencher cette action, par exemple, `SendOrderConfirmationConsumer`.
-Nous partons du principe que l'application doit réaliser une action indépendamment de qui la déclenche.
+Nous partons du principe que l'application doit réaliser une action indépendamment de ce qui la déclenche.
 
 Ainsi, notre configuration de queue ressemblera à ceci :
 
@@ -171,5 +171,5 @@ queues:
 ## Conclusion
 
 Avec ces règles simples, nous pouvons facilement implémenter l'architecture orientée événements.
-Nous devons placer les événements au centre de notre refléxion pour construire les échanges de notre plateforme autour de ceux-ci.
+Nous devons placer les événements au centre de notre réflexion pour construire les échanges de notre plateforme autour de ceux-ci.
 Au sein du studio Eleven Labs, nous utilisons cette architecture comme moyen privilégié de communiquer entre microservices pour tous les avantages mentionnés plus haut.
