@@ -6,7 +6,7 @@ describe('getSitemapEntries', () => {
       const mod = await vi.importActual<typeof import('@/constants')>('@/constants');
       return {
         ...mod,
-        CATEGORIES: ['category-1'],
+        CategoryEnum: ['category-1'],
       };
     });
     vi.mock('@/helpers/contentHelper', () => ({

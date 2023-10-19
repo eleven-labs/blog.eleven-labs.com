@@ -1,0 +1,10 @@
+.tutorial-page {
+  &__content-container {
+    position: relative;
+  }
+  &__steps {
+    position: absolute !important;
+    max-width: 200px;
+    margin-left: -254px;
+  }
+}

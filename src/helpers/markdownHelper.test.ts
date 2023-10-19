@@ -60,7 +60,7 @@ This is the content`;
 });
 
 vi.mock('@/app-paths', () => ({
-  POSTS_DIR: '_posts',
+  ARTICLES_DIR: '_articles',
   AUTHORS_DIR: '_authors',
   ASSETS_DIR: '_assets',
 }));

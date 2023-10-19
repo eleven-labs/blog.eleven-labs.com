@@ -3,8 +3,27 @@ import { getEnv } from '@/helpers/getEnvHelper';
 export const IS_SSR = import.meta.env.SSR;
 export const IS_PRERENDER = import.meta.env.MODE === 'prerender';
 export const BASE_URL = getEnv<string>('BASE_URL') || '/';
-export const AUTHORIZED_LANGUAGES = ['fr', 'en'] as const;
-export const DEFAULT_LANGUAGE = 'fr';
+
+export enum LanguageEnum {
+  FR = 'fr',
+  EN = 'en',
+}
+
+export enum CategoryEnum {
+  JAVASCRIPT = 'javascript',
+  PHP = 'php',
+  AGILE = 'agile',
+  ARCHITECTURE = 'architecture',
+}
+
+export enum ContentTypeEnum {
+  ARTICLE = 'article',
+  TUTORIAL = 'tutorial',
+  TUTORIAL_STEP = 'tutorial-step',
+  AUTHOR = 'author',
+}
+
+export const DEFAULT_LANGUAGE = LanguageEnum.FR;
 export const NUMBER_OF_ITEMS_PER_PAGE = 6;
 
 export const PATHS = {
@@ -16,8 +35,6 @@ export const PATHS = {
   CATEGORY: '/:lang/categories/:categoryName/',
   SEARCH: '/:lang/search/',
 };
-
-export const CATEGORIES = ['javascript', 'php', 'agile', 'architecture'] as const;
 
 export const ALGOLIA_CONFIG = {
   APP_ID: getEnv<string>('VITE_ALGOLIA_APP_ID'),

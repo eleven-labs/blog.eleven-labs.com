@@ -2090,10 +2090,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@eleven-labs/design-system@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@eleven-labs/design-system/-/design-system-0.6.2.tgz#a3e48b62e82535554239db9895bd5745aef988bd"
-  integrity sha512-UpIvXHAms6MdOPsJZ/MNo38pLfd98xBQrojTrGfTgDvBv8IUJKg/bH8yFSBhnfyyOwx3PzH5th15cMR0GpkCaw==
+"@eleven-labs/design-system@^0.6.3":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/@eleven-labs/design-system/-/design-system-0.6.3.tgz#19fe859b1981bf31fdb86746076db843159da251"
+  integrity sha512-LkNeMy4GPP2fASoNFzIOuSeR5JhRvBLQOkiJtQYFeYWySt6tHn+2dZOM0A4q+bC9tzsnHGwSc8svuGWxDtuz8g==
   dependencies:
     autosuggest-highlight "^3.3.4"
     classnames "^2.3.2"

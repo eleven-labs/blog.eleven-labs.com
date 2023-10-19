@@ -7,16 +7,16 @@ import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
 import { LinkContainer } from '@/containers/LinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
-import { type getDataFromPostListPage } from '@/helpers/contentHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useTitle } from '@/hooks/useTitle';
 import { PostListPageProps } from '@/pages/PostListPage/PostListPage';
+import { PostListPageData } from '@/types';
 
 export const usePostListPageContainer = (): PostListPageProps => {
   const { categoryName } = useParams<{ categoryName?: string }>();
   const { t, i18n } = useTranslation();
-  const { categories, posts } = useLoaderData() as ReturnType<typeof getDataFromPostListPage>;
+  const { categories, posts } = useLoaderData() as PostListPageData;
   const newsletterBlock = useNewsletterBlock();
   useTitle(categoryName ? t('seo.category.title', { categoryName }) : t('seo.home.title'));
   useLink({

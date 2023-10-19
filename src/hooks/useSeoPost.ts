@@ -2,13 +2,13 @@ import { useMeta, useScript } from 'hoofd';
 import { useTranslation } from 'react-i18next';
 
 import { PATHS } from '@/constants';
-import { type getDataFromPostPage } from '@/helpers/contentHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useTitle } from '@/hooks/useTitle';
+import { PostPageData } from '@/types';
 
 export type UseSeoOptions = {
   title: string;
-  post: ReturnType<typeof getDataFromPostPage>;
+  post: PostPageData;
 };
 
 export const useSeoPost = ({ title, post }: UseSeoOptions): void => {

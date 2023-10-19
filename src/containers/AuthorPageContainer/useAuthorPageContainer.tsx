@@ -8,15 +8,15 @@ import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
 import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
 import { getPathFile } from '@/helpers/assetHelper';
-import { type getDataFromAuthorPage } from '@/helpers/contentHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useTitle } from '@/hooks/useTitle';
 import { AuthorPageProps, SocialNetworkName } from '@/pages/AuthorPage';
+import { AuthorPageData } from '@/types';
 
 export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
   const { t } = useTranslation();
-  const resultAuthorPage = useLoaderData() as ReturnType<typeof getDataFromAuthorPage>;
+  const resultAuthorPage = useLoaderData() as AuthorPageData;
   const newsletterBlock = useNewsletterBlock();
   useTitle(t('seo.author.title', { authorName: resultAuthorPage?.author.name }));
   useLink({
