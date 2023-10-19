@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: fpasquet
 name: Fabien PASQUET
 ---

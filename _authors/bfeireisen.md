@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: bfeireisen
 name: Benjamin Feireisen
 ---

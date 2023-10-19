@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: dduval
 name: David Duval
 ---

@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: captainjojo
 name: Jonathan Jalouzot
 twitter: captainjojo42

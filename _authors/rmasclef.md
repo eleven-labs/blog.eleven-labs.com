@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: rmasclef
 name: Romain Masclef
 twitter: rmasclef

@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: vbertrand
 name: Vincent Bertrand
 linkedin: vincent-bertrand-58a191a3

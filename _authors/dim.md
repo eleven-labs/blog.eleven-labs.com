@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: dim
 name: Dimitri Fruit
 twitter: DimitriFruit

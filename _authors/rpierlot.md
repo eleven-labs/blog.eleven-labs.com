@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: rpierlot
 name: Romain Pierlot
 twitter: RomainPierlot

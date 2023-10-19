@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: vdelpeyroux
 name: Victor Delpeyroux
 ---

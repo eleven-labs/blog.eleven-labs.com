@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: gcanal
 name: Guillem Canal
 twitter: buraitopengin

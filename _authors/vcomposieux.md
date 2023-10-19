@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: vcomposieux
 name: Vincent Composieux
 twitter: vcomposieux

@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: kelfarsaoui
 name: Kamal Farsaoui
 twitter: elfakamal

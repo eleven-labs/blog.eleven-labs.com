@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: ygherbi
 name: Yamin Gherbi
 github: YAMIN350
