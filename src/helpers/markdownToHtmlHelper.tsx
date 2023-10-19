@@ -19,7 +19,6 @@ import remarkParse from 'remark-parse';
 import remark2rehype from 'remark-rehype';
 import { unified } from 'unified';
 
-import { frontmatter } from '@/helpers/markdownHelper';
 import { intersection } from '@/helpers/objectHelper';
 import { remarkFigurePlugin } from '@/helpers/remarkPlugins/remarkFigurePlugin';
 
@@ -68,14 +67,10 @@ const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): Remin
   }
 };
 
-const cleanMarkdown = (markdownContent: string): string =>
-  markdownContent.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);
+const cleanMarkdown = (content: string): string =>
+  content.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);
 
-export const markdownToHtml = function <TData = Record<string, unknown>>(
-  markdownContent: string
-): { data: TData; html: string } {
-  const frontmatterResult = frontmatter<TData>(markdownContent);
-
+export const markdownToHtml = (content: string): string => {
   const reactComponent = unified()
     .use(remarkParse)
     .use(remarkFigurePlugin)
@@ -106,7 +101,7 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
       Fragment: React.Fragment,
       passNode: true,
       components: {
-        div: ({ node, children, ...props }): JSX.Element => {
+        div: ({ node, children, ...props }): React.JSX.Element => {
           const reminderProps = props as { ['reminder-variant']?: ReminderVariantType; ['reminder-title']?: string };
           if (reminderProps?.['reminder-variant'] && reminderProps?.['reminder-title']) {
             return (
@@ -118,47 +113,47 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
 
           return <Box {...(props as AsProps)}>{children}</Box>;
         },
-        h2: ({ children }): JSX.Element => (
+        h2: ({ children }): React.JSX.Element => (
           <Heading as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
             {children}
           </Heading>
         ),
-        h3: ({ children }): JSX.Element => (
+        h3: ({ children }): React.JSX.Element => (
           <Heading as="h3" size="m" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
             {children}
           </Heading>
         ),
-        h4: ({ children }): JSX.Element => (
+        h4: ({ children }): React.JSX.Element => (
           <Heading as="h4" size="s" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
             {children}
           </Heading>
         ),
-        p: ({ node, ...props }): JSX.Element => <Text as="p" mb="xxs" {...(props as AsProps)} />,
-        li: ({ node, ...props }): JSX.Element => <Text as="li" mb="xxs" {...(props as AsProps)} />,
-        strong: ({ children }): JSX.Element => (
+        p: ({ node, ...props }): React.JSX.Element => <Text as="p" mb="xxs" {...(props as AsProps)} />,
+        li: ({ node, ...props }): React.JSX.Element => <Text as="li" mb="xxs" {...(props as AsProps)} />,
+        strong: ({ children }): React.JSX.Element => (
           <Text as="span" fontWeight="bold">
             {children}
           </Text>
         ),
-        em: ({ children }): JSX.Element => (
+        em: ({ children }): React.JSX.Element => (
           <Text as="span" italic={true}>
             {children}
           </Text>
         ),
-        i: ({ children }): JSX.Element => (
+        i: ({ children }): React.JSX.Element => (
           <Text as="span" italic={true}>
             {children}
           </Text>
         ),
-        a: ({ node, ...props }): JSX.Element => {
+        a: ({ node, ...props }): React.JSX.Element => {
           const isExternalLink = (props.href as string)?.match(/^http(s)?:\/\//);
           return (
             <Link {...props} rel={isExternalLink ? 'nofollow noreferrer' : ''} style={{ overflowWrap: 'anywhere' }} />
           );
         },
-        blockquote: ({ node, ...props }): JSX.Element => <Blockquote {...props} />,
-        pre: ({ node, ...props }): JSX.Element => <Box as="pre" textSize="xs" {...(props as AsProps)} />,
-        code: ({ node, className, children, ...props }): JSX.Element => {
+        blockquote: ({ node, ...props }): React.JSX.Element => <Blockquote {...props} />,
+        pre: ({ node, ...props }): React.JSX.Element => <Box as="pre" textSize="xs" {...(props as AsProps)} />,
+        code: ({ node, className, children, ...props }): React.JSX.Element => {
           const match = /language-(\w+)/.exec(className || '');
           if (className && className.match('mermaid')) {
             return (
@@ -175,7 +170,7 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
             </Box>
           );
         },
-        figure: ({ node, ...props }): JSX.Element => {
+        figure: ({ node, ...props }): React.JSX.Element => {
           return React.createElement('figure', {
             ...props,
             style: {
@@ -183,7 +178,7 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
             },
           });
         },
-        img: ({ node, ...props }): JSX.Element => {
+        img: ({ node, ...props }): React.JSX.Element => {
           const urlParams = new URLSearchParams(props.src?.split('?')?.[1] ?? '');
           return React.createElement('img', {
             ...props,
@@ -197,7 +192,7 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
             },
           });
         },
-        script: ({ node, ...props }): JSX.Element | null => {
+        script: ({ node, ...props }): React.JSX.Element | null => {
           if (props.src === 'https://platform.twitter.com/widgets.js') {
             return null;
           }
@@ -205,10 +200,7 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
         },
       },
     })
-    .processSync(cleanMarkdown(frontmatterResult.content)).result;
+    .processSync(cleanMarkdown(content)).result;
 
-  return {
-    data: frontmatterResult.data,
-    html: String(ReactDOMServer.renderToStaticMarkup(reactComponent)),
-  };
+  return String(ReactDOMServer.renderToStaticMarkup(reactComponent));
 };

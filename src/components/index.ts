@@ -9,3 +9,4 @@ export * from './ProgressBar';
 export * from './SeparatorCircle';
 export * from './BackLink';
 export * from './ShareLinks';
+export * from './TutoTag';

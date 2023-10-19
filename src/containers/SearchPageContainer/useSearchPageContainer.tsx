@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
 import { blogUrl } from '@/config/website';
-import { DEFAULT_LANGUAGE, IS_SSR, PATHS } from '@/constants';
+import { DEFAULT_LANGUAGE, IS_SSR, LanguageEnum, PATHS } from '@/constants';
 import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
 import { UsePostPreviewListContainerOptions } from '@/containers/PostPreviewListContainer/usePostPreviewListContainer';
@@ -13,6 +13,7 @@ import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useTitle } from '@/hooks/useTitle';
 import { SearchPageProps } from '@/pages/SearchPage';
+import { AlgoliaPostData } from '@/types';
 
 export const useSearchPageContainer = (): SearchPageProps => {
   const { t, i18n } = useTranslation();
@@ -30,23 +31,14 @@ export const useSearchPageContainer = (): SearchPageProps => {
 
   useEffect(() => {
     const searchData = async (currentSearch: string): Promise<void> => {
-      const response = await algoliaSearchIndex.search<{
-        lang: string;
-        slug: string;
-        date: string;
-        readingTime: string;
-        title: string;
-        excerpt: string;
-        categories: string[];
-        authorUsernames: string[];
-        authorNames: string[];
-      }>(currentSearch, {
+      const response = await algoliaSearchIndex.search<AlgoliaPostData>(currentSearch, {
         hitsPerPage: 1000,
         facetFilters: [`lang:${i18n.language}`],
       });
 
       const currentPostBySearch = response.hits.map<UsePostPreviewListContainerOptions['allPosts'][0]>((hit) => ({
-        lang: hit.lang,
+        contentType: hit.contentType,
+        lang: hit.lang as LanguageEnum,
         slug: hit.slug,
         date: hit.date,
         readingTime: hit.readingTime,

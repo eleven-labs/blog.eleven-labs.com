@@ -7,17 +7,17 @@ import { PATHS } from '@/constants';
 import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { LinkContainer } from '@/containers/LinkContainer';
 import { getPathFile } from '@/helpers/assetHelper';
-import { type getDataFromPostPage } from '@/helpers/contentHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useSeoPost } from '@/hooks/useSeoPost';
 import { PostPageProps } from '@/pages/PostPage';
+import { PostPageData } from '@/types';
 
-export const usePostPageContainer = (): PostPageProps | undefined => {
+export const usePostPageContainer = (): (Omit<PostPageProps, 'contentType' | 'children'> & { post: PostPageData }) | undefined => {
   const { t, i18n } = useTranslation();
   const { getDateToString } = useDateToString();
-  const post = useLoaderData() as ReturnType<typeof getDataFromPostPage>;
+  const post = useLoaderData() as PostPageData;
   useSeoPost({
     title: post.title,
     post,
@@ -61,6 +61,7 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
   );
 
   return {
+    post,
     backLink: <BackLinkContainer />,
     header: {
       title: post.title,
@@ -68,7 +69,13 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
       readingTime: post.readingTime,
       authors,
     },
-    content: post.content,
+    /*content:
+      post.contentType === ContentTypeEnum.TUTORIAL
+        ? post.steps.reduce<string>((content, step) => {
+            content += step.content;
+            return content;
+          }, '')
+        : post.content,*/
     footer: {
       title: t('pages.post.post_footer_title'),
       authors,
