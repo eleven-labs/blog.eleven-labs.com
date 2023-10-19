@@ -1,3 +1,4 @@
+import mermaid from 'mermaid';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData } from 'react-router-dom';
@@ -30,6 +31,18 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
     if (twitterTweetElements.length) {
       twitterTweetElements[0].appendChild(script);
     }
+
+    const mermaidElements = document.getElementsByClassName('mermaid');
+    if (mermaidElements.length) {
+      mermaid.initialize({});
+      mermaid.contentLoaded();
+    }
+
+    return () => {
+      if (twitterTweetElements.length) {
+        twitterTweetElements[0].removeChild(script);
+      }
+    };
   }, []);
 
   if (!post) {

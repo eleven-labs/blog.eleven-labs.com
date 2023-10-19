@@ -2,6 +2,7 @@ import {
   AsProps,
   Blockquote,
   Box,
+  Flex,
   Heading,
   Link,
   Reminder,
@@ -161,6 +162,13 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
         pre: ({ node, ...props }): JSX.Element => <Box as="pre" textSize="xs" {...(props as AsProps)} />,
         code: ({ node, className, children, ...props }): JSX.Element => {
           const match = /language-(\w+)/.exec(className || '');
+          if (className && className.match('mermaid')) {
+            return (
+              <Flex as="pre" justifyContent="center" alignItems="center" className="mermaid">
+                {children}
+              </Flex>
+            );
+          }
           return match ? (
             <SyntaxHighlighter children={String(children).replace(/\n$/, '')} language={match[1]} {...props} />
           ) : (
