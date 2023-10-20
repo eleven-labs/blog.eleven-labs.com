@@ -16,6 +16,7 @@ ol.stepper {
   margin: 20px 0;
   padding: 0;
   counter-reset: step;
+  text-align: center;
 
   // Step element structure
   li {
@@ -24,6 +25,12 @@ ol.stepper {
     flex-direction: column;
     gap: 4px;
   }
+
+  li:not(:last-child),
+  li:not(:first-child) {
+    margin: 0 0.25rem;
+  }
+
   // Create step circle, set number inside step, set active styles
   li::before {
     content: counter(step) " ";
@@ -75,24 +82,25 @@ ol.stepper {
       flex-direction: row;
       gap: 0px;
       align-items: center;
-    }
-
-    li::before {
       margin: 0;
-      margin-right: 12px;
     }
 
-    // draw vertical dashed line
+    // Add space with text on the right
+    li::before {
+      margin: 0 12px 0 0;
+    }
+
+    // adjustments for vertical line
+    li:last-child {
+      padding-left: var(--stepper-dashed-bar);
+    }
+
     li:not(:last-child) {
       padding-bottom: var(--tutorial-step-size);
       &:after {
-        content: "";
         position: inherit;
-        z-index: 1;
         transform: translateX(1.1rem) translateY(var(--tutorial-step-size));
-        width: var(--stepper-dashed-bar);
         height: var(--tutorial-step-size);
-        background: repeating-linear-gradient(to bottom, transparent 0px 5px, var(--stepper-azure) 0px 12px) no-repeat;
       }
     }
   }
