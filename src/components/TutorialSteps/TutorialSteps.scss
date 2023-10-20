@@ -137,6 +137,7 @@ ol.tutorial-steps {
     // adjustments for vertical line
     li:last-child {
       padding-left: var(--tutorial-stepper-dashed-bar);
+      margin-top: 0;
     }
 
     li:not(:last-child) {
