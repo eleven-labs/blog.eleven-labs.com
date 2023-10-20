@@ -1,9 +1,126 @@
-@use '@eleven-labs/design-system/scss/abstracts' as *;
+@use "@eleven-labs/design-system/scss/abstracts" as *;
+
+ol.stepper {
+  --tutorial-step-size: var(--spacing-l); /* size of circle */
+  --stepper-light: var(--color-white);
+  --stepper-azure: var(--color-azure);
+  --stepper-bar: 1.5px; /* line thickness */
+  --stepper-top-line: 20%;
+}
+// Organize and distribute step elements
+ol.stepper {
+  display: flex;
+  align-items: flex-start;
+  list-style: none;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 0;
+  counter-reset: step;
+
+  // Step element structure
+  li {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+  }
+  // Set number inside step, set active styles
+  li::before {
+    content: counter(step) " ";
+    counter-increment: step;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 2px;
+    width: var(--tutorial-step-size);
+    height: var(--tutorial-step-size);
+    background: var(--stepper-azure);
+    border: 2px solid var(--stepper-azure);
+    color: var(--stepper-light);
+    box-sizing: border-box;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  // Keep not-selected elements with default style
+  li.active ~ li::before {
+    background: var(--stepper-light);
+    color: var(--stepper-azure);
+  }
+
+  // set up for dashed horizontal line
+  li::after {
+    content: "";
+    height: 2px;
+    order: -1;
+  }
+
+  //draw horizontal lines
+  li:not(:last-child):after {
+    background: repeating-linear-gradient(to right, transparent 0px 5px, var(--stepper-azure) 0px 12px) no-repeat;
+    background-size: 85% var(--stepper-bar);
+    position: relative;
+    top: 1.4rem;
+    left: 50%;
+  }
+
+  // li.active:not(:last-child):after {
+  // background-color: red;
+  // background: repeating-linear-gradient(to right, transparent 0px 5px, var(--stepper-azure) 0px 12px) no-repeat;
+  // background-size: 85% var(--stepper-bar);
+  // position: relative;
+  // top: 1.4rem;
+  // left: 50%;
+  // }
+
+  // Desktop display
+  @include create-media-queries("md") {
+    flex-direction: column;
+
+    li {
+      flex-direction: row;
+      gap: 12px;
+      align-items: center;
+    }
+
+    li:last-child {
+      &:after {
+        content: unset;
+      }
+    }
+
+    li::before {
+      margin: 0;
+    }
+
+    // draw vertical dashed line
+    li:not(:last-child) {
+      padding-bottom: var(--tutorial-step-size);
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(var(--circle-size) + var(--spacing));
+        bottom: var(--spacing);
+        z-index: 1;
+        transform: translateX(1.9rem) translateY(var(--tutorial-step-size));
+        width: 2px;
+        height: var(--tutorial-step-size);
+        background: repeating-linear-gradient(to bottom, transparent 0px 5px, var(--stepper-azure) 0px 12px) no-repeat;
+      }
+    }
+  }
+}
+
+.tutorial-steps {
+  &__bold {
+    font-weight: var(--font-weight-bold);
+  }
+}
 
 .tutorial-steps {
   $this: &;
 
-  --tutorial-steps-background: #D7E6FF;
+  --tutorial-steps-background: #d7e6ff;
   --tutorial-steps-color: var(--color-ultra-dark-grey);
   --tutorial-steps-color-step: var(--color-azure);
   --tutorial-steps-color-number-color: var(--color-white);
@@ -19,6 +136,9 @@
   border-radius: 4px;
 
   &__step {
+    display: flex;
+    align-items: baseline;
+
     > a {
       color: var(--tutorial-steps-color);
     }
@@ -33,10 +153,24 @@
         --tutorial-steps-color-number-color: var(--color-azure);
       }
     }
-    &--active, &--active ~ #{$this}__step {
+    &--active,
+    &--active ~ #{$this}__step {
       #{$this}__connector {
-        margin-left: 16px;
-        border-left: 2px dashed var(--tutorial-steps-color-step);
+        margin-top: 16px;
+        border-top: 2px dashed var(--tutorial-steps-color-step);
+      }
+    }
+
+    @include create-media-queries("md") {
+      display: block;
+      &--active,
+      &--active ~ #{$this}__step {
+        #{$this}__connector {
+          margin-top: 0;
+          border-top: 0;
+          margin-left: 16px;
+          border-left: 2px dashed var(--tutorial-steps-color-step);
+        }
       }
     }
   }
@@ -48,7 +182,7 @@
     top: -12px;
     width: fit-content;
 
-    @include create-media-queries('md') {
+    @include create-media-queries("md") {
       width: auto;
     }
   }
@@ -62,8 +196,16 @@
     border-radius: 50%;
   }
   &__connector {
-    height: var(--tutorial-steps-connector-size);
-    margin-left: 14px;
-    border-left: 4px solid var(--tutorial-steps-color-step);
+    width: var(--tutorial-steps-connector-size);
+    margin-top: 14px;
+    border-top: 4px solid var(--tutorial-steps-color-step);
+
+    @include create-media-queries("md") {
+      height: var(--tutorial-steps-connector-size);
+      margin-top: 0;
+      border-top: 0;
+      margin-left: 14px;
+      border-left: 4px solid var(--tutorial-steps-color-step);
+    }
   }
 }

@@ -7,7 +7,7 @@ export default {
   title: 'Components/TutorialSteps',
   component: TutorialSteps,
   args: {
-    stepActive: 'initialisation-du-projet',
+    stepActive: 'vue-et-logique-de-base',
     steps: [
       {
         name: 'introduction',
