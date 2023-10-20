@@ -5,7 +5,7 @@ ol.stepper {
   --stepper-light: var(--color-white);
   --stepper-azure: var(--color-azure);
   --stepper-dashed-bar: 2px; /* line thickness */
-  --stepper-top-line: 20%;
+  --stepper-link-color: var(--color-ultra-dark-grey);
 }
 // Organize and distribute step elements
 ol.stepper {
@@ -17,6 +17,11 @@ ol.stepper {
   padding: 0;
   counter-reset: step;
   text-align: center;
+
+  // Style links 
+  a {
+    color: var(--stepper-link-color);
+  }
 
   // Step element structure
   li {

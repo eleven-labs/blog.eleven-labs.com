@@ -12,6 +12,28 @@ export type TutorialStepsOptions = {
 };
 export type TutorialStepsProps = AsProps<'div'> & TutorialStepsOptions;
 
+export type TutorialStepContentProps = {
+  stepActive?: string;
+  name: string;
+  label: string;
+  stepLink: {
+    href?: string;
+  };
+};
+
+const TutorialStepContent: React.FC<TutorialStepContentProps> = ({ stepActive, name, label, stepLink }) =>
+  stepActive !== name ? (
+    <a href={stepLink?.href}>
+      <Text key={name} size="xs">
+        {label}
+      </Text>
+    </a>
+  ) : (
+    <Text key={name} size="xs" className="tutorial-steps__bold">
+      {label}
+    </Text>
+  );
+
 export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps, className, ...props }) => (
   <Flex
     {...props}
@@ -29,13 +51,13 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
     />
     <div style={{ display: 'flex' }}>
       <ol className="stepper">
-        {steps.map(({ name, label, ...stepLink }, index) => (
-          <li className={stepActive === name ? 'active' : ''}>
-            <Text key={name} size="xs" className={stepActive === name ? 'tutorial-steps__bold' : ''}>
-              {label}
-            </Text>
-          </li>
-        ))}
+        {steps.map(({ name, label, ...stepLink }) => {
+          return (
+            <li className={stepActive === name ? 'active' : ''}>
+              <TutorialStepContent name={name} label={label} stepActive={stepActive} stepLink={stepLink} key={name} />
+            </li>
+          );
+        })}
       </ol>
     </div>
     {/* <div style={{ display: 'flex' }}> */}
