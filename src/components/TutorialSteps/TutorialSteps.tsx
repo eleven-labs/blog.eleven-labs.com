@@ -1,6 +1,6 @@
 import './TutorialSteps.scss';
 
-import { AsProps, Box, Flex, FlexProps, Text } from '@eleven-labs/design-system';
+import { AsProps, Flex, Text } from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import React from 'react';
 
@@ -29,7 +29,7 @@ const TutorialStepContent: React.FC<TutorialStepContentProps> = ({ stepActive, n
       </Text>
     </a>
   ) : (
-    <Text key={name} size="xs" className="tutorial-steps__bold">
+    <Text size="xs" className="tutorial-steps__bold">
       {label}
     </Text>
   );
@@ -37,11 +37,10 @@ const TutorialStepContent: React.FC<TutorialStepContentProps> = ({ stepActive, n
 export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps, className, ...props }) => (
   <Flex
     {...props}
-    display="inline-flex"
-    flexDirection="column"
-    // flexDirection={{ xs: 'row', md: 'column' }}
     p="s"
     className={classNames('tutorial-steps', className)}
+    display="inline-flex"
+    flexDirection="column"
   >
     <TutoTag
       justifyContent={{ xs: 'start', md: 'center' }}
@@ -50,7 +49,7 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
       label="Progression"
     />
     <div style={{ display: 'flex' }}>
-      <ol className="stepper">
+      <ol className="tutorial-steps">
         {steps.map(({ name, label, ...stepLink }) => {
           return (
             <li className={stepActive === name ? 'active' : ''}>
@@ -60,29 +59,5 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
         })}
       </ol>
     </div>
-    {/* <div style={{ display: 'flex' }}> */}
-    {steps.map(({ name, label, ...stepLink }, index) => (
-      <Box
-        className={classNames('tutorial-steps__step', {
-          'tutorial-steps__step--active': stepActive === name,
-        })}
-      >
-        <Flex
-          {...(stepActive !== name ? { as: 'a', ...(stepLink as FlexProps) } : {})}
-          flexDirection={{ xs: 'column', md: 'row' }}
-          alignItems="center"
-          gap={{ xs: 'xxs-2', md: '0' }}
-        >
-          <Flex alignItems="center" justifyContent="center" className="tutorial-steps__number">
-            {index + 1}
-          </Flex>
-          <Text key={name} size="xs" ml="xs" className="tutorial-steps__text">
-            {label}
-          </Text>
-        </Flex>
-        {index < steps.length - 1 && <Box className="tutorial-steps__connector"></Box>}
-      </Box>
-    ))}
-    {/* </div> */}
   </Flex>
 );
