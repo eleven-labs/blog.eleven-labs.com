@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: meugeniatr
 name: Maria Eugenia Trapani
 github: meugeniatr

@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: jbberthet
 name: Jean-Baptiste Berthet
 twitter: Jibehh

@@ -6,8 +6,8 @@ import * as path from 'path';
 import { z, ZodSchema } from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
-import { ASSETS_DIR, AUTHORS_DIR, POSTS_DIR } from '@/app-paths';
-import { AUTHORIZED_LANGUAGES, CATEGORIES } from '@/constants';
+import { ARTICLES_DIR, ASSETS_DIR, AUTHORS_DIR } from '@/app-paths';
+import { AUTHORIZED_LANGUAGES, CATEGORIES, ContentTypeEnum } from '@/constants';
 import { intersection } from '@/helpers/objectHelper';
 import { capitalize } from '@/helpers/stringHelper';
 import { AuthorData, PostData } from '@/types';
@@ -101,7 +101,9 @@ export const validateMarkdownContent = (options: { markdownFilePath: string; con
   const assetMatches = options.content.match(/{{ site.baseurl }}[^)"'\s]+/g);
   if (assetMatches) {
     for (const assetMatch of assetMatches) {
-      const assetPath = assetMatch.replace(/{{\s*?site.baseurl\s*?}}\/assets/g, `${ASSETS_DIR}/posts`).split('?')?.[0];
+      const assetPath = assetMatch
+        .replace(/{{\s*?site.baseurl\s*?}}\/assets/g, `${ASSETS_DIR}/articles`)
+        .split('?')?.[0];
 
       if (!existsSync(assetPath)) {
         throw new MarkdownInvalidError({
@@ -118,6 +120,7 @@ export const validateMarkdownContent = (options: { markdownFilePath: string; con
 export const validateAuthor = (options: { markdownFilePath: string }): AuthorData & { content: string } => {
   const AuhorValidationSchema = z
     .object({
+      contentType: z.literal(ContentTypeEnum.AUTHOR),
       username: z.string().regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/, 'Kebab case format not respected'),
       name: z.string(),
       twitter: z
@@ -185,6 +188,7 @@ export const validatePost = (options: {
 }): Omit<PostData, 'date'> & { date: Date; content: string } => {
   const PostValidationSchema = z
     .object({
+      contentType: z.literal(ContentTypeEnum.ARTICLE),
       lang: z.enum(AUTHORIZED_LANGUAGES),
       date: z.coerce.date(),
       slug: z.string().regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/, 'Kebab case format not respected'),
@@ -231,7 +235,7 @@ export const validatePost = (options: {
 
 export const validateMarkdown = (): boolean => {
   const authorMarkdownFilePaths = globSync(`${AUTHORS_DIR}/**/*.md`);
-  const postMarkdownFilePaths = globSync(`${POSTS_DIR}/**/*.md`);
+  const postMarkdownFilePaths = globSync(`${ARTICLES_DIR}/**/*.md`);
 
   const authors: string[] = [];
 

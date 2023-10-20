@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: gthibault2
 name: Guillaume THIBAULT
 ---

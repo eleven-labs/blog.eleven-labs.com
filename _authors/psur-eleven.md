@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: psur-eleven
 name: Pierre Sur
 ---

@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: trughooputh
 name: Thomas Rughooputh
 ---

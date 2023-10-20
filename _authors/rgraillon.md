@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: rgraillon
 name: Robin Graillon
 twitter: grailloute

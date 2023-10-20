@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: roxannemcd
 name: Roxanne Marchand
 github: roxannemcd

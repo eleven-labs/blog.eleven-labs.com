@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: julie
 name: Julie Morvan
 twitter: juliemorvan

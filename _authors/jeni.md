@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: jeni
 name: Jeni Starck
 twitter: jen_starck

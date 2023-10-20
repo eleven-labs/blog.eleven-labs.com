@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: kadorais
 name: Kévin Adorais
 github: kevinadorais

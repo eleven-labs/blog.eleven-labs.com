@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: obennouna
 name: Omar Bennouna
 twitter: obennoun

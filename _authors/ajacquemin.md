@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: ajacquemin
 name: Arthur Jacquemin
 twitter: astroguy

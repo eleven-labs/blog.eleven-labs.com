@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: pbrenot
 name: Pierre Brenot
 twitter: Edd_Br

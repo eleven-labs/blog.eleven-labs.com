@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: rmavillaz
 name: Rémi Mavillaz
 github: kizeremi

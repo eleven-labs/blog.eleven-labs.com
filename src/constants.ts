@@ -17,6 +17,11 @@ export const PATHS = {
   SEARCH: '/:lang/search/',
 };
 
+export enum ContentTypeEnum {
+  ARTICLE = 'article',
+  AUTHOR = 'author',
+}
+
 export const CATEGORIES = ['javascript', 'php', 'agile', 'architecture'] as const;
 
 export const ALGOLIA_CONFIG = {

@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: kcordier
 name: Kevin Cordier
 twitter: FRis0ty

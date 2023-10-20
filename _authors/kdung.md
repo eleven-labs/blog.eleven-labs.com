@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: kdung
 name: Kevin Dung
 ---

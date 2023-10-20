@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: qneyrat
 name: Quentin Neyrat
 twitter: qneyrat
