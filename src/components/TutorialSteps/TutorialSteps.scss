@@ -4,7 +4,7 @@ ol.stepper {
   --tutorial-step-size: var(--spacing-l); /* size of circle */
   --stepper-light: var(--color-white);
   --stepper-azure: var(--color-azure);
-  --stepper-dashed-bar: 1.5px; /* line thickness */
+  --stepper-dashed-bar: 2px; /* line thickness */
   --stepper-top-line: 20%;
 }
 // Organize and distribute step elements
@@ -47,30 +47,25 @@ ol.stepper {
     color: var(--stepper-azure);
   }
 
-  // set up for dashed horizontal line
+  // set up for horizontal line
   li::after {
     content: "";
-    height: 2px;
     order: -1;
   }
 
-  //draw horizontal lines
+  //draw solid line
   li:not(:last-child):after {
-    background: repeating-linear-gradient(to right, transparent 0px 5px, var(--stepper-azure) 0px 12px) no-repeat;
-    background-size: 85% var(--stepper-dashed-bar);
     position: relative;
     top: 1.4rem;
     left: 50%;
+    border: var(--stepper-dashed-bar) solid var(--stepper-azure);
   }
 
-  // li.active:not(:last-child):after {
-  // background-color: red;
-  // background: repeating-linear-gradient(to right, transparent 0px 5px, var(--stepper-azure) 0px 12px) no-repeat;
-  // background-size: 85% var(--stepper-bar);
-  // position: relative;
-  // top: 1.4rem;
-  // left: 50%;
-  // }
+  //draw dashed line
+  li.active::after,
+  li.active ~ li:not(:last-child):after {
+    border: var(--stepper-dashed-bar) dashed var(--stepper-azure);
+  }
 
   // Desktop display
   @include create-media-queries("md") {
