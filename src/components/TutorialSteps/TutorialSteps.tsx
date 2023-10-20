@@ -48,16 +48,14 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
       className="tutorial-steps__tag"
       label="Progression"
     />
-    <div style={{ display: 'flex' }}>
-      <ol className="tutorial-steps">
-        {steps.map(({ name, label, ...stepLink }) => {
-          return (
-            <li className={stepActive === name ? 'active' : ''}>
-              <TutorialStepContent name={name} label={label} stepActive={stepActive} stepLink={stepLink} key={name} />
-            </li>
-          );
-        })}
-      </ol>
-    </div>
+    <ol className="tutorial-steps">
+      {steps.map(({ name, label, ...stepLink }) => {
+        return (
+          <li className={stepActive === name ? 'active' : ''}>
+            <TutorialStepContent name={name} label={label} stepActive={stepActive} stepLink={stepLink} key={name} />
+          </li>
+        );
+      })}
+    </ol>
   </Flex>
 );
