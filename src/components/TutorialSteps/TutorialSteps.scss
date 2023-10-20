@@ -4,7 +4,7 @@ ol.stepper {
   --tutorial-step-size: var(--spacing-l); /* size of circle */
   --stepper-light: var(--color-white);
   --stepper-azure: var(--color-azure);
-  --stepper-bar: 1.5px; /* line thickness */
+  --stepper-dashed-bar: 1.5px; /* line thickness */
   --stepper-top-line: 20%;
 }
 // Organize and distribute step elements
@@ -24,7 +24,7 @@ ol.stepper {
     flex-direction: column;
     gap: 4px;
   }
-  // Set number inside step, set active styles
+  // Create step circle, set number inside step, set active styles
   li::before {
     content: counter(step) " ";
     counter-increment: step;
@@ -57,7 +57,7 @@ ol.stepper {
   //draw horizontal lines
   li:not(:last-child):after {
     background: repeating-linear-gradient(to right, transparent 0px 5px, var(--stepper-azure) 0px 12px) no-repeat;
-    background-size: 85% var(--stepper-bar);
+    background-size: 85% var(--stepper-dashed-bar);
     position: relative;
     top: 1.4rem;
     left: 50%;
@@ -78,18 +78,13 @@ ol.stepper {
 
     li {
       flex-direction: row;
-      gap: 12px;
+      gap: 0px;
       align-items: center;
-    }
-
-    li:last-child {
-      &:after {
-        content: unset;
-      }
     }
 
     li::before {
       margin: 0;
+      margin-right: 12px;
     }
 
     // draw vertical dashed line
@@ -97,13 +92,10 @@ ol.stepper {
       padding-bottom: var(--tutorial-step-size);
       &:after {
         content: "";
-        position: absolute;
-        left: 0;
-        top: calc(var(--circle-size) + var(--spacing));
-        bottom: var(--spacing);
+        position: inherit;
         z-index: 1;
-        transform: translateX(1.9rem) translateY(var(--tutorial-step-size));
-        width: 2px;
+        transform: translateX(1.1rem) translateY(var(--tutorial-step-size));
+        width: var(--stepper-dashed-bar);
         height: var(--tutorial-step-size);
         background: repeating-linear-gradient(to bottom, transparent 0px 5px, var(--stepper-azure) 0px 12px) no-repeat;
       }
