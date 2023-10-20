@@ -1,7 +1,7 @@
-import { CategoryEnum, DEFAULT_LANGUAGE, LanguageEnum, PATHS } from '@/constants';
+import { CategoryEnum, ContentTypeEnum, DEFAULT_LANGUAGE, LanguageEnum, PATHS } from '@/constants';
 import { getAuthors, getPosts } from '@/helpers/markdownContentManagerHelper';
 import { generatePath } from '@/helpers/routerHelper';
-import { TransformedAuthorData, TransformedPostData } from '@/types';
+import { TransformedAuthorData, TransformedPostData, TransformedTutorialData } from '@/types';
 
 type Link = {
   lang: string;
@@ -28,6 +28,16 @@ const createPostSitemapEntry = (post: TransformedPostData): SitemapEntry => ({
     {
       lang: post.lang,
       url: generatePath(PATHS.POST, { lang: post.lang, slug: post.slug }),
+    },
+  ],
+});
+
+const createTutorialStepSitemapEntry = (post: TransformedTutorialData, step: string): SitemapEntry => ({
+  priority: 0.6,
+  links: [
+    {
+      lang: post.lang,
+      url: generatePath(PATHS.POST, { lang: post.lang, slug: post.slug, step }),
     },
   ],
 });
@@ -72,6 +82,13 @@ export const getSitemapEntries = (): SitemapEntry[] => {
     .map(createCategorySitemapEntry);
 
   const postEntries: SitemapEntry[] = posts.map(createPostSitemapEntry);
+  const tutorialStepEntries: SitemapEntry[] = posts.reduce((sitemapEntries, post) => {
+    if (post.contentType === ContentTypeEnum.TUTORIAL) {
+      const steps = post.steps.slice(1);
+      sitemapEntries.push(...steps.map((step) => createTutorialStepSitemapEntry(post, step.slug)));
+    }
+    return sitemapEntries;
+  }, [] as SitemapEntry[]);
 
   const authorEntries: SitemapEntry[] = authors
     .filter((author) => posts.some((post) => post.authors.includes(author.username)))
@@ -87,5 +104,13 @@ export const getSitemapEntries = (): SitemapEntry[] => {
     ],
   };
 
-  return [rootEntry, searchEntry, ...categoryEntries, ...postEntries, ...authorEntries, notFoundEntry];
+  return [
+    rootEntry,
+    searchEntry,
+    ...categoryEntries,
+    ...postEntries,
+    ...tutorialStepEntries,
+    ...authorEntries,
+    notFoundEntry,
+  ];
 };

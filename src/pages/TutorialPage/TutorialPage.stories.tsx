@@ -2,11 +2,11 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
+import TutorialStepsStories from '@/components/TutorialSteps/TutorialSteps.stories';
+import { ContentTypeEnum } from '@/constants';
 import PostPageStories from '@/pages/PostPage/PostPage.stories';
 
 import { TutorialPage } from './TutorialPage';
-import { ContentTypeEnum } from '@/constants';
-import TutorialStepsStories from '@/components/TutorialSteps/TutorialSteps.stories';
 
 export default {
   title: 'Pages/Tutorial',

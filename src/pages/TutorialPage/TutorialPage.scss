@@ -1,10 +1,15 @@
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
 .tutorial-page {
   &__content-container {
     position: relative;
   }
   &__steps {
-    position: absolute !important;
-    max-width: 200px;
-    margin-left: -254px;
+    margin: 0 var(--spacing-l) var(--spacing-m);
+    @include create-media-queries('md') {
+      position: absolute !important;
+      max-width: 200px;
+      margin: 0 0 0 -254px;
+    }
   }
 }

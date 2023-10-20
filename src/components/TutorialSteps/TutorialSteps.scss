@@ -19,6 +19,20 @@
   border-radius: 4px;
 
   &__step {
+    position: relative;
+    &:not(:last-child) {
+      padding-bottom: var(--spacing-m);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 16px;
+      height: 100%;
+      border-left: 2px solid var(--tutorial-steps-color-step);
+    }
+
     > a {
       color: var(--tutorial-steps-color);
     }
@@ -33,12 +47,6 @@
         --tutorial-steps-color-number-color: var(--color-azure);
       }
     }
-    &--active, &--active ~ #{$this}__step {
-      #{$this}__connector {
-        margin-left: 16px;
-        border-left: 2px dashed var(--tutorial-steps-color-step);
-      }
-    }
   }
 
   &__tag {
@@ -49,16 +57,13 @@
   }
 
   &__number {
+    position: relative;
+    z-index: 1;
     width: var(--tutorial-steps-number-size);
     height: var(--tutorial-steps-number-size);
     border: 2px solid var(--tutorial-steps-color-step);
     color: var(--tutorial-steps-color-number-color);
     background-color: var(--tutorial-steps-number-background);
     border-radius: 50%;
-  }
-  &__connector {
-    height: var(--tutorial-steps-connector-size);
-    margin-left: 14px;
-    border-left: 4px solid var(--tutorial-steps-color-step);
   }
 }

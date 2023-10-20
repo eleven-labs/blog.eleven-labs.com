@@ -80,6 +80,10 @@
       "related_post_list_title": "Articles sur le même thème",
       "post_footer_title": "écrit par"
     },
+    "tutorial": {
+      "previous_button": "Précédent",
+      "next_button": "Suivant"
+    },
     "author": {
       "post_preview_list_title": "Article(s) de l'auteur"
     },

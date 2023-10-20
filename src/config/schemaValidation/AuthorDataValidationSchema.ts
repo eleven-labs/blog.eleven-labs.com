@@ -1,4 +1,5 @@
 import { z } from 'zod';
+
 import { ContentTypeEnum } from '@/constants';
 
 export const AuthorDataValidationSchema = z.object({

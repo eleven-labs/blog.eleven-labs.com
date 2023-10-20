@@ -16,7 +16,7 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
   <Flex
     {...props}
     display="inline-flex"
-    flexDirection={{ xs: 'row', md: 'column' }}
+    flexDirection="column"
     p="s"
     className={classNames('tutorial-steps', className)}
   >
@@ -28,19 +28,20 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
         })}
       >
         <Flex
-          {...(stepActive !== name ? { as: 'a', ...(stepLink as FlexProps) } : {})}
-          flexDirection={{ xs: 'column', md: 'row' }}
+          {...(stepActive !== name ? (stepLink as FlexProps) : {})}
+          flexDirection="row"
           alignItems="center"
           gap={{ xs: 'xxs-2', md: '0' }}
         >
-          <Flex alignItems="center" justifyContent="center" className="tutorial-steps__number">
-            {index + 1}
-          </Flex>
+          <Box>
+            <Flex alignItems="center" justifyContent="center" className="tutorial-steps__number">
+              {index + 1}
+            </Flex>
+          </Box>
           <Text key={name} size="xs" ml="xs" className="tutorial-steps__text">
             {label}
           </Text>
         </Flex>
-        {index < steps.length - 1 && <Box className="tutorial-steps__connector"></Box>}
       </Box>
     ))}
   </Flex>

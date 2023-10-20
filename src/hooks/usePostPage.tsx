@@ -1,7 +1,6 @@
 import mermaid from 'mermaid';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLoaderData } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
 import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
@@ -14,10 +13,9 @@ import { useSeoPost } from '@/hooks/useSeoPost';
 import { PostPageProps } from '@/pages/PostPage';
 import { PostPageData } from '@/types';
 
-export const usePostPageContainer = (): (Omit<PostPageProps, 'contentType' | 'children'> & { post: PostPageData }) | undefined => {
+export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentType' | 'children'> => {
   const { t, i18n } = useTranslation();
   const { getDateToString } = useDateToString();
-  const post = useLoaderData() as PostPageData;
   useSeoPost({
     title: post.title,
     post,
@@ -45,10 +43,6 @@ export const usePostPageContainer = (): (Omit<PostPageProps, 'contentType' | 'ch
     };
   }, []);
 
-  if (!post) {
-    return;
-  }
-
   const authors: PostPageProps['header']['authors'] & PostPageProps['footer']['authors'] = post.authors.map(
     (author) => ({
       ...author,
@@ -61,7 +55,6 @@ export const usePostPageContainer = (): (Omit<PostPageProps, 'contentType' | 'ch
   );
 
   return {
-    post,
     backLink: <BackLinkContainer />,
     header: {
       title: post.title,
@@ -69,13 +62,6 @@ export const usePostPageContainer = (): (Omit<PostPageProps, 'contentType' | 'ch
       readingTime: post.readingTime,
       authors,
     },
-    /*content:
-      post.contentType === ContentTypeEnum.TUTORIAL
-        ? post.steps.reduce<string>((content, step) => {
-            content += step.content;
-            return content;
-          }, '')
-        : post.content,*/
     footer: {
       title: t('pages.post.post_footer_title'),
       authors,

@@ -5,8 +5,8 @@ import React from 'react';
 import { BackLink, BackLinkProps } from '@/components';
 import BackLinkStories from '@/components/BackLink/BackLink.stories';
 import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
-import { PostPage } from '@/pages/PostPage/PostPage';
 import { ContentTypeEnum } from '@/constants';
+import { PostPage } from '@/pages/PostPage/PostPage';
 
 export default {
   title: 'Pages/Post',
