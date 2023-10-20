@@ -108,6 +108,16 @@ ol.tutorial-steps {
     border: var(--tutorial-stepper-dashed-bar) dashed var(--tutorial-stepper-azure);
   }
 
+  // Manipulate last element in list
+  li:last-child {
+    // Compensate missing space since last element has no bar
+    margin-top: var(--tutorial-stepper-dashed-bar);
+    // Remove dashed line for last child if active
+    &:after {
+      border: none;
+    }
+  }
+
   // Desktop display
   @include create-media-queries("md") {
     flex-direction: column;
