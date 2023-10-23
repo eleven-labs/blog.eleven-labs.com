@@ -52,6 +52,11 @@ ol.tutorial-steps {
     color: var(--tutorial-stepper-link-color);
   }
 
+  // Avoid getting squished text
+  p {
+    min-width: 5rem;
+  }
+
   // Step element structure
   li {
     display: flex;
@@ -121,6 +126,10 @@ ol.tutorial-steps {
   // Desktop display
   @include create-media-queries("md") {
     flex-direction: column;
+
+    p {
+      min-width: none;
+    }
 
     li {
       flex-direction: row;

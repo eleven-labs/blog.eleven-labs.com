@@ -51,7 +51,7 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
     <ol className="tutorial-steps">
       {steps.map(({ name, label, ...stepLink }) => {
         return (
-          <li className={stepActive === name ? 'active' : ''}>
+          <li className={stepActive === name ? 'active' : ''} key={name}>
             <TutorialStepContent name={name} label={label} stepActive={stepActive} stepLink={stepLink} key={name} />
           </li>
         );
