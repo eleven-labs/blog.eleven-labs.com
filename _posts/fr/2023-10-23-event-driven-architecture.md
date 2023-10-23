@@ -1,10 +1,9 @@
 ---
 lang: fr
 date: '2023-10-23'
-slug: event-driven-architecture
-title: 'L'architecture orientée événements : définition et cas concret'
-excerpt: >-
-  Voyons ensemble ce qu'est l'architecture orientée événements et comment l'implémenter dans vos projets avec un cas concret
+slug: event-driven-architecture-examples
+title: 'Comment implémenter une Event Driven Architecture ? Définition et exemples'
+excerpt: 'Pourquoi, quand et comment mettre en place une event driven architecture ? Exemples et conseils'
 authors:
   - marishka
 categories:
@@ -13,23 +12,27 @@ categories:
 keywords: []
 ---
 
-## Qu'est-ce que l'architecture orientée événements ?
+Je vais vous expliquer aujourd'hui dans cet article un cas concret de mise en place d'une architecture orientée événements réalisé pour l'un de nos clients du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application).
+Le Studio Eleven Labs c'est une équipe créée sur mesure et 100% dédiée à la conception des projets web et mobile complexes avec de [forts enjeux de performance](https://eleven-labs.com/nos-publications/guide-d-optimisation-web-performance-le-cas-france-medias-monde) de nos clients.
+Vous découvrirez dans cet article, ce qu'est concrètement une architecture orientée événements (ou event driven architecture) et comment la mettre en place. Suivez le guide !
 
-L'architecture orientée événements (Event Driven Design) utilise des événements pour déclencher des services découplés et leur permettre de communiquer.
+## Concrètement, qu'est-ce que l'event driven architecture ou l'architecture orientée événements ?
+
+L'architecture orientée événements (Event Driven Architecture) utilise des événements pour déclencher et communiquer entre des services découplés.
 Elle est courante dans les applications modernes construites avec des microservices.
 Un événement correspond à un changement d'état, ou une mise à jour : commande payée, ou utilisateur créé, par exemple.
 Les événements transmettent un état à un instant T (le numéro de transaction, le montant et le numéro de commande).
 
 Les architectures orientées événements comportent trois composants clés : les émetteurs (_producers_), les transmetteurs (_routers_) et les consommateurs (_consumers_).
 Un _producer_ publie un événement sur le routeur, qui filtre et transmet les événements aux _consumers_.
-Les services producteurs et les services consommateurs sont découplés, ce qui leur permet d'être modifiés et déployés de manière indépendante.
+Les services émetteurs et les services consommateurs sont découplés, ce qui leur permet d'être modifiés et déployés de manière indépendante.
 
-## Avantages
+## Les avantages de la mise en place d'une architecture orientée événements
 
 **Découplage** : en découplant vos services, ils ne connaissent que le routeur d'événements, ils ne dépendent pas directement les uns des autres.
 Cela signifie que vos services sont interopérables : mais si un service tombe en panne, les autres continueront de fonctionner.
 Le découplage simplifie le processus d'ajout, de mise à jour ou de suppression de producers et de consumers, permettant des ajustements rapides pour répondre aux nouveaux besoins.
-Le découplage permet également de mettre en place et de respecter les principes [SOLID](https://simple.wikipedia.org/wiki/SOLID_(object-oriented_design)), notamment le _Single Responsability principle_.
+Cela permet également de mettre en place et de respecter les principes [SOLID](https://simple.wikipedia.org/wiki/SOLID_(object-oriented_design)), plus particulièrement le _Single Responsability principle_.
 
 **La maintenabilité** : vous n'avez pas besoin d'écrire du code custom pour gérer les événements, le routeur d'événements filtrera et transmettra automatiquement les événements aux consumers.
 Le routeur s'occupe également de la coordination entre les producers et consumers.
@@ -43,7 +46,7 @@ Chaque consumer est indépendant, potentiellement sur une infrastructure différ
 **Réponses en temps quasi-réel** : les événements sont consommés au fur et à mesure qu'ils se produisent, fournissant des réponses en temps quasi-réel aux interactions importantes avec votre platefrome.
 Cette agilité garantit que les clients reçoivent toujours les informations au plus vite sans pour autant être bloqués dans leur expérience utilisateur.
 
-## Les modèles
+## Les différents exemples de modèles pour implémenter une event driven architecture sur son site web
 
 L'architecture orientée événements peut utiliser le modèle de _pub/sub_ ou le modèle de _event streaming_.
 
@@ -55,9 +58,13 @@ C'est l'exemple que nous allons voir plus bas.
 Un client peut lire n'importe quelle partie du flux à n'importe quel moment.
 Cela signifie aussi qu'un client peut s'abonner à tout moment et avoir accès aux événements passés.
 
-## Cas concret
+Envie d’en savoir plus sur l’accompagnement et les expertises de notre Studio ?
+Téléchargez le témoignage de notre client Les Indés Radios !
+[Télécharger le document](https://eleven-labs.com/nos-publications/les-indes-radios)
 
-Voyons un cas concret en PHP/Symfony avec RabbitMQ.
+## Exemple concret de mise en place d'une architecture orientée événements en microservices
+
+Voyons un cas concret en [PHP/Symfony](https://eleven-labs.com/client/ets) avec RabbitMQ.
 Imaginons une architecture avec plusieurs microservices qui ont besoin de communiquer entre eux dans le cas de validation d'une commande.
 Le service _Purchase_ valide un paiement et publie le message associé.
 Le service _Mailer_ envoie un email de confirmation de commande.
@@ -65,7 +72,7 @@ Le service _Catalog_ réduit le stock disponible pour les produits concernés.
 
 Reprenons ensemble le fonctionnement du modèle AMQP 0-9-1 (vous pouvez trouver la documentation [ici](https://www.rabbitmq.com/tutorials/amqp-concepts.html)) :
 
-![]({{ site.baseurl }}/assets/2023-10-23-edd/rabbitmq.png)
+![]({{ site.baseurl }}/assets/2023-10-23-edd/event-driven-architecture-rabbitmq.png)
 
 Les messages sont publiés sur des _exchanges_, voyez ça comme une boîte aux lettres.
 Les exchanges distribuent ensuite des copies des messages aux _queues_ à l'aide des _bindings_.
@@ -168,8 +175,14 @@ queues:
               routing_key: "purchase.order.*.paid" # named after the published event
 ```
 
-## Conclusion
+## Conclusion : être accompagné par notre Studio dans la mise en place de votre Event Driven Architecture
 
 Avec ces règles simples, nous pouvons facilement implémenter l'architecture orientée événements.
-Nous devons placer les événements au centre de notre réflexion pour construire les échanges de notre plateforme autour de ceux-ci.
-Au sein du studio Eleven Labs, nous utilisons cette architecture comme moyen privilégié de communiquer entre microservices pour tous les avantages mentionnés plus haut.
+Nous devons placer les événements au centre de notre refléxion pour construire les échanges de notre plateforme autour de ceux-ci.
+
+Au sein de notre [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous utilisons cette architecture comme moyen privilégié de communiquer entre microservices pour tous les avantages mentionnés plus haut.
+Celle-ci est systématiquement définie lors des projets de création ou de refonte pris en charge par notre équipe.
+
+Envie d'en savoir plus sur notre méthodologie d'implémentation d'architecture orientée événements ?
+Nos experts du Studio Eleven Labs répondent à vos questions !
+[Demander un rendez-vous](https://eleven-labs.com/)
