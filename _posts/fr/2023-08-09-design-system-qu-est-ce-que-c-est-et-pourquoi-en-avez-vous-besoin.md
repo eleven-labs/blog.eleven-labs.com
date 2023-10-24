@@ -149,9 +149,11 @@ Outre les situations spécifiques évoquées ci-dessus, il existe également des
 En conclusion, un Design System devient incontournable lorsque votre entreprise évolue, se diversifie, ou fait face à des défis liés à la conception. Lorsque des signaux de problèmes surgissent, il est temps de considérer sérieusement la création d'un Design System pour améliorer la cohérence et l'efficacité de la conception.
 </div>
 
-
-
-
 ## Comment créer un Design System
+
+Faire le lien avec Atomic Design, les Design tokens
+Parler d'outils
+
+## Exemples de Design System
 
 ## Conclusion
