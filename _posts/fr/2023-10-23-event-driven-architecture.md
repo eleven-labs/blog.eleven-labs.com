@@ -12,9 +12,7 @@ categories:
 keywords: []
 ---
 
-Je vais vous expliquer aujourd'hui dans cet article un cas concret de mise en place d'une architecture orientée événements réalisé pour l'un de nos clients du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application).
-Le Studio Eleven Labs c'est une équipe créée sur mesure et 100% dédiée à la conception des projets web et mobile complexes avec de [forts enjeux de performance](https://eleven-labs.com/nos-publications/guide-d-optimisation-web-performance-le-cas-france-medias-monde) de nos clients.
-Vous découvrirez dans cet article, ce qu'est concrètement une architecture orientée événements (ou event driven architecture) et comment la mettre en place. Suivez le guide !
+Je vais vous expliquer aujourd'hui dans cet article un cas concret de mise en place d'une architecture orientée événements réalisé pour l'un de nos clients du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application). Vous découvrirez dans cet article, ce qu'est concrètement une architecture orientée événements (ou event driven architecture) et comment la mettre en place. Suivez le guide !
 
 ## Concrètement, qu'est-ce que l'event driven architecture ou l'architecture orientée événements ?
 
@@ -57,10 +55,6 @@ C'est l'exemple que nous allons voir plus bas.
 **Event streaming** : les événements sont enregistrés dans un journal dans l'ordre chronologique.
 Un client peut lire n'importe quelle partie du flux à n'importe quel moment.
 Cela signifie aussi qu'un client peut s'abonner à tout moment et avoir accès aux événements passés.
-
-Envie d’en savoir plus sur l’accompagnement et les expertises de notre Studio ?
-Téléchargez le témoignage de notre client Les Indés Radios !
-[Télécharger le document](https://eleven-labs.com/nos-publications/les-indes-radios)
 
 ## Exemple concret de mise en place d'une architecture orientée événements en microservices
 
@@ -180,9 +174,4 @@ queues:
 Avec ces règles simples, nous pouvons facilement implémenter l'architecture orientée événements.
 Nous devons placer les événements au centre de notre refléxion pour construire les échanges de notre plateforme autour de ceux-ci.
 
-Au sein de notre [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous utilisons cette architecture comme moyen privilégié de communiquer entre microservices pour tous les avantages mentionnés plus haut.
-Celle-ci est systématiquement définie lors des projets de création ou de refonte pris en charge par notre équipe.
-
-Envie d'en savoir plus sur notre méthodologie d'implémentation d'architecture orientée événements ?
-Nos experts du Studio Eleven Labs répondent à vos questions !
-[Demander un rendez-vous](https://eleven-labs.com/)
+Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous utilisons cette architecture comme moyen privilégié de communiquer entre microservices pour tous les avantages mentionnés plus haut.
