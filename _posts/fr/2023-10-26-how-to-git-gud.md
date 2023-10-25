@@ -1,28 +1,29 @@
 ---
 lang: fr
 date: 2023-10-26
-slug: how-to-git-gud
-title: How to git gud
-excerpt: Collection de tips & tricks qui vous simplifierons la vie avec Git au quotidien.
+slug: les-commandes-git
+title: How to git gud : quelles commandes Git utiliser pour améliorer son workflow au quotidien ? 
+excerpt: Vous trouverez dans cet article une sélection de commandes Git qui vous permettront de simplifier votre quotidien !
 categories: []
 keywords:
     - git
-    - tips
-    - tricks
+    - commandes
 authors:
     - mchardenal
 ---
 ![gitgud]({{ site.baseurl }}/assets/2023-10-26-how-to-git-gud/gitgud.png?width=300)
 
-# Git
+Dans cet article je vous partage la liste des commandes Git selon moi indispensables pour améliorer votre workflow ! Les commandes que vous allez découvrir m'ont simplifié la vie quelques années, pendant que je travaillais sur le projet d'un client du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application). Bonne lecture !
+
+## Git, qu-est-ce que c'est ?
 
 Git est un système de gestion de version distribuée [open source](https://github.com/git/git) créé en 2005 par Linus Torvald (créateur du noyau Linux). C'est un outil indispensable pour tout développeur qui va lui permettre de versionner ses fichiers, faciliter la collaboration sur un même projet ou encore simplifier la revue de code. Utilisé par 93% des développeurs d'après le [questionnaire pour développeurs de StackOverflow](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/) c'est LE système de gestion de version le plus utilisé dans notre métier.
 
-# Tips & tricks
+## Les commandes Git indispensables
 
 Git reste un outil très simple d'utilisation où l'on utilise souvent les mêmes commandes (`add` / `commit` / `push` par exemple) mais il en existe plus de 150 différentes, sans compter les différentes options disponibles pour chaque commande ! Impossible donc de toutes les connaître, mais je suis là pour vous en faire découvrir des nouvelles, qui je pense pourront améliorer votre workflow au quotidien.
 
-## Ajouter par "morceau"
+### Ajouter par "morceau"
 
 Vous avez l'habitude de *stage* vos fichiers en faisant un beau `git add .` mais vous vous rendez ensuite compte que vous avez oublié un log que vous ne vouliez pas commit ? Vous vous retrouvez ensuite à chercher sur Google comment *unstage* votre modification ? J'ai la solution pour vous : l'option `--patch` ou `-p`. Celle-ci vous permettra de *stage* uniquement les lignes que vous voulez de manière interactive.
 
@@ -58,7 +59,7 @@ index 5a8a393..280fb5d 100644
 Petit bonus, cette option est aussi disponible pour unstage vos changements de manière interactive : `git reset --patch`
 </div>
 
-## Push sans réfléchir
+### Push sans réfléchir
 
 Nouvelle feature, nouvelle branche. Après avoir fièrement créé votre branche et y avoir commit des modifications, vous faites un `git push` et vous prenez en pleine face l'erreur suivante : `The current branch X has no upstream branch.`. Vous tapez alors `git push --set-upstream origin x` pour corriger votre erreur. Mais à coup sûr la prochaine feature, nouvelle branche vous allez refaire l'erreur.
 Pour éviter cela ajoutez un nouvel alias dans votre `.bashrc` (ou autre fichier de configuration de shell) :
@@ -72,7 +73,7 @@ En plus avec la variable `$(git_current_branch)`, plus besoin de se prendre la t
 Les utilisateurs de OhMyZSH auront peut-être reconnu cette commande qui est incluse directement avec. Pour toutes les retrouver c'est par [ici](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/)
 </div>
 
-## Git config & alias
+### Git config & alias
 
 Nous venons de voir une méthode pour aliaser ses commandes Git depuis un fichier de configuration de shell mais Git offre aussi la possibilité de configurer ceux-ci via un fichier.
 
@@ -98,13 +99,13 @@ En rajoutant un bloc `[alias]` nous allons pouvoir configurer nos alias Git qui 
 
 Vous pouvez retrouver plus d'exemples [ici](https://gist.github.com/ch3ric/f8e6d20c92017f28d462#file-gitconfig) et la documentation de Git [ici](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration).
 
-## Trouver facilement un bug
+### Trouver facilement un bug
 
 Vous arrivez à votre daily et surprise, il y a un nouveau bug sur votre appli. Pourtant, ça marchait la semaine dernière non ? Comment faire pour identifier rapidement et simplement ce bug ? Une seule commande : `git bisect`. Cette commande effectue une recherche binaire pour retrouver le commit qui a introduit le bug.
 
 Je vous laisse aller consulter [l'article](https://blog.eleven-labs.com/fr/git-rebase/) de l'un de mes collègues qui vous guidera pas à pas sur l'utilisation de cette commande.
 
-## Fixup
+### Fixup
 
 Il n'est pas rare de devoir faire plusieurs commits sur une même branche. L'option fixup permet de réutiliser un message de commit en le préfixant par fixup !
 
@@ -119,7 +120,7 @@ Pas envie de *squasher* manuellement ? Pas de panique il existe aussi une option
 git rebase --interactive --autosquash
 ```
 
-## Amend
+### Amend
 
 Si vous ne voulez pas avoir à *squash* tous vos commits, il existe une autre option qui pourra vous être très utile.
 
@@ -133,7 +134,7 @@ Cette commande vous permettra d'éditer votre dernier commit. Il est aussi possi
 git commit --amend -m "my new commit msg"
 ```
 
-## J'ai tout cassé
+### J'ai tout cassé
 
 Git est simple d'utilisation mais une mauvaise commande et voilà, vous avez cassé votre repo. Deux solutions :
 
@@ -146,7 +147,7 @@ Mais c'est un peu radical.
 
 ```git reset HEAD@{index}``` pour revenir a l'état où tout fonctionnait.
 
-## Un peu de ménage
+### Un peu de ménage
 
 Personnellement je ne supprime pas mes branches à chaque fois qu'elles sont *merge*. Je me retrouve donc très rapidement avec un nombre indécent de branches en local. Voici quelques commandes pour remédier à ce problème :
 
@@ -154,8 +155,8 @@ Personnellement je ne supprime pas mes branches à chaque fois qu'elles sont *me
 
 ```git branch --merged origin/master | xargs git branch -d``` supprime toutes les branches qui ont été merge dans master
 
-# Conclusion
+## Conclusion
 
-Et voilà, j'espère vous avoir fait découvrir au moins une nouvelle commande utile que vous pourrez intégrer dans votre workflow. Celles-ci vous permettrons de gagner de précieuses secondes voir minutes tous les jours pour les plus simples et carrément des heures en ce qui concerne `bisect`.
+Et voilà, j'espère vous avoir fait découvrir au moins une nouvelle commande utile que vous pourrez intégrer dans votre workflow. Celles-ci vous permettront de gagner de précieuses secondes voire minutes tous les jours pour les plus simples et carrément des heures en ce qui concerne `bisect`.
 
 Happy coding !
