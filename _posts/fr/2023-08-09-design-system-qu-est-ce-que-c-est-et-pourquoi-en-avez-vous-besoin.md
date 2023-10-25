@@ -3,9 +3,8 @@ lang: fr
 date: 2023-10-19
 slug: design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin
 title: "Design System : Qu'est-ce que c'est et pourquoi en avez-vous besoin ?"
-excerpt: description
-categories:
-    - architecture 
+excerpt: Plongez dans le monde du Design System pour comprendre comment il assure la cohérence visuelle et fonctionnelle dans la conception. Explorez ce qu'est un Design System, pourquoi il est essentiel, le moment propice pour envisager sa création, ainsi que les étapes pour créer un Design System
+categories: []
 keywords:
     - design system
 authors:
@@ -14,11 +13,11 @@ authors:
 
 ## Qu'est-ce qu'un Design System ?
 
-Un Design System, souvent décrit comme un écosystème de conception, représente bien plus qu'un simple ensemble de ressources visuelles. Il constitue une ressource essentielle pour garantir la cohérence visuelle et fonctionnelle dans tous les aspects de la conception d'un produit ou d'une marque.
+Un Design System est un écosystème qui rassemble des éléments graphiques, des typographies, des palettes de couleurs, de la documentation et des directives d'utilisation, le tout au sein d'une organisation. Il constitue une ressource essentielle pour garantir la cohérence visuelle et fonctionnelle dans tous les aspects de la conception d'un produit ou d'une marque. Il va bien au-delà de la simple charte graphique ou du kit d'interface utilisateur en mettant l'accent sur des principes et des fondamentaux clés.
 
-### Définir un Design System
-
-Pour mieux comprendre ce qu'est un Design System, imaginez-le comme un écosystème qui rassemble des éléments graphiques, des typographies, des palettes de couleurs et des directives d'utilisation, le tout au sein d'une organisation. Il transcende les frontières de la simple charte graphique ou du kit d'interface utilisateur en mettant l'accent sur des principes et des fondamentaux clés.
+> Un système de conception n'est pas un projet. C'est un produit au service des produits.
+>
+> Nathan Curtis, EightShapes
 
 ### Les Principes et fondamentaux d'un Design System
 
@@ -46,15 +45,15 @@ Il encourage la collaboration fluide entre les designers et les développeurs, s
 
 - **Composants de présentation uniquement :**
 
-Un principe clé est que le Design System ne doit contenir que des composants de présentation, excluant toute logique métier.
+Un principe clé est que le Design System ne doit contenir que des composants responsables de la présentation : l'affichage de l'interface utilisateur et son comportement, sans aucune logique liée aux données métier qui seront affichées à l'intérieur de ces composants, par exemple.
 
 - **Indépendant des données et de son chargement :**
 
-l est conçu pour être indépendant des données et de leur chargement, se concentrant sur l'apparence et l'interaction, sans être lié aux sources de données spécifiques.
+Il est conçu pour être indépendant des données et de leur chargement, se concentrant sur l'apparence et l'interaction, sans être lié aux sources de données spécifiques.
 
 - **Documentations et exemples d'utilisation :**
 
-Il est accompagné de documentations détaillées et d'exemples d'utilisation pour une utilisation adéquate des composants.
+Il est accompagné de documentations détaillées, d'exemples d'utilisation, ainsi que des concepts fondamentaux sur lesquels se base le système, pour une utilisation adéquate des composants.
 
 ### Les éléments graphiques essentiels
 
@@ -66,10 +65,31 @@ Au cœur du Design System se trouvent des éléments graphiques essentiels qui j
 - **Icons :** Ils standardisées facilitent la reconnaissance des actions et des fonctionnalités
 - **Logos et illustrations :** Les logos de la marque et les illustrations définissent l'identité visuelle et renforcent la reconnaissance de la marque
 
-<div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
+### Exemples de Design System en Production
 
-En somme, le Design System transcende l'idée d'un simple ensemble de ressources visuelles. Il repose sur des principes fondamentaux, promouvant la cohérence, la réutilisabilité, la modularité et une collaboration efficace, garantissant ainsi l'harmonie entre l'image de marque et l'interface utilisateur. En d'autres termes, le Design System va bien au-delà d'une simple charte graphique ou d'un kit d'interface utilisateur.
-</div>
+Plusieurs grandes entreprises ont implémenté avec succès des Design Systems. Parmi les exemples les plus notables, citons le "Material Design" de Google, qui offre une approche cohérente pour concevoir des applications au sein de l'écosystème Android.
+
+Pour illustrer la diversité des choix réalisés dans le contexte français, voici quelques exemples de Design Systems :
+
+- **[Système de Design de l'État (Gouvernement Français)](https://www.systeme-de-design.gouv.fr/)**
+
+![Design System Etat Français]({{ site.baseurl }}/assets/2023-08-09-design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin/design-system-etat-francais.png)
+
+Ce Design System gouvernemental garantit une cohérence visuelle à travers les différents services et sites web de l'administration française.
+
+- **[Vitamin (Decathlon)](https://www.decathlon.design/)**
+
+![Design System Decathlon]({{ site.baseurl }}/assets/2023-08-09-design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin/design-system-decathlon.png)
+
+Decathlon a développé son propre Design System, Vitamin, pour maintenir l'uniformité de l'expérience utilisateur dans ses produits sportifs diversifiés.
+
+- **[Welcome UI (Welcome to the Jungle)](https://www.welcome-ui.com/)**
+
+![Design System Welcome to the Jungle]({{ site.baseurl }}/assets/2023-08-09-design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin/design-system-welcome-to-the-jungle.png)
+
+Welcome to the Jungle, une plateforme d'emploi, a créé Welcome UI pour assurer une interface utilisateur cohérente et conviviale.
+
+Ces exemples illustrent comment les Design Systems peuvent améliorer la cohérence et l'efficacité de la conception à grande échelle.
 
 ## Pourquoi avez-vous besoin d'un Design System ?
 
@@ -151,9 +171,59 @@ En conclusion, un Design System devient incontournable lorsque votre entreprise 
 
 ## Comment créer un Design System
 
-Faire le lien avec Atomic Design, les Design tokens
-Parler d'outils
+La création d'un Design System est un processus complexe qui requiert une approche méthodique. Voici une vue d'ensemble de certaines étapes clés, sans entrer dans les détails, car nous explorerons ces sujets plus en profondeur dans de futurs articles.
 
-## Exemples de Design System
+### Méthode Atomic Design
+
+Une approche courante pour concevoir un Design System est la méthode Atomic Design, proposée par Brad Frost. Cette méthode décompose l'interface en éléments de plus en plus petits, tels que les atomes (boutons, champs de texte), les molécules (groupes d'atomes), les organismes (groupes de molécules), les templates (dispositions de page), et les pages finales. Cette méthode favorise la réutilisabilité et la cohérence des composants.
+
+### Design Tokens
+
+Les Design Tokens sont des variables de conception qui définissent des éléments tels que les couleurs, les typographies, les espacements, et plus encore. Ils jouent un rôle essentiel dans un Design System en garantissant la cohérence visuelle.
+
+### Outils de Conception
+
+Différents outils de conception sont disponibles, tels que **Figma**, **InVision** et **Sketch**, sont disponibles pour faciliter le développement et la documentation des composants d'un Design System. Ces outils offrent des fonctionnalités de collaboration en temps réel, de création de prototypes interactifs, ainsi que des options pour documenter les interactions, les spécifications et simplifier la conception et la documentation des composants. 
+
+<div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
+
+Chacun de ces outils présente des avantages spécifiques, et le choix dépendra des besoins et des préférences de l'équipe de conception.
+</div>
+
+### Outils de Documentation
+
+Plusieurs outils de documentation, comme **Storybook** et **Zeroheight**, sont conçus pour simplifier la documentation des composants de l'interface utilisateur et des Design Systems. Storybook propose une interface conviviale pour présenter de manière structurée les composants, leurs variations et leurs spécifications, tandis que Zeroheight permet de créer des documents détaillés mettant en avant les composants, leurs utilisations et leurs règles. 
+
+<div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
+
+Les choix dépendront des exigences particulières de la documentation et de la présentation des composants au sein de l'équipe de conception.
+</div>
+
+### Implémentation technique
+
+Du point de vue technique, la création d'un Design System pour du Web implique généralement les éléments suivants :
+
+- **Styles avec PostCSS ou CSS-in-JS :**
+
+Pour définir les styles et les Design Tokens, vous avez le choix entre des outils tels que PostCSS, SCSS, avec l'utilisation de la méthodologie BEM, ou du CSS-in-JS. Ces approches offrent une manière structurée et maintenable de gérer les styles, en garantissant la cohérence et la réutilisabilité.
+
+- **Composants Web ou bibliothèque (React, VueJS, ...) :**
+
+Les composants de votre Design System peuvent être construits en utilisant des composants web natifs, ou vous pouvez opter pour une bibliothèque de composants telle que React ou VueJS, en fonction de vos besoins spécifiques et de l'écosystème technologique de votre projet. Une alternative consiste à personnaliser une bibliothèque de composants existante, telle que Material-UI pour React, pour répondre à vos exigences particulières.
+
+- **Typescript :**
+
+L'intégration de TypeScript peut améliorer la maintenabilité et la fiabilité de votre Design System en ajoutant un typage statique à votre code. Cela aide à réduire les erreurs potentielles et à faciliter la collaboration entre les équipes de conception et de développement.
+
+<div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
+
+Le choix des outils et des technologies dépendra de la préférence de l'équipe, de la complexité du Design System, et des exigences spécifiques du projet. Il est essentiel de sélectionner des outils qui favorisent une collaboration fluide entre les équipes de conception et de développement pour garantir le succès de votre Design System.
+</div>
+
+### Organisation et collaboration
+
+La création d'un Design System nécessite une collaboration étroite entre les métiers de l'UX/UI, les chefs de produit et les développeurs. Les équipes doivent travailler de concert pour garantir que le Design System répond aux besoins de conception tout en étant réalisable du point de vue du développement. L'organisation joue un rôle clé dans la réussite du projet, en veillant à ce que tous les membres de l'équipe aient accès aux composants et aux directives nécessaires. Pour approfondir l'importance de cette collaboration, nous vous invitons à consulter notre [article]((/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/)) qui traite de ce sujet ainsi que des design tokens.
 
 ## Conclusion
+
+Et voilà, vous êtes maintenant prêt à démarrer votre propre Design System. En mettant en place des principes clés de cohérence, réutilisabilité, modularité et en favorisant la collaboration, vous pouvez renforcer votre organisation. Que vous soyez une grande entreprise ou une start-up, un Design System accélérera le développement, améliorera la productivité, réduira les erreurs et renforcera votre marque. Restez à l'affût pour des articles futurs approfondis et des astuces pour optimiser votre Design System. En attendant, profitez des avantages du Design System pour garantir la cohérence dans tous vos projets de conception.
