@@ -156,6 +156,6 @@ Personnellement je ne supprime pas mes branches à chaque fois qu'elles sont *me
 
 # Conclusion
 
-Et voilà, j'espère vous avoir fait découvrir au moins une nouvelle commande utile que vous pourrez intégrer dans votre workflow.
+Et voilà, j'espère vous avoir fait découvrir au moins une nouvelle commande utile que vous pourrez intégrer dans votre workflow. Celles-ci vous permettrons de gagner de précieuses secondes voir minutes tous les jours pour les plus simples et carrément des heures en ce qui concerne `bisect`.
 
 Happy coding !
