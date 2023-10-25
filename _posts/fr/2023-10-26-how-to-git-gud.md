@@ -133,6 +133,9 @@ Cette commande vous permettra d'éditer votre dernier commit. Il est aussi possi
 ```bash
 git commit --amend -m "my new commit msg"
 ```
+## Pour finir, mes commandes Git préférées
+
+Allez, la conclusion de ce tour d'horizon des commandes Git approchant, je pense que le moment est venu de vous présenter les deux astuces qui m'ont parfois sauvé la mise !
 
 ### J'ai tout cassé
 
