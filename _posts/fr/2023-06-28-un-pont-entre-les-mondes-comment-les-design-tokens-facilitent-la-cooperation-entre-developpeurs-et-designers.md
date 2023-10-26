@@ -1,6 +1,6 @@
 ---
 lang: fr
-date: '2023-06-21'
+date: 2023-10-30
 slug: un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers
 title: 'Un Pont Entre les Mondes : Comment les Design Tokens Facilitent la Coopération entre les Développeurs et les Designers'
 excerpt: >-

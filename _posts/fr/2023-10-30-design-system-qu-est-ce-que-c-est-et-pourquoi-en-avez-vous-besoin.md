@@ -1,6 +1,6 @@
 ---
 lang: fr
-date: 2023-10-19
+date: 2023-10-30
 slug: design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin
 title: "Design System : Qu'est-ce que c'est et pourquoi en avez-vous besoin ?"
 excerpt: Plongez dans le monde du Design System pour comprendre comment il assure la cohérence visuelle et fonctionnelle dans la conception. Explorez ce qu'est un Design System, pourquoi il est essentiel, le moment propice pour envisager sa création, ainsi que les étapes pour créer un Design System
@@ -35,25 +35,25 @@ Un élément fondamental d'un Design System est la réutilisation des composants
 
 Il est conçu de manière modulaire, favorisant l'évolutivité et l'adaptabilité.
 
-- **Facilité de maintenance et de mise à jour :**
+- **Concepts fondamentaux, documentations, directives d'utilisation et exemples d'utilisation :**
 
-Grâce à sa structure modulaire, un Design System est facile à maintenir et à mettre à jour, assurant la cohérence à long terme.
+Il est accompagné de documentations détaillées, directives d'utilisation, d'exemples d'utilisation, ainsi que des concepts fondamentaux sur lesquels se base le système, pour une utilisation adéquate des composants.
 
 - **Collaboration efficace entre les équipes de conception et de développement :**
 
 Il encourage la collaboration fluide entre les designers et les développeurs, simplifiant la communication et réduisant les erreurs.
 
+- **Facilité de maintenance et de mise à jour :**
+
+Grâce à sa structure modulaire, un Design System est facile à maintenir et à mettre à jour, assurant la cohérence à long terme.
+
 - **Composants de présentation uniquement :**
 
-Un principe clé est que le Design System ne doit contenir que des composants responsables de la présentation : l'affichage de l'interface utilisateur et son comportement, sans aucune logique liée aux données métier qui seront affichées à l'intérieur de ces composants, par exemple.
+Dans l'implémentation technique, un principe clé est que le Design System ne doit contenir que des composants responsables de la présentation : l'affichage de l'interface utilisateur et son comportement, sans aucune logique liée aux données métier qui seront affichées à l'intérieur de ces composants, par exemple.
 
 - **Indépendant des données et de son chargement :**
 
 Il est conçu pour être indépendant des données et de leur chargement, se concentrant sur l'apparence et l'interaction, sans être lié aux sources de données spécifiques.
-
-- **Documentations et exemples d'utilisation :**
-
-Il est accompagné de documentations détaillées, d'exemples d'utilisation, ainsi que des concepts fondamentaux sur lesquels se base le système, pour une utilisation adéquate des composants.
 
 ### Les éléments graphiques essentiels
 
@@ -67,29 +67,32 @@ Au cœur du Design System se trouvent des éléments graphiques essentiels qui j
 
 ### Exemples de Design System en Production
 
-Plusieurs grandes entreprises ont implémenté avec succès des Design Systems. Parmi les exemples les plus notables, citons le "Material Design" de Google, qui offre une approche cohérente pour concevoir des applications au sein de l'écosystème Android.
+Plusieurs grandes entreprises ont implémenté avec succès des Design Systems. Parmi les exemples les plus notables, citons le "[Material Design](https://m3.material.io/)" de Google, qui offre une approche cohérente pour concevoir des applications au sein de l'écosystème Android. Un autre exemple pertinent est le "[Atlassian Design System](https://atlassian.design/)" d'Atlassian, qui fournit un ensemble complet de directives de conception, de composants réutilisables et de ressources pour créer des expériences utilisateur unifiées dans les produits et les services d'Atlassian, tels que Jira, Confluence et Trello. Ce Design System a été largement adopté dans l'industrie pour sa capacité à améliorer la cohérence et l'efficacité de la conception d'interfaces utilisateur.
 
 Pour illustrer la diversité des choix réalisés dans le contexte français, voici quelques exemples de Design Systems :
 
 - **[Système de Design de l'État (Gouvernement Français)](https://www.systeme-de-design.gouv.fr/)**
 
-![Design System Etat Français]({{ site.baseurl }}/assets/2023-08-09-design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin/design-system-etat-francais.png)
+![Design System Etat Français]({{ site.baseurl }}/assets/2023-10-30-design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin/design-system-etat-francais.png)
 
 Ce Design System gouvernemental garantit une cohérence visuelle à travers les différents services et sites web de l'administration française.
 
 - **[Vitamin (Decathlon)](https://www.decathlon.design/)**
 
-![Design System Decathlon]({{ site.baseurl }}/assets/2023-08-09-design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin/design-system-decathlon.png)
+![Design System Decathlon]({{ site.baseurl }}/assets/2023-10-30-design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin/design-system-decathlon.png)
 
 Decathlon a développé son propre Design System, Vitamin, pour maintenir l'uniformité de l'expérience utilisateur dans ses produits sportifs diversifiés.
 
 - **[Welcome UI (Welcome to the Jungle)](https://www.welcome-ui.com/)**
 
-![Design System Welcome to the Jungle]({{ site.baseurl }}/assets/2023-08-09-design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin/design-system-welcome-to-the-jungle.png)
+![Design System Welcome to the Jungle]({{ site.baseurl }}/assets/2023-10-30-design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin/design-system-welcome-to-the-jungle.png)
 
 Welcome to the Jungle, une plateforme d'emploi, a créé Welcome UI pour assurer une interface utilisateur cohérente et conviviale.
 
+<div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
+
 Ces exemples illustrent comment les Design Systems peuvent améliorer la cohérence et l'efficacité de la conception à grande échelle.
+</div>
 
 ## Pourquoi avez-vous besoin d'un Design System ?
 
