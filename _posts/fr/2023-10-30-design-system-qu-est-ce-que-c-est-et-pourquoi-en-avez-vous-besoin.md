@@ -1,9 +1,9 @@
 ---
 lang: fr
 date: 2023-10-30
-slug: design-system-qu-est-ce-que-c-est-et-pourquoi-en-avez-vous-besoin
+slug: pourquoi-creer-design-system
 title: "Design System : Qu'est-ce que c'est et pourquoi en avez-vous besoin ?"
-excerpt: Plongez dans le monde du Design System pour comprendre comment il assure la cohérence visuelle et fonctionnelle dans la conception. Explorez ce qu'est un Design System, pourquoi il est essentiel, le moment propice pour envisager sa création, ainsi que les étapes pour créer un Design System
+excerpt: Plongez dans le monde du Design System pour comprendre comment il assure la cohérence visuelle et fonctionnelle dans la conception. Explorez ce qu'est un Design System, pourquoi il est essentiel, le moment propice pour envisager sa création, ainsi que les étapes à respecter.
 categories: []
 keywords:
     - design system
@@ -11,7 +11,7 @@ authors:
     - fpasquet
 ---
 
-Dans cet article, je vais vous présenter le concept du Design System que nous mettons en place pour nos clients au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application). Plongez dans le monde du Design System pour comprendre comment il assure la cohérence visuelle et fonctionnelle dans la conception. Explorez ce qu'est un Design System, pourquoi il est essentiel, le moment propice pour envisager sa création, ainsi que les étapes pour créer un Design System.
+Dans cet article, je vais vous présenter le concept du Design System que nous mettons en place pour nos clients au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application). Plongez dans le monde du Design System pour comprendre comment il assure la cohérence visuelle et fonctionnelle dans la conception. Explorez ce qu'est un Design System, pourquoi il est essentiel, le moment propice pour envisager sa création, ainsi que les étapes à respecter.
 
 ## Qu'est-ce qu'un Design System ?
 
@@ -57,11 +57,11 @@ L'implémentation technique du Design System repose sur un principe clé : les c
 
 Au cœur du Design System se trouvent des éléments graphiques essentiels qui jouent un rôle déterminant dans la création d'une expérience utilisateur cohérente. Ces éléments comprennent :
 
-- **Couleurs :** Les palettes de couleurs définies garantissent une identité visuelle cohérente
+- **Couleurs :** Les palettes de couleurs définies garantissent une identité visuelle cohérente.
 - **Typographies :** Les choix de police, les tailles et l'épaisseur de texte ...
-- **Espacements :** Les directives sur l'espacement, la hiérarchie de l'information et la grille contribuent à une mise en page cohérente
-- **Icônes :** Ils standardisées facilitent la reconnaissance des actions et des fonctionnalités
-- **Logos et illustrations :** Les logos de la marque et les illustrations définissent l'identité visuelle et renforcent la reconnaissance de la marque
+- **Espacements :** Les directives sur l'espacement, la hiérarchie de l'information et la grille contribuent à une mise en page cohérente.
+- **Icônes :** Des illustrations standardisées facilitent la reconnaissance des actions et des fonctionnalités.
+- **Logos et illustrations :** Les logos et les illustrations de la marque définissent son identité visuelle et renforcent sa reconnaissance.
 
 ### Exemples de Design System en Production
 
@@ -102,7 +102,7 @@ Un Design System accélère le développement en fournissant des composants prê
 
 - **Amélioration de la productivité des équipes :**
 
-La cohérence des composants de conception permet aux équipes de travailler plus efficacement, en se concentrant sur des tâches complexes.
+La cohérence des composants de conception permet aux [équipes de travailler plus efficacement](https://eleven-labs.com/expertises-agiles), en se concentrant sur des tâches complexes.
 
 - **Réduction des redondances et des erreurs de conception :**
 
@@ -114,7 +114,7 @@ La cohérence visuelle garantie par un Design System renforce la marque et l'ide
 
 - **Amélioration de l'expérience utilisateur :**
 
-Un Design System assure à la fois une expérience utilisateur cohérente. Les utilisateurs bénéficient d'une navigation fluide et d'une interaction intuitive avec l'application ou le site web, tout en étant assurés que les composants de conception fonctionnent correctement tout en étant visuellement harmonieux.
+Un Design System assure une expérience utilisateur cohérente. Les utilisateurs bénéficient d'une navigation fluide et d'une interaction intuitive avec l'application ou le site web, tout en étant assurés que les composants de conception sont visuellement harmonieux et fonctionnent correctement.
 
 - **Simplification de la documentation et des tests des composants :**
 
@@ -138,7 +138,7 @@ Un Design System permet de limiter les dépenses liées à la conception, car il
 
 - **Amélioration de la communication :**
 
-La cohérence offerte par un Design System améliore la communication entre les équipes de conception et de développement, favorisant une collaboration plus efficace.
+La cohérence offerte par un Design System améliore la communication entre les équipes de conception et de développement, et permet donc une collaboration plus efficace.
 
 <div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
 
@@ -151,7 +151,7 @@ La création d'un Design System est une démarche stratégique qui doit être en
 
 - **Croissance de l'entreprise :**
 
-Lorsqu'une entreprise connaît une croissance significative, il devient de plus en plus difficile de maintenir la cohérence visuelle et fonctionnelle dans tous les produits ou services. Les équipes de conception et de développement sont souvent éparpillées sur de multiples projets, ce qui peut entraîner une divergence dans l'apparence et l'expérience utilisateur. C'est à ce stade que la nécessité d'un Design System devient évidente, car il offre une base cohérente pour accompagner la croissance de l'entreprise.
+Lorsqu'une entreprise connaît une croissance significative, il devient de plus en plus difficile de maintenir la cohérence visuelle et fonctionnelle de tous les produits ou services. [Les équipes de conception et de développement](https://eleven-labs.com/expertises-techniques) sont souvent éparpillées sur de multiples projets, ce qui peut entraîner une divergence dans l'apparence et l'expérience utilisateur. C'est à ce stade que la nécessité d'un Design System devient évidente, car il offre une base cohérente pour accompagner la croissance de l'entreprise.
 
 - **Complexité croissante :**
 
@@ -163,14 +163,14 @@ Si votre entreprise cherche à réduire les coûts liés à la conception et au 
 
 - **Signaux indiquant le besoin d'un Design System :**
 
-Outre les situations spécifiques évoquées ci-dessus, il existe également des signaux qui indiquent que votre entreprise a besoin d'un Design System. Parmi ces signaux, on peut citer *incohérence visuelle*, *redondances de conception*, *problèmes de communication*, *difficultés de maintenance*, *temps de développement prolongé*.
+Outre les situations spécifiques évoquées ci-dessus, il existe également des signaux qui indiquent que votre entreprise a besoin d'un Design System. Parmi ces signaux, on peut citer : *incohérence visuelle*, *redondances de conception*, *problèmes de communication*, *difficultés de maintenance*, *temps de développement prolongé*.
 
 <div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
 
 En conclusion, un Design System devient incontournable lorsque votre entreprise évolue, se diversifie, ou fait face à des défis liés à la conception. Lorsque des signaux de problèmes surgissent, il est temps de considérer sérieusement la création d'un Design System pour améliorer la cohérence et l'efficacité de la conception.
 </div>
 
-## Comment créer un Design System
+## Comment créer un Design System ?
 
 La création d'un Design System est un processus complexe qui requiert une approche méthodique. Voici une vue d'ensemble de certaines étapes clés, sans entrer dans les détails, car nous explorerons ces sujets plus en profondeur dans de futurs articles.
 
@@ -184,7 +184,7 @@ Les Design Tokens sont des variables de conception qui définissent des élémen
 
 ### Outils de Conception
 
-Différents outils de conception sont disponibles, tels que **Figma**, **InVision** et **Sketch**, sont disponibles pour faciliter le développement et la documentation des composants d'un Design System. Ces outils offrent des fonctionnalités de collaboration en temps réel, de création de prototypes interactifs, ainsi que des options pour documenter les interactions, les spécifications et simplifier la conception et la documentation des composants. 
+Différents outils de conception tels que **Figma**, **InVision** et **Sketch**, sont disponibles pour faciliter le développement et la documentation des composants d'un Design System. Ces outils offrent des fonctionnalités de collaboration en temps réel et de création de prototypes interactifs, ainsi que des options pour documenter les interactionset les spécifications, et simplifier la conception et la documentation des composants. 
 
 <div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
 
@@ -231,14 +231,14 @@ La création d'un Design System est une entreprise multidisciplinaire qui exige 
 
 - **Les développeurs** transforment la vision du Design System en réalité. Leur rôle consiste à mettre en œuvre les composants de manière efficace et à garantir qu'ils sont techniquement réalisables.
 
-Dans certaines organisations, chacun de ces acteurs peut se concentrer exclusivement sur la construction du Design System, tandis que dans d'autres travaillent simultanément sur le Design System et d'autres produits métier qui intègrent ce Design System. De plus, de nouveaux métiers, tels que les Design Ops, ont émergé pour assurer la gestion du Design System et la coordination des équipes de produits qui l'utilisent.
+Dans certaines organisations, chacun de ces acteurs peut se concentrer exclusivement sur la construction du Design System, tandis que dans d'autres ils travaillent simultanément sur le Design System et d'autres produits métier qui intègrent ce Design System. De plus, de nouveaux métiers, tels que les Design Ops, ont émergé pour assurer la gestion du Design System et la coordination des équipes de produits qui l'utilisent.
 
 L'organisation est un acteur clé de cette collaboration en veillant à ce que tous les membres de l'équipe aient accès aux composants et aux directives nécessaires. La mise en place de mécanismes de communication et de partage efficaces est essentielle pour assurer la cohérence et la pérennité du Design System.
 
 Pour approfondir l'importance de cette collaboration, nous vous invitons à consulter notre [article qui traite de ce sujet ainsi que des design tokens](/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/).
 
-## Conclusion
+## Conclusion : la création d'un design system, élément clé de l'évolution de votre entreprise
 
 Et voilà, vous êtes à présent prêt à lancer votre propre Design System. En instaurant des principes clés tels que la cohérence, la réutilisabilité, la modularité, et en encourageant la collaboration, vous renforcerez votre organisation. Que vous soyez une grande entreprise ou une start-up, un Design System accélérera le développement, améliorera la productivité, réduira les erreurs et renforcera votre image de marque.
 
-Au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application), nous faisons usage de Design Systems dans nos projets internes et pour nos clients, afin de tirer parti de tous les avantages évoqués dans cet article. Restez à l'affût pour de futurs articles approfondis et des astuces visant à optimiser votre Design System !
+Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous faisons usage de Design Systems dans nos projets internes et pour nos clients, afin de tirer parti de tous les avantages évoqués dans cet article. Restez à l'affût pour de futurs articles approfondis et des astuces visant à optimiser votre Design System !
