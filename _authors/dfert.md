@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: dfert
 name: Dimitri Fert
 ---

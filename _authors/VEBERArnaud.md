@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: VEBERArnaud
 name: Arnaud Veber
 twitter: VEBERArnaud

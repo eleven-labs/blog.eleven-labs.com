@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: flemzord
 name: Maxence Maireaux
 twitter: flemzord

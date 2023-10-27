@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: plerouge
 name: Pierre Lerouge
 github: RedPi

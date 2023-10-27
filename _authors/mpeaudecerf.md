@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: mapo
 name: Marion Peaudecerf
 twitter: mpeaudecerf

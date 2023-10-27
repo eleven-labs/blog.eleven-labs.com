@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: romaindurand
 name: Romain Durand
 twitter: romaindurand

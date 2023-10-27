@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: gcunsolo
 name: Giuseppe Cunsolo
 github: gcunsolo

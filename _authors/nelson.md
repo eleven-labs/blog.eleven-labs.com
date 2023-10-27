@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: nelson
 name: Nelson Da Costa
 ---

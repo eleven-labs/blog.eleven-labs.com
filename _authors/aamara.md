@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: aamara
 name: Antoine AMARA
 ---
