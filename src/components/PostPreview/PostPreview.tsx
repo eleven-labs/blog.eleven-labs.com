@@ -40,7 +40,12 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
   ...boxProps
 }) => (
   <Box className={classNames({ 'post-preview--highlighted': isHighlighted })}>
-    <div>{isHighlighted && <img src={image?.source} alt={image?.alt} />}</div>
+    {isHighlighted && (
+      <>
+        <div className="sparkle" />
+        <div>{isHighlighted && <img src={image?.source} alt={image?.alt} />}</div>
+      </>
+    )}
     <Box
       as="article"
       className={classNames('post-preview', { 'post-preview--mask': hasMask }, { 'post-preview--related': isRelated })}

@@ -56,6 +56,7 @@ $border-radius: 4px;
     @include post-preview-card;
     display: flex;
     flex-direction: column;
+    position: relative;
 
     img {
       max-width: 100%;
@@ -66,7 +67,11 @@ $border-radius: 4px;
       padding: var(--spacing-s);
     }
 
-    @include create-media-queries('md') {
+    .sparkle {
+      display: none;
+    }
+
+    @include create-media-queries("md") {
       flex-direction: row;
       align-items: center;
       justify-content: center;
@@ -86,6 +91,17 @@ $border-radius: 4px;
 
       article {
         width: 70%;
+      }
+
+      .sparkle {
+        display: block;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 7rem;
+        width: 47px;
+        height: 108px;
+        position: absolute;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><line x1="33.1063" y1="3.06202" x2="44.1118" y2="14.4606" stroke="%23F3C93D" stroke-width="5" stroke-linecap="round"/><line x1="2.5" y1="-2.5" x2="18.3445" y2="-2.5" transform="matrix(0.694595 -0.719401 -0.719401 -0.694595 29.5713 105.469)" stroke="%23F3C93D" stroke-width="5" stroke-linecap="round"/><line x1="3" y1="50.8906" x2="41.0134" y2="50.8906" stroke="%23F3C93D" stroke-width="6" stroke-linecap="round"/></svg>');
       }
     }
   }
