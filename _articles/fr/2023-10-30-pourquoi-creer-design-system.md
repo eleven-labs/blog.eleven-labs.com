@@ -185,7 +185,7 @@ Les Design Tokens sont des variables de conception qui définissent des élémen
 
 ### Outils de Conception
 
-Différents outils de conception tels que **Figma**, **InVision** et **Sketch**, sont disponibles pour faciliter le développement et la documentation des composants d'un Design System. Ces outils offrent des fonctionnalités de collaboration en temps réel et de création de prototypes interactifs, ainsi que des options pour documenter les interactionset les spécifications, et simplifier la conception et la documentation des composants. 
+Différents outils de conception tels que **Figma**, **InVision** et **Sketch**, sont disponibles pour faciliter le développement et la documentation des composants d'un Design System. Ces outils offrent des fonctionnalités de collaboration en temps réel et de création de prototypes interactifs, ainsi que des options pour documenter les interactions et les spécifications, et simplifier la conception et la documentation des composants.
 
 <div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
 
