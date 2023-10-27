@@ -72,6 +72,7 @@ alias gpsup="git push --set-upstream origin $(git_current_branch)"
 En plus avec la variable `$(git_current_branch)`, plus besoin de se prendre la tête à retaper son nom de branche.
 
 <div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
+
 Les utilisateurs de OhMyZSH auront peut-être reconnu cette commande qui est incluse directement avec. Pour toutes les retrouver c'est par [ici](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/)
 </div>
 
