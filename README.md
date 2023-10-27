@@ -79,6 +79,7 @@ Here is the template of the file.
 
 ```md
 ---
+contentType: author
 username: myusername
 name: Name Lastname
 github: mygithub
@@ -93,20 +94,20 @@ Some description about me...
 
 Add your avatar to the `_assets/authors/myusername.jpg` folder.
 
-**4 -Then add your post**
+**4 -Then add your article**
 
-> You can't do a pull request just with your author markdown, because the deployment doesn't allow an author file without any associated posts
+> You can't do a pull request just with your author markdown, because the deployment doesn't allow an author file without any associated articles
 
 ----------
 
-Create your post page
+Create your article page
 -------------
 
 **1 - Create the markdown file**
 
-In the folder `_posts` add a markdown file with the name of your post and prefixed with the date.
+In the folder `_articles` add a markdown file with the name of your article and prefixed with the date.
 ```bash
-cd _posts && touch YYYY-MM-DD-slug.md
+cd _articles && touch YYYY-MM-DD-slug.md
 ```
 
 **2 - Add content to the file**
@@ -115,11 +116,12 @@ Here is the template of the file.
 
 ```md
 ---
+contentType: article
 lang: en | fr
 date: YYYY-MM-DD
-slug: slug of the post (No space dashes instead)
-title: Title of the post
-excerpt: Description of the post (Visible on the list pages)
+slug: slug of the article (No space dashes instead)
+title: Title of the article
+excerpt: Description of the article (Visible on the list pages)
 categories:
     - javascript | php | agile | architecture
 keywords:
@@ -127,17 +129,19 @@ keywords:
 authors:
     - author's username
 ---
-Content of your post in markdown
+Content of your article in markdown
 ```
 
-**3 - Write the content of the post**
+> If your title or excerpt contains `:`, `"` use the syntax `>` or add your content between quotes (`"`)
 
-The content of the articlpostbe written in markdown.
+**3 - Write the content of the article**
+
+The content of the article be written in markdown.
 You can use one of the solutions:
 - [StackEdit](https://stackedit.io)
 - [Dillinger](http://dillinger.io)
 
-To add images to your post, you will need to create the folder `_assets/posts/YYYY-MM-DD-slug/` and add your images there.
+To add images to your article, you will need to create the folder `_assets/articles/YYYY-MM-DD-slug/` and add your images there.
 Then in the markdown content, insert the tag:
 ```md
 ![alt of image]({{ site.baseurl }}/assets/YYYY-MM-DD-slug/image-name.png)
@@ -161,7 +165,7 @@ And to specify a size on the image, you can add the arguments (`width`, `height`
 
 Create your branch and add your pull request.
 ```bash
-git checkout -b feat/add-post-slug
+git checkout -b feat/add-article-slug
 ```
 
-Once your post is finished and you want it to be published and add the label `publication` to your pull request.
+Once your article is finished and you want it to be published and add the label `publication` to your pull request.

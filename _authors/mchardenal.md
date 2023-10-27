@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: mchardenal
 name: Matthieu Chardenal
 ---

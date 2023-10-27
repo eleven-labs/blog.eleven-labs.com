@@ -1,4 +1,5 @@
 ---
+contentType: article
 lang: fr
 date: 2023-10-26
 slug: les-commandes-git
