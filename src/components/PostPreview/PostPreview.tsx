@@ -15,9 +15,11 @@ export type PostPreviewOptions = {
   readingTime?: number;
   authors?: { username: string; name: string }[];
   link?: AsProps<'a'>;
+  image?: { source: string; alt: string };
   hasMask?: boolean;
   isRelated?: boolean;
   isLoading?: boolean;
+  isHighlighted?: boolean;
 };
 
 export type PostPreviewProps = PostPreviewOptions & BoxProps;
@@ -33,30 +35,25 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
   hasMask,
   isRelated,
   isLoading = false,
+  isHighlighted = true,
+  image,
   ...boxProps
-}) => {
-  const titleBlock = hasMask ? (
-    (title as React.JSX.Element)
-  ) : (
-    <Link {...link} data-internal-link={isRelated ? 'relatedPost' : 'post'}>
-      {title}
-    </Link>
-  );
-  return (
+}) => (
+  <Box className={classNames({ 'post-preview--highlighted': isHighlighted })}>
+    <div>{isHighlighted && <img src={image?.source} alt={image?.alt} />}</div>
     <Box
       as="article"
       className={classNames('post-preview', { 'post-preview--mask': hasMask }, { 'post-preview--related': isRelated })}
       {...boxProps}
     >
       <Skeleton isLoading={isLoading}>
-        <Heading as="h2" color="amaranth" size="s">
-          {contentType === ContentTypeEnum.TUTORIAL ? (
-            <Flex gap="xxs">
-              <TutoTag />
-              {titleBlock}
-            </Flex>
+        <Heading as="h2" color="amaranth" size="s" mb={{ xs: 'xxs-3', md: 'xxs' }}>
+          {hasMask ? (
+            title
           ) : (
-            titleBlock
+            <Link {...link} data-internal-link={isRelated ? 'relatedPost' : 'post'}>
+              {title}
+            </Link>
           )}
         </Heading>
       </Skeleton>
@@ -71,7 +68,7 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
         </Skeleton>
         <SeparatorCircle />
         <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 50 }}>
-          {readingTime && <Text as="span">{`${readingTime}mn`}</Text>}
+          {readingTime && <Text as="span">{readingTime}</Text>}
         </Skeleton>
         <SeparatorCircle />
         <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
