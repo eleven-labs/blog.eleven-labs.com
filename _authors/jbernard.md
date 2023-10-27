@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: jbernard
 name: Jérémy Bernard
 twitter: bernar_w

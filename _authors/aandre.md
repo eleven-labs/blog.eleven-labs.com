@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: aandre
 name: Alexandre Andre
 twitter: alexception_ck

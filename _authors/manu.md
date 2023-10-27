@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: manu
 name: Emmanuel Solom
 github: manuEleven

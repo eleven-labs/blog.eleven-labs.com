@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: rascarlito
 name: Carl Ogren
 twitter: CarlOGREN

@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: nkania
 name: Noel Kania
 ---

@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: mehdidr
 name: Mehdi Druon
 twitter: MehdiDru

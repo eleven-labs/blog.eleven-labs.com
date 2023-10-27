@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: pvermeil
 name: Pierre Vermeil
 twitter: non

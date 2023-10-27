@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: charles-eric
 name: Charles-Eric Gorron
 twitter: ch3ric

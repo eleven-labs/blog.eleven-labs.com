@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: mae
 name: Maeva Charron
 twitter: arrya_c

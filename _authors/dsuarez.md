@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: dsuarez
 name: Diego Suarez
 ---

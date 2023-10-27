@@ -7,7 +7,7 @@ import { cpSync } from 'node:fs';
 import { resolve } from 'node:path';
 import cookiesMiddleware from 'universal-cookie-express';
 
-import { ASSETS_DIR, AUTHORS_DIR, IMGS_DIR, POSTS_DIR } from '@/app-paths';
+import { ARTICLES_DIR, ASSETS_DIR, AUTHORS_DIR, IMGS_DIR } from '@/app-paths';
 import { i18nConfig } from '@/config/i18n';
 import { BASE_URL } from '@/constants';
 import { writeJsonDataFiles } from '@/helpers/contentHelper';
@@ -68,7 +68,7 @@ const createServer = async (): Promise<void> => {
 
     writeJsonDataFiles();
 
-    const markdownWatcher = chokidar.watch([POSTS_DIR, AUTHORS_DIR]);
+    const markdownWatcher = chokidar.watch([ARTICLES_DIR, AUTHORS_DIR]);
     markdownWatcher.on('change', (filePath) => {
       if (statSync(filePath).isFile()) {
         writeJsonDataFiles({ markdownFilePaths: [filePath] });

@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: HugoDurand
 name: Hugo DURAND
 ---
