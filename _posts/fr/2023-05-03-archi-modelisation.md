@@ -18,7 +18,7 @@ Aujourd’hui, je vais vous faire une présentation d’ARCHI, un outil de modé
 
 ## Norme et Urbanisation
 
-Avant de parler de l’outil, parlons un peu d’urbanisation. En tant qu’architecte, notre préoccupation première est, à mon sens, faciliter la communication et le partage d’informations entre les différentes parties prenantes d’un projet, d’une équipe ou d’une entreprise, ce qui implique de trouver un langage commun. J’ai souvent cherché le bon compromis entre représentation technique et fonctionnelle sans trouver forcément chaussure à mon pied. Quand on ajoute la notion de pérennité à cette équation déjà complexe, cela devient impossible. Certain frameworks de modélisation sont trop orientés dev (à mon sens) comme C4 ou BPMN et ne sont pas facilement compréhensibles pour des personnes hors de la cible première.
+Avant de parler de l’outil, parlons un peu d’urbanisation. En tant qu’architecte, notre préoccupation première est, à mon sens, faciliter la communication et le partage d’informations entre les différentes parties prenantes d’un projet, d’une équipe ou d’une entreprise, ce qui implique de trouver un langage commun. J’ai souvent cherché le bon compromis entre représentation technique et fonctionnelle sans trouver forcément chaussure à mon pied. Quand on ajoute la notion de pérennité à cette équation déjà complexe, cela devient impossible. Certains frameworks de modélisation sont trop orientés dev (à mon sens) comme C4 ou BPMN et ne sont pas facilement compréhensibles pour des personnes hors de la cible première.
 Dans le cas de C4 que j’ai beaucoup utilisé, même s’il existe des éditeurs maintenant, le coté “implémentation” de la documentation limite très souvent l’utilisation par rapport à un [draw.io](http://draw.io) ou solution équivalente.
 
 À l’inverse, [draw.io](http://draw.io) est un super outil mais n’offre pas beaucoup de cadre et, même avec des templates prédéfinis, vous aurez beaucoup de mal à avoir un rendu homogène entre les utilisateurs.
@@ -31,17 +31,16 @@ ArchiMate offre un langage commun pour décrire la construction et le fonctionne
 
 Les principaux concepts et éléments du langage ArchiMate sont présentés sous le nom d'ArchiMate Core Framework, qui se compose de trois “layers” et de trois “aspects”. Cela crée une matrice de combinaisons. Chaque couche à ses aspects “Passive Structure”, “Behavior” et “Active Structure”.
 
-<figure style="text-align: center; margin: 2rem 0;">
-  ![Matrice Archimate]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/core_framework_archimate.jpeg)
-</figure>
+![Matrice Archimate]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/core_framework_archimate.jpeg)
 
-D'après Wikipedia : 
+
+D'après Wikipedia :
 
 ### Layer
 
 - La couche Business concerne les processus, services, fonctions et événements des unités commerciales. Cette couche "offre des produits et des services à des clients externes, qui sont réalisés dans l'organisation par des processus commerciaux exécutés par des acteurs et des rôles commerciaux".
 - La couche Application concerne les applications logicielles qui "soutiennent les composants de l'entreprise avec des services d'application".
-- La couche Technologie concerne "le matériel et l'infrastructure de communication pour soutenir la couche Application. Cette couche offre les services d'infrastructure nécessaires à l'exécution des applications, réalisés par du matériel informatique et de communication et des logiciels système".
+- La couche Technologie concerne "le matériel et l'infrastructure de communication pour soutenir la couche Application. Cette couche offre les services d'infrastructure nécessaires à l'exécution des applications, réalisés par du matériel informatique et de communication et des logiciels systèmes".
 
 ### Aspects
 
