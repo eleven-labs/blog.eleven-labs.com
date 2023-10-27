@@ -49,13 +49,9 @@ Il encourage la collaboration fluide entre les designers et les développeurs, s
 
 Grâce à sa structure modulaire, un Design System est facile à maintenir et à mettre à jour, assurant la cohérence à long terme.
 
-- **Composants de présentation uniquement :**
+- **Composants de présentation uniquement et indépendant des données :**
 
-Dans l'implémentation technique, un principe clé est que le Design System ne doit contenir que des composants responsables de la présentation : l'affichage de l'interface utilisateur et son comportement, sans aucune logique liée aux données métier qui seront affichées à l'intérieur de ces composants, par exemple.
-
-- **Indépendant des données et de son chargement :**
-
-Il est conçu pour être indépendant des données et de leur chargement, se concentrant sur l'apparence et l'interaction, sans être lié aux sources de données spécifiques.
+L'implémentation technique du Design System repose sur un principe clé : les composants du Design System ne doivent contenir que des éléments liés à la présentation de l'interface utilisateur et à son comportement. Ils ne doivent en aucun cas inclure de logique associée aux données métier qui seront affichées à l'intérieur de ces composants, et ils doivent rester indépendants des sources de données spécifiques, se concentrant exclusivement sur l'apparence et l'interaction.
 
 ### Les éléments graphiques essentiels
 
@@ -64,7 +60,7 @@ Au cœur du Design System se trouvent des éléments graphiques essentiels qui j
 - **Couleurs :** Les palettes de couleurs définies garantissent une identité visuelle cohérente
 - **Typographies :** Les choix de police, les tailles et l'épaisseur de texte ...
 - **Espacements :** Les directives sur l'espacement, la hiérarchie de l'information et la grille contribuent à une mise en page cohérente
-- **Icons :** Ils standardisées facilitent la reconnaissance des actions et des fonctionnalités
+- **Icônes :** Ils standardisées facilitent la reconnaissance des actions et des fonctionnalités
 - **Logos et illustrations :** Les logos de la marque et les illustrations définissent l'identité visuelle et renforcent la reconnaissance de la marque
 
 ### Exemples de Design System en Production
@@ -98,7 +94,7 @@ Ces exemples illustrent comment les Design Systems peuvent améliorer la cohére
 
 ## Pourquoi avez-vous besoin d'un Design System ?
 
-Maintenant que nous avons exploré les principes et les composants fondamentaux d'un Design System, il est temps de comprendre pourquoi les organisations ont besoin de mettre en place une telle ressource. Voici les avantages majeurs d'un Design System:
+Maintenant que nous avons exploré les principes et les composants fondamentaux d'un Design System, il est temps de comprendre pourquoi les organisations ont besoin de mettre en place une telle ressource. Voici les avantages d'un Design System :
 
 - **Accélération du processus de développement :**
 
@@ -116,7 +112,7 @@ Le Design System élimine les redondances et assure que tous les éléments sont
 
 La cohérence visuelle garantie par un Design System renforce la marque et l'identité visuelle de l'organisation. Les utilisateurs reconnaissent rapidement les éléments de la marque, renforçant ainsi la confiance et la fidélité.
 
-- **amélioration de l'expérience utilisateur :**
+- **Amélioration de l'expérience utilisateur :**
 
 Un Design System assure à la fois une expérience utilisateur cohérente. Les utilisateurs bénéficient d'une navigation fluide et d'une interaction intuitive avec l'application ou le site web, tout en étant assurés que les composants de conception fonctionnent correctement tout en étant visuellement harmonieux.
 
@@ -210,11 +206,11 @@ Du point de vue technique, la création d'un Design System pour du Web implique 
 
 - **Styles avec PostCSS ou CSS-in-JS :**
 
-Pour définir les styles et les Design Tokens, vous avez le choix entre des outils tels que PostCSS, SCSS, avec l'utilisation de la méthodologie BEM, ou du CSS-in-JS. Ces approches offrent une manière structurée et maintenable de gérer les styles, en garantissant la cohérence et la réutilisabilité.
+Pour définir les styles et les Design Tokens, vous avez le choix entre des outils tels que PostCSS, SCSS, avec l'utilisation de la méthodologie [BEM](/fr/retour-d-experience-sur-bem/), ou du CSS-in-JS. Ces approches offrent une manière structurée et maintenable de gérer les styles, en garantissant la cohérence et la réutilisabilité.
 
-- **Composants Web ou bibliothèque (React, VueJS, ...) :**
+- **Web Components ou bibliothèque (React, VueJS, ...) :**
 
-Les composants de votre Design System peuvent être construits en utilisant des composants web natifs, ou vous pouvez opter pour une bibliothèque de composants telle que React ou VueJS, en fonction de vos besoins spécifiques et de l'écosystème technologique de votre projet. Une alternative consiste à personnaliser une bibliothèque de composants existante, telle que Material-UI pour React, pour répondre à vos exigences particulières.
+Les composants de votre Design System peuvent être construits en utilisant des Web Components, ou vous pouvez opter pour une bibliothèque de composants telle que React ou VueJS, en fonction de vos besoins spécifiques et de l'écosystème technologique de votre projet. Une alternative consiste à personnaliser une bibliothèque de composants existante, telle que Material-UI pour React, pour répondre à vos exigences particulières.
 
 - **Typescript :**
 
@@ -229,16 +225,20 @@ Le choix des outils et des technologies dépendra de la préférence de l'équip
 
 La création d'un Design System est une entreprise multidisciplinaire qui exige une collaboration étroite entre les différents métiers impliqués. Voici comment chaque rôle contribue au succès du projet :
 
-- *Les UX/UI Designers* façonnent l'esthétique, l'ergonomie et l'expérience utilisateur du Design System. Leur expertise garantit que les composants et les directives répondent aux besoins de conception, assurant ainsi une cohérence visuelle et fonctionnelle.
+- **Les UX/UI Designers** façonnent l'esthétique, l'ergonomie et l'expérience utilisateur du Design System. Leur expertise garantit que les composants et les directives répondent aux besoins produits, assurant ainsi une cohérence visuelle et fonctionnelle.
 
-- *Les PO/PM* jouent un rôle crucial en alignant le Design System avec les objectifs commerciaux et les besoins des utilisateurs. Leur compréhension des priorités et des fonctionnalités essentielles guide le développement de composants pertinents.
+- **Les Product Managers/Product Owners** jouent un rôle crucial en alignant le Design System avec les objectifs commerciaux et les besoins des utilisateurs. Leur compréhension des priorités et des fonctionnalités essentielles guide le développement de composants pertinents.
 
-- *Les Développeurs* transforment la vision du Design System en réalité. Leur rôle consiste à mettre en œuvre les composants de manière efficace et à garantir qu'ils sont techniquement réalisables.
+- **Les développeurs** transforment la vision du Design System en réalité. Leur rôle consiste à mettre en œuvre les composants de manière efficace et à garantir qu'ils sont techniquement réalisables.
+
+Dans certaines organisations, chacun de ces acteurs peut se concentrer exclusivement sur la construction du Design System, tandis que dans d'autres travaillent simultanément sur le Design System et d'autres produits métier qui intègrent ce Design System. De plus, de nouveaux métiers, tels que les Design Ops, ont émergé pour assurer la gestion du Design System et la coordination des équipes de produits qui l'utilisent.
 
 L'organisation est un acteur clé de cette collaboration en veillant à ce que tous les membres de l'équipe aient accès aux composants et aux directives nécessaires. La mise en place de mécanismes de communication et de partage efficaces est essentielle pour assurer la cohérence et la pérennité du Design System.
 
-Pour approfondir l'importance de cette collaboration, nous vous invitons à consulter notre [article]((/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/)) qui traite de ce sujet ainsi que des design tokens.
+Pour approfondir l'importance de cette collaboration, nous vous invitons à consulter notre [article qui traite de ce sujet ainsi que des design tokens](/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/).
 
 ## Conclusion
 
-Et voilà, vous êtes maintenant prêt à démarrer votre propre Design System. En mettant en place des principes clés de cohérence, réutilisabilité, modularité et en favorisant la collaboration, vous pouvez renforcer votre organisation. Que vous soyez une grande entreprise ou une start-up, un Design System accélérera le développement, améliorera la productivité, réduira les erreurs et renforcera votre marque. Restez à l'affût pour des articles futurs approfondis et des astuces pour optimiser votre Design System. En attendant, profitez des avantages du Design System pour garantir la cohérence dans tous vos projets de conception.
+Et voilà, vous êtes à présent prêt à lancer votre propre Design System. En instaurant des principes clés tels que la cohérence, la réutilisabilité, la modularité, et en encourageant la collaboration, vous renforcerez votre organisation. Que vous soyez une grande entreprise ou une start-up, un Design System accélérera le développement, améliorera la productivité, réduira les erreurs et renforcera votre image de marque.
+
+Au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application), nous faisons usage de Design Systems dans nos projets internes et pour nos clients, afin de tirer parti de tous les avantages évoqués dans cet article. Restez à l'affût pour de futurs articles approfondis et des astuces visant à optimiser votre Design System !
