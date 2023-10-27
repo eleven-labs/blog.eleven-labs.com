@@ -11,6 +11,8 @@ authors:
     - fpasquet
 ---
 
+Dans cet article, je vais vous présenter le concept du Design System que nous mettons en place pour nos clients au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application). Plongez dans le monde du Design System pour comprendre comment il assure la cohérence visuelle et fonctionnelle dans la conception. Explorez ce qu'est un Design System, pourquoi il est essentiel, le moment propice pour envisager sa création, ainsi que les étapes pour créer un Design System.
+
 ## Qu'est-ce qu'un Design System ?
 
 Un Design System est un écosystème qui rassemble des éléments graphiques, des typographies, des palettes de couleurs, de la documentation et des directives d'utilisation, le tout au sein d'une organisation. Il constitue une ressource essentielle pour garantir la cohérence visuelle et fonctionnelle dans tous les aspects de la conception d'un produit ou d'une marque. Il va bien au-delà de la simple charte graphique ou du kit d'interface utilisateur en mettant l'accent sur des principes et des fondamentaux clés.
@@ -216,7 +218,7 @@ Les composants de votre Design System peuvent être construits en utilisant des 
 
 - **Typescript :**
 
-L'intégration de TypeScript peut améliorer la maintenabilité et la fiabilité de votre Design System en ajoutant un typage statique à votre code. Cela aide à réduire les erreurs potentielles et à faciliter la collaboration entre les équipes de conception et de développement.
+L'intégration de TypeScript représente un atout considérable dans le développement de votre Design System en raison de son typage fort, qui contribue significativement à la qualité et à la robustesse du code. Cette approche renforce la maintenabilité du système en éliminant de nombreuses erreurs potentielles dès la phase de développement, tout en améliorant la collaboration entre les équipes de conception et de développement. Grâce à l'autocomplétion avancée fournie par TypeScript, les développeurs n'ont souvent pas besoin de consulter fréquemment la documentation, ce qui accélère considérablement leur productivité.
 
 <div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
 
@@ -225,7 +227,17 @@ Le choix des outils et des technologies dépendra de la préférence de l'équip
 
 ### Organisation et collaboration
 
-La création d'un Design System nécessite une collaboration étroite entre les métiers de l'UX/UI, les chefs de produit et les développeurs. Les équipes doivent travailler de concert pour garantir que le Design System répond aux besoins de conception tout en étant réalisable du point de vue du développement. L'organisation joue un rôle clé dans la réussite du projet, en veillant à ce que tous les membres de l'équipe aient accès aux composants et aux directives nécessaires. Pour approfondir l'importance de cette collaboration, nous vous invitons à consulter notre [article]((/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/)) qui traite de ce sujet ainsi que des design tokens.
+La création d'un Design System est une entreprise multidisciplinaire qui exige une collaboration étroite entre les différents métiers impliqués. Voici comment chaque rôle contribue au succès du projet :
+
+- *Les UX/UI Designers* façonnent l'esthétique, l'ergonomie et l'expérience utilisateur du Design System. Leur expertise garantit que les composants et les directives répondent aux besoins de conception, assurant ainsi une cohérence visuelle et fonctionnelle.
+
+- *Les PO/PM* jouent un rôle crucial en alignant le Design System avec les objectifs commerciaux et les besoins des utilisateurs. Leur compréhension des priorités et des fonctionnalités essentielles guide le développement de composants pertinents.
+
+- *Les Développeurs* transforment la vision du Design System en réalité. Leur rôle consiste à mettre en œuvre les composants de manière efficace et à garantir qu'ils sont techniquement réalisables.
+
+L'organisation est un acteur clé de cette collaboration en veillant à ce que tous les membres de l'équipe aient accès aux composants et aux directives nécessaires. La mise en place de mécanismes de communication et de partage efficaces est essentielle pour assurer la cohérence et la pérennité du Design System.
+
+Pour approfondir l'importance de cette collaboration, nous vous invitons à consulter notre [article]((/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/)) qui traite de ce sujet ainsi que des design tokens.
 
 ## Conclusion
 
