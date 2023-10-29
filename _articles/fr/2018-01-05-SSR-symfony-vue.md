@@ -9,7 +9,7 @@ excerpt: >-
   Symfony et un framework client type Vue.js. D'ailleurs on trouve énormément
   d'articles sur le sujet. La question que l'on se pose le plus souvent, c'est
   comment rendre ces choix technologiques performants.
-cover: /assets/2018-01-05-SSR-symfony-vue/cover.jpg
+cover: /assets/{BASE_URL}/imgs/articles/2018-01-05-SSR-symfony-vue/cover.jpg
 categories:
   - javascript
 authors:
@@ -159,7 +159,7 @@ Dans votre fichier twig vous devez appeler le fichier généré par webpack en a
 
 Voilà, vous devez avoir un site symfony 4 qui vous affiche `Hello world` en vue.js. Si vous désactivez le javascript, vous n'aurez que le `salut` qui s'affiche.
 
-![Demo1]({{site.baseurl}}/assets/2018-01-05-SSR-symfony-vue/demo1.png)
+![Demo1]({BASE_URL}/imgs/articles/2018-01-05-SSR-symfony-vue/demo1.png)
 
 ## Faire du SSR
 
@@ -171,7 +171,7 @@ Mais ici, nous voulons garder notre serveur Symfony (pour plein de raison que je
 
 Tout d'abord nous allons créer deux fichiers d'entrée pour vue.js, parce qu'il faut appeler des fonctions différentes pour l'affichage dans le client et dans le serveur.
 
-![App.js]({{site.baseurl}}/assets/2018-01-05-SSR-symfony-vue/appjs.png)
+![App.js]({BASE_URL}/imgs/articles/2018-01-05-SSR-symfony-vue/appjs.png)
 
 Commençons par créer le fichier `assets/js/entry-client.js` qui permet de "monter" l'application sur l'id `#app`
 
@@ -285,7 +285,7 @@ Et dans le twig vous pouvez mettre la valeur `raw` de `ssr`.
 
 Si tout est ok, votre page affichera "Hello World" directement dans votre code source.
 
-![CodeSource]({{site.baseurl}}/assets/2018-01-05-SSR-symfony-vue/source.png)
+![CodeSource]({BASE_URL}/imgs/articles/2018-01-05-SSR-symfony-vue/source.png)
 
 ## Conclusion
 

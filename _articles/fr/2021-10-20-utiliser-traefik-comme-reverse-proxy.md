@@ -15,7 +15,7 @@ keywords:
   - devops
 ---
 
-![Cover]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg)
+![Cover]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg)
 
 ## Introduction
 
@@ -37,7 +37,7 @@ Il existe beaucoup de solutions de reverse proxy sur le marché mais nous allons
 
 Bien sûr pour que tout fonctionne, vous devez disposer d'un nom de domaine (dans mon cas wilson.net) et faire pointer les différentes zones dns sur votre serveur.
 
-![Mes zones dns](/_assets/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/11-zones.jpg)
+![Mes zones dns]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/11-zones.jpg)
 
 Sinon vous pouvez aussi simuler un nom de domaine dans votre fichier `/etc/hosts` mais dans ce cas la génération d'un certificat SSL ne sera pas possible.
 
@@ -50,7 +50,7 @@ Pour commencer, vous devez mettre en place Traefik sur un serveur accessible à 
 
 Pour moi, ce sera la machine 192.168.0.1 : c'est celle sur laquelle je redirige les ports 80 (HTTP) et 443 (HTTPS) de ma freebox.
 
-![Mes ports dans la freebox]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/01-ports.jpg)
+![Mes ports dans la freebox]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/01-ports.jpg)
 
 Vous pouvez aussi bien installer l'exécutable, compiler le logiciel à partir de ses sources ou bien comme dans notre exemple, le déployer avec une image Docker.
 
@@ -95,11 +95,11 @@ Nous pouvons ensuite lancer notre service de reverse proxy en nous trouvant dans
 docker-compose up -d
 ```
 
-![Démarrage de traefik avec docker-compose]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/02-docker-compose-up.jpg)
+![Démarrage de traefik avec docker-compose]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/02-docker-compose-up.jpg)
 
 Bien sûr si on visite la page de notre serveur, on obtient pour le moment une petite 404, mais c'est déjà la preuve qu'il est là et qu'il n'attend plus que de nous servir un contenu.
 
-![Traefik renvoie une 404]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/03-nothing-for-the-moment.jpg)
+![Traefik renvoie une 404]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/03-nothing-for-the-moment.jpg)
 
 ## Configurer le tableau de bord
 
@@ -136,7 +136,7 @@ Comme nous ne voulons pas l'installer sur notre belle machine, nous allons faire
 docker run --rm --name apache httpd:alpine htpasswd -nb wilson schizo
 ```
 
-![Génération du mot de passe]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/04-password.jpg)
+![Génération du mot de passe]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/04-password.jpg)
 
 Dans cet exemple, *wilson* est mon login tandis que *schizo* sera mon mot de passe.
 
@@ -185,14 +185,14 @@ docker-compose up -d
 
 Voici ce que j'obtiens quand j'accède à l'url définie dans ma règle de routage plus haut :
 
-![Dashboard]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/05-dashboard.jpg)
+![Dashboard]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/05-dashboard.jpg)
 
 
 ## Reverse proxy d'un site accessible sur le réseau local
 
 J'ai sur mon réseau mon nas, que je souhaiterais rendre accessible de l'extérieur.
 
-![Mon nas synology]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/06-nas-http.jpg)
+![Mon nas synology]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/06-nas-http.jpg)
 
 Il va falloir le déclarer par le provider `file` car il ne peut pas être découvert automatiquement comme avec Docker.
 
@@ -269,7 +269,7 @@ docker-compose up -d
 
 Voilà, quand j'accède maintenant à mon nas par le host déclaré plus haut j'ai cela :
 
-![Mon nas synology reversed]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/07-nas-reversed.jpg)
+![Mon nas synology reversed]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/07-nas-reversed.jpg)
 
 
 ## Génération d'un certificat SSL
@@ -367,11 +367,11 @@ docker-compose up -d
 
 Une fois ceci fait, j'ai un accès à mon nas sécurisé par HTTPS :D
 
-![Mon nas synology https]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/08-nas-https.jpg)
+![Mon nas synology https]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/08-nas-https.jpg)
 
 Et puis bien sûr, je peux le voir aussi dans mon dashboard traefik :
 
-![Mon nas synology dashboard]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/09-traefik-dashboard-nas.jpg)
+![Mon nas synology dashboard]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/09-traefik-dashboard-nas.jpg)
 
 ## Reverse proxy de services tournants sous Docker
 
@@ -440,7 +440,7 @@ docker-compose up -d
 
 Nous pouvons maintenant utiliser Home Assistant, et ce directement en https ;)
 
-![Home Assistant]({{ site.baseurl }}/assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/10-home-assistant.jpg)
+![Home Assistant]({BASE_URL}/imgs/articles/2019-12-18-utiliser-traefik-comme-reverse-proxy/10-home-assistant.jpg)
 
 J'espère que vous avez apprécié cet article et que vous allez prendre beaucoup de plaisir à jouer avec traefik.
 

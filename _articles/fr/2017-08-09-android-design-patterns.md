@@ -70,7 +70,7 @@ Plusieurs choses ont changé :
 
 Rien de mieux qu'un schéma pour illustrer une implémentation MVC
 
-![MVC Android](/_assets/articles/2017-08-02-android-design-pattern/mvc.png)
+![MVC Android]({BASE_URL}/imgs/articles/2017-08-02-android-design-pattern/mvc.png)
 
 Maintenant essayons d'attribuer chaque partie constituant un projet Android à un élément de ce pattern, on se retrouve avec :
 - **Modèle** : Une classe qui contiendra notre modèle (jusque-là rien de particulier)
@@ -128,7 +128,7 @@ La seconde méthode, beaucoup moins jolie, consiste à se fabriquer des vues per
 
 Au final, si l'on veut respecter scrupuleusement cette implémentation, on se retrouve obligé de tordre le code pour créer le lien entre la vue et son modèle, sinon on se retrouve avec quelque chose qui ressemble étrangement à du MVP (voir MVVM)
 
-![MVC / MVP Android](/_assets/articles/2017-08-02-android-design-pattern/mvp-mvc-android.jpg)
+![MVC / MVP Android]({BASE_URL}/imgs/articles/2017-08-02-android-design-pattern/mvp-mvc-android.jpg)
 
 <span style="color:green">+</span>
 ----------
@@ -148,7 +148,7 @@ Au final, si l'on veut respecter scrupuleusement cette implémentation, on se re
 
 Encore une fois, un schéma pour expliquer l'implémentation d'un MVP
 
-![MVP Android](/_assets/articles/2017-08-02-android-design-pattern/mvp.png)
+![MVP Android]({BASE_URL}/imgs/articles/2017-08-02-android-design-pattern/mvp.png)
 
 La différence la plus marquante avec le MVC est la disparition de l'interaction entre la vue et le modèle. Cette absence d'interaction tombe à pic pour Android, car on se retrouve avec l'intégration suivante :
 - **Modèle** : Une classe qui contiendra notre modèle
@@ -194,7 +194,7 @@ La présentation, c'est-à-dire celle qui va indiquer quel contenu mettre dans q
 
 Enfin le dernier Design Pattern structurant parmi les plus utilisés est le MVVM.
 
-![MVVM Android](/_assets/articles/2017-08-02-android-design-pattern/mvvm.png)
+![MVVM Android]({BASE_URL}/imgs/articles/2017-08-02-android-design-pattern/mvvm.png)
 
 Il se distingue grandement des deux précédents car il attribue beaucoup plus d'intelligence à la vue ainsi qu'au ViewModel.
 

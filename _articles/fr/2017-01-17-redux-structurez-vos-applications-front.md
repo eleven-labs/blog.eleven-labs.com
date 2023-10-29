@@ -23,7 +23,7 @@ Historiquement, le besoin s'est fait sentir sur [React](https://facebook.github
 
 Le principe est le suivant :
 
-![](/_assets/articles/2017-01-17-redux-structurez-vos-applications-front/flux-diagram.png)
+![]({BASE_URL}/imgs/articles/2017-01-17-redux-structurez-vos-applications-front/flux-diagram.png)
 
 Votre application déclare, pour chaque composant, les `actions`  qui lui sont liées. Ces actions permettent de définir l'état de votre composant, stocké dans un `store` , qui permet de maintenir votre `vue`  à jour.
 L'inconvénient est que dans ce cas, vous avez un store par composant. Ce modèle fonctionne pour React mais vous pouvez vous sentir limité sur certaines applications.

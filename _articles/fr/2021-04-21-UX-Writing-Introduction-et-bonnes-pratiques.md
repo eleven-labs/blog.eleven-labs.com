@@ -39,7 +39,7 @@ Cette communication est construite au travers de la rédaction des différents c
 Pour remplir son objectif, l’UX Writer participe à la définition de l’expérience utilisateur au travers du langage, grâce à sa compréhension des utilisateurs. De cette façon, l’UX Writing n’est pas distincte de l’UX Design et de l’UX Research, mais complémentaire. En effet, l’UX Writer se nourrira de la compréhension utilisateur pour concevoir la hiérarchie de l’information ou encore le contenu même de ces informations. Une fois rédigés, ces textes pourront ensuite être testés et évolueront à partir des retours utilisateurs, par itération.
 
 
-![Illustration des interactions entre UX Writer, UX Designer et UX Researcher]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationUXWriting.png)
+![Illustration des interactions entre UX Writer, UX Designer et UX Researcher]({BASE_URL}/imgs/articles/2021-04-21-UX-Writing/IllustrationUXWriting.png)
 
 (Image tirée de l'article de G. Ligertwood (2017) [sur l'UX Writing](https://uxplanet.org/ux-writing-how-to-do-it-like-google-with-this-powerful-checklist-e263cc37f5f1))
 
@@ -68,7 +68,7 @@ Comme nous l’avons dit précédemment, l’UX Writer doit comprendre les utili
 
 Coutumiers du digital, je ne vous apprendrai rien en vous disant que ces étapes de recherches, hypothèses, tests et analyses sont au cœur même de la méthode UX générale consistant en 5 étapes  : 
 
-![Illustration de la méthodologie UX]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationMéthode.png)
+![Illustration de la méthodologie UX]({BASE_URL}/imgs/articles/2021-04-21-UX-Writing/IllustrationMéthode.png)
 
 
 Il est important de comprendre que la démarche présentée n’est pas linéaire et de nombreux allers-retours entre les étapes peuvent se produire. Par exemple, il est possible de constituer des premières hypothèses en (2) Exploration qui seront revues dans la phase de (4) Génération avant même d’entrer en phase (5) d’Évaluation.
@@ -86,7 +86,7 @@ L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux 
 - Au sein des paragraphes aussi, commencez par les informations principales puis présentez le détail afin de leur permettre d’identifier rapidement les informations essentielles à votre discours 
 
 
-![Illustration de la règle d'ordre]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationOrdre.png)
+![Illustration de la règle d'ordre]({BASE_URL}/imgs/articles/2021-04-21-UX-Writing/IllustrationOrdre.png)
 
 
 
@@ -95,7 +95,7 @@ L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux 
 - Chaque sous-groupe d’informations doit contenir un ensemble limité de concepts, distincts les uns des autres
 
 
-![Illustration de la règle de catégorisation]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationSeparation.png)
+![Illustration de la règle de catégorisation]({BASE_URL}/imgs/articles/2021-04-21-UX-Writing/IllustrationSeparation.png)
 
 
 
@@ -108,7 +108,7 @@ L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux 
     - Clair : Utilisez un langage simple pour favoriser la compréhension et la satisfaction des utilisateurs 
 
 
-![Illustration de la règle de label]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationTitre.png)
+![Illustration de la règle de label]({BASE_URL}/imgs/articles/2021-04-21-UX-Writing/IllustrationTitre.png)
 
 
 
@@ -117,7 +117,7 @@ L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux 
 - Une règle de pouce est d’[éviter les phrases au-delà de 14 mots](https://medium.com/@scottydocs/what-is-the-perfect-sentence-length-4690ce8d5048) - attention toutefois, ne faites pas que des phrases de 14 mots pour éviter un ton trop monotone
 
 
-![Illustration de la règle de concision]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationConcis.png)
+![Illustration de la règle de concision]({BASE_URL}/imgs/articles/2021-04-21-UX-Writing/IllustrationConcis.png)
 
 
 
@@ -126,7 +126,7 @@ L’UX consacrée aux textes n’est pas un domaine récent en soi. De nombreux 
 - La communication avec l’utilisateur doit être cohérente sur l’ensemble du produit 
 
 
-![Illustration de la règle d'homogénéité]({{ site.baseurl }}/assets/2021-04-21-UX-Writing/IllustrationHomogeneite.png)
+![Illustration de la règle d'homogénéité]({BASE_URL}/imgs/articles/2021-04-21-UX-Writing/IllustrationHomogeneite.png)
 
 
 ## En conclusion

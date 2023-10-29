@@ -20,11 +20,11 @@ keywords:
 
 Nous sommes allés au Symfony Live Paris en force cette année ! En tant que sponsor Gold, nous avions notre stand et avons pu rencontrer plein de symfoniens.
 
-![photo 2](/_assets/articles/2014-04-10-eleven-labs-au-symfony-live-paris-2014/photo-2.jpg)
+![photo 2]({BASE_URL}/imgs/articles/2014-04-10-eleven-labs-au-symfony-live-paris-2014/photo-2.jpg)
 
 Et tout le monde a pu tester le photomaton Eleven Labs (vous pouvez voir toutes les photos [ici](https://www.facebook.com/11Labs)).  On espère que vous en avez profité pour immortaliser des moments magiques avec les astronautes, Mario et Jurassic Park ! Voici quand même LE selfie de l’événement (oui, nous espérons battre [celui des Oscars](http://i.cbc.ca/1.2571222.1394724679!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/ellen-degeneres-s-oscar-selfie.jpg))  :)
 
-![BkpLVSjIUAAHEBA](/_assets/articles/2014-04-10-eleven-labs-au-symfony-live-paris-2014/bkplvsjiuaaheba.jpg)
+![BkpLVSjIUAAHEBA]({BASE_URL}/imgs/articles/2014-04-10-eleven-labs-au-symfony-live-paris-2014/bkplvsjiuaaheba.jpg)
 
 Mais parlons des conférences qui nous ont paru les plus intéressantes.
 
@@ -54,4 +54,4 @@ Vivement SymfonyCon Madrid !
 
 P.S.: Have you been Stoffed yet?
 
-![You've been Stoffed!](/_assets/articles/2014-04-10-eleven-labs-au-symfony-live-paris-2014/stoffed.png)
+![You've been Stoffed!]({BASE_URL}/imgs/articles/2014-04-10-eleven-labs-au-symfony-live-paris-2014/stoffed.png)

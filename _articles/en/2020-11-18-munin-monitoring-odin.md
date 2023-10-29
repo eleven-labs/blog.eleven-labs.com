@@ -83,7 +83,7 @@ sudo service munin-node restart
 
 The static files of the web interface should now be available in the folder indicated previously in the configuration (line `htmldir`):
 
-![]({{ site.baseurl }}/assets/2020-04-29-munin-monitoring-odin/eleven-master.png)
+![]({BASE_URL}/imgs/articles/2020-04-29-munin-monitoring-odin/eleven-master.png)
 
 The monitoring of your "Master" machine is now set up. Now let's see what happens next.
 
@@ -140,6 +140,6 @@ sudo service munin-node restart
 
 After a few minutes, by the time Munin retrieves the information from the newly added Node, you should see your second machine appear in the web interface:
 
-![]({{ site.baseurl }}/assets/2020-04-29-munin-monitoring-odin/eleven-node.png)
+![]({BASE_URL}/imgs/articles/2020-04-29-munin-monitoring-odin/eleven-node.png)
 
 Your instance of Munin is now fully set up. You can configure specific monitoring tools (apache, mysql, nginx, etc) at any time, thanks to [plugins from the community](http://gallery.munin-monitoring.org/).

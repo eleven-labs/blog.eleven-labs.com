@@ -49,7 +49,7 @@ Voici le fonctionnement global du `broker` :
 > Le `publisher` va envoyer un `message` dans un `exchange` qui va, en fonction du `binding`, router le `message` vers la ou les `queues`.
 > Ensuite un `consumer` va consommer les messages.
 
-![RabbitMQ Broker]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-broker.jpg)
+![RabbitMQ Broker]({BASE_URL}/imgs/articles/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-broker.jpg)
 
 Nous allons donc détailler les différents éléments qui composent le `broker`.
 
@@ -83,19 +83,19 @@ Un `exchange` est un routeur de message. Il existe différents types de routages
 
 *Cet exchange est auto bindé avec toutes les `queues` avec une `routing key` égale au nom de la queue.*
 
-![RabbitMQ Exchange default]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-default.jpg)
+![RabbitMQ Exchange default]({BASE_URL}/imgs/articles/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-default.jpg)
 
 ### L'exchange type fanout
 
 L'`exchange` `fanout` est le plus simple. En effet il délivre le message à **toutes** les queues bindées.
 
-![RabbitMQ Exchange Fanout]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-fanout.jpg)
+![RabbitMQ Exchange Fanout]({BASE_URL}/imgs/articles/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-fanout.jpg)
 
 ### L'exchange type direct
 
 L'`exchange` `direct` n'autorise que le binding utilisant strictement la `routing key`.
 
-![RabbitMQ Exchange Direct]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-direct.jpg)
+![RabbitMQ Exchange Direct]({BASE_URL}/imgs/articles/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-direct.jpg)
 
 Si la `routing_key` du message est strictement égale à la `routing_key` spécifiée dans le binding alors le message sera délivré à la queue.
 
@@ -105,7 +105,7 @@ Si la `routing_key` du message est strictement égale à la `routing_key` spéci
 
 L'`exchange` `topic` délivre le message si `routing_key` du message matche le pattern défini dans le binding.
 
-![RabbitMQ Exchange Topic]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-topic.jpg)
+![RabbitMQ Exchange Topic]({BASE_URL}/imgs/articles/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-topic.jpg)
 
 Une `routing key` est composé de plusieurs segments séparés par des `.`. Il y a également 2 caractères utilisés dans le matching.
 
@@ -131,7 +131,7 @@ Par exemple pour la `routing key` `foo.bar.baz`
 
 L'`exchange` `headers` délivre le message si les `headers` du binding matchent les headers du message.
 
-![RabbitMQ Exchange Headers]({{site.baseurl}}/assets/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-headers.jpg)
+![RabbitMQ Exchange Headers]({BASE_URL}/imgs/articles/2018-03-11-rabbitmq-partie-1-les-bases/rabbitmq-exchange-headers.jpg)
 
 L'option `x-match` dans le binding permet de définir si **un seul** header ou **tous** doivent matcher.
 

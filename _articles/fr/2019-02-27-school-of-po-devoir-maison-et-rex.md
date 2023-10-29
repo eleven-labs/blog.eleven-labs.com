@@ -72,7 +72,7 @@ Ensuite, la variable du **temps** qui peut rendre obsolète le produit (un autre
 
 Ou encore la variable **humaine**, qui rend la perception très subjective et qui va faire connaître son avis à son entourage.
 
-![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/maximpact_mineffort.jpg)
+![]({BASE_URL}/imgs/articles/2019-02-27-school-of-po-devoir-maison-et-rex/maximpact_mineffort.jpg)
 
 ### Besoin d’adaptabilité
 
@@ -160,7 +160,7 @@ Un autre exemple, au contraire, pourrait être de partager une anecdote avec 3 p
 
 ### Daily basis ?
 
-![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/own-your-product.jpg)
+![]({BASE_URL}/imgs/articles/2019-02-27-school-of-po-devoir-maison-et-rex/own-your-product.jpg)
 
 La limite de la proposition qu’il faut, je pense, ne pas oublier, est que chaque mesure est basée sur des hypothèses. Et cela peut laisser un grand flou.
 
@@ -228,7 +228,7 @@ Deux types d’hypothèses sont à dissocier :
 
 Nous nous sommes prêtés à l’exercice par groupes d’environ 6 personnes.
 
-![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/arbre-hypotheses.jpg)
+![]({BASE_URL}/imgs/articles/2019-02-27-school-of-po-devoir-maison-et-rex/arbre-hypotheses.jpg)
 
 
  **1. Question**
@@ -379,7 +379,7 @@ D’où l’importance de :
 
 À nos crayons ! On se lance à travers les 6 étapes suivantes pour réaliser en 1h un semblant de design sprint de 5 jours. Challenge accepted pour l’équipe !
 
-![]({{site.baseurl}}/assets/2019-02-27-school-of-po-devoir-maison-et-rex/design_sprint.jpg)
+![]({BASE_URL}/imgs/articles/2019-02-27-school-of-po-devoir-maison-et-rex/design_sprint.jpg)
 
 **1/6 : identifier les challenges potentiels**
 

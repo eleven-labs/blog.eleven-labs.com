@@ -7,8 +7,7 @@ title: Migrate a React client-side application to server-side with Next.JS
 excerpt: >-
   Most of the front-end applications using React that I've been able to work on
   are browser-based (client-side) applications.
-cover: >-
-  /assets/2017-09-03-migrer-une-application-react-client-side-en-server-side-avec-nextjs/cover.jpg
+cover: /assets/2017-09-03-migrer-une-application-react-client-side-en-server-side-avec-nextjs/cover.jpg
 categories:
   - javascript
 authors:

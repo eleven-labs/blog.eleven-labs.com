@@ -19,7 +19,7 @@ keywords:
   - gentoo
 ---
 
-Cette article fait suite à un article intitulé [Je comprends mon noyau GNU/Linux (partie 1)]({{site.baseurl}}/fr/comprendre-kernel-linux/) et en dépend. Si vous ne l'avez pas lu, je vous invite à le faire.
+Cette article fait suite à un article intitulé [Je comprends mon noyau GNU/Linux (partie 1)]({BASE_URL}/fr/comprendre-kernel-linux/) et en dépend. Si vous ne l'avez pas lu, je vous invite à le faire.
 
 Maintenant que nous avons compris de façon générale comment fonctionnait le noyau Linux dans le précédent article, voyons comment le configurer afin, à terme, de le compiler et l'utiliser.
 
@@ -94,13 +94,13 @@ ncurses-dev n'est pas obligatoire mais dans ce cas, vous devrez répondre à aut
 
 Sans ncurses-dev, `make config` :
 
-![Vue make config]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/make_config.png)
+![Vue make config]({BASE_URL}/imgs/articles/2017-12-14-configuring-linux-kernel/make_config.png)
 
 *Have fun ! On se revoit dans 10 jours quand vous aurez fini de configurer votre kernel :troll:*
 
 Avec ncurses-dev, `make menuconfig` (ou `make nconfig` pour un style plus épuré) :
 
-![Vue make menuconfig]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/make_menuconfig.png)
+![Vue make menuconfig]({BASE_URL}/imgs/articles/2017-12-14-configuring-linux-kernel/make_menuconfig.png)
 
 *Bien plus user-friendly*
 
@@ -217,7 +217,7 @@ Kernel hacking, security options, cryptographic API, Virtualization, library rou
 #### Désactiver initrd
 
 Dans notre cas, nous voulions nous passer de l'initrd. Une brève recherche m'indique que je peux trouver cette option dans le menu general setup :
-![Recherche initrd]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/search_initrd.png)
+![Recherche initrd]({BASE_URL}/imgs/articles/2017-12-14-configuring-linux-kernel/search_initrd.png)
 
 Il me suffit de m'y rendre pour le désactiver.
 En faisant ça je m'assure que l'initrd ne pourra jamais être utilisé, ce qui m'oblige à avoir un noyau très épuré, avec les drivers nécessaires au boot compilés en dur dans le Kernel.
@@ -238,13 +238,13 @@ Selects: INTEL_GTT [=y] && INTERVAL_TREE [=y] && SHMEM [=y] && TMPFS [=y] && DRM
 ```
 C'est donc dans le sous-menu graphics support que je vais aller activer l'option si ce n'est pas déjà fait, et désactiver ce qui me semble inutile (c'est à dire d'autres pilotes graphiques).
 
-![Menu graphics]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/graphics.png)
+![Menu graphics]({BASE_URL}/imgs/articles/2017-12-14-configuring-linux-kernel/graphics.png)
 
 Comme vous le voyez, tout est compilé en modules, et quasiment toutes les cartes sont supportées ! Faisons un peu de ménage.
 
-![Twelve seconds later]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/12s.jpg)
+![Twelve seconds later]({BASE_URL}/imgs/articles/2017-12-14-configuring-linux-kernel/12s.jpg)
 
-![Menu graphics propre]({{site.baseurl}}/assets/2017-12-14-configuring-linux-kernel/clean_graphics.png)
+![Menu graphics propre]({BASE_URL}/imgs/articles/2017-12-14-configuring-linux-kernel/clean_graphics.png)
 
 C'est beaucoup plus digeste !
 
@@ -261,5 +261,5 @@ Si vous avez tenté d'optimiser au maximum votre kernel, votre première compila
 
 Cette article est le second d'une série de trois. Vous pouvez retrouver le précédent et le suivant ci-dessous :
 
-- [Je comprends mon noyau GNU/Linux (partie 1)]({{site.baseurl}}/fr/comprendre-kernel-linux/)
-- [Je compile mon noyau GNU/Linux (partie 3)]({{site.baseurl}}/fr/compiler-kernel-linux/)
+- [Je comprends mon noyau GNU/Linux (partie 1)]({BASE_URL}/fr/comprendre-kernel-linux/)
+- [Je compile mon noyau GNU/Linux (partie 3)]({BASE_URL}/fr/compiler-kernel-linux/)

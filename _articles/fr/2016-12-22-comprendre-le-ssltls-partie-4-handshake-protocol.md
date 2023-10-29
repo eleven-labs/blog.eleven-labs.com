@@ -22,7 +22,7 @@ La première couche est constituée par des protocoles de négociation (Handshak
 
 L’image ci-dessous illustre les différentes couches :
 
-![]({{ site.baseurl }}/assets/2016-12-22-comprendre-le-ssltls-partie-4-handshake-protocol/untitled-diagram.png)
+![]({BASE_URL}/imgs/articles/2016-12-22-comprendre-le-ssltls-partie-4-handshake-protocol/untitled-diagram.png)
 
 # Handshake Protocol :
 
@@ -35,7 +35,7 @@ Traduit “poignée de main” en Français, ce protocole permet au serveur et a
 
 Voici en détails comment se déroule le handshake, dans l'ordre chronologique :
 
-![]({{ site.baseurl }}/assets/2016-12-22-comprendre-le-ssltls-partie-4-handshake-protocol/untitled-diagram-1.png)
+![]({BASE_URL}/imgs/articles/2016-12-22-comprendre-le-ssltls-partie-4-handshake-protocol/untitled-diagram-1.png)
 
 **1 - Client Hello**
 

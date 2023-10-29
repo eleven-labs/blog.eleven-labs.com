@@ -73,7 +73,7 @@ Vous allez devoir accepter d'ajouter une exception de sécurité dans votre navi
 
 Si vous voyez cette belle page d'accueil, c'est que tout s'est bien passé !
 
-![homepage]({{ site.baseurl }}/assets/2018-04-05-api-platform/ready.png)
+![homepage]({BASE_URL}/imgs/articles/2018-04-05-api-platform/ready.png)
 
 ## Création de modèle de données
 
@@ -174,7 +174,7 @@ Allons à cette adresse  [https://localhost:8443](https://localhost:8443)
 
 Vous devriez voir cette page, qui décrit toutes les actions possibles sur cette ressource :
 
-![docapi]({{ site.baseurl }}/assets/2018-04-05-api-platform/apidoc.png)
+![docapi]({BASE_URL}/imgs/articles/2018-04-05-api-platform/apidoc.png)
 
 Oh joie! Api Platform intègre une version personnalisée de [Swagger UI](https://swagger.io/swagger-ui/), qui permet de documenter vos ressources et par la même occasion de les tester, mais propose également une alternative avec [NelmioApiDoc Bundle](https://github.com/nelmio/NelmioApiDocBundle).
 Le format par défaut  de l'api est le [JSON-LD](https://json-ld.org/) avec l'extension [Hydra](http://www.hydra-cg.com/), qui est une version plus évoluée que le JSON standard donnant plus d'informations sur la ressource ainsi que les opérations possibles sur cette dernière. L'api supporte également les formats courants tels que le JSON, XML, HAL, JSONAPI et très récemment le [graphQL](https://graphql.org/) ...que nous allons bien évidemment nous empresser d'activer !
@@ -189,7 +189,7 @@ docker-compose exec php composer req webonyx/graphql-php
 ```
 Et voilà ! L'interface graphique GraphiQL est disponible ici [https://localhost:8443/graphql](https://localhost:8443/graphql)
 
-![graphql]({{ site.baseurl }}/assets/2018-04-05-api-platform/graphql.png)
+![graphql]({BASE_URL}/imgs/articles/2018-04-05-api-platform/graphql.png)
 Rien de mieux pour commencer à se faire les dents sur ce super langage.
 
 ## Le Backend
@@ -197,7 +197,7 @@ Rien de mieux pour commencer à se faire les dents sur ce super langage.
 API Platform intègre un backend utilisant la librairie [Admin On Rest](https://github.com/marmelab/admin-on-rest), un client en React avec [material design](https://github.com/material-components/material-components-web) qui se bind directement sur une api, et construit ses vues en fonction des ressources disponibles et des opérations permises :
 [https://localhost:444](https://localhost:444)
 
-![admin]({{ site.baseurl }}/assets/2018-04-05-api-platform/backend.png)
+![admin]({BASE_URL}/imgs/articles/2018-04-05-api-platform/backend.png)
 
 En sachant que ce backend est entièrement paramétrable.
 
@@ -211,7 +211,7 @@ Créons notre application JavaScript :
 docker-compose exec client generate-api-platform-client
 ```
 
-![console]({{ site.baseurl }}/assets/2018-04-05-api-platform/consolegen.png)
+![console]({BASE_URL}/imgs/articles/2018-04-05-api-platform/consolegen.png)
 
 Ajoutons maintenant les routes et les reducers générés dans index.js comme ceci :
 
@@ -265,7 +265,7 @@ Redux Form pour gérer les formulaires et Redux Thunk pour gérer les requêtes 
 Nous pouvons maintenant aller à l'url de la vue `list` de notre ressource `shoppingItem`: [https://localhost/shopping_items/](https://localhost/shopping_items/)
 Parfait, vous avez votre liste de courses en react/redux qui va bien :
 
-![listecourse]({{ site.baseurl }}/assets/2018-04-05-api-platform/listcourse.png)
+![listecourse]({BASE_URL}/imgs/articles/2018-04-05-api-platform/listcourse.png)
 
 
 ## Pour conclure

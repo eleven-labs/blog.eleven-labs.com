@@ -24,7 +24,7 @@ keywords:
 
 Nous étions plusieurs astronautes de la galaxie Eleven Labs à nous rendre le 5 décembre dernier à l'Agile Tour organisé par Microsoft dans ses propres locaux.
 
-![Agile tour paris 2018]({{site.baseurl}}/assets/2019-02-13-agile-tour-microsoft/agiletourparis2018_image1.png)
+![Agile tour paris 2018]({BASE_URL}/imgs/articles/2019-02-13-agile-tour-microsoft/agiletourparis2018_image1.png)
 
 Nous avons donc pu assister à différentes conférences et plusieurs ateliers autour de l'agilité et de ses différentes applications. Petit résumé des découvertes ci-dessous !
 
@@ -79,7 +79,7 @@ Introduction au "Management 3.0" par Rafik MEKKI, avec sa mise en pratique du "D
 
 L'idée du Delegation Board est d'inscrire sur un tableau les grandes actions de son projet agile. Cela peut être la rédaction d'une US, la priorisation des US, le challenge client, le choix des participants aux rétrospectives, etc.
 
-![Delegation board]({{site.baseurl}}/assets/2019-02-13-agile-tour-microsoft/delegation_board_image2.jpg)
+![Delegation board]({BASE_URL}/imgs/articles/2019-02-13-agile-tour-microsoft/delegation_board_image2.jpg)
 
 Les 7 niveaux définis par le Delegation Board sont les suivants :
 
@@ -177,7 +177,7 @@ D'autant plus qu'engager les autres dans la résolution d'un problème existant 
 
 Petit fun fact en chiffres, il apparait qu'aujourd’hui en France, 69% des salariés ne se sentent pas concernés par leur travail. Rien que ça...
 
-![Agile mindset]({{site.baseurl}}/assets/2019-02-13-agile-tour-microsoft/Agile_Mindset_Image3.jpg)
+![Agile mindset]({BASE_URL}/imgs/articles/2019-02-13-agile-tour-microsoft/Agile_Mindset_Image3.jpg)
 
 Par groupe de 2-3 personnes nous avons échangé autour des émotions ressenties à la suite d’une réunion où la collaboration s’est mal passée, puis sur une récente situation professionnelle qui a déclenché chez nous une émotion inconfortable. Que peut-on apprendre de cette émotion et comment la transformer pour la rendre plus confortable et surtout, constructive ?
 
@@ -224,7 +224,7 @@ Jean-Pierre LAMBERT est intervenu à l’Agile Tour pour nous présenter l’Exa
 
 Le principe de l’Example Mapping, qui arrive en amont de la validation et de l’estimation des user stories, est de structurer avec une méthodologie bien définie la réflexion permettant d’aboutir à une clarification et validation des critères d’acceptance.
 
-![Example mapping]({{site.baseurl}}/assets/2019-02-13-agile-tour-microsoft/Example_Mapping_Image4.jpg)
+![Example mapping]({BASE_URL}/imgs/articles/2019-02-13-agile-tour-microsoft/Example_Mapping_Image4.jpg)
 
 Nous nous sommes donc retrouvés avec quatre bloc-notes de couleurs différentes :
 

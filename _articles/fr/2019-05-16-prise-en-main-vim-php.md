@@ -15,7 +15,7 @@ keywords:
   - vim
 ---
 
- ![]({{site.baseurl}}/assets/2019-05-06-prise-en-main-vim-php/vim-logo-en.png)
+ ![]({BASE_URL}/imgs/articles/2019-05-06-prise-en-main-vim-php/vim-logo-en.png)
 
 ## Vim, c'est quoi ?
 
@@ -32,7 +32,7 @@ Il y en a plusieurs :
 
 ## Guide rapide des modes de Vim
 
- ![]({{site.baseurl}}/assets/2019-05-06-prise-en-main-vim-php/vim-modes.png)
+ ![]({BASE_URL}/imgs/articles/2019-05-06-prise-en-main-vim-php/vim-modes.png)
 
 Vous avez ouvert Vim sans terminer ce tuto et vous aimeriez savoir comment commencer à naviguer ? Voici quelques commandes.
 
@@ -104,7 +104,7 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vi
 
 ### NERDtree, voir l'arborescence du dossier
 
- ![]({{site.baseurl}}/assets/2019-05-06-prise-en-main-vim-php/nerdtree.png)
+ ![]({BASE_URL}/imgs/articles/2019-05-06-prise-en-main-vim-php/nerdtree.png)
 
 Si vous ne deviez installer qu'un plugin, ce serait celui-là ! A tout moment vous saurez où vous vous situez. Installation :
 
@@ -128,7 +128,7 @@ Relancez Vim et admirez ! Pour passer de l'éditeur à NERDtree et vice-versa, i
 
 ### YouCompleteMe, l'autocomplétion
 
- ![]({{site.baseurl}}/assets/2019-05-06-prise-en-main-vim-php/ycm.jpg)
+ ![]({BASE_URL}/imgs/articles/2019-05-06-prise-en-main-vim-php/ycm.jpg)
 
 Ce plugin fournit une autocomplétion basique s'appuyant sur ce que vous avez déjà saisi. Avant d'éditer .vimrc, lancez :
 
@@ -151,7 +151,7 @@ Pour plus d'informations sur YCM, regardez <a href="https://github.com/Valloric/
 
 ### Améliorer la status bar avec Lightline
 
- ![]({{site.baseurl}}/assets/2019-05-06-prise-en-main-vim-php/powerline.png)
+ ![]({BASE_URL}/imgs/articles/2019-05-06-prise-en-main-vim-php/powerline.png)
 
 Dans votre shell :
 ```

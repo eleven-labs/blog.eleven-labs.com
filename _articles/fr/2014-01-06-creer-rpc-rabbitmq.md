@@ -61,7 +61,7 @@ Le code ci-dessus fait que tous les messages publiés dans la queue auront une r
 La clé unique est ce que l'on appelle la 'correlation_id', elle permet d'identifier chaque réponse par rapport à son message. Elle est envoyée sur chaque message envoyé sur le serveur, et renvoyée dans la réponse qui permet alors de reconnaître la demande initiale.
 Avant de faire l'exemple de code, voici un petit résumé:
 
-![RPC description](/_assets/articles/2014-01-06-creer-rpc-rabbitmq/python-six.png)
+![RPC description]({BASE_URL}/imgs/articles/2014-01-06-creer-rpc-rabbitmq/python-six.png)
 
 Comme on peut le voir sur le schéma ci-dessus, le client envoie un message dans la queue 'rpc_queue' avec l'option reply_to qui permet d'envoyer la réponse dans une queue de callblack et la clé de 'correlation_id' qui est l'index unique de chaque demande.
 Commençons l'exemple du serveur de génération d'url via un titre. Nous commencerons par le serveur qui s'occupera de créer une url à partir d'un titre. Pour l'exemple, nous prenons simplement un titre et remplaçons les espaces par des underscores.

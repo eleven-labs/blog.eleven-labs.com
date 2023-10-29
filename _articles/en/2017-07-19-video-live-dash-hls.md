@@ -35,7 +35,7 @@ Major streaming platforms use this protocol to serve their live video streams or
 
 A diagram explains it better than a long speech:
 
-![Operating diagram- HLS ]({{ site.baseurl }}/assets/2017-07-12-video-live-dash-hls/diagram_HLS.png)
+![Operating diagram- HLS ]({BASE_URL}/imgs/articles/2017-07-12-video-live-dash-hls/diagram_HLS.png)
 
 Here we see the workflow that allows the raw audio/video to reach the client as a stream.
 The segmented files, usually in MPEG-2 TS format, are accessed via a "manifest", an index file in M3U format that describes content segments as well as metadata that the client can/must use. This file is basically an URL playlist.
@@ -85,7 +85,7 @@ live/low.m3u8
 
 Each `#EXT-X-STREAM-INF` tag indicates the data needed to read the segment, each of them of a given quality and encoding. Thus, the compatible client will be able to switch from one quality to another in real time, depending on the available bandwidth or the user's choice. The following diagram illustrates this possibility very well:
 
-![M3U file - HLS ]({{ site.baseurl }}/assets/2017-07-12-video-live-dash-hls/HLS_Figure_1.jpg)
+![M3U file - HLS ]({BASE_URL}/imgs/articles/2017-07-12-video-live-dash-hls/HLS_Figure_1.jpg)
 
 ### JS library
 
@@ -125,7 +125,7 @@ DASH, in addition to being ISO-standardized, has several features not found in o
 
 Once again, let's use a good diagram:
 
-![Operating diagram - DASH ]({{ site.baseurl }}/assets/2017-07-12-video-live-dash-hls/diagram_DASH.png)
+![Operating diagram - DASH ]({BASE_URL}/imgs/articles/2017-07-12-video-live-dash-hls/diagram_DASH.png)
 
 The different sequences of content are again of a given size, quality and encoding and are sent to the client via HTTP. The client is responsible for selecting and displaying the sequences in the desired quality. And always in the right order. Trust me, this is important.
 

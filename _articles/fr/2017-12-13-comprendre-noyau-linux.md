@@ -71,7 +71,7 @@ Je n'ai pas de benchmarks sous la main, mais j'en ai fait plusieurs à l'époque
 
 ## Quels problèmes cela peut-il engendrer ?
 
-![Kernel Panic]({{site.baseurl}}/assets/2017-12-13-understanding-linux-kernel/kernel_panic.jpg)
+![Kernel Panic]({BASE_URL}/imgs/articles/2017-12-13-understanding-linux-kernel/kernel_panic.jpg)
 
 TL;DR : beaucoup de problèmes, est-ce dangereux pour autant ? Non, à condition de respecter certaines règles.
 De la même manière qu'il existe des règles de sécurité en chimie, en bricolage, et j'en passe, il y en a pour se prémunir d'une compilation de Kernel loupée conduisant à une impossibilité de booter.
@@ -181,5 +181,5 @@ Une petite rubrique pour conclure cette introduction à la compilation d'un Kern
 
 Cette article est le premier d'une série de trois. Vous pouvez retrouver les deux suivants ci-dessous :
 
-- [Je configure mon noyau GNU/Linux (partie 2)]({{site.baseurl}}/fr/configurer-kernel-linux/)
-- [Je compile mon noyau GNU/Linux (partie 3)]({{site.baseurl}}/fr/compiler-kernel-linux/)
+- [Je configure mon noyau GNU/Linux (partie 2)]({BASE_URL}/fr/configurer-kernel-linux/)
+- [Je compile mon noyau GNU/Linux (partie 3)]({BASE_URL}/fr/compiler-kernel-linux/)

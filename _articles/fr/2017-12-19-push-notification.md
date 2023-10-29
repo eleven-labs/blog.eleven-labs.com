@@ -34,11 +34,11 @@ Pour cela, lors de la première visite sur le site, le service worker s'enregist
 
 Vous pouvez voir cela directement dans votre console de développement dans l'onglet `application`.
 
-![Console Chrome]({{site.baseurl}}/assets/2017-12-19-push-notification/image1.png)
+![Console Chrome]({BASE_URL}/imgs/articles/2017-12-19-push-notification/image1.png)
 
 La mise en place d'un service worker est assez simple. Il faut dire au navigateur compatible avec les service workers où se dernier se trouve. Voici la liste des navigateurs actuellement compatibles ([CanIUse](https://caniuse.com/#search=service%20workers)).
 
-![Can I Use]({{site.baseurl}}/assets/2017-12-19-push-notification/image2.png)
+![Can I Use]({BASE_URL}/imgs/articles/2017-12-19-push-notification/image2.png)
 
 Vous devez avoir un fichier contenant l'enregistrement du service workers.
 
@@ -115,7 +115,7 @@ Donc voilà, nous avons notre service worker prêt pour y mettre des notificatio
 
 La première chose à faire dans la mise en place des web notifications, c'est d'ajouter dans votre `manifest.json` votre `gcm_sender_id`  que vous pouvez trouver dans les paramètres du projet Firebase.
 
-![Paramètre Firebase]({{site.baseurl}}/assets/2017-12-19-push-notification/image3.png)
+![Paramètre Firebase]({BASE_URL}/imgs/articles/2017-12-19-push-notification/image3.png)
 
 Il faut ensuite enregistrer le token des utilisateurs qui acceptent de recevoir les notifications.
 
@@ -157,11 +157,11 @@ L'enregistrement du token utilisateur se fait au même endroit que celui du serv
 
 Il faut appeler la fonction `subscribeDevice` si le service worker est disponible dans le navigateur. Si tout est ok, vous avez un petit popup qui vous demande de valider l'autorisation de recevoir les notifications.
 
-![Popup notification]({{site.baseurl}}/assets/2017-12-19-push-notification/image4.png)
+![Popup notification]({BASE_URL}/imgs/articles/2017-12-19-push-notification/image4.png)
 
 Si la personne accepte son token (unique par navigateur), cela devrait apparaître dans votre base de données Firebase.
 
-![BDD Firebase]({{site.baseurl}}/assets/2017-12-19-push-notification/image5.png)
+![BDD Firebase]({BASE_URL}/imgs/articles/2017-12-19-push-notification/image5.png)
 
 Et voilà, la première étape est terminée, vous avez dans votre base de données l'ensemble des utilisateurs qui acceptent de recevoir vos notifications.
 
@@ -202,7 +202,7 @@ Vous pouvez faire un lien vers votre site lors du clic sur la notification, en a
 
 Donc maintenant l'utilisateur pourra voir votre notification s'afficher.
 
-![Notification]({{site.baseurl}}/assets/2017-12-19-push-notification/image6.png)
+![Notification]({BASE_URL}/imgs/articles/2017-12-19-push-notification/image6.png)
 
 > Et comment je l'envoie ?
 

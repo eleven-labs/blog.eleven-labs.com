@@ -40,7 +40,7 @@ C'est également très pratique si le support ne peut accepter une politique de 
 
 C'est donc tout naturellement qu'un nouveau type de test est née: les tests de régression visuelle.
 
-![principe de la régression visuelle]({{ site.baseurl }}/assets/2020-04-15-visual-regression-testing/regressionvisuelle.gif)
+![principe de la régression visuelle]({BASE_URL}/imgs/articles/2020-04-15-visual-regression-testing/regressionvisuelle.gif)
 
 Le but de la régression visuelle est de détecter les changements d'apparence qui ne saurait être mesuré finement, via les snapshots Jest ou les tests unitaires, sachant que le test visuelle est fastidieux pour le développeur et parfois l'erreur ou sa source ne sont pas détectable à l'oeil nu.
 
@@ -56,7 +56,7 @@ On se rend donc compte pourquoi Storybook est si apprécié, il offre un environ
 
 Bon pour ceux qui m'ont déjà perdu, je vous ai fait un beau dessin pour illustrer les 3 niveaux de test d'un composant (un bouton) incrémentant un compteur de 1 à chaque clic.
 
-![Les 3 niveaux de test d'un composant]({{ site.baseurl }}/assets/2020-04-15-visual-regression-testing/Untitled.png)
+![Les 3 niveaux de test d'un composant]({BASE_URL}/imgs/articles/2020-04-15-visual-regression-testing/Untitled.png)
 
 > Super ta régression visuelle Manu mais au final, j'ai des yeux et pour voir les différences, ça suffit.
 
@@ -95,7 +95,7 @@ Allez, venez, laissez faire l'insouciance et entrez dans la danse.
 
 ---
 
-![Simba à bien changé entre 2 versions]({{ site.baseurl }}/assets/2020-04-15-visual-regression-testing/Untitled1.png)
+![Simba à bien changé entre 2 versions]({BASE_URL}/imgs/articles/2020-04-15-visual-regression-testing/Untitled1.png)
 
 Chroma s'articule sur 3 points:
 
@@ -109,7 +109,7 @@ S'ajoute alors tout le sel pour agrémenter ces features:
 -   Gestion des viewports pour les composants responsive,
 -   Gestion de version des composants (permettant des rollbacks)
 
-![Chromatic workflow]({{ site.baseurl }}/assets/2020-04-15-visual-regression-testing/workflow-chromatic.gif)
+![Chromatic workflow]({BASE_URL}/imgs/articles/2020-04-15-visual-regression-testing/workflow-chromatic.gif)
 
 L'installation est relativement simple:
 

@@ -16,7 +16,7 @@ keywords:
 ---
 
 
-![Symfony et MongoDB]({{ site.baseurl }}/assets/2023-02-22-symfony-et-mongodb-retour-aux-sources/logo.png?width=200px)
+![Symfony et MongoDB]({BASE_URL}/imgs/articles/2023-02-22-symfony-et-mongodb-retour-aux-sources/logo.png?width=200px)
 
 
 Sur ce blog, nous avons déjà quelques articles autour de MongoDB, et même s’ils sont encore d’actualité, il n’y en avait pas sur MongoDB dans Symfony, d'où cet article !

@@ -101,7 +101,7 @@ Sans oublier le SCSS, sinon la carte ne s'affiche pas
 }
 ```
 
-![]({{ site.baseurl }}/assets/2020-02-05-open-street-map-une-alternative-a-google-map/init-map.jpeg)
+![]({BASE_URL}/imgs/articles/2020-02-05-open-street-map-une-alternative-a-google-map/init-map.jpeg)
 
 ## Chercher une adresse
 Notre besoin est le suivant : lorsque je commence à entrer une adresse ou le nom de mon bar favori, je voudrais avoir une liste déroulante qui affiche les différentes propositions sans utiliser Google. Lorsque je clique sur une adresse, un marqueur s'affiche sur la carte.
@@ -147,7 +147,7 @@ _search () {
 
 Il existe, en HTML 5, un composant natif  ``navigator.geolocation`` pour géolocaliser la personne. Pas de panique, lorsque l'on utilise une pop-in demandant l'autorisation s'affiche :
 
-![]({{ site.baseurl }}/assets/2020-02-05-open-street-map-une-alternative-a-google-map/pop-in.jpeg)
+![]({BASE_URL}/imgs/articles/2020-02-05-open-street-map-une-alternative-a-google-map/pop-in.jpeg)
 
 <div class="admonition important" markdown="1"><p class="admonition-title">Important</p>
 
@@ -217,7 +217,7 @@ _getCurrentPosition() {
     });
 }
 ```
-![]({{ site.baseurl }}/assets/2020-02-05-open-street-map-une-alternative-a-google-map/current-position-js.jpeg)
+![]({BASE_URL}/imgs/articles/2020-02-05-open-street-map-une-alternative-a-google-map/current-position-js.jpeg)
 
 ### Étape 2 : Localisation en PHP
 

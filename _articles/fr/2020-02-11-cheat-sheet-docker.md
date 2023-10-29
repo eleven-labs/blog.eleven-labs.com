@@ -25,6 +25,6 @@ Nous avons créé pour vous une Cheat Sheet qui vous permettra de retrouver rapi
 
 
 [Pour télécharger la cheat sheet, cliquez ici](http://bit.ly/cheat-sheet-Docker)
-![cheat-sheet-docker]({{site.baseurl}}/assets/2020-02-11-cheat-sheet-docker/button.png)
+![cheat-sheet-docker]({BASE_URL}/imgs/articles/2020-02-11-cheat-sheet-docker/button.png)
 
 Des questions, ou simplement envie d'échanger sur ce sujet ? N'hésitez pas à laisser un commentaire :)

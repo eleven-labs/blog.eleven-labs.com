@@ -14,7 +14,7 @@ authors:
 keywords: []
 ---
 
-![Cover]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/cover.jpg)
+![Cover]({BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/cover.jpg)
 
 ## Introduction
 
@@ -42,7 +42,7 @@ De cette manière, on peut être sûr que le fichier téléchargé est le même 
 Il est important de noter que même si la somme SHA-1 est encore utilisée, il y a des algorithmes de hachage plus récents qui sont considérés plus sécurisés (comme SHA-256, SHA-3, etc).
 
 Calculons ainsi le hash SHA-1 de la photo suivante :
-![Pilou]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546.jpg)
+![Pilou]({BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546.jpg)
 
 Pour faire cela nous utiliserons le code suivant :
 ```php
@@ -63,7 +63,7 @@ Si on refait la même opération sur la photo qui s'est affichée, dans votre na
 ```php
 <?php
 
-echo sha1_file('{{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546.jpg');
+echo sha1_file('{BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546.jpg');
 ```
 
 Le résultat ne sera pas du tout le même :
@@ -96,7 +96,7 @@ require(__DIR__.'/vendor/autoload.php');
 use Jenssegers\ImageHash\ImageHash;
 
 $hasher = new ImageHash();
-$hash = $hasher->hash('{{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546.jpg');
+$hash = $hasher->hash('{BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546.jpg');
 
 echo $hash->toHex();
 ```
@@ -109,7 +109,7 @@ a3d7d5f2e22489b3
 
 Je vais maintenant faire quelques ajustements sur ma photo afin de changer les niveaux de couleurs et nous obtenons ainsi la photo suivante (plus pâle, plus jaune) :
 
-![Pilou avec des niveaux modifiés]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_leveling.jpg)
+![Pilou avec des niveaux modifiés]({BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546_leveling.jpg)
 
 En exécutant le même bout de code que précédemment :
 
@@ -121,7 +121,7 @@ require(__DIR__.'/vendor/autoload.php');
 use Jenssegers\ImageHash\ImageHash;
 
 $hasher = new ImageHash();
-$hash = $hasher->hash('{{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_leveling.jpg');
+$hash = $hasher->hash('{BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546_leveling.jpg');
 
 echo $hash->toHex();
 ```
@@ -135,7 +135,7 @@ a3d7d5f2e22489b3
 Vous avez bien lu : nous avons toujours le même perceptual hash !
 Même si les couleurs de l'image ont été modifiées, la donnée visuelle est toujours la même, et donc le hash de même. Pour avoir un hash différent il va falloir faire des modifications beaucoup plus aggressive. Je vais donc maintenant changer réellement l'aspect d'une zone entière de l'image en mettant un smiley par-dessus la tête de mon chat :
 
-![Pilou avec un emoji à la place de la tête]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_emoji.jpg)
+![Pilou avec un emoji à la place de la tête]({BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546_emoji.jpg)
 
 En exécutant le même bout de code que précédemment :
 
@@ -145,7 +145,7 @@ En exécutant le même bout de code que précédemment :
 use Jenssegers\ImageHash\ImageHash;
 
 $hasher = new ImageHash();
-$hash = $hasher->hash('{{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_emoji.jpg');
+$hash = $hasher->hash('{BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546_emoji.jpg');
 
 echo $hash->toHex();
 ```
@@ -175,17 +175,17 @@ Le moyen le plus rapide de supprimer les hautes fréquences et les détails est 
 
 De cette façon, le hachage correspondra à toute variation de l'image, indépendamment de l'échelle ou du rapport d'aspect.
 
-![Pilou en 8x8 taille réelle]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8.jpg) <-- résultat en taille réelle
+![Pilou en 8x8 taille réelle]({BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8.jpg) <-- résultat en taille réelle
 
-![Pilou en 8x8 grande taille]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8.jpg?height=512&width=512)
+![Pilou en 8x8 grande taille]({BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8.jpg?height=512&width=512)
 
 #### 2. Réduire la couleur ####
 
 La petite image 8x8 est convertie en niveaux de gris. Cela fait passer le hachage de 64 pixels (64 rouges, 64 verts et 64 bleus) à 64 couleurs au total.
 
-![Pilou en 8x8 et greyscale taille réelle]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8_greyscale.jpg) <-- résultat en taille réelle
+![Pilou en 8x8 et greyscale taille réelle]({BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8_greyscale.jpg) <-- résultat en taille réelle
 
-![Pilou en 8x8 et greyscale en 8x8 grande taille]({{ site.baseurl }}/assets/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8_greyscale.jpg?height=512&width=512)
+![Pilou en 8x8 et greyscale en 8x8 grande taille]({BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8_greyscale.jpg?height=512&width=512)
 
 #### 3. Moyenne des couleurs ####
 

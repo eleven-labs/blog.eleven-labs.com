@@ -12,8 +12,7 @@ excerpt: >-
   Depuis peu, celle-ci offre une autre manière de gérer le state de votre
   application afin de ne pas avoir à gérer un Redux, il est temps de voir ça
   d'un peu plus près !
-cover: >-
-  /assets/2019-01-26-apollo-local-state-management-une-alternative-a-redux-contextapi/cover.png
+cover: /assets/2019-01-26-apollo-local-state-management-une-alternative-a-redux-contextapi/cover.png
 categories:
   - javascript
 authors:

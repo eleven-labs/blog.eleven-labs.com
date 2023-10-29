@@ -23,7 +23,7 @@ Tirant le Joker de ma manche, je vous laisse en compagnie du mastermind de Gotha
 
 ## 1. "Estimer c'est faire un choix. Pourquoi cet air si sérieux ?"
 
-![]({{site.baseurl}}/assets/2019-10-22-joker-planning-estimer-backlog/joker.jpg)
+![]({BASE_URL}/imgs/articles/2019-10-22-joker-planning-estimer-backlog/joker.jpg)
 
 Quand on parle d’estimation de son product backlog, on parle de l’estimation en points d’effort des user stories composant le backlog de votre produit.
 
@@ -98,7 +98,7 @@ Mais si vous avez une équipe qui se sent rassurée par ce fonctionnement, ou m�
 
 Avant de vous lancer dans l’estimation, balayons quelques points d’attention !
 
-![]({{site.baseurl}}/assets/2019-10-22-joker-planning-estimer-backlog/black-joker.jpg)
+![]({BASE_URL}/imgs/articles/2019-10-22-joker-planning-estimer-backlog/black-joker.jpg)
 
 
 -   **Points d’effort & points de complexité**

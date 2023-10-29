@@ -31,7 +31,7 @@ Après plusieurs expériences en tant qu'architecte, il m'a semblé intéressant
 * Aux développeurs, qui pourront avoir une vision plus claire du rôle d'un architecte sur leur projet, et comprendre dans quels cas certains patterns peuvent être appliqués et ce qu'ils engendrent.
 * Enfin, à toute personne dans le domaine du web (chefs de projets, product owners, ...), qui pourra ainsi élargir sa vision de la technique et cerner en quoi un architecte pourra l'aider à répondre au mieux aux besoins et à construire une application plus adaptée.
 
-[![Télécharger livre blanc]({{site.baseurl}}/assets/2018-04-05-livre-blanc-architecture/button.jpg)](http://bit.ly/LivreBlancArchitectureLogicielle)
+[![Télécharger livre blanc]({BASE_URL}/imgs/articles/2018-04-05-livre-blanc-architecture/button.jpg)](http://bit.ly/LivreBlancArchitectureLogicielle)
 
 Des questions, ou simplement envie d'échanger sur ce sujet ? Contactez-moi : vcomposieux(at)eleven-labs.com
 Vous souhaitez partager vos connaissances sur ce sujet (ou un autre) ? Faites-le sur [Codelabs](https://codelabs.eleven-labs.com) !

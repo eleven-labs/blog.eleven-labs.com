@@ -30,7 +30,7 @@ Aujourd'hui, c'est la journée internationale des droits de la femme, et nous av
 ### Le saviez-vous ?
 Dans les années 80, presque 40% des étudiants en informatique étaient des femmes. Si, si, je vous assure.
 
-![40% des étudiants étaient des femmes]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/first.jpg)
+![40% des étudiants étaient des femmes]({BASE_URL}/imgs/articles/2021-03-08-les-femmes-dans-linformatique/first.jpg)
 
 On ne sait pas exactement pourquoi cette tendance a brusquement changé, mais la théorie des publicités qui ont associé les ordinateurs personnels et jeux vidéos aux hommes et jeunes garçons est souvent mise en avant.
 
@@ -85,7 +85,7 @@ Mais il y a également [41%](https://www.ncwit.org/sites/default/files/resources
 
 Parmi les raisons qui les poussent à prendre cette décision, on peut voir ceci :
 
-![Les raisons pour lesquelles les femmes abandonnent l'informatique]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/second.png)
+![Les raisons pour lesquelles les femmes abandonnent l'informatique]({BASE_URL}/imgs/articles/2021-03-08-les-femmes-dans-linformatique/second.png)
 
 Il y a des femmes qui subissent une grande pression au travail liée à [l'association de certaines tâches à un genre donné.](https://hbr.org/2018/11/the-subtle-stressors-making-women-want-to-leave-engineering).
 Par exemple, il existe toujours l'idée que les femmes sont plus douées que les hommes dans l'organisation et la communication.
@@ -102,7 +102,7 @@ Cette situation crée une pression, ajoute du stress au quotidien, et empiète �
 Par ailleurs, les femmes sont encouragées par leurs supérieurs à monter en compétences sur des postes qui leur font abandonner le développement.
 Et voici le constat :
 
-![Principaux métiers numériques par genre]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/third.png)
+![Principaux métiers numériques par genre]({BASE_URL}/imgs/articles/2021-03-08-les-femmes-dans-linformatique/third.png)
 
 Les femmes sont donc parfois insatisfaites de leurs perspectives de carrière. Elles ont le sentiment de ne pas pouvoir évoluer de la façon dont elles voudraient, et finissent par abandonner l'informatique.
 

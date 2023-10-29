@@ -83,7 +83,7 @@ C’est pour ça qu’il est important de faire de la conception avant même d�
 Et puisqu’on y est, plus on lit de code, plus on se rend compte que la lisibilité est importante, plus on fait attention à ce que l’on code par la suite, en se disant qu’il faudra sûrement le relire un jour.
 J’en profite pour glisser une image sur l'unité de mesure du code :
 
-![code_quality]({{ site.baseurl }}/assets/2019-08-13-REX-d-etudiant-a-developpeur-web/code_quality.png)
+![code_quality]({BASE_URL}/imgs/articles/2019-08-13-REX-d-etudiant-a-developpeur-web/code_quality.png)
 
 Il y a aussi la vision à long terme. Il ne faut pas simplement penser à la solution qui résout le problème a l’instant T. Il faut que la solution soit viable aujourd’hui, demain, et après demain !
 Après demain l’application aura très certainement beaucoup changé, et il faut le prendre en compte dès maintenant.

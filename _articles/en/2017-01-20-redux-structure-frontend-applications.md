@@ -23,7 +23,7 @@ Historically, this has been needed by [React](https://facebook.github.io/react/
 
 Here is the philosophy:
 
-![Flux Diagram](/_assets/articles/2017-01-20-redux-structure-frontend-applications/flux-diagram.png)
+![Flux Diagram]({BASE_URL}/imgs/articles/2017-01-20-redux-structure-frontend-applications/flux-diagram.png)
 
 Your application declare `actions`  for each components. These actions allow you to define the state of your data which is stored in a `store` . This stores continually maintains your `view`  up-to-date.
 We have a drawback in this case because you have to define one store per component. This is working but on large applications you can feel limited with it.

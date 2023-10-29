@@ -16,7 +16,7 @@ keywords: []
 
 Bienvenue dans cet article ayant pour but de faire un tour d'horizon du cycle de vie d'une requête puis d'une réponse dans un environnement NestJS !
 
-![NestJS logo]({{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/nest-logo.png?width=300)
+![NestJS logo]({BASE_URL}/imgs/articles/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/nest-logo.png?width=300)
 Figure: *NestJS Framework*
 
 Le but ici sera de donner une représentation précise de chaque étape que peut rencontrer une requête, dans l'ordre, et avec des exemples. Une fois lu une première fois, gardez cet article dans un coin, à la manière d'un **pense-bête**. 
@@ -42,7 +42,7 @@ Vous pouvez être totalement débutant en NestJS et quand même lire cet article
 ## Cycle de vie : vue globale
 Rien de tel qu'un schéma que je vous ai concocté pour entrer dans le vif du sujet. Je vous laisse vous en imprégner.
 
-![]({{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/nest-lifecycle-schema.png)
+![]({BASE_URL}/imgs/articles/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/nest-lifecycle-schema.png)
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 
@@ -86,7 +86,7 @@ Niveau **global** => Niveau **module** => Niveau **controller** => Niveau **rout
 
 Reprenons donc une partie de notre schéma vu plus haut, mais mis à jour. Cela donnerait  :
 
-![]({{ site.baseurl }}/assets/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/updated-lifecycle-schema.png)
+![]({BASE_URL}/imgs/articles/2022-03-04-nestjs-le-cycle-de-vie-dune-requete/updated-lifecycle-schema.png)
 
 Ci-dessous à titre indicatif, vous trouverez des exemples de déclaration pour chaque niveau. Rendez-vous dans les prochaines sections pour les présentations plus poussées de toutes nos couches (Middlewares, Interceptors...).
 

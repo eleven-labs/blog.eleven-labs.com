@@ -174,10 +174,10 @@ Si vous le souhaitez, vous pouvez voir la pull request [ici](https://github.com/
 
 Et voilà ! Vous pouvez retrouver ceci dans vos recherches Google Mobile :
 
-![Search Google](/_assets/articles/2017-09-27-notre-blog-amp/search-google.png)
+![Search Google]({BASE_URL}/imgs/articles/2017-09-27-notre-blog-amp/search-google.png)
 
 Et notre page dans le CDN google :
 
-![AMP](/_assets/articles/2017-09-27-notre-blog-amp/amp.png)
+![AMP]({BASE_URL}/imgs/articles/2017-09-27-notre-blog-amp/amp.png)
 
 **Bonne lecture.**

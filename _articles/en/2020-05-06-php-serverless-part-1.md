@@ -59,7 +59,7 @@ Another constraint is the **maximum execution time** of a function. It varies de
 
 There are also **limitations** related to memory, the maximum size of the packages you deploy and the available disk space. Below is an excerpt from the limitations of AWS Lambda to give you an idea.
 
-![]({{ site.baseurl }}/assets/2020-05-06-php-serverless-part-1/aws-limitations.png)
+![]({BASE_URL}/imgs/articles/2020-05-06-php-serverless-part-1/aws-limitations.png)
 
 Another point to keep in mind is that the **price** of our infrastructure can be **unpredictable**. Since the cloud provider takes care of everything, we therefore have no control over how it manages resources, and in the event of an unforeseen event which places a lot of demand on our serverless functions, the price could rise. Rest assured, it is nevertheless possible to create alerts and be notified by your cloud provider if you exceed a certain amount.
 

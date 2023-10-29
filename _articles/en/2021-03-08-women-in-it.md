@@ -28,7 +28,7 @@ Today is the International Women's Rights Day, and we wanted to take the opportu
 ### Did you know?
 In the 1980s, almost 40% of computer science students were women. Yes, really!
 
-![40% of computer science students were women]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/first.jpg)
+![40% of computer science students were women]({BASE_URL}/imgs/articles/2021-03-08-les-femmes-dans-linformatique/first.jpg)
 
 It is not clear exactly why this trend suddenly changed, but the theory of commercials that have associated personal computers and video games with men and young boys is often put forward.
 
@@ -83,7 +83,7 @@ But there are also [41%](https://www.ncwit.org/sites/default/files/resources/wom
 
 Among the reasons that push them to make this decision, we can see this:
 
-![Reasons why women drop out of IT]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/second.png)
+![Reasons why women drop out of IT]({BASE_URL}/imgs/articles/2021-03-08-les-femmes-dans-linformatique/second.png)
 
 There are women who experience great pressure at work related to [associating certain tasks with a given gender.](Https://hbr.org/2018/11/the-subtle-stressors-making-women-want-to-leave-engineering).
 For example, there is always the idea that women are better than men in organization and communication skills.
@@ -100,7 +100,7 @@ This situation creates pressure, adds stress to everyday life, and also impinges
 In addition, women are encouraged by their superiors to upgrade their skills in positions that make them abandon development.
 And here is the observation:
 
-![Main IT jobs by gender]({{ site.baseurl }}/assets/2021-03-08-les-femmes-dans-linformatique/third.png)
+![Main IT jobs by gender]({BASE_URL}/imgs/articles/2021-03-08-les-femmes-dans-linformatique/third.png)
 
 Women are therefore sometimes dissatisfied with their career prospects. They feel that they cannot evolve the way they would like to, and they eventually give up IT and choose another career path.
 

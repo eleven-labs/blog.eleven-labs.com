@@ -27,11 +27,11 @@ Dans ce tutoriel nous allons seulement installer un apache, mais vous pouvez app
 
 Allez dans le menu "Compute Engine", disponible [ici](https://console.cloud.google.com/compute/instances).
 
-![Compute Engine - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.09.20.png)
+![Compute Engine - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.09.20.png)
 
 Puis cliquez sur "Créer une instance", vous allez arriver sur un formulaire qu'il va falloir remplir.
 
-![Créer une instance - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.11.17.png)
+![Créer une instance - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.11.17.png)
 
 - Choisissez un nom
 - Puis la zone (il s'agit du lieu du serveur)
@@ -41,7 +41,7 @@ Puis cliquez sur "Créer une instance", vous allez arriver sur un formulaire qu'
 
 Ouvrez le lien "Gestion, disque, réseau et clés SSH", et dans l'onglet Disque décochez la case "Supprimer le disque de démarrage lorsque l'instance est supprimée".
 
-![Suppression du disque - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.14.42.png)
+![Suppression du disque - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.14.42.png)
 
 Cliquez alors sur "Créer".
 
@@ -49,11 +49,11 @@ Cliquez alors sur "Créer".
 
 Allez dans "Instance de VM" et attendre que la machine soit prête.
 
-![Instance de VM - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.18.22.png)
+![Instance de VM - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.18.22.png)
 
 Cliquez sur SSH pour ouvrir la connexion à la machine.
 
-![Connexion SSH - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.20.12.png)
+![Connexion SSH - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.20.12.png)
 
 Une fois connecté, nous allons installer apache. Pour cela il vous suffit de lancer les commandes suivantes :
 
@@ -65,7 +65,7 @@ sudo /etc/init.d/apache2 restart;
 
 Une fois terminé, si vous cliquez sur l'IP externe fournie dans l'interface "Instance de VM", vous devriez voir la page apache par défaut.
 
-![Apache - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.25.36.png)
+![Apache - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.25.36.png)
 
 Comme vous pouvez le voir l'installation prend un certain temps, et nous ne voulons pas le refaire pour chaque machine dont nous avons besoin. Nous allons donc nous servir de cette machine comme template pour d'autres machines.
 
@@ -73,28 +73,28 @@ Comme vous pouvez le voir l'installation prend un certain temps, et nous ne voul
 
 Retour dans l'interface "Instance de VM", vous allez supprimer la machine en sélectionnant la VM puis cliquer sur supprimer.
 
-![Supprimer une instance - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.29.17.png)
+![Supprimer une instance - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.29.17.png)
 
 Allez dans le menu "Images" et cliquez sur "Créer une image".
 
-![Créer une image - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.32.54.png)
+![Créer une image - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.32.54.png)
 
 Vous devez alors remplir le formulaire de création d'image.
 
-![Formulaire Image - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.33.58.png)
+![Formulaire Image - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.33.58.png)
 
 La seule chose qu'il faut surveiller, c'est le choix du disque source qui doit être celui de la machine que l'on vient de détruire.
 Une fois l'image créée, allez dans le menu "Modèles d'instances" et cliquez sur "Créer un modèle d'instance".
 
-![Modèle d'instance - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.37.04.png)
+![Modèle d'instance - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.37.04.png)
 
 Vous arrivez dans un formulaire ressemblant à celui de la création d'instance.
 
-![Modèle d'instance - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.39.26.png)
+![Modèle d'instance - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.39.26.png)
 
 Dans disque de démarrage, vous devez choisir l'image que vous venez de créer, elle est disponible dans l'onglet "images personnalisées" .
 
-![Image perso - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.41.14.png)
+![Image perso - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.41.14.png)
 
 Et n'oubliez pas de cocher la case "Autoriser le trafic HTTP". Puis cliquez sur "Créer".
 Pour vérifier que tout est bon, nous allons créer de nouvelles instances via ce template.
@@ -103,13 +103,13 @@ Pour vérifier que tout est bon, nous allons créer de nouvelles instances via 
 
 Allez dans le menu "Groupes d'instances" puis cliquez sur "Créer un groupe d'instances".
 
-![Créer groupe d'instances - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.47.54.png)
+![Créer groupe d'instances - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.47.54.png)
 
 Vous avez l'habitude, nous arrivons sur un formulaire assez long.
 
-![Formulaire 1 - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.49.30.png)
+![Formulaire 1 - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.49.30.png)
 
-![Formulaire 2 - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.49.43.png)
+![Formulaire 2 - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.49.43.png)
 
 - Choisissez un nom pour votre groupe
 - Puis l'emplacement (le mieux c'est multizone qui permet d'avoir des serveurs dans le monde entier)
@@ -120,7 +120,7 @@ Vous avez l'habitude, nous arrivons sur un formulaire assez long.
 Vous pouvez alors créer le groupe.
 Si vous retournez dans le menu "Instances de VM" vous pourrez voir les trois machines en cours de création. Une fois terminé, cliquez sur l"IP externe" de chaque machine. Normalement la page d'apache par défaut s'affiche.
 
-![groupe d'instance - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.56.59.png)
+![groupe d'instance - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.56.59.png)
 
 À partir de maintenant, nous avons un groupe d'instances qui va scaler selon le trafic. Seulement, le trafic arrive sur les trois Ips, il nous faut donc un "load balancer" devant les machines pour envoyer le trafic sur le groupe d'instances.
 
@@ -128,31 +128,31 @@ Si vous retournez dans le menu "Instances de VM" vous pourrez voir les trois mac
 
 Changez de menu et allez dans "réseau".
 
-![Réseau - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.02.40.png)
+![Réseau - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.02.40.png)
 
 Puis allez dans "Équilibrage des charges", et créez un équilibreur.
 
-![Load Balancer - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.05.27.png)
+![Load Balancer - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.05.27.png)
 
 Choisissez un équilibrage des charges HTTP(S).
 Vous pouvez alors configurer l'équilibreur.
 
-![Configuration équilibreur - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.07.08.png)
+![Configuration équilibreur - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.07.08.png)
 
 Choisissez un nom.
 Puis cliquez sur "Configuration des backends", et créez un service backend.
 Vous arrivez sur le formulaire suivant :
 
-![Backend - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.10.37.png)
+![Backend - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.10.37.png)
 
-![Formulaire - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.10.42.png)
+![Formulaire - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.10.42.png)
 
 - Choisissez un nom
 - Puis l'instance backend (c'est le groupe créé juste avant)
 
 Ajoutez un test périodique.
 
-![Test périodique - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.11.07.png)
+![Test périodique - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.11.07.png)
 
 - Choisissez un nom
 - Puis le protocole http
@@ -162,11 +162,11 @@ Il ne nous reste plus qu'a cliquer sur "Règles d'hôte et de chemin d'accès", 
 Vous n'avez plus qu'à créer, cela va prendre pas mal de temps (environs 5 min).
 Vous pourrez trouver l'IP d'entrée du load balancer dans le menu "Équilibrage des charges", puis sur le load balancer fraîchement configuré vous aurez l'ip disponible.
 
-![Load balancer - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.17.18.png)
+![Load balancer - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.17.18.png)
 
 Toujours dans cette interface, dans l'onglet surveillance vous pouvez suivre les backends qui reçoivent les requêtes.
 
-![Surveillance Backend - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.20.22.png)
+![Surveillance Backend - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.20.22.png)
 
 Et voila vous avez une architecture scalable automatiquement avec un load balancer comme un vrai architecte réseau.
 
@@ -182,4 +182,4 @@ Avant de vous quitter, nous allons supprimer les machines.  Vous devez le faire
 Si vous allez dans le dashboard vous devez ne plus voir de machine "compute engine"
 
 
-![Dashboard - Google Cloud Platform](/_assets/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.28.32.png)
+![Dashboard - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-19.28.32.png)

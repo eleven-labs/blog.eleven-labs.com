@@ -24,7 +24,7 @@ keywords:
 Êtes-vous quelqu’un de patient ? Si oui, alors c’est bien, c’est une vertu. Mais êtes-vous prêt à attendre 3 secondes le retour d’un appel API pour avoir une réaction de la part d’une application front ?
  *\- Ça va 3 secondes dans la vie d’une personne.*
 OK mais si je vous montre ça :
-![]({{ site.baseurl }}/assets/2019-07-23-optimistic-ui/no_reactivity.gif)
+![]({BASE_URL}/imgs/articles/2019-07-23-optimistic-ui/no_reactivity.gif)
 Ça vous fait grincer des dents ?
  *\- Ouais mais si le serveur met du temps à réagir je peux rien y faire en tant que dev JS ?*
 Et c’est là qu'intervient le sujet de notre article : l’**Optimistic UI**.
@@ -35,13 +35,13 @@ Le but de l’article est de vous présenter cette technique et de vous montrer 
 
 L’**Optimistic UI** est une technique de développement front permettant d’améliorer la réactivité d’une interface. Elle consiste à simuler l’état le plus optimal lors d’une action utilisateur pouvant prendre du temps.
 Dans le cas normal nous attendons la fin de l’appel API pour changer l'état de notre interface :
-![]({{ site.baseurl }}/assets/2019-07-23-optimistic-ui/simple_event_call.png)
+![]({BASE_URL}/imgs/articles/2019-07-23-optimistic-ui/simple_event_call.png)
 Si le serveur prend du temps, l’utilisateur peut penser à un dysfonctionnement de l'application.  Il risque alors de cliquer à nouveau sur le bouton et de multiplier les appels au serveur. Pour régler ce problème nous pouvons faire patienter l'utilisateur avec un état “En chargement” grâce à un loader bien connu des utilisateurs de 3G :
-![]({{ site.baseurl }}/assets/2019-07-23-optimistic-ui/loading_event_call.png)
+![]({BASE_URL}/imgs/articles/2019-07-23-optimistic-ui/loading_event_call.png)
 Et si on donnait l'impression à notre utilisateur qu’il utilise une application totalement optimisée en lui affichant directement le résultat final de son action comme si tout se passait comme dans le meilleur des mondes ?
-![]({{ site.baseurl }}/assets/2019-07-23-optimistic-ui/optimistic_event_call.png)
+![]({BASE_URL}/imgs/articles/2019-07-23-optimistic-ui/optimistic_event_call.png)
 Cette technique est très prisée des outils de communication écrite comme les tchats ou les applications sms de vos téléphones lors de l’envoi de message.
-![]({{ site.baseurl }}/assets/2019-07-23-optimistic-ui/phone_exemple.gif)
+![]({BASE_URL}/imgs/articles/2019-07-23-optimistic-ui/phone_exemple.gif)
 Ici, le message s’affiche dans la conversation alors que la barre de chargement n’est pas encore complète et que le “Sending... “ est encore présent.
 
 ## Mais la réalité est-elle si optimiste ?

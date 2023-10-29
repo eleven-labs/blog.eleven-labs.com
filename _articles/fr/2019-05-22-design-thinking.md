@@ -43,7 +43,7 @@ Il est parfois difficile de réunir toutes les personnes légitimes pendant plus
 4. Prototyper la solution
 5. Tester la solution
 
-![]({{site.baseurl}}/assets/2019-05-22-design-thinking/design-thinking.png)
+![]({BASE_URL}/imgs/articles/2019-05-22-design-thinking/design-thinking.png)
 
 Les solutions qui émergent du design thinking peuvent être de nature et de complexité très variées. Il ne s’agit pas systématiquement d’aboutir à une solution digitale à développer.
 

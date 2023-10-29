@@ -28,7 +28,7 @@ Autre précision, l'événement est gratuit, il faut simplement se pré-inscrire
 
 ## Keynote d'ouverture
 
-![]({{site.baseurl}}/assets/2019-04-16-aws-summit-2019-retour-d-experience/keynote-ouverture.jpg)
+![]({BASE_URL}/imgs/articles/2019-04-16-aws-summit-2019-retour-d-experience/keynote-ouverture.jpg)
 
 
 L'ouverture des conférences s'est faite à 9h30 après le petit déjeuner sur une Keynote d'une heure quarante-cinq. Julien Groues, Country Manager France AWS, est revenu un peu sur l'historique des services.
@@ -61,7 +61,7 @@ L'idée générale du talk était de montrer comment faire des économies en com
 
 Statistiquement : sur **une moyenne de 125 clients** on obtient une **économie de 26 à 49%** en cloud comparé à du on premise, et c'est en partie dû au fait que **84% des servers on-premise sont surdimensionnés** (statistiques d'Amazon).
 
-![]({{site.baseurl}}/assets/2019-04-16-aws-summit-2019-retour-d-experience/onpremise-vs-aws.jpg)
+![]({BASE_URL}/imgs/articles/2019-04-16-aws-summit-2019-retour-d-experience/onpremise-vs-aws.jpg)
 
 
 ### Économie :
@@ -114,7 +114,7 @@ L'utilisateur accède à l'app (statique) qui est sur un bucket (S3, le service 
 
 Pour finir, cette sauvegarde lance un événement qui permet d'exécuter une autre lambda qui va écrire dans un SQS (Simple Queue Storage) pour envoyer la confirmation d'inscription à l'utilisateur.
 
-![]({{site.baseurl}}/assets/2019-04-16-aws-summit-2019-retour-d-experience/20-minutes-frontend.jpg)
+![]({BASE_URL}/imgs/articles/2019-04-16-aws-summit-2019-retour-d-experience/20-minutes-frontend.jpg)
 
 
 Conclusion le frontend est maintenant séparé en différentes briques interchangeables et est scalable en fonction de la demande des utilisateurs et tout ça à moindre coût.

@@ -20,7 +20,7 @@ keywords:
 
 Depuis le début de l’existence des navigateurs, il est possible de les customiser afin d’y ajouter des fonctionnalités. Cela se présentait d'abord presque exclusivement sous la forme de barres d’outils à l'utilité douteuse, pour plus tardivement proposer des extensions présentant un véritable gain pour l’utilisateur. On pourra citer pour les plus connues : µBlock, React Developper Tools, DownloadHelper... Certaines dans d'entre elles ont même été intégrées aux navigateurs.
 
-![]({{ site.baseurl }}/assets/2020-03-30-extensions-navigateur/ie_bar.png)
+![]({BASE_URL}/imgs/articles/2020-03-30-extensions-navigateur/ie_bar.png)
 
 Ces extensions sont aujourd’hui développées sur la base de Javascript, HTML et CSS. Ce qui rend facile leur accessibilité.
 Tous les principaux navigateurs se sont accordés autour d’une seule et même API, à quelques légères différences près. Safari par contre continue à utiliser sa propre structure.
@@ -118,13 +118,13 @@ browser.storage.sync.set({
 ```
 On poura éditer cette configuation dans les propriétés de l'extension dans `about:addons`
 
-![]({{ site.baseurl }}/assets/2020-03-30-extensions-navigateur/web_extension_config.png)
+![]({BASE_URL}/imgs/articles/2020-03-30-extensions-navigateur/web_extension_config.png)
 
 ## Installation
 Pour installer temporairement son extension il suffit d’ouvrir dans Firefox `about:debugging` et de cliquer sur « Charger un module complémentaire temporaire… » et de sélectionner son fichier manifest.json. Cela nous permet aussi de pouvoir la débuguer.
 Afin de créer son package .xpi, il faudra passer par la [validation de Mozilla](https://extensionworkshop.com/documentation/publish/submitting-an-add-on/) qui contrôlera la validité du code et signera l’extension. Elle pourra ensuite être distribuée ou même ajoutée dans le store.
 
-![]({{ site.baseurl }}/assets/2020-03-30-extensions-navigateur/web_extension.png)
+![]({BASE_URL}/imgs/articles/2020-03-30-extensions-navigateur/web_extension.png)
 
 ## La suite
 Il reste beaucoup à améliorer :

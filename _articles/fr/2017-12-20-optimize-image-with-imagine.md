@@ -34,11 +34,11 @@ Notre projet est un jeu dont le but est de placer des objets (par drag and drop 
 Les données à manipuler essentiellement sont :
 * **la pièce**: Elle est caractérisée principalement par _une image_ et un _coefficient d'agrandissement_ des objets.
 
-![un exemple de pièce]({{site.baseurl}}/assets/2017-12-20-optimize-image-with-imagine/room.png)
+![un exemple de pièce]({BASE_URL}/imgs/articles/2017-12-20-optimize-image-with-imagine/room.png)
 * **les objets**: Ils ont comme informations principales _une image_, et _une taille réelle_ en centimètre.
 
-![une table]({{site.baseurl}}/assets/2017-12-20-optimize-image-with-imagine/table.png)
-![un écran]({{site.baseurl}}/assets/2017-12-20-optimize-image-with-imagine/imac.png).
+![une table]({BASE_URL}/imgs/articles/2017-12-20-optimize-image-with-imagine/table.png)
+![un écran]({BASE_URL}/imgs/articles/2017-12-20-optimize-image-with-imagine/imac.png).
 
 L'objectif à atteindre :
 * Optimiser les fonds de pièces
@@ -197,8 +197,8 @@ protected function execute(
 
 Pour les objets, la méthode de calcul est un peu différente. On ne peut pas leur appliquer une taille par défaut comme pour les pièces. En effet ils n'ont pas tous la même taille (On ne peut pas redimensionner une table et un écran de la même manière)!
 
-![une table](/_assets/articles/2017-12-20-optimize-image-with-imagine/table.png)
-![un écran](/_assets/articles/2017-12-20-optimize-image-with-imagine/imac.png).
+![une table]({BASE_URL}/imgs/articles/2017-12-20-optimize-image-with-imagine/table.png)
+![un écran]({BASE_URL}/imgs/articles/2017-12-20-optimize-image-with-imagine/imac.png).
 
 Nous avons décidé de calculer la taille maximale des images de nos objets lorsqu'elles sont au maximum zoomées dans les pièces.
 

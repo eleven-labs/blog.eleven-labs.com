@@ -26,7 +26,7 @@ L'agilité est devenue un choix populaire pour les entreprises qui cherchent à 
 
 L'approche SCRUM est une méthode agile de gestion de projet. Son objectif principal est d'améliorer la productivité de son équipe tout en permettant l'optimisation des produits grâce à des retours réguliers du marché. Cette méthodologie est l'une des plus populaires et des plus utilisées dans les projets de développement de logiciels. Scrum est basé sur des sprints, de courtes périodes de travail d'une durée de deux semaines à un mois, au cours desquelles une équipe de développement se concentre sur un objectif précis. Scrum utilise des réunions quotidiennes pour suivre l'avancement du projet et des réunions de sprint pour planifier et évaluer chaque sprint.
 
-![]({{ site.baseurl }}/assets/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/agile.png)
+![]({BASE_URL}/imgs/articles/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/agile.png)
 
 Suite à un questionnaire diffusé auprès des équipes d’Eleven Labs et des recherches, vous trouverez ci-dessous les avantages et inconvénients identifiés dans l’utilisation de la méthode SCRUM :
 
@@ -83,8 +83,8 @@ Kanban est une méthode de gestion de projet visuelle axée sur la gestion du fl
 Le tableau Kanban est complètement personnalisable en fonction de vos besoins. Par exemple, vous pouvez utiliser le tableau le plus commun composé de 3 colonnes (image de gauche) : to do (tickets priorisés par ordre d’importance), work in progress (tickets en cours de développement) et done (tickets terminés ou livrés). Vous pouvez aussi personnaliser votre Kanban, comme l’un de nos projets Studio, en rajoutant une colonne pour les tickets en cours de définition fonctionnelle, ou ceux qui sont à tester par l’équipe technique ou fonctionnelle (image de droite).
 
 
-![]({{ site.baseurl }}/assets/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/kanban1.jpg?width=400)
-![]({{ site.baseurl }}/assets/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/kanban_jira.png)
+![]({BASE_URL}/imgs/articles/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/kanban1.jpg?width=400)
+![]({BASE_URL}/imgs/articles/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/kanban_jira.png)
 
 ### Avantages
 
@@ -146,7 +146,7 @@ SAFe (Scaled Agile Framework) est une expansion du framework Scrum pour la gesti
 
 Ainsi, alors que Scrum définit un framework au niveau de l’équipe, Safe apporte des précisions pour la mise en place de l’agilité au niveau de l’entreprise au global. Elle permet ainsi d'étendre l'approche Agile à l'ensemble de l'organisation en utilisant une chaîne d'équipes collaboratives appelées "Agile Release Trains". Cette méthode se différencie de la pratique consistant à cloisonner les méthodes agiles à un seul service en utilisant le modèle Scrum. SAFe se concentre sur l'alignement de l'ensemble de l'entreprise sur les objectifs communs et sur la fourniture de résultats cohérents à grande échelle.
 
-![]({{ site.baseurl }}/assets/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/agile_train.jpg)
+![]({BASE_URL}/imgs/articles/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/agile_train.jpg)
 
 ### Avantages
 
@@ -186,7 +186,7 @@ Rémi a également noté un manque concernant les **parties prenantes externes**
 Mission : Accompagnement sur l’agilité et le framework Safe
 "Pendant deux ans, nous avons appliqué les principes de SAFe (Scaled Agile Framework) pour faciliter l'adoption de pratiques communes par toutes les parties prenantes et favoriser la collaboration dans notre programme. Nous avons également mis en place les principes de l'agilité en entreprise pour permettre la mise en place d'un budget capacitif, suivi d'un portefeuille d'initiatives produit. Cette étape a permis d'aligner toutes les parties prenantes du programme sur des pratiques communes et de rendre notre produit plus réactif aux changements tels que le marché, les avantages concurrentiels, les besoins des clients et les impératifs commerciaux."
 
-![]({{ site.baseurl }}/assets/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/methodo_eleven.jpg)
+![]({BASE_URL}/imgs/articles/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/methodo_eleven.jpg)
 
 ## Conclusion
 

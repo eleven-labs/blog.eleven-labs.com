@@ -24,15 +24,15 @@ The most common mean of communication between a provider and its customer is the
 
 You should have seen it in your Gmail mailbox, in some cases your mails have a different display or even an extra button (like a call-to-action).
 
-![](/_assets/articles/2017-07-05-take-care-your-mails/capture-decran-2017-05-30-a-20.20.36.png)
+![]({BASE_URL}/imgs/articles/2017-07-05-take-care-your-mails/capture-decran-2017-05-30-a-20.20.36.png)
 
 > Example: Booking an event
 
-![](/_assets/articles/2017-07-05-take-care-your-mails/capture-decran-2017-05-30-a-20.26.14.png)
+![]({BASE_URL}/imgs/articles/2017-07-05-take-care-your-mails/capture-decran-2017-05-30-a-20.26.14.png)
 
 > Example: Your next trip
 
-![](/_assets/articles/2017-07-05-take-care-your-mails/capture-decran-2017-05-30-a-20.29.24.png)
+![]({BASE_URL}/imgs/articles/2017-07-05-take-care-your-mails/capture-decran-2017-05-30-a-20.29.24.png)
 
 > Exemple: Un call-to-action
 
@@ -178,9 +178,9 @@ As Google knows you better than yourself, you can do Google searches that will p
 
 I invite you to type **my flights**, **my orders**, **my reservations**, you will be surprised.
 
-![](/_assets/articles/2017-07-05-take-care-your-mails/capture-decran-2017-05-30-a-21.11.52.png)
+![]({BASE_URL}/imgs/articles/2017-07-05-take-care-your-mails/capture-decran-2017-05-30-a-21.11.52.png)
 
-![](/_assets/articles/2017-07-05-take-care-your-mails/capture-decran-2017-05-30-a-21.11.11.png)
+![]({BASE_URL}/imgs/articles/2017-07-05-take-care-your-mails/capture-decran-2017-05-30-a-21.11.11.png)
 
 ### Conclusion
 

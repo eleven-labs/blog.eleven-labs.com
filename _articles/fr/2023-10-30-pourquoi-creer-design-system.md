@@ -72,19 +72,19 @@ Pour illustrer la diversité des choix réalisés dans le contexte français, vo
 
 - **[Système de Design de l'État (Gouvernement Français)](https://www.systeme-de-design.gouv.fr/)**
 
-![Design System Etat Français]({{ site.baseurl }}/assets/2023-10-30-pourquoi-creer-design-system/design-system-etat-francais.png)
+![Design System Etat Français]({BASE_URL}/imgs/articles/2023-10-30-pourquoi-creer-design-system/design-system-etat-francais.png)
 
 Ce Design System gouvernemental garantit une cohérence visuelle à travers les différents services et sites web de l'administration française.
 
 - **[Vitamin (Decathlon)](https://www.decathlon.design/)**
 
-![Design System Decathlon]({{ site.baseurl }}/assets/2023-10-30-pourquoi-creer-design-system/design-system-decathlon.png)
+![Design System Decathlon]({BASE_URL}/imgs/articles/2023-10-30-pourquoi-creer-design-system/design-system-decathlon.png)
 
 Decathlon a développé son propre Design System, Vitamin, pour maintenir l'uniformité de l'expérience utilisateur dans ses produits sportifs diversifiés.
 
 - **[Welcome UI (Welcome to the Jungle)](https://www.welcome-ui.com/)**
 
-![Design System Welcome to the Jungle]({{ site.baseurl }}/assets/2023-10-30-pourquoi-creer-design-system/design-system-welcome-to-the-jungle.png)
+![Design System Welcome to the Jungle]({BASE_URL}/imgs/articles/2023-10-30-pourquoi-creer-design-system/design-system-welcome-to-the-jungle.png)
 
 Welcome to the Jungle, une plateforme d'emploi, a créé Welcome UI pour assurer une interface utilisateur cohérente et conviviale.
 

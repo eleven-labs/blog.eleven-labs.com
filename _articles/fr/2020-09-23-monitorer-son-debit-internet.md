@@ -29,14 +29,14 @@ Après quelques recherches et la découverte de l'utilitaire [speedtest-cli](htt
 
 L'objectif étant de récupérer à intervalle régulier, d'historiser et de consulter ces mesures.
 
-![]({{site.baseurl}}/assets/2020-09-23-monitorer-son-debit-internet/dashboard.png)
+![]({BASE_URL}/imgs/articles/2020-09-23-monitorer-son-debit-internet/dashboard.png)
 
 ## Architecture globale du projet
 Notre projet se décompose en deux parties : d'une part le stockage et la visualisation des métriques, et d'autre part
 la récupération de ces métriques.
 Le tout sera hébergé sur un Raspberry Pi avec docker et docker-compose.
 
-![]({{site.baseurl}}/assets/2020-09-23-monitorer-son-debit-internet/schema.png)
+![]({BASE_URL}/imgs/articles/2020-09-23-monitorer-son-debit-internet/schema.png)
 
 Pour la première partie, stockage et visualisation des métriques, nous allons utiliser InfluxDB et Grafana.
 InfluxDB est une base de données time series conçue pour supporter des charges soutenues en lecture et en écriture.
@@ -287,7 +287,7 @@ Pour vous connecter a l'interface web de Grafana, rendez vous à l'url `http://<
 Un écran de connexion s'affiche, utilisez le username `admin` et le mot de passe `admin` pour votre première connexion.
 Vous serez ensuite redirigé vers une page vous permettant de changer le mot de passe de l'utilisateur `admin`.
 
-![]({{site.baseurl}}/assets/2020-09-23-monitorer-son-debit-internet/grafana_connect.gif)
+![]({BASE_URL}/imgs/articles/2020-09-23-monitorer-son-debit-internet/grafana_connect.gif)
 
 ### Source de donnée InfluxDB
 
@@ -303,7 +303,7 @@ renseigner le nom de la base de données `speedtest` dans la section "InfluxDB D
 
 Vous pouvez alors sauvegarder et tester la connexion (bouton "Save & Test").
 
-![]({{site.baseurl}}/assets/2020-09-23-monitorer-son-debit-internet/grafana_datasource.gif)
+![]({BASE_URL}/imgs/articles/2020-09-23-monitorer-son-debit-internet/grafana_datasource.gif)
 
 ### Création du dashboard
 
@@ -316,7 +316,7 @@ la zone "Import via panel json" puis chargez le (bouton "Load").
 
 Et enfin importez le (bouton "Import").
 
-![]({{site.baseurl}}/assets/2020-09-23-monitorer-son-debit-internet/grafana_dashboard.gif)
+![]({BASE_URL}/imgs/articles/2020-09-23-monitorer-son-debit-internet/grafana_dashboard.gif)
 
 ## Conclusion
 En quelques minutes nous avons mis en place une solution permettant de monitorer votre débit internet. Cependant cette

@@ -15,7 +15,7 @@ keywords:
   - devops
 ---
 
-![Dark Vador Cookie]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/COOKIE.jpg)
+![Dark Vador Cookie]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/COOKIE.jpg)
 
 Si vous avez lu **“Microsoft”** et que vous n’avez pas fui, bienvenue sur cette
 introduction à la solution de **Cloud Microsoft** ! Ayant travaillé deux ans sur **Azure**, j’ai eu envie de partager ce que j’avais pu apprendre et livrer mes astuces et mon ressenti sur cet outil.
@@ -95,7 +95,7 @@ Microsoft fournit un accès pour tester sa solution. Il suffit d'effectuer les �
 
 1.  Cliquez sur le lien d'accès à la [version de test](https://azure.microsoft.com/fr-fr/free/)
 2. Cliquez sur le bouton encadré en rouge.
-	  ![Interface free azure]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/FREE.png)
+	  ![Interface free azure]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/FREE.png)
 	  _**Image 1:** interface d'accès à l'abonnement gratuit_
 4. Connectez-vous via le portail Microsoft. (si vous n’avez pas de compte, créez-en un)
 5. Remplissez le formulaire avec vos informations. À la fin de la procédure, vos informations bancaires vous seront demandées. C’est une sécurité pour éviter de créer plusieurs comptes gratuits. 
@@ -114,7 +114,7 @@ Nous avons donc :
 
 Voici un **schéma** qui résume l'ensemble : 
 
-![Organisation]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/ORG.png)
+![Organisation]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/ORG.png)
 
 #### Votre première machine virtuelle
 
@@ -137,7 +137,7 @@ Nous allons commencer par vérifier que nous possédons bien un abonnement.
  2. Selectionnez 'Abonnement' **(2)**
  3. Vérifiez qu'il est bien présent **(3)**
 
-   ![Abonnement]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/ABO.png)
+   ![Abonnement]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/ABO.png)
   
 ##### La création du groupe de ressources
 
@@ -147,12 +147,12 @@ Nous avons un abonnement fonctionnel, nous allons ajouter un 'Groupe de ressourc
  2. Selectionnez 'Groupe de ressources' **(2)**
  3. Cliquez sur 'Créer'  **(3)**
 
-   ![Ressource groupe]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/RG.png)
+   ![Ressource groupe]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/RG.png)
 
 4. Entrez le nom du groupe **(1)**
 5. Cliquez sur 'Vérifier + Créer' **(2)**
 
-![Ressource group configuration]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/RGC.png)
+![Ressource group configuration]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/RGC.png)
 
 #####  Groupe de sécurité réseau
 
@@ -162,17 +162,17 @@ Nous allons créer et ajouter un Groupe de sécurité réseau. C'est l'équivala
  2. Sélectionnez 'Groupe de sécurité réseau' **(2)**
  3. Cliquez sur 'Créer' **(3)**
 
-   ![NSG]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSG.png)
+   ![NSG]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/NSG.png)
    
  4. Entrez le nom du groupe de sécurité réseau **(1)**
  5. Cliquez sur 'Vérifier + Créer' **(2)**
 
-   ![NSG configuration]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSGC.png)
+   ![NSG configuration]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/NSGC.png)
 
  6. Vous avez ici les règles par défaut affichées **(1)**
  7. Cliquez sur 'Règles de sécurité de trafic entrant **(2)**
 
-   ![NSG rules]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSGRR.png)
+   ![NSG rules]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/NSGRR.png)
 
  8. Cliquez sur 'Ajouter'**(1)**
  9. Entrez en source 'Any'**(2)**
@@ -182,7 +182,7 @@ Nous allons créer et ajouter un Groupe de sécurité réseau. C'est l'équivala
  13. Cochez 'Autoriser' **(6)**
  14. Entrez le nombre pour la priorité **(7)** 
  
- ![NSG add port]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/NSGM.png)
+ ![NSG add port]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/NSGM.png)
 
 > Le choix du nombre pour indiquer la priorité est simple. Plus le nombre est petit, plus il sera traité avant les autres. Les règles de blocages ont des nombres plus grand que ceux qui autorisent.
 
@@ -194,7 +194,7 @@ Nous allons créer et ajouter un Groupe de sécurité réseau. C'est l'équivala
  2. Selectionnez 'Machines Virtuelles' **(2)**
  3. Cliquez sur 'Créer' **(3)**
 
-   ![VM]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/MV.png)
+   ![VM]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/MV.png)
 
  4. Ajouter notre Groupe de Ressources**(1)**
  5. Ajouter le nom de la Machine Virtuelle **(2)**
@@ -203,17 +203,17 @@ Nous allons créer et ajouter un Groupe de sécurité réseau. C'est l'équivala
  8. Choisir la taille en fonction du besoin **(5)**
  9. Cliquez sur 'Suivant : Disques' 
 
-   ![VM configuration]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/MVC11.png)
+   ![VM configuration]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/MVC11.png)
 
 11. Sélectionnez le type de disque qui vous intéresse **(2)**
 
-   ![VM configuration disk]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/MVCD.png)
+   ![VM configuration disk]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/MVCD.png)
 
 12. Au niveau de 'Groupe de sécurité réseau de la carte réseau', cochez 'Paramètres avancés'**(1)**
 13. Selectionner le groupe réseau crée précédemment.
 14. Cliquez sur 'Vérifier + créer'
          
-![VM configuration réseau]({{ site.baseurl }}/assets/2022-02-15-introduction-a-microsoft-azure/MVCN.png)
+![VM configuration réseau]({BASE_URL}/imgs/articles/2022-02-15-introduction-a-microsoft-azure/MVCN.png)
 
 #####  Connexion à la machine virtuelle
 

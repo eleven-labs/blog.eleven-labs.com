@@ -75,7 +75,7 @@ Sur le backend d'auth par défaut (`rabbit_auth_backend_internal`), les permissi
  * Write regexp
  * Read regexp
 
-![RabbitMQ Permissions]({{site.baseurl}}/assets/2018-04-11-rabbitmq-partie-2-la-maitrise/rabbitmq-permissions.png)
+![RabbitMQ Permissions]({BASE_URL}/imgs/articles/2018-04-11-rabbitmq-partie-2-la-maitrise/rabbitmq-permissions.png)
 
 > 🚀 Pour une utilisation plus simple des regexp je vous conseille d'avoir une vraie stratégie de nommage des `exchanges`/`queues`
 > avec des préfixes/segments/suffixes. D'une part vous pourrez plus facilement identifier qui a créé les ressources mais aussi qui les consomme.
@@ -89,7 +89,7 @@ Je vous laisse consulter le [tableau de répartition des actions par ressource](
 Les policies sont des règles de configurations qui s'appliquent aux `exchanges` et aux `queues` (dont le nom matche une regexp) afin de diminuer la redondance de configuration mais aussi et surtout de pouvoir changer une `policy` sans avoir à détruire et recréer la ressource (`exchange`/`queue`).
 Certaines options de configuration d'une `policy` sont spécifiques aux `exchanges` et d'autres aux `queues`.
 
-![RabbitMQ Policies]({{site.baseurl}}/assets/2018-04-11-rabbitmq-partie-2-la-maitrise/rabbitmq-policies.png)
+![RabbitMQ Policies]({BASE_URL}/imgs/articles/2018-04-11-rabbitmq-partie-2-la-maitrise/rabbitmq-policies.png)
 
 Les `Policies` peuvent être utilisées pour configurer :
 
@@ -142,7 +142,7 @@ Configurez ensuite votre queue `queue1` avec `x-dead-letter-exchange: "waiting_5
 
 > ⚠️ le x-dead-letter-routing-key doit être configuré avec le nom de la queue.
 
-![RabbitMQ Retry]({{site.baseurl}}/assets/2018-04-11-rabbitmq-partie-2-la-maitrise/rabbitmq-retry.jpg)
+![RabbitMQ Retry]({BASE_URL}/imgs/articles/2018-04-11-rabbitmq-partie-2-la-maitrise/rabbitmq-retry.jpg)
 
 Avec cette configuration, quand le consumer NACK le message, RabbitMQ redirige le message dans l'exchange `waiting_5` (fanout)
 qui va donc router ce message dans la queue `waiting_5`. La queue `waiting_5` va attendre 5 secondes avant d'`expired` le message,
@@ -156,7 +156,7 @@ Un `poison message` c'est un message que le consumer rejettera (NACK) à chaque 
 Afin de traiter les poisons messages il faut que le consumer regarde dans les properties du message afin de vérifier
 que le nombre de tentatives n'a pas été atteint.
 
-![RabbitMQ Retry]({{site.baseurl}}/assets/2018-04-11-rabbitmq-partie-2-la-maitrise/rabbitmq-x-death-header.jpg)
+![RabbitMQ Retry]({BASE_URL}/imgs/articles/2018-04-11-rabbitmq-partie-2-la-maitrise/rabbitmq-x-death-header.jpg)
 
 > Si le nombre de retry a été atteint il faudra loguer une erreur et ACK le message.
 

@@ -163,7 +163,7 @@ export default MyApp
 
 Now, each page generated from the pages folder uses the Layout, as we can see in our index page:
 
-![astro teams layout]({{ site.baseurl }}/assets/2022-01-26-build-website-with-nextjs/website-layout.png)
+![astro teams layout]({BASE_URL}/imgs/articles/2022-01-26-build-website-with-nextjs/website-layout.png)
 
 Let's add the HTML content for the index page.
 
@@ -227,7 +227,7 @@ export default function Home() {
 
 > **Note**: don't forget to add the CSS rules. They are in the `styles/Home.module.css. All CSS modules for pages are in this folder.
 
-![Website Home Page]({{ site.baseurl }}/assets/2022-01-26-build-website-with-nextjs/homepage.png)
+![Website Home Page]({BASE_URL}/imgs/articles/2022-01-26-build-website-with-nextjs/homepage.png)
 
 The `pages/index.js` and `components/Layout.js` components contain redirections to other website pages, but they don't exist yet. Let's learn how to create these pages with NextJS.
 
@@ -274,7 +274,7 @@ export default function Contact() {
 }
 ```
 
-![Contact Page]({{ site.baseurl }}/assets/2022-01-26-build-website-with-nextjs/contactpage.png)
+![Contact Page]({BASE_URL}/imgs/articles/2022-01-26-build-website-with-nextjs/contactpage.png)
 
 Now we have a contact page. The website needs one page for each astronaut's team. To do that, we will create a route with the team name as a parameter.
 
@@ -346,7 +346,7 @@ export default function Team({ teamName, teamDescription, teamImagePath, teamPla
 
 We pass our props to a component to render the page content. Now if you click on the read more button, you can see a team page:
 
-![Team Page]({{ site.baseurl }}/assets/2022-01-26-build-website-with-nextjs/teampage.png)
+![Team Page]({BASE_URL}/imgs/articles/2022-01-26-build-website-with-nextjs/teampage.png)
 
 Our website is finally ready to be published. To conclude this article, let's sum up some feedback about building this website.
 

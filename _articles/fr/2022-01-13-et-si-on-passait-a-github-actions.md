@@ -229,7 +229,7 @@ Voici donc les différentes étapes :
     - `run: terraform fmt -check -recursive -diff -no-color .`
 
 
-![Premier job: lint]({{ site.baseurl }}/assets/2022-01-13-et-si-on-passait-a-github-actions/github-actions-lint.png)
+![Premier job: lint]({BASE_URL}/imgs/articles/2022-01-13-et-si-on-passait-a-github-actions/github-actions-lint.png)
 
 
 Voici donc la définition YAML de notre premier `job` :
@@ -269,7 +269,7 @@ Voici donc les différentes étapes pour le second :
     - `run: terraform plan -input=false -no-color -compact-warnings`
 
 
-![Second job: plan]({{ site.baseurl }}/assets/2022-01-13-et-si-on-passait-a-github-actions/github-actions-plan.png)
+![Second job: plan]({BASE_URL}/imgs/articles/2022-01-13-et-si-on-passait-a-github-actions/github-actions-plan.png)
 
 
 Voici donc la définition YAML de notre second `job`

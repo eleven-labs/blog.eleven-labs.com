@@ -41,12 +41,12 @@ Après avoir visionné quelques tutos vidéos pour apprendre les bases, j’ai p
 
 Aperçu de mes maquettes :
 
-![]({{ site.baseurl }}/assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.39.50.png)
-![]({{ site.baseurl }}/assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.52.43.png)
-![]({{ site.baseurl }}/assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.52.54.png)
-![]({{ site.baseurl }}/assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.53.11.png)
-![]({{ site.baseurl }}/assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.53.29.png)
-![]({{ site.baseurl }}/assets/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.54.23.png)
+![]({BASE_URL}/imgs/articles/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.39.50.png)
+![]({BASE_URL}/imgs/articles/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.52.43.png)
+![]({BASE_URL}/imgs/articles/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.52.54.png)
+![]({BASE_URL}/imgs/articles/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.53.11.png)
+![]({BASE_URL}/imgs/articles/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.53.29.png)
+![]({BASE_URL}/imgs/articles/2017-02-08-ma-premiere-application-sous-ios/capture-d-ecran-2017-01-22-a-13.54.23.png)
 
 * PS: Je remercie Julie qui m'a aidée sur la partie Graphique/UX :)*
 

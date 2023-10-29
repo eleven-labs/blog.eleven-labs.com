@@ -113,7 +113,7 @@ L'interface Jupyter est quasiment identique à IPython. Il y a des cellules dans
 Tout est enregistré dans un fichier `.ipynb`.
 
 
-![Interface Jupyter]({{ site.baseurl }}/assets/2022-06-13-decouverte-ipython/jupyter.png)
+![Interface Jupyter]({BASE_URL}/imgs/articles/2022-06-13-decouverte-ipython/jupyter.png)
 
 Github met en forme les notebooks Jupyter pour en faciliter la lecture. Par exemple : [https://github.com/jdwittenauer/ipython-notebooks/blob/master/notebooks/ml/ML-Exercise1.ipynb](https://github.com/jdwittenauer/ipython-notebooks/blob/master/notebooks/ml/ML-Exercise1.ipynb)
 

@@ -39,7 +39,7 @@ docker run -it --rm \
 	-v ~/.n8n:/home/node/.n8n \
 	n8nio/n8n
 ```
-![Sortie de la console]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/install/install.png)
+![Sortie de la console]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/install/install.png)
 
 Voilà, vous n’avez plus qu’à appuyer sur “o” ou à aller sur l’url [http://localhost:5678/](http://localhost:5678/) pour accéder à l’interface.
 
@@ -54,7 +54,7 @@ En plus de n8n, vous avez besoin d’un compte Google, avec Google Calendar, Goo
 ### L’interface
 L’outil propose une interface assez claire, avec à droite un menu permettant de gérer les workflows et les credentials pour accéder aux différentes applications que vous souhaitez utiliser, à gauche la recherche pour ajouter un noeud, et au centre, la création de votre workflow.
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/workflow_init.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/workflow_init.png)
 
 ### Premier noeud : le trigger
 Le trigger *Start* est par défaut sur chaque worflow et on ne peut pas le supprimer, mais cela ne pose aucun souci.
@@ -62,9 +62,9 @@ Pour le scénario, il s’agit d’un trigger *Cron* qui sera déclenché tous l
 
 Il suffit d’aller le chercher dans la liste des triggers dans l’ajout de noeuds à gauche.
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/cron/add_trigger_cron.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/cron/add_trigger_cron.png)
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/cron/popin_trigger_cron.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/cron/popin_trigger_cron.png)
 
 Dans le cas d’un trigger de type GitLab, il vous faudra saisir les credentials associés. Je vais montrer comment en rajouter lors des étapes suivantes pour les API Google.
 
@@ -91,16 +91,16 @@ return items;
 
 Pour avoir les variables pour le noeud suivant, il faut cliquer sur _Execute Node_ en haut à gauche de la popin.
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/function_start_end_date/function_start_end_date.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/function_start_end_date/function_start_end_date.png)
 
 ### Troisième noeud : récupérer mon planning de la semaine sur Google Calendar
 Maintenant que nous avons les valeurs pour filtrer, vous allez pouvoir ajouter un noeud de type _Google Calendar_.
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_calendar/popin_empty.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_calendar/popin_empty.png)
 
 Ici, il va falloir rajouter les credentials de votre compte Google. Dans la popin de configuration du noeud, vous pouvez accéder directement à la création de credentials via  _Credentials -> Calendar Calendar -> Select “Create new”_.
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_calendar/credentials_empty.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_calendar/credentials_empty.png)
 
 La documentation de n8n vous explique [comment récupérer vos credentials](https://docs.n8n.io/credentials/google/#prerequisites) si vous ne savez pas comment procéder. Vous allez devoir aller sur le Google Cloud Platform et si vous en avez besoin, créer un projet.
 
@@ -108,7 +108,7 @@ N’oubliez pas non plus d’activer l’API correspondant à l’outil que vous
 
 Un nouveau _Credential_ sera à recréer pour chaque API différente que vous allez devoir appeler dans ce workflow.
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_calendar/credentials.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_calendar/credentials.png)
 
 Quand la configuration du _Credential_ est terminée, il faut saisir le reste des paramètres du noeud :
 -   Resource : Event
@@ -117,16 +117,16 @@ Quand la configuration du _Credential_ est terminée, il faut saisir le reste de
 -   Return All : true
 -   Options : Rajouter les filtres _Start Time_ et _End Time_. Pour chacun, cliquez sur les écrous puis sur _Add Expression_. Dans la popin, il est possible de récupérer facilement la valeur des items définis dans la fonction précédente.
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_calendar/parameters_without_list.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_calendar/parameters_without_list.png)
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_calendar/filter.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_calendar/filter.png)
 
 Pour tester le noeud, cliquez sur _Execute Node_, et vous verrez l’ensemble des événements pour cet intervalle.
 
 ### Quatrième noeud : Récupérer la todo list de Google Tasks
 Pour cet article, j’ai fait une petite liste simple sur Google Tasks.
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_tasks/list.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_tasks/list.png)
 
 Comme pour Google Calendar, après avoir ajouté le noeud, il faudra configurer les credentials.
 
@@ -134,11 +134,11 @@ Ensuite, dans les paramètres à saisir, il suffit d'indiquer que vous souhaitez
 
 Même scénario pour tester, cliquez sur _Execute node_, vous allez avoir votre tableau de tasks à faire.
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_tasks/popin.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/google_tasks/popin.png)
 
 Votre workflow ressemble maintenant à ça :
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/workflow_wip.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/workflow_wip.png)
 
 Il faut maintenant merger les données, créer le mail puis l'envoyer.
 
@@ -147,7 +147,7 @@ Il s’agit du noeud le plus simple dans cet exemple : _Merge_. Il y a plusieurs
 
 Après le _Execute Node_, vous avez la liste combinée des événements de la semaine et des tâches à faire.
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/merge/merge.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/merge/merge.png)
 
 ### Sixième noeud : Créer le contenu du mail
 Pour créer un contenu de mail tout propre, j’ai décidé d’utiliser une nouvelle fois le noeud _Function_.
@@ -185,7 +185,7 @@ return newItems;
 
 Testez pour voir le rendu :
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/function_message/function_message.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/function_message/function_message.png)
 
 ### Dernier noeud : envoi du mail avec toutes les informations
 Voici la dernière étape, l'envoi de l'email avec le message.
@@ -197,16 +197,16 @@ Après avoir configuré encore une fois les credentials, vous n’avez qu’à i
 -  HTML Message/Message: Add Expression, et sélectionner le message
 -  To Email: l’email du destinataire, vous
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/gmail/popin.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/gmail/popin.png)
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/gmail/message_expression.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/gmail/message_expression.png)
 
 ### Workflow final et réception du mail
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/workflow_final.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/workflow_final.png)
 
 Maintenant que le workflow est fini, il ne reste plus qu’à cliquer sur _Execute Workflow_ pour tester de bout-en-bout. Si tout se passe bien, vous allez recevoir ce fameux email :
 
-![]({{ site.baseurl }}/assets/2021-06-13-outil-low-code-automatisation-workflow-n8n/email.png)
+![]({BASE_URL}/imgs/articles/2021-06-13-outil-low-code-automatisation-workflow-n8n/email.png)
 
 Il ne manque plus qu’à activer votre workflow pour qu’il vous envoie le mail toutes les semaines.
 

@@ -65,7 +65,7 @@ Node Version Manager est un logiciel permettant de faire cohabiter plusieurs ver
 
 ## Docker
 
-![]({{ site.baseurl }}/assets/2020-09-30-meilleurs-outils-js-2020/docker.png)
+![]({BASE_URL}/imgs/articles/2020-09-30-meilleurs-outils-js-2020/docker.png)
 
 Si vous ne voulez pas vous soucier de quelle version de Node vous utilisez, il existe une solution encore plus pratique : [Docker](https://blog.eleven-labs.com/fr/cheat-sheet-docker-tout-ce-que-vous-devez-savoir/).
 
@@ -79,7 +79,7 @@ Ils peuvent nous permettre de lancer notre application sur nos différents envir
 
 ## ESLint & Prettier
 
-![]({{ site.baseurl }}/assets/2020-09-30-meilleurs-outils-js-2020/lint-prettier.jpg)
+![]({BASE_URL}/imgs/articles/2020-09-30-meilleurs-outils-js-2020/lint-prettier.jpg)
 
 Quand on fait du travail collaboratif, parler le même langage c’est bien. Mais arriver à lire les autres c’est encore mieux. Comme il existe autant de manières de coder qu’il y a de développeurs, on a besoin d’un outil qui permette d’uniformiser notre manière d'écrire pour permettre de nous concentrer sur d’autres aspects de notre travail. Ce genre d’outils existe et se nomme “linteur”. Il en existe pour à peu près tous les langages et celui de javascript s'appelle [ESLint](https://eslint.org/). Il marche grâce à un système de “rules” qui peuvent être décrites dans un fichier spécifique inclus à votre projet. Parmis ces “rules” on retrouve des règles de formatage, comme par exemple le nombre de caractères maximum pour une ligne, ou la nomenclature des variables et fonctions. Mais on trouve surtout des règles de bonne pratique régissant la qualité du code qui peuvent nous prévenir d'éventuels bugs.
 
@@ -105,7 +105,7 @@ Pour les tests End to End je vous conseille [Cypress](https://www.cypress.io/).
 
 Tous les web developers qui travaillent avec le navigateur de Google vous le diront, la console de Chrome est incroyable que ce soit pour logger, debbuger, analyser le network, etc… il existe un outil inclus. Mais à côté de toutes ces fonctionnalités qui existent aussi sur les autres navigateurs, il y en a une qui nous intéresse particulièrement, c’est Lighthouse.
 
-![]({{ site.baseurl }}/assets/2020-09-30-meilleurs-outils-js-2020/lighthouse.jpg)
+![]({BASE_URL}/imgs/articles/2020-09-30-meilleurs-outils-js-2020/lighthouse.jpg)
 
 Lighthouse est un programme open source qui permet en un clic de générer des audits de votre application pour mobile ou desktop et ce sur plusieurs aspects, qui sont:
 *   Les performances
@@ -125,7 +125,7 @@ En parlant de render, ne vous êtes vous jamais demandé pourquoi vos composants
 
 ## Storybook
 
-![]({{ site.baseurl }}/assets/2020-09-30-meilleurs-outils-js-2020/storybook.png)
+![]({BASE_URL}/imgs/articles/2020-09-30-meilleurs-outils-js-2020/storybook.png)
 
 Si comme moi vous avez adopté la méthodologie [BEM](https://blog.eleven-labs.com/fr/retour-d-experience-sur-bem/), alors vous connaissez la nécessité d’avoir des composants unitaires, avec un affichage et un comportement uniforme à chaque utilisation. Pour aider à travailler dans ce sens il existe l’outil open source [Storybook](https://storybook.js.org/), qui est disponible pour React, Vue et Angular et qui permet de facilement créer et maintenir vos composants pour une meilleure réutilisabilité. Pour en savoir plus une suite d’articles est disponible sur notre [blog](https://blog.eleven-labs.com/fr/Storybook-creer-son-premier-composant/).
 
@@ -147,13 +147,13 @@ La gestion des versions de package npm de votre application peut être compliqu�
 
 ## Bundlephobia
 
-![]({{ site.baseurl }}/assets/2020-09-30-meilleurs-outils-js-2020/bundlephobia.png)
+![]({BASE_URL}/imgs/articles/2020-09-30-meilleurs-outils-js-2020/bundlephobia.png)
 
 [Bundlephobia](https://bundlephobia.com/) est un site très pratique permettant de rechercher et d’afficher les informations d’un package npm afin de connaître son poids (minifier ou gziper), son temps de chargement ainsi que toutes ses dépendances selon ses versions. Il permet aussi de scanner votre package.json pour y retrouver toutes les informations de votre application.
 
 ## Webpack visualizer
 
-![]({{ site.baseurl }}/assets/2020-09-30-meilleurs-outils-js-2020/webpack-visualizer.png)
+![]({BASE_URL}/imgs/articles/2020-09-30-meilleurs-outils-js-2020/webpack-visualizer.png)
 
 Comme Bundlephobia, [Webpack visualizer](https://chrisbateman.github.io/webpack-visualizer/) vous permet de scanner votre application afin de connaître le poids de vos différentes librairies au sein de votre application. Cette application est spécifique aux utilisateurs de webpack et contrairement à l'outil que je vous ai montré précédemment, il existe aussi sous forme de plugin qui nous donne la possibilité de faire une analyse pour une partie spécifique de notre application.
 

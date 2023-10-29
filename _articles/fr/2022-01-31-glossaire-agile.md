@@ -21,4 +21,4 @@ Ce glossaire regroupe tous les principaux termes utilisés au quotidien en équi
 Débutant ou expert, il est toujours utile de l'avoir à disposition, pour apprendre ou se rafraîchir la mémoire !
 
 [Pour télécharger le glossaire, cliquez ici](https://bit.ly/glossaire-agile)
-![glossaire-agile]({{site.baseurl}}/assets/2022-01-19-glossaire-agile/glossaireagile.jpg)
+![glossaire-agile]({BASE_URL}/imgs/articles/2022-01-19-glossaire-agile/glossaireagile.jpg)

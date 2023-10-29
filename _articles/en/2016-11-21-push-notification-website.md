@@ -36,15 +36,15 @@ At this point, you should have access to your PWA at localhost:8080. If you hav
 Before getting into sending push notifications, we are going to go through the configuration. Yes! It's not magic, we are going to ask Google for authorization.
 Let's go to [Firebase](https://console.firebase.google.com/) to create a project.
 
-![Firebase - créer un projet](/_assets/articles/2016-11-21-push-notification-website/newproject.png)
+![Firebase - créer un projet]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/newproject.png)
 
 Feel free to choose any name for the project. Once you are on the dashboard, you have to click the small wheel, and then "Project settings".
 
-![](/_assets/articles/2016-11-21-push-notification-website/settings-1.png)
+![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/settings-1.png)
 
 In the "Cloud messaging" tab you'll find your sender ID.
 
-![](/_assets/articles/2016-11-21-push-notification-website/cloud.png)
+![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/cloud.png)
 
 In the manifest.json, available in the public folder of the application, you have to add at the end of the file the "gsm_sender_id" with the value of the sender ID.
 
@@ -98,7 +98,7 @@ if('serviceWorker' in navigator) {
 
 As you would expect, if you restart your server, you'll have a request to accept the notifications.
 
-![PWA - Autoriser les notifications](/_assets/articles/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-15.34.14.png)
+![PWA - Autoriser les notifications]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-15.34.14.png)
 
 You should also see in your console a message such as:
 
@@ -109,7 +109,7 @@ endpoint: cV2kP3sOb24:APA91bHfZgFSPQ3CXyG9LejWdq9jOT-WqQpvK4peX9ZZtrfsHCf6OPEvDe
 This is the device token, we will use it to send a push notification.
 Since we want to do something clean (even if it's just a tutorial), we are going to use Firebase to store user tokens. To do so, let's go back to the Firebase console, and click "Web setup" in the "Authentication" tab.
 
-![](/_assets/articles/2016-11-21-push-notification-website/web_setup.png)
+![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/web_setup.png)
 
 The script installation is done in the HTML code, in files public/home.html and public/article/alorscettearticle.html.
 
@@ -202,11 +202,11 @@ Before starting the server, you have to open permissions to Firebase in order fo
 }
 ```
 
-![](/_assets/articles/2016-11-21-push-notification-website/rules.png)
+![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/rules.png)
 
 If you restart the server, you will see a token stored in the DB in the "Database" tab of Firebase.
 
-![](/_assets/articles/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-16.24.58.png)
+![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-16.24.58.png)
 
 Now that the tokens are stored in the database, we are going to prepare a message that will appear when a push notification occurs. Let's add the following code to the file public/sw.js:
 
@@ -262,15 +262,15 @@ It's almost ready! We are going to create a "/sender" url that will allow us t
 
 In the app.js file, we initialize Firebase. You are going to need a server key file. Click the wheel in Firebase, and then "Permissions". You are now taken to another console.
 
-![](/_assets/articles/2016-11-21-push-notification-website/permissions.png)
+![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/permissions.png)
 
 In "Service accounts", create a new account.
 
-![](/_assets/articles/2016-11-21-push-notification-website/account.png)
+![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/account.png)
 
 A json file will be downloaded, you need to add it to your project folder.
 
-![JsonFile - Racine](/_assets/articles/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-17.22.04.png)
+![JsonFile - Racine]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-17.22.04.png)
 
 In the app.js file, we are going to add the route /sender that will send a request of a push notification with all the tokens.
 
@@ -330,11 +330,11 @@ app.listen(8080, function () {
 
 Be careful! The authorization key is in the first tab that we opened.
 
-![](/_assets/articles/2016-11-21-push-notification-website/cloud.png)
+![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/cloud.png)
 
 If everything is ok, when you restart the server and go to / and then /sender, you will get a notification. If it isn't the case, clear the cache of your application in the chrome console.
 
-![Enfin - la push notification](/_assets/articles/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-17.46.23.png)
+![Enfin - la push notification]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-17.46.23.png)
 
 
 Once again, this code is only a tutorial, I invite you to open issues for any question. The finale code is available [here](https://github.com/CaptainJojo/pwa-parisjs/tree/push).

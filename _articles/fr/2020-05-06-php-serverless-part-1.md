@@ -59,7 +59,7 @@ Une autre contrainte est la **durée d'exécution maximale** d'une fonction. Ell
 
 Il existe aussi des **limitations** liées à la mémoire, la taille maximum des packages que vous déployez et à l'espace disque disponible. Ci-dessous un extrait des limitations d'AWS Lambda pour vous donner une idée.
 
-![]({{ site.baseurl }}/assets/2020-05-06-php-serverless-part-1/aws-limitations.png)
+![]({BASE_URL}/imgs/articles/2020-05-06-php-serverless-part-1/aws-limitations.png)
 
 Un autre point à garder en tête est que le **prix** de notre infrastructure peut être **imprévisible**. Etant donné que le fournisseur Cloud s'occupe de tout, nous n'avons aucun contrôle sur la façon dont il gère les ressources. En cas d’événement imprévu qui solliciterait beaucoup nos fonctions serverless, le prix pourrait alors grimper. Rassurez-vous, il est néanmoins possible de créer des alertes et d'être notifié par votre fournisseur Cloud si vous dépassez un certain montant.
 

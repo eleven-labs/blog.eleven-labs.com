@@ -32,11 +32,11 @@ Pour plus d'informations sur l'implémentation de WSL 2, une [vidéo de présent
 
 WSL premier du nom, est un driver pour Windows implémentant l'API du noyau Linux, qui transforme les appels au noyau en instructions compatibles Windows NT. Ce qui pose de nombreux problèmes de compatibilité notamment avec l'API permettant d'accéder au système de fichiers.
 
-![wsl1-architecture]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/wsl1-architecture.png  "Architecture WSL 1")
+![wsl1-architecture]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/wsl1-architecture.png  "Architecture WSL 1")
 
 Pour résoudre les différents problèmes de compatibilité, de performances et pour réduire les coûts de maintenance de WSL, la version 2 fait tourner [un véritable noyau Linux](https://github.com/microsoft/WSL2-Linux-Kernel) compilé et maintenu par Microsoft dans [Hyper-V](https://fr.wikipedia.org/wiki/Hyper-V) (qui est un [hyperviseur de type 1](https://fr.wikipedia.org/wiki/Hyperviseur#Type_1_:_natif)).
 
-![wsl2-architecture]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/wsl2-architecture.png  "Architecture WSL 2")
+![wsl2-architecture]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/wsl2-architecture.png  "Architecture WSL 2")
 
 ## Activation de WSL 2
 
@@ -47,7 +47,7 @@ Pour résoudre les différents problèmes de compatibilité, de performances et 
 - Ouvir [Windows Update](ms-settings:windowsupdate "Ouvre Windows Update")
 - Cliquer sur "Rechercher les mises à jour" pour télécharger le dernier build
 
-![insider]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/insider.png)
+![insider]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/insider.png)
 
 Lancer PowerShell en tant qu'administrateur
 
@@ -163,7 +163,7 @@ Dans les grande lignes, l'astuce consiste à remplacer le shell de l'utilisateur
 
 ## Windows Terminal
 
-![Windows Terminal]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/windows-terminal.png  "Windows Terminal")
+![Windows Terminal]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/windows-terminal.png  "Windows Terminal")
 
 [Windows Terminal](https://www.microsoft.com/fr-fr/p/windows-terminal-preview/9n0dx20hk701) ([source](https://github.com/microsoft/terminal)) est un terminal moderne, configurable et personnalisable qui centralise PowerShell, Cmd, Azure Cloud Shell et vos shells Linux en une seule application.
 
@@ -171,7 +171,7 @@ Dans les grande lignes, l'astuce consiste à remplacer le shell de l'utilisateur
 
 L'application est personnalisable via un fichier `.json`. Utilisez <kbd>Ctrl</kbd> + <kbd>,</kbd> pour y accéder ou utilisez l'interface de l'application.
 
-![windows-terminal-settings]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/windows-terminal-settings.gif  "Paramétrage de Windows Terminal")
+![windows-terminal-settings]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/windows-terminal-settings.gif  "Paramétrage de Windows Terminal")
 
 Le schéma du fichier est décrit via JSON Schema, le lien est consultable via la propriété `$schema`. Si vous utilisez VSCode, vous aurez accès à de l'autocomplétion 🎉.
 
@@ -195,7 +195,7 @@ Sous Linux, les fins de lignes n'utilisent que le caractère LF `\n`.
 
 Pour éviter de vous retrouver avec des doublements de lignes dans Windows Terminal quand vous collez du texte, je vous suggère d'utiliser [AutoHotKey](https://www.autohotkey.com/), _(qui est un utilitaire permettant d'automatiser des tâches sous Windows)_.
 
-![ahk-logo]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/ahk-logo.png  "Logo de AutoHotKey")
+![ahk-logo]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/ahk-logo.png  "Logo de AutoHotKey")
 
 On va commencer par ouvrir le répertoire des scripts lancés au démarrage de Windows :
 
@@ -237,7 +237,7 @@ Windows Terminal étant en "Development Preview", il existe encore des bugs qui 
 
 Si vous rencontrez un bug d'affichage rendant l'interface complètement noire en déplaçant la fenêtre sur votre bureau...
 
-![windows-terminal-rendering-bug]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/windows-terminal-rendering-bug.png  "Bug de rendu du Windows Terminal")
+![windows-terminal-rendering-bug]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/windows-terminal-rendering-bug.png  "Bug de rendu du Windows Terminal")
 
 ... Il suffit de renseigner une largeur initiale pour la fenêtre de `110` via l'option `initialCols`. Cela fonctionne aussi avec des valeurs au-delà de `130` 🤷 (le mystère reste entier).
 
@@ -252,7 +252,7 @@ Commencez par installer un serveur X pour Windows tel que :
 
 Si vous utilisez X410, activez l'option **Allow Public Access**.
 
-![x410-public-access]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/x410-public-access.gif  "X410 Allow Public Access")
+![x410-public-access]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/x410-public-access.gif  "X410 Allow Public Access")
 
 </div>
 
@@ -260,7 +260,7 @@ Si vous utilisez X410, activez l'option **Allow Public Access**.
 
 Pour VcXsrv, utilisez l'utilitaire Xlaunch, conservez les options par défaut et choisissez **Disable Access Control**.
 
-![vcxsrv-configuration]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/vcxsrv-configuration.gif  "Configuration de VcXsrv")
+![vcxsrv-configuration]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/vcxsrv-configuration.gif  "Configuration de VcXsrv")
 
 </div>
 
@@ -314,7 +314,7 @@ Ceci n'est pas une liste exhaustive, mais de plus en plus de logiciels prévoien
 
 [VSCode](https://code.visualstudio.com/) pour Windows supporte WSL avec le module [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
 
-![vscode-remote-wsl]({{site.baseurl}}/assets/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/wsl-readme.gif)
+![vscode-remote-wsl]({BASE_URL}/imgs/articles/2019-10-25-le-developpement-sous-linux-depuis-windows-10-avec-wsl-2/wsl-readme.gif)
 
 ### PHPStorm
 

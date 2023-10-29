@@ -49,7 +49,7 @@ Ainsi, Ionic ne permet pas de créer à proprement parler d’applications nativ
 
 *Schéma représentation Ionic* :
 
-![schema1]({{ site.baseurl }}/assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/schema.png?width=600)
+![schema1]({BASE_URL}/imgs/articles/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/schema.png?width=600)
 
 Je vous vois venir :  “AngularJs, super je maîtrise le truc, aller hop on y go”.
 Hop hop hop !!!!. Jeune padawan, lire l’article en entier tu dois !
@@ -94,7 +94,7 @@ Mais Ionic dispose de points faibles :
 *Tableau compatibilité sous Cordova* :
 
 
-![]({{ site.baseurl }}/assets/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/platform-support.png?width=300)
+![]({BASE_URL}/imgs/articles/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/platform-support.png?width=300)
 
 
 **Conclusion :**

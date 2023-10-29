@@ -270,7 +270,7 @@ Un objet **ProgressEvent** est passé à la fonction de rappel **onUploadProgres
 
 Petite démo en GIF :) et le code complet [https://github.com/lepiaf/file-upload](https://github.com/lepiaf/file-upload)
 
-![](/_assets/articles/2017-04-20-televersement-dun-fichier-en-ajax/upload.gif)
+![]({BASE_URL}/imgs/articles/2017-04-20-televersement-dun-fichier-en-ajax/upload.gif)
 
 
 ### Pour conclure

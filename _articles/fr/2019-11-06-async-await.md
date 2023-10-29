@@ -20,7 +20,7 @@ Après avoir vu en profondeur comment fonctionnent les promesses et comment les 
 
 ⚠️ Il est important de connaître et de comprendre les promesses pour maîtriser `async/await`. Si ce n'est pas votre cas, je vous conseille de lire mon précédent [article](https://blog.eleven-labs.com/fr/lespromessesenjavascript/) qui traite justement des promesses.
 
-![]({{site.baseurl}}/assets/2019-11-06-async-await/async-await.jpg)
+![]({BASE_URL}/imgs/articles/2019-11-06-async-await/async-await.jpg)
 
 ## Définition
 

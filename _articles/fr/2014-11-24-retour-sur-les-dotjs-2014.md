@@ -5,7 +5,7 @@ date: '2014-11-24'
 slug: retour-sur-les-dotjs-2014
 title: Retour sur les DotJS 2014 !
 excerpt: >-
-  ![wilsononstagedotjs](/_assets/articles/2014-11-24-retour-sur-les-dotjs-2014/wilsononstagedotjs.jpg)
+  ![wilsononstagedotjs]({BASE_URL}/imgs/articles/2014-11-24-retour-sur-les-dotjs-2014/wilsononstagedotjs.jpg)
 categories:
   - javascript
 authors:
@@ -15,7 +15,7 @@ keywords:
   - conference
 ---
 
-![wilsononstagedotjs](/_assets/articles/2014-11-24-retour-sur-les-dotjs-2014/wilsononstagedotjs.jpg)
+![wilsononstagedotjs]({BASE_URL}/imgs/articles/2014-11-24-retour-sur-les-dotjs-2014/wilsononstagedotjs.jpg)
 
 [DotJS](http://www.dotjs.eu/) est une journée consacrée au langage JavaScript, créée par [dotConferences](http://www.dotconferences.eu/), dont le but est d’apporter des conférences du niveau de [TED](http://www.ted.com/) au monde de l’informatique. C’est la plus grande conférence de ce type en Europe et elle regroupe des participants du monde entier.
 
@@ -31,7 +31,7 @@ Le matin, Justin Meyer nous a fait une présentation sur comment réussir son pr
 
 Domenic Denicola est ensuite venu nous parler des différentes méthodes et modules NPM permettant de manipuler le DOM en Node.JS.
 
-![dotjssubstack](/_assets/articles/2014-11-24-retour-sur-les-dotjs-2014/dotjssubstack.jpg)
+![dotjssubstack]({BASE_URL}/imgs/articles/2014-11-24-retour-sur-les-dotjs-2014/dotjssubstack.jpg)
 
 Après la pause déjeuner, nous avons enchainé sur une session de conférences “petit format”, très dynamiques (et adaptées à la digestion!) portant sur des sujets variés : pourquoi utiliser le “localstore” des navigateurs internet au lieu des cookies pour l'authentification, une présentation de [Pouchdb](http://pouchdb.com/) par Franck Rousseau ou encore de [Meteor](https://www.meteor.com/) par Guido Bouman (Diaporama disponible [ici](http://fr.slideshare.net/guidobouman/meteor-dotjs-2014)).
 
@@ -39,7 +39,7 @@ Nous avons ensuite pu  assister à une présentation sur le futur des API Front 
 
 Angus Croll est venu nous parler de son livre “If Hemingway wrote JavaScript” dans lequel il nous détaille avec beaucoup d’humour la liberté qu’offre JavaScript sur les solutions à apporter à un problème.
 
-![ifhemingwaywrotejavascript](/_assets/articles/2014-11-24-retour-sur-les-dotjs-2014/ifhemingwaywrotejavascript.jpg)
+![ifhemingwaywrotejavascript]({BASE_URL}/imgs/articles/2014-11-24-retour-sur-les-dotjs-2014/ifhemingwaywrotejavascript.jpg)
 
 Pour finir cette session, les gagnants des meilleurs bibliothèques Front et Back ont été annoncé. Ce sont donc respectivement [Pixi.js](http://www.pixijs.com/) et [Gulp.js](http://gulpjs.com/) qui ont largement mérité leur prix.
 
@@ -49,15 +49,15 @@ Joe McCann nous a donné des clés pour optimiser son code en Node.JS grâce au 
 
 Paul O’Shannessy est venu ensuite nous parler de son module [React](http://facebook.github.io/react/). Réalisé par Facebook, cette bibliothèque permet de créer des interfaces utilisateurs simplement et agit comme le V dans MVC. Le diaporama est disponible par [ici](https://speakerdeck.com/vjeux/react-css-in-js).
 
-![dotjstheatre](/_assets/articles/2014-11-24-retour-sur-les-dotjs-2014/dotjstheatre.jpg)
+![dotjstheatre]({BASE_URL}/imgs/articles/2014-11-24-retour-sur-les-dotjs-2014/dotjstheatre.jpg)
 
 Et entre les conférences, beaucoup d’ambiance au Dot JS...
 
 Quelques extraits des photos souvenirs du photomaton Eleven Labs ci-dessous !
 Si vous voulez voir (ou revoir, on ne s’en lasse pas!) toutes les photos, costumes à l’appui : c’est [ici](https://www.facebook.com/media/set/?set=a.236453333168290.1073741837.152455631568061&type=1ci).
 
-![15648693537\_048cd14d2d\_z](/_assets/articles/2014-11-24-retour-sur-les-dotjs-2014/15648693537_048cd14d2d_z.jpg)
+![15648693537\_048cd14d2d\_z]({BASE_URL}/imgs/articles/2014-11-24-retour-sur-les-dotjs-2014/15648693537_048cd14d2d_z.jpg)
 
-![elevenlabscrewpic](/_assets/articles/2014-11-24-retour-sur-les-dotjs-2014/elevenlabscrewpic.jpg)
+![elevenlabscrewpic]({BASE_URL}/imgs/articles/2014-11-24-retour-sur-les-dotjs-2014/elevenlabscrewpic.jpg)
 
 Vivement la DotJS 2015 !

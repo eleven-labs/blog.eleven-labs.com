@@ -43,7 +43,7 @@ Sommaire
     5.  Protéger les routes authentifiées avec AuthGuard
 3.  **Conclusion**
 
-![](/_assets/articles/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/sf-blog-2.png)
+![]({BASE_URL}/imgs/articles/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/sf-blog-2.png)
 
 ---
 
@@ -294,7 +294,7 @@ Si tout va bien, vous devriez recevoir un token d'authentification.
 
 C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)
 
-![](/_assets/articles/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/ng-blog.png)
+![]({BASE_URL}/imgs/articles/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/ng-blog.png)
 
 ---
 
@@ -802,9 +802,9 @@ body {
 
 Et voilà le travail !
 
-![](/_assets/articles/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-01.58.49.png)
+![]({BASE_URL}/imgs/articles/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-01.58.49.png)
 
-![](/_assets/articles/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-13.28.40.png)
+![]({BASE_URL}/imgs/articles/2017-03-03-angular2-symfony3-comment-creer-rapidement-systeme-dauthentification/Capture-decran-2017-03-03-a-13.28.40.png)
 
 ### 3 Conclusion
 

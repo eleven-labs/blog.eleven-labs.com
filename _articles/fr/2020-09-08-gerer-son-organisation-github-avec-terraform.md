@@ -238,7 +238,7 @@ réutilisables pour abstraire une partie de la complexité.
 Nous en profiterons pour ajouter de nouvelles resources à ces modules afin d'ajouter les arguments optionnels sur les
 resources ainsi que la création des resources de protection de branches et des webhooks sur les repositories.
 
-![Github model]({{site.baseurl}}/assets/2020-09-08-gerer-son-organisation-github-avec-terraform/github_model.png)
+![Github model]({BASE_URL}/imgs/articles/2020-09-08-gerer-son-organisation-github-avec-terraform/github_model.png)
 
 #### Module repository
 Le premier module que nous allons réaliser est le module de gestion de repository que nous nommerons `repository`.

@@ -29,7 +29,7 @@ Aujourd'hui, l'ensemble des sites médias se fait concurrence sur les infos dite
 
 Il n'y a pas que pour l'actu chaude que la performance du site est importante. On le sait aujourd'hui, il existe clairement un impact fort entre le trafic du site et la web performance. Je vous invite à lire [ce document](https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/) provenant d'une source plutôt fiable puisqu'il s'agit de Google.
 
-![thinkwithgoogle]({{site.baseurl}}/assets/2019-02-28-un-an-de-webperformance/image1.jpg)
+![thinkwithgoogle]({BASE_URL}/imgs/articles/2019-02-28-un-an-de-webperformance/image1.jpg)
 
 Voici trois points qui vous donneront envie de faire de la webperformance :
 
@@ -58,7 +58,7 @@ Bien sûr il n'est pas possible de suivre l'ensemble des métriques et cela n'au
 
 Dans le cadre de la mission nous avons choisi cinq KPIs à suivre. L'un des plus important est le visuel d'une page seconde par seconde (filmstrips), cela permet de comprendre ce que voit l'utilisateur. Comme la webperformance n'a pas de valeur absolue, il est préférable de faire un benchmark avec vos concurrents. C'est certainement ce qui est le plus important, car Google compare les résultats entre les sites.
 
-![filmstrips]({{site.baseurl}}/assets/2019-02-28-un-an-de-webperformance/image2.png)
+![filmstrips]({BASE_URL}/imgs/articles/2019-02-28-un-an-de-webperformance/image2.png)
 
 Maintenant que nous savons quelles sont les métriques à suivre, nous pouvons choisir le ou les outils pour les suivre.
 
@@ -76,12 +76,12 @@ Comme par exemple :
 
 - **audit** permettant de faire un rapport de webperformance
 
-![audit]({{site.baseurl}}/assets/2019-02-28-un-an-de-webperformance/image3.png)
+![audit]({BASE_URL}/imgs/articles/2019-02-28-un-an-de-webperformance/image3.png)
 
 - **network** permettant de voir les bottlenecks du réseau
 - **coverage** permettant de connaitre le taux d'utilisation du javascript et du css
 
-![coverage]({{site.baseurl}}/assets/2019-02-28-un-an-de-webperformance/image4.png)
+![coverage]({BASE_URL}/imgs/articles/2019-02-28-un-an-de-webperformance/image4.png)
 
 ## Travailler avec les équipes
 
@@ -118,13 +118,13 @@ Voici un exemple fait à la google I/O 2018
 
 Après un an de mission et grâce au travail des équipes MCD et France24, nous sommes maintenant numéro un selon nos métriques. Comme un long discours ne sert à rien voici le résultat après la mise en production.
 
-![bilan]({{site.baseurl}}/assets/2019-02-28-un-an-de-webperformance/image5.png)
+![bilan]({BASE_URL}/imgs/articles/2019-02-28-un-an-de-webperformance/image5.png)
 
-![bilan]({{site.baseurl}}/assets/2019-02-28-un-an-de-webperformance/image6.png)
+![bilan]({BASE_URL}/imgs/articles/2019-02-28-un-an-de-webperformance/image6.png)
 
-![bilan]({{site.baseurl}}/assets/2019-02-28-un-an-de-webperformance/image7.png)
+![bilan]({BASE_URL}/imgs/articles/2019-02-28-un-an-de-webperformance/image7.png)
 
-![bilan]({{site.baseurl}}/assets/2019-02-28-un-an-de-webperformance/image8.png)
+![bilan]({BASE_URL}/imgs/articles/2019-02-28-un-an-de-webperformance/image8.png)
 
 
 Si vous aussi vous souhaitez améliorer votre webperformance, renseignez-vous [ici](https://eleven-labs.com/accompagnement-sur-mesure/audit-et-expertise)

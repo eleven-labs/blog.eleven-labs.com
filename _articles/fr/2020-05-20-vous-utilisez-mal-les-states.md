@@ -32,7 +32,7 @@ Un **état** (ou **state** dans la langue de Shakespeare) est un ensemble de var
 
 Maintenant que nous avons rappelé les bases, regardons maintenant ce qui est bien et ce qui ne l'est pas.
 
-![]({{ site.baseurl }}/assets/2020-05-20-vous-utilisez-mal-les-states/bien-pas-bien.gif)
+![]({BASE_URL}/imgs/articles/2020-05-20-vous-utilisez-mal-les-states/bien-pas-bien.gif)
 
 ## Tu ne muteras point ton état
 

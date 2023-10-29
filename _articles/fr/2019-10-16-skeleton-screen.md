@@ -29,16 +29,16 @@ Si oui, vous devez être au fait de la problématique du temps de chargement lor
 Ce moment de transition ou les blocs statiques de notre application comme le header et le footer sont affichés mais que le contenu, lui, est encore en chargement dû à une mauvaise connexion ou à une API longue à répondre.
 Comment résoudre ce problème que j’aime appeler “la transition mâchoire” ?
 
-![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/no_loading.gif)
+![]({BASE_URL}/imgs/articles/2019-10-16-skeleton-screen/no_loading.gif)
 
 Une première solution est de forcer une hauteur minimum à notre contenu afin d'éviter l’effet mâchoire.
 
-![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/min_height.gif)
+![]({BASE_URL}/imgs/articles/2019-10-16-skeleton-screen/min_height.gif)
 
 Le problème avec cette solution est que l’on manque d’information quant à l’état de la page : la page est-elle en chargement ? La page demandée est-elle une simple page blanche ? L’application est-elle plantée ?
 Pour toutes ces problématiques il nous suffit simplement d’ajouter un loader.
 
-![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/loader.gif)
+![]({BASE_URL}/imgs/articles/2019-10-16-skeleton-screen/loader.gif)
 
 Bon, tout ça c’est bien, mais on peut faire encore mieux. On peut mettre en place un **Skeleton screen** !
 
@@ -51,10 +51,10 @@ Elle consiste à afficher ce à quoi devrait ressembler la page, mais avec des p
 Comme il le stipule, le fait de voir un spiner ou une barre de chargement renvoie l’utilisateur à l’idée d’attendre. Et par conséquent cela donne l'impression que le temps passe plus lentement. Comme quand vous regardez une horloge et que le temps semble ralenti, pour reprendre son exemple.
 Le **skeleton screen** est aujourd’hui utilisé par la plupart des géants d’internet comme youtube ou LinkedIn pour ne citer qu’eux deux.
 
-![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/skeleton_youtube.png)
+![]({BASE_URL}/imgs/articles/2019-10-16-skeleton-screen/skeleton_youtube.png)
 Youtube
 
-![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/skeleton_linkedin.png)
+![]({BASE_URL}/imgs/articles/2019-10-16-skeleton-screen/skeleton_linkedin.png)
 LinkedIn
 
 Bon, maintenant que nous avons le principe et quelques exemples, comment faire un bon **skeleton screen** ?
@@ -140,12 +140,12 @@ Ajouté à cela nous avons la feuille de style suivante :
 
 Une fois notre **SkeletonItem** réalisé voilà à quoi il ressemble une fois une taille donnée :
 
-![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/skeleton_item.gif)
+![]({BASE_URL}/imgs/articles/2019-10-16-skeleton-screen/skeleton_item.gif)
 
 Maintenant que nous avons créé la base, tel un os, assemblons-en plusieurs afin de créer le squelette d’un composant.
 Pour notre exemple, nous allons prendre un élément d’une liste comme celui-ci :
 
-![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/list_item.png)
+![]({BASE_URL}/imgs/articles/2019-10-16-skeleton-screen/list_item.png)
 
 Voici son code :
 
@@ -240,7 +240,7 @@ export default MovieItemSkeleton;
 ```
 Et voila son rendu final :
 
-![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/item_skeleton.gif)
+![]({BASE_URL}/imgs/articles/2019-10-16-skeleton-screen/item_skeleton.gif)
 
 ## Et Apollo Js là-dedans ?
 C’est beau tout ça, mais comment savoir où et quand afficher nos squelettes ?
@@ -312,7 +312,7 @@ export default MovieList;
 ```
 Et le rendu est…
 
-![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/list_skeleton_fail.gif)
+![]({BASE_URL}/imgs/articles/2019-10-16-skeleton-screen/list_skeleton_fail.gif)
 
 Bon... Cet exemple est plutôt adapté à des éléments non répétables, comme par exemple une sidebare (voir l’exemple de LinkedIn).
 Ne vous inquiétez pas, je ne vais pas vous laisser là, je vais vous expliquer comment finaliser votre liste.
@@ -380,7 +380,7 @@ const MovieList = () => (
 
 export default MovieList;
 ```
-![]({{ site.baseurl }}/assets/2019-10-16-skeleton-screen/list_skeleton.gif)
+![]({BASE_URL}/imgs/articles/2019-10-16-skeleton-screen/list_skeleton.gif)
 
 En bonus la version de notre liste avec apollo hook :
 

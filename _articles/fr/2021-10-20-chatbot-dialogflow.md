@@ -29,13 +29,13 @@ Maintenant que l'on connaît le fonctionnement basique, nous allons créer notre
 
 Je vous invite à aller sur la console de DialogFlow disponible [ici](https://console.dialogflow.com). Nous allons créer notre premier "Agent" [ici](https://console.dialogflow.com/api-client/#/newAgent).
 
-![dialogflow-agent](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-agent.png)
+![dialogflow-agent]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-agent.png)
 
 Il faut remplir le formulaire de création de votre agent. Je vous invite à mettre le *DEFAULT LANGUAGE* en Français.
 
 Voilà, vous avez votre premier chatbot ! Par défaut vous avez 2 "intents" que Google vous propose.
 
-![dialogflow-intent](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-intent.png)
+![dialogflow-intent]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-intent.png)
 
 Allons voir ce que contient l'intent *Default Welcome Intent*, un intent est toujours séparé de la même façon.
 
@@ -81,15 +81,15 @@ Il ne contient pas une section *User says*, il vous permet seulement de répondr
 
 Nous allons maintenant tester notre chatbot. Vous avez dû voir sur la droite de la console que DialogFlow vous permet d'utiliser en live votre chatbot.  Si vous rentrez n'importe quel phrase vous devez arriver dans le *Default Fallback Intent* puisque pour l'instant nous n'avons aucun *user says* dans votre autre intent.
 
-![dialogflow-fallback](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-fallback.png)
+![dialogflow-fallback]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-fallback.png)
 
 Vous pouvez aussi voir le json que cela génère. Il vous servira lors de la phase *Mettons une petite intelligence*.
 
-![dialogflow-json](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-json.png)
+![dialogflow-json]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-json.png)
 
 Si dans le *User says* de votre *Default Welcome Intent* vous ajoutez un "salut" et que vous sauvegardez, vous pouvez re-tester et voir que le bot vous répond une des phrases présentes dans l'intent *Default Welcome Intent*
 
-![dialogflow-test2](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-test2.png)
+![dialogflow-test2]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-test2.png)
 
 Maintenant créons une vraie conversation.
 
@@ -97,15 +97,15 @@ Dans l'intent *Default Welcome Intent* que vous pouvez renommer *Salut* je vous 
 
 Puis créer l'intent *tu habites ?*,  qui aura un context de sortie *city*. Puis vous pouvez ajouter  comme *User says*  les phrases suivantes
 
-![dialogflow-response](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-response.png)
+![dialogflow-response]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-response.png)
 
 Si tout se passe bien, DialogFlow va directement reconnaître les *entities* de géolocalisation. Si ce n'est pas le cas, en sélectionnant le mot vous pouvez choisir l'entity *@sys.geo-city*.
 
-![dialogflow-entity](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-entity.png)
+![dialogflow-entity]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-entity.png)
 
 Il ne vous reste plus qu'a répondre à votre utilisateur avec les phrases suivantes.
 
-![dialogflow-response2](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-response2.png)
+![dialogflow-response2]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-response2.png)
 
 Vous pouvez utiliser *$geo-city* pour récupérer la ville de l'utilisateur.
 
@@ -117,11 +117,11 @@ Comme pour l'autre intent vous pouvez prendre le chiffre des *user says* et le m
 
  $number c'est le paramètre que l'utilisateur viens de fournir et #city.geo-city c'est la ville contenue dans le context.
 
-![dialogflow-entity2](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-entity2.png)
+![dialogflow-entity2]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-entity2.png)
 
 Vous pouvez sauvegarder et tester. Si tout est ok vous devez avoir ce genre de conversation :
 
-![dialogflow-test4](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-test4.png)
+![dialogflow-test4]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-test4.png)
 
 Vous pouvez le tester ici :
 
@@ -137,19 +137,19 @@ C'est bien, nous avons un chatBot qui permet de faire une conversation avec vos 
 
 C'est simple, il faut fournir à Dialog un *Fulfillment* qui est en fait un webhook vers un webservice.
 
-![dialogflow-webhook](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-webhook.png)
+![dialogflow-webhook]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-webhook.png)
 
 Il existe deux formats *Fulfillment*:
 
 **- Webhook**
 
-![dialogflow-webhook2](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-webhook2.png)
+![dialogflow-webhook2]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-webhook2.png)
 
 Il s'agit d'une simple url que DialogFlow appellera lors d'un intent. Vous pouvez y mettre des options comme l'authentification, des headers spécifiques ou encore autoriser le webhook seulement sur vos domains web.
 
 **- Inline Editor**
 
-![dialogflow-inlineeditor](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-inlineeditor.png)
+![dialogflow-inlineeditor]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-inlineeditor.png)
 
 Il s'agit d'un éditeur de code qui met cela directement dans une *function* Firebase.  Ce qui est pratique, c'est que vous n'avez pas à réfléchir sur le déploiement de votre code ! Google le fait pour vous, et vous n'avez pas non plus à faire la structure de base du code, elle est déjà prête.
 
@@ -158,11 +158,11 @@ Vous trouverez toutes les informations sur les *Fulfillment* sur la documentatio
 Il ne vous reste plus qu'à activer le *Fulfillment* sur votre intent.
 Commençons par activer le *Fulfillment* Inline Editor.
 
-![dialogflow-inlineeditor2](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-inlineeditor2.png)
+![dialogflow-inlineeditor2]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-inlineeditor2.png)
 
 Puis dans l'intent *Salut* en bas de la configuration vous avez la partie *Fulfillment* qui apparaît. Vous pouvez donc activer l'utilisation du webhook pour cet intent.
 
-![dialogflow-webhook3](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-webhook3.png)
+![dialogflow-webhook3]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-webhook3.png)
 
 Si vous avez fait attention au code par défaut vous verrez cela :
 
@@ -183,11 +183,11 @@ C'est simple, si l'intent est l'action *input.welcome* alors on répond *Hello, 
 
 Vous pouvez donc essayer.
 
-![dialogflow-test5](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-test5.png)
+![dialogflow-test5]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-test5.png)
 
 Vous pouvez faire beaucoup de choses avec vos webhooks, l'entrée du webhook c'est le json que vous trouvez dans les tests.
 
-![dialogflow-json2](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-json2.png)
+![dialogflow-json2]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-json2.png)
 
 La sortie c'est un objet json que vous pouvez retrouver [ici](https://dialogflow.com/docs/fulfillment#response).
 
@@ -197,13 +197,13 @@ Maintenant que nous avons terminé notre chatbot, nous allons le déployer et c'
 
 Sur le côté, cliquez sur *intégration*. Vous y trouverez les différentes intégrations possibles.
 
-![dialogflow-integration](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-integration.png)
+![dialogflow-integration]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-integration.png)
 
 J'ai d'ailleurs utilisé l'intégration *Web Demo* pour cet article.
 
 Si vous n'avez pas l'intégration que vous souhaitez, vous pouvez aussi utiliser les SQK disponibles par DialogFlow.
 
-![dialogflow-sdk](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-sdk.png)
+![dialogflow-sdk]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-sdk.png)
 
 > Bravo vous avez déployé
 
@@ -212,7 +212,7 @@ La première, c'est de l'*Analytics* que vous trouverez dans le menu à gauche.
 
 Il vous permet de voir combien vous avez eu d'appels en général et sur chaque *intents*.
 
-![dialogflow-analytics](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-analytics.png)
+![dialogflow-analytics]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-analytics.png)
 
 La documentation est assez riche [ici](https://dialogflow.com/docs/analytics).
 
@@ -220,7 +220,7 @@ Et pour terminer, comme DialogFlow c'est aussi du machine learning, vous pouvez 
 
 Vous y trouverez l'ensemble des conversations qu'il y a eu avec votre chatbot, et donc pouvoir comprendre l'utilisation qu'en ont vos utilisateurs.
 
-![dialogflow-learning](/_assets/articles/2017-11-06-chatbot-dialogflow/dialogflow-learning.png)
+![dialogflow-learning]({BASE_URL}/imgs/articles/2017-11-06-chatbot-dialogflow/dialogflow-learning.png)
 
 Ce qui est pratique c'est de voir les phrases qu'y n'ont matché aucun intent et donc pouvoir ensuite les ajouter dans un intent ou faire des réponses différentes à vos utilisateurs.
 

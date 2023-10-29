@@ -470,7 +470,7 @@ class invoicePlugin implements PluginInterface
 4/ Voir le résultat :
 
 
-![result plugin Flysystem]({{ site.baseurl }}/assets/2019-11-20-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-result-plugin.png)
+![result plugin Flysystem]({BASE_URL}/imgs/articles/2019-11-20-reprenez-le-controle-de-vos-file-system-avec-flysystem/screenshot-result-plugin.png)
 
 Et voilà pour ce dernier exemple.
 

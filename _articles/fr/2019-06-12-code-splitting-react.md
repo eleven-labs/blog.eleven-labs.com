@@ -67,7 +67,7 @@ export default Router;
 
 Voici un système de routing classique. Tous les composants sont chargés au moment où on arrive sur l'application. On peut même voir que le fichier JS fait 2,49Mo !
 
-![size_js_app-without_code_splitting]({{site.baseurl}}/assets/2019-05-22-react-code-splitting/js-size-without-code-splitting.png "javascript code size without code splitting")
+![size_js_app-without_code_splitting]({BASE_URL}/imgs/articles/2019-05-22-react-code-splitting/js-size-without-code-splitting.png "javascript code size without code splitting")
 
 
 ### Intégration du lazy
@@ -96,11 +96,11 @@ export default Router;
 Nous avons donc importé directement la méthode `lazy` depuis React puis nous avons modifié la façon d'importer les composants nécessaires au routing. La méthode `import()` permet de l'import dynamique. Couplé au lazy, celui-ci va se faire uniquement si la ressource est demandée par l'utilisateur.
 
 Dans ce cas précis, le code du composant `Home` et `Projects` ne sera chargé que si l'utilisateur va sur l'url `/` ou `/projects`.
-![size_js_app-with_code_splitting_1]({{site.baseurl}}/assets/2019-05-22-react-code-splitting/js-size-code-splitting-1.png "javascript code size with code splitting 1")
+![size_js_app-with_code_splitting_1]({BASE_URL}/imgs/articles/2019-05-22-react-code-splitting/js-size-code-splitting-1.png "javascript code size with code splitting 1")
 
 Lorsque Webpack split le code, il utilise toujours le fichier `bundle.js` contenant le coeur de l'application. Le reste sera contenu dans des fichiers à part, nommé des **chunk**. On voit sur l'image qu'il existe un fichier `0.chunk.js` qui correspond au code du composant `Home` dans notre cas.
 
-![size_js_app-with_code_splitting_2]({{site.baseurl}}/assets/2019-05-22-react-code-splitting/js-size-code-splitting-2.png "javascript code size with code splitting 2")
+![size_js_app-with_code_splitting_2]({BASE_URL}/imgs/articles/2019-05-22-react-code-splitting/js-size-code-splitting-2.png "javascript code size with code splitting 2")
 
 En naviguant sur la page `/projets`, on voit bien qu'un nouveau fichier a été chargé `1.chunk.js`, le code splitting est donc fonctionnel.
 Si l'ont additionne tous les fichiers, on retrouve bien les 2,49Mo de base. Bien sûr, dans notre exemple le gain est faible. Mais il peut être énorme dans une réelle application avec des images et des dizaines de pages.

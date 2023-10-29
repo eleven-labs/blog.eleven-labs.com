@@ -28,7 +28,7 @@ Vous découvrirez au cours des lignes qui suivent comment créer ses propres ima
 
 ## L'écosystème Docker
 
-![ecosystem]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/ecosystem.png)
+![ecosystem]({BASE_URL}/imgs/articles/2023-07-25-comprendre-et-personnaliser-ses-docker/ecosystem.png)
 
 ### Une Image
 
@@ -158,11 +158,11 @@ Cela nous donne la possibilité d'avoir une application avec un service pour la 
 Nous allons d'abord sélectionner notre [version de docker](https://docs.docker.com/compose/compose-file/compose-versioning/) et l'inscrire dans notre docker compose, le Compose file format.
 
 
-![docker -v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-v.png)
+![docker -v]({BASE_URL}/imgs/articles/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-v.png)
 
 Dans mon cas, la version 20.10.24 de Docker correspond à la version 3.8 du fichier.
 
-![docker compose -v]({{ site.baseurl }}/assets/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-compose-v.png)
+![docker compose -v]({BASE_URL}/imgs/articles/2023-07-25-comprendre-et-personnaliser-ses-docker/docker-compose-v.png)
 
 
 Nous pouvons ensuite commencer la création de nos services.

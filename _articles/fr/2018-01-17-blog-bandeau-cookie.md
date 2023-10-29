@@ -46,7 +46,7 @@ Lorsque des manquements à la loi sont portés à sa connaissance, la formation 
 - **Une injonction de cesser le traitement.**
 - **Un retrait de l’autorisation accordée par la CNIL** en application de [l’article 25 de la loi](https://www.cnil.fr/fr/loi-78-17-du-6-janvier-1978-modifiee#Article25)
 
-![saline]({{site.baseurl}}/assets/2018-01-17-cookie-banner/brouette-sel.jpg)
+![saline]({BASE_URL}/imgs/articles/2018-01-17-cookie-banner/brouette-sel.jpg)
 _Chargement de sel pour une entreprise ayant été sanctionné par la CNIL_
 
 ### Cas de Google Analytics
@@ -73,7 +73,7 @@ Nous avons développé cette fonctionnalité récemment sur ce blog. Les seuls c
 
 Comme la CNIL le recommande, on part sur un bandeau avertissant l'utilisateur avec un bouton/lien lui permettant d'avoir plus d'informations et de s'opposer à l'utilisation des cookies. Si l'utilisateur clique sur le site n'importe où en dehors de ce bandeau, il sera considéré que l'utilisateur a approuvé l'utilisation des cookies.
 
-![Bandeau Cookie - learn the difference]({{site.baseurl}}/assets/2018-01-17-cookie-banner/learn-the-difference.jpg)
+![Bandeau Cookie - learn the difference]({BASE_URL}/imgs/articles/2018-01-17-cookie-banner/learn-the-difference.jpg)
 
 Le choix final de l'utilisateur (après clic sur le bouton dans le bandeau) sera affiché dans une boite de dialogue contenant une explication détaillée de pourquoi les cookies sont nécessaires et deux boutons permettant d'accepter ou de refuser l'utilisation des cookies.
 Cette boite de dialogue comportera un "overlay" obligeant l'utilisateur à faire son choix avant de continuer à utiliser le site.
@@ -204,7 +204,7 @@ function processCookieConsent() {
 
 Lorsque l'utilisateur a décidé de s'opposer à l'utilisation des cookies, il faut... poser des cookies...
 
-![Ironic]({{site.baseurl}}/assets/2018-01-17-cookie-banner/ironic.jpg)
+![Ironic]({BASE_URL}/imgs/articles/2018-01-17-cookie-banner/ironic.jpg)
 
 Le but est d'enregistrer le choix de l'utilisateur pendant la durée maximum légale (13 mois).
 Dans cette fonction, on créera aussi des cookies spécifiques à Google Analytics pour l'empêcher de fonctionner (voir la [documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out)).
@@ -315,4 +315,4 @@ Si vous avez bien suivi cet article et si vous l'avez adapté aux besoins de vot
 Évidemment un site comme celui-ci (un simple blog) est un cas simple où il y a peu voire pas de cookies posés du tout. En réalité, votre site est déjà quasiment prêt pour la future mise en application de la RGPD à quelques ajustements près.
 Si vous ne savez pas ce qu'est la RGPD, c'est en gros une évolution de la directive européenne dont nous avons parlé précédemment vers une version XXL. Pour de plus amples informations, je vous invite à lire l'excellent article de mon collègue [Pouzor](/authors/pouzor/) : [RGPD - Ce qu'il va changer](/fr/rgpd-ce-qu-il-va-changer/).
 
-![Cookie Monster]({{site.baseurl}}/assets/2018-01-17-cookie-banner/cookie-monster.jpg)
+![Cookie Monster]({BASE_URL}/imgs/articles/2018-01-17-cookie-banner/cookie-monster.jpg)

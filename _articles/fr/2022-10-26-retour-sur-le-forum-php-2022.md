@@ -21,7 +21,7 @@ C'est la première fois que l'AFUP vient poser ses valises dans ce lieu magique,
 
 Les astronautes étaient présents pour assister aux différents talks proposés. Impossible bien entendu d'assister à tout, mais entre rappels et nouveaux apprentissages, voici un retour pêle-mêle sur les talks qui nous ont marqués !
 
-![Afup2022 Logo]({{ site.baseurl }}/assets/2022-10-26-retour-sur-le-forum-php-2022/afup2022.png?width=300)
+![Afup2022 Logo]({BASE_URL}/imgs/articles/2022-10-26-retour-sur-le-forum-php-2022/afup2022.png?width=300)
 
 ## The PHP Foundation: The past, the present, and the future
 

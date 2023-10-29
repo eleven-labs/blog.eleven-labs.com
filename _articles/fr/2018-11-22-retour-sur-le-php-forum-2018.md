@@ -24,7 +24,7 @@ keywords:
 ---
 
 ## Introduction
-Les 25 et 26 octobre s'est tenue l'édition 2018 du [Forum PHP]({{site.baseurl}}/assets/2018-11-15-retour-sur-le-php-forum-2018/eleven-labs-php-forum-2018.jpg). Les astronautes étaient encore une fois présents sur place. Voici les retours des conférences qui les ont marqués.
+Les 25 et 26 octobre s'est tenue l'édition 2018 du [Forum PHP]({BASE_URL}/imgs/articles/2018-11-15-retour-sur-le-php-forum-2018/eleven-labs-php-forum-2018.jpg). Les astronautes étaient encore une fois présents sur place. Voici les retours des conférences qui les ont marqués.
 
 ## Reprenez le contrôle de PostgreSQL grâce à POMM - Mikael Paris - SISMIC
 
@@ -65,7 +65,7 @@ Et oui, maintenant, depuis MySQL vous pouvez faire du NoSQL orienté document. I
 L'intégration du NoSQL dans MySQL 8.0 va vous permettre de centraliser vos données dans un seul SGBD. De plus avec la nouvelle APi dev vous pouvez mêler query SQL et NoSQL ce qui vous permettra d'optimiser le nombre de requêtes vers votre SGBD. Mais aussi plusieurs nouvelles `Windows Functions` sont apparues pour permettre de prendre en charge le NoSQL.
 
 En plus de toutes ces nouvelles fonctionnalités MySQL 8.0 a subi un petit lifting de performances comme le montre ce graphique :
-![Eleven Labs PHP Forum 2018 ]({{site.baseurl}}/assets/2018-11-15-retour-sur-le-php-forum-2018/mysql8performance-80.png)
+![Eleven Labs PHP Forum 2018 ]({BASE_URL}/imgs/articles/2018-11-15-retour-sur-le-php-forum-2018/mysql8performance-80.png)
 
 Voici le lien des slides et de la vidéo de la présentation d'Olivier Dasini sur MySQL 8.0 : [afup.org - MySQL 8.0: Quoi de neuf ?](https://afup.org/talks/2669-mysql-8-0-quoi-de-neuf)
 
@@ -105,7 +105,7 @@ Thomas a donc dû trouver un moyen d’afficher ces IRM qui sont enregistrés au
 Après avoir lu les specs (nifti-1) du format Nifti il a pu trouver le détails des données octet par octet :
 les 352 premiers octets constituent le Header (348 pour le header et 4 pour l’extension), ce header donne du détail sur la structure du fichier, le reste constitue le détail de l’image en voxel.
 
-![Image1]({{site.baseurl}}/assets/2018-11-22-retour-sur-le-php-forum-2018/Image1.png)
+![Image1]({BASE_URL}/imgs/articles/2018-11-22-retour-sur-le-php-forum-2018/Image1.png)
 
 Thomas Jarrand nous a aussi fait un rappel sur comment sont affichées les images sur nos écrans et comment en partant de cela avec les specs il avait pu afficher l’IRM.
 
@@ -177,7 +177,7 @@ la clef doit être cryptée
 la clef doit faire AU MOINS la taille de ce que l’on cherche à crypter
 la clef ne doit SURTOUT pas être utilisée une deuxième fois
 
-![Image2]({{site.baseurl}}/assets/2018-11-22-retour-sur-le-php-forum-2018/Image2.png)
+![Image2]({BASE_URL}/imgs/articles/2018-11-22-retour-sur-le-php-forum-2018/Image2.png)
 
 (L’image ci-dessus représente bien ce qui pose problème lors de la réutilisation d’une clef)
 
