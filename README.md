@@ -177,14 +177,14 @@ Create your tutorial page
 
 **1 - Create the markdown file**
 
-In the folder `_tutorials` create folder with the name of your tutorial and prefixed with the date.
+In the folder `_tutorials` pick the subfolder `fr` or `en` depending on the translation, then create folder with the name of your tutorial and prefixed with the date (`YYYY-MM-DD-slug`).
 ```bash
 cd _tutorials && mkdir YYYY-MM-DD-slug
 ```
 
 **2 - Add content to the file**
 
-Add a file named `index.md` to your folder. Here is the template of the file.
+Inside the folder named `YYYY-MM-DD-slug` you created, add a file named `index.md` Here is the template of the file.
 
 ```md
 ---
@@ -210,6 +210,21 @@ steps:
 
 Then add a steps folder and add your steps there. Here is the template of the file.
 
+Always inside the folder named `YYYY-MM-DD-slug`, create another folder called `steps`. Then create one file for each step.
+
+Example:
+
+```
+YYYY-MM-DD-slug
+ ├── index.md
+ └── steps/
+        ├──introduction.md
+        ├──installation-du-serveur-graphql.md
+        └── ...
+```
+
+Here is the template of the file:
+
 ```md
 ---
 contentType: tutorial-step
@@ -219,6 +234,8 @@ title: Title of the step
 ---
 Content of your step in markdown
 ```
+
+> The files need to keep the same name as the steps declared in `index.md`, using snake case.
 
 **3 - Add your pull request**
 
