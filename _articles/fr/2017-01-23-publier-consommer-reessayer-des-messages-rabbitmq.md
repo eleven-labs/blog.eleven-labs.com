@@ -6,7 +6,7 @@ slug: publier-consommer-reessayer-des-messages-rabbitmq
 title: 'Publier, consommer, et réessayer des messages RabbitMQ'
 excerpt: >-
   ![Swarrot
-  Logo](/_assets/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
+  Logo]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 categories:
   - php
 authors:
@@ -16,7 +16,7 @@ keywords:
   - rabbitmq
 ---
 
-![Swarrot Logo](/_assets/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
+![Swarrot Logo]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 
 RabbitMQ est un gestionnaire de queues, permettant d'asynchroniser différents traitements. Si vous n'êtes pas familier avec cet outil, un [article](https://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/) traitant du sujet a déjà été écrit précédemment, je vous invite donc à le lire.
 
@@ -77,11 +77,11 @@ Create binding between exchange default and queue send_astronaut_to_space (with 
 
 En vous connectant sur votre interface RabbitMQ management (ex: http://127.0.0.1:15672/), plusieurs choses apparaissent :
 
-![Capture of exchanges created](/_assets/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_exchanges.png)
+![Capture of exchanges created]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_exchanges.png)
 
 En cliquant sur l'onglet _Exchanges_, un exchange _default_ a été créé avec un _binding_ avec notre _queue_, comme indiqué dans la console.
 
-![Capture of queues created](/_assets/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_queues.png)
+![Capture of queues created]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_queues.png)
 
 Si l'on clique maintenant sur _Queues_, _send_astronaut_to_space_ est également présente. Jusqu'à présent, pas de problèmes.
 

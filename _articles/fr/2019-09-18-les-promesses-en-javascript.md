@@ -101,7 +101,7 @@ Voilà ce qui se passe :
 - c : la valeur qui est retournée est passée au prochain `then()`,
 - d : et ainsi de suite.
 
-![]({{ site.baseurl }}/assets/2019-09-18-les-promesses-en-javascript/promises.png)
+![]({BASE_URL}/imgs/articles/2019-09-18-les-promesses-en-javascript/promises.png)
 
 ### .catch()
 

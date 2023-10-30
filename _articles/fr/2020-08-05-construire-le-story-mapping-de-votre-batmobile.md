@@ -101,17 +101,17 @@ Dans mon exemple précédent, je peux typiquement définir les EPICS suivantes :
 
 Ces EPICS sont à écrire sur des post-its et à placer sur votre axe horizontal, celui de la “timeline”, qui représente le déroulé des actions de votre utilisateur dans le temps.
 
-![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/EPICS-StoryMapping.PNG)
+![]({BASE_URL}/imgs/articles/2020-08-05-construire-le-story-mapping-de-votre-batmobile/EPICS-StoryMapping.PNG)
 
 Pour le moment, celui-ci est très large en terme de scope, et c’est normal. Le but étant maintenant, sous chaque EPIC, de rentrer un peu plus dans le détail.
 
 Nous allons donc rajouter de nouveaux post-it : les “Features”. Qui représentent les fonctionnalités macro à développer dans chaque EPIC.
 
-![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Features_StoryMapping.PNG)
+![]({BASE_URL}/imgs/articles/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Features_StoryMapping.PNG)
 
 Puis, sous ces features, nous allons maintenant pouvoir rajouter toutes les tâches - qui seront directement vos user stories - que cet utilisateur va pouvoir y faire !
 
-![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/US-StoryMapping.PNG)
+![]({BASE_URL}/imgs/articles/2020-08-05-construire-le-story-mapping-de-votre-batmobile/US-StoryMapping.PNG)
 
 Vous vous demandez sûrement pourquoi mes post-its “User Stories” sont répartis et séparés par des traits ? Nous y arrivons tout de suite dans la dernière étape !
 
@@ -125,7 +125,7 @@ Vous pouvez vous servir du [dot voting](https://blog.myagilepartner.fr/index.php
 
 
 Vous arriverez donc à la suite de cette répartition à cela :
-![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Release-StoryMapping.PNG)
+![]({BASE_URL}/imgs/articles/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Release-StoryMapping.PNG)
 
 De cette manière, vous allez pouvoir laisser en place vos EPICS et Features comme ils sont, puis regrouper toutes vos user stories qui font parties de votre MVP. Tracez ensuite un trait sous ce premier regroupement. Félicitations, vous avez là la constitution de votre premier release !
 
@@ -133,7 +133,7 @@ Faites ensuite le même travail pour définir les éléments qui sont selon vous
 
 Voici la représentation globale de mon Story Mapping, à laquelle vous avez également accès ici :
 
-![]({{ site.baseurl }}/assets/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Global-StoryMapping.PNG)
+![]({BASE_URL}/imgs/articles/2020-08-05-construire-le-story-mapping-de-votre-batmobile/Global-StoryMapping.PNG)
 
 
 ## Keep the Story Map Alive

@@ -7,7 +7,6 @@ title: Retour d'Expérience Android Maker 2018
 excerpt: >-
   Cette année a eu lieu la deuxième édition de l'Android Maker. Avec
   l'astronaute Omar, nous vous proposons un petit retour sur ce qu'on y a vu !
-cover: /img/covers/StockSnap_1S8SVUVUNU.jpg
 categories: []
 authors:
   - babas

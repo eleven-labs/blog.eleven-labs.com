@@ -43,7 +43,7 @@ The problem is immediately brought to developers and they have to isolate the ca
 
 Git takes away the boredom of testing our commits one by one with `git bisect`. This command does a [binary search](https://en.wikipedia.org/wiki/Binary_search_algorithm) in our history.
 
-![](/_assets/articles/2017-10-26-debugging-with-git/binary_search.jpg)
+![]({BASE_URL}/imgs/articles/2017-10-26-debugging-with-git/binary_search.jpg)
 
 At every step of the binary search, we must tell `git bisect` if the issue still persists.
 According to our response, `bisect` will go forward or backward to isolate the issue.

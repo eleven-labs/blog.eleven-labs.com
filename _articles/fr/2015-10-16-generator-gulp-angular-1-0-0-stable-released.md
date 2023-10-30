@@ -37,7 +37,7 @@ Technologies supported
 
 We are not joking around when we talk about this being a stable version. We integrated lots of technologies and languages, from Coffee to Typescript, from Sass to Stylus. The amount of combinations exceeds several millions! We wrote tests, documentation and fixed issues for 12 minor versions and 2 release candidates, to be able to deliver a perfectly configured seed project, no matter the options you choose.
 
-![technologies-gga](/_assets/articles/2015-10-16-generator-gulp-angular-1-0-0-stable-released/generator-gulp-angular-logo.png)
+![technologies-gga]({BASE_URL}/imgs/articles/2015-10-16-generator-gulp-angular-1-0-0-stable-released/generator-gulp-angular-logo.png)
 
 Optimization served
 ===================

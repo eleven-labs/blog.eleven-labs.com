@@ -16,7 +16,7 @@ keywords:
   - quantique
   - qubit
 ---
-![Informatique quantique]({{ site.baseurl }}/assets/2021-05-20-informatique-quantique/informatique-quantique.jpg)
+![Informatique quantique]({BASE_URL}/imgs/articles/2021-05-20-informatique-quantique/informatique-quantique.jpg)
 
 ## Qu'est-ce que l'informatique quantique
 
@@ -56,7 +56,7 @@ est **mort et vivant à la fois.**
 Cela n'est pas vrai, il est dans un état qui est une combinaison de l'état mort et de l'état vivant. Cet état est aussi
 légitime que l'état mort tout court (pauvre chat), ou l'état vivant, mais simplement **nous ne pouvons pas l'observer**.
 
-![Schrodinger meme]({{ site.baseurl }}/assets/2021-05-20-informatique-quantique/schrodinger-meme.jpg)
+![Schrodinger meme]({BASE_URL}/imgs/articles/2021-05-20-informatique-quantique/schrodinger-meme.jpg)
 
 Oublions nos chats, et revenons à notre électron. On dit qu'en mécanique quantique la mesure de la position d'un électron est un **"observable"**,
 qui n'est en réalité pas observable avec quelconque appareil, à contrario de la mécanique classique où ma position en tant qu'humain à un instant T
@@ -96,7 +96,7 @@ la mécanique classique (nos yeux, notre instrument de mesure, le monde tel qu'o
 Notons pour plus tard que le cas où l'électron se trouve exactement à la position A n'est que le cas particulier où il
 est à 100% sur A et 0% ailleurs, et pareil pour B. On appelle ces états particuliers des états **propres**.
 
-![Monsieur propre]({{ site.baseurl }}/assets/2021-05-20-informatique-quantique/mr-propre.jpg)
+![Monsieur propre]({BASE_URL}/imgs/articles/2021-05-20-informatique-quantique/mr-propre.jpg)
 
 Pour résumer un peu ce charabia, notre physique classique admet des grandeurs (comme la taille, le poids, la vitesse
 d'un objet), et la physique quantique a des observables (la position comme vu un peu plus haut, mais aussi le niveau

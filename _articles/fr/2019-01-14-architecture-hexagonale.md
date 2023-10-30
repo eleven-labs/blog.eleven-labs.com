@@ -27,7 +27,7 @@ d'avoir un besoin métier complètement agnostique des choix techniques de son i
 Pour visualiser l’architecture hexagonale on la représente souvent par un hexagone avec au coeur de cet hexagone le
 Domain. La couche du dessus correspond à l’Application et le tout est entouré de l’Infrastructure.
 
-![hexagone]({{site.baseurl}}/assets/2019-01-14-architecture-hexagonale/hexagone.jpg)
+![hexagone]({BASE_URL}/imgs/articles/2019-01-14-architecture-hexagonale/hexagone.jpg)
 
 L'architecture hexagonale peut être la solution car elle tend à isoler une application en trois couches distinctes :
 

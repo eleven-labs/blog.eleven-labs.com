@@ -17,7 +17,7 @@ keywords: []
 Bienvenue dans cet article qui j'espère, vous aidera à gagner en productivité sur l'IDE [PhpStorm](https://www.jetbrains.com/fr-fr/phpstorm/) de la suite JetBrains. Je vais vous parler de mes extensions préférées ainsi que de certains points de configuration méconnus mais très utiles. Prêts ? C'est parti !
 
 
-![PhpStorm Logo]({{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/PhpStorm_Icon.png?width=300)
+![PhpStorm Logo]({BASE_URL}/imgs/articles/2022-08-24-phpstorm-tips-config-extensions/PhpStorm_Icon.png?width=300)
 Figure: *PhpStorm*
 
 
@@ -35,7 +35,7 @@ Comme vous le savez certainement si vous utilisez PhpStorm, les raccourcis clavi
 Cependant il peut être compliqué de se rappeler de tous les raccourcis qui existent, et de prendre l'habitude de les utiliser. Il faudrait que quelqu'un nous rabache à longueur de journée que ce que nous faisons aurait pu être effectué en un clic avec un raccourci. Devinez quoi ? C'est exactement ce que Key Promoter va faire pour vous.
 
 
-![Key Promoter notif]({{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/key-promoter-notification.png?width=450)
+![Key Promoter notif]({BASE_URL}/imgs/articles/2022-08-24-phpstorm-tips-config-extensions/key-promoter-notification.png?width=450)
 Figure: *Key Promoter*
 
 
@@ -55,7 +55,7 @@ Heureusement, PhpStorm possède une extension pour cela, j'ai nommé *CodeGlance
 
 
 
-![Codeglance Map]({{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/code-glance-example.png?width=300)
+![Codeglance Map]({BASE_URL}/imgs/articles/2022-08-24-phpstorm-tips-config-extensions/code-glance-example.png?width=300)
 Figure: *Code Glance*
 
 <br />
@@ -80,7 +80,7 @@ La solution ? Cliquez sur l'onglet *View* => *Appearance*. La liste des menus s'
 Vous voilà à présent dans cette situation :
 
 
-![PhpStorm Clean]({{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/clean-phpstorm.png?width=500)
+![PhpStorm Clean]({BASE_URL}/imgs/articles/2022-08-24-phpstorm-tips-config-extensions/clean-phpstorm.png?width=500)
 Figure: *PhpStorm, the clean way*
 
 <br />
@@ -116,7 +116,7 @@ L'utilisation de ce menu prend tout son sens quand on est débarrassé de toutes
 Nous voilà arrivés à la dernière fonctionnalité que je vais vous présenter aujourd'hui. Elle devrait en particulier vous intéresser si vous avez du mal à vous passer des taskbars 100% du temps. Voici le Distraction free mode.
 
 
-![distraction free mode]({{ site.baseurl }}/assets/2022-08-24-phpstorm-tips-config-extensions/distraction-free-mode.png)
+![distraction free mode]({BASE_URL}/imgs/articles/2022-08-24-phpstorm-tips-config-extensions/distraction-free-mode.png)
 Figure: Distraction free mode
 
 

@@ -26,13 +26,13 @@ La solution la plus souvent envisagée est d'utiliser ponctuellement un **tablea
 [![Vidéo Youtube: UML, Cucumber and modeling reality - MPJ's Musings - Fun Fun Function][fff-image]][fff-video]
 _[UML, Cucumber and modeling reality - MPJ's Musings - Fun Fun Function][fff-video] par [Mattias Petter Johansson (mpj)][mpj-twitter]_
 
-[fff-image]: {{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/just-use-a-whiteboard.png
+[fff-image]: {BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/just-use-a-whiteboard.png
 [fff-video]: https://www.youtube.com/watch?v=4_SvuUYQ5Fo
 [mpj-twitter]: https://twitter.com/mpjme
 
 L'approche semble valable de prime abord, malheureusement, on peut aboutir rapidement à ce résultat :
 
-![Exemple de diagramme d'architecture problématique]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/diagramme-bordelique.jpg)
+![Exemple de diagramme d'architecture problématique]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/diagramme-bordelique.jpg)
 
 Sur le moment, l'équipe qui a produit le diagramme a une idée claire du système et se figure bien les interactions entre les différentes briques de l'application.
 
@@ -62,7 +62,7 @@ Le modèle permet de créer une cartographie du code,
 
 Chaque niveau s'adresse à une audience bien définie.
 
-![Illustration des 4 niveaux de zooms du modèle C4]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/c4model-layered.svg)
+![Illustration des 4 niveaux de zooms du modèle C4]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/c4model-layered.svg)
 
 _Illustration des 4 niveaux de détails du modèle C4_
 
@@ -84,7 +84,7 @@ Voilà ! Nous y sommes. En réalité, ce qui compte c'est ce **[modèle](https:/
 
 Modèle qu'il va falloir **extraire** pour permettre à toutes les personnes concernées de le **maintenir**, de l'**enrichir** et de le **corriger** au fil des évolutions de l'architecture.
 
-![Le professeur Dumbledore utilisant un sort d'extraction de souvenirs]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/dumbledore_memory.jpg)
+![Le professeur Dumbledore utilisant un sort d'extraction de souvenirs]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/dumbledore_memory.jpg)
 
 _Le professeur Dumbledore en pleine séance d'extraction de son modèle mental de l'architecture._
 
@@ -102,7 +102,7 @@ L'avantage de maintenir un modèle, est qu'il est possible de l'interroger progr
 
 L'idée ici et de **séparer le fond de la forme** et d'accorder plus d'importance au contenu _(que l'on souhaite exhaustif)_, qu'au contenant _(nos futurs diagrammes)_.
 
-![Filtrage du modèle d'architecture pour obtenir une vue correspondant à la question posée]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/c4model-filter.svg)
+![Filtrage du modèle d'architecture pour obtenir une vue correspondant à la question posée]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/c4model-filter.svg)
 
 ## Formalisme
 
@@ -111,13 +111,13 @@ Le modèle s'appuie sur un ensemble d'abstractions utilisées pour décrire la s
 Le modèle C4 s'intéresse à représenter des **systèmes logiciels**
 composés de **conteneurs**, scindés en **composants** qui s'expriment par du **code**. On matérialise également les **personnes** utilisant ces systèmes et les différentes **relations** qu'entretiennent les élements de l'architecture.
 
-![Hiérarchie des éléments d'architecture du modèle C4]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/hierarchy.png)
+![Hiérarchie des éléments d'architecture du modèle C4]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/hierarchy.png)
 
 ## Notation
 
 L'idée derrière le modèle C4 est de laisser peu de place à l'interprétation. Les diagrammes générés à partir du modèle doivent être **autoporteurs** ; il ne doit pas être nécessaire de les accompagner d'une documentation ou d'un discours.
 
-![Notation du modèle C4]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/notation.png)
+![Notation du modèle C4]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/notation.png)
 
 - Chaque boîte porte un **nom**, un **type** et une **description**.
 - Chaque relation porte une **description** accompagnée si nécessaire de la **technologie** utilisée pour le transport de l'information quand il s'agit d'une relation technique.
@@ -129,7 +129,7 @@ On identifie 4 niveaux d'abstractions
 
 ### **Niveau 1**: System **Context** _(Contexte Système)_
 
-![Modèle C4: Vue Contexte Système]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/system-context.png)
+![Modèle C4: Vue Contexte Système]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/system-context.png)
 
 Ce diagramme permet d'obtenir la vision d'ensemble d'un système.
 
@@ -141,7 +141,7 @@ La boîte centrale matérialise un système logiciel, entouré des ses utilisate
 
 ### **Niveau 2**: **Container** _(Conteneur)_
 
-![Modèle C4: Vue Conteneur]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/containers.png)
+![Modèle C4: Vue Conteneur]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/containers.png)
 
 Une fois que l'on situe un système dans son environnement, la prochaine étape est de zoomer
 dans les frontières de ce dernier _(system boundaries)_ pour matérialiser les conteneurs qui le composent.
@@ -163,7 +163,7 @@ Un conteneur est un élément qui peut être exécuté/déployé individuellemen
 
 ### **Niveau 3** : **Component** _(Composant)_
 
-![Modèle C4: Vue Composant]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/component.png)
+![Modèle C4: Vue Composant]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/component.png)
 
 Quand on zoome sur un conteneur, on observe les composants nécessaires à son fonctionnement, ainsi que leurs interactions.
 
@@ -183,7 +183,7 @@ Pour finir, en zoomant sur un composant, on accède à son implémentation.
 
 Pour décrire une implémentation, l'UML est le langage à privilégier sachant qu'à ce niveau de détails, on s'adresse essentiellement à des développeurs.
 
-![Modèle C4: Vue Code]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/code.png)
+![Modèle C4: Vue Code]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/code.png)
 
 Pour les traitements jugés triviaux (exemple: un CRUD), il est inutile de descendre jusque-là.
 
@@ -195,13 +195,13 @@ Vous n'êtes pas obligé pour ce niveau d'utiliser systématiquement des diagram
 
 ### Software Landscape _(Paysage Applicatif)_
 
-![Modèle C4: Paysage Applicatif]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/landscape.png)
+![Modèle C4: Paysage Applicatif]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/landscape.png)
 
 Permet de visualiser plusieurs applicatifs maintenus par l'entreprise et leurs interactions avec des systèmes et des personnes, qu'ils soient internes ou externes à l'entreprise.
 
 ### Deployment _(déploiement)_
 
-![Modèle C4: Plan de Déploiement]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/deployment.png)
+![Modèle C4: Plan de Déploiement]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/deployment.png)
 
 Fait correspondre les conteneurs (éléments individuellement déployables) à l'infrastructure matérielle du SI.
 
@@ -211,15 +211,15 @@ La page officielle du modèle C4 [référence déjà un certains nombres d'outil
 
 C'est actuellement le seul outil qui vous permet de modéliser et de maintenir un modèle d'architecture, via du code ([java](https://github.com/structurizr/java), [.net](https://github.com/structurizr/dotnet), [typescript](https://github.com/ChristianEder/structurizr-typescript) ou [php](https://github.com/structurizr-php/structurizr-php)) ou depuis son interface graphique et qui offre la possibilité de générer des diagrammes à partir de ce dernier.
 
-![Logo Structurizr]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/structurizr-logo.png)
+![Logo Structurizr]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/structurizr-logo.png)
 
-![Structurizr: Ajouter des éléments]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/structiruzr-edit-elements.gif)
+![Structurizr: Ajouter des éléments]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/structiruzr-edit-elements.gif)
 _Ajout d'éléments via l'interface Structurizr_
 
-![Structurizr: éditeur de styles]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/structurizr-edit-styles.png)
+![Structurizr: éditeur de styles]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/structurizr-edit-styles.png)
 _Édition des styles via l'interface Structurizr_
 
-![Structurizr: éditeur de styles]({{ site.baseurl }}/assets/2019-12-12-visualiser-l-architecture-de-vos-projets/structurizr-edit-views.png)
+![Structurizr: éditeur de styles]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/structurizr-edit-views.png)
 _Création de vues via l'interface Structurizr_
 
 Le workflow de l'outil est le suivant :

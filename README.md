@@ -144,19 +144,19 @@ You can use one of the solutions:
 To add images to your article, you will need to create the folder `_assets/articles/YYYY-MM-DD-slug/` and add your images there.
 Then in the markdown content, insert the tag:
 ```md
-![alt of image]({{ site.baseurl }}/assets/YYYY-MM-DD-slug/image-name.png)
+![alt of image]({BASE_URL}/imgs/articles/YYYY-MM-DD-slug/image-name.png)
 ```
 
 To add an image with a figure and a figcaption you just need to write this syntax:
 
 ```md
-![alt of image]({{ site.baseurl }}/assets/YYYY-MM-DD-slug/image-name.png)
+![alt of image]({BASE_URL}/imgs/articles/YYYY-MM-DD-slug/image-name.png)
 Figure: *Source Github*
 ```
 
 And to specify a size on the image, you can add the arguments (`width`, `height`, `maxWidth`, `maxHeight`) after the url:
 ```md
-![alt of image]({{ site.baseurl }}/assets/YYYY-MM-DD-slug/image-name.png?width=500)
+![alt of image]({BASE_URL}/imgs/articles/YYYY-MM-DD-slug/image-name.png?width=500)
 ```
 
 > Warning: Don't add html in your markdown, you don't have to override the blog template in the markdown.

@@ -7,8 +7,7 @@ title: Feedback on a live-coding to discover Go language
 excerpt: >-
   This blog post follows a workshop / live-coding session I organized at Eleven
   Labs for an initiation to Go language.
-cover: >-
-  /assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/cover.jpg
+cover: /assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/cover.jpg
 categories: []
 authors:
   - vcomposieux
@@ -43,7 +42,7 @@ The idea is pretty simple:
 
 Before going into details, here is a diagram representing the features of our library:
 
-![WorkMQ Diagram](/_assets/articles/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/schema.jpg)
+![WorkMQ Diagram]({BASE_URL}/imgs/articles/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/schema.jpg)
 
 As you can see on this diagram, we have four `Queues` defined and each of them has three `Workers`.
 
@@ -356,7 +355,7 @@ In this code, we loop over each queue to display counters data on output.
 
 In order to let you have a better visualization of the output, here is a sample:
 
-![HTTP Output](/_assets/articles/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/output.gif)
+![HTTP Output]({BASE_URL}/imgs/articles/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/output.gif)
 
 Conclusion
 ----------

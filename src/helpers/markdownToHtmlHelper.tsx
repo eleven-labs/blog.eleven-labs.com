@@ -69,9 +69,7 @@ const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): Remin
 };
 
 const cleanMarkdown = (markdownContent: string): string =>
-  markdownContent
-    .replace(/{{\s*?site.baseurl\s*?}}\/assets\//g, `${process.env.BASE_URL || '/'}imgs/articles/`)
-    .replaceAll('/_assets/articles/', `${process.env.BASE_URL || '/'}imgs/articles/`);
+  markdownContent.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);
 
 export const markdownToHtml = function <TData = Record<string, unknown>>(
   markdownContent: string

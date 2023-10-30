@@ -81,7 +81,7 @@ More info [here](https://github.com/rueckstiess/mtools/wiki/mlogfilter).
 
 Those tools allows you to generate graphics to visualize data in a human-readable format. We can see : calls distribution, type of commands, etc :
 
-![mlogvis](/_assets/articles/2016-09-29-mtools-mongodb/mlogvis.png)
+![mlogvis]({BASE_URL}/imgs/articles/2016-09-29-mtools-mongodb/mlogvis.png)
 
 More info on [Mlogvis](https://github.com/rueckstiess/mtools/wiki/mlogvis) & [Mplotqueries](https://github.com/rueckstiess/mtools/wiki/mplotqueries).
 
@@ -133,6 +133,6 @@ This command is creating a MongoDB server with 5 replicas.
 
 Compass is a desktop client allowing you to browse and analyze data from a MongoDB database. Its goal is to allow a person to manipulate data without real knowledges on MongoDB querying. However, it's only available on Windows and MacOS yet.
 
-![date-sample](/_assets/articles/2016-09-29-mtools-mongodb/date-sample.png)
+![date-sample]({BASE_URL}/imgs/articles/2016-09-29-mtools-mongodb/date-sample.png)
 
-![query-builder](/_assets/articles/2016-09-29-mtools-mongodb/query-builder.png)
+![query-builder]({BASE_URL}/imgs/articles/2016-09-29-mtools-mongodb/query-builder.png)

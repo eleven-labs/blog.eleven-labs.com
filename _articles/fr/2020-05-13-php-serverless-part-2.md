@@ -380,7 +380,7 @@ layers:
 
 L'URL à laquelle mon application est accessible est indiquée dans les endpoints. Voici donc le résultat :
 
-![]({{ site.baseurl }}/assets/2020-05-07-php-serverless-part-2/example.png)
+![]({BASE_URL}/imgs/articles/2020-05-07-php-serverless-part-2/example.png)
 
 Nous avons terminé ! Nous venons de déployer une application Symfony sur AWS Lambda en utilisant Bref.
 Comme vous avez vu, c'est assez simple au final...

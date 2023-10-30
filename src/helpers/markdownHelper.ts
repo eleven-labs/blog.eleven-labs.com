@@ -98,12 +98,11 @@ export const validateMarkdownContent = (options: { markdownFilePath: string; con
     }
   }
 
-  const assetMatches = options.content.match(/{{ site.baseurl }}[^)"'\s]+/g);
+  const assetRegex = new RegExp('{BASE_URL}\\/imgs\\/[^.]+\\.(jpg|jpeg|png|webp|svg)', 'g');
+  const assetMatches = options.content.match(assetRegex);
   if (assetMatches) {
     for (const assetMatch of assetMatches) {
-      const assetPath = assetMatch
-        .replace(/{{\s*?site.baseurl\s*?}}\/assets/g, `${ASSETS_DIR}/articles`)
-        .split('?')?.[0];
+      const assetPath = assetMatch.replace(new RegExp('{BASE_URL}\\/imgs/'), `${ASSETS_DIR}/`).split('?')?.[0];
 
       if (!existsSync(assetPath)) {
         throw new MarkdownInvalidError({

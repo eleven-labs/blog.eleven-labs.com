@@ -8,8 +8,7 @@ excerpt: >-
   You're part of a small team with a lot of features to release quickly and a
   PoC needed to test a product but you only have little to no tech skills ?
   NoCode is what you're looking for !
-cover: >-
-  /assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
+cover: /assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
 categories: []
 authors:
   - marianne
@@ -28,14 +27,14 @@ I will propose some features that are regularly found in a project, and make a c
 
 ## Interface presentation
 
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/homepage.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/homepage.png)
 
 It is worth mentioning that Integromat did pay attention to users with a non-technical profile by proposing an easy to use and quite intuitive interface.
 
 On the scenario building page, each node is represented by a bubble: adding and configuring is done directly on the page. Integromat allows you to create "Data Structures" and to store data ("Data Stores") that you can prepare in advance in their own menus and then use them in the scenarios.
 With these features, you can process and manipulate data without needing a specific database.
 
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/interface-noeud.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/interface-noeud.png)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OExHVQ9CRCw" frameborder="0" allowfullscreen></iframe>
 
@@ -45,9 +44,9 @@ With these features, you can process and manipulate data without needing a speci
 You start a new site from scratch that requires registration, and you want to send a confirmation email.
 
 The scenario is quite simple: a webhook on which the application will have to send data, and an email server.
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-scenario.png)
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-webhook.png)
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-mail.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-scenario.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-webhook.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas1-mail.png)
 
 > On the plus side, you are autonomous to change the template: no need for additional development and therefore no need for a specific release to deliver those changes.
 
@@ -75,7 +74,7 @@ You have just created your e-commerce site, either via Shopify or Prestashop. To
 
 For this example, I will use a webhook rather than directly an e-commerce site node that retrieves the information as soon as there is a new event.
 
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas2-scenario.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas2-scenario.png)
 
 > As in our previous exemple with the email template, you are completly autonomous to change it.
 
@@ -92,7 +91,7 @@ Without going into too much detail, there are several ways to create an image, b
 #### Sending this image via email
 
 In addition to storing the image, you can also send it by email.
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas2-aller-plus-loin.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas2-aller-plus-loin.png)
 
 #### Printing
 
@@ -104,18 +103,18 @@ This scenario allows to go further in Integromat with the use of Data Stores and
 We want to process a CSV to split it into several CSV to be then processed by different microservices.
 You can connect the trigger on a *FTP* service as well as on a *Google Drive*.
 
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-scenario.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-scenario.png)
 
 It is possible to add filters between the nodes. To avoid errors during processing, I added the condition to accept only CSV documents for the following steps.
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-filter-csv.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-filter-csv.png)
 
 
 To be sure of uploaded document pattern and to save the data to potentially use in another scenario, I use the *Data Store* node which will map each CSV entry to a database entry.
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-mapping-csv-data-store.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-mapping-csv-data-store.png)
 
 
 For my need, I have to create 3 different CSV based Data Structures and save them in a folder. The *Router* node allows to parallelize the work.
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-create-data-structure-product.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-create-data-structure-product.png)
 
 > On the plus side, you have complete autonomy on the models: if the input(s) or output(s) change, you can update them easily.
 
@@ -141,7 +140,7 @@ You need to add the brand id or a color trigram, but the data is not in the orig
 There are plenty of nodes to allow communication: each time a new file is processed, a slack message will be sent to warn the team.
 It is even possible to predict the path in case of an error during a node.
 
-![]({{ site.baseurl }}/assets/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-add-error-handler.png)
+![]({BASE_URL}/imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cas3-add-error-handler.png)
 
 
 ## Conclusion

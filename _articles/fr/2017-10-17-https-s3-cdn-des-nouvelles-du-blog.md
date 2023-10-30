@@ -21,7 +21,7 @@ keywords:
 ---
 
 En Juillet dernier nous vous annoncions la
-[refonte du blog]({{ '/fr/migration-du-blog/' | prepend: site.baseurl | replace: '//', '/' }}) en Jekyll hébergé sur
+[refonte du blog]({BASE_URL}/fr/migration-du-blog/) en Jekyll hébergé sur
 github pages.
 Cependant, l'hébergement sur github pages ne permet pas l'utilisation d'un certificat SSL autre que celui fourni.
 Ce certificat étant prévu pour une utilisation sur le domaine `github.io`, nous ne pouvions pas l'utiliser avec notre

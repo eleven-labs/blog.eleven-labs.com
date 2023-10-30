@@ -37,7 +37,7 @@ Voici des éléments déclencheurs -parmi tant d’autres- d’une **Guerre du B
 Et pour vous lancer dans cette véritable course contre la montre, vous faire des alliés et pacifier le développement du Produit, voici trois premières **méthodes de priorisation du Backlog** qui pourront très certainement vous accompagner.
 
 
-![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/scoffield-and-blake.jpg)
+![]({BASE_URL}/imgs/articles/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/scoffield-and-blake.jpg)
 
 
 ## Tactique numéro 1 : l’oeil de MoSCoW
@@ -74,7 +74,7 @@ Les participants sélectionnent des post-it et viennent les placer dans les diff
 Ils devront dans un second temps échanger sur les post-its qui font débat. Il est important de bien cadrer l’atelier pour équilibrer le nombre de post-its dans les différentes catégories. Si trop de tickets sont encore en Must Have ou Should Have, demandez aux participants de débattre à nouveau sur les éléments en Must Have pour n’en garder qu’un nombre défini. Répétez l’opération sur les Should Have jusqu’à l’obtention d’un nombre cohérent d’éléments dans chaque catégorie.
 
 
-![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/MoSCoW.jpg)
+![]({BASE_URL}/imgs/articles/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/MoSCoW.jpg)
 
 
 *Cette méthode peut s’avérer inefficace si les différentes parties prenantes manquent d’objectivité ou si les relations sont très conflictuelles entre les différents services. Elle présente néanmoins l’intérêt d’aligner tous les métiers sur des objectifs communs lors d’un atelier assez simple à mettre en place. Cet atelier pourra être répété à intervalle régulier et est un bon moyen d’engager vos parties prenantes !*
@@ -155,7 +155,7 @@ Le calcul de l’indicateur WSJF tiendra compte des valeurs suivantes :
 
 Pour chacune des valeurs, vous pourrez utiliser la suite de Fibonacci pour les noter.
 
-![]({{ site.baseurl }}/assets/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/WSJF.jpg)
+![]({BASE_URL}/imgs/articles/2020-03-25-la-guerre-du-backlog-n-aura-pas-lieu/WSJF.jpg)
 
 Une fois les différentes valeurs notées, vous voilà prêt pour le grand calcul.
 

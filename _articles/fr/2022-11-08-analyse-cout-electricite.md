@@ -223,7 +223,7 @@ Cela me donne le tableau suivant.
 
 La lecture du tableau ne permet pas de se rendre compte de cette répartition. Ajoutons un graphique en camembert.
 
-![répartition de la consommation entre les différentes périodes]({{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/repartition-consommation.png)
+![répartition de la consommation entre les différentes périodes]({BASE_URL}/imgs/articles/2022-11-08-analyse-cout-electricite/repartition-consommation.png)
 
 C'est mieux :)
 
@@ -260,7 +260,7 @@ Je répète cette opération pour tous les tarifs que j'ai sélectionnés.
 
 Cela me permet de tracer ce graphique avec Plotly.
 
-![coût de l'électricité en fonction du tarif]({{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/calcul-cout-electricite.png)
+![coût de l'électricité en fonction du tarif]({BASE_URL}/imgs/articles/2022-11-08-analyse-cout-electricite/calcul-cout-electricite.png)
 
 Il nous donne les informations nécessaires pour répondre à notre question initiale, à nous de l'interpréter.
 
@@ -286,6 +286,6 @@ Sur cette base d'analyse, il est possible d'approfondir le sujet en appliquant u
 * [https://particulier.edf.fr/fr/accueil/electricite-gaz/offres-electricite/offres-marche.html](https://particulier.edf.fr/fr/accueil/electricite-gaz/offres-electricite/offres-marche.html)
 * [https://www.enedis.fr/jaccede-mes-donnees-de-consommation-et-de-production-delectricite](https://www.enedis.fr/jaccede-mes-donnees-de-consommation-et-de-production-delectricite)
 * [https://fr.wikipedia.org/wiki/Voltamp%C3%A8re](https://fr.wikipedia.org/wiki/Voltamp%C3%A8re)
-* [Code de l'analyse]({{ site.baseurl }}/assets/2022-11-08-analyse-cout-electricite/code.zip)
+* [Code de l'analyse]({BASE_URL}/imgs/articles/2022-11-08-analyse-cout-electricite/code.zip)
 * [https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#values-considered-missing](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#values-considered-missing)
 * [https://chartio.com/resources/tutorials/how-to-check-if-any-value-is-nan-in-a-pandas-dataframe/](https://chartio.com/resources/tutorials/how-to-check-if-any-value-is-nan-in-a-pandas-dataframe/)

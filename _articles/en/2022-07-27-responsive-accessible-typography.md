@@ -25,7 +25,7 @@ keywords:
     }
 </style>
 
-![Man holding a note saying 'Read me if you can']({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/read-me.png?width=300)
+![Man holding a note saying 'Read me if you can']({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/read-me.png?width=300)
 
 How many times have you been aware of text's different shapes and sizes while browsing the web lately? Probably not many, unless you found an extremely uncomfortable typography that pushed you to quickly flee the website.
 Typography is a silent tool that UX designers and developers can sometimes take for granted. **There is much noise around this topic**. Pixels? Are breakpoints enough to switch sizes across devices? Do we even need breakpoints at all ?
@@ -45,12 +45,12 @@ Smaller text can be challenging for seniors, children or visually impaired peopl
 
 For **heavy-text pages, even 18px or >20px** could even be suitable for a comfortable reading. Does it sound ridiculous? Check the body text on any medium.com article, such as [this one](https://kantrowitz.medium.com/face-to-face-with-dall-e-the-ai-artist-that-might-change-the-world-e9057e9e89a).
 
-![Post on medium with detail on font-size]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/medium-example.jpg)
+![Post on medium with detail on font-size]({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/medium-example.jpg)
 
 ### Should typography be smaller in mobile?
 
 
-![Magnifier glass]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/girl-phone.png?width=300)
+![Magnifier glass]({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/girl-phone.png?width=300)
 
 Ok, what’s the trick here? Perhaps an intuitive answer to this question is to think that the text needs to be smaller to fit on the phone screen, or perhaps the opposite… that the text should be larger to achieve a more comfortable experience when reading on a smaller screen!
 
@@ -97,13 +97,13 @@ html {
 
 This practice has even been promoted by CSS-tricks last May on Twitter... and it received little love from their followers:
 
-[![Tweet from CSS tricks suggesting to set the font-size to 62.5% in the root element]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/css-tricks.png?width=400)](https://twitter.com/css/status/1523700789083996160?s=20&t=CC56aWixbiPV7R_pqUOGcw)
+[![Tweet from CSS tricks suggesting to set the font-size to 62.5% in the root element]({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/css-tricks.png?width=400)](https://twitter.com/css/status/1523700789083996160?s=20&t=CC56aWixbiPV7R_pqUOGcw)
 
 Changing the font size in the root is generally not great. It will either overwrite custom values or break any other usage of rem outside the typography. It is possible, but it will bring many changes regarding scalability.
 
 Let's check a better way. Or two.
 
-![Researcher going for adventure]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/research-illustration.png?width=300)
+![Researcher going for adventure]({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/research-illustration.png?width=300)
 
 #### #1 - Use calc(): yes, but wait and see!
 
@@ -144,7 +144,7 @@ Yes, it is almost the same. But in terms of scalability and practicity, this app
 ### Ok, great... but what about fluid typography?
 
 
-![Researcher going for adventure]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/fluid-typography.png?width=400)
+![Researcher going for adventure]({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/fluid-typography.png?width=400)
 
 
 
@@ -175,7 +175,7 @@ However, fluid typography should not replace responsive typography and it is not
 #### Line height
 Line height is also a key point in accessible typography. Just check this two paragraphs with the exact same content:
 
-![Line height example]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/line-height.png)
+![Line height example]({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/line-height.png)
 
 By default, most browsers set the line-height to 1.2. But what does 1.2 even mean? Spoiler: it's not pixels. An accessibility-focused line-height uses nothing less but unitless values (numbers) that are multiplied by the element's own font size. Yes, it is also possible to use `percentages`, `em` as well as global values, but this might lead to [unexpected results](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#prefer_unitless_numbers_for_line-height_values).
 
@@ -227,10 +227,10 @@ The magic range to aim here is between 50 - 75 characters per line. Ignoring thi
 
 Wikipedia is a great (bad) exemple. Even using a way greater amount of characters than recommended, the difference is easily visible in this [two extraits](https://fr.wikipedia.org/wiki/Wikip%C3%A9dia):
 
-![Wikipedia entry with 88 characters]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/wiki2.png)
+![Wikipedia entry with 88 characters]({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/wiki2.png)
 Figure: Wikipedia entry with 88 characters
 
-![Wikipedia entry with 148 characters]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/wiki1.png)
+![Wikipedia entry with 148 characters]({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/wiki1.png)
 Figure: Wikipedia entry with 148 characters
 
 Let's jump to the last readability point of this article!
@@ -239,7 +239,7 @@ Let's jump to the last readability point of this article!
 
 High contrast between the font and the background ensure good readability. This is a quite basic concept and might even feel like an intuitive principle. Nevertheless, it still happens (quite often).
 
-![Two examples of color contrast]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/color-contrast.png)
+![Two examples of color contrast]({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/color-contrast.png)
 
 Do you think both texts have enough contrast?
 
@@ -253,7 +253,7 @@ Web typography is a beautiful and a little bit messy world. In this article we j
 
 From my point of view, it is a responsability as creators to care about having inclusive products. Even if accessibility is a wide topic and we can struggle putting all its principles in practice, I think this can be a good start. <b>Caring is always the first step.</b>
 
-![Woman on a rocket heading to the sky]({{ site.baseurl }}/assets/2022-07-27-responsive-accessible-typography/rocket.png?width=300)
+![Woman on a rocket heading to the sky]({BASE_URL}/imgs/articles/2022-07-27-responsive-accessible-typography/rocket.png?width=300)
 
 ## Ressources
 

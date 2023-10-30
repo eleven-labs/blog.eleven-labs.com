@@ -9,8 +9,7 @@ excerpt: >-
   Services (AWS). In order to limit the problems of crash and data loss, it is
   also replicated with two other servers, ideally in a different geographical
   area to ensure high availability.
-cover: >-
-  /assets/2017-09-03-migrer-une-application-react-client-side-en-server-side-avec-nextjs/cover.jpg
+cover: /assets/2017-09-03-migrer-une-application-react-client-side-en-server-side-avec-nextjs/cover.jpg
 categories: []
 authors:
   - vcomposieux
@@ -37,7 +36,7 @@ What is important to note is that only the `primary` server will be able to read
 
 This is the target infrastructure we are looking for, for this replication:
 
-![MongoDB Replication](/_assets/articles/2017-11-01-deployer-un-mongodb-replique-sur-aws-avec-terraform-et-ansible/replication.svg)
+![MongoDB Replication]({BASE_URL}/imgs/articles/2017-11-01-deployer-un-mongodb-replique-sur-aws-avec-terraform-et-ansible/replication.svg)
 
 
 As you can see on this diagram, only the primary node is used for read/write, the other two replicas are there to synchronize the updated data of the primary server in real time as well as for the purpose of eventually becoming primary in turn, in case the current primary server would become unavailable.

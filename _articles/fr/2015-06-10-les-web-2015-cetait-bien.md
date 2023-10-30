@@ -24,7 +24,7 @@ keywords:
 
 Le 5 juin dernier, tandis que la France entière affrontait vaillamment sa première canicule de l’année avec du courage, de la sueur et les jambes à l'air, les organisateurs du Best of Web ont eu la bonne idée de réunir une petite tranche de notre communauté bien au frais - ou pas - dans la Grande Crypte du 16e arrondissement de Paris. Salariés, freelance, étudiants… Des développeurs et intégrateurs de tout bord étaient présents dans la salle pour assister à une douzaine de conférences, chacune portant sur un sujet très différent de la précédente.
 
-![IMG\_0788](/_assets/articles/2015-06-10-les-web-2015-cetait-bien/IMG_0788.jpg) Jésus, le premier évangéliste Web, était également présent ce jour-là.
+![IMG\_0788]({BASE_URL}/imgs/articles/2015-06-10-les-web-2015-cetait-bien/IMG_0788.jpg) Jésus, le premier évangéliste Web, était également présent ce jour-là.
 
 Qu’est-ce que le Best of Web ?
 ==============================

@@ -168,11 +168,11 @@ Dans ce composant nous utilisons le retour de **useIntersectionObserver** afin d
 
 Voici le résultat :
 
-![]({{ site.baseurl }}/assets/2020-01-22-lazy-load-react/image-lazy-load.gif)
+![]({BASE_URL}/imgs/articles/2020-01-22-lazy-load-react/image-lazy-load.gif)
 
 Si vous voulez un effet d'image floue comme le fait le site **Medium**, c'est possible.
 
-![]({{ site.baseurl }}/assets/2020-01-22-lazy-load-react/medium-lazy-load.jpeg)
+![]({BASE_URL}/imgs/articles/2020-01-22-lazy-load-react/medium-lazy-load.jpeg)
 
 La technique la plus simple est d'afficher une image de petite taille (et donc moins lourde), et de l’étirer à la taille souhaitée. Dans notre exemple nous pouvons déclarer en paramètre de placeholder l'image que nous adapterons au contenu grâce au CSS.
 
@@ -187,7 +187,7 @@ La technique la plus simple est d'afficher une image de petite taille (et donc m
 
 Voici le résultat :
 
-![]({{ site.baseurl }}/assets/2020-01-22-lazy-load-react/image-lazy-load-blur.gif)
+![]({BASE_URL}/imgs/articles/2020-01-22-lazy-load-react/image-lazy-load-blur.gif)
 
 Et ceci n'est qu'un exemple parmi tant d'autres.
 

@@ -380,7 +380,7 @@ layers:
 
 My application is available on the URL indicated in the endpoints. Here is the result:
 
-![]({{ site.baseurl }}/assets/2020-05-07-php-serverless-part-2/example.png)
+![]({BASE_URL}/imgs/articles/2020-05-07-php-serverless-part-2/example.png)
 
 That's it. We just deployed a Symfony application to AWS Lambda using Bref!
 As you can see, it is a pretty straight forward process...

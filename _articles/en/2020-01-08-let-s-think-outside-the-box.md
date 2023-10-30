@@ -405,10 +405,10 @@ Our beautiful app runs and what's happening?
 
 For what we can see in the simulator, our app launches, displays our dummy screen, then opens Safari and navigates to the website of **Eleven-Labs**.<br/>
 Hum, that's funny, it reminds me of the action we defined in the third module.<br/><br/>
-![AppVideo]({{ site.baseurl }}/assets/2018-05-21-let-s-think-outside-the-box/appvideo.gif)<br/><br/>
+![AppVideo]({BASE_URL}/imgs/articles/2018-05-21-let-s-think-outside-the-box/appvideo.gif)<br/><br/>
 If we know have a look at the log console, we can see some outpouts.<br/>
 But those outputs, we are familiar with them, aren't they the ones defined in the two first modules?!<br/><br/>
-![ConsoleOutput]({{ site.baseurl }}/assets/2018-05-21-let-s-think-outside-the-box/console-output.png)<br/><br/>
+![ConsoleOutput]({BASE_URL}/imgs/articles/2018-05-21-let-s-think-outside-the-box/console-output.png)<br/><br/>
 I think that you start to understand, right?<br/>
 All the actions that we defined in the **JSON** file, and that really exist in our modules are then executed.<br/>
 Pretty cool isn't it? :)

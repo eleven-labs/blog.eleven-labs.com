@@ -35,7 +35,7 @@ ArchiMate offre un langage commun pour décrire la construction et le fonctionne
 
 Les principaux concepts et éléments du langage ArchiMate sont présentés sous le nom d'ArchiMate Core Framework, qui se compose de trois “layers” et de trois “aspects”. Cela crée une matrice de combinaisons. Chaque couche à ses aspects “Passive Structure”, “Behavior” et “Active Structure”.
 
-![Matrice Archimate]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/core_framework_archimate.jpeg)
+![Matrice Archimate]({BASE_URL}/imgs/articles/2023-05-03-archi-modelisation/core_framework_archimate.jpeg)
 
 
 D'après Wikipedia :
@@ -67,36 +67,36 @@ Tout élément dans Archi est un objet (boite, relation, étiquette, …), poss�
 Prenons comme exemple ce schéma simple, décrivant le parcours de création d’un utilisateur.
 
 
-![Matrice Archimate]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_1.png)
+![Matrice Archimate]({BASE_URL}/imgs/articles/2023-05-03-archi-modelisation/archi_screenshot_1.png)
 
 Ce que l’on peut voir immédiatement, c’est que l’ensemble des éléments sont référencés dans le Model Archi, que ça soit les éléments business (en jaune), les applications techniques et les interfaces d’API (en bleu) et même les relations. Cela vous permet d’avoir un référentiel documentaire entre les différents schémas, et de réutiliser les mêmes éléments dans des schémas différents.
 
 
 Dans l'exemple ci-dessous, l’application “MS Client” est le même objet que dans le premier schéma.
 
-![Matrice Archimate 2]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_2.png)
+![Matrice Archimate 2]({BASE_URL}/imgs/articles/2023-05-03-archi-modelisation/archi_screenshot_2.png)
 
 
 Cela permet notamment d’avoir une documentation unique sur l’ensemble de models et de faciliter cette documentation.
 
-![Matrice Archimate 3]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_3.png)
+![Matrice Archimate 3]({BASE_URL}/imgs/articles/2023-05-03-archi-modelisation/archi_screenshot_3.png)
 
 Autre force de l’outil, sa gestion des relations et notamment des imbrications. Lors de l’insertion d’un objet dans un autre, Archi comprend qu’il peut s’agir d’une relation (souvent d’une composition) et va vous demander explicitement de décrire s'il s’agit d’une relation explicite (comme une flèche finalement). 
 
 Exemple ici quand je tente d’ajouter un component “test” dans l’API Gateway.
-![Matrice Archimate 4]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_4.png)
+![Matrice Archimate 4]({BASE_URL}/imgs/articles/2023-05-03-archi-modelisation/archi_screenshot_4.png)
 
 
 D’ailleurs maintenant, si je veux sortir cette boite de l’API Gateway, la relation va rester et apparaître explicitement.
 
-![Matrice Archimate 5]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_5.png)
+![Matrice Archimate 5]({BASE_URL}/imgs/articles/2023-05-03-archi-modelisation/archi_screenshot_5.png)
 
 
 Mais le plus gros avantage à cette gestion des “objets” dans Archi, c’est la possibilité de générer en un clic une vue, à partir d’un élément du référentiel, avec l’ensemble des objets qui lui sont attachés. Idéal pour comprendre la place d’un objet dans l’ensemble de notre ecosystème, y compris sur des schémas gérés par d’autres personnes.
 
 Exemple :
 
-![Matrice Archimate 6]({{ site.baseurl }}/assets/2023-05-03-archi-modelisation/archi_screenshot_6.png)
+![Matrice Archimate 6]({BASE_URL}/imgs/articles/2023-05-03-archi-modelisation/archi_screenshot_6.png)
 
 Enfin, dernier gros avantage de ce référentiel, l’outil permet de rechercher dans l’ensemble des objets (et des attributs des objets) !
 

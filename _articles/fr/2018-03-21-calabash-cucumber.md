@@ -38,7 +38,7 @@ En clair, Cucumber vous permet d'exprimer le comportement de votre application e
 
 Exemple :
 
-![Cucumber]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/cucumber-feature@2x.png)
+![Cucumber]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/cucumber-feature@2x.png)
 
 ### Comment ça marche ?
 
@@ -46,7 +46,7 @@ Un morceau de code Ruby est exécuté pour chaque ligne de test.
 
 Le diagramme suivant illustre comment toutes ces pièces s'emboîtent :
 
-![cucumberSchema]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/image-02.png)
+![cucumberSchema]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/image-02.png)
 
 Les `steps definitions` utilisent les API Calabash (Ruby) pour interagir avec l'application lorsqu'elle s'exécute sur un périphérique ou dans le simulateur. Les API contiennent des méthodes pour simuler des actions de l'utilisateur, telles que toucher l'écran, entrer du texte dans des champs de texte, etc.
 
@@ -65,11 +65,11 @@ Cette architecture permet d'écrire des tests Cucumber pour presque n'importe qu
 
 Schéma Cucumber / Calabash:
 
-![stackCucumberCalabash]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/image-01.png)
+![stackCucumberCalabash]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/image-01.png)
 
 Schéma sur le fonctionnement sur device / simulateur.
 
-![iosCalabash]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/calabash-ios-stack.png)
+![iosCalabash]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/calabash-ios-stack.png)
 
 Le framework Calabash fournit un petit serveur HTTP intégré qui permet aux tests de communiquer et de contrôler l'application pendant qu'elle s'exécute sur le périphérique. Cependant, le framework Calabash ne doit pas être inclus dans les versions Release de l'IPA.
 
@@ -197,7 +197,7 @@ Il rédige donc les scénarios d'acceptation de test de chaque écran dans des f
 
 Aide :
 
-![Gerhkins]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/gherkincheat.png)
+![Gerhkins]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/gherkincheat.png)
 
 > Les scripts Gherkins ci-dessous peuvent être optimisés mais j'ai préféré vous présenter quelque chose de simple :)
 
@@ -444,7 +444,7 @@ end
 
 Si vous lancez votre test `bundle exec cucumber -n Home` pour `home.feature` vous devriez obtenir quelque chose comme ça.
 
-![homeFeatureCli]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/screen_home_feature.png)
+![homeFeatureCli]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/screen_home_feature.png)
 
 Cool non ? :)
 
@@ -456,12 +456,12 @@ Pour cet article j'ai mis sur [github](https://github.com/Prims47/CalabashCucumb
 
 ### Screenshots
 
-![appHome]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/simuHome.png)
-![appLogin]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimuLogin.png)
-![appLoginError]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimoLoginError.png)
-![appRegister]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimuRegister.png)
-![appRegisterError]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SimuRegisterError.png)
-![appHome2]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/SmuHome2.png)
+![appHome]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/simuHome.png)
+![appLogin]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/SimuLogin.png)
+![appLoginError]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/SimoLoginError.png)
+![appRegister]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/SimuRegister.png)
+![appRegisterError]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/SimuRegisterError.png)
+![appHome2]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/SmuHome2.png)
 
 ### Login Validation
 
@@ -628,28 +628,28 @@ Si le bouton `Create a new run` s'affiche, choisissez-le.
 
 Vous devez uploader votre .ipa précédemment créée :
 
-![uploadIpa]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/upload_ipa.png)
+![uploadIpa]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/upload_ipa.png)
 
 Amazon nous indique quelques informations à propos de votre build :
 
-![uploadIpaVersion]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/upload_ipa_version.png)
+![uploadIpaVersion]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/upload_ipa_version.png)
 
 **Step 3 - Uploader vos tests Calabash**
 
 Sélectionnez Calabash et uploadez votre dossier .zip :
 
-![uploadCalabash]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/upload_calabash.png)
+![uploadCalabash]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/upload_calabash.png)
 
 **Step 4 - Pool de Devices**
 
 J'ai délibérément mis mon build en target iOS 10.3, c'est pourquoi la sélection `Top Devices` d'Amazon apparaît en rouge.
 
-![poolError]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/pool_error.png)
+![poolError]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/pool_error.png)
 
 Cependant, vous pouvez bien sûr créer votre propre pool.
 
-![poolCreate]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/pool_create.png)
-![poolSuccess]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/pool_success.png)
+![poolCreate]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/pool_create.png)
+![poolSuccess]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/pool_success.png)
 
 **Step 5 - Configuration Devices**
 
@@ -662,19 +662,19 @@ En effet, on remarque via l'image ci-dessous qu'Amazon nous permet de :
 * Pré-sélectionner les paramètres régionaux de l'appareil pour l'exécution ;
 * Pré-définir le profil réseau de l'exécution, choisissez un profil dans `Network profil` ou choisissez `Create a new profile` pour créer le vôtre.
 
-![deviceState]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/device_state.png)
+![deviceState]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/device_state.png)
 
 **Step 6 - Run**
 
 Avant de lancer les tests, Amazon vous demande le temps (en minutes) maximum par devices qu'il doit prendre. Bien évidemment, ce temps dépend de vos tests ; dans mon cas, j'ai mis une valeur large de 30 minutes.
 
-![runExec]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/run_exec_time.png)
+![runExec]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/run_exec_time.png)
 
 ### Tableau de bord
 
 Au bout de X minutes, lorsque vos tests sont terminés, si vous allez dans le détail de votre projet, Amazon va créer un dashboard hyper complet.
 
-![dashboard]({{ site.baseurl }}/assets/2018-03-01-calabash-cucumber/dashboard.png)
+![dashboard]({BASE_URL}/imgs/articles/2018-03-01-calabash-cucumber/dashboard.png)
 
 Dans notre cas, Amazon nous montre directement quel scénario ne fonctionne pas. En quelques clics, nous pouvons rentrer en détails sur chaque device et chaque scénario. Amazon nous fournit pas mal d’éléments comme :
 

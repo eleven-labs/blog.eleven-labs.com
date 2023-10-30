@@ -15,7 +15,7 @@ keywords:
   - bonnes pratiques
 ---
 
-![Logo du DevFest Nantes 2021]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/devfest-logo.png)
+![Logo du DevFest Nantes 2021]({BASE_URL}/imgs/articles/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/devfest-logo.png)
 
 Enfin ! Après 4 ans à pratiquer le métier de développeur, j'ai assisté pour la première fois à une conférence liée à mon métier et ma passion : le [DevFest Nantes](https://devfest2021.gdgnantes.com).
 
@@ -37,7 +37,7 @@ Cette année le DevFest a accueilli un peu plus de 2000 personnes par jour penda
 
 _Par Antonin Fourneau_
 
-![Waterlight Graffiti]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waterlight-graffiti.jpeg)
+![Waterlight Graffiti]({BASE_URL}/imgs/articles/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waterlight-graffiti.jpeg)
 
 <center><i><small>Credits: Antonin Fourneau</small></i></center>
 
@@ -67,7 +67,7 @@ Pour résumer, Aurélie nous a fait comprendre que la majorité des développeur
 
 _Par Elad Schechter_
 
-![Coronavirus Invaders]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/coronavirus-invaders.jpeg)
+![Coronavirus Invaders]({BASE_URL}/imgs/articles/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/coronavirus-invaders.jpeg)
 
 Quand le confinement a commencé, Elad a préparé son appartement pour en faire un endroit où il se sent bien, où il pourrait rester enfermé toute la journée. Pendant un week-end entier c'est exactement ce qu'il a fait, et il s'est lancé dans la création d'un jeu lié à la situation sanitaire : Coronavirus Invaders. Le jeu et son code source sont [disponibles sur CodePen](https://codepen.io/elad2412/pen/wvabjXy).
 
@@ -162,7 +162,7 @@ C'est la proposition de Thibaud pour mettre en place du _chaos engineering_ dans
 
 ## Ce que je retiens de cette première conf'
 
-![Waouh]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waouh.jpeg)
+![Waouh]({BASE_URL}/imgs/articles/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waouh.jpeg)
 
 D'un côté, j'ai ressenti une ferveur lors de ces 2 journées dans laquelle je me suis engouffré et qui me faisait un peu regarder partout avec des yeux émerveillés. Tout me paraissait incroyable et tout le monde me paraissait accessible et bienveillant.
 

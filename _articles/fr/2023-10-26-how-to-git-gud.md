@@ -13,7 +13,7 @@ keywords:
 authors:
     - mchardenal
 ---
-![gitgud]({{ site.baseurl }}/assets/2023-10-26-how-to-git-gud/gitgud.png?width=300)
+![gitgud]({BASE_URL}/imgs/articles/2023-10-26-how-to-git-gud/gitgud.png?width=300)
 
 Dans cet article je vous partage la liste des commandes Git selon moi indispensables pour améliorer votre workflow ! Les commandes que vous allez découvrir m'ont simplifié la vie quelques années, pendant que je travaillais sur le projet d'un client du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application). Bonne lecture !
 

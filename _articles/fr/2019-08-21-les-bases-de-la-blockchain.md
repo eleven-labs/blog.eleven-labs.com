@@ -19,7 +19,7 @@ keywords:
 On entend beaucoup parler de la Blockchain comme étant l'une des futures révolutions technologiques, au même titre que l'intelligence artificielle. Pour autant, le concept est encore souvent mal compris, tant par le grand public que par les férus de technologies que nous sommes. Alors, qu'est ce que c'est ? A quoi ça sert, et comment on peut s'en servir ? On va tenter de trouver des pistes de réponses dans cet article en essayant d'en comprendre les concepts (et le vocabulaire qui va avec !) et en jetant un oeil sur ce qui se fait aujourd'hui dans le milieu. C'est parti !
 
 
-![]({{site.baseurl}}/assets/2019-08-21-les-bases-de-la-blockchain/cat-ready.gif)
+![]({BASE_URL}/imgs/articles/2019-08-21-les-bases-de-la-blockchain/cat-ready.gif)
 
 
 ## Qu'est ce que la Blockchain ?
@@ -28,7 +28,7 @@ La blockchain est une technologie permettant de stocker et de diffuser des infor
 
 Un hash cryptographique est une chaîne de caractère créée en appliquant une fonction de hachage, qui va transformer cette chaîne de caractère en une chaîne différente. Une première propriété de ces fonctions concerne le nombre de caractère du hash, qui reste fixe quelque soit la taille de la chaîne chiffrée. La deuxième propriété de ce hash est tout aussi intéressante dans le cadre de la blockchain : le moindre changement de virgule dans une string, et le hash change complètement !
 
-![]({{site.baseurl}}/assets/2019-08-21-les-bases-de-la-blockchain/hash.png)
+![]({BASE_URL}/imgs/articles/2019-08-21-les-bases-de-la-blockchain/hash.png)
 
 Pour revenir à notre sujet, chaque bloc contient un hash du bloc précédent (qui permet de lui assurer une "position" dans la chaîne) et des informations, qui peuvent concerner des transactions financières par exemple. Cet agencement des blocs attribue à la blockchain certaines propriétés intéressantes, que nous allons voir plus en détail.
 
@@ -40,7 +40,7 @@ Comme dit précédemment, chaque bloc consiste en un paquet de données structur
 Selon les blockchains, d'autres éléments, comme la taille d'un bloc, le nombre de transactions contenus dans le bloc, le Nounce (nous verrons dans un autre article l'intérêt de ce bidule) peuvent être également présent.
 
 
-![]({{site.baseurl}}/assets/2019-08-21-les-bases-de-la-blockchain/block.png)
+![]({BASE_URL}/imgs/articles/2019-08-21-les-bases-de-la-blockchain/block.png)
 
 Ainsi, chaque bloc dispose d'une position relative par rapport au précédent bloc de la chaîne, via le Previous Hash.
 
@@ -59,7 +59,7 @@ Ainsi, une transaction ou une information destinée à rejoindre un bloc est ém
 On entend souvent dire que la blockchain est immutable, ou non modifiable. En théorie, c'est faux. Modifier un bloc ne demande pas énormément de connaissances ou de ressources. Cependant, à la moindre modification du contenu d'un bloc, son hash va être modifié, et va donc entraîner la modification de tous les blocs suivants dans la chaîne (puisque dans le hash d'un bloc, on hash également le previous hash du bloc précédent… Si si, c'est logique !).
 
 
-![]({{site.baseurl}}/assets/2019-08-21-les-bases-de-la-blockchain/changed-char.png)
+![]({BASE_URL}/imgs/articles/2019-08-21-les-bases-de-la-blockchain/changed-char.png)
 
 Quelles sont les conséquences de ce principe ? Lorsque l'on met à jour un bloc, on introduit une modification dans la blockchain, qui va forcément finir par entraîner un conflit. Au moment d'ajouter le bloc dans la chaîne, celui-ci va être analysé, et sa correspondance avec le précédent bloc sera vérifiée. Si le hash du précédent bloc ne correspond pas, alors le bloc est rejeté, et un mécanisme de consensus est démarré, pour savoir lequel des deux est valide. Ce mécanisme est très gourmand en énergie et en puissance de calcul, notamment parce qu'il doit reconstituer la blockchain depuis le point de conflit jusqu'au bout de la chaîne !
 

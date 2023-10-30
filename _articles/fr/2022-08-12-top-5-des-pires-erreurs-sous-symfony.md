@@ -19,7 +19,7 @@ Je suis développeuse PHP/Symfony depuis près de 10 ans, et au cours de mes mis
 
 ## #5 Faire une librairie, alors qu’il s’agit d’un bundle
 
-![Library vs Bundle]({{ site.baseurl }}/assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/libraryvsbundle.png?width=300)
+![Library vs Bundle]({BASE_URL}/imgs/articles/2022-08-12-top-5-des-pires-erreurs-sous-symfony/libraryvsbundle.png?width=300)
 
 Combien de fois ai-je vu des soi-disant librairies qui, n'en étant pas (vous allez comprendre ce que j'entends par là très vite), posaient des soucis de maintenabilité sur les projets Symfony ? La réponse est : beaucoup trop.
 
@@ -43,7 +43,7 @@ Un développeur travaille sur le service A qui utilise la library Tools pour la 
 Mais ce développeur n'a pas détecté que sa modification a créé un break change inintentionnel sur le Service B, et comme la librairie n’a pas été mise à jour sur celui-ci, c'est resté invisible.
 Un autre développeur travaille en parallèle sur, justement, ce Service B et a aussi besoin de modifier cette librairie. Quand il va faire sa branche sur la librairie, cela sera à partir de la branche principale, avec la modification pour la feature 01. Quand la librairie sera mise à jour pour tester la branche spécifique, il y aura une erreur, dont la raison demeurera complètement opaque pour le deuxième développeur...
 
-![Example problème librairies partagées]({{ site.baseurl }}/assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/librairies-partagees.png?width=600)
+![Example problème librairies partagées]({BASE_URL}/imgs/articles/2022-08-12-top-5-des-pires-erreurs-sous-symfony/librairies-partagees.png?width=600)
 
 Cela fait perdre du temps pour débugger, car ça implique de solliciter toute son équipe, pour identifier le développeur responsable du break change et corriger ce qui doit l'être.
 
@@ -73,7 +73,7 @@ Grâce à la commande `bin/console debug:event-dispatcher` ou dans le profiler, 
 
 ## #1 Utiliser API Platform aveuglément
 
-![No API Platform]({{ site.baseurl }}/assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/no-api-platform.png?width=200)
+![No API Platform]({BASE_URL}/imgs/articles/2022-08-12-top-5-des-pires-erreurs-sous-symfony/no-api-platform.png?width=200)
 
 API Platform permet de créer rapidement des APIs et cela permet de gagner un temps incroyable en début de projet. Malheureusement, le coût de développement et de maintien vient plus tard et peut être faramineux.
 

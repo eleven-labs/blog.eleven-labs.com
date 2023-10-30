@@ -48,7 +48,7 @@ Les moteurs de recherche comptent sur ce balisage pour améliorer l'affichage de
 
 Nous allons voir un premier exemple que vous avez probablement rencontré dans les résultats de Google.
 
-![Résultat Google avec microdata](/_assets/articles/2015-05-11-microdata-ou-microdonnees/Capture-decran-2015-05-06-a-09.54.20.png)
+![Résultat Google avec microdata]({BASE_URL}/imgs/articles/2015-05-11-microdata-ou-microdonnees/Capture-decran-2015-05-06-a-09.54.20.png)
 
 Voici une version HTML de l’exemple ci-dessus :
 

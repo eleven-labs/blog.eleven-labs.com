@@ -32,7 +32,7 @@ Un graphe est composé de deux choses :
 - des noeuds qui contiennent la donnée dans un format simple de propriété du noeud ;
 - des relations qui permettent de lier les noeuds entre eux. Les relations aussi peuvent avoir des propriétés, et donc contenir de la donnée.
 
-![Graph]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/graph.png)
+![Graph]({BASE_URL}/imgs/articles/2018-01-29-neo4j-et-symfony/graph.png)
 
 
 > Mais cela permet quoi ?
@@ -51,7 +51,7 @@ Si vous êtes sur un environnement Ubuntu vous n'avez qu'à suivre les instructi
 
 Une fois l'installation terminée, vous aurez accès à l'interface web qui est très pratique, elle est disponible [ici](http://127.0.0.1:7474/browser/).
 
-![Interface]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/interface.png)
+![Interface]({BASE_URL}/imgs/articles/2018-01-29-neo4j-et-symfony/interface.png)
 
 ## Cypher, le requêtage simple
 
@@ -119,7 +119,7 @@ MATCH (n:Person) RETURN n
 
 ...vous devez voir cela :
 
-![person]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/person.png)
+![person]({BASE_URL}/imgs/articles/2018-01-29-neo4j-et-symfony/person.png)
 
 Pour finir, nous allons récupérer toutes les relations avec `Emil`.
 
@@ -359,7 +359,7 @@ Il ne vous reste plus qu'à afficher la page complète !
 
 ```
 
-![arbo]({{site.baseurl}}/assets/2018-01-29-neo4j-et-symfony/arbo.png)
+![arbo]({BASE_URL}/imgs/articles/2018-01-29-neo4j-et-symfony/arbo.png)
 
 ## Conclusion
 

@@ -44,7 +44,7 @@ SSL et TLS sont donc transparents pour l'utilisateur et ne nécessitent pas l'em
 
 *Modèle OSI avec le SSL/TLS*
 
-![]({{ site.baseurl }}/assets/2016-12-20-comprendre-ssl-tls-partie-1/tls-in-osi.png)
+![]({BASE_URL}/imgs/articles/2016-12-20-comprendre-ssl-tls-partie-1/tls-in-osi.png)
 
 *En clair:*
 

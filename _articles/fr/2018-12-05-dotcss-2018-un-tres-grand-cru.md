@@ -26,7 +26,7 @@ Cauchemar dans la gestion des textes en dehors de leur cadre, filtres SVG, inter
 
 ## La gestion des sauts de ligne... un véritable cauchemar
 
-![Le cauchemar de la gestion des sauts de ligne]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/line-breaking.png)
+![Le cauchemar de la gestion des sauts de ligne]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/line-breaking.png)
 
 Pour gérer les sauts de ligne (line-break) des contenus de nos éléments HTML, on a tendance à utiliser la configuration standard des espaces blancs (white-space).
 
@@ -67,7 +67,7 @@ Découvrez la [présentation en vidéo de Aga Naplocha](https://www.youtube.com/
 
 ## Les filtres SVG
 
-![Sara Soueidan à dotCSS 2018]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/sara-soueidan-dotcss2018.jpg)
+![Sara Soueidan à dotCSS 2018]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/sara-soueidan-dotcss2018.jpg)
 
 Sara Soueidan, développeuse web front-end freelance, formatrice et auteure, a animé un cours accéléré sur la mise en œuvre des filtres SVG sur nos sites Web. Elle nous a démontré qu'il est possible de créer des effets similaires à ceux de Photoshop.
 
@@ -95,7 +95,7 @@ Les filtres CSS standards sont bien, mais assez limités si on souhaite décorer
 
 Prenons un exemple concret : rendre une image floue.
 
-![Comparaison entre le filtre CSS blur() et sa version SVG]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/svg-filtre-blur.png)
+![Comparaison entre le filtre CSS blur() et sa version SVG]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/svg-filtre-blur.png)
 
 Si on utilise le filtre CSS standard blur(), on obtiendra un effet de flou radial uniforme sur les axes X et Y. Cependant, si nous voulons un flou spécifique affectant un seul des axes, nous aurons besoin d'un filtre SVG personnalisé pour obtenir ce résultat. Certains effets ne peuvent être obtenus que par les filtres SVG.
 
@@ -179,7 +179,7 @@ Au lieu de cela, il se fie à la lecture des codes couleur hexadécimaux.
 
 David nous a partagé son processus pour comprendre ces codes et les informations connexes sur la vision humaine, l'histoire de l'ordinateur et la couleur numérique.
 
-![Comprendre le cercle chromatique]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-1.png)
+![Comprendre le cercle chromatique]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-1.png)
 
 ### Qu'est-ce-qu'un code hexadécimal de couleur ?
 
@@ -202,7 +202,7 @@ D4 (rouge), 9B (vert), 25 (bleu), soit [#D92](https://www.color-hex.com/color/dd
 
 Pour représenter la version courte de notre code hexadécimal, il faut créer un graphique en bâtons, comme dans l'exemple ci-dessous.
 
-![Graphique en bâtons du code hexadécimal et cercle chromatique]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-2.png)
+![Graphique en bâtons du code hexadécimal et cercle chromatique]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-2.png)
 
 Plus un chiffre est proche de "F" et plus le bâton du graphique sera grand. Et inversement, plus un chiffre est proche de "0" et plus le bâton du graphique sera petit.
 
@@ -210,13 +210,13 @@ Plus un chiffre est proche de "F" et plus le bâton du graphique sera grand. Et 
 
 Maintenant, il faut comparer ce graphique à celui du cercle chromatique RVB (couleur primaire, secondaire et tertiaire). Ainsi, la couleur trouvée est le orange.
 
-![Teinte de la couleur du code hexadécimal]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-3.png)
+![Teinte de la couleur du code hexadécimal]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-3.png)
 
 #### La luminosité de la couleur
 
 Chaque couleur possède trois variantes de luminosité : claire (_Light_), moyenne (_Middle_), et sombre (_Dark_). Pour la connaître, il suffit d'additionner les trois valeurs RGB d'une couleur. Plus la somme est élevée, plus la couleur est claire. Dans notre exemple, la variante de couleur est moyenne.
 
-![Luminosité du code hexadécimal]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-4.png)
+![Luminosité du code hexadécimal]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-4.png)
 
 #### La saturation de la couleur
 
@@ -228,7 +228,7 @@ Si l'intervalle est très grand alors le niveau de saturation sera de type _Sat
 
 Dans notre cas, il est grand, donc la saturation de notre couleur est _Washed_.
 
-![Saturation du code hexadécimal]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-5.png)
+![Saturation du code hexadécimal]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-5.png)
 
 Après toutes ces étapes, nous pouvons dire que le code couleur hexadécimal **#D49B25** représente un **orange moyen avec une saturation washed** (_"middle washed orange"_) !
 
@@ -319,7 +319,7 @@ D'après Mandy, la réponse est oui !
 
 Tous les éléments artistiques et créatifs souhaitées peuvent aujourd'hui être réalisés avec des polices variables, alors qu'auparavant, on devait les faire en image.
 
-![Exemple d'effet réalisable avec une police variable]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/font-variable.png)
+![Exemple d'effet réalisable avec une police variable]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/font-variable.png)
 
 D'autres avantages à utiliser les polices variables :
 
@@ -345,7 +345,7 @@ Et aussi, des ressources pour vous plonger sur ce sujet :
 
 ## Conclusion
 
-![Photo finish de dotCSS 2018]({{site.baseurl}}/assets/2018-12-05-dotcss-2018-un-tres-grand-cru/dotCSS-photo-finish.jpg)
+![Photo finish de dotCSS 2018]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/dotCSS-photo-finish.jpg)
 
 Quelle magnifique conférence !
 

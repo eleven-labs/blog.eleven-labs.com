@@ -119,7 +119,7 @@ $ bin/console workflow:dump pull_request
 
 The generated Graphviz will give you the following diagram:
 
-![Workflow Graphviz](/_assets/articles/2016-09-29-symfony-workflow-component/workflow.png)
+![Workflow Graphviz]({BASE_URL}/imgs/articles/2016-09-29-symfony-workflow-component/workflow.png)
 
 This one gives you a really clear vision of your workflow and allows everyone at every level (developers, product owners, customers, ...) to understand the business logic.
 The Workflow component implements methods that allow you to verify if a transition is applicable and to later apply it depending on the current status and to also list all enabled transitions.

@@ -10,8 +10,7 @@ excerpt: >-
   The purpose of this post is to show the power of a Slack bot that can be used
   to ease everyday life in your company, and how to implement it using DialoFlow
   and Symfony
-cover: >-
-  /assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/cover.jpg
+cover: /assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/cover.jpg
 categories:
   - php
 authors:
@@ -80,19 +79,19 @@ First we have to create a Slack app.
 
 Login to your Slack account related to your company's Workspace. Then go to [https://api.slack.com/apps](https://api.slack.com/apps) and click on 'Create New App'.
 
-[![Create Slack App]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_create_app.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_create_app.png)
+[![Create Slack App]({BASE_URL}/imgs/articles/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_create_app.png)]({BASE_URL}/imgs/articles/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_create_app.png)
 
 Then it's yours to fill all information about your app: name, description, color, icon.
 
 After that, you'll be able to access other following configurations from the screen 'Basic Information':
 
-[![Slack App Basic Information]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_basic_info.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_basic_info.png)
+[![Slack App Basic Information]({BASE_URL}/imgs/articles/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_basic_info.png)]({BASE_URL}/imgs/articles/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_basic_info.png)
 
 ### Create a bot
 
 Now you need to create a bot user related to this app. To do so, let's go to the left menu 'Bot Users' or from 'Basic Information' > 'Add features and functionality' > 'Bots'.
 
-[![Slack Bot]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png)
+[![Slack Bot]({BASE_URL}/imgs/articles/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png)]({BASE_URL}/imgs/articles/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_bot.png)
 
 You only have to add a name for this bot, and make it visible "online".
 
@@ -102,7 +101,7 @@ Then go to the menu 'Event Subscriptions', fill in the **URL of your future webh
 
 You also need to select the event "**message.im**" in order for Slack to call the previous webhook each time a private message is sent to the bot user.
 
-[![Slack Event Subscriptions]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png)
+[![Slack Event Subscriptions]({BASE_URL}/imgs/articles/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png)]({BASE_URL}/imgs/articles/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_event_subscription.png)
 
 The requests sent to this webhook must be secured with a token that will be used in the last step: please write down the value of the '**Verification Token**' displayed on the page 'Basic Information' that you will need later.
 
@@ -134,13 +133,13 @@ Then create a new **agent** (button 'Create New Agent') and select the default l
 
 The 'intents' correspond to different types of messages received from the user, that we need to understand. We will configure three of them for this blog post:
 
-[![DialogFlow intents]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intents.png)]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intents.png)
+[![DialogFlow intents]({BASE_URL}/imgs/articles/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intents.png)]({BASE_URL}/imgs/articles/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intents.png)
 
 #### 1. First intent, the most interesting one that we will call '**Leave request with start and end dates**':
 
 We're gonna list in the part '**User says**' all possible inputs which could be sent by astronauts who send their leave requests.
 
-[![DialogFlow intent dates input]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_input.png)]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_input.png)
+[![DialogFlow intent dates input]({BASE_URL}/imgs/articles/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_input.png)]({BASE_URL}/imgs/articles/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_input.png)
 
 For each of these inputs, we select the most interesting parts, in yellow and orange on the picture just above. These parts correspond to the dates of the vacation that we need to identify and save.
 
@@ -148,7 +147,7 @@ These selected parts are related to parameters that we can name as '**startDate*
 
 Finally, we can configure the answers that will be sent back by DialogFlow when we will send this message type, if it recognizes it:
 
-[![DialogFlow intent dates output]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_output.png)]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_output.png)
+[![DialogFlow intent dates output]({BASE_URL}/imgs/articles/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_output.png)]({BASE_URL}/imgs/articles/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/dialogflow_intent_dates_output.png)
 
 We notice there are two types of answers:
 - texts that we will use to answer the astronaut on Slack.
@@ -521,11 +520,11 @@ Indeed if your webhook returns an **HTTP error** code, Slack will call many time
 
 **Demonstration**: here is the discussion I had with our awesome bot:
 
-[![Demonstration]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/slack_demo1.png)]({{site.baseurl}}/assets/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/slack_demo1.png)
+[![Demonstration]({BASE_URL}/imgs/articles/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/slack_demo1.png)]({BASE_URL}/imgs/articles/2018-01-04-replace-erp-by-slack-bot-with-dialogflow-and-symfony/slack_demo1.png)
 
 And here is the result in our database:
 
-[![Results from the database]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png)]({{site.baseurl}}/assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png)
+[![Results from the database]({BASE_URL}/imgs/articles/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png)]({BASE_URL}/imgs/articles/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/slack_demo2.png)
 
 We notice our friend Google managed to recognize the dates that were written in full English and allowed us to save the dates with a 'datetime' format in our database: big thanks to him!
 

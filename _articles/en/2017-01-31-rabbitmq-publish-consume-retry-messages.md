@@ -6,7 +6,7 @@ slug: rabbitmq-publish-consume-retry-messages
 title: 'RabbitMQ: Publish, Consume, and Retry Messages'
 excerpt: >-
   ![Swarrot
-  Logo](/_assets/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
+  Logo]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 categories:
   - php
 authors:
@@ -16,7 +16,7 @@ keywords:
   - rabbitmq
   - symfony
 ---
-![Swarrot Logo](/_assets/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
+![Swarrot Logo]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 
 RabbitMQ is a message broker, allowing to process things asynchronously. There's already an [article](https://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/) written about it, if you're not familiar with RabbitMQ.
 
@@ -77,11 +77,11 @@ Create binding between exchange default and queue send_astronaut_to_space (with 
 
 If you connect to the RabbitMQ management interface (ex: http://127.0.0.1:15672/), many things will appear:
 
-![Capture of exchanges created](/_assets/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_exchanges.png)
+![Capture of exchanges created]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_exchanges.png)
 
 Click on the _Exchanges_ tab: an exchange named _default_ has been created, with a binding to our queue as indicated in our terminal.
 
-![Capture of queues created](/_assets/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_queues.png)
+![Capture of queues created]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_queues.png)
 
 Now click on the _Queues_ tab: _send_astronaut_to_space_ is also here.
 

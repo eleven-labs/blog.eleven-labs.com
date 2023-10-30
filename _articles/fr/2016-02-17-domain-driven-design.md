@@ -36,7 +36,7 @@ Le fort couplage entre le langage et le modèle permet ainsi de réduire toute c
 Dans une application complexe, de nombreuses choses sont mélangées au sein du code : notre code métier est couplé avec notre base de données, notre interface utilisateur, des librairies externes… Cela engendre une plus grande difficulté pour faire évoluer le code, et même le comprendre. Nous perdons le plus important dans la représentation de notre code métier : sa compréhension et son évolutivité.
 Le _Domain Driven Design_ permet de répondre à ce problème en isolant complètement le code métier de notre application et en éliminant toute dépendance superflue : infrastructure, interface utilisateur, logique applicative…
 
-![DDD Schema](/_assets/articles/2016-02-17-domain-driven-design/ddd_schema.png)
+![DDD Schema]({BASE_URL}/imgs/articles/2016-02-17-domain-driven-design/ddd_schema.png)
 
 Ainsi l’architecture adoptée du _Domain Driven Design_ est composée de 4 couches. Voyons cela plus en détail.
 
@@ -73,7 +73,7 @@ Ce sont des objets avec une identité et un cycle de vie (ex: un Customer, un Pu
 
 Elément clé du Domain Driven Design, un Value Object peut être défini de la sorte : un objet dont la notion d’égalité n’est pas basée sur son identité mais sur ses attributs. Ainsi, une date, une devise ou encore une adresse sont des candidats naturels pour devenir des Value Objects.
 
-![DDD value objects](/_assets/articles/2016-02-17-domain-driven-design/ddd_value_objects.png)
+![DDD value objects]({BASE_URL}/imgs/articles/2016-02-17-domain-driven-design/ddd_value_objects.png)
 
 Les Value Objects permettent de nommer explicitement des concepts clés de notre modèle, d’en améliorer la lisibilité et la communication.
 Il est fortement conseillé de rendre les Value Objects immuables, car s’ils sont partagés, ils peuvent mettre en péril l’intégrité des données.
@@ -131,7 +131,7 @@ Le Domain Driven Design permet donc de se focaliser sur le métier, plutôt que 
 Penser à sa modélisation métier en communiquant et en utilisant un langage partagé au sein de l’équipe permettra une meilleure lisibilité. De plus, prendre du recul avant d’implémenter une fonctionnalité pour savoir dans quel contexte cette dernière intervient vous garantira une meilleure maintenabilité, ainsi qu’une plus grande aisance lors de la lecture de votre code.
 Le _ubiquitous language_ et les outils de modélisation du modèle permettent de faire apparaître l'intention dans le code, et d'expliciter les contextes. N'est-ce pas une approche intéressante?
 
-![DDD board](/_assets/articles/2016-02-17-domain-driven-design/ddd_board.jpeg)
+![DDD board]({BASE_URL}/imgs/articles/2016-02-17-domain-driven-design/ddd_board.jpeg)
 
 ### Pour aller plus loin
 

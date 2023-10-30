@@ -103,7 +103,7 @@ $ ./bin/phpenv install php-7.1.0beta3
 
 J'ai le temps d'aller prendre un café :
 
-![cat](/_assets/articles/2016-10-05-cohabitation-de-plusieurs-versions-de-php/cat.gif)
+![cat]({BASE_URL}/imgs/articles/2016-10-05-cohabitation-de-plusieurs-versions-de-php/cat.gif)
 
 ```bash
 (12h40, le ventilateur se met en route, ça compile beaucoup)

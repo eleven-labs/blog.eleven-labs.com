@@ -117,7 +117,7 @@ Si vous devez éco-travailler sur un site web existant, vous pouvez faire un bil
 
 Bonne nouvelle, le blog d’Eleven Labs obtient un A !
 
-![Le blog d'Eleven passe le test]({{ site.baseurl }}/assets/2021-05-24-leco-conception/blog-eleven-result.png)
+![Le blog d'Eleven passe le test]({BASE_URL}/imgs/articles/2021-05-24-leco-conception/blog-eleven-result.png)
 
 Pour la consommation électrique, vous avez [Scaphandre](https://github.com/hubblo-org/scaphandre) qui vous permettra d’avoir des métrics de vos services et de savoir quels services il serait intéressant d’optimiser.
 

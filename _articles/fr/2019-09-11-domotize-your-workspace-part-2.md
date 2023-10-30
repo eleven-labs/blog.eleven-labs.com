@@ -20,7 +20,7 @@ keywords:
   - google home
 ---
 
-Nous avons vu dans le précédent [article]({{site.baseurl}}/fr/domotize-your-workspace/) comment configurer HA, avec le plugin Gitlab afin de créer notre premier dashboard. Cependant, nous n'avons pas vu encore grand chose en relation avec la domotique... Il est temps de s'y mettre.
+Nous avons vu dans le précédent [article]({BASE_URL}/fr/domotize-your-workspace/) comment configurer HA, avec le plugin Gitlab afin de créer notre premier dashboard. Cependant, nous n'avons pas vu encore grand chose en relation avec la domotique... Il est temps de s'y mettre.
 
 
 ## Le plan
@@ -51,21 +51,21 @@ Première étape, nous allons ajouter l'intégration Philips Hue sur notre HomeA
 Rendez-vous dans la partie Configuration / Intégrations / + , puis cherchez Philips Hue. Suivez la procédure affichée (pression sur le bouton sur le hub ect...).
 
 
-![]({{ site.baseurl }}/assets/2019-09-11-domotize-your-workspace-part-2/domo-part2-1.png)
+![]({BASE_URL}/imgs/articles/2019-09-11-domotize-your-workspace-part-2/domo-part2-1.png)
 Une fois l'installation terminée, si tout ce passe correctement, vous devriez voir l'ensemble de vos ampoules hue s'afficher. Vous pouvez les attribuer à une pièce, mais cette partie n'est pas nécessaire pour ce tuto.
 
 
-![]({{ site.baseurl }}/assets/2019-09-11-domotize-your-workspace-part-2/domo-part2-2.png)
+![]({BASE_URL}/imgs/articles/2019-09-11-domotize-your-workspace-part-2/domo-part2-2.png)
 
 
 Pour ma part, je vais utiliser l'ampoule "Bureau" pour ce tuto. Pour voir votre ampoule et commencer à interagir avec elle, vous pouvez retourner sur le dashboard, puis en haut à droite, choisir "Entités inutilisées".
 Vous devriez voir ceci :
 
-![]({{ site.baseurl }}/assets/2019-09-11-domotize-your-workspace-part-2/domo-part2-3.png)
+![]({BASE_URL}/imgs/articles/2019-09-11-domotize-your-workspace-part-2/domo-part2-3.png)
 
 Et si vous cliquez dessus (je vous laisse tester l'interface hue plutot fonctionnelle) :
 
-![]({{ site.baseurl }}/assets/2019-09-11-domotize-your-workspace-part-2/domo-part2-4.png)
+![]({BASE_URL}/imgs/articles/2019-09-11-domotize-your-workspace-part-2/domo-part2-4.png)
 
 Notre lampe étant maintenant configurée, nous allons pouvoir interagir automatiquement avec elle en fonction des résultats de la CI. Sur la [page](https://www.home-assistant.io/components/light/) de documentation des entities "light", nous pouvons voir que nous avons de nombreuses fonctionnalités accessibles, comme la possibilité bien sûr de pouvoir allumer/éteindre l'ampoule mais aussi de pouvoir set la couleur (rgb) ect...
 
@@ -124,7 +124,7 @@ Relancez votre home assistant et attendez votre prochain commit sur gitlab. Pens
 
 De la même manière que pour la partie précédente, nous allons commencer par ajouter l'élément "Cast" de google. Nous allons donc aller dans la partie Configuration / Intégrations / + , puis chercher "Cast" et suivre la procédure pour ajouter les devices Google (chromecast, home...). Dans notre cas, c'est notre Google Home qui nous intéresse.
 
-![]({{ site.baseurl }}/assets/2019-09-11-domotize-your-workspace-part-2/domo-part2-5.png)
+![]({BASE_URL}/imgs/articles/2019-09-11-domotize-your-workspace-part-2/domo-part2-5.png)
 
 
 Ensuite, nous allons activer le component text-to-speech dans la configuration, puis redémarrer HA.
@@ -138,7 +138,7 @@ tts:
 
 Pour tester que notre configuration est bonne, nous pouvons call le service directement depuis la page des services `http://localhost:8123/developer-tools/service`
 
-![]({{ site.baseurl }}/assets/2019-09-11-domotize-your-workspace-part-2/domo-part2-6.png)
+![]({BASE_URL}/imgs/articles/2019-09-11-domotize-your-workspace-part-2/domo-part2-6.png)
 
 Si tout est bon, nous pouvons donc ajouter les nouvelles automations :
 

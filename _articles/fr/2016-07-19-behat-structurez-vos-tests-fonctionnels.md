@@ -36,7 +36,7 @@ Il conviendra alors de lancer à la fois les tests d'intégration et les tests d
 Avant de commencer, notez que dans cet exemple, nous allons utiliser un serveur `Selenium` qui recevra les informations fournies par `Mink` (extension de Behat) et qui pilotera ensuite notre navigateur (Chrome, dans notre configuration).n
 Pour être clair sur l'architecture, voici un schéma qui résume le rôle de chacun :
 
-![Diagram](/_assets/articles/2016-07-19-behat-structure-functional-tests/diagram.jpg)
+![Diagram]({BASE_URL}/imgs/articles/2016-07-19-behat-structure-functional-tests/diagram.jpg)
 
 # Mise en place de Behat
 

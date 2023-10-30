@@ -108,7 +108,7 @@ Atom settings allow multiple setting types (`boolean` , `color` , `integer` ,
 
 Once it is added, if you reload your package, you will see your package settings appearing into Atom settings:
 
-![Gitlab URL Parameter](/_assets/articles/2016-12-05-create-atom-package/gitlab-url.png)
+![Gitlab URL Parameter]({BASE_URL}/imgs/articles/2016-12-05-create-atom-package/gitlab-url.png)
 
 In order to retrieve the value (or default value) defined by a user for a given setting in your code, you just have to use the following line:
 
@@ -222,7 +222,7 @@ In order to run the specs tests, you just have to navigate into the following me
 
 Our package is now ready to be deployed! Let's send it.
 
-![Publish](/_assets/articles/2016-12-05-create-atom-package/publish.gif)
+![Publish]({BASE_URL}/imgs/articles/2016-12-05-create-atom-package/publish.gif)
 
 To do that, we will use the `apm`  CLI tool which comes with Atom when installing it.
 

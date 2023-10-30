@@ -22,7 +22,7 @@ Une commande est définie comme une méthode qui change un état, alors qu'une
 
 La figure suivante montre l'implémentation basique du pattern CQRS au sein d'une application. Elle entreprend l'échange de _messages_ sous forme de commandes et d’événements. Voyons cela de plus près.
 
-![Figure 1: Exemple d'implémentation du pattern CQRS](/_assets/articles/2015-04-07-cqrs-pattern/cqrs_pattern.png)
+![Figure 1: Exemple d'implémentation du pattern CQRS]({BASE_URL}/imgs/articles/2015-04-07-cqrs-pattern/cqrs_pattern.png)
 *Figure 1: Exemple d'implémentation du pattern CQRS*
 
 On voit clairement la séparation des parties lectures et écritures sur la figure précédente : l'utilisateur fait une modification sur sa page, ce qui engendre l'envoie d'une commande. Une fois cette commande terminée, un _event _est publié pour signaler qu'une modification a été apportée.

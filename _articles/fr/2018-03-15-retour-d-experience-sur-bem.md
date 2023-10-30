@@ -47,7 +47,7 @@ Au sein des **Modifiers** il faut distinguer :
 
 La première difficulté inhérente à cette méthodologie est de savoir identifier un **Block**. Dans la documentation il est dit que toutes zones logiques et fonctionnellement indépendantes sont des **Blocks**.
 
-![BEM_image]({{site.baseurl}}/assets/2018-03-15-retour-d-experience-sur-bem/bem_image.png)
+![BEM_image]({BASE_URL}/imgs/articles/2018-03-15-retour-d-experience-sur-bem/bem_image.png)
 
 Un **Block** peut contenir d’autres **Blocks**, il peut ne pas contenir d’**Elements** et peut être utilisé plusieurs fois sur la même page.
 Le gros plus de cette méthode est d’avoir une structure simple sur 2 niveaux et un système de nommage permettant d’identifier facilement les **Elements** de nos pages par des noms de classe uniques et exclusifs.

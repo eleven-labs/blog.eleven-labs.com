@@ -18,7 +18,7 @@ keywords:
   - gentoo
 ---
 
-Cette article fait suite à un article intitulé [Je configure mon noyau GNU/Linux (partie 2)]({{site.baseurl}}/fr/configurer-kernel-linux/) et en dépend. Si vous ne l'avez pas lu, je vous invite à le faire.
+Cette article fait suite à un article intitulé [Je configure mon noyau GNU/Linux (partie 2)]({BASE_URL}/fr/configurer-kernel-linux/) et en dépend. Si vous ne l'avez pas lu, je vous invite à le faire.
 
 Le moment tant attendu est finalement arrivé, il est tant de : compiler, installer, tester (kernel-paniquer, recompiler, réinstaller, retester).
 
@@ -38,7 +38,7 @@ Déjà assurez-vous que votre processeur n'est pas trop utilisé par d'autres t�
 Par exemple évitez de miner de la crypto-monnaie sur votre processeur en même temps.
 Et pour répondre, pendant que ça compile on fait autre chose :
 
-![On attend...]({{site.baseurl}}/assets/2017-12-15-compiling-linux-kernel/wait.gif)
+![On attend...]({BASE_URL}/imgs/articles/2017-12-15-compiling-linux-kernel/wait.gif)
 
 ### Si ça plante ?
 
@@ -172,11 +172,11 @@ La réponse est simple, l'entrée ajoutée à grub ajoute le initrd avec, sauf q
 
 Il n'y a plus qu'à rebooter et sélectionner notre nouvelle entrée :
 
-![grub]({{site.baseurl}}/assets/2017-12-15-compiling-linux-kernel/grub.png)
+![grub]({BASE_URL}/imgs/articles/2017-12-15-compiling-linux-kernel/grub.png)
 
 Puis le moment tant attendu arriva... Le saint Graal de toute personne qui compile son Kernel ! Le Mother Fucking Kernel Panic
 
-![Kernel Panic]({{site.baseurl}}/assets/2017-12-15-compiling-linux-kernel/kernel_panic.png)
+![Kernel Panic]({BASE_URL}/imgs/articles/2017-12-15-compiling-linux-kernel/kernel_panic.png)
 
 Bon dans mon cas précis j'ai vite fait trouvé l'erreur, je l'ai fait sur une VM (c'est plus simple pour les screenshots) sauf que j'ai désactivé le support des systèmes de fichiers virtuels (VFS). L'erreur est en général beaucoup plus parlante que sur un BSOD Windows !
 
@@ -191,5 +191,5 @@ C'est donc une source intarissable d'apprentissage !
 
 Cette article est le dernier d'une série de trois. Vous pouvez retrouver les précédents ci-dessous :
 
-- [Je comprends mon noyau GNU/Linux (partie 1)]({{site.baseurl}}/fr/comprendre-kernel-linux/)
-- [Je configure mon noyau GNU/Linux (partie 2)]({{site.baseurl}}/fr/configurer-kernel-linux/)
+- [Je comprends mon noyau GNU/Linux (partie 1)]({BASE_URL}/fr/comprendre-kernel-linux/)
+- [Je configure mon noyau GNU/Linux (partie 2)]({BASE_URL}/fr/configurer-kernel-linux/)

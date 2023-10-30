@@ -56,7 +56,7 @@ Pour commencer, nous allons installer rapidement une application, prenons par ex
 ```
 Nous avons maintenant accès à la documentation de l’api que vous venez d’installer.
 
-![api]({{site.baseurl}}/assets/2017-12-12-monitorer-ses-containers-docker/api.png)
+![api]({BASE_URL}/imgs/articles/2017-12-12-monitorer-ses-containers-docker/api.png)
 
 ## cAdvisor
 
@@ -98,11 +98,11 @@ Nous pouvons relancer le `docker-compose`.
 
 Nous avons maintenant accès à l'interface de `cAdvisor`.
 
-![cadvisor]({{site.baseurl}}/assets/2017-12-12-monitorer-ses-containers-docker/cadvisor.png)
+![cadvisor]({BASE_URL}/imgs/articles/2017-12-12-monitorer-ses-containers-docker/cadvisor.png)
 
 Ce qui nous permet déjà de voir sommairement les metrics de nos containers.
 
-![metrics]({{site.baseurl}}/assets/2017-12-12-monitorer-ses-containers-docker/metrics.png)
+![metrics]({BASE_URL}/imgs/articles/2017-12-12-monitorer-ses-containers-docker/metrics.png)
 
 Malgré tout, cette solution seule n'est pas assez configurable et ne peut pas répondre pleinement à notre besoin.
 
@@ -181,7 +181,7 @@ Nous pouvons de nouveau relancer le `docker-compose`.
 
 Nous pouvons voir que les jobs que nous avons configurés sont bien `up`. C'est à dire que `Prometheus` a bien réussi à scraper les metrics de `cAdvisor` et de `Prometheus`.
 
-![prom]({{site.baseurl}}/assets/2017-12-12-monitorer-ses-containers-docker/prom.png)
+![prom]({BASE_URL}/imgs/articles/2017-12-12-monitorer-ses-containers-docker/prom.png)
 
 ## Grafana
 
@@ -222,7 +222,7 @@ Nous pouvons lancer une dernière fois le `docker-compose`.
 
 Commençons par ajouter notre `Prometheus` comme `Data Sources`. Rendons-nous sur [http://localhost:3000/datasources/new](http://localhost:3000/datasources/new) et ajoutons le host de notre `Prometheus`.
 
-![grafana]({{site.baseurl}}/assets/2017-12-12-monitorer-ses-containers-docker/grafana.png)
+![grafana]({BASE_URL}/imgs/articles/2017-12-12-monitorer-ses-containers-docker/grafana.png)
 
 Maintenant que `Grafana` peut accéder à notre `Prometheus`. Il nous reste plus qu'à créer un nouveau dashboard. Pour gagner du temps nous allons en importer directement.
 
@@ -232,7 +232,7 @@ Importons ce nouveau dashboard [http://localhost:3000/dashboard/new?editview=imp
 
 > [http://localhost:3000/dashboard/db/docker-monitoring?refresh=10s∨gId=1](http://localhost:3000/dashboard/db/docker-monitoring?refresh=10s∨gId=1)
 
-![dashboard]({{site.baseurl}}/assets/2017-12-12-monitorer-ses-containers-docker/dashboard.png)
+![dashboard]({BASE_URL}/imgs/articles/2017-12-12-monitorer-ses-containers-docker/dashboard.png)
 
 Nous pouvons maintenant voir les metrics systèmes de nos containers, comme la consommation `cpu` ou `ram` de chacun.
 

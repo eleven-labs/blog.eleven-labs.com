@@ -18,7 +18,7 @@ keywords:
   - kubernetes
 ---
 
-![Gopher sailing]({{ site.baseurl }}/assets/2021-08-25-un-premier-controleur-kubernetes-avec-controller-runtime/gopher-logo.png)
+![Gopher sailing]({BASE_URL}/imgs/articles/2021-08-25-un-premier-controleur-kubernetes-avec-controller-runtime/gopher-logo.png)
 
 
 J'ai récemment été amené à écrire mon premier contrôleur pour Kubernetes et je dois reconnaitre que mes premiers pas ont été difficiles. Kubernetes était encore relativement nouveau pour moi, et le concept de contrôleur complètement flou. Après avoir pris un peu de recul sur le sujet, j'ai eu envie d'écrire cet article pour tenter de démystifier le concept tel que j'aurais aimé le découvrir quand j'ai commencé à m'y intéresser.
@@ -145,7 +145,7 @@ Pour notre premier contrôleur, nous scruterons une source interne de type `Ingr
 
 ## Manipuler des objets Kubernetes
 
-![Juggling]({{ site.baseurl }}/assets/2021-08-25-un-premier-controleur-kubernetes-avec-controller-runtime/juggling.gif)
+![Juggling]({BASE_URL}/imgs/articles/2021-08-25-un-premier-controleur-kubernetes-avec-controller-runtime/juggling.gif)
 
 Pour manipuler un objet Kubernetes, on doit au préalable importer le paquet correspondant à son API Kubernetes (i.e. `networking` pour les `Ingresses` ; `apps` pour les `Deployments` ; etc.) afin d'accéder aux différentes structures des ressources.
 

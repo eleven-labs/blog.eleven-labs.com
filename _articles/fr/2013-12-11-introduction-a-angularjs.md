@@ -57,7 +57,7 @@ function HelloController($scope) {
 
 Le chargement de "hello.html" dans un navigateur produira l'affichage suivant :
 
-![hello](/_assets/articles/2013-12-11-introduction-a-angularjs/hello.png)
+![hello]({BASE_URL}/imgs/articles/2013-12-11-introduction-a-angularjs/hello.png)
 
 Il y a plusieurs choses intéressantes à noter ici en comparaison avec la plupart des méthodes utilisées aujourd'hui :
 
@@ -75,7 +75,7 @@ Dans les applications *AngularJS*, la vue est le *DOM* (*Document Object Model*)
 *AngularJS* permet de faire du *data binding* très simplement sans devoir écrire le moindre code *AJAX*.
 Retournons dans l'exemple de code ci-dessus. Si nous remplaçons le texte *Hello* par le texte *Hi* dans le champ de saisie, voici l'affichage que nous aurons dans le navigateur :
 
-![Hi](/_assets/articles/2013-12-11-introduction-a-angularjs/hi.png)
+![Hi]({BASE_URL}/imgs/articles/2013-12-11-introduction-a-angularjs/hi.png)
 
 L'interface utilisateur se met à jour dynamiquement, sans que nous ayons eu besoin d'attacher un *change listener* sur le champ de saisie.
 Il faut également noter que le *data binding* est bidirectionnel. Dans notre contrôleur, le changement de valeur de notre variable *$scope.hello.text*, à la suite d'une requête au serveur par exemple, mettrait automatiquement à jour le champ de saisie et le texte dans les doubles accolades.

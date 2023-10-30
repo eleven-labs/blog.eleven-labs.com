@@ -39,7 +39,7 @@ Toutes les infos sur l’installation sont disponibles [ici](https://www.home-as
 Et voilà, votre home-assistant tourne maintenant en local, et vous pouvez y accéder ici :
 [http://localhost:8124/](http://localhost:8124/)
 
-![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/connexion-home.png)
+![home-assistant]({BASE_URL}/imgs/articles/2019-05-28-domotize-your-workspace/connexion-home.png)
 
 
 Il vous suffit maintenant de créer votre login/pass pour accéder à hass.
@@ -80,18 +80,18 @@ Pour récupérer votre token gitlab, c'est par [ici](https://gitlab.com/profile/
 
 On va maintenant vérifier que le fichier yaml est correct, puis relancer home-assistant pour prendre la configuration en compte.
 
-![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/restart.png)
+![home-assistant]({BASE_URL}/imgs/articles/2019-05-28-domotize-your-workspace/restart.png)
 
 
 Vous devriez maintenant voir apparaître le dernier statut du build du projet.
 
 
-![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/hass-gitlabci.png)
+![home-assistant]({BASE_URL}/imgs/articles/2019-05-28-domotize-your-workspace/hass-gitlabci.png)
 
 
 Et si vous cliquez sur le sensor, vous aurez plus d’infos :
 
-![home-assistant]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/details-gitlabci.png)
+![home-assistant]({BASE_URL}/imgs/articles/2019-05-28-domotize-your-workspace/details-gitlabci.png)
 
 
 ## Design
@@ -163,7 +163,7 @@ views:
 
 Tadaaa :
 
-![home-assistant gitlab-ci]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/lovelace-gitlabci.png)
+![home-assistant gitlab-ci]({BASE_URL}/imgs/articles/2019-05-28-domotize-your-workspace/lovelace-gitlabci.png)
 
 
 Dernière étape, nous allons créer une card spécifique pour la branche master afin de suivre spécifiquement cette branche. Pour cela, nous allons utiliser un custom component : [variable](https://github.com/rogro82/hass-variables).
@@ -217,7 +217,7 @@ Enfin, il nous reste plus qu'à ajouter la card dans lovelace.
 
 Le résultat :
 
-![home-assistant gitlab-ci]({{site.baseurl}}/assets/2019-05-28-domotize-your-workspace/master-branch-result.png)
+![home-assistant gitlab-ci]({BASE_URL}/imgs/articles/2019-05-28-domotize-your-workspace/master-branch-result.png)
 
 
 Voilà pour la partie design, il y à des dizaines d’améliorations à apporter que nous ne verrons pas dans cet article.
@@ -234,4 +234,4 @@ Pour information, vous pouvez faire la même chose avec [Github](https://www.hom
 Voila pour la première partie de l'article, vous pouvez retrouver le code de cet article sur [Github](https://github.com/eleven-labs/home-assistant)
 
 
-Dans le prochain [article]({{site.baseurl}}/fr/domotize-your-workspace-part-2/), nous verrons comment nous pouvons agir physiquement en fonction des résultats des pipelines dans notre espace de travail, grâce aux Philips Hue ou encore avec GoogleHome.
+Dans le prochain [article]({BASE_URL}/fr/domotize-your-workspace-part-2/), nous verrons comment nous pouvons agir physiquement en fonction des résultats des pipelines dans notre espace de travail, grâce aux Philips Hue ou encore avec GoogleHome.

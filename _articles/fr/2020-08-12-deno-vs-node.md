@@ -22,7 +22,7 @@ Jetons un coup d'œil aux 5 principales nouveautés qu'offre Deno aux développe
 
 ## 1. Du Javascript moderne (ES Modules)
 
-![]({{ site.baseurl }}/assets/2020-08-12-deno-vs-node/modern.png)
+![]({BASE_URL}/imgs/articles/2020-08-12-deno-vs-node/modern.png)
 
 Si vous êtes un développeur React, vous avez remarqué que la syntaxe d'importation des packages est différente lorsque vous travaillez avec NodeJS.
 En effet, Node a été créé en 2009, il y a eu de nombreuses mises à jour et améliorations de Javascript depuis lors.
@@ -66,7 +66,7 @@ const moment = require("moment")
 De plus, chaque fois que quelqu'un souhaite exécuter votre dépôt NodeJS localement, il doit installer toutes les dépendances de NPM.
 Dans Deno, le package est importé à partir d'une URL, donc si vous voulez utiliser moment, vous importez simplement [https://deno.land/x/moment/moment.ts](https://deno.land/x/moment/moment.ts).
 
-![]({{ site.baseurl }}/assets/2020-08-12-deno-vs-node/moment.jpeg)
+![]({BASE_URL}/imgs/articles/2020-08-12-deno-vs-node/moment.jpeg)
 
 Un autre énorme avantage en ce qui concerne les packages dans Deno,
 c'est que **chaque package est mis en cache sur le disque dur après l'installation**.
@@ -75,7 +75,7 @@ Si vous souhaitez importer à nouveau la dépendance, n'importe où, il ne sera 
 
 ## 3. Await en top level : Utiliser Await en dehors d'une fonction asynchrone
 
-![]({{ site.baseurl }}/assets/2020-08-12-deno-vs-node/await.png)
+![]({BASE_URL}/imgs/articles/2020-08-12-deno-vs-node/await.png)
 
 Dans Node, le mot clé *await* n'est accessible que dans une fonction asynchrone.
 Avec Deno, vous pouvez l'utiliser n'importe où, sans l'encapsuler dans une fonction asynchrone.
@@ -84,7 +84,7 @@ Cette mise à niveau rend le code beaucoup plus propre et simple.
 
 ## 4. TypeScript natif, aucune configuration nécessaire
 
-![]({{ site.baseurl }}/assets/2020-08-12-deno-vs-node/type.jpeg)
+![]({BASE_URL}/imgs/articles/2020-08-12-deno-vs-node/type.jpeg)
 
 Faire fonctionner TypeScript avec NodeJS est un processus en plusieurs étapes.
 Vous devez installer Typescript, mettre à jour package.json, tsconfig.json et vous assurer que vos modules prennent en charge @types.
@@ -114,7 +114,7 @@ ainsi que tout autre élément dans l'API du navigateur sans installer de librai
 Lorsqu'il est combiné avec l'avantage top level d'*await*,
 vous pouvez maintenant voir à quel point le code Deno est plus simple que le code Node :
 
-![]({{ site.baseurl }}/assets/2020-08-12-deno-vs-node/api.jpeg)
+![]({BASE_URL}/imgs/articles/2020-08-12-deno-vs-node/api.jpeg)
 
 ## Ça ne s'arrête pas là
 

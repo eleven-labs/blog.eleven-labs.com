@@ -9,8 +9,7 @@ excerpt: >-
   est maintenant temps de se pencher sur des versions plus évoluées, qui vous
   permettront notamment d’aborder des situations différentes et récolter des
   informations parfois plus pertinentes.
-cover: >-
-  /assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/cover.jpg
+cover: /assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/cover.jpg
 categories:
   - agile
 authors:
@@ -41,7 +40,7 @@ Passons maintenant à des versions un peu plus « fun » où l’échange peut �
 
 ### STARFISH
 
-![Starfish_sprint_review]({{site.baseurl}}/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/starfish.png "starfish sprint review")
+![Starfish_sprint_review]({BASE_URL}/imgs/articles/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/starfish.png "starfish sprint review")
 
 **Préparation**
 
@@ -139,7 +138,7 @@ C’est une variante extrêmement intéressante, car on peut voir comment les di
 
 ### SPEED BOAT
 
-![Speed_boat]({{site.baseurl}}/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/boat.png "speed boat sprint review")
+![Speed_boat]({BASE_URL}/imgs/articles/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/boat.png "speed boat sprint review")
 
 **Préparation**
 
@@ -200,7 +199,7 @@ Ce type de rétrospective a un énorme avantage par rapport aux autres : en plus
 
 ### LES 3 PETITS COCHONS
 
-![les_trois_petits_cochons]({{site.baseurl}}/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/3-cochons.png "les 3 petits cochons sprint review")
+![les_trois_petits_cochons]({BASE_URL}/imgs/articles/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/3-cochons.png "les 3 petits cochons sprint review")
 
 **Préparation**
 
@@ -250,7 +249,7 @@ Je n’en présenterai que 3 ici, que j’aime particulièrement, car ils diffè
 
 ### LES SIX CHAPEAUX (Edward De Bono)
 
-![les_six_chapeaux]({{site.baseurl}}/assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/chapeaux.png "les six chapeaux d'Edward De Bono sprint review")
+![les_six_chapeaux]({BASE_URL}/imgs/articles/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/chapeaux.png "les six chapeaux d'Edward De Bono sprint review")
 
 **Préparation**
 

@@ -28,13 +28,13 @@ Dans le cadre de notre projet, nous avions besoin d'un outil de gestion de tradu
 
 Tout d'abord, il faut créer un compte utilisateur. Une fois notre compte créé, nous commençons par créer un projet et choisissons une langue principale pour ce projet qui servira de base pour les traductions. Un même utilisateur peut faire partie de plusieurs projets.
 
-![loco_create]({{site.baseurl}}/assets/2019-05-02-gestion-des-traductions-avec-localise/create.png "create project")
+![loco_create]({BASE_URL}/imgs/articles/2019-05-02-gestion-des-traductions-avec-localise/create.png "create project")
 
 Nous pouvons ensuite ajouter toutes les langues dont nous avons besoin dans notre application, que ce soient des langues au format standard, ISO2, ou custom pour des besoins un peu plus spécifiques.
 
 L'interface est assez simple et intuitive, et il est facile de travailler dessus sans s'y perdre grâce à tous les filtres disponibles.
 
-![loco_translate]({{site.baseurl}}/assets/2019-05-02-gestion-des-traductions-avec-localise/translate.png "translate")
+![loco_translate]({BASE_URL}/imgs/articles/2019-05-02-gestion-des-traductions-avec-localise/translate.png "translate")
 
 ## Fonctionnalités
 
@@ -49,12 +49,12 @@ Par exemple, lorsque l'équipe de développement crée les clés de traduction, 
 
 Ensuite, lorsque les traductions ont été faites et validées par les gens dont c'est la responsabilité, le statut est modifié, permettant ainsi de filtrer sur les assets qui sont à traduire et en simplifiant leur travail.
 
-![loco_statuses]({{site.baseurl}}/assets/2019-05-02-gestion-des-traductions-avec-localise/status.png "statuses")
+![loco_statuses]({BASE_URL}/imgs/articles/2019-05-02-gestion-des-traductions-avec-localise/status.png "statuses")
 
 De plus, il est possible d'assigner des tags aux assets.
 Ceci nous a été utile pour préparer les releases notamment.
 
-![loco_tags]({{site.baseurl}}/assets/2019-05-02-gestion-des-traductions-avec-localise/tags.png "tags")
+![loco_tags]({BASE_URL}/imgs/articles/2019-05-02-gestion-des-traductions-avec-localise/tags.png "tags")
 
 ### Import / export
 
@@ -62,7 +62,7 @@ Bien sûr, lorsqu'on migre sur une nouvelle solution, on n'a pas envie de créer
 Loco a un système d'import / export d'assets très complet avec un large choix de formats (JSON, CSV, etc.).
 On peut aussi utiliser tous les filtres dans nos exports. Je vous laisse regarder leur documentation avec tous les détails si besoin.
 
-![loco_export]({{site.baseurl}}/assets/2019-05-02-gestion-des-traductions-avec-localise/export.png "export")
+![loco_export]({BASE_URL}/imgs/articles/2019-05-02-gestion-des-traductions-avec-localise/export.png "export")
 
 ### API REST
 

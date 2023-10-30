@@ -162,7 +162,7 @@ Il agit comme le CDN et ce dernier appartient à l'architecture. Il s'agit souve
 
 Le web serveur aussi permet d'utiliser le cache HTTP, on l'utilise généralement pour le cache des assets (js, css, images, etc ...). Comme le varnish, son avantage est d'être configurable très finement.
 
-![Architecture Http](/_assets/articles/2016-06-29-le-cache-http-votre-meilleur-ami/untitled.png)
+![Architecture Http]({BASE_URL}/imgs/articles/2016-06-29-le-cache-http-votre-meilleur-ami/untitled.png)
 
 ### Personnaliser votre cache HTTP
 

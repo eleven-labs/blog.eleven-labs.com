@@ -23,7 +23,7 @@ keywords:
 Aujourd'hui, je vous fais découvrir ce qu'est [Mercure](https://mercure.rocks/), ses principes, puis on apprendra comment le mettre en place simplement avec Docker.
 Mercure est un sérieux concurrent aux classiques WebSockets et autres solutions similaires, car il tire parti de nombreuses nouveautés du Web (HTTP/2, SSE, ...) et est supporté nativement par la plupart des navigateurs.
 
-![Logo de Mercure]({{ site.baseurl }}/assets/2020-08-26-a-la-decouverte-de-mercure/mercure_logo.png)
+![Logo de Mercure]({BASE_URL}/imgs/articles/2020-08-26-a-la-decouverte-de-mercure/mercure_logo.png)
 
 En clair, c'est un **protocole** qui permet d'envoyer des push updates vers tout client HTTP.
 
@@ -57,7 +57,7 @@ Mercure utilise les SSE (Server Sent Events) pour pousser ses Updates
 
 </div>
 
-![Schéma du fonctionnement de Mercure]({{ site.baseurl }}/assets/2020-08-26-a-la-decouverte-de-mercure/mercure.png)
+![Schéma du fonctionnement de Mercure]({BASE_URL}/imgs/articles/2020-08-26-a-la-decouverte-de-mercure/mercure.png)
 
 
 C'est bon, vous avez tout compris... Plus qu'à mettre en pratique !
@@ -163,7 +163,7 @@ Voilà qui conclut un très rapide tour d'horizon de Mercure.
 Vous savez à présent comment il fonctionne, et vous êtes capables de le configurer et l'utiliser simplement dans n'importe laquelle de vos applications.
 Bien évidemment, ce protocole est beaucoup plus complet qu'il n'y parait, et il y aurait beaucoup d'autres choses à dire, mais je n'en dévoilerai pas plus dans cet article d'introduction.
 
-![GIF Keep your secrets]({{ site.baseurl }}/assets/2020-08-26-a-la-decouverte-de-mercure/keep_your_secrets.gif)
+![GIF Keep your secrets]({BASE_URL}/imgs/articles/2020-08-26-a-la-decouverte-de-mercure/keep_your_secrets.gif)
 
 Cependant, un codelabs est prévu très bientôt pour approfondir tout cela, et découvrir plein d'autres choses, notamment comment sécuriser les connexions, utiliser Mercure dans une application Symfony... Le tout sur la plateforme [Eleven's Codelabs](https://codelabs.eleven-labs.com/).
 

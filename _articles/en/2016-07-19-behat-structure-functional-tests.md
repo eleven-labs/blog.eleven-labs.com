@@ -35,7 +35,7 @@ Before we can go, please note that we will use a `Selenium` server which will r
 
 To be clear on the architecture we will use, here is a scheme that will resume the role of all elements:
 
-!["Behat architecture schema"](/_assets/articles/2016-07-19-behat-structure-functional-tests/behat_en.jpg)
+!["Behat architecture schema"]({BASE_URL}/imgs/articles/2016-07-19-behat-structure-functional-tests/behat_en.jpg)
 
 ## Behat set up
 First step is to install Behat and its extensions as dependencies in our `composer.json` file:

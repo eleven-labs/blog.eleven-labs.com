@@ -19,7 +19,7 @@ keywords:
   - api
 ---
 
-![Logo Codeception](/_assets/articles/2017-03-09-retour-experience-codeception/codeception-logo.png)
+![Logo Codeception]({BASE_URL}/imgs/articles/2017-03-09-retour-experience-codeception/codeception-logo.png)
 
 Dans cet article je vous propose un retour d'expérience sur le framework de test Codeception, outil choisi par mon équipe au sein de France Télévisions lors de la refonte de notre stack !
 

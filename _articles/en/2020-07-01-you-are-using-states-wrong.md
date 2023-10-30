@@ -30,7 +30,7 @@ A **state** is a set of variables which defines a component at a given time. In 
 
 Now that we've gone over the basics, let's take a look at what's good and what's not.
 
-![]({{ site.baseurl }}/assets/2020-05-20-vous-utilisez-mal-les-states/bien-pas-bien.gif)
+![]({BASE_URL}/imgs/articles/2020-05-20-vous-utilisez-mal-les-states/bien-pas-bien.gif)
 
 ## You will not mutate your state
 

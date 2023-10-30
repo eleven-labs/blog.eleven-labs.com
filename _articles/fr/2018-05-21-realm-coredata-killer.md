@@ -45,9 +45,9 @@ Voici quelques éléments de réponses :
 
 Comme annoncé plus haut, l'un des avantages de Realm est la performance.
 
-![realmCount]({{ site.baseurl }}/assets/2018-02-24-realm-coredata-killer/realm_benchmarks_count.png)
-![realmInsert]({{ site.baseurl }}/assets/2018-02-24-realm-coredata-killer/realm_benchmarks_insert.png)
-![realmQueries]({{ site.baseurl }}/assets/2018-02-24-realm-coredata-killer/realm_benchmarks_queries.png)
+![realmCount]({BASE_URL}/imgs/articles/2018-02-24-realm-coredata-killer/realm_benchmarks_count.png)
+![realmInsert]({BASE_URL}/imgs/articles/2018-02-24-realm-coredata-killer/realm_benchmarks_insert.png)
+![realmQueries]({BASE_URL}/imgs/articles/2018-02-24-realm-coredata-killer/realm_benchmarks_queries.png)
 
 On voit clairement que Realm en a sous le capot !
 C'est vraiment un point très important car de nos jours nous mettons en place des applications qui traitent de plus en plus de données et de ce fait nous ne pouvons absolument pas nous permettre d'avoir une application lente.
@@ -637,7 +637,7 @@ Où 1 accès = configure, écrire, détruis Realm.
 
 Realm met à disposition un petit [outil](https://realm.io/products/realm-studio#download-studio) qui permet de visualiser votre base de donnée et d’interagir avec.
 
-![realmStudo]({{site.baseurl}}/assets/2018-02-24-realm-coredata-killer/realm-studio.png)
+![realmStudo]({BASE_URL}/imgs/articles/2018-02-24-realm-coredata-killer/realm-studio.png)
 
 Pratique, non ?
 

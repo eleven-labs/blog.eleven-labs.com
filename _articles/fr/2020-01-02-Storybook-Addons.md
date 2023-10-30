@@ -18,7 +18,7 @@ keywords:
   - react
 ---
 
-![Liste d'addon 1]({{ site.baseurl }}/assets/2020-01-02-Storybook-Addons/addonlist.png)
+![Liste d'addon 1]({BASE_URL}/imgs/articles/2020-01-02-Storybook-Addons/addonlist.png)
 
 Coucou les bichons, on se retrouve pour un nouvel article qui porte sur les Addons !
 
@@ -45,7 +45,7 @@ On pourrait presque être rabat-joie en se disant que c'est juste une mode d'ouv
 
 Déjà le nombre d'addons est moins important que le nombre de vendeurs de tours Eiffel au Trocadéro, on en dénombre 13 officiels et 27 communautaires, ça présage déjà de la part belle à la qualité et au besoin, plutôt qu'à la quantité.
 
-![Liste d'addon 2]({{ site.baseurl }}/assets/2020-01-02-Storybook-Addons/addonlist2.png)
+![Liste d'addon 2]({BASE_URL}/imgs/articles/2020-01-02-Storybook-Addons/addonlist2.png)
 
 Dans les faits ces derniers sont rangés par fonctionnalité : **Organisation**, **Test, Code**, **Data & State**, **Style** et pour finir **Design**.
 
@@ -94,7 +94,7 @@ Comme on est des grosses flemasses, nous on voudrait bien ne pas avoir à édite
 
 Un peu comme ça non ?
 
-![Storybook knobs addon]({{ site.baseurl }}/assets/2020-01-02-Storybook-Addons/knobs.gif)
+![Storybook knobs addon]({BASE_URL}/imgs/articles/2020-01-02-Storybook-Addons/knobs.gif)
 
 C'est cadeau, c'est l'addon **Knobs** comme on peut voir dans le petit onglet, juste à côté d'**Actions**, qui lui aussi est un addon qu'on a utilisé dans le tutoriel d'avant (celui qui permet de mocker des callbacks type `onClick()` par exemple) et qui est déjà présent dans notre fichier story :
 
@@ -146,13 +146,13 @@ On va donc immédiatement éditer le code de notre story
       .add('archived', () => <Task task={\{ ...task, state: 'TASK_ARCHIVED' }} {...actions} />);
 ```
 
-![Storybook knobs addon]({{ site.baseurl }}/assets/2020-01-02-Storybook-Addons/knobs1.png)
+![Storybook knobs addon]({BASE_URL}/imgs/articles/2020-01-02-Storybook-Addons/knobs1.png)
 
 Et là imaginez, vous filez ça à Jean-Marie qui est en charge de tester votre composant. Il va s'éclater à voir si vous avez pas fait de la daube pour revenir vers vous, avec une haleine de cendrier et de café froid, en vous beuglant :
 
 > Eh mec ! T'as vu la gueule de ton composant ? Quand j'ai mis un titre un peu long ? Non mais je te jure... hahaha
 
-![Storybook knobs addon 2]({{ site.baseurl }}/assets/2020-01-02-Storybook-Addons/knobs2.png)
+![Storybook knobs addon 2]({BASE_URL}/imgs/articles/2020-01-02-Storybook-Addons/knobs2.png)
 
 Quel coquin ce Jean-Marie, mais il n'a pas tort. On peut simplement se rajouter une nouvelle story "long titre" pour sauvegarder ce use-case et éviter la régression.
 

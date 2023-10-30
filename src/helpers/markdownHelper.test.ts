@@ -475,7 +475,7 @@ describe('validateMarkdownContent', () => {
     expect(() =>
       validateMarkdownContent({
         markdownFilePath,
-        content: 'This is a test post content with an asset reference {{ site.baseurl }}/assets/test.png',
+        content: 'This is a test post content with an asset reference {BASE_URL}/imgs/articles/test.png',
       })
     ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! The file does not exist "${assetPath}"!`);
     expect(existsSyncSpy).toHaveBeenCalledWith(assetPath);
@@ -483,7 +483,7 @@ describe('validateMarkdownContent', () => {
 
   it('should generate an error when an img tag is used', () => {
     const markdownFilePath = '/path/to/some/file.md';
-    const contentInvalid = `<img src="{{ site.baseurl }}/assets/articles/test.png" width="300px" alt="title image" />`;
+    const contentInvalid = `<img src="/imgs/articles/test.png" width="300px" alt="title image" />`;
 
     expect(() =>
       validateMarkdownContent({

@@ -20,7 +20,7 @@ keywords:
 
 Après plusieurs mois de travail acharné, nous avons le plaisir de vous annoncer la sortie d'Eleven Codelabs !
 
-![Codelabs]({{site.baseurl}}/assets/2018-03-28-codelabs-under-the-hood/codelabs.png)
+![Codelabs]({BASE_URL}/imgs/articles/2018-03-28-codelabs-under-the-hood/codelabs.png)
 
 Au début de l'été 2017, l'idée d'une plateforme de tutoriels "Made in Eleven Labs" a commencé à prendre forme, en même temps que la création du projet sur github. En juillet 2017, douze astronautes se rassemblent pour brainstormer autour des features qui définiront le MVP. Le projet vise à proposer du contenu plus complet et plus didactique que les articles déjà proposés sur le [Blog](https://blog.eleven-labs.com/) : des tutoriels à suivre étape après étape.
 
@@ -335,11 +335,11 @@ Ce que vous venez de lire est une version très simplifiée du process de géné
 
 Et voici la représentation React des composants générés :
 
-![React components result]({{site.baseurl}}/assets/2018-03-28-codelabs-under-the-hood/react-result.png)
+![React components result]({BASE_URL}/imgs/articles/2018-03-28-codelabs-under-the-hood/react-result.png)
 
 Voici le HTML correspondant :
 
-![Html result]({{site.baseurl}}/assets/2018-03-28-codelabs-under-the-hood/html-result.png)
+![Html result]({BASE_URL}/imgs/articles/2018-03-28-codelabs-under-the-hood/html-result.png)
 
 ### Déploiement
 

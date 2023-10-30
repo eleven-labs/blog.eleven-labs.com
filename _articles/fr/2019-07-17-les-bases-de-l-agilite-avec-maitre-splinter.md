@@ -24,7 +24,7 @@ Vous entendez parler partout d'agilité mais vous ne comprenez pas vraiment de q
 
 Avant de parler plus en détail des projets et des types d’organisations adaptés à l’agilité, parlons méthodologie de travail basée sur l'adaptabilité.
 
-![]({{site.baseurl}}/assets/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/Splinter.jpg)
+![]({BASE_URL}/imgs/articles/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/Splinter.jpg)
 
 ### - Agile-Jutsu
 
@@ -80,7 +80,7 @@ Il arrive très fréquemment que des idées arrivent après le lancement d’un 
 
 Si votre projet rentre dans ces cas-là, l’agilité est idéale.
 
-![]({{site.baseurl}}/assets/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/pizza_lover_agile.jpg)
+![]({BASE_URL}/imgs/articles/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/pizza_lover_agile.jpg)
 
 ### - Les incompatibilités à la pizza agile
 
@@ -119,7 +119,7 @@ Cela ne concerne pas uniquement l’équipe développement composée du product 
 
 Il n’est plus question de pointer du doigt une erreur, un acteur du projet, ou de se cacher derrière une information qui n’aurait pas été communiquée. Il s'agit de remettre en question le processus, les fonctionnalités, ou le développement dans le but de l’améliorer pour le bien du produit et du quotidien du projet. **Les objectifs sont partagés**, et non plus verticaux entre seulement quelques intervenants, ou chacun à son niveau.
 
-![]({{site.baseurl}}/assets/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/ninja_turtles_highfive.jpg)
+![]({BASE_URL}/imgs/articles/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/ninja_turtles_highfive.jpg)
 
 
 ### -   Auto-organisation & Responsabilisation
@@ -162,7 +162,7 @@ Je pense que le plus important pour pouvoir mettre en place une approche agile d
 
 Appliquer une **approche Lean UX** pour mettre en place l’agile au sein des équipes peut être une démarche efficiente. Elle permet de lier ensemble les différents acteurs : en amont pendant la phase d’idéation, de prendre en compte les besoins business, de pouvoir expérimenter et explorer à tous les niveaux de votre organisation, et de continuer à alimenter votre équipe projet pure en nouvelles idées. En les rendants interdépendants à travers tout le processus, vos acteurs seront tous engagés dans des objectifs communs vers un produit commun.
 
-![]({{site.baseurl}}/assets/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/LeanUX.png)
+![]({BASE_URL}/imgs/articles/2019-07-17-les-bases-de-l-agilite-avec-maitre-splinter/LeanUX.png)
 
 ### -   Agile at scale
 

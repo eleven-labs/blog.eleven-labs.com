@@ -14,7 +14,7 @@ authors:
 keywords: []
 ---
 
-![Logo Svelte]({{ site.baseurl }}/assets/2021-02-22-a-la-decouverte-de-svelte/svelte-logo.png)
+![Logo Svelte]({BASE_URL}/imgs/articles/2021-02-22-a-la-decouverte-de-svelte/svelte-logo.png)
 
 Connaissez-vous [Svelte](https://svelte.dev/), le framework Javascript qui monte malgré le silence des médias ? Créé en 2016 par [Rich Harris](https://twitter.com/rich_harris) ([github](https://github.com/Rich-Harris)), il est arrivé en version 3 en 2019, et a reçu le _[Prediction Award de la consultation StateOfJS](https://2019.stateofjs.com/awards/#prediction_award)_ cette même année.
 
@@ -25,7 +25,7 @@ Svelte.JS est en fait un framework _et_ un compilateur, et c’est la principale
 
 Avec cette approche, plus besoin de DOM virtuel ! On se passe également de l’étape de [calcul des différences de DOM virtuel](https://fr.reactjs.org/docs/reconciliation.html) (réconciliation) quand l’état de l'application change... encore des gains de performances !
 
-![Mais enfin Jérome, ça dépasserait l'entendement !]({{ site.baseurl }}/assets/2021-02-22-a-la-decouverte-de-svelte/entendement.gif?width=300)
+![Mais enfin Jérome, ça dépasserait l'entendement !]({BASE_URL}/imgs/articles/2021-02-22-a-la-decouverte-de-svelte/entendement.gif?width=300)
 Figure: *Gagner en performance en se passant du DOM virtuel ??*
 
 
@@ -118,12 +118,12 @@ L’idée principale était de copier le code du middleware de Sapper dans un no
 C’est donc une solution qui fonctionne, mais assez peu satisfaisante puisque l’on duplique du code déjà présent dans le framework. J’ai tout de même proposé notre solution [ici](https://github.com/sveltejs/sapper/issues/1008#issuecomment-751300133). Le point positif étant que nous avons reçu une réponse de la part d’un des contributeurs de Sapper nous disant que que les pages AMP seraient supportées dans la prochaine version majeure de Sapper !
 
 
-![phoque yeah]({{ site.baseurl }}/assets/2021-02-22-a-la-decouverte-de-svelte/yes.gif?width=300)
+![phoque yeah]({BASE_URL}/imgs/articles/2021-02-22-a-la-decouverte-de-svelte/yes.gif?width=300)
 
 En fait il parle plus exactement de SvelteKit, car [il n’y aura pas de version 1.0 de Sapper](https://youtu.be/qSfdtmcZ4d0?t=76). En effet, plutôt que de proposer deux templates de projets (un pour Svelte, l’autre pour Sapper), l’équipe de Svelte souhaite offrir une solution unique qui permette de tout faire. On a encore assez peu de détails sur SvelteKit, mais l’équipe qui travaille dessus a montré la volonté de fournir un processus de migration d’un projet Sapper vers SvelteKit aussi indolore que possible.
 
 
-![Soulagement]({{ site.baseurl }}/assets/2021-02-22-a-la-decouverte-de-svelte/soulagement.gif?width=300)
+![Soulagement]({BASE_URL}/imgs/articles/2021-02-22-a-la-decouverte-de-svelte/soulagement.gif?width=300)
 
 
 

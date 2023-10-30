@@ -41,7 +41,7 @@ Si vous ouvrez votre arborescence Symfony 2, et plus particulièrement le fichie
 
 Deux étapes exposées précédemment devraient vous interroger. Je vous laisse réfléchir desquelles il s'agit 2 minutes, pendant que je mets un petit gif de chat.
 
-[![catbeer](/_assets/articles/2016-04-22-kernel-terminate/catbeer.gif)
+[![catbeer]({BASE_URL}/imgs/articles/2016-04-22-kernel-terminate/catbeer.gif)
 
 Alors, trouvé ? Une fois la réponse envoyée (_$response->send();_) l'exécution du processus de votre serveur HTTP devrait se terminer étant donné que la réponse à été envoyée et probablement reçue par le client. Pourtant, on a de nouveau une instruction ensuite.
 

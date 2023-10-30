@@ -45,7 +45,7 @@ Le problème est donc immédiatement remonté aux développeurs et ces derniers 
 
 Git nous épargne l'ennui de tester tous nos commits un par un avec `git bisect`. Cette commande effectue une recherche par [dichotomie (recherche binaire)](https://fr.wikipedia.org/wiki/Recherche_dichotomique).
 
-![](/_assets/articles/2017-10-26-debugging-with-git/binary_search.jpg)
+![]({BASE_URL}/imgs/articles/2017-10-26-debugging-with-git/binary_search.jpg)
 *Binary search illustration*
 
 À chaque étape de la recherche binaire, nous devons dire à `git bisect` si le problème persiste toujours.

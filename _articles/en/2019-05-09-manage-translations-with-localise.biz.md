@@ -28,14 +28,14 @@ As part of our project, we needed a translation management tool. We have 3 langu
 
 First, we need to create a user account. Once our account is created, we start by creating a project and choose a main language for this project which will serve as a basis for translations. The same user can be part of several projects.
 
-![loco_create]({{site.baseurl}}/assets/2019-05-02-gestion-des-traductions-avec-localise/create.png "create project")
+![loco_create]({BASE_URL}/imgs/articles/2019-05-02-gestion-des-traductions-avec-localise/create.png "create project")
 
 We can then add all the languages we need in our application, whether it be in a standard format, ISO2, or custom languages for more specific needs.
 
 The interface is quite simple and intuitive.
 With all the filters availables, it becomes easy to work on this interface without any issues.
 
-![loco_translate]({{site.baseurl}}/assets/2019-05-02-gestion-des-traductions-avec-localise/translate.png "translate")
+![loco_translate]({BASE_URL}/imgs/articles/2019-05-02-gestion-des-traductions-avec-localise/translate.png "translate")
 
 ## Features
 
@@ -50,12 +50,12 @@ For example, when the development team creates translation keys, they can put th
 
 Then, when the translations have been done and validated by the people whose responsibility it is, the status is modified, allowing to filter on the assets that are to be translated yet, thus simplifying their work.
 
-![loco_statuses]({{site.baseurl}}/assets/2019-05-02-gestion-des-traductions-avec-localise/status.png "statuses")
+![loco_statuses]({BASE_URL}/imgs/articles/2019-05-02-gestion-des-traductions-avec-localise/status.png "statuses")
 
 Moreover, it is possible to assign tags to assets.
 This was useful for us to prepare releases in particular.
 
-![loco_tags]({{site.baseurl}}/assets/2019-05-02-gestion-des-traductions-avec-localise/tags.png "tags")
+![loco_tags]({BASE_URL}/imgs/articles/2019-05-02-gestion-des-traductions-avec-localise/tags.png "tags")
 
 ### Import / export
 
@@ -63,7 +63,7 @@ Of course, when migrating to a new solution, we do not want to create the transl
 Loco has a very complete import / export system with a wide range of formats (JSON, CSV, etc.).
 We can also use all the filters in our exports. I'll let you take a look at their documentation with all the details if needed.
 
-![loco_export]({{site.baseurl}}/assets/2019-05-02-gestion-des-traductions-avec-localise/export.png "export")
+![loco_export]({BASE_URL}/imgs/articles/2019-05-02-gestion-des-traductions-avec-localise/export.png "export")
 
 ### REST API
 

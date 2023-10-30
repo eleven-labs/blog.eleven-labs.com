@@ -18,7 +18,7 @@ keywords:
 
 Le [crypto-gaming](https://en.wikipedia.org/wiki/Blockchain_game) est en plein essor sur les internets, quelle est cette nouvelle passion ? Peut-on réellement gagner de l’argent en jouant aux jeux vidéo ?
 
-![Block chain]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/enquete-crypto.png?width=300)
+![Block chain]({BASE_URL}/imgs/articles/2022-03-16-enquete-sur-le-crypto-gaming/enquete-crypto.png?width=300)
 
 ## Les bases
 
@@ -29,7 +29,7 @@ La [crypto-monnaie](https://fr.wikipedia.org/wiki/Cryptomonnaie) est une monnaie
 Vous en avez peut-être déjà entendu parler dans le monde artistique et surtout sportif, le NFT remplace les cartes de collections Panini. Le [NFT](https://fr.wikipedia.org/wiki/Jeton_non_fongible) pour _Non-Fungible Token_ (en français _Jeton non fongible_) est souvent un objet numérique qui va être certifié via la blockchain comme appartenant à une identité numérique ( = un propriétaire).
 
 
-![Carte Haaland sur Sorare à 600k]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/sorare-nft.png?width=233)
+![Carte Haaland sur Sorare à 600k]({BASE_URL}/imgs/articles/2022-03-16-enquete-sur-le-crypto-gaming/sorare-nft.png?width=233)
 
 *<center>Sur Sorare, la carte unique de Erling Haaland vaut 600k, alors que la carte hors NFT ne vaut rien.</center>*
 
@@ -64,7 +64,7 @@ Lorsqu’un éditeur lance son jeu, il va mettre en vente des NFT (ou jetons) po
 L’éditeur va déjà gagner de l'argent en vendant ces premiers jetons générés parfois à l'infini, parfois en nombre limité (surtout pour les NFT). Pourquoi en nombre limité ? Tout simplement pour éviter que le prix du jeton baisse s’il y en a trop en circulation, et donc décourager des joueurs/investisseurs.
 
 
-![Starting game project]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/crypto-gaming-start.png)
+![Starting game project]({BASE_URL}/imgs/articles/2022-03-16-enquete-sur-le-crypto-gaming/crypto-gaming-start.png)
 
 
 
@@ -74,7 +74,7 @@ L’éditeur va ensuite proposer aux utilisateurs de gagner des objets sous form
 
 Dans beaucoup de cas, plus le jeu offrira des avantages à jouer, plus le jeu sera attractif, plus il y aura de joueurs. Et les joueurs ayant investis rendront le jeu attractif pour ceux qui veulent se développer ou les nouveaux : ce sont eux qui achètent leurs jetons, et qui vont leur permettre de gagner de l’argent.
 
-![Starting game project]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/business.png)
+![Starting game project]({BASE_URL}/imgs/articles/2022-03-16-enquete-sur-le-crypto-gaming/business.png)
 
 Une question me taraudait, et je le voyais dans Axie : comment les jetons, surtout en nombre infini, sont créés ?
 La réponse ne me plaît pas : un jeton est créé à partir de rien, il n'a de la valeur que pour les gens qui les utilisent.
@@ -83,19 +83,19 @@ La réponse ne me plaît pas : un jeton est créé à partir de rien, il n'a de 
 
 Comme pour la crypto-monnaie classique, les tokens possèdent leur propre cours boursier.
 
-![Cours de l'objet SLP du jeu Axie Infinity]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/axie-slp.png)
+![Cours de l'objet SLP du jeu Axie Infinity]({BASE_URL}/imgs/articles/2022-03-16-enquete-sur-le-crypto-gaming/axie-slp.png)
 
 *<center>Sur Axie, on peut gagner en combat des objets SLP qui permettent de faire de l'élevage.</center>*
 
 
 En fonction du cours, il sera ou non intéressant de les revendre, comme à la bourse.
 
-![Starting game project Up]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/speculation-down.png)
+![Starting game project Up]({BASE_URL}/imgs/articles/2022-03-16-enquete-sur-le-crypto-gaming/speculation-down.png)
 
 *<center>Plus il y a d’acheteurs et moins il y a d’intentions d’achat, plus le cours chute.</center>*
 
 
-![Starting game project Down]({{ site.baseurl }}/assets/2022-03-16-enquete-sur-le-crypto-gaming/speculation-up.png)
+![Starting game project Down]({BASE_URL}/imgs/articles/2022-03-16-enquete-sur-le-crypto-gaming/speculation-up.png)
 
 *<center>Moins il y a d’acheteurs et plus il y a d’intentions d’achat, plus le cours monte.</center>*
 

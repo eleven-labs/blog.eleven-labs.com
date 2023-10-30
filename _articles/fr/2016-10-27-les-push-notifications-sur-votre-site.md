@@ -39,15 +39,15 @@ A partir de la vous devez avoir accès à votre PWA à l'adresse suivante [local
 Avant de se lancer dans l'envoi d'une push notification, nous allons passer par la configuration. Et oui ! Ce n'est pas magique, nous allons demander à Google l'autorisation.
 Nous allons sur [Firebase](https://console.firebase.google.com/) pour créer un projet.
 
-![Firebase - créer un projet](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-11.19.54.png)
+![Firebase - créer un projet]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-11.19.54.png)
 
 Nous vous laissons choisir le nom du projet. Une fois sur le dashboard, vous devez cliquer sur la petite roue puis "Paramètres du projet".
 
-![Firebase - parametre du projet](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-11.22.12.png)
+![Firebase - parametre du projet]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-11.22.12.png)
 
 Dans l'onglet "Cloud Messaging" vous trouverez votre bonheur en récupérant l'ID de l'expéditeur.
 
-![Firebase - Cloud messaging](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-11.32.06.png)
+![Firebase - Cloud messaging]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-11.32.06.png)
 
 Dans le manifest.json, disponible dans le dossier public de l'application, vous devez ajouter en fin de fichier le "gsm_sender_id" avec comme valeur l'ID de l'expéditeur.
 
@@ -101,7 +101,7 @@ if('serviceWorker' in navigator) {
 
 Normalement, si vous relancez le serveur, vous devez avoir une demande pour accepter les notifications.
 
-![PWA - Autoriser les notifications](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-15.34.14.png)
+![PWA - Autoriser les notifications]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-15.34.14.png)
 
 Vous devez aussi voir dans votre console un message du type :
 
@@ -112,7 +112,7 @@ endpoint: cV2kP3sOb24:APA91bHfZgFSPQ3CXyG9LejWdq9jOT-WqQpvK4peX9ZZtrfsHCf6OPEvDe
 Il s'agit du token du device, c'est à partir de celui-ci que nous pourrons envoyer une push notification.
 Comme nous voulons faire quelque chose de propre (même s'il ne s'agit que d'un tutoriel), nous allons utiliser Firebase pour stocker les tokens utilisateurs. Pour cela rien de plus simple,  vous retournez sur la console Firebase et dans l'onglet "Authentification" vous cliquez sur "configuration web".
 
-![PWA - Autoriser les notifications](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-15.50.59.png)
+![PWA - Autoriser les notifications]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-15.50.59.png)
 
 L'installation du script se fait dans le code html, donc public/home.html et public/article/alorscettearticle.html.
 
@@ -205,11 +205,11 @@ Avant de lancer le serveur, vous devez ouvrir les droits à Firebase afin qu'il 
 }
 ```
 
-![Firebase - Règles database](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-16.13.27.png)
+![Firebase - Règles database]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-16.13.27.png)
 
 Si vous relancez le serveur, vous devez voir dans l'onglet "Database" de Firebase un token dans la BDD.
 
-![Firebase - Database Token](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-16.24.58.png)
+![Firebase - Database Token]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-16.24.58.png)
 
 Bon, maintenant que nous mettons les tokens dans une base de données nous allons préparer le message qui s'affichera lors d'une push notification. Pour aller vite nous allons ajouter le code suivant en fin du fichier public/sw.js :
 
@@ -265,15 +265,15 @@ C'est presque fini ! Nous allons créer une url "/sender" qui nous permettra d'e
 
 Dans le fichier app.js, nous initialisons Firebase. Vous allez avoir besoin d'un fichier de clé serveur. Vous allez cliquer sur la roue dans Firebase puis "Autorisation". Vous êtes alors redirigé sur une autre console.
 
-![Firebase - Autorisation](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-16.59.31.png)
+![Firebase - Autorisation]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-16.59.31.png)
 
 Puis dans Comptes de service, vous créez un nouveau compte de service.
 
-![Création - Compte et services](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-17.02.45.png)
+![Création - Compte et services]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-17.02.45.png)
 
 Un fichier json sera alors téléchargé, il vous suffit de l'ajouter à la racine de votre projet.
 
-![JsonFile - Racine](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-17.22.04.png)
+![JsonFile - Racine]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-17.22.04.png)
 
 Dans le fichier app.js nous allons ajouter la route /sender qui envoie la requête de demande de push en prenant l'ensemble des tokens.
 
@@ -333,11 +333,11 @@ app.listen(8080, function () {
 
 Attention ! La clé Authorization se trouve dans le premier onglet que l'on a ouvert.
 
-![Firebase - Autorisation](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-17.44.27.png)
+![Firebase - Autorisation]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-17.44.27.png)
 
 Si tout est bon, quand vous relancez le serveur et que vous allez sur / puis /sender vous avez la notification. Si ce n'est pas le cas supprimez le cache de votre application dans la console chrome onglet application.
 
-![Firebase - Autorisation](/_assets/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-17.46.23.png)
+![Firebase - Autorisation]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-17.46.23.png)
 
 
 Encore une fois ce code est vraiment un tutoriel, je vous invite donc à faire des issues pour la moindre question. Le code final est [ici](https://github.com/CaptainJojo/pwa-parisjs/tree/push).

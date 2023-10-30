@@ -67,7 +67,7 @@ Le service _Catalog_ réduit le stock disponible pour les produits concernés.
 
 Reprenons ensemble le fonctionnement du modèle AMQP 0-9-1 (vous pouvez trouver la documentation [ici](https://www.rabbitmq.com/tutorials/amqp-concepts.html)) :
 
-![]({{ site.baseurl }}/assets/2023-10-23-edd/event-driven-architecture-rabbitmq.png)
+![]({BASE_URL}/imgs/articles/2023-10-23-edd/event-driven-architecture-rabbitmq.png)
 
 Les messages sont publiés sur des _exchanges_, voyez ça comme une boîte aux lettres.
 Les exchanges distribuent ensuite des copies des messages aux _queues_ à l'aide des _bindings_.

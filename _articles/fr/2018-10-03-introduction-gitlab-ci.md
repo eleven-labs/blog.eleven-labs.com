@@ -205,7 +205,7 @@ job:deploy:
   stage: deploy # On déclare que ce `job` fait partie de l'étape deploy
   script: make deploy
 ```
-![CI Stages]({{site.baseurl}}/assets/2018-09-19-introduction-gitlab-ci/ci-stages.png)
+![CI Stages]({BASE_URL}/imgs/articles/2018-09-19-introduction-gitlab-ci/ci-stages.png)
 
 ### Only et except
 Ces deux directives permettent de mettre en place des contraintes sur l'exécution d’une tâche. Vous pouvez dire qu’une tâche s'exécutera uniquement sur l’événement d’un push sur master ou s'exécutera sur chaque push d’une branche sauf master.
@@ -254,7 +254,7 @@ job:only:master:
 Pour l'utilisation de `schedules` il faut dans un premier temps définir des règles dans l'interface web.
 On peut les configurer dans l’interface web de Gitlab :  `CI/CD -> Schedules` et remplir le formulaire.
 
-![CI Schedules]({{site.baseurl}}/assets/2018-09-19-introduction-gitlab-ci/ci-schedules.png)
+![CI Schedules]({BASE_URL}/imgs/articles/2018-09-19-introduction-gitlab-ci/ci-schedules.png)
 
 Si vous souhaitez, vous pouvez définir un intervalle de temps personnalisé. C'est ce que j'ai fait dans mon exemple. La définition se fait comme un [cron](https://en.wikipedia.org/wiki/Cron)
 
@@ -371,7 +371,7 @@ deploy:production:
 
 En déclarant des `environments` vous pouvez, depuis l'interface web de GitLab, déployer / redéployer votre application ou directement accéder à votre site si vous avez déclaré une `url`. Ceci se fait dans `Operations > Environment`.
 
-![CI Environment]({{site.baseurl}}/assets/2018-09-19-introduction-gitlab-ci/ci-environment.png)
+![CI Environment]({BASE_URL}/imgs/articles/2018-09-19-introduction-gitlab-ci/ci-environment.png)
 
 Le bouton `undo` permet de redéployer, le bouton `external link` permet d'aller sur l'application et le bouton `remove` permet de supprimer l'environnement.
 
@@ -419,7 +419,7 @@ Comme pour `environment` je vous laisse regarder la documentation officielle sur
 
 Il est aussi possible de déclarer des variables depuis l'interface web de GitLab `Settings > CI/CD > Variables` et de leur spécifier un environnement.
 
-![CI Variables]({{site.baseurl}}/assets/2018-09-19-introduction-gitlab-ci/ci-variables.png)
+![CI Variables]({BASE_URL}/imgs/articles/2018-09-19-introduction-gitlab-ci/ci-variables.png)
 
 ### cache
 Cette directive permet de jouer avec du cache. Le cache est intéressant pour spécifier une liste de fichiers et de répertoires à mettre en cache tout le long de votre pipeline. Une fois la pipeline terminée le cache sera détruit.
@@ -514,7 +514,7 @@ test:unit:
 
 Le code coverage sera visible dans les informations du `job` dans l'interface web de GitLab :
 
-![CI Coverage]({{site.baseurl}}/assets/2018-09-19-introduction-gitlab-ci/ci-coverage.png)
+![CI Coverage]({BASE_URL}/imgs/articles/2018-09-19-introduction-gitlab-ci/ci-coverage.png)
 
 > Si vous le souhaitez voici un autre article de notre blog écrit par l'astronaute [Pouzor](https://blog.eleven-labs.com/authors/pouzor/) sur le code coverage : [Ajouter le code coverage sur les MR avec avec GitLab-CI](https://blog.eleven-labs.com/fr/ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci/)
 

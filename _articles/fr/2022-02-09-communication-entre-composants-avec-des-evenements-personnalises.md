@@ -70,7 +70,7 @@ document.removeEventListener("count", count as EventListener);
 
 Par ailleurs, une façon de s'assurer que les écouteurs d'événements sont bien présents et qu'ils n'ont pas été attachés plusieurs fois à la page web est de vérifier cela à l'aide des outils de développement Chrome. Voici à quoi cela peut ressembler :
 
-![Outils de développement pour événements personnalisé sur Chrome]({{ site.baseurl }}/assets/2022-02-09-communication-entre-composants-avec-des-evenements-personnalises/event-listeners-on-chrome.png)
+![Outils de développement pour événements personnalisé sur Chrome]({BASE_URL}/imgs/articles/2022-02-09-communication-entre-composants-avec-des-evenements-personnalises/event-listeners-on-chrome.png)
 
 Pour aller plus loin, il existe un troisième argument pour la méthode [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) qui n'a pas été évoqué précédemment. Il s'agit de l'argument `once`, qui peut s'avérer être utile pour que l'écouteur d'événement ne soit exécuté qu'une seule fois et qu'il soit détruit automatiquement après son invocation.
 ```ts
@@ -83,9 +83,9 @@ document.addEventListener("open", open, { once: true });
 
 L'application a été créée avec `Create React App` et `Chakra UI`. Elle représente un parcours classique sur un ecommerce, c'est-à-dire, ajouter un produit au panier, afficher le montant total du panier et afficher le panier complété.
 
-![Application React - Liste des produits]({{ site.baseurl }}/assets/2022-02-09-communication-entre-composants-avec-des-evenements-personnalises/application-react-product-list.png)
+![Application React - Liste des produits]({BASE_URL}/imgs/articles/2022-02-09-communication-entre-composants-avec-des-evenements-personnalises/application-react-product-list.png)
 
-![Application React - Panier]({{ site.baseurl }}/assets/2022-02-09-communication-entre-composants-avec-des-evenements-personnalises/application-react-cart.png)
+![Application React - Panier]({BASE_URL}/imgs/articles/2022-02-09-communication-entre-composants-avec-des-evenements-personnalises/application-react-cart.png)
 
 Voici le conteneur de l'application. Dans celui-ci se trouvent trois conteneurs (`ViewCartButtonContainer`, `AddToCartButtonContainer`, `CartContainer`).
 ```tsx

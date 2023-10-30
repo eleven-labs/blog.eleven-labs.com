@@ -21,7 +21,7 @@ keywords:
   - dotjs
   - nodejs
 ---
-![DotJS logo]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/logo.png)
+![DotJS logo]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/logo.png)
 
 [DotJS](https://www.dotjs.io/) est la plus grande conférence JavaScript en Europe et c'est souvent l'occasion de parler des nouvelles technologies à notre disposition et découvrir ce que nous réserve le futur de ECMAScript.
 
@@ -35,7 +35,7 @@ Après un bon petit-déjeuner offert par les partenaires de l'événement, il es
 
 ### Wes Bos
 
-![Wes Bos]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/wesbos.jpg)
+![Wes Bos]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/wesbos.jpg)
 
 C'est [Wes](https://twitter.com/wesbos) qui ouvre le bal avec un talk sur les promesses et l'évolution vers le couple async/await.
 Il revient notamment sur la problématique historique du JavaScript sur la gestion de l'asynchrone et notamment sur les problèmes très connus que sont le _Callback of Hell_ ou la _Pyramide of Doom_.
@@ -49,7 +49,7 @@ _[Voir ses slides](https://wesbos.github.io/Async-Await-Talk/#1)_
 
 ### Trent Willis
 
-![Trent Willis]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/trentwillis.jpg)
+![Trent Willis]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/trentwillis.jpg)
 
 [Trent Willis](https://twitter.com/trentmwillis) enchaîne ensuite sur comment bien tester son application web et quels sont les outils disponibles pour y arriver. Il cite notamment Chrome DevTools qui offre tout une gamme d'outils comme par exemple le calcul de la couverture de code.
 Cela permet de savoir quelle proportion de code JS/CSS a réellement été utilisée par le navigateur et ainsi procéder, si nécessaire, à un nettoyage.
@@ -59,7 +59,7 @@ _[Voir ses slides](http://pretty-okay.com/static/slides/dot-js_working-well-futu
 
 ### Suz Hinton
 
-![Suz Hinton]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/suzhinton.jpg)
+![Suz Hinton]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/suzhinton.jpg)
 
 Après une introduction faisant le parallèle entre l'accessibilité sur le web et une proposition de changement du logo international du handicap (♿), [Suz Hinton](https://twitter.com/noopkat) présente une démonstration de code en machine learning qui, grâce à une requête fetch(), va interroger une API pour ajouter des attributs HTML alt sur une galerie d'images Instagram, et l'accessibiliser.
 
@@ -67,7 +67,7 @@ Une autre de ses démonstrations porte sur l'injection de sous-titres en direct 
 
 ### Feross Aboukhadijeh
 
-![Feross Aboukhadijeh]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/feross.jpg)
+![Feross Aboukhadijeh]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/feross.jpg)
 
 [Feross](https://feross.org/) aime enfreindre les règles sur le web et bidouiller les navigateurs.
 Ainsi il fait la démonstration d'une technique éprouvée permettant d'activer la webcam des visiteurs d'un site à leur insu en passant par les autorisations du plugin Flash. Celles-ci sont hébergées par une page d'Adobe, qui peut être placée en iframe transparente au-dessus de la page courante. En faisant croire à un jeu et en incitant l'internaute à cliquer sur plusieurs boutons qui se déplacent successivement à 4 emplacements stratégiques, on provoque des clics sur l'interface de gestion délicate d'Adobe Flash qui débloque l'accès à la webcam.
@@ -82,7 +82,7 @@ Vous pouvez en retrouver la compilation sur [Theannoyingsite.com](http://www.the
 
 ## Lightning Talks
 
-![La salle de conférence]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/lightningtalks.jpg)
+![La salle de conférence]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/lightningtalks.jpg)
 
 Les Lightning Talks sont une suite de petites présentations d'environ cinq minutes. Elles permettent de présenter des sujets simples ne nécessitant pas la durée complète d'un talk. Ces sujets sont très variés et peuvent être aussi bien une anecdote amusante, un rappel utile, une découverte intéressante ou la présentation du métier et/ou produit d'un des partenaires de l'événement.
 
@@ -102,7 +102,7 @@ Après un déjeuner plus que mérité, il est temps de continuer.
 
 ### Adrian Holovaty
 
-![Adrian Holovaty]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/adrianholovaty.jpg)
+![Adrian Holovaty]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/adrianholovaty.jpg)
 
 Voilà un sujet intéressant que l'on pourrait penser à contre-courant. [Adrian Holovaty](https://twitter.com/adrianholovaty), co-fondateur du célèbre framework Django nous fait un plaidoyer en faveur d'une notion simple : arrêter d'utiliser des frameworks.
 
@@ -114,7 +114,7 @@ Mais attention de ne pas faire l'erreur : Adrian utilise bien des bibliothèques
 
 ### Thomas Watson
 
-![Thomas Watson]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/thomaswatson.jpg)
+![Thomas Watson]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/thomaswatson.jpg)
 
 [Thomas Watson](https://twitter.com/wa7son) nous explique pendant près de 15 minutes comment les avions communiquaient entre eux et comment le contrôle aérien pouvait récupérer énormément d'informations sur ses radars. Quel rapport avec JavaScript me direz-vous ? Et bien Thomas s'est mis en tête de créer une application permettant de capter les signaux émis par les avions à plusieurs dizaines de kilomètres (protocole ADS-B) puis récupérer leur identification transpondeur, altitude, longitude, latitude, etc, et les placer sur une carte en direct. Toutes ces données sont librement accessibles et il n'y aucune sécurité (ce qui peut poser des questions...). Il suffit de s'équiper d'une petite antenne radio grand public (chip RTL2832U fréquence 1090 Mhz) et de la piloter avec Node.JS.
 Si vous êtes intéressé, n'hésitez pas à consulter ses projets récents sur son compte GitHub : [rtl-sdr](https://github.com/watson/rtl-sdr), [mode-s-decoder](https://github.com/watson/mode-s-decoder).
@@ -123,7 +123,7 @@ _[Voir ses slides](https://speakerdeck.com/wa7son/dotjs-2017-getting-data-from-t
 
 ### Sean Larkin
 
-![Sean Larkin]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/seanlarkin.jpg)
+![Sean Larkin]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/seanlarkin.jpg)
 
 [Sean Larkin](https://www.twitter.com/thelarkinn) est, entre autres, un des _lead maintainer_ sur [Webpack](https://webpack.js.org/). Et ça tombe bien, car il a décidé de nous expliquer comment que tout ça marche dedans.
 Il nous introduit la bibliothèque [Tapable](https://github.com/webpack/tapable) qui constitue l'épine dorsale de Webpack.
@@ -132,7 +132,7 @@ Il nous présente enfin le futur de Webpack avec sa version 4 : amélioration de
 
 ### Marcy Sutton
 
-![Marcy Sutton]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/marcysutton.jpg)
+![Marcy Sutton]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/marcysutton.jpg)
 
 [Marcy](https://www.twitter.com/marcysutton) met particulièrement l'accent dans son travail sur l'accessibilité. Elle souhaite prendre en compte toutes les spécificités : handicap, situation géographique, capacités de lecture, âge, matériel, moyens, vitesse d'accès au réseau. Elle démontre ainsi l'importance de JavaScript sur ce domaine et comment il est possible d'apporter des améliorations en suivant quelques critères :
 
@@ -148,7 +148,7 @@ _[Voir ses slides](https://marcysutton.github.io/enabling-users/)_
 
 ### Tom Dale
 
-![Tom Dale]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/tomdale.jpg)
+![Tom Dale]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/tomdale.jpg)
 
 En tant que _Software Engineer_ chez LinkedIn et co-créateur de Ember.js, [Tom Dale](https://twitter.com/tomdale) travaille principalement sur les performances d'affichage et notamment les marchés émergents.
 
@@ -173,7 +173,7 @@ Vous pouvez tester cette nouvelle technique sur [Glimmer Playground](https://gli
 
 ### Brendan Eich
 
-![Brendan Eich]({{site.baseurl}}/assets/2017-12-08-dotjs-2017/brendaneich.jpg)
+![Brendan Eich]({BASE_URL}/imgs/articles/2017-12-08-dotjs-2017/brendaneich.jpg)
 
 [Brendan Eich](https://twitter.com/brendaneich) n'est autre que le créateur de JavaScript lui-même. Comme il lui est souvent demandé, il nous présente la genèse et l'évolution du JS au fur et à mesure des années avec évidemment son lot de difficultés et d'espoir.
 

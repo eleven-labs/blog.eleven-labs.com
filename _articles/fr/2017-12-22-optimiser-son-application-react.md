@@ -29,7 +29,7 @@ Prenons l'exemple d'une application assez simple et commune. On réalise un back
 
 Vous vous exécutez donc et pensant avoir fini vous constatez ceci :
 
-![Exemple d'application lente]({{site.baseurl}}/assets/2017-12-22-optimiser-son-application-react/slow-app.gif)
+![Exemple d'application lente]({BASE_URL}/imgs/articles/2017-12-22-optimiser-son-application-react/slow-app.gif)
 
 > MéKéCéCéCeBordel ?!
 
@@ -37,7 +37,7 @@ Votre application est lente et peu réactive (un comble pour du React...).
 Allons faire un petit tour dans la console de Chrome à l'onglet Timeline. Ici on va pouvoir capturer tout ce qui se passe au niveau code, mémoire et rendu pendant un laps de temps donné.
 Après quelques bidouilles, voici ce qu'on obtient :
 
-![Flamegraph de l'application]({{site.baseurl}}/assets/2017-12-22-optimiser-son-application-react/slow-app-flamegraph.png)
+![Flamegraph de l'application]({BASE_URL}/imgs/articles/2017-12-22-optimiser-son-application-react/slow-app-flamegraph.png)
 
 Alors au premier abord, ça peut être un peu repoussant mais c'est en fait très simple. Sur ce "FlameGraph", on peut voir que lorsque l'utilisateur a cliqué, ce n'est pas seulement les lignes de notre tableau qui se sont redessinées mais toute l'application ! En bref, à chaque changement de `state` dans votre application, vous réinitialisez compètement cette dernière à zéro comme si vous étiez au tout premier rendu de la page.
 
@@ -324,7 +324,7 @@ Une petite parenthèse sur les "stateless functions". Comme vous l'avez sûremen
 
 Eh bien... non. C'est prévu mais à l'heure où j'écris ces lignes, rien n'a été fait. Une "stateless function" est transpilée en une classe à la compilation...
 
-![Commentaire sur github confirmant le problème des stateless functions]({{site.baseurl}}/assets/2017-12-22-optimiser-son-application-react/stateless-function-github.png)
+![Commentaire sur github confirmant le problème des stateless functions]({BASE_URL}/imgs/articles/2017-12-22-optimiser-son-application-react/stateless-function-github.png)
 
 Ainsi il est plutôt conseillé d'utiliser des `Component` ou `PureComponent`, car vous pouvez y maîtriser le workflow.
 Vous pouvez jeter un coup d'oeil à cet article pour de plus amples informations : ["7 reasons to outlaw React's functional components"](https://medium.freecodecamp.org/7-reasons-to-outlaw-reacts-functional-components-ff5b5ae09b7c)

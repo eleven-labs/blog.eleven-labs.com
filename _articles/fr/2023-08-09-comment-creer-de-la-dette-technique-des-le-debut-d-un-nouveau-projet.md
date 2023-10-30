@@ -9,8 +9,7 @@ excerpt: >-
   technique qui nous fait perdre du temps et qui nous rend fou au point de
   vérifier qui a fait le code. Vous aussi vous voulez entrer dans la postérité
   lors d’un git blame et mal concevoir votre produit ?
-cover: >-
-  /assets/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-projet/logo.png
+cover: /assets/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-projet/logo.png
 categories:
   - php
   - javascript
@@ -22,7 +21,7 @@ keywords:
   - développement
 ---
 
-![La dette technique, cet enfer]({{ site.baseurl }}/assets/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/logo.png?width=1000)
+![La dette technique, cet enfer]({BASE_URL}/imgs/articles/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/logo.png?width=1000)
 
 Quand on arrive sur un projet existant, on doit souvent subir une dette technique qui nous fait perdre du temps et qui nous rend fou au point de vérifier qui a fait le code. Vous aussi vous voulez entrer dans la postérité lors d’un git blame et mal concevoir votre produit ?
 
@@ -38,7 +37,7 @@ Inventé en 1992, le terme vient d'une métaphore qui applique au développement
 Il est possible de contracter une dette consciemment pour des problématiques de délais, mais elle peut être prise inconsciemment.
 
 ## Mal cadrer son architecture
-![Quand ton architecture se casse la figure]({{ site.baseurl }}/assets/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/falling-diagram.png?width=1000)
+![Quand ton architecture se casse la figure]({BASE_URL}/imgs/articles/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/falling-diagram.png?width=1000)
 
 
 Prendre des mauvaises décisions dès le début en faisant des erreurs d’architecture peut être de vrais boulets pour la vie du projet.
@@ -70,13 +69,13 @@ On veut souvent tester les dernières tendances, mais si vous n’avez pas au mo
 
 Même si le modèle est criticable, vous pouvez aussi vous baser sur le [cycle de la hype](https://fr.wikipedia.org/wiki/Cycle_du_hype) : il est plus raisonnable de prendre une technologie quand elle est à son plateau de productivité.
 
-![Schéma du cycle de la hype]({{ site.baseurl }}/assets/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/cycle-de-la-hype.png?width=500)
+![Schéma du cycle de la hype]({BASE_URL}/imgs/articles/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/cycle-de-la-hype.png?width=500)
 
 <br />
 Finalement, vous choisissez une nouvelle technologie, vous pouvez encore limiter la casse. La question sur la disponibilité n’est pas anodine : il faut se former sur la technologie et ça prend du temps. Entre les livres et les cours en ligne, vous savez où chercher, et au pire, vous avez votre réseau pour poser des questions.
 
 ## Mal modéliser sa base de données
-![Quand la base de données est mal modélisée]({{ site.baseurl }}/assets/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/burning-database.png?width=1000)
+![Quand la base de données est mal modélisée]({BASE_URL}/imgs/articles/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/burning-database.png?width=1000)
 
 
 Point critique qui peut être source de problème de performances sur des applications qui ont besoin d’être rapide à lire en écriture et/ou en lecture. S’il y a trop de latence, un client peut délaisser votre produit pour un concurrent.

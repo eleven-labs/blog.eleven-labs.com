@@ -7,8 +7,7 @@ title: Retour sur un live-coding de découverte du langage Go
 excerpt: >-
   Cet article fait suite à un workshop / live-coding que j'ai eu l'occasion
   d'organiser chez Eleven Labs pour une initiation au langage Go.
-cover: >-
-  /assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/cover.jpg
+cover: /assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/cover.jpg
 categories: []
 authors:
   - vcomposieux
@@ -43,7 +42,7 @@ L'idée est simple :
 
 Avant de rentrer dans les détails, voici un schéma expliquant le fonctionnement de notre librairie :
 
-![WorkMQ Schema](/_assets/articles/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/schema.jpg)
+![WorkMQ Schema]({BASE_URL}/imgs/articles/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/schema.jpg)
 
 Comme vous pouvez le voir sur ce diagramme, nous avons ici quatre `Queues` de définies, et chacune d'entre elles dispose de trois `Workers`.
 
@@ -356,7 +355,7 @@ Nous avons ici bouclé sur toutes les queues et affichons les données des compt
 
 Pour vous aider à visualiser le résultat, voici la sortie HTTP :
 
-![HTTP Output](/_assets/articles/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/output.gif)
+![HTTP Output]({BASE_URL}/imgs/articles/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/output.gif)
 
 Conclusion
 ----------

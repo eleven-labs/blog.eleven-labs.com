@@ -19,15 +19,15 @@ Le moyen de communication le plus répandu entre un prestataire et son client, 
 
 Vous avez dû le voir dans votre boite Gmail, dans certains cas, vos mails ont un affichage différent ou même un bouton en plus (un "call-to-action").
 
-![](/_assets/articles/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-20.20.36.png)
+![]({BASE_URL}/imgs/articles/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-20.20.36.png)
 
 > Exemple: Réservation d'un événement
 
-![](/_assets/articles/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-20.26.14.png)
+![]({BASE_URL}/imgs/articles/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-20.26.14.png)
 
 > Exemple: Votre prochain voyage
 
-![](/_assets/articles/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-20.29.24.png)
+![]({BASE_URL}/imgs/articles/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-20.29.24.png)
 
 > Exemple: Un call-to-action
 
@@ -173,9 +173,9 @@ Comme Google vous connait mieux que vous même, vous pouvez faire des recherches
 
 Je vous invite à taper *'mes vols', 'mes commandes', 'mes réservations',*  vous serez surpris.
 
-![](/_assets/articles/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-21.11.52.png)
+![]({BASE_URL}/imgs/articles/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-21.11.52.png)
 
-![](/_assets/articles/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-21.11.11.png)
+![]({BASE_URL}/imgs/articles/2017-06-01-prenez-soin-de-vos-emails/capture-decran-2017-05-30-a-21.11.11.png)
 
 ### Conclusion
 

@@ -18,7 +18,7 @@ keywords:
   - base de données multi-modèles
   - graphe
 ---
-![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/ArangoDB_logo.webp)
+![]({BASE_URL}/imgs/articles/2020-03-10-introduction-a-arangodb-part-1/ArangoDB_logo.webp)
 
 ## ArangoDB c'est quoi?
 ArangoDB est une base de données multi-modèles, ce qui veut dire qu'elle prend en charge plusieurs types de données nativement.
@@ -49,7 +49,7 @@ ArangoDB vient également avec des notions de réseau et vous laisse choisir ent
 
     -   l'instance de base de données (DB Server) : responsable de l'écriture et lecture des données.
 
-![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/cluster.webp)
+![]({BASE_URL}/imgs/articles/2020-03-10-introduction-a-arangodb-part-1/cluster.webp)
 
 
 ## Installation
@@ -69,14 +69,14 @@ docker run -p 8529:8529 -e ARANGO_ROOT_PASSWORD=rocketEleven arangodb/arangodb:3
 ## Interface
 Même si Arango de base expose par défaut une API REST pour pouvoir communiquer via le protocole HTTP, une interface graphique est également disponible. Pour nous ce sera à l'adresse [http://localhost:8529](http://localhost:8529).
 
-![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/login.webp)
+![]({BASE_URL}/imgs/articles/2020-03-10-introduction-a-arangodb-part-1/login.webp)
 Le login admin par défaut est "root", et le mot de passe est celui fourni dans la ligne de commande ci-dessus, en l'occurrence "rocketEleven".
 
-![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/selectDBView.webp)
+![]({BASE_URL}/imgs/articles/2020-03-10-introduction-a-arangodb-part-1/selectDBView.webp)
 Chaque serveur a par défaut une base de données "_system", sélectionnez-la.
 
 
-![]({{ site.baseurl }}/assets/2020-03-10-introduction-a-arangodb-part-1/dashboard.png)
+![]({BASE_URL}/imgs/articles/2020-03-10-introduction-a-arangodb-part-1/dashboard.png)
 
 Nous accédons enfin au dashboard de l'instance, qui présente quelques statistiques (le nombre de requêtes par seconde, le type de requête, le nombre de connexions, mémoire, CPU, etc)
 À savoir que par défaut ArangoDB choisit l'architecture "single instance". Si on avait choisi le mode "cluster" nous aurions eu des statistiques sur les nœuds le composant (Coordinator, DB Server, Agency) ainsi que leurs endpoints.

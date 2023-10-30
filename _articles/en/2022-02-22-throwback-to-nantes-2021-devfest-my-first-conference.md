@@ -14,7 +14,7 @@ keywords:
   - conference
 ---
 
-![DevFest Nantes 2021's logo]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/devfest-logo.png)
+![DevFest Nantes 2021's logo]({BASE_URL}/imgs/articles/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/devfest-logo.png)
 
 Finally! After 4 years of working as a web developer, I finally attended a conference linked to my job & passion: the [DevFest Nantes](https://devfest2021.gdgnantes.com).
 
@@ -36,7 +36,7 @@ This year, they welcomed a little bit more than 2000 people per day during 2 day
 
 _By Antonin Fourneau_
 
-![Waterlight Graffiti]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waterlight-graffiti.jpeg)
+![Waterlight Graffiti]({BASE_URL}/imgs/articles/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waterlight-graffiti.jpeg)
 
 <center><i><small>Credits: Antonin Fourneau</small></i></center>
 
@@ -66,7 +66,7 @@ To summarize, she made us understand that a majority of developers have this syn
 
 _By Elad Schechter_
 
-![Coronavirus Invaders]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/coronavirus-invaders.jpeg)
+![Coronavirus Invaders]({BASE_URL}/imgs/articles/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/coronavirus-invaders.jpeg)
 
 When the lockdown started, Elad prepared his apartment to make it feel cosy and a place where he feels good. During a week-end, he decided to code a pure CSS game related to the global health situation: Coronavirus Invaders. The game and its source code are [available on CodePen](https://codepen.io/elad2412/pen/wvabjXy).
 
@@ -159,7 +159,7 @@ This is Thibaud’s proposal to set up chaos engineering in the front-end. He pu
 
 ## What I remember from my first conference
 
-![Waouh]({{ site.baseurl }}/assets/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waouh.jpeg)
+![Waouh]({BASE_URL}/imgs/articles/2021-12-08-mon-retour-sur-le-devfest-nantes-ma-premiere-conference/waouh.jpeg)
 
 On one hand, I felt a fervour during these two days that made me watch everywhere with amazed eyes. Everything seemed awesome to me and everyone looked accessible & nice.
 
