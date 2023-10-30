@@ -10,11 +10,12 @@ import { ARTICLES_DIR, ASSETS_DIR, AUTHORS_DIR, TUTORIALS_DIR } from '@/app-path
 import {
   ArticleDataSchemaValidation,
   AuthorDataValidationSchema,
+  PostDataSchemaValidation,
   TutorialDataSchemaValidation,
   TutorialStepDataValidationSchema,
 } from '@/config/schemaValidation';
 import { capitalize } from '@/helpers/stringHelper';
-import { ArticleData, AuthorData, TutorialData, TutorialStepData } from '@/types';
+import { ArticleData, AuthorData, CommonPostData, TutorialData, TutorialStepData } from '@/types';
 
 export class MarkdownInvalidError extends Error {
   markdownFilePathRelative: string;
@@ -34,7 +35,7 @@ export class MarkdownInvalidError extends Error {
   }
 }
 
-const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options: {
+export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options: {
   markdownFilePath: string;
   validationSchema: ZodSchema;
 }): TData & { content: string } => {
@@ -114,7 +115,7 @@ export const validateMarkdownContent = (options: { markdownFilePath: string; con
   return options.content;
 };
 
-const validateContentType = <TData>(options: {
+export const validateContentType = <TData>(options: {
   markdownFilePath: string;
   validationSchema: SomeZodObject;
   authors?: [string, ...string[]];
@@ -142,6 +143,52 @@ const validateContentType = <TData>(options: {
   };
 };
 
+export const validateAuthor = (options: {
+  markdownFilePath: string;
+}): ReturnType<typeof validateContentType<AuthorData>> =>
+  validateContentType<AuthorData>({
+    markdownFilePath: options.markdownFilePath,
+    validationSchema: AuthorDataValidationSchema,
+  });
+
+export const validatePost = (options: {
+  markdownFilePath: string;
+  authors: string[];
+}): ReturnType<typeof validateContentType<CommonPostData>> =>
+  validateContentType<CommonPostData>({
+    markdownFilePath: options.markdownFilePath,
+    validationSchema: PostDataSchemaValidation,
+    authors: options.authors as [string, ...string[]],
+  });
+
+export const validateArticle = (options: {
+  markdownFilePath: string;
+  authors: string[];
+}): ReturnType<typeof validateContentType<ArticleData>> =>
+  validateContentType<ArticleData>({
+    markdownFilePath: options.markdownFilePath,
+    validationSchema: ArticleDataSchemaValidation,
+    authors: options.authors as [string, ...string[]],
+  });
+
+export const validateTutorial = (options: {
+  markdownFilePath: string;
+  authors: string[];
+}): ReturnType<typeof validateContentType<TutorialData>> =>
+  validateContentType<TutorialData>({
+    markdownFilePath: options.markdownFilePath,
+    validationSchema: TutorialDataSchemaValidation,
+    authors: options.authors as [string, ...string[]],
+  });
+
+export const validateTutorialStep = (options: {
+  markdownFilePath: string;
+}): ReturnType<typeof validateContentType<TutorialStepData>> =>
+  validateContentType<TutorialStepData>({
+    markdownFilePath: options.markdownFilePath,
+    validationSchema: TutorialStepDataValidationSchema,
+  });
+
 export const validateMarkdown = (): boolean => {
   const authorMarkdownFilePaths = globSync(`${AUTHORS_DIR}/**/*.md`);
   const articleMarkdownFilePaths = globSync(`${ARTICLES_DIR}/**/*.md`);
@@ -150,7 +197,7 @@ export const validateMarkdown = (): boolean => {
   const authors: string[] = [];
 
   for (const markdownFilePath of authorMarkdownFilePaths) {
-    const author = validateContentType<AuthorData>({ markdownFilePath, validationSchema: AuthorDataValidationSchema });
+    const author = validateAuthor({ markdownFilePath });
     if (authors.includes(author.username)) {
       throw new MarkdownInvalidError({
         markdownFilePath,
@@ -163,10 +210,9 @@ export const validateMarkdown = (): boolean => {
   const postIds: string[] = [];
 
   for (const markdownFilePath of articleMarkdownFilePaths) {
-    const article = validateContentType<ArticleData>({
+    const article = validateArticle({
       markdownFilePath,
-      validationSchema: ArticleDataSchemaValidation,
-      authors: authors as [string, ...string[]],
+      authors,
     });
     const articleId = `${article.lang}-${article.slug}`;
     if (postIds.includes(articleId)) {
@@ -179,16 +225,14 @@ export const validateMarkdown = (): boolean => {
   }
 
   for (const markdownFilePath of tutorialMarkdownFilePaths) {
-    const tutorial = validateContentType<TutorialData>({
+    const tutorial = validateTutorial({
       markdownFilePath,
-      validationSchema: TutorialDataSchemaValidation,
       authors: authors as [string, ...string[]],
     });
     const tutorialStepsMarkdownFilePaths = globSync(path.resolve(path.dirname(markdownFilePath), 'steps', '**.md'));
     for (const tutorialStepMarkdownFilePath of tutorialStepsMarkdownFilePaths) {
-      validateContentType<TutorialStepData>({
+      validateTutorialStep({
         markdownFilePath: tutorialStepMarkdownFilePath,
-        validationSchema: TutorialStepDataValidationSchema,
       });
     }
     const tutorialId = `${tutorial.lang}-${tutorial.slug}`;

@@ -12,7 +12,7 @@ export interface ContentTypeData {
   contentType: ContentTypeEnum;
 }
 
-interface CommonPostData extends ContentTypeData, z.infer<typeof PostDataSchemaValidation> {}
+export interface CommonPostData extends z.infer<typeof PostDataSchemaValidation> {}
 
 export interface ArticleData extends CommonPostData {
   contentType: ContentTypeEnum.ARTICLE;

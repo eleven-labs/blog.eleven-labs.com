@@ -4,7 +4,6 @@ import { vi } from 'vitest';
 import { z } from 'zod';
 
 import {
-  frontmatter,
   getDataInMarkdownFile,
   validateAuthor,
   validateMarkdown,
@@ -40,35 +39,15 @@ cover: valid-post-cover.jpg
 ---
 This is some valid content`;
 
-describe('frontmatter', () => {
-  it('should extract frontmatter data and remove it from the content', () => {
-    const content = `---
-title: Example Title
-slug: example-title
----
-This is the content`;
-
-    const expectedResult = {
-      data: {
-        title: 'Example Title',
-        slug: 'example-title',
-      },
-      content: 'This is the content',
-    };
-
-    const result = frontmatter(content);
-    expect(result).toMatchObject(expectedResult);
-  });
-});
-
 vi.mock('@/app-paths', () => ({
   ARTICLES_DIR: '_articles',
+  TUTORIALS_DIR: '_tutorials',
   AUTHORS_DIR: '_authors',
   ASSETS_DIR: '_assets',
 }));
 
 describe('getDataInMarkdownFile', () => {
-  const ValidationSchema = z.object({
+  const validationSchema = z.object({
     title: z.string(),
     slug: z.string(),
   });
@@ -84,8 +63,8 @@ This is the content`);
     const markdownFilePath = '/path/to/dir/valid-file.md';
     expect(
       getDataInMarkdownFile({
-        ValidationSchema,
         markdownFilePath,
+        validationSchema,
       })
     ).toMatchObject({
       title: 'Example Title',
@@ -134,8 +113,8 @@ const world = 'hello';
     const markdownFilePath = '/path/to/dir/invalid-file-with-markdown-contains-disallowed-syntax.md';
     expect(() =>
       getDataInMarkdownFile({
-        ValidationSchema,
         markdownFilePath,
+        validationSchema,
       })
     ).toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid ! The syntax isn't allowed, please use valid markdown syntax ! ${syntaxInvalid}`
@@ -159,8 +138,8 @@ contient | \`{% raw %}{{{% endraw %}\` \`{% raw %}}}{% endraw %}\` | \`{% raw %}
     const markdownFilePath = '/path/to/dir/valid-file-with-markdown.md';
     expect(() =>
       getDataInMarkdownFile({
-        ValidationSchema,
         markdownFilePath,
+        validationSchema,
       })
     ).not.toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid ! The syntax isn't allowed, please use valid markdown syntax ! {% raw %}`
@@ -180,11 +159,11 @@ This is the content`);
     const markdownFilePath = '/path/to/dir/invalid-file-with-validation-schema.md';
     expect(() => {
       getDataInMarkdownFile({
-        ValidationSchema: z.object({
+        markdownFilePath,
+        validationSchema: z.object({
           title: z.string(),
           date: z.coerce.date(),
         }),
-        markdownFilePath,
       });
     }).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! Invalid date at "date"`);
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
@@ -204,8 +183,8 @@ This is the content`);
     const markdownFilePath = '/path/to/dir/invalid-file-syntax.md';
     expect(() => {
       getDataInMarkdownFile({
-        ValidationSchema,
         markdownFilePath,
+        validationSchema,
       });
     }).toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid ! Can not read an implicit mapping pair; a colon is missed at line 5, column 14`
@@ -405,7 +384,7 @@ Some content`);
     ).toEqual({
       contentType: 'article',
       lang: 'en',
-      date: new Date('2022-01-01T00:00:00.000Z'),
+      date: '2022-01-01',
       slug: 'valid-post',
       title: 'Valid Post',
       excerpt: 'This is a valid post excerpt',
