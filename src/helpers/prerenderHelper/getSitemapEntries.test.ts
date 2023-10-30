@@ -9,17 +9,12 @@ describe('getSitemapEntries', () => {
         CategoryEnum: ['category-1'],
       };
     });
-    vi.mock('@/helpers/contentHelper', () => ({
-      getPostsByLangAndAuthors: (): {
-        postsByLang: Record<string, { lang: string; slug: string; categories: string[]; authors: string[] }[]>;
-        authors: { username: string; name: string }[];
-      } => ({
-        postsByLang: {
-          fr: [{ lang: 'fr', slug: 'post-1', categories: ['category-1'], authors: ['author-1'] }],
-          en: [{ lang: 'en', slug: 'post-2', categories: ['category-1'], authors: ['author-1'] }],
-        },
-        authors: [{ username: 'author-1', name: 'Author One' }],
-      }),
+    vi.mock('@/helpers/markdownContentManagerHelper', () => ({
+      getPosts: (): { lang: string; slug: string; categories: string[]; authors: string[] }[] => [
+        { lang: 'fr', slug: 'post-1', categories: ['category-1'], authors: ['author-1'] },
+        { lang: 'en', slug: 'post-2', categories: ['category-1'], authors: ['author-1'] },
+      ],
+      getAuthors: (): { username: string; name: string }[] => [{ username: 'author-1', name: 'Author One' }],
     }));
 
     // Expected result
