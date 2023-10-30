@@ -228,7 +228,7 @@ La création d'un Design System est une entreprise multidisciplinaire qui exige 
 
 - **Les UX/UI Designers** façonnent l'esthétique, l'ergonomie et l'expérience utilisateur du Design System. Leur expertise garantit que les composants et les directives répondent aux besoins produits, assurant ainsi une cohérence visuelle et fonctionnelle.
 
-- **Les Product Managers/Product Owners** jouent un rôle crucial en alignant le Design System avec les objectifs commerciaux et les besoins des utilisateurs. Leur compréhension des priorités et des fonctionnalités essentielles guide le développement de composants pertinents.
+- **Les Product Managers/Product Owners** jouent un rôle crucial en alignant le Design System avec la vision produit et les besoins des utilisateurs. Leur compréhension des priorités et des fonctionnalités essentielles guide le développement de composants pertinents.
 
 - **Les développeurs** transforment la vision du Design System en réalité. Leur rôle consiste à mettre en œuvre les composants de manière efficace et à garantir qu'ils sont techniquement réalisables.
 
