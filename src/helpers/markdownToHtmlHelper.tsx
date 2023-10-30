@@ -67,8 +67,7 @@ const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): Remin
   }
 };
 
-const cleanMarkdown = (content: string): string =>
-  content.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);
+const cleanMarkdown = (content: string): string => content.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);
 
 export const markdownToHtml = (content: string): string => {
   const reactComponent = unified()
