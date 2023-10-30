@@ -2,14 +2,14 @@ import React from 'react';
 import { Params, RouteObject } from 'react-router';
 import { Outlet } from 'react-router-dom';
 
-import { AUTHORIZED_LANGUAGES, PATHS } from '@/constants';
+import { LanguageEnum, PATHS } from '@/constants';
 import { AuthorPageContainer } from '@/containers/AuthorPageContainer';
 import { LayoutTemplateContainer } from '@/containers/LayoutTemplateContainer';
 import { NotFoundPageContainer } from '@/containers/NotFoundPageContainer';
 import { PostListPageContainer } from '@/containers/PostListPageContainer';
 import { PostPageContainer } from '@/containers/PostPageContainer';
 import { SearchPageContainer } from '@/containers/SearchPageContainer';
-import { getDataFromAuthorPage, getDataFromPostListPage, getDataFromPostPage } from '@/helpers/loaderDataHelper';
+import { loadAuthorPageData, loadPostListPageData, loadPostPageData } from '@/helpers/loaderDataHelper';
 
 export const routes: RouteObject[] = [
   {
@@ -29,7 +29,7 @@ export const routes: RouteObject[] = [
         path: PATHS.ROOT,
         element: <PostListPageContainer />,
         loader: async ({ request }) =>
-          getDataFromPostListPage({
+          loadPostListPageData({
             request,
             params: {
               lang: 'fr',
@@ -39,7 +39,7 @@ export const routes: RouteObject[] = [
       {
         path: '/:lang/',
         loader: ({ params }): Record<string, unknown> => {
-          if (params.lang && !AUTHORIZED_LANGUAGES.includes(params.lang as (typeof AUTHORIZED_LANGUAGES)[number])) {
+          if (params.lang && !Object.values(LanguageEnum).includes(params.lang as LanguageEnum)) {
             throw new Error(`The \`${params.lang}\` language doesn't exist`);
           }
           return {};
@@ -48,22 +48,22 @@ export const routes: RouteObject[] = [
           {
             path: PATHS.HOME,
             element: <PostListPageContainer />,
-            loader: getDataFromPostListPage,
+            loader: loadPostListPageData,
           },
           {
             path: PATHS.POST,
             element: <PostPageContainer />,
-            loader: getDataFromPostPage,
+            loader: loadPostPageData,
           },
           {
             path: PATHS.AUTHOR,
             element: <AuthorPageContainer />,
-            loader: getDataFromAuthorPage,
+            loader: loadAuthorPageData,
           },
           {
             path: PATHS.CATEGORY,
             element: <PostListPageContainer />,
-            loader: getDataFromPostListPage,
+            loader: loadPostListPageData,
           },
           {
             path: PATHS.SEARCH,

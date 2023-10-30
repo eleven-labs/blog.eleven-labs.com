@@ -1,14 +1,21 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
+import { ContentTypeEnum } from '@/constants';
+import { ArticlePageContainer } from '@/containers/ArticlePageContainer';
 import { NotFoundPageContainer } from '@/containers/NotFoundPageContainer';
-import { PostPage } from '@/pages/PostPage';
-
-import { usePostPageContainer } from './usePostPageContainer';
+import { TutorialPageContainer } from '@/containers/TutorialPageContainer';
+import { PostPageData } from '@/types';
 
 export const PostPageContainer: React.FC = () => {
-  const postPageProps = usePostPageContainer();
-  if (!postPageProps) {
+  const post = useLoaderData() as PostPageData;
+  if (!post) {
     return <NotFoundPageContainer />;
   }
-  return <PostPage {...postPageProps} />;
+
+  if (post.contentType === ContentTypeEnum.TUTORIAL) {
+    return <TutorialPageContainer tutorial={post} />;
+  }
+
+  return <ArticlePageContainer article={post} />;
 };

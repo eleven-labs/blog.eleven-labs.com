@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { PostPreviewList } from '@/components';
-import { type getDataFromPostListPage } from '@/helpers/contentHelper';
+import { PostListPageData } from '@/types';
 
 import { usePostPreviewListContainer } from './usePostPreviewListContainer';
 
 export interface PostPreviewListContainerProps {
-  allPosts: ReturnType<typeof getDataFromPostListPage>['posts'];
+  allPosts: PostListPageData['posts'];
   isLoading?: boolean;
 }
 

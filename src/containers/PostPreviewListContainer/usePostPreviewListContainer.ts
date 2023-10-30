@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { PostPreviewListProps } from '@/components';
 import { NUMBER_OF_ITEMS_PER_PAGE, PATHS } from '@/constants';
 import { LinkContainer } from '@/containers/LinkContainer';
-import { type getDataFromPostListPage } from '@/helpers/contentHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
+import { PostListPageData } from '@/types';
 
 export interface UsePostPreviewListContainerOptions {
-  allPosts: ReturnType<typeof getDataFromPostListPage>['posts'];
+  allPosts: PostListPageData['posts'];
   isLoading?: boolean;
 }
 
@@ -20,9 +20,7 @@ export const usePostPreviewListContainer = ({
   const { t, i18n } = useTranslation();
   const { getDateToString } = useDateToString();
 
-  const [posts, setPosts] = React.useState<ReturnType<typeof getDataFromPostListPage>['posts']>(
-    allPosts.slice(0, NUMBER_OF_ITEMS_PER_PAGE + 1)
-  );
+  const [posts, setPosts] = React.useState<PostListPageData['posts']>(allPosts.slice(0, NUMBER_OF_ITEMS_PER_PAGE + 1));
   const numberOfPosts = posts.length;
   const maxNumberOfPosts = allPosts.length;
 
@@ -63,6 +61,7 @@ export const usePostPreviewListContainer = ({
     posts: isLoading
       ? Array.from({ length: NUMBER_OF_ITEMS_PER_PAGE })
       : posts.map((post) => ({
+          contentType: post.contentType,
           slug: post.slug,
           title: post.title,
           excerpt: post.excerpt,

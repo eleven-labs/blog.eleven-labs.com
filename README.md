@@ -169,3 +169,79 @@ git checkout -b feat/add-article-slug
 ```
 
 Once your article is finished and you want it to be published and add the label `publication` to your pull request.
+
+----------
+
+Create your tutorial page
+-------------
+
+**1 - Create the markdown file**
+
+In the folder `_tutorials` pick the subfolder `fr` or `en` depending on the translation, then create folder with the name of your tutorial and prefixed with the date (`YYYY-MM-DD-slug`).
+```bash
+cd _tutorials && mkdir YYYY-MM-DD-slug
+```
+
+**2 - Add content to the file**
+
+Inside the folder named `YYYY-MM-DD-slug` you created, add a file named `index.md` Here is the template of the file.
+
+```md
+---
+contentType: tutorial
+lang: en | fr
+date: YYYY-MM-DD
+slug: Slug of the tutorial (No space dashes instead)
+title: Title of the tutorial
+excerpt: Description of the tutorial (Visible on the list pages)
+categories:
+    - javascript | php | agile | architecture
+keywords:
+- keyword (limited to 10, must not be identical to the categories, used for SEO and search)
+authors:
+    - author's username
+steps:
+  - slug of your steps (No space dashes instead)
+---
+```
+
+> If your title or excerpt contains `:`, `"` use the syntax `>` or add your content between quotes (`"`)
+> The steps should be in the order you want them displayed
+
+Then add a steps folder and add your steps there. Here is the template of the file.
+
+Always inside the folder named `YYYY-MM-DD-slug`, create another folder called `steps`. Then create one file for each step.
+
+Example:
+
+```
+YYYY-MM-DD-slug
+ ├── index.md
+ └── steps/
+        ├──introduction.md
+        ├──installation-du-serveur-graphql.md
+        └── ...
+```
+
+Here is the template of the file:
+
+```md
+---
+contentType: tutorial-step
+tutorial: slug of the tutorial (previously added in your index.md file)
+slug: Slug of the step (No space dashes instead and previously added in your index.md file)
+title: Title of the step
+---
+Content of your step in markdown
+```
+
+> The files need to keep the same name as the steps declared in `index.md`, using snake case.
+
+**3 - Add your pull request**
+
+Create your branch and add your pull request.
+```bash
+git checkout -b feat/add-tutorial-slug
+```
+
+Once your tutorial is finished and you want it to be published and add the label `publication` to your pull request.

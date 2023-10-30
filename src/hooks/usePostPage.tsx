@@ -1,23 +1,21 @@
 import mermaid from 'mermaid';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLoaderData } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
 import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { LinkContainer } from '@/containers/LinkContainer';
 import { getPathFile } from '@/helpers/assetHelper';
-import { type getDataFromPostPage } from '@/helpers/contentHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useSeoPost } from '@/hooks/useSeoPost';
 import { PostPageProps } from '@/pages/PostPage';
+import { PostPageData } from '@/types';
 
-export const usePostPageContainer = (): PostPageProps | undefined => {
+export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentType' | 'children'> => {
   const { t, i18n } = useTranslation();
   const { getDateToString } = useDateToString();
-  const post = useLoaderData() as ReturnType<typeof getDataFromPostPage>;
   useSeoPost({
     title: post.title,
     post,
@@ -45,10 +43,6 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
     };
   }, []);
 
-  if (!post) {
-    return;
-  }
-
   const authors: PostPageProps['header']['authors'] & PostPageProps['footer']['authors'] = post.authors.map(
     (author) => ({
       ...author,
@@ -68,7 +62,6 @@ export const usePostPageContainer = (): PostPageProps | undefined => {
       readingTime: post.readingTime,
       authors,
     },
-    content: post.content,
     footer: {
       title: t('pages.post.post_footer_title'),
       authors,
