@@ -58,6 +58,7 @@ index 5a8a393..280fb5d 100644
 
 
 <div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
+
 Petit bonus, cette option est aussi disponible pour unstage vos changements de manière interactive : `git reset --patch`
 </div>
 
