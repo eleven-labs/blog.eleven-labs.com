@@ -1,27 +1,27 @@
 import './Divider.scss';
 
-import { AsProps, Box, ColorSystemProps, MarginSystemProps } from '@eleven-labs/design-system';
+import { Box, polyRef, SpacingSystemProps } from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import React from 'react';
 
 export const dividerSize = ['s', 'm', 'l'] as const;
 export type DividerSizeType = (typeof dividerSize)[number];
 
-export type DividerOptions = {
+export interface DividerProps extends SpacingSystemProps {
   size?: DividerSizeType;
-};
-export type DividerProps = AsProps<'hr'> & MarginSystemProps & Pick<ColorSystemProps, 'bg'> & DividerOptions;
+  className?: string;
+}
 
-export const Divider: React.FC<DividerProps> = ({ size = 's', ...props }) => (
+export const Divider = polyRef<'hr', DividerProps>(({ as = 'hr', size = 's', className, ...props }) => (
   <Box
     {...props}
-    as="hr"
+    as={as}
     className={classNames(
       'divider',
       {
         [`divider--${size}`]: size,
       },
-      props.className
+      className
     )}
   />
-);
+));

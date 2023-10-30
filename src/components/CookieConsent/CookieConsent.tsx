@@ -1,25 +1,33 @@
 import './CookieConsent.scss';
 
-import { As, AsProps, Box, BoxProps, Button, Flex, Heading, Text } from '@eleven-labs/design-system';
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  PolymorphicPropsWithRef,
+  polyRef,
+  Text,
+} from '@eleven-labs/design-system';
 import React from 'react';
 
-export interface CookieConsentOptions {
+export interface CookieConsentProps {
   title: React.ReactNode;
   description: React.ReactNode;
-  declineButton: AsProps<'button'> & { label: React.ReactNode };
-  acceptButton: AsProps<'button'> & { label: React.ReactNode };
+  declineButton: PolymorphicPropsWithRef<'button', { label: React.ReactNode }>;
+  acceptButton: PolymorphicPropsWithRef<'button', { label: React.ReactNode }>;
 }
 
-export type CookieConsentProps<T extends As = 'div'> = CookieConsentOptions & BoxProps<T>;
-
-export const CookieConsent: React.FC<CookieConsentProps> = ({
-  title,
-  description,
-  declineButton: { label: declineButtonLabel, ...declineButtonProps },
-  acceptButton: { label: acceptButtonLabel, ...acceptButtonProps },
-}) => {
-  return (
-    <Box className="cookie-consent">
+export const CookieConsent = polyRef<'div', CookieConsentProps>(
+  ({
+    as = 'div',
+    title,
+    description,
+    declineButton: { label: declineButtonLabel, ...declineButtonProps },
+    acceptButton: { label: acceptButtonLabel, ...acceptButtonProps },
+    ...props
+  }) => (
+    <Box {...props} as={as} className="cookie-consent">
       <Heading as="p" size="s">
         {title}
       </Heading>
@@ -33,5 +41,5 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({
         <Button {...acceptButtonProps}>{acceptButtonLabel}</Button>
       </Flex>
     </Box>
-  );
-};
+  )
+);

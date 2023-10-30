@@ -2095,13 +2095,13 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@eleven-labs/design-system@^0.6.2":
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@eleven-labs/design-system/-/design-system-0.6.2.tgz#a3e48b62e82535554239db9895bd5745aef988bd"
-  integrity sha512-UpIvXHAms6MdOPsJZ/MNo38pLfd98xBQrojTrGfTgDvBv8IUJKg/bH8yFSBhnfyyOwx3PzH5th15cMR0GpkCaw==
+"@eleven-labs/design-system@http://localhost:8282/eleven-labs-design-system-0.10.1.tgz":
+  version "0.10.1"
+  resolved "http://localhost:8282/eleven-labs-design-system-0.10.1.tgz#c86beff24b5c401660cc79342e3c180561f9f4dd"
   dependencies:
     autosuggest-highlight "^3.3.4"
     classnames "^2.3.2"
+    react-polymorphed "^2.2.1"
     react-syntax-highlighter "^15.5.0"
 
 "@elevenlabs/eslint-config@^0.0.1":
@@ -10331,6 +10331,11 @@ react-is@^18.0.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+
+react-polymorphed@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-polymorphed/-/react-polymorphed-2.2.1.tgz#99199db9f6ddcc0f13086c106c91541b46ac13fb"
+  integrity sha512-e9pPCXqEyHoPmEXJxWR6e11cffBOSa8N0zCW1VFMNM47do0udjQN6lyTlX1XGogqaqrqdz5tm68GtlzwZSPL7g==
 
 react-refresh@^0.14.0:
   version "0.14.0"

@@ -1,13 +1,12 @@
-import { AsProps, Link } from '@eleven-labs/design-system';
+import { Link, polyRef } from '@eleven-labs/design-system';
 import React from 'react';
 
-export type BackLinkOptions = {
+export interface BackLinkProps {
   label: React.ReactNode;
-};
-export type BackLinkProps = AsProps<'a'> & BackLinkOptions;
+}
 
-export const BackLink: React.FC<BackLinkProps> = ({ label, ...props }) => (
+export const BackLink = polyRef<'a', BackLinkProps>(({ as = 'a', label, ...props }) => (
   <Link {...props} icon="arrow-back" size="m" data-internal-link="back">
     {label}
   </Link>
-);
+));

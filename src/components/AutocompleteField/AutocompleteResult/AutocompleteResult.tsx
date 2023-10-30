@@ -1,6 +1,6 @@
 import './AutocompleteResult.scss';
 
-import { AsProps, Box, BoxProps, forwardRef, Heading, Link, Text, TextHighlight } from '@eleven-labs/design-system';
+import { Box, BoxProps, Heading, Link, Text, TextHighlight } from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import React from 'react';
 
