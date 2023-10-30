@@ -29,6 +29,6 @@ coverage
 storybook-static
 public/data
 public/imgs/articles
-public/imgs/codelabs
+public/imgs/tutorials
 public/imgs/authors
 public/feed.xml

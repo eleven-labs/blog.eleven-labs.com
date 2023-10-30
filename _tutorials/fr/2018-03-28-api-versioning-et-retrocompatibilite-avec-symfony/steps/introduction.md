@@ -23,7 +23,7 @@ En revanche, si un client, lors de sa requête, spécifie une version (comme `1.
 
 D'un point de vue technique, notre API devra appliquer une transformation sur le modèle de sortie afin d'assurer la retrocompatibilité sur cette version. C'est vraiment la réponse de notre API qui sera versionnée.
 stepT
-![Schema API Versioning](https://storage.googleapis.com/tutos/assets/2018-03-28-api-versioning-et-retrocompatibilite-avec-symfony/schema.jpg)
+![Schema API Versioning]({BASE_URL}/imgs/tutorials/2018-03-28-api-versioning-et-retrocompatibilite-avec-symfony/schema.jpg)
 
 ## Gestion du numéro de version
 

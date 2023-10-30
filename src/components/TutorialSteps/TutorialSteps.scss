@@ -20,11 +20,12 @@
 
   &__step {
     position: relative;
+
     &:not(:last-child) {
       padding-bottom: var(--spacing-m);
     }
 
-    &:before {
+    &::before {
       content: "";
       position: absolute;
       top: 0;
@@ -36,6 +37,7 @@
     > a {
       color: var(--tutorial-steps-color);
     }
+
     &--active {
       #{$this}__text {
         font-weight: var(--font-weight-bold);

@@ -4,8 +4,10 @@
   &__content-container {
     position: relative;
   }
+
   &__steps {
     margin: 0 var(--spacing-l) var(--spacing-m);
+
     @include create-media-queries('md') {
       position: absolute !important;
       max-width: 200px;
