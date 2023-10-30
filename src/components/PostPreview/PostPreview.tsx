@@ -1,6 +1,6 @@
 import './PostPreview.scss';
 
-import { AsProps, Box, BoxProps, Heading, Link, Skeleton, Text } from '@eleven-labs/design-system';
+import { Box, BoxProps, Heading, Link, PolymorphicPropsWithRef, Skeleton, Text } from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import React from 'react';
 
@@ -12,7 +12,7 @@ export type PostPreviewOptions = {
   date?: React.ReactNode;
   readingTime?: React.ReactNode;
   authors?: { username: string; name: string }[];
-  link?: AsProps<'a'>;
+  link?: PolymorphicPropsWithRef<'a', {}>;
   hasMask?: boolean;
   isRelated?: boolean;
   isLoading?: boolean;

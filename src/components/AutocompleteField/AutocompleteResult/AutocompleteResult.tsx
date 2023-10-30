@@ -1,6 +1,15 @@
 import './AutocompleteResult.scss';
 
-import { Box, BoxProps, Heading, Link, Text, TextHighlight } from '@eleven-labs/design-system';
+import {
+  Box,
+  BoxProps,
+  Heading,
+  Link,
+  PolymorphicPropsWithRef,
+  polyRef,
+  Text,
+  TextHighlight,
+} from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import React from 'react';
 
@@ -11,34 +20,35 @@ export interface AutocompleteItem {
   description: string;
 }
 
-export type AutocompleteResultOptions = {
+export interface AutocompleteResultProps extends BoxProps {
   isOpen?: boolean;
-  items: (AsProps<'a'> & AutocompleteItem)[];
+  items: PolymorphicPropsWithRef<'a', AutocompleteItem>[];
   searchValue?: string;
-  searchLink?: AsProps<'a'> & { label: string };
+  searchLink?: PolymorphicPropsWithRef<'a', { label: React.ReactNode }>;
   searchNotFound?: {
     title: string;
     description: string;
   };
   highlightedIndex?: number;
-};
+  className?: string;
+}
 
-export type AutocompleteResultProps = BoxProps & AutocompleteResultOptions;
-
-export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
+export const AutocompleteResult = polyRef<'div', AutocompleteResultProps>(
   (
     {
+      as = 'div',
       isOpen = false,
       items,
       searchValue,
       searchLink: { label: searchLinkLabel, ...searchLinkProps } = {},
       searchNotFound,
       highlightedIndex = 0,
+      className,
       ...props
     },
     ref
   ) => (
-    <Box className={classNames('autocomplete-result', props.className)} ref={ref} hidden={!isOpen}>
+    <Box {...props} as={as} ref={ref} className={classNames('autocomplete-result', className)} hidden={!isOpen}>
       {items.length > 0 && (
         <>
           {items.map(({ title, description, ...itemProps }, index) => {
@@ -46,7 +56,7 @@ export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
             return (
               <React.Fragment key={index}>
                 <Box
-                  {...(itemProps as AsProps)}
+                  {...itemProps}
                   pt={{ xs: 'xxs' }}
                   pb={{ xs: 'xs' }}
                   px={{ xs: 'm' }}
@@ -87,5 +97,3 @@ export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
     </Box>
   )
 );
-
-AutocompleteResult.displayName = 'AutocompleteResult';

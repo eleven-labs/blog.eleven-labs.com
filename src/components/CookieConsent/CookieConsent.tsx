@@ -1,14 +1,6 @@
 import './CookieConsent.scss';
 
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  PolymorphicPropsWithRef,
-  polyRef,
-  Text,
-} from '@eleven-labs/design-system';
+import { Box, Button, Flex, Heading, PolymorphicPropsWithRef, polyRef, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
 export interface CookieConsentProps {
@@ -19,15 +11,18 @@ export interface CookieConsentProps {
 }
 
 export const CookieConsent = polyRef<'div', CookieConsentProps>(
-  ({
-    as = 'div',
-    title,
-    description,
-    declineButton: { label: declineButtonLabel, ...declineButtonProps },
-    acceptButton: { label: acceptButtonLabel, ...acceptButtonProps },
-    ...props
-  }) => (
-    <Box {...props} as={as} className="cookie-consent">
+  (
+    {
+      as = 'div',
+      title,
+      description,
+      declineButton: { label: declineButtonLabel, ...declineButtonProps },
+      acceptButton: { label: acceptButtonLabel, ...acceptButtonProps },
+      ...props
+    },
+    ref
+  ) => (
+    <Box {...props} as={as} ref={ref} className="cookie-consent">
       <Heading as="p" size="s">
         {title}
       </Heading>

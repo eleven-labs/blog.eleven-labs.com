@@ -6,5 +6,3 @@ export const SeparatorCircle: React.FC = () => (
     •
   </Text>
 );
-
-SeparatorCircle.displayName = 'SeparatorCircle';

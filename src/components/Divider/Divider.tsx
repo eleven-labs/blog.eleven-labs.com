@@ -12,10 +12,11 @@ export interface DividerProps extends SpacingSystemProps {
   className?: string;
 }
 
-export const Divider = polyRef<'hr', DividerProps>(({ as = 'hr', size = 's', className, ...props }) => (
+export const Divider = polyRef<'hr', DividerProps>(({ as = 'hr', size = 's', className, ...props }, ref) => (
   <Box
     {...props}
     as={as}
+    ref={ref}
     className={classNames(
       'divider',
       {

@@ -1,6 +1,6 @@
 import './PostFooter.scss';
 
-import { AsProps, Box, Flex, Link, Text } from '@eleven-labs/design-system';
+import { Box, Flex, Link, PolymorphicPropsWithRef, polyRef, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
 export interface PostFooterProps {
@@ -8,13 +8,13 @@ export interface PostFooterProps {
   authors: {
     name: string;
     content: string;
-    link: AsProps<'a'>;
+    link: PolymorphicPropsWithRef<'a', {}>;
     avatarImageUrl?: string;
   }[];
   emptyAvatarImageUrl: string;
 }
 
-export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, emptyAvatarImageUrl }) => (
+export const PostFooter = polyRef<'div', PostFooterProps>(({ title, authors, emptyAvatarImageUrl }) => (
   <Box className="post-footer" color="dark-grey" mt="m">
     <Text mb="xxs" size="xs" fontWeight="bold" textTransform="uppercase">
       {title}
@@ -37,4 +37,4 @@ export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, emptyAva
       ))}
     </Flex>
   </Box>
-);
+));

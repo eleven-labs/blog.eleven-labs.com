@@ -36,6 +36,7 @@ export const NewsletterBlock = polyRef<'div', NewsletterBlockProps>(
       flexDirection={{ xs: 'column', md: 'row' }}
       justifyContent="center"
       alignItems="center"
+      aa="toto"
       textAlign={{ xs: 'center', md: 'left' }}
       className={classNames('newsletter-block', className)}
     >

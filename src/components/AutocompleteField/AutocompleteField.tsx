@@ -1,29 +1,26 @@
 import './AutocompleteField.scss';
 
-import { AsProps, Box, BoxProps, forwardRef, SearchField } from '@eleven-labs/design-system';
+import { Box, BoxProps, polyRef, SearchField } from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import { useCombobox, UseComboboxProps } from 'downshift';
 import React from 'react';
 
-import {
-  AutocompleteItem,
-  AutocompleteResult,
-  AutocompleteResultOptions,
-} from './AutocompleteResult/AutocompleteResult';
+import { AutocompleteItem, AutocompleteResult, AutocompleteResultProps } from './AutocompleteResult/AutocompleteResult';
 
-export type AutocompleteFieldOptions = {
+export interface AutocompleteFieldProps
+  extends BoxProps,
+    Omit<AutocompleteResultProps, 'highlightedIndex' | 'searchLink'>,
+    Pick<UseComboboxProps<AutocompleteItem>, 'onInputValueChange' | 'onSelectedItemChange'> {
   placeholder: string;
-  searchLink: Exclude<AutocompleteResultOptions['searchLink'], undefined>;
+  searchLink: Exclude<AutocompleteResultProps['searchLink'], undefined>;
   defaultValue?: string;
   onEnter?: (value: string) => void;
-};
+}
 
-export type AutocompleteFieldProps = BoxProps &
-  AutocompleteFieldOptions &
-  Omit<AutocompleteResultOptions, 'highlightedIndex' | 'searchLink'> &
-  Pick<UseComboboxProps<AutocompleteItem>, 'onInputValueChange' | 'onSelectedItemChange'>;
+/*&
+Omit<AutocompleteResultProps, 'highlightedIndex' | 'searchLink'>;*/
 
-export const AutocompleteField = forwardRef<AutocompleteFieldProps, 'div'>(
+export const AutocompleteField = polyRef<'div', AutocompleteFieldProps>(
   (
     {
       placeholder,
@@ -66,7 +63,7 @@ export const AutocompleteField = forwardRef<AutocompleteFieldProps, 'div'>(
       <Box className={classNames('autocomplete-field', props.className)} ref={ref}>
         <SearchField
           input={getInputProps({ placeholder, onKeyDown: handleKeyDown })}
-          buttonSearch={searchLinkProps as AsProps<'button'>}
+          buttonSearch={searchLinkProps}
           buttonClose={{ onClick: onClose }}
           className="autocomplete-field__input"
         />
@@ -87,5 +84,3 @@ export const AutocompleteField = forwardRef<AutocompleteFieldProps, 'div'>(
     );
   }
 );
-
-AutocompleteField.displayName = 'AutocompleteField';

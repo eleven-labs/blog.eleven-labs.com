@@ -1,6 +1,6 @@
 import './Container.scss';
 
-import { Box, BoxProps } from '@eleven-labs/design-system';
+import { Box, BoxProps, polyRef } from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import React from 'react';
 
@@ -11,15 +11,19 @@ export interface ContainerProps extends BoxProps {
   variant?: ContainerVariantType;
 }
 
-export const Container: React.FC<ContainerProps> = ({ variant = 'common', ...props }) => (
-  <Box
-    {...props}
-    className={classNames(
-      'container',
-      {
-        [`container--${variant}`]: variant,
-      },
-      props.className
-    )}
-  />
+export const Container: React.FC<ContainerProps> = polyRef<'div', ContainerProps>(
+  ({ as = 'div', variant = 'common', ...props }, ref) => (
+    <Box
+      {...props}
+      as={as}
+      ref={ref}
+      className={classNames(
+        'container',
+        {
+          [`container--${variant}`]: variant,
+        },
+        props.className
+      )}
+    />
+  )
 );
