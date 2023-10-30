@@ -1,10 +1,18 @@
 ---
+contentType: article
 lang: fr
-date: 2023-10-25
+date: 2023-11-02
 slug: atomic-design
-title: Atomic Design
+title: "Atomic Design : Pour des interfaces modulaires et évolutives"
+excerpt: Explorez l'approche de l'Atomic Design et ses bénéfices pour vos développements d'interfaces. Les principes de modularité, flexibilité et maintenabilité sont des éléments-clés pour vous guider vers le succès.
 categories:
-    - javascript | design-system
+    - javascript
+keywords:
+    - design system
+    - atomic design
+    - modularité
+    - react
+    - frontend
 authors:
     - iregaibi
 ---
@@ -186,6 +194,17 @@ export default Articles;
 ## Pourquoi utiliser l'Atomic Design
 Cette méthodologie vient formaliser et structurer ce qui était déjà pratiqué de manière consciente ou inconsciente. L'Atomic Design propose une approche méthodique et organisée pour concevoir des interfaces utilisateur. Elle présente plusieurs aspects positifs et avantages, que nous allons détailler.
 
-- **Réutilisabilité des composants**
-En fractionnant l'interface en éléments modulaires, l'Atomic design favorise la réutilisation de ces composants. Ces éléments sont concus pour être autonome et peuvent être utilisés de maniére cohérente à travers diverses parties de l'interface utilisateur, voire dans différents projets. En fin de compte, cela simplifie le processus de développement en réduisant la duplication de code.
+- **Réutilisabilité des composants**\
+  En fractionnant l'interface en éléments modulaires, l'Atomic design favorise la réutilisation de ces composants. Ces éléments sont concus pour être autonome et peuvent être utilisés de maniére cohérente à travers diverses parties de l'interface utilisateur, voire dans différents projets. En fin de compte, cela simplifie le processus de développement en réduisant la duplication de code.
 
+
+- **Scalabilité et évolutivité**\
+  Lorsque de nouveaux besoins fonctionnels ou de design se présentent, il est simple d'ajouter de nouveaux composants ou de construire de nouvelles combinaisons, que ce soit avec les composants existants ou ceux nouvellement crée. Tout cela se fait sans avoir à reconstruire tout le systeme ou à modifié l'existant. Cela permet aussi de réduire les regressions au niveau des composants existants.
+
+
+- **Facilité de maintenance**\
+  La structuration atomique permet une meilleure maintenabilité, que ce soit en terme de code qu'en terme comportemental des composants et du design. Étant des composants totalement indépendant les uns des autres, la correction de ceux ci est simplifié et n'affecte pas le reste de l'application et de l'interface.
+
+
+- **Tests et déboggage simplifié**\
+  Les composants étant isolés, les tests unitaire et le deboggage est beaucou mieux ciblé et efficace puisque chacun des composants peut être tester séparemment. Cela facilite aussi l'identification des bugs et leur résolution.
