@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2023-06-21'
+date: 2023-10-30
 slug: >-
   un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers
 title: >-
@@ -94,17 +94,25 @@ Lorsqu'il s'agit de gérer efficacement les Design Tokens, il existe une panopli
 
 ### Tokens Studio
 
+![Tokens Studio]({{ site.baseurl }}/assets/2023-06-28-un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/token-studio.jpg)
+
 Un outil puissant spécialement conçu pour les designers. Il vous permet de créer et de gérer facilement des Design Tokens visuels dans des outils de conception tels que Figma.
 
 ### Specify
+
+![Specify]({{ site.baseurl }}/assets/2023-06-28-un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/specify.jpg)
 
 Une solution conviviale qui offre une interface intuitive pour créer et gérer des tokens de manière centralisée. Il favorise la collaboration entre les équipes de conception et de développement.
 
 ### Supernova
 
+![Supernova]({{ site.baseurl }}/assets/2023-06-28-un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/supernova.webp)
+
 Un outil tout-en-un qui prend en charge la création, la gestion et l'intégration des Design Tokens dans vos flux de travail de développement. Il facilite la collaboration entre les équipes et vous permet de libérer votre créativité.
 
 ### Style Dictionary
+
+![Style Dictionary]({{ site.baseurl }}/assets/2023-06-28-un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/style-dictionary.png)
 
 Un outil populaire pour l'industrialisation des Design Tokens. Il permet de générer des fichiers de styles à partir des Design Tokens, simplifiant ainsi leur intégration dans vos projets de développement.
 
