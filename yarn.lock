@@ -2095,9 +2095,9 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@eleven-labs/design-system@http://localhost:8282/design-system-1698656368.tgz":
+"@eleven-labs/design-system@http://localhost:8282/design-system-1698687727.tgz":
   version "0.10.1"
-  resolved "http://localhost:8282/design-system-1698656368.tgz#e315b9c8e27ed719bec92e1c2739d06a6623a97a"
+  resolved "http://localhost:8282/design-system-1698687727.tgz#c3033917c469f25ff8528cb52be32ffa604ea47f"
   dependencies:
     autosuggest-highlight "^3.3.4"
     classnames "^2.3.2"

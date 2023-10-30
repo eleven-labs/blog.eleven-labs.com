@@ -1,5 +1,4 @@
 import {
-  AsProps,
   Blockquote,
   Box,
   Flex,
@@ -108,7 +107,7 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
       Fragment: React.Fragment,
       passNode: true,
       components: {
-        div: ({ node, children, ...props }): JSX.Element => {
+        div: ({ node, ref, color, children, ...props }): React.JSX.Element => {
           const reminderProps = props as { ['reminder-variant']?: ReminderVariantType; ['reminder-title']?: string };
           if (reminderProps?.['reminder-variant'] && reminderProps?.['reminder-title']) {
             return (
@@ -118,49 +117,51 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
             );
           }
 
-          return <Box {...(props as AsProps)}>{children}</Box>;
+          return <Box {...props}>{children}</Box>;
         },
-        h2: ({ children }): JSX.Element => (
+        h2: ({ children }): React.JSX.Element => (
           <Heading as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
             {children}
           </Heading>
         ),
-        h3: ({ children }): JSX.Element => (
+        h3: ({ children }): React.JSX.Element => (
           <Heading as="h3" size="m" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
             {children}
           </Heading>
         ),
-        h4: ({ children }): JSX.Element => (
+        h4: ({ children }): React.JSX.Element => (
           <Heading as="h4" size="s" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
             {children}
           </Heading>
         ),
-        p: ({ node, ...props }): JSX.Element => <Text as="p" mb="xxs" {...(props as AsProps)} />,
-        li: ({ node, ...props }): JSX.Element => <Text as="li" mb="xxs" {...(props as AsProps)} />,
-        strong: ({ children }): JSX.Element => (
+        p: ({ node, ref, color, ...props }): React.JSX.Element => <Text as="p" mb="xxs" {...props} />,
+        li: ({ node, ref, color, ...props }): React.JSX.Element => <Text as="li" mb="xxs" {...props} />,
+        strong: ({ children }): React.JSX.Element => (
           <Text as="span" fontWeight="bold">
             {children}
           </Text>
         ),
-        em: ({ children }): JSX.Element => (
+        em: ({ children }): React.JSX.Element => (
           <Text as="span" italic={true}>
             {children}
           </Text>
         ),
-        i: ({ children }): JSX.Element => (
+        i: ({ children }): React.JSX.Element => (
           <Text as="span" italic={true}>
             {children}
           </Text>
         ),
-        a: ({ node, ...props }): JSX.Element => {
+        a: ({ node, ref, color, children, ...props }): React.JSX.Element => {
           const isExternalLink = (props.href as string)?.match(/^http(s)?:\/\//);
           return (
-            <Link {...props} rel={isExternalLink ? 'nofollow noreferrer' : ''} style={{ overflowWrap: 'anywhere' }} />
+            <Link {...props} rel={isExternalLink ? 'nofollow noreferrer' : ''} style={{ overflowWrap: 'anywhere' }}>
+              {children}
+            </Link>
           );
         },
-        blockquote: ({ node, ...props }): JSX.Element => <Blockquote {...props} />,
-        pre: ({ node, ...props }): JSX.Element => <Box as="pre" textSize="xs" {...(props as AsProps)} />,
-        code: ({ node, className, children, ...props }): JSX.Element => {
+        blockquote: ({ node, ref, color, ...props }): React.JSX.Element => <Blockquote {...props} />,
+        pre: ({ node, ref, color, ...props }): React.JSX.Element => <Text as="pre" size="xs" {...props} />,
+        code: ({ node, className, children, ...props }): React.JSX.Element => {
           const match = /language-(\w+)/.exec(className || '');
           if (className && className.match('mermaid')) {
             return (
@@ -172,12 +173,12 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
           return match ? (
             <SyntaxHighlighter children={String(children).replace(/\n$/, '')} language={match[1]} {...props} />
           ) : (
-            <Box as="code" px="xxs-2" bg="ultra-light-grey" color="ultra-dark-grey" textSize="xs">
+            <Text as="code" px="xxs-2" bg="ultra-light-grey" color="ultra-dark-grey" size="xs">
               {children}
-            </Box>
+            </Text>
           );
         },
-        figure: ({ node, ...props }): JSX.Element => {
+        figure: ({ node, ...props }): React.JSX.Element => {
           return React.createElement('figure', {
             ...props,
             style: {
@@ -185,7 +186,7 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
             },
           });
         },
-        img: ({ node, ...props }): JSX.Element => {
+        img: ({ node, ...props }): React.JSX.Element => {
           const urlParams = new URLSearchParams(props.src?.split('?')?.[1] ?? '');
           return React.createElement('img', {
             ...props,
@@ -199,7 +200,7 @@ export const markdownToHtml = function <TData = Record<string, unknown>>(
             },
           });
         },
-        script: ({ node, ...props }): JSX.Element | null => {
+        script: ({ node, ...props }): React.JSX.Element | null => {
           if (props.src === 'https://platform.twitter.com/widgets.js') {
             return null;
           }

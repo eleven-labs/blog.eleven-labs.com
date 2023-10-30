@@ -8,6 +8,7 @@ import {
   Heading,
   PolymorphicPropsWithRef,
   polyRef,
+  SpacingSystemProps,
   Text,
 } from '@eleven-labs/design-system';
 import classNames from 'classnames';
@@ -15,7 +16,7 @@ import React from 'react';
 
 import { getPathFile } from '@/helpers/assetHelper';
 
-export interface NewsletterBlockProps {
+export interface NewsletterBlockProps extends SpacingSystemProps {
   title: React.ReactNode;
   description: React.ReactNode;
   subscribeButton: PolymorphicPropsWithRef<'a', { label: React.ReactNode }>;

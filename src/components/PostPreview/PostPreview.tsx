@@ -53,7 +53,7 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
         {excerpt}
       </Text>
     </Skeleton>
-    <Box mt={{ xs: 'xs', md: 's' }} textSize="xs">
+    <Text as="div" mt={{ xs: 'xs', md: 's' }} size="xs">
       <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
         {date && <Text as="span">{date}</Text>}
       </Skeleton>
@@ -71,6 +71,6 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
             </Text>
           ))}
       </Skeleton>
-    </Box>
+    </Text>
   </Box>
 );

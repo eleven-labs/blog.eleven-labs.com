@@ -1,4 +1,4 @@
-import { AsProps, Box, Flex, Heading, Icon, Link } from '@eleven-labs/design-system';
+import { Box, Flex, Heading, Icon, Link, PolymorphicPropsWithRef, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
 export interface PostHeaderProps {
@@ -8,12 +8,12 @@ export interface PostHeaderProps {
   authors: {
     username: string;
     name: string;
-    link: AsProps<'a'>;
+    link: PolymorphicPropsWithRef<'a', {}>;
   }[];
 }
 
 export const PostHeader: React.FC<PostHeaderProps> = ({ title, date, readingTime, authors }) => (
-  <Box mt={{ xs: 's', md: 'xl' }} textSize="xs">
+  <Text as="div" mt={{ xs: 's', md: 'xl' }} size="xs">
     <Heading as="h1" size="xl">
       {title}
     </Heading>
@@ -48,5 +48,5 @@ export const PostHeader: React.FC<PostHeaderProps> = ({ title, date, readingTime
         ))}
       </Flex>
     </Flex>
-  </Box>
+  </Text>
 );

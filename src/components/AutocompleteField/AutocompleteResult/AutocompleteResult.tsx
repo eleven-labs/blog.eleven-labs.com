@@ -71,20 +71,21 @@ export const AutocompleteResult = polyRef<'div', AutocompleteResultProps>(
             );
           })}
           {searchLinkProps && searchLinkLabel && (
-            <Box
+            <Text
+              as="div"
               pt={{ xs: 's', md: 'm' }}
               pb={{ xs: 'm', md: 'l' }}
-              textSize="s"
+              size="s"
               fontWeight="medium"
               textAlign="center"
             >
               <Link {...searchLinkProps}>{searchLinkLabel}</Link>
-            </Box>
+            </Text>
           )}
         </>
       )}
       {items.length === 0 && searchNotFound && (
-        <Box textAlign="center" px="xl" py="m">
+        <Text as="div" textAlign="center" px="xl" py="m">
           <img src={getPathFile('/imgs/not-found.png')} alt="not-found" />
           <Heading as="p" size="m" mt="s">
             {searchNotFound.title}
@@ -92,7 +93,7 @@ export const AutocompleteResult = polyRef<'div', AutocompleteResultProps>(
           <Text size="xs" mt="xxs">
             {searchNotFound.description}
           </Text>
-        </Box>
+        </Text>
       )}
     </Box>
   )
