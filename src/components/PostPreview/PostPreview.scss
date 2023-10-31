@@ -48,12 +48,14 @@ $border-radius: 4px;
 
   &--related {
     @include post-preview-card;
+
     padding: var(--spacing-s);
     background-color: var(--color-white);
   }
 
   &--highlighted {
     @include post-preview-card;
+
     display: flex;
     flex-direction: column;
     position: relative;
