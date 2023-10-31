@@ -6,7 +6,6 @@ slug: gitlab-ci-js
 title: GitLab-ci avec une application JS
 excerpt: >-
   Ce tutoriel a pour objectif de vous montrer comment mettre en place un CI/CD avec GitLab-ci pour une application Vue.js
-cover: 
 categories:
   - javascript
 authors:
