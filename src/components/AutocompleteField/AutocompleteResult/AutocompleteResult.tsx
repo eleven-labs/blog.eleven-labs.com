@@ -1,14 +1,30 @@
 import './AutocompleteResult.scss';
 
-import { AsProps, Box, BoxProps, forwardRef, Heading, Link, Text, TextHighlight } from '@eleven-labs/design-system';
+import {
+  AsProps,
+  Box,
+  BoxProps,
+  Flex,
+  forwardRef,
+  Heading,
+  Link,
+  Text,
+  TextHighlight,
+} from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import React from 'react';
 
+import { ArticleMetadata, TutoTag } from '@/components';
+import { ContentTypeEnum } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
 
 export interface AutocompleteItem {
+  contentType: ContentTypeEnum.ARTICLE | ContentTypeEnum.TUTORIAL;
   title: string;
   description: string;
+  date: React.ReactNode;
+  readingTime: number;
+  authors?: { username: string; name: string }[];
 }
 
 export type AutocompleteResultOptions = {
@@ -41,7 +57,7 @@ export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
     <Box className={classNames('autocomplete-result', props.className)} ref={ref} hidden={!isOpen}>
       {items.length > 0 && (
         <>
-          {items.map(({ title, description, ...itemProps }, index) => {
+          {items.map(({ contentType, title, description, date, readingTime, authors, ...itemProps }, index) => {
             const isHighlighted = highlightedIndex === index;
             return (
               <React.Fragment key={index}>
@@ -54,8 +70,12 @@ export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
                     'autocomplete-result__item--is-highlighted': isHighlighted,
                   })}
                 >
-                  <TextHighlight size="s" text={title} textQuery={searchValue} />
+                  <Flex alignItems="center" gap="xxs">
+                    {contentType === ContentTypeEnum.TUTORIAL && <TutoTag />}
+                    <TextHighlight size="s" text={title} textQuery={searchValue} />
+                  </Flex>
                   <TextHighlight size="xs" text={description} textQuery={searchValue} hiddenBelow="sm" />
+                  <ArticleMetadata color="black" date={date} authors={authors} displayedFields={['date', 'authors']} />
                 </Box>
               </React.Fragment>
             );

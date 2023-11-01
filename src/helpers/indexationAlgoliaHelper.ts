@@ -53,6 +53,7 @@ export const indexationAlglolia = async (options: {
   const algoliaSearchClient = getAlgoliaSearchClient({ appId: options.appId, apiKey: options.apiIndexingKey });
   const algoliaSearchIndex = getAlgoliaSearchIndex({ algoliaSearchClient, index: options.index });
 
+  await algoliaSearchIndex.clearObjects();
   const objectIDs = await savePosts({ posts, authors, algoliaSearchIndex });
   console.info(`Number of posts indexed on algolia: ${objectIDs.length}`);
 

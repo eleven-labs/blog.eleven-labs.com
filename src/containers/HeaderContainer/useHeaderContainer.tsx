@@ -9,21 +9,22 @@ import { LinkContainer } from '@/containers/LinkContainer';
 import { trackContentSearchEvent } from '@/helpers/dataLayerHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
+import { useDateToString } from '@/hooks/useDateToString';
 import { useDebounce } from '@/hooks/useDebounce';
 import { HeaderProps } from '@/templates/LayoutTemplate';
+import { AlgoliaPostData } from '@/types';
 
 export const useHeaderContainer = (): HeaderProps => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+  const { getDateToString } = useDateToString();
   const searchParams = new URLSearchParams(!IS_SSR ? location.search : '');
 
   const [autocompleteIsDisplayed, setAutocompleteIsDisplayed] = React.useState<boolean>(false);
   const [search, setSearch] = React.useState<string>(searchParams.get('search') ?? '');
   const debouncedSearch = useDebounce<string>(search, 500);
-  const [searchHits, setSearchHits] = React.useState<
-    { objectID: string; slug: string; title: string; excerpt: string }[]
-  >([]);
+  const [searchHits, setSearchHits] = React.useState<AlgoliaPostData[]>([]);
   const algoliaSearchIndex = useAlgoliaSearchIndex();
 
   const onToggleSearch = React.useCallback(() => {
@@ -49,7 +50,7 @@ export const useHeaderContainer = (): HeaderProps => {
       trackContentSearchEvent(debouncedSearch);
       setAutocompleteIsDisplayed(true);
       algoliaSearchIndex
-        .search<{ slug: string; title: string; excerpt: string }>(debouncedSearch, {
+        .search<AlgoliaPostData>(debouncedSearch, {
           hitsPerPage: NUMBER_OF_ITEMS_PER_PAGE,
           facetFilters: [`lang:${i18n.language}`],
         })
@@ -63,8 +64,15 @@ export const useHeaderContainer = (): HeaderProps => {
     () =>
       searchHits.map<AutocompleteFieldProps['items'][0]>((hit) => ({
         id: hit.objectID,
+        contentType: hit.contentType,
         title: hit.title,
         description: hit.excerpt,
+        date: getDateToString({ date: hit.date }),
+        readingTime: hit.readingTime,
+        authors: hit.authorUsernames.map((authorUsername, index) => ({
+          username: authorUsername,
+          name: hit.authorNames[index],
+        })),
         as: LinkContainer,
         hrefLang: i18n.language,
         to: generatePath(PATHS.POST, { lang: i18n.language, slug: hit.slug }),
