@@ -7,7 +7,7 @@ title: Déploiement de l'application React (recette et production) via Gitlab CI
 ## Déploiement de l'application React (recette et production) via Gitlab CI
 
 Nous allons survoler également cette étape assez rapidement.
-Pour commencer, je vous invite à lire [ceci](https://codelabs.eleven-labs.com/course/fr/gitlab-ci-js/)
+Pour commencer, je vous invite à lire [ceci]({BASE_URL}/fr/gitlab-ci-js/)
 
 
 ### Pré-requis
