@@ -226,8 +226,8 @@ deploy:production:
 
 
 Voici quelques liens pour avoir des explications sur les nouvelle définitions utilisés :
- - [environment](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/#environment)
- - [artifacts](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/#artifacts)
+ - [environment]{BASE_URL}/fr/introduction-gitlab-ci/#environment)
+ - [artifacts]({BASE_URL}/fr/introduction-gitlab-ci/#artifacts)
 
 On push nos modifications :
 
