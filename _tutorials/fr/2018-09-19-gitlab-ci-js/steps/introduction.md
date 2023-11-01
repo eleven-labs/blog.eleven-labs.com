@@ -6,7 +6,7 @@ title: Introduction
 ---
 Dans ce tutoriel nous allons voir comment mettre en place un CI/CD avec Gitlab.
 
-Si vous voulez en savoir plus sur gitlab CI/CD j'ai aussi écrit un article sur le blog Eleven Labs [CI/CD avec Gitlab-ci](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/)
+Si vous voulez en savoir plus sur gitlab CI/CD j'ai aussi écrit un article sur le blog Eleven Labs [CI/CD avec Gitlab-ci]({BASE_URL}/fr/introduction-gitlab-ci/)
 
 Vous pouvez retrouver toute la documentation sur le site officiel de gitlab :
 - [GitLab Continuous Integration (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html)
