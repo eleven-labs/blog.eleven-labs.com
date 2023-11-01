@@ -10,7 +10,7 @@ Mercure est un protocole permettant une communication client-server en temps ré
 
 Le but de ce tutoriel est de maîtriser le protocole Mercure. Pour cela, nous allons le combiner au framework Symfony pour créer un petit système de chat, en temps réel bien entendu.
 
-C'est une suite à l'article de [découverte de Mercure](https://blog.eleven-labs.com/fr/a-la-decouverte-de-mercure/), que vous retrouverez sur notre blog.
+C'est une suite à l'article de [découverte de Mercure]({BASE_URL}/fr/a-la-decouverte-de-mercure/), que vous retrouverez sur notre blog.
 
 Voici les étapes que nous allons suivre au cours de ce tutoriel :
 -   Initialisation du projet
