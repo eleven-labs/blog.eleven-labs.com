@@ -106,14 +106,14 @@ build:app:
 ```
 
 Voici quelques liens pour avoir des explications sur les définitions utilisés :
- - [stages](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/#stages)
- - [image](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/#image)
- - [anchors, ici les "templates"](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/#anchors)
- - [before_script et after_script](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/#before_script-et-after_script)
- - [script](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/#script)
- - [variables](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/#stages)
- - [cache](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/#cache)
- - [only et except](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/#only-et-except)
+ - [stages]({BASE_URL}/fr/introduction-gitlab-ci/#stages)
+ - [image]({BASE_URL}/fr/introduction-gitlab-ci/#image)
+ - [anchors, ici les "templates"]({BASE_URL}/fr/introduction-gitlab-ci/#anchors)
+ - [before_script et after_script]({BASE_URL}/fr/introduction-gitlab-ci/#before_script-et-after_script)
+ - [script]({BASE_URL}/fr/introduction-gitlab-ci/#script)
+ - [variables]({BASE_URL}/fr/introduction-gitlab-ci/#stages)
+ - [cache]({BASE_URL}/fr/introduction-gitlab-ci/#cache)
+ - [only et except]({BASE_URL}/fr/introduction-gitlab-ci/#only-et-except)
 
 On push nos modifications :
 
