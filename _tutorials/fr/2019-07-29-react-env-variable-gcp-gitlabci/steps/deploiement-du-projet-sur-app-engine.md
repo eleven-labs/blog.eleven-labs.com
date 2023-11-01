@@ -10,7 +10,7 @@ Nous allons survoler cette étape assez rapidement, car ce point n'est pas le su
 
 Nous utiliserons le service **App Engine** qui permet de déployer des applications web très facilement.
 Si vous voulez en savoir sur AppEngine rendez-vous ici : https://cloud.google.com/appengine/
-Vous devriez également lire l'article [suivant](https://blog.eleven-labs.com/fr/google-cloud-platform-appengine-pour-vos-projets/) si vous n'avez aucune connaissance sur le service App Engine.
+Vous devriez également lire l'article [suivant]({BASE_URL}/fr/google-cloud-platform-appengine-pour-vos-projets/) si vous n'avez aucune connaissance sur le service App Engine.
 
 Dans l'ordre, nous allons créer un projet sur GCP, installer le **SDK** et enfin déployer une application de recette et de production.
 
