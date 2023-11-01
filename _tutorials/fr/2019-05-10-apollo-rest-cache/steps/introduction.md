@@ -6,7 +6,7 @@ title: Introduction
 ---
 ## Qu'allons-nous faire ?
 
-[Dans un tutoriel précédent](https://codelabs.eleven-labs.com/course/fr/graphql-avec-apollo/) l'astronaute Jonathan vous a présenté comment mettre en place un serveur GraphQL avec une base de données. Ici, nous allons voir comment utiliser Apollo en passant par des APIs REST et surtout les points d'attention pour préserver les performances de votre application.
+[Dans un tutoriel précédent]({BASE_URL}/fr/graphql-avec-apollo/) l'astronaute Jonathan vous a présenté comment mettre en place un serveur GraphQL avec une base de données. Ici, nous allons voir comment utiliser Apollo en passant par des APIs REST et surtout les points d'attention pour préserver les performances de votre application.
 
 Nous allons mettre en place un serveur GraphQL et une application front via le framework [Apollo](https://www.apollographql.com).
 
