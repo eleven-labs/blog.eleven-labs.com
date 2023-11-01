@@ -6,7 +6,6 @@ slug: apollo-rest-cache
 title: GraphQL avec REST & gestion de cache
 excerpt: >-
   Dans ce tutoriel nous allons voir comment mettre en place un serveur graphql en récupérant les données via des APIs REST, et comment optimiser notre application
-cover: 
 categories:
   - javascript
 authors:
