@@ -153,7 +153,7 @@ Maintenant que nous avons des appels en GET, nous pouvons même mettre en place 
 ### Suivre les performances
 
 Pour aller encore plus loin, vous pouvez analyser chacun de vos appels réseau entre le Gateway et les APIs en passant pas les extensions.
-Je vous invite à lire [cet article sur notre blog](https://blog.eleven-labs.com/fr/commencer-avec-apollojs/#analyser-les-resolvers-graphql) pour en savoir plus.
+Je vous invite à lire [cet article sur notre blog]({BASE_URL}/fr/commencer-avec-apollojs/#analyser-les-resolvers-graphql) pour en savoir plus.
 
 ### Mot de la fin
 
