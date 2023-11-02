@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { CategoryEnum, ContentTypeEnum, LanguageEnum } from '@/constants';
+import { CATEGORIES, ContentTypeEnum, LanguageEnum } from '@/constants';
 import { intersection } from '@/helpers/objectHelper';
 
 export const PostDataSchemaValidation = z.object({
@@ -11,13 +11,13 @@ export const PostDataSchemaValidation = z.object({
   title: z.string(),
   excerpt: z.string(),
   cover: z.string().optional(),
-  categories: z.array(z.nativeEnum(CategoryEnum)),
+  categories: z.array(z.enum(CATEGORIES)),
   authors: z.array(z.string()),
   keywords: z
     .array(z.string())
     .max(10, 'Too many items 😡.')
     .superRefine((val, ctx) => {
-      if (intersection(val, Object.values(CategoryEnum)).length) {
+      if (intersection(val, CATEGORIES).length) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: 'Must not include a category.',

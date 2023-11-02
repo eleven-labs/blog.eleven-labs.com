@@ -1,4 +1,4 @@
-import { CategoryEnum, ContentTypeEnum, DEFAULT_LANGUAGE, LanguageEnum, PATHS } from '@/constants';
+import { CATEGORIES, ContentTypeEnum, DEFAULT_LANGUAGE, LanguageEnum, PATHS } from '@/constants';
 import { getAuthors, getPosts } from '@/helpers/markdownContentManagerHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { TransformedAuthorData, TransformedPostData, TransformedTutorialData } from '@/types';
@@ -11,11 +11,11 @@ type Link = {
 type SitemapEntry = {
   links: Link[];
   changefreq?: string;
-  priority?: number;
+  priority: number;
 };
 
 const createCategorySitemapEntry = (categoryName: string): SitemapEntry => ({
-  priority: 0.8,
+  priority: 0.7,
   links: Object.values(LanguageEnum).map((lang) => ({
     lang,
     url: generatePath(PATHS.CATEGORY, { lang, categoryName }),
@@ -23,7 +23,7 @@ const createCategorySitemapEntry = (categoryName: string): SitemapEntry => ({
 });
 
 const createPostSitemapEntry = (post: TransformedPostData): SitemapEntry => ({
-  priority: 0.7,
+  priority: 1,
   links: [
     {
       lang: post.lang,
@@ -33,7 +33,7 @@ const createPostSitemapEntry = (post: TransformedPostData): SitemapEntry => ({
 });
 
 const createTutorialStepSitemapEntry = (post: TransformedTutorialData, step: string): SitemapEntry => ({
-  priority: 0.6,
+  priority: 0.9,
   links: [
     {
       lang: post.lang,
@@ -57,7 +57,7 @@ export const getSitemapEntries = (): SitemapEntry[] => {
   const authors = getAuthors();
 
   const rootEntry: SitemapEntry = {
-    priority: 1,
+    priority: 0.8,
     links: [
       {
         lang: DEFAULT_LANGUAGE,
@@ -71,15 +71,21 @@ export const getSitemapEntries = (): SitemapEntry[] => {
   };
 
   const searchEntry: SitemapEntry = {
+    priority: 0,
     links: Object.values(LanguageEnum).map((lang) => ({
       lang,
       url: generatePath(PATHS.SEARCH, { lang }),
     })),
   };
 
-  const categoryEntries: SitemapEntry[] = Object.values(CategoryEnum)
-    .filter((categoryName) => posts.some((post) => post?.categories?.includes(categoryName)))
-    .map(createCategorySitemapEntry);
+  const categoryEntries: SitemapEntry[] = CATEGORIES.filter((categoryName) =>
+    posts.some((post) => post?.categories?.includes(categoryName))
+  ).map(createCategorySitemapEntry);
+
+  const hasTutorial = posts.some((post) => post.contentType === ContentTypeEnum.TUTORIAL);
+  if (hasTutorial) {
+    categoryEntries.push(createCategorySitemapEntry(ContentTypeEnum.TUTORIAL));
+  }
 
   const postEntries: SitemapEntry[] = posts.map(createPostSitemapEntry);
   const tutorialStepEntries: SitemapEntry[] = posts.reduce((sitemapEntries, post) => {
@@ -112,5 +118,5 @@ export const getSitemapEntries = (): SitemapEntry[] => {
     ...tutorialStepEntries,
     ...authorEntries,
     notFoundEntry,
-  ];
+  ].sort((a, b) => b?.priority - a?.priority);
 };

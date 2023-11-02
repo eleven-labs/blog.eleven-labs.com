@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 import { DATA_DIR } from '@/app-paths';
-import { CategoryEnum, ContentTypeEnum, LanguageEnum } from '@/constants';
+import { CATEGORIES, ContentTypeEnum, LanguageEnum } from '@/constants';
 import { getArticles, getAuthors, getTutorials } from '@/helpers/markdownContentManagerHelper';
 import { intersection } from '@/helpers/objectHelper';
 import {
@@ -83,25 +83,35 @@ export const getPostListPageData = (options: {
   posts: TransformedPostDataWithoutContent[];
   authors: TransformedAuthorData[];
   lang: string;
-}): PostListPageData => ({
-  categories: [
+}): PostListPageData => {
+  const categories: PostListPageData['categories'] = [
     'all',
-    ...Object.values(CategoryEnum).filter((currentCategoryName) =>
-      options.posts.find((post) => post.lang === options.lang && post?.categories?.includes(currentCategoryName))
+    ...CATEGORIES.filter((currentCategoryName) =>
+      options.posts.some((post) => post.lang === options.lang && post?.categories?.includes(currentCategoryName))
     ),
-  ],
-  posts: options.posts
-    .map((post) => ({
-      ...post,
-      authors: options.authors
-        .filter((author) => post.authors.includes(author.username))
-        .map((author) => ({
-          username: author.username,
-          name: author.name,
-        })),
-    }))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
-});
+  ];
+  const hasTutorial = options.posts.some(
+    (post) => post.lang === options.lang && post?.contentType === ContentTypeEnum.TUTORIAL
+  );
+  if (hasTutorial) {
+    categories.push(ContentTypeEnum.TUTORIAL);
+  }
+
+  return {
+    categories,
+    posts: options.posts
+      .map((post) => ({
+        ...post,
+        authors: options.authors
+          .filter((author) => post.authors.includes(author.username))
+          .map((author) => ({
+            username: author.username,
+            name: author.name,
+          })),
+      }))
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+  };
+};
 
 const writeJsonFileSync = <TData = Record<string, unknown> | Array<unknown>>(options: {
   filePath: string;
