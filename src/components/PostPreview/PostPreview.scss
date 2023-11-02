@@ -103,7 +103,7 @@ $border-radius: 4px;
         display: block;
         top: 50%;
         transform: translate(-50%, -50%);
-        left: -2rem;
+        left: calc(var(--spacing-xl) * -1);
         width: 47px;
         height: 108px;
         position: absolute;
