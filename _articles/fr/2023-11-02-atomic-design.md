@@ -19,10 +19,10 @@ authors:
 Dans cet article, je vais vous présenter le concept d'Atomic Design en détaillant ses avantages et en fournissant des exemples concrets de cette approche. Je vais également aborder l'application de cette méthodologie en proposant des exemples d'utilisation, telle que pratiquée dans nos projets au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application).
 
 ## Qu'est-ce que l'Atomic Design ?
-Créé par Brad Frost en 2013, L'Atomic Design est tout d'abord une approche de conception de systèmes d'interface utilisateur et de design d'interaction. Son application peut être dédiée à la création d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) ou à l'organisation de l'interface utilisateur d'un projet quel qu'il soit.
+Créé par Brad Frost en 2013, l'Atomic Design est tout d'abord une approche de conception de systèmes d'interface utilisateur et de design d'interaction. Son application peut être dédiée à la création d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) ou à l'organisation de l'interface utilisateur d'un projet quel qu'il soit.
 
 ## Hiérarchie des éléments
-L'approche de l'Atomic Design consiste à fractionner l'interface utilisateur en éléments modulaires, organisés en une hiérarchie allant des plus simples aux plus complexes : **Atomes**, **Molécules**, **Organimes**, **Templates** et **Pages**. On peut également trouver des éléments plus petits que les atomes, appelés **Design Tokens**. Cette approche, qui s'inspire de la chimie, encourage à considérer l'interface comme un assemblage de modules réutilisables, offrant la possibilité de combiner ces éléments pour former des interfaces plus étendues. Ce processus favorise l'évolutivité, la flexibilité et l'uniformité dans la création et l'évolution des interfaces utilisateurs.
+L'approche de l'Atomic Design consiste à fractionner l'interface utilisateur en éléments modulaires, organisés en une hiérarchie allant des plus simples aux plus complexes : Atomes, Molécules, Organismes, Templates et Pages. On peut également trouver des éléments plus petits que les atomes, appelés Design Tokens. Cette approche, qui s'inspire de la chimie, encourage à considérer l'interface comme un assemblage de modules réutilisables, offrant la possibilité de combiner ces éléments pour former des interfaces plus étendues. Ce processus favorise l'évolutivité, la flexibilité et l'uniformité dans la création et l'évolution des interfaces utilisateurs.
 
 ![Hiérarchie Atomic Design]({BASE_URL}/imgs/articles/2023-11-02-atomic-design/atomic-design-hierarchie.png)
 Figure: *Brad Frost - [Extending atomic design](https://bradfrost.com/blog/post/extending-atomic-design/)*
@@ -68,7 +68,7 @@ export default MySection;
 Pour approfondir le sujet, je vous invite à consulter notre article qui traite des [Design Tokens, leur utilisation et leur avantages](https://blog.eleven-labs.com/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/).
 
 #### Atomes
-Ici, nous allons classer les éléments les plus petits et indivisibles. Il s'agit généralement d'éléments HTML tels que des liens, des boutons, des champs de texte, des images, etc. On créera un composant distinct pour chacun de ces éléments atomiques. Les atomes sont par essence des composants abstraits réellement utiles quand composés et assemblés à d'autre au sein d'un composant plus complexe.
+Ici, nous allons classer les éléments les plus petits et indivisibles. Il s'agit généralement d'éléments HTML tels que des liens, des boutons, des champs de texte, des images, etc. Un composant distinct sera créé pour chacun de ces éléments atomiques. Les atomes sont, par essence, des composants abstraits, véritablement utiles lorsqu'ils sont composés et assemblés à d'autres au sein d'un composant plus complexe.
 
 Dans une approche purement axée sur l'interface utilisateur, on crée un atome distinct pour chaque spécificité. Ainsi, un bouton bleu est considéré comme un atome distinct de celui d'un bouton rouge. Cependant, dans une perspective de programmation, il est plus courant de créer un atome unique qui prend en compte des arguments pour faire évoluer ses attributs en fonction des besoins.
 
@@ -119,7 +119,7 @@ export default SearchBar;
 </div>
 
 #### Organismes
-Nous allons classer en tant qu'organisme des éléments complexes résultant de l'agrégation de plusieurs molécules, et éventuellement des atomes, formant ainsi des sections ou des fonctionnalités de l'interface.
+Nous allons classer en tant qu'organisme les éléments complexes résultant de l'agrégation de plusieurs molécules, et éventuellement des atomes, formant ainsi des sections ou des fonctionnalités de l'interface.
 Un organisme tel que `Header`, par exemple, peut typiquement contenir un atome `Logo`, une molécule `LinkList` qui génère une liste de liens, ainsi qu'une molécule `SearchBar`.
 
 ```tsx
@@ -179,7 +179,7 @@ const HomeTemplate: React.FC<HomePageProps> = ({ headerProps, sideBarProps, arti
 export default HomeTemplate;
 ```
 
-Il est également possible qu'un template soit composé d'autres templates. C'est souvent le cas pour des parties d'interface présentes dans de nombreuses pages, telles que le Header, le Footer, le Menu, entre autres, qui composent un `AppTemplate`. Dans ce cas, il est commun de retrouver à ce stade des spécifités du produit final.
+Il est également possible qu'un template soit composé d'autres templates. C'est souvent le cas pour des parties de l'interface présentes dans de nombreuses pages, telles que le Header, le Footer, le Menu, entre autres, qui composent un AppTemplate. Dans ce cas, il est commun de retrouver, à ce stade, des spécificités du produit final.
 
 ```tsx
 // Templates - AppTemplate.tsx
