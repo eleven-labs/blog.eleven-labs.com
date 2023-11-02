@@ -21,10 +21,6 @@
   &__step {
     position: relative;
 
-    &:not(:last-child) {
-      padding-bottom: var(--spacing-m);
-    }
-
     &::before {
       content: "";
       position: absolute;
@@ -32,6 +28,16 @@
       left: 16px;
       height: 100%;
       border-left: 2px solid var(--tutorial-steps-color-step);
+    }
+
+    &:not(:last-child) {
+      padding-bottom: var(--spacing-m);
+    }
+
+    &:last-child {
+     &::before {
+       height: 50%;
+     }
     }
 
     > a {
