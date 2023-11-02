@@ -146,10 +146,10 @@ Un composant du Système doit être "**pur**", sans aucune information associée
 Les éléments du Produit constituent la catégorie où l'on spécifie et alimente nos composants du Système avec des données réelles. C'est là que nous effectuons des appels réseau ou des manipulations de données pour ensuite les fournir en propriété des composants du Design System.
 
 #### Templates
-L'analogie chimique s'arrête ici. Un template est un modèle de page qui définit la mise en page globale de l'interface. Il peut intégrer tous les éléments mentionnés précédemment, cependant il est rare de retrouver des atomes à ce niveau là. Il sert de structure de base ou de squelette pour une page donnée, donc, à ce niveau, il ne contient toujours pas de contenu réel. Cette étape permet aussi de tester la résponsivité de l'ensemble des éléments que contient le template, et ce selon différents support d'affichage. Les templates apportent du contexte à tous ces organismes et molécules, qui sont relativement abstraits. Le template est au niveau des éléments du Produit, car la page est spécifique à une fonctionnalité, et cette fonctionnalité n'est plus globale et ne répond plus aux critères d'un élément du Système, qui se doit d'être générique et réutilisable.
+L'analogie chimique s'arrête ici. Un template est un modèle de page qui définit la mise en page globale de l'interface. Il peut intégrer tous les éléments mentionnés précédemment, cependant il est rare de retrouver des atomes à ce niveau là. Il sert de structure de base ou de squelette pour une page donnée, donc, à ce niveau, il ne contient toujours pas de contenu réel. Cette étape permet aussi de tester la responsivité de l'ensemble des éléments que contient le template, et ce selon différents support d'affichage. Les templates apportent du contexte à tous ces organismes et molécules, qui sont relativement abstraits. Le template est au niveau des éléments du Produit, car la page est spécifique à une fonctionnalité, et cette fonctionnalité n'est plus globale et ne répond plus aux critères d'un élément du Système, qui se doit d'être générique et réutilisable.
 
 ```tsx
-// Templates - Home.tsx
+// Templates - HomeTemplate.tsx
 import Header, { HeaderProps } from './Organisms/Header';
 import Footer, { FooterProps } from './Organisms/Footer';
 import SideBar, { SideBarProps } from './Organisms/SideBar';
@@ -164,7 +164,7 @@ export interface HomePageProps {
     articlesListProps: ArticlesListProps;
 }
 
-const Home: React.FC<HomePageProps> = ({ headerProps, sideBarProps, articlesListProps, footerProps }) => (
+const HomeTemplate: React.FC<HomePageProps> = ({ headerProps, sideBarProps, articlesListProps, footerProps }) => (
     <div>
         <Header {...headerProps} />
         <SideBar {...sideBarProps} />
@@ -174,7 +174,7 @@ const Home: React.FC<HomePageProps> = ({ headerProps, sideBarProps, articlesList
     </div>
 );
 
-export default Home;
+export default HomeTemplate;
 ```
 
 D'un point de vue programmatique, il est également possible de créer un template générique capable d'inclure d'autres templates. C'est souvent le cas pour des parties d'interface présentes dans de nombreuses pages, telles que le Header, le Footer, le Menu, entre autres, qui composent un `AppTemplate`. Dans ce cas, il est commun de retrouver à ce stade des spécifité du produit final.
@@ -186,14 +186,7 @@ import Footer from './Organisms/Footer';
 import SideBar from './Organisms/SideBar';
 import Banner from './Molecules/Banner';
 
-export interface AppTemplateProps {
-    headerProps: HeaderProps;
-    footerProps: FooterProps;
-    sideBarProps: SideBarProps;
-    bannerProps: BannerProps;
-}
-
-const AppTemplate: React.FC<AppTemplateProps> = ({ headerProps, sideBarProps, footerProps, bannerProps, children }) => {
+const AppTemplate: React.FC = ({ children }) => {
     const headerLinks = ['/home', '/blog', '/contact'];
     const sideBarElements = {
       // Objet contenant les entrée de la navigation
@@ -242,12 +235,8 @@ Nous nous trouvons au sommet de la hiérarchie atomique. Une page est en réalit
 import ArticlesTemplate from './Templates/ArticlesTemplate';
 import ArticleType from './Types/Article';
 
-export interface ArticlesProps {
-    //
-}
-
-const Articles = () => {
-    const getLastTenArticles: React.FC<ArticleProps> = (): ArticleType[] => {
+const Articles: React.FC = () => {
+    const getLastTenArticles = (): ArticleType[] => {
         // Fetch - Get last 10 articles from database;
     }
 
