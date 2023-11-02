@@ -26,7 +26,7 @@ export default {
 
 const Template: StoryFn<typeof PostPreview> = (args) => <PostPreview {...args} />;
 
-export const PostPreviewWithData = Template.bind({});
+export const Overview = Template.bind({});
 
 export const PostPreviewIsLoading = Template.bind({});
 PostPreviewIsLoading.args = {

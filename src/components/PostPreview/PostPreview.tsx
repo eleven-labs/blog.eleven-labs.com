@@ -4,7 +4,7 @@ import { AsProps, Box, BoxProps, Flex, Heading, Link, Skeleton, Text } from '@el
 import classNames from 'classnames';
 import React from 'react';
 
-import { SeparatorCircle, TutoTag } from '@/components';
+import { ArticleMetadata, TutoTag } from '@/components';
 import { ContentTypeEnum } from '@/constants';
 
 export type PostPreviewOptions = {
@@ -65,25 +65,7 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
           {excerpt}
         </Text>
       </Skeleton>
-      <Box mt={{ xs: 'xs', md: 's' }} textSize="xs">
-        <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
-          {date && <Text as="span">{date}</Text>}
-        </Skeleton>
-        <SeparatorCircle />
-        <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 50 }}>
-          {readingTime && <Text as="span">{`${readingTime}mn`}</Text>}
-        </Skeleton>
-        <SeparatorCircle />
-        <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
-          {authors &&
-            authors.map((author, authorIndex) => (
-              <Text key={author.username} as="span">
-                {author.name}
-                {authorIndex !== authors.length - 1 ? ' & ' : ''}
-              </Text>
-            ))}
-        </Skeleton>
-      </Box>
+      <ArticleMetadata mt={{ xs: 'xs', md: 's' }} date={date} readingTime={readingTime} authors={authors} />
     </Box>
   );
 };
