@@ -1,3 +1,4 @@
+import { CategoryEnum, ContentTypeEnum } from '@/constants';
 import {
   TransformedArticleData,
   TransformedAuthorData,
@@ -10,7 +11,7 @@ export interface AuthorPageData {
   posts: TransformedPostDataWithTransformedAuthors[];
 }
 export interface PostListPageData {
-  categories: string[];
+  categories: ('all' | CategoryEnum | ContentTypeEnum.TUTORIAL)[];
   posts: TransformedPostDataWithTransformedAuthors[];
 }
 
