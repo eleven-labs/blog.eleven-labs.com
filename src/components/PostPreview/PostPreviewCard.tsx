@@ -23,7 +23,6 @@ export const PostPreviewCard: React.FC<PostPreviewCardProps> = ({
     isHighlighted ? (
       <Box className={classNames({ 'post-preview--highlighted': isHighlighted })}>
         <div className="sparkle" />
-        {image && <div>{isHighlighted && <img src={image?.source} alt={image?.alt} />}</div>}
         {children}
       </Box>
     ) : (
