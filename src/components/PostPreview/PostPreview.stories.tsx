@@ -15,7 +15,7 @@ export default {
     //   source: 'https://blog.eleven-labs.com/imgs/articles/2023-01-11-react-day-berlin/mnemonic.jpg',
     //   alt: 'alt',
     // },
-    readingTime: '24mn',
+    readingTime: 24,
     authors: [{ username: 'jdoe', name: 'J. Doe' }],
     excerpt:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit vel tellus in molestie. Curabitur malesuada sodales consectetur. Aliquam convallis nec lacus in euismod. Vestibulum id eros vitae tellus sodales ultricies eget eu ipsum.',
