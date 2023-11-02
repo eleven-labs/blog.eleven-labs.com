@@ -1,6 +1,8 @@
 import { AsProps, BoxProps } from '@eleven-labs/design-system';
 import React from 'react';
 
+import { ContentTypeEnum } from '@/constants';
+
 import { PostPreviewCard } from './PostPreviewCard';
 import { PostPreviewContent } from './PostPreviewContent';
 import { PostPreviewFooter } from './PostPreviewFooter';
