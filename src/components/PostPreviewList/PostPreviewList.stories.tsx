@@ -4,7 +4,6 @@ import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import { PostPreviewList } from '@/components';
-import { ContentTypeEnum } from '@/constants';
 
 export default {
   title: 'Components/PostPreviewList',
@@ -54,36 +53,5 @@ PostPreviewListWithPagination.args = {
     maxNumberOfPosts: 156,
     loadMoreButtonLabel: 'Afficher plus',
     onLoadMore: action('onLoadMore'),
-  },
-};
-
-export const PostPreviewListWithHighlightedPost = Template.bind({});
-PostPreviewListWithHighlightedPost.args = {
-  highlightedPost: {
-    contentType: ContentTypeEnum.ARTICLE,
-    title: `Highlighted article`,
-    date: '09 fév. 2021',
-    readingTime: 24,
-    authors: [{ username: 'jdoe', name: 'J. Doe' }],
-    excerpt:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit vel tellus in molestie. Curabitur malesuada sodales consectetur. Aliquam convallis nec lacus in euismod. Vestibulum id eros vitae tellus sodales ultricies eget eu ipsum.',
-    isLoading: false,
-    isHighlighted: true,
-  },
-};
-
-export const PostPreviewListWithHighlightedLoading = Template.bind({});
-PostPreviewListWithHighlightedLoading.args = {
-  isLoading: true,
-  highlightedPost: {
-    contentType: ContentTypeEnum.ARTICLE,
-    title: `Highlighted article`,
-    date: '09 fév. 2021',
-    readingTime: 24,
-    authors: [{ username: 'jdoe', name: 'J. Doe' }],
-    excerpt:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit vel tellus in molestie. Curabitur malesuada sodales consectetur. Aliquam convallis nec lacus in euismod. Vestibulum id eros vitae tellus sodales ultricies eget eu ipsum.',
-    isLoading: true,
-    isHighlighted: true,
   },
 };

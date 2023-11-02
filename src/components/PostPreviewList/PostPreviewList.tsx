@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text } from '@eleven-labs/design-system';
+import { Button, Flex, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { Divider, PostPreview, PostPreviewProps, ProgressBar } from '@/components';
@@ -13,21 +13,10 @@ export interface PostPreviewListProps {
     onLoadMore: () => void;
   };
   isLoading?: boolean;
-  highlightedPost?: PostPreviewProps;
 }
 
-export const PostPreviewList: React.FC<PostPreviewListProps> = ({
-  posts,
-  pagination,
-  isLoading = false,
-  highlightedPost,
-}) => (
+export const PostPreviewList: React.FC<PostPreviewListProps> = ({ posts, pagination, isLoading = false }) => (
   <>
-    {highlightedPost && (
-      <Box my="m">
-        <PostPreview {...highlightedPost} />
-      </Box>
-    )}
     {posts.map((post, index) => (
       <React.Fragment key={index}>
         <PostPreview
