@@ -34,6 +34,8 @@ $border-radius: 4px;
 }
 
 .post-preview {
+  $this: &;
+
   --max-height-post-preview-mask: 44px;
 
   &--mask {
@@ -56,17 +58,7 @@ $border-radius: 4px;
   &--highlighted {
     @include post-preview-card;
 
-    display: flex;
-    flex-direction: column;
     position: relative;
-
-    article {
-      padding: var(--spacing-s);
-    }
-
-    .sparkle {
-      display: none;
-    }
 
     @include create-media-queries("md") {
       flex-direction: row;
@@ -74,7 +66,7 @@ $border-radius: 4px;
       justify-content: center;
       height: 100%;
 
-      .sparkle {
+      #{$this}__sparkle {
         display: block;
         top: 50%;
         transform: translate(-50%, -50%);
