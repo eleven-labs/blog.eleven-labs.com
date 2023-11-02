@@ -1,11 +1,11 @@
-import './PostPreview.scss';
-
-import { AsProps, Box, BoxProps, Flex, Heading, Link, Skeleton, Text } from '@eleven-labs/design-system';
-import classNames from 'classnames';
+import { AsProps, BoxProps } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { ArticleMetadata, TutoTag } from '@/components';
+import { ArticleMetadata } from '@/components';
 import { ContentTypeEnum } from '@/constants';
+
+import { PostPreviewCard } from './PostPreviewCard';
+import { PostPreviewContent } from './PostPreviewContent';
 
 export type PostPreviewOptions = {
   contentType?: ContentTypeEnum.ARTICLE | ContentTypeEnum.TUTORIAL;
@@ -15,9 +15,11 @@ export type PostPreviewOptions = {
   readingTime?: number;
   authors?: { username: string; name: string }[];
   link?: AsProps<'a'>;
+  image?: { source: string; alt: string };
   hasMask?: boolean;
   isRelated?: boolean;
   isLoading?: boolean;
+  isHighlighted?: boolean;
 };
 
 export type PostPreviewProps = PostPreviewOptions & BoxProps;
@@ -33,39 +35,18 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
   hasMask,
   isRelated,
   isLoading = false,
+  isHighlighted = false,
   ...boxProps
-}) => {
-  const titleBlock = hasMask ? (
-    (title as React.JSX.Element)
-  ) : (
-    <Link {...link} data-internal-link={isRelated ? 'relatedPost' : 'post'}>
-      {title}
-    </Link>
-  );
-  return (
-    <Box
-      as="article"
-      className={classNames('post-preview', { 'post-preview--mask': hasMask }, { 'post-preview--related': isRelated })}
-      {...boxProps}
-    >
-      <Skeleton isLoading={isLoading}>
-        <Heading as="h2" color="amaranth" size="s">
-          {contentType === ContentTypeEnum.TUTORIAL ? (
-            <Flex gap="xxs">
-              <TutoTag />
-              {titleBlock}
-            </Flex>
-          ) : (
-            titleBlock
-          )}
-        </Heading>
-      </Skeleton>
-      <Skeleton isLoading={isLoading} style={{ height: 75 }}>
-        <Text size="s" className="post-preview__excerpt">
-          {excerpt}
-        </Text>
-      </Skeleton>
-      <ArticleMetadata mt={{ xs: 'xs', md: 's' }} date={date} readingTime={readingTime} authors={authors} />
-    </Box>
-  );
-};
+}) => (
+  <PostPreviewCard isHighlighted={isHighlighted} hasMask={hasMask} isRelated={isRelated} {...boxProps}>
+    <PostPreviewContent
+      isLoading={isLoading}
+      isRelated={isRelated}
+      title={title}
+      link={link}
+      excerpt={excerpt}
+      hasMask={hasMask}
+    />
+    <ArticleMetadata mt={{ xs: 'xs', md: 's' }} date={date} readingTime={readingTime} authors={authors} />
+  </PostPreviewCard>
+);

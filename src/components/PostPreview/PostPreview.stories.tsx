@@ -25,6 +25,11 @@ export default {
 } as Meta<typeof PostPreview>;
 
 const Template: StoryFn<typeof PostPreview> = (args) => <PostPreview {...args} />;
+const TemplateWithMargin: StoryFn<typeof PostPreview> = (args) => (
+  <div style={{ margin: '0 2.5em' }}>
+    <PostPreview {...args} />
+  </div>
+);
 
 export const Overview = Template.bind({});
 
@@ -51,4 +56,9 @@ PostPreviewIsRelated.parameters = {
 };
 PostPreviewIsRelated.args = {
   isRelated: true,
+};
+
+export const PostPreviewIsHighlighted = TemplateWithMargin.bind({});
+PostPreviewIsHighlighted.args = {
+  isHighlighted: true,
 };

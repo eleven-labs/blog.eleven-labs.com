@@ -1,4 +1,6 @@
-@use '@eleven-labs/design-system/scss/abstracts' as *;
+@use "@eleven-labs/design-system/scss/abstracts" as *;
+
+$border-radius: 4px;
 
 @mixin multi-line-ellipsis($line-height: 1.2em, $line-count: 1, $bg-color: var(--color-white)) {
   overflow: hidden;
@@ -9,14 +11,14 @@
   padding-right: 1em;
 
   &::before {
-    content: '...';
+    content: "...";
     position: absolute;
     right: 0;
     bottom: 0;
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     width: 1em;
@@ -26,13 +28,18 @@
   }
 }
 
+@mixin post-preview-card {
+  box-shadow: 0 4px 4px rgb(0 0 0 / 20%);
+  border-radius: $border-radius;
+}
+
 .post-preview {
   --max-height-post-preview-mask: 44px;
 
   &--mask {
     max-height: var(--max-height-post-preview-mask);
 
-    @include create-media-queries('md') {
+    @include create-media-queries("md") {
       --max-height-post-preview-mask: 24px;
     }
 
@@ -40,10 +47,44 @@
   }
 
   &--related {
+    @include post-preview-card;
+
     padding: var(--spacing-s);
     background-color: var(--color-white);
-    border-radius: 4px;
-    box-shadow: 0 4px 4px rgb(0 0 0 / 20%);
+  }
+
+  &--highlighted {
+    @include post-preview-card;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    article {
+      padding: var(--spacing-s);
+    }
+
+    .sparkle {
+      display: none;
+    }
+
+    @include create-media-queries("md") {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      .sparkle {
+        display: block;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: calc(var(--spacing-xl) * -1);
+        width: 47px;
+        height: 108px;
+        position: absolute;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><line x1="33.1063" y1="3.06202" x2="44.1118" y2="14.4606" stroke="%23F3C93D" stroke-width="5" stroke-linecap="round"/><line x1="2.5" y1="-2.5" x2="18.3445" y2="-2.5" transform="matrix(0.694595 -0.719401 -0.719401 -0.694595 29.5713 105.469)" stroke="%23F3C93D" stroke-width="5" stroke-linecap="round"/><line x1="3" y1="50.8906" x2="41.0134" y2="50.8906" stroke="%23F3C93D" stroke-width="6" stroke-linecap="round"/></svg>');
+      }
+    }
   }
 
   &__excerpt {
