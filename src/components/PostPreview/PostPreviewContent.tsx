@@ -1,36 +1,45 @@
 import './PostPreview.scss';
 
-import { AsProps } from '@eleven-labs/design-system';
+import { Flex } from '@eleven-labs/design-system';
 import { Heading, Link, Skeleton, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
-interface PostPreviewContentProps {
-  title?: React.ReactNode;
-  excerpt?: React.ReactNode;
-  link?: AsProps<'a'>;
-  hasMask?: boolean;
-  isRelated?: boolean;
-  isLoading?: boolean;
-}
+import { PostPreviewProps, TutoTag } from '@/components';
+import { ContentTypeEnum } from '@/constants';
+
+interface PostPreviewContentProps
+  extends Pick<
+    PostPreviewProps,
+    'isLoading' | 'contentType' | 'hasMask' | 'title' | 'link' | 'isRelated' | 'excerpt'
+  > {}
 
 export const PostPreviewContent: React.FC<PostPreviewContentProps> = ({
   isLoading,
+  contentType,
   hasMask,
   title,
   link,
   isRelated,
   excerpt,
 }) => {
+  const titleBlock = hasMask ? (
+    (title as React.JSX.Element)
+  ) : (
+    <Link {...link} data-internal-link={isRelated ? 'relatedPost' : 'post'}>
+      {title}
+    </Link>
+  );
   return (
     <>
       <Skeleton isLoading={isLoading}>
-        <Heading as="h2" color="amaranth" size="s" mb={{ xs: 'xxs-3', md: 'xxs' }}>
-          {hasMask ? (
-            title
+        <Heading as="h2" color="amaranth" size="s">
+          {contentType === ContentTypeEnum.TUTORIAL ? (
+            <Flex gap="xxs">
+              <TutoTag />
+              {titleBlock}
+            </Flex>
           ) : (
-            <Link {...link} data-internal-link={isRelated ? 'relatedPost' : 'post'}>
-              {title}
-            </Link>
+            titleBlock
           )}
         </Heading>
       </Skeleton>
