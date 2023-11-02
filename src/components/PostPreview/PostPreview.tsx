@@ -36,10 +36,9 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
   isRelated,
   isLoading = false,
   isHighlighted = false,
-  image,
   ...boxProps
 }) => (
-  <PostPreviewCard isHighlighted={isHighlighted} image={image} hasMask={hasMask} isRelated={isRelated} {...boxProps}>
+  <PostPreviewCard isHighlighted={isHighlighted} hasMask={hasMask} isRelated={isRelated} {...boxProps}>
     <PostPreviewContent
       isLoading={isLoading}
       isRelated={isRelated}

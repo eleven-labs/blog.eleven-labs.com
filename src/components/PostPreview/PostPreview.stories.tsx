@@ -11,10 +11,6 @@ export default {
     contentType: ContentTypeEnum.ARTICLE,
     title: `Titre de l'article`,
     date: '09 fév. 2021',
-    // image: {
-    //   source: 'https://blog.eleven-labs.com/imgs/articles/2023-01-11-react-day-berlin/mnemonic.jpg',
-    //   alt: 'alt',
-    // },
     readingTime: 24,
     authors: [{ username: 'jdoe', name: 'J. Doe' }],
     excerpt:

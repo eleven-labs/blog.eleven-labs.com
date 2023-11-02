@@ -8,14 +8,12 @@ interface PostPreviewCardProps {
   hasMask?: boolean;
   isRelated?: boolean;
   isLoading?: boolean;
-  image?: { source: string; alt: string };
   isHighlighted?: boolean;
   children: React.ReactNode;
 }
 
 export const PostPreviewCard: React.FC<PostPreviewCardProps> = ({
   isHighlighted,
-  image,
   hasMask,
   isRelated,
   children,
