@@ -11,10 +11,10 @@ export default {
     contentType: ContentTypeEnum.ARTICLE,
     title: `Titre de l'article`,
     date: '09 fév. 2021',
-    image: {
-      source: 'https://blog.eleven-labs.com/imgs/articles/2023-01-11-react-day-berlin/mnemonic.jpg',
-      alt: 'alt',
-    },
+    // image: {
+    //   source: 'https://blog.eleven-labs.com/imgs/articles/2023-01-11-react-day-berlin/mnemonic.jpg',
+    //   alt: 'alt',
+    // },
     readingTime: '24mn',
     authors: [{ username: 'jdoe', name: 'J. Doe' }],
     excerpt:
@@ -29,6 +29,11 @@ export default {
 } as Meta<typeof PostPreview>;
 
 const Template: StoryFn<typeof PostPreview> = (args) => <PostPreview {...args} />;
+const TemplateWithMargin: StoryFn<typeof PostPreview> = (args) => (
+  <div style={{ margin: '0 2.5em' }}>
+    <PostPreview {...args} />
+  </div>
+);
 
 export const Overview = Template.bind({});
 
@@ -57,7 +62,7 @@ PostPreviewIsRelated.args = {
   isRelated: true,
 };
 
-export const PostPreviewIsHighlighted = Template.bind({});
+export const PostPreviewIsHighlighted = TemplateWithMargin.bind({});
 PostPreviewIsHighlighted.args = {
   isHighlighted: true,
 };
