@@ -31,7 +31,7 @@ Le code source du projet est d'ailleurs disponible sur mon GitHub :
 Pour les besoins de ce tutoriel il vous faudra :
 
 - Avoir des bases en Symfony
-- Avoir lu [notre article](https://blog.eleven-labs.com/) pour connaître les bases de Mercure et de son fonctionnement
+- Avoir lu [notre article]({BASE_URL}/fr/a-la-decouverte-de-mercure/) pour connaître les bases de Mercure et de son fonctionnement
 - Avoir [Docker](https://docs.docker.com/desktop/) et [docker-compose](https://docs.docker.com/compose/install/) d'installés sur votre PC
 
 Tout sera expliqué pas à pas, mais vous pouvez tout de même vous accompagner de ces documentations pendant le tutoriel si quelque chose ne vous paraît pas clair :
