@@ -3,25 +3,31 @@ import './PostPreview.scss';
 import { Box } from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import React from 'react';
-import { PropsWithChildren } from 'react';
 
-import { PostPreviewProps } from './PostPreview';
+interface PostPreviewCardProps {
+  hasMask?: boolean;
+  isRelated?: boolean;
+  isLoading?: boolean;
+  image?: { source: string; alt: string };
+  isHighlighted?: boolean;
+  children: React.ReactNode;
+}
 
-const PostPreviewCard = ({
+export const PostPreviewCard: React.FC<PostPreviewCardProps> = ({
   isHighlighted,
   image,
   hasMask,
   isRelated,
-  // boxProps,
   children,
-}: Partial<PostPreviewProps> & PropsWithChildren): React.ReactNode => {
+  ...props
+}) => {
   if (isHighlighted) {
     return (
       <Box className={classNames({ 'post-preview--highlighted': isHighlighted })}>
         {isHighlighted && (
           <>
             <div className="sparkle" />
-            <div>{isHighlighted && <img src={image?.source} alt={image?.alt} />}</div>
+            {image && <div>{isHighlighted && <img src={image?.source} alt={image?.alt} />}</div>}
           </>
         )}
         <Box
@@ -31,7 +37,7 @@ const PostPreviewCard = ({
             { 'post-preview--mask': hasMask },
             { 'post-preview--related': isRelated }
           )}
-          // {...boxProps}
+          {...props}
         >
           {children}
         </Box>
@@ -42,11 +48,9 @@ const PostPreviewCard = ({
     <Box
       as="article"
       className={classNames('post-preview', { 'post-preview--mask': hasMask }, { 'post-preview--related': isRelated })}
-      // {...boxProps}
+      {...props}
     >
       {children}
     </Box>
   );
 };
-
-export default PostPreviewCard;
