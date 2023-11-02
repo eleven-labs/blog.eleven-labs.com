@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: 2023-11-02
 slug: atomic-design
-title: "Atomic Design : Pour des interfaces modulaires et évolutives"
+title: "Atomic Design : pour des interfaces modulaires et évolutives"
 excerpt: Explorez l'approche de l'Atomic Design et ses bénéfices pour vos développements d'interfaces. Les principes de modularité, flexibilité et maintenabilité sont des éléments-clés pour vous guider vers le succès.
 categories:
     - javascript
@@ -16,13 +16,13 @@ keywords:
 authors:
     - iregaibi
 ---
-Dans cet article, je vais vous présenter le concept d'Atomic Design en détaillant ses avantages et en fournissant des exemples concrets de cette approche. Je vais également aborder l'application de cette méthodologie en proposant des exemples d'utilisation, tel que pratiqué dans nos projet au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application)
+Dans cet article, je vais vous présenter le concept d'Atomic Design en détaillant ses avantages et en fournissant des exemples concrets de cette approche. Je vais également aborder l'application de cette méthodologie en proposant des exemples d'utilisation, tel que pratiqué dans nos projet au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application).
 
-## Qu'est ce que l'Atomic Design
-Créée par Brad Frost en 2013, L'Atomic Design est tout d'abord une approche de conception de systemes d'interface utilisateur et de design d'interaction, plus communement appellés [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/).
+## Qu'est-ce que l'Atomic Design
+Créé par Brad Frost en 2013, L'Atomic Design est tout d'abord une approche de conception de systèmes d'interface utilisateur et de design d'interaction, plus communément appellés [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/).
 
 ## Hierarchie des éléments
-L'approche de l'Atomic Design consiste à fractionner l'interface utilisateur en éléments modulaires, organisés en une hiérarchie allant des plus simples aux plus complexes: **Atomes**, **Molécules**, **Organimes**, **Templates** et **Pages**. On peut également trouver des éléments plus petits que les atomes, appelés **Design Tokens**. Cette approche, qui s'inspire de la chimie, encourage à considérer l'interface comme un assemblage de modules réutilisables, offrant la possibilité de combiner ces éléments pour former des interfaces plus étendues. Ce processus favorise l'évolutivité, la flexibilité et l'uniformité dans la création et l'évolution des interfaces utilisateurs.
+L'approche de l'Atomic Design consiste à fractionner l'interface utilisateur en éléments modulaires, organisés en une hiérarchie allant des plus simples aux plus complexes : **Atomes**, **Molécules**, **Organimes**, **Templates** et **Pages**. On peut également trouver des éléments plus petits que les atomes, appelés **Design Tokens**. Cette approche, qui s'inspire de la chimie, encourage à considérer l'interface comme un assemblage de modules réutilisables, offrant la possibilité de combiner ces éléments pour former des interfaces plus étendues. Ce processus favorise l'évolutivité, la flexibilité et l'uniformité dans la création et l'évolution des interfaces utilisateurs.
 
 ![Hierarchie Atomic Design]({BASE_URL}/imgs/articles/2023-11-02-atomic-design/atomic-design-hierarchie.png)
 Figure: *Brad Frost - [Extending atomic design](https://bradfrost.com/blog/post/extending-atomic-design/)*
@@ -112,7 +112,7 @@ export default SearchBar;
 Si vous êtes confronté à la nécessité d'incorporer un élément HTML dans une molécule, cela indique qu'il est nécessaire de créer un atome distinct pour cet élément. Aucun élément HTML ne doit exister au-delà des atomes.
 </div>
 
-#### Organimes
+#### Organismes
 Nous allons classer en tant qu'organisme des éléments complexes résultant de l'agrégation de plusieurs molécules, et éventuellement des atomes, formant ainsi des sections ou des fonctionnalités de l'interface.
 Un organisme tel que `Header`, par exemple, peut typiquement contenir un atome `Logo`, une molécule `LinkList` qui génère une liste de liens, ainsi qu'une molécule `SearchBar`.
 
@@ -146,7 +146,7 @@ Un composant du Système doit être "**pur**", sans aucune information associée
 Les éléments du Produit constituent la catégorie où l'on spécifie et alimente nos composants du Système avec des données réelles. C'est là que nous effectuons des appels réseau ou des manipulations de données pour ensuite les fournir en propriété des composants du Design System.
 
 #### Templates
-L'analogie chimique s'arrête ici. Un template est un modèle de page qui définit la mise en page globale de l'interface. Il peut intégrer tous les éléments mentionnés précédemment, cependant il est rare de retrouver des atomes à ce niveau là. Il sert de structure de base ou de squelette pour une page donnée, donc, à ce niveau, il ne contient toujours pas de contenu réel. Cette étape permet aussi de tester la responsivité de l'ensemble des éléments que contient le template, et ce selon différents support d'affichage. Les templates apportent du contexte à tous ces organismes et molécules, qui sont relativement abstraits. Le template est au niveau des éléments du Produit, car la page est spécifique à une fonctionnalité, et cette fonctionnalité n'est plus globale et ne répond plus aux critères d'un élément du Système, qui se doit d'être générique et réutilisable.
+L'analogie chimique s'arrête ici. Un template est un modèle de page qui définit la mise en page globale de l'interface. Il peut intégrer tous les éléments mentionnés précédemment, cependant il est rare de retrouver des atomes à ce niveau-là. Il sert de structure de base ou de squelette pour une page donnée, donc, à ce niveau, il ne contient toujours pas de contenu réel. Cette étape permet aussi de tester la responsivité de l'ensemble des éléments que contient le template, et ce selon différents support d'affichage. Les templates apportent du contexte à tous ces organismes et molécules, qui sont relativement abstraits. Le template est au niveau des éléments du Produit, car la page est spécifique à une fonctionnalité, et cette fonctionnalité n'est plus globale et ne répond plus aux critères d'un élément du Système, qui se doit d'être générique et réutilisable.
 
 ```tsx
 // Templates - HomeTemplate.tsx
@@ -177,7 +177,7 @@ const HomeTemplate: React.FC<HomePageProps> = ({ headerProps, sideBarProps, arti
 export default HomeTemplate;
 ```
 
-D'un point de vue programmatique, il est également possible de créer un template générique capable d'inclure d'autres templates. C'est souvent le cas pour des parties d'interface présentes dans de nombreuses pages, telles que le Header, le Footer, le Menu, entre autres, qui composent un `AppTemplate`. Dans ce cas, il est commun de retrouver à ce stade des spécifité du produit final.
+D'un point de vue programmatique, il est également possible de créer un template générique capable d'inclure d'autres templates. C'est souvent le cas pour des parties d'interface présentes dans de nombreuses pages, telles que le Header, le Footer, le Menu, entre autres, qui composent un `AppTemplate`. Dans ce cas, il est commun de retrouver à ce stade des spécifités du produit final.
 
 ```tsx
 // Templates - AppTemplate.tsx
@@ -228,7 +228,7 @@ export default ArticlesTemplate;
 ```
 
 #### Pages
-Nous nous trouvons au sommet de la hiérarchie atomique. Une page est en réalité un template rempli de contenu concret ; c'est la représentation finale de l'interface pour une page spécifique. C'est à ce stade que nous pouvons évaluer et remettre en question la conception d'une page, puis éventuellement revenir sur les atomes, molécules, organismes et templates pour corriger ou améliorer des éléments.
+Nous nous trouvons au sommet de la hiérarchie atomique. Une page est en réalité un template rempli de contenu concret. C'est la représentation finale de l'interface pour une page spécifique. C'est à ce stade que nous pouvons évaluer et remettre en question la conception d'une page, puis éventuellement revenir sur les atomes, molécules, organismes et templates pour corriger ou améliorer des éléments.
 
 ```tsx
 // Pages - Articles.tsx
@@ -263,19 +263,18 @@ Figure: *Brad Frost - [Atomic Design Methodology - Chapter 2](https://atomicdesi
 Cette méthodologie vient formaliser et structurer ce qui était déjà pratiqué de manière consciente ou inconsciente. L'Atomic Design propose une approche méthodique et organisée pour concevoir des interfaces utilisateur. Elle présente plusieurs aspects positifs et avantages, que nous allons détailler.
 
 - **Réutilisabilité des composants**\
-  En fractionnant l'interface en éléments modulaires, l'Atomic design favorise la réutilisation de ces composants. Ces éléments sont concus pour être autonome et peuvent être utilisés de maniére cohérente à travers diverses parties de l'interface utilisateur, voire dans différents projets. En fin de compte, cela simplifie le processus de développement en réduisant la duplication de code.
-
+  En fractionnant l'interface en éléments modulaires, l'Atomic design favorise la réutilisation de ces composants. Ces éléments sont concus pour être autonomes et peuvent être utilisés de maniére cohérente à travers diverses parties de l'interface utilisateur, voire dans différents projets. En fin de compte, cela simplifie le processus de développement en réduisant la duplication de code.
 
 - **Scalabilité et évolutivité**\
   Lorsque de nouveaux besoins fonctionnels ou de design se présentent, il est simple d'ajouter de nouveaux composants ou de construire de nouvelles combinaisons, que ce soit avec les composants existants ou ceux nouvellement crée. Tout cela se fait sans avoir à reconstruire tout le systeme ou à modifié l'existant. Cela permet aussi de réduire les regressions au niveau des composants existants.
 
 
 - **Facilité de maintenance**\
-  La structuration atomique permet une meilleure maintenabilité, que ce soit en terme de code qu'en terme comportemental des composants et du design. Étant des composants totalement indépendant les uns des autres, la correction de ceux ci est simplifié et n'affecte pas le reste de l'application et de l'interface.
+  La structuration atomique permet une meilleure maintenabilité, que ce soit en terme de code qu'en terme comportemental des composants et du design. Étant des composants totalement indépendants les uns des autres, la correction de ceux-ci est simplifié et n'affecte pas le reste de l'application et de l'interface.
 
 
 - **Tests et déboggage simplifié**\
-  Les composants étant isolés, les tests unitaire et le deboggage est beaucou mieux ciblé et efficace puisque chacun des composants peut être tester séparemment. Cela facilite aussi l'identification des bugs et leur résolution.
+  Les composants étant isolés, les tests unitaires et le deboggage sont beaucoup mieux ciblés et efficaces, puisque chacun des composants peut être testé séparément. Cela facilite l'identification des bugs et leur résolution.
 
 
 - **Collaboration facilitée entre équipes**\
