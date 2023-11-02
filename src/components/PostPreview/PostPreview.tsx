@@ -1,11 +1,11 @@
 import { AsProps, BoxProps } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { ArticleMetadata, TutoTag } from '@/components';
+import { ArticleMetadata } from '@/components';
 import { ContentTypeEnum } from '@/constants';
 
-import PostPreviewCard from './PostPreviewCard';
-import PostPreviewContent from './PostPreviewContent';
+import { PostPreviewCard } from './PostPreviewCard';
+import { PostPreviewContent } from './PostPreviewContent';
 
 export type PostPreviewOptions = {
   contentType?: ContentTypeEnum.ARTICLE | ContentTypeEnum.TUTORIAL;
@@ -35,17 +35,11 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
   hasMask,
   isRelated,
   isLoading = false,
-  isHighlighted = true,
+  isHighlighted = false,
   image,
-  // ...boxProps ??
+  ...boxProps
 }) => (
-  <PostPreviewCard
-    isHighlighted={isHighlighted}
-    image={image}
-    hasMask={hasMask}
-    isRelated={isRelated}
-    // boxProps={boxProps} ??
-  >
+  <PostPreviewCard isHighlighted={isHighlighted} image={image} hasMask={hasMask} isRelated={isRelated} {...boxProps}>
     <PostPreviewContent
       isLoading={isLoading}
       isRelated={isRelated}

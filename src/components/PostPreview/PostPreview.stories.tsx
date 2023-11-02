@@ -56,3 +56,8 @@ PostPreviewIsRelated.parameters = {
 PostPreviewIsRelated.args = {
   isRelated: true,
 };
+
+export const PostPreviewIsHighlighted = Template.bind({});
+PostPreviewIsHighlighted.args = {
+  isHighlighted: true,
+};

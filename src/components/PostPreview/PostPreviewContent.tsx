@@ -1,18 +1,26 @@
 import './PostPreview.scss';
 
+import { AsProps } from '@eleven-labs/design-system';
 import { Heading, Link, Skeleton, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { PostPreviewOptions } from './PostPreview';
+interface PostPreviewContentProps {
+  title?: React.ReactNode;
+  excerpt?: React.ReactNode;
+  link?: AsProps<'a'>;
+  hasMask?: boolean;
+  isRelated?: boolean;
+  isLoading?: boolean;
+}
 
-const PostPreviewContent = ({
+export const PostPreviewContent: React.FC<PostPreviewContentProps> = ({
   isLoading,
   hasMask,
   title,
   link,
   isRelated,
   excerpt,
-}: Partial<PostPreviewOptions>): React.ReactNode => {
+}) => {
   return (
     <>
       <Skeleton isLoading={isLoading}>
@@ -34,5 +42,3 @@ const PostPreviewContent = ({
     </>
   );
 };
-
-export default PostPreviewContent;

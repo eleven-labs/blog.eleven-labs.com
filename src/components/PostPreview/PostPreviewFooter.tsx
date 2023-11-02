@@ -1,9 +1,16 @@
 import { Box, Skeleton, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { PostPreviewOptions, SeparatorCircle } from '@/components';
+import { SeparatorCircle } from '@/components';
 
-const PostPreviewFooter = ({ isLoading, date, readingTime, authors }: Partial<PostPreviewOptions>): React.ReactNode => {
+interface PostPreviewFooterProps {
+  isLoading?: boolean;
+  date?: React.ReactNode;
+  readingTime?: number;
+  authors?: { username: string; name: string }[];
+}
+
+export const PostPreviewFooter: React.FC<PostPreviewFooterProps> = ({ isLoading, date, readingTime, authors }) => {
   return (
     <Box mt={{ xs: 'xs', md: 's' }} textSize="xs">
       <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
@@ -26,5 +33,3 @@ const PostPreviewFooter = ({ isLoading, date, readingTime, authors }: Partial<Po
     </Box>
   );
 };
-
-export default PostPreviewFooter;
