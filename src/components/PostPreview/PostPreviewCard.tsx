@@ -21,36 +21,29 @@ export const PostPreviewCard: React.FC<PostPreviewCardProps> = ({
   children,
   ...props
 }) => {
-  if (isHighlighted) {
-    return (
+  const Container: React.FC<{ children: React.ReactNode }> = ({ children }) =>
+    isHighlighted ? (
       <Box className={classNames({ 'post-preview--highlighted': isHighlighted })}>
-        {isHighlighted && (
-          <>
-            <div className="sparkle" />
-            {image && <div>{isHighlighted && <img src={image?.source} alt={image?.alt} />}</div>}
-          </>
-        )}
-        <Box
-          as="article"
-          className={classNames(
-            'post-preview',
-            { 'post-preview--mask': hasMask },
-            { 'post-preview--related': isRelated }
-          )}
-          {...props}
-        >
-          {children}
-        </Box>
+        <div className="sparkle" />
+        {image && <div>{isHighlighted && <img src={image?.source} alt={image?.alt} />}</div>}
+        {children}
       </Box>
+    ) : (
+      <>{children}</>
     );
-  }
   return (
-    <Box
-      as="article"
-      className={classNames('post-preview', { 'post-preview--mask': hasMask }, { 'post-preview--related': isRelated })}
-      {...props}
-    >
-      {children}
-    </Box>
+    <Container>
+      <Box
+        as="article"
+        className={classNames(
+          'post-preview',
+          { 'post-preview--mask': hasMask },
+          { 'post-preview--related': isRelated }
+        )}
+        {...props}
+      >
+        {children}
+      </Box>
+    </Container>
   );
 };
