@@ -37,7 +37,7 @@ Les éléments du système sont des composants abstraits qui n'ont aucune connai
 
 <div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
 
-Chaque composant du Système, décrit ci-dessous, doit être "**pur**", sans aucune information associée au contenu réel, que ce soit dans son nom, qui doit être générique, ou dans sa capacité à gérer toutes les données reçues.
+Chaque composant du Système, décrit ci-dessous, doit être "**pur**" : sans aucune information associée au contenu réel, que ce soit dans son nom, qui doit être générique, ou dans sa capacité à gérer toutes les données reçues.
 </div>
 
 #### Design Tokens
@@ -279,11 +279,11 @@ Cette méthodologie vient formaliser et structurer ce qui était déjà pratiqu�
 
 
 - **Scalabilité et évolutivité**\
-  Lorsque de nouveaux besoins fonctionnels ou de design se présentent, il est simple d'ajouter de nouveaux composants ou de construire de nouvelles combinaisons, que ce soit avec les composants existants ou ceux nouvellement créés. Tout cela se fait sans avoir à reconstruire tout le système ou à modifié l'existant. Cela permet aussi de réduire les regressions au niveau des composants existants
+  Lorsque de nouveaux besoins fonctionnels ou de design se présentent, il est simple d'ajouter de nouveaux composants ou de construire de nouvelles combinaisons, que ce soit avec les composants existants ou ceux nouvellement créés. Tout cela se fait sans avoir à reconstruire tout le système ou à modifier l'existant. Cela permet aussi de réduire les regressions au niveau des composants existants.
 
 
 - **Facilité de maintenance**\
-  La structuration atomique permet une meilleure maintenabilité, que ce soit en terme de code qu'en terme comportemental des composants et du design. Étant des composants totalement indépendants les uns des autres, la correction de ceux-ci est simplifié et n'affecte pas le reste de l'application et de l'interface.
+  La structuration atomique permet une meilleure maintenabilité, que ce soit en terme de code qu'en terme comportemental des composants et du design. Étant des composants totalement indépendants les uns des autres, la correction de ceux-ci est simplifiée et n'affecte pas le reste de l'application et de l'interface.
 
 
 - **Tests et déboggage simplifié**\
