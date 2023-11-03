@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { Container, Divider, NewsletterBlock, NewsletterBlockProps, ShareLinks } from '@/components';
+import { CoverImage, CoverImageProps } from '@/components/CoverImage/CoverImage';
 import { ContentTypeEnum } from '@/constants';
 
 import { PostFooter, PostFooterProps } from './PostFooter';
 import { PostHeader, PostHeaderProps } from './PostHeader';
 import { RelatedPostList, RelatedPostListProps } from './RelatedPostList';
-
 export interface PostPageProps {
   contentType: ContentTypeEnum.ARTICLE | ContentTypeEnum.TUTORIAL;
   backLink: React.ReactNode;
@@ -16,6 +16,7 @@ export interface PostPageProps {
   newsletterBlock: NewsletterBlockProps;
   relatedPostList: RelatedPostListProps;
   className?: string;
+  cover?: CoverImageProps;
 }
 
 export const PostPage: React.FC<PostPageProps> = ({
@@ -27,13 +28,14 @@ export const PostPage: React.FC<PostPageProps> = ({
   relatedPostList,
   newsletterBlock,
   className,
+  cover,
 }) => {
   const currentUrl = typeof window !== 'undefined' && window.location.href;
-
   return (
     <Container variant="global" className={className}>
       <Container variant="content">
         {backLink}
+        <CoverImage cover={cover} />
         <PostHeader {...header} contentType={contentType} />
         <Divider mt="xs" bg="light-grey" />
         <ShareLinks urlToShare={currentUrl as string} />
