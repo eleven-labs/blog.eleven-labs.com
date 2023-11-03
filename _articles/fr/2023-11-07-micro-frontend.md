@@ -12,7 +12,6 @@ keywords:
 authors:
     - fpasquet
     - iregaibi
-    - cheric
 ---
 
 ## Qu'est-ce que le Micro frontend ?
@@ -28,6 +27,33 @@ Cependant, il est important de noter que dans la réalité, l'adoption du Micro 
 Dans les sections suivantes, nous explorerons les avantages de cette approche pour faciliter une migration progressive d'une application.
 
 ## Les avantages du Micro frontend dans la migration d'applications
+
+L'adoption du Micro frontend présente de nombreux avantages pour les entreprises qui envisagent une migration en douceur de leurs applications. Il est essentiel de saisir ces avantages pour évaluer la pertinence de cette approche pour votre organisation. Voici un aperçu des principaux atouts:
+
+- **Isolation des fonctionnalités :**
+
+L'un des avantages les plus marquants du Micro frontend réside dans sa capacité à isoler chaque fonctionnalité de l'application en composants autonomes. Cela signifie que vous pouvez travailler sur chaque micro frontend de manière indépendante, sans perturber le reste de l'application. Cette isolation facilite le développement, les tests, les déploiements, et les mises à jour, réduisant ainsi les risques d'effets secondaires non désirés.
+
+- **Amélioration de la productivité des équipes :**
+
+- **Gestion des technologies et des versions simplifiée :**
+
+- **Réduction des dépendances :**
+
+- **Agilité et évolutivité :**
+
+- **Déploiement individuel :**
+
+La livraison de votre micro frontend n'affectera pas l'ensemble de l'application, car les changements n'affectent qu'une partie du processus métier. Cela peut réduire la fréquence de livraison, ce qui peut être avantageux en termes de gestion des mises à jour.
+
+- **Équipes autonomes :**
+
+La notion de Feature Team prend tout son sens avec le concept de micro frontend. Des équipes entièrement indépendantes peuvent posséder une section d'un produit. Pour que cela fonctionne, vos équipes doivent être formées autour de tranches verticales de fonctionnalités métier, plutôt qu'autour de capacités techniques.
+
+- **Être indépendant de la technologie :**
+
+Chaque équipe peut être indépendante dans le choix de la technologie et du framework, sans nécessité de synchronisation avec les autres équipes. Cela permet une plus grande flexibilité et une meilleure adaptation aux besoins spécifiques de chaque composant.
+
 
 ## Stratégies de mise en œuvre du Micro frontend
 
