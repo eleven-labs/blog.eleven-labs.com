@@ -77,7 +77,7 @@ export const useHeaderContainer = (): HeaderProps => {
         hrefLang: i18n.language,
         to: generatePath(PATHS.POST, { lang: i18n.language, slug: hit.slug }),
       })),
-    [i18n.language, searchHits]
+    [i18n.language, searchHits] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   return {
