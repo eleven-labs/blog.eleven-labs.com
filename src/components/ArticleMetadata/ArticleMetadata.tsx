@@ -25,21 +25,21 @@ export const ArticleMetadata: React.FC<ArticleMetadataProps> = ({
     switch (displayedField) {
       case 'date':
         currentFields.push(
-          <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
+          <Skeleton key={displayedField} isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
             {date && <Text as="span">{date}</Text>}
           </Skeleton>
         );
         break;
       case 'readingTime':
         currentFields.push(
-          <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 50 }}>
+          <Skeleton key={displayedField} isLoading={isLoading} display="inline-block" style={{ width: 50 }}>
             {readingTime && <Text as="span">{`${readingTime}mn`}</Text>}
           </Skeleton>
         );
         break;
       case 'authors':
         currentFields.push(
-          <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
+          <Skeleton key={displayedField} isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
             {authors &&
               authors.map((author, authorIndex) => (
                 <Text key={author.username} as="span">
@@ -53,7 +53,7 @@ export const ArticleMetadata: React.FC<ArticleMetadataProps> = ({
     }
 
     if (index !== displayedFields.length - 1) {
-      currentFields.push(<SeparatorCircle />);
+      currentFields.push(<SeparatorCircle key={`separator_${displayedField}`} />);
     }
 
     return currentFields;
