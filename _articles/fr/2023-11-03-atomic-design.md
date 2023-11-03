@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: 2023-11-02
+date: 2023-11-03
 slug: atomic-design
 title: "Atomic Design : pour des interfaces modulaires et évolutives"
 excerpt: Explorez l'approche de l'Atomic Design et ses bénéfices pour vos développements d'interfaces. Les principes de modularité, flexibilité et maintenabilité sont des éléments-clés pour vous guider vers le succès.
@@ -16,7 +16,7 @@ keywords:
 authors:
     - iregaibi
 ---
-Dans cet article, je vais vous présenter le concept d'Atomic Design en détaillant ses avantages et en fournissant des exemples concrets de cette approche. Je vais également aborder l'application de cette méthodologie en proposant des exemples d'utilisation, telle que pratiquée dans nos projets au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application).
+Dans cet article, je vais vous présenter le concept d'Atomic Design en détaillant ses avantages et en fournissant des exemples concrets de cette approche. Je vais également aborder l'application de cette méthodologie en proposant des exemples d'utilisation, telle que pratiquée dans nos projets au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application), en utilisant la librairie Javascript React.
 
 ## Qu'est-ce que l'Atomic Design ?
 Créé par Brad Frost en 2013, l'Atomic Design est tout d'abord une approche de conception de systèmes d'interface utilisateur et de design d'interaction. Son application peut être dédiée à la création d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) ou à l'organisation de l'interface utilisateur d'un projet quel qu'il soit.
@@ -24,12 +24,12 @@ Créé par Brad Frost en 2013, l'Atomic Design est tout d'abord une approche de 
 ## Hiérarchie des éléments
 L'approche de l'Atomic Design consiste à fractionner l'interface utilisateur en éléments modulaires, organisés en une hiérarchie allant des plus simples aux plus complexes : Atomes, Molécules, Organismes, Templates et Pages. On peut également trouver des éléments plus petits que les atomes, appelés Design Tokens. Cette approche, qui s'inspire de la chimie, encourage à considérer l'interface comme un assemblage de modules réutilisables, offrant la possibilité de combiner ces éléments pour former des interfaces plus étendues. Ce processus favorise l'évolutivité, la flexibilité et l'uniformité dans la création et l'évolution des interfaces utilisateurs.
 
-![Hiérarchie Atomic Design]({BASE_URL}/imgs/articles/2023-11-02-atomic-design/atomic-design-hierarchie.png)
+![Hiérarchie Atomic Design]({BASE_URL}/imgs/articles/2023-11-03-atomic-design/atomic-design-hierarchie.png)
 Figure: *Brad Frost - [Extending atomic design](https://bradfrost.com/blog/post/extending-atomic-design/)*
 
 Les composants de la conception atomique peuvent être divisés en deux catégories distinctes. Les éléments les plus abstraits sont classés comme des éléments du "**Système**". Tandis que les éléments plus complexes, capables de contenir du contenu réel, sont qualifiés d'éléments du "**Produit**".
 
-![System vs Product Atomic Design]({BASE_URL}/imgs/articles/2023-11-02-atomic-design/atomic-design-system-product.png)
+![System vs Product Atomic Design]({BASE_URL}/imgs/articles/2023-11-03-atomic-design/atomic-design-system-product.png)
 Figure: *Brad Frost - [Extending atomic design](https://bradfrost.com/blog/post/extending-atomic-design/)*
 
 ### Les éléments du Système
@@ -260,7 +260,7 @@ const Articles: React.FC = () => {
 export default Articles;
 ```
 
-![Abstrait vers Concret Atomic Design]({BASE_URL}/imgs/articles/2023-11-02-atomic-design/atomic-design-abstract-concrete.png)
+![Abstrait vers Concret Atomic Design]({BASE_URL}/imgs/articles/2023-11-03-atomic-design/atomic-design-abstract-concrete.png)
 Figure: *Brad Frost - [Atomic Design Methodology - Chapter 2](https://atomicdesign.bradfrost.com/chapter-2)*
 
 <div class="admonition summary" markdown="1"><p  class="admonition-title">En résumé</p>
@@ -268,7 +268,7 @@ Figure: *Brad Frost - [Atomic Design Methodology - Chapter 2](https://atomicdesi
 La hiérarchie de l'Atomic Design repose sur la transition des petits composants abstraits vers la construction de composants plus complexes et concrets.
 </div>
 
-![Résumé Atomic Design]({BASE_URL}/imgs/articles/2023-11-02-atomic-design/atomic-design-final.png)
+![Résumé Atomic Design]({BASE_URL}/imgs/articles/2023-11-03-atomic-design/atomic-design-final.png)
 Figure: *Brad Frost - [Atomic Design Methodology - Chapter 2](https://atomicdesign.bradfrost.com/chapter-2)*
 
 ## Pourquoi utiliser l'Atomic Design
