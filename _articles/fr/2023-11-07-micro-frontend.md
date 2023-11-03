@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: 2023-11-07
 slug: micro-frontend
-title: "Micro frontend : la clé d'une migration fluide et évolutive"
+title: "Micro frontend : la solution pour une meilleure maintenabilité de vos applications front"
 excerpt: Description
 categories:
     - javascript
@@ -19,7 +19,7 @@ authors:
 
 Le concept de Micro frontend a été introduit pour la première fois en novembre 2016 dans le [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar/techniques/micro-frontends). Il s'inspire des principes des microservices et les transpose dans le domaine du développement front-end. À mesure que les applications web évoluent, elles ont tendance à devenir de plus en plus volumineuses et complexes, parfois obsolètes en raison de l'utilisation de frameworks non maintenus. Ce phénomène les qualifie souvent de "frontend monolithique."
 
-Les applications front-end monolithiques posent de nombreux défis, notamment en matière de maintenance, d'extensibilité, et d'agilité. Les mises à jour, l'ajout de nouvelles fonctionnalités et la correction des bogues deviennent de plus en plus compliqués. C'est là que le Micro frontend intervient, il repose sur le découpage de l'application en composants autonomes, les "micro frontends," responsables de fonctions spécifiques.
+Les applications front-end monolithiques posent de nombreux défis, notamment en matière de maintenance, d'extensibilité, et d'agilité. Les mises à jour, l'ajout de nouvelles fonctionnalités et la correction des bogues deviennent de plus en plus compliqués. C'est là que le Micro frontend intervient, il repose sur le découpage de l'application en composants autonomes, les "micro frontends" responsables de domaines et fonctions spécifiques.
 
 Dans la théorie, chaque micro frontend peut être développé indépendamment, testé, déployé et évolué sans perturber le reste de l'application. Cette modularité offre une grande flexibilité aux équipes de développement, qui peuvent se concentrer sur des domaines spécifiques de l'application. De plus, le Micro frontend permet d'utiliser divers langages et frameworks, offrant ainsi une compatibilité accrue.
 
@@ -35,7 +35,7 @@ L'adoption du Micro frontend présente de nombreux avantages pour les entreprise
 - **Indépandance des responsabilités fonctionnelles :**
 
 L'un des avantages les plus marquants du Micro frontend réside dans sa capacité à isoler chaque fonctionnalité de l'application en composants autonomes. Cela signifie que vous pouvez travailler sur chaque micro frontend de manière indépendante, sans perturber le reste de l'application. Cette isolation facilite le développement, les tests, les déploiements, et les mises à jour, réduisant ainsi les risques d'effets secondaires non désirés.
-& Single Responsibility SOLID
+& [principe Single Responsibility de SOLID](https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique)
 
 - **Indépendance des équipes :**
 
@@ -75,8 +75,9 @@ Finalement ces avantages permettent de garantir une meilleur agilité et évolut
 
 rappel avantages
 attention Complexité opérationnelle et organisationnelle
-au studio: on l'utilise surtout pour la migration progressive
 
-Ressources
-Cam Jackson, Martin Fowler : Micro frontends
-Michael Geers: Micro frontends extending the microservice idea to frontend development
+Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous utilisons cette approche microfrontend pour nos différents projets internes et clients à chaque fois que nous avons besoin de faire une migration progressive d'une application front.
+
+ ## Ressources utiles
+- 👍 [Cam Jackson, Martin Fowler : Micro frontends](https://martinfowler.com/articles/micro-frontends.html)
+- 👍 [Michael Geers: Micro frontends extending the microservice idea to frontend development](https://micro-frontends.org/)
