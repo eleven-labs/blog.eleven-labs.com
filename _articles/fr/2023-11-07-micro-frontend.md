@@ -15,46 +15,55 @@ authors:
     - charles-eric
 ---
 
-## Qu'est-ce que le Micro Frontend ?
+## Qu'est-ce que le "micro frontend" ?
 
-Le concept de Micro frontend a été introduit pour la première fois en novembre 2016 dans le [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar/techniques/micro-frontends). Il s'inspire des principes des microservices et les transpose dans le domaine du développement front-end. À mesure que les applications web évoluent, elles ont tendance à devenir de plus en plus volumineuses et complexes, parfois obsolètes en raison de l'utilisation de frameworks non maintenus. Ce phénomène les qualifie souvent de "frontend monolithique."
+Le concept de micro frontend a été introduit pour la première fois en novembre 2016 dans le [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar/techniques/micro-frontends). Il s'inspire des principes des microservices et les transpose dans le domaine du développement front-end. À mesure que les applications web évoluent, elles ont tendance à devenir de plus en plus volumineuses et complexes, parfois obsolètes en raison de l'utilisation de frameworks non maintenus. Ce phénomène les qualifie souvent de "frontend monolithique."
 
-Les applications front-end monolithiques posent de nombreux défis, notamment en matière de maintenance, d'extensibilité, et d'agilité. Les mises à jour, l'ajout de nouvelles fonctionnalités et la correction des bogues deviennent de plus en plus compliqués. C'est là que le Micro frontend intervient, il repose sur le découpage de l'application en composants autonomes, les "micro frontends" responsables de domaines et fonctions spécifiques.
+Les applications front-end monolithiques posent de nombreux défis, notamment en matière de maintenance, d'extensibilité, et d'agilité. Les mises à jour, l'ajout de nouvelles fonctionnalités et la correction des bogues deviennent de plus en plus compliqués. C'est là que le micro frontend intervient, il repose sur le découpage de l'application en composants autonomes, les "micro frontends" responsables de domaines et fonctions spécifiques.
 
 Dans la théorie, chaque micro frontend peut être développé indépendamment, testé, déployé et évolué sans perturber le reste de l'application. Cette modularité offre une grande flexibilité aux équipes de développement, qui peuvent se concentrer sur des domaines spécifiques de l'application. De plus, le Micro frontend permet d'utiliser divers langages et frameworks, offrant ainsi une compatibilité accrue.
 
-![Architecture Micro Frontend]({BASE_URL}/imgs/articles/2023-11-07-micro-frontend/microfrontend-concept.png)
+![Architecture micro Frontend]({BASE_URL}/imgs/articles/2023-11-07-micro-frontend/microfrontend-concept.png)
 
-Cependant, il est important de noter que dans la réalité, l'adoption du Micro frontend peut être plus complexe que prévue. La coordination entre les micro frontends, la gestion des dépendances, et la définition d'une architecture solide peuvent représenter des défis significatifs. Bien que cette approche soit puissante, son succès dépendra de la planification minutieuse et de l'expertise technique de l'équipe de développement.
+Cependant, il est important de noter que dans la réalité, l'adoption du micro frontend peut être plus complexe que prévue. La coordination entre les micro frontends, la gestion des dépendances, et la définition d'une architecture solide peuvent représenter des défis significatifs. Bien que cette approche soit puissante, son succès dépendra de la planification minutieuse et de l'expertise technique de l'équipe de développement.
 & Complexité opérationnelle et organisationnelle
 
 Dans les sections suivantes, nous explorerons les avantages de cette approche et les différents cas d'usage.
 
-## Les avantages du Micro frontend
+## Les avantages du micro frontend
 
-L'adoption du Micro frontend présente de nombreux avantages pour les entreprises. Il est essentiel de saisir ces avantages pour évaluer la pertinence de cette approche pour votre organisation. Voici un aperçu des principaux atouts :
+L'adoption du micro frontend présente de nombreux avantages pour les entreprises. Il est essentiel de saisir ces avantages pour évaluer la pertinence de cette approche pour votre organisation. Voici un aperçu des principaux atouts :
 
 - **Indépandance des responsabilités fonctionnelles :**
 
-L'un des avantages les plus marquants du Micro frontend réside dans sa capacité à isoler chaque fonctionnalité de l'application en composants autonomes. Cela signifie que vous pouvez travailler sur chaque micro frontend de manière indépendante, sans perturber le reste de l'application. Cette isolation facilite le développement, les tests, les déploiements, et les mises à jour, réduisant ainsi les risques d'effets secondaires non désirés.
-& [principe Single Responsibility de SOLID](https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique)
+L'un des avantages les plus marquants du micro frontend réside dans sa capacité à isoler les fonctionnalités de l'application frontend en blocs autonomes. Chaque micro frontend a sa propre responsabilité et suit ainsi le [principe Single Responsibility de SOLID](https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique). Cela signifie que vous pouvez travailler sur chaque micro frontend de manière indépendante, sans perturber le reste de l'application. Cette isolation facilite le développement, les tests, les déploiements, et les mises à jour, tout en réduisant aussi les risques de regressions sur les autres fonctionnalités de l'application. Ainsi, chaque micro frontend et donc l'application frontend parente sont plus simples à maintenir.
 
 - **Indépendance des équipes :**
 
-La notion de Feature Team prend tout son sens avec le concept de micro frontend. Des équipes entièrement indépendantes peuvent posséder une section d'un produit. Pour que cela fonctionne, vos équipes doivent être formées autour de tranches verticales de fonctionnalités métier, plutôt qu'autour de capacités techniques.
+La notion de "feature team" prend tout son sens grâce à ce concept de micro frontend. Des équipes entièrement indépendantes peuvent être responsables chacune d'une partie complète d'un produit.
 
-- **Indépendance vise à vis de la stack technique :**
+Ces features teams sont composées de tous les métiers nécessaires pour mener à bien le développement de cette partie du produit, du discovery produit et design jusqu'au déploiement et maintenance en production : notamment les développeurs backend et frontend travaillent ainsi ensemble dans la même équipe. Pour qu'ils puissent mener à bien leur mission sur cette partie du produit, ils doivent avoir la main sur toutes ses composantes techniques aussi bien côté backend, ce qui est permis avec des microservices par exemple, que côté frontend, ce que favorise l'architecture micro frontend.
 
-Chaque équipe peut être indépendante dans le choix de la technologie et du framework, sans nécessité de synchronisation avec les autres équipes. Cela permet une plus grande flexibilité et une meilleure adaptation aux besoins spécifiques de chaque composant.
-& Déploiement individuel
-La livraison de votre micro frontend n'affectera pas l'ensemble de l'application, car les changements n'affectent qu'une partie du processus métier. Cela peut réduire la fréquence de livraison, ce qui peut être avantageux en termes de gestion des mises à jour.
+Par opposition, sans micro frontend, et même si son périmètre de responsabilité fonctionnelle est bien défini, une feature team peut se retrouver bloquée au moment de livrer ses fonctionnalités puisque la composante front doit être implémentée dans une application front monolith qui est co-maintenue avec toutes les autres features teams. Les process de livraison sont dans ce cas  plus complexes et les risques de régressions plus élevés.
+
+- **Indépendance technique :**
+
+Chaque équipe peut être indépendante dans le choix de la technologie et du framework front. Cela permet une plus grande flexibilité et une meilleure adaptation aux besoins spécifiques de chaque composant. On pourra imaginer par exemple une application front composée d'un micro frontend en Angular, un autre en React et un autre en Vue.
+
+En réalité nous recommenderons bien-sûr que différentes équipes d'une même organisation fassent en sortes de rendre leur choix et outils techniques cohérents globalement pour garantir une meilleur maintenabilité du système dans son ensemble. Mais comme ces équipes sont indépendantes techniquement, elles ont tout de même cette liberté d'adapter leur choix technique à leur contexte.
+
+Egalement, cette indépendance permet à chaque équipe de livrer son micro frontend sans affecter l'ensemble de l'application, car les changements n'affectent qu'une partie du processus métier et qu'une partie complètement isolée techniquement. Cela permet de réduire la fréquence de livraison des correctifs et nouvelles fonctionnlités, ce qui peut être un avantage concurrentiel intéressant.
+
+Aussi, cette isolation technique laisse place à de possible optimisation de [performances front](https://eleven-labs.com/nos-publications/guide-d-optimisation-web-performance-le-cas-france-medias-monde) : chaque micro frontend découplé du reste de l'application se charge indépendamment et ainsi, les plus lents ne bloquent pas le bon fonctionnement des autres.
 
 <div class="admonition summary" markdown="1"><p  class="admonition-title">En résumé</p>
 
-Finalement ces avantages permettent de garantir une meilleur agilité et évolutivité et donc productivité des équipes.
+Finalement ces avantages favorise une meilleure évolutivité du produit et productivité des équipes.
 </div>
 
 ## Dans quels cas utiliser cette approche ?
+
+Tout d'abord, après avoir listé tous ces avantages, précisons que cette approche ne convient certainement pas à tous les contextes !
 
 - split cope by product or team
 - migration progressive
