@@ -34,11 +34,11 @@ Dans les sections suivantes, nous explorerons les avantages de cette approche et
 
 L'adoption du micro frontend présente de nombreux avantages pour les entreprises. Il est essentiel de saisir ces avantages pour évaluer la pertinence de cette approche pour votre organisation. Voici un aperçu des principaux atouts :
 
-- **Indépandance des responsabilités fonctionnelles :**
+### Indépandance des responsabilités fonctionnelles
 
 L'un des avantages les plus marquants du micro frontend réside dans sa capacité à isoler les fonctionnalités de l'application frontend en blocs autonomes. Chaque micro frontend a sa propre responsabilité et suit ainsi le [principe Single Responsibility de SOLID](https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique). Cela signifie que vous pouvez travailler sur chaque micro frontend de manière indépendante, sans perturber le reste de l'application. Cette isolation facilite le développement, les tests, les déploiements, et les mises à jour, tout en réduisant aussi les risques de regressions sur les autres fonctionnalités de l'application. Ainsi, chaque micro frontend et donc l'application frontend parente sont plus simples à maintenir.
 
-- **Indépendance des équipes :**
+ ### Indépendance des équipes
 
 La notion de "feature team" prend tout son sens grâce à ce concept de micro frontend. Des équipes entièrement indépendantes peuvent être responsables chacune d'une partie complète d'un produit.
 
@@ -46,7 +46,7 @@ Ces features teams sont composées de tous les métiers nécessaires pour mener 
 
 Par opposition, sans micro frontend, et même si son périmètre de responsabilité fonctionnelle est bien défini, une feature team peut se retrouver bloquée au moment de livrer ses fonctionnalités puisque la composante front doit être implémentée dans une application front monolith qui est co-maintenue avec toutes les autres features teams. Les process de livraison sont dans ce cas  plus complexes et les risques de régressions plus élevés.
 
-- **Indépendance technique :**
+### Indépendance technique
 
 Chaque équipe peut être indépendante dans le choix de la technologie et du framework front. Cela permet une plus grande flexibilité et une meilleure adaptation aux besoins spécifiques de chaque composant. On pourra imaginer par exemple une application front composée d'un micro frontend en Angular, un autre en React et un autre en Vue.
 
@@ -63,12 +63,45 @@ Finalement ces avantages favorise une meilleure évolutivité du produit et prod
 
 ## Dans quels cas utiliser cette approche ?
 
-Tout d'abord, après avoir listé tous ces avantages, précisons que cette approche ne convient certainement pas à tous les contextes !
+Tout d'abord, après avoir listé tous ces avantages, précisons que cette architecture ne convient certainement pas à tous les contextes !
 
-- split cope by product or team
-- migration progressive
+Nous en parlerons plus en détails dans les parties suivantes, mais force est de constater que la mise en place de micro frontends peut s'avérer complexe techniquement. Il est donc nécessaire de se poser les bonnes questions pour s'assurer que cette implémentation permettra réellement de gagner en productivité.
 
-![Utilisation du micro frontends pour une migration progressive]({BASE_URL}/imgs/articles/2023-11-07-micro-frontend/microfrontend-progressive-migration.png)
+Voici les cas d'usages qui nous semblent les plus intéressants :
+
+### Passage à l'échelle
+
+Cette architecture répond à une problématique organisationnelle de passage à l'échelle d'un produit et de l'organisation qui le développe.
+
+Par exemple, si l'application devient trop complexe techniquement ou fonctionnellement, on souhaite pouvoir la rédécouper en petits produits plus simples à maintenir avec des équipes dédiées qui en sont responsables de manière indépendante. Dans ce cas, les features teams permettent de faciliter la maintenance globale. Mais pour être indépendante sur leur périmètre, ces équipes ont besoin d'avoir les bons outils : l'approche micro frontend leur permet de maitriser intégralement leur partie du produit, même sur la partie frontend.
+
+Aussi, si l'organisation définit de forts objectifs de croissance qui impliquent d'ajouter de nombreuses fonctionnalités sur un produit existant et de les livrer et les faire évoluer rapidement, ces mêmes features teams seront plus efficaces sur un domaine bien défini, y compris sur le front.
+
+### Migration progressive d'une application legacy
+
+Plus originale que le cas d'usage que nous venons de décrire, il est intéressant de parler d'une autre utilité du concept de micro frontend, qui peut être au cœur de votre stratégie de maintenance de vos applications legacy.
+
+Quand une application n'est plus au goût du jour fonctionnellement et sur une stack technique vieillissante, on rêve tous de pouvoir la ré-implémenter en repartant de zéro, pour tout changer, mais ce n'est pas toujours possible !
+
+Si vous entreprenez une refonte complète "from scratch" de cette application legacy, cela signifie que vous recommencez une nouvelle application de zéro en parallèle de l'application legacy existante. Dans ce cas, l'application existante reste généralement inchangée pendant toute la durée de la refonte, puisqu'on ne souhaite plus investir dans son évolution. L'utilisateur se retrouve donc bloqué pendant une longue période sur une application qui présente divers soucis : bugs, fonctionnalités manquantes, mauvaise performances ou UX. Et seulement à la livraison de la nouvelle application qui remplace celle legacy, l'utilisateur peut profiter des nouvelles fonctionnalités et améliorations.
+
+A l'inverse, il est préférable que le client et utilisateur de notre application puisse continuer à utiliser les fonctionnalités existantes, qui doivent être maintenues, et idéalement qu'il puisse commencer à profiter des nouvelles fonctionnalités au fur et à mesure de leur développement, le tout dans la même application. On parlera dans ce cas de migration progressive.
+
+Le concept de micro frontend est véritable allié pour cette migration progressive. En effet, il nous permet de faire fonctionner ensemble différentes parties de l'application front qui reposent sur des structures techniques différentes : nouvelles fonctionnalités vs. legacy.
+
+Ainsi, par exemple, vous pouvez envisager ces possibilités :
+* Ajouter un nouveau composant dans son propre micro frontend, correspondant à une nouvelle fonctionnalité, et l'intégrer sur les différentes pages de votre application legacy.
+* Ajouter une nouvelle page dans propre micro frontend pour répondre à de nouveaux besoins.
+* Refondre un composant existant en le migrant dans un micro frontend pour remplacer une partie d'une page legacy existante.
+* Migrer une page existante complète pour la remplacer par une nouvelle page micro frontend.
+
+![Exemple d'utilisation du micro frontend pour une migration progressive]({BASE_URL}/imgs/articles/2023-11-07-micro-frontend/microfrontend-progressive-migration.png)
+
+En fonction du contexte, notamment du budget et des deadlines, vous pouvez choisir parmis ces différentes possibilités ainsi, par exemple :
+* Si les contraintes sont fortes, vous limitez la refonte d'une fonctionnalité existante à la création d'un composant micro frontend se limitant strictement au nouveau besoin.
+* Si les contraintes sont plus faibles, vous pouvez choisir de refondre complètement chaque page dans son micro frontend à chaque modification demandée sur la page existante en question
+
+Mais dans tous les cas, quelque soit ce choix, l'usage du micro frontend vous permet d'arrêter de faire grossir la base de code de l'application existante puisque toute fonctionnalité strictement nouvelle sera ajoutée dans un micro frontend et non dans l'application legacy.
 
 ## Stratégies d'implémentation du Micro frontend
 
