@@ -4,7 +4,7 @@ lang: fr
 date: 2023-11-06
 slug: micro-frontend
 title: "Micro frontend : la solution pour une meilleure maintenabilité de vos applications web"
-excerpt: "Comprendre et mettre en place le concept de micro frontend : cas d'usage concrêts et exemples d'implémentations basés sur notre expérience"
+excerpt: "Comprendre et mettre en place le concept de micro frontend : cas d'usage concret et exemples d'implémentations basés sur notre expérience"
 categories:
     - javascript
 keywords:
@@ -15,7 +15,7 @@ authors:
     - charles-eric
 ---
 
-Dans cet article, nous introduirons la notion de "micro frontend" et ses avantages. Ensuite, nous donnerons des cas d'usage concrets et des exemples d'implémentation basés sur notre expérience réelle au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) pour des projets internes et clients. Bonne lecture !
+Dans cet article, nous introduirons la notion de "micro frontend" et ses avantages. Ensuite, nous donnerons des cas d'usage concrets et des exemples d'implémentation basés sur notre expérience réelle au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) pour des projets internes et des projets clients. Bonne lecture !
 
 ## Qu'est-ce que le "micro frontend" ?
 
@@ -52,7 +52,7 @@ L'un des avantages les plus marquants du micro frontend réside dans sa capacit�
 
 La notion de "feature team" prend tout son sens grâce à ce concept de micro frontend. Des équipes entièrement indépendantes peuvent être responsables chacune d'une partie complète d'un produit.
 
-Ces "feature teams" sont composées de tous les métiers nécessaires pour mener à bien le développement de cette partie du produit, du discovery produit et du design jusqu'au déploiement et à la maintenance en production. Notamment, les développeurs backend et frontend travaillent ensemble dans la même équipe. Pour qu'ils puissent mener à bien leur mission sur cette partie du produit, ils doivent avoir la main sur toutes ses composantes techniques, aussi bien côté backend, ce qui est permis avec des microservices, par exemple, que côté frontend, ce que favorise l'architecture micro frontend.
+Ces "feature teams" sont composées de tous les métiers nécessaires pour mener à bien le développement de cette partie du produit, du discovery produit et du design jusqu'au déploiement et à la maintenance en production. Notamment, les développeurs backend et frontend travaillent ensemble dans la même équipe. Pour qu'ils puissent mener à bien leur mission sur cette partie du produit, ils doivent avoir la main sur toutes ses composantes techniques, aussi bien côté backend, ce qui est permis avec des microservices par exemple, que côté frontend, ce que favorise l'architecture micro frontend.
 
 Par opposition, sans micro frontend, et même si son périmètre de responsabilité fonctionnelle est bien défini, une "feature team" peut se retrouver bloquée au moment de livrer ses fonctionnalités, puisque la composante front doit être implémentée dans une application frontend monolithique qui est co-maintenue avec toutes les autres "feature teams". Les processus de livraison sont dans ce cas plus complexes et les risques de régressions plus élevés.
 
@@ -60,15 +60,15 @@ Par opposition, sans micro frontend, et même si son périmètre de responsabili
 
 Chaque équipe peut être indépendante dans le choix de la technologie et du framework frontend. Cela permet une plus grande flexibilité et une meilleure adaptation aux besoins spécifiques de chaque composant. On pourra imaginer, par exemple, une application frontend composée d'un micro frontend en Angular, un autre en React, et un autre en Vue.
 
-En réalité, nous recommanderons bien sûr que différentes équipes d'une même organisation fassent en sorte de rendre leurs choix et outils techniques cohérents globalement pour garantir une meilleure maintenabilité du système dans son ensemble. Mais comme ces équipes sont indépendantes techniquement, elles ont tout de même la liberté d'adapter leur choix technique à leur contexte.
+En réalité, nous recommanderons bien sûr que différentes équipes d'une même organisation fassent en sorte de rendre leurs choix et outils techniques cohérents globalement pour garantir une meilleure maintenabilité du système dans son ensemble. Mais comme ces équipes sont indépendantes techniquement, elles ont tout de même la liberté d'adapter leurs choix techniques à leur contexte.
 
-Également, cette indépendance permet à chaque équipe de livrer son micro frontend sans affecter l'ensemble de l'application, car les changements n'affectent qu'une partie du processus métier et qu'une partie complètement isolée techniquement. Cela permet d'augmenter la fréquence de livraison des correctifs et nouvelles fonctionnalités, ce qui peut être un avantage concurrentiel intéressant.
+Également, cette indépendance permet à chaque équipe de livrer son micro frontend sans affecter l'ensemble de l'application, car les changements n'affectent qu'une partie du processus métier, et qu'une partie complètement isolée techniquement. Cela permet d'augmenter la fréquence de livraison des correctifs et nouvelles fonctionnalités, ce qui peut être un avantage concurrentiel intéressant.
 
 De plus, cette isolation technique laisse place à d'éventuelles optimisations de [performances front](https://eleven-labs.com/nos-publications/guide-d-optimisation-web-performance-le-cas-france-medias-monde) : chaque micro frontend découplé du reste de l'application se charge indépendamment et ainsi, les plus lents ne bloquent pas le bon fonctionnement des autres.
 
 <div class="admonition summary" markdown="1"><p  class="admonition-title">En résumé</p>
 
-Finalement, ces avantages favorisent une meilleure évolutivité du produit et la productivité des équipes.
+Finalement, ces avantages favorisent une meilleure évolutivité du produit, et la productivité des équipes.
 </div>
 
 ## Dans quels cas utiliser cette approche ?
@@ -93,7 +93,7 @@ Plus originale que le cas d'usage que nous venons de décrire, il est intéressa
 
 Quand une application n'est plus au goût du jour fonctionnellement et sur une stack technique vieillissante, on rêve tous de pouvoir la réimplémenter en repartant de zéro, pour tout changer, mais ce n'est pas toujours possible !
 
-Si vous entreprenez une refonte complète "from scratch" de cette application legacy, cela signifie que vous recommencez une nouvelle application de zéro en parallèle de l'application legacy existante. Dans ce cas, l'application existante reste généralement inchangée pendant toute la durée de la refonte, puisqu'on ne souhaite plus investir dans son évolution. L'utilisateur se retrouve donc bloqué pendant une longue période sur une application qui présente divers soucis : bugs, fonctionnalités manquantes, mauvaises performances ou UX. Et seulement à la livraison de la nouvelle application qui remplace celle legacy, l'utilisateur peut profiter des nouvelles fonctionnalités et améliorations.
+Si vous entreprenez une refonte complète "from scratch" de cette application legacy, cela signifie que vous recommencez une nouvelle application de zéro en parallèle de l'application legacy existante. Dans ce cas, l'application existante reste généralement inchangée pendant toute la durée de la refonte, puisqu'on ne souhaite plus investir dans son évolution. L'utilisateur se retrouve donc bloqué pendant une longue période sur une application qui présente divers soucis : bugs, fonctionnalités manquantes, mauvaises performances ou UX. Et c'est seulement à la livraison de la nouvelle application qui remplace celle legacy que l'utilisateur peut profiter des nouvelles fonctionnalités et améliorations.
 
 À l'inverse, il est préférable que le client et utilisateur de notre application puisse continuer à utiliser les fonctionnalités existantes, qui doivent être maintenues, et idéalement qu'il puisse commencer à profiter des nouvelles fonctionnalités au fur et à mesure de leur développement, le tout dans la même application. On parlera dans ce cas de migration progressive.
 
@@ -108,7 +108,7 @@ Ainsi, par exemple, vous pouvez envisager ces possibilités :
 
 ![Exemple d'utilisation du micro frontend pour une migration progressive]({BASE_URL}/imgs/articles/2023-11-06-micro-frontend/microfrontend-progressive-migration.png)
 
-En fonction du contexte, notamment du budget et des deadlines, vous pouvez choisir parmi ces différentes possibilités ainsi, par exemple :
+En fonction du contexte, notamment du budget et des deadlines, vous pouvez choisir parmi ces différentes possibilités :
 
 - Si les contraintes sont fortes, vous limitez la refonte d'une fonctionnalité existante à la création d'un composant micro frontend se limitant strictement au nouveau besoin.
 - Si les contraintes sont plus faibles, vous pouvez choisir de refondre complètement chaque page dans son micro frontend à chaque modification demandée sur la page existante en question.
@@ -121,7 +121,7 @@ La mise en œuvre du micro frontend offre différentes stratégies pour composer
 
 ### Composition côté serveur
 
-La composition côté serveur est une stratégie où la composition des micro frontends se produit au niveau du serveur. Dans cette approche, le serveur génère la page web complète, y compris les micro frontends, avant de la renvoyer au navigateur du client. Cette stratégie présente des avantages en matière de performances, de référencement et de sécurité. Cette approche peut être mise en œuvre de plusieurs manières, notamment grâce aux techniques suivantes :
+Il s'agit d'une stratégie où la composition des micro frontends se produit au niveau du serveur. Dans cette approche, le serveur génère la page web complète, y compris les micro frontends, avant de la renvoyer au navigateur du client. Cette stratégie présente des avantages en matière de performances, de référencement et de sécurité. Cette approche peut être mise en œuvre de plusieurs manières :
 
 #### SSR + Rehydration
 
@@ -279,7 +279,7 @@ En intégrant un Design System dans votre architecture de micro frontends, vous 
 
 ### Quelle stratégie de tests adopter ?
 
-Lorsqu'il s'agit de tester vos micro frontends, la principale différence réside dans la nécessité de vérifier l'intégration et la communication entre les différents micro frontends. Pour ce faire, vous devrez mettre en place des tests fonctionnels visant à assurer la bonne cohabitation et communication entre ces composants. Assurez-vous que les interactions entre les micro frontends se déroulent de manière fluide et que les fonctionnalités attendues sont bien en place. Il faudra préalablement penser à tester unitairement un maximum les petites briques de chaque composant, pour s'assurer du bon fonctionnement interne du micro frontend, avant de tester la communication entre les différentes parties de l'application. Cela contribuera à garantir que l'ensemble de votre application fonctionne correctement.
+Lorsqu'il s'agit de tester vos micro frontends, la principale différence réside dans la nécessité de vérifier l'intégration et la communication entre les différents micro frontends. Pour ce faire, vous devrez mettre en place des tests fonctionnels visant à assurer la bonne cohabitation et communication entre ces composants. Assurez-vous que les interactions entre les micro frontends se déroulent de manière fluide et que les fonctionnalités attendues sont bien en place. Il faudra préalablement penser à tester unitairement un maximum les petites briques de chaque composant ,pour s'assurer du bon fonctionnement interne du micro frontend avant de tester la communication entre les différentes parties de l'application. Cela contribuera à garantir que l'ensemble de votre application fonctionne correctement.
 
 ### Comment minimiser l'impact sur la taille des fichiers JavaScript ?
 
