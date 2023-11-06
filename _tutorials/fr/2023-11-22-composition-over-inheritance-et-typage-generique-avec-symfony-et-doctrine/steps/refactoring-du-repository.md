@@ -110,7 +110,7 @@ Et voilà, au lieu d'étendre l'`EntityRepository` de Doctrine, on injecte l'`En
 Puis, dans une propriété privée `$repository`, on récupère une instance de Repository Doctrine de type `Post::class` qui sera notre objet ***proxy*** entre nos méthodes et celles de Doctrine.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-L'interface `ObjectRepository` de Doctrine sera ici implémentée automatiquement par son `EntityRepository`.
+L'interface <code>ObjectRepository</code> de Doctrine sera ici implémentée automatiquement par son <code>EntityRepository</code>.
 </div>
 
 Petit détail important, souvenez-vous du code généré dans la classe `Post`, notamment l'attribut de la classe :
@@ -193,7 +193,7 @@ interface PostRepositoryInterface
 ```
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
-On ne garde que les méthodes ***spécifiques*** de nos repositories, comme notre `findPostsAboutPhp()`
+On ne garde que les méthodes <br>spécifiques</br> de nos repositories, comme notre <code>findPostsAboutPhp()</code>
 </div>
 
 Adaptez bien en conséquence le code des classes implémentant ces interfaces.

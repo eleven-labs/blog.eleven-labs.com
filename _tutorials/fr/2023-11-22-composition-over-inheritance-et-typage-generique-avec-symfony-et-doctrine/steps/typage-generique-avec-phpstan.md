@@ -137,7 +137,7 @@ On indique ici que nous étendons notre BaseRepository, mais avec une info suppl
 Notez également la notation `@return array<Post>` au dessus de la seule méthode de notre Repository. Cela permet d'indiquer que nous ne pouvons retourner qu'un tableau composé d'objets `Post`. En fonction de comment vous implémentez la méthode, PHPStan vous remontere une erreur si ce n'est pas le cas.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-`array<Post>` peut aussi être noté `Post[]` si vous préférez.
+<code>array&lt;Post&gt;</code> peut aussi être noté <code>Post[]</code> si vous préférez.
 </div>
 
 Testons d'ailleurs si tout ce petit monde fonctionne correctement.
