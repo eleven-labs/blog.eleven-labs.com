@@ -1,4 +1,5 @@
 ---
+contentType: article
 lang: fr
 date: 2023-11-22
 slug: typage-generique-en-php
@@ -8,6 +9,9 @@ categories:
     - php
 keywords:
     - typage générique
+    - phpstan
+    - symfony
+    - doctrine
 authors:
     - ajacquemin
 ---
