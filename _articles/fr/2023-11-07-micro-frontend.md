@@ -62,13 +62,13 @@ Chaque équipe peut être indépendante dans le choix de la technologie et du fr
 
 En réalité nous recommenderons bien-sûr que différentes équipes d'une même organisation fassent en sortes de rendre leur choix et outils techniques cohérents globalement pour garantir une meilleur maintenabilité du système dans son ensemble. Mais comme ces équipes sont indépendantes techniquement, elles ont tout de même cette liberté d'adapter leur choix technique à leur contexte.
 
-Egalement, cette indépendance permet à chaque équipe de livrer son micro frontend sans affecter l'ensemble de l'application, car les changements n'affectent qu'une partie du processus métier et qu'une partie complètement isolée techniquement. Cela permet de réduire la fréquence de livraison des correctifs et nouvelles fonctionnlités, ce qui peut être un avantage concurrentiel intéressant.
+Également, cette indépendance permet à chaque équipe de livrer son micro frontend sans affecter l'ensemble de l'application, car les changements n'affectent qu'une partie du processus métier et qu'une partie complètement isolée techniquement. Cela permet d'augmenter la fréquence de livraison des correctifs et nouvelles fonctionnalités, ce qui peut être un avantage concurrentiel intéressant.
 
-Aussi, cette isolation technique laisse place à de possible optimisation de [performances front](https://eleven-labs.com/nos-publications/guide-d-optimisation-web-performance-le-cas-france-medias-monde) : chaque micro frontend découplé du reste de l'application se charge indépendamment et ainsi, les plus lents ne bloquent pas le bon fonctionnement des autres.
+Aussi, cette isolation technique laisse place à de possibles optimisations de [performances front](https://eleven-labs.com/nos-publications/guide-d-optimisation-web-performance-le-cas-france-medias-monde) : chaque micro frontend découplé du reste de l'application se charge indépendamment et ainsi, les plus lents ne bloquent pas le bon fonctionnement des autres.
 
 <div class="admonition summary" markdown="1"><p  class="admonition-title">En résumé</p>
 
-Finalement ces avantages favorise une meilleure évolutivité du produit et productivité des équipes.
+Finalement ces avantages favorisent une meilleure évolutivité du produit et productivité des équipes.
 </div>
 
 ## Dans quels cas utiliser cette approche ?
@@ -83,7 +83,7 @@ Voici les cas d'usages qui nous semblent les plus intéressants :
 
 Cette architecture répond à une problématique organisationnelle de passage à l'échelle d'un produit et de l'organisation qui le développe.
 
-Par exemple, si l'application devient trop complexe techniquement ou fonctionnellement, on souhaite pouvoir la rédécouper en petits produits plus simples à maintenir avec des équipes dédiées qui en sont responsables de manière indépendante. Dans ce cas, les features teams permettent de faciliter la maintenance globale. Mais pour être indépendante sur leur périmètre, ces équipes ont besoin d'avoir les bons outils : l'approche micro frontend leur permet de maitriser intégralement leur partie du produit, même sur la partie frontend.
+Par exemple, si l'application devient trop complexe techniquement ou fonctionnellement, on souhaite pouvoir la découper en petits produits plus simples à maintenir avec des équipes dédiées qui en sont responsables de manière indépendante. Dans ce cas, les features teams permettent de faciliter la maintenance globale. Mais pour être indépendantes sur leur périmètre, ces équipes ont besoin d'avoir les bons outils : l'approche micro frontend leur permet de maitriser intégralement leur partie du produit, même sur la partie frontend.
 
 Aussi, si l'organisation définit de forts objectifs de croissance qui impliquent d'ajouter de nombreuses fonctionnalités sur un produit existant et de les livrer et les faire évoluer rapidement, ces mêmes features teams seront plus efficaces sur un domaine bien défini, y compris sur le front.
 
@@ -95,7 +95,7 @@ Quand une application n'est plus au goût du jour fonctionnellement et sur une s
 
 Si vous entreprenez une refonte complète "from scratch" de cette application legacy, cela signifie que vous recommencez une nouvelle application de zéro en parallèle de l'application legacy existante. Dans ce cas, l'application existante reste généralement inchangée pendant toute la durée de la refonte, puisqu'on ne souhaite plus investir dans son évolution. L'utilisateur se retrouve donc bloqué pendant une longue période sur une application qui présente divers soucis : bugs, fonctionnalités manquantes, mauvaise performances ou UX. Et seulement à la livraison de la nouvelle application qui remplace celle legacy, l'utilisateur peut profiter des nouvelles fonctionnalités et améliorations.
 
-A l'inverse, il est préférable que le client et utilisateur de notre application puisse continuer à utiliser les fonctionnalités existantes, qui doivent être maintenues, et idéalement qu'il puisse commencer à profiter des nouvelles fonctionnalités au fur et à mesure de leur développement, le tout dans la même application. On parlera dans ce cas de migration progressive.
+À l'inverse, il est préférable que le client et utilisateur de notre application puisse continuer à utiliser les fonctionnalités existantes, qui doivent être maintenues, et idéalement qu'il puisse commencer à profiter des nouvelles fonctionnalités au fur et à mesure de leur développement, le tout dans la même application. On parlera dans ce cas de migration progressive.
 
 Le concept de micro frontend est véritable allié pour cette migration progressive. En effet, il nous permet de faire fonctionner ensemble différentes parties de l'application front qui reposent sur des structures techniques différentes : nouvelles fonctionnalités vs. legacy.
 
