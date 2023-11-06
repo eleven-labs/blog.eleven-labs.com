@@ -193,7 +193,7 @@ interface PostRepositoryInterface
 ```
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
-On ne garde que les méthodes <br>spécifiques</br> de nos repositories, comme notre <code>findPostsAboutPhp()</code>
+On ne garde que les méthodes <b>spécifiques</b> de nos repositories, comme notre <code>findPostsAboutPhp()</code>
 </div>
 
 Adaptez bien en conséquence le code des classes implémentant ces interfaces.
