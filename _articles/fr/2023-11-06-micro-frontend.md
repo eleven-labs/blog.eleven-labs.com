@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: 2023-11-07
+date: 2023-11-06
 slug: micro-frontend
 title: "Micro frontend : la solution pour une meilleure maintenabilité de vos applications web"
 excerpt: "Comprendre et mettre en place le concept de micro frontend : cas d'usage concrêts et exemples d'implémentations basés sur notre expérience"
@@ -29,7 +29,7 @@ Cette architecture s'inspire des principes des microservices et les transpose da
 
 Chaque micro frontend peut être développé indépendamment, testé, déployé et évolué sans perturber le reste de l'application. De plus, le micro frontend permet d'utiliser divers langages et frameworks sur chaque brique. Cette modularité et cette indépendance de chaque composant offrent une grande flexibilité aux équipes de développement, qui peuvent se concentrer sur des domaines spécifiques de l'application.
 
-![Architecture micro Frontend]({BASE_URL}/imgs/articles/2023-11-07-micro-frontend/microfrontend-concept.png)
+![Architecture micro Frontend]({BASE_URL}/imgs/articles/2023-11-06-micro-frontend/microfrontend-concept.png)
 
 Cependant, il est important de noter que dans la réalité, la mise en place du micro frontend peut être complexe, à la fois d'un point de vue technique et organisationnel :
 
@@ -106,7 +106,7 @@ Ainsi, par exemple, vous pouvez envisager ces possibilités :
 - Refondre un composant existant en le migrant dans un micro frontend pour remplacer une partie d'une page legacy existante.
 - Migrer une page existante complète pour la remplacer par une nouvelle page micro frontend.
 
-![Exemple d'utilisation du micro frontend pour une migration progressive]({BASE_URL}/imgs/articles/2023-11-07-micro-frontend/microfrontend-progressive-migration.png)
+![Exemple d'utilisation du micro frontend pour une migration progressive]({BASE_URL}/imgs/articles/2023-11-06-micro-frontend/microfrontend-progressive-migration.png)
 
 En fonction du contexte, notamment du budget et des deadlines, vous pouvez choisir parmi ces différentes possibilités ainsi, par exemple :
 
