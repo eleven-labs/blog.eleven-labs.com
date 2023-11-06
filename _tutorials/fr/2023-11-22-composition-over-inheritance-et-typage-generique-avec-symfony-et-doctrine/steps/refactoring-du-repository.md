@@ -1,3 +1,9 @@
+---
+contentType: tutorial-step
+tutorial: composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine
+slug: refactoring-du-repository
+title: Refactoring du repository
+---
 ### Refactoring du repository
 
 Pour que la suite soit la plus digeste et facile possible, nous travaillerons dans l'arborescence de fichier créée par Symfony, directement dans le dossier `Repository`.

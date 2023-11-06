@@ -1,3 +1,9 @@
+---
+contentType: tutorial-step
+tutorial: composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine
+slug: conclusion
+title: Conclusion
+---
 ### Conclusion
 
 Ouf ! Et voilà ! Vous êtes arrivés au bout de ce Codelabs, félicitations ! Pour rappel, vous trouverez le code de ce codelabs [ici sur mon Github](https://github.com/ArthurJCQ/codelabs-compo), n'hésitez pas à y jeter un oeil.

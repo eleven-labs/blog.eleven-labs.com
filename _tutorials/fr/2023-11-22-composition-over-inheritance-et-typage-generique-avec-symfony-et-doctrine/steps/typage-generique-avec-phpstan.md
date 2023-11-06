@@ -1,3 +1,9 @@
+---
+contentType: tutorial-step
+tutorial: composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine
+slug: typage-generique-avec-phpstan
+title: Typage générique avec PHPStan
+---
 ### Typage générique avec PHPStan
 
 Nous y voilà enfin ! Je vous conseille de faire une pause pour aller lire l'article [sur le typage générique en PHP](https://blog.eleven-labs.com/fr/typage-generique-en-php/) pour un peu de théorie sur le pourquoi du comment des ***generics***.

@@ -1,3 +1,9 @@
+---
+contentType: tutorial-step
+tutorial: composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine
+slug: introduction
+title: Introduction
+---
 ### Qu'allons-nous faire ?
 
 Sans doute qu'aujourd'hui, lors de l'installation d'un nouveau projet Symfony avec Doctrine, vous gardez le design de base de ces classes, avec une classe qui étend du repository de base de Doctrine, l'`EntityRepository`.

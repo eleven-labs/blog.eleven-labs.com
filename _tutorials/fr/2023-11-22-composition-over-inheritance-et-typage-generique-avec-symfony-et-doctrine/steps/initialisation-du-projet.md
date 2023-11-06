@@ -1,3 +1,9 @@
+---
+contentType: tutorial-step
+tutorial: composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine
+slug: initialisation-du-projet
+title: Initialisation du projet
+---
 ### Initialisation du projet
 
 Pour commencer, initialisez un nouveau projet symfony [selon votre OS](https://symfony.com/download).
