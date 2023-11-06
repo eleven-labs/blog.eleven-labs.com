@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: jelhaouchi
 name: Jawad Elhaouchi
 twitter: jelhaouchi

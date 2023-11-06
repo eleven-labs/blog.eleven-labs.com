@@ -6,26 +6,23 @@ describe('getSitemapEntries', () => {
       const mod = await vi.importActual<typeof import('@/constants')>('@/constants');
       return {
         ...mod,
-        CATEGORIES: ['category-1'],
+        CategoryEnum: ['category-1'],
       };
     });
-    vi.mock('@/helpers/contentHelper', () => ({
-      getPostsByLangAndAuthors: (): {
-        postsByLang: Record<string, { lang: string; slug: string; categories: string[]; authors: string[] }[]>;
-        authors: { username: string; name: string }[];
-      } => ({
-        postsByLang: {
-          fr: [{ lang: 'fr', slug: 'post-1', categories: ['category-1'], authors: ['author-1'] }],
-          en: [{ lang: 'en', slug: 'post-2', categories: ['category-1'], authors: ['author-1'] }],
-        },
-        authors: [{ username: 'author-1', name: 'Author One' }],
-      }),
+    vi.mock('@/helpers/markdownContentManagerHelper', () => ({
+      getPosts: (): { lang: string; slug: string; categories: string[]; authors: string[] }[] => [
+        { lang: 'fr', slug: 'post-1', categories: ['architecture'], authors: ['author-1'] },
+        { lang: 'en', slug: 'post-2', categories: ['php'], authors: ['author-1'] },
+      ],
+      getAuthors: (): { username: string; name: string }[] => [{ username: 'author-1', name: 'Author One' }],
     }));
 
     // Expected result
     const expectedSitemapEntries = [
+      { priority: 1, links: [{ lang: 'fr', url: '/fr/post-1/' }] },
+      { priority: 1, links: [{ lang: 'en', url: '/en/post-2/' }] },
       {
-        priority: 1,
+        priority: 0.8,
         links: [
           { lang: 'fr', url: '/' },
           { lang: 'fr', url: '/fr/' },
@@ -33,25 +30,18 @@ describe('getSitemapEntries', () => {
         ],
       },
       {
+        priority: 0.7,
         links: [
-          { lang: 'fr', url: '/fr/search/' },
-          { lang: 'en', url: '/en/search/' },
-        ],
-      },
-      {
-        priority: 0.8,
-        links: [
-          { lang: 'fr', url: '/fr/categories/category-1/' },
-          { lang: 'en', url: '/en/categories/category-1/' },
+          { lang: 'fr', url: '/fr/categories/php/' },
+          { lang: 'en', url: '/en/categories/php/' },
         ],
       },
       {
         priority: 0.7,
-        links: [{ lang: 'fr', url: '/fr/post-1/' }],
-      },
-      {
-        priority: 0.7,
-        links: [{ lang: 'en', url: '/en/post-2/' }],
+        links: [
+          { lang: 'fr', url: '/fr/categories/architecture/' },
+          { lang: 'en', url: '/en/categories/architecture/' },
+        ],
       },
       {
         priority: 0.5,
@@ -62,8 +52,12 @@ describe('getSitemapEntries', () => {
       },
       {
         priority: 0,
-        links: [{ lang: 'fr', url: '/404' }],
+        links: [
+          { lang: 'fr', url: '/fr/search/' },
+          { lang: 'en', url: '/en/search/' },
+        ],
       },
+      { priority: 0, links: [{ lang: 'fr', url: '/404' }] },
     ];
 
     const sitemapEntries = getSitemapEntries();

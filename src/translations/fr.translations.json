@@ -13,7 +13,7 @@
       "title": "Recherche"
     },
     "not_found": {
-      "title": "Page non trouvé"
+      "title": "Page non trouvée"
     }
   },
   "categories": {
@@ -22,7 +22,7 @@
     "php": "PHP",
     "agile": "Agile",
     "architecture": "Architecture",
-    "best_practices": "Bonnes pratiques"
+    "tutorial": "Tutoriel"
   },
   "languages": {
     "fr": "Français",
@@ -79,6 +79,10 @@
     "post": {
       "related_post_list_title": "Articles sur le même thème",
       "post_footer_title": "écrit par"
+    },
+    "tutorial": {
+      "previous_button": "Précédent",
+      "next_button": "Suivant"
     },
     "author": {
       "post_preview_list_title": "Article(s) de l'auteur"

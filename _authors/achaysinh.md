@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: achaysinh
 name: Alix Chaysinh
 ---

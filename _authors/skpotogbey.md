@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: skpotogbey
 name: Shalom KPOTOGBEY
 ---

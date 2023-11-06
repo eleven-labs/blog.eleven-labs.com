@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: ibenichou
 name: Ilan Benichou
 twitter: IlanBenhamou

@@ -3,14 +3,19 @@ import matter from 'gray-matter';
 import { YAMLException } from 'js-yaml';
 import { existsSync, readFileSync } from 'node:fs';
 import * as path from 'path';
-import { z, ZodSchema } from 'zod';
+import { SomeZodObject, z, ZodSchema } from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
-import { ASSETS_DIR, AUTHORS_DIR, POSTS_DIR } from '@/app-paths';
-import { AUTHORIZED_LANGUAGES, CATEGORIES } from '@/constants';
-import { intersection } from '@/helpers/objectHelper';
+import { ARTICLES_DIR, ASSETS_DIR, AUTHORS_DIR, TUTORIALS_DIR } from '@/app-paths';
+import {
+  ArticleDataSchemaValidation,
+  AuthorDataValidationSchema,
+  PostDataSchemaValidation,
+  TutorialDataSchemaValidation,
+  TutorialStepDataValidationSchema,
+} from '@/config/schemaValidation';
 import { capitalize } from '@/helpers/stringHelper';
-import { AuthorData, PostData } from '@/types';
+import { ArticleData, AuthorData, CommonPostData, TutorialData, TutorialStepData } from '@/types';
 
 export class MarkdownInvalidError extends Error {
   markdownFilePathRelative: string;
@@ -30,15 +35,9 @@ export class MarkdownInvalidError extends Error {
   }
 }
 
-export const frontmatter = <TData = { [p: string]: unknown }>(
-  content: string
-): Omit<matter.GrayMatterFile<string>, 'data'> & { data: TData } => {
-  return matter(content) as Omit<matter.GrayMatterFile<string>, 'data'> & { data: TData };
-};
-
 export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options: {
   markdownFilePath: string;
-  ValidationSchema: ZodSchema;
+  validationSchema: ZodSchema;
 }): TData & { content: string } => {
   const markdownContent = readFileSync(options.markdownFilePath, { encoding: 'utf-8' });
 
@@ -57,7 +56,7 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
   try {
     const frontmatterResult = matter(markdownContent);
 
-    const result = options.ValidationSchema.safeParse(frontmatterResult.data);
+    const result = options.validationSchema.safeParse(frontmatterResult.data);
 
     if (!result.success) {
       const validationError = fromZodError(result.error);
@@ -98,10 +97,11 @@ export const validateMarkdownContent = (options: { markdownFilePath: string; con
     }
   }
 
-  const assetMatches = options.content.match(/{{ site.baseurl }}[^)"'\s]+/g);
+  const assetRegex = new RegExp('{BASE_URL}\\/imgs\\/[^.]+\\.(jpg|jpeg|png|webp|svg)', 'g');
+  const assetMatches = options.content.match(assetRegex);
   if (assetMatches) {
     for (const assetMatch of assetMatches) {
-      const assetPath = assetMatch.replace(/{{\s*?site.baseurl\s*?}}\/assets/g, `${ASSETS_DIR}/posts`).split('?')?.[0];
+      const assetPath = assetMatch.replace(new RegExp('{BASE_URL}\\/imgs/'), `${ASSETS_DIR}/`).split('?')?.[0];
 
       if (!existsSync(assetPath)) {
         throw new MarkdownInvalidError({
@@ -115,123 +115,84 @@ export const validateMarkdownContent = (options: { markdownFilePath: string; con
   return options.content;
 };
 
-export const validateAuthor = (options: { markdownFilePath: string }): AuthorData & { content: string } => {
-  const AuhorValidationSchema = z
-    .object({
-      username: z.string().regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/, 'Kebab case format not respected'),
-      name: z.string(),
-      twitter: z
-        .string()
-        .superRefine((val, ctx) => {
-          const pattern = /^https:\/\/twitter.com\/[a-z0-9_-]+\/?$/i;
-          if (pattern.test(val)) {
-            ctx.addIssue({
-              code: z.ZodIssueCode.custom,
-              message: 'No need to define the complete url of twitter, just give the user name',
-            });
-          }
-          if (val.startsWith('@')) {
-            ctx.addIssue({
-              code: z.ZodIssueCode.custom,
-              message: 'No need to set the "@" for twitter, just the username.',
-            });
-          }
-        })
-        .optional(),
-      github: z
-        .string()
-        .superRefine((val, ctx) => {
-          const pattern = /^https:\/\/github.com\/[a-z0-9_-]+\/?$/i;
-          if (pattern.test(val)) {
-            ctx.addIssue({
-              code: z.ZodIssueCode.custom,
-              message: 'No need to define the complete url of github, just give the user name',
-            });
-          }
-        })
-        .optional(),
-      linkedin: z
-        .string()
-        .superRefine((val, ctx) => {
-          const pattern = /^https:\/\/www.linkedin.com\/in\/[a-z0-9_-]+\/?$/i;
-          if (pattern.test(val)) {
-            ctx.addIssue({
-              code: z.ZodIssueCode.custom,
-              message: 'No need to define the complete url of linkedin, just give the user name',
-            });
-          }
-        })
-        .optional(),
-    })
-    .strict();
+export const validateContentType = <TData>(options: {
+  markdownFilePath: string;
+  validationSchema: SomeZodObject;
+  authors?: [string, ...string[]];
+}): TData & { content: string } => {
+  let validationSchema = options.validationSchema;
+  if (options.authors) {
+    validationSchema = validationSchema.merge(
+      z.object({
+        authors: z.array(z.enum(options.authors)),
+      })
+    );
+  }
 
-  const { content, ...data } = getDataInMarkdownFile<z.infer<typeof AuhorValidationSchema>>({
+  const { content, ...data } = getDataInMarkdownFile<z.infer<typeof options.validationSchema>>({
     markdownFilePath: options.markdownFilePath,
-    ValidationSchema: AuhorValidationSchema,
+    validationSchema: validationSchema,
   });
 
   return {
-    ...data,
+    ...(data as TData),
     content: validateMarkdownContent({
       markdownFilePath: options.markdownFilePath,
       content,
     }),
   };
 };
+
+export const validateAuthor = (options: {
+  markdownFilePath: string;
+}): ReturnType<typeof validateContentType<AuthorData>> =>
+  validateContentType<AuthorData>({
+    markdownFilePath: options.markdownFilePath,
+    validationSchema: AuthorDataValidationSchema,
+  });
 
 export const validatePost = (options: {
-  authors: [string, ...string[]];
   markdownFilePath: string;
-}): Omit<PostData, 'date'> & { date: Date; content: string } => {
-  const PostValidationSchema = z
-    .object({
-      lang: z.enum(AUTHORIZED_LANGUAGES),
-      date: z.coerce.date(),
-      slug: z.string().regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/, 'Kebab case format not respected'),
-      title: z.string(),
-      excerpt: z.string(),
-      cover: z.string().optional(),
-      authors: z.array(z.enum(options.authors)),
-      categories: z.array(z.enum(CATEGORIES)),
-      keywords: z
-        .array(z.string())
-        .max(10, 'Too many items 😡.')
-        .superRefine((val, ctx) => {
-          if (intersection(val, CATEGORIES).length) {
-            ctx.addIssue({
-              code: z.ZodIssueCode.custom,
-              message: 'Must not include a category.',
-            });
-          }
-
-          if (val.length !== new Set(val).size) {
-            ctx.addIssue({
-              code: z.ZodIssueCode.custom,
-              message: 'No duplicates allowed.',
-            });
-          }
-        })
-        .optional(),
-    })
-    .strict();
-
-  const { content, ...data } = getDataInMarkdownFile<z.infer<typeof PostValidationSchema>>({
+  authors: string[];
+}): ReturnType<typeof validateContentType<CommonPostData>> =>
+  validateContentType<CommonPostData>({
     markdownFilePath: options.markdownFilePath,
-    ValidationSchema: PostValidationSchema,
+    validationSchema: PostDataSchemaValidation,
+    authors: options.authors as [string, ...string[]],
   });
 
-  return {
-    ...data,
-    content: validateMarkdownContent({
-      markdownFilePath: options.markdownFilePath,
-      content,
-    }),
-  };
-};
+export const validateArticle = (options: {
+  markdownFilePath: string;
+  authors: string[];
+}): ReturnType<typeof validateContentType<ArticleData>> =>
+  validateContentType<ArticleData>({
+    markdownFilePath: options.markdownFilePath,
+    validationSchema: ArticleDataSchemaValidation,
+    authors: options.authors as [string, ...string[]],
+  });
+
+export const validateTutorial = (options: {
+  markdownFilePath: string;
+  authors: string[];
+}): ReturnType<typeof validateContentType<TutorialData>> =>
+  validateContentType<TutorialData>({
+    markdownFilePath: options.markdownFilePath,
+    validationSchema: TutorialDataSchemaValidation,
+    authors: options.authors as [string, ...string[]],
+  });
+
+export const validateTutorialStep = (options: {
+  markdownFilePath: string;
+}): ReturnType<typeof validateContentType<TutorialStepData>> =>
+  validateContentType<TutorialStepData>({
+    markdownFilePath: options.markdownFilePath,
+    validationSchema: TutorialStepDataValidationSchema,
+  });
 
 export const validateMarkdown = (): boolean => {
   const authorMarkdownFilePaths = globSync(`${AUTHORS_DIR}/**/*.md`);
-  const postMarkdownFilePaths = globSync(`${POSTS_DIR}/**/*.md`);
+  const articleMarkdownFilePaths = globSync(`${ARTICLES_DIR}/**/*.md`);
+  const tutorialMarkdownFilePaths = globSync(`${TUTORIALS_DIR}/**/index.md`);
 
   const authors: string[] = [];
 
@@ -248,16 +209,40 @@ export const validateMarkdown = (): boolean => {
 
   const postIds: string[] = [];
 
-  for (const markdownFilePath of postMarkdownFilePaths) {
-    const post = validatePost({ authors: authors as [string, ...string[]], markdownFilePath });
-    const postId = `${post.lang}-${post.slug}`;
-    if (postIds.includes(postId)) {
+  for (const markdownFilePath of articleMarkdownFilePaths) {
+    const article = validateArticle({
+      markdownFilePath,
+      authors,
+    });
+    const articleId = `${article.lang}-${article.slug}`;
+    if (postIds.includes(articleId)) {
       throw new MarkdownInvalidError({
         markdownFilePath,
         reason: 'This article already exists with the same slug and the same language !',
       });
     }
-    postIds.push(postId);
+    postIds.push(articleId);
+  }
+
+  for (const markdownFilePath of tutorialMarkdownFilePaths) {
+    const tutorial = validateTutorial({
+      markdownFilePath,
+      authors: authors as [string, ...string[]],
+    });
+    const tutorialStepsMarkdownFilePaths = globSync(path.resolve(path.dirname(markdownFilePath), 'steps', '**.md'));
+    for (const tutorialStepMarkdownFilePath of tutorialStepsMarkdownFilePaths) {
+      validateTutorialStep({
+        markdownFilePath: tutorialStepMarkdownFilePath,
+      });
+    }
+    const tutorialId = `${tutorial.lang}-${tutorial.slug}`;
+    if (postIds.includes(tutorialId)) {
+      throw new MarkdownInvalidError({
+        markdownFilePath,
+        reason: 'This tutorial already exists with the same slug and the same language !',
+      });
+    }
+    postIds.push(tutorialId);
   }
 
   return true;

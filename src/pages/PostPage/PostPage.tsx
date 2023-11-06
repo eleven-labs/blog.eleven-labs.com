@@ -1,39 +1,43 @@
-import { Box } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { Container, Divider, NewsletterBlock, NewsletterBlockProps, ShareLinks } from '@/components';
+import { ContentTypeEnum } from '@/constants';
 
 import { PostFooter, PostFooterProps } from './PostFooter';
 import { PostHeader, PostHeaderProps } from './PostHeader';
 import { RelatedPostList, RelatedPostListProps } from './RelatedPostList';
 
 export interface PostPageProps {
+  contentType: ContentTypeEnum.ARTICLE | ContentTypeEnum.TUTORIAL;
   backLink: React.ReactNode;
-  header: PostHeaderProps;
-  content: string;
+  header: Omit<PostHeaderProps, 'contentType'>;
+  children: React.ReactNode;
   footer: PostFooterProps;
   newsletterBlock: NewsletterBlockProps;
   relatedPostList: RelatedPostListProps;
+  className?: string;
 }
 
 export const PostPage: React.FC<PostPageProps> = ({
+  contentType,
   backLink,
   header,
-  content,
+  children,
   footer,
   relatedPostList,
   newsletterBlock,
+  className,
 }) => {
   const currentUrl = typeof window !== 'undefined' && window.location.href;
 
   return (
-    <Container variant="global">
+    <Container variant="global" className={className}>
       <Container variant="content">
         {backLink}
-        <PostHeader {...header} />
+        <PostHeader {...header} contentType={contentType} />
         <Divider mt="xs" bg="light-grey" />
         <ShareLinks urlToShare={currentUrl as string} />
-        <Box as="section" textSize="s" dangerouslySetInnerHTML={{ __html: content }} />
+        {children}
         <ShareLinks urlToShare={currentUrl as string} />
         <Divider mt="xs" bg="light-grey" />
         <PostFooter {...footer} />

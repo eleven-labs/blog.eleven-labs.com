@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: marishka
 name: Marie Minasyan
 twitter: marie_minasyan

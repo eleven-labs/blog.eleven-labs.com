@@ -4,7 +4,6 @@ import { vi } from 'vitest';
 import { z } from 'zod';
 
 import {
-  frontmatter,
   getDataInMarkdownFile,
   validateAuthor,
   validateMarkdown,
@@ -16,6 +15,7 @@ vi.mock('node:fs');
 vi.mock('glob');
 
 const markdownContentValidAuthor = `---
+contentType: author
 username: jdoe
 name: John Doe
 github: account-github
@@ -24,7 +24,8 @@ linkedin: account-linkedin
 ---
 This is some valid content`;
 
-const markdownContentValidPost = `---
+const markdownContentValidArticle = `---
+contentType: article
 lang: en
 date: 2022-01-01
 slug: valid-post
@@ -38,35 +39,15 @@ cover: valid-post-cover.jpg
 ---
 This is some valid content`;
 
-describe('frontmatter', () => {
-  it('should extract frontmatter data and remove it from the content', () => {
-    const content = `---
-title: Example Title
-slug: example-title
----
-This is the content`;
-
-    const expectedResult = {
-      data: {
-        title: 'Example Title',
-        slug: 'example-title',
-      },
-      content: 'This is the content',
-    };
-
-    const result = frontmatter(content);
-    expect(result).toMatchObject(expectedResult);
-  });
-});
-
 vi.mock('@/app-paths', () => ({
-  POSTS_DIR: '_posts',
+  ARTICLES_DIR: '_articles',
+  TUTORIALS_DIR: '_tutorials',
   AUTHORS_DIR: '_authors',
   ASSETS_DIR: '_assets',
 }));
 
 describe('getDataInMarkdownFile', () => {
-  const ValidationSchema = z.object({
+  const validationSchema = z.object({
     title: z.string(),
     slug: z.string(),
   });
@@ -82,8 +63,8 @@ This is the content`);
     const markdownFilePath = '/path/to/dir/valid-file.md';
     expect(
       getDataInMarkdownFile({
-        ValidationSchema,
         markdownFilePath,
+        validationSchema,
       })
     ).toMatchObject({
       title: 'Example Title',
@@ -132,8 +113,8 @@ const world = 'hello';
     const markdownFilePath = '/path/to/dir/invalid-file-with-markdown-contains-disallowed-syntax.md';
     expect(() =>
       getDataInMarkdownFile({
-        ValidationSchema,
         markdownFilePath,
+        validationSchema,
       })
     ).toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid ! The syntax isn't allowed, please use valid markdown syntax ! ${syntaxInvalid}`
@@ -157,8 +138,8 @@ contient | \`{% raw %}{{{% endraw %}\` \`{% raw %}}}{% endraw %}\` | \`{% raw %}
     const markdownFilePath = '/path/to/dir/valid-file-with-markdown.md';
     expect(() =>
       getDataInMarkdownFile({
-        ValidationSchema,
         markdownFilePath,
+        validationSchema,
       })
     ).not.toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid ! The syntax isn't allowed, please use valid markdown syntax ! {% raw %}`
@@ -178,11 +159,11 @@ This is the content`);
     const markdownFilePath = '/path/to/dir/invalid-file-with-validation-schema.md';
     expect(() => {
       getDataInMarkdownFile({
-        ValidationSchema: z.object({
+        markdownFilePath,
+        validationSchema: z.object({
           title: z.string(),
           date: z.coerce.date(),
         }),
-        markdownFilePath,
       });
     }).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! Invalid date at "date"`);
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
@@ -202,8 +183,8 @@ This is the content`);
     const markdownFilePath = '/path/to/dir/invalid-file-syntax.md';
     expect(() => {
       getDataInMarkdownFile({
-        ValidationSchema,
         markdownFilePath,
+        validationSchema,
       });
     }).toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid ! Can not read an implicit mapping pair; a colon is missed at line 5, column 14`
@@ -216,6 +197,7 @@ describe('validateAuthor', () => {
   it('should throw an error if markdown is invalid', () => {
     const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
     readFileSyncSpy.mockReturnValueOnce(`---
+contentType: author
 username: jdoe
 github: account-github
 twitter: account-twitter
@@ -233,6 +215,7 @@ This is some valid content`);
   it('should throw an error if markdown is invalid because of social networking', () => {
     const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
     readFileSyncSpy.mockReturnValueOnce(`---
+contentType: author
 username: jdoe
 name: John Doe
 github: https://github.com/account-github
@@ -254,6 +237,7 @@ This is some valid content`);
 
     const markdownFilePath = '/path/to/dir/valid-author.md';
     expect(validateAuthor({ markdownFilePath })).toEqual({
+      contentType: 'author',
       username: 'jdoe',
       name: 'John Doe',
       github: 'account-github',
@@ -269,6 +253,7 @@ describe('validatePost', () => {
   it('should throw an error if markdown is invalid', () => {
     const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
     readFileSyncSpy.mockReturnValueOnce(`---
+contentType: article
 lang: en
 date: 2022-01-01
 slug: valid-post
@@ -293,6 +278,7 @@ This is some valid content`);
   it('should throw an error if an article has a keyword included in the categories', () => {
     const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
     readFileSyncSpy.mockReturnValueOnce(`---
+contentType: article
 lang: en
 date: 2022-01-01
 slug: valid-post
@@ -321,6 +307,7 @@ This is some valid content`);
   it('should throw an error if an article has more than 5 keywords', () => {
     const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
     readFileSyncSpy.mockReturnValueOnce(`---
+contentType: article
 lang: en
 date: 2022-04-01
 slug: my-post
@@ -358,6 +345,7 @@ Some content`);
   it('should throw an error if an article has a duplicate keyword', () => {
     const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
     readFileSyncSpy.mockReturnValueOnce(`---
+contentType: article
 lang: en
 date: 2022-04-01
 slug: my-post
@@ -385,7 +373,7 @@ Some content`);
 
   it('should return valid data and content if markdown is valid', () => {
     const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(markdownContentValidPost);
+    readFileSyncSpy.mockReturnValueOnce(markdownContentValidArticle);
 
     const markdownFilePath = '/path/to/dir/valid-post.md';
     expect(
@@ -394,8 +382,9 @@ Some content`);
         markdownFilePath,
       })
     ).toEqual({
+      contentType: 'article',
       lang: 'en',
-      date: new Date('2022-01-01T00:00:00.000Z'),
+      date: '2022-01-01',
       slug: 'valid-post',
       title: 'Valid Post',
       excerpt: 'This is a valid post excerpt',
@@ -431,8 +420,8 @@ describe('validateMarkdown', () => {
 
     readFileSyncSpy
       .mockReturnValueOnce(markdownContentValidAuthor)
-      .mockReturnValueOnce(markdownContentValidPost)
-      .mockReturnValueOnce(markdownContentValidPost);
+      .mockReturnValueOnce(markdownContentValidArticle)
+      .mockReturnValueOnce(markdownContentValidArticle);
 
     expect(() => validateMarkdown()).toThrow('This article already exists with the same slug and the same language !');
     expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
@@ -457,7 +446,7 @@ describe('validateMarkdownContent', () => {
 
   it('should throw an error when an asset file does not exist', () => {
     const markdownFilePath = '/path/to/some/file.md';
-    const assetPath = `_assets/posts/test.png`;
+    const assetPath = `_assets/articles/test.png`;
 
     const existsSyncSpy = vi.spyOn(fs, 'existsSync');
     existsSyncSpy.mockReturnValueOnce(false);
@@ -465,7 +454,7 @@ describe('validateMarkdownContent', () => {
     expect(() =>
       validateMarkdownContent({
         markdownFilePath,
-        content: 'This is a test post content with an asset reference {{ site.baseurl }}/assets/test.png',
+        content: 'This is a test post content with an asset reference {BASE_URL}/imgs/articles/test.png',
       })
     ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! The file does not exist "${assetPath}"!`);
     expect(existsSyncSpy).toHaveBeenCalledWith(assetPath);
@@ -473,7 +462,7 @@ describe('validateMarkdownContent', () => {
 
   it('should generate an error when an img tag is used', () => {
     const markdownFilePath = '/path/to/some/file.md';
-    const contentInvalid = `<img src="{{ site.baseurl }}/assets/posts/test.png" width="300px" alt="title image" />`;
+    const contentInvalid = `<img src="/imgs/articles/test.png" width="300px" alt="title image" />`;
 
     expect(() =>
       validateMarkdownContent({

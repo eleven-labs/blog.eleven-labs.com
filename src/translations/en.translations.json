@@ -22,7 +22,7 @@
     "php": "PHP",
     "agile": "Agile",
     "architecture": "Architecture",
-    "best_practices": "Best Practices"
+    "tutorial": "Tutorial"
   },
   "languages": {
     "fr": "Français",
@@ -79,6 +79,10 @@
     "post": {
       "related_post_list_title": "Related articles",
       "post_footer_title": "write by"
+    },
+    "tutorial": {
+      "previous_button": "Previous",
+      "next_button": "Next"
     },
     "author": {
       "post_preview_list_title": "Author's article(s)"

@@ -28,6 +28,7 @@ reports
 coverage
 storybook-static
 public/data
-public/imgs/posts
+public/imgs/articles
+public/imgs/tutorials
 public/imgs/authors
 public/feed.xml

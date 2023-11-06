@@ -79,6 +79,7 @@ Here is the template of the file.
 
 ```md
 ---
+contentType: author
 username: myusername
 name: Name Lastname
 github: mygithub
@@ -93,20 +94,20 @@ Some description about me...
 
 Add your avatar to the `_assets/authors/myusername.jpg` folder.
 
-**4 -Then add your post**
+**4 -Then add your article**
 
-> You can't do a pull request just with your author markdown, because the deployment doesn't allow an author file without any associated posts
+> You can't do a pull request just with your author markdown, because the deployment doesn't allow an author file without any associated articles
 
 ----------
 
-Create your post page
+Create your article page
 -------------
 
 **1 - Create the markdown file**
 
-In the folder `_posts` add a markdown file with the name of your post and prefixed with the date.
+In the folder `_articles` add a markdown file with the name of your article and prefixed with the date.
 ```bash
-cd _posts && touch YYYY-MM-DD-slug.md
+cd _articles && touch YYYY-MM-DD-slug.md
 ```
 
 **2 - Add content to the file**
@@ -115,11 +116,12 @@ Here is the template of the file.
 
 ```md
 ---
+contentType: article
 lang: en | fr
 date: YYYY-MM-DD
-slug: slug of the post (No space dashes instead)
-title: Title of the post
-excerpt: Description of the post (Visible on the list pages)
+slug: slug of the article (No space dashes instead)
+title: Title of the article
+excerpt: Description of the article (Visible on the list pages)
 categories:
     - javascript | php | agile | architecture
 keywords:
@@ -127,41 +129,119 @@ keywords:
 authors:
     - author's username
 ---
-Content of your post in markdown
+Content of your article in markdown
 ```
 
-**3 - Write the content of the post**
+> If your title or excerpt contains `:`, `"` use the syntax `>` or add your content between quotes (`"`)
 
-The content of the articlpostbe written in markdown.
+**3 - Write the content of the article**
+
+The content of the article be written in markdown.
 You can use one of the solutions:
 - [StackEdit](https://stackedit.io)
 - [Dillinger](http://dillinger.io)
 
-To add images to your post, you will need to create the folder `_assets/posts/YYYY-MM-DD-slug/` and add your images there.
+To add images to your article, you will need to create the folder `_assets/articles/YYYY-MM-DD-slug/` and add your images there.
 Then in the markdown content, insert the tag:
 ```md
-![alt of image]({{ site.baseurl }}/_assets/posts/YYYY-MM-DD-slug/image-name.png)
+![alt of image]({BASE_URL}/imgs/articles/YYYY-MM-DD-slug/image-name.png)
 ```
 
 To add an image with a figure and a figcaption you just need to write this syntax:
 
 ```md
-![alt of image]({{ site.baseurl }}/_assets/posts/YYYY-MM-DD-slug/image-name.png)
+![alt of image]({BASE_URL}/imgs/articles/YYYY-MM-DD-slug/image-name.png)
 Figure: *Source Github*
 ```
 
 And to specify a size on the image, you can add the arguments (`width`, `height`, `maxWidth`, `maxHeight`) after the url:
 ```md
-![alt of image]({{ site.baseurl }}/_assets/posts/YYYY-MM-DD-slug/image-name.png?width=500)
+![alt of image]({BASE_URL}/imgs/articles/YYYY-MM-DD-slug/image-name.png?width=500)
 ```
 
 > Warning: Don't add html in your markdown, you don't have to override the blog template in the markdown.
 
 **4 - Add your pull request**
 
-Create your branch and add your pull request. 
+Create your branch and add your pull request.
 ```bash
-git checkout -b feat/add-post-slug
+git checkout -b feat/add-article-slug
 ```
 
-Once your post is finished and you want it to be published and add the label `publication` to your pull request.
+Once your article is finished and you want it to be published and add the label `publication` to your pull request.
+
+----------
+
+Create your tutorial page
+-------------
+
+**1 - Create the markdown file**
+
+In the folder `_tutorials` pick the subfolder `fr` or `en` depending on the translation, then create folder with the name of your tutorial and prefixed with the date (`YYYY-MM-DD-slug`).
+```bash
+cd _tutorials && mkdir YYYY-MM-DD-slug
+```
+
+**2 - Add content to the file**
+
+Inside the folder named `YYYY-MM-DD-slug` you created, add a file named `index.md` Here is the template of the file.
+
+```md
+---
+contentType: tutorial
+lang: en | fr
+date: YYYY-MM-DD
+slug: Slug of the tutorial (No space dashes instead)
+title: Title of the tutorial
+excerpt: Description of the tutorial (Visible on the list pages)
+categories:
+    - javascript | php | agile | architecture
+keywords:
+- keyword (limited to 10, must not be identical to the categories, used for SEO and search)
+authors:
+    - author's username
+steps:
+  - slug of your steps (No space dashes instead)
+---
+```
+
+> If your title or excerpt contains `:`, `"` use the syntax `>` or add your content between quotes (`"`)
+> The steps should be in the order you want them displayed
+
+Then add a steps folder and add your steps there. Here is the template of the file.
+
+Always inside the folder named `YYYY-MM-DD-slug`, create another folder called `steps`. Then create one file for each step.
+
+Example:
+
+```
+YYYY-MM-DD-slug
+ ├── index.md
+ └── steps/
+        ├──introduction.md
+        ├──installation-du-serveur-graphql.md
+        └── ...
+```
+
+Here is the template of the file:
+
+```md
+---
+contentType: tutorial-step
+tutorial: slug of the tutorial (previously added in your index.md file)
+slug: Slug of the step (No space dashes instead and previously added in your index.md file)
+title: Title of the step
+---
+Content of your step in markdown
+```
+
+> The files need to keep the same name as the steps declared in `index.md`, using snake case.
+
+**3 - Add your pull request**
+
+Create your branch and add your pull request.
+```bash
+git checkout -b feat/add-tutorial-slug
+```
+
+Once your tutorial is finished and you want it to be published and add the label `publication` to your pull request.

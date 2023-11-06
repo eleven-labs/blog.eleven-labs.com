@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: fverneuil
 name: Florian Verneuil
 ---

@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: rcourbo
 name: Renaud Courbo
 ---

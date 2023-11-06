@@ -113,7 +113,10 @@ LayoutTemplateWithAutocompleteIsOpen.args = {
       href: '#',
     },
     autocompleteIsDisplayed: true,
-    autocomplete: AutocompleteFieldStories.AutocompleteFieldWithResult.args as HeaderProps['autocomplete'],
+    autocomplete: {
+      ...AutocompleteFieldStories.default.args,
+      ...AutocompleteFieldStories.AutocompleteFieldWithResult.args,
+    } as HeaderProps['autocomplete'],
   }),
 };
 
@@ -124,6 +127,9 @@ LayoutTemplateWithAutocompleteAndResultNotFound.args = {
       href: '#',
     },
     autocompleteIsDisplayed: true,
-    autocomplete: AutocompleteFieldStories.AutocompleteFieldWithNoResult.args as HeaderProps['autocomplete'],
+    autocomplete: {
+      ...AutocompleteFieldStories.default.args,
+      ...AutocompleteFieldStories.AutocompleteFieldWithResult.args,
+    } as HeaderProps['autocomplete'],
   }),
 };

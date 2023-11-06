@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: amoutte
 name: Anthony MOUTTE
 github: instabledesign

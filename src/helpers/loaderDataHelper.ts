@@ -1,8 +1,8 @@
 import { LoaderFunctionArgs } from '@remix-run/router/utils';
 import fetch from 'cross-fetch';
 
-import { BASE_URL, IS_PRERENDER, IS_SSR } from '@/constants';
-import { DataFromAuthorPage, DataFromPostListPage, DataFromPostPage } from '@/types';
+import { BASE_URL, CategoryEnum, ContentTypeEnum, IS_PRERENDER, IS_SSR } from '@/constants';
+import { ArticlePageData, AuthorPageData, PostListPageData, TutorialPageData } from '@/types';
 
 const cache = new Map();
 
@@ -32,8 +32,8 @@ const fetchWithCache = async <TData>(options: { request: Request; path: string }
   return data as TData;
 };
 
-export const getDataFromPostListPage = async (options: LoaderFunctionArgs): Promise<DataFromPostListPage> => {
-  const dataFromPostListPage = await fetchWithCache<DataFromPostListPage>({
+export const loadPostListPageData = async (options: LoaderFunctionArgs): Promise<PostListPageData> => {
+  const dataFromPostListPage = await fetchWithCache<PostListPageData>({
     request: options.request,
     path: `${options.params.lang}/post-list.json`,
   });
@@ -41,21 +41,23 @@ export const getDataFromPostListPage = async (options: LoaderFunctionArgs): Prom
     return {
       categories: dataFromPostListPage.categories,
       posts: dataFromPostListPage.posts.filter((post) =>
-        post?.categories?.includes(options.params.categoryName as string)
+        options.params.categoryName === ContentTypeEnum.TUTORIAL
+          ? post.contentType === ContentTypeEnum.TUTORIAL
+          : post?.categories?.includes(options.params.categoryName as CategoryEnum)
       ),
     };
   }
   return dataFromPostListPage;
 };
 
-export const getDataFromAuthorPage = async (options: LoaderFunctionArgs): Promise<DataFromAuthorPage> =>
-  fetchWithCache<DataFromAuthorPage>({
+export const loadAuthorPageData = async (options: LoaderFunctionArgs): Promise<AuthorPageData> =>
+  fetchWithCache<AuthorPageData>({
     request: options.request,
     path: `${options.params.lang}/author/${options.params.authorUsername}.json`,
   });
 
-export const getDataFromPostPage = async (options: LoaderFunctionArgs): Promise<DataFromPostPage> =>
-  fetchWithCache<DataFromPostPage>({
+export const loadPostPageData = async (options: LoaderFunctionArgs): Promise<ArticlePageData | TutorialPageData> =>
+  fetchWithCache<ArticlePageData | TutorialPageData>({
     request: options.request,
     path: `${options.params.lang}/post/${options.params.slug}.json`,
   });

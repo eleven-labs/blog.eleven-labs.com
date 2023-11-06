@@ -1,4 +1,5 @@
 ---
+contentType: author
 username: seinhorn
 name: Stéphane Einhorn
 ---
