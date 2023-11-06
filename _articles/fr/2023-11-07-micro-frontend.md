@@ -119,7 +119,7 @@ Mais dans tous les cas, quelle que soit ce choix, l'usage du micro frontend vous
 
 ## Stratégies d'implémentation du micro frontend
 
-La mise en œuvre du micro frontend offre différentes stratégies pour composer et intégrer les micro frontends dans une application. Ces stratégies varient en fonction du moment où la composition a lieu, des besoins de votre projet, et des préférences techniques. Chaque approche peut être utilisée en conjonction avec une application conteneur (App Shell) pour créer une expérience utilisateur cohérente. Voici quatres stratégies couramment utilisées :
+La mise en œuvre du micro frontend offre différentes stratégies pour composer et intégrer les micro frontends dans une application. Ces stratégies varient en fonction du moment où la composition a lieu, des besoins de votre projet, et des préférences techniques. Chaque approche peut être utilisée en conjonction avec une application conteneur (App Shell) pour créer une expérience utilisateur cohérente. Voici quatre stratégies couramment utilisées :
 
 ### Composition côté serveur
 
@@ -153,7 +153,7 @@ Pour illustrer l'utilisation des SSI, voici un exemple :
 </html>
 ```
 
-Les SSI sont pris en charge par divers serveurs web et environnements. Voici quelques-uns des serveurs et outils compatibles: **Apache HTTP Server**, **Nginx**, **IIS** ...
+Les SSI sont pris en charge par divers serveurs web et environnements. Voici quelques-uns des serveurs et outils compatibles : **Apache HTTP Server**, **Nginx**, **IIS** ...
 
 Lorsque vous envisagez d'intégrer des micro frontends complets au sein de votre architecture, il peut être préférable d'explorer d'autres stratégies de composition qui offrent une plus grande flexibilité et la capacité d'inclure des micro frontends autonomes.
 
@@ -161,7 +161,7 @@ Lorsque vous envisagez d'intégrer des micro frontends complets au sein de votre
 
 Les Edge Side Includes (ESI) représentent une extension évoluée des SSI et sont couramment utilisés dans des environnements de mise en cache côté serveur. Ils offrent une approche permettant d'inclure dynamiquement des fragments de page en fonction de règles de composition, apportant ainsi une flexibilité accrue dans le processus de composition côté serveur.
 
-Les ESI offrent la possibilité de composer des pages web en combinant des micro frontends de manière dynamique, en fonction des besoins de chaque requête. Voici un exemple d'utilisation d'ESI :
+Les ESI offrent la possibilité de composer des pages web en combinant des micro frontends de manière dynamique, en fonction des besoins de chaque requête. Voici un exemple d'utilisation des ESI :
 
 Grâce aux ESI, la composition des pages web peut se faire de manière dynamique en combinant les micro frontends en réponse aux besoins spécifiques de chaque requête. Voici un exemple d'utilisation des ESI :
 
@@ -176,7 +176,7 @@ De plus, pour vous aider à identifier les outils et serveurs compatibles avec l
 
 Un exemple de cas d'utilisation notable des ESI est celui de [Marianne](https://aws.amazon.com/fr/blogs/france/marianne-une-infrastructure-serverless-pour-mieux-servir-les-lecteurs/), un magazine d'information qui a adopté une infrastructure serverless pour améliorer l'expérience de ses lecteurs.
 
-Il est important de noter qu'une approche similaire basée sur le concept des ESI est le Edge Side Rendering (ESR). Elle repose sur l'utilisation avancées des Content Delivery Networks (CDN) pour fournir du contenu statique et dynamique de manière progressive aux utilisateurs en mode streaming.
+Il est important de noter qu'une approche similaire basée sur le concept des ESI est le Edge Side Rendering (ESR). Elle repose sur l'utilisation avancée des Content Delivery Networks (CDN) pour fournir du contenu statique et dynamique de manière progressive aux utilisateurs en mode streaming.
 
 Ci-dessous, quelques exemples d'implémentations :
 
@@ -265,13 +265,13 @@ Il convient de noter que cette approche permet de charger dynamiquement les micr
 
 ## Comment aborder certaines problématiques d'implémentation ?
 
-Lors de la mise en œuvre de micro frontends, plusieurs questions et problématiques spécifiques surgissent.  Voici comment répondre à certaines d'entre elles :
+Lors de la mise en œuvre des micro frontends, plusieurs questions et problématiques spécifiques surgissent. Voici comment répondre à certaines d'entre elles :
 
 ### Comment les micro frontends communiquent-ils entre eux ?
 
 En général, il est recommandé de minimiser les communications directes entre les micro frontends, car l'un des avantages clés de cette architecture est la séparation et l'indépendance. Cependant, il peut y avoir des situations où une communication est nécessaire. Dans de tels cas, il existe des pratiques courantes pour gérer cette communication de manière propre.
 
-**Custom Events :** Les événements personnalisés permettent aux micro frontends de déclencher et de répondre à des actions sans avoir besoin d'une connaissance directe des autres micro frontends. Cela peut aider à maintenir une certaine isolation tout en autorisant une communication ciblée.  Pour en savoir plus sur cette méthode, consultez cet [article sur la communication entre composants avec des événements personnalisés]({BASE_URL}/fr/communication-entre-composants-avec-des-evenements-personnalises/).
+**Custom Events :** Les événements personnalisés permettent aux micro frontends de déclencher et de répondre à des actions sans avoir besoin d'une connaissance directe des autres micro frontends. Cela peut aider à maintenir une certaine isolation tout en autorisant une communication ciblée. Pour en savoir plus sur cette méthode, consultez cet [article sur la communication entre composants avec des événements personnalisés]({BASE_URL}/fr/communication-entre-composants-avec-des-evenements-personnalises/).
 
 **Contexte commun :** Un contexte partagé, tel que LocalStorage ou une instance partagée, peut être utilisé pour stocker des informations partagées entre les micro frontends. Cela peut être utile pour des données telles que l'état de l'application ou des informations d'authentification.
 
@@ -297,21 +297,22 @@ Les micro frontends sont construits de manière indépendante, ce qui peut entra
 
 **Performance Web :** Il est important de garder un œil sur la performance web de notre application. Limiter les requêtes réseau en consolidant les appels, utiliser la mise en cache, le code splitting, adopter le préchargement sélectif pour les ressources essentielles et mettre en place des stratégies de lazy loading sont autant de techniques qui aideront l'application finale à être performante.
 
-**Minification et compression:** Aprés le développement des fonctionnalités, il sera aussi possible d'adopter une stratégie de minification des fichiers Javascript, ce qui va venir supprimer les lignes et caractéres inutiles, et par concequent répondre à l'objectif initial. La compression des fichiers est aussi une technique qui peut aider à ce niveau là, une fois le développement fini.
+**Minification et compression:** Après le développement des fonctionnalités, il sera aussi possible d'adopter une stratégie de minification des fichiers JavaScript, ce qui va venir supprimer les lignes et caractères inutiles, et par conséquent répondre à l'objectif initial. La compression des fichiers est aussi une technique qui peut aider à ce niveau-là, une fois le développement fini.
 
 <div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
 
-La communication entre micro frontends nécessite des méthodes de communication ciblées, tandis qu'un Design System maintient la cohérence visuelle. Des tests spécialisés et une gestion efficace des dépendances et de la taille des fichiers JavaScript sont essentiels pour une architecture performante.
+La communication entre les micro frontends nécessite des méthodes de communication ciblées, tandis qu'un Design System maintient la cohérence visuelle. Des tests spécialisés et une gestion efficace des dépendances et de la taille des fichiers JavaScript sont essentiels pour une architecture performante.
 </div>
 
 ## Conclusion
 
-Vous avez maintenant tous les éléments en main pour bien comprendre et mettre en place cette architecture micro frontend.
+Vous avez maintenant tous les éléments en main pour bien comprendre et mettre en place cette architecture de micro frontends.
 
-La vraie question reste de savoir si vous en avez besoin : si vous commencez juste une nouvelle application ou que vous n'avez pas de mal à maintenir votre application existante, c'est peut-être une solution sur-dimensionnée.
+La vraie question reste de savoir si vous en avez besoin : si vous démarrez juste une nouvelle application ou si vous n'avez pas de difficulté à maintenir votre application existante, cela peut être une solution surdimensionnée.
 
-Mais si, comme nous au sein du [studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), vous avez besoin de solutions pour faire évoluer efficacement vos applications complexes, cette approche peut vous aider, notamment pour assurer la migration progressive de vos applications front vers de nouvelles technologies.
+Mais si, comme nous au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), vous avez besoin de solutions pour faire évoluer efficacement vos applications complexes, cette approche peut vous aider, notamment pour assurer la migration progressive de vos applications frontales vers de nouvelles technologies.
 
 *Ressources pour aller plus loin :*
+
 - [Cam Jackson, Martin Fowler : Micro frontends](https://martinfowler.com/articles/micro-frontends.html)
 - [Michael Geers: Micro frontends extending the microservice idea to frontend development](https://micro-frontends.org/)
