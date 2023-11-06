@@ -134,6 +134,14 @@ Content of your article in markdown
 
 > If your title or excerpt contains `:`, `"` use the syntax `>` or add your content between quotes (`"`)
 
+> If you want to add a 2 empty lines, you can use `\` syntax: ex:
+```
+first paragraph.
+
+\
+second paragraph displayed after 2 empty lines.
+```
+
 **3 - Write the content of the article**
 
 The content of the article be written in markdown.
