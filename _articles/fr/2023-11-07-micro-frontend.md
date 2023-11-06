@@ -44,7 +44,7 @@ Dans les sections suivantes, nous explorerons les avantages de cette approche, l
 
 L'adoption du micro frontend présente de nombreux avantages pour les entreprises. Il est essentiel de saisir ces avantages pour évaluer la pertinence de cette approche pour votre organisation. Voici un aperçu des principaux atouts :
 
-### Indépandance des responsabilités fonctionnelles
+### Indépendance des responsabilités fonctionnelles
 
 L'un des avantages les plus marquants du micro frontend réside dans sa capacité à isoler les fonctionnalités de l'application frontend en blocs autonomes. Chaque micro frontend a sa propre responsabilité et suit ainsi le [principe Single Responsibility de SOLID](https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique). Cela signifie que vous pouvez travailler sur chaque micro frontend de manière indépendante, sans perturber le reste de l'application. Cette isolation facilite le développement, les tests, les déploiements, et les mises à jour, tout en réduisant aussi les risques de regressions sur les autres fonctionnalités de l'application. Ainsi, chaque micro frontend et donc l'application frontend parente sont plus simples à maintenir.
 
