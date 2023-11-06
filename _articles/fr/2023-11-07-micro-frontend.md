@@ -21,7 +21,9 @@ authors:
 
 C'est là que le concept de micro frontend intervient en tant que solution à cette problématique.
 
-Ce concept a été introduit pour la première fois en novembre 2016 dans le [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar/techniques/micro-frontends). Il s'inspire des principes des microservices et les transpose dans le domaine du développement frontend : il repose sur le découpage de l'application web en composants autonomes, les "micro frontends" responsables de domaines et fonctions spécifiques, qui communiquent et fonctionnent ensemble pour former une seule application front.
+Ce concept a été introduit pour la première fois en novembre 2016 dans le [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar/techniques/micro-frontends). Il a ensuite eu un fort succès et de gros acteurs comme [Spotify](https://www.quora.com/What-is-the-technology-stack-behind-the-Spotify-web-client/answer/Andreas-Blixt), [Ikea](https://www.infoq.com/news/2018/08/experiences-micro-frontends/) ou [Leroy Merlin (ADEO)](https://medium.com/adeo-tech/behind-leroymerlin-fr-micro-frontends-47fd7c53f99d) en France ont pu utiliser cette approche.
+
+Cette architecture s'inspire des principes des microservices et les transpose dans le domaine du développement frontend : il repose sur le découpage de l'application web en composants autonomes, les "micro frontends" responsables de domaines et fonctions spécifiques, qui communiquent et fonctionnent ensemble pour former une seule application front.
 
 Chaque micro frontend peut être développé indépendamment, testé, déployé et évolué sans perturber le reste de l'application. De plus, le micro frontend permet d'utiliser divers langages et frameworks sur chaque brique. Cette modularité et indépendance de chaque composant offre une grande flexibilité aux équipes de développement, qui peuvent se concentrer sur des domaines spécifiques de l'application.
 
