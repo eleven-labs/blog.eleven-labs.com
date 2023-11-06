@@ -121,13 +121,11 @@ La mise en œuvre du micro frontend offre différentes stratégies pour composer
 
 ### Composition côté serveur
 
-La composition côté serveur est une stratégie où la composition des micro frontends se produit au niveau du serveur. Dans cette approche, le serveur génère la page web complète, y compris les micro frontends, avant de la renvoyer au navigateur du client. Cette stratégie présente des avantages en matière de performances, de référencement et de sécurité.
-
-La composition côté serveur est une stratégie où la composition des micro frontends se produit au niveau du serveur. Dans cette approche, le serveur génère la page web complète, y compris les micro frontends, avant de la renvoyer au navigateur du client. Cette approche peut être mise en œuvre de plusieurs manières, notamment grâce aux techniques suivantes :
+La composition côté serveur est une stratégie où la composition des micro frontends se produit au niveau du serveur. Dans cette approche, le serveur génère la page web complète, y compris les micro frontends, avant de la renvoyer au navigateur du client. Cette stratégie présente des avantages en matière de performances, de référencement et de sécurité. Cette approche peut être mise en œuvre de plusieurs manières, notamment grâce aux techniques suivantes :
 
 #### SSR + Rehydration
 
-Une autre approche consiste à tirer parti du Server-Side Rendering (SSR) pour générer initialement la page avec les micro frontends. Ensuite, la partie côté client (JavaScript) prend en charge l'hydratation, c'est-à-dire la réactivation des fonctionnalités côté client une fois que la page est chargée.
+Une première approche consiste à tirer parti du Server-Side Rendering (SSR) pour générer initialement la page avec les micro frontends. Ensuite, la partie côté client (JavaScript) prend en charge l'hydratation, c'est-à-dire la réactivation des fonctionnalités côté client une fois que la page est chargée.
 
 Cette stratégie combine la performance d'une génération côté serveur avec la flexibilité des micro frontends côté client. Elle est souvent utilisée dans les applications web modernes, en particulier celles basées sur des frameworks tels que **Next.js**, **Nuxt.js**, ou **Angular Universal**.
 
@@ -151,7 +149,7 @@ Pour illustrer l'utilisation des SSI, voici un exemple :
 </html>
 ```
 
-Les SSI sont pris en charge par divers serveurs web et environnements. Voici quelques-uns des serveurs et outils compatibles : **Apache HTTP Server**, **Nginx**, **IIS** ...
+Les SSI sont pris en charge par divers serveurs web et environnements. Voici quelques-uns des serveurs et outils compatibles : **Apache HTTP Server**, **Nginx**, **IIS**...
 
 Lorsque vous envisagez d'intégrer des micro frontends complets au sein de votre architecture, il peut être préférable d'explorer d'autres stratégies de composition qui offrent une plus grande flexibilité et la capacité d'inclure des micro frontends autonomes.
 
@@ -161,8 +159,6 @@ Les Edge Side Includes (ESI) représentent une extension évoluée des SSI et so
 
 Les ESI offrent la possibilité de composer des pages web en combinant des micro frontends de manière dynamique, en fonction des besoins de chaque requête. Voici un exemple d'utilisation des ESI :
 
-Grâce aux ESI, la composition des pages web peut se faire de manière dynamique en combinant les micro frontends en réponse aux besoins spécifiques de chaque requête. Voici un exemple d'utilisation des ESI :
-
 ```html
 <!-- Exemple d'utilisation d'ESI -->
 <esi:include src="/microfrontend" />
@@ -170,7 +166,7 @@ Grâce aux ESI, la composition des pages web peut se faire de manière dynamique
 
 Pour obtenir des détails approfondis sur la mise en œuvre des ESI et sur leur intégration dans votre architecture, il est recommandé de consulter la documentation spécifique à votre environnement.
 
-De plus, pour vous aider à identifier les outils et serveurs compatibles avec les ESI, voici une liste de références : **Varnish Cache**, **Akamai Edge Platform**, **Fastly**, **Cloudflare**, ... Chacun de ces outils peut être configuré pour gérer les ESI conformément à vos besoins particuliers.
+Pour vous aider à identifier les outils et serveurs compatibles avec les ESI, voici une liste de références : **Varnish Cache**, **Akamai Edge Platform**, **Fastly**, **Cloudflare**... Chacun de ces outils peut être configuré pour gérer les ESI conformément à vos besoins particuliers.
 
 Un exemple de cas d'utilisation notable des ESI est celui de [Marianne](https://aws.amazon.com/fr/blogs/france/marianne-une-infrastructure-serverless-pour-mieux-servir-les-lecteurs/), un magazine d'information qui a adopté une infrastructure serverless pour améliorer l'expérience de ses lecteurs.
 
@@ -310,6 +306,7 @@ La vraie question reste de savoir si vous en avez besoin : si vous démarrez jus
 
 Mais si, comme nous au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), vous avez besoin de solutions pour faire évoluer efficacement vos applications complexes, cette approche peut vous aider, notamment pour assurer la migration progressive de vos applications frontend vers de nouvelles technologies.
 
+\
 *Ressources pour aller plus loin :*
 
 - [Cam Jackson, Martin Fowler : Micro frontends](https://martinfowler.com/articles/micro-frontends.html)
