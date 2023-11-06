@@ -54,8 +54,6 @@ La notion de "feature team" prend tout son sens grâce à ce concept de micro fr
 
 Ces "feature teams" sont composées de tous les métiers nécessaires pour mener à bien le développement de cette partie du produit, du discovery produit et du design jusqu'au déploiement et à la maintenance en production. Notamment, les développeurs backend et frontend travaillent ensemble dans la même équipe. Pour qu'ils puissent mener à bien leur mission sur cette partie du produit, ils doivent avoir la main sur toutes ses composantes techniques, aussi bien côté backend, ce qui est permis avec des microservices, par exemple, que côté frontend, ce que favorise l'architecture micro frontend.
 
-Par opposition, sans micro frontend, et même si son périmètre de responsabilité fonctionnelle est bien défini, une feature team peut se retrouver bloquée au moment de livrer ses fonctionnalités puisque la composante front doit être implémentée dans une application front monolith qui est co-maintenue avec toutes les autres features teams. Les process de livraison sont dans ce cas  plus complexes et les risques de régressions plus élevés.
-
 Par opposition, sans micro frontend, et même si son périmètre de responsabilité fonctionnelle est bien défini, une "feature team" peut se retrouver bloquée au moment de livrer ses fonctionnalités, puisque la composante front doit être implémentée dans une application frontend monolithique qui est co-maintenue avec toutes les autres "feature teams". Les processus de livraison sont dans ce cas plus complexes et les risques de régressions plus élevés.
 
 ### Indépendance technique
@@ -115,7 +113,7 @@ En fonction du contexte, notamment du budget et des deadlines, vous pouvez chois
 - Si les contraintes sont fortes, vous limitez la refonte d'une fonctionnalité existante à la création d'un composant micro frontend se limitant strictement au nouveau besoin.
 - Si les contraintes sont plus faibles, vous pouvez choisir de refondre complètement chaque page dans son micro frontend à chaque modification demandée sur la page existante en question.
 
-Mais dans tous les cas, quelle que soit ce choix, l'usage du micro frontend vous permet d'arrêter de faire grossir la base de code de l'application existante, puisque toute fonctionnalité strictement nouvelle sera ajoutée dans un micro frontend et non dans l'application legacy.
+Mais dans tous les cas, quel que soit ce choix, l'usage du micro frontend vous permet d'arrêter de faire grossir la base de code de l'application existante, puisque toute fonctionnalité strictement nouvelle sera ajoutée dans un micro frontend et non dans l'application legacy.
 
 ## Stratégies d'implémentation du micro frontend
 
@@ -310,7 +308,7 @@ Vous avez maintenant tous les éléments en main pour bien comprendre et mettre 
 
 La vraie question reste de savoir si vous en avez besoin : si vous démarrez juste une nouvelle application ou si vous n'avez pas de difficulté à maintenir votre application existante, cela peut être une solution surdimensionnée.
 
-Mais si, comme nous au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), vous avez besoin de solutions pour faire évoluer efficacement vos applications complexes, cette approche peut vous aider, notamment pour assurer la migration progressive de vos applications frontales vers de nouvelles technologies.
+Mais si, comme nous au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), vous avez besoin de solutions pour faire évoluer efficacement vos applications complexes, cette approche peut vous aider, notamment pour assurer la migration progressive de vos applications frontend vers de nouvelles technologies.
 
 *Ressources pour aller plus loin :*
 
