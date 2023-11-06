@@ -3,8 +3,8 @@ contentType: article
 lang: fr
 date: 2023-11-07
 slug: micro-frontend
-title: "Micro frontend : la solution pour une meilleure maintenabilité de vos applications front"
-excerpt: Description
+title: "Micro frontend : la solution pour une meilleure maintenabilité de vos applications web"
+excerpt: "Comprendre et mettre en place le concept de micro frontend : cas d'usage concrêts et exemples d'implémentations basés sur notre expérience"
 categories:
     - javascript
 keywords:
@@ -14,6 +14,9 @@ authors:
     - iregaibi
     - charles-eric
 ---
+
+Dans cette article, nous introduirons la notion du "micro frontend" et ses avantages. Puis nous donnerons des cas d'usage concrêts et exemples d'implémentation basés sur notre expérience réelle au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) pour des projets internes et clients. Bonne lecture !
+
 
 ## Qu'est-ce que le "micro frontend" ?
 
@@ -287,11 +290,14 @@ Les micro frontends sont construits de manière indépendante, ce qui peut entra
 
 ## Conclusion
 
-rappel avantages
-attention Complexité opérationnelle et organisationnelle
+Vous avez maintenant tous les éléments en main pour bien comprendre et mettre en place cette architecture micro frontend.
 
-Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous utilisons cette approche microfrontend pour nos différents projets internes et clients à chaque fois que nous avons besoin de faire une migration progressive d'une application front.
+La vraie question reste de savoir si vous en avez besoin : si vous commencez juste une nouvelle application ou que vous n'avez pas de mal à maintenir votre application existante, c'est peut-être une solution sur-dimensionnée.
 
- ## Ressources utiles
-- 👍 [Cam Jackson, Martin Fowler : Micro frontends](https://martinfowler.com/articles/micro-frontends.html)
-- 👍 [Michael Geers: Micro frontends extending the microservice idea to frontend development](https://micro-frontends.org/)
+Mais si, comme nous au sein du [studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), vous avez besoin de solutions pour faire évoluer efficacement vos applications complexes, cette approche peut vous aider, notamment pour assurer la migration progressive de vos applications front vers de nouvelles technologies.
+
+<br />
+
+*Ressources pour aller plus loin :*
+- [Cam Jackson, Martin Fowler : Micro frontends](https://martinfowler.com/articles/micro-frontends.html)
+- [Michael Geers: Micro frontends extending the microservice idea to frontend development](https://micro-frontends.org/)
