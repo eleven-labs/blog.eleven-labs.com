@@ -207,7 +207,7 @@ Je vous le conseille si vous souhaitez en savoir plus sur ce principe, et dans t
 Prenons une classe `BaseRepository`, qui se veut être une classe abstraite contenant toutes les fonctions de base utilisées dans nos repository (`find`, `store`, `remove`, etc...).
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-Pour rappel, un repository est une classe qui vous permet d'interagir avec votre base de données via les fonctions mises à votre disposition, et donc de manipuler vos objets.
+Pour rappel, un repository est une classe qui vous permet d'interagir avec votre base de données via les fonctions mises à votre disposition, pour y récupérer des données, voire de les manipuler (insertion, mise à jour, suppression) grâce à l'Entity Manager présent dans le Repository.
 </div>
 
 ```php
