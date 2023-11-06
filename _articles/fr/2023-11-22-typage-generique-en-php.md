@@ -205,7 +205,7 @@ Il faut vraiment voir `T` comme un type de substitution qui sera écrasé par un
 
 Voyons à présent un autre tag très important, le `@extends`. Il permet de tirer profit des types génériques avec **l'héritage**.
 
-L'exemple du `@extends` ci-dessous est tiré de mon [Codelabs à propos du concept de ***composition over inheritance***](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine).
+L'exemple du `@extends` ci-dessous est tiré de mon [Tutoriel](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) à propos du concept de ***composition over inheritance***].
 Je vous le conseille si vous souhaitez en savoir plus sur ce principe, et dans tous les cas, je vous le recommande pour sa dernière partie qui met en application les types génériques que nous sommes en train d'apprendre ici.
 
 Prenons une classe `BaseRepository`, qui se veut être une classe abstraite contenant toutes les fonctions de base utilisées dans nos repository (`find`, `store`, `remove`, etc...).
@@ -270,7 +270,7 @@ Ainsi, vous rajoutez de la sécurité en vous empêchant de faire une action qui
 
 Cet article est volontairement théorique, et sans exemple exhaustif. Prenez-le plutôt comme un pense-bête sur l'utilisation des génériques en PHP.
 
-Pour une mise en application plus poussée et un accompagnement pas à pas de la vérification de ces types avec PHPStan, référez-vous au [Codelabs](https://codelabs.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) cité plus haut dans cet article.
+Pour une mise en application plus poussée et un accompagnement pas à pas de la vérification de ces types avec PHPStan, référez-vous au [Tutoriel](https://codelabs.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) cité plus haut dans cet article.
 
 ### Conclusion
 
@@ -280,4 +280,4 @@ Sachez que d'autres outils que PHPStan permettent d'interpréter ces annotations
 
 Il y aurait bien d'autres choses à voir sur les types génériques, en particulier le tag `@template-covariant`, mais ce sera pour une partie 2, pourquoi pas ! En attendant, vous avez tout le nécessaire pour vous en sortir dans la grande majorité des situations.
 
-N'oubliez pas d'aller jeter un oeil à notre Codelabs, amusez-vous bien avec ces outils, développez-bien, et à la prochaine !
+N'oubliez pas d'aller jeter un oeil à notre Tutoriel, amusez-vous bien avec ces outils, développez-bien, et à la prochaine !
