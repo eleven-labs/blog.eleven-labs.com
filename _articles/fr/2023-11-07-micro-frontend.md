@@ -117,15 +117,21 @@ En fonction du contexte, notamment du budget et des deadlines, vous pouvez chois
 
 Mais dans tous les cas, quelle que soit ce choix, l'usage du micro frontend vous permet d'arrêter de faire grossir la base de code de l'application existante, puisque toute fonctionnalité strictement nouvelle sera ajoutée dans un micro frontend et non dans l'application legacy.
 
-## Stratégies d'implémentation du Micro frontend
+## Stratégies d'implémentation du micro frontend
 
-La mise en œuvre du Micro frontend offre différentes stratégies pour composer et intégrer les micro frontends dans une application. Ces stratégies varient en fonction du moment où la composition a lieu, des besoins de votre projet, et des préférences techniques. Chaque approche peut être utilisée en conjonction avec une application conteneur (App Shell) pour créer une expérience utilisateur cohérente. Voici quatres stratégies couramment utilisées :
+La mise en œuvre du micro frontend offre différentes stratégies pour composer et intégrer les micro frontends dans une application. Ces stratégies varient en fonction du moment où la composition a lieu, des besoins de votre projet, et des préférences techniques. Chaque approche peut être utilisée en conjonction avec une application conteneur (App Shell) pour créer une expérience utilisateur cohérente. Voici quatres stratégies couramment utilisées :
 
 ### Composition côté serveur
 
 La composition côté serveur est une stratégie où la composition des micro frontends se produit au niveau du serveur. Dans cette approche, le serveur génère la page web complète, y compris les micro frontends, avant de la renvoyer au navigateur du client. Cette stratégie présente des avantages en matière de performances, de référencement et de sécurité.
 
 La composition côté serveur est une stratégie où la composition des micro frontends se produit au niveau du serveur. Dans cette approche, le serveur génère la page web complète, y compris les micro frontends, avant de la renvoyer au navigateur du client. Cette approche peut être mise en œuvre de plusieurs manières, notamment grâce aux techniques suivantes :
+
+#### SSR + Rehydration
+
+Une autre approche consiste à tirer parti du Server-Side Rendering (SSR) pour générer initialement la page avec les micro frontends. Ensuite, la partie côté client (JavaScript) prend en charge l'hydratation, c'est-à-dire la réactivation des fonctionnalités côté client une fois que la page est chargée.
+
+Cette stratégie combine la performance d'une génération côté serveur avec la flexibilité des micro frontends côté client. Elle est souvent utilisée dans les applications web modernes, en particulier celles basées sur des frameworks tels que **Next.js**, **Nuxt.js**, ou **Angular Universal**.
 
 #### Server Side Includes (SSI)
 
@@ -147,40 +153,37 @@ Pour illustrer l'utilisation des SSI, voici un exemple :
 </html>
 ```
 
+Les SSI sont pris en charge par divers serveurs web et environnements. Voici quelques-uns des serveurs et outils compatibles: **Apache HTTP Server**, **Nginx**, **IIS** ...
+
 Lorsque vous envisagez d'intégrer des micro frontends complets au sein de votre architecture, il peut être préférable d'explorer d'autres stratégies de composition qui offrent une plus grande flexibilité et la capacité d'inclure des micro frontends autonomes.
 
 #### Edge Side Includes (ESI)
 
-Les Edge Side Includes (ESI) sont une extension avancée des SSI, souvent utilisée dans les environnements de mise en cache côté serveur. Les ESI permettent d'inclure dynamiquement des fragments de page en fonction de règles de composition, ce qui peut améliorer la flexibilité de la composition côté serveur.
+Les Edge Side Includes (ESI) représentent une extension évoluée des SSI et sont couramment utilisés dans des environnements de mise en cache côté serveur. Ils offrent une approche permettant d'inclure dynamiquement des fragments de page en fonction de règles de composition, apportant ainsi une flexibilité accrue dans le processus de composition côté serveur.
 
 Les ESI offrent la possibilité de composer des pages web en combinant des micro frontends de manière dynamique, en fonction des besoins de chaque requête. Voici un exemple d'utilisation d'ESI :
+
+Grâce aux ESI, la composition des pages web peut se faire de manière dynamique en combinant les micro frontends en réponse aux besoins spécifiques de chaque requête. Voici un exemple d'utilisation des ESI :
 
 ```html
 <!-- Exemple d'utilisation d'ESI -->
 <esi:include src="/microfrontend" />
 ```
 
-Si vous souhaitez obtenir des détails approfondis sur la mise en œuvre des Edge Side Includes (ESI) et sur la manière de les intégrer dans votre architecture, nous vous encourageons à consulter la documentation spécifique à votre environnement.
+Pour obtenir des détails approfondis sur la mise en œuvre des ESI et sur leur intégration dans votre architecture, il est recommandé de consulter la documentation spécifique à votre environnement.
 
-De plus, pour vous aider à identifier les outils et serveurs compatibles avec ESI, voici une liste de références : **Varnish Cache**, **Akamai Edge Platform**, **Fastly**, **Cloudflare**, ... Chacun de ces outils peut être configuré pour gérer les Edge Side Includes conformément à vos besoins particuliers.
+De plus, pour vous aider à identifier les outils et serveurs compatibles avec les ESI, voici une liste de références : **Varnish Cache**, **Akamai Edge Platform**, **Fastly**, **Cloudflare**, ... Chacun de ces outils peut être configuré pour gérer les ESI conformément à vos besoins particuliers.
 
-#### SSR + Rehydration
+Un exemple de cas d'utilisation notable des ESI est celui de [Marianne](https://aws.amazon.com/fr/blogs/france/marianne-une-infrastructure-serverless-pour-mieux-servir-les-lecteurs/), un magazine d'information qui a adopté une infrastructure serverless pour améliorer l'expérience de ses lecteurs.
 
-Une autre approche consiste à tirer parti du Server-Side Rendering (SSR) pour générer initialement la page avec les micro frontends. Ensuite, la partie côté client (JavaScript) prend en charge l'hydratation, c'est-à-dire la réactivation des fonctionnalités côté client une fois que la page est chargée.
+Il est important de noter qu'une approche similaire basée sur le concept des ESI est le Edge Side Rendering (ESR). Elle repose sur l'utilisation avancées des Content Delivery Networks (CDN) pour fournir du contenu statique et dynamique de manière progressive aux utilisateurs en mode streaming.
 
-Cette stratégie combine la performance d'une génération côté serveur avec la flexibilité des micro frontends côté client. Elle est souvent utilisée dans les applications web modernes, en particulier celles basées sur des frameworks tels que **Next.js**, **Nuxt.js**, ou **Angular Universal**.
-
-#### Edge Side Rendering
-
-C'est une approche similaire à la composition SSR + Rehydration. Cependant, elle se distingue par son utilisation d'un serveur Edge, qui est placé entre le serveur d'origine et le navigateur client. Ce serveur Edge gère la composition des micro frontends et peut offrir des avantages en termes de performances et de mise en cache.
-
-Voici quelques exemples d'implémentations et d'études de cas :
+Ci-dessous, quelques exemples d'implémentations :
 
 - [Next.js avec Lambda@Edge et Serverless Framework](https://www.serverless.com/blog/serverless-nextjs)
 - [Cloudflare Workers avec le framework Flareact](https://blog.cloudflare.com/rendering-react-on-the-edge-with-flareact-and-cloudflare-workers/)
-- [Étude de cas Marianne](https://aws.amazon.com/fr/blogs/france/marianne-une-infrastructure-serverless-pour-mieux-servir-les-lecteurs/) : Marianne, un magazine d'information, a adopté une infrastructure serverless pour améliorer l'expérience de ses lecteurs
 
-L'Edge Side Rendering offre une manière puissante de composer des micro frontends au niveau du serveur Edge, améliorant ainsi les performances, la mise en cache et l'expérience utilisateur. Elle est de plus en plus utilisée pour répondre aux besoins de sites web modernes et d'applications qui nécessitent une réactivité maximale.
+L'Edge Side Rendering offre une méthode puissante pour composer des micro frontends au niveau du serveur Edge, améliorant ainsi les performances, la mise en cache et l'expérience utilisateur. Elle devient de plus en plus populaire pour répondre aux besoins des sites web modernes et des applications qui exigent une réactivité optimale.
 
 ### Composition au moment de la construction
 
@@ -220,9 +223,9 @@ mfeCheckout.render(mfeCheckoutContainer);
 
 Dans cet exemple, les micro frontends `MFEProduct` et `MFECheckout` sont importés comme des modules distincts et intégrés dans l'application conteneur. Cette approche peut être adaptée à différents frameworks ou technologies, offrant ainsi une grande flexibilité dans la création d'applications modulaires basées sur des micro frontends.
 
-### Composition au moment de l'exécution via JavaScript
+### Composition au moment de l'exécution côté client
 
-La composition au moment de l'exécution via JavaScript est une approche dans laquelle les micro frontends sont chargés et intégrés de manière dynamique au moment de l'exécution, directement dans le navigateur du client. Cela permet de conserver la flexibilité tout en minimisant les dépendances préalables.
+La composition au moment de l'exécution côté client via JavaScript est une approche dans laquelle les micro frontends sont chargés et intégrés de manière dynamique au moment de l'exécution, directement dans le navigateur du client. Cela permet de conserver la flexibilité tout en minimisant les dépendances préalables.
 
 Voici un exemple de code illustrant cette approche :
 ```tsx
@@ -308,8 +311,6 @@ Vous avez maintenant tous les éléments en main pour bien comprendre et mettre 
 La vraie question reste de savoir si vous en avez besoin : si vous commencez juste une nouvelle application ou que vous n'avez pas de mal à maintenir votre application existante, c'est peut-être une solution sur-dimensionnée.
 
 Mais si, comme nous au sein du [studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), vous avez besoin de solutions pour faire évoluer efficacement vos applications complexes, cette approche peut vous aider, notamment pour assurer la migration progressive de vos applications front vers de nouvelles technologies.
-
-<br />
 
 *Ressources pour aller plus loin :*
 - [Cam Jackson, Martin Fowler : Micro frontends](https://martinfowler.com/articles/micro-frontends.html)
