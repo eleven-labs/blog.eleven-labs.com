@@ -1,6 +1,6 @@
 ---
 lang: fr
-date: 2023-08-23
+date: 2023-11-22
 slug: typage-generique-en-php
 title: Typage générique en php
 excerpt: Le typage générique en php, c'est impossible ? Pas si sûr...
