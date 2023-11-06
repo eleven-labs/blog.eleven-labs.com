@@ -205,7 +205,7 @@ Il faut vraiment voir `T` comme un type de substitution qui sera écrasé par un
 
 Voyons à présent un autre tag très important, le `@extends`. Il permet de tirer profit des types génériques avec **l'héritage**.
 
-L'exemple du `@extends` ci-dessous est tiré de notre [Codelabs à propos du concept de ***composition over inheritance***](https://codelabs.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine).
+L'exemple du `@extends` ci-dessous est tiré de mon [Codelabs à propos du concept de ***composition over inheritance***](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine).
 Je vous le conseille si vous souhaitez en savoir plus sur ce principe, et dans tous les cas, je vous le recommande pour sa dernière partie qui met en application les types génériques que nous sommes en train d'apprendre ici.
 
 Prenons une classe `BaseRepository`, qui se veut être une classe abstraite contenant toutes les fonctions de base utilisées dans nos repository (`find`, `store`, `remove`, etc...).
