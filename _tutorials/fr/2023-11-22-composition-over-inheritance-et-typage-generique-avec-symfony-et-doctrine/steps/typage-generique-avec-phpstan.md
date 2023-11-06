@@ -105,7 +105,9 @@ Enfin, dernière petite astuce, vous pouvez faire ceci au niveau du constructeur
 Le type `class-string` permet de limiter le type `string` à des valeurs très précises : ce ne pourra être que des noms de classe valides, pas une chaîne de caractère classique. Or c'est bien ce que l'on veut ici; un nom de classe pour créer la bonne instance de Repository.
 Vous trouverez la doc de ce tag [ici](https://phpstan.org/writing-php-code/phpdoc-types#class-string).
 
-> Petit rappel à mi parcours, toutes ces vérifications ne sont faites que statiquement lorsque vous lancez votre commande PHPStan. À l'exécution du code, rien de tout cela n'est interprété et n'importe quelle chaîne de caractère peut être passée ici. D'où l'importance d'avoir une CI stricte qui vous bloque à la moindre erreur d'analyse statique
+<div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
+Petit rappel à mi parcours, toutes ces vérifications ne sont faites que statiquement lorsque vous lancez votre commande PHPStan. À l'exécution du code, rien de tout cela n'est interprété et n'importe quelle chaîne de caractère peut être passée ici. D'où l'importance d'avoir une CI stricte qui vous bloque à la moindre erreur d'analyse statique
+</div>
 
 C'est bon, notre repository de base a été ***générisé***, nous pouvons à présent en tirer profit dans nos repositories Doctrine.
 
@@ -134,7 +136,9 @@ On indique ici que nous étendons notre BaseRepository, mais avec une info suppl
 
 Notez également la notation `@return array<Post>` au dessus de la seule méthode de notre Repository. Cela permet d'indiquer que nous ne pouvons retourner qu'un tableau composé d'objets `Post`. En fonction de comment vous implémentez la méthode, PHPStan vous remontere une erreur si ce n'est pas le cas.
 
-> `array<Post>` peut aussi être noté `Post[]` si vous préférez.
+<div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+`array<Post>` peut aussi être noté `Post[]` si vous préférez.
+</div>
 
 Testons d'ailleurs si tout ce petit monde fonctionne correctement.
 Créeons un Controller, et mettons-y ce code :

@@ -62,7 +62,9 @@ class PostRepository extends ServiceEntityRepository
 // ...
 ```
 
-> Notez au passage le tag `ServiceEntityRepository<Post>` qui est un avant-goût de ce que nous ferons plus tard avec le typage générique.
+<div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+Notez au passage le tag `ServiceEntityRepository<Post>` qui est un avant-goût de ce que nous ferons plus tard avec le typage générique.
+</div>
 
 Comme on peut l'observer, notre repository est extrêmement couplé à Doctrine. Et de nombreuses méthodes que nous n'utiliserons jamais viennent polluer cette classe.
 Nous allons donc nettoyer et alléger notre repository dans la prochaine partie.

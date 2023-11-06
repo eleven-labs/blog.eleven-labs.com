@@ -109,7 +109,9 @@ class PostRepositoryDoctrine implements PostRepositoryInterface
 Et voilà, au lieu d'étendre l'`EntityRepository` de Doctrine, on injecte l'`EntityManager` dans notre constructeur.
 Puis, dans une propriété privée `$repository`, on récupère une instance de Repository Doctrine de type `Post::class` qui sera notre objet ***proxy*** entre nos méthodes et celles de Doctrine.
 
-> L'interface `ObjectRepository` de Doctrine sera ici implémentée automatiquement par son `EntityRepository`.
+<div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+L'interface `ObjectRepository` de Doctrine sera ici implémentée automatiquement par son `EntityRepository`.
+</div>
 
 Petit détail important, souvenez-vous du code généré dans la classe `Post`, notamment l'attribut de la classe :
 
@@ -165,7 +167,9 @@ Bon, comme on peut le voir, ça commence à faire pas mal de code en doublon. Po
 
 Et c'est à partir de là que nous allons mettre en place... de l'héritage !
 
-> Mais ... On vient de faire tout ça pour se débarrasser de l'héritage et faire de la composition... Pourquoi ?!
+<div  class="admonition question"  markdown="1"><p  class="admonition-title">Question</p>
+Mais ... On vient de faire tout ça pour se débarrasser de l'héritage et faire de la composition... Pourquoi ?!
+</div>
 
 Promis je ne me moque pas de vous. Se débarrasser de l'héritage du `ServiceEntityRepository` de Doctrine, c'était surtout se débarrasser d'une tonne de code superflu, non voulu, et surtout inconnu, qui se retrouvait dans votre classe.
 
@@ -188,7 +192,9 @@ interface PostRepositoryInterface
 }
 ```
 
-> On ne garde que les méthodes ***spécifiques*** de nos repositories, comme notre `findPostsAboutPhp()`
+<div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
+On ne garde que les méthodes ***spécifiques*** de nos repositories, comme notre `findPostsAboutPhp()`
+</div>
 
 Adaptez bien en conséquence le code des classes implémentant ces interfaces.
 
@@ -285,7 +291,9 @@ class PostRepositoryDoctrine extends BaseRepositoryDoctrine implements PostRepos
 Dans cette classe nous avons plus tôt supprimé toutes les méthodes déjà implémentées dans la classe abstraite, nous n'avons donc plus que ce constructeur et la méthode `findPostsAboutPhp()`.
 On y ajoutera d'autres méthodes uniquement si elles sont spécifiques à ce Repository.
 
-> Quid de notre problème de type dans les méthodes de la classe abstraite ?
+<div  class="admonition question"  markdown="1"><p  class="admonition-title">Question</p>
+Quid de notre problème de type dans les méthodes de la classe abstraite ?
+</div>
 
 On y vient. 
 
