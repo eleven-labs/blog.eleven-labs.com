@@ -33,11 +33,11 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
           alignItems="center"
           gap={{ xs: 'xxs-2', md: '0' }}
         >
-          <Box>
+          <Text as="div" size="xs">
             <Flex alignItems="center" justifyContent="center" className="tutorial-steps__number">
               {index + 1}
             </Flex>
-          </Box>
+          </Text>
           <Text key={name} size="xs" ml="xs" className="tutorial-steps__text">
             {label}
           </Text>

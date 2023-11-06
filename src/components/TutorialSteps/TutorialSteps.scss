@@ -31,7 +31,7 @@
     }
 
     &:not(:last-child) {
-      padding-bottom: var(--spacing-m);
+      padding-bottom: var(--spacing-l);
     }
 
     &:last-child {
@@ -50,6 +50,7 @@
       }
     }
     &--active ~ #{$this}__step {
+      --tutorial-steps-color: var(--color-dark-grey);
       #{$this}__number {
         --tutorial-steps-number-background: var(--color-white);
         --tutorial-steps-color-number-color: var(--color-azure);
