@@ -15,10 +15,10 @@ Ainsi, on dira que le détail de notre implémentation (ici Doctrine et toutes s
 Pour régler cela, nous allons utiliser l'injection de dépendance.
 
 De plus, nous aurons besoin d'être aidé par un typage plus strict pour faciliter et améliorer notre expérience de développement. Pour cela, nous utiliserons le typage générique. Comme vous le savez sûrement, ce n'est pas possible nativement en PHP de faire ce genre de typage, mais grâce à l'outil d'analyse statique PHPStan, nous contournerons ce problème.
-En cela, ce codelabs est une mise en application de [cet article sur le typage générique en PHP](https://blog.eleven-labs.com/fr/typage-generique-en-php/) sorti sur le blog d'Eleven Labs. Allez y jeter un oeil !
+En cela, ce codelab est une mise en application de [cet article sur le typage générique en PHP](https://blog.eleven-labs.com/fr/typage-generique-en-php/) sorti sur le blog d'Eleven Labs. Allez y jeter un oeil !
 
-Enfin, le code source de ce codelabs est disponible sur mon GitHub : 
--   [Codelabs Symfo/Doctrine](https://github.com/ArthurJCQ/codelabs-compo)
+Enfin, le code source de ce codelab est disponible sur mon GitHub : 
+-   [Codelab Symfo/Doctrine](https://github.com/ArthurJCQ/codelabs-compo)
 
 
 ### Pré-requis

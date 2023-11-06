@@ -7,7 +7,7 @@ title: Refactoring du repository
 ### Refactoring du repository
 
 Pour que la suite soit la plus digeste et facile possible, nous travaillerons dans l'arborescence de fichier créée par Symfony, directement dans le dossier `Repository`.
-Dans le monde réel, on pourrait clairement tirer parti du DDD (Domain Driven Design) pour sublimer notre refactoring, mais ce n'est pas l'objet de ce codelabs, nous resterons donc concentrés sur le repository en tant que tel.
+Dans le monde réel, on pourrait clairement tirer parti du DDD (Domain Driven Design) pour sublimer notre refactoring, mais ce n'est pas l'objet de ce codelab, nous resterons donc concentrés sur le repository en tant que tel.
 
 La première chose à faire pour se découpler de Doctrine, c'est de créer notre propre interface, contenant la liste exhaustive des méthodes que notre Repository devra implémenter. Ici, admettons que nous aurons uniquement besoin des méthodes `store()` pour persister des objets, `find()` pour en récupérer, et une plus particulière `findPostsAboutPhp()`.
 
