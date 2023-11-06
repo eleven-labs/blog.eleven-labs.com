@@ -256,7 +256,7 @@ const loadMicroFrontend = (options: { name: String, url: string }) => {
 
 loadMicroFrontend({ name: 'product', url: 'mfe-product.shop.com' });
 loadMicroFrontend({ name: 'checkout', url: 'mfe-checkout.shop.com' });
-``` 
+```
 
 Il convient de noter que cette approche permet de charger dynamiquement les micro frontends au moment de l'exécution, ce qui offre une grande flexibilité dans la composition de votre application. De plus, pour une implémentation plus avancée et simplifiée, vous pouvez envisager d'utiliser des outils tels que [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/), qui facilitent cette approche en gérant automatiquement le chargement des modules à la volée.
 
@@ -282,7 +282,7 @@ En intégrant un Design System dans votre architecture de micro frontends, vous 
 
 ### Quelle stratégie de tests adopter ?
 
-Lorsqu'il s'agit de tester vos micro frontends, la principale différence réside dans la nécessité de vérifier l'intégration et la communication entre les différents micro frontends. Pour ce faire, vous devrez mettre en place des tests fonctionnels visant à assurer la bonne cohabitation et communication entre ces composants. Assurez-vous que les interactions entre les micro frontends se déroulent de manière fluide et que les fonctionnalités attendues sont bien en place. Cela contribuera à garantir que l'ensemble de votre application fonctionne correctement.
+Lorsqu'il s'agit de tester vos micro frontends, la principale différence réside dans la nécessité de vérifier l'intégration et la communication entre les différents micro frontends. Pour ce faire, vous devrez mettre en place des tests fonctionnels visant à assurer la bonne cohabitation et communication entre ces composants. Assurez-vous que les interactions entre les micro frontends se déroulent de manière fluide et que les fonctionnalités attendues sont bien en place. Il faudra préalablement penser à tester unitairement un maximum les petites briques de chaque composant, pour s'assurer du bon fonctionnement interne du micro frontend, avant de tester la communication entre les différentes parties de l'application. Cela contribuera à garantir que l'ensemble de votre application fonctionne correctement.
 
 ### Comment minimiser l'impact sur la taille des fichiers JavaScript ?
 
@@ -291,6 +291,15 @@ Les micro frontends sont construits de manière indépendante, ce qui peut entra
 **Externalisation des dépendances communes :** Il est possible d'externaliser les dépendances communes vers une bibliothèque partagée. Cependant, cela nécessite que tous les micro frontends utilisent la même version de ces dépendances, ce qui peut entrer en conflit avec le principe d'indépendance des micro frontends.
 
 **Éviter la multiplication des technologies et frameworks :** Il est préférable de limiter le nombre de technologies et frameworks utilisés au sein de l'architecture des micro frontends. Trop de diversité peut compliquer la gestion et la maintenance, et entraîner une augmentation de la taille des fichiers JavaScript.
+
+**Performance Web :** Il est important de garder un œil sur la performance web de notre application. Limiter les requêtes réseau en consolidant les appels, utiliser la mise en cache, le code splitting, adopter le préchargement sélectif pour les ressources essentielles et mettre en place des stratégies de lazy loading sont autant de techniques qui aideront l'application finale à être performante.
+
+**Minification et compression:** Aprés le développement des fonctionnalités, il sera aussi possible d'adopter une stratégie de minification des fichiers Javascript, ce qui va venir supprimer les lignes et caractéres inutiles, et par concequent répondre à l'objectif initial. La compression des fichiers est aussi une technique qui peut aider à ce niveau là, une fois le développement fini.
+
+<div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
+
+La communication entre micro frontends nécessite des méthodes de communication ciblées, tandis qu'un Design System maintient la cohérence visuelle. Des tests spécialisés et une gestion efficace des dépendances et de la taille des fichiers JavaScript sont essentiels pour une architecture performante.
+</div>
 
 ## Conclusion
 
