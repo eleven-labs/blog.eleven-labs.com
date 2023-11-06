@@ -34,7 +34,7 @@ export const PostPreviewContent: React.FC<PostPreviewContentProps> = ({
       <Skeleton isLoading={isLoading}>
         <Heading as="h2" color="amaranth" size="s">
           {contentType === ContentTypeEnum.TUTORIAL ? (
-            <Flex gap="xxs">
+            <Flex gap="xxs" alignItems="center">
               <TutoTag />
               {titleBlock}
             </Flex>

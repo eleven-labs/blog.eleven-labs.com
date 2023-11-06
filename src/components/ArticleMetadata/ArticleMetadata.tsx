@@ -42,10 +42,16 @@ export const ArticleMetadata: React.FC<ArticleMetadataProps> = ({
           <Skeleton key={displayedField} isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
             {authors &&
               authors.map((author, authorIndex) => (
-                <Text key={author.username} as="span">
-                  {author.name}
-                  {authorIndex !== authors.length - 1 ? ' & ' : ''}
-                </Text>
+                <>
+                  <Text key={author.username} as="span">
+                    {author.name}
+                  </Text>
+                  {authorIndex !== authors.length - 1 && (
+                    <Text key={author.username} as="span">
+                      &nbsp;&&nbsp;
+                    </Text>
+                  )}
+                </>
               ))}
           </Skeleton>
         );
