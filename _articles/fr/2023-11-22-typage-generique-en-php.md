@@ -18,7 +18,7 @@ authors:
 
 ### Introduction
 
-Le typage générique, non seulement c'est super, mais en plus, c'est classe. Dans un monde idéal, voilà à quoi ça ressemblerait en php :
+Le typage générique, non seulement c'est super, mais en plus, c'est classe. Dans un monde idéal, voilà à quoi ça ressemblerait en PHP :
 
 ```php
 class Collection<Type> { /* class definition ... */ }
@@ -185,7 +185,7 @@ class Collection
 }
 ```
 
-À présent, se passe-t-il si vous souhaitez une `Collection` qui ne contient uniquement des objets de type `Astronaut` ?
+À présent, que se passe-t-il si vous souhaitez une `Collection` qui contient uniquement des objets de type `Astronaut` ?
 
 Et bien grâce au typage générique que j'ai ajouté dans la classe `Collection`, vous pouvez faire cela :
 
