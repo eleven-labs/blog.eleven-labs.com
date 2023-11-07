@@ -76,7 +76,13 @@ export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
                     <TextHighlight size="s" text={title} textQuery={searchValue} />
                   </Flex>
                   <TextHighlight size="xs" text={description} textQuery={searchValue} hiddenBelow="sm" />
-                  <ArticleMetadata color="black" slug={id} date={date} authors={authors} displayedFields={['date', 'authors']} />
+                  <ArticleMetadata
+                    color="black"
+                    slug={id}
+                    date={date}
+                    authors={authors}
+                    displayedFields={['date', 'authors']}
+                  />
                 </Box>
               </React.Fragment>
             );
