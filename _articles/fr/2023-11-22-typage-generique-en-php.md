@@ -171,7 +171,7 @@ Grâce à cette notation, vous indiquez à votre analyseur statique que quelque 
 Vous pouvez mettre n'importe quel nom de classe à la place de <code>object</code>, par exemple <code>\Exception</code> peut être pratique pour accepter seulement des objets de types <code>Exception</code> sans savoir à l'avance quelle instance d'Exception exactement sera reçue.
 </div>
 
-Typer génériquement au niveau des classes peut-être très puissant également, prenons l'exemple classique des `Collection`.
+Typer génériquement au niveau des classes peut-être très puissant également, prenons l'exemple classique des `Collection`, et regardez bien les annotations que j'y ai ajouté.
 
 ```php
 /** @template T */
@@ -185,9 +185,9 @@ class Collection
 }
 ```
 
-Que se passe-t-il si vous souhaitez une `Collection` qui contient uniquement des objets de type `Astronaut` ?
+À présent, se passe-t-il si vous souhaitez une `Collection` qui ne contient uniquement des objets de type `Astronaut` ?
 
-Et bien comme vous avez ajouté du typage générique à votre classe, vous pouvez faire cela :
+Et bien grâce au typage générique que j'ai ajouté dans la classe `Collection`, vous pouvez faire cela :
 
 ```php
 /** @param Collection<Astronaut> $astronauts */
@@ -235,7 +235,7 @@ abstract class BaseRepository
 Cette classe est censée être étendue par nos Repository métiers, par exemple un `PostRepository` ou encore un `UserRepository`.
 Or, elles étendrons nos fonctions `store` et `find`, qui sont typées `object`, car on ne sait pas à l'avance quel Repository va les utiliser.
 
-La solution est de faire un type `T of object`, que l'on a déjà vu plus haut dans cet article. Puis on type les méthodes de la classe, jusqu'ici, tout devrait vous paraître clair comme de l'eau de roche.
+La solution est de faire un type `T of object`, que l'on a déjà vu plus haut dans cet article. Puis on type les méthodes de la classe. Jusqu'ici, rien de nouveau.
 
 Prenons à présent un de nos réels Repository, le `UserRepository`.
 
@@ -270,7 +270,7 @@ Ainsi, vous rajoutez de la sécurité en vous empêchant de faire une action qui
 
 Cet article est volontairement théorique, et sans exemple exhaustif. Prenez-le plutôt comme un pense-bête sur l'utilisation des génériques en PHP.
 
-Pour une mise en application plus poussée et un accompagnement pas à pas de la vérification de ces types avec PHPStan, référez-vous au [Tutoriel](https://codelabs.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) cité plus haut dans cet article.
+Pour une mise en application plus poussée et un accompagnement pas à pas de la vérification de ces types avec PHPStan, référez-vous au [Tutoriel](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) cité plus haut dans cet article.
 
 ### Conclusion
 
