@@ -9,6 +9,7 @@ import { PostPreviewContent } from './PostPreviewContent';
 
 export type PostPreviewOptions = {
   contentType?: ContentTypeEnum.ARTICLE | ContentTypeEnum.TUTORIAL;
+  slug: string;
   title?: React.ReactNode;
   excerpt?: React.ReactNode;
   date?: React.ReactNode;
@@ -26,6 +27,7 @@ export type PostPreviewProps = PostPreviewOptions & BoxProps;
 
 export const PostPreview: React.FC<PostPreviewProps> = ({
   contentType,
+  slug,
   title,
   excerpt,
   date,
@@ -48,6 +50,6 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
       excerpt={excerpt}
       hasMask={hasMask}
     />
-    <ArticleMetadata mt={{ xs: 'xs', md: 's' }} date={date} readingTime={readingTime} authors={authors} />
+    <ArticleMetadata mt={{ xs: 'xs', md: 's' }} slug={slug} date={date} readingTime={readingTime} authors={authors} />
   </PostPreviewCard>
 );

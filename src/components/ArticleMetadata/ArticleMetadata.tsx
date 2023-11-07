@@ -4,6 +4,7 @@ import React from 'react';
 import { SeparatorCircle } from '@/components';
 
 export type ArticleMetadataOptions = {
+  slug: string;
   date?: React.ReactNode;
   readingTime?: number;
   authors?: { username: string; name: string }[];
@@ -14,6 +15,7 @@ export type ArticleMetadataOptions = {
 export type ArticleMetadataProps = ArticleMetadataOptions & SpacingSystemProps & ColorSystemProps;
 
 export const ArticleMetadata: React.FC<ArticleMetadataProps> = ({
+  slug,
   date,
   readingTime,
   authors,
@@ -25,33 +27,33 @@ export const ArticleMetadata: React.FC<ArticleMetadataProps> = ({
     switch (displayedField) {
       case 'date':
         currentFields.push(
-          <Skeleton key={displayedField} isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
+          <Skeleton key={`${slug}_${displayedField}`} isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
             {date && <Text as="span">{date}</Text>}
           </Skeleton>
         );
         break;
       case 'readingTime':
         currentFields.push(
-          <Skeleton key={displayedField} isLoading={isLoading} display="inline-block" style={{ width: 50 }}>
+          <Skeleton key={`${slug}_${displayedField}`} isLoading={isLoading} display="inline-block" style={{ width: 50 }}>
             {readingTime && <Text as="span">{`${readingTime}mn`}</Text>}
           </Skeleton>
         );
         break;
       case 'authors':
         currentFields.push(
-          <Skeleton key={displayedField} isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
+          <Skeleton key={`${slug}_${displayedField}`} isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
             {authors &&
               authors.map((author, authorIndex) => (
-                <>
-                  <Text key={author.username} as="span">
+                <React.Fragment key={`${slug}_${authorIndex}`}>
+                  <Text as="span">
                     {author.name}
                   </Text>
                   {authorIndex !== authors.length - 1 && (
-                    <Text key={author.username} as="span">
-                      &nbsp;&&nbsp;
+                    <Text as="span">
+                      &nbsp;&amp;&nbsp;
                     </Text>
                   )}
-                </>
+                </React.Fragment>
               ))}
           </Skeleton>
         );
@@ -59,11 +61,12 @@ export const ArticleMetadata: React.FC<ArticleMetadataProps> = ({
     }
 
     if (index !== displayedFields.length - 1) {
-      currentFields.push(<SeparatorCircle key={`separator_${displayedField}`} />);
+      currentFields.push(<SeparatorCircle key={`${slug}_circle_${displayedField}`} />);
     }
 
     return currentFields;
   }, []);
+
   return (
     <Flex {...props} textSize="xs" alignItems="center">
       {fields}

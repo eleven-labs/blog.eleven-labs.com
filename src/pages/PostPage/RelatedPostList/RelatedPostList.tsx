@@ -7,7 +7,7 @@ import { PostPreview, PostPreviewProps } from '@/components';
 
 export interface RelatedPostListProps extends BoxProps {
   relatedPostListTitle: string;
-  posts: ({ slug: string } & PostPreviewProps)[];
+  posts: PostPreviewProps[];
 }
 
 export const RelatedPostList: React.FC<RelatedPostListProps> = ({ relatedPostListTitle, posts, ...boxProps }) => (
@@ -15,7 +15,7 @@ export const RelatedPostList: React.FC<RelatedPostListProps> = ({ relatedPostLis
     <Heading as="p" mb="m" size="m">
       {relatedPostListTitle}
     </Heading>
-    {posts.map((post, index) => (
+    {posts.map((post) => (
       <PostPreview key={post.slug} isRelated={true} {...post} mt="s" />
     ))}
   </Box>
