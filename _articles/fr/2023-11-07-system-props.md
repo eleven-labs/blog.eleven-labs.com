@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: 2023-11-07
 slug: system-props
-title: "System props : Flexibilité et Cohérence dans le Design"
+title: "System Props : Flexibilité et cohérence dans le Design"
 excerpt: Découvrez ce que sont les System Props, quelles sont ses avantages, et comment les intégrer pour améliorer vos composants d'interface.
 categories:
     - javascript
@@ -12,17 +12,18 @@ keywords:
     - system props
     - frontend
 authors:
+    - fpasquet
     - kdung
 ---
-Dans cet article, je vais vous présenter le concept des System Props en précisant ses avantages avec des exemples concrets d'utilisation. Je vais aussi expliquer comment le mettre en place sur vos projets comme nous l'avons fait sur nos projets au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) à travers l'implémentation d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/).
+Dans cet article, je vais vous présenter le concept des *System Props* en précisant ses avantages avec des exemples concrets d'utilisation. Je vais aussi expliquer comment le mettre en place sur vos projets comme nous l'avons fait sur nos projets au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) à travers l'implémentation d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/).
 
 ## Qu'est-ce que sont les System Props ?
 
-Les **System Props**, également connues sous le nom de **System Properties** ou **Style Props**, sont une liste de propriétés spécialement conçues pour personnaliser instantanément le style de vos composants. Contrairement aux props traditionnelles, ces **System Props** ajoutent des options supplémentaires pour ajuster le comportement et l'apparence de vos composants. Elles vous font gagner du temps en offrant des moyens abrégés pour personnaliser vos composants, ce qui en fait un atout idéal, notamment pour les [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/).
+Les *System Props*, également connues sous le nom de *System Properties* ou *Style Props*, sont une liste de propriétés spécialement conçues pour personnaliser instantanément le style de vos composants. Contrairement aux props traditionnelles, ces *System Props* ajoutent des options supplémentaires pour ajuster le comportement et l'apparence de vos composants. Elles vous font gagner du temps en offrant des moyens abrégés pour personnaliser vos composants, ce qui en fait un atout idéal, notamment pour les [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/).
 
 ### Les atouts majeurs des System Props
 
-Les System Props offrent plusieurs avantages qui contribuent à améliorer la réutilisabilité, la prévisibilité et la standardisation de votre projet. Voici quelques-uns de ses atouts :
+Les *System Props* offrent plusieurs avantages qui contribuent à améliorer la réutilisabilité, la prévisibilité et la standardisation de votre projet. Voici quelques-uns de ses atouts :
 
 - **Personnalisation Cohérente :**
 
@@ -38,34 +39,34 @@ En économisant du temps sur des personnalisations de style mineures et récurre
 
 - **Documentation Claire et Facilité de Collaboration :**
 
-Les System Props encouragent une documentation claire et cohérente, facilitant ainsi l'adoption par l'équipe. Elle permet aux nouveaux membres de comprendre rapidement comment personnaliser les composants de manière cohérente.
+Les *System Props* encouragent une documentation claire et cohérente, facilitant ainsi l'adoption par l'équipe. Elle permet aux nouveaux membres de comprendre rapidement comment personnaliser les composants de manière cohérente.
 
   ![Documentation System Props]({BASE_URL}/imgs/articles/2023-11-07-system-props/documentation-system-props.png)
 
 ### Exemples de bibliothèques populaires utilisant le concept des System Props
 
-Les System Props sont utilisés dans beaucoup de librairies populaires en voici quelques une:
+Les *System Props* sont utilisés dans beaucoup de librairies populaires en voici quelques une:
 
-Les System Props sont utilisés dans de nombreuses bibliothèques populaires, chacune ayant ses propres spécificités pour la personnalisation des composants. Voici quelques exemples de ces bibliothèques et de leurs particularités :
+Les *System Props* sont utilisés dans de nombreuses bibliothèques populaires, chacune ayant ses propres spécificités pour la personnalisation des composants. Voici quelques exemples de ces bibliothèques et de leurs particularités :
 
 - **[Chakra UI](https://chakra-ui.com/)**
 
-Chakra UI propose un Design System basé sur des composants personnalisables avec des "Style Props" pour ajuster les styles des composants. Il fonctionne avec du CSS-in-JS.
+Chakra UI propose un Design System basé sur des composants personnalisables avec des *Style Props* pour ajuster les styles des composants. Il fonctionne avec du CSS-in-JS.
 
 - **[Stitches](https://stitches.dev/)**
 
-Stitches est une bibliothèque CSS-in-JS pour React qui permet de définir des styles en utilisant des "Style Props" de manière similaire à Emotion. Elle fournit les outils nécessaires pour créer votre Design System, bien qu'elle ne soit pas un Design System en soi.
+Stitches est une bibliothèque CSS-in-JS pour React qui permet de définir des styles en utilisant des *Style Props* de manière similaire à Emotion. Elle fournit les outils nécessaires pour créer votre Design System, bien qu'elle ne soit pas un Design System en soi.
 
 - **[Klass](https://klass.pages.dev/)**
 
 Klass est similaire à Stitches, mais elle n'utilise pas le CSS-in-JS. Elle injecte des classes utilitaires et est compatible avec React, Preact, Solid, et peut être utilisée de manière agnostique par rapport aux frameworks grâce à ses fonctions pures. Elle est souvent combinée avec Tailwind CSS pour une personnalisation avancée.
 
 \
-Et bien d'autres encore, telles que **[MUI (Material UI)](https://mui.com/)**, **[Radix UI](https://www.radix-ui.com/)**, **[Antd](https://ant.design/)**, **[Primer](https://primer.style/)** et de nombreuses autres bibliothèques, utilisent également des "System Props" pour simplifier la personnalisation des composants d'interface utilisateur.
+Et bien d'autres encore, telles que **[MUI (Material UI)](https://mui.com/)**, **[Radix UI](https://www.radix-ui.com/)**, **[Antd](https://ant.design/)**, **[Primer](https://primer.style/)** et de nombreuses autres bibliothèques, utilisent également des *System Props* pour simplifier la personnalisation des composants d'interface utilisateur.
 
 ### Exemples d'utilisation
 
-Pour illustrer la mise en œuvre des System Props dans un composant, prenons un exemple concret avec le composant `Box`. Les System Props sont des propriétés spécifiques que nous utilisons pour personnaliser l'apparence du composant de manière cohérente et flexible.
+Pour illustrer la mise en œuvre des *System Props* dans un composant, prenons un exemple concret avec le composant `Box`. Les *System Props* sont des propriétés spécifiques que nous utilisons pour personnaliser l'apparence du composant de manière cohérente et flexible.
 
 ```tsx
 <Box
@@ -79,9 +80,9 @@ Pour illustrer la mise en œuvre des System Props dans un composant, prenons un 
 </Box>
 ```
 
-Dans cet exemple, nous utilisons le composant Box avec des System Props pour définir son apparence. Nous spécifions des propriétés telles que la couleur de fond `bg`, l'espacement `p`, ainsi que la couleur du texte `color` et la taille de police `size` pour le composant `Text`.
+Dans cet exemple, nous utilisons le composant Box avec des *System Props* pour définir son apparence. Nous spécifions des propriétés telles que la couleur de fond `bg`, l'espacement `p`, ainsi que la couleur du texte `color` et la taille de police `size` pour le composant `Text`.
 
-Si nous utilisions une bibliothèque comme `Klass`, qui injecte des classes utilitaires, voici à quoi ressemblerait le résultat après la transformation en HTML. Les System Props sont convertis en classes CSS correspondantes :
+Si nous utilisions une bibliothèque comme `Klass`, qui injecte des classes utilitaires, voici à quoi ressemblerait le résultat après la transformation en HTML. Les *System Props* sont convertis en classes CSS correspondantes :
 
 ```html
 <article class="bg-primary p-s">
@@ -89,108 +90,158 @@ Si nous utilisions une bibliothèque comme `Klass`, qui injecte des classes util
 </article>
 ```
 
-Cet exemple illustre comment les System Props permettent de personnaliser le style d'un composant de manière claire et concise, tout en garantissant une cohérence visuelle au sein de l'application.
+Cet exemple illustre comment les *System Props* permettent de personnaliser le style d'un composant de manière claire et concise, tout en garantissant une cohérence visuelle au sein de l'application.
 
-## Comment intégrer les System Props
+## Comment intégrer et implémenter les System Props
 
 Pour intégrer efficacement les System Props dans vos projets, une approche structurée est essentielle.
 
-### Identifiez les System Props pertinents
+### Identifier les System Props pertinents
 
-Avant de commencer à intégrer les "System Props" dans vos projets, il est essentiel d'identifier les props pertinents pour votre design system.
+Avant de commencer à intégrer les *System Props* dans vos projets, il est essentiel d'identifier les props pertinents pour votre Design System.
 
-- **Analyser les besoins :** Passez en revue les exigences spécifiques de votre projet ou de votre design system. Identifiez les personnalisations fréquemment requises, les styles ou les comportements qui se répètent fréquemment.
+- **Analyser les besoins :** Passez en revue les exigences spécifiques de votre projet ou de votre Design System. Identifiez les personnalisations fréquemment requises, les styles ou les comportements qui se répètent fréquemment.
 
-- **Consulter le Design System :** Si vous avez déjà un Design System existant, consulter la documentation pour identifier les System Props existant pour vérifier que les propriétés ne sont pas déjà ajouté ou bien s'il faudrait reprendre certaines propriétés pour les regrouper dans un type plus spécifique.
+- **Consulter le Design System :** Si vous avez déjà un Design System existant, consulter la documentation pour identifier les *System Props* existants et vérifiez si les propriétés que vous envisagez ne sont pas déjà incluses. Vous pourriez également envisager de regrouper certaines propriétés existantes si nécessaire.
 
-- **Créer les nouveaux System Props :** Si les System Props existant ne répondent pas à votre besoin, envisager de créer de nouveaux System Props. Ajouter un nouveau fichier selon le type de props dans votre dossier SystemProps.
+- **Créer les nouveaux System Props :** Si les *System Props* existant ne répondent pas à votre besoin, envisager de créer de nouveaux *System Props*.
+
+- **Responsive value**:  Dans certaines situations, il peut être nécessaire d'ajouter des valeurs différentes en fonction de la taille de l'écran pour garantir l'accessibilité et l'adaptabilité à différents types d'appareils sur votre site. Nous reviendrons sur ce sujet lors de l'implémentation.
+
+### Implémenter des System Props
+
+Nous allons explorer trois méthodes différentes pour mettre en œuvre les *System Props*. Chacune de ces méthodes offre des avantages spécifiques en fonction de vos besoins et de vos préférences.
+
+- **Première implémentation avec classnames :**
+
+La première méthode implique l'utilisation de **classnames** pour générer des classes CSS utilitaires en fonction des *System Props*.
 
 ```tsx
-// SystemProps/SpacingSystemProps.ts
+import classNames from 'classnames';
+...
+
+export interface ColorSystemProps {
+    bg?: ColorTokenValue;
+    color?: ColorTokenValue;
+}
 
 export interface SpacingSystemProps {
-  p?: SpacingType;
-  m?: SpacingType;
-  // ...other props
+    p?: SpacingTokenValue;
+    ...
 }
+
+export interface BoxProps extends ColorSystemProps, SpacingSystemProps {
+    children: React.ReactNode;
+}
+
+export const Box: React.FC<BoxProps> = ({ bg, color, p, children }) => {
+    <div className={classNames({
+        [`bg-${bg}`]: bg,
+        [`color-${color}`]: color,
+        [`p-${p}`]: p,
+    })}>
+        {children}
+    </div>
+};
 ```
 
-[//]: # (est ce qu'il faut expliquer tout? de comment transformer une props en classe CSS ?)
+Avec cette implémentation, il vous suffit de créer ou d'utiliser des classes utilitaires correspondant aux *System Props* pour personnaliser le style.
 
-### Intégration des System Props
+- **Seconde implémentation avec Klass :**
 
-Une fois que vous avez identifié les System Props pertinents, il est temps de les intégrer :
+Cette seconde approche utilise la bibliothèque **Klass** pour simplifier la gestion des *System Props*. **Klass** génère automatiquement des classes utilitaires à partir des propriétés que vous spécifiez dans le composant, ce qui simplifie considérablement le processus.
 
-- **Ajoutez les System Props à vos composants :** Pour ajouter votre nouveau System Props (SpacingSystemProps) dans un composant, il suffit de l'ajouter aux props de votre composant
+```ts
+import { klassed } from '@klass/react';
 
-```tsx
-// Component Text
-
-interface TextOptions {
-    size?: TextSizeType;
-    color?: ColorType;
-}
-
-type TextProps = TextOptions & SpacingSystemProps;
-
-export const Text: React.FC<TextProps> = ({ size, color, children, ...props }) => (
-    <Box {...props} color={colo
-```tsx
-// Design Tokens - color.tokens.ts
-
-const colorTokens = {
-  grey: "#606F95",
-  lightGrey: "#C5C8D9"
+const colorTokenValues = {
+    primary: '#3767B6',
+    secondary: '#DD3156',
+    ...
 };
 
-// System props - colorSystemProps.ts
+const spacingTokenValues = {
+    xs: '4px',
+    s: '8px',
+    ...
+};
 
-interface ColorSystemProps {
-    /** background-color */
-    bg?: ColorType;
-    /** color */
-    color?: ColorType;
-}
-
-// Component Box.ts
-
-export type BoxProps = AsProps<'div'> & ColorSystemProps;
-
-export const Box: React.FC<BoxProps> = ({ children, ...props }) => (
-    <div {...props}>{children}</div>
-);
+const Box = klassed('div', {
+    variants: {
+        bg: colorTokenValues,
+        color: colorTokenValues,
+        p: spacingTokenValues,
+    },
+});
 ```
 
-Dans cette exemple, on peut personnaliser le composant Box en lui passant en propriété une couleur ou un background.
+Pour rendre vos propriétés **responsive**, vous pouvez ajouter des conditions pour chaque breakpoint souhaité et spécifier les valeurs correspondantes.
+
+```ts
+import { reklassed } from '@klass/react';
+
+...
+
+const Box = reklassed("div", {
+    conditions: {
+        base: "",
+        sm: "sm:",
+        md: "md:",
+        lg: "lg:"
+    },
+    defaultCondition: "base",
+    variants: {
+        bg: colorTokenValues,
+        color: colorTokenValues,
+        p: spacingTokenValues,
+    },
+};
+```
+
+Les conditions sont vos différents breakpoints, étant donné que la majorité des sites sont en "mobile-first", vous appliquez le mobile en tant que condition par défaut.
+
+Et pour utiliser ensuite ce composant, il suffit d'ajouter vos **responsive values** :
 
 ```tsx
-// System props - SpacingSystemProps.ts
-
-interface SpacingSystemProps {
-  /** padding */
-  p?: SpacingType;
-}
-
-// Component Card.ts
-
-export type CardProps = AsProps<'div'> & SpacingSystemProps;
-
-export const Card: React.FC<CardProps> = ({ children, ...props }) => (
-  <div {...props}>
-      {children}
-  </div>
-);
-```r} size={size} {...props}>
-        {children}
-    </Box>
-);
+<Box p={{ base: 'xs', md: 's' }} />
 ```
 
-- **Utilisez les :** Spécifiez les props appropriés pour personnaliser le style de vos composants.
+- **Dernière implémentation avec Stitches :**
 
-```tsx
-<Text m={5}>Hello !</Text>
+La troisième méthode repose sur l'utilisation de **Stitches**, une bibliothèque de CSS-in-JS, pour gérer les *System Props*. Stitches génère du CSS-in-JS pour chaque propriété spécifiée.
+
+```ts
+import { styled } from '@stitches/react';
+
+const Box = styled('div', {
+  variants: {
+    bg: {
+        primary: {
+            backgroundColor: '#3767B6',
+        },
+        secondary: {
+            backgroundColor: '#DD3156',
+        },
+        ...
+    },
+    ...,
+    p: {
+        xs: {
+            padding: "4px"
+        },
+        s: {
+            padding: "8px"
+        }
+    }
+});
 ```
+
+Le fonctionnement du responsive pour **Stitches** est similaire à **Klass**, vous pouvez spécifier des conditions pour chaque breakpoint souhaité.
+
+<div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
+
+Ces trois approches vous permettent d'implémenter les *System Props* en fonction de vos besoins spécifiques, que ce soit en utilisant simplement **classnames**, **Klass**, ou CSS-in-JS avec **Stitches**.
+</div>
 
 ### Documentez
 
