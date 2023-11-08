@@ -32,7 +32,7 @@ AutocompleteFieldWithResult.args = {
   items: [
     {
       contentType: ContentTypeEnum.ARTICLE,
-      id:'ssr',
+      slug: 'react-ssr',
       title: 'React SSR',
       description: 'Lorem ipsum dolor sit react, consectetur adipiscing elit. In nec blandit neque',
       date: '24 fév. 2021',
@@ -41,7 +41,7 @@ AutocompleteFieldWithResult.args = {
     },
     {
       contentType: ContentTypeEnum.ARTICLE,
-      id: 'ssg',
+      slug: 'react-ssg',
       title: 'React SSG',
       description: 'Mauris semper venenatis dolor vel posuere. Fusce imperdiet react purus euismod fermentum',
       date: '22 fév. 2021',
@@ -50,7 +50,7 @@ AutocompleteFieldWithResult.args = {
     },
     {
       contentType: ContentTypeEnum.TUTORIAL,
-      id: 'react-astro',
+      slug: 'react-astro',
       title: 'React + Astro',
       description: 'Ut velit elit, finibus eu turpis quis, luctus sodales elit',
       date: '18 fév. 2021',
@@ -59,7 +59,7 @@ AutocompleteFieldWithResult.args = {
     },
     {
       contentType: ContentTypeEnum.ARTICLE,
-      id: 'react-next',
+      slug: 'react-nextjs',
       title: 'React + NextJS',
       description: 'Quisque ac consectetur massa. Praesent pellentesque, orci sit amet cursus venenatis',
       date: '16 fév. 2021',
@@ -68,7 +68,7 @@ AutocompleteFieldWithResult.args = {
     },
     {
       contentType: ContentTypeEnum.ARTICLE,
-      id: 'react-apollo',
+      slug: 'react-apollo-client',
       title: 'React + Apollo Client',
       description: 'Phasellus ac sodales mi. Ut egestas dui react enim vehicula pulvinar',
       date: '12 fév. 2021',
@@ -77,7 +77,7 @@ AutocompleteFieldWithResult.args = {
     },
     {
       contentType: ContentTypeEnum.ARTICLE,
-      id: 'react-vue',
+      slug: 'react-vs-vue',
       title: 'React vs Vue',
       description:
         'Suspendisse potenti. Etiam egestas lacus velit, et tempor metus mollis react. Donec ut vulputate leo',

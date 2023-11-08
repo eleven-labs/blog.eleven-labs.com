@@ -64,6 +64,7 @@ export const useHeaderContainer = (): HeaderProps => {
     () =>
       searchHits.map<AutocompleteFieldProps['items'][0]>((hit) => ({
         id: hit.objectID,
+        slug: hit.slug,
         contentType: hit.contentType,
         title: hit.title,
         description: hit.excerpt,

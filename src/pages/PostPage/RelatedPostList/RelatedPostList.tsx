@@ -15,8 +15,8 @@ export const RelatedPostList: React.FC<RelatedPostListProps> = ({ relatedPostLis
     <Heading as="p" mb="m" size="m">
       {relatedPostListTitle}
     </Heading>
-    {posts.map((post) => (
-      <PostPreview key={post.slug} isRelated={true} {...post} mt="s" />
+    {posts.map((post, index) => (
+      <PostPreview key={post?.slug ?? index} isRelated={true} {...post} mt="s" />
     ))}
   </Box>
 );
