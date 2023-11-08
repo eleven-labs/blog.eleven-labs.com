@@ -20,6 +20,7 @@ import { getPathFile } from '@/helpers/assetHelper';
 
 export interface AutocompleteItem {
   contentType: ContentTypeEnum.ARTICLE | ContentTypeEnum.TUTORIAL;
+  slug: string;
   title: string;
   description: string;
   date: React.ReactNode;
@@ -57,10 +58,10 @@ export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
     <Box className={classNames('autocomplete-result', props.className)} ref={ref} hidden={!isOpen}>
       {items.length > 0 && (
         <>
-          {items.map(({ contentType, title, description, date, readingTime, authors, ...itemProps }, index) => {
+          {items.map(({ contentType, slug, title, description, date, readingTime, authors, ...itemProps }, index) => {
             const isHighlighted = highlightedIndex === index;
             return (
-              <React.Fragment key={index}>
+              <React.Fragment key={slug}>
                 <Box
                   {...(itemProps as AsProps)}
                   pt={{ xs: 'xxs' }}
