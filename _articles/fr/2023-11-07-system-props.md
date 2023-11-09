@@ -45,8 +45,6 @@ Les *System Props* encouragent une documentation claire et cohérente, facilitan
 
 ### Exemples de bibliothèques populaires utilisant le concept des System Props
 
-Les *System Props* sont utilisés dans beaucoup de librairies populaires en voici quelques une:
-
 Les *System Props* sont utilisés dans de nombreuses bibliothèques populaires, chacune ayant ses propres spécificités pour la personnalisation des composants. Voici quelques exemples de ces bibliothèques et de leurs particularités :
 
 - **[Chakra UI](https://chakra-ui.com/)**
@@ -55,14 +53,14 @@ Chakra UI propose un Design System basé sur des composants personnalisables ave
 
 - **[Stitches](https://stitches.dev/)**
 
-Stitches est une bibliothèque CSS-in-JS pour React qui permet de définir des styles en utilisant des *Style Props* de manière similaire à Emotion. Elle fournit les outils nécessaires pour créer votre Design System, bien qu'elle ne soit pas un Design System en soi.
+Stitches est une bibliothèque CSS-in-JS pour React qui permet de définir des styles en utilisant des *Style Props* de manière similaire à [Emotion](https://emotion.sh/) qui une bibliothèque CSS-in-JS. Elle fournit les outils nécessaires pour créer votre Design System, bien qu'elle ne soit pas un Design System en soi.
 
 - **[Klass](https://klass.pages.dev/)**
 
 Klass est similaire à Stitches, mais elle n'utilise pas le CSS-in-JS. Elle injecte des classes utilitaires et est compatible avec React, Preact, Solid, et peut être utilisée de manière agnostique par rapport aux frameworks grâce à ses fonctions pures. Elle est souvent combinée avec Tailwind CSS pour une personnalisation avancée.
 
 \
-Et bien d'autres encore, telles que **[MUI (Material UI)](https://mui.com/)**, **[Radix UI](https://www.radix-ui.com/)**, **[Antd](https://ant.design/)**, **[Primer](https://primer.style/)** et de nombreuses autres bibliothèques, utilisent également des *System Props* pour simplifier la personnalisation des composants d'interface utilisateur.
+Et bien d'autres encore, telles que **[MUI (Material UI)](https://mui.com/)**, **[Radix UI](https://www.radix-ui.com/)**, **[Antd](https://ant.design/)**, **[Primer](https://primer.style/)**, utilisent également des *System Props* pour simplifier la personnalisation des composants d'interface utilisateur.
 
 ### Exemples d'utilisation
 
@@ -80,7 +78,7 @@ Pour illustrer la mise en œuvre des *System Props* dans un composant, prenons u
 </Box>
 ```
 
-Dans cet exemple, nous utilisons le composant Box avec des *System Props* pour définir son apparence. Nous spécifions des propriétés telles que la couleur de fond `bg`, l'espacement `p`, ainsi que la couleur du texte `color` et la taille de police `size` pour le composant `Text`.
+Dans cet exemple, nous utilisons le composant `Box` avec des *System Props* pour définir son apparence. Nous spécifions des propriétés telles que la couleur de fond `bg`, l'espacement `p`, ainsi que la couleur du texte `color` et la taille de police `size` pour le composant `Text`.
 
 Si nous utilisions une bibliothèque comme `Klass`, qui injecte des classes utilitaires, voici à quoi ressemblerait le résultat après la transformation en HTML. Les *System Props* sont convertis en classes CSS correspondantes :
 
