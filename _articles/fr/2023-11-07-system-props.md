@@ -4,7 +4,7 @@ lang: fr
 date: 2023-11-07
 slug: system-props
 title: "System Props : Flexibilité et cohérence dans le Design"
-excerpt: Découvrez ce que sont les System Props, quelles sont ses avantages, et comment les intégrer pour améliorer vos composants d'interface.
+excerpt: Découvrez ce que sont les System Props, quels sont leurs avantages, et comment les intégrer pour améliorer vos composants d'interface.
 categories:
     - javascript
 keywords:
@@ -16,9 +16,9 @@ authors:
     - kdung
 ---
 
-Dans cet article, je vais vous présenter le concept des *System Props* en précisant ses avantages avec des exemples concrets d'utilisation. Je vais aussi expliquer comment le mettre en place sur vos projets comme nous l'avons fait sur nos projets au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) à travers l'implémentation d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/).
+Dans cet article, nous allons vous présenter le concept de *System Props* en illustrant leurs avantages avec des exemples concrets d'utilisation. Nous expliquerons aussi comment les mettre en place sur vos projets, comme nous l'avons fait sur les nôtres au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) à travers l'implémentation d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/).
 
-## Qu'est-ce que sont les System Props ?
+## Que sont les System Props ?
 
 Les *System Props*, également connues sous le nom de *System Properties* ou *Style Props*, sont une liste de propriétés spécialement conçues pour personnaliser instantanément le style de vos composants. Contrairement aux props traditionnelles, ces *System Props* ajoutent des options supplémentaires pour ajuster le comportement et l'apparence de vos composants. Par exemple, des `SpacingSystemProps` facilitent la définition rapide de l'espacement de vos éléments, tandis que des `ColorSystemProps` mettent à votre disposition une palette de couleurs prédéfinie pour modifier les fonds, les couleurs de texte, les bordures, et plus encore. En intégrant ces propriétés dans vos composants, vous économisez du temps en utilisant des raccourcis pratiques pour personnaliser leur style. Cela en fait un atout précieux, notamment lors de la création d'un [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/).
 
@@ -28,7 +28,7 @@ Les *System Props* offrent plusieurs avantages qui contribuent à améliorer la 
 
 - **Personnalisation cohérente :**
 
-Associés aux [Design Tokens](https://blog.eleven-labs.com/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/), ils permettent de personnaliser uniformément un composant tout en gardant la flexibilité nécessaire pour des ajustements. Cette combinaison garantit la cohérence visuelle et la réactivité, en assurant que les composants respectent les normes tout en s'adaptant aux besoins changeants.
+Associées aux [Design Tokens](https://blog.eleven-labs.com/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/), elles permettent de personnaliser uniformément un composant tout en gardant la flexibilité nécessaire pour des ajustements. Cette combinaison garantit la cohérence visuelle et la réactivité, en assurant que les composants respectent les normes tout en s'adaptant aux besoins changeants.
 
 - **Réduction de la duplication de code :**
 
@@ -97,13 +97,13 @@ Pour intégrer efficacement les System Props dans vos projets, une approche stru
 
 ### Identifier les System Props pertinents
 
-Avant de commencer à intégrer les *System Props* dans vos projets, il est essentiel d'identifier les props pertinents pour votre Design System.
+Avant de commencer à intégrer les *System Props* dans vos projets, il est essentiel d'identifier les props pertinentes pour votre Design System.
 
 - **Analyser les besoins :** Passez en revue les exigences spécifiques de votre projet ou de votre Design System. Identifiez les personnalisations fréquemment requises, les styles ou les comportements qui se répètent fréquemment.
 
-- **Consulter le Design System :** Si vous avez déjà un Design System existant, consulter la documentation pour identifier les *System Props* existants et vérifiez si les propriétés que vous envisagez ne sont pas déjà incluses. Vous pourriez également envisager de regrouper certaines propriétés existantes si nécessaire.
+- **Consulter le Design System :** Si vous avez déjà un Design System existant, consulter la documentation pour identifier les *System Props* existantes et vérifiez si les propriétés que vous envisagez ne sont pas déjà incluses. Vous pourriez également envisager de regrouper certaines propriétés existantes si nécessaire.
 
-- **Créer les nouveaux System Props :** Si les *System Props* existant ne répondent pas à votre besoin, envisager de créer de nouveaux *System Props*.
+- **Créer les nouvelles System Props :** Si les *System Props* existantes ne répondent pas à votre besoin, envisager de créer de nouvelles *System Props*.
 
 - **Responsive value** :  Dans certaines situations, il peut être nécessaire d'ajouter des valeurs différentes en fonction de la taille de l'écran pour garantir l'accessibilité et l'adaptabilité à différents types d'appareils sur votre site. Nous reviendrons sur ce sujet lors de l'implémentation.
 
@@ -254,6 +254,6 @@ La documentation est essentielle pour garantir que les membres de votre équipe 
 
 ## Conclusion
 
-L'adoption des System Props permet d'améliorer considérablement la flexibilité, la cohérence et la standardisation au sein de vos projets de développement. Cette approche commence par l'identification des props pertinents, que ce soit pour votre projet actuel ou un design system en cours de création. Une fois ces props identifiés, l'étape suivante consiste à les intégrer harmonieusement dans vos composants, garantissant ainsi une personnalisation uniforme.
+L'adoption des System Props permet d'améliorer considérablement la flexibilité, la cohérence et la standardisation au sein de vos projets de développement. Cette approche commence par l'identification des props pertinents, que ce soit pour votre projet actuel ou un design system en cours de création. Une fois ces props identifiées, l'étape suivante consiste à les intégrer harmonieusement dans vos composants, garantissant ainsi une personnalisation uniforme.
 
 Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous appliquons les System Props pour élaborer des [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) destinés à nos projets internes et à nos clients. Cette approche nous a permis de tirer parti de tous les bénéfices mentionnés dans cet article.
