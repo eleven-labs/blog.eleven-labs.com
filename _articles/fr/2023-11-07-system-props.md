@@ -15,21 +15,22 @@ authors:
     - fpasquet
     - kdung
 ---
+
 Dans cet article, je vais vous présenter le concept des *System Props* en précisant ses avantages avec des exemples concrets d'utilisation. Je vais aussi expliquer comment le mettre en place sur vos projets comme nous l'avons fait sur nos projets au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) à travers l'implémentation d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/).
 
 ## Qu'est-ce que sont les System Props ?
 
-Les *System Props*, également connues sous le nom de *System Properties* ou *Style Props*, sont une liste de propriétés spécialement conçues pour personnaliser instantanément le style de vos composants. Contrairement aux props traditionnelles, ces *System Props* ajoutent des options supplémentaires pour ajuster le comportement et l'apparence de vos composants. Elles vous font gagner du temps en offrant des moyens abrégés pour personnaliser vos composants, ce qui en fait un atout idéal, notamment pour les [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/).
+Les *System Props*, également connues sous le nom de *System Properties* ou *Style Props*, sont une liste de propriétés spécialement conçues pour personnaliser instantanément le style de vos composants. Contrairement aux props traditionnelles, ces *System Props* ajoutent des options supplémentaires pour ajuster le comportement et l'apparence de vos composants. Par exemple, des `SpacingSystemProps` facilitent la définition rapide de l'espacement de vos éléments, tandis que des `ColorSystemProps` mettent à votre disposition une palette de couleurs prédéfinie pour modifier les fonds, les couleurs de texte, les bordures, et plus encore. En intégrant ces propriétés dans vos composants, vous économisez du temps en utilisant des raccourcis pratiques pour personnaliser leur style. Cela en fait un atout précieux, notamment lors de la création d'un [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/).
 
 ### Les atouts majeurs des System Props
 
 Les *System Props* offrent plusieurs avantages qui contribuent à améliorer la réutilisabilité, la prévisibilité et la standardisation de votre projet. Voici quelques-uns de ses atouts :
 
-- **Personnalisation Cohérente :**
+- **Personnalisation cohérente :**
 
 Associés aux [Design Tokens](https://blog.eleven-labs.com/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/), ils permettent de personnaliser uniformément un composant tout en gardant la flexibilité nécessaire pour des ajustements. Cette combinaison garantit la cohérence visuelle et la réactivité, en assurant que les composants respectent les normes tout en s'adaptant aux besoins changeants.
 
-- **Réduction de la Duplication de Code :**
+- **Réduction de la duplication de code :**
 
 La création de standards de personnalisation réutilisables simplifie la maintenance et garantit que des styles similaires ne sont pas recréés de manière redondante. Selon les besoins de votre projet, il est possible d'avoir des variantes de votre composant sans avoir à créer un nouveau composant à chaque fois. Vous pourriez ainsi utiliser le composant `Card` plusieurs fois avec des couleurs et des espacements différents.
 
@@ -37,7 +38,7 @@ La création de standards de personnalisation réutilisables simplifie la mainte
 
 En économisant du temps sur des personnalisations de style mineures et récurrentes, cela permet de se concentrer sur des aspects plus complexes du développement, tels que la logique métier ou les fonctionnalités avancées.
 
-- **Documentation Claire et Facilité de Collaboration :**
+- **Documentation claire et facilité de collaboration :**
 
 Les *System Props* encouragent une documentation claire et cohérente, facilitant ainsi l'adoption par l'équipe. Elle permet aux nouveaux membres de comprendre rapidement comment personnaliser les composants de manière cohérente.
 
@@ -53,11 +54,11 @@ Chakra UI propose un Design System basé sur des composants personnalisables ave
 
 - **[Stitches](https://stitches.dev/)**
 
-Stitches est une bibliothèque CSS-in-JS pour React qui permet de définir des styles en utilisant des *Style Props* de manière similaire à [Emotion](https://emotion.sh/) qui une bibliothèque CSS-in-JS. Elle fournit les outils nécessaires pour créer votre Design System, bien qu'elle ne soit pas un Design System en soi.
+Stitches est une bibliothèque CSS-in-JS pour React qui permet de définir des styles en utilisant des *Style Props* de manière similaire à [Emotion](https://emotion.sh/) qui est une bibliothèque CSS-in-JS. Elle fournit les outils nécessaires pour créer votre Design System, bien qu'elle ne soit pas un Design System en soi.
 
 - **[Klass](https://klass.pages.dev/)**
 
-Klass est similaire à Stitches, mais elle n'utilise pas le CSS-in-JS. Elle injecte des classes utilitaires et est compatible avec React, Preact, Solid, et peut être utilisée de manière agnostique par rapport aux frameworks grâce à ses fonctions pures. Elle est souvent combinée avec Tailwind CSS pour une personnalisation avancée.
+Klass est similaire à Stitches, mais elle n'utilise pas le CSS-in-JS. Elle injecte des classes utilitaires et est compatible avec React, Preact, Solid, et peut être utilisée de manière agnostique par rapport aux frameworks grâce à ses fonctions pures. Elle est souvent combinée avec [Tailwind CSS](https://tailwindcss.com/) pour une personnalisation avancée.
 
 \
 Et bien d'autres encore, telles que **[MUI (Material UI)](https://mui.com/)**, **[Radix UI](https://www.radix-ui.com/)**, **[Antd](https://ant.design/)**, **[Primer](https://primer.style/)**, utilisent également des *System Props* pour simplifier la personnalisation des composants d'interface utilisateur.
@@ -104,7 +105,7 @@ Avant de commencer à intégrer les *System Props* dans vos projets, il est esse
 
 - **Créer les nouveaux System Props :** Si les *System Props* existant ne répondent pas à votre besoin, envisager de créer de nouveaux *System Props*.
 
-- **Responsive value**:  Dans certaines situations, il peut être nécessaire d'ajouter des valeurs différentes en fonction de la taille de l'écran pour garantir l'accessibilité et l'adaptabilité à différents types d'appareils sur votre site. Nous reviendrons sur ce sujet lors de l'implémentation.
+- **Responsive value** :  Dans certaines situations, il peut être nécessaire d'ajouter des valeurs différentes en fonction de la taille de l'écran pour garantir l'accessibilité et l'adaptabilité à différents types d'appareils sur votre site. Nous reviendrons sur ce sujet lors de l'implémentation.
 
 ### Implémenter des System Props
 
@@ -247,7 +248,7 @@ La documentation est essentielle pour garantir que les membres de votre équipe 
 
 - **Description :** Fournissez une description de chaque prop : la propriété CSS que ce system prop impacte et sa valeur possible, si la valeur est dans le Design Token, ajoutez un lien pour rediriger vers ce token.
 
-- **Exemples :** Vous pouvez inclure des exemples d'utilisation pour montrer comment ces props peuvent être appliqués, par exemple avec un Storybook.
+- **Exemples :** Vous pouvez inclure des exemples d'utilisation pour montrer comment ces props peuvent être appliqués, par exemple avec un [Storybook](https://blog.eleven-labs.com/fr/storybook-creer-son-premier-composant/).
 
 - **Compatibilité :** Précisez quels composants acceptent chaque System Prop et comment ils influencent le style ou le comportement.
 
