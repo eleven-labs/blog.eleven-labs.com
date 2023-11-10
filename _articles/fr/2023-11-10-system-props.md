@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: 2023-11-07
+date: 2023-11-10
 slug: system-props
 title: "System Props : Flexibilité et cohérence dans le Design"
 excerpt: Découvrez ce que sont les System Props, quels sont leurs avantages, et comment les intégrer pour améliorer vos composants d'interface.
@@ -42,7 +42,7 @@ En économisant du temps sur des personnalisations de style mineures et récurre
 
 Les *System Props* encouragent une documentation claire et cohérente, facilitant ainsi l'adoption par l'équipe. Elle permet aux nouveaux membres de comprendre rapidement comment personnaliser les composants de manière cohérente.
 
-  ![Documentation System Props]({BASE_URL}/imgs/articles/2023-11-07-system-props/documentation-system-props.png)
+  ![Documentation System Props]({BASE_URL}/imgs/articles/2023-11-10-system-props/documentation-system-props.png)
 
 ### Exemples de bibliothèques populaires utilisant le concept des System Props
 
