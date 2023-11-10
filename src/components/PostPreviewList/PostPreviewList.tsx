@@ -18,7 +18,7 @@ export interface PostPreviewListProps {
 export const PostPreviewList: React.FC<PostPreviewListProps> = ({ posts, pagination, isLoading = false }) => (
   <>
     {posts.map((post, index) => (
-      <React.Fragment key={index}>
+      <React.Fragment key={post?.slug ?? index}>
         <PostPreview
           hasMask={Boolean(pagination && index === posts.length - 1)}
           {...(post || {})}
@@ -29,15 +29,13 @@ export const PostPreviewList: React.FC<PostPreviewListProps> = ({ posts, paginat
       </React.Fragment>
     ))}
     {pagination && (
-      <>
-        <Flex flexDirection="column" justifyContent="center" alignItems="center">
-          <Text size="s">{pagination.textNumberOfPosts}</Text>
-          <ProgressBar mt="xxs" value={pagination.numberOfPosts} max={pagination.maxNumberOfPosts} />
-          <Button my="s" onClick={pagination.onLoadMore} data-button="loadMore">
-            {pagination.loadMoreButtonLabel}
-          </Button>
-        </Flex>
-      </>
+      <Flex flexDirection="column" justifyContent="center" alignItems="center">
+        <Text size="s">{pagination.textNumberOfPosts}</Text>
+        <ProgressBar mt="xxs" value={pagination.numberOfPosts} max={pagination.maxNumberOfPosts} />
+        <Button my="s" onClick={pagination.onLoadMore} data-button="loadMore">
+          {pagination.loadMoreButtonLabel}
+        </Button>
+      </Flex>
     )}
   </>
 );

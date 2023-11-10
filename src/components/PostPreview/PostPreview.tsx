@@ -9,6 +9,7 @@ import { PostPreviewContent } from './PostPreviewContent';
 
 export type PostPreviewOptions = {
   contentType?: ContentTypeEnum.ARTICLE | ContentTypeEnum.TUTORIAL;
+  slug?: string;
   title?: React.ReactNode;
   excerpt?: React.ReactNode;
   date?: React.ReactNode;
@@ -25,6 +26,7 @@ export type PostPreviewOptions = {
 export type PostPreviewProps = PostPreviewOptions & BoxProps;
 
 export const PostPreview: React.FC<PostPreviewProps> = ({
+  slug,
   contentType,
   title,
   excerpt,
