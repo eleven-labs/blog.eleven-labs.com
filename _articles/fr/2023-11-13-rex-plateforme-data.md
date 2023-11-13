@@ -70,7 +70,7 @@ En deuxième étape, il y a la transformation des données.
 Cette transformation est effectuée par [dbt](https://www.getdbt.com/) directement dans l'entrepôt de données Google
 BigQuery.
 
-dbt n'exécute rien dans l'entrepôt de données, mais il permet d'organiser la transformation des données et de
+dbt permet d'organiser la transformation des données et de
 templatiser les requêtes SQL. C'est Google BigQuery qui exécute les requêtes SQL.
 
 Durant cette phase de transformation, de nouvelles structures de données sont créées afin de stocker le résultat des calculs. Ces
