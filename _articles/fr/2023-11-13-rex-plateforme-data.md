@@ -2,8 +2,8 @@
 contentType: article
 lang: fr
 date: '2023-11-13'
-slug: retour-experience-construction-plateforme-data
-title: "Retour d'expérience sur la construction de la plate-forme data"
+slug: rex-construction-data-platform
+title: "Construction d'une plateforme Data, retour d'expérience (REX)"
 excerpt: |
     Les besoins en analyse de données sont grandissants. Avec quelques outils, il est possible de faire
     des extractions, de la transformation et de la visualisation très rapidement. Cependant, pour assurer la pérénité et
@@ -51,7 +51,7 @@ La première phase commence par l'extraction des données. Le pipeline va se con
 En sources de données, j'ai :
 
 - MySQL
-- MongoDB
+- MongoDB ([voir notre article de blog sur MongoDB](https://blog.eleven-labs.com/fr/symfony-et-mongodb-retour-aux-sources/))
 - Appel HTTP vers des API externes
 
 Pour la phase d'extraction et le chargement dans [Google BigQuery](https://cloud.google.com/bigquery/docs/introduction),
