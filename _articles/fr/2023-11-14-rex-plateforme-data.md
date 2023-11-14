@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2023-11-13'
+date: '2023-11-14'
 slug: rex-construction-data-platform
 title: "Construction d'une plateforme Data, retour d'expérience (REX)"
 excerpt: |
@@ -104,7 +104,7 @@ Les pré-requis pour cette nouvelle infrastructure sont les suivants :
 
 Nous avons donc le schéma suivant :
 
-![architecture]({BASE_URL}/imgs/articles/2023-11-13-rex-plateforme-data/architecture.png)
+![architecture]({BASE_URL}/imgs/articles/2023-11-14-rex-plateforme-data/architecture.png)
 
 Le schéma est assez dense, nous allons le décomposer.
 
