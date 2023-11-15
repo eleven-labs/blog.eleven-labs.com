@@ -6,7 +6,7 @@ slug: rex-construction-data-platform
 title: "Construction d'une plateforme Data, retour d'expérience (REX)"
 excerpt: |
     Les besoins en analyse de données sont grandissants. Avec quelques outils, il est possible de faire
-    des extractions, de la transformation et de la visualisation très rapidement. Cependant, pour assurer la pérénité et
+    des extractions, de la transformation et de la visualisation très rapidement. Cependant, pour assurer la pérénnité et
     l'évolutivité de ces analyses, il est nécessaire de monter une plateforme dédiée et d'industrialiser les différents
     processus. C'est le sujet de cet article.
 authors:
@@ -21,7 +21,7 @@ Dans le cadre d'une mission Data Engineer pour un client du [Studio Eleven Labs]
 le comportement des utilisateurs. Cela permet de mieux guider l’ajout des fonctionnalités et des produits à
 lancer.
 
-Un Poc ("Proof of Concept", ou preuve de concept) a été mise en oeuvre par l'équipe data. Elle s'articule autour d'un
+Un Poc ("Proof of Concept", ou preuve de concept) a été mis en oeuvre par l'équipe data. Il s'articule autour d'un
 pipeline ELT (extract, load, transform) en utilisant les technologies suivantes : Google Cloud Platform, Talend, dbt et
 Power BI.
 
