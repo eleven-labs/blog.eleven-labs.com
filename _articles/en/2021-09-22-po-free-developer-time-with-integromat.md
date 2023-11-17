@@ -8,7 +8,7 @@ excerpt: >-
   You're part of a small team with a lot of features to release quickly and a
   PoC needed to test a product but you only have little to no tech skills ?
   NoCode is what you're looking for !
-cover: /imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.jpg
+cover: /imgs/articles/2021-09-22-po-liberez-du-temps-a-vos-developpeurs-avec-integromat/cover.png
 categories: []
 authors:
   - marianne

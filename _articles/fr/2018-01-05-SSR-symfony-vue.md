@@ -9,7 +9,7 @@ excerpt: >-
   Symfony et un framework client type Vue.js. D'ailleurs on trouve énormément
   d'articles sur le sujet. La question que l'on se pose le plus souvent, c'est
   comment rendre ces choix technologiques performants.
-cover: /imgs/articles/{BASE_URL}/imgs/articles/2018-01-05-SSR-symfony-vue/cover.jpg
+cover: /imgs/articles/2018-01-05-SSR-symfony-vue/cover.jpg
 categories:
   - javascript
 authors:
