@@ -56,10 +56,12 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentTyp
 
   return {
     backLink: <BackLinkContainer />,
-    cover: post.cover ? {
-      src: post.cover,
-      alt: '',
-    } : undefined,
+    cover: post.cover
+      ? {
+          src: post.cover,
+          alt: post.cover.split('/').pop()?.split('.').shift(),
+        }
+      : undefined,
     header: {
       title: post.title,
       date: getDateToString({ date: post.date }),
