@@ -8,7 +8,7 @@ excerpt: >-
   AstroPO, AstroDev, ou tout simplement AstroPassionnés par l’agilité se sont
   donné rendez-vous sur les bancs de l'école mercredi 13 janvier pour assister à
   la School of PO !
-cover: /assets/2019-02-27-school-of-po-devoir-maison-et-rex/school-of-po-cover.jpg
+cover: /imgs/articles/2019-02-27-school-of-po-devoir-maison-et-rex/school-of-po-cover.jpg
 categories:
   - agile
 authors:

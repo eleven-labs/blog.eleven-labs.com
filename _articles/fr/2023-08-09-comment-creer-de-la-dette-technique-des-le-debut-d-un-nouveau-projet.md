@@ -9,7 +9,7 @@ excerpt: >-
   technique qui nous fait perdre du temps et qui nous rend fou au point de
   vérifier qui a fait le code. Vous aussi vous voulez entrer dans la postérité
   lors d’un git blame et mal concevoir votre produit ?
-cover: /assets/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-projet/logo.png
+cover: /imgs/articles/2023-08-09-comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/logo.png
 categories:
   - php
   - javascript

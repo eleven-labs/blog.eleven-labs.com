@@ -9,7 +9,7 @@ excerpt: >-
   Monde dans le cadre de la refonte de l'ensemble des fronts des différents
   sites web du groupe. Nous allons revenir sur cette expérience, pour nous
   permettre de comprendre comment réaliser ce genre de mission.
-cover: /assets/2019-02-28-un-an-de-webperformance/cover.jpg
+cover: /imgs/articles/2019-02-28-un-an-de-webperformance/cover.jpg
 categories: []
 authors:
   - captainjojo

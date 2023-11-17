@@ -7,7 +7,7 @@ title: 'Pour Noël, je compile mon noyau GNU/Linux !'
 excerpt: >-
   Le moment tant attendu est finalement arrivé, il est tant de : compiler,
   installer, tester (kernel-paniquer, recompiler, réinstaller, retester).
-cover: /assets/2017-12-15-compiling-linux-kernel/cover.jpg
+cover: /imgs/articles/2017-12-15-compiling-linux-kernel/cover.jpg
 categories: []
 authors:
   - aandre

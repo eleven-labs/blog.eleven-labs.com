@@ -7,7 +7,7 @@ title: RabbitMQ des bases à la maîtrise (Partie 2)
 excerpt: >-
   Les policies, le retry (dead letter, poison message)... en avant pour
   l'utilisation avancée de RabbitMQ.
-cover: /assets/2018-04-11-rabbitmq-partie-2-la-maitrise/cover.jpg
+cover: /imgs/articles/2018-04-11-rabbitmq-partie-2-la-maitrise/cover.jpg
 categories: []
 authors:
   - amoutte

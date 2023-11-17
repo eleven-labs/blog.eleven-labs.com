@@ -5,7 +5,7 @@ date: '2018-03-28'
 slug: codelabs-under-the-hood
 title: Codelabs under the hood
 excerpt: À propos d'Eleven Codelabs
-cover: /assets/2018-03-29-codelabs-under-the-hood/cover.jpg
+cover: /imgs/articles/2018-03-29-codelabs-under-the-hood/cover.jpg
 categories:
   - javascript
 authors:

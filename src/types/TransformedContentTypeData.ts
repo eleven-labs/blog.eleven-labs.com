@@ -3,7 +3,7 @@ import { ContentTypeEnum } from '@/constants';
 import { ArticleData, AuthorData, TutorialData, TutorialStepData } from './ContentTypeData';
 
 export interface TransformedArticleData
-  extends Pick<ArticleData, 'lang' | 'slug' | 'title' | 'excerpt' | 'authors' | 'categories'> {
+  extends Pick<ArticleData, 'lang' | 'slug' | 'title' | 'excerpt' | 'cover' | 'authors' | 'categories'> {
   contentType: ContentTypeEnum.ARTICLE;
   date: string;
   readingTime: number;
@@ -11,7 +11,7 @@ export interface TransformedArticleData
 }
 
 export interface TransformedTutorialData
-  extends Pick<TutorialData, 'lang' | 'slug' | 'title' | 'excerpt' | 'authors' | 'categories'> {
+  extends Pick<TutorialData, 'lang' | 'slug' | 'title' | 'cover' | 'excerpt' | 'authors' | 'categories'> {
   contentType: ContentTypeEnum.TUTORIAL;
   date: string;
   readingTime: number;

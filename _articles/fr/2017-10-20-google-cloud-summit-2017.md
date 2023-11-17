@@ -10,7 +10,7 @@ excerpt: >-
   Cloud, les nouvelles API de Machine Learning et les nouveaux outils de
   collaboration. Bien sûr Eleven était présent et nous avons pu suivre la
   plupart des conférences.
-cover: /assets/2017-10-20-google-cloud-summit-2017/cover.png
+cover: /imgs/articles/2017-10-20-google-cloud-summit-2017/cover.png
 categories: []
 authors:
   - captainjojo

@@ -7,7 +7,7 @@ title: OpenPGP - Export Secret Keys to a Yubikey
 excerpt: >-
   After generating the OpenPGP keys, we will see how to store them on a USB key
   like the Yubikey. This will allow us to further secure our secret keys.
-cover: /assets/2017-10-24-openpgp-clef-secrete-yubikey-partie-2/cover.jpg
+cover: /imgs/articles/2017-10-24-openpgp-clef-secrete-yubikey-partie-2/cover.jpg
 categories: []
 authors:
   - tthuon

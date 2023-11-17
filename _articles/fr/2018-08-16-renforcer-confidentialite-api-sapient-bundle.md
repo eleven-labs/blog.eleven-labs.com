@@ -10,7 +10,7 @@ excerpt: >-
   tous. Il reste néanmoins critique d’être conscient des failles qui existent
   encore. Avec libsodium, nous allons renforcer la confidentialité des échanges
   de données en toute simplicité.
-cover: /assets/2018-08-16-renforcer-confidentialite-api-sapient-bundle/cover.jpg
+cover: /imgs/articles/2018-08-16-renforcer-confidentialite-api-sapient-bundle/cover.jpg
 categories:
   - php
 authors:

@@ -9,7 +9,7 @@ excerpt: >-
   `docker stats` in ssh does not allow you to correctly assess your production
   environment. We will therefore see how to meet this monitoring need for
   containers in production.
-cover: /assets/2017-12-12-monitorer-ses-containers-docker/cover.jpeg
+cover: /imgs/articles/2017-12-12-monitorer-ses-containers-docker/cover.jpeg
 categories: []
 authors:
   - qneyrat

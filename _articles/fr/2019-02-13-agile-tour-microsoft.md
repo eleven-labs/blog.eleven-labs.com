@@ -8,7 +8,7 @@ excerpt: >-
   Nous étions plusieurs astronautes de la galaxie Eleven Labs à se rendre le 5
   décembre dernier à l'Agile Tour organisé par Microsoft dans ses propres
   locaux.
-cover: /assets/2019-02-13-agile-tour-microsoft/cover.jpg
+cover: /imgs/articles/2019-02-13-agile-tour-microsoft/cover.jpg
 categories:
   - agile
 authors:

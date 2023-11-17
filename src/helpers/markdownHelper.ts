@@ -134,6 +134,16 @@ export const validateContentType = <TData>(options: {
     validationSchema: validationSchema,
   });
 
+  if (data.cover) {
+    const assetPath = data.cover.replace(new RegExp('/imgs/'), `${ASSETS_DIR}/`).split('?')?.[0];
+    if (!existsSync(assetPath)) {
+      throw new MarkdownInvalidError({
+        markdownFilePath: options.markdownFilePath,
+        reason: `The file does not exist "${assetPath}"!`,
+      });
+    }
+  }
+
   return {
     ...(data as TData),
     content: validateMarkdownContent({

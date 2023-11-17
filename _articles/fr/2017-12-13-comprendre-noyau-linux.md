@@ -8,7 +8,7 @@ excerpt: >-
   Linux n'est rien de plus qu'un noyau, les abus de langages sont trop nombreux
   et trop fréquents. Apprenons ici à faire la différence entre Linux et une
   distribution basée sur Linux.
-cover: /assets/2017-12-13-understanding-linux-kernel/cover.jpg
+cover: /imgs/articles/2017-12-13-understanding-linux-kernel/cover.jpg
 categories: []
 authors:
   - aandre

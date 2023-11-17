@@ -5,7 +5,7 @@ date: '2019-02-06'
 slug: c-est-quoi-un-architecte-logiciel
 title: Qu'est-ce qu'un architecte logiciel ?
 excerpt: Ah tu es architecte c'est cool ça… Mais en fait ça consiste en quoi ?
-cover: /assets/2019-02-06-what-is-an-architect/cover.jpg
+cover: /imgs/articles/2019-02-06-what-is-an-architect/cover.jpg
 categories:
   - architecture
 authors:

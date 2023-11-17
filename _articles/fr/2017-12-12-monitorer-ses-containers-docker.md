@@ -9,7 +9,7 @@ excerpt: >-
   production. Cependant un `docker stats` en ssh ne permet pas de gérer
   correctement son environnement de production. Nous allons donc voir comment
   répondre à ce besoin de monitoring pour des containers en production.
-cover: /assets/2017-12-12-monitorer-ses-containers-docker/cover.jpeg
+cover: /imgs/articles/2017-12-12-monitorer-ses-containers-docker/cover.jpeg
 categories: []
 authors:
   - qneyrat

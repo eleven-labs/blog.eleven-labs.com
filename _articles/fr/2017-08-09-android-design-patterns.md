@@ -7,7 +7,7 @@ title: Android et les Design Patterns
 excerpt: >-
   Nous allons voir à travers cet article jusqu'à quel point on peut appliquer
   les principaux Design Patterns dans un projet Android
-cover: /assets/2017-08-02-android-design-pattern/cover.jpg
+cover: /imgs/articles/2017-08-02-android-design-pattern/cover.jpg
 categories: []
 authors:
   - obennouna

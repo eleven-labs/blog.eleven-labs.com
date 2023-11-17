@@ -9,7 +9,7 @@ excerpt: >-
   clefs doivent être stockées dans un lieu sûr, sur un support durable, tout en
   restant accessibles en cas de besoin. C'est ce que nous allons voir dans cette
   article.
-cover: /assets/2017-11-08-openpgp-stockage-froid-clefs-part-3/cover.jpg
+cover: /imgs/articles/2017-11-08-openpgp-stockage-froid-clefs-part-3/cover.jpg
 categories: []
 authors:
   - tthuon

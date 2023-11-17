@@ -5,7 +5,7 @@ date: '2017-11-09'
 slug: build-an-api-with-go-and-buffalo
 title: Build an api with Go and Buffalo
 excerpt: Presentation of http/net package and Buffalo.
-cover: /assets/2017-07-26-construire-une-api-en-go/cover.jpg
+cover: /imgs/articles/2017-07-26-construire-une-api-en-go/cover.jpg
 categories: []
 authors:
   - qneyrat

@@ -11,7 +11,7 @@ excerpt: >-
   sort pour savoir qui s'en chargerait. Bien sûr, c'est tombé sur moi. Le but de
   la fonctionnalité était d'avoir des emails beaucoup plus soignés et
   responsives.
-cover: /assets/2017-12-06-soigner-ses-emails-transactionnels/cover.png
+cover: /imgs/articles/2017-12-06-soigner-ses-emails-transactionnels/cover.png
 categories: []
 authors:
   - qneyrat

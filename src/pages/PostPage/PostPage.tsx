@@ -35,7 +35,7 @@ export const PostPage: React.FC<PostPageProps> = ({
     <Container variant="global" className={className}>
       <Container variant="content">
         {backLink}
-        <CoverImage cover={cover} />
+        {cover && <CoverImage {...cover} />}
         <PostHeader {...header} contentType={contentType} />
         <Divider mt="xs" bg="light-grey" />
         <ShareLinks urlToShare={currentUrl as string} />

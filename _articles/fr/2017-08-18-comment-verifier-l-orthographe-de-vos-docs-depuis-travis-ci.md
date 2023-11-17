@@ -8,7 +8,7 @@ excerpt: >-
   Nous allons montrer dans cet article comment vérifier l'orthographe
   automatiquement dans vos documents markdown, modifiés dans vos pull requests,
   simplement avec Aspell et Travis CI
-cover: /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/typing.jpg
+cover: /imgs/articles/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/typing.jpg
 categories: []
 authors:
   - charles-eric
