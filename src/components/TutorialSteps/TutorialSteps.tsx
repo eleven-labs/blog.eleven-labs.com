@@ -23,6 +23,7 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
     <TutoTag justifyContent="center" mx="s" className="tutorial-steps__tag" label="Progression" />
     {steps.map(({ name, label, ...stepLink }, index) => (
       <Box
+        key={name}
         className={classNames('tutorial-steps__step', {
           'tutorial-steps__step--active': stepActive === name,
         })}
@@ -33,12 +34,12 @@ export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps,
           alignItems="center"
           gap={{ xs: 'xxs-2', md: '0' }}
         >
-          <Box>
+          <Text as="div" size="xs">
             <Flex alignItems="center" justifyContent="center" className="tutorial-steps__number">
               {index + 1}
             </Flex>
-          </Box>
-          <Text key={name} size="xs" ml="xs" className="tutorial-steps__text">
+          </Text>
+          <Text size="xs" ml="xs" className="tutorial-steps__text">
             {label}
           </Text>
         </Flex>

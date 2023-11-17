@@ -22,7 +22,7 @@ Dans cet article, je vais vous présenter le concept d'Atomic Design en détaill
 Créé par Brad Frost en 2013, l'Atomic Design est tout d'abord une approche de conception de systèmes d'interface utilisateur et de design d'interaction. Son application peut être dédiée à la création d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) ou à l'organisation de l'interface utilisateur d'un projet quel qu'il soit.
 
 ## Hiérarchie des éléments
-L'approche de l'Atomic Design consiste à fractionner l'interface utilisateur en éléments modulaires, organisés en une hiérarchie allant des plus simples aux plus complexes : Atomes, Molécules, Organismes, Templates et Pages. On peut également trouver des éléments plus petits que les atomes, appelés Design Tokens. Cette approche, qui s'inspire de la chimie, encourage à considérer l'interface comme un assemblage de modules réutilisables, offrant la possibilité de combiner ces éléments pour former des interfaces plus étendues. Ce processus favorise l'évolutivité, la flexibilité et l'uniformité dans la création et l'évolution des interfaces utilisateurs.
+L'approche de l'Atomic Design consiste à fractionner l'interface utilisateur en éléments modulaires, organisés en une hiérarchie allant des plus simples aux plus complexes : **Atomes**, **Molécules**, **Organismes**, **Templates** et **Pages**. On peut également trouver des éléments plus petits que les atomes, appelés **Design Tokens**. Cette approche, qui s'inspire de la chimie, encourage à considérer l'interface comme un assemblage de modules réutilisables, offrant la possibilité de combiner ces éléments pour former des interfaces plus étendues. Ce processus favorise l'évolutivité, la flexibilité et l'uniformité dans la création et l'évolution des interfaces utilisateurs.
 
 ![Hiérarchie Atomic Design]({BASE_URL}/imgs/articles/2023-11-03-atomic-design/atomic-design-hierarchie.png)
 Figure: *Brad Frost - [Extending atomic design](https://bradfrost.com/blog/post/extending-atomic-design/)*
@@ -275,7 +275,7 @@ Figure: *Brad Frost - [Atomic Design Methodology - Chapter 2](https://atomicdesi
 Cette méthodologie vient formaliser et structurer ce qui était déjà pratiqué de manière consciente ou inconsciente. L'Atomic Design propose une approche méthodique et organisée pour concevoir des interfaces utilisateur. Elle présente plusieurs aspects positifs et avantages, que nous allons détailler.
 
 - **Réutilisabilité des composants**\
-  En fractionnant l'interface en éléments modulaires, l'Atomic design favorise la réutilisation de ces composants. Ces éléments sont conçus pour être autonomes et peuvent être utilisés de manière cohérente à travers diverses parties de l'interface utilisateur, voire dans différents projets. En fin de compte, cela simplifie le processus de développement en réduisant la duplication de code.
+  En fractionnant l'interface en éléments modulaires, l'Atomic Design favorise la réutilisation de ces composants. Ces éléments sont conçus pour être autonomes et peuvent être utilisés de manière cohérente à travers diverses parties de l'interface utilisateur, voire dans différents projets. En fin de compte, cela simplifie le processus de développement en réduisant la duplication de code.
 
 
 - **Scalabilité et évolutivité**\

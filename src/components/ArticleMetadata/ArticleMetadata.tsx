@@ -25,27 +25,27 @@ export const ArticleMetadata: React.FC<ArticleMetadataProps> = ({
     switch (displayedField) {
       case 'date':
         currentFields.push(
-          <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
+          <Skeleton key={displayedField} isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
             {date && <Text as="span">{date}</Text>}
           </Skeleton>
         );
         break;
       case 'readingTime':
         currentFields.push(
-          <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 50 }}>
+          <Skeleton key={displayedField} isLoading={isLoading} display="inline-block" style={{ width: 50 }}>
             {readingTime && <Text as="span">{`${readingTime}mn`}</Text>}
           </Skeleton>
         );
         break;
       case 'authors':
         currentFields.push(
-          <Skeleton isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
+          <Skeleton key={displayedField} isLoading={isLoading} display="inline-block" style={{ width: 100 }}>
             {authors &&
               authors.map((author, authorIndex) => (
-                <Text key={author.username} as="span">
-                  {author.name}
-                  {authorIndex !== authors.length - 1 ? ' & ' : ''}
-                </Text>
+                <React.Fragment key={author.name}>
+                  <Text as="span">{author.name}</Text>
+                  {authorIndex !== authors.length - 1 && <Text as="span">&nbsp;&amp;&nbsp;</Text>}
+                </React.Fragment>
               ))}
           </Skeleton>
         );
@@ -53,11 +53,12 @@ export const ArticleMetadata: React.FC<ArticleMetadataProps> = ({
     }
 
     if (index !== displayedFields.length - 1) {
-      currentFields.push(<SeparatorCircle />);
+      currentFields.push(<SeparatorCircle key={`circle-${displayedField}`} />);
     }
 
     return currentFields;
   }, []);
+
   return (
     <Flex {...props} textSize="xs" alignItems="center">
       {fields}
