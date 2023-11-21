@@ -10,6 +10,7 @@ import {
   validateMarkdownContent,
   validatePost,
 } from './markdownHelper';
+import {existsSync} from "node:fs";
 
 vi.mock('node:fs');
 vi.mock('glob');
@@ -373,6 +374,8 @@ Some content`);
 
   it('should return valid data and content if markdown is valid', () => {
     const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
+    const existsSync = vi.spyOn(fs, 'existsSync');
+    existsSync.mockReturnValue(true);
     readFileSyncSpy.mockReturnValueOnce(markdownContentValidArticle);
 
     const markdownFilePath = '/path/to/dir/valid-post.md';
