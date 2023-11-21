@@ -10,7 +10,6 @@ import {
   validateMarkdownContent,
   validatePost,
 } from './markdownHelper';
-import {existsSync} from "node:fs";
 
 vi.mock('node:fs');
 vi.mock('glob');
