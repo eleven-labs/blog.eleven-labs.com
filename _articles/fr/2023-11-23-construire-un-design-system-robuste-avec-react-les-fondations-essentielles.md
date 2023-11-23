@@ -17,7 +17,27 @@ authors:
     - iregaibi
 ---
 
-## Contexte
+Dans le développement frontend, la nécessité d'établir des bases solides devient impératif pour garantir la cohérence, la réutilisation et la facilité de maintenance des interfaces utilisateur.
+Lors de la conception de vos interfaces, il est probable que vous ayez déjà eu recours à des bibliothèques de composants.
+
+Cependant, il peut arriver que celles-ci ne répondent pas de manière optimale à des cas particuliers ou à des exigences spécifiques de votre application, notamment dans des contextes métiers spécifiques.
+Vous décidez alors de mettre en place un écosystème qui rassemble vos propres composants, typographies, couleurs, documentation et des directives d'utilisation : le Design System. 
+A travers cette article, nous allons vous expliquer comment construire un Design System robuste avec React.
+
+
+## CONTEXTE 
+
+Avant de plonger dans la mise en place d'un Design System robuste avec React, il est essentiel de comprendre les fondamentaux de ce domaine.
+
+### Design System
+
+### Atomic Design
+
+### Design token
+
+### BEM
+
+### System Props
 
 ## Implémentation
 
