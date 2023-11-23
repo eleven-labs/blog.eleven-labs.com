@@ -18,37 +18,57 @@ authors:
     - charles-eric
 ---
 
-## Introduction
+Voici un cas client concret sur lequel nous avons travaillé au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) : la refonte d'une application web corporate et e-commerce pour répondre à de nouvelles problématiques.
 
-Voici un cas client concret sur lequel nous avons travaillé au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) : la refonte d'un site web corporate et e-commerce pour répondre à de nouvelles problématiques.
+Commencons par décrire cette application avant de détailler les nouvelles problématiques, puis de présenter nos solutions pour y répondre.
 
-Commencons par décrire ce que permet cette application web avant de détailler les nouvelles problématiques, puis de présenter nos solutions pour y répondre.
+
+## Contexte de départ
+
+### Fonctionnalités de l'application
 
 Ce site inclut deux parties fonctionnellement différentes :
 - Site vitrine sur lequel sont affichés des contenus éditoriaux : informations présentant l'entreprise, ainsi que ses produits.
 - Plateforme e-commerce permettant d'acheter ces produits, et également donnant accès au compte de l'utilisateur connecté dans lequel il peut notamment suivre ses commandes.
 
 Ces deux parties doivent être complètement intégrées pour que l'utilisateur puisse naviguer sans contrainte entre les différentes pages, surtout pour passer des pages de présentation des produits vers les parcours e-commerce lui permettant d'acheter ces mêmes produits.
-Cela implique non seulement d'avoir des liens entre ces deux types de pages mais aussi d'avoir des composants e-commerce sur les pages éditoriales. Par exemple, sur une page éditoriale présentant une famille de produits, on souhaite avoir un composant e-commerce qui affiche les produits de cette famille, sous forme de caroussel, pour permettre leur ajout direct au panier.
+Cela implique non seulement d'avoir des liens entre ces deux types de pages mais aussi d'avoir des composants e-commerce sur les pages éditoriales. Par exemple, sur une page éditoriale présentant une famille de produits, on souhaite avoir un composant e-commerce qui affiche les produits de cette famille, sous forme de caroussel, pour permettre l'ajout direct au panier.
 
 ![Contexte : Composants e-commerce intégrés sur le site vitrine]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-context.png)
 
-Jusqu'à présent ce site, incluant ces deux parties différentes, était géré dans une seule application web React, constuire de manière complètement personnalisée, ce qui permettait d'intégrer comme nous le souhaitions ces contenus éditoriaux servis par un CMS headless et la plateforme e-commerce.
-Mais cette approche présentait d'autres problématiques que nous allons voir dans la partie suivante.
+### Architecture existante
+
+Jusqu'à présent, ce site, incluant ces deux parties différentes, était géré dans une seule application web React, constuite de manière complètement personnalisée, ce qui permettait d'intégrer comme nous le souhaitions ces contenus éditoriaux servis par un CMS headless et la plateforme e-commerce, comme représenté sur le schéma ci-dessous :
 
 ![Architecture existante avec CMS headless]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-existing-headless-cms.png)
 
+Mais cette approche mise en place par notre équipe il y a quelques années présentait d'autres problématiques que nous allons voir dans la partie suivante.
+
 ## Nos problématiques
 
-- Un tout nouveau site web, géré par une équipe marketing non technique, permettant l'édition complète de leur contenu, de même que la personnalisation des pages et des modèles
-- Besoin impératif d'intégrer des composants personnalisés connectés à un système e-commerce et à un CRM externe
-- Facilité d'intégration de ces composants sur les pages éditoriales sans nécessiter de compétences en programmation (No Code)
+### Plus de liberté pour les éditeurs de contenus
+
+Pour ce client, l'ensemble des contenus corportate et produits du site sont rédigés par les équipes marketing qui n'ont aucune connaissances techniques mais ont des envies de personnalisations bien particulières.
+
+Avec le CMS headless existant, ils ont la possibilité d'éditer des blocs de contenus (aussi appelés 'Slices' dans Prismic) qui sont ensuite affichés sur le front au sein de templates prédéfinis. Ces templates ayant été définis il y a plusieurs années, ils ne répondent plus forcément aux nouveaux besoins et de manière générale ils limitent les éditeurs à leur simple utilisation : les éditeurs ne peuvent pas ajouter de nouveaux templates sans faire appel aux développeurs.
+
+Ainsi ces éditeurs aimeraient pouvoir avoir complète liberté sur la création de templates de pages, avec la possibilité de glisser et déposer leur différents blocs de contenus, où bon leur semble.
+
+### Connexion à la plateforme e-commerce
+
+Besoin impératif d'intégrer des composants personnalisés connectés à un système e-commerce et à un CRM externe
+
+Facilité d'intégration de ces composants sur les pages éditoriales sans nécessiter de compétences en programmation (No Code)
 
 ## Notre solution
 
-Dans cette section, nous allons plonger plus en profondeur dans les solutions que nous avons mises en place pour répondre aux problématiques mentionnées précédemment. Notre approche combine des outils CMS No Code, la création de composants React avec SSR + Rehydration, l'utilisation d'un Design System, et l'intégration des composants via ESI avec un reverse proxy devant notre CMS No Code. Laissez-nous vous expliquer en détail comment cela fonctionne.
+Dans cette section, nous allons plonger plus en profondeur dans les solutions que nous avons mises en place pour répondre aux problématiques mentionnées précédemment. Notre approche combine des outils CMS No Code, la création de composants React avec Server Side Rendering + Rehydration, l'utilisation d'un Design System, et l'intégration des composants via ESI avec un reverse proxy devant notre CMS No Code.
+
+Voici déjà un aperçu général de la solution :
 
 ![Nouvelle solution avec CMS no code qui intègre des composants e-commerce]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-new-no-code-cms.png)
+
+Maintenant, laissez-nous vous expliquer en détails comment cela fonctionne.
 
 ### CMS No Code avec Webflow
 
@@ -107,3 +127,9 @@ Voici un exemple de la balise ESI que nous ajoutons dans le code HTML :
 ```
 
 Le reverse proxy joue le rôle d'intermédiaire entre notre CMS No Code et nos composants React, garantissant une expérience utilisateur optimale. Cette approche permet aux équipes marketing de bénéficier pleinement des composants personnalisés sans avoir à se préoccuper des complexités techniques liées à l'intégration.
+
+## Conclusion
+
+Ainsi cette solution permet à la fois de tirer partie d'un CMS no code laissant plus de liberté aux éditeurs de contenus pour construire leur page, tout en assurant une bonne intégration avec notre plateforme e-commerce pour optimiser les parcours d'achats !
+
+Cette approche est aussi intéressante car on profite au maximum d'une solution CMS SaaS qui nous permet de nous concentrer exclusivement sur le développement des parties critiques liées au e-commerce plutôt que sur les simples pages de contenus. Ainsi l'implémentation de cette architecture présente un meilleur ROI global : c'est un aspect sur lequel nous sommes toujours attentifs pour nos projets Studio Eleven Labs !
