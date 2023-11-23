@@ -31,20 +31,24 @@ Ce site inclut deux parties fonctionnellement différentes :
 Ces deux parties doivent être complètement intégrées pour que l'utilisateur puisse naviguer sans contrainte entre les différentes pages, surtout pour passer des pages de présentation des produits vers les parcours e-commerce lui permettant d'acheter ces mêmes produits.
 Cela implique non seulement d'avoir des liens entre ces deux types de pages mais aussi d'avoir des composants e-commerce sur les pages éditoriales. Par exemple, sur une page éditoriale présentant une famille de produits, on souhaite avoir un composant e-commerce qui affiche les produits de cette famille, sous forme de caroussel, pour permettre leur ajout direct au panier.
 
-![Composants e-commerce intégrés sur le site vitrine]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-context.png)
+![Contexte : Composants e-commerce intégrés sur le site vitrine]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-context.png)
 
 Jusqu'à présent ce site, incluant ces deux parties différentes, était géré dans une seule application web React, constuire de manière complètement personnalisée, ce qui permettait d'intégrer comme nous le souhaitions ces contenus éditoriaux servis par un CMS headless et la plateforme e-commerce.
 Mais cette approche présentait d'autres problématiques que nous allons voir dans la partie suivante.
 
-## Nos Problématiques
+![Architecture existante avec CMS headless]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-existing-headless-cms.png)
+
+## Nos problématiques
 
 - Un tout nouveau site web, géré par une équipe marketing non technique, permettant l'édition complète de leur contenu, de même que la personnalisation des pages et des modèles
 - Besoin impératif d'intégrer des composants personnalisés connectés à un système e-commerce et à un CRM externe
 - Facilité d'intégration de ces composants sur les pages éditoriales sans nécessiter de compétences en programmation (No Code)
 
-## Notre Solutions
+## Notre solution
 
 Dans cette section, nous allons plonger plus en profondeur dans les solutions que nous avons mises en place pour répondre aux problématiques mentionnées précédemment. Notre approche combine des outils CMS No Code, la création de composants React avec SSR + Rehydration, l'utilisation d'un Design System, et l'intégration des composants via ESI avec un reverse proxy devant notre CMS No Code. Laissez-nous vous expliquer en détail comment cela fonctionne.
+
+![Nouvelle solution avec CMS no code qui intègre des composants e-commerce]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-new-no-code-cms.png)
 
 ### CMS No Code avec Webflow
 
