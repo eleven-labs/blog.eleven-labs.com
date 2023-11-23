@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: 2023-11-08
+date: 2023-11-24
 slug: rex-studio-integration-composants-react-avec-esi-sur-site-no-code
 title: "Notre REX Studio : Intégration de composants React avec Varnish ESI pour un Site No Code"
 excerpt: "Découvrez comment notre REX Studio a intégré avec succès des composants React et Varnish ESI sur un site No Code. Explorez les défis et solutions que nous avons mis en œuvre"
@@ -9,6 +9,9 @@ categories:
     - javascript
 keywords:
     - react
+    - esi
+    - webflow
+    - varnish
     - no code
 authors:
     - fpasquet
@@ -17,7 +20,21 @@ authors:
 
 ## Introduction
 
-Notre studio REX, très précis, inclut un exemple concret de liste de produits e-commerce
+Voici un cas client concret sur lequel nous avons travaillé au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) : la refonte d'un site web corporate et e-commerce pour répondre à de nouvelles problématiques.
+
+Commencons par décrire ce que permet cette application web avant de détailler les nouvelles problématiques, puis de présenter nos solutions pour y répondre.
+
+Ce site inclut deux parties fonctionnellement différentes :
+- Site vitrine sur lequel sont affichés des contenus éditoriaux : informations présentant l'entreprise, ainsi que ses produits.
+- Plateforme e-commerce permettant d'acheter ces produits, et également donnant accès au compte de l'utilisateur connecté dans lequel il peut notamment suivre ses commandes.
+
+Ces deux parties doivent être complètement intégrées pour que l'utilisateur puisse naviguer sans contrainte entre les différentes pages, surtout pour passer des pages de présentation des produits vers les parcours e-commerce lui permettant d'acheter ces mêmes produits.
+Cela implique non seulement d'avoir des liens entre ces deux types de pages mais aussi d'avoir des composants e-commerce sur les pages éditoriales. Par exemple, sur une page éditoriale présentant une famille de produits, on souhaite avoir un composant e-commerce qui affiche les produits de cette famille, sous forme de caroussel, pour permettre leur ajout direct au panier.
+
+![Composants e-commerce intégrés sur le site vitrine]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-context.png)
+
+Jusqu'à présent ce site, incluant ces deux parties différentes, était géré dans une seule application web React, constuire de manière complètement personnalisée, ce qui permettait d'intégrer comme nous le souhaitions ces contenus éditoriaux servis par un CMS headless et la plateforme e-commerce.
+Mais cette approche présentait d'autres problématiques que nous allons voir dans la partie suivante.
 
 ## Nos Problématiques
 
