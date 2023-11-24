@@ -20,7 +20,7 @@ authors:
 
 Voici un cas client concret sur lequel nous avons travaillé au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) : la refonte d'une application web corporate et e-commerce pour répondre à de nouvelles problématiques.
 
-Commencons par décrire cette application avant de détailler les nouvelles problématiques, puis de présenter nos solutions pour y répondre.
+Commençons par décrire cette application avant de détailler les nouvelles problématiques, puis de présenter nos solutions pour y répondre.
 
 
 ## Contexte de départ
@@ -32,13 +32,13 @@ Ce site inclut deux parties fonctionnellement différentes :
 - Plateforme e-commerce permettant d'acheter ces produits, et également donnant accès au compte de l'utilisateur connecté dans lequel il peut notamment suivre ses commandes.
 
 Ces deux parties doivent être complètement intégrées pour que l'utilisateur puisse naviguer sans contrainte entre les différentes pages, surtout pour passer des pages de présentation des produits vers les parcours e-commerce lui permettant d'acheter ces mêmes produits.
-Cela implique non seulement d'avoir des liens entre ces deux types de pages mais aussi d'avoir des composants e-commerce sur les pages éditoriales. Par exemple, sur une page éditoriale présentant une famille de produits, on souhaite avoir un composant e-commerce qui affiche les produits de cette famille, sous forme de caroussel, pour permettre l'ajout direct au panier.
+Cela implique non seulement d'avoir des liens entre ces deux types de pages mais aussi d'avoir des composants e-commerce sur les pages éditoriales. Par exemple, sur une page éditoriale présentant une famille de produits, on souhaite avoir un composant e-commerce qui affiche les produits de cette famille, sous forme de carrousel, pour permettre l'ajout direct au panier.
 
 ![Contexte : Composants e-commerce intégrés sur le site vitrine]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-context.png)
 
 ### Architecture existante
 
-Jusqu'à présent, ce site, incluant ces deux parties différentes, était géré dans une seule application web React, constuite de manière complètement personnalisée, ce qui permettait d'intégrer comme nous le souhaitions ces contenus éditoriaux servis par un CMS headless et la plateforme e-commerce, comme représenté sur le schéma ci-dessous :
+Jusqu'à présent, ce site, incluant ces deux parties différentes, était géré dans une seule application web React, construite de manière complètement personnalisée, ce qui permettait d'intégrer comme nous le souhaitions ces contenus éditoriaux servis par un CMS headless et la plateforme e-commerce, comme représenté sur le schéma ci-dessous :
 
 ![Architecture existante avec CMS headless]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-existing-headless-cms.png)
 
