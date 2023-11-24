@@ -48,17 +48,23 @@ Mais cette approche mise en place par notre équipe il y a quelques années pré
 
 ### Plus de liberté pour les éditeurs de contenus
 
-Pour ce client, l'ensemble des contenus corportate et produits du site sont rédigés par les équipes marketing qui n'ont aucune connaissances techniques mais ont des envies de personnalisations bien particulières.
+Pour ce client, l'ensemble des contenus corporate et produits du site sont rédigés par les équipes marketing qui n'ont aucune connaissance technique mais ont des envies de personnalisations bien particulières.
 
-Avec le CMS headless existant, ils ont la possibilité d'éditer des blocs de contenus (aussi appelés 'Slices' dans Prismic) qui sont ensuite affichés sur le front au sein de templates prédéfinis. Ces templates ayant été définis il y a plusieurs années, ils ne répondent plus forcément aux nouveaux besoins et de manière générale ils limitent les éditeurs à leur simple utilisation : les éditeurs ne peuvent pas ajouter de nouveaux templates sans faire appel aux développeurs.
+Avec le CMS headless existant, ils ont la possibilité d'éditer des blocs de contenus (aussi appelés 'Slices' dans Prismic CMS) qui sont ensuite affichés sur le front au sein de templates prédéfinis. Ces templates ayant été définis il y a plusieurs années, ils ne répondent plus forcément aux nouveaux besoins et de manière générale ils limitent les éditeurs à leur simple utilisation : les éditeurs ne peuvent pas ajouter de nouveaux templates sans faire appel aux développeurs.
 
 Ainsi ces éditeurs aimeraient pouvoir avoir complète liberté sur la création de templates de pages, avec la possibilité de glisser et déposer leur différents blocs de contenus, où bon leur semble.
 
 ### Connexion à la plateforme e-commerce
 
-Besoin impératif d'intégrer des composants personnalisés connectés à un système e-commerce et à un CRM externe
+Mais laisser cette liberté d'édition de contenus à ces utilisateurs marketing non techniques n'est pas suffisant.
 
-Facilité d'intégration de ces composants sur les pages éditoriales sans nécessiter de compétences en programmation (No Code)
+Nous avons aussi impérativement besoin de faire en sorte que ce site de contenus soit au mieux intégrer à la plateforme e-commerce, pour permettre aux visiteurs d'aller sur les parcours d'achat depuis les pages éditoriales de la façon la plus simple, sans changer d'univers et sans basculer sur une autre application.
+
+Ainsi, il nous faut la possibilité d'intégrer des composants personnalisés au sein des contenus éditoriaux pour faire cette connexion avec la plateforme e-commerce.
+
+Ces composants personnalisés devront aussi pouvoir être ajoutés sur les pages sans nécessiter de compétences techniques : glisser /déposer sur les pages, comme pour les autres blocs de contenus.
+
+Dans un souci de simplification pour cette article, nous ne parlerons que d'intégration à une plateforme e-commerce. Mais en réalité nous avions aussi besoin d'intégrer ce site avec d'autres applications externes, notamment un CRM.
 
 ## Notre solution
 
