@@ -2,8 +2,8 @@
 contentType: article
 lang: fr
 date: 2023-11-24
-slug: rex-studio-integration-composants-react-avec-esi-dans-site-no-code
-title: "Notre REX Studio : Intégration de composants React avec Varnish ESI dans un site No Code"
+slug: integration-composants-react-avec-esi-dans-site-no-code
+title: "REX Studio : Intégration de composants React avec Varnish ESI dans un site No Code"
 excerpt: "Découvrez comment notre Studio a intégré avec succès des composants React et Varnish ESI sur un site No Code. Explorez les défis et solutions que nous avons mis en œuvre"
 categories:
     - javascript
@@ -158,4 +158,4 @@ Le reverse proxy joue le rôle d'intermédiaire entre notre CMS No Code et nos c
 
 Ainsi cette solution permet à la fois de tirer partie d'un CMS no code laissant plus de liberté aux éditeurs de contenus pour construire leur page, tout en assurant une bonne intégration avec notre plateforme e-commerce pour optimiser les parcours d'achats !
 
-Cette approche est aussi intéressante car on profite au maximum d'une solution CMS SaaS qui nous permet de nous concentrer exclusivement sur le développement des parties critiques liées au e-commerce plutôt que sur les simples pages de contenus. Ainsi l'implémentation de cette architecture présente un meilleur ROI global : c'est un aspect sur lequel nous sommes toujours attentifs pour nos projets Studio Eleven Labs !
+Cette approche est aussi intéressante car on profite au maximum d'une solution CMS SaaS qui nous permet de nous concentrer exclusivement sur le développement des parties critiques liées au e-commerce plutôt que sur les simples pages de contenus. Ainsi l'implémentation de cette architecture présente un meilleur ROI global : c'est un aspect sur lequel nous sommes toujours attentifs pour [nos projets Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit) !
