@@ -21,11 +21,11 @@ Dans le développement frontend, la nécessité d'établir des bases solides dev
 Lors de la conception de vos interfaces, il est probable que vous ayez déjà eu recours à des bibliothèques de composants.
 
 Cependant, il peut arriver que celles-ci ne répondent pas de manière optimale à des cas particuliers ou à des exigences spécifiques de votre application, notamment dans des contextes métiers spécifiques.
-Vous décidez alors de mettre en place un écosystème qui rassemble vos propres composants, typographies, couleurs, documentation et des directives d'utilisation : le Design System. 
+Vous décidez alors de mettre en place un écosystème qui rassemble vos propres composants, typographies, couleurs, documentation et des directives d'utilisation : le Design System.
 A travers cette article, nous allons vous expliquer comment construire un Design System robuste avec React.
 
 
-## CONTEXTE 
+## CONTEXTE
 
 Avant de plonger dans la mise en place d'un Design System robuste avec React, il est essentiel de comprendre les fondamentaux de ce domaine.
 
@@ -137,7 +137,7 @@ export const PostPreviewListWithData = Template.bind({});
 
 En voici le résultat.
 
-![PostPreviewList par defaut]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/PostPreviewList-default.png)
+![PostPreviewList par defaut]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/postPreviewList-default.png)
 Figure: *PostPreviewList - Default*
 
 Comme vous pouvez observer nous avons donc un visuel du composant avec une section permettant de constater les données reçus qui ont servit à la construction de celui-ci.
@@ -159,7 +159,7 @@ PostPreviewListIsLoading.args = {
 
 En modifiant le jeu de donnée en entrée pour le composant, on a la possibilité de crée cette _Story_ mettant en avant le composant `PostPreviewList` dans un état de chargement.
 
-![PostPreviewList en état de chargement]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/PostPreviewList-loading.png)
+![PostPreviewList en état de chargement]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/postPreviewList-loading.png)
 Figure: *PostPreviewList - Is Loading*
 
 En appliquant le même principe, nous pouvons documenter une variante du composant. Par exemple, en reprenant le composant précédent, nous pouvons lui appliquer une pagination en lui fournissant en entrée les données necessaires qui vont permettre l'affichage de cette pagination.
@@ -181,7 +181,7 @@ PostPreviewListWithPagination.args = {
 L'extension `action` est utilisée pour afficher les données reçues par les arguments du gestionnaire d'événements, ici `onLoadMore`. En effet, une _Story_ ne doit être qu'un visuel du composant, non une documentation de son comportement. Je vous invite à lire cet [article, traitant des Storybook addons](https://blog.eleven-labs.com/fr/storybook-addons/).
 </div>
 
-![PostPreviewList avec une pagination]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/PostPreviewList-pagination.png)
+![PostPreviewList avec une pagination]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/postPreviewList-pagination.png)
 Figure: *PostPreviewList - With pagination*
 
 <div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
@@ -191,29 +191,62 @@ Figure: *PostPreviewList - With pagination*
 
 ### Documentation statique
 
-En plus de la documentation visuelles des composants, il est aussi possible de retrouver des documentation statiques dans un Storybook. En effet, une documentation se doit aussi d'être explicative, de ce fait, les documentation statiques restent necessaires afin d'informer sur les usages, les maniéres de faire, les bonnes pratiques ou concernant des propriétés disponibles comme les différents Design Tokens à disposition des développeurs afin de construire les composants.
+En plus de la documentation visuelle des composants, il est aussi possible de retrouver des documentation statiques dans un Storybook. En effet, une documentation se doit aussi d'être explicative, de ce fait, les documentations statiques restent necessaires afin d'informer sur les usages, les maniéres de faire, les bonnes pratiques ou concernant des propriétés disponibles comme les différents Design Tokens.
 
-Storybook nous offre la possibilité d'écrire des fichiers `MDX`, qui vont mixer entre `Markdown` et le Javascript/JSX et donnent la possibilité de construire des documentations statiques mais aussi visuelle en permettant d'inclure des exemples de code. Essayons de construire un exemple dans un fichier `constributing.stories.mdx` qui viendra documenter la marche à suivre afin de crée un nouveau composant.
+Storybook nous offre la possibilité d'écrire des fichiers `MDX`, qui vont mixer entre le `Markdown` et le Javascript/JSX et donnent la possibilité de construire des documentations statiques mais aussi visuelle.
+
+Essayons de construire un exemple dans un fichier `Colors.stories.mdx` qui viendra documenter les Design Tokens concernant les couleurs disponibles dans notre application.
 
 ```mdx
-import { Meta } from '@storybook/addon-docs';
+// Documentations - Colors.stories.mdx
+import { Meta } from '@storybook/addon-docs'
+import { tokenVariables } from '../constants'
 
-<Meta title="Documentations/Contributing" />
+<Meta title="Documentations/Design Tokens/Colors" />
 
-# Contributing
+# Colors
 
-## How to write new components
+> Present color palette used by both design and engineering.
 
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Lorem ipsum `dolor` sit amet, consectetur adipiscing **elit**, sed do eiusmod _tempor_ incididunt ut labore et dolore magna aliqua.
-
-1. First step
-2. Second step
-3. Third step
-
+<table style={{ width: '100%'}}>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(tokenVariables.colors).map(([colorKey, colorValue]) => (
+        <tr key={colorKey}>
+          <td>{colorKey}</td>
+          <td>{colorValue}</td>
+          <td>
+            <div style={{
+                boxSizing: 'border-box',
+                width: '200px',
+                height: '50px',
+                backgroundColor: colorValue
+              }}
+            />
+          </td>
+        </tr>
+    ))}
+  </tbody>
+</table>
 ```
 Ce qui nous donne ceci comme résultat.
 
-![Documentation contributing]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/documentation-contributing.png)
-Figure: *Documentation statique - Contributing*
+![Documentation Design Tokens Colors]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/colors-design-token.png)
+Figure: *Documentation statique - Colors Design Token*
+
+<div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
+
+Les documentations statiques vont décrire les fondations de votre design d'application, il donc est important de commencer à documenter d'abord les concepts et les bases sur lesquelles s'appuit le design, et ce avant de commencer l'ecriture de la documentation des composants.
+</div>
+
+## Conclusion
+
+Construire un Design System robuste passe par une bonne conception en amont, un choix concernant les outils utilisés et une bonne documentation qui permettera de rendre le tout clair, et ce pour tous les acteurs agissant dans la création du design.
+
+Les outils et concepts présentés dans cet articles sont le résultat de notre expérience avec les Design System au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application). Cela nous a permis de mettre en place des Design System complets et robustes pour nos clients et pour nos projets internes.
