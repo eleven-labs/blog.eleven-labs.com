@@ -52,19 +52,19 @@ Pour ce client, l'ensemble des contenus corporate et produits du site sont rédi
 
 Avec le CMS headless existant, ils ont la possibilité d'éditer des blocs de contenus (aussi appelés 'Slices' dans Prismic CMS) qui sont ensuite affichés sur le front au sein de templates prédéfinis. Ces templates ayant été définis il y a plusieurs années, ils ne répondent plus forcément aux nouveaux besoins et de manière générale ils limitent les éditeurs à leur simple utilisation : les éditeurs ne peuvent pas ajouter de nouveaux templates sans faire appel aux développeurs.
 
-Ainsi ces éditeurs aimeraient pouvoir avoir complète liberté sur la création de templates de pages, avec la possibilité de glisser et déposer leur différents blocs de contenus, où bon leur semble.
+Ainsi ces éditeurs aimeraient pouvoir avoir complète liberté sur la création de templates de pages, avec la possibilité de glisser et déposer leur différents blocs de contenus où bon leur semble.
 
 ### Connexion à la plateforme e-commerce
 
 Mais laisser cette liberté d'édition de contenus à ces utilisateurs marketing non techniques n'est pas suffisant.
 
-Nous avons aussi impérativement besoin de faire en sorte que ce site de contenus soit au mieux intégrer à la plateforme e-commerce, pour permettre aux visiteurs d'aller sur les parcours d'achat depuis les pages éditoriales de la façon la plus simple, sans changer d'univers et sans basculer sur une autre application.
+Nous avons aussi impérativement besoin de faire en sorte que ce site de contenus soit au mieux intégré à la plateforme e-commerce, pour permettre aux visiteurs d'aller sur les parcours d'achat depuis les pages éditoriales de la façon la plus simple, sans changer d'univers et sans basculer sur une autre application.
 
 Ainsi, il nous faut la possibilité d'intégrer des composants personnalisés au sein des contenus éditoriaux pour faire cette connexion avec la plateforme e-commerce.
 
-Ces composants personnalisés devront aussi pouvoir être ajoutés sur les pages sans nécessiter de compétences techniques : glisser /déposer sur les pages, comme pour les autres blocs de contenus.
+Ces composants personnalisés devront aussi pouvoir être ajoutés sur les pages sans nécessiter de compétences techniques : glisser /déposer sur ces pages, comme pour les autres blocs de contenus.
 
-Dans un souci de simplification pour cette article, nous ne parlerons que d'intégration à une plateforme e-commerce. Mais en réalité nous avions aussi besoin d'intégrer ce site avec d'autres applications externes, notamment un CRM.
+Dans un souci de simplification pour cet article, nous ne parlerons que d'intégration à une plateforme e-commerce. Mais en réalité nous avions aussi besoin d'intégrer ce site avec d'autres applications externes, notamment un CRM.
 
 ## Notre solution
 
@@ -79,6 +79,8 @@ Maintenant, laissez-nous vous expliquer en détails comment cela fonctionne.
 ### CMS No Code avec Webflow
 
 Webflow est un CMS No Code puissant qui offre une interface conviviale pour la création et la gestion de sites web. C'est un choix judicieux pour les équipes marketing non techniques, car il permet une édition complète du contenu et la personnalisation des pages et des modèles sans nécessiter de compétences en programmation.
+
+![CMS No Code Webflow]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/webflow-cms-no-code.png)
 
 ### Création de composants React avec SSR + Rehydration
 
