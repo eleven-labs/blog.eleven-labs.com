@@ -82,6 +82,14 @@ Webflow est un CMS No Code puissant qui offre une interface conviviale pour la c
 
 ![CMS No Code Webflow]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/webflow-cms-no-code.png)
 
+Nous avons d'abord sélectionné ce CMS pour son éditeur de page appelé "Designer" qui permet d'éditer les pages simplement en glissant et déposant les différents blocs graphiques ou textuels, tout en étant très avancé en termes de design : options de style avancées, transitions et animations par exemple.
+
+Mais Webflow offre aussi ces avantages importants :
+- Popularité, forte communauté, documentations complètes
+- Optimisations natives pour le SEO et la web performance
+- Gestion de contenus dans des collections CMS, que l'on peut afficher sur les pages No Code et qu'on peut aussi exposer via une API (comme avec un CMS headless)
+- Workflows d'édition et publication
+
 ### Création de composants React avec SSR + Rehydration
 
 Pour répondre à l'exigence d'intégrer des composants personnalisés connectés à un système e-commerce et à un CRM externe, nous avons opté pour la création de composants React avec Server-Side Rendering (SSR) et Rehydration. Cette approche nous permet d'allier la flexibilité de React à la performance du SSR.
