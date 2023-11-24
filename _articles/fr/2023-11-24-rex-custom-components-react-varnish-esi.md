@@ -2,16 +2,16 @@
 contentType: article
 lang: fr
 date: 2023-11-24
-slug: rex-studio-integration-composants-react-avec-esi-sur-site-no-code
-title: "Notre REX Studio : Intégration de composants React avec Varnish ESI pour un Site No Code"
-excerpt: "Découvrez comment notre REX Studio a intégré avec succès des composants React et Varnish ESI sur un site No Code. Explorez les défis et solutions que nous avons mis en œuvre"
+slug: rex-studio-integration-composants-react-avec-esi-dans-site-no-code
+title: "Notre REX Studio : Intégration de composants React avec Varnish ESI dans un site No Code"
+excerpt: "Découvrez comment notre Studio a intégré avec succès des composants React et Varnish ESI sur un site No Code. Explorez les défis et solutions que nous avons mis en œuvre"
 categories:
     - javascript
 keywords:
     - react
     - esi
-    - webflow
     - varnish
+    - webflow
     - no code
 authors:
     - fpasquet
@@ -50,19 +50,22 @@ Mais cette approche mise en place par notre équipe il y a quelques années pré
 
 Pour ce client, l'ensemble des contenus corporate et produits du site sont rédigés par les équipes marketing qui n'ont aucune connaissance technique mais ont des envies de personnalisations bien particulières.
 
-Avec le CMS headless existant, ils ont la possibilité d'éditer des blocs de contenus (aussi appelés 'Slices' dans Prismic CMS) qui sont ensuite affichés sur le front au sein de templates prédéfinis. Ces templates ayant été définis il y a plusieurs années, ils ne répondent plus forcément aux nouveaux besoins et de manière générale ils limitent les éditeurs à leur simple utilisation : les éditeurs ne peuvent pas ajouter de nouveaux templates sans faire appel aux développeurs.
+Dans le backoffice du CMS headless existant, ils ont la possibilité d'éditer des blocs de contenus (aussi appelés 'Slices' dans Prismic CMS) qui sont ensuite affichés sur le front au sein de templates prédéfinis. Ces templates ayant été définis il y a plusieurs années, ils ne répondent plus forcément aux nouveaux besoins et de manière générale ils limitent les éditeurs à leur simple utilisation : les éditeurs ne peuvent pas ajouter de nouveaux templates sans faire appel aux développeurs.
 
 Ainsi ces éditeurs aimeraient pouvoir avoir complète liberté sur la création de templates de pages, avec la possibilité de glisser et déposer leur différents blocs de contenus où bon leur semble.
 
 ### Connexion à la plateforme e-commerce
 
-Mais laisser cette liberté d'édition de contenus à ces utilisateurs marketing non techniques n'est pas suffisant.
+Cette seconde problématique n'existait pas avec la solution existante puisqu'avec une seule application React, tout était parfaitement intégré au sein de la même application : contenus éditoriaux et e-commerce.
+Mais à partir du moment où nous avons énoncé le défi précédent et que nous cherchons une solution pour donner plus de liberté aux éditeurs, il devient nécessaire de rappeler ce deuxième challenge qui reste important.
+
+Laisser cette liberté d'édition de contenus à ces utilisateurs marketing non techniques n'est en effet pas suffisant.
 
 Nous avons aussi impérativement besoin de faire en sorte que ce site de contenus soit au mieux intégré à la plateforme e-commerce, pour permettre aux visiteurs d'aller sur les parcours d'achat depuis les pages éditoriales de la façon la plus simple, sans changer d'univers et sans basculer sur une autre application.
 
 Ainsi, il nous faut la possibilité d'intégrer des composants personnalisés au sein des contenus éditoriaux pour faire cette connexion avec la plateforme e-commerce.
 
-Ces composants personnalisés devront aussi pouvoir être ajoutés sur les pages sans nécessiter de compétences techniques : glisser /déposer sur ces pages, comme pour les autres blocs de contenus.
+Également il doit être possible d'ajouter ces composants personnalisés au sein des pages de contenu sans aucune compétence technique : glisser /déposer sur ces pages, comme pour les autres blocs de contenus.
 
 Dans un souci de simplification pour cet article, nous ne parlerons que d'intégration à une plateforme e-commerce. Mais en réalité nous avions aussi besoin d'intégrer ce site avec d'autres applications externes, notamment un CRM.
 
@@ -89,10 +92,11 @@ Mais Webflow offre aussi ces avantages importants :
 - Optimisations natives pour le SEO et la web performance
 - Gestion de contenus dans des collections CMS, que l'on peut afficher sur les pages No Code et qu'on peut aussi exposer via une API (comme avec un CMS headless)
 - Workflows d'édition et publication
+- Possibilité d'ajouter des blocs de code personnalisé HTML/CSS/JS
 
 ### Création de composants React avec SSR + Rehydration
 
-Pour répondre à l'exigence d'intégrer des composants personnalisés connectés à un système e-commerce et à un CRM externe, nous avons opté pour la création de composants React avec Server-Side Rendering (SSR) et Rehydration. Cette approche nous permet d'allier la flexibilité de React à la performance du SSR.
+Pour répondre à l'exigence d'intégrer des composants personnalisés connectés à un système e-commerce externe, nous avons opté pour la création de composants React avec Server-Side Rendering (SSR) et Rehydration. Cette approche nous permet d'allier la flexibilité de React à la performance du SSR.
 
 Voici un exemple de notre composant React avec SSR et Rehydration qui affiche une liste de produits :
 
@@ -122,17 +126,17 @@ export const ProductListContainer: React.FC<{ category?: string }> = ({ category
 };
 ```
 
-Pour la stack technique, nous avons utilisé **Express**, **React** et **Vite** pour le SSR, mais vous pouvez utiliser Next.js, qui est simple à mettre en place.
+Pour la stack technique, nous avons utilisé **Express**, **React** et **Vite** pour le SSR, mais vous pourriez aussi utiliser Next.js, qui est simple à mettre en place.
 
 ### Utilisation d'un Design System pour une meilleure cohérence visuelle
 
-La cohérence visuelle est essentielle pour une expérience utilisateur de haute qualité. Pour garantir cette cohérence, nous avons adopté un Design System. Ce système de conception centralisé définit des normes de conception, des composants réutilisables et des directives d'accessibilité. Ainsi, chaque composant que nous créons suit les mêmes directives de conception, ce qui garantit une expérience utilisateur homogène.
+La cohérence visuelle est essentielle pour une expérience utilisateur de haute qualité. Pour garantir cette cohérence, nous avons adopté un Design System. Ce système de conception centralisé définit des normes de conception, des composants réutilisables et des directives d'accessibilité. Ainsi, chaque composant que nous créons suit les mêmes directives de conception, ce qui garantit une expérience utilisateur homogène, que ces composants soient des composants personnalisés React ou des composants graphiques sur les pages du CMS No Code.
 
 Pour en savoir plus sur l'importance des Design Systems, nous vous invitons à lire notre article : [Design System : Qu'est-ce que c'est et pourquoi en avez-vous besoin ?]({BASE_URL}/fr/pourquoi-creer-design-system/)
 
-### Intégration des composants via ESI avec reverse proxy devant CMS no code
+### Intégration des composants via ESI avec un reverse proxy devant le CMS No Code
 
-Pour intégrer nos composants React générés avec SSR dans notre CMS No Code, nous utilisons les ESI avec **Varnish**. Les ESI nous permettent d'inclure dynamiquement nos composants React sur les pages éditoriales sans impacter les performances.
+Pour intégrer nos composants React générés avec SSR au sein des pages construites dans notre CMS No Code, nous utilisons les ESI avec **Varnish**. Les ESI nous permettent d'inclure dynamiquement nos composants React sur les pages éditoriales sans impacter les performances.
 
 Il ne vous reste plus qu'à ajouter une balise ESI à nos pages Webflow. Pour ce faire, nous avons ajouté un code d'intégration personnalisé sur Webflow.
 
@@ -141,6 +145,12 @@ Voici un exemple de la balise ESI que nous ajoutons dans le code HTML :
 ```html
 <esi:include src="/components/product-list?category=smartphone" />
 ```
+
+Il faut passer par le "HTML Embed Code Editor" de webflow pour ajouter ce code au sein d'un bloc qui pourra ensuite être placé où on veut sur les pages Webflow :
+
+![HTML Embed Code Editor dans Webflow]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/webflow-code-editor.png)
+
+Pour rendre simple l'utilisation de ces blocs de codes personnalisés avec ces balises ESI pour les éditeurs de l'équipe marketing, nous avons pré-créé dans Webflow les différents blocs correspondants aux différents composants personnalisés, de façon à ce que les éditeurs n'aient ensuite qu'à les glisser/déposer où ils le souhaitent sur les pages.
 
 Le reverse proxy joue le rôle d'intermédiaire entre notre CMS No Code et nos composants React, garantissant une expérience utilisateur optimale. Cette approche permet aux équipes marketing de bénéficier pleinement des composants personnalisés sans avoir à se préoccuper des complexités techniques liées à l'intégration.
 
