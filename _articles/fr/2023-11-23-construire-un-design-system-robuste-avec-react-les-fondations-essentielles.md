@@ -31,13 +31,27 @@ Avant de plonger dans la mise en place d'un Design System robuste avec React, il
 
 ### Design System
 
+Un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) réunit un ensemble d'éléments graphiques, des typographies, des palettes de couleurs, de la documentation et des directives d'utilisation.
+C'est un référenciel qui garantie une cohérence visuelle et fonctionnelle qui apporte un cadre et des règles à respecter. 
+
 ### Atomic Design
+
+L'[Atomic Design](https://blog.eleven-labs.com/fr/atomic-design/) est une approche de conception de systèmes d'interface utilisateur et de design d'interaction. Cette approche consiste à découper les composants en éléments modulaires : Atome, Molecule, Organisme, Templates, et Pages. 
 
 ### Design token
 
+Les [Design Token](https://blog.eleven-labs.com/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/) sont un ensemble de valeurs ou de variables utilisé pour référencer plusieurs types d'éléments tels que les couleurs, typographies, espacements et bien d'autres.
+Ces tokens permettent entre autre, de faciliter la mise à jour des styles et de maîtriser les déclinaisons de thèmes qui partagent des références communes. 
+
 ### BEM
 
+La méthodologie [BEM](https://blog.eleven-labs.com/fr/retour-d-experience-sur-bem/) donne au CSS une convention de structuration, de nommage et d’organisation pour vos composants.
+BEM envisage la composition d’une page web en plusieurs **B**lock, qui contiennent des **E**lements, et ces derniers peuvent varier grâce à des **M**odifiers.
+
 ### System Props
+
+Les [System Props](https://blog.eleven-labs.com/fr/system-props/) sont une liste de propriétés permettant de personnaliser instantanément le style de vos composants.
+Ces ***System Props*** sont des raccourcis pratiques pour ajouter des styles complémentaires qui permettent de modifier le comportement et l'apparence de vos composants.
 
 ## Implémentation
 
