@@ -25,7 +25,7 @@ Vous décidez alors de mettre en place un écosystème qui rassemble vos propres
 A travers cette article, nous allons vous expliquer comment construire un Design System robuste avec React.
 
 
-## CONTEXTE
+## Contexte
 
 Avant de plonger dans la mise en place d'un Design System robuste avec React, il est essentiel de comprendre les fondamentaux de ce domaine.
 
@@ -54,6 +54,184 @@ Les [System Props](https://blog.eleven-labs.com/fr/system-props/) sont une liste
 Ces ***System Props*** sont des raccourcis pratiques pour ajouter des styles complémentaires qui permettent de modifier le comportement et l'apparence de vos composants.
 
 ## Implémentation
+
+En suivant les fondamentaux tout juste cités, nous allons créer un Design System en React avec du SCSS qui nous permettra de bien utiliser la méthodologie BEM.
+
+Commençons par déclarer nos Design tokens : 
+```json
+// Design token - spacing.tokens.json
+{
+  "spacing": {
+    "0": {
+      "value": "0"
+    },
+    "xxs": {
+      "value": "8px"
+    },
+    "xs": {
+      "value": "12px"
+    },
+    "s": {
+      "value": "16px"
+    },
+    "m": {
+      "value": "24px"
+    },
+    "l": {
+      "value": "32px"
+    },
+    "xl": {
+      "value": "42px"
+    }
+  }
+}
+```
+
+```json
+// Design token - color.tokens.json
+{
+  "color": {
+    "primary": {
+      "azure": {
+        "value": "#3767B6"
+      }
+    },
+    "secondary": {
+      "navy": {
+        "value": "#224579"
+      }
+    },
+    "greyscale": {
+      "light-grey": {
+        "value": "#C4C4C4"
+      },
+      "grey": {
+        "value": "#9B9B9B"
+      },
+      "dark-grey": {
+        "value": "#757575"
+      }
+    }
+  }
+}
+```
+En collaboration avec les designers, nous avons défini les espacements et les couleurs récurrents dans les maquettes fournies.
+
+Définissons ensuite les types qui peuvent utiliser ces design token :
+```tsx
+// tokenTypes.ts
+import type { tokenVariables } from '@/constants';
+
+export type ColorType =
+  | keyof (typeof tokenVariables)['color']['primary']
+  | keyof (typeof tokenVariables)['color']['secondary']
+  | keyof (typeof tokenVariables)['color']['greyscale'];
+
+export type SpacingType = keyof (typeof tokenVariables)['spacing'];
+```
+
+Ces types peuvent ensuite être utilisés pour définir :
+- des **System Props**
+
+```tsx
+// System Props - ColorSystemProps.ts
+import type { ColorType } from '@/types';
+
+export interface ColorSystemProps {
+  /** background-color */
+  bg?: ColorType;
+  /** color */
+  color?: ColorType;
+}
+
+// System Props - SpacingSystemProps.ts
+import type { SpacingType } from '@/types';
+
+export interface MarginSystemProps {
+    /** margin */
+    m?: SpacingType;
+    /** margin-top */
+    mt?: SpacingType;
+    /** margin-right */
+    mr?: SpacingType;
+    /** margin-bottom */
+    mb?: SpacingType;
+    /** margin-left */
+    ml?: SpacingType;
+}
+
+export interface PaddingSystemProps {
+    p?: SpacingType;
+    ...
+}
+
+export interface SpacingSystemProps extends MarginSystemProps, PaddingSystemProps {}
+```
+
+- le type d'une propriété d'un composant
+```tsx
+// Atomic Design - Atom/Button.tsx
+import type { ColorType } from '@/types';
+
+interface ButtonProps {
+    color: ColorType;
+    label: string;
+    handleClick: MouseEventHandler<HTMLButtonElement>;
+}
+
+const Button: React.FC<ButtonProps> = ({ label, color, handleClick }) => (
+    <button style={{ backgroundColor: color }} onClick={handleClick}>{label}</button>
+);
+
+export default Button;
+```
+
+Passons maintenant à la création de nos éléments modulaires. Dans l'exemple ci-dessus, j'ai créé un composant atomique qui est stylisé via l'attribut `style`. Reprenons ce composant et avec nous allons créer une classe CSS : 
+```scss
+// Button.scss
+.button {
+  color: white;
+  background-color: red;
+  padding: var(--spacing-xs);
+  
+  &--bg-primary {
+    background-color: var(--color-primary);
+  }
+}
+```
+
+```tsx
+// Atomic Design - Atom/Button.tsx
+...
+import classNames from 'classnames';
+import type { ColorType } from '@/types';
+
+import './Button.scss';
+
+interface ButtonProps extends SpacingSystemProps {
+    color: ColorType;
+    label: string;
+    handleClick: MouseEventHandler<HTMLButtonElement>;
+}
+
+const Button: React.FC<ButtonProps> = ({ label, color, handleClick, p }) => (
+    <button className={classNames('button', {
+        [`button--${color}`]: color,
+        [`p-${p}`]: p,
+    })} onClick={handleClick}>{label}</button>
+);
+
+export default Button;
+```
+
+<div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
+J'ai utilisé ici `classnames` pour générer des classes CSS utilitaires, d'autres approches peuvent être utilisé en fonction de vos besoins et de vos préférences.
+Vous pouvez retrouver dans cette [article](https://blog.eleven-labs.com/fr/system-props/) d'autres exemples qui permettent de bien implémenter les System Props dans votre Design System.
+</div>
+
+Le Design System exige une collaboration étroite entre les différents métiers impliqués (Designers, Développeurs, PO / PM).
+Pour que cette collaboration soit efficace, la documentation joue un role important.
+
 
 ## Comment documenter un Design System ?
 
