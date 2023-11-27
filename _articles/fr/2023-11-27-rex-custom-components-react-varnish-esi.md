@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: 2023-11-24
+date: 2023-11-27
 slug: integration-composants-react-avec-esi-dans-site-no-code
 title: "REX Studio : Intégration de composants React avec Varnish ESI dans un site No Code"
 excerpt: "Découvrez comment notre Studio a intégré avec succès des composants React et Varnish ESI sur un site No Code. Explorez les défis et solutions que nous avons mis en œuvre"
@@ -34,13 +34,13 @@ Ce site inclut deux parties fonctionnellement différentes :
 Ces deux parties doivent être complètement intégrées pour que l'utilisateur puisse naviguer sans contrainte entre les différentes pages, surtout pour passer des pages de présentation des produits vers les parcours e-commerce lui permettant d'acheter ces mêmes produits.
 Cela implique non seulement d'avoir des liens entre ces deux types de pages mais aussi d'avoir des composants e-commerce sur les pages éditoriales. Par exemple, sur une page éditoriale présentant une famille de produits, on souhaite avoir un composant e-commerce qui affiche les produits de cette famille, sous forme de carrousel, pour permettre l'ajout direct au panier.
 
-![Contexte : Composants e-commerce intégrés sur le site vitrine]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-context.png)
+![Contexte : Composants e-commerce intégrés sur le site vitrine]({BASE_URL}/imgs/articles/2023-11-27-rex-custom-components-react-varnish-esi/custom-components-context.png)
 
 ### Architecture existante
 
 Jusqu'à présent, ce site, incluant ces deux parties différentes, était géré dans une seule application web React, construite de manière complètement personnalisée, ce qui permettait d'intégrer comme nous le souhaitions ces contenus éditoriaux servis par un CMS headless et la plateforme e-commerce, comme représenté sur le schéma ci-dessous :
 
-![Architecture existante avec CMS headless]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-existing-headless-cms.png)
+![Architecture existante avec CMS headless]({BASE_URL}/imgs/articles/2023-11-27-rex-custom-components-react-varnish-esi/custom-components-existing-headless-cms.png)
 
 Mais cette approche mise en place par notre équipe il y a quelques années présentait d'autres problématiques que nous allons voir dans la partie suivante.
 
@@ -75,7 +75,7 @@ Dans cette section, nous allons plonger plus en profondeur dans les solutions qu
 
 Voici déjà un aperçu général de la solution :
 
-![Nouvelle solution avec CMS no code qui intègre des composants e-commerce]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/custom-components-new-no-code-cms.png)
+![Nouvelle solution avec CMS no code qui intègre des composants e-commerce]({BASE_URL}/imgs/articles/2023-11-27-rex-custom-components-react-varnish-esi/custom-components-new-no-code-cms.png)
 
 Maintenant, laissez-nous vous expliquer en détails comment cela fonctionne.
 
@@ -83,7 +83,7 @@ Maintenant, laissez-nous vous expliquer en détails comment cela fonctionne.
 
 Webflow est un CMS No Code puissant qui offre une interface conviviale pour la création et la gestion de sites web. C'est un choix judicieux pour les équipes marketing non techniques, car il permet une édition complète du contenu et la personnalisation des pages et des modèles sans nécessiter de compétences en programmation.
 
-![CMS No Code Webflow]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/webflow-cms-no-code.png)
+![CMS No Code Webflow]({BASE_URL}/imgs/articles/2023-11-27-rex-custom-components-react-varnish-esi/webflow-cms-no-code.png)
 
 Nous avons d'abord sélectionné ce CMS pour son éditeur de page appelé "Designer" qui permet d'éditer les pages simplement en glissant et déposant les différents blocs graphiques ou textuels, tout en étant très avancé en termes de design : options de style avancées, transitions et animations par exemple.
 
@@ -148,7 +148,7 @@ Voici un exemple de la balise ESI que nous ajoutons dans le code HTML :
 
 Il faut passer par le "HTML Embed Code Editor" de webflow pour ajouter ce code au sein d'un bloc qui pourra ensuite être placé où on veut sur les pages Webflow :
 
-![HTML Embed Code Editor dans Webflow]({BASE_URL}/imgs/articles/2023-11-24-rex-custom-components-react-varnish-esi/webflow-code-editor.png)
+![HTML Embed Code Editor dans Webflow]({BASE_URL}/imgs/articles/2023-11-27-rex-custom-components-react-varnish-esi/webflow-code-editor.png)
 
 Pour rendre simple l'utilisation de ces blocs de codes personnalisés avec ces balises ESI pour les éditeurs de l'équipe marketing, nous avons pré-créé dans Webflow les différents blocs correspondants aux différents composants personnalisés, de façon à ce que les éditeurs n'aient ensuite qu'à les glisser/déposer où ils le souhaitent sur les pages.
 
