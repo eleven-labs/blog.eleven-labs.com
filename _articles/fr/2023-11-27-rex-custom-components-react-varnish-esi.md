@@ -4,7 +4,7 @@ lang: fr
 date: 2023-11-27
 slug: integration-composants-react-avec-esi-dans-site-no-code
 title: "REX Studio : Intégration de composants React avec Varnish ESI dans un site No Code"
-excerpt: "Découvrez comment notre Studio a intégré avec succès des composants React et Varnish ESI sur un site No Code. Explorez les défis et solutions que nous avons mis en œuvre"
+excerpt: "Découvrez comment notre Studio a intégré avec succès des composants React et Varnish ESI sur un site No Code. Explorez les défis à relever et les solutions mises en œuvre"
 categories:
     - javascript
 keywords:
@@ -31,7 +31,7 @@ Ce site inclut deux parties fonctionnellement différentes :
 - Site vitrine sur lequel sont affichés des contenus éditoriaux : informations présentant l'entreprise, ainsi que ses produits.
 - Plateforme e-commerce permettant d'acheter ces produits, et également donnant accès au compte de l'utilisateur connecté dans lequel il peut notamment suivre ses commandes.
 
-Ces deux parties doivent être complètement intégrées pour que l'utilisateur puisse naviguer sans contrainte entre les différentes pages, surtout pour passer des pages de présentation des produits vers les parcours e-commerce lui permettant d'acheter ces mêmes produits.
+Ces deux parties doivent être complètement intégrées pour que l'utilisateur puisse naviguer sans contrainte entre les différentes pages, surtout pour passer des pages de présentation des produits vers les parcours e-commerce lui permettant de les acheter.
 Cela implique non seulement d'avoir des liens entre ces deux types de pages mais aussi d'avoir des composants e-commerce sur les pages éditoriales. Par exemple, sur une page éditoriale présentant une famille de produits, on souhaite avoir un composant e-commerce qui affiche les produits de cette famille, sous forme de carrousel, pour permettre l'ajout direct au panier.
 
 ![Contexte : Composants e-commerce intégrés sur le site vitrine]({BASE_URL}/imgs/articles/2023-11-27-rex-custom-components-react-varnish-esi/custom-components-context.png)
@@ -65,7 +65,7 @@ Nous avons aussi impérativement besoin de faire en sorte que ce site de contenu
 
 Ainsi, il nous faut la possibilité d'intégrer des composants personnalisés au sein des contenus éditoriaux pour faire cette connexion avec la plateforme e-commerce.
 
-Également il doit être possible d'ajouter ces composants personnalisés au sein des pages de contenu sans aucune compétence technique : glisser /déposer sur ces pages, comme pour les autres blocs de contenus.
+Il doit également être possible d'ajouter ces composants personnalisés au sein des pages de contenu sans aucune compétence technique : glisser /déposer sur ces pages, comme pour les autres blocs de contenus.
 
 Dans un souci de simplification pour cet article, nous ne parlerons que d'intégration à une plateforme e-commerce. Mais en réalité nous avions aussi besoin d'intégrer ce site avec d'autres applications externes, notamment un CRM.
 
@@ -77,7 +77,7 @@ Voici déjà un aperçu général de la solution :
 
 ![Nouvelle solution avec CMS no code qui intègre des composants e-commerce]({BASE_URL}/imgs/articles/2023-11-27-rex-custom-components-react-varnish-esi/custom-components-new-no-code-cms.png)
 
-Maintenant, laissez-nous vous expliquer en détails comment cela fonctionne.
+Maintenant, laissez-nous vous expliquer en détail comment cela fonctionne.
 
 ### CMS No Code avec Webflow
 
@@ -92,7 +92,7 @@ Mais Webflow offre aussi ces avantages importants :
 - Optimisations natives pour le SEO et la web performance
 - Gestion de contenus dans des collections CMS, que l'on peut afficher sur les pages No Code et qu'on peut aussi exposer via une API (comme avec un CMS headless)
 - Workflows d'édition et publication
-- Possibilité d'ajouter des blocs de code personnalisé HTML/CSS/JS
+- Possibilité d'ajouter des blocs de code personnalisés HTML/CSS/JS
 
 ### Création de composants React avec SSR + Rehydration
 
@@ -138,7 +138,7 @@ Pour en savoir plus sur l'importance des Design Systems, nous vous invitons à l
 
 Pour intégrer nos composants React générés avec SSR au sein des pages construites dans notre CMS No Code, nous utilisons les ESI avec **Varnish**. Les ESI nous permettent d'inclure dynamiquement nos composants React sur les pages éditoriales sans impacter les performances.
 
-Il ne vous reste plus qu'à ajouter une balise ESI à nos pages Webflow. Pour ce faire, nous avons ajouté un code d'intégration personnalisé sur Webflow.
+Il ne nous reste plus qu'à ajouter une balise ESI à nos pages Webflow. Pour ce faire, nous avons ajouté un code d'intégration personnalisé sur Webflow.
 
 Voici un exemple de la balise ESI que nous ajoutons dans le code HTML :
 
