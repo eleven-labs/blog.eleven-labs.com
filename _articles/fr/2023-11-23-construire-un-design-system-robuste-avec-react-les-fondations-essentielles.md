@@ -98,7 +98,16 @@ Commençons par déclarer nos Design tokens :
     },
     "secondary": {
       "navy": {
-        "value": "#224579"
+        "value": "#102F7D"
+      },
+      "cerulean": {
+        "value": "#59B9F5"
+      },
+      "emerald": {
+        "value": "#69CC97"
+      },
+      "purple": {
+        "value": "#AB83B9"
       }
     },
     "greyscale": {
@@ -266,11 +275,6 @@ Une fois écrite, une _Story_ est facilement réutilisable et intégrable au sei
 
 Une _Story_ est une représentation visuelle d'un composant donnée dans ses différents états et différentes variantes. Chaque _Story_ permet de manipuler les propriétés du composant afin de visualiser et tester tous les aspects du composant. Nous allons prendre l'exemple d'un `Organism` pour lequel nous allons créer une _Story_.
 
-<div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
-
-Je vous invite à lire cet [article traitant de l'Atomic Design](https://blog.eleven-labs.com/fr/atomic-design/) afin d'en apprendre plus sur ce qu'est un `Organism`.
-</div>
-
 ```tsx
 // Organism - PostPreviewList.tsx
 export interface PostPreviewListProps {
@@ -388,7 +392,7 @@ En plus de la documentation visuelle des composants, il est aussi possible de re
 
 Storybook nous offre la possibilité d'écrire des fichiers `MDX`, qui mélangent le `Markdown` avec le Javascript/JSX et permettent de construire des documentations à la fois statiques et visuelles.
 
-Essayons de construire un exemple dans un fichier `Colors.stories.mdx` qui documentera les Design Tokens concernant les couleurs disponibles dans notre application.
+Essayons de construire un exemple dans un fichier `Colors.stories.mdx` qui documentera les Design Tokens concernant les couleurs disponibles dans notre application, ceux que nous avons eu l'occasion de voir plus haut.
 
 ```mdx
 // Documentations - Colors.stories.mdx
@@ -401,32 +405,38 @@ import { tokenVariables } from '../constants'
 
 > Present color palette used by both design and engineering.
 
-<table style={{ width: '100%'}}>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Value</th>
-      <th>Preview</th>
-    </tr>
-  </thead>
-  <tbody>
-    {Object.entries(tokenVariables.colors).map(([colorKey, colorValue]) => (
-        <tr key={colorKey}>
-          <td>{colorKey}</td>
-          <td>{colorValue}</td>
-          <td>
-            <div style={{
-                boxSizing: 'border-box',
-                width: '200px',
-                height: '50px',
-                backgroundColor: colorValue
-              }}
-            />
-          </td>
+{Object.entries(tokenVariables.color).map(([categoryKey, tokenColorsByCategory]) => (
+  <div key={categoryKey}>
+    {categoryKey}
+    <table style={{ width: '100%' }}>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Value</th>
+          <th>Preview</th>
         </tr>
-    ))}
-  </tbody>
-</table>
+      </thead>
+      {Object.entries(tokenColorsByCategory).map(([tokenName, token]) => (
+        <tbody>
+          <tr>
+            <td>{tokenName}</td>
+            <td>{token.value}</td>
+            <td>
+              <div
+                style={{
+                  boxSizing: 'border-box',
+                  width: '200px',
+                  height: '50px',
+                  backgroundColor: token.value,
+                }}
+              />
+            </td>
+          </tr>
+        </tbody>
+      ))}
+    </table>
+  </div>
+))}
 ```
 Ce qui nous donne ceci comme résultat.
 
