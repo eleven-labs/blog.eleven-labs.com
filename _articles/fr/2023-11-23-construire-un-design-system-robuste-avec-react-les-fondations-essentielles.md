@@ -225,6 +225,7 @@ export default Button;
 ```
 
 <div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
+
 J'ai utilisé ici `classnames` pour générer des classes CSS utilitaires, d'autres approches peuvent être utilisé en fonction de vos besoins et de vos préférences.
 Vous pouvez retrouver dans cette [article](https://blog.eleven-labs.com/fr/system-props/) d'autres exemples qui permettent de bien implémenter les System Props dans votre Design System.
 </div>
