@@ -9,6 +9,7 @@ export default {
   component: PostPreview,
   args: {
     contentType: ContentTypeEnum.ARTICLE,
+    slug: 'slug',
     title: `Titre de l'article`,
     date: '09 fév. 2021',
     readingTime: 24,

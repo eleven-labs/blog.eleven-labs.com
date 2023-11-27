@@ -11,6 +11,7 @@ export default {
   args: {
     posts: Array.from({ length: 7 }).map((_, index) => ({
       contentType: 'article',
+      slug: `slug-${index}`,
       title: `Titre de l'article ${index}`,
       date: '09 fév. 2021',
       readingTime: 24,

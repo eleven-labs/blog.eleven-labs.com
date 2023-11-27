@@ -4,7 +4,7 @@ lang: fr
 date: 2023-11-06
 slug: micro-frontend
 title: "Micro frontend : la solution pour une meilleure maintenabilité de vos applications web"
-excerpt: "Comprendre et mettre en place le concept de micro frontend : cas d'usage concret et exemples d'implémentations basés sur notre expérience"
+excerpt: "Comprendre et mettre en place le concept de micro frontend : cas d'usage concrets et exemples d'implémentations basés sur notre expérience"
 categories:
     - javascript
 keywords:
@@ -108,7 +108,7 @@ Ainsi, par exemple, vous pouvez envisager ces possibilités :
 
 ![Exemple d'utilisation du micro frontend pour une migration progressive]({BASE_URL}/imgs/articles/2023-11-06-micro-frontend/microfrontend-progressive-migration.png)
 
-En fonction du contexte, notamment du budget et des deadlines, vous pouvez choisir parmi ces différentes possibilités :
+En fonction du contexte, notamment du budget et des deadlines, vous pouvez choisir parmi ces différentes possibilités ainsi :
 
 - Si les contraintes sont fortes, vous limitez la refonte d'une fonctionnalité existante à la création d'un composant micro frontend se limitant strictement au nouveau besoin.
 - Si les contraintes sont plus faibles, vous pouvez choisir de refondre complètement chaque page dans son micro frontend à chaque modification demandée sur la page existante en question.
@@ -279,7 +279,7 @@ En intégrant un Design System dans votre architecture de micro frontends, vous 
 
 ### Quelle stratégie de tests adopter ?
 
-Lorsqu'il s'agit de tester vos micro frontends, la principale différence réside dans la nécessité de vérifier l'intégration et la communication entre les différents micro frontends. Pour ce faire, vous devrez mettre en place des tests fonctionnels visant à assurer la bonne cohabitation et communication entre ces composants. Assurez-vous que les interactions entre les micro frontends se déroulent de manière fluide et que les fonctionnalités attendues sont bien en place. Il faudra préalablement penser à tester unitairement un maximum les petites briques de chaque composant ,pour s'assurer du bon fonctionnement interne du micro frontend avant de tester la communication entre les différentes parties de l'application. Cela contribuera à garantir que l'ensemble de votre application fonctionne correctement.
+Lorsqu'il s'agit de tester vos micro frontends, la principale différence réside dans la nécessité de vérifier l'intégration et la communication entre les différents micro frontends. Pour ce faire, vous devrez mettre en place des tests fonctionnels visant à assurer la bonne cohabitation et communication entre ces composants. Assurez-vous que les interactions entre les micro frontends se déroulent de manière fluide et que les fonctionnalités attendues sont bien en place. Il faudra préalablement penser à tester unitairement un maximum les petites briques de chaque composant, pour s'assurer du bon fonctionnement interne du micro frontend avant de tester la communication entre les différentes parties de l'application. Cela contribuera à garantir que l'ensemble de votre application fonctionne correctement.
 
 ### Comment minimiser l'impact sur la taille des fichiers JavaScript ?
 
