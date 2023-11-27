@@ -4,7 +4,7 @@ lang: fr
 date: 2023-11-23
 slug: construire-un-design-system-robuste-avec-react-les-fondations-essentielles
 title: "Construire un Design System robuste avec react: les fondations essentielles"
-excerpt: "Description"
+excerpt: "Découvrez comment créer un Design System solide avec React. Ce guide simplifié explore les bases essentielles pour concevoir une interface cohérente, améliorer le développement et offrir une expérience utilisateur harmonieuse."
 categories:
     - javascript
 keywords:
@@ -12,6 +12,9 @@ keywords:
     - storybook
     - react
     - frontend
+    - atomic design
+    - system props
+    - bem
 authors:
     - kdung
     - iregaibi
@@ -416,9 +419,9 @@ import { tokenVariables } from '../constants'
           <th>Preview</th>
         </tr>
       </thead>
-      {Object.entries(tokenColorsByCategory).map(([tokenName, token]) => (
-        <tbody>
-          <tr>
+      <tbody>
+        {Object.entries(tokenColorsByCategory).map(([tokenName, token]) => (
+          <tr key={tokenName}>
             <td>{tokenName}</td>
             <td>{token.value}</td>
             <td>
@@ -432,8 +435,8 @@ import { tokenVariables } from '../constants'
               />
             </td>
           </tr>
-        </tbody>
-      ))}
+        ))}
+      </tbody>
     </table>
   </div>
 ))}
