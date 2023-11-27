@@ -22,7 +22,7 @@ le comportement des utilisateurs. Cela permet de mieux guider l’ajout des fonc
 lancer.
 
 Un Poc ("Proof of Concept", ou preuve de concept) a été mis en oeuvre par l'équipe data. Il s'articule autour d'un
-pipeline ELT (extract, load, transform) en utilisant les technologies suivantes : Google Cloud Platform, Talend, dbt et
+pipeline ELT (extract, load, transform) en utilisant les technologies suivantes : Google Cloud Platform, Google BigQuery, Talend, dbt et
 Power BI.
 
 Pour rapidement tester le PoC, le pipeline est exécuté sur Jenkins. Cependant, le détournement de l'usage de Jenkins
@@ -33,7 +33,7 @@ __Comment fiabiliser les traitements et industrialiser le processus de déploiem
 
 C'est dans ce contexte que ma mission commence.
 
-## Le pipeline ELT : Extract, Load, Transform
+## Le pipeline ELT du PoC existant : Extract, Load, Transform
 
 Avant de commencer les travaux, je me suis intéressé au fonctionnement du pipeline actuel.
 
@@ -52,7 +52,7 @@ En sources de données, j'ai :
 
 - MySQL
 - MongoDB ([voir notre article de blog sur MongoDB](https://blog.eleven-labs.com/fr/symfony-et-mongodb-retour-aux-sources/))
-- Appel HTTP vers des API externes
+- Appel HTTP vers des API externes (Hubspot, Salesforce, ...)
 
 Pour la phase d'extraction et le chargement dans [Google BigQuery](https://cloud.google.com/bigquery/docs/introduction),
 Talend a été mis en place pour effecter ce travail. C'est un outil qui permet de faire des pipelines ETL (Extract,
@@ -81,11 +81,11 @@ aggrégats de données sont ensuite affichés par un outil de visualisation de d
 Enfin, en dernière étape de ce pipeline, il y a l'affichage des données.
 
 Le but final de tout ce travail est d'éviter d'effectuer tous les calculs au moment d'afficher les rapports d'analyse.
-Sans le travail en amont de calcul et d'aggrégation de données, l'affichage des graphiques serait très longs.
+Sans le travail en amont de calcul et d'aggrégation de données, l'affichage des graphiques serait très long.
 
 Ce pipeline est fonctionnel et déjà en place avec Jenkins. Voyons l'architecture de la nouvelle plateforme data.
 
-## Architecture de la plateforme data
+## Nouvelle architecture de la plateforme data
 
 Nous avons vu dans la précédente partie le fonctionnement du pipeline ELT dans Jenkins. Le but est de transposer cela dans
 une plateforme plus robuste et adaptée à ce type de travail.
@@ -137,7 +137,7 @@ Toute l'installation et la configuration de l'infrastructure est effectuée avec
 
 Une fois l'architecture dessinée et communiquée à l'équipe, nous pouvons la mettre en oeuvre.
 
-## Conditionnement des charges de travail
+### Conditionnement des charges de travail
 
 Une fois que l'infrastructure est configurée avec Terraform, il reste à déployer le pipeline ELT que nous avons décrit
 précédemment. Il y a deux étapes : Extraction-Chargement, et Transformation. La première étape est effectuée par Talend, la
@@ -155,7 +155,7 @@ Je n'ai pas rencontré de difficulté particulière, hormis le choix de l'image 
 
 Passons à la contruction du pipeline en lui-même.
 
-## Le pipeline avec un Graph Orienté Acyclique
+### Le pipeline avec un Graph Orienté Acyclique
 
 Talend et dbt sont nos deux principales briques. Il reste à les organiser dans un fichier : un DAG. DAG pour _Directed Acyclic Graph_ ou Graph Orienté Acyclique en français. Pour simplifier, le graph se lit dans un sens, il a un début et une fin, et il n'est pas possible de revenir au début du graph.
 
@@ -260,4 +260,4 @@ Un des points de souffrance sur le pipeline est Talend. Cet outil ne s'adapte pa
 
 La construction de cette plateforme data a été un grand projet de notre [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit). Tout a été construit depuis zéro. J'ai bien cerné la problématique, cela m'a permis d'identifier tous les éléments sur le fonctionnement du pipeline. La solution a été de s'adapter à son fonctionnement et aux pré-requis. Enfin, la mise en production s'est déroulée comme prévu. La mise en place d'une surveillance active m'a permis de détecter les erreurs en amont. Cela réduit considérablement les temps d'indisponibilité de la plateforme.
 
-Pour ma part, cette mission a été très complète. J'ai tantôt été _Architecte_ avec la conception de l'infrastructure, _Ops_ avec l'écriture du Terraform et de la bonne compréhension de Google Cloud Platform, et enfin _Dev_ avec la rédaction du DAG Airflow. J'en ressort avec encore plus d'expérience !
+Pour ma part, cette mission a été très complète. J'ai tantôt été _Architecte_ avec la conception de l'infrastructure, _Ops_ avec l'écriture du Terraform et de la bonne compréhension de Google Cloud Platform, et enfin _Data Engineer_ avec la rédaction du DAG Airflow. J'en ressort avec encore plus d'expérience !
