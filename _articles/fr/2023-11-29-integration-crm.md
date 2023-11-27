@@ -12,7 +12,7 @@ keywords:
     - hubspot
     - rabbitmq
 authors:
-    - ydiouri
+    - youyou
     - fbelet
     - charles-eric
 ---
