@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: 2023-11-23
+date: 2023-11-28
 slug: design-system-react
 title: "Construire un Design System robuste avec react : les fondations essentielles"
 excerpt: "Découvrez comment créer un Design System solide avec React. Ce guide simplifié explore les bases essentielles pour concevoir une interface cohérente, améliorer le développement et offrir une expérience utilisateur harmonieuse."
@@ -336,7 +336,7 @@ export const PostPreviewListWithData = Template.bind({});
 
 En voici le résultat.
 
-![PostPreviewList par defaut]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/postPreviewList-default.png)
+![PostPreviewList par defaut]({BASE_URL}/imgs/articles/2023-11-28-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/postPreviewList-default.png)
 Figure: *PostPreviewList - Default*
 
 Comme vous pouvez l'observer, nous avons donc un visuel du composant avec une section permettant de constater les données reçues qui ont servi à la construction de celui-ci.
@@ -358,7 +358,7 @@ PostPreviewListIsLoading.args = {
 
 En modifiant le jeu de données en entrée pour le composant, on a la possibilité de créer cette _Story_ mettant en avant le composant `PostPreviewList` dans un état de chargement.
 
-![PostPreviewList en état de chargement]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/postPreviewList-loading.png)
+![PostPreviewList en état de chargement]({BASE_URL}/imgs/articles/2023-11-28-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/postPreviewList-loading.png)
 Figure: *PostPreviewList - Is Loading*
 
 En appliquant le même principe, nous pouvons documenter une variante du composant. Par exemple, en reprenant le composant précédent, nous pouvons lui appliquer une pagination en lui fournissant en entrée les données nécessaires qui permettront l'affichage de cette pagination.
@@ -380,7 +380,7 @@ PostPreviewListWithPagination.args = {
 L'extension `action` est utilisée pour afficher les données reçues par les arguments du gestionnaire d'événements, ici `onLoadMore`. En effet, une _Story_ ne doit être qu'un visuel du composant, non une documentation de son comportement. Je vous invite à lire cet [article traitant des Storybook addons](https://blog.eleven-labs.com/fr/storybook-addons/).
 </div>
 
-![PostPreviewList avec une pagination]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/postPreviewList-pagination.png)
+![PostPreviewList avec une pagination]({BASE_URL}/imgs/articles/2023-11-28-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/postPreviewList-pagination.png)
 Figure: *PostPreviewList - With pagination*
 
 <div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
@@ -442,7 +442,7 @@ import { tokenVariables } from '../constants'
 ```
 Ce qui nous donne ceci comme résultat.
 
-![Documentation Design Tokens Colors]({BASE_URL}/imgs/articles/2023-11-23-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/colors-design-token.png)
+![Documentation Design Tokens Colors]({BASE_URL}/imgs/articles/2023-11-28-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/colors-design-token.png)
 Figure: *Documentation statique - Colors Design Token*
 
 <div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
