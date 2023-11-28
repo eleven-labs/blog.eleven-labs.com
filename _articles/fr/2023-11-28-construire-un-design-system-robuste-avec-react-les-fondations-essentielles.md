@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: 2023-11-28
 slug: design-system-react
-title: "Construire un Design System robuste avec react : les fondations essentielles"
+title: "Construire un Design System robuste avec React : les fondations essentielles"
 excerpt: "Découvrez comment créer un Design System solide avec React. Ce guide simplifié explore les bases essentielles pour concevoir une interface cohérente, améliorer le développement et offrir une expérience utilisateur harmonieuse."
 categories:
     - javascript
@@ -449,6 +449,8 @@ Figure: *Documentation statique - Colors Design Token*
 
 Les documentations statiques vont décrire les fondations de votre design d'application. Il est donc important de commencer par documenter les concepts et les bases sur lesquels s'appuie le design, avant d'entamer l'écriture de la documentation des composants.
 </div>
+
+Pour obtenir une représentation concrète et approfondie de la documentation enrichie, nous vous orientons vers le [Storybook du Design System d'Eleven Labs](https://eleven-labs.github.io/design-system/?path=/docs/foundations-design-tokens-color--docs).
 
 ## Conclusion
 
