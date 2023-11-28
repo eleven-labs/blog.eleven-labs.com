@@ -36,7 +36,7 @@ Alors, pourquoi ces types ne sont-ils pas déjà disponibles dans notre langage 
 
 ### Pourquoi c'est impossible en pratique
 
-Comme dit plus haut, PHP n'est pas un langage que l'on compile pour envoyer ensuite un exécutable sur le serveur. PHP est interprété ; lorsque le serveur reçoit une requête, le code PHP est converti en OPCODE, lui-même ensuite éxécuté par une machine virtuelle. Si une erreur s'est glissée dans le code, alors le programme plantera à l'exécution.
+Comme dit plus haut, PHP n'est pas un langage que l'on compile pour envoyer ensuite un exécutable sur le serveur. PHP est interprété ; lorsque le serveur reçoit une requête, le code PHP est converti en OPCODE, lui-même ensuite exécuté par une machine virtuelle. Si une erreur s'est glissée dans le code, alors le programme plantera à l'exécution.
 
 Or, c'est donc justement au runtime que se font toutes les assertions de type. Rajouter des étapes de vérification de types génériques serait une atteinte à la performance. Encore une fois, aujourd'hui pour la majorité des langages proposant le typage générique, toutes ces assertions de type sont effectuées à la compilation, avant que le code ne soit exécuté. La perfomance à l'exécution n'est donc pas un problème comme en PHP.
 
@@ -280,4 +280,4 @@ Sachez que d'autres outils que PHPStan permettent d'interpréter ces annotations
 
 Il y aurait bien d'autres choses à voir sur les types génériques, en particulier le tag `@template-covariant`, mais ce sera pour une partie 2, pourquoi pas ! En attendant, vous avez tout le nécessaire pour vous en sortir dans la grande majorité des situations.
 
-N'oubliez pas d'aller jeter un oeil à notre Tutoriel, amusez-vous bien avec ces outils, développez-bien, et à la prochaine !
+N'oubliez pas d'aller jeter un oeil à notre [Tutoriel](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine), amusez-vous bien avec ces outils, développez-bien, et à la prochaine !
