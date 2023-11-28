@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: 2023-11-23
 slug: design-system-react
-title: "Construire un Design System robuste avec react: les fondations essentielles"
+title: "Construire un Design System robuste avec react : les fondations essentielles"
 excerpt: "Découvrez comment créer un Design System solide avec React. Ce guide simplifié explore les bases essentielles pour concevoir une interface cohérente, améliorer le développement et offrir une expérience utilisateur harmonieuse."
 categories:
     - javascript
@@ -21,22 +21,20 @@ authors:
     - iregaibi
 ---
 
-Dans le développement frontend, la nécessité d'établir des bases solides devient impératif pour garantir la cohérence, la réutilisation et la facilité de maintenance des interfaces utilisateur.
 Lors de la conception de vos interfaces, il est probable que vous ayez déjà eu recours à des bibliothèques de composants.
-
 Cependant, il peut arriver que celles-ci ne répondent pas de manière optimale à des cas particuliers ou à des exigences spécifiques de votre application, notamment dans des contextes métiers spécifiques.
 Vous décidez alors de mettre en place un écosystème qui rassemble vos propres composants, typographies, couleurs, documentation et des directives d'utilisation : le Design System.
-A travers cette article, nous allons vous expliquer comment construire un Design System robuste avec React.
+Dans cet article, nous allons vous expliquer comment construire un Design System robuste avec React.
 
 
 ## Contexte
 
-Avant de plonger dans la mise en place d'un Design System robuste avec React, il est essentiel de comprendre les fondamentaux de ce domaine.
+Avant de plonger dans la mise en place d'un Design System robuste avec React, il est essentiel de comprendre les fondamentaux de ce domaine. Nous n'allons revenir que brièvement dessus, car nos derniers articles parus traitent justement de ces fondamentaux.
 
 ### Design System
 
 Un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) réunit un ensemble d'éléments graphiques, des typographies, des palettes de couleurs, de la documentation et des directives d'utilisation.
-C'est un référenciel qui garantie une cohérence visuelle et fonctionnelle qui apporte un cadre et des règles à respecter.
+C'est un référenciel qui garantit une cohérence visuelle et fonctionnelle qui apporte un cadre et des règles à respecter.
 
 ### Atomic Design
 
@@ -44,13 +42,13 @@ L'[Atomic Design](https://blog.eleven-labs.com/fr/atomic-design/) est une approc
 
 ### Design token
 
-Les [Design Token](https://blog.eleven-labs.com/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/) sont un ensemble de valeurs ou de variables utilisé pour référencer plusieurs types d'éléments tels que les couleurs, typographies, espacements et bien d'autres.
-Ces tokens permettent entre autre, de faciliter la mise à jour des styles et de maîtriser les déclinaisons de thèmes qui partagent des références communes.
+Les [Design Token](https://blog.eleven-labs.com/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/) sont un ensemble de valeurs ou de variables utilisés pour référencer plusieurs types d'éléments tels que les couleurs, typographies, espacements et bien d'autres.
+Ces tokens permettent entre autres, de faciliter la mise à jour des styles et de maîtriser les déclinaisons de thèmes qui partagent des références communes.
 
 ### BEM
 
 La méthodologie [BEM](https://blog.eleven-labs.com/fr/retour-d-experience-sur-bem/) donne au CSS une convention de structuration, de nommage et d’organisation pour vos composants.
-BEM envisage la composition d’une page web en plusieurs **B**lock, qui contiennent des **E**lements, et ces derniers peuvent varier grâce à des **M**odifiers.
+BEM envisage la composition d’une page web en plusieurs **B**locks, qui contiennent des **E**lements, et ces derniers peuvent varier grâce à des **M**odifiers.
 
 ### System Props
 
@@ -199,7 +197,7 @@ const Button: React.FC<ButtonProps> = ({ label, color, handleClick }) => (
 export default Button;
 ```
 
-Passons maintenant à la création de nos éléments modulaires. Dans l'exemple ci-dessus, j'ai créé un composant atomique qui est stylisé via l'attribut `style`. Reprenons ce composant et avec nous allons créer une classe CSS :
+Passons maintenant à la création de nos éléments modulaires. Dans l'exemple ci-dessus, nous avons créé un composant atomique qui est stylisé via l'attribut `style`. Reprenons ce composant et avec, créons une classe CSS :
 ```scss
 // Button.scss
 .button {
@@ -239,19 +237,19 @@ export default Button;
 
 <div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
 
-J'ai utilisé ici `classnames` pour générer des classes CSS utilitaires, d'autres approches peuvent être utilisé en fonction de vos besoins et de vos préférences.
-Vous pouvez retrouver dans cette [article](https://blog.eleven-labs.com/fr/system-props/) d'autres exemples qui permettent de bien implémenter les System Props dans votre Design System.
+Nous avons utilisé ici `classnames` pour générer des classes CSS utilitaires, mais d'autres approches peuvent être utilisées en fonction de vos besoins et de vos préférences.
+Vous pouvez notamment retrouver dans cet [article](https://blog.eleven-labs.com/fr/system-props/) d'autres exemples qui permettent de bien implémenter les System Props dans votre Design System.
 </div>
 
 Le Design System exige une collaboration étroite entre les différents métiers impliqués (Designers, Développeurs, PO / PM).
-Pour que cette collaboration soit efficace, la documentation joue un role important.
+Pour que cette collaboration soit efficace, la documentation joue un rôle important.
 
 
 ## Comment documenter un Design System ?
 
-Dans le monde du développement front-end, la documentation des composants est cruciale pour assurer une cohérence visuelle et fonctionnelle au sein d'une application, ainsi que pour servir de point de référence entre les designers et les développeurs. Une bonne documentation permet de lister les composants disponibles, les variantes pour chacun des éléments, et de tenir une trame claire sur les bonnes pratiques lors de la création des composants qui alimenteront le Design System. C'est là qu'interviennent différents outils de documentation. Storybook, un outil puissant, offre une solution innovante à ce défi, et c'est cette solution que nous avons choisie pour nos Design System au sein du Studio Eleven Labs.
+Dans le monde du développement front-end, la documentation des composants est cruciale pour assurer une cohérence visuelle et fonctionnelle au sein d'une application, ainsi que pour servir de point de référence entre les designers et les développeurs. Une bonne documentation permet de lister les composants disponibles, les variantes pour chacun des éléments, et de tenir une trame claire sur les bonnes pratiques lors de la création des composants qui alimenteront le Design System. C'est là qu'interviennent différents outils de documentation. Storybook, un outil puissant, offre une solution innovante à ce défi, et c'est cette solution que nous avons choisie pour nos Design Systems au sein du Studio Eleven Labs.
 
-### Qu'est ce que Storybook ?
+### Qu'est-ce que Storybook ?
 
 [Storybook](https://storybook.js.org/) n'est pas seulement un outil, c'est une plateforme interactive permettant aux développeurs de créer, visualiser et documenter des composants de manière isolée. Contrairement à la documentation statique traditionnelle, Storybook offre une approche dynamique et visuelle pour présenter les différents états et variantes de vos composants. Avant de nous plonger dans des exemples d'utilisation de cet outil, examinons ce que Storybook offre comme avantages et spécificités.
 
@@ -273,11 +271,11 @@ Les développeurs et les designers ont la possibilité d'interagir directement a
 
 - **Réutilisabilité des Stories**
 
-Une fois écrite, une _Story_ est facilement réutilisable et intégrable au sein d'une autre _Story_. Ce qui garantit une cohérence de la documentation et une maintenance simplifiée.
+Une fois écrite, une _Story_ est facilement réutilisable et intégrable au sein d'une autre _Story_, ce qui garantit une cohérence de la documentation et une maintenance simplifiée.
 
 ### Écriture des Stories
 
-Une _Story_ est une représentation visuelle d'un composant donnée dans ses différents états et différentes variantes. Chaque _Story_ permet de manipuler les propriétés du composant afin de visualiser et tester tous les aspects du composant. Nous allons prendre l'exemple d'un `Organism` pour lequel nous allons créer une _Story_.
+Une _Story_ est une représentation visuelle d'un composant donné dans ses différents états et différentes variantes. Chaque _Story_ permet de manipuler les propriétés du composant afin de visualiser et tester tous ses aspects. Nous allons prendre l'exemple d'un `Organism` pour lequel nous allons créer une _Story_.
 
 ```tsx
 // Organism - PostPreviewList.tsx
