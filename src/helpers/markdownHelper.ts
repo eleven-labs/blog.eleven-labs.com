@@ -142,6 +142,7 @@ export const validateContentType = <TData>(options: {
         reason: `The file does not exist "${assetPath}"!`,
       });
     }
+    data.cover = `${process.env.BASE_URL || '/'}${data.cover.substring(1)}`;
   }
 
   return {
