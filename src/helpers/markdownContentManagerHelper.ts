@@ -105,6 +105,7 @@ export const getArticles = (): TransformedArticleData[] =>
         date: new Date(data.date).toISOString(),
         title: data.title,
         excerpt: data.excerpt,
+        cover: data.cover ? `${process.env.BASE_URL || '/'}${data.cover.substring(1)}` : undefined,
         readingTime: getReadingTime(content),
         authors: data.authors,
         categories: data.categories,

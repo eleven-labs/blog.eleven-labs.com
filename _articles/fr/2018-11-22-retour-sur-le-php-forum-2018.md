@@ -7,7 +7,7 @@ title: Retour sur le Forum PHP 2018
 excerpt: >-
   Cet article vous propose un retour sur le Forum PHP qui s'est tenu les 25 et
   26 octobre derniers
-cover: /assets/2018-11-15-retour-sur-le-php-forum-2018/cover.png
+cover: /imgs/articles/2018-11-15-retour-sur-le-php-forum-2018/cover.png
 categories:
   - php
   - agile

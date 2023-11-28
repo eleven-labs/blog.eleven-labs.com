@@ -7,7 +7,7 @@ title: 'PHP Stream : wrappers, filters... un allié méconnu'
 excerpt: >-
   Bien que très puissant et présent dans PHP depuis la version 4.3, ce composant
   est souvent méconnu, sous-exploité, voire mal utilisé.
-cover: /assets/2018-05-11-php-stream-wrappers-filters/cover.jpg
+cover: /imgs/articles/2018-05-11-php-stream-wrappers-filters/cover.jpg
 categories:
   - php
 authors:

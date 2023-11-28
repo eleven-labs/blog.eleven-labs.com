@@ -11,7 +11,7 @@ excerpt: >-
   déroulait pour la deuxième fois aux docks d'Aubervilliers, au nord de Paris.
   Ce qui nous a permis de profiter d'un confort digne d'une salle de cinéma !
   Petit résumé de ce qu'il s'y est passé...
-cover: /assets/2017-12-08-dotjs-2017/cover.jpg
+cover: /imgs/articles/2017-12-08-dotjs-2017/cover.jpg
 categories:
   - javascript
 authors:

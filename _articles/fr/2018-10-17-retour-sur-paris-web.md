@@ -5,7 +5,7 @@ date: '2018-10-17'
 slug: compte-rendu-paris-web
 title: 'Mission Paris Web 2018 : compte-rendu de trois astronautes'
 excerpt: 'Mission Paris Web 2018 : compte-rendu de trois astronautes'
-cover: /assets/2018-10-16-retour-sur-paris-web/cover.jpg
+cover: /imgs/articles/2018-10-16-retour-sur-paris-web/cover.jpg
 categories: []
 authors:
   - seinhorn

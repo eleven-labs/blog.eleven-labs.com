@@ -7,7 +7,7 @@ title: Anémie du domaine
 excerpt: >-
   Souffrez-vous d'anémie métier ? Regardons ce qu'est une anémie du domaine et
   comment les choses peuvent changer.
-cover: /assets/2020-10-13-anemic-domain-model/cover.jpg
+cover: /imgs/articles/2020-10-13-anemic-domain-model/cover.jpg
 categories:
   - php
 authors:

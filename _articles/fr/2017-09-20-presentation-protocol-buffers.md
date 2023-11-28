@@ -10,7 +10,7 @@ excerpt: >-
   utilise souvent aujourd'hui est le `JSON`. Cependant certains langages le
   gèrent très mal tel que Java et Go. Google a donc développé un système pour
   palier à ce problème : `Protocol Buffers`.
-cover: /assets/2017-09-20-presentation-protocol-buffers/cover.jpg
+cover: /imgs/articles/2017-09-20-presentation-protocol-buffers/cover.jpg
 categories: []
 authors:
   - qneyrat

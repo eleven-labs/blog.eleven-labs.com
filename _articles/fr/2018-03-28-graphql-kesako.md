@@ -11,7 +11,7 @@ excerpt: >-
   GraphQL. Cette technologie qui est devenu un des buzz word du moment est en
   vrai très simple à mettre en place. Ne voulant pas faire de jaloux je vous
   propose de réaliser deux serveurs GraphQL l'un en PHP et l'autre en NodeJs.
-cover: /assets/2018-03-28-graphql-kesako/cover.jpeg
+cover: /imgs/articles/2018-03-28-graphql-kesako/cover.jpeg
 categories:
   - javascript
 authors:

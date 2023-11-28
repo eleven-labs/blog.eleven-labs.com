@@ -11,7 +11,7 @@ excerpt: >-
   personne devant soi et on arrête de regretter les dorures du cosy théâtre des
   variétés. On s’installe donc confortablement dans notre fatboy pour assister à
   cette cérémonie du langage CSS dont voici les meilleurs moments. Amen !
-cover: /assets/2017-12-05-retour-sur-les-dotcss/cover.jpg
+cover: /imgs/articles/2017-12-05-retour-sur-les-dotcss/cover.jpg
 categories: []
 authors:
   - tbrugidou

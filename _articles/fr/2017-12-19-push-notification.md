@@ -5,7 +5,7 @@ date: '2017-12-19'
 slug: push-notification
 title: Recevez nos push notifications
 excerpt: Notre retour d'expérience sur la mise en place des push notifications
-cover: /assets/2017-12-19-push-notification/cover.jpg
+cover: /imgs/articles/2017-12-19-push-notification/cover.jpg
 categories:
   - javascript
 authors:

@@ -7,7 +7,7 @@ title: Devenir DevOps c'est facile
 excerpt: >-
   Deployer dans le Cloud c'est encore plus simple que de faire un Rsync. En
   voici la preuve avec ce petit tutoriel.
-cover: /assets/2017-12-18-devops-facile/cover.jpg
+cover: /imgs/articles/2017-12-18-devops-facile/cover.jpg
 categories:
   - architecture
   - javascript

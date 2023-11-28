@@ -8,7 +8,7 @@ excerpt: >-
   As developers, all of us already had to filter dataset (array, collection,
   API, etc...). Let's focus on the Xpression library, wich allows us to filter
   different content sources with a simplified query syntax.
-cover: /assets/2018-07-11-xpression/cover.jpg
+cover: /imgs/articles/2018-07-11-xpression/cover.jpg
 categories:
   - php
 authors:

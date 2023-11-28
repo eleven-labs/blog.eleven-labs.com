@@ -8,7 +8,7 @@ excerpt: >-
   Depuis septembre 2018, le groupe Adeo travaille à la mise en place d'un design
   system complet, permettant à l'ensemble des sites E-commerce de Leroy Merlin
   du monde entier d'utiliser une identité visuelle commune.
-cover: /assets/2019-01-23-rex-le-design-system-leroy-merlin/cover.png
+cover: /imgs/articles/2019-01-23-rex-le-design-system-leroy-merlin/cover.png
 categories:
   - javascript
 authors:

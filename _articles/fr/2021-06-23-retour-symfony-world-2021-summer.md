@@ -7,7 +7,7 @@ title: Retour sur la conférence SymfonyWorld Online 2021 Summer Edition
 excerpt: >-
   La semaine dernière se tenait la conférence SymfonyWorld Online 2021 Summer
   Edition et j'y ai assisté. Voici un récapitulatif de l'événement !
-cover: /assets/2021-06-23-symfony-world/logo.png
+cover: /imgs/articles/2021-06-23-symfony-world/logo.png
 categories:
   - php
 authors:

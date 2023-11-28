@@ -5,7 +5,7 @@ date: '2017-10-09'
 slug: openpgp-paire-clef-presque-parfaite-partie-1
 title: OpenPGP - Une paire de clés presque parfaite
 excerpt: Guide sur la création de clés OpenPGP presque parfaites
-cover: /assets/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
+cover: /imgs/articles/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
 categories: []
 authors:
   - tthuon

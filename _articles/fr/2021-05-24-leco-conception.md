@@ -8,7 +8,7 @@ excerpt: >
   L’éco-conception est un sujet qui se démocratise dans la conception de biens
   matériels. Mais qu’en est-il pour le développement des produits et services
   numériques ?
-cover: /assets/2021-05-24-leco-conception/mainimg.png
+cover: /imgs/articles/2021-05-24-leco-conception/mainimg.png
 categories: []
 authors:
   - marianne

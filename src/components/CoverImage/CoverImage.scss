@@ -1,0 +1,23 @@
+@use "@eleven-labs/design-system/scss/abstracts" as *;
+
+.cover-image {
+  &__wrapper {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__picture {
+    flex: 1;
+  }
+
+  &__content {
+    height: 11em;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @include create-media-queries("md") {
+      height: 18em;
+    }
+  }
+}

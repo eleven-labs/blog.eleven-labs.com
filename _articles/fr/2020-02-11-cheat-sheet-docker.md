@@ -7,7 +7,6 @@ title: 'Cheat Sheet : Docker, tout ce que vous devez savoir'
 excerpt: >-
   Vous avez toujours voulu utiliser Docker, mais vous ne vous souvenez jamais
   des commandes pour créer une image Docker ? Ou encore pour la lancer ?
-cover: /assets/2020-02-11-cheat-sheet-docker/cover.jpg
 categories:
   - architecture
 authors:

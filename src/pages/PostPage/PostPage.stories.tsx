@@ -35,7 +35,12 @@ export default {
         },
       ],
     },
-    children: 'content',
+    cover: {
+      alt: 'cover',
+      src: 'https://images.unsplash.com/photo-1543071623-80e8de8ffafe?q=80&w=1997&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    children:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel diam vel ligula suscipit iaculis. Praesent sit amet interdum lacus. Donec feugiat, nibh sed viverra sollicitudin, leo eros scelerisque nisi, quis maximus justo purus at purus. Duis commodo lorem enim, vel venenatis risus tempor at. Nullam imperdiet ipsum mi, vitae suscipit lorem finibus non. Donec vitae lacinia arcu. Ut luctus, neque fermentum viverra ornare, nibh lacus vestibulum purus, a lacinia lorem felis sed erat. Integer porta eget urna et molestie. Morbi euismod nisl eu consequat porttitor. Duis suscipit, est in vulputate porttitor, nunc nunc pharetra urna, vitae congue urna purus et neque. Maecenas massa felis, venenatis quis mi nec, auctor blandit libero. Aliquam finibus sapien nisl.\n\nQuisque posuere risus quis tellus pharetra posuere. Aliquam risus lorem, elementum ac turpis non, tincidunt fringilla arcu. Suspendisse venenatis lacus in odio ullamcorper convallis. Phasellus vitae sapien diam. Nam sed quam molestie, vestibulum enim quis, aliquam nulla. Pellentesque ac imperdiet massa. Pellentesque eu suscipit ipsum. In nec neque nec sem placerat cursus at porttitor nibh. Quisque ac fermentum tellus, sed malesuada velit. Maecenas eu urna imperdiet neque semper volutpat id quis tortor. Etiam ac est dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas eget magna et nisi facilisis viverra et sed sem. Ut sit amet turpis in tortor ornare pretium. Ut interdum condimentum risus.\n\nNunc rutrum condimentum porttitor. Sed hendrerit quis nunc sit amet luctus. Ut ac arcu luctus elit dignissim efficitur. Duis vestibulum purus id diam facilisis, ut hendrerit metus pulvinar. Vivamus augue nibh, accumsan in tincidunt id, eleifend at dui. Donec vitae quam magna. Donec sed vulputate lectus. Praesent auctor risus dolor, eu ornare massa venenatis ut. Donec et justo a metus fringilla ultricies ut eu lorem. In vehicula nulla vitae sagittis convallis. Nullam a tortor vitae dolor tincidunt tempor ut eu massa.',
     footer: {
       title: 'écrit par',
       authors: [

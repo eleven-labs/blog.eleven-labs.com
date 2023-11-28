@@ -35,7 +35,7 @@ authors:
   - jdoe
 categories:
   - javascript
-cover: valid-post-cover.jpg
+cover: /imgs/articles/valid-post-cover.jpg
 ---
 This is some valid content`;
 
@@ -290,7 +290,7 @@ categories:
   - javascript
 keywords:
   - javascript
-cover: valid-post-cover.jpg
+cover: /imgs/articles/valid-post-cover.jpg
 ---
 This is some valid content`);
 
@@ -373,6 +373,8 @@ Some content`);
 
   it('should return valid data and content if markdown is valid', () => {
     const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
+    const existsSync = vi.spyOn(fs, 'existsSync');
+    existsSync.mockReturnValue(true);
     readFileSyncSpy.mockReturnValueOnce(markdownContentValidArticle);
 
     const markdownFilePath = '/path/to/dir/valid-post.md';
@@ -388,7 +390,7 @@ Some content`);
       slug: 'valid-post',
       title: 'Valid Post',
       excerpt: 'This is a valid post excerpt',
-      cover: 'valid-post-cover.jpg',
+      cover: `/imgs/articles/valid-post-cover.jpg`,
       authors: ['jdoe'],
       categories: ['javascript'],
       content: 'This is some valid content',

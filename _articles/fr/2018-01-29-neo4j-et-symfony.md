@@ -9,7 +9,7 @@ excerpt: >-
   complexes. Il faut savoir choisir la bonne technologie pour le bon use case.
   L'une des technologies qui peut vous être utile, c'est la base de données
   graphes Neo4j.
-cover: /assets/2018-01-29-neo4j-et-symfony/cover.png
+cover: /imgs/articles/2018-01-29-neo4j-et-symfony/cover.png
 categories:
   - php
 authors:

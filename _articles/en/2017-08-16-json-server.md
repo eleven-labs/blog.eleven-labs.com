@@ -5,7 +5,7 @@ date: '2017-08-16'
 slug: json-server
 title: JSON Server
 excerpt: Accelerate your prototyping process by mocking your APIs using JSON Server
-cover: /assets/2017-08-16-json-server/cover.jpg
+cover: /imgs/articles/2017-08-16-json-server/cover.jpg
 categories:
   - javascript
 authors:

@@ -9,7 +9,7 @@ excerpt: >-
   Services (AWS). Afin de limiter les problèmes de crash et de perte de données,
   celui-ci est également répliqué avec deux autres serveurs, idéalement dans une
   zone géographique différente pour assurer de la haute disponibilité.
-cover: /assets/2017-09-03-migrer-une-application-react-client-side-en-server-side-avec-nextjs/cover.jpg
+cover: /imgs/articles/2017-09-03-migrer-une-application-react-client-side-en-server-side-avec-nextjs/cover.jpg
 categories: []
 authors:
   - vcomposieux

@@ -7,7 +7,7 @@ title: JSON Server
 excerpt: >-
   Accélérez le prototypage de vos applications, en imitant vos APIs avec JSON
   Server.
-cover: /assets/2017-08-16-json-server/cover.jpg
+cover: /imgs/articles/2017-08-16-json-server/cover.jpg
 categories:
   - javascript
 authors:

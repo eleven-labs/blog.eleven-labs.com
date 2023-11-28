@@ -8,7 +8,7 @@ excerpt: >-
   Errors exist in our code, in external library, and also when hardware fail.
   That's why understanding Throwable is essential to handle these errors
   cleverly.
-cover: /assets/2018-02-11-php7-throwable-error-exception/cover.jpg
+cover: /imgs/articles/2018-02-11-php7-throwable-error-exception/cover.jpg
 categories:
   - php
 authors:
