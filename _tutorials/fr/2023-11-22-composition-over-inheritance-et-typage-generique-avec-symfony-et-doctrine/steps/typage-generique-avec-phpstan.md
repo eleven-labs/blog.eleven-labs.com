@@ -60,7 +60,7 @@ interface BaseRepositoryInterface
 
 La notation `of object` signifie que notre type `T` est quoiqu'il arrive de type `object`.
 
-À présent, typons le corps de notre `BaseRepository` pas à pas.
+À présent, typons le corps de notre `BaseRepositoryDoctrine` pas à pas.
 
 Commençons avec la propriété `Repository` :
 
@@ -106,7 +106,7 @@ Le type `class-string` permet de limiter le type `string` à des valeurs très p
 Vous trouverez la doc de ce tag [ici](https://phpstan.org/writing-php-code/phpdoc-types#class-string).
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
-Petit rappel à mi parcours, toutes ces vérifications ne sont faites que statiquement lorsque vous lancez votre commande PHPStan. À l'exécution du code, rien de tout cela n'est interprété et n'importe quelle chaîne de caractère peut être passée ici. D'où l'importance d'avoir une CI stricte qui vous bloque à la moindre erreur d'analyse statique
+Petit rappel à mi-parcours, toutes ces vérifications sont faites seulement **statiquement** lorsque vous lancez votre commande PHPStan. À l'exécution du code, rien de tout cela n'est interprété et n'importe quelle chaîne de caractère peut être passée ici. D'où l'importance d'avoir une CI stricte qui vous bloque à la moindre erreur d'analyse statique
 </div>
 
 C'est bon, notre repository de base a été ***générisé***, nous pouvons à présent en tirer profit dans nos repositories Doctrine.
@@ -132,7 +132,7 @@ class PostRepositoryDoctrine extends BaseRepositoryDoctrine implements PostRepos
 ```
 
 Le seul changement utile et important ici est le tag `@extends` juste au dessus de la classe. C'est *ici* que tout ce passe. 
-On indique ici que nous étendons notre BaseRepository, mais avec une info supplémentaire, la présence des chevrons `<Post>`. En faisant cela, on explique à PHPStan que nous souhaitons remplacer, dans cette classe, tous nos types génériques `T` par `Post`. Et par `User` dans notre Repository User en faisant la manipulation équivalente.
+On indique ici que nous étendons notre `BaseRepositoryDoctrine`, mais avec une info supplémentaire, la présence des chevrons `<Post>`. En faisant cela, on explique à PHPStan que nous souhaitons remplacer, dans cette classe, tous nos types génériques `T` par `Post`. Et par `User` dans notre Repository User en faisant la manipulation équivalente.
 
 Notez également la notation `@return array<Post>` au dessus de la seule méthode de notre Repository. Cela permet d'indiquer que nous ne pouvons retourner qu'un tableau composé d'objets `Post`. En fonction de comment vous implémentez la méthode, PHPStan vous remontere une erreur si ce n'est pas le cas.
 
@@ -141,7 +141,7 @@ Notez également la notation `@return array<Post>` au dessus de la seule méthod
 </div>
 
 Testons d'ailleurs si tout ce petit monde fonctionne correctement.
-Créeons un Controller, et mettons-y ce code :
+Créons un Controller, et mettons-y ce code :
 
 ```php
 <?php

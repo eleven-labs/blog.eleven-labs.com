@@ -160,10 +160,15 @@ class UserRepositoryDoctrine implements UserRepositoryInterface
     {
         return $this->repository->find($id);
     }
+
+    public function store(User $user): void
+    {
+        $this->entityManager->persist($user);
+    }
 }
 ```
 
-Bon, comme on peut le voir, ça commence à faire pas mal de code en doublon. Pour peu que toutes vos entités aient besoin d'un Repository avec les méthodes de base `find`, `save`, `remove`, ... On commence à faire pas mal de duplication de code.
+Bon, comme on peut le voir, ça commence à faire pas mal de code en doublon. Pour peu que toutes vos entités aient besoin d'un Repository avec les méthodes de base `find`, `store`, `save`, `remove`, ... On commence à faire pas mal de duplication de code.
 
 Et c'est à partir de là que nous allons mettre en place... de l'héritage !
 
@@ -297,7 +302,7 @@ Quid de notre problème de type dans les méthodes de la classe abstraite ?
 
 On y vient. 
 
-Et comme du code vaut mille mot, voilà la solution, attention les yeux :
+Et comme du code vaut mille mots, voilà la solution, attention les yeux :
 
 ```php
     // BaseRepositoryDoctrine.php

@@ -10,7 +10,7 @@ Sans doute qu'aujourd'hui, lors de l'installation d'un nouveau projet Symfony av
 
 Quel est le problème me diriez-vous ? Et bien tout d'abord, mettons que vous n'ayez besoin que de la méthode `find` de votre repository. Ici, vous hériterez bien de cette méthode, mais également de toutes les autres venant du repository de base de Doctrine. Ainsi, n'importe quel développeur pourrait utiliser le `getEntityManager` qui permet ensuite d'effectuer toutes les opérations de mutation (insertion, mise à jour, suppression) d'un objet dans votre base de données, et ce même si vous ne souhaitez pas que ce soit possible.
 De plus, l'`EntityManager` est un concept étroitement lié à Doctrine dans notre cas.
-Ainsi, on dira que le détail de notre implémentation (ici Doctrine et toutes ses méthodes & ses concepts) va *fuire* dans notre code métier, et ce n'est pas ce que l'on veut.
+Ainsi, on dira que le détail de notre implémentation (ici Doctrine et toutes ses méthodes & ses concepts) va *fuir* dans notre code métier, et ce n'est pas ce que l'on veut.
 
 Pour régler cela, nous allons utiliser l'injection de dépendance.
 

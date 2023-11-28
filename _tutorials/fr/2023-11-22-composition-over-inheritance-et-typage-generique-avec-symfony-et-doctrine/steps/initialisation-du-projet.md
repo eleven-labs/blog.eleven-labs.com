@@ -8,7 +8,7 @@ title: Initialisation du projet
 
 Pour commencer, initialisez un nouveau projet symfony [selon votre OS](https://symfony.com/download).
 
-Pour moi, ce sera comme cela :
+Pour moi (Ubuntu), ce sera comme cela :
 
 ```bash
 $ symfony new codelabs-symfo-repo
