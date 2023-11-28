@@ -4,7 +4,7 @@ lang: fr
 date: 2023-11-29
 slug: integration-crm
 title: "Comment intégrer son CRM en asynchrone"
-excerpt: "Cas d'usage avec Hubspot et RabbitMQ"
+excerpt: "Découvrez un cas d'usage d'intégration d'un CRM en asynchrone, avec Hubspot et RabbitMq, au sein d'une application e-commerce"
 categories:
     - php
 keywords:
@@ -19,7 +19,7 @@ authors:
 Dans cet article, nous allons nous plonger dans l'intégration d'un CRM (Customer Relationship Management)
 au sein d'une application e-commerce.
 
-Un CRM est une solution SaaS (Software as a Service) externe dotée de fonctionnalités,
+Le CRM que nous utilisons est en SaaS (Software as a Service) et est dotée de fonctionnalités,
 telles qu'une API et des webhooks (qui permettent de recevoir des notifications en temps réel).
 Ces fonctionnalités jouent un rôle central dans la gestion efficace des relations clients.
 
@@ -38,27 +38,31 @@ où des événements (events) se déclenchent des deux côtés de l'équation,
 et nous utiliserons l'outil RabbitMQ pour faciliter cette synchronisation bidirectionnelle.
 
 Par exemple, des événements peuvent provenir de notre plateforme
-(comme 'business_created' ou 'purchase_updated') et aussi du CRM (comme 'company_edited').
+(comme `business_created` ou `purchase_updated`) et aussi du CRM (comme 'company_edited').
 Les événements se manifestent des deux côtés.
 
 Je vous invite à consulter cet [article de Marie](https://blog.eleven-labs.com/fr/event-driven-architecture-examples/) qui explore plus en profondeur
-le concept d'« event-driven ».
+le concept d'**event-driven**.
 
-![Schema Events]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-rabbit.png)
+```mermaid
+flowchart LR
+    CRM --event company_created--> E_COMMERCE["E-Commerce"] --event user_created--> CRM
+```
 
 Lorsque l'on synchronise un CRM avec une application e-commerce,
 il est essentiel de prendre en compte des correspondances.
 
-Par exemple, un 'account' côté CRM équivaut à un 'user' côté e-commerce,
-un 'order' à un 'purchase', et un 'company' à un 'business'."
+Par exemple, un `account` côté CRM équivaut à un `user` côté e-commerce,
+un `order` à un `purchase`, et un `company` à un `business`."
 
 ## Concepts généraux
 
 L’une des questions à se poser quand on implémente un CRM c’est au niveau de la gestion des erreurs.
 
-Lors de notre implémentation, nous avons opté pour un Event Driven Design (lien vers l’article de Marie), asynchrone, avec une politique de retry.
+Lors de notre implémentation, nous avons opté pour un **Event Driven Design** ([lien vers l’article de Marie](https://blog.eleven-labs.com/fr/event-driven-architecture-examples/)),
+asynchrone, avec une politique de Retry.
 
-### Asynchrone:
+### Asynchrone
 
 L'Event Driven Design offre une grande résilience.
 Lorsqu'un événement est publié, il est stocké dans une file d'attente ou un système de messagerie.
@@ -69,17 +73,17 @@ même en cas de problèmes temporaires.
 
 ![Schema Detailed]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-detailled.png)
 
-Dans notre exemple de synchronisation avec Hubspot, nous avons un webhook qui est trigger lorsqu’un statut spécifique de Company est ajouté côté CRM.
 Le besoin sur notre application est de récupérer les informations de Company et de Contacts associés au trigger, et de les stocker.
+Dans notre exemple de synchronisation avec Hubspot, nous avons un webhook qui est trigger lorsqu’un statut spécifique de Company est ajouté côté CRM.
 
 Une solution simple et synchrone serait de GET ces informations via l’API d’Hubspot.
 
-Imaginons qu’un problème survient au moment de la synchronisation des Contacts de la Company en question, quel est l’état de notre base côté applicatif ?
+Imaginons qu’un problème survient au moment de la synchronisation des Contacts de la Company en question, quel est l’état de notre base de données côté applicatif ?
 
 Nous aurons une Company enregistrée avec aucun contact, et une erreur dans les logs.
 Aussi il faudrait re-GET les informations de contacts liés à cette Company.
 
-Même problème pour la Company, où en cas d’erreur sur notre application, nous devons refaire une call pour récupérer ces mêmes informations.
+Même problème pour la Company, où en cas d’erreur sur notre application, nous devons refaire un appel pour récupérer ces mêmes informations.
 
 ### Retry
 
@@ -129,7 +133,7 @@ Voici certains avantages que nous avons notés lors d’une synchronisation par 
 précis sur les données qui sont transférées.
 Le batching permet de planifier soigneusement la migration, de réaliser des tests,
 d'identifier et de résoudre les problèmes potentiels avant le transfert complet des données.
-  Minimisation des Perturbations : Les migrations initiales de données peuvent être une tâche complexe, surtout lorsque de grandes quantités de données doivent être déplacées. Le batching vous permet de minimiser les perturbations dans les opérations quotidiennes, car vous pouvez planifier la migration en dehors des heures de pointe.
+- **Minimisation des Perturbations** : Les migrations initiales de données peuvent être des tâches complexes, surtout lorsque de grandes quantités de données doivent être déplacées. Le batching vous permet de minimiser les perturbations dans les opérations quotidiennes, car vous pouvez planifier la migration en dehors des heures de pointe.
 
 - **Réversibilité** : En cas d'erreur ou de problème imprévu lors de la migration, la synchronisation par lots offre la possibilité de revenir
 en arrière, d'ajuster les données, et de réessayer.
