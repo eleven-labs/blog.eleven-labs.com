@@ -58,7 +58,7 @@ L’une des questions à se poser quand on implémente un CRM c’est au niveau 
 
 Lors de notre implémentation, nous avons opté pour un Event Driven Design (lien vers l’article de Marie), asynchrone, avec une politique de retry.
 
-Asynchrone:
+### Asynchrone:
 
 L'Event Driven Design offre une grande résilience.
 Lorsqu'un événement est publié, il est stocké dans une file d'attente ou un système de messagerie.
@@ -81,7 +81,7 @@ Aussi il faudrait re-GET les informations de contacts liés à cette Company.
 
 Même problème pour la Company, où en cas d’erreur sur notre application, nous devons refaire une call pour récupérer ces mêmes informations.
 
-## Retry
+### Retry
 
 Dans notre exemple plus haut, suite au trigger du webhook, on a choisi de Publish un Event.
 Cet event est stocké dans la queue, donc si des soucis opèrent au niveau du GET des Companies et Contacts,
@@ -98,7 +98,7 @@ ces informations sont stockées dans notre base de données.
 Notons que la synchronisation CRM ⇔ notre App est aussi faite à travers des consumers,
 donc nous avons la même politique de Retry qui s’applique.
 
-## Presque Real-Time
+### Presque Real-Time
 
 L'Event Driven Design permet une synchronisation presque en temps réel.
 Bien que cela soit asynchrone, la latence est généralement très faible.
@@ -113,7 +113,7 @@ entraîner des retards dans la mise à jour des données.
 Le choix entre ces deux approches dépend des besoins spécifiques de votre entreprise
 et de vos objectifs en matière de gestion des données.
 
-## Initialisation des données
+### Initialisation des données
 
 Lorsque vous envisagez d'intégrer une nouvelle plateforme e-commerce à votre CRM existant,
 ou lorsque vous migrez vers un nouveau CRM, l'une des étapes critiques est l'initialisation
