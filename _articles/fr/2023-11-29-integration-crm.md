@@ -162,3 +162,27 @@ Lors de la mise en place de votre intégration, il est essentiel de s'assurer d'
 2. **Règles de Validation** :
    - Établissez des règles de validation cohérentes, telles que la vérification des adresses e-mail, la longueur des propriétés, etc.
    - Incluez des règles fonctionnelles, telles que la dépendance entre les champs (p. ex. un champ requis uniquement si un autre est rempli).
+
+## Conclusion
+
+En résumé, nous avons mis en lumière l'intégration d'un CRM au sein d'une application e-commerce,
+en se concentrant sur une approche asynchrone basée sur des événements.
+L'usage d'un outil comme RabbitMQ facilite cette synchronisation bidirectionnelle,
+permettant ainsi une gestion efficace des relations clients.
+
+L'approche **Event-driven** est explorée en détail, soulignant la résilience offerte par ce modèle face
+aux erreurs et pannes temporaires. La stratégie de "retry" et l'utilisation de files d'attente
+garantissent la synchronisation des données même en cas de problèmes temporaires, tout en minimisant
+les perturbations et en offrant une quasi-synchronisation en temps réel.
+
+La nécessité d'une correspondance entre les entités des deux systèmes (CRM et e-commerce)
+est également mise en avant, avec une insistance sur la gestion des erreurs,
+notamment en cas d'échec de synchronisation.
+
+Par ailleurs, la synchronisation par lots lors de l'initialisation des données a été présentée
+comme essentielle pour assurer un transfert précis, minimiser les perturbations et garantir la réversibilité
+en cas de problème.
+
+En conclusion lors de votre approche d'intégration, gardez en tête l'importance de comprendre en profondeur le CRM
+à intégrer, de préparer minutieusement l'approche d'intégration, et de veiller à
+un modèle de données cohérent entre les systèmes pour une intégration réussie et fluide.
