@@ -2,13 +2,14 @@
 contentType: article
 lang: fr
 date: 2023-11-29
-slug: integration-crm
-title: "Comment intégrer son CRM en asynchrone"
-excerpt: "Découvrez un cas d'usage d'intégration d'un CRM en asynchrone, avec Hubspot et RabbitMq, au sein d'une application e-commerce"
+slug: integration-crm-avec-plateforme-crm
+title: "Comment intégrer votre CRM avec votre plateforme e-commerce"
+excerpt: "Découvrez un cas d'usage d'intégration d'un CRM avec une application e-commerce, en asynchrone, avec Hubspot et RabbitMQ"
 categories:
     - php
 keywords:
     - crm
+    - e-commerce
     - hubspot
     - rabbitmq
 authors:
@@ -17,43 +18,42 @@ authors:
     - charles-eric
 ---
 Dans cet article, nous allons nous plonger dans l'intégration d'un CRM (Customer Relationship Management)
-au sein d'une application e-commerce.
+avec une application e-commerce.
 
-Le CRM que nous utilisons est en SaaS (Software as a Service) et est dotée de fonctionnalités,
-telles qu'une API et des webhooks (qui permettent de recevoir des notifications en temps réel).
-Ces fonctionnalités jouent un rôle central dans la gestion efficace des relations clients.
+Nous vous donnerons des exemples concrets sur lesquels nous avons travaillé au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application).
 
-Pour illustrer ce processus, nous allons nous concentrer sur une application e-commerce personnalisée
-qui représente le cœur de notre activité.
+## Contexte
 
-Bien entendu, ces principes d'intégration pourraient s’appliquer également à divers systèmes ERP
-(Enterprise Resource Planning), mais pour les besoins de notre exemple, nous allons prendre en considération
-deux CRM renommés, à savoir Salesforce et HubSpot. (Restez à l'affût, car nous publierons bientôt des
-articles détaillés sur l'intégration avec chacun de ces deux CRM.)
+Nous utilisons un CRM SaaS (Software as a Service) doté de fonctionnalités qui jouent un rôle central dans la gestion efficace des relations clients. Ce CRM offre aussi la possibilité d'utiliser une API et des webhooks (qui permettent de recevoir des notifications en temps réel) qui vons nous permettre de connecter ce système à nos autres applications.
 
-![Schema Global]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-global.png)
+En parallèle de ce CRM se trouve une plateforme e-commerce personnalisée
+qui représente le cœur de notre activité : nous souhaitons les connecter.
+
+Bien entendu, ces principes d'intégration pourraient s’appliquer également à divers systèmes externes, comme des ERP
+(Enterprise Resource Planning), et différents CRMs comme Salesforce et HubSpot (Restez à l'affût, car nous publierons bientôt des
+articles détaillés sur l'intégration avec chacun de ces deux CRM). Mais pour les besoins de notre exemple dans cet article, nous allons prendre en considération seulement HubSpot.
 
 Pour réaliser cette intégration, nous allons adopter une approche basée sur le concept d'« event-driven »,
 où des événements (events) se déclenchent des deux côtés de l'équation,
 et nous utiliserons l'outil RabbitMQ pour faciliter cette synchronisation bidirectionnelle.
 
-Par exemple, des événements peuvent provenir de notre plateforme
+Par exemple, des événements peuvent provenir de notre plateforme e-commerce
 (comme `business_created` ou `purchase_updated`) et aussi du CRM (comme 'company_edited').
 Les événements se manifestent des deux côtés.
-
-Je vous invite à consulter cet [article de Marie](https://blog.eleven-labs.com/fr/event-driven-architecture-examples/) qui explore plus en profondeur
-le concept d'**event-driven**.
 
 ```mermaid
 flowchart LR
     CRM --event company_created--> E_COMMERCE["E-Commerce"] --event user_created--> CRM
 ```
 
-Lorsque l'on synchronise un CRM avec une application e-commerce,
-il est essentiel de prendre en compte des correspondances.
+Je vous invite à consulter cet [article de Marie](https://blog.eleven-labs.com/fr/event-driven-architecture-examples/) qui explore plus en profondeur le concept d'**event-driven**.
 
-Par exemple, un `account` côté CRM équivaut à un `user` côté e-commerce,
-un `order` à un `purchase`, et un `company` à un `business`."
+Lorsque l'on synchronise un CRM avec une application e-commerce, il faut d'abord bien définir les objets métiers à synchroniser et
+il est essentiel de prendre en compte des correspondances entre ces objets des deux systèmes qui peuvent avoir des formats différents.
+
+Par exemple, un `account` côté CRM équivaut à un `user` côté e-commerce, un `order` à un `purchase`, et un `company` à un `business`.
+
+![Schema Global]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-global.png)
 
 ## Concepts généraux
 
@@ -165,7 +165,7 @@ Lors de la mise en place de votre intégration, il est essentiel de s'assurer d'
 
 ## Conclusion
 
-En résumé, nous avons mis en lumière l'intégration d'un CRM au sein d'une application e-commerce,
+En résumé, nous avons mis en avant notre expérience au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) au sujet de l'intégration d'un CRM avec une application e-commerce,
 en se concentrant sur une approche asynchrone basée sur des événements.
 L'usage d'un outil comme RabbitMQ facilite cette synchronisation bidirectionnelle,
 permettant ainsi une gestion efficace des relations clients.
