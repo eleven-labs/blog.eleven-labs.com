@@ -25,7 +25,7 @@ export const PostPreviewContent: React.FC<PostPreviewContentProps> = ({
   const titleBlock = hasMask ? (
     (title as React.JSX.Element)
   ) : (
-    <Link {...link} data-internal-link={isRelated ? 'relatedPost' : 'post'}>
+    <Link {...link} data-internal-link={isRelated ? 'relatedPost' : 'post'} className="post-preview__link">
       {title}
     </Link>
   );
