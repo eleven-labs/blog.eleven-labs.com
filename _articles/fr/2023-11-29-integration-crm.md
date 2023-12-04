@@ -43,7 +43,7 @@ flowchart LR
 Lorsque l'on synchronise un CRM avec une application e-commerce, il faut d'abord bien définir les objets métiers à synchroniser et
 il est essentiel de prendre en compte des correspondances entre ces objets des deux systèmes qui peuvent avoir des formats différents.
 
-Par exemple, un `account` côté CRM équivaut à un `user` côté e-commerce, un `order` à un `purchase`, et un `company` à un `business`.
+Par exemple, un `contact` côté CRM équivaut à un `user` côté e-commerce, un `order` à un `purchase`, et un `company` à un `business`.
 
 ![Schema Global]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-global.png)
 
