@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: 2023-11-29
+date: 2023-12-05
 slug: integration-crm-avec-plateforme-e-commerce
 title: "Comment intégrer votre CRM avec votre plateforme e-commerce"
 excerpt: "Découvrez un cas d'usage d'intégration d'un CRM avec une application e-commerce, en asynchrone, avec Hubspot et RabbitMQ"
@@ -45,7 +45,7 @@ il est essentiel de prendre en compte des correspondances entre ces objets des d
 
 Par exemple, un `contact` côté CRM équivaut à un `user` côté e-commerce, une `company` à un `business`, et un `order` à un `purchase`.
 
-![Schema Global]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-global.png)
+![Schema Global]({BASE_URL}/imgs/articles/2023-12-05-integration-crm/integration-crm-schema-global.png)
 
 ## Concepts de notre solution
 
@@ -82,7 +82,7 @@ Si, pour une raison quelconque, la synchronisation échoue, les événements res
 Cela signifie que les erreurs temporaires ou les pannes de système n'impactent pas la synchronisation des données.
 De plus, la possibilité de mettre en place des mécanismes de "retry" automatique garantit que les données seront finalement synchronisées avec succès, même en cas de problèmes temporaires.
 
-![Synchronisation de Hubspot vers le e-commerce]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-hubspot-to-e-commerce.png)
+![Synchronisation de Hubspot vers le e-commerce]({BASE_URL}/imgs/articles/2023-12-05-integration-crm/integration-crm-schema-hubspot-to-e-commerce.png)
 _Synchronisation de Hubspot vers le e-commerce_
 
 Sur le schéma ci-dessus, voici les différentes étapes de la synchronisation Hubspot vers e-commerce :
@@ -95,7 +95,7 @@ Sur le schéma ci-dessus, voici les différentes étapes de la synchronisation H
 - Le e-commerce publie les IDs des `Company` et `Contacts` tels que définis côté e-commerce dans RabbitMQ (4)
 - Un Consumer consomme ces données et met à jour ces IDs dans les `Company` & `Contacts` côté Hubspot (4)
 
-![Synchronisation du e-commerce vers HubSpot]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-e-commerce-to-hubspot.png)
+![Synchronisation du e-commerce vers HubSpot]({BASE_URL}/imgs/articles/2023-12-05-integration-crm/integration-crm-schema-e-commerce-to-hubspot.png)
 _Synchronisation du e-commerce vers HubSpot_
 
 Notre synchronisation étant bidirectionnelle, de manière similaire, les mêmes étapes sont réalisées dans l'autre sens, avec des consumers différents.
