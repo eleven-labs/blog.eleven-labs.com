@@ -49,9 +49,23 @@ Par exemple, un `contact` côté CRM équivaut à un `user` côté e-commerce, u
 
 ## Concepts généraux
 
-Maintenant rentrons un peu plus dans les détails des concepts implémentés pour gérer au mieux cette synchronisation.
+Le besoin sur notre application est de récupérer les informations de `Company` et de `Contacts` associés au trigger, et de les stocker.
 
-Lors de notre implémentation, nous avons opté pour un *Event Driven Design* ([lien vers l'article de Marie](https://blog.eleven-labs.com/fr/event-driven-architecture-examples/)), asynchrone, avec une politique de "retry" pour gérer au mieux les possibles erreurs, le tout orchestré par un microservice dédié à cette synchronisation.
+Dans notre exemple de synchronisation avec Hubspot, nous avons un webhook qui est trigger lorsqu'un statut spécifique de Company est changé côté CRM.
+
+Une solution simple et synchrone serait de GET ces informations via l'API d'Hubspot.
+
+Imaginons qu'un problème survient au moment de la synchronisation des Contacts de la Company en question, quel est l'état de notre base de données côté applicatif ?
+
+Nous aurons une Company enregistrée avec aucun contact, et une erreur dans les logs.
+Aussi, il faudrait re-GET les informations de contacts liés à cette `Company`.
+
+Même problème pour la `Company`, où en cas d'erreur sur notre application, nous devons refaire un appel pour récupérer ces mêmes informations.
+
+C'est pour cela qu'une approche Asynchrone avec une stratégie de Retry est plus adaptée.
+
+Lors de notre implémentation, nous avons opté pour un *Event Driven Design* ([lien vers l'article de Marie](https://blog.eleven-labs.com/fr/event-driven-architecture-examples/)),
+asynchrone, avec une politique de "retry" pour gérer au mieux les possibles erreurs, le tout orchestré par un microservice dédié à cette synchronisation.
 
 ### Un microservice responsable de la synchronisation
 
@@ -75,19 +89,21 @@ Si, pour une raison quelconque, la synchronisation échoue, les événements res
 Cela signifie que les erreurs temporaires ou les pannes de système n'impactent pas la synchronisation des données.
 De plus, la possibilité de mettre en place des mécanismes de "retry" automatique garantit que les données seront finalement synchronisées avec succès, même en cas de problèmes temporaires.
 
-![Schema Detailed]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-detailled.png)
+![Schema Detailed Hubspot to E-Commerce]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-hubspot-to-e-commerce.png)
 
-Le besoin sur notre application est de récupérer les informations de `Company` et de `Contacts` associés au trigger, et de les stocker.
-Dans notre exemple de synchronisation avec Hubspot, nous avons un webhook qui est trigger lorsqu'un statut spécifique de Company est changé côté CRM.
+Sur le schéma ci-dessus, voici les différentes étapes de la synchronisation Hubspot vers E-Commerce :
+- Un webhook est trigger côté Hubspot (1)
+- Un event est publié dans RabbitMQ avec l'ID de la Company, stockée sur MongoDB (1)
+- Un Consumer RabbitMQ consomme le message et fait un GET de la Company et des Contacts associés (2)
+- Ces informations sont stockées dans MongoDB (2)
+- On publie ces informations de Company et Contact sur RabbitMQ (3)
+- Un Consume côté E-Commerce récupère ces informations et les stocke dans notre BDD (3)
+- On publie les ID des Business et Contacts côté E-Commerce dans RabbitMQ (4)
+- Un Consumer consomme ces données et met à jour les Company & Contacts côté Hubspot (4)
 
-Une solution simple et synchrone serait de GET ces informations via l'API d'Hubspot.
+![Schema Detailed Hubspot to E-Commerce]({BASE_URL}/imgs/articles/2023-11-29-integration-crm/integration-crm-schema-hubspot-to-e-commerce.png)
 
-Imaginons qu'un problème survient au moment de la synchronisation des Contacts de la Company en question, quel est l'état de notre base de données côté applicatif ?
-
-Nous aurons une Company enregistrée avec aucun contact, et une erreur dans les logs.
-Aussi il faudrait re-GET les informations de contacts liés à cette `Company`.
-
-Même problème pour la `Company`, où en cas d'erreur sur notre application, nous devons refaire un appel pour récupérer ces mêmes informations.
+Notre Synchronisation étant bidirectionnelle, les mêmes étapes sont réalisées dans l'autre sens, avec des consumers différents.
 
 ### Retry
 
@@ -103,13 +119,8 @@ Cet event est stocké dans la queue, donc si des soucis opèrent au niveau du GE
 Il est aussi intéressant de porter attention aux types d'erreurs possibles dans nos consumers pour ne "retry" que certains types. Par exemple, il est important de s'assurer que l'on "retry" dans le cas d'erreur réseau ou d'erreur serveur "500" retournée par le CRM SaaS externe. A l'inverse, les erreurs "400 Bad Request" peuvent être ignorées et non "retry" puisqu'après "retry" les données envoyées à l'API seront toujours invalides.
 </div>
 
-Dans un second temps, à chaque GET de `Company`/`Contact`, on stocke ces informations dans notre BDD Mongo.
-Ces informations sont uniquement exploitées dans le cadre de ces consumers, pour la suite des opérations.
-
-S'il survient une erreur côté synchronisation, on ne va pas vouloir recommencer toute l'opération de GET côté Hubspot :
-ces informations sont stockées dans notre base de données.
-
-Notons que la synchronisation CRM ⇔ notre App est aussi faite à travers des consumers, donc nous avons la même politique de "retry" qui s'applique.
+Sur nos deux schémas ci-dessus, on peut voir que chaque étape est aussi faite à travers des consumers avec un stockage "intermédiaire" en base de données. Cela rend donc chaque étape indépendante,
+bénéficiant de son propre retry indépendant.
 
 ### Presque Real-Time
 
