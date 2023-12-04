@@ -83,7 +83,8 @@ Cela signifie que les erreurs temporaires ou les pannes de système n'impactent 
 De plus, la possibilité de mettre en place des mécanismes de "retry" automatique garantit que les données seront finalement synchronisées avec succès, même en cas de problèmes temporaires.
 
 ![Synchronisation de Hubspot vers le e-commerce]({BASE_URL}/imgs/articles/2023-12-05-integration-crm/integration-crm-schema-hubspot-to-e-commerce.png)
-_Synchronisation de Hubspot vers le e-commerce_
+
+*<center>Synchronisation de Hubspot vers le e-commerce</center>*
 
 Sur le schéma ci-dessus, voici les différentes étapes de la synchronisation Hubspot vers e-commerce :
 - Un webhook est déclenché côté Hubspot et réceptionné par le microservice de synchronisation (1)
@@ -96,7 +97,8 @@ Sur le schéma ci-dessus, voici les différentes étapes de la synchronisation H
 - Un Consumer consomme ces données et met à jour ces IDs dans les `Company` & `Contacts` côté Hubspot (4)
 
 ![Synchronisation du e-commerce vers HubSpot]({BASE_URL}/imgs/articles/2023-12-05-integration-crm/integration-crm-schema-e-commerce-to-hubspot.png)
-_Synchronisation du e-commerce vers HubSpot_
+
+*<center>Synchronisation du e-commerce vers HubSpot</center>*
 
 Notre synchronisation étant bidirectionnelle, de manière similaire, les mêmes étapes sont réalisées dans l'autre sens, avec des consumers différents.
 
@@ -176,13 +178,13 @@ Cette préparation minutieuse vous permettra d'éviter des erreurs coûteuses et
 Lors de la mise en place de votre intégration, il est essentiel de s'assurer d'un modèle de données cohérent entre le CRM et la plateforme e-commerce.
 Voici comment procéder de manière méthodique :
 
-1. **Comparaison des objets et propriétés à synchroniser** :
-   - Créez un tableau de correspondance avec des colonnes pour le CRM et l'e-commerce.
-   - Répertoriez les propriétés des entités des deux côtés pour un aperçu clair.
-   - Assurez-vous que les types de données concordent entre les deux systèmes.
-2. **Règles de validation** :
-   - Établissez des règles de validation cohérentes dans les deux systèmes à synchroniser, telles que la vérification des adresses e-mail ou téléphones, la longueur des propriétés chaînes de caractères, etc.
-   - Incluez des règles fonctionnelles, telles que la dépendance entre les champs (p. ex. un champ requis uniquement si un autre est rempli).
+- **Comparaison des objets et propriétés à synchroniser** :
+    - Créez un tableau de correspondance avec des colonnes pour le CRM et l'e-commerce.
+    - Répertoriez les propriétés des entités des deux côtés pour un aperçu clair.
+    - Assurez-vous que les types de données concordent entre les deux systèmes.
+- **Règles de validation** :
+    - Établissez des règles de validation cohérentes dans les deux systèmes à synchroniser, telles que la vérification des adresses e-mail ou téléphones, la longueur des propriétés chaînes de caractères, etc.
+    - Incluez des règles fonctionnelles, telles que la dépendance entre les champs (p. ex. un champ requis uniquement si un autre est rempli).
 
 ## Conclusion
 
