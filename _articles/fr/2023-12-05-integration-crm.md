@@ -117,7 +117,7 @@ Aussi, même pour une simple réception de webhook venant du CRM, on a choisi de
 
 <div  class="admonition summary" markdown="1"><p class="admonition-title">Note</p>
 
-Il est aussi intéressant de porter attention aux types d'erreurs possibles dans nos consumers pour ne "retry" que certains types. Par exemple, il est important de s'assurer que l'on "retry" dans le cas d'erreur réseau ou d'erreur serveur "500" retournée par le CRM SaaS externe. A l'inverse, les erreurs "400 Bad Request" peuvent être ignorées et non "retry" puisqu'après "retry" les données envoyées à l'API seront toujours invalides.
+Il est aussi intéressant de porter attention aux types d'erreurs possibles dans nos consumers pour ne "retry" que certains types. Par exemple, il est important de s'assurer que l'on "retry" dans le cas d'erreur réseau ou d'erreur serveur "500" retournée par le CRM SaaS externe. À l'inverse, les erreurs "400 Bad Request" peuvent être ignorées et non "retry" puisqu'après "retry" les données envoyées à l'API seront toujours invalides.
 </div>
 
 ### Presque temps réel
@@ -128,7 +128,7 @@ Les événements sont traités rapidement, ce qui signifie que les mises à jour
 
 Dans notre cas, la synchronisation presque en temps réel est une approche qui privilégie la réactivité, l'expérience utilisateur, le suivi en temps réel des activités et la réduction de la latence.
 
-A l'inverse, une synchronisation par lots (batching) une fois par jour est moins réactive, peut générer des problèmes de performance et entraîne des retards dans la mise à jour des données qui peuvent avoir des impacts fonctionnels.
+À l'inverse, une synchronisation par lots (batching) une fois par jour est moins réactive, peut générer des problèmes de performance et entraîne des retards dans la mise à jour des données qui peuvent avoir des impacts fonctionnels.
 
 Le choix entre ces deux approches dépend des besoins spécifiques de votre entreprise et de vos objectifs en matière de gestion des données.
 
@@ -150,16 +150,16 @@ Ainsi pour initialiser les données dans le CRM nouvellement ajouté, nous avons
 - Récupère tous les identifiants des entités existantes côté e-commerce (`user`, `business`, `purchase`)
 - Publie tous ces identifiants dans la queue RabbitMQ déjà utilisée par notre processus de synchronisation asynchrone : celle qui reçoit déjà les événements de modifications venant du e-commerce. Ainsi chaque message ajouté à cette queue va déclencher la création de l'entité correspondante vers le CRM, une par une, pour chaque message empilé dans cette queue.
 
-De cette façon, nous tirons partie du processus de synchronisation déjà mis en place plutôt que de dupliquer pour l'initialisation. Aussi nous bénéficions de la même résilience grâce au mécanisme de "retry".
+De cette façon, nous tirons parti du processus de synchronisation déjà mis en place plutôt que de dupliquer pour l'initialisation. Aussi nous bénéficions de la même résilience grâce au mécanisme de "retry".
 
-Par contre, avec cette approche, vous vous retrouvez avec des centaines de milliers de messages publiés dans vos queue de synchronisation dès l'exécution du script d'initialisation. Cela peut causer ces problèmes :
+Par contre, avec cette approche, vous vous retrouvez avec des centaines de milliers de messages publiés dans vos queues de synchronisation dès l'exécution du script d'initialisation. Cela peut causer ces problèmes :
 - Les consumers de synchronisation dépendant d'appels vers les API externes du CRM, chaque message prend un certain temps à être consommé. Au global les messages sont donc dépilés lentement et l'initialisation peut prendre plusieurs jours.
-- Aussi pendant toute la durée de l'initialisation, tant que des messages liés à des données historiques sont présents dans les queues, les nouveaux messages ajoutés dans ces mêmes consumers pour de nouvelles données mises à jours côté e-commerce se retrouvent bloqués et ne seront dépilés qu'une fois l'initialisation terminée, donc potentiellement au bout de plusieurs jours. On perd donc l'avantage de la synchronisation "presque temps réel" pendant cette phase.
-- Également, ces milliers d'entités à synchroniser à l'initialisation vont causer autant d'appels API vers un service externe CRM qui a certainement une stratégie de "rate limiting". A chaque fois qu'une limite API est atteinte, les consumers vont retry, jusqu'à ce que le délai de limite soit expiré. Cela va donc ralentir le processus de synchronisation. Mais aussi, cela peut avoir d'autres impacts si vous avez d'autres processus ou applications qui appellent cette même API du CRM puisqu'eux aussi vont se retrouver bloqués.
+- Aussi pendant toute la durée de l'initialisation, tant que des messages liés à des données historiques sont présents dans les queues, les nouveaux messages ajoutés dans ces mêmes consumers pour de nouvelles données mises à jour côté e-commerce se retrouvent bloqués et ne seront dépilés qu'une fois l'initialisation terminée, donc potentiellement au bout de plusieurs jours. On perd donc l'avantage de la synchronisation "presque temps réel" pendant cette phase.
+- Également, ces milliers d'entités à synchroniser à l'initialisation vont causer autant d'appels API vers un service externe CRM qui a certainement une stratégie de "rate limiting". À chaque fois qu'une limite API est atteinte, les consumers vont retry, jusqu'à ce que le délai de limite soit expiré. Cela va donc ralentir le processus de synchronisation. Mais aussi, cela peut avoir d'autres impacts si vous avez d'autres processus ou applications qui appellent cette même API du CRM puisqu'eux aussi vont se retrouver bloqués.
 
 C'est pour cela que nous ajustons notre script pour gérer par lots (batching) cette phase d'initialisation :
 - Plutôt que de récupérer et publier toutes les entités existantes côté e-commerce d'un seul coup, nous ajoutons des arguments à notre script pour ne récupérer qu'une plage d'IDs ou seulement des entités filtrées, par date de création par exemple.
-- Nous exécutons ensuite ce script d'initialisation plusieurs fois de suite avec des arguments de filtres différents, en laissant le temps à la synchronisation de se faire avant de lancer à nouveau avec les arguments suivants. Par exemple, on lance une première fois seulement pour les entités modifiés lors du mois précédent. Puis on attend que ces entités soient bien initialisées et on vérifie que le processus de synchronisation "presque temps réel" fonctionne bien en parallèle pour les nouvelles modifications d'entités. Seulement ensuite et de manière itérative, on lance ce script avec des dates antérieures pour initialiser les données plus anciennes
+- Nous exécutons ensuite ce script d'initialisation plusieurs fois de suite avec des arguments de filtres différents, en laissant le temps à la synchronisation de se faire avant de lancer à nouveau avec les arguments suivants. Par exemple, on lance une première fois seulement pour les entités modifiées lors du mois précédent. Puis on attend que ces entités soient bien initialisées et on vérifie que le processus de synchronisation "presque temps réel" fonctionne bien en parallèle pour les nouvelles modifications d'entités. Seulement ensuite et de manière itérative, on lance ce script avec des dates antérieures pour initialiser les données plus anciennes
 
 Voici certains avantages que nous avons notés lors de cette initialisation en batch :
 - **Contrôle et précision** : Cela permet de planifier soigneusement la migration initiale, de réaliser des tests, d'identifier et de résoudre les problèmes potentiels avant le transfert complet des données.
@@ -173,7 +173,7 @@ Voici certains avantages que nous avons notés lors de cette initialisation en b
 
 Pour synchroniser les données de votre système vers un nouveau CRM, comprendre en profondeur le CRM que vous allez intégrer est une étape essentielle.
 Avant de vous lancer dans le développement, assurez-vous de bien analyser le CRM cible, testez sa connectivité API, et familiarisez-vous avec le processus de configuration des applications, ainsi que la gestion des identifiants (credentials) qui donnent accès à l'API depuis un système externe.
-Assurez vous également que ce CRM supporte les webhooks dont vous aurez besoin pour mettre en place une approche *Event Driven*.
+Assurez-vous également que ce CRM supporte les webhooks dont vous aurez besoin pour mettre en place une approche *Event Driven*.
 Cette préparation minutieuse vous permettra d'éviter des erreurs coûteuses et de garantir une intégration fluide.
 
 ### Modèle de données
