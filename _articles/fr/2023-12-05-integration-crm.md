@@ -72,7 +72,7 @@ Ensuite pour chaque événement reçu, ce service va récupérer les données da
 
 ### Asynchrone
 
-Nous avons choisi d'implémenter cette synchronisation de manière asynchrone pour que nos applications CRMs et e-commerce restent découplées et indépendantes.
+Nous avons décidé d'intégrer cette fonctionnalité de manière asynchrone afin de maintenir l'indépendance entre nos applications CRM et e-commerce.
 
 Aussi, dans notre contexte, nous n'avions pas besoin d'un retour synchrone visible sur les interfaces utilisateurs des applications qui ferait apparaître en temps réel un statut de synchronisation.
 
