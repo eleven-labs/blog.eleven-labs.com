@@ -23,7 +23,7 @@ Nous vous donnerons des exemples concrets sur lesquels nous avons travaillé au 
 
 ## Contexte
 
-Nous utilisons un CRM SaaS (Software as a Service) doté de fonctionnalités qui jouent un rôle central dans la gestion efficace des relations clients. Ce CRM offre aussi la possibilité d'utiliser une API et des webhooks (qui permettent de recevoir des notifications en temps réel) qui vons nous permettre de connecter ce système à nos autres applications.
+Nous utilisons un CRM SaaS (Software as a Service) doté de fonctionnalités qui jouent un rôle central dans la gestion efficace des relations clients. Ce CRM offre aussi la possibilité d'utiliser une API et des webhooks (qui permettent de recevoir des notifications en temps réel) qui vont nous permettre de connecter ce système à nos autres applications.
 
 En parallèle de ce CRM se trouve une plateforme e-commerce personnalisée, qui représente le cœur de notre activité : nous souhaitons les connecter.
 
@@ -96,11 +96,14 @@ Sur le schéma ci-dessus, voici les différentes étapes de la synchronisation H
 - Le e-commerce publie les IDs des `Company` et `Contacts` tels que définis côté e-commerce dans RabbitMQ (4)
 - Un Consumer consomme ces données et met à jour ces IDs dans les `Company` & `Contacts` côté Hubspot (4)
 
+Enfin, la synchronisation s'effectue dans l'autre sens (bidirectionnelle) : de la platforme e-commerce vers HubSpot avec le schéma ci-dessous.
+
 ![Synchronisation du e-commerce vers HubSpot]({BASE_URL}/imgs/articles/2023-12-05-integration-crm/integration-crm-schema-e-commerce-to-hubspot.png)
 
 *<center>Synchronisation du e-commerce vers HubSpot</center>*
 
-Notre synchronisation étant bidirectionnelle, de manière similaire, les mêmes étapes sont réalisées dans l'autre sens, avec des consumers différents.
+- Le e-commerce publie les IDs des `Company` et `Contacts` tels que définis côté e-commerce dans RabbitMQ (4)
+- Un Consumer consomme ces données et met à jour ces IDs dans les `Company` & `Contacts` côté Hubspot (4)
 
 ### Retry
 
