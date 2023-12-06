@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: 2023-11-22
+date: 2024-01-10
 slug: typage-generique-en-php
 title: Typage générique en php
 excerpt: Le typage générique en php, c'est impossible ? Pas si sûr...
