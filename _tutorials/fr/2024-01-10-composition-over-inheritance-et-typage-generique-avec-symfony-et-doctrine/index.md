@@ -1,7 +1,7 @@
 ---
 contentType: tutorial
 lang: fr
-date: '2023-11-22'
+date: '2024-01-10'
 slug: composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine
 title: Composition over inheritance et typage générique avec Symfony et Doctrine
 excerpt: >-
