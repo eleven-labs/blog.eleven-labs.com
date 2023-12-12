@@ -1,6 +1,4 @@
 export const contact = {
-  email: 'business@eleven-labs.com',
-  phoneNumber: '01.82.83.11.75',
   addressList: [
     {
       name: 'Eleven Labs - Paris',
@@ -15,4 +13,5 @@ export const contact = {
       address: ['1155, Metcalfe St Suite 1500', 'Montréal, QC H3B 2V6, Canada'],
     },
   ],
+  formLink: 'https://eleven-labs.com/contact/',
 };

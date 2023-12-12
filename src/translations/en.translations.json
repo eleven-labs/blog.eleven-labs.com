@@ -52,7 +52,8 @@
       "description": "To learn more, visit our website"
     },
     "contact": {
-      "title": "Contact"
+      "title": "Contact",
+      "form_title": "Contactez nous"
     },
     "link_to_eleven_labs_site": "Let's go"
   },

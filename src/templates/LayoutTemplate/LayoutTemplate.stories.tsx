@@ -1,4 +1,4 @@
-import { Box, Text } from '@eleven-labs/design-system';
+import { Box, Button, Text } from '@eleven-labs/design-system';
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
@@ -56,8 +56,11 @@ export default {
             ),
           },
           {
-            title: 'business@eleven-labs.com',
-            description: '0182831175',
+            description: (
+              <Button as="a" href="https://eleven-labs.com/contact/">
+                Contact
+              </Button>
+            ),
           },
         ],
       },
