@@ -39,7 +39,7 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
         {
           description: (
             <Button as="a" href={contact.formLink} target="_blank" data-contact-link>
-              t('footer.contact.form_title')
+              {t('footer.contact.form_title')}
             </Button>
           ),
         },

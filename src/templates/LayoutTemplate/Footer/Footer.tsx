@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({
         </Heading>
         <Flex flexDirection={{ xs: 'column', md: 'row' }} gap={{ md: 'xl' }}>
           {contact.list.map((currentContact, contactIndex) => (
-            <Box key={contactIndex} mb={contact.list.length === contactIndex + 1 ? 'xs' : 'm'}>
+            <Box key={contactIndex} mb="m">
               {currentContact.title && (
                 <Text fontWeight="bold" mb="xxs-2">
                   {currentContact.title}
@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({
             </Box>
           ))}
         </Flex>
-        <Flex gapY="s">
+        <Flex gapY="s" alignItems="center">
           {socialLinks.map(({ as: As = 'a', iconName, ...linkProps }, socialLinkIndex) => (
             <As
               key={socialLinkIndex}
