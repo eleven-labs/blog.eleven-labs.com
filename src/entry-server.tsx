@@ -7,7 +7,6 @@ import ReactDOMServer from 'react-dom/server';
 import { createStaticRouter, StaticRouterProvider } from 'react-router-dom/server';
 
 import { routes } from '@/config/router';
-import { cookieConsentConfig } from '@/config/website';
 import { BASE_URL } from '@/constants';
 import { RootContainer } from '@/containers/RootContainer';
 import { HtmlTemplate, HtmlTemplateProps } from '@/templates/HtmlTemplate';
@@ -22,9 +21,6 @@ export const render = async (options: RenderOptions): Promise<string> => {
   const dispatcher = createDispatcher();
   const { query } = createStaticHandler(routes, { basename: BASE_URL });
   const context = await query(options.request);
-  const consent: HtmlTemplateProps['consent'] = options.cookies?.[cookieConsentConfig.name]
-    ? JSON.parse(options.cookies[cookieConsentConfig.name])
-    : undefined;
 
   if (context instanceof Response) {
     throw context;
@@ -63,7 +59,6 @@ export const render = async (options: RenderOptions): Promise<string> => {
             ...link,
           })) ?? []),
         ]}
-        consent={consent}
       />
     </React.StrictMode>
   );

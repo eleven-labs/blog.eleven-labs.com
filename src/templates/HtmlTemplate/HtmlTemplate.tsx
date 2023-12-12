@@ -11,7 +11,6 @@ export interface HtmlTemplateProps {
   links?: Array<React.LinkHTMLAttributes<HTMLLinkElement>>;
   styles?: Array<React.StyleHTMLAttributes<HTMLStyleElement> & { text: string }>;
   scripts?: Array<React.ScriptHTMLAttributes<HTMLScriptElement> & { critical?: boolean; text?: string }>;
-  consent?: { ad_storage: boolean; analytics_storage: boolean };
 }
 
 const ldJsonType = 'application/ld+json';
@@ -74,12 +73,7 @@ export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({
       {renderScripts(scripts?.filter((script) => ldJsonType === (script.type as string)))}
       <script
         dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', {
-  'ad_storage': '${consent?.ad_storage ? 'granted' : 'denied'}',
-  'analytics_storage': '${consent?.analytics_storage ? 'granted' : 'denied'}',
-});`,
+          __html: `window.dataLayer = window.dataLayer || [];`,
         }}
       />
       <script

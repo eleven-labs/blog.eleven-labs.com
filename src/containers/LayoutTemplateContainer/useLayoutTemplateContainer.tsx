@@ -7,7 +7,6 @@ import { matchPath, useLocation } from 'react-router-dom';
 import { themeColor } from '@/config/website';
 import { GOOGLE_SITE_VERIFICATION } from '@/constants';
 import { PATHS } from '@/constants';
-import { CookieConsentContainer } from '@/containers/CookieConsentContainer';
 import { HeaderContainer } from '@/containers/HeaderContainer';
 import { useFooterContainer } from '@/containers/LayoutTemplateContainer/useFooterContainer';
 import { getPathFile } from '@/helpers/assetHelper';
@@ -19,7 +18,6 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   const location = useLocation();
   const footer = useFooterContainer();
   const isHomePage = Boolean(matchPath(PATHS.ROOT, location.pathname));
-  const [cookieConsent, setCookieConstent] = useState<ReactPortal | null>(null);
 
   useHead({
     metas: [
@@ -68,10 +66,6 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   useLink({ rel: 'apple-touch-icon', sizes: '180x180', href: getPathFile('/imgs/icons/apple-icon-180x180.png') });
 
   useEffect(() => {
-    setCookieConstent(createPortal(<CookieConsentContainer />, document.body));
-  }, []);
-
-  useEffect(() => {
     window.scrollTo(0, 0);
 
     const clickEventElements = getClickEventElements();
@@ -90,6 +84,5 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   return {
     header: <HeaderContainer />,
     footer,
-    cookieConsent,
   };
 };
