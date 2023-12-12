@@ -380,7 +380,7 @@ Cons
 
 ## Interesting links
 
-* [Handle exceptions gracefully](/en/php_handle-exception-gracefully/)
+* [Handle exceptions gracefully](/en/php-handle-exception-gracefully/)
 * [Errors in PHP 7](http://php.net/manual/fr/language.errors.php7.php)
 * [Example](https://3v4l.org/sDMsv)
 * [Throwable Exceptions and Errors in PHP 7](https://trowski.com/2015/06/24/throwable-exceptions-and-errors-in-php7/)

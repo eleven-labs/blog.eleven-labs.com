@@ -170,7 +170,7 @@ On voit que cela devient légèrement plus complexe d'arriver à ses fins, et ce
 
 ### STUN/ICE
 
-En ce qui concerne le serveur de liaison *STUN/ICE*, si on ne passe pas par un service de *signaling* dédié, Google fournit une instance publique à l'adresse [stun.l.google.com:19302](19302). Il existe également une application serveur open-source développée en *C/C++* pour déployer sa propre instance *STUN/ICE* et *TURN* : <https://github.com/coturn/coturn>.
+En ce qui concerne le serveur de liaison *STUN/ICE*, si on ne passe pas par un service de *signaling* dédié, Google fournit une instance publique à l'adresse `stun.l.google.com:19302`. Il existe également une application serveur open-source développée en *C/C++* pour déployer sa propre instance *STUN/ICE* et *TURN* : <https://github.com/coturn/coturn>.
 
 Conclusion
 ==========

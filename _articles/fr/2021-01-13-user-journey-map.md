@@ -59,7 +59,7 @@ Toutefois, s’il est assez aisé de réunir les utilisateurs d’un produit Saa
 
 Vous pourrez alors :
 
-- mener des [entretiens utilisateurs](https://blog.eleven-labs.com/fr/mener-entretien-utilisateur-benoit-blanc/),
+- mener des [entretiens utilisateurs]({BASE_URL}/fr/mener-entretien-utilisateur-benoit-blanc/),
 
 - étudier les données de navigation, de parcours et heatmap sur votre site web via des outils tels que [Google Analytics](https://analytics.google.com/analytics/web/provision/#/provision), [Amplitude](https://amplitude.com/why-amplitude) ou encore [Hotjar](https://www.hotjar.com/?utm_campaign=HJ-Europe-Branded&utm_source=google&utm_medium=cpc&ads_adid=68694321016&ads_targetid=kwd-301757736238&utm_term=hotjar&keyword=hotjar&matchtype=e&geo=9056143&ads_creative=417642434545&ads_network=g&device=c&adpos=&gclid=Cj0KCQiA6Or_BRC_ARIsAPzuer-tUFomgc0zW2yUcfBOkWdno7p6i36IHZexxgXdwg1SkIjn6sWyLBYaAoZgEALw_wcB),
 

@@ -303,7 +303,7 @@ Les Design Pattern qui ne sont pas structurants, c'est-à-dire qui ne façonnent
 
 Par exemple, le Singleton est implémenté exactement de la même manière que sur une autre plateforme. Il en va de même pour la Factory.
 
-Concernant le Design Pattern Observer, il est très répandu grâce à la profusion des listeners (Cf. [Android : Pourquoi j'aime les Listeners](https://blog.eleven-labs.com/fr/android-listeners/)), mais aussi et surtout aux librairies tels qu'[Otto](http://square.github.io/otto/) de Square, [EventBus](https://github.com/greenrobot/EventBus) de GreenRobot ou même encore [Guava](https://github.com/google/guava/wiki/EventBusExplained) de Google.
+Concernant le Design Pattern Observer, il est très répandu grâce à la profusion des listeners (Cf. [Android : Pourquoi j'aime les Listeners]({BASE_URL}/fr/android-listeners/)), mais aussi et surtout aux librairies tels qu'[Otto](http://square.github.io/otto/) de Square, [EventBus](https://github.com/greenrobot/EventBus) de GreenRobot ou même encore [Guava](https://github.com/google/guava/wiki/EventBusExplained) de Google.
 
 # Conclusion
 

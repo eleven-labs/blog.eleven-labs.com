@@ -87,7 +87,7 @@ On pourra réfléchir à optimiser le design et le parcours sur l’interface av
 -   Opter pour un design épuré pour une meilleure lisibilité et accessibilité de votre site. Privilégier par exemple les icônes aux images, limiter les images lourdes et utiliser les formats webs pour améliorer les temps de chargement, éviter au maximum les animations, vidéos, GIF.
     Réutiliser les images : vous n’avez pas forcément besoin d’une nouvelle image pour chaque page ou contenu !
 
--   Bien penser le contenu et le découpage des encarts de texte pour faciliter la lecture et encore une fois l’accessibilité (plus d’infos dans l’article [UX WRITING : INTRODUCTION ET BONNES PRATIQUES](https://blog.eleven-labs.com/fr/UX-Writing-Introduction-et-bonnes-pratiques/))
+-   Bien penser le contenu et le découpage des encarts de texte pour faciliter la lecture et encore une fois l’accessibilité (plus d’infos dans l’article [UX WRITING : INTRODUCTION ET BONNES PRATIQUES]({BASE_URL}/fr/UX-Writing-Introduction-et-bonnes-pratiques/))
 
 -   Limiter le nombre de polices et de couleurs utilisées
 
@@ -97,7 +97,7 @@ Il conviendra de challenger régulièrement, avec l’équipe de développement,
     Qualifier la donnée allégera votre UX et vos bases de données.
 
 -   A-t-on besoin que la fonctionnalité soit en temps réel ?
-    Si ce n’est pas le cas, traiter la demande quand les serveurs sont le moins sous pression ou, si vous le pouvez, lancer une instance serveur pour traiter toutes les demandes en même temps permettra de réduire la consommation de votre infrastructure. Cela passe par de l’asynchrone, avec [RabbitMQ](https://blog.eleven-labs.com/tag/rabbitmq.html) par exemple.
+    Si ce n’est pas le cas, traiter la demande quand les serveurs sont le moins sous pression ou, si vous le pouvez, lancer une instance serveur pour traiter toutes les demandes en même temps permettra de réduire la consommation de votre infrastructure. Cela passe par de l’asynchrone, avec [RabbitMQ]({BASE_URL}/tag/rabbitmq.html) par exemple.
 
 -   Peut-on favoriser un moteur de recherche performant ou des filtres pour que l’utilisateur puisse affiner une recherche par exemple et accéder plus rapidement à l’information ?
 

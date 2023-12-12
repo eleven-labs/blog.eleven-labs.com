@@ -19,7 +19,7 @@ keywords:
 
 As a PO or product manager, you can develop yourself some features that may be repetitive and uninspiring for your developers, without much added value. This allows teams to focus on the essentials, while leaving more time available to think about the architecture and the various technical challenges. To test a new idea and/or market without investing too much, a NoCode tool is a real solution.
 
-I already showcased here the open-source projet [n8n](https://blog.eleven-labs.com/fr/outil-low-code-automatisation-workflow-n8n/) (post in french), a tool dedicated to make Low Code automation. [Integromat](https://www.integromat.com/) aims to go even further with plain NoCode, even usable wihout any technical background.
+I already showcased here the open-source projet [n8n]({BASE_URL}/fr/outil-low-code-automatisation-workflow-n8n/) (post in french), a tool dedicated to make Low Code automation. [Integromat](https://www.integromat.com/) aims to go even further with plain NoCode, even usable wihout any technical background.
 
 To try Integromat, a freeplan is available to create your first scenarios. After that, it is easy to go from a PoC to a professional use, using their affordable plans.
 

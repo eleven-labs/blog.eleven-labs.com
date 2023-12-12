@@ -22,7 +22,7 @@ keywords:
 
 ## Intro
 
-Bon ! Vous avez fluidifié les interactions de votre application grâce à [l’optimistic ui](https://blog.eleven-labs.com/fr/optimistic-ui-avec-react-et-apollo-js/), vous avez diminué l'impression d’attente lors du chargement de vos pages grâce au [skeleton screen](https://blog.eleven-labs.com/fr/skeleton-screen-avec-react-et-apollo-js/), et malgré tout ça vos pages mettent encore trop longtemps à s'afficher. J’ai une petite question pour vous :
+Bon ! Vous avez fluidifié les interactions de votre application grâce à [l’optimistic ui]({BASE_URL}/fr/optimistic-ui-avec-react-et-apollo-js/), vous avez diminué l'impression d’attente lors du chargement de vos pages grâce au [skeleton screen]({BASE_URL}/fr/skeleton-screen-avec-react-et-apollo-js/), et malgré tout ça vos pages mettent encore trop longtemps à s'afficher. J’ai une petite question pour vous :
 
 Qu’est-ce qui fait en moyenne 50% du poids de votre page (selon [HTTP Archive](https://httparchive.org/)) et qui serait susceptible de ralentir le chargement de notre site ?
 .
@@ -164,7 +164,7 @@ const ImageLazyLoad = ({ className, url, alt, placeholder = null, forcePreloadIm
 export default ImageLazyLoad;
 ```
 
-Dans ce composant nous utilisons le retour de **useIntersectionObserver** afin de savoir quand charger l'image. Pour cela nous utilisons l'objet **Image**  et sa fonction **onLoad**  qui nous permet de savoir quand l'image à fini de charger et ainsi quand interchanger le placeholder (par défaut le skeleton item créé dans cet [article](https://blog.eleven-labs.com/fr/skeleton-screen-avec-react-et-apollo-js/) ) et l'image définitive. On n'oublie pas de rajouter une seconde image dans une balise **\<noscript\>** afin de référencer notre image.
+Dans ce composant nous utilisons le retour de **useIntersectionObserver** afin de savoir quand charger l'image. Pour cela nous utilisons l'objet **Image**  et sa fonction **onLoad**  qui nous permet de savoir quand l'image à fini de charger et ainsi quand interchanger le placeholder (par défaut le skeleton item créé dans cet [article]({BASE_URL}/fr/skeleton-screen-avec-react-et-apollo-js/) ) et l'image définitive. On n'oublie pas de rajouter une seconde image dans une balise **\<noscript\>** afin de référencer notre image.
 
 Voici le résultat :
 

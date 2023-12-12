@@ -27,7 +27,7 @@ keywords:
 
 Si vous suivez notre blog ou nos différents meetups, vous avez sans doute entendu parler de la librairie React Apollo afin de gérer une API GraphQL. Depuis peu, **celle-ci propose une autre manière de gérer le state de votre application React afin de ne pas avoir à gérer un Redux**, il est temps de voir ça d'un peu plus près !
 
-Cela fait quelques années que les développeurs utilisent le duo React/Redux pour leurs applications front-end, ce dernier permettant de centraliser les données dans un store. Je pars du principe que vous êtes déjà familier avec ce concept, sinon je vous invite à en apprendre plus via [nos autres articles sur le blog](https://blog.eleven-labs.com/fr/redux-structurez-vos-applications-front/).
+Cela fait quelques années que les développeurs utilisent le duo React/Redux pour leurs applications front-end, ce dernier permettant de centraliser les données dans un store. Je pars du principe que vous êtes déjà familier avec ce concept, sinon je vous invite à en apprendre plus via [nos autres articles sur le blog]({BASE_URL}/fr/redux-structurez-vos-applications-front/).
 
 Même si Redux est encore très présent, de nouveaux moyens permettent de gérer les données de son application comme le tout nouveau ContextAPI intégré directement à React. Pour ceux qui utilisent Apollo pour gérer une API GraphQL, sachez qu'il intégre également sa propre gestion du store répondant au nom de Local State Management. Nous allons voir ici comment l'utiliser et pourquoi.
 

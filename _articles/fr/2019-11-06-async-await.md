@@ -18,7 +18,7 @@ Après avoir vu en profondeur comment fonctionnent les promesses et comment les 
 `Async` await nous permet de résoudre un problème né de l'utilisation de code asynchrone en javascript : le [callback hell](http://callbackhell.com/), récurrent lorsque l'on cherche à faire de l'asynchrone de manière séquentielle.
 `Async/await` n'est globalement que du sucre syntaxique, qui nous permet de lire du code asynchrone comme s'il était synchrone.
 
-⚠️ Il est important de connaître et de comprendre les promesses pour maîtriser `async/await`. Si ce n'est pas votre cas, je vous conseille de lire mon précédent [article](https://blog.eleven-labs.com/fr/lespromessesenjavascript/) qui traite justement des promesses.
+⚠️ Il est important de connaître et de comprendre les promesses pour maîtriser `async/await`. Si ce n'est pas votre cas, je vous conseille de lire mon précédent [article]({BASE_URL}/fr/lespromessesenjavascript/) qui traite justement des promesses.
 
 ![]({BASE_URL}/imgs/articles/2019-11-06-async-await/async-await.jpg)
 

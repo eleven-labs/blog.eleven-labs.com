@@ -74,7 +74,7 @@ Les exchanges distribuent ensuite des copies des messages aux _queues_ à l'aide
 Ensuite, les consumers récupèrent les messages des queues à la demande.
 
 Nous allons utiliser Swarrot Bundle pour la suite de l'exemple.
-Vous pouvez lire un article sur son fonctionnement [ici](https://blog.eleven-labs.com/fr/publier-consommer-reessayer-des-messages-rabbitmq/).
+Vous pouvez lire un article sur son fonctionnement [ici]({BASE_URL}/fr/publier-consommer-reessayer-des-messages-rabbitmq/).
 Vous pouvez, bien sûr, utiliser le composant Messenger de Symfony aussi.
 
 Je vous propose de convenir ensemble de quelques conventions à respecter pour mettre en place un Event Driven Design.

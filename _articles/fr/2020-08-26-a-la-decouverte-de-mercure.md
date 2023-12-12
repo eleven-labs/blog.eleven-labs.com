@@ -165,7 +165,7 @@ Bien évidemment, ce protocole est beaucoup plus complet qu'il n'y parait, et il
 
 ![GIF Keep your secrets]({BASE_URL}/imgs/articles/2020-08-26-a-la-decouverte-de-mercure/keep_your_secrets.gif)
 
-Cependant, un codelabs est prévu très bientôt pour approfondir tout cela, et découvrir plein d'autres choses, notamment comment sécuriser les connexions, utiliser Mercure dans une application Symfony... Le tout sur la plateforme [Eleven's Codelabs](https://codelabs.eleven-labs.com/).
+Cependant, un codelabs est prévu très bientôt pour approfondir tout cela, et découvrir plein d'autres choses, notamment comment sécuriser les connexions, utiliser Mercure dans une application Symfony... Le tout sur la plateforme [Eleven's Codelabs](/fr/creez-un-chat-avec-symfony-et-mercure/).
 
 Je vous invite bien entendu à consulter la [documentation officielle de Mercure](https://mercure.rocks/docs) qui est extrêmement bien faite, afin de pousser votre exploration encore un peu plus loin.
 

@@ -18,7 +18,7 @@ keywords:
 ---
 ![Swarrot Logo]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/logo.png)
 
-RabbitMQ is a message broker, allowing to process things asynchronously. There's already an [article](https://blog.eleven-labs.com/fr/creer-rpc-rabbitmq/) written about it, if you're not familiar with RabbitMQ.
+RabbitMQ is a message broker, allowing to process things asynchronously. There's already an [article]({BASE_URL}/fr/creer-rpc-rabbitmq/) written about it, if you're not familiar with RabbitMQ.
 
 What I'd like to talk to you about is the lifecycle of a message, with error handling. Everything in a few lines of code.
 
@@ -28,17 +28,17 @@ Therefore, we're going to configure a RabbitMQ virtual host, publish a message, 
 
 The technical solution is based on two libraries:
 
-*   [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit) : PHP library the interacts with the HTTP API of our RabbitMQ server, to create exchanges, queues...
-*   [Swarrot](https://github.com/swarrot/swarrot) : PHP library to consume and publish our messages.
+* [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit) : PHP library the interacts with the HTTP API of our RabbitMQ server, to create exchanges, queues...
+* [Swarrot](https://github.com/swarrot/swarrot) : PHP library to consume and publish our messages.
 
-Swarrot is compatible with the amqp extension of PHP, as well as the [php-amqplib](https://github.com/php-amqplib/php-amqplib) library. The PHP extension has a certain advantage on performance (written in C) over the library, based on [benchmarks](https://odolbeau.fr/blog/benchmark-php-amqp-lib-amqp-extension-swarrot.html). To install the extension, click [here](https://serverpilot.io/community/articles/how-to-install-the-php-amqp-extension.html).
-The main adversary to Swarrot, [RabbitMqBundle](https://github.com/php-amqplib/RabbitMqBundle), is not compatible with the PHP extension, and is not as simple in both configuration and usage.
+Swarrot is compatible with the amqp extension of PHP, as well as the [php-amqplib](https://github.com/php-amqplib/php-amqplib) library. The PHP extension has a certain advantage on performance (written in C) over the library, based on [benchmarks](https://odolbeau.fr/blog/benchmark-php-amqp-lib-amqp-extension-swarrot.html). To install the extension, click [here](https://serverpilot.io/community/articles/how-to-install-the-php-amqp-extension.html).
+The main adversary to Swarrot, [RabbitMqBundle](https://github.com/php-amqplib/RabbitMqBundle), is not compatible with the PHP extension, and is not as simple in both configuration and usage.
 
 ## Configuration
 
 Our first step will be to create our RabbitMQ configuration: our exchange and our queue.
 
-The RabbitMQ Admin Toolkit library, developed by _[odolbeau](https://github.com/odolbeau),_ allows us to configure our vhost very easily. Here is a basic configuration declaring an exchange and a queue, allowing us to send our mascot Wilson and his fellow friends to space:
+The RabbitMQ Admin Toolkit library, developed by _[odolbeau](https://github.com/odolbeau),_ allows us to configure our vhost very easily. Here is a basic configuration declaring an exchange and a queue, allowing us to send our mascot Wilson and his fellow friends to space:
 
 ```yaml
 # default_vhost.yml
@@ -60,7 +60,7 @@ The RabbitMQ Admin Toolkit library, developed by _[odolbeau](https://github.co
                   routing_key: send_astronaut_to_space
 ```
 
-Here, we ask the creation of an exchange named "default", and a queue named "send_astronaut_to_space", bound to our exchange via a homonym routing key.
+Here, we ask the creation of an exchange named "default", and a queue named "send_astronaut_to_space", bound to our exchange via a homonym routing key.
 A binding represents a relation between a queue and an exchange.
 
 Let's launch the command to create our vhost:
@@ -79,11 +79,11 @@ If you connect to the RabbitMQ management interface (ex: http://127.0.0.1:15672/
 
 ![Capture of exchanges created]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_exchanges.png)
 
-Click on the _Exchanges_ tab: an exchange named _default_ has been created, with a binding to our queue as indicated in our terminal.
+Click on the _Exchanges_ tab: an exchange named _default_ has been created, with a binding to our queue as indicated in our terminal.
 
 ![Capture of queues created]({BASE_URL}/imgs/articles/2017-01-23-publier-consommer-reessayer-des-messages-rabbitmq/create_queues.png)
 
-Now click on the _Queues_ tab: _send_astronaut_to_space_ is also here.
+Now click on the _Queues_ tab: _send_astronaut_to_space_ is also here.
 
 Let's take a look at the publication and consumption of messages.
 
@@ -98,7 +98,7 @@ After installing the bundle, we have to configure it:
 ```yaml
 # app/config/config.yml
 swarrot:
-    provider: pecl # pecl or amqp_lib
+    provider: pecl # pecl or amqp_lib
     connections:
         rabbitmq:
             host: '%rabbitmq_host%'
@@ -121,11 +121,9 @@ This is a configuration example. The interesting part comes around the "consumer
 
 Every message published in an exchange will be routed to a queue according to its routing jey. Therefore, we need to process a message stored in a queue. Using Swarrot, special things called _processors_ are in charge of this.
 
-To consume a message, we need to create our own processor. As indicated in the documentation, a processor is just a Symfony service who needs to implement the _ProcessInterface_ interface.
+To consume a message, we need to create our own processor. As indicated in the documentation, a processor is just a Symfony service who needs to implement the _ProcessInterface_ interface.
 
-![Swarrot - Middleware stack](https://camo.githubusercontent.com/8ac89cd415aebfb1026b2278093dbcc986b126da/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f3145615f514a486f2d3970375957386c5f62793753344e494430652d41477058527a7a6974416c59593543632f7075623f773d39363026683d373230)
-
-The particularity of processors is that they work using middlewares, allowing to add behavior before and/or after the processing of our message (our processor). That's why there is a _middleware_stack_ parameter, that holds two things: _swarrot.processor.exception_catcher_ and _swarrot.processor.ack_. Although optional, these middlewares bring nice flexibility. We'll come back on this later on.
+The particularity of processors is that they work using middlewares, allowing to add behavior before and/or after the processing of our message (our processor). That's why there is a _middleware_stack_ parameter, that holds two things: _swarrot.processor.exception_catcher_ and _swarrot.processor.ack_. Although optional, these middlewares bring nice flexibility. We'll come back on this later on.
 
 ```php
 <?php
@@ -155,7 +153,7 @@ Once again, it's very simple to publish messages with Swarrot. We only need to d
 ```yaml
 # app/config/config.yml
     consumers:
-# ...
+# ...
             middleware_stack:
                 - configurator: swarrot.processor.exception_catcher
                 - configurator: swarrot.processor.ack
@@ -167,7 +165,7 @@ Once again, it's very simple to publish messages with Swarrot. We only need to d
             routing_key: send_astronaut_to_space
 ```
 
-The secret is to declare a new message type, specifying the _connection_, _exchange_, and the _routing key._ Then publish a message this way:
+The secret is to declare a new message type, specifying the _connection_, _exchange_, and the _routing key._ Then publish a message this way:
 
 ```php
 <?php
@@ -176,9 +174,9 @@ $message = new Message('Wilson wants to go to space');
 $this->get('swarrot.publisher')->publish('send_astronaut_to_space_publisher', $message);
 ```
 
-The service _swarrot.publisher_ deals with publishing our message. Simple right?
+The service _swarrot.publisher_ deals with publishing our message. Simple right?
 
-After setting up _queues_, published and consumed a message, we now have a good view of the life-cycle of a message.
+After setting up _queues_, published and consumed a message, we now have a good view of the life-cycle of a message.
 
 ## Handling errors
 
@@ -187,11 +185,11 @@ One last aspect I'd like to share with you today is about errors while consuming
 Setting aside implementation problems in your code, it's possible that you encounter exceptions, due to external causes. For instance, you have a processor that makes HTTP calls to an outside service. The said service can be temporarily down, or returning an error. You need to publish a message and make sure that this one is not lost. Wouldn't it be great to publish this message again if the service does not respond? And do so after a certain amount of time?
 
 Somewhere along the way, I've been confronted to this problem. We knew such things could happen and we needed to automatically "retry" our messages publication.
-I'm going to show you how to proceed, keeping our example _send_astronaut_to_space._ Let's decide that we're going to retry the publication of our message 3 times maximum. To do that, we need 3 retry queues. Fortunately, configuration of retry queues and exchanges is so easy with [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit): we only need one line! Let's see this more closely :
+I'm going to show you how to proceed, keeping our example _send_astronaut_to_space._ Let's decide that we're going to retry the publication of our message 3 times maximum. To do that, we need 3 retry queues. Fortunately, configuration of retry queues and exchanges is so easy with [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit): we only need one line! Let's see this more closely :
 
 ```yaml
 # default_vhost.yml
-# ...
+# ...
 queues:
     send_astronaut_to_space:
         durable: true
@@ -226,8 +224,8 @@ Create binding between exchange default and queue send_astronaut_to_space (with 
 
 We still create a default exchange. Then, many things are done:
 
-*   Creation of an exchange called _dl_ and queues _queues_ _send_astronaut_to_space and_ _send_astronaut_to_space_dl_ : we'll come back on this later on.
-*   Creation of an exchange called _retry_ and queues _send_astronaut_to_space_retry_1_, _send_astronaut_to_space_retry_2_ and _send_astronaut_to_space_retry_3_: here is the interesting part, all queues that will be used to do a retry of our message.
+*   Creation of an exchange called _dl_ and queues _queues_ _send_astronaut_to_space and_ _send_astronaut_to_space_dl_ : we'll come back on this later on.
+*   Creation of an exchange called _retry_ and queues _send_astronaut_to_space_retry_1_, _send_astronaut_to_space_retry_2_ and _send_astronaut_to_space_retry_3_: here is the interesting part, all queues that will be used to do a retry of our message.
 
 Now let's configure our consumer.
 
@@ -236,7 +234,7 @@ With Swarrot, handling of retries is very easy to configure. Do you remember tho
 ```yaml
 # app/config/config.yml
     consumers:
-# ...
+# ...
             middleware_stack:
                 - configurator: swarrot.processor.exception_catcher
                 - configurator: swarrot.processor.ack
@@ -253,13 +251,13 @@ With Swarrot, handling of retries is very easy to configure. Do you remember tho
             routing_key: send_astronaut_to_space
 ```
 
-The main difference with our previous configuration is located around the parameter _middleware_stack_: we need to add the processor _swarrot.processor.retry_, with its retry strategy:
+The main difference with our previous configuration is located around the parameter _middleware_stack_: we need to add the processor _swarrot.processor.retry_, with its retry strategy:
 
 *   the name of the retry exchange (defined above)
 *   the number of publishing attempts
 *   the pattern of retry queues
 
-The workflow works this way: if the message is not _acknowledged_ followingan exception the first time, it will be published in the _retry_ exchange_,_ with routing key_send_astronaut_to_space_retry_1\._ Then, 5 seconds later, the message is published back in our main queue _send_astronaut_to_space_. If another error is encountered, it will be republished in the retry exchange, with the routing key _send_astronaut_to_space_retry_2_, and 25 seconds later the message will be back on our main queue. Same thing one last time with 100 seconds.
+The workflow works this way: if the message is not _acknowledged_ followingan exception the first time, it will be published in the _retry_ exchange_,_ with routing key_send_astronaut_to_space_retry_1\._ Then, 5 seconds later, the message is published back in our main queue _send_astronaut_to_space_. If another error is encountered, it will be republished in the retry exchange, with the routing key _send_astronaut_to_space_retry_2_, and 25 seconds later the message will be back on our main queue. Same thing one last time with 100 seconds.
 
 ```bash
 bin/console swarrot:consume:send_astronaut_to_space send_astronaut_to_space
@@ -271,10 +269,10 @@ bin/console swarrot:consume:send_astronaut_to_space send_astronaut_to_space
 [2017-01-12 12:55:51] app.ERROR: [ExceptionCatcher] An exception occurred. This exception has been caught. {"swarrot_processor":"exception","exception":"[object] (Exception(code: 0): An error occurred while consuming hello at /home/gus/dev/swarrot/src/AppBundle/Processor/SendAstronautToSpace.php:12)"}
 ```
 
-When creating our virtual host, we saw that an exchange called _dl ,_ associated to a queue _send_astronaut_to_space_dl_ has been created. This queue is our message's last stop if the retry mechanism is not able to successfully publish our message (an error is still encountered after each retry).
-If we look closely the details of queue _send_astronaut_to_space_, we see that "_x-dead-letter-exchange_" is equal to"_dl_", and that "_x-dead-letter-routing-key_" is equal to "_send_astronaut_to_space_", corresponding to our binding explained previously.
+When creating our virtual host, we saw that an exchange called _dl ,_ associated to a queue _send_astronaut_to_space_dl_ has been created. This queue is our message's last stop if the retry mechanism is not able to successfully publish our message (an error is still encountered after each retry).
+If we look closely the details of queue _send_astronaut_to_space_, we see that "_x-dead-letter-exchange_" is equal to"_dl_", and that "_x-dead-letter-routing-key_" is equal to "_send_astronaut_to_space_", corresponding to our binding explained previously.
 
-On every error in our processor, the _retryProcessor_ will catch this error, and republish our message in the retry queue as many times as we've configured it. Then Swarrot will hand everything to RabbitMQ to route our message to the queue queue _send_astronaut_to_space_dl._
+On every error in our processor, the _retryProcessor_ will catch this error, and republish our message in the retry queue as many times as we've configured it. Then Swarrot will hand everything to RabbitMQ to route our message to the queue queue _send_astronaut_to_space_dl._
 
 ## Conclusion
 
@@ -283,5 +281,5 @@ Tied to RabbitMQ Admin Toolkit to configure exchanges and queues, Swarrot will a
 
 ## References
 
-*   [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit)
-*   [Swarrot](https://github.com/swarrot/swarrot)
+* [RabbitMQ Admin Toolkit](https://github.com/odolbeau/rabbit-mq-admin-toolkit)
+* [Swarrot](https://github.com/swarrot/swarrot)

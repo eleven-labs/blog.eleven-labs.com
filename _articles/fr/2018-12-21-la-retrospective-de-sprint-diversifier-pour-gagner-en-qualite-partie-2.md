@@ -21,7 +21,7 @@ keywords:
 ---
 ## INTRODUCTION
 
-J’avais abordé dans un précédent article (https://blog.eleven-labs.com/fr/retrospective-de-sprint-gagner-en-qualite/) l'intérêt de diversifier les types de rétrospectives de sprint. Pour rappel, il s’agissait essentiellement de gagner en motivation pour gagner en qualité, j’avais alors rappelé quelques recettes « de bases » pour animer cela.
+J’avais abordé dans un [précédent article]({BASE_URL}/fr/retrospective-de-sprint-gagner-en-qualite/) : l'intérêt de diversifier les types de rétrospectives de sprint. Pour rappel, il s’agissait essentiellement de gagner en motivation pour gagner en qualité, j’avais alors rappelé quelques recettes « de bases » pour animer cela.
 
 Prêt pour le niveau suivant ? Si vous « masterisez » les principes de base, il est maintenant temps de se pencher sur des versions plus évoluées, qui vous permettront notamment d’aborder des situations différentes et récolter des informations parfois plus pertinentes.
 
@@ -386,7 +386,7 @@ J’espère que cette partie II de mon article vous aura permis de parfaire vos 
 
 Vous verrez, en fonction de l’avancement d’un projet, il se peut que certaines méthodes s’imposent comme une nécessité, inutile donc de se forcer.
 
-Bien que nous nous soyions exclusivement concentrés sur du recueil de données avec l’utilisation de post-it, il existe de nombreuses autres méthodes qui viennent jouer sur les autres étapes de la rétrospective (souvenez-vous, au début : ouverture, recueil, génération d’idées, plan d’action, clôture). À ce titre, [un très bon article de Charles-Eric Gorron](https://blog.eleven-labs.com/fr/amelioration-continue-comment-animer-vos-retrospectives-agiles/) en trace les grandes lignes.
+Bien que nous nous soyions exclusivement concentrés sur du recueil de données avec l’utilisation de post-it, il existe de nombreuses autres méthodes qui viennent jouer sur les autres étapes de la rétrospective (souvenez-vous, au début : ouverture, recueil, génération d’idées, plan d’action, clôture). À ce titre, [un très bon article de Charles-Eric Gorron]({BASE_URL}/fr/amelioration-continue-comment-animer-vos-retrospectives-agiles/) en trace les grandes lignes.
 
 Essayez-vous à ces différents formats et venez partager en commentaire vos REX et suggestions de type de rétrospectives !
 

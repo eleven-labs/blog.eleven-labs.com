@@ -31,7 +31,7 @@ Bien entendu, ces principes d'intégration pourraient s'appliquer également à 
 
 Pour réaliser cette intégration, nous allons adopter une approche basée sur le concept d'*Event Driven Design*, où des événements (events) se déclenchent des deux côtés de l'équation, et nous utiliserons l'outil RabbitMQ pour faciliter cette synchronisation bidirectionnelle.
 
-Je vous invite à consulter cet [article de Marie](https://blog.eleven-labs.com/fr/event-driven-architecture-examples/) qui explore plus en profondeur ce concept d'*Event Driven* que nous utilisons de manière générale pour communiquer entre nos applications, que ce soient des microservices ou avec des applications externes comme des CRMs.
+Je vous invite à consulter cet [article de Marie]({BASE_URL}/fr/event-driven-architecture-examples/) qui explore plus en profondeur ce concept d'*Event Driven* que nous utilisons de manière générale pour communiquer entre nos applications, que ce soient des microservices ou avec des applications externes comme des CRMs.
 
 Par exemple, des événements peuvent provenir de notre plateforme e-commerce (comme `business_created` ou `purchase_updated`) et aussi du CRM (comme `company_edited`). Les événements se manifestent des deux côtés.
 
@@ -57,7 +57,7 @@ Mais cela nécessiterait de faire plusieurs appels API pour récupérer toutes l
 
 Imaginons aussi qu'un problème survienne au moment de la synchronisation des `Contacts` de la `Company` en question, à cause d'un souci d'accès à l'API HubSpot ou la base de données de notre e-commerce par exemple, nous aurions une `Company` enregistrée sans aucun `Contact`, et une erreur dans les logs. Il faudrait re-GET les informations des `Contacts` liés à cette `Company`.
 
-Ainsi, lors de notre implémentation, nous avons opté pour une approche plus adaptée basée sur de l'*Event Driven Design* ([lien vers l'article de Marie](https://blog.eleven-labs.com/fr/event-driven-architecture-examples/)),
+Ainsi, lors de notre implémentation, nous avons opté pour une approche plus adaptée basée sur de l'*Event Driven Design* ([lien vers l'article de Marie]({BASE_URL}/fr/event-driven-architecture-examples/)),
 asynchrone, avec une politique de "retry" pour gérer au mieux les possibles erreurs, le tout orchestré par un microservice dédié à cette synchronisation.
 
 ### Un microservice responsable de la synchronisation
@@ -107,7 +107,7 @@ Enfin, la synchronisation s'effectue dans l'autre sens (bidirectionnelle) : de l
 
 ### Retry
 
-On en avait parlé dans [un article précédent](https://blog.eleven-labs.com/fr/publier-consommer-reessayer-des-messages-rabbitmq/) : nous pouvons facilement configurer une stratégie de "retry" sur chaque queue et consumer RabbitMQ, avec la possiblité de configurer des durées et timeout de retry différents par process.
+On en avait parlé dans [un article précédent]({BASE_URL}/fr/publier-consommer-reessayer-des-messages-rabbitmq/) : nous pouvons facilement configurer une stratégie de "retry" sur chaque queue et consumer RabbitMQ, avec la possiblité de configurer des durées et timeout de retry différents par process.
 
 Cette stratégie de "retry" permise par RabbitMQ est un point important dans notre implémentation de processus de synchronisation pour être résilient aux erreurs et parce que nous dépendons d'un CRM en service externe SaaS que nous ne maîtrisons pas. Ainsi si ce service est temporairement indisponible, nous laissons nos consumers "retry" jusqu'à ce que le service soit fonctionnel à nouveau.
 

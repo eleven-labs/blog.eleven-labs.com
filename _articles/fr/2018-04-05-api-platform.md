@@ -22,7 +22,7 @@ keywords:
   - redux
   - api platform
 ---
-Dans la continuité de l'article de notre très cher confrère Romain Pierlot sur [Api Platfrom](https://blog.eleven-labs.com/fr/creer-une-api-avec-api-platform/), nous allons essayer de faire le tour des nouvelles fonctionnalités de ce framework, et par la même occasion,  mettre en place une application web, comportant une api `REST Hydra` / `Graphql` avec un backend et un client full Javascript.
+Dans la continuité de l'article de notre très cher confrère Romain Pierlot sur [Api Platfrom]({BASE_URL}/fr/creer-une-api-avec-api-platform/), nous allons essayer de faire le tour des nouvelles fonctionnalités de ce framework, et par la même occasion,  mettre en place une application web, comportant une api `REST Hydra` / `Graphql` avec un backend et un client full Javascript.
 
 Pour les présentations, [API Platform](https://api-platform.com/) se veut être un framework complet permettant de créer des projets web se basant sur des APIs orientées ressource, ce qui est un peu le standard d'architecture des besoins contemporains de notre domaine.
 
