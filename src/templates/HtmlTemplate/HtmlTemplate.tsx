@@ -30,16 +30,7 @@ const renderScripts = (scripts: HtmlTemplateProps['scripts']): JSX.Element[] | u
     />
   ));
 
-export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({
-  lang,
-  title,
-  content,
-  metas,
-  links,
-  styles,
-  scripts,
-  consent,
-}) => (
+export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ lang, title, content, metas, links, styles, scripts }) => (
   <html lang={lang}>
     <head>
       <meta charSet="UTF-8" />
