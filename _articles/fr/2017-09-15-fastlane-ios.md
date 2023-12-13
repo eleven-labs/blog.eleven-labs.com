@@ -252,7 +252,7 @@ On vient de voir avec quelle facilité on gère les certificats et profils de pr
 
 # PEM
 
-Si vous avez lu mon précédent article [Envoyer des push notifications via Amazon SNS en Swift 3](/fr/envoyer-push-notifications-amazon-sns-swift-3/), vous avez vite compris que c'était super "galère" de faire ceci à la main.
+Si vous avez lu mon précédent article [Envoyer des push notifications via Amazon SNS en Swift 3]({BASE_URL}/fr/envoyer-push-notifications-amazon-sns-swift-3/), vous avez vite compris que c'était super "galère" de faire ceci à la main.
 
 Mais ça c'était avant !
 

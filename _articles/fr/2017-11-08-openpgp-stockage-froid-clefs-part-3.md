@@ -109,10 +109,10 @@ Cet article permet de conclure sur cette série OpenPGP. Nous avons vu la géné
 Toutes les étapes décrites tout au long de ces articles nous font prendre conscience que la sécurité n'est pas un sujet abordable pour tous, qui reste néanmoins compréhensible lorsque bien expliqué.
 
 ## Article en relation
-* [OpenPGP - Une paire de clés presque parfaite (partie 1)](/fr/openpgp-paire-clef-presque-parfaite-partie-1/)
-* [OpenPGP - Exporter les clefs secrètes sur une Yubikey (partie 2)](/fr/openpgp-clef-secrete-yubikey-partie-2/)
-* [OpenPGP - Stockage sur le long terme de clefs (partie 3)](/fr/openpgp-stockage-froid-clefs-partie-3/)
-* [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)](/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
+* [OpenPGP - Une paire de clés presque parfaite (partie 1)]({BASE_URL}/fr/openpgp-paire-clef-presque-parfaite-partie-1/)
+* [OpenPGP - Exporter les clefs secrètes sur une Yubikey (partie 2)]({BASE_URL}/fr/openpgp-clef-secrete-yubikey-partie-2/)
+* [OpenPGP - Stockage sur le long terme de clefs (partie 3)]({BASE_URL}/fr/openpgp-stockage-froid-clefs-partie-3/)
+* [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)]({BASE_URL}/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
 
 ## Ressources
 

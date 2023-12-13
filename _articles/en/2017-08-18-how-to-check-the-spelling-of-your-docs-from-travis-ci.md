@@ -18,7 +18,7 @@ keywords:
   - spelling
 ---
 
-Our blog is built with Jekyll and Github Pages: [more details there (in French)](/fr/migration-du-blog/). So to publish any blog post, each author has to open a new pull request on Github to submit his new markdown files.
+Our blog is built with Jekyll and Github Pages: [more details there (in French)]({BASE_URL}/fr/migration-du-blog/). So to publish any blog post, each author has to open a new pull request on Github to submit his new markdown files.
 Then the other astronauts can review what was written before merging, i.e. publishing the post. Of course the goal of this review is to make sure everything is explained properly and not to find all the typos, otherwise reviewing would be boring! ;)
 
 That's why we needed to find a way to easily find the misspelled words in the files changed in each pull request, to ease the reviewing process. Of course we knew that none of the automated spell checkers were perfect, we just wanted this tool to send notifications about the mistakes on the pull requests without blocking the developers to merge.

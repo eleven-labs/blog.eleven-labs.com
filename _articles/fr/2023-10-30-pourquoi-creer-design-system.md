@@ -207,7 +207,7 @@ Du point de vue technique, la création d'un Design System pour du Web implique 
 
 - **Styles avec PostCSS ou CSS-in-JS :**
 
-Pour définir les styles et les Design Tokens, vous avez le choix entre des outils tels que PostCSS, SCSS, avec l'utilisation de la méthodologie [BEM](/fr/retour-d-experience-sur-bem/), ou du CSS-in-JS. Ces approches offrent une manière structurée et maintenable de gérer les styles, en garantissant la cohérence et la réutilisabilité.
+Pour définir les styles et les Design Tokens, vous avez le choix entre des outils tels que PostCSS, SCSS, avec l'utilisation de la méthodologie [BEM]({BASE_URL}/fr/retour-d-experience-sur-bem/), ou du CSS-in-JS. Ces approches offrent une manière structurée et maintenable de gérer les styles, en garantissant la cohérence et la réutilisabilité.
 
 - **Web Components ou bibliothèque (React, VueJS, ...) :**
 
@@ -236,7 +236,7 @@ Dans certaines organisations, chacun de ces acteurs peut se concentrer exclusive
 
 L'organisation est un acteur clé de cette collaboration en veillant à ce que tous les membres de l'équipe aient accès aux composants et aux directives nécessaires. La mise en place de mécanismes de communication et de partage efficaces est essentielle pour assurer la cohérence et la pérennité du Design System.
 
-Pour approfondir l'importance de cette collaboration, nous vous invitons à consulter notre [article qui traite de ce sujet ainsi que des design tokens](/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/).
+Pour approfondir l'importance de cette collaboration, nous vous invitons à consulter notre [article qui traite de ce sujet ainsi que des design tokens]({BASE_URL}/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/).
 
 ## Conclusion : la création d'un design system, élément clé de l'évolution de votre entreprise
 
