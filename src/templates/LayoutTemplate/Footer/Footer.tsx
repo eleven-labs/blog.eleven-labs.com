@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({
           <Logo name="website" size="2.5em" />
         </Flex>
         <Text>{introBlock.title}</Text>
-        <Text fontWeight="bold" mb="s">
+        <Text fontWeight="bold" mb="s" mx={{ xs: 's', md: '0' }}>
           {introBlock.description}
         </Text>
         <Button {...(elevenLabsSiteLinkProps as typeof Button)}>{elevenLabsSiteLinkLabel}</Button>
