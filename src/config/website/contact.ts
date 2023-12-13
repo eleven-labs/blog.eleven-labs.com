@@ -8,7 +8,7 @@ export const contact = {
     },
     {
       name: 'Eleven Labs - Nantes',
-      address: [`42, rue la Tour d'Auvergne`, '44200 Nantes'],
+      address: [`40, rue la Tour d'Auvergne`, '44200 Nantes'],
     },
     {
       name: 'Eleven Labs - Montréal',
