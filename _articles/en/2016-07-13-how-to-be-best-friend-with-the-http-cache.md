@@ -267,6 +267,6 @@ Test
 ```
 
 Varnish will recognize the use of an ESI and will therefore cache two objects, one for the full page with the cache data of the page and one for ESI with other cache data. You can then uncache the ESI only and Varnish will update a single object (only one request to the server); the user has all the pages updated just the same.
-For further information, I suggest you look at a previous [article](https://blog.eleven-labs.com/symfony-2-cache-http-esi/), which explains an implementation for Symfony.
+For further information, I suggest you look at a previous [article]({BASE_URL}/symfony-2-cache-http-esi/), which explains an implementation for Symfony.
 You can also find a presentation about HTTP caches and Symfony [ici](https://docs.google.com/presentation/d/1RVr_JfpFKVRXdg4hy6war3OfiSJtdeYzFsdxhn2t0NY/edit?usp=sharing).
 .

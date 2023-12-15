@@ -385,7 +385,7 @@ Les points négatifs
 
 ## Autres articles intéressants
 
-* [Bien gérer ses exceptions](/fr/php_bien-gerer-ses-exceptions/)
+* [Bien gérer ses exceptions]({BASE_URL}/fr/php_bien-gerer-ses-exceptions/)
 * [Errors in PHP 7](http://php.net/manual/fr/language.errors.php7.php)
 * [Example](https://3v4l.org/sDMsv)
 * [Throwable Exceptions and Errors in PHP 7](https://trowski.com/2015/06/24/throwable-exceptions-and-errors-in-php7/)

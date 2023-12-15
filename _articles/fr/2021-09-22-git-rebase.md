@@ -19,7 +19,7 @@ Aujourd'hui, nous utilisons tous git pour gérer le code source des projets, que
 Nous savons tous commiter ou tirer des modifications. Mais il y a un problème assez récurrent dans les projets à plusieurs collaborateurs : les conflits.
 Pour mieux les gérer et les éviter, je vous propose d'aborder une commande git : rebase.
 
-*Notez qu'après lecture de ces quelques lignes, un autre article sera susceptible de vous intéresser aussi, intitulé [Introduction à Gitlab CI/CD](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/) (qui comme son nom l'indique vous initie au fonctionnement de Gitlab CI/CD). N'hésitez pas à aller y jeter un oeil :)* 
+*Notez qu'après lecture de ces quelques lignes, un autre article sera susceptible de vous intéresser aussi, intitulé [Introduction à Gitlab CI/CD]({BASE_URL}/fr/introduction-gitlab-ci/) (qui comme son nom l'indique vous initie au fonctionnement de Gitlab CI/CD). N'hésitez pas à aller y jeter un oeil :)*
 
 ## Le problème
 

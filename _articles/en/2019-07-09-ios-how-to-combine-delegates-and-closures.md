@@ -21,9 +21,9 @@ Hi astronauts, today we will keep talking about mobile development, and as alway
 
 This article is following the 2 previous ones, and it's mandatory that you read them before, in order to understand what's going on in this one:
 
-[Delegates VS Closures](https://blog.eleven-labs.com/en/delegates-closures/)
+[Delegates VS Closures]({BASE_URL}/en/delegates-closures/)
 
-[Let's talk about listeners](https://blog.eleven-labs.com/en/android-listeners/)
+[Let's talk about listeners]({BASE_URL}/en/android-listeners/)
 
 
 If you have already read the 2 previous articles, I guess you already have an idea about what this one is about.

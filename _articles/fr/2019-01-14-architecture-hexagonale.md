@@ -94,6 +94,6 @@ Sources :
 * https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 
 Pour renforcer le sujet :
-* https://blog.eleven-labs.com/fr/domain-driven-design/
-* https://blog.eleven-labs.com/fr/cqrs-pattern/
+* [Domain Driven Design]({BASE_URL}/fr/domain-driven-design/)
+* [CQRS pattern]({BASE_URL}/fr/cqrs-pattern/)
 

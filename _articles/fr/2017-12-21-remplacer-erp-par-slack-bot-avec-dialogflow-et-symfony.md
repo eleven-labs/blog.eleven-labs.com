@@ -65,7 +65,7 @@ Vous l'avez compris, les possibilités sont multiples, mais concentrons nous ici
 Pour mettre en place cette première étape du process, nous avons allons donc :
 
 - Créer un **bot Slack** et le rendre accessible sur notre Workspace pour que tous les utilisateurs puissent lui envoyer des messages privés.
-- Mettre en place un agent **DialogFlow** : outil Google, anciennement appelé API.AI, déjà décrit sur notre [blog ici](/fr/dialogflow-votre-chatbot-facile/). Celui-ci va nous permettre de comprendre, grâce au *machine learning*, les messages envoyés au bot par les utilisateurs, ce qui est loin d'être simple sans ce type d'outils !
+- Mettre en place un agent **DialogFlow** : outil Google, anciennement appelé API.AI, déjà décrit sur notre [blog ici]({BASE_URL}/fr/dialogflow-votre-chatbot-facile/). Celui-ci va nous permettre de comprendre, grâce au *machine learning*, les messages envoyés au bot par les utilisateurs, ce qui est loin d'être simple sans ce type d'outils !
 - Mettre en place une application **Symfony** exposant un **webhook** qui sera appelé par le serveur Slack à chaque fois qu'un message privé est envoyé à notre bot. C'est depuis cette application que nous allons ensuite appeler DialogFlow pour interpréter le message Slack reçu, puis répondre à l'astronaute, et enfin enregistrer la demande de congés.
 
 
@@ -531,7 +531,7 @@ On remarque notre ami Google a bien su reconnaître les dates écrites en franç
 
 Je m'arrête ici pour cette fois, même si comme mentionné en première partie de cet article, il y aurait encore beaucoup à faire pour automatiser totalement ce process et ne plus jamais avoir besoin d'utiliser nos vieux ERPs : appels vers les API des calendars, utilisation des boutons Slack pour la validation, envoi de notifications Slack à tous les membres de la même équipe, ou même calcul automatique de la capacité du Sprint de l'équipe impactée par cette nouvelle demande de congés !
 
-Vous noterez que j'ai utilisé [API Platform](/fr/creer-une-api-avec-api-platform/) sur mon [projet Github](https://github.com/ch3ric/WilsonPlanning), alors qu'il n'a aucun intérêt pour cet article en particulier : car j'ai encore beaucoup d'idées en tête à implémenter pour interagir avec d'autres systèmes qui pourraient appeler cette API.
+Vous noterez que j'ai utilisé [API Platform]({BASE_URL}/fr/creer-une-api-avec-api-platform/) sur mon [projet Github](https://github.com/ch3ric/WilsonPlanning), alors qu'il n'a aucun intérêt pour cet article en particulier : car j'ai encore beaucoup d'idées en tête à implémenter pour interagir avec d'autres systèmes qui pourraient appeler cette API.
 
 Je vous tiendrai au courant des prochaines évolutions de cet outil si ça vous intéresse :P !
 Faites moi savoir en commentaire si vous avez d'autres idées d'optimisations !

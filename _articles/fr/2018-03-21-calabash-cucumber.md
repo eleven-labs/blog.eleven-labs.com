@@ -694,7 +694,7 @@ Cependant, on remarque deux contraintes à cette solution :
 
 ## Conclusion
 
-Calabash et Cucumber forment un combo de feu pour la stabilisation de vos apps (avec des [tests unitaires](https://blog.eleven-labs.com/fr/test-unitaire-swift-xcode/) bien sûr !). Ajoutez avec ça un AWS Device Farm, et vous pourrez parfaitement tester votre application sur l'ensemble des devices du marché.
+Calabash et Cucumber forment un combo de feu pour la stabilisation de vos apps (avec des [tests unitaires]({BASE_URL}/fr/test-unitaire-swift-xcode/) bien sûr !). Ajoutez avec ça un AWS Device Farm, et vous pourrez parfaitement tester votre application sur l'ensemble des devices du marché.
 
 Les avantages que j'ai remarqués sont :
 

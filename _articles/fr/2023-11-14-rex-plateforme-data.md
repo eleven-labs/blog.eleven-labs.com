@@ -51,7 +51,7 @@ La première phase commence par l'extraction des données. Le pipeline va se con
 En sources de données, j'ai :
 
 - MySQL
-- MongoDB ([voir notre article de blog sur MongoDB](https://blog.eleven-labs.com/fr/symfony-et-mongodb-retour-aux-sources/))
+- MongoDB ([voir notre article de blog sur MongoDB]({BASE_URL}/fr/symfony-et-mongodb-retour-aux-sources/))
 - Appel HTTP vers des API externes (Hubspot, Salesforce, ...)
 
 Pour la phase d'extraction et le chargement dans [Google BigQuery](https://cloud.google.com/bigquery/docs/introduction),

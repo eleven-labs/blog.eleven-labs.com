@@ -16,7 +16,7 @@ authors:
     - kdung
 ---
 
-Dans cet article, nous allons vous présenter le concept de *System Props* en illustrant leurs avantages avec des exemples concrets d'utilisation. Nous expliquerons aussi comment les mettre en place sur vos projets, comme nous l'avons fait sur les nôtres au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) à travers l'implémentation d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/).
+Dans cet article, nous allons vous présenter le concept de *System Props* en illustrant leurs avantages avec des exemples concrets d'utilisation. Nous expliquerons aussi comment les mettre en place sur vos projets, comme nous l'avons fait sur les nôtres au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) à travers l'implémentation d'un [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/).
 
 ## Que sont les System Props ?
 
@@ -28,7 +28,7 @@ Les *System Props* offrent plusieurs avantages qui contribuent à améliorer la 
 
 - **Personnalisation cohérente :**
 
-Associées aux [Design Tokens](https://blog.eleven-labs.com/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/), elles permettent de personnaliser uniformément un composant tout en gardant la flexibilité nécessaire pour des ajustements. Cette combinaison garantit la cohérence visuelle et la réactivité, en assurant que les composants respectent les normes tout en s'adaptant aux besoins changeants.
+Associées aux [Design Tokens]({BASE_URL}/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/), elles permettent de personnaliser uniformément un composant tout en gardant la flexibilité nécessaire pour des ajustements. Cette combinaison garantit la cohérence visuelle et la réactivité, en assurant que les composants respectent les normes tout en s'adaptant aux besoins changeants.
 
 - **Réduction de la duplication de code :**
 
@@ -248,7 +248,7 @@ La documentation est essentielle pour garantir que les membres de votre équipe 
 
 - **Description :** Fournissez une description de chaque prop : la propriété CSS que ce system prop impacte et sa valeur possible, si la valeur est dans le Design Token, ajoutez un lien pour rediriger vers ce token.
 
-- **Exemples :** Vous pouvez inclure des exemples d'utilisation pour montrer comment ces props peuvent être appliqués, par exemple avec un [Storybook](https://blog.eleven-labs.com/fr/storybook-creer-son-premier-composant/).
+- **Exemples :** Vous pouvez inclure des exemples d'utilisation pour montrer comment ces props peuvent être appliqués, par exemple avec un [Storybook]({BASE_URL}/fr/storybook-creer-son-premier-composant/).
 
 - **Compatibilité :** Précisez quels composants acceptent chaque System Prop et comment ils influencent le style ou le comportement.
 
@@ -256,4 +256,4 @@ La documentation est essentielle pour garantir que les membres de votre équipe 
 
 L'adoption des System Props permet d'améliorer considérablement la flexibilité, la cohérence et la standardisation au sein de vos projets de développement. Cette approche commence par l'identification des props pertinents, que ce soit pour votre projet actuel ou un design system en cours de création. Une fois ces props identifiées, l'étape suivante consiste à les intégrer harmonieusement dans vos composants, garantissant ainsi une personnalisation uniforme.
 
-Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous appliquons les System Props pour élaborer des [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) destinés à nos projets internes et à nos clients. Cette approche nous a permis de tirer parti de tous les bénéfices mentionnés dans cet article.
+Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous appliquons les System Props pour élaborer des [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/) destinés à nos projets internes et à nos clients. Cette approche nous a permis de tirer parti de tous les bénéfices mentionnés dans cet article.

@@ -24,7 +24,7 @@ Le [crypto-gaming](https://en.wikipedia.org/wiki/Blockchain_game) est en plein e
 
 Pour les personnes non familières à l’univers de la crypto, il faut avant tout comprendre le fonctionnement de plusieurs concepts.
 
-La [crypto-monnaie](https://fr.wikipedia.org/wiki/Cryptomonnaie) est une monnaie numérique qui n'a pas besoin de banque centrale, et qui se repose sur la blockchain ( [Les bases de la blockchain](https://blog.eleven-labs.com/fr/bases-blockchain/) ). Attention la blockchain ce n’est pas de la crypto-monnaie, mais c’est la technologie sur laquelle repose cette dernière.
+La [crypto-monnaie](https://fr.wikipedia.org/wiki/Cryptomonnaie) est une monnaie numérique qui n'a pas besoin de banque centrale, et qui se repose sur la blockchain ( [Les bases de la blockchain]({BASE_URL}/fr/bases-blockchain/) ). Attention la blockchain ce n’est pas de la crypto-monnaie, mais c’est la technologie sur laquelle repose cette dernière.
 
 Vous en avez peut-être déjà entendu parler dans le monde artistique et surtout sportif, le NFT remplace les cartes de collections Panini. Le [NFT](https://fr.wikipedia.org/wiki/Jeton_non_fongible) pour _Non-Fungible Token_ (en français _Jeton non fongible_) est souvent un objet numérique qui va être certifié via la blockchain comme appartenant à une identité numérique ( = un propriétaire).
 
@@ -126,7 +126,7 @@ Dans l’univers du crypto-gaming, le jeton ou NFT n’a, pour l’instant, de f
 
 ### 🌱 Une aberration écologique
 
-Ce n’est pas la première fois que je parle d’écologie sur ce blog notamment avec l’article sur [l’éco-conception](https://blog.eleven-labs.com/fr/leco-conception/). Les transactions de jetons et NFT sont calculées via de la blockchain, comme pour la crypto-monnaie. Cela demande des ressources considérables : terres rares et de l’énergie qui est souvent d’origine fossile.
+Ce n’est pas la première fois que je parle d’écologie sur ce blog notamment avec l’article sur [l’éco-conception]({BASE_URL}/fr/leco-conception/). Les transactions de jetons et NFT sont calculées via de la blockchain, comme pour la crypto-monnaie. Cela demande des ressources considérables : terres rares et de l’énergie qui est souvent d’origine fossile.
 
 À l’heure où il y a une pénurie de matériaux pour fabriquer des cartes graphiques ou des puces, les joueurs se font de l’argent sur le dos de la planète.
 

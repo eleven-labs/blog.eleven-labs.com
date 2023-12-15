@@ -42,7 +42,7 @@ Il est possible de contracter une dette consciemment pour des problématiques de
 
 Prendre des mauvaises décisions dès le début en faisant des erreurs d’architecture peut être de vrais boulets pour la vie du projet.
 
-Il faut bien comprendre le besoin et vos contraintes car chaque type d’architecture à ses avantages et ses inconvénients (oui le monolithe a des avantages, et vous pouvez voir les avantages du micro-services dans l’article “[D'un monolithe vers une architecture microservices](https://blog.eleven-labs.com/fr/monolithe-a-microservices/)”). Partir sur une architecture micro-services alors qu’il n’y a pas les ressources suffisantes niveau infrastructure ou dans les équipes de développements, c’est le début de la souffrance sur le projet.
+Il faut bien comprendre le besoin et vos contraintes car chaque type d’architecture à ses avantages et ses inconvénients (oui le monolithe a des avantages, et vous pouvez voir les avantages du micro-services dans l’article “[D'un monolithe vers une architecture microservices]({BASE_URL}/fr/monolithe-a-microservices/)”). Partir sur une architecture micro-services alors qu’il n’y a pas les ressources suffisantes niveau infrastructure ou dans les équipes de développements, c’est le début de la souffrance sur le projet.
 
 
 Vous n’avez pas forcément d’architecte dans vos équipes, mais avec l’expérience et l’entraide, vous pouvez prendre en compte tous les besoins et imaginer l’architecture qu’il vous faut. Si vous avez un architecte sous la main, n’hésitez pas à collaborer avec lui : vous allez pouvoir être sûr qu’il a toutes les informations nécessaires et vous, vous allez apprendre à son contact !
@@ -102,7 +102,7 @@ Je vous en parle car cela peut totalement convenir à certains cas d’utilisati
 
 ### Base de données orientée documents
 
-Pour la base de données orientée documents, il faut aussi prendre le temps de la modélisation. Pour rappel, vous pouvez voir la définition d’une base de données documents avec MongoDB sur l’article [Symfony et MongoDB, retour aux bases](https://blog.eleven-labs.com/fr/symfony-et-mongodb-retour-aux-sources/).
+Pour la base de données orientée documents, il faut aussi prendre le temps de la modélisation. Pour rappel, vous pouvez voir la définition d’une base de données documents avec MongoDB sur l’article [Symfony et MongoDB, retour aux bases]({BASE_URL}/fr/symfony-et-mongodb-retour-aux-sources/).
 
 Quand on a connu le modèle relationnel, il faut changer sa pensée pour comprendre le document et son modèle. Je vous conseille cette vidéo qui permet de comprendre ce changement de modélisation : [Base de données : MongoDB - Conception par Algomius](https://www.youtube.com/watch?v=ZvPS5Gx0nnU).
 
@@ -132,9 +132,9 @@ On ne rappellera jamais assez les bienfaits des tests automatisés : on évite l
 
 Il y a plusieurs articles sur le blog vous donnant les définitions de tests unitaires, fonctionnels, intégrations, end-to-ends avec différents outils pour revoir les bases :
 
--   [Tester son application avec Cypress](https://blog.eleven-labs.com/fr/test-e2e-avec-cypress/)
--   [Behat : structurez vos tests fonctionnels](https://blog.eleven-labs.com/fr/behat-structurez-vos-tests-fonctionnels/)
--   [Storybook - Tester la régression visuelle](https://blog.eleven-labs.com/fr/storybook-visual-regression/)
+-   [Tester son application avec Cypress]({BASE_URL}/fr/test-e2e-avec-cypress/)
+-   [Behat : structurez vos tests fonctionnels]({BASE_URL}/fr/behat-structurez-vos-tests-fonctionnels/)
+-   [Storybook - Tester la régression visuelle]({BASE_URL}/fr/storybook-visual-regression/)
 
 Mais ça ne répond pas à la question : quelle est la différence entre un mauvais test et un bon test ?
 

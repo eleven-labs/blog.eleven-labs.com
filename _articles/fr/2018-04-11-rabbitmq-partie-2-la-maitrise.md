@@ -24,7 +24,7 @@ Les policies, le retry (dead letter, poison message)... en avant pour l'utilisat
 
 ## Introduction
 
-Après avoir vu les bases dans [RabbitMQ : Les bases (Partie 1)](/fr/rabbitmq-partie-1-les-bases/),
+Après avoir vu les bases dans [RabbitMQ : Les bases (Partie 1)]({BASE_URL}/fr/rabbitmq-partie-1-les-bases/),
 nous allons pousser un peu plus loin l'utilisation de RabbitMQ.
 
 ## Plugins

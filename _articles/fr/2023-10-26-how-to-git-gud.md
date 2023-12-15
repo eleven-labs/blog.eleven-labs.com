@@ -107,7 +107,7 @@ Vous pouvez retrouver plus d'exemples [ici](https://gist.github.com/ch3ric/f8e6d
 
 Vous arrivez à votre daily et surprise, il y a un nouveau bug sur votre appli. Pourtant, ça marchait la semaine dernière non ? Comment faire pour identifier rapidement et simplement ce bug ? Une seule commande : `git bisect`. Cette commande effectue une recherche binaire pour retrouver le commit qui a introduit le bug.
 
-Je vous laisse aller consulter [l'article](https://blog.eleven-labs.com/fr/git-rebase/) de l'un de mes collègues qui vous guidera pas à pas sur l'utilisation de cette commande.
+Je vous laisse aller consulter [l'article]({BASE_URL}/fr/git-rebase/) de l'un de mes collègues qui vous guidera pas à pas sur l'utilisation de cette commande.
 
 ### Fixup
 

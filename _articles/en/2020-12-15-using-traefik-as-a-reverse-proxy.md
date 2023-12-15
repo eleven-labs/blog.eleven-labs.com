@@ -368,7 +368,7 @@ And that I can, of course, see inside my Traefik dashboard:
 
 Now that we know how to write different routing rules for a service and how to generate SSL certificates, doing such for a Docker service should be a breeze.
 
-After reading [DOMOTIZE YOUR WORKSPACE (lang. French)](https://blog.eleven-labs.com/fr/domotize-your-workspace/) article, I wanted to setup _Home Assistant_ at home.
+After reading [DOMOTIZE YOUR WORKSPACE (lang. French)]({BASE_URL}/fr/domotize-your-workspace/) article, I wanted to setup _Home Assistant_ at home.
 
 _Home Assistant_ can be set up with a Docker container, so we will add the extra lines inside `/srv/docker-compose.yml` which should now look like this:
 

@@ -313,6 +313,6 @@ function onGaCancelButtonClick(event) {
 
 Si vous avez bien suivi cet article et si vous l'avez adapté aux besoins de votre site, vous avez maintenant un bandeau cookie parfaitement fonctionnel et respectant les recommandations de la CNIL !
 Évidemment un site comme celui-ci (un simple blog) est un cas simple où il y a peu voire pas de cookies posés du tout. En réalité, votre site est déjà quasiment prêt pour la future mise en application de la RGPD à quelques ajustements près.
-Si vous ne savez pas ce qu'est la RGPD, c'est en gros une évolution de la directive européenne dont nous avons parlé précédemment vers une version XXL. Pour de plus amples informations, je vous invite à lire l'excellent article de mon collègue [Pouzor](/authors/pouzor/) : [RGPD - Ce qu'il va changer](/fr/rgpd-ce-qu-il-va-changer/).
+Si vous ne savez pas ce qu'est la RGPD, c'est en gros une évolution de la directive européenne dont nous avons parlé précédemment vers une version XXL. Pour de plus amples informations, je vous invite à lire l'excellent article de mon collègue [Pouzor](/authors/pouzor/) : [RGPD - Ce qu'il va changer]({BASE_URL}/fr/rgpd-ce-qu-il-va-changer/).
 
 ![Cookie Monster]({BASE_URL}/imgs/articles/2018-01-17-cookie-banner/cookie-monster.jpg)

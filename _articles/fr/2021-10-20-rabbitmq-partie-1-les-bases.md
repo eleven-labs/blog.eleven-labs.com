@@ -16,7 +16,7 @@ keywords:
 ---
 
 RabbitMQ est un message broker très complet et robuste, c'est pourquoi le comprendre et l'utiliser est assez simple. en revanche, le maîtriser l'est un peu moins...
-C'est pourquoi je vous propose cette série de deux articles. Vous pouvez retrouver la partie 2 en [cliquant ici](https://blog.eleven-labs.com/fr/rabbitmq-partie-2-la-maitrise/).
+C'est pourquoi je vous propose cette série de deux articles. Vous pouvez retrouver la partie 2 en [cliquant ici]({BASE_URL}/fr/rabbitmq-partie-2-la-maitrise/).
 
 > Bref, pour commencer, avant de manger du pâté de lapin il va falloir bouffer des carottes !
 
@@ -179,7 +179,7 @@ Si le `message` n'est pas acquitté, il restera à sa place dans la queue et ser
 
 > Vous voila maintenant fin prêts à récolter vos carottes !
 
-> Vous pouvez maintenant [consulter la partie 2 (maîtrise)](https://blog.eleven-labs.com/fr/rabbitmq-partie-2-la-maitrise/), dans laquelle nous verrons comment attraper les lapins, et comment préparer le pâté. 😜
+> Vous pouvez maintenant [consulter la partie 2 (maîtrise)]({BASE_URL}/fr/rabbitmq-partie-2-la-maitrise/), dans laquelle nous verrons comment attraper les lapins, et comment préparer le pâté. 😜
 
 ## Liens utiles
 

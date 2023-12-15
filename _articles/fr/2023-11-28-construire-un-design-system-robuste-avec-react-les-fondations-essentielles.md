@@ -33,26 +33,26 @@ Avant de plonger dans la mise en place d'un Design System robuste avec React, il
 
 ### Design System
 
-Un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) réunit un ensemble d'éléments graphiques, des typographies, des palettes de couleurs, de la documentation et des directives d'utilisation.
+Un [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/) réunit un ensemble d'éléments graphiques, des typographies, des palettes de couleurs, de la documentation et des directives d'utilisation.
 C'est un référenciel qui garantit une cohérence visuelle et fonctionnelle qui apporte un cadre et des règles à respecter.
 
 ### Atomic Design
 
-L'[Atomic Design](https://blog.eleven-labs.com/fr/atomic-design/) est une approche de conception de systèmes d'interface utilisateur et de design d'interaction. Cette approche consiste à découper les composants en éléments modulaires : Atome, Molecule, Organisme, Templates, et Pages.
+L'[Atomic Design]({BASE_URL}/fr/atomic-design/) est une approche de conception de systèmes d'interface utilisateur et de design d'interaction. Cette approche consiste à découper les composants en éléments modulaires : Atome, Molecule, Organisme, Templates, et Pages.
 
 ### Design token
 
-Les [Design Token](https://blog.eleven-labs.com/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/) sont un ensemble de valeurs ou de variables utilisés pour référencer plusieurs types d'éléments tels que les couleurs, typographies, espacements et bien d'autres.
+Les [Design Token]({BASE_URL}/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/) sont un ensemble de valeurs ou de variables utilisés pour référencer plusieurs types d'éléments tels que les couleurs, typographies, espacements et bien d'autres.
 Ces tokens permettent entre autres, de faciliter la mise à jour des styles et de maîtriser les déclinaisons de thèmes qui partagent des références communes.
 
 ### BEM
 
-La méthodologie [BEM](https://blog.eleven-labs.com/fr/retour-d-experience-sur-bem/) donne au CSS une convention de structuration, de nommage et d’organisation pour vos composants.
+La méthodologie [BEM]({BASE_URL}/fr/retour-d-experience-sur-bem/) donne au CSS une convention de structuration, de nommage et d’organisation pour vos composants.
 BEM envisage la composition d’une page web en plusieurs **B**locks, qui contiennent des **E**lements, et ces derniers peuvent varier grâce à des **M**odifiers.
 
 ### System Props
 
-Les [System Props](https://blog.eleven-labs.com/fr/system-props/) sont une liste de propriétés permettant de personnaliser instantanément le style de vos composants.
+Les [System Props]({BASE_URL}/fr/system-props/) sont une liste de propriétés permettant de personnaliser instantanément le style de vos composants.
 Ces ***System Props*** sont des raccourcis pratiques pour ajouter des styles complémentaires qui permettent de modifier le comportement et l'apparence de vos composants.
 
 ## Implémentation
@@ -238,7 +238,7 @@ export default Button;
 <div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
 
 Nous avons utilisé ici `classnames` pour générer des classes CSS utilitaires, mais d'autres approches peuvent être utilisées en fonction de vos besoins et de vos préférences.
-Vous pouvez notamment retrouver dans cet [article](https://blog.eleven-labs.com/fr/system-props/) d'autres exemples qui permettent de bien implémenter les System Props dans votre Design System.
+Vous pouvez notamment retrouver dans cet [article]({BASE_URL}/fr/system-props/) d'autres exemples qui permettent de bien implémenter les System Props dans votre Design System.
 </div>
 
 Le Design System exige une collaboration étroite entre les différents métiers impliqués (Designers, Développeurs, PO / PM).
@@ -343,7 +343,7 @@ Comme vous pouvez l'observer, nous avons donc un visuel du composant avec une se
 
 <div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
 
-Il est possible de manipuler les données afin de pouvoir personnaliser l'affichage du composant. Ainsi, cela vous donnera la possibilité de visualiser plusieurs variantes du composant sans modifier la _Story_ de base. Vous pouvez également trouver les propriétés dépendantes des [System Props](https://blog.eleven-labs.com/fr/system-props/).
+Il est possible de manipuler les données afin de pouvoir personnaliser l'affichage du composant. Ainsi, cela vous donnera la possibilité de visualiser plusieurs variantes du composant sans modifier la _Story_ de base. Vous pouvez également trouver les propriétés dépendantes des [System Props]({BASE_URL}/fr/system-props/).
 </div>
 
 #### Documenter les cas d'usage
@@ -377,7 +377,7 @@ PostPreviewListWithPagination.args = {
 ```
 <div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
 
-L'extension `action` est utilisée pour afficher les données reçues par les arguments du gestionnaire d'événements, ici `onLoadMore`. En effet, une _Story_ ne doit être qu'un visuel du composant, non une documentation de son comportement. Je vous invite à lire cet [article traitant des Storybook addons](https://blog.eleven-labs.com/fr/storybook-addons/).
+L'extension `action` est utilisée pour afficher les données reçues par les arguments du gestionnaire d'événements, ici `onLoadMore`. En effet, une _Story_ ne doit être qu'un visuel du composant, non une documentation de son comportement. Je vous invite à lire cet [article traitant des Storybook addons]({BASE_URL}/fr/storybook-addons/).
 </div>
 
 ![PostPreviewList avec une pagination]({BASE_URL}/imgs/articles/2023-11-28-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/postPreviewList-pagination.png)

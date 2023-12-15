@@ -17,7 +17,7 @@ keywords:
 ---
 
 Vous l'attendiez (si si, ne dites pas le contraire), la voici ! La deuxième partie des nouveautés d'ES6 est arrivée
-_Psst, si tu n'as pas lu la partie I, elle se trouve [ici](https://blog.eleven-labs.com/fr/lesnouveauteses6parti) !_
+_Psst, si tu n'as pas lu la partie I, elle se trouve [ici]({BASE_URL}/fr/lesnouveauteses6parti) !_
 Il est conseillé de l'avoir lue pour comprendre plus aisément certaines notions qui ne seront pas réexpliquées ici.
 
 ## destructuring
