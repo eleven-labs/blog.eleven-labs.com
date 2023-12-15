@@ -37,13 +37,14 @@ export const Footer: React.FC<FooterProps> = ({
       pt={{ md: 'xl' }}
       pb={{ md: 'xl' }}
       mb="xl"
+      mx="s"
     >
       <Box mb="xl">
         <Flex justifyContent={{ xs: 'center', md: 'start' }} alignItems="center" pt={{ xs: 'l', md: '0' }} mb="xxs">
           <Logo name="website" size="2.5em" />
         </Flex>
         <Text>{introBlock.title}</Text>
-        <Text fontWeight="bold" mb="s" mx={{ xs: 's', md: '0' }}>
+        <Text fontWeight="bold" mb="s">
           {introBlock.description}
         </Text>
         <Button {...(elevenLabsSiteLinkProps as typeof Button)}>{elevenLabsSiteLinkLabel}</Button>
