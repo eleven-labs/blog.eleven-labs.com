@@ -37,6 +37,7 @@ export const Footer: React.FC<FooterProps> = ({
       pt={{ md: 'xl' }}
       pb={{ md: 'xl' }}
       mb="xl"
+      mx="s"
     >
       <Box mb="xl">
         <Flex justifyContent={{ xs: 'center', md: 'start' }} alignItems="center" pt={{ xs: 'l', md: '0' }} mb="xxs">

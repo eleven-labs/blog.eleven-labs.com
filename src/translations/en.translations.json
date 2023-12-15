@@ -43,13 +43,13 @@
   "footer": {
     "intro_block": {
       "title": "Discover Eleven Labs",
-      "description": "To learn more, visit our website"
+      "description": "The software engineering provider which boosts your web, mobile and data projects!"
     },
     "contact": {
       "title": "Contact",
       "form_title": "Contact us"
     },
-    "link_to_eleven_labs_site": "Let's go"
+    "link_to_eleven_labs_site": "Check the website"
   },
   "autocomplete": {
     "placeholder": "Search by article or author name",
