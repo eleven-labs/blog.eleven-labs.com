@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2023-11-10'
+date: '2024-01-17'
 slug: expressionlanguage-comment-utiliser-ce-composant-symfony
 title: 'ExpressionLanguage : Comment utiliser ce composant Symfony ?'
 excerpt: >-
