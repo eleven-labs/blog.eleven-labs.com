@@ -20,8 +20,9 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           echo "ENV=dev-${{ github.head_ref }}" >> $GITHUB_ENV
-          echo "ENV_URL=http://dev.blog.eleven-labs.com.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "HOST_URL=http://dev.blog.eleven-labs.com.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com" >> $GITHUB_ENV
           echo "BASE_URL=/${{ github.head_ref }}/" >> $GITHUB_ENV
+          echo "ENV_URL=${{ HOST_URL }}${{ BASE_URL }}" >> $GITHUB_ENV
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_DEV }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_DEV }}" >> $GITHUB_ENV
@@ -32,8 +33,9 @@ jobs:
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |
           echo "ENV=production" >> $GITHUB_ENV
-          echo "ENV_URL=https://blog.eleven-labs.com" >> $GITHUB_ENV
+          echo "HOST_URL=https://blog.eleven-labs.com" >> $GITHUB_ENV
           echo "BASE_URL=/" >> $GITHUB_ENV
+          echo "ENV_URL=${{ HOST_URL }}${{ BASE_URL }}" >> $GITHUB_ENV
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_PRODUCTION }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_PRODUCTION }}" >> $GITHUB_ENV
@@ -104,6 +106,7 @@ jobs:
         env:
           NODE_ENV: production
           BASE_URL: ${{ env.BASE_URL }}
+          VITE_HOST_URL: ${{ env.HOST_URL }}
           VITE_ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
           VITE_ALGOLIA_API_KEY: ${{ env.ALGOLIA_API_SEARCH_KEY }}
           VITE_ALGOLIA_INDEX: ${{ env.ALGOLIA_INDEX }}
@@ -155,17 +158,17 @@ jobs:
           status: ${{ job.status }}
           env: ${{ steps.deployment.outputs.env }}
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          env_url: ${{ env.ENV_URL }}/
+          env_url: ${{ env.ENV_URL }}
 
       - name: Audit URLs using Lighthouse
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
-            ${{ env.ENV_URL }}/
-            ${{ env.ENV_URL }}/fr/authors/ajacquemin/
-            ${{ env.ENV_URL }}/fr/comment-construire-site-web-avec-nextjs/
-            ${{ env.ENV_URL }}/fr/nestjs-le-cycle-de-vie-dune-requete/
+            ${{ env.ENV_URL }}
+            ${{ env.ENV_URL }}fr/authors/ajacquemin/
+            ${{ env.ENV_URL }}fr/comment-construire-site-web-avec-nextjs/
+            ${{ env.ENV_URL }}fr/nestjs-le-cycle-de-vie-dune-requete/
           configPath: ./.github/workflows/lighthousesrc.json
           uploadArtifacts: true
           temporaryPublicStorage: true

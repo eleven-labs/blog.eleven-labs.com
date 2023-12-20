@@ -8,7 +8,7 @@ export const socialNetworks: {
   {
     label: 'RSS',
     iconName: 'rss',
-    url: 'https://blog.eleven-labs.com/feed.xml',
+    url: '/feed.xml',
   },
   {
     label: 'Facebook',

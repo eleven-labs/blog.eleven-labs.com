@@ -2,7 +2,6 @@ import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import * as xml2js from 'xml2js';
 
-import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE } from '@/constants';
 
 export const generateSitemap = async (options: {
@@ -20,14 +19,14 @@ export const generateSitemap = async (options: {
       url: options.sitemapEntries.map(({ links, priority, changefreq }) => {
         const defaultLink = links.find((link) => link.lang === DEFAULT_LANGUAGE) ?? links[0];
         return {
-          loc: `${blogUrl}${defaultLink.url}`,
+          loc: defaultLink.url,
           changefreq: changefreq ?? 'weekly',
           priority: priority?.toFixed(1) ?? 0.3,
           ...(links.length > 1
             ? {
                 'xhtml:link': links.map((link) => ({
                   $: {
-                    href: `${blogUrl}${link.url}`,
+                    href: link.url,
                     hreflang: link.lang,
                     rel: 'alternate',
                   },

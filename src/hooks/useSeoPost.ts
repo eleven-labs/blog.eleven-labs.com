@@ -1,7 +1,7 @@
 import { useMeta, useScript } from 'hoofd';
 import { useTranslation } from 'react-i18next';
 
-import { PATHS } from '@/constants';
+import { PATHS, ROOT_URL } from '@/constants';
 import { generatePath } from '@/helpers/routerHelper';
 import { useTitle } from '@/hooks/useTitle';
 import { PostPageData } from '@/types';
@@ -37,7 +37,7 @@ export const useSeoPost = ({ title, post }: UseSeoOptions): void => {
         name: 'Eleven Labs',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://blog.eleven-labs.com/imgs/logo.png',
+          url: `${ROOT_URL}imgs/logo.png`,
         },
       },
     }),

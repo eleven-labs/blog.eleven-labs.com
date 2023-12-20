@@ -3,12 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
-import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, IS_SSR, LanguageEnum, PATHS } from '@/constants';
 import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
 import { UsePostPreviewListContainerOptions } from '@/containers/PostPreviewListContainer/usePostPreviewListContainer';
-import { generatePath } from '@/helpers/routerHelper';
+import { generateUrl } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useTitle } from '@/hooks/useTitle';
@@ -26,7 +25,7 @@ export const useSearchPageContainer = (): SearchPageProps => {
   useTitle(t('seo.search.title'));
   useLink({
     rel: 'canonical',
-    href: `${blogUrl}${generatePath(PATHS.SEARCH, { lang: DEFAULT_LANGUAGE })}`,
+    href: generateUrl(PATHS.SEARCH, { lang: DEFAULT_LANGUAGE }),
   });
 
   useEffect(() => {

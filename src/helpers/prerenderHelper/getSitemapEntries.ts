@@ -1,6 +1,6 @@
 import { CATEGORIES, ContentTypeEnum, DEFAULT_LANGUAGE, LanguageEnum, PATHS } from '@/constants';
 import { getAuthors, getPosts } from '@/helpers/markdownContentManagerHelper';
-import { generatePath } from '@/helpers/routerHelper';
+import { generateUrl } from '@/helpers/routerHelper';
 import { TransformedAuthorData, TransformedPostData, TransformedTutorialData } from '@/types';
 
 type Link = {
@@ -18,7 +18,7 @@ const createCategorySitemapEntry = (categoryName: string): SitemapEntry => ({
   priority: 0.7,
   links: Object.values(LanguageEnum).map((lang) => ({
     lang,
-    url: generatePath(PATHS.CATEGORY, { lang, categoryName }),
+    url: generateUrl(PATHS.CATEGORY, { lang, categoryName }),
   })),
 });
 
@@ -27,7 +27,7 @@ const createPostSitemapEntry = (post: TransformedPostData): SitemapEntry => ({
   links: [
     {
       lang: post.lang,
-      url: generatePath(PATHS.POST, { lang: post.lang, slug: post.slug }),
+      url: generateUrl(PATHS.POST, { lang: post.lang, slug: post.slug }),
     },
   ],
 });
@@ -37,7 +37,7 @@ const createTutorialStepSitemapEntry = (post: TransformedTutorialData, step: str
   links: [
     {
       lang: post.lang,
-      url: generatePath(PATHS.POST, { lang: post.lang, slug: post.slug, step }),
+      url: generateUrl(PATHS.POST, { lang: post.lang, slug: post.slug, step }),
     },
   ],
 });
@@ -48,7 +48,7 @@ const createAuthorSitemapEntry = (author: TransformedAuthorData, posts: Transfor
     .filter((lang) => posts.some((post) => post.lang === lang && post.authors.includes(author.username)))
     .map((lang) => ({
       lang,
-      url: generatePath(PATHS.AUTHOR, { lang, authorUsername: author.username }),
+      url: generateUrl(PATHS.AUTHOR, { lang, authorUsername: author.username }),
     })),
 });
 
@@ -61,11 +61,11 @@ export const getSitemapEntries = (): SitemapEntry[] => {
     links: [
       {
         lang: DEFAULT_LANGUAGE,
-        url: generatePath(PATHS.ROOT),
+        url: generateUrl(PATHS.ROOT),
       },
       ...Object.values(LanguageEnum).map((lang) => ({
         lang,
-        url: generatePath(PATHS.HOME, { lang }),
+        url: generateUrl(PATHS.HOME, { lang }),
       })),
     ],
   };
@@ -74,7 +74,7 @@ export const getSitemapEntries = (): SitemapEntry[] => {
     priority: 0,
     links: Object.values(LanguageEnum).map((lang) => ({
       lang,
-      url: generatePath(PATHS.SEARCH, { lang }),
+      url: generateUrl(PATHS.SEARCH, { lang }),
     })),
   };
 

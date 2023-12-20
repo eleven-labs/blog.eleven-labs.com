@@ -3,11 +3,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
-import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
 import { LinkContainer } from '@/containers/LinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
-import { generatePath } from '@/helpers/routerHelper';
+import { generatePath, generateUrl } from '@/helpers/routerHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useTitle } from '@/hooks/useTitle';
 import { PostListPageProps } from '@/pages/PostListPage/PostListPage';
@@ -21,10 +20,10 @@ export const usePostListPageContainer = (): PostListPageProps => {
   useTitle(categoryName ? t('seo.category.title', { categoryName }) : t('seo.home.title'));
   useLink({
     rel: 'canonical',
-    href: `${blogUrl}${generatePath(categoryName ? PATHS.CATEGORY : PATHS.ROOT, {
+    href: generateUrl(categoryName ? PATHS.CATEGORY : PATHS.ROOT, {
       lang: DEFAULT_LANGUAGE,
       categoryName: categoryName,
-    })}`,
+    }),
   });
 
   return {
