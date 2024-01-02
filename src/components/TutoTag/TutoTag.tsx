@@ -8,7 +8,7 @@ export type TutoTagOptions = {
   label?: string;
 };
 
-export type TutoTagProps = FlexProps<'div'> & TutoTagOptions;
+export type TutoTagProps = FlexProps & TutoTagOptions;
 
 export const TutoTag: React.FC<TutoTagProps> = ({ label, className, ...props }) => (
   <Flex {...props} display="inline-flex" alignItems="center" bg="azure" className={classNames('tuto-tag', className)}>

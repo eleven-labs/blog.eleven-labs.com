@@ -1,11 +1,9 @@
-import { AsProps } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { AutocompleteFieldProps } from '@/components';
 import { IS_SSR, NUMBER_OF_ITEMS_PER_PAGE, PATHS } from '@/constants';
-import { LinkContainer } from '@/containers/LinkContainer';
 import { trackContentSearchEvent } from '@/helpers/dataLayerHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
@@ -74,19 +72,17 @@ export const useHeaderContainer = (): HeaderProps => {
           username: authorUsername,
           name: hit.authorNames[index],
         })),
-        as: LinkContainer,
         hrefLang: i18n.language,
-        to: generatePath(PATHS.POST, { lang: i18n.language, slug: hit.slug }),
+        href: generatePath(PATHS.POST, { lang: i18n.language, slug: hit.slug }),
       })),
     [i18n.language, searchHits] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   return {
     homeLink: {
-      as: LinkContainer,
       hrefLang: i18n.language,
-      to: generatePath(PATHS.HOME, { lang: i18n.language }),
-    } as AsProps<'a'>,
+      href: generatePath(PATHS.HOME, { lang: i18n.language }),
+    },
     autocompleteIsDisplayed,
     onToggleSearch,
     autocomplete: {
@@ -96,18 +92,14 @@ export const useHeaderContainer = (): HeaderProps => {
       onEnter: handleEnter,
       items,
       searchLink: {
-        as: LinkContainer,
         hrefLang: i18n.language,
-        to: {
-          pathname: generatePath(PATHS.SEARCH, { lang: i18n.language }),
-          search: search ? `?search=${search}` : '',
-        },
+        href: `${generatePath(PATHS.SEARCH, { lang: i18n.language })}${search ? `?search=${search}` : ''}`,
         label: t('autocomplete.see_all_search_label'),
       },
       searchNotFound: {
         title: t('search_not_found.title'),
         description: t('search_not_found.description'),
       },
-    } as AutocompleteFieldProps,
+    },
   };
 };

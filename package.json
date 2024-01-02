@@ -4,12 +4,12 @@
   "type": "module",
   "scripts": {
     "postinstall": "husky install",
-    "ts-node": "ts-node -r dotenv/config",
-    "validate-markdown": "yarn ts-node bin/validateMarkdown",
-    "indexation:algolia": "yarn ts-node bin/indexationAlgolia",
-    "build": "yarn ts-node bin/build",
-    "prerender": "yarn build && yarn ts-node bin/prerender",
-    "start:dev": "yarn ts-node bin/dev",
+    "ts-node": "tsx -r dotenv/config",
+    "validate-markdown": "npm run ts-node bin/validateMarkdown",
+    "indexation:algolia": "npm run ts-node bin/indexationAlgolia",
+    "build": "npm run ts-node bin/build",
+    "prerender": "npm run build && npm run ts-node bin/prerender",
+    "start:dev": "npm run ts-node bin/dev",
     "start:prod": "NODE_ENV=production node dist/server",
     "start:static": "npx serv --path dist/public",
     "lint:es": "eslint --ext .ts,.tsx src bin",
@@ -27,12 +27,10 @@
     ]
   },
   "engines": {
-    "npm": "please-use-yarn-instead",
-    "yarn": ">= 1.2.0",
-    "node": ">= 16.0"
+    "node": ">= 20.0"
   },
   "dependencies": {
-    "@eleven-labs/design-system": "^0.6.3",
+    "@eleven-labs/design-system": "^0.10.3",
     "@remix-run/router": "^1.7.2",
     "algoliasearch": "^4.19.1",
     "classnames": "^2.3.2",
@@ -107,7 +105,7 @@
     "storybook": "^7.1.0",
     "stylelint": "^15.2.0",
     "stylelint-config-standard-scss": "^7.0.1",
-    "ts-node": "^10.9.1",
+    "tsx": "^4.7.0",
     "typescript": "^4.7.4",
     "unified": "^10.1.2",
     "vite": "^4.4.5",

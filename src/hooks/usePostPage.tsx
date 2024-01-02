@@ -1,10 +1,8 @@
 import mermaid from 'mermaid';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { PATHS } from '@/constants';
-import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
-import { LinkContainer } from '@/containers/LinkContainer';
 import { getPathFile } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
@@ -47,15 +45,13 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentTyp
     (author) => ({
       ...author,
       link: {
-        as: LinkContainer,
         hrefLang: i18n.language,
-        to: generatePath(PATHS.AUTHOR, { lang: i18n.language, authorUsername: author.username }),
+        href: generatePath(PATHS.AUTHOR, { lang: i18n.language, authorUsername: author.username }),
       },
     })
   );
 
   return {
-    backLink: <BackLinkContainer />,
     header: {
       title: post.title,
       date: getDateToString({ date: post.date }),
@@ -75,9 +71,8 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentTyp
         authors: relatedPost.authors,
         date: getDateToString({ date: relatedPost.date }),
         link: {
-          as: LinkContainer,
           hrefLang: i18n.language,
-          to: generatePath(PATHS.POST, { lang: i18n.language, slug: relatedPost.slug }),
+          href: generatePath(PATHS.POST, { lang: i18n.language, slug: relatedPost.slug }),
         },
       })),
     },

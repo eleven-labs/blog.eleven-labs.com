@@ -1,16 +1,6 @@
 import './AutocompleteResult.scss';
 
-import {
-  AsProps,
-  Box,
-  BoxProps,
-  Flex,
-  forwardRef,
-  Heading,
-  Link,
-  Text,
-  TextHighlight,
-} from '@eleven-labs/design-system';
+import { Box, BoxProps, Flex, Heading, Link, polyRef, Text, TextHighlight } from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import React from 'react';
 
@@ -30,9 +20,9 @@ export interface AutocompleteItem {
 
 export type AutocompleteResultOptions = {
   isOpen?: boolean;
-  items: (AsProps<'a'> & AutocompleteItem)[];
+  items: (React.ComponentPropsWithoutRef<'a'> & AutocompleteItem)[];
   searchValue?: string;
-  searchLink?: AsProps<'a'> & { label: string };
+  searchLink?: React.ComponentPropsWithoutRef<'a'> & { label: string };
   searchNotFound?: {
     title: string;
     description: string;
@@ -42,7 +32,7 @@ export type AutocompleteResultOptions = {
 
 export type AutocompleteResultProps = BoxProps & AutocompleteResultOptions;
 
-export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
+export const AutocompleteResult = polyRef<'div', AutocompleteResultProps>(
   (
     {
       isOpen = false,
@@ -63,7 +53,8 @@ export const AutocompleteResult = forwardRef<AutocompleteResultProps, 'div'>(
             return (
               <React.Fragment key={slug}>
                 <Box
-                  {...(itemProps as AsProps)}
+                  as="a"
+                  {...itemProps}
                   pt={{ xs: 'xxs' }}
                   pb={{ xs: 'xs' }}
                   px={{ xs: 'm' }}

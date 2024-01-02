@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 
 import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, IS_SSR, LanguageEnum, PATHS } from '@/constants';
-import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
 import { UsePostPreviewListContainerOptions } from '@/containers/PostPreviewListContainer/usePostPreviewListContainer';
 import { generatePath } from '@/helpers/routerHelper';
@@ -58,7 +57,6 @@ export const useSearchPageContainer = (): SearchPageProps => {
   }, [search, i18n.language]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return {
-    backLink: <BackLinkContainer />,
     title: t('pages.search.title', { numberOfHits: postsBySearch.length }),
     description: t('pages.search.description'),
     searchNotFound:

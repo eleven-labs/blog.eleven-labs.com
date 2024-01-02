@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
 import { LanguageEnum, PATHS } from '@/constants';
-import { LinkContainer } from '@/containers/LinkContainer';
 import { generatePath } from '@/helpers/routerHelper';
 import { LayoutTemplateProps } from '@/templates/LayoutTemplate';
 
@@ -59,8 +58,7 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
         label: t(`languages.${currentLang}`),
         ...(!isActive
           ? {
-              as: LinkContainer,
-              to: generatePath(PATHS.HOME, { lang: currentLang }),
+              href: generatePath(PATHS.HOME, { lang: currentLang }),
               onClick: () => i18n.changeLanguage(currentLang),
             }
           : {}),

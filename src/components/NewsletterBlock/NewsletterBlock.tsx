@@ -1,6 +1,6 @@
 import './NewsletterBlock.scss';
 
-import { AsProps, Box, Button, ButtonProps, Flex, FlexProps, Heading, Text } from '@eleven-labs/design-system';
+import { Box, Button, Flex, FlexProps, Heading, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { getPathFile } from '@/helpers/assetHelper';
@@ -8,7 +8,7 @@ import { getPathFile } from '@/helpers/assetHelper';
 export type NewsletterBlockOptions = {
   title: React.ReactNode;
   description: React.ReactNode;
-  subscribeButton: { label: React.ReactNode } & AsProps<'a'>;
+  subscribeButton: { label: React.ReactNode } & React.ComponentPropsWithoutRef<'a'>;
 };
 
 export type NewsletterBlockProps = Omit<FlexProps, 'title'> & NewsletterBlockOptions;
@@ -36,7 +36,7 @@ export const NewsletterBlock: React.FC<NewsletterBlockProps> = ({
       <Heading as="p" size="l">
         {description}
       </Heading>
-      <Button {...(subscribeButtonProps as ButtonProps)} mt={{ xs: 'm', md: 'l' }} data-newsletter-link>
+      <Button as="a" {...subscribeButtonProps} mt={{ xs: 'm', md: 'l' }} data-newsletter-link>
         {subscribeButtonLabel}
       </Button>
     </Box>

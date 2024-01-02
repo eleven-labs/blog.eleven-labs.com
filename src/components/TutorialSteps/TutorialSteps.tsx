@@ -1,6 +1,6 @@
 import './TutorialSteps.scss';
 
-import { AsProps, Box, Flex, FlexProps, Text } from '@eleven-labs/design-system';
+import { Box, Flex, FlexProps, Text } from '@eleven-labs/design-system';
 import classNames from 'classnames';
 import React from 'react';
 
@@ -8,9 +8,9 @@ import { TutoTag } from '@/components';
 
 export type TutorialStepsOptions = {
   stepActive?: string;
-  steps: ({ name: string; label: string } & AsProps<'a'>)[];
+  steps: ({ name: string; label: string } & React.ComponentPropsWithoutRef<'a'>)[];
 };
-export type TutorialStepsProps = AsProps<'div'> & TutorialStepsOptions;
+export type TutorialStepsProps = React.ComponentPropsWithoutRef<'div'> & TutorialStepsOptions;
 
 export const TutorialSteps: React.FC<TutorialStepsProps> = ({ stepActive, steps, className, ...props }) => (
   <Flex

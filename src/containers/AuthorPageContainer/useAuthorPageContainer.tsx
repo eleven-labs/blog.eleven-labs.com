@@ -5,7 +5,6 @@ import { useLoaderData } from 'react-router-dom';
 
 import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
-import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
 import { getPathFile } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
@@ -33,7 +32,6 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
 
   const { author, posts } = resultAuthorPage;
   return {
-    backLink: <BackLinkContainer />,
     author: {
       username: author.username,
       name: author.name,

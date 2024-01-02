@@ -8,7 +8,6 @@ import { Container, Divider, NewsletterBlock, NewsletterBlockProps, SeparatorCir
 export type SocialNetworkName = 'github' | 'twitter' | 'linkedin';
 
 export type AuthorPageProps = {
-  backLink: React.ReactNode;
   author: {
     username: string;
     name: string;
@@ -27,7 +26,6 @@ export type AuthorPageProps = {
 };
 
 export const AuthorPage: React.FC<AuthorPageProps> = ({
-  backLink,
   author,
   emptyAvatarImageUrl,
   title,
@@ -36,7 +34,6 @@ export const AuthorPage: React.FC<AuthorPageProps> = ({
 }) => (
   <Container variant="global" className="author-page">
     <Container variant="content">
-      {backLink}
       <Flex
         flexDirection={{ xs: 'column', md: 'row' }}
         justifyContent="center"

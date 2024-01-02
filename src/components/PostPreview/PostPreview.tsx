@@ -1,4 +1,4 @@
-import { AsProps, BoxProps } from '@eleven-labs/design-system';
+import { BoxProps } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { ArticleMetadata } from '@/components';
@@ -15,7 +15,7 @@ export type PostPreviewOptions = {
   date?: React.ReactNode;
   readingTime?: number;
   authors?: { username: string; name: string }[];
-  link?: AsProps<'a'>;
+  link?: React.ComponentPropsWithoutRef<'a'>;
   image?: { source: string; alt: string };
   hasMask?: boolean;
   isRelated?: boolean;

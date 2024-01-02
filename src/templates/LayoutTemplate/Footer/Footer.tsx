@@ -1,6 +1,6 @@
 import './Footer.scss';
 
-import { AsProps, Box, Button, Flex, Heading, Icon, IconNameType, Link, Logo, Text } from '@eleven-labs/design-system';
+import { Box, Button, Flex, Heading, Icon, IconNameType, Link, Logo, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
 export interface FooterProps {
@@ -8,18 +8,18 @@ export interface FooterProps {
     title: React.ReactNode;
     description: React.ReactNode;
   };
-  elevenLabsSiteLink: { label: React.ReactNode } & AsProps<'a'>;
+  elevenLabsSiteLink: { label: React.ReactNode } & React.ComponentPropsWithoutRef<'a'>;
   contact: {
     title: React.ReactNode;
     list: { title?: React.ReactNode; description: React.ReactNode }[];
   };
   socialLinks: ({
     iconName: Extract<IconNameType, 'rss' | 'facebook' | 'twitter' | 'linkedin' | 'welcometothejungle'>;
-  } & AsProps<'a'>)[];
+  } & React.ComponentPropsWithoutRef<'a'>)[];
   languageLinks: ({
     label: React.ReactNode;
     isActive?: boolean;
-  } & AsProps<'a'>)[];
+  } & React.ComponentPropsWithoutRef<'a'>)[];
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -66,8 +66,8 @@ export const Footer: React.FC<FooterProps> = ({
           ))}
         </Flex>
         <Flex gapY="s" alignItems="center">
-          {socialLinks.map(({ as: As = 'a', iconName, ...linkProps }, socialLinkIndex) => (
-            <As
+          {socialLinks.map(({ iconName, ...linkProps }, socialLinkIndex) => (
+            <a
               key={socialLinkIndex}
               {...linkProps}
               target="_blank"
@@ -80,7 +80,7 @@ export const Footer: React.FC<FooterProps> = ({
                   })}
             >
               <Icon name={iconName} size="2.5em" color="white" mx="xxs-2" className="footer__social-icon" />
-            </As>
+            </a>
           ))}
         </Flex>
       </Box>

@@ -5,7 +5,6 @@ import { useLoaderData, useParams } from 'react-router-dom';
 
 import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
-import { LinkContainer } from '@/containers/LinkContainer';
 import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
 import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
@@ -35,9 +34,8 @@ export const usePostListPageContainer = (): PostListPageProps => {
       },
       choiceCategoryLabel: t('header.choice_category_label'),
       choiceCategories: categories.map((currentCategoryName) => ({
-        as: LinkContainer,
         hrefLang: i18n.language,
-        to: generatePath(currentCategoryName === 'all' ? PATHS.HOME : PATHS.CATEGORY, {
+        href: generatePath(currentCategoryName === 'all' ? PATHS.HOME : PATHS.CATEGORY, {
           lang: i18n.language,
           categoryName: currentCategoryName,
         }),

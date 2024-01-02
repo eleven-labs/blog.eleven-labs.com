@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 
 import { PostPreviewListProps } from '@/components';
 import { NUMBER_OF_ITEMS_PER_PAGE, PATHS } from '@/constants';
-import { LinkContainer } from '@/containers/LinkContainer';
 import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
 import { PostListPageData } from '@/types';
@@ -69,9 +68,8 @@ export const usePostPreviewListContainer = ({
           readingTime: post.readingTime,
           authors: post.authors,
           link: {
-            as: LinkContainer,
             hrefLang: i18n.language,
-            to: generatePath(PATHS.POST, { lang: i18n.language, slug: post.slug }),
+            href: generatePath(PATHS.POST, { lang: i18n.language, slug: post.slug }),
           },
         })),
     pagination,

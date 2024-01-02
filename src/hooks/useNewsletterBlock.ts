@@ -10,7 +10,6 @@ export const useNewsletterBlock = (): NewsletterBlockProps => {
     title: t('newsletter.title'),
     description: t('newsletter.description'),
     subscribeButton: {
-      as: 'a',
       label: t('newsletter.button_label'),
       target: '_blank',
       href: newsletterFormUrl,
