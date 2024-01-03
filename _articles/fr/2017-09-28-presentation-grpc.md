@@ -15,7 +15,7 @@ keywords:
   - bonnes pratiques
 ---
 
-Avant toute chose je vous invite à lire [la première partie](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/) si ce n'est pas déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et communiquent via HTTP.
+Avant toute chose je vous invite à lire [la première partie]({BASE_URL}/fr/presentation-protocol-buffers/) si ce n'est pas déjà fait. L'article présente protobuf qui va être utilisé avec gRPC. Aujourd'hui nos projets sont quasiment tous en architecture microservices et communiquent via HTTP.
 
 > Et si maintenant on utilisait HTTP/2 pour faire communiquer nos services ?
 
@@ -23,7 +23,7 @@ Parce qu'un client HTTP/1 c'est bien mais un client HTTP/2 c'est mieux.
 
 > HTTP/2 c'est quoi ?
 
-Je vous invite à lire [cet article de Vincent](https://blog.eleven-labs.com/fr/http2-nest-pas-le-futur-cest-le-present/) pour y voir plus clair.
+Je vous invite à lire [cet article de Vincent]({BASE_URL}/fr/http2-nest-pas-le-futur-cest-le-present/) pour y voir plus clair.
 
 > gRPC c'est quoi ?
 
@@ -91,7 +91,7 @@ go get google.golang.org/grpc
 
 ## Protobuf
 
-Nous allons commencer par récupérer le fichier proto du [précédent article](https://blog.eleven-labs.com/fr/presentation-protocol-buffers/).
+Nous allons commencer par récupérer le fichier proto du [précédent article]({BASE_URL}/fr/presentation-protocol-buffers/).
 
 Nous allons ajouter un service pour récupérer en streaming la liste des Posts.
 

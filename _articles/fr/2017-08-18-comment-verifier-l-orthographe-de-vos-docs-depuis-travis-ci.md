@@ -19,7 +19,7 @@ keywords:
   - orthographe
 ---
 
-Notre blog est basé sur Jekyll et hébergé sur Github Pages : [plus de détails ici](/fr/migration-du-blog/). Donc pour publier un article de blog, chaque auteur doit ouvrir une pull request sur Github pour soumettre ses fichiers markdown.
+Notre blog est basé sur Jekyll et hébergé sur Github Pages : [plus de détails ici]({BASE_URL}/fr/migration-du-blog/). Donc pour publier un article de blog, chaque auteur doit ouvrir une pull request sur Github pour soumettre ses fichiers markdown.
 Ensuite les autres astronautes peuvent relire ce qui a été rédigé avant de merger, i.e. publier l'article. Bien sûr le but de cette revue est de s'assurer que tout est bien expliqué et pas uniquement de corriger toutes les fautes d'orthographe, sinon cette relecture ne serait pas très drôle ! ;)
 
 C'est pourquoi nous avions besoin d'un moyen simple permettant de trouver automatiquement toutes les fautes dans les fichiers changés des pull requests, pour faciliter cette revue. Nous savons que les outils de vérification automatique d'orthographe ne sont jamais parfaits, et nous voulions donc seulement que cet outil nous envoie une notification avec les éventuelles erreurs, sans bloquer les autres astronautes qui voudraient merger la pull request.

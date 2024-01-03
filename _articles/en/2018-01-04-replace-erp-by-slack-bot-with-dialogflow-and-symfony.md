@@ -65,7 +65,7 @@ I think you got that, the possibilities are endless, but let's focus here on the
 To set up the first step of this process, here is what we gonna do:
 
 - Create a **Slack bot** and make it available in our Workspace so that all the users can send private messages to it.
-- Configure a **DialogFlow** agent: Google tool, formerly known as API.AI, already described on our [blog there (in French)](/fr/dialogflow-votre-chatbot-facile/). It will allow us to understand the messages sent by the users to the bot, thanks to *machine learning*, thing that's not so easy to do without this kind of tools!
+- Configure a **DialogFlow** agent: Google tool, formerly known as API.AI, already described on our [blog there (in French)]({BASE_URL}/fr/dialogflow-votre-chatbot-facile/). It will allow us to understand the messages sent by the users to the bot, thanks to *machine learning*, thing that's not so easy to do without this kind of tools!
 - Set up a **Symfony** application that will expose a **webhook** which will be called by Slack server each time a private message will be sent to our bot. That's from this application that we will send request to DialogFlow in order to understand the message received, then call Slack to send an answer to the astronaut, and finally save the leave request in the database.
 
 
@@ -533,7 +533,7 @@ We notice our friend Google managed to recognize the dates that were written in 
 
 I will stop there for now, even if, like I mentionned in the first part of this blog post, there would be so many other ways to automate this process so that we would never have to use our old ERP again: call calendars APIs, use interactive Slack buttons to ask for validation, send Slack notifications to all team members, or even calculate the sprint velocity of the team which is impacted by this new leave request!
 
-You will also notice that I used [API Platform](/en/build-an-api-with-api-platform/) on [my Github project](https://github.com/ch3ric/WilsonPlanning), even if it's not used for the purpose of this article: because I have many other ideas in mind to implement and this application's API could be called by other systems.
+You will also notice that I used [API Platform]({BASE_URL}/en/build-an-api-with-api-platform/) on [my Github project](https://github.com/ch3ric/WilsonPlanning), even if it's not used for the purpose of this article: because I have many other ideas in mind to implement and this application's API could be called by other systems.
 
 I'll let you know when I'll improve this tool in the future, if you're interested!
 Let me know in the comments if you have other ideas to ease this process!

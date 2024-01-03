@@ -1,4 +1,4 @@
-import { Text } from '@eleven-labs/design-system';
+import { Button, Text } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -37,8 +37,11 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
           ),
         })),
         {
-          title: contact.email,
-          description: contact.phoneNumber,
+          description: (
+            <Button as="a" href={contact.formLink} target="_blank" data-contact-link>
+              {t('footer.contact.form_title')}
+            </Button>
+          ),
         },
       ],
     },

@@ -26,9 +26,9 @@ keywords:
 ---
 Aujourd’hui si vous voulez mettre en place une CI/CD sur GitHub il vous faut “linker” vos dépôts avec Travis-ci, Circle-ci, Codeship... Mais savez-vous que GitLab intègre une solution de CI/CD ? C'est l'objet de l'article d'aujourd'hui.
 
-Dans cet article je vais juste vous présenter les possibilités que vous offre GitLab CI/CD. Mais pour aller plus loin vous pourrez retrouver deux tutos sur le [codelabs d'Eleven Labs](https://codelabs.eleven-labs.com) :
-- [Mettre en place une Ci sur un projet js](https://codelabs.eleven-labs.com/course/fr/gitlab-ci-js/)
-- [Gestion d'environnement avec Google Cloud Storage et GitlabCI](https://codelabs.eleven-labs.com/course/fr/react-env-variable-gcp-gitlabci/)
+Dans cet article je vais juste vous présenter les possibilités que vous offre GitLab CI/CD. Mais pour aller plus loin vous pourrez retrouver deux tutos sur le [codelabs d'Eleven Labs]({BASE_URL}/fr/categories/tutorial/) :
+- [Mettre en place une Ci sur un projet js]({BASE_URL}/fr/gitlab-ci-js/)
+- [Gestion d'environnement avec Google Cloud Storage et GitlabCI]({BASE_URL}/fr/react-env-variable-gcp-gitlabci/)
 
 Sinon, si vous cherchez une alternative à GitlabCI, un article sur GithubActions sortira très prochainement !
 
@@ -516,7 +516,7 @@ Le code coverage sera visible dans les informations du `job` dans l'interface we
 
 ![CI Coverage]({BASE_URL}/imgs/articles/2018-09-19-introduction-gitlab-ci/ci-coverage.png)
 
-> Si vous le souhaitez voici un autre article de notre blog écrit par l'astronaute [Pouzor](https://blog.eleven-labs.com/authors/pouzor/) sur le code coverage : [Ajouter le code coverage sur les MR avec avec GitLab-CI](https://blog.eleven-labs.com/fr/ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci/)
+> Si vous le souhaitez voici un autre article de notre blog écrit par l'astronaute [Pouzor]({BASE_URL}/authors/pouzor/) sur le code coverage : [Ajouter le code coverage sur les MR avec avec GitLab-CI]({BASE_URL}/fr/ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci/)
 
 ### retry
 Cette déclaration permet de ré-exécuter le `job` en cas d'échec. Il faut indiquer le nombre de fois où vous voulez ré-exécuter le `job`

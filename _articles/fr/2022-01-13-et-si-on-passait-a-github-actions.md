@@ -25,7 +25,7 @@ Mais avant toute chose, qu'est-ce que la CI/CD ?
 
 ## Rappel : qu'est-ce que la CI/CD ?
 
-Commençons avec une notion indispensable, celle de CI/CD. Tout comme pour notre précédent article *[Introduction à Gitlab CI](https://blog.eleven-labs.com/fr/introduction-gitlab-ci/)*, je ne vais pas vous faire une énième définition de ce qu'est la *CI/CD* mais utiliser à la place deux définitions, de chez Atlassian :
+Commençons avec une notion indispensable, celle de CI/CD. Tout comme pour notre précédent article *[Introduction à Gitlab CI]({BASE_URL}/fr/introduction-gitlab-ci/)*, je ne vais pas vous faire une énième définition de ce qu'est la *CI/CD* mais utiliser à la place deux définitions, de chez Atlassian :
 
 > **TLDR;**  
 > **Intégration continue** : ensemble de tests et procédures lancées automatiquement à la suite de changements de la base de code.  

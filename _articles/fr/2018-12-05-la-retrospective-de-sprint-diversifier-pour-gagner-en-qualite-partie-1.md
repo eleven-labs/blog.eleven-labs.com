@@ -43,7 +43,7 @@ Ainsi avec le temps, les membres de l’équipe vont se lasser, seront de moins 
 
 ## La base de la base
 
-Je ne vais pas revenir sur la méthodologie SCRUM et ses fondamentaux (quand, combien de temps, qui participe…) qui sont abordés dans l’article de l'astronaute Charles-Eric « [Amélioration continue : comment animer vos rétrospectives agiles](https://blog.eleven-labs.com/fr/amelioration-continue-comment-animer-vos-retrospectives-agiles/) ».
+Je ne vais pas revenir sur la méthodologie SCRUM et ses fondamentaux (quand, combien de temps, qui participe…) qui sont abordés dans l’article de l'astronaute Charles-Eric « [Amélioration continue : comment animer vos rétrospectives agiles]({BASE_URL}/fr/amelioration-continue-comment-animer-vos-retrospectives-agiles/) ».
 Je tiens seulement à préciser que peu importent la « gamification » ou le support visuel/matériel utilisé pour la rétrospective, cette dernière aura quasi-essentiellement toujours ce type de structure, pour une durée n'excédant pas 1h :
 
 - Ouverture
@@ -62,7 +62,7 @@ Mais cela peut aussi être tout autre, par exemple une équipe peu mature sur l�
 
 Vous l’aurez compris : plus on creuse, plus on trouve des aspects négatifs à réitérer indéfiniment le ou les mêmes types de rétrospectives.
 On pourrait alors tout à fait imaginer qu’outre la perte de motivation et d’engouement pour cette cérémonie, l’équipe pourrait aussi passer à côté d’un problème de bien-être global (ou quelque chose d'extérieur) car les rétrospectives proposées ne se concentrent que sur les aspects négatifs ou sur des problèmes de « surface ».
-Bien entendu, comme expliqué dans un autre article, vous pourriez aussi commencer la cérémonie avec [un mood board ou un safety check](https://blog.eleven-labs.com/fr/amelioration-continue-comment-animer-vos-retrospectives-agiles/) afin de vous en donner un aperçu et ensuite orienter vers tel ou tel type de rétrospective
+Bien entendu, comme expliqué dans un autre article, vous pourriez aussi commencer la cérémonie avec [un mood board ou un safety check]({BASE_URL}/fr/amelioration-continue-comment-animer-vos-retrospectives-agiles/) afin de vous en donner un aperçu et ensuite orienter vers tel ou tel type de rétrospective
 
 Enfin, de manière beaucoup plus situationnelle, on pourrait aussi imaginer que vous n’avez pas une multitude de choses à aborder et qu’un système type START, STOP, CONTINUE va sembler un peu vide et ressemblant au dernier, alors que l'équipe cherche un moyen intelligent d’aborder un énorme problème.
 Il existe justement un type de rétrospective adapté à ce cas de figure.

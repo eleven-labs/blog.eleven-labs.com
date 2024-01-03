@@ -21,9 +21,9 @@ Salut les Astronautes, aujourd'hui on va continuer dans notre lancée sur le mob
 
 Cet article s'inscrit dans la lignée des 2 précédents, et il est impératif de les avoir lu pour comprendre ce dont il s'agit ici :
 
-[Delegates VS Closures](https://blog.eleven-labs.com/fr/delegates-closures/)
+[Delegates VS Closures]({BASE_URL}/fr/delegates-closures/)
 
-[Pourquoi j'aime les listeners](https://blog.eleven-labs.com/fr/android-listeners/)
+[Pourquoi j'aime les listeners]({BASE_URL}/fr/android-listeners/)
 
 Si vous avez lu les 2 précédents articles, vous devez vous douter de ce dont celui-ci va parler.
 - Mais oui on sait, allez dépêche-toi là, on veut savoir comment faire un truc aussi sexy que les listeners mais sur iOS cette fois-ci.

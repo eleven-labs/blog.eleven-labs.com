@@ -23,7 +23,7 @@ Quand on exécute une suite de tests fonctionnels ou unitaires sur une applicati
 
 **Contexte : isolation grâce à un rollback de la base de données :**
 
-Comme indiqué dans un [article précédent](https://blog.eleven-labs.com/fr/test-unitaire-dun-bundle-symfony2/ "Test unitaire d’un bundle Symfony 2") et [décrit par Alexandre Salomé](http://alexandre-salome.fr/blog/Symfony2-Isolation-Of-Tests "Isolation of tests in Symfony2"), il est possible de mettre en place un système de rollback pour rétablir l'état initial des données après l’exécution de chaque test.
+Comme indiqué dans un [article précédent]({BASE_URL}/fr/test-unitaire-dun-bundle-symfony2/ "Test unitaire d’un bundle Symfony 2") et [décrit par Alexandre Salomé](http://alexandre-salome.fr/blog/Symfony2-Isolation-Of-Tests "Isolation of tests in Symfony2"), il est possible de mettre en place un système de rollback pour rétablir l'état initial des données après l’exécution de chaque test.
 
 Cela repose sur cette classe que vos tests fonctionnels PHPUnit devront étendre et qui déclenche le système d'isolation, avant et après chaque cas de tests grâce aux méthodes *setUp* et *tearDown* :
 
@@ -316,7 +316,7 @@ En analysant notre *IsolatedWebTestCase* et notre *Test Client*, on constate que
 
 Deuxième indice : la stack trace de l'exception dit que l'erreur est levée lors de l'appel `$this->doctrine->getManager()->flush($article);` dans notre *PriceStrategy*, déclenché par notre *ArticleListener*. Autrement dit, l'instance du *Doctrine Registry* injectée dans la *PriceStrategy* et l'*Entity Manager* lié n'ont pas connaissance de l'état de l'entité Article qu'ils doivent flusher : "*Entity has to be managed*".
 
-De plus, en regardant d'un peu plus près la [DBAL Connection de Doctrine](Doctrine\DBAL\Connection "https://github.com/doctrine/dbal/blob/master/lib/Doctrine/DBAL/Connection.php#L107"), on remarque une propriété [EventManager](https://github.com/doctrine/common/blob/master/lib/Doctrine/Common/EventManager.php "Doctrine\Common\EventManager") qui gère les *Events* et *Listeners* Doctrine, dont notre *ArticleListener*.
+De plus, en regardant d'un peu plus près la [DBAL Connection de Doctrine\DBAL\Connection](https://github.com/doctrine/dbal/blob/master/lib/Doctrine/DBAL/Connection.php#L107), on remarque une propriété [Doctrine\Common\EventManager](https://github.com/doctrine/common/blob/master/lib/Doctrine/Common/EventManager.php) qui gère les *Events* et *Listeners* Doctrine, dont notre *ArticleListener*.
 
 Finalement, on en déduit que l'*Event Manager* de la *DBAL Connection* de notre deuxième requête doit être conservé tel quel, pour gérer correctement l'enregistrement de l'entité après passage dans le listener. Pour permettre le rollback et l'isolation de nos tests, on ne souhaite conserver que l'état de la *Connection*, qui a lancé la requête SQL "*START TRANSACTION"*, sans pour autant conserver l'*Event Manager* de la première requête, qui semble poser problème.
 

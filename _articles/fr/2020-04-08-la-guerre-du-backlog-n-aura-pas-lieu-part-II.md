@@ -21,7 +21,7 @@ keywords:
   - priorisation
 ---
 
-Dans notre [premier article](https://blog.eleven-labs.com/fr/la-guerre-du-backlog-n-aura-pas-lieu/), nous avons détaillé trois méthodes de priorisation assez classiques du backlog : MoSCoW, WSJF, priorisation par la business value. Mais dans la bataille quotidienne de priorisation de votre produit, vous pouvez faire face à d’autres biais qui peuvent impacter négativement votre stratégie produit :
+Dans notre [premier article]({BASE_URL}/fr/la-guerre-du-backlog-n-aura-pas-lieu/), nous avons détaillé trois méthodes de priorisation assez classiques du backlog : MoSCoW, WSJF, priorisation par la business value. Mais dans la bataille quotidienne de priorisation de votre produit, vous pouvez faire face à d’autres biais qui peuvent impacter négativement votre stratégie produit :
 
 -   Prioriser de nouvelles features attrayantes et fun mais qui n’ont pas un impact suffisamment large sur vos clients
 

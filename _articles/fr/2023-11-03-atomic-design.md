@@ -19,7 +19,7 @@ authors:
 Dans cet article, je vais vous présenter le concept d'Atomic Design en détaillant ses avantages et en fournissant des exemples concrets de cette approche. Je vais également aborder l'application de cette méthodologie en proposant des exemples d'utilisation, telle que pratiquée dans nos projets au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application), en utilisant la librairie Javascript React.
 
 ## Qu'est-ce que l'Atomic Design ?
-Créé par Brad Frost en 2013, l'Atomic Design est tout d'abord une approche de conception de systèmes d'interface utilisateur et de design d'interaction. Son application peut être dédiée à la création d'un [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) ou à l'organisation de l'interface utilisateur d'un projet quel qu'il soit.
+Créé par Brad Frost en 2013, l'Atomic Design est tout d'abord une approche de conception de systèmes d'interface utilisateur et de design d'interaction. Son application peut être dédiée à la création d'un [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/) ou à l'organisation de l'interface utilisateur d'un projet quel qu'il soit.
 
 ## Hiérarchie des éléments
 L'approche de l'Atomic Design consiste à fractionner l'interface utilisateur en éléments modulaires, organisés en une hiérarchie allant des plus simples aux plus complexes : **Atomes**, **Molécules**, **Organismes**, **Templates** et **Pages**. On peut également trouver des éléments plus petits que les atomes, appelés **Design Tokens**. Cette approche, qui s'inspire de la chimie, encourage à considérer l'interface comme un assemblage de modules réutilisables, offrant la possibilité de combiner ces éléments pour former des interfaces plus étendues. Ce processus favorise l'évolutivité, la flexibilité et l'uniformité dans la création et l'évolution des interfaces utilisateurs.
@@ -33,7 +33,7 @@ Les composants de la conception atomique peuvent être divisés en deux catégor
 Figure: *Brad Frost - [Extending atomic design](https://bradfrost.com/blog/post/extending-atomic-design/)*
 
 ### Les éléments du Système
-Les éléments du système sont des composants abstraits qui n'ont aucune connaissance du contenu spécifique des applications. Par conséquent, ils peuvent être utilisés dans n'importe quel projet ou plateforme, ce qui les rend modulaires et réutilisables. C'est typiquement la catégorie de composants que l'on retouve dans un **[Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/)**.
+Les éléments du système sont des composants abstraits qui n'ont aucune connaissance du contenu spécifique des applications. Par conséquent, ils peuvent être utilisés dans n'importe quel projet ou plateforme, ce qui les rend modulaires et réutilisables. C'est typiquement la catégorie de composants que l'on retouve dans un **[Design System]({BASE_URL}/fr/pourquoi-creer-design-system/)**.
 
 <div class="admonition note" markdown="1"><p  class="admonition-title">Note</p>
 
@@ -65,7 +65,7 @@ const MySection: React.FC = () => (
 export default MySection;
 ```
 
-Pour approfondir le sujet, je vous invite à consulter notre article qui traite des [Design Tokens, leur utilisation et leur avantages](https://blog.eleven-labs.com/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/).
+Pour approfondir le sujet, je vous invite à consulter notre article qui traite des [Design Tokens, leur utilisation et leur avantages]({BASE_URL}/fr/un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/).
 
 #### Atomes
 Ici, nous allons classer les éléments les plus petits et indivisibles. Il s'agit généralement d'éléments HTML tels que des liens, des boutons, des champs de texte, des images, etc. Un composant distinct sera créé pour chacun de ces éléments atomiques. Les atomes sont, par essence, des composants abstraits, véritablement utiles lorsqu'ils sont composés et assemblés à d'autres au sein d'un composant plus complexe.
@@ -296,4 +296,4 @@ Cette méthodologie vient formaliser et structurer ce qui était déjà pratiqu�
 ## Conclusion
 En adoptant le concept de l'Atomic Design, vous introduisez des principes fondamentaux tels que la modularité, la facilité de maintenance et la collaboration. Cela entraîne une nette amélioration de la productivité et de la rapidité dans la mise en place du design. Réduire les risques d'erreurs et assurer une évolution constante et cohérente des éléments sont d'autres avantages qui renforceront l'image de votre marque.
 
-Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous appliquons l'Atomic Design pour élaborer des [Design System](https://blog.eleven-labs.com/fr/pourquoi-creer-design-system/) destinés à nos projets internes et à nos clients. Cette approche nous a permis de tirer parti de tous les bénéfices mentionnés dans cet article.
+Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous appliquons l'Atomic Design pour élaborer des [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/) destinés à nos projets internes et à nos clients. Cette approche nous a permis de tirer parti de tous les bénéfices mentionnés dans cet article.

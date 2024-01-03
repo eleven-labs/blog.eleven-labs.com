@@ -18,7 +18,7 @@ keywords:
 
 En tant que PO ou chef de produit, vous pouvez développer vous-même certaines fonctionnalités qui peuvent être répétitives et peu motivantes pour vos développeurs et qui ont peu de valeur ajoutée. Cela permet aux équipes de se concentrer sur l'essentiel, tout en laissant plus de temps disponible pour réfléchir à l’architecture et aux différents challenges techniques. Pour tester une nouvelle idée et/ou un marché sans trop investir, un outil NoCode est une vraie solution.
 
-J’avais déjà présenté l’[outil open-source n8n](https://blog.eleven-labs.com/fr/outil-low-code-automatisation-workflow-n8n/) qui permet de faire de l’automatisation Low Code, [Integromat](https://www.integromat.com/) permet d’aller encore plus loin en permettant de faire du NoCode, et donc d’être à la portée des non-tech.
+J’avais déjà présenté l’[outil open-source n8n]({BASE_URL}/fr/outil-low-code-automatisation-workflow-n8n/) qui permet de faire de l’automatisation Low Code, [Integromat](https://www.integromat.com/) permet d’aller encore plus loin en permettant de faire du NoCode, et donc d’être à la portée des non-tech.
 
 Pour tester l’outil, un freeplan est proposé pour pouvoir faire ses premiers scénarios. Avec des premiers plans à des prix accessibles, il est facile de passer du PoC à une utilisation professionnelle.
 

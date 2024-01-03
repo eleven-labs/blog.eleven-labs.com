@@ -78,7 +78,7 @@ Si tout est ok, lors de chaque `commit` , le hook va vérifier la syntaxe php.
 
 Une fois cela validé, la suite logique est de faire en sorte que les développeurs codent tous avec les mêmes standards. Ce qui est bien, c'est que PHP a déjà des standards : les **[PSR](http://www.php-fig.org/psr/)**.
 
-Encore faut-il que tous les développeurs les suivent, c'est assez simple en PHP. Nous avons ajouté dans notre hook de pre-commit la commande de vérification disponible dans cet article, *[vérifier la qualité du code](https://blog.eleven-labs.com/fr/verifier-la-qualite-du-code/)*
+Encore faut-il que tous les développeurs les suivent, c'est assez simple en PHP. Nous avons ajouté dans notre hook de pre-commit la commande de vérification disponible dans cet article, *[vérifier la qualité du code]({BASE_URL}/fr/verifier-la-qualite-du-code/)*
 
 Nous étions satisfaits mais c'était assez contraignant de passer par les hooks git. La première difficulté était que chaque développeur pouvait changer ses hooks, ce qui peut poser des problèmes.
 
@@ -318,7 +318,7 @@ Scrutinizer est assez complet et permet de suivre la qualité de votre code au f
 
 **Encore une étape de terminée !!!!**
 
-Nous avons utilisé cette stack pendant plus d'un an, nous étions assez satisfait. Puis un jour, un article sur [les tests de mutation](https://blog.eleven-labs.com/fr/mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/), nous a donné envie d'aller plus loin. Nous avons alors essayé les tests de mutation, ce qui nous a permis de voir que même avec un code coverage de 90%, il y avait des tests qui ne faisaient rien ou qui testaient mal le code. Après avoir fait les changements, nous voulions aussi l'introduire dans notre CI. Le premier réflexe étant d'ajouter le script dans la configuration travis. Grosse erreur, le script mettant plus de 20 minutes sur notre projet, nous avions les jobs Travis en attente sur les autres projets. Mais heureusement, Travis avait sorti une nouvelle fonctionnalité qui permet de lancer les jobs en mode CRON et donc de le faire qu'une fois par jour, ce qui est suffisant pour ce genre de test. Il nous suffsait alors d'ajouter la config suivante.
+Nous avons utilisé cette stack pendant plus d'un an, nous étions assez satisfait. Puis un jour, un article sur [les tests de mutation]({BASE_URL}/fr/mutation-testing-verifiez-la-qualite-de-vos-tests-unitaires/), nous a donné envie d'aller plus loin. Nous avons alors essayé les tests de mutation, ce qui nous a permis de voir que même avec un code coverage de 90%, il y avait des tests qui ne faisaient rien ou qui testaient mal le code. Après avoir fait les changements, nous voulions aussi l'introduire dans notre CI. Le premier réflexe étant d'ajouter le script dans la configuration travis. Grosse erreur, le script mettant plus de 20 minutes sur notre projet, nous avions les jobs Travis en attente sur les autres projets. Mais heureusement, Travis avait sorti une nouvelle fonctionnalité qui permet de lancer les jobs en mode CRON et donc de le faire qu'une fois par jour, ce qui est suffisant pour ce genre de test. Il nous suffsait alors d'ajouter la config suivante.
 
 ```yml
 //.travis.yml

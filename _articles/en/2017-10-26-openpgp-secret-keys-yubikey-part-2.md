@@ -17,7 +17,7 @@ keywords:
   - yubikey
 ---
 
-We saw in the previous article [the generation of OpenPGP keys](/fr/openpgp-paire-clef-presque-parfaite-partie-1/).
+We saw in the previous article [the generation of OpenPGP keys]({BASE_URL}/fr/openpgp-paire-clef-presque-parfaite-partie-1/).
 As a reminder, we have in our keychain private keys:
 
 ```bash
@@ -440,10 +440,10 @@ In a future article, we will set up a backup strategy to cover for the potential
 like erasing your computer following a ransomware.
 
 ### Article en relation
-* [OpenPGP - The almost perfect key pair (part 1)](/openpgp-almost-perfect-key-pair-part-1/)
-* [OpenPGP - Export Secret Keys to a Yubikey (part 2)](/openpgp-secret-keys-yubikey-part-2/)
-* [OpenPGP - Long term storage (part 3)](/fr/openpgp-stockage-froid-clefs-partie-3/)
-* [OpenPGP - I was in a Key Signing Party (part 4)](/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
+* [OpenPGP - The almost perfect key pair (part 1)]({BASE_URL}/en/openpgp-almost-perfect-key-pair-part-1/)
+* [OpenPGP - Export Secret Keys to a Yubikey (part 2)]({BASE_URL}/en/openpgp-secret-keys-yubikey-part-2/)
+* [OpenPGP - Long term storage (part 3)]({BASE_URL}/fr/openpgp-stockage-froid-clefs-partie-3/)
+* [OpenPGP - I was in a Key Signing Party (part 4)]({BASE_URL}/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
 
 ### Resources
 

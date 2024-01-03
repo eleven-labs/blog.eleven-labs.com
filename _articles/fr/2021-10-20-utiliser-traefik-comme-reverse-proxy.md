@@ -377,7 +377,7 @@ Et puis bien sûr, je peux le voir aussi dans mon dashboard traefik :
 
 Maintenant que nous savons écrire les différentes règles de routage pour un service ainsi que générer un certificat SSL, il va nous être enfantin de faire la même chose pour un service Docker.
 
-Après avoir lu l'article [DOMOTISER SON ESPACE DE TRAVAIL](https://blog.eleven-labs.com/fr/domotize-your-workspace/), j'ai voulu mettre en place Home Assistant à la maison.
+Après avoir lu l'article [DOMOTISER SON ESPACE DE TRAVAIL]({BASE_URL}/fr/domotize-your-workspace/), j'ai voulu mettre en place Home Assistant à la maison.
 
 Home Assistant peut être mis en place avec un container Docker, nous allons donc ajouter les lignes dans notre fichier `/srv/docker-compose.yml` qui devrait maintenant ressembler à cela :
 

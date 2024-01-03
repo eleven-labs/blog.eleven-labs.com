@@ -196,5 +196,5 @@ GraphQL est une technologie ayant de nombreux avantages. GraphQL est très appr�
 
 Je vous invite desormais à lire les deux Codelabs suivant:
 
- - [Utiliser GraphQL avec apollo](https://codelabs.eleven-labs.com/course/fr/graphql-avec-apollo/)
- - [Utiliser GraphQL avec Symfony](https://codelabs.eleven-labs.com/course/fr/graphql-avec-symfony/)
+ - [Utiliser GraphQL avec apollo]({BASE_URL}/fr/graphql-avec-apollo/)
+ - [Utiliser GraphQL avec Symfony]({BASE_URL}/fr/graphql-avec-symfony/)

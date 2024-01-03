@@ -18,7 +18,7 @@ keywords:
   - yubikey
 ---
 
-Nous avons vu dans l'article précedent [la génération de clefs OpenPGP](/fr/openpgp-paire-clef-presque-parfaite-partie-1/).
+Nous avons vu dans l'article précedent [la génération de clefs OpenPGP]({BASE_URL}/fr/openpgp-paire-clef-presque-parfaite-partie-1/).
 Pour rappel, nous avons dans notre trousseau de clefs privées gpg :
 
 ```bash
@@ -430,10 +430,10 @@ Par ailleurs, vous pouvez diffuser votre clef publique sur [un serveur de clefs]
 Dans un prochain article, nous allons mettre en place une stratégie de sauvegarde en cas de perte des clefs secrètes. Une erreur peut vite arriver, comme formater son ordinateur suite à un ransonware (ce qui est d'actualité en ce moment).
 
 ## Article en relation
-* [OpenPGP - Une paire de clés presque parfaite (partie 1)](/fr/openpgp-paire-clef-presque-parfaite-partie-1/)
-* [OpenPGP - Exporter les clefs secrètes sur une Yubikey (partie 2)](/fr/openpgp-clef-secrete-yubikey-partie-2/)
-* [OpenPGP - Stockage sur le long terme de clefs (partie 3)](/fr/openpgp-stockage-froid-clefs-partie-3/)
-* [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)](/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
+* [OpenPGP - Une paire de clés presque parfaite (partie 1)]({BASE_URL}/fr/openpgp-paire-clef-presque-parfaite-partie-1/)
+* [OpenPGP - Exporter les clefs secrètes sur une Yubikey (partie 2)]({BASE_URL}/fr/openpgp-clef-secrete-yubikey-partie-2/)
+* [OpenPGP - Stockage sur le long terme de clefs (partie 3)]({BASE_URL}/fr/openpgp-stockage-froid-clefs-partie-3/)
+* [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)]({BASE_URL}/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
 
 ### Resources
 - [wikipedia - Universal 2nd Factor](https://en.wikipedia.org/wiki/Universal_2nd_Factor)

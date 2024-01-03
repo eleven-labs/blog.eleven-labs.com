@@ -26,7 +26,7 @@ keywords:
 ---
 Today if you want to set up a CI/CD on GitHub you need to “link” your repositories with Travis-ci, Circle-ci, Codeship... But did you know that GitLab integrates a CI/CD solution? This is the subject of today's article.
 
-In this article I will just show you the possibilities that GitLab CI/CD offers to you. But if you want to dig further in the subject, I've also created a tutorial on [Eleven Labs codelabs](https://codelabs.eleven-labs.com) on how to [set up a CI on a javascript project](https://codelabs.eleven-labs.com/course/fr/gitlab-ci-js/)
+In this article I will just show you the possibilities that GitLab CI/CD offers to you. But if you want to dig further in the subject, I've also created a tutorial on [Eleven Labs codelabs]({BASE_URL}/fr/categories/tutorial/) on how to [set up a CI on a javascript project]({BASE_URL}/fr/gitlab-ci-js/)
 
 # CI/CD what is that?
 
@@ -391,7 +391,7 @@ stop:demo: # This job can only be visible and executed after the `deploy:demo` j
     action: stop
 ```
 
-Here is the official link for the [environments documentation](docs.gitlab.com/ee/ci/environments.html) if you want to go further.
+Here is the official link for the [environments documentation](https://docs.gitlab.com/ee/ci/environments.html) if you want to go further.
 
 ## variables
 This declaration allows you to define variables for all `jobs` or for a specific `job`.
