@@ -28,9 +28,6 @@
     "fr": "Français",
     "en": "English"
   },
-  "common": {
-    "back": "Retour"
-  },
   "header": {
     "title": "Eleven Labs",
     "subtitle": "Le blog",
@@ -42,14 +39,10 @@
   },
   "footer": {
     "intro_block": {
-      "title": "Découvrez Eleven Labs",
-      "description": "L'ESN qui fait décoller vos projets web, mobile & data !"
+      "title": "Découvrez l’agence Eleven Labs !",
+      "description": "L'ESN qui fait décoller vos projets web, mobile & data."
     },
-    "contact": {
-      "title": "Contact",
-      "form_title": "Contactez nous"
-    },
-    "link_to_eleven_labs_site": "Voir le site web"
+    "contact_label_link": "Contact"
   },
   "autocomplete": {
     "placeholder": "Rechercher par nom d’article ou d’auteur",

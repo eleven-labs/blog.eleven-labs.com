@@ -4,6 +4,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import * as AutocompleteFieldStories from '@/components/AutocompleteField/AutocompleteField.stories';
+import { contact } from '@/config/website';
 import { Header, HeaderProps, LayoutTemplate } from '@/templates/LayoutTemplate';
 
 export default {
@@ -19,51 +20,26 @@ export default {
     }),
     footer: {
       introBlock: {
-        title: 'Découvrez Eleven Labs',
-        description: 'Notre site pour mieux nous connaître',
+        title: 'Découvrez l’agence Eleven Labs !',
+        description: `L'ESN qui fait décoller vos projets web, mobile & data.`,
       },
       elevenLabsSiteLink: {
-        // eslint-disable-next-line prettier/prettier
-        label: `J'y vais`
+        href: '#',
       },
-      contact: {
-        title: 'Contact',
-        list: [
-          {
-            title: 'Eleven Labs - Paris',
-            description: (
-              <>
-                15 avenue de la grande armée
-                <br />
-                75116{' '}
-                <Text as="span" textTransform="uppercase">
-                  Paris
-                </Text>
-              </>
-            ),
-          },
-          {
-            title: 'Eleven Labs - Nantes',
-            description: (
-              <>
-                24 mail des chantiers
-                <br />
-                844200{' '}
-                <Text as="span" textTransform="uppercase">
-                  Nantes
-                </Text>
-              </>
-            ),
-          },
-          {
-            description: (
-              <Button as="a" href="https://eleven-labs.com/contact/">
-                Contact
-              </Button>
-            ),
-          },
-        ],
+      contactLink: {
+        label: 'Contact',
+        href: '#',
       },
+      addressList: contact.addressList.map(({ name, address }) => ({
+        title: name,
+        description: (
+          <>
+            {address.map((line, index) => (
+              <Text key={index}>{line}</Text>
+            ))}
+          </>
+        ),
+      })),
       socialLinks: [
         {
           iconName: 'rss',

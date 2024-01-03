@@ -16,34 +16,24 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
       description: t('footer.intro_block.description'),
     },
     elevenLabsSiteLink: {
-      as: 'a',
-      label: t('footer.link_to_eleven_labs_site'),
       target: '_blank',
       href: websiteUrl,
       'data-website-link': true,
     } as LayoutTemplateProps['footer']['elevenLabsSiteLink'],
-    contact: {
-      title: t('footer.contact.title'),
-      list: [
-        ...contact.addressList.map(({ name, address }) => ({
-          title: name,
-          description: (
-            <>
-              {address.map((line, index) => (
-                <Text key={index}>{line}</Text>
-              ))}
-            </>
-          ),
-        })),
-        {
-          description: (
-            <Button as="a" href={contact.formLink} target="_blank" data-contact-link>
-              {t('footer.contact.form_title')}
-            </Button>
-          ),
-        },
-      ],
+    contactLink: {
+      label: t('footer.contact_label_link'),
+      href: contact.formLink,
     },
+    addressList: contact.addressList.map(({ name, address }) => ({
+      title: name,
+      description: (
+        <>
+          {address.map((line, index) => (
+            <Text key={index}>{line}</Text>
+          ))}
+        </>
+      ),
+    })),
     socialLinks: socialNetworks.map((socialNetwork) => ({
       as: 'a',
       iconName: socialNetwork.iconName,

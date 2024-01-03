@@ -1,6 +1,6 @@
 import './Footer.scss';
 
-import { Box, Button, Flex, Heading, Icon, IconNameType, Link, Logo, Text } from '@eleven-labs/design-system';
+import { Box, Button, Flex, Icon, IconNameType, Link, Logo, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
 export interface FooterProps {
@@ -8,11 +8,9 @@ export interface FooterProps {
     title: React.ReactNode;
     description: React.ReactNode;
   };
-  elevenLabsSiteLink: { label: React.ReactNode } & React.ComponentPropsWithoutRef<'a'>;
-  contact: {
-    title: React.ReactNode;
-    list: { title?: React.ReactNode; description: React.ReactNode }[];
-  };
+  elevenLabsSiteLink: React.ComponentPropsWithoutRef<'a'>;
+  addressList: { title?: React.ReactNode; description: React.ReactNode }[];
+  contactLink: { label: React.ReactNode } & React.ComponentPropsWithoutRef<'a'>;
   socialLinks: ({
     iconName: Extract<IconNameType, 'rss' | 'facebook' | 'twitter' | 'linkedin' | 'welcometothejungle'>;
   } & React.ComponentPropsWithoutRef<'a'>)[];
@@ -24,37 +22,41 @@ export interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({
   introBlock,
-  elevenLabsSiteLink: { label: elevenLabsSiteLinkLabel, ...elevenLabsSiteLinkProps },
-  contact,
+  elevenLabsSiteLink,
+  contactLink: { label: contactLabel, ...contactLink },
+  addressList,
   socialLinks,
   languageLinks,
 }) => (
   <Box as="footer" bg="navy" color="white" textAlign={{ xs: 'center', md: 'left' }} textSize="s" className="footer">
     <Flex
       flexDirection={{ xs: 'column', md: 'row' }}
+      justifyContent="center"
+      alignItems="center"
+      py="xs"
+      className="footer__intro"
+    >
+      <Text fontWeight="bold">{introBlock.title}</Text>
+      <Box as="a" ml="s" {...elevenLabsSiteLink} className="footer__intro-link">
+        {introBlock.description}
+      </Box>
+    </Flex>
+    <Flex
+      flexDirection={{ xs: 'column', md: 'row' }}
       justifyContent="around"
       alignItems="center"
-      pt={{ md: 'xl' }}
-      pb={{ md: 'xl' }}
-      mb="xl"
+      pt={{ xs: 'l', md: 'xl' }}
+      pb={{ xs: 'l', md: 'xl' }}
       mx="s"
     >
       <Box mb="xl">
-        <Flex justifyContent={{ xs: 'center', md: 'start' }} alignItems="center" pt={{ xs: 'l', md: '0' }} mb="xxs">
+        <Flex justifyContent={{ xs: 'center', md: 'start' }} alignItems="center" mb="xxs">
           <Logo name="website" size="2.5em" />
         </Flex>
-        <Text>{introBlock.title}</Text>
-        <Text fontWeight="bold" mb="s">
-          {introBlock.description}
-        </Text>
-        <Button {...(elevenLabsSiteLinkProps as typeof Button)}>{elevenLabsSiteLinkLabel}</Button>
       </Box>
       <Box>
-        <Heading as="p" size="l" mb="s">
-          {contact.title}
-        </Heading>
         <Flex flexDirection={{ xs: 'column', md: 'row' }} gap={{ md: 'xl' }}>
-          {contact.list.map((currentContact, contactIndex) => (
+          {addressList.map((currentContact, contactIndex) => (
             <Box key={contactIndex} mb="m">
               {currentContact.title && (
                 <Text fontWeight="bold" mb="xxs-2">
@@ -65,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({
             </Box>
           ))}
         </Flex>
-        <Flex gapY="s" alignItems="center">
+        <Flex justifyContent={{ xs: 'center', md: 'start' }} alignItems="center" flexWrap="wrap" gap="s">
           {socialLinks.map(({ iconName, ...linkProps }, socialLinkIndex) => (
             <a
               key={socialLinkIndex}
@@ -79,9 +81,12 @@ export const Footer: React.FC<FooterProps> = ({
                     'data-social-link': iconName,
                   })}
             >
-              <Icon name={iconName} size="2.5em" color="white" mx="xxs-2" className="footer__social-icon" />
+              <Icon name={iconName} size="2.5em" color="white" className="footer__social-icon" />
             </a>
           ))}
+          <Button as="a" {...contactLink}>
+            {contactLabel}
+          </Button>
         </Flex>
       </Box>
     </Flex>

@@ -28,9 +28,6 @@
     "fr": "Français",
     "en": "English"
   },
-  "common": {
-    "back": "Back"
-  },
   "header": {
     "title": "Eleven Labs",
     "subtitle": "The blog",
@@ -42,14 +39,10 @@
   },
   "footer": {
     "intro_block": {
-      "title": "Discover Eleven Labs",
+      "title": "Discover the Eleven Labs agency!",
       "description": "The software engineering provider which boosts your web, mobile and data projects!"
     },
-    "contact": {
-      "title": "Contact",
-      "form_title": "Contact us"
-    },
-    "link_to_eleven_labs_site": "Check the website"
+    "contact_label_link": "Contact"
   },
   "autocomplete": {
     "placeholder": "Search by article or author name",
