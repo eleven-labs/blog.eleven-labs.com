@@ -31,12 +31,6 @@
   "common": {
     "back": "Back"
   },
-  "cookie_consent": {
-    "title": "This website uses cookies from Google Analytics",
-    "description": "These cookies help us to identify the content you are most interested in and to identify certain malfunctions. Your browsing data is sent to Google Inc.",
-    "button_decline_label": "Decline",
-    "button_accept_label": "Accept"
-  },
   "header": {
     "title": "Eleven Labs",
     "subtitle": "The blog",
@@ -49,12 +43,13 @@
   "footer": {
     "intro_block": {
       "title": "Discover Eleven Labs",
-      "description": "To learn more, visit our website"
+      "description": "The software engineering provider which boosts your web, mobile and data projects!"
     },
     "contact": {
-      "title": "Contact"
+      "title": "Contact",
+      "form_title": "Contact us"
     },
-    "link_to_eleven_labs_site": "Let's go"
+    "link_to_eleven_labs_site": "Check the website"
   },
   "autocomplete": {
     "placeholder": "Search by article or author name",

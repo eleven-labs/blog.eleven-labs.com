@@ -403,10 +403,10 @@ Par ailleurs, le 2 novembre, il y aura [une fête de la signature des clés](htt
 Cet évévenement est l'occasion de rencontrer d'autres adeptes d'OpenPGP et surtout, il permettra de faire certifier votre clé nouvellement créée.
 
 ### Article en relation
-* [OpenPGP - Une paire de clés presque parfaite (partie 1)](/fr/openpgp-paire-clef-presque-parfaite-partie-1/)
-* [OpenPGP - Exporter les clefs secrètes sur une Yubikey (partie 2)](/fr/openpgp-clef-secrete-yubikey-partie-2/)
-* [OpenPGP - Stockage sur le long terme de clefs (partie 3)](/fr/openpgp-stockage-froid-clefs-partie-3/)
-* [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)](/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
+* [OpenPGP - Une paire de clés presque parfaite (partie 1)]({BASE_URL}/fr/openpgp-paire-clef-presque-parfaite-partie-1/)
+* [OpenPGP - Exporter les clefs secrètes sur une Yubikey (partie 2)]({BASE_URL}/fr/openpgp-clef-secrete-yubikey-partie-2/)
+* [OpenPGP - Stockage sur le long terme de clefs (partie 3)]({BASE_URL}/fr/openpgp-stockage-froid-clefs-partie-3/)
+* [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)]({BASE_URL}/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
 
 ### Resources
 * [GPG : création de votre première paire de clefs et chiffrement d'un fichier](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm)

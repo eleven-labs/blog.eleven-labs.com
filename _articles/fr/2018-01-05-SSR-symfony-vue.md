@@ -165,7 +165,7 @@ Voilà, vous devez avoir un site symfony 4 qui vous affiche `Hello world` en vue
 
 L'intérêt du SSR est de ne pas interpréter le javascript sur le client lors du premier appel mais plutôt par votre serveur. Cela permet d'avoir une page directement générée, et de gagner en performance d'affichage ainsi qu'en SEO.
 
-Normalement le SSR se fait directement sur un serveur javascript. Il existe d'ailleurs des librairies directement faites pour cela.  Je vous incite à lire cet article qui parle du [SSR sur React](https://blog.eleven-labs.com/en/react-ssr/).
+Normalement le SSR se fait directement sur un serveur javascript. Il existe d'ailleurs des librairies directement faites pour cela.  Je vous incite à lire cet article qui parle du [SSR sur React]({BASE_URL}/en/react-ssr/).
 
 Mais ici, nous voulons garder notre serveur Symfony (pour plein de raison que je n'expliquerai pas).
 

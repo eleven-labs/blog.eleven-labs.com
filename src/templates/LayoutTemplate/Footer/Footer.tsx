@@ -11,7 +11,7 @@ export interface FooterProps {
   elevenLabsSiteLink: { label: React.ReactNode } & AsProps<'a'>;
   contact: {
     title: React.ReactNode;
-    list: { title: React.ReactNode; description: React.ReactNode }[];
+    list: { title?: React.ReactNode; description: React.ReactNode }[];
   };
   socialLinks: ({
     iconName: Extract<IconNameType, 'rss' | 'facebook' | 'twitter' | 'linkedin' | 'welcometothejungle'>;
@@ -37,6 +37,7 @@ export const Footer: React.FC<FooterProps> = ({
       pt={{ md: 'xl' }}
       pb={{ md: 'xl' }}
       mb="xl"
+      mx="s"
     >
       <Box mb="xl">
         <Flex justifyContent={{ xs: 'center', md: 'start' }} alignItems="center" pt={{ xs: 'l', md: '0' }} mb="xxs">
@@ -54,15 +55,17 @@ export const Footer: React.FC<FooterProps> = ({
         </Heading>
         <Flex flexDirection={{ xs: 'column', md: 'row' }} gap={{ md: 'xl' }}>
           {contact.list.map((currentContact, contactIndex) => (
-            <Box key={contactIndex} mb={contact.list.length === contactIndex + 1 ? 'xs' : 'm'}>
-              <Text fontWeight="bold" mb="xxs-2">
-                {currentContact.title}
-              </Text>
+            <Box key={contactIndex} mb="m">
+              {currentContact.title && (
+                <Text fontWeight="bold" mb="xxs-2">
+                  {currentContact.title}
+                </Text>
+              )}
               {currentContact.description}
             </Box>
           ))}
         </Flex>
-        <Flex gapY="s">
+        <Flex gapY="s" alignItems="center">
           {socialLinks.map(({ as: As = 'a', iconName, ...linkProps }, socialLinkIndex) => (
             <As
               key={socialLinkIndex}

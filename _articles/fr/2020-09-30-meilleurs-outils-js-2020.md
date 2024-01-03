@@ -67,7 +67,7 @@ Node Version Manager est un logiciel permettant de faire cohabiter plusieurs ver
 
 ![]({BASE_URL}/imgs/articles/2020-09-30-meilleurs-outils-js-2020/docker.png)
 
-Si vous ne voulez pas vous soucier de quelle version de Node vous utilisez, il existe une solution encore plus pratique : [Docker](https://blog.eleven-labs.com/fr/cheat-sheet-docker-tout-ce-que-vous-devez-savoir/).
+Si vous ne voulez pas vous soucier de quelle version de Node vous utilisez, il existe une solution encore plus pratique : [Docker]({BASE_URL}/fr/cheat-sheet-docker-tout-ce-que-vous-devez-savoir/).
 
 Docker permet de faire tourner chaque partie de votre application dans des conteneurs, permettant une meilleure maîtrise de l'environnement de dev. Il permet aussi de garder une cohérence entre tous les environnements d’un groupe de travail, et une installation très rapide pour les nouveaux arrivants.
 
@@ -127,7 +127,7 @@ En parlant de render, ne vous êtes vous jamais demandé pourquoi vos composants
 
 ![]({BASE_URL}/imgs/articles/2020-09-30-meilleurs-outils-js-2020/storybook.png)
 
-Si comme moi vous avez adopté la méthodologie [BEM](https://blog.eleven-labs.com/fr/retour-d-experience-sur-bem/), alors vous connaissez la nécessité d’avoir des composants unitaires, avec un affichage et un comportement uniforme à chaque utilisation. Pour aider à travailler dans ce sens il existe l’outil open source [Storybook](https://storybook.js.org/), qui est disponible pour React, Vue et Angular et qui permet de facilement créer et maintenir vos composants pour une meilleure réutilisabilité. Pour en savoir plus une suite d’articles est disponible sur notre [blog](https://blog.eleven-labs.com/fr/Storybook-creer-son-premier-composant/).
+Si comme moi vous avez adopté la méthodologie [BEM]({BASE_URL}/fr/retour-d-experience-sur-bem/), alors vous connaissez la nécessité d’avoir des composants unitaires, avec un affichage et un comportement uniforme à chaque utilisation. Pour aider à travailler dans ce sens il existe l’outil open source [Storybook](https://storybook.js.org/), qui est disponible pour React, Vue et Angular et qui permet de facilement créer et maintenir vos composants pour une meilleure réutilisabilité. Pour en savoir plus une suite d’articles est disponible sur notre [blog]({BASE_URL}/fr/Storybook-creer-son-premier-composant/).
 
 ## Bit
 

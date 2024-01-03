@@ -23,7 +23,7 @@ keywords:
 
 ## Intro
 
-Êtes-vous quelqu’un de pati… ah non je me [répète](https://blog.eleven-labs.com/fr/optimistic-ui-avec-react-et-apollo-js/).
+Êtes-vous quelqu’un de pati… ah non je me [répète]({BASE_URL}/fr/optimistic-ui-avec-react-et-apollo-js/).
 Avez vous déjà réalisé une “one page application” (ou une “application web monopage”, dans la langue de Maître Gims) ?
 Si oui, vous devez être au fait de la problématique du temps de chargement lors d’un changement de page.
 Ce moment de transition ou les blocs statiques de notre application comme le header et le footer sont affichés mais que le contenu, lui, est encore en chargement dû à une mauvaise connexion ou à une API longue à répondre.
@@ -245,7 +245,7 @@ Et voila son rendu final :
 ## Et Apollo Js là-dedans ?
 C’est beau tout ça, mais comment savoir où et quand afficher nos squelettes ?
 Pour cela nous allons utiliser le retour des queries Apollo de notre application.
-(Pour en savoir plus sur apollo et comment le mettre en place, je vous invite à aller voir [cet article](https://blog.eleven-labs.com/fr/commencer-avec-apollojs/)).
+(Pour en savoir plus sur apollo et comment le mettre en place, je vous invite à aller voir [cet article]({BASE_URL}/fr/commencer-avec-apollojs/)).
 Continuons dans notre exemple avec cette page comprenant une liste d'items récupérée via une Query graphQL :
 ```jsx
 //MoviesPageList.jsx

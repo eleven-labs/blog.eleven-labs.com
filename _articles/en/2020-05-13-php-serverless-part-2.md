@@ -16,7 +16,7 @@ keywords:
   - lambda
 ---
 
-This article is a follow-up to this [first part](https://blog.eleven-labs.com/en/en/php-serverless-part-1/) which introduces serverless computing. In this second part, we will first see what the *layers* are in AWS Lambda and how to implement them. Then we will see how to use the Bref framework.
+This article is a follow-up to this [first part]({BASE_URL}/en/en/php-serverless-part-1/) which introduces serverless computing. In this second part, we will first see what the *layers* are in AWS Lambda and how to implement them. Then we will see how to use the Bref framework.
 
 ## AWS Lambda
 

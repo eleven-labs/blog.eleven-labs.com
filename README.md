@@ -167,6 +167,11 @@ And to specify a size on the image, you can add the arguments (`width`, `height`
 ![alt of image]({BASE_URL}/imgs/articles/YYYY-MM-DD-slug/image-name.png?width=500)
 ```
 
+If you need to add internal anchor links from your article to other article of our blog, use this syntax:
+```md
+[title of destination article]({BASE_URL}/fr/destination-article-slug)
+```
+
 > Warning: Don't add html in your markdown, you don't have to override the blog template in the markdown.
 
 **4 - Add your pull request**
