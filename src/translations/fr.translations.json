@@ -44,6 +44,12 @@
     },
     "contact_label_link": "Contact"
   },
+  "contact_block": {
+    "title": "Vous avez un projet ?",
+    "subtitle": "Contactez nous !",
+    "description": "Vous souhaitez en savoir plus sur le sujet ? Organisons un échange !<br />Notre équipe d'experts répond à toutes vos questions.",
+    "link_label": "Nous contacter"
+  },
   "autocomplete": {
     "placeholder": "Rechercher par nom d’article ou d’auteur",
     "see_all_search_label": "Voir tous les résultats"

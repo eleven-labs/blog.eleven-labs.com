@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
-import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
+import ContactBlockStories from '@/components/ContactBlock/ContactBlock.stories';
 import { ContentTypeEnum } from '@/constants';
 import { PostPage } from '@/pages/PostPage/PostPage';
 
@@ -53,7 +53,7 @@ export default {
       ],
       emptyAvatarImageUrl: '/imgs/astronaut.png',
     },
-    newsletterBlock: NewsletterBlockStories.args,
+    contactBlock: ContactBlockStories.args,
     relatedPostList: {
       relatedPostListTitle: 'Articles sur le même thème',
       posts: Array.from({ length: 3 }).map((_, index) => ({

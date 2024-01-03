@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Divider, NewsletterBlock, NewsletterBlockProps, ShareLinks } from '@/components';
+import { Container, Divider, ContactBlock, ContactBlockProps, ShareLinks } from '@/components';
 import { ContentTypeEnum } from '@/constants';
 
 import { PostFooter, PostFooterProps } from './PostFooter';
@@ -12,7 +12,7 @@ export interface PostPageProps {
   header: Omit<PostHeaderProps, 'contentType'>;
   children: React.ReactNode;
   footer: PostFooterProps;
-  newsletterBlock: NewsletterBlockProps;
+  contactBlock: ContactBlockProps;
   relatedPostList: RelatedPostListProps;
   className?: string;
 }
@@ -23,7 +23,7 @@ export const PostPage: React.FC<PostPageProps> = ({
   children,
   footer,
   relatedPostList,
-  newsletterBlock,
+  contactBlock,
   className,
 }) => {
   const currentUrl = typeof window !== 'undefined' && window.location.href;
@@ -38,9 +38,9 @@ export const PostPage: React.FC<PostPageProps> = ({
         <ShareLinks urlToShare={currentUrl as string} />
         <Divider mt="xs" bg="light-grey" />
         <PostFooter {...footer} />
+        <ContactBlock mb={{ xs: 'l' }} {...contactBlock} />
       </Container>
       <Container>
-        <NewsletterBlock mb={{ xs: 'l' }} {...newsletterBlock} />
         {relatedPostList.posts.length > 0 && <RelatedPostList mb={{ xs: 'xl', md: 'xxl' }} {...relatedPostList} />}
       </Container>
     </Container>

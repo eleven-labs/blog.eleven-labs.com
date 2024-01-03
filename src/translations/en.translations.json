@@ -44,6 +44,12 @@
     },
     "contact_label_link": "Contact"
   },
+  "contact_block": {
+    "title": "You have a project?",
+    "subtitle": "Contact us!",
+    "description": "Would you like to know more about the subject? Let's organize an exchange!<br />Our team of experts answers all your questions.",
+    "link_label": "Contact us"
+  },
   "autocomplete": {
     "placeholder": "Search by article or author name",
     "see_all_search_label": "See all results"

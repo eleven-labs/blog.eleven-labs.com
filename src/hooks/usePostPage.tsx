@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { PATHS } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
+import { useContactBlock } from '@/hooks/useContactBlock';
 import { useDateToString } from '@/hooks/useDateToString';
-import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
 import { useSeoPost } from '@/hooks/useSeoPost';
 import { PostPageProps } from '@/pages/PostPage';
 import { PostPageData } from '@/types';
@@ -18,7 +18,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentTyp
     title: post.title,
     post,
   });
-  const newsletterBlock = useNewsletterBlock();
+  const contactBlock = useContactBlock();
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -63,7 +63,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentTyp
       authors,
       emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
     },
-    newsletterBlock,
+    contactBlock,
     relatedPostList: {
       relatedPostListTitle: t('pages.post.related_post_list_title'),
       posts: post.relatedPosts.map((relatedPost) => ({
