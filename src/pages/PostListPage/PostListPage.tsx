@@ -3,10 +3,7 @@ import React from 'react';
 
 import { Container, NewsletterBlock, NewsletterBlockProps, PostPreview, PostPreviewProps } from '@/components';
 
-import { SubHeader, SubHeaderProps } from './SubHeader';
-
 export type PostListPageProps = {
-  subHeader: SubHeaderProps;
   title: React.ReactNode;
   postPreviewList: React.ReactNode;
   newsletterBlock: NewsletterBlockProps;
@@ -15,7 +12,6 @@ export type PostListPageProps = {
 };
 
 export const PostListPage: React.FC<PostListPageProps> = ({
-  subHeader,
   title,
   postPreviewList,
   newsletterBlock,
@@ -23,7 +19,6 @@ export const PostListPage: React.FC<PostListPageProps> = ({
   highlightedPostTitle,
 }) => (
   <>
-    <SubHeader {...subHeader} />
     <Container variant="global" mt={{ xs: 'l', md: 'xl' }}>
       <Container variant="content">
         {highlightedPost && (

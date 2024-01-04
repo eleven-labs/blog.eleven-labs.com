@@ -17,12 +17,57 @@
     }
   },
   "categories": {
-    "all": "Tous",
-    "javascript": "JavaScript",
-    "php": "PHP",
-    "agile": "Agile",
-    "architecture": "Architecture",
-    "tutorial": "Tutorial"
+    "all": "All",
+    "javascript": {
+      "name": "JavaScript",
+      "title": "Our articles and feedback <br />in Javascript development",
+      "description": "Javascript is a complete dynamic programming language with incredible flexibility! It is not for nothing that this language is the most used today by developers around the world. In this category, find all the articles, feedback and tutorials from our astronauts around React.js, Node.js, Nest.js, Next.js, Vue.js, Svelte.js but also tools to use for facilitate your delivery, Design System and much more! Good reading.",
+      "expertise": {
+        "title": "Title",
+        "description": "Description",
+        "link_label": "Découvrir notre expertise en JavaScript"
+      }
+    },
+    "php": {
+      "name": "PHP",
+      "title": "Title",
+      "description": "Description",
+      "expertise": {
+        "title": "Title",
+        "description": "Description",
+        "link_label": "Découvrir notre expertise en JavaScript"
+      }
+    },
+    "agile": {
+      "name": "Agile",
+      "title": "Title",
+      "description": "Description",
+      "expertise": {
+        "title": "Title",
+        "description": "Description",
+        "link_label": "Découvrir notre expertise en JavaScript"
+      }
+    },
+    "architecture": {
+      "name": "Architecture",
+      "title": "Title",
+      "description": "Description",
+      "expertise": {
+        "title": "Title",
+        "description": "Description",
+        "link_label": "Découvrir notre expertise en JavaScript"
+      }
+    },
+    "tutorial": {
+      "name": "Tutorials",
+      "title": "Title",
+      "description": "Description",
+      "expertise": {
+        "title": "Title",
+        "description": "Description",
+        "link_label": "Label"
+      }
+    }
   },
   "languages": {
     "fr": "Français",
@@ -31,11 +76,7 @@
   "header": {
     "title": "Eleven Labs",
     "subtitle": "The blog",
-    "intro_block": {
-      "title": "Nice to see you",
-      "description": "Let's explore new knowledge"
-    },
-    "choice_category_label": "Which articles do you want to read ?"
+    "contact_label_link": "Contact us"
   },
   "footer": {
     "intro_block": {
@@ -45,9 +86,9 @@
     "contact_label_link": "Contact"
   },
   "contact_block": {
-    "title": "You have a project?",
-    "subtitle": "Contact us!",
-    "description": "Would you like to know more about the subject? Let's organize an exchange!<br />Our team of experts answers all your questions.",
+    "title": "Would you like to know more about the subject?",
+    "subtitle": "Let’s organize a swap!",
+    "description": "Our team of experts answers all your questions.",
     "link_label": "Contact us"
   },
   "autocomplete": {

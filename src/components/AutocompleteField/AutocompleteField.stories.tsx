@@ -9,7 +9,7 @@ export default {
   title: 'Components/AutocompleteField',
   component: AutocompleteField,
   args: {
-    placeholder: 'Rechercher par nom d’article ou d’auteur',
+    placeholder: 'Nom d’article, auteur ...',
     searchLink: {
       label: 'Voir tous les résultats',
       onClick: action('search'),

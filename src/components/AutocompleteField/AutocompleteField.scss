@@ -10,9 +10,5 @@
   &__input {
     position: relative;
     z-index: 3;
-
-    @include create-media-queries('md') {
-      min-width: 550px;
-    }
   }
 }

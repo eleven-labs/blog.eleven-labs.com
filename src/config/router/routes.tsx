@@ -9,7 +9,13 @@ import { NotFoundPageContainer } from '@/containers/NotFoundPageContainer';
 import { PostListPageContainer } from '@/containers/PostListPageContainer';
 import { PostPageContainer } from '@/containers/PostPageContainer';
 import { SearchPageContainer } from '@/containers/SearchPageContainer';
-import { loadAuthorPageData, loadPostListPageData, loadPostPageData } from '@/helpers/loaderDataHelper';
+import {
+  loadAuthorPageData,
+  loadLayoutTemplateDataData,
+  loadPostListPageData,
+  loadPostPageData,
+} from '@/helpers/loaderDataHelper';
+import { LayoutTemplateData } from '@/types';
 
 export const routes: RouteObject[] = [
   {
@@ -23,6 +29,15 @@ export const routes: RouteObject[] = [
         <NotFoundPageContainer />
       </LayoutTemplateContainer>
     ),
+    loader: async ({ request }): Promise<LayoutTemplateData> => {
+      const lang = request.url.match(/fr|en/)?.[0] ?? 'fr';
+      return loadLayoutTemplateDataData({
+        request,
+        params: {
+          lang,
+        } as Params,
+      });
+    },
     children: [
       {
         index: true,

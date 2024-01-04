@@ -1,50 +1,62 @@
 import './Header.scss';
 
-import { Box, Flex, Icon, Logo, useMediaQuery } from '@eleven-labs/design-system';
+import { Box, Button, Flex, Link, Logo } from '@eleven-labs/design-system';
+import classNames from 'classnames';
 import React from 'react';
 
-import { AutocompleteField, AutocompleteFieldProps } from '@/components';
+import { AutocompleteField, AutocompleteFieldProps, BurgerButton, CloseButton } from '@/components';
 
 export interface HeaderProps {
   homeLink: React.ComponentPropsWithoutRef<'a'>;
+  categories: ({
+    label: React.ReactNode;
+    isActive?: boolean;
+  } & React.ComponentPropsWithoutRef<'a'>)[];
+  hasTutorial: boolean;
+  tutorialLink: { label: React.ReactNode } & React.ComponentPropsWithoutRef<'a'>;
+  contactLink: { label: React.ReactNode } & React.ComponentPropsWithoutRef<'a'>;
   autocomplete: AutocompleteFieldProps;
-  autocompleteIsDisplayed?: boolean;
-  onToggleSearch?: () => void;
+  toggleMenu: () => void;
+  menuIsOpen?: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   homeLink,
+  categories,
+  hasTutorial,
+  tutorialLink: { label: tutorialLinkLabel, ...tutorialLink },
+  contactLink: { label: contactLinkLabel, ...contactLink },
   autocomplete,
-  autocompleteIsDisplayed = false,
-  onToggleSearch,
+  toggleMenu,
+  menuIsOpen = false,
 }) => {
-  const isNotTablet = useMediaQuery('aboveTablet');
   return (
-    <Box as="header" bg="azure" className="header">
-      <Flex justifyContent="between" alignItems="center" py="s" px={{ xs: 'm', md: 'l' }}>
-        {!isNotTablet && autocompleteIsDisplayed ? (
-          <Box
-            as="button"
-            className="header__icon-button"
-            color="white"
-            onClick={onToggleSearch}
-            data-internal-link="home"
-          >
-            <Icon name="arrow-back" color="white" size="28px" />
-          </Box>
-        ) : (
-          <Box as="a" {...homeLink} color="white">
-            <Logo name="blog" className="header__logo" />
-          </Box>
+    <Flex as="header" justifyContent="between" alignItems="center" bg="white" p="m" className="header">
+      <Box as="a" {...homeLink} color="navy">
+        <Logo name="blog" className="header__logo" />
+      </Box>
+      <Box className={classNames('header__menu', { 'header__menu--is-open': menuIsOpen })}>
+        {categories.map(({ label, isActive, ...categoryLink }, index) => (
+          <Link as="a" key={index} {...categoryLink} data-internal-link="category" className="header__menu-item">
+            {label}
+          </Link>
+        ))}
+        {hasTutorial && (
+          <>
+            <Box className="header__separator" />
+            <Link as="a" {...tutorialLink} data-internal-link="category" className="header__menu-item">
+              {tutorialLinkLabel}
+            </Link>
+          </>
         )}
-        {isNotTablet || autocompleteIsDisplayed ? (
-          <AutocompleteField {...autocomplete} />
-        ) : (
-          <Box as="button" className="header__icon-button" onClick={onToggleSearch} aria-label="Open search">
-            <Icon name="search" color="white" size="28px" />
-          </Box>
-        )}
-      </Flex>
-    </Box>
+        <Flex justifyContent="center" alignItems="center" mt="m" hiddenAbove="md">
+          <Button as="a" {...contactLink}>
+            {contactLinkLabel}
+          </Button>
+        </Flex>
+      </Box>
+      <AutocompleteField hiddenBelow="md" {...autocomplete} />
+      {menuIsOpen ? <CloseButton hiddenAbove="md" onClick={toggleMenu} /> : <BurgerButton hiddenAbove="md" onClick={toggleMenu} />}
+    </Flex>
   );
 };

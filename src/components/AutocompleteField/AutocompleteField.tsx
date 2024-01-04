@@ -64,7 +64,7 @@ export const AutocompleteField = polyRef<'div', AutocompleteFieldProps>(
     }, [items, getItemProps]);
 
     return (
-      <Box className={classNames('autocomplete-field', props.className)} ref={ref}>
+      <Box {...props} className={classNames('autocomplete-field', props.className)} ref={ref}>
         <SearchField
           input={getInputProps({ placeholder, onKeyDown: handleKeyDown })}
           buttonSearch={{ as: 'a', ...searchLinkProps } as unknown as SearchFieldProps['buttonSearch']}

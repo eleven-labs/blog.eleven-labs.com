@@ -6,7 +6,7 @@ import { CATEGORIES, ContentTypeEnum, LanguageEnum } from '@/constants';
 import { getArticles, getAuthors, getTutorials } from '@/helpers/markdownContentManagerHelper';
 import { intersection } from '@/helpers/objectHelper';
 import {
-  AuthorPageData,
+  AuthorPageData, LayoutTemplateData,
   PostListPageData,
   PostPageData,
   TransformedAuthorData,
@@ -79,12 +79,11 @@ export const getPostPageData = (options: {
   };
 };
 
-export const getPostListPageData = (options: {
+export const getLayoutTemplateData = (options: {
   posts: TransformedPostDataWithoutContent[];
-  authors: TransformedAuthorData[];
   lang: string;
-}): PostListPageData => {
-  const categories: PostListPageData['categories'] = [
+}): LayoutTemplateData => {
+  const categories: LayoutTemplateData['categories'] = [
     'all',
     ...CATEGORIES.filter((currentCategoryName) =>
       options.posts.some((post) => post.lang === options.lang && post?.categories?.includes(currentCategoryName))
@@ -93,25 +92,30 @@ export const getPostListPageData = (options: {
   const hasTutorial = options.posts.some(
     (post) => post.lang === options.lang && post?.contentType === ContentTypeEnum.TUTORIAL
   );
-  if (hasTutorial) {
-    categories.push(ContentTypeEnum.TUTORIAL);
-  }
 
   return {
     categories,
-    posts: options.posts
-      .map((post) => ({
-        ...post,
-        authors: options.authors
-          .filter((author) => post.authors.includes(author.username))
-          .map((author) => ({
-            username: author.username,
-            name: author.name,
-          })),
-      }))
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+    hasTutorial,
   };
 };
+
+export const getPostListPageData = (options: {
+  posts: TransformedPostDataWithoutContent[];
+  authors: TransformedAuthorData[];
+  lang: string;
+}): PostListPageData => ({
+  posts: options.posts
+    .map((post) => ({
+      ...post,
+      authors: options.authors
+        .filter((author) => post.authors.includes(author.username))
+        .map((author) => ({
+          username: author.username,
+          name: author.name,
+        })),
+    }))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+});
 
 const writeJsonFileSync = <TData = Record<string, unknown> | Array<unknown>>(options: {
   filePath: string;
@@ -144,6 +148,14 @@ export const writeJsonDataFiles = (): void => {
     });
 
     if (postsByLang.length > 0) {
+      writeJsonFileSync({
+        filePath: resolve(DATA_DIR, `${lang}/common.json`),
+        data: getLayoutTemplateData({
+          posts: postsByLangWithoutContentOrSteps,
+          lang,
+        }),
+      });
+
       writeJsonFileSync({
         filePath: resolve(DATA_DIR, `${lang}/post-list.json`),
         data: getPostListPageData({

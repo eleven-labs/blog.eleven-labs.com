@@ -2,7 +2,7 @@ import { LoaderFunctionArgs } from '@remix-run/router/utils';
 import fetch from 'cross-fetch';
 
 import { BASE_URL, CategoryEnum, ContentTypeEnum, IS_PRERENDER, IS_SSR } from '@/constants';
-import { ArticlePageData, AuthorPageData, PostListPageData, TutorialPageData } from '@/types';
+import { ArticlePageData, AuthorPageData, LayoutTemplateData, PostListPageData, TutorialPageData } from '@/types';
 
 const cache = new Map();
 
@@ -32,6 +32,12 @@ const fetchWithCache = async <TData>(options: { request: Request; path: string }
   return data as TData;
 };
 
+export const loadLayoutTemplateDataData = async (options: LoaderFunctionArgs): Promise<LayoutTemplateData> =>
+  fetchWithCache<LayoutTemplateData>({
+    request: options.request,
+    path: `${options.params.lang}/common.json`,
+  });
+
 export const loadPostListPageData = async (options: LoaderFunctionArgs): Promise<PostListPageData> => {
   const dataFromPostListPage = await fetchWithCache<PostListPageData>({
     request: options.request,
@@ -39,7 +45,6 @@ export const loadPostListPageData = async (options: LoaderFunctionArgs): Promise
   });
   if (options.params.categoryName) {
     return {
-      categories: dataFromPostListPage.categories,
       posts: dataFromPostListPage.posts.filter((post) =>
         options.params.categoryName === ContentTypeEnum.TUTORIAL
           ? post.contentType === ContentTypeEnum.TUTORIAL

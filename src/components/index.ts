@@ -11,3 +11,5 @@ export * from './ShareLinks';
 export * from './TutoTag';
 export * from './ArticleMetadata';
 export * from './ContactBlock';
+export * from './BurgerButton';
+export * from './CloseButton';

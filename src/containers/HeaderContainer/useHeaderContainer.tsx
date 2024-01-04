@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 
 import { AutocompleteFieldProps } from '@/components';
+import { contactUrl } from '@/config/website';
 import { IS_SSR, NUMBER_OF_ITEMS_PER_PAGE, PATHS } from '@/constants';
 import { trackContentSearchEvent } from '@/helpers/dataLayerHelper';
 import { generatePath } from '@/helpers/routerHelper';
@@ -10,27 +11,21 @@ import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useDebounce } from '@/hooks/useDebounce';
 import { HeaderProps } from '@/templates/LayoutTemplate';
-import { AlgoliaPostData } from '@/types';
+import { AlgoliaPostData, LayoutTemplateData } from '@/types';
 
 export const useHeaderContainer = (): HeaderProps => {
+  const { categories, hasTutorial } = useLoaderData() as LayoutTemplateData;
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const { getDateToString } = useDateToString();
   const searchParams = new URLSearchParams(!IS_SSR ? location.search : '');
 
-  const [autocompleteIsDisplayed, setAutocompleteIsDisplayed] = React.useState<boolean>(false);
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
   const [search, setSearch] = React.useState<string>(searchParams.get('search') ?? '');
   const debouncedSearch = useDebounce<string>(search, 500);
   const [searchHits, setSearchHits] = React.useState<AlgoliaPostData[]>([]);
   const algoliaSearchIndex = useAlgoliaSearchIndex();
-
-  const onToggleSearch = React.useCallback(() => {
-    if (autocompleteIsDisplayed) {
-      setSearch('');
-    }
-    setAutocompleteIsDisplayed((isDisplayed) => !isDisplayed);
-  }, [autocompleteIsDisplayed, setAutocompleteIsDisplayed]);
 
   const handleChange: AutocompleteFieldProps['onInputValueChange'] = ({ inputValue }): void => {
     setSearch(inputValue || '');
@@ -46,7 +41,6 @@ export const useHeaderContainer = (): HeaderProps => {
   React.useEffect(() => {
     if (debouncedSearch.length > 0) {
       trackContentSearchEvent(debouncedSearch);
-      setAutocompleteIsDisplayed(true);
       algoliaSearchIndex
         .search<AlgoliaPostData>(debouncedSearch, {
           hitsPerPage: NUMBER_OF_ITEMS_PER_PAGE,
@@ -79,12 +73,33 @@ export const useHeaderContainer = (): HeaderProps => {
   );
 
   return {
+    menuIsOpen: menuIsOpen,
+    toggleMenu: () => setMenuIsOpen((currentIsOpen) => !currentIsOpen),
     homeLink: {
       hrefLang: i18n.language,
       href: generatePath(PATHS.HOME, { lang: i18n.language }),
     },
-    autocompleteIsDisplayed,
-    onToggleSearch,
+    categories: categories.map((currentCategoryName) => ({
+      hrefLang: i18n.language,
+      href: generatePath(currentCategoryName === 'all' ? PATHS.HOME : PATHS.CATEGORY, {
+        lang: i18n.language,
+        categoryName: currentCategoryName,
+      }),
+      label: currentCategoryName === 'all' ? t('categories.all') : t(`categories.${currentCategoryName}.name`),
+      /*isActive: currentCategoryName === categoryName ? true : Boolean(!categoryName && currentCategoryName === 'all'),*/
+    })),
+    hasTutorial,
+    tutorialLink: {
+      label: t(`categories.tutorial.name`),
+      href: generatePath(PATHS.CATEGORY, {
+        lang: i18n.language,
+        categoryName: 'tutorial',
+      }),
+    },
+    contactLink: {
+      label: t('header.contact_label_link'),
+      href: contactUrl,
+    },
     autocomplete: {
       placeholder: t('autocomplete.placeholder') as string,
       defaultValue: search,

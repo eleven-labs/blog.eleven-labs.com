@@ -1,23 +1,17 @@
-import { Box, Button, Text } from '@eleven-labs/design-system';
-import { action } from '@storybook/addon-actions';
+import { Box, Text } from '@eleven-labs/design-system';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
-import * as AutocompleteFieldStories from '@/components/AutocompleteField/AutocompleteField.stories';
 import { contact } from '@/config/website';
 import { Header, HeaderProps, LayoutTemplate } from '@/templates/LayoutTemplate';
+
+import * as HeaderStories from './Header/Header.stories';
 
 export default {
   title: 'Templates/LayoutTemplate',
   component: LayoutTemplate,
   args: {
-    header: React.createElement<HeaderProps>(Header, {
-      homeLink: {
-        href: '#',
-      },
-      autocomplete: AutocompleteFieldStories.default.args as HeaderProps['autocomplete'],
-      onToggleSearch: action('toggleSearch'),
-    }),
+    header: React.createElement<HeaderProps>(Header, HeaderStories.default.args as HeaderProps),
     footer: {
       introBlock: {
         title: 'Découvrez l’agence Eleven Labs !',
@@ -84,31 +78,3 @@ export default {
 const Template: StoryFn<typeof LayoutTemplate> = (args) => <LayoutTemplate {...args} />;
 
 export const Overview = Template.bind({});
-
-export const LayoutTemplateWithAutocompleteIsOpen = Template.bind({});
-LayoutTemplateWithAutocompleteIsOpen.args = {
-  header: React.createElement<HeaderProps>(Header, {
-    homeLink: {
-      href: '#',
-    },
-    autocompleteIsDisplayed: true,
-    autocomplete: {
-      ...AutocompleteFieldStories.default.args,
-      ...AutocompleteFieldStories.AutocompleteFieldWithResult.args,
-    } as HeaderProps['autocomplete'],
-  }),
-};
-
-export const LayoutTemplateWithAutocompleteAndResultNotFound = Template.bind({});
-LayoutTemplateWithAutocompleteAndResultNotFound.args = {
-  header: React.createElement<HeaderProps>(Header, {
-    homeLink: {
-      href: '#',
-    },
-    autocompleteIsDisplayed: true,
-    autocomplete: {
-      ...AutocompleteFieldStories.default.args,
-      ...AutocompleteFieldStories.AutocompleteFieldWithResult.args,
-    } as HeaderProps['autocomplete'],
-  }),
-};
