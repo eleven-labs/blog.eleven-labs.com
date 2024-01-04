@@ -1,8 +1,6 @@
 export * from './AutocompleteField';
 export * from './Container';
 export * from './Divider';
-export * from './NewsletterBlock';
-export * from './NotFoundBlock';
 export * from './PostPreview';
 export * from './PostPreviewList';
 export * from './ProgressBar';
@@ -10,6 +8,6 @@ export * from './SeparatorCircle';
 export * from './ShareLinks';
 export * from './TutoTag';
 export * from './ArticleMetadata';
-export * from './ContactBlock';
 export * from './BurgerButton';
 export * from './CloseButton';
+export * from './Blocks';

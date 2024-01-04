@@ -3,7 +3,7 @@ import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
 import { PostPreviewList, PostPreviewListProps } from '@/components';
-import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
+import NewsletterBlockStories from '@/components/Blocks/NewsletterBlock/NewsletterBlock.stories';
 import * as PostPreviewListStories from '@/components/PostPreviewList/PostPreviewList.stories';
 import { SearchPage } from '@/pages';
 

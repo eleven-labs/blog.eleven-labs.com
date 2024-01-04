@@ -4,7 +4,7 @@ import React from 'react';
 import { ContactBlock } from './ContactBlock';
 
 const meta: Meta<typeof ContactBlock> = {
-  title: 'Components/ContactBlock',
+  title: 'Components/Blocks/ContactBlock',
   component: ContactBlock,
   args: {
     title: 'Vous avez un projet ?',

@@ -1,4 +1,4 @@
-import { Button, Text } from '@eleven-labs/design-system';
+import { Text } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 

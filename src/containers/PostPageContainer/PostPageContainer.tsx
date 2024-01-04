@@ -8,14 +8,14 @@ import { TutorialPageContainer } from '@/containers/TutorialPageContainer';
 import { PostPageData } from '@/types';
 
 export const PostPageContainer: React.FC = () => {
-  const post = useLoaderData() as PostPageData;
-  if (!post) {
+  const postPageData = useLoaderData() as PostPageData;
+  if (!postPageData) {
     return <NotFoundPageContainer />;
   }
 
-  if (post.contentType === ContentTypeEnum.TUTORIAL) {
-    return <TutorialPageContainer tutorial={post} />;
+  if (postPageData.contentType === ContentTypeEnum.TUTORIAL) {
+    return <TutorialPageContainer tutorial={postPageData} />;
   }
 
-  return <ArticlePageContainer article={post} />;
+  return <ArticlePageContainer article={postPageData} />;
 };

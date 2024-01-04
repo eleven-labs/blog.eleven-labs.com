@@ -1,28 +1,8 @@
 @use '@eleven-labs/design-system/scss/abstracts' as *;
 
 .footer {
-  --height-image-footer: 86px;
-
-  position: relative;
-
-  &::before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: var(--height-image-footer);
-    top: calc(var(--height-image-footer) * -1);
-    left: 0;
-    background-image: var(--background-image-footer, url('/imgs/footer_mobile.png'));
-    background-size: cover;
-  }
-
-  @include create-media-queries('md') {
-    --height-image-footer: 224px;
-    --background-image-footer: url('/imgs/footer_desktop.png');
-  }
-
   &__intro {
-    background-color: #093670;
+    background-color: #093670; // @todo: add to design token color
   }
 
   &__intro-link {
@@ -31,7 +11,7 @@
   }
 
   &__language-links-container {
-    border-top: 1px solid rgba(0, 0, 0, 0.20);
+    border-top: 1px solid rgb(0 0 0 / 20%);
   }
 
   &__social-icon {

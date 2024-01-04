@@ -1,0 +1,9 @@
+.category-ending-block {
+  &__description {
+    a {
+      color: var(--color-black);
+      text-decoration: underline;
+      font-weight: var(--font-weight-medium);
+    }
+  }
+}

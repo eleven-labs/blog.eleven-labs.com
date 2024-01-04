@@ -6,7 +6,8 @@ import { CATEGORIES, ContentTypeEnum, LanguageEnum } from '@/constants';
 import { getArticles, getAuthors, getTutorials } from '@/helpers/markdownContentManagerHelper';
 import { intersection } from '@/helpers/objectHelper';
 import {
-  AuthorPageData, LayoutTemplateData,
+  AuthorPageData,
+  LayoutTemplateData,
   PostListPageData,
   PostPageData,
   TransformedAuthorData,

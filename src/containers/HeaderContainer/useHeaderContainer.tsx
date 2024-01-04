@@ -14,7 +14,7 @@ import { HeaderProps } from '@/templates/LayoutTemplate';
 import { AlgoliaPostData, LayoutTemplateData } from '@/types';
 
 export const useHeaderContainer = (): HeaderProps => {
-  const { categories, hasTutorial } = useLoaderData() as LayoutTemplateData;
+  const layoutTemplateData = useLoaderData() as LayoutTemplateData;
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
@@ -74,23 +74,24 @@ export const useHeaderContainer = (): HeaderProps => {
 
   return {
     menuIsOpen: menuIsOpen,
-    toggleMenu: () => setMenuIsOpen((currentIsOpen) => !currentIsOpen),
+    onToggleMenu: () => setMenuIsOpen((currentIsOpen) => !currentIsOpen),
     homeLink: {
       hrefLang: i18n.language,
       href: generatePath(PATHS.HOME, { lang: i18n.language }),
     },
-    categories: categories.map((currentCategoryName) => ({
-      hrefLang: i18n.language,
-      href: generatePath(currentCategoryName === 'all' ? PATHS.HOME : PATHS.CATEGORY, {
-        lang: i18n.language,
-        categoryName: currentCategoryName,
-      }),
-      label: currentCategoryName === 'all' ? t('categories.all') : t(`categories.${currentCategoryName}.name`),
-      /*isActive: currentCategoryName === categoryName ? true : Boolean(!categoryName && currentCategoryName === 'all'),*/
-    })),
-    hasTutorial,
+    categories:
+      layoutTemplateData.categories.map((currentCategoryName) => ({
+        hrefLang: i18n.language,
+        href: generatePath(currentCategoryName === 'all' ? PATHS.HOME : PATHS.CATEGORY, {
+          lang: i18n.language,
+          categoryName: currentCategoryName,
+        }),
+        label: currentCategoryName === 'all' ? t('categories.all') : t(`categories.${currentCategoryName}`),
+        /*isActive: currentCategoryName === categoryName ? true : Boolean(!categoryName && currentCategoryName === 'all'),*/
+      })) ?? [],
+    hasTutorial: layoutTemplateData.hasTutorial,
     tutorialLink: {
-      label: t(`categories.tutorial.name`),
+      label: t(`categories.tutorial`),
       href: generatePath(PATHS.CATEGORY, {
         lang: i18n.language,
         categoryName: 'tutorial',

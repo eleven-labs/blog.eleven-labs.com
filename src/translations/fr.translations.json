@@ -18,56 +18,11 @@
   },
   "categories": {
     "all": "Tous",
-    "javascript": {
-      "name": "JavaScript",
-      "title": "Nos articles et retours d’expérience <br />en développement Javascript",
-      "description": "Javascript est un langage de programmation dynamique complet et doté d’une incroyable flexibilité ! Ce n’est pas pour rien que ce langage est aujourd'hui le plus utilisé par les développeurs à travers le monde. Dans cette catégorie, retrouvez tous les articles, retours d’expérience et tutoriels de nos astronautes autour de React.js, Node.js, Nest.js, Next.js, Vue.js, Svelte.js mais également des outils à utiliser pour faciliter votre delivery, du Design System et bien plus encore ! Bonne lecture.",
-      "expertise": {
-        "title": "Quels types d’applications peuvent être développées en Javascript ?",
-        "description": "Aujourd’hui, il est quasiment possible de tout faire avec le langage Javascript : applications web et mobile, progressive web apps, logiciels, applications métier, site web fullstack Javascript, API backend, jeux vidéos, applications TV et bien d’autres.\u2028\nEn bref, Javascript est devenu le langage central du web et celui le plus utilisé sur GitHub depuis plusieurs années. Choisir Javascript pour son projet de développement web est donc, dans la majorité des cas, une bonne idée !<br /><br />Chez Eleven Labs, nous pouvons vous accompagner dans tous vos besoins en développement d’applications web ou mobile en Javascript.",
-        "link_label": "Découvrir notre expertise en JavaScript"
-      }
-    },
-    "php": {
-      "name": "PHP",
-      "title": "Title",
-      "description": "Description",
-      "expertise": {
-        "title": "Title",
-        "description": "Description",
-        "link_label": "Label"
-      }
-    },
-    "agile": {
-      "name": "Agile",
-      "title": "Title",
-      "description": "Description",
-      "expertise": {
-        "title": "Title",
-        "description": "Description",
-        "link_label": "Label"
-      }
-    },
-    "architecture": {
-      "name": "Architecture",
-      "title": "Title",
-      "description": "Description",
-      "expertise": {
-        "title": "Title",
-        "description": "Description",
-        "link_label": "Label"
-      }
-    },
-    "tutorial": {
-      "name": "Tutoriels",
-      "title": "Title",
-      "description": "Description",
-      "expertise": {
-        "title": "Title",
-        "description": "Description",
-        "link_label": "Label"
-      }
-    }
+    "javascript": "JavaScript",
+    "php": "PHP",
+    "agile": "Agile",
+    "architecture": "Architecture",
+    "tutorial": "Tutoriel"
   },
   "languages": {
     "fr": "Français",
@@ -104,12 +59,70 @@
     "description": "Abonne-toi à notre newsletter",
     "button_label": "Je m'abonne"
   },
+  "post_list_block": {
+    "post_preview_list_title": "Tous nos articles",
+    "post_preview_list_category_title": "Nos articles {{ categoryName }}",
+    "number_of_posts_displayed_label": "{{ numberOfPosts }}/{{ maxNumberOfPosts }} affichés",
+    "load_more_button_label": "Afficher plus"
+  },
   "pages": {
-    "post_list": {
-      "post_preview_list_title": "Tous nos articles",
-      "post_preview_list_category_title": "Nos articles {{ categoryName }}",
-      "number_of_posts_displayed_label": "{{ numberOfPosts }}/{{ maxNumberOfPosts }} affichés",
-      "load_more_button_label": "Afficher plus"
+    "home": {
+      "intro": "Explorons de nouveaux savoirs",
+      "title": "Le blog des astronautes<br />d’Eleven Labs sur les<br />nouvelles technologies",
+      "description": "Dans ce blog, retrouvez les retours d’expériences, conseils et convictions de nos collaborateurs autour des dernières tendances technologiques en <a href=\"#\">développement web et mobile</a>, <a href=\"#\">agilité</a> et de <a href=\"#\">l’écosystème Javascript</a> et <a href=\"#\">PHP Symfony</a>. Découvrez également nos tutoriels pour apprendre pas à pas à créer différentes features !",
+      "learn_more_link_label": "En savoir plus sur Eleven Labs"
+    },
+    "category": {
+      "javascript": {
+        "title": "Nos articles et retours d’expérience <br />en développement Javascript",
+        "description": "Javascript est un langage de programmation dynamique complet et doté d’une incroyable flexibilité ! Ce n’est pas pour rien que ce langage est aujourd'hui le plus utilisé par les développeurs à travers le monde. Dans cette catégorie, retrouvez tous les articles, retours d’expérience et tutoriels de nos astronautes autour de React.js, Node.js, Nest.js, Next.js, Vue.js, Svelte.js mais également des outils à utiliser pour faciliter votre delivery, du Design System et bien plus encore ! Bonne lecture.",
+        "expertise": {
+          "title": "Quels types d’applications peuvent être développées en Javascript ?",
+          "description": "Aujourd’hui, il est quasiment possible de tout faire avec le langage Javascript : applications web et mobile, progressive web apps, logiciels, applications métier, site web fullstack Javascript, API backend, jeux vidéos, applications TV et bien d’autres.\u2028\nEn bref, Javascript est devenu le langage central du web et celui le plus utilisé sur GitHub depuis plusieurs années. Choisir Javascript pour son projet de développement web est donc, dans la majorité des cas, une bonne idée !<br /><br />Chez Eleven Labs, nous pouvons vous accompagner dans tous vos besoins en développement d’applications web ou mobile en Javascript.",
+          "link_label": "Découvrir notre expertise en JavaScript",
+          "link_url": "#"
+        }
+      },
+      "php": {
+        "title": "Title",
+        "description": "Description",
+        "expertise": {
+          "title": "Title",
+          "description": "Description",
+          "link_label": "Label",
+          "link_url": "#"
+        }
+      },
+      "agile": {
+        "title": "Title",
+        "description": "Description",
+        "expertise": {
+          "title": "Title",
+          "description": "Description",
+          "link_label": "Label",
+          "link_url": "#"
+        }
+      },
+      "architecture": {
+        "title": "Title",
+        "description": "Description",
+        "expertise": {
+          "title": "Title",
+          "description": "Description",
+          "link_label": "Label",
+          "link_url": "#"
+        }
+      },
+      "tutorial": {
+        "title": "Title",
+        "description": "Description",
+        "expertise": {
+          "title": "Title",
+          "description": "Description",
+          "link_label": "Label",
+          "link_url": "#"
+        }
+      }
     },
     "post": {
       "related_post_list_title": "Articles sur le même thème",

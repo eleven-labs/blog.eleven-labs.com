@@ -32,7 +32,7 @@ const fetchWithCache = async <TData>(options: { request: Request; path: string }
   return data as TData;
 };
 
-export const loadLayoutTemplateDataData = async (options: LoaderFunctionArgs): Promise<LayoutTemplateData> =>
+export const loadLayoutTemplateData = async (options: LoaderFunctionArgs): Promise<LayoutTemplateData> =>
   fetchWithCache<LayoutTemplateData>({
     request: options.request,
     path: `${options.params.lang}/common.json`,
@@ -43,13 +43,18 @@ export const loadPostListPageData = async (options: LoaderFunctionArgs): Promise
     request: options.request,
     path: `${options.params.lang}/post-list.json`,
   });
+
   if (options.params.categoryName) {
+    const postsByCategoryName = dataFromPostListPage.posts.filter((post) =>
+      options.params.categoryName === ContentTypeEnum.TUTORIAL
+        ? post.contentType === ContentTypeEnum.TUTORIAL
+        : post?.categories?.includes(options.params.categoryName as CategoryEnum)
+    );
+    if (postsByCategoryName.length === 0) {
+      throw new Error('No articles associated with this category');
+    }
     return {
-      posts: dataFromPostListPage.posts.filter((post) =>
-        options.params.categoryName === ContentTypeEnum.TUTORIAL
-          ? post.contentType === ContentTypeEnum.TUTORIAL
-          : post?.categories?.includes(options.params.categoryName as CategoryEnum)
-      ),
+      posts: postsByCategoryName,
     };
   }
   return dataFromPostListPage;

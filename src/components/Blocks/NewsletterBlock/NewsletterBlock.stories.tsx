@@ -4,7 +4,7 @@ import React from 'react';
 import { NewsletterBlock } from './NewsletterBlock';
 
 export default {
-  title: 'Components/NewsletterBlock',
+  title: 'Components/Blocks/NewsletterBlock',
   component: NewsletterBlock,
   args: {
     title: 'En quête d’un outil de veille ?',

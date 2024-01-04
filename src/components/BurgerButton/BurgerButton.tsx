@@ -1,6 +1,6 @@
 import './BurgerButton.scss';
 
-import { Box, Flex,FlexProps } from '@eleven-labs/design-system';
+import { Box, Flex, FlexProps } from '@eleven-labs/design-system';
 import React from 'react';
 
 export interface BurgerButtonProps extends FlexProps, React.ComponentPropsWithoutRef<'button'> {}

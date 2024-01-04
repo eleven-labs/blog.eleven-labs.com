@@ -17,57 +17,12 @@
     }
   },
   "categories": {
-    "all": "All",
-    "javascript": {
-      "name": "JavaScript",
-      "title": "Our articles and feedback <br />in Javascript development",
-      "description": "Javascript is a complete dynamic programming language with incredible flexibility! It is not for nothing that this language is the most used today by developers around the world. In this category, find all the articles, feedback and tutorials from our astronauts around React.js, Node.js, Nest.js, Next.js, Vue.js, Svelte.js but also tools to use for facilitate your delivery, Design System and much more! Good reading.",
-      "expertise": {
-        "title": "Title",
-        "description": "Description",
-        "link_label": "Découvrir notre expertise en JavaScript"
-      }
-    },
-    "php": {
-      "name": "PHP",
-      "title": "Title",
-      "description": "Description",
-      "expertise": {
-        "title": "Title",
-        "description": "Description",
-        "link_label": "Découvrir notre expertise en JavaScript"
-      }
-    },
-    "agile": {
-      "name": "Agile",
-      "title": "Title",
-      "description": "Description",
-      "expertise": {
-        "title": "Title",
-        "description": "Description",
-        "link_label": "Découvrir notre expertise en JavaScript"
-      }
-    },
-    "architecture": {
-      "name": "Architecture",
-      "title": "Title",
-      "description": "Description",
-      "expertise": {
-        "title": "Title",
-        "description": "Description",
-        "link_label": "Découvrir notre expertise en JavaScript"
-      }
-    },
-    "tutorial": {
-      "name": "Tutorials",
-      "title": "Title",
-      "description": "Description",
-      "expertise": {
-        "title": "Title",
-        "description": "Description",
-        "link_label": "Label"
-      }
-    }
+    "all": "Tous",
+    "javascript": "JavaScript",
+    "php": "PHP",
+    "agile": "Agile",
+    "architecture": "Architecture",
+    "tutorial": "Tutorial"
   },
   "languages": {
     "fr": "Français",
@@ -104,12 +59,70 @@
     "description": "Sign up to our Newsletter",
     "button_label": "Subscribe"
   },
+  "post_list_block": {
+    "post_preview_list_title": "All our articles",
+    "post_preview_list_category_title": "Our articles {{ categoryName }}",
+    "number_of_posts_displayed_label": "{{ numberOfPosts }}/{{ maxNumberOfPosts }} displayed",
+    "load_more_button_label": "Show more"
+  },
   "pages": {
-    "post_list": {
-      "post_preview_list_title": "All our articles",
-      "post_preview_list_category_title": "Our articles {{ categoryName }}",
-      "number_of_posts_displayed_label": "{{ numberOfPosts }}/{{ maxNumberOfPosts }} displayed",
-      "load_more_button_label": "Show more"
+    "home": {
+      "intro": "Let's explore new knowledge",
+      "title": "The Eleven Labs<br />astronaut blog<br />on new technologies",
+      "description": "In this blog, find feedback, advice and convictions from our employees around the latest technological trends in <a href=\"#\">web and mobile development</a>, <a href=\"#\">agility< /a> and <a href=\"#\">the Javascript ecosystem</a> and <a href=\"#\">PHP Symfony</a>. Also discover our tutorials to learn step by step how to create different features!",
+      "learn_more_link_label": "Learn more about Eleven Labs"
+    },
+    "category": {
+      "javascript": {
+        "title": "Title",
+        "description": "Description",
+        "expertise": {
+          "title": "Title",
+          "description": "Description",
+          "link_label": "Label",
+          "link_url": "#"
+        }
+      },
+      "php": {
+        "title": "Title",
+        "description": "Description",
+        "expertise": {
+          "title": "Title",
+          "description": "Description",
+          "link_label": "Label",
+          "link_url": "#"
+        }
+      },
+      "agile": {
+        "title": "Title",
+        "description": "Description",
+        "expertise": {
+          "title": "Title",
+          "description": "Description",
+          "link_label": "Label",
+          "link_url": "#"
+        }
+      },
+      "architecture": {
+        "title": "Title",
+        "description": "Description",
+        "expertise": {
+          "title": "Title",
+          "description": "Description",
+          "link_label": "Label",
+          "link_url": "#"
+        }
+      },
+      "tutorial": {
+        "title": "Title",
+        "description": "Description",
+        "expertise": {
+          "title": "Title",
+          "description": "Description",
+          "link_label": "Label",
+          "link_url": "#"
+        }
+      }
     },
     "post": {
       "related_post_list_title": "Related articles",

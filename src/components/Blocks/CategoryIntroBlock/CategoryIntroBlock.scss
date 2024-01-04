@@ -1,0 +1,16 @@
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
+.category-intro-block {
+  background-image: var(--background-image, url('/imgs/category-intro-block-mobile.png'));
+  background-size: cover;
+  background-position: bottom;
+
+  &__container {
+    background-color: #0A4084; // @todo: add to design token color
+    opacity: 0.9;
+  }
+
+  @include create-media-queries('md') {
+    --background-image: url('/imgs/category-intro-block-desktop.png');
+  }
+}

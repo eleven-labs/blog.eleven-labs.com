@@ -45,11 +45,11 @@ export const usePostPreviewListContainer = ({
         ? {
             numberOfPosts: numberOfPosts - 1,
             maxNumberOfPosts,
-            textNumberOfPosts: t('pages.post_list.number_of_posts_displayed_label', {
+            textNumberOfPosts: t('post_list_block.number_of_posts_displayed_label', {
               numberOfPosts: numberOfPosts - 1,
               maxNumberOfPosts,
             }),
-            loadMoreButtonLabel: t('pages.post_list.load_more_button_label'),
+            loadMoreButtonLabel: t('post_list_block.load_more_button_label'),
             onLoadMore,
           }
         : undefined,

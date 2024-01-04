@@ -15,22 +15,22 @@ import { AuthorPageData } from '@/types';
 
 export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
   const { t } = useTranslation();
-  const resultAuthorPage = useLoaderData() as AuthorPageData;
+  const authorPageData = useLoaderData() as AuthorPageData;
   const newsletterBlock = useNewsletterBlock();
-  useTitle(t('seo.author.title', { authorName: resultAuthorPage?.author.name }));
+  useTitle(t('seo.author.title', { authorName: authorPageData?.author.name }));
   useLink({
     rel: 'canonical',
     href: `${blogUrl}${generatePath(PATHS.AUTHOR, {
       lang: DEFAULT_LANGUAGE,
-      authorUsername: resultAuthorPage?.author?.username,
+      authorUsername: authorPageData?.author?.username,
     })}`,
   });
 
-  if (!resultAuthorPage) {
+  if (!authorPageData) {
     return;
   }
 
-  const { author, posts } = resultAuthorPage;
+  const { author, posts } = authorPageData;
   return {
     author: {
       username: author.username,

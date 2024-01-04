@@ -4,7 +4,7 @@ import React from 'react';
 import { NotFoundBlock } from './NotFoundBlock';
 
 export default {
-  title: 'Components/NotFoundBlock',
+  title: 'Components/Blocks/NotFoundBlock',
   component: NotFoundBlock,
   args: {
     title: 'Aucun résultat en vue...',

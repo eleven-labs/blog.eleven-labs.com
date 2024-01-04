@@ -3,7 +3,7 @@
 .tutorial-steps {
   $this: &;
 
-  --tutorial-steps-background: #D7E6FF;
+  --tutorial-steps-background: #D7E6FF; // @todo: add to design token colors
   --tutorial-steps-color: var(--color-ultra-dark-grey);
   --tutorial-steps-color-step: var(--color-azure);
   --tutorial-steps-color-number-color: var(--color-white);

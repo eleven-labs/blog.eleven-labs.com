@@ -16,7 +16,7 @@ export interface HeaderProps {
   tutorialLink: { label: React.ReactNode } & React.ComponentPropsWithoutRef<'a'>;
   contactLink: { label: React.ReactNode } & React.ComponentPropsWithoutRef<'a'>;
   autocomplete: AutocompleteFieldProps;
-  toggleMenu: () => void;
+  onToggleMenu: () => void;
   menuIsOpen?: boolean;
 }
 
@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({
   tutorialLink: { label: tutorialLinkLabel, ...tutorialLink },
   contactLink: { label: contactLinkLabel, ...contactLink },
   autocomplete,
-  toggleMenu,
+  onToggleMenu,
   menuIsOpen = false,
 }) => {
   return (
@@ -56,7 +56,11 @@ export const Header: React.FC<HeaderProps> = ({
         </Flex>
       </Box>
       <AutocompleteField hiddenBelow="md" {...autocomplete} />
-      {menuIsOpen ? <CloseButton hiddenAbove="md" onClick={toggleMenu} /> : <BurgerButton hiddenAbove="md" onClick={toggleMenu} />}
+      {menuIsOpen ? (
+        <CloseButton hiddenAbove="md" onClick={onToggleMenu} />
+      ) : (
+        <BurgerButton hiddenAbove="md" onClick={onToggleMenu} />
+      )}
     </Flex>
   );
 };

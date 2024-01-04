@@ -1,0 +1,16 @@
+.home-intro-block {
+  background-color: var(--color-white);
+  background-image: url('/imgs/home-intro-block.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+
+  &__container {
+    width: 724px;
+  }
+
+  &__description {
+    a {
+      color: var(--color-amaranth);
+    }
+  }
+}

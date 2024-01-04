@@ -20,6 +20,7 @@ const meta: Meta<typeof Header> = {
       { label: 'Architecture', href: '#' },
       { label: 'Bonnes pratiques', href: '#' },
     ],
+    hasTutorial: true,
     tutorialLink: {
       label: 'Tutoriels',
       href: '#',
@@ -29,7 +30,7 @@ const meta: Meta<typeof Header> = {
       href: '#',
     },
     autocomplete: AutocompleteFieldStories.default.args as HeaderProps['autocomplete'],
-    onToggleSearch: action('toggleSearch'),
+    onToggleMenu: action('toggleMenu'),
   },
   parameters: {
     layout: 'full',
@@ -46,7 +47,7 @@ export const Overview: Story = {};
 
 export const WithMenuIsOpen: Story = {
   args: {
-    isOpen: true,
+    menuIsOpen: true,
   },
 };
 

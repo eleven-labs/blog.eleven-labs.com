@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
-import ContactBlockStories from '@/components/ContactBlock/ContactBlock.stories';
+import ContactBlockStories from '@/components/Blocks/ContactBlock/ContactBlock.stories';
 import { ContentTypeEnum } from '@/constants';
 import { PostPage } from '@/pages/PostPage/PostPage';
 

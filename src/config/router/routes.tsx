@@ -4,14 +4,15 @@ import { Outlet } from 'react-router-dom';
 
 import { LanguageEnum, PATHS } from '@/constants';
 import { AuthorPageContainer } from '@/containers/AuthorPageContainer';
+import { CategoryPageContainer } from '@/containers/CategoryPageContainer';
+import { HomePageContainer } from '@/containers/HomePageContainer';
 import { LayoutTemplateContainer } from '@/containers/LayoutTemplateContainer';
 import { NotFoundPageContainer } from '@/containers/NotFoundPageContainer';
-import { PostListPageContainer } from '@/containers/PostListPageContainer';
 import { PostPageContainer } from '@/containers/PostPageContainer';
 import { SearchPageContainer } from '@/containers/SearchPageContainer';
 import {
   loadAuthorPageData,
-  loadLayoutTemplateDataData,
+  loadLayoutTemplateData,
   loadPostListPageData,
   loadPostPageData,
 } from '@/helpers/loaderDataHelper';
@@ -24,14 +25,9 @@ export const routes: RouteObject[] = [
         <Outlet />
       </LayoutTemplateContainer>
     ),
-    errorElement: (
-      <LayoutTemplateContainer>
-        <NotFoundPageContainer />
-      </LayoutTemplateContainer>
-    ),
     loader: async ({ request }): Promise<LayoutTemplateData> => {
       const lang = request.url.match(/fr|en/)?.[0] ?? 'fr';
-      return loadLayoutTemplateDataData({
+      return loadLayoutTemplateData({
         request,
         params: {
           lang,
@@ -42,7 +38,7 @@ export const routes: RouteObject[] = [
       {
         index: true,
         path: PATHS.ROOT,
-        element: <PostListPageContainer />,
+        element: <HomePageContainer />,
         loader: async ({ request }) =>
           loadPostListPageData({
             request,
@@ -59,25 +55,33 @@ export const routes: RouteObject[] = [
           }
           return {};
         },
+        hasErrorBoundary: true,
+        errorElement: <NotFoundPageContainer />,
         children: [
           {
             path: PATHS.HOME,
-            element: <PostListPageContainer />,
+            element: <HomePageContainer />,
             loader: loadPostListPageData,
           },
           {
             path: PATHS.POST,
             element: <PostPageContainer />,
+            hasErrorBoundary: true,
+            errorElement: <NotFoundPageContainer />,
             loader: loadPostPageData,
           },
           {
             path: PATHS.AUTHOR,
             element: <AuthorPageContainer />,
+            hasErrorBoundary: true,
+            errorElement: <NotFoundPageContainer />,
             loader: loadAuthorPageData,
           },
           {
             path: PATHS.CATEGORY,
-            element: <PostListPageContainer />,
+            element: <CategoryPageContainer />,
+            hasErrorBoundary: true,
+            errorElement: <NotFoundPageContainer />,
             loader: loadPostListPageData,
           },
           {

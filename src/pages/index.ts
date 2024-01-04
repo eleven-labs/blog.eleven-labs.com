@@ -1,5 +1,6 @@
 export * from './AuthorPage';
 export * from './NotFoundPage';
-export * from './PostListPage';
+export * from './CategoryPage';
 export * from './PostPage';
 export * from './SearchPage';
+export * from './HomePage';

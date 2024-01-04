@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Divider, ContactBlock, ContactBlockProps, ShareLinks } from '@/components';
+import { ContactBlock, ContactBlockProps, Container, Divider, ShareLinks } from '@/components';
 import { ContentTypeEnum } from '@/constants';
 
 import { PostFooter, PostFooterProps } from './PostFooter';
