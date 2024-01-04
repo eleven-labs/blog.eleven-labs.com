@@ -10,6 +10,8 @@ export interface HomeIntroBlockProps {
   elevenLabsLink: { label: string } & React.ComponentPropsWithoutRef<'a'>;
 }
 
+//pl={{ xs: 'xs', md: 'xxl-2' }}
+
 export const HomeIntroBlock: React.FC<HomeIntroBlockProps> = ({
   intro,
   title,
@@ -17,7 +19,14 @@ export const HomeIntroBlock: React.FC<HomeIntroBlockProps> = ({
   elevenLabsLink: { label: elevelLabsLinkLabel, ...elevenLabsLink },
 }) => (
   <Box py="xl" className="home-intro-block">
-    <Flex alignItems="baseline" flexDirection="column" gap="l" ml="xxl-2" className="home-intro-block__container">
+    <Flex
+      alignItems="baseline"
+      flexDirection="column"
+      gap="l"
+      p="l"
+      ml={{ xs: '0', md: 'xxl' }}
+      className="home-intro-block__container"
+    >
       <Text size="m" fontWeight="bold" color="amaranth" textTransform="uppercase">
         {intro}
       </Text>

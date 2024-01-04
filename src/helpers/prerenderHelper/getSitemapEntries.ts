@@ -61,7 +61,7 @@ export const getSitemapEntries = (): SitemapEntry[] => {
     links: [
       {
         lang: DEFAULT_LANGUAGE,
-        url: generatePath(PATHS.ROOT),
+        url: generatePath(PATHS.ROOT, {}),
       },
       ...Object.values(LanguageEnum).map((lang) => ({
         lang,
@@ -70,24 +70,16 @@ export const getSitemapEntries = (): SitemapEntry[] => {
     ],
   };
 
-  const searchEntry: SitemapEntry = {
-    priority: 0,
-    links: Object.values(LanguageEnum).map((lang) => ({
-      lang,
-      url: generatePath(PATHS.SEARCH, { lang }),
-    })),
-  };
-
   const categoryEntries: SitemapEntry[] = CATEGORIES.filter((categoryName) =>
     posts.some((post) => post?.categories?.includes(categoryName))
-  ).map(createCategorySitemapEntry);
+  ).map((categoryName) => createCategorySitemapEntry(categoryName));
 
   const hasTutorial = posts.some((post) => post.contentType === ContentTypeEnum.TUTORIAL);
   if (hasTutorial) {
     categoryEntries.push(createCategorySitemapEntry(ContentTypeEnum.TUTORIAL));
   }
 
-  const postEntries: SitemapEntry[] = posts.map(createPostSitemapEntry);
+  const postEntries: SitemapEntry[] = posts.map((post) => createPostSitemapEntry(post));
   const tutorialStepEntries: SitemapEntry[] = posts.reduce((sitemapEntries, post) => {
     if (post.contentType === ContentTypeEnum.TUTORIAL) {
       const steps = post.steps.slice(1);
@@ -100,23 +92,7 @@ export const getSitemapEntries = (): SitemapEntry[] => {
     .filter((author) => posts.some((post) => post.authors.includes(author.username)))
     .map((author) => createAuthorSitemapEntry(author, posts));
 
-  const notFoundEntry: SitemapEntry = {
-    priority: 0,
-    links: [
-      {
-        lang: DEFAULT_LANGUAGE,
-        url: '/404',
-      },
-    ],
-  };
-
-  return [
-    rootEntry,
-    searchEntry,
-    ...categoryEntries,
-    ...postEntries,
-    ...tutorialStepEntries,
-    ...authorEntries,
-    notFoundEntry,
-  ].sort((a, b) => b?.priority - a?.priority);
+  return [rootEntry, ...categoryEntries, ...postEntries, ...tutorialStepEntries, ...authorEntries].sort(
+    (a, b) => b?.priority - a?.priority
+  );
 };

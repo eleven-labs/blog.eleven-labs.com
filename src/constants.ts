@@ -25,7 +25,6 @@ export const NUMBER_OF_ITEMS_PER_PAGE = 8;
 export const PATHS = {
   ROOT: '/',
   HOME: '/:lang/',
-  PAGINATED_HOME: '/:lang/page/:page/',
   POST: '/:lang/:slug/:step?/',
   AUTHOR: '/:lang/authors/:authorUsername/',
   CATEGORY: '/:lang/categories/:categoryName/',

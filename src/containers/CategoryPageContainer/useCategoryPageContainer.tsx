@@ -27,7 +27,7 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
   return {
     categoryIntroBlock: {
       homeLink: {
-        label: 'Accueil',
+        label: t('pages.category.home_link_label'),
         href: '#',
       },
       name: t(`categories.${categoryName}`),

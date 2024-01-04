@@ -73,6 +73,7 @@
       "learn_more_link_label": "Learn more about Eleven Labs"
     },
     "category": {
+      "home_link_label": "Home",
       "javascript": {
         "title": "Title",
         "description": "Description",

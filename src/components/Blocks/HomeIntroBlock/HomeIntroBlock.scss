@@ -1,11 +1,17 @@
+@use '@eleven-labs/design-system/scss/abstracts' as *;
+
 .home-intro-block {
   background-color: var(--color-white);
-  background-image: url('/imgs/home-intro-block.png');
-  background-repeat: no-repeat;
-  background-position: bottom right;
+
+  @include create-media-queries('md') {
+    background-image: url('/imgs/home-intro-block.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: auto 100%;
+  }
 
   &__container {
-    width: 724px;
+    max-width: 724px;
   }
 
   &__description {

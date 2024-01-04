@@ -1,5 +1,8 @@
 import { resolve } from 'node:path';
 
+import { DEFAULT_LANGUAGE, LanguageEnum, PATHS } from '@/constants';
+import { generatePath } from '@/helpers/routerHelper';
+
 import { generateFeedFile } from './generateFeedFile';
 import { generateHtmlFiles } from './generateHtmlFiles';
 import { generateSitemap } from './generateSitemap';
@@ -13,8 +16,19 @@ export const generateFiles = async (options: { rootDir: string; baseUrl: string 
     .flat()
     .map((param) => ({
       lang: param.lang,
-      url: param.url.replace(/^\//, options.baseUrl || '/'),
+      url: param.url,
     }));
+
+  urls.push(
+    ...Object.values(LanguageEnum).map((lang) => ({
+      lang,
+      url: generatePath(PATHS.SEARCH, { lang }),
+    })),
+    {
+      lang: DEFAULT_LANGUAGE,
+      url: generatePath('/404', {}),
+    }
+  );
 
   await Promise.all([
     generateHtmlFiles({

@@ -50,14 +50,6 @@ describe('getSitemapEntries', () => {
           { lang: 'en', url: '/en/authors/author-1/' },
         ],
       },
-      {
-        priority: 0,
-        links: [
-          { lang: 'fr', url: '/fr/search/' },
-          { lang: 'en', url: '/en/search/' },
-        ],
-      },
-      { priority: 0, links: [{ lang: 'fr', url: '/404' }] },
     ];
 
     const sitemapEntries = getSitemapEntries();

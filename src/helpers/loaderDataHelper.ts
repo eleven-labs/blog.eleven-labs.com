@@ -51,7 +51,9 @@ export const loadPostListPageData = async (options: LoaderFunctionArgs): Promise
         : post?.categories?.includes(options.params.categoryName as CategoryEnum)
     );
     if (postsByCategoryName.length === 0) {
-      throw new Error('No articles associated with this category');
+      throw new Error(
+        `No articles associated with the category "${options.params.categoryName}" for the language "${options.params.lang}"`
+      );
     }
     return {
       posts: postsByCategoryName,
