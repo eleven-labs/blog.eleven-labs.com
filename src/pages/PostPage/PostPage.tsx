@@ -31,7 +31,7 @@ export const PostPage: React.FC<PostPageProps> = ({
   return (
     <Container variant="global" className={className}>
       <Container variant="content">
-        <PostHeader {...header} contentType={contentType} />
+        <PostHeader {...header} />
         <Divider mt="xs" bg="light-grey" />
         <ShareLinks urlToShare={currentUrl as string} />
         {children}

@@ -3,22 +3,24 @@ import './TutorialPage.scss';
 import { Box, Button, Flex } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { TutorialSteps, TutorialStepsProps } from '@/components/TutorialSteps';
+import { SummaryBlock, SummaryBlockProps } from '@/components';
 import { ContentTypeEnum } from '@/constants';
 import { PostPage, PostPageProps } from '@/pages';
 
 export interface TutorialPageProps extends Omit<PostPageProps, 'children'> {
   contentType: ContentTypeEnum.TUTORIAL;
-  steps: TutorialStepsProps['steps'];
-  stepActive: TutorialStepsProps['stepActive'];
+  progress: {
+    title: string;
+    steps: SummaryBlockProps['sections'];
+    stepActive: SummaryBlockProps['sectionActive'];
+  };
   content: string;
   previousLink?: { label: string } & React.ComponentPropsWithoutRef<'a'>;
   nextLink?: { label: string } & React.ComponentPropsWithoutRef<'a'>;
 }
 
 export const TutorialPage: React.FC<TutorialPageProps> = ({
-  steps,
-  stepActive,
+  progress,
   content,
   previousLink: { label: previousLinkLabel, ...previousLink } = {},
   nextLink: { label: nextLinkLabel, ...nextLink } = {},
@@ -26,7 +28,7 @@ export const TutorialPage: React.FC<TutorialPageProps> = ({
 }) => (
   <PostPage {...postPage} className="tutorial-page">
     <Box className="tutorial-page__content-container">
-      <TutorialSteps steps={steps} stepActive={stepActive} className="tutorial-page__steps" />
+      <SummaryBlock title={progress.title} sections={progress.steps} sectionActive={progress.stepActive} />
       <Box as="section" textSize="s" dangerouslySetInnerHTML={{ __html: content }} />
     </Box>
     <Flex gap="l">

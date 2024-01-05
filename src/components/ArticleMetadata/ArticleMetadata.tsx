@@ -8,7 +8,7 @@ export type ArticleMetadataOptions = {
   readingTime?: number;
   authors?: { username: string; name: string }[];
   isLoading?: boolean;
-  displayedFields?: ('contentType' | 'date' | 'readingTime' | 'authors')[];
+  displayedFields?: ('date' | 'readingTime' | 'authors')[];
 };
 
 export type ArticleMetadataProps = ArticleMetadataOptions & SpacingSystemProps & ColorSystemProps;

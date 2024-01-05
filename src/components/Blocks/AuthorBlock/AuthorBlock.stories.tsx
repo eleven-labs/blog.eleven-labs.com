@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { AuthorCard } from './AuthorCard';
+import { AuthorBlock } from './AuthorBlock';
 
-const meta: Meta<typeof AuthorCard> = {
-  title: 'Components/AuthorCard',
-  component: AuthorCard,
+const meta: Meta<typeof AuthorBlock> = {
+  title: 'Components/Blocks/AuthorBlock',
+  component: AuthorBlock,
   args: {
     name: 'John Doe',
     description: 'Astronaute John Doe @ ElevenLabs_\uD83D\uDE80',
@@ -29,6 +29,6 @@ const meta: Meta<typeof AuthorCard> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof AuthorCard>;
+type Story = StoryObj<typeof AuthorBlock>;
 
 export const Overview: Story = {};

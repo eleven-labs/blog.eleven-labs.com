@@ -1,7 +1,7 @@
 import { Box, BoxProps, Flex, Heading } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { AuthorCard } from '@/components';
+import { AuthorBlock } from '@/components';
 
 export interface PostFooterProps extends BoxProps {
   title: React.ReactNode;
@@ -20,7 +20,7 @@ export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, ...props
     </Heading>
     <Flex flexDirection="column" gap="s">
       {authors.map((author, authorIndex) => (
-        <AuthorCard
+        <AuthorBlock
           key={authorIndex}
           name={author.name}
           avatarImageUrl={author.avatarImageUrl}

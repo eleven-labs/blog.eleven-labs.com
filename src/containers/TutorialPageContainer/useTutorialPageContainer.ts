@@ -21,12 +21,15 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): TutorialPa
   return {
     contentType: tutorial.contentType,
     ...postPageProps,
-    steps: tutorial.steps.map((step, index) => ({
-      name: step.slug,
-      label: step.title,
-      href: generatePath(PATHS.POST, { lang: i18n.language, slug, step: index > 0 ? step.slug : undefined }),
-    })),
-    stepActive: currentTutorialStep?.slug ?? tutorial.steps[0].slug,
+    progress: {
+      title: t('pages.tutorial.progress_title'),
+      steps: tutorial.steps.map((step, index) => ({
+        name: step.slug,
+        label: step.title,
+        href: generatePath(PATHS.POST, { lang: i18n.language, slug, step: index > 0 ? step.slug : undefined }),
+      })),
+      stepActive: currentTutorialStep?.slug ?? tutorial.steps[0].slug,
+    },
     content: currentTutorialStep?.content ?? tutorial.steps[0].content,
     previousLink: previousStep
       ? {

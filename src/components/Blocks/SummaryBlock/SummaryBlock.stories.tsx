@@ -1,14 +1,15 @@
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { TutorialSteps } from './TutorialSteps';
+import { SummaryBlock } from './SummaryBlock';
 
-export default {
-  title: 'Components/TutorialSteps',
-  component: TutorialSteps,
+const meta: Meta<typeof SummaryBlock> = {
+  title: 'Components/Blocks/SummaryBlock',
+  component: SummaryBlock,
   args: {
-    stepActive: 'initialisation-du-projet',
-    steps: [
+    title: 'Progression',
+    sectionActive: 'initialisation-du-projet',
+    sections: [
       {
         name: 'introduction',
         label: 'Introduction',
@@ -46,8 +47,22 @@ export default {
       },
     ],
   },
-} as Meta<typeof TutorialSteps>;
+  parameters: {
+    layout: 'full',
+    viewport: {
+      defaultViewport: 'extraSmallScreen',
+    },
+  },
+  decorators: [
+    (Story): React.ReactElement => (
+      <div style={{ maxWidth: '764px', margin: '32px auto' }}>
+        <Story />
+      </div>
+    ),
+  ],
+};
 
-const Template: StoryFn<typeof TutorialSteps> = (args) => <TutorialSteps {...args} />;
+export default meta;
+type Story = StoryObj<typeof SummaryBlock>;
 
-export const Overview = Template.bind({});
+export const Overview: Story = {};

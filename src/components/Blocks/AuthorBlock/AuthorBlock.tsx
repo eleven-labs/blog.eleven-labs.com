@@ -1,19 +1,19 @@
-import './AuthorCard.scss';
+import './AuthorBlock.scss';
 
 import { Box, Flex, FlexProps, Heading, Link, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
-export interface AuthorCardProps extends FlexProps {
+export interface AuthorBlockProps extends FlexProps {
   name: string;
   description: string;
   avatarImageUrl?: string;
   link: React.ComponentPropsWithoutRef<'a'>;
 }
 
-export const AuthorCard: React.FC<AuthorCardProps> = ({ name, avatarImageUrl, description, link, ...props }) => (
-  <Flex {...props} alignItems="center" justifyContent="between" px="s" py="m" bg="white" className="author-card">
-    <Flex gap="s">
-      <img src={avatarImageUrl ?? '/imgs/astronaut.png'} alt={name} className="author-card__avatar-img" />
+export const AuthorBlock: React.FC<AuthorBlockProps> = ({ name, avatarImageUrl, description, link, ...props }) => (
+  <Flex {...props} alignItems="center" justifyContent="between" px="s" py="m" bg="white" className="author-block">
+    <Flex gap="s" flex="1">
+      <img src={avatarImageUrl ?? '/imgs/astronaut.png'} alt={name} className="author-block__avatar-img" />
       <Box>
         <Heading color="navy" size="s">
           {name}
@@ -33,7 +33,7 @@ export const AuthorCard: React.FC<AuthorCardProps> = ({ name, avatarImageUrl, de
       fontWeight="medium"
       textTransform="uppercase"
       data-internal-link="author"
-      className="author-card__link"
+      className="author-block__link"
     >
       Voir le profil
     </Link>

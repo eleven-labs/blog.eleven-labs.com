@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
-import TutorialStepsStories from '@/components/TutorialSteps/TutorialSteps.stories';
+import SummaryBlockStories from '@/components/Blocks/SummaryBlock/SummaryBlock.stories';
 import { ContentTypeEnum } from '@/constants';
 import PostPageStories from '@/pages/PostPage/PostPage.stories';
 
@@ -14,8 +14,11 @@ export default {
   args: {
     ...PostPageStories.args,
     contentType: ContentTypeEnum.TUTORIAL,
-    steps: TutorialStepsStories.args?.steps,
-    stepActive: TutorialStepsStories.args?.stepActive,
+    progress: {
+      title: SummaryBlockStories.args?.title,
+      steps: SummaryBlockStories.args?.sections,
+      stepActive: SummaryBlockStories.args?.sectionActive,
+    },
     previousLink: {
       label: 'Précédent',
     },

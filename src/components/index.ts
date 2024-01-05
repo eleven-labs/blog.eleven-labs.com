@@ -11,4 +11,3 @@ export * from './ArticleMetadata';
 export * from './BurgerButton';
 export * from './CloseButton';
 export * from './Blocks';
-export * from './AuthorCard';
