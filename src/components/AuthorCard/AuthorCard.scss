@@ -1,0 +1,23 @@
+.author-card {
+  --avatar-img-author-card: 72px;
+
+  position: relative;
+
+  &__link {
+    &::before {
+      content: " ";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__avatar-img {
+    border-radius: 50px;
+    height: var(--avatar-img-author-card);
+    width: var(--avatar-img-author-card);
+  }
+}

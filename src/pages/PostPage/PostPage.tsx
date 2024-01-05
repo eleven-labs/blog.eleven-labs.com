@@ -36,9 +36,9 @@ export const PostPage: React.FC<PostPageProps> = ({
         <ShareLinks urlToShare={currentUrl as string} />
         {children}
         <ShareLinks urlToShare={currentUrl as string} />
-        <Divider mt="xs" bg="light-grey" />
         <PostFooter {...footer} />
-        <ContactBlock mb={{ xs: 'l' }} {...contactBlock} />
+        <Divider my="l" bg="light-grey" />
+        <ContactBlock {...contactBlock} />
       </Container>
       <Container>
         {relatedPostList.posts.length > 0 && <RelatedPostList mb={{ xs: 'xl', md: 'xxl' }} {...relatedPostList} />}

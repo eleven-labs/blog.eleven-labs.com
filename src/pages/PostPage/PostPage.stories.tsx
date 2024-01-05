@@ -34,7 +34,7 @@ export default {
     },
     children: 'content',
     footer: {
-      title: 'écrit par',
+      title: 'Auteur(s)',
       authors: [
         {
           name: 'John Doe',
