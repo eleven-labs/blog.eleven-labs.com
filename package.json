@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "prepare": "npm run ts-node bin/downloadTranslations",
     "postinstall": "husky install",
     "ts-node": "tsx -r dotenv/config",
     "validate-markdown": "npm run ts-node bin/validateMarkdown",
