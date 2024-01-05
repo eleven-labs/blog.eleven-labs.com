@@ -82,12 +82,11 @@ export const useHeaderContainer = (): HeaderProps => {
     categories:
       layoutTemplateData.categories.map((currentCategoryName) => ({
         hrefLang: i18n.language,
-        href: generatePath(currentCategoryName === 'all' ? PATHS.HOME : PATHS.CATEGORY, {
+        href: generatePath(PATHS.CATEGORY, {
           lang: i18n.language,
           categoryName: currentCategoryName,
         }),
         label: currentCategoryName === 'all' ? t('categories.all') : t(`categories.${currentCategoryName}`),
-        /*isActive: currentCategoryName === categoryName ? true : Boolean(!categoryName && currentCategoryName === 'all'),*/
       })) ?? [],
     hasTutorial: layoutTemplateData.hasTutorial,
     tutorialLink: {

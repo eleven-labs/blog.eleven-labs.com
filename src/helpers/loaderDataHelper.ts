@@ -48,6 +48,8 @@ export const loadPostListPageData = async (options: LoaderFunctionArgs): Promise
     const postsByCategoryName = dataFromPostListPage.posts.filter((post) =>
       options.params.categoryName === ContentTypeEnum.TUTORIAL
         ? post.contentType === ContentTypeEnum.TUTORIAL
+        : options.params.categoryName === 'all'
+        ? true
         : post?.categories?.includes(options.params.categoryName as CategoryEnum)
     );
     if (postsByCategoryName.length === 0) {

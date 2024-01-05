@@ -10,27 +10,34 @@ export default {
   args: {
     contentType: ContentTypeEnum.ARTICLE,
     slug: 'slug',
-    title: `Titre de l'article`,
+    title: `REX Studio : Intégration de composants React avec Varnish ESI dans un site No Code`,
     date: '09 fév. 2021',
     readingTime: 24,
     authors: [{ username: 'jdoe', name: 'J. Doe' }],
     excerpt:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit vel tellus in molestie. Curabitur malesuada sodales consectetur. Aliquam convallis nec lacus in euismod. Vestibulum id eros vitae tellus sodales ultricies eget eu ipsum.',
+    link: {
+      href: '#',
+    },
+    tutorialLabel: 'Tutoriel',
     isLoading: false,
   },
   parameters: {
+    layout: 'centered',
     viewport: {
       defaultViewport: 'extraSmallScreen',
     },
   },
+  decorators: [
+    (Story): React.ReactElement => (
+      <div style={{ maxWidth: '764px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta<typeof PostPreview>;
 
 const Template: StoryFn<typeof PostPreview> = (args) => <PostPreview {...args} />;
-const TemplateWithMargin: StoryFn<typeof PostPreview> = (args) => (
-  <div style={{ margin: '0 2.5em' }}>
-    <PostPreview {...args} />
-  </div>
-);
 
 export const Overview = Template.bind({});
 
@@ -39,27 +46,7 @@ PostPreviewIsLoading.args = {
   isLoading: true,
 };
 
-export const PostPreviewHasMask = Template.bind({});
-PostPreviewHasMask.args = {
-  hasMask: true,
-};
-
 export const PostPreviewTutorial = Template.bind({});
 PostPreviewTutorial.args = {
   contentType: ContentTypeEnum.TUTORIAL,
-};
-
-export const PostPreviewIsRelated = Template.bind({});
-PostPreviewIsRelated.parameters = {
-  backgrounds: {
-    default: 'grey-ultra-light',
-  },
-};
-PostPreviewIsRelated.args = {
-  isRelated: true,
-};
-
-export const PostPreviewIsHighlighted = TemplateWithMargin.bind({});
-PostPreviewIsHighlighted.args = {
-  isHighlighted: true,
 };

@@ -1,11 +1,11 @@
-import { BoxProps } from '@eleven-labs/design-system';
+import './PostPreview.scss';
+
+import { Box, BoxProps, Heading, Skeleton, Text } from '@eleven-labs/design-system';
+import classNames from 'classnames';
 import React from 'react';
 
 import { ArticleMetadata } from '@/components';
 import { ContentTypeEnum } from '@/constants';
-
-import { PostPreviewCard } from './PostPreviewCard';
-import { PostPreviewContent } from './PostPreviewContent';
 
 export type PostPreviewOptions = {
   contentType?: ContentTypeEnum.ARTICLE | ContentTypeEnum.TUTORIAL;
@@ -16,11 +16,8 @@ export type PostPreviewOptions = {
   readingTime?: number;
   authors?: { username: string; name: string }[];
   link?: React.ComponentPropsWithoutRef<'a'>;
-  image?: { source: string; alt: string };
-  hasMask?: boolean;
-  isRelated?: boolean;
+  tutorialLabel?: string;
   isLoading?: boolean;
-  isHighlighted?: boolean;
 };
 
 export type PostPreviewProps = PostPreviewOptions & BoxProps;
@@ -34,22 +31,36 @@ export const PostPreview: React.FC<PostPreviewProps> = ({
   readingTime,
   authors,
   link = {},
-  hasMask,
-  isRelated,
   isLoading = false,
-  isHighlighted = false,
-  ...boxProps
+  tutorialLabel,
+  ...props
 }) => (
-  <PostPreviewCard isHighlighted={isHighlighted} hasMask={hasMask} isRelated={isRelated} {...boxProps}>
-    <PostPreviewContent
-      contentType={contentType}
-      isLoading={isLoading}
-      isRelated={isRelated}
-      title={title}
-      link={link}
-      excerpt={excerpt}
-      hasMask={hasMask}
-    />
-    <ArticleMetadata mt={{ xs: 'xs', md: 's' }} date={date} readingTime={readingTime} authors={authors} />
-  </PostPreviewCard>
+  <Box as="article" {...props} p="m" className={classNames('post-preview')}>
+    <Skeleton isLoading={isLoading}>
+      <Heading as="h2" size="s" className="post-preview__heading">
+        <Heading as="a" {...link} size="m" data-internal-link="post" className="post-preview__link">
+          {title}
+        </Heading>
+        {contentType === ContentTypeEnum.TUTORIAL && (
+          <Text
+            size="xs"
+            py="xxs-3"
+            px="xxs-2"
+            color="navy"
+            textTransform="uppercase"
+            fontWeight="bold"
+            className="post-preview__tutoriel-tag"
+          >
+            {tutorialLabel}
+          </Text>
+        )}
+      </Heading>
+    </Skeleton>
+    <ArticleMetadata mt="xxs" date={date} readingTime={readingTime} authors={authors} isLoading={isLoading} />
+    <Skeleton isLoading={isLoading}>
+      <Text mt="xs" size="s" hiddenBelow="md" className="post-preview__excerpt">
+        {excerpt}
+      </Text>
+    </Skeleton>
+  </Box>
 );

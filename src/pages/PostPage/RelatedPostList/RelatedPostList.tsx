@@ -1,5 +1,3 @@
-import './RelatedPostList.scss';
-
 import { Box, BoxProps, Heading } from '@eleven-labs/design-system';
 import React from 'react';
 
@@ -11,12 +9,12 @@ export interface RelatedPostListProps extends BoxProps {
 }
 
 export const RelatedPostList: React.FC<RelatedPostListProps> = ({ relatedPostListTitle, posts, ...boxProps }) => (
-  <Box {...boxProps} p="m" className="related-post-list">
-    <Heading as="p" mb="m" size="m">
+  <Box {...boxProps} p="m">
+    <Heading as="p" mb="m" size="m" color="navy">
       {relatedPostListTitle}
     </Heading>
     {posts.map((post, index) => (
-      <PostPreview key={post?.slug ?? index} isRelated={true} {...post} mt="s" />
+      <PostPreview key={post?.slug ?? index} {...post} mt="s" />
     ))}
   </Box>
 );

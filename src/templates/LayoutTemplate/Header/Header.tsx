@@ -10,7 +10,6 @@ export interface HeaderProps {
   homeLink: React.ComponentPropsWithoutRef<'a'>;
   categories: ({
     label: React.ReactNode;
-    isActive?: boolean;
   } & React.ComponentPropsWithoutRef<'a'>)[];
   hasTutorial: boolean;
   tutorialLink: { label: React.ReactNode } & React.ComponentPropsWithoutRef<'a'>;
@@ -36,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({
         <Logo name="blog" className="header__logo" />
       </Box>
       <Box className={classNames('header__menu', { 'header__menu--is-open': menuIsOpen })}>
-        {categories.map(({ label, isActive, ...categoryLink }, index) => (
+        {categories.map(({ label, ...categoryLink }, index) => (
           <Link as="a" key={index} {...categoryLink} data-internal-link="category" className="header__menu-item">
             {label}
           </Link>

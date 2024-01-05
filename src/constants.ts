@@ -20,7 +20,7 @@ export const CATEGORIES = ['javascript', 'php', 'agile', 'architecture'] as cons
 export type CategoryEnum = (typeof CATEGORIES)[number];
 
 export const DEFAULT_LANGUAGE = LanguageEnum.FR;
-export const NUMBER_OF_ITEMS_PER_PAGE = 8;
+export const NUMBER_OF_ITEMS_PER_PAGE = 12;
 
 export const PATHS = {
   ROOT: '/',

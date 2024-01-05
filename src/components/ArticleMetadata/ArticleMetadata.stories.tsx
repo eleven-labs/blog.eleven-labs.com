@@ -2,13 +2,11 @@ import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import { ArticleMetadata } from '@/components';
-import { ContentTypeEnum } from '@/constants';
 
 export default {
   title: 'Components/ArticleMetadata',
   component: ArticleMetadata,
   args: {
-    contentType: ContentTypeEnum.ARTICLE,
     date: '09 fév. 2021',
     readingTime: 24,
     authors: [{ username: 'jdoe', name: 'J. Doe' }],

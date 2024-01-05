@@ -1,7 +1,7 @@
 import { Button, Flex, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
-import { Divider, PostPreview, PostPreviewProps, ProgressBar } from '@/components';
+import { PostPreview, PostPreviewProps, ProgressBar } from '@/components';
 
 export interface PostPreviewListProps {
   posts: Partial<PostPreviewProps>[];
@@ -17,19 +17,15 @@ export interface PostPreviewListProps {
 
 export const PostPreviewList: React.FC<PostPreviewListProps> = ({ posts, pagination, isLoading = false }) => (
   <>
-    {posts.map((post, index) => (
-      <React.Fragment key={post?.slug ?? index}>
-        <PostPreview
-          hasMask={Boolean(pagination && index === posts.length - 1)}
-          {...(post || {})}
-          isLoading={isLoading}
-        />
-        {posts.length - 1 !== index && <Divider my="m" bg="light-grey" />}
-        {posts.length - 1 === index && pagination && <Divider size="m" my="m" mx={{ md: 'xl' }} bg="azure" />}
-      </React.Fragment>
-    ))}
+    <Flex flexDirection="column" gap="m">
+      {posts.map((post, index) => (
+        <React.Fragment key={post?.slug ?? index}>
+          <PostPreview {...(post || {})} isLoading={isLoading} />
+        </React.Fragment>
+      ))}
+    </Flex>
     {pagination && (
-      <Flex flexDirection="column" justifyContent="center" alignItems="center">
+      <Flex flexDirection="column" justifyContent="center" alignItems="center" mt="l">
         <Text size="s">{pagination.textNumberOfPosts}</Text>
         <ProgressBar mt="xxs" value={pagination.numberOfPosts} max={pagination.maxNumberOfPosts} />
         <Button my="s" onClick={pagination.onLoadMore} data-button="loadMore">

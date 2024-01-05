@@ -71,6 +71,7 @@ export const usePostPreviewListContainer = ({
             hrefLang: i18n.language,
             href: generatePath(PATHS.POST, { lang: i18n.language, slug: post.slug }),
           },
+          tutorialLabel: t('post_list_block.tutoriel_label'),
         })),
     pagination,
     isLoading,

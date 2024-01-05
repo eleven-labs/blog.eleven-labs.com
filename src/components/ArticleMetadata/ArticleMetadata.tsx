@@ -60,7 +60,15 @@ export const ArticleMetadata: React.FC<ArticleMetadataProps> = ({
   }, []);
 
   return (
-    <Flex {...props} textSize="xs" alignItems="center">
+    <Flex
+      {...props}
+      textSize="xs"
+      alignItems="center"
+      flexWrap="wrap"
+      color="amaranth"
+      fontWeight="bold"
+      textTransform="uppercase"
+    >
       {fields}
     </Flex>
   );

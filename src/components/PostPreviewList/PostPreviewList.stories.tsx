@@ -1,4 +1,3 @@
-import { Box } from '@eleven-labs/design-system';
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
@@ -28,10 +27,10 @@ export default {
     },
   },
   decorators: [
-    (Story): JSX.Element => (
-      <Box px="m" py="xl">
+    (Story): React.ReactElement => (
+      <div style={{ maxWidth: '764px', margin: '32px auto', padding: '16px' }}>
         <Story />
-      </Box>
+      </div>
     ),
   ],
 } as Meta<typeof PostPreviewList>;
