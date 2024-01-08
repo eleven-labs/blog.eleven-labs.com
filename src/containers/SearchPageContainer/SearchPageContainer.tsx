@@ -1,7 +1,7 @@
+import { SearchPage } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { useSearchPageContainer } from '@/containers/SearchPageContainer/useSearchPageContainer';
-import { SearchPage } from '@/pages/SearchPage';
 
 export const SearchPageContainer: React.FC = () => {
   const searchPageProps = useSearchPageContainer();

@@ -1,3 +1,4 @@
+import { HomePageProps } from '@eleven-labs/design-system';
 import { useLink } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -5,16 +6,17 @@ import { useLoaderData, useParams } from 'react-router-dom';
 
 import { blogUrl, websiteUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
-import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
+import { PostCardListContainer } from '@/containers/PostCardListContainer';
 import { generatePath } from '@/helpers/routerHelper';
+import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
-import { HomePageProps } from '@/pages';
 import { PostListPageData } from '@/types';
 
 export const useHomePageContainer = (): HomePageProps => {
   const { categoryName } = useParams<{ categoryName?: string }>();
   const { t } = useTranslation();
   const postListPageData = useLoaderData() as PostListPageData;
+  const newsletterCard = useNewsletterCard();
   useTitle(categoryName ? t('seo.category.title', { categoryName }) : t('seo.home.title'));
   useLink({
     rel: 'canonical',
@@ -35,6 +37,7 @@ export const useHomePageContainer = (): HomePageProps => {
       },
     },
     title: t('post_list_block.post_preview_list_title'),
-    postPreviewList: <PostPreviewListContainer allPosts={postListPageData.posts} />,
+    postCardList: <PostCardListContainer allPosts={postListPageData.posts} />,
+    newsletterCard,
   };
 };

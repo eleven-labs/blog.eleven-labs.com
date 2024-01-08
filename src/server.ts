@@ -12,6 +12,8 @@ import { i18nConfig } from '@/config/i18n';
 import { BASE_URL } from '@/constants';
 import { writeJsonDataFiles } from '@/helpers/contentHelper';
 import { loadDataByMarkdownFilePath } from '@/helpers/markdownContentManagerHelper';
+import { getSitemap } from '@/helpers/prerenderHelper/generateSitemap';
+import { getSitemapEntries } from '@/helpers/prerenderHelper/getSitemapEntries';
 import { createRequestByExpressRequest } from '@/helpers/requestHelper';
 
 const isProd: boolean = process.env.NODE_ENV === 'production';
@@ -36,6 +38,12 @@ const createServer = async (): Promise<void> => {
     });
 
     app.use(BASE_URL, serveStatic(__dirname, { index: false }));
+
+    app.get('/sitemap.xml', (_, res) => {
+      const sitemapEntries = getSitemapEntries();
+      const sitemap = getSitemap(sitemapEntries);
+      res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
+    });
 
     app.use('*', async (req, res, next) => {
       try {
@@ -82,6 +90,12 @@ const createServer = async (): Promise<void> => {
     });
 
     app.use(vite.middlewares);
+
+    app.get('/sitemap.xml', (_, res) => {
+      const sitemapEntries = getSitemapEntries();
+      const sitemap = getSitemap(sitemapEntries);
+      res.status(200).set({ 'Content-Type': 'text/xml' }).end(sitemap);
+    });
 
     app.use('*', async (req, res, next) => {
       const url = req.originalUrl;

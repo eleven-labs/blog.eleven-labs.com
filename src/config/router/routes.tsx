@@ -78,7 +78,21 @@ export const routes: RouteObject[] = [
             loader: loadAuthorPageData,
           },
           {
+            path: PATHS.AUTHOR_PAGINATED,
+            element: <AuthorPageContainer />,
+            hasErrorBoundary: true,
+            errorElement: <NotFoundPageContainer />,
+            loader: loadAuthorPageData,
+          },
+          {
             path: PATHS.CATEGORY,
+            element: <CategoryPageContainer />,
+            hasErrorBoundary: true,
+            errorElement: <NotFoundPageContainer />,
+            loader: loadPostListPageData,
+          },
+          {
+            path: PATHS.CATEGORY_PAGINATED,
             element: <CategoryPageContainer />,
             hasErrorBoundary: true,
             errorElement: <NotFoundPageContainer />,

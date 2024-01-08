@@ -1,20 +1,21 @@
+import { LayoutTemplateProps } from '@eleven-labs/design-system';
 import { useHead, useLink, useMeta, useScript } from 'hoofd';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { matchPath, useLocation } from 'react-router-dom';
 
 import { themeColor } from '@/config/website';
 import { GOOGLE_SITE_VERIFICATION } from '@/constants';
 import { PATHS } from '@/constants';
-import { HeaderContainer } from '@/containers/HeaderContainer';
 import { useFooterContainer } from '@/containers/LayoutTemplateContainer/useFooterContainer';
+import { useHeaderContainer } from '@/containers/LayoutTemplateContainer/useHeaderContainer';
 import { getPathFile } from '@/helpers/assetHelper';
 import { getClickEventElements, handleClickEventListener } from '@/helpers/dataLayerHelper';
-import { LayoutTemplateProps } from '@/templates/LayoutTemplate';
 
 export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'children'> => {
   const { i18n } = useTranslation();
   const location = useLocation();
+  const header = useHeaderContainer();
   const footer = useFooterContainer();
   const isHomePage = Boolean(matchPath(PATHS.ROOT, location.pathname));
 
@@ -81,7 +82,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   }, [location]);
 
   return {
-    header: <HeaderContainer />,
+    header,
     footer,
   };
 };

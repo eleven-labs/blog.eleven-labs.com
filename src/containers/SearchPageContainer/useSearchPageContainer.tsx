@@ -1,3 +1,4 @@
+import { SearchPageProps } from '@eleven-labs/design-system';
 import { useLink } from 'hoofd';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -5,13 +6,11 @@ import { useLocation } from 'react-router-dom';
 
 import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, IS_SSR, LanguageEnum, PATHS } from '@/constants';
-import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
-import { UsePostPreviewListContainerOptions } from '@/containers/PostPreviewListContainer/usePostPreviewListContainer';
+import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
-import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
+import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
-import { SearchPageProps } from '@/pages/SearchPage';
 import { AlgoliaPostData } from '@/types';
 
 export const useSearchPageContainer = (): SearchPageProps => {
@@ -19,9 +18,9 @@ export const useSearchPageContainer = (): SearchPageProps => {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const algoliaSearchIndex = useAlgoliaSearchIndex();
-  const newsletterBlock = useNewsletterBlock();
+  const newsletterCard = useNewsletterCard();
   const search = new URLSearchParams(!IS_SSR ? location.search : '').get('search') || '';
-  const [postsBySearch, setPostsBySearch] = useState<UsePostPreviewListContainerOptions['allPosts']>([]);
+  const [postsBySearch, setPostsBySearch] = useState<PostCardListContainerProps['allPosts']>([]);
   useTitle(t('seo.search.title'));
   useLink({
     rel: 'canonical',
@@ -35,7 +34,7 @@ export const useSearchPageContainer = (): SearchPageProps => {
         facetFilters: [`lang:${i18n.language}`],
       });
 
-      const currentPostBySearch = response.hits.map<UsePostPreviewListContainerOptions['allPosts'][0]>((hit) => ({
+      const currentPostBySearch = response.hits.map<PostCardListContainerProps['allPosts'][0]>((hit) => ({
         contentType: hit.contentType,
         lang: hit.lang as LanguageEnum,
         slug: hit.slug,
@@ -66,8 +65,8 @@ export const useSearchPageContainer = (): SearchPageProps => {
             description: t('pages.search.not_found.description'),
           }
         : undefined,
-    newsletterBlock,
-    postPreviewList: <PostPreviewListContainer allPosts={postsBySearch} isLoading={isLoading} />,
+    newsletterCard,
+    postCardList: <PostCardListContainer allPosts={postsBySearch} isLoading={isLoading} />,
     isLoading,
   };
 };

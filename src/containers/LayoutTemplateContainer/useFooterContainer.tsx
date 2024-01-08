@@ -1,11 +1,10 @@
-import { Text } from '@eleven-labs/design-system';
+import { LayoutTemplateProps, Text } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
 import { LanguageEnum, PATHS } from '@/constants';
 import { generatePath } from '@/helpers/routerHelper';
-import { LayoutTemplateProps } from '@/templates/LayoutTemplate';
 
 export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
   const { t, i18n } = useTranslation();

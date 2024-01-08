@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "prepare": "npm run ts-node bin/downloadTranslations",
+    "prepare": "npm run ts-node bin/prepare",
     "postinstall": "husky install",
     "ts-node": "tsx -r dotenv/config",
     "validate-markdown": "npm run ts-node bin/validateMarkdown",
@@ -14,7 +14,6 @@
     "start:prod": "NODE_ENV=production node dist/server",
     "start:static": "npx serv --path dist/public",
     "lint:es": "eslint --ext .ts,.tsx src bin",
-    "lint:style": "stylelint 'src/**/*.scss'",
     "start:storybook": "storybook dev -p 6009",
     "build:storybook": "storybook build",
     "test": "vitest --coverage"
@@ -22,16 +21,13 @@
   "lint-staged": {
     "*.(ts|tsx)": [
       "eslint --fix"
-    ],
-    "*.scss": [
-      "stylelint --fix"
     ]
   },
   "engines": {
     "node": ">= 20.0"
   },
   "dependencies": {
-    "@eleven-labs/design-system": "^0.10.3",
+    "@eleven-labs/design-system": "^0.20.0",
     "@remix-run/router": "^1.7.2",
     "algoliasearch": "^4.19.1",
     "classnames": "^2.3.2",
@@ -104,8 +100,6 @@
     "sanitize-html": "^2.11.0",
     "sass": "^1.64.0",
     "storybook": "^7.1.0",
-    "stylelint": "^15.2.0",
-    "stylelint-config-standard-scss": "^7.0.1",
     "tsx": "^4.7.0",
     "typescript": "^4.7.4",
     "unified": "^10.1.2",

@@ -1,24 +1,23 @@
+import { PostPageProps } from '@eleven-labs/design-system';
 import mermaid from 'mermaid';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { PATHS } from '@/constants';
-import { getPathFile } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
-import { useContactBlock } from '@/hooks/useContactBlock';
+import { useContactCard } from '@/hooks/useContactCard';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useSeoPost } from '@/hooks/useSeoPost';
-import { PostPageProps } from '@/pages/PostPage';
 import { PostPageData } from '@/types';
 
-export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentType' | 'children'> => {
+export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' | 'summary' | 'children'> => {
   const { t, i18n } = useTranslation();
   const { getDateToString } = useDateToString();
   useSeoPost({
     title: post.title,
     post,
   });
-  const contactBlock = useContactBlock();
+  const contactCard = useContactCard();
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -43,7 +42,10 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentTyp
 
   const authors: PostPageProps['header']['authors'] & PostPageProps['footer']['authors'] = post.authors.map(
     (author) => ({
-      ...author,
+      username: author.username,
+      name: author.name,
+      description: author.content,
+      avatarImageUrl: author.avatarImageUrl,
       link: {
         hrefLang: i18n.language,
         href: generatePath(PATHS.AUTHOR, { lang: i18n.language, authorUsername: author.username }),
@@ -57,13 +59,22 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentTyp
       date: getDateToString({ date: post.date }),
       readingTime: post.readingTime,
       authors,
+      shareLinks: {
+        urlToShare: typeof window !== 'undefined' ? window.location.href : '',
+        shares: {
+          copyLink: true,
+          twitter: true,
+          facebook: true,
+          linkedIn: true,
+        },
+        copiedLabel: t('pages.post.share_links.copied_label'),
+      },
     },
     footer: {
       title: t('pages.post.post_footer_title'),
       authors,
-      emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
     },
-    contactBlock,
+    contactCard,
     relatedPostList: {
       relatedPostListTitle: t('pages.post.related_post_list_title'),
       posts: post.relatedPosts.map((relatedPost) => ({

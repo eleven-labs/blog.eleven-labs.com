@@ -1,22 +1,23 @@
+import { AuthorPageProps, SocialNetworkName } from '@eleven-labs/design-system';
 import { useLink } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
-import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
+import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import { getPathFile } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
-import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
+import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
-import { AuthorPageProps, SocialNetworkName } from '@/pages/AuthorPage';
 import { AuthorPageData } from '@/types';
 
 export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { authorUsername, page } = useParams<{ authorUsername: string; page?: string }>();
   const authorPageData = useLoaderData() as AuthorPageData;
-  const newsletterBlock = useNewsletterBlock();
+  const newsletterCard = useNewsletterCard();
   useTitle(t('seo.author.title', { authorName: authorPageData?.author.name }));
   useLink({
     rel: 'canonical',
@@ -24,6 +25,10 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
       lang: DEFAULT_LANGUAGE,
       authorUsername: authorPageData?.author?.username,
     })}`,
+  });
+
+  const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({
+    href: generatePath(PATHS.AUTHOR_PAGINATED, { lang: i18n.language, authorUsername, page }),
   });
 
   if (!authorPageData) {
@@ -62,7 +67,13 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
     },
     emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
     title: t('pages.author.post_preview_list_title'),
-    postPreviewList: <PostPreviewListContainer allPosts={posts} />,
-    newsletterBlock,
+    postCardList: (
+      <PostCardListContainer
+        getPaginatedLink={getPaginatedLink}
+        currentPage={page ? parseInt(page, 10) : 1}
+        allPosts={posts}
+      />
+    ),
+    newsletterCard,
   };
 };

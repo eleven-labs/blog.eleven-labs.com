@@ -11,6 +11,7 @@ import { getSitemapEntries } from './getSitemapEntries';
 export const generateFiles = async (options: { rootDir: string; baseUrl: string }): Promise<void> => {
   const __dirname = resolve(options.rootDir, 'public');
   const sitemapEntries = getSitemapEntries();
+
   const urls: { lang: string; url: string }[] = sitemapEntries
     .map((sitemapEntry) => sitemapEntry.links)
     .flat()
