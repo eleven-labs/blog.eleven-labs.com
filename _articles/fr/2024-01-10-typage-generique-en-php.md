@@ -2,9 +2,9 @@
 contentType: article
 lang: fr
 date: 2024-01-10
-slug: typage-generique-en-php
-title: Typage générique en php
-excerpt: Le typage générique en php, c'est impossible ? Pas si sûr...
+slug: typage-php
+title: Typage générique en php : définition, bonnes pratiques et exemples
+excerpt: Découvrez comment réaliser du typage générique en PHP : introduction et définition du concept, conseils et explications pas-à-pas de cas pratique.
 categories:
     - php
 keywords:
@@ -16,7 +16,7 @@ authors:
     - ajacquemin
 ---
 
-### Introduction
+### Introduction au typage générique en PHP
 
 Le typage générique, non seulement c'est super, mais en plus, c'est classe. Dans un monde idéal, voilà à quoi ça ressemblerait en PHP :
 
@@ -28,17 +28,17 @@ $users = new Collection<User>();
 ```
 
 Cela signifie que notre instance de collection `$users` ne peut accepter que des objets de type `User`.
-Nous aurions alors, notamment grâce à nos IDE intelligents, des informations plus strictes sur le type de données admises par une instance de Collection, sans avoir à simplement le déduire de par le nom de la variable. L'analyse statique de notre code serait encore plus performante, ce qui est important en PHP, qui ne possède pas d'étape de compilation à proprement parler.
+Nous aurions alors, notamment grâce à nos IDE intelligents, des informations plus strictes sur le type de données admises par une instance de Collection, sans avoir à simplement le déduire par le nom de la variable. L'analyse statique de notre code serait encore plus performante, ce qui est important en PHP qui ne possède pas d'étape de compilation à proprement parler.
 
-Pour de nombreux langages, cette étape de compilation permet de soulever des erreurs dans le code, voire de parser ces types génériques.
+Pour de nombreux langages de programmation utilisés en développement Web, cette étape de compilation permet de soulever des erreurs dans le code, voire de parser ces types génériques.
 
 Alors, pourquoi ces types ne sont-ils pas déjà disponibles dans notre langage préféré ?
 
-### Pourquoi c'est impossible en pratique
+### En quoi le typage générique en PHP est impossible dans la pratique ?
 
 Comme dit plus haut, PHP n'est pas un langage que l'on compile pour envoyer ensuite un exécutable sur le serveur. PHP est interprété ; lorsque le serveur reçoit une requête, le code PHP est converti en OPCODE, lui-même ensuite exécuté par une machine virtuelle. Si une erreur s'est glissée dans le code, alors le programme plantera à l'exécution.
 
-Or, c'est donc justement au runtime que se font toutes les assertions de type. Rajouter des étapes de vérification de types génériques serait une atteinte à la performance. Encore une fois, aujourd'hui pour la majorité des langages proposant le typage générique, toutes ces assertions de type sont effectuées à la compilation, avant que le code ne soit exécuté. La perfomance à l'exécution n'est donc pas un problème comme en PHP.
+Or, c'est donc justement au runtime que se font toutes les assertions de type. Rajouter des étapes de vérification de types génériques serait une atteinte à la performance. Encore une fois, aujourd'hui pour la majorité des langages proposant le typage générique toutes ces assertions de type sont effectuées à la compilation avant que le code ne soit exécuté. La perfomance à l'exécution n'est donc pas un problème comme en PHP.
 
 De plus, on estime que rajouter cette gestion des types génériques dans le coeur de PHP demanderait un effort de refactoring très ambitieux, à tel point que le rapport ***bénéfice*** / ***temps passé à l'implémentation*** n'en vaudrait pas la peine dans le contexte actuel.
 
@@ -52,7 +52,7 @@ Pour toutes ces raisons, allant du design même du langage à la complexité d'i
 
 Mais, ne jamais dire jamais...
 
-### Typage générique statique, la solution ?
+### Le typage générique PHP statique, la solution ?
 
 Alors, que fait-on maintenant ? On se roule en boule dans un coin et on regrette d'avoir choisi PHP ?
 
@@ -62,18 +62,18 @@ En effet, nous avons la chance en PHP d'avoir pléthore d'*analyseurs statiques*
 Grâce à eux, notre IDE favori (PhpStorm bien entendu) est en mesure de nous crier dessus à la moindre erreur décelable avant l'exécution. 
 Problème de typage ? Argument oublié dans une fonction ? Variable inutilisée ? Condition toujours vraie ? Accolade ou point virgule oublié ? Et j'en passe ...
 
-Créez même vos propres règles de lint, de bonnes pratiques à suivre dans votre équipe. Ces outils, comme PHPCs ou PHPStan, ... permettent tout cela.
+Créez même vos propres règles de lint, de bonnes pratiques à suivre dans votre équipe. Ces outils, comme PHPCs ou PHPStan, permettent tout cela.
 
-Et bien bonne nouvelle, certains de ces outils vous permettent de définir puis vérifier vos *types génériques*.
+Et bonne nouvelle, certains de ces outils vous permettent de définir puis vérifier vos *types génériques*.
 
 Comment ? Tenez vous bien, en utilisant... les annotations de la PHPDoc...
 
 Bon je sais, certains ne sont pas convaincus, mais dites-vous bien que la PHPDoc est une manière très puissante d'enrichir PHP sans avoir à toucher au code.
-Vous allez voir, après nos exemples, vous ne reviendrez plus en arrière.
+Vous allez voir, après quelques exemples, vous ne reviendrez plus en arrière.
 
 ### Typage générique par l'exemple
 
-Alors, on trépigne d'impatience à l'idée de créer nos premiers types génériques ?
+Alors, on trépigne d'impatience à l'idée de créer ses premiers types génériques ?
 
 Ne perdons plus de temps. Tout d'abord, pour créer un type, nous utiliseront toujours le même tag : `@template`.
 
@@ -165,10 +165,10 @@ function foo($bar)
 }
 ```
 
-Grâce à cette notation, vous indiquez à votre analyseur statique que quelque soit le type reçu par votre méthode, il devra forcément être un sous-type de `object`.
+Grâce à cette notation, vous indiquez à votre analyseur statique que quel que soit le type reçu par votre méthode, il devra forcément être un sous-type de `object`.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-Vous pouvez mettre n'importe quel nom de classe à la place de <code>object</code>, par exemple <code>\Exception</code> peut être pratique pour accepter seulement des objets de types <code>Exception</code> sans savoir à l'avance quelle instance d'Exception exactement sera reçue.
+Vous pouvez mettre n'importe quel nom de classe à la place de <code>object</code>, par exemple <code>\Exception</code> peut être pratique pour accepter seulement des objets de types <code>Exception</code> sans savoir exactement à l'avance quelle instance d'Exception sera reçue.
 </div>
 
 Typer génériquement au niveau des classes peut-être très puissant également, prenons l'exemple classique des `Collection`, et regardez bien les annotations que j'y ai ajouté.
@@ -197,7 +197,7 @@ public function foo(Collection $astronauts): void
 }
 ```
 
-Peut-être avez vous déjà vu cette notation avec les chevrons : `Collection<Astronaut>`, notamment si vous avez déjà fait du TypeScript. 
+Peut-être avez-vous déjà vu cette notation avec les chevrons : `Collection<Astronaut>`, notamment si vous avez déjà fait du TypeScript. 
 
 Ici, on indique simplement qu'il faut remplacer le type générique `T` par celui précisé entre les chevrons. Ainsi pour toutes les fois où le type `T` est utilisé dans la classe `Collection` (ici, une fois sur la fonction `add`), c'est en réalité un autre type (ici, `Astronaut`), qui sera utilisé.
 
@@ -208,10 +208,10 @@ Voyons à présent un autre tag très important, le `@extends`. Il permet de tir
 L'exemple du `@extends` ci-dessous est tiré de mon [Tutoriel](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) à propos du concept de ***composition over inheritance***.
 Je vous le conseille si vous souhaitez en savoir plus sur ce principe, et dans tous les cas, je vous le recommande pour sa dernière partie qui met en application les types génériques que nous sommes en train d'apprendre ici.
 
-Prenons une classe `BaseRepository`, qui se veut être une classe abstraite contenant toutes les fonctions de base utilisées dans nos repository (`find`, `store`, `remove`, etc...).
+Prenons une classe `BaseRepository`, qui se veut être une classe abstraite contenant toutes les fonctions de base utilisées dans nos repositories (`find`, `store`, `remove`, etc...).
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-Pour rappel, un repository est une classe qui vous permet d'interagir avec votre base de données via les fonctions mises à votre disposition, pour y récupérer des données, voire de les manipuler (insertion, mise à jour, suppression) grâce à l'Entity Manager présent dans le Repository.
+Pour rappel, un repository est une classe qui vous permet d'interagir avec votre base de données via les fonctions mises à votre disposition pour y récupérer des données, voire les manipuler (insertion, mise à jour, suppression) grâce à l'Entity Manager présent dans le Repository.
 </div>
 
 ```php
@@ -232,12 +232,12 @@ abstract class BaseRepository
 }
 ```
 
-Cette classe est censée être étendue par nos Repository métiers, par exemple un `PostRepository` ou encore un `UserRepository`.
+Cette classe est censée être étendue par nos Repositories métiers, par exemple un `PostRepository` ou encore un `UserRepository`.
 Or, elles étendrons nos fonctions `store` et `find`, qui sont typées `object`, car on ne sait pas à l'avance quel Repository va les utiliser.
 
 La solution est de faire un type `T of object`, que l'on a déjà vu plus haut dans cet article. Puis on type les méthodes de la classe. Jusqu'ici, rien de nouveau.
 
-Prenons à présent un de nos réels Repository, le `UserRepository`.
+Prenons à présent un de nos réels Repositories, le `UserRepository`.
 
 Voilà comment l'écrire :
 
@@ -249,8 +249,8 @@ class UserRepository extends BaseRepository
 }
 ```
 
-Bien que le tag `@extends` est nouveau, la notation avec les chevrons devrait vous rappeler ce que nous avons fait avec les Collections.
-Et ainsi comprendre ce qui se passe ici : grâce à cette annotation, on indique qu'en héritant du `BaseRepository`, on souhaite remplacer tous ses types `T` par nos types `User`.
+Bien que le tag `@extends` soit nouveau, la notation avec les chevrons devrait vous rappeler ce que nous avons fait avec les Collections.
+Du coup on comprend ce qui se passe ici : grâce à cette annotation, on indique qu'en héritant du `BaseRepository`, on souhaite remplacer tous ses types `T` par nos types `User`.
 Voilà ce qui en résultera en pratique :
 
 ```php
@@ -270,7 +270,7 @@ Ainsi, vous rajoutez de la sécurité en vous empêchant de faire une action qui
 
 Cet article est volontairement théorique, et sans exemple exhaustif. Prenez-le plutôt comme un pense-bête sur l'utilisation des génériques en PHP.
 
-Pour une mise en application plus poussée et un accompagnement pas à pas de la vérification de ces types avec PHPStan, référez-vous au [Tutoriel](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) cité plus haut dans cet article.
+Pour une mise en application plus poussée et un accompagnement pas-à-pas de la vérification de ces types avec PHPStan, référez-vous au [Tutoriel](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) cité plus haut dans cet article.
 
 ### Conclusion
 
