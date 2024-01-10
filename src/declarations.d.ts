@@ -11,5 +11,6 @@ declare global {
     initialLanguage: string;
     posts: ReturnType<typeof getPostListDataPage>['posts'];
     dataLayer: DataLayerEventAvailable[];
+    language: string;
   }
 }

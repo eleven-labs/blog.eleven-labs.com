@@ -7,7 +7,7 @@ import ReactDOMServer from 'react-dom/server';
 import { createStaticRouter, StaticRouterProvider } from 'react-router-dom/server';
 
 import { routes } from '@/config/router';
-import { BASE_URL } from '@/constants';
+import { BASE_URL, IS_DEBUG, LanguageEnum } from '@/constants';
 import { RootContainer } from '@/containers/RootContainer';
 import { HtmlTemplate, HtmlTemplateProps } from '@/templates/HtmlTemplate';
 
@@ -21,6 +21,13 @@ export const render = async (options: RenderOptions): Promise<string> => {
   const dispatcher = createDispatcher();
   const { query } = createStaticHandler(routes, { basename: BASE_URL });
   const context = await query(options.request);
+
+  if (IS_DEBUG) {
+    const isHomePage = new URL(options.request.url).pathname.replace(BASE_URL, '') === '';
+    if (isHomePage) {
+      await options.i18n.changeLanguage(LanguageEnum.FR);
+    }
+  }
 
   if (context instanceof Response) {
     throw context;

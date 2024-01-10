@@ -1,7 +1,6 @@
 import './styles';
 
 import i18next from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { initReactI18next } from 'react-i18next';
@@ -13,11 +12,12 @@ import { BASE_URL } from '@/constants';
 import { RootContainer } from '@/containers/RootContainer';
 
 const container = document.getElementById('root');
-const i18n = i18next.createInstance().use(LanguageDetector).use(initReactI18next);
+const i18n = i18next.createInstance().use(initReactI18next);
 const router = createBrowserRouter(routes, { basename: BASE_URL });
 
 if (container) {
   i18n.init(i18nConfig);
+  i18n.changeLanguage(window.language);
   ReactDOM.hydrateRoot(
     container,
     <RootContainer i18n={i18n}>
