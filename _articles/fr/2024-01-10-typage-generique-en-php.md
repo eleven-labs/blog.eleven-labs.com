@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: 2024-01-10
 slug: typage-php
-title: Typage générique en php : définition, bonnes pratiques et exemples
+title: Typage générique en PHP : définition, bonnes pratiques et exemples
 excerpt: Découvrez comment réaliser du typage générique en PHP : introduction et définition du concept, conseils et explications pas-à-pas de cas pratique.
 categories:
     - php
