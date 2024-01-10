@@ -40,7 +40,7 @@ Comme dit plus haut, PHP n'est pas un langage que l'on compile pour envoyer ensu
 
 Or, c'est donc justement au runtime que se font toutes les assertions de type. Rajouter des étapes de vérification de types génériques serait une atteinte à la performance. Encore une fois, aujourd'hui pour la majorité des langages proposant le typage générique, toutes ces assertions de type sont effectuées à la compilation, avant que le code ne soit exécuté. La perfomance à l'exécution n'est donc pas un problème comme en PHP.
 
-De plus, on estime que rajouter cette gestion des types génériques dans le coeur de PHP demanderait un effort de refactoring très ambitieux, à tel point que le rapport ***bénéfice*** / ***temps passé à l'implémentation*** n'en valerait pas la peine dans le contexte actuel.
+De plus, on estime que rajouter cette gestion des types génériques dans le coeur de PHP demanderait un effort de refactoring très ambitieux, à tel point que le rapport ***bénéfice*** / ***temps passé à l'implémentation*** n'en vaudrait pas la peine dans le contexte actuel.
 
 PHP a beaucoup évolué ces derniers temps, mais il reste beaucoup de choses à faire, et le nombre de développeurs qui maintiennent le coeur de PHP n'est pas mirobolant, il y a donc également un problème de ressource.
 
