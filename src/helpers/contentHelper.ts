@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 import { DATA_DIR } from '@/app-paths';
-import { CATEGORIES, ContentTypeEnum, LanguageEnum } from '@/constants';
+import { CATEGORIES, ContentTypeEnum, LanguageEnum, LANGUAGES_AVAILABLE_WITH_DT } from '@/constants';
 import { getArticles, getAuthors, getTutorials } from '@/helpers/markdownContentManagerHelper';
 import { intersection } from '@/helpers/objectHelper';
 import {
@@ -135,9 +135,9 @@ export const writeJsonDataFiles = (): void => {
   const tutorials = getTutorials();
   const authors = getAuthors();
 
-  for (const lang of Object.values(LanguageEnum)) {
-    const articlesByLang = articles.filter((article) => article.lang === lang);
-    const tutorialsByLang = tutorials.filter((tutorial) => tutorial.lang === lang);
+  for (const lang of LANGUAGES_AVAILABLE_WITH_DT) {
+    const articlesByLang = articles.filter((article) => lang === LanguageEnum.DT || article.lang === lang);
+    const tutorialsByLang = tutorials.filter((tutorial) => lang === LanguageEnum.DT || tutorial.lang === lang);
     const postsByLang = [...articlesByLang, ...tutorialsByLang] as TransformedPostData[];
     const postsByLangWithoutContentOrSteps: TransformedPostDataWithoutContent[] = postsByLang.map((post) => {
       if (post.contentType === ContentTypeEnum.TUTORIAL) {

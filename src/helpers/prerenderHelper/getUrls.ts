@@ -3,7 +3,9 @@ import {
   CategoryEnum,
   ContentTypeEnum,
   DEFAULT_LANGUAGE,
+  IS_DEBUG,
   LanguageEnum,
+  LANGUAGES_AVAILABLE_WITH_DT,
   NUMBER_OF_ITEMS_PER_PAGE,
   PATHS,
 } from '@/constants';
@@ -20,7 +22,7 @@ export const getHomePageUrls = (): Urls[0] => [
     lang: DEFAULT_LANGUAGE,
     url: generatePath(PATHS.ROOT, {}),
   },
-  ...Object.values(LanguageEnum).map((lang) => ({
+  ...LANGUAGES_AVAILABLE_WITH_DT.map((lang) => ({
     lang,
     url: generatePath(PATHS.HOME, { lang }),
   })),
@@ -32,10 +34,10 @@ export const getCategoryPageUrls = (
   const urls: Record<string, { lang: string; url: string }[]> = {};
 
   for (const categoryName of ['all', ...CATEGORIES]) {
-    for (const lang of Object.values(LanguageEnum)) {
+    for (const lang of LANGUAGES_AVAILABLE_WITH_DT) {
       const numberOfPosts = postsData.filter(
         (post) =>
-          post.lang === lang &&
+          (lang === LanguageEnum.DT || post.lang === lang) &&
           (categoryName === 'all' ? true : post?.categories?.includes(categoryName as CategoryEnum))
       ).length;
 
@@ -62,9 +64,9 @@ export const getCategoryPageUrls = (
     }
   }
 
-  for (const lang of Object.values(LanguageEnum)) {
+  for (const lang of LANGUAGES_AVAILABLE_WITH_DT) {
     const numberOfPosts = postsData.filter(
-      (post) => post.lang === lang && post.contentType === ContentTypeEnum.TUTORIAL
+      (post) => (lang === LanguageEnum.DT || post.lang === lang) && post.contentType === ContentTypeEnum.TUTORIAL
     ).length;
     if (numberOfPosts) {
       if (!urls['tutorial']) {
@@ -105,9 +107,9 @@ export const getAuthorPageUrls = (
   const urls: Record<string, { lang: string; url: string }[]> = {};
 
   for (const author of authorData) {
-    for (const lang of Object.values(LanguageEnum)) {
+    for (const lang of LANGUAGES_AVAILABLE_WITH_DT) {
       const numberOfPosts = postsData.filter(
-        (post) => post.lang === lang && post.authors.includes(author.username)
+        (post) => (lang === LanguageEnum.DT || post.lang === lang) && post.authors.includes(author.username)
       ).length;
 
       if (numberOfPosts) {
@@ -145,6 +147,14 @@ export const getPostPageUrls = (postsData: Pick<TransformedPostData, 'lang' | 's
       lang: post.lang,
       url: generatePath(PATHS.POST, { lang: post.lang, slug: post.slug }),
     },
+    ...(IS_DEBUG
+      ? [
+          {
+            lang: LanguageEnum.DT,
+            url: generatePath(PATHS.POST, { lang: LanguageEnum.DT, slug: post.slug }),
+          },
+        ]
+      : []),
   ]);
 
 export const getTutorialStepPageUrls = (
@@ -166,6 +176,14 @@ export const getTutorialStepPageUrls = (
           lang: tutorial.lang,
           url: generatePath(PATHS.POST, { lang: tutorial.lang, slug: tutorial.slug, step }),
         },
+        ...(IS_DEBUG
+          ? [
+              {
+                lang: LanguageEnum.DT,
+                url: generatePath(PATHS.POST, { lang: LanguageEnum.DT, slug: tutorial.slug, step }),
+              },
+            ]
+          : []),
       ])
     );
     return urls;

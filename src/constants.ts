@@ -4,10 +4,16 @@ export const IS_SSR = import.meta.env.SSR;
 export const IS_PRERENDER = import.meta.env.MODE === 'prerender';
 export const BASE_URL = getEnv<string>('BASE_URL') || '/';
 
+export const IS_DEBUG = getEnv<string>('VITE_IS_DEBUG') === 'true';
+
 export enum LanguageEnum {
   FR = 'fr',
   EN = 'en',
+  DT = 'dt',
 }
+
+export const LANGUAGES_AVAILABLE = [LanguageEnum.FR, LanguageEnum.EN] as const;
+export const LANGUAGES_AVAILABLE_WITH_DT = IS_DEBUG ? [...LANGUAGES_AVAILABLE, LanguageEnum.DT] : LANGUAGES_AVAILABLE;
 
 export enum ContentTypeEnum {
   ARTICLE = 'article',

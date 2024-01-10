@@ -9,6 +9,15 @@ import {
 } from './getUrls';
 
 describe('getSitemapEntries', () => {
+  vi.mock('@/constants', async () => {
+    const mod = await vi.importActual<typeof import('@/constants')>('@/constants');
+    return {
+      ...mod,
+      IS_DEBUG: false,
+      LANGUAGES_AVAILABLE_WITH_DT: mod.LANGUAGES_AVAILABLE,
+    };
+  });
+
   it('should return URLs of home page grouped by language', () => {
     const expectedUrls: ReturnType<typeof getHomePageUrls> = [
       { lang: 'fr', url: '/' },
@@ -18,7 +27,7 @@ describe('getSitemapEntries', () => {
     expect(getHomePageUrls()).toEqual(expectedUrls);
   });
 
-  test.each<{
+  it.each<{
     mockPosts: Parameters<typeof getCategoryPageUrls>[0];
     expectedUrls: ReturnType<typeof getCategoryPageUrls>;
   }>([

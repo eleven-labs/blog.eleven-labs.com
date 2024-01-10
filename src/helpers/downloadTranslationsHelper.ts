@@ -2,10 +2,10 @@ import fetch from 'cross-fetch';
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-import { LanguageEnum } from '@/constants';
+import { LanguageEnum, LANGUAGES_AVAILABLE } from '@/constants';
 
-const getTranslations = (lang: LanguageEnum): Promise<string> => {
-  const locales = {
+const getTranslations = (lang: (typeof LANGUAGES_AVAILABLE)[number]): Promise<string> => {
+  const locales: Record<LanguageEnum.FR | LanguageEnum.EN, string> = {
     [LanguageEnum.FR]: 'fr-FR',
     [LanguageEnum.EN]: 'en-GB',
   };
@@ -16,7 +16,7 @@ const getTranslations = (lang: LanguageEnum): Promise<string> => {
 };
 
 export const downloadTranslations = async (): Promise<void> => {
-  for (const lang of Object.values(LanguageEnum)) {
+  for (const lang of LANGUAGES_AVAILABLE) {
     const translations = await getTranslations(lang);
     writeFileSync(
       resolve(process.cwd(), 'src/translations', `${lang}.translations.json`),

@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 
-import { DEFAULT_LANGUAGE, LanguageEnum, PATHS } from '@/constants';
+import { DEFAULT_LANGUAGE, LANGUAGES_AVAILABLE, PATHS } from '@/constants';
 import { generatePath } from '@/helpers/routerHelper';
 
 import { generateFeedFile } from './generateFeedFile';
@@ -21,7 +21,7 @@ export const generateFiles = async (options: { rootDir: string; baseUrl: string 
     }));
 
   urls.push(
-    ...Object.values(LanguageEnum).map((lang) => ({
+    ...LANGUAGES_AVAILABLE.map((lang) => ({
       lang,
       url: generatePath(PATHS.SEARCH, { lang }),
     })),

@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
-import { LanguageEnum, PATHS } from '@/constants';
+import { LANGUAGES_AVAILABLE_WITH_DT, PATHS } from '@/constants';
 import { generatePath } from '@/helpers/routerHelper';
 
 export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
@@ -40,7 +40,7 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
       target: '_blank',
       'aria-label': socialNetwork.label,
     })),
-    languageLinks: Object.values(LanguageEnum).map((currentLang) => {
+    languageLinks: LANGUAGES_AVAILABLE_WITH_DT.map((currentLang) => {
       const isActive = currentLang === i18n.language;
       return {
         isActive,

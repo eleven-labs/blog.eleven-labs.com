@@ -49,6 +49,7 @@ jobs:
           echo "ENV=dev-${{ github.head_ref }}" >> $GITHUB_ENV
           echo "ENV_URL=http://dev.blog.eleven-labs.com.s3-website.${{ inputs.AWS_DEFAULT_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
           echo "BASE_URL=/${{ github.head_ref }}/" >> $GITHUB_ENV
+          echo "IS_DEBUG=true" >> $GITHUB_ENV
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_DEV }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_DEV }}" >> $GITHUB_ENV
@@ -61,6 +62,7 @@ jobs:
           echo "ENV=production" >> $GITHUB_ENV
           echo "ENV_URL=https://blog.eleven-labs.com" >> $GITHUB_ENV
           echo "BASE_URL=/" >> $GITHUB_ENV
+          echo "IS_DEBUG=false" >> $GITHUB_ENV
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_PRODUCTION }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_PRODUCTION }}" >> $GITHUB_ENV
@@ -73,6 +75,7 @@ jobs:
         env:
           NODE_ENV: production
           BASE_URL: ${{ env.BASE_URL }}
+          VITE_IS_DEBUG: ${{ env.IS_DEBUG }}
           VITE_ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
           VITE_ALGOLIA_API_KEY: ${{ env.ALGOLIA_API_SEARCH_KEY }}
           VITE_ALGOLIA_INDEX: ${{ env.ALGOLIA_INDEX }}
