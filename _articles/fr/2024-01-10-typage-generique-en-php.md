@@ -3,8 +3,8 @@ contentType: article
 lang: fr
 date: 2024-01-10
 slug: typage-generique-php
-title: Typage générique en PHP : définition, bonnes pratiques et exemples
-excerpt: Découvrez comment réaliser du typage générique en PHP : introduction et définition du concept, conseils et explications pas-à-pas de cas pratique.
+title: "Typage générique en PHP : définition, conseils et exemples"
+excerpt: "Découvrez comment réaliser du typage générique en PHP : introduction et définition du concept, conseils et explications pas-à-pas de cas pratique."
 categories:
     - php
 keywords:
@@ -31,11 +31,11 @@ $users = new Collection<User>();
 Cela signifie que notre instance de collection `$users` ne peut accepter que des objets de type `User`.
 Nous aurions alors, notamment grâce à nos IDE intelligents, des informations plus strictes sur le type de données admises par une instance de Collection, sans avoir à simplement le déduire par le nom de la variable. L'analyse statique de notre code serait encore plus performante, ce qui est important en PHP qui ne possède pas d'étape de compilation à proprement parler.
 
-Pour de nombreux langages de programmation utilisés en développement Web, cette étape de compilation permet de soulever des erreurs dans le code, voire de parser ces types génériques.
+Pour de nombreux langages de programmation, cette étape de compilation permet de soulever des erreurs dans le code, voire de parser ces types génériques.
 
 Alors, pourquoi ces types ne sont-ils pas déjà disponibles dans notre langage préféré ?
 
-### En quoi le typage générique en PHP est impossible dans la pratique ?
+## En quoi le typage générique en PHP est impossible dans la pratique ?
 
 Comme dit plus haut, PHP n'est pas un langage que l'on compile pour envoyer ensuite un exécutable sur le serveur. PHP est interprété ; lorsque le serveur reçoit une requête, le code PHP est converti en OPCODE, lui-même ensuite exécuté par une machine virtuelle. Si une erreur s'est glissée dans le code, alors le programme plantera à l'exécution.
 
@@ -53,7 +53,7 @@ Pour toutes ces raisons, allant du design même du langage à la complexité d'i
 
 Mais, ne jamais dire jamais...
 
-### Le typage générique PHP statique, la solution ?
+## Les types statiques, la solution ?
 
 Alors, que fait-on maintenant ? On se roule en boule dans un coin et on regrette d'avoir choisi PHP ?
 
@@ -72,7 +72,7 @@ Comment ? Tenez vous bien, en utilisant... les annotations de la PHPDoc...
 Bon je sais, certains ne sont pas convaincus, mais dites-vous bien que la PHPDoc est une manière très puissante d'enrichir PHP sans avoir à toucher au code.
 Vous allez voir, après quelques exemples, vous ne reviendrez plus en arrière.
 
-## Cas pratique : créer un typage générique en PHP
+## Cas pratique : créer un type générique en PHP
 
 Alors, on trépigne d'impatience à l'idée de créer ses premiers types génériques ?
 
