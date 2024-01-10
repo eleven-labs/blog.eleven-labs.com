@@ -21,7 +21,7 @@ Enfin, le code source de ce Codelabs est disponible sur mon GitHub :
 -   [Codelab Symfo/Doctrine](https://github.com/ArthurJCQ/codelabs-compo)
 
 
-### Pré-requis
+## Pré-requis
 
 Pour les besoins de ce tutoriel il vous faudra :
 
