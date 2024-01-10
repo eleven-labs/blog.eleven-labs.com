@@ -4,12 +4,12 @@ tutorial: composition-over-inheritance-et-typage-generique-avec-symfony-et-doctr
 slug: refactoring-du-repository
 title: Refactoring du repository
 ---
-### Refactoring du repository
+## Refactoring du repository
 
 Pour que la suite soit la plus digeste et facile possible, nous travaillerons dans l'arborescence de fichier créée par Symfony, directement dans le dossier `Repository`.
 Dans le monde réel, on pourrait clairement tirer parti du DDD (Domain Driven Design) pour sublimer notre refactoring, mais ce n'est pas l'objet de ce codelab, nous resterons donc concentrés sur le repository en tant que tel.
 
-La première chose à faire pour se découpler de Doctrine, c'est de créer notre propre interface, contenant la liste exhaustive des méthodes que notre Repository devra implémenter. Ici, admettons que nous aurons uniquement besoin des méthodes `store()` pour persister des objets, `find()` pour en récupérer, et une plus particulière `findPostsAboutPhp()`.
+La première chose à faire pour se découpler de Doctrine, c'est de créer notre propre interface, contenant la liste exhaustive des méthodes que notre repository devra implémenter. Ici, admettons que nous aurons uniquement besoin des méthodes `store()` pour persister des objets, `find()` pour en récupérer, et une plus particulière `findPostsAboutPhp()`.
 
 Créons donc cette interface :
 
@@ -36,8 +36,8 @@ interface PostRepositoryInterface
 De plus cette interface est totalement agnostique de tout ORM (ici, Doctrine), car le choix de votre ORM est un détail d'implémentation dont votre code métier ne doit pas avoir connaissance.
 Dorénavant, vous devrez donc toujours utiliser la `PostRepositoryInterface` quand vous voudrez injecter votre repository quelque part.
 
-Revenons maintenant à notre implémentation de Repository Doctrine. Commençons par le renommer `PostRepository` => `PostRepositoryDoctrine`.
-Cette instance de Repository est donc celle qui utilisera l'ORM Doctrine.
+Revenons maintenant à notre implémentation de repository Doctrine. Commençons par le renommer `PostRepository` => `PostRepositoryDoctrine`.
+Cette instance de repository est donc celle qui utilisera l'ORM Doctrine.
 Puis, vidons notre `PostRepositoryDoctrine` de tout son code superflu, et implémentons cette nouvelle interface :
 
 ```php
@@ -68,7 +68,7 @@ class PostRepositoryDoctrine implements PostRepositoryInterface
 }
 ```
 
-Top ! Et si vous souhaitez changer d'ORM, ou utiliser l'ODM de Doctrine (pour utiliser plutôt MongoDB), il vous suffira de créer un nouveau Repository.
+Top ! Et si vous souhaitez changer d'ORM, ou utiliser l'ODM de Doctrine (pour utiliser plutôt MongoDB), il vous suffira de créer un nouveau repository.
 Par exemple, un `PostRepositoryDocument` pour l'ODM, et y implémenter le code nécessaire pour intéragir avec les fonctions de l'ODM.
 
 C'est ce que nous nous apprêtons à faire maintenant avec notre `PostRepositoryDoctrine`.
@@ -107,7 +107,7 @@ class PostRepositoryDoctrine implements PostRepositoryInterface
 ```
 
 Et voilà, au lieu d'étendre l'`EntityRepository` de Doctrine, on injecte l'`EntityManager` dans notre constructeur.
-Puis, dans une propriété privée `$repository`, on récupère une instance de Repository Doctrine de type `Post::class` qui sera notre objet ***proxy*** entre nos méthodes et celles de Doctrine.
+Puis, dans une propriété privée `$repository`, on récupère une instance de repository Doctrine de type `Post::class` qui sera notre objet ***proxy*** entre nos méthodes et celles de Doctrine.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 L'interface <code>ObjectRepository</code> de Doctrine sera ici implémentée automatiquement par son <code>EntityRepository</code>.
@@ -123,11 +123,11 @@ class Post
 
 Il vous faudra vous débarrasser du paramètre `repositoryClass` de l'attribut, car ce dernier attend une classe de type `EntityRepository` (de Doctrine).
 Or notre classe n'hérite plus de cette dernière.
-Ce n'est pas vraiment un problème car vous utiliserez de toute manière normalement l'injection de dépendance pour utiliser votre repository là où vous en avez besoin, plutôt que la méthode `getRepository(Post::class)`.
+Ce n'est pas vraiment un problème car vous utiliserez normalement de toute manière l'injection de dépendance pour utiliser votre repository là où vous en avez besoin, plutôt que la méthode `getRepository(Post::class)`.
 
 Et voilà ! Vous disposez à présent d'un repository tout propre qui utilise la composition, et n'implémente que les méthodes Doctrine dont vous avez *réellement* besoin.
 
-... Mais ce n'est pas tout à fait terminé.
+...Mais ce n'est pas tout à fait terminé.
 En effet, que se passe-t-il si je veux ajouter une nouvelle entité, par exemple un `User` ? Mettons que cette classe n'a besoin que de la méthode `find`.
 
 Créons ensemble cette entité avec la commande `make:entity` avec seulement un `name` pour attribut.
@@ -168,19 +168,19 @@ class UserRepositoryDoctrine implements UserRepositoryInterface
 }
 ```
 
-Bon, comme on peut le voir, ça commence à faire pas mal de code en doublon. Pour peu que toutes vos entités aient besoin d'un Repository avec les méthodes de base `find`, `store`, `save`, `remove`, ... On commence à faire pas mal de duplication de code.
+Bon, comme on peut le voir, ça commence à faire pas mal de code en doublon. Pour peu que toutes vos entités aient besoin d'un repository avec les méthodes de base `find`, `store`, `save`, `remove`, ...on commence à faire pas mal de duplication de code.
 
 Et c'est à partir de là que nous allons mettre en place... de l'héritage !
 
 <div  class="admonition question"  markdown="1"><p  class="admonition-title">Question</p>
-Mais ... On vient de faire tout ça pour se débarrasser de l'héritage et faire de la composition... Pourquoi ?!
+Mais... On vient de faire tout ça pour se débarrasser de l'héritage et faire de la composition... Pourquoi ?!
 </div>
 
 Promis je ne me moque pas de vous. Se débarrasser de l'héritage du `ServiceEntityRepository` de Doctrine, c'était surtout se débarrasser d'une tonne de code superflu, non voulu, et surtout inconnu, qui se retrouvait dans votre classe.
 
 Maintenant que nous avons fait le ménage, rien ne nous empêche de factoriser notre propre code pour éviter de se répéter.
 
-Pour commencer, supprimons de nos Repository toutes ces méthodes ***génériques*** dont on vient de parler (`find`, `store`, ...), car nous allons les définir à plus haut niveau.
+Pour commencer, supprimons de nos repositories toutes ces méthodes ***génériques*** dont on vient de parler (`find`, `store`...), car nous allons les définir à plus haut niveau.
 
 Dans notre exemple, `UserRepositoryInterface` se retrouve vide, et notre `PostRepositoryInterface` va finalement ressembler à cela :
 
@@ -203,8 +203,8 @@ On ne garde que les méthodes <b>spécifiques</b> de nos repositories, comme not
 
 Adaptez bien en conséquence le code des classes implémentant ces interfaces.
 
-Puis, créons à présent un Repository de base, que nous appellerons `BaseRepositoryDoctrine`, qui contiendra tout le code en commun avec tous nos autres repository.
-Comme nous somme consciencieux, créons d'abord son interface :
+Puis, créons à présent un repository de base, que nous appellerons `BaseRepositoryDoctrine`, qui contiendra tout le code en commun avec tous nos autres repositories.
+Comme nous sommes consciencieux, créons d'abord son interface :
 
 ```php
 <?php
@@ -224,7 +224,7 @@ interface BaseRepositoryInterface
 
 > C'est donc ici que l'on remet nos méthodes ***génériques***
 
-Cette interface pourra être implémentée par n'importe quel ORM; ici c'est un Repository Doctrine que nous souhaitons créer :
+Cette interface pourra être implémentée par n'importe quel ORM ; ici c'est un repository Doctrine que nous souhaitons créer :
 
 ```php
 <?php
@@ -257,12 +257,12 @@ abstract class BaseRepositoryDoctrine extends BaseRepositoryInterface
 }
 ```
 
-> Et le tour est joué, tous nos repository Doctrine n'auront qu'à hériter de cette classe pour posséder ces méthodes ***génériques***.
+> Et le tour est joué, tous nos repositories Doctrine n'auront qu'à hériter de cette classe pour posséder ces méthodes ***génériques***.
 
 Plusieurs remarques :
-- Notre classe est abstraite car elle n'est pas censée être instantiée. Il s'agit juste d'un squelette, qui sera étendu par nos réels Repository.
-- On ne sait pas encore comment instantier notre propriété `$repository` qui est censé être une instance du Repository Doctrine lié à notre entité. Or, ici cette classe abstraite ne sait pas par quel Repository elle sera utilisé.
-- Quel typage pour l'argument de la méthode `store` qui reçoit le nouvel objet à instantier ?
+- Notre classe est abstraite car elle n'est pas censée être instanciée. Il s'agit juste d'un squelette, qui sera étendu par nos réels repositories.
+- On ne sait pas encore comment instancier notre propriété `$repository` qui est censée être une instance du repository Doctrine lié à notre entité. Or, ici cette classe abstraite ne sait pas par quel repository elle sera utilisée.
+- Quel typage pour l'argument de la méthode `store` qui reçoit le nouvel objet à instancier ?
 - Même problème pour le type de retour de notre fonction `find`, nous ne savons pas à l'avance quel objet retourner.
 
 Pour les problèmes de typage cités ci-dessus, deux solutions.
@@ -294,7 +294,7 @@ class PostRepositoryDoctrine extends BaseRepositoryDoctrine implements PostRepos
 ```
 
 Dans cette classe nous avons plus tôt supprimé toutes les méthodes déjà implémentées dans la classe abstraite, nous n'avons donc plus que ce constructeur et la méthode `findPostsAboutPhp()`.
-On y ajoutera d'autres méthodes uniquement si elles sont spécifiques à ce Repository.
+On y ajoutera d'autres méthodes uniquement si elles sont spécifiques à ce repository.
 
 <div  class="admonition question"  markdown="1"><p  class="admonition-title">Question</p>
 Quid de notre problème de type dans les méthodes de la classe abstraite ?
@@ -321,7 +321,7 @@ Et comme du code vaut mille mots, voilà la solution, attention les yeux :
     // ...
 ```
 
-Ah ! Un typage `object`, vous l'aviez vu venir ? Certains crient peut-être au scandale, et ils auraient sûrement raison: en l'état actuel, nous sommes passés d'un typage fort à un typage vraiment bancal. N'importe quel `object` ferait l'affaire ici.
+Ah ! Un typage `object`! Vous l'aviez vu venir ? Certains crient peut-être au scandale, et ils auraient sûrement raison : en l'état actuel, nous sommes passés d'un typage fort à un typage vraiment bancal. N'importe quel `object` ferait l'affaire ici.
 
 En réalité, c'est là que la magie du typage générique va faire son affaire.
 On en a fini avec notre refactoring, vous pouvez souffler un coup.
