@@ -9,6 +9,7 @@ categories:
     - php
 keywords:
     - typage générique
+    - typage PHP
     - phpstan
     - symfony
     - doctrine
@@ -16,7 +17,7 @@ authors:
     - ajacquemin
 ---
 
-### Introduction au typage générique en PHP
+## Introduction au typage générique en PHP
 
 Le typage générique, non seulement c'est super, mais en plus, c'est classe. Dans un monde idéal, voilà à quoi ça ressemblerait en PHP :
 
@@ -59,7 +60,7 @@ Alors, que fait-on maintenant ? On se roule en boule dans un coin et on regrette
 ... Ou alors, on se tourne vers un des super pouvoirs de PHP : son écosystème d'analyseurs statiques.
 En effet, nous avons la chance en PHP d'avoir pléthore d'*analyseurs statiques*, tous extrêmement bien développés.
 
-Grâce à eux, notre IDE favori (PhpStorm bien entendu) est en mesure de nous crier dessus à la moindre erreur décelable avant l'exécution. 
+Grâce à eux, [notre IDE favori, PhpStorm bien entendu](https://blog.eleven-labs.com/fr/phpstorm-tips-config-extensions/) est en mesure de nous crier dessus à la moindre erreur décelable avant l'exécution. 
 Problème de typage ? Argument oublié dans une fonction ? Variable inutilisée ? Condition toujours vraie ? Accolade ou point virgule oublié ? Et j'en passe ...
 
 Créez même vos propres règles de lint, de bonnes pratiques à suivre dans votre équipe. Ces outils, comme PHPCs ou PHPStan, permettent tout cela.
@@ -71,7 +72,7 @@ Comment ? Tenez vous bien, en utilisant... les annotations de la PHPDoc...
 Bon je sais, certains ne sont pas convaincus, mais dites-vous bien que la PHPDoc est une manière très puissante d'enrichir PHP sans avoir à toucher au code.
 Vous allez voir, après quelques exemples, vous ne reviendrez plus en arrière.
 
-### Typage générique par l'exemple
+## Cas pratique : créer un typage générique en PHP
 
 Alors, on trépigne d'impatience à l'idée de créer ses premiers types génériques ?
 
@@ -272,7 +273,7 @@ Cet article est volontairement théorique, et sans exemple exhaustif. Prenez-le 
 
 Pour une mise en application plus poussée et un accompagnement pas-à-pas de la vérification de ces types avec PHPStan, référez-vous au [Tutoriel](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) cité plus haut dans cet article.
 
-### Conclusion
+## Conclusion
 
 Oui, ce serait génial si dans le futur, PHP trouvait un moyen d'introduire les types génériques nativement dans notre langage préféré, mais en attendant, profiter de la puissance de nos analyseurs statiques est une option plus que satisfaisante pour améliorer notre expérience de développement, grâce à leur propre syntaxe du typage générique.
 
