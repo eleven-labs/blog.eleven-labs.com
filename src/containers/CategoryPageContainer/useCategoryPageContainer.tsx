@@ -19,7 +19,7 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
   const postListPageData = useLoaderData() as PostListPageData;
   const newsletterCard = useNewsletterCard();
   const breadcrumb = useBreadcrumb({ categoryName: categoryName as string });
-  useTitle(categoryName ? t('seo.category.title', { categoryName }) : t('seo.home.title'));
+  useTitle(t(`pages.category.${categoryName}.seo.title`, { categoryName }));
   useLink({
     rel: 'canonical',
     href: `${blogUrl}${generatePath(categoryName ? PATHS.CATEGORY : PATHS.ROOT, {

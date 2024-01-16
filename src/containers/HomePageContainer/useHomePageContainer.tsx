@@ -1,7 +1,7 @@
 import { HomePageProps } from '@eleven-labs/design-system';
 import { useLink } from 'hoofd';
 import { useTranslation } from 'react-i18next';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 import { blogUrl, websiteUrl } from '@/config/website';
 import { ContentTypeEnum, DEFAULT_LANGUAGE, LanguageEnum, PATHS } from '@/constants';
@@ -12,7 +12,6 @@ import { useTitle } from '@/hooks/useTitle';
 import { PostListPageData } from '@/types';
 
 export const useHomePageContainer = (): HomePageProps => {
-  const { categoryName } = useParams<{ categoryName?: string }>();
   const { t, i18n } = useTranslation();
   const postListPageData = useLoaderData() as PostListPageData;
   const newsletterCard = useNewsletterCard();
@@ -35,12 +34,11 @@ export const useHomePageContainer = (): HomePageProps => {
       .slice(0, 2),
   });
 
-  useTitle(categoryName ? t('seo.category.title', { categoryName }) : t('seo.home.title'));
+  useTitle(t('pages.home.seo.title'));
   useLink({
     rel: 'canonical',
-    href: `${blogUrl}${generatePath(categoryName ? PATHS.CATEGORY : PATHS.ROOT, {
+    href: `${blogUrl}${generatePath(PATHS.ROOT, {
       lang: DEFAULT_LANGUAGE,
-      categoryName: categoryName,
     })}`,
   });
 

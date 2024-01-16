@@ -21,7 +21,7 @@ export const useSearchPageContainer = (): SearchPageProps => {
   const newsletterCard = useNewsletterCard();
   const search = new URLSearchParams(!IS_SSR ? location.search : '').get('search') || '';
   const [postsBySearch, setPostsBySearch] = useState<PostCardListContainerProps['allPosts']>([]);
-  useTitle(t('seo.search.title'));
+  useTitle(t('pages.search.seo.title'));
   useLink({
     rel: 'canonical',
     href: `${blogUrl}${generatePath(PATHS.SEARCH, { lang: DEFAULT_LANGUAGE })}`,
@@ -61,8 +61,8 @@ export const useSearchPageContainer = (): SearchPageProps => {
     searchNotFound:
       postsBySearch?.length === 0
         ? {
-            title: t('pages.search.not_found.title'),
-            description: t('pages.search.not_found.description'),
+            title: t('common.search_not_found.title'),
+            description: t('common.search_not_found.description'),
           }
         : undefined,
     newsletterCard,

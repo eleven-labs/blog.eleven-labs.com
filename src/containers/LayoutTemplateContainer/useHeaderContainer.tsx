@@ -97,7 +97,7 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
       href: contactUrl,
     },
     autocomplete: {
-      placeholder: t('autocomplete.placeholder') as string,
+      placeholder: t('common.autocomplete.placeholder') as string,
       defaultValue: search,
       onInputValueChange: handleChange,
       onEnter: handleEnter,

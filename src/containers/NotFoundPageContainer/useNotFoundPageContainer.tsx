@@ -7,7 +7,7 @@ import { useTitle } from '@/hooks/useTitle';
 export const useNotFoundPageContainer = (): NotFoundPageProps => {
   const { t } = useTranslation();
   const error = useRouteError();
-  const title = t('seo.not_found.title');
+  const title = t('pages.not-found.title');
   useTitle(title);
 
   if (error) {

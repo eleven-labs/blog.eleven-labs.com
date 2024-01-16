@@ -18,7 +18,7 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
   const { authorUsername, page } = useParams<{ authorUsername: string; page?: string }>();
   const authorPageData = useLoaderData() as AuthorPageData;
   const newsletterCard = useNewsletterCard();
-  useTitle(t('seo.author.title', { authorName: authorPageData?.author.name }));
+  useTitle(t('pages.author.seo.title', { authorName: authorPageData?.author.name }));
   useLink({
     rel: 'canonical',
     href: `${blogUrl}${generatePath(PATHS.AUTHOR, {

@@ -53,7 +53,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
       description: author.content,
       avatarImageUrl: author.avatarImageUrl,
       link: {
-        label: t('common.post.post_footer.author_link_label'),
+        label: t('common.post.footer.author.link_label'),
         hrefLang: i18n.language,
         href: generatePath(PATHS.AUTHOR, { lang: i18n.language, authorUsername: author.username }),
       },
@@ -79,7 +79,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
       },
     },
     footer: {
-      title: t('common.post.post_footer.title'),
+      title: t('common.post.footer.author.title'),
       authors,
     },
     contactCard,

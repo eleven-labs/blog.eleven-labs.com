@@ -1,4 +1,4 @@
-import { PostCardList } from '@eleven-labs/design-system';
+import { ComponentPropsWithoutRef, PostCardList } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { PostListPageData } from '@/types';
@@ -8,7 +8,7 @@ import { usePostCardListContainer } from './usePostCardListContainer';
 export interface PostCardListContainerProps {
   allPosts: PostListPageData['posts'];
   currentPage?: number;
-  getPaginatedLink?: (page: number) => React.ComponentPropsWithoutRef<'a'>;
+  getPaginatedLink?: (page: number) => ComponentPropsWithoutRef<'a'>;
   isLoading?: boolean;
 }
 

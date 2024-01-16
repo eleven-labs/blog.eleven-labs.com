@@ -1,6 +1,7 @@
 import {
   Blockquote,
   Box,
+  ComponentPropsWithoutRef,
   Flex,
   Heading,
   Link,
@@ -109,7 +110,7 @@ export const markdownToHtml = (content: string): string => {
             );
           }
 
-          return <Box {...(props as React.ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
+          return <Box {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
         },
         h2: ({ children }): React.JSX.Element => (
           <Heading as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
@@ -127,10 +128,10 @@ export const markdownToHtml = (content: string): string => {
           </Heading>
         ),
         p: ({ node, ...props }): React.JSX.Element => (
-          <Text as="p" mb="xxs" {...(props as React.ComponentPropsWithoutRef<'p'>)} />
+          <Text as="p" mb="xxs" {...(props as ComponentPropsWithoutRef<'p'>)} />
         ),
         li: ({ node, ...props }): React.JSX.Element => (
-          <Text as="li" mb="xxs" {...(props as React.ComponentPropsWithoutRef<'li'>)} />
+          <Text as="li" mb="xxs" {...(props as ComponentPropsWithoutRef<'li'>)} />
         ),
         strong: ({ children }): React.JSX.Element => (
           <Text as="span" fontWeight="bold">
@@ -152,7 +153,7 @@ export const markdownToHtml = (content: string): string => {
           return (
             <Link
               as="a"
-              {...(props as React.ComponentPropsWithoutRef<'a'>)}
+              {...(props as ComponentPropsWithoutRef<'a'>)}
               rel={isExternalLink ? 'nofollow noreferrer' : ''}
               style={{ overflowWrap: 'anywhere' }}
             >
@@ -161,10 +162,10 @@ export const markdownToHtml = (content: string): string => {
           );
         },
         blockquote: ({ node, ...props }): React.JSX.Element => (
-          <Blockquote {...(props as React.ComponentPropsWithoutRef<'blockquote'>)} />
+          <Blockquote {...(props as ComponentPropsWithoutRef<'blockquote'>)} />
         ),
         pre: ({ node, ...props }): React.JSX.Element => (
-          <Box as="pre" textSize="xs" {...(props as React.ComponentPropsWithoutRef<'pre'>)} />
+          <Box as="pre" textSize="xs" {...(props as ComponentPropsWithoutRef<'pre'>)} />
         ),
         code: ({ node, className, children, ...props }): React.JSX.Element => {
           const match = /language-(\w+)/.exec(className || '');
