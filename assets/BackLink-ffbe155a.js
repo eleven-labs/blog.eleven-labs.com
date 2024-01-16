@@ -1,2 +1,0 @@
-import{j as n,u as i}from"./index.es-43e4d52f.js";const a=({label:e,...r})=>n.jsx(i,{...r,icon:"arrow-back",size:"m","data-internal-link":"back",children:e});try{a.displayName="BackLink",a.__docgenInfo={description:"",displayName:"BackLink",props:{as:{defaultValue:null,description:"",name:"as",required:!1,type:{name:"As<any>"}},label:{defaultValue:null,description:"",name:"label",required:!0,type:{name:"ReactNode"}}}}}catch{}export{a as B};
-//# sourceMappingURL=BackLink-ffbe155a.js.map
