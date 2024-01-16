@@ -6,12 +6,8 @@ export const useNewsletterCard = (): NewsletterCardProps => {
   const { t } = useTranslation();
 
   return {
-    title: t('newsletter.title'),
-    description: t('newsletter.description'),
-    children: (
-      <iframe src="//info.eleven-labs.com/form/10" width="300" height="300">
-        <p>Your browser does not support iframes.</p>
-      </iframe>
-    ),
+    title: t('common.newsletter-card.title'),
+    description: t('common.newsletter-card.description'),
+    children: <script type="text/javascript" src="//info.eleven-labs.com/form/generate.js?id=10" />,
   };
 };

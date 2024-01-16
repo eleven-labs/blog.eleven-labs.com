@@ -8,6 +8,7 @@ import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
 import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import { generatePath } from '@/helpers/routerHelper';
+import { useBreadcrumb } from '@/hooks/useBreadcrumb';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
 import { PostListPageData } from '@/types';
@@ -17,6 +18,7 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
   const { t, i18n } = useTranslation();
   const postListPageData = useLoaderData() as PostListPageData;
   const newsletterCard = useNewsletterCard();
+  const breadcrumb = useBreadcrumb({ categoryName: categoryName as string });
   useTitle(categoryName ? t('seo.category.title', { categoryName }) : t('seo.home.title'));
   useLink({
     rel: 'canonical',
@@ -32,11 +34,7 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
 
   return {
     categoryIntroBlock: {
-      homeLink: {
-        label: t('pages.category.home_link_label'),
-        href: '#',
-      },
-      name: t(`categories.${categoryName}`),
+      breadcrumb,
       title: t(`pages.category.${categoryName}.title`),
       description: t(`pages.category.${categoryName}.description`),
     },
@@ -48,7 +46,7 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
         href: t(`pages.category.${categoryName}.expertise.link_url`),
       },
     },
-    title: t('post_list_block.post_preview_list_title'),
+    title: t(`pages.category.${categoryName}.post_list_title`),
     postCardList: (
       <PostCardListContainer
         getPaginatedLink={getPaginatedLink}

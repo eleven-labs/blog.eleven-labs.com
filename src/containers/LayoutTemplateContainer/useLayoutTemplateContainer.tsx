@@ -1,22 +1,24 @@
 import { LayoutTemplateProps } from '@eleven-labs/design-system';
 import { useHead, useLink, useMeta, useScript } from 'hoofd';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { matchPath, useLocation } from 'react-router-dom';
+import { matchPath, useLoaderData, useLocation } from 'react-router-dom';
 
 import { themeColor } from '@/config/website';
 import { GOOGLE_SITE_VERIFICATION } from '@/constants';
 import { PATHS } from '@/constants';
 import { useFooterContainer } from '@/containers/LayoutTemplateContainer/useFooterContainer';
-import { useHeaderContainer } from '@/containers/LayoutTemplateContainer/useHeaderContainer';
 import { getPathFile } from '@/helpers/assetHelper';
 import { getClickEventElements, handleClickEventListener } from '@/helpers/dataLayerHelper';
+import { LayoutTemplateData } from '@/types';
+
+import { HeaderContainer } from './HeaderContainer';
 
 export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'children'> => {
   const { i18n } = useTranslation();
   const location = useLocation();
-  const header = useHeaderContainer();
   const footer = useFooterContainer();
+  const layoutTemplateData = useLoaderData() as LayoutTemplateData;
   const isHomePage = Boolean(matchPath(PATHS.ROOT, location.pathname));
 
   useHead({
@@ -82,7 +84,18 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   }, [location]);
 
   return {
-    header,
+    header: (
+      <>
+        <div id="header">
+          <HeaderContainer layoutTemplateData={layoutTemplateData} />
+        </div>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.layoutTemplateData = ${JSON.stringify(layoutTemplateData)};`,
+          }}
+        />
+      </>
+    ),
     footer,
   };
 };

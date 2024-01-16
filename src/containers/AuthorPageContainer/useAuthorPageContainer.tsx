@@ -66,7 +66,7 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
       content: author.content,
     },
     emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
-    title: t('pages.author.post_preview_list_title'),
+    title: t('pages.author.post_list_title'),
     postCardList: (
       <PostCardListContainer
         getPaginatedLink={getPaginatedLink}

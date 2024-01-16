@@ -5,8 +5,10 @@ import { useTranslation } from 'react-i18next';
 
 import { PATHS } from '@/constants';
 import { generatePath } from '@/helpers/routerHelper';
+import { useBreadcrumb } from '@/hooks/useBreadcrumb';
 import { useContactCard } from '@/hooks/useContactCard';
 import { useDateToString } from '@/hooks/useDateToString';
+import { usePostsForCardList } from '@/hooks/usePostsForCardList';
 import { useSeoPost } from '@/hooks/useSeoPost';
 import { PostPageData } from '@/types';
 
@@ -18,6 +20,10 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
     post,
   });
   const contactCard = useContactCard();
+  const breadcrumb = useBreadcrumb({ categoryName: post.categories[0] });
+  const relatedPostsForCardList = usePostsForCardList({
+    posts: post.relatedPosts,
+  });
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -47,6 +53,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
       description: author.content,
       avatarImageUrl: author.avatarImageUrl,
       link: {
+        label: t('common.post.post_footer.author_link_label'),
         hrefLang: i18n.language,
         href: generatePath(PATHS.AUTHOR, { lang: i18n.language, authorUsername: author.username }),
       },
@@ -54,6 +61,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
   );
 
   return {
+    breadcrumb,
     header: {
       title: post.title,
       date: getDateToString({ date: post.date }),
@@ -67,25 +75,17 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
           facebook: true,
           linkedIn: true,
         },
-        copiedLabel: t('pages.post.share_links.copied_label'),
+        copiedLabel: t('common.post.share_links.copied_label'),
       },
     },
     footer: {
-      title: t('pages.post.post_footer_title'),
+      title: t('common.post.post_footer.title'),
       authors,
     },
     contactCard,
     relatedPostList: {
-      relatedPostListTitle: t('pages.post.related_post_list_title'),
-      posts: post.relatedPosts.map((relatedPost) => ({
-        ...relatedPost,
-        authors: relatedPost.authors,
-        date: getDateToString({ date: relatedPost.date }),
-        link: {
-          hrefLang: i18n.language,
-          href: generatePath(PATHS.POST, { lang: i18n.language, slug: relatedPost.slug }),
-        },
-      })),
+      relatedPostListTitle: t('common.post.related_post_list.title'),
+      posts: relatedPostsForCardList,
     },
   };
 };

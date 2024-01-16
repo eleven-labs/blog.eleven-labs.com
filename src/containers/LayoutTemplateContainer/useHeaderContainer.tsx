@@ -1,24 +1,21 @@
 import { AutocompleteProps, HeaderProps } from '@eleven-labs/design-system';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 
 import { contactUrl } from '@/config/website';
 import { IS_SSR, NUMBER_OF_ITEMS_FOR_SEARCH, PATHS } from '@/constants';
+import { HeaderContainerProps } from '@/containers/LayoutTemplateContainer/HeaderContainer';
 import { trackContentSearchEvent } from '@/helpers/dataLayerHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useDateToString } from '@/hooks/useDateToString';
 import { useDebounce } from '@/hooks/useDebounce';
-import { AlgoliaPostData, LayoutTemplateData } from '@/types';
+import { AlgoliaPostData } from '@/types';
 
-export const useHeaderContainer = (): HeaderProps => {
-  const layoutTemplateData = useLoaderData() as LayoutTemplateData;
+export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps): HeaderProps => {
   const { t, i18n } = useTranslation();
-  const location = useLocation();
-  const navigate = useNavigate();
   const { getDateToString } = useDateToString();
-  const searchParams = new URLSearchParams(!IS_SSR ? location.search : '');
+  const searchParams = new URLSearchParams(!IS_SSR ? window.location.search : '');
 
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
   const [search, setSearch] = React.useState<string>(searchParams.get('search') ?? '');
@@ -31,10 +28,7 @@ export const useHeaderContainer = (): HeaderProps => {
   };
 
   const handleEnter: AutocompleteProps['onEnter'] = (value): void => {
-    navigate({
-      pathname: generatePath(PATHS.SEARCH, { lang: i18n.language }),
-      search: `search=${value}`,
-    });
+    window.location.href = `${generatePath(PATHS.SEARCH, { lang: i18n.language })}?search=${value}`;
   };
 
   React.useEffect(() => {
@@ -65,8 +59,10 @@ export const useHeaderContainer = (): HeaderProps => {
           username: authorUsername,
           name: hit.authorNames[index],
         })),
-        hrefLang: i18n.language,
-        href: generatePath(PATHS.POST, { lang: i18n.language, slug: hit.slug }),
+        link: {
+          hrefLang: i18n.language,
+          href: generatePath(PATHS.POST, { lang: i18n.language, slug: hit.slug }),
+        },
       })),
     [i18n.language, searchHits] // eslint-disable-line react-hooks/exhaustive-deps
   );
@@ -85,18 +81,19 @@ export const useHeaderContainer = (): HeaderProps => {
           lang: i18n.language,
           categoryName: currentCategoryName,
         }),
-        label: currentCategoryName === 'all' ? t('categories.all') : t(`categories.${currentCategoryName}`),
+        label:
+          currentCategoryName === 'all' ? t('common.categories.all') : t(`common.categories.${currentCategoryName}`),
       })) ?? [],
     hasTutorial: layoutTemplateData.hasTutorial,
     tutorialLink: {
-      label: t(`categories.tutorial`),
+      label: t(`common.categories.tutorial`),
       href: generatePath(PATHS.CATEGORY, {
         lang: i18n.language,
         categoryName: 'tutorial',
       }),
     },
     contactLink: {
-      label: t('header.contact_label_link'),
+      label: t('common.header.contact_label_link'),
       href: contactUrl,
     },
     autocomplete: {
@@ -108,11 +105,11 @@ export const useHeaderContainer = (): HeaderProps => {
       searchLink: {
         hrefLang: i18n.language,
         href: `${generatePath(PATHS.SEARCH, { lang: i18n.language })}${search ? `?search=${search}` : ''}`,
-        label: t('autocomplete.see_all_search_label'),
+        label: t('common.autocomplete.see_all_search_label'),
       },
       searchNotFound: {
-        title: t('search_not_found.title'),
-        description: t('search_not_found.description'),
+        title: t('common.search_not_found.title'),
+        description: t('common.search_not_found.description'),
       },
     },
   };

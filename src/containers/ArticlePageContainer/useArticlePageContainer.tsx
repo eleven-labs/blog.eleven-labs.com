@@ -14,7 +14,7 @@ export const useArticlePageContainer = (article: ArticlePageData): PostPageProps
     variant: ContentTypeEnum.ARTICLE,
     ...postPage,
     summary: {
-      title: t('pages.post.summary_card_title'),
+      title: t('pages.article.summary_card.title'),
       sections: [],
     },
     children: <Box dangerouslySetInnerHTML={{ __html: article.content }} />,

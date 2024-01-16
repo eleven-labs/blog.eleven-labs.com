@@ -11,8 +11,8 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
 
   return {
     introBlock: {
-      title: t('footer.intro_block.title'),
-      description: t('footer.intro_block.description'),
+      title: t('common.footer.intro_block.title'),
+      description: t('common.footer.intro_block.description'),
     },
     elevenLabsSiteLink: {
       target: '_blank',
@@ -20,7 +20,7 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
       'data-website-link': true,
     } as LayoutTemplateProps['footer']['elevenLabsSiteLink'],
     contactLink: {
-      label: t('footer.contact_label_link'),
+      label: t('common.footer.contact_label_link'),
       href: contact.formLink,
     },
     addressList: contact.addressList.map(({ name, address }) => ({
@@ -44,7 +44,7 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
       const isActive = currentLang === i18n.language;
       return {
         isActive,
-        label: t(`languages.${currentLang}`),
+        label: t(`common.languages.${currentLang}`),
         ...(!isActive
           ? {
               href: generatePath(PATHS.HOME, { lang: currentLang }),

@@ -43,6 +43,12 @@ export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ lang, title, content
       ))}
       <link rel="shortcut icon" type="image/x-icon" href={getPathFile('/favicon.ico')} />
       <link rel="manifest" href={getPathFile('/web-app-manifest.json')} />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Montserrat:wght@100;400;500;700&display=swap"
+        rel="stylesheet"
+      />
       {links?.map((link, index) => (
         <link key={index} {...link} />
       ))}

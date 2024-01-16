@@ -23,7 +23,7 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
     variant: ContentTypeEnum.TUTORIAL,
     ...postPageProps,
     summary: {
-      title: t('pages.post.summary_card_title'),
+      title: t('pages.tutorial.summary_card.title'),
       sections: tutorial.steps.map((step, index) => ({
         name: step.slug,
         label: step.title,
