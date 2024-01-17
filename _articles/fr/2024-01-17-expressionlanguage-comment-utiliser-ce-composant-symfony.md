@@ -2,36 +2,35 @@
 contentType: article
 lang: fr
 date: '2024-01-17'
-slug: expressionlanguage-comment-utiliser-ce-composant-symfony
-title: 'ExpressionLanguage : Comment utiliser ce composant Symfony ?'
+slug: symfony-expressionlanguage
+title: 'Symfony ExpressionLanguage : Comment utiliser ce composant ?'
 excerpt: >-
-  Quand on arrive sur un projet existant, on doit souvent subir une dette
-  technique qui nous fait perdre du temps et qui nous rend fou au point de
-  vérifier qui a fait le code. Vous aussi vous voulez entrer dans la postérité
-  lors d’un git blame et mal concevoir votre produit ?
+  "Découvrez le composant Symfony ExpressionLanguage : qu'est-ce que c'est ? Quand et comment l'utiliser ? Comment créer des expressions lors de cas plus complexes ?"
 categories:
   - php
 authors:
   - marianne
 keywords:
   - bonnes pratiques
-  - développement
+  - développement PHP
+  - Symfony
+  - ExpressionLanguage
 ---
 
-L’[ExpressionLanguage](https://symfony.com/doc/current/components/expression_language.html), ça vous parle ? Soit vous êtes très familier avec, soit vous en avez entendu parler de loin, pourtant c’est un composant de Symfony qui existe depuis la version 2.4, autant dire qu’il a de la bouteille. Très utile pour quelques cas d’utilisation, je vais vous montrer quand et comment l’utiliser.
+L’[ExpressionLanguage](https://symfony.com/doc/current/components/expression_language.html), ça vous parle ? C’est un composant de Symfony qui existe depuis la version 2.4, autant dire qu’il a de la bouteille. Il est très utile pour quelques cas d’utilisation bien précis : je vais vous montrer quand et comment l’utiliser.
 
-## Son fonctionnement
+## Le fonctionnement du composant ExpressionLanguage en Symfony
 
-L’ExpressionLanguage permet d’évaluer des expressions dynamiques en fonction d’un contexte. En moins barbare : vous avez besoin d’interpréter des règles ou des instructions en utilisant un langage algorithmique léger. Elles peuvent contenir des opérations mathématiques, des comparaisons, des conditions, des fonctions personnalisées, etc. Cela permet d’avoir une application plus flexible et configurable sans avoir à modifier le code source en cas de modification des règles.
+L’ExpressionLanguage permet d’évaluer des expressions dynamiques en fonction d’un contexte. C'est particulièrement utile quand vous avez besoin d’interpréter des règles ou des instructions en utilisant un langage algorithmique léger. Ces dernières peuvent contenir des opérations mathématiques, des comparaisons, des conditions, des fonctions personnalisées, etc. Cela permet d’avoir une application plus flexible et configurable sans avoir à modifier le code source en cas de modification des règles.
 
-## Quand l’utiliser
+### Quand est-il pertinent d'utiliser Symfony ExpressionLanguage ?
 
 L’ExpressionLanguage peut être utilisé dans plusieurs cas :
--   expressions de règles métiers
--   gestion des droits utilisateurs : accès à l’application, autorisation sur certaines fonctionnalités, quota sur le nombre d’occurence ou sur l’espace disque, etc
--   mapping de données
--   personnalisation de contenu : message, profil, comportement, etc
--   validation de données
+-   Expression de règles métiers.
+-   Gestion des droits utilisateurs : accès à l’application, autorisation sur certaines fonctionnalités, quota sur le nombre d’occurrences ou sur l’espace disque, etc.
+-   Mapping de données.
+-   Personnalisation de contenu : message, profil, comportement, etc.
+-   Validation de données.
 
 La liste n’est pas exhaustive, mais dans tous les cas il s’agit de la définition de règles dont l’algorithme doit être simple.
 
@@ -45,7 +44,7 @@ _Petite précision_ sur les deux fonctions permettant d’interpréter les règl
 
 > On utilisera que `evaluate()` pour notre besoin.
 
-## Comment l’utiliser
+## Cas pratique : Utiliser le composant ExpressionLanguage avec Symfony
 
 Personnellement, j’aime utiliser l’ExpressionLanguage avec des règles écrites en YAML.
 Dans le constructeur de ma classe `DataConverter`, je vais récupérer le mapping YAML que j’ai créé dans `/config` et initialiser mon service ExpressionLanguage.
@@ -62,7 +61,7 @@ public function __construct()
 }
 ```
 
-Dans ma fonction `convert`, je vais parcourir l’ensemble de mon mapping et pour chaque ligne, utiliser le composant pour convertir l’expression indiquée dans le YAML.
+Dans ma fonction `convert`, je vais parcourir l’ensemble de mon mapping, et pour chaque ligne je vais utiliser le composant pour convertir l’expression indiquée dans le YAML.
 
 ```php
 public function convert(array $data): array
@@ -76,7 +75,7 @@ public function convert(array $data): array
 }
 ```
 
-Voici mes données récupérées sur mon utilisateur :
+Voici les données récupérées sur mon utilisateur :
 ```php
 $data = [
     'firstname' => 'Jean-Michel',
@@ -99,9 +98,9 @@ person: 'data["firstname"] ~ " " ~ data["lastname"]'
 
 Ici, pour le champ “person”, nous voulons la concaténation du firstname et du lastname. Comme vous avez pu le remarquer dans la fonction `evaluate()`, j’ai passé en second paramètre un tableau avec la clé `data` contenant les données de mon tableau avec les informations de l'utilisateur. Il est donc admis dans mon mapping que le nom du tableau des données à exploiter est `data`.
 
-Vous pouvez remarquer que l’ensemble de l’expression est entre quotes et qu’on utilise les doubles quotes pour définir les clés du tableau `data`, et pour indiquer l’espace, l’utilisation du `~ “ “ ~`.
+Vous pouvez remarquer que l’ensemble de l’expression est entre quotes et qu’on utilise les doubles quotes pour définir les clés du tableau `data`, vous noterez également que pour indiquer l’espace, on utilise `~ “ “ ~`.
 
-On pourrait avoir le cas de case à cocher pour indiquer la civilité avec une case pour “M” et une pour “Mme”.
+On pourrait avoir le cas de cases à cocher pour indiquer la civilité avec une case pour “M” et une pour “Mme”.
 
 ```yaml
 # Cache à cocher pour Monsieur/Madame /!\ ça dépendant de votre librairie pour remplir le PDF
@@ -111,11 +110,10 @@ title_ms: '"ms" === data["title"] ? 1 : 0'
 
 On peut donc utiliser des opérations booléennes dans son expression : on part du principe que dans les données d’entrées, le `title` est un string qu’il faut comparer pour indiquer 0 ou 1 pour le PDF.
 
-## Et si j’ai un cas compliqué ?
+### Aller plus loin : créer une expression complexe 
 
 On peut avoir besoin d’une expression un peu plus compliquée que les [opérateurs proposés](https://symfony.com/doc/current/reference/formats/expression_language.html#supported-operators) : on a besoin d’une “vraie” fonction.
-Pas de panique, cela s’ajoute !
-Dans la documentation de Symfony, il y a un cas simple pour convertir [le texte en minuscule](https://symfony.com/doc/current/components/expression_language.html#extending-the-expressionlanguage). On va essayer d’aller un peu plus loin : j’ai la date d’anniversaire et je dois la séparer en plusieurs champs pour le PDF.
+Pas de panique, cela s’ajoute ! Dans la documentation de Symfony, il y a un cas simple pour convertir [le texte en minuscule](https://symfony.com/doc/current/components/expression_language.html#extending-the-expressionlanguage). On va essayer d’aller un peu plus loin : j’ai la date d’anniversaire et je dois la séparer en plusieurs champs pour le PDF.
 
 ```yaml
 birthdate_day: 'getPartOfDate(data["birthday"], "day")'
@@ -140,13 +138,12 @@ $this->expressionLanguage->register('getPartOfDate',
 
 La fonction `register()` permet d’insérer une nouvelle fonction utilisable dans les expressions. Elle est composée :
 -   du nom
--   de la fonction exécutée lors de la compilation (= pour la fonction `compile()` que je n’ai certe pas faîte parce qu’elle n’a pas d’utilité dans mon cas)
+-   de la fonction exécutée lors de la compilation (= pour la fonction `compile()` que je n’ai pas faite parce qu’elle n’a pas d’utilité dans mon cas)
 -   de la fonction exécutée lors de l’évaluation (= pour la fonction `evaluate()`)
 
 Il est possible de rajouter autant de paramètres que l’on veut pour le besoin, mais sachez que `$arguments` contient l’ensemble des données du context (contenant `data`).
 
 
-## Conclusion
-J’espère que vous appréhendez un peu mieux ce composant et que vous allez pouvoir imaginer les cas d’utilisations qui seront utiles pour vos projets !
-
-Mais n’oubliez pas qu’il faut utiliser un composant pour de bonnes raisons, sinon vous risquez de créer de la [dette technique inutilement](https://blog.eleven-labs.com/fr/comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/).
+## Conclusion : vous voilà prêts à utiliser le composant Symfony ExpressionLanguage !
+J’espère que vous appréhendez un peu mieux ce composant et que vous allez pouvoir imaginer les cas d’utilisation qui seront utiles pour vos projets !
+Mais n’oubliez pas qu’il faut utiliser un composant pour de bonnes raisons, sinon vous risquez de générer de la [dette technique inutilement](https://blog.eleven-labs.com/fr/comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/).
