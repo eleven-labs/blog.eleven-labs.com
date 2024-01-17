@@ -206,12 +206,12 @@ export const markdownToHtml = (content: string): string => {
             },
           });
         },
-        script: ({ node, ...props }): React.JSX.Element | null => {
+        /*script: ({ node, ...props }): React.JSX.Element | null => {
           if (props.src === 'https://platform.twitter.com/widgets.js') {
             return null;
           }
           return React.createElement('script', props);
-        },
+        },*/
       },
     })
     .processSync(cleanMarkdown(content)).result;

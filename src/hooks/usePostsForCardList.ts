@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { PATHS } from '@/constants';
 import { generatePath } from '@/helpers/routerHelper';
+import { truncateText } from '@/helpers/stringHelper';
 import { useDateToString } from '@/hooks/useDateToString';
 import { TransformedPostDataWithTransformedAuthors } from '@/types';
 
@@ -20,7 +21,7 @@ export const usePostsForCardList = (options: {
         contentType: post.contentType,
         slug: post.slug,
         title: post.title,
-        excerpt: post.excerpt,
+        excerpt: truncateText(post.excerpt, 125),
         date: getDateToString({ date: post.date }),
         readingTime: post.readingTime,
         authors: post.authors,

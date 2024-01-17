@@ -19,8 +19,8 @@ export const useHomePageContainer = (): HomePageProps => {
     posts: postListPageData.posts
       .filter(
         (post) =>
-          (post.contentType === ContentTypeEnum.ARTICLE && i18n.language === LanguageEnum.DT) ||
-          post.lang === i18n.language
+          post.contentType === ContentTypeEnum.ARTICLE &&
+          (i18n.language === LanguageEnum.DT || post.lang === i18n.language)
       )
       .slice(0, 4),
   });
@@ -28,8 +28,8 @@ export const useHomePageContainer = (): HomePageProps => {
     posts: postListPageData.posts
       .filter(
         (post) =>
-          (post.contentType === ContentTypeEnum.TUTORIAL && i18n.language === LanguageEnum.DT) ||
-          post.lang === i18n.language
+          post.contentType === ContentTypeEnum.TUTORIAL &&
+          (i18n.language === LanguageEnum.DT || post.lang === i18n.language)
       )
       .slice(0, 2),
   });

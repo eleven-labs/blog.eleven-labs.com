@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { PATHS } from '@/constants';
 import { generatePath } from '@/helpers/routerHelper';
 
-export const useBreadcrumb = (options: { categoryName: string }): BreadcrumbProps => {
+export const useBreadcrumb = (options: { categoryName?: string }): BreadcrumbProps => {
   const { t, i18n } = useTranslation();
   return {
     items: [
@@ -13,7 +13,7 @@ export const useBreadcrumb = (options: { categoryName: string }): BreadcrumbProp
         href: generatePath(PATHS.HOME, { lang: i18n.language }),
       },
       {
-        label: t(`common.categories.${options.categoryName}`),
+        label: t(`common.categories.${options.categoryName ?? 'all'}`),
       },
     ],
   };

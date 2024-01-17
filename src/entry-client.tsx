@@ -1,6 +1,7 @@
 import './styles';
 
 import i18next from 'i18next';
+import mermaid from 'mermaid';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { initReactI18next } from 'react-i18next';
@@ -21,4 +22,10 @@ if (headerContainer) {
       <HeaderContainer layoutTemplateData={window.layoutTemplateData} />
     </RootContainer>
   );
+}
+
+const mermaidElements = document.getElementsByClassName('mermaid');
+if (mermaidElements.length) {
+  mermaid.initialize({});
+  mermaid.contentLoaded();
 }

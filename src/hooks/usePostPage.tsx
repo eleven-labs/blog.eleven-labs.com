@@ -1,6 +1,4 @@
 import { PostPageProps } from '@eleven-labs/design-system';
-import mermaid from 'mermaid';
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { PATHS } from '@/constants';
@@ -24,27 +22,6 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
   const relatedPostsForCardList = usePostsForCardList({
     posts: post.relatedPosts,
   });
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://platform.twitter.com/widgets.js';
-    const twitterTweetElements = document.getElementsByClassName('twitter-tweet');
-    if (twitterTweetElements.length) {
-      twitterTweetElements[0].appendChild(script);
-    }
-
-    const mermaidElements = document.getElementsByClassName('mermaid');
-    if (mermaidElements.length) {
-      mermaid.initialize({});
-      mermaid.contentLoaded();
-    }
-
-    return () => {
-      if (twitterTweetElements.length) {
-        twitterTweetElements[0].removeChild(script);
-      }
-    };
-  }, []);
 
   const authors: PostPageProps['header']['authors'] & PostPageProps['footer']['authors'] = post.authors.map(
     (author) => ({
