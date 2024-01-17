@@ -19,7 +19,7 @@ keywords:
 
 L’[ExpressionLanguage](https://symfony.com/doc/current/components/expression_language.html), ça vous parle ? C’est un composant de Symfony qui existe depuis la version 2.4, autant dire qu’il a de la bouteille. Il est très utile pour quelques cas d’utilisation bien précis : je vais vous montrer quand et comment l’utiliser.
 
-## Le fonctionnement du composant ExpressionLanguage en Symfony
+## Le fonctionnement du composant ExpressionLanguage de Symfony
 
 L’ExpressionLanguage permet d’évaluer des expressions dynamiques en fonction d’un contexte. C'est particulièrement utile quand vous avez besoin d’interpréter des règles ou des instructions en utilisant un langage algorithmique léger. Ces dernières peuvent contenir des opérations mathématiques, des comparaisons, des conditions, des fonctions personnalisées, etc. Cela permet d’avoir une application plus flexible et configurable sans avoir à modifier le code source en cas de modification des règles.
 
