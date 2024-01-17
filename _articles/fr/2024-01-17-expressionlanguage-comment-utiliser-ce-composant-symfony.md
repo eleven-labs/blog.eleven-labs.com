@@ -5,7 +5,7 @@ date: '2024-01-17'
 slug: symfony-expressionlanguage
 title: 'Symfony ExpressionLanguage : Comment utiliser ce composant ?'
 excerpt: >-
-  "Découvrez le composant Symfony ExpressionLanguage : qu'est-ce que c'est ? Quand et comment l'utiliser ? Comment créer des expressions lors de cas plus complexes ?"
+  Le composant Symfony ExpressionLanguage : qu'est-ce que c'est ? Quand et comment l'utiliser ? Comment créer des expressions lors de cas plus complexes ?
 categories:
   - php
 authors:
