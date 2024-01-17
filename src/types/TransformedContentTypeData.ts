@@ -5,6 +5,7 @@ import { ArticleData, AuthorData, TutorialData, TutorialStepData } from './Conte
 export interface TransformedArticleData
   extends Pick<ArticleData, 'lang' | 'slug' | 'title' | 'excerpt' | 'authors' | 'categories'> {
   contentType: ContentTypeEnum.ARTICLE;
+  summary: { level: number; text: string }[];
   date: string;
   readingTime: number;
   content: string;

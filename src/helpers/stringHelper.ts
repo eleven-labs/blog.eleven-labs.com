@@ -9,6 +9,18 @@ export const camelCase = (input: string): string => {
 };
 
 /**
+ * Slugify a string for use in URLs.
+ * @param input - The input string to slugify.
+ * @returns The slugified string.
+ */
+export const slugify = (input: string): string =>
+  input
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with dashes
+    .replace(/[^\w-]+/g, '') // Remove non-alphanumeric characters except dashes
+    .replace(/^-+|-+$/g, ''); // Remove leading and trailing dashes
+
+/**
  * Truncates the given text to the specified maximum length without cutting words,
  * and appends "..." at the end if the text is truncated.
  *
@@ -29,5 +41,5 @@ export const truncateText = (text: string, maxLength: number): string => {
   const truncated = lastSpace !== -1 ? text.slice(0, lastSpace) : text.slice(0, maxLength);
 
   // Always append "..." to the truncated text
-  return truncated + '...';
+  return `${truncated}...`;
 };

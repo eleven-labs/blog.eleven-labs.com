@@ -21,6 +21,7 @@ import { unified } from 'unified';
 
 import { intersection } from '@/helpers/objectHelper';
 import { remarkFigurePlugin } from '@/helpers/remarkPlugins/remarkFigurePlugin';
+import { slugify } from '@/helpers/stringHelper';
 
 const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): ReminderVariantType => {
   switch (admonitionVariant) {
@@ -112,11 +113,14 @@ export const markdownToHtml = (content: string): string => {
 
           return <Box {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
         },
-        h2: ({ children }): React.JSX.Element => (
-          <Heading as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
-            {children}
-          </Heading>
-        ),
+        h2: ({ children }): React.JSX.Element => {
+          const label = (children as string[]).join(' ');
+          return (
+            <Heading id={slugify(label)} as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
+              {label}
+            </Heading>
+          );
+        },
         h3: ({ children }): React.JSX.Element => (
           <Heading as="h3" size="m" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
             {children}
