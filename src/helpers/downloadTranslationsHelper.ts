@@ -25,5 +25,5 @@ export const downloadTranslations = async (): Promise<void> => {
     );
   }
 
-  console.log('🦖 The translations have been uploaded');
+  console.log('🦖 The translations have been downloaded');
 };

@@ -10,7 +10,6 @@ export const useContactCard = (): ContactCardProps => {
 
   return {
     title: <TransWithHtml i18nKey="common.contact_card.title" onlyLineBreak />,
-    subtitle: <TransWithHtml i18nKey="common.contact_card.subtitle" onlyLineBreak />,
     description: <TransWithHtml i18nKey="common.contact_card.description" />,
     link: {
       label: t('common.contact_card.link_label'),

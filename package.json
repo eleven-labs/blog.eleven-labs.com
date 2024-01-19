@@ -27,7 +27,7 @@
     "node": ">= 20.0"
   },
   "dependencies": {
-    "@eleven-labs/design-system": "^0.23.0",
+    "@eleven-labs/design-system": "^0.24.0",
     "@remix-run/router": "^1.7.2",
     "algoliasearch": "^4.19.1",
     "classnames": "^2.3.2",
