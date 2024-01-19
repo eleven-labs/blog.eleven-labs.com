@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { contact, socialNetworks, websiteUrl } from '@/config/website';
 import { LANGUAGES_AVAILABLE_WITH_DT, PATHS } from '@/constants';
+import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
 
 export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
@@ -11,8 +12,8 @@ export const useFooterContainer = (): LayoutTemplateProps['footer'] => {
 
   return {
     introBlock: {
-      title: t('common.footer.intro_block.title'),
-      description: t('common.footer.intro_block.description'),
+      title: <TransWithHtml i18nKey="common.footer.intro_block.title" onlyLineBreak />,
+      description: <TransWithHtml i18nKey="common.footer.intro_block.description" />,
     },
     elevenLabsSiteLink: {
       target: '_blank',

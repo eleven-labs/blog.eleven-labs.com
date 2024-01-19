@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { contactUrl } from '@/config/website';
 import { IS_SSR, NUMBER_OF_ITEMS_FOR_SEARCH, PATHS } from '@/constants';
 import { HeaderContainerProps } from '@/containers/LayoutTemplateContainer/HeaderContainer';
+import { TransWithHtml } from '@/containers/TransWithHtml';
 import { trackContentSearchEvent } from '@/helpers/dataLayerHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
@@ -108,8 +109,8 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
         label: t('common.autocomplete.see_all_search_label'),
       },
       searchNotFound: {
-        title: t('common.search_not_found.title'),
-        description: t('common.search_not_found.description'),
+        title: <TransWithHtml i18nKey="common.search_not_found.title" onlyLineBreak />,
+        description: <TransWithHtml i18nKey="common.search_not_found.description" />,
       },
     },
   };

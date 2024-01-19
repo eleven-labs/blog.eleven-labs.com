@@ -1,31 +1,29 @@
-import { SearchPageProps } from '@eleven-labs/design-system';
+import { SearchPageContentProps } from '@eleven-labs/design-system';
 import { useLink } from 'hoofd';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 
 import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, IS_SSR, LanguageEnum, PATHS } from '@/constants';
 import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
-import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
 import { AlgoliaPostData } from '@/types';
 
-export const useSearchPageContainer = (): SearchPageProps => {
+export const useSearchPageContentContainer = (): SearchPageContentProps => {
   const { t, i18n } = useTranslation();
-  const location = useLocation();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const algoliaSearchIndex = useAlgoliaSearchIndex();
-  const newsletterCard = useNewsletterCard();
-  const search = new URLSearchParams(!IS_SSR ? location.search : '').get('search') || '';
-  const [postsBySearch, setPostsBySearch] = useState<PostCardListContainerProps['allPosts']>([]);
   useTitle(t('pages.search.seo.title'));
   useLink({
     rel: 'canonical',
     href: `${blogUrl}${generatePath(PATHS.SEARCH, { lang: DEFAULT_LANGUAGE })}`,
   });
+
+  const search = new URLSearchParams(!IS_SSR ? window.location.search : '').get('search') || '';
+  const [postsBySearch, setPostsBySearch] = useState<PostCardListContainerProps['allPosts']>([]);
 
   useEffect(() => {
     const searchData = async (currentSearch: string): Promise<void> => {
@@ -56,16 +54,15 @@ export const useSearchPageContainer = (): SearchPageProps => {
   }, [search, i18n.language]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return {
-    title: t('pages.search.title', { numberOfHits: postsBySearch.length }),
-    description: t('pages.search.description'),
+    title: <TransWithHtml i18nKey="pages.search.title" values={{ numberOfHits: postsBySearch.length }} onlyLineBreak />,
+    description: <TransWithHtml i18nKey="pages.search.description" />,
     searchNotFound:
       postsBySearch?.length === 0
         ? {
-            title: t('common.search_not_found.title'),
-            description: t('common.search_not_found.description'),
+            title: <TransWithHtml i18nKey="common.search_not_found.title" onlyLineBreak />,
+            description: <TransWithHtml i18nKey="common.search_not_found.description" />,
           }
         : undefined,
-    newsletterCard,
     postCardList: <PostCardListContainer allPosts={postsBySearch} isLoading={isLoading} />,
     isLoading,
   };

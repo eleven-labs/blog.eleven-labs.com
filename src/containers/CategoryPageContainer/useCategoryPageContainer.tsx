@@ -5,8 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 import { blogUrl } from '@/config/website';
-import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
+import { ContentTypeEnum, DEFAULT_LANGUAGE, PATHS } from '@/constants';
 import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
+import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
 import { useBreadcrumb } from '@/hooks/useBreadcrumb';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
@@ -35,18 +36,20 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
   return {
     categoryIntroBlock: {
       breadcrumb,
-      title: t(`pages.category.${categoryName}.title`),
-      description: t(`pages.category.${categoryName}.description`),
+      title: <TransWithHtml i18nKey={`pages.category.${categoryName}.title`} onlyLineBreak />,
+      description: <TransWithHtml i18nKey={`pages.category.${categoryName}.description`} />,
     },
-    categoryEndingBlock: {
-      title: t(`pages.category.${categoryName}.expertise.title`),
-      description: t(`pages.category.${categoryName}.expertise.description`),
-      expertiseLink: {
-        label: t(`pages.category.${categoryName}.expertise.link_label`),
-        href: t(`pages.category.${categoryName}.expertise.link_url`),
-      },
-    },
-    title: t(`pages.category.${categoryName}.post_list_title`),
+    categoryEndingBlock: !['all', ContentTypeEnum.TUTORIAL].includes(categoryName as string)
+      ? {
+          title: <TransWithHtml i18nKey={`pages.category.${categoryName}.expertise.title`} onlyLineBreak />,
+          description: <TransWithHtml i18nKey={`pages.category.${categoryName}.expertise.description`} />,
+          expertiseLink: {
+            label: t(`pages.category.${categoryName}.expertise.link_label`),
+            href: t(`pages.category.${categoryName}.expertise.link_url`),
+          },
+        }
+      : undefined,
+    title: <TransWithHtml i18nKey={`pages.category.${categoryName}.post_list_title`} onlyLineBreak />,
     postCardList: (
       <PostCardListContainer
         getPaginatedLink={getPaginatedLink}

@@ -1,10 +1,12 @@
 import { HomePageProps } from '@eleven-labs/design-system';
 import { useLink } from 'hoofd';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData } from 'react-router-dom';
 
 import { blogUrl, websiteUrl } from '@/config/website';
 import { ContentTypeEnum, DEFAULT_LANGUAGE, LanguageEnum, PATHS } from '@/constants';
+import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { usePostsForCardList } from '@/hooks/usePostsForCardList';
@@ -44,16 +46,16 @@ export const useHomePageContainer = (): HomePageProps => {
 
   return {
     homeIntroBlock: {
-      intro: t('pages.home.intro-block.intro'),
-      title: t('pages.home.intro-block.title'),
-      description: t('pages.home.intro-block.description'),
+      intro: <TransWithHtml i18nKey="pages.home.intro-block.intro" onlyLineBreak />,
+      title: <TransWithHtml i18nKey="pages.home.intro-block.title" onlyLineBreak />,
+      description: <TransWithHtml i18nKey="pages.home.intro-block.description" />,
       elevenLabsLink: {
         label: t('pages.home.intro-block.website-link-label'),
         href: websiteUrl,
       },
     },
     lastArticlesBlock: {
-      title: t('pages.home.last-articles-block.title'),
+      title: <TransWithHtml i18nKey="pages.home.last-articles-block.title" onlyLineBreak />,
       posts: lastArticlesForCardList,
       linkSeeMore: {
         label: t('pages.home.last-articles-block.link-see-more'),
@@ -61,8 +63,8 @@ export const useHomePageContainer = (): HomePageProps => {
       },
     },
     lastTutorialsBlock: {
-      title: t('pages.home.last-tutorials-block.title'),
-      description: t('pages.home.last-tutorials-block.description'),
+      title: <TransWithHtml i18nKey="pages.home.last-tutorials-block.title" onlyLineBreak />,
+      description: <TransWithHtml i18nKey="pages.home.last-tutorials-block.description" />,
       tutorialLabel: t('common.tutorial-tag'),
       posts: lastTutorialsForCardList,
       linkSeeMore: {

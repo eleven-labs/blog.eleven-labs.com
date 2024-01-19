@@ -7,12 +7,12 @@ import { matchPath, useLoaderData, useLocation } from 'react-router-dom';
 import { themeColor } from '@/config/website';
 import { GOOGLE_SITE_VERIFICATION } from '@/constants';
 import { PATHS } from '@/constants';
-import { useFooterContainer } from '@/containers/LayoutTemplateContainer/useFooterContainer';
 import { getPathFile } from '@/helpers/assetHelper';
 import { getClickEventElements, handleClickEventListener } from '@/helpers/dataLayerHelper';
 import { LayoutTemplateData } from '@/types';
 
 import { HeaderContainer } from './HeaderContainer';
+import { useFooterContainer } from './useFooterContainer';
 
 export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'children'> => {
   const { i18n } = useTranslation();

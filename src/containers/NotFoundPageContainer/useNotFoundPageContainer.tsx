@@ -1,7 +1,9 @@
 import { NotFoundPageProps } from '@eleven-labs/design-system';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouteError } from 'react-router-dom';
 
+import { TransWithHtml } from '@/containers/TransWithHtml';
 import { useTitle } from '@/hooks/useTitle';
 
 export const useNotFoundPageContainer = (): NotFoundPageProps => {
@@ -16,6 +18,6 @@ export const useNotFoundPageContainer = (): NotFoundPageProps => {
 
   return {
     title,
-    description: t('pages.not_found.description'),
+    description: <TransWithHtml i18nKey="pages.not_found.description" />,
   };
 };

@@ -101,7 +101,11 @@ export const routes: RouteObject[] = [
           },
           {
             path: PATHS.SEARCH,
-            element: <SearchPageContainer />,
+            element: (
+              <div id="searchPageContainer">
+                <SearchPageContainer />
+              </div>
+            ),
           },
         ],
       },
