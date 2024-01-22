@@ -63,7 +63,7 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
           username: socialNetworkName === 'twitter' ? `@${username}` : username,
         };
       }),
-      content: author.content,
+      content: <div dangerouslySetInnerHTML={{ __html: author.content }} />,
     },
     emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
     title: t('pages.author.post_list_title'),

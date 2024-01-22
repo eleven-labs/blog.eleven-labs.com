@@ -25,12 +25,14 @@ export const getSitemapEntries = (): SitemapEntry[] => {
   const rootEntry: SitemapEntry = {
     priority: 0.8,
     links: getHomePageUrls(),
+    changefreq: 'weekly',
   };
 
   const categoryPageUrls = getCategoryPageUrls(posts);
   const categoryEntries: SitemapEntry[] = categoryPageUrls.map((urls) => ({
     priority: 0.7,
     links: urls,
+    changefreq: 'weekly',
   }));
 
   const authorPageUrls = getAuthorPageUrls(posts, authors);

@@ -25,6 +25,7 @@ describe('getSitemapEntries', () => {
       { priority: 1, links: [{ lang: 'en', url: '/en/post-2/' }] },
       {
         priority: 0.8,
+        changefreq: 'weekly',
         links: [
           { lang: 'fr', url: '/' },
           { lang: 'fr', url: '/fr/' },
@@ -33,13 +34,14 @@ describe('getSitemapEntries', () => {
       },
       {
         priority: 0.7,
+        changefreq: 'weekly',
         links: [
           { lang: 'fr', url: '/fr/categories/all/' },
           { lang: 'en', url: '/en/categories/all/' },
         ],
       },
-      { priority: 0.7, links: [{ lang: 'en', url: '/en/categories/php/' }] },
-      { priority: 0.7, links: [{ lang: 'fr', url: '/fr/categories/architecture/' }] },
+      { priority: 0.7, changefreq: 'weekly', links: [{ lang: 'en', url: '/en/categories/php/' }] },
+      { priority: 0.7, changefreq: 'weekly', links: [{ lang: 'fr', url: '/fr/categories/architecture/' }] },
       {
         priority: 0.5,
         links: [

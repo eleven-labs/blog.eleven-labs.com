@@ -32,6 +32,12 @@ export const PostDataSchemaValidation = z.object({
       }
     })
     .optional(),
+  seo: z
+    .object({
+      title: z.string().max(60).optional(),
+      description: z.string().max(155).optional(),
+    })
+    .optional(),
 });
 
 export const ArticleDataSchemaValidation = PostDataSchemaValidation.merge(

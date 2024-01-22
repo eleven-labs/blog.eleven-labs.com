@@ -14,6 +14,7 @@ import {
   TutorialDataSchemaValidation,
   TutorialStepDataValidationSchema,
 } from '@/config/schemaValidation';
+/*import { extractHeaders } from '@/helpers/markdownContentManagerHelper';*/
 import { capitalize } from '@/helpers/stringHelper';
 import { ArticleData, AuthorData, CommonPostData, TutorialData, TutorialStepData } from '@/types';
 
@@ -24,7 +25,7 @@ export class MarkdownInvalidError extends Error {
   column?: number;
 
   constructor(options: { markdownFilePath: string; reason: string; line?: number; column?: number }) {
-    const globalMessage = `The markdown of the file "${options.markdownFilePath}" is invalid ! ${capitalize(
+    const globalMessage = `The markdown of the file "${options.markdownFilePath}" is invalid! ${capitalize(
       options.reason
     )}`;
     super(globalMessage);
@@ -34,6 +35,66 @@ export class MarkdownInvalidError extends Error {
     this.column = options.column;
   }
 }
+
+export const validateTags = (content: string): boolean => {
+  const imgTagMatches = content.match(/`{3}[\s\S]*?`{3}|`{1}[\s\S]*?`{1}|<img[^>]*>/g);
+  if (imgTagMatches) {
+    for (const imgTagMatch of imgTagMatches) {
+      if (!/^`{1,3}/.test(imgTagMatch)) {
+        throw new Error(`The img tag are no longer allowed, please use markdown syntax! ${imgTagMatch}`);
+      }
+    }
+  }
+
+  return true;
+};
+
+export const validateExistingAssets = (content: string): boolean => {
+  const assetRegex = new RegExp('{BASE_URL}\\/imgs\\/[^.]+\\.(jpg|jpeg|png|webp|svg)', 'g');
+  const assetMatches = content.match(assetRegex);
+  if (assetMatches) {
+    for (const assetMatch of assetMatches) {
+      const assetPath = assetMatch.replace(new RegExp('{BASE_URL}\\/imgs/'), `${ASSETS_DIR}/`).split('?')?.[0];
+
+      if (!existsSync(assetPath)) {
+        throw new Error(`The file does not exist "${assetPath}"!`);
+      }
+    }
+  }
+
+  return true;
+};
+
+export const validateHeaders = (headings: { level: number; text: string }[]): boolean => {
+  const minLevel = 2;
+  const maxLevel = 6;
+
+  let expectedLevel = minLevel;
+
+  for (const heading of headings) {
+    if (heading.level === 1) {
+      throw new Error(`The h1 "${heading.text}" is reserved for the title in the metadata at the top of the markdown!`);
+    }
+    if (heading.level < minLevel || heading.level > maxLevel) {
+      throw new Error(
+        `Invalid heading h${heading.level}: "${heading.text}". Heading levels must be between h${minLevel} and h${maxLevel}.`
+      );
+    }
+
+    if (heading.level < expectedLevel) {
+      // Check if the heading level is less than the expected level
+      // If so, reset the expected level to heading.level + 1
+      expectedLevel = heading.level + 1;
+    } else if (heading.level > expectedLevel) {
+      throw new Error(`Invalid h${heading.level}: "${heading.text}". Expected level: h${expectedLevel}`);
+    } else {
+      // If the levels are equal, increment the expected level
+      expectedLevel = expectedLevel === maxLevel ? minLevel : expectedLevel + 1;
+    }
+  }
+
+  return true;
+};
 
 export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options: {
   markdownFilePath: string;
@@ -47,7 +108,7 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
       if (!/^`{1,3}/.test(invalidSyntaxMatch)) {
         throw new MarkdownInvalidError({
           markdownFilePath: options.markdownFilePath,
-          reason: `The syntax isn't allowed, please use valid markdown syntax ! ${invalidSyntaxMatch}`,
+          reason: `The syntax isn't allowed, please use valid markdown syntax! ${invalidSyntaxMatch}`,
         });
       }
     }
@@ -84,32 +145,16 @@ export const getDataInMarkdownFile = <TData = { [p: string]: unknown }>(options:
 };
 
 export const validateMarkdownContent = (options: { markdownFilePath: string; content: string }): string => {
-  const imgTagMatches = options.content.match(/`{3}[\s\S]*?`{3}|`{1}[\s\S]*?`{1}|<img[^>]*>/g);
-  if (imgTagMatches) {
-    for (const imgTagMatch of imgTagMatches) {
-      if (!/^`{1,3}/.test(imgTagMatch)) {
-        console.log(`The img tag are no longer allowed, please use markdown syntax ! ${imgTagMatch}`);
-        throw new MarkdownInvalidError({
-          markdownFilePath: options.markdownFilePath,
-          reason: `The img tag are no longer allowed, please use markdown syntax ! ${imgTagMatch}`,
-        });
-      }
-    }
-  }
-
-  const assetRegex = new RegExp('{BASE_URL}\\/imgs\\/[^.]+\\.(jpg|jpeg|png|webp|svg)', 'g');
-  const assetMatches = options.content.match(assetRegex);
-  if (assetMatches) {
-    for (const assetMatch of assetMatches) {
-      const assetPath = assetMatch.replace(new RegExp('{BASE_URL}\\/imgs/'), `${ASSETS_DIR}/`).split('?')?.[0];
-
-      if (!existsSync(assetPath)) {
-        throw new MarkdownInvalidError({
-          markdownFilePath: options.markdownFilePath,
-          reason: `The file does not exist "${assetPath}"!`,
-        });
-      }
-    }
+  try {
+    validateTags(options.content);
+    validateExistingAssets(options.content);
+    /*const headers = extractHeaders(options.content);
+    validateHeaders(headers);*/
+  } catch (error) {
+    throw new MarkdownInvalidError({
+      markdownFilePath: options.markdownFilePath,
+      reason: (error as Error).message,
+    });
   }
 
   return options.content;
@@ -201,7 +246,7 @@ export const validateMarkdown = (): boolean => {
     if (authors.includes(author.username)) {
       throw new MarkdownInvalidError({
         markdownFilePath,
-        reason: 'This author already exists with the same username !',
+        reason: 'This author already exists with the same username!',
       });
     }
     authors.push(author.username);
@@ -218,7 +263,7 @@ export const validateMarkdown = (): boolean => {
     if (postIds.includes(articleId)) {
       throw new MarkdownInvalidError({
         markdownFilePath,
-        reason: 'This article already exists with the same slug and the same language !',
+        reason: 'This article already exists with the same slug and the same language!',
       });
     }
     postIds.push(articleId);
@@ -239,7 +284,7 @@ export const validateMarkdown = (): boolean => {
     if (postIds.includes(tutorialId)) {
       throw new MarkdownInvalidError({
         markdownFilePath,
-        reason: 'This tutorial already exists with the same slug and the same language !',
+        reason: 'This tutorial already exists with the same slug and the same language!',
       });
     }
     postIds.push(tutorialId);

@@ -2,14 +2,18 @@ import i18next, { i18n } from 'i18next';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
-import { i18nConfig } from '@/config/i18n';
+import { i18nConfig } from '@/config/i18n/i18n.config';
+import { i18nResources } from '@/config/i18n/i18nResources';
 import { render } from '@/entry-server';
 import { createRequestByUrl } from '@/helpers/requestHelper';
 import { getHtmlTemplatePropsByManifest } from '@/helpers/ssrHelper';
 
 const getI18nInstanceByLang = (lang: string): i18n => {
   const i18n = i18next.createInstance();
-  i18n.init(i18nConfig);
+  i18n.init({
+    ...i18nConfig,
+    resources: i18nResources,
+  });
   i18n.changeLanguage(lang);
   return i18n;
 };

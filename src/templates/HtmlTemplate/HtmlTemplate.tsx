@@ -1,3 +1,4 @@
+import { ResourceStore } from 'i18next';
 import * as React from 'react';
 
 import { GTM_ID } from '@/constants';
@@ -5,6 +6,7 @@ import { getPathFile } from '@/helpers/assetHelper';
 
 export interface HtmlTemplateProps {
   lang: string;
+  i18nStore: ResourceStore;
   title: string;
   content: string;
   metas?: Array<React.MetaHTMLAttributes<HTMLMetaElement>>;
@@ -30,7 +32,16 @@ const renderScripts = (scripts: HtmlTemplateProps['scripts']): JSX.Element[] | u
     />
   ));
 
-export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ lang, title, content, metas, links, styles, scripts }) => (
+export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({
+  lang,
+  title,
+  content,
+  metas,
+  links,
+  styles,
+  scripts,
+  i18nStore,
+}) => (
   <html lang={lang}>
     <head>
       <meta charSet="UTF-8" />
@@ -75,11 +86,6 @@ export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({ lang, title, content
       />
       <script
         dangerouslySetInnerHTML={{
-          __html: `window.language = '${lang}';`,
-        }}
-      />
-      <script
-        dangerouslySetInnerHTML={{
           __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -98,6 +104,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         id="root"
         dangerouslySetInnerHTML={{
           __html: content,
+        }}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: [
+            `window.initialLanguage = '${lang}';`,
+            `window.initialI18nStore = ${JSON.stringify(i18nStore)};`,
+          ].join('\n'),
         }}
       />
       {renderScripts(scripts?.filter((script) => !script.critical && ![ldJsonType].includes(script.type as string)))}

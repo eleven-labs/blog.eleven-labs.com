@@ -6,9 +6,12 @@ import { z } from 'zod';
 import {
   getDataInMarkdownFile,
   validateAuthor,
+  validateExistingAssets,
+  validateHeaders,
   validateMarkdown,
   validateMarkdownContent,
   validatePost,
+  validateTags,
 } from './markdownHelper';
 
 vi.mock('node:fs');
@@ -117,7 +120,7 @@ const world = 'hello';
         validationSchema,
       })
     ).toThrow(
-      `The markdown of the file "${markdownFilePath}" is invalid ! The syntax isn't allowed, please use valid markdown syntax ! ${syntaxInvalid}`
+      `The markdown of the file "${markdownFilePath}" is invalid! The syntax isn't allowed, please use valid markdown syntax! ${syntaxInvalid}`
     );
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
@@ -142,7 +145,7 @@ contient | \`{% raw %}{{{% endraw %}\` \`{% raw %}}}{% endraw %}\` | \`{% raw %}
         validationSchema,
       })
     ).not.toThrow(
-      `The markdown of the file "${markdownFilePath}" is invalid ! The syntax isn't allowed, please use valid markdown syntax ! {% raw %}`
+      `The markdown of the file "${markdownFilePath}" is invalid! The syntax isn't allowed, please use valid markdown syntax! {% raw %}`
     );
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
@@ -165,7 +168,7 @@ This is the content`);
           date: z.coerce.date(),
         }),
       });
-    }).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! Invalid date at "date"`);
+    }).toThrow(`The markdown of the file "${markdownFilePath}" is invalid! Invalid date at "date"`);
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
@@ -187,7 +190,7 @@ This is the content`);
         validationSchema,
       });
     }).toThrow(
-      `The markdown of the file "${markdownFilePath}" is invalid ! Can not read an implicit mapping pair; a colon is missed at line 5, column 14`
+      `The markdown of the file "${markdownFilePath}" is invalid! Can not read an implicit mapping pair; a colon is missed at line 5, column 14`
     );
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
@@ -207,7 +210,7 @@ This is some valid content`);
 
     const markdownFilePath = '/path/to/dir/invalid-author.md';
     expect(() => validateAuthor({ markdownFilePath })).toThrow(
-      `The markdown of the file "${markdownFilePath}" is invalid ! Required at "name"`
+      `The markdown of the file "${markdownFilePath}" is invalid! Required at "name"`
     );
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
@@ -226,7 +229,7 @@ This is some valid content`);
 
     const markdownFilePath = '/path/to/dir/invalid-author-social-networks.md';
     expect(() => validateAuthor({ markdownFilePath })).toThrow(
-      `The markdown of the file "${markdownFilePath}" is invalid ! No need to set the "@" for twitter, just the username. at "twitter"; No need to define the complete url of github, just give the user name at "github"; No need to define the complete url of linkedin, just give the user name at "linkedin"`
+      `The markdown of the file "${markdownFilePath}" is invalid! No need to set the "@" for twitter, just the username. at "twitter"; No need to define the complete url of github, just give the user name at "github"; No need to define the complete url of linkedin, just give the user name at "linkedin"`
     );
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
@@ -271,7 +274,7 @@ This is some valid content`);
         authors: ['jdoe', 'jdupont'],
         markdownFilePath,
       })
-    ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! Required at "title"`);
+    ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid! Required at "title"`);
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
@@ -300,7 +303,7 @@ This is some valid content`);
         authors: ['jdoe', 'jdupont'],
         markdownFilePath,
       })
-    ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! Must not include a category. at "keywords"`);
+    ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid! Must not include a category. at "keywords"`);
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
@@ -338,7 +341,7 @@ Some content`);
         authors: ['jdoe', 'jdupont'],
         markdownFilePath,
       })
-    ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! Too many items 😡. at "keywords"`);
+    ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid! Too many items 😡. at "keywords"`);
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
@@ -367,7 +370,7 @@ Some content`);
         authors: ['jdoe', 'jdupont'],
         markdownFilePath,
       })
-    ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! No duplicates allowed. at "keywords"`);
+    ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid! No duplicates allowed. at "keywords"`);
     expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
@@ -405,7 +408,7 @@ describe('validateMarkdown', () => {
     globSyncSpy.mockReturnValueOnce(['/path/to/dir/valid-author.md', '/path/to/dir/valid-author.md']);
     readFileSyncSpy.mockReturnValueOnce(markdownContentValidAuthor).mockReturnValueOnce(markdownContentValidAuthor);
 
-    expect(() => validateMarkdown()).toThrow('This author already exists with the same username !');
+    expect(() => validateMarkdown()).toThrow('This author already exists with the same username!');
     expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
     expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
   });
@@ -423,54 +426,96 @@ describe('validateMarkdown', () => {
       .mockReturnValueOnce(markdownContentValidArticle)
       .mockReturnValueOnce(markdownContentValidArticle);
 
-    expect(() => validateMarkdown()).toThrow('This article already exists with the same slug and the same language !');
+    expect(() => validateMarkdown()).toThrow('This article already exists with the same slug and the same language!');
     expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
     expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-post.md', { encoding: 'utf-8' });
     expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-post.md', { encoding: 'utf-8' });
   });
 });
 
-describe('validateMarkdownContent', () => {
-  it('should return the content when there are no asset references', () => {
-    const options = {
-      markdownFilePath: '/path/to/some/file.md',
-      content: 'This is a test post content without asset references.',
-    };
+describe('validateTags', () => {
+  it('should generate an error when an img tag is used', () => {
+    const contentInvalid = `<img src="/imgs/articles/test.png" width="300px" alt="title image" />`;
 
-    const result = validateMarkdownContent(options);
-
-    expect(result).toBe(options.content);
-    const existsSyncSpy = vi.spyOn(fs, 'existsSync');
-    expect(existsSyncSpy).not.toHaveBeenCalled();
+    expect(() => validateTags(contentInvalid)).toThrow(
+      `The img tag are no longer allowed, please use markdown syntax! ${contentInvalid}`
+    );
   });
+});
 
+describe('validateExistingAssets', () => {
   it('should throw an error when an asset file does not exist', () => {
-    const markdownFilePath = '/path/to/some/file.md';
     const assetPath = `_assets/articles/test.png`;
+    const contentInvalid = 'This is a test post content with an asset reference {BASE_URL}/imgs/articles/test.png';
 
     const existsSyncSpy = vi.spyOn(fs, 'existsSync');
     existsSyncSpy.mockReturnValueOnce(false);
 
-    expect(() =>
-      validateMarkdownContent({
-        markdownFilePath,
-        content: 'This is a test post content with an asset reference {BASE_URL}/imgs/articles/test.png',
-      })
-    ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid ! The file does not exist "${assetPath}"!`);
+    expect(() => validateExistingAssets(contentInvalid)).toThrow(`The file does not exist "${assetPath}"!`);
     expect(existsSyncSpy).toHaveBeenCalledWith(assetPath);
   });
+});
 
+describe('validateHeaders', () => {
+  test.each<{ invalidHeadings: { level: number; text: string }[]; error: string }>([
+    {
+      invalidHeadings: [
+        { level: 1, text: 'Heading 1' },
+        { level: 2, text: 'Sub Heading 1' },
+        { level: 1, text: 'Heading 2' },
+      ],
+      error: 'The h1 "Heading 1" is reserved for the title in the metadata at the top of the markdown!',
+    },
+    {
+      invalidHeadings: [
+        { level: 3, text: 'Heading 1' },
+        { level: 4, text: 'Sub Heading 1' },
+        { level: 3, text: 'Heading 2' },
+      ],
+      error: 'Invalid h3: "Heading 1". Expected level: h2',
+    },
+    {
+      invalidHeadings: [
+        { level: 2, text: 'Heading 1' },
+        { level: 3, text: 'Sub Heading 1' },
+        { level: 5, text: 'Sub Heading 2' },
+      ],
+      error: 'Invalid h5: "Sub Heading 2". Expected level: h4',
+    },
+  ])('should throw an error for invalid heading levels', ({ invalidHeadings, error }) => {
+    expect(() => validateHeaders(invalidHeadings)).toThrow(error);
+  });
+
+  test.each<{ validHeadings: { level: number; text: string }[] }>([
+    {
+      validHeadings: [
+        { level: 2, text: 'Heading 1' },
+        { level: 3, text: 'Heading 2' },
+        { level: 3, text: 'Heading 3' },
+      ],
+    },
+    {
+      validHeadings: [
+        { level: 2, text: 'Heading 1' },
+        { level: 3, text: 'Sub Heading 1' },
+        { level: 2, text: 'Heading 2' },
+      ],
+    },
+  ])('should not throw an error for valid heading levels', ({ validHeadings }) => {
+    expect(validateHeaders(validHeadings)).toEqual(true);
+  });
+});
+
+describe('validateMarkdownContent', () => {
   it('should generate an error when an img tag is used', () => {
-    const markdownFilePath = '/path/to/some/file.md';
-    const contentInvalid = `<img src="/imgs/articles/test.png" width="300px" alt="title image" />`;
+    const tagInvalid = '<img src="/imgs/articles/test.png" width="300px" alt="title image" />';
+    const options = {
+      markdownFilePath: '/path/to/some/file.md',
+      content: ['## heading 1', tagInvalid].join('\n'),
+    };
 
-    expect(() =>
-      validateMarkdownContent({
-        markdownFilePath,
-        content: contentInvalid,
-      })
-    ).toThrow(
-      `The markdown of the file "${markdownFilePath}" is invalid ! The img tag are no longer allowed, please use markdown syntax ! ${contentInvalid}`
+    expect(() => validateMarkdownContent(options)).toThrow(
+      `The markdown of the file "${options.markdownFilePath}" is invalid! The img tag are no longer allowed, please use markdown syntax! ${tagInvalid}`
     );
   });
 });

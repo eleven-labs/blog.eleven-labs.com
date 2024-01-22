@@ -36,7 +36,10 @@ const frontmatter = <TData = { [p: string]: unknown }>(
 
 export const extractHeaders = (markdownContent: string): { level: number; text: string }[] => {
   const headers: { level: number; text: string }[] = [];
-  const lines = markdownContent.split('\n');
+  const lines = markdownContent
+    .replace(/```(.|\n)+```/gm, '')
+    .split('\n')
+    .filter((line) => line.startsWith('#'));
 
   for (const line of lines) {
     const match = line.match(/^#+\s(.+)/);

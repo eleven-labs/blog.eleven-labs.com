@@ -38,7 +38,7 @@ export const render = async (options: RenderOptions): Promise<string> => {
     <React.StrictMode>
       <HoofdProvider value={dispatcher}>
         <RootContainer i18n={options.i18n}>
-          <StaticRouterProvider router={router} context={context} nonce="the-nonce" />
+          <StaticRouterProvider router={router} context={context} hydrate={false} />
         </RootContainer>
       </HoofdProvider>
     </React.StrictMode>
@@ -49,6 +49,7 @@ export const render = async (options: RenderOptions): Promise<string> => {
     <React.StrictMode>
       <HtmlTemplate
         lang={staticPayload.lang ?? options.i18n.language}
+        i18nStore={options.i18n.store}
         title={staticPayload.title ?? ''}
         content={content}
         metas={staticPayload.metas?.map(({ charset: charSet, ...meta }) => ({ charSet, ...meta }))}

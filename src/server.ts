@@ -8,7 +8,8 @@ import { resolve } from 'node:path';
 import cookiesMiddleware from 'universal-cookie-express';
 
 import { ARTICLES_DIR, ASSETS_DIR, AUTHORS_DIR, IMGS_DIR } from '@/app-paths';
-import { i18nConfig } from '@/config/i18n';
+import { i18nConfig } from '@/config/i18n/i18n.config';
+import { i18nResources } from '@/config/i18n/i18nResources';
 import { BASE_URL } from '@/constants';
 import { writeJsonDataFiles } from '@/helpers/contentHelper';
 import { loadDataByMarkdownFilePath } from '@/helpers/markdownContentManagerHelper';
@@ -19,7 +20,10 @@ import { createRequestByExpressRequest } from '@/helpers/requestHelper';
 const isProd: boolean = process.env.NODE_ENV === 'production';
 
 const createServer = async (): Promise<void> => {
-  i18next.use(i18nextHttpMiddleware.LanguageDetector).init(i18nConfig);
+  i18next.use(i18nextHttpMiddleware.LanguageDetector).init({
+    ...i18nConfig,
+    resources: i18nResources,
+  });
 
   const app = express();
   app.use(cookiesMiddleware()).use(i18nextHttpMiddleware.handle(i18next));

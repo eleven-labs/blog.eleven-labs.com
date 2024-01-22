@@ -174,13 +174,13 @@ export const getTutorialStepPageUrls = (
       ...steps.map((step) => [
         {
           lang: tutorial.lang,
-          url: generatePath(PATHS.POST, { lang: tutorial.lang, slug: tutorial.slug, step }),
+          url: generatePath(PATHS.POST, { lang: tutorial.lang, slug: tutorial.slug, step: step.slug }),
         },
         ...(IS_DEBUG
           ? [
               {
                 lang: LanguageEnum.DT,
-                url: generatePath(PATHS.POST, { lang: LanguageEnum.DT, slug: tutorial.slug, step }),
+                url: generatePath(PATHS.POST, { lang: LanguageEnum.DT, slug: tutorial.slug, step: step.slug }),
               },
             ]
           : []),

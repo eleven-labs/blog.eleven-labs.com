@@ -1,4 +1,5 @@
-import { PostPageProps } from '@eleven-labs/design-system';
+import { Box, PostPageProps } from '@eleven-labs/design-system';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { PATHS } from '@/constants';
@@ -27,7 +28,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
     (author) => ({
       username: author.username,
       name: author.name,
-      description: author.content,
+      description: <Box dangerouslySetInnerHTML={{ __html: author.content }} />,
       avatarImageUrl: author.avatarImageUrl,
       link: {
         label: t('common.post.footer.author.link_label'),

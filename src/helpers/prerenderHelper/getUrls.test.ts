@@ -145,13 +145,33 @@ describe('getSitemapEntries', () => {
         lang: LanguageEnum.FR,
         contentType: ContentTypeEnum.TUTORIAL,
         slug: 'tutorial-1',
-        steps: ['introduction', 'tutorial-step', 'conclusion'],
+        steps: [
+          {
+            slug: 'introduction',
+          },
+          {
+            slug: 'tutorial-step',
+          },
+          {
+            slug: 'conclusion',
+          },
+        ],
       },
       {
         lang: LanguageEnum.EN,
         contentType: ContentTypeEnum.TUTORIAL,
         slug: 'tutorial-2',
-        steps: ['introduction', 'tutorial-step', 'conclusion'],
+        steps: [
+          {
+            slug: 'introduction',
+          },
+          {
+            slug: 'tutorial-step',
+          },
+          {
+            slug: 'conclusion',
+          },
+        ],
       },
     ] as Parameters<typeof getTutorialStepPageUrls>[0];
     const expectedUrls: ReturnType<typeof getTutorialStepPageUrls> = [

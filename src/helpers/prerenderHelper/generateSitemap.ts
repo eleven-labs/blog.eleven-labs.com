@@ -20,7 +20,7 @@ export const getSitemap = (
         const defaultLink = links.find((link) => link.lang === DEFAULT_LANGUAGE) ?? links[0];
         return {
           loc: `${blogUrl}${defaultLink.url}`,
-          changefreq: changefreq ?? 'weekly',
+          ...(changefreq ? { changefreq } : {}),
           priority: priority?.toFixed(1) ?? 0.3,
           ...(links.length > 1
             ? {
