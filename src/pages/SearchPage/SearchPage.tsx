@@ -11,7 +11,6 @@ import {
 } from '@/components';
 
 export type SearchPageProps = {
-  backLink: React.ReactNode;
   title: React.ReactNode;
   description: React.ReactNode;
   postPreviewList: React.ReactNode;
@@ -21,7 +20,6 @@ export type SearchPageProps = {
 };
 
 export const SearchPage: React.FC<SearchPageProps> = ({
-  backLink,
   title,
   description,
   postPreviewList,
@@ -35,7 +33,6 @@ export const SearchPage: React.FC<SearchPageProps> = ({
     ) : (
       <>
         <Container variant="content" className="search-page">
-          {backLink}
           <Skeleton isLoading={isLoading}>
             <Heading as="p" mt="s" size="l">
               {title}

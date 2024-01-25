@@ -2,8 +2,6 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
-import { BackLink, BackLinkProps } from '@/components';
-import BackLinkStories from '@/components/BackLink/BackLink.stories';
 import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
 import { ContentTypeEnum } from '@/constants';
 import { PostPage } from '@/pages/PostPage/PostPage';
@@ -13,7 +11,6 @@ export default {
   component: PostPage,
   args: {
     contentType: ContentTypeEnum.ARTICLE,
-    backLink: React.createElement<BackLinkProps>(BackLink, BackLinkStories.args as BackLinkProps),
     header: {
       title: 'Refonte du blog',
       date: '08 fév. 2021',

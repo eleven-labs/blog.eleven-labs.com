@@ -1,8 +1,6 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouteError } from 'react-router-dom';
 
-import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
 import { useTitle } from '@/hooks/useTitle';
 import { NotFoundPageProps } from '@/pages/NotFoundPage';
 
@@ -17,7 +15,6 @@ export const useNotFoundPageContainer = (): NotFoundPageProps => {
   }
 
   return {
-    backLink: <BackLinkContainer />,
     title,
     description: t('pages.not_found.description'),
   };

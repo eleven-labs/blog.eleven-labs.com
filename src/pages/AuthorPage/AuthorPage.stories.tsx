@@ -2,8 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { LayoutTemplateDecorator } from '@storybook-decorators';
 import React from 'react';
 
-import { BackLink, BackLinkProps, PostPreviewList, PostPreviewListProps } from '@/components';
-import BackLinkStories from '@/components/BackLink/BackLink.stories';
+import { PostPreviewList, PostPreviewListProps } from '@/components';
 import NewsletterBlockStories from '@/components/NewsletterBlock/NewsletterBlock.stories';
 import * as PostPreviewListStories from '@/components/PostPreviewList/PostPreviewList.stories';
 import { AuthorPage } from '@/pages/AuthorPage/AuthorPage';
@@ -12,7 +11,6 @@ export default {
   title: 'Pages/Author',
   component: AuthorPage,
   args: {
-    backLink: React.createElement<BackLinkProps>(BackLink, BackLinkStories.args as BackLinkProps),
     author: {
       username: 'jdoe',
       name: 'John Doe',

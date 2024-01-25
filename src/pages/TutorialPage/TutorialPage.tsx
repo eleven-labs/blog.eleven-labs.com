@@ -1,6 +1,6 @@
 import './TutorialPage.scss';
 
-import { AsProps, Box, Button, Flex } from '@eleven-labs/design-system';
+import { Box, Button, Flex } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { TutorialSteps, TutorialStepsProps } from '@/components/TutorialSteps';
@@ -12,8 +12,8 @@ export interface TutorialPageProps extends Omit<PostPageProps, 'children'> {
   steps: TutorialStepsProps['steps'];
   stepActive: TutorialStepsProps['stepActive'];
   content: string;
-  previousLink?: { label: string } & AsProps<'a'>;
-  nextLink?: { label: string } & AsProps<'a'>;
+  previousLink?: { label: string } & React.ComponentPropsWithoutRef<'a'>;
+  nextLink?: { label: string } & React.ComponentPropsWithoutRef<'a'>;
 }
 
 export const TutorialPage: React.FC<TutorialPageProps> = ({
@@ -31,12 +31,12 @@ export const TutorialPage: React.FC<TutorialPageProps> = ({
     </Box>
     <Flex gap="l">
       {previousLinkLabel && previousLink && (
-        <Button mt="l" variant="secondary" {...(previousLink as AsProps<'button'>)}>
+        <Button as="a" mt="l" variant="secondary" {...previousLink}>
           {previousLinkLabel}
         </Button>
       )}
       {nextLinkLabel && nextLink && (
-        <Button mt="l" {...(nextLink as AsProps<'button'>)}>
+        <Button as="a" mt="l" {...nextLink}>
           {nextLinkLabel}
         </Button>
       )}

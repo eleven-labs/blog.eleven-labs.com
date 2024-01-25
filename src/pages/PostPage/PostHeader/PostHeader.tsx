@@ -1,4 +1,4 @@
-import { AsProps, Box, Flex, Heading, Icon, Link } from '@eleven-labs/design-system';
+import { Box, Flex, Heading, Icon, Link } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { TutoTag } from '@/components';
@@ -12,7 +12,7 @@ export interface PostHeaderProps {
   authors: {
     username: string;
     name: string;
-    link: AsProps<'a'>;
+    link: React.ComponentPropsWithoutRef<'a'>;
   }[];
 }
 

@@ -1,12 +1,12 @@
 import './Header.scss';
 
-import { AsProps, Box, Flex, Icon, Logo, useMediaQuery } from '@eleven-labs/design-system';
+import { Box, Flex, Icon, Logo, useMediaQuery } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { AutocompleteField, AutocompleteFieldProps } from '@/components';
 
 export interface HeaderProps {
-  homeLink: AsProps<'a'>;
+  homeLink: React.ComponentPropsWithoutRef<'a'>;
   autocomplete: AutocompleteFieldProps;
   autocompleteIsDisplayed?: boolean;
   onToggleSearch?: () => void;
@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({
             <Icon name="arrow-back" color="white" size="28px" />
           </Box>
         ) : (
-          <Box {...(homeLink as typeof Box)} color="white">
+          <Box as="a" {...homeLink} color="white">
             <Logo name="blog" className="header__logo" />
           </Box>
         )}

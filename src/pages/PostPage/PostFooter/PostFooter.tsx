@@ -1,6 +1,6 @@
 import './PostFooter.scss';
 
-import { AsProps, Box, Flex, Link, Text } from '@eleven-labs/design-system';
+import { Box, Flex, Link, Text } from '@eleven-labs/design-system';
 import React from 'react';
 
 export interface PostFooterProps {
@@ -8,7 +8,7 @@ export interface PostFooterProps {
   authors: {
     name: string;
     content: string;
-    link: AsProps<'a'>;
+    link: React.ComponentPropsWithoutRef<'a'>;
     avatarImageUrl?: string;
   }[];
   emptyAvatarImageUrl: string;
@@ -28,7 +28,7 @@ export const PostFooter: React.FC<PostFooterProps> = ({ title, authors, emptyAva
             className={author.avatarImageUrl ? 'post-footer__avatar-img' : 'post-footer__empty-avatar-img'}
           />
           <Box ml="xxs">
-            <Link {...author.link} weight="medium" data-internal-link="author">
+            <Link {...author.link} fontWeight="medium" data-internal-link="author">
               {author.name}
             </Link>
             <Text as="div" size="xs" dangerouslySetInnerHTML={{ __html: author.content }} />

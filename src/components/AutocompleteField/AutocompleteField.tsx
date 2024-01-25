@@ -1,6 +1,7 @@
 import './AutocompleteField.scss';
 
-import { AsProps, Box, BoxProps, forwardRef, SearchField } from '@eleven-labs/design-system';
+import { Box, BoxProps, polyRef, SearchField } from '@eleven-labs/design-system';
+import { SearchFieldProps } from '@eleven-labs/design-system/dist/components/Molecules/SearchField/SearchField';
 import classNames from 'classnames';
 import { useCombobox, UseComboboxProps } from 'downshift';
 import React from 'react';
@@ -23,7 +24,7 @@ export type AutocompleteFieldProps = BoxProps &
   Omit<AutocompleteResultOptions, 'highlightedIndex' | 'searchLink'> &
   Pick<UseComboboxProps<AutocompleteItem>, 'onInputValueChange' | 'onSelectedItemChange'>;
 
-export const AutocompleteField = forwardRef<AutocompleteFieldProps, 'div'>(
+export const AutocompleteField = polyRef<'div', AutocompleteFieldProps>(
   (
     {
       placeholder,
@@ -66,7 +67,7 @@ export const AutocompleteField = forwardRef<AutocompleteFieldProps, 'div'>(
       <Box className={classNames('autocomplete-field', props.className)} ref={ref}>
         <SearchField
           input={getInputProps({ placeholder, onKeyDown: handleKeyDown })}
-          buttonSearch={searchLinkProps as AsProps<'button'>}
+          buttonSearch={{ as: 'a', ...searchLinkProps } as unknown as SearchFieldProps['buttonSearch']}
           buttonClose={{ onClick: onClose }}
           className="autocomplete-field__input"
         />

@@ -2,7 +2,7 @@ name: PR Closed
 
 on:
   pull_request_target:
-    types: [closed]
+    types: [ closed ]
 
 env:
   AWS_DEFAULT_REGION: eu-west-2

@@ -1,6 +1,6 @@
 import './SubHeader.scss';
 
-import { AsProps, Box, Button, ButtonProps, Flex, Heading } from '@eleven-labs/design-system';
+import { Box, Button, Flex, Heading } from '@eleven-labs/design-system';
 import React from 'react';
 
 export interface SubHeaderProps {
@@ -12,7 +12,7 @@ export interface SubHeaderProps {
   choiceCategories: ({
     label: React.ReactNode;
     isActive?: boolean;
-  } & AsProps<'a'>)[];
+  } & React.ComponentPropsWithoutRef<'a'>)[];
 }
 
 export const SubHeader: React.FC<SubHeaderProps> = ({ introBlock, choiceCategoryLabel, choiceCategories }) => (
@@ -46,10 +46,11 @@ export const SubHeader: React.FC<SubHeaderProps> = ({ introBlock, choiceCategory
         >
           {choiceCategories.map(({ label, isActive, ...choiceCategoryProps }, index) => (
             <Button
+              as="a"
               key={index}
               isChoiceChip={true}
               variant={isActive ? 'primary' : 'secondary'}
-              {...(choiceCategoryProps as ButtonProps)}
+              {...choiceCategoryProps}
               data-internal-link="category"
             >
               {label}

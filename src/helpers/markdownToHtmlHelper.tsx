@@ -1,5 +1,4 @@
 import {
-  AsProps,
   Blockquote,
   Box,
   Flex,
@@ -110,7 +109,7 @@ export const markdownToHtml = (content: string): string => {
             );
           }
 
-          return <Box {...(props as AsProps)}>{children}</Box>;
+          return <Box {...(props as React.ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
         },
         h2: ({ children }): React.JSX.Element => (
           <Heading as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
@@ -127,8 +126,12 @@ export const markdownToHtml = (content: string): string => {
             {children}
           </Heading>
         ),
-        p: ({ node, ...props }): React.JSX.Element => <Text as="p" mb="xxs" {...(props as AsProps)} />,
-        li: ({ node, ...props }): React.JSX.Element => <Text as="li" mb="xxs" {...(props as AsProps)} />,
+        p: ({ node, ...props }): React.JSX.Element => (
+          <Text as="p" mb="xxs" {...(props as React.ComponentPropsWithoutRef<'p'>)} />
+        ),
+        li: ({ node, ...props }): React.JSX.Element => (
+          <Text as="li" mb="xxs" {...(props as React.ComponentPropsWithoutRef<'li'>)} />
+        ),
         strong: ({ children }): React.JSX.Element => (
           <Text as="span" fontWeight="bold">
             {children}
@@ -144,14 +147,25 @@ export const markdownToHtml = (content: string): string => {
             {children}
           </Text>
         ),
-        a: ({ node, ...props }): React.JSX.Element => {
+        a: ({ node, children, ...props }): React.JSX.Element => {
           const isExternalLink = (props.href as string)?.match(/^http(s)?:\/\//);
           return (
-            <Link {...props} rel={isExternalLink ? 'nofollow noreferrer' : ''} style={{ overflowWrap: 'anywhere' }} />
+            <Link
+              as="a"
+              {...(props as React.ComponentPropsWithoutRef<'a'>)}
+              rel={isExternalLink ? 'nofollow noreferrer' : ''}
+              style={{ overflowWrap: 'anywhere' }}
+            >
+              {children}
+            </Link>
           );
         },
-        blockquote: ({ node, ...props }): React.JSX.Element => <Blockquote {...props} />,
-        pre: ({ node, ...props }): React.JSX.Element => <Box as="pre" textSize="xs" {...(props as AsProps)} />,
+        blockquote: ({ node, ...props }): React.JSX.Element => (
+          <Blockquote {...(props as React.ComponentPropsWithoutRef<'blockquote'>)} />
+        ),
+        pre: ({ node, ...props }): React.JSX.Element => (
+          <Box as="pre" textSize="xs" {...(props as React.ComponentPropsWithoutRef<'pre'>)} />
+        ),
         code: ({ node, className, children, ...props }): React.JSX.Element => {
           const match = /language-(\w+)/.exec(className || '');
           if (className && className.match('mermaid')) {

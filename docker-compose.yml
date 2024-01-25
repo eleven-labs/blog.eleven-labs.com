@@ -1,12 +1,12 @@
 version: '3'
 services:
   node:
-    image: node:18-alpine
+    image: node:20-alpine
     user: node:node
     working_dir: /var/www/app
     volumes:
       - .:/var/www/app
-    command: ['sh', '-c', 'yarn --production=false --frozen-lockfile && npx --yes concurrently "yarn start:storybook" "yarn start:dev"']
+    command: ['sh', '-c', 'npm ci && npx --yes concurrently "npm run start:storybook" "npm run start:dev"']
     ports:
       - 6009:6009
       - 5173:5173
