@@ -6,42 +6,42 @@ slug: se-lancer-dans-le-dev-mobile-partie1
 title: 'Se lancer dans le dév mobile : Partie I'
 excerpt: 'Faire du mobile oui, mais par où commencer ?'
 categories:
-  - javascript
+ - javascript
 authors:
-  - ibenichou
+ - ibenichou
 keywords:
-  - mobile
-  - angular
-  - ionic
-  - cordova
-  - ios
-  - swift
-  - objective-c
-  - react
-  - react-native
-  - application
+ - mobile
+ - angular
+ - ionic
+ - cordova
+ - ios
+ - swift
+ - objective-c
+ - react
+ - react-native
+ - application
 ---
 
-# Faire du mobile oui, mais par où commencer ?
+## Faire du mobile oui, mais par où commencer ?
 
 Aujourd’hui plus qu’hier les applications mobiles deviennent indispensables dans la vie de plusieurs millions de personnes. Si vous lisez cet article, c’est que le sujet vous intéresse ou que vous souhaitez vous y mettre vous aussi. Je vais essayer de faire une série d’articles afin de partager avec vous le plus possible sur ce sujet.
 
 **Quelles technos ?**
 
-Les bonnes questions avant de prendre parti pour une solution sont : “Quels sont les outils, plugins, fonctionnalités dont mon application a besoin ? Quel public viser ? Quel volume de personne est visé par cette appli ? ”. Une fois ces questions résolues, vous allez automatiquement répondre à la question de l’orientation de la techno.
+Les bonnes questions avant de prendre parti pour une solution sont : “Quels sont les outils, plugins, fonctionnalités dont mon application a besoin ? Quel public viser ? Quel volume de personne est visé par cette appli ? ”. Une fois ces questions résolues, vous allez automatiquement répondre à la question de l’orientation de la techno.
 
 Je vais parler aujourd’hui de 3 technos que j’ai choisies pour plusieurs raisons :
 
-* Car ce sont les plus répandues sur le marché afin de produire des applis mobile et leurs communautés sont les plus actives ;
+* Car ce sont les plus répandues sur le marché afin de produire des applis mobile et leurs communautés sont les plus actives ;
 * J’ai déjà utilisé ces technos et donc je peux vous faire un vrai retour d’expérience dessus. Concernant la partie natif, je suis parti sur de l’IOS et non sur de l’Android (j’explique plus bas pourquoi, non *spoil*)
 
-# Ionic :
+## Ionic :
 
 Ionic est un framework Javascript basé sur AngularJS pour la partie application web du framework et sur Cordova pour la partie construction des applications natives.
 
 **Comment ça marche ?**
 
-Ionic permet en fait de créer une application qui ouvre une « WebView » disponible nativement sur les appareils mobiles. Pour simplifier, il s’agit d’une fenêtre de  navigateur Web, exécutée dans notre application, qui va se charger d’interpréter et d’afficher le contenu de nos scripts. Cette WebView, dont les possibilités sont étendues par Cordova, permet d’accéder à un certain nombre de fonctionnalités natives à l’appareil mobile (voir schéma plus bas)
+Ionic permet en fait de créer une application qui ouvre une « WebView » disponible nativement sur les appareils mobiles. Pour simplifier, il s’agit d’une fenêtre de navigateur Web, exécutée dans notre application, qui va se charger d’interpréter et d’afficher le contenu de nos scripts. Cette WebView, dont les possibilités sont étendues par Cordova, permet d’accéder à un certain nombre de fonctionnalités natives à l’appareil mobile (voir schéma plus bas)
 
 La WebView d’Android est basée sur Chromium. Il s’agit de Safari pour iOS, et d’Internet Explorer Mobile pour Windows Phone.
 
@@ -51,7 +51,7 @@ Ainsi, Ionic ne permet pas de créer à proprement parler d’applications nativ
 
 ![schema1]({BASE_URL}/imgs/articles/2016-11-10-se-lancer-dans-le-dev-mobile-partie1/schema.png?width=600)
 
-Je vous vois venir :  “AngularJs, super je maîtrise le truc, aller hop on y go”.
+Je vous vois venir : “AngularJs, super je maîtrise le truc, aller hop on y go”.
 Hop hop hop !!!!. Jeune padawan, lire l’article en entier tu dois !
 Effectivement, si vous connaissez bien AngularJS, c’est un gros plus.
 
@@ -101,7 +101,7 @@ Mais Ionic dispose de points faibles :
 
 **Ionic est un super moyen de faire des applications rapides et petites. Mais dès lors que vous voulez agrandir vos fonctionnalités ou avoir des performances correctes, il montre les dents. Je n’ai pas testé la version 2 mais je sais qu’ils ont améliorés quelques points.**
 
-# React Native :
+## React Native :
 Comme son nom l’indique, React Native est une déclinaison de React (propulsée par Facebook en 2015). Le but de React Native est de pouvoir réutiliser le maximum de code entre les différentes plateformes.
 
 L'écriture en Javascript permet aux développeurs web de construire une application mobile native, contrairement à Cordova qui encapsule l'application dans une WebView.
@@ -118,8 +118,8 @@ Je ne vous cache pas que j’ai pas mal ramé au début avec React Native lorsqu
 
 Pourquoi ?
 
-* Car React Native est un jeunot qui n’est pas encore stable. Les versions de celui-ci changent très, très vite, ce qui implique que le code que vous avez produit hier ne sera peut-être plus d’actualité aujourd’hui (c’est le gros problème du Javascript vous allez me dire *troll*) ;
-* L’installation d’un émulateur pour faire tourner Android ne fut pas simple et le lancement de l’appli sur mon device (Android) non plus ;
+* Car React Native est un jeunot qui n’est pas encore stable. Les versions de celui-ci changent très, très vite, ce qui implique que le code que vous avez produit hier ne sera peut-être plus d’actualité aujourd’hui (c’est le gros problème du Javascript vous allez me dire *troll*) ;
+* L’installation d’un émulateur pour faire tourner Android ne fut pas simple et le lancement de l’appli sur mon device (Android) non plus ;
 * Sur chaque problème rencontré, j’ai eu du mal à trouver des réponses via la communauté puisque celle-ci commençait à peine à grandir.
 
 Vous allez me dire, mais avec tous ces points pourquoi en parle-t-on autant ?
@@ -131,15 +131,15 @@ En effet, vous pouvez coder en Java ou Objective-C / Swift une fonctionnalité q
 Magique non ? De ce fait, il existe de plus en plus de plugins et dépôts sur npm concernant React Native. Une communauté qui s'accroît et qui souhaite que celui-ci devienne une référence dans le développement mobile.
 
 De mon point de vue et de mon retour d’expérience, voici les points faibles que je relève sur React Native :
-* Il n’est pas encore stable (version 0.35 au moment de l’article) et donc pas mal de choses changent à chaque release, ce qui implique de suivre de très près chaque changement ;
-* Il propose pas mal de composants mais si vous désirez avoir un comportement / une fonctionnalité qui demande de toucher à l’API native (tel que le Speech Recognition, dernière nouveauté d’IOS 10) et qui n’est pas encore développé par quelqu’un, il va falloir le développer en natif, ce qui implique d’avoir des connaissances dans les langages appropriés ;
+* Il n’est pas encore stable (version 0.35 au moment de l’article) et donc pas mal de choses changent à chaque release, ce qui implique de suivre de très près chaque changement ;
+* Il propose pas mal de composants mais si vous désirez avoir un comportement / une fonctionnalité qui demande de toucher à l’API native (tel que le Speech Recognition, dernière nouveauté d’IOS 10) et qui n’est pas encore développé par quelqu’un, il va falloir le développer en natif, ce qui implique d’avoir des connaissances dans les langages appropriés ;
 * L’installation de l'émulateur pour Android sur Mac qui demande plus de temps et de patience.
 
 **Conclusion :**
 
 **React Native semble l’approche idéale pour faire des applications de tous types. Cependant, il faudra noter que son jeune âge lui fait défaut car il ne dispose pas encore de la maturité nécessaire afin de développer de grosses applications qui nécessitent des traitements particuliers. Mais je vous conseille de suivre de près son évolution.**
 
-# Natif :
+## Natif :
 
 Bien évidement pour faire une application il n’y a rien de mieux que le natif.
 
@@ -151,7 +151,7 @@ Alors d’abord la première chose sur laquelle j’ai dû trancher c’est sur 
 
 Et oui, le natif c’est super mais il faut connaître 2 langages si on souhaite faire une application multiplateformes. Mon choix s’est porté sur iOS pour des raisons pratiques. Je dispose d’un Mac et d’un iPhone (ok je suis un peu Apple boy *troll*).
 
-**Objective-C /  Swift : Que choisir ?**
+**Objective-C / Swift : Que choisir ?**
 
 **Petit point histoire :**
 
@@ -165,13 +165,13 @@ Il a été conçu pour coexister avec l'Objective-C. Quelques jours après sa pr
 
 Apple est passé depuis peu à la version 3 de Swift. Bon mais tout ça ne fait pas avancer le micmac. Que choisir ?
 
-Ne vaut-il pas mieux commencer par de l’Objective-C qui a montré sa stabilité ou alors Swift qui est beaucoup plus puissant et beaucoup plus simple à apprendre ? J’ai cherché un peu partout des réponses sur des articles ou forum. J’ai même été poser cette question à des dev iOS. Voilà ce que j’ai pu en conclure.
+Ne vaut-il pas mieux commencer par de l’Objective-C qui a montré sa stabilité ou alors Swift qui est beaucoup plus puissant et beaucoup plus simple à apprendre ? J’ai cherché un peu partout des réponses sur des articles ou forum. J’ai même été poser cette question à des dev iOS. Voilà ce que j’ai pu en conclure.
 
 De mon point de vue, Swift dispose d’une syntaxe plus facile pour débuter, donc plus pratique pour vous de commencer par apprendre celui-ci. Si vous codez actuellement sur un autre langage orienté objet alors vous allez avoir une forte progression. Faites-vous la main, comprenez bien les aspects techniques, les contraintes et surtout faites-vous plaisir.
 
 Mais alors on oublie l’Objective-C ? Oui et non…
 
-* Si vous souhaitez pousser un peu le swift c’est mieux d’avoir fait un peu d’Objective-c avant ;
+* Si vous souhaitez pousser un peu le swift c’est mieux d’avoir fait un peu d’Objective-c avant ;
 * La réalité prend le dessus. En effet vous allez être amené peut-être à travailler sur un projet qui dispose déjà d’une ancienne application mobile et par conséquent celle-ci est faite en Objective-C. C’est pourquoi vous pouvez constater que sur certaines offres d’emploi il est souvent mentionné Objective-C. Ne vous affolez pas, généralement, c’est pour comprendre le code existant afin de migrer vers la nouvelle appli qui elle est faite en Swift.
 
 **Conclusion :**

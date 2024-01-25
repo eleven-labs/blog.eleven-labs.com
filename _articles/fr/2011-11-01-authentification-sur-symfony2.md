@@ -35,7 +35,7 @@ Puis l'étape de l'autorisation de l'utilisateur qui elle aussi peut s'effectuer
 - objets sécurisés
 
 Dans notre exemple, nous allons créer une partie admin dans le projet, cette partie ne sera disponible que pour les utilisateurs ayant le rôle d'administrateur.
-Tout ce passe dans le fichier app/config/security.yml, qui va nous permettre de mettre en place les pages que nous voulons protéger ainsi que la page de login.
+Tout ce passe dans le fichier app/config/security.yml, qui va nous permettre de mettre en place les pages que nous voulons protéger ainsi que la page de login.
 Tout d'abord, nous allons ajouter un firewall en donnant le type d'authentificaiton que nous souhaitons, ici, c'est un formulaire de login qui aura pour accès l'url /login, pour la vérification du formulaire il aura comme url /login_check et enfin l'url de logout.
 
 ```yaml
@@ -123,7 +123,7 @@ logout:
     defaults:  { _controller: ClycksBundle:Default:logout }
 ```
 
-Pour login_check, il n'y a pas besoin de controller, Symfony le fait pour vous :).
+Pour login_check, il n'y a pas besoin de controller, Symfony le fait pour vous :).
 Il ne reste plus qu'à remplir le controller pour afficher le formulaire d'authentification.
 
 ```php

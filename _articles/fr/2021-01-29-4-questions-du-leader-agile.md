@@ -20,7 +20,7 @@ keywords:
 
 Dans un contexte qui évolue vite, où le télétravail a commencé à être la norme, il est capital en tant que manager de réussir à mettre en place de manière concrète un environnement relationnel sécurisant pour vos équipes. Et pour y parvenir, il me semble capital de se poser les 4 questions suivantes.
 
-### Qu'est-ce que le Leadership ?
+## Qu'est-ce que le Leadership ?
 
 La notion de "Leader" a évolué au cours de l'histoire. Si on regarde l'histoire du roi Arthur (ou plutôt ses histoires) on peut noter une espèce d'incarnation supérieure et innée du pouvoir. Soit la Dame du Lac lui a offert une épée légendaire, Excalibur, ou soit il a été le seul à la sortir d'une pierre : qu'importe, il est devenu l'Élu, et par droit divin, est devenu Roi de Bretagne.
 De nos jours, que se passerait-il si l'on disait d'un Team Leader dans une équipe IT qu'il a été élu parce qu'il a sorti une épée d'une pierre ? "Super ton tour de passe-passe, mais pourquoi est-ce que je devrais t'écouter ?" (NDmoi : Peut-être parce qu'il a une épée légendaire dans une de ses mains, mais passons). donc la question est, sans épée, d'où tire-t-il son leadership ?
@@ -33,7 +33,7 @@ Dans les années 1960s, MacGregor proposa une autre façon de voir le Leadership
 
  - 'Manager' : Ce développeur ne fait rien de ses journées, j'en suis persuadé ! Je me dois en tant que Manager de contrôler son travail, de le surveiller dans ses actions. Je vais vérifier son code, être à toutes ses réunions, lui faire des 1 to 1 tous les jours.
  - 'Développeur' : Je n'en peux plus de mon manager, il est constamment sur mon dos, j'en ai vraiment marre d'être pris pour un gamin à longueur de journée. Pas envie de faire des efforts !
- - 'Manager' : Je le savais, il ne fait plus rien de ses journées. 
+ - 'Manager' : Je le savais, il ne fait plus rien de ses journées.
 
 Maintenant, la théorie Y : l'être humain est créatif, autonome.
 
@@ -61,7 +61,7 @@ Si l'on décompose le terme, un Servant-Leader :
  - Est un servant : il sert son entreprise et les personnes dans sa sphère d'influence.
  - Est un leader : il est suivi dans ses actes et ses prises de décisions.
 
-### Comment co-créer des Objectifs avec son équipe ?
+## Comment co-créer des Objectifs avec son équipe ?
 
  **1. Travailler ensemble vers un état désiré**
 
@@ -93,7 +93,7 @@ Si cela vous semble une perte de temps et lourd à mettre en place, c'est normal
 
 Un bon exercice serait de reprendre un objectif que vous avez créé, pour vous-même, et de se poser ces questions-là pour que l'Objectif soit réellement SMART. Essayez !
 
-### Où dois-je me placer dans mon équipe ?
+## Où dois-je me placer dans mon équipe ?
 
 Ce sont les questions que l'on peut se poser souvent : est-ce que j'agis ? Est-ce que j'observe ? Est-ce que je fuis les problèmes en prod' sur une île paradisiaque ?
 
@@ -128,7 +128,7 @@ Un autre exercice : combien de temps en moyenne, par jour, vous passez dans chac
 Et pour les lieux où vous passez le moins de temps, comment pourriez-vous faire pour y être un peu plus présent ? À titre d'exemple, passer 1h par jour à réfléchir dans la cuisine sans interruption peut totalement changer vos journées !
 Être toujours dans l'action peut vous empêcher de voir de nouvelles opportunités et de saisir les besoins de vos invités.
 
-### Qui suis-je en tant que Leader ?
+## Qui suis-je en tant que Leader ?
 
 Vaste question, mais vous devriez commencer à avoir des billes en lisant ce billet de blog ! Et pourquoi pas aller encore plus loin, en regardant de plus près sa propre Intelligence... émotionnelle ?
 De ce que nous disent les neurosciences, les émotions sont le langage de notre cerveau. Elles sont là pour nous guider dans nos décisions, et bien souvent elles sont négligées ! Pourtant, elles sont bien là, et participent à notre façon de décider.

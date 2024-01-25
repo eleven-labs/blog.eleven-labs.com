@@ -61,7 +61,7 @@ Multiples sont les façons d'installer ArangoDB :
 Avec [ArangoDB Oasis](https://cloud.arangodb.com/home), il est même possible de lancer de façon très simple des instances hautement scalables d'ArangoDB déployées automatiquement sur AWS, Google Cloud ou Azure.
 
 Pour une première prise en main on va faire au plus simple c'est à dire une installation Docker :
-``` bash
+```bash
 docker run -p 8529:8529 -e ARANGO_ROOT_PASSWORD=rocketEleven arangodb/arangodb:3.6.1
 ```
 

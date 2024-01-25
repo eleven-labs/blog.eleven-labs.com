@@ -18,7 +18,7 @@ Une de ces fonctionnalités est le Web Compponent, qui permet de créer des comp
 Le Web Component ressemble aux composants de React ou Angular mais a la particularité de n’être dépendant que du navigateur. Il peut donc fonctionner dans une page web indépendamment du framework utilisé. Nous allons voir comment en créer un simple, permettant de gérer un système de popin.
 
 ## Principes
-Le Web Component repose sur 3 principes :
+Le Web Component repose sur 3 principes :
 - [template](https://developer.mozilla.org/fr/docs/Web/HTML/Element/template)
 - [shadowDOM](https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot)
 - [customElements](https://developer.mozilla.org/fr/docs/Web/Web_Components/Using_custom_elements)

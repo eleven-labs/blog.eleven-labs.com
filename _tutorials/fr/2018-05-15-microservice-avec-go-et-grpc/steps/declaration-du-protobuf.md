@@ -4,7 +4,7 @@ tutorial: microservice-avec-go-et-grpc
 slug: declaration-du-protobuf
 title: Déclaration du Protobuf
 ---
-### Notre fichier Protobuf  
+## Notre fichier Protobuf
 
 Nous allons créer un fichier `translator.proto` dans le dossier `proto`.
 ```protobuf
@@ -60,7 +60,7 @@ service Translator {
     rpc Translate(TranslateRequest) returns (TranslateResponse) {}
 }
 ```
-### Génération avec Prototool  
+## Génération avec Prototool
 
 Nous allons commencer par générer le fichier de config de Prototool.
 ```bash

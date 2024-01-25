@@ -22,7 +22,7 @@ keywords:
 
 Au cours de mes différentes expériences professionnelles, j'ai dû mettre en place de nombreuses règles métier dans diverses applications riches fonctionnellement. Un jour, j'ai été confronté à une façon de faire différente : l'utilisation du pattern specification. Cette méthode s’est avérée structurante pour les projets, et si vous ne la connaissez pas encore elle mérite qu’on s’y attarde.
 
-### Commençons
+## Commençons
 
 Imaginez une application bancaire par exemple. Cette dernière comprend des clients et des comptes bancaires. Un client peut avoir un ou plusieurs comptes bancaires. Vous devez mettre en place un système hyper simple de virement bancaire entre comptes d’un même client, comprenant la règle métier suivante :
 
@@ -64,9 +64,9 @@ Tout d’abord, si notre règle métier évolue, nous devrons modifier la (ou le
 
 C’est là qu’entre en scène le _pattern_ spécification. L’idée de la spécification est d’isoler une règle métier, en la séparant de son utilisation. Elle est utilisée dans le cas de la validation, de la sélection et dans la construction de logique métier.
 
-Il existe principalement trois types de spécifications :
+Il existe principalement trois types de spécifications :
 
-*   les spécifications _hard coded_
+*   les spécifications _hard coded_
 *   les spécifications paramétrées
 *   les spécifications composites
 
@@ -92,7 +92,7 @@ interface Specification
 
 Ce type de specifications permet de déclarer en dur la connaissance métier sans pouvoir modifier la règle métier de l'extérieur.
 
-Une règle métier peut donc être, par exemple, traduite de la sorte :
+Une règle métier peut donc être, par exemple, traduite de la sorte :
 
 ```php
 <?php
@@ -115,11 +115,11 @@ class AccountCanTransferMoney implements Specification
 }
 ```
 
-En ayant créé une classe séparée pour appliquer notre règle, nous gagnons en découplage et en clarté. Cependant, il apparait évident que nous sommes cantonnés à l'object $account, et qu'aucune information ne peut être apportée de l'extérieur. Nous ne pouvons toujours pas utiliser ce type de spécification dans notre _TransferMoneyCommand_ car il ne répond pas totalement à notre règle métier (seul le solde actuel du compte est comparé).
+En ayant créé une classe séparée pour appliquer notre règle, nous gagnons en découplage et en clarté. Cependant, il apparait évident que nous sommes cantonnés à l'object $account, et qu'aucune information ne peut être apportée de l'extérieur. Nous ne pouvons toujours pas utiliser ce type de spécification dans notre _TransferMoneyCommand_ car il ne répond pas totalement à notre règle métier (seul le solde actuel du compte est comparé).
 
-### Spécifications paramétrées
+## Spécifications paramétrées
 
-Les spécifications paramétrées sont identiques au point précédent, sauf qu'elles résolvent le problème que nous venons d'indiquer en permettant de passer des paramètres extérieurs à notre _candidate_.
+Les spécifications paramétrées sont identiques au point précédent, sauf qu'elles résolvent le problème que nous venons d'indiquer en permettant de passer des paramètres extérieurs à notre _candidate_.
 
 ```php
 <?php
@@ -153,9 +153,9 @@ class AccountCanTransferMoney implements Specification
 }
 ```
 
-Avec ce type de spécifications, nous gardons les mêmes avantages que précédemment, et nous gagnons en flexibilité.
+Avec ce type de spécifications, nous gardons les mêmes avantages que précédemment, et nous gagnons en flexibilité.
 
-Voici ce que donnerait notre commande avec l'utilisation de notre spécification paramétrée :
+Voici ce que donnerait notre commande avec l'utilisation de notre spécification paramétrée :
 
 ```php
 <?php
@@ -184,11 +184,11 @@ class TransferMoneyCommand
 }
 ```
 
-Pour simplifier l'explication des spécifications paramétrées, j'ai instancié la class AccountCanTransferMoney en dur. Une amélioration notable de cette utilisation serait d'injecter dans la commande la spécification, au lieu de l'instancier en dur, afin de pouvoir tester unitairement notre commande.
+Pour simplifier l'explication des spécifications paramétrées, j'ai instancié la class AccountCanTransferMoney en dur. Une amélioration notable de cette utilisation serait d'injecter dans la commande la spécification, au lieu de l'instancier en dur, afin de pouvoir tester unitairement notre commande.
 
-### Spécifications composites
+## Spécifications composites
 
-Le dernier type de spécification que nous aborderons aujourd'hui concerne la spécification composite. Cette dernière se base sur ce que nous venons de voir. En effet, ce pattern utilise une composition de spécifications pour exister. Les opérations logiques entre deux (ou plus) spécifications font parties des _composite specifications._
+Le dernier type de spécification que nous aborderons aujourd'hui concerne la spécification composite. Cette dernière se base sur ce que nous venons de voir. En effet, ce pattern utilise une composition de spécifications pour exister. Les opérations logiques entre deux (ou plus) spécifications font parties des _composite specifications._
 
 L'exemple suivant vous explique l'implémentation de l'opération logique AND :
 
@@ -245,7 +245,7 @@ class AndSpecification extends Composite
 }
 ```
 
-Ainsi, si l'on déclare une spécification composite, on peut la chainer à d'autres spécifications, comme ci-dessous, en modifiant notre spécification précédente _AccountCanTransferMoney_ :
+Ainsi, si l'on déclare une spécification composite, on peut la chainer à d'autres spécifications, comme ci-dessous, en modifiant notre spécification précédente _AccountCanTransferMoney_ :
 
 ```php
 <?php
@@ -331,14 +331,14 @@ class TransferMoneyCommand
 }
 ```
 
-Les avantages de ce type de spécifications sont bien sûr le support des opérations logiques, et donc la création de règles métier plus complexes. Il est maintenant possible de combiner les spécifications. La flexibilité est encore accrue, mais attention à la complexité générée !
+Les avantages de ce type de spécifications sont bien sûr le support des opérations logiques, et donc la création de règles métier plus complexes. Il est maintenant possible de combiner les spécifications. La flexibilité est encore accrue, mais attention à la complexité générée !
 
-### Recap
+## Recap
 
-Les avantages du pattern spécification sont les suivants :
+Les avantages du pattern spécification sont les suivants :
 
-*   Découplage augmenté car la responsabilité de la validation est maintenant limitée à une classe isolée
-*   Ainsi, il est plus facile de tester unitairement à la fois les spécifications et les classes utilisant ces dernières
+*   Découplage augmenté car la responsabilité de la validation est maintenant limitée à une classe isolée
+*   Ainsi, il est plus facile de tester unitairement à la fois les spécifications et les classes utilisant ces dernières
 *   L'implicite est rendu explicite avec une définition claire des règles métier
 
 ## Références

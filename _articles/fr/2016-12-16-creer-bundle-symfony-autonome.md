@@ -21,7 +21,7 @@ bundle autonome.
 
 ---
 
-### Les étapes
+## Les étapes
 * [Bootstrap du projet](#bootstrap-du-projet)
 * [Bundle minimal](#bundle-minimal)
 * [Application embarquée](#application-embarquée)
@@ -185,7 +185,7 @@ On ajoute alors ces dossiers au `.gitignore`
 
 ## Utilisation autonome
 
-### Application console
+## Application console
 
 Pour pouvoir créer dans notre bundle autonome des commandes symfony, nous devons dans un premier temps ajouter en
 dépendance de dev le composant symfony/console puis ajouter à notre application minimale le script console.
@@ -215,7 +215,7 @@ Nous pouvons maintenant lancer des commandes en utilisant la console.
 php tests/App/console
 ```
 
-### Application web
+## Application web
 
 Maintenant que nous pouvant lancer des commandes, intéressons-nous au web.
 Afin de pouvoir appeler un contrôleur, nous devons ajouter à notre application minimale un frontal web.
@@ -305,7 +305,7 @@ serveur web pour le développement.
 
 ## Tests
 
-### Tests unitaires
+## Tests unitaires
 
 Pour exécuter les tests unitaires sur notre projet, nous allons utiliser la librairie phpunit.
 
@@ -390,7 +390,7 @@ On lance ensuite la suite de test, qui nous affiche qu'un test et une assertion 
 ./vendor/bin/phpunit
 ```
 
-### Tests fonctionnels
+## Tests fonctionnels
 
 Pour lancer les tests fonctionnels, nous allons encore une fois utiliser la librairie phpunit.
 

@@ -45,7 +45,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           bundler-cache: true
-          node-version: 16
+          node-version: 20
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path

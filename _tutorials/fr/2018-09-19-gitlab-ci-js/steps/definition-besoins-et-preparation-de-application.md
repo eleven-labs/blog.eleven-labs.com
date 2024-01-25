@@ -4,25 +4,25 @@ tutorial: gitlab-ci-js
 slug: definition-besoins-et-preparation-de-application
 title: Définition des besoins et préparation de notre application
 ---
-# Conception et préparation de l'environnement applicatif
+## Conception et préparation de l'environnement applicatif
 
 Pour cette première étape nous allons commencer par définir nos besoins en termes de technologies à mettre en place mais aussi en termes de workflows git et de CI/CD. Puis nous allons initialiser notre application.
 
-## Conception
+### Conception
 
-### Les technologies
+#### Les technologies
 
 Docker pour notre environnement de développement.
 Node avec npm et yarn pour exécuter notre application sur notre environnement de dév.
 Make pour simplifier nos commandes dans la phase de développement.
 
-### Le workflow de le CI/CD
+#### Le workflow de le CI/CD
 
 Voici les trois workflows de notre CI/CD que nous aurons a la fin de ce tutoriel :
 
 ![Workflow gitlab-ci app js]({BASE_URL}/imgs/tutorials/2018-09-19-gitlab-ci-js/workflow-gitlab-ci-app-js.svg)
 
-## Initialisation de l’application Vue.js
+### Initialisation de l’application Vue.js
 
 Pour faire simple et pour aller vite nous allons utiliser vue-cli. Nous allons donc installer vue-cli et initialiser un projet Vue.js.
 
@@ -195,7 +195,7 @@ yarn serve
 ```
 ![Screenshot app Vue.js init]({BASE_URL}/imgs/tutorials/2018-09-19-gitlab-ci-js/screenshot-app-vue-js-init.png)
 
-## Make
+### Make
 
 Pour simplifier les commandes docker et pour que l’application soit sous docker, j'ai fait un makefile. Je l’utilise dans la majorité de mes applications et ça fonctionne bien.
 

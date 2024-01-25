@@ -46,7 +46,7 @@ very resistant to key extraction techniques. In addition to physical attacks, th
 We will see in this article the export of the private keys of the subkeys in a smart card. For this example, I will use
 a Yubikey 4.
 
-### Yubikey, what is it?
+## Yubikey, what is it?
 
 Yubikey is a device the size of a classic USB key. This key makes it possible to perform double authentication on website,
 such as Google or Github. Thus, if a person is in possession of both the email and the password of the victim, the attacker
@@ -58,7 +58,7 @@ In addition to this main protocol, it supports others: OpenPGP, TOTP, HOTP, chal
 
 The one that will interest us is OpenPGP.
 
-### How to get one
+## How to get one
 
 I recommend you go through [the official store](https://www.yubico.com/product/yubikey-4-series/)
 to ensure the origin of the product. We are on products related to safety, it's important to know where the purchased product comes from.
@@ -69,7 +69,7 @@ However, it's valid only once. I recommend you order at least 2 products. The se
 Last but not least, our OpenPGP key was generated with a size of 4096 bits. Only the version 4 of the Yubikey allows
 to save keys of this size. Version 3 and NEO only support keys up to 3072 bits.
 
-### Install the necessary tools
+## Install the necessary tools
 
 As a reminder, we started our generation of OpenPGP key with a machine running Ubuntu 16.04 and GnuPG 2.1.11. To be able to
 export the keys to the Yubikey, we need to install additional tools beforehand.
@@ -78,7 +78,7 @@ export the keys to the Yubikey, we need to install additional tools beforehand.
 wilson@spaceship:~$ sudo apt-get install -y gnupg-agent pinentry-curses scdaemon pcscd yubikey-personalization libusb-1.0-0-dev
 ```
 
-### Customize the Yubikey with gpg
+## Customize the Yubikey with gpg
 
 Before using the Yubikey, check that the warranty tape has not been broken. If so, do not use it.
 
@@ -177,7 +177,7 @@ gpg/card> quit
 
 The key is now configured. We can export the private keys of the subkeys in the smart card.
 
-### Export the keys to the Yubikey
+## Export the keys to the Yubikey
 
 The goal is to move the secret keys of the subkeys into the Yubikey. In order to do so, we will
 select each subkey one by one with the `key n` command and move it in the card with` keytocard`.
@@ -424,7 +424,7 @@ keychain. Just below, there is an extra line that tells gpg where to find the se
 Here we have the serial number of the Yubikey `card-no: 0006 06476495`. This serial number is also printed on the key physically.
 If you have multiple Yubikeys, it will be easy to find the one you are looking for.
 
-### Conclusion
+## Conclusion
 
 Through these first two articles, we covered the creation of an OpenPGP key and the export of secrets on a smart card.
 The use of a smart card provides additional protection against the theft of secret keys.
@@ -439,13 +439,13 @@ on GitHub (example on this commit [31dd621](https://github.com/eleven-labs/blog.
 In a future article, we will set up a backup strategy to cover for the potential loss of secret keys. An error can quickly happen,
 like erasing your computer following a ransomware.
 
-### Article en relation
+## Article en relation
 * [OpenPGP - The almost perfect key pair (part 1)]({BASE_URL}/en/openpgp-almost-perfect-key-pair-part-1/)
 * [OpenPGP - Export Secret Keys to a Yubikey (part 2)]({BASE_URL}/en/openpgp-secret-keys-yubikey-part-2/)
 * [OpenPGP - Long term storage (part 3)]({BASE_URL}/fr/openpgp-stockage-froid-clefs-partie-3/)
 * [OpenPGP - I was in a Key Signing Party (part 4)]({BASE_URL}/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
 
-### Resources
+## Resources
 
 - [wikipedia - Universal 2nd Factor](https://en.wikipedia.org/wiki/Universal_2nd_Factor)
 - [fidoalliance -Universal 2nd Factor (U2F) Overview](https://fidoalliance.org/specs/fido-u2f-overview-ps-20150514.pdf)
@@ -460,7 +460,7 @@ like erasing your computer following a ransomware.
 - [Yubico has replaced all open-source components](https://www.reddit.com/r/linux/comments/4ls94a/yubico_has_replaced_all_opensource_components/)
 - [Cover image source](https://www.yubico.com/press/images/)
 
-### Remarks
+## Remarks
 
 This tutorial uses a Yubikey for storing secrets. Yubikey is the most popular key in the general public, especially
 for the second authentication factor feature. There are other keys that support OpenPGP such as [NitroKey](https://www.nitrokey.com/).

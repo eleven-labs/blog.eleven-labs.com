@@ -112,9 +112,9 @@ class ArticleService
 }
 ```
 
-Looking back at our code, you might be thinking « it looks pretty standard to me, what’s wrong with it? ». Well, if you look at it conceptually, does it make sense? Is it logical to create an empty shell `new Article()` with no properties at all at first? Then setting a title? Then a content? I doubt that you'd be comfortable reading a blank page with nothing in it.
+Looking back at our code, you might be thinking « it looks pretty standard to me, what’s wrong with it? ». Well, if you look at it conceptually, does it make sense? Is it logical to create an empty shell `new Article()` with no properties at all at first? Then setting a title? Then a content? I doubt that you'd be comfortable reading a blank page with nothing in it.
 
-### Time goes by
+## Time goes by
 
 Let’s add a business rule: you cannot publish an article without at least having a title and a content.
 
@@ -152,7 +152,7 @@ This is what's called an anemic domain model. A class with a bunch of getters an
 
 A domain object must be responsible for its own state, as opposed to this anemic Article.
 
-### Mindshift
+## Mindshift
 
 Shifting from an anemic model to a rich model does not have to be a massive effort. It's mostly a change in how we perceive the domain of our application: the heart of your software.
 From our previous example, we can simply make the following changes:

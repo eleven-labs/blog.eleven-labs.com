@@ -113,9 +113,9 @@ class ArticleService
 }
 ```
 
-En regardant ce que nous venons d'écrire, on pourrait se dire « cela m'a l'air assez classique, quel est le problème ? ». Si nous observons d'un point de vue plus conceptuel, est-ce que cela a du sens ? Est-ce que c'est logique de créer cet objet vide `new Article()` avec aucune propriété définie en premier lieu ? Puis de définir un titre, puis un contenu ? Je doute que vous soyez confortable avec l'idée de regarder une page d'article vide, sans contenu.
+En regardant ce que nous venons d'écrire, on pourrait se dire « cela m'a l'air assez classique, quel est le problème ? ». Si nous observons d'un point de vue plus conceptuel, est-ce que cela a du sens ? Est-ce que c'est logique de créer cet objet vide `new Article()` avec aucune propriété définie en premier lieu ? Puis de définir un titre, puis un contenu ? Je doute que vous soyez confortable avec l'idée de regarder une page d'article vide, sans contenu.
 
-### Le temps passe
+## Le temps passe
 
 Ajoutons une règle métier : vous ne pouvez pas publier d'article sans avoir au moins un titre et un contenu.
 
@@ -153,7 +153,7 @@ C'est ce qu'on appelle un domaine anémique. Une classe avec plein de getters et
 
 Un objet métier devrait être reponsable de son propre état, en contradiction totale avec cet Article anémique.
 
-### Changer d'état d'esprit
+## Changer d'état d'esprit
 
 Transformer un modèle anémique en un modèle riche n'a pas à être un effort incroyable et douloureux. C'est principalement un changement de la façon dont nous percevons le métier de notre application : comme étant le coeur du logiciel.
 

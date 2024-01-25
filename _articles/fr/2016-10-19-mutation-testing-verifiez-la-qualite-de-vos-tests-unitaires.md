@@ -74,7 +74,7 @@ Le test vérifie ici que la méthode ajoute bien une entrée au tableau d’astr
 Mais nous ne sommes pas protégés pour autant : que se passerait-il si la méthode `addAstronaut` changeait ?
 Notre test suffira-t-il à détecter une régression ?
 
-## Tests de Mutation
+## Tests de Mutation
 
 Pour détecter les failles dans vos tests unitaires, il existe une solution : **les tests de mutation**.
 

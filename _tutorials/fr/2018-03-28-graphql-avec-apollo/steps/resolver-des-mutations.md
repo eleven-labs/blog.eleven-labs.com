@@ -4,11 +4,11 @@ tutorial: graphql-avec-apollo
 slug: resolver-des-mutations
 title: Resolver des mutations
 ---
-### Création d'un type mutation
+## Création d'un type mutation
 
 Comme pour la query, nous devons définir les mutations possibles. Il s'agit là aussi d'une fonction prenant en entrée un type input et renvoyant un objet.
 
-#### Type Input
+### Type Input
 
 Pour ce tutoriel, nous allons seulement créer un nouvel astronaute. Nous avons donc besoin d'un seul type input pour l'astronaute.
 
@@ -25,7 +25,7 @@ const AstronauteInput = `
 export default AstronauteInput;
 ```
 
-#### Ajout de la mutation
+### Ajout de la mutation
 
 Dans le fichier `schemas.js` vous devez ajouter la mutation :
 
@@ -64,7 +64,7 @@ export default makeExecutableSchema({
 });
 ```
 
-### Resolver de mutation
+## Resolver de mutation
 
 Dans le resolver du fichier `astronaute.js` vous devez ajouter la fonction permettant la mutation :
 
@@ -116,7 +116,7 @@ export default resolvers;
 
 La fonction `saveAstronaute` prend l'input en entrée, sauvegarde dans la base et renvoie l'objet sauvegardé :
 
-### Testons
+## Testons
 
 Dans GraphiQL vous pouvez mettre la query suivante :
 
@@ -154,6 +154,6 @@ Si tout est ok pour devriez avoir cela comme réponse :
 
 Retrouvez le code directement [ici](https://github.com/duck-invaders/graphql-apollo/tree/codelabs-step5)
 
-### Conclusion
+## Conclusion
 
 Je vous invite à lire la documentation de [GraphQL](http://graphql.org/learn/) et de [Apollo](https://www.apollographql.com/) pour voir l'ensemble des fonctionnalités disponible dans GraphQL.

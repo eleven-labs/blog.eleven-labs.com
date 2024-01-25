@@ -4,7 +4,7 @@ lang: fr
 date: '2015-08-19'
 slug: angularjs-les-directives-22
 title: 'AngularJS : Les Directives 2/2'
-excerpt: '## Préambule'
+excerpt: 'Préambule'
 categories:
   - javascript
 authors:
@@ -16,7 +16,7 @@ keywords:
 
 ## Préambule
 
-Comme vu dans l’article précédent, une directive est un marqueur HTML interprété par AngularJS via son $compile.
+Comme vu dans l’article précédent, une directive est un marqueur HTML interprété par AngularJS via son $compile.
 Nous allons donc nous intéresser ici aux divers moyens nous permettant d’avoir une gestion la plus fine possible des
 transformations de nos directives.
 
@@ -38,25 +38,25 @@ Ci-dessous une directive implémentant tous ces concepts :
 
 ```js
 angular.module('exemple', [])
-  .directive('myDirective', function() {
-    return {
-      restrict: 'EA',
-      controller: function($scope, $element, $attrs, $transclude) {
-        // controller code
-      },
-      compile: function(tElement, tAttributes, transcludeFn) {
-        // compile code
-        return {
-          pre: function(scope, element, attributes, controller, transcludeFn) {
-            // pre-link code
-          },
-          post: function(scope, element, attributes, controller,transcludeFn) {
-            // post-link code
-          }
-        };
-      }
-    };  
-  });
+  .directive('myDirective', function() {
+    return {
+      restrict: 'EA',
+      controller: function($scope, $element, $attrs, $transclude) {
+        // controller code
+      },
+      compile: function(tElement, tAttributes, transcludeFn) {
+        // compile code
+        return {
+          pre: function(scope, element, attributes, controller, transcludeFn) {
+            // pre-link code
+          },
+          post: function(scope, element, attributes, controller,transcludeFn) {
+            // post-link code
+          }
+        };
+      }
+    };
+  });
 ```
 
 La fonction pre-link étant rarement utile, nous pouvons la supprimer. Dans ce cas le compile doit retourner la fonction
@@ -64,20 +64,20 @@ post-link.
 
 ```js
 angular.module('exemple', [])
-  .directive('myDirective', function() {
-    return {
-      restrict: 'EA',
-      controller: function($scope, $element, $attrs, $transclude) {
-        // controller code
-      },
-      compile: function(tElement, tAttributes, transcludeFn) {
-        // compile code
-        return function(scope, element, attributes, controller,transcludeFn) {
-          // post-link code
-        }
-      }
-    };  
-  });
+  .directive('myDirective', function() {
+    return {
+      restrict: 'EA',
+      controller: function($scope, $element, $attrs, $transclude) {
+        // controller code
+      },
+      compile: function(tElement, tAttributes, transcludeFn) {
+        // compile code
+        return function(scope, element, attributes, controller,transcludeFn) {
+          // post-link code
+        }
+      }
+    };
+  });
 ```
 
 Si l'on ne souhaite effectuer aucune manipulation du template, la fonction compile devient inutile Dans ce cas il est
@@ -85,17 +85,17 @@ possible de déclarer uniquement un link contenant la fonction post-link.
 
 ```js
 angular.module('exemple', [])
-  .directive('myDirective', function() {
-    return {
-      restrict: 'EA',
-      controller: function($scope, $element, $attrs, $transclude) {
-        // controller code
-      },
-      link: function(scope, element, attributes, controller,transcludeFn) {
-        // post-link code
-      }
-    };  
-  });
+  .directive('myDirective', function() {
+    return {
+      restrict: 'EA',
+      controller: function($scope, $element, $attrs, $transclude) {
+        // controller code
+      },
+      link: function(scope, element, attributes, controller,transcludeFn) {
+        // post-link code
+      }
+    };
+  });
 ```
 
 ## Transclusion
@@ -110,19 +110,19 @@ Pour se faire il suffit de spécifier à sa directive qu'elle souhaite utiliser 
 
 ```js
 angular.module('exemple', [])
-  .directive('myDirective', function () {
-    return {
-      restrict: 'EA',
+  .directive('myDirective', function () {
+    return {
+      restrict: 'EA',
       transclude: true,
       scope: {
         chapo: @
       },
       template: template.html
-      link: function(scope, element, attributes, controller,transcludeFn) {
-        // post-link code
-      }
-    };  
-  });
+      link: function(scope, element, attributes, controller,transcludeFn) {
+        // post-link code
+      }
+    };
+  });
 ```
 
 Mais cela seul ne suffit pas, il vous faudra aussi définir dans son template l'emplacement où la transclusion sera faite

@@ -490,7 +490,7 @@ $ curl http://localhost:3000/api/groups/ducks/stats
 
 ### Middlewares
 
-Dans le cas où l'on veut ajouter un comportement spécifique à notre instance json-server, on peut utiliser des middlewares personnalisés, qu'on intègre dans le serveur de la même manière que lors du développement d'une application express classique. Dans cette section, on va explorer un exemple utile d'une fonctionnalité qui est habituellement nécessaire.
+Dans le cas où l'on veut ajouter un comportement spécifique à notre instance json-server, on peut utiliser des middlewares personnalisés, qu'on intègre dans le serveur de la même manière que lors du développement d'une application express classique. Dans cette section, on va explorer un exemple utile d'une fonctionnalité qui est habituellement nécessaire.
 
 Imaginez qu'on veuille accéder à une ressource sur l'API, mais qu'il s'avère que cette ressource est sécurisée. On peut dire qu'il s'agit simplement de données, et qu'on se satisferait de les utiliser sans se soucier de la sécurité. Mais, on sait que ce n'est le bon choix, on veut que l'application soit prête lorsque la future API est prête, afin de tout tester. Donc, au lieu de contourner la sécurité, on va utiliser les middlewares pour mettre en place une couche d'authentification.
 

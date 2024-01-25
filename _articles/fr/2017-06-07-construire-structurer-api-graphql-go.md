@@ -19,13 +19,13 @@ keywords:
 GraphQL est disponible depuis maintenant presque 2 ans et les applications qui l'utilisent se font toujours assez rare.
 Pourtant, cette implémentation proposée par Facebook offre de nombreuses possibilités que ne permet pas une API REST.
 
-# Introduction
+## Introduction
 
 L'objectif de cet article n'est pas de vous expliquer ce qu'est GraphQL, la documentation située à l'adresse http://graphql.org/learn l'explique déjà très bien !
 
 Je me suis donc intéressé à construire une API GraphQL, et tant qu'à avoir une API performante, j'ai choisi le langage Go pour la développer, à l'aide de la librairie `graphql-go` (https://github.com/graphql-go/graphql).
 
-# Structure de fichiers de notre API
+###  Structure de fichiers de notre API
 
 La première chose (et pas des moindres) à prendre en compte lorsque l'on souhaite développer une application est la structure de celle-ci.
 
@@ -36,27 +36,27 @@ Ainsi, voici l'arborescence que je vous propose pour notre API :
 ```bash
 .
 ├── app
-│   ├── config.go
-│   ├── config.json
-│   └── config_test.go
+│   ├── config.go
+│   ├── config.json
+│   └── config_test.go
 ├── security
-│   ├── security.go
-│   └── security_test.go
+│   ├── security.go
+│   └── security_test.go
 ├── mutations
-│   ├── mutations.go
-│   ├── mutations_test.go
-│   ├── user.go
-│   └── user_test.go
+│   ├── mutations.go
+│   ├── mutations_test.go
+│   ├── user.go
+│   └── user_test.go
 ├── queries
-│   ├── queries.go
-│   ├── queries_test.go
-│   ├── user.go
-│   └── user_test.go
+│   ├── queries.go
+│   ├── queries_test.go
+│   ├── user.go
+│   └── user_test.go
 ├── types
-│   ├── role.go
-│   ├── role_test.go
-│   ├── user.go
-│   └── user_test.go
+│   ├── role.go
+│   ├── role_test.go
+│   ├── user.go
+│   └── user_test.go
 └── main.go
 ```
 
@@ -70,7 +70,7 @@ Nous retrouvons ici :
 Enfin, nous retrouvons bien sûr à la racine `main.go` qui est le point d'entrée de notre API.
 Nous allons d'ailleurs commencer dès maintenant à construire notre API !
 
-# Point d'entrée de l'API
+###  Point d'entrée de l'API
 
 Pour construire notre API, nous allons avoir besoin dans un premier temps d'importer le package "net/http" (car notre API GraphQL va être distribuée en HTTP) ainsi que les librairies graphql-go :
 
@@ -128,7 +128,7 @@ Ici, il nous manque `queries.GetRootFields()` ainsi que `mutations.GetRootFields
 
 Plutôt que d'alourdir le fichier `main.go`, j'ai choisi de les déposer sous `queries/queries.go` et `mutations/mutations.go`.
 
-# Structures de données
+###  Structures de données
 
 Avant de commencer à écrire notre première requête, nous devons définir notre modèles de données.
 
@@ -165,7 +165,7 @@ Nous avons ici définis deux choses :
 
 À l'aide de ce modèle de données, nous sommes maintenant prêts à construire notre première requête GraphQL !
 
-# Requêtes
+###  Requêtes
 
 Commençons par éditer le fichier `queries/queries.go` afin d'ajouter une requête `user` qui sera chargée de retourner nos données utilisateur :
 
@@ -216,7 +216,7 @@ Notre première requête est prête : nous allons utiliser le type de données `
 
 Vous pouvez à cet endroit faire un appel à tout outil de stockage de vos données : bases de données relationnelles ou non, SQL ou non, fichier, mémoire, tout est envisageable.
 
-# Ajouter des relations à votre API
+###  Ajouter des relations à votre API
 
 Imaginons maintenant que vous ayez des roles (pour gérer des accès à certaines ressources) associés à vos utilisateurs.
 
@@ -278,7 +278,7 @@ Pour effectuer votre requête, vous pouvez utiliser `params.Source` pour obtenir
 
 Enfin, ce qui est intéressant ici est que le requêtage de données (roles) sera effectué uniquement si le client effectuant la requête GraphQL demande à obtenir les roles.
 
-# Effectuer des appels à votre API
+###  Effectuer des appels à votre API
 
 À partir de là, vous pouvez donc intéroger votre API avec la requête suivante :
 
@@ -300,7 +300,7 @@ GraphQL offre bien sûr des possibilités intéressantes au niveau des requêtes
 * Fragments : http://graphql.org/learn/queries/#fragments
 * Variables : http://graphql.org/learn/queries/#variables
 
-# Mutations
+###  Mutations
 
 Côté mutations, le fonctionnement est identique aux requêtes. Nous allons donc créer notre première mutation et vous allez voir que ça ressemble beaucoup aux queries.
 
@@ -376,7 +376,7 @@ curl
 
 Vous pouvez bien sûr choisir d'obtenir en retour uniquement l'identifiant de l'utilisateur nouvellement créé.
 
-# Securité
+###  Securité
 
 La plupart de vos APIs ne sont certainement pas publiques, il vous faut donc y ajouter un composant de sécurité, et c'est ce que nous allons faire ici en intégrant une authentification JWT (https://jwt.io/).
 
@@ -437,7 +437,7 @@ http.Handle("/", security.Handle(httpHandler))
 
 Vous disposez maintenant d'une API GraphQL performante et sécurisée !
 
-# Conclusion
+##  Conclusion
 
 L'implémentation de GraphQL en Go est plutôt simple à prendre en main et les performances du langage permettent de construire une API performante.
 

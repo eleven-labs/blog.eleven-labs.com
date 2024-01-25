@@ -4,7 +4,7 @@ tutorial: microservice-avec-go-et-grpc
 slug: installation-des-outils
 title: Installation des outils
 ---
-### Installer protoc  
+## Installer protoc
 
 `protoc` est un générateur qui va lire vos fichiers Protobuf et générer du code.
 
@@ -21,7 +21,7 @@ brew install protobuf
 ```
 Si vous êtes sur Windows, vous pouvez [télécharger l'exécutable ici](https://github.com/google/protobuf/releases/download/v3.5.1/protoc-3.5.1-win32.zip).
 
-### Installer prototool  
+## Installer prototool
 
 `prototool` est une commande qui va vous permettre d'utiliser plus facilement `protoc` via un fichier yaml. Il intègre aussi un linter et un client gRPC que nous verrons à l'étape 5.
 

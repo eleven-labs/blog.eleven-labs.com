@@ -25,8 +25,7 @@ That's why we needed to find a way to easily find the misspelled words in the fi
 
 Here is how we did that:
 
-How does Aspell work?
-=====================
+## How does Aspell work?
 
 First, we need to install this tool:
 
@@ -62,8 +61,7 @@ Note that the header (first line) of this file is important: the two last argume
 
 Then to use this personal dictionary, you have to add this argument in your command: `--personal=./.aspell.en.pws`
 
-How to execute this tool from Travis CI?
-========================================
+## How to execute this tool from Travis CI?
 
 To execute `aspell` from Travis CI, you need to install this apt package in the Travis container. To do so, add these lines in your `.travis.yml` file:
 
@@ -99,8 +97,7 @@ For example, if you want to remove your code blocks from your markdown file, you
 cat your_file.md | sed  -n '/^```/,/^```/ !p'
 ```
 
-How to send the results to Github pull request?
-===============================================
+## How to send the results to Github pull request?
 
 We don't want this script to block the reviewers to merge the pull request, so the first thing to do is to add `exit 0` at the end of the script that will be executed from Travis CI. Otherwise if an error code is returned by the script, Travis will mark the pull request status as failing, and will block the user from merging this pull request.
 
@@ -123,8 +120,7 @@ curl -i -H "Authorization: token $GITHUB_TOKEN" \
 - The Github token should be hidden and not hard-coded in your script, so you should add it in an environment variable in the Travis settings. To do that, go on this page: [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings)
 - The environment variable `$TRAVIS_PULL_REQUEST` is automatically available in the Travis container and corresponds to the identification number of your pull request related to the current Travis build.
 
-Conclusion
-==========
+## Conclusion
 
 If you want to see the full script that we use for our blog, it's [there](https://github.com/eleven-labs/blog.eleven-labs.com/blob/master/bin/check-spelling.sh).
 

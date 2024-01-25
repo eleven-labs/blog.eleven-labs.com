@@ -23,39 +23,39 @@ keywords:
 ---
 Nous avons assisté à la 5ème édition de la dotScale (2017) qui se tenait cette année à Paris. Cette édition se déroulait dans le Théâtre de Paris et nous tenons à saluer les partenaires et volontaires pour l’organisation de cette conférence qui s’est très bien déroulée.
 
-# Introduction
+## Introduction
 
 Beaucoup de monde dans ce théâtre et beaucoup de stands sponsors/partenaires variés entre outils de monitoring, Google Cloud Platform, outils publicitaires ou de réservation en ligne.
 
-Côté conférences, beaucoup de contenu autour du scaling d'applications, de bases de données, mais aussi certaines très intéressantes sur des sujets annexes comme la gestion de crise en production sur de grosses infrastructures.
+Côté conférences, beaucoup de contenu autour du scaling d'applications, de bases de données, mais aussi certaines très intéressantes sur des sujets annexes comme la gestion de crise en production sur de grosses infrastructures.
 
 Si vous n’avez pas pu y participer, pas de panique, nous vous avons préparé un retour sur les talks ayant eu lieu lors de cette édition :
 
-## Benjamin Hindman - Co-créateur d'Apache Mesos et Co-fondateur de Mesosphere
+### Benjamin Hindman Co-créateur d'Apache Mesos et Co-fondateur de Mesosphere
 
 Benjamin nous décrit dans ce talk le fonctionnement d'Apache Mesos et de ce que sa société Mesosphere peut mettre en place.
 
-Il faut avant tout connaitre l'utilité d'Apache Mesos : il s'agit d'un outil permettant de gérer les ressources d'un datacenter (en tout cas plusieurs machines) afin de permettre l'exécution d'applications sur un système distribué.
+Il faut avant tout connaitre l'utilité d'Apache Mesos : il s'agit d'un outil permettant de gérer les ressources d'un datacenter (en tout cas plusieurs machines) afin de permettre l'exécution d'applications sur un système distribué.
 
 Ainsi, Apache Mesos gère les ressources dont vos applications ont besoin telles que le CPU, la RAM, les IO pour stockage de données, etc ...
 
-Mesosphere vient ensuite avec la couche OS s'appuyant sur Apache Mesos permettant de gérer au mieux vos applications et vos ressources.
+Mesosphere vient ensuite avec la couche OS s'appuyant sur Apache Mesos permettant de gérer au mieux vos applications et vos ressources.
 
-## Neha Narkhede  - Co-créatrice d'Apache Kafka et CTO de Confluent
+### Neha Narkhede  - Co-créatrice d'Apache Kafka et CTO de Confluent
 
-Neha dans ce talk nous a présenté pourquoi et comment passer d'un système d'information en "spaghetti" (avec des échanges de flux entre toutes les applications, bases de données et autres) en un système d'information centralisé grâce à Apache Kafka.
+Neha dans ce talk nous a présenté pourquoi et comment passer d'un système d'information en "spaghetti" (avec des échanges de flux entre toutes les applications, bases de données et autres) en un système d'information centralisé grâce à Apache Kafka.
 
-Apache Kafka va en effet permettre de centraliser tous les événements déclenchés par vos applications et de permettre aux applications ou encore bases de données ou outils variés de réagir au déclenchement de ceux-ci. Les échanges de votre SI seront ainsi beaucoup mieux organisés et surtout il vous sera plus simple de les suivre.
+Apache Kafka va en effet permettre de centraliser tous les événements déclenchés par vos applications et de permettre aux applications ou encore bases de données ou outils variés de réagir au déclenchement de ceux-ci. Les échanges de votre SI seront ainsi beaucoup mieux organisés et surtout il vous sera plus simple de les suivre.
 
-L'exemple devient beaucoup plus parlant lorsque Neha s'appuie sur le cas de LinkedIN qui échange plus de 1 400 000 000 000 d'événements par jour.
+L'exemple devient beaucoup plus parlant lorsque Neha s'appuie sur le cas de LinkedIN qui échange plus de 1 400 000 000 000 d'événements par jour.
 
-De plus, l'usage d'Apache Kafka devient de plus en plus simple grâce à son API d'interconnexion qui dispose aujourd'hui d'un grand nombre de connecteurs tels que Cassandra, Oracle, ElasticSearch, Mysql, MongoDB, Hadoop, ...
+De plus, l'usage d'Apache Kafka devient de plus en plus simple grâce à son API d'interconnexion qui dispose aujourd'hui d'un grand nombre de connecteurs tels que Cassandra, Oracle, ElasticSearch, Mysql, MongoDB, Hadoop, ...
 
-*Les slides sont à disposition ici* : [https://speakerdeck.com/nehanarkhede/the-rise-of-real-time](https://speakerdeck.com/nehanarkhede/the-rise-of-real-time)
+*Les slides sont à disposition ici* : [https://speakerdeck.com/nehanarkhede/the-rise-of-real-time](https://speakerdeck.com/nehanarkhede/the-rise-of-real-time)
 
-## Adrian Cole - Lead de Zipkin
+### Adrian Cole - Lead de Zipkin
 
-Ce talk d'Adrian portait sur les 3 éléments clés permettant de surveiller vos applications :
+Ce talk d'Adrian portait sur les 3 éléments clés permettant de surveiller vos applications :
 
 * Logger : le fait d'enregistrer les événements de vos applications,
 * Ajouter des métriques : le fait de combiner des données afin d'obtenir une tendance,
@@ -63,38 +63,38 @@ Ce talk d'Adrian portait sur les 3 éléments clés permettant de surveiller 
 
 Pour l'action de logger, il convient de bien structurer le format de vos logs afin de vous permettre de les exploiter au mieux.
 
-Les métriques, quant à elles, sont simplement un nombre indicateur apparaissant à un moment donné. Il est donc important d'avoir l'association de temps avec cette donnée.
+Les métriques, quant à elles, sont simplement un nombre indicateur apparaissant à un moment donné. Il est donc important d'avoir l'association de temps avec cette donnée.
 
-Enfin, il vous faudra passer un identifiant unique de requête entre toutes vos dispositions afin de tracer les échanges entre vos applications.
+Enfin, il vous faudra passer un identifiant unique de requête entre toutes vos dispositions afin de tracer les échanges entre vos applications.
 
-*Les slides sont à disposition ici* : [https://speakerdeck.com/adriancole/observability-3-ways-logging-metrics-and-tracing](https://speakerdeck.com/adriancole/observability-3-ways-logging-metrics-and-tracing)
+*Les slides sont à disposition ici* : [https://speakerdeck.com/adriancole/observability-3-ways-logging-metrics-and-tracing](https://speakerdeck.com/adriancole/observability-3-ways-logging-metrics-and-tracing)
 
-## Ulf Adams - Lead de Bazel
+### Ulf Adams - Lead de Bazel
 
 Bazel est le système de build utilisé par Google sur une petite partie de ses applications pour répondre à une problématique de temps de builds importants, sur certaines applications dont le code source était un unique repository monolithique.
 
-Ulf et son équipe planchent alors sur ce problème de temps de build exponentiel en travaillant en étroite collaboration avec les équipes de développement avec cet outil de build et d'exécution de tests nommé Bazel.
+Ulf et son équipe planchent alors sur ce problème de temps de build exponentiel en travaillant en étroite collaboration avec les équipes de développement avec cet outil de build et d'exécution de tests nommé Bazel.
 
-Parfois même, il est nécessaire d'ajouter des portions de code spécifique permettant d'améliorer les temps de build.
+Parfois même, il est nécessaire d'ajouter des portions de code spécifique permettant d'améliorer les temps de build.
 
-Le mot de la fin de ce talk était d'essayer de sortir le plus possible les librairies qui peuvent être indépendantes dans votre application afin de ne pas avoir à maintenir une base de code énorme.
+Le mot de la fin de ce talk était d'essayer de sortir le plus possible les librairies qui peuvent être indépendantes dans votre application afin de ne pas avoir à maintenir une base de code énorme.
 
-## Aish Raj Dahal - Ingénieur chez PagerDuty
+### Aish Raj Dahal - Ingénieur chez PagerDuty
 
 Ce talk n'est pas évident à retranscrire par écrit car il faut vraiment entendre l'histoire de Aish par soi-même afin de comprendre ce qu'il veut dire.
 
-En effet, ce talk traitait de la gestion de crise lors d'un incident majeur en production : garder son sang froid et considérer les éléments suivants :
+En effet, ce talk traitait de la gestion de crise lors d'un incident majeur en production : garder son sang froid et considérer les éléments suivants :
 
 * Quelles sont les actions à prendre en compte ?
-* Comment diviser les tâches dans l'équipe disponible à ce moment là ? Qui fait quoi ?
+* Comment diviser les tâches dans l'équipe disponible à ce moment là ? Qui fait quoi ?
 * Comment notifier en interne et communiquer au(x) client(s) ?
 * Comment s'y préparer ? et surtout : apprendre de ses erreurs.
 
-Je vous encourage à regarder la vidéo du talk lorsqu'elle sera disponible sur le site des dotConferences car l'orateur était vraiment prenant !
+Je vous encourage à regarder la vidéo du talk lorsqu'elle sera disponible sur le site des dotConferences car l'orateur était vraiment prenant !
 
-*Les slides sont à disposition ici* : [https://speakerdeck.com/aishraj/chaos-management-during-a-major-incident](https://speakerdeck.com/aishraj/chaos-management-during-a-major-incident)
+*Les slides sont à disposition ici* : [https://speakerdeck.com/aishraj/chaos-management-during-a-major-incident](https://speakerdeck.com/aishraj/chaos-management-during-a-major-incident)
 
-## Mitchell Hashimoto - Fondateur Hashicorp
+### Mitchell Hashimoto - Fondateur Hashicorp
 
 Dans ce talk, Mitchell a mis l’accent sur l’aspect central du produit de la suite Hashicorp : Vault ([https://www.vaultproject.io](https://www.vaultproject.io)).
 
@@ -110,7 +110,7 @@ L’objectif principal de ce produit est de donner les moyens aux personnes de s
 
 Petit fait marquant pour l’occasion : Mitchell a profité de sa visite à Paris pour demander sa femme en mariage ([https://twitter.com/mitchellh/status/856202103194353664](https://twitter.com/mitchellh/status/856202103194353664)), tous nos vœux de bonheur !
 
-## James Cammarata - Mainteneur principal d’Ansible
+### James Cammarata - Mainteneur principal d’Ansible
 
 James a commencé très fort son talk en pointant du doigt les erreurs d’ingénieurs qui ont eu pour effet de causer un début de black-out sur Internet ces dernières années.
 
@@ -133,7 +133,7 @@ Autre détail annexe mais “fun” de ce talk : James a développé un module A
 
 Enfin, un point important évoqué lors de l’interview qui a suivie : Ansible Tower ([https://www.ansible.com/tower](https://www.ansible.com/tower)) devrait par la suite être disponible en open-source.
 
-## David Mazières - Chief Scientist chez Stellar et Professeur à l’université de Stanford
+### David Mazières - Chief Scientist chez Stellar et Professeur à l’université de Stanford
 
 Un talk très intéressant mais pas forcément évident à suivre pour tout le monde !
 
@@ -147,17 +147,17 @@ Le protocole, largement utilisé par David -dans la société Stellar pour laque
 
 Plusieurs autorités sont ainsi capables d’authentifier une information.
 
-## Marco Slot - Ingénieur logiciel chez Citus Data
+### Marco Slot - Ingénieur logiciel chez Citus Data
 
 Fort de son expérience chez Citus Data, Marco Slot nous fait part de la difficulté de scaler une base de données SQL, pourtant souvent centrale dans une application. Mais il nous rappelle aussi que difficile n’est pas impossible...
 
-Grâce au système ouvert de PostgreSQL et particulièrement à la mise à disposition d’API permettant de créer des extensions pouvant se brancher à plusieurs niveaux dans l’exécuteur SQL, Marco nous laisse comprendre qu’il est ainsi possible de créer une extension permettant de mettre en place du “sharding” en vue de récupérer des données (par exemple) à partir de plusieurs noeuds PostgreSQL lorsqu’une requête est effectuée.
+Grâce au système ouvert de PostgreSQL et particulièrement à la mise à disposition d’API permettant de créer des extensions pouvant se brancher à plusieurs niveaux dans l’exécuteur SQL, Marco nous laisse comprendre qu’il est ainsi possible de créer une extension permettant de mettre en place du “sharding” en vue de récupérer des données (par exemple) à partir de plusieurs noeuds PostgreSQL lorsqu’une requête est effectuée.
 
 La conclusion de ce talk est sans appel : PostgreSQL, grâce à son système d’extension, ne se cantonne plus à la fonction de simple base de données, mais devient ainsi une plateforme SQL extensible, et surtout scalable.
 
 *Les slides sont à disposition ici* : [https://speakerdeck.com/marcocitus/scaling-out-postgre-sql](https://speakerdeck.com/marcocitus/scaling-out-postgre-sql)
 
-## Andrew Shafer - Directeur de technologie chez Pivotal
+### Andrew Shafer - Directeur de technologie chez Pivotal
 Ce talk est presque de nature philosophique. Pour autant, les propos avancés sont assez denses.
 
 Cette présentation sur le DevOps en général et les termes à la mode comme les “micro-services” nous démontraient qu’il n’est pas possible de pratiquer correctement ces méthodologies sans changer d’organisation et de méthodes de travail.
@@ -170,7 +170,7 @@ Il définit alors la méthodologie “Calms” pour arriver à pratiquer correct
 
 *Les slides sont à disposition ici* : [https://www.slideshare.net/littleidea/the-end-of-the-beginning-devopsdays-denver-2017](https://www.slideshare.net/littleidea/the-end-of-the-beginning-devopsdays-denver-2017)
 
-## Clay Smith - Technologue chez New Relic
+### Clay Smith - Technologue chez New Relic
 
 Clay s’est amusé dans ce talk a rechercher le serveur dans le “serverless”.
 
@@ -190,12 +190,12 @@ Clay montre également que le temps d’exécution varie entre la première lamb
 
 Il conclut ensuite sur le fait qu'idéalement les lambdas sont à utiliser lorsque vous avez des traitements importants à effectuer, de façon occasionnelle en réponse à un événement bien défini qui n’est pas sensible à un temps de latence.
 
-*Les slides sont disponibles ici* : [https://speakerdeck.com/smithclay/searching-for-the-server-in-serverless](https://speakerdeck.com/smithclay/searching-for-the-server-in-serverless)
+*Les slides sont disponibles ici* : [https://speakerdeck.com/smithclay/searching-for-the-server-in-serverless](https://speakerdeck.com/smithclay/searching-for-the-server-in-serverless)
 
-À lire également, l'article sur comment Clay a pu monter un serveur SSH sur une lambda : [https://medium.com/clog/ssh-ing-into-your-aws-lambda-functions-c940cebf7646](https://medium.com/clog/ssh-ing-into-your-aws-lambda-functions-c940cebf7646)
+À lire également, l'article sur comment Clay a pu monter un serveur SSH sur une lambda : [https://medium.com/clog/ssh-ing-into-your-aws-lambda-functions-c940cebf7646](https://medium.com/clog/ssh-ing-into-your-aws-lambda-functions-c940cebf7646)
 
-# Conclusion
+## Conclusion
 
-Nous avons passé une très bonne journée, intense en informations. Les conférences très techniques n'étaient pas forcément évidentes à suivre mais étaient pour autant très intéressantes, et si elles n'arrivent pas toujours à convaincre, elles ont au moins le mérite de faire réfléchir.
+Nous avons passé une très bonne journée, intense en informations. Les conférences très techniques n'étaient pas forcément évidentes à suivre mais étaient pour autant très intéressantes, et si elles n'arrivent pas toujours à convaincre, elles ont au moins le mérite de faire réfléchir.
 
 À l'année prochaine !

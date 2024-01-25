@@ -41,7 +41,7 @@ Ainsi, nous aborderons les points suivants :
 ## Les bases : affichons une carte
 
 Commençons par installer les différentes librairies JS dont nous aurons besoin en lançant la commande suivante :
-``` bash
+```bash
 yarn add leaflet leaflet-easybutton @ansur/leaflet-pulse-icon @ansur/leaflet-pulse-icon devbridge-autocomplete
 ```
 

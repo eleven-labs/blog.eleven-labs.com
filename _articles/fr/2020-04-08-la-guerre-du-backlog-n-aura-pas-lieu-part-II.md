@@ -37,7 +37,7 @@ Alors si la guerre du produit est déclarée, voici trois nouvelles méthodologi
 
 ![]({BASE_URL}/imgs/articles/2020-04-08-la-guerre-du-backlog-n-aura-pas-lieu-part-II/product-warzone.png)
 
-# Tactique numéro 4 : RICE, la bataille de l’impact
+##  Tactique numéro 4 : RICE, la bataille de l’impact
 
 La méthode **RICE** a été créée par l’équipe d’Intercom, plateforme de centralisation des échanges clients, pour ses propres besoins de priorisation produit.
 
@@ -118,7 +118,7 @@ Une fois votre RICE score obtenu pour les différents items de votre backlog, n�
 Cette méthodologie n’est certainement pas à appliquer pour prioriser de petites features ou des user stories. Les 4 niveaux d’analyse nécessaires en font une tactique que l’on privilégiera **pour prioriser de vraies Roadmap Features**. Elle présente cependant le grand avantage de se baser sur du tangible, la portée et l’impact notamment, des fondements solides pour votre priorisation produit !
 
 
-# Tactique numéro 5 : Kano, nous avons les moyens de vous faire parler...
+## Tactique numéro 5 : Kano, nous avons les moyens de vous faire parler...
 
 Vous hésitez entre plusieurs features innovantes pour votre produit et aucun des corps de métier de l'entreprise ne semble s'accorder sur la priorité à donner... On change alors d’angle d’attaque en se concentrant sur les utilisateurs du produit avec le **modèle Kano** !
 
@@ -209,7 +209,7 @@ Pour plus d’information sur l’analyse des résultats, n’hésitez pas à co
 Cette méthodologie, à nouveau, n’est pas forcément adaptée à une priorisation régulière du backlog car elle peut s’avérer très chronophage cependant elle est **extrêmement efficace pour prioriser des nouvelles features** et tester l’appétence des utilisateurs pour ces fonctionnalités, **trouver les fonctionnalités d’excitation, inattendues** qui vont créer une forte rétention client et vous démarquer potentiellement de la concurrence.
 
 
-# Tactique numéro 6 : ruse de Sioux
+## Tactique numéro 6 : ruse de Sioux
 
 Quelques éléments déclencheurs de la guerre :
 
@@ -254,7 +254,7 @@ Le but n’est pas ici de faire un écran de fumée sur le backlog qui doit rest
 Il ne s’agit pas non plus de prioriser uniquement les remontées clients, vos utilisateurs ont toujours des **besoins non exprimés** ou des **besoins qu’ils ne connaissent pas encore** !
 
 
-# CONCLUSION
+## CONCLUSION
 
 Ces trois tactiques ont l’avantage de **mettre les utilisateurs au centre**, que ce soit au travers de l’impact et la portée dans la méthodologie RICE, la satisfaction procurée avec la méthode KANO ou la quantification des remontées utilisateurs dans la dernière proposition d’organisation.
 
@@ -263,7 +263,7 @@ D’autres ateliers de **Story mapping** ou d’**Impact mapping** peuvent être
 Le plus important et on va se répéter ici avec la partie I de cet article, c’est de **trouver la méthode qui fonctionne avec vos parties prenantes, votre équipe, votre produit**. Alors **restez agiles, testez, itérez, changez, mixez les méthodes** en fonction de vos objectifs et de la maturité de votre produit !
 
 
-## RÉFÉRENCES
+### RÉFÉRENCES
 
 [https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers/](https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers/)
 

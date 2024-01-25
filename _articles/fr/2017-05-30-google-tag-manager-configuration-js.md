@@ -15,13 +15,13 @@ keywords:
   - web
 ---
 
-La gestion des "tags" javascript externe peut très vite devenir un vrai calvaire. Si vous regardez les grands sites de médias avec l'extension [Ghostery](https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij?hl=fr) vous remarquerez que chaque site charge environ 20 mouchards, ce qui donne autant de tags javascript. Mais comment contrôler les différentes versions, la publication, les changements ? C'est là que Google Tag Manager intervient.
+La gestion des "tags" javascript externe peut très vite devenir un vrai calvaire. Si vous regardez les grands sites de médias avec l'extension [Ghostery](https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij?hl=fr) vous remarquerez que chaque site charge environ 20 mouchards, ce qui donne autant de tags javascript. Mais comment contrôler les différentes versions, la publication, les changements ? C'est là que Google Tag Manager intervient.
 
-### Pour quoi faire ?
+## Pour quoi faire ?
 
-Vous l'aurez compris, Google Tag Manager va vous servir à contrôler vos tags javascript.  Il vous permet de les stocker tous au même endroit. Aujourd'hui vous les mettez directement dans votre code, ce qui rend contraignant chaque changement car demande souvent une mise en production. En plus de les stocker, vous pouvez aussi les publier à tout moment et Google Tag Manager permet de garder chaque version en mémoire et de rollbacker facilement. L'un des plus gros avantages de Google Tag Manager est qu'il permet de créer et d'utiliser des variables que vous pourrez ensuite utiliser dans votre code, c'est ce que l'on appelle le DataLayer.
+Vous l'aurez compris, Google Tag Manager va vous servir à contrôler vos tags javascript.  Il vous permet de les stocker tous au même endroit. Aujourd'hui vous les mettez directement dans votre code, ce qui rend contraignant chaque changement car demande souvent une mise en production. En plus de les stocker, vous pouvez aussi les publier à tout moment et Google Tag Manager permet de garder chaque version en mémoire et de rollbacker facilement. L'un des plus gros avantages de Google Tag Manager est qu'il permet de créer et d'utiliser des variables que vous pourrez ensuite utiliser dans votre code, c'est ce que l'on appelle le DataLayer.
 
-### Comment l'utiliser ?
+## Comment l'utiliser ?
 
 Vous pouvez vous rendre sur le site de [Google Tag Manager](https://tagmanager.google.com). Il faut alors configurer votre site.
 
@@ -32,7 +32,7 @@ La première chose à configurer est le type de container dont vous avez besoin.
 
 ![]({BASE_URL}/imgs/articles/2017-05-30-google-tag-manager-configuration-js/capture-decran-2017-05-26-a-10.50.52.png)
 
-Vous allez choisir Web. Vous n'avez plus qu'à mettre le script sur votre site. Il s'agit d'un tag javascript classique à poser dans la balise ```<head>``` de votre site.
+Vous allez choisir Web. Vous n'avez plus qu'à mettre le script sur votre site. Il s'agit d'un tag javascript classique à poser dans la balise ```<head>``` de votre site.
 
 ![]({BASE_URL}/imgs/articles/2017-05-30-google-tag-manager-configuration-js/capture-decran-2017-05-26-a-10.53.20.png)
 
@@ -42,7 +42,7 @@ Vous arrivez sur la page d'accueil, dans laquelle vous trouverez les information
 
 Vous pouvez maintenant commencer à utiliser Google Tag Manager.
 
-### Projet de test
+## Projet de test
 
 Maintenant, nous allons faire un mini projet de test. Vous avez seulement besoin d'un serveur web et de quelques pages HTML.
 
@@ -83,7 +83,7 @@ Retournez sur votre page web, vous devriez voir en bas de la page la console de 
 
 ![]({BASE_URL}/imgs/articles/2017-05-30-google-tag-manager-configuration-js/capture-decran-2017-05-27-a-12.52.55.png)
 
-Nous allons poser le premier tag, pour faire simple il s'agira seulement d'un petit <span class="lang:default decode:true crayon-inline ">alert('GTM')</span> . Cliquez sur tag dans la colonne de gauche, puis "New".
+Nous allons poser le premier tag, pour faire simple il s'agira seulement d'un petit <span class="lang:default decode:true crayon-inline ">alert('GTM')</span> . Cliquez sur tag dans la colonne de gauche, puis "New".
 
 ![]({BASE_URL}/imgs/articles/2017-05-30-google-tag-manager-configuration-js/capture-decran-2017-05-27-a-12.56.08.png)
 
@@ -130,7 +130,7 @@ Maintenant nous allons créer une nouvelle page "category.html" avec exactement 
 ```
 Si vous allez sur la page vous devriez avoir la même "alert".
 
-### Comment gérer deux alertes différentes ?
+## Comment gérer deux alertes différentes ?
 
 On va d'abord utiliser les triggers, retournez dans l'interface de Google Tag Manager et cliquez sur triggers dans la colonne de gauche puis "new". Vous arrivez sur une page permettant de créer un trigger. Cliquez "Trigger configuration" et choisissez "Page vue".
 
@@ -162,7 +162,7 @@ Nous allons ajouter une variable, cliquez sur "New", puis sur "variable de confi
 
 ![]({BASE_URL}/imgs/articles/2017-05-30-google-tag-manager-configuration-js/capture-decran-2017-05-27-a-18.23.04.png)
 
-Choisissez "Variable Javascript" et  donnez un nom à votre variable puis sauvegardez.
+Choisissez "Variable Javascript" et  donnez un nom à votre variable puis sauvegardez.
 
 ![]({BASE_URL}/imgs/articles/2017-05-30-google-tag-manager-configuration-js/capture-decran-2017-05-27-a-18.25.42.png)
 
@@ -174,7 +174,7 @@ Retournez dans la configuration de votre tag, et changez l'HTML personnalisé en
 </script>
 ```
 
-Il faut maintenant mettre en place votre "data layer" dans vos pages HTML,  et ajouter vos variables avant l'appel du script Google Tag Manager.
+Il faut maintenant mettre en place votre "data layer" dans vos pages HTML,  et ajouter vos variables avant l'appel du script Google Tag Manager.
 
 ```html
 <html>
@@ -196,7 +196,7 @@ Il faut maintenant mettre en place votre "data layer" dans vos pages HTML,  et 
 </html>
 ```
 
-Vous pouvez donc choisir votre message de l'alerte en donnant la valeur à <span class="lang:default decode:true crayon-inline ">alertMsg</span> . Vous pouvez voir vos variables directement dans la console de debug.
+Vous pouvez donc choisir votre message de l'alerte en donnant la valeur à <span class="lang:default decode:true crayon-inline ">alertMsg</span> . Vous pouvez voir vos variables directement dans la console de debug.
 
 ![]({BASE_URL}/imgs/articles/2017-05-30-google-tag-manager-configuration-js/capture-decran-2017-05-27-a-18.36.39.png)
 
@@ -210,6 +210,6 @@ Vous êtes redirigé sur la page de votre version, vous pouvez retourner sur vot
 
 Les versions permettent, comme pour git, de revenir sur certaines versions et de suivre l'évolution de vos tags.
 
-### En conclusion
+## En conclusion
 
-Google Tag Manager est un outil très complet qui permet enfin de gérer vos tags javascript sans mettre en production votre site. Il existe de nombreuses fonctionnalités que je n'ai pas expliquées, je vous invite à faire un tour dans le produit. Si vous voulez en savoir plus, laissez-moi un commentaire.
+Google Tag Manager est un outil très complet qui permet enfin de gérer vos tags javascript sans mettre en production votre site. Il existe de nombreuses fonctionnalités que je n'ai pas expliquées, je vous invite à faire un tour dans le produit. Si vous voulez en savoir plus, laissez-moi un commentaire.

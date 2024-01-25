@@ -4,7 +4,7 @@ tutorial: graphql-avec-apollo
 slug: resolver-des-queries
 title: Resolver des queries
 ---
-### Création du type Query
+## Création du type Query
 
 Avant de mettre en place les `resolvers` pour les query en lecture, vous devez créer le type query.
 
@@ -36,7 +36,7 @@ const SchemaDefinition = `
 `;
 ```
 
-### Configuration de GraphQL
+## Configuration de GraphQL
 
 Toujours dans le même fichier `schemas.js` vous devez dire à votre serveur GraphQL où est votre schéma.
 Pour cela vous devez ajouter le module `graphql-tools` :
@@ -76,7 +76,7 @@ export default makeExecutableSchema({
 });
 ```
 
-### Ajoutez le resolver
+## Ajoutez le resolver
 
 Ajoutez un fichier `resolver.js` contenant seulement :
 
@@ -84,7 +84,7 @@ Ajoutez un fichier `resolver.js` contenant seulement :
 export const resolvers = {}
 ```
 
-### Activez le serveur
+## Activez le serveur
 
 Il nous reste à indiquer à GraphQL comment récupérer notre schéma.
 Dans le fichier `index.js` vous devez importer ledit schéma :
@@ -115,7 +115,7 @@ Si tout est ok, vous devriez avoir accès à l'url suivante [http://127.0.0.1:30
 
 ![Documentation]({BASE_URL}/imgs/tutorials/2018-03-28-graphql-avec-apollo/documentation.png)
 
-### Création des resolvers
+## Création des resolvers
 
 Si vous essayez la query :
 

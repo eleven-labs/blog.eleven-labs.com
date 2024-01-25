@@ -13,12 +13,11 @@ keywords:
   - dotjs
 ---
 
-DotJs 2013
-==========
+## DotJs 2013
 
 [dotJS](http://www.dotjs.eu/) est une journée consacrée au langage JavaScript, créée par [dotConferences](http://www.dotconferences.eu/), dont le but est d'apporter des conférences du niveau de [TED](http://www.ted.com/) au monde de l'informatique.
 
-### Introduction / Historique
+## Introduction / Historique
 
 JavaScript a été créé en 1995 par Brendan Eich, développeur chez Netscape, comme un langage de script côté serveur. Il portait alors le nom de LiveScript. Netscape travaille ensuite sur une version client du langage qui sera donc déployée sur son navigateur. Quelques jours avant sa sortie, il est renommé en JavaScript en partie à cause de la popularité de la machine virtuelle Java crée par Sun Microsystem et en partie à cause du partenariat entre Netscape et Sun. Oui, "à cause", car ce nom a longtemps desservi ce langage, souvent considéré comme un simple langage de script, un "java simplifié", alors que comme on peut le lire sur les Internets : "Java is to JavaScript as ham is to hamster".
 
@@ -30,7 +29,7 @@ Le JavaScript est également utilisé pour programmer des moteurs 3D, comme la l
 
 L'alliance des technologies HTML, CSS, Javascript, et maintenant WebGL est extrêmement puissante, à tel point qu'on la retrouve également dans l'univers mobile et dans quelques applications desktop, comme l'excellent éditeur de code [Brackets](http://brackets.io/), ou encore Facebook Messenger.
 
-### Présentation de la journée
+## Présentation de la journée
 
 La journée commence par la présentation du problème majeur de JavaScript dans le développement : la confiance que le développeur peut avoir dans son code.
 
@@ -40,7 +39,7 @@ Ce sera d'ailleurs le leitmotiv de cette journée : *Quels sont les outils exist
 
 Par ailleurs, plutôt que de présenter les différents intervenants et résumer leurs conférences, je me limiterai à la description des outils qui nous ont marqué et à la problématique à laquelle ils répondent.
 
-### [Polymer](http://www.polymer-project.org/) présenté par Addi Osmani
+## [Polymer](http://www.polymer-project.org/) présenté par Addi Osmani
 
 > “Polymer is a new type of library for the web, built on top of Web Components, and designed to leverage the evolving web platform on modern browsers.”
 
@@ -58,7 +57,7 @@ L’objectif principal de Polymer est de faire gagner du temps de développement
 
 Si Polymer aiguise votre curiosité, une [FAQ](http://www.polymer-project.org/faq.html) et une [sandbox](http://www.polymer-project.org/tools/sandbox/) sont à disposition sur leur [site](http://www.polymer-project.org/) qui est lui-même fait avec Polymer.
 
-### [TypeScript](http://www.typescriptlang.org/) présenté par John K. Paul
+## [TypeScript](http://www.typescriptlang.org/) présenté par John K. Paul
 
 > “TypeScript is a language for application-scale JavaScript development. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. Any browser. Any host. Any OS. Open Source.”
 
@@ -68,7 +67,7 @@ TypeScript se présente comme une sur-couche de Javascript. Il offre un cadre de
 
 Note : TypeScript est différent de CoffeeScript qui supprime la syntaxe superflue du Javascript tel que les accolades, les parenthèses, les semi-colons.
 
-### [Epic Citadel](http://www.unrealengine.com/html5/) présenté par Brendan Eich
+## [Epic Citadel](http://www.unrealengine.com/html5/) présenté par Brendan Eich
 
 > “Epic Citadel is a free application that showcases the technical capabilities of the award-winning Unreal Engine 3.”
 

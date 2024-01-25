@@ -22,7 +22,7 @@ keywords:
   - fastlane
 ---
 
-# Qu'est-ce que "Fastlane"
+## Qu'est-ce que "Fastlane"
 
 Fastlane est un outil open-source qui permet de faire du **Continuous Delivery** sous IOS et Android.
 Il permet d'automatiser un certain nombre de tâches fastidieuses comme gérer les sreenshots, les certificats, déployer votre app...
@@ -58,9 +58,9 @@ Fini le temps de tout faire à la main !
 
 *Note* : J'ai créé un projet "bidon" avec différents écrans et tests pour cet article.
 
-# Premiers pas
+## Premiers pas
 
-#### Installation
+### Installation
 
 *Prérequis* : ruby >= 2.0
 
@@ -76,7 +76,7 @@ gem "fastlane"
 $ bundle install
 ```
 
-#### Initialisation
+### Initialisation
 
 Lancer la commande suivante :
 
@@ -120,7 +120,7 @@ team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 
 **Fastfile**: Fichier ruby qui définit toutes vos lanes. Une lane est un ensemble d'instructions que vous souhaitez faire éxécuter par Fastlane.
 
-``` ruby
+```ruby
 # Fastfile - J'ai clean le fichier et j'ai créé une lane test
 fastlane_version "2.39.2"
 
@@ -149,7 +149,7 @@ Nous allons partir du principe que je travaille en collaboration avec pleins de 
 Le problème se pose au niveau des certificats et profils de provisionnement.
 Heureusement Fastlane nous met à disposition **Match**.
 
-# Match
+## Match
 
 Match implémente le concept de [codesigning guide](https://codesigning.guide).
 Il permet de créer tous vos certificats et profils de provisionnement dans un compte Git distinct.
@@ -165,7 +165,7 @@ Si vous ne voulez pas révoquer vos certificats existants, mais souhaitez toujou
 * **Cert** : Veillera à ce que vous ayez un certificat valide et sa clé privée installée sur votre machine.
 * **Sigh** : Veillera à ce que vous ayez un provisioning profile valide installé sur votre machine, qui correspond au certificat installé.
 
-#### Configuration
+### Configuration
 
 ```
 $ bundle exec fastlane match init
@@ -238,7 +238,7 @@ exécution et regénère automatiquement le profil de provisionnement si nécess
 
 Vous pouvez utiliser aussi `force: true` pour générer le profil de provisionnement à chaque exécution.
 
-#### Paramétrer Xcode
+### Paramétrer Xcode
 
 Avec Xcode 8 vous pouvez définir un profil de provisionnement pour chaque target au lieu d'un provisioning profile UUID.
 En faisant ça, Xcode sélectionne automatiquement le dernier provisioning profile corresponddant à son nom.
@@ -250,7 +250,7 @@ Vous pouvez spécifier quel profil de provisionnement utiliser dans `General` ta
 
 On vient de voir avec quelle facilité on gère les certificats et profils de provisionnement. Maintenant on va s'attaquer au push notification profile.
 
-# PEM
+## PEM
 
 Si vous avez lu mon précédent article [Envoyer des push notifications via Amazon SNS en Swift 3]({BASE_URL}/fr/envoyer-push-notifications-amazon-sns-swift-3/), vous avez vite compris que c'était super "galère" de faire ceci à la main.
 
@@ -298,7 +298,7 @@ Et hop, un jeu d'enfant !
 
 ![]({BASE_URL}/imgs/articles/2017-07-17-fastlane-ios/fastlane_pem_apple.jpg)
 
-# Scan
+## Scan
 
 Comme vous l'avez vu au début de l'article, `scan` permet de lancer tous les tests (sur simulateur ou device) de votre projet.
 Dans le projet que je me suis créé, j'ai bien évidemment ajouté quelques tests afin de vous montrer ce qu'on peut faire.
@@ -351,7 +351,7 @@ end
 ![]({BASE_URL}/imgs/articles/2017-07-17-fastlane-ios/fastlane_scan_success.png)
 ![]({BASE_URL}/imgs/articles/2017-07-17-fastlane-ios/fastlane_scan_error.png)
 
-# Snapshot - Frameit
+## Snapshot - Frameit
 
 Si vous devez manuellement créer des screenshots pour 20 langues x 6 devices x 5 screenshots (car 5 écrans différents) = 600 screenshots. On voit tout de suite la quantité de travail énorme que demandent les screenshots.
 
@@ -581,7 +581,7 @@ Créer un fichier `Framefile.json` dans le dossier screenshots.
 
 Avouez c'est bad ass ? :)
 
-# Gym
+## Gym
 
 Gym build et package vos applications iOS pour vous. Il génére un fichier `ipa` ou `app` .
 
@@ -631,7 +631,7 @@ $ bundle exec fastlane produce -u MAIL -a com.eleven.fastlane.debug --skip_itc
 
 Avouez que c'est plus facile que de le faire soi-même. Maintenant on va voir comment envoyer notre fichier ipa pour le tester via TestFlight.
 
-# Pilot
+## Pilot
 
 Pilot permet de :
 
@@ -671,7 +671,7 @@ $ bundle exec fastlane buildTestFlight
 1. Si comme moi vous avez une double identification via votre téléphone, il suffit de se connecter [ici](https://appleid.apple.com/account/manage) et de générer un password dans la section Security > APP-SPECIFIC PASSWORDS
 2. Vérifiez sur votre Itunes Connect le bundle identifier renseigné.
 
-# Deliver
+## Deliver
 
 Il est temps de mettre en prod votre application sur Itunes Connect.
 
@@ -697,7 +697,7 @@ Vous devriez avoir un nouveau folder metadata qui vient d'apparaître.
 
 À vous maintenant de mettre à jour ces metadata.
 
-# Conclusion
+## Conclusion
 
 Si vous n'êtes pas tombés amoureux de Fastlane je ne comprends pas, vous aimez souffrir :)
 On voit très rapidement que ce petit bijou nous fait gagner un temps monstre et nous évite de faire une erreur humaine (l'avantage de l'automatisation).

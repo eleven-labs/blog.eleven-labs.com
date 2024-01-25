@@ -15,7 +15,7 @@ keywords:
   - closure
 ---
 
-### Introduction
+## Introduction
 
 Hi astronauts, today we will keep talking about mobile development, and as always native style.
 
@@ -38,7 +38,7 @@ As you may know in the iOS universe, we can use both Delegates and Closures. Usu
 
 With those 2 components, you cannot use block/closure, and you have to use a good old delegate. Usually it's not really a big issue and you can just work like that. But let's say that you have to work with many of those components on a single screen, in this case the code can start to be really messy. You'll find yourself with some huge classes, and it really starts to be difficult to produce some beautiful and elegant code. What I would like to show you today is a solution, that in my opinion is pretty clean and easy to set up.
 
-### A little setup
+## A little setup
 
 As in the two previous articles, we will proceed with a GET call on a URL and build a system that will notify us in case of both success and error. We will go a little bit faster than in the first article, because those are notions that you are already suppose to master.
 
@@ -52,7 +52,7 @@ Let's do this in 3 steps:
 - Write the blocks/closures
 - Write a class that will inherit from the protocol and that contains our 2 blocks/closures as attributes.
 
-##### Objective-C
+### Objective-C
 
 ```Objective-C
 typedef void (^successBlock)();
@@ -241,7 +241,7 @@ As I told you at the beginning of the article, this solution comes for a specifi
 - Reduced methods
 - Thinner handling for the callbacks of the **Delegate**
 
-### Conclusion
+## Conclusion
 
 This solution is not perfect, but still quite elegant and is not too heavy to implement.
 Then, I'll let you test it and give me some feedback in the comments section.

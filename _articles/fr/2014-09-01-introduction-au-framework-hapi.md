@@ -22,8 +22,7 @@ HAPI est un framework Node.js développé par ‘Walmart Labs’. Il gagne aujou
 
 Dans cet article, je vais couvrir l’initialisation d’une application,  la création d’un serveur, la déclaration des routes et enfin je me centrerai sur certains points qui m’ont particulièrement intéressé dans son utilisation.
 
-I **L’initialisation de l’application**
-=======================================
+## I **L’initialisation de l’application**
 
 Commençons par créer un dossier , s’y déplacer et débuter un projet à l’aide de *npm init*
 
@@ -38,8 +37,7 @@ Après cette simple initialisation, nous allons télécharger Hapi et le sauvega
 npm install hapi@6.5 --save
 ```
 
-II **La création du serveur**
-=============================
+## II **La création du serveur**
 
 La création du serveur est on ne peut plus simple. Ouvrons notre fichier point d’entrée (dans mon cas, je l’ai appelé *app.js*, libre à vous de l‘appeler comme vous le souhaitez !)
 
@@ -59,8 +57,7 @@ Revenons sur la console, lançons un node app.js  pour y voir apparaître le mes
 
 En revanche, si l’on se rend à l’adresse http://localhost:3000 depuis un navigateur, on tombe sur une 404 … Il est temps de créer notre première route !
 
-III Le Routing
-==============
+## III Le Routing
 
 La création de routes est, elle aussi, facile à mettre en oeuvre. Pour ce faire, nous allons recourir à la méthode route de notre serveur Hapi. Cette dernière prend un certain nombre de paramètres, dont 3 au minimum doivent être renseignés (method, path et handler) . Reprenons notre fichier app.js et ajoutons ces lignes :
 
@@ -108,8 +105,7 @@ La réponse du serveur :
 
 Un petit plus, au fur et à mesure que grandit notre projet et / ou que l’on crée des routes dans des fichiers différents, il est difficile de savoir quelles sont toutes les routes déclarées. Les créateurs du framework ont pensé à tout ! Notre objet *server* dispose d’une méthode *table* qui, une fois appelée, nous permet de voir en un clin d’oeil l’ensemble des routes disponibles sur le serveur !
 
-IV Validation
-=============
+## IV Validation
 
 En tant que développeurs, nous avons régulièrement besoin de valider les paramètres passés dans une URL. Spumko, l’équipe qui réalise entre autres le framework, nous met à disposition un module facilitant cette validation, Joi.
 
@@ -160,8 +156,7 @@ Si nous essayons des mauvais paramètres, par exemple <http://localhost:3000/hel
 De même, nous avons ajouté des critères de validation pour la query string. Ainsi, si nous tentons d’accéder à cette route sans renseigner *age*, Hapi nous renvoie une 404 car nous avons exigé qu‘il devait être ‘required()’ .
 Joi est un module complet que je ne vais pas détailler ici. Pour vous mettre l’eau à la bouche, sachez qu’il est possible d’introduire des petits algorithmes (par exemple, on pourra valider un paramètre en fonction de ce qui a été passé pour un autre paramètre, c’est très utile ! ). Pour une liste exhaustive de ses possibilités, je vous laisse lien vers la documentation : <https://github.com/hapijs/joi>
 
-V Les plugins
-=============
+## V Les plugins
 
 Je vous l’accorde, si je continue à définir de nouvelles routes au sein du même fichier, ce sera bientôt illisible et difficile à maintenir… ! Là encore, Hapi possède une solution pour organiser votre projet. En effet , les plugins viennent à notre rescousse pour structurer notre application en un ensemble d’unités logiques. Avant d’entrer en détail dans la création d’un plugin, il est nécessaire de comprendre que Hapi propose une interface pour regrouper des serveurs, appelée ‘pack’. Chaque serveur Hapi fait partie d’un Pack HAPI (je reviendrai sur ce concept plus tard).
 Pour créer un plugin, on peut soit le faire dans un dossier de son choix ou directement dans ‘node\_modules’. Personnellement, je préfère la seconde option.
@@ -230,8 +225,7 @@ server.pack.register(
 Relançons notre application … cette fois-ci, cela fonctionne, rendez-vous l’adresse http://localhost:3000/plugin-example pour confirmation !
 Avez-vous aperçu l’objet options que nous avons passé en paramètre ? On va les récupérer au niveau de notre plugin dans la fonction register !
 
-VI Les packs
-============
+## VI Les packs
 
 Un objet Pack représente une collection de serveurs qu’on regroupe ensemble pour former une seule et unique unité logique. L’objectif principal de cet objet est d’offrir une interface lorsqu’on travaille avec les plugins.
 
@@ -313,8 +307,7 @@ Hapi.Pack.compose(manifest, function (err, pack) {
 
 Avec cette méthode, on a créé un objet *manifest*, qui spécifie la configuration de notre pack et les plugins que l’on souhaite enregistrer. On a ainsi isolé toute notre configuration ! (que l’on pourra bien évidemment placer dans un autre fichier).
 
-VII Conclusion
-==============
+## VII Conclusion
 
 J’espère que je vous ai donné envie d’essayer cet excellent mais méconnu framework !  Je ne suis pas rentré dans tous les détails, c’est pourquoi, je vous conseille d’approfondir cette introduction en consultant la documentation officielle, qui est très bien écrite et régulièrement mise à jour: <https://github.com/hapijs/hapi/blob/master/docs/Reference.md>
 

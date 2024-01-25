@@ -65,7 +65,7 @@ Plusieurs choses ont changé :
  > **Note:**
  > Si vous avez remarqué on commence déjà à "subir" une implémentation en parlant d'héritage ou de vue alors que le projet est à peine créé, car le SDK impose un certain MVC
 
-# MVC
+## MVC
 
 
 Rien de mieux qu'un schéma pour illustrer une implémentation MVC
@@ -143,7 +143,7 @@ Au final, si l'on veut respecter scrupuleusement cette implémentation, on se re
  - Un code respectant scrupuleusement le MVC n'est pas forcément très lisible car si l'on prend un layout .XML tout seul (ou un modèle) on ne peut pas voir ce qui est affiché, ni comment.
 
 
-# MVP
+## MVP
 
 
 Encore une fois, un schéma pour expliquer l'implémentation d'un MVP
@@ -190,7 +190,7 @@ La présentation, c'est-à-dire celle qui va indiquer quel contenu mettre dans q
  - La vue et le modèle ne sont plus que des "squelettes" et ne contiennent que très peu, voire pas de logique
 
 
-# MVVM
+## MVVM
 
 Enfin le dernier Design Pattern structurant parmi les plus utilisés est le MVVM.
 
@@ -297,7 +297,7 @@ L'un des avantages de cette approche est de proposer du code plus clair et lisib
  - Sur un projet existant, une migration s'impose voir une refonte, ce qui peut prendre du temps.
 
 
-# Design Patterns non structurants
+## Design Patterns non structurants
 
 Les Design Pattern qui ne sont pas structurants, c'est-à-dire qui ne façonnent pas entièrement l'architecture d'une application, n'ont pas de particularité d'implémentation sur Android.
 
@@ -305,7 +305,7 @@ Par exemple, le Singleton est implémenté exactement de la même manière que s
 
 Concernant le Design Pattern Observer, il est très répandu grâce à la profusion des listeners (Cf. [Android : Pourquoi j'aime les Listeners]({BASE_URL}/fr/android-listeners/)), mais aussi et surtout aux librairies tels qu'[Otto](http://square.github.io/otto/) de Square, [EventBus](https://github.com/greenrobot/EventBus) de GreenRobot ou même encore [Guava](https://github.com/google/guava/wiki/EventBusExplained) de Google.
 
-# Conclusion
+## Conclusion
 
 Android nous offre énormément de possibilités quant aux moyens de bien structurer notre code et de bien l'organiser. Je suis, à titre personnel, un fan du Databinding qui permet enfin de donner un peu plus d'intelligence à mes layouts et pouvoir explicitement lui indiquer comment et avec quoi se remplir.
 

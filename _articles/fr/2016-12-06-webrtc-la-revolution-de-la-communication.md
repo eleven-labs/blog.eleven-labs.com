@@ -43,8 +43,7 @@ Bon OK, je vois bien que je suis en train de vous saouler avec *l'histoire du We
 
 Mais rassurez-vous, ça va rapidement devenir intéressant !
 
-Comment ça marche ?
-===================
+## Comment ça marche ?
 
 Le **WebRTC** est exploitable dans le navigateur au travers de plusieurs nouvelles API JavaScript :
 
@@ -172,8 +171,7 @@ On voit que cela devient légèrement plus complexe d'arriver à ses fins, et ce
 
 En ce qui concerne le serveur de liaison *STUN/ICE*, si on ne passe pas par un service de *signaling* dédié, Google fournit une instance publique à l'adresse `stun.l.google.com:19302`. Il existe également une application serveur open-source développée en *C/C++* pour déployer sa propre instance *STUN/ICE* et *TURN* : <https://github.com/coturn/coturn>.
 
-Conclusion
-==========
+## Conclusion
 
 Nous n'avons fait que gratter la surface de ce qui est possible avec le **WebRTC**. La technologie pousse à imaginer une nouvelle forme d'application Web et le meilleur dans tout ça c'est qu'elle est exploitable dès aujourd'hui !
 

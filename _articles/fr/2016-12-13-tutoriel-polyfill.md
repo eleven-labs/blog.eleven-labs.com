@@ -14,17 +14,17 @@ keywords:
   - web
 ---
 
-Avec l'avènement du js natif, et la multiplication des navigateurs et des environnements (mobile, desktop, tablette), on entend de plus en plus dans nos open-spaces :
+Avec l'avènement du js natif, et la multiplication des navigateurs et des environnements (mobile, desktop, tablette), on entend de plus en plus dans nos open-spaces :
 
 > «-Dis, tu connaîtrais pas un polyfill ?»
 
 Mais c'est qui ce polyfill ?
 
-### Définition :
+## Définition :
 
 Un polyfill, c'est simple. C'est un ensemble de fonctions permettant de simuler, sur un [navigateur web](https://fr.wikipedia.org/wiki/Navigateur_web) ancien, des fonctionnalités qui ne sont pas nativement disponible. (cf : Wikipédia)
 
-En clair, c'est comme à l'époque avec le double CSS, un spécialement pour IE et un pour le reste. Aujourd'hui les navigateurs n'implémentent pas à la même vitesse les nouvelles fonctionnalités disponibles par javascript natif. Nous devons alors utiliser un polyfill pour que celle-ci soient disponibles partout.
+En clair, c'est comme à l'époque avec le double CSS, un spécialement pour IE et un pour le reste. Aujourd'hui les navigateurs n'implémentent pas à la même vitesse les nouvelles fonctionnalités disponibles par javascript natif. Nous devons alors utiliser un polyfill pour que celle-ci soient disponibles partout.
 Et là je vous entend me dire :
 
 > «-Mais c'est pas ce que Jquery fait déjà ?»
@@ -34,16 +34,16 @@ Encore une fois, vous allez me dire :
 
 > «-Mais alors, c'est quoi le polyfill ?»
 
-C'est simple. Prenons la fonction native javascript "[fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch)", qui permet d'appeler des urls en XHR. Si vous allez sur le site [Can I Use ?](http://caniuse.com/#search=fetch), vous verrez que vous ne pouvez pas utiliser cette fonction sur IOS 10.  Alors vous pouvez utiliser la fonction "ajax" de Jquery mais en échange vous avez chargé l'ensemble de Jquery et n'utilisez pas la puissance de votre navigateur. C'est là qu'il vous faut le polyfill "fetch" disponible ici [https://github.com/github/fetch](https://github.com/github/fetch). Il vous suffit de l'importer et alors la fonction "fetch" sera disponible pour l'ensemble des navigateurs, même IOS 10.
+C'est simple. Prenons la fonction native javascript "[fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch)", qui permet d'appeler des urls en XHR. Si vous allez sur le site [Can I Use ?](http://caniuse.com/#search=fetch), vous verrez que vous ne pouvez pas utiliser cette fonction sur IOS 10.  Alors vous pouvez utiliser la fonction "ajax" de Jquery mais en échange vous avez chargé l'ensemble de Jquery et n'utilisez pas la puissance de votre navigateur. C'est là qu'il vous faut le polyfill "fetch" disponible ici [https://github.com/github/fetch](https://github.com/github/fetch). Il vous suffit de l'importer et alors la fonction "fetch" sera disponible pour l'ensemble des navigateurs, même IOS 10.
 Et maintenant, je vous entend encore:
 
 > «-Je trouve pas mon polyfill, alors comment je le développe ?»
 
-### Comment implémenter un polyfill ?
+## Comment implémenter un polyfill ?
 
 Nous allons faire simple, aujourd'hui nous voulons utiliser la fonction "Object.assign()" permettant de créer un nouvel object js.
 
-Si vous allez sur [Can I Use](http://caniuse.com/) vous trouvez la page [suivante](http://kangax.github.io/compat-table/es6/#test-Object_static_methods_Object.assign) :
+Si vous allez sur [Can I Use](http://caniuse.com/) vous trouvez la page [suivante](http://kangax.github.io/compat-table/es6/#test-Object_static_methods_Object.assign) :
 
 ![]({BASE_URL}/imgs/articles/2016-12-13-tutoriel-polyfill/capture-decran-2016-12-11-a-17.38.08.png)
 

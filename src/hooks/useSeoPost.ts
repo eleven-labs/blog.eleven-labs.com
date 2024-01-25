@@ -6,18 +6,13 @@ import { generatePath } from '@/helpers/routerHelper';
 import { useTitle } from '@/hooks/useTitle';
 import { PostPageData } from '@/types';
 
-export type UseSeoOptions = {
-  title: string;
-  post: PostPageData;
-};
-
-export const useSeoPost = ({ title, post }: UseSeoOptions): void => {
+export const useSeoPost = (post: PostPageData): void => {
   const { i18n } = useTranslation();
-  useTitle(title);
+  useTitle(post?.seo?.title ?? post.title);
   useMeta({ name: 'author', content: post.authors.map((author) => author.name).join(', ') });
-  useMeta({ name: 'description', content: post.excerpt });
+  useMeta({ name: 'description', content: post?.seo?.description ?? post.excerpt });
   useMeta({ property: 'og:type', content: 'article' });
-  useMeta({ property: 'og:description', content: post.excerpt });
+  useMeta({ property: 'og:description', content: post?.seo?.description ?? post.excerpt });
 
   useScript({
     type: 'application/ld+json',

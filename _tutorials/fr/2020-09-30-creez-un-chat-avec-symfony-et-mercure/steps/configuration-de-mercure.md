@@ -9,7 +9,7 @@ déjà connectés au chat.
 
 Dans un premier temps, il nous faut le package composer qui nous permettra d'interagir avec notre Hub Mercure.
 
-### Installation
+## Installation
 
 Vous avez sans doute remarqué des warnings dans votre console à propos de variables d'environnement Mercure.
 
@@ -42,7 +42,7 @@ Plusieurs points ici :
 
 Ici donc, admettons que les topics soient nos différents channels. Ces derniers lanceront des updates au Hub à chaque nouveau message envoyé, en étant identifiés par un topic que nous définirons plus loin.
 
-### Autoriser notre application à publier sur le Hub
+## Autoriser notre application à publier sur le Hub
 Si vous vous rappelez bien de l'article de découverte de Mercure, vous savez qu'il est nécessaire de générer un JWT Token afin de pouvoir publier sur le Hub.
 
 Afin de le générer depuis la clé secrète précisée dans le `.env`, nous allons utiliser le package `lcobucci/jwt`.

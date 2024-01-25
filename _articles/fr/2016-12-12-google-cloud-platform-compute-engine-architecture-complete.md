@@ -23,7 +23,7 @@ keywords:
 Si vous avez suivi les deux premiers articles sur Google Cloud Platform, vous êtes capable de mettre en production un site rapidement et êtes capable de scaler automatiquement selon le trafic. Mais tout cela n'est possible qu'avec les éléments pré-installés de Google Cloud Platform. Comment créer sa propre configuration ? Réinstaller un serveur facilement ? Scaler automatiquement ?
 Dans ce tutoriel nous allons seulement installer un apache, mais vous pouvez appliquer tout ceci avec n'importe quelle installation.
 
-### Etape 1, créer votre configuration :
+## Etape 1, créer votre configuration :
 
 Allez dans le menu "Compute Engine", disponible [ici](https://console.cloud.google.com/compute/instances).
 
@@ -45,7 +45,7 @@ Ouvrez le lien "Gestion, disque, réseau et clés SSH", et dans l'onglet Disque 
 
 Cliquez alors sur "Créer".
 
-### Etape 2, installer apache :
+## Etape 2, installer apache :
 
 Allez dans "Instance de VM" et attendre que la machine soit prête.
 
@@ -63,19 +63,19 @@ sudo apt-get install apache2;
 sudo /etc/init.d/apache2 restart;
 ```
 
-Une fois terminé, si vous cliquez sur l'IP externe fournie dans l'interface "Instance de VM", vous devriez voir la page apache par défaut.
+Une fois terminé, si vous cliquez sur l'IP externe fournie dans l'interface "Instance de VM", vous devriez voir la page apache par défaut.
 
 ![Apache - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.25.36.png)
 
 Comme vous pouvez le voir l'installation prend un certain temps, et nous ne voulons pas le refaire pour chaque machine dont nous avons besoin. Nous allons donc nous servir de cette machine comme template pour d'autres machines.
 
-### Etape 3, création d'un template de machine :
+## Etape 3, création d'un template de machine :
 
-Retour dans l'interface "Instance de VM", vous allez supprimer la machine en sélectionnant la VM puis cliquer sur supprimer.
+Retour dans l'interface "Instance de VM", vous allez supprimer la machine en sélectionnant la VM puis cliquer sur supprimer.
 
 ![Supprimer une instance - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.29.17.png)
 
-Allez dans le menu "Images" et cliquez sur "Créer une image".
+Allez dans le menu "Images" et cliquez sur "Créer une image".
 
 ![Créer une image - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.32.54.png)
 
@@ -97,9 +97,9 @@ Dans disque de démarrage, vous devez choisir l'image que vous venez de créer, 
 ![Image perso - Google Cloud Platform]({BASE_URL}/imgs/articles/2016-12-12-google-cloud-platform-compute-engine-architecture-complete/capture-decran-2016-11-30-a-18.41.14.png)
 
 Et n'oubliez pas de cocher la case "Autoriser le trafic HTTP". Puis cliquez sur "Créer".
-Pour vérifier que tout est bon, nous allons créer de nouvelles instances via ce template.
+Pour vérifier que tout est bon, nous allons créer de nouvelles instances via ce template.
 
-### Etape 4, création d'un groupe d'instance:
+## Etape 4, création d'un groupe d'instance:
 
 Allez dans le menu "Groupes d'instances" puis cliquez sur "Créer un groupe d'instances".
 
@@ -124,7 +124,7 @@ Si vous retournez dans le menu "Instances de VM" vous pourrez voir les trois mac
 
 À partir de maintenant, nous avons un groupe d'instances qui va scaler selon le trafic. Seulement, le trafic arrive sur les trois Ips, il nous faut donc un "load balancer" devant les machines pour envoyer le trafic sur le groupe d'instances.
 
-### Etape 5, le load balancer :
+## Etape 5, le load balancer :
 
 Changez de menu et allez dans "réseau".
 
@@ -170,9 +170,9 @@ Toujours dans cette interface, dans l'onglet surveillance vous pouvez suivre les
 
 Et voila vous avez une architecture scalable automatiquement avec un load balancer comme un vrai architecte réseau.
 
-### Etape 6, on supprime les machines :
+## Etape 6, on supprime les machines :
 
-Avant de vous quitter, nous allons supprimer les machines.  Vous devez le faire dans l'ordre suivant car sinon les machines se relanceront automatiquement.
+Avant de vous quitter, nous allons supprimer les machines.  Vous devez le faire dans l'ordre suivant car sinon les machines se relanceront automatiquement.
 
 - Supprimez le load balancer
 - Puis dans le menu avancé de l'équilibrage des charges supprimez le service backend

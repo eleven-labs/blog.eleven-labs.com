@@ -112,21 +112,27 @@ export const markdownToHtml = (content: string): string => {
 
           return <Box {...(props as AsProps)}>{children}</Box>;
         },
-        h2: ({ children }): React.JSX.Element => (
-          <Heading as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
-            {children}
-          </Heading>
-        ),
-        h3: ({ children }): React.JSX.Element => (
-          <Heading as="h3" size="m" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
-            {children}
-          </Heading>
-        ),
-        h4: ({ children }): React.JSX.Element => (
-          <Heading as="h4" size="s" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
-            {children}
-          </Heading>
-        ),
+        h2: ({ children }): React.JSX.Element => {
+          return (
+            <Heading as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
+              {children}
+            </Heading>
+          );
+        },
+        h3: ({ children }): React.JSX.Element => {
+          return (
+            <Heading as="h3" size="m" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
+              {children}
+            </Heading>
+          );
+        },
+        h4: ({ children }): React.JSX.Element => {
+          return (
+            <Heading as="h4" size="s" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
+              {children}
+            </Heading>
+          );
+        },
         p: ({ node, ...props }): React.JSX.Element => <Text as="p" mb="xxs" {...(props as AsProps)} />,
         li: ({ node, ...props }): React.JSX.Element => <Text as="li" mb="xxs" {...(props as AsProps)} />,
         strong: ({ children }): React.JSX.Element => (
@@ -155,9 +161,10 @@ export const markdownToHtml = (content: string): string => {
         code: ({ node, className, children, ...props }): React.JSX.Element => {
           const match = /language-(\w+)/.exec(className || '');
           if (className && className.match('mermaid')) {
+            const code: string = (children as string[]).join(' ');
             return (
               <Flex as="pre" justifyContent="center" alignItems="center" className="mermaid">
-                {children}
+                {code}
               </Flex>
             );
           }

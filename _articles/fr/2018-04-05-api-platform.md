@@ -43,7 +43,7 @@ git checkout tags/v2.2.5
 ```
 Ce fichier docker-compose.yml à la racine du projet, ne nous laisse pas indifférent,
 allons donc poper ces conteneurs docker de ce pas.
-(mes versions : [docker](https://docs.docker.com/install/) :17.05.0-ce  [docker-compose](https://docs.docker.com/compose/install/) : 1.18.0)
+(mes versions : [docker](https://docs.docker.com/install/) :17.05.0-ce  [docker-compose](https://docs.docker.com/compose/install/) : 1.18.0)
 
 ```shell
 docker-compose up -d
@@ -55,7 +55,7 @@ Passons rapidement en vue les images créées :
 docker-compose ps
 ```
 
-Il y a donc 6 conteneurs docker :
+Il y a donc 6 conteneurs docker :
 
  - un conteneur php, pour l'api avec PHP 7.2 et php-fpm
  - un conteneur db, pour la base de donnée [PostgreSQL](https://www.postgresql.org/)
@@ -71,7 +71,7 @@ Ouvrons notre navigateur pour aller à l'url [https://localhost](https://localho
 
 Vous allez devoir accepter d'ajouter une exception de sécurité dans votre navigateur par rapport au certificat TLS qui a été généré au moment de l'installation.
 
-Si vous voyez cette belle page d'accueil, c'est que tout s'est bien passé !
+Si vous voyez cette belle page d'accueil, c'est que tout s'est bien passé !
 
 ![homepage]({BASE_URL}/imgs/articles/2018-04-05-api-platform/ready.png)
 
@@ -168,11 +168,11 @@ class ShoppingItem
 }
 ```
 
-Et voilà, notre API est ready !
+Et voilà, notre API est ready !
 
 Allons à cette adresse  [https://localhost:8443](https://localhost:8443)
 
-Vous devriez voir cette page, qui décrit toutes les actions possibles sur cette ressource :
+Vous devriez voir cette page, qui décrit toutes les actions possibles sur cette ressource :
 
 ![docapi]({BASE_URL}/imgs/articles/2018-04-05-api-platform/apidoc.png)
 
@@ -194,7 +194,7 @@ Rien de mieux pour commencer à se faire les dents sur ce super langage.
 
 ## Le Backend
 
-API Platform intègre un backend utilisant la librairie [Admin On Rest](https://github.com/marmelab/admin-on-rest), un client en React avec [material design](https://github.com/material-components/material-components-web) qui se bind directement sur une api, et construit ses vues en fonction des ressources disponibles et des opérations permises :
+API Platform intègre un backend utilisant la librairie [Admin On Rest](https://github.com/marmelab/admin-on-rest), un client en React avec [material design](https://github.com/material-components/material-components-web) qui se bind directement sur une api, et construit ses vues en fonction des ressources disponibles et des opérations permises :
 [https://localhost:444](https://localhost:444)
 
 ![admin]({BASE_URL}/imgs/articles/2018-04-05-api-platform/backend.png)

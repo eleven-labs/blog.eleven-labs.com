@@ -1,6 +1,6 @@
 import { createStaticHandler } from '@remix-run/router';
 import { Request, Response } from 'cross-fetch';
-import { createDispatcher, HoofdProvider } from 'hoofd';
+import { toStatic } from 'hoofd';
 import { i18n } from 'i18next';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -18,7 +18,6 @@ export type RenderOptions = {
 } & Pick<HtmlTemplateProps, 'links' | 'styles' | 'scripts'>;
 
 export const render = async (options: RenderOptions): Promise<string> => {
-  const dispatcher = createDispatcher();
   const { query } = createStaticHandler(routes, { basename: BASE_URL });
   const context = await query(options.request);
 
@@ -29,15 +28,13 @@ export const render = async (options: RenderOptions): Promise<string> => {
 
   const content = ReactDOMServer.renderToString(
     <React.StrictMode>
-      <HoofdProvider value={dispatcher}>
-        <RootContainer i18n={options.i18n}>
-          <StaticRouterProvider router={router} context={context} nonce="the-nonce" />
-        </RootContainer>
-      </HoofdProvider>
+      <RootContainer i18n={options.i18n}>
+        <StaticRouterProvider router={router} context={context} nonce="the-nonce" />
+      </RootContainer>
     </React.StrictMode>
   );
 
-  const staticPayload = dispatcher.toStatic();
+  const staticPayload = toStatic();
   const html = ReactDOMServer.renderToString(
     <React.StrictMode>
       <HtmlTemplate

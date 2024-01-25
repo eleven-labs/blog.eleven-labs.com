@@ -16,7 +16,7 @@ keywords:
   - closure
 ---
 
-### Introduction
+## Introduction
 
 Salut les Astronautes, aujourd'hui on va parler un peu de mobile, et qui plus est de NATIF !!! Cet article se veut accessible pour les néophytes, donc on va passer un petit peu de temps pour voir quelques termes techniques ensemble avant de rentrer dans le vif du sujet. On va se concentrer sur iOS pour cette fois-ci, mais ne vous en faites pas, j'ai prévu de faire l'équivalent sur Android dans très peu de temps.
 
@@ -37,12 +37,12 @@ Dans le développement iOS, vous allez souvent retrouver deux principes : ***les
 
 Nous allons couvrir ces deux points plus en détails, mais avant même de se lancer c'est important de savoir qu'ils existent ! Voilà les principes de base à connaître ! C'est fini pour l'intro, on va pouvoir rentrer dans les détails !
 
-#### Les Delegates
+### Les Delegates
 
 Un delegate est une référence vers un objet dont on ignore le type exact, mais, chose importante, il hérite d'un protocol. Comme cet objet hérite d'un protocol, on sait que l'on peut appeler les méthodes définies dans le protocol, même si l'on ne connait pas l'objet qu'il y a en face. Je pense qu'une petite mise en situation pourra nous aider là-dessus.<br/>
 N.B. : Le code que je vais vous fournir est juste une dummy implementation pour que vous compreniez les principes, il ne fera pas de vrai appel HTTP sur l'adresse donnée en paramètres. Imaginons que j'ai un appel GET à faire, de manière générale dans le monde du mobile, on aime bien gérer ça avec 2 callbacks pour le retour. Une en cas de succès et une en cas d'erreur. Notre but ici est de réaliser une classe qui fait un GET sur une URL donnée. Je veux prévenir l'objet qui a été l'instigateur de cette requête si elle a réussi ou non. Pour éviter un couplage fort, on va utiliser le principe du delegate, grâce à ça, je n'aurai pas à connaitre le type exact de cet objet. On va donc définir un protocol qui va contenir deux méthodes: onRequestSuccess onRequestFailure regardons à quoi cela va ressembler :
 
-##### Objective-C
+#### Objective-C
 
 ```Objective-C
 @protocol RequesterDelegateObjc
@@ -79,7 +79,7 @@ Puis on va implémenter les méthodes dans notre classe de cette manière :
 @end
 ```
 
-##### Swift
+#### Swift
 
 ```Swift
 protocol RequesterDelegateSwift {
@@ -100,9 +100,9 @@ class MyClassSwift: UIViewController, RequesterDelegateSwift {
 }
 ```
 
-On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui implémente 2 méthodes (onRequestSuccess, onRequestFailure). On va faire une dummy implementation pour vous donner une idée de comment ça fonctionne :
+On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui implémente 2 méthodes (onRequestSuccess, onRequestFailure). On va faire une dummy implementation pour vous donner une idée de comment ça fonctionne :
 
-##### Objective-C
+#### Objective-C
 
 ```Objective-C
 #import "MyClass.h"
@@ -162,7 +162,7 @@ On a donc notre Class MyClass qui hérite du protocol RequesterDelegate et qui i
 @end
 ```
 
-##### Swift
+#### Swift
 
 ```Swift
 class MyClassSwift: UIViewController, RequesterDelegateSwift {
@@ -225,11 +225,11 @@ Pour palier à ce problème, il y a toujours la solution de changer un peu les m
 - Eh mais il avait pas parlé de block ou closure au début?
 - C'est quoi ces trucs?
 
-#### Les Closures / Blocks
+### Les Closures / Blocks
 
 Tout simplement, on va plus utiliser le terme block en Objective-C et closure en Swift, il s'agit en fait d'une fonction anonyme. Pour ceux qui viennent du web et qui ont fait du JS, ça doit pas mal leur parler. On jette un coup d'oeil ? On va rajouter une méthode dans chaque classe qui va nous permettre d'utiliser des blocks/closures.
 
-##### Objective-C
+#### Objective-C
 
 ```Objective-C
 typedef void (^successBlock)();
@@ -262,7 +262,7 @@ typedef void (^failureBlock)();
 }
 ```
 
-##### Swift
+#### Swift
 
 ```Swift
 func callWebServiceWithClosure() {
@@ -294,6 +294,6 @@ func get(url: String, successClosure: () -> Void, failureClosure: () -> Void) {
 }
 ```
 
-#### Conclusion
+### Conclusion
 
-Du coup, comme avant, on a juste à appeler la méthode callWebServiceWithClosure et on a une callback de retour pour le succès et une pour l'erreur. Vous me allez me demander, quel est l'avantage ? Tout simplement, de base vous n'êtes plus obligé d'hériter d'une interface, ça ne parait pas, mais comme ça, au bout d'un moment, c'est plus simple. Pour la compréhension aussi, c'est plus clair/facile, on voit directement les traitements qui sont fait juste au dessus du call, plutôt que de devoir chercher dans le code pour trouver où le retour est géré. Et comme dit plus haut, si vous avez plusieurs Webservices à appeler, vous êtes capable de bien isoler le code à chaque fois. Le but ici, c'est juste de vous présenter les deux principes, si vous faites du mobile, c'est une problématique que vous avez déjà dû rencontrer plus d'une fois. Mais du coup, ce serait pas cool de pouvoir combiner les deux, Delegates avec block ou closure ? Hum, mais ça devient intéressant. On se fait ça ensemble lors d'un prochain article ? Allez, salut les astronautes :)
+Du coup, comme avant, on a juste à appeler la méthode callWebServiceWithClosure et on a une callback de retour pour le succès et une pour l'erreur. Vous me allez me demander, quel est l'avantage ? Tout simplement, de base vous n'êtes plus obligé d'hériter d'une interface, ça ne parait pas, mais comme ça, au bout d'un moment, c'est plus simple. Pour la compréhension aussi, c'est plus clair/facile, on voit directement les traitements qui sont fait juste au dessus du call, plutôt que de devoir chercher dans le code pour trouver où le retour est géré. Et comme dit plus haut, si vous avez plusieurs Webservices à appeler, vous êtes capable de bien isoler le code à chaque fois. Le but ici, c'est juste de vous présenter les deux principes, si vous faites du mobile, c'est une problématique que vous avez déjà dû rencontrer plus d'une fois. Mais du coup, ce serait pas cool de pouvoir combiner les deux, Delegates avec block ou closure ? Hum, mais ça devient intéressant. On se fait ça ensemble lors d'un prochain article ? Allez, salut les astronautes :)

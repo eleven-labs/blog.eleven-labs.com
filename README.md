@@ -128,6 +128,9 @@ keywords:
 - keyword (limited to 10, must not be identical to the categories, used for SEO and search)
 authors:
     - author's username
+seo:
+    title: title
+    description: description
 ---
 Content of your article in markdown
 ```
@@ -215,6 +218,9 @@ authors:
     - author's username
 steps:
   - slug of your steps (No space dashes instead)
+seo:
+    title: title
+    description: description
 ---
 ```
 

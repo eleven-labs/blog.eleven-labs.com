@@ -4,7 +4,7 @@ tutorial: creez-un-chat-avec-symfony-et-mercure
 slug: discovery-abonnemen-et-publication-avec-mercure
 title: Discovery, abonnement et publication avec Mercure
 ---
-### Discovery du Hub Mercure
+## Discovery du Hub Mercure
 
 Notre client (le navigateur web) doit connaître l'URL du Hub pour pouvoir s'abonner à ses updates.
 Or, seule notre application Symfony connaît cette adresse, il faut donc la transmettre à nos clients.
@@ -51,7 +51,7 @@ const link = '{{ app.request.attributes.get('_links').getLinksbyRel('mercure')[0
     .replace("mercure", "localhost:3000");
 ```
 
-Il est ici important de remplacer la partie `mercure` de l'URL par celle réellement accessible depuis le client (`localhost:3000`). 
+Il est ici important de remplacer la partie `mercure` de l'URL par celle réellement accessible depuis le client (`localhost:3000`).
 Et voilà, on connaît l'URL de notre Hub, qu'on peut stocker dans une variable de type URL :
 
 ```javascript
@@ -94,7 +94,7 @@ eventSource.onmessage = ({data}) => { // On écoute les événements publiés pa
 On crée donc notre objet `EventSource` en lui passant l'URL de notre Hub, et on injecte l'Id du channel depuis la variable Twig correspondante.
 La méthode `onmessage` sera appelée à chaque nouvel événement publié par le Hub.
 
-C'est bon, votre client est capable de recevoir les futures Updates. On injecte simplement une nouvelle `div` html pour chaque nouveau message afin de peupler le chat au fur et à mesure, sans avoir à rafraîchir la page. 
+C'est bon, votre client est capable de recevoir les futures Updates. On injecte simplement une nouvelle `div` html pour chaque nouveau message afin de peupler le chat au fur et à mesure, sans avoir à rafraîchir la page.
 
 Maintenant, ces messages, il faut les publier sur le Hub depuis le serveur !
 
@@ -136,7 +136,7 @@ use Symfony\Component\Mercure\Update;
             true
         );
     }
-``` 
+```
 
 Comme vous le constatez, nous avons précisé le même topic que celui sur lequel notre javascript écoute les événements.
 

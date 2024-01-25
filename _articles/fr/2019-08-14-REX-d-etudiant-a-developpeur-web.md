@@ -55,8 +55,7 @@ Mais ce qu’il faut savoir, c’est que c’est OK de ne pas passer par la gran
 Maintenant que tout ça était fait, il fallait passer à la prochaine étape, celle qui était pour d’autres une étape initiale : trouver une entreprise où je serais dans une vraie équipe de développement, avec de vraies problématiques et un environnement vraiment orienté dév.
 
 
-# HERE COMES THE REAL GAME
-
+## HERE COMES THE REAL GAME
 
 C’est en plein cours d’agilité (pas le parcours canin), que je reçois un mail d’ Eleven Labs qui me propose de discuter et de voir si je suis intéressé par une autre expérience professionnelle.
 Et de prime abord, c’est le fait de travailler dans un environnement Agile qui m'attire le plus.
@@ -129,7 +128,7 @@ J’ai surtout vu un intérêt d’un côté communication. Les stand-ups notamm
 
 L’agilité couplée à un emploi du temps d’alternant peut cependant présenter des aspects négatifs. En effet, passer du temps sur une feature, progresser, et ne pas pouvoir la finir car elle aura été récupérée par un autre membre de l'équipe pendant une absence à l’école peut être frustrant. Mais c’est aussi cette organisation de suivi qui permet en cas d’absence à un autre développeur de pouvoir reprendre le travail et finir le ticket. Ce qui est essentiel d’un point de vue projet.
 
-# CONCLUSION
+## CONCLUSION
 
 Bravo vous avez enfin atteint le statut de développeur !
 Finalement c’était pas si dur que ça hein !

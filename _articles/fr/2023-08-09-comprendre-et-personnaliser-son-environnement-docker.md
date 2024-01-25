@@ -89,7 +89,7 @@ Nous l'utiliserons principalement pour des données secrètes ou des données d'
 
 ## Créer son image avec Dockerfile
 
-#### Qu'est-ce qu'un "layer" ?
+### Qu'est-ce qu'un "layer" ?
 
 En Docker, une image est constituée de plusieurs couches (layers) de fichiers en lecture seule qui sont empilées les unes sur les autres pour former l'image finale.
 Chaque couche représente un état particulier de l'image et contient un ensemble de modifications apportées à la couche précédente.
@@ -273,7 +273,7 @@ volumes:
 
 ## Personaliser Mes Services
 
-#### Les Variables d'environnement
+### Les Variables d'environnement
 
 Il est possible d'utiliser un fichier d'environnement avec Docker (.env).
 Nous pouvons y mettre le nom du projet avec la variable `COMPOSE_PROJECT_NAME=monprojet`.
@@ -290,7 +290,7 @@ L'ordre de priorité des variables :
 
 4 - Le fichier Dockerfile (si vous avez défini des valeurs dans des instructions ENV).
 
-#### Les ports
+### Les ports
 
 Il est possible de définir un ou plusieurs ports.
 Pour ce faire, il suffit d'utiliser "ports".
@@ -304,7 +304,7 @@ client:
     - "80:9000"
 ```
 
-#### Les networks
+### Les networks
 
 Il faut savoir que Docker Compose crée un réseau par défaut nommé "nomduprojet_default".
 En plus du réseau par défaut, il est possible de définir d'autres réseaux.
@@ -324,7 +324,7 @@ networks:
   mynetwork2:
 ```
 
-#### Les Images, context et dockerfile
+### Les Images, context et dockerfile
 
 Nous pouvons utiliser "image" et sélectionner une image déjà prête sur le Docker Hub, comme nous l'avons déjà fait pour notre image phpMyAdmin.
 Il est aussi possible de partir de notre Dockerfile en utilisant "build" ou "context".
@@ -338,7 +338,7 @@ client:
     dockerfile: MonDockerfile.dev
 ```
 
-#### Volume External
+### Volume External
 
 Si vous ne souhaitez pas que Docker Compose crée un nouveau volume mais qu'il utilise un volume déjà existant, vous pouvez préciser
 `external: true` dans la configuration, comme dans l'exemple suivant :
@@ -369,7 +369,7 @@ Vérifier la version de docker compose :
 
 ```bash
 docker compose version
-``` 
+```
 
 Build les containers :
 

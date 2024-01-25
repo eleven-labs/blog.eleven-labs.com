@@ -195,7 +195,7 @@ Puis, il va falloir créer une automation pour mettre à jour le status de la CI
       - service: variable.set_variable
         data:
           variable: master_status
-          value_template: "{{ states('sensor.test_gitlab_projet_x') }}"
+          value_template: "{{ states('sensor.test_gitlab_projet_x') }}"
 ```
 Ici nous avons :
 - `trigger`: chaque changement lance cette automation

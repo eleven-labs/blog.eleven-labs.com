@@ -20,15 +20,13 @@ keywords:
   - angular
 ---
 
-Introduction
-============
+## Introduction
 
 Après avoir travaillé sur AngularJS, j'ai voulu tester la seconde version du framework : Angular2. Pour me faire la main, j'ai choisi de travailler sur un système d'authentification par token en utilisant Symfony pour la partie back-end, en incluant le bundle **Lexik JWT Authentication.**
 
 Je vous propose de voir ensemble un exemple très simple et les différentes étapes à suivre pour la mise en place d'une API sécurisée servant une liste de publications (...très privées) à notre application Angular2.
 
-Sommaire
-========
+## Sommaire
 
 1.  **Mise en place de la partie Back-end**
     1.  Installation d'une application Symfony3

@@ -148,7 +148,7 @@ Pour tester que nos valeurs sont bien passées à la structure, il n’y a rien 
 
 Nous allons utiliser une méthode fournie par le framework XCTest. Dans notre cas, nous testerons l’égalité entre deux valeurs et nous nous servirons de la méthode **XCTAssertEqual** (la notion d’assert a déjà été vue plus haut) qui prend plusieurs arguments.
 1. expression1 : Une expression de type scalaire C ;
-2. expression2 : Une expression de type scalaire C ;
+2. expression2 : Une expression de type scalaire C ;
 3. …: Une description optionnelle lors d’un échec. Cette description doit être typée en String.
 
 Cette méthode génère un échec lorsque expression1 != expression2.
@@ -163,7 +163,7 @@ Il y a 3 solutions :
 
 ![]({BASE_URL}/imgs/articles/2017-02-02-test-unitaire-swift-xcode/capture-d-ecran-2017-01-17-a-23.46.10.png)
 
-Pour finir notre test, nous allons rajouter la méthode **testInitAstronuateWithPlanet** >qui va tester l’initialisation d’un astronaute avec une planète (oui j’aime bien mettre des noms en rapport avec Star Wars :) ).
+Pour finir notre test, nous allons rajouter la méthode **testInitAstronuateWithPlanet** >qui va tester l’initialisation d’un astronaute avec une planète (oui j’aime bien mettre des noms en rapport avec Star Wars :) ).
 
 ```swift
 func testInitAstronuateWithPlanet() {
@@ -173,7 +173,7 @@ func testInitAstronuateWithPlanet() {
 }
 ```
 
-Bon normalement nous avons testé tous les cas possibles sur notre structure. Mais comment en être sûr ?
+Bon normalement nous avons testé tous les cas possibles sur notre structure. Mais comment en être sûr ?
 
 La solution : le code coverage. Il permet d’écrire le taux de code source testé d'un programme. Comment faire sous Xcode ?
 Cliquez sur l’icone (cf. screenshot ci-dessous) et cliquez sur “Edit Schema”
@@ -190,7 +190,7 @@ Une fois ces étapes effectuées, relancez le processus de test sur votre classe
 
 ## Test sur un ViewController
 
-Maintenant nous allons créer une méthode qui va changer le texte d'un label en fonction d'une condition. Voici le code d'exemple (rien de très compliqué).
+Maintenant nous allons créer une méthode qui va changer le texte d'un label en fonction d'une condition. Voici le code d'exemple (rien de très compliqué).
 ```swift
 import UIKit
 
@@ -259,8 +259,8 @@ Nous devons créer une variable de type ViewController afin d'accéder pour chaq
     2. Nous faisons appel à la méthode **instantiateInitialViewController** du storyboard afin d'instancier et renvoyer le controller de vue initial.
 1. **tearDown()** : (qui sera appelée après chaque invocation de méthode de test). Nous mettons à nil notre controller pour plus de sécurité.
 3. **testScoreIsWinChangeLabel()** :
-    1. Nous souhaitons accéder au texte du label uiText de notre controller. Cependant sans l'instruction  `let _= controller.view` vous allez relever une erreur car le label sera égal à nil.
-    Comment est-ce possible ? Quand nous avons créé notre label dans notre storyboard, celui-ci s’instancie une fois que la vue est chargée. Mais dans notre classe unitaire, la méthode **loadView()** n’est jamais déclenchée.
+    1. Nous souhaitons accéder au texte du label uiText de notre controller. Cependant sans l'instruction  `let _= controller.view` vous allez relever une erreur car le label sera égal à nil.
+    Comment est-ce possible ? Quand nous avons créé notre label dans notre storyboard, celui-ci s’instancie une fois que la vue est chargée. Mais dans notre classe unitaire, la méthode **loadView()** n’est jamais déclenchée.
     Le label n’est donc pas créé et il est égal à nil. Une solution pour ce problème serait alors d'appeler **controller.loadView()** mais Apple ne le recommande pas car cela cause des problèmes de **memory leaks** quand les objets qui ont déjà été chargés sont de nouveau chargés.
     L’alternative est d’utiliser la propriété **view** de votre controller qui déclenchera toutes les méthodes requises.
     *Note : L'utilisation d'un underscore (_) comme nom de constante a pour but de réduire le nom de la constante car nous n'avons pas vraiment besoin de la vue. Cela dit au compilateur qu'on prétend avoir l'accès à la vue et qu'on déclenche toutes les méthodes.*

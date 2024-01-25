@@ -19,13 +19,11 @@ keywords:
   - symfony live
 ---
 
-Présentation
-============
+## Présentation
 
 Le Symfony Live est une journée de conférences autour du framework Symfony. Les conférences présentées sont d'un bon niveau technique. Il y a également des retours d'expériences, sur des cas concrets et avec des problématiques que l'on peut rencontrer au quotidien.
 
-Déroulement de la journée
-=========================
+## Déroulement de la journée
 
 La journée était rythmée par des conférences de 40 min et de 10 min, sur des thèmes divers et variés. La cadence était assez soutenue, il fallait s'accrocher : 17 au total.
 
@@ -39,8 +37,7 @@ Cette journée s'est passée à Paris à la Cité Universitaire.
 
 Je vais parler des conférences que j'ai le plus appréciées.
 
-Ouverture de la journée
-=======================
+## Ouverture de la journée
 
 > [\#symfony](https://twitter.com/hashtag/symfony?src=hash) déjà 10 ans ! [\#symfony\_live](https://twitter.com/hashtag/symfony_live?src=hash) [pic.twitter.com/rElZII1jMj](http://t.co/rElZII1jMj)
 >
@@ -92,8 +89,7 @@ Pour illustrer l'exemple, une petite mise en scène d'une requête HTTP.
 >
 > — Thierry Piaf (@piaf\_) [April 9, 2015](https://twitter.com/piaf_/status/586094748198428672)
 
-Stack ELK
-=========
+## Stack ELK
 
 Présenté par [Olivier Dolbeau](https://twitter.com/odolbeau), elle nous a fait découvrir un moyen de mieux visialiser les logs. ELK pour ElasticSearch Logstash Kibana. Cet écosystème fonctionne à merveille. Les logs applicatifs et systèmes sont envoyés à Logstash. Elles sont ensuite stockeés dans ElasticSearch. Avec Kibana, la création des tableaux permet de visualiser et d'être rapidement alerté sur un problème.
 
@@ -113,13 +109,11 @@ Lien vers la présentation: [Laisse pas traîner ton log !](https://speakerdeck.
 >
 > — Bastien Picharles (@Kleinast) [April 9, 2015](https://twitter.com/Kleinast/status/586103060533010432)
 
-Mediapart, le changement c'est maintenant
-=========================================
+## Mediapart, le changement c'est maintenant
 
 Ce qui était intéressant dans la présentation, c'est leur prise de décision radicale. A un moment, quand tout par "en sucette", il faut savoir dire **"stop"** et faire table rase du passé pour repartir sur de nouvelles bases. Cette décision n'est pas facile. Comme lors de la transition Symfony 1 vers Symfony 2. Mais elle peut être un bon moyen pour redonner du souffle à un projet.
 
-Pattern View Model
-==================
+## Pattern View Model
 
 Romain Kuzniak a déjà présenté une conférence complète sur les différentes architectures d'applicatives lors d'un [précédent SfPot](http://afsy.fr/blog/meetup-de-decembre-a-paris).
 
@@ -129,8 +123,7 @@ Pour résoudre cela, il faut ajouter une couche d'abstraction : un assembleur. I
 
 Lien vers la présentation: [OpenClassrooms - Le pattern View Model avec Symfony2](http://fr.slideshare.net/RomainKuzniak/le-pattern-view-model-avec-symfony2)
 
-Pause déjeuner
-==============
+## Pause déjeuner
 
 Après cette grosse matinée, il se faisait faim ^^. Il y a eu un grand buffet.
 
@@ -138,8 +131,7 @@ Après cette grosse matinée, il se faisait faim ^^. Il y a eu un grand buffet.
 >
 > — Matthieu Moquet (@MattKetmo) [April 9, 2015](https://twitter.com/MattKetmo/status/586116887270072321)
 
-Meetic et la migration du backend
-=================================
+## Meetic et la migration du backend
 
 Meetic nous a présenté la façon dont ils ont migré leur backend. Une des problématiques que l'on va rencontrer dans toutes les applications un peu ancienne : c'est leur base. Elle est monolithique. Tout est centré autour d'un coeur unique. Au fur et à mesure des ajouts de fonctionnalités, le code devient de plus en plus complexe, bienvenue au "code spaghetti".
 
@@ -159,8 +151,7 @@ En ce qui concerne les tests, ils ont utilisé docker pour lancer des tests auto
 
 Lien vers la présentation: [Meetic backend mutation with Symfony](http://www.slideshare.net/meeticTech/meetic-backend-mutation-with-symfony)
 
-Surveillez votre prod
-=====================
+## Surveillez votre prod
 
 On a vu dans une précédente présentation comment partir à la chasse au log. Ce qui était intéressant ici, c'est comment rendre les logs intéressants et pertinents. Il faut utiliser les variables de contexte bien sur. Mais il est possible de faire plus.
 
@@ -186,8 +177,7 @@ Avec VarDumper, il n'y a que les données essentielles et même des informations
 
 Lien vers la présentation: [Symfony Debug et VarDumper, ou comment debugger comfortablement](http://fr.slideshare.net/nicolas.grekas/symfony-debug-vardumper)
 
-Docker et l'intégration continue
-================================
+## Docker et l'intégration continue
 
 Meetic l'a utilisé, cette présentation est rentrée plus en détail sur l'utilisation des conteneurs Docker.
 
@@ -209,8 +199,7 @@ Astuce: Docker permet de paralléliser les tests unitaires.
 
 Et surtout, "penser docker".
 
-API et Admin en 10 min
-======================
+## API et Admin en 10 min
 
 Cette présentation, par [Jonathan Petitcolas](http://www.jonathan-petitcolas.com/) était impressionnante par son efficacité. D'un côté, la création de l'API avec le model. De l'autre le front avec ng-admin. Le tout s'assemble parfaitement et le rendu est bien sympa.
 
@@ -220,8 +209,7 @@ Cette présentation, par [Jonathan Petitcolas](http://www.jonathan-petitcolas.co
 
 Lien vers une ressource: [Create a JavaScript Admin Panel and a REST API for Symfony2 Apps in Minutes](http://marmelab.com/blog/2015/02/24/ngadmingeneratorbundle-create-javascript-admin-panel-rest-api-symfony2-in-minutes.html)
 
-Pour conclure
-=============
+## Pour conclure
 
 Cette journée a été riche en conférences, en partage de connaissances, en participants (750 participants) et en soleil.
 

@@ -18,7 +18,7 @@ keywords:
   - certificats
 ---
 
-# Qu'est-ce qu'un certificat ?
+## Qu'est-ce qu'un certificat ?
 
 Un **certificat électronique** (aussi appelé **certificat numérique** ou **certificat de clé publique**) peut être vu comme une carte d'[identité](https://fr.wikipedia.org/wiki/Identit%C3%A9_num%C3%A9rique_(Internet)) numérique. Il est utilisé principalement pour identifier et authentifier une personne physique ou morale, mais aussi pour chiffrer des échanges.
 
@@ -36,7 +36,7 @@ C’est le terme “**chaîne de confiance**” (que nous avons décrit plus hau
 
 En effet, la certification peut s'effectuer en cascade. Un certificat peut permettre d'authentifier d'autres certificats jusqu'au certificat qui sera utilisé pour la communication.
 
-Nous allons prendre par exemple le meilleur site au monde (oui c’est bientôt mon point individuel de fin d’année donc…  :p ) [https://eleven-labs.com](https://eleven-labs.com).
+Nous allons prendre par exemple le meilleur site au monde (oui c’est bientôt mon point individuel de fin d’année donc…  :p ) [https://eleven-labs.com](https://eleven-labs.com).
 
 On remarque plusieurs points :
 1. Eleven-labs n’a pas rempli toutes les infos concernant le site (tel que le type d’entreprise..... (pas bien !!!!)
@@ -45,7 +45,7 @@ On remarque plusieurs points :
 
 ![]({BASE_URL}/imgs/articles/2016-12-21-comprendre-le-ssltls-partie-3-certificats/capture-d-ecran-2016-11-26-a-11.15.04.png)
 
-# Normes de certificat :
+## Normes de certificat :
 
 Les deux normes de certificat les plus utilisées aujourd'hui sont :
 * X.509, défini dans la RFC [5280](https://tools.ietf.org/html/rfc5280) ;
@@ -75,7 +75,7 @@ Chaque certificat X.509 comprend :
     * Liste des extensions
 * Signature des informations ci-dessus par l'autorité de certification
 
-# "Signature" ? "Certificat signé" ?
+## "Signature" ? "Certificat signé" ?
 
 Tout d’abord la fonction de signature doit répondre à plusieurs critères :
 
@@ -108,7 +108,7 @@ Donc en amont de l’étape II, votre navigateur utilise la clé publique de DST
 
 Si la vérification est bonne alors le client passe à l’étape II.
 
-# Type de certificats :
+## Type de certificats :
 
 Lorsque vous allez vouloir acheter un certificat auprès d’un tiers de confiance, celui-ci va vous proposer plusieurs types de certificats. Nous allons voir ensemble de quoi il s’agit :
 * **Domain Validation (DV)** : Il authentifie uniquement le nom de domaine : il s’agit du certificat le plus répandu (c’est le cas de Let’s Encrypt).
@@ -117,17 +117,17 @@ Lorsque vous allez vouloir acheter un certificat auprès d’un tiers de confian
 
 Les certificats peuvent avoir une garantie allant de 10 000 € jusqu'à plus de 1 500 000 € si une faille de sécurité provient de leur certificat.
 
-Aujourd'hui, il existe deux solutions qui vous permettent d'avoir un certificat sans payer :
-1. Let's encrypt, open source, sponsorisé par des acteurs important tel que mozilla, free, ovh...   C'est la solution que je vous recommande ! Si vous souhaitez mettre en place cette solution, je vous invite à aller voir un super tuto [ici](https://vincent.composieux.fr/article/installer-configurer-et-renouveller-automatiquement-un-certificat-ssl-let-s-encrypt).
-2. Créer vous même un certificat dit **auto-signé**.
+Aujourd'hui, il existe deux solutions qui vous permettent d'avoir un certificat sans payer :
+1. Let's encrypt, open source, sponsorisé par des acteurs important tel que mozilla, free, ovh...   C'est la solution que je vous recommande ! Si vous souhaitez mettre en place cette solution, je vous invite à aller voir un super tuto [ici](https://vincent.composieux.fr/article/installer-configurer-et-renouveller-automatiquement-un-certificat-ssl-let-s-encrypt).
+2. Créer vous même un certificat dit **auto-signé**.
 
 Cependant, les certificats SSL auto-signés déclenchent des alertes de sécurité sur la plupart des navigateurs web car ils n'ont pas été vérifiés par une Autorité de Certification de confiance. La plupart du temps, ces alertes conseillent aux visiteurs de quitter la page pour des raisons de sécurité. Mais si vous passez par Let's Encrypt vous n'aurez pas ce type de problème.
 
-# Portée du certificat :
+## Portée du certificat :
 
 * Un seul domaine : suffisant pour votre site web, mais pas pour les autres services (mail, webmail, ftp, etc.)
 *exemple* : www.hatem-ben-arfa.com
 * Domaine + sous-domaine (**wildcard**) : idéal pour votre site web et les autres services.
-*exemple* : *.hatem-ben-arfa.com (www.hatem-ben-arfa.com, ftp.hatem-ben-arfa.com, ...)
+*exemple* : *.hatem-ben-arfa.com (www.hatem-ben-arfa.com, ftp.hatem-ben-arfa.com, ...)
 * Multi-domaine : généralement réservé aux grandes structures, agences web ou hébergeurs.
-*exemple* : www.hatem-ben-arfa.com, www.estcequecestbientotleweekend.com, ...
+*exemple* : www.hatem-ben-arfa.com, www.estcequecestbientotleweekend.com, ...

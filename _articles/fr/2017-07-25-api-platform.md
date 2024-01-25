@@ -13,7 +13,7 @@ authors:
 keywords: []
 ---
 
-Api Platform se définit comme un « framework PHP pour construire des APIs web modernes ». En effet, cet outil va nous permettre de construire rapidement une API riche et facilement utilisable.
+Api Platform se définit comme un « framework PHP pour construire des APIs web modernes ». En effet, cet outil va nous permettre de construire rapidement une API riche et facilement utilisable.
 Pourquoi réinventer la roue ? Cet outil est accompagné de tout un tas de _features_ comme une documentation automatisée, la gestion des filtres et des tris, et bien d’autres encore.
 Dans cet article, nous allons voir ensemble la création d’une API avec Api Platform, en parlant de certaines fonctionnalités. Je pars du principe que vous avez déjà installé [Api Platform](https://api-platform.com/docs/).
 

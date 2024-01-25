@@ -57,7 +57,7 @@ Vous pouvez aussi bien installer l'exécutable, compiler le logiciel à partir d
 Nous allons utiliser docker-compose pour ne pas avoir à retaper toujours la commande et pouvoir l'agrémenter au fil du temps de nouveaux éléments de configuration.
 
 Créons donc notre premier fichier `/srv/docker-compose.yaml`:
-``` yaml
+```yaml
 version: '3'
 
 services:
@@ -81,7 +81,7 @@ C'est bien beau de partager le fichier `/srv/traefik.toml` avec notre container,
 
 Nous allons donc créer le fichier de configuration de traefik qui déclarera à minima les deux endpoints précédents dans un fichier `/srv/traefik.toml`
 
-``` toml
+```toml
 [entryPoints]
   [entryPoints.http]
   address = ":80"
@@ -91,7 +91,7 @@ Nous allons donc créer le fichier de configuration de traefik qui déclarera à
 
 Nous pouvons ensuite lancer notre service de reverse proxy en nous trouvant dans le répertoire `/srv` avec la commande :
 
-``` shell
+```shell
 docker-compose up -d
 ```
 
@@ -113,7 +113,7 @@ Traefik a besoin de connaître le chemin vers le socket de Docker afin d'activer
 
 Notre fichier de configuration `/srv/traefik.toml` devrait maintenant ressembler à cela :
 
-``` toml
+```toml
 [entryPoints]
   [entryPoints.http]
   address = ":80"
@@ -132,7 +132,7 @@ Cela se fait avec htpasswd.
 
 Comme nous ne voulons pas l'installer sur notre belle machine, nous allons faire appel à une image Docker de apache pour hasher notre mot de passe :
 
-``` shell
+```shell
 docker run --rm --name apache httpd:alpine htpasswd -nb wilson schizo
 ```
 
@@ -179,7 +179,7 @@ Là, le nom de ma règle est api, vous pouvez mettre ce que vous désirez du mom
 
 On peut maintenant demander à notre service de prendre en compte les modifications en nous trouvant dans le répertoire `/srv` et en exécutant une nouvelle fois la commande :
 
-``` shell
+```shell
 docker-compose up -d
 ```
 
@@ -263,7 +263,7 @@ Vous l'avez sûrement déjà compris mais le nom du service est toujours sous la
 
 N'oublions pas de demander à docker-compose de prendre notre nouvelle configuration en compte :
 
-``` shell
+```shell
 docker-compose up -d
 ```
 
@@ -361,7 +361,7 @@ services:
 
 N'oublions pas de demander à docker-compose de prendre notre nouvelle configuration en compte :
 
-``` shell
+```shell
 docker-compose up -d
 ```
 
@@ -434,7 +434,7 @@ services:
 
 N'oublions pas de demander à docker-compose de prendre notre nouvelle configuration en compte :
 
-``` shell
+```shell
 docker-compose up -d
 ```
 

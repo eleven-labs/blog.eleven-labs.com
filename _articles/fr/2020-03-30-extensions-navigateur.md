@@ -103,7 +103,7 @@ browser.theme.update(windowId, {
 ```
 
 ## Configuration
-Nous allons maintenant utiliser la clef « options_ui » pour définir une page html servant pour l’utilisateur à paramétrer l’extension.
+Nous allons maintenant utiliser la clef « options_ui » pour définir une page html servant pour l’utilisateur à paramétrer l’extension.
 À ce moment-là, le développement est identique à n’importe quel développement web HTML, CSS ou Javascript, bien que nous ayons toujours accès à l’objet browser.
 D’ailleurs nous en avons besoin pour sauvegarder les modifications faites par l’utilisateur grâce à [browser.storage](https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/API/storage) qui n’est que le localStorage dans le contexte navigateur.
 On peut donc utiliser browser.storage.set pour écrire et browser.strorage.get pour lire. (browser.storage.sync utilise la synchronisation entre appareils)

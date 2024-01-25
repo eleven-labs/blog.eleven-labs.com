@@ -20,7 +20,7 @@ keywords: []
 
 Depuis 2013, les astronautes d'Eleven-labs partagent leurs connaissances techniques avec plaisir. Notre blog est devenu un élément indissociable de notre effort vers l'open-source. Pour aller plus loin dans cette démarche nous avons donc décidé de changer radicalement de technologie. Mais pourquoi ? Comment ? Quelle est la suite ?
 
-### Pourquoi ?
+## Pourquoi ?
 
 Les astronautes d'Eleven-labs ont publié en 4 ans plus de 130 articles, avec une moyennne de 9000 vues par mois, le blog est devenu un lieu de partage technique suivi par la communauté. Créé en 2013, nous avions choisi Wordpress pour sa rapidité d'installation et son expertise dans la mise en place de blogs.
 
@@ -41,7 +41,7 @@ Jekyll, quant à lui, nous permet de personnaliser le site et de rendre le blog 
 
 Qu'avons nous fait techniquement ?
 
-### Techniquement
+## Techniquement
 
 Pour commencer, nous avons initalisé le repo github en forkant le projet [Type Theme](https://github.com/rohanchandra/type-theme).
 Celà nous a permis d'avoir une base de travail avec un jekyll pré-configuré et un visuel épuré proche de notre objectif de lisibilité.
@@ -55,7 +55,7 @@ Cette étape de transition a permis de temporiser la migration sans bloquer le r
 
 La migration ne fut pas compliquée. Chaque astronaute a eu pour mission de migrer ses articles en les passant de HTML vers Markdown. Certains astronautes s'étant mis au défi de scripter cette transformation, nous avions quelques scripts permettant une simplification de la transformation pour les articles complexes et une transformation totale pour les articles simples.
 
-### Maintenant
+## Maintenant
 
 Eleven-labs souhaitant faire vivre le blog comme un projet open-source, il est possible à tous nos utilisateurs de proposer des nouvelles fonctionnalités simplement en suivant le [contributing](https://github.com/eleven-labs/blog.eleven-labs.com/blob/master/.github/CONTRIBUTING.md) du projet public. Chaque issue sera alors ajoutée dans nos sprints projet et sera réalisée pour améliorer en continu notre blog.
 

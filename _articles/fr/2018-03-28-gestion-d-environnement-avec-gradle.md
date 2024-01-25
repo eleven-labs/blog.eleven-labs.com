@@ -20,7 +20,7 @@ keywords:
 ---
 
 
-### Prérequis
+## Prérequis
 - Android Studio
 - Gradle version 3.0 ou +
 
@@ -84,7 +84,7 @@ Mais comment personnaliser le code pour toutes ces versions coexistantes en para
 
 Il faut savoir qu'à la création de chaque flavor, il vous est devenu possible de créer un repertoire du même nom que votre flavor dans votre repertoire src. À partir de ce moment, le champ du possible est vaste !
 
-### Ressources :
+## Ressources :
 Vous pouvez dupliquer votre fichier res, et modifier l'ensemble des ressources qui y sont déclarées en fonction de vos versions.
 
 Un exemple simple : ici je vais modifier la valeur du string app_name pour chacune de mes versions dev/prod/preprod pour qu'au téléchargement nos testeurs par exemple soient sûrs d'être sur le bon environemment.
@@ -95,7 +95,7 @@ Mais il aurait été possible de faire varier le design, les dimensions, modifie
 
 À savoir, à la compilation, sur les fichiers contenus dans votre répertoire main vont se merge tous les fichiers contenus dans les répertoires de vos flavors. Si il y a des clés, des noms de fichiers identiques, les valeurs des répertoires de flavor vont écraser celles contenues dans votre repertoire main. Ici la valeur d'app_name va, en fonction du build que vous choisissez, être remplacée ou non par les valeurs de nos flavors !
 
-### BuildConfig :
+## BuildConfig :
 
 Android génère une classe BuildConfig, accessible partout, qui va vous permettre de connaître programmatiquement à tout moment dans quelle version, quel flavor vous êtes !
 
@@ -111,7 +111,7 @@ Je vous propose un petit exemple simple qui serait l'activation de vos logs ou n
 
 Imaginons que vous ayez centralisé l'envoi de vos logs dans une classe LogManager, un simple accès à votre paramètre LOG dans BuildConfig va vous permettre de savoir si oui ou non, l'appel à votre classe va renvoyer un Log ou pas !
 
-### Classe JAVA/Kotlin
+## Classe JAVA/Kotlin
 Allons plus loin. Imaginons qu'en fonction des versions, le code soit complétement différent. Mettre des conditions partout devient vite une solution peu efficace, et avec des pavés de code pour chaque version, ça peut vite devenir le grand bazar !
 
 Pour remédier à ça il est possible de créer plusieurs versions de vos classes en fonction du flavor selectionné. Mais à la différence des fichiers de ressources vu précédemment, si vous voulez pouvoir personnaliser une classe en particulier, et la rendre disponible dans tout votre code sans devoir spécifier à quel package elle appartient, il va falloir la retirer de votre répertoire main et créer une version pour chaque flavor d'une même dimension. Car à la différence des fichiers de ressources qui vont se merge avec ceux existants à la compilation, ici Android va juste sélectionner quelle classe appeler en fonction de votre build.

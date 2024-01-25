@@ -54,7 +54,7 @@ Pour ce guide, je vais utiliser une instance [OVH Public Cloud](https://www.ovh.
 
 Partons d'une distribution récente, une Ubuntu 16.04 qui a le bon goût d'avoir dans ces dépôts une version de Docker à jour :
 
-``` bash
+```bash
 # Installation de Docker
 sudo apt-get update && sudo apt-get install docker.io curl
 
@@ -64,7 +64,7 @@ sudo usermod -a -G docker $(id -un)
 
 On se déconnecte du serveur, puis on se reconnecte pour initialiser Docker Swarm mode.
 
-``` bash
+```bash
 # Initialise Docker Swarm Mode
 docker swarm init
 ```
@@ -73,7 +73,7 @@ docker swarm init
 
 Traefik va nous permettre d'associer un domaine au conteneur dans lequel tournera la registry. Le gros avantage, c'est qu'il permet d'obtenir automatiquement un certificat TLS délivré par [Let's Encrypt](https://letsencrypt.org/).
 
-``` bash
+```bash
 # Créer un réseau traefik
 docker network create --driver overlay traefik
 
@@ -84,7 +84,7 @@ sudo mkdir -p /opt/traefik
 On va maintenant créer la définition de notre service Traefik.
 Créez un fichier à l'adresse **$HOME/traefik.json** dans lequel vous ajoutez :
 
-``` json
+```json
 {
     "Name": "traefik",
     "TaskTemplate": {
@@ -170,7 +170,7 @@ Créez un fichier à l'adresse **$HOME/traefik.json** dans lequel vous ajoutez :
 
 Il ne nous reste plus qu'à lancer le service en utilisant l'API Docker :
 
-``` bash
+```bash
 curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/traefik.json
 ```
 
@@ -213,7 +213,7 @@ Cette application en GO prend en charge plusieurs backends. Vous avez au choix l
 
 L'authentification des utilisateurs se fait par jeton [JWT](https://jwt.io/). La registry Docker, de son coté, attend que ces jetons soient signés par un certificat. Commençons par le générer :
 
-``` bash
+```bash
 # Préparation des répertoires nécessaires à docker auth
 sudo mkdir -p /opt/docker-auth/{logs,config,certs}
 
@@ -413,7 +413,7 @@ Puis on finit avec un fichier que l'on crée à l'adresse **$HOME/registry.json 
 
 On lance la registry :
 
-``` bash
+```bash
 curl -XPOST --unix-socket /var/run/docker.sock http:/services/create -d @$HOME/registry.json
 ```
 

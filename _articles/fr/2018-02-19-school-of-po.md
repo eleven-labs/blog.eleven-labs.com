@@ -42,7 +42,7 @@ Le job de Product Owner a été inventé afin d’avoir quelqu’un qui puisse r
 L’ennui est l’ennemi suprême de l’apprentissage. Or, des spécifications de 200 pages, c’est de l’ennui, donc un frein à l’apprentissage.
 
 
-<blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">Now I can say «  I won’t read your 200 pages spec » ;-) <a href="https://twitter.com/hashtag/SchoolOfPO?src=hash&amp;ref_src=twsrc%5Etfw">#SchoolOfPO</a> <a href="https://t.co/TwNMAKMvFl">pic.twitter.com/TwNMAKMvFl</a></p>&mdash; υѕe caѕe drιven (@tpierrain) <a href="https://twitter.com/tpierrain/status/963335180923670528?ref_src=twsrc%5Etfw">13 février 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="en" dir="ltr">Now I can say «  I won’t read your 200 pages spec » ;-) <a href="https://twitter.com/hashtag/SchoolOfPO?src=hash&amp;ref_src=twsrc%5Etfw">#SchoolOfPO</a> <a href="https://t.co/TwNMAKMvFl">pic.twitter.com/TwNMAKMvFl</a></p>&mdash; υѕe caѕe drιven (@tpierrain) <a href="https://twitter.com/tpierrain/status/963335180923670528?ref_src=twsrc%5Etfw">13 février 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 

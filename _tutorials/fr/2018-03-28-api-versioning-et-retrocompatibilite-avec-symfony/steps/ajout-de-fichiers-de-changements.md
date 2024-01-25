@@ -36,7 +36,7 @@ interface VersionChangesInterface
 }
 ```
 
-# Ajout de la classe abstraite
+## Ajout de la classe abstraite
 
 Cette interface sera implémentée par la classe abstraite qui étendra de nos fichiers de versions.
 
@@ -80,7 +80,7 @@ abstract class AbstractVersionChanges implements VersionChangesInterface
 
 Souvenez-vous, notre service `ChangesFactory` qui instancie ces classes de changements injecte le service `RequestStack`, c'est précisément à cet endroit que nous en avons besoin.
 
-# Ajout d'une classe de changements de version (exemple)
+## Ajout d'une classe de changements de version (exemple)
 
 Nous allons maintenant pouvoir ajouter une classe de changements de version.
 
@@ -126,6 +126,6 @@ Dans cet exemple, nous avons la méthode `supports()` qui vérifie que des conte
 
 En fonction des cas, ces fichiers peuvent se complexifier mais généralement, ils restent simple et rapide à implémenter par les développeurs lors de l'ajout de fonctionnalités présentant des cas de cassage de compatibilité (breaking changes).
 
-# Prochaine étape
+## Prochaine étape
 
 Nous en avons terminé pour l'implémentation, il est temps de tester celle-ci dans la dernière étape.

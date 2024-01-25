@@ -26,8 +26,7 @@ C'est pourquoi nous avions besoin d'un moyen simple permettant de trouver automa
 
 Voilà ce que nous avons donc fait :
 
-Comment fonctionne Aspell ?
-===========================
+## Comment fonctionne Aspell ?
 
 Premièrement il faut installer cet outil :
 
@@ -63,8 +62,7 @@ android
 
 Ensuite pour utiliser ce dictionnaire personnel, vous devez ajouter cet argument à la commande : `--personal=./.aspell.en.pws`
 
-Comment exécuter cet outil depuis Travis CI ?
-=============================================
+## Comment exécuter cet outil depuis Travis CI ?
 
 Pour lancer `aspell` depuis Travis CI, vous devez installer ce package apt dans le container Travis. Pour ce faire, ajoutez les lignes suivantes dans le fichier `.travis.yml` :
 
@@ -100,8 +98,7 @@ Par exemple, si vous voulez supprimer vos blocs de code de vos fichiers markdown
 cat your_file.md | sed  -n '/^```/,/^```/ !p'
 ```
 
-Comment envoyer les résultats vers votre pull request Github ?
-==============================================================
+## Comment envoyer les résultats vers votre pull request Github ?
 
 Nous ne voulons pas que ce script bloque ceux qui souhaitent merger la pull request. La première chose à faire est donc de retourner `exit 0` à la fin de notre script qui sera exécuté depuis Travis CI. Sinon si un code d'erreur est retourné, Travis va indiquer un statut d'erreur sur la pull request qui empêchera de la merger.
 
@@ -124,8 +121,7 @@ curl -i -H "Authorization: token $GITHUB_TOKEN" \
 - Le token Github doit être caché et non pas en dur dans votre script, vous devez donc ajouter une variable d'environnement dans les paramètres Travis. Pour cela, allez sur cette page : [https://travis-ci.org/your-github-account/your-repository/settings](https://travis-ci.org/your-github-account/your-repository/settings)
 - La variable d'environnement `$TRAVIS_PULL_REQUEST` est automatiquement disponible sur le container Travis et correspond au numéro de la pull request liée au build en cours sur Travis.
 
-Conclusion
-==========
+## Conclusion
 
 Si vous voulez voir le script entier qui nous utilisons pour notre blog, c'est par [ici](https://github.com/eleven-labs/blog.eleven-labs.com/blob/master/bin/check-spelling.sh).
 

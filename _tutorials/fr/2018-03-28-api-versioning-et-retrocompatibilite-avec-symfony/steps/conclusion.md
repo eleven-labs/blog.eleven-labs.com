@@ -7,7 +7,7 @@ title: Conclusion
 
 Félicitations, vous avez terminés l'implémentation du versioning et de la gestion de retrocompatibilité dans votre API !
 
-### Utilisation
+## Utilisation
 
 Vous pouvez dès maintenant tester votre implémentation en effectuant des requêtes à votre API et en spécifiant un header de version de la façon suivante :
 
@@ -21,7 +21,7 @@ Enfin, souvenez vous que si aucun header n'est spécifié, aucune retrocompatibi
 
 Je suis preneur de feedbacks sur cette implémentation donc n'hésitez pas à me contacter si vous avez des soucis de mise en place ou d'utilisation.
 
-### Conclusion
+## Conclusion
 
 Bien que les fichiers de retrocompatibilité soient simples à mettre en place par les développeurs, il ne faut pas se faire avoir par vos clients (d'API) et gérer trop de versions de retrocompatibilité.
 

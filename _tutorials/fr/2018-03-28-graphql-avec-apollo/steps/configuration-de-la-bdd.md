@@ -4,13 +4,13 @@ tutorial: graphql-avec-apollo
 slug: configuration-de-la-bdd
 title: Installation du serveur GraphQL
 ---
-### Création de la base de données
+## Création de la base de données
 
 Si vous utilisez le container docker, la base de données PostgreSQL est comprise dans le projet.
 
 Si vous n'utilisez pas le docker, vous devez installer un PostgreSQL sur votre machine via la documentation [suivante](https://www.postgresql.org/download/)
 
-### Création du schéma
+## Création du schéma
 
 Pour gérer la communication avec PostgreSQL, nous allons utiliser la librairie [Knex](http://knexjs.org/).
 
@@ -44,7 +44,7 @@ Puis nous allons créer le schéma de base de données. Dans la suite du tutorie
 
 Commençons par créer le dossier `schemas` qui contiendra l'ensemble des schémas de la base de données.
 
-#### Astroanutes
+### Astroanutes
 
 Ajoutez le fichier `astronaute.js` contenant la table astronaute :
 
@@ -77,7 +77,7 @@ export default { up, down };
 
 Nous utiliserons les fonctions `up` et `down` pour la création de la base.
 
-#### Planets
+### Planets
 
 Ajoutez le fichier `planet.js` contenant la table planet :
 
@@ -98,7 +98,7 @@ const down = function down(pg) {
 export default { up, down };
 ```
 
-#### Planets-Astronautes
+### Planets-Astronautes
 
 Ajoutez le fichier `planet-astronaute.js` contenant la table de liaison entre un astronaute et sa planète :
 
@@ -130,7 +130,7 @@ const down = function down(pg) {
 export default { up, down };
 ```
 
-#### Grades
+### Grades
 
 Ajouter le fichier `grade.js` contenant la table des grades :
 
@@ -150,7 +150,7 @@ const down = function down(pg) {
 export default { up, down };
 ```
 
-#### Création de la base
+### Création de la base
 
 Ajouter le fichier `index.js` permettant de générer la base de données :
 

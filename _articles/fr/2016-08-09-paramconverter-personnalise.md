@@ -16,15 +16,13 @@ keywords:
   - paramconverter
 ---
 
-Introduction
-============
+## Introduction
 
 L'article qui suit s'adresse aux développeurs qui ont déjà utilisé le ParamConverter, et qui comprennent le principe de base de son fonctionnement.
 
 Je l'ai rédigé pour expliquer comment résoudre la problématique suivante : mon besoin était de faire passer un token dans un header personnalisé, et de pouvoir le récupérer dans les contrôleurs. Le but était d'éviter de répéter l'acquisition de ce header dans chacun des contrôleurs.
 
-Fonctionnement de base
-======================
+## Fonctionnement de base
 
 Le ParamConverter est un outil magique. Depuis un contrôleur, il suffit de typehinter l'argument pour obtenir une instance d'une classe en fonction de l'id dans l'url.
 
@@ -46,8 +44,7 @@ Je vous renvoie à la documentation pour le fonctionnement de base du ParamConve
 
 Mais si la valeur que je cherche ne se trouve pas dans l'url, par exemple dans un header, comment faire ?
 
-Un token dans un header
-=======================
+## Un token dans un header
 
 Prenons un autre exemple:
 
@@ -65,8 +62,7 @@ public function isTokenValidAction($token)
 
 La valeur de mon token doit passer par un header *x-token*. Je vais donc créer un ParamConverter pour aller chercher le token dans le header et non dans l'url.
 
-Création du ParamConverter
-==========================
+## Création du ParamConverter
 
 Tous les ParamConverter doivent implémenter l'interface `Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface`.
 
@@ -133,8 +129,7 @@ Lors de la construction du contrôleur, Symfony va chercher toutes les valeurs d
 
 Mon  `ParamConverter` personnalisé est terminé. Je vais maintenant l'utiliser.
 
-Déclaration du service
-======================
+## Déclaration du service
 
 Un *compiler pass* va lire les services avec le tag "request.param\_converter". Je peux définir une priorité et un nom. S'il y a une priorité, ils seront triés dans cet ordre.
 
@@ -144,8 +139,7 @@ Un *compiler pass* va lire les services avec le tag "request.param\_converter". 
 </service>
 ```
 
-Utilisation dans le contrôleur
-==============================
+## Utilisation dans le contrôleur
 
 Pour l'utiliser dans mon contrôleur, j'ajoute l'annotation *ParamConverter* à mon contrôleur avec les options *name* et le nom de converter renseigné dans le service.
 

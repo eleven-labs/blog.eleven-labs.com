@@ -69,7 +69,7 @@ ou exclusif | <code>^&#124;</code> `⊕` | <code>param>1^&#124;param<10</code> `
 
 > Eh oui, la librairie fournit aussi des bridges vers doctrine `ORM`, `ODM` et `common` (pour filter les collections).
 
-#### Précédence des opérateurs de composition
+### Précédence des opérateurs de composition
 
 Il faut faire attention à la priorité des opérateurs de compositions (`&`, `!&`, `|`, `!|`, `⊕`).
 Les grandes priorités sont prises en compte en premier.
@@ -94,7 +94,7 @@ Alors que l'expression suivante sélectionnera les astronautes `Raccoon` qui ont
 
 Nous allons maintenant voir dans quels cas nous pourrions utiliser cette librairie.
 
-### Spécification
+## Spécification
 
 Afin d'avoir une spécification nous allons utiliser la classe `ClosureExpressionBuilder`.
 En effet cette classe fabrique une callback qui peut être utilisée comme une spécification.
@@ -159,7 +159,7 @@ $specification(new Astronaut('Ilan', 'Donut Factory', 1325, 'Commodore')); // tr
 
 Comme vous pouvez le voir, la spécification est appelable avec un array associatif, des objets avec des attributs publics mais aussi avec des objets qui ont des getters.
 
-### Filtrer un jeu de donnés
+## Filtrer un jeu de donnés
 
 Nous allons dans un premier temps filtrer un tableau de données.
 Pour ce faire nous allons encore utiliser `ClosureExpressionBuilder`
@@ -249,7 +249,7 @@ $filteredAstronauts = array_filter($astronauts, $expression);
 // ];
 ```
 
-### Filtrer une ArrayCollection
+## Filtrer une ArrayCollection
 
 Pour filtrer une ArrayCollection il suffit d'utiliser le bridge `Symftony\Xpression\Bridge\Doctrine\Common\ExpressionBuilderAdapter`.
 
@@ -276,9 +276,9 @@ $filteredAstronauts = $astronauts->matching(new Criteria($expression));
 
 > Pour filtrer une `Collection` vous pouvez utiliser `ClosureExpressionBuilder` vu précédemment et l'injecter dans `Collection::filter(Closure $p)`.
 
-### Filtrer des données stockées en base
+## Filtrer des données stockées en base
 
-#### Doctrine ODM
+### Doctrine ODM
 
 Bien, maintenant imaginons que ces données soient dans une base de données MongoDB.
 
@@ -320,7 +320,7 @@ $astronauts = $collection->createQueryBuilder()->setQueryArray($queryBuilder->ge
 
 > Ha bah non ! C'est super simple en fait
 
-#### Doctrine ORM
+### Doctrine ORM
 
 Et pour doctrine/orm alors ?
 
@@ -377,7 +377,7 @@ $parser = new Parser(
 );
 ```
 
-### Filtrer un endpoint d'API
+## Filtrer un endpoint d'API
 
 Actuellement si vous voulez filtrer votre API vous pouvez :
 
@@ -453,7 +453,7 @@ Maintenant vous pouvez vous rendre sur votre URL et y ajouter votre Xpression da
 http://localhost/astronauts/list?query={planet{{Raccoons}}|points≥1000}
 ```
 
-### Mots de la fin
+## Mots de la fin
 
 Je vais m'arrêter là pour la présentation de cette librairie PHP.
 Je vous invite à tester la librairie et à y contribuer (idée, bugs, features, documentation, etc).
@@ -464,7 +464,7 @@ Voici une petite liste des futures ajouts dans la librairie :
 - refacto le coeur de la librairie afin d'être extensible (pouvoir ajouter des syntaxes).
 - implémenter un builder de query en PHP et JS afin de pouvoir créer directement le query textuel.
 
-### Liens utiles
+## Liens utiles
 
 - [Demo Xpression](http://symftony-xpression.herokuapp.com/)
 - [Code source Xpression](https://github.com/Symftony/Xpression)

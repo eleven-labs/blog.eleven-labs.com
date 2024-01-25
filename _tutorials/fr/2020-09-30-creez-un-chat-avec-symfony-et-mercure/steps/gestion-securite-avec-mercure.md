@@ -4,7 +4,7 @@ tutorial: creez-un-chat-avec-symfony-et-mercure
 slug: gestion-securite-avec-mercure
 title: Gestion de la sécurité avec Mercure
 ---
-### Update privée
+## Update privée
 
 Nous envoyons des messages en temps réel sur notre chat, mais presque n'importe qui peut récupérer nos événements et lire leur contenu. Pas très sécurisé n'est-ce pas ?
 Pour protéger nos updates, il suffit de rajouter un paramètre au moment de leur création :
@@ -92,7 +92,7 @@ Votre Cookie doit être envoyé de préférence au moment du discovery. Génére
 N'oubliez pas d'injecter votre `CookieJwtProvider` dans la signature de cette fonction pour pouvoir l'utiliser ici.
 
 
-### S'authentifier auprès du Hub
+## S'authentifier auprès du Hub
 
 Un Cookie est donc à présent déposé dans le navigateur grâce à la réponse de notre serveur.
 

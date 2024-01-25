@@ -25,7 +25,7 @@ Lors d'un article précédent nous avons créé [notre première PWA]({BASE_URL}
 
 [Firebase](https://firebase.google.com/) pour stocker nos tokens utilisateurs.
 
-Pour aller plus vite, nous vous invitons à récupérer le projet [https://github.com/CaptainJojo/pwa-parisjs](https://github.com/CaptainJojo/pwa-parisjs) qui contient une PWA prête à l'emploi.
+Pour aller plus vite, nous vous invitons à récupérer le projet [https://github.com/CaptainJojo/pwa-parisjs](https://github.com/CaptainJojo/pwa-parisjs) qui contient une PWA prête à l'emploi.
 
 ```sh
 git clone https://github.com/CaptainJojo/pwa-parisjs
@@ -35,9 +35,9 @@ npm install
 npm start
 ```
 
-A partir de la vous devez avoir accès à votre PWA à l'adresse suivante [localhost:8080](localhost:8080). Si ce n'est pas fait, vous devez  installer [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk), ce qui vous permettra de valider que vous avez bien une PWA.
+A partir de la vous devez avoir accès à votre PWA à l'adresse suivante [localhost:8080](localhost:8080). Si ce n'est pas fait, vous devez  installer [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk), ce qui vous permettra de valider que vous avez bien une PWA.
 Avant de se lancer dans l'envoi d'une push notification, nous allons passer par la configuration. Et oui ! Ce n'est pas magique, nous allons demander à Google l'autorisation.
-Nous allons sur [Firebase](https://console.firebase.google.com/) pour créer un projet.
+Nous allons sur [Firebase](https://console.firebase.google.com/) pour créer un projet.
 
 ![Firebase - créer un projet]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-11.19.54.png)
 
@@ -110,7 +110,7 @@ endpoint: cV2kP3sOb24:APA91bHfZgFSPQ3CXyG9LejWdq9jOT-WqQpvK4peX9ZZtrfsHCf6OPEvDe
 ```
 
 Il s'agit du token du device, c'est à partir de celui-ci que nous pourrons envoyer une push notification.
-Comme nous voulons faire quelque chose de propre (même s'il ne s'agit que d'un tutoriel), nous allons utiliser Firebase pour stocker les tokens utilisateurs. Pour cela rien de plus simple,  vous retournez sur la console Firebase et dans l'onglet "Authentification" vous cliquez sur "configuration web".
+Comme nous voulons faire quelque chose de propre (même s'il ne s'agit que d'un tutoriel), nous allons utiliser Firebase pour stocker les tokens utilisateurs. Pour cela rien de plus simple,  vous retournez sur la console Firebase et dans l'onglet "Authentification" vous cliquez sur "configuration web".
 
 ![PWA - Autoriser les notifications]({BASE_URL}/imgs/articles/2016-10-27-les-push-notifications-sur-votre-site/capture-decran-2016-10-26-a-15.50.59.png)
 
@@ -239,7 +239,7 @@ self.addEventListener('push', function(event) {
 });
 ```
 
-C'est presque fini ! Nous allons créer une url "/sender" qui nous permettra d'envoyer les notifications à tous les tokens que nous avons en base. Pour cela nous allons utiliser les modules *request* et *firebase* (version npm). Voici le nouveau package.json :
+C'est presque fini ! Nous allons créer une url "/sender" qui nous permettra d'envoyer les notifications à tous les tokens que nous avons en base. Pour cela nous allons utiliser les modules *request* et *firebase* (version npm). Voici le nouveau package.json :
 
 ```json
 {

@@ -6,10 +6,10 @@ title: Initialisation du projet
 ---
 Dans cette partie, nous récupérons la base du code et nous créons nos entités.
 
-### Récupération du sample
+## Récupération du sample
 Pour commencer, vous pouvez cloner le sample de code que je vous ai créé sur ce [repo GitHub](https://github.com/ArthurJCQ/tutorial-astro-chat).
 
-> Et pour lancer l'application ? 
+> Et pour lancer l'application ?
 
 Nous utiliserons Docker !
 La configuration Docker est déjà présente, dans le dossier `docker/` et le fichier `docker-compose.yml`.
@@ -30,12 +30,12 @@ docker-compose exec php composer i
 
 Et voilà, rendez-vous sur votre `localhost:81` pour voir votre page d'accueil.
 
-L'application tourne, mais elle est bien vide... 
+L'application tourne, mais elle est bien vide...
 Seule la gestion des utilisateurs a été créée pour vous (je ne vais pas vous mâcher tout le travail non plus).
 
 Créons quelques entités en amont et les pages HTML correspondantes en tant que squelette de notre chat !
 
-### Création des entités
+## Création des entités
 
 Listons les entités dont nous allons avoir besoin pour une messagerie :
 

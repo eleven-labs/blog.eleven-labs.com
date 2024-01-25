@@ -18,7 +18,7 @@ keywords:
 
 ### Contexte
 
-Née en 2006, Paris Web se qualifie comme la conférence « des gens qui font un web accessible et de qualité ». En marge des manifestations orientées principalement vers un public de développeurs, cet événement se distingue par des sujets souvent plus intimement liés à l’UX et l’intégration.
+Née en 2006, Paris Web se qualifie comme la conférence « des gens qui font un web accessible et de qualité ». En marge des manifestations orientées principalement vers un public de développeurs, cet événement se distingue par des sujets souvent plus intimement liés à l’UX et l’intégration.
 
 On y parle ainsi W3C, prototypage, tests utilisateurs et performance, mais le spectre des thématiques proposées s’élargit bien au-delà de ce qui touche à la conception d’un site pour atteindre le Web dans son ensemble : sécurité, vie privée, gestion de projet, intelligence artificielle… La proposition est suffisamment diversifiée pour permettre même aux vétérans de découvrir quelque chose de nouveau chaque année.
 
@@ -48,15 +48,15 @@ Le bal des conférences s’est ouvert sur les boulettes. Pas les délicieuses b
 
 Les réponses, nombreuses, aident à relativiser des erreurs qui restent humaines, et nous invitent à réfléchir sur la meilleure façon d’y faire face, et surtout de ne pas les reproduire.
 
-Agnès souligne l’importance de l’automatisation. Elle explique que dans tout cas de figure ou « à chaque fois que je fais X, je dois penser à faire Y », il y a une action à automatiser. Et que « si vous le faites souvent, ne le faites pas à la main ».
+Agnès souligne l’importance de l’automatisation. Elle explique que dans tout cas de figure ou « à chaque fois que je fais X, je dois penser à faire Y », il y a une action à automatiser. Et que « si vous le faites souvent, ne le faites pas à la main ».
 
 Pendant la crise, il faut verbaliser le problème, demander de l’aide plutôt que d’essayer de le résoudre seul. Et pour ne pas le reproduire, prendre des mesures : tester, mieux différencier les environnements, et exploiter le pouvoir de la flemme pour rendre pénible les tâches les plus sensibles, avec des parcours longs ou des mots de passe de dix kilomètres.
 
-L’erreur fait partie de l’apprentissage et doit permettre d’améliorer son organisation plutôt que de culpabiliser les individus responsables. Comme le dit Agnès, «Les boulettes ne sont pas des échecs. La vraie erreur, c’est de répéter les échecs ».
+L’erreur fait partie de l’apprentissage et doit permettre d’améliorer son organisation plutôt que de culpabiliser les individus responsables. Comme le dit Agnès, «Les boulettes ne sont pas des échecs. La vraie erreur, c’est de répéter les échecs ».
 
 ### Avis de l'astronaute Stéphane
 
-Dès le commencement, le ton est donné. En effet, qui n’a jamais fait une grosse erreur en production ? Présentation d’un palmarès des plus belles boulettes 2018, et conseils pratiques pour se sortir au mieux de cette situation de crise et éviter de la reproduire, articulèrent la démonstration.
+Dès le commencement, le ton est donné. En effet, qui n’a jamais fait une grosse erreur en production ? Présentation d’un palmarès des plus belles boulettes 2018, et conseils pratiques pour se sortir au mieux de cette situation de crise et éviter de la reproduire, articulèrent la démonstration.
 
 
 ## [UX en Terre Inconnue](https://www.paris-web.fr/2018/conferences/ux-en-terre-inconnue.php) par Sébastien Desbenoit
@@ -183,7 +183,7 @@ La conférence est ponctuée de bouts de codes et d’exemples visuels qui guide
 
 ### Avis de l'astronaute Stéphane
 
-Comment présenter des données sous forme de graphique uniquement avec HTML et CSS, sans utiliser de librairie JavaScript ? Le sujet et la démonstration étaient au niveau de mes attentes en tant qu’intégrateur. Mais j’étais un peu déçu sur la forme car cela ressemblait à une explication de code.
+Comment présenter des données sous forme de graphique uniquement avec HTML et CSS, sans utiliser de librairie JavaScript ? Le sujet et la démonstration étaient au niveau de mes attentes en tant qu’intégrateur. Mais j’étais un peu déçu sur la forme car cela ressemblait à une explication de code.
 
 
 ## [Dear developer, the Web isn’t about you](https://www.paris-web.fr/2018/conferences/dear-developer-the-web-isnt-about-you.php) par Charlie Owen
@@ -203,13 +203,13 @@ Le téléphone le plus commun au monde n’est pas le dernier iPhone, ni celui d
 
 Notre façon de concevoir les sites, ainsi que la multiplication des librairies JS comme React, nous a progressivement conduit à accepter le JavaScript comme étant toujours activé par défaut. Il existe pourtant plusieurs cas de figure dans lesquels ce n’est pas le cas, et nous condamnons les utilisateurs concernés à ne pas pouvoir utiliser nos services.
 
-Dans un timing presque parfait, cette conférence se pose comme un complément admirable à cet article récent sur le « désenchantement logiciel » http://tonsky.me/blog/disenchantment/. Les solutions existent, mais il faut revoir notre philosophie de travail. Comme Gaël Poupard l’expliquait plus tôt, il faut appliquer le principe de moindre puissance, concevoir progressivement, et surtout arrêter de supposer que nos utilisateurs ont majoritairement des téléphones de dernière génération et sont parfaitement desservis par leurs opérateurs. Pensons un peu moins aux gens qui font le Web, et un peu plus à ceux qui l’utilisent.
+Dans un timing presque parfait, cette conférence se pose comme un complément admirable à cet article récent sur le « désenchantement logiciel » http://tonsky.me/blog/disenchantment/. Les solutions existent, mais il faut revoir notre philosophie de travail. Comme Gaël Poupard l’expliquait plus tôt, il faut appliquer le principe de moindre puissance, concevoir progressivement, et surtout arrêter de supposer que nos utilisateurs ont majoritairement des téléphones de dernière génération et sont parfaitement desservis par leurs opérateurs. Pensons un peu moins aux gens qui font le Web, et un peu plus à ceux qui l’utilisent.
 
 ### Avis de l'astronaute Stéphane
 
 Ou comment apprendre à développer pour les autres, qui ne nous ressemblent pas.
 
-Le postulat de départ était le suivant :  tout le monde n’a pas le même accès à l’évolution des technologies. Et certains ont des difficultés financières ou font face au monde via un handicap ou une barrière quelconque.
+Le postulat de départ était le suivant :  tout le monde n’a pas le même accès à l’évolution des technologies. Et certains ont des difficultés financières ou font face au monde via un handicap ou une barrière quelconque.
 
 Dans un projet Web, on doit penser à tous les utilisateurs et ne laisser personne de côté.
 
@@ -229,7 +229,7 @@ Cette présentation m’a réellement conforté dans ma vision de mon métier.
 
 ### Avis de l'astronaute Stéphane
 
-Comment prendre en compte l’accessibilité dès le démarrage d’un projet et son rapport au design inclusif ? Sujet intéressant mais trop vaste pour une présentation de courte durée.
+Comment prendre en compte l’accessibilité dès le démarrage d’un projet et son rapport au design inclusif ? Sujet intéressant mais trop vaste pour une présentation de courte durée.
 
 
 ## [Les jeux vidéos sont-ils des logiciels comme les autres ?](https://www.paris-web.fr/2018/conferences/les-jeux-video-sont-ils-des-logiciels-comme-les-autres.php) par Jérôme Dupire

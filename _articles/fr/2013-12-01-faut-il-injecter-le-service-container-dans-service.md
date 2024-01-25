@@ -22,8 +22,7 @@ keywords:
 
 La documentation de Symfony2 explique très bien ce que c'est qu'un [service et le conteneur de dépendances](http://symfony.com/fr/doc/current/book/service_container.html). Mais dans une application on a souvent besoin d'injecter plusieurs services ou paramètres. Vous vous êtes déjà dit que c'était plus simple d'injecter le container de service directement plutôt que d'injecter toutes les dépendances les unes après les autres ? Voici les "pour" et les "contre".
 
-Pourquoi ne pas le faire ?
-==========================
+## Pourquoi ne pas le faire ?
 
 Tout d'abord, quand un service ressemble à ça,
 
@@ -46,8 +45,7 @@ Deuxièmement, il faudra utiliser le conteneur de service dans les tests, ou avo
 
 Aussi, si on demande un service particulier au conteneur à plusieurs endroits, on n'est plus aussi découplé du reste du code que ce qu'on devrait. On est couplé avec le DIC au lieu de la classe directement, mais cela va toujours à l’encontre du principe d'injection de dépendances.
 
-Dans quel cas injecter le conteneur de services ?
-=================================================
+## Dans quel cas injecter le conteneur de services ?
 
 Il existe quand même des cas où injecter le conteneur de services directement peut être utile : quand vous avez un service dans un scope (champ d'application) "container" qui a besoin d'un service du scope "request". Exemple, une extension Twig qui aurait besoin de Request pour récupérer une URL.
 
