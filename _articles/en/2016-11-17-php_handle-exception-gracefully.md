@@ -34,7 +34,7 @@ Let's start with the beginning, there is an exception because at some point in t
 
 There are some good practices on creating exceptions. I will focus on two in particular: naming and context.
 
-## Name the error, not the issuer
+### Name the error, not the issuer
 
 It is easier to name the exception by its location than by the problem itself. This is not a good practice because the returned message will not be able to identify the cause quickly and simply. For example, a divide by zero operation generates an exception. Raising an exception **OperationNotPossibleException** gives little indication of the origin of the error. With this name: *DivisionByZeroException*, the error is clear and precise.
 
