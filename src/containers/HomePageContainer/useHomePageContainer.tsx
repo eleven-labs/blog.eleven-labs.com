@@ -62,16 +62,18 @@ export const useHomePageContainer = (): HomePageProps => {
         href: generatePath(PATHS.CATEGORY, { categoryName: 'all', lang: i18n.language }),
       },
     },
-    lastTutorialsBlock: {
-      title: <TransWithHtml i18nKey="pages.home.last-tutorials-block.title" onlyLineBreak />,
-      description: <TransWithHtml i18nKey="pages.home.last-tutorials-block.description" />,
-      tutorialLabel: t('common.tutorial-tag'),
-      posts: lastTutorialsForCardList,
-      linkSeeMore: {
-        label: t('pages.home.last-tutorials-block.link-see-more'),
-        href: generatePath(PATHS.CATEGORY, { categoryName: ContentTypeEnum.TUTORIAL, lang: i18n.language }),
-      },
-    },
+    lastTutorialsBlock: lastTutorialsForCardList.length
+      ? {
+          title: <TransWithHtml i18nKey="pages.home.last-tutorials-block.title" onlyLineBreak />,
+          description: <TransWithHtml i18nKey="pages.home.last-tutorials-block.description" />,
+          tutorialLabel: t('common.tutorial-tag'),
+          posts: lastTutorialsForCardList,
+          linkSeeMore: {
+            label: t('pages.home.last-tutorials-block.link-see-more'),
+            href: generatePath(PATHS.CATEGORY, { categoryName: ContentTypeEnum.TUTORIAL, lang: i18n.language }),
+          },
+        }
+      : undefined,
     newsletterCard,
   };
 };

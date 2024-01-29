@@ -76,6 +76,7 @@ jobs:
           NODE_ENV: production
           BASE_URL: ${{ env.BASE_URL }}
           VITE_IS_DEBUG: ${{ env.IS_DEBUG }}
+          VITE_HOST_URL: ${{ env.ENV_URL }}
           VITE_ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
           VITE_ALGOLIA_API_KEY: ${{ env.ALGOLIA_API_SEARCH_KEY }}
           VITE_ALGOLIA_INDEX: ${{ env.ALGOLIA_INDEX }}

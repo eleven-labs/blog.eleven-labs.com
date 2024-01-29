@@ -7,7 +7,6 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
 import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
-import { getPathFile } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
@@ -65,7 +64,6 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
       }),
       content: <div dangerouslySetInnerHTML={{ __html: author.content }} />,
     },
-    emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
     title: t('pages.author.post_list_title'),
     postCardList: (
       <PostCardListContainer

@@ -113,27 +113,6 @@ export const markdownToHtml = (content: string): string => {
 
           return <Box {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
         },
-        h2: ({ children }): React.JSX.Element => {
-          const label = (children as string[]).join(' ');
-          return (
-            <Heading id={slugify(label)} as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
-              {label}
-            </Heading>
-          );
-        },
-        h3: ({ children }): React.JSX.Element => (
-          <Heading as="h3" size="m" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
-            {children}
-          </Heading>
-        ),
-        h4: ({ children }): React.JSX.Element => (
-          <Heading as="h4" size="s" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
-            {children}
-          </Heading>
-        ),
-        p: ({ node, ...props }): React.JSX.Element => (
-          <Text as="p" mb="xxs" {...(props as ComponentPropsWithoutRef<'p'>)} />
-        ),
         li: ({ node, ...props }): React.JSX.Element => (
           <Text as="li" mb="xxs" {...(props as ComponentPropsWithoutRef<'li'>)} />
         ),
@@ -210,12 +189,6 @@ export const markdownToHtml = (content: string): string => {
             },
           });
         },
-        /*script: ({ node, ...props }): React.JSX.Element | null => {
-          if (props.src === 'https://platform.twitter.com/widgets.js') {
-            return null;
-          }
-          return React.createElement('script', props);
-        },*/
       },
     })
     .processSync(cleanMarkdown(content)).result;

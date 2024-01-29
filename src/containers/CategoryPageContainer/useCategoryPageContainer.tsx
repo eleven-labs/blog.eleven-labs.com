@@ -43,10 +43,12 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
       ? {
           title: <TransWithHtml i18nKey={`pages.category.${categoryName}.expertise.title`} onlyLineBreak />,
           description: <TransWithHtml i18nKey={`pages.category.${categoryName}.expertise.description`} />,
-          expertiseLink: {
-            label: t(`pages.category.${categoryName}.expertise.link_label`),
-            href: t(`pages.category.${categoryName}.expertise.link_url`),
-          },
+          expertiseLink: !['agile'].includes(categoryName as string)
+            ? {
+                label: t(`pages.category.${categoryName}.expertise.link_label`),
+                href: t(`pages.category.${categoryName}.expertise.link_url`),
+              }
+            : undefined,
         }
       : undefined,
     title: <TransWithHtml i18nKey={`pages.category.${categoryName}.post_list_title`} onlyLineBreak />,

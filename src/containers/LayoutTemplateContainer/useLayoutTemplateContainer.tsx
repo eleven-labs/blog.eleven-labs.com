@@ -1,6 +1,6 @@
 import { LayoutTemplateProps } from '@eleven-labs/design-system';
 import { useHead, useLink, useMeta, useScript } from 'hoofd';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { matchPath, useLoaderData, useLocation } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import { themeColor } from '@/config/website';
 import { GOOGLE_SITE_VERIFICATION } from '@/constants';
 import { PATHS } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
-import { getClickEventElements, handleClickEventListener } from '@/helpers/dataLayerHelper';
+import { getUrl } from '@/helpers/getUrlHelper';
 import { LayoutTemplateData } from '@/types';
 
 import { HeaderContainer } from './HeaderContainer';
@@ -40,7 +40,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   });
   useMeta({ property: 'og:locale', content: i18n.language });
   useMeta({ property: 'og:site_name', content: 'Blog Eleven Labs' });
-  useMeta({ property: 'og:url', content: location.pathname + location.search });
+  useMeta({ property: 'og:url', content: getUrl(`${location.pathname}${location.search}`) });
   useScript({
     type: 'application/ld+json',
     text: JSON.stringify({
@@ -54,7 +54,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
               '@type': 'SearchAction',
               target: {
                 '@type': 'EntryPoint',
-                urlTemplate: 'https://blog.eleven-labs.com/fr/search/?search={search_term_string}',
+                urlTemplate: `https://blog.eleven-labs.com/${i18n.language}/search/?search={search_term_string}`,
               },
               'query-input': 'required name=search_term_string',
             },
@@ -66,22 +66,6 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   useLink({ rel: 'apple-touch-icon', sizes: '120x120', href: getPathFile('/imgs/icons/apple-icon-120x120.png') });
   useLink({ rel: 'apple-touch-icon', sizes: '152x152', href: getPathFile('/imgs/icons/apple-icon-152x152.png') });
   useLink({ rel: 'apple-touch-icon', sizes: '180x180', href: getPathFile('/imgs/icons/apple-icon-180x180.png') });
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    const clickEventElements = getClickEventElements();
-
-    clickEventElements.forEach((element) => {
-      element.addEventListener('click', handleClickEventListener);
-    });
-
-    return () => {
-      clickEventElements.forEach((element) => {
-        element.removeEventListener('click', handleClickEventListener);
-      });
-    };
-  }, [location]);
 
   return {
     header: (

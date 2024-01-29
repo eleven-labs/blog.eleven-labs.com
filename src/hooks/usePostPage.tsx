@@ -1,8 +1,11 @@
 import { Box, PostPageProps } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
+import { getPathFile } from '@/helpers/assetHelper';
+import { getUrl } from '@/helpers/getUrlHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useBreadcrumb } from '@/hooks/useBreadcrumb';
 import { useContactCard } from '@/hooks/useContactCard';
@@ -13,6 +16,7 @@ import { PostPageData } from '@/types';
 
 export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' | 'summary' | 'children'> => {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
   const { getDateToString } = useDateToString();
   useSeoPost({
     title: post.title,
@@ -40,20 +44,22 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
 
   return {
     breadcrumb,
+    cover: {
+      src: getPathFile('/imgs/cover-article.jpg'),
+      alt: 'cover',
+    },
     header: {
       title: post.title,
       date: getDateToString({ date: post.date }),
       readingTime: post.readingTime,
       authors,
       shareLinks: {
-        urlToShare: typeof window !== 'undefined' ? window.location.href : '',
+        urlToShare: getUrl(location.pathname),
         shares: {
-          copyLink: true,
           twitter: true,
           facebook: true,
           linkedIn: true,
         },
-        copiedLabel: t('common.post.share_links.copied_label'),
       },
     },
     footer: {

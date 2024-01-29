@@ -2,6 +2,7 @@ import { PostCardListProps } from '@eleven-labs/design-system';
 import { useTranslation } from 'react-i18next';
 
 import { PATHS } from '@/constants';
+import { getPathFile } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { truncateText } from '@/helpers/stringHelper';
 import { useDateToString } from '@/hooks/useDateToString';
@@ -20,6 +21,10 @@ export const usePostsForCardList = (options: {
     : (options.posts ?? []).map((post) => ({
         contentType: post.contentType,
         slug: post.slug,
+        cover: {
+          src: getPathFile('/imgs/cover-article.jpg'),
+          alt: 'cover',
+        },
         title: post.title,
         excerpt: truncateText(post.excerpt, 125),
         date: getDateToString({ date: post.date }),
