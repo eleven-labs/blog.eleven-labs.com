@@ -54,7 +54,7 @@ In this example, we can see that findandmodify operation is extremly used in an 
 
 More info [here](https://github.com/rueckstiess/mtools/wiki/mloginfo).
 
-## Mlogfilter
+### Mlogfilter
 
 Its name says all, Mlogfilter allows you to filter logs. You can easily apply multiple filters and maybe combine it with mloginfo.
 
@@ -76,7 +76,7 @@ This command for example show only the slower operations within a day from the b
 
 More info [here](https://github.com/rueckstiess/mtools/wiki/mlogfilter).
 
-## Mplotqueries & Mlogvis
+### Mplotqueries & Mlogvis
 
 Those tools allows you to generate graphics to visualize data in a human-readable format. We can see : calls distribution, type of commands, etc :
 
@@ -84,7 +84,7 @@ Those tools allows you to generate graphics to visualize data in a human-readabl
 
 More info on [Mlogvis](https://github.com/rueckstiess/mtools/wiki/mlogvis) & [Mplotqueries](https://github.com/rueckstiess/mtools/wiki/mplotqueries).
 
-## Mgenerate
+### Mgenerate
 
 Mgenerate is a tool that can randomly fill a MongoDB database given a JSON model. It is a must have when it comes to test functions or requests behavior with a large set of data.
 
@@ -116,7 +116,7 @@ This is an example of JSON file used to generate an user collection :
 
 More info on [Mgenerate](https://github.com/rueckstiess/mtools/wiki/mgenerate).
 
-## Mlaunch
+### Mlaunch
 
 Mlaunch on the other hand let you create quickly a local workable environment for MongoDB. It can provide a configuration for a standalone usage or for replicas or/and shards. Combined with Mgenerate, it's an efficient and a quick way to setup test environments in order to test apps using MongoDB.
 
@@ -128,7 +128,7 @@ mlaunch --replicaset --nodes 5
 
 This command is creating a MongoDB server with 5 replicas.
 
-## Bonus: MongoDB Compass
+### Bonus: MongoDB Compass
 
 Compass is a desktop client allowing you to browse and analyze data from a MongoDB database. Its goal is to allow a person to manipulate data without real knowledges on MongoDB querying. However, it's only available on Windows and MacOS yet.
 
