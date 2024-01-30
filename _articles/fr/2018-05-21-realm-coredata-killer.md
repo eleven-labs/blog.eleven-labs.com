@@ -5,7 +5,7 @@ date: '2018-05-21'
 slug: realm-coredata-killer
 title: 'Realm, CoreData killer'
 excerpt: 'Realm, CoreData killer'
-cover: /assets/2018-02-24-realm-coredata-killer/realm2.jpg
+oldCover: /assets/2018-02-24-realm-coredata-killer/realm2.jpg
 categories: []
 authors:
   - ibenichou

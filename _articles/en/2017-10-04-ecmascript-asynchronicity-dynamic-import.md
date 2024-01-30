@@ -5,7 +5,7 @@ date: '2017-10-04'
 slug: ecmascript-asynchronicity-dynamic-import
 title: ECMAScript Asynchronicity - dynamic import
 excerpt: Optimize your production code by splitting and lazy loading modules
-cover: /assets/2017-10-04-ecmascript-asynchronicity-dynamic-import/cover.jpg
+oldCover: /assets/2017-10-04-ecmascript-asynchronicity-dynamic-import/cover.jpg
 categories:
   - javascript
 authors:

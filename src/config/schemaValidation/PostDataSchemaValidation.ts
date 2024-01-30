@@ -10,7 +10,13 @@ export const PostDataSchemaValidation = z.object({
   slug: z.string().regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/, 'Kebab case format not respected'),
   title: z.string(),
   excerpt: z.string(),
-  cover: z.string().optional(),
+  oldCover: z.string().optional(),
+  cover: z
+    .object({
+      path: z.string(),
+      alt: z.string(),
+    })
+    .optional(),
   categories: z.array(z.enum(CATEGORIES)),
   authors: z.array(z.string()),
   keywords: z
@@ -30,6 +36,12 @@ export const PostDataSchemaValidation = z.object({
           message: 'No duplicates allowed.',
         });
       }
+    })
+    .optional(),
+  seo: z
+    .object({
+      title: z.string().max(60).optional(),
+      description: z.string().max(155).optional(),
     })
     .optional(),
 });

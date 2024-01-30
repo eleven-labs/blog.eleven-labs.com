@@ -1,7 +1,7 @@
+import { NotFoundPage } from '@eleven-labs/design-system';
 import React from 'react';
 
 import { useNotFoundPageContainer } from '@/containers/NotFoundPageContainer/useNotFoundPageContainer';
-import { NotFoundPage } from '@/pages/NotFoundPage';
 
 export const NotFoundPageContainer: React.FC = () => {
   const notFoundPageProps = useNotFoundPageContainer();

@@ -5,7 +5,7 @@ date: '2018-10-23'
 slug: cucumber-for-angular
 title: Cucumber for Angular
 excerpt: Comment intégrer Cucumber dans Angular
-cover: /assets/2018-10-23-cucumber-for-angular/cover.png
+oldCover: /assets/2018-10-23-cucumber-for-angular/cover.png
 categories:
   - javascript
 authors:

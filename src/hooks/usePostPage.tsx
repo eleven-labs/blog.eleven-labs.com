@@ -1,50 +1,41 @@
-import mermaid from 'mermaid';
-import { useEffect } from 'react';
+import { Box, PostPageProps } from '@eleven-labs/design-system';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
+import { getUrl } from '@/helpers/getUrlHelper';
 import { generatePath } from '@/helpers/routerHelper';
+import { useBreadcrumb } from '@/hooks/useBreadcrumb';
+import { useContactCard } from '@/hooks/useContactCard';
 import { useDateToString } from '@/hooks/useDateToString';
-import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
+import { usePostsForCardList } from '@/hooks/usePostsForCardList';
 import { useSeoPost } from '@/hooks/useSeoPost';
-import { PostPageProps } from '@/pages/PostPage';
 import { PostPageData } from '@/types';
 
-export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentType' | 'children'> => {
+export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' | 'summary' | 'children'> => {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
   const { getDateToString } = useDateToString();
   useSeoPost({
     title: post.title,
     post,
   });
-  const newsletterBlock = useNewsletterBlock();
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://platform.twitter.com/widgets.js';
-    const twitterTweetElements = document.getElementsByClassName('twitter-tweet');
-    if (twitterTweetElements.length) {
-      twitterTweetElements[0].appendChild(script);
-    }
-
-    const mermaidElements = document.getElementsByClassName('mermaid');
-    if (mermaidElements.length) {
-      mermaid.initialize({});
-      mermaid.contentLoaded();
-    }
-
-    return () => {
-      if (twitterTweetElements.length) {
-        twitterTweetElements[0].removeChild(script);
-      }
-    };
-  }, []);
+  const contactCard = useContactCard();
+  const breadcrumb = useBreadcrumb({ categoryName: post.categories[0] });
+  const relatedPostsForCardList = usePostsForCardList({
+    posts: post.relatedPosts,
+  });
 
   const authors: PostPageProps['header']['authors'] & PostPageProps['footer']['authors'] = post.authors.map(
     (author) => ({
-      ...author,
+      username: author.username,
+      name: author.name,
+      description: <Box dangerouslySetInnerHTML={{ __html: author.content }} />,
+      avatarImageUrl: author.avatarImageUrl,
       link: {
+        label: t('common.post.footer.author.link_label'),
         hrefLang: i18n.language,
         href: generatePath(PATHS.AUTHOR, { lang: i18n.language, authorUsername: author.username }),
       },
@@ -52,29 +43,33 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentTyp
   );
 
   return {
+    breadcrumb,
+    cover: {
+      src: post.cover?.path ? getPathFile(post.cover.path) : getPathFile('/imgs/cover-article.jpg'),
+      alt: '',
+    },
     header: {
       title: post.title,
       date: getDateToString({ date: post.date }),
       readingTime: post.readingTime,
       authors,
+      shareLinks: {
+        urlToShare: getUrl(location.pathname),
+        shares: {
+          twitter: true,
+          facebook: true,
+          linkedIn: true,
+        },
+      },
     },
     footer: {
-      title: t('pages.post.post_footer_title'),
+      title: t('common.post.footer.author.title'),
       authors,
-      emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
     },
-    newsletterBlock,
+    contactCard,
     relatedPostList: {
-      relatedPostListTitle: t('pages.post.related_post_list_title'),
-      posts: post.relatedPosts.map((relatedPost) => ({
-        ...relatedPost,
-        authors: relatedPost.authors,
-        date: getDateToString({ date: relatedPost.date }),
-        link: {
-          hrefLang: i18n.language,
-          href: generatePath(PATHS.POST, { lang: i18n.language, slug: relatedPost.slug }),
-        },
-      })),
+      relatedPostListTitle: t('common.post.related_post_list.title'),
+      posts: relatedPostsForCardList,
     },
   };
 };

@@ -1,13 +1,11 @@
 import {
-  Blockquote,
   Box,
+  ComponentPropsWithoutRef,
   Flex,
-  Heading,
   Link,
   Reminder,
   ReminderVariantType,
   SyntaxHighlighter,
-  Text,
 } from '@eleven-labs/design-system';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -103,56 +101,20 @@ export const markdownToHtml = (content: string): string => {
           const reminderProps = props as { ['reminder-variant']?: ReminderVariantType; ['reminder-title']?: string };
           if (reminderProps?.['reminder-variant'] && reminderProps?.['reminder-title']) {
             return (
-              <Reminder my="m" variant={reminderProps['reminder-variant']} title={reminderProps['reminder-title']}>
+              <Reminder mb="xs" variant={reminderProps['reminder-variant']} title={reminderProps['reminder-title']}>
                 {children}
               </Reminder>
             );
           }
 
-          return <Box {...(props as React.ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
+          return <Box {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
         },
-        h2: ({ children }): React.JSX.Element => (
-          <Heading as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
-            {children}
-          </Heading>
-        ),
-        h3: ({ children }): React.JSX.Element => (
-          <Heading as="h3" size="m" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
-            {children}
-          </Heading>
-        ),
-        h4: ({ children }): React.JSX.Element => (
-          <Heading as="h4" size="s" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
-            {children}
-          </Heading>
-        ),
-        p: ({ node, ...props }): React.JSX.Element => (
-          <Text as="p" mb="xxs" {...(props as React.ComponentPropsWithoutRef<'p'>)} />
-        ),
-        li: ({ node, ...props }): React.JSX.Element => (
-          <Text as="li" mb="xxs" {...(props as React.ComponentPropsWithoutRef<'li'>)} />
-        ),
-        strong: ({ children }): React.JSX.Element => (
-          <Text as="span" fontWeight="bold">
-            {children}
-          </Text>
-        ),
-        em: ({ children }): React.JSX.Element => (
-          <Text as="span" italic={true}>
-            {children}
-          </Text>
-        ),
-        i: ({ children }): React.JSX.Element => (
-          <Text as="span" italic={true}>
-            {children}
-          </Text>
-        ),
         a: ({ node, children, ...props }): React.JSX.Element => {
           const isExternalLink = (props.href as string)?.match(/^http(s)?:\/\//);
           return (
             <Link
               as="a"
-              {...(props as React.ComponentPropsWithoutRef<'a'>)}
+              {...(props as ComponentPropsWithoutRef<'a'>)}
               rel={isExternalLink ? 'nofollow noreferrer' : ''}
               style={{ overflowWrap: 'anywhere' }}
             >
@@ -160,12 +122,6 @@ export const markdownToHtml = (content: string): string => {
             </Link>
           );
         },
-        blockquote: ({ node, ...props }): React.JSX.Element => (
-          <Blockquote {...(props as React.ComponentPropsWithoutRef<'blockquote'>)} />
-        ),
-        pre: ({ node, ...props }): React.JSX.Element => (
-          <Box as="pre" textSize="xs" {...(props as React.ComponentPropsWithoutRef<'pre'>)} />
-        ),
         code: ({ node, className, children, ...props }): React.JSX.Element => {
           const match = /language-(\w+)/.exec(className || '');
           if (className && className.match('mermaid')) {
@@ -183,14 +139,6 @@ export const markdownToHtml = (content: string): string => {
             </Box>
           );
         },
-        figure: ({ node, ...props }): React.JSX.Element => {
-          return React.createElement('figure', {
-            ...props,
-            style: {
-              textAlign: 'center',
-            },
-          });
-        },
         img: ({ node, ...props }): React.JSX.Element => {
           const urlParams = new URLSearchParams(props.src?.split('?')?.[1] ?? '');
           return React.createElement('img', {
@@ -204,12 +152,6 @@ export const markdownToHtml = (content: string): string => {
               margin: 'var(--spacing-xs) auto',
             },
           });
-        },
-        script: ({ node, ...props }): React.JSX.Element | null => {
-          if (props.src === 'https://platform.twitter.com/widgets.js') {
-            return null;
-          }
-          return React.createElement('script', props);
         },
       },
     })

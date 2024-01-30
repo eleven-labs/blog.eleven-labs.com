@@ -34,6 +34,25 @@ const frontmatter = <TData = { [p: string]: unknown }>(
   return matter(content) as Omit<matter.GrayMatterFile<string>, 'data'> & { data: TData };
 };
 
+export const extractHeaders = (markdownContent: string): { level: number; text: string }[] => {
+  const headers: { level: number; text: string }[] = [];
+  const lines = markdownContent
+    .replace(/```(.|\n)+```/gm, '')
+    .split('\n')
+    .filter((line) => line.startsWith('#'));
+
+  for (const line of lines) {
+    const match = line.match(/^#+\s(.+)/);
+    if (match) {
+      const headerText = match[1];
+      const headerLevel = match[0].match(/#/g)?.length || 0; // Count the number of '#' characters
+      headers.push({ level: headerLevel, text: headerText.trim() });
+    }
+  }
+
+  return headers;
+};
+
 export const loadDataByMarkdownFilePath = ({
   filePath,
   markdownToHtml = defaultMarkdownToHtml,
@@ -102,9 +121,11 @@ export const getArticles = (): TransformedArticleData[] =>
         contentType: data.contentType,
         lang: data.lang,
         slug: data.slug,
+        cover: data.cover,
         date: new Date(data.date).toISOString(),
         title: data.title,
         excerpt: data.excerpt,
+        summary: extractHeaders(content),
         readingTime: getReadingTime(content),
         authors: data.authors,
         categories: data.categories,
@@ -138,6 +159,7 @@ export const getTutorials = (): TransformedTutorialData[] => {
         contentType: data.contentType,
         lang: data.lang,
         slug: data.slug,
+        cover: data.cover,
         date: new Date(data.date).toISOString(),
         title: data.title,
         excerpt: data.excerpt,

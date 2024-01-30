@@ -3,6 +3,9 @@ contentType: article
 lang: fr
 date: 2023-11-28
 slug: design-system-react
+cover:
+  path: /imgs/articles/2023-11-28-construire-un-design-system-robuste-avec-react-les-fondations-essentielles/cover.jpg
+  alt: ""
 title: "Construire un Design System robuste avec React : les fondations essentielles"
 excerpt: "Découvrez comment créer un Design System solide avec React. Ce guide simplifié explore les bases essentielles pour concevoir une interface cohérente, améliorer le développement et offrir une expérience utilisateur harmonieuse."
 categories:

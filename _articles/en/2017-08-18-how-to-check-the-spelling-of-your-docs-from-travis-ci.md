@@ -7,7 +7,7 @@ title: How to check the spelling of your docs from Travis CI?
 excerpt: >-
   We will show you how to check the spelling in your markdown documents, changed
   in your pull requests, very easily using Aspell and Travis CI
-cover: /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/typing.jpg
+oldCover: /assets/2017-08-18-how-to-check-the-spelling-of-your-docs-from-travis-ci/typing.jpg
 categories: []
 authors:
   - charles-eric

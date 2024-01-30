@@ -10,7 +10,7 @@ excerpt: >-
   notre effort vers l'open-source. Pour aller plus loin dans cette démarche nous
   avons donc décidé de changer radicalement de technologie. Mais pourquoi ?
   Comment ? Quelle est la suite ?
-cover: /assets/2017-07-11-migration-du-blog/cover.png
+oldCover: /assets/2017-07-11-migration-du-blog/cover.png
 categories: []
 authors:
   - captainjojo

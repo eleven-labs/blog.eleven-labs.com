@@ -5,7 +5,7 @@ date: '2018-09-12'
 slug: c-oriente-objet
 title: Faire du C orienté Objet
 excerpt: Faisons du C comme s'il s'agissait d'un langage Objet
-cover: /assets/2018-09-12-faire-du-c-oriente-objet/cover.jpg
+oldCover: /assets/2018-09-12-faire-du-c-oriente-objet/cover.jpg
 categories: []
 authors:
   - thuchon

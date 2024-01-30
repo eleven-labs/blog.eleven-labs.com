@@ -5,7 +5,7 @@ date: '2020-02-12'
 slug: c-oriented-programming-language
 title: Write C as oriented programming language
 excerpt: Let's write some C as an oriented programming language
-cover: /assets/2018-09-12-faire-du-c-oriente-objet/cover.jpg
+oldCover: /assets/2018-09-12-faire-du-c-oriente-objet/cover.jpg
 categories: []
 authors:
   - thuchon

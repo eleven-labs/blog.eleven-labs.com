@@ -5,7 +5,7 @@ date: '2023-02-22'
 slug: symfony-et-mongodb-retour-aux-sources
 title: 'Symfony et MongoDB, retour aux bases'
 excerpt: 'Faire du MongoDB avec Symfony, c''est facile, mais avec ou sans Doctrine ?'
-cover: /assets/2023-02-22-symfony-et-mongodb-retour-aux-sources/logo.png
+oldCover: /assets/2023-02-22-symfony-et-mongodb-retour-aux-sources/logo.png
 categories:
   - php
 authors:

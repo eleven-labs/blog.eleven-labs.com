@@ -8,7 +8,7 @@ title: |
 excerpt: >-
   De Github Pages à Amazon Web Services, cet article est un retour
   d'expérience/tutorial de notre changement d'hébergement pour le blog.
-cover: /assets/2017-10-17-https-s3-cdn-des-nouvelles-du-blog/cover.jpg
+oldCover: /assets/2017-10-17-https-s3-cdn-des-nouvelles-du-blog/cover.jpg
 categories:
   - architecture
 authors:

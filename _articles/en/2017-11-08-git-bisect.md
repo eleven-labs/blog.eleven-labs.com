@@ -7,7 +7,7 @@ title: Debugging with Git
 excerpt: >-
   Today I'd like to talk about a tool that will allow us to rapidly isolate an
   incorrect commit, that caused a bug in our application: git bisect
-cover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
+oldCover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
 categories:
   - javascript
   - php

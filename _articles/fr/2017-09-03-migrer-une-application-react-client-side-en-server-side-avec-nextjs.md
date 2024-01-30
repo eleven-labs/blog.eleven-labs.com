@@ -8,7 +8,7 @@ excerpt: >-
   La plupart des applications front utilisant React sur lesquelles j'ai pu
   travailler sont des applications destinées à être rendues par le navigateur
   (client-side).
-cover: /assets/2017-09-03-migrer-une-application-react-client-side-en-server-side-avec-nextjs/cover.jpg
+oldCover: /assets/2017-09-03-migrer-une-application-react-client-side-en-server-side-avec-nextjs/cover.jpg
 categories:
   - javascript
 authors:

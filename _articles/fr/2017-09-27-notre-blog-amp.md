@@ -9,7 +9,7 @@ excerpt: >-
   dernières tendances. À la fois pour notre blog et pour nos lecteurs nous
   voulons ce qu'il y a de meilleur et de plus confortable. C'est pour cela
   qu'aujourd'hui notre blog est AMP compliant.
-cover: /assets/2017-09-27-notre-blog-amp/cover.jpg
+oldCover: /assets/2017-09-27-notre-blog-amp/cover.jpg
 categories:
   - javascript
 authors:
