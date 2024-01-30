@@ -1,2 +1,2 @@
 const e={extraSmallScreen:{name:"Extra small screen (xs)",styles:{width:"380px",height:"571px"},type:"Mobile"},smallScreen:{name:"Small screen (sm)",styles:{width:"571px",height:"766px"},type:"Tablet"},mediumScreen:{name:"Medium screen (md)",styles:{width:"1001px",height:"766px"},type:"Desktop"}},t={actions:{argTypesRegex:"^on[A-Z].*"},controls:{matchers:{color:/(background|color)$/i,date:/Date$/}},viewport:{viewports:e},backgrounds:{default:"content",values:[{name:"content",value:"#E9F1F8"},{name:"white",value:"#FFF"},{name:"ultra-light-grey",value:"#EDEDED"}]}};export{t as parameters};
-//# sourceMappingURL=preview-c74e28c7.js.map
+//# sourceMappingURL=preview-1537f2e4.js.map
