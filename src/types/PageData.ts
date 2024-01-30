@@ -20,6 +20,10 @@ export interface PostListPageData {
 }
 
 interface CommonPostPageData {
+  cover?: {
+    path: string;
+    alt: string;
+  };
   authors: TransformedAuthorData[];
   relatedPosts: TransformedPostDataWithTransformedAuthors[];
 }

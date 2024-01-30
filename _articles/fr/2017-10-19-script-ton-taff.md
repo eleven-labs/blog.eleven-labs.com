@@ -9,7 +9,7 @@ excerpt: >-
   propose un billet de blog qui s'adresse à tous, et qui vous donne quelques
   pistes afin de gagner en productivité, en supprimant le travail répétitif de
   vos journées.
-cover: /assets/2017-10-19-script-ton-taff/cover.jpg
+oldCover: /assets/2017-10-19-script-ton-taff/cover.jpg
 categories:
   - javascript
 authors:

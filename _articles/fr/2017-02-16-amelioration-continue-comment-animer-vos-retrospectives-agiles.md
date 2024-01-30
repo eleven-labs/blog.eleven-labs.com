@@ -9,7 +9,7 @@ excerpt: >-
   autour du développement et de l’architecture web et mobile. Aujourd’hui,
   j’aimerais aborder un autre sujet, tout aussi important : notre expertise
   méthodologique.
-cover: /assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-heart-retrospective.jpg
+oldCover: /assets/2017-02-16-amelioration-continue-comment-animer-vos-retrospectives-agiles/post-it-heart-retrospective.jpg
 categories:
   - agile
 authors:

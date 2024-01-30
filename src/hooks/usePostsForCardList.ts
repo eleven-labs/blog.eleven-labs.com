@@ -22,8 +22,8 @@ export const usePostsForCardList = (options: {
         contentType: post.contentType,
         slug: post.slug,
         cover: {
-          src: getPathFile('/imgs/cover-article.jpg'),
-          alt: 'cover',
+          src: post.cover?.path ? getPathFile(post.cover.path) : getPathFile('/imgs/cover-article.jpg'),
+          alt: '',
         },
         title: post.title,
         excerpt: truncateText(post.excerpt, 125),

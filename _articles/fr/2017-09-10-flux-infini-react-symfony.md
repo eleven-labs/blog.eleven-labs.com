@@ -11,7 +11,7 @@ excerpt: >-
   en place un flux infini. Pour le rendre simple et performant, nous allons
   utiliser un backend Symfony et un front en ReactJs. La question se pose alors
   : comment interfacer les deux technos ?
-cover: /assets/2017-09-10-flux-infini-react-symfony/cover.jpg
+oldCover: /assets/2017-09-10-flux-infini-react-symfony/cover.jpg
 categories:
   - php
   - javascript

@@ -7,7 +7,7 @@ title: Comprendre et Personnaliser son environnement Docker
 excerpt: >-
   Comprendre comment fonctionne Docker et être capable de créer son
   environnement sur mesure
-cover: /assets/2023-07-25-comprendre-et-personnaliser-ses-docker/cover.jpg
+oldCover: /assets/2023-07-25-comprendre-et-personnaliser-ses-docker/cover.jpg
 categories:
   - architecture
 authors:
@@ -369,7 +369,7 @@ Vérifier la version de docker compose :
 
 ```bash
 docker compose version
-``` 
+```
 
 Build les containers :
 

@@ -9,7 +9,7 @@ title: >-
 excerpt: >-
   Nous allons découvrir un outil qui permet d'automatiser des tâches
   fastidieuses en mobile.
-cover: /assets/2017-07-17-fastlane-ios/cover.jpg
+oldCover: /assets/2017-07-17-fastlane-ios/cover.jpg
 categories: []
 authors:
   - ibenichou

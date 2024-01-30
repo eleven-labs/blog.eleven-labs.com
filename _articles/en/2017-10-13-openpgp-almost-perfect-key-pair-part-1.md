@@ -5,7 +5,7 @@ date: '2017-10-13'
 slug: openpgp-almost-perfect-key-pair-part-1
 title: OpenPGP - The almost perfect key pair
 excerpt: Guide to create the almost perfect OpenPGP keys
-cover: /assets/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
+oldCover: /assets/2017-10-09-openpgp-paire-clef-presque-parfaite-partie-1/cover.jpg
 categories: []
 authors:
   - tthuon

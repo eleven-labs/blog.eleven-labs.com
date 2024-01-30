@@ -3,7 +3,6 @@ import {
   Box,
   ComponentPropsWithoutRef,
   Flex,
-  Heading,
   Link,
   Reminder,
   ReminderVariantType,
@@ -21,7 +20,6 @@ import { unified } from 'unified';
 
 import { intersection } from '@/helpers/objectHelper';
 import { remarkFigurePlugin } from '@/helpers/remarkPlugins/remarkFigurePlugin';
-import { slugify } from '@/helpers/stringHelper';
 
 const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): ReminderVariantType => {
   switch (admonitionVariant) {

@@ -7,7 +7,7 @@ title: Domain anemia
 excerpt: >-
   Are you suffering from domain anemia? Let's look at what an anemic domain
   model is and how things can change.
-cover: /assets/2020-10-13-anemic-domain-model/cover.jpg
+oldCover: /assets/2020-10-13-anemic-domain-model/cover.jpg
 categories:
   - php
 authors:

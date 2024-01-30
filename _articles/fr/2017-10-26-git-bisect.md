@@ -8,7 +8,7 @@ excerpt: >-
   Aujourd'hui je souhaite vous présenter un outil vous permettant d'isoler
   rapidement notre commit frauduleux qui a occasionné un bug dans notre
   application : git bisect
-cover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
+oldCover: /assets/2017-10-26-debugging-with-git/branching-illustration.png
 categories:
   - javascript
   - php

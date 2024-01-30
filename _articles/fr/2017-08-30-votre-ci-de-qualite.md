@@ -8,7 +8,7 @@ excerpt: >-
   La qualité est un vaste sujet, surtout quand on l'associe au développement
   d'applications web. Ce qui est encore plus compliqué, c'est de mettre en place
   l'environnement d'intégration continue (CI) de suivi de qualité.
-cover: /assets/2017-08-30-votre-ci-de-qualite/cover.jpg
+oldCover: /assets/2017-08-30-votre-ci-de-qualite/cover.jpg
 categories:
   - php
   - javascript

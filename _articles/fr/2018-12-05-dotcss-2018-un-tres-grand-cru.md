@@ -7,7 +7,7 @@ title: 'dotCSS 2018, un très grand cru !'
 excerpt: >-
   Retour sur l'édition 2018 de dotCSS, la plus grande conférence au monde sur le
   CSS.
-cover: /assets/2018-12-05-dotcss-2018-un-tres-grand-cru/dotcss-2018.jpg
+oldCover: /assets/2018-12-05-dotcss-2018-un-tres-grand-cru/dotcss-2018.jpg
 categories: []
 authors:
   - seinhorn

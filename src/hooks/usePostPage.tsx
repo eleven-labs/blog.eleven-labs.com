@@ -45,8 +45,8 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
   return {
     breadcrumb,
     cover: {
-      src: getPathFile('/imgs/cover-article.jpg'),
-      alt: 'cover',
+      src: post.cover?.path ? getPathFile(post.cover.path) : getPathFile('/imgs/cover-article.jpg'),
+      alt: '',
     },
     header: {
       title: post.title,
