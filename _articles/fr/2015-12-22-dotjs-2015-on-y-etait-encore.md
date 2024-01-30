@@ -102,7 +102,7 @@ Laurent Voyer partage avec nous les meilleurs moyens de publier des modules ES6.
 
 [Slides](http://slides.com/vvo/authoring-and-publishing-es6-modules-today-dotjs-2015)
 
-#### **Mobile debugging with VorlonJS** par [*Etienne Margraff*](https://twitter.com/@meulta)
+### **Mobile debugging with VorlonJS** par [*Etienne Margraff*](https://twitter.com/@meulta)
 
 Etienne Margraff nous présente son outil de debug cross browser: VorlonJS
 Après avoir préalablement ajouté un script à notre application, il est possible de debugger depuis une interface VorlonJS à distance. Prometteur. Prochaine étape, le debug d’application NodeJS.
