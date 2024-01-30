@@ -1,5 +1,4 @@
 import {
-  Blockquote,
   Box,
   ComponentPropsWithoutRef,
   Flex,
@@ -7,7 +6,6 @@ import {
   Reminder,
   ReminderVariantType,
   SyntaxHighlighter,
-  Text,
 } from '@eleven-labs/design-system';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -103,7 +101,7 @@ export const markdownToHtml = (content: string): string => {
           const reminderProps = props as { ['reminder-variant']?: ReminderVariantType; ['reminder-title']?: string };
           if (reminderProps?.['reminder-variant'] && reminderProps?.['reminder-title']) {
             return (
-              <Reminder my="m" variant={reminderProps['reminder-variant']} title={reminderProps['reminder-title']}>
+              <Reminder mb="xs" variant={reminderProps['reminder-variant']} title={reminderProps['reminder-title']}>
                 {children}
               </Reminder>
             );
@@ -111,24 +109,6 @@ export const markdownToHtml = (content: string): string => {
 
           return <Box {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
         },
-        li: ({ node, ...props }): React.JSX.Element => (
-          <Text as="li" mb="xxs" {...(props as ComponentPropsWithoutRef<'li'>)} />
-        ),
-        strong: ({ children }): React.JSX.Element => (
-          <Text as="span" fontWeight="bold">
-            {children}
-          </Text>
-        ),
-        em: ({ children }): React.JSX.Element => (
-          <Text as="span" italic={true}>
-            {children}
-          </Text>
-        ),
-        i: ({ children }): React.JSX.Element => (
-          <Text as="span" italic={true}>
-            {children}
-          </Text>
-        ),
         a: ({ node, children, ...props }): React.JSX.Element => {
           const isExternalLink = (props.href as string)?.match(/^http(s)?:\/\//);
           return (
@@ -142,12 +122,6 @@ export const markdownToHtml = (content: string): string => {
             </Link>
           );
         },
-        blockquote: ({ node, ...props }): React.JSX.Element => (
-          <Blockquote {...(props as ComponentPropsWithoutRef<'blockquote'>)} />
-        ),
-        pre: ({ node, ...props }): React.JSX.Element => (
-          <Box as="pre" textSize="xs" {...(props as ComponentPropsWithoutRef<'pre'>)} />
-        ),
         code: ({ node, className, children, ...props }): React.JSX.Element => {
           const match = /language-(\w+)/.exec(className || '');
           if (className && className.match('mermaid')) {
@@ -164,14 +138,6 @@ export const markdownToHtml = (content: string): string => {
               {children}
             </Box>
           );
-        },
-        figure: ({ node, ...props }): React.JSX.Element => {
-          return React.createElement('figure', {
-            ...props,
-            style: {
-              textAlign: 'center',
-            },
-          });
         },
         img: ({ node, ...props }): React.JSX.Element => {
           const urlParams = new URLSearchParams(props.src?.split('?')?.[1] ?? '');
