@@ -25,7 +25,7 @@ Cette Année, j'ai eu l'occasion de participer à l’événement MongoDB Europe
 Note : les slides n’étant pas encore disponibles, l'article sera mis à jour avec les illustrations/slides dès qu'elles seront disponibles.
 Edit : [les voici](https://www.mongodb.com/presentations/all?page=1&amp;search=europe%202016")
 
-### Welcome et nouveautés
+## Welcome et nouveautés
 
 Comme chaque année, une ouverture sur quelques chiffres :
 
@@ -35,7 +35,7 @@ Comme chaque année, une ouverture sur quelques chiffres :
 
 Puis quelques grands acteurs sous MongoDB : Baidu (plus grand site chinois, +1000 noeuds MongoDB) ou Barclays
 
-### Mongo 3.4
+## Mongo 3.4
 
 Les nouveautés de cette version sont présentées sous forme d’amélioration, d'extension ou d'innovation.
 
@@ -60,11 +60,11 @@ Les nouveautés de cette version sont présentées sous forme d’amélioration,
 
 Toutes les nouveautés de la 3.4 <a href="https://www.mongodb.com/mongodb-3.4">ici</a>.
 
-### Keynote du Prof Brian Cox, physicien et astronome.
+## Keynote du Prof Brian Cox, physicien et astronome.
 
 ![Prof Brian Cox]({BASE_URL}/imgs/articles/2016-11-23-mdbe16/CxS5AUkWgAAgyK0.jpg)
 
-L'objectif de cette présentation était de nous montrer l’utilité de MongoDB dans le travail de cartographie de l'univers du prof Cox, et comment l’avènement du BigData aide aujourd'hui énormément les chercheurs à définir des "modèles" d’expansion de l'univers (milliards de données).
+L'objectif de cette présentation était de nous montrer l’utilité de MongoDB dans le travail de cartographie de l'univers du prof Cox, et comment l’avènement du BigData aide aujourd'hui énormément les chercheurs à définir des "modèles" d’expansion de l'univers (milliards de données).
 
 <blockquote class="twitter-tweet" data-lang="fr">
 <p dir="ltr" lang="en">Great keynote this morning with Professor Brian Cox, OBE at <a href="https://twitter.com/MongoDB">@MongoDB</a> <a href="https://twitter.com/hashtag/MDBE16?src=hash">#MDBE16</a> <a href="https://t.co/3x9SNp7VS6">pic.twitter.com/3x9SNp7VS6</a></p>
@@ -72,7 +72,7 @@ L'objectif de cette présentation était de nous montrer l’utilité de MongoDB
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-### Advanced MongoDB Aggregation pipelines
+## Advanced MongoDB Aggregation pipelines
 
 La présentation a commencé par un récapitulatif de l'utilité de l'aggregation framework, puis plusieurs use-cases plus ou moins compliqués d'application.
 
@@ -93,9 +93,9 @@ Par exemple :
 
 Un article sur les fonctionnalités de $graphLookup plus complet sera disponible sur le blog d'ici peu.
 
-### Building WiredTiger
+## Building WiredTiger
 
-Il s'agit d'un REX sur la conception du moteur WiredTiger et sur sa gestion de la mémoire.
+Il s'agit d'un REX sur la conception du moteur WiredTiger et sur sa gestion de la mémoire.
 
 <blockquote class="twitter-tweet" data-lang="fr">
 <p dir="ltr" lang="und"><a href="https://twitter.com/hashtag/MDBE16?src=hash">#MDBE16</a> <a href="https://t.co/ENF1ViV1JT">pic.twitter.com/ENF1ViV1JT</a></p>
@@ -103,7 +103,7 @@ Il s'agit d'un REX sur la conception du moteur WiredTiger et sur sa gestion de 
 
 
 
-### The rise of Data Lake
+## The rise of Data Lake
 
 Cette session avait pour but d'exprimer une architecture cible pour la construction d'un data lake et la place de MongoDB dans cette architecture.
 
@@ -112,9 +112,9 @@ Cette session avait pour but d'exprimer une architecture cible pour la construct
 <p>— Pouzor (@Pouz0r) <a href="https://twitter.com/Pouz0r/status/798539076559175680">15 novembre 2016</a></p></blockquote>
 
 
-### Graph Operations with MongoDB
+## Graph Operations with MongoDB
 
-Cette session finale avait pour but de couvrir en détail les possibilités des graphes dans MongoDB.
+Cette session finale avait pour but de couvrir en détail les possibilités des graphes dans MongoDB.
 La session a commencé par une timeline des versions MongoDB.
 
 <blockquote class="twitter-tweet" data-lang="fr">
@@ -128,6 +128,6 @@ Puis sur l’étude de plusieurs cas d'utilisations des graphes sous MongoDB.
 <p dir="ltr" lang="en"><a href="https://twitter.com/hashtag/MongoDB?src=hash">#MongoDB</a> graph usage : Get friends of mine <a href="https://t.co/sbXzUIUqvr">pic.twitter.com/sbXzUIUqvr</a></p>
 <p>— Pouzor (@Pouz0r) <a href="https://twitter.com/Pouz0r/status/798577288715571200">15 novembre 2016</a></p></blockquote>
 
-### Goodby and see you soon
+## Goodby and see you soon
 On se retrouve donc l'année prochaine pour l’évent à Paris !
 

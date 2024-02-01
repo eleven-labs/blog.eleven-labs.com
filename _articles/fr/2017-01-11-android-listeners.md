@@ -15,7 +15,7 @@ keywords:
   - android
 ---
 
-### Introduction
+## Introduction
 
 Salut les astronautes ! Aujourd'hui encore, je vais vous parler de développement mobile natif, et aujourd'hui, on se concentre sur Android. Comme mon précédent article, celui-ci se veut accessible pour les néophytes, donc on va passer un petit peu de temps pour voir quelques termes techniques ensemble avant de rentrer dans le vif du sujet. Si vous n'avez pas lu mon dernier article, Closures VS Delegates, je vous invite vivement à le faire, c'est un pré-requis pour aborder celui-ci. [Delegates VS Closures]({BASE_URL}/fr/delegates-closures/)<br />
 Pour ceux qui ne savent pas, pour faire de l'Android, on doit utiliser du Java. Du coup, pour les exemples de code, ça va être plus rapide, car un seul code à couvrir, une seule syntaxe et une seule structure de fichier. La notion importante dans cet article, c'est le principe de listener.
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements RequesterListener
 }
 ```
 
-On a donc notre Class MainActivity qui hérite de l'interface RequesterListener et qui implémente 2 méthodes (onRequestSuccess, onRequestFailure). On va faire une dummy implementation pour vous donner une idée de comment ça fonctionne :
+On a donc notre Class MainActivity qui hérite de l'interface RequesterListener et qui implémente 2 méthodes (onRequestSuccess, onRequestFailure). On va faire une dummy implementation pour vous donner une idée de comment ça fonctionne :
 
 ```Java
 public class RequestManager {
@@ -169,6 +169,6 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-### Conclusion
+## Conclusion
 
 Et donc, si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a fait, le résultat sera un passage dans la méthode onRequestSuccess. Du coup, c'est plutôt pas mal tout ça non ? Ça couvre 100% des cas et facilement, sans avoir à tout changer, on peut devenir listener en décidant d'hériter d'une interface ou juste définir une instance de celle-ci. Personnellement, quand j'ai découvert ça, je me suis dit, mais c'est pas possible ! C’est juste génial ! J'ai cherché l'équivalent sur iOS, me disant que forcément, ils avaient dû penser à gérer ça... Gros échec, j'ai rien trouvé.. Puis en fouinant sur le web pour un besoin très spécifique, j'ai trouvé une solution assez élégante. Mais bon, ça ce sera lors d'un prochain article :) Allez, salut les astronautes !

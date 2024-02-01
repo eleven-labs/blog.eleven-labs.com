@@ -1,4 +1,4 @@
-import mermaid from 'mermaid';
+import { useScript } from 'hoofd';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -16,11 +16,15 @@ import { PostPageData } from '@/types';
 export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentType' | 'children'> => {
   const { t, i18n } = useTranslation();
   const { getDateToString } = useDateToString();
-  useSeoPost({
-    title: post.title,
-    post,
-  });
+  useSeoPost(post);
   const newsletterBlock = useNewsletterBlock();
+  useScript({
+    type: 'module',
+    text: [
+      `import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';`,
+      'mermaid.initialize({ startOnLoad: true });',
+    ].join('\n'),
+  });
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -28,12 +32,6 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentTyp
     const twitterTweetElements = document.getElementsByClassName('twitter-tweet');
     if (twitterTweetElements.length) {
       twitterTweetElements[0].appendChild(script);
-    }
-
-    const mermaidElements = document.getElementsByClassName('mermaid');
-    if (mermaidElements.length) {
-      mermaid.initialize({});
-      mermaid.contentLoaded();
     }
 
     return () => {

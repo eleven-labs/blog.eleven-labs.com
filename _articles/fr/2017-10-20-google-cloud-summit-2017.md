@@ -32,7 +32,7 @@ Jeudi 19 octobre 2017 a eu lieu à Paris au Palais des Congrès, le Google Cloud
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-### La plenière
+## La plenière
 
 Sebastien Marotte ouvre le bal, en expliquant que même si le cloud Google n'est pas le leader du marché, il devient de plus en plus fort et continue à avancer vers le futur.
 
@@ -91,7 +91,7 @@ Puis La Redoute avec la blague de la Google Summit.
 
 
 
-### Introduction au Big Data : outils et insights
+## Introduction au Big Data : outils et insights
 
 Première conférence et premiers défis : comment récupérer, stocker et comprendre l'ensemble des données. Pour commencer Google nous présente deux outils de visualisation, DataLab et DataStudio.
 
@@ -124,7 +124,7 @@ Puis de créer une architecture permettant avec du machine learning de faire ce 
 
 Le plus de la conférence est de voir que le système qui il y a quelque années aurait été impossible, est aujourd'hui simple à mettre en place via les technologies Google. En moins de 3 mois, Dailymotion a réussi avec SFEIR à mettre en place un système de recommendation en temps réel.
 
-### Cloud Functions: serverless avec Google Cloud Platform
+## Cloud Functions: serverless avec Google Cloud Platform
 
 Guillaume Laforge est venu nous parler de Google Functions. Google Functions est une des technologies serverless de google.
 
@@ -149,7 +149,7 @@ La chose importante à retenir ici, c'est que Google a pensé à tout et a crée
 
 ![Local]({BASE_URL}/imgs/articles/2017-10-20-google-cloud-summit-2017/image8.jpg)
 
-### Introduction au Machine Learning
+## Introduction au Machine Learning
 
 Une conférence fascinante sur comment fonctionne le machine learning.
 
@@ -173,13 +173,13 @@ La conférence prouve que le machine learning est essentiel pour l'avenir de nos
 
 La conférence se termine par l'intervention de [Deeptomatic](https://www.deepomatic.com/) qui permet à tout le monde de faire du machine learning simplement gràce à une interface claire et simple. Avec derrière, encore une fois, la puissance du Cloud Google qui permet de réaliser des choses avec une simplicité déconcertante.
 
-### Les APIs de Machine Learning par l'exemple
+## Les APIs de Machine Learning par l'exemple
 
 Pour moi la conférence avec le plus de code (enfin). L'idée est de montrer la puissance des APIs de Google.
 
 Nous aurons droit à la démonstration des 5 APIs de machine learning de Google.
 
-#### API CLOUD TRANSLATION
+### API CLOUD TRANSLATION
 
 Api très connue de Google, elle permet de traduire des textes en de nombreuses langues.
 
@@ -187,7 +187,7 @@ Vous trouverez des exemples [ici](https://cloud.google.com/translate/).
 
 Aujourd'hui, l'API est encore plus pertinente car Google utilise du machine learning pour améliorer ses traductions.
 
-#### API CLOUD NATURAL LANGUAGE
+### API CLOUD NATURAL LANGUAGE
 
 C'est l'API utilisée dans DataDialog qui permet aujourd'hui d'avoir des Google Homes capable de comprendre ce que l'on dit.
 
@@ -197,13 +197,13 @@ Vous trouverez des exemples [ici](https://cloud.google.com/natural-language/).
 
 ![Syntax]({BASE_URL}/imgs/articles/2017-10-20-google-cloud-summit-2017/image0.png)
 
-#### API CLOUD SPEECH
+### API CLOUD SPEECH
 
 Comme l'API cloud natural language, elle est utilisée dans Google Home pour transformer l'audio en texte et permettre ensuite d'être analysé.
 
 Vous trouverez des exemples [ici](https://cloud.google.com/speech/)
 
-#### API CLOUD VISION
+### API CLOUD VISION
 
 L'API permet de reconnaître ce qu'il y a sur des images. On peut l'utiliser de 3 manières différentes.
 
@@ -223,7 +223,7 @@ L'API est vraiment impressionnante et demande à être prise en main.
 
 Vous pouvez vous amuser [ici](https://cloud.google.com/vision/).
 
-#### CLOUD VIDEO INTELLIGENCE
+### CLOUD VIDEO INTELLIGENCE
 
 Maintenant que Google sait faire tellement de choses avec les images, il s'attaque à la video.
 
@@ -233,6 +233,6 @@ Cette API est en bêta mais vous pouvez trouvez les exemples [ici](https://cloud
 
 ![Labels]({BASE_URL}/imgs/articles/2017-10-20-google-cloud-summit-2017/image4.png)
 
-### Conclusion
+## Conclusion
 
 Google prouve encore sa persistance dans l'innovation, et sa volonté d'offrir à ses utilisateurs de nombreuses fonctionnalités qui étaient hier encore perçue comme relevant de la science fiction.

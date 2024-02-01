@@ -20,7 +20,7 @@ keywords:
 ---
 Lorsque l’on développe un site, en particulier un site à fort trafic, on est forcément amené à se poser la question des ressources consommées par ce dernier afin d’optimiser son temps de réponse. En effet, une page qui met plus de 3-4 secondes à s’afficher rend vite désagréable la navigation et découragera plus d’une personne à venir sur votre site.
 
-# 1) Principe du cache HTTP
+## 1) Principe du cache HTTP
 
 Le système de cache de Symfony vous permettra de diminuer les temps de réponses de vos pages en utilisant la puissance du cache HTTP tel qu'il est défini dans la <a href="https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol" rel="nofollow noreferrer" style="color:#0000ff;">spécification HTTP</a>. Sachez cependant que ce n’est qu’une des solutions possibles.
 
@@ -35,7 +35,7 @@ Pour revenir au cache http, expliquons en un peu le principe. Le rôle de la mé
 [![mémoire cache](/assets/2013-12-08-symfony-2-cache-http-esi/reverse_proxy.png)](/assets/2013-12-08-symfony-2-cache-http-esi/reverse_proxy.png)
 
 
-# 2) Le Cache dans Symfony
+## 2) Le Cache dans Symfony
 
 Rentrons maintenant dans le vif du sujet. Symfony est équipé d’un reverse proxy défini par la classe AppCache.php qui se situe dans app/AppCache.php de votre projet.
 
@@ -85,7 +85,7 @@ $kernel->terminate($request, $response);
 
 Et c’est tout? Eh ben oui, c’est pas plus compliqué que ça. Rajoutez votre dépendance à AppCache et instanciez là avec en paramètre votre kernel.
 
-## Exemple 1 : Utilisation simple
+### Exemple 1 : Utilisation simple
 
 Maintenant, on va dans un premier temps créer un exemple sans activer le cache.
 
@@ -187,7 +187,7 @@ On constate que le système de cache est bien activé. Pour aller plus loin avec
 Ok, tout ça c’est bien, mais cela met en cache une page entière. Mais votre besoin sera peut-être de ne mettre en page qu’une partie de la page.
 Heureusement pour nous, Symfony a pensé à tout et nous fournit une solution, les «Edge Side Includes» (ESI).
 
-## Exemple 2 : ESI
+### Exemple 2 : ESI
 
 Pour activer le mode ESI dans Symfony, ouvrez votre app/config/config.yml et ajoutez ces deux lignes dans la partie framework :
 ```yaml

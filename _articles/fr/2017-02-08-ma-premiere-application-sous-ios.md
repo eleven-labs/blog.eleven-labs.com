@@ -18,19 +18,19 @@ keywords:
 
 Je voulais partager avec vous un retour d’expérience sur ma première application IOS. Personnellement, j’apprécie ce genre d’article car je peux facilement m’identifier à celui-ci.
 
-# Intro
+## Intro
 
-En ce moment, je travaille ma montée en compétence sur Swift 3/Xcode et donc comme on le sait tous, quand on apprend un nouveau langage c’est bien beau de savoir faire une boucle et des méthodes, mais il n’y a rien de mieux qu’un vrai projet pour valider ses acquis et monter en xp.
+En ce moment, je travaille ma montée en compétence sur Swift 3/Xcode et donc comme on le sait tous, quand on apprend un nouveau langage c’est bien beau de savoir faire une boucle et des méthodes, mais il n’y a rien de mieux qu’un vrai projet pour valider ses acquis et monter en xp.
 
-Le premier “problème", c’est de trouver une idée sur laquelle travailler. En effet, je ne suis pas très fan des to do lists que je trouve sans grand intérêt. Mais c’est là justement que ça se complique : trouver une idée est la chose la plus difficile  :( (coder est tellement plus simple à côté :) ). Bon, je vous rassure après quelques jours j’ai trouvé un sujet assez intéressant. Sur mon fil d’actualité Facebook je n’arrête pas de voir un petit “jeu” de quizz concernant des calculs mentaux (je ne sais pas si vous avez déjà vu ce genre de publication mais c’est très addictif). J’ai trouvé l’idée mais...
+Le premier “problème", c’est de trouver une idée sur laquelle travailler. En effet, je ne suis pas très fan des to do lists que je trouve sans grand intérêt. Mais c’est là justement que ça se complique : trouver une idée est la chose la plus difficile  :( (coder est tellement plus simple à côté :) ). Bon, je vous rassure après quelques jours j’ai trouvé un sujet assez intéressant. Sur mon fil d’actualité Facebook je n’arrête pas de voir un petit “jeu” de quizz concernant des calculs mentaux (je ne sais pas si vous avez déjà vu ce genre de publication mais c’est très addictif). J’ai trouvé l’idée mais...
 
-# Graphisme
+## Graphisme
 
-Mais je ne vais pas faire une app sans un minimum de graphisme, non ? À ce moment là, je me dis, "autant faire une belle app pour la montrer à mon entourage…" Car il faut être honnête, la majorité des gens à qui je vais montrer cette application se contre-fiche de mon code #vieMaVieDeDev :), et par conséquent ils vont juger mon travail plus sur le côté interactif et graphique que sur mon code.
+Mais je ne vais pas faire une app sans un minimum de graphisme, non ? À ce moment là, je me dis, "autant faire une belle app pour la montrer à mon entourage…" Car il faut être honnête, la majorité des gens à qui je vais montrer cette application se contre-fiche de mon code #vieMaVieDeDev :), et par conséquent ils vont juger mon travail plus sur le côté interactif et graphique que sur mon code.
 
-Suite à cela, je me suis encore posé une question : avec quel outil vais-je faire mon design ? Sur un photoshop, ou bien existe t-il une autre solution plus adaptée et plus simple ? C’est là que j’ai entendu parler de Sketch app. Et voilà pourquoi j’ai choisi d’utiliser cet outil pour réaliser mes maquettes :
-1. Il est utilisé par une grosse majorité des graphistes / UX qui travaillent sur du mobile ;
-2. C’est une bonne occasion de me former dessus et je me dis que si je viens à travailler sur une mission qui utilise cet outil je ne serai pas largué ;
+Suite à cela, je me suis encore posé une question : avec quel outil vais-je faire mon design ? Sur un photoshop, ou bien existe t-il une autre solution plus adaptée et plus simple ? C’est là que j’ai entendu parler de Sketch app. Et voilà pourquoi j’ai choisi d’utiliser cet outil pour réaliser mes maquettes :
+1. Il est utilisé par une grosse majorité des graphistes / UX qui travaillent sur du mobile ;
+2. C’est une bonne occasion de me former dessus et je me dis que si je viens à travailler sur une mission qui utilise cet outil je ne serai pas largué ;
 3. Sketch met à votre disposition énormément d’outils afin de faciliter la conception de maquette mobile. En effet, il propose des templates tels que Android/IOS Icon App, IOS UI Design (Sketch inclut tous les éléments graphiques sur IOS), Material Design…
 4. Le prix : Sketch App est à 99$/an alors que photoshop… :)
 
@@ -50,11 +50,11 @@ Aperçu de mes maquettes :
 
 * PS: Je remercie Julie qui m'a aidée sur la partie Graphique/UX :)*
 
-# Backend
+## Backend
 
 Je ne vais pas trop m’attarder sur cette partie car ce n’est pas vraiment le but de cet article. Pour la faire courte, j’ai juste mis en place un symfony 3.* avec un controller qui retourne une réponse en json. Cette réponse est un tableau de questions qui contient pour chacune des questions sa réponse et les liens d'images.
 
-# Xcode
+## Xcode
 
 Bon on rentre enfin dans le vif du sujet !
 
@@ -65,7 +65,7 @@ Avant d’attaquer mon application, je me suis posé un peu (oui ça m’arrive 
 Qu’est-ce que cocoapods ? C’est un gestionnaire de dépendance comme npm, composer, yarn…
 
 J’ai besoin de cocoapods car je souhaite inclure deux librairies à mon projet, à savoir :
-1. [Alamofire](https://github.com/Alamofire/Alamofire), qui est une des librairies la plus connue et utilisée sur Swift. Elle permet de faire des requêtes HTTP. Quand j’ai vu la différence entre la procédure dite “classique” utilisant les méthodes natives, et Alamofire, mon choix a été vite fait !
+1. [Alamofire](https://github.com/Alamofire/Alamofire), qui est une des librairies la plus connue et utilisée sur Swift. Elle permet de faire des requêtes HTTP. Quand j’ai vu la différence entre la procédure dite “classique” utilisant les méthodes natives, et Alamofire, mon choix a été vite fait !
 2. [AlamofireImage](https://github.com/Alamofire/AlamofireImage), cette librairie permet de gérer les images qui proviennent du net. Lorsque vous récupérez des images via une url, il faut gérer cette dernière en passant par de l’asynchrone. Je me suis amusé une fois à écrire du code afin de gérer ce cas et j’ai comparé le résultat de mon code avec l’utilisation d’AlamoFireImage. Je ne vous cache pas qu’Alamofire m’a mis une fessée ! :)
 
 Pour ajouter les deux librairies, il vous suffit de créer un fichier Podfile à la racine de votre projet et d’ajouter ces petites lignes :
@@ -147,7 +147,7 @@ Pour commencer, j’ai rencontré plusieurs “soucis” avec le clavier :
 2. Lorsque j’affiche mon clavier, il faut que je remonte l’écran afin de faciliter l’écriture de la réponse de l’utilisateur.
 
 Ensuite, pour compliquer encore un peu plus les choses, j’ai décidé d'utiliser un clavier de type “number pad” pour améliorer l’expérience utilisateur. Toutefois, le soucis avec ce type de clavier est qu’il n’y a pas de bouton dit “return”.
-*A noter : Si vous souhaitez que lorsque votre utilisateur clique sur le label "??" cela déclenche un événement de type touch il suffit de changer son attribut **isUserInteractionEnabled = true** afin de délivrer les événements de type touch et keyboard à la vue.*
+*A noter : Si vous souhaitez que lorsque votre utilisateur clique sur le label "??" cela déclenche un événement de type touch il suffit de changer son attribut **isUserInteractionEnabled = true** afin de délivrer les événements de type touch et keyboard à la vue.*
 
 Je souhaite que lorsque mon utilisateur clique sur ma cellule cela déclenche l’activation de mon clavier.
 ```swift
@@ -176,11 +176,11 @@ func addDoneButtonOnKeyboard() {
  }
 ```
 
-J’ai d'abord initialisé une constante de type UIToolbar pour pouvoir y accéder à un autre moment dans le code. Une fois la Toolbar initialisée, je souhaite lui ajouter le bouton "Envoyer" (UIBarButtonItem).
+J’ai d'abord initialisé une constante de type UIToolbar pour pouvoir y accéder à un autre moment dans le code. Une fois la Toolbar initialisée, je souhaite lui ajouter le bouton "Envoyer" (UIBarButtonItem).
 
-Cependant, il faudrait que celui-ci se situe tout à droite de la Toolbar car par défaut il se place tout à gauche. Pour y remédier, j’ai donc créé un bouton flexSpace qui ne fait rien mais qui va cependant permettre d’avoir le bouton à droite. Je n’ai plus qu'à ajouter lesdits boutons à ma Toolbar.
+Cependant, il faudrait que celui-ci se situe tout à droite de la Toolbar car par défaut il se place tout à gauche. Pour y remédier, j’ai donc créé un bouton flexSpace qui ne fait rien mais qui va cependant permettre d’avoir le bouton à droite. Je n’ai plus qu'à ajouter lesdits boutons à ma Toolbar.
 
-Attention : il ne faut pas oublier aussi d'ajouter la Toolbar au clavier via :
+Attention : il ne faut pas oublier aussi d'ajouter la Toolbar au clavier via :
 ```swift
 // Controller/ViewController.swift
 {UITextField}.inputAccessoryView = doneToolbar
@@ -213,11 +213,11 @@ if self.view.frame.origin.y >= 0.0 {
 }
 ```
 
-J'ai dû rajouter un petit "hack" car sur l'Iphone 5 il me faut un plus grand scroll. C'est une des parties de mon code qui je pense demande une refacto (si vous avez des suggestions je suis bien évidemment preneur).
+J'ai dû rajouter un petit "hack" car sur l'Iphone 5 il me faut un plus grand scroll. C'est une des parties de mon code qui je pense demande une refacto (si vous avez des suggestions je suis bien évidemment preneur).
 
 **Extension** :
 
-Une des choses qui me plait le plus en Swift, ce sont les extensions ! J'ai donc pensé à en faire une pour la partie téléchargement d'une image depuis une url.
+Une des choses qui me plait le plus en Swift, ce sont les extensions ! J'ai donc pensé à en faire une pour la partie téléchargement d'une image depuis une url.
 ```swift
 // Extensions/UIImageViewExtension.swift
 import UIKit
@@ -241,10 +241,10 @@ Je n'ai plus qu'à appeler celle-ci dans mon ViewController:
 cell.image.getUIImageViewByUrl(url: url)
 ```
 
-## Conclusion
+### Conclusion
 
 J'ai pris énormément de plaisir à coder cette application (c'est le plus important je pense).
-Avant de me lancer, j'avais pas mal d'a priori et je me disais "cette partie va être dure... ; comment je vais gérer ça..." Et finalement, pour chaque problème rencontré, j'ai su trouver des solutions. Alors oui, mon application n'est pas hyper optimisée et elle demande surement une refacto générale mais j'ai tellement appris de choses qu'on ne voit pas dans un tuto :).
+Avant de me lancer, j'avais pas mal d'a priori et je me disais "cette partie va être dure... ; comment je vais gérer ça..." Et finalement, pour chaque problème rencontré, j'ai su trouver des solutions. Alors oui, mon application n'est pas hyper optimisée et elle demande surement une refacto générale mais j'ai tellement appris de choses qu'on ne voit pas dans un tuto :).
 Ce que je retiens de ma toute première application sous IOS, c'est que j'apprécie vraiment de faire du mobile, que je prends du plaisir à coder sous Swift et qu'il ne faut pas avoir peur de se lancer. Alors j'espère qu'en lisant cet article, ça va tenter certaines personnes à se lancer sur cette voie.
 
-*P.S. : Merci aux Pandas pour les relectures*
+*P.S. : Merci aux Pandas pour les relectures*

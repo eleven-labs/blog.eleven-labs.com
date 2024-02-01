@@ -22,18 +22,18 @@ Sails.js est un framework MVC (modèle, vue, contrôleur) pour nodejs. Il ressem
 Sails a spécialement été conçu pour construire des API Web, des sites one-page et des applications en temps réel telles que des chats.
 Sails permet l'utilisation de toutes les fonctionnalités modernes de nouvelles applications web:
 
-### Socket.io, RealTime, WebSockets
+## Socket.io, RealTime, WebSockets
 
 Socket.io, RealTime, WebSockets permettent de prendre en charge les systèmes de transport de données facilement. En permettant de créer des applications type jeux multijoueurs, tchat ...
 
-### Performance
+## Performance
 
 Comme nodejs, sails permet de garder une performance sensiblement proche de nodejs.
 
-### REST Blueprints
+## REST Blueprints
 Il permet de générer automatiquement des Api Json via une maîtrise du CRUD de votre modèle, ainsi qu'un routing automatique de vos contrôleurs.
 
-### Supporte Grunt
+## Supporte Grunt
 
 La bonne nouvelle est que Sails supporte Grunt et permet donc de faire des tests plus facilement.
 

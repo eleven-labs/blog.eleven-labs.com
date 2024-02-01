@@ -20,10 +20,14 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
 
   useHead({
     metas: [
-      {
-        name: 'google-site-verification',
-        content: GOOGLE_SITE_VERIFICATION,
-      },
+      ...(GOOGLE_SITE_VERIFICATION
+        ? [
+            {
+              name: 'google-site-verification',
+              content: GOOGLE_SITE_VERIFICATION,
+            },
+          ]
+        : []),
       {
         name: 'apple-mobile-web-app-title',
         content: 'Blog Eleven Labs',
@@ -63,6 +67,10 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   useLink({ rel: 'apple-touch-icon', sizes: '120x120', href: getPathFile('/imgs/icons/apple-icon-120x120.png') });
   useLink({ rel: 'apple-touch-icon', sizes: '152x152', href: getPathFile('/imgs/icons/apple-icon-152x152.png') });
   useLink({ rel: 'apple-touch-icon', sizes: '180x180', href: getPathFile('/imgs/icons/apple-icon-180x180.png') });
+
+  useLink({ rel: 'preconnect', href: 'https://fonts.googleapis.com' });
+  useLink({ rel: 'preconnect', href: 'https://fonts.gstatic.com' });
+  useLink({ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap' });
 
   useEffect(() => {
     window.scrollTo(0, 0);

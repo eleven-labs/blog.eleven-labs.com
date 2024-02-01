@@ -7,7 +7,7 @@ title: Ajout de la factory pour instancier les changements
 
 A présent implémentons la classe `Acme\VersionChanges\ChangesFactory`.
 
-### Ajout de la classe
+## Ajout de la classe
 
 Créez donc le fichier suivant :
 
@@ -214,7 +214,7 @@ class ChangesFactoryTest extends \PHPUnit_Framework_TestCase
 
 Pour rappel, n'oubliez pas de vous assurer du comportement de vos méthodes en écrivant des tests unitaires.
 
-### Ajout du service Symfony
+## Ajout du service Symfony
 
 Afin que ce service soit injecté par l'injection de dépendance de Symfony, nous devons également déclarer le service :
 
@@ -223,7 +223,6 @@ acme.version.changes_factory:
     class: Acme\VersionChanges\ChangesFactory
     arguments: ["%versions%", "@request_stack"]
 ```
-
-### Prochaine étape
+## Prochaine étape
 
 Notre structure est prête, il ne nous reste plus qu'à implémenter les fichiers de changements, dans l'étape suivante.

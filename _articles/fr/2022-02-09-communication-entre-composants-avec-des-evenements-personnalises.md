@@ -138,7 +138,7 @@ Pour cela, l'événement `updateCart` est écouté via le `useEffect` qui décle
 Cette méthode ajoute ou modifie la quantité d'un produit dans le panier. Il est préférable de [mémoïser](https://fr.wikipedia.org/wiki/M%C3%A9mo%C3%AFsation) la fonction à l'aide de `useCallback` pour éviter des rendus superflus.
 À noter que dans le `useEffect`, l'écouteur est supprimé à chaque changement de la méthode `onUpdateCart`. Ceci est appliqué à tous les `useEffect` de l'exemple.
 
-- La suppression du panier (`clearCart`)  
+- La suppression du panier (`clearCart`)
 - Et l'ouverture de ce panier (`openCart`)
 
 Pour ces deux derniers événements, la logique des écouteurs d'événements est similaire.
@@ -164,7 +164,7 @@ export const useCart = (): UseCart => {
             } else {
                 cartItemsDraft[cartItemIndex].quantity++;
             }
-        } else {
+        } else {
             cartItemsDraft.push({ ...cartItem, quantity: 1 });
         }
         setCartItems(cartItemsDraft);
@@ -242,7 +242,7 @@ export const AddToCartButtonContainer: React.FC<AddToCartButtonContainerProps> =
 
     return (
         <AddToCartButton
-            cartItem={cartItems.find(cartItem => cartItem.id === product.id) || { ...product, quantity: 0 }}
+            cartItem={cartItems.find(cartItem => cartItem.id === product.id) || { ...product, quantity: 0 }}
             updateCart={updateCart}
         />
     );

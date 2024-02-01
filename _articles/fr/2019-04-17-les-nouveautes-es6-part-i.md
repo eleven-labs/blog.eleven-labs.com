@@ -51,11 +51,11 @@ console.log(globalVariable); // output 'I am global !'
 console.log(localVariable); // output undefined
 ```
 
-En ES6, deux nouveaux mots clés ont été ajoutés pour déclarer une variable : `const` et `let`.
+En ES6, deux nouveaux mots clés ont été ajoutés pour déclarer une variable : `const` et `let`.
 
 ### À propos de "const" ###
 
-`const` permet de déclarer une variable à assignation unique bindée lexicalement : c’est-à-dire que l'identifiant utilisé pour déclarer la variable ne peut pas être réaffecté, et sera scopé au niveau du bloc (la portée de la variable est limitée au bloc dans lequel elle est déclarée).
+`const` permet de déclarer une variable à assignation unique bindée lexicalement : c’est-à-dire que l'identifiant utilisé pour déclarer la variable ne peut pas être réaffecté, et sera scopé au niveau du bloc (la portée de la variable est limitée au bloc dans lequel elle est déclarée).
 
 ```javascript
 function example() {
@@ -71,7 +71,7 @@ function example() {
 }
 ```
 
-Cependant, il faut bien faire attention car une variable `const` est constante (seems legit) au niveau référence : les types primitifs (number, string, boolean) bloquent sa réassignation, mais les valeurs à l’intérieur d’un tableau ou d'un objet sont modifiables.
+Cependant, il faut bien faire attention car une variable `const` est constante (seems legit) au niveau référence : les types primitifs (number, string, boolean) bloquent sa réassignation, mais les valeurs à l’intérieur d’un tableau ou d'un objet sont modifiables.
 
 ```javascript
 const obj = {};
@@ -106,7 +106,7 @@ Pour les anglophones, voici un article qui parle plus en détails de la [Tempora
 ## Arrow function
 
 L’ES6 apporte une nouvelle façon d’écrire des fonctions, appelée arrow function (ou fat arrow).
-En dehors du fait que la syntaxe soit plus concise, les arrow functions ne créent pas leurs propres valeurs pour `this` (contrairement aux fonctions classiques qui ne récupèrent pas le `this` du bloc parent) : elles partagent leur valeur avec leur scope parent, ce qui permet d’éviter d’avoir à binder le « this ».
+En dehors du fait que la syntaxe soit plus concise, les arrow functions ne créent pas leurs propres valeurs pour `this` (contrairement aux fonctions classiques qui ne récupèrent pas le `this` du bloc parent) : elles partagent leur valeur avec leur scope parent, ce qui permet d’éviter d’avoir à binder le « this ».
 
 ```javascript
 // ES5

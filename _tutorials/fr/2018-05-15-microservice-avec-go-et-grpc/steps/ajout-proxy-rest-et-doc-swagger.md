@@ -68,22 +68,22 @@ service Translator {
 Nous allons maintenant modifer le fichier `prototool.yaml` pour générer le proxy et le json de Swagger.
 ```yaml
 # prototool.yaml
-protoc_includes:  
-  - ../../src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis  
-  
-gen:  
- go_options: import_path: translator-service/  
-  
-  plugins:  
-  - name: go  
-    type: go  
-    flags: plugins=grpc  
-    output: .  
-  - name: grpc-gateway  
-    type: go  
-    output: .  
-  - name: swagger  
-    type: go  
+protoc_includes:
+  - ../../src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis
+
+gen:
+ go_options: import_path: translator-service/
+
+  plugins:
+  - name: go
+    type: go
+    flags: plugins=grpc
+    output: .
+  - name: grpc-gateway
+    type: go
+    output: .
+  - name: swagger
+    type: go
     output: swagger/.
 ```
 Nous pouvons maintenant générer les fichiers Go.
@@ -94,15 +94,15 @@ Nous allons maintenant utiliser ce proxy qui a été généré et créer un fich
 Il suffit de lancer le serveur gRPC dans une goroutine et d'exposer le proxy HTTP.
 ```go
 // proxy.go
-package main  
-  
-import (  
-    "context"  
+package main
+
+import (
+    "context"
     "net/http"
     "github.com/grpc-ecosystem/grpc-gateway/runtime"
     "google.golang.org/grpc"
     "translator-service/proto"
-)  
+)
 
 func main() {
     lis, err := net.Listen("tcp", "localhost:4000")
@@ -116,16 +116,16 @@ func main() {
     s := grpc.NewServer()
     proto.RegisterTranslatorServer(s, srv)
     go s.Serve(lis)
-    
+
     ctx := context.Background()
     ctx, cancel := context.WithCancel(ctx)
     defer cancel()
-    
+
     mux := runtime.NewServeMux()
     opts := []grpc.DialOption{grpc.WithInsecure()}
     proto.RegisterTranslatorHandlerFromEndpoint(ctx, mux, "localhost:4000", opts)
-    
-    http.ListenAndServe(":8001", mux)  
+
+    http.ListenAndServe(":8001", mux)
 }
 ```
 Nous pouvons maintenant compiler notre serveur.
@@ -148,7 +148,7 @@ Il s'agit de la documentation Swagger qui a été générée à partir des direc
 
 Vous pouvez ouvrir la documentation [directement ici](https://editor.swagger.io/) ou directement utiliser [swagger-ui](https://github.com/swagger-api/swagger-ui).
 
-### Conclusion
+## Conclusion
 
 Nous avons maintenant un service documenté accessible via gRPC ou plus classiquement par HTTP.
 Je vous conseille de regarder plus en détails [les plugins protoc](https://developers.google.com/protocol-buffers/docs/reference/other) notamment [gogoprotobuf](https://github.com/gogo/protobuf) qui est une autre implémentation de protobuf en Go et [go-proto-validators](https://github.com/mwitkow/go-proto-validators) qui permet de valider les messages protobuf comme des champs obligatoires ou des regex.

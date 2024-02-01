@@ -24,14 +24,14 @@ L’image ci-dessous illustre les différentes couches :
 
 ![]({BASE_URL}/imgs/articles/2016-12-22-comprendre-le-ssltls-partie-4-handshake-protocol/untitled-diagram.png)
 
-# Handshake Protocol :
+## Handshake Protocol :
 
 Traduit “poignée de main” en Français, ce protocole permet au serveur et au client de :
 1. s'authentifier mutuellement ;
 2. négocier :
     1. les algorithmes de chiffrement ;
     2. les algorithmes de MAC (Message Authentification Code) ;
-    3. les clés symétriques qui vont servir au chiffrement  avant que l'application ne transmette son premier octet.
+    3. les clés symétriques qui vont servir au chiffrement  avant que l'application ne transmette son premier octet.
 
 Voici en détails comment se déroule le handshake, dans l'ordre chronologique :
 

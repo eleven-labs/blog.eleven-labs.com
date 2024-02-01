@@ -24,7 +24,7 @@ Après plusieurs mois de travail acharné, nous avons le plaisir de vous annonce
 
 Au début de l'été 2017, l'idée d'une plateforme de tutoriels "Made in Eleven Labs" a commencé à prendre forme, en même temps que la création du projet sur github. En juillet 2017, douze astronautes se rassemblent pour brainstormer autour des features qui définiront le MVP. Le projet vise à proposer du contenu plus complet et plus didactique que les articles déjà proposés sur le [Blog]({BASE_URL}/) : des tutoriels à suivre étape après étape.
 
-### Quelles features ?
+## Quelles features ?
 
 Après la réunion de brainstorm, les features retenues sont les suivantes :
 
@@ -33,13 +33,13 @@ Après la réunion de brainstorm, les features retenues sont les suivantes :
 - Un moteur de recherche
 - Le display des progrès de lecture de chaque cours
 
-### Organisation
+## Organisation
 
 CodeLabs est un “side-project”, c’est à dire un projet développé par des volontaires sur leur temps libre, il faut donc s’assurer de garder la motivation après la phase de début de conception qui est toujours la plus excitante.
 
 Au delà du maintien de la motivation, pour Codelabs, nous avions un double objectif : obtenir la participation de tous et l’avancée rapide du projet. Mais alors comment concilier ces deux objectifs ? Pour en savoir plus sur la démarche adoptée, vous pouvez vous rendre sur l'article de Maxime
 
-### Static site generation
+## Static site generation
 
 Créer une application comme celle-ci implique de se confronter à des problématiques complexes, comme le fait de monter une architecture server-side, en maintenant la base de données et en utilisant des moteurs de template. Pour se soustraire à ces difficultés, nous avons opté pour une technique de génération de site statique.
 
@@ -49,18 +49,18 @@ Travailler avec des fichiers statiques permet de tirer avantage des features du 
 
 Un autre avantage est le fait de ne pas avoir à se soucier non plus de la securité grâce à l'aspect serverless et à l'absence de données utilisateurs, ce qui évite beaucoup de contraintes.
 
-### La stack
+## La stack
 
 Les choix sont multiples lorsqu'il s'agit de définir une stack pour votre projet. Mais chez Eleven Labs nous sommes assez fan de l'ecosystème React, qui rend très accessible un développement web "moderne", si l'on considère à quel point cela demande peu d'efforts de construire une expérience utilisateur qualitative. Nous ne couvrirons pas plus en détails cet aspect, car plusieurs articles s'attardent déjà sur React et Redux. Mais vous connaissez le principe ! Webpack, Components, Props, State, Actions, reducers... et tout le toutim.
 
-### Le Workflow
+## Le Workflow
 
 Nous voulions garder quelque chose de simple, donc nous avons gardé le process déjà éprouvé du blog :
 
 - Écrire les articles en Markdown
 - Stocker les fichier dans le repo (ce qui permet de bénéficier des avantages du système de Pull requests et de reviews).
 
-### La structure d'un cours
+## La structure d'un cours
 
 Un tutoriel est structuré, dans son dossier,  par les fichiers suivants :
 
@@ -100,17 +100,17 @@ Le ficher `index.json` contient les metadata d'un tutoriel, voici un exemple :
 }
 ```
 
-#### Comment charger un tutoriel ?
+## Comment charger un tutoriel ?
 
 Le chargement d'un tutoriel se fait en récupérant les fichiers Markdown via des appels `XMLHttpRequest`, le fait que les fichier soient stockés localement, permet d'y accéder statiquement. Quand un lecteur choisit un tutoriel, nous lazyloadons les fichiers `* .md` à la demande de l'utilisateur.
 
-### Génération des composants react
+## Génération des composants react
 
 Cette partie explique la transformation du Markdown en composants react, ce qui se concrétise par le display d'un tutoriel au lecteur. Cette feature critique devait être traitée avec la plus grande attention. À cause de sa nature sensible, nous ne voulions pas d'une librairie tierce qui assumerait la transformation du Markdown en Composants, même si il en existe un bon nombre. Cette feature étant constitutive de la valeur ajoutée du projet, nous ne pouvions envisager qui puisse éventuellement avoir des problèmes lors d'upgrades, ou de se débattre avec des bugs insolvables. Nous voulions un contrôle total au fil de l'eau.
 
 Manager le Markdown signifie que nous devons le parser dans quelque chose plus structuré, qui puisse facilement être interprété, dans l'optique d'avoir plus de contrôle sur notre process d'évolution des composants.
 
-#### Abstract Syntax Tree (AST)
+## Abstract Syntax Tree (AST)
 
 > Un "Abstract Syntax Tree", ou seulement "Syntax tree", est une représentation en arborescence de la structure syntaxique abstraite du code source écrit dans un langage de programmation.
 > Wikipedia
@@ -273,7 +273,7 @@ const resolveRenderer = renderer => (
   }
 ```
 
-#### Comment assembler tout ça
+## Comment assembler tout ça
 
 
 On a créé une usine qui génère les composants React depuis du texte en markdown. Cette usine parse ensuite le markdown en utilisant `markdown-to-ast`, et il traverse récursivement l'arbre dans le but de créer un contenu pour chaque composant :
@@ -341,7 +341,7 @@ Voici le HTML correspondant :
 
 ![Html result]({BASE_URL}/imgs/articles/2018-03-28-codelabs-under-the-hood/html-result.png)
 
-### Déploiement
+## Déploiement
 
 Le déploiement d'une application comme Codelab est assez complexe. En effet, la problématique est que les développeurs qui travaillent sur le projet sont dispersés dans tout Paris. Il faut donc avoir un [Continuous Delevery](https://continuousdelivery.com/) simple et rapide.
 

@@ -109,7 +109,7 @@ On va donc appliquer cette belle méthodologie, sur la meilleure application pos
 
 Alors on va commencer par se faire un tout petit composant bien gentil qui afficherait une tâche importante comme : *"Prévenir Jeanine".*
 
-``` javascript
+```javascript
     // src/components/Task.js
 
     import React from 'react';

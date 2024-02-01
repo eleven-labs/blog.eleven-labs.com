@@ -110,7 +110,7 @@ title_ms: '"ms" === data["title"] ? 1 : 0'
 
 On peut donc utiliser des opérations booléennes dans son expression : on part du principe que dans les données d’entrées, le `title` est un string qu’il faut comparer pour indiquer 0 ou 1 pour le PDF.
 
-### Aller plus loin : créer une expression complexe 
+### Aller plus loin : créer une expression complexe
 
 On peut avoir besoin d’une expression un peu plus compliquée que les [opérateurs proposés](https://symfony.com/doc/current/reference/formats/expression_language.html#supported-operators) : on a besoin d’une “vraie” fonction.
 Pas de panique, cela s’ajoute ! Dans la documentation de Symfony, il y a un cas simple pour convertir [le texte en minuscule](https://symfony.com/doc/current/components/expression_language.html#extending-the-expressionlanguage). On va essayer d’aller un peu plus loin : j’ai la date d’anniversaire et je dois la séparer en plusieurs champs pour le PDF.

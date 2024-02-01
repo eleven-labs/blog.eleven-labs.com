@@ -30,8 +30,7 @@ Dans cet article, on parlera plus particulièrement d’une rétrospective de sp
 
 *<center>Rétrospective de fin d'un Sprint SCRUM</center>*
 
-Objectif ?
-==========
+## Objectif ?
 
 En fin de sprint, ou fin de cycle de développement, quand le but de la démonstration (“Sprint review”) est d’analyser l’incrément de produit développé pendant cette itération, i.e. le “quoi”, **le but de la rétrospective est d’analyser** les processus et outils utilisés pour arriver à cette fin, i.e. **le “comment”**.
 
@@ -39,8 +38,7 @@ L’objectif final est donc de rendre l’équipe encore **plus productive** pou
 
 Concrètement, les discussions de cette réunion doivent ainsi permettre d’établir un **plan d’actions d’améliorations**, que l’équipe doit s’engager à suivre lors de la prochaine itération. Ces actions peuvent être décrites sous la forme de “Stories” techniques ou “improvements” priorisés au sein d’un backlog dédié, et chacune peut être assignée à un membre en particulier qui s’engage alors à réaliser cette tâche. Cela implique qu’une capacité dédiée doit être réservée pour pouvoir gérer ces actions en parallèle des actions de production (“User Stories” fonctionnelles du Sprint).
 
-Quand ?
-=======
+## Quand ?
 
 Chaque jour nous avons bien-sûr des occasions d’améliorer nos outils ou process. Cependant toute équipe se laisse assez facilement emporter par les urgences du quotidien et il est donc important de **dédier un moment régulièrement** pour que l’équipe prenne du recul et trouve le moyen de s’améliorer sur le long terme.
 
@@ -50,8 +48,7 @@ On parle ainsi de cycle d’**amélioration continue** : à chaque itération, o
 
 Que ce soit en début de projet, ou même après plusieurs années, une équipe peut toujours faire mieux. Ainsi il vaut mieux avoir une équipe capable d’apprendre et de toujours s’améliorer plutôt qu’une qui reste au même niveau.
 
-Combien de temps ?
-==================
+## Combien de temps ?
 
 Comme chacune des réunions agiles, pour plus d'efficacité, la rétrospective doit toujours être définie et limitée dans le temps : **time-boxée**.
 
@@ -61,8 +58,7 @@ On convient généralement que ce rituel ne doit pas dépasser 45 minutes par se
 
 Pour les équipes un peu plus nombreuses, si on veut réduire cette durée totale tout en laissant la parole à chacun, il peut être bien de time-boxer le temps de parole de chacun, ou de diviser l’équipe en plusieurs petits groupes. Nous pourrons détailler ces techniques par la suite.
 
-Qui participe ?
-===============
+## Qui participe ?
 
 Tous les membres de l’**équipe de réalisation (développeurs, testeurs…) ainsi que le Product Owner** (ou Product Manager) participent à cette rétrospective. Ainsi l’équipe profite de ce rituel pour améliorer ses process de développement et le Product Owner va chercher à améliorer sa communication ou l’expression de ses besoins, pour que l’ensemble de l’organisation soit plus productive.
 
@@ -72,8 +68,7 @@ De son côté, le **SCRUM Master** joue le rôle de **facilitateur** : il fourni
 
 Quoi qu’il en soit, pour que le plan d’actions de fin de rétrospective soit réalisable et que l’équipe puisse s’engager sur son application, il est préférable qu’elle l’ait établi sans contrainte et qu’il n’ait donc pas été imposé par la direction. Il vaut donc mieux qu’**aucun manager** ne participe à cette réunion. Si le rôle de SCRUM Master est tenu par un chef de projet ou manager, il faudra donc que celui-ci se limite à son rôle de facilitateur et laisse l’**équipe décider librement de ses actions**.
 
-Quels outils ?
-==============
+## Quels outils ?
 
 Pour bien animer cette rétrospective, il existe différents outils permettant de mener la discussion jusqu’à l’établissement du plan d’actions d’améliorations. En voici quelques uns, à utiliser à différentes étapes de la rétrospective :
 
@@ -190,8 +185,7 @@ Si beaucoup d’idées d’améliorations ont été mentionnées, il va donc fal
 
 Il n’existe pas de petites améliorations ! Si vous manquez d’idées ou que tous vos process et outils sont déjà bien en place, essayez de penser aux petites améliorations qui pourraient vous faire gagner 2 secondes tous les jours : raccourcis clavier, tâches automatisées...
 
-Conclusion
-==========
+## Conclusion
 
 J’espère que cet article vous aura donné de nouvelles idées pour animer vos prochaines rétrospectives, pour ceux d’entre vous qui ont déjà l’habitude d’en faire. Il peut même être intéressant pour vous de faire des rétrospectives de rétrospectives, pour rendre ces dernières toujours plus ludiques et productives !
 

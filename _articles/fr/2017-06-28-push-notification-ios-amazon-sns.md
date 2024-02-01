@@ -25,7 +25,7 @@ Aujourd’hui, nous allons nous intéresser aux push notifications sur iOS à pa
 
 Pour info, pas de panique, la phase théorique est longue mais nécessaire afin que vous compreniez bien la logique derrière tout ça (personnellement, je préfère voir l’ensemble et comprendre le pourquoi du comment, au lieu de reproduire bêtement sans réellement comprendre ce que je fais).
 
-# Sommaire
+## Sommaire
 
 * Qu’est ce que les push notifications ?
 * APNs
@@ -34,7 +34,7 @@ Pour info, pas de panique, la phase théorique est longue mais nécessaire afin 
 * Amazon SNS
 * Conclusion
 
-# Qu’est ce que les push notifications ?
+## Qu’est ce que les push notifications ?
 
 Bon à part si votre téléphone est un 3310 (best phone ever <3 ), vous avez obligatoirement eu l’occasion de recevoir une notification de la part d’une application. Aujourd’hui, cette fonctionnalité est très utilisée par la plupart des applications, donc il est “indispensable” de savoir comment ça marche et comment la mettre en place. Rassurez-vous, nous allons voir tout ça ensemble.
 
@@ -55,7 +55,7 @@ Vous pouvez personnaliser l’apparence dans certains cas, mais surtout vous cho
 
 Bien que les notifications puissent toujours être envoyées à votre application, le système notifie l’utilisateur uniquement aux options actuellement activées. Je m’explique, si l’utilisateur désactive complètement les notifications, les APNs ne fournissent pas les notifications de votre application sur le périphérique de l’utilisateur et la programmation des notifications locales échoue toujours.
 
-# Apns
+## Apns
 
 Apple nous indique qu’il s’agit d’un service robuste, sécurisé et hautement efficace pour les développeurs afin de propager des informations aux périphériques iOS.
 
@@ -97,7 +97,7 @@ Dans notre article, nous allons utiliser Amazon SNS. Amazon propose des services
 
 Avant de configurer Amazon, nous allons coder un peu l’application. C’est parti !
 
-# Application
+## Application
 
 Votre application doit être configurée au moment du lancement pour prendre en charge les notifications distantes. Plus précisément, vous devez configurer votre application à l’avance si elle fait l’une des opérations suivantes :
 
@@ -206,7 +206,7 @@ Lorsque votre application reçoit une push notification c’est par la méthode 
 
 C’est à vous de développer la logique réelle qui s’exécute lorsqu’une notification génère une interaction. Par exemple, si vous avez une application messenger, une notification push « nouveau message » doit ouvrir la page de discussion pertinente et faire apparaître la liste des messages à partir du serveur. Utilisez userInfo qui contiendra toute donnée que vous envoyez à partir de votre backend d’application, tel que l’ID de chat, dans l’exemple de messagerie.
 
-# Configuration Apple
+## Configuration Apple
 
 Comme mentionné plus haut, nous devons générer un certificat SSL pour le client de notification push qui permet à votre provider de notification de se connecter aux APNs.
 
@@ -264,7 +264,7 @@ Pour vérifier que tout est en ordre, il suffit d’aller sur la liste des App I
 
 Enfin fini ! Je vous l’accorde cette partie est fastidieuse et lourde. Il ne manque plus que la partie Amazon SNS.
 
-# Amazon SNS
+## Amazon SNS
 
 Amazon SNS est un service web qui coordonne et gère la diffusion ou l’envoi de messages à des clients ou à des endpoints abonnés. Il existe deux types de clients :
 
@@ -337,6 +337,6 @@ Résultat :
 
 ![]({BASE_URL}/imgs/articles/2017-06-28-push-notification-ios-amazon-sns/img_0562.png)
 
-# Conclusion
+## Conclusion
 
 La mise en place de push notifications n’est pas un sujet hyper complexe, mais nécessite néanmoins un peu de connaissances. Une fois que vous avez compris le système de certificat (.pem/.p12) qui permet d’identifier chaque application, le reste est plutôt simple (pour l’exemple que j’ai utilisé).

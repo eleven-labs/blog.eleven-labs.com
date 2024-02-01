@@ -13,15 +13,13 @@ authors:
 keywords: []
 ---
 
-Introduction
-============
+## Introduction
 
 The following article is aimed at developers who have already used the ParamConverter, and who understand its basic principles.
 
 It was written in order to explain how to solve the following issue: I needed to pass a token into a custom header, and to be able to get it back in the controllers. The goal was to avoid repeating the acquisition of the header in each one of the controllers.
 
-The basics
-==========
+## The basics
 
 The ParamConverter is a magic tool. From a controller, you just need to type-hint the argument to obtain an instance of a class based on the id in the url.
 
@@ -43,8 +41,7 @@ I would refer you to the documentation for the basic usage of the ParamConverter
 
 But what if the value I am looking for is not found in the url, for example in a header?
 
-A token in a header
-===================
+## A token in a header
 
 Let’s take another example:
 
@@ -62,8 +59,7 @@ public function isTokenValidAction($token)
 
 The value of the token must pass through an *x-token* header. I will then create a ParamConverter in order to fetch the token from the header and not from the url.
 
-Creation of the Paramconverter
-==============================
+## Creation of the Paramconverter
 
 All ParamConverters must implement the `Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface`.
 
@@ -130,8 +126,7 @@ During the building of the controller, Symfony will fetch all the values of the 
 
 My custom *ParamConverter* is complete. I can now use it.
 
-Service statement
-=================
+## Service statement
 
 A *compiler pass* will read the services with the "request.param\_converter" tag. We can define a priority and a name. If there’s a priority, they will be sorted in this order.
 
@@ -141,8 +136,7 @@ A *compiler pass* will read the services with the "request.param\_converter" tag
 </service>
 ```
 
-Use in the controller
-=====================
+## Use in the controller
 
 In order to use it in my controller, I add the *ParamConverter *annotation to my controller with the *name *option and the converter name given in the service.
 

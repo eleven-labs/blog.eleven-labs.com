@@ -6,7 +6,7 @@ title: Envoi de message
 ---
 À la fin de cette partie, on sera capable d'envoyer nos messages, et nous serons fin prêts à faire intervenir Mercure.
 
-### Poster les messages
+## Poster les messages
 
 Pour poster nos messages, nous devons pouvoir les envoyer depuis notre page de chat.
 Cependant, on souhaite que notre page ne se recharge pas ! Ainsi, nous pourrons profiter du temps réel avec Mercure dans de bonnes conditions.
@@ -113,7 +113,7 @@ Pour savoir quelles propriétés de notre entité on souhaite serializer, on uti
 
 À minima, ajoutez ce groupe sur les propriétés `$id`, `$content`, `$channel`, `$author` de l'entité Message.
 
-Vous pouvez dès à présent tenter d'envoyer un message. Rafraîchissez la page afin de constater que le message a bien été envoyé, et s'affiche bien dans le chat. 
+Vous pouvez dès à présent tenter d'envoyer un message. Rafraîchissez la page afin de constater que le message a bien été envoyé, et s'affiche bien dans le chat.
 
 > Pas très pratique d'avoir fait tout ca pour simplement recharger manuellement notre page
 

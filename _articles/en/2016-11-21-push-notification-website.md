@@ -20,9 +20,9 @@ keywords:
   - notification
 ---
 
-In a [previous article]({BASE_URL}/fr/votre-premiere-pwa/) we created our first PWA, but we haven't seen the whole concept. The convenience of [PWA]({BASE_URL}/fr/progressive-web-apps-au-googledevsummit/) is to act like a mobile application, to be installed on a phone, to manage off-line mode, and especially to send push notifications. Notifications are the essential element of user involvement, they allow to send a reminder and to communicate with our users. We are going to finalize the last tutorial by setting up a simple push notification system, using [Firebase](https://firebase.google.com/) to store user tokens.
+In a [previous article]({BASE_URL}/fr/votre-premiere-pwa/) we created our first PWA, but we haven't seen the whole concept. The convenience of [PWA]({BASE_URL}/fr/progressive-web-apps-au-googledevsummit/) is to act like a mobile application, to be installed on a phone, to manage off-line mode, and especially to send push notifications. Notifications are the essential element of user involvement, they allow to send a reminder and to communicate with our users. We are going to finalize the last tutorial by setting up a simple push notification system, using [Firebase](https://firebase.google.com/) to store user tokens.
 
-To go quicker, we invite you to catch up by retrieving the project [https://github.com/CaptainJojo/pwa-parisjs](https://github.com/CaptainJojo/pwa-parisjs) that contains a ready to go PWA.
+To go quicker, we invite you to catch up by retrieving the project [https://github.com/CaptainJojo/pwa-parisjs](https://github.com/CaptainJojo/pwa-parisjs) that contains a ready to go PWA.
 
 ```sh
 git clone https://github.com/CaptainJojo/pwa-parisjs
@@ -32,9 +32,9 @@ npm install
 npm start
 ```
 
-At this point, you should have access to your PWA at localhost:8080. If you haven't done it yet, you have to install [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk), this will allow you to make sure that you have a PWA.
+At this point, you should have access to your PWA at localhost:8080. If you haven't done it yet, you have to install [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk), this will allow you to make sure that you have a PWA.
 Before getting into sending push notifications, we are going to go through the configuration. Yes! It's not magic, we are going to ask Google for authorization.
-Let's go to [Firebase](https://console.firebase.google.com/) to create a project.
+Let's go to [Firebase](https://console.firebase.google.com/) to create a project.
 
 ![Firebase - créer un projet]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/newproject.png)
 
@@ -46,7 +46,7 @@ In the "Cloud messaging" tab you'll find your sender ID.
 
 ![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/cloud.png)
 
-In the manifest.json, available in the public folder of the application, you have to add at the end of the file the "gsm_sender_id" with the value of the sender ID.
+In the manifest.json, available in the public folder of the application, you have to add at the end of the file the "gsm_sender_id" with the value of the sender ID.
 
 ```json
 {
@@ -111,7 +111,7 @@ Since we want to do something clean (even if it's just a tutorial), we are going
 
 ![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/web_setup.png)
 
-The script installation is done in the HTML code, in files public/home.html and public/article/alorscettearticle.html.
+The script installation is done in the HTML code, in files public/home.html and public/article/alorscettearticle.html.
 
 ```html
 <html>
@@ -128,7 +128,7 @@ The script installation is done in the HTML code, in files public/home.html and
     <link rel="stylesheet" href="/async.css">
 ```
 
-The initialization goes to public/register.js.
+The initialization goes to public/register.js.
 
 ```javascript
 // Initialize Firebase
@@ -204,11 +204,11 @@ Before starting the server, you have to open permissions to Firebase in order fo
 
 ![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/rules.png)
 
-If you restart the server, you will see a token stored in the DB in the "Database" tab of Firebase.
+If you restart the server, you will see a token stored in the DB in the "Database" tab of Firebase.
 
 ![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-16.24.58.png)
 
-Now that the tokens are stored in the database, we are going to prepare a message that will appear when a push notification occurs. Let's add the following code to the file public/sw.js:
+Now that the tokens are stored in the database, we are going to prepare a message that will appear when a push notification occurs. Let's add the following code to the file public/sw.js:
 
 ```javascript
 console.log('Started', self);
@@ -236,7 +236,7 @@ self.addEventListener('push', function(event) {
 });
 ```
 
-It's almost ready! We are going to create a "/sender" url that will allow us to send notifications to all the tokens that we have in the database. To do so, we are going to use the <em>request</em> and <em>firebase</em> modules (npm version). Here is the new package.json:
+It's almost ready! We are going to create a "/sender" url that will allow us to send notifications to all the tokens that we have in the database. To do so, we are going to use the <em>request</em> and <em>firebase</em> modules (npm version). Here is the new package.json:
 
 ```json
 {
@@ -260,11 +260,11 @@ It's almost ready! We are going to create a "/sender" url that will allow us t
 }
 ```
 
-In the app.js file, we initialize Firebase. You are going to need a server key file. Click the wheel in Firebase, and then "Permissions". You are now taken to another console.
+In the app.js file, we initialize Firebase. You are going to need a server key file. Click the wheel in Firebase, and then "Permissions". You are now taken to another console.
 
 ![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/permissions.png)
 
-In "Service accounts", create a new account.
+In "Service accounts", create a new account.
 
 ![]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/account.png)
 
@@ -272,7 +272,7 @@ A json file will be downloaded, you need to add it to your project folder.
 
 ![JsonFile - Racine]({BASE_URL}/imgs/articles/2016-11-21-push-notification-website/capture-decran-2016-10-26-a-17.22.04.png)
 
-In the app.js file, we are going to add the route /sender that will send a request of a push notification with all the tokens.
+In the app.js file, we are going to add the route /sender that will send a request of a push notification with all the tokens.
 
 ```javascript
 var path = require('path');

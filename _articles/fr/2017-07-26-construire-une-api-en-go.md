@@ -294,7 +294,7 @@ Pour s'abstraire d'une base de données, on va créer une map pour stocker nos u
 var db = make(map[uuid.UUID]models.User)
 ```
 
-On va donc créer une fonction pour retourner dans un JSON l'ensemble des utilisateurs stockés dans "base de données" `db`. Pour regrouper l'ensemble des handlers qui vont gérer notre ressource `user`, on va créer une structure vide pour y attacher nos fonctions.
+On va donc créer une fonction pour retourner dans un JSON l'ensemble des utilisateurs stockés dans "base de données" `db`. Pour regrouper l'ensemble des handlers qui vont gérer notre ressource `user`, on va créer une structure vide pour y attacher nos fonctions.
 
 ```go
 type UserResource struct{}

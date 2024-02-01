@@ -19,14 +19,14 @@ keywords:
 ---
 Notre blog est à l'image d'Eleven-labs, on aime partager et suivre les dernières tendances. À la fois pour notre blog et pour nos lecteurs nous voulons ce qu'il y a de meilleur et de plus confortable. C'est pour cela qu'aujourd'hui notre blog est **AMP compliant**.
 
-### Mais c'est quoi AMP ?
+## Mais c'est quoi AMP ?
 
 Petit résumé pour ceux qui n'ont pas lu l'article [AMP le futur du web ?]({BASE_URL}/fr/amp-le-futur-du-web/).
 [AMP](https://www.ampproject.org/) est un projet open-source ayant pour volonté d'améliorer les performances de nos sites internet. À la base AMP est créé pour les pages mobiles, même si il est totalement possible de faire de l'AMP sur votre site desktop.
 AMP est surtout une technologie Google, en effet le principe est de limiter le nombre de requêtes et tout ce qui fait ralentir l'affichage de vos pages web. Le petit plus c'est que vos pages AMP sont alors cachées directement par les CDN de Google.
 Comme Google donne une préférence aux pages AMP lors des recherches mobile, votre SEO n'en est que meilleur.
 
-### Notre blog est AMP !!
+## Notre blog est AMP !!
 
 Eh oui, c'est fait ! Notre blog peut être servi en AMP, ce qui va permettre à nos utilisateurs mobile d'avoir une expérience améliorée.
 
@@ -170,7 +170,7 @@ Dans notre layout principal nous ajoutons le code suivant dans le `head` :
 
 Si vous le souhaitez, vous pouvez voir la pull request [ici](https://github.com/eleven-labs/blog.eleven-labs.com/pull/211).
 
-### Le mot de la fin
+## Le mot de la fin
 
 Et voilà ! Vous pouvez retrouver ceci dans vos recherches Google Mobile :
 

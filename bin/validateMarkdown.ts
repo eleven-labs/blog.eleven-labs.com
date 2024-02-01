@@ -1,23 +1,12 @@
-import { createServer as createViteServer } from 'vite';
+import { MarkdownInvalidError, validateMarkdown } from '@/helpers/markdownHelper';
 
-import { MarkdownInvalidError } from '../src/helpers/markdownHelper';
 import { getArgs } from './binHelper';
 
 (async (): Promise<void> => {
   const args = getArgs<{ ci: boolean }>();
-
-  const vite = await createViteServer({
-    server: { middlewareMode: true },
-    appType: 'custom',
-  });
-
   try {
-    const { validateMarkdown } = await vite.ssrLoadModule('/src/helpers/markdownHelper.ts');
     validateMarkdown();
-    vite.close();
   } catch (e) {
-    vite.close();
-
     const markdownInvalidError = e as MarkdownInvalidError;
     if (args.ci) {
       console.log(`::set-output name=filePath::${markdownInvalidError.markdownFilePathRelative}`);

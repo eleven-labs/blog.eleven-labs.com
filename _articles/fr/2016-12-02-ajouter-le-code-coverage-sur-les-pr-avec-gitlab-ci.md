@@ -16,7 +16,7 @@ keywords:
 ---
 
 
-Voici un tip qui permet de pouvoir voir en un clin d’œil les répercussions d'une MR sur la couverture de code de votre projet.
+Voici un tip qui permet de pouvoir voir en un clin d’œil les répercussions d'une MR sur la couverture de code de votre projet.
 
 
 ![gitlab-ci-code-coverage]({BASE_URL}/imgs/articles/2016-12-02-gitlab-ci/gitlab-ci-code-coverage-1.png)
@@ -36,14 +36,14 @@ test:
   - vendor/phpunit/phpunit/phpunit -c app --coverage-text --colors=never
 ```
 
-La modification de notre pipeline porte sur les configs de phpunit en ajoutant ```--coverage-text --colors=never```  afin d'avoir dans les logs du pipeline les résultats du code-coverage.
+La modification de notre pipeline porte sur les configs de phpunit en ajoutant ```--coverage-text --colors=never```  afin d'avoir dans les logs du pipeline les résultats du code-coverage.
 
 Puis dans l'interface de réglages du pipeline, nous allons configurer la regex afin de récupérer la couverture de code du commit.
 
 
 ![gitlab-ci-code-coverage]({BASE_URL}/imgs/articles/2016-12-02-gitlab-ci/gitlab-ci-code-coverage-2.png)
 
-Là, gitlab est plutot sympa et nous donne déjà plusieurs regex toutes prêtes en fonction du langage du projet. Dans mon cas c'est du PHP donc la config sera ```^\s*Lines:\s*\d+.\d+\%```
+Là, gitlab est plutot sympa et nous donne déjà plusieurs regex toutes prêtes en fonction du langage du projet. Dans mon cas c'est du PHP donc la config sera ```^\s*Lines:\s*\d+.\d+\%```
 
 *C'est tout !!!*
 
@@ -57,4 +57,4 @@ Et voila le résultat
 
 ![gitlab-ci-code-coverage]({BASE_URL}/imgs/articles/2016-12-02-gitlab-ci/gitlab-ci-code-coverage-3.png)
 
-Pour plus d'infos : [gitlab-ci: documentation](https://docs.gitlab.com/ee/user/project/pipelines/settings.html#test-coverage-parsing)
+Pour plus d'infos : [gitlab-ci: documentation](https://docs.gitlab.com/ee/user/project/pipelines/settings.html#test-coverage-parsing)

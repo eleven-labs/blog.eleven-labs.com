@@ -4,11 +4,11 @@ tutorial: gitlab-ci-js
 slug: initialisation-ci-cd-et-preparation-application
 title: Initialisation de la CI/CD et préparation de notre application pour notre CI/CD
 ---
-# Initialisation de la CI/CD et préparation de l'application pour notre CI/CD
+## Initialisation de la CI/CD et préparation de l'application pour notre CI/CD
 
 Pour cette deuxième étape nous allons initialiser la CI/CD et préparer notre application pour le temps d'exécution de notre CI/CD.
 
-## Initialisation du repository gitlab
+### Initialisation du repository gitlab
 Bon, sur cette partie je pense que je ne vais rien vous apprendre. Rendez-vous sur l’interface de gitlab, puis dans projet, et enfin cliquez sur `New project`.
 
 ![Screenshot create project gitlab]({BASE_URL}/imgs/tutorials/2018-09-19-gitlab-ci-js/screenshot-create-project-gitlab.png)
@@ -35,7 +35,7 @@ Pour ce faire rendez-vous sur l'interface web de Gitlab et allez dans `Settings 
 ![Screenshot protected branch]({BASE_URL}/imgs/tutorials/2018-09-19-gitlab-ci-js/screenshot-protected-branch.png)
 ![Screenshot protected tag]({BASE_URL}/imgs/tutorials/2018-09-19-gitlab-ci-js/screenshot-protected-tag.png)
 
-## Initialisation de la CI/CD de gitlab-ci
+### Initialisation de la CI/CD de gitlab-ci
 
 Pour cette partie, rien de compliqué. Il faut juste ajouter un fichier `.gitlab-ci.yml` à la racine de votre projet et pour que la CI puisse fonctionner nous allons juste mettre une déclaration `script` dans un `job`.
 
@@ -56,7 +56,7 @@ Et voilà le résultat :
 
 ![Resultat initialisation gitlab-ci]({BASE_URL}/imgs/tutorials/2018-09-19-gitlab-ci-js/result-init-gitlab-ci.png)
 
-## Préparation de notre application pour notre CI/CD
+### Préparation de notre application pour notre CI/CD
 
 Lors de l'exécution de la CI/CD nous aurons besoin de notre application déjà construite avec toutes ces dépendances.
 

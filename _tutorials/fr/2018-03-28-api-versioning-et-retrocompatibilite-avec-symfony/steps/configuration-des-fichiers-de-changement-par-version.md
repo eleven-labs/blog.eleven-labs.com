@@ -9,7 +9,7 @@ Nous allons donc avoir besoin de spécifier les changements de retrocompatibilit
 
 Il nous faut implémenter une liste des versions dans la configuration de Symfony avec, pour chaque version, le namespace complet du fichier qui contient les versions à appliquer.
 
-### Spécifions les versions retrocompatibles
+## Spécifions les versions retrocompatibles
 
 Editez le fichier `app/config/parameters.yml` de votre projet (ou `config/services.yaml` sous Symfony 4) et ajoutez l'entrée suivante, sous `parameters` :
 
@@ -32,6 +32,6 @@ Ainsi, dans le cas ou un client ajoute un header `X-Accept-Version: 0.9.0` dans 
 
 La version `0.8.0` ne devra pas être jouée, car elle correspond à un modèle encore plus ancien que celui demandé.
 
-### Prochaine étape
+## Prochaine étape
 
 Cette configuration doit ensuite être interprêtée par Symfony, et les changements nécessaires appliqués à la réponse de votre API en fonction de la version demandée.

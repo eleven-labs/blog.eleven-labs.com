@@ -4,7 +4,7 @@ lang: fr
 date: '2014-07-11'
 slug: angularjs-les-directives-12
 title: 'AngularJS : Les Directives 1/2'
-excerpt: '## Kézako ?'
+excerpt: 'Kézako ?'
 categories:
   - javascript
 authors:
@@ -19,13 +19,13 @@ Pour faire simple une directive est un marqueur sur un élément du DOM (en tant
 de classe CSS), ce marqueur informe le compiler HTML ($compile) d'attacher un comportement à cet élément voir de
 transformer cet élément et ses enfants.
 
-A mon sens un des gros plus du framework AngularJS  réside dans le fait que tout son langage de Template (directive,
+A mon sens un des gros plus du framework AngularJS  réside dans le fait que tout son langage de Template (directive,
 filtre, ...) est implémenté de la même manière que ce que nous allons voir ci-dessous.
 Les sources sont accessibles ici : [https://github.com/angular/angular.js/tree/master/src/ng]()
 
 ## Créer des directives
 
-Tout d'abord nous suivrons  une convention de nommage qui  veut qu'on préfixe le nom de ses propres directives, dans nos
+Tout d'abord nous suivrons  une convention de nommage qui  veut qu'on préfixe le nom de ses propres directives, dans nos
 exemples ci-dessous nous utiliserons le préfixe "my".
 
 Lors de cet article nous étudierons les options les plus communes des directives, deux autres articles compléteront le
@@ -33,7 +33,7 @@ tour d'horizon des directives.
 
 ### template et templateUrl
 
-Une première étape sera de créer une simple directive chargée d'afficher "Hello Directive"
+Une première étape sera de créer une simple directive chargée d'afficher "Hello Directive"
 
 ```js
 angular.module('exemple', [])
@@ -94,28 +94,28 @@ autre, nous amène à nous intéresser à l'option `scope`.
 
 L'option `scope` peut avoir 3 types de valeurs :
 
-- `false` : ne rien faire vis à vis du scope, c'est la valeur par défaut.
+- `false` : ne rien faire vis à vis du scope, c'est la valeur par défaut.
 - `true`: créé un scope enfant.
-- `{...}`: mettre un objet  javascript créé un `scope isolé.`
+- `{...}`: mettre un objet  javascript créé un `scope isolé.`
 
 Rassurez vous le principe de scope en Angular est très proche de celle de Javascript.
 
-Le `scope enfant` ainsi que le `scope isolé` dispose d'un accès au `scope parent` via sa propriété
+Le `scope enfant` ainsi que le `scope isolé` dispose d'un accès au `scope parent` via sa propriété
 `$parent`.
 
 La grosse différence entre ces deux types de `scope` est la gestion de `l'héritage`, ainsi seul un
 `scope enfant` hérite via son prototype des données de son `scope parent`, il est donc inutile d'aller
 chercher les informations via `$parent`, à l'inverse d'un `scope isolé`.
 
-##### Céation d'un scope isolé
+#### Céation d'un scope isolé
 
-Pour définir un `scope isolé` il est necessaire de `binder` ses propriétés :
+Pour définir un `scope isolé` il est necessaire de `binder` ses propriétés :
 
 - `@` : pour un attribut texte.
 - `=` : pour une expression (valeur en two way binding).
 - `&` : pour une expression déclenchant une action.
 
-Afin de définir une propriété du `scope isolé` on fait précéder le nom de l'attribut par le signe adéquat.
+Afin de définir une propriété du `scope isolé` on fait précéder le nom de l'attribut par le signe adéquat.
 Si le nom de la propriété est identique au nom de l'attribut, on peut également se contenter de son signe.
 
 ```js

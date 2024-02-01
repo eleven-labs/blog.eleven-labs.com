@@ -4,7 +4,7 @@ tutorial: creez-un-chat-avec-symfony-et-mercure
 slug: conclusion
 title: Conclusion
 ---
-### Merci !
+## Merci !
 
 Merci beaucoup d'avoir suivi ce tutoriel jusqu'au bout !
 J'espère que ce bout de chemin avec Mercure vous a plu, et que son application dans le contexte d'un chat a été intéressante. J'ai essayé de proposer un use case qui pourrait totalement exister, mais que je n'ai pas encore forcément apercu dans les tutoriels de Mercure existants.

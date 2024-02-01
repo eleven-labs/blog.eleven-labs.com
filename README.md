@@ -57,9 +57,15 @@ Urls:
 docker-compose up -d
 ```
 
-Urls:
-- Storybook: http://localhost:6006
-- Website: http://localhost:5173
+Url: http://localhost:5173
+
+
+**4 - Start Storybook** :
+```bash
+docker-compose exec app yarn start:storybook
+```
+
+Url: http://localhost:6006
 
 ----------
 
@@ -128,6 +134,9 @@ keywords:
 - keyword (limited to 10, must not be identical to the categories, used for SEO and search)
 authors:
     - author's username
+seo:
+    title: title
+    description: description
 ---
 Content of your article in markdown
 ```
@@ -215,6 +224,9 @@ authors:
     - author's username
 steps:
   - slug of your steps (No space dashes instead)
+seo:
+    title: title
+    description: description
 ---
 ```
 

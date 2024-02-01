@@ -23,7 +23,7 @@ keywords:
 
 ECMAScript came up with some awesome features that demystify the concept of asynchronous programming. These features vary from promises, through asynchronous functions —and soon iterations— to lazy loading modules. Today I'm going to talk about one of the promising features in Javascript's Asynchronicity: ECMAScript's dynamic import.
 
-### Motivation
+## Motivation
 Imagine you are developing a large scale web application, with several thousands of lines of code, and dozens of dependencies. And now you are happy that you're finally building your application to be ready for production. Once you create your bundle file and load it in the page, your application might work just fine. However, because life is full of unpleasant surprises, your app might be just another disappointment and you will end up feeling annoyingly uncomfortable.
 
 Why is that? Your bundle, my friend, is nothing less than a massive file which requires too much time in order to be loaded in your page. Given some, not so glorifying, browsers performance, you're gonna need to address the situation.
@@ -34,7 +34,7 @@ Therefore, the use of dynamic import is necessary. Its main purpose is to optimi
 
 Since we're talking about modules, let's take a look at them.
 
-### Modules
+## Modules
 
 ECMAScript provides a module system that is similar to that of Node. Its modules are represented by simple files, and each module has its own context. This means that whatever variables, functions, etc, you declare inside of these files, they won’t pollute the global context.
 
@@ -75,7 +75,7 @@ The static aspect of ES6 modules comes up with some great benefits:
 
 For further reading on modules, check Dr. Axel Rauschmayer's [online book](http://exploringjs.com/es6/ch_modules.html) on modules.
 
-### Code splitting with Webpack
+## Code splitting with Webpack
 
 Webpack offers several features to optimize your application's bundle. Code splitting is among these features. It can be done in 2 different ways: declarative and imperative. The declarative way generates several bundles based on the entries you specify in Webpack's config, while the imperative way generates bundles based on dynamic imports in your code. Let's see how the declarative one is done:
 
@@ -202,12 +202,12 @@ Done in 16.68s.
 
 Until now we've only seen how to split our code at compile time, how about runtime?
 
-### Lazy loading
+## Lazy loading
 
 Lazy loading is a much cooler feature than simple code splitting; not only it splits your code, but loads only the chunks you need. It allows you to incrementally load your app. This is a piece of cake for ECMAScript's `import()`, but before getting there, let's see how the legacy way was:
 
 ---
-#### Webpack's `require.ensure`
+### Webpack's `require.ensure`
 
 In the following example we will see how to asynchronously load the `StoryEditor` component from `Editor`:
 
@@ -311,7 +311,7 @@ This ugly code is the result of transpiling and bundling the `StoryEditor` compo
 There is, however, some restrictions to this approach. The `require.ensure` method resolves modules statically. It means that you need to specify the modules in string literals, that are evaluated at compile time, so you can't use variables. But, if you want to lazy load modules dynamically, ECMAScript's dynamic `import()` will have the pleasure to satisfy your request.
 
 ---
-#### `import()`
+### `import()`
 
 The dynamic import is a pretty awesome feature ECMAScript came up with. It offers the possibility to handle cases like: computed module specifiers, conditional loading of modules, accessing exports and default exports, and many more. The [dynamic import proposal](https://github.com/tc39/proposal-dynamic-import) is in stage 3 at the time of this writing.
 
@@ -439,7 +439,7 @@ Here is what Webpack says about `require.context`:
 
 Okay, but what about asynchronous routing?
 
-### Example of asynchronous routing
+## Example of asynchronous routing
 
 Using `react-router` we will define some routes in our app in order to load the components of those routes asynchronously:
 
@@ -533,7 +533,7 @@ Now, all you need to do is visit those routes, so that you can appreciate how am
 </Route>
 ```
 
-### Conclusion
+## Conclusion
 
 Optimizing production performances is a boundless topic. There are many other strategies that help improving it. Thus it should be clear that Asynchronicity is merely one solution amongst other various ones that can be used to enhance production performances. I hope this post was useful and could enlighten some curious minds about ECMAScript's asynchronous loading.
 

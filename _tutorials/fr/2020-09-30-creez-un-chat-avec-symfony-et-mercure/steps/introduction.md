@@ -4,7 +4,7 @@ tutorial: creez-un-chat-avec-symfony-et-mercure
 slug: introduction
 title: Introduction
 ---
-### Qu'allons-nous faire ?
+## Qu'allons-nous faire ?
 
 Mercure est un protocole permettant une communication client-server en temps réel. Utile par exemple pour envoyer des notifications, ou encore pour connaître en live le nombre d'articles restant dans un stock, sans jamais avoir besoin de recharger notre page.
 
@@ -22,11 +22,11 @@ Voici les étapes que nous allons suivre au cours de ce tutoriel :
 -   Conclusion
 
 Si une partie ne vous intéresse pas ou ne vous paraît pas nécessaire, il vous sera toujours possible de l'ignorer et de vous rendre à la prochaine étape, dont vous pourrez récupérer l'état actuel du code sur une branche dédiée.
-Le code source du projet est d'ailleurs disponible sur mon GitHub : 
+Le code source du projet est d'ailleurs disponible sur mon GitHub :
 -   [Astrochat](https://github.com/ArthurJCQ/astrochat)
 
 
-### Pré-requis
+## Pré-requis
 
 Pour les besoins de ce tutoriel il vous faudra :
 

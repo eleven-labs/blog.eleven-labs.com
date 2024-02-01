@@ -68,7 +68,7 @@ exclusive or | <code>^&#124;</code> `⊕` | <code>param>1^&#124;param<10</code> 
 
 > Yes, the library provides some bridges like doctrine `ORM`, `ODM` and `common` (collections filter).
 
-#### Priority of composition operator
+### Priority of composition operator
 
 Pay attention to the composition priority operator (`&`, `!&`, `|`, `!|`, `⊕`).
 The bigger priority applies first.
@@ -451,7 +451,7 @@ Now you can go to your endpoint url and add `query`.
 http://localhost/astronauts/list?query={planet{{Raccoons}}|points≥1000}
 ```
 
-### Conclusion
+## Conclusion
 
 This presentation is now over! Don't hesitate to test this library and contribute (idea, bugs, features, documentation, etc).
 
@@ -461,7 +461,7 @@ To do list :
 - refacto lib core to be extensible (easer way to add some syntax).
 - implement a query builder in PHP and JS in order to create directly textual query from the front.
 
-### Useful resources
+## Useful resources
 
 - [Demo Xpression](http://symftony-xpression.herokuapp.com/)
 - [Code source Xpression](https://github.com/Symftony/Xpression)

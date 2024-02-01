@@ -46,11 +46,11 @@ Pour retrouver le support de présentation de ce talk :
 ## Comprenez comment PHP fonctionne, vos applications marcheront mieux
 
 Le premier rappel et le plus important, qui a d'ailleurs été évoqué à de nombreuses reprises durant ce Forum PHP, c'est l'aspect **shared-nothing** du langage lui-même.
-Entre 2 requêtes distinctes, PHP oublie tout, ce qui est un avantage pour nous développeurs. Il est plus facile de coder sans se soucier de potentielles fuites mémoire entre deux requêtes, mais c'est également un coût en performance : à chaque requête, on ré-alloue la mémoire nécessaire, on ré-ouvre des connexions, etc. 
+Entre 2 requêtes distinctes, PHP oublie tout, ce qui est un avantage pour nous développeurs. Il est plus facile de coder sans se soucier de potentielles fuites mémoire entre deux requêtes, mais c'est également un coût en performance : à chaque requête, on ré-alloue la mémoire nécessaire, on ré-ouvre des connexions, etc.
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
 
-Plutôt que d'utiliser les traditionnels `malloc` & `mfree` natifs du langage C, PHP utilise son propre gestionnaire de mémoire ZMM (pour Zend Memory Manager) afin d'optimiser l'allocation de mémoire en PHP, qui s'effectue à chaque requête. 
+Plutôt que d'utiliser les traditionnels `malloc` & `mfree` natifs du langage C, PHP utilise son propre gestionnaire de mémoire ZMM (pour Zend Memory Manager) afin d'optimiser l'allocation de mémoire en PHP, qui s'effectue à chaque requête.
 </div>
 
 Le SAPI PHP-FPM est très bien optimisé, certes, mais cela ne suffit pas toujours à avoir une application qui fonctionne parfaitement.
@@ -93,7 +93,7 @@ Il vous faudra dans un premier temps créer 1 fichier par règle métier. Ce fic
 
 Ces 2 actions peuvent être dans 2 fonctions différentes ou non, selon votre préférence.
 
-Il ne vous reste plus qu'à créer votre fichier principal, le **système**. 
+Il ne vous reste plus qu'à créer votre fichier principal, le **système**.
 Dans une boucle, on appelera chacune de ces règles pour en exécuter ou non le contenu si la condition est préalablement vérifiée.
 
 Votre code est à présent bien mieux découpé, et beaucoup plus facilement **testable** : une règle = 1 fichier = 1 test unitaire.
@@ -130,7 +130,7 @@ Pour solutionner cela, Andreas nous présente la [**PSR-20**](https://github.com
 
 En attendant que cette PSR soit validée, sachez que vous pouvez tout de même en installer une implémentation :
 
-``` shell
+```shell
 composer require psr/clock
 ```
 

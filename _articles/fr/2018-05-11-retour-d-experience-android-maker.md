@@ -19,7 +19,7 @@ keywords:
 Du 23 au 24 Avril 2018 s'est déroulée la deuxième édition de l'Android Maker à Montrouge.
 Voici un petit résumé de ce que l'on a pu y observer et en retenir. Cet article a été co-écrit avec l'astronaute Omar.
 
-### 23 Avril
+## 23 Avril
 
 ## LiveData
 
@@ -103,7 +103,7 @@ Les States XML permettent aussi en cas de changement de taille d'écran de faire
 
 Enfin ils ont parlé de la mise à disposition d'une réelle API, Fluent Api, permettant de centraliser et de trouver une documentation sur tout ces éléments de design liés au ConstraintLayout.
 
-### 24 Avril :
+## 24 Avril :
 
 ## Le rendering sur Android
 

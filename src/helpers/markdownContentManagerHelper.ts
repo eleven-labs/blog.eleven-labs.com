@@ -34,6 +34,23 @@ const frontmatter = <TData = { [p: string]: unknown }>(
   return matter(content) as Omit<matter.GrayMatterFile<string>, 'data'> & { data: TData };
 };
 
+export const extractHeaders = (markdownContent: string): { level: number; text: string }[] => {
+  const headers: { level: number; text: string }[] = [];
+  const lines = markdownContent
+    .replace(/```(\w+)?\n([\s\S]*?)\n```/gm, '')
+    .split('\n')
+    .filter((line) => line.startsWith('#'));
+
+  for (const line of lines) {
+    const match = line.match(/^(#+)\s([^#]+)/);
+    if (match) {
+      headers.push({ level: match[1].length, text: match[2].trim() });
+    }
+  }
+
+  return headers;
+};
+
 export const loadDataByMarkdownFilePath = ({
   filePath,
   markdownToHtml = defaultMarkdownToHtml,

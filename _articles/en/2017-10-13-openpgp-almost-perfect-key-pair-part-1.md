@@ -25,7 +25,7 @@ Through a set of 4 articles, we will see:
 * The storage and backup of master key
 * The join in a key signing party
 
-### Install the right tools
+## Install the right tools
 
 Whether you are on Linux, Mac or Windows, everything can be done in command lines.
 
@@ -75,7 +75,7 @@ s2k-digest-algo SHA512
 s2k-mode 3
 s2k-count 65011712
 ```
-### Take advantage of subkeys
+## Take advantage of subkeys
 
 When creating an OpenPGP key in its basic mode, gpg will create a key pair that allows you to sign and certify.
 To increase the security of our key, we will use a special feature of OpenPGP: the subkeys.
@@ -86,7 +86,7 @@ without having to revoke the master key (the one that allows to certify other ke
 
 Let's start by creating the master key, the one that will hold our identity. Then, we create subkeys to sign, encrypt and authenticate.
 
-### Creating the master key
+## Creating the master key
 
 We will choose to generate our key in a custom way and create the certification key for Wilson.
 It will allow to certify other keys. It is very important, you must keep it safely. In the event of loss or theft, the person who holds the key would then be able to pretend to be the rightful owner.
@@ -206,7 +206,7 @@ uid         [ultimate] Wilson Eleven <wilson.eleven@labs.com>
 
 The master key pair is created. Now create the subkeys.
 
-### Creating subkeys
+## Creating subkeys
 
 As we saw in the introduction on the subkeys, it is important to have one dedicated to each task:
 * Authenticate (A)
@@ -334,7 +334,7 @@ gpg> quit
 Enter `save` then` quit`, and you're done. Wilson now has an OpenPGP key pair with its identity and subkeys with each a capability.
 Before you can fully use this key, let's backup it.
 
-### Export the master key
+## Export the master key
 
 The PGP key must not be used as it is. Remember, in the event of theft of the master key and the password,
 the robber can spoof the digital identity and sign messages instead of the real person.
@@ -390,7 +390,7 @@ The small `#` before `sec` indicates that the secret key of the master key no lo
 
 All the files we have created will have to be kept offline (CD, USB stick, magnetic tape, paper sheet, ...).
 
-### Conclusion
+## Conclusion
 
 Through this article, we have created a PGP key with a set of subkeys dedicated to a particular task. The advantage of using OpenPGP against a simple asymmetric key is the subkeys. If one of the keys is compromised, you only need to revoke it and regenerate a new one. It will not be necessary to revoke the master key, the one that holds our digital identity. This strategy offers a much higher level of security.
 
@@ -400,13 +400,13 @@ even authenticate yourself to a server in SSH.
 In addition, on November 2, there will be a [key signing party](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris) (key signing party) at Mozilla France.
 This event is an opportunity to meet other OpenPGP enthusiasts and, above all, it will make it possible to have your newly created key certified.
 
-### Related articles
+## Related articles
 * [OpenPGP - The almost perfect key pair (part 1)]({BASE_URL}/en/openpgp-almost-perfect-key-pair-part-1/)
 * [OpenPGP - Export Secret Keys to a Yubikey (part 2)]({BASE_URL}/en/openpgp-secret-keys-yubikey-part-2/)
 * [OpenPGP - Long term storage (part 3)]({BASE_URL}/fr/openpgp-stockage-froid-clefs-partie-3/)
 * [OpenPGP - I was in a Key Signing Party (part 4)]({BASE_URL}/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
 
-### Resources
+## Resources
 * [GPG : création de votre première paire de clefs et chiffrement d'un fichier](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm)
 * [GPG : comment créer une paire de clefs presque parfaite](https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm)
 * [Creating the perfect GPG keypair](https://alexcabal.com/creating-the-perfect-gpg-keypair/)

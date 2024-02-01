@@ -62,7 +62,7 @@ lrwxrwxrwx 1 root root 22 déc.  15 02:09 ./arch/x86_64/boot/bzImage -> ../../x8
 
 Les date & heure sont bonnes, la taille correcte, tout est bon.
 
-## Installation
+## Installation
 
 Pour installer le kernel dans son répertoire, il suffit de lancer la commande suivante :
 ```

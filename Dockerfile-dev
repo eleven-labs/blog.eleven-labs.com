@@ -1,0 +1,15 @@
+FROM node:20-bookworm
+
+RUN npx -y playwright install --with-deps chromium
+
+ENV NODE_ENV development
+
+# set working directory
+RUN mkdir -p /var/www/app \
+  && chown -R node:node /var/www/app
+
+WORKDIR /var/www/app
+
+USER node:node
+
+EXPOSE 3000

@@ -23,8 +23,7 @@ Giving the help of MongoDB Inc. on Numeric Editions subjects at FranceTV, we aut
 
 The tool, or rather the toolbox we most oftenly use is [MTools](https://github.com/rueckstiess/mtools). This project was started and is still maintained by [Thomas Rückstieß](https://github.com/rueckstiess), who worked for MongoDB.
 
-MTools : 6 tools in one
-=======================
+## MTools : 6 tools in one
 
 ### Mloginfo
 

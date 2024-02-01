@@ -58,7 +58,7 @@ It is just as well to install Traefik's binary file, compile it from source, or,
 We'll use `docker-compose` to avoid typing the same command again and again and also enhance it with new configuration elements as this tutorial goes along.
 
 Let's create our first file `/srv/docker-compose.yaml`
-``` yaml
+```yaml
 version: '3'
 
 services:
@@ -82,7 +82,7 @@ Okay, sharing `/srv/traefik.toml` file with our container is all well and good, 
 
 We are then going to create Traefik's main configuration file `/srv/traefik.toml` which declares, at least, the 2 endpoints mentionned earlier:
 
-``` toml
+```toml
 [entryPoints]
   [entryPoints.http]
   address = ":80"
@@ -92,7 +92,7 @@ We are then going to create Traefik's main configuration file `/srv/traefik.toml
 
 Next, we can start our reverse-proxy service from our `/srv` directory using the following command:
 
-``` shell
+```shell
 docker-compose up -d
 ```
 
@@ -114,7 +114,7 @@ Traefik needs to know Docker's socket path in order to activate its provider.
 
 Our main Traefik configuration file `/srv/traefik.toml` should now be similar to:
 
-``` toml
+```toml
 [entryPoints]
   [entryPoints.http]
   address = ":80"
@@ -131,7 +131,7 @@ We'll have to generate a password for dashboard access and prevent anonymous acc
 For that, we must use `htpasswd` and as we don't want to install it inside our ravishing machine, we'll use an Apache Docker image in order to hash our password.
 
 
-``` shell
+```shell
 docker run --rm --name apache httpd:alpine htpasswd -nb wilson schizo
 ```
 
@@ -175,7 +175,7 @@ Here, the name of my rule is `api`. You could use any name if you like consideri
 
 We can now ask our service to apply our modifications running the following command again from the `/srv` directory
 
-``` shell
+```shell
 docker-compose up -d
 ```
 
@@ -257,7 +257,7 @@ You probably understood this already but, the service name is always in the form
 
 Once again, let's not forget to apply our changes with docker-compose:
 
-``` shell
+```shell
 docker-compose up -d
 ```
 
@@ -352,7 +352,7 @@ services:
 
 And let's not forget again to ask docker-compose to apply our new configuration:
 
-``` shell
+```shell
 docker-compose up -d
 ```
 Once done, I have an access to my NAS, secured by HTTPS :D
@@ -425,7 +425,7 @@ services:
 
 Once last time, don't forget to ask docker-compose to apply our new configuration:
 
-``` shell
+```shell
 docker-compose up -d
 ```
 

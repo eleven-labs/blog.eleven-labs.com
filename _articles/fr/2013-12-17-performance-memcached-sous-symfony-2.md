@@ -24,8 +24,7 @@ Certains peuvent être liés au trop grand nombre de requêtes effectuées ou en
 
 Nous allons vous proposer dans cet article de faire un point sur les quelques techniques rapides afin d'optimiser votre solution, ainsi que sur l'installation de memcached sous Sf2.
 
-PART I : "Less Request For Less Time"
-=====================================
+## PART I : "Less Request For Less Time"
 
 Si il y a une chose que l'on apprécie tous sous Sf2, c'est son Entity Manager avec son système de Lazy Loading. Le principe ? La donnée n'est réellement chargée depuis la BDD que lorsque que vous en avez réellement besoin, c'est a dire, lorsque que vous tentez d'accéder à l'un de ses attributs (le nom par exemple).
 
@@ -82,8 +81,7 @@ Et voila, le boulot est fait. Ici, pas de Lazy Loading, toutes nos données sont
 
 Vous pouvez aussi gérer les jointures par défaut dans les entités avec l'annotation fetch="EAGER"
 
-PART II : "Object Or Array"
-===========================
+## PART II : "Object Or Array"
 
 Bon maintenant que notre requête est optimisée, il serait temps de s'occuper de notre donnée à proprement parlé.
 
@@ -131,8 +129,7 @@ Ex :
 {{ eleve["nom"] }} {# remplace {{ eleve.getNom }} #}
 ```
 
-PART III : "Time to Cache"
-==========================
+## PART III : "Time to Cache"
 
 Bon, jusqu'ici c'était la partie facile, celle qui est à mettre en place partout, un réflexe à prendre en quelque sorte.
 

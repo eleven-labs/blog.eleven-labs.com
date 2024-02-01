@@ -4,7 +4,7 @@ tutorial: graphql-avec-symfony
 slug: creation-des-types-graphql
 title: Création des types GraphQL
 ---
-### Installation du bundle
+## Installation du bundle
 
 Commençons par installer le bundle [https://github.com/overblog/GraphQLBundle](https://github.com/overblog/GraphQLBundle)
 
@@ -20,7 +20,7 @@ composer req --dev overblog/graphiql-bundle
 
 Normalement l'url [http://symfony.localhost/graphiql](http://symfony.localhost/graphiql) est disponible (avec une erreur 500)
 
-### Types objet
+## Types objet
 
 Nous allons commencer par créer les types GraphQL pour les trois principaux objets :
 
@@ -30,7 +30,7 @@ Nous allons commencer par créer les types GraphQL pour les trois principaux obj
 
 Nous allons ensuite mettre les types dans le dossier `config/graphql/types`.
 
-#### Grade
+### Grade
 
 On commence par `grade` qui est l'objet le plus simple, il ne contient que le nom du grade.
 
@@ -47,7 +47,7 @@ Grade:
                 type: 'String!'
 ```
 
-#### Planète
+### Planète
 
 Ajoutez le fichier `Planet.yaml` avec le code suivant :
 
@@ -66,7 +66,7 @@ Planet:
 
 Comme vous le remarquez, le type GraphQL ne suit pas directement le type MySQL. Ici on permet la récupération directement dans l'object `planet` de l'ensemble des `astronautes`.
 
-#### Astronaute
+### Astronaute
 
 Ajoutez le fichier `Astronaut.yaml` avec le code suivant :
 

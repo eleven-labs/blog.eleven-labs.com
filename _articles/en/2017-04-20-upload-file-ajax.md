@@ -23,7 +23,7 @@ This is where AJAX comes in! (Wouhou!) It will both allow us to make this upload
 
 Let's see how to implement a file upload system in JavaScript and with Symfony in server-side.
 
-### Implementing the Symfony form
+## Implementing the Symfony form
 
 My form will contain two fields: **name** and **file**. The first one will contain the name of the file that the user wants to give. The second will be the representation of the file via the **Symfony\Component\HttpFoundation\File\UploadedFile** object.
 
@@ -177,9 +177,9 @@ So far, nothing surprising. I invite you to read the Symfony documentation for m
 
 Now let's move to the client side with JavaScript implementation.
 
-### Client-side implementation with JavaScript
+## Client-side implementation with JavaScript
 
-As a PHP developer, I think this part is the most interesting. This is where the magic of **[AJAX](https://fr.wikipedia.org/wiki/Ajax_(informatique))** will take place. As a reminder, AJAX  stands for **Asynchronous JavaScript XML**, and allows the browser to interact with the server asynchronously.
+As a PHP developer, I think this part is the most interesting. This is where the magic of **[AJAX](https://fr.wikipedia.org/wiki/Ajax_(informatique))** will take place. As a reminder, AJAX  stands for **Asynchronous JavaScript XML**, and allows the browser to interact with the server asynchronously.
 
 [XMLHttpRequest](https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest) is a browser-accessible JavaScript object that allows you to create AJAX requests.
 
@@ -272,9 +272,9 @@ Small demo in GIF  and full code here [https://github.com/lepiaf/file-upload](ht
 ![]({BASE_URL}/imgs/articles/2017-04-20-upload-file-ajax/upload.gif)
 
 
-### To conclude
+## To conclude
 
-We have seen together how to implement the upload of a file asynchronously with AJAX and Symfony. This method allows you to encode and send the file as a binary data stream. Unlike a base64 file encoding, it does not inflate the file's weight on the network. The representation of the file in base64 increases the weight of the file by **~33%**. For a few kilobytes file this increase in weight is not significant, but with a file of several megabytes, this has a significant impact. In addition, the file is properly managed by the browser and the server. This makes the upload more efficient and allows the use of a file resource representation on the server-side  (**$_FILES** on the PHP side).
+We have seen together how to implement the upload of a file asynchronously with AJAX and Symfony. This method allows you to encode and send the file as a binary data stream. Unlike a base64 file encoding, it does not inflate the file's weight on the network. The representation of the file in base64 increases the weight of the file by **~33%**. For a few kilobytes file this increase in weight is not significant, but with a file of several megabytes, this has a significant impact. In addition, the file is properly managed by the browser and the server. This makes the upload more efficient and allows the use of a file resource representation on the server-side  (**$_FILES** on the PHP side).
 
 Références :
 

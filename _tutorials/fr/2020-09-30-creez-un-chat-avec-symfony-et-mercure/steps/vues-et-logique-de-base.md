@@ -4,7 +4,7 @@ tutorial: creez-un-chat-avec-symfony-et-mercure
 slug: vues-et-logique-de-base
 title: Vues et logique de base
 ---
-### Création des controllers
+## Création des controllers
 
 Avant de faire intervenir Mercure, il nous faut un minimum de logique. Créons alors nos deux controllers correspondants à nos entités :
 ```shell
@@ -12,7 +12,7 @@ docker-compose exec php bin/console make:controller
 ```
 Vos controllers `MessageController` et `ChannelController` sont créés, et avec eux des templates twig ont été générés, que nous allons remplir avec le minimum syndical pour un chat.
 
-### Remplissage des templates
+## Remplissage des templates
 
 Créez un template supplémentaire `templates/channel/chat.html.twig`. Nous n'aurons en réalité besoin que de celui-là et de `templates/channel/index.html.twig`. Ces deux pages seront suffisantes pour toute l'application.
 
@@ -20,38 +20,38 @@ Voici ce que je vous propose pour vos templates, mais vous pouvez bien entendu l
 
 ```html
 {# templates/channel/index.html.twig #}
-{% extends 'base.html.twig' %}  
-  
-{% block title %}Home{% endblock %}  
-  
-{% block body %}  
-  
-<div class="container">  
-    {% if app.user %}  
-        <div class="mb-3">  
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>  
-        </div>  
-    {% endif %}  
-    {% if channels %}  
-        <h2>Which chan do you want to join ?</h2>  
-        <table class="table table-striped">  
-            <tbody>  
-            {% for channel in channels %}  
-                <tr class="">  
-                    <th>  
-                        <span>{{ channel.name }}</span>  
-                        <a class="btn btn-primary float-right" href="{{ path('chat', {id: channel.id}) }}">Go chat !</a>  
-                    </th>  
-                </tr>  
-            {% endfor %}  
-            </tbody>  
-        </table>  
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+    {% if channels %}
+        <h2>Which chan do you want to join ?</h2>
+        <table class="table table-striped">
+            <tbody>
+            {% for channel in channels %}
+                <tr class="">
+                    <th>
+                        <span>{{ channel.name }}</span>
+                        <a class="btn btn-primary float-right" href="{{ path('chat', {id: channel.id}) }}">Go chat !</a>
+                    </th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     {% else %}
         <div>
             <div class="alert alert-danger text-center">No Channels found.</div>
         </div>
     {% endif %}
-</div>  
+</div>
 {% endblock %}
 ```
 
@@ -117,7 +117,7 @@ Remplissez pour l'instant le dernier template :
             {% endfor %}
         </div>
         <div>
-            <form id="form" class="container row"> 
+            <form id="form" class="container row">
                 <input id="message" class="input-group-text col-sm-9" placeholder="Message" type="text" />
                 <button id="submit" type="submit" class="btn btn-success col-sm-3">Send</button>
             </form>
@@ -154,7 +154,7 @@ Justement, ajoutez enfin la fonction `chat` dans le `ChannelController` afin de 
 
 On n'oublie pas d'importer `MessageRepository`, et le tour est joué (on pourra accéder à cette page quand des channels seront créés, on y vient).
 
-### Créer nos channels
+## Créer nos channels
 
 Pour nous embêter le moins possible, nous créerons nos channel avec une commande simple.
 

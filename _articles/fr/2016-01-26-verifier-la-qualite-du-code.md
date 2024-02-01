@@ -21,8 +21,7 @@ keywords:
 
 Aujourd'hui je vais vous parler de la qualité du code (oh really?). Dans cet article, je vais l'aborder sur la partie PHP.
 
-Qu'est ce que la qualité du code ?
-==================================
+## Qu'est ce que la qualité du code ?
 
 En PHP, nous pouvons définir la qualité du code par certaines métriques, telles que la couverture des tests ou l'usage des normes PSR. Le but est d'avoir un code compréhensible par tous les développeurs et facilement maintenable.
 
@@ -34,8 +33,7 @@ Tout au long de cet article, je vais aborder les points suivants :
 -   l'intégration continue
 -   le service sass
 
-PSR, késako ?
-=============
+## PSR, késako ?
 
 PSR, pour *PHP Standard Recommendation,* est un ensemble de normes pour PHP qui permet de faciliter l'interopérabilité des composants entre eux.
 
@@ -51,12 +49,11 @@ Il y a actuellement 7 normes validées :
 
 Toutes ces normes vont permettre de bien structurer le code, d'avoir les mêmes interfaces, et de permettre aux autres développeurs de contribuer plus facilement.
 
-Détection des erreurs
-=====================
+## Détection des erreurs
 
 Avec toutes ces normes et recommandations, nous avons une bonne base solide. Apprendre et bien connaître ces recommandations peut prendre du temps. Pour cela, il y a des outils pour nous permettre de détecter les erreurs que nous faisons.
 
-### Erreur de style
+## Erreur de style
 
 Pour PSR-1 et PSR-2, il y a [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer "Github.com PHP Code Sniffer"). Cet outil va se baser sur un ensemble de règles, parcourir le code et afficher toutes les erreurs. Les règles peuvent être enrichies selon les spécificités du framework.
 
@@ -83,7 +80,7 @@ Dans cet exemple, le fichier "AvailableTimeService" contient une erreur. Cet err
 
 Lors du premier lancement de la commande, il peut y avoir beaucoup d'erreurs. Au fur et à mesure, ces erreurs se réduisent et vous connaîtrez par coeur ces règles :D .
 
-### Consistance du code
+## Consistance du code
 
 [PHP Mess Detector](https://github.com/phpmd/phpmd "Github.com PHP Mess Detector") permet de détecter tout ce qui fait un bon "*code spaghetti*". D'où le nom de *mess detector* (littéralement 'détecteur de bordel'). Cet outil va se baser sur des règles telles que la[complexité cyclomatique](http://www-igm.univ-mlv.fr/~dr/XPOSE2008/Mesure%20de%20la%20qualite%20du%20code%20source%20-%20Algorithmes%20et%20outils/complexite-cyclomatique.html) du code, le nombre de conditions dans une méthode, etc...
 
@@ -225,7 +222,7 @@ class AvailableTimeService
 
 Bien entendu, la refactorisation de code s'accompagne de tests unitaires afin d'assurer la fiabilité et la stabilité de cette partie.
 
-### La tentation du copier/coller
+## La tentation du copier/coller
 
 "*pff j'ai la flemme de mutualiser ce code, je vais juste le copier coller ici*"
 
@@ -256,7 +253,7 @@ Time: 2.21 seconds, Memory: 20.00Mb
 
 La sortie indique que les fichiers "MyManager" et "PastedManger" contiennent des lignes dupliquées. L'action à faire est de refactoriser en créant une classe abstraire, par exemple.
 
-### Corriger en un éclair
+## Corriger en un éclair
 
 Une fois les erreurs détectées, il faut les corriger. Personnellement, je n'utilise pas d'outils pour corriger les erreurs de manière automatique. Je me force à apprendre les règles pour que ça deviennent un automatisme.
 
@@ -266,8 +263,7 @@ Une fois les erreurs détectées, il faut les corriger. Personnellement, je n'ut
 
 L'outil va parcourir tout le code et corriger les erreurs. Simple, n'est-ce pas ?
 
-Intégration continue
-====================
+## Intégration continue
 
 Tous ces outils, une fois en place, permettent de surveiller et de maintenir la qualité du code. Lancer régulièrement ces commandes doit être une exigence à adopter.
 
@@ -275,26 +271,25 @@ Avec Jenkins, il est possible de lancer ces commandes de manière automatisée. 
 
 ![rapport jenkins]({BASE_URL}/imgs/articles/2016-01-26-verifier-la-qualite-du-code/Capture-decran-2016-01-25-a-21.35.56.png)
 
-### SonarQube
+## SonarQube
 
 Pour ceux qui n'ont pas envie d'ajouter chaque outil séparément et de mettre un place un serveur Jenkins, il y a SonarQube.
 
 [SonarQube](http://www.sonarqube.org/) est un projet libre de droit qui permet de vérifier et contrôler la qualité du code. C'est une solution tout-en-un.
 
-### SensioLab Insight
+## SensioLab Insight
 
 [SensioLab Insight](https://insight.sensiolabs.com/) est un service en SASS. Principalement orienté vers Symfony 2, il s'adapte également au projet PHP sans framework.
 
 Ce service va analyser votre code et vous indiquer les faiblesses du code. Un des points intéressants est le temps estimé pour le corriger.
 
-### Blackfire.io
+## Blackfire.io
 
 Encore un autre outil Sensio, mais très efficace dans l'analyse des performances d'une application. [Blackfire.io](https://blackfire.io/) va permettre de cibler les points faibles : consommation mémoire, CPU, disque et réseau.
 
 Cet outil s'utilise principalement pour le débogage, notamment lorsqu'une route met du temps à répondre.
 
-Pour conclure
-=============
+## Pour conclure
 
 Tout au long de cet article, nous avons vu les normes et recommandations en PHP, comment détecter les erreurs que nous pouvons faire, et enfin comment les corriger.
 

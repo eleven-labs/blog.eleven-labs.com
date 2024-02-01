@@ -4,11 +4,11 @@ tutorial: gitlab-ci-js
 slug: mise-en-place-phases-code-style-et-tests
 title: Mise en place des phases de code style et de tests
 ---
-# Mise en place des phases de code style et de test
+## Mise en place des phases de code style et de test
 
 Pour cette troisième étape, nous allons mettre en place le code style et les tests sur notre CI. Pour ce faire nous allons devoir ajouter des dépendances à notre projet pour le code style du scss.
 
-## Installation des dépendances
+### Installation des dépendances
 
 Pour le code style du scss nous allons avoir besoin de `stylelint` avec `stylelint-processor-html` pour fonctionner avec Vue.js.
 Nous utiliserons les règles de base avec `stylelint-config-standard`
@@ -18,7 +18,7 @@ make yarn "add -D stylelint stylelint-processor-html stylelint-config-standard"
 
 ```
 
-## Configuration de stylelint
+### Configuration de stylelint
 
 Nous allons mettre en place une configuration standard dans le fichier que vous devez créer sous nom de `.stylelintrc` et qui doit être placé à la racine de votre projet.
 
@@ -29,7 +29,7 @@ Nous allons mettre en place une configuration standard dans le fichier que vous 
 }
 ```
 
-## Création des commandes
+### Création des commandes
 
 Pour faire fonctionner notre code style scss nous allons ajouter une commande au fichier `package.json` et en modifier une autre
 
@@ -47,7 +47,7 @@ Pour faire fonctionner notre code style scss nous allons ajouter une commande au
   },
 ```
 
-## Application à la CI/CD
+### Application à la CI/CD
 
 Nous n'avons plus qu'à ajouter deux étapes comprenant chacune deux `jobs`.
 

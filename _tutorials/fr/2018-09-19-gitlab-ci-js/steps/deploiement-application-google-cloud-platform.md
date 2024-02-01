@@ -4,7 +4,7 @@ tutorial: gitlab-ci-js
 slug: deploiement-application-google-cloud-platform
 title: Déploiement de notre application sur Google Cloud Platform
 ---
-# Déploiement de notre application sur Google Cloud Platform
+## Déploiement de notre application sur Google Cloud Platform
 
 pour cette quatrième et dernière partie nous allons voir comment déployer notre application sur Google Cloud PLatform (GCP) avec App Engine.
 
@@ -17,7 +17,7 @@ Pour ce faire nous allons devoir :
  - Créer un token pour pouvoir faire des pushs depuis notre CI/CD
  - Ajouter un `stage` de déploiement.
 
-## Création du projet Google Cloud Platform
+### Création du projet Google Cloud Platform
 
 La première chose à faire c’est de se connecter ou s'inscrire sur la [console de Google Cloud Platform](https://console.cloud.google.com). Si tout va bien vous arriverez sur cette page :
 
@@ -29,7 +29,7 @@ Puis vous cliquez sur créer et vous entrez le nom de votre projet. Vous pouvez 
 
 > /!\ Dans mon cas, l’ID du projet est déjà utilisée car je l’avais déjà créée.
 
-## Configuration du projet Google Cloud Platform
+### Configuration du projet Google Cloud Platform
 
 Pour le déploiement sur GCP App Engine il faut activer deux APIs :
 
@@ -38,7 +38,7 @@ Pour le déploiement sur GCP App Engine il faut activer deux APIs :
 
 Pour activer une API il faut, depuis la console GCP, aller dans le menu droite dans `API et services`. Ensuite, allez dans la bibliothèque, et avec la barre de recherche trouvez les APIs que vous intéressent. Accédez à la page de l’API et activez-la.
 
-## Création de credential
+### Création de credential
 
 Il nous faudra aussi des identifiants pour nous connecter depuis la CI/CD. Pour ce faire, toujours dans `API et services`, allez dans la sous-section `identifiant` et cliquez sur `créer des identifiants` puis `créer une clé de compte de service`.
 
@@ -56,7 +56,7 @@ Voilà pour le credential.
 
 > /!\ N'activez pas la protection, autrement la variable ne pourra pas être utilisée dans les prochaines étapes
 
-## fichier app.yaml pour le déploiement sur App Engine
+### fichier app.yaml pour le déploiement sur App Engine
 
 Nous allons faire un template pour le fichier app.yaml afin qu’il soit généré selon son environnement grâce l’outil `envsubst` du paquet `gettext`.
 
@@ -88,7 +88,7 @@ handlers:
 Nous allons nommer ce fichier `app.template.yaml`. Dans notre CI/CD nous éxécuterons la commande suivante `envsubst < app.template.yaml > app.yaml`, elle nous permettera de modifier les variables d'environnement de notre fichier et de créer le fichier `app.yml`.
 
 
-## Création d'une image docker personnalisée pour notre déploiement
+### Création d'une image docker personnalisée pour notre déploiement
 
 Nous allons avoir besoin d'une image personnalisée car nous allons avoir besoin de node, de git et du sdk de Google Cloud Plateform.
 
@@ -142,7 +142,7 @@ docker build -t registry.gitlab.com/ngrevin/gitlab-ci-js/deploy-image .
 docker push registry.gitlab.com/ngrevin/gitlab-ci-js/deploy-image
 ```
 
-## Token gitlab
+### Token gitlab
 
 Pour créer un `token` sur gitlab rendez-vous sur la page [Personal Access Token](https://gitlab.com/profile/personal_access_tokens) `Profile > Personal Access Token`.
 Donnez-lui un nom, ici j'ai choisi `PERSONAL_ACCESS_TOKEN`, et donnez-lui les droits suiffisants.
@@ -151,7 +151,7 @@ En suite, comme pour les credentials de GCP, créez une variable d'environnement
 
 > /!\ N'activez pas la protection, autrement la variable ne pourra pas être utilisée dans les prochaines étapes
 
-## Le stage deploy
+### Le stage deploy
 
 Maintenant que tout est prêt il nous reste juste à déployer notre application avec Gitlab-ci.
 

@@ -16,7 +16,7 @@ keywords:
   - protocoles
 ---
 
-# Record protocol
+## Record protocol
 
 Ce protocole a pour buts :
 * **Encapsulation**  - permet aux données SSL / TLS d'être transmises et reconnues sous une forme homogène ;
@@ -79,7 +79,7 @@ Content-Type (1 octet) – Indique le type de paquet SSL et TLS contenu dans l�
 
 Si ça se passe mal au cours de ces vérifications, alors une alarme est générée.
 
-# Outils:
+## Outils:
 
 **OpenSSL** :
 
@@ -87,11 +87,11 @@ Implémenté en C, OpenSSL est une boîte à outils de chiffrement comportant de
 
 **GnuTLS** :
 
-Le projet GnuTLS propose une implémentation du protocole TLS conforme aux spécifications de l'IETF. Il permet l'authentification via les certificats X509 et PGP. À la différence d'OpenSSL, GnuTLS est compatible avec les licences GPL.
+Le projet GnuTLS propose une implémentation du protocole TLS conforme aux spécifications de l'IETF. Il permet l'authentification via les certificats X509 et PGP. À la différence d'OpenSSL, GnuTLS est compatible avec les licences GPL.
 
 Si vous souhaitez tester votre certificat, vous pouvez utiliser [SSLlab](https://www.ssllabs.com/).
 
 **Conclusion** :
 
-Le protocole SSL / TLS n’est pas facile à prendre en main car il touche énormément de choses différentes et complexes. Cependant, je trouve très intéressant de voir le “côté obscur” de ce protocole afin de comprendre les notions que celui-ci met en place. Dans cette série d’articles, j’ai essayé de vous montrer toutes les phases importantes à savoir : le chiffrement, le certificat et les sous-protocoles, afin que vous ne soyez plus perdu quand on vous parle de SSL / TLS (que vous ayez compris les principes).
-Toutefois, si vous mettez en place un certificat SSL sur votre site, cela ne vous garantira pas à 100% que celui-ci est sécurisé. Pour exemple récent, le faille connue sous le nom de [Heartblee](https://fr.wikipedia.org/wiki/Heartbleed) qui a ébranlé tout le web.
+Le protocole SSL / TLS n’est pas facile à prendre en main car il touche énormément de choses différentes et complexes. Cependant, je trouve très intéressant de voir le “côté obscur” de ce protocole afin de comprendre les notions que celui-ci met en place. Dans cette série d’articles, j’ai essayé de vous montrer toutes les phases importantes à savoir : le chiffrement, le certificat et les sous-protocoles, afin que vous ne soyez plus perdu quand on vous parle de SSL / TLS (que vous ayez compris les principes).
+Toutefois, si vous mettez en place un certificat SSL sur votre site, cela ne vous garantira pas à 100% que celui-ci est sécurisé. Pour exemple récent, le faille connue sous le nom de [Heartblee](https://fr.wikipedia.org/wiki/Heartbleed) qui a ébranlé tout le web.

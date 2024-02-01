@@ -13,8 +13,7 @@ keywords:
   - workflow
 ---
 
-Git workflow
-============
+## Git workflow
 
 Connaissez-vous le "git workflow" ? Si ce n'est pas le cas, je vous invite à lire cet article <http://nvie.com/posts/a-successful-git-branching-model>
 
@@ -28,8 +27,7 @@ Ce schéma est intéressant, cependant, il manque une réponse à une question :
 
 Ce flux de travail suppose que toutes les fonctionnalités en *develop* soient *recettées* par le *product owner* et validées. Mais si une fonctionnalité n'est pas validée, alors qu'elle est en *develop *: nous sommes un peu coincés. La branche *release* permet de préparer la mise en production. Il faut donc l'utiliser pour fixer les éventuels bogues et annuler les fonctionnalités non validées. C'est sur ce dernier point que l'article va se concentrer.
 
-Maîtriser git comme un chef
-===========================
+## Maîtriser git comme un chef
 
 Posons le décor : nous avons une branche *master* qui sera utilisée pour la mise en production, une branche *develop* pour toutes les nouvelles fonctionnalités du *sprint* en cours, et enfin une branche de *release* pour préparer la mise en production.
 
@@ -107,8 +105,7 @@ Il est important de faire un *merge --no-ff* car cela va permettre de garder une
 
 ![Git release]({BASE_URL}/imgs/articles/2016-02-24-annuler-une-fonctionnalite-avant-une-mise-en-production/git_release.png)
 
-Annuler la branche "feat-my-awesome-feature"
-============================================
+## Annuler la branche "feat-my-awesome-feature"
 
 Cette fonctionnalité n'est pas si géniale que ça (selon le *product owner*), je vais donc l'annuler de la branche *release*, mais je veux pouvoir la garder en *develop* pour l'améliorer dans le prochain *sprint*.
 
@@ -146,8 +143,7 @@ git merge release --no-ff
 
 Depuis *master*, je vois que j'ai bien la fonctionnalité *feat-killer-feature* uniquement.
 
-Remettre à jour develop
-=======================
+## Remettre à jour develop
 
 Maintenant, une autre problématique se pose : si je *merge* de nouveau *develop* dans *release*,  git considère qu'il n'y a aucune modification. C'est à cause du *commit* de *revert* dans la branche *release*. Pour cela, il faut annuler ce *commit* de *revert* (en gros, annuler une annulation x) ).
 

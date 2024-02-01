@@ -18,6 +18,10 @@ export interface PostListPageData {
 interface CommonPostPageData {
   authors: TransformedAuthorData[];
   relatedPosts: TransformedPostDataWithTransformedAuthors[];
+  seo?: {
+    title?: string;
+    description?: string;
+  };
 }
 
 export interface ArticlePageData extends CommonPostPageData, Omit<TransformedArticleData, 'authors'> {}

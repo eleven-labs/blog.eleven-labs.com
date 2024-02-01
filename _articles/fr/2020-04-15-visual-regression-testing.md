@@ -50,9 +50,9 @@ C'est le même principe que les snapshots Jest mais au lieu de regarder la struc
 
 On se rend donc compte pourquoi Storybook est si apprécié, il offre un environnement à trois niveaux de granularité sur les tests:
 
--   **Les tests fonctionnels** avec **Jest** qui vérifient que l'output d'un composant reste le même pour un input donné. Bien pour tester la qualité fonctionnelle d'un composant, savoir si Joe le stagiaire n'a pas flingué le bouton "Se connecter".
--   **Les tests "Snapshot"** avec **Storyshots** qui testent le rendu structurel du composant (JSX). Ils permettent d'éviter les erreurs de rendu et les alertes dues à un changement du code du composant.
--   **Les tests visuels** qui dépendent du **développeur** pour vérifier que le rendu graphique est conforme. Ils permettent de vérifier que le composant ne devienne pas une chimère difforme. C'est là où les outils de tests de régression visuelle vont intervenir.
+-   **Les tests fonctionnels** avec **Jest** qui vérifient que l'output d'un composant reste le même pour un input donné. Bien pour tester la qualité fonctionnelle d'un composant, savoir si Joe le stagiaire n'a pas flingué le bouton "Se connecter".
+-   **Les tests "Snapshot"** avec **Storyshots** qui testent le rendu structurel du composant (JSX). Ils permettent d'éviter les erreurs de rendu et les alertes dues à un changement du code du composant.
+-   **Les tests visuels** qui dépendent du **développeur** pour vérifier que le rendu graphique est conforme. Ils permettent de vérifier que le composant ne devienne pas une chimère difforme. C'est là où les outils de tests de régression visuelle vont intervenir.
 
 Bon pour ceux qui m'ont déjà perdu, je vous ai fait un beau dessin pour illustrer les 3 niveaux de test d'un composant (un bouton) incrémentant un compteur de 1 à chaque clic.
 

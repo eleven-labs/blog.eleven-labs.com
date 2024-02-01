@@ -26,8 +26,7 @@ Le 5 juin dernier, tandis que la France entière affrontait vaillamment sa premi
 
 ![IMG\_0788]({BASE_URL}/imgs/articles/2015-06-10-les-web-2015-cetait-bien/IMG_0788.jpg) Jésus, le premier évangéliste Web, était également présent ce jour-là.
 
-Qu’est-ce que le Best of Web ?
-==============================
+## Qu’est-ce que le Best of Web ?
 
 Comme nous l’a expliqué brièvement son géniteur Cyril Balit en ouverture de la journée, l’idée des Best of Web est née d’un constat simple : la multiplication des meetups annuels centrés sur les technos Web a atteint un seuil où les aléas de la vie (travail, vie privée, flemme, piscine, etc.) font qu’il est devenu beaucoup plus compliqué d’y être présent à chaque fois. Ce qui est bien dommage, car certaines conférences particulièrement bien rodées mériteraient parfois qu’un plus large public ait l’occasion d’y porter son attention. Certes, on peut parfois se faire une séance de rattrapage sur Youtube, mais si une présentation vous inspire à entamer une discussion autour d’un bol de chips et d’une bière, rien ne vaut votre présence physique à l’événement.
 
@@ -38,8 +37,7 @@ L’objectif du Best of Web consiste donc à donner à certains orateurs une sec
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-De quoi ça parlait ?
-====================
+## De quoi ça parlait ?
 
 De plein de choses ! Best of oblige, les sujets abordés touchaient différents frameworks, API et langages. En premier lieu, il faut mentionner l’excellente introduction de Christophe Porteneuve, qui en quarante minutes a retracé l’histoire du Web, fait un point sur sa situation présente, et suggéré ce à quoi il pourrait servir dans le futur. L’occasion de rappeler des choses positives - l’évolution plutôt considérable des outils et du respect des standards en vingt ans - et des choses qui le sont un peu moins, comme le fait que l’éducation est totalement à la ramasse lorsqu’il s’agit de former des développeurs Web.
 
@@ -59,8 +57,7 @@ Un mauvais point en revanche pour Mickael Dumand qui nous a fait du teasing pour
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-Ca valait le coup d'y être ?
-============================
+## Ca valait le coup d'y être ?
 
 Oui, complètement. Parce qu’on a tous nos petites préférences et nos opinions sur les différents outils qui parsèment le Web d’aujourd’hui, c'est toujours intéressant de voir plusieurs frameworks et différents points de vue se confronter au cours d’une même journée, histoire de contraster avec les meetups plus focalisés sur une technologie particulière. Chaque orateur a eu l’occasion d’argumenter en faveur d’une techno qu’il apprécie au travers de mises en situation plus ou moins élaborées, ce qui laisse au public la possibilité de se faire son propre avis et d'orienter sa curiosité là où il le souhaite.
 
@@ -80,8 +77,7 @@ Et bien entendu, Eleven Labs était dans la place avec sa vaillante armée de Wi
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-A quand un prochain événement ?
-===============================
+## A quand un prochain événement ?
 
 Une date est d’ors-et-déjà fixée pour les prochains Best of Web : le 3 juin 2016.
 

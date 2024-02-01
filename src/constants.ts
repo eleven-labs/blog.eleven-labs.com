@@ -1,13 +1,15 @@
 import { getEnv } from '@/helpers/getEnvHelper';
 
-export const IS_SSR = import.meta.env.SSR;
-export const IS_PRERENDER = import.meta.env.MODE === 'prerender';
-export const BASE_URL = getEnv<string>('BASE_URL') || '/';
+export const IS_SSR = import.meta.env?.SSR ?? false;
+export const IS_PRERENDER = import.meta.env?.MODE === 'prerender';
+export const BASE_URL = import.meta.env?.BASE_URL || '/';
 
 export enum LanguageEnum {
   FR = 'fr',
   EN = 'en',
 }
+
+export const LANGUAGES_AVAILABLE = [LanguageEnum.FR, LanguageEnum.EN];
 
 export enum ContentTypeEnum {
   ARTICLE = 'article',

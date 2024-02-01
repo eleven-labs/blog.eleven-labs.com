@@ -24,7 +24,7 @@ keywords:
 ---
 Pour rendre l'expérience utilisateur de nos applications web toujours plus agréable, nous sommes de plus en plus obligés d'utiliser plusieurs technologies en même temps. C'est par exemple le cas si l'on souhaite mettre en place un flux infini. Pour le rendre simple et performant, nous allons utiliser un backend Symfony et un front en ReactJs. La question se pose alors : comment interfacer les deux technos ?
 
-### Mise en place du backend
+## Mise en place du backend
 
 Notre site est tout d'abord un site en Symfony 3.3. La mise en place est assez basique, il vous suffit d'installer Symfony en suivant le tutoriel suivant sur le [site officiel](https://symfony.com/doc/current/setup.html).  Pour la suite de notre projet, nous allons avoir besoin de stocker les données du flux, pour cela nous allons mettre en place une base de données [Postgresql](https://www.postgresql.org/). Il vous suffit de changer dans votre fichier de configuration les paramètres par défaut de la database doctrine.
 
@@ -83,7 +83,7 @@ SECRET=d3e2fa9715287ba25b2d0fd41685ac031970f555
 
 Si vous avez fait un peu attention, vous avez vu que dans le fichier `.env` il y a d'autres variables, c'est parce que l'application utilise [docker](https://www.docker.com/).
 
-### Mettez en place votre docker (optionnel)
+## Mettez en place votre docker (optionnel)
 
 Pour aller plus vite dans la suite de notre projet, nous avons mis en place une architecture docker permettant d'utiliser l'application. La mise en place est optionnelle mais vous aidera pour avancer dans votre développement.
 
@@ -308,7 +308,7 @@ Une partie de la configuration est tirée de l'article de Maxence Poutord dispon
 
 Vous pouvez aussi retrouver le code directement dans le projet [Infinite github](https://github.com/CaptainJojo/infinite) dans la branche [configuration](https://github.com/CaptainJojo/infinite/tree/configuration).
 
-### Mettre en place React
+## Mettre en place React
 
 Nous allons utiliser React/Redux pour mettre en place notre flux infini. Comme tous les projets node la première chose à faire est d'ajouter à la racine de votre projet le fichier `package.json`. Comme nous utiliserons [Babel](https://babeljs.io/) pour la compilation de [l'ES2105](https://babeljs.io/learn-es2015/) il faut le mettre dans la configuration du projet, ainsi que l'utilisation [EsLint](https://eslint.org/) parce que même dans un tutoriel nous faisons les choses proprement. Bien sur il nous faut aussi [React](https://facebook.github.io/react/) et [Redux](http://redux.js.org/)  pour avoir notre configuration au complet. Vous pouvez alors ajouter l'ensemble dans votre fichier `package.json`
 
@@ -658,7 +658,7 @@ export default connect(mapStateToProps)(LatestNewsHome);
 
 Voilà notre architecture React/Redux terminée, il nous faut maintenant la faire communiquer avec Symfony.
 
-### Faire communiquer React et Symfony
+## Faire communiquer React et Symfony
 
 Il vous faut un point d'entrée entre React et Symfony pour vous permettre de lancer votre application React. Dans le dossier `src/AppBundle/Resources/scripts/js/entrypoints` ajoutez un fichier `latest_news_home.jsx` contenant l'initialisation de votre React.
 
@@ -889,9 +889,9 @@ Nous allons donc le configurer dans votre fichier Twig, en ajoutant une valeur p
 
 Vous pouvez aussi retrouver le code directement dans le projet [Infinite github](https://github.com/CaptainJojo/infinite) dans la branche [communication](https://github.com/CaptainJojo/infinite/tree/communication).
 
-### On code le flux infini
+## On code le flux infini
 
-#### Partie Symfony
+### Partie Symfony
 
 Dans ce flux nous allons mettre des articles contenant seulement une date et un titre. Nous aurons besoin d'initialiser le composant React avec les X premiers articles, puis pour chaque passage sur le `voir plus` d'un appel vers un webservice qui nous renverra les articles suivants.
 
@@ -1300,7 +1300,7 @@ Dernières choses : faire afficher les articles et initialiser votre React. Il v
 Si vous affichez votre site, vous devez voir les trois premiers contenus mais le `voir plus` ne marchera pas, normal nous n'avons pas fini notre React.
 
 
-#### Partie React
+### Partie React
 
 Peu de chose à changer, d'abord commençons par changer `src/AppBundle/Resources/scripts/js/react/actions/latest_news.js`
 

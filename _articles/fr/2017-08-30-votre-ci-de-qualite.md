@@ -26,7 +26,7 @@ Ce qui est encore plus compliqué, c'est de mettre en place l'environnement d'in
 
 Pendant plus de 2 ans, nous avons mis en place une CI de qualité chez LeMonde.fr qui a évolué en fonction de nos besoins. Le but de cet article est de comprendre la stratégie et les technos choisies pour la CI d'un site comme LeMonde.fr
 
-### La partie Symfony
+## La partie Symfony
 
 Comme pour tout langage de programmation, la première chose que l'on veut vérifier, c'est la syntaxe. La première chose à mettre en place est donc un vérificateur de syntaxe en PHP.
 
@@ -334,7 +334,7 @@ Il suffit alors de regarder chaque jour le build humbug fait sur la branche mast
 
 **La dernière étape de la partie php est terminée !!!!**
 
-### La partie javascript
+## La partie javascript
 
 L'architecture évoluant, nous avons dû nous adapter et donc travailler de plus en plus avec du javascript.
 
@@ -405,7 +405,7 @@ Bithound n'est pas mal mais n'apporte pas les mêmes fonctionnalités que Scruti
 
 Nous n'avons malheureusement pas trouvé une technologie permettant de faire des tests de mutation avec Jest, donc nous n'avons pas passé cette étape sur le code javascript. (Avez-vous des solutions ?)
 
-### Partie CSS
+## Partie CSS
 
 On l'oublie souvent mais le CSS, c'est aussi du code, et la qualité de celui-ci doit aussi être prise en compte.
 
@@ -598,7 +598,7 @@ deploy:
 
 Nous avions avec cela gagné en qualité CSS et avons eu beaucoup moins de régression visuelle.
 
-### Partie WebPerformance
+## Partie WebPerformance
 
 Parce que la WebPerformance, c'est aussi de la qualité, nous avons ajouté un outil dans notre CI pour suivre cette dernière.
 
@@ -624,6 +624,6 @@ La seconde chose est que vous pouvez mettre d'autres sites que le votre et donc 
 
 La dernière fonctionnalité importante permet de lancer une demande de vérification via une API. Nous avions alors, après chaque mise en production lancée, un check sur Speedcurve en le nommant avec le numéro de la release mise en prod. Ceci permet ensuite de voir sur l'ensemble des dashboards disponible sur Speedcurve le moment de la mise en production, mais aussi de faire des comparaisons entre les releases.
 
-### Conclusion
+## Conclusion
 
 L'utilisation de l'ensemble des outils nous a permis de suivre la qualité de notre site dans le temps. Ceci permet d'éviter la dette technique qui peut très vite s'accumuler. Effectivement, cela prend du temps de mettre tous les outils en place, mais il faut savoir le prendre pour en gagner après. Nous avons mis plus de deux ans pour avoir l'ensemble des outils, allez y pas à pas et vous y arriverez.

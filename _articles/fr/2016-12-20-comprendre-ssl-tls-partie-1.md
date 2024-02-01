@@ -30,7 +30,7 @@ Pour cela, nous allons découper cet article en 5 parties, une postée chaque jo
 
 Tout d'abord un peu d'historique : attachez vos ceintures, en route pour la partie 1 !
 
-# On parle de quoi ?
+## On parle de quoi ?
 
 SSL et TLS sont des protocoles de sécurisation des données.
 
@@ -48,7 +48,7 @@ SSL et TLS sont donc transparents pour l'utilisateur et ne nécessitent pas l'em
 
 *En clair:*
 
-Les protocoles SSL et TLS  permettent d'échanger des informations entre deux ordinateurs de façon sûre.
+Les protocoles SSL et TLS  permettent d'échanger des informations entre deux ordinateurs de façon sûre.
 
 Ils sont censés assurer les 3 points suivants:
 
@@ -58,7 +58,7 @@ Ils sont censés assurer les 3 points suivants:
 
 Les protocoles SSL et TLS reposent donc sur la combinaison de plusieurs concepts cryptographiques, exploitant à la fois le chiffrement **asymétrique** et le chiffrement **symétrique** (nous allons voir ces notions dans la partie chiffrement).
 
-De plus, ces protocoles se veulent évolutifs,  indépendants des algorithmes de cryptage et d'authentification mis en oeuvre dans une transaction. Cela leur permet de s'adapter aux besoins des utilisateurs et d’avoir une meilleure sécurité puisque ces protocoles ne sont pas soumis aux évolutions théoriques de la cryptographie (si un chiffrement devient obsolète, le protocole reste exploitable en choisissant un chiffrement plus sûr).
+De plus, ces protocoles se veulent évolutifs,  indépendants des algorithmes de cryptage et d'authentification mis en oeuvre dans une transaction. Cela leur permet de s'adapter aux besoins des utilisateurs et d’avoir une meilleure sécurité puisque ces protocoles ne sont pas soumis aux évolutions théoriques de la cryptographie (si un chiffrement devient obsolète, le protocole reste exploitable en choisissant un chiffrement plus sûr).
 
 **Histoire** :
 
@@ -67,8 +67,8 @@ De plus, ces protocoles se veulent évolutifs,  indépendants des algorithmes d
 SSL signifie **Secure Socket Layer**.
 
 * Développée par Netscape en **1994**, la version **1.0** reste en interne et n'est jamais mis en œuvre ;
-* La première version de SSL réellement utilisée est la version **2.0** sortie en **février 1995**.
-Il s'agit également la première implémentation de SSL bannie, en mars 2011 ([RFC 617](https://tools.ietf.org/html/rfc6176)) ;
+* La première version de SSL réellement utilisée est la version **2.0** sortie en **février 1995**.
+Il s'agit également la première implémentation de SSL bannie, en mars 2011 ([RFC 617](https://tools.ietf.org/html/rfc6176)) ;
 * En **novembre 1996** SSL sort sa version **3.0**, la dernière version de SSL, qui inspirera son successeur **TLS**. Ses spécifications sont rééditées en août 2008 dans la [RFC 610](https://tools.ietf.org/html/rfc6101).
 Le protocole est banni en 2014, à la suite de la publication de la faille [POODLE](https://fr.wikipedia.org/wiki/POODLE), ce bannissement est définitivement ratifié en juin 2015 ([RFC 7568](https://tools.ietf.org/html/rfc7568)).
 

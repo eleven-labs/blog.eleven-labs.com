@@ -23,7 +23,7 @@ C’est là qu’intervient AJAX ! (wouhou!) Il va nous permettre de rendre le t
 
 Je vous propose de voir comment implémenter un système de téléversement de fichier en JavaScript et avec Symfony côté serveur.
 
-### Implémentation du formulaire Symfony
+## Implémentation du formulaire Symfony
 
 Mon formulaire va contenir deux champs : **name** et **file**. Le premier va contenir le nom du fichier que l’utilisateur veut donner.
 Le second sera la représentation du fichier via l’objet **Symfony\Component\HttpFoundation\File\UploadedFile**.
@@ -66,7 +66,7 @@ class UploadType extends AbstractType
 }
 ```
 
-En plus de ce formulaire, je vais le lier à une entité **AppBundle\Entity\File**, ce qui va me permettre ensuite de le persister dans la base de données.
+En plus de ce formulaire, je vais le lier à une entité **AppBundle\Entity\File**, ce qui va me permettre ensuite de le persister dans la base de données.
 
 ```php
 <?php
@@ -178,7 +178,7 @@ Jusqu’ici, rien de surprenant. Je vous invite à lire la documentation Symfony
 
 Passons maintenant côté client avec la mise en place du JavaScript.
 
-### Implementation côté client avec JavaScript
+## Implementation côté client avec JavaScript
 
 En tant que développeur PHP, je pense que cette partie est la plus intéressante. C’est ici que va prendre place la magie de l’AJAX. Pour rappel, *[AJAX](https://fr.wikipedia.org/wiki/Ajax_(informatique))** pour **Asynchronous JavaScript XML** permet au navigateur de dialoguer avec le serveur de manière asynchrone.
 
@@ -197,7 +197,7 @@ Je vais d’abord mettre en place le formulaire HTML.
 <p id="errors"></p>
 ```
 
-À l’image du formulaire Symfony que je viens de créer plus tôt, il y a deux champs : **name** et **file**.
+À l’image du formulaire Symfony que je viens de créer plus tôt, il y a deux champs : **name** et **file**.
 
 J’ai ajouté 3 éléments DOM. Ils vont me permettre d’afficher les éventuelles erreurs et la progression du téléversement.
 
@@ -273,7 +273,7 @@ Petite démo en GIF :) et le code complet [https://github.com/lepiaf/file-upload
 ![]({BASE_URL}/imgs/articles/2017-04-20-televersement-dun-fichier-en-ajax/upload.gif)
 
 
-### Pour conclure
+## Pour conclure
 
 Nous avons vu ensemble comment mettre en place le téléversement d’un fichier de façon asynchrone avec AJAX et Symfony. Cette méthode permet d’encoder et d’envoyer le fichier comme un flux de données binaire. Contrairement a un encodage du fichier en base64, il ne fait pas gonfler le poids du fichier sur le réseau. La représentation du fichier en base64 fait augmenter le poids du fichier de **~33%**. Pour un fichier de quelques kilooctets cette augmentation de poids n'est pas significatif, mais avec un fichier de plusieurs mégaoctets, cela a un impact significatif. De plus, le fichier est correctement géré par le navigateur et le serveur. Cela rend le téléversement plus efficace et permet d’utiliser la représentation d’une ressource fichier côté serveur (**$_FILES** côté PHP).
 

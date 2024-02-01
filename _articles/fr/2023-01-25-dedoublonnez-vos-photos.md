@@ -24,7 +24,7 @@ Il existe différentes méthodes pour le dédoublonnage, comme la comparaison de
 
 Dans cet article, nous combinerons plusieurs de ces techniques afin d'identifier des doublons.
 
-### 0. Avertissement ###
+### 0. Avertissement
 
 Il est important de noter que le dédoublonnage de photos peut entraîner la perte de données, il est donc important de sauvegarder les images avant de les supprimer.
 Il est également recommandé de vérifier manuellement les images supprimées afin de s'assurer qu'elles sont en effet des doublons et non des images uniques.
@@ -169,7 +169,7 @@ _Dans le cas des images, les hautes fréquences donnent des détails, tandis que
 
 _Une grande image détaillée comporte beaucoup de hautes fréquences. Une très petite image manque de détails, elle est donc composée uniquement de basses fréquences._
 
-#### 1. Réduire la taille ####
+#### 1. Réduire la taille
 
 Le moyen le plus rapide de supprimer les hautes fréquences et les détails est de réduire la taille de l'image. Dans ce cas, réduisez-la à 8x8 de façon à ce qu'il y ait 64 pixels au total. Ne prenez pas la peine de conserver le rapport hauteur/largeur, réduisez simplement l'image pour qu'elle tienne dans un carré de 8x8.
 
@@ -179,7 +179,7 @@ De cette façon, le hachage correspondra à toute variation de l'image, indépen
 
 ![Pilou en 8x8 grande taille]({BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8.jpg?height=512&width=512)
 
-#### 2. Réduire la couleur ####
+#### 2. Réduire la couleur
 
 La petite image 8x8 est convertie en niveaux de gris. Cela fait passer le hachage de 64 pixels (64 rouges, 64 verts et 64 bleus) à 64 couleurs au total.
 
@@ -187,23 +187,23 @@ La petite image 8x8 est convertie en niveaux de gris. Cela fait passer le hachag
 
 ![Pilou en 8x8 et greyscale en 8x8 grande taille]({BASE_URL}/imgs/articles/2023-01-25-dedoublonnez-vos-photos/IMG_0546_8x8_greyscale.jpg?height=512&width=512)
 
-#### 3. Moyenne des couleurs ####
+#### 3. Moyenne des couleurs
 
 Calculer la valeur moyenne des 64 couleurs.
 
-#### 4. Calculer les bits ####
+#### 4. Calculer les bits
 
 C'est la partie la plus amusante. Chaque bit est simplement défini selon que la valeur de la couleur est supérieure ou inférieure à la moyenne.
 
-#### 5. Construire le hachage ####
+#### 5. Construire le hachage
 
 Placez les 64 bits dans un entier de 64 bits. L'ordre n'a pas d'importance, du moment que vous êtes cohérent.
 
-#### 6. Résultat ####
+#### 6. Résultat
 
 0xa3d7d5f2e22489b3
 
-#### 7. Conclusion ####
+#### 7. Conclusion
 
 Le hachage résultant ne changera pas si l'image est mise à l'échelle ou si le rapport d'aspect change. L'augmentation ou la diminution de la luminosité ou du contraste, ou même l'altération des couleurs, ne modifieront pas de façon spectaculaire la valeur de hachage.
 
@@ -211,7 +211,7 @@ Si nous voulons comparer deux images, nous construirons le hachage de chaque ima
 
 Cette méthode nous permet donc d'identifier des images très proches visuellement, mais attention, elle ne sont pas pour autant identiques aussi il faudra nous baser sur d'autres critères avant de prendre une décision.
 
-### III. Identifier les metadata d'une photo ###
+### III. Identifier les metadata d'une photo
 
 Afin de trouver des doublons, nous pouvons aussi utiliser Exiftool. Exiftool est un outil en ligne de commande qui permet de lire, écrire et éditer les métadonnées dans les fichiers images. Il peut également être utilisé pour détecter les images en double en comparant les métadonnées de ces images.
 
@@ -410,7 +410,7 @@ Même si une image a le même perceptual hash, si la date de prise de vue n'est 
 
 Cette méthode est donc à coupler avec la précédente.
 
-## Conclusion ##
+## Conclusion
 
 Un fichier qui a la même somme de contrôle (MD5, SHA-1, etc.) peut-être considéré comme un doublon, car la chance que deux photos partagent le même hash est relativement faible. Dans le cas où deux photos ont le même perceptual hash, cela ne veux pas forcément dire que nous avons un doublon.
 

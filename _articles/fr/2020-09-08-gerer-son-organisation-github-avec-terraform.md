@@ -39,13 +39,13 @@ Elle soulevait plus de questions qu'elle apportait de réponses (sécurité, gou
 La deuxième solution, au contraire, s'est très vite révélée être la solution dont nous avions besoin.
 
 ## Le projet
-#### Nos besoins:
+### Nos besoins:
 - Un projet déclaratif versionné pouvant interagir avec l'api Github (pour éviter la perte d'information),
 - Un projet accessible à tout le monde (pour faciliter l'onboarding / outboarding),
 - Un workflow de validation simplifié et collaboratif (pour la gouvernance & la sécurité),
 - Un projet permettant l'intégration et le déploiement continus (pour automatiser les changements),
 
-#### Notre solution
+### Notre solution
 Avec cet ensemble de besoins identifiés, j'ai tout de suite vu une nouvelle occasion d'utiliser un de mes outils
 favoris [Terraform](https://www.terraform.io/).
 
@@ -765,7 +765,7 @@ resource "github_team" "main" {
 }
 ```
 
-``` hcl
+```hcl
 # ./module/team/team_membership.tf
 
 resource "github_team_membership" "members" {

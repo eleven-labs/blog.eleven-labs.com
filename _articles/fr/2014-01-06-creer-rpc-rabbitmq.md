@@ -18,8 +18,8 @@ keywords:
 ---
 
 RabbitMQ est un gestionnaire de queue, il permet donc de conserver des messages et de les lire via une autre tâche. Une présentation plus approfondie sera faite dans un autre article. Dans cet article, nous allons nous intéresser à un concept important dans RabbitMQ : le RPC.
-Un RPC (remote procedure call) permet d'envoyer un message à une queue et d'en attendre la réponse, pour mieux comprendre ce concept, partons d'un exemple simple : la génération d'une url de contenu externalisée.
-Il y a donc un client qui envoie un contenu dans une queue RabbitMQ afin de connaitre l'url générée. Le client n'a alors besoin que d'une méthode "call".
+Un RPC (remote procedure call) permet d'envoyer un message à une queue et d'en attendre la réponse, pour mieux comprendre ce concept, partons d'un exemple simple : la génération d'une url de contenu externalisée.
+Il y a donc un client qui envoie un contenu dans une queue RabbitMQ afin de connaitre l'url générée. Le client n'a alors besoin que d'une méthode "call".
 
 ```php
 <?php
@@ -149,7 +149,7 @@ Lancer le serveur directement avec:
 php generateUrlServer.php
 ```
 
-Maintenant créons le  client qui devra envoyer le message au serveur de génération et l'utiliser ensuite.
+Maintenant créons le  client qui devra envoyer le message au serveur de génération et l'utiliser ensuite.
 
 ```php
 <?php

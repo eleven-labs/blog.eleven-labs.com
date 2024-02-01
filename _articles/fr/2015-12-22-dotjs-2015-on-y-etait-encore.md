@@ -58,15 +58,13 @@ L’événement s’étalant sur toute la journée, voici donc un tour d’horiz
 
 ![](https://c1.staticflickr.com/1/738/23656479935_b63777fc06_k.jpg)
 
-**Modern Async JS** par [*Christophe Porteneuve*](https://twitter.com/porteneuve)
----------------------------------------------------------------------------------
+## **Modern Async JS** par [*Christophe Porteneuve*](https://twitter.com/porteneuve)
 
 Christophe Porteneuve nous présente ici plusieurs problématiques liées à l’utilisation de callback et du code asynchrone. Le fameux “Callbackhell”, qui comme son nom l’indique, peut vite devenir infernal, autant sur la compréhension que sur la maintenabilité du code. Celui-ci étant parfois difficile à prendre en main, les générateurs et les promises peuvent déjà nous y aider, en attendant les [fonctionnalités await/async d’ES7](https://jakearchibald.com/2014/es7-async-functions/).
 
 [Slides](http://tdd.github.io/dotjs-async/)
 
-**Hyperdrive: p2p hash sharing tool** par [*Mathias Buus*](https://twitter.com/mafintosh)
------------------------------------------------------------------------------------------
+## **Hyperdrive: p2p hash sharing tool** par [*Mathias Buus*](https://twitter.com/mafintosh)
 
 Mathias Buus, gros contributeur sur npm (Pas loin de 400 modules !), nous présente son dernier module: Hyperdrive. Un module de partage de données via navigateur avec un système de hashage comme l’utilise git.
 
@@ -74,8 +72,7 @@ Dépôt Github du projet : [https://github.com/mafintosh/hyperdrive](https://git
 
 [Slides](https://github.com/mafintosh/slides/blob/gh-pages/dotjs-2015/README.md)
 
-**Dealing with garbage** par [*Samuel Saccone*](https://twitter.com/samccone)
------------------------------------------------------------------------------
+## **Dealing with garbage** par [*Samuel Saccone*](https://twitter.com/samccone)
 
 Samuel Saccone, développeur chez Google, aborde ensuite le sujet épineux des fuites mémoire et des performances (Illustré par quelques screenshots assez sympathiques). S’en suit une démonstration de l’utilisation de la console Chrome poussée, afin de détecter/fixer ces problèmes. Puis de la présentation de son outil de détection de fuite mémoire: [Drool](https://github.com/samccone/drool).
 
@@ -85,8 +82,7 @@ Présentation drôle et très bien animée pour un sujet pas super passionnant d
 
 À lire également, une présentation très intéressante d’Addy Osmani sur l’utilisation de la console Chrome [ici](http://addyosmani.com/blog/chrome-devtools-deepdive/).
 
-**HTTP/2 is here, now let's make it easy** par [*Rebecca Murphy*](https://twitter.com/rmurphey)
------------------------------------------------------------------------------------------------
+## **HTTP/2 is here, now let's make it easy** par [*Rebecca Murphy*](https://twitter.com/rmurphey)
 
 Constat sur HTTP/2 aujourd’hui: Ça à l’air cool, mais on ne s’en sert pas. Le principal problème étant la compatibilité des serveurs/hébergeurs/navigateurs, qui ne facilitent pas son utilisation pour le moment.   J’avoue ne pas avoir compris la totalité de la présentation. Si vous en savez plus, je suis preneur ;)
 
@@ -96,34 +92,31 @@ Constat sur HTTP/2 aujourd’hui: Ça à l’air cool, mais on ne s’en sert pa
 
 ![](https://c2.staticflickr.com/6/5725/23359640130_8bff265e02_h.jpg) ![](http://i.giphy.com/3GCLlNvCg61ji.gif)
 
-Lightning talks
----------------
+## Lightning talks
 
 Après la pause déjeuner, on reprend en douceur avec une série de “Lightining talks” au format court de 5-10 minutes, dont 2 qui ont particulièrement retenus mon attention :
 
-##### **Publishing ES6 modules today** par [*Laurent Voyer*](https://twitter.com/rmurphey)
+### **Publishing ES6 modules today** par [*Laurent Voyer*](https://twitter.com/rmurphey)
 
 Laurent Voyer partage avec nous les meilleurs moyens de publier des modules ES6. La meilleure solution étant de pusher nos modules sur npm ou sur un CDN (avec une retro-compatibilité ES5). Un peu court de résumer tout cela en 10min, mais le principe mérite cependant qu’on s’y intéresse plus longuement.
 
 [Slides](http://slides.com/vvo/authoring-and-publishing-es6-modules-today-dotjs-2015)
 
-##### **Mobile debugging with VorlonJS** par [*Etienne Margraff*](https://twitter.com/@meulta)
+### **Mobile debugging with VorlonJS** par [*Etienne Margraff*](https://twitter.com/@meulta)
 
 Etienne Margraff nous présente son outil de debug cross browser: VorlonJS
 Après avoir préalablement ajouté un script à notre application, il est possible de debugger depuis une interface VorlonJS à distance. Prometteur. Prochaine étape, le debug d’application NodeJS.
 
 [Slides](http://fr.slideshare.net/emargraff/dotjs-lightning-talk-vorlonjs)
 
-**Practical ES6** par [*Nicolas Bevacqua*](https://twitter.com/nzgb)
---------------------------------------------------------------------
+## **Practical ES6** par [*Nicolas Bevacqua*](https://twitter.com/nzgb)
 
 Tour d’horizon sur les fondamentaux de ES6, avec une liste d’exemples expliqués de la nouvelle mouture d’EcmaScript. Rien de vraiment nouveau mais une piqûre de rappel nécessaire, détaillée dans [son article](https://ponyfoo.com/articles/es6).
 Si vous souhaitez d’ores et déjà utilisez ES6 dans vos projets, des outils comme Babel vous aideront à prendre en main la nouvelle syntaxe le temps de sa mise en place progressive.
 
 [Slides](https://speakerdeck.com/bevacqua/practical-es6-for-the-modern-javascript-tinkerer)
 
-**Reactive Javascript** par [*André Staltz*](https://twitter.com/andrestaltz)
------------------------------------------------------------------------------
+## **Reactive Javascript** par [*André Staltz*](https://twitter.com/andrestaltz)
 
 Sans doute l’une des présentations les plus intéressantes de la journée.
 André Staltz y présente de manière très simple et précise la programmation reactive au travers de [RxJS](https://github.com/Reactive-Extensions/RxJS). Ne connaissant pas le sujet, j’ai trouvé l’approche claire et les exemples particulièrement parlants, notamment le cycle de vie de deux variables liées et comment l’une affecterait l’autre, via la fonctionnalité “Observable”, sorte de promise améliorée.
@@ -134,8 +127,7 @@ Pendant ce temps-là, Wilson se promène un peu.
 
 > Just made a new friend from [@Eleven\_Labs](https://twitter.com/Eleven_Labs) [\#dotJS](https://twitter.com/hashtag/dotJS?src=hash) [pic.twitter.com/dV5PjBm0qA](https://t.co/dV5PjBm0qA) — Adrien Trauth (@Nioufe) [7 Décembre 2015](https://twitter.com/Nioufe/status/673788757640921088)
 
-**WebRTC** par [*Eric Schoffstall*](https://twitter.com/contrahacks)
---------------------------------------------------------------------
+## **WebRTC** par [*Eric Schoffstall*](https://twitter.com/contrahacks)
 
 WebRTC est en passe de devenir un nouveau standard pour tout ce qui est connexion peer-to-peer entre navigateurs sans passer par un serveur, celui-ci étant assez attendu par la communauté vu les possibilités qu’il propose (Communication par voix ou vidéo par exemple). Cependant, seuls Chrome, Firefox et Opera proposent cette implémentation ([Voir en détails](http://caniuse.com/#search=webrtc)).
 Après avoir travaillé sur la compatibilité sur chaque navigateur (y compris IE9 et mobile) et en regroupant les différentes solutions apportées sur chacune des plateformes, Eric annonce la création de sa nouvelle librairie [rtc-everywhere](https://github.com/contra/rtc-everywhere). Magique !
@@ -148,20 +140,17 @@ En bonus: Eric postule également au poste de maire de San Francisco...
 
 ![](http://i.giphy.com/KTHFxuEtrVoGI.gif)
 
-**Jade &gt; Pug** par [*Forbes Lindesay*](https://twitter.com/forbeslindesay)
------------------------------------------------------------------------------
+## **Jade &gt; Pug** par [*Forbes Lindesay*](https://twitter.com/forbeslindesay)
 
 Forbes Lindesay, développeur chez Facebook, nous présente le fonctionnement de son moteur de template HTML “Jade” (Renommé “Pug” pour des questions légales, il me semble). Nous utilisons aujourd’hui de plus en plus ce genre d’outils appelé “transpiler”, notamment Babel ou CoffeeScript, et il est toujours intéressant de comprendre comment ce genre de parser fonctionne. Il est également possible de créer ses propres plugins avec un système de pipe, une bonne nouvelle pour ceux qui l’utilisent.
 
-**Teaching Kids to Code** par [*Tim Caswell et son fils de 9 ans*](https://twitter.com/creationix)
---------------------------------------------------------------------------------------------------
+## **Teaching Kids to Code** par [*Tim Caswell et son fils de 9 ans*](https://twitter.com/creationix)
 
 Présentation amusante du développement pour plus jeunes, et sur ce qui est possible en dehors d’un navigateur web.
 
 [Slides](https://gist.github.com/creationix/507719a418be365c7631)
 
-**Pocked sized JS** par [*Henrik Joreteg*](https://twitter.com/HenrikJoreteg)
------------------------------------------------------------------------------
+## **Pocked sized JS** par [*Henrik Joreteg*](https://twitter.com/HenrikJoreteg)
 
 Dans un contexte de plus en plus “Mobile-first”, Henrik Joreteg nous incite ici vivement à penser “Mobile everywhere”. Les performances de nos devices et la qualité de notre connexion lorsque nous développons nos applications n’étant pas forcement identiques à celles de l’utilisateur final.
 
@@ -174,8 +163,7 @@ Je vous incite vivement à voir sa présentation, une très bonne surprise !
 
 [Slides](https://slides.joreteg.com/dotjs/)
 
-**No title** par [*Brendan Eich*](https://twitter.com/brendaneich)
-------------------------------------------------------------------
+## **No title** par [*Brendan Eich*](https://twitter.com/brendaneich)
 
 Enfin pour terminer la journée en beauté, Brendan Eich, le créateur de Javascript. A vrai dire, il était assez compliqué de suivre, tellement les sujets étaient nombreux: FirefoxOS, Tizen, asm.js...
 S’en suivit une petite démonstration de jeux Facebook développés en Javascript (Notamment un avec des poulets tueurs de zombies…), le résultat est assez impressionnant par sa fluidité.
@@ -185,10 +173,7 @@ J’attendais un peu plus de cette présentation cependant.
 
 > So impressed when [@BrendanEich](https://twitter.com/BrendanEich) demo'ed what web assembly is capable of in [\#firefox](https://twitter.com/hashtag/firefox?src=hash) [\#wasm](https://twitter.com/hashtag/wasm?src=hash) [\#dotjs](https://twitter.com/hashtag/dotjs?src=hash) [pic.twitter.com/sTGDdkHKMr](https://t.co/sTGDdkHKMr) — Perry Mitchell (@perry\_mitchell) [8 Décembre 2015](https://twitter.com/perry_mitchell/status/674242616096104448)
 
-
-
-Conclusion
-----------
+## Conclusion
 
 Ce fut pour ma part une très bonne expérience. L’événement fut très bien organisé, les conférences étaient de qualité, les sujets variés et l’ambiance y était très bonne.
 C’est avec plaisir qu’on y retrouve également certaines têtes.

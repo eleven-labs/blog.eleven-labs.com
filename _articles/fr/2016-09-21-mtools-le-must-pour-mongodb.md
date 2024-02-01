@@ -22,16 +22,16 @@ keywords:
 
 Maintenir une application MongoDB, notamment sur des sujets Datas avec beaucoup de volumétrie et/ou d’opérations peut vite devenir un supplice, surtout si, comme la plupart des Devs, vous n'avez pas accès aux machines de productions qui sont généralement réservées aux exploitants.
 
-Problème : comment trouver dans vos dizaines de millions de données ou requêtes quotidiennes, celles qui ont un impact négatif sur vos performances ou encore les goulots d’étranglement de votre architecture ?
+Problème : comment trouver dans vos dizaines de millions de données ou requêtes quotidiennes, celles qui ont un impact négatif sur vos performances ou encore les goulots d’étranglement de votre architecture ?
 
-Suite à l’accompagnement de MongoDB inc sur nos sujets Datas au sein de FranceTV Edition Numérique, nous avons automatisé l'utilisation d'outils afin de pouvoir étudier les comportements des productions sans impacts sur les applications.
+Suite à l’accompagnement de MongoDB inc sur nos sujets Datas au sein de FranceTV Edition Numérique, nous avons automatisé l'utilisation d'outils afin de pouvoir étudier les comportements des productions sans impacts sur les applications.
 
-L'outil, ou plutôt la boite à outils que nous utilisons le plus à ce jour est [MTools](https://github.com/rueckstiess/mtools). Ce projet a été initié et est toujours maintenu par [Thomas Rückstieß](https://github.com/rueckstiess), ayant travaillé chez... MongoDB :)
+L'outil, ou plutôt la boite à outils que nous utilisons le plus à ce jour est [MTools](https://github.com/rueckstiess/mtools). Ce projet a été initié et est toujours maintenu par [Thomas Rückstieß](https://github.com/rueckstiess), ayant travaillé chez... MongoDB :)
 
 
 ## MTools est composé de 6 outils :
 
-### Mloginfo :
+### Mloginfo :
 
 Mloginfo lit les log générés par mongoDB et retourne des informations d'utilisation de la base de données. Dans notre cas, ce qui nous intéresse (entre autres) c'est le profiling des requêtes afin de voir celles qui s’exécutent le plus ou encore celles qui consomment le plus de temps.
 
@@ -81,7 +81,7 @@ Avec cette commande, mlogfilter nous permet de filtrer les logs des commandes le
 
 Plus d'infos sur [mlogfilter](https://github.com/rueckstiess/mtools/wiki/mlogfilter).
 
-### Mplotqueries & Mlogvis :
+### Mplotqueries & Mlogvis :
 
 Ces deux exécutables permettent de générer des graphiques afin de visualiser plus d'informations (répartition des appels, type de commandes etc...) de manière graphique.
 
@@ -92,7 +92,7 @@ Plus d'infos sur [Mlogvis](https://github.com/rueckstiess/mtools/wiki/mlogvis) &
 
 ### Mgenerate :
 
-Mgenerate permet, à partir d'un modèle JSON, de remplir une base de données mongoDB avec de la donnée aléatoire. C'est l'outil parfait pour tester le comportement de fonction ou de requête avec un grand set de données.
+Mgenerate permet, à partir d'un modèle JSON, de remplir une base de données mongoDB avec de la donnée aléatoire. C'est l'outil parfait pour tester le comportement de fonction ou de requête avec un grand set de données.
 
 Exemple de modèle JSON pour la génération d'une collection User :
 
@@ -120,7 +120,7 @@ Exemple de modèle JSON pour la génération d'une collection User :
 }
 ```
 
-Plus d'infos sur [Mgenerate](https://github.com/rueckstiess/mtools/wiki/mgenerate).
+Plus d'infos sur [Mgenerate](https://github.com/rueckstiess/mtools/wiki/mgenerate).
 
 ### Mlaunch :
 

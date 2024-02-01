@@ -25,7 +25,7 @@ autorité qui va contrôler l'identité. Ce sont les utilisateurs qui vont véri
 * Le stockage et la sauvegarde de la clé maître
 * La participation à une fête de la signature des clés
 
-### Installer les bon outils
+## Installer les bon outils
 
 Que vous soyez sur Linux, Mac ou Windows, tout pourra être fait en lignes de commande.
 
@@ -77,7 +77,7 @@ s2k-digest-algo SHA512
 s2k-mode 3
 s2k-count 65011712
 ```
-### Prendre l'avantage des sous-clés
+## Prendre l'avantage des sous-clés
 
 Lors de la création d'une clé OpenPGP dans son mode de base, gpg va créer une paire de clés qui permet de signer et de certifier.
 Pour augmenter la sécurité de notre clé, nous allons utiliser une particularité d'OpenPGP : les sous-clés.
@@ -88,7 +88,7 @@ sans avoir à révoquer la clé principale (celle qui permet de certifier d'autr
 
 Commençons par créer la clé principale, celle qui va détenir notre identité. Puis ensuite, créons des sous-clés pour signer, chiffrer et authentifier.
 
-### Création de la clé principale
+## Création de la clé principale
 
 Nous allons choisir de générer notre clé de façon personnalisée et de créer la clé de certification pour Wilson.
 Elle va permettre de certifier d'autre clés. Elle est très importante, il faudra la conserver précieusement. En cas de perte ou de vol, celui qui détiendra cette clé pourra se faire passer pour cette personne.
@@ -208,7 +208,7 @@ uid         [ultimate] Wilson Eleven <wilson.eleven@labs.com>
 
 La paire de clés principale est créée. Maintenant créons les sous-clés.
 
-### Création des sous-clés
+## Création des sous-clés
 
 Comme nous l'avons vu en introduction sur les sous-clés, il est important d'en avoir une dédiée à chaque tâche :
 * Authentification (A)
@@ -336,7 +336,7 @@ gpg> quit
 Entrez `save` puis `quit`, et vous avez fini. Wilson a maintenant une paire de clés OpenPGP avec son identité et des sous-clés avec chacune une capacité.
 Avant de pouvoir pleinement utiliser cette clé, sauvegardons-la.
 
-### Exporter la clé principale
+## Exporter la clé principale
 
 La clé PGP ne doit pas être utilisée telle quelle. En cas de vol de la clé principale et du mot de passe,
 le détenteur de cette clé peut usurper l'identitié numérique et signer des messages à la place de la vraie personne.
@@ -392,7 +392,7 @@ Le petit `#` devant `sec` indique que la clé secrète de la clé principale n'e
 
 Tous les fichiers que nous avons créés seront à conserver sur un média déconnecté du réseau (CD, clé USB, bande magnétique, feuille papier, ...).
 
-### Conclusion
+## Conclusion
 
 À travers cet article, nous avons créé une clé PGP avec un ensemble de sous-clés dédié à une tâche particulière. L'avantage d'utiliser OpenPGP par rapport à une simple clé asymétrique ce sont les sous-clés. Si une des clés est compromise, il suffira de la révoquer et d'en regénérer une nouvelle. Il ne sera pas nécessaire de révoquer la clé principale, celle qui détient notre identité numérique. Cette stratégie offre un niveau de sécurité beaucoup plus élevé.
 
@@ -402,13 +402,13 @@ même vous authentifier sur un serveur en SSH.
 Par ailleurs, le 2 novembre, il y aura [une fête de la signature des clés](https://blog.mozfr.org/post/2017/09/Se-rencontrer-pour-echanger-ses-clefs-2-novembre-Paris) (key signing party) dans les locaux de Mozilla France.
 Cet évévenement est l'occasion de rencontrer d'autres adeptes d'OpenPGP et surtout, il permettra de faire certifier votre clé nouvellement créée.
 
-### Article en relation
+## Article en relation
 * [OpenPGP - Une paire de clés presque parfaite (partie 1)]({BASE_URL}/fr/openpgp-paire-clef-presque-parfaite-partie-1/)
 * [OpenPGP - Exporter les clefs secrètes sur une Yubikey (partie 2)]({BASE_URL}/fr/openpgp-clef-secrete-yubikey-partie-2/)
 * [OpenPGP - Stockage sur le long terme de clefs (partie 3)]({BASE_URL}/fr/openpgp-stockage-froid-clefs-partie-3/)
 * [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)]({BASE_URL}/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
 
-### Resources
+## Resources
 * [GPG : création de votre première paire de clefs et chiffrement d'un fichier](https://www.nextinpact.com/news/98374-gnupg-creation-votre-premiere-paire-clefs-et-chiffrement-dun-fichier.htm)
 * [GPG : comment créer une paire de clefs presque parfaite](https://www.nextinpact.com/news/102685-gpg-comment-creer-paire-clefs-presque-parfaite.htm)
 * [Creating the perfect GPG keypair](https://alexcabal.com/creating-the-perfect-gpg-keypair/)

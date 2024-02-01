@@ -58,10 +58,10 @@ Les propriétés CSS que l'on peut utiliser de manière créative sont nombreuse
 
 Aga nous présente quelques propriétés à utiliser :
 
-* **CSS Grid Layout** : le nouveau système de grille, considéré comme le futur (et même le présent) de la mise en forme des pages web. À mettre en place de concert avec "Flexbox" pour utiliser la puissance des deux systèmes.
-* **Clip-path** permet d'afficher une zone spécifique d'un élément défini par des formes, comme un cercle ou un triangle, mais aussi avec des SVG.
-* **Mask** : propriété sensiblement identique à clip-path, mais qui permet la gestion de la transparence et des images.
-* **Shape-outside** est une propriété qui permet d'envelopper du texte selon la forme de votre image.
+* **CSS Grid Layout** : le nouveau système de grille, considéré comme le futur (et même le présent) de la mise en forme des pages web. À mettre en place de concert avec "Flexbox" pour utiliser la puissance des deux systèmes.
+* **Clip-path** permet d'afficher une zone spécifique d'un élément défini par des formes, comme un cercle ou un triangle, mais aussi avec des SVG.
+* **Mask** : propriété sensiblement identique à clip-path, mais qui permet la gestion de la transparence et des images.
+* **Shape-outside** est une propriété qui permet d'envelopper du texte selon la forme de votre image.
 
 Découvrez la [présentation en vidéo de Aga Naplocha](https://www.youtube.com/watch?v=y16qppUSheE)
 
@@ -71,7 +71,7 @@ Découvrez la [présentation en vidéo de Aga Naplocha](https://www.youtube.com/
 
 Sara Soueidan, développeuse web front-end freelance, formatrice et auteure, a animé un cours accéléré sur la mise en œuvre des filtres SVG sur nos sites Web. Elle nous a démontré qu'il est possible de créer des effets similaires à ceux de Photoshop.
 
-### Qu'est-ce-que le SVG ?
+### Qu'est-ce-que le SVG ?
 
 Le format SVG (Scalable Vector Graphics) est un format de données décrivant des images vectorielles bidimensionnelles. Il présente 2 avantages principaux : sa légèreté et son redimensionnement sans perte de qualité. De plus, on peut facilement le manipuler avec du CSS.
 
@@ -160,9 +160,9 @@ Puis, on pourra utiliser des sélecteurs basés sur la langue de la manière sui
 }
 ```
 
-D'autres notions sont également à prendre en compte selon la langue :
+D'autres notions sont également à prendre en compte selon la langue :
 
-* la typographie (pour les langues asiatiques ou avec accents)
+* la typographie (pour les langues asiatiques ou avec accents)
 * la bidirectionnalité (pour l'hébreu ou l'arabe dont le sens de lecture se fait de droite à gauche)
 
 Pour en savoir plus, je vous recommande la lecture de la [présentation de Elika J. Etemad](http://fantasai.inkedblade.net/style/talks/i18n-primer/).
@@ -214,17 +214,17 @@ Maintenant, il faut comparer ce graphique à celui du cercle chromatique RVB (co
 
 #### La luminosité de la couleur
 
-Chaque couleur possède trois variantes de luminosité : claire (_Light_), moyenne (_Middle_), et sombre (_Dark_). Pour la connaître, il suffit d'additionner les trois valeurs RGB d'une couleur. Plus la somme est élevée, plus la couleur est claire. Dans notre exemple, la variante de couleur est moyenne.
+Chaque couleur possède trois variantes de luminosité : claire (_Light_), moyenne (_Middle_), et sombre (_Dark_). Pour la connaître, il suffit d'additionner les trois valeurs RGB d'une couleur. Plus la somme est élevée, plus la couleur est claire. Dans notre exemple, la variante de couleur est moyenne.
 
 ![Luminosité du code hexadécimal]({BASE_URL}/imgs/articles/2018-12-05-dotcss-2018-un-tres-grand-cru/hexadecimal-4.png)
 
 #### La saturation de la couleur
 
-Une couleur possède quatre niveaux de saturation : _Saturated_ (saturé), _Washed_, _Muted_, et _Grey_ (gris).
+Une couleur possède quatre niveaux de saturation : _Saturated_ (saturé), _Washed_, _Muted_, et _Grey_ (gris).
 
 Pour la déterminer, on utilise l'intervalle entre la valeur RGB la plus faible et la plus élevée de notre couleur.
 
-Si l'intervalle est très grand alors le niveau de saturation sera de type _Saturated_, grand il sera de type _Washed_, moyen il sera _Muted_, et s'il est nul le niveau de saturation sera _Grey_.
+Si l'intervalle est très grand alors le niveau de saturation sera de type _Saturated_, grand il sera de type _Washed_, moyen il sera _Muted_, et s'il est nul le niveau de saturation sera _Grey_.
 
 Dans notre cas, il est grand, donc la saturation de notre couleur est _Washed_.
 
@@ -329,7 +329,7 @@ D'autres avantages à utiliser les polices variables :
 
 En effet, les différentes variantes de la police (condensé, gras, italique...) sont configurées par un unique fichier de police. Finies les importations multiples de familles de polices !
 
-Quelques exemples pour en découvrir le potentiel :
+Quelques exemples pour en découvrir le potentiel :
 
 [https://codepen.io/mandymichael/pen/dJZQaz](https://codepen.io/mandymichael/pen/dJZQaz)
 
@@ -337,7 +337,7 @@ Quelques exemples pour en découvrir le potentiel :
 
 [https://codepen.io/collection/XqRLMb/](https://codepen.io/collection/XqRLMb/)
 
-Et aussi, des ressources pour vous plonger sur ce sujet :
+Et aussi, des ressources pour vous plonger sur ce sujet :
 
 [https://v-fonts.com/](https://v-fonts.com/)
 

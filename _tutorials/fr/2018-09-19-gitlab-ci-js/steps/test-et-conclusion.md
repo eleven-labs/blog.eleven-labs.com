@@ -4,7 +4,7 @@ tutorial: gitlab-ci-js
 slug: test-et-conclusion
 title: Test et conclusion
 ---
-# Test et conclusion
+## Test et conclusion
 
 Voilà nous arrivons au terme de ce tutoriel.
 
@@ -12,7 +12,7 @@ je vous ai présenté comment mettre en place une CI/CD avec Gitlab et Google Cl
 
 Avant de conclure ce tutoriel je vais vous montrer quelques résultats de tests que j'ai effectués.
 
-## Test
+### Test
 
 Lors de mes phases de tests j'ai arrêté quelques déploiements en `demo` suite à un push de la pipeline de déploiement en `production`.
 Vous pouvez voir sur la capture d'écran ci-desous les différences de version.
@@ -31,7 +31,7 @@ Nous pouvons très clairement voir que suite à un merge (ici ce fut un push de 
 Puis j'ai créé un nouveau tag "v0.0.28" ce qui a déclenché la pipeline de depliement en `production`.
 Suite a ce tag les branches se sont mises à jour et la pipeline de deploiement en `demo` s'est déclenchée avec comme nom de commit `NEW VERSION - v0.0.28`
 
-## Conclusion
+### Conclusion
 
 Les étapes de build, de lint et de test restent très simples à mettre en place mais ça se complique lors du déploiement car il y a plus de choses à prendre en compte.
 De plus, dans ce tutoriel je n'ai pas eu envie de faire les choses simplement avec des mises à jour de branche dans la pipeline.

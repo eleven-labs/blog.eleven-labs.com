@@ -14,7 +14,7 @@ describe('getSitemapEntries', () => {
         { lang: 'fr', slug: 'post-1', categories: ['architecture'], authors: ['author-1'] },
         { lang: 'en', slug: 'post-2', categories: ['php'], authors: ['author-1'] },
       ],
-      getAuthors: (): { username: string; name: string }[] => [{ username: 'author-1', name: 'Author One' }],
+      getAuthors: (): { username: string }[] => [{ username: 'author-1' }],
     }));
 
     // Expected result
@@ -23,6 +23,7 @@ describe('getSitemapEntries', () => {
       { priority: 1, links: [{ lang: 'en', url: '/en/post-2/' }] },
       {
         priority: 0.8,
+        changefreq: 'weekly',
         links: [
           { lang: 'fr', url: '/' },
           { lang: 'fr', url: '/fr/' },
@@ -31,18 +32,14 @@ describe('getSitemapEntries', () => {
       },
       {
         priority: 0.7,
+        changefreq: 'weekly',
         links: [
-          { lang: 'fr', url: '/fr/categories/php/' },
-          { lang: 'en', url: '/en/categories/php/' },
+          { lang: 'fr', url: '/fr/categories/all/' },
+          { lang: 'en', url: '/en/categories/all/' },
         ],
       },
-      {
-        priority: 0.7,
-        links: [
-          { lang: 'fr', url: '/fr/categories/architecture/' },
-          { lang: 'en', url: '/en/categories/architecture/' },
-        ],
-      },
+      { priority: 0.7, changefreq: 'weekly', links: [{ lang: 'en', url: '/en/categories/php/' }] },
+      { priority: 0.7, changefreq: 'weekly', links: [{ lang: 'fr', url: '/fr/categories/architecture/' }] },
       {
         priority: 0.5,
         links: [
@@ -50,14 +47,6 @@ describe('getSitemapEntries', () => {
           { lang: 'en', url: '/en/authors/author-1/' },
         ],
       },
-      {
-        priority: 0,
-        links: [
-          { lang: 'fr', url: '/fr/search/' },
-          { lang: 'en', url: '/en/search/' },
-        ],
-      },
-      { priority: 0, links: [{ lang: 'fr', url: '/404' }] },
     ];
 
     const sitemapEntries = getSitemapEntries();

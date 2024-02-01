@@ -46,7 +46,7 @@ très résistants à des techniques d'extraction de clef. En plus des attaques p
 Nous allons voir dans cet article l'export des clefs privées des sous-clefs dans une carte à puce. Pour cet exemple, je vais utiliser
 une Yubikey 4.
 
-### Yubikey, qu'est ce que c'est ?
+## Yubikey, qu'est ce que c'est ?
 
 Yubikey est un dispositif de la taille d'une clef usb classique. Cette clef permet d'effectuer la double authentification sur des sites
  web, tel que Google ou Github. Ainsi, si une personne est en possession de l'email et du mot de passe de la victime, l'attaquant ne pourra pas se connecter sans cette clef usb. C'est le principe de la double authentification, il faut être en possession de deux secrets.
@@ -57,7 +57,7 @@ En plus de ce principal protocole, elle en supporte d'autres : OpenPGP, TOTP, HO
 
 Celui qui va nous intéresser est OpenPGP.
 
-### Comment s'en procurer une
+## Comment s'en procurer une
 
 Je vous recommande de passer par [la boutique officielle](https://www.yubico.com/product/yubikey-4-series/)
 pour s'assurer de la provenance du produit. Nous sommes sur des produits liés à la sécurité, il est important de savoir d'où provient le produit acheté.
@@ -68,7 +68,7 @@ Par contre, elle n'est valable qu'une seule fois. Je vous recommande d'en comman
 Dernier point important, notre clef OpenPGP a été générée avec une taille de 4096 bits. Seule la version 4 de la Yubikey permet
 d'enregistrer des clefs de cette taille. La version 3 et la NEO, et ne supporte que des clefs de 3072 bits au maximum.
 
-### Installons les outils nécessaires
+## Installons les outils nécessaires
 
 Pour rappel, nous avons commencé notre génération de clef OpenPGP avec une machine sous Ubuntu 16.04 et GnuPG 2.1.11. Pour pouvoir
 faire l'export des clefs vers la Yubikey, nous devons installer des outils supplémentaires.
@@ -77,7 +77,7 @@ faire l'export des clefs vers la Yubikey, nous devons installer des outils suppl
 wilson@spaceship:~$ sudo apt-get install -y gnupg-agent pinentry-curses scdaemon pcscd yubikey-personalization libusb-1.0-0-dev
 ```
 
-### Personnaliser la Yubikey avec gpg
+## Personnaliser la Yubikey avec gpg
 
 Avant d'utiliser la Yubikey, vérifer que la bande de garantie ne soit pas altérée. Si c'est le cas, ne pas l'utiliser.
 
@@ -176,7 +176,7 @@ gpg/card> quit
 
 La clef est a présent configurée. Nous pouvons exporter les clefs privées des sous-clefs dans la carte à puce.
 
-### Exporter les clefs vers la Yubikey
+## Exporter les clefs vers la Yubikey
 
 L'objectif est de déplacer les clefs secrètes des sous-clefs dans la Yubikey. Pour cela, nous allons
 séléctionner chaque sous-clef une par une avec la commande `key n` et la déplacer dans la carte avec `keytocard`.
@@ -421,7 +421,7 @@ Nous voyons qu'il y a le chevron `>` devant `ssb`. Comme vu plus haut, cela indi
 trousseau de clefs. Mais juste en dessous, il y a une ligne supplémentaire qui permet de dire à gpg où trouver la clef secrète.
 Ici, nous avons le numéro de série de la Yubikey `card-no: 0006 06476495`. Ce numéro de série est également imprimé sur la clef physiquement. Si vous avez plusieurs Yubikey, il sera facile de retrouver celle que vous cherchez.
 
-### Conclusion
+## Conclusion
 
 À travers ces deux premiers articles, nous avons couvert la création d'une clef OpenPGP et l'exportation des secrets sur une carte à puce. L'utilisation d'une carte à puce permet une protection supplémentaire contre le vol des clefs secrètes. Il ne suffira pas de pirater l'ordinateur pour les voler, mais il sera nécessaire de voler physiquement la clef et le code PIN associé pour utiliser les clefs secrètes. De plus, comme vu en introduction, la clef secrète ne peut être extraite. Notre clef est bien protégée, sauf contre le facteur humain qui reste la seule menace.
 
@@ -435,7 +435,7 @@ Dans un prochain article, nous allons mettre en place une stratégie de sauvegar
 * [OpenPGP - Stockage sur le long terme de clefs (partie 3)]({BASE_URL}/fr/openpgp-stockage-froid-clefs-partie-3/)
 * [OpenPGP - J'ai participé à une fête de la signature des clefs (partie 4)]({BASE_URL}/fr/openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/)
 
-### Resources
+## Resources
 - [wikipedia - Universal 2nd Factor](https://en.wikipedia.org/wiki/Universal_2nd_Factor)
 - [fidoalliance -Universal 2nd Factor (U2F) Overview](https://fidoalliance.org/specs/fido-u2f-overview-ps-20150514.pdf)
 - [YubiKey 4 series](https://www.yubico.com/products/yubikey-hardware/yubikey4/)
@@ -449,6 +449,6 @@ Dans un prochain article, nous allons mettre en place une stratégie de sauvegar
 - [Yubico has replaced all open-source components](https://www.reddit.com/r/linux/comments/4ls94a/yubico_has_replaced_all_opensource_components/)
 - [Cover image source](https://www.yubico.com/press/images/)
 
-### Remarques
+## Remarques
 Ce tutoriel utilise une Yubikey pour le stockage des secrets. La Yubikey est la clef la plus répandue dans le grand public, notamment
 pour la fonctionnalité de second facteur d'authentification. Il existe d'autre clefs supportant OpenPGP comme la [NitroKey](https://www.nitrokey.com/). Contrairement à la Yubikey, la NitroKey est open-source. Une sécurité avec du matériel fermé et propriétaire n'est pas une solution viable sur le long terme. C'est également contraire à l'esprit OpenPGP qui se veut être ouvert. Cepedant, j'ai fait le choix de la Yubikey pour sa facilité de mise en oeuvre et sa capacité à faire de la double authentification.

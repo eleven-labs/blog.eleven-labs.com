@@ -19,7 +19,7 @@ keywords:
 Aujourd'hui, petit tuto pour installer MongoDB pour php5. Pour cela plusieurs étapes sont nécessaires aussi bien sur le serveur que sur la partie software.
 Sur ce tuto nous travaillons sur un ubuntu 10.10 lors de l'installation des différents softwares.
 
-### Installation de MongoDB
+## Installation de MongoDB
 
 Pour installer le serveur Mongo la meilleure solution est d'utiliser le package mongo fait pour ubuntu.
 
@@ -52,7 +52,7 @@ Done.
 mongodb start/running, process 1937
 ```
 
-### Installation d'un "phpmyadmin"
+## Installation d'un "phpmyadmin"
 
 Maintenant que le serveur mongo est lancé, il faut installer un "phpmyadmin" pour pouvoir interagir avec les données de MongoDB. Il existe de nombreux softwares pour cela:
 
@@ -113,7 +113,7 @@ Pour la plupart, vous devez avoir le message suivant sur le navigateur:
 > To make things right, you must install php_mongo module.
 > [Here](http://www.php.net/manual/en/mongo.installation.php) for installation documents on PHP.net.
 
-### Installation de mongo pour php
+## Installation de mongo pour php
 
 Cela reste très simple, lancer la commande
 

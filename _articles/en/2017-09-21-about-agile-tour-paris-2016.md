@@ -25,7 +25,7 @@ In this post, I talk about the four conferences I enjoyed the most.
 
 ----------
 
-### "Le code de la Route Agile" by Virgile Delécolle and Gérard Danièle
+## "Le code de la Route Agile" by Virgile Delécolle and Gérard Danièle
 
 The first conference was about the “code de la Route Agile”, or “Agile’s Highway code” presented by Virgile Delécolle and Gérard Danièle. We had to answer to 30 questions about agility.
 It was very interactive: we were all connected in a private room on Kahoot, and we answered directly on our phones. We were able to test our knowledge on agility, via more or less serious questions.
@@ -35,7 +35,7 @@ I ranked 22/52 \o/
 
 ----------
 
-### "CoP Agile .... quelques clés" (“CoP Agile… some advice”)by Jean-Claude Grosjean
+## "CoP Agile .... quelques clés" (“CoP Agile… some advice”)by Jean-Claude Grosjean
 A CoP, as for Communauty of Practices, is a group of people where the members ought to commit themselves regularly in activities of knowledge-sharing and learning based on common interests (concept by Etienne Wenger).
 
 The presentation focused on two parts, WHY and HOW.
@@ -48,7 +48,7 @@ You can find his slides [here](https://www.slideshare.net/jcgrosjean/une-communa
 
 ----------
 
-### "Kata of systemic representations", by Arnaud Gervais
+## "Kata of systemic representations", by Arnaud Gervais
 
 If I have to retain only one thing of this day, it is "If you do not know which conference to choose, choose the one which title you do not understand.” This conference was my favorite of all.
 
@@ -61,7 +61,7 @@ This workshop was very interesting because it allowed us to map problems, to wor
 
 ----------
 
-### "JTBD", by Ricardo Tome
+## "JTBD", by Ricardo Tome
 This workshop was presented by Ricardo Tome, who is Lean Enterprise Coach at HSBC London and Agile Coach in a London startup, and Speaker "where people want him".
 The JTBD is the acronym of Job To Be Done. It is a very advanced technique, which states that one should not think about the need, but the 'job'. The subtlety was not very easy to grasp at the beginning!
 There are three different jobs, 'functional job', 'personal job' and 'social job'. If the two first are quite understandable and findable, the latter is the most difficult one to find, but also the most important because it is the one that plays with the emotions. Companies that understand the social job of their product tend to have more success (eg. Apple)

@@ -15,7 +15,7 @@ keywords:
   - closure
 ---
 
-### Introduction
+## Introduction
 
 Salut les Astronautes, aujourd'hui on va continuer dans notre lancée sur le mobile, toujours en NATIF.
 
@@ -37,9 +37,9 @@ Dans le monde du développement iOS, comme vous avez pu le comprendre, on peut u
 
 Sur ces 2 composants par exemple, pas possible d'utiliser de blocks/closures, et on doit passer par un bon delegate à l'ancienne. Dans l'absolu, ce n'est pas très gênant, sauf dans le cas où on se retrouve avec plusieurs de ces composants sur le même écran. Les méthodes deviennent alors énormes et cela devient compliqué de faire du code élégant. Ce que je vous propose ici est une petite solution que je trouve assez propre.
 
-### Mise en situation
+## Mise en situation
 
-Comme dans les deux articles précédents, on va juste faire un Appel GET sur une URL  donnée et avoir un système qui nous prévient en cas de succès comme d'erreur. On va aller un peu plus vite que dans le premier article, car ce sont des notions que vous devez déjà maîtriser.
+Comme dans les deux articles précédents, on va juste faire un Appel GET sur une URL  donnée et avoir un système qui nous prévient en cas de succès comme d'erreur. On va aller un peu plus vite que dans le premier article, car ce sont des notions que vous devez déjà maîtriser.
 
 C'est parti pour le code !
 
@@ -51,7 +51,7 @@ On va agir en 3 étapes:
 - Créer des blocks/closures
 - Créer une classe qui hérite du protocole et qui a nos 2 blocks/closures en variables.
 
-##### Objective-C
+### Objective-C
 
 ```Objective-C
 typedef void (^successBlock)();
@@ -99,7 +99,7 @@ On va maintenant implémenter la classe qui va hériter du protocole. Elle va do
 @end
 ```
 
-Ensuite, on code la classe **RequestManager** que vous devez commencer à connaître
+Ensuite, on code la classe **RequestManager** que vous devez commencer à connaître
 
 ```Objective-C
 @implementation RequestManagerObjC
@@ -148,7 +148,7 @@ Puis on va faire une méthode pour appeler notre webservice
 ```
 
 On va un peu regarder ensemble ce que l'on a codé.
-- On a instancié notre **Manager,** qui va appeler le webservice
+- On a instancié notre **Manager,** qui va appeler le webservice
 - On a définit nos deux **blocks/closures**
 - On a instancié notre **Delegate**
 - On a assigné nos deux **blocks/closures**
@@ -157,7 +157,7 @@ On va un peu regarder ensemble ce que l'on a codé.
 
 Je vous donne le code Swift pour les plus impatients
 
-##### Swift
+### Swift
 
 ```Swift
 protocol RequesterDelegateSwift {
@@ -224,7 +224,7 @@ Si maintenant j'appelle la méthode callWebService, vu le dummy code que l'on a 
 
 **Mais pourquoi faire tout ça ?**
 
-En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un **Delegate** ou des **blocks/closures** comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...
+En effet, pourquoi faire tout ça, alors que dans notre cas, on pouvait juste utiliser un **Delegate** ou des **blocks/closures** comme dans le premier article ? Cela complexifie le code, et on a l'impression de faire les choses deux fois...
 Comme je vous l'ai dit au début de l'article, cette solution vient pour un besoin assez spécifique. Celui de rendre un **Delegate** plus flexible quand on est obligé de passer par ce design pattern.
 
 **Problèmes soulevés**
@@ -240,7 +240,7 @@ Comme je vous l'ai dit au début de l'article, cette solution vient pour un beso
 - Des méthodes réduites
 - Une gestion plus fine des retours du **Delegate**
 
-### Conclusion
+## Conclusion
 
 Cette solution n'est pas parfaite, mais reste assez élégante et n'est pas trop lourde à mettre en place.
 Après, je vous laisse tester et me dire ce que vous en pensez dans les commentaires.
