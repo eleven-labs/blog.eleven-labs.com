@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: '2024-02-16'
 slug: quelques-conseils-pour-optimiser-votre-environnement-de-travail-sous-linux
-title: 'Quelques Conseils pour Optimiser Votre Environnement de Travail sous Linux'
+title: 'Quelques conseils pour optimiser votre environnement de travail sous Linux'
 excerpt: >-
   Travailler efficacement sur Linux va bien au-delà des simples commandes du terminal. Voici quelques conseils pour optimiser votre environnement de travail et améliorer votre expérience utilisateur.
 categories: []
@@ -21,13 +21,11 @@ keywords:
   - optimisation
 ---
 Dans cet article, je vais partager quelques conseils pour optimiser votre environnement de travail sous Linux. Tout ce que nous allons aborder ici représente des éléments que j'ai personnellement mis en place et que j'utilise quotidiennement.
-
 Nous explorerons la configuration de plusieurs accès **`SSH`**, la personnalisation de notre Interface de Ligne de Commande **`CLI`**, et comment abandonner l'utilisation de **`zsh`** et **`Oh My Zsh`**.
 
 ## Configuration de plusieurs accès SSH
 
 Pour ce premier conseil, nous allons nous intéresser à **`SSH`**. Il vous est peut-être déjà arrivé d'avoir plusieurs accès **`SSH`** avec des informations de connexion différentes telles que l'adresse du serveur, l'utilisateur, les clés privées et publiques, etc.
-
 Et vous avez probablement utilisé **`SSH`** en spécifiant toutes les informations de connexion, comme dans l'exemple ci-dessous :
 
 ```bash
@@ -45,7 +43,6 @@ ssh -i path-to-ssh-public-key-server-3 user-server-3@host-server-1:port-server-3
 ```
 
 Si vous êtes un peu paresseux, vous avez peut-être configuré des **`aliases`**. C'est bien, mais non optimal !
-
 Nous allons voir comment configurer notre client **`SSH`** de manière à simplifier tout cela. Allez, c'est parti !
 
 Tout d'abord, vous allez créer le fichier `.ssh/config` avec les permissions suivantes : `0600` ou, si vous préférez, `- rw- --- ---`. Ensuite, vous allez l'éditer avec votre éditeur préféré : **`vim`**. 😉
@@ -89,7 +86,7 @@ Host my-private-server-2
   IdentityFile ~/.ssh/id_my-private-server.com
 ```
 
-Ici, pour chaque bloc de configuration, nous définissons les propriétés `Host`, `User`, `HostName`, `IndentiyFile` et, dans le cas de **Gitlab**, `PreferredAuthentications`.
+Ici, pour chaque bloc de configuration, nous définissons les propriétés `Host`, `User`, `HostName`, `IdentityFile` et, dans le cas de **Gitlab**, `PreferredAuthentications`.
 
 Et voilà ! Si nous testons la connexion avec **Github** et **Gitlab**, cela donne ceci :
 
@@ -147,23 +144,20 @@ Host my-private-server-2 my-private-server-2.com
 ```
 
 Cela évite de répéter les propriétés dans chaque bloc tout en laissant la possibilité d'en réécrire une.
-
-Et voilà, maintenant vous savez comment configurer votre client **`SSH`**. Si vous souhaitez aller plus loin, voici la documentation complète de ssh_config : [man openBSD ssh_config](http://man.openbsd.org/OpenBSD-current/man5/ssh_config.5).
+Et voilà, maintenant vous savez comment configurer votre client **`SSH`**. 
+Si vous souhaitez aller plus loin, voici la documentation complète de ssh_config : [man openBSD ssh_config](http://man.openbsd.org/OpenBSD-current/man5/ssh_config.5).
 
 ## Configurer son CLI
 
 Avant d'entrer dans le vif du sujet, clarifions certaines définitions.
 
 Un **`terminal`** est un appareil physique situé à l'extrémité d'un réseau informatique (téléphone, ordinateur).
-
 Un **`émulateur de terminal`** est le logiciel qui nous permet d'exécuter des lignes de commande pour interagir avec le système d'exploitation. Par souci de simplicité, on l'appelle couramment un **`terminal`**.
-
 Un **`shell`** est le logiciel qui fournit l'interface utilisateur du système d'exploitation. Littéralement, c'est la coquille (**`shell`**) du noyau (**`kernel`**) Linux. On le trouve sous deux formes :
-
 - le **`CLI (Command Line Interface)`** qui est une interface en ligne de commande.
 - le **`GUI (Graphical User Interface)`** qui est une interface graphique.
 
-Donc, pour schématiser tout ça, on a le **`terminal`** qui contient le **`kernel`** Linux. Le **`kernel`** fournit un **shell** pour communiquer avec lui. Le **`shell`** peut être soit une interface graphique **`GUI`** ou soit une interface en ligne de commande **`CLI`**. Et l'émulateur de terminal est un logiciel graphique qui permet d'exécuter des lignes de commande.
+Donc, pour schématiser tout ça, on a le **`terminal`** qui contient le **`kernel`** Linux. Le **`kernel`** fournit un **shell** pour communiquer avec lui. Le **`shell`** peut être soit une interface graphique **`GUI`** soit une interface en ligne de commande **`CLI`**. Et l'émulateur de terminal est un logiciel graphique qui permet d'exécuter des lignes de commande.
 
 ```mermaid
 flowchart LR
@@ -183,13 +177,10 @@ flowchart LR
 ```
 
 Voilà le petit dépoussiérage fait. Bon pour l'**`émulateur de terminal`**, nous utiliserons la forme simple et courante qui est **`terminal`**.
-
 Maintenant, passons au vif du sujet : la configuration de son **`CLI`**. Nous allons découvrir les fichiers de configuration ainsi que des bonnes pratiques pour ne pas perdre votre configuration.
 
 Sur les systèmes Linux, il y a deux fichiers à connaître : **`~/.profile`** (ou **`~/.bash_profile`**) et **`~/.bashrc`**. Et voici à quoi ils servent.
-
 Le fichier **`~/.profile`** (ou **`~/.bash_profile`** selon les distributions Linux) est exécuté lors de l'ouverture d'un login-shell. Ce qui signifie que ce fichier est exécuté uniquement lors de l'ouverture d'un shell par un utilisateur connecté.
-
 Le fichier **`~/.bashrc`** est exécuté lors de l'ouverture d'un non-login shell, contrairement au fichier **`~/.profile`**. Il est utilisé pour les utilisateurs non connectés.
 
 Lorsque vous démarrez un terminal, le fichier **`~/.profile`** est chargé. Et dans le fichier **`~/.profile`**, vous trouvez les lignes suivantes qui indiquent que le fichier **.bashrc** est chargé s'il est trouvé. Voici ces quelques lignes :
@@ -284,7 +275,7 @@ Comme vous pouvez le voir, il n'y a rien de très compliqué, mais plutôt une l
 
 Dans la même logique de découpage, on peut faire la même chose avec les alias bash. Effectivement, dans le fichier **`~/.bashrc`**, nous avons quelques lignes qui chargent le fichier **~/.bash_aliases**. Et comme pour notre fichier précédent, nous pouvons le versionner et retrouver très rapidement une configuration grâce à un **gist** de Github ou un **snippets** de Gitlab.
 
-Si l'on reprend le graphique ci-dessus en incluant ce fichier, voilà ce que ça donne:
+Si l'on reprend le graphique ci-dessus en incluant ce fichier, voilà ce que ça donne :
 
 ```mermaid
 flowchart LR
@@ -305,13 +296,13 @@ flowchart LR
     end
 ```
 
-Et voilà pour la configuration de notre **`CLI`**. Rien de très compliqué, mais une logique bien pensée.
+Et voilà pour la configuration de notre **`CLI`**.
 
 ## Dites stop à **zsh** et **Oh My Zsh**
 
 Il est fréquent de voir beaucoup de personnes utiliser **`zsh`** et **`Oh My Zsh`** sans vraiment comprendre ce que c'est.
 
-Alors, **`zsh`** ou **`Z shell`** est un shell en ligne de commande (**`CLI`**) comme **`sh`**, **`bash`**, **`ksh`**, **`ash`**, et bien d'autres. **`zsh`** ajoute des fonctionnalités à votre **`CLI`**, notamment pour la complétion des commandes, l'ajout de fonctions, et bien plus encore.
+Alors, **`zsh`** ou **`Z shell`** est un shell en lignes de commande (**`CLI`**) comme **`sh`**, **`bash`**, **`ksh`**, **`ash`**, et bien d'autres. **`zsh`** ajoute des fonctionnalités à votre **`CLI`**, notamment pour la complétion des commandes, l'ajout de fonctions, et bien plus encore.
 
 Pensez-vous réellement exploiter les fonctionnalités de **`zsh`** ? Je doute que cela soit le cas ! De surcroît, l'utilisation de **`zsh`** peut entraîner des problèmes de portabilité lors de la rédaction de scripts shell, car vous introduisez des fonctionnalités spécifiques à votre interface en ligne de commande (**`CLI`**) que tout le monde ne possède pas. C'est un peu comparable à créer un programme conçu pour un système Linux, mais destiné aux utilisateurs de Windows. La nécessité d'installer et d'utiliser **`zsh`** se présente principalement si vous optez pour **`Oh My Zsh`**.
 
@@ -329,7 +320,7 @@ Les plugins **`Oh My Zsh`** définissent la plupart du temps des alias que vous 
 
 Alors, regardez les commandes que vous utilisez le plus et créez vos propres alias dans le fichier `~/.bash_aliases`.
 
-Pour rappel, un alias se définit comme ceci:
+Pour rappel, un alias se définit comme ceci :
 
 ```bash
 alias my_aliase_name='my_command and my args --or options'
@@ -356,8 +347,7 @@ prompt_status() {
 ```
 
 Si vous n'êtes pas un professionnel du script, alors [starship.rs](https://starship.rs/) est là pour vous. **`Starship`** est un programme développé en Rust, disponible sur Linux, macOS et Windows, et facilement installable et configurable avec un fichier `TOML`.
-
-Pour Linux, pour installer **`Starship`**, il vous suffira d'exécuter quelques commandes:
+Pour Linux, pour installer **`Starship`**, il vous suffira d'exécuter quelques commandes :
 
 ```bash
 curl -sS https://starship.rs/install.sh | sh
@@ -379,8 +369,7 @@ fi
 
 Il faudra aussi télécharger les packs d'icônes [nerdfront](https://www.nerdfonts.com/) si vous le souhaitez.
 
-Suite à cela, il ne vous restera qu'à créer et implémenter le fichier **`~/.config/starship.toml`**, qui sera aussi possible de versionner.
-
+Suite à cela, il ne vous restera qu'à créer et implémenter le fichier **`~/.config/starship.toml`**, qu'il sera aussi possible de versionner.
 Voici un exemple de configuration pour l'utilisation de la mémoire, l'horloge, le temps d'exécution d'une commande et le formatage du répertoire.
 
 ```toml
@@ -407,7 +396,7 @@ truncate_to_repo = true
 format = "[$path]($style)[$lock_symbol]($lock_style) "
 ```
 
-Et voilà à quoi pourrait ressembler votre terminal:
+Et voilà à quoi pourrait ressembler votre terminal :
 
 ![terminal]({BASE_URL}/imgs/articles/2024-02-16-quelques-conseils-pour-optimiser-votre-environnement-de-travail-sous-linux/terminal.png)
 
