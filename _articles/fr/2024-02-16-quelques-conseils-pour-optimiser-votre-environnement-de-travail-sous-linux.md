@@ -22,13 +22,13 @@ keywords:
 ---
 Dans cet article, je vais partager quelques conseils pour optimiser votre environnement de travail sous Linux. Tout ce que nous allons aborder ici représente des éléments que j'ai personnellement mis en place et que j'utilise quotidiennement.
 
-Nous explorerons la configuration de plusieurs accès `**SSH**`, la personnalisation de notre Interface de Ligne de Commande `**CLI**`, et comment abandonner l'utilisation de `**zsh**` et `**Oh My Zsh**`.
+Nous explorerons la configuration de plusieurs accès **`SSH`**, la personnalisation de notre Interface de Ligne de Commande **`CLI`**, et comment abandonner l'utilisation de **`zsh`** et **`Oh My Zsh`**.
 
 ## Configuration de plusieurs accès SSH
 
 Pour ce premier conseil, nous allons nous intéresser à **`SSH`**. Il vous est peut-être déjà arrivé d'avoir plusieurs accès **`SSH`** avec des informations de connexion différentes telles que l'adresse du serveur, l'utilisateur, les clés privées et publiques, etc.
 
-Et vous avez probablement utilisé **`SSH`** en spécifiant toutes les informations de connexion, comme dans l'exemple ci-dessous :ssh
+Et vous avez probablement utilisé **`SSH`** en spécifiant toutes les informations de connexion, comme dans l'exemple ci-dessous :
 
 ```bash
 ssh -i path-to-ssh-public-key user@host:port
@@ -48,11 +48,11 @@ Si vous êtes un peu paresseux, vous avez peut-être configuré des **`aliases`*
 
 Nous allons voir comment configurer notre client **`SSH`** de manière à simplifier tout cela. Allez, c'est parti !
 
-Tout d'abord, vous allez créer le fichier `.ssh/config` avec les permissions suivantes : `0600` ou, si vous préférez, `- rw- --- ---`. Ensuite, vous allez l'éditer avec votre éditeur préféré : **`vim`.**😉
+Tout d'abord, vous allez créer le fichier `.ssh/config` avec les permissions suivantes : `0600` ou, si vous préférez, `- rw- --- ---`. Ensuite, vous allez l'éditer avec votre éditeur préféré : **`vim`**. 😉
 
 Dans ce fichier, nous allons ajouter des blocs de configuration **`ssh`** comme suit :
 
-```
+```text
 Host <<nom-super-nom-d-host>>
   Property value
   Property value
@@ -60,7 +60,7 @@ Host <<nom-super-nom-d-host>>
 
 Vous voyez, ce n'est pas compliqué du tout ! Prenons un exemple plus concret avec un compte **`Gitlab`** auto-hébergé, un compte **`Gitlab`**, un compte **`Github`**, et deux accès à un serveur virtuel :
 
-```
+```text
 Host my-private-gitlab.com
   PreferredAuthentications publickey
   User git
@@ -89,9 +89,9 @@ Host my-private-server-2
   IdentityFile ~/.ssh/id_my-private-server.com
 ```
 
-Ici, pour chaque bloc de configuration, nous définissons les propriétés `Host`, `User`, `HostName`, `IndentiyFile` et, dans le cas de `**Gitlab**`, `PreferredAuthentications`.
+Ici, pour chaque bloc de configuration, nous définissons les propriétés `Host`, `User`, `HostName`, `IndentiyFile` et, dans le cas de **Gitlab**, `PreferredAuthentications`.
 
-Et voilà ! Si nous testons la connexion avec `**Github**` et `**Gitlab**`, cela donne ceci :
+Et voilà ! Si nous testons la connexion avec **Github** et **Gitlab**, cela donne ceci :
 
 ```bash
 # Test de connexion github
@@ -116,7 +116,7 @@ Tout fonctionne bien, et on peut voir que la propriété `Host` agit comme un "a
 
 Pour aller encore plus loin, vous pouvez avoir des configurations partagées en découpant les blocs de configuration. Voici un exemple :
 
-```
+```text
 Host my-private-gitlab github gitlab my-private-gitlab.com github.com gitlab.com
   User git
 
@@ -186,7 +186,7 @@ Voilà le petit dépoussiérage fait. Bon pour l'**`émulateur de terminal`**, n
 
 Maintenant, passons au vif du sujet : la configuration de son **`CLI`**. Nous allons découvrir les fichiers de configuration ainsi que des bonnes pratiques pour ne pas perdre votre configuration.
 
-Sur les systèmes Linux, il y a deux fichiers à connaître : `**~/.profile**` (ou **`~/.bash_profile`**) et **`~/.bashrc`**. Et voici à quoi ils servent.
+Sur les systèmes Linux, il y a deux fichiers à connaître : **`~/.profile`** (ou **`~/.bash_profile`**) et **`~/.bashrc`**. Et voici à quoi ils servent.
 
 Le fichier **`~/.profile`** (ou **`~/.bash_profile`** selon les distributions Linux) est exécuté lors de l'ouverture d'un login-shell. Ce qui signifie que ce fichier est exécuté uniquement lors de l'ouverture d'un shell par un utilisateur connecté.
 
@@ -220,7 +220,7 @@ flowchart LR
     end
 ```
 
-Maintenant que l'on a vu le fonctionnement, voici une "bonne pratique", du moins la pratique que j'utilise pour pouvoir réutiliser ma configuration en cas de réinstallation. Je crée un fichier **`~/.bashrc`** personnalisé dans lequel je fais la configuration de mes différents programmes, et que j'inclus dans mon `**~/.profile**`.
+Maintenant que l'on a vu le fonctionnement, voici une "bonne pratique", du moins la pratique que j'utilise pour pouvoir réutiliser ma configuration en cas de réinstallation. Je crée un fichier **`~/.bashrc`** personnalisé dans lequel je fais la configuration de mes différents programmes, et que j'inclus dans mon **`~/.profile`**.
 
 ```bash
 if [ -n "$BASH_VERSION" ]; then
@@ -305,7 +305,7 @@ flowchart LR
     end
 ```
 
-Et voilà pour la configuration de notre `**CLI**`. Rien de très compliqué, mais une logique bien pensée.
+Et voilà pour la configuration de notre **`CLI`**. Rien de très compliqué, mais une logique bien pensée.
 
 ## Dites stop à **zsh** et **Oh My Zsh**
 
@@ -313,9 +313,9 @@ Il est fréquent de voir beaucoup de personnes utiliser **`zsh`** et **`Oh My Zs
 
 Alors, **`zsh`** ou **`Z shell`** est un shell en ligne de commande (**`CLI`**) comme **`sh`**, **`bash`**, **`ksh`**, **`ash`**, et bien d'autres. **`zsh`** ajoute des fonctionnalités à votre **`CLI`**, notamment pour la complétion des commandes, l'ajout de fonctions, et bien plus encore.
 
-Pensez-vous réellement exploiter les fonctionnalités de **`zsh`** ? Je doute que cela soit le cas ! De surcroît, l'utilisation de **`zsh`** peut entraîner des problèmes de portabilité lors de la rédaction de scripts shell, car vous introduisez des fonctionnalités spécifiques à votre interface en ligne de commande (`**CLI**`) que tout le monde ne possède pas. C'est un peu comparable à créer un programme conçu pour un système Linux, mais destiné aux utilisateurs de Windows. La nécessité d'installer et d'utiliser **`zsh`** se présente principalement si vous optez pour **`Oh My Zsh`**.
+Pensez-vous réellement exploiter les fonctionnalités de **`zsh`** ? Je doute que cela soit le cas ! De surcroît, l'utilisation de **`zsh`** peut entraîner des problèmes de portabilité lors de la rédaction de scripts shell, car vous introduisez des fonctionnalités spécifiques à votre interface en ligne de commande (**`CLI`**) que tout le monde ne possède pas. C'est un peu comparable à créer un programme conçu pour un système Linux, mais destiné aux utilisateurs de Windows. La nécessité d'installer et d'utiliser **`zsh`** se présente principalement si vous optez pour **`Oh My Zsh`**.
 
-Si vous utilisez `**Oh My Zsh**`, alors l'utilisation de **`zsh`** est obligatoire. **`Oh My Zsh`** est un framework pour la gestion de la configuration de **`zsh`**, et il utilise certaines fonctionnalités spécifiques de **`zsh`** pour fournir des fonctionnalités étendues, des thèmes et des plugins. Donc, dans ce cas, vous n'avez pas vraiment le choix et vous devez utiliser **`zsh`**. Cependant, si vous préférez rester avec Bash ou tout autre shell, vous n'avez pas besoin d'installer **`zsh`** ou **`Oh My Zsh`**. C'est une question de préférence personnelle et de besoins spécifiques.
+Si vous utilisez **`Oh My Zsh`**, alors l'utilisation de **`zsh`** est obligatoire. **`Oh My Zsh`** est un framework pour la gestion de la configuration de **`zsh`**, et il utilise certaines fonctionnalités spécifiques de **`zsh`** pour fournir des fonctionnalités étendues, des thèmes et des plugins. Donc, dans ce cas, vous n'avez pas vraiment le choix et vous devez utiliser **`zsh`**. Cependant, si vous préférez rester avec Bash ou tout autre shell, vous n'avez pas besoin d'installer **`zsh`** ou **`Oh My Zsh`**. C'est une question de préférence personnelle et de besoins spécifiques.
 
 Mais pourquoi utiliser **`Oh My Zsh`** ? Pour avoir 300 alias et n'en utiliser que deux ? Pour personnaliser votre terminal ?
 
@@ -323,7 +323,7 @@ Je vais vous montrer deux choses à faire qui vous permettront d'accomplir la m�
 
 ### **Utilisez vos alias**
 
-J'en ai parlé un peu plus tôt. Mais si vous voulez personnaliser votre `**CLI**` avec des alias, il vous suffit de créer un fichier `~/.bash_aliases` et vous pouvez créer vos propres alias.
+J'en ai parlé un peu plus tôt. Mais si vous voulez personnaliser votre **`CLI`** avec des alias, il vous suffit de créer un fichier `~/.bash_aliases` et vous pouvez créer vos propres alias.
 
 Les plugins **`Oh My Zsh`** définissent la plupart du temps des alias que vous devez apprendre et dont vous ne savez pas réellement ce qu'ils font. Regardez par vous-même le plugin [history](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/history/history.plugin.zsh).
 
@@ -355,9 +355,9 @@ prompt_status() {
 }
 ```
 
-Si vous n'êtes pas un professionnel du script, alors [starship.rs](https://starship.rs/) est là pour vous. `**Starship**` est un programme développé en Rust, disponible sur Linux, macOS et Windows, et facilement installable et configurable avec un fichier `TOML`.
+Si vous n'êtes pas un professionnel du script, alors [starship.rs](https://starship.rs/) est là pour vous. **`Starship`** est un programme développé en Rust, disponible sur Linux, macOS et Windows, et facilement installable et configurable avec un fichier `TOML`.
 
-Pour Linux, pour installer `**Starship**`, il vous suffira d'exécuter quelques commandes:
+Pour Linux, pour installer **`Starship`**, il vous suffira d'exécuter quelques commandes:
 
 ```bash
 curl -sS https://starship.rs/install.sh | sh
@@ -413,7 +413,7 @@ Et voilà à quoi pourrait ressembler votre terminal:
 
 [La documentation](https://starship.rs/config/) est très riche, et il y a de nombreuses possibilités avec différents modules déjà développés.
 
-# **Conclusion**
+## **Conclusion**
 
 Voilà pour quelques conseils qui peuvent améliorer votre expérience de travail sur votre terminal.
 
@@ -421,10 +421,9 @@ Il reste encore beaucoup à explorer pour créer un environnement de travail exc
 
 Même si vous n'êtes pas un barbu dans une cave sombre, vous pouvez reprendre le contrôle de votre terminal. 😜
 
-# Sources
+## Sources
 
-- https://man.openbsd.org/OpenBSD-current/man5/ssh_config.5
-- https://www.codequoi.com/difference-entre-terminal-console-et-shell/
-- https://www.malekal.com/bashrc-bash-profile-differences-linux/
-- https://www.it-connect.fr/bashrc-et-bash_profile-quelle-difference/
-- https://talents.altavia-group.com/jobs/3525308-platform-engineering-lead-f-h
+- [ssh_config - man.openbsd.org](https://man.openbsd.org/OpenBSD-current/man5/ssh_config.5)
+- [La différence entre le terminal, la console et le shell - codequoi.com](https://www.codequoi.com/difference-entre-terminal-console-et-shell/)
+- [Qu’est-ce que le fichier .bashrc, .bash_profile et .profile sous Linux et les différences - malekal.com](https://www.malekal.com/bashrc-bash-profile-differences-linux/)
+- [.bashrc et .bash_profile, quelle différence ? - it-connect.fr](https://www.it-connect.fr/bashrc-et-bash_profile-quelle-difference/)
