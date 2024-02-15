@@ -5,7 +5,7 @@ date: '2024-02-16'
 slug: quelques-conseils-pour-optimiser-votre-environnement-de-travail-sous-linux
 title: 'Quelques conseils pour optimiser votre environnement de travail sous Linux'
 excerpt: >-
-  Travailler efficacement sur Linux va bien au-delà des simples commandes du terminal. Voici quelques conseils pour optimiser votre environnement de travail et améliorer votre expérience utilisateur.
+  Travailler efficacement sous Linux va bien au-delà des simples commandes du terminal. Voici quelques conseils pour optimiser votre environnement de travail et améliorer votre expérience utilisateur.
 categories: []
 authors:
   - nicolas
@@ -21,7 +21,7 @@ keywords:
   - optimisation
 ---
 Dans cet article, je vais partager quelques conseils pour optimiser votre environnement de travail sous Linux. Tout ce que nous allons aborder ici représente des éléments que j'ai personnellement mis en place et que j'utilise quotidiennement.
-Nous explorerons la configuration de plusieurs accès **`SSH`**, la personnalisation de notre Interface de Ligne de Commande **`CLI`**, et comment abandonner l'utilisation de **`zsh`** et **`Oh My Zsh`**.
+Nous explorerons la configuration de plusieurs accès **`SSH`**, la personnalisation de notre Interface de Ligne de Commande **`CLI`** avec **`bash`**, et comment abandonner l'utilisation de **`zsh`** et **`Oh My Zsh`**.
 
 ## Configuration de plusieurs accès SSH
 
@@ -122,7 +122,7 @@ Host my-private-gitlab gitlab my-private-gitlab.com gitlab.com
 
 Host my-private-gitlab my-private-gitlab.com
   HostName my-private-gitlab.com
-  IdentityFile ~/.ssh/id_git.maisonsdumonde.net
+  IdentityFile ~/.ssh/id_my-private-gitlab.com
 
 Host github github.com
   HostName github.com
@@ -144,7 +144,7 @@ Host my-private-server-2 my-private-server-2.com
 ```
 
 Cela évite de répéter les propriétés dans chaque bloc tout en laissant la possibilité d'en réécrire une.
-Et voilà, maintenant vous savez comment configurer votre client **`SSH`**. 
+Et voilà, maintenant vous savez comment configurer votre client **`SSH`**.
 Si vous souhaitez aller plus loin, voici la documentation complète de ssh_config : [man openBSD ssh_config](http://man.openbsd.org/OpenBSD-current/man5/ssh_config.5).
 
 ## Configurer son CLI
@@ -157,7 +157,7 @@ Un **`shell`** est le logiciel qui fournit l'interface utilisateur du système d
 - le **`CLI (Command Line Interface)`** qui est une interface en ligne de commande.
 - le **`GUI (Graphical User Interface)`** qui est une interface graphique.
 
-Donc, pour schématiser tout ça, on a le **`terminal`** qui contient le **`kernel`** Linux. Le **`kernel`** fournit un **shell** pour communiquer avec lui. Le **`shell`** peut être soit une interface graphique **`GUI`** soit une interface en ligne de commande **`CLI`**. Et l'émulateur de terminal est un logiciel graphique qui permet d'exécuter des lignes de commande.
+Donc, pour schématiser tout ça, on a le **`terminal`** qui contient le **`kernel`** Linux. Le **`kernel`** fournit un **`shell`** pour communiquer avec lui. Le **`shell`** peut être soit une interface graphique **`GUI`** soit une interface en ligne de commande **`CLI`**. Et l'émulateur de terminal est un logiciel graphique qui permet d'exécuter des lignes de commande.
 
 ```mermaid
 flowchart LR
@@ -177,7 +177,7 @@ flowchart LR
 ```
 
 Voilà le petit dépoussiérage fait. Bon pour l'**`émulateur de terminal`**, nous utiliserons la forme simple et courante qui est **`terminal`**.
-Maintenant, passons au vif du sujet : la configuration de son **`CLI`**. Nous allons découvrir les fichiers de configuration ainsi que des bonnes pratiques pour ne pas perdre votre configuration.
+Maintenant, passons au vif du sujet : la configuration de son **`CLI`** avec **`bash`**. Nous allons découvrir les fichiers de configuration ainsi que des bonnes pratiques pour ne pas perdre votre configuration.
 
 Sur les systèmes Linux, il y a deux fichiers à connaître : **`~/.profile`** (ou **`~/.bash_profile`**) et **`~/.bashrc`**. Et voici à quoi ils servent.
 Le fichier **`~/.profile`** (ou **`~/.bash_profile`** selon les distributions Linux) est exécuté lors de l'ouverture d'un login-shell. Ce qui signifie que ce fichier est exécuté uniquement lors de l'ouverture d'un shell par un utilisateur connecté.
@@ -296,7 +296,7 @@ flowchart LR
     end
 ```
 
-Et voilà pour la configuration de notre **`CLI`**.
+Et voilà pour la configuration de notre **`CLI`** avec **`bash`**.
 
 ## Dites stop à **zsh** et **Oh My Zsh**
 
@@ -346,7 +346,7 @@ prompt_status() {
 }
 ```
 
-Si vous n'êtes pas un professionnel du script, alors [starship.rs](https://starship.rs/) est là pour vous. **`Starship`** est un programme développé en Rust, disponible sur Linux, macOS et Windows, et facilement installable et configurable avec un fichier `TOML`.
+Si vous n'êtes pas un professionnel du script, alors [starship.rs](https://starship.rs/) est là pour vous. **`Starship`** est un programme développé en Rust, disponible sous Linux, macOS et Windows, et facilement installable et configurable avec un fichier `TOML`.
 Pour Linux, pour installer **`Starship`**, il vous suffira d'exécuter quelques commandes :
 
 ```bash
