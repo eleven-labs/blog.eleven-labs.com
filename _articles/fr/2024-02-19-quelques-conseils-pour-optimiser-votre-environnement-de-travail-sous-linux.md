@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2024-02-16'
+date: '2024-02-19'
 slug: quelques-conseils-pour-optimiser-votre-environnement-de-travail-sous-linux
 title: 'Quelques conseils pour optimiser votre environnement de travail sous Linux'
 excerpt: >-
@@ -398,7 +398,7 @@ format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 Et voilà à quoi pourrait ressembler votre terminal :
 
-![terminal]({BASE_URL}/imgs/articles/2024-02-16-quelques-conseils-pour-optimiser-votre-environnement-de-travail-sous-linux/terminal.png)
+![terminal]({BASE_URL}/imgs/articles/2024-02-19-quelques-conseils-pour-optimiser-votre-environnement-de-travail-sous-linux/terminal.png)
 
 [La documentation](https://starship.rs/config/) est très riche, et il y a de nombreuses possibilités avec différents modules déjà développés.
 
