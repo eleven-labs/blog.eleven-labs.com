@@ -298,7 +298,7 @@ flowchart LR
 
 Et voilà pour la configuration de notre **`CLI`** avec **`bash`**.
 
-## Dites stop à **zsh** et **Oh My Zsh**
+## Dites stop à **zsh** et **Oh My Zsh** sous Linuwx
 
 Il est fréquent de voir beaucoup de personnes utiliser **`zsh`** et **`Oh My Zsh`** sans vraiment comprendre ce que c'est.
 
