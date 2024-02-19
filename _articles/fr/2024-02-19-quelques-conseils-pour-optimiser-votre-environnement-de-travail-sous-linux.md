@@ -2,7 +2,7 @@
 contentType: article
 lang: fr
 date: '2024-02-19'
-slug: quelques-conseils-pour-optimiser-votre-environnement-de-travail-sous-linux
+slug: environnement-travail-linux
 title: 'Quelques conseils pour optimiser votre environnement de travail sous Linux'
 excerpt: >-
   Travailler efficacement sous Linux va bien au-delà des simples commandes du terminal. Dans cet article, découvrez quelques conseils pour optimiser votre environnement de travail et améliorer votre expérience utilisateur.
