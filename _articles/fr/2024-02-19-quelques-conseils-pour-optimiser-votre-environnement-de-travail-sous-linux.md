@@ -23,7 +23,7 @@ keywords:
 Dans cet article, je vais partager quelques conseils pour optimiser votre environnement de travail sous Linux. Tout ce que nous allons aborder ici représente des éléments que j'ai personnellement mis en place et que j'utilise quotidiennement.
 Nous explorerons la configuration de plusieurs accès **`SSH`**, la personnalisation de notre Interface de Ligne de Commande **`CLI`** avec **`bash`**, et comment abandonner l'utilisation de **`zsh`** et **`Oh My Zsh`**.
 
-## Configuration de plusieurs accès SSH
+## Configuration de plusieurs accès SSH dans votre environnement Linux
 
 Pour ce premier conseil, nous allons nous intéresser à **`SSH`**. Il vous est peut-être déjà arrivé d'avoir plusieurs accès **`SSH`** avec des informations de connexion différentes telles que l'adresse du serveur, l'utilisateur, les clés privées et publiques, etc.
 Et vous avez probablement utilisé **`SSH`** en spécifiant toutes les informations de connexion, comme dans l'exemple ci-dessous :
