@@ -402,7 +402,7 @@ Et voilà à quoi pourrait ressembler votre terminal :
 
 [La documentation](https://starship.rs/config/) est très riche, et il y a de nombreuses possibilités avec différents modules déjà développés.
 
-## **Conclusion**
+## **Conclusion** : vous êtes prêt à améliorer votre expérience de travail sous Linux
 
 Voilà pour quelques conseils qui peuvent améliorer votre expérience de travail sur votre terminal.
 
