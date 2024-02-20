@@ -4,9 +4,6 @@ on:
   pull_request_target:
     types: [closed]
 
-env:
-  AWS_DEFAULT_REGION: eu-west-2
-
 jobs:
   pr-closed:
     runs-on: ubuntu-latest
@@ -14,12 +11,11 @@ jobs:
       - name: Setup aws
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Remove to S3
-        run: aws s3 rm "s3://dev.blog.eleven-labs.com/${{ github.head_ref }}/" --recursive
+        run: aws s3 rm "s3://${{ vars.AWS_BUCKET_NAME }}/${{ github.head_ref }}/" --recursive
 
       - name: Deactivate environment
         uses: bobheadxi/deployments@v1

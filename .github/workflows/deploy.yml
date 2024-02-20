@@ -6,12 +6,10 @@ on:
       - master
   pull_request:
 
-env:
-  AWS_DEFAULT_REGION: ${{ github.event_name == 'pull_request' && 'eu-west-3' || 'eu-west-2' }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -20,7 +18,7 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           echo "ENV=dev-${{ github.head_ref }}" >> $GITHUB_ENV
-          echo "ENV_URL=http://dev.blog.eleven-labs.com-tmp.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "ENV_URL=http://${{ vars.AWS_BUCKET_NAME }}.s3-website.${{ vars.AWS_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
           echo "BASE_URL=/${{ github.head_ref }}/" >> $GITHUB_ENV
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_DEV }}" >> $GITHUB_ENV
@@ -32,7 +30,7 @@ jobs:
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |
           echo "ENV=production" >> $GITHUB_ENV
-          echo "ENV_URL=https://blog.eleven-labs.com" >> $GITHUB_ENV
+          echo "ENV_URL=https://${{ vars.AWS_BUCKET_NAME }}" >> $GITHUB_ENV
           echo "BASE_URL=/" >> $GITHUB_ENV
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_PRODUCTION }}" >> $GITHUB_ENV
@@ -110,11 +108,24 @@ jobs:
           VITE_GTM_ID: ${{ env.GTM_ID }}
 
       - name: Setup aws
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Install aws cli
+        if: github.event_name == 'pull_request'
+        id: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1
+
+      - name: Setup aws dev
+        if: github.event_name == 'pull_request'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ vars.AWS_REGION }}
 
       - name: Start deployment
         uses: bobheadxi/deployments@v1
@@ -127,11 +138,11 @@ jobs:
 
       - name: Deploy to S3 for dev
         if: github.event_name == 'pull_request'
-        run: aws s3 sync "dist/public/" "s3://dev.blog.eleven-labs.com-tmp/${{ github.head_ref }}/" --delete
+        run: aws s3 sync "dist/public/" "s3://${{ vars.AWS_BUCKET_NAME }}/${{ github.head_ref }}/" --delete
 
       - name: Deploy to S3 for production
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: aws s3 sync "dist/public/" "s3://blog.eleven-labs.com/" --delete
+        run: aws s3 sync "dist/public/" "s3://${{ vars.AWS_BUCKET_NAME }}/" --delete
 
       - name: Clear caches
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
