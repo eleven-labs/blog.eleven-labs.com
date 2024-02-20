@@ -7,7 +7,7 @@ on:
   pull_request:
 
 env:
-  AWS_DEFAULT_REGION: eu-west-2
+  AWS_DEFAULT_REGION: ${{ github.event_name == 'pull_request' && 'eu-west-3' || 'eu-west-2' }}
 
 jobs:
   deploy:
@@ -20,7 +20,7 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           echo "ENV=dev-${{ github.head_ref }}" >> $GITHUB_ENV
-          echo "ENV_URL=http://dev.blog.eleven-labs.com.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "ENV_URL=http://dev.blog.eleven-labs.com-tmp.s3-website.${{ env.AWS_DEFAULT_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
           echo "BASE_URL=/${{ github.head_ref }}/" >> $GITHUB_ENV
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_DEV }}" >> $GITHUB_ENV
@@ -127,7 +127,7 @@ jobs:
 
       - name: Deploy to S3 for dev
         if: github.event_name == 'pull_request'
-        run: aws s3 sync "dist/public/" "s3://dev.blog.eleven-labs.com/${{ github.head_ref }}/" --delete
+        run: aws s3 sync "dist/public/" "s3://dev.blog.eleven-labs.com-tmp/${{ github.head_ref }}/" --delete
 
       - name: Deploy to S3 for production
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
