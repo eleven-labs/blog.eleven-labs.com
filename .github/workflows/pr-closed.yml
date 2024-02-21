@@ -8,11 +8,17 @@ jobs:
   pr-closed:
     runs-on: ubuntu-latest
     steps:
+      - name: Install aws cli
+        if: github.event_name == 'pull_request'
+        id: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1
+
       - name: Setup aws
-        uses: aws-actions/configure-aws-credentials@v1
+        if: github.event_name == 'pull_request'
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: ${{ vars.AWS_REGION }}
 
       - name: Remove to S3
         run: aws s3 rm "s3://${{ vars.AWS_BUCKET_NAME }}/${{ github.head_ref }}/" --recursive
