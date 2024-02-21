@@ -107,21 +107,11 @@ jobs:
           VITE_ALGOLIA_INDEX: ${{ env.ALGOLIA_INDEX }}
           VITE_GTM_ID: ${{ env.GTM_ID }}
 
-      - name: Setup aws
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
-
       - name: Install aws cli
-        if: github.event_name == 'pull_request'
         id: install-aws-cli
         uses: unfor19/install-aws-cli-action@v1
 
-      - name: Setup aws dev
-        if: github.event_name == 'pull_request'
+      - name: Setup aws
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
