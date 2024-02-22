@@ -10,6 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions: write-all
+    environment: ${{ github.ref_name == 'master' && 'production' || github.ref_name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
