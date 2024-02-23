@@ -7,6 +7,7 @@ on:
 jobs:
   pr-closed:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: Install aws cli
         id: install-aws-cli
