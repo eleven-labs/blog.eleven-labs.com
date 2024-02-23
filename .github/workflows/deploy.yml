@@ -137,9 +137,7 @@ jobs:
 
       - name: Clear caches
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: |
-          aws configure set preview.cloudfront true
-          aws cloudfront create-invalidation --distribution-id "${{ secrets.CLOUDFRONT_DISTRIBUTION }}" --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id "${{ secrets.CLOUDFRONT_DISTRIBUTION }}" --paths "/*"
 
       - name: Indexing on Algolia
         run: yarn indexation:algolia
