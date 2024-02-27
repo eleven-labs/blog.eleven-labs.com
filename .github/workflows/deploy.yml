@@ -19,7 +19,7 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           echo "ENV=dev-${{ github.head_ref }}" >> $GITHUB_ENV
-          echo "ENV_URL=http://${{ vars.AWS_BUCKET_NAME }}.s3-website.${{ vars.AWS_REGION }}.amazonaws.com/${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "ENV_URL=https://${{ vars.AWS_BUCKET_NAME }}/${{ github.head_ref }}" >> $GITHUB_ENV
           echo "BASE_URL=/${{ github.head_ref }}/" >> $GITHUB_ENV
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_DEV }}" >> $GITHUB_ENV
