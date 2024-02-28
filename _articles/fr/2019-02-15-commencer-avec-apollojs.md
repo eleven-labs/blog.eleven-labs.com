@@ -9,7 +9,7 @@ excerpt: >-
   place au sein de nos projets GraphQL. Pour faire simple nous allons mettre en
   place une API GraphQL devant une API Rest existante, l'ensemble des
   développements se fera en Node.js avec Apollo GraphQL.
-cover: /assets/2019-02-05-commencer-avec-apollojs/cover.jpg
+oldCover: /assets/2019-02-05-commencer-avec-apollojs/cover.jpg
 categories:
   - javascript
 authors:

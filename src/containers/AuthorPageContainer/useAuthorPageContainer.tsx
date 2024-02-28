@@ -1,39 +1,41 @@
+import { AuthorPageProps, SocialNetworkName } from '@eleven-labs/design-system';
 import { useLink } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
-import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
-import { PostPreviewListContainer } from '@/containers/PostPreviewListContainer';
-import { getPathFile } from '@/helpers/assetHelper';
+import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import { generatePath } from '@/helpers/routerHelper';
-import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
+import { useNewsletterCard } from '@/hooks/useNewsletterCard';
 import { useTitle } from '@/hooks/useTitle';
-import { AuthorPageProps, SocialNetworkName } from '@/pages/AuthorPage';
 import { AuthorPageData } from '@/types';
 
 export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
-  const { t } = useTranslation();
-  const resultAuthorPage = useLoaderData() as AuthorPageData;
-  const newsletterBlock = useNewsletterBlock();
-  useTitle(t('seo.author.title', { authorName: resultAuthorPage?.author.name }));
+  const { t, i18n } = useTranslation();
+  const { authorUsername, page } = useParams<{ authorUsername: string; page?: string }>();
+  const authorPageData = useLoaderData() as AuthorPageData;
+  const newsletterCard = useNewsletterCard();
+  useTitle(t('pages.author.seo.title', { authorName: authorPageData?.author.name }));
   useLink({
     rel: 'canonical',
     href: `${blogUrl}${generatePath(PATHS.AUTHOR, {
       lang: DEFAULT_LANGUAGE,
-      authorUsername: resultAuthorPage?.author?.username,
+      authorUsername: authorPageData?.author?.username,
     })}`,
   });
 
-  if (!resultAuthorPage) {
+  const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({
+    href: generatePath(PATHS.AUTHOR_PAGINATED, { lang: i18n.language, authorUsername, page }),
+  });
+
+  if (!authorPageData) {
     return;
   }
 
-  const { author, posts } = resultAuthorPage;
+  const { author, posts } = authorPageData;
   return {
-    backLink: <BackLinkContainer />,
     author: {
       username: author.username,
       name: author.name,
@@ -60,11 +62,16 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
           username: socialNetworkName === 'twitter' ? `@${username}` : username,
         };
       }),
-      content: author.content,
+      content: <div dangerouslySetInnerHTML={{ __html: author.content }} />,
     },
-    emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
-    title: t('pages.author.post_preview_list_title'),
-    postPreviewList: <PostPreviewListContainer allPosts={posts} />,
-    newsletterBlock,
+    title: t('pages.author.post_list_title'),
+    postCardList: (
+      <PostCardListContainer
+        getPaginatedLink={getPaginatedLink}
+        currentPage={page ? parseInt(page, 10) : 1}
+        allPosts={posts}
+      />
+    ),
+    newsletterCard,
   };
 };

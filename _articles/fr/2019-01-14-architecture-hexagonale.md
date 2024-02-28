@@ -7,7 +7,7 @@ title: Architecture hexagonale
 excerpt: >-
   L'architecture hexagonale tend à isoler une application en trois couches
   distinctes
-cover: /assets/2019-01-14-architecture-hexagonale/hexagone.jpg
+oldCover: /assets/2019-01-14-architecture-hexagonale/hexagone.jpg
 categories:
   - php
 authors:

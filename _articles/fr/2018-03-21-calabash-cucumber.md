@@ -7,7 +7,7 @@ title: Calabash / Cucumber - Ecrire des tests fonctionnels pour Mobile
 excerpt: >-
   Rendez plus robuste votre application mobile en ajoutant des tests
   fonctionnels
-cover: /assets/2018-03-01-calabash-cucumber/cover.jpg
+oldCover: /assets/2018-03-01-calabash-cucumber/cover.jpg
 categories: []
 authors:
   - ibenichou

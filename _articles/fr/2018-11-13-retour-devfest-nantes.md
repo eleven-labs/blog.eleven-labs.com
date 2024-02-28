@@ -8,7 +8,7 @@ excerpt: >-
   Retour sur la mission spatiale au devfest Nantes. Trois astronautes ont pu
   assister à différents talks, selon leur intérêt pour les sujets présentés.
   Voici leurs retours !
-cover: /assets/2018-10-23-retour-devfest-nantes/cover.jpg
+oldCover: /assets/2018-10-23-retour-devfest-nantes/cover.jpg
 categories: []
 authors:
   - marishka

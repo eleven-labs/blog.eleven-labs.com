@@ -7,7 +7,7 @@ title: Retour sur la Conf School of PO
 excerpt: >-
   Mardi 13 Février a eu lieu la première édition de la conférence School of PO
   dans le 13ème arrondissement de Paris.
-cover: /assets/2018-02-19-school-of-po/cover.jpg
+oldCover: /assets/2018-02-19-school-of-po/cover.jpg
 categories:
   - agile
 authors:

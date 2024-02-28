@@ -1,4 +1,4 @@
-import { CategoryEnum, ContentTypeEnum } from '@/constants';
+import { CategoryEnum } from '@/constants';
 import {
   TransformedArticleData,
   TransformedAuthorData,
@@ -6,16 +6,24 @@ import {
   TransformedTutorialData,
 } from '@/types/TransformedContentTypeData';
 
+export interface LayoutTemplateData {
+  categories: ('all' | CategoryEnum)[];
+  hasTutorial: boolean;
+}
+
 export interface AuthorPageData {
   author: TransformedAuthorData;
   posts: TransformedPostDataWithTransformedAuthors[];
 }
 export interface PostListPageData {
-  categories: ('all' | CategoryEnum | ContentTypeEnum.TUTORIAL)[];
   posts: TransformedPostDataWithTransformedAuthors[];
 }
 
 interface CommonPostPageData {
+  cover?: {
+    path: string;
+    alt: string;
+  };
   authors: TransformedAuthorData[];
   relatedPosts: TransformedPostDataWithTransformedAuthors[];
   seo?: {
