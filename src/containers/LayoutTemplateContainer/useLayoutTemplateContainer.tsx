@@ -1,21 +1,24 @@
+import { LayoutTemplateProps } from '@eleven-labs/design-system';
 import { useHead, useLink, useMeta, useScript } from 'hoofd';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { matchPath, useLocation } from 'react-router-dom';
+import { matchPath, useLoaderData, useLocation } from 'react-router-dom';
 
 import { themeColor } from '@/config/website';
 import { GOOGLE_SITE_VERIFICATION } from '@/constants';
 import { PATHS } from '@/constants';
-import { HeaderContainer } from '@/containers/HeaderContainer';
-import { useFooterContainer } from '@/containers/LayoutTemplateContainer/useFooterContainer';
 import { getPathFile } from '@/helpers/assetHelper';
-import { getClickEventElements, handleClickEventListener } from '@/helpers/dataLayerHelper';
-import { LayoutTemplateProps } from '@/templates/LayoutTemplate';
+import { getUrl } from '@/helpers/getUrlHelper';
+import { LayoutTemplateData } from '@/types';
+
+import { HeaderContainer } from './HeaderContainer';
+import { useFooterContainer } from './useFooterContainer';
 
 export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'children'> => {
   const { i18n } = useTranslation();
   const location = useLocation();
   const footer = useFooterContainer();
+  const layoutTemplateData = useLoaderData() as LayoutTemplateData;
   const isHomePage = Boolean(matchPath(PATHS.ROOT, location.pathname));
 
   useHead({
@@ -41,7 +44,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   });
   useMeta({ property: 'og:locale', content: i18n.language });
   useMeta({ property: 'og:site_name', content: 'Blog Eleven Labs' });
-  useMeta({ property: 'og:url', content: location.pathname + location.search });
+  useMeta({ property: 'og:url', content: getUrl(`${location.pathname}${location.search}`) });
   useScript({
     type: 'application/ld+json',
     text: JSON.stringify({
@@ -55,7 +58,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
               '@type': 'SearchAction',
               target: {
                 '@type': 'EntryPoint',
-                urlTemplate: 'https://blog.eleven-labs.com/fr/search/?search={search_term_string}',
+                urlTemplate: `https://blog.eleven-labs.com/${i18n.language}/search/?search={search_term_string}`,
               },
               'query-input': 'required name=search_term_string',
             },
@@ -72,24 +75,19 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   useLink({ rel: 'preconnect', href: 'https://fonts.gstatic.com' });
   useLink({ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap' });
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    const clickEventElements = getClickEventElements();
-
-    clickEventElements.forEach((element) => {
-      element.addEventListener('click', handleClickEventListener);
-    });
-
-    return () => {
-      clickEventElements.forEach((element) => {
-        element.removeEventListener('click', handleClickEventListener);
-      });
-    };
-  }, [location]);
-
   return {
-    header: <HeaderContainer />,
+    header: (
+      <>
+        <div id="header">
+          <HeaderContainer layoutTemplateData={layoutTemplateData} />
+        </div>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.layoutTemplateData = ${JSON.stringify(layoutTemplateData)};`,
+          }}
+        />
+      </>
+    ),
     footer,
   };
 };

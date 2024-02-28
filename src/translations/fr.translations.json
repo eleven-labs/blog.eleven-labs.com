@@ -1,101 +1,178 @@
 {
-  "seo": {
-    "home": {
-      "title": "L'actualité tech"
-    },
-    "category": {
-      "title": "Article(s) de la catégorie {{ categoryName }}"
-    },
-    "author": {
-      "title": "Article(s) de l'auteur {{ authorName }}"
-    },
-    "search": {
-      "title": "Recherche"
-    },
-    "not_found": {
-      "title": "Page non trouvée"
-    }
-  },
-  "categories": {
-    "all": "Tous",
-    "javascript": "JavaScript",
-    "php": "PHP",
-    "agile": "Agile",
-    "architecture": "Architecture",
-    "tutorial": "Tutoriel"
-  },
-  "languages": {
-    "fr": "Français",
-    "en": "English"
-  },
   "common": {
-    "back": "Retour"
-  },
-  "header": {
-    "title": "Eleven Labs",
-    "subtitle": "Le blog",
-    "intro_block": {
-      "title": "Ravi de te voir",
-      "description": "Explorons de nouveaux savoirs"
+    "categories": {
+      "all": "Tous les articles",
+      "javascript": "JavaScript",
+      "php": "PHP",
+      "agile": "Agile",
+      "architecture": "Architecture",
+      "tutorial": "Tutoriels"
     },
-    "choice_category_label": "Quels articles veux-tu lire ?"
-  },
-  "footer": {
-    "intro_block": {
-      "title": "Découvrez Eleven Labs",
-      "description": "L'ESN qui fait décoller vos projets web, mobile & data !"
+    "header": {
+      "contact_label_link": "Contact"
     },
-    "contact": {
-      "title": "Contact",
-      "form_title": "Contactez nous"
+    "autocomplete": {
+      "placeholder": "Nom d’article, auteur...",
+      "see_all_search_label": "Voir tous les résultats"
     },
-    "link_to_eleven_labs_site": "Voir le site web"
-  },
-  "autocomplete": {
-    "placeholder": "Rechercher par nom d’article ou d’auteur",
-    "see_all_search_label": "Voir tous les résultats"
-  },
-  "search_not_found": {
-    "title": "Aucun résultat en vue...",
-    "description": "Vérifiez les termes de votre recherche avant de réessayer"
-  },
-  "newsletter": {
-    "title": "En quête d’un outil de veille ?",
-    "description": "Abonne-toi à notre newsletter",
-    "button_label": "Je m'abonne"
-  },
-  "pages": {
-    "post_list": {
-      "post_preview_list_title": "Tous nos articles",
-      "post_preview_list_category_title": "Nos articles {{ categoryName }}",
-      "number_of_posts_displayed_label": "{{ numberOfPosts }}/{{ maxNumberOfPosts }} affichés",
-      "load_more_button_label": "Afficher plus"
+    "search_not_found": {
+      "title": "Aucun résultat en vue...",
+      "description": "Vérifiez les termes de votre recherche avant de réessayer"
+    },
+    "footer": {
+      "intro_block": {
+        "title": "Découvrez Eleven Labs :",
+        "description": "L'ESN qui fait décoller vos projets web, mobile & data"
+      },
+      "contact_label_link": "Nous contacter"
+    },
+    "languages": {
+      "fr": "Français",
+      "en": "Anglais",
+      "dt": "DT"
+    },
+    "tutorial-tag": "Tutoriel",
+    "newsletter-card": {
+      "title": "Abonnez-vous<br />\nà notre AstroNews !",
+      "description": "Retrouvez dans notre newsletter mensuelle les dernières actualités tech, une sélection de ressources et le meilleur de twitter !"
     },
     "post": {
-      "related_post_list_title": "Articles sur le même thème",
-      "post_footer_title": "écrit par"
+      "footer": {
+        "author": {
+          "link_label": "Voir le profil",
+          "title": "Auteur(s)"
+        }
+      },
+      "share_links": {
+        "copied_label": "Copié !"
+      },
+      "related_post_list": {
+        "title": "Découvrez nos autres contenus dans le même thème"
+      }
+    },
+    "breadcrumb": {
+      "home_label": "Accueil"
+    },
+    "contact_card": {
+      "title": "Vous souhaitez en savoir plus sur le sujet ?<br /><strong>Organisons un échange !</strong>",
+      "description": "Notre équipe d'experts répond à toutes vos questions.",
+      "link_label": "Nous contacter"
+    }
+  },
+  "pages": {
+    "home": {
+      "seo": {
+        "title": "Blog développement web : Retex, articles et tutoriels de nos experts"
+      },
+      "intro-block": {
+        "intro": "Explorons de nouveaux savoirs",
+        "title": "Le blog technique Eleven Labs sur le développement web",
+        "description": "Dans ce blog, retrouvez les retours d’expériences et conseils de nos collaborateurs autour du <a href=\"https://eleven-labs.com/dev-web/\"> développement web et mobile</a>, de l'agilité, et de l’écosystème Javascript et PHP Symfony.\n<br><br>\nDécouvrez également nos tutoriels pour apprendre pas-à-pas à créer différentes features !\n",
+        "website-link-label": "En savoir plus sur Eleven Labs"
+      },
+      "last-articles-block": {
+        "title": "Nos derniers articles autour du développement web et mobile",
+        "link-see-more": "Découvrir tous nos articles"
+      },
+      "last-tutorials-block": {
+        "title": "Les tutoriels tech de nos astronautes",
+        "description": "Avec nos tutoriels, apprenez pas-à-pas à créer de nouvelles features : créer un chat avec Mercure et Symfony, mettre en place un CI/CD avec GitLab-CI pour une <a href=\"https://eleven-labs.com/dev-web/react-js/\">application Javascript</a> et bien plus encore. Suivez le guide !",
+        "link-see-more": "Découvrir tous nos tutoriels"
+      }
+    },
+    "category": {
+      "javascript": {
+        "seo": {
+          "title": "Développement Javascript : tutoriels et articles sur les dernières tendances"
+        },
+        "title": "Nos articles et retours d’expérience en développement Javascript",
+        "description": "<strong>Javascript est un langage de programmation dynamique complet et doté d’une incroyable flexibilité !&nbsp;</strong>Ce n’est pas pour rien que ce langage est aujourd'hui le plus utilisé par les développeurs à travers le monde. Dans cette catégorie, retrouvez tous les articles, retours d’expérience et tutoriels de nos astronautes autour de <strong>React.js, <a href=\"https://www.eleven-labs.com/dev-web/node-js/\">Node.js</a>, Nest.js, Next.js, Vue.js, Svelte.js. Vous y retrouverez également des outils à utiliser pour faciliter votre delivery, un guide pour implémenter votre propre Design System et bien plus encore ! Bonne lecture.</strong>",
+        "expertise": {
+          "title": "Quels types d’applications peuvent être développées en Javascript ?",
+          "description": "Aujourd’hui, il est quasiment possible de tout faire avec le langage Javascript : applications web et mobile, progressive web apps, logiciels, applications métier, sites web fullstack Javascript, APIs backend, jeux vidéos, applications TV et bien d’autres. En bref, Javascript est devenu en quelques années le langage central du web et celui le plus utilisé sur GitHub. Choisir Javascript pour son projet de développement web est donc, dans la majorité des cas, une bonne idée !",
+          "link_label": "Découvrir notre expertise Javascript",
+          "link_url": "https://eleven-labs.com/dev-web/react-js/"
+        },
+        "post_list_title": "Tous nos articles autour du développement web Javascript"
+      },
+      "php": {
+        "seo": {
+          "title": "Développement PHP : articles, tutoriels et RETEX"
+        },
+        "title": "Nos articles et retours d’expérience en développement PHP",
+        "description": "<strong>PHP est un langage de programmation orienté backend</strong> qui permet de développer des applications dynamiques et interactives. C'est un langage populaire, utilisé par un grand nombre d'applications web très utilisées par le grand public. Dans cette catégorie, retrouvez tous les articles, retours d’expérience et tutoriels de nos astronautes autour de <strong>PHP, Symfony, Laravel, Angular, des outils incontournables pour améliorer votre productivité mais aussi nos retours sur les grands événements de la communauté ! Bonne lecture.</strong>",
+        "expertise": {
+          "title": "Quelle est l’utilité de PHP ?",
+          "description": "Avec son écosystème riche, sa très forte communauté, et ses nombreux frameworks incontournables comme Symfony,&nbsp;<strong>PHP permet de développer tous types d’applications backend</strong>. Son utilisation accélère le processus de développement : sa structure prédéfinie et ses composants permettent aux développeurs de se concentrer davantage sur la logique métier. PHP offre la flexibilité nécessaire pour <strong>créer des applications web interactives, des sites e-commerce, des blogs, des marketplaces, des sites médias ou encore des back-offices personnalisés.</strong> PHP est donc une solution de qualité pour <a href=\"https://eleven-labs.com/studio/\">développer vos projets web sur mesure</a>.",
+          "link_label": "Découvrir notre expertise PHP Symfony",
+          "link_url": "https://eleven-labs.com/dev-web/php-symfony/"
+        },
+        "post_list_title": "Tous nos articles sur les nouveautés du langage de développement PHP"
+      },
+      "agile": {
+        "seo": {
+          "title": "Méthodologies Agiles : articles, fiches projets et tutoriels sur notre blog"
+        },
+        "title": "Nos articles et retours d’expérience autour des méthodologies agiles utilisées en projets web",
+        "description": "<a href=\"https://eleven-labs.com/blog/agilite/\"><strong>La méthodologie Agile</strong></a> est une approche de gestion de projet informatique, ou plutôt <strong>“gestion de produit”</strong>, qui permet à l'équipe de gérer un projet en le décomposant en plusieurs étapes : des cycles de développements courts, appelés sprints. Aujourd'hui, le mot Agile peut faire référence à ces valeurs ainsi qu'aux cadres de mise en œuvre, notamment : Scrum, Kanban, Safe, Lean… Dans cette catégorie, retrouvez tous les articles, retours d’expérience et tutoriels des experts de notre pôle Agile autour de <strong>Scrum, du métier de Scrum Master et de <strong>Product Manager</strong> ainsi que leurs conseils sur la <strong>gestion d’un sprint</strong>, la méthode agile à choisir selon son contexte ou encore sur la <strong>priorisation produit</strong> ! Bonne lecture.</strong>",
+        "expertise": {
+          "title": "Quelle est la méthode agile la plus utilisée ?",
+          "description": "<strong>Scrum est le framework agile le plus populaire en 2023.</strong> Il est utilisé par les entreprises à la fois comme méthode agile unique mais également comme méthode agile hybride. <strong>Son principe de découpage en sprint courts, généralement de 2 semaines, permet d’arriver rapidement à une première version du produit viable.</strong> Chaque sprint est validé au fur et à mesure par le client, ce qui permet de continuer à travailler sur des bases solides ; les sprints suivants permettant d’enrichir ce premier socle. Le processus est donc nettement plus productif. Chez Eleven Labs, nous travaillons principalement avec la méthodologie agile Scrum et accompagnons nos clients dans le <strong>pilotage de leur produits digitaux</strong>, dans la <a href=\"https://eleven-labs.com/success-stories/formation-scrum/\">formation des équipes à la méthodologie agile Scrum</a> ou encore dans du <strong>coaching agile</strong>."
+        },
+        "post_list_title": "Tous nos articles autour des méthodologies agiles"
+      },
+      "architecture": {
+        "seo": {
+          "title": "Architecture et DevOps : articles, tutoriels et RETEX"
+        },
+        "title": "Nos articles et retours d’expérience autour de l’architecture SI, Data et DevOps",
+        "description": "<a href=\"https://eleven-labs.com/architecture/\"><strong>L'architecture des systèmes d'informations (SI)</strong></a> n'a jamais eu autant d'importance qu'aujourd'hui. Étroitement liée à la réussite des entreprises, il faut savoir placer le curseur entre besoins métiers, innovation, sécurité et performance. Dans cette catégorie, retrouvez tous les articles, retours d’expérience et conseils de nos astronautes autour de l’<strong>architecture Data</strong>, des <strong>pratiques et outils DevOps</strong>, de l’architecture SI et web ainsi que des tutoriels pour mettre en place pas-à-pas sa propre architecture. Bonne lecture.",
+        "expertise": {
+          "title": "Quelle est la chose la plus importante que le DevOps nous aide à réaliser ?",
+          "description": "La chose la plus importante que le DevOps nous aide à réaliser est la collaboration et l'<strong>intégration continue</strong> entre les équipes de développement et d'exploitation. En favorisant une <strong>culture de la collaboration</strong> et en automatisant les processus, le DevOps permet d'<strong>éliminer les silos organisationnels</strong>, d'accélérer le déploiement des applications et d'améliorer la réactivité aux changements. En fin de compte, il contribue à créer un environnement où le développement et l'exploitation travaillent de concert, facilitant ainsi une <strong>livraison plus rapide</strong>, plus fiable et plus efficace des logiciels, tout en favorisant l'innovation continue et l'<strong>optimisation des performances.</strong>",
+          "link_label": "Découvrir notre expertise DevOps",
+          "link_url": "https://eleven-labs.com/devops/"
+        },
+        "post_list_title": " Tous nos articles sur les dernières tendances en architecture et DevOps"
+      },
+      "tutorial": {
+        "title": "Tous nos tutoriels autour du développement web et mobile",
+        "description": "Découvrez tous nos tutoriels en développement web. Nos astronautes vous guident pas-à-pas pour créer des solutions complètes ou de nouvelles fonctionnalités : créer un player android en Kotlin, mettre en place un serveur GraphQL en récupérant les données via des APIs REST ou encore mettre en place un CI/CI avec GitLab-ci pour une application Vue.js. <br />Bonne lecture !",
+        "post_list_title": "Découvrir tous nos tutoriels en développement web et mobile"
+      },
+      "all": {
+        "title": "Tous nos articles autour du développement web et mobile",
+        "description": "Découvrez les articles de nos astronautes qui mettent leur expertise en développement web à votre disposition sous plusieurs formats : <strong>retours d'expérience de projets, tutoriel et tests d'outils, conseil en méthodologies, initiation aux frameworks... Agilité, Architecture, Data, DevOps, Javascript, PHP...</strong> les sujets sont nombreux ! <br />Bonne lecture.",
+        "post_list_title": "Consulter l'ensemble de nos articles"
+      }
+    },
+    "article": {
+      "summary_card": {
+        "title": "Sommaire"
+      }
     },
     "tutorial": {
+      "summary_card": {
+        "title": "Progression"
+      },
       "previous_button": "Précédent",
       "next_button": "Suivant"
     },
     "author": {
-      "post_preview_list_title": "Article(s) de l'auteur"
+      "seo": {
+        "title": "Article(s)/tutoriel(s) de l'auteur {{ authorName }}"
+      },
+      "post_list_title": "Articles et tutoriels écrits par l'auteur"
     },
     "search": {
       "title": "{{ numberOfHits }} résultats",
-      "description": "triés par pertinence",
-      "not_found": {
-        "title": "Aucun résultat en vue...",
-        "description": "Vérifiez les termes de votre recherche avant de réessayer"
-      }
+      "description": "triés par pertinence"
+    },
+    "not-found": {
+      "title": "Page non trouvée"
     },
     "not_found": {
-      "title": "Page non trouvé",
       "description": "Nous nous excusons pour le désagrément, mais la page que vous avez demandée n'a pas été trouvée."
-    },
-    "share_links": {
-      "copied_label": "Copié !"
     }
   }
 }

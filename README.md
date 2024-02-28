@@ -128,6 +128,9 @@ date: YYYY-MM-DD
 slug: slug of the article (No space dashes instead)
 title: Title of the article
 excerpt: Description of the article (Visible on the list pages)
+cover:
+    alt: Alt image
+    path: /imgs/articles/YYYY-MM-DD-slug/cover.jpg
 categories:
     - javascript | php | agile | architecture
 keywords:

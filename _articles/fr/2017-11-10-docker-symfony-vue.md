@@ -7,7 +7,7 @@ title: 'Démarrer avec Docker, Symfony et Vue.js'
 excerpt: >-
   Dans cet article nous allons vous décrire comment configurer un projet Docker,
   Symfony et Vue.js
-cover: /assets/2017-11-10-docker-symfony-vue/cover.jpg
+oldCover: /assets/2017-11-10-docker-symfony-vue/cover.jpg
 categories:
   - php
   - javascript

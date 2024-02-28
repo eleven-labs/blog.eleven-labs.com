@@ -8,7 +8,7 @@ excerpt: >-
   Après avoir généré les clefs OpenPGP, nous allons voir comment les stocker sur
   une clef USB comme la Yubikey. Cela va nous permettre de sécuriser d'avantage
   nos clefs secrètes.
-cover: /assets/2017-10-24-openpgp-clef-secrete-yubikey-partie-2/cover.jpg
+oldCover: /assets/2017-10-24-openpgp-clef-secrete-yubikey-partie-2/cover.jpg
 categories: []
 authors:
   - tthuon

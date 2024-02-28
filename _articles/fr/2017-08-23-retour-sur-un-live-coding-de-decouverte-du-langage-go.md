@@ -7,7 +7,7 @@ title: Retour sur un live-coding de découverte du langage Go
 excerpt: >-
   Cet article fait suite à un workshop / live-coding que j'ai eu l'occasion
   d'organiser chez Eleven Labs pour une initiation au langage Go.
-cover: /assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/cover.jpg
+oldCover: /assets/2017-08-23-retour-sur-un-live-coding-de-decouverte-du-langage-go/cover.jpg
 categories: []
 authors:
   - vcomposieux

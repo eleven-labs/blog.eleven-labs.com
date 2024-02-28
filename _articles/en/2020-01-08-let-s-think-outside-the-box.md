@@ -5,7 +5,7 @@ date: '2020-01-08'
 slug: think-outside-the-box
 title: '[iOS] Let''s think outside the box'
 excerpt: Let's use the Framework in a way that it's not supposed to be
-cover: /assets/2018-05-21-let-s-think-outside-the-box/cover.jpg
+oldCover: /assets/2018-05-21-let-s-think-outside-the-box/cover.jpg
 categories: []
 authors:
   - thuchon

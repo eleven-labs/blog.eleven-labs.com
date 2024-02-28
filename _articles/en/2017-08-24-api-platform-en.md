@@ -5,7 +5,7 @@ date: '2017-08-24'
 slug: build-an-api-with-api-platform
 title: Build an API with API Platform
 excerpt: "API Platform defines itself as a «\_PHP framework to build modern web APIs\_». Indeed, this tool will help us to rapidly build a rich and easily usable API."
-cover: /assets/2017-07-25-api-platform/cover.jpg
+oldCover: /assets/2017-07-25-api-platform/cover.jpg
 categories:
   - php
 authors:

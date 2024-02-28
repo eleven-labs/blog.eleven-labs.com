@@ -1,0 +1,14 @@
+name: restore-npm-cache
+description: Restore NPM Cache
+runs:
+  using: composite
+  steps:
+    - name: Restore NPM Cache
+      uses: actions/cache@v3
+      with:
+        path: "**/node_modules"
+        key: cache-node-modules-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: cache-node-modules-npm run
+    - name: Prepare project
+      shell: bash
+      run: npm run prepare
