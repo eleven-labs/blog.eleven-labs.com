@@ -5,7 +5,7 @@ date: '2022-03-22'
 slug: enquete-sur-le-crypto-gaming
 title: Enquête sur le crypto-gaming
 excerpt: 'Jeux vidéo, crypto, blockchain et NFT : au coeur du nouveau business.'
-cover: /assets/2022-03-16-enquete-sur-le-crypto-gaming/enquete-crypto.png
+oldCover: /assets/2022-03-16-enquete-sur-le-crypto-gaming/enquete-crypto.png
 categories: []
 authors:
   - marianne

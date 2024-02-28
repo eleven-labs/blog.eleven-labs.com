@@ -2,14 +2,21 @@ import React from 'react';
 import { Params, RouteObject } from 'react-router';
 import { Outlet } from 'react-router-dom';
 
-import { LanguageEnum, PATHS } from '@/constants';
+import { LanguageEnum, LANGUAGES_AVAILABLE_WITH_DT, PATHS } from '@/constants';
 import { AuthorPageContainer } from '@/containers/AuthorPageContainer';
+import { CategoryPageContainer } from '@/containers/CategoryPageContainer';
+import { HomePageContainer } from '@/containers/HomePageContainer';
 import { LayoutTemplateContainer } from '@/containers/LayoutTemplateContainer';
 import { NotFoundPageContainer } from '@/containers/NotFoundPageContainer';
-import { PostListPageContainer } from '@/containers/PostListPageContainer';
 import { PostPageContainer } from '@/containers/PostPageContainer';
 import { SearchPageContainer } from '@/containers/SearchPageContainer';
-import { loadAuthorPageData, loadPostListPageData, loadPostPageData } from '@/helpers/loaderDataHelper';
+import {
+  loadAuthorPageData,
+  loadLayoutTemplateData,
+  loadPostListPageData,
+  loadPostPageData,
+} from '@/helpers/loaderDataHelper';
+import { LayoutTemplateData } from '@/types';
 
 export const routes: RouteObject[] = [
   {
@@ -18,16 +25,20 @@ export const routes: RouteObject[] = [
         <Outlet />
       </LayoutTemplateContainer>
     ),
-    errorElement: (
-      <LayoutTemplateContainer>
-        <NotFoundPageContainer />
-      </LayoutTemplateContainer>
-    ),
+    loader: async ({ request }): Promise<LayoutTemplateData> => {
+      const lang = request.url.match(/fr|en/)?.[0] ?? 'fr';
+      return loadLayoutTemplateData({
+        request,
+        params: {
+          lang,
+        } as Params,
+      });
+    },
     children: [
       {
         index: true,
         path: PATHS.ROOT,
-        element: <PostListPageContainer />,
+        element: <HomePageContainer />,
         loader: async ({ request }) =>
           loadPostListPageData({
             request,
@@ -39,35 +50,62 @@ export const routes: RouteObject[] = [
       {
         path: '/:lang/',
         loader: ({ params }): Record<string, unknown> => {
-          if (params.lang && !Object.values(LanguageEnum).includes(params.lang as LanguageEnum)) {
+          const languages = LANGUAGES_AVAILABLE_WITH_DT as LanguageEnum[];
+          if (!languages.includes(params.lang as LanguageEnum)) {
             throw new Error(`The \`${params.lang}\` language doesn't exist`);
           }
           return {};
         },
+        hasErrorBoundary: true,
+        errorElement: <NotFoundPageContainer />,
         children: [
           {
             path: PATHS.HOME,
-            element: <PostListPageContainer />,
+            element: <HomePageContainer />,
             loader: loadPostListPageData,
           },
           {
             path: PATHS.POST,
             element: <PostPageContainer />,
+            hasErrorBoundary: true,
+            errorElement: <NotFoundPageContainer />,
             loader: loadPostPageData,
           },
           {
             path: PATHS.AUTHOR,
             element: <AuthorPageContainer />,
+            hasErrorBoundary: true,
+            errorElement: <NotFoundPageContainer />,
+            loader: loadAuthorPageData,
+          },
+          {
+            path: PATHS.AUTHOR_PAGINATED,
+            element: <AuthorPageContainer />,
+            hasErrorBoundary: true,
+            errorElement: <NotFoundPageContainer />,
             loader: loadAuthorPageData,
           },
           {
             path: PATHS.CATEGORY,
-            element: <PostListPageContainer />,
+            element: <CategoryPageContainer />,
+            hasErrorBoundary: true,
+            errorElement: <NotFoundPageContainer />,
+            loader: loadPostListPageData,
+          },
+          {
+            path: PATHS.CATEGORY_PAGINATED,
+            element: <CategoryPageContainer />,
+            hasErrorBoundary: true,
+            errorElement: <NotFoundPageContainer />,
             loader: loadPostListPageData,
           },
           {
             path: PATHS.SEARCH,
-            element: <SearchPageContainer />,
+            element: (
+              <div id="searchPageContainer">
+                <SearchPageContainer />
+              </div>
+            ),
           },
         ],
       },

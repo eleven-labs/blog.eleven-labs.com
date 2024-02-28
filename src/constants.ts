@@ -2,14 +2,19 @@ import { getEnv } from '@/helpers/getEnvHelper';
 
 export const IS_SSR = import.meta.env?.SSR ?? false;
 export const IS_PRERENDER = import.meta.env?.MODE === 'prerender';
+export const HOST_URL = getEnv<string>('VITE_HOST_URL') || 'https://blog.eleven-labs.com';
 export const BASE_URL = import.meta.env?.BASE_URL || '/';
+
+export const IS_DEBUG = getEnv<string>('VITE_IS_DEBUG') === 'true';
 
 export enum LanguageEnum {
   FR = 'fr',
   EN = 'en',
+  DT = 'dt',
 }
 
-export const LANGUAGES_AVAILABLE = [LanguageEnum.FR, LanguageEnum.EN];
+export const LANGUAGES_AVAILABLE = [LanguageEnum.FR, LanguageEnum.EN] as const;
+export const LANGUAGES_AVAILABLE_WITH_DT = IS_DEBUG ? [...LANGUAGES_AVAILABLE, LanguageEnum.DT] : LANGUAGES_AVAILABLE;
 
 export enum ContentTypeEnum {
   ARTICLE = 'article',
@@ -22,15 +27,17 @@ export const CATEGORIES = ['javascript', 'php', 'agile', 'architecture'] as cons
 export type CategoryEnum = (typeof CATEGORIES)[number];
 
 export const DEFAULT_LANGUAGE = LanguageEnum.FR;
-export const NUMBER_OF_ITEMS_PER_PAGE = 8;
+export const NUMBER_OF_ITEMS_FOR_SEARCH = 6;
+export const NUMBER_OF_ITEMS_PER_PAGE = 12;
 
 export const PATHS = {
   ROOT: '/',
   HOME: '/:lang/',
-  PAGINATED_HOME: '/:lang/page/:page/',
   POST: '/:lang/:slug/:step?/',
   AUTHOR: '/:lang/authors/:authorUsername/',
+  AUTHOR_PAGINATED: '/:lang/authors/:authorUsername/pages/:page/',
   CATEGORY: '/:lang/categories/:categoryName/',
+  CATEGORY_PAGINATED: '/:lang/categories/:categoryName/pages/:page/',
   SEARCH: '/:lang/search/',
 };
 
@@ -39,29 +46,6 @@ export const ALGOLIA_CONFIG = {
   API_KEY: getEnv<string>('VITE_ALGOLIA_API_KEY'),
   INDEX: getEnv<string>('VITE_ALGOLIA_INDEX'),
 };
-
-export const AVAILABLE_SHARE_LINKS = [
-  {
-    name: 'copyLink',
-    isVisible: true,
-  },
-  {
-    name: 'twitter',
-    isVisible: true,
-  },
-  {
-    name: 'facebook',
-    isVisible: true,
-  },
-  {
-    name: 'linkedIn',
-    isVisible: true,
-  },
-  {
-    name: 'reddit',
-    isVisible: false,
-  },
-] as const;
 
 export const GTM_ID = getEnv<string>('VITE_GTM_ID');
 

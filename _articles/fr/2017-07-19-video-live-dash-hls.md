@@ -5,7 +5,7 @@ date: '2017-07-19'
 slug: video-live-dash-hls
 title: Les principaux formats de flux video live DASH et HLS
 excerpt: 'Le HLS et le DASH, deux protocoles pour les streamer tous.'
-cover: /assets/2017-07-12-video-live-dash-hls/cover.jpg
+oldCover: /assets/2017-07-12-video-live-dash-hls/cover.jpg
 categories:
   - php
 authors:

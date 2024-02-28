@@ -9,7 +9,7 @@ excerpt: >-
   multiplication des technologies permettant de développer des applications web,
   des différents frameworks associés, des outils, ont généré le besoin de
   définir une architecture claire des projets.
-cover: /assets/2018-04-05-livre-blanc-architecture/cover.jpg
+oldCover: /assets/2018-04-05-livre-blanc-architecture/cover.jpg
 categories:
   - architecture
 authors:

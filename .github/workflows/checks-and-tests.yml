@@ -1,0 +1,99 @@
+name: Run checks and tests
+
+on: workflow_call
+
+jobs:
+  validate-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Restore NPM Cache
+        uses: ./.github/actions/restore-npm-cache
+
+      - name: Validate markdown authors and posts
+        id: validate_markdown
+        run: npm run validate-markdown --ci
+
+      - name: Add a comment to the PR after failed markdown validation
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request' && failure()
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.pull_request.number }}
+          header: validate-markdown
+          message: |
+            #### Markdown invalid 🖌
+
+            The markdown of the file **${{ steps.validate_markdown.outputs.filePath }}** is invalid !
+            > ${{ steps.validate_markdown.outputs.reason }}
+
+      - name: Remove a comment to the PR after success markdown validation
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request' && success()
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.pull_request.number }}
+          header: validate-markdown
+          delete: true
+
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Restore NPM Cache
+        uses: ./.github/actions/restore-npm-cache
+
+      - name: Lint code
+        run: npm run lint:es
+
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Restore NPM Cache
+        uses: ./.github/actions/restore-npm-cache
+
+      - name: Run Compile TypeScript
+        run: npx tsc
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Restore NPM Cache
+        uses: ./.github/actions/restore-npm-cache
+
+      - name: Run Tests
+        run: npm run test
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Restore NPM Cache
+        uses: ./.github/actions/restore-npm-cache
+
+      - name: Build Design System
+        run: npm run build
+
+  build-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Restore NPM Cache
+        uses: ./.github/actions/restore-npm-cache
+
+      - name: Build Storybook
+        run: npm run build:storybook

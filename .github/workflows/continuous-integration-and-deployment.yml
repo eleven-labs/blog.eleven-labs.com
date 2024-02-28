@@ -1,0 +1,34 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  setup:
+    uses: ./.github/workflows/setup-nodejs-and-install-dependencies.yml
+  checks-and-tests:
+    needs: setup
+    uses: ./.github/workflows/checks-and-tests.yml
+  deploy:
+    needs: checks-and-tests
+    uses: ./.github/workflows/deploy.yml
+    with:
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      AWS_BUCKET_NAME: ${{ vars.AWS_BUCKET_NAME }}
+    secrets:
+      AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+      ALGOLIA_INDEX_DEV: ${{ secrets.ALGOLIA_INDEX_DEV }}
+      ALGOLIA_API_INDEXING_KEY_DEV: ${{ secrets.ALGOLIA_API_INDEXING_KEY_DEV }}
+      ALGOLIA_API_SEARCH_KEY_DEV: ${{ secrets.ALGOLIA_API_SEARCH_KEY_DEV }}
+      GTM_ID_DEV: ${{ secrets.GTM_ID_DEV }}
+      ALGOLIA_INDEX_PRODUCTION: ${{ secrets.ALGOLIA_INDEX_PRODUCTION }}
+      ALGOLIA_API_INDEXING_KEY_PRODUCTION: ${{ secrets.ALGOLIA_API_INDEXING_KEY_PRODUCTION }}
+      ALGOLIA_API_SEARCH_KEY_PRODUCTION: ${{ secrets.ALGOLIA_API_SEARCH_KEY_PRODUCTION }}
+      GTM_ID_PRODUCTION: ${{ secrets.GTM_ID_PRODUCTION }}
+      GOOGLE_SITE_VERIFICATION: ${{ secrets.GOOGLE_SITE_VERIFICATION }}

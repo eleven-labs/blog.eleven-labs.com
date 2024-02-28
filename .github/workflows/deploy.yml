@@ -1,26 +1,61 @@
 name: Deploy
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
+  workflow_call:
+    inputs:
+      AWS_REGION:
+        required: true
+        type: string
+      AWS_BUCKET_NAME:
+        required: true
+        type: string
+    secrets:
+      AWS_ROLE_TO_ASSUME:
+        required: true
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+          required: true
+      ALGOLIA_APP_ID:
+        required: true
+      ALGOLIA_INDEX_DEV:
+        required: true
+      ALGOLIA_API_INDEXING_KEY_DEV:
+        required: true
+      ALGOLIA_API_SEARCH_KEY_DEV:
+        required: true
+      GTM_ID_DEV:
+        required: true
+      ALGOLIA_INDEX_PRODUCTION:
+        required: true
+      ALGOLIA_API_INDEXING_KEY_PRODUCTION:
+        required: true
+      ALGOLIA_API_SEARCH_KEY_PRODUCTION:
+        required: true
+      GTM_ID_PRODUCTION:
+        required: true
+      GOOGLE_SITE_VERIFICATION:
+        required: true
 
 jobs:
-  deploy:
+  deploy-website:
     runs-on: ubuntu-latest
     permissions: write-all
     environment: ${{ github.ref_name == 'master' && 'production' || github.ref_name }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Restore NPM Cache
+        uses: ./.github/actions/restore-npm-cache
 
       - name: Sets env vars for dev
         if: github.event_name == 'pull_request'
         run: |
           echo "ENV=dev-${{ github.head_ref }}" >> $GITHUB_ENV
-          echo "ENV_URL=https://${{ vars.AWS_BUCKET_NAME }}/${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "ENV_URL=https://${{ inputs.AWS_BUCKET_NAME }}/${{ github.head_ref }}" >> $GITHUB_ENV
           echo "BASE_URL=/${{ github.head_ref }}/" >> $GITHUB_ENV
+          echo "IS_DEBUG=true" >> $GITHUB_ENV
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_DEV }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_DEV }}" >> $GITHUB_ENV
@@ -31,8 +66,9 @@ jobs:
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |
           echo "ENV=production" >> $GITHUB_ENV
-          echo "ENV_URL=https://${{ vars.AWS_BUCKET_NAME }}" >> $GITHUB_ENV
+          echo "ENV_URL=https://${{ inputs.AWS_BUCKET_NAME }}" >> $GITHUB_ENV
           echo "BASE_URL=/" >> $GITHUB_ENV
+          echo "IS_DEBUG=false" >> $GITHUB_ENV
           echo "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> $GITHUB_ENV
           echo "ALGOLIA_INDEX=${{ secrets.ALGOLIA_INDEX_PRODUCTION }}" >> $GITHUB_ENV
           echo "ALGOLIA_API_INDEXING_KEY=${{ secrets.ALGOLIA_API_INDEXING_KEY_PRODUCTION }}" >> $GITHUB_ENV
@@ -40,69 +76,13 @@ jobs:
           echo "GTM_ID=${{ secrets.GTM_ID_PRODUCTION }}" >> $GITHUB_ENV
           echo "GOOGLE_SITE_VERIFICATION==${{ secrets.GOOGLE_SITE_VERIFICATION }}" >> $GITHUB_ENV
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          bundler-cache: true
-          node-version: 20
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "yarnCacheDir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v3
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.yarnCacheDir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install modules
-        run: yarn install --frozen-lockfile
-
-      - name: Validate markdown authors and posts
-        id: validate_markdown
-        run: yarn validate-markdown --ci
-
-      - name: Add a comment to the PR after failed markdown validation
-        uses: marocchino/sticky-pull-request-comment@v2
-        if: github.event_name == 'pull_request' && failure()
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          number: ${{ github.event.pull_request.number }}
-          header: validate-markdown
-          message: |
-            #### Markdown invalid 🖌
-
-            The markdown of the file **${{ steps.validate_markdown.outputs.filePath }}** is invalid !
-            > ${{ steps.validate_markdown.outputs.reason }}
-
-      - name: Remove a comment to the PR after success markdown validation
-        uses: marocchino/sticky-pull-request-comment@v2
-        if: github.event_name == 'pull_request' && success()
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          number: ${{ github.event.pull_request.number }}
-          header: validate-markdown
-          delete: true
-
-      - name: Run ESLint
-        run: yarn lint:es
-
-      - name: Run Stylelint
-        run: yarn lint:style
-
-      - name: Run Compile TypeScript
-        run: yarn tsc
-
-      - name: Run Test
-        run: yarn test
-
       - name: Build
-        run: yarn prerender
+        run: npm run prerender
         env:
           NODE_ENV: production
           BASE_URL: ${{ env.BASE_URL }}
+          VITE_IS_DEBUG: ${{ env.IS_DEBUG }}
+          VITE_HOST_URL: ${{ env.ENV_URL }}
           VITE_ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
           VITE_ALGOLIA_API_KEY: ${{ env.ALGOLIA_API_SEARCH_KEY }}
           VITE_ALGOLIA_INDEX: ${{ env.ALGOLIA_INDEX }}
@@ -116,7 +96,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-          aws-region: ${{ vars.AWS_REGION }}
+          aws-region: ${{ inputs.AWS_REGION }}
 
       - name: Start deployment
         uses: bobheadxi/deployments@v1
@@ -127,20 +107,20 @@ jobs:
           ref: ${{ github.head_ref }}
           env: ${{ env.ENV }}
 
-      - name: Deploy to S3 for dev
+      - name: Deploy to S3 for dev and clear caches
         if: github.event_name == 'pull_request'
-        run: aws s3 sync "dist/public/" "s3://${{ vars.AWS_BUCKET_NAME }}/${{ github.head_ref }}/" --delete
+        run: |
+          aws s3 sync "dist/public/" "s3://${{ inputs.AWS_BUCKET_NAME }}/${{ github.head_ref }}/" --delete
+          aws cloudfront create-invalidation --distribution-id "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" --paths "/${{ github.head_ref }}/*"
 
-      - name: Deploy to S3 for production
+      - name: Deploy to S3 for production and clear caches
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: aws s3 sync "dist/public/" "s3://${{ vars.AWS_BUCKET_NAME }}/" --delete
-
-      - name: Clear caches
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: aws cloudfront create-invalidation --distribution-id "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" --paths "/*"
+        run: |
+          aws s3 sync "dist/public/" "s3://${{ inputs.AWS_BUCKET_NAME }}/" --delete
+          aws cloudfront create-invalidation --distribution-id "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" --paths "/*"
 
       - name: Indexing on Algolia
-        run: yarn indexation:algolia
+        run: npm run indexation:algolia
         env:
           ALGOLIA_APP_ID: ${{ env.ALGOLIA_APP_ID }}
           ALGOLIA_API_INDEXING_KEY: ${{ env.ALGOLIA_API_INDEXING_KEY }}

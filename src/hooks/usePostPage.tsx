@@ -1,23 +1,25 @@
+import { Box, PostPageProps } from '@eleven-labs/design-system';
 import { useScript } from 'hoofd';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 import { PATHS } from '@/constants';
-import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
-import { LinkContainer } from '@/containers/LinkContainer';
 import { getPathFile } from '@/helpers/assetHelper';
+import { getUrl } from '@/helpers/getUrlHelper';
 import { generatePath } from '@/helpers/routerHelper';
+import { useBreadcrumb } from '@/hooks/useBreadcrumb';
+import { useContactCard } from '@/hooks/useContactCard';
 import { useDateToString } from '@/hooks/useDateToString';
-import { useNewsletterBlock } from '@/hooks/useNewsletterBlock';
+import { usePostsForCardList } from '@/hooks/usePostsForCardList';
 import { useSeoPost } from '@/hooks/useSeoPost';
-import { PostPageProps } from '@/pages/PostPage';
 import { PostPageData } from '@/types';
 
-export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentType' | 'children'> => {
+export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' | 'summary' | 'children'> => {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
   const { getDateToString } = useDateToString();
   useSeoPost(post);
-  const newsletterBlock = useNewsletterBlock();
   useScript({
     type: 'module',
     text: [
@@ -41,43 +43,56 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'contentTyp
     };
   }, []);
 
+  const contactCard = useContactCard();
+  const breadcrumb = useBreadcrumb({ categoryName: post.categories[0] });
+  const relatedPostsForCardList = usePostsForCardList({
+    posts: post.relatedPosts,
+  });
+
   const authors: PostPageProps['header']['authors'] & PostPageProps['footer']['authors'] = post.authors.map(
     (author) => ({
-      ...author,
+      username: author.username,
+      name: author.name,
+      description: <Box dangerouslySetInnerHTML={{ __html: author.content }} />,
+      avatarImageUrl: author.avatarImageUrl,
       link: {
-        as: LinkContainer,
+        label: t('common.post.footer.author.link_label'),
         hrefLang: i18n.language,
-        to: generatePath(PATHS.AUTHOR, { lang: i18n.language, authorUsername: author.username }),
+        href: generatePath(PATHS.AUTHOR, { lang: i18n.language, authorUsername: author.username }),
       },
     })
   );
 
   return {
-    backLink: <BackLinkContainer />,
+    breadcrumb,
+    cover: {
+      img: {
+        src: post.cover?.path ? getPathFile(post.cover.path) : getPathFile('/imgs/cover-article.jpg'),
+        alt: '',
+      },
+    },
     header: {
       title: post.title,
       date: getDateToString({ date: post.date }),
       readingTime: post.readingTime,
       authors,
+      shareLinks: {
+        urlToShare: getUrl(location.pathname),
+        shares: {
+          twitter: true,
+          facebook: true,
+          linkedIn: true,
+        },
+      },
     },
     footer: {
-      title: t('pages.post.post_footer_title'),
+      title: t('common.post.footer.author.title'),
       authors,
-      emptyAvatarImageUrl: getPathFile('/imgs/astronaut.png'),
     },
-    newsletterBlock,
+    contactCard,
     relatedPostList: {
-      relatedPostListTitle: t('pages.post.related_post_list_title'),
-      posts: post.relatedPosts.map((relatedPost) => ({
-        ...relatedPost,
-        authors: relatedPost.authors,
-        date: getDateToString({ date: relatedPost.date }),
-        link: {
-          as: LinkContainer,
-          hrefLang: i18n.language,
-          to: generatePath(PATHS.POST, { lang: i18n.language, slug: relatedPost.slug }),
-        },
-      })),
+      relatedPostListTitle: t('common.post.related_post_list.title'),
+      posts: relatedPostsForCardList,
     },
   };
 };
