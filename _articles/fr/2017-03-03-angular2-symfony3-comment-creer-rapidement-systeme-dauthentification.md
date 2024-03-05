@@ -45,7 +45,7 @@ Je vous propose de voir ensemble un exemple très simple et les différentes ét
 
 ---
 
-### **1 Mise en place de la partie Back-end**
+### 1 Mise en place de la partie Back-end
 
 #### 1.1 Installation d'une application Symfony3
 
@@ -65,7 +65,7 @@ bin/console server:start
 
 Viens ensuite l'installation et la configuration de certains bundles incontournables lorsque l'on veut créer une API. Nous sauterons volontairement l'étape du "composer require" et de la déclaration des bundles dans le Kernel de Symfony pour passer directement à la configuration.
 
-##### **FOSRestBundle**
+##### FOSRestBundle
 
 Ce bundle va nous permettre d'utiliser des routes API automatiques ainsi que de retourner des réponses au format Json à notre client Angular2 avec un minimum de configuration :
 
@@ -88,7 +88,7 @@ app:
 
 **[+ d'information sur la documentation](http://symfony.com/doc/current/bundles/FOSRestBundle/index.html)**
 
-##### **NelmioCorsBundle**
+##### NelmioCorsBundle
 
 Continuons ensuite avec le Bundle, qui va nous permettre de faire des requêtes Ajax sur l'API, étant donné que nos deux applications se trouvent sur deux domaines différents :
 
@@ -104,11 +104,11 @@ nelmio_cors:
 
 *Note : Nous avons ici autorisé notre future application Angular2 ainsi que le header "authorization" qui nous servira à nous authentifier. Patience, on y est bientôt :)*
 
-##### **JMSSerializerBundle**
+##### JMSSerializerBundle
 
 Ce bundle va nous permettre de sérialiser les données renvoyées par notre API. Aucune configuration n'est nécessaire dans le cadre de cet article. Nous utiliserons JMSSerializer plus tard, directement dans notre PostController.
 
-##### **LexikJWTAuthenticationBundle**
+##### LexikJWTAuthenticationBundle
 
 Enfin,  last but not least, le bundle qui va nous servir à sécuriser l'accès à nos données Symfony via un token d'authentification. Je vous laisse lire la **[documentation](https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#getting-started)** officielle qui est très claire. Il vous suffit vraiment de suivre les étapes point par point.
 
@@ -296,7 +296,7 @@ C'est le cas ? Très bien, nous allons pouvoir commencer la partie front-end :)
 
 ---
 
-### **2 Mise en place de la partie Front-end**
+### 2 Mise en place de la partie Front-end
 
 #### 2.1 Création de l'application Angular2 via Angular CLI
 

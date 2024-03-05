@@ -31,7 +31,7 @@ Today I am going to talk about 3 technologies that I chose for several reasons:
 -   Because they are the most common in making mobile applications and their communities are most active;
 -   I have already used these technologies and I want to give real feedback on them. Regarding native mobile development, I chose iOS and not Android (I explain hereafter why, no spoilers).
 
-## **Ionic:**
+## Ionic:
 
 Ionic is a JavaScript framework based on AngularJS for the web application part of the framework, and on Cordova for the native application development.
 
@@ -96,7 +96,7 @@ But Ionic has weaknesses as well:
 
 **Ionic is a great way to build small applications quickly. But as soon as you want to widen the scope of features, or to have proper performances, it starts biting. I haven't tested the version 2, but I know that they have made some improvements.**
 
-## **React Native:**
+## React Native:
 
 As its name suggests, React Native is a variation of React (driven by Facebook in 2015). Its goal is to re-use as much code as possible between different platforms.
 
@@ -136,7 +136,7 @@ From my point of view and my experience, here are the weaknesses of React Native
 
 **React Native seems to be the perfect approach for creating applications of any type. Nevertheless, it being young means that it isn't mature enough to be used to building big application that may demand particular treatments. But I recommend following its evolution closely.**
 
-### **Native:**
+### Native:
 
 Obviously, to build an application there is nothing better than native development.
 

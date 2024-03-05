@@ -30,7 +30,7 @@ In order to do that, this subject will be decomposed in 5 parts, each of them po
 
 First of all, a little history lesson: fasten your seat belt, let's start with part 1!
 
-## **So, what is it?**
+## So, what is it?
 
 SSL and TLS are cryptographic protocols that provide communications security.
 

@@ -312,7 +312,7 @@ Mais pourquoi utiliser **`Oh My Zsh`** ? Pour avoir 300 alias et n'en utiliser q
 
 Je vais vous montrer deux choses à faire qui vous permettront d'accomplir la même chose, voire plus, de manière plus simple.
 
-### **Utilisez vos alias**
+### Utilisez vos alias
 
 J'en ai parlé un peu plus tôt. Mais si vous voulez personnaliser votre **`CLI`** avec des alias, il vous suffit de créer un fichier `~/.bash_aliases` et vous pouvez créer vos propres alias.
 
@@ -402,7 +402,7 @@ Et voilà à quoi pourrait ressembler votre terminal :
 
 [La documentation](https://starship.rs/config/) est très riche, et il y a de nombreuses possibilités avec différents modules déjà développés.
 
-## **Conclusion** : vous êtes prêt à améliorer votre expérience de travail sous Linux
+## Conclusion : vous êtes prêt à améliorer votre expérience de travail sous Linux
 
 Voilà pour quelques conseils qui peuvent améliorer votre expérience de travail sur votre terminal.
 
