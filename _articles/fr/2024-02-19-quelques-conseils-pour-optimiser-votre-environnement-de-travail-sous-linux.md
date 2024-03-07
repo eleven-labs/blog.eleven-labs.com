@@ -45,7 +45,7 @@ ssh -i path-to-ssh-public-key-server-3 user-server-3@host-server-3:port-server-3
 Si vous êtes un peu paresseux, vous avez peut-être configuré des **`aliases`**. C'est bien, mais non optimal !
 Nous allons voir comment configurer notre client **`SSH`** de manière à simplifier tout cela. Allez, c'est parti !
 
-Tout d'abord, vous allez créer le fichier `.ssh/config` avec les permissions suivantes : `0600` ou, si vous préférez, `- rw- --- ---`. Ensuite, vous allez l'éditer avec votre éditeur préféré : [vim](https://blog.eleven-labs.com/fr/prise-en-main-vim-php/). 😉
+Tout d'abord, vous allez créer le fichier `.ssh/config` avec les permissions suivantes : `0600` ou, si vous préférez, `- rw- --- ---`. Ensuite, vous allez l'éditer avec votre éditeur préféré : [vim]({BASE_URL}/fr/prise-en-main-vim-php/). 😉
 
 Dans ce fichier, nous allons ajouter des blocs de configuration **`ssh`** comme suit :
 

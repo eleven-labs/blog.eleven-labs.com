@@ -60,7 +60,7 @@ Alors, que fait-on maintenant ? On se roule en boule dans un coin et on regrette
 ... Ou alors, on se tourne vers un des super pouvoirs de PHP : son écosystème d'analyseurs statiques.
 En effet, nous avons la chance en PHP d'avoir pléthore d'*analyseurs statiques*, tous extrêmement bien développés.
 
-Grâce à eux, [notre IDE favori, PhpStorm bien entendu](https://blog.eleven-labs.com/fr/phpstorm-tips-config-extensions/) est en mesure de nous crier dessus à la moindre erreur décelable avant l'exécution. 
+Grâce à eux, [notre IDE favori, PhpStorm bien entendu]({BASE_URL}/fr/phpstorm-tips-config-extensions/) est en mesure de nous crier dessus à la moindre erreur décelable avant l'exécution.
 Problème de typage ? Argument oublié dans une fonction ? Variable inutilisée ? Condition toujours vraie ? Accolade ou point virgule oublié ? Et j'en passe ...
 
 Créez même vos propres règles de lint, de bonnes pratiques à suivre dans votre équipe. Ces outils, comme PHPCs ou PHPStan, permettent tout cela.
@@ -198,7 +198,7 @@ public function foo(Collection $astronauts): void
 }
 ```
 
-Peut-être avez-vous déjà vu cette notation avec les chevrons : `Collection<Astronaut>`, notamment si vous avez déjà fait du TypeScript. 
+Peut-être avez-vous déjà vu cette notation avec les chevrons : `Collection<Astronaut>`, notamment si vous avez déjà fait du TypeScript.
 
 Ici, on indique simplement qu'il faut remplacer le type générique `T` par celui précisé entre les chevrons. Ainsi pour toutes les fois où le type `T` est utilisé dans la classe `Collection` (ici, une fois sur la fonction `add`), c'est en réalité un autre type (ici, `Astronaut`), qui sera utilisé.
 
@@ -206,7 +206,7 @@ Il faut vraiment voir `T` comme un type de substitution qui sera écrasé par un
 
 Voyons à présent un autre tag très important, le `@extends`. Il permet de tirer profit des types génériques avec **l'héritage**.
 
-L'exemple du `@extends` ci-dessous est tiré de mon [Tutoriel](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) à propos du concept de ***composition over inheritance***.
+L'exemple du `@extends` ci-dessous est tiré de mon [Tutoriel]({BASE_URL}/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) à propos du concept de ***composition over inheritance***.
 Je vous le conseille si vous souhaitez en savoir plus sur ce principe, et dans tous les cas, je vous le recommande pour sa dernière partie qui met en application les types génériques que nous sommes en train d'apprendre ici.
 
 Prenons une classe `BaseRepository`, qui se veut être une classe abstraite contenant toutes les fonctions de base utilisées dans nos repositories (`find`, `store`, `remove`, etc...).
@@ -271,7 +271,7 @@ Ainsi, vous rajoutez de la sécurité en vous empêchant de faire une action qui
 
 Cet article est volontairement théorique, et sans exemple exhaustif. Prenez-le plutôt comme un pense-bête sur l'utilisation des génériques en PHP.
 
-Pour une mise en application plus poussée et un accompagnement pas-à-pas de la vérification de ces types avec PHPStan, référez-vous au [Tutoriel](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) cité plus haut dans cet article.
+Pour une mise en application plus poussée et un accompagnement pas-à-pas de la vérification de ces types avec PHPStan, référez-vous au [Tutoriel]({BASE_URL}/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine) cité plus haut dans cet article.
 
 ## Conclusion
 
@@ -281,4 +281,4 @@ Sachez que d'autres outils que PHPStan permettent d'interpréter ces annotations
 
 Il y aurait bien d'autres choses à voir sur les types génériques, en particulier le tag `@template-covariant`, mais ce sera pour une partie 2, pourquoi pas ! En attendant, vous avez tout le nécessaire pour vous en sortir dans la grande majorité des situations.
 
-N'oubliez pas d'aller jeter un oeil à notre [Tutoriel](https://blog.eleven-labs.com/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine), amusez-vous bien avec ces outils, développez-bien, et à la prochaine !
+N'oubliez pas d'aller jeter un oeil à notre [Tutoriel]({BASE_URL}/fr/composition-over-inheritance-et-typage-generique-avec-symfony-et-doctrine), amusez-vous bien avec ces outils, développez-bien, et à la prochaine !
