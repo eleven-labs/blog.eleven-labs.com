@@ -146,4 +146,4 @@ Il est possible de rajouter autant de paramètres que l’on veut pour le besoin
 
 ## Conclusion : vous voilà prêts à utiliser le composant Symfony ExpressionLanguage !
 J’espère que vous appréhendez un peu mieux ce composant et que vous allez pouvoir imaginer les cas d’utilisation qui seront utiles pour vos projets !
-Mais n’oubliez pas qu’il faut utiliser un composant pour de bonnes raisons, sinon vous risquez de générer de la [dette technique inutilement](https://blog.eleven-labs.com/fr/comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/).
+Mais n’oubliez pas qu’il faut utiliser un composant pour de bonnes raisons, sinon vous risquez de générer de la [dette technique inutilement]({BASE_URL}/fr/comment-creer-de-la-dette-technique-des-le-debut-d-un-nouveau-projet/).

@@ -151,10 +151,13 @@ export const markdownToHtml = (content: string): string => {
           </Text>
         ),
         a: ({ node, ...props }): React.JSX.Element => {
-          const isExternalLink = (props.href as string)?.match(/^http(s)?:\/\//);
-          return (
-            <Link {...props} rel={isExternalLink ? 'nofollow noreferrer' : ''} style={{ overflowWrap: 'anywhere' }} />
+          const isExternalLink = (props.href as string)?.match(
+            /^(?!(http(s)?:\/\/)?([^.]+)\.?eleven-labs\.com\/|^\/).*$/
           );
+          if (isExternalLink) {
+            props['rel'] = 'nofollow noreferrer';
+          }
+          return <Link {...props} style={{ overflowWrap: 'anywhere' }} />;
         },
         blockquote: ({ node, ...props }): React.JSX.Element => <Blockquote {...props} />,
         pre: ({ node, ...props }): React.JSX.Element => <Box as="pre" textSize="xs" {...(props as AsProps)} />,
