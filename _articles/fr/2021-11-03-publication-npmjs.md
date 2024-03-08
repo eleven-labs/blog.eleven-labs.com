@@ -13,9 +13,9 @@ authors:
   - ygherbi
 keywords: []
 ---
-![logo-npm]({BASE_URL}/imgs/articles/2021-11-03-publication-npmjs/npm-logo.png)  
-  
-  
+![logo-npm]({BASE_URL}/imgs/articles/2021-11-03-publication-npmjs/npm-logo.png)
+
+
 De nos jours, en tant que développeurs front nous sommes constamment confrontés au fait d’utiliser des librairies.
 Une librairie publiée sur npmjs se nomme un paquet, et nous les installons au moyen de npm.
 Ils sont principalement là pour nous faciliter le quotidien : un paquet répond à un besoin, ce qui évite d'avoir à sans cesse réinventer la roue.
@@ -40,7 +40,7 @@ Vous devriez avoir ce résultat (pas forcément la même version)
 L'usage de Git est quant à lui optionnel.
 
 
-## **SOMMAIRE**
+## SOMMAIRE
 
 PARTIE 1 : **Développer son paquet**
 
@@ -215,7 +215,7 @@ Si c’est le cas vous pouvez publier votre paquet avec la certitude qu’il est
 
 ### Partie 3 : Publication du paquet
 
-#### **a/ Publication**
+#### a/ Publication
 
 Une fois que vous avez vérifié votre paquet en local, nous allons passer à l’étape cruciale, : la publication sur npmjs ☺
 Dans votre fichier package.json, nous allons ajouter des métadonnées pour que sur npmjs l’utilisateur dispose de multiples informations concernant votre paquet.
@@ -248,7 +248,7 @@ Maintenant vous pouvez lancer la commande suivante qui permet de publier votre p
 
 Votre paquet est maintenant publié ! Vous pouvez aller le vérifier dans vos paquets via votre compte sur https://www.npmjs.com/
 
-#### **b/ Publier une maj de son paquet**
+#### b/ Publier une maj de son paquet
 
 Après avoir corrigé un bug ou implémenté une fonctionnalité et si vous souhaitez publier vos modifications, c’est très simple.
 

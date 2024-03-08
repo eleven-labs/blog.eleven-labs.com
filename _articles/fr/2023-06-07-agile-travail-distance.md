@@ -22,11 +22,11 @@ keywords:
   - organisation
 ---
 
-## **Introduction**
+## Introduction
 
 De plus en plus d'entreprises optent pour le travail à distance depuis la période COVID, tandis que d'autres préfèrent revenir au présentiel. Chez Eleven Labs, nous avons contribué au lancement d'un outil commercial pour un GIE entièrement en télétravail pendant trois ans, travaillant avec des équipes de développement, des PO, des PM et des clients à distance. Forts de cette expérience, voici ci-dessous un récapitulatif des actions qui ont été mises en places. Ces actions se basent sur deux principes Agiles : la collaboration et la transparence.
 
-## **Méthodes agiles en remote**
+## Méthodes agiles en remote
 
 Pendant ces 3 ans de projets, nous avons mis en place des méthodes pour améliorer les processus de travail à distance. Voici ce que nous avons réalisé dans les deux domaines clés impactés par la distance des équipes : la collaboration et la transparence.
 
@@ -98,6 +98,6 @@ Il peut être bénéfique d'organiser des journées de travail en présentiel po
 
 Assurez-vous que ces réunions en personne sont inclusives et accessibles à tous les membres de l'équipe, en tenant compte des contraintes de déplacement, des besoins en matière d'accessibilité et des préférences individuelles.
 
-## **Conclusion**
+## Conclusion
 
 La gestion de projet en télétravail peut présenter des défis, mais elle offre également de nombreux avantages, tels qu'une meilleure productivité et une plus grande flexibilité. Pour réussir, il est essentiel de mettre en place des méthodes de communication et de collaboration efficaces, tout en maintenant une transparence maximale. De plus, l'organisation de réunions d'équipe en personne peut contribuer à renforcer l'esprit d'équipe et la cohésion.

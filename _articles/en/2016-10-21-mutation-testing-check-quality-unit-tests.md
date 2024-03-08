@@ -74,7 +74,7 @@ The test checks that the method is actually adding an entry to the astronaut arr
 But we are not protected enough : what would happen if the *addAstronaut* method changed ?
 Would our test be sufficient to detect the regression ?
 
-### **Mutation Tests**
+### Mutation Tests
 
 In order to detect breaches in your unit tests, one solution exist : **mutation tests**.
 The principle is very simple : alter the source code to check that associated tests would fail accordingly.

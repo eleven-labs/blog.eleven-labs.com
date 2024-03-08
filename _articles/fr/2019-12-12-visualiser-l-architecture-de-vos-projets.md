@@ -127,7 +127,7 @@ L'idée derrière le modèle C4 est de laisser peu de place à l'interprétation
 
 On identifie 4 niveaux d'abstractions
 
-### **Niveau 1**: System **Context** _(Contexte Système)_
+### Niveau 1: System **Context** _(Contexte Système)_
 
 ![Modèle C4: Vue Contexte Système]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/system-context.png)
 
@@ -139,7 +139,7 @@ La boîte centrale matérialise un système logiciel, entouré des ses utilisate
 **Elements de support**: Des personnes, des systèmes en relation avec le système observé.
 **Audience**: Tout le monde.
 
-### **Niveau 2**: **Container** _(Conteneur)_
+### Niveau 2: **Container** _(Conteneur)_
 
 ![Modèle C4: Vue Conteneur]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/containers.png)
 
@@ -161,7 +161,7 @@ Un conteneur est un élément qui peut être exécuté/déployé individuellemen
 **Éléments de support**: Des personnes, des systèmes en relation avec les conteneurs observés.
 **Audience**: Intervenants techniques.
 
-### **Niveau 3** : **Component** _(Composant)_
+### Niveau 3 : **Component** _(Composant)_
 
 ![Modèle C4: Vue Composant]({BASE_URL}/imgs/articles/2019-12-12-visualiser-l-architecture-de-vos-projets/component.png)
 
@@ -177,7 +177,7 @@ On y retrouve :
 **Elements de support**: Des personnes, des conteneurs, et des systèmes externes directement attachés aux composants observés.
 **Audience**: Architectes et développeurs.
 
-### **Niveau 4**: **Le Code**
+### Niveau 4: **Le Code**
 
 Pour finir, en zoomant sur un composant, on accède à son implémentation.
 
