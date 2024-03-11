@@ -27,5 +27,5 @@ jobs:
         with:
           step: deactivate-env
           token: ${{ secrets.GITHUB_TOKEN }}
-          env: "dev-${{ github.head_ref }}"
+          env: ${{ github.head_ref }}
           desc: Environment was pruned
