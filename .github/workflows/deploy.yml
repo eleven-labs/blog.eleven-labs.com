@@ -127,17 +127,11 @@ jobs:
           ref: ${{ github.head_ref }}
           env: ${{ env.ENV }}
 
-      - name: Deploy to S3 for dev
-        if: github.event_name == 'pull_request'
-        run: aws s3 sync "dist/public/" "s3://${{ vars.AWS_BUCKET_NAME }}/${{ github.head_ref }}/" --delete
-
-      - name: Deploy to S3 for production
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: aws s3 sync "dist/public/" "s3://${{ vars.AWS_BUCKET_NAME }}/" --delete
+      - name: Deploy to S3
+        run: aws s3 sync "dist/public/" "s3://${{ vars.AWS_BUCKET_NAME }}${{ env.BASE_URL }}" --delete
 
       - name: Clear caches
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-        run: aws cloudfront create-invalidation --distribution-id "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" --paths "${{ env.BASE_URL }}*"
 
       - name: Indexing on Algolia
         run: yarn indexation:algolia
