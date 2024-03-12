@@ -16,6 +16,11 @@ export const generateFiles = async (options: { rootDir: string; baseUrl: string 
       url: param.url.replace(/^\//, options.baseUrl || '/'),
     }));
 
+  urls.push({
+    lang: 'fr',
+    url: `${options.baseUrl || '/'}404/`,
+  });
+
   await Promise.all([
     generateHtmlFiles({
       rootDir: __dirname,

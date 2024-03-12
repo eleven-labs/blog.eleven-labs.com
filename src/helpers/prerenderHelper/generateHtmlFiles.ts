@@ -36,7 +36,7 @@ export const generateHtmlFiles = async (options: {
 
     const urlWithoutBaseUrl = url.replace(options.baseUrl, '');
     let fileName = 'index.html';
-    if (urlWithoutBaseUrl === '404') {
+    if (url.match(/\/404\/$/)) {
       fileName = '404.html';
     } else if (urlWithoutBaseUrl) {
       fileName = `${urlWithoutBaseUrl}/index.html`;
