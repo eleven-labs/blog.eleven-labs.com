@@ -90,9 +90,7 @@ Si vous ne voyez pas l'onglet en question, appuyez sur le raccouris "q" pour aff
 
 ```tsx
 import { userEvent, within } from '@storybook/test'; // On importe ce dont on a besoin depuis @storybook/test
-
-...
-
+// ...
 export const Default: Story = {
   play: async ({ canvasElement }) => { // On ajoute play
     const { getByRole } = within(canvasElement);
@@ -134,9 +132,7 @@ import { logRoles, userEvent, within } from '@storybook/test';
 
 export const Default: Story = {
   play: async ({ canvasElement }) => {
-
-    ...
-
+    // ...
     logRoles(canvasElement);
   }
 }
@@ -161,9 +157,7 @@ import { expect, userEvent, within } from '@storybook/test';
 
 export const Default: Story = {
   play: async ({ canvasElement }) => {
-
-    ...
-
+    // ...
     const closeButton = getByRole('button', { name: "Fermer la modale" });
     expect(closeButton).toHaveFocus();
   }
@@ -216,15 +210,13 @@ Si tout s'est bien passé **les tests sont toujours verts !**
 
 ### Conditionner le lancement des interactions
 
-Lorsqu’on ajoute une interaction, **elle est systématiquement jouée à l’ouverture** de la story. Ce n’est pas toujours le comportement souhaité. Il est possible de ne **lancer les interactions que pour Chromatic**, et également de masquer certains éléments à Chromatic pour le snapshot avec la fonction `isChromatic`. La fonction renverra `true` si on est sur Chromatic, sinon `false`. On peut l’utiliser directement dans les stories ou dans la fonction `Play`.
+Lorsqu’on ajoute une interaction, **elle est systématiquement jouée à l’ouverture** de la story. Ce n’est pas toujours le comportement souhaité. Il est possible de ne **lancer les interactions que pour Chromatic**, et également de masquer certains éléments à Chromatic pour le snapshot avec la fonction `isChromatic`. La fonction renverra `true` si on est sur Chromatic, sinon `false`. On peut l’utiliser directement dans les stories ou dans la fonction `play`.
 
 On veut que nos utilisateurs de Storybook puissent tester eux même l'ouverture de la modale avec le bouton. Nous allons donc **conditionner l'ouverture et les tests qui suivent** pour ne les lancer que sur Chromatic.
 
 ```ts
 import isChromatic from "chromatic/isChromatic"; // On importe isChromatic
-
-...
-
+// ...
 export const Default: Story = {
   play: async ({ canvasElement, args }) => {
     if (isChromatic()) { // On ajoute la condition autour de nos tests

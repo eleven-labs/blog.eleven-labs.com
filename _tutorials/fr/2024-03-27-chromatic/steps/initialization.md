@@ -15,7 +15,7 @@ Sur un terminal, placez vous dans le dossier dans le lequel vous souhaitez **cr�
 npm create vite@latest chromatic-tuto-elevenlabs --template react-ts
 ```
 
-Acceptez l’installation de `create-vite` puis selectionnez en Framework `React` et en variant `typescript` (ou javascript si vous êtes plus à l’aise, ça ne change pas grand chose). **Installez le projet**, sans le lancer&nbsp;:
+Acceptez l’installation de `create-vite` puis selectionnez en Framework `React` et en variant `Typescript` (ou `Javascript` si vous êtes plus à l’aise, ça ne change pas grand chose dans le cadre de ce tuto mais il faudra adapter les extraits de code en retirant les types). **Installez le projet**, sans le lancer&nbsp;:
 
 ```bash
 cd chromatic-tuto-elevenlabs

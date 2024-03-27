@@ -36,13 +36,13 @@ npm install -D chromatic
 Ensuite connectez-vous à Chromatic avec votre compte GitHub&nbsp;: [https://www.chromatic.com/start](https://www.chromatic.com/start)
 Choisissez l’option `Choose from GitHub`, choisissez le repo que nous utilisons pour ce tuto puis récupérez et utilisez la ligne de commande sous "Publish your Storybook", elle va nous permettre de **faire le lien entre le projet et Chromatic**.
 
-A la fin du processus vous trouverez un lien qui vous donnera accès à une **version publiée** de votre Storybook. Pas mal, non&nbsp;?
+A la fin du processus vous trouverez un lien qui vous donnera accès à une **version publiée** de votre Storybook. Pas mal, non&nbsp;? Chromatic vous affichera également **un token**, gardez le de côté car on va s'en servir dans quelques instants.
 
 C’est très bien mais nous ce qu’on veut c’est utiliser Chromatic&nbsp;! Il nous reste une dernière étape avant de rentrer dans le vif du sujet&nbsp;: **créer une Github Action**&nbsp;!
 
-Tout d’abord on a besoin de **créer un secret** sur Github. Créez le secret `CHROMATIC_PROJECT_TOKEN` qui contient le token, que vous avez récupéré précédemment. Pour créer un secret vous pouvez suivre [cette documentation](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+Tout d’abord on a besoin de **créer un secret** sur Github. Créez le secret `CHROMATIC_PROJECT_TOKEN` qui contient le token, que vous avez récupéré précédemment. [Pour créer un secret vous pouvez suivre cette documentation](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
-Retournez sur votre IDE, créez un dossier `.github/workflows` puis un fichier `chromatic.yml` et collez-y ce template (qu'on peut retrouver [ici](https://www.chromatic.com/docs/github-actions/))&nbsp;:
+Retournez sur votre IDE, créez un dossier `.github/workflows` puis un fichier `chromatic.yml` et collez-y ce template ([qu'on peut également retrouver sur le documentation de Chromatic](https://www.chromatic.com/docs/github-actions/))&nbsp;:
 
 ```yml
 # .github/workflows/chromatic.yml

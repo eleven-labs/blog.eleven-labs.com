@@ -1,7 +1,7 @@
 ---
 contentType: tutorial
 lang: fr
-date: '2024-03-26'
+date: '2024-03-27'
 slug: chromatic
 title: Ajouter des tests de non régression visuelle (et plus encore !) sur Storybook avec Chromatic
 excerpt: >-
