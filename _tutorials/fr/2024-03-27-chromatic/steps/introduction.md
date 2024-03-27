@@ -26,7 +26,7 @@ Les tests de non régression visuelle sont parfaits dans le cas d’un Design Sy
 
 ## Prérequis
 
-- Avoir NodeJs installé sur votre machine (`node -v` pour vérifier)
+- Avoir NodeJs en version 16 ou plus installé sur votre machine (`node -v` pour vérifier)
 - Avoir un compte Github
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Note</p>
