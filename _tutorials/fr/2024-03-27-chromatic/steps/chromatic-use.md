@@ -7,13 +7,13 @@ title: Comment fonctionne Chromatic
 
 ## Comment fonctionne Chromatic ?
 
-Chromatic fonctionne avec **un système de builds** qui vont se créer à chaque lancement du job dans la CI. Chromatic va vérifier s’il y a des différences visuelles par rapport au build précédent. **S’il n’y a pas de différence, le build passera** et le job sera vert. **S’il y a des différences par contre le build ne passera pas**, le job sera orange ou rouge et il faudra accepter ou non les régressions détectées par Chromatic.
+Chromatic fonctionne avec **un système de builds** qui vont se créer à chaque lancement du job dans la CI. Chromatic va vérifier s’il y a des différences visuelles par rapport au build précédent. **S’il n’y a pas de différence, le build passera** et le job sera vert. **S’il y a des différences en revanche, le build ne passera pas**, le job sera orange ou rouge et il faudra accepter ou non les régressions détectées par Chromatic.
 
-Chromatic va prendre des snapshots, c’est à dire concrètement des **impressions d’écran** des stories. Pour déterminer s’il y a une différence, il va superposer le nouveau snapshot avec l’ancien et comparer, au pixel près, si quelque chose a changé. C’est le concept de test de non régression visuelle.
+Chromatic va prendre des snapshots, c’est-à-dire des **impressions d’écran** des stories. Pour déterminer s’il y a une différence, il va superposer le nouveau snapshot avec l’ancien et comparer, au pixel près, si quelque chose a changé. C’est le concept de test de non régression visuelle.
 
 Ce sont **les snapshots qui constituent les crédits** de Chromatic. La version gratuite permet actuellement de prendre 5000 snapshots par mois, ce qui est suffisant pour nos besoins pour l’instant. Cependant nous verrons plus tard que la quantité de snapshots peut augmenter exponentiellement.
 
-**Le snaposhot est pris après la fin des animations** que Chromatic va tenter d’arrêter à la dernière frame. Il se fera également après la fin des interactions de Storybook. Si pour une quelconque raison le snapshot se prend trop tôt il est possible de **rajouter un délai** fixe pour éviter les tests flaky&nbsp;:
+**Le snapshot est pris après la fin des animations** que Chromatic va tenter d’arrêter à la dernière frame. Il se fera également après la fin des interactions de Storybook. Si pour une quelconque raison le snapshot se prend trop tôt il est possible de **rajouter un délai** fixe pour éviter les tests flaky&nbsp;:
 
 ```javascript
 export const StoryName = {
@@ -28,7 +28,7 @@ parameters: {
 ```
 ([Plus d'informations sur le délais ici](https://www.chromatic.com/docs/delay/))
 
-Nous allons donc **approuver le premier build de Chromatic** pour avoir une branche main qui sera saine et avec laquelle on pourra comparer les modifications d'autres branches.
+Nous allons **approuver le premier build de Chromatic** pour avoir une branche main saine et avec laquelle on pourra comparer les modifications d'autres branches.
 
 Dans la pipeline du commit que nous venons de faire vous devriez retrouver l'icône de Chromatic et **un job nommé "UI Tests"**. Cliquez sur "Details" pour vous rendre directement sur **l'interface de Chromatic reliée à votre projet**, sur le build lié au commit.
 
@@ -38,7 +38,7 @@ Le build est vert&nbsp;: tous les nouveaux snapshots ont été acceptés par dé
 
 ## Modifions le rendu d'un composant
 
-A partir de maintenant **nous allons faire des branches que nous mergerons** vers main pour reproduire un workflow standard de projet. Nous allons créer une branche qui va contenir une modification de style&nbsp;:
+À partir de maintenant **nous allons faire des branches que nous mergerons** vers main pour reproduire un workflow standard de projet. Nous allons créer une branche qui va contenir une modification de style&nbsp;:
 
 ```bash
 git checkout -b feat/button-primay-backgroundcolor
@@ -61,9 +61,9 @@ Le cas le plus simple et peut-être le plus courant est celui d’un commit **po
 
 Un autre cas&nbsp;: celui d’une nouvelle branche. Dans ce cas Chromatic va comparer le dernier build de la branche principale avec le snapshot de la nouvelle branche. C’est pourquoi il est **très important d’avoir son build de main à jour&nbsp;!**
 
-Le build se lance en réalité 2 fois&nbsp;: une fois dans la PR au moment du push, puis une seconde fois au merge de la branche vers la branche principale. Dans tous les cas à ce moment là le build avec lequel on va comparer sera **celui de la branche principale**. C’est pourquoi il est très important de lancer un build sur main avec l'option `autoAcceptChanges` pour éviter de valider 2 fois les mêmes changements. A moins qu’il y ait des erreurs dans les interactions ou autres bugs farfelus, le build sera automatiquement validé comme étant la nouvelle base saine pour les nouvelles branches.
+Le build se lance en réalité 2 fois&nbsp;: une fois dans la PR au moment du push, puis une seconde fois au merge de la branche vers la branche principale. Dans tous les cas à ce moment là le build avec lequel on va comparer sera **celui de la branche principale**. C’est pourquoi il est très important de lancer un build sur main avec l'option `autoAcceptChanges` pour éviter de valider 2 fois les mêmes changements. À moins qu’il y ait des erreurs dans les interactions ou autres bugs farfelus, le build sera automatiquement validé comme étant la nouvelle base saine pour les nouvelles branches.
 
-Pour plus d'information sur les gestion des ancêtres de Chromatic vous pouvez vous rendre sur la [documentation](https://www.chromatic.com/docs/branching-and-baselines/).
+Pour plus d'informations sur les gestion des ancêtres de Chromatic vous pouvez vous rendre sur la [documentation](https://www.chromatic.com/docs/branching-and-baselines/).
 
 Nous allons configurer l'acceptation automatique des changements dans notre branche actuelle. Dans le fichier `chromatic.yml` nous allons ajouter en dessous du `ProjectToken` une nouvelle ligne qui configure `autoAcceptChanges`&nbsp;:
 
@@ -89,17 +89,17 @@ Le build est en orange&nbsp;: il n'est ni validé ni en erreur, il **attend simp
 
 ![Le build de Chromatic est orange]({BASE_URL}/imgs/tutorials/2024-03-27-chromatic/ui-tests4.png)
 
-Sur la nouvelle page nous avons tout en haut à gauche le nom de la première story et du composant&nbsp;: "Button: Primary". **En dessous nous pouvons trouver les snapshots.**. Nous avons à gauche l'état de base du composant, et **à droite le nouvel état** détecté par Chromatic... et notre bouton qui est vert fluo au lieu d'être bleu ! Pas de panique, **c'est la façon dont Chromatic indique les zones de différences** entre les deux snapshots. En haut à droite du snapshot du nouvel état se trouvent des boutons qui permettent d'indiquer différement les zones de différence en ajoutant une ombre ou un effet stromboscopique. **En cliquant sur "Diff" vous désactiverez l'overlay vert** pour afficher le composant.
+Sur la nouvelle page nous avons tout en haut à gauche le nom de la première story et du composant&nbsp;: "Button: Primary". **En dessous nous pouvons trouver les snapshots.**. Nous avons à gauche l'état de base du composant, et **à droite le nouvel état** détecté par Chromatic... et notre bouton qui est vert fluo au lieu d'être bleu ! Pas de panique, **c'est la façon dont Chromatic indique les zones de différences** entre les deux snapshots. En haut à droite du snapshot du nouvel état se trouvent des boutons qui permettent de distinguer les zones de différence en ajoutant une ombre ou un effet stroboscopique. **En cliquant sur "Diff" vous désactiverez l'overlay vert** pour afficher le composant.
 
-Tout en bas de page nous retrouvons le DOM du composant qui est également affiché&nbsp;: il est important de noter que **Chromatic ne prend pas en compte les différences de DOM** pour déterminer si un composant a changé où non, c'est uniquement le snapshot visuel qu'il prend en compte. Le DOM est plutôt affiché à but informatif, pour aider à débugger par exemple, mais ne compte pas pour Chromatic. Enfin tout en haut à droite nous avons des flèches pour passer entre les différents composants, **puis deux boutons, "Deny" et "Accept"** à côté desquels sont accolés leurs versions "batch" pour tout refuser ou tout accepter.
+Tout en bas de page nous retrouvons le DOM du composant qui est également affiché&nbsp;: il est important de noter que **Chromatic ne prend pas en compte les différences de DOM** pour déterminer si un composant a changé ou non, c'est uniquement le snapshot visuel qu'il prend en compte. Le DOM est plutôt affiché à but informatif, pour aider à débugger par exemple, mais ne compte pas pour Chromatic. Enfin tout en haut à droite nous avons des flèches pour passer entre les différents composants, **puis deux boutons, "Deny" et "Accept"** à côté desquels sont accolés leurs versions "batch" pour tout refuser ou tout accepter.
 
-On remarque que **le bleu du bouton est effectivement différent** et que Chromatic l'a bien repéré. On remarque aussi que modifier un seul composant a eu un impact sur des stories différentes, Header et Pages, que nous n'avons pas modifiées. C'est la force des tests de non régression visuelle&nbsp;: même si on ne sait pas quelles sont les impactes liées à nos modifications, **Chromatic est là pour vérifier sur chacunes des stories s'il y a des impactes auxquels on ne pense pas.** C'est un filet de sécurité très rassurant !
+On remarque que **le bleu du bouton est effectivement différent** et que Chromatic l'a bien repéré. On remarque aussi que modifier un seul composant a eu un impact sur des stories différentes, Header et Pages, que nous n'avons pas modifiées. C'est la force des tests de non régression visuelle&nbsp;: même si on ne sait pas quelles sont les impacts liés à nos modifications, **Chromatic est là pour vérifier sur chacune des stories les éventuels impacts que nous n'aurions pas envisagés.** C'est un filet de sécurité très rassurant !
 
-Un par un, **nous allons accepter les nouveaux snapshots de Chromatic**. Une fois tous les snapshots acceptés Chromatic nous renvoit sur la page précédente et nous pouvons voir que **le Build est devenu vert&nbsp;!** Youpi&nbsp;!
+Un par un, **nous allons accepter les nouveaux snapshots de Chromatic**. Une fois tous les snapshots acceptés Chromatic nous renvoie sur la page précédente et nous pouvons voir que **le Build est devenu vert&nbsp;!** Youpi&nbsp;!
 
 ![La pipeline de la MR sur Github est passée au vert]({BASE_URL}/imgs/tutorials/2024-03-27-chromatic/ui-tests5.png)
 
-De retour sur la PR vous verrez que **tous les checks sont passés** et que vous pouvez désormais la merger. Cliquez sur "Merge Pull Request" puis "Confirm Merge" et "Delete Branch" pour supprimer la branche devenue inutile. Rendez vous sur la liste des commits du projet et patientez quelques instants&nbsp;: **les jobs devraient tous passer au vert sans intervention** de votre part ! Si vous cliquez sur "Details" à côté de "Tests UI" vous verrez qu'un nouveau build a été lancé, depuis `main`, et que vous n'avez pas eu besoin de l'approuver pour qu'il soit vert.
+De retour sur la PR vous verrez que **tous les checks sont passés** et que vous pouvez désormais la merger. Cliquez sur "Merge Pull Request" puis "Confirm Merge" et "Delete Branch" pour supprimer la branche devenue inutile. Rendez-vous sur la liste des commits du projet et patientez quelques instants&nbsp;: **les jobs devraient tous passer au vert sans intervention** de votre part ! Si vous cliquez sur "Details" à côté de "Tests UI" vous verrez qu'un nouveau build a été lancé, depuis `main`, et que vous n'avez pas eu besoin de l'approuver pour qu'il soit vert.
 
 ![La pipeline de main sur Github est automatiquement passée au vert]({BASE_URL}/imgs/tutorials/2024-03-27-chromatic/ui-tests6.png)
 
@@ -114,7 +114,7 @@ Nous avons aussi vu qu’en réalité pour une PR **il y a deux builds qui sont 
 **Turbosnap** arrive à la rescousse ! Il s'agit d’une feature qui **va vérifier quels sont les fichiers potentiellement modifiés** par le commit afin de ne prendre que les snapshots qui peuvent être dans son scope. Ainsi si j’ai 10 stories sur Storybook mais que je n’en modifie qu’une, alors je n’aurais qu’un snapshot de consommé au lieu de 10 pour chaque build... ou presque. Chaque snapshot évité avec Turbosnap est considéré comme un cinquième d'un snapshot. **Pour 5 snapshots évité, on a donc consommé un crédit**.
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Note</p>
-Petit instant bommer&nbsp;: avant, Turbosnap était complètement gratuit en crédit jusqu'à récemment&nbsp;: ce qui paraissait logique puisqu'il permettait de ne pas faire de snapshots, et donc d'économiser du temps et des ressources. C'était gagnant / gagnant ! Maintenant, même si le nouveau coût en crédit reste modéré, pour ma part la pillule a un peu de mal à passer...
+Petit instant bommer&nbsp;: avant, Turbosnap était complètement gratuit en crédit jusqu'à récemment&nbsp;: ce qui paraissait logique puisqu'il permettait de ne pas faire de snapshots, et donc d'économiser du temps et des ressources. C'était gagnant / gagnant ! Maintenant, même si le nouveau coût en crédit reste modéré, pour ma part la pilule a un peu de mal à passer...
 </div>
 
 ![Une utilisation du meme "Pepperidge farm remembers" : "Do you remember when Turbosnap was free ? Pepperidge farm remembers"]({BASE_URL}/imgs/tutorials/2024-03-27-chromatic/turbosnap-pepperidge.jpg)
@@ -286,7 +286,7 @@ Ajouter des modes de thème ou viewport consomme plus de snapshots&nbsp;: c'est 
 </div>
 
 <div class="admonition info" markdown="1"><p class="admonition-title">Info</p>
-La navigateur par défaut de la version gratuite est Chrome, mais il est possible de tester différents navigateurs avec les versions payantes de Chromatic. Attention encore une fois, ajouter un nouveau navigateur revient à multiplier tous les snapshots déjà présents et donc là aussi à augmenter sa consommation de crédit.
+Le navigateur par défaut de la version gratuite est Chrome, mais il est possible de tester différents navigateurs avec les versions payantes de Chromatic. Attention encore une fois, ajouter un nouveau navigateur revient à multiplier tous les snapshots déjà présents et donc là aussi à augmenter sa consommation de crédit.
 </div>
 
 [Voir la documentation complète sur les Modes](https://www.chromatic.com/docs/modes/)
