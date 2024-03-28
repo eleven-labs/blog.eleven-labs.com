@@ -1,4 +1,7 @@
 ---
+cover :
+   alt : Comment optimiser mon environnement de travail sous Linux ?
+   path : /imgs/articles/2024-02-19-quelques-conseils-pour-optimiser-votre-environnement-de-travail-sous-linux/cover.jpg
 contentType: article
 lang: fr
 date: '2024-02-19'
