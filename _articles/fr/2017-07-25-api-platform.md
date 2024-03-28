@@ -5,7 +5,7 @@ date: '2017-07-25'
 slug: creer-une-api-avec-api-platform
 title: Créer une API avec API Platform
 excerpt: "Api Platform se définit comme un «\_framework PHP pour construire des APIs web modernes\_». En effet, cet outil va nous permettre de construire rapidement une API riche et facilement utilisable."
-cover: /assets/2017-07-25-api-platform/cover.jpg
+oldCover: /assets/2017-07-25-api-platform/cover.jpg
 categories:
   - php
 authors:

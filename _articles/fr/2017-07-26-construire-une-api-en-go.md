@@ -5,7 +5,7 @@ date: '2017-07-26'
 slug: construire-une-api-en-go
 title: Construire une api en Go
 excerpt: Présentation du package http/net et de la librairie Buffalo
-cover: /assets/2017-07-26-construire-une-api-en-go/cover.jpg
+oldCover: /assets/2017-07-26-construire-une-api-en-go/cover.jpg
 categories: []
 authors:
   - qneyrat

@@ -1,7 +1,12 @@
+import GithubSlugger from 'github-slugger';
 import { globSync } from 'glob';
 import matter from 'gray-matter';
+import { toString } from 'mdast-util-to-string';
 import { readFileSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
+import remarkParse from 'remark-parse';
+import { unified } from 'unified';
+import { visit } from 'unist-util-visit';
 
 import { ASSETS_DIR, MARKDOWN_FILE_PATHS } from '@/app-paths';
 import { ContentTypeEnum } from '@/constants';
@@ -34,19 +39,19 @@ const frontmatter = <TData = { [p: string]: unknown }>(
   return matter(content) as Omit<matter.GrayMatterFile<string>, 'data'> & { data: TData };
 };
 
-export const extractHeaders = (markdownContent: string): { level: number; text: string }[] => {
-  const headers: { level: number; text: string }[] = [];
-  const lines = markdownContent
-    .replace(/```(\w+)?\n([\s\S]*?)\n```/gm, '')
-    .split('\n')
-    .filter((line) => line.startsWith('#'));
+export const extractHeaders = (markdownContent: string): { id: string; level: number; text: string }[] => {
+  const slugger = new GithubSlugger();
+  const ast = unified().use(remarkParse).parse(markdownContent);
 
-  for (const line of lines) {
-    const match = line.match(/^(#+)\s([^#]+)/);
-    if (match) {
-      headers.push({ level: match[1].length, text: match[2].trim() });
-    }
-  }
+  const headers: { id: string; level: number; text: string }[] = [];
+  visit(ast, 'heading', (node) => {
+    const value = toString(node, { includeImageAlt: false });
+    headers.push({
+      id: slugger.slug(value),
+      level: node.depth,
+      text: value,
+    });
+  });
 
   return headers;
 };
@@ -119,9 +124,11 @@ export const getArticles = (): TransformedArticleData[] =>
         contentType: data.contentType,
         lang: data.lang,
         slug: data.slug,
+        cover: data.cover,
         date: new Date(data.date).toISOString(),
         title: data.title,
         excerpt: data.excerpt,
+        summary: extractHeaders(content),
         readingTime: getReadingTime(content),
         authors: data.authors,
         categories: data.categories,
@@ -155,6 +162,7 @@ export const getTutorials = (): TransformedTutorialData[] => {
         contentType: data.contentType,
         lang: data.lang,
         slug: data.slug,
+        cover: data.cover,
         date: new Date(data.date).toISOString(),
         title: data.title,
         excerpt: data.excerpt,

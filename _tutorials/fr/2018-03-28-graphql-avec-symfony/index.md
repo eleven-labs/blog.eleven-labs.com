@@ -6,7 +6,7 @@ slug: graphql-avec-symfony
 title: GraphQL avec Symfony
 excerpt: >-
   Dans ce tutoriel nous allons mettre en place un serveur GraphQL avec le framework Symfony.
-cover: /assets/2018-03-28-graphql-avec-symfony/cover.jpg
+oldCover: /assets/2018-03-28-graphql-avec-symfony/cover.jpg
 categories:
   - php
 authors:

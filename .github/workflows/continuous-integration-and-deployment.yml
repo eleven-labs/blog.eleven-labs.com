@@ -1,0 +1,31 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  setup:
+    uses: ./.github/workflows/setup-nodejs-and-install-dependencies.yml
+  checks-and-tests:
+    needs: setup
+    uses: ./.github/workflows/checks-and-tests.yml
+  deploy:
+    needs: checks-and-tests
+    uses: ./.github/workflows/deploy.yml
+    with:
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      AWS_BUCKET_NAME: ${{ vars.AWS_BUCKET_NAME }}
+      ALGOLIA_INDEX: ${{ vars.ALGOLIA_INDEX }}
+      GTM_ID: ${{ vars.GTM_ID_DEV }}
+      IS_DEBUG: ${{ vars.IS_DEBUG }}
+    secrets:
+      AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
+      ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+      ALGOLIA_API_INDEXING_KEY: ${{ secrets.ALGOLIA_API_INDEXING_KEY }}
+      ALGOLIA_API_SEARCH_KEY: ${{ secrets.ALGOLIA_API_SEARCH_KEY }}

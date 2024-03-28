@@ -9,7 +9,7 @@ excerpt: >-
   donnés (array, collection, API etc...). Nous allons découvrir la librairie
   Xpression qui va nous permettre de filtrer différents contenus avec une
   syntaxe simplifiée.
-cover: /assets/2018-07-11-xpression/cover.jpg
+oldCover: /assets/2018-07-11-xpression/cover.jpg
 categories:
   - php
 authors:

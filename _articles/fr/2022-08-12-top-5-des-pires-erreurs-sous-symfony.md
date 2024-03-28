@@ -5,7 +5,7 @@ date: '2022-08-12'
 slug: top-5-des-pires-erreurs-sous-symfony
 title: Mon top 5 des PIRES erreurs sous Symfony
 excerpt: "La numéro 2 va vous surprendre \U0001F631"
-cover: /assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/logo.png
+oldCover: /assets/2022-08-12-top-5-des-pires-erreurs-sous-symfony/logo.png
 categories:
   - php
   - architecture

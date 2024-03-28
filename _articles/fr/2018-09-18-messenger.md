@@ -5,7 +5,7 @@ date: '2018-09-18'
 slug: symfony-messenger
 title: Symfony Messenger
 excerpt: Nous allons voir comment utiliser le nouveau composant Messenger de Symfony
-cover: /assets/2018-09-11-messenger/cover.jpg
+oldCover: /assets/2018-09-11-messenger/cover.jpg
 categories:
   - php
 authors:

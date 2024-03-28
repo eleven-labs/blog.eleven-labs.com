@@ -10,7 +10,7 @@ excerpt: >-
   Le but de cet article est de montrer la puissance d'un Slack bot pour
   simplifier la vie en entreprise, et comment le mettre en place avec DialogFlow
   et Symfony
-cover: /assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/cover.jpg
+oldCover: /assets/2017-12-21-remplacer-erp-par-slack-bot-avec-dialogflow-et-symfony/cover.jpg
 categories:
   - php
 authors:

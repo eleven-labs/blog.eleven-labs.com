@@ -7,7 +7,7 @@ title: OpenPGP - J'ai participé à une fête de la signature des clefs
 excerpt: >-
   OpenPGP ne s'appuie pas sur une autorité de certification pour certifier les
   personnes, mais sur la confiance.
-cover: /assets/2017-12-01-openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/cover.jpg
+oldCover: /assets/2017-12-01-openpgp-clef-participe-a-une-fete-de-la-signature-des-clefs/cover.jpg
 categories: []
 authors:
   - tthuon

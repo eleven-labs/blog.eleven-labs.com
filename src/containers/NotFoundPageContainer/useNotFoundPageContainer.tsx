@@ -1,15 +1,15 @@
+import { NotFoundPageProps } from '@eleven-labs/design-system';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouteError } from 'react-router-dom';
 
-import { BackLinkContainer } from '@/containers/BackLinkContainer/BackLinkContainer';
+import { TransWithHtml } from '@/containers/TransWithHtml';
 import { useTitle } from '@/hooks/useTitle';
-import { NotFoundPageProps } from '@/pages/NotFoundPage';
 
 export const useNotFoundPageContainer = (): NotFoundPageProps => {
   const { t } = useTranslation();
   const error = useRouteError();
-  const title = t('seo.not_found.title');
+  const title = t('pages.not-found.title');
   useTitle(title);
 
   if (error) {
@@ -17,8 +17,7 @@ export const useNotFoundPageContainer = (): NotFoundPageProps => {
   }
 
   return {
-    backLink: <BackLinkContainer />,
     title,
-    description: t('pages.not_found.description'),
+    description: <TransWithHtml i18nKey="pages.not_found.description" />,
   };
 };

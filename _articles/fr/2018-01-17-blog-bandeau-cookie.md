@@ -10,7 +10,7 @@ excerpt: >-
   agaçant est dû à une loi passée il y a quelques années par la commission
   européenne. Profitons donc de l'intégration récente de ce bandeau sur ce blog
   pour en parler.
-cover: /assets/2018-01-17-cookie-banner/cover.jpg
+oldCover: /assets/2018-01-17-cookie-banner/cover.jpg
 categories:
   - javascript
 authors:

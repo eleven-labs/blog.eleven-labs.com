@@ -7,10 +7,10 @@ services:
     env_file:
       - .env
     volumes:
-      - "./:/var/www/app"
+      - ./:/var/www/app
     ports:
       - 6009:6009
       - 5173:5173
       - 24678:24678
-    command: ["sh", "-c", "yarn --production=false --frozen-lockfile && yarn start:dev"]
+    command: ['sh', '-c', 'npm ci && npx --yes concurrently "npm run start:storybook" "npm run start:dev"']
 

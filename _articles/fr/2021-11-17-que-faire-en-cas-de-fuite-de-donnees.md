@@ -8,7 +8,7 @@ excerpt: >-
   Les récentes fuites de données chez Twitch et Facebook rappellent aux
   entreprises qu'elles sont vulnérables, et qu'elles ont des obligations envers
   les utilisateurs. Si ça vous arrivait aussi, sauriez-vous quoi faire ?
-cover: /assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/dataleak.png
+oldCover: /assets/2021-11-17-que-faire-en-cas-de-fuite-de-donnees/dataleak.png
 categories: []
 authors:
   - marianne

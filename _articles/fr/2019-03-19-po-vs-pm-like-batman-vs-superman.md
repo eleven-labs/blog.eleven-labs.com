@@ -9,7 +9,7 @@ excerpt: >-
   "Toi qui est PM, ou PO… Enfin, c’est pareil quoi". Alors non. Même si ces deux
   casquettes peuvent se combiner, un PM et un PO ne sont pas interchangeables et
   ils ont bien deux jobs différents.
-cover: /assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-vs-po-cover.jpg
+oldCover: /assets/2019-03-19-po-vs-pm-like-batman-vs-superman/pm-vs-po-cover.jpg
 categories:
   - agile
 authors:

@@ -6,7 +6,7 @@ slug: graphql-avec-apollo
 title: GraphQL avec Apollo
 excerpt: >-
  Dans ce tutoriel nous allons mettre en place un serveur GraphQL via le framework Apollo
-cover: /assets/2018-03-28-graphql-avec-apollo/cover.jpg
+oldCover: /assets/2018-03-28-graphql-avec-apollo/cover.jpg
 categories:
   - javascript
 authors:

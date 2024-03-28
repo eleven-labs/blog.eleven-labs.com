@@ -2,7 +2,7 @@ import { LoaderFunctionArgs } from '@remix-run/router/utils';
 import fetch from 'cross-fetch';
 
 import { BASE_URL, CategoryEnum, ContentTypeEnum, IS_PRERENDER, IS_SSR } from '@/constants';
-import { ArticlePageData, AuthorPageData, PostListPageData, TutorialPageData } from '@/types';
+import { ArticlePageData, AuthorPageData, LayoutTemplateData, PostListPageData, TutorialPageData } from '@/types';
 
 const cache = new Map();
 
@@ -32,19 +32,33 @@ const fetchWithCache = async <TData>(options: { request: Request; path: string }
   return data as TData;
 };
 
+export const loadLayoutTemplateData = async (options: LoaderFunctionArgs): Promise<LayoutTemplateData> =>
+  fetchWithCache<LayoutTemplateData>({
+    request: options.request,
+    path: `${options.params.lang}/common.json`,
+  });
+
 export const loadPostListPageData = async (options: LoaderFunctionArgs): Promise<PostListPageData> => {
   const dataFromPostListPage = await fetchWithCache<PostListPageData>({
     request: options.request,
     path: `${options.params.lang}/post-list.json`,
   });
+
   if (options.params.categoryName) {
+    const postsByCategoryName = dataFromPostListPage.posts.filter((post) =>
+      options.params.categoryName === ContentTypeEnum.TUTORIAL
+        ? post.contentType === ContentTypeEnum.TUTORIAL
+        : options.params.categoryName === 'all'
+        ? true
+        : post?.categories?.includes(options.params.categoryName as CategoryEnum)
+    );
+    if (postsByCategoryName.length === 0) {
+      throw new Error(
+        `No articles associated with the category "${options.params.categoryName}" for the language "${options.params.lang}"`
+      );
+    }
     return {
-      categories: dataFromPostListPage.categories,
-      posts: dataFromPostListPage.posts.filter((post) =>
-        options.params.categoryName === ContentTypeEnum.TUTORIAL
-          ? post.contentType === ContentTypeEnum.TUTORIAL
-          : post?.categories?.includes(options.params.categoryName as CategoryEnum)
-      ),
+      posts: postsByCategoryName,
     };
   }
   return dataFromPostListPage;

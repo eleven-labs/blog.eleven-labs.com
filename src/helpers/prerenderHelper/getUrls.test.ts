@@ -9,6 +9,15 @@ import {
 } from './getUrls';
 
 describe('getSitemapEntries', () => {
+  vi.mock('@/constants', async () => {
+    const mod = await vi.importActual<typeof import('@/constants')>('@/constants');
+    return {
+      ...mod,
+      IS_DEBUG: false,
+      LANGUAGES_AVAILABLE_WITH_DT: mod.LANGUAGES_AVAILABLE,
+    };
+  });
+
   it('should return URLs of home page grouped by language', () => {
     const expectedUrls: ReturnType<typeof getHomePageUrls> = [
       { lang: 'fr', url: '/' },
@@ -63,15 +72,37 @@ describe('getSitemapEntries', () => {
           { lang: 'fr', url: '/fr/categories/all/' },
           { lang: 'en', url: '/en/categories/all/' },
         ],
+        [
+          { lang: 'fr', url: '/fr/categories/all/pages/1/' },
+          { lang: 'en', url: '/en/categories/all/pages/1/' },
+        ],
+        [
+          { lang: 'fr', url: '/fr/categories/all/pages/2/' },
+          { lang: 'en', url: '/en/categories/all/pages/2/' },
+        ],
+        [{ lang: 'fr', url: '/fr/categories/all/pages/3/' }],
+        [{ lang: 'fr', url: '/fr/categories/all/pages/4/' }],
         [{ lang: 'fr', url: '/fr/categories/php/' }],
+        [{ lang: 'fr', url: '/fr/categories/php/pages/1/' }],
+        [{ lang: 'fr', url: '/fr/categories/php/pages/2/' }],
         [
           { lang: 'fr', url: '/fr/categories/architecture/' },
           { lang: 'en', url: '/en/categories/architecture/' },
         ],
         [
+          { lang: 'fr', url: '/fr/categories/architecture/pages/1/' },
+          { lang: 'en', url: '/en/categories/architecture/pages/1/' },
+        ],
+        [
+          { lang: 'fr', url: '/fr/categories/architecture/pages/2/' },
+          { lang: 'en', url: '/en/categories/architecture/pages/2/' },
+        ],
+        [
           { lang: 'fr', url: '/fr/categories/tutorial/' },
           { lang: 'en', url: '/en/categories/tutorial/' },
         ],
+        [{ lang: 'fr', url: '/fr/categories/tutorial/pages/1/' }],
+        [{ lang: 'fr', url: '/fr/categories/tutorial/pages/2/' }],
       ],
     },
   ])('should return URLs of category page grouped by language', ({ mockPosts, expectedUrls }) => {

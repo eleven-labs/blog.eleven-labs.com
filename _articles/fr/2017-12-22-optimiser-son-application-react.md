@@ -10,7 +10,7 @@ excerpt: >-
   plus performant. Mais à cause d'exemples peut-être trop simples et d'une
   croyance aveugle en la toute puissance de React, il peut en résulter de
   sérieux problèmes de performance.
-cover: /assets/2017-12-22-optimiser-son-application-react/cover.jpg
+oldCover: /assets/2017-12-22-optimiser-son-application-react/cover.jpg
 categories:
   - javascript
 authors:

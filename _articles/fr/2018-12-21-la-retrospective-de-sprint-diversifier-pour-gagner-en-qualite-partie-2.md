@@ -9,7 +9,7 @@ excerpt: >-
   est maintenant temps de se pencher sur des versions plus évoluées, qui vous
   permettront notamment d’aborder des situations différentes et récolter des
   informations parfois plus pertinentes.
-cover: /assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/cover.jpg
+oldCover: /assets/2018-12-13-la-retrospective-de-sprint-diversifier-pour-gagner-en-qualite-partie-2/cover.jpg
 categories:
   - agile
 authors:

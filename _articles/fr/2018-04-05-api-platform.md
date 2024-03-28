@@ -7,7 +7,7 @@ title: Ta liste des courses avec API Platform
 excerpt: >-
   API Platform se veut être un framework complet permettant de créer des projets
   web se basant sur des APIs orientées ressource
-cover: /assets/2018-04-05-api-platform/cover.jpg
+oldCover: /assets/2018-04-05-api-platform/cover.jpg
 categories:
   - php
   - javascript

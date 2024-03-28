@@ -1,101 +1,178 @@
 {
-  "seo": {
-    "home": {
-      "title": "Tech news"
-    },
-    "category": {
-      "title": "Article(s) from category {{ categoryName }}"
-    },
-    "author": {
-      "title": "Author's article(s) {{ authorName }}"
-    },
-    "search": {
-      "title": "Search"
-    },
-    "not_found": {
-      "title": "Page not found"
-    }
-  },
-  "categories": {
-    "all": "Tous",
-    "javascript": "JavaScript",
-    "php": "PHP",
-    "agile": "Agile",
-    "architecture": "Architecture",
-    "tutorial": "Tutorial"
-  },
-  "languages": {
-    "fr": "Français",
-    "en": "English"
-  },
   "common": {
-    "back": "Back"
-  },
-  "header": {
-    "title": "Eleven Labs",
-    "subtitle": "The blog",
-    "intro_block": {
-      "title": "Nice to see you",
-      "description": "Let's explore new knowledge"
+    "categories": {
+      "all": "All articles",
+      "javascript": "JavaScript",
+      "php": "PHP",
+      "agile": "Agile",
+      "architecture": "Architecture",
+      "tutorial": "Tutorials"
     },
-    "choice_category_label": "Which articles do you want to read ?"
-  },
-  "footer": {
-    "intro_block": {
-      "title": "Discover Eleven Labs",
-      "description": "The software engineering provider which boosts your web, mobile and data projects!"
+    "header": {
+      "contact_label_link": "Contact us"
     },
-    "contact": {
-      "title": "Contact",
-      "form_title": "Contact us"
+    "autocomplete": {
+      "placeholder": "Article title, author....",
+      "see_all_search_label": "See all results"
     },
-    "link_to_eleven_labs_site": "Check the website"
-  },
-  "autocomplete": {
-    "placeholder": "Search by article or author name",
-    "see_all_search_label": "See all results"
-  },
-  "search_not_found": {
-    "title": "No results in sight...",
-    "description": "Check your search terms before trying again"
-  },
-  "newsletter": {
-    "title": "Want to know more ?",
-    "description": "Sign up to our Newsletter",
-    "button_label": "Subscribe"
-  },
-  "pages": {
-    "post_list": {
-      "post_preview_list_title": "All our articles",
-      "post_preview_list_category_title": "Our articles {{ categoryName }}",
-      "number_of_posts_displayed_label": "{{ numberOfPosts }}/{{ maxNumberOfPosts }} displayed",
-      "load_more_button_label": "Show more"
+    "search_not_found": {
+      "title": "This search had no results...",
+      "description": "Please check your search terms then try again"
+    },
+    "footer": {
+      "intro_block": {
+        "title": "Discover Eleven Labs:",
+        "description": "We make your web, mobile and data projects get off the ground"
+      },
+      "contact_label_link": "Contact us"
+    },
+    "languages": {
+      "fr": "French",
+      "en": "English",
+      "dt": "DT"
+    },
+    "tutorial-tag": "Tutorial",
+    "newsletter-card": {
+      "title": "Sign up to our<br />AstroNews!",
+      "description": "Read our monthly newsletter and stay informed about the latest tech news, useful resources of the month and the best of X (Ex-Twitter)!"
     },
     "post": {
-      "related_post_list_title": "Related articles",
-      "post_footer_title": "write by"
+      "footer": {
+        "author": {
+          "link_label": "View profile",
+          "title": "Author(s)"
+        }
+      },
+      "share_links": {
+        "copied_label": "Copied!"
+      },
+      "related_post_list": {
+        "title": "Discover other content about the same topic"
+      }
+    },
+    "breadcrumb": {
+      "home_label": "Home"
+    },
+    "contact_card": {
+      "title": "You wanna know more about something in particular?<br /><strong>Let's plan a meeting!</strong>",
+      "description": "Our experts answer all your questions.",
+      "link_label": "Contact us"
+    }
+  },
+  "pages": {
+    "home": {
+      "seo": {
+        "title": "Web development blog: feedbacks, articles and tutorials from our experts"
+      },
+      "intro-block": {
+        "intro": "Explore new knowledge",
+        "title": "Eleven Labs' technical blog about web development",
+        "description": "On this blog you can read feedbacks and advices from our astronauts about mobile and web development, agility, the Javascript ecosystem, and PHP Symfony.\n\nYou can also learn how to create different kind of features with our tutorials section!",
+        "website-link-label": "Learn more about Eleven Labs"
+      },
+      "last-articles-block": {
+        "title": "Our most recent articles about mobile and web development",
+        "link-see-more": "Read all our articles"
+      },
+      "last-tutorials-block": {
+        "title": "The tech tutorials from our astronauts",
+        "description": "Read our tutorials and learn to create new features: set up a chat with Mercure and Symfony, build a CI/CD with Gitlab-CI for a Javascript app and much more. Follow the guide!",
+        "link-see-more": "Read all our tutorials"
+      }
+    },
+    "category": {
+      "javascript": {
+        "seo": {
+          "title": "Javascript programming: tutorials and articles about the last trends"
+        },
+        "title": "Our articles and feedbacks about Javascript programming",
+        "description": "<strong>Javascript is a dynamic programming language famous for its flexiblity!</strong> No wonder it's the most popular language among developers worldwide. In this category, find all our experts' articles, feedbacks and tutorials revolving around <strong>React.js, Node.js, Nest.js, Next.js, Vue.js, Svelte.js, and many tools to use in order to facilitate your delivery or set up a Design System, and much more! Good reading!</strong>",
+        "expertise": {
+          "title": "Which kind of applications can be built using Javascript?",
+          "description": "<p>Today, one can do almost anything with Javascript: web and mobile applications, progressive web apps, softwares, business applications, fullstack Javascript websites, backend APIs, video games, TV applications... and many others. In short, Javascript has become the central web language, it is currently the most used on GitHub. Making the choice of Javascript for your web development project is therefore, in the majority of cases, a good idea!</p>",
+          "link_label": "Learn more about our Javascript expertise",
+          "link_url": "https://eleven-labs.com/dev-web/react-js/"
+        },
+        "post_list_title": "All our articles about Javascript web development"
+      },
+      "php": {
+        "seo": {
+          "title": "PHP programming: articles, tutorials and feedbacks"
+        },
+        "title": "Our articles and feedbacks about PHP programming",
+        "description": "<strong>PHP is a backend-oriented programming language</strong> that allows the development of dynamic and interactive applications. It is a popular language, used by a large number of web applications widely used by the general public. In this category, find all the articles, feedbacks and tutorials from our astronauts about <strong>PHP, Symfony, Laravel, Angular, the essential tools to improve your productivity, and our reports on major community events!</strong> Good reading!",
+        "expertise": {
+          "title": "What's the value of PHP?",
+          "description": "With its rich ecosystem, strong community, and sturdy frameworks such as Symfony, <strong>PHP makes possible the development of all types of backend applications</strong>. Its use helps speed up the development process: its predefined structure and components allow developers to focus more on business logic. PHP's flexibility allows the creation of <strong>interactive web applications, e-commerce sites, blogs, marketplaces, media sites and even personalized back offices</strong>. PHP is therefore a quality solution for developing your tailor-made web projects.",
+          "link_label": "Learn more about our PHP Symfony expertise",
+          "link_url": "https://eleven-labs.com/dev-web/php-symfony/"
+        },
+        "post_list_title": "All our articles about the PHP programming language and its latest trends"
+      },
+      "agile": {
+        "seo": {
+          "title": "Agile methodologies: articles, project sheets and tutorials on our blog"
+        },
+        "title": "Our articles and feedbacks about agile methodologies used for web development projects",
+        "description": "<p><strong>The Agile methodology</strong> is an IT project management approach, or rather a&nbsp;<strong>“product management” approach</strong>, which allows the team to manage a project by breaking it down into short development cycles, called sprints. Today, the word Agile can refer to these values as well as the implementation frameworks, including: Scrum, Kanban, Safe, Lean… In this category, find all the articles, feedbacks and tutorials from our Agile team about <strong>Scrum, the job of Scrum Master and Product Manager and their advices on how to manage a sprint, which agile method to choose depending on the context or even on product prioritization! Good reading!</strong></p>",
+        "expertise": {
+          "title": "What is the most popular agile methodology?",
+          "description": "<strong>Scrum is the most popular agile framework in 2023</strong>. It is used by companies both as sole agile method and as hybrid agile method. <strong>Its principle of dividing work into short periods of generally 2 weeks called \"sprints\"</strong>&nbsp;<strong>makes it possible to quickly come with a first version of a viable product</strong>. Each sprint is validated one after the other by the client, which allows work to be pursued on solid foundations, the following sprints aiming to further improve the product. The process is therefore significantly more productive. At Eleven Labs, we mainly work with the agile Scrum methodology and support our clients in <strong>managing their digital products</strong>, in training teams in the agile Scrum methodology or in <strong>agile coaching</strong>."
+        },
+        "post_list_title": "All our articles on agile methodologies"
+      },
+      "architecture": {
+        "seo": {
+          "title": "Architecture and DevOps: articles, tutorials and feedbacks"
+        },
+        "title": "Our articles and feedbacks on IS Architecture, Data and DevOps",
+        "description": "<strong>The architecture of information systems (IS)</strong> has never been as important as it is today. Closely linked to business success, you must know how to place the cursor between business needs, innovation, security and performance. In this category, find all the articles, feedbacks and advices from our astronauts about <strong>Data architecture</strong>, <strong>DevOps practices and tools</strong>, IS and web architecture as well as tutorials for setting up step-by-step your own architecture. Good reading!",
+        "expertise": {
+          "title": "What's the most important thing DevOps helps us achieve?",
+          "description": "<p>The most important thing that DevOps helps us achieve is collaboration and continuous <strong>integration between</strong> development and operations teams. By fostering a <strong>culture of collaboration</strong> and by automating processes, DevOps helps <strong>eliminate organizational silos</strong>, accelerate application deployment and improve responsiveness to change. Ultimately, it helps create an environment where development and operations work together, facilitating a faster, more reliable, and more efficient <strong>delivery of software</strong>, while promoting continuous innovation and <strong>performance optimization</strong>.</p>",
+          "link_label": "Learn more about our DevOps expertise",
+          "link_url": "https://eleven-labs.com/devops/"
+        },
+        "post_list_title": "All our articles about the latest trends in architecture and DevOps"
+      },
+      "tutorial": {
+        "title": "All our tutorials about mobile and web development",
+        "description": "Discover all our web development tutorials. Let our astronauts guide you step-by-step in creating whole solutions or new features : create an Android player in Kotlin, set up a GraphQL server by retrieving data via REST APIs or even set up a CI/CI with GitLab for a Vue.js application. Good reading!",
+        "post_list_title": "Read all our tutorials in mobile and web development"
+      },
+      "all": {
+        "title": "All our articles about mobile and web development",
+        "description": "<p>Discover articles from our astronauts, granting you direct access to their expertise in web development through several formats: projects feedbacks, tutorials and tool tests, advices on methodologies, introduction to frameworks... Chose your topic amongst Agility, Architecture, Data, DevOps, Javascript, or PHP!</p>\n<p>Good reading.</p>",
+        "post_list_title": "Read all our articles"
+      }
+    },
+    "article": {
+      "summary_card": {
+        "title": "Summary"
+      }
     },
     "tutorial": {
+      "summary_card": {
+        "title": "Progress"
+      },
       "previous_button": "Previous",
       "next_button": "Next"
     },
     "author": {
-      "post_preview_list_title": "Author's article(s)"
+      "seo": {
+        "title": "Article(s)/tutorial(s) by author {{ authorName }}"
+      },
+      "post_list_title": "Articles and tutorials by the author"
     },
     "search": {
-      "title": "{{ numberOfHits }} hits",
-      "description": "sorted by relevance",
-      "not_found": {
-        "title": "No results in sight...",
-        "description": "Check your search terms before trying again"
-      }
+      "title": "{{ numberOfHits }} results",
+      "description": "sorted by relevance"
+    },
+    "not-found": {
+      "title": "Page not found"
     },
     "not_found": {
-      "title": "Page not found",
-      "description": "We apologize for any inconvenience, but the page you requested was not found."
-    },
-    "share_links": {
-      "copied_label": "Copied!"
+      "description": "We're sorry for the inconvenience, but the page you requested was not found."
     }
   }
 }

@@ -6,6 +6,8 @@ describe('getSitemapEntries', () => {
       const mod = await vi.importActual<typeof import('@/constants')>('@/constants');
       return {
         ...mod,
+        IS_DEBUG: false,
+        LANGUAGES_AVAILABLE_WITH_DT: mod.LANGUAGES_AVAILABLE,
         CategoryEnum: ['category-1'],
       };
     });
