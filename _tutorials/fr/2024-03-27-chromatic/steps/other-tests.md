@@ -7,13 +7,13 @@ title: Les autres tests qu'on peut lancer sur Chromatic
 
 ## Tests d'interactivité avec Play
 
-Pour l’instant nous avons vu qu’avec Chromatic on pouvait lancer des tests de non régression visuelle. On peut également lancer des **tests d’interaction de composant !** On pourra tester si les comportements du composant lorsque l’utilisateur interagit avec correspond bien à ce qu’on souhaite.
+Pour l’instant nous avons vu qu’avec Chromatic on pouvait lancer des tests de non régression visuelle. On peut également lancer des **tests d’interaction de composant !** On pourra tester si les comportements du composant lorsque l’utilisateur interagit avec correspond bien à ce que l’on souhaite.
 
-Ces tests sont réalisés dans **l’onglet Interactions** des stories. Pour ajouter une interaction à une story il faut créer une fonction `play`. A l’intérieur on va pouvoir utiliser les utilitaires fournis par `@storybook/tests` qui regroupent **des utilitaires de Jest et de Testing-library**. On pourra utiliser `step` pour diviser les tests en sous parties nommées.
+Ces tests sont réalisés dans **l’onglet Interactions** des stories. Pour ajouter une interaction à une story il faut créer une fonction `play`. À l’intérieur on va pouvoir utiliser les utilitaires fournis par `@storybook/tests` qui regroupent **des utilitaires de Jest et de Testing-library**. On pourra utiliser `step` pour diviser les tests en sous-parties nommées.
 
 Chromatic n’est pas nécessaire pour lancer les tests d’interactivité. Il y a d’autres façons de lancer ces tests de façon automatique, notamment avec `@storybook/test-runner`. Je parle de ces tests ici car ils sont **automatiquement lancés dans Chromatic** avant qu'il prenne le snapshot, donc c’est d’une pierre deux coups.
 
-Nous allons voir dans quels cas concret on peut utiliser des tests d'interactivité.
+Nous allons voir dans quels cas concrets on peut utiliser des tests d'interactivité.
 
 ### Création de notre composant de test
 
@@ -52,7 +52,7 @@ export const Modal = ({onOpenModal}: {onOpenModal: () => void}) => {
 }
 ```
 
-Nous avons donc un `Button` qui nous permettra **d'ouvrir la modale** pour tester son comportement. Au click sur le bouton on appelle une méthode `showModal` qui apparient au `dialog` et qui permet comme son nom l'indique d'ouvrir la modale. Sur l'élément `dialog` nous avons récupéré **la référence de l'élément** avec `ref` pour utiliser ses méthodes. Cet élément contient un `button` avec **un `aria-label` explicite pour améliorer sa compréhension** pour les personnes utilisant un lecteur d'écran (puisque "X" n'est pas vraiment un super contenu de bouton, mais c'est pour l'exemple). Enfin on a un `p` qui affiche le contenu de la modale.
+Nous avons donc un `Button` qui nous permettra **d'ouvrir la modale** pour tester son comportement. Au clik sur le bouton on appelle une méthode `showModal` qui appartient au `dialog` et qui permet comme son nom l'indique d'ouvrir la modale. Sur l'élément `dialog` nous avons récupéré **la référence de l'élément** avec `ref` pour utiliser ses méthodes. Cet élément contient un `button` avec **un `aria-label` explicite pour améliorer sa compréhension** pour les personnes utilisant un lecteur d'écran (puisque "X" n'est pas vraiment un super contenu de bouton, mais c'est pour l'exemple). Enfin on a un `p` qui affiche le contenu de la modale.
 
 On va ensuite créer un fichier au même niveau, appelé `Modal.stories.ts` dans lequel on va ajouter ce code&nbsp;:
 
@@ -82,10 +82,10 @@ Relancez storybook s'il n'est pas déjà en train de tourner avec `npm run story
 
 Grâce aux interactions nous pouvons résoudre un des problèmes qu’on peut avoir avec Chromatic sur certains composants. Comment faire pour **prendre le snapshot d’un composant qui ne s’ouvre qu’au clic**, comme un dropdown ou une modale par exemple ? On peut utiliser une interaction pour activer le composant, car **Chromatic prend le snapshot après que les interactions ont réussi**. Si les interactions sont en erreur, alors le build est lui aussi en erreur.
 
-Dans `Default` tout en bas de notre story nous allons ajouter **une fonction `play`**. Celle ci va nous permettre de lancer des interactions, visibles dans l'onglet du même nom dans la story `Default`.
+Dans `Default` tout en bas de notre story nous allons ajouter **une fonction `play`**. Celle-ci va nous permettre de lancer des interactions, visibles dans l'onglet du même nom dans la story `Default`.
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Note</p>
-Si vous ne voyez pas l'onglet en question, appuyez sur le raccouris "q" pour afficher le panneau des addons dans la story. Il faut aussi bien être sur la story en elle-même et pas sur la documentation du composant.
+Si vous ne voyez pas l'onglet en question, appuyez sur le raccourci "q" pour afficher le panneau des addons dans la story. Il faut aussi bien être sur la story en elle-même et pas sur la documentation du composant.
 </div>
 
 ```tsx
@@ -111,7 +111,7 @@ Dans l'onglet `Interactions` on a bien des lignes qui sont apparues pour décrir
 
 Comment tester **des composants en prenant en compte des notions d’accessibilité** ?
 
-Il y a tout d’abord un addon d'accessibilité, `storybook-addon-a11y`, qui permet d’afficher les erreurs et warnings possibles sur un composant. On peut aussi installer `axe-playwright` pour vérifier qu’il n’y a pas de régressions d’accessibilité.
+Il y a tout d’abord un addon d'accessibilité, `storybook-addon-a11y`, qui permet d’afficher les erreurs et warnings possibles sur un composant. On peut aussi installer `axe-playwright` pour vérifier qu’il n’y a pas de régression d’accessibilité.
 
 On peut tester quelques points d'accessibilité **en utilisant les interactions appropriées**&nbsp;:
 
@@ -138,7 +138,7 @@ export const Default: Story = {
 }
 ```
 
-Dans la console du navigateur on peut voir que les éléments ont été loggés, et notamment celui ci&nbsp;:
+Dans la console du navigateur on peut voir que les éléments ont été loggés, et notamment celui-ci&nbsp;:
 
 ```bash
 button:
@@ -212,7 +212,7 @@ Si tout s'est bien passé **les tests sont toujours verts !**
 
 Lorsqu’on ajoute une interaction, **elle est systématiquement jouée à l’ouverture** de la story. Ce n’est pas toujours le comportement souhaité. Il est possible de ne **lancer les interactions que pour Chromatic**, et également de masquer certains éléments à Chromatic pour le snapshot avec la fonction `isChromatic`. La fonction renverra `true` si on est sur Chromatic, sinon `false`. On peut l’utiliser directement dans les stories ou dans la fonction `play`.
 
-On veut que nos utilisateurs de Storybook puissent tester eux même l'ouverture de la modale avec le bouton. Nous allons donc **conditionner l'ouverture et les tests qui suivent** pour ne les lancer que sur Chromatic.
+On veut que nos utilisateurs de Storybook puissent tester eux-mêmes l'ouverture de la modale avec le bouton. Nous allons donc **conditionner l'ouverture et les tests qui suivent** pour ne les lancer que sur Chromatic.
 
 ```ts
 import isChromatic from "chromatic/isChromatic"; // On importe isChromatic
