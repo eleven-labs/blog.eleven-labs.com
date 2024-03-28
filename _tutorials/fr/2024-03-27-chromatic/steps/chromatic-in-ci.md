@@ -18,14 +18,14 @@ git commit -m "init commit"
 git branch -M main
 ```
 
-Ensuite nous allons **créer un repo sur Github** et y envoyer notre premier commit. Rendez vous sur cette page [https://github.com/new](https://github.com/new) puis créez un repo "chromatic-tuto-elevenlabs". Puis sur votre terminal lancez ces commandes (les commandes sont aussi indiquées préremplies sur Github).
+Ensuite nous allons **créer un repo sur Github** et y envoyer notre premier commit. Rendez-vous sur cette page [https://github.com/new](https://github.com/new) puis créez un repo "chromatic-tuto-elevenlabs". Sur votre terminal, lancez ces commandes (les commandes sont aussi indiquées préremplies sur Github) :
 
 ```bash
 git remote add origin https://github.com/<votre username>/<nom sur repo>.git
 git push -u origin main
 ```
 
-Votre premier commit est maintenant sur Github&nbsp;! Nous allons maintenant passer au moment que vous attendez tous&nbsp;: **installer Chromatic**&nbsp;!
+Votre premier commit est maintenant sur Github&nbsp;! Nous allons désormais passer au moment que vous attendez tous&nbsp;: **installer Chromatic**&nbsp;!
 
 Nous allons installer Chromatic en devDependency&nbsp;:
 
@@ -33,10 +33,10 @@ Nous allons installer Chromatic en devDependency&nbsp;:
 npm install -D chromatic
 ```
 
-Ensuite connectez-vous à Chromatic avec votre compte GitHub&nbsp;: [https://www.chromatic.com/start](https://www.chromatic.com/start)
+Ensuite, connectez-vous à Chromatic avec votre compte GitHub&nbsp;: [https://www.chromatic.com/start](https://www.chromatic.com/start).
 Choisissez l’option `Choose from GitHub`, choisissez le repo que nous utilisons pour ce tuto puis récupérez et utilisez la ligne de commande sous "Publish your Storybook", elle va nous permettre de **faire le lien entre le projet et Chromatic**.
 
-A la fin du processus vous trouverez un lien qui vous donnera accès à une **version publiée** de votre Storybook. Pas mal, non&nbsp;? Chromatic vous affichera également **un token**, gardez le de côté car on va s'en servir dans quelques instants.
+À la fin du processus vous trouverez un lien qui vous donnera accès à une **version publiée** de votre Storybook. Pas mal, non&nbsp;? Chromatic vous affichera également **un token**, gardez-le de côté car on va s'en servir dans quelques instants.
 
 C’est très bien mais nous ce qu’on veut c’est utiliser Chromatic&nbsp;! Il nous reste une dernière étape avant de rentrer dans le vif du sujet&nbsp;: **créer une Github Action**&nbsp;!
 
@@ -69,7 +69,7 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 ```
 
-Créez un commit et poussez le sur le repo&nbsp;:
+Créez un commit et poussez-le sur le repo&nbsp;:
 
 ```bash
 git add .
