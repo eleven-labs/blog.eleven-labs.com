@@ -3,4 +3,4 @@ contentType: author
 username: marianne
 name: Marianne Joseph-Géhannin
 ---
-Développeuse PHP/Symfony 🦝
+Architecte applicatif et lead développeuse PHP/Symfony 🦝
