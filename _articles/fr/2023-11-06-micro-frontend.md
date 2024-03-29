@@ -5,6 +5,8 @@ date: 2023-11-06
 slug: micro-frontend
 title: "Micro frontend : la solution pour une meilleure maintenabilité de vos applications web"
 excerpt: "Comprendre et mettre en place le concept de micro frontend : cas d'usage concrets et exemples d'implémentations basés sur notre expérience"
+cover:
+  path: /imgs/articles/2023-11-06-micro-frontend/cover.jpg
 categories:
     - javascript
 keywords:

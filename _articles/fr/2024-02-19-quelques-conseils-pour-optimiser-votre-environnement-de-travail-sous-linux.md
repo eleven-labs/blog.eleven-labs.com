@@ -7,6 +7,8 @@ title: 'Quelques conseils pour optimiser votre environnement de travail sous Lin
 excerpt: >-
   Travailler efficacement sous Linux va bien au-delà des simples commandes du terminal. Dans cet article, découvrez quelques conseils pour optimiser votre environnement de travail et améliorer votre expérience utilisateur.
 categories: []
+cover:
+  path: /imgs/articles/2024-02-19-quelques-conseils-pour-optimiser-votre-environnement-de-travail-sous-linux/cover.jpg
 authors:
   - nicolas
 keywords:
