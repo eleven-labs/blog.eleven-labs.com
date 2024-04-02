@@ -15,11 +15,14 @@ authors:
   - jdebandt
 keywords:
   - conference
-  - agile
+  - agilité
   - scrum
   - lean
   - veille
 ---
+
+![Flowcon]({BASE_URL}/imgs/articles/2024-04-03-retour-sur-la-flowcon-2024/flowcon.png)
+
 
 Depuis une décennie, la [FlowCon](https://www.flowcon.fr/) rassemble en France une joyeuse bande d'experts qui se retrouvent pour 2 jours de partage d'idées, d'expériences et de théories sur le sujet du développement produit en flux.
 
@@ -29,9 +32,21 @@ Les conférenciers arrivent aussi bien de France que de l’international, prêt
 
 Bref, c'est comme un buffet à volonté en français et anglais, mais pour des esprits agiles qui avancent pas à pas vers un but commun !
 
-![Flowcon]({BASE_URL}/imgs/articles/2024-04-03-retour-sur-la-flowcon-2024/flowcon.png)
 
 ## Avis d'un astronaute Scrum Master : Julien
+
+Je me suis rendu à la Flowcon cette année, en tant que Scrum Master à la fois pour découvrir de nouvelles pratiques mais aussi pour rencontrer des gens et prendre de la hauteur sur mon activité.
+
+Comment ne pas parler de la keynote d’ouverture par [Sander Hoogendoorn](https://flowcon2024.sched.com/speaker/aahoogendoorn), CTO chez iBOOD, il nous fait entrer en matière avec brio. Speaker expérimenté, il nous parle de la nécessité d'aller au-delà de l’agilité conventionnelle pour dépasser les cadres rigides qui peuvent empêcher les équipes de travailler sereinement.
+
+Cette année la Flowcon a ajouté la catégorie “durable” à ses conférences, cet ajout arrive dans un contexte climatique compliqué et est bienvenu. J’ai pu assisté à deux conférences sur le sujet.
+
+La conférence d’[Eric Fourboul](https://flowcon2024.sched.com/speaker/eric1687) sur la géographie des impacts du numérique. Il nous parle d’Analyse de Cycle de Vie et de l’impact qu’on des datacenters sur l'environnement, pas seulement par leur consommation énergétique mais également de part leur construction. Il nous montre également que les rapports d'impact énergétique sont impactés par la géographie. En effet, un datacenter en France consomme une énergie plus décarbonée qu’en Allemagne, ainsi le scope d’émission d’une même infrastructure diffère en fonction de sa géolocalisation. Ce qui peut nous amener à des transferts de pollution car si les infrastructures sont géolocalisables, le trafic internet lui ne l’est pas, ainsi un utilisateur d’un pays à énergie décarboné n’aura pas forcément accès à des données provenant de sa localisation et délocalise son impact sans s’en apercevoir. Il nous parle également de l’utilisation massive des ressources abiotiques ou de stress hydrique.
+
+[Tristan Nitot](https://flowcon2024.sched.com/speaker/tristan.nitot) nous conte dans sa conférence l’histoire de la loi de Moore, dans laquelle l’évolution des performances matérielles nous a permis de développer des logiciels toujours plus gourmands et de moins en moins optimisés. Pour lui nous devons inverser cette loi de Moore et proposer un matériel plus durable qui n'évoluera que peu et passer plus de temps à optimiser un maximum nos solutions. Celle-ci répondrait uniquement à nos besoins de manière optimisée et permettrait de faire place via cette optimisation à de nouveaux besoins sur des infrastructures similaires.
+
+Pour conclure, ces deux jours m’ont permis de prendre du recul sur ma mission actuelle, d’apprendre de nouvelles choses, de retrouver des camarades agilistes, de faire des rencontres et de débattre. Bref, expérience réussie, à l’année prochaine, d’ici là je m'entraîne à suivre des conférences anglophones, et je laisse soin à l’organisation de prendre en compte les quelques remarques sur la capacité et la respirabilité des salles ainsi que les suggestions d’améliorations proposées par les participants !
+
 
 ## Second retour d'un astronaute Scrum Master: Sébastien
 
@@ -54,6 +69,7 @@ En tant que Scrum Master, mon expérience à la FlowCon a été riche en rebondi
 
 Les ateliers, quant à eux, ont été une véritable bouffée d'air frais, divertissante et enrichissante. En résumé, j'ai débarqué avec des questions et je suis reparti avec un coffre-fort d'idées brillantes, agrémenté de nouvelles questions pour alimenter ma quête incessante d'amélioration continue !
 
+
 ## Retour d'une astronaute lead et architecte : Marianne
 
 En tant qu’architecte applicatif/lead développeuse, je suis allée à la Flowcon pour, d’un côté, améliorer mes connaissances sur l’agilité et de l’autre, pour les conférences plus techniques liées à l’architecture.
@@ -62,15 +78,18 @@ La conférence regroupant les deux, c’était _L’architecture n’appartient 
 
 <iframe width="590" height="332" src="https://www.youtube.com/embed/qSXkQQKeT9U" frameborder="0" allowfullscreen></iframe>
 
+
 Il explique le fonctionnement de l’équipe (voire des équipes) d’architecture mais aussi des équipes de développement qui sont parties prenantes des décisions techniques les concernant.
 >Le pôle architecte doit créer une relation de confiance avec les lead devs et sachants des équipes et leur donner de la liberté car, dans leur écosystème, l’architecte est considéré comme une fonction support “Comment puis-je aider ?”.
+
 
 Le prix de la conférence sans langue de bois revient à Aboubakr Bekkali et Noémie Aung de chez L’Occitane pour _Chouette, un problème!_. J’ai beaucoup aimé la franchise qu’ils ont eue sur les problématiques quand ils sont arrivés chez L’Occitane avec des équipes en souffrance et sur le parcours difficile pour en sortir. Ils ont expliqué les enjeux et montré les facettes d’une conduite du changement. Ils ont mis en place du Lean, d’abord seuls puis accompagnés d’une coach (comme quoi, l’[accompagnement c’est important](https://eleven-labs.com/audit-systeme-information/)), petit à petit les résultats sont apparus.
 > J’y ai retenu “il faut savoir poser un problème” et que sa résolution peut prendre plusieurs mois ainsi que la discipline est la clé du succès.
 
+
 Par curiosité, je suis allée assister à la conférence de [Chloé Girardin](https://fr.linkedin.com/in/chlo%C3%A9-girardin-34766395) _Product Marketing Manager dans la vraie vie_. Même si je ne suis pas du tout la cible, Chloé, par sa personnalité et sa vision, a su me vendre son métier et m'entraîner dans son quotidien. Sur certains points, cela m’a fait penser à Eleven Labs : la [gamification](https://eleven-labs.com/galaxie-eleven/) et une [culture d’entreprise forte](https://eleven-labs.com/culture-entreprise/) pour créer des liens entre les consultants et fédérer ([🦝](https://emojipedia.org/fr/raton-laveur) Forever).
 
-![Product Marketing Manager dans la vraie vie]({BASE_URL}/imgs/articles/2024-04-03-retour-sur-la-flowcon-2024/pmm.png)
+![Product Marketing Manager dans la vraie vie]({BASE_URL}/imgs/articles/2024-04-03-retour-sur-la-flowcon-2024/pmm.jpg)
 
 Je ne vais pas reparler de la conférence d’Eric Fourboul sur la _Géographie des impacts environnementaux du numérique - Exemple des datacenters_ car Julien en a déjà parlé, mais elle met en lumière ces problématiques souvent oubliées dans l’IT.
 
