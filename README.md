@@ -154,7 +154,21 @@ first paragraph.
 second paragraph displayed after 2 empty lines.
 ```
 
-**3 - Write the content of the article**
+**3 - Adding Cover**
+
+To maintain graphic consistency, cover visuals should be in a photorealistic style and preferably related to the topics of your articles.
+
+By "photorealistic style" we mean: no cartoons, no 3D visuals, no illustrations, no graphics, no logos, etc.
+
+To choose your image, you have several options:
+
+- Head to [La Boîte à Outils de l'Astronaute](https://drive.google.com/drive/folders/1SLZRiqHSel3AWNSVbrblfg3ON_XwR5RU?usp=drive_link) to access ready-to-use image banks
+- If you can't find what you're looking for, you can access free and royalty-free image banks like [AdobeStock](https://stock.adobe.com/fr/), [Pexels](https://www.pexels.com/fr-fr/), [Unsplash](https://unsplash.com/fr)
+- If you still can't find an image despite these different solutions, you can ask Thomas Péjout to generate an image for you with MidJourney
+
+In order to have a quality image, we ask you to integrate an image with a minimum width of 3000 px
+
+**4 - Write the content of the article**
 
 The content of the article be written in markdown.
 You can use one of the solutions:
@@ -186,7 +200,7 @@ If you need to add internal anchor links from your article to other article of o
 
 > Warning: Don't add html in your markdown, you don't have to override the blog template in the markdown.
 
-**4 - Add your pull request**
+**5 - Add your pull request**
 
 Create your branch and add your pull request.
 ```bash

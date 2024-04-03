@@ -5,6 +5,8 @@ date: 2023-11-27
 slug: integration-composants-react-avec-esi-dans-site-no-code
 title: "REX Studio : Intégration de composants React avec Varnish ESI dans un site No Code"
 excerpt: "Découvrez comment notre Studio a intégré avec succès des composants React et Varnish ESI sur un site No Code. Explorez les défis à relever et les solutions mises en œuvre"
+cover:
+  path: /imgs/articles/2023-11-27-rex-custom-components-react-varnish-esi/cover.jpg
 categories:
     - javascript
 keywords:

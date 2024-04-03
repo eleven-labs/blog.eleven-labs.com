@@ -10,6 +10,8 @@ excerpt: >
   in IT. The purpose of this article is to tell you about our experience to give
   you a better vision of why there aren't many of us, why some give up, and,
   above all, how to make that change.
+cover:
+  path: /imgs/articles/2021-03-08-women-in-it/cover.jpg
 categories: []
 authors:
   - marishka

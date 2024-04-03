@@ -5,6 +5,8 @@ date: 2024-01-10
 slug: typage-generique-php
 title: "Typage générique en PHP : définition, conseils et exemples"
 excerpt: "Découvrez comment réaliser du typage générique en PHP : introduction et définition du concept, conseils et explications pas-à-pas de cas pratique."
+cover:
+  path: /imgs/articles/2024-01-10-typage-generique-en-php/cover.jpg
 categories:
     - php
 keywords:

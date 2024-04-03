@@ -7,6 +7,7 @@ import { generateImageFormats } from '../src/helpers/generateImageFormats';
 
 const BASE_URL = process.env.BASE_URL || '/';
 const MODE = process.env.NODE_ENV || 'production';
+const WITH_GENERATE_IMAGE_FORMATS = process.env.WITH_GENERATE_IMAGE_FORMATS !== 'false';
 const ROOT_DIR = process.cwd();
 const ASSETS_DIR = resolve(ROOT_DIR, '_assets');
 const OUT_DIR = resolve(ROOT_DIR, 'dist');
@@ -39,9 +40,11 @@ const writeJsonDataFilesAndFeedFile = async (): Promise<void> => {
 const build = async (): Promise<void> => {
   const designSystemRootDir = resolve(process.cwd(), 'node_modules/@eleven-labs/design-system/dist');
   cpSync(ASSETS_DIR, resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
-  const destDir = resolve(process.cwd(), 'public');
-  cpSync(resolve(designSystemRootDir, 'imgs'), resolve(destDir, 'imgs'), { recursive: true });
-  await Promise.all([writeJsonDataFilesAndFeedFile(), generateImageFormats()]);
+  cpSync(resolve(designSystemRootDir, 'imgs'), resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
+  await writeJsonDataFilesAndFeedFile();
+  if (WITH_GENERATE_IMAGE_FORMATS) {
+    await generateImageFormats();
+  }
 
   if (args.ssr) {
     await buildVite({

@@ -84,7 +84,7 @@ jobs:
         uses: ./.github/actions/restore-npm-cache
 
       - name: Build Application
-        run: npm run build
+        run: WITH_GENERATE_IMAGE_FORMATS=false npm run build
 
   build-storybook:
     runs-on: ubuntu-latest

@@ -5,6 +5,8 @@ date: 2023-12-05
 slug: integration-crm-avec-plateforme-e-commerce
 title: "Comment intégrer votre CRM avec votre plateforme e-commerce"
 excerpt: "Découvrez un cas d'usage d'intégration d'un CRM avec une application e-commerce, en asynchrone, avec Hubspot et RabbitMQ"
+cover:
+  path: /imgs/articles/2023-12-05-integration-crm/cover.jpg
 categories:
     - php
 keywords:

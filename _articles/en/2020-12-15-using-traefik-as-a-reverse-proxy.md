@@ -7,7 +7,8 @@ title: Using Traefik as a reverse proxy
 excerpt: >-
   In need for exposing websites and applications easily on the internet with a
   valid SSL certificate ? You're on the right spot ! :)
-oldCover: /assets/2019-12-18-utiliser-traefik-comme-reverse-proxy/cover.jpg
+cover:
+  path: /imgs/articles/2020-12-15-using-traefik-as-a-reverse-proxy/cover.jpg
 categories: []
 authors:
   - jmoati

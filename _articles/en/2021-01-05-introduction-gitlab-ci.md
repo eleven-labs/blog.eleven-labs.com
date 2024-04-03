@@ -8,7 +8,8 @@ excerpt: >-
   This article presents some of the possibilities that GitLab CI/CD offers. You
   will find on the Codelabs platform two tutorials linked to this article, which
   will show you two use cases.
-oldCover: /assets/2018-09-19-introduction-gitlab-ci/cover.png
+cover:
+  path: /imgs/articles/2021-01-05-introduction-gitlab-ci/cover.jpg
 categories:
   - architecture
 authors:

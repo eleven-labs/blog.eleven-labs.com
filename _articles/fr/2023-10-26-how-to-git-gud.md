@@ -4,8 +4,10 @@ lang: fr
 date: 2023-10-26
 slug: les-commandes-git
 title: >-
-    How to git gud : quelles commandes Git utiliser pour améliorer son workflow au quotidien ? 
+    How to git gud : quelles commandes Git utiliser pour améliorer son workflow au quotidien ?
 excerpt: Vous trouverez dans cet article une sélection de commandes Git qui vous permettront de simplifier votre quotidien !
+cover:
+  path: /imgs/articles/2023-10-26-how-to-git-gud/cover.jpg
 categories: []
 keywords:
     - git

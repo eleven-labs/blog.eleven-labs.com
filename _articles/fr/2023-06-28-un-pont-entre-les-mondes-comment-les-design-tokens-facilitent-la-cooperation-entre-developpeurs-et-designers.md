@@ -13,6 +13,8 @@ excerpt: >-
   designers. Vous saurez tout sur leur rôle de langue commune, leur impact sur
   la créativité et la cohérence visuelle.
 categories: []
+cover:
+  path: /imgs/articles/2023-06-28-un-pont-entre-les-mondes-comment-les-design-tokens-facilitent-la-cooperation-entre-developpeurs-et-designers/cover.jpg
 authors:
   - fpasquet
 keywords:

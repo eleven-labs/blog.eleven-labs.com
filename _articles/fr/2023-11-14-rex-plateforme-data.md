@@ -9,6 +9,8 @@ excerpt: |
     des extractions, de la transformation et de la visualisation très rapidement. Cependant, pour assurer la pérénnité et
     l'évolutivité de ces analyses, il est nécessaire de monter une plateforme dédiée et d'industrialiser les différents
     processus. C'est le sujet de cet article.
+cover:
+  path: /imgs/articles/2023-11-14-rex-plateforme-data/cover.jpg
 authors:
     - tthuon
 categories:

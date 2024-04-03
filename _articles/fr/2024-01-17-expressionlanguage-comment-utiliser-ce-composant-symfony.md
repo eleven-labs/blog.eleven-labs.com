@@ -6,6 +6,8 @@ slug: symfony-expressionlanguage
 title: 'Symfony ExpressionLanguage : Comment utiliser ce composant ?'
 excerpt: >-
   Le composant Symfony ExpressionLanguage : qu'est-ce que c'est ? Quand et comment l'utiliser ? Comment créer des expressions lors de cas plus complexes ?
+cover:
+  path: /imgs/articles/2024-01-17-expressionlanguage-comment-utiliser-ce-composant-symfony/cover.jpg
 categories:
   - php
 authors:

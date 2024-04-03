@@ -9,7 +9,8 @@ excerpt: >-
   take for granted. There is much noise around this topic. Pixels? Are
   breakpoints enough to switch sizes across devices? Do we even need breakpoints
   at all?
-oldCover: /assets/2022-07-27-responsive-accessible-typography/read-me.png
+cover:
+  path: /imgs/articles/2022-07-27-responsive-accessible-typography/cover.jpg
 categories: []
 authors:
   - meugeniatr

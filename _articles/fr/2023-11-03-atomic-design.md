@@ -5,6 +5,8 @@ date: 2023-11-03
 slug: atomic-design
 title: "Atomic Design : pour des interfaces modulaires et évolutives"
 excerpt: Explorez l'approche de l'Atomic Design et ses bénéfices pour vos développements d'interfaces. Les principes de modularité, flexibilité et maintenabilité sont des éléments-clés pour vous guider vers le succès.
+cover:
+  path: /imgs/articles/2023-11-03-atomic-design/cover.jpg
 categories:
     - javascript
 keywords:

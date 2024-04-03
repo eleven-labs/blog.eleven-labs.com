@@ -5,6 +5,8 @@ date: 2023-11-10
 slug: system-props
 title: "System Props : Flexibilité et cohérence dans le Design"
 excerpt: Découvrez ce que sont les System Props, quels sont leurs avantages, et comment les intégrer pour améliorer vos composants d'interface.
+cover:
+  path: /imgs/articles/2023-11-10-system-props/cover.jpg
 categories:
     - javascript
 keywords:
