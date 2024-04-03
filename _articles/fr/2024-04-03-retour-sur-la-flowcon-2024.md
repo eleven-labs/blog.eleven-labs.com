@@ -77,9 +77,9 @@ En tant qu’architecte applicatif/lead développeuse, je suis allée à la Flow
 
 La conférence regroupant les deux, c’était _L’architecture n’appartient pas aux architectes !_ par [Fathi Bellahcene](https://fr.linkedin.com/in/fathi-bellahcene-50774564) de Veepee.  
 
-\
+
 <iframe width="590" height="332" src="https://www.youtube.com/embed/qSXkQQKeT9U" frameborder="0" allowfullscreen></iframe>  
-\
+  
 
 Il explique le fonctionnement de l’équipe (voire des équipes) d’architecture mais aussi des équipes de développement qui sont parties prenantes des décisions techniques les concernant.
 >Le pôle architecte doit créer une relation de confiance avec les lead devs et sachants des équipes et leur donner de la liberté car, dans leur écosystème, l’architecte est considéré comme une fonction support “Comment puis-je aider ?”.
@@ -91,7 +91,7 @@ Par curiosité, je suis allée assister à la conférence de [Chloé Girardin](h
 
 \
 ![Product Marketing Manager dans la vraie vie]({BASE_URL}/imgs/articles/2024-04-03-retour-sur-la-flowcon-2024/pmm.jpg)  
-\
+
 
 Je ne vais pas reparler de la conférence d’Eric Fourboul sur la _Géographie des impacts environnementaux du numérique - Exemple des datacenters_ car Julien en a déjà parlé, mais elle met en lumière ces problématiques souvent oubliées dans l’IT.
 
