@@ -22,8 +22,7 @@ keywords:
 ---
 
 ![Flowcon]({BASE_URL}/imgs/articles/2024-04-03-retour-sur-la-flowcon-2024/flowcon.png)
-  
-
+\
 Depuis 10 ans, la [FlowCon](https://www.flowcon.fr/) rassemble en France une joyeuse bande d'experts qui se retrouvent pour 2 jours de partage d'idées, d'expériences et de théories sur le sujet du développement produit en flux.
 
 Imaginez : des cerveaux en ébullition, des post-it en vrac, des ateliers, des conférences, et surtout deux jours de débats passionnés et de partage.
@@ -77,9 +76,9 @@ Les ateliers, quant à eux, ont été une véritable bouffée d'air frais, diver
 En tant qu’architecte applicatif/lead développeuse, je suis allée à la Flowcon pour d’un côté améliorer mes connaissances sur l’agilité, et de l’autre pour suivre des conférences plus techniques liées à l’architecture.
 
 La conférence regroupant les deux, c’était _L’architecture n’appartient pas aux architectes !_ par [Fathi Bellahcene](https://fr.linkedin.com/in/fathi-bellahcene-50774564) de Veepee.
-  
+\
 <iframe width="590" height="332" src="https://www.youtube.com/embed/qSXkQQKeT9U" frameborder="0" allowfullscreen></iframe>
-
+\
   
 Il explique le fonctionnement de l’équipe (voire des équipes) d’architecture mais aussi des équipes de développement qui sont parties prenantes des décisions techniques les concernant.
 >Le pôle architecte doit créer une relation de confiance avec les lead devs et sachants des équipes et leur donner de la liberté car, dans leur écosystème, l’architecte est considéré comme une fonction support “Comment puis-je aider ?”.
@@ -88,9 +87,9 @@ Le prix de la conférence sans langue de bois revient à Aboubakr Bekkali et No�
 > J’y ai retenu qu'“il faut savoir poser un problème” et que sa résolution peut prendre plusieurs mois, ainsi que "la discipline est la clé du succès".
 
 Par curiosité, je suis allée assister à la conférence de [Chloé Girardin](https://fr.linkedin.com/in/chlo%C3%A9-girardin-34766395) _Product Marketing Manager dans la vraie vie_. Même si je ne suis pas du tout la cible, Chloé, par sa personnalité et sa vision, a su me vendre son métier et m'entraîner dans son quotidien. Sur certains points, cela m’a fait penser à Eleven Labs : la [gamification](https://eleven-labs.com/galaxie-eleven/) et une [culture d’entreprise forte](https://eleven-labs.com/culture-entreprise/) pour créer des liens entre les consultants et fédérer ([🦝](https://emojipedia.org/fr/raton-laveur) Forever).
-  
+\
 ![Product Marketing Manager dans la vraie vie]({BASE_URL}/imgs/articles/2024-04-03-retour-sur-la-flowcon-2024/pmm.jpg)
-  
+\ 
 Je ne vais pas reparler de la conférence d’Eric Fourboul sur la _Géographie des impacts environnementaux du numérique - Exemple des datacenters_ car Julien en a déjà parlé, mais elle met en lumière ces problématiques souvent oubliées dans l’IT.
 
 Pour ma conclusion personnelle, j’ai trouvé ça intéressant en tant que profil technique d’élargir mes connaissances, mais je ne pense pas y retourner : j’y ai pris ce dont j’avais besoin et je n’ai pas la nécessité d’aller plus loin.
