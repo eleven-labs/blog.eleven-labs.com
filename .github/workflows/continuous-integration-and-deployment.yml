@@ -12,20 +12,121 @@ jobs:
   checks-and-tests:
     needs: setup
     uses: ./.github/workflows/checks-and-tests.yml
-  deploy:
+  deploy-website:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    environment: ${{ github.ref_name == 'master' && 'production' || github.ref_name }}
     needs: checks-and-tests
-    uses: ./.github/workflows/deploy.yml
-    with:
-      AWS_REGION: ${{ vars.AWS_REGION }}
-      AWS_BUCKET_NAME: ${{ vars.AWS_BUCKET_NAME }}
-      ALGOLIA_INDEX: ${{ vars.ALGOLIA_INDEX }}
-      GTM_ID: ${{ vars.GTM_ID_DEV }}
-      IS_DEBUG: ${{ vars.IS_DEBUG }}
-    secrets:
-      AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
-      ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
-      ALGOLIA_API_INDEXING_KEY: ${{ secrets.ALGOLIA_API_INDEXING_KEY }}
-      ALGOLIA_API_SEARCH_KEY: ${{ secrets.ALGOLIA_API_SEARCH_KEY }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Restore NPM Cache
+        uses: ./.github/actions/restore-npm-cache
+
+      - name: Sets env vars for dev
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "ENV=${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "ENV_URL=https://${{ vars.AWS_BUCKET_NAME }}/${{ github.head_ref }}" >> $GITHUB_ENV
+          echo "BASE_URL=/${{ github.head_ref }}/" >> $GITHUB_ENV
+
+      - name: Sets env vars for production
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        run: |
+          echo "ENV=production" >> $GITHUB_ENV
+          echo "ENV_URL=https://${{ vars.AWS_BUCKET_NAME }}" >> $GITHUB_ENV
+          echo "BASE_URL=/" >> $GITHUB_ENV
+
+      - name: Build
+        run: npm run prerender
+        env:
+          NODE_ENV: production
+          BASE_URL: ${{ env.BASE_URL }}
+          VITE_HOST_URL: ${{ env.ENV_URL }}
+          VITE_ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          VITE_ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_SEARCH_KEY }}
+          VITE_ALGOLIA_INDEX: ${{ vars.ALGOLIA_INDEX }}
+          VITE_GTM_ID: ${{ vars.GTM_ID }}
+          VITE_IS_DEBUG: ${{ vars.IS_DEBUG }}
+
+      - name: Install aws cli
+        id: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1
+
+      - name: Setup aws
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Start deployment
+        uses: bobheadxi/deployments@v1
+        id: deployment
+        with:
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref }}
+          env: ${{ env.ENV }}
+
+      - name: Deploy to S3
+        run: aws s3 sync "dist/public/" "s3://${{ vars.AWS_BUCKET_NAME }}${{ env.BASE_URL }}" --delete
+
+      - name: Clear caches
+        run: aws cloudfront create-invalidation --distribution-id "${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" --paths "${{ env.BASE_URL }}*"
+
+      - name: Indexing on Algolia
+        run: npm run indexation:algolia
+        env:
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_API_INDEXING_KEY: ${{ secrets.ALGOLIA_API_INDEXING_KEY }}
+          ALGOLIA_INDEX: ${{ vars.ALGOLIA_INDEX }}
+
+      - name: Update deployment status
+        uses: bobheadxi/deployments@v1
+        if: success()
+        with:
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          env: ${{ steps.deployment.outputs.env }}
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          env_url: ${{ env.ENV_URL }}/
+
+      - name: Audit URLs using Lighthouse
+        id: lighthouse_audit
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: |
+            ${{ env.ENV_URL }}/
+            ${{ env.ENV_URL }}/fr/authors/ajacquemin/
+            ${{ env.ENV_URL }}/fr/comment-construire-site-web-avec-nextjs/
+            ${{ env.ENV_URL }}/fr/nestjs-le-cycle-de-vie-dune-requete/
+          configPath: ./.github/workflows/lighthousesrc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 3
+
+      - name: Format lighthouse score
+        id: format_lighthouse_score
+        uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            const lighthouseCommentMaker = require('./.github/workflows/lighthouseCommentMaker.cjs');
+            const lighthouseOutputs = {
+              manifest: ${{ steps.lighthouse_audit.outputs.manifest }},
+              links: ${{ steps.lighthouse_audit.outputs.links }},
+              assertionResults: ${{ steps.lighthouse_audit.outputs.assertionResults }}
+            };
+            const comment = lighthouseCommentMaker({ lighthouseOutputs });
+            core.setOutput("comment", comment);
+
+      - name: Add Lighthouse stats as comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request'
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.pull_request.number }}
+          header: lighthouse
+          message: ${{ steps.format_lighthouse_score.outputs.comment }}
