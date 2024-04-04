@@ -40,6 +40,7 @@ export const useSearchPageContentContainer = (): SearchPageContentProps => {
         readingTime: hit.readingTime,
         title: hit.title,
         excerpt: hit.excerpt,
+        cover: hit.cover,
         authors: hit.authorUsernames.map((authorUsername, index) => ({
           username: authorUsername,
           name: hit.authorNames[index],

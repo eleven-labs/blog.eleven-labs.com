@@ -56,6 +56,7 @@ export const useHeaderContainer = ({ layoutTemplateData }: HeaderContainerProps)
         description: hit.excerpt,
         date: getDateToString({ date: hit.date }),
         readingTime: hit.readingTime,
+        cover: hit.cover,
         authors: hit.authorUsernames.map((authorUsername, index) => ({
           username: authorUsername,
           name: hit.authorNames[index],
