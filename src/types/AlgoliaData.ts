@@ -8,7 +8,7 @@ export interface AlgoliaPostData
   extends AlgoliaData,
     Pick<
       TransformedPostData,
-      'contentType' | 'lang' | 'slug' | 'date' | 'readingTime' | 'title' | 'excerpt' | 'categories'
+      'contentType' | 'lang' | 'slug' | 'date' | 'readingTime' | 'title' | 'excerpt' | 'categories' | 'cover'
     > {
   date_timestamp: number;
   authorUsernames: string[];

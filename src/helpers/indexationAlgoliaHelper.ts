@@ -25,6 +25,7 @@ const savePosts = async (options: {
       categories: post.categories || [],
       authorUsernames: authorsByPost.map((author) => author.username),
       authorNames: authorsByPost.map((author) => author.name),
+      cover: post.cover,
     };
 
     return currentPosts;
