@@ -6,7 +6,7 @@ slug: microservice-avec-go-et-grpc
 title: Microservice avec Go et gRPC
 excerpt: >-
   Dans ce tutoriel nous allons mettre en place un microservice gRPC de traduction avec Google Translate.
-cover: /assets/2018-03-28-graphql-avec-symfony/cover.jpg
+oldCover: /assets/2018-03-28-graphql-avec-symfony/cover.jpg
 categories:
   - architecture
 authors:

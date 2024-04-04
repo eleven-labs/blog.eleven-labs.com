@@ -5,6 +5,8 @@ date: '2023-10-23'
 slug: event-driven-architecture-examples
 title: 'Comment implémenter une Event Driven Architecture ? Définition et exemples'
 excerpt: 'Pourquoi, quand et comment mettre en place une event driven architecture ? Exemples et conseils'
+cover:
+  path: /imgs/articles/2023-10-23-event-driven-architecture/cover.jpg
 authors:
   - marishka
 categories:
@@ -67,7 +69,7 @@ Le service _Catalog_ réduit le stock disponible pour les produits concernés.
 
 Reprenons ensemble le fonctionnement du modèle AMQP 0-9-1 (vous pouvez trouver la documentation [ici](https://www.rabbitmq.com/tutorials/amqp-concepts.html)) :
 
-![]({BASE_URL}/imgs/articles/2023-10-23-edd/event-driven-architecture-rabbitmq.png)
+![]({BASE_URL}/imgs/articles/2023-10-23-event-driven-architecture/event-driven-architecture-rabbitmq.png)
 
 Les messages sont publiés sur des _exchanges_, voyez ça comme une boîte aux lettres.
 Les exchanges distribuent ensuite des copies des messages aux _queues_ à l'aide des _bindings_.

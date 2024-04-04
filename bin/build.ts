@@ -3,11 +3,15 @@ import { resolve } from 'node:path';
 import { build as buildVite } from 'vite';
 import { createServer as createViteServer } from 'vite';
 
+import { generateImageFormats } from '../src/helpers/generateImageFormats';
+
 const BASE_URL = process.env.BASE_URL || '/';
 const MODE = process.env.NODE_ENV || 'production';
+const WITH_GENERATE_IMAGE_FORMATS = process.env.WITH_GENERATE_IMAGE_FORMATS !== 'false';
 const ROOT_DIR = process.cwd();
 const ASSETS_DIR = resolve(ROOT_DIR, '_assets');
 const OUT_DIR = resolve(ROOT_DIR, 'dist');
+const PUBLIC_DIR = resolve(ROOT_DIR, 'public');
 const OUT_PUBLIC_DIR = resolve(OUT_DIR, 'public');
 
 const args = process.argv.slice(2).reduce<Record<string, string | number | boolean>>((currentArgs, currentArg) => {
@@ -34,8 +38,13 @@ const writeJsonDataFilesAndFeedFile = async (): Promise<void> => {
 };
 
 const build = async (): Promise<void> => {
-  cpSync(ASSETS_DIR, resolve(OUT_PUBLIC_DIR, 'imgs'), { recursive: true });
+  const designSystemRootDir = resolve(process.cwd(), 'node_modules/@eleven-labs/design-system/dist');
+  cpSync(ASSETS_DIR, resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
+  cpSync(resolve(designSystemRootDir, 'imgs'), resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
   await writeJsonDataFilesAndFeedFile();
+  if (WITH_GENERATE_IMAGE_FORMATS) {
+    await generateImageFormats();
+  }
 
   if (args.ssr) {
     await buildVite({

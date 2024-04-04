@@ -7,7 +7,7 @@ title: Retour d’expérience sur BEM
 excerpt: >-
   Dans cet article, vous trouverez mon retour d'expérience sur la méthodologie
   BEM (Block ; Element ; Modifier), choisie dans ma précédente refonte du...
-cover: /assets/2018-03-15-retour-d-experience-sur-bem/cover.jpg
+oldCover: /assets/2018-03-15-retour-d-experience-sur-bem/cover.jpg
 categories:
   - javascript
 authors:

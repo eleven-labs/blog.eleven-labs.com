@@ -5,7 +5,7 @@ date: '2018-06-26'
 slug: rex-product-conf-18
 title: 'Rex : La Product Conf'
 excerpt: Je vous propose un court retour d'expérience de la Product Conf' 3ème edition
-cover: /assets/2018-06-26-rex-product-conf-2018/cover.jpg
+oldCover: /assets/2018-06-26-rex-product-conf-2018/cover.jpg
 categories: []
 authors:
   - kagiri

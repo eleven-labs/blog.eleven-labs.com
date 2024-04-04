@@ -8,6 +8,8 @@ excerpt: >-
   You work with Symfony, but the concept of dependency injection is a little
   blurry for you? Find out how to take advantage of the component reading this
   article.
+cover:
+  path: /imgs/articles/2021-09-29-dependency-injection/cover.jpg
 categories:
   - php
 authors:

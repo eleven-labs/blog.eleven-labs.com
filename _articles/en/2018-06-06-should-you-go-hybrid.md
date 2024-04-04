@@ -10,7 +10,7 @@ excerpt: >-
   attractiveness of such a setup for enterprises looking to leverage the
   benefits of cloud computing. Here are some key pros and cons of the hybrid
   cloud, to help you decide if such a setup is best for your business.
-cover: /assets/2018-06-06-should-you-go-hybrid/cover.jpg
+oldCover: /assets/2018-06-06-should-you-go-hybrid/cover.jpg
 categories: []
 authors:
   - limor-wainstein

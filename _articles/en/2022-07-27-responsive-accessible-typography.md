@@ -9,7 +9,8 @@ excerpt: >-
   take for granted. There is much noise around this topic. Pixels? Are
   breakpoints enough to switch sizes across devices? Do we even need breakpoints
   at all?
-cover: /assets/2022-07-27-responsive-accessible-typography/read-me.png
+cover:
+  path: /imgs/articles/2022-07-27-responsive-accessible-typography/cover.jpg
 categories: []
 authors:
   - meugeniatr
@@ -259,9 +260,9 @@ From my point of view, it is a responsability as creators to care about having i
 
 -   Accessible font sizing, explained:
     [https://css-tricks.com/accessible-font-sizing-explained/](https://css-tricks.com/accessible-font-sizing-explained/)
--   CSS for JS developers by Joshua W. Comeau:  
+-   CSS for JS developers by Joshua W. Comeau:
     [https://css-for-js.dev/](https://css-for-js.dev/)
--   CSS units:  
+-   CSS units:
     [https://www.w3.org/Style/Examples/007/units.en.html](https://www.w3.org/Style/Examples/007/units.en.html)
 -   Custom CSS reset:
     [https://www.joshwcomeau.com/css/custom-css-reset/](https://www.joshwcomeau.com/css/custom-css-reset/)

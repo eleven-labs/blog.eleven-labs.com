@@ -5,6 +5,8 @@ date: '2022-01-31'
 slug: how-to-build-your-website-with-nextjs
 title: How To Build Your Website With NextJS
 excerpt: Tutorial on the basics of NextJS for building a website.
+cover:
+  path: /imgs/articles/2022-01-31-how-to-build-your-website-with-nextjs/cover.jpg
 categories:
   - javascript
 authors:

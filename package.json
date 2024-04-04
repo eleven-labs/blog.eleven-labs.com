@@ -3,17 +3,19 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "prepare": "npm run ts-node bin/prepare",
     "postinstall": "husky install",
     "ts-node": "tsx -r dotenv/config",
-    "validate-markdown": "yarn ts-node bin/validateMarkdown",
-    "indexation:algolia": "yarn ts-node bin/indexationAlgolia",
-    "build": "yarn ts-node bin/build",
-    "prerender": "yarn build && yarn ts-node bin/prerender",
-    "start:dev": "yarn ts-node bin/dev",
+    "download-translations": "npm run ts-node bin/downloadTranslations",
+    "generate-image-formats": "npm run ts-node bin/generateImageFormats",
+    "validate-markdown": "npm run ts-node bin/validateMarkdown",
+    "indexation:algolia": "npm run ts-node bin/indexationAlgolia",
+    "build": "npm run ts-node bin/build",
+    "prerender": "npm run build && npm run ts-node bin/prerender",
+    "start:dev": "npm run ts-node bin/dev",
     "start:prod": "NODE_ENV=production node dist/server",
     "start:static": "npx serv --path dist/public",
     "lint:es": "eslint --ext .ts,.tsx src bin",
-    "lint:style": "stylelint 'src/**/*.scss'",
     "start:storybook": "storybook dev -p 6009",
     "build:storybook": "storybook build",
     "test": "vitest --coverage"
@@ -21,16 +23,13 @@
   "lint-staged": {
     "*.(ts|tsx)": [
       "eslint --fix"
-    ],
-    "*.scss": [
-      "stylelint --fix"
     ]
   },
   "engines": {
-    "node": ">= 20"
+    "node": ">= 20.0"
   },
   "dependencies": {
-    "@eleven-labs/design-system": "^0.6.4",
+    "@eleven-labs/design-system": "^0.34.0",
     "@remix-run/router": "^1.7.2",
     "algoliasearch": "^4.19.1",
     "classnames": "^2.3.2",
@@ -84,10 +83,13 @@
     "dotenv": "^16.3.1",
     "eslint": "^8.27.0",
     "feed": "^4.2.2",
+    "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "lint-staged": "^13.2.3",
+    "mdast-util-to-string": "^4.0.0",
+    "mime": "^4.0.1",
     "node-sass": "^9.0.0",
     "postcss": "^8.4.26",
     "postcss-normalize": "^10.0.1",
@@ -96,11 +98,13 @@
     "rehype-raw": "^6.1.1",
     "rehype-react": "^7.1.2",
     "rehype-rewrite": "^3.0.6",
+    "rehype-slug": "^6.0.0",
     "remark-parse": "^10.0.2",
     "remark-rehype": "^10.1.0",
     "rollup-plugin-visualizer": "^5.9.2",
     "sanitize-html": "^2.11.0",
     "sass": "^1.64.0",
+    "sharp": "^0.33.2",
     "storybook": "^7.1.0",
     "stylelint": "^15.2.0",
     "stylelint-config-standard-scss": "^7.0.1",

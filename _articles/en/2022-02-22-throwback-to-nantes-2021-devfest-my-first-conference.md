@@ -7,6 +7,8 @@ title: 'Throwback to Nantes'' 2021 DevFest, my first conference'
 excerpt: >-
   Finally! After 4 years of working as a web developer, I finally attended a
   conference linked to my job & passion: the DevFest Nantes.
+cover:
+  path: /imgs/articles/2022-02-22-throwback-to-nantes-2021-devfest-my-first-conference/cover.jpg
 categories: []
 authors:
   - jbberthet

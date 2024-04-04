@@ -6,6 +6,8 @@ slug: creez-un-chat-avec-symfony-et-mercure
 title: Créez un chat avec Mercure et Symfony
 excerpt: >-
   Le but de ce tutoriel est de maîtriser le protocole Mercure. Pour cela, nous allons le combiner au framework Symfony pour créer un petit système de chat.
+cover:
+  path: /imgs/tutorials/2020-09-30-creez-un-chat-avec-symfony-et-mercure/cover.jpg
 categories:
   - php
   - javascript

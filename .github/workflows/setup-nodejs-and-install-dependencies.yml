@@ -1,0 +1,40 @@
+name: Setup Node.js and install dependencies
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: false
+        description: Node version to setup
+        type: string
+        default: 20.x
+      runner:
+        required: false
+        description: Job runner
+        type: string
+        default: ubuntu-latest
+
+jobs:
+  setup-nodejs-and-install-dependencies:
+    runs-on: ${{ inputs.runner }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ inputs.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        id: manager-cache-node-modules
+        with:
+          path: "**/node_modules"
+          key: cache-node-modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.manager-cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci

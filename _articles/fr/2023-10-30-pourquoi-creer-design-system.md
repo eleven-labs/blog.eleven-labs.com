@@ -5,6 +5,8 @@ date: 2023-10-30
 slug: pourquoi-creer-design-system
 title: "Design System : Qu'est-ce que c'est et pourquoi en avez-vous besoin ?"
 excerpt: Plongez dans le monde du Design System pour comprendre comment il assure la cohérence visuelle et fonctionnelle dans la conception. Explorez ce qu'est un Design System, pourquoi il est essentiel, le moment propice pour envisager sa création, ainsi que les étapes à respecter.
+cover:
+  path: /imgs/articles/2023-10-30-pourquoi-creer-design-system/cover.jpg
 categories: []
 keywords:
     - design system
@@ -194,7 +196,7 @@ Chacun de ces outils présente des avantages spécifiques, et le choix dépendra
 
 ### Outils de Documentation
 
-Plusieurs outils de documentation, comme **Storybook** et **Zeroheight**, sont conçus pour simplifier la documentation des composants de l'interface utilisateur et des Design Systems. Storybook propose une interface conviviale pour présenter de manière structurée les composants, leurs variations et leurs spécifications, tandis que Zeroheight permet de créer des documents détaillés mettant en avant les composants, leurs utilisations et leurs règles. 
+Plusieurs outils de documentation, comme **Storybook** et **Zeroheight**, sont conçus pour simplifier la documentation des composants de l'interface utilisateur et des Design Systems. Storybook propose une interface conviviale pour présenter de manière structurée les composants, leurs variations et leurs spécifications, tandis que Zeroheight permet de créer des documents détaillés mettant en avant les composants, leurs utilisations et leurs règles.
 
 <div  class="admonition summary" markdown="1"><p class="admonition-title">En résumé</p>
 

@@ -1,20 +1,18 @@
 import {
-  AsProps,
-  Blockquote,
   Box,
+  ComponentPropsWithoutRef,
   Flex,
-  Heading,
   Link,
   Reminder,
   ReminderVariantType,
   SyntaxHighlighter,
-  Text,
 } from '@eleven-labs/design-system';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import rehypeRaw from 'rehype-raw';
 import rehypeReact from 'rehype-react';
 import rehypeRewrite from 'rehype-rewrite';
+import rehypeSlug from 'rehype-slug';
 import remarkParse from 'remark-parse';
 import remark2rehype from 'remark-rehype';
 import { unified } from 'unified';
@@ -74,6 +72,7 @@ export const markdownToHtml = (content: string): string => {
     .use(remarkParse)
     .use(remarkFigurePlugin)
     .use(remark2rehype, { allowDangerousHtml: true })
+    .use(rehypeSlug)
     .use(rehypeRaw)
     .use(rehypeRewrite, {
       selector: 'div',
@@ -104,63 +103,29 @@ export const markdownToHtml = (content: string): string => {
           const reminderProps = props as { ['reminder-variant']?: ReminderVariantType; ['reminder-title']?: string };
           if (reminderProps?.['reminder-variant'] && reminderProps?.['reminder-title']) {
             return (
-              <Reminder my="m" variant={reminderProps['reminder-variant']} title={reminderProps['reminder-title']}>
+              <Reminder mb="xs" variant={reminderProps['reminder-variant']} title={reminderProps['reminder-title']}>
                 {children}
               </Reminder>
             );
           }
 
-          return <Box {...(props as AsProps)}>{children}</Box>;
+          return <Box {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
         },
-        h2: ({ children }): React.JSX.Element => {
-          return (
-            <Heading as="h2" size="l" mt={{ xs: 'l', md: 'xl' }} mb={{ xs: 'xxs', md: 'l' }}>
-              {children}
-            </Heading>
-          );
-        },
-        h3: ({ children }): React.JSX.Element => {
-          return (
-            <Heading as="h3" size="m" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
-              {children}
-            </Heading>
-          );
-        },
-        h4: ({ children }): React.JSX.Element => {
-          return (
-            <Heading as="h4" size="s" mt={{ xs: 'xs', md: 'l' }} mb={{ xs: 'xxs', md: 's' }}>
-              {children}
-            </Heading>
-          );
-        },
-        p: ({ node, ...props }): React.JSX.Element => <Text as="p" mb="xxs" {...(props as AsProps)} />,
-        li: ({ node, ...props }): React.JSX.Element => <Text as="li" mb="xxs" {...(props as AsProps)} />,
-        strong: ({ children }): React.JSX.Element => (
-          <Text as="span" fontWeight="bold">
-            {children}
-          </Text>
-        ),
-        em: ({ children }): React.JSX.Element => (
-          <Text as="span" italic={true}>
-            {children}
-          </Text>
-        ),
-        i: ({ children }): React.JSX.Element => (
-          <Text as="span" italic={true}>
-            {children}
-          </Text>
-        ),
-        a: ({ node, ...props }): React.JSX.Element => {
+        a: ({ node, children, ...props }): React.JSX.Element => {
           const isExternalLink = (props.href as string)?.match(
             /^(?!(http(s)?:\/\/)?([^.]+)\.?eleven-labs\.com\/|^\/).*$/
           );
           if (isExternalLink) {
             props['rel'] = 'nofollow noreferrer';
+            props['target'] = '_blank';
           }
-          return <Link {...props} style={{ overflowWrap: 'anywhere' }} />;
+
+          return (
+            <Link as="a" {...(props as ComponentPropsWithoutRef<'a'>)} style={{ overflowWrap: 'anywhere' }}>
+              {children}
+            </Link>
+          );
         },
-        blockquote: ({ node, ...props }): React.JSX.Element => <Blockquote {...props} />,
-        pre: ({ node, ...props }): React.JSX.Element => <Box as="pre" textSize="xs" {...(props as AsProps)} />,
         code: ({ node, className, children, ...props }): React.JSX.Element => {
           const match = /language-(\w+)/.exec(className || '');
           if (className && className.match('mermaid')) {
@@ -179,33 +144,17 @@ export const markdownToHtml = (content: string): string => {
             </Box>
           );
         },
-        figure: ({ node, ...props }): React.JSX.Element => {
-          return React.createElement('figure', {
-            ...props,
-            style: {
-              textAlign: 'center',
-            },
-          });
-        },
         img: ({ node, ...props }): React.JSX.Element => {
           const urlParams = new URLSearchParams(props.src?.split('?')?.[1] ?? '');
           return React.createElement('img', {
             ...props,
             style: {
-              display: 'block',
-              maxWidth: urlParams.get('maxWidth') ? `${urlParams.get('maxWidth')}px` : '100%',
+              maxWidth: urlParams.get('maxWidth') ? `${urlParams.get('maxWidth')}px` : undefined,
               maxHeight: urlParams.get('maxHeight') ? `${urlParams.get('maxHeight')}px` : undefined,
               width: urlParams.get('width') ? `${urlParams.get('width')}px` : undefined,
               height: urlParams.get('height') ? `${urlParams.get('height')}px` : undefined,
-              margin: 'var(--spacing-xs) auto',
             },
           });
-        },
-        script: ({ node, ...props }): React.JSX.Element | null => {
-          if (props.src === 'https://platform.twitter.com/widgets.js') {
-            return null;
-          }
-          return React.createElement('script', props);
         },
       },
     })
