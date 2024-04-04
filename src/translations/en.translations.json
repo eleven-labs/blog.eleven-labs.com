@@ -62,7 +62,8 @@
   "pages": {
     "home": {
       "seo": {
-        "title": "Web development blog: feedbacks, articles and tutorials from our experts"
+        "title": "Web development blog: feedbacks, articles and tutorials from our experts",
+        "description": "In this blog, discover all the articles and tutorials from our experts about web and mobile development, IS and web architecture, agility and Product Management."
       },
       "intro-block": {
         "intro": "Explore new knowledge",
@@ -83,7 +84,8 @@
     "category": {
       "javascript": {
         "seo": {
-          "title": "Javascript programming: tutorials and articles about the last trends"
+          "title": "Javascript programming: tutorials and articles about the last trends",
+          "description": "All our blog articles, REX and tutorials about Javascript development: React.js, Node.js, Nest.js, Next.js, Vue.js, Svelte.js"
         },
         "title": "Our articles and feedbacks about Javascript programming",
         "description": "<strong>Javascript is a dynamic programming language famous for its flexiblity!</strong> No wonder it's the most popular language among developers worldwide. In this category, find all our experts' articles, feedbacks and tutorials revolving around <strong>React.js, Node.js, Nest.js, Next.js, Vue.js, Svelte.js, and many tools to use in order to facilitate your delivery or set up a Design System, and much more! Good reading!</strong>",
@@ -97,7 +99,8 @@
       },
       "php": {
         "seo": {
-          "title": "PHP programming: articles, tutorials and feedbacks"
+          "title": "PHP programming: articles, tutorials and feedbacks",
+          "description": "All our tutorials, tool explanations, REX participation in community events and blog articles on various technologies in PHP web development."
         },
         "title": "Our articles and feedbacks about PHP programming",
         "description": "<strong>PHP is a backend-oriented programming language</strong> that allows the development of dynamic and interactive applications. It is a popular language, used by a large number of web applications widely used by the general public. In this category, find all the articles, feedbacks and tutorials from our astronauts about <strong>PHP, Symfony, Laravel, Angular, the essential tools to improve your productivity, and our reports on major community events!</strong> Good reading!",
@@ -107,7 +110,16 @@
           "link_label": "Learn more about our PHP Symfony expertise",
           "link_url": "https://eleven-labs.com/dev-web/php-symfony/"
         },
-        "post_list_title": "All our articles about the PHP programming language and its latest trends"
+        "post_list_title": "All our articles about the PHP programming language and its latest trends",
+        "agile": {
+          "description": "Agile web project methodologies: find all the articles, feedback and tutorials from our experts on Scrum methodology, the profession of Scrum Master and Product Manager."
+        },
+        "architecture": {
+          "description": "Architecture of information systems (IS) : articles, REX, advice and tutorials about Data architecture, DevOps tools and practices, Platform Engineering and web architecture."
+        },
+        "tutorial": {
+          "description": "Discover all our web and mobile development tutorials: Rest APIs, microservice, GitLab-CI, GraphQL server and others!"
+        }
       },
       "agile": {
         "seo": {
@@ -138,12 +150,19 @@
       "tutorial": {
         "title": "All our tutorials about mobile and web development",
         "description": "Discover all our web development tutorials. Let our astronauts guide you step-by-step in creating whole solutions or new features : create an Android player in Kotlin, set up a GraphQL server by retrieving data via REST APIs or even set up a CI/CI with GitLab for a Vue.js application. Good reading!",
-        "post_list_title": "Read all our tutorials in mobile and web development"
+        "post_list_title": "Read all our tutorials in mobile and web development",
+        "seo": {
+          "title": "Web and mobile development tutorials"
+        }
       },
       "all": {
         "title": "All our articles about mobile and web development",
         "description": "<p>Discover articles from our astronauts, granting you direct access to their expertise in web development through several formats: projects feedbacks, tutorials and tool tests, advices on methodologies, introduction to frameworks... Chose your topic amongst Agility, Architecture, Data, DevOps, Javascript, or PHP!</p>\n<p>Good reading.</p>",
-        "post_list_title": "Read all our articles"
+        "post_list_title": "Read all our articles",
+        "seo": {
+          "title": "Articles and tutorials about web development",
+          "description": "Discover all our articles, feedbacks and tutorials about PHP and Javascript languages, web architecture and agility."
+        }
       }
     },
     "article": {

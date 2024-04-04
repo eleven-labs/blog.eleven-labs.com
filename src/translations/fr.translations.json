@@ -62,7 +62,8 @@
   "pages": {
     "home": {
       "seo": {
-        "title": "Blog développement web : Retex, articles et tutoriels de nos experts"
+        "title": "Blog développement web : Retex, articles et tutoriels de nos experts",
+        "description": "Dans ce blog, découvrez tous les articles et tutoriels de nos experts autour du développement web et mobile, de l'architecture SI et web, de l'agilité ou encore du Product Management."
       },
       "intro-block": {
         "intro": "Explorons de nouveaux savoirs",
@@ -83,7 +84,8 @@
     "category": {
       "javascript": {
         "seo": {
-          "title": "Développement Javascript : tutoriels et articles sur les dernières tendances"
+          "title": "Développement Javascript : tutoriels et articles sur les dernières tendances",
+          "description": "Tous nos articles de blog, REX et tutoriels autour du développement Javascript : React.js, Node.js, Nest.js, Next.js, Vue.js, Svelte.js"
         },
         "title": "Nos articles et retours d’expérience en développement Javascript",
         "description": "<strong>Javascript est un langage de programmation dynamique complet et doté d’une incroyable flexibilité !&nbsp;</strong>Ce n’est pas pour rien que ce langage est aujourd'hui le plus utilisé par les développeurs à travers le monde. Dans cette catégorie, retrouvez tous les articles, retours d’expérience et tutoriels de nos astronautes autour de <strong>React.js, <a href=\"https://www.eleven-labs.com/dev-web/node-js/\">Node.js</a>, Nest.js, Next.js, Vue.js, Svelte.js. Vous y retrouverez également des outils à utiliser pour faciliter votre delivery, un guide pour implémenter votre propre Design System et bien plus encore ! Bonne lecture.</strong>",
@@ -97,17 +99,27 @@
       },
       "php": {
         "seo": {
-          "title": "Développement PHP : articles, tutoriels et RETEX"
+          "title": "Développement PHP : articles, tutoriels et RETEX",
+          "description": "Tous nos tutoriels, explications d'outils, REX de participation à des événements de la communauté et articles de blog sur diverses technologies en développement web PHP."
         },
         "title": "Nos articles et retours d’expérience en développement PHP",
         "description": "<strong>PHP est un langage de programmation orienté backend</strong> qui permet de développer des applications dynamiques et interactives. C'est un langage populaire, utilisé par un grand nombre d'applications web très utilisées par le grand public. Dans cette catégorie, retrouvez tous les articles, retours d’expérience et tutoriels de nos astronautes autour de <strong>PHP, Symfony, Laravel, Angular, des outils incontournables pour améliorer votre productivité mais aussi nos retours sur les grands événements de la communauté ! Bonne lecture.</strong>",
         "expertise": {
           "title": "Quelle est l’utilité de PHP ?",
-          "description": "Avec son écosystème riche, sa très forte communauté, et ses nombreux frameworks incontournables comme Symfony,&nbsp;<strong>PHP permet de développer tous types d’applications backend</strong>. Son utilisation accélère le processus de développement : sa structure prédéfinie et ses composants permettent aux développeurs de se concentrer davantage sur la logique métier. PHP offre la flexibilité nécessaire pour <strong>créer des applications web interactives, des sites e-commerce, des blogs, des marketplaces, des sites médias ou encore des back-offices personnalisés.</strong> PHP est donc une solution de qualité pour <a href=\"https://eleven-labs.com/studio/\">développer vos projets web sur mesure</a>.",
+          "description": "Avec son écosystème riche, sa très forte communauté, et ses nombreux frameworks incontournables comme Symfony, <strong>PHP permet de développer tous types d’applications backend</strong>. Son utilisation accélère le processus de développement : sa structure prédéfinie et ses composants permettent aux développeurs de se concentrer davantage sur la logique métier. PHP offre la flexibilité nécessaire pour <strong>créer des applications web interactives, des sites e-commerce, des blogs, des marketplaces, des sites médias ou encore des back-offices personnalisés.</strong> PHP est donc une solution de qualité pour <a href=\"https://eleven-labs.com/studio/\">développer vos projets web sur mesure</a>.",
           "link_label": "Découvrir notre expertise PHP Symfony",
           "link_url": "https://eleven-labs.com/dev-web/php-symfony/"
         },
-        "post_list_title": "Tous nos articles sur les nouveautés du langage de développement PHP"
+        "post_list_title": "Tous nos articles sur les nouveautés du langage de développement PHP",
+        "agile": {
+          "description": "Méthodologies agiles projets web : retrouvez tous les articles, retours d’expérience et tutoriels de nos experts autour de Scrum, du métier de Scrum Master et de Product Manager."
+        },
+        "architecture": {
+          "description": "Architecture SI : articles, REX, conseils et tutoriels autour de l'architecture Data, des outils et pratiques DevOps, du Platform Engineering et de l'architecture web."
+        },
+        "tutorial": {
+          "description": "Découvrez tous nos tutoriels en développement web et mobile : APIs Rest, microservice, GitLab-CI, serveur GraphQL et bien d'autres !"
+        }
       },
       "agile": {
         "seo": {
@@ -138,12 +150,19 @@
       "tutorial": {
         "title": "Tous nos tutoriels autour du développement web et mobile",
         "description": "Découvrez tous nos tutoriels en développement web. Nos astronautes vous guident pas-à-pas pour créer des solutions complètes ou de nouvelles fonctionnalités : créer un player android en Kotlin, mettre en place un serveur GraphQL en récupérant les données via des APIs REST ou encore mettre en place un CI/CI avec GitLab-ci pour une application Vue.js. <br />Bonne lecture !",
-        "post_list_title": "Découvrir tous nos tutoriels en développement web et mobile"
+        "post_list_title": "Découvrir tous nos tutoriels en développement web et mobile",
+        "seo": {
+          "title": "Tutoriels en développement web et mobile"
+        }
       },
       "all": {
         "title": "Tous nos articles autour du développement web et mobile",
         "description": "Découvrez les articles de nos astronautes qui mettent leur expertise en développement web à votre disposition sous plusieurs formats : <strong>retours d'expérience de projets, tutoriel et tests d'outils, conseil en méthodologies, initiation aux frameworks... Agilité, Architecture, Data, DevOps, Javascript, PHP...</strong> les sujets sont nombreux ! <br />Bonne lecture.",
-        "post_list_title": "Consulter l'ensemble de nos articles"
+        "post_list_title": "Consulter l'ensemble de nos articles",
+        "seo": {
+          "title": "Articles et tutoriels autour du développement web",
+          "description": "Découvrez tous nos articles, retours d'expérience et tutoriels autour des langages PHP et Javascript, de l'architecture web ou encore de l'agilité."
+        }
       }
     },
     "article": {

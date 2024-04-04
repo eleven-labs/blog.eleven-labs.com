@@ -1,5 +1,5 @@
 import { HomePageProps } from '@eleven-labs/design-system';
-import { useLink } from 'hoofd';
+import { useLink, useMeta } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData } from 'react-router-dom';
@@ -15,6 +15,7 @@ import { PostListPageData } from '@/types';
 
 export const useHomePageContainer = (): HomePageProps => {
   const { t, i18n } = useTranslation();
+  useMeta({ name: 'description', content: t(`pages.home.seo.description`) });
   const postListPageData = useLoaderData() as PostListPageData;
   const newsletterCard = useNewsletterCard();
   const lastArticlesForCardList = usePostsForCardList({

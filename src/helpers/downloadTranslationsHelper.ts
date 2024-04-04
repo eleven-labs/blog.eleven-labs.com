@@ -10,9 +10,14 @@ const getTranslations = (lang: (typeof LANGUAGES_AVAILABLE)[number]): Promise<st
     [LanguageEnum.EN]: 'en-GB',
   };
 
-  return fetch(`https://localise.biz/api/export/locale/${locales[lang]}.json?key=${process.env.LOCO_API_KEY}`).then(
-    (response) => response.json()
-  );
+  return fetch(`https://localise.biz/api/export/locale/${locales[lang]}.json?key=${process.env.LOCO_API_KEY}`)
+    .then((response) => response.json())
+    .then((response) => {
+      if (response.error) {
+        throw new Error(response.error);
+      }
+      return response;
+    });
 };
 
 export const downloadTranslations = async (): Promise<void> => {
