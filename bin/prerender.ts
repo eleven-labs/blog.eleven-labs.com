@@ -16,8 +16,9 @@ const prerender = async (): Promise<void> => {
       rootDir: resolve(process.cwd(), 'dist'),
       baseUrl,
     });
-  } catch (e) {
-    console.error(e);
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
   } finally {
     vite.close();
   }

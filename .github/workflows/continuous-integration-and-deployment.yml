@@ -43,6 +43,7 @@ jobs:
         env:
           NODE_ENV: production
           BASE_URL: ${{ env.BASE_URL }}
+          LOCO_API_KEY: ${{ secrets.LOCO_API_KEY }}
           VITE_HOST_URL: ${{ env.ENV_URL }}
           VITE_ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
           VITE_ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_SEARCH_KEY }}

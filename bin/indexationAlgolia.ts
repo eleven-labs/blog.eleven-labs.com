@@ -9,5 +9,6 @@ import { indexationAlglolia } from '@/helpers/indexationAlgoliaHelper';
     });
   } catch (error) {
     console.error(error);
+    process.exit(1);
   }
 })();

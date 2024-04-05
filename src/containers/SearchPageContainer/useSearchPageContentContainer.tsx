@@ -64,7 +64,7 @@ export const useSearchPageContentContainer = (): SearchPageContentProps => {
             description: <TransWithHtml i18nKey="common.search_not_found.description" />,
           }
         : undefined,
-    postCardList: <PostCardListContainer allPosts={postsBySearch} isLoading={isLoading} />,
+    postCardList: <PostCardListContainer withPagination={false} allPosts={postsBySearch} isLoading={isLoading} />,
     isLoading,
   };
 };

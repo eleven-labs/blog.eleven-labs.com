@@ -1,5 +1,5 @@
 import { CategoryPageProps } from '@eleven-labs/design-system';
-import { useLink } from 'hoofd';
+import { useLink, useMeta } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
@@ -21,6 +21,7 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
   const newsletterCard = useNewsletterCard();
   const breadcrumb = useBreadcrumb({ categoryName: categoryName as string });
   useTitle(t(`pages.category.${categoryName}.seo.title`, { categoryName }));
+  useMeta({ name: 'description', content: t(`pages.category.${categoryName}.seo.description`) });
   useLink({
     rel: 'canonical',
     href: `${blogUrl}${generatePath(categoryName ? PATHS.CATEGORY : PATHS.ROOT, {

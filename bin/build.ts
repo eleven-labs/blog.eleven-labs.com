@@ -3,11 +3,13 @@ import { resolve } from 'node:path';
 import { build as buildVite } from 'vite';
 import { createServer as createViteServer } from 'vite';
 
+import { downloadTranslations } from '../src/helpers/downloadTranslationsHelper';
 import { generateImageFormats } from '../src/helpers/generateImageFormats';
 
 const BASE_URL = process.env.BASE_URL || '/';
 const MODE = process.env.NODE_ENV || 'production';
-const WITH_GENERATE_IMAGE_FORMATS = process.env.WITH_GENERATE_IMAGE_FORMATS !== 'false';
+const WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS =
+  process.env.WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS !== 'false';
 const ROOT_DIR = process.cwd();
 const ASSETS_DIR = resolve(ROOT_DIR, '_assets');
 const OUT_DIR = resolve(ROOT_DIR, 'dist');
@@ -38,38 +40,43 @@ const writeJsonDataFilesAndFeedFile = async (): Promise<void> => {
 };
 
 const build = async (): Promise<void> => {
-  const designSystemRootDir = resolve(process.cwd(), 'node_modules/@eleven-labs/design-system/dist');
-  cpSync(ASSETS_DIR, resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
-  cpSync(resolve(designSystemRootDir, 'imgs'), resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
-  await writeJsonDataFilesAndFeedFile();
-  if (WITH_GENERATE_IMAGE_FORMATS) {
-    await generateImageFormats();
-  }
+  try {
+    const designSystemRootDir = resolve(process.cwd(), 'node_modules/@eleven-labs/design-system/dist');
+    cpSync(ASSETS_DIR, resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
+    cpSync(resolve(designSystemRootDir, 'imgs'), resolve(PUBLIC_DIR, 'imgs'), { recursive: true });
+    await writeJsonDataFilesAndFeedFile();
+    if (WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS) {
+      await Promise.all([generateImageFormats(), downloadTranslations()]);
+    }
 
-  if (args.ssr) {
+    if (args.ssr) {
+      await buildVite({
+        base: BASE_URL,
+        build: {
+          emptyOutDir: false,
+          ssr: true,
+          outDir: OUT_DIR,
+          rollupOptions: {
+            input: 'src/server.ts',
+          },
+        },
+        mode: MODE,
+      });
+    }
+
     await buildVite({
       base: BASE_URL,
       build: {
         emptyOutDir: false,
-        ssr: true,
-        outDir: OUT_DIR,
-        rollupOptions: {
-          input: 'src/server.ts',
-        },
+        manifest: true,
+        outDir: OUT_PUBLIC_DIR,
       },
       mode: MODE,
     });
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
   }
-
-  await buildVite({
-    base: BASE_URL,
-    build: {
-      emptyOutDir: false,
-      manifest: true,
-      outDir: OUT_PUBLIC_DIR,
-    },
-    mode: MODE,
-  });
 };
 
 build();

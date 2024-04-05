@@ -1,17 +1,10 @@
-import { createServer as createViteServer } from 'vite';
+import { downloadTranslations } from '../src/helpers/downloadTranslationsHelper';
 
 (async (): Promise<void> => {
-  const vite = await createViteServer({
-    server: { middlewareMode: true },
-    appType: 'custom',
-  });
-
   try {
-    const { downloadTranslations } = await vite.ssrLoadModule('/src/helpers/downloadTranslationsHelper.ts');
     downloadTranslations();
-  } catch (e) {
-    console.error(e);
-  } finally {
-    vite.close();
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
   }
 })();

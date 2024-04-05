@@ -7,6 +7,7 @@ import { PostCardListContainerProps } from './PostCardListContainer';
 
 export const usePostCardListContainer = ({
   allPosts,
+  withPagination = true,
   currentPage = 1,
   getPaginatedLink,
   isLoading = false,
@@ -14,7 +15,7 @@ export const usePostCardListContainer = ({
   const numberOfPosts = allPosts.length;
   const totalPages = Math.ceil(numberOfPosts / NUMBER_OF_ITEMS_PER_PAGE);
   const offset = (currentPage - 1) * NUMBER_OF_ITEMS_PER_PAGE;
-  const posts = allPosts.slice(offset, offset + NUMBER_OF_ITEMS_PER_PAGE);
+  const posts = withPagination ? allPosts.slice(offset, offset + NUMBER_OF_ITEMS_PER_PAGE) : allPosts;
   const postsForCardList = usePostsForCardList({
     isLoading,
     numberOfItems: NUMBER_OF_ITEMS_PER_PAGE,
@@ -25,7 +26,7 @@ export const usePostCardListContainer = ({
   return {
     posts: postsForCardList,
     pagination:
-      numberOfPosts > NUMBER_OF_ITEMS_PER_PAGE && getPaginatedLink
+      withPagination && numberOfPosts > NUMBER_OF_ITEMS_PER_PAGE && getPaginatedLink
         ? {
             currentPage,
             totalPages,
