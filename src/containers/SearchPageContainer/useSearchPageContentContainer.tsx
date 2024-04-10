@@ -1,5 +1,5 @@
 import { SearchPageContentProps } from '@eleven-labs/design-system';
-import { useLink } from 'hoofd';
+import { useLink, useTitleTemplate } from 'hoofd';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -16,13 +16,14 @@ export const useSearchPageContentContainer = (): SearchPageContentProps => {
   const { t, i18n } = useTranslation();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const algoliaSearchIndex = useAlgoliaSearchIndex();
-  useTitle(t('pages.search.seo.title'));
+  const search = new URLSearchParams(!IS_SSR ? window.location.search : '').get('search') || '';
+  useTitleTemplate('Blog Eleven Labs - %s');
+  useTitle(t('pages.search.seo.title', { search }));
   useLink({
     rel: 'canonical',
     href: `${blogUrl}${generatePath(PATHS.SEARCH, { lang: DEFAULT_LANGUAGE })}`,
   });
 
-  const search = new URLSearchParams(!IS_SSR ? window.location.search : '').get('search') || '';
   const [postsBySearch, setPostsBySearch] = useState<PostCardListContainerProps['allPosts']>([]);
 
   useEffect(() => {
@@ -55,7 +56,13 @@ export const useSearchPageContentContainer = (): SearchPageContentProps => {
   }, [search, i18n.language]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return {
-    title: <TransWithHtml i18nKey="pages.search.title" values={{ numberOfHits: postsBySearch.length }} onlyLineBreak />,
+    title: (
+      <TransWithHtml
+        i18nKey="pages.search.title"
+        values={{ numberOfHits: postsBySearch.length, search }}
+        onlyLineBreak
+      />
+    ),
     description: <TransWithHtml i18nKey="pages.search.description" />,
     searchNotFound:
       postsBySearch?.length === 0
