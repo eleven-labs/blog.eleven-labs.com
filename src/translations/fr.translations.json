@@ -184,8 +184,11 @@
       "post_list_title": "Articles et tutoriels écrits par l'auteur"
     },
     "search": {
-      "title": "{{ numberOfHits }} résultats",
-      "description": "triés par pertinence"
+      "title": "{{ numberOfHits }} résultats pour \"{{ search }}\"",
+      "description": "triés par pertinence",
+      "seo": {
+        "title": "Articles pour “{{ search }}”"
+      }
     },
     "not-found": {
       "title": "Page non trouvée"

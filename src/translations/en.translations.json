@@ -184,8 +184,11 @@
       "post_list_title": "Articles and tutorials by the author"
     },
     "search": {
-      "title": "{{ numberOfHits }} results",
-      "description": "sorted by relevance"
+      "title": "{{ numberOfHits }} results for \"{{ search }}\"",
+      "description": "sorted by relevance",
+      "seo": {
+        "title": "Articles for “{{ search }}”"
+      }
     },
     "not-found": {
       "title": "Page not found"
