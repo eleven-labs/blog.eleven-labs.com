@@ -1,16 +1,21 @@
 import {
   CATEGORIES,
-  CategoryEnum,
-  ContentTypeEnum,
   DEFAULT_LANGUAGE,
   IS_DEBUG,
-  LanguageEnum,
+  LANGUAGES,
   LANGUAGES_AVAILABLE_WITH_DT,
+  MARKDOWN_CONTENT_TYPES,
   NUMBER_OF_ITEMS_PER_PAGE,
   PATHS,
 } from '@/constants';
 import { generatePath } from '@/helpers/routerHelper';
-import { TransformedArticleData, TransformedAuthorData, TransformedPostData, TransformedTutorialData } from '@/types';
+import {
+  CategoryType,
+  TransformedArticleData,
+  TransformedAuthorData,
+  TransformedPostData,
+  TransformedTutorialData,
+} from '@/types';
 
 export type Urls = {
   lang: string;
@@ -37,8 +42,8 @@ export const getCategoryPageUrls = (
     for (const lang of LANGUAGES_AVAILABLE_WITH_DT) {
       const numberOfPosts = postsData.filter(
         (post) =>
-          (lang === LanguageEnum.DT || post.lang === lang) &&
-          (categoryName === 'all' ? true : post?.categories?.includes(categoryName as CategoryEnum))
+          (lang === LANGUAGES.DT || post.lang === lang) &&
+          (categoryName === 'all' ? true : post?.categories?.includes(categoryName as CategoryType))
       ).length;
 
       if (numberOfPosts) {
@@ -66,7 +71,7 @@ export const getCategoryPageUrls = (
 
   for (const lang of LANGUAGES_AVAILABLE_WITH_DT) {
     const numberOfPosts = postsData.filter(
-      (post) => (lang === LanguageEnum.DT || post.lang === lang) && post.contentType === ContentTypeEnum.TUTORIAL
+      (post) => (lang === LANGUAGES.DT || post.lang === lang) && post.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL
     ).length;
     if (numberOfPosts) {
       if (!urls['tutorial']) {
@@ -74,7 +79,7 @@ export const getCategoryPageUrls = (
       }
       urls['tutorial'].push({
         lang,
-        url: generatePath(PATHS.CATEGORY, { lang, categoryName: ContentTypeEnum.TUTORIAL }),
+        url: generatePath(PATHS.CATEGORY, { lang, categoryName: MARKDOWN_CONTENT_TYPES.TUTORIAL }),
       });
 
       const numberOfPages = Math.ceil(numberOfPosts / NUMBER_OF_ITEMS_PER_PAGE);
@@ -88,7 +93,7 @@ export const getCategoryPageUrls = (
             lang,
             url: generatePath(PATHS.CATEGORY_PAGINATED, {
               lang,
-              categoryName: ContentTypeEnum.TUTORIAL,
+              categoryName: MARKDOWN_CONTENT_TYPES.TUTORIAL,
               page: index + 1,
             }),
           });
@@ -109,7 +114,7 @@ export const getAuthorPageUrls = (
   for (const author of authorData) {
     for (const lang of LANGUAGES_AVAILABLE_WITH_DT) {
       const numberOfPosts = postsData.filter(
-        (post) => (lang === LanguageEnum.DT || post.lang === lang) && post.authors.includes(author.username)
+        (post) => (lang === LANGUAGES.DT || post.lang === lang) && post.authors.includes(author.username)
       ).length;
 
       if (numberOfPosts) {
@@ -150,8 +155,8 @@ export const getPostPageUrls = (postsData: Pick<TransformedPostData, 'lang' | 's
     ...(IS_DEBUG
       ? [
           {
-            lang: LanguageEnum.DT,
-            url: generatePath(PATHS.POST, { lang: LanguageEnum.DT, slug: post.slug }),
+            lang: LANGUAGES.DT,
+            url: generatePath(PATHS.POST, { lang: LANGUAGES.DT, slug: post.slug }),
           },
         ]
       : []),
@@ -163,10 +168,9 @@ export const getTutorialStepPageUrls = (
     | Pick<TransformedTutorialData, 'lang' | 'slug' | 'contentType' | 'steps'>
   )[]
 ): Urls => {
-  const tutorials = postsData.filter((post) => post.contentType === ContentTypeEnum.TUTORIAL && post.steps) as Pick<
-    TransformedTutorialData,
-    'lang' | 'contentType' | 'steps' | 'slug'
-  >[];
+  const tutorials = postsData.filter(
+    (post) => post.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL && post.steps
+  ) as Pick<TransformedTutorialData, 'lang' | 'contentType' | 'steps' | 'slug'>[];
 
   return tutorials.reduce((urls, tutorial) => {
     const steps = tutorial.steps.slice(1);
@@ -179,8 +183,8 @@ export const getTutorialStepPageUrls = (
         ...(IS_DEBUG
           ? [
               {
-                lang: LanguageEnum.DT,
-                url: generatePath(PATHS.POST, { lang: LanguageEnum.DT, slug: tutorial.slug, step: step.slug }),
+                lang: LANGUAGES.DT,
+                url: generatePath(PATHS.POST, { lang: LANGUAGES.DT, slug: tutorial.slug, step: step.slug }),
               },
             ]
           : []),

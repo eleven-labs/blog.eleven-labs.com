@@ -2,7 +2,7 @@ import React from 'react';
 import { Params, RouteObject } from 'react-router';
 import { Outlet } from 'react-router-dom';
 
-import { LanguageEnum, LANGUAGES_AVAILABLE_WITH_DT, PATHS } from '@/constants';
+import { LANGUAGES_AVAILABLE_WITH_DT, PATHS } from '@/constants';
 import { AuthorPageContainer } from '@/containers/AuthorPageContainer';
 import { CategoryPageContainer } from '@/containers/CategoryPageContainer';
 import { HomePageContainer } from '@/containers/HomePageContainer';
@@ -16,7 +16,7 @@ import {
   loadPostListPageData,
   loadPostPageData,
 } from '@/helpers/loaderDataHelper';
-import { LayoutTemplateData } from '@/types';
+import { LanguageType, LayoutTemplateData } from '@/types';
 
 export const routes: RouteObject[] = [
   {
@@ -50,8 +50,8 @@ export const routes: RouteObject[] = [
       {
         path: '/:lang/',
         loader: ({ params }): Record<string, unknown> => {
-          const languages = LANGUAGES_AVAILABLE_WITH_DT as LanguageEnum[];
-          if (!languages.includes(params.lang as LanguageEnum)) {
+          const languages = LANGUAGES_AVAILABLE_WITH_DT as LanguageType[];
+          if (!languages.includes(params.lang as LanguageType)) {
             throw new Error(`The \`${params.lang}\` language doesn't exist`);
           }
           return {};

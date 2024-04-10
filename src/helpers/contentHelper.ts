@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 import { DATA_DIR } from '@/app-paths';
-import { CATEGORIES, ContentTypeEnum, LanguageEnum, LANGUAGES_AVAILABLE_WITH_DT } from '@/constants';
+import { CATEGORIES, LANGUAGES, LANGUAGES_AVAILABLE_WITH_DT, MARKDOWN_CONTENT_TYPES } from '@/constants';
 import { getArticles, getAuthors, getTutorials } from '@/helpers/markdownContentManagerHelper';
 import { intersection } from '@/helpers/objectHelper';
 import {
@@ -91,7 +91,7 @@ export const getLayoutTemplateData = (options: {
     ),
   ];
   const hasTutorial = options.posts.some(
-    (post) => post.lang === options.lang && post?.contentType === ContentTypeEnum.TUTORIAL
+    (post) => post.lang === options.lang && post?.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL
   );
 
   return {
@@ -136,11 +136,11 @@ export const writeJsonDataFiles = (): void => {
   const authors = getAuthors();
 
   for (const lang of LANGUAGES_AVAILABLE_WITH_DT) {
-    const articlesByLang = articles.filter((article) => lang === LanguageEnum.DT || article.lang === lang);
-    const tutorialsByLang = tutorials.filter((tutorial) => lang === LanguageEnum.DT || tutorial.lang === lang);
+    const articlesByLang = articles.filter((article) => lang === LANGUAGES.DT || article.lang === lang);
+    const tutorialsByLang = tutorials.filter((tutorial) => lang === LANGUAGES.DT || tutorial.lang === lang);
     const postsByLang = [...articlesByLang, ...tutorialsByLang] as TransformedPostData[];
     const postsByLangWithoutContentOrSteps: TransformedPostDataWithoutContent[] = postsByLang.map((post) => {
-      if (post.contentType === ContentTypeEnum.TUTORIAL) {
+      if (post.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL) {
         const { steps, ...tutorial } = post;
         return tutorial;
       }

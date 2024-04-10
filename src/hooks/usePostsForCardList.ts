@@ -1,17 +1,17 @@
 import { PostCardListProps } from '@eleven-labs/design-system';
 import { useTranslation } from 'react-i18next';
 
-import { ImageFormatEnum, PATHS } from '@/constants';
+import { PATHS } from '@/constants';
 import { getCover } from '@/helpers/assetHelper';
 import { generatePath } from '@/helpers/routerHelper';
 import { useDateToString } from '@/hooks/useDateToString';
-import { TransformedPostDataWithTransformedAuthors } from '@/types';
+import { ImageFormatType, TransformedPostDataWithTransformedAuthors } from '@/types';
 
 export const usePostsForCardList = (options: {
   posts?: TransformedPostDataWithTransformedAuthors[];
   isLoading?: boolean;
   numberOfItems?: number;
-  imageFormatEnum: ImageFormatEnum;
+  imageFormat: ImageFormatType;
 }): PostCardListProps['posts'] => {
   const { getDateToString } = useDateToString();
   const { t, i18n } = useTranslation();
@@ -21,7 +21,7 @@ export const usePostsForCardList = (options: {
     : (options.posts ?? []).map((post) => ({
         contentType: post.contentType,
         slug: post.slug,
-        cover: getCover(post, options.imageFormatEnum),
+        cover: getCover(post, options.imageFormat),
         title: post.title,
         excerpt: post.excerpt,
         date: getDateToString({ date: post.date }),

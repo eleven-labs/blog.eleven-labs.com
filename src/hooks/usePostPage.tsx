@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
-import { ImageFormatEnum, PATHS } from '@/constants';
+import { IMAGE_FORMATS, PATHS } from '@/constants';
 import { getCover } from '@/helpers/assetHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
 import { generatePath } from '@/helpers/routerHelper';
@@ -47,7 +47,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
   const breadcrumb = useBreadcrumb({ categoryName: post.categories[0], withCategoryLink: true });
   const relatedPostsForCardList = usePostsForCardList({
     posts: post.relatedPosts,
-    imageFormatEnum: ImageFormatEnum.POST_CARD_COVER,
+    imageFormat: IMAGE_FORMATS.POST_CARD_COVER,
   });
 
   const authors: PostPageProps['header']['authors'] & PostPageProps['footer']['authors'] = post.authors.map(
@@ -66,7 +66,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
 
   return {
     breadcrumb,
-    cover: getCover(post, ImageFormatEnum.POST_COVER),
+    cover: getCover(post, IMAGE_FORMATS.POST_COVER),
     header: {
       title: post.title,
       date: getDateToString({ date: post.date }),

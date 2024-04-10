@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 import { blogUrl } from '@/config/website';
-import { ContentTypeEnum, DEFAULT_LANGUAGE, PATHS } from '@/constants';
+import { DEFAULT_LANGUAGE, MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
 import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
@@ -40,7 +40,7 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
       title: <TransWithHtml i18nKey={`pages.category.${categoryName}.title`} onlyLineBreak />,
       description: <TransWithHtml i18nKey={`pages.category.${categoryName}.description`} />,
     },
-    categoryEndingBlock: !['all', ContentTypeEnum.TUTORIAL].includes(categoryName as string)
+    categoryEndingBlock: !['all', MARKDOWN_CONTENT_TYPES.TUTORIAL].includes(categoryName as string)
       ? {
           title: <TransWithHtml i18nKey={`pages.category.${categoryName}.expertise.title`} onlyLineBreak />,
           description: <TransWithHtml i18nKey={`pages.category.${categoryName}.expertise.description`} />,

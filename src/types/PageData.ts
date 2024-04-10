@@ -1,4 +1,5 @@
-import { CategoryEnum } from '@/constants';
+import { CategoryType } from '@/types/CategoryType';
+import { ImagePositionType } from '@/types/ImagePositionType';
 import {
   TransformedArticleData,
   TransformedAuthorData,
@@ -7,7 +8,7 @@ import {
 } from '@/types/TransformedContentTypeData';
 
 export interface LayoutTemplateData {
-  categories: ('all' | CategoryEnum)[];
+  categories: ('all' | CategoryType)[];
   hasTutorial: boolean;
 }
 
@@ -23,6 +24,7 @@ interface CommonPostPageData {
   cover?: {
     path: string;
     alt: string;
+    position?: ImagePositionType;
   };
   authors: TransformedAuthorData[];
   relatedPosts: TransformedPostDataWithTransformedAuthors[];
