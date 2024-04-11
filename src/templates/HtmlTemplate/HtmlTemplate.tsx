@@ -110,7 +110,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         dangerouslySetInnerHTML={{
           __html: [
             `window.initialLanguage = '${lang}';`,
-            `window.initialI18nStore = ${JSON.stringify(i18nStore)};`,
+            `window.initialI18nStore = ${JSON.stringify({ [lang]: i18nStore.data[lang] ?? {} })};`,
           ].join('\n'),
         }}
       />
