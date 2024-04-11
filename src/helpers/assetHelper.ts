@@ -44,7 +44,7 @@ export const getCoverPath = ({
   extension?: ImageExtensionType;
   position?: ImagePositionType;
 }): string => {
-  const isProd: boolean = process.env.NODE_ENV === 'production';
+  const isProd = process.env.NODE_ENV === 'production';
   const directoryPath = dirname(path);
   const filename = basename(path, extname(path));
   const imageFormat = SIZES_BY_IMAGE_FORMAT[device][format];
