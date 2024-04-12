@@ -1,6 +1,5 @@
 import { Box, PostPageProps } from '@eleven-labs/design-system';
-import { useScript } from 'hoofd';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
@@ -20,28 +19,6 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
   const location = useLocation();
   const { getDateToString } = useDateToString();
   useSeoPost(post);
-  useScript({
-    type: 'module',
-    text: [
-      `import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';`,
-      'mermaid.initialize({ startOnLoad: true });',
-    ].join('\n'),
-  });
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://platform.twitter.com/widgets.js';
-    const twitterTweetElements = document.getElementsByClassName('twitter-tweet');
-    if (twitterTweetElements.length) {
-      twitterTweetElements[0].appendChild(script);
-    }
-
-    return () => {
-      if (twitterTweetElements.length) {
-        twitterTweetElements[0].removeChild(script);
-      }
-    };
-  }, []);
 
   const contactCard = useContactCard();
   const breadcrumb = useBreadcrumb({ categoryName: post.categories[0] });
