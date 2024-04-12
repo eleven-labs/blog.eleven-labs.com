@@ -40,6 +40,6 @@ npx storybook@7 init
 npm run storybook
 ```
 
-Si vous n’avez pas l’habitude de Storybook je vous conseille de suivre le tour proposé par Storybook au premier lancement du projet (préparez-vous à recevoir une myriade de confettis colorés).
+Si vous n’avez pas l’habitude de Storybook je vous conseille de suivre le tour proposé par Storybook au premier lancement du projet (préparez-vous à recevoir une myriade de confettis colorés). Je vous suggère aussi de suivre cet article du blog qui présente [les bases pour construire un Design System avec React](https://blog.eleven-labs.com/fr/design-system-react/) et qui aborde donc Storybook.
 
 Nous avons donc pour l’instant 3 stories&nbsp;: un bouton, un header et une page complète. Nous allons utiliser dans ce tuto le composant le plus simple&nbsp;: le bouton. Mais accrochez-vous parce qu’il va falloir **faire un peu de CI**...
