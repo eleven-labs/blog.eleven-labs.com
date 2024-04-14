@@ -44,7 +44,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
   }, []);
 
   const contactCard = useContactCard();
-  const breadcrumb = useBreadcrumb({ categoryName: post.categories[0] });
+  const breadcrumb = useBreadcrumb({ categoryName: post.categories[0], withCategoryLink: true });
   const relatedPostsForCardList = usePostsForCardList({
     posts: post.relatedPosts,
     imageFormatEnum: ImageFormatEnum.POST_CARD_COVER,
