@@ -1,5 +1,7 @@
 import { IconNameType } from '@eleven-labs/design-system';
 
+import { generateUrl } from '@/helpers/assetHelper';
+
 export const socialNetworks: {
   label: string;
   iconName: Extract<IconNameType, 'rss' | 'facebook' | 'twitter' | 'linkedin' | 'welcometothejungle'>;
@@ -8,7 +10,7 @@ export const socialNetworks: {
   {
     label: 'RSS',
     iconName: 'rss',
-    url: 'https://blog.eleven-labs.com/feed.xml',
+    url: generateUrl('/feed.xml'),
   },
   {
     label: 'Facebook',

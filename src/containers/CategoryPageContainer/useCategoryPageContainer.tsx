@@ -4,7 +4,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
-import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
 import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
@@ -24,10 +23,10 @@ export const useCategoryPageContainer = (): CategoryPageProps => {
   useMeta({ name: 'description', content: t(`pages.category.${categoryName}.seo.description`) });
   useLink({
     rel: 'canonical',
-    href: `${blogUrl}${generatePath(categoryName ? PATHS.CATEGORY : PATHS.ROOT, {
+    href: generatePath(categoryName ? PATHS.CATEGORY : PATHS.ROOT, {
       lang: DEFAULT_LANGUAGE,
       categoryName: categoryName,
-    })}`,
+    }),
   });
 
   const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({

@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { matchPath, useLoaderData, useLocation } from 'react-router-dom';
 
 import { themeColor } from '@/config/website';
-import { GOOGLE_SITE_VERIFICATION } from '@/constants';
+import { BASE_URL, GOOGLE_SITE_VERIFICATION } from '@/constants';
 import { PATHS } from '@/constants';
-import { getPathFile } from '@/helpers/assetHelper';
+import { generateUrl } from '@/helpers/assetHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
 import { LayoutTemplateData } from '@/types';
 
@@ -51,14 +51,14 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Blog Eleven Labs',
-      url: 'https://blog.eleven-labs.com/',
+      url: BASE_URL,
       ...(isHomePage
         ? {
             potentialAction: {
               '@type': 'SearchAction',
               target: {
                 '@type': 'EntryPoint',
-                urlTemplate: `https://blog.eleven-labs.com/${i18n.language}/search/?search={search_term_string}`,
+                urlTemplate: generateUrl(`${i18n.language}/search/?search={search_term_string}`),
               },
               'query-input': 'required name=search_term_string',
             },
@@ -67,14 +67,14 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
     }),
   });
 
-  useLink({ rel: 'apple-touch-icon', sizes: '120x120', href: getPathFile('/imgs/icons/apple-icon-120x120.png') });
-  useLink({ rel: 'apple-touch-icon', sizes: '152x152', href: getPathFile('/imgs/icons/apple-icon-152x152.png') });
-  useLink({ rel: 'apple-touch-icon', sizes: '180x180', href: getPathFile('/imgs/icons/apple-icon-180x180.png') });
+  useLink({ rel: 'apple-touch-icon', sizes: '120x120', href: generateUrl('/imgs/icons/apple-icon-120x120.png') });
+  useLink({ rel: 'apple-touch-icon', sizes: '152x152', href: generateUrl('/imgs/icons/apple-icon-152x152.png') });
+  useLink({ rel: 'apple-touch-icon', sizes: '180x180', href: generateUrl('/imgs/icons/apple-icon-180x180.png') });
 
   useLink({ rel: 'preconnect', href: 'https://fonts.googleapis.com' });
   useLink({ rel: 'preconnect', href: 'https://fonts.gstatic.com' });
   useLink({ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap' });
-  useLink({ rel: 'alternate', type: 'application/rss+xml', href: getPathFile('/feed.xml') });
+  useLink({ rel: 'alternate', type: 'application/rss+xml', href: generateUrl('/feed.xml') });
 
   return {
     header: (
