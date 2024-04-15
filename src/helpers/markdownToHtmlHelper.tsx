@@ -65,6 +65,18 @@ const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): Remin
   }
 };
 
+export const isExternalLink = (url: string): boolean => {
+  if (!url || !/^(http(s)?:\/\/|mailto:|tel:)/.test(url)) {
+    return false;
+  }
+
+  if (url.startsWith('/')) {
+    return false;
+  }
+
+  return /^(?!(http(s)?:\/\/)?([^.]+)\.?eleven-labs\.com|^\/).*$/.test(url);
+};
+
 const cleanMarkdown = (content: string): string => content.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);
 
 export const markdownToHtml = (content: string): string => {
@@ -112,10 +124,7 @@ export const markdownToHtml = (content: string): string => {
           return <Box {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
         },
         a: ({ node, children, ...props }): React.JSX.Element => {
-          const isExternalLink = (props.href as string)?.match(
-            /^(?!(http(s)?:\/\/)?([^.]+)\.?eleven-labs\.com\/|^\/).*$/
-          );
-          if (isExternalLink) {
+          if (isExternalLink(props.href as string)) {
             props['rel'] = 'nofollow noreferrer';
             props['target'] = '_blank';
           }
