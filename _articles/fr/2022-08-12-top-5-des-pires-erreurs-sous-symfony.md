@@ -30,7 +30,7 @@ Tout d'abord revenons sur le vocabulaire : une librairie est un ensemble de code
 
 Le seul hic c'est que dans l’écosystème Symfony... il n'y a pas de librairies, il n'y a que des composants ou des bundles. Je répète donc : les librairies dites Symfony sont inexistantes ! Notons toutefois qu'il peut bien y avoir des librairies PHP.
 
-Si on fait une librairire qui utilise des composants Symfony (qui aura sûrement besoin d'une configuration), alors lors d'une mise à jour de la librairie sur le projet on s'expose à la fois à des bugs difficilement identifiables mais aussi au fait de rendre la configuration illisible.
+Si on fait une librairie qui utilise des composants Symfony (qui aura sûrement besoin d'une configuration), alors lors d'une mise à jour de la librairie sur le projet on s'expose à la fois à des bugs difficilement identifiables mais aussi au fait de rendre la configuration illisible.
 Alors que faire un bundle permet d'utiliser toutes les possibilités qu’offre le framework comme [gérer la configuration](https://symfony.com/doc/current/bundles/configuration.html) ou utiliser directement les services sans avoir besoin de les déclarer.
 
 Moralité : que ce soit à cause de la sémantique ou de la pratique, faites des bundles si vous avez des composants Symfony !
