@@ -1,6 +1,6 @@
 import { PostCardListProps } from '@eleven-labs/design-system';
 
-import { ImageFormatEnum, NUMBER_OF_ITEMS_PER_PAGE } from '@/constants';
+import { IMAGE_FORMATS, NUMBER_OF_ITEMS_PER_PAGE } from '@/constants';
 import { usePostsForCardList } from '@/hooks/usePostsForCardList';
 
 import { PostCardListContainerProps } from './PostCardListContainer';
@@ -20,7 +20,7 @@ export const usePostCardListContainer = ({
     isLoading,
     numberOfItems: NUMBER_OF_ITEMS_PER_PAGE,
     posts,
-    imageFormatEnum: ImageFormatEnum.POST_CARD_COVER,
+    imageFormat: IMAGE_FORMATS.POST_CARD_COVER,
   });
 
   return {

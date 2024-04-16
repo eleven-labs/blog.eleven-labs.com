@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
-import { ContentTypeEnum, PATHS } from '@/constants';
+import { MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
 import { generatePath } from '@/helpers/routerHelper';
 import { usePostPage } from '@/hooks/usePostPage';
 import { TutorialPageData } from '@/types';
@@ -20,7 +20,7 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
   const nextStep = tutorial.steps[Number(currentTutorialStepIndex) + 1];
 
   return {
-    variant: ContentTypeEnum.TUTORIAL,
+    variant: MARKDOWN_CONTENT_TYPES.TUTORIAL,
     ...postPageProps,
     summary: {
       title: t('pages.tutorial.summary_card.title'),

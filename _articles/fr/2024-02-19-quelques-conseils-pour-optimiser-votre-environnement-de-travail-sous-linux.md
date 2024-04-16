@@ -9,6 +9,7 @@ excerpt: >-
 categories: []
 cover:
   path: /imgs/articles/2024-02-19-quelques-conseils-pour-optimiser-votre-environnement-de-travail-sous-linux/cover.jpg
+  position: top
 authors:
   - nicolas
 keywords:

@@ -1,9 +1,9 @@
 import { z } from 'zod';
 
-import { ContentTypeEnum } from '@/constants';
+import { MARKDOWN_CONTENT_TYPES } from '@/constants';
 
 export const AuthorDataValidationSchema = z.object({
-  contentType: z.literal(ContentTypeEnum.AUTHOR),
+  contentType: z.literal(MARKDOWN_CONTENT_TYPES.AUTHOR),
   username: z.string().regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/, 'Kebab case format not respected'),
   name: z.string(),
   twitter: z

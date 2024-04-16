@@ -4,15 +4,8 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import Sharp from 'sharp';
 
-const contentTypesByFormat = {
-  jpeg: 'image/jpeg',
-  gif: 'image/gif',
-  webp: 'image/webp',
-  png: 'image/png',
-  avif: 'image/avif',
-} as const;
-
-type FormatEnum = keyof typeof contentTypesByFormat;
+import { DEFAULT_EXTENSION_FOR_IMAGES, IMAGE_CONTENT_TYPES } from '@/constants';
+import { ImageExtensionType, ImagePositionType } from '@/types';
 
 export const imageMiddleware = async (req: Request, res: Response): Promise<unknown> => {
   try {
@@ -28,37 +21,43 @@ export const imageMiddleware = async (req: Request, res: Response): Promise<unkn
     const params: {
       width?: number;
       height?: number;
-      format?: FormatEnum;
+      position: ImagePositionType;
+      pixelRatio: number;
+      extension: ImageExtensionType;
       quality?: number;
     } = {
       width: urlSearchParams.get('width') ? parseInt(urlSearchParams.get('width') as string) : undefined,
       height: urlSearchParams.get('height') ? parseInt(urlSearchParams.get('height') as string) : undefined,
-      format: (urlSearchParams.get('format') as FormatEnum) ?? undefined,
+      position: (urlSearchParams.get('position') ?? 'center') as ImagePositionType,
+      pixelRatio: urlSearchParams.get('pixelRatio') ? parseInt(urlSearchParams.get('pixelRatio') as string) : 1,
+      extension: (urlSearchParams.get('extension') as ImageExtensionType) ?? DEFAULT_EXTENSION_FOR_IMAGES,
       quality: urlSearchParams.get('quality') ? parseInt(urlSearchParams.get('quality') as string) : undefined,
     };
 
-    if (params.format && !['jpeg', 'gif', 'webp', 'png', 'avif'].includes(params.format)) {
-      throw new Error(`Unsupported format: ${params.format}`);
+    if (params.extension && !['jpeg', 'gif', 'webp', 'png', 'avif'].includes(params.extension)) {
+      throw new Error(`Unsupported extension: ${params.extension}`);
     }
 
     const originalImageBuffer = readFileSync(imagePath);
     let transformedImage = Sharp(originalImageBuffer, { failOn: 'none', animated: true });
 
     if (params.width && params.height) {
-      transformedImage = transformedImage.resize({ width: params.width, height: params.height });
+      const width = params.pixelRatio ? params.pixelRatio * params.width : params.width;
+      const height = params.pixelRatio ? params.pixelRatio * params.height : params.height;
+      transformedImage = transformedImage.resize({ width, height, position: params.position });
     }
 
-    if (params.format) {
-      const isLossy = ['jpeg', 'webp', 'avif'].includes(params.format);
+    if (params.extension) {
+      const isLossy = ['jpeg', 'webp', 'avif'].includes(params.extension);
       transformedImage = transformedImage.toFormat(
-        params.format,
+        params.extension,
         params.quality && isLossy ? { quality: params.quality } : undefined
       );
     }
 
     const transformedBuffer = await transformedImage.toBuffer();
-    const contentType = params.format
-      ? (contentTypesByFormat[params.format] as string)
+    const contentType = params.extension
+      ? (IMAGE_CONTENT_TYPES[params.extension] as string)
       : (mime.getType(imagePath) as string);
 
     // Send the response with the resized and converted image

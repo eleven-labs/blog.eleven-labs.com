@@ -1,12 +1,12 @@
 import { InitOptions } from 'i18next';
 
-import { BASE_URL, DEFAULT_LANGUAGE, IS_DEBUG, LanguageEnum, LANGUAGES_AVAILABLE } from '@/constants';
+import { BASE_URL, DEFAULT_LANGUAGE, IS_DEBUG, LANGUAGES, LANGUAGES_AVAILABLE } from '@/constants';
 
 export const i18nConfig = {
   load: 'languageOnly',
   preload: LANGUAGES_AVAILABLE,
   whitelist: LANGUAGES_AVAILABLE,
-  fallbackLng: IS_DEBUG ? LanguageEnum.DT : DEFAULT_LANGUAGE,
+  fallbackLng: IS_DEBUG ? LANGUAGES.DT : DEFAULT_LANGUAGE,
   returnEmptyString: false,
   defaultNS: 'messages',
   ns: 'messages',

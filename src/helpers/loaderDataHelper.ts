@@ -1,8 +1,15 @@
 import { LoaderFunctionArgs } from '@remix-run/router/utils';
 import fetch from 'cross-fetch';
 
-import { BASE_URL, CategoryEnum, ContentTypeEnum, IS_PRERENDER, IS_SSR } from '@/constants';
-import { ArticlePageData, AuthorPageData, LayoutTemplateData, PostListPageData, TutorialPageData } from '@/types';
+import { BASE_URL, IS_PRERENDER, IS_SSR, MARKDOWN_CONTENT_TYPES } from '@/constants';
+import {
+  ArticlePageData,
+  AuthorPageData,
+  CategoryType,
+  LayoutTemplateData,
+  PostListPageData,
+  TutorialPageData,
+} from '@/types';
 
 const cache = new Map();
 
@@ -46,11 +53,11 @@ export const loadPostListPageData = async (options: LoaderFunctionArgs): Promise
 
   if (options.params.categoryName) {
     const postsByCategoryName = dataFromPostListPage.posts.filter((post) =>
-      options.params.categoryName === ContentTypeEnum.TUTORIAL
-        ? post.contentType === ContentTypeEnum.TUTORIAL
+      options.params.categoryName === MARKDOWN_CONTENT_TYPES.TUTORIAL
+        ? post.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL
         : options.params.categoryName === 'all'
         ? true
-        : post?.categories?.includes(options.params.categoryName as CategoryEnum)
+        : post?.categories?.includes(options.params.categoryName as CategoryType)
     );
     if (postsByCategoryName.length === 0) {
       throw new Error(

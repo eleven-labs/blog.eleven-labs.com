@@ -1,10 +1,9 @@
 import { Box, PostPageProps } from '@eleven-labs/design-system';
-import { useScript } from 'hoofd';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
-import { ImageFormatEnum, PATHS } from '@/constants';
+import { IMAGE_FORMATS, PATHS } from '@/constants';
 import { getCover } from '@/helpers/assetHelper';
 import { getUrl } from '@/helpers/getUrlHelper';
 import { generatePath } from '@/helpers/routerHelper';
@@ -20,34 +19,12 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
   const location = useLocation();
   const { getDateToString } = useDateToString();
   useSeoPost(post);
-  useScript({
-    type: 'module',
-    text: [
-      `import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';`,
-      'mermaid.initialize({ startOnLoad: true });',
-    ].join('\n'),
-  });
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://platform.twitter.com/widgets.js';
-    const twitterTweetElements = document.getElementsByClassName('twitter-tweet');
-    if (twitterTweetElements.length) {
-      twitterTweetElements[0].appendChild(script);
-    }
-
-    return () => {
-      if (twitterTweetElements.length) {
-        twitterTweetElements[0].removeChild(script);
-      }
-    };
-  }, []);
 
   const contactCard = useContactCard();
-  const breadcrumb = useBreadcrumb({ categoryName: post.categories[0] });
+  const breadcrumb = useBreadcrumb({ categoryName: post.categories[0], withCategoryLink: true });
   const relatedPostsForCardList = usePostsForCardList({
     posts: post.relatedPosts,
-    imageFormatEnum: ImageFormatEnum.POST_CARD_COVER,
+    imageFormat: IMAGE_FORMATS.POST_CARD_COVER,
   });
 
   const authors: PostPageProps['header']['authors'] & PostPageProps['footer']['authors'] = post.authors.map(
@@ -66,7 +43,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
 
   return {
     breadcrumb,
-    cover: getCover(post, ImageFormatEnum.POST_COVER),
+    cover: getCover(post, IMAGE_FORMATS.POST_COVER),
     header: {
       title: post.title,
       date: getDateToString({ date: post.date }),

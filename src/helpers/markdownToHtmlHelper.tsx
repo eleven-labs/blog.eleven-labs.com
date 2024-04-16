@@ -13,6 +13,7 @@ import rehypeRaw from 'rehype-raw';
 import rehypeReact from 'rehype-react';
 import rehypeRewrite from 'rehype-rewrite';
 import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remark2rehype from 'remark-rehype';
 import { unified } from 'unified';
@@ -65,12 +66,25 @@ const getReminderVariantByAdmonitionVariant = (admonitionVariant: string): Remin
   }
 };
 
+export const isExternalLink = (url: string): boolean => {
+  if (!url || !/^(http(s)?:\/\/|mailto:|tel:)/.test(url)) {
+    return false;
+  }
+
+  if (url.startsWith('/')) {
+    return false;
+  }
+
+  return /^(?!(http(s)?:\/\/)?([^.]+)\.?eleven-labs\.com|^\/).*$/.test(url);
+};
+
 const cleanMarkdown = (content: string): string => content.replace(/\{BASE_URL}\//g, `${process.env.BASE_URL || '/'}`);
 
 export const markdownToHtml = (content: string): string => {
   const reactComponent = unified()
     .use(remarkParse)
     .use(remarkFigurePlugin)
+    .use(remarkGfm)
     .use(remark2rehype, { allowDangerousHtml: true })
     .use(rehypeSlug)
     .use(rehypeRaw)
@@ -112,10 +126,7 @@ export const markdownToHtml = (content: string): string => {
           return <Box {...(props as ComponentPropsWithoutRef<'div'>)}>{children}</Box>;
         },
         a: ({ node, children, ...props }): React.JSX.Element => {
-          const isExternalLink = (props.href as string)?.match(
-            /^(?!(http(s)?:\/\/)?([^.]+)\.?eleven-labs\.com\/|^\/).*$/
-          );
-          if (isExternalLink) {
+          if (isExternalLink(props.href as string)) {
             props['rel'] = 'nofollow noreferrer';
             props['target'] = '_blank';
           }
@@ -155,6 +166,12 @@ export const markdownToHtml = (content: string): string => {
               height: urlParams.get('height') ? `${urlParams.get('height')}px` : undefined,
             },
           });
+        },
+        script: ({ node, ...props }): React.JSX.Element | null => {
+          if (props.src === 'https://platform.twitter.com/widgets.js') {
+            return null;
+          }
+          return React.createElement('script', props);
         },
       },
     })

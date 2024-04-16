@@ -9,7 +9,7 @@ import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
 
 import { ASSETS_DIR, MARKDOWN_FILE_PATHS } from '@/app-paths';
-import { ContentTypeEnum } from '@/constants';
+import { MARKDOWN_CONTENT_TYPES } from '@/constants';
 import { getPathFile } from '@/helpers/assetHelper';
 import { markdownToHtml as defaultMarkdownToHtml } from '@/helpers/markdownToHtmlHelper';
 import {
@@ -94,7 +94,7 @@ const getReadingTime = (content: string): number => {
 };
 
 export const getAuthors = (): TransformedAuthorData[] =>
-  getCollection<AuthorData>(ContentTypeEnum.AUTHOR).reduce<TransformedAuthorData[]>(
+  getCollection<AuthorData>(MARKDOWN_CONTENT_TYPES.AUTHOR).reduce<TransformedAuthorData[]>(
     (currentAuthors, { data, html }) => {
       const avatarImageFileNames = globSync(`${data.username}.*`, { cwd: resolve(ASSETS_DIR, 'authors') });
       currentAuthors.push({
@@ -118,7 +118,7 @@ export const getAuthors = (): TransformedAuthorData[] =>
   );
 
 export const getArticles = (): TransformedArticleData[] =>
-  getCollection<ArticleData>(ContentTypeEnum.ARTICLE).reduce<TransformedArticleData[]>(
+  getCollection<ArticleData>(MARKDOWN_CONTENT_TYPES.ARTICLE).reduce<TransformedArticleData[]>(
     (currentArticles, { data, content, html }) => {
       currentArticles.push({
         contentType: data.contentType,
@@ -140,8 +140,8 @@ export const getArticles = (): TransformedArticleData[] =>
   );
 
 export const getTutorials = (): TransformedTutorialData[] => {
-  const tutorialSteps = getCollection<TutorialStepData>(ContentTypeEnum.TUTORIAL_STEP);
-  return getCollection<TutorialData>(ContentTypeEnum.TUTORIAL).reduce<TransformedTutorialData[]>(
+  const tutorialSteps = getCollection<TutorialStepData>(MARKDOWN_CONTENT_TYPES.TUTORIAL_STEP);
+  return getCollection<TutorialData>(MARKDOWN_CONTENT_TYPES.TUTORIAL).reduce<TransformedTutorialData[]>(
     (currentTutorials, { data }) => {
       const steps = data.steps.reduce<TransformedTutorialData['steps']>((currentSteps, step) => {
         const currentStep = tutorialSteps.find(

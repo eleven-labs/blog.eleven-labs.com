@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useLoaderData } from 'react-router-dom';
 
 import { blogUrl, websiteUrl } from '@/config/website';
-import { ContentTypeEnum, DEFAULT_LANGUAGE, ImageFormatEnum, LanguageEnum, PATHS } from '@/constants';
+import { DEFAULT_LANGUAGE, IMAGE_FORMATS, LANGUAGES, MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
@@ -22,21 +22,21 @@ export const useHomePageContainer = (): HomePageProps => {
     posts: postListPageData.posts
       .filter(
         (post) =>
-          post.contentType === ContentTypeEnum.ARTICLE &&
-          (i18n.language === LanguageEnum.DT || post.lang === i18n.language)
+          post.contentType === MARKDOWN_CONTENT_TYPES.ARTICLE &&
+          (i18n.language === LANGUAGES.DT || post.lang === i18n.language)
       )
       .slice(0, 3),
-    imageFormatEnum: ImageFormatEnum.HIGHLIGHTED_ARTICLE_POST_CARD_COVER,
+    imageFormat: IMAGE_FORMATS.HIGHLIGHTED_ARTICLE_POST_CARD_COVER,
   });
   const lastTutorialsForCardList = usePostsForCardList({
     posts: postListPageData.posts
       .filter(
         (post) =>
-          post.contentType === ContentTypeEnum.TUTORIAL &&
-          (i18n.language === LanguageEnum.DT || post.lang === i18n.language)
+          post.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL &&
+          (i18n.language === LANGUAGES.DT || post.lang === i18n.language)
       )
       .slice(0, 2),
-    imageFormatEnum: ImageFormatEnum.HIGHLIGHTED_TUTORIAL_POST_CARD_COVER,
+    imageFormat: IMAGE_FORMATS.HIGHLIGHTED_TUTORIAL_POST_CARD_COVER,
   });
 
   useTitle(t('pages.home.seo.title'));
@@ -73,7 +73,7 @@ export const useHomePageContainer = (): HomePageProps => {
           posts: lastTutorialsForCardList,
           linkSeeMore: {
             label: t('pages.home.last-tutorials-block.link-see-more'),
-            href: generatePath(PATHS.CATEGORY, { categoryName: ContentTypeEnum.TUTORIAL, lang: i18n.language }),
+            href: generatePath(PATHS.CATEGORY, { categoryName: MARKDOWN_CONTENT_TYPES.TUTORIAL, lang: i18n.language }),
           },
         }
       : undefined,

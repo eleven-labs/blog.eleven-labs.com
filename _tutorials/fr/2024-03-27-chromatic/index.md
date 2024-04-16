@@ -8,6 +8,7 @@ excerpt: >-
   Nous allons découvrir comment utiliser Chromatic en CI pour faire des tests de non régression visuelle et des tests d'interaction sur un Storybook pour être confiant à chaque nouvelle feature implémentée.
 cover:
   path: /imgs/tutorials/2024-03-27-chromatic/cover.jpg
+  position: top
 categories:
     - javascript
 keywords:
