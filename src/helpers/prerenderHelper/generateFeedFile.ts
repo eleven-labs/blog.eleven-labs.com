@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import sanitizeHtml from 'sanitize-html';
 
 import { blogUrl } from '@/config/website';
-import { ContentTypeEnum, PATHS } from '@/constants';
+import { MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
 import { getPosts } from '@/helpers/markdownContentManagerHelper';
 import { generatePath } from '@/helpers/routerHelper';
 
@@ -34,7 +34,7 @@ export const generateFeedFile = (options: { rootDir: string }): void => {
       link: url,
       date: new Date(post.date),
       description: post.excerpt,
-      content: post.contentType === ContentTypeEnum.ARTICLE ? sanitizeHtml(post.content) : undefined,
+      content: post.contentType === MARKDOWN_CONTENT_TYPES.ARTICLE ? sanitizeHtml(post.content) : undefined,
     });
   }
 

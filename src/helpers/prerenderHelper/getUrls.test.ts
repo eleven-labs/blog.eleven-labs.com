@@ -1,4 +1,4 @@
-import { ContentTypeEnum, LanguageEnum } from '@/constants';
+import { LANGUAGES, MARKDOWN_CONTENT_TYPES } from '@/constants';
 
 import {
   getAuthorPageUrls,
@@ -33,11 +33,11 @@ describe('getSitemapEntries', () => {
   }>([
     {
       mockPosts: [
-        { lang: LanguageEnum.FR, categories: ['architecture'] },
-        { lang: LanguageEnum.FR, categories: ['php'] },
-        { lang: LanguageEnum.EN, categories: ['architecture'] },
-        { lang: LanguageEnum.FR, contentType: ContentTypeEnum.TUTORIAL, categories: [] },
-        { lang: LanguageEnum.EN, contentType: ContentTypeEnum.TUTORIAL, categories: [] },
+        { lang: LANGUAGES.FR, categories: ['architecture'] },
+        { lang: LANGUAGES.FR, categories: ['php'] },
+        { lang: LANGUAGES.EN, categories: ['architecture'] },
+        { lang: LANGUAGES.FR, contentType: MARKDOWN_CONTENT_TYPES.TUTORIAL, categories: [] },
+        { lang: LANGUAGES.EN, contentType: MARKDOWN_CONTENT_TYPES.TUTORIAL, categories: [] },
       ] as Parameters<typeof getCategoryPageUrls>[0],
       expectedUrls: [
         [
@@ -57,15 +57,15 @@ describe('getSitemapEntries', () => {
     },
     {
       mockPosts: [
-        ...Array.from({ length: 15 }).map(() => ({ lang: LanguageEnum.FR, categories: ['architecture'] })),
-        ...Array.from({ length: 15 }).map(() => ({ lang: LanguageEnum.FR, categories: ['php'] })),
-        ...Array.from({ length: 15 }).map(() => ({ lang: LanguageEnum.EN, categories: ['architecture'] })),
+        ...Array.from({ length: 15 }).map(() => ({ lang: LANGUAGES.FR, categories: ['architecture'] })),
+        ...Array.from({ length: 15 }).map(() => ({ lang: LANGUAGES.FR, categories: ['php'] })),
+        ...Array.from({ length: 15 }).map(() => ({ lang: LANGUAGES.EN, categories: ['architecture'] })),
         ...Array.from({ length: 15 }).map(() => ({
-          lang: LanguageEnum.FR,
-          contentType: ContentTypeEnum.TUTORIAL,
+          lang: LANGUAGES.FR,
+          contentType: MARKDOWN_CONTENT_TYPES.TUTORIAL,
           categories: [],
         })),
-        { lang: LanguageEnum.EN, contentType: ContentTypeEnum.TUTORIAL, categories: [] },
+        { lang: LANGUAGES.EN, contentType: MARKDOWN_CONTENT_TYPES.TUTORIAL, categories: [] },
       ] as Parameters<typeof getCategoryPageUrls>[0],
       expectedUrls: [
         [
@@ -111,8 +111,8 @@ describe('getSitemapEntries', () => {
 
   it('should return URLs of author page grouped by language', () => {
     const mockPosts = [
-      { lang: LanguageEnum.FR, authors: ['john'] },
-      { lang: LanguageEnum.EN, authors: ['john'] },
+      { lang: LANGUAGES.FR, authors: ['john'] },
+      { lang: LANGUAGES.EN, authors: ['john'] },
     ];
     const expectedUrls: ReturnType<typeof getCategoryPageUrls> = [
       [
@@ -127,8 +127,8 @@ describe('getSitemapEntries', () => {
 
   it('should return URLs of post page grouped by language', () => {
     const mockPosts = [
-      { lang: LanguageEnum.FR, slug: 'post-1' },
-      { lang: LanguageEnum.EN, slug: 'post-2' },
+      { lang: LANGUAGES.FR, slug: 'post-1' },
+      { lang: LANGUAGES.EN, slug: 'post-2' },
     ];
     const expectedUrls: ReturnType<typeof getPostPageUrls> = [
       [{ lang: 'fr', url: '/fr/post-1/' }],
@@ -140,10 +140,10 @@ describe('getSitemapEntries', () => {
 
   it('should return URLs of tutorial step page grouped by language', () => {
     const mockPosts = [
-      { contentType: ContentTypeEnum.ARTICLE },
+      { contentType: MARKDOWN_CONTENT_TYPES.ARTICLE },
       {
-        lang: LanguageEnum.FR,
-        contentType: ContentTypeEnum.TUTORIAL,
+        lang: LANGUAGES.FR,
+        contentType: MARKDOWN_CONTENT_TYPES.TUTORIAL,
         slug: 'tutorial-1',
         steps: [
           {
@@ -158,8 +158,8 @@ describe('getSitemapEntries', () => {
         ],
       },
       {
-        lang: LanguageEnum.EN,
-        contentType: ContentTypeEnum.TUTORIAL,
+        lang: LANGUAGES.EN,
+        contentType: MARKDOWN_CONTENT_TYPES.TUTORIAL,
         slug: 'tutorial-2',
         steps: [
           {

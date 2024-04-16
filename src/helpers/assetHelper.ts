@@ -1,7 +1,20 @@
 import type { PictureProps } from '@eleven-labs/design-system';
 
-import { BASE_URL, DeviceEnum, IMAGE_FORMATS, ImageFormatEnum } from '@/constants';
-import { TransformedPostDataWithTransformedAuthors } from '@/types';
+import {
+  BASE_URL,
+  DEFAULT_EXTENSION_FOR_IMAGES,
+  DEVICES,
+  IMAGE_CONTENT_TYPES,
+  IMAGE_POSITIONS,
+  SIZES_BY_IMAGE_FORMAT,
+} from '@/constants';
+import {
+  DeviceType,
+  ImageExtensionType,
+  ImageFormatType,
+  ImagePositionType,
+  TransformedPostDataWithTransformedAuthors,
+} from '@/types';
 
 const basename = (path: string, extension: string = ''): string => {
   const filename = path.split('/').pop() || '';
@@ -17,59 +30,69 @@ export const getCoverPath = ({
   path = '/imgs/default-cover.jpg',
   format,
   device,
-  pixelRatio = 1,
+  pixelRatio,
+  extension = DEFAULT_EXTENSION_FOR_IMAGES,
+  position = IMAGE_POSITIONS.CENTER,
 }: {
   path?: string;
-  format: ImageFormatEnum;
-  device: DeviceEnum;
-  pixelRatio?: number;
+  format: ImageFormatType;
+  device: DeviceType;
+  pixelRatio: number;
+  extension?: ImageExtensionType;
+  position?: ImagePositionType;
 }): string => {
   const isProd: boolean = process.env.NODE_ENV === 'production';
   const directoryPath = dirname(path);
   const filename = basename(path, extname(path));
-  const imageFormat = IMAGE_FORMATS[device][format];
+  const imageFormat = SIZES_BY_IMAGE_FORMAT[device][format];
 
   const pathFile = isProd
-    ? `${directoryPath}/${filename}-w${imageFormat.width * pixelRatio}-h${imageFormat.height * pixelRatio}.avif`
-    : `${path}?width=${imageFormat.width * pixelRatio}&height=${imageFormat.height * pixelRatio}&format=avif`;
+    ? `${directoryPath}/${filename}-w${imageFormat.width}-h${imageFormat.height}-x${pixelRatio}.${extension}`
+    : `${path}?width=${imageFormat.width}&height=${imageFormat.height}&pixelRatio=${pixelRatio}&position=${position}&format=${extension}`;
 
   return getPathFile(pathFile);
 };
 
-export const getCover = (post: TransformedPostDataWithTransformedAuthors, format: ImageFormatEnum): PictureProps => ({
-  sources: [
-    {
-      media: '(max-width: 571px)',
-      srcSet: `${getCoverPath({
-        path: post.cover?.path,
-        format,
-        pixelRatio: 2,
-        device: DeviceEnum.MOBILE,
-      })} 2x`,
-      type: 'image/jpeg',
-    },
-    {
-      media: '(min-width: 572px)',
-      srcSet: `${getCoverPath({
-        path: post.cover?.path,
-        format,
-        pixelRatio: 2,
-        device: DeviceEnum.DESKTOP,
-      })} 2x`,
-      type: 'image/jpeg',
-    },
-  ],
+export const getSrcSet = (
+  options: Omit<Parameters<typeof getCoverPath>[0], 'pixelRatio'> & { pixelRatios: number[] }
+): string =>
+  options.pixelRatios.map((pixelRatio) => `${getCoverPath({ ...options, pixelRatio })} ${pixelRatio}x`).join(', ');
+
+export const getMediaByDevice = (device: DeviceType): string =>
+  device === DEVICES.DESKTOP ? '(min-width: 572px)' : '(max-width: 571px)';
+
+export const getSources = (options: {
+  path?: string;
+  format: ImageFormatType;
+  position?: ImagePositionType;
+}): PictureProps['sources'] =>
+  Object.values(DEVICES).map((device) => ({
+    media: getMediaByDevice(device),
+    srcSet: getSrcSet({
+      path: options.path,
+      format: options.format,
+      device,
+      pixelRatios: [2, 1],
+      position: options.position,
+    }),
+    type: IMAGE_CONTENT_TYPES[DEFAULT_EXTENSION_FOR_IMAGES],
+  }));
+
+export const getCover = (post: TransformedPostDataWithTransformedAuthors, format: ImageFormatType): PictureProps => ({
+  sources: getSources({ path: post.cover?.path, format, position: post?.cover?.position as ImagePositionType }),
   img: {
     src: getCoverPath({
       path: post.cover?.path,
       format,
-      pixelRatio: 2,
-      device: DeviceEnum.DESKTOP,
+      pixelRatio: 1,
+      device: DEVICES.DESKTOP,
+      position: post?.cover?.position as ImagePositionType,
     }),
     alt: post.cover?.alt ?? post.title,
-    width: IMAGE_FORMATS[DeviceEnum.DESKTOP][format].width,
-    height: IMAGE_FORMATS[DeviceEnum.DESKTOP][format].height,
+    width: SIZES_BY_IMAGE_FORMAT[DEVICES.DESKTOP][format].width,
+    height: SIZES_BY_IMAGE_FORMAT[DEVICES.DESKTOP][format].height,
     loading: 'eager',
     decoding: 'sync',
+    fetchPriority: 'high',
   },
 });

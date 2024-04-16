@@ -8,7 +8,6 @@ describe('getSitemapEntries', () => {
         ...mod,
         IS_DEBUG: false,
         LANGUAGES_AVAILABLE_WITH_DT: mod.LANGUAGES_AVAILABLE,
-        CategoryEnum: ['category-1'],
       };
     });
     vi.mock('@/helpers/markdownContentManagerHelper', () => ({

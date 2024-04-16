@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
-import { ContentTypeEnum } from '@/constants';
+import { MARKDOWN_CONTENT_TYPES } from '@/constants';
 import { ArticlePageContainer } from '@/containers/ArticlePageContainer';
 import { NotFoundPageContainer } from '@/containers/NotFoundPageContainer';
 import { TutorialPageContainer } from '@/containers/TutorialPageContainer';
@@ -14,7 +14,7 @@ export const PostPageContainer: React.FC = () => {
     return <NotFoundPageContainer />;
   }
 
-  if (postPageData.contentType === ContentTypeEnum.TUTORIAL) {
+  if (postPageData.contentType === MARKDOWN_CONTENT_TYPES.TUTORIAL) {
     return <TutorialPageContainer tutorial={postPageData} />;
   }
 

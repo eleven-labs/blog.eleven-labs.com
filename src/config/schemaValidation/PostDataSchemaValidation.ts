@@ -1,11 +1,14 @@
 import { z } from 'zod';
 
-import { CATEGORIES, ContentTypeEnum, LanguageEnum } from '@/constants';
+import { CATEGORIES, IMAGE_POSITIONS, LANGUAGES, MARKDOWN_CONTENT_TYPES } from '@/constants';
 import { intersection } from '@/helpers/objectHelper';
 
 export const PostDataSchemaValidation = z.object({
-  contentType: z.enum([ContentTypeEnum.ARTICLE, ContentTypeEnum.TUTORIAL]),
-  lang: z.nativeEnum(LanguageEnum),
+  contentType: z.nativeEnum({
+    ARTICLE: MARKDOWN_CONTENT_TYPES.ARTICLE,
+    TUTORIAL: MARKDOWN_CONTENT_TYPES.TUTORIAL,
+  } as const),
+  lang: z.nativeEnum(LANGUAGES),
   date: z.coerce.date().transform((date) => date.toISOString().slice(0, 10)),
   slug: z.string().regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/, 'Kebab case format not respected'),
   title: z.string(),
@@ -14,6 +17,7 @@ export const PostDataSchemaValidation = z.object({
   cover: z
     .object({
       path: z.string(),
+      position: z.nativeEnum(IMAGE_POSITIONS).optional(),
       alt: z.string(),
     })
     .optional(),
@@ -48,13 +52,13 @@ export const PostDataSchemaValidation = z.object({
 
 export const ArticleDataSchemaValidation = PostDataSchemaValidation.merge(
   z.object({
-    contentType: z.literal(ContentTypeEnum.ARTICLE),
+    contentType: z.literal(MARKDOWN_CONTENT_TYPES.ARTICLE),
   })
 );
 
 export const TutorialDataSchemaValidation = PostDataSchemaValidation.merge(
   z.object({
-    contentType: z.literal(ContentTypeEnum.TUTORIAL),
+    contentType: z.literal(MARKDOWN_CONTENT_TYPES.TUTORIAL),
     steps: z.array(z.string()),
   })
 );

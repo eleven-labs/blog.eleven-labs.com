@@ -131,6 +131,7 @@ excerpt: Description of the article (Visible on the list pages)
 cover:
     alt: Alt image
     path: /imgs/articles/YYYY-MM-DD-slug/cover.jpg
+    position: top | right top | right | right bottom | bottom | left bottom | left | left top | center | north | northeast | east | southeast | south | southwest | west | northwest // Default value is center
 categories:
     - javascript | php | agile | architecture
 keywords:

@@ -4,13 +4,13 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { blogUrl } from '@/config/website';
-import { DEFAULT_LANGUAGE, IS_SSR, LanguageEnum, PATHS } from '@/constants';
+import { DEFAULT_LANGUAGE, IS_SSR, PATHS } from '@/constants';
 import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
 import { useAlgoliaSearchIndex } from '@/hooks/useAlgoliaSearchIndex';
 import { useTitle } from '@/hooks/useTitle';
-import { AlgoliaPostData } from '@/types';
+import { AlgoliaPostData, LanguageType } from '@/types';
 
 export const useSearchPageContentContainer = (): SearchPageContentProps => {
   const { t, i18n } = useTranslation();
@@ -35,7 +35,7 @@ export const useSearchPageContentContainer = (): SearchPageContentProps => {
 
       const currentPostBySearch = response.hits.map<PostCardListContainerProps['allPosts'][0]>((hit) => ({
         contentType: hit.contentType,
-        lang: hit.lang as LanguageEnum,
+        lang: hit.lang as LanguageType,
         slug: hit.slug,
         date: hit.date,
         readingTime: hit.readingTime,
