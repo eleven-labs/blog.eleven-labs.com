@@ -35,3 +35,33 @@ if (searchPageContentContainer) {
     </I18nextProvider>
   );
 }
+
+const loadTwitterScript = (): void => {
+  const script = document.createElement('script');
+  script.src = 'https://platform.twitter.com/widgets.js';
+  document.body.appendChild(script);
+};
+
+const loadMermaidScript = (): void => {
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js';
+  document.body.appendChild(script);
+};
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  console.log(event);
+
+  const twitterTweetElements = document.getElementsByClassName('twitter-tweet');
+  const mermaidElements = document.getElementsByClassName('mermaid');
+
+  if (twitterTweetElements.length) {
+    console.log('twitterTweetElements', twitterTweetElements);
+    loadTwitterScript();
+  }
+
+  if (mermaidElements.length) {
+    console.log('mermaid', mermaidElements);
+    loadMermaidScript();
+  }
+});
