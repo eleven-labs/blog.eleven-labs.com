@@ -74,6 +74,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
   useLink({ rel: 'preconnect', href: 'https://fonts.googleapis.com' });
   useLink({ rel: 'preconnect', href: 'https://fonts.gstatic.com' });
   useLink({ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap' });
+  useLink({ rel: 'alternate', type: 'application/rss+xml', href: getPathFile('/feed.xml') });
 
   return {
     header: (
