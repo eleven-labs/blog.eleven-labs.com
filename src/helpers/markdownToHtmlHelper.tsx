@@ -13,6 +13,7 @@ import rehypeRaw from 'rehype-raw';
 import rehypeReact from 'rehype-react';
 import rehypeRewrite from 'rehype-rewrite';
 import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remark2rehype from 'remark-rehype';
 import { unified } from 'unified';
@@ -71,6 +72,7 @@ export const markdownToHtml = (content: string): string => {
   const reactComponent = unified()
     .use(remarkParse)
     .use(remarkFigurePlugin)
+    .use(remarkGfm)
     .use(remark2rehype, { allowDangerousHtml: true })
     .use(rehypeSlug)
     .use(rehypeRaw)
