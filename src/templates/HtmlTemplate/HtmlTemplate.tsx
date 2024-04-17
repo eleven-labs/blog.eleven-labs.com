@@ -2,7 +2,7 @@ import { ResourceStore } from 'i18next';
 import * as React from 'react';
 
 import { GTM_ID } from '@/constants';
-import { getPathFile } from '@/helpers/assetHelper';
+import { generateUrl } from '@/helpers/assetHelper';
 
 export interface HtmlTemplateProps {
   lang: string;
@@ -52,8 +52,8 @@ export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({
       {metas?.map((meta, index) => (
         <meta key={index} {...meta} />
       ))}
-      <link rel="shortcut icon" type="image/x-icon" href={getPathFile('/favicon.ico')} />
-      <link rel="manifest" href={getPathFile('/web-app-manifest.json')} />
+      <link rel="shortcut icon" type="image/x-icon" href={generateUrl('/favicon.ico')} />
+      <link rel="manifest" href={generateUrl('/web-app-manifest.json')} />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link

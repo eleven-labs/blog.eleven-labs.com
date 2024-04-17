@@ -4,7 +4,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData } from 'react-router-dom';
 
-import { blogUrl, websiteUrl } from '@/config/website';
+import { websiteUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, IMAGE_FORMATS, LANGUAGES, MARKDOWN_CONTENT_TYPES, PATHS } from '@/constants';
 import { TransWithHtml } from '@/containers/TransWithHtml';
 import { generatePath } from '@/helpers/routerHelper';
@@ -42,9 +42,9 @@ export const useHomePageContainer = (): HomePageProps => {
   useTitle(t('pages.home.seo.title'));
   useLink({
     rel: 'canonical',
-    href: `${blogUrl}${generatePath(PATHS.ROOT, {
+    href: generatePath(PATHS.ROOT, {
       lang: DEFAULT_LANGUAGE,
-    })}`,
+    }),
   });
 
   return {

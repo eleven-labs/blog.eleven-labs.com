@@ -3,7 +3,6 @@ import { useLink, useTitleTemplate } from 'hoofd';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { blogUrl } from '@/config/website';
 import { DEFAULT_LANGUAGE, IS_SSR, PATHS } from '@/constants';
 import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import { TransWithHtml } from '@/containers/TransWithHtml';
@@ -21,7 +20,7 @@ export const useSearchPageContentContainer = (): SearchPageContentProps => {
   useTitle(t('pages.search.seo.title', { search }));
   useLink({
     rel: 'canonical',
-    href: `${blogUrl}${generatePath(PATHS.SEARCH, { lang: DEFAULT_LANGUAGE })}`,
+    href: generatePath(PATHS.SEARCH, { lang: DEFAULT_LANGUAGE }),
   });
 
   const [postsBySearch, setPostsBySearch] = useState<PostCardListContainerProps['allPosts']>([]);

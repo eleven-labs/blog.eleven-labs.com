@@ -4,6 +4,7 @@ import {
   BASE_URL,
   DEFAULT_EXTENSION_FOR_IMAGES,
   DEVICES,
+  HOST_URL,
   IMAGE_CONTENT_TYPES,
   IMAGE_POSITIONS,
   SIZES_BY_IMAGE_FORMAT,
@@ -25,6 +26,8 @@ const dirname = (path: string): string => path.split('/').slice(0, -1).join('/')
 const extname = (path: string): string => path.split('.').pop() || '';
 
 export const getPathFile = (path: string): string => `${BASE_URL}${path.slice(1)}`;
+
+export const generateUrl = (path: string): string => `${HOST_URL}${path}`;
 
 export const getCoverPath = ({
   path = '/imgs/default-cover.jpg',
