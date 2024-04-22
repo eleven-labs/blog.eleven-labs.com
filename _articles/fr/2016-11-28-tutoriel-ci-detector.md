@@ -30,4 +30,4 @@ Nous allons voir ensemble un cas pratique d'utilisation afin de mieux comprendre
 Et bien sûr, si vous avez des remarques et/ou questions, n'hésitez pas à écrire un commentaire !
 Je me ferai un plaisir d'échanger avec vous.
 
-<iframe width="820" height="315" src="http://www.youtube.com/embed/lMETVJSr9R4" frameborder="0" allowfullscreen></iframe>
+<iframe width="820" height="315" src="https://www.youtube.com/embed/lMETVJSr9R4" frameborder="0" allowfullscreen></iframe>

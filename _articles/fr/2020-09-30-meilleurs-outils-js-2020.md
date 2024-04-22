@@ -127,7 +127,7 @@ En parlant de render, ne vous êtes vous jamais demandé pourquoi vos composants
 
 ![]({BASE_URL}/imgs/articles/2020-09-30-meilleurs-outils-js-2020/storybook.png)
 
-Si comme moi vous avez adopté la méthodologie [BEM]({BASE_URL}/fr/retour-d-experience-sur-bem/), alors vous connaissez la nécessité d’avoir des composants unitaires, avec un affichage et un comportement uniforme à chaque utilisation. Pour aider à travailler dans ce sens il existe l’outil open source [Storybook](https://storybook.js.org/), qui est disponible pour React, Vue et Angular et qui permet de facilement créer et maintenir vos composants pour une meilleure réutilisabilité. Pour en savoir plus une suite d’articles est disponible sur notre [blog]({BASE_URL}/fr/Storybook-creer-son-premier-composant/).
+Si comme moi vous avez adopté la méthodologie [BEM]({BASE_URL}/fr/retour-d-experience-sur-bem/), alors vous connaissez la nécessité d’avoir des composants unitaires, avec un affichage et un comportement uniforme à chaque utilisation. Pour aider à travailler dans ce sens il existe l’outil open source [Storybook](https://storybook.js.org/), qui est disponible pour React, Vue et Angular et qui permet de facilement créer et maintenir vos composants pour une meilleure réutilisabilité. Pour en savoir plus une suite d’articles est disponible sur notre [blog]({BASE_URL}/fr/storybook-creer-son-premier-composant/).
 
 ## Bit
 

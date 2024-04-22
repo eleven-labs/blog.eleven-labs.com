@@ -27,7 +27,7 @@ Dans ce CodeLabs, nous allons donc voir comment créer et déployer, via Gitlab 
 Créer une application [React](https://facebook.github.io/create-react-app/docs/documentation-intro)
 Obtenir un compte [Google Cloud Platform](https://console.cloud.google.com)
 Créer un compte [Gitlab](https://about.gitlab.com/)
-En savoir plus à propos de [Gitlab CI]([https://docs.gitlab.com/ee/ci/](https://docs.gitlab.com/ee/ci/))
+En savoir plus à propos de [Gitlab CI](https://docs.gitlab.com/ee/ci/)
 
 ## Pré-requis
 
