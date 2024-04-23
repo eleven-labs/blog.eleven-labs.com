@@ -14,7 +14,7 @@ authors:
     - fpasquet
 ---
 
-Dans cet article, je vais vous présenter le concept du Design System que nous mettons en place pour nos clients au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application). Plongez dans le monde du Design System pour comprendre comment il assure la cohérence visuelle et fonctionnelle dans la conception. Explorez ce qu'est un Design System, pourquoi il est essentiel, le moment propice pour envisager sa création, ainsi que les étapes à respecter.
+Dans cet article, je vais vous présenter le concept du Design System que nous mettons en place pour nos clients au sein du [Studio Eleven Labs](https://eleven-labs.com/dev-web/). Plongez dans le monde du Design System pour comprendre comment il assure la cohérence visuelle et fonctionnelle dans la conception. Explorez ce qu'est un Design System, pourquoi il est essentiel, le moment propice pour envisager sa création, ainsi que les étapes à respecter.
 
 ## Qu'est-ce qu'un Design System ?
 
@@ -105,7 +105,7 @@ Un Design System accélère le développement en fournissant des composants prê
 
 - **Amélioration de la productivité des équipes :**
 
-La cohérence des composants de conception permet aux [équipes de travailler plus efficacement](https://eleven-labs.com/expertises-agiles), en se concentrant sur des tâches complexes.
+La cohérence des composants de conception permet aux [équipes de travailler plus efficacement](https://eleven-labs.com/temoignages/botify/), en se concentrant sur des tâches complexes.
 
 - **Réduction des redondances et des erreurs de conception :**
 
@@ -154,7 +154,7 @@ La création d'un Design System est une démarche stratégique qui doit être en
 
 - **Croissance de l'entreprise :**
 
-Lorsqu'une entreprise connaît une croissance significative, il devient de plus en plus difficile de maintenir la cohérence visuelle et fonctionnelle de tous les produits ou services. [Les équipes de conception et de développement](https://eleven-labs.com/expertises-techniques) sont souvent éparpillées sur de multiples projets, ce qui peut entraîner une divergence dans l'apparence et l'expérience utilisateur. C'est à ce stade que la nécessité d'un Design System devient évidente, car il offre une base cohérente pour accompagner la croissance de l'entreprise.
+Lorsqu'une entreprise connaît une croissance significative, il devient de plus en plus difficile de maintenir la cohérence visuelle et fonctionnelle de tous les produits ou services. [Les équipes de conception et de développement](https://eleven-labs.com/dev-web/) sont souvent éparpillées sur de multiples projets, ce qui peut entraîner une divergence dans l'apparence et l'expérience utilisateur. C'est à ce stade que la nécessité d'un Design System devient évidente, car il offre une base cohérente pour accompagner la croissance de l'entreprise.
 
 - **Complexité croissante :**
 
@@ -244,4 +244,4 @@ Pour approfondir l'importance de cette collaboration, nous vous invitons à cons
 
 Et voilà, vous êtes à présent prêt à lancer votre propre Design System. En instaurant des principes clés tels que la cohérence, la réutilisabilité, la modularité, et en encourageant la collaboration, vous renforcerez votre organisation. Que vous soyez une grande entreprise ou une start-up, un Design System accélérera le développement, améliorera la productivité, réduira les erreurs et renforcera votre image de marque.
 
-Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous faisons usage de Design Systems dans nos projets internes et pour nos clients, afin de tirer parti de tous les avantages évoqués dans cet article. Restez à l'affût pour de futurs articles approfondis et des astuces visant à optimiser votre Design System !
+Au sein du [Studio Eleven Labs](https://eleven-labs.com/studio/), nous faisons usage de Design Systems dans nos projets internes et pour nos clients, afin de tirer parti de tous les avantages évoqués dans cet article. Restez à l'affût pour de futurs articles approfondis et des astuces visant à optimiser votre Design System !

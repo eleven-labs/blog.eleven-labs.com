@@ -15,7 +15,7 @@ categories:
 keywords: []
 ---
 
-Je vais vous expliquer aujourd'hui dans cet article un cas concret de mise en place d'une architecture orientée événements réalisé pour l'un de nos clients du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application). Vous découvrirez dans cet article, ce qu'est concrètement une architecture orientée événements (ou event driven architecture) et comment la mettre en place. Suivez le guide !
+Je vais vous expliquer aujourd'hui dans cet article un cas concret de mise en place d'une architecture orientée événements réalisé pour l'un de nos clients du [Studio Eleven Labs](https://eleven-labs.com/dev-web/). Vous découvrirez dans cet article, ce qu'est concrètement une architecture orientée événements (ou event driven architecture) et comment la mettre en place. Suivez le guide !
 
 ## Concrètement, qu'est-ce que l'event driven architecture ou l'architecture orientée événements ?
 
@@ -61,7 +61,7 @@ Cela signifie aussi qu'un client peut s'abonner à tout moment et avoir accès a
 
 ## Exemple concret de mise en place d'une architecture orientée événements en microservices
 
-Voyons un cas concret en [PHP/Symfony](https://eleven-labs.com/client/ets) avec RabbitMQ.
+Voyons un cas concret en [PHP/Symfony](https://eleven-labs.com/success-stories/ets-refonte-application/) avec RabbitMQ.
 Imaginons une architecture avec plusieurs microservices qui ont besoin de communiquer entre eux dans le cas de validation d'une commande.
 Le service _Purchase_ valide un paiement et publie le message associé.
 Le service _Mailer_ envoie un email de confirmation de commande.
@@ -177,4 +177,4 @@ queues:
 Avec ces règles simples, nous pouvons facilement implémenter l'architecture orientée événements.
 Nous devons placer les événements au centre de notre refléxion pour construire les échanges de notre plateforme autour de ceux-ci.
 
-Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous utilisons cette architecture comme moyen privilégié de communiquer entre microservices pour tous les avantages mentionnés plus haut.
+Au sein du [Studio Eleven Labs](https://eleven-labs.com/studio/), nous utilisons cette architecture comme moyen privilégié de communiquer entre microservices pour tous les avantages mentionnés plus haut.

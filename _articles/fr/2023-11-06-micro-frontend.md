@@ -17,7 +17,7 @@ authors:
     - charles-eric
 ---
 
-Dans cet article, nous introduirons la notion de "micro frontend" et ses avantages. Ensuite, nous donnerons des cas d'usage concrets et des exemples d'implémentation basés sur notre expérience réelle au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) pour des projets internes et des projets clients. Bonne lecture !
+Dans cet article, nous introduirons la notion de "micro frontend" et ses avantages. Ensuite, nous donnerons des cas d'usage concrets et des exemples d'implémentation basés sur notre expérience réelle au sein du [Studio Eleven Labs](https://eleven-labs.com/dev-web/) pour des projets internes et des projets clients. Bonne lecture !
 
 ## Qu'est-ce que le "micro frontend" ?
 
@@ -66,7 +66,7 @@ En réalité, nous recommanderons bien sûr que différentes équipes d'une mêm
 
 Également, cette indépendance permet à chaque équipe de livrer son micro frontend sans affecter l'ensemble de l'application, car les changements n'affectent qu'une partie du processus métier, et qu'une partie complètement isolée techniquement. Cela permet d'augmenter la fréquence de livraison des correctifs et nouvelles fonctionnalités, ce qui peut être un avantage concurrentiel intéressant.
 
-De plus, cette isolation technique laisse place à d'éventuelles optimisations de [performances front](https://eleven-labs.com/nos-publications/guide-d-optimisation-web-performance-le-cas-france-medias-monde) : chaque micro frontend découplé du reste de l'application se charge indépendamment et ainsi, les plus lents ne bloquent pas le bon fonctionnement des autres.
+De plus, cette isolation technique laisse place à d'éventuelles optimisations de [performances front](https://eleven-labs.com/success-stories/france-medias-monde/) : chaque micro frontend découplé du reste de l'application se charge indépendamment et ainsi, les plus lents ne bloquent pas le bon fonctionnement des autres.
 
 <div class="admonition summary" markdown="1"><p  class="admonition-title">En résumé</p>
 
@@ -306,7 +306,7 @@ Vous avez maintenant tous les éléments en main pour bien comprendre et mettre 
 
 La vraie question reste de savoir si vous en avez besoin : si vous démarrez juste une nouvelle application ou si vous n'avez pas de difficulté à maintenir votre application existante, cela peut être une solution surdimensionnée.
 
-Mais si, comme nous au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), vous avez besoin de solutions pour faire évoluer efficacement vos applications complexes, cette approche peut vous aider, notamment pour assurer la migration progressive de vos applications frontend vers de nouvelles technologies.
+Mais si, comme nous au sein du [Studio Eleven Labs](https://eleven-labs.com/studio/), vous avez besoin de solutions pour faire évoluer efficacement vos applications complexes, cette approche peut vous aider, notamment pour assurer la migration progressive de vos applications frontend vers de nouvelles technologies.
 
 \
 *Ressources pour aller plus loin :*
