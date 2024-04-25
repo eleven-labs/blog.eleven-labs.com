@@ -19,7 +19,7 @@ categories:
 
 ## Le contexte du REX autour de la construction d'une plateforme Data pour notre client
 
-Dans le cadre d'une mission Data Engineer pour un client du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application), j'ai rejoint le pôle “Data Factory” pour analyser et comprendre
+Dans le cadre d'une mission Data Engineer pour un client du [Studio Eleven Labs](https://eleven-labs.com/dev-web/), j'ai rejoint le pôle “Data Factory” pour analyser et comprendre
 le comportement des utilisateurs. Cela permet de mieux guider l’ajout des fonctionnalités et des produits à
 lancer.
 
@@ -260,6 +260,6 @@ Un des points de souffrance sur le pipeline est Talend. Cet outil ne s'adapte pa
 
 ## Pour conclure, mon retour d'expérience
 
-La construction de cette plateforme data a été un grand projet de notre [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit). Tout a été construit depuis zéro. J'ai bien cerné la problématique, cela m'a permis d'identifier tous les éléments sur le fonctionnement du pipeline. La solution a été de s'adapter à son fonctionnement et aux pré-requis. Enfin, la mise en production s'est déroulée comme prévu. La mise en place d'une surveillance active m'a permis de détecter les erreurs en amont. Cela réduit considérablement les temps d'indisponibilité de la plateforme.
+La construction de cette plateforme data a été un grand projet de notre [Studio Eleven Labs](https://eleven-labs.com/studio/). Tout a été construit depuis zéro. J'ai bien cerné la problématique, cela m'a permis d'identifier tous les éléments sur le fonctionnement du pipeline. La solution a été de s'adapter à son fonctionnement et aux pré-requis. Enfin, la mise en production s'est déroulée comme prévu. La mise en place d'une surveillance active m'a permis de détecter les erreurs en amont. Cela réduit considérablement les temps d'indisponibilité de la plateforme.
 
 Pour ma part, cette mission a été très complète. J'ai tantôt été _Architecte_ avec la conception de l'infrastructure, _Ops_ avec l'écriture du Terraform et de la bonne compréhension de Google Cloud Platform, et enfin _Data Engineer_ avec la rédaction du DAG Airflow. J'en ressort avec encore plus d'expérience !

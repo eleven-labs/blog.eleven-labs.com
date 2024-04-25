@@ -21,7 +21,7 @@ authors:
 ---
 Dans cet article, nous allons nous plonger dans l'intégration d'un CRM (Customer Relationship Management) avec une application e-commerce.
 
-Nous vous donnerons des exemples concrets sur lesquels nous avons travaillé au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application).
+Nous vous donnerons des exemples concrets sur lesquels nous avons travaillé au sein du [Studio Eleven Labs](https://eleven-labs.com/dev-web/).
 
 ## Contexte
 
@@ -193,7 +193,7 @@ Voici comment procéder de manière méthodique :
 
 ## Conclusion
 
-Nous avons ainsi mis en avant notre expérience au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) au sujet de l'intégration d'un CRM avec une application e-commerce, basée sur une approche *Event Driven*, asynchrone et quasi "temps" réel.
+Nous avons ainsi mis en avant notre expérience au sein du [Studio Eleven Labs](https://eleven-labs.com/dev-web/) au sujet de l'intégration d'un CRM avec une application e-commerce, basée sur une approche *Event Driven*, asynchrone et quasi "temps" réel.
 
 Vous aurez compris l'importance de mettre en place un processus résilient aux erreurs, ce qui est permis par le "retry", mais aussi de soigner toutes les étapes de synchronisation, y compris la migration initiale des données historiques.
 

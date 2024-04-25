@@ -20,7 +20,7 @@ authors:
     - charles-eric
 ---
 
-Voici un cas client concret sur lequel nous avons travaillé au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application) : la refonte d'une application web corporate et e-commerce pour répondre à de nouvelles problématiques.
+Voici un cas client concret sur lequel nous avons travaillé au sein du [Studio Eleven Labs](https://eleven-labs.com/dev-web/) : la refonte d'une application web corporate et e-commerce pour répondre à de nouvelles problématiques.
 
 Commençons par décrire cette application avant de détailler les nouvelles problématiques, puis de présenter nos solutions pour y répondre.
 
@@ -160,4 +160,4 @@ Le reverse proxy joue le rôle d'intermédiaire entre notre CMS No Code et nos c
 
 Ainsi cette solution permet à la fois de tirer partie d'un CMS no code laissant plus de liberté aux éditeurs de contenus pour construire leur page, tout en assurant une bonne intégration avec notre plateforme e-commerce pour optimiser les parcours d'achats !
 
-Cette approche est aussi intéressante car on profite au maximum d'une solution CMS SaaS qui nous permet de nous concentrer exclusivement sur le développement des parties critiques liées au e-commerce plutôt que sur les simples pages de contenus. Ainsi l'implémentation de cette architecture présente un meilleur ROI global : c'est un aspect sur lequel nous sommes toujours attentifs pour [nos projets Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit) !
+Cette approche est aussi intéressante car on profite au maximum d'une solution CMS SaaS qui nous permet de nous concentrer exclusivement sur le développement des parties critiques liées au e-commerce plutôt que sur les simples pages de contenus. Ainsi l'implémentation de cette architecture présente un meilleur ROI global : c'est un aspect sur lequel nous sommes toujours attentifs pour [nos projets Studio Eleven Labs](https://eleven-labs.com/studio/) !

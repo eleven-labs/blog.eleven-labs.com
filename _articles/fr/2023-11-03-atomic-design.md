@@ -18,7 +18,7 @@ keywords:
 authors:
     - iregaibi
 ---
-Dans cet article, je vais vous présenter le concept d'Atomic Design en détaillant ses avantages et en fournissant des exemples concrets de cette approche. Je vais également aborder l'application de cette méthodologie en proposant des exemples d'utilisation, telle que pratiquée dans nos projets au sein du [Studio Eleven Labs](https://eleven-labs.com/conception-d-application), en utilisant la librairie Javascript React.
+Dans cet article, je vais vous présenter le concept d'Atomic Design en détaillant ses avantages et en fournissant des exemples concrets de cette approche. Je vais également aborder l'application de cette méthodologie en proposant des exemples d'utilisation, telle que pratiquée dans nos projets au sein du [Studio Eleven Labs](https://eleven-labs.com/dev-web/), en utilisant la librairie Javascript React.
 
 ## Qu'est-ce que l'Atomic Design ?
 Créé par Brad Frost en 2013, l'Atomic Design est tout d'abord une approche de conception de systèmes d'interface utilisateur et de design d'interaction. Son application peut être dédiée à la création d'un [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/) ou à l'organisation de l'interface utilisateur d'un projet quel qu'il soit.
@@ -298,4 +298,4 @@ Cette méthodologie vient formaliser et structurer ce qui était déjà pratiqu�
 ## Conclusion
 En adoptant le concept de l'Atomic Design, vous introduisez des principes fondamentaux tels que la modularité, la facilité de maintenance et la collaboration. Cela entraîne une nette amélioration de la productivité et de la rapidité dans la mise en place du design. Réduire les risques d'erreurs et assurer une évolution constante et cohérente des éléments sont d'autres avantages qui renforceront l'image de votre marque.
 
-Au sein du [Studio Eleven Labs](https://eleven-labs.com/nos-publications/donnez-une-nouvelle-dimension-a-votre-equipe-produit), nous appliquons l'Atomic Design pour élaborer des [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/) destinés à nos projets internes et à nos clients. Cette approche nous a permis de tirer parti de tous les bénéfices mentionnés dans cet article.
+Au sein du [Studio Eleven Labs](https://eleven-labs.com/studio/), nous appliquons l'Atomic Design pour élaborer des [Design System]({BASE_URL}/fr/pourquoi-creer-design-system/) destinés à nos projets internes et à nos clients. Cette approche nous a permis de tirer parti de tous les bénéfices mentionnés dans cet article.
