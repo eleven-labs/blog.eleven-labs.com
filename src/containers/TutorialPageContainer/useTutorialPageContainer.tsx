@@ -13,9 +13,10 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
   const postPageProps = usePostPage(tutorial);
   const { slug, step: currentStep } = useParams<{ slug: string; step: string }>();
 
+  const firstStep = tutorial.steps[0];
   const [currentTutorialStepIndex, currentTutorialStep] = Object.entries(tutorial.steps).find(
     ([, step]) => step.slug === currentStep
-  ) ?? [0, tutorial.steps[0]];
+  ) ?? [0, firstStep];
   const previousStep = tutorial.steps[Number(currentTutorialStepIndex) - 1];
   const nextStep = tutorial.steps[Number(currentTutorialStepIndex) + 1];
 
@@ -29,7 +30,7 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
         label: step.title,
         href: generatePath(PATHS.POST, { lang: i18n.language, slug, step: index > 0 ? step.slug : undefined }),
       })),
-      sectionActive: currentTutorialStep?.slug ?? tutorial.steps[0].slug,
+      sectionActive: currentTutorialStep?.slug ?? firstStep.slug,
     },
     children: <Box dangerouslySetInnerHTML={{ __html: currentTutorialStep?.content ?? tutorial.steps[0].content }} />,
     previousLink: previousStep
@@ -38,7 +39,7 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
           href: generatePath(PATHS.POST, {
             lang: i18n.language,
             slug,
-            step: previousStep.slug === 'introduction' ? '' : previousStep.slug,
+            step: previousStep.slug !== firstStep.slug ? previousStep.slug : undefined,
           }),
         }
       : undefined,
