@@ -288,3 +288,43 @@ git checkout -b feat/add-tutorial-slug
 ```
 
 Once your tutorial is finished and you want it to be published and add the label `publication` to your pull request.
+
+## Creating font subsets for web performance
+
+To optimize font file sizes, it is recommended to create subsets of fonts. This process involves breaking down fonts into subsets, ensuring that web browsers only load the necessary parts of the font. The provided Docker commands utilize the fonttools tool to generate font subsets. The TypeScript files responsible for this process are located in the `src/themes/fonts` directory. Below are the Docker commands and their results for font subset creation:
+
+```
+# Build the fonttools Docker image
+docker build -t fonttools -f Dockerfile-fonttools .
+
+# Run the fonttools container to create font subsets
+docker run -it -v ./:/var/www/app --rm fonttools tsx bin/optimize-fonts.ts
+```
+
+Result of the command:
+
+```
+Subsetting agdasima-bold.ttf to agdasima-bold-latin-ext.woff2 (was 23.012 kB, now 1.544 kB)
+Subsetting agdasima-regular.ttf to agdasima-regular-latin-ext.woff2 (was 23.152 kB, now 1.56 kB)
+Subsetting agdasima-regular.ttf to agdasima-regular-latin.woff2 (was 23.152 kB, now 10.416 kB)
+Subsetting agdasima-bold.ttf to agdasima-bold-latin.woff2 (was 23.012 kB, now 10.304 kB)
+Subsetting montserrat-medium.ttf to montserrat-medium-latin-ext.woff2 (was 197.756 kB, now 20.4 kB)
+Subsetting montserrat-semi-bold.ttf to montserrat-semi-bold-latin-ext.woff2 (was 197.964 kB, now 20.512 kB)
+Subsetting montserrat-regular.ttf to montserrat-regular-latin-ext.woff2 (was 197.624 kB, now 20.28 kB)
+Subsetting montserrat-semi-bold.ttf to montserrat-semi-bold-latin.woff2 (was 197.964 kB, now 24.02 kB)
+Subsetting montserrat-regular.ttf to montserrat-regular-latin.woff2 (was 197.624 kB, now 23.916 kB)
+Subsetting montserrat-medium.ttf to montserrat-medium-latin.woff2 (was 197.756 kB, now 24.044 kB)
+...
+```
+
+This output demonstrates the reduction in file size achieved by creating subsets for various fonts. The original font files are listed with their corresponding subset names and sizes before and after optimization.
+
+Sources:
+
+- [Article to creating font subsets](https://markoskon.com/creating-font-subsets/)
+- [FontTools is a library for manipulating fonts, written in Python](https://fonttools.readthedocs.io/en/latest/subset/)
+- [Characters table by language](https://character-table.netlify.app/)
+- [To analyze a font (number of characters, glyphs, language support, layout features, etc.](https://wakamaifondue.com/)
+- [Site listing all unicodes by range, alphabetically, type ...](https://symbl.cc/en/unicode/blocks/basic-latin/)
+- [Wikipedia: List of Unicode characters](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
+- [Other site listing unicodes](https://www.unicode.org/charts/nameslist/index.html)
