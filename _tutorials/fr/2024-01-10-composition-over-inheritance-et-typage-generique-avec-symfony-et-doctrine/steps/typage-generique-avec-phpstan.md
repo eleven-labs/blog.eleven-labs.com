@@ -6,7 +6,7 @@ title: Typage générique avec PHPStan
 ---
 ## Typage générique avec PHPStan
 
-Nous y voilà enfin ! Je vous conseille de faire une pause pour aller lire l'article [sur le typage générique en PHP](https://blog.eleven-labs.com/fr/typage-generique-en-php/) pour un peu de théorie sur le pourquoi du comment des ***generics***.
+Nous y voilà enfin ! Je vous conseille de faire une pause pour aller lire l'article [sur le typage générique en PHP]({BASE_URL}/fr/typage-generique-php/) pour un peu de théorie sur le pourquoi du comment des ***generics***.
 
 Ça y est ? Alors c'est parti !
 
@@ -130,7 +130,7 @@ class PostRepositoryDoctrine extends BaseRepositoryDoctrine implements PostRepos
 }
 ```
 
-Le seul changement utile et important ici est le tag `@extends` juste au-dessus de la classe. C'est *ici* que tout ce passe. 
+Le seul changement utile et important ici est le tag `@extends` juste au-dessus de la classe. C'est *ici* que tout ce passe.
 On indique ici que nous étendons notre `BaseRepositoryDoctrine`, mais avec une info supplémentaire, la présence des chevrons `<Post>`. En faisant cela, on explique à PHPStan que nous souhaitons remplacer, dans cette classe, tous nos types génériques `T` par `Post`. Et par `User` dans notre Repository User en faisant la manipulation équivalente.
 
 Notez également la notation `@return array<Post>` au-dessus de la seule méthode de notre repository. Cela permet d'indiquer que nous ne pouvons retourner qu'un tableau composé d'objets `Post`. En fonction de comment vous implémentez la méthode, PHPStan vous remonte une erreur si ce n'est pas le cas.
@@ -162,7 +162,7 @@ class BaseController
     {
         $post = new Post();
         $userRepository->store($post);
-        
+
         return new Response();
     }
 }

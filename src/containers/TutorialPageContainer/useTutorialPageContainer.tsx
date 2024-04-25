@@ -35,7 +35,11 @@ export const useTutorialPageContainer = (tutorial: TutorialPageData): PostPagePr
     previousLink: previousStep
       ? {
           label: t('pages.tutorial.previous_button'),
-          href: generatePath(PATHS.POST, { lang: i18n.language, slug, step: previousStep.slug }),
+          href: generatePath(PATHS.POST, {
+            lang: i18n.language,
+            slug,
+            step: previousStep.slug === 'introduction' ? '' : previousStep.slug,
+          }),
         }
       : undefined,
     nextLink: nextStep

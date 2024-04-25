@@ -516,7 +516,7 @@ Le code coverage sera visible dans les informations du `job` dans l'interface we
 
 ![CI Coverage]({BASE_URL}/imgs/articles/2018-09-19-introduction-gitlab-ci/ci-coverage.png)
 
-> Si vous le souhaitez voici un autre article de notre blog écrit par l'astronaute [Pouzor]({BASE_URL}/authors/pouzor/) sur le code coverage : [Ajouter le code coverage sur les MR avec avec GitLab-CI]({BASE_URL}/fr/ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci/)
+> Si vous le souhaitez voici un autre article de notre blog écrit par l'astronaute [Pouzor]({BASE_URL}/fr/authors/pouzor/) sur le code coverage : [Ajouter le code coverage sur les MR avec avec GitLab-CI]({BASE_URL}/fr/ajouter-le-code-coverage-sur-les-pr-avec-gitlab-ci/)
 
 ### retry
 Cette déclaration permet de ré-exécuter le `job` en cas d'échec. Il faut indiquer le nombre de fois où vous voulez ré-exécuter le `job`

@@ -35,7 +35,7 @@ Alors oui, mais la dotJS c’est quoi déjà ?
 
 Il s’agit ni plus ni moins de la plus grande conférence Javascript d’Europe. Le but étant de se rassembler afin de présenter l’avenir du Javascript, de voir l’avancement de certaines technologies ou fonctionnalités, et de troller tous ensemble.
 
-dotJS fait partie des dotConferences, dont mon collègue astronaute Martin Cadoux nous explique très clairement le concept dans [son article sur dotCSS]({BASE_URL}/les-dotcss-2015-cetait-bien/) :
+dotJS fait partie des dotConferences, dont mon collègue astronaute Martin Cadoux nous explique très clairement le concept dans [son article sur dotCSS]({BASE_URL}/fr/les-dotcss-2015-cetait-bien/) :
 
 > "dotConference une série de conférences qui vise à proposer des présentations de haute volée en lien avec des technologies ou des sujets particuliers. On en recense six aujourd’hui, dont les dotJS qui se sont déroulés lundi dernier, mais aussi les dotGo, et bientôt les dotScale. Ces rassemblements ont lieu exclusivement à Paris, mais attirent néanmoins une audience venue en large partie de l’étranger."
 
@@ -90,7 +90,7 @@ Constat sur HTTP/2 aujourd’hui: Ça à l’air cool, mais on ne s’en sert pa
 
 **LUNCH BREAK !**
 
-![](https://c2.staticflickr.com/6/5725/23359640130_8bff265e02_h.jpg) ![](http://i.giphy.com/3GCLlNvCg61ji.gif)
+![](https://c2.staticflickr.com/6/5725/23359640130_8bff265e02_h.jpg) ![](https://i.giphy.com/3GCLlNvCg61ji.gif)
 
 ## Lightning talks
 
@@ -138,7 +138,7 @@ Après avoir travaillé sur la compatibilité sur chaque navigateur (y compris I
 
 En bonus: Eric postule également au poste de maire de San Francisco...
 
-![](http://i.giphy.com/KTHFxuEtrVoGI.gif)
+![](https://i.giphy.com/KTHFxuEtrVoGI.gif)
 
 ## Jade &gt; Pug par [*Forbes Lindesay*](https://twitter.com/forbeslindesay)
 
@@ -181,7 +181,7 @@ Pas de réelle révolution cependant, le but de ce rassemblement semblait plus d
 Petite frustration tout de même sur le fait de ne pas pouvoir poser de questions directement en fin de présentation, mais cela est sûrement dû à un souci de logistique.
 L’objectif de ce post étant de survoler le large panel de sujets abordés, je vous laisse approfondir les plus intéressants.
 
-![](http://i.giphy.com/kRWFIgO75okHm.gif)
+![](https://i.giphy.com/kRWFIgO75okHm.gif)
 
 Les photos de l’événement sont disponibles sur le [compte Flickr](https://www.flickr.com/photos/97226415@N08/sets/72157661549425069/)
 

@@ -130,7 +130,7 @@ dans les locaux de
 
 ### Autre exemple
 
-Voici un exemple d’offre d’emploi issu du site [eleven-labs.com](http://www.eleven-labs.com) :
+Voici un exemple d’offre d’emploi issu du site [eleven-labs.com](https://eleven-labs.com/) :
 
 Version HTML
 
