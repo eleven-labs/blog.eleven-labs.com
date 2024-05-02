@@ -58,7 +58,7 @@ export const useLayoutTemplateContainer = (): Omit<LayoutTemplateProps, 'childre
               '@type': 'SearchAction',
               target: {
                 '@type': 'EntryPoint',
-                urlTemplate: generateUrl(`${i18n.language}/search/?search={search_term_string}`),
+                urlTemplate: generateUrl(`/${i18n.language}/search/?search={search_term_string}`),
               },
               'query-input': 'required name=search_term_string',
             },
