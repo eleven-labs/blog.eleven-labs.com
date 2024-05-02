@@ -1,10 +1,9 @@
 import { AuthorPageProps, SocialNetworkName } from '@eleven-labs/design-system';
-import { useLink } from 'hoofd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLoaderData, useParams } from 'react-router-dom';
 
-import { DEFAULT_LANGUAGE, PATHS } from '@/constants';
+import { PATHS } from '@/constants';
 import { PostCardListContainer, PostCardListContainerProps } from '@/containers/PostCardListContainer';
 import { generatePath } from '@/helpers/routerHelper';
 import { useNewsletterCard } from '@/hooks/useNewsletterCard';
@@ -17,13 +16,6 @@ export const useAuthorPageContainer = (): AuthorPageProps | undefined => {
   const authorPageData = useLoaderData() as AuthorPageData;
   const newsletterCard = useNewsletterCard();
   useTitle(t('pages.author.seo.title', { authorName: authorPageData?.author.name }));
-  useLink({
-    rel: 'canonical',
-    href: generatePath(PATHS.AUTHOR, {
-      lang: DEFAULT_LANGUAGE,
-      authorUsername: authorPageData?.author?.username,
-    }),
-  });
 
   const getPaginatedLink: PostCardListContainerProps['getPaginatedLink'] = (page: number) => ({
     href: generatePath(PATHS.AUTHOR_PAGINATED, { lang: i18n.language, authorUsername, page }),
