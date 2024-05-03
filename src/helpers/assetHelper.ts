@@ -49,17 +49,17 @@ export const getCoverPath = ({
   const filename = basename(path, extname(path));
   const imageFormat = SIZES_BY_IMAGE_FORMAT[device][format];
 
-  const pathFile = isProd
+  return isProd
     ? `${directoryPath}/${filename}-w${imageFormat.width}-h${imageFormat.height}-x${pixelRatio}.${extension}`
     : `${path}?width=${imageFormat.width}&height=${imageFormat.height}&pixelRatio=${pixelRatio}&position=${position}&format=${extension}`;
-
-  return getPathFile(pathFile);
 };
 
 export const getSrcSet = (
   options: Omit<Parameters<typeof getCoverPath>[0], 'pixelRatio'> & { pixelRatios: number[] }
 ): string =>
-  options.pixelRatios.map((pixelRatio) => `${getCoverPath({ ...options, pixelRatio })} ${pixelRatio}x`).join(', ');
+  options.pixelRatios
+    .map((pixelRatio) => `${getPathFile(getCoverPath({ ...options, pixelRatio }))} ${pixelRatio}x`)
+    .join(', ');
 
 export const getMediaByDevice = (device: DeviceType): string =>
   device === DEVICES.DESKTOP ? '(min-width: 572px)' : '(max-width: 571px)';
@@ -84,13 +84,15 @@ export const getSources = (options: {
 export const getCover = (post: TransformedPostDataWithTransformedAuthors, format: ImageFormatType): PictureProps => ({
   sources: getSources({ path: post.cover?.path, format, position: post?.cover?.position as ImagePositionType }),
   img: {
-    src: getCoverPath({
-      path: post.cover?.path,
-      format,
-      pixelRatio: 1,
-      device: DEVICES.DESKTOP,
-      position: post?.cover?.position as ImagePositionType,
-    }),
+    src: getPathFile(
+      getCoverPath({
+        path: post.cover?.path,
+        format,
+        pixelRatio: 1,
+        device: DEVICES.DESKTOP,
+        position: post?.cover?.position as ImagePositionType,
+      })
+    ),
     alt: post.cover?.alt ?? post.title,
     width: SIZES_BY_IMAGE_FORMAT[DEVICES.DESKTOP][format].width,
     height: SIZES_BY_IMAGE_FORMAT[DEVICES.DESKTOP][format].height,
