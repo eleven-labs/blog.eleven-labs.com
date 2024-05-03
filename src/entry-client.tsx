@@ -49,19 +49,15 @@ const loadMermaidScript = (): void => {
   document.body.appendChild(script);
 };
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  console.log(event);
-
+document.addEventListener('DOMContentLoaded', () => {
   const twitterTweetElements = document.getElementsByClassName('twitter-tweet');
   const mermaidElements = document.getElementsByClassName('mermaid');
 
   if (twitterTweetElements.length) {
-    console.log('twitterTweetElements', twitterTweetElements);
     loadTwitterScript();
   }
 
   if (mermaidElements.length) {
-    console.log('mermaid', mermaidElements);
     loadMermaidScript();
   }
 });
