@@ -1,6 +1,6 @@
 import * as glob from 'glob';
 import * as fs from 'node:fs';
-import { vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { z } from 'zod';
 
 import {
@@ -48,6 +48,10 @@ vi.mock('@/app-paths', () => ({
   ASSETS_DIR: '_assets',
 }));
 
+afterEach(() => {
+  vi.resetAllMocks();
+});
+
 describe('getDataInMarkdownFile', () => {
   const validationSchema = z.object({
     title: z.string(),
@@ -55,8 +59,7 @@ describe('getDataInMarkdownFile', () => {
   });
 
   it('should parse markdown file and validate frontmatter data', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 title: Example Title
 slug: example-title
 ---
@@ -73,7 +76,7 @@ This is the content`);
       slug: 'example-title',
       content: 'This is the content',
     });
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
   test.each([
@@ -109,8 +112,7 @@ const world = 'hello';
       syntaxInvalid: '{% raw %}',
     },
   ])('should throw an error if markdown contains disallowed syntax', ({ content, syntaxInvalid }) => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(content);
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(content);
 
     const markdownFilePath = '/path/to/dir/invalid-file-with-markdown-contains-disallowed-syntax.md';
     expect(() =>
@@ -121,12 +123,11 @@ const world = 'hello';
     ).toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid! The syntax isn't allowed, please use valid markdown syntax! ${syntaxInvalid}`
     );
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
   it('should not throw an error if markdown contains disallowed syntax in code', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 title: Example Title
 date: 2023-06-13
 ---
@@ -146,12 +147,11 @@ contient | \`{% raw %}{{{% endraw %}\` \`{% raw %}}}{% endraw %}\` | \`{% raw %}
     ).not.toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid! The syntax isn't allowed, please use valid markdown syntax! {% raw %}`
     );
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
   it('should throw an error if frontmatter data is invalid', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 title: Example Title
 date: invalid-date
 ---
@@ -168,12 +168,11 @@ This is the content`);
         }),
       });
     }).toThrow(`The markdown of the file "${markdownFilePath}" is invalid! Invalid date at "date"`);
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
   it('should throw an error if an error occurs during parsing or validation', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 title: Example Title
 slug: example-title
 description: ->
@@ -191,14 +190,13 @@ This is the content`);
     }).toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid! Can not read an implicit mapping pair; a colon is missed at line 5, column 14`
     );
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 });
 
 describe('validateAuthor', () => {
   it('should throw an error if markdown is invalid', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 contentType: author
 username: jdoe
 github: account-github
@@ -211,12 +209,11 @@ This is some valid content`);
     expect(() => validateAuthor({ markdownFilePath })).toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid! Required at "name"`
     );
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
   it('should throw an error if markdown is invalid because of social networking', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 contentType: author
 username: jdoe
 name: John Doe
@@ -230,12 +227,11 @@ This is some valid content`);
     expect(() => validateAuthor({ markdownFilePath })).toThrow(
       `The markdown of the file "${markdownFilePath}" is invalid! No need to set the "@" for twitter, just the username. at "twitter"; No need to define the complete url of github, just give the user name at "github"; No need to define the complete url of linkedin, just give the user name at "linkedin"`
     );
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
   it('should return valid data and content if markdown is valid', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(markdownContentValidAuthor);
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(markdownContentValidAuthor);
 
     const markdownFilePath = '/path/to/dir/valid-author.md';
     expect(validateAuthor({ markdownFilePath })).toEqual({
@@ -247,14 +243,13 @@ This is some valid content`);
       linkedin: 'account-linkedin',
       content: 'This is some valid content',
     });
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 });
 
 describe('validatePost', () => {
   it('should throw an error if markdown is invalid', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 contentType: article
 lang: en
 date: 2022-01-01
@@ -274,12 +269,11 @@ This is some valid content`);
         markdownFilePath,
       })
     ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid! Required at "title"`);
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
   it('should throw an error if an article has a keyword included in the categories', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 contentType: article
 lang: en
 date: 2022-01-01
@@ -302,12 +296,11 @@ This is some valid content`);
         markdownFilePath,
       })
     ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid! Must not include a category. at "keywords"`);
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
   it('should throw an error if an article has more than 5 keywords', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 contentType: article
 lang: en
 date: 2022-04-01
@@ -340,12 +333,11 @@ Some content`);
         markdownFilePath,
       })
     ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid! Too many items 😡. at "keywords"`);
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
   it('should throw an error if an article has a duplicate keyword', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(`---
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(`---
 contentType: article
 lang: en
 date: 2022-04-01
@@ -369,12 +361,11 @@ Some content`);
         markdownFilePath,
       })
     ).toThrow(`The markdown of the file "${markdownFilePath}" is invalid! No duplicates allowed. at "keywords"`);
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 
   it('should return valid data and content if markdown is valid', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    readFileSyncSpy.mockReturnValueOnce(markdownContentValidArticle);
+    vi.mocked(fs.readFileSync).mockReturnValueOnce(markdownContentValidArticle);
 
     const markdownFilePath = '/path/to/dir/valid-post.md';
     expect(
@@ -393,40 +384,36 @@ Some content`);
       categories: ['javascript'],
       content: 'This is some valid content',
     });
-    expect(readFileSyncSpy).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith(markdownFilePath, { encoding: 'utf-8' });
   });
 });
 
 describe('validateMarkdown', () => {
   it('should throw an error if an author already exists with the same username', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    const globSyncSpy = vi.spyOn(glob, 'globSync');
-
-    globSyncSpy.mockReturnValueOnce(['/path/to/dir/valid-author.md', '/path/to/dir/valid-author.md']);
-    readFileSyncSpy.mockReturnValueOnce(markdownContentValidAuthor).mockReturnValueOnce(markdownContentValidAuthor);
+    vi.mocked(glob.globSync).mockReturnValueOnce(['/path/to/dir/valid-author.md', '/path/to/dir/valid-author.md']);
+    vi.mocked(fs.readFileSync)
+      .mockReturnValueOnce(markdownContentValidAuthor)
+      .mockReturnValueOnce(markdownContentValidAuthor);
 
     expect(() => validateMarkdown()).toThrow('This author already exists with the same username!');
-    expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
-    expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
   });
 
   it('should throw an error if an article already exists with the same slug and language', () => {
-    const readFileSyncSpy = vi.spyOn(fs, 'readFileSync');
-    const globSyncSpy = vi.spyOn(glob, 'globSync');
-
-    globSyncSpy
+    vi.mocked(glob.globSync)
       .mockReturnValueOnce(['/path/to/dir/valid-author.md'])
       .mockReturnValueOnce(['/path/to/dir/valid-post.md', '/path/to/dir/valid-post.md']);
 
-    readFileSyncSpy
+    vi.mocked(fs.readFileSync)
       .mockReturnValueOnce(markdownContentValidAuthor)
       .mockReturnValueOnce(markdownContentValidArticle)
       .mockReturnValueOnce(markdownContentValidArticle);
 
     expect(() => validateMarkdown()).toThrow('This article already exists with the same slug and the same language!');
-    expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
-    expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-post.md', { encoding: 'utf-8' });
-    expect(readFileSyncSpy).toHaveBeenCalledWith('/path/to/dir/valid-post.md', { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-author.md', { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-post.md', { encoding: 'utf-8' });
+    expect(fs.readFileSync).toHaveBeenCalledWith('/path/to/dir/valid-post.md', { encoding: 'utf-8' });
   });
 });
 
@@ -445,11 +432,10 @@ describe('validateExistingAssets', () => {
     const assetPath = `_assets/articles/test.png`;
     const contentInvalid = 'This is a test post content with an asset reference {BASE_URL}/imgs/articles/test.png';
 
-    const existsSyncSpy = vi.spyOn(fs, 'existsSync');
-    existsSyncSpy.mockReturnValueOnce(false);
+    vi.mocked(fs.existsSync).mockReturnValueOnce(false);
 
     expect(() => validateExistingAssets(contentInvalid)).toThrow(`The file does not exist "${assetPath}"!`);
-    expect(existsSyncSpy).toHaveBeenCalledWith(assetPath);
+    expect(fs.existsSync).toHaveBeenCalledWith(assetPath);
   });
 });
 

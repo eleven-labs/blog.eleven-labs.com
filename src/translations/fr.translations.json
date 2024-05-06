@@ -28,7 +28,7 @@
     },
     "languages": {
       "fr": "Français",
-      "en": "Anglais",
+      "en": "English",
       "dt": "DT"
     },
     "tutorial-tag": "Tutoriel",
@@ -88,7 +88,7 @@
           "description": "Tous nos articles de blog, REX et tutoriels autour du développement Javascript : React.js, Node.js, Nest.js, Next.js, Vue.js, Svelte.js"
         },
         "title": "Nos articles et retours d’expérience en développement Javascript",
-        "description": "<strong>Javascript est un langage de programmation dynamique complet et doté d’une incroyable flexibilité !</strong> Ce n’est pas pour rien que ce langage est aujourd'hui le plus utilisé par les développeurs à travers le monde. Dans cette catégorie, retrouvez tous les articles, retours d’expérience et tutoriels de nos astronautes autour de <strong>React.js, <a href=\"https://www.eleven-labs.com/dev-web/node-js/\">Node.js</a>, Nest.js, Next.js, Vue.js, Svelte.js. Vous y retrouverez également des outils à utiliser pour faciliter votre delivery, un guide pour implémenter votre propre Design System et bien plus encore ! Bonne lecture.</strong>",
+        "description": "<strong>Javascript est un langage de programmation dynamique complet et doté d’une incroyable flexibilité !</strong> Ce n’est pas pour rien que ce langage est aujourd'hui le plus utilisé par les développeurs à travers le monde. Dans cette catégorie, retrouvez tous les articles, retours d’expérience et tutoriels de nos astronautes autour de <strong>React.js, <a href=\"https://eleven-labs.com/dev-web/node-js/\">Node.js</a>, Nest.js, Next.js, Vue.js, Svelte.js. Vous y retrouverez également des outils à utiliser pour faciliter votre delivery, un guide pour implémenter votre propre Design System et bien plus encore ! Bonne lecture.</strong>",
         "expertise": {
           "title": "Quels types d’applications peuvent être développées en Javascript ?",
           "description": "Aujourd’hui, il est quasiment possible de tout faire avec le langage Javascript : applications web et mobile, progressive web apps, logiciels, applications métier, sites web fullstack Javascript, APIs backend, jeux vidéos, applications TV et bien d’autres. En bref, Javascript est devenu en quelques années le langage central du web et celui le plus utilisé sur GitHub. Choisir Javascript pour son projet de développement web est donc, dans la majorité des cas, une bonne idée !",

@@ -7,7 +7,7 @@ export const getHtmlTemplatePropsByManifest = (options: {
   dirname: string;
   baseUrl?: string;
 }): Pick<HtmlTemplateProps, 'links' | 'styles' | 'scripts'> => {
-  const manifest = JSON.parse(readFileSync(resolve(options.dirname, 'manifest.json'), { encoding: 'utf-8' }));
+  const manifest = JSON.parse(readFileSync(resolve(options.dirname, '.vite/manifest.json'), { encoding: 'utf-8' }));
   const manifestEntryClient = manifest['src/entry-client.tsx'];
 
   return {

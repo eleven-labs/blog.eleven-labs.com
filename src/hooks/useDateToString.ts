@@ -1,6 +1,5 @@
 import { format } from 'date-fns';
-import localeDateEn from 'date-fns/locale/en-US';
-import localeDateFr from 'date-fns/locale/fr';
+import { enUS, fr } from 'date-fns/locale';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -13,7 +12,7 @@ export const useDateToString = (): UseDateToString => {
   const getDateToString = React.useCallback<UseDateToString['getDateToString']>(
     (options) =>
       format(new Date(options.date), 'PP', {
-        locale: i18n.language === 'fr' ? localeDateFr : localeDateEn,
+        locale: i18n.language === 'fr' ? fr : enUS,
       }),
     [i18n.language]
   );

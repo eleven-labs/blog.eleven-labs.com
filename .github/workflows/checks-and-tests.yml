@@ -85,15 +85,3 @@ jobs:
 
       - name: Build Application
         run: WITH_DOWNLOAD_TRANSLATIONS_AND_GENERATE_IMAGE_FORMATS=false npm run build
-
-  build-storybook:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Restore NPM Cache
-        uses: ./.github/actions/restore-npm-cache
-
-      - name: Build Storybook
-        run: npm run build:storybook
