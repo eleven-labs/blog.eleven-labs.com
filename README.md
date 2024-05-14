@@ -201,6 +201,16 @@ If you need to add internal anchor links from your article to other article of o
 
 > Warning: Don't add html in your markdown, you don't have to override the blog template in the markdown.
 
+This blog supports admonitions pannels `warning` ; `info` ; `tip` and `note` to generate colored panels.
+When using `<div>` attribute `markdown="1"` text block is rendered as Markdown. The first line must be left empty, else the block will be rendered as html
+
+```md
+<div class="admonition warning" markdown="1"><p class="admonition-title">Your Panel Title</p>
+
+Your panel text.
+</div>
+```
+
 **5 - Add your pull request**
 
 Create your branch and add your pull request.
