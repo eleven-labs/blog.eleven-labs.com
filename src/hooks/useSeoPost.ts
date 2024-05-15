@@ -45,7 +45,10 @@ export const useSeoPost = (post: PostPageData): void => {
         name: author.name,
         url: generatePath(PATHS.AUTHOR, { authorUsername: author.username, lang: i18n.language }),
       })),
-      image: [coverUrl],
+      image: {
+        '@type': 'ImageObject',
+        url: coverUrl,
+      },
       publisher: {
         '@type': 'Organization',
         name: 'Eleven Labs',
