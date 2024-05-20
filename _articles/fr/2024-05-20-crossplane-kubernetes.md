@@ -270,7 +270,7 @@ spec:
 ```
 On retrouve notre liste de ressources dans `spec.resources[]` dans lequel j'ai remis notre instance RDS déclarée au début de ce billet, accompagnée d'un subnet group. Notez que `spec.resources[].name` est purement arbitraire ici et permet uniquement de se repérer dans le template.
 
-Le bloc `spec.compositeTypeRef` est optionnel et permet d'exposer un endpoint d'API pour pouvoir référencer cette composition dans une autre composition. Dans l'exemple ci-dessous, on réutilise notre première composition et on déclare un rôle IAM supplémentaire :
+Le bloc `spec.compositeTypeRef` indique quelle ressource composite est autorisée à utiliser cette composition. De plus, cela génère également un endpoint d'API qui nous permettra de référencer cette composition dans une autre composition. Dans l'exemple ci-dessous, on réutilise notre première composition et on déclare un rôle IAM supplémentaire :
 
 ```yaml
 apiVersion: apiextensions.crossplane.io/v1
