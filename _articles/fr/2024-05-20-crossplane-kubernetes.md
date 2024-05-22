@@ -179,6 +179,107 @@ N.B. : La documentation de l'API RDS se trouve ici : https://marketplace.upbound
 
 Une fois que cette ressource managée est déclarée, Crossplane va alors scruter le cloud provider pour vérifier que la ressource externe est dans l'état que nous avons demandé et tentera de corriger le *drift* sinon. Par défaut, Crossplane interroge les providers toutes les minutes et on pourra ajuster cet intervalle avec l'argument `--poll-interval n` du contrôleur. Notez qu'avec une valeur trop faible nos appels API risquent d'être bloqués par les cloud providers car trop fréquents. Crossplane reportera le statut des ressources managées en injectant un bloc `Conditions` directement dans l'objet. Aussi, toutes les informations de la ressource *externe* qui sont connues après création (e.g. ARN, id, etc.) seront renseignées a posteriori dans le champ `status.atProvider` de cet objet.
 
+Exemple de création d'un bucket S3.
+
+```bash
+❯ kubectl apply -f kube/components/bucket.yaml
+bucket.s3.aws.upbound.io/my-bucket created
+
+
+❯ kubectl --namespace 'crossplane-system' logs 'provider-aws-s3-6f461b0ba11f-9fdbfcfbb-9945r'
+
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Instance state not found in cache, reconstructing...    {"uid": "847345d5-55a2-49f0-a005-a25777e193b7", "name": "my-bucket", "gvk": "s3.aws.upbound.io/v1beta1, Kind=Bucket"}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Observing the external resource    {"uid": "847345d5-55a2-49f0-a005-a25777e193b7", "name": "my-bucket", "gvk": "s3.aws.upbound.io/v1beta1, Kind=Bucket"}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Diff detected {# truncated}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Async create starting...    {"trackerUID": "847345d5-55a2-49f0-a005-a25777e193b7", "resourceName": "my-bucket", "gvk": "s3.aws.upbound.io/v1beta1, Kind=Bucket", "tfID": ""}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Creating the external resource    {"uid": "847345d5-55a2-49f0-a005-a25777e193b7", "name": "my-bucket", "gvk": "s3.aws.upbound.io/v1beta1, Kind=Bucket"}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Calling the inner handler for Update event.    {"gvk": "s3.aws.upbound.io/v1beta1, Kind=Bucket", "name": "my-bucket", "queueLength": 0}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Successfully requested creation of external resource    {"controller": "managed/s3.aws.upbound.io/v1beta1, kind=bucket", "request": {"name":"my-bucket"}, "uid": "847345d5-55a2-49f0-a005-a25777e193b7", "version": "66892", "external-name": "my-bucket", "external-name": "my-bucket"}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Reconciling    {"controller": "managed/s3.aws.upbound.io/v1beta1, kind=bucket", "request": {"name":"my-bucket"}}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Connecting to the service provider    {"uid": "847345d5-55a2-49f0-a005-a25777e193b7", "name": "my-bucket", "gvk": "s3.aws.upbound.io/v1beta1, Kind=Bucket"}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Instance state not found in cache, reconstructing...    {"uid": "847345d5-55a2-49f0-a005-a25777e193b7", "name": "my-bucket", "gvk": "s3.aws.upbound.io/v1beta1, Kind=Bucket"}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    ongoing async operation    {"uid": "847345d5-55a2-49f0-a005-a25777e193b7", "name": "my-bucket", "gvk": "s3.aws.upbound.io/v1beta1, Kind=Bucket", "opType": "create"}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    External resource is up to date    {"controller": "managed/s3.aws.upbound.io/v1beta1, kind=bucket", "request": {"name":"my-bucket"}, "uid": "847345d5-55a2-49f0-a005-a25777e193b7", "version": "66899", "external-name": "my-bucket", "requeue-after": "2024-05-18T19:09:21Z"}
+2024-05-18T18:58:54Z    DEBUG    provider-aws    Async create ended.    {"trackerUID": "847345d5-55a2-49f0-a005-a25777e193b7", "resourceName": "my-bucket", "gvk": "s3.aws.upbound.io/v1beta1, Kind=Bucket", "error": null, "tfID": "my-bucket"}
+
+
+❯ kubectl get events --field-selector involvedObject.name=my-bucket
+LAST SEEN   TYPE     REASON                    OBJECT             MESSAGE
+29m         Normal   CreatedExternalResource   bucket/my-bucket   Successfully requested creation of external resource
+
+❯ kubectl --namespace 'crossplane-system' get buckets my-bucket -o yaml | yq '.status.conditions'
+- lastTransitionTime: "2024-05-18T19:27:05Z"
+  reason: Available
+  status: "True"
+  type: Ready
+- lastTransitionTime: "2024-05-18T19:27:05Z"
+  reason: ReconcileSuccess
+  status: "True"
+  type: Synced
+- lastTransitionTime: "2024-05-18T19:27:05Z"
+  reason: Success
+  status: "True"
+  type: LastAsyncOperation
+
+
+❯ aws --endpoint-url=http://localhost:4566 s3api list-buckets 
+{
+    "Buckets": [
+        {
+            "Name": "my-bucket",
+            "CreationDate": "2024-05-18T15:42:18+00:00"
+        }
+    ],
+    "Owner": {
+        "DisplayName": "webfile",
+        "ID": "75aa57f09aa0c8caeab4f8c24e99d10f8e7faeebf76c078efc7c6caea54ba06a"
+    }
+}
+```
+
+On retrouve les informations de la ressource externe dans le champ `.status` de la ressource managée
+
+```bash
+❯ kubectl --namespace 'crossplane-system' get buckets my-bucket -o yaml | yq '.status.atProvider'
+
+accelerationStatus: ""
+arn: arn:aws:s3:::my-bucket
+bucketDomainName: my-bucket.s3.amazonaws.com
+bucketRegionalDomainName: my-bucket.s3.us-east-1.amazonaws.com
+forceDestroy: false
+grant:
+  - id: 75aa57f09aa0c8caeab4f8c24e99d10f8e7faeebf76c078efc7c6caea54ba06a
+    permissions:
+      - FULL_CONTROL
+    type: CanonicalUser
+    uri: ""
+hostedZoneId: Z3AQBSTGFYJSTF
+id: my-bucket
+objectLockEnabled: false
+policy: ""
+region: us-east-1
+requestPayer: BucketOwner
+serverSideEncryptionConfiguration:
+  - rule:
+      - applyServerSideEncryptionByDefault:
+          - kmsMasterKeyId: ""
+            sseAlgorithm: AES256
+        bucketKeyEnabled: false
+tags:
+  crossplane-kind: bucket.s3.aws.upbound.io
+  crossplane-name: my-bucket
+  crossplane-providerconfig: default
+  my-key: my-value
+tagsAll:
+  crossplane-kind: bucket.s3.aws.upbound.io
+  crossplane-name: my-bucket
+  crossplane-providerconfig: default
+  my-key: my-value
+versioning:
+  - enabled: false
+    mfaDelete: false
+```
+
 Sur le cloud, certaines ressources externes ont des attributs immuables. Par exemple, AWS ne permet pas de modifier le nom d'un bucket S3. Terraform triche un peu avec ça en autorisant la modification des champs immuables mais en proposant alors de recréer ces ressources (i.e. supprimer le bucket et le recréer avec le nouveau nom.) Crossplane, ne dispose pas de ce type de mécanisme et on ne pourra pas modifier les champs immuables. Pour faire l'équivalent, on devra supprimer et recréer nous-même l'objet en question. Le nom de la ressource externe est alors le même que celui de la ressource managée par défaut. 
 
 ### Policies
@@ -355,6 +456,11 @@ N.B. : Par convention, Crossplane recommande pour les `CompositeResourceDefiniti
 
 La création de la `CompositeResourceDefinition` ci-dessus, engendre la création d'un endpoint `custom.api.exemple.org` que nous pourrons utiliser avec le `kind: XRDS`.
 
+```bash
+❯ kubectl get crds -o wide | grep 'custom.api.exemple.org'
+xrds.custom.api.exemple.org                                  2024-05-22T12:03:15Z
+```
+
 ```yaml
 apiVersion: custom.api.exemple.org/v1alpha1
 kind: XRDS
@@ -399,6 +505,14 @@ spec:
                   #etc.
 ```
 
+On constate qu'on a cette fois-ci 2 CRDs qui ont été créées pour le group `custom.api.exemple.org`
+
+```bash
+❯ kubectl get crds | grep 'custom.api.exemple.org'
+rds.custom.api.exemple.org                                   2024-05-22T12:04:29Z
+xrds.custom.api.exemple.org                                  2024-05-22T12:04:29Z
+```
+
 Avec l'exemple ci-dessus, on pourra créer le Claim ci-dessous avec le kind `RDS` (et non pas `XRDS`) et nos ressources seront cloisonnées au namespace `my-namespace`.
 
 ```yaml
@@ -412,6 +526,7 @@ spec:
 ```
 
 À noter que `spec.claimNames` est un champ optionnel alors que `spec.names` est obligatoire !
+
 
 ### Objets "Usage"
 
