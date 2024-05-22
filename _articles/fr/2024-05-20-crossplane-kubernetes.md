@@ -658,7 +658,7 @@ spec:
         # Le type d'instance est récupéré depuis le champ spec.type de notre Claim
         - type: FromCompositeFieldPath
           fromFieldPath: spec.type
-          toFieldPath: annotations[crossplane.io/external-name]
+          toFieldPath: metadata.annotations["crossplane.io/external-name"]
           transforms:
             - type: string
                 string:
@@ -707,7 +707,7 @@ spec:
         # Le type d'instance et récupéré depuis le champ spec.type de notre Claim
         - type: FromCompositeFieldPath
           fromFieldPath: spec.type
-          toFieldPath: annotations[crossplane.io/external-name]
+          toFieldPath: metadata.annotations["crossplane.io/external-name"]
           transforms:
             - type: string
               string:
@@ -804,7 +804,7 @@ spec:
     patches:
       - type: ToCompositeFieldPath
         fromFieldPath: env.name
-        toFieldPath: annotations[crossplane.io/external-name]
+        toFieldPath: metadata.annotations["crossplane.io/external-name"]
         transforms:
           - type: string
             string:
@@ -875,7 +875,7 @@ spec:
                 toFieldPath: spec.type
               - type: FromCompositeFieldPath
                 fromFieldPath: spec.type
-                toFieldPath: annotations[crossplane.io/external-name]
+                toFieldPath: metadata.annotations["crossplane.io/external-name"]
                 transforms:
                   - type: string
                     string:
