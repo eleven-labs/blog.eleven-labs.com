@@ -147,6 +147,9 @@ spec:
     url:
       type: Static
       static: http://host.docker.internal:4566
+    # Indique pour quels services on remplace l'endpoint par l'URL ci-dessus. 
+    # Attention, si la liste est vide, aucun service ne verra son URL changer.
+    services: [s3, rds] 
   skip_credentials_validation: true
   skip_metadata_api_check: true
   skip_requesting_account_id: true
