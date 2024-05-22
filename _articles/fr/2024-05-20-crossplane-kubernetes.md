@@ -99,17 +99,23 @@ spec:
     source: Secret
 ```
 
-- Niveau global — En créant un objet `DeploymentRuntimeConfig` qu'on référencera dans le champ `spec.runtimeConfigRef` de l'objet `Provider`. La configuration sera alors appliquée au runtime du paquet du provider
+- Niveau global — En créant un objet `DeploymentRuntimeConfig` qu'on référencera dans le champ `spec.runtimeConfigRef` de l'objet `Provider`. La configuration sera alors appliquée au runtime du paquet du provider. L'exemple ci-dessous montre comment rajouter un flag au lancement du contrôleur pour activer une feature alpha.
 
 ```yaml
 apiVersion: pkg.crossplane.io/v1beta1
 kind: DeploymentRuntimeConfig
 metadata:
-  name: enable-ess
+  name: enable-external-secret
 spec:
   deploymentTemplate:
     spec:
-    # etc.
+      selector: {}
+      template:
+        spec:
+          containers:
+            - name: package-runtime
+              args:
+                - --enable-external-secret-stores
 ---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
@@ -118,7 +124,7 @@ metadata:
 spec:
   package: xpkg.upbound.io/upbound/provider-family-aws:v1.3.1
   runtimeConfigRef:
-    name: enable-ess
+    name: enable-external-secret
     # etc.
 ```
 
