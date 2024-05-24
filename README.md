@@ -211,6 +211,17 @@ Your panel text.
 </div>
 ```
 
+You can also create collapsible panels like this : 
+
+```html
+<details>
+<summary>Title</summary>
+Details
+</details>
+</br>
+```
+Note : use `<details open>` if you want to panel to be expanded by default
+
 **5 - Add your pull request**
 
 Create your branch and add your pull request.
