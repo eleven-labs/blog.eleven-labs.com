@@ -179,7 +179,8 @@ N.B. : La documentation de l'API RDS se trouve ici : https://marketplace.upbound
 
 Une fois que cette ressource managée est déclarée, Crossplane va alors scruter le cloud provider pour vérifier que la ressource externe est dans l'état que nous avons demandé et tentera de corriger le *drift* sinon. Par défaut, Crossplane interroge les providers toutes les minutes et on pourra ajuster cet intervalle avec l'argument `--poll-interval n` du contrôleur. Notez qu'avec une valeur trop faible nos appels API risquent d'être bloqués par les cloud providers car trop fréquents. Crossplane reportera le statut des ressources managées en injectant un bloc `Conditions` directement dans l'objet. Aussi, toutes les informations de la ressource *externe* qui sont connues après création (e.g. ARN, id, etc.) seront renseignées a posteriori dans le champ `status.atProvider` de cet objet.
 
-Exemple de création d'un bucket S3.
+<details>
+<summary>Analyse de la création d'un bucket S3 (cliquer pour afficher/masquer)</summary>
 
 ```bash
 ❯ kubectl apply -f kube/components/bucket.yaml
@@ -279,6 +280,9 @@ versioning:
   - enabled: false
     mfaDelete: false
 ```
+
+</details>
+</br>
 
 Sur le cloud, certaines ressources externes ont des attributs immuables. Par exemple, AWS ne permet pas de modifier le nom d'un bucket S3. Terraform triche un peu avec ça en autorisant la modification des champs immuables mais en proposant alors de recréer ces ressources (i.e. supprimer le bucket et le recréer avec le nouveau nom.) Crossplane, ne dispose pas de ce type de mécanisme et on ne pourra pas modifier les champs immuables. Pour faire l'équivalent, on devra supprimer et recréer nous-même l'objet en question. Le nom de la ressource externe est alors le même que celui de la ressource managée par défaut. 
 
