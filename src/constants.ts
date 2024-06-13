@@ -4,6 +4,7 @@ import { DeviceType, ImageExtensionType, ImageFormatType } from '@/types';
 export const IS_SSR = import.meta.env?.SSR ?? false;
 export const IS_PRERENDER = import.meta.env?.MODE === 'prerender';
 export const HOST_URL = getEnv<string>('VITE_HOST_URL') || 'https://blog.eleven-labs.com';
+export const IS_ENV_PRODUCTION = HOST_URL === 'https://blog.eleven-labs.com';
 export const BASE_URL = import.meta.env?.BASE_URL || '/';
 
 export const IS_DEBUG = getEnv<string>('VITE_IS_DEBUG') === 'true';
