@@ -1,0 +1,20 @@
+FROM node:18.16-alpine3.16
+
+# Install Python
+RUN apk add --no-cache python3
+
+# Update package and install necessary build tools
+RUN apk update && apk add --no-cache build-base python3 py3-pip
+
+# Upgrade setuptools
+RUN pip install -U setuptools
+
+# Install brotli and fonttools
+RUN pip install brotli fonttools
+
+# Install glyphhanger
+RUN npm install -g glyphhanger tsx
+
+WORKDIR /var/www/app
+
+USER node:node

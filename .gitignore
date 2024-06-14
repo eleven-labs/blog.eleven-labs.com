@@ -24,7 +24,6 @@ reports
 coverage
 storybook-static
 public/data
-public/fonts
 public/imgs
 public/feed.xml
 .env

@@ -4,6 +4,8 @@ import * as React from 'react';
 import { GTM_ID } from '@/constants';
 import { generateUrl } from '@/helpers/assetHelper';
 
+import { fontFaces } from './fontFaces';
+
 export interface HtmlTemplateProps {
   lang: string;
   i18nStore: ResourceStore;
@@ -54,12 +56,7 @@ export const HtmlTemplate: React.FC<HtmlTemplateProps> = ({
       ))}
       <link rel="shortcut icon" type="image/x-icon" href={generateUrl('/favicon.ico')} />
       <link rel="manifest" href={generateUrl('/web-app-manifest.json')} />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Montserrat:wght@100;400;500;700&display=swap"
-        rel="stylesheet"
-      />
+      <style dangerouslySetInnerHTML={{ __html: fontFaces }} />
       {links?.map((link, index) => (
         <link key={index} {...link} />
       ))}
