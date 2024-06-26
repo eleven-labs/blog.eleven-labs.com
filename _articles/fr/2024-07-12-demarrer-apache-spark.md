@@ -93,7 +93,14 @@ pip install pyspark
 
 PySpark est installé !
 
-## Lecture de la donnée source
+## Création de notre pipeline ETL avec Apache Spark
+
+Nous allons effectuer les 3 étapes de notre pipeline
+- extraire la données de la source
+- la transformer pour lui donner de la valeur
+- stocker le résultat 
+
+### Lecture de la donnée source
 
 Pour lire la donnée source avec pyspark, il faut tout d'abord créer une session Spark.
 
@@ -174,7 +181,7 @@ only showing top 20 rows
 
 La lecture s'est bien passé. Nous retrouvons toutes les colonnes attendue. Passons à la transformation.
 
-## Transformation de la données
+### Transformation de la données
 
 Avant de stocker notre donnée à un endroit, nous pouvons faire quelques transformation élémentaire. Dans une architecture orienté Datalake, la donnée est très peu transformé lorsqu'il est stocké dans le lac de donnée. Dans ce paradigme, ce sont les consommateurs qui vont transformer cette donnée pour donner de la valeur. Par exemple, effectuer une aggrégation pour ensuite la consommer sur un outil de Data Visualisation (aka DataViz).
 
@@ -182,9 +189,62 @@ D'après les premières observations,
 - la colonne "Boucle de comptage" semble être une concaténation de "Numéro de boucle" et "Libellé"
 - la colonne "Date formatée" semble être une date
 - la colonne "Jour de la semaine" est extrapolé depuis la colonne "Date formatée"
+- la colonne "Probabilité de présence d'anomalies" m'indique si la ligne est de qualité ou non
 
 Je vais conserver les colonnes qui m'interesse et typer les colonnes. Je prévois de les stocker au format parquet car ça va me permettre de conserver le typage des colonnes, et d'effectuer un partitionnement par jour.
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
 Un Dataframe est un objet immutable. Lors de l'ajout d'instruction, une nouvelle instance de Dataframe est renvoyé.
 </div>
+
+Voici la transformation
+
+```python
+df_clean = (
+    df.select(
+        col("Numéro de boucle").alias("loop_number"),
+        col("Libellé").alias("label"),
+        col("Total").cast(IntegerType()).alias("total"),
+        col("Date formatée").cast(DateType()).alias("date"),
+        col("Vacances").alias("holiday_name"),
+    )
+    .where(col("Probabilité de présence d'anomalies").isNull())
+)
+df_clean.show()
+```
+
+Et le résultat
+
+```shell
+(venv) [thierry@travail:~/eleven/data]
+% python main.py
++-----------+--------------------+-----+----------+--------------------+
+|loop_number|               label|total|      date|        holiday_name|
++-----------+--------------------+-----+----------+--------------------+
+|       0674|Pont Haudaudine v...|  657|2021-03-16|       Hors Vacances|
+|       0674|Pont Haudaudine v...|  689|2021-03-18|       Hors Vacances|
+|       0674|Pont Haudaudine v...|  589|2021-03-26|       Hors Vacances|
+|       0674|Pont Haudaudine v...|  591|2021-04-15|       Hors Vacances|
+|       0674|Pont Haudaudine v...|  481|2021-05-04|Vacances de print...|
+|       0674|Pont Haudaudine v...|  583|2021-05-10|       Hors Vacances|
++-----------+--------------------+-----+----------+--------------------+
+```
+
+### Stockage du résultat en Parquet
+
+Nous allons stocker le résultat au format parquet. Ce format offre l'avantage de 
+- stocker la données en colonne
+- conserver le typage des colonnes
+- partitionner les données pour optimiser les requêtes
+
+Pour cela, il faut faire appel au DataFrameWriter. Le support du format parquet est natif.
+
+```python
+df_clean.write.format("parquet").partitionBy("date").save("datalake/count-bike-nantes.parquet")
+```
+
+Ainsi, dans l'arboresence, nous avons nos données partitionné par date.
+
+## Conclusion
+
+Bravo, vous venez de créer votre premier pipeline Spark. Un nouveau monde s'ouvre à vous. A travers cet article, nous avons vu l'installation de Spark et PySpark. Avec la création du pipeline, nous avons lu la source de données, effectuées quelques transformation, et enfin stocké la données à un endroit. Ce stockage permettra à d'autre corps de métier de la data de l'exploiter.
