@@ -67,8 +67,8 @@ Une fois téléchargé, décomppresser dans un dossier, par exemple `~/Apps/spar
 
 Dans le fichier `.bashrc`, ajouter une variable d'environnement qui pointera vers le dossier du binaire Spark.
 
-```
-# cat ~/.bashrc
+```text
+# ~/.bashrc
 export SPARK_HOME=~/Apps/spark/spark-3.5.1-bin-hadoop3
 ```
 
