@@ -88,7 +88,7 @@ virtualenv venv
 Une fois l'environnement virtual activé, nous pouvons installer pyspark.
 
 ```shell
-pip install pyspark
+pip install pyspark==3.5.1
 ```
 
 PySpark est installé !
@@ -137,11 +137,7 @@ Vous pouvez dès à présent exécuter le fichier pour voir le résultat.
 ```shell
 (venv) [thierry@travail:~/eleven/data]
 % python main.py
-24/06/26 16:59:07 WARN Utils: Your hostname, travail resolves to a loopback address: 127.0.1.1; using 10.0.12.31 instead (on interface enp0s31f6)
-24/06/26 16:59:07 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
-Setting default log level to "WARN".
-To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-24/06/26 16:59:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+(...)
 root
  |-- Numéro de boucle: string (nullable = true)
  |-- Libellé: string (nullable = true)
