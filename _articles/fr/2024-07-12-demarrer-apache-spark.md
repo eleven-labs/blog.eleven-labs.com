@@ -248,3 +248,32 @@ Ainsi, dans l'arboresence, nous avons nos données partitionné par date.
 ## Conclusion
 
 Bravo, vous venez de créer votre premier pipeline Spark. Un nouveau monde s'ouvre à vous. A travers cet article, nous avons vu l'installation de Spark et PySpark. Avec la création du pipeline, nous avons lu la source de données, effectuées quelques transformation, et enfin stocké la données à un endroit. Ce stockage permettra à d'autre corps de métier de la data de l'exploiter.
+
+## Références
+
+Code complet 
+
+```python
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col
+from pyspark.sql.types import IntegerType, DateType
+
+spark = SparkSession.builder.appName("Bike calculation").getOrCreate()
+
+source_file = "source/244400404_comptages-velo-nantes-metropole.csv"
+df = spark.read.format("csv").option("delimiter", ";").option("header", True).load(source_file)
+
+df_clean = (
+    df.select(
+        col("Numéro de boucle").alias("loop_number"),
+        col("Libellé").alias("label"),
+        col("Total").cast(IntegerType()).alias("total"),
+        col("Date formatée").cast(DateType()).alias("date"),
+        col("Vacances").alias("holiday_name"),
+    )
+    .where(col("Probabilité de présence d'anomalies").isNull())
+)
+
+df_clean.write.format("parquet").partitionBy("date").save("datalake/count-bike-nantes.parquet")
+```
+
