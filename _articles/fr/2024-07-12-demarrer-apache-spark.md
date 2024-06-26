@@ -13,16 +13,16 @@ authors:
 keywords: []
 ---
 
-Lorsque l'on travaille dans l'univers de la data, nous effectuons principalements sur ces trois étapes : 
+Lorsque l'on travaille dans l'univers de la data, nous effectuons principalements sur ces trois étapes :
 - extraire la données de la source
 - la transformer pour lui donner de la valeur
 - stocker le résultat
 
-Ces trois étapes décrivent un pipeline ETL : Extract, Transform, Load (Extraire, Transformer, Charger). 
+Ces trois étapes décrivent un pipeline ETL : Extract, Transform, Load (Extraire, Transformer, Charger).
 
 Il existe une multitude de façon d'effectuer ce travail. Ici, nous utiliserons Apache Spark.
 
-Apache Spark est un framework qui permet de manipuler et transformer la données. Il s'appuie sur le framework Hadoop pour distribuer les calculs sur les différents noeuds du cluster. 
+Apache Spark est un framework qui permet de manipuler et transformer la données. Il s'appuie sur le framework Hadoop pour distribuer les calculs sur les différents noeuds du cluster.
 
 [https://spark.apache.org/](https://spark.apache.org/)
 
@@ -43,21 +43,29 @@ Voici un échantillon du fichier
 0674;Pont Haudaudine vers Sud;657;;2;0674 - Pont Haudaudine vers Sud;2021-03-16;Hors Vacances
 0674;Pont Haudaudine vers Sud;689;;4;0674 - Pont Haudaudine vers Sud;2021-03-18;Hors Vacances
 0674;Pont Haudaudine vers Sud;589;;5;0674 - Pont Haudaudine vers Sud;2021-03-26;Hors Vacances
-``` 
+```
 
-## Installation d'Apache Spark
+## Installation d'Apache Spark
 
 Il existe plusieurs façon d'install Apache Spark : soit en prenant le binaire, soit avec Docker avec [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/).
 
 Nous allons effectuer l'installation avec le binaire Spark. Ce processus est plus long et complexe, mais il est intéressant car il permet de mieux comprendre les différents éléments.
 
-### Avec le binaire Apache Spark
+Il sera nécessaire d'avoir au moins Python 3.8 et Java 17.
 
-Aller sur la page de Téléchargement [https://spark.apache.org/downloads.html](https://spark.apache.org/downloads.html) et télécharger le package en tgz. Prenez la dernière version disponible. 
+Pour installer Java Runtime sous Ubuntu
+
+```shell
+sudo apt install openjdk-17-jre-headless
+```
+
+### Installer le binaire Apache Spark
+
+Aller sur la page de Téléchargement [https://spark.apache.org/downloads.html](https://spark.apache.org/downloads.html) et télécharger le package en tgz. Prenez la dernière version disponible.
 
 Une fois téléchargé, décomppresser dans un dossier, par exemple `~/Apps/spark`.
 
-Dans le fichier `.bashrc`, ajouter une variable d'environnement qui pointera vers le dossier du binaire Spark. 
+Dans le fichier `.bashrc`, ajouter une variable d'environnement qui pointera vers le dossier du binaire Spark.
 
 ```
 # cat ~/.bashrc
@@ -68,7 +76,7 @@ Vous êtes prêt. Il restera à installer le package Python qui permet de manipu
 
 ### Installation de PySpark
 
-PySpark est un bibliothèque en Python qui fait la correspondance vers les appel Java Spark.
+PySpark est une bibliothèque en Python qui fait la correspondance vers les appels Java Spark.
 
 Dans notre dossier qui contient le projet, nous avons au préalable créé un environnement virtuel.
 
@@ -83,7 +91,7 @@ Une fois l'environnement virtual activé, nous pouvons installer pyspark.
 pip install pyspark
 ```
 
-PySpark est installé ! 
+PySpark est installé !
 
 ## Lecture de la donnée source
 
@@ -97,14 +105,18 @@ from pyspark.sql import SparkSession, DataFrame
 spark = SparkSession.builder.appName("Bike calculation").getOrCreate()
 ```
 
-Ensuite, nous instruire le chargement du fichier CSV. 
+Ensuite, nous instruire le chargement du fichier CSV.
 
-Le fichier contient une en-tête et le caratère de séparation est un point-virgule. Il sera nécessaire de le spécifier lors du chargement.
+Le fichier contient un en-tête et le caractère de séparation est un point-virgule. Il sera nécessaire de le spécifier lors du chargement.
 
 ```python
 source_file = "source/244400404_comptages-velo-nantes-metropole.csv"
 df = spark.read.format("csv").option("delimiter", ";").option("header", True).load(source_file)
 ```
+
+<div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
+La nom de la variable `df` signifie Dataframe. Avec Spark, une fois la donnée chargé, nous manipulons des dataframes.
+</div>
 
 On peut ajouter les instructions `.show()` et `.printSchema()` pour afficher les premiers éléments.
 
@@ -117,7 +129,7 @@ Vous pouvez dès à présent exécuter le fichier pour voir le résultat.
 
 ```shell
 (venv) [thierry@travail:~/eleven/data]
-% python main.py 
+% python main.py
 24/06/26 16:59:07 WARN Utils: Your hostname, travail resolves to a loopback address: 127.0.1.1; using 10.0.12.31 instead (on interface enp0s31f6)
 24/06/26 16:59:07 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
 Setting default log level to "WARN".
@@ -164,4 +176,15 @@ La lecture s'est bien passé. Nous retrouvons toutes les colonnes attendue. Pass
 
 ## Transformation de la données
 
+Avant de stocker notre donnée à un endroit, nous pouvons faire quelques transformation élémentaire. Dans une architecture orienté Datalake, la donnée est très peu transformé lorsqu'il est stocké dans le lac de donnée. Dans ce paradigme, ce sont les consommateurs qui vont transformer cette donnée pour donner de la valeur. Par exemple, effectuer une aggrégation pour ensuite la consommer sur un outil de Data Visualisation (aka DataViz).
 
+D'après les premières observations,
+- la colonne "Boucle de comptage" semble être une concaténation de "Numéro de boucle" et "Libellé"
+- la colonne "Date formatée" semble être une date
+- la colonne "Jour de la semaine" est extrapolé depuis la colonne "Date formatée"
+
+Je vais conserver les colonnes qui m'interesse et typer les colonnes. Je prévois de les stocker au format parquet car ça va me permettre de conserver le typage des colonnes, et d'effectuer un partitionnement par jour.
+
+<div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
+Un Dataframe est un objet immutable. Lors de l'ajout d'instruction, une nouvelle instance de Dataframe est renvoyé.
+</div>
