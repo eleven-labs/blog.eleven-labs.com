@@ -107,3 +107,48 @@ def spark_fixture():
 
 Pour nos tests, nous allons vérifier le schéma du dataframe en sortie de la fonction `transformation()` et vérifier les données.
 
+```python
+import pytest
+from pyspark.sql import SparkSession
+from pyspark.sql.types import (
+    StructType,
+    StructField,
+    StringType,
+    IntegerType, DateType,
+)
+from pyspark.testing import assertSchemaEqual
+
+from main import transformation
+
+
+@pytest.fixture
+def spark_fixture():
+    spark = SparkSession.builder.appName("Testing Bike calculation").getOrCreate()
+    yield spark
+
+
+def test_schema(spark_fixture):
+    df_source = spark_fixture.createDataFrame([
+        ("0674", "Pont Haudaudine vers Sud", "657", "", "2", "0674 - Pont Haudaudine vers Sud", "2021-03-16",
+         "Hors Vacances")
+    ], StructType([
+        StructField("Numéro de boucle", StringType()),
+        StructField("Libellé", StringType()),
+        StructField("Total", StringType()),
+        StructField("Probabilité de présence d'anomalies", StringType()),
+        StructField("Jour de la semaine", StringType()),
+        StructField("Boucle de comptage", StringType()),
+        StructField("Date formatée", StringType()),
+        StructField("Vacances", StringType()),
+    ]))
+    
+    df_result = transformation(spark_fixture, df_source)
+    
+    assertSchemaEqual(StructType([
+        StructField("loop_number", StringType()),
+        StructField("label", StringType()),
+        StructField("total", IntegerType()),
+        StructField("date", DateType()),
+        StructField("holiday_name", StringType()),
+    ]), df_result.schema)
+```
