@@ -61,7 +61,7 @@ sudo apt install openjdk-17-jre-headless
 
 ### Installer le binaire Apache Spark
 
-Aller sur la page de Téléchargement [https://spark.apache.org/downloads.html](https://spark.apache.org/downloads.html) et télécharger le package en tgz. Prenez la dernière version disponible.
+Aller sur la page de Téléchargement [https://spark.apache.org/downloads.html](https://spark.apache.org/downloads.html) et télécharger le package en tgz. Prenez la dernière version disponible (il s'agit de la 3.5.1 au moment de l'écriture de l'article).
 
 Une fois téléchargé, décomppresser dans un dossier, par exemple `~/Apps/spark`.
 
