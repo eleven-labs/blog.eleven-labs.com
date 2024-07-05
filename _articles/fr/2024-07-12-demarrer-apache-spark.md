@@ -3,40 +3,44 @@ contentType: article
 lang: fr
 date: '2024-07-12'
 slug: demarrer-apache-spark
-title: Démarrer avec Apache Spark
+title: Démarrer avec Apache Spark étape par étape
 excerpt: >-
-  Le domaine de la data est présent au quotidient. La quantité de donnée est si grande que nous la nommons Big Data.
-  Dans cet article, nous verrons comment traiter ce volume de données à l'aide du framework Apache Spark.
-categories: []
+  Le domaine de la data est présent dans le quotidien de chacun : la majorité de nos actions peut être traduite en données. Le volume croissant de ces données exploitables a un nom : "Big Data".
+  Dans cet article, nous verrons comment exploiter ce "Big data" à l'aide du framework Apache Spark.
+categories: [architecture]
 authors:
   - tthuon
-keywords: []
+keywords: [
+- apache spark
+- data
+- big data
+  ]
 ---
 
-Lorsque l'on travaille dans l'univers de la data, nous effectuons principalements sur ces trois étapes :
-- extraire la données de la source
+Lorsque l'on travaille dans l'univers de la data, nous effectuons principalement trois grands types de tâches :
+- extraire la donnée de la source
 - la transformer pour lui donner de la valeur
 - stocker le résultat
 
-Ces trois étapes décrivent un pipeline ETL : Extract, Transform, Load (Extraire, Transformer, Charger).
+Ces trois étapes constituent ce que l'on appelle un "pipeline ETL", pour : Extract, Transform, Load (Extraire, Transformer, Charger).
 
-Il existe une multitude de façon d'effectuer ce travail. Ici, nous utiliserons Apache Spark.
+Il existe une multitude de façons d'effectuer ces tâches, mais dans cet article, nous allons nous concentrer sur comment le faire avec Apache Spark.
 
-Apache Spark est un framework qui permet de manipuler et transformer la données. Il s'appuie sur le framework Hadoop pour distribuer les calculs sur les différents noeuds du cluster.
+Apache Spark est un framework qui permet de manipuler et transformer la données, et qui s'appuie sur le framework Hadoop pour distribuer les calculs sur les différents noeuds du cluster.
 
 [https://spark.apache.org/](https://spark.apache.org/)
 
-Par simplicité, nous nommerons Spark pour désigner Apache Spark.
+Par simplicité, dans la suite de cet article nous utiliserons le nom "Spark" pour désigner Apache Spark.
 
-## Mise en situation
+## Étape 1 : Récupération d'une source de données
 
-Rentrons dans le vif du sujet avec un cas concret. Je veux importer les données sur le nombre de passage de vélo sur un point données afin d'effectuer une étude sur l'usage du vélo en ville.
+Rentrons dans le vif du sujet avec un cas concret. Je veux importer les données sur le nombre de passages de vélo à un point géographique donné afin d'effectuer une étude sur l'usage du vélo en ville.
 
-Prenons par exemple la ville de Nantes qui met à disposition un jeu de données https://data.nantesmetropole.fr/explore/dataset/244400404_comptages-velo-nantes-metropole/information
+Prenons par exemple la ville de Nantes qui met à disposition un jeu de données https://data.nantesmetropole.fr/explore/dataset/244400404_comptages-velo-nantes-metropole/information.
 
-Nous prenons ce fichier et le déposons dans le dossier `source/244400404_comptages-velo-nantes-metropole.csv`.
+Nous prenons ce fichier et nous le déposons ensuite dans le dossier `source/244400404_comptages-velo-nantes-metropole.csv`.
 
-Voici un échantillon du fichier
+Voici un échantillon du fichier en question :
 
 ```csv
 ﻿Numéro de boucle;Libellé;Total;Probabilité de présence d'anomalies;Jour de la semaine;Boucle de comptage;Date formatée;Vacances
@@ -45,15 +49,15 @@ Voici un échantillon du fichier
 0674;Pont Haudaudine vers Sud;589;;5;0674 - Pont Haudaudine vers Sud;2021-03-26;Hors Vacances
 ```
 
-## Installation d'Apache Spark
+## Étape 2 : Installation d'Apache Spark
 
-Il existe plusieurs façon d'install Apache Spark : soit en prenant le binaire, soit avec Docker avec [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/).
+Il existe plusieurs façons d'installer Apache Spark : soit en prenant le binaire, soit avec Docker avec [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/).
 
-Nous allons effectuer l'installation avec le binaire Spark. Ce processus est plus long et complexe, mais il est intéressant car il permet de mieux comprendre les différents éléments.
+Nous allons effectuer l'installation avec le binaire Spark. Biern que ce processus soit plus long et complexe, il est plus intéressant car il nous permet de mieux comprendre les différents éléments qui le constituent.
 
-Il sera nécessaire d'avoir au moins Python 3.8 et Java 17.
+Notez que pour l'installation, il sera nécessaire d'avoir au moins Python 3.8 et Java 17.
 
-Pour installer Java Runtime sous Ubuntu
+Voici la commande pour installer Java Runtime sous Ubuntu :
 
 ```shell
 sudo apt install openjdk-17-jre-headless
@@ -61,18 +65,18 @@ sudo apt install openjdk-17-jre-headless
 
 ### Installer le binaire Apache Spark
 
-Aller sur la page de Téléchargement [https://spark.apache.org/downloads.html](https://spark.apache.org/downloads.html) et télécharger le package en tgz. Prenez la dernière version disponible (il s'agit de la 3.5.1 au moment de l'écriture de l'article).
+Allez sur la page de téléchargement [https://spark.apache.org/downloads.html](https://spark.apache.org/downloads.html) et téléchargez le package en tgz. Prenez la dernière version disponible (il s'agit de la 3.5.1 au moment de l'écriture de l'article).
 
-Une fois téléchargé, décomppresser dans un dossier, par exemple `~/Apps/spark`.
+Une fois téléchargé, décomppressez le tout dans un dossier, par exemple `~/Apps/spark`.
 
-Dans le fichier `.bashrc`, ajouter une variable d'environnement qui pointera vers le dossier du binaire Spark.
+Dans le fichier `.bashrc`, ajoutez une variable d'environnement qui pointera vers le dossier du binaire Spark.
 
 ```text
 # ~/.bashrc
 export SPARK_HOME=~/Apps/spark/spark-3.5.1-bin-hadoop3
 ```
 
-Vous êtes prêt. Il restera à installer le package Python qui permet de manipuler Spark
+Vous êtes prêt ! Il ne restera qu'à installer le package Python qui permet de manipuler Spark.
 
 ### Installation de PySpark
 
@@ -85,15 +89,15 @@ virtualenv venv
 . venv/bin/activate
 ```
 
-Une fois l'environnement virtual activé, nous pouvons installer pyspark.
+Une fois l'environnement virtuel activé, nous pouvons installer pyspark.
 
 ```shell
 pip install pyspark==3.5.1
 ```
 
-PySpark est installé !
+Ça y est, PySpark est installé !
 
-## Création de notre pipeline ETL avec Apache Spark
+## Étape 3 : Création de notre pipeline ETL avec Apache Spark
 
 Nous allons effectuer les 3 étapes de notre pipeline
 - extraire la données de la source
@@ -112,7 +116,7 @@ from pyspark.sql import SparkSession, DataFrame
 spark = SparkSession.builder.appName("Bike calculation").getOrCreate()
 ```
 
-Ensuite, nous instruire le chargement du fichier CSV.
+Ensuite, nous allons instruire le chargement du fichier CSV.
 
 Le fichier contient un en-tête et le caractère de séparation est un point-virgule. Il sera nécessaire de le spécifier lors du chargement.
 
@@ -175,22 +179,23 @@ root
 only showing top 20 rows
 ```
 
-La lecture s'est bien passé. Nous retrouvons toutes les colonnes attendue. Passons à la transformation.
+La lecture s'est bien passée. Nous retrouvons toutes les colonnes attendues ! 
+Passons maintenant à la transformation.
 
-### Transformation de la données
+### Transformation de la donnée
 
-Avant de stocker notre donnée à un endroit, nous pouvons faire quelques transformation élémentaire. Dans une architecture orienté Datalake, la donnée est très peu transformé lorsqu'il est stocké dans le lac de donnée. Dans ce paradigme, ce sont les consommateurs qui vont transformer cette donnée pour donner de la valeur. Par exemple, effectuer une aggrégation pour ensuite la consommer sur un outil de Data Visualisation (aka DataViz).
+Avant de stocker notre donnée à un endroit, nous pouvons faire quelques transformations élémentaires. Dans un paradigme d'architecture orienté Datalake, la donnée est très peu transformée, car ce sont les consommateurs qui vont transformer cette donnée pour lui donner de la valeur. Par exemple : effectuer une aggrégation, puis ensuite la consommer sur un outil de Data Visualisation (aka DataViz).
 
-D'après les premières observations,
+Dnas notre exemple, d'après les premières observations :
 - la colonne "Boucle de comptage" semble être une concaténation de "Numéro de boucle" et "Libellé"
 - la colonne "Date formatée" semble être une date
-- la colonne "Jour de la semaine" est extrapolé depuis la colonne "Date formatée"
-- la colonne "Probabilité de présence d'anomalies" m'indique si la ligne est de qualité ou non
+- la colonne "Jour de la semaine" est extrapolée depuis la colonne "Date formatée"
+- la colonne "Probabilité de présence d'anomalies" indique si la ligne est de qualité ou non
 
-Je vais conserver les colonnes qui m'interesse et typer les colonnes. Je prévois de les stocker au format parquet car ça va me permettre de conserver le typage des colonnes, et d'effectuer un partitionnement par jour.
+Nous allons conserver les colonnes qui nous intéressent et typer les colonnes. Nous allons prévoir de les stocker au format parquet car cela permet de conserver le typage des colonnes, et d'effectuer un partitionnement par jour.
 
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
-Un Dataframe est un objet immutable. Lors de l'ajout d'instruction, une nouvelle instance de Dataframe est renvoyé.
+Un Dataframe est un objet immutable. Lors de l'ajout d'instruction, une nouvelle instance de Dataframe est renvoyée.
 </div>
 
 Voici la transformation
@@ -209,7 +214,7 @@ df_clean = (
 df_clean.show()
 ```
 
-Et le résultat
+Et le résultat :
 
 ```shell
 (venv) [thierry@travail:~/eleven/data]
@@ -228,8 +233,8 @@ Et le résultat
 
 ### Stockage du résultat en Parquet
 
-Nous allons stocker le résultat au format parquet. Ce format offre l'avantage de 
-- stocker la données en colonne
+Nous allons stocker le résultat au format parquet. Ce format offre l'avantage de : 
+- stocker la données en colonnes
 - conserver le typage des colonnes
 - partitionner les données pour optimiser les requêtes
 
@@ -239,11 +244,11 @@ Pour cela, il faut faire appel au DataFrameWriter. Le support du format parquet 
 df_clean.write.format("parquet").partitionBy("date").save("datalake/count-bike-nantes.parquet")
 ```
 
-Ainsi, dans l'arboresence, nous avons nos données partitionné par date.
+Ainsi, dans l'arboresence, nous avons nos données partitionnées par date.
 
 ## Conclusion
 
-Bravo, vous venez de créer votre premier pipeline Spark. Un nouveau monde s'ouvre à vous. A travers cet article, nous avons vu l'installation de Spark et PySpark. Avec la création du pipeline, nous avons lu la source de données, effectuées quelques transformation, et enfin stocké la données à un endroit. Ce stockage permettra à d'autre corps de métier de la data de l'exploiter.
+Bravo, vous venez de créer votre premier pipeline Spark. Un nouveau monde s'ouvre à vous. À travers cet article, nous avons vu l'installation de Spark et PySpark. Avec la création du pipeline, nous avons lu la source de données, effectué quelques transformations, et enfin stocké la donnée à un endroit défini. Ce stockage permettra à d'autre corps de métier de la data de l'exploiter.
 
 ## Références
 
