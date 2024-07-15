@@ -10,6 +10,8 @@ excerpt: >-
 categories: [architecture]
 authors:
   - tthuon
+cover:
+  path: /imgs/articles/2024-07-08-demarrer-apache-spark/cover.jpg
 keywords: 
 - apache spark
 - data
