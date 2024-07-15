@@ -7,7 +7,7 @@ title: Tester son script Apache Spark avec pytest
 excerpt: >-
   Dans le domaine de la data, la qualité de la données est reine. Il est nécessaire de s'en assurer. Pour poser de bonne fondation,
   il est intéressant de tester unitairement l'algorithme du traitement Spark. Découvrons comment les réalisers.
-categories: []
+categories: [architecture]
 authors:
   - tthuon
 keywords: 
