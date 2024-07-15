@@ -101,6 +101,7 @@ Initialisons une "fixture" avec la session Spark. Elle sera créé, partagé et 
 
 ```python
 import pytest
+from pyspark.sql import SparkSession
 
 @pytest.fixture
 def spark_fixture() -> SparkSession:
@@ -111,6 +112,20 @@ def spark_fixture() -> SparkSession:
 Nous allons également créer un jeu de données pour notre test. Dans ce Dataframe de test, je vais mettre une ligne avec la colonne "Probabilité de présence d'anomalies" avec une string vide, et une ligne avec une valeur. Cela va nous permettre de tester la condition "where()".
 
 ```python
+import datetime
+
+import pytest
+from pyspark.sql import SparkSession, DataFrame
+from pyspark.sql.types import (
+    StructType,
+    StructField,
+    StringType,
+    DateType,
+    IntegerType,
+)
+from pyspark.testing import assertSchemaEqual, assertDataFrameEqual
+
+from main import transformation
 
 @pytest.fixture
 def source_fixture(spark_fixture) -> DataFrame:
