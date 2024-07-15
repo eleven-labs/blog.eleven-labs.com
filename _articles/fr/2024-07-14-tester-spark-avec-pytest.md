@@ -10,7 +10,10 @@ excerpt: >-
 categories: []
 authors:
   - tthuon
-keywords: []
+keywords: 
+- apache spark
+- pytest
+- data
 ---
 
 Dans le précédent article sur [démarrer avec Apache Spark](/fr/demarrer-apache-spark), nous avons créé notre premier script de traitement de la données avec Apache Spark.
