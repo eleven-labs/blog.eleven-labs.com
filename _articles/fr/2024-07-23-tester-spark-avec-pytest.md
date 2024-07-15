@@ -19,7 +19,7 @@ keywords:
 - data
 ---
 
-Dans le précédent article sur [démarrer avec Apache Spark](/fr/demarrer-apache-spark), nous avons créé notre premier script de traitement de la données avec Apache Spark.
+Dans le précédent article sur [démarrer avec Apache Spark](/fr/demarrer-apache-spark), nous avons créé notre premier script de traitement de la donnée avec Apache Spark.
 
 Pour s'assurer de la bonne implémentation, nous allons effectuer des tests unitaires.
 
@@ -28,7 +28,7 @@ Pour s'assurer de la bonne implémentation, nous allons effectuer des tests unit
 Dans notre dossier de projet, on va installer [pytest](https://docs.pytest.org/).
 
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-N'oubliez pas d'activer votre environnement virtuel Python avec ". venv/bin/activate"
+N'oubliez pas d'activer votre environnement virtuel Python avec `. venv/bin/activate`
 </div>
 
 ```shell
@@ -95,12 +95,12 @@ transformation(spark, df).write.format("parquet").partitionBy("date").save("data
 
 Notre code est prêt. Préparons les tests.
 
-## Ecriture du test avec pytest
+## Écriture du test avec pytest
 
 Notre code est dépendant de Spark. Il est possible de bouchonner cette dépendance, mais c'est une opération assez complexe. 
-Le plus simple, selon la [documentation Spark](https://spark.apache.org/docs/latest/api/python/getting_started/testing_pyspark.html#Option-3:-Using-Pytest), est de créer une session Spark dédié.
+Le plus simple, selon la [documentation Spark](https://spark.apache.org/docs/latest/api/python/getting_started/testing_pyspark.html#Option-3:-Using-Pytest), est de créer une session Spark dédiée.
 
-Initialisons une "fixture" avec la session Spark. Elle sera créé, partagé et détruite automatiquement par pytest.
+Initialisons une_fixture_ avec la session Spark. Elle sera créée, partagée et détruite automatiquement par pytest.
 
 ```python
 import pytest
@@ -112,7 +112,7 @@ def spark_fixture() -> SparkSession:
     yield spark
 ```
 
-Nous allons également créer un jeu de données pour notre test. Dans ce Dataframe de test, je vais mettre une ligne avec la colonne "Probabilité de présence d'anomalies" avec une string vide, et une ligne avec une valeur. Cela va nous permettre de tester la condition "where()".
+Nous allons également créer un jeu de données pour notre test. Dans ce Dataframe de test, je vais mettre une ligne avec la colonne "Probabilité de présence d'anomalies" avec une string vide, et une ligne avec une valeur. Cela va nous permettre de tester la condition `where()`.
 
 ```python
 import datetime
@@ -253,7 +253,7 @@ def test_dataframe_content(spark_fixture: SparkSession, source_fixture: DataFram
 
 Je devrais obtenir qu'une seul ligne, car la seconde ligne dans `source_fixture` la colonne "Probabilité de présence d'anomalies" contient "Faible". Or, je ne veux pas utiliser de données avec une présence d'anomalie.
 
-Lancons le test.
+Lançons le test.
 
 
 ```shell
@@ -285,7 +285,7 @@ FAILED test.py::test_dataframe_content - pyspark.errors.exceptions.base.PySparkA
 ======================= 1 failed, 1 passed, 2 warnings in 7.80s =======================
 ```
 
-Tiens, c'est bizarre 🤔, le test est en échec. Pourtant, le résultat attendu est correcte.
+Tiens, c'est bizarre 🤔, le test est en échec. Pourtant, le résultat attendu est correct.
 
 Revenons sur le code PySpark, et en particulier sur la condition `where()`.
 
@@ -297,9 +297,9 @@ def transformation(df: DataFrame) -> DataFrame:
     )
 ```
 
-En effet, il y a une coquille. D'après notre jeu de données, la colonne "Probabilité de présence d'anomalies" est de type string. Or, la fonction `isNull()` est un test sur la nullité d'une colonne au sens strict : c'est équivalent en SQL à "IS NULL". Donc, une colonne de type string vide n'est pas null au sens strict.
+En effet, il y a une coquille. D'après notre jeu de données, la colonne "Probabilité de présence d'anomalies" est de type string. Or, la fonction `isNull()` est un test sur la nullité d'une colonne au sens strict : c'est équivalent en SQL à `IS NULL`. Donc, une colonne de type string vide n'est pas _null_ au sens strict.
 
-Il faut corriger la conditon par une égalité avec une string vide.
+Il faut corriger la condition par une égalité avec une string vide.
 
 ```python
 from pyspark.sql.functions import col, lit
@@ -326,11 +326,11 @@ test.py::test_dataframe_content PASSED                                          
 ============================ 2 passed, 2 warnings in 8.33s ============================
 ```
 
-Félicitation, votre code est maintenant testé. Vous pouvez aller en production sereinement 😌.
+Félicitations, votre code est maintenant testé. Vous pouvez aller en production sereinement 😌.
 
 ## Conclusion
 
-A travers cet article, nous avons vu la mise en place de tests unitaire pour notre traitement de données PySpark. Cela nous à permis de nous rendre compte qu'il y avait une erreur dans le code. Ainsi, nous avons pu le corriger. Nous savons maintenant que le code produit répond à nos attentes, ainsi qu'aux utilisateurs de la donnée.
+A travers cet article, nous avons vu la mise en place de tests unitaire pour notre traitement de données PySpark. Cela nous a permis de nous rendre compte qu'il y avait une erreur dans le code. Ainsi, nous avons pu le corriger. Nous savons maintenant que le code produit répond à nos attentes, ainsi qu'aux utilisateurs de la donnée.
 
 ## Références
 
