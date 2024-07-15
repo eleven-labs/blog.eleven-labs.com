@@ -10,6 +10,9 @@ excerpt: >-
 categories: [architecture]
 authors:
   - tthuon
+cover:
+  alt: Un enfant astronaute qui fait une tour en lego
+  path: /imgs/articles/2024-07-23-tester-spark-avec-pytest/cover.jpg
 keywords: 
 - apache spark
 - pytest
