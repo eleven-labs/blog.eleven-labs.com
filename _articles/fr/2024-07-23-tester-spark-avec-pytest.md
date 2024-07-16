@@ -33,7 +33,7 @@ N'oubliez pas d'activer votre environnement virtuel Python avec `. venv/bin/acti
 
 ```shell
 (venv) [thierry@travail:~/eleven/data]
-% pip install pytest
+% pip install pytest==8.2.2
 ```
 
 Avant d'écrire notre premier test, nous allons réorganiser notre code pour le rendre testable. En l'état, il est difficile de le tester.
@@ -473,6 +473,6 @@ def test_dataframe_content(spark_fixture: SparkSession, source_fixture: DataFram
 
 ```text
 # requirements.txt
-pyspark==3.5.0
-pytest
+pyspark==3.5.1
+pytest==8.2.2
 ```
