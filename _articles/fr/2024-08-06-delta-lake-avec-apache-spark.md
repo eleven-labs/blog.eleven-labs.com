@@ -112,7 +112,15 @@ delta_table_path = "datalake/count-bike-nantes"
 if DeltaTable.isDeltaTable(spark, delta_table_path):
   dt = DeltaTable.forPath(spark, "datalake/count-bike-nantes")
   transformation(df)
-  dt.alias("gold_table").merge(transformation(df).alias("fresh_data"), condition="fresh_data.loop_number = gold_table.loop_number").execute()
+  (
+    dt
+    .alias("gold_table")
+    .merge(transformation(df).alias("fresh_data"), condition="fresh_data.loop_number = gold_table.loop_number")
+    .whenMatchedUpdateAll()
+    .whenNotMatchedInsertAll()
+    .whenNotMatchedBySourceDelete()
+    .execute()
+  )
 else:
   transformation(df).write.format("delta").partitionBy("date").save(delta_table_path)
 ```
