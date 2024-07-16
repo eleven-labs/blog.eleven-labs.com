@@ -100,7 +100,7 @@ Notre code est prêt. Préparons les tests.
 Notre code est dépendant de Spark. Il est possible de bouchonner cette dépendance, mais c'est une opération assez complexe. 
 Le plus simple, selon la [documentation Spark](https://spark.apache.org/docs/latest/api/python/getting_started/testing_pyspark.html#Option-3:-Using-Pytest), est de créer une session Spark dédiée.
 
-Initialisons une_fixture_ avec la session Spark. Elle sera créée, partagée et détruite automatiquement par pytest.
+Initialisons une _fixture_ avec la session Spark. Elle sera créée, partagée et détruite automatiquement par pytest.
 
 ```python
 import pytest
