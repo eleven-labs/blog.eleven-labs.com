@@ -17,6 +17,7 @@ keywords:
 - apache spark
 - data
 - big data
+  
 ---
 
 Lorsque l'on travaille dans l'univers de la data, nous effectuons principalement trois grands types de tâches :
