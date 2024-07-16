@@ -12,7 +12,7 @@ authors:
   - tthuon
 cover:
   alt: Un long couloir fait à partir de données
-  path: /imgs/articles/2024-07-08-demarrer-apache-spark/cover.webp
+  path: /imgs/articles/2024-07-08-demarrer-apache-spark/cover.jpg
 keywords: 
 - apache spark
 - data
