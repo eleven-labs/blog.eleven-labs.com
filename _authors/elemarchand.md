@@ -1,7 +1,7 @@
 ---
 
 contentType: author
-username: eLemarchand
+username: elemarchand
 name: Elodie Lemarchand
 linkedin: elodie-lemarchand-scrum-coach
 
