@@ -10,7 +10,7 @@ categories: [architecture]
 authors:
   - tthuon
 cover:
-  alt: Un enfant astronaute qui fait une tour en lego
+  alt: Comment tester son script Apache Spark avec Pytest ?
   path: /imgs/articles/2024-07-23-tester-spark-avec-pytest/cover.jpg
 keywords: 
 - apache spark
