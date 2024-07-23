@@ -5,8 +5,7 @@ date: '2024-07-23'
 slug: tester-spark-pytest
 title: Tester son script Apache Spark avec pytest
 excerpt: >-
-  Dans le domaine de la data, la qualité de la données est reine. Il est nécessaire de s'en assurer. Pour poser de bonne fondation,
-  il est intéressant de tester unitairement l'algorithme du traitement Spark. Découvrons comment les réalisers.
+  Dans le domaine de la data, la qualité de la donnée est primordiale. Pour s'en assurer, plusieurs moyens existent, et nous allons nous attarder dans cet article sur l'un d'entre eux : tester unitairement avec Pytest.
 categories: [architecture]
 authors:
   - tthuon
@@ -20,8 +19,7 @@ keywords:
 ---
 
 Dans le précédent article sur [démarrer avec Apache Spark](/fr/demarrer-apache-spark), nous avons créé notre premier script de traitement de la donnée avec Apache Spark.
-
-Pour s'assurer de la bonne implémentation, nous allons effectuer des tests unitaires.
+Pour s'assurer de leur bonne implémentation, nous allons effectuer des tests unitaires.
 
 ## Installation de pytest
 
@@ -40,7 +38,7 @@ Avant d'écrire notre premier test, nous allons réorganiser notre code pour le 
 
 ## Réorganisation du code
 
-Pour rappel, voici le code initial.
+Pour rappel, voici le code initial :
 
 ```python
 from pyspark.sql import SparkSession
@@ -93,14 +91,14 @@ def transformation(spark: SparkSession, df: DataFrame) -> DataFrame:
 transformation(spark, df).write.format("parquet").partitionBy("date").save("datalake/count-bike-nantes.parquet")
 ```
 
-Notre code est prêt. Préparons les tests.
+Notre code est prêt. Préparons les tests !
 
 ## Écriture du test avec pytest
 
 Notre code est dépendant de Spark. Il est possible de bouchonner cette dépendance, mais c'est une opération assez complexe. 
 Le plus simple, selon la [documentation Spark](https://spark.apache.org/docs/latest/api/python/getting_started/testing_pyspark.html#Option-3:-Using-Pytest), est de créer une session Spark dédiée.
 
-Initialisons une _fixture_ avec la session Spark. Elle sera créée, partagée et détruite automatiquement par pytest.
+Initialisons une _fixture_ avec la session Spark. Elle sera créée, partagée et détruite automatiquement par Pytest.
 
 ```python
 import pytest
@@ -251,8 +249,7 @@ def test_dataframe_content(spark_fixture: SparkSession, source_fixture: DataFram
     assertDataFrameEqual(df_result, df_expected)
 ```
 
-Je devrais obtenir qu'une seul ligne, car la seconde ligne dans `source_fixture` la colonne "Probabilité de présence d'anomalies" contient "Faible". Or, je ne veux pas utiliser de données avec une présence d'anomalie.
-
+En résultat, je ne devrais obtenir qu'une seul ligne, car la seconde ligne de notre jeu de données contient la valeur "Faible" dans la colonne "Probabilité de présence d'anomalies". Or, je ne veux pas utiliser de données avec une présence d'anomalie.
 Lançons le test.
 
 
@@ -311,7 +308,7 @@ def transformation(df: DataFrame) -> DataFrame:
     )
 ```
 
-Ainsi, lorsque je relance mon test.
+Ainsi, lorsque je relance mon test :
 
 ```shell
 % pytest test.py -vv                        
@@ -330,7 +327,7 @@ Félicitations, votre code est maintenant testé. Vous pouvez aller en productio
 
 ## Conclusion
 
-A travers cet article, nous avons vu la mise en place de tests unitaire pour notre traitement de données PySpark. Cela nous a permis de nous rendre compte qu'il y avait une erreur dans le code. Ainsi, nous avons pu le corriger. Nous savons maintenant que le code produit répond à nos attentes, ainsi qu'aux utilisateurs de la donnée.
+À travers cet article, nous avons vu la mise en place de tests unitaires pour notre traitement de données PySpark. Cela nous a permis de nous rendre compte qu'il y avait une erreur dans le code, puis de la corriger. Nous savons maintenant que le code produit répond à nos attentes, ainsi qu'aux utilisateurs de la donnée.
 
 ## Références
 
