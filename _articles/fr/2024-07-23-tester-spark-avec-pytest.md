@@ -19,7 +19,7 @@ keywords:
 ---
 
 Dans le précédent article sur [démarrer avec Apache Spark](/fr/demarrer-apache-spark), nous avons créé notre premier script de traitement de la donnée avec Apache Spark.
-Pour s'assurer de leur bonne implémentation, nous allons effectuer des tests unitaires.
+Pour s'assurer du bon fonctionnement de ce traitement de données par Spark, nous allons maintenant apprendre à effectuer des tests unitaires.
 
 ## Installation de pytest
 
@@ -34,7 +34,7 @@ N'oubliez pas d'activer votre environnement virtuel Python avec `. venv/bin/acti
 % pip install pytest==8.2.2
 ```
 
-Avant d'écrire notre premier test, nous allons réorganiser notre code pour le rendre testable. En l'état, il est difficile de le tester.
+Avant d'écrire notre premier test, nous allons réorganiser notre code pour le rendre testable, car c'est difficile en l'état.
 
 ## Réorganisation du code
 
