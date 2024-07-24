@@ -8,8 +8,9 @@ excerpt: >-
   Dans cet article, nous allons parler de la Green IT, une approche visant à réduire l'impact environnemental du numérique à travers des pratiques plus durables et responsables tout au long du cycle de vie des technologies.
 categories: []
 cover:
+  alt: Un arbre poussant à l'intérieur d'un ordinateur
   path: /imgs/articles/2024-07-30-green-it-l-informatique-au-service-de-la-planete/cover.png
-  position: top
+  position: bottom
 authors:
   - nicolas
 keywords:
@@ -87,7 +88,7 @@ De plus, l'obsolescence programmée, qui consiste à concevoir des produits avec
 
 ## Agir pour un Avenir Numérique Durable : Les Solutions Concrètes
 
-![Ensemble, trouvons des solutions]({BASE_URL}/imgs/articles/2024-07-30-green-it-l-informatique-au-service-de-la-planete/ensemble-trouvons-des-solutions.png)
+![Ensemble, trouvons des solutions]({BASE_URL}/imgs/articles/2024-07-30-green-it-l-informatique-au-service-de-la-planete/ensemble-trouvons-des-solutions.png?maxWidth=250)
 
 Face à l'impact environnemental croissant du numérique, il est urgent d'agir. Heureusement, des solutions existent pour concilier progrès technologique et préservation de l'environnement. Voici quelques pistes d'action concrètes :
 
