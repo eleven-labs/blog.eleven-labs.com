@@ -3,7 +3,7 @@ contentType: article
 lang: fr
 date: '2024-08-25'
 slug: mes-methodes-preferees-pour-bien-apprehender-un-nouvel-environnement-de-travail
-title: 'Mes méthodes préférées pour bien appréhender un nouvel environnement de travail.'
+title: 'Mes méthodes préférées pour bien appréhender un nouvel environnement de travail'
 excerpt: >-
   Cet article présente mes méthodes préférées pour bien appréhender un nouvel environnement de travail, incluant des outils pratiques comme le rapport d'étonnement, le Value Stream Mapping, le mandat de mission, la matrice des attendus et les Moving Motivators, afin de faciliter l'intégration, améliorer les processus et renforcer la collaboration au sein de l'équipe
 categories:
@@ -236,7 +236,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     -   **Réduction des conflits** : En levant les ambiguïtés, on évite les conflits liés à des incompréhensions ou à des chevauchements de responsabilités
 -   _**Résumer & Référence :**_
     
-    La matrice des attendus est un outil agile permettant de clarifier les rôles et les attentes au sein d'un groupe. Elle aide à prévenir les divergences et malentendus en favorisant des discussions sur les contributions et attentes de chacun. Utilisée en début de projet ou lors de collaborations difficiles, elle améliore la communication et la compréhension mutuelle. L'atelier se déroule en deux formats : entre deux rôles ou plusieurs rôles, utilisant des post-its pour formaliser et discuter des attentes et contributions. Cette matrice doit être régulièrement ajustée selon les évolutions du projet.
+    La matrice des attendus est un outil de management permettant de clarifier les rôles et les attentes au sein d'un groupe. Elle aide à prévenir les divergences et malentendus en favorisant des discussions sur les contributions et attentes de chacun. Utilisée en début de projet ou lors de collaborations difficiles, elle améliore la communication et la compréhension mutuelle. L'atelier se déroule en deux formats : entre deux rôles ou plusieurs rôles, utilisant des post-its pour formaliser et discuter des attentes et contributions. Cette matrice doit être régulièrement ajustée selon les évolutions du projet.
     
     Pour plus de détails, n’hésitez pas à consultez l'article complet sur [Coach Agile](https://coach-agile.com/2021/12/la-matrice-des-attendus/).
     
@@ -298,16 +298,16 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         
         1.  Utilisez un tableau ou un schéma pour positionner chaque partenaire selon leurs influence et leur engagement
 
-     3.  **Analyse des Forces**
+    3.  **Analyse des Forces**
         1.  **Forces Positives** : Encourager et renforcer
         2.  **Forces Neutre** : Influencer positivement et rassurer
         3.  **Forces négatives** : Comprendre les objections et gérer stratégiquement.
-    3.  **Plan d’Action**
+    4.  **Plan d’Action**
     
-      1.  **Alliés** : Mobiliser et soutenir activement.
-      2.  **Neutre** : Fournir des preuves de succès et des avantages concrets.
-      3.  **Opposant** : Adresser les préoccupations et intégrer des éléments de leurs retours si pertinents.
-        Exemple de tableau :
+        1.  **Alliés** : Mobiliser et soutenir activement.
+        2.  **Neutre** : Fournir des preuves de succès et des avantages concrets.
+        3.  **Opposant** : Adresser les préoccupations et intégrer des éléments de leurs retours si pertinents.
+    Exemple de tableau :
         
    
       | Partenaire  | Rôle  | Influence  | Engagement  | 
