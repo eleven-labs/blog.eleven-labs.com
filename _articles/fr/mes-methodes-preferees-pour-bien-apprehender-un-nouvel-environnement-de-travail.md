@@ -92,7 +92,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     ----------
     
-    1.  **L’équipe(s)**
+    4.  **L’équipe(s)**
     
     **Composition et Compétences**
     
