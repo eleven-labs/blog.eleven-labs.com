@@ -147,7 +147,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
 -   _**Son objectif :**_
     
-    Il permet de revoir tout les X temps (défini avec le sponsor) ce que vous avez formaliser et ce qui est plus important pour vous et votre sponsor.
+    Il permet de revoir tout les X temps (défini avec le sponsor) ce que vous avez formalisé et ce qui est plus important pour vous et votre sponsor.
     
 -   _**Ses atouts :**_
     
