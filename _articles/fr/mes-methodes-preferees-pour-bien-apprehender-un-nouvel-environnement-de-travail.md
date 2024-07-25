@@ -204,7 +204,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     ----------
     
-    -   Actions à Définir :
+    -   _**Actions à Définir :**_
         -   Mesurer la satisfaction actuelle des utilisateurs
         -   Définir un objectif mesuré à atteindre d’ici [DATE].
         -   Lister les actions spécifiques nécessaire pour atteindre ces objectifs.
