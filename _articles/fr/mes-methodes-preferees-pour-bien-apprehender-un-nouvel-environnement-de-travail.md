@@ -299,6 +299,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         1.  Utilisez un tableau ou un schéma pour positionner chaque partenaire selon leurs influence et leur engagement
 
      3.  **Analyse des Forces**
+
         1.  **Forces Positives** : Encourager et renforcer
         2.  **Forces Neutre** : Influencer positivement et rassurer
         3.  **Forces négatives** : Comprendre les objections et gérer stratégiquement.
