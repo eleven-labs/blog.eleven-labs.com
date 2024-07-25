@@ -78,7 +78,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     ----------
     
-    1.  **Partie Produit**
+    3.  **Partie Produit**
     
     **Gestion des Produits**
     
