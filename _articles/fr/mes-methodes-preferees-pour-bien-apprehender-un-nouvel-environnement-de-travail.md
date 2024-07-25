@@ -164,7 +164,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         
     -   _**Objectif :**_
         
-        Définir les objectifs et les modalités de la mission entre [TOI] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateur. (Utilisation de SMARTF/ORK)
+        Définir les objectifs et les modalités de la mission entre [Votre Nom] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateur. (Utilisation de SMARTF/ORK)
         
     
     ----------
