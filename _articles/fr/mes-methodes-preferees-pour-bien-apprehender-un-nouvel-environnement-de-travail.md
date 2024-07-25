@@ -64,7 +64,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     ----------
     
-    1.  **Autre Pôle**
+    2.  **Autre Pôle**
     
     **Collaboration Interdépartementale**
     
@@ -78,7 +78,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     ----------
     
-    1.  **Partie Produit**
+    3.  **Partie Produit**
     
     **Gestion des Produits**
     
@@ -92,7 +92,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     ----------
     
-    1.  **L’équipe(s)**
+    4.  **L’équipe(s)**
     
     **Composition et Compétences**
     
@@ -147,7 +147,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
 -   _**Son objectif :**_
     
-    Il permet de revoir tout les X temps (défini avec le sponsor) ce que vous avez formaliser et ce qui est plus important pour vous et votre sponsor.
+    Il permet de revoir tout les X temps (défini avec le sponsor) ce que vous avez formalisé et ce qui est plus important pour vous et votre sponsor.
     
 -   _**Ses atouts :**_
     
@@ -204,7 +204,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     ----------
     
-    -   Actions à Définir :
+    -   _**Actions à Définir :**_
         -   Mesurer la satisfaction actuelle des utilisateurs
         -   Définir un objectif mesuré à atteindre d’ici [DATE].
         -   Lister les actions spécifiques nécessaire pour atteindre ces objectifs.
@@ -298,10 +298,13 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         
         1.  Utilisez un tableau ou un schéma pour positionner chaque partenaire selon leurs influence et leur engagement
 
+
     3.  **Analyse des Forces**
+
         1.  **Forces Positives** : Encourager et renforcer
         2.  **Forces Neutre** : Influencer positivement et rassurer
         3.  **Forces négatives** : Comprendre les objections et gérer stratégiquement.
+    
     4.  **Plan d’Action**
     
         1.  **Alliés** : Mobiliser et soutenir activement.
