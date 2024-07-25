@@ -311,14 +311,14 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         2.  **Neutre** : Fournir des preuves de succès et des avantages concrets.
         3.  **Opposant** : Adresser les préoccupations et intégrer des éléments de leurs retours si pertinents.
     Exemple de tableau :
-        
+    
    
-      | Partenaire  | Rôle  | Influence  | Engagement  | 
-      |-------------|-------|------------|-------------| 
-      |  Alice | Développeuse  |  Haute  | Forte| 
-      |  Bob |   Analyste |  Moyenne | Moyenne | 
-      | Charles  | Manager  |  Faible |  Faible |
-      |  Diana | Directeur marketing  | Haute |Opposante |
+| Partenaire | Rôle | Influence | Engagement |
+|--|--|--|--|
+| Alice | Développeuse | Haute  | Forte |
+| Bob | Analyste | Moyenne | Moyenne |
+| Charles | Charles | Faible | Faible |
+| Diana |Directeur marketing  | Haute | Opposante |
 
     
 -   _**Résumer & Référence :**_
