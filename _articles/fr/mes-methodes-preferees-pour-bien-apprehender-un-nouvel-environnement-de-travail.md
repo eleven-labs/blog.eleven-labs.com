@@ -64,7 +64,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     ----------
     
-    1.  **Autre Pôle**
+    2.  **Autre Pôle**
     
     **Collaboration Interdépartementale**
     
