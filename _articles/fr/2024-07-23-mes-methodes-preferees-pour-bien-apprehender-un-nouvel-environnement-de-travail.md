@@ -10,6 +10,10 @@ categories:
   - agile
 authors:
   - elemarchand
+cover:
+    alt: Alt image
+    path: /imgs/articles/2024-07-23-mes-methodes-preferees-pour-bien-apprehender-un-nouvel-environnement-de-travail/cover.jpg
+    position: top
 keywords: []
 ---
 
