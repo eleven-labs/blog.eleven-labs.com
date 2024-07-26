@@ -68,7 +68,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     **Collaboration Interdépartementale**
     
-    -   **Observations** : Interaction entre les équipes de développement et les autres département et d’autres départements, comme leMarketing, vente, support…
+    -   **Observations** : Interaction entre les équipes de développement et les autres département et d’autres départements, comme le Marketing, vente, support…
     -   **Recommandations** : Initiatives pour améliorer la collaboration interdépartementale.
     
     **Support et Formation**
@@ -165,10 +165,8 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     -   _**Objectif :**_
         
         Définir les objectifs et les modalités de la mission entre [Votre Nom] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateur. (Utilisation de SMARTF/ORK)
-
-> _SMARTF : Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun._
+        > _SMARTF : Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun._
 > _OKR : Objectives Key Results._
-        
     
     ----------
     
@@ -237,7 +235,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     -   **Amélioration de la communication** : Favorise des discussions ouvertes sur les attentes et les apports de chacun.
     -   **Équilibrage des tâches** : Aide à rééquilibrer la répartition des missions en fonction des besoins et des compétences.
     -   **Réduction des conflits** : En levant les ambiguïtés, on évite les conflits liés à des incompréhensions ou à des chevauchements de responsabilités
--   _**Résumer & Référence :**_
+-   _**Résumé & Référence :**_
     
     La matrice des attendus est un outil de management permettant de clarifier les rôles et les attentes au sein d'un groupe. Elle aide à prévenir les divergences et malentendus en favorisant des discussions sur les contributions et attentes de chacun. Utilisée en début de projet ou lors de collaborations difficiles, elle améliore la communication et la compréhension mutuelle. L'atelier se déroule en deux formats : entre deux rôles ou plusieurs rôles, utilisant des post-its pour formaliser et discuter des attentes et contributions. Cette matrice doit être régulièrement ajustée selon les évolutions du projet.
     
@@ -260,7 +258,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     -   **Adaptation des stratégies** : Permet de personnaliser les approches de coaching agile en fonction des motivations identifiées.
     -   **Amélioration de l'engagement** : En comprenant mieux les motivations, on peut augmenter l'engagement et la productivité des membres de l'équipe.
     -   **Réduction des frustrations** : En ajustant les tâches et les responsabilités selon les motivations, on réduit les sources de frustration et de démotivation
--   _**Résumer & Référence :**_
+-   _**Résumé & Référence :**_
     
     **Moving Motivators** est un outil de Management 3.0 conçu pour aider les équipes à comprendre ce qui les motive. Basé sur les travaux de Daniel Pink, Steven Reiss et Edward Deci, il utilise dix cartes représentant des motivations intrinsèques et extrinsèques. Les participants classent ces cartes par ordre d'importance personnelle et discutent de l'impact des changements sur leurs motivations. Cet exercice favorise la réflexion sur les décisions, améliore la compréhension mutuelle et renforce la collaboration au sein des équipes.
     
@@ -271,7 +269,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 
 ### La carte des Partenaires
 
--   _**La carte des Partenaire c'est quoi ?**_
+-   _**La carte des Partenaires c'est quoi ?**_
     
     La carte des partenaires est un outil de visualisation et de gestion des forces présentes dans une équipe au sens large. Elle permet d'identifier les différents types de membres en fonction de leurs attitudes et de leur engagement par rapport à un projet ou un changement.
     
@@ -281,14 +279,14 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     La cartes des partenaires est ainsi un outils dynamique qui nécessite une mise à jours régulière et une observation attentive des interactions au sein de l'équipe pour rester pertinente et efficace.
     
--   _**Ses atouts:**_
+-   _**Ses atouts :**_
     
     -   **Identification des forces et des faiblesses** : Permet de repérer les forces motrices, les forces de soutien, les forces neutres, les forces qui ralentissent et les forces opposantes. Cela aide à comprendre les dynamiques internes et à anticiper les résistances potentielles.
     -   **Concentration de l'énergie sur les alliés** : Aide à concentrer les efforts sur les alliés et à encourager leur engagement, tout en prenant en compte les opposants de manière stratégique sans gaspiller trop d'énergie.
     -   **Amélioration de la communication et de la coopération** : Favorise une meilleure communication et coopération en identifiant clairement les rôles et les attentes de chacun, ce qui permet de maximiser l'engagement et l'adhésion au projet.
     -   **Prise de recul et adaptation continue** : Encourage une prise de recul pour observer les dynamiques de l'équipe, écouter les différentes perspectives et ajuster les stratégies en fonction de l'évolution des besoins et des situations.
     -   **Optimisation des compétences clé et des stratégies** : Permet d'optimiser l'utilisation des compétences en identifiant les acteurs clés qui peuvent influencer positivement le projet et en développant des stratégies de mobilisation adaptées à chaque groupe d'acteurs.
--   _**Prototype de Carte des partenaire :**_
+-   _**Prototype de Carte des partenaires :**_
     
     1.  **Identification des Partenaires**
         
@@ -297,10 +295,10 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         3.  **Forces neutre** : Acteurs sans opinion claire, influençable, attendent des résultats pour se positionner.
         4.  **Forces qui ralentissent** : Acteurs résistant au changement, préoccupés par le maintien du statu quo.
         5.  **Forces opposantes** : Acteurs résolument contre le projet, peuvent agir contre sa mise en oeuvre.
+   
     2.  **Cartographie des Partenaires**
         
-        1.  Utilisez un tableau ou un schéma pour positionner chaque partenaire selon leurs influence et leur engagement
-
+        Utilisez un tableau ou un schéma pour positionner chaque partenaire selon leurs influence et leur engagement
 
     3.  **Analyse des Forces**
 
@@ -328,7 +326,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 
 
 
--   _**Résumer & Référence :**_
+-   _**Résumé & Référence :**_
     
 
 La carte des partenaires est un outil stratégique qui aide à visualiser les dynamiques au sein d’une équipe ou d’une organisation. En identifiant clairement les différents type de forces, elle permet de concentrer les efforts là où il sont nécessaires et d’optimisez l’efficacité de vos actions. Pour plus de détails, N’hésitez pas à consulter [la ressource complète sur la carte des partenaires](https://pauldevaux.fr/carte-des-partenaires/).
@@ -337,6 +335,6 @@ La carte des partenaires est un outil stratégique qui aide à visualiser les dy
 
 Les méthodes et outils présentés dans cet article sont des piliers essentiels pour réussir une mission et s’intégrer efficacement dans un nouvel environnement de travail. Le rapport d’étonnement, la Value Stream Mapping, et le mandat de mission offrent une vue d’ensemble indispensable pour comprendre et améliorer les processus. En parallèles, la matrice des attendue et le Moving Motivators permettent de renforcer la collaboration et l’engagement au sein des équipes.
 
-En appliquant ces outils, vous serez mieux armés pour naviguer dans des environnements complexes et dynamiques, tout en évitant les pièges courant. Vous apporter une vrai valeur ajouté ! La carte des Partenaire, en tant que bonus, vous aidera à identifier et à maximiser les forces présentes dans votre équipe, assurant ainsi une gestion proactive et adaptable de vos équipes.
+En appliquant ces outils, vous serez mieux armés pour naviguer dans des environnements complexes et dynamiques, tout en évitant les pièges courant. Vous apporter une vrai valeur ajouté ! La carte des Partenaires, en tant que bonus, vous aidera à identifier et à maximiser les forces présentes dans votre équipe, assurant ainsi une gestion proactive et adaptable de vos équipes.
 
 Intégrer ces pratiques à chaque début de mission vous permettra non seulement de mieux appréhender votre rôle au sein de l’organisation, mais aussi de contribué à faire grandir vos équipes. N’hésitez pas à ajuster et à personnaliser ces méthodes selon vos besoins spécifiques et ceux de vos équipes. Bon courage dans vos futures missions !
