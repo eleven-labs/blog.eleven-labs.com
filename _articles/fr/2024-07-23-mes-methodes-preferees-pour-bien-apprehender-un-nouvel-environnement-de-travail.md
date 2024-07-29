@@ -17,9 +17,6 @@ cover:
 keywords: []
 ---
 
-  *[SMARTF]: Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun*
-*[OKR]:  Objectives Key Result*
-
 Dans cet article, je vais vous présenter mes méthodes préférées lorsque j’interviens en mission, afin de vous aider à éviter certains écueils.
 
 Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans notre contexte prise de poste, et pourquoi je les utilise dans cet ordre. Sans plus tarder, je vais d'abord vous présenter des outils pour avoir une vue d'ensemble de votre nouvel environnement de travail. Nous commencerons par le rapport d’étonnement, la Value Stream Mapping, et le mandat de mission. Ensuite, nous verrons quels outils sont efficaces pour une ou plusieurs équipes : la matrice des attendus et les Moving Motivators. Enfin, je vous partagerai un bonus pour le plaisir. C’est parti !
@@ -49,6 +46,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 -   _**Prototype de rapport d’étonnement début de mission :**_
 
     **Nom** : [Votre Nom]
+    
     **Date** : [Date]
 
     1.  **Organisation**
@@ -130,6 +128,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 
 
 -   _**Résumé & Référence :**_
+
     La Value Stream Mapping (VSM) est un outil Lean permettant d'analyser et d'optimiser les processus de production en identifiant et éliminant les gaspillages. La VSM se divise en quatre étapes : mappage des processus actuels, identification des pertes, mappage des processus optimisés, et mise en œuvre des améliorations. Utiliser la VSM aide à visualiser les flux de travail, améliorer l'efficacité, réduire les coûts et augmenter la satisfaction client. Pour plus de détails, n’hésitez pas à consultez [l'article complet](https://asana.com/fr/resources/value-stream-mapping).
     
 
@@ -181,7 +180,6 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         -   Etat actuel : XXX € / mois
         -   Etat cible : XXX € / mois
     
- 
    -   _**Pistes d’Action :**_
         -   Accompagner l’équipe “XXXXXX”, reconnue pour son avancement en agilité.
         -   Accompagner les équipes dans le découpage des éléments pour des livraisons fréquentes.
@@ -190,11 +188,10 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         -   Améliorer les pratiques pour éviter les dérapages de sprint.
         -   Formation et accompagnement des managers et Scrum master.
     
-    -   _**Actions à Définir :**_
+   -   _**Actions à Définir :**_
         -   Mesurer la satisfaction actuelle des utilisateurs
         -   Définir un objectif mesuré à atteindre d’ici [DATE].
         -   Lister les actions spécifiques nécessaire pour atteindre ces objectifs.
-    
 
 
 ### **Évaluer votre alignement avec les exigences de la mission**
@@ -222,7 +219,6 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 -   _**Résumé & Référence :**_
     
     La matrice des attendus est un outil de management permettant de clarifier les rôles et les attentes au sein d'un groupe. Elle aide à prévenir les divergences et malentendus en favorisant des discussions sur les contributions et attentes de chacun. Utilisée en début de projet ou lors de collaborations difficiles, elle améliore la communication et la compréhension mutuelle. L'atelier se déroule en deux formats : entre deux rôles ou plusieurs rôles, utilisant des post-its pour formaliser et discuter des attentes et contributions. Cette matrice doit être régulièrement ajustée selon les évolutions du projet.
-    
     Pour plus de détails, n’hésitez pas à consultez l'article complet sur [Coach Agile](https://coach-agile.com/2021/12/la-matrice-des-attendus/).
     
 
@@ -236,7 +232,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     L'objectif du Moving Motivators est de créer un environnement où les membres de l'équipe peuvent exprimer leurs motivations personnelles. Cela permet aux Scrum Master de mieux comprendre les dynamiques internes et de créer des conditions de travail qui maximisent l'engagement et la satisfaction des employés
     
--   _**Ses atouts:**_
+-   _**Ses atouts :**_
     
     -   **Identification des motivations** : Aide à comprendre ce qui pousse chaque individu à donner le meilleur de lui-même.
     -   **Adaptation des stratégies** : Permet de personnaliser les approches de coaching agile en fonction des motivations identifiées.
@@ -245,7 +241,6 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 -   _**Résumé & Référence :**_
     
     **Moving Motivators** est un outil de Management 3.0 conçu pour aider les équipes à comprendre ce qui les motive. Basé sur les travaux de Daniel Pink, Steven Reiss et Edward Deci, il utilise dix cartes représentant des motivations intrinsèques et extrinsèques. Les participants classent ces cartes par ordre d'importance personnelle et discutent de l'impact des changements sur leurs motivations. Cet exercice favorise la réflexion sur les décisions, améliore la compréhension mutuelle et renforce la collaboration au sein des équipes.
-    
     Pour plus de détails, n’hésitez pas à consultez l'article complet sur [Management 3.0](https://management30.com/practice/moving-motivators/).
     
 
@@ -296,16 +291,15 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
    
         Exemple de tableau :
    
-    | Partenaire | Rôle | Influence | Engagement |
-    |--|--|--|--|
-    | Alice | Développeuse | Haute  | Forte |
-    | Bob | Analyste | Moyenne | Moyenne |
-    | Charles | Charles | Faible | Faible |
-    | Diana |Directeur marketing  | Haute | Opposante |
+        | Partenaire | Rôle | Influence | Engagement |
+        |--|--|--|--|
+        | Alice | Développeuse | Haute  | Forte |
+        | Bob | Analyste | Moyenne | Moyenne |
+        | Charles | Charles | Faible | Faible |
+        | Diana |Directeur marketing  | Haute | Opposante |
+
 
 -   _**Résumé & Référence :**_
-    
-
 La carte des partenaires est un outil stratégique qui aide à visualiser les dynamiques au sein d’une équipe ou d’une organisation. En identifiant clairement les différents type de forces, elle permet de concentrer les efforts là où il sont nécessaires et d’optimisez l’efficacité de vos actions. Pour plus de détails, N’hésitez pas à consulter [la ressource complète sur la carte des partenaires](https://pauldevaux.fr/carte-des-partenaires/).
 
 ## Conclusion
