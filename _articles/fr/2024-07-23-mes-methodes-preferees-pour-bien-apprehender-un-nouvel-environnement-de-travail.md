@@ -12,8 +12,7 @@ authors:
   - elemarchand
 cover:
     alt: Alt image
-    /Users/usagi/Documents/GitHub/blog.eleven-labs.com/_assets/articles/2024-07-23-mes-methodes-preferees-pour-bien-apprehender-un-nouvel-environnement-de-travail
-    path: /imgs/articles/2024-07-23-mes-methodes-preferees-pour-bien-apprehender-un-nouvel-environnement-de-travail/cover.jpg
+    path: /imgs/articles/2024-07-23-mes-methodes-preferees-pour-bien-apprehender-un-nouvel-environnement-de-travail/astro-hiring.jpg
     position: top
 keywords: []
 ---
