@@ -18,6 +18,9 @@ cover:
 keywords: []
 ---
 
+  *[SMARTF]: Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun*
+*[OKR]:  Objectives Key Result*
+
 Dans cet article, je vais vous présenter mes méthodes préférées lorsque j’interviens en mission, afin de vous aider à éviter certains écueils.
 
 Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans notre contexte prise de poste, et pourquoi je les utilise dans cet ordre. Sans plus tarder, je vais d'abord vous présenter des outils pour avoir une vue d'ensemble de votre nouvel environnement de travail. Nous commencerons par le rapport d’étonnement, la Value Stream Mapping, et le mandat de mission. Ensuite, nous verrons quels outils sont efficaces pour une ou plusieurs équipes : la matrice des attendus et les Moving Motivators. Enfin, je vous partagerai un bonus pour le plaisir. C’est parti !
@@ -160,9 +163,6 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         
         Définir les objectifs et les modalités de la mission entre [Votre Nom] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateur. (Utilisation de SMARTF / OKR)
 
-        *[SMARTF]: Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun
-        *[OKR]:  Objectives Key Result
-    
     -   _**Objectif Principaux :**_
         1.  Amélioration de la qualité perçue par les utilisateurs et leur satisfaction.
         2.  Optimiser le processus de livraison des produits
