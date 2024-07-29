@@ -12,6 +12,7 @@ authors:
   - elemarchand
 cover:
     alt: Alt image
+    /Users/usagi/Documents/GitHub/blog.eleven-labs.com/_assets/articles/2024-07-23-mes-methodes-preferees-pour-bien-apprehender-un-nouvel-environnement-de-travail
     path: /imgs/articles/2024-07-23-mes-methodes-preferees-pour-bien-apprehender-un-nouvel-environnement-de-travail/cover.jpg
     position: top
 keywords: []
@@ -44,82 +45,68 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     -   **Facilitation de l'intégration** : Il permet de s'exprimer sur leur expérience initiale dans l'entreprise.
     -   **Amélioration de la culture d'entreprise** : Renforce la culture du feedback et montre que l'entreprise valorise les avis de ses employés, favorisant ainsi un climat de confiance et de considération.
 -   _**Prototype de rapport d’étonnement début de mission :**_
-    
-    -   **Rapport d’étonnement**
-        
-        **Nom** : [Votre Nom]
-        
-        **Date** : [Date]
-        
-    
-    ----------
-    
+
+    **Nom** : [Votre Nom]
+    **Date** : [Date]
+
     1.  **Organisation**
     
-    **Structure et Culture**
+        **Structure et Culture**
     
-    -   **Observations** : Structure hiéarchique, culture d’entreprise, soutien de la direction aux initiatives agiles.
-    -   **Recommandations** : Actions pour aligner la culture d’entreprise.
+        -   **Observations** : Structure hiéarchique, culture d'entreprise, soutien de la direction aux initiatives agiles.
+        -   **Recommandations** : Actions pour aligner la culture d'entreprise.
     
-    **Processus et Procédures**
+        **Processus et Procédures**
     
-    -   **Observations** : Processus existant, flux de travail, outils utilisés.
-    -   **Recommandations** : Optimisation possible pour augmenter l’efficacité et réduire les gaspillages.
-    
-    ----------
+        -   **Observations** : Processus existant, flux de travail, outils utilisés.
+        -   **Recommandations** : Optimisation possible pour augmenter l'efficacité et réduire les gaspillages.
     
     2.  **Autre Pôle**
     
-    **Collaboration Interdépartementale**
+        **Collaboration Interdépartementale**
     
-    -   **Observations** : Interaction entre les équipes de développement et les autres département et d’autres départements, comme le Marketing, vente, support…
-    -   **Recommandations** : Initiatives pour améliorer la collaboration interdépartementale.
+        -   **Observations** : Interaction entre les équipes de développement et les autres département et d'autres départements, comme le Marketing, vente, support…
+        -   **Recommandations** : Initiatives pour améliorer la collaboration interdépartementale.
     
-    **Support et Formation**
+        **Support et Formation**
     
-    -   **Observations** : Programmes de formation existants, soutien à l’apprentissage continu.
-    -   **Recommandations** : Opportunités de formation pour renforcer les compétences agiles et techniques.
-    
-    ----------
+        -   **Observations** : Programmes de formation existants, soutien à l'apprentissage continu.
+        -   **Recommandations** : Opportunités de formation pour renforcer les compétences agiles et techniques.
     
     3.  **Partie Produit**
     
-    **Gestion des Produits**
+        **Gestion des Produits**
     
-    -   **Observations** : Cycle de vie du produit, méthodologie de gestion de projet, interaction PM/PO/QA/ ETC.. avec les équipes de développement.
-    -   **Recommandations** : Améliorations possible pour la gestion des backlogs et priorisation des tâches…
+        -   **Observations** : Cycle de vie du produit, méthodologie de gestion de projet, interaction PM/PO/QA/ ETC.. avec les équipes de développement.
+        -   **Recommandations** : Améliorations possible pour la gestion des backlogs et priorisation des tâches…
     
-    **Qualité et Feedback utilisateur**
+        **Qualité et Feedback utilisateur**
     
-    -   **Observations** : Méthode de collecte de feedback, intégration des retours utilisateurs dans le cycle de développement.
-    -   **Recommandations** : Stratégies pour améliorer la qualité des produits et la satisfaction client.
+        -   **Observations** : Méthode de collecte de feedback, intégration des retours utilisateurs dans le cycle de développement.
+        -   **Recommandations** : Stratégies pour améliorer la qualité des produits et la satisfaction client.
     
-    ----------
+    4.  **L'équipe(s)**
     
-    4.  **L’équipe(s)**
+        **Composition et Compétences**
     
-    **Composition et Compétences**
+        -   **Equipe XXX** : Liste des membres, compétences principales, point fort et défis.
+        -   **Equipe XXX** : Liste des membres, compétences principales, point fort et défis.
     
-    -   **Equipe XXX** : Liste des membres, compétences principales, point fort et défis.
-    -   **Equipe XXX** : Liste des membres, compétences principales, point fort et défis.
+        **Dynamique et Collaboration**
     
-    **Dynamique et Collaboration**
+        -   **Observations** : Niveau de collaboration, communication interne, repartions des rôles.
+        -   **Recommandations** : Stratégies pour améliorer la synergie et l'efficacité.
     
-    -   **Observations** : Niveau de collaboration, communication interne, repartions des rôles.
-    -   **Recommandations** : Stratégies pour améliorer la synergie et l’efficacité.
+        **Pratique Agile**
     
-    **Pratique Agile**
+        -   **Observations** : Utilisation des activités Scrum etc, adhérence aux principes agiles.
+        -   **Recommandations** : Suggestions pour renforcer les pratiques agiles.
+
+
+**Conclusion**
+
+ Ce rapport type offre une vision systémique de l’environnement de travail actuel, mettant en lumière les forces et les axes d’amélioration. Vous êtes libre de rajouter ou modifier certaines sections. En utilisant les données récoltées, vous pourrez construire les autres ateliers qui suivent, car il permet de recueillir des informations essentielles pour élaborer ou, à défaut, poser les bases des autres ateliers décrits dans cet article.
     
-    -   **Observations** : Utilisation des activités Scrum etc, adhérence aux principes agiles.
-    -   **Recommandations** : Suggestions pour renforcer les pratiques agiles.
-    
-    ----------
-    
-    **Conclusion**
-    
-    Ce rapport type offre une vision systémique de l’environnement de travail actuel, mettant en lumière les forces et les axes d’amélioration. Vous êtes libre de rajouter ou modifier certaines sections. En utilisant les données récoltées, vous pourrez construire les autres ateliers qui suivent, car il permet de recueillir des informations essentielles pour élaborer ou, à défaut, poser les bases des autres ateliers décrits dans cet article.
-    
-    ----------
     
 
 ### Value Stream Mapping
@@ -138,8 +125,9 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     -   **Optimisation des processus** : Améliore les temps de cycle et les coûts, ce qui conduit à une meilleure efficacité opérationnelle
     -   **Amélioration de la qualité** : Contribue à améliorer la satisfaction client en fournissant des produits ou services de meilleure qualité
     -   **Réduction des coûts** : En identifiant les inefficacités, la VSM aide à réduire les coûts de production et de logistique
+
+
 -   _**Résumé & Référence :**_
-    
     La Value Stream Mapping (VSM) est un outil Lean permettant d'analyser et d'optimiser les processus de production en identifiant et éliminant les gaspillages. La VSM se divise en quatre étapes : mappage des processus actuels, identification des pertes, mappage des processus optimisés, et mise en œuvre des améliorations. Utiliser la VSM aide à visualiser les flux de travail, améliorer l'efficacité, réduire les coûts et augmenter la satisfaction client. Pour plus de détails, n’hésitez pas à consultez [l'article complet](https://asana.com/fr/resources/value-stream-mapping).
     
 
@@ -160,6 +148,8 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     -   **Renforcement de la relation de confiance** : En clarifiant les attentes et les engagements de chaque partie, il renforce la confiance et facilite une collaboration fructueuse tout au long de la mission.
     -   **Adaptation continue** : Il offre un cadre pour revoir régulièrement les objectifs et les ajuster si nécessaire, assurant ainsi que la mission reste alignée sur les priorités du client et les réalités du terrain.
     -   **Facilitation de l'évaluation et du feedback** : Le mandat de mission permet de suivre les progrès de manière structurée et d'apporter des ajustements en temps réel, ce qui optimise les chances de succès de la mission.
+    
+
 -   _**Prototype de mandat de mission :**_
     
     -   _**Mandat de mission**_
@@ -168,23 +158,17 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         
     -   _**Objectif :**_
         
-        Définir les objectifs et les modalités de la mission entre [Votre Nom] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateur. (Utilisation de SMARTF/ORK)
-        
-        _*SMARTF* : Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun._
-        _*OKR* : Objectives Key Results._
-    
-    ----------
+        Définir les objectifs et les modalités de la mission entre [Votre Nom] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateur. (Utilisation de SMARTF / OKR)
+
+        *[SMARTF]: Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun
+        *[OKR]:  Objectives Key Result
     
     -   _**Objectif Principaux :**_
         1.  Amélioration de la qualité perçue par les utilisateurs et leur satisfaction.
         2.  Optimiser le processus de livraison des produits
         3.  Alignement structurel du plan de charge avec la capacité réelle de l’équipe
     
-    ----------
-    
     -   _**Contexte et importance :**_ Améliorer la satisfaction des utilisateurs est crucial. Un processus de livraison optimisé permet des retours plus fréquents et la mise en oeuvre d’innovations pour répondre aux besoins urgents des utilisateurs.
-    
-    ----------
     
     -   _**Indicateur de performance :**_
         
@@ -198,9 +182,8 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         -   Etat actuel : XXX € / mois
         -   Etat cible : XXX € / mois
     
-    ----------
-    
-    -   _**Pistes d’Action :**_
+ 
+   -   _**Pistes d’Action :**_
         -   Accompagner l’équipe “XXXXXX”, reconnue pour son avancement en agilité.
         -   Accompagner les équipes dans le découpage des éléments pour des livraisons fréquentes.
         -   Soutenir l’équipe en charge de la maintenance XXXX dans l’adoptio des principe agile.
@@ -208,15 +191,12 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         -   Améliorer les pratiques pour éviter les dérapages de sprint.
         -   Formation et accompagnement des managers et Scrum master.
     
-    ----------
-    
     -   _**Actions à Définir :**_
         -   Mesurer la satisfaction actuelle des utilisateurs
         -   Définir un objectif mesuré à atteindre d’ici [DATE].
         -   Lister les actions spécifiques nécessaire pour atteindre ces objectifs.
     
-    ----------
-    
+
 
 ### **Évaluer votre alignement avec les exigences de la mission**
 
@@ -270,9 +250,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     Pour plus de détails, n’hésitez pas à consultez l'article complet sur [Management 3.0](https://management30.com/practice/moving-motivators/).
     
 
-## Bonus
-
-### La carte des Partenaires
+## Bonus : la carte des Partenaires
 
 -   _**La carte des Partenaires c'est quoi ?**_
     
@@ -316,20 +294,15 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         1.  **Alliés** : Mobiliser et soutenir activement.
         2.  **Neutre** : Fournir des preuves de succès et des avantages concrets.
         3.  **Opposant** : Adresser les préoccupations et intégrer des éléments de leurs retours si pertinents.
-    Exemple de tableau :
-
    
-| Partenaire | Rôle | Influence | Engagement |
-|--|--|--|--|
-| Alice | Développeuse | Haute  | Forte |
-| Bob | Analyste | Moyenne | Moyenne |
-| Charles | Charles | Faible | Faible |
-| Diana |Directeur marketing  | Haute | Opposante |
-
-
-
-
-
+        Exemple de tableau :
+   
+    | Partenaire | Rôle | Influence | Engagement |
+    |--|--|--|--|
+    | Alice | Développeuse | Haute  | Forte |
+    | Bob | Analyste | Moyenne | Moyenne |
+    | Charles | Charles | Faible | Faible |
+    | Diana |Directeur marketing  | Haute | Opposante |
 
 -   _**Résumé & Référence :**_
     
