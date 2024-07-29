@@ -159,7 +159,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         
     -   _**Objectif :**_
         
-        Définir les objectifs et les modalités de la mission entre [Votre Nom] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateur. (Utilisation de SMARTF / OKR)
+        Définir les objectifs et les modalités de la mission entre [Votre Nom] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateur. Utilisation de SMARTF _(Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun)_ & OKR _(Objectives Key Result)_
 
     -   _**Objectif Principaux :**_
         1.  Amélioration de la qualité perçue par les utilisateurs et leur satisfaction.
