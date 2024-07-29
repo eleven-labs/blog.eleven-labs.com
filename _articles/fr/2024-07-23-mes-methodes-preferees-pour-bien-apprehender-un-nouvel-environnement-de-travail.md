@@ -169,8 +169,9 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     -   _**Objectif :**_
         
         Définir les objectifs et les modalités de la mission entre [Votre Nom] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateur. (Utilisation de SMARTF/ORK)
-        _SMARTF : Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun._
-        _OKR : Objectives Key Results._
+        
+        _*SMARTF* : Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun._
+        _*OKR* : Objectives Key Results._
     
     ----------
     
