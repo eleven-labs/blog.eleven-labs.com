@@ -25,7 +25,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 
 ### Le rapport d'étonnement
 
--   _**Le rapport d'étonnement c'est quoi ?**_
+-   _**Qu'est-ce que le rapport d'étonnement ?**_
     
     C'est un outil souvent utilisé par les RH et managers permettant de recueillir l’avis et le ressenti d’un nouveau collaborateur environ trois mois après son arrivée. Ce document est rédigé par un collaborateur et destiné à son manager, aux ressources humaines et à la direction de l’entreprise. Il vise à obtenir des retours sur divers aspects comme le recrutement, l’intégration, la prise de poste et la culture d’entreprise, facilitant ainsi une prise de recul critique pour faire de l’amélioration continue.
     
@@ -135,7 +135,7 @@ Le Value Stream Mapping (VSM) est un outil Lean permettant d'analyser et d'optim
 
 ### Le mandat de mission
 
--   _**Le mandat de mission c'est quoi ?**_
+-   _**Qu'est-ce que le mandat de mission ?**_
     
     C'est un outil principalement utilisé en coaching. Il permet de poser des règles du jeu claires en ce qui concerne les objectifs de la prestation, les mesures de résultats, les moyens qui seront mis en oeuvre par chacune des parties.
     
@@ -201,7 +201,7 @@ Le Value Stream Mapping (VSM) est un outil Lean permettant d'analyser et d'optim
 
 ### La matrice des attendus
 
--   _**La matrice des attendus c'est quoi ?**_
+-   _**Qu'est ce que la matrice des attendus ?**_
     
     La matrice des attendus est un outil de management utilisé pour clarifier les rôles et les attentes au sein d'une équipe. Elle permet à chaque membre de l'équipe de définir clairement son rôle, ce qu'il attend des autres et ce qu'il pense apporter aux autres membres.
     
