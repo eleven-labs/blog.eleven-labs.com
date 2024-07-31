@@ -195,8 +195,6 @@ Le Value Stream Mapping (VSM) est un outil Lean permettant d'analyser et d'optim
         -   Lister les actions spécifiques nécessaires pour atteindre ces objectifs.
 
 
-### **Évaluer votre alignement avec les exigences de la mission**
-
 À partir de ce point, vous pouvez évaluer efficacement votre alignement avec les exigences de la mission. Vous avez maintenant une vision claire pour déterminer si vos compétences correspondent aux besoins spécifiques de votre client. Cela inclut une analyse de votre capacité à répondre aux attentes, à relever les défis proposés, et à apporter une valeur ajoutée significative. En réfléchissant à ces éléments, vous pourrez décider si vous êtes prêt à vous engager pleinement dans cette mission. Assurez-vous de revisiter régulièrement vos compétences et vos objectifs pour rester en phase avec les attentes du client et les évolutions du projet.
 
 ## Évaluer le degré de maturité de son équipe
