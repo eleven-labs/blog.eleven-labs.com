@@ -2,7 +2,7 @@
 contentType: article
 lang: fr
 date: '2024-07-31'
-slug: mes-methodes-preferees-pour-bien-apprehender-un-nouvel-environnement-de-travail
+slug: methodes-preferees-pour-apprehender-nouvel-environnement-de-travail
 title: 'Mes méthodes préférées pour bien appréhender un nouvel environnement de travail'
 excerpt: >-
   Cet article présente mes méthodes préférées pour bien appréhender un nouvel environnement de travail, incluant des outils pratiques comme le rapport d'étonnement, le Value Stream Mapping, le mandat de mission, la matrice des attendus et les Moving Motivators, afin de faciliter l'intégration, améliorer les processus et renforcer la collaboration au sein de l'équipe
@@ -11,7 +11,7 @@ categories:
 authors:
   - elemarchand
 cover:
-    alt: Alt image
+    alt: Mes méthodes préférées pour bien appréhender un nouvel environnement de travail
     path: /imgs/articles/2024-07-23-mes-methodes-preferees-pour-bien-apprehender-un-nouvel-environnement-de-travail/astro-hiring.jpg
     position: top
 keywords: []
