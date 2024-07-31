@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2024-08-25'
+date: '2024-07-31'
 slug: mes-methodes-preferees-pour-bien-apprehender-un-nouvel-environnement-de-travail
 title: 'Mes méthodes préférées pour bien appréhender un nouvel environnement de travail'
 excerpt: >-
@@ -19,7 +19,7 @@ keywords: []
 
 Dans cet article, je vais vous présenter mes méthodes préférées lorsque j’interviens en mission, afin de vous aider à éviter certains écueils.
 
-Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans notre contexte prise de poste, et pourquoi je les utilise dans cet ordre. Sans plus tarder, je vais d'abord vous présenter des outils pour avoir une vue d'ensemble de votre nouvel environnement de travail. Nous commencerons par le rapport d’étonnement, la Value Stream Mapping, et le mandat de mission. Ensuite, nous verrons quels outils sont efficaces pour une ou plusieurs équipes : la matrice des attendus et les Moving Motivators. Enfin, je vous partagerai un bonus pour le plaisir. C’est parti !
+Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans notre contexte de prise de poste, et pourquoi je les utilise dans cet ordre. Sans plus tarder, je vais d'abord vous présenter des outils pour avoir une vue d'ensemble de votre nouvel environnement de travail. Nous commencerons par le rapport d’étonnement, la Value Stream Mapping, et le mandat de mission. Ensuite, nous verrons quels outils sont efficaces pour évaluer rapidement le niveau de maturité et les valeurs qui animent votre équipe : la matrice des attendus et les Moving Motivators. Enfin, je vous partagerai un bonus pour le plaisir. C’est parti !
 
 ## **Mieux appréhender son nouvel environnement de travail**
 
@@ -27,7 +27,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 
 -   _**Le rapport d'étonnement c'est quoi ?**_
     
-    C'est un outil souvent utilisé par les RH et managers permettant de recueillir l’avis et le ressenti d’un nouveau collaborateur environ trois mois après son arrivée. Ce document, est rédigé par un collaborateur et destiné à son manager, aux ressources humaines et à la direction de l’entreprise. Il vise à obtenir des retours sur divers aspects comme le recrutement, l’intégration, la prise de poste et la culture d’entreprise, facilitant ainsi une prise de recule critique pour faire de l’amélioration continue.
+    C'est un outil souvent utilisé par les RH et managers permettant de recueillir l’avis et le ressenti d’un nouveau collaborateur environ trois mois après son arrivée. Ce document est rédigé par un collaborateur et destiné à son manager, aux ressources humaines et à la direction de l’entreprise. Il vise à obtenir des retours sur divers aspects comme le recrutement, l’intégration, la prise de poste et la culture d’entreprise, facilitant ainsi une prise de recul critique pour faire de l’amélioration continue.
     
 -   _**Son objectif :**_
     
@@ -36,6 +36,7 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     -   votre rôle
     -   les processus
     -   l'organisation
+    -   
 -   _**Ses atouts :**_
     
     -   **Évaluation des bonnes et mauvaises pratiques** : Permet de faire un état des lieux des pratiques de l'entreprise.
@@ -43,7 +44,8 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     -   **Inspiration pour de nouvelles idées** : Encourage la mise en place de nouvelles méthodes et de nouvelles idées innovantes.
     -   **Facilitation de l'intégration** : Il permet de s'exprimer sur leur expérience initiale dans l'entreprise.
     -   **Amélioration de la culture d'entreprise** : Renforce la culture du feedback et montre que l'entreprise valorise les avis de ses employés, favorisant ainsi un climat de confiance et de considération.
--   _**Prototype de rapport d’étonnement début de mission :**_
+    -   
+-   _**Prototype de rapport d’étonnement de début de mission :**_
 
     **Nom** : [Votre Nom]
     
@@ -61,11 +63,11 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         -   **Observations** : Processus existant, flux de travail, outils utilisés.
         -   **Recommandations** : Optimisation possible pour augmenter l'efficacité et réduire les gaspillages.
     
-    2.  **Autre Pôle**
+    2.  **Autres Pôles**
     
         **Collaboration Interdépartementale**
     
-        -   **Observations** : Interaction entre les équipes de développement et les autres département et d'autres départements, comme le Marketing, vente, support…
+        -   **Observations** : Interaction entre les équipes de développement et d'autres départements, comme le Marketing, la vente, le support…
         -   **Recommandations** : Initiatives pour améliorer la collaboration interdépartementale.
     
         **Support et Formation**
@@ -77,47 +79,46 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
         **Gestion des Produits**
     
-        -   **Observations** : Cycle de vie du produit, méthodologie de gestion de projet, interaction PM/PO/QA/ ETC.. avec les équipes de développement.
-        -   **Recommandations** : Améliorations possible pour la gestion des backlogs et priorisation des tâches…
+        -   **Observations** : Cycle de vie du produit, méthodologie de gestion de projet, interaction PM/PO/QA/, etc. avec les équipes de développement.
+        -   **Recommandations** : Améliorations possibles pour la gestion des backlogs et priorisation des tâches…
     
         **Qualité et Feedback utilisateur**
     
         -   **Observations** : Méthode de collecte de feedback, intégration des retours utilisateurs dans le cycle de développement.
         -   **Recommandations** : Stratégies pour améliorer la qualité des produits et la satisfaction client.
     
-    4.  **L'équipe(s)**
+    4.  **L'équipe**
     
         **Composition et Compétences**
     
-        -   **Equipe XXX** : Liste des membres, compétences principales, point fort et défis.
-        -   **Equipe XXX** : Liste des membres, compétences principales, point fort et défis.
+        -   **Équipe XXX** : Liste des membres, compétences principales, point fort et défis.
+        -   **Équipe XXX** : Liste des membres, compétences principales, point fort et défis.
     
         **Dynamique et Collaboration**
     
-        -   **Observations** : Niveau de collaboration, communication interne, repartions des rôles.
+        -   **Observations** : Niveau de collaboration, communication interne, répartiton des rôles.
         -   **Recommandations** : Stratégies pour améliorer la synergie et l'efficacité.
     
         **Pratique Agile**
     
-        -   **Observations** : Utilisation des activités Scrum etc, adhérence aux principes agiles.
+        -   **Observations** : Utilisation des activités Scrum etc., adhérence aux principes agiles.
         -   **Recommandations** : Suggestions pour renforcer les pratiques agiles.
 
 
 **Conclusion**
 
- Ce rapport type offre une vision systémique de l’environnement de travail actuel, mettant en lumière les forces et les axes d’amélioration. Vous êtes libre de rajouter ou modifier certaines sections. En utilisant les données récoltées, vous pourrez construire les autres ateliers qui suivent, car il permet de recueillir des informations essentielles pour élaborer ou, à défaut, poser les bases des autres ateliers décrits dans cet article.
+Ce rapport type offre une vision systémique de l’environnement de travail actuel, mettant en lumière les forces et les axes d’amélioration. Vous êtes libre de rajouter ou modifier certaines sections. En utilisant les données récoltées, vous pourrez construire les autres ateliers qui suivent, car vous avez désormais recueilli des premières informations essentielles.
     
     
-
 ### Value Stream Mapping
 
--   _**Value Stream Mapping c'est quoi ?**_
+-   _**Qu'est-ce que le Value Stream Mapping ?**_
     
-    La Value Stream Mapping (VSM) ou cartographie de la chaîne de valeur, est une méthode de visualisation utilisée pour analyser et optimiser les processus de production.
+    La Value Stream Mapping (VSM), ou cartographie de la chaîne de valeur, est une méthode de visualisation utilisée pour analyser et optimiser les processus de production.
     
 -   _**Son objectif :**_
     
-    Cela permet d'identifier et éliminer les gaspillages, d'optimiser les processus de production, de réduire les temps de cycles et les coûts et d'améliorer la qualités et la satisfaction client.
+    Cela permet d'identifier et éliminer les gaspillages, d'optimiser les processus de production, de réduire les temps de cycles et les coûts et d'améliorer la qualité et la satisfaction client.
     
 -   _**Ses atouts :**_
     
@@ -129,14 +130,14 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 
 -   _**Résumé & Référence :**_
 
-    La Value Stream Mapping (VSM) est un outil Lean permettant d'analyser et d'optimiser les processus de production en identifiant et éliminant les gaspillages. La VSM se divise en quatre étapes : mappage des processus actuels, identification des pertes, mappage des processus optimisés, et mise en œuvre des améliorations. Utiliser la VSM aide à visualiser les flux de travail, améliorer l'efficacité, réduire les coûts et augmenter la satisfaction client. Pour plus de détails, n’hésitez pas à consultez [l'article complet](https://asana.com/fr/resources/value-stream-mapping).
+Le Value Stream Mapping (VSM) est un outil Lean permettant d'analyser et d'optimiser les processus de production en identifiant et éliminant les gaspillages. La VSM se divise en quatre étapes : mappage des processus actuels, identification des pertes, mappage des processus optimisés, et mise en œuvre des améliorations. Utiliser la VSM aide à visualiser les flux de travail, améliorer l'efficacité, réduire les coûts et augmenter la satisfaction client. Pour plus de détails, n’hésitez pas à consultez [l'article complet](https://asana.com/fr/resources/value-stream-mapping).
     
 
 ### Le mandat de mission
 
 -   _**Le mandat de mission c'est quoi ?**_
     
-    C'est un outil principalement utiliser en coaching. Il permet de poser des règles du jeu claires en ce qui concerne les objectifs de la prestation, les mesures de résultats, les moyens qui seront mis en oeuvre par chacune des parties.
+    C'est un outil principalement utilisé en coaching. Il permet de poser des règles du jeu claires en ce qui concerne les objectifs de la prestation, les mesures de résultats, les moyens qui seront mis en oeuvre par chacune des parties.
     
 -   _**Son objectif :**_
     
@@ -159,10 +160,10 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         
     -   _**Objectif :**_
         
-        Définir les objectifs et les modalités de la mission entre [Votre Nom] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateur. Utilisation de SMARTF _(Spécifique Mesurable, atteignable, réaliste et temporellement défini Fun)_ & OKR _(Objectives Key Result)_
+        Définir les objectifs et les modalités de la mission entre [Votre Nom] et les équipes de [Nom de l’entreprise] pour assurer une amélioration continue et un alignement sur les attentes des utilisateurs. Utilisation de SMARTF _(Spécifique Mesurable, Atteignable, Réaliste, Temporellement Définie, et Fun)_ & OKR _(Objectives Key Result)_
 
     -   _**Objectif Principaux :**_
-        1.  Amélioration de la qualité perçue par les utilisateurs et leur satisfaction.
+        1.  Amélioration de la qualité perçue par les utilisateurs et leur satisfaction
         2.  Optimiser le processus de livraison des produits
         3.  Alignement structurel du plan de charge avec la capacité réelle de l’équipe
     
@@ -170,20 +171,20 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
     
     -   _**Indicateur de performance :**_
         
-        KPI : [Détail de l’indicateur]
+        KPI : [Détails de l’indicateur]
         
-        -   Etat actuel : XX%
-        -   Etat cible : XX%
+        -   État actuel : XX%
+        -   État cible : XX%
         
-        KPI : [Détail de l’indicateur]
+        KPI : [Détails de l’indicateur]
         
-        -   Etat actuel : XXX € / mois
-        -   Etat cible : XXX € / mois
+        -   État actuel : XXX € / mois
+        -   État cible : XXX € / mois
     
    -   _**Pistes d’Action :**_
         -   Accompagner l’équipe “XXXXXX”, reconnue pour son avancement en agilité.
         -   Accompagner les équipes dans le découpage des éléments pour des livraisons fréquentes.
-        -   Soutenir l’équipe en charge de la maintenance XXXX dans l’adoptio des principe agile.
+        -   Soutenir l’équipe en charge de la maintenance XXXX dans l’adoption des principes agiles.
         -   Alignement sur la définition de la satisfaction utilisateur et des décisions de priorisation.
         -   Améliorer les pratiques pour éviter les dérapages de sprint.
         -   Formation et accompagnement des managers et Scrum master.
@@ -191,46 +192,47 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
    -   _**Actions à Définir :**_
         -   Mesurer la satisfaction actuelle des utilisateurs
         -   Définir un objectif mesuré à atteindre d’ici [DATE].
-        -   Lister les actions spécifiques nécessaire pour atteindre ces objectifs.
+        -   Lister les actions spécifiques nécessaires pour atteindre ces objectifs.
 
 
 ### **Évaluer votre alignement avec les exigences de la mission**
 
 À partir de ce point, vous pouvez évaluer efficacement votre alignement avec les exigences de la mission. Vous avez maintenant une vision claire pour déterminer si vos compétences correspondent aux besoins spécifiques de votre client. Cela inclut une analyse de votre capacité à répondre aux attentes, à relever les défis proposés, et à apporter une valeur ajoutée significative. En réfléchissant à ces éléments, vous pourrez décider si vous êtes prêt à vous engager pleinement dans cette mission. Assurez-vous de revisiter régulièrement vos compétences et vos objectifs pour rester en phase avec les attentes du client et les évolutions du projet.
 
-## Outils efficace pour une ou plusieurs équipe
+## Évaluer le degré de maturité de son équipe
 
 ### La matrice des attendus
 
 -   _**La matrice des attendus c'est quoi ?**_
     
-    La matrice des attendus est un outil de management utilisé pour clarifier les rôles et les attentes au sein d'une équipe. Elle permet à chaque membre de l'équipe de définir clairement son rôle, ce qu'il attend des autres et ce qu'il pense apporter aux autres membres
+    La matrice des attendus est un outil de management utilisé pour clarifier les rôles et les attentes au sein d'une équipe. Elle permet à chaque membre de l'équipe de définir clairement son rôle, ce qu'il attend des autres et ce qu'il pense apporter aux autres membres.
     
 -   _**Son objectif :**_
     
-    L'objectif principal de la matrice des attendus est de faciliter la collaboration au sein de l'équipe en éliminant les malentendus et en clarifiant les rôles et responsabilités de chacun. Cela permet de mieux comprendre les interactions nécessaires pour atteindre les objectifs communs
+    L'objectif principal de la matrice des attendus est de faciliter la collaboration au sein de l'équipe en éliminant les malentendus et en clarifiant les rôles et responsabilités de chacun. Cela permet de mieux comprendre les interactions nécessaires pour atteindre les objectifs communs.
     
 -   _**Ses atouts :**_
     
     -   **Clarification des rôles** : Chaque membre connaît clairement son périmètre d'action et celui des autres.
     -   **Amélioration de la communication** : Favorise des discussions ouvertes sur les attentes et les apports de chacun.
     -   **Équilibrage des tâches** : Aide à rééquilibrer la répartition des missions en fonction des besoins et des compétences.
-    -   **Réduction des conflits** : En levant les ambiguïtés, on évite les conflits liés à des incompréhensions ou à des chevauchements de responsabilités
+    -   **Réduction des conflits** : En levant les ambiguïtés, on évite les conflits liés à des incompréhensions ou à des chevauchements de responsabilités.
+    -   
 -   _**Résumé & Référence :**_
     
-    La matrice des attendus est un outil de management permettant de clarifier les rôles et les attentes au sein d'un groupe. Elle aide à prévenir les divergences et malentendus en favorisant des discussions sur les contributions et attentes de chacun. Utilisée en début de projet ou lors de collaborations difficiles, elle améliore la communication et la compréhension mutuelle. L'atelier se déroule en deux formats : entre deux rôles ou plusieurs rôles, utilisant des post-its pour formaliser et discuter des attentes et contributions. Cette matrice doit être régulièrement ajustée selon les évolutions du projet.
-    Pour plus de détails, n’hésitez pas à consultez l'article complet sur [Coach Agile](https://coach-agile.com/2021/12/la-matrice-des-attendus/).
+    La matrice des attendus est un outil de management permettant de clarifier les rôles et les attentes au sein d'un groupe. Elle aide à prévenir les divergences et malentendus en favorisant des discussions sur les contributions et attentes de chacun. Utilisée en début de projet ou lors de collaborations difficiles, elle améliore la communication et la compréhension mutuelle. L'atelier se déroule en deux formats selon le nombre de rôles entre lesquels vous souhaitez créer cette discussion : entre deux rôles, ou entre une multitude de rôles. Dans la pratique cela impliquera d'utiliser des post-its pour formaliser et discuter des attentes et contributions de chacun. Cette matrice doit être régulièrement ajustée selon les évolutions du projet.
+    Pour plus de détails, n’hésitez pas à consulter l'article complet sur [Coach Agile](https://coach-agile.com/2021/12/la-matrice-des-attendus/).
     
 
-### Moving Motivator
+### Moving motivators
 
--   _**Moving motivator c'est quoi ?**_
+-   _**Qu'est-ce que le moving motivators ?**_
     
-    Le Moving Motivators est un outil de management qui aide à identifier et comprendre ce qui motive les membres d'une équipe. Il se base sur dix cartes représentant différentes motivations intrinsèques et extrinsèques, permettant aux individus de réfléchir à leurs priorités et à ce qui les motive le plus dans leur travail
+    Le Moving motivators est un outil de management qui aide à identifier et comprendre ce qui motive les membres d'une équipe. Il se base sur dix cartes représentant différentes motivations intrinsèques et extrinsèques, permettant aux individus de réfléchir à leurs priorités et à ce qui les motive le plus dans leur travail.
     
 -   _**Son objectif :**_
     
-    L'objectif du Moving Motivators est de créer un environnement où les membres de l'équipe peuvent exprimer leurs motivations personnelles. Cela permet aux Scrum Master de mieux comprendre les dynamiques internes et de créer des conditions de travail qui maximisent l'engagement et la satisfaction des employés
+    L'objectif du Moving Motivators est de créer un environnement où les membres de l'équipe peuvent exprimer leurs motivations personnelles. Cela permet aux Scrum Mastersd de mieux comprendre les dynamiques internes et de créer des conditions de travail qui maximisent l'engagement et la satisfaction des employés.
     
 -   _**Ses atouts :**_
     
@@ -246,15 +248,15 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 
 ## Bonus : la carte des Partenaires
 
--   _**La carte des Partenaires c'est quoi ?**_
+-   _**Qu'est-ce que la carte des Partenaires ?**_
     
     La carte des partenaires est un outil de visualisation et de gestion des forces présentes dans une équipe au sens large. Elle permet d'identifier les différents types de membres en fonction de leurs attitudes et de leur engagement par rapport à un projet ou un changement.
     
 -   _**Son objectif :**_
     
-    Il vous permet de maximiser l'engament et l'adhésion de l'équipes ou des gens dans l'organisation que vous avez identifier. Il permet utiliser efficacement les ressources des personnes et leurs attitudes sans le contexte. Et assures une gestion proactive et adaptative des projets et changement.
+    Il vous permet de maximiser l'engament et l'adhésion de l'équipes ou des gens dans l'organisation que vous avez identifié. Il permet d'utiliser efficacement les ressources des personnes et leurs attitudes sans le contexte, et assure une gestion proactive et adaptative des projets et changements.
     
-    La cartes des partenaires est ainsi un outils dynamique qui nécessite une mise à jours régulière et une observation attentive des interactions au sein de l'équipe pour rester pertinente et efficace.
+    La cartes des partenaires est ainsi un outil dynamique qui nécessite une mise à jour régulière et une observation attentive des interactions au sein de l'équipe pour rester pertinente et efficace.
     
 -   _**Ses atouts :**_
     
@@ -269,13 +271,13 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
         
         1.  **Forces qui tirent le système vers l’avant** : Acteurs enthousiastes et convaincus, moteur du projet.
         2.  **Forces qui soutiennent** : Acteurs engagés mais moins actifs dans la promotion du projet.
-        3.  **Forces neutre** : Acteurs sans opinion claire, influençable, attendent des résultats pour se positionner.
+        3.  **Forces neutre** : Acteurs sans opinion claire, influençables, attendent des résultats pour se positionner.
         4.  **Forces qui ralentissent** : Acteurs résistant au changement, préoccupés par le maintien du statu quo.
         5.  **Forces opposantes** : Acteurs résolument contre le projet, peuvent agir contre sa mise en oeuvre.
    
     2.  **Cartographie des Partenaires**
         
-        Utilisez un tableau ou un schéma pour positionner chaque partenaire selon leurs influence et leur engagement
+        Utilisez un tableau ou un schéma pour positionner chaque partenaire selon leurs influence et leur engagement.
 
     3.  **Analyse des Forces**
 
@@ -300,12 +302,12 @@ Je vais expliquer pourquoi j’utilise ces ateliers, à quoi ils servent dans no
 
 
 -   _**Résumé & Référence :**_
-La carte des partenaires est un outil stratégique qui aide à visualiser les dynamiques au sein d’une équipe ou d’une organisation. En identifiant clairement les différents type de forces, elle permet de concentrer les efforts là où il sont nécessaires et d’optimisez l’efficacité de vos actions. Pour plus de détails, N’hésitez pas à consulter [la ressource complète sur la carte des partenaires](https://pauldevaux.fr/carte-des-partenaires/).
+La carte des partenaires est un outil stratégique qui aide à visualiser les dynamiques au sein d’une équipe ou d’une organisation. En identifiant clairement les différents type de forces, elle permet de concentrer les efforts là où il sont nécessaires et d’optimiser l’efficacité de vos actions. Pour plus de détails, N’hésitez pas à consulter [la ressource complète sur la carte des partenaires](https://pauldevaux.fr/carte-des-partenaires/).
 
 ## Conclusion
 
-Les méthodes et outils présentés dans cet article sont des piliers essentiels pour réussir une mission et s’intégrer efficacement dans un nouvel environnement de travail. Le rapport d’étonnement, la Value Stream Mapping, et le mandat de mission offrent une vue d’ensemble indispensable pour comprendre et améliorer les processus. En parallèles, la matrice des attendue et le Moving Motivators permettent de renforcer la collaboration et l’engagement au sein des équipes.
+Les méthodes et outils présentés dans cet article sont des piliers essentiels pour réussir une mission et s’intégrer efficacement dans un nouvel environnement de travail. Le rapport d’étonnement, la Value Stream Mapping, et le Mandat de mission offrent une vue d’ensemble indispensable pour comprendre et améliorer les processus. En parallèle, la matrice des attendus et le Moving motivators permettent de renforcer la collaboration et l’engagement au sein des équipes.
 
-En appliquant ces outils, vous serez mieux armés pour naviguer dans des environnements complexes et dynamiques, tout en évitant les pièges courant. Vous apporter une vrai valeur ajouté ! La carte des Partenaires, en tant que bonus, vous aidera à identifier et à maximiser les forces présentes dans votre équipe, assurant ainsi une gestion proactive et adaptable de vos équipes.
+En appliquant ces outils, vous serez mieux armés pour naviguer dans des environnements complexes et dynamiques, tout en évitant les pièges courants. Vous apporterez ainsi une vraie valeur ajoutée ! La carte des Partenaires, en tant que bonus, vous aidera à identifier et à maximiser les forces présentes dans votre équipe, assurant ainsi une gestion proactive et adaptable.
 
-Intégrer ces pratiques à chaque début de mission vous permettra non seulement de mieux appréhender votre rôle au sein de l’organisation, mais aussi de contribué à faire grandir vos équipes. N’hésitez pas à ajuster et à personnaliser ces méthodes selon vos besoins spécifiques et ceux de vos équipes. Bon courage dans vos futures missions !
+Intégrer ces pratiques à chaque début de mission vous permettra non seulement de mieux appréhender votre rôle au sein de l’organisation, mais aussi de contribuer à faire grandir vos équipes. N’hésitez pas à ajuster et à personnaliser ces méthodes selon vos besoins spécifiques et ceux de vos équipes. Bon courage dans vos futures missions !
