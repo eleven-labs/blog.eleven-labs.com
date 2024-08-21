@@ -34,10 +34,52 @@ Enfin comme il s'agit d'une API expérimentale il est possible que des parties d
 
 ## Comment ça marche&nbsp;?
 
-Comme nous l'avons vus plus tôt, cette API se base sur deux éléments&nbsp;: l'ancre et l'élément positionné. **L'ancre est l'élément qui ne va pas bouger, et à partir duquel va se placer l'élément positionné**. Nous allons utiliser dans cet article le cas concret suivant&nbsp;: l'ancre sera un bouton qui ouvre un tooltip, et le tooltip relatif au bouton sera l'élément positionné.
+Comme nous l'avons vus plus tôt, cette API se base sur deux éléments&nbsp;: l'ancre et l'élément positionné. **L'ancre est l'élément qui ne va pas bouger, et à partir duquel va se placer l'élément positionné**. Nous allons utiliser dans cet article le cas concret suivant&nbsp;: l'ancre sera un bouton qui ouvre un tooltip, et le tooltip relatif au bouton sera l'élément positionné. On ne va pas s'occuper de l'interactivité entre ces éléments, juste de l'apparence que les deux éléments doivent avoir une fois le tooltip visible.
 
 ![Schéma basique d'un bouton (ancre) et son tooltip (élément positionné)]({BASE_URL}/imgs/articles/2024-08-22-css-anchor-positioning-api/basic-schema.jpg?width=400)
 Figure: *Schéma basique d'un bouton (ancre) et son tooltip (élément positionné)*
+
+Voici le code très simple que nous allons utiliser&nbsp;: un `<button>` rouge avec une classe `Anchor` et la `<div>` qui correspond au tooltip lié au bouton, bleu et avec la classe `Tooltip`.
+
+```html
+<div class="Tooltip">Tooltip<br />(Element positionné)</div>
+<button class="Anchor">Bouton (Ancre)</button>
+```
+
+```css
+body {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  height: 100vh;
+}
+
+button.Anchor {
+  /* Element style */
+  height: 40px;
+  margin-top: 30vh;
+  margin-left: 500px;
+  appearance: none;
+  background-color: lightcoral;
+  border: 2px solid maroon;
+  border-radius: 4px;
+}
+
+.Tooltip {
+  /* Element style */
+  max-width: 200px;
+  background-color: lightblue;
+  width: 100%;
+  height: 100px;
+  border: 2px solid darkblue;
+  font-family: sans-serif;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+```
 
 **La première étape est de nommer l'ancre**. Pour cela il suffit de lui ajouter la propriété `anchor-name` et de lui donner un nom au choix qui commence par `--`. Par exemple&nbsp;:
 
@@ -219,6 +261,69 @@ position-try-options: --bottom-position, --right-position, --left-position;
 
 Et voilà&nbsp;! [Vous pouvez tester (sur un navigateur compatible) ce Codepen](https://codepen.io/Alice-Fauquet/pen/zYVWYMN), en redimensionnant la fenêtre verticalement et horizontalement (l'ancre n'est pas centrée, c'est pour voir plus facilement le changement de position de l'élément).
 
+Voici le code final de notre bouton et son tooltip&nbsp;:
+
+```html
+<div class="Tooltip">Tooltip<br />(Element positionné)</div>
+<button class="Anchor">Bouton (Ancre)</button>
+```
+
+```css
+body {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  height: 100vh;
+}
+
+@position-try --bottom-position {
+  inset-area: bottom;
+}
+
+@position-try --left-position {
+  inset-area: left;
+}
+
+@position-try --right-position {
+  inset-area: right;
+}
+
+button.Anchor {
+  /* Anchor position API */
+  anchor-name: --button-anchor;
+
+  /* Element style */
+  height: 40px;
+  margin-top: 30vh;
+  margin-left: 500px;
+  appearance: none;
+  background-color: lightcoral;
+  border: 2px solid maroon;
+  border-radius: 4px;
+}
+
+.Tooltip {
+  /* Anchor position API */
+  position: absolute;
+  position-anchor: --button-anchor;
+  inset-area: top;
+  position-try-options: --bottom-position, --right-position, --left-position;
+
+  /* Element style */
+  max-width: 200px;
+  background-color: lightblue;
+  width: 100%;
+  height: 100px;
+  border: 2px solid darkblue;
+  font-family: sans-serif;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+```
+
 ### Ajouter des préférences de fallback
 Avec `position-try-order` on peut choisir quel fallback est le plus adapté en fonction de l'espace disponible&nbsp;:
 -   `most-width` va prioriser l'endroit où l'élément positionné aura le plus d'espace en largeur
@@ -274,7 +379,7 @@ Mettons que notre bouton soit dans un bloc qui possède son propre scrolling (un
 
 Par défaut, si on ne met pas de `position-visibility`, l'élément positionable **ne va pas disparaître** même lorsque l'ancre ne sera plus visible&nbsp;!
 
-## Implémentation en Progressive Enhancement
+## Implémentation en progressive enhancement
 
 Il est possible de faire une implémentation en progressive enhancement, c'est à dire qu'on va utiliser l'Anchor Positioning API pour les navigateurs compatibles, et garder une implémentation "traditionnelle" pour les navigateurs non compatibles.
 
