@@ -10,19 +10,19 @@ categories: [javascript]
 authors:
   - afauquet
 cover:
-  alt: A la découverte de l'Anchor positioning API
+  alt: À la découverte de l'Anchor positioning API
   path: /imgs/articles/2024-08-22-css-anchor-positioning-api/cover.jpg
 keywords:
 - css
 - javascript
 ---
 
-## Qu'est-ce que c'est&nbsp;?
+## L'anchor positioning API, qu'est-ce que c'est&nbsp;?
 
 L'Anchor Positioning API est une nouvelle API CSS qui permet de **positionner un élément appelé "ancre", par rapport à un autre élément appelé "élément positionné"**. C'est le genre de comportement qu'on veut avoir pour les popovers ou les tooltips par exemple&nbsp;! La vraie force de l'Anchor Positioning API, c'est qu'elle permet à l'élément de se positionner **dynamiquement** en fonction de s'il a de la place ou pas pour apparaître, ce qui ne pouvait se faire jusqu'à présent que plutôt péniblement en JavaScript.
 Nous allons voir dans cet article comment la mettre en place simplement, et quels sont ses différentes fonctionnalités.
 
-## Quelques mises en garde
+### Quelques mises en garde
 
 L'Anchor Positioning API est pour l'instant expérimentale, et implémentée sur les dernières versions des navigateurs basés sur Chromium&nbsp;: Chrome, Edge, Opera... [Voir le tableau des compatibilités de l'Anchor Positioning API](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor#browser_compatibility)
 
@@ -30,11 +30,11 @@ L'Anchor Positioning API est pour l'instant expérimentale, et implémentée sur
 
 Aussi, certains tooltips et popovers ont une petite flèche qui relie l'ancre à l'élément positionné. Malheureusement aujourd'hui l'Anchor Positioning API ne peut pas gérer nativement la direction de cette flèche. Cette problématique pourrait être réglée dans le futur, avec l'[ajout d'un pseudo élément `::tether` qui est en discussion](https://github.com/w3c/csswg-drafts/issues/9271) pour le niveau 2 de cette API.
 
-Enfin comme il s'agit d'une API expérimentale il est possible que des parties de cet article deviennent obsolètes. Je le mettrais à jour si c'est le cas&nbsp;!
+Enfin comme il s'agit d'une API expérimentale il est possible que des parties de cet article deviennent obsolètes. Je le mettrai à jour si c'est le cas&nbsp;!
 
-## Comment ça marche&nbsp;?
+### Comment ça marche&nbsp;?
 
-Comme nous l'avons vus plus tôt, cette API se base sur deux éléments&nbsp;: l'ancre et l'élément positionné. **L'ancre est l'élément qui ne va pas bouger, et à partir duquel va se placer l'élément positionné**. Nous allons utiliser dans cet article le cas concret suivant&nbsp;: l'ancre sera un bouton qui ouvre un tooltip, et le tooltip relatif au bouton sera l'élément positionné. On ne va pas s'occuper de l'interactivité entre ces éléments, juste de l'apparence que les deux éléments doivent avoir une fois le tooltip visible.
+Comme nous l'avons vu plus tôt, cette API se base sur deux éléments&nbsp;: l'ancre et l'élément positionné. **L'ancre est l'élément qui ne va pas bouger, et à partir duquel va se placer l'élément positionné**. Nous allons utiliser dans cet article le cas concret suivant&nbsp;: l'ancre sera un bouton qui ouvre un tooltip, et le tooltip relatif au bouton sera l'élément positionné. On ne va pas s'occuper de l'interactivité entre ces éléments, juste de l'apparence que les deux éléments doivent avoir une fois le tooltip visible.
 
 ![Schéma basique d'un bouton (ancre) et son tooltip (élément positionné)]({BASE_URL}/imgs/articles/2024-08-22-css-anchor-positioning-api/basic-schema.jpg?width=400)
 Figure: *Schéma basique d'un bouton (ancre) et son tooltip (élément positionné)*
@@ -106,7 +106,7 @@ Figure: *Schéma qui présente le tooltip positionné en haut à droite par rapp
 Maintenant il y a **deux syntaxes possibles** pour arriver au même résultat&nbsp;:
 
 - La syntaxe **implicite** avec deux propriétés,
-- La syntaxe **explicite** avec une seule propriété, qui est la seule à fonctionner lorsque l'élément positionné est relatif à plusieurs ancres. Pour utiliser plusieurs ancres il suffit d'indiquer leur nom en premier paramètre de `anchor()`, le reste est similaire à l'utilise d'une seule ancre.
+- La syntaxe **explicite** avec une seule propriété, qui est la seule à fonctionner lorsque l'élément positionné est relatif à plusieurs ancres. Pour utiliser plusieurs ancres il suffit d'indiquer leur nom en premier paramètre de `anchor()`, le reste est similaire à l'utilisation d'une seule ancre.
 
 Voici la syntaxe implicite qui correspond à notre exemple&nbsp;:
 
@@ -147,8 +147,8 @@ On peut aussi utiliser les valeurs de "logical properties"&nbsp;:
 
 [En savoir plus sur les logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values)
 
-## Comment centrer l'élément positionné&nbsp;?
-Tout ça c'est bien, mais si on veut centrer notre tooltip alors&nbsp;? Et bien **on va utiliser d'autres propriétés**, `justify-self`, `justify-items`,  `align-self` et `align-items`, dans lesquelles on va donner la valeur `anchor-center`.
+### Comment centrer l'élément positionné&nbsp;?
+Tout ça c'est bien, mais si on veut centrer notre tooltip alors&nbsp;? Eh bien **on va utiliser d'autres propriétés**, `justify-self`, `justify-items`,  `align-self` et `align-items`, dans lesquelles on va donner la valeur `anchor-center`.
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Note</p>
 <code>justify</code> va s'appliquer sur le <code>main-axis</code> (ici l'axe horizontal) et <code>align</code> sur le <code>cross-axis</code> (ici l'axe vertical).
@@ -169,7 +169,7 @@ Donc si on veut maintenant que notre tooltip soit en haut, centré par rapport a
 }
 ```
 
-## Une autre façon de gérer la position
+### Une autre façon de gérer la position
 
 Si cette façon de positionner l'élément à l'ancre vous semble un peu compliquée vous êtes vraisemblablement du même avis que celui des personnes qui ont créés cette API&nbsp;: **il existe une autre façon de gérer la position de notre élément qui implique de visualiser la situation autrement**.
 
@@ -193,7 +193,7 @@ On va pouvoir utiliser dans `inset-area` beaucoup de valeurs possibles&nbsp;:
 Encore une fois on va pouvoir utiliser les valeurs logiques (avec <code>block</code> et <code>inline</code>).
 </div>
 
-Pour aider à visualier cette grille et les nombreuses propriété de `inseat-area`, les devs de Chrome on créé un outil de visualisation très pratique&nbsp;: https://anchor-tool.com/
+Pour aider à visualier cette grille et les nombreuses propriétés de `inseat-area`, les devs de Chrome on créé un outil de visualisation très pratique&nbsp;: https://anchor-tool.com/
 
 Si on veut utiliser `inset-area` avec notre exemple qui place le tooltip centré au dessus de l'ancre, voici ce que ça donnerait&nbsp;:
 
@@ -205,7 +205,7 @@ Si on veut utiliser `inset-area` avec notre exemple qui place le tooltip centré
 }
 ```
 
-## Changement de position dynamique
+### Changement de position dynamique
 On arrive dans le coeur du sujet, ce qui pour moi constitue le vrai plus de cette API&nbsp;: **elle permet à l'élément positionné de changer tout seul de position** lorsqu'il ne peut pas / plus apparaître dans le bloc qui le contient.
 
 Pour cela on va créer une position de remplacement avec `@position-try`.
@@ -230,7 +230,7 @@ On va ensuite utiliser `--bottom-position` dans le tooltip, grâce à la propri�
 ```
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Note</p>
-A partir de Chromium 128 <code>position-try-options</code> s'appellera <code>position-try-fallbacks</code>
+À partir de Chromium 128 <code>position-try-options</code> s'appellera <code>position-try-fallbacks</code>
 </div>
 
 ### Enchainer les positions de fallback
@@ -239,7 +239,7 @@ La magie de `position-try-options` c'est qu'**on peut enchainer les positions po
 
 Imaginons le cas suivant&nbsp;: l'élément se positionne par défaut en haut de l'ancre. Si il n'a pas la place de s'afficher, alors on veut le replacer en bas. S'il n'y a pas de place en bas, alors on veut l'avoir à droite de l'ancre. Enfin si la droite n'a pas assez d'espace disponible alors on veut afficher l'élément à gauche de l'ancre, si vraiment il n'a pas d'autre endroit où aller.
 
-Imaginez-vous devoir implémenter ce comportement en JavaScript. Ou bien peut-être l'avez vous déjà fait et c'est pour cette raison que vous vous intéressez à cette API&nbsp;? En général ça donne lieu à l'écriture de calculs pas vraiment passionants sur la taille de l'élément à afficher, sa position, la place disponible par rapport au viewport, etc...
+Imaginez-vous devoir implémenter ce comportement en JavaScript. Ou bien peut-être l'avez vous déjà fait et c'est pour cette raison que vous vous intéressez à cette API&nbsp;? En général ça donne lieu à l'écriture de calculs pas vraiment passionants sur la taille de l'élément à afficher, sa position, la place disponible par rapport au viewport, etc.
 
 Eh bien ce temps est révolu&nbsp;! Enfin presque parce que l'API est expérimentale, patati patata... mais elle nous donne de l'espoir pour un futur pas si lointain où on pourra juste créer les positions correspondantes&nbsp;:
 
@@ -331,7 +331,7 @@ Avec `position-try-order` on peut choisir quel fallback est le plus adapté en f
 
 On a aussi accès aux version "logical" de ces valeurs&nbsp;: `most-block-size` et `most-inline-size`.
 
-## Faire un `flip` encore plus facilement
+### Faire un `flip` encore plus facilement
 
 Si jamais on a **le besoin très simple de passer l'élément d'un côté à l'autre**, l'API propose une syntaxe pour arriver au même résultat, avec les 3 valeurs suivantes à passer dans `position-try-options`&nbsp;:
 
@@ -358,7 +358,7 @@ Pour l'utiliser, on peut supprimer `@position-try --bottom-position` et directem
 
 ### Récupérer la taille de l'ancre avec `anchor-size()`
 
-L'Anchor Positioning API a encore quelques tours dans son sac. Le premier est `anchor-size()` qui va **permettre d'utiliser la taille (`width`, `height`, `block` ou `inline`) de l'ancre** dans l'élément positionable. Encore une fois pour l'utiliser on va avoir besoin d'utilise la syntaxe explicite, avec le nom de l'ancre indiqué dans `position-anchor`. On peut aussi l'utiliser dans `calc()` pour l'utiliser dans des calculs.
+L'Anchor Positioning API a encore quelques tours dans son sac. Le premier est `anchor-size()` qui va **permettre d'utiliser la taille (`width`, `height`, `block` ou `inline`) de l'ancre** dans l'élément positionnable. Encore une fois pour l'utiliser on va avoir besoin d'utiliser la syntaxe explicite, avec le nom de l'ancre indiqué dans `position-anchor`. On peut aussi l'utiliser dans `calc()` pour l'utiliser dans des calculs.
 Par exemple, si on veut que la largeur de notre tooltip ne soit pas plus de 2 fois plus large que notre bouton, on peut faire&nbsp;:
 
 ```css
@@ -372,10 +372,10 @@ Par exemple, si on veut que la largeur de notre tooltip ne soit pas plus de 2 fo
 
 ### Gérer la visibilité de l'ancre
 
-Mettons que notre bouton soit dans un bloc qui possède son propre scrolling (un élément avec `overflow-y: scroll` par exemple). Si on ouvre l'ancre en cliquant sur le bouton puis qu'on scroll jusqu'à ce que le bouton commence à disparaître, qu'est-ce qu'il doit se passer&nbsp;? C'est à cette question de va répondre le propriété `position-visibility`. Grâce à elle, **on peut choisir un peu plus précisément le comportement de l'élément positionable lorsque son ancre ou lui même commence à disparaître**. Pour cela nous avons deux valeurs&nbsp;:
+Mettons que notre bouton soit dans un bloc qui possède son propre scrolling (un élément avec `overflow-y: scroll` par exemple). Si on ouvre l'ancre en cliquant sur le bouton puis qu'on scroll jusqu'à ce que le bouton commence à disparaître, qu'est-ce qu'il doit se passer&nbsp;? C'est à cette question que va répondre le propriété `position-visibility`. Grâce à elle, **on peut choisir un peu plus précisément le comportement de l'élément positionable lorsque son ancre ou lui-même commence à disparaître**. Pour cela nous avons deux valeurs&nbsp;:
 
 - `position-visibility: anchors-visible` va permettre de garder l'élément positionable visible **jusqu'à ce que l'ancre ne soit plus visible**. Dès qu'un bout de l'ancre n'est plus visible, l'ancre disparaît, et réaparaît lorsque l'ancre redevient entièrement visible.
-- `position-visibility: no-overflow` va permettre de **cacher l'élément positionable dès que celui-ci comment à disparaître de la page**. La visibilité de l'ancre n'a pas de rôle à jouer dans la visibilité ou non de l'élément positionable.
+- `position-visibility: no-overflow` va permettre de **cacher l'élément positionable dès que celui-ci commence à disparaître de la page**. La visibilité de l'ancre n'a pas de rôle à jouer dans la visibilité ou non de l'élément positionable.
 
 Par défaut, si on ne met pas de `position-visibility`, l'élément positionable **ne va pas disparaître** même lorsque l'ancre ne sera plus visible&nbsp;!
 
