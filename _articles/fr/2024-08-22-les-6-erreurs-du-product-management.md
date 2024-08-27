@@ -68,7 +68,7 @@ Vos meilleures armes seront les feedbacks utilisateurs déjà récoltées à leu
 Sans oublier les metrics qui seront importants d’avoir mis en place et suivi afin de valoriser cette fois-ci l’apport pour l’entreprise.
 Ce qui nous amène cette fois à notre dernière erreur …  
 
-## Ne pas penser KPIs dès la conception
+## Erreur n°6 : Ne pas penser KPIs dès la conception
 Quand on se lance dans le product discovery, puis la conception fonctionnelle des features à réaliser on pense tout de suite spécifications fonctionnelles, enjeu business, acceptance criteria, parfois spécificité technique en fonction de la latéralité de votre intervention par rapport à l’équipe, wireframes ou même maquettes détaillées, etc…
 
 Il est moins évident cependant de penser dès le départ aux [indicateurs de performance et de réussite](https://eleven-labs.com/fixer-okr/) à mettre en place pour s’assurer de l’impact attendu de la fonctionnalité une fois développée. 
