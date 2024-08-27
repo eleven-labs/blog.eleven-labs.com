@@ -56,7 +56,7 @@ N’oubliez donc pas de remettre en perspective votre roadmap et vos priorisatio
 Règle d’or qui peut paraître immanquable en tant que Product Manager, il reste néanmoins important de l’ajouter à la liste des biais et des erreurs faites par les organisations qui s'improvisent “Produit” aujourd’hui.
 On ne sait pas mieux que nos utilisateurs ce dont ils ont besoin, que ce soit en tant que PM, stakeholders ou métiers. 
 
-Ne passez donc pas à côté des interviews utilisateurs et si vous en avez l’opportunité des tests utilisateurs pré-développement sur wireframe ou prototype ou sur votre outil après implémentation. Les feedbacks que vous récolterez auront énormément de valeur et renforceront le lien entre équipe et utilisateurs. Vous remarquerez très vite par ailleurs que ces derniers, s’ils comprennent votre démarche et constatent du réel intérêt qu’on porte à leur besoin, ils seront toujours partants pour vous accompagner dans votre démarche.
+Ne passez donc pas à côté des interviews utilisateurs et si vous en avez l’opportunité des tests utilisateurs en pré-développement sur wireframe, prototype ou sur votre outil après implémentation. Les feedbacks que vous récolterez auront énormément de valeur et renforceront le lien entre équipe et utilisateurs. Vous remarquerez très vite par ailleurs que ces derniers, s’ils comprennent votre démarche et constatent du réel intérêt qu’on porte à leur besoin, seront toujours partants pour vous accompagner dans votre démarche.
 
 À ce titre, n’hésitez pas non plus à vous rendre directement sur le terrain pour être le plus en condition réelle avec vos utilisateurs ! 
 
