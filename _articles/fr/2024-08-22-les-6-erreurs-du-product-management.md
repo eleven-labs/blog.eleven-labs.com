@@ -29,7 +29,7 @@ Le premier biais dans lequel tombent les organisations aujourd’hui sans expér
 
 Et tout notre intérêt en tant que PM est de pouvoir livrer de la valeur, sprint par sprint ou release par release aux utilisateurs finaux. Sans quoi l’utilisabilité et l’adoption de l’outil ne peut être garantie, et donc le temps investi dans le développement ne peut être valorisé.
 
-Posez-vous donc toujours la question du “Pourquoi” une fonctionnalité est priorisée dans votre backlog ou présente dans votre roadmap. Si vous n’avez pas d’enjeu business ou utilisateur à aligner en face, c’est que cette fonctionnalité n’a pas sa place dans la “To do” de vos développeurs. 
+Posez-vous donc toujours la question du “Pourquoi” une [fonctionnalité est priorisée dans votre backlog](https://eleven-labs.com/prioriser-backlog/) ou présente dans votre roadmap. Si vous n’avez pas d’enjeu business ou d'utilisateur à aligner en face, c’est que cette fonctionnalité n’a pas sa place dans la “To do” de vos développeurs. 
 Dans un registre un peu moins extrême, si vous estimez qu’elle n’est pas là pour rien, assurez vous de la valoriser afin de pouvoir la prioriser correctement avant de l’embarquer.
 Ce qui fait une bonne transition pour le biais suivant …
 
