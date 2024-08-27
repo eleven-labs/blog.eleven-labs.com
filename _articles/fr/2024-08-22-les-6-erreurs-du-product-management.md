@@ -33,7 +33,7 @@ Posez-vous donc toujours la question du “Pourquoi” une [fonctionnalité est 
 Dans un registre un peu moins extrême, si vous estimez qu’elle n’est pas là pour rien, assurez vous de la valoriser afin de pouvoir la prioriser correctement avant de l’embarquer.
 Ce qui fait une bonne transition pour le biais suivant …
 
-## Priorisation sur des critères subjectifs
+## Erreur n°2 : Priorisation sur des critères subjectifs
 En effet, en parlant de priorisation, il ne faut pas faire rentrer la part subjective dans le calcul. 
 Soit parce que votre client pense savoir ce qui est bon ou pertinent pour ses utilisateurs à leur place (ou vous-même pouvez prendre le raccourci d’avoir ce positionnement). Ce qui peut partir d’une bonne intention mais finalement ne permet pas de prouver que ces fonctionnalités subjectives auront la moindre valeur. 
 
