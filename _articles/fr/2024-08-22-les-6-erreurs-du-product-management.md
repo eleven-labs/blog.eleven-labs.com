@@ -22,7 +22,7 @@ Aujourd’hui on parle de product management à tout va, pour qualifier tout et 
 
 Et comme pour les dérives autour des organisations agiles, cela se fait de nouveau sans prendre en considération le cœur du fonctionnement d’un bon product management. Ce qui entraîne assez logiquement la mise en place d’organisations produits sur des bases bancales, non adaptées et souvent vouées à l’échec. 
 
-Comment identifier et éviter ces erreurs ? La liste n’est pas exhaustive mais vous permettra déjà de mieux appréhender votre méthodologie produit. 
+Comment identifier et éviter ces erreurs ? La liste n’est pas exhaustive mais vous permettra déjà de mieux appréhender votre [méthodologie produit](https://eleven-labs.com/strategie-produit/). 
 
 ## Ne penser qu’aux outputs 
 Le premier biais dans lequel tombent aujourd’hui les organisations aujourd’hui sans expérience en product management ou sans product manager formés au produit est de se focus uniquement sur la livraison de multiples features sans réfléchir à la valeur ajoutée de cette production. 
