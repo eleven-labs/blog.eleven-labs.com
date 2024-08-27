@@ -44,7 +44,7 @@ Enfin, autre raccourci souvent vu et pris dans nos domaines et qui n’apporte q
 En résumé, vérifiez toujours lors de la priorisation de vos fonctionnalités qu’elles le sont pour les bonnes raisons, en recroisant le besoin et les apports business visés.
 Ce qui nous amène à notre troisième biais…
 
-## Oublier les enjeux business
+## Erreur n°3 : Oublier les enjeux business
 En tant que product manager il est en effet souvent bien plus simple d’identifier et prioriser ce qui apportera de la valeur directe à nos utilisateurs finaux. Parce que celle-ci est parfois plus tangible, directement exprimée ou mise en lumière par des tests ou interviews utilisateurs. Il est donc aisé de ne pas pousser la réflexion plus loin en mettant en perspective la valeur qu’aura une feature pour l’entreprise par rapport à une autre. 
 
 L’important de recroiser les besoins utilisateurs ainsi que les apports business est de ne pas oublier qu’un des objectifs à travers la conception, le développement et globalement la production d’un produit est de permettre une rentabilité pour l’entreprise elle-même. 
