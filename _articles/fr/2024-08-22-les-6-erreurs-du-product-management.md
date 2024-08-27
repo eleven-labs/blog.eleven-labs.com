@@ -58,7 +58,7 @@ On ne sait pas mieux que nos utilisateurs ce dont ils ont besoin, que ce soit en
 
 Ne passez donc pas à côté des interviews utilisateurs et si vous en avez l’opportunité des tests utilisateurs pré-développement sur wireframe ou prototype ou sur votre outil après implémentation. Les feedbacks que vous récolterez auront énormément de valeur et renforceront le lien entre équipe et utilisateurs. Vous remarquerez très vite par ailleurs que ces derniers, s’ils comprennent votre démarche et constatent du réel intérêt qu’on porte à leur besoin, ils seront toujours partants pour vous accompagner dans votre démarche.
 
-A ce titre, n’hésitez pas non plus à vous rendre directement sur le terrain pour être le plus en condition réelle avec vos utilisateurs ! 
+À ce titre, n’hésitez pas non plus à vous rendre directement sur le terrain pour être le plus en condition réelle avec vos utilisateurs ! 
 
 ## Ne pas démontrer par l’exemple
 Avant de se lancer dans des chantiers trop conséquents, il est toujours préférable de penser petit et de tester auprès des utilisateurs un postulat avant d’y lancer la majorité des ressources. 
