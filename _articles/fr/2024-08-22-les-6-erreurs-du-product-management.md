@@ -63,7 +63,7 @@ Ne passez donc pas à côté des interviews utilisateurs et si vous en avez l’
 ## Erreur n°5 : Ne pas démontrer par l’exemple
 Avant de se lancer dans des chantiers trop conséquents, il est toujours préférable de penser petit et de tester auprès des utilisateurs un postulat avant d’y lancer la majorité des ressources. 
 
-Ce qui vous permettra par la même occasion de donner du poids à la production déjà livrée auprès des stakeholders et / ou métiers, et ce aussi afin de les rassurer avant de se lancer dans la suite. 
+Ceci vous permettra par la même occasion de donner du poids à la production déjà livrée auprès des stakeholders et/ou métiers mais également de les rassurer avant de lancer la suite du projet. 
 Votre meilleure arme sera de leur partager les feedbacks utilisateurs déjà récoltés afin de mettre en lumière l’importance de la nouvelle feature.
 Sans oublier la mise en place et le suivi des metrics afin de valoriser cette fois-ci l’apport pour l’entreprise.
 Ce qui nous amène cette fois à notre dernière erreur …  
