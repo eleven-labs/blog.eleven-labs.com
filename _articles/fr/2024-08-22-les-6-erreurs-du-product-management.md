@@ -10,7 +10,7 @@ categories: [agile]
 authors:
   - mae
 cover:
-  alt: Les 6 erreurs du Product Management
+  alt: Quelles erreurs ne faut-il pas commettre en product management ?
   path: /imgs/articles/2024-07-23-tester-spark-avec-pytest/cover.jpg
 keywords: 
 - product management
