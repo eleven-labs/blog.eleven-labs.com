@@ -69,10 +69,12 @@ Sans oublier la mise en place et le suivi des metrics afin de valoriser cette fo
 Ce qui nous amène cette fois à notre dernière erreur …  
 
 ## Erreur n°6 : Ne pas penser KPIs dès la conception
-Quand on se lance dans le [product discovery,](https://eleven-labs.com/strategie-produit/product-discovery/) puis la conception fonctionnelle des features à réaliser on pense tout de suite spécifications fonctionnelles, enjeu business, acceptance criteria, parfois spécificités techniques en fonction de la latéralité de votre intervention par rapport à l’équipe, wireframes ou même maquettes détaillées, etc…
+Quand on se lance dans le [product discovery,](https://eleven-labs.com/strategie-produit/product-discovery/) puis la conception fonctionnelle des features à réaliser, on pense tout de suite spécifications fonctionnelles, enjeu business, acceptance criteria. Parfois on pousse jusqu'aux spécificités techniques en fonction de la latéralité de notre intervention, wireframes ou même maquettes détaillées.
 
 Il est moins évident cependant de penser dès le départ aux [indicateurs de performance et de réussite](https://eleven-labs.com/fixer-okr/) à mettre en place pour s’assurer de l’impact attendu de la fonctionnalité une fois développée. 
 Cela vous sécurisera aussi bien dans la priorisation de votre roadmap qu’auprès des stakeholders qui seront rassurés et vous accorderont toute confiance. 
 
 ## Conclusion
 Pour conclure, ces quelques erreurs simples à éviter vous permettront de mener à bien la conception et la production de votre produit avec plus de maîtrise de votre roadmap, backlog et priorisation. Ainsi que plus de certitude quant à vos choix et leur défense auprès des métiers et stakeholders. 
+
+Et si vous êtes en quête de bonnes pratiques sur l'organisation produit en général, [vous trouverez ici notre livre blanc](https://eleven-labs.com/guides/organisation-scale-up/) co-écrit avec l'ensemble des Product Managers chez Eleven Labs. 
