@@ -22,7 +22,7 @@ keywords:
 L'Anchor Positioning API est une nouvelle API CSS qui permet de **positionner un élément appelé "ancre", par rapport à un autre élément appelé "élément positionné"**. C'est le genre de comportement qu'on veut avoir pour les popovers ou les tooltips par exemple&nbsp;! La vraie force de l'Anchor Positioning API, c'est qu'elle permet à l'élément de se positionner **dynamiquement** en fonction de s'il a de la place ou pas pour apparaître, ce qui ne pouvait se faire jusqu'à présent que plutôt péniblement en JavaScript.
 Nous allons voir dans cet article comment la mettre en place simplement, et quels sont ses différentes fonctionnalités.
 
-### Quelques mises en garde
+## Une fonctionnalité encore expérimentale
 
 L'Anchor Positioning API est pour l'instant expérimentale, et implémentée sur les dernières versions des navigateurs basés sur Chromium&nbsp;: Chrome, Edge, Opera... [Voir le tableau des compatibilités de l'Anchor Positioning API](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor#browser_compatibility)
 
@@ -32,7 +32,7 @@ Aussi, certains tooltips et popovers ont une petite flèche qui relie l'ancre à
 
 Enfin comme il s'agit d'une API expérimentale il est possible que des parties de cet article deviennent obsolètes. Je le mettrai à jour si c'est le cas&nbsp;!
 
-### Comment ça marche&nbsp;?
+## L'anchor positioning API&nbsp;: comment ça marche&nbsp;?
 
 Comme nous l'avons vu plus tôt, cette API se base sur deux éléments&nbsp;: l'ancre et l'élément positionné. **L'ancre est l'élément qui ne va pas bouger, et à partir duquel va se placer l'élément positionné**. Nous allons utiliser dans cet article le cas concret suivant&nbsp;: l'ancre sera un bouton qui ouvre un tooltip, et le tooltip relatif au bouton sera l'élément positionné. On ne va pas s'occuper de l'interactivité entre ces éléments, juste de l'apparence que les deux éléments doivent avoir une fois le tooltip visible.
 
@@ -147,7 +147,7 @@ On peut aussi utiliser les valeurs de "logical properties"&nbsp;:
 
 [En savoir plus sur les logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values)
 
-### Comment centrer l'élément positionné&nbsp;?
+## Comment centrer l'élément positionné&nbsp;?
 Tout ça c'est bien, mais si on veut centrer notre tooltip alors&nbsp;? Eh bien **on va utiliser d'autres propriétés**, `justify-self`, `justify-items`,  `align-self` et `align-items`, dans lesquelles on va donner la valeur `anchor-center`.
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Note</p>
@@ -169,7 +169,7 @@ Donc si on veut maintenant que notre tooltip soit en haut, centré par rapport a
 }
 ```
 
-### Une autre façon de gérer la position
+## Une autre façon de gérer la position
 
 Si cette façon de positionner l'élément à l'ancre vous semble un peu compliquée vous êtes vraisemblablement du même avis que celui des personnes qui ont créés cette API&nbsp;: **il existe une autre façon de gérer la position de notre élément qui implique de visualiser la situation autrement**.
 
@@ -205,7 +205,7 @@ Si on veut utiliser `inset-area` avec notre exemple qui place le tooltip centré
 }
 ```
 
-### Changement de position dynamique
+## Le changement de position dynamique
 On arrive dans le coeur du sujet, ce qui pour moi constitue le vrai plus de cette API&nbsp;: **elle permet à l'élément positionné de changer tout seul de position** lorsqu'il ne peut pas / plus apparaître dans le bloc qui le contient.
 
 Pour cela on va créer une position de remplacement avec `@position-try`.
@@ -354,9 +354,7 @@ Pour l'utiliser, on peut supprimer `@position-try --bottom-position` et directem
 }
 ```
 
-## D'autres features sympatiques
-
-### Récupérer la taille de l'ancre avec `anchor-size()`
+## Récupérer la taille de l'ancre avec `anchor-size()`
 
 L'Anchor Positioning API a encore quelques tours dans son sac. Le premier est `anchor-size()` qui va **permettre d'utiliser la taille (`width`, `height`, `block` ou `inline`) de l'ancre** dans l'élément positionnable. Encore une fois pour l'utiliser on va avoir besoin d'utiliser la syntaxe explicite, avec le nom de l'ancre indiqué dans `position-anchor`. On peut aussi l'utiliser dans `calc()` pour l'utiliser dans des calculs.
 Par exemple, si on veut que la largeur de notre tooltip ne soit pas plus de 2 fois plus large que notre bouton, on peut faire&nbsp;:
@@ -370,7 +368,7 @@ Par exemple, si on veut que la largeur de notre tooltip ne soit pas plus de 2 fo
 }
 ```
 
-### Gérer la visibilité de l'ancre
+## Gérer la visibilité de l'ancre
 
 Mettons que notre bouton soit dans un bloc qui possède son propre scrolling (un élément avec `overflow-y: scroll` par exemple). Si on ouvre l'ancre en cliquant sur le bouton puis qu'on scroll jusqu'à ce que le bouton commence à disparaître, qu'est-ce qu'il doit se passer&nbsp;? C'est à cette question que va répondre le propriété `position-visibility`. Grâce à elle, **on peut choisir un peu plus précisément le comportement de l'élément positionable lorsque son ancre ou lui-même commence à disparaître**. Pour cela nous avons deux valeurs&nbsp;:
 
