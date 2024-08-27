@@ -18,7 +18,7 @@ keywords:
 - product owner
 ---
 
-Aujourd’hui on parle de product management à tout va, pour qualifier tout et n’importe quoi. Un peu comme de l’agile il y a encore quelques années, sous ce prétexte il fallait être flexible et s’adapter à tous les caprices de la direction ou des stakeholders.
+Aujourd’hui on parle de [product management](https://eleven-labs.com/strategie-produit/product-management/) à tout va, pour qualifier tout et n’importe quoi. Un peu comme de l’agile il y a encore quelques années, sous ce prétexte il fallait être flexible et s’adapter à tous les caprices de la direction ou des stakeholders.
 
 Et comme pour les dérives autour des organisations agiles, cela se fait de nouveau sans prendre en considération le cœur du fonctionnement d’un bon product management. Ce qui entraîne assez logiquement la mise en place d’organisations produits sur des bases bancales, non adaptées et souvent vouées à l’échec. 
 
