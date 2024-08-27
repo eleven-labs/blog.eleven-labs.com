@@ -18,7 +18,7 @@ keywords:
   - di
 ---
 
-## Injection de dépendances
+## Injection de dépendances : définition
 L'injection de dépendances est un mécanisme qui permet d'implémenter le principe de l'inversion de contrôle.
 L'idée est de créer dynamiquement (_injecter_) les dépendances d'une classe en utilisant une description (un fichier de configuration par exemple).
 Cette méthode va nous permettre de ne plus exprimer les dépendances entre les composants dans le code de manière statique, mais de les déterminer dynamiquement à l'exécution.
@@ -109,7 +109,7 @@ Les instances des classes _B_ et _C_ seront créées par une classe dont la resp
 L'intérêt principal de l'injection de dépendances est de séparer la création des objects de leur utilisation.
 De plus, en injectant nos dépendances, nous pouvons utiliser des interfaces au lieu des classes et ainsi éviter un couplage fort entre nos classes.
 
-## Dans Symfony
+## Comment fonctionne le mécanisme d'injection de dépendances dans Symfony ?
 Dans le framework Symfony, l'injection de dépendances est réalisée via le _Container_ de services, qui est construit par le _ContainerBuilder_. Celui-ci est initialisé par le _Kernel_.
 
 ### Service Container
@@ -361,7 +361,7 @@ class Kernel extends BaseKernel
 
 Grâce à mon tag personnalisé, je peux très facilement ajouter un nouveau type de document à générer dans l'application, sans devoir modifier le reste de l'application.
 
-### Pour aller plus loin
+## Conclusion : pour aller plus loin
 Nous venons de parcourir ensemble en grandes lignes l'injection de dépendances dans Symfony.
 C'est un composant très puissant et central au framework.
 Si vous voulez en savoir plus, n'hésitez pas à parcourir la [documentation très bien faite](https://symfony.com/doc/current/service_container.html#learn-more).
