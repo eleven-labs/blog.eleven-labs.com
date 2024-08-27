@@ -65,7 +65,7 @@ Avant de se lancer dans des chantiers trop conséquents, il est toujours préfé
 
 Ce qui vous permettra par la même occasion de donner du poids à la production déjà livrée auprès des stakeholders et / ou métiers, et ce aussi afin de les rassurer avant de se lancer dans la suite. 
 Vos meilleures armes seront les feedbacks utilisateurs déjà récoltées à leur partager pour mettre en lumière l’importance de la nouvelle feature.
-Sans oublier les metrics qui seront importants d’avoir mis en place et suivi afin de valoriser cette fois-ci l’apport pour l’entreprise.
+Sans oublier la mise en place et le suivi des metrics afin de valoriser cette fois-ci l’apport pour l’entreprise.
 Ce qui nous amène cette fois à notre dernière erreur …  
 
 ## Erreur n°6 : Ne pas penser KPIs dès la conception
