@@ -52,7 +52,7 @@ Que ce soit financièrement, en faisant gagner du temps à ses ressources, pour 
 
 N’oubliez donc pas de remettre en perspective votre roadmap et vos priorisations aussi en vous mettant à la place de votre entreprise.
 
-## Ne pas communiquer avec les utilisateurs
+## Erreur n°4 : Ne pas communiquer avec les utilisateurs
 Règle d’or qui peut paraître immanquable en tant que Product Manager, il reste néanmoins important de l’ajouter à la liste des biais et des erreurs faites par les organisations qui s'improvisent “Produit” aujourd’hui.
 On ne sait pas mieux que nos utilisateurs ce dont ils ont besoin, que ce soit en tant que PM, stakeholders ou métiers. 
 
