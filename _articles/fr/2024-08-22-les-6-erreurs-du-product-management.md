@@ -60,7 +60,7 @@ Ne passez donc pas à côté des interviews utilisateurs et si vous en avez l’
 
 À ce titre, n’hésitez pas non plus à vous rendre directement sur le terrain pour être le plus en condition réelle avec vos utilisateurs ! 
 
-## Ne pas démontrer par l’exemple
+## Erreur n°5 : Ne pas démontrer par l’exemple
 Avant de se lancer dans des chantiers trop conséquents, il est toujours préférable de penser petit et de tester auprès des utilisateurs un postulat avant d’y lancer la majorité des ressources. 
 
 Ce qui vous permettra par la même occasion de donner du poids à la production déjà livrée auprès des stakeholders et / ou métiers, et ce aussi afin de les rassurer avant de se lancer dans la suite. 
