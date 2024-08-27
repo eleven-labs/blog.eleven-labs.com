@@ -37,7 +37,7 @@ Ce qui fait une bonne transition pour le biais suivant …
 En effet, en parlant de priorisation, il ne faut pas faire rentrer la part subjective dans le calcul. 
 Soit parce que votre client pense savoir ce qui est bon ou pertinent pour ses utilisateurs à leur place (ou vous-même pouvez prendre le raccourci d’avoir ce positionnement). Ce qui peut partir d’une bonne intention mais finalement ne permet pas de prouver que ces fonctionnalités subjectives auront la moindre valeur. 
 
-Soit parce qu’un de vos utilisateurs expriment un souhait sans que celui-ci n’ait été challengé ou même aligné sur la stratégie de l’entreprise. 
+Soit parce qu’un de vos utilisateurs exprime un souhait sans que celui-ci n’ait été challengé ou même aligné sur la stratégie de l’entreprise. 
 
 Enfin, autre raccourci souvent vu et pris dans nos domaines et qui n’apporte que très rarement la valeur escomptée : suivre une tendance du marché sans vérifier qu’elle aura de la valeur pour votre entreprise ou pour vos utilisateurs. 
 
