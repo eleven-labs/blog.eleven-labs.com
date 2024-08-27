@@ -24,7 +24,7 @@ Et comme pour les dérives autour des organisations agiles, cela se fait de nouv
 
 Comment identifier et éviter ces erreurs ? La liste n’est pas exhaustive mais vous permettra déjà de mieux appréhender votre [méthodologie produit](https://eleven-labs.com/strategie-produit/). 
 
-## Ne penser qu’aux outputs 
+## Erreur n°1 : Ne penser qu’aux outputs 
 Le premier biais dans lequel tombent aujourd’hui les organisations aujourd’hui sans expérience en product management ou sans product manager formés au produit est de se focus uniquement sur la livraison de multiples features sans réfléchir à la valeur ajoutée de cette production. 
 
 Et tout notre intérêt en tant que PM est de pouvoir livrer de la valeur, sprint par sprint ou release par release aux utilisateurs finaux. Sans quoi l’utilisabilité et l’adoption de l’outil ne peut être garantie, et donc le temps investi dans le développement ne peut être valorisé.
