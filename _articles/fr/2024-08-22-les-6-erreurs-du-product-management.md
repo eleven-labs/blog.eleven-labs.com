@@ -11,7 +11,7 @@ authors:
   - mae
 cover:
   alt: Quelles erreurs ne faut-il pas commettre en product management ?
-  path: /imgs/articles/2024-07-23-tester-spark-avec-pytest/cover.jpg
+  path: /imgs/articles/2024-08-22-les-6-erreurs-du-product-management/cover.jpg
 keywords: 
 - product management
 - product manager
