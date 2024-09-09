@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2024-08-22'
+date: '2024-09-09'
 slug: 6-erreurs-product-management
 title: Les 6 erreurs du Product Management
 excerpt: >-
