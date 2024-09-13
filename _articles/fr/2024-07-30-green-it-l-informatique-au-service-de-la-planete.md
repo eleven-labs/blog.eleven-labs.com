@@ -8,7 +8,7 @@ excerpt: >-
   Dans cet article, nous allons parler de la Green IT, une approche visant à réduire l'impact environnemental du numérique à travers des pratiques plus durables et responsables tout au long du cycle de vie des technologies.
 categories: []
 cover:
-  alt: Un arbre poussant à l'intérieur d'un ordinateur
+  alt: Qu'est-ce que le Green IT et le Numérique Responsable ?
   path: /imgs/articles/2024-07-30-green-it-l-informatique-au-service-de-la-planete/cover.png
   position: bottom
 authors:
