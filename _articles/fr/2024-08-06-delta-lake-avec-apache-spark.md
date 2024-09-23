@@ -18,7 +18,17 @@ keywords:
 
 ## Qu'est ce que le format de fichier Delta Lake ?
 
+Initié par les créateur du moteur Apache Spark, et également de la solution SaaS Databricks, ce format est une surcouche au format parquet. Il apporte le concept ACID (Atomicité, Cohérence, Isolation et Durabilité) sur les fichiers parquet dans du stockage de type objet (Google Cloud Storage, AWS S3). Ansi, nous pouvons bénéficier d'un stockage à très bas coût et les bénéfices d'une table dans une base de données (en particulier la notion ACID).
+
 ## Les bénéfices d'utiliser Delta Lake
+
+Comme vu précédemment, il y a la notion de transaction ACID, à cela s'ajoute les avantages suivants : 
+- capacité à ingérer des données par lot ou en flux continu
+- Contraindre la table à suivre un schéma
+- Navigation dans le temps avec des versions
+- Mise à jour en upsert et delete de la table
+
+Le format Delta Lake se veut être les fondations d'une architecture de type _Data Lake_. L'industrie de la data évolue vers cette architecture afin de réduire drastriquement les coûts, et cela permet également de réduire la barrière entre les différents utilisateurs. Avec l'avènement de l'intelligence artificielle, les équipes _Data Scientiest_ ont besoin d'accéder à de la données fraîche et proche de la production.
 
 ## Installer et configuration Spark pour utiliser Delta Lake
 
