@@ -170,7 +170,15 @@ La fonction `merge()` prend en entrée un dataframe avec lequel faire la compara
 Ensuite, des conditions de merge sont appliqués : 
 - `whenMatchedUpdateAll()`, s'il existe une correspondance entre les deux dataframes sur ces clefs, alors la ligne dans le dataframe de destination (la gold) est mise à jour.
 - `whenNotMatchedInsertAll()`, s'il n'existe pas de correspondance entre les deux dataframes sur ces clefs, alors la ligne dans le dataframe de destination (la gold) est ajoutée.
-- `whenNotMatchedBySourceDelete()`, si une ligne existe dans la table de destination mais n'a plus de correspondance dans la table source, alors la ligne sera supprimé dans la table de destination.
+- `whenNotMatchedBySourceDelete()`, si une ligne existe dans le dataframe de destination mais n'a plus de correspondance dans le dataframe source, alors la ligne sera supprimé dans le dataframe de destination.
+
+Enfin, la fonction `execute()` va appliquer les modifications.
+
+En quelques lignes, votre table sera facilement mis à jour. En fonction de votre besoin métier, ajustez les conditons de merge.
+
+## Revenir à une version précédente
+
+
 
 ## Conclusion
 
@@ -185,4 +193,5 @@ Code complet
 - https://delta.io/
 - https://docs.delta.io/latest/quick-start.html#set-up-apache-spark-with-delta-lake
 - https://docs.delta.io/latest/quick-start.html#python
+- https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge
 
