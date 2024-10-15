@@ -128,16 +128,56 @@ pip install delta-spark==3.2.0
 Ajoutez cette dépendance dans votre fichier requirements.txt ou autre gestionnaire de paquet Python.
 </div>
 
-```python
+Nous effectuons toujours notre calcul avec notre nouveau fichier source. Ensuite, nous avons besoin de lire notre table de destination. Généralement, cette table est qualifié de _Gold_ (or) car c'est une table avec des données aggrégés et à forte valeur.
 
+```python
+# Calcul avec les nouvelles données
+df_clean = (
+    df.select(
+        col("Numéro de boucle").alias("loop_number"),
+        col("Libellé").alias("label"),
+        col("Total").cast(IntegerType()).alias("total"),
+        col("Date formatée").cast(DateType()).alias("date"),
+        col("Vacances").alias("holiday_name"),
+    )
+    .where(col("Probabilité de présence d'anomalies").isNull())
+)
+
+# Lecture de la table gold
+from delta import DeltaTable
+delta_table = DeltaTable.forPath(spark, "datalake/count-bike-nantes.parquet")
 ```
+
+Appliquons la fonction `merge()` pour fusionner les deux Dataframes.
+
+```python
+(
+  delta_table
+  .alias("gold_table")
+  .merge(
+    df_clean.alias("fresh_data"),
+    condition="fresh_data.loop_number = gold_table.loop_number and fresh_data.date = gold_table.date"
+  )
+  .whenMatchedUpdateAll()
+  .whenNotMatchedInsertAll()
+  .whenNotMatchedBySourceDelete()
+  .execute()
+)
+```
+
+La fonction `merge()` prend en entrée un dataframe avec lequel faire la comparaison. Ensuite, nous avons une condition pour effectuer la comparaison. Avec `fresh_data.loop_number = gold_table.loop_number and fresh_data.date = gold_table.date`, la comparaison entre les deux dataframes est effectué sur la colonne `date` et `loop_number`. 
+
+Ensuite, des conditions de merge sont appliqués : 
+- `whenMatchedUpdateAll()`, s'il existe une correspondance entre les deux dataframes sur ces clefs, alors la ligne dans le dataframe de destination (la gold) est mise à jour.
+- `whenNotMatchedInsertAll()`, s'il n'existe pas de correspondance entre les deux dataframes sur ces clefs, alors la ligne dans le dataframe de destination (la gold) est ajoutée.
+- `whenNotMatchedBySourceDelete()`, si une ligne existe dans la table de destination mais n'a plus de correspondance dans la table source, alors la ligne sera supprimé dans la table de destination.
 
 ## Conclusion
 
 
 ## Références
 
-Code complet 
+Code complet
 
 - https://fr.wikipedia.org/wiki/Propri%C3%A9t%C3%A9s_ACID
 - https://www.databricks.com/fr/glossary/data-lakehouse
