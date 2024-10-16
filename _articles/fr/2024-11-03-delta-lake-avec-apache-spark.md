@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2024-08-06'
+date: '2024-11-03'
 slug: delta-lake-avec-apache-spark
 title: Delta Lake avec Apache Spark
 excerpt: >-
