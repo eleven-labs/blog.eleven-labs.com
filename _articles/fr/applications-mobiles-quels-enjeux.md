@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2024-10-16'
+date: '2024-10-22'
 slug: applications-mobiles-quels-enjeux
 title: Applications mobile, quels enjeux ?
 excerpt: >-
