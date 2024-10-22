@@ -56,7 +56,7 @@ En effet, le parc iOS représente souvent le chiffre d'affaires le plus importan
 
 Sur Android, la communauté est plus habituée à consommer du contenu gratuit donc il sera plus difficile de les convertir vers des offres payantes et les leviers de Google en termes de visibilité sont un peu plus limités, mais la gestion des stores et des achats est un peu plus simple. 
 
-### Les enjeux liés au format
+## Les enjeux liés au format
 
 ### Support des différents formats  
 En responsive web, nous utilisons des break points permettant d’adapter le produit à plusieurs formats, généralement 3 ou 4 : écran large (de bureau), petit (portable), tablette et mobile. En natif, on va généralement travailler sous 2 formats : mobile et tablette, sachant que les mobiles aux écrans larges bénéficieront du format tablette.
