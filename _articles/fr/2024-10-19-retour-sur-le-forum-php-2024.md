@@ -4,7 +4,7 @@ lang: fr
 date: '2024-10-19'
 slug: retour-sur-le-forum-php-2024
 title: Retour sur le Forum PHP 2024
-excerpt: Dévouvrez un résumé concis des conférences qui nous ont le plus marqué lors du Forum PHP 2024 !
+excerpt: Découvrez un résumé concis des conférences qui nous ont le plus marqué lors du Forum PHP 2024 !
 categories:
   - php
 authors:
@@ -14,7 +14,7 @@ keywords: []
 
 Les 10 & 11 octobre 2024 a eu lieu le mythique Forum PHP 2024 organisé par l'[AFUP](https://afup.org/home), qui a élu domicile depuis quelques années maintenant à DisneyLand Paris (dans le très classe Hôtel New York).
 
-J'ai personnellement assisté aux conférences du 2ème jour, et si parfois le choix à faire entre 2 conférence était difficile, celles que j'ai pu voir étaient passionnantes.
+J'ai personnellement assisté aux conférences du 2ème jour, et si parfois le choix à faire entre 2 conférences était difficile, celles que j'ai pu voir étaient passionnantes.
 
 Alors, si vous voulez un petit résumé concis et efficace des conférences qui m'ont le plus marqué, vous êtes au bon endroit !
 
@@ -34,7 +34,7 @@ Pascal est parti d'une question qu'il adore poser en entretien technique : **"Qu
 
 Et pour autant, il n'y a pas qu'une seule bonne réponse, bien qu'il existe un début réponse classique et très cartésien : 
 
->Ma requête interoge un serveur ***DNS*** pour la résolution de mon URL en adresse IP, cette résolution va se transmettre de serveur en serveur jusqu'à atterir au niveau du serveur que je vise, etc...
+>Ma requête interroge un serveur ***DNS*** pour la résolution de mon URL en adresse IP, cette résolution va se transmettre de serveur en serveur jusqu'à atterrir au niveau du serveur que je vise, etc...
 
 Mais même là, on pourrait rentrer dans de nombreux détails. Parler du système ***DNS du FAI***, du ***cache*** DNS, des ***CDN***, ou encore se poser la question de ce que transporte notre requête; quels headers ? Un simple **GET**, un **POST** ? Quelles couches vais-je traverser (les fameuses couches IP, TCP, TLS qui me ramènent aux souvenirs pas si lointain des bancs de la fac).
 
@@ -58,11 +58,11 @@ Il faut savoir rester humble dans son ignorance et sa connaissance partielle de 
 ![T shaped profile]({BASE_URL}/imgs/articles/2024-10-19-retour-sur-le-forum-php-2024/t-shaped-profile.png?width=650)
 
 \
-Sur ce schéma, le T représente chacun d'entre nous. La base horizontale du T exprime **l'etendue de nos connaissances** : C'est un peut notre culture générale de développeur. On ne maîtrise pas tout ce qui s'y trouve, mais on s'y est au moins intéressé un jour.
+Sur ce schéma, le T représente chacun d'entre nous. La base horizontale du T exprime **l'étendue de nos connaissances** : C'est un peu notre culture générale de développeur. On ne maîtrise pas tout ce qui s'y trouve, mais on s'y est au moins intéressé un jour.
 
 Et puis il y a la barre verticale du T, qui désigne les domaines où nous nous **spécialisons**. Il s'agit de ce que nous faisons au quotidien, ce qui nous passionne et que nous maîtrisons sur le bout des doigts. Cette barre s'affine et se solidifie au fil du temps, de notre expérience et de nos apprentissages.
 
-C'est donc à la fois une belle leçon d'**humilité**, mais également une consolation pour tous ceux sujets au syndrome de l'imposteur.
+C'est donc à la fois une belle leçon d'**humilité**, mais également une consolation pour tous ceux qui sont sujets au syndrome de l'imposteur.
 
 <br/>
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
@@ -97,19 +97,19 @@ use Formal\ORM\Id;
 final readonly class Voiture
 {
     /** @param Id<self> $id */
-    public function __construct(
-    private Id $id,
-    private CarteGrise $carteGrise,
+        public function __construct(
+        private Id $id,
+        private CarteGrise $carteGrise,
     ) {
     }
 }
 
 final readonly class CarteGrise
 {
-    public function __construct(
-    private string $immatriculation,
-    private string $proprietaire,
-    private string $adresse,
+        public function __construct(
+        private string $immatriculation,
+        private string $proprietaire,
+        private string $adresse,
     ) {
     }
 }
@@ -131,7 +131,7 @@ On observe plusieurs choses :
 - La `CarteGrise` ne possède pas d'***id*** car on considère qu'elle **appartient** à l'aggrégat.
 - La `CarteGrise` ne possède donc aucune référence vers `Voiture`, ce qui empêche tout risque de dépendance circulaire.
 - On peut utiliser la classe `Id` de Formal pour construire explicitement un nouvel ***id*** pour chaque nouvelle `Voiture`.
-- Enfin, dans l'exemple l'objet `$carteGrise` ne possédant pas d'***id*** propre, on peut assigner l'assigner à deux voitures différentes : Il s'agira bien en base de deux lignes différentes.
+- Enfin, dans l'exemple l'objet `$carteGrise` ne possédant pas d'***id*** propre, on peut l'assigner à deux voitures différentes : il s'agira bien en base de deux lignes différentes.
 
 <br/>
 <div  class="admonition important"  markdown="1"><p  class="admonition-title">Important</p>
@@ -158,7 +158,7 @@ $manager->transactional(
 Toute cette logique ***doit*** se passer dans une transaction. Notons qu'il n'y a pas besoin de créer manuellement un `Id` comme montré plus haut : Formal en créera un automatiquement s'il détecte que votre objet n'en possède pas. Autrement, il fera une mise à jour de votre objet.
 
 C'est la fonction `put` qui sauvegarde en base de donnée notre objet. Avec Doctrine, on utiliserait `flush` pour insérer / mettre à jour tous les objets présents dans la mémoire de l'`EntityManager`.
-Or avec Formal, pour éviter tout problème de fuite mémoire, l'ORM va libérer la mémoire dès l'appel du `put`. Cela signifie que nous sommes obligés d'appeler explicitement cette méthode à **chaque** fois que nous souhaitons modifier notre base de données. Une répétitivité nécéssaire pour optimiser la mémoire.
+Or avec Formal, pour éviter tout problème de fuite mémoire, l'ORM va libérer la mémoire dès l'appel du `put`. Cela signifie que nous sommes obligés d'appeler explicitement cette méthode à **chaque** fois que nous souhaitons modifier notre base de données. Une répétitivité nécessaire pour optimiser la mémoire.
 
 Enfin, voilà comment Formal nous permet de récupérer nos données :
 
@@ -226,19 +226,19 @@ Ainsi, on accélère le traitement des messages tant que l'API se porte bien, et
 <div  class="admonition question"  markdown="1"><p  class="admonition-title">Question</p>
 D'accord, mais si les webhooks de mon API sont injoignables, j'ai juste déplacé le problème d'une queue à une autre.
 
-Que faire dans ce cas là ?
+Que faire dans ce cas-là ?
 </div>
 
 \
 C'est là que Fabien nous a présenté la 2ème solution apportée: l'adoption du pattern ***Circuit breaker***.
 
-Ce pattern permet de bloquer les appels vers un service au delà d'un certain seuil d'échecs. Imaginez un **circuit d'urgence**, qui est **fermé** lorsque tout va bien, mais qui s'**ouvre** pour bloquer tous les futurs appels à un service qui ne répond plus correctement.
+Ce pattern permet de bloquer les appels vers un service au-delà d'un certain seuil d'échecs. Imaginez un **circuit d'urgence**, qui est **fermé** lorsque tout va bien, mais qui s'**ouvre** pour bloquer tous les futurs appels à un service qui ne répond plus correctement.
 
 \
 ![Circuit Breaker Schema]({BASE_URL}/imgs/articles/2024-10-19-retour-sur-le-forum-php-2024/circuit-breaker.png?width=600)
 
 \
-Le circuit est donc **fermé** par défaut, et on configure un seuil au delà duquel on considère qu'il n'est pas normal de plus recevoir de réponse (par exemple au delà de 30% d'échecs pour 50 appels).
+Le circuit est donc **fermé** par défaut, et on configure un seuil au-delà duquel on considère qu'il n'est pas normal de plus recevoir de réponse (par exemple au delà de 30% d'échecs pour 50 appels).
 
 Dans ce cas, le circuit se réveille, s'**ouvre** et vient ***court-circuiter*** les appels: le circuit est **ouvert**.
 
@@ -281,14 +281,14 @@ C'est ultra puissant, et très simple à mettre en place.
 
 <br/>
 <div  class="admonition note"  markdown="1"><p  class="admonition-title">Note</p>
-Si avec tout ça vos queues RabbitMQ sont toujours surchargées, il serait peut-être temps de... Rajouter davantage de workers ! Mais attention, c'est coûteux et limité.
+Si avec tout ça vos queues RabbitMQ sont toujours surchargées, il serait peut-être temps de... rajouter davantage de workers ! Mais attention, c'est coûteux et limité.
 
 Commencez toujours par essayer de trouver des solutions de design applicatif avant de vous ruer sur l'achat de plus de ressources de calcul !
 </div>
 
 ## Conclusion
 
-Ce forum PHP 2024 aura encore une fois été très riche en enseignement et nouvelles dévouvertes. Toutes ces conférences ont attisé ma curiosité d'aller plus loin dans l'apprentissage de certains concepts, même si je n'oublie les préceptes de notre cher Pascal Martin: il faut accepter de ne pas pouvoir tout savoir !
+Ce forum PHP 2024 aura encore une fois été très riche en enseignement et nouvelles découvertes. Toutes ces conférences ont attisé ma curiosité d'aller plus loin dans l'apprentissage de certains concepts, même si je n'oublie les préceptes de notre cher Pascal Martin: il faut accepter de ne pas pouvoir tout savoir !
 
 Et ce forum aura au moins la qualité de nous rendre humble devant l'étendue des connaissances que nous n'avons pas encore.
 
