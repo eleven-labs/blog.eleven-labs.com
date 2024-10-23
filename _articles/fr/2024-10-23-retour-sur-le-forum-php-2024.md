@@ -235,7 +235,7 @@ Que faire dans ce cas-là ?
 \
 C'est là que Fabien nous a présenté la deuxième solution apportée : l'adoption du pattern ***Circuit breaker***.
 
-Ce pattern permet de bloquer les appels vers un service au-delà d'un certain seuil d'échecs. Imaginez un **circuit d'urgence**, qui est **fermé** lorsque tout va bien, mais qui s'**ouvre** pour bloquer tous les futurs appels à un service qui ne répond plus correctement.
+Ce pattern permet de bloquer les appels vers un service au-delà d'un certain seuil d'échec. Imaginez un **circuit d'urgence**, qui est **fermé** lorsque tout va bien, mais qui s'**ouvre** pour bloquer tous les futurs appels à un service qui ne répond plus correctement.
 
 \
 ![Circuit Breaker Schema]({BASE_URL}/imgs/articles/2024-10-23-retour-sur-le-forum-php-2024/circuit-breaker.png?width=600)
