@@ -8,6 +8,7 @@ excerpt: >-
   Que vous souhaitiez lancer un nouveau produit mobile ou que vous souhaitiez proposer la version mobile d'une application web existante, voici quelques faits qui vous aideront dans votre réflexion pour affiner votre choix technologique. 
 categories:
   -
+cover:
 authors:
   - athiery
 keywords:
