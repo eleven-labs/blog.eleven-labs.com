@@ -9,7 +9,7 @@ excerpt: >-
 categories:
   -
 authors:
-  - aurore
+  - athiery
 keywords:
   - mobile
   - product-management
