@@ -9,6 +9,9 @@ categories:
   - php
 authors:
   - ajacquemin
+cover:
+  alt: Astronaute revenant de mission
+  path: /imgs/articles/2024-10-23-retour-sur-le-forum-php-2024/cover.jpg
 keywords:
 - php
 - symfony
