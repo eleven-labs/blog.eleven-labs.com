@@ -9,6 +9,8 @@ excerpt: >-
 categories:
   -
 cover:
+  alt: Astronaute qui consulte son téléphone sur la lune
+  path: /imgs/articles/2024-10-22-applications-mobiles-quels-enjeux.jpg
 authors:
   - athiery
 keywords:
