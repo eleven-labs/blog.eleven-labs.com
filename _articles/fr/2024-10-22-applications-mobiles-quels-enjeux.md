@@ -3,10 +3,9 @@ contentType: article
 lang: fr
 date: '2024-10-22'
 slug: applications-mobiles-quels-enjeux
-title: Applications mobile, quels enjeux ?
+title: Développement d'une application mobile, quels éléments analyser avant de se lancer ?
 excerpt: >-
-  Que vous souhaitiez lancer un nouveau produit mobile ou que vous souhaitiez proposer la version mobile d'une application web existante, voici quelques faits qui vous aideront dans votre réflexion pour affiner votre choix technologique. 
-categories:
+  Que vous souhaitiez lancer un nouveau produit mobile ou que vous souhaitiez proposer la version mobile d'une application web existante, voici quelques éléments à prendre en compte dans votre réflexion pour décider de sa plu-value business.
   -
 cover:
   alt: Astronaute qui consulte son téléphone sur la lune
@@ -21,13 +20,15 @@ keywords:
 
 Même s’il est évident aujourd'hui qu’une application web doit être responsive, le point de départ de la réflexion autour d’un produit dédié mobile est souvent l’identification d’une cible intéressante, que ce soit par la présence d’un parc mobile important ou par des segments de cible spécifiques dont les usages sont majoritairement mobiles. Mais pour choisir d'investir ou non dans une solution dédiée mobile, il faut aller plus loin dans la réflexion.
 
-## Les enjeux liés au marché 
+Voici donc quelques éléments à prendre en compte avant de se lancer :
 
-### Définir la cible idéale  
+## Comprendre les enjeux et les opportunités liés au marché 
+
+### Définir la cible idéale
 Pour déterminer si une cible a du potentiel sur mobile, il faut identifier : 
-- un fort usage mobile et/ou tablette
-- un certain potentiel de chiffre d'affaire sur iOS malgré la commission d'Apple (les usagers d'Apple représentent un meilleur potentiel d'achat)
-- une grande importance du parcours utilisateur pour cette cible
+- Un fort usage mobile et/ou tablette
+- Un certain potentiel de chiffre d'affaires sur iOS malgré la commission d'Apple (les usagers d'Apple représentent un meilleur potentiel d'achat)
+- Une grande importance du parcours utilisateur pour cette cible
 
 ### Identifier le potentiel d'une solution purement mobile  
 Pour déterminer si un produit mobile dédié est réellement pertinent, on peut observer la solution web, si elle existe. En effet, si certains écrans comportent beaucoup d'informations, des cartes dans des cartes, des menus complexes, des tableaux, alors il est plus que probable que le produit responsive touche ses limites et soit générateur de bugs et de conflits de gestuelles. 
@@ -40,16 +41,16 @@ Une fois la cible identifiée et le produit estimé pertinent, vient alors la qu
 Le point de friction n°1 pour proposer des applications natives iOS est le taux de commission d’Apple (30%) et l'usage obligatoire des tiers en prix de produit. On ne peut donc pas appliquer n'importe quel prix à nos produits alors que sur Android, on le peut. On a même la main pour changer le prix en fonction de la TVA de chaque pays où l'application est distribuée.
 
 ### Leviers marketing  
-Être présent sur les stores d’Apple et Google est un puissant gage de qualité et représente une levier marketing intéressant pour les marques. Apple et Google proposent plusieurs offres d’approches (incentive, etc.), incluant des périodes gratuites utilisables une fois, en échange de l'adresse email du compte par exemple. Le Store d'Apple permet de mettre en avant des produits mais également des offres, ce qui offre un levier supplémentaire en termes de campagnes de communication.
+Être présent sur les stores d’Apple et Google est un puissant gage de qualité et représente un levier marketing intéressant pour les marques. Apple et Google proposent plusieurs offres d’approches (incentive, etc.), incluant des périodes gratuites utilisables une fois, en échange de l'adresse email du compte par exemple. Le Store d'Apple permet de mettre en avant des produits mais également des offres, ce qui offre un levier supplémentaire en termes de campagnes de communication.
 
 ### L'acquisition d'un parc abonné dédié mobile  
 La principale raison d’investir sur du natif est l'acquisition d’un parc abonné Apple et Google. En effet, l’acquisition d’un parc dédié mobile avec un enrôlement facilité par Apple et Google et le bon taux de rétention (entre les personnes qui oublient qu’elles sont abonnés et celles qui ne savent pas interrompre leurs abonnements sur les stores) représente deux leviers de chiffre d'affaires intéressants. Les deux plateformes proposent par ailleurs des interfaces de statistiques intéressantes pour suivre les usages (Attention, celles-ci ne permettent pas de s'affranchir totalement d'un plan de taggage !).  
 
-Cependant, il faut savoir que l'acquisition d'un nouveau parc a aussi un coût pour les équipes CRM car il est difficile de communiquer avec ces parcs car les plateformes renvoient très peu d'information à leur propos (le device ID en question, des receipts ,etc). Par ailleurs, comme ce sont elles qui gèrent l'achat, la notion de remboursement sans faire appel aux plateformes peut vite devenir un casse-tête car les clients se retournent plus volontier contre la marque du produit que vers les stores de paiement. Google propose la possibilité de rembourser un achat dans son interface, mais faut-il pour cela connaitre la date exacte de l'achat et le device ID qui l'a effectué. 
+Cependant, il faut savoir que l'acquisition d'un nouveau parc a aussi un coût pour les équipes CRM car il est difficile de communiquer avec ces parcs. En effet, les plateformes renvoient très peu d'informations à leur propos (le device ID en question, des receipts, etc.). Par ailleurs, comme ce sont elles qui gèrent l'achat, la notion de remboursement sans faire appel aux plateformes peut vite devenir un casse-tête car les clients se retournent plus volontier contre la marque du produit que vers les stores de paiement. Google propose la possibilité de rembourser un achat dans son interface, mais encore faut-il pour cela connaitre la date exacte de l'achat et le device ID qui l'a effectué. 
 
-En effet, les parcs iOS et Android sont scindés et isolés l'un de l'autre mais aussi du parc web ce qui signifie qu'un abonnement iOS ne peut pas être restauré sur Google ou le web de base. Par ailleurs, le propriétaire du compte Google et Apple peut choisir à la création d'un product ID s'il s'agit d'un achat consommable (qui ne peut être restauré) ou non consommable (qui peut l'être). Pour rendre une restauration d'achat possible cross device, il faut mettre en place un parcours de réconcialisation qui requiert d'envoyer au back l'identifiant du compte (s'il est identifié) afin d'attacher au compte un abonnement ou un droit équivalent à celui qui a été pris sur la plateforme. 
+En effet, les parcs iOS et Android sont scindés et isolés l'un de l'autre mais aussi du parc web ce qui signifie qu'un abonnement iOS ne peut pas être restauré sur Google ou le web de base. Par ailleurs, le propriétaire du compte Google et Apple peut choisir à la création d'un product ID s'il s'agit d'un achat consommable (qui ne peut être restauré) ou non consommable (qui peut l'être). Pour rendre une restauration d'achat possible cross device, il faut mettre en place un parcours de réconciliation qui requiert d'envoyer au back l'identifiant du compte (s'il est identifié) afin d'attacher au compte un abonnement ou un droit équivalent à celui qui a été pris sur la plateforme. 
 
-Dans le cas contraire, si la personne change de device, il lui est nécéssaire de faire une restauration des achats pour accéder à ceux-ci. Il faut donc penser le parcours d'achat de manière précise en forçant les utilisateurs à se connecter afin d'optenir leur email par exemple) afin d'assurer, si on le souhaite, la restauration des achats mobile natifs ou même de communiquer avec les acheteurs. Vous l'aurez bien compris, même si accroitre son parc d'utilisateurs représente un certain potentiel financier, l'usage d'une base de données utilisateurs unique est indéniablement préférable car elle simplifie grandement la gestion des équipes CRM.
+Dans le cas contraire, si la personne change de device, il lui est nécéssaire de faire une restauration des achats pour accéder à ceux-ci. Il faut donc penser le parcours d'achat de manière précise en forçant les utilisateurs à se connecter (pour obtenir leur email par exemple) afin d'assurer, si on le souhaite, la restauration des achats mobile natifs ou même de communiquer avec les acheteurs. Vous l'aurez bien compris, même si accroitre son parc d'utilisateurs représente un certain potentiel financier, l'usage d'une base de données utilisateurs unique est indéniablement préférable car elle simplifie grandement la gestion des équipes CRM.
 
 ### Le choix des plateformes  
 *Une question que l'on se pose parfois : Peut-on proposer une application sur une seule des deux plateformes ?*
@@ -61,29 +62,28 @@ Sur Android, la communauté est plus habituée à consommer du contenu gratuit d
 
 ## Les enjeux liés au format
 
-### Support des différents formats  
+### Le support des différents formats  
 En responsive web, nous utilisons des break points permettant d’adapter le produit à plusieurs formats, généralement 3 ou 4 : écran large (de bureau), petit (portable), tablette et mobile. En natif, on va généralement travailler sous 2 formats : mobile et tablette, sachant que les mobiles aux écrans larges bénéficieront du format tablette.
 
-### Focus sur le format tablette  
-Faisons une aparté sur le format tablette qui, bien que représentant bien moins de ventes face aux mobiles, n’est pas toujours négligeable dans certains milieux, dont celui du média et de la presse par exemple où la lecture d’articles en masse est plus confortable. Il représente d'ailleurs à peu près autour de 10 à 20% des usages dans la presse en France. Et lorsque l'on compare les usages entre mobile et tablette, notamment sur iOS, on observe parfois un usage quasi égal. Par exemple, je prends le cas de deux applications presse de PQR sur le mois de septembre 2024, on observe 51,7% d'usage tablette contre 48,3% en mobile et 54,3% tablette contre 45,7% sur mobile.
+### Un focus sur le format tablette  
+Faisons une aparté sur le format tablette qui, bien que représentant bien moins de ventes face aux mobiles, n’est pas toujours négligeable dans certains milieux, dont celui du média et de la presse par exemple où la lecture d’articles est plus confortable. Il représente d'ailleurs à peu près autour de 10 à 20% des usages dans la presse en France. Et lorsque l'on compare les usages entre mobile et tablette, notamment sur iOS, on observe parfois un usage quasi égal. Par exemple, je prends le cas de deux applications presse de PQR sur le mois de septembre 2024, on observe 51,7% d'usage tablette contre 48,3% en mobile et 54,3% tablette contre 45,7% sur mobile.
 
-## Les enjeux techniques
+## S'intéresser aux enjeux techniques avant de lancer un produit mobile
 
 ### L'expérience utilisateur  
-En responsive mobile, sur format mobile et tablette, on observe souvent en responsive des conflits de gestuelles pour trouver les équivalents aux clics droits, double clics, etc. On observe aussi des conflits dans les scroll bars lorsque des éléments sont embarqués dans d'autres, là où le développement en natif utilise un design déjà pensé pour ces usages dès leur conception. 
+En responsive mobile, sur format mobile et tablette, on observe souvent des conflits de gestuelles pour trouver les équivalents aux clics droits, double clics, etc. On observe aussi des conflits dans les scroll bars lorsque des éléments sont embarqués dans d'autres, là où le développement en natif utilise un design déjà pensé pour ces usages dès leur conception. 
 En natif, nous concevons dès le départ un design qui utilise les composants natifs Android et iOS. L'utilisateur se voit proposé un parcours instinctif voire familier et trouve alors des points communs entre les autres applications qu'il utilise et notre produit, ce qui permet une meilleure adhésion à celui-ci. 
 Il s'agit du plus grand avantage à partir des applications natives et de la limitation la plus importante sur de l'application hybride. 
 
-### Aspect technique et fonctionnalités  
-D'un point de vue technique, développer en hybride offre le grand avantage de ne pas multiplier les différents languages de développement, et de simplifier la maintenance du produit. 
+### L'aspect technique et les fonctionnalités  
+D'un point de vue technique, développer en hybride offre le grand avantage de ne pas multiplier les différents langages de développement, et de simplifier la maintenance du produit. A contrario, le développement natif doit être réalisé dans le language natif de la plateforme.
 
-En effet, le développement natif doit quant à lui être réalisé dans le language natif de la plateforme.
-Cependant, l'usage des composants natifs déjà disponibles en library permet de s'affranchir de certains développements, et d'éviter la maintenance de ceux-ci. Par ailleurs, à chaque évolution d'Apple et Google, le produit peut profiter des nouvelles fonctionnalités conçues par les OS, ce qui donne parfois naissance à des features particulières auxquelles on auraient pas pensé ou qu'on aurait pas priorisé en hybride à cause d'un ratio effort / business value jugé insuffisant. En outre, utiliser les nouvelles features des OS permet d’être présent sur différentes verticales hors produit comme les montres connectées, les écrans de veille, la dynamic island iOS..., et de proposer parfois des plus values par rapport à la concurrence.
+Cependant, l'usage des composants natifs déjà disponibles en librairies permet de s'affranchir de certains développements, et d'éviter la maintenance de ceux-ci. Par ailleurs, à chaque évolution d'Apple et Google, le produit peut profiter des nouvelles fonctionnalités conçues par les OS, ce qui donne parfois naissance à des features particulières auxquelles on auraient pas pensé ou qu'on aurait pas priorisé en hybride à cause d'un ratio effort / business value jugé insuffisant. En outre, utiliser les nouvelles features des OS permet d’être présent sur différentes verticales hors produit comme les montres connectées, les écrans de veille, la dynamic island iOS..., et de proposer parfois des plus values par rapport à la concurrence.
 
-### Adieu le SEO  
+### Le SEO n'est plus une priorité sur les stores 
 Sur les applications mobiles soumises sur les Stores, on s'affranchit de la notion de SEO puisqu'il s'agit d'être référencé principalement sur les Stores. On va alors jouer principalement sur le contenu des interfaces Apple et Google directement. L'équipe marketing peut par ailleurs utiliser des leviers pour accroitre la visibilité des applications sur les stores. 
 
-## Les enjeux liés au développement
+## Prendre en compte les différents défis liés au développement de l'application mobile
 
 ### Les coûts de développements  
 Les deux environnements natifs étant différents techniquement et complexes à prendre en main (du moins au niveau des APis de paiement et de restauration), ils requièrent des expertises spécifiques. Il faut être familiarisé avec les méthodes de receipts et de restauration d’Apple et Google, connaitre les enjeuxs liés au fait de proposer des achats consommables ou non consommables, définir le type d'abonnement à proposer en fonction des répercussions techniques, etc. 
@@ -113,6 +113,6 @@ Là où nous maitrisons notre schéma de mise en production sur le web, en mobil
 Pour soumettre une application, plusieurs contraintes s'imposent : il faut uploader un IPA ou APK qui soit vérifié à l'upload (cela prend quelques minutes), puis il faut ajouter un texte de mise à jour et des screenshots puis soumettre les binaires. 
 En cas de refus par les plateformes, l'échange est chronophage car les retours sont souvent peu précis (surtout chez Google) lorsque ce ne sont pas des textes automatiques. Il faut donc que le Product Owner en charge de la soumission connaisse bien les environnements et leurs contraintes et sache communiquer avec Apple et Google en Anglais. Et oui, les équipes de review d’Apple et Google auront toujours le dernier mot, même à une phrase près dans la description de mise à jour. 
 
-## En conclusion  
+## Conclusion : vous avez toutes les cartes en mains pour choisir de développer un produit mobile
 En conclusion, le choix de se tourner vers un produit dédié et de partir sur un produit natif ou hybride dépend de plusieurs facteurs donc les ressources disponibles dans l’entreprise, du potentiel que représente la cible identifiée en termes de ventes, du chiffre d’affaires estimé, et de l’importance qu’a le parcours client dans le produit en lui-même. Sur une approche user-centric à l'usage majoritairement mobile, le natif semble plus pertinent, à condition d'avoir des ressources qui maîtrisent l'environnement car commme nous l'avons vu, cela ne va pas sans plusieurs contraintes. Le fait de passer par une application hybride peut en revanche être une solution pour entrer sur le marché lorsque l'on est pas certain du potentiel de sa cible, en utilisant les ressources techniques de développpement déjà à notre disposition tout en limitant l'investissement financier. On voit d'ailleurs apparaitre plusieurs solutions permettant cela à l'instar de Flutter.
 Pour plus d'informations sur les applications hybrides, vous pouvez [consulter cet article](https://www2.stardust-testing.com/blog-fr/applications-hybrides-avantages-limitations-consequences-phases-de-test#:~:text=Que%20sont%20les%20applications%20mobiles,n'importe%20quelle%20autre%20application.).
