@@ -5,6 +5,9 @@ on: workflow_call
 jobs:
   validate-markdown:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
