@@ -6,7 +6,6 @@ slug: applications-mobiles-quels-enjeux
 title: Développement d'une application mobile, quels éléments analyser avant de se lancer ?
 excerpt: >-
   Que vous souhaitiez lancer un nouveau produit mobile ou que vous souhaitiez proposer la version mobile d'une application web existante, voici quelques éléments à prendre en compte dans votre réflexion pour décider de sa plu-value business.
-categories: []
 cover:
   alt: Astronaute qui consulte son téléphone sur la lune
   path: /imgs/articles/2024-10-22-applications-mobiles-quels-enjeux/cover.jpg

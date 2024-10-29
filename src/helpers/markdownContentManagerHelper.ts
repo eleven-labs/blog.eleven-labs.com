@@ -121,17 +121,10 @@ export const getArticles = (): TransformedArticleData[] =>
   getCollection<ArticleData>(MARKDOWN_CONTENT_TYPES.ARTICLE).reduce<TransformedArticleData[]>(
     (currentArticles, { data, content, html }) => {
       currentArticles.push({
-        contentType: data.contentType,
-        lang: data.lang,
-        slug: data.slug,
-        cover: data.cover,
+        ...data,
         date: new Date(data.date).toISOString(),
-        title: data.title,
-        excerpt: data.excerpt,
         summary: extractHeaders(content),
         readingTime: getReadingTime(content),
-        authors: data.authors,
-        categories: data.categories,
         content: html,
       });
       return currentArticles;
@@ -159,16 +152,9 @@ export const getTutorials = (): TransformedTutorialData[] => {
         return currentSteps;
       }, []);
       currentTutorials.push({
-        contentType: data.contentType,
-        lang: data.lang,
-        slug: data.slug,
-        cover: data.cover,
+        ...data,
         date: new Date(data.date).toISOString(),
-        title: data.title,
-        excerpt: data.excerpt,
         readingTime: steps.reduce((currentReadingTime, step) => currentReadingTime + getReadingTime(step.content), 0),
-        authors: data.authors,
-        categories: data.categories,
         steps,
       });
       return currentTutorials;

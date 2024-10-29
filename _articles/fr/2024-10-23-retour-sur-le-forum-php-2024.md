@@ -13,9 +13,8 @@ cover:
   alt: Astronaute revenant de mission
   path: /imgs/articles/2024-10-23-retour-sur-le-forum-php-2024/cover.jpg
 keywords:
-- php
-- symfony
-- développement web
+  - symfony
+  - développement web
 ---
 
 Les 10 & 11 octobre a eu lieu le mythique Forum PHP 2024 organisé par l'[AFUP](https://afup.org/home), qui a élu domicile depuis quelques années maintenant à Disneyland Paris (dans le très classe Hôtel New York).
@@ -38,7 +37,7 @@ Je suis allé à cette première conférence en pensant naïvement qu'on allait 
 Mais c'est mal connaître [Pascal Martin](https://x.com/pascal_martin), qui à chaque fois fait mouche lors de ses talks grâce à son grand talent de speaker, et son story-telling léché.
 Pascal est parti d'une question qu'il adore poser en entretien technique : **"Quel est le chemin d'une requête HTTP ?"** et s'est rendu compte que les réponses étaient très différentes selon les profils.
 
-Et pour autant, il n'y a pas qu'une seule bonne réponse, bien qu'il existe un début de réponse classique et très cartésien : 
+Et pour autant, il n'y a pas qu'une seule bonne réponse, bien qu'il existe un début de réponse classique et très cartésien :
 
 >Ma requête interroge un serveur ***DNS*** pour la résolution de mon URL en adresse IP, cette résolution va se transmettre de serveur en serveur jusqu'à atterrir au niveau du serveur que je vise, etc...
 
@@ -80,7 +79,7 @@ En résumé
 </div>
 
 
-## Conférence n°2 : Et si on repensait les ORMs ? 
+## Conférence n°2 : Et si on repensait les ORMs ?
 
 Pour la deuxième conférence de la journée, il est temps de rejoindre [Baptiste Langlade](https://x.com/Baptouuuu) pour sa présentation sur l'[ORM Formal](https://formal-php.org/orm/).
 
@@ -181,7 +180,7 @@ Encore une fois pour l'optimisation de la mémoire, les données retournées par
 
 À noter que l'on peut également utiliser des méthodes chaînées pour configurer les résultats. Ici, on souhaite éliminer les **1000** premiers résultats, puis récupérer les **100** suivants.
 
-Il est possible d'aller plus loin avec le *specification pattern* comme par exemple : 
+Il est possible d'aller plus loin avec le *specification pattern* comme par exemple :
 
 ```php
 use Formal\ORM\Specification\Entity;

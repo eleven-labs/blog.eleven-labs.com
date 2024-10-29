@@ -1,14 +1,13 @@
 import { MarkdownInvalidError, validateMarkdown } from '@/helpers/markdownHelper';
 
-import { getArgs } from './binHelper';
+const IS_CI = Boolean(process.env.CI);
 
 (async (): Promise<void> => {
-  const args = getArgs<{ ci: boolean }>();
   try {
     validateMarkdown();
   } catch (e) {
     const markdownInvalidError = e as MarkdownInvalidError;
-    if (args.ci) {
+    if (IS_CI) {
       console.log(`::set-output name=filePath::${markdownInvalidError.markdownFilePathRelative}`);
       console.log(`::set-output name=reason::${markdownInvalidError.reason}`);
       if (markdownInvalidError.line && markdownInvalidError.column) {

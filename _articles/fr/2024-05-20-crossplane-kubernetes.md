@@ -11,6 +11,7 @@ seo:
   description: >-
     Découvrez ce qu'est crossplane et apprenez grâce à notre mode d'emploi à le configurer et à l'utiliser étapes par étapes dans votre projet.
 cover:
+  alt: Crossplane Kubernetes
   path: /imgs/articles/2024-05-20-crossplane-kubernetes/cover.jpg
 categories:
   - architecture
@@ -31,7 +32,7 @@ Si on schématise grossièrement, Crossplane reprend le but initial de Terraform
 Ce projet open-source lancé par la société Upbound a rejoint la Cloud Native Computing Foundation (CNCF) en 2020 et est aujourd'hui au niveau de maturité _incubating_ depuis septembre 2021. J'ai découvert ce projet lors de la KubeCon de Paris 2024 et il m'a semblé intéressant d'en présenter les principaux concepts pour bien cerner l'étendu de ses capacités.
 
 ## Platform engineering kézako ? 🤔
-> En quelques mots, c'est une approche visant à améliorer l'expérience développeur par la mise en place d'une plateforme de service permettant de demander de manière abstraite des ressources d'infrastructure. La complexité est alors gérée par les administrateurs de la plateforme et invisible pour les utilisateurs. 
+> En quelques mots, c'est une approche visant à améliorer l'expérience développeur par la mise en place d'une plateforme de service permettant de demander de manière abstraite des ressources d'infrastructure. La complexité est alors gérée par les administrateurs de la plateforme et invisible pour les utilisateurs.
 
 Appliqué à notre cas, cette plateforme sera alors notre cluster Kubernetes sur lequel nous pourrons demander de l'infrastructure abstraite (e.g. "Un environnement de développement sur AWS") que Crossplane se chargera de mettre en place.
 
@@ -147,9 +148,9 @@ spec:
     url:
       type: Static
       static: http://host.docker.internal:4566
-    # Indique pour quels services on remplace l'endpoint par l'URL ci-dessus. 
+    # Indique pour quels services on remplace l'endpoint par l'URL ci-dessus.
     # Attention, si la liste est vide, aucun service ne verra son URL changer.
-    services: [s3, rds] 
+    services: [s3, rds]
   skip_credentials_validation: true
   skip_metadata_api_check: true
   skip_requesting_account_id: true
@@ -167,7 +168,7 @@ metadata:
   name: my-rds-instance
 spec:
   deletionPolicy: Delete
-  providerConfigRef: 
+  providerConfigRef:
     name: provider-family-aws
   forProvider:
     engine: postgres
@@ -222,7 +223,7 @@ LAST SEEN   TYPE     REASON                    OBJECT             MESSAGE
   type: LastAsyncOperation
 
 
-❯ aws --endpoint-url=http://localhost:4566 s3api list-buckets 
+❯ aws --endpoint-url=http://localhost:4566 s3api list-buckets
 {
     "Buckets": [
         {
@@ -280,7 +281,7 @@ versioning:
     mfaDelete: false
 ```
 
-Sur le cloud, certaines ressources externes ont des attributs immuables. Par exemple, AWS ne permet pas de modifier le nom d'un bucket S3. Terraform triche un peu avec ça en autorisant la modification des champs immuables mais en proposant alors de recréer ces ressources (i.e. supprimer le bucket et le recréer avec le nouveau nom.) Crossplane, ne dispose pas de ce type de mécanisme et on ne pourra pas modifier les champs immuables. Pour faire l'équivalent, on devra supprimer et recréer nous-même l'objet en question. Le nom de la ressource externe est alors le même que celui de la ressource managée par défaut. 
+Sur le cloud, certaines ressources externes ont des attributs immuables. Par exemple, AWS ne permet pas de modifier le nom d'un bucket S3. Terraform triche un peu avec ça en autorisant la modification des champs immuables mais en proposant alors de recréer ces ressources (i.e. supprimer le bucket et le recréer avec le nouveau nom.) Crossplane, ne dispose pas de ce type de mécanisme et on ne pourra pas modifier les champs immuables. Pour faire l'équivalent, on devra supprimer et recréer nous-même l'objet en question. Le nom de la ressource externe est alors le même que celui de la ressource managée par défaut.
 
 ### Policies
 
@@ -297,8 +298,6 @@ Crossplane permet de configurer comment le provider se comporte quand une ressou
 
 Les `managementPolicies` permettent de limiter les droits de Crossplane sur les ressources externes. On les spécifie dans le tableau `spec.managementPolicies` de nos ressources managées. Voici les différentes valeurs (cumulables) possibles :
 
-</br>
-
 | Policy          | Fonctionnement                                                                                                                                                              |
 |---------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------  |
 | *               | (Defaut) Crossplane a tous les droits sur la ressource externe.                                                                                                                |
@@ -308,9 +307,8 @@ Les `managementPolicies` permettent de limiter les droits de Crossplane sur les 
 | Observe         | Crossplane est autorisé à observer les ressources externes. Utile pour importer des ressources externes déjà existante sous forme de ressources managées.                                                                         |
 | Update          | Crossplane est autorisé à appliquer des changements sur les ressources externes quand des changements sont appliqués sur les ressources managées.                                                                                                |
 
-</br>
 
-On récapitule différentes combinaisons intéressantes : 
+On récapitule différentes combinaisons intéressantes :
 
 | Create  | Delete  | LateInitialize  | Observe   | Update  |                                                                                     Description                                                                                     |
 |:------: |:------: |:--------------: |:-------:  |:------: |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -336,7 +334,7 @@ Nous savons désormais créer des ressources unitaires et paramétrer des droits
 
 ### Créer une première abstraction
 
-Attention, là, ça commence à se gâter. Certains termes sont assez proches et on a vite fait de les confondre. 
+Attention, là, ça commence à se gâter. Certains termes sont assez proches et on a vite fait de les confondre.
 Pour mettre en place une abstraction, nous allons devoir combiner différents concepts qu'on synthétise dans le schéma ci-dessous. Détaillons chaque élément, en commençant par les compositions.
 
 ![Logo Crossplane]({BASE_URL}/imgs/articles/2024-05-20-crossplane-kubernetes/schema_crossplane_end_users.svg)
@@ -367,7 +365,7 @@ spec:
     - name: SubnetGroup
       base:
         apiVersion: rds.aws.upbound.io/v1beta1
-        kind: SubnetGroup     
+        kind: SubnetGroup
         spec:
           forProvider:
             region: eu-west-3
@@ -398,7 +396,7 @@ spec:
     - name: IamRole
       base:
         apiVersion: iam.aws.upbound.io/v1beta1
-        kind: Role 
+        kind: Role
         spec:
           forProvider:
             assumeRolePolicy: |
@@ -427,7 +425,7 @@ Pour cela, nous allons créer un objet `CompositeResourceDefinition` similaire �
 ```yaml
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
-metadata: 
+metadata:
   name: xrds.custom.api.exemple.org
 spec:
   group: custom.api.exemple.org
@@ -466,7 +464,7 @@ apiVersion: custom.api.exemple.org/v1alpha1
 kind: XRDS
 metadata:
   name: my-composite-database
-  annotations: 
+  annotations:
     crossplane.io/external-name: my-custom-name
 spec:
   type: large
@@ -479,7 +477,7 @@ Par définition, les ressources composites (et les ressources managées associé
 ```yaml
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
-metadata: 
+metadata:
   name: xrds.custom.api.exemple.org
 spec:
   group: custom.api.exemple.org
@@ -575,7 +573,7 @@ spec:
     - name: SubnetGroup
       base:
         apiVersion: rds.aws.upbound.io/v1beta1
-        kind: SubnetGroup     
+        kind: SubnetGroup
         metadata:
           name: my-subnet-group
         spec:
@@ -623,13 +621,13 @@ La liste ci-dessous ne concerne que les patches de ressources individuelles (res
 | CombineFromEnvironment    | Plusieurs champs issus de l'environnement d'une EnvironmentConfig | Un champ d'une ressource managée patchée.                 |
 | CombineToEnvironment      | Plusieurs champs d'une ressource managée patchée.                 | Un champ dans l'environnement d'une EnvironmentConfig       |
 
-N.B. : Les sources et destinations de ce tableau ne s'appliquent pas forcément pour les patches de ressource composite via les EnvironmentConfigs (qui seront détaillés dans la section appropriée) 
+N.B. : Les sources et destinations de ce tableau ne s'appliquent pas forcément pour les patches de ressource composite via les EnvironmentConfigs (qui seront détaillés dans la section appropriée)
 </br>
 
 #### Nommage dynamique de ressources externes
 
-Les ressources managées issues de Claim/ressources composites héritent d'un nommage en `<nom_du_claim>-<id_aleatoire>`. On peut changer ce comportement en rajoutant l'annotation `crossplane.io/external-name` aux ressources de notre composition. Avec l'aide des patches, on va pouvoir faire du nommage dynamique si on le souhaite. 
- 
+Les ressources managées issues de Claim/ressources composites héritent d'un nommage en `<nom_du_claim>-<id_aleatoire>`. On peut changer ce comportement en rajoutant l'annotation `crossplane.io/external-name` aux ressources de notre composition. Avec l'aide des patches, on va pouvoir faire du nommage dynamique si on le souhaite.
+
 Reprenons notre premier exemple de composition. On va récupérer le type d'instance déclaré dans notre Claim/ressource composite et le passer à la ressource managée correspondante dans la composition. Aussi, nous injecterons le type d'instance dans le nom de cette ressource :
 
 ```yaml
@@ -702,8 +700,8 @@ spec:
       patches:
         # On référence un PatchSet
         - type: PatchSet
-          patchSetName: my-patchset        
-        # On défini un pattern pour le nom de l'instance RDS qui contient un préfixe statique suivi du type de l'instance. 
+          patchSetName: my-patchset
+        # On défini un pattern pour le nom de l'instance RDS qui contient un préfixe statique suivi du type de l'instance.
         # Le type d'instance et récupéré depuis le champ spec.type de notre Claim
         - type: FromCompositeFieldPath
           fromFieldPath: spec.type
@@ -736,7 +734,7 @@ kind: EnvironmentConfig
 metadata:
   name: stagging
 data:
-  env: 
+  env:
     name: stag
   rds:
     instanceType: large
@@ -784,7 +782,7 @@ spec:
          # etc.
 ```
 
-Une composition peut référencer plusieurs objets `EnvironmentConfig`. Au cours de la création/d'une mise à jour de ressource composite, les différentes `EnvironmentConfig` seront alors fusionnées pendant la création du magasin de donnée. On pourra ensuite lire ces données et les manipuler à travers les patches. On pourra par exemple récupérer une valeur du magasin pour rajouter un préfixe au nom de notre ressource composite et ainsi modifier le pattern de toutes les ressources managées sous-jacente. 
+Une composition peut référencer plusieurs objets `EnvironmentConfig`. Au cours de la création/d'une mise à jour de ressource composite, les différentes `EnvironmentConfig` seront alors fusionnées pendant la création du magasin de donnée. On pourra ensuite lire ces données et les manipuler à travers les patches. On pourra par exemple récupérer une valeur du magasin pour rajouter un préfixe au nom de notre ressource composite et ainsi modifier le pattern de toutes les ressources managées sous-jacente.
 
 ```yaml
 apiVersion: apiextensions.crossplane.io/v1
@@ -800,7 +798,7 @@ spec:
       - type: Reference
         ref:
           name: stagging
-    # On récupère le nom de l'environnement dans l'objet `EnvironmentConfig` et on l'injecte dans le nom de notre ressource composite 
+    # On récupère le nom de l'environnement dans l'objet `EnvironmentConfig` et on l'injecte dans le nom de notre ressource composite
     patches:
       - type: ToCompositeFieldPath
         fromFieldPath: env.name
@@ -821,7 +819,7 @@ spec:
         # etc.
 ```
 
-Pour les patches déclarés dans `spec.environment.patches`, `ToCompositeFieldPath` copiera la donnée depuis le magasin vers la ressource composite et 
+Pour les patches déclarés dans `spec.environment.patches`, `ToCompositeFieldPath` copiera la donnée depuis le magasin vers la ressource composite et
  `FromCompositeFieldPath` copiera la donnée depuis la ressource composite vers le magasin.
 
 ### Functions
@@ -837,7 +835,7 @@ spec:
   package: xpkg.upbound.io/crossplane-contrib/function-patch-and-transform:v0.5.0
 ```
 
-Les fonctions s'utilisent dans des compositions séquentielles (`mode: Pipeline`) dans lesquelles on référencera les fonctions dans les différentes _steps_. Quand la composition contient plusieurs steps, elles sont exécutées dans leur ordre d'apparition dans la composition. La sortie d'une step est passée en entrée de la step suivante. 
+Les fonctions s'utilisent dans des compositions séquentielles (`mode: Pipeline`) dans lesquelles on référencera les fonctions dans les différentes _steps_. Quand la composition contient plusieurs steps, elles sont exécutées dans leur ordre d'apparition dans la composition. La sortie d'une step est passée en entrée de la step suivante.
 
 Reprenons notre exemple initial en utilisant la **fonction** patch au lieu des patches du module core.
 
@@ -855,7 +853,7 @@ spec:
     - step: patch-and-transform
       # On référence notre fonction ici
       functionRef:
-        name: function-patch-and-transform 
+        name: function-patch-and-transform
       input:
         apiVersion: pt.fn.crossplane.io/v1beta1
         kind: Resources
