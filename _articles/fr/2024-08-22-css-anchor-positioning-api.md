@@ -14,7 +14,6 @@ cover:
   path: /imgs/articles/2024-08-22-css-anchor-positioning-api/cover.jpg
 keywords:
 - css
-- javascript
 ---
 
 ## L'anchor positioning API, qu'est-ce que c'est&nbsp;?

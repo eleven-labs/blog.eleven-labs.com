@@ -14,7 +14,7 @@ jobs:
 
       - name: Validate markdown authors and posts
         id: validate_markdown
-        run: npm run validate-markdown --ci
+        run: CI=true npm run validate-markdown
 
       - name: Add a comment to the PR after failed markdown validation
         uses: marocchino/sticky-pull-request-comment@v2
