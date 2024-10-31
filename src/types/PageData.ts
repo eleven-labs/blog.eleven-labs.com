@@ -23,7 +23,7 @@ export interface PostListPageData {
 interface CommonPostPageData {
   cover?: {
     path: string;
-    alt: string;
+    alt?: string;
     position?: ImagePositionType;
   };
   authors: TransformedAuthorData[];

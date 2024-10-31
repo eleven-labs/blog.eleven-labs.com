@@ -7,6 +7,7 @@ title: 'Retour sur la Flowcon 2024'
 excerpt: >-
   Trois astronautes reviennent sur la Flowcon, la conférence sur le développement de logiciel en flux, qui a eu lieu les 6 et 7 Mars 2024
 cover:
+  alt: Flowcon 2024
   path: /imgs/articles/2024-04-03-retour-sur-la-flowcon-2024/cover.jpg
 categories:
   - agile

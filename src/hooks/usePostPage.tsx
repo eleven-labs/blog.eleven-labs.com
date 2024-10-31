@@ -21,7 +21,7 @@ export const usePostPage = (post: PostPageData): Omit<PostPageProps, 'variant' |
   useSeoPost(post);
 
   const contactCard = useContactCard();
-  const breadcrumb = useBreadcrumb({ categoryName: post.categories[0], withCategoryLink: true });
+  const breadcrumb = useBreadcrumb({ categoryName: post.categories?.[0], withCategoryLink: true });
   const relatedPostsForCardList = usePostsForCardList({
     posts: post.relatedPosts,
     imageFormat: IMAGE_FORMATS.POST_CARD_COVER,

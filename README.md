@@ -1,14 +1,14 @@
 Blog Eleven Labs
 ===================
 
-Welcome to the [ElevenLabs] blog (https://blog.eleven-labs.com), this is [Jamstack](https://jamstack.org/) website.
+Welcome to the [ElevenLabs] blog (https://blog.eleven-labs.com), this is a [Jamstack](https://jamstack.org/) website.
 
 ----------
 
 What's inside?
 -------------
 
-This website is 100% [TypeScript](https://www.typescriptlang.org/) with [Jamstack](https://jamstack.org/) architecture.
+This website is 100% [TypeScript](https://www.typescriptlang.org/) with a [Jamstack](https://jamstack.org/) architecture.
 
 It was developed based on the boilerplate [React SSR with Vite and Prerender](https://github.com/eleven-labs/typescript-boilerplates).
 
@@ -16,17 +16,17 @@ It uses Eleven Labs [Design System](https://github.com/eleven-labs/design-system
 
 ----------
 
-Installation the blog
+Setting up the blog
 -------------
 
-**Technical requirements to work on this project**
+**Technical requirements**
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/en/main)
 - [Vite](https://vitejs.dev/)
 - [Storybook](https://storybook.js.org/)
 
-**Computer requirements to work on this project**
+**Computer requirements**
 
 - [git](https://git-scm.com/download/linux)
 
@@ -111,14 +111,14 @@ Create your article page
 
 **1 - Create the markdown file**
 
-In the folder `_articles` add a markdown file with the name of your article and prefixed with the date.
+In the folder `_articles` add a markdown file with the name of your article prefixed with the date.
 ```bash
 cd _articles && touch YYYY-MM-DD-slug.md
 ```
 
 **2 - Add content to the file**
 
-Here is the template of the file.
+Here is the file's template.
 
 ```md
 ---
@@ -147,7 +147,7 @@ Content of your article in markdown
 
 > If your title or excerpt contains `:`, `"` use the syntax `>` or add your content between quotes (`"`)
 
-> If you want to add a 2 empty lines, you can use `\` syntax: ex:
+> If you want to add 2 empty lines, you can use the syntax `\` ex:
 ```
 first paragraph.
 
@@ -171,8 +171,8 @@ In order to have a quality image, we ask you to integrate an image with a minimu
 
 **4 - Write the content of the article**
 
-The content of the article be written in markdown.
-You can use one of the solutions:
+The content of the article has to be written in markdown.
+You can use one of these markdown editors:
 - [StackEdit](https://stackedit.io)
 - [Dillinger](http://dillinger.io)
 
@@ -194,7 +194,7 @@ And to specify a size on the image, you can add the arguments (`width`, `height`
 ![alt of image]({BASE_URL}/imgs/articles/YYYY-MM-DD-slug/image-name.png?width=500)
 ```
 
-If you need to add internal anchor links from your article to other article of our blog, use this syntax:
+If you need to add internal anchor links from your article to other articles of our blog, use this syntax:
 ```md
 [title of destination article]({BASE_URL}/fr/destination-article-slug)
 ```
@@ -202,7 +202,7 @@ If you need to add internal anchor links from your article to other article of o
 > Warning: Don't add html in your markdown, you don't have to override the blog template in the markdown.
 
 This blog supports admonitions pannels `warning` ; `info` ; `tip` and `note` to generate colored panels.
-When using `<div>` attribute `markdown="1"` text block is rendered as Markdown. The first line must be left empty, else the block will be rendered as html
+When using `<div>` attribute `markdown="1"` text block is rendered as Markdown. The first line must be left empty, or the block will be rendered as html
 
 ```md
 <div class="admonition warning" markdown="1"><p class="admonition-title">Your Panel Title</p>
@@ -218,7 +218,7 @@ Create your branch and add your pull request.
 git checkout -b feat/add-article-slug
 ```
 
-Once your article is finished and you want it to be published and add the label `publication` to your pull request.
+Once your article is finished and you want it to be published, add the label `publication` to your pull request.
 
 ----------
 
@@ -227,14 +227,14 @@ Create your tutorial page
 
 **1 - Create the markdown file**
 
-In the folder `_tutorials` pick the subfolder `fr` or `en` depending on the translation, then create folder with the name of your tutorial and prefixed with the date (`YYYY-MM-DD-slug`).
+In the folder `_tutorials` pick the subfolder `fr` or `en` depending on the translation, then create a folder with the name of your tutorial, prefixed with the date (`YYYY-MM-DD-slug`).
 ```bash
 cd _tutorials && mkdir YYYY-MM-DD-slug
 ```
 
 **2 - Add content to the file**
 
-Inside the folder named `YYYY-MM-DD-slug` you created, add a file named `index.md` Here is the template of the file.
+Inside the folder named `YYYY-MM-DD-slug` you created, add a file named `index.md`. Here is the template of the file.
 
 ```md
 ---
@@ -297,4 +297,4 @@ Create your branch and add your pull request.
 git checkout -b feat/add-tutorial-slug
 ```
 
-Once your tutorial is finished and you want it to be published and add the label `publication` to your pull request.
+Once your tutorial is finished and you want it to be published, add the label `publication` to your pull request.

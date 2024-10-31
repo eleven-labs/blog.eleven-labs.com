@@ -18,10 +18,10 @@ export const PostDataSchemaValidation = z.object({
     .object({
       path: z.string(),
       position: z.nativeEnum(IMAGE_POSITIONS).optional(),
-      alt: z.string(),
+      alt: z.string().optional(),
     })
     .optional(),
-  categories: z.array(z.enum(CATEGORIES)),
+  categories: z.array(z.enum(CATEGORIES)).optional(),
   authors: z.array(z.string()),
   keywords: z
     .array(z.string())
@@ -44,7 +44,7 @@ export const PostDataSchemaValidation = z.object({
     .optional(),
   seo: z
     .object({
-      title: z.string().max(60).optional(),
+      title: z.string().max(62).optional(),
       description: z.string().max(155).optional(),
     })
     .optional(),
