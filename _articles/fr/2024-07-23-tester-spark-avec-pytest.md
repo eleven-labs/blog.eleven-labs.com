@@ -155,14 +155,14 @@ def source_fixture(spark_fixture) -> DataFrame:
         ],
         StructType(
             [
-                StructField("Numéro de boucle", StringType()),
-                StructField("Libellé", StringType()),
-                StructField("Total", StringType()),
-                StructField("Probabilité de présence d'anomalies", StringType()),
-                StructField("Jour de la semaine", StringType()),
-                StructField("Boucle de comptage", StringType()),
-                StructField("Date formatée", StringType()),
-                StructField("Vacances", StringType()),
+                StructField("Numéro de boucle", StringType(), True),
+                StructField("Libellé", StringType(), True),
+                StructField("Total", StringType(), True),
+                StructField("Probabilité de présence d'anomalies", StringType(), True),
+                StructField("Jour de la semaine", StringType(), True),
+                StructField("Boucle de comptage", StringType(), True),
+                StructField("Date formatée", StringType(), True),
+                StructField("Vacances", StringType(), True),
             ]
         ),
     )
@@ -249,66 +249,8 @@ def test_dataframe_content(spark_fixture: SparkSession, source_fixture: DataFram
     assertDataFrameEqual(df_result, df_expected)
 ```
 
-En résultat, je ne devrais obtenir qu'une seul ligne, car la seconde ligne de notre jeu de données contient la valeur "Faible" dans la colonne "Probabilité de présence d'anomalies". Or, je ne veux pas utiliser de données avec une présence d'anomalie.
-Lançons le test.
 
-
-```shell
-% pytest test.py -vv             
-================================= test session starts =================================
-platform linux -- Python 3.10.12, pytest-8.0.0, pluggy-1.4.0 -- /usr/bin/python3
-cachedir: .pytest_cache
-rootdir: /home/thierry/eleven/data
-plugins: time-machine-2.13.0, anyio-4.2.0, mock-3.12.0
-collected 2 items                                                                     
-
-test.py::test_schema PASSED                                                     [ 50%]
-test.py::test_dataframe_content FAILED                                          [100%]
-
-====================================== FAILURES =======================================
-_______________________________ test_dataframe_content ________________________________
-(...)
-E           pyspark.errors.exceptions.base.PySparkAssertionError: [DIFFERENT_ROWS] Results do not match: ( 100.00000 % )
-E           *** actual ***
-E           ! None
-E           
-E           
-E           *** expected ***
-E           ! Row(loop_number='0674', label='Pont Haudaudine vers Sud', total=657, date=datetime.date(2021, 3, 16), holiday_name='Hors Vacances')
-
-../../.local/lib/python3.10/site-packages/pyspark/testing/utils.py:579: PySparkAssertionError
--------------------------------- Captured stderr call ---------------------------------
-FAILED test.py::test_dataframe_content - pyspark.errors.exceptions.base.PySparkAssertionError: [DIFFERENT_ROWS] Results do ...
-======================= 1 failed, 1 passed, 2 warnings in 7.80s =======================
-```
-
-Tiens, c'est bizarre 🤔, le test est en échec. Pourtant, le résultat attendu est correct.
-
-Revenons sur le code PySpark, et en particulier sur la condition `where()`.
-
-```python
-def transformation(df: DataFrame) -> DataFrame:
-    return (
-        ...
-        .where(col("Probabilité de présence d'anomalies").isNull())
-    )
-```
-
-En effet, il y a une coquille. D'après notre jeu de données, la colonne "Probabilité de présence d'anomalies" est de type string. Or, la fonction `isNull()` est un test sur la nullité d'une colonne au sens strict : c'est équivalent en SQL à `IS NULL`. Donc, une colonne de type string vide n'est pas _null_ au sens strict.
-
-Il faut corriger la condition par une égalité avec une string vide.
-
-```python
-from pyspark.sql.functions import col, lit
-
-def transformation(df: DataFrame) -> DataFrame:
-    return (
-        ...
-        .where(col("Probabilité de présence d'anomalies") == lit(""))
-    )
-```
-
-Ainsi, lorsque je relance mon test :
+Je lance mon test :
 
 ```shell
 % pytest test.py -vv                        
@@ -354,7 +296,7 @@ def transformation(df: DataFrame) -> DataFrame:
             col("Date formatée").cast(DateType()).alias("date"),
             col("Vacances").alias("holiday_name"),
         )
-        .where(col("Probabilité de présence d'anomalies") == lit(""))
+        .where(col("Probabilité de présence d'anomalies").isNull())
     )
 
 
@@ -412,14 +354,14 @@ def source_fixture(spark_fixture) -> DataFrame:
         ],
         StructType(
             [
-                StructField("Numéro de boucle", StringType()),
-                StructField("Libellé", StringType()),
-                StructField("Total", StringType()),
-                StructField("Probabilité de présence d'anomalies", StringType()),
-                StructField("Jour de la semaine", StringType()),
-                StructField("Boucle de comptage", StringType()),
-                StructField("Date formatée", StringType()),
-                StructField("Vacances", StringType()),
+                StructField("Numéro de boucle", StringType(), True),
+                StructField("Libellé", StringType(), True),
+                StructField("Total", StringType(), True),
+                StructField("Probabilité de présence d'anomalies", StringType(), True),
+                StructField("Jour de la semaine", StringType(), True),
+                StructField("Boucle de comptage", StringType(), True),
+                StructField("Date formatée", StringType(), True),
+                StructField("Vacances", StringType(), True),
             ]
         ),
     )
