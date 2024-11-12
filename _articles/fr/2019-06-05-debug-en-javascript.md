@@ -21,7 +21,7 @@ keywords:
 
 Il parait souvent ardu de mettre en place des débogues pas à pas sur des projets, ce qui nous pousse à nous contenter de faire des `console.log()` dans notre code.
 Nous allons voir qu'avec **VSCode**, nous pouvons facilement déboguer du code **React** tout comme du code **Node.js**.
-Ensuite nous verrons comment déboguer une app Node.JS dans un container Docker.
+Ensuite nous verrons comment [auditer et déboguer une app Node.JS](https://eleven-labs.com/audit-application-nodejs/) dans un container Docker.
 Pour finir je vous donnerai une astuce pour ceux utilisant Docker + **NestJS**.
 
 ## Déboguer une application REACT-APP
