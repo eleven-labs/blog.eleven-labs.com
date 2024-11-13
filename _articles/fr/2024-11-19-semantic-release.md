@@ -6,10 +6,12 @@ slug: automatiser-la-creation-de-la-version-dune-application-avec-semantic-relea
 title: Automatiser la création de la version d'une application avec semantic-release
 excerpt: Automatiser la création de la version d'une application avec semantic-release
 categories:
-  - devops
+  - architecture
 authors:
   - tthuon
-keywords: []
+keywords:
+  - devops
+  - gitlab
 cover:
     alt: Astronautes qui font la fete
     path: /imgs/articles/2024-11-19-semantic-release/cover.jpg
