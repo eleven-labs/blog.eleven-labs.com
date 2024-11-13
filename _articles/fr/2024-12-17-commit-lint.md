@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2024-11-26'
+date: '2024-12-17'
 slug: automatiser-la-verification-du-commit
 title: Automatiser la vérification du commit
 excerpt: Automatiser la vérification du commit avec commitlint
@@ -14,7 +14,7 @@ keywords:
   - gitlab
 cover:
   alt: astronaute qui vérifie les commits
-  path: /imgs/articles/2024-11-26-commit-lint/cover.jpg
+  path: /imgs/articles/2024-12-17-commit-lint/cover.jpg
 ---
 
 Dans l'article sur [la création automatique d'une nouvelle version d'une application](fr/automatiser-la-creation-de-la-version-dune-application-avec-semantic-release/), nous avons vu que l'outil semantic-release s'appuie sur des messages de commits conventionnels.
@@ -25,7 +25,7 @@ Pour que le processus de création automatique de marquage de la nouvelle versio
 
 Pour rappel, nos commits doivent respecter une convention. Pour cela, nous allons utiliser [Commits Conventionnels](https://www.conventionalcommits.org/fr/v1.0.0/).
 
-Pour simplifier, un commit commençant par 
+Pour simplifier, un commit commençant par
 - "feat: " indique que le commit intègre une nouvelle fonctionnalité
 - "fix: " indique que le commit corrige l'application
 
@@ -37,7 +37,7 @@ commitlint va lire le message de commit et la comparer avec les différentes rè
 
 Cela nécessite quelques configurations.
 
-Tout d'abord, il faut créer un fichier `.commitlintrc.yaml` avec le contenu suivant : 
+Tout d'abord, il faut créer un fichier `.commitlintrc.yaml` avec le contenu suivant :
 
 ```yaml
 extends:
@@ -62,7 +62,7 @@ lint:merge_request_title:
 ```
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Alternatif</p>
-  
+
 Dans le cas d'une merge request, il est possible de vérifier uniquement le titre de la merge request. Ce cas de figure fonctionne bien dans le cas où la branche est fusionné et squash vers la branche principale.
 
 Pour cela, utiliser la variable Gitlab $CI_MERGE_REQUEST_TITLE.
