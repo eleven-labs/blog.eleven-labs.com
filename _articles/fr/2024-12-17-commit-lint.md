@@ -46,7 +46,7 @@ extends:
 
 Cette configuration permet d'indiquer à commitlint d'utiliser les commits conventionnels.
 
-Dans le fichier `.gitlab-ci.yml`, ajoutons une tâche pour générer tester le message de commit.
+Dans le fichier `.gitlab-ci.yml`, ajoutons une tâche pour tester le message de commit.
 
 ```yaml
 stage:
@@ -63,12 +63,12 @@ lint:merge_request_title:
 
 <div class="admonition note" markdown="1"><p class="admonition-title">Alternatif</p>
 
-Dans le cas d'une merge request, il est possible de vérifier uniquement le titre de la merge request. Ce cas de figure fonctionne bien dans le cas où la branche est fusionné et squash vers la branche principale.
+Dans le cas d'une merge request, il est possible de vérifier uniquement le titre de la merge request. Ce cas de figure fonctionne bien dans le cas où la branche est fusionnée et squash vers la branche principale.
 
 Pour cela, utiliser la variable Gitlab $CI_MERGE_REQUEST_TITLE.
 </div>
 
-Félicitation, vous avez automatiser la vérification du message de commit. Prenez une boisson chaude pour vous détendre.
+Félicitation, vous avez automatisé la vérification du message de commit. Prenez une boisson chaude pour vous détendre.
 
 ## Références
 
