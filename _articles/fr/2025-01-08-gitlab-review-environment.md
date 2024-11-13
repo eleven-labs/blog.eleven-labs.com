@@ -17,7 +17,7 @@ authors:
     - tthuon
 seo:
     title: Créer un environnement de revue avec Gitlab
-    description: Pour que le relecteur puisse mieux se rendre compte des changements, il est intéressant de mettre les changements à disposition dans un environnement de revue. Cet article va expliquer les étapes pour le faire avec Gitlab CI.
+    description: Gitlab CI permet de créer des environnements dynamique.
 ---
 
 Dans une équipe de développement, une des bonnes pratiques consiste à relire le code des autres membres de l'équipe. Cela permet de partager la connaissance et d'avoir un oeil différent sur le code produit. Pour aller encore plus loin, ce code pourrait être déployé dans un environnement isolé : un environnement de revue.
