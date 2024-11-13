@@ -12,6 +12,9 @@ authors:
 keywords:
   - devops
   - gitlab
+covers:
+  alt: astronaute qui vérifie les commits
+  path: /imgs/articles/2024-11-26-commit-lint/cover.jpg
 ---
 
 Dans l'article sur [la création automatique d'une nouvelle version d'une application](fr/automatiser-la-creation-de-la-version-dune-application-avec-semantic-release/), nous avons vu que l'outil semantic-release s'appuie sur des messages de commits conventionnels.
