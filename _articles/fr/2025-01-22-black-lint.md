@@ -17,9 +17,9 @@ seo:
   description: "Le formattage du code est une source de querelle entre les membres d'une équipe. Résolvons le une bonne fois pour toute avec un formatteur de code : Black"
 ---
 
-Le formattage du code est une source de querelle entre les membres d'une équipe. Il existe pourtant référence _Python Enhancement Proposals_ qui donne un guide sur le style à adopter : PEP 8 - Style Guide for Python Code. Ce guide ne couvre pas tous les cas d'usage. Un même code peut être formatté de deux façon différente et être conforme à la spécification.
+Le formattage du code est souvent une source de querelle entre les membres d'une équipe. Il existe pourtant une référence _Python Enhancement Proposals_ qui donne un guide sur le style à adopter : [PEP 8 - Style Guide for Python Code](https://peps.python.org/pep-0008/). Ce guide ne couvre pas tous les cas d'usage. Un même code peut être formatté de deux façon différente et être conforme à la spécification.
 
-Un outil existe : [Black](https://black.readthedocs.io/en/stable/index.html)
+Un outil avec des règles plus stricte existe : [Black](https://black.readthedocs.io/en/stable/index.html)
 
 ## Black - Le formateur de code sans compromis
 
@@ -63,7 +63,7 @@ Maintenant que Black est installé et utilisé par tous les membres de l'équipe
 
 Généralement, dans votre fichier `.gitlab-ci.yml` vous avez déjà des tâches pour tester votre code. Ajoutons une étape de plus pour vérifier le formattage du code.
 
-A la différence de l'exécution en local, nous voulons uniquement faire une vérification et monter la différence. Cela permet à la personne de corriger plus facilement.
+A la différence de l'exécution en local, nous voulons uniquement faire une vérification et montrer la différence. Cela permet à la personne de corriger plus facilement.
 
 ```yaml
 stages:
@@ -114,5 +114,12 @@ Oh no! 💥 💔 💥
 1 file would be reformatted, 87 files would be left unchanged.
 ```
 
+La personne devra corriger et Gitlab va de nouveau vérifier les changement.
+
 Fini les débats sans fin sur le formattage du code. Black défini une bonne fois pour toutes les règles à adopter par l'équipe. Ce projet est stable et est utilisé par de nombreux projet libre de droits tel que SQLAlachemy ou Django.
 
+## Références 
+
+- https://black.readthedocs.io/en/stable/index.html
+- https://peps.python.org/pep-0008/
+- https://black.readthedocs.io/en/stable/getting_started.html
