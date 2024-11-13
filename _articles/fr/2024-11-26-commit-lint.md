@@ -26,8 +26,8 @@ Pour que le processus de création automatique de marquage de la nouvelle versio
 Pour rappel, nos commits doivent respecter une convention. Pour cela, nous allons utiliser [Commits Conventionnels](https://www.conventionalcommits.org/fr/v1.0.0/).
 
 Pour simplifier, un commit commençant par 
-- "feat: " va incrémenter le numéro de version mineur
-- "fix: " va incrémenter le numéro de version de correctif
+- "feat: " indique que le commit intègre une nouvelle fonctionnalité
+- "fix: " indique que le commit corrige l'application
 
 Pour faire respecter ces règles, nous allons utiliser un outil : [commitlint](https://commitlint.js.org/).
 
