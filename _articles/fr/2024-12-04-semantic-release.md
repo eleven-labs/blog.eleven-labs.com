@@ -16,7 +16,7 @@ cover:
     alt: Astronautes qui font la fete
     path: /imgs/articles/2024-12-04-semantic-release/cover.jpg
 seo:
-  title: Comment automatiser la création de version avec semantic-release ?
+  title: Automatiser la création de version avec semantic-release
   description: Découvrez les configurations et le nommage des commits à réaliser pour automatiser le marquage de version de votre application avec semantic-release.
 ---
 
