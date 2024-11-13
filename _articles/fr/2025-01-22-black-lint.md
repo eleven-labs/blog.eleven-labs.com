@@ -12,6 +12,9 @@ keywords:
   - lint
 authors:
   - tthuon
+cover:
+  alt: Astronautes qui nettoient un mur de données
+  path: /imgs/articles/2025-01-22-black-lint/cover.jpg
 seo:
   title: Formatter le code Python avec Black
   description: "Le formattage du code est une source de querelle entre les membres d'une équipe. Résolvons le une bonne fois pour toute avec un formatteur de code : Black"
