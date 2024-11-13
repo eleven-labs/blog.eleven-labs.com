@@ -2,7 +2,7 @@
 contentType: article
 lang: fr
 date: '2024-11-19'
-slug: semantic-release
+slug: automatiser-la-creation-de-la-version-dune-application-avec-semantic-release
 title: Automatiser la création de la version d'une application avec semantic-release
 excerpt: Automatiser la création de la version d'une application avec semantic-release
 categories:
@@ -24,7 +24,7 @@ Automatisons ce processus.
 
 ## Convention de nommage des commits
 
-Afin d'automatiser le processus de marquage des versions, nous allons nous référer à l'historique des commits du dépôt Git. Une nouvelle version d'un logiciel peut se définir par un ensemble de commit entre la précédente version et la tête de la branche principale.
+Afin d'automatiser le processus de marquage des versions, nous allons nous référer à l'historique des commits du dépôt Git. Une nouvelle version d'une application peut se définir par un ensemble de commit entre la précédente version et la tête de la branche principale.
 
 Nos commits doivent respecter une convention. Pour cela, nous allons utiliser [Commits Conventionnels](https://www.conventionalcommits.org/fr/v1.0.0/).
 
@@ -36,7 +36,7 @@ Une fois que nos commits respectent la nomenclature défini par Commits Conventi
 
 ## semantic-release
 
-semantic-release va automatiser ce processus de marquage d'une version d'un logiciel.
+semantic-release va automatiser ce processus de marquage d'une version d'une application.
 
 Cela nécessite quelques configurations.
 
@@ -62,13 +62,16 @@ Enfin, la branche de référence en `main` dans notre cas.
 Dans le fichier `.gitlab-ci.yml`, ajoutons une tâche pour générer le prochain numéro de version.
 
 ```yaml
+stage:
+  - release
+
 release:
   image: dockerhub.ftven.net/node:lts
   stage: release
   variables:
     GITLAB_TOKEN: ${RELEASE_TOKEN}
   before_script:
-    - npm install semantic-release@"^23.0.8" @semantic-release/gitlab@"^13.0.4" conventional-changelog-conventionalcommits@"^7.0.2"
+    - npm install semantic-release @semantic-release/gitlab conventional-changelog-conventionalcommits
   script:
     - npx semantic-release
   rules:
@@ -76,3 +79,20 @@ release:
       when: manual
 ```
 
+<div class="admonition info" markdown="1"><p class="admonition-title">Prévisualiser le contenu de la prochaine version</p>
+Ajoutez l'option --dry-run afin de prévisualiser le contenu de la prochaine version
+</div>
+
+Le jeton `RELEASE_TOKEN` est créé en suivant la documentation suivante https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html
+
+Lors de la prochaine exécution du pipeline Gitlab CI, une tâche `release` va apparaître. Elle sera en attente d'une action utilisateur. Une fois que l'utilisateur a validé, la nouvelle version est créé et publié dans Gitlab (voir documentation : https://docs.gitlab.com/ee/user/project/releases/).
+
+Félicitation, vous avez automatiser la création d'une version de votre application. Prenez une boisson chaude pour vous détendre.
+
+## Références
+
+- https://semver.org/lang/fr/
+- https://www.conventionalcommits.org/fr/v1.0.0/
+- https://github.com/semantic-release/semantic-release
+- https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html
+- https://docs.gitlab.com/ee/user/project/releases/
