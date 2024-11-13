@@ -59,7 +59,7 @@ All done! ✨ 🍰 ✨
 
 Maintenant que Black est installé et utilisé par tous les membres de l'équipe, automatisation et faisons respecter cet outils avec Gitlab CI.
 
-## Intégration avec Gitlab CI
+## Intégration avec Gitlab CI
 
 Généralement, dans votre fichier `.gitlab-ci.yml` vous avez déjà des tâches pour tester votre code. Ajoutons une étape de plus pour vérifier le formattage du code.
 
