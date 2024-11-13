@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2024-11-19'
+date: '2024-12-03'
 slug: automatiser-la-creation-de-la-version-dune-application-avec-semantic-release
 title: Automatiser la création de la version d'une application avec semantic-release
 excerpt: Automatiser la création de la version d'une application avec semantic-release
@@ -14,14 +14,14 @@ keywords:
   - gitlab
 cover:
     alt: Astronautes qui font la fete
-    path: /imgs/articles/2024-11-19-semantic-release/cover.jpg
+    path: /imgs/articles/2024-12-03-semantic-release/cover.jpg
 ---
 
 Votre est prête à être livrée. Pour cela, vous avez besoin de marquer votre application avec un numéro de version. Une convention permet de faciliter le suivi de version : [Gestion sémantique de version](https://semver.org/lang/fr/).
 
 La livraison de la version 1.0.0 s'est déroulé avec succès. Maintenant, vous avez besoin d'ajouter de nouvelles fonctionnalité. Il faudra donc incrémenter le numéro de version.
 
-Deux options possibles : 
+Deux options possibles :
 - marquer la prochaine version manuellement
 - automatiser ce processus en suivant une convention
 
@@ -33,7 +33,7 @@ Afin d'automatiser le processus de marquage des versions, nous allons nous réf�
 
 Nos commits doivent respecter une convention. Pour cela, nous allons utiliser [Commits Conventionnels](https://www.conventionalcommits.org/fr/v1.0.0/).
 
-Pour simplifier, un commit commençant par 
+Pour simplifier, un commit commençant par
 - "feat: " va incrémenter le numéro de version mineur
 - "fix: " va incrémenter le numéro de version de correctif
 
@@ -45,7 +45,7 @@ semantic-release va automatiser ce processus de marquage d'une version d'une app
 
 Cela nécessite quelques configurations.
 
-Tout d'abord, il faut créer un fichier `.releaserc.yml` avec le contenu suivant : 
+Tout d'abord, il faut créer un fichier `.releaserc.yml` avec le contenu suivant :
 
 ```yaml
 plugins:
