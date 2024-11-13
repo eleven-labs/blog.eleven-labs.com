@@ -1,10 +1,10 @@
 ---
 contentType: article
 lang: fr
-date: '2024-12-03'
-slug: automatiser-la-creation-de-la-version-dune-application-avec-semantic-release
-title: Automatiser la création de la version d'une application avec semantic-release
-excerpt: Automatiser la création de la version d'une application avec semantic-release
+date: '2024-12-04'
+slug: semantic-release
+title: Automatiser la création de version d'une application avec semantic-release
+excerpt: "Dans cet article, découvrez comment automatiser une création de version de votre application grâce à Semantic-Release : nommage des commits et configurations"
 categories:
   - architecture
 authors:
@@ -14,22 +14,25 @@ keywords:
   - gitlab
 cover:
     alt: Astronautes qui font la fete
-    path: /imgs/articles/2024-12-03-semantic-release/cover.jpg
+    path: /imgs/articles/2024-12-04-semantic-release/cover.jpg
+seo:
+  title: Comment automatiser la création de version avec semantic-release ?
+  description: Découvrez les configurations et le nommage des commits à réaliser pour automatiser le marquage de version de votre application avec semantic-release.
 ---
 
-Votre est prête à être livrée. Pour cela, vous avez besoin de marquer votre application avec un numéro de version. Une convention permet de faciliter le suivi de version : [Gestion sémantique de version](https://semver.org/lang/fr/).
+Votre application est prête à être livrée. Pour cela, vous avez besoin de marquer votre application avec un numéro de version. Une convention permet de faciliter le suivi de version : [Gestion sémantique de version](https://semver.org/lang/fr/).
 
-La livraison de la version 1.0.0 s'est déroulé avec succès. Maintenant, vous avez besoin d'ajouter de nouvelles fonctionnalité. Il faudra donc incrémenter le numéro de version.
+La livraison de la version 1.0.0 s'est déroulé avec succès. Maintenant, vous avez besoin d'ajouter de nouvelles fonctionnalités. Il faudra donc incrémenter le numéro de version.
 
 Deux options possibles :
 - marquer la prochaine version manuellement
 - automatiser ce processus en suivant une convention
 
-Automatisons ce processus.
+Voyons donc comment automatiser ce processus afin de gagner en efficacité.
 
-## Convention de nommage des commits
+## Mettre nos commits au format de la nomenclature Commits Conventionnels
 
-Afin d'automatiser le processus de marquage des versions, nous allons nous référer à l'historique des commits du dépôt Git. Une nouvelle version d'une application peut se définir par un ensemble de commit entre la précédente version et la tête de la branche principale.
+Afin d'automatiser le processus de marquage des versions, nous allons nous référer à l'historique des commits du dépôt Git. Une nouvelle version d'une application peut se définir par un ensemble de commits entre la précédente version et la tête de la branche principale.
 
 Nos commits doivent respecter une convention. Pour cela, nous allons utiliser [Commits Conventionnels](https://www.conventionalcommits.org/fr/v1.0.0/).
 
@@ -39,7 +42,7 @@ Pour simplifier, un commit commençant par
 
 Une fois que nos commits respectent la nomenclature défini par Commits Conventionnels, nous pouvons utiliser un outil pour effectuer le différentiel de version : [semantic-release](https://github.com/semantic-release/semantic-release).
 
-## semantic-release
+## Utiliser semantic-release pour automatiser le processus de marquage d'une version
 
 semantic-release va automatiser ce processus de marquage d'une version d'une application.
 
@@ -92,7 +95,7 @@ Le jeton `RELEASE_TOKEN` est créé en suivant la documentation suivante https:/
 
 Lors de la prochaine exécution du pipeline Gitlab CI, une tâche `release` va apparaître. Elle sera en attente d'une action utilisateur. Une fois que l'utilisateur a validé, la nouvelle version est créé et publié dans Gitlab (voir documentation : https://docs.gitlab.com/ee/user/project/releases/).
 
-Félicitation, vous avez automatiser la création d'une version de votre application. Prenez une boisson chaude pour vous détendre.
+Félicitation, vous avez automatisé la création d'une version de votre application. Prenez une boisson chaude pour vous détendre.
 
 ## Références
 
