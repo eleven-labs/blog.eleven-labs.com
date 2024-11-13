@@ -61,6 +61,13 @@ lint:merge_request_title:
     - echo "${CI_COMMIT_MESSAGE}" | npx commitlint
 ```
 
+<div class="admonition note" markdown="1"><p class="admonition-title">Alternatif</p>
+  
+Dans le cas d'une merge request, il est possible de vérifier uniquement le titre de la merge request. Ce cas de figure fonctionne bien dans le cas où la branche est fusionné et squash vers la branche principale.
+
+Pour cela, utiliser la variable Gitlab $CI_MERGE_REQUEST_TITLE.
+</div>
+
 Félicitation, vous avez automatiser la vérification du message de commit. Prenez une boisson chaude pour vous détendre.
 
 ## Références
