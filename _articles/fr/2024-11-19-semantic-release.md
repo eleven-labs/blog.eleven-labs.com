@@ -10,6 +10,9 @@ categories:
 authors:
   - tthuon
 keywords: []
+cover:
+    alt: Astronautes qui font la fete.jpg
+    path: 2024-11-19-semantic-release/cover.jpg
 ---
 
 Votre est prête à être livrée. Pour cela, vous avez besoin de marquer votre application avec un numéro de version. Une convention permet de faciliter le suivi de version : [Gestion sémantique de version](https://semver.org/lang/fr/).
