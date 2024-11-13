@@ -12,7 +12,7 @@ authors:
 keywords:
   - devops
   - gitlab
-covers:
+cover:
   alt: astronaute qui vérifie les commits
   path: /imgs/articles/2024-11-26-commit-lint/cover.jpg
 ---
