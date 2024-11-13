@@ -73,7 +73,7 @@ lint:
   stage: tests
   image: hub.docker.com/python:3.11
   before_script:
-    - pip install black
+    - pip install black~=24.8.0
   script:
     - black --check --diff .
   rules:
