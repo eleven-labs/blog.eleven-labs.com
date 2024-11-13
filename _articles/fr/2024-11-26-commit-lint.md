@@ -14,20 +14,23 @@ keywords:
   - gitlab
 ---
 
-Dans l'article sur la c
+Dans l'article sur [la création automatique d'une nouvelle version d'une application](fr/automatiser-la-creation-de-la-version-dune-application-avec-semantic-release/), nous avons vu que l'outil semantic-release s'appuie sur des messages de commits conventionnels.
+
+Pour que le processus de création automatique de marquage de la nouvelle version puisse fonctionne correctement, nous allons vérifier que les messages de commits suivent bien les commits conventionnels.
+
 ## Convention de nommage des commits
 
-Nos commits doivent respecter une convention. Pour cela, nous allons utiliser [Commits Conventionnels](https://www.conventionalcommits.org/fr/v1.0.0/).
+Pour rappel, nos commits doivent respecter une convention. Pour cela, nous allons utiliser [Commits Conventionnels](https://www.conventionalcommits.org/fr/v1.0.0/).
 
 Pour simplifier, un commit commençant par 
 - "feat: " va incrémenter le numéro de version mineur
 - "fix: " va incrémenter le numéro de version de correctif
 
-Une fois que nos commits respectent la nomenclature défini par Commits Conventionnels, nous pouvons utiliser un outil pour effectuer le différentiel de version : [semantic-release](https://github.com/semantic-release/semantic-release).
+Pour faire respecter ces règles, nous allons utiliser un outil : [commitlint](https://commitlint.js.org/).
 
-## commitlint
+## Mise en oeuvre de commitlint
 
-commitlint va automatiser ce processus de marquage d'une version d'une application.
+commitlint va lire le message de commit et la comparer avec les différentes règles.
 
 Cela nécessite quelques configurations.
 
@@ -38,11 +41,9 @@ extends:
   - "@commitlint/config-conventional"
 ```
 
-Cette configuration ajoute deux modules pour utiliser les commits conventionnels, et un troisième pour s'intégrer avec Gitlab.
+Cette configuration permet d'indiquer à commitlint d'utiliser les commits conventionnels.
 
-Enfin, la branche de référence en `main` dans notre cas.
-
-Dans le fichier `.gitlab-ci.yml`, ajoutons une tâche pour générer le prochain numéro de version.
+Dans le fichier `.gitlab-ci.yml`, ajoutons une tâche pour générer tester le message de commit.
 
 ```yaml
 stage:
@@ -54,25 +55,12 @@ lint:merge_request_title:
   before_script:
     - npm install @commitlint/{cli,config-conventional}
   script:
-    - echo "${CI_MERGE_REQUEST_TITLE}" | npx commitlint
-  rules:
-    - if: $CI_MERGE_REQUEST_IID
+    - echo "${CI_COMMIT_MESSAGE}" | npx commitlint
 ```
 
-<div class="admonition info" markdown="1"><p class="admonition-title">Prévisualiser le contenu de la prochaine version</p>
-Ajoutez l'option --dry-run afin de prévisualiser le contenu de la prochaine version
-</div>
-
-Le jeton `RELEASE_TOKEN` est créé en suivant la documentation suivante https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html
-
-Lors de la prochaine exécution du pipeline Gitlab CI, une tâche `release` va apparaître. Elle sera en attente d'une action utilisateur. Une fois que l'utilisateur a validé, la nouvelle version est créé et publié dans Gitlab (voir documentation : https://docs.gitlab.com/ee/user/project/releases/).
-
-Félicitation, vous avez automatiser la création d'une version de votre application. Prenez une boisson chaude pour vous détendre.
+Félicitation, vous avez automatiser la vérification du message de commit. Prenez une boisson chaude pour vous détendre.
 
 ## Références
 
-- https://semver.org/lang/fr/
 - https://www.conventionalcommits.org/fr/v1.0.0/
-- https://github.com/semantic-release/semantic-release
-- https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html
-- https://docs.gitlab.com/ee/user/project/releases/
+- https://commitlint.js.org/
