@@ -42,7 +42,7 @@ Au niveau du **produit**, cela génère des bugs, des performances médiocres, u
 
 Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du produit, limite l'innovation et ternit la **réputation** de l'entreprise.
 
-1.  Impacts sur la Communication et Gestion de l'Information
+### Conséquence n°1 : dégradation de la communication et de la gestion de l'information
 
 ### **1.1 Mauvaise transmission et réception de l'information**
 
