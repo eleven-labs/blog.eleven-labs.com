@@ -142,7 +142,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Faible **adaptabilité** aux **besoins** utilisateurs : difficulté à **personnaliser** ou **ajuster** en fonction des **retours** clients
 -   Augmentation du taux de **désabonnement** ou **d'abandon** : utilisateurs optant pour des solutions **concurrentes** plus **fiables** et **performantes**
 
-### **3.6 Réputation et Compétitivité**
+#### **3.6 Réputation et Compétitivité**
 
 -   Un produit de **mauvaise** qualité nuit à la **réputation**, entraînant une perte de **confiance**
 -   Perte de **compétitivité** : produits **surpassés** par des solutions **concurrentes** plus **robustes** et **fiables**
