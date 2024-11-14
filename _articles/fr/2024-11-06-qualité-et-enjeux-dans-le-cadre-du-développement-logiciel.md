@@ -131,7 +131,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Difficulté** de **mise à jour** ou de **migration**
 -   **Augmentation** des **coûts** de **support** et de **maintenance**
 
-### **3.4 Compatibilité et Intégration**
+#### **3.4 Compatibilité et intégration**
 
 -   Difficultés **d'intégration** avec d'autres **logiciels** ou **services**
 -   Produits mal conçus **abandonnés** plus tôt en raison de **coûts** de maintenance élevés ou de **complexité**
