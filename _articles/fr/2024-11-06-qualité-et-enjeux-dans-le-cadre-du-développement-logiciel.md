@@ -65,7 +65,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Une **rétention d’information** peut exister car l’équipe est **soumise à des pressions externes**, la rendant plus **réticente** à communiquer entièrement
 -   **Dégradation de la confiance** au sein de l’équipe
 
-### **1.4 Coordination et synchronisation inefficaces**
+#### **1.4 Coordination et synchronisation inefficaces**
 
 -   **Ambiguïté** dans les tâches
 -   **Délais** dans la **prise de décision** entraînant des **retards** et de la **désynchronisation**
