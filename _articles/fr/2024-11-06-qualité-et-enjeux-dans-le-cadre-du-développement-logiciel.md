@@ -193,7 +193,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Difficultés d'intégration** : Un logiciel de mauvaise qualité peut rencontrer des problèmes pour **s'intégrer** avec d'autres systèmes, **limitant** la capacité **d'évolution** et de mise à jour.
 -   **Rigidité dans la conception** : La non-qualité peut entraîner une **architecture** rigide qui ne permet pas des **ajustements** ou **améliorations** sans nécessiter des changements **massifs**, retardant ainsi **l'innovation**.
 
-### **5.3 Problèmes de Performance et d'Efficacité**
+#### **5.3 Problèmes de Performance et d'Efficacité**
 
 -   **Faibles performances du logiciel** : Un code **inefficace** ou **surchargé** peut entraîner des **ralentissements**, ce qui complique la **maintenance** car chaque **modification** doit être **soigneusement** testée pour éviter **d'aggraver** les problèmes de performance.
 -   **Consommation excessive de ressources** : Un code non optimisé **consomme** plus de ressources (CPU, mémoire), ce qui peut nécessiter des optimisations **coûteuses** pour améliorer l'efficacité.
