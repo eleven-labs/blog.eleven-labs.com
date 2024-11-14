@@ -161,7 +161,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Sentiment d'épuisement** : Le **stress** lié aux corrections de bugs fréquentes, aux retards et aux urgences peut conduire à un **burn-out**.
 -   **Manque de satisfaction au travail** : Travailler sur un produit de mauvaise qualité peut réduire la **satisfaction** professionnelle, car les équipes ne voient pas les résultats positifs de leurs **efforts**.
 
-### **4.3 Turnover et Recrutement**
+#### **4.3 Turnover et Recrutement**
 
 -   **Turnover élevé** : Les **tensions** et la **démotivation** peuvent conduire à un turnover plus élevé, avec des membres de l'équipe cherchant **d'autres opportunités** ailleurs.
 -   **Difficulté à recruter** : Une mauvaise réputation de qualité peut rendre difficile **l'attraction** de nouveaux talents, car les développeurs préfèrent souvent travailler sur des projets **bien structurés** et de **qualité**.
