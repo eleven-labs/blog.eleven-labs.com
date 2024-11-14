@@ -34,7 +34,7 @@ Pour contempler le lien entre **qualité** et **développement logiciel**, il fa
 
 ## Quelles sont les conséquences de la non qualité ?
 
-Pour se rendre compte de **l'importance** de la qualité, il semble intéressant de se poser la question à **l'inverse**, en se demandant quels sont les **impacts** s' il y a **absence** de qualité.
+Pour se rendre compte de **l'importance** de la qualité, il semble intéressant de se poser la question à **l'inverse**, en se demandant quels sont les **impacts** s'il y a **absence** de qualité.
 
 En premier lieu, une absence ou une mauvaise qualité affecte directement la **communication** en provoquant des **erreurs d'interprétation** et un **manque de coordination**, entraînant **retards** et **incompréhensions**. Sur le plan des **processus**, elle mène à des **incohérences**, des solutions temporaires inefficaces, et une [dette technique](https://eleven-labs.com/guides/dette-technique-application/) qui complique la maintenance.
 
