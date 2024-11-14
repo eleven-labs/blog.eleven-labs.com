@@ -84,7 +84,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 
 -   **Absence** de **normes** et de **standards** clairs, entraînant des **différences** de **qualité** et de **performance** entre les équipes
 -   **Variabilité** dans les **méthodes de travail** qui rend **difficile** la **collaboration** et **l'intégration** des différentes **parties** du projet
--   **Documentation insuffisante** ou **inexistante**, rendant les **processus** difficiles à **reproduire** ou à **suivre**
+-   **Documentation insuffisante** ou **inexistante** rendant les **processus** difficiles à **reproduire** ou à **suivre**
 
 ### **2.2 Solutions de contournement et compromis**
 
