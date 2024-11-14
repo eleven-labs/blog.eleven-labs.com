@@ -32,7 +32,7 @@ Afin de **remédier** à des dynamiques contraires et potentiellement ambiguës,
 
 Pour contempler le lien entre **qualité** et **développement logiciel**, il faut d’abord se poser la question des **conséquences de la non-qualité** et des **potentiels risques** qui peuvent apparaître.
 
-**Quelles sont les conséquences de la non qualité ?**
+## Quelles sont les conséquences de la non qualité ?
 
 Pour se rendre compte de **l'importance** de la qualité, il semble intéressant de se poser la question à **l'inverse**, en se demandant quels sont les **impacts** s' il y a **absence** de qualité.
 
