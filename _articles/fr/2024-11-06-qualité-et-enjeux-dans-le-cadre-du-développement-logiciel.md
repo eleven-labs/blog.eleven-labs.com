@@ -112,7 +112,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 
 ### Conséquence n°3 : Instabilité du produit et de sa performance
 
-### **3.1 Performance et Stabilité du Produit**
+#### **3.1 Performance et stabilité du produit**
 
 -   **Faibles performances** du logiciel : logiciel **lent**, **gourmand** en **ressources** ou **instable**, ce qui **dégrade l'expérience utilisateur**
 -   Temps de réponse **lent**
