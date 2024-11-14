@@ -166,7 +166,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Turnover élevé** : Les **tensions** et la **démotivation** peuvent conduire à un turnover plus élevé, avec des membres de l'équipe cherchant **d'autres opportunités** ailleurs.
 -   **Difficulté à recruter** : Une mauvaise réputation de qualité peut rendre difficile **l'attraction** de nouveaux talents, car les développeurs préfèrent souvent travailler sur des projets **bien structurés** et de **qualité**.
 
-### **4.4 Productivité et Gestion des Ressources**
+#### **4.4 Productivité et Gestion des Ressources**
 
 -   **Perte de productivité** : La nécessité de corriger des erreurs, de gérer des conflits et de résoudre des problèmes imprévus **réduit** le temps disponible pour avancer sur des tâches **productives**.
 -   **Surcharge de travail** : Les équipes peuvent être **submergées** par les tâches de correction, les ajustements et les interventions d'urgence, entraînant une **surcharge** de travail constante.
