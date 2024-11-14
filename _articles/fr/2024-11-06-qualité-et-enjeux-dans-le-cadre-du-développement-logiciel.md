@@ -172,7 +172,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Surcharge de travail** : Les équipes peuvent être **submergées** par les tâches de correction, les ajustements et les interventions d'urgence, entraînant une **surcharge** de travail constante.
 -   **Efforts redondants** : La mauvaise qualité peut mener à la **duplication** des efforts, car les équipes doivent souvent **revenir** sur des tâches déjà accomplies pour corriger des erreurs.
 
-### **4.5 Culture Organisationnelle et Environnement de Travail**
+#### **4.5 Culture Organisationnelle et Environnement de Travail**
 
 -   **Culture de la gestion de crise** : L'équipe peut adopter une **culture** de réaction constante aux problèmes, plutôt que de se concentrer sur la **prévention** et la **planification** proactive.
 -   **Perte de confiance dans la direction** : Si les problèmes de qualité ne sont pas **résolus** de manière efficace, cela peut entraîner une **perte** de confiance des équipes envers la direction et les gestionnaires de projets.
