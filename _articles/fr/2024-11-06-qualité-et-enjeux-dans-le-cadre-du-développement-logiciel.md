@@ -48,7 +48,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 
 -   **Erreur humaine** car l’information n’est pas **parvenue** ou n’a pas été vue ou **comprise**
 -   Communication n’arrivant pas à **destination**
--   Des informations **mauvaises** ou **mal comprises** ont été transmises entraînant une mauvaise **interprétation**
+-   Informations **mauvaises** ou **mal comprises** transmises aux équipes entraînant une mauvaise **interprétation**
 -   Une **voie** a été prise alors que toute l’information n’a pas été complètement transmise
 -   Les **questions pertinentes** ne sont pas posées car pas établies et intégrées
 
