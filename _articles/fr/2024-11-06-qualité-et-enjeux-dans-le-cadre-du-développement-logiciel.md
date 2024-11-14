@@ -155,7 +155,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Manque de cohésion** : La non-qualité peut créer des **divisions** au sein de l'équipe, affectant la **capacité** à travailler de manière **unifiée** et **coordonnée**.
 -   **Difficultés à communiquer les problèmes** : Les membres de l'équipe peuvent **hésiter** à signaler les problèmes ou les erreurs par **crainte** de **tensions** ou de **conflits**.
 
-### **4.2 Motivation et Engagement**
+#### **4.2 Motivation et Engagement**
 
 -   **Démotivation** : Les problèmes de qualité entraînent de la **frustration**, ce qui réduit la motivation des équipes à **s'investir** pleinement.
 -   **Sentiment d'épuisement** : Le **stress** lié aux corrections de bugs fréquentes, aux retards et aux urgences peut conduire à un **burn-out**.
