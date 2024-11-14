@@ -75,7 +75,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 #### **1.5 Impact sur la collaboration et la productivité**
 
 -   **Feedback** peu constructifs ou inexistants
--   Les **attentes** de l’équipe ne sont **pas prises en compte** et cela engendre des **réticences** à **s’investir correctement** sur le besoin
+-   **Attentes** de l’équipe **non prises en compte**, engendrant des **réticences** à **s’investir correctement** sur le besoin
 -   **Augmentation** de la **complexité** liée au **manque** des **informations** nécessaires
 
 ### Conséquence n°2 : manque de méthodes et processus
