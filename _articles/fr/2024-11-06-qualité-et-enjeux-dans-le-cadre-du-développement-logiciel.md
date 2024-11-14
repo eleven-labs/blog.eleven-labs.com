@@ -124,7 +124,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Risque pour la **sécurité**
 -   Risque de **non-conformité** réglementaire : **exposant** l'entreprise à des **sanctions** et des **coûts supplémentaires** pour se mettre en conformité
 
-### **3.3 Maintenance et Évolutivité**
+#### **3.3 Maintenance et évolutivité**
 
 -   Un **code** de **mauvaise qualité** est plus difficile à **maintenir** et à **mettre à jour**
 -   **Incapacité** à **évoluer** : le code **mal structuré** complique **l'ajout** de nouvelles fonctionnalités, limitant **l'adaptabilité** aux besoins **futurs**
