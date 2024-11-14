@@ -44,7 +44,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 
 ### Conséquence n°1 : dégradation de la communication et de la gestion de l'information
 
-### **1.1 Mauvaise transmission et réception de l'information**
+#### **1.1 Mauvaise transmission et réception de l'information**
 
 -   **Erreur humaine** car l’information n’est pas **parvenue** ou n’a pas été vue ou **comprise**
 -   La communication n’est pas arrivée à **destination**
