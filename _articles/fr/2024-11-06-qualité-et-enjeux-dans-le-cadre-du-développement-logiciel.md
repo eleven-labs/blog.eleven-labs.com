@@ -187,7 +187,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Réparations et correctifs plus lents** : La non-qualité complique l'identification et la résolution **rapide** des problèmes, ce qui entraîne des **délais** dans le déploiement de **correctifs**.
 -   **Accumulation de dette technique** : Des choix de conception **sous-optimaux** nécessitent des efforts de **refactoring** plus tard, augmentant les **coûts** et le **temps** nécessaires à la maintenance.
 
-### **5.2 Limitations sur l'Évolutivité et l'Adaptabilité**
+#### **5.2 Limitations sur l'Évolutivité et l'Adaptabilité**
 
 -   **Incapacité à évoluer** : Un code mal **structuré** rend difficile l'ajout de nouvelles fonctionnalités, limitant la **capacité** du logiciel à **s'adapter** aux **exigences** changeantes des utilisateurs.
 -   **Difficultés d'intégration** : Un logiciel de mauvaise qualité peut rencontrer des problèmes pour **s'intégrer** avec d'autres systèmes, **limitant** la capacité **d'évolution** et de mise à jour.
