@@ -1,12 +1,12 @@
 ---
 contentType: article
 lang: en
-date: '2024-25-10'
+date: '2024-14-11'
 slug: use-eslint-improve-workflow
 title: How to use ESLint to improve your workflow
 excerpt: >-
   ESLint ecosystem can be super handy for JS and TS codebases, but are you using it right? Keep reading to learn about useful ESLint rules and a get a little bit more out it.
-categories: []
+categories: [Javascript]
 authors:
   - meugeniatr
 keywords:
@@ -34,22 +34,21 @@ _The concept of linting in computer science was first introduced in 1978 with a 
 While JSLint was a very opinionated linting tool, it was also groundbreaking. It opened a door to a different view on debugging, prioritizing code quality through static analysis and compilation optimizations. ESLint expanded on this concept, gaining popularity thanks to its highly customizable rule set and flexibility, which allowed developers to adapt it to various coding standards and environments. This versatility helped ESLint grow into the robust tool with a thriving community that it is today.
 
 ## How can ESLint improve your codebase?
-ESLint is a very common tool for linting languages before the compilation phase. This means that developers can catch errors and identify styling rules in an earlier process than in a code review. And this is honestly quite useful for detecting technical issues and having a consistent codebase. All these can seem pretty obvious after explaining what a linter does. But I would like to share you how eslint can help not only your repository, but also your team.
+ESLint is a very common tool for linting languages before the compilation phase. This means that developers can catch errors and identify styling rules in an earlier process than in a code review. And this is honestly quite useful for detecting technical issues and having a consistent codebase. All these can seem pretty obvious after explaining what a linter does. But I would like to share with you how eslint can help not only your repository, but also your team.
 
 Reviewing a merge request can become a problematic process when the comments circle around different stylistics points. This is when discussing ESLint rules can be a big relief for the team, since everyone can share their point of view about writing code and -hopefully- agree on a rule that will save time and frustration when reviewing. 
 
-Well, this is already a big win but there's more. The same goes about code quality: linting can be a great objective tool to measure it and cut down some long exchanges about which way is better in technical reviews. This can also be a great help to junior developers who are still learning good practices or adjusting in the onboarding process of a codebase.
+Well, this is already a big win but there's more. The same goes with code quality: linting can be a great objective tool to measure it and cut down some long exchanges about which way is better in technical reviews. This can also be a great help to junior developers who are still learning good practices or adjusting in the onboarding process of a codebase.
 
-### Basic React and Typescript set-up
+## Basic React and Typescript set-up
 In any React and Typescript project, you have already installed and set up [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
  and [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react). If you didn't, then you should. This article 'takes for granted' that you are already using both of these tools.
 
-### A few helpful rules
 I have used ESLint for JS and TS projects, and in these experiences I found that this tool can avoid numerous comments in merge requests and upset dev teams. We have gathered a set of rules regarding the topics that kept coming back during the review process and discussed whether implementing them or not in technical meetings. The process has gone smoothly since then. Comments regarding style and conventions dropped dramatically, and it helped newcomers to adapt their writing to the repository too.
 
 I think it has been a huge step forward, since it has also helped us to catch bugs and issues with types even if we already use TypesScript. These are the rules that, for me, have become essential:
 
--  ### Sorting types, objects, props
+### Sorting types, objects, props
 
 Sorting is tricky, but many times it can be pertinent to improve readability. So we adopted a bunch of rules to automatize this process:
 
@@ -59,7 +58,7 @@ Sorting is tricky, but many times it can be pertinent to improve readability. So
 Maybe the easiest win, with only one option to customize (caseSensitive), this rule will sort every destructured object:
 
 ```js
-/* caseSenditive true */
+/* caseSensitive true */
 let { a, B, c } = obj; 🚫
 let { B, a, c } = obj; ✅
 ```
@@ -91,7 +90,7 @@ type Department = {
 ```
 - [react/jsx-sort-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md)
 
-Straigh from eslint-plugin-react, this rule sorts all props alphabetically... automatically! It has plenty of cool options for sorting callbacks, shorthands, etc. This is my favorite config:
+Straight from eslint-plugin-react, this rule sorts all props alphabetically... automatically! It has plenty of cool options for sorting callbacks, shorthands, etc. This is my favorite config:
 
 ```js
 'react/jsx-sort-props': [
@@ -201,7 +200,7 @@ async function returnNumber() {
 ### Complexity
 Simpler code is easier to read and maintain. ESLint community has developped many rules to help this happen. If your codebase does not use these rules yet, I advice you to add them as warnings and progressively refactor sections of the code.
 
-#### [no-uneeded-ternary](https://eslint.org/docs/latest/rules/no-unneeded-ternary)
+#### [no-unneeded-ternary](https://eslint.org/docs/latest/rules/no-unneeded-ternary)
 
 Some developers love their ternary operators. These rules will keep them in check.
 
@@ -265,12 +264,12 @@ Setting this too low might interfere with functions that are just long lists of 
 ### Config alternatives
 Maybe you have already heard about [epicweb](https://www.epicweb.dev/), but in case you didn't, it is a platform created by [Kent C. Dodds](kentcdodds.com) among other very talented tech people where you can learn a lot. And I mean a lot! There's workshops, articles, tips. 
 
-But coming back to this article's topic, they have also developped a basic rules config to get get started with ESLing, Typescript and Prettier. You can check it out [here](https://github.com/epicweb-dev/config.) Even if the same set-up can be done by ourselves, these rules working together make sense and they even [took the time to write an article about their chosen Prettier rules](https://www.epicweb.dev/your-code-style-does-matter-actually). It can be really inspiring!
+But coming back to this article's topic, they have also developped a basic rules config to get started with ESLing, Typescript and Prettier. You can check it out [here](https://github.com/epicweb-dev/config.) Even if the same set-up can be done by ourselves, these rules working together make sense and they even [took the time to write an article about their chosen Prettier rules](https://www.epicweb.dev/your-code-style-does-matter-actually). It can be really inspiring!
 
 Another approach has been presented by Anthony Fu during JS Nation Amsterdam. He pushes ESLint rules not only as a linter but also as a formatter, getting rid of Prettier configurations in his personal ESLint config https://github.com/antfu/eslint-config. Support for React, Svelte, UnoCSS, Astro, Solid is provided, as well as the newly released ins ESLint 9 flat-config.
 
 ## Conclusion
-Linter is a great tool for improving code. It is worth that everyone in the team gets involved with its configuration for smoothing the review process and code quality. Even if linters do not replace a review, they quite help brush off a chunk of comments and helps speed up the delivery of properly conventioned code. 
+ESLint is a great tool for improving code. It is worth that everyone in the team gets involved with its configuration for smoothing the review process and code quality. Even if linters do not replace a review, they quite help brush off a chunk of comments and helps speed up the delivery of properly conventioned code. 
 I like to think that this is a way of democratizing code within a team, as well as improving it. But this also means taking time for exploring and testing. If you made it up to here, thanks! I hope you are a bit more ready to play around ESLint!
 
 ## Resources and further digging
