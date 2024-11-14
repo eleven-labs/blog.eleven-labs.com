@@ -72,7 +72,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Difficulté de **coordination** avec les **autres équipes** de l’organisation
 -   **Incapacité** à gérer les **changements**
 
-### **1.5 Impact sur la collaboration et la productivité**
+#### **1.5 Impact sur la collaboration et la productivité**
 
 -   **Feedback** peu constructifs ou inexistants
 -   Les **attentes** de l’équipe ne sont **pas prises en compte** et cela engendre des **réticences** à **s’investir correctement** sur le besoin
