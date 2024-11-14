@@ -180,7 +180,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 
 ### **5\. Impacts sur la Maintenance et Évolutivité**
 
-### **5.1 Difficultés de Maintenance**
+#### **5.1 Difficultés de Maintenance**
 
 -   **Complexité accrue de la maintenance** : Un code mal structuré et peu documenté rend les tâches de maintenance plus **complexes**, nécessitant plus de temps et de **ressources** pour résoudre les **problèmes**.
 -   **Coûts de maintenance élevés** : La nécessité de corriger **fréquemment** des bugs et de maintenir un code peu **optimisé** entraîne des **coûts** additionnels.
