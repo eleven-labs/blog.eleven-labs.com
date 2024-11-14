@@ -104,7 +104,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Retards fréquents** dus à des processus **inefficaces**, entraînant un **dépassement** des **délais** et des **budgets**
 -   **Incapacité** à **automatiser** certaines tâches à cause de **l'inefficacité** des processus, ce qui **ralentit** les **livraisons**
 
-### **2.5 Résistance au changement et difficultés d'adaptation**
+#### **2.5 Résistance au changement et difficultés d'adaptation**
 
 -   **Problèmes** pour mettre en place de **nouveaux processus** ou **améliorer** les existants en raison d’une **résistance** au **changement**
 -   **Complexité** accrue dans **l’introduction** de nouvelles **technologies** ou **méthodes**, en raison des **schémas préexistants** ou des **processus obsolètes**
