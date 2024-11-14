@@ -133,7 +133,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 
 ### **3.4 Compatibilité et Intégration**
 
--   Faible **compatibilité** avec d'autres **systèmes** : difficultés **d'intégration** avec d'autres **logiciels** ou **services**
+-   Difficultés **d'intégration** avec d'autres **logiciels** ou **services**
 -   Réduite **longévité** du produit : produits mal conçus **abandonnés** plus tôt en raison de **coûts** de maintenance élevés ou de **complexité**
 
 ### **3.5 Expérience Utilisateur et Satisfaction Client**
