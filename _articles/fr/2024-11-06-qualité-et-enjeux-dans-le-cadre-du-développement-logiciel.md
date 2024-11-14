@@ -62,7 +62,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 #### **1.3 Barrières à la communication interne**
 
 -   L’équipe a du **mal à communiquer** correctement ses **besoins** et cela engendre des **décalages**
--   Une **rétention d’information** peut exister car l’équipe est **soumise à des pressions externes**, la rendant plus **réticente** à communiquer entièrement
+-   **Rétention d’information** existante car l'équipe est **soumise à des pressions externes**, la rendant plus **réticente** à communiquer entièrement
 -   **Dégradation de la confiance** au sein de l’équipe
 
 #### **1.4 Coordination et synchronisation inefficaces**
