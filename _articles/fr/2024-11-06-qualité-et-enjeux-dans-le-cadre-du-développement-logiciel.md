@@ -1,7 +1,7 @@
 ---
 contentType: article
 lang: fr
-date: '2024-10-22'
+date: '2024-11-26'
 slug: qualité-enjeux-developpement-logiciel
 title: Qualité et enjeux dans le cadre du développement logiciel
 excerpt: >-
