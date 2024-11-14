@@ -92,7 +92,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Accumulation de **dette technique**, où les **choix rapides** ou **inefficaces** créent des **problèmes** complexes à **long terme**
 -   **Recours** à des solutions **peu optimales** ou **mal adaptées** pour répondre à des exigences **non claires** ou **mal définies**
 
-### **2.3 Gestion inadéquate des dépendances et de l'intégration**
+#### **2.3 Gestion inadéquate des dépendances et de l'intégration**
 
 -   **Difficulté** à gérer les **interdépendances** entre les **modules** ou les **systèmes**, entraînant des **intégrations complexes** et **instables**
 -   **Problèmes** de **compatibilité** entre différents **composants** ou **logiciels**, **ralentissant** le **développement** et compliquant la **maintenance**
