@@ -52,7 +52,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Une **voie** a été prise alors que toute l’information n’a pas été complètement transmise
 -   Les **questions pertinentes** ne sont pas posées car pas établies et intégrées
 
-### **1.2 Compréhension incorrecte des objectifs et des besoins**
+#### **1.2 Compréhension incorrecte des objectifs et des besoins**
 
 -   **Mauvaise compréhension des objectifs** du projet
 -   **Incertitude** quant aux **vrais besoins** amenant à de **mauvais résultats**
