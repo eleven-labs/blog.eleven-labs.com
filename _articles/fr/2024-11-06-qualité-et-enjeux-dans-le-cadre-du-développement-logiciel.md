@@ -59,7 +59,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Des **perceptions différentes** amènent à une **compréhension décalée**
 -   **Non respect des attentes** des parties prenantes car non comprises **correctement**
 
-### **1.3 Barrières à la communication interne**
+#### **1.3 Barrières à la communication interne**
 
 -   L’équipe a du **mal à communiquer** correctement ses **besoins** et cela engendre des **décalages**
 -   Une **rétention d’information** peut exister car l’équipe est **soumise à des pressions externes**, la rendant plus **réticente** à communiquer entièrement
