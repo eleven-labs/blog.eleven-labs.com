@@ -122,7 +122,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 #### **3.2 Sécurité et conformité**
 
 -   Risque pour la **sécurité**
--   Risque de **non**\-**conformité** réglementaire : **exposant** l'entreprise à des **sanctions** et des **coûts supplémentaires** pour se mettre en conformité
+-   Risque de **non-conformité** réglementaire : **exposant** l'entreprise à des **sanctions** et des **coûts supplémentaires** pour se mettre en conformité
 
 ### **3.3 Maintenance et Évolutivité**
 
