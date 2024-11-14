@@ -149,7 +149,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 
 ### **4\. Impacts sur l’Équipe et l’Organisation**
 
-### **4.1 Relations et Collaboration au Sein de l'Équipe**
+#### **4.1 Relations et Collaboration au Sein de l'Équipe**
 
 -   **Tensions interpersonnelles** : Des problèmes **relationnels** engendrent des **tensions** au sein de l’équipe de développement, réduisant **l'efficacité** de la collaboration.
 -   **Manque de cohésion** : La non-qualité peut créer des **divisions** au sein de l'équipe, affectant la **capacité** à travailler de manière **unifiée** et **coordonnée**.
