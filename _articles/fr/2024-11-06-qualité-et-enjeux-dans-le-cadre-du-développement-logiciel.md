@@ -178,7 +178,7 @@ Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
 -   **Perte de confiance dans la direction** : Si les problèmes de qualité ne sont pas **résolus** de manière efficace, cela peut entraîner une **perte** de confiance des équipes envers la direction et les gestionnaires de projets.
 -   **Manque de transparence et de communication** : Une gestion **inefficace** de la non-qualité peut **conduire** à un manque de transparence, où les problèmes sont cachés ou minimisés, **aggravant** les tensions internes.
 
-### **5\. Impacts sur la Maintenance et Évolutivité**
+Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
 
 #### **5.1 Difficultés de Maintenance**
 
