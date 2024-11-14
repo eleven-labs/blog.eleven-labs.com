@@ -199,7 +199,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Consommation excessive de ressources** : Un code non optimisé **consomme** plus de ressources (CPU, mémoire), ce qui peut nécessiter des optimisations **coûteuses** pour améliorer l'efficacité.
 -   **Difficultés de test et de validation** : Un code mal conçu peut être **difficile** à tester, ce qui **complique** la validation des mises à jour et des nouvelles fonctionnalités, augmentant les **risques** de bugs non détectés.
 
-### **5.4 Impacts à Long Terme sur le Cycle de Vie du Produit**
+#### **5.4 Impacts à Long Terme sur le Cycle de Vie du Produit**
 
 -   **Cycle de vie raccourcit** : Les produits qui ne peuvent pas évoluer ou être facilement maintenus ont une durée de vie plus **courte**, car ils deviennent rapidement **obsolètes** ou **coûteux** à soutenir.
 -   **Frein à l'innovation** : Les difficultés à maintenir et à mettre à jour le code limitent la capacité à introduire de **nouvelles** idées et fonctionnalités, rendant le logiciel moins **compétitif**.
