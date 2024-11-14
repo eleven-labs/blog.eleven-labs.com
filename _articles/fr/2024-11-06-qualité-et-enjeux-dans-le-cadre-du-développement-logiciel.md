@@ -98,7 +98,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Problèmes** de **compatibilité** entre différents **composants** ou **logiciels**, **ralentissant** le **développement** et compliquant la **maintenance**
 -   **Manque** de **coordination** pour la gestion des **versions** et des **mises à jour**, entraînant des **conflits** ou des **régressions**
 
-### **2.4 Impact sur la productivité et les ressources**
+#### **2.4 Impact sur la productivité et les ressources**
 
 -   **Multiplication** des retours **en arrière** et **corrections**, augmentant la **charge de travail** et les **coûts associés**
 -   **Retards fréquents** dus à des processus **inefficaces**, entraînant un **dépassement** des **délais** et des **budgets**
