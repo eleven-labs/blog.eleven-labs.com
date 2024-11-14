@@ -110,7 +110,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Complexité** accrue dans **l’introduction** de nouvelles **technologies** ou **méthodes**, en raison des **schémas préexistants** ou des **processus obsolètes**
 -   **Difficulté** à mettre en place une **amélioration continue** si les **processus actuels** ne sont pas **évalués** et **ajustés** régulièrement
 
-### **3\. Impacts sur le Produit et sa Performance**
+### Conséquence n°3 : Instabilité du produit et de sa performance
 
 ### **3.1 Performance et Stabilité du Produit**
 
