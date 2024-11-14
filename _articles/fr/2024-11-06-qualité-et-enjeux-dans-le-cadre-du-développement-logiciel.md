@@ -50,7 +50,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Communication n’arrivant pas à **destination**
 -   Informations **mauvaises** ou **mal comprises** transmises aux équipes entraînant une mauvaise **interprétation**
 -   **Voie** prise alors que toute l’information n’a pas été complètement transmise
--   Les **questions pertinentes** ne sont pas posées car pas établies et intégrées
+-  **Questions pertinentes** non posées car pas établies et intégrées
 
 #### **1.2 Compréhension incorrecte des objectifs et des besoins**
 
