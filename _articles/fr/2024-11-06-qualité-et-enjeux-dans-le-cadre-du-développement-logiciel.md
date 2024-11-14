@@ -136,7 +136,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Difficultés **d'intégration** avec d'autres **logiciels** ou **services**
 -   Produits mal conçus **abandonnés** plus tôt en raison de **coûts** de maintenance élevés ou de **complexité**
 
-### **3.5 Expérience Utilisateur et Satisfaction Client**
+#### **3.5 Expérience Utilisateur et Satisfaction Client**
 
 -   Expérience utilisateur **dégradée** : problèmes **récurrents** et faible **performance** conduisant à une **insatisfaction**
 -   Faible **adaptabilité** aux **besoins** utilisateurs : difficulté à **personnaliser** ou **ajuster** en fonction des **retours** clients
