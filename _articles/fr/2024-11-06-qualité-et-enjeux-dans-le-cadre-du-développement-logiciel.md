@@ -80,7 +80,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 
 ### Conséquence n°2 : manque de méthodes et processus
 
-### **2.1 Incohérences et manque de standardisation**
+#### **2.1 Incohérences et manque de standardisation**
 
 -   **Absence** de **normes** et de **standards** clairs, entraînant des **différences** de **qualité** et de **performance** entre les équipes
 -   **Variabilité** dans les **méthodes de travail** qui rend **difficile** la **collaboration** et **l'intégration** des différentes **parties** du projet
