@@ -19,7 +19,6 @@ keywords:
   - quality-management
 ---
 
-**Introduction :**
 
 **La qualité**, c’est avant tout **une éthique**. Face aux **risques inhérents de toute production humaine**, elle guide la manière dont sont faites les choses, en visant non seulement la **performance**, mais aussi **l'excellence** et la **satisfaction**. Plus qu'un ensemble de critères, **la qualité** reflète un **engagement profond** envers **l'amélioration continue** et la **valeur ajoutée** pour les **utilisateurs**. Dans le cadre du **développement de logiciels**, cela signifie concevoir des solutions **fiables**, **performantes** et **évolutives**, tout en s'assurant que chaque étape du processus, de la **planification** en passant par le **code** à **l'expérience utilisateur**, respecte ces **principes fondamentaux**. Façon de **penser** qui modèle la manière dont sont menés les **développements logiciels** ou ce qu’on peut appeler **l’art** - ou **la science** - de la **production logicielle**, elle revêt une **importance primordiale**.
 
