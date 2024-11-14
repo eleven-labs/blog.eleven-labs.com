@@ -24,7 +24,7 @@ keywords:
 
 ## L'Importance de la qualité dans le développement logiciel
 
-Le **développement logiciel** est un processus qui, suite à **l’étude du besoin**, va amener à **concevoir**, **créer**, **déployer** et **maintenir une solution** qui va correspondre à **l’attente** des **donneurs d’ordre**, qui va se baser sur la compréhension des **besoins utilisateurs** ou clients, mais aussi de leur propres **perceptions** et **envies** sur ce que doit être la **solution**.
+Le **développement logiciel** est un processus qui, suite à **l’étude du besoin**, va amener à **concevoir**, **créer**, **déployer** et **maintenir une solution** qui va correspondre à **l’attente** des **donneurs d’ordre**. Celle-ci va se baser sur la compréhension des **besoins utilisateurs** ou clients, mais aussi de leur propres **perceptions** et **envies** sur ce que doit être la **solution**.
 
 Cette définition, en soulignant le fait qu'il y a une possibilité **d'interprétation**, que cela soit fait de manière **purement personnelle** ou que **l'information** va subir un **traitement** avant d'arriver à **destination**, montre que le **développement logiciel**, qui est par nature une **création humaine émaillée d’erreurs possibles** dans sa **réalisation**, n’est jamais exempt d'**écart** entre le **besoin** et le **résultat final**.
 
