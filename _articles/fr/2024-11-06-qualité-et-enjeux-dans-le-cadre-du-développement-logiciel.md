@@ -127,7 +127,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 #### **3.3 Maintenance et évolutivité**
 
 -   **Code** de **mauvaise qualité** difficile à **maintenir** et à **mettre à jour**
--   **Incapacité** à **évoluer** : le code **mal structuré** complique **l'ajout** de nouvelles fonctionnalités, limitant **l'adaptabilité** aux besoins **futurs**
+-   **Incapacité** à **évoluer** car un code **mal structuré** complique **l'ajout** de nouvelles fonctionnalités, limitant **l'adaptabilité** aux besoins **futurs**
 -   **Difficulté** de **mise à jour** ou de **migration**
 -   **Augmentation** des **coûts** de **support** et de **maintenance**
 
