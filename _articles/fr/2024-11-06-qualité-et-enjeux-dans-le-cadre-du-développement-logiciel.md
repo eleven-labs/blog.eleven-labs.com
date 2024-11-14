@@ -86,7 +86,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   **Variabilité** dans les **méthodes de travail** qui rend **difficile** la **collaboration** et **l'intégration** des différentes **parties** du projet
 -   **Documentation insuffisante** ou **inexistante** rendant les **processus** difficiles à **reproduire** ou à **suivre**
 
-### **2.2 Solutions de contournement et compromis**
+#### **2.2 Solutions de contournement et compromis**
 
 -   **Adoption** de **solutions** temporaires ou de **contournement** qui ne **résolvent** pas les **problèmes** de **manière durable**
 -   Accumulation de **dette technique**, où les **choix rapides** ou **inefficaces** créent des **problèmes** complexes à **long terme**
