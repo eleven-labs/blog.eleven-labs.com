@@ -19,12 +19,12 @@ authors:
   - clairejojo
 ---
 
-L'agilité est devenue un choix populaire pour les entreprises qui cherchent à améliorer la flexibilité et l'efficacité de leur processus de développement de logiciels. Cependant, il existe une grande variété de méthodologies agiles différentes, et choisir la bonne pour votre projet et votre organisation peut être difficile. Dans cet article, nous allons examiner les différentes méthodologies agiles disponibles et comment choisir la bonne pour votre projet et votre entreprise.
+L'agilité est devenue un choix populaire pour les entreprises qui cherchent à améliorer la flexibilité et l'efficacité de leur processus de développement de logiciels. Cependant, il existe une grande variété de méthodologies agiles différentes, et choisir la bonne pour votre projet et [l'organisation de vos équipes et de votre SI](https://eleven-labs.com/architecture/audit-organisationnel-si/) peut être difficile. Dans cet article, nous allons examiner les différentes méthodologies agiles disponibles et comment choisir la bonne pour votre projet et votre entreprise.
 
 ## Scrum
 ### Description
 
-L'approche SCRUM est une méthode agile de gestion de projet. Son objectif principal est d'améliorer la productivité de son équipe tout en permettant l'optimisation des produits grâce à des retours réguliers du marché. Cette méthodologie est l'une des plus populaires et des plus utilisées dans les projets de développement de logiciels. Scrum est basé sur des sprints, de courtes périodes de travail d'une durée de deux semaines à un mois, au cours desquelles une équipe de développement se concentre sur un objectif précis. Scrum utilise des réunions quotidiennes pour suivre l'avancement du projet et des réunions de sprint pour planifier et évaluer chaque sprint.
+L'approche SCRUM est une méthode agile de gestion de projet. Son objectif principal est d'améliorer la productivité de son équipe tout en permettant l'optimisation des produits grâce à des retours réguliers du marché. Cette méthodologie est l'une des plus populaires et des plus utilisées dans les projets de développement de logiciels. Scrum est basé sur des sprints, de courtes périodes de travail d'une durée de deux semaines à un mois, au cours desquelles une équipe de développement se concentre sur un objectif précis. [Scrum utilise des réunions quotidiennes pour suivre l'avancement du projet](https://eleven-labs.com/ceremonies-scrum/) et des réunions de sprint pour planifier et évaluer chaque sprint.
 
 ![]({BASE_URL}/imgs/articles/2023-04-20-comment-choisir-parmi-scrum-kanban-safe/agile.png)
 
