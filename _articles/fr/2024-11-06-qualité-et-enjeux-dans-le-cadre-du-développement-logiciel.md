@@ -78,7 +78,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Les **attentes** de l’équipe ne sont **pas prises en compte** et cela engendre des **réticences** à **s’investir correctement** sur le besoin
 -   **Augmentation** de la **complexité** liée au **manque** des **informations** nécessaires
 
-### **2\. Impacts sur les Méthodes et Processus**
+### Conséquence n°2 : manque de méthodes et processus
 
 ### **2.1 Incohérences et manque de standardisation**
 
