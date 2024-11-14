@@ -332,7 +332,7 @@ Ces bonnes pratiques permettent de **garantir** une qualité **élevée** tout a
 
 En instaurant ces bonnes pratiques, on pourra également **suivre** leur mise en œuvre par les équipes, évaluer leur efficacité et identifier les éventuels **deltas** avec les objectifs fixés lors de leur application.
 
-**Conclusion**
+## **Conclusion** : la qualité est un élément essentiel du développement logiciel 
 
 Comme on a pu le voir, la qualité est avant tout une question **d’état d’esprit**, il faut garder une **ligne directrice** qui va **guider** toutes les actions le long du chemin du développement logiciel. En nous orientant pour prendre soin de **faire attention aux détails**, de limiter les **incompréhensions** et d’avoir un **regard critique** sur ce qui est produit, elle **réduit les risques** et **l’incertitude**, permettant d’obtenir une satisfaction des clients ou des utilisateurs, et en adoptant une démarche d’amélioration continue, de pouvoir même **dépasser leurs attentes**.
 
