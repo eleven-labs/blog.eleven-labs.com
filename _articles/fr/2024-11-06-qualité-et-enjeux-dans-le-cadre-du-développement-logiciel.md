@@ -197,7 +197,7 @@ Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
 
 -   **Faibles performances du logiciel** : Un code **inefficace** ou **surchargé** peut entraîner des **ralentissements**, ce qui complique la **maintenance** car chaque **modification** doit être **soigneusement** testée pour éviter **d'aggraver** les problèmes de performance.
 -   **Consommation excessive de ressources**, due à un code non optimisé qui **consomme** davantage de CPU et de mémoire, nécessitant des optimisations **coûteuses** pour améliorer l'efficacité
--   **Difficultés de test et de validation** : Un code mal conçu peut être **difficile** à tester, ce qui **complique** la validation des mises à jour et des nouvelles fonctionnalités, augmentant les **risques** de bugs non détectés.
+-   **Difficultés de test et de validation**, dues à un code mal conçu, rendant la **validation** des mises à jour et des nouvelles fonctionnalités **complexe** et augmentant les **risques** de bugs non détectés
 
 #### **5.4 Impacts à Long Terme sur le Cycle de Vie du Produit**
 
