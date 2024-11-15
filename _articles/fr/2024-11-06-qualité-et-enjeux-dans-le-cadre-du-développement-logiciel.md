@@ -139,7 +139,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 #### **3.5 Expérience Utilisateur et Satisfaction Client**
 
 -   Expérience utilisateur **dégradée**  en raisons de problèmes **récurrents** et de faibles **performances** conduisant à une **insatisfaction**
--   Faible **adaptabilité** aux **besoins** utilisateurs : difficulté à **personnaliser** ou **ajuster** en fonction des **retours** clients
+-   Faible **adaptabilité** aux **besoins** utilisateurs, avec difficulté à **personnaliser** ou **ajuster** en fonction des **retours** clients
 -   Augmentation du taux de **désabonnement** ou **d'abandon** : utilisateurs optant pour des solutions **concurrentes** plus **fiables** et **performantes**
 
 #### **3.6 Réputation et Compétitivité**
