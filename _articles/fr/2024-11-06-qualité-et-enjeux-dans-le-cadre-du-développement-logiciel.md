@@ -159,7 +159,7 @@ Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
 
 -   **Démotivation** causée par des **problèmes** de qualité, entraînant **frustration** et **baisse** de l'engagement des équipes
 -   **Sentiment d'épuisement** lié au **stress** des corrections de bugs **fréquentes**, des **retards** et des **urgences**, pouvant mener au **burn-out**
--   **Manque de satisfaction au travail** : Travailler sur un produit de mauvaise qualité peut réduire la **satisfaction** professionnelle, car les équipes ne voient pas les résultats positifs de leurs **efforts**.
+-   **Manque de satisfaction au travail**, dû à un produit de **mauvaise** qualité, limitant la **reconnaissance** des résultats **positifs** des **efforts** fournis par les équipes
 
 #### **4.3 Turnover et Recrutement**
 
