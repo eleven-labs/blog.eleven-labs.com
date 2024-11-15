@@ -163,7 +163,7 @@ Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
 
 #### **4.3 Turnover et Recrutement**
 
--   **Turnover élevé** : Les **tensions** et la **démotivation** peuvent conduire à un turnover plus élevé, avec des membres de l'équipe cherchant **d'autres opportunités** ailleurs.
+-   **Turnover élevé** causé par les **tensions** et la **démotivation**, poussant les membres de l'équipe à rechercher **d'autres opportunités**
 -   **Difficulté à recruter** liée à une **mauvaise** réputation de qualité, compliquant **l'attraction** de nouveaux talents, les développeurs privilégiant les projets **bien structurés** et de **qualité**
 
 #### **4.4 Productivité et Gestion des Ressources**
