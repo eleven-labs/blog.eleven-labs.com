@@ -203,7 +203,7 @@ Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
 
 -   **Cycle de vie raccourcit** : Les produits qui ne peuvent pas évoluer ou être facilement maintenus ont une durée de vie plus **courte**, car ils deviennent rapidement **obsolètes** ou **coûteux** à soutenir.
 -   **Frein à l'innovation** : Les difficultés à maintenir et à mettre à jour le code limitent la capacité à introduire de **nouvelles** idées et fonctionnalités, rendant le logiciel moins **compétitif**.
--   **Risque accru de dépréciation** : Des produits mal **maintenus** risquent d'être **abandonnés** par les utilisateurs au profit de solutions plus **modernes** et **évolutives**.
+-   **Risque accru de dépréciation**, avec des produits mal **maintenus** susceptibles d'être **abandonnés** par les utilisateurs au profit de solutions plus **modernes** et **évolutives**
 
 Ainsi en ayant vu les **risques** engendrés par **l’absence** ou la **mauvaise** qualité, on peut mettre en **contraste** en regardant les **apports concrets** de la qualité.
 
