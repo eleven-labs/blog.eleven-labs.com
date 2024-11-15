@@ -152,7 +152,7 @@ Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
 #### **4.1 Relations et Collaboration au Sein de l'Équipe**
 
 -   **Tensions interpersonnelles**  dues à des problèmes **relationnels**, engendrant des **tensions** au sein de l’équipe de développement, réduisant **l'efficacité** de la collaboration.
--   **Manque de cohésion** : La non-qualité peut créer des **divisions** au sein de l'équipe, affectant la **capacité** à travailler de manière **unifiée** et **coordonnée**.
+-   **Manque de cohésion** entraînant des **divisions** au sein de l'équipe et affectant sa **capacité** à travailler de manière **unifiée** et **coordonnée**
 -   **Difficultés à communiquer les problèmes** : Les membres de l'équipe peuvent **hésiter** à signaler les problèmes ou les erreurs par **crainte** de **tensions** ou de **conflits**.
 
 #### **4.2 Motivation et Engagement**
