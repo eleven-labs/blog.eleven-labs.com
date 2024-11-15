@@ -190,7 +190,7 @@ Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
 #### **5.2 Limitations sur l'Évolutivité et l'Adaptabilité**
 
 -   **Incapacité à évoluer**, due à un code mal **structuré** qui **limite** l'ajout de **nouvelles** fonctionnalités et la **capacité** du logiciel à **s'adapter** aux **exigences** changeantes des utilisateurs.
--   **Difficultés d'intégration** : Un logiciel de mauvaise qualité peut rencontrer des problèmes pour **s'intégrer** avec d'autres systèmes, **limitant** la capacité **d'évolution** et de mise à jour.
+-   **Difficultés d'intégration**, causées par un logiciel de **mauvaise** qualité, entravant sa **capacité** à **s'intégrer** avec d'autres systèmes et **limitant** son **évolution** et ses mises à jour
 -   **Rigidité dans la conception** : La non-qualité peut entraîner une **architecture** rigide qui ne permet pas des **ajustements** ou **améliorations** sans nécessiter des changements **massifs**, retardant ainsi **l'innovation**.
 
 #### **5.3 Problèmes de Performance et d'Efficacité**
