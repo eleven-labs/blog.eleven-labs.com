@@ -201,7 +201,7 @@ Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
 
 #### **5.4 Impacts à Long Terme sur le Cycle de Vie du Produit**
 
--   **Cycle de vie raccourcit** : Les produits qui ne peuvent pas évoluer ou être facilement maintenus ont une durée de vie plus **courte**, car ils deviennent rapidement **obsolètes** ou **coûteux** à soutenir.
+-   **Cycle de vie raccourci**, avec des produits incapables **d'évoluer** ou d'être facilement **maintenus**, devenant rapidement **obsolètes** ou **coûteux** à soutenir
 -   **Frein à l'innovation**, causé par des **difficultés** de maintenance et de **mise à jour** du code, limitant l'introduction de **nouvelles** idées et fonctionnalités, et rendant le logiciel moins **compétitif**.
 -   **Risque accru de dépréciation**, avec des produits mal **maintenus** susceptibles d'être **abandonnés** par les utilisateurs au profit de solutions plus **modernes** et **évolutives**
 
