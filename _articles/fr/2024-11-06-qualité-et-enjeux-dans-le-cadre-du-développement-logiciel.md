@@ -145,7 +145,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 #### **3.6 Réputation et Compétitivité**
 
 -   Un produit de **mauvaise** qualité nuit à la **réputation**, entraînant une perte de **confiance**
--   Perte de **compétitivité** : produits **surpassés** par des solutions **concurrentes** plus **robustes** et **fiables**
+-   Perte de **compétitivité** à cause de produits **surpassés** par des solutions **concurrentes** plus **robustes** et **fiables**
 
 Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
 
