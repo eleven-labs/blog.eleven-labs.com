@@ -134,7 +134,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 #### **3.4 Compatibilité et intégration**
 
 -   Difficultés **d'intégration** avec d'autres **logiciels** ou **services**
--   Produits mal conçus **abandonnés** plus tôt en raison de **coûts** de maintenance élevés ou de **complexité**
+-   Produits mal conçus **abandonnés** prématurément en raison de **coûts** de maintenance **élevés** ou de leur **complexité**, réduisant ainsi leur **longévité**
 
 #### **3.5 Expérience Utilisateur et Satisfaction Client**
 
