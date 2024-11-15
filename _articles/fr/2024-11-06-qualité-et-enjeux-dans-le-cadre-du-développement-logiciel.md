@@ -168,7 +168,7 @@ Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
 
 #### **4.4 Productivité et Gestion des Ressources**
 
--   **Perte de productivité** : La nécessité de corriger des erreurs, de gérer des conflits et de résoudre des problèmes imprévus **réduit** le temps disponible pour avancer sur des tâches **productives**.
+-   **Perte de productivité** liée à la **correction** d'erreurs, la gestion des **conflits** et la **résolution de problèmes** imprévus, **réduisant** le temps consacré aux tâches **productives**
 -   **Surcharge de travail** : Les équipes peuvent être **submergées** par les tâches de correction, les ajustements et les interventions d'urgence, entraînant une **surcharge** de travail constante.
 -   **Efforts redondants** : La mauvaise qualité peut mener à la **duplication** des efforts, car les équipes doivent souvent **revenir** sur des tâches déjà accomplies pour corriger des erreurs.
 
