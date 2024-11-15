@@ -176,7 +176,7 @@ Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
 
 -   **Culture de la gestion de crise** où l'équipe **réagit** constamment aux problèmes au lieu de privilégier la **prévention** et la **planification** proactive
 -   **Perte de confiance dans la direction** : Si les problèmes de qualité ne sont pas **résolus** de manière efficace, cela peut entraîner une **perte** de confiance des équipes envers la direction et les gestionnaires de projets.
--   **Manque de transparence et de communication** : Une gestion **inefficace** de la non-qualité peut **conduire** à un manque de transparence, où les problèmes sont cachés ou minimisés, **aggravant** les tensions internes.
+-   **Manque de transparence et de communication**, résultant d'une gestion **inefficace** de la non-qualité, avec des problèmes cachés ou minimisés, **aggravant** les tensions internes.
 
 Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
 
