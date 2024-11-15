@@ -183,7 +183,7 @@ Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
 #### **5.1 Difficultés de Maintenance**
 
 -   **Complexité accrue de la maintenance**, due à un code **mal structuré** et **peu documenté**, nécessitant davantage de **temps** et de **ressources** pour **résoudre** les problèmes.
--   **Coûts de maintenance élevés** : La nécessité de corriger **fréquemment** des bugs et de maintenir un code peu **optimisé** entraîne des **coûts** additionnels.
+-   **Coûts de maintenance élevés**, causés par la correction **fréquente** de bugs et la maintenance d'un code **peu optimisé**, générant des **coûts** additionnels.
 -   **Réparations et correctifs plus lents** : La non-qualité complique l'identification et la résolution **rapide** des problèmes, ce qui entraîne des **délais** dans le déploiement de **correctifs**.
 -   **Accumulation de dette technique** : Des choix de conception **sous-optimaux** nécessitent des efforts de **refactoring** plus tard, augmentant les **coûts** et le **temps** nécessaires à la maintenance.
 
