@@ -170,7 +170,7 @@ Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
 
 -   **Perte de productivité** liée à la **correction** d'erreurs, la gestion des **conflits** et la **résolution de problèmes** imprévus, **réduisant** le temps consacré aux tâches **productives**
 -   **Surcharge de travail** causée par les **tâches de correction**, les **ajustements** et les **interventions d'urgence**, **submergeant** les équipes de manière constante
--   **Efforts redondants** : La mauvaise qualité peut mener à la **duplication** des efforts, car les équipes doivent souvent **revenir** sur des tâches déjà accomplies pour corriger des erreurs.
+-   **Efforts redondants** résultant de la mauvaise qualité, obligeant les équipes **à revenir** sur des tâches déjà accomplies pour **corriger** des erreurs.
 
 #### **4.5 Culture Organisationnelle et Environnement de Travail**
 
