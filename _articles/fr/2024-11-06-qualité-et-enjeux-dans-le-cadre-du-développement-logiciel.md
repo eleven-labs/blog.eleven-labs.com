@@ -195,7 +195,7 @@ Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
 
 #### **5.3 Problèmes de Performance et d'Efficacité**
 
--   **Faibles performances du logiciel** : Un code **inefficace** ou **surchargé** peut entraîner des **ralentissements**, ce qui complique la **maintenance** car chaque **modification** doit être **soigneusement** testée pour éviter **d'aggraver** les problèmes de performance.
+-   **Faibles performances du logiciel**, causées par un code **inefficace** ou **surchargé**, entraînant des **ralentissements** et rendant la **maintenance** plus complexe, chaque **modification** devant être **soigneusement** testée pour éviter **d'aggraver** les problèmes
 -   **Consommation excessive de ressources**, due à un code non optimisé qui **consomme** davantage de CPU et de mémoire, nécessitant des optimisations **coûteuses** pour améliorer l'efficacité
 -   **Difficultés de test et de validation**, dues à un code mal conçu, rendant la **validation** des mises à jour et des nouvelles fonctionnalités **complexe** et augmentant les **risques** de bugs non détectés
 
