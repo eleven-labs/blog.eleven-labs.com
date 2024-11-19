@@ -207,7 +207,7 @@ Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
 
 Ainsi en ayant vu les **risques** engendrés par **l’absence** ou la **mauvaise** qualité, on peut mettre en **contraste** en regardant les **apports concrets** de la qualité.
 
-**Quels sont les apports concrets de la qualité ?**
+## **Quels sont les apports concrets de la qualité ?**
 
 Pour saisir les apports concrets de la qualité, il est **essentiel** de comprendre ses impacts sur plusieurs aspects clés.
 
