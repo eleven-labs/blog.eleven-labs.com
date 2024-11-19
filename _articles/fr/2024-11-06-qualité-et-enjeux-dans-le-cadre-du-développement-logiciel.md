@@ -264,7 +264,7 @@ En renforçant la **réputation de la marque**, elle offre un **avantage concurr
 
 Ces **apports possibles** de la qualité permettent de se rendre compte de **l’impact** et de **l’utilité** sur le **développement logiciel**. Une fois cela **établi**, on peut se demander comment cela peut **concrètement** être **appliqué**. On peut alors parler de **bonnes pratiques** de qualité.
 
-**Quelles sont les bonnes pratiques de qualité ?**
+## **Quelles sont les bonnes pratiques de qualité ?**
 
 Adopter les **bonnes pratiques** de qualité est essentiel pour le **succès** des projets logiciels.
 
