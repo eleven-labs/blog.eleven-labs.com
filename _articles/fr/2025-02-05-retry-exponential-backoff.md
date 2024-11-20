@@ -63,26 +63,29 @@ class UnavailableException(Exception):
     pass
 
 
-def retry_with_backoff(fn, fn_args: dict, max_retry: int = 5):
-    for retry_count in range(0, max_retry + 1):
-        try:
-            return fn(**fn_args)
-        except UnavailableException:
-            if retry_count == max_retry:
-                logger.error("Limite de réessaye atteinte. Exception levé.")
-                raise
-            wait_seconds = math.exp(retry_count)
-            logger.warning(
-                f"Nouvelle tentative {retry_count} dans {wait_seconds} secondes"
-            )
-            time.sleep(wait_seconds)
+def retry_with_backoff(fn, fn_args: dict, retry_count: int = 0, max_retry: int = 5):
+    try:
+        return fn(**fn_args)
+    except UnavailableException:
+        if retry_count == max_retry:
+            logger.error("Limite de réessaye atteinte. Exception levé.")
+            raise
+
+    wait_seconds = math.exp(retry_count)
+    logger.warning(
+        f"Nouvelle tentative {retry_count} dans {wait_seconds} secondes"
+    )
+    time.sleep(wait_seconds)
+
+    return retry_with_backoff(fn, fn_args, retry_count + 1, max_retry)
 
 
 if __name__ == "__main__":
     def my_func():
         raise UnavailableException()
 
-    retry_with_backoff(my_func, {}, 2)
+
+    retry_with_backoff(my_func, {}, max_retry=2)
 ```
 
 Cela donne
