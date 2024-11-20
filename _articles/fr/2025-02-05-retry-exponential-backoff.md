@@ -103,3 +103,38 @@ UnavailableException
 
 Process finished with exit code 1
 ```
+
+Le test unitaire 
+
+```python
+import logging
+
+
+def test_write_backoff(caplog, spark_fixture):
+    def write_failed(hello: str):
+        print(hello)
+        raise UnavailableException()
+
+    with pytest.raises(UnavailableException):
+        retry_with_backoff(write_failed, {"hello": "world"}, max_retry=2)
+
+    assert len(caplog.records) == 3
+    assert caplog.record_tuples[0][1] == logging.WARNING
+    assert (
+        "Nouvelle tentative 0 dans 1.0 secondes"
+        in caplog.record_tuples[0][2]
+    )
+    assert caplog.record_tuples[1][1] == logging.WARNING
+    assert (
+        "Nouvelle tentative 1 dans 2.718281828459045 secondes"
+        in caplog.record_tuples[1][2]
+    )
+    assert caplog.record_tuples[2][1] == logging.ERROR
+    assert (
+        "Limite de réessaye atteinte. Exception levé."
+        in caplog.record_tuples[2][2]
+    )
+```
+
+
+
