@@ -24,13 +24,82 @@ Pour être plus concrêt, si un appel HTTP renvoi un code de status 500, alors o
 En Python, cela se traduit par le code suivant
 
 ```python
+import math
 import time
 
-def _retry_with_backoff():
-  for retry_count in range(0, 5):
-    response = requests.get("https://blog.eleven-labs.com")
-    if response.status_code.ok:
-      return response
+def retry_with_backoff():
+    print("Démarrage des nouvelles tentatives")
+    for retry_count in range(0, 5):
+        wait_seconds = math.exp(retry_count)
+        print(f"Tentative {retry_count}, attendre {wait_seconds} secondes")
+        time.sleep(wait_seconds)
+    print("Fin")
+```
 
-    time.sleep(2**retry_count)
+Cela donne
+
+```shell
+Démarrage des nouvelles tentatives
+Tentative 0, attendre 1.0 secondes
+Tentative 1, attendre 2.718281828459045 secondes
+Tentative 2, attendre 7.38905609893065 secondes
+Tentative 3, attendre 20.085536923187668 secondes
+Tentative 4, attendre 54.598150033144236 secondes
+Fin
+```
+
+Ensuite, modifions cette fonction pour qu'elle accepte n'importe quelle fonction. Pour que la fonction effectue une nouvelle tentative, il faut que la fonction appelé lève une exception.
+
+```python
+import math
+import time
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger()
+
+
+class UnavailableException(Exception):
+    pass
+
+
+def retry_with_backoff(fn, fn_args: dict, max_retry: int = 5):
+    for retry_count in range(0, max_retry + 1):
+        try:
+            return fn(**fn_args)
+        except UnavailableException:
+            if retry_count == max_retry:
+                logger.error("Limite de réessaye atteinte. Exception levé.")
+                raise
+            wait_seconds = math.exp(retry_count)
+            logger.warning(
+                f"Nouvelle tentative {retry_count} dans {wait_seconds} secondes"
+            )
+            time.sleep(wait_seconds)
+
+
+if __name__ == "__main__":
+    def my_func():
+        raise UnavailableException()
+
+    retry_with_backoff(my_func, {}, 2)
+```
+
+Cela donne
+
+```shell
+WARNING:root:Nouvelle tentative 0 dans 1.0 secondes
+WARNING:root:Nouvelle tentative 1 dans 2.718281828459045 secondes
+ERROR:root:Limite de réessaye atteinte. Exception levé.
+Traceback (most recent call last):
+  File "demo.py", line 33, in <module>
+    retry_with_backoff(my_func, {}, 2)
+  File "demo.py", line 16, in retry_with_backoff
+    return fn(**fn_args)
+           ^^^^^^^^^^^^^
+  File "demo.py", line 30, in my_func
+    raise UnavailableException()
+UnavailableException
+
+Process finished with exit code 1
 ```
