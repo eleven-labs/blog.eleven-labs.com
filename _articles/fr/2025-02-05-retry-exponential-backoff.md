@@ -17,11 +17,11 @@ seo:
 
 Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Cela peut être dû à plusieurs facteur qui ne sont pas maîtrisé. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelé ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on défini alors un délai d'attente qui augmente de façon exponentielle.
 
-Sans rentrer dans les détails mathématique, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative.
+Sans rentrer dans les détails mathématique, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplfication, ce nombre vaut environ ~2.718281. 
 
-Pour être plus concrêt, si un appel HTTP renvoi un code de status 500, alors on vaudrait retenter de nouveau bien plus tard.
+Python permet d'effectuer ce calcul via la bibliothèque standard `math` avec la fonction [`exp()`](https://docs.python.org/3/library/math.html#math.exp).
 
-En Python, cela se traduit par le code suivant
+Cela se traduit par le code suivant
 
 ```python
 import math
