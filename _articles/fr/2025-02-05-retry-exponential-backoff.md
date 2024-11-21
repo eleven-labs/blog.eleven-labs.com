@@ -15,7 +15,7 @@ seo:
   description: Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Il est alors possible d'effectuer une nouvelle tentative plus tard.
 ---
 
-Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Cela peut être dû à plusieurs facteur qui ne sont pas maîtrisé. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelé ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on défini alors un délai d'attente qui augmente de façon exponentielle.
+Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Cela peut être dû à plusieurs facteur qui ne sont pas maîtrisé. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelé ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on défini alors un délai d'attente qui augmente de façon exponentielle (en anglais: _retry exponential backoff_).
 
 Sans rentrer dans les détails mathématique, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplfication, le nombre d'Euler peut valoir environ ~2.718281. 
 
@@ -179,4 +179,5 @@ demo.py::test_retry_with_backoff_success PASSED                          [100%]
 ======================== 2 passed, 2 warnings in 3.73s =========================
 ```
 
+Vous avec désormais une fonction qui permet de rééssayer une action avec un temps d'attente exponentiel. Ce mécanisme est généralement présent dans les bibliothèques qui permettent de faire des appels à des ressources externes non maitrisé.
 
