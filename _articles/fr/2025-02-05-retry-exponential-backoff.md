@@ -8,6 +8,9 @@ excerpt: Il arrive qu'une fonction ou action ne puisse pas être réalisé a un 
 categories:
     - architecture
 keywords: []
+cover:
+    alt: Astronaute en mode jeu 2d vue du dessus
+    path: /imgs/articles/2025-02-05-retry-exponential-backoff/cover.jpg
 authors:
   - tthuon
 seo:
@@ -15,7 +18,7 @@ seo:
   description: Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Il est alors possible d'effectuer une nouvelle tentative plus tard.
 ---
 
-Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Cela peut être dû à plusieurs facteur qui ne sont pas maîtrisé. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelé ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on défini alors un délai d'attente qui augmente de façon exponentielle (en anglais: _retry exponential backoff_).
+Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Cela peut être dû à plusieurs facteur qui ne sont pas maîtrisé. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelé ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on défini alors un délai d'attente qui augmente de façon exponentielle (en anglais: _retries with exponential backoff_).
 
 Sans rentrer dans les détails mathématique, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplfication, le nombre d'Euler peut valoir environ ~2.718281. 
 
