@@ -17,38 +17,40 @@ seo:
 
 Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Cela peut être dû à plusieurs facteur qui ne sont pas maîtrisé. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelé ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on défini alors un délai d'attente qui augmente de façon exponentielle.
 
-Sans rentrer dans les détails mathématique, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplfication, ce nombre vaut environ ~2.718281. 
+Sans rentrer dans les détails mathématique, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplfication, le nombre d'Euler peut valoir environ ~2.718281. 
 
 Python permet d'effectuer ce calcul via la bibliothèque standard `math` avec la fonction [`exp()`](https://docs.python.org/3/library/math.html#math.exp).
 
-Cela se traduit par le code suivant
+Ecrivons la fonction de base qui permet d'attendre _e<sup>x</sup>_ secondes. Cette fonction peut s'écrire de façon procédurale ou récursive. Nous allons opter pour une fonction reccursive. Il faudra définir condition d'arrêt : quand le nombre de tentatives atteint le nombre maximal de tentatives attendues.
 
 ```python
 import math
 import time
 
-def retry_with_backoff():
-    print("Démarrage des nouvelles tentatives")
-    for retry_count in range(0, 5):
-        wait_seconds = math.exp(retry_count)
-        print(f"Tentative {retry_count}, attendre {wait_seconds} secondes")
-        time.sleep(wait_seconds)
-    print("Fin")
+def retry_with_backoff(count_retry: int = 0, max_retry: int = 5):
+    if count_retry >= max_retry:
+        print("Limite de réessaye atteint")
+        return
+
+    wait_seconds = math.exp(count_retry)
+    print(f"Tentative {count_retry}, attendre {wait_seconds:.4f} secondes")
+    time.sleep(wait_seconds)
+
+    return retry_with_backoff(count_retry + 1, max_retry)
 ```
 
 Cela donne
 
 ```shell
-Démarrage des nouvelles tentatives
-Tentative 0, attendre 1.0 secondes
-Tentative 1, attendre 2.718281828459045 secondes
-Tentative 2, attendre 7.38905609893065 secondes
-Tentative 3, attendre 20.085536923187668 secondes
-Tentative 4, attendre 54.598150033144236 secondes
-Fin
+Tentative 0, attendre 1.0000 secondes
+Tentative 1, attendre 2.7183 secondes
+Tentative 2, attendre 7.3891 secondes
+Tentative 3, attendre 20.0855 secondes
+Tentative 4, attendre 54.5982 secondes
+Limite de réessaye atteint
 ```
 
-Ensuite, modifions cette fonction pour qu'elle accepte n'importe quelle fonction. Pour que la fonction effectue une nouvelle tentative, il faut que la fonction appelé lève une exception.
+Ensuite, modifions cette fonction pour qu'elle accepte n'importe quelle fonction. Pour que la fonction effectue une nouvelle tentative, il faut que la fonction appelé lève une exception. Nous allons également ajouter un `logger` pour surveiller les tentatives. Enfin, dans le cas où le nombre de tentatives maximal a été atteint, alors il faut lever une exception dédié `MaxRetryReachedException` afin que les couches supérieur de l'application soit notifié.
 
 ```python
 import math
@@ -63,81 +65,118 @@ class UnavailableException(Exception):
     pass
 
 
-def retry_with_backoff(fn, fn_args: dict, retry_count: int = 0, max_retry: int = 5):
+class MaxRetryReachedException(Exception):
+    pass
+
+
+def retry_with_backoff(fn, fn_args: dict, count_retry: int = 0, max_retry: int = 5):
     try:
         return fn(**fn_args)
-    except UnavailableException:
-        if retry_count == max_retry:
-            logger.error("Limite de réessaye atteinte. Exception levé.")
-            raise
+    except UnavailableException as exc:
+        if count_retry >= max_retry:
+            print("Limite de réessaye atteint")
+            raise MaxRetryReachedException from exc
 
-    wait_seconds = math.exp(retry_count)
-    logger.warning(
-        f"Nouvelle tentative {retry_count} dans {wait_seconds} secondes"
-    )
-    time.sleep(wait_seconds)
+        wait_seconds = math.exp(count_retry)
+        print(
+            f"Tentative {count_retry} échoué, attendre {wait_seconds:.4f} secondes pour la prochaine tentative."
+        )
+        time.sleep(wait_seconds)
 
-    return retry_with_backoff(fn, fn_args, retry_count + 1, max_retry)
+    return retry_with_backoff(fn, fn_args, count_retry + 1, max_retry)
 
 
 if __name__ == "__main__":
+
     def my_func():
         raise UnavailableException()
 
-
     retry_with_backoff(my_func, {}, max_retry=2)
+
 ```
 
 Cela donne
 
 ```shell
-WARNING:root:Nouvelle tentative 0 dans 1.0 secondes
-WARNING:root:Nouvelle tentative 1 dans 2.718281828459045 secondes
-ERROR:root:Limite de réessaye atteinte. Exception levé.
+#python3 demo.py 
+WARNING:root:Tentative 0 échoué, attendre 1.0000 secondes pour la prochaine tentative.
+WARNING:root:Tentative 1 échoué, attendre 2.7183 secondes pour la prochaine tentative.
+ERROR:root:Limite de réessaye atteint
 Traceback (most recent call last):
-  File "demo.py", line 33, in <module>
-    retry_with_backoff(my_func, {}, 2)
-  File "demo.py", line 16, in retry_with_backoff
+  File "demo.py", line 19, in retry_with_backoff
     return fn(**fn_args)
            ^^^^^^^^^^^^^
-  File "demo.py", line 30, in my_func
+  File "demo.py", line 37, in my_func
     raise UnavailableException()
 UnavailableException
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "demo.py", line 39, in <module>
+    retry_with_backoff(my_func, {}, max_retry=2)
+  File "demo.py", line 31, in retry_with_backoff
+    return retry_with_backoff(fn, fn_args, count_retry + 1, max_retry)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "demo.py", line 31, in retry_with_backoff
+    return retry_with_backoff(fn, fn_args, count_retry + 1, max_retry)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "demo.py", line 23, in retry_with_backoff
+    raise MaxRetryReachedException from exc
+MaxRetryReachedException
 
 Process finished with exit code 1
 ```
 
-Le test unitaire 
+Dans nos logs, nous avons bien nos deux warning, ainsi que le log error lorsque la limite a été atteinte. Vous noterez que la trace d'erreur est détaillé. Le fait d'ajouter `from exc` à `raise MaxRetryReachedException` permet de faire une liaison de cause à effet. Cela est indiqué par le message suivant `The above exception was the direct cause of the following exception`. L'avantage est qu'il permet de déboguer plus facilement l'application.
+
+Ajoutons un test unitaire avec PyTest pour s'assurer du fonctionnement.
 
 ```python
 import logging
+import pytest
 
 
-def test_write_backoff(caplog, spark_fixture):
-    def write_failed(hello: str):
-        print(hello)
+def test_retry_with_backoff(caplog):
+    def write_failed():
         raise UnavailableException()
 
-    with pytest.raises(UnavailableException):
-        retry_with_backoff(write_failed, {"hello": "world"}, max_retry=2)
+    with pytest.raises(MaxRetryReachedException):
+        retry_with_backoff(write_failed, {}, max_retry=2)
 
     assert len(caplog.records) == 3
     assert caplog.record_tuples[0][1] == logging.WARNING
     assert (
-        "Nouvelle tentative 0 dans 1.0 secondes"
+        "Tentative 0 échoué, attendre 1.0000 secondes pour la prochaine tentative."
         in caplog.record_tuples[0][2]
     )
     assert caplog.record_tuples[1][1] == logging.WARNING
     assert (
-        "Nouvelle tentative 1 dans 2.718281828459045 secondes"
+        "Tentative 1 échoué, attendre 2.7183 secondes pour la prochaine tentative."
         in caplog.record_tuples[1][2]
     )
     assert caplog.record_tuples[2][1] == logging.ERROR
-    assert (
-        "Limite de réessaye atteinte. Exception levé."
-        in caplog.record_tuples[2][2]
-    )
+    assert "Limite de réessaye atteint" in caplog.record_tuples[2][2]
+
+
+def test_retry_with_backoff_success(caplog):
+    def write_failed():
+        return "ok"
+
+    assert len(caplog.records) == 0
+    assert retry_with_backoff(write_failed, {}, max_retry=2) == "ok"
 ```
 
+Résultat,
+
+```shell
+============================= test session starts ==============================
+collecting ... collected 2 items
+
+demo.py::test_retry_with_backoff PASSED                                  [ 50%]
+demo.py::test_retry_with_backoff_success PASSED                          [100%]
+
+======================== 2 passed, 2 warnings in 3.73s =========================
+```
 
 
