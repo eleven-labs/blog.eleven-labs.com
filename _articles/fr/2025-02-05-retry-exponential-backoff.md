@@ -6,11 +6,12 @@ slug: retry-exponential-backoff
 title: Recommencer une fonction avec un recul exponentiel
 excerpt: Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Cela peut être dû à plusieurs facteur qui ne sont pas maîtrisé. Il est alors possible d'effectuer une nouvelle tentative plus tard. Dans cet article, voyons comment le faire.
 categories:
-    - architecture
-keywords: []
+  - architecture
+keywords:
+  - python
 cover:
-    alt: Astronaute en mode jeu 2d vue du dessus
-    path: /imgs/articles/2025-02-05-retry-exponential-backoff/cover.jpg
+  alt: Astronaute en mode jeu 2d vue du dessus
+  path: /imgs/articles/2025-02-05-retry-exponential-backoff/cover.jpg
 authors:
   - tthuon
 seo:
