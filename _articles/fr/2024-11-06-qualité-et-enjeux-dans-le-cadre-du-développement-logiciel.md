@@ -7,7 +7,7 @@ title: Qualité et enjeux dans le cadre du développement logiciel
 excerpt: >-
   La qualité est un enjeu très important dans le développement logiciel, cet article vous permettra de (re)découvrir les impacts de la non-qualité, les bienfaits de la qualité et les bonnes pratiques qualité.
 categories:
-  - Agile
+  - agile
 authors:
   - tkourotchkine
 keywords:
