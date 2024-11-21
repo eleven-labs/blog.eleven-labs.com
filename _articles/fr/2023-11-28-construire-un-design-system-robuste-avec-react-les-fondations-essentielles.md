@@ -31,7 +31,7 @@ Dans cet article, nous allons vous expliquer comment construire un Design System
 
 ## Contexte
 
-Avant de plonger dans la mise en place d'un Design System robuste avec React, il est essentiel de comprendre les fondamentaux de ce domaine. Nous n'allons revenir que brièvement dessus, car nos derniers articles parus traitent justement de ces fondamentaux.
+Avant de plonger dans la mise en place d'un Design System robuste avec [React](https://eleven-labs.com/dev-web/react-js/), il est essentiel de comprendre les fondamentaux de ce domaine. Nous n'allons revenir que brièvement dessus, car nos derniers articles parus traitent justement de ces fondamentaux.
 
 ### Design System
 
@@ -458,4 +458,4 @@ Pour obtenir une représentation concrète et approfondie de la documentation en
 
 Construire un Design System robuste passe par une bonne conception en amont, le choix des outils utilisés et une documentation adéquate qui permettra de rendre le tout clair pour tous les acteurs participant à la création du design.
 
-Les outils et concepts présentés dans cet article sont le résultat de notre expérience avec les Design System au sein du [Studio Eleven Labs](https://eleven-labs.com/dev-web/). Cela nous a permis de mettre en place des Design System complets et robustes pour nos clients ainsi que pour nos projets internes.
+Les outils et concepts présentés dans cet article sont le résultat de notre expérience avec les Design System au sein du [Studio Eleven Labs](https://eleven-labs.com/studio/). Cela nous a permis de mettre en place des Design System complets et robustes pour nos clients ainsi que pour nos projets internes.

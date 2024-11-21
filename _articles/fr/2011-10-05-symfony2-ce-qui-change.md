@@ -16,7 +16,7 @@ keywords:
 
 Si vous êtes courageux, vous aurez dans l'idée de vouloir passer à Symfony2.
 
-Voici une petite liste non-exaustive des points de différences à connaître pour passer de Symfony1.x à Symfony2
+Voici une petite liste non-exaustive des points de différences à connaître pour [réaliser la migration de versions Symfony](https://eleven-labs.com/dev-web/php-symfony/), de Symfony1.x à Symfony2
 
 Symfony 2, tout le monde en parle en ce moment, mais qu'est ce qu'il change exactement par rapport à la première mouture ?
 
