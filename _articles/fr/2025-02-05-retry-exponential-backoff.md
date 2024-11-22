@@ -4,7 +4,7 @@ lang: fr
 date: 2025-02-05
 slug: retry-exponential-backoff
 title: Recommencer une fonction avec un recul exponentiel
-excerpt: Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Cela peut être dû à plusieurs facteur qui ne sont pas maîtrisé. Il est alors possible d'effectuer une nouvelle tentative plus tard. Dans cet article, voyons comment le faire.
+excerpt: Il arrive qu'une fonction ou action ne puisse pas être réalisée à un instant donné. Cela peut être dû à plusieurs facteurs qui ne sont pas maîtrisés. Il est alors possible d'effectuer une nouvelle tentative plus tard. Dans cet article, voyons comment le faire.
 categories:
   - architecture
 keywords:
@@ -16,16 +16,16 @@ authors:
   - tthuon
 seo:
   title: Recommencer une fonction avec un recul exponentiel
-  description: Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Il est alors possible d'effectuer une nouvelle tentative plus tard.
+  description: Il arrive qu'une fonction ou action ne puisse pas être réalisée a un instant donné. Il est alors possible d'effectuer une nouvelle tentative plus tard.
 ---
 
-Il arrive qu'une fonction ou action ne puisse pas être réalisé a un instant donnée. Cela peut être dû à plusieurs facteur qui ne sont pas maîtrisé. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelé ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on défini alors un délai d'attente qui augmente de façon exponentielle (en anglais: _retries with exponential backoff_).
+Il arrive qu'une fonction ou action ne puisse pas être réalisée a un instant donné. Cela peut être dû à plusieurs facteurs qui ne sont pas maîtrisés. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelée ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on définit alors un délai d'attente qui augmente de façon exponentielle (en anglais: _retries with exponential backoff_).
 
-Sans rentrer dans les détails mathématique, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplfication, le nombre d'Euler peut valoir environ ~2.718281. 
+Sans rentrer dans les détails mathématiques, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplfication, le nombre d'Euler peut valoir environ ~2.718281. 
 
 Python permet d'effectuer ce calcul via la bibliothèque standard `math` avec la fonction [`exp()`](https://docs.python.org/3/library/math.html#math.exp).
 
-Ecrivons la fonction de base qui permet d'attendre _e<sup>x</sup>_ secondes. Cette fonction peut s'écrire de façon procédurale ou récursive. Nous allons opter pour une fonction reccursive. Il faudra définir condition d'arrêt : quand le nombre de tentatives atteint le nombre maximal de tentatives attendues.
+Ecrivons la fonction de base qui permet d'attendre _e<sup>x</sup>_ secondes. Cette fonction peut s'écrire de façon procédurale ou récursive. Nous allons opter pour une fonction récursive. Il faudra définir une condition d'arrêt : quand le nombre de tentatives atteint le nombre maximal de tentatives attendues.
 
 ```python
 import math
@@ -54,7 +54,7 @@ Tentative 4, attendre 54.5982 secondes
 Limite de réessaye atteint
 ```
 
-Ensuite, modifions cette fonction pour qu'elle accepte n'importe quelle fonction. Pour que la fonction effectue une nouvelle tentative, il faut que la fonction appelé lève une exception. Nous allons également ajouter un `logger` pour surveiller les tentatives. Enfin, dans le cas où le nombre de tentatives maximal a été atteint, alors il faut lever une exception dédié `MaxRetryReachedException` afin que les couches supérieur de l'application soit notifié.
+Ensuite, modifions cette fonction pour qu'elle accepte n'importe quelle fonction. Pour que la fonction effectue une nouvelle tentative, il faut que la fonction appelée lève une exception. Nous allons également ajouter un `logger` pour surveiller les tentatives. Enfin, dans le cas où le nombre de tentatives maximal a été atteint, alors il faut lever une exception dédiée `MaxRetryReachedException` afin que les couches supérieures de l'application soient notifiées.
 
 ```python
 import math
@@ -132,7 +132,7 @@ MaxRetryReachedException
 Process finished with exit code 1
 ```
 
-Dans nos logs, nous avons bien nos deux warning, ainsi que le log error lorsque la limite a été atteinte. Vous noterez que la trace d'erreur est détaillé. Le fait d'ajouter `from exc` à `raise MaxRetryReachedException` permet de faire une liaison de cause à effet. Cela est indiqué par le message suivant `The above exception was the direct cause of the following exception`. L'avantage est qu'il permet de déboguer plus facilement l'application.
+Dans nos logs, nous avons bien nos deux warnings, ainsi que le log error lorsque la limite a été atteinte. Vous noterez que la trace d'erreur est détaillée. Le fait d'ajouter `from exc` à `raise MaxRetryReachedException` permet de faire une liaison de cause à effet. Cela est indiqué par le message suivant `The above exception was the direct cause of the following exception`. L'avantage est qu'il permet de déboguer plus facilement l'application.
 
 Ajoutons un test unitaire avec PyTest pour s'assurer du fonctionnement.
 
@@ -183,5 +183,5 @@ demo.py::test_retry_with_backoff_success PASSED                          [100%]
 ======================== 2 passed, 2 warnings in 3.73s =========================
 ```
 
-Vous avec désormais une fonction qui permet de rééssayer une action avec un temps d'attente exponentiel. Ce mécanisme est généralement présent dans les bibliothèques qui permettent de faire des appels à des ressources externes non maitrisé.
+Vous avec désormais une fonction qui permet de rééssayer une action avec un temps d'attente exponentiel. Ce mécanisme est généralement présent dans les bibliothèques qui permettent de faire des appels à des ressources externes non maitrisés.
 
