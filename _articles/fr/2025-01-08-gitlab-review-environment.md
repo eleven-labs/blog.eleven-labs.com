@@ -2,11 +2,11 @@
 contentType: article
 lang: fr
 date: 2025-01-08
-slug: gitlab-environnement-revue
-title: Créer un environnement de revue avec Gitlab
+slug: environnement-gitlab-ci
+title: Créer un environnement de revue avec Gitlab CI
 excerpt: Après avoir développé une nouvelle fonctionnalité pour votre application, le code est revue par l'équipe. Pour que le relecteur puisse mieux se rendre compte des changements, il est intéressant de mettre les changements à disposition dans un environnement de revue. Cet article va expliquer les étapes pour le faire avec Gitlab CI.
 cover:
-    alt: Baleine avec des conteneurs
+    alt: Comment créer un environnement de revue avec Gitlab CI ?
     path: /imgs/articles/2025-01-08-gitlab-review-environment/cover.jpg
 categories:
     - architecture
@@ -16,8 +16,8 @@ keywords:
 authors:
     - tthuon
 seo:
-    title: Créer un environnement de revue avec Gitlab
-    description: Gitlab CI permet de créer des environnements dynamique.
+    title: Créer un environnement de revue avec Gitlab CI : méthode
+    description: Découvrez comment créer une environnement de revue dynamique avec Gitlab CI.
 ---
 
 Dans une équipe de développement, une des bonnes pratiques consiste à relire le code des autres membres de l'équipe. Cela permet de partager la connaissance et d'avoir un oeil différent sur le code produit. Pour aller encore plus loin, ce code pourrait être déployé dans un environnement isolé : un environnement de revue.
@@ -57,14 +57,14 @@ deploy:review:
     - if: $CI_MERGE_REQUEST_IID
 ```
 
-La tâche de déploiement va vérifier la présence d'un cluster Dataproc. S'il n'existe pas, alors le cluster est créé. Les options ne sont pas importante dans le cadre de l'article. Enfin, les fichiers sont copié dans le stockage objet avec la commande `gsutil`.
+La tâche de déploiement va vérifier la présence d'un cluster Dataproc. S'il n'existe pas, alors le cluster est créé. Les options ne sont pas importantes dans le cadre de l'article. Enfin, les fichiers sont copié dans le stockage objet avec la commande `gsutil`.
 
 À partir de cette base, ajoutons la configuration pour créer un environnement dynamique. Nous voulons que cet environnement soit configuré de cette façon :
 - préfixé par `review/`
 - auto détruit après 1 jour
 - le bouton pour voir l'environnement ouvre la console Google Cloud Platform sur le cluster Dataproc
 
-Cela se traduit par la configuration suivante qui sera à ajouter notre tâche de `deploy:review`.
+Cela se traduit par la configuration suivante qui sera à ajouter à notre tâche de `deploy:review`.
 
 ```yaml
 deploy:review:
@@ -78,7 +78,7 @@ deploy:review:
     url: https://console.cloud.google.com/dataproc/clusters/${DATAPROC_CLUSTER_NAME}/monitoring?region=europe-west1&project=${GCP_PROJECT_ID}
 ```
 
-La clef `on_stop` dans l'objet `environment` fait référence à une tâche `deploy:review:stop`. C'est cette tâche qui sera exécuté lorsque l'environnement sera détruit par Gitlab.
+La clé `on_stop` dans l'objet `environment` fait référence à une tâche `deploy:review:stop`. C'est cette tâche qui sera exécutée lorsque l'environnement sera détruit par Gitlab.
 
 Ajoutons cette tâche `deploy:review:stop`.
 
@@ -100,15 +100,17 @@ deploy:review:stop:
     action: stop
 ```
 
-La tâche `deploy:review:stop` a bien une configuration `environment` avec la référence vers le nom de l'environnement à stopper ainsi que l'action à effectuer.
+La tâche `deploy:review:stop` a bien une configuration `environment` avec la référence vers le nom de l'environnement à stopper, ainsi que l'action à effectuer.
 
-Dans le cas d'une merge request, un environnement dynamique est automatique arrêté lorsque la branche est fusionnée dans la branche principale.
+Dans le cas d'une merge request, un environnement dynamique est automatiquement arrêté lorsque la branche est fusionnée dans la branche principale.
 
-Lorsque vous allez créer une nouvelle merge request, les tâches de déploiement en environnement de revu se lance. Quelques minutes plus tard, l'environnement est disponible.
+Lorsque vous allez créer une nouvelle merge request, les tâches de déploiement en environnement de revue se lance. Quelques minutes plus tard, l'environnement est disponible.
 
-La liste des environnements active est disponible dans le menu à gauche : Operate > Environments.
+La liste des environnements actifs est disponible dans le menu à gauche : Operate > Environments.
 
-Bravo, vous avez créé un environnement de revu dynamique pour vos merge request. Cela va grandement faciliter la revue de code et de voir concrêtement les changements. Votre Product Owner va adorer 🤩 !
+## Conclusion
+
+Bravo, vous avez créé un environnement de revue dynamique pour vos merge request. Cela va grandement faciliter la revue de code et va vous permettre de voir concrètement les changements. Votre Product Owner va adorer 🤩 !
 
 ## Référence
 
