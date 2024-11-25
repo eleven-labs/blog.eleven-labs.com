@@ -10,18 +10,18 @@ categories:
 keywords:
   - python
 cover:
-  alt: Astronaute en mode jeu 2d vue du dessus
+  alt: Comment recommencer une fonction avec un recul exponentiel ?
   path: /imgs/articles/2025-02-05-retry-exponential-backoff/cover.jpg
 authors:
   - tthuon
 seo:
-  title: Recommencer une fonction avec un recul exponentiel
-  description: Il arrive qu'une fonction ou action ne puisse pas être réalisée a un instant donné. Il est alors possible d'effectuer une nouvelle tentative plus tard.
+  title: Nouvelles tentatives et backoff exponentiel : stratégie et méthode
+  description: Découvrez la méthode de notre expert pour recommencer une fonction avec un recul exponentiel sans s'acharner.
 ---
 
 Il arrive qu'une fonction ou action ne puisse pas être réalisée a un instant donné. Cela peut être dû à plusieurs facteurs qui ne sont pas maîtrisés. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelée ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on définit alors un délai d'attente qui augmente de façon exponentielle (en anglais: _retries with exponential backoff_).
 
-Sans rentrer dans les détails mathématiques, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplfication, le nombre d'Euler peut valoir environ ~2.718281. 
+Sans rentrer dans les détails mathématiques, soit _x_ la tentative en cours, alors nous avons _e<sup>x</sup>_ le nombre de secondes à attendre avant la prochaine tentative. _e_ étant [le nombre d'Euler](https://www.nagwa.com/fr/explainers/656149079142/) élevé à la puissance _x_. Par simplification, le nombre d'Euler peut valoir environ ~2.718281. 
 
 Python permet d'effectuer ce calcul via la bibliothèque standard `math` avec la fonction [`exp()`](https://docs.python.org/3/library/math.html#math.exp).
 
@@ -54,7 +54,7 @@ Tentative 4, attendre 54.5982 secondes
 Limite de réessaye atteint
 ```
 
-Ensuite, modifions cette fonction pour qu'elle accepte n'importe quelle fonction. Pour que la fonction effectue une nouvelle tentative, il faut que la fonction appelée lève une exception. Nous allons également ajouter un `logger` pour surveiller les tentatives. Enfin, dans le cas où le nombre de tentatives maximal a été atteint, alors il faut lever une exception dédiée `MaxRetryReachedException` afin que les couches supérieures de l'application soient notifiées.
+Ensuite, modifions cette fonction pour qu'elle accepte n'importe quelle fonction. Pour que la fonction effectue une nouvelle tentative, il faut que la fonction appelée lève une exception. Nous allons également ajouter un `logger` pour surveiller les tentatives. Enfin, dans le cas où le nombre de tentatives maximales a été atteint, alors il faut lever une exception dédiée `MaxRetryReachedException` afin que les couches supérieures de l'application soient notifiées.
 
 ```python
 import math
