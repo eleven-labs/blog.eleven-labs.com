@@ -14,8 +14,8 @@ keywords:
   - qualité développement
   - agile
 seo:
-    title: Quality Engineering : enjeux dans le développement web
-    description: Découvrer les conseils et bonnes pratiques de notre Quality Engineer (QA) pour créer des applications de qualité.
+    title: Quality Engineering, enjeux dans le développement web
+    description: Découvrez les conseils et bonnes pratiques de notre Quality Engineer (QA) pour créer des applications de qualité.
 cover:
     alt: Quels enjeux pour la qualité logicelle dans le développement d'une application ?
     path: /imgs/articles/2024-11-26-qualite-enjeux-developpement-logiciel/cover.jpg
