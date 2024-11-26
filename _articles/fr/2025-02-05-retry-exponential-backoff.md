@@ -6,17 +6,17 @@ slug: retry-exponential-backoff
 title: Recommencer une fonction avec un recul exponentiel
 excerpt: Il arrive qu'une fonction ou action ne puisse pas être réalisée à un instant donné. Cela peut être dû à plusieurs facteurs qui ne sont pas maîtrisés. Il est alors possible d'effectuer une nouvelle tentative plus tard. Dans cet article, voyons comment le faire.
 categories:
-  - architecture
+    - architecture
 keywords:
-  - python
+    - python
 cover:
-  alt: Comment recommencer une fonction avec un recul exponentiel ?
-  path: /imgs/articles/2025-02-05-retry-exponential-backoff/cover.jpg
+    alt: "Comment recommencer une fonction avec un recul exponentiel ?"
+    path: /imgs/articles/2025-02-05-retry-exponential-backoff/cover.jpg
 authors:
-  - tthuon
+    - tthuon
 seo:
-  title: "Nouvelles tentatives et backoff exponentiel : stratégie et méthode"
-  description: Découvrez la méthode de notre expert pour recommencer une fonction avec un recul exponentiel sans s'acharner.
+    title: "Nouvelles tentatives et backoff exponentiel : stratégie et méthode"
+    description: Découvrez la méthode de notre expert pour recommencer une fonction avec un recul exponentiel sans s'acharner.
 ---
 
 Il arrive qu'une fonction ou action ne puisse pas être réalisée a un instant donné. Cela peut être dû à plusieurs facteurs qui ne sont pas maîtrisés. Il est alors possible d'effectuer une nouvelle tentative plus tard. Cependant, réessayer toutes les x secondes n'est pas souhaitable car il est possible que l'action appelée ne soit pas encore disponible. On veut alors donner plus de temps à chaque tentative, on définit alors un délai d'attente qui augmente de façon exponentielle (en anglais: _retries with exponential backoff_).
