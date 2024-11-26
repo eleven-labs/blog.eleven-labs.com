@@ -10,8 +10,7 @@ categories:
 authors:
   - tkourotchkine
 keywords:
-  - qualite développement
-  - agile
+  - quality engineering
 seo:
     title: Quality Engineering, enjeux dans le développement web
     description: Découvrez les conseils et bonnes pratiques de notre Quality Engineer (QA) pour créer des applications de qualité.
