@@ -42,6 +42,41 @@ Pour simplifier, un commit commençant par
 
 Une fois que nos commits respectent la nomenclature défini par Commits Conventionnels, nous pouvons utiliser un outil pour effectuer le différentiel de version : [semantic-release](https://github.com/semantic-release/semantic-release).
 
+## Mise en oeuvre de commitlint
+
+[commitlint](https://commitlint.js.org/) va lire le message de commit et faire respecter la nomenclature Commits Conventionnels.
+
+Cela nécessite quelques configurations.
+
+Tout d'abord, il faut créer un fichier `.commitlintrc.yaml` avec le contenu suivant :
+
+```yaml
+extends:
+  - "@commitlint/config-conventional"
+```
+Cette configuration permet d'indiquer à commitlint d'utiliser les commits conventionnels.
+Dans le fichier `.gitlab-ci.yml`, ajoutons une tâche pour tester le message de commit.
+
+```yaml
+stage:
+  - tests
+lint:merge_request_title:
+  image: dockerhub.ftven.net/node:lts
+  stage: tests
+  before_script:
+    - npm install @commitlint/{cli,config-conventional}
+  script:
+    - echo "${CI_COMMIT_MESSAGE}" | npx commitlint
+```
+
+<div class="admonition note" markdown="1"><p class="admonition-title">Alternatif</p>
+
+Dans le cas d'une merge request, il est possible de vérifier uniquement le titre de la merge request. Ce cas de figure fonctionne bien dans le cas où la branche est fusionnée et squash vers la branche principale.
+
+Pour cela, utiliser la variable Gitlab $CI_MERGE_REQUEST_TITLE.
+</div>
+
+
 ## Utiliser semantic-release pour automatiser le processus de marquage d'une version
 
 semantic-release va automatiser ce processus de marquage d'une version d'une application.
