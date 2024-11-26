@@ -16,7 +16,7 @@ cover:
   alt: Comment formater son code Python avec l'outil Black ?
   path: /imgs/articles/2025-01-22-black-lint/cover.jpg
 seo:
-  title: Black : le formateur rapide de code python 
+  title: "Black : le formateur rapide de code python"
   description: Reformater tout votre code python, son style et sa vérification, automatiquement avec Black. Gain de temps garanti !
 ---
 
