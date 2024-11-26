@@ -15,7 +15,7 @@ cover:
 authors:
     - tthuon
 seo:
-    title: "Nouvelles tentatives et backoff exponentiel : stratégie et méthode"
+    title: "Nouvelles tentatives et backoff exponentiel : méthode"
     description: Découvrez la méthode de notre expert pour recommencer une fonction avec un recul exponentiel sans s'acharner.
 ---
 
