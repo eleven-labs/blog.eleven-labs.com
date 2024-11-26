@@ -4,7 +4,7 @@ lang: fr
 date: 2025-01-22
 slug: formater-le-code-python-avec-black
 title: Formater le code Python avec Black
-excerpt: Le formatage du code est une source de querelle entre les membres d'une équipe. Résolvons le une bonne fois pour toute avec le formateur de code Black.
+excerpt: Le formatage du code est une source de querelle entre les membres d'une équipe. Résolvons-le une bonne fois pour toute avec le formateur de code Black.
 categories:
   - architecture
 keywords:
@@ -30,19 +30,19 @@ Cet outil va appliquer des règles strictes dans le but d'avoir un code cohéren
 
 Les règles sont disponibles sur cette page : https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html.
 
-Avec l'aide de pip, installer la bibliothèque
+Avec l'aide de pip, installer la bibliothèque :
 
 ```shell
 pip install black~=24.8.0
 ```
 
-Pour appliquer le nouveau style, appeler directement l'outil `black`
+Pour appliquer le nouveau style, appeler directement l'outil `black` :
 
 ```shell
 black .
 ```
 
-En sortie, si tout va bien,
+En sortie, si tout va bien :
 
 ```shell
 (venv) ➜  my-project git:(main) black .
@@ -60,7 +60,7 @@ All done! ✨ 🍰 ✨
 1 file reformatted, 87 files left unchanged.
 ```
 
-Maintenant que Black est installé et utilisé par tous les membres de l'équipe, automatisation et faisons respecter cet outils avec Gitlab CI.
+Maintenant que Black est installé et utilisé par tous les membres de l'équipe, automatisation et faisons respecter cet outil avec Gitlab CI.
 
 ## Intégration de Black avec Gitlab CI
 
@@ -121,7 +121,7 @@ La personne devra corriger et Gitlab va de nouveau vérifier les changements.
 
 ## Conclusion
 
-Fini les débats sans fin sur le formatage du code. Black défini une bonne fois pour toutes les règles à adopter par l'équipe. Ce projet est stable et utilisé par de nombreux projets libres de droits tel que SQLAlachemy ou Django.
+Fini les débats sans fin sur le formatage du code. Black définit une bonne fois pour toutes les règles à adopter par l'équipe. Ce projet est stable et utilisé par de nombreux projets libres de droits tel que SQLAlachemy ou Django.
 
 ## Références 
 
