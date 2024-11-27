@@ -147,7 +147,7 @@ Enfin, sur le long terme, l'absence de qualité réduit la **durée de vie** du 
 -   Un produit de **mauvaise** qualité nuit à la **réputation**, entraînant une perte de **confiance**
 -   Perte de **compétitivité** à cause de produits **surpassés** par des solutions **concurrentes** plus **robustes** et **fiables**
 
-Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
+### Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
 
 #### **4.1 Relations et Collaboration au Sein de l'Équipe**
 
@@ -178,7 +178,7 @@ Conséquence n°4 : Impacts sur l’Équipe et l’Organisation
 -   **Perte de confiance dans la direction**, causée par une **incapacité** à **résoudre** efficacement les problèmes de qualité, **conduisant** les équipes à **douter** des gestionnaires de projets
 -   **Manque de transparence et de communication**, résultant d'une gestion **inefficace** de la non-qualité, avec des problèmes cachés ou minimisés, **aggravant** les tensions internes.
 
-Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
+### Conséquence n°5 : Impacts sur la Maintenance et Évolutivité
 
 #### **5.1 Difficultés de Maintenance**
 
