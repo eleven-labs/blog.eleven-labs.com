@@ -13,7 +13,7 @@ keywords:
   - devops
   - gitlab
 cover:
-    alt: Astronautes qui font la fete
+    alt: Comment automatiser la version d'une application avec semantic-release ?
     path: /imgs/articles/2024-12-04-semantic-release/cover.jpg
 seo:
   title: Automatiser la création de version avec semantic-release
@@ -22,7 +22,7 @@ seo:
 
 Votre application est prête à être livrée. Pour cela, vous avez besoin de marquer votre application avec un numéro de version. Une convention permet de faciliter le suivi de version : [Gestion sémantique de version](https://semver.org/lang/fr/).
 
-La livraison de la version 1.0.0 s'est déroulé avec succès. Maintenant, vous avez besoin d'ajouter de nouvelles fonctionnalités. Il faudra donc incrémenter le numéro de version.
+La livraison de la version 1.0.0 s'est déroulée avec succès. Maintenant, vous avez besoin d'ajouter de nouvelles fonctionnalités. Il faudra donc incrémenter le numéro de version.
 
 Deux options possibles :
 - marquer la prochaine version manuellement
@@ -36,7 +36,7 @@ Afin d'automatiser le processus de marquage des versions, nous allons nous réf�
 
 Nos commits doivent respecter une convention. Pour cela, nous allons utiliser [Commits Conventionnels](https://www.conventionalcommits.org/fr/v1.0.0/).
 
-Pour simplifier, un commit commençant par
+Pour simplifier, un commit commençant par :
 - "feat: " va incrémenter le numéro de version mineur
 - "fix: " va incrémenter le numéro de version de correctif
 
@@ -128,7 +128,9 @@ Ajoutez l'option --dry-run afin de prévisualiser le contenu de la prochaine ver
 
 Le jeton `RELEASE_TOKEN` est créé en suivant la documentation suivante https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html
 
-Lors de la prochaine exécution du pipeline Gitlab CI, une tâche `release` va apparaître. Elle sera en attente d'une action utilisateur. Une fois que l'utilisateur a validé, la nouvelle version est créé et publié dans Gitlab (voir documentation : https://docs.gitlab.com/ee/user/project/releases/).
+Lors de la prochaine exécution du pipeline Gitlab CI, une tâche `release` va apparaître. Elle sera en attente d'une action utilisateur. Une fois que l'utilisateur a validé, la nouvelle version est créée et publiée dans Gitlab (voir documentation : https://docs.gitlab.com/ee/user/project/releases/).
+
+## Conclusion
 
 Félicitation, vous avez automatisé la création d'une version de votre application. Prenez une boisson chaude pour vous détendre.
 
