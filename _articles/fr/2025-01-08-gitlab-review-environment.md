@@ -16,7 +16,7 @@ keywords:
 authors:
     - tthuon
 seo:
-    title: Créer un environnement de revue avec Gitlab CI : méthode
+    title: Méthode pour créer un environnement de revue avec Gitlab CI
     description: Découvrez comment créer une environnement de revue dynamique pour faciliter les reviews de code avec Gitlab CI.
 ---
 
