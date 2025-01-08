@@ -16,15 +16,15 @@ keywords:
 authors:
     - tthuon
 seo:
-    title: "Créer un environnement de revue avec Gitlab CI : méthode"
-    description: Découvrez comment créer une environnement de revue dynamique avec Gitlab CI.
+    title: Créer un environnement de revue avec Gitlab CI : méthode
+    description: Découvrez comment créer une environnement de revue dynamique pour faciliter les reviews de code avec Gitlab CI.
 ---
 
 Dans une équipe de développement, une des bonnes pratiques consiste à relire le code des autres membres de l'équipe. Cela permet de partager la connaissance et d'avoir un oeil différent sur le code produit. Pour aller encore plus loin, ce code pourrait être déployé dans un environnement isolé : un environnement de revue.
 
 Voyons comment le mettre en oeuvre avec Gitlab CI.
 
-## Créer un environnement de revue avec Gitlab CI
+## Méthode pour mettre en place un environnement de revue avec Gitlab CI
 
 Dans le contexte d'un projet data, nous avons du code Python que nous devons mettre à disposition dans un stockage objet Google Cloud Storage. Ce code est lu et exécuté par le service Google Dataproc.
 
@@ -57,7 +57,7 @@ deploy:review:
     - if: $CI_MERGE_REQUEST_IID
 ```
 
-La tâche de déploiement va vérifier la présence d'un cluster Dataproc. S'il n'existe pas, alors le cluster est créé. Les options ne sont pas importantes dans le cadre de l'article. Enfin, les fichiers sont copié dans le stockage objet avec la commande `gsutil`.
+La tâche de déploiement va vérifier la présence d'un cluster Dataproc. S'il n'existe pas, alors le cluster est créé. Les options ne sont pas importantes dans le cadre de l'article. Enfin, les fichiers sont copiés dans le stockage objet avec la commande `gsutil`.
 
 À partir de cette base, ajoutons la configuration pour créer un environnement dynamique. Nous voulons que cet environnement soit configuré de cette façon :
 - préfixé par `review/`
