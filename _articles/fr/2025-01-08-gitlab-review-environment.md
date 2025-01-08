@@ -6,7 +6,7 @@ slug: environnement-gitlab-ci
 title: Créer un environnement de revue avec Gitlab CI
 excerpt: Après avoir développé une nouvelle fonctionnalité pour votre application, le code est revue par l'équipe. Pour que le relecteur puisse mieux se rendre compte des changements, il est intéressant de mettre les changements à disposition dans un environnement de revue. Cet article va expliquer les étapes pour le faire avec Gitlab CI.
 cover:
-    alt: Comment créer un environnement de revue avec Gitlab CI ?
+    alt: "Comment créer un environnement de revue avec Gitlab CI ?"
     path: /imgs/articles/2025-01-08-gitlab-review-environment/cover.jpg
 categories:
     - architecture
