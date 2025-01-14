@@ -6,8 +6,8 @@ slug: explorer-lintelligence-artificielle-pour-creer-produit-digital
 title: Explorer le potentiel de l'intelligence artificielle dans la création d'un produit fictif
 excerpt: Intrigué par les progrès récents de l'intelligence artificielle, en particulier ChatGPT, j'ai voulu explorer ses capacités à travers la conception d’un produit digital fictif. Ce projet, bien qu'imaginaire, s'inspire directement des défis rencontrés lors de mes missions professionnelles, notamment en matière de gestion documentaire et de spécifications fonctionnelles. Lors de cet exercice, j'ai cherché à évaluer comment Chat GPT pouvait m'accompagner dans les différentes étapes d’un processus complexe, tout en documentant les défis rencontrés, les avantages obtenus et les ressentis que j'ai éprouvés face à ces situations.
 cover:
-    alt: Alt image
-    path: /imgs/articles/2024-12-17-Explorer-le-potentiel-de-lintelligence-artificielle/cover.jpg
+    alt: Cover
+    path: /imgs/articles/2025-01-15-explorer-le-potentiel-de-lintelligence-artificielle/cover.jpg
 categories:
     - agile
 keywords:
