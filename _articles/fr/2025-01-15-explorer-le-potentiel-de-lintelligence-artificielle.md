@@ -18,7 +18,7 @@ authors:
     - ismaelnfilho
 seo:
     title: Créer votre produit digital avec l'IA en 8 étapes
-    description: Découvrez le mode d'emploi à suivre pour créer votre produit digital avec l'IA : du brief projet à la priorisation du backlog produit.
+    description: "Découvrez le mode d'emploi à suivre pour créer votre produit digital avec l'IA : du brief projet à la priorisation du backlog produit."
 ---
 
 Intrigué par les progrès récents de l'intelligence artificielle, en particulier ChatGPT, j'ai voulu explorer ses capacités à travers la conception d’un produit digital fictif. Ce projet, bien qu'imaginaire, s'inspire directement des défis rencontrés lors de mes missions professionnelles, notamment en matière de gestion documentaire et de spécifications fonctionnelles. Lors de cet exercice, j'ai cherché à évaluer comment Chat GPT pouvait m'accompagner dans les différentes étapes d’un processus complexe, tout en documentant les défis rencontrés, les avantages obtenus et les ressentis que j'ai éprouvés face à ces situations.
