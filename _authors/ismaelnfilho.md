@@ -1,7 +1,7 @@
 ---
 contentType: author
 username: ismaelnfilho
-name: Isamel Filho
+name: Ismael Filho
 linkedin: ismaelnfilho
 ---
 
